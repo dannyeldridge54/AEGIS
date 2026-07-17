@@ -145,35 +145,42 @@ export class AegisAgent {
       this.state.history = this.state.history.slice(-2500);
     }
 
-    // Track improvement
-    const previousBest = this.state.best?.score ?? Infinity;
-    const improvement = previousBest - score;
+    // Track improvement (supports both minimize and maximize goals)
+    const minimize = this.isMinimizing();
+    const previousBest = this.state.best?.score ?? (minimize ? Infinity : -Infinity);
+    const isBetter = minimize ? score < previousBest : score > previousBest;
+    const improvement = minimize ? (previousBest - score) : (score - previousBest);
 
-    if (!this.state.best || score < previousBest) {
+    if (!this.state.best || isBetter) {
       this.state.best = result;
       this.lastBestTime = Date.now();
-      this.metaLearner.updateStrategy(strategy.type, Math.max(improvement, 0.001));
 
-      this.emit({ type: 'new_best', result, improvement });
+      // Normalize reward to avoid Infinity poisoning the UCB1 meta-learner
+      const reward = this.state.totalEvals === 1
+        ? 1.0 // First eval gets a fixed baseline reward
+        : Math.min(Math.max(improvement, 0.001), 100); // Clamp to [0.001, 100]
+      this.metaLearner.updateStrategy(strategy.type, reward);
+
+      this.emit({ type: 'new_best', result, improvement: Math.max(improvement, 0) });
 
       if (this.config.verbosity !== 'silent') {
         this.log(`${this.msg.newBest} score=${score.toFixed(6)} (${this.msg.improvement}: ${improvement.toFixed(6)}) [${strategy.type}]`);
       }
 
-      // Log discovery
-      if (improvement > previousBest * 0.05) {
+      // Log discovery (only after initial baseline)
+      if (this.state.totalEvals > 1 && Math.abs(improvement) > Math.abs(previousBest) * 0.05) {
         const discovery: Discovery = {
           type: 'new_best',
           description: `Major improvement: ${previousBest.toFixed(4)} → ${score.toFixed(4)} via ${strategy.type}`,
           result,
-          confidence: Math.min(improvement / previousBest, 1),
+          confidence: Math.min(Math.abs(improvement) / (Math.abs(previousBest) || 1), 1),
           timestamp: Date.now(),
         };
         this.state.discoveries.push(discovery);
         this.emit({ type: 'discovery', discovery });
       }
     } else {
-      this.metaLearner.updateStrategy(strategy.type, Math.max(improvement, 0));
+      this.metaLearner.updateStrategy(strategy.type, 0);
     }
 
     // Phase management
@@ -203,6 +210,16 @@ export class AegisAgent {
   }
 
   // ─── Internal ────────────────────────────────────────────────────────────
+
+  /** Determine if we're minimizing based on goal config */
+  private isMinimizing(): boolean {
+    const goal = this.config.goal;
+    if (!goal) return true;
+    if (typeof goal === 'string') {
+      return !/(maximize|maximise|highest|largest|most|best score)/i.test(goal);
+    }
+    return goal.minimize !== false;
+  }
 
   private updatePhase(): void {
     const timeSinceBest = (Date.now() - this.lastBestTime) / 1000;
@@ -234,8 +251,10 @@ export class AegisAgent {
     const recentWindow = this.state.history.slice(-500);
     if (recentWindow.length < 500) return false;
 
-    const recentBest = Math.min(...recentWindow.map(r => r.score));
-    const olderBest = Math.min(...this.state.history.slice(-1000, -500).map(r => r.score));
+    const minimize = this.isMinimizing();
+    const bestFn = minimize ? Math.min : Math.max;
+    const recentBest = bestFn(...recentWindow.map(r => r.score));
+    const olderBest = bestFn(...this.state.history.slice(-1000, -500).map(r => r.score));
 
     return Math.abs(recentBest - olderBest) < this.config.convergenceThreshold;
   }

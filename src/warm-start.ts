@@ -17,7 +17,7 @@ export interface WarmStartData {
   version: string;
 }
 
-const AEGIS_VERSION = '1.0.0';
+const AEGIS_VERSION = '1.2.0';
 
 /**
  * Save agent state to disk for later resumption.

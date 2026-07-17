@@ -19,3 +19,9 @@ export { createDashboard, dashboardHandler, DashboardServer } from './dashboard'
 export { saveCheckpoint, loadCheckpoint, autoSave, warmStartFrom, WarmStartData } from './warm-start';
 export { CodingAgent, createCoder, Sandbox, OpenAIProvider, OllamaProvider, LLMProvider, CodingTask, CodingResult, ExecutionResult } from './coding-agent';
 export { physics, finance, environment, engineering, math, live } from './real-data';
+export { Memory, MemoryEntry, KnowledgeNode, KnowledgeEdge } from './memory';
+export { Swarm, SwarmAgent, AgentMessage } from './swarm';
+export { parseNaturalLanguage, runNatural } from './natural-cli';
+export { generateDocs, writeDocs, DocConfig } from './auto-docs';
+export { runBenchmarks, benchmarkFunctions, BenchmarkResult } from './benchmarks';
+export { AegisDaemon, DaemonConfig, DaemonJob, startDaemon } from './daemon';

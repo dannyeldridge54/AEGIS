@@ -1,6 +1,6 @@
 {
   "name": "aegis-agent",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "AEGIS — Autonomous Evolving General Intelligence System. Self-learning AI agent framework with natural language goals, adaptive strategies, and zero-config setup.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

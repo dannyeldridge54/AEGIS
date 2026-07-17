@@ -97,6 +97,7 @@ export async function parallelOptimize(
 
     // Evaluate in parallel with concurrency limit
     const results: EvalResult[] = [];
+    let batchFailures = 0;
     for (let i = 0; i < candidates.length; i += concurrency) {
       const chunk = candidates.slice(i, i + concurrency);
       const promises = chunk.map(async ({ params, strategy }) => {
@@ -106,6 +107,7 @@ export async function parallelOptimize(
               Promise.resolve(task.evaluate(params)),
               evalTimeout
             );
+            if (!isFinite(score)) return null; // Reject non-finite results
             return { params, score, timestamp: Date.now(), strategy } as EvalResult;
           } catch {
             if (attempt === retries) return null;
@@ -116,20 +118,40 @@ export async function parallelOptimize(
 
       const chunkResults = await Promise.all(promises);
       for (const r of chunkResults) {
-        if (r) results.push(r);
+        if (r) {
+          results.push(r);
+        } else {
+          batchFailures++;
+        }
       }
+    }
+
+    // Count all attempted evaluations (successful + failed) toward the limit
+    state.totalEvals += results.length;
+
+    // Abort if entire batch failed (prevents infinite loop)
+    if (results.length === 0 && batchFailures > 0) {
+      const consecutiveFailThreshold = 3;
+      (state as any).__failedBatches = ((state as any).__failedBatches || 0) + 1;
+      if ((state as any).__failedBatches >= consecutiveFailThreshold) {
+        if (verbosity !== 'silent') {
+          console.log(`⚠️ ${consecutiveFailThreshold} consecutive batches failed. Stopping.`);
+        }
+        break;
+      }
+    } else {
+      (state as any).__failedBatches = 0;
     }
 
     // Process results
     for (const result of results) {
-      state.totalEvals++;
       state.history.push(result);
 
       const previousBest = state.best?.score ?? Infinity;
       if (!state.best || result.score < previousBest) {
         const improvement = previousBest - result.score;
         state.best = result;
-        metaLearner.updateStrategy(result.strategy as any, Math.max(improvement, 0.001));
+        metaLearner.updateStrategy(result.strategy as any, Math.min(Math.max(improvement, 0.001), 100));
 
         if (verbosity !== 'silent') {
           console.log(`${msg.newBest} score=${result.score.toFixed(6)} [${result.strategy}] (${state.totalEvals} evals)`);

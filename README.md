@@ -179,28 +179,189 @@ cd AEGIS && npm install && npm run build
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Architecture (v1.2)
 
 ```
-┌─────────────────────────────────────────────────┐
-│                  Your Task                        │
-│  evaluate(params) → score                        │
-└────────────────────┬────────────────────────────┘
-                     │
-┌────────────────────▼────────────────────────────┐
-│              AEGIS Agent                         │
-│                                                  │
-│  ┌──────────┐  ┌───────────┐  ┌─────────────┐  │
-│  │ Meta-    │  │ Strategy  │  │ Discovery   │  │
-│  │ Learner  │→ │ Engine    │→ │ Engine      │  │
-│  │ (UCB1)   │  │ (6 types) │  │ (anomalies) │  │
-│  └──────────┘  └───────────┘  └─────────────┘  │
-│                                                  │
-│  ┌──────────┐  ┌───────────┐  ┌─────────────┐  │
-│  │ Phase    │  │ Language  │  │ Event       │  │
-│  │ Detector │  │ System    │  │ Bus         │  │
-│  └──────────┘  └───────────┘  └─────────────┘  │
-└──────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────┐
+│                     YOUR TASK                            │
+│  evaluate(params) → score   (or natural language goal)  │
+└────────────────────────┬────────────────────────────────┘
+                         │
+┌────────────────────────▼────────────────────────────────┐
+│                    AEGIS Agent Core                      │
+│                                                         │
+│  ┌──────────┐  ┌───────────┐  ┌─────────────────────┐  │
+│  │ Meta-    │  │ Strategy  │  │ Discovery Engine    │  │
+│  │ Learner  │→ │ Engine    │→ │ + Anomaly Detection │  │
+│  │ (UCB1)   │  │ (6+plugin)│  │                     │  │
+│  └──────────┘  └───────────┘  └─────────────────────┘  │
+│                                                         │
+│  ┌──────────┐  ┌───────────┐  ┌─────────────────────┐  │
+│  │ Phase    │  │ Language  │  │ Event Bus           │  │
+│  │ Detector │  │ (8 langs) │  │ + Webhooks          │  │
+│  └──────────┘  └───────────┘  └─────────────────────┘  │
+└─────────────────────────┬───────────────────────────────┘
+                          │
+┌─────────────────────────▼───────────────────────────────┐
+│                  Extended Modules                        │
+│                                                         │
+│  🤖 Daemon Mode     │ Run 24/7, multi-job scheduler     │
+│  🧬 Self-Evolve     │ Agent evolves its own strategies  │
+│  🐝 Swarm           │ Multi-agent coordination          │
+│  💻 Coding Agent    │ LLM-powered code gen/fix/test     │
+│  🧠 Memory          │ Knowledge graph + episodic memory │
+│  📊 Real Data       │ Physics, finance, engineering     │
+│  📈 Dashboard       │ Live web visualization            │
+│  🎯 Multi-Objective │ Pareto front (NSGA-II)           │
+│  ⚡ Parallel        │ Concurrent async evaluations      │
+│  🔌 Plugins         │ Custom strategies + reporters     │
+│  💾 Warm Start      │ Checkpoint/resume across runs     │
+│  📝 Natural CLI     │ English → optimization commands   │
+│  📚 Benchmarks      │ 7 standard test functions         │
+│  📖 Auto-Docs       │ Generates API.md from source      │
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🤖 Daemon Mode (NEW in v1.2)
+
+Run AEGIS as a persistent background daemon — like the DVFT Daemon but for *anything*:
+
+```typescript
+import { startDaemon } from 'aegis-agent';
+
+const daemon = startDaemon('My AI Daemon', [
+  {
+    id: 'tune-api',
+    name: 'API Latency Optimizer',
+    task: { evaluate: measureLatency, parameters: [...] },
+    schedule: 'continuous',       // Never stops
+    priority: 10,
+  },
+  {
+    id: 'explore-params',
+    name: 'Parameter Space Explorer',
+    task: { evaluate: modelFit, parameters: [...] },
+    schedule: 3600,               // Every hour
+    chainTo: 'tune-api',          // Feed results to next job
+  },
+]);
+
+// HTTP API at :4444 — GET /api/status, /api/jobs, /api/best
+// Dashboard at :3333
+// Persistent memory learns across runs
+// Auto-saves state, resumes on restart
+```
+
+**Daemon features:**
+- Multi-job scheduler with priority queues
+- Automatic job chaining (output → input)
+- Persistent memory (learns which strategies work)
+- HTTP REST API for querying results
+- Webhook alerts on discoveries
+- Graceful shutdown/restart with checkpoint resume
+- File/URL watching for re-optimization triggers
+
+---
+
+## 💻 Coding Agent
+
+Build, fix, review, and test code using LLM-powered AI:
+
+```typescript
+import { createCoder } from 'aegis-agent';
+
+const coder = createCoder({ provider: 'openai', apiKey: '...' });
+
+// Generate a project
+await coder.generateProject('REST API with JWT auth', 'typescript');
+
+// Fix broken code
+const fixed = await coder.fix(brokenCode, 'TypeError: undefined is not a function');
+
+// Review code
+const review = await coder.review(myCode);
+
+// Execute safely in sandbox
+const result = await coder.execute('console.log(2+2)', 'typescript');
+```
+
+---
+
+## 🐝 Multi-Agent Swarm
+
+Coordinate multiple AEGIS agents working together:
+
+```typescript
+import { Swarm } from 'aegis-agent';
+
+const swarm = new Swarm(myTask);
+swarm.addAgent({ id: 'explorer', role: 'explore' });
+swarm.addAgent({ id: 'exploiter', role: 'exploit' });
+swarm.addAgent({ id: 'scout', role: 'curiosity' });
+
+const result = await swarm.run(); // Agents share discoveries
+```
+
+---
+
+## 🧠 Persistent Memory
+
+AEGIS remembers across sessions:
+
+```typescript
+import { Memory } from 'aegis-agent';
+
+const mem = new Memory('.aegis-memory.json');
+mem.learnFromRun('api-tuning', { bestScore: 0.001, topStrategy: 'evolutionary' });
+
+// Next run: recalls what worked
+const suggestion = mem.recallStrategy('api-tuning', 5); // → 'evolutionary'
+```
+
+---
+
+## 📊 Real-World Data Built In
+
+```typescript
+import { physics, finance, live, engineering } from 'aegis-agent';
+
+physics.hubbleData;          // 31 H(z) measurements
+physics.baoData;             // 12 BAO (DESI DR1)
+physics.cmb;                 // Planck 2018
+
+await live.earthquakes();    // USGS real-time
+await live.issPosition();    // ISS lat/lon/alt
+await finance.stockPrice('AAPL');
+
+engineering.materials.steel; // Yield strength, density...
+engineering.atmosphere(10000); // ISA at 10km altitude
+```
+
+---
+
+## 📚 Benchmark Suite
+
+Test against 7 standard optimization functions:
+
+```typescript
+import { runBenchmarks } from 'aegis-agent';
+
+const results = await runBenchmarks({ maxEvals: 5000 });
+// Rosenbrock, Rastrigin, Ackley, Sphere5D, Schwefel, Styblinski-Tang, Griewank
+```
+
+---
+
+## 📝 Natural Language CLI
+
+```typescript
+import { runNatural } from 'aegis-agent';
+
+// English → optimization
+await runNatural('minimize f(x,y) = x^2 + y^2 with x in [-5,5] and y in [-5,5]');
+await runNatural('find the best learning rate between 0.0001 and 0.1');
 ```
 
 ---

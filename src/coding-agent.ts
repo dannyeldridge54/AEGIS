@@ -162,15 +162,29 @@ export interface ExecutionResult {
 export class Sandbox {
   private workDir: string;
   private timeout: number;
+  private allowExec: boolean;
 
-  constructor(config?: { workDir?: string; timeout?: number }) {
-    this.workDir = config?.workDir || path.join(process.cwd(), '.aegis-sandbox');
+  constructor(config?: { workDir?: string; timeout?: number; allowExec?: boolean }) {
+    this.workDir = path.resolve(config?.workDir || path.join(process.cwd(), '.aegis-sandbox'));
     this.timeout = config?.timeout || 30000;
+    this.allowExec = config?.allowExec !== false; // Explicit opt-in awareness
     if (!fs.existsSync(this.workDir)) fs.mkdirSync(this.workDir, { recursive: true });
+  }
+
+  /** Validate that a path stays within the sandbox */
+  private validatePath(relativePath: string): string {
+    const resolved = path.resolve(this.workDir, relativePath);
+    if (!resolved.startsWith(this.workDir)) {
+      throw new Error(`Path traversal blocked: "${relativePath}" resolves outside sandbox`);
+    }
+    return resolved;
   }
 
   /** Execute code in a sandboxed environment */
   async execute(code: string, language: string = 'typescript'): Promise<ExecutionResult> {
+    if (!this.allowExec) {
+      return { stdout: '', stderr: 'Execution disabled (set allowExec: true)', exitCode: 1, success: false, duration: 0 };
+    }
     const start = Date.now();
     const ext = this.getExtension(language);
     const filename = `aegis_run_${Date.now()}${ext}`;
@@ -187,31 +201,34 @@ export class Sandbox {
     }
   }
 
-  /** Execute a shell command */
+  /** Execute a shell command (only within sandbox workDir) */
   async shell(command: string): Promise<ExecutionResult> {
+    if (!this.allowExec) {
+      return { stdout: '', stderr: 'Execution disabled (set allowExec: true)', exitCode: 1, success: false, duration: 0 };
+    }
     const start = Date.now();
     const result = await this.run(command);
     return { ...result, duration: Date.now() - start };
   }
 
-  /** Write a file to the sandbox */
+  /** Write a file to the sandbox (path-validated) */
   writeFile(relativePath: string, content: string): string {
-    const fullPath = path.join(this.workDir, relativePath);
+    const fullPath = this.validatePath(relativePath);
     const dir = path.dirname(fullPath);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(fullPath, content);
     return fullPath;
   }
 
-  /** Read a file from the sandbox */
+  /** Read a file from the sandbox (path-validated) */
   readFile(relativePath: string): string | null {
-    const fullPath = path.join(this.workDir, relativePath);
+    const fullPath = this.validatePath(relativePath);
     return fs.existsSync(fullPath) ? fs.readFileSync(fullPath, 'utf-8') : null;
   }
 
   /** List files in sandbox */
   listFiles(subDir?: string): string[] {
-    const dir = subDir ? path.join(this.workDir, subDir) : this.workDir;
+    const dir = subDir ? this.validatePath(subDir) : this.workDir;
     if (!fs.existsSync(dir)) return [];
     return fs.readdirSync(dir, { recursive: true }).map(String);
   }
