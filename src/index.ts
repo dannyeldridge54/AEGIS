@@ -7,9 +7,15 @@ export { AegisAgent, aegis, optimize } from './agent';
 export {
   Task, Goal, AgentConfig, AgentState, EvalResult,
   Discovery, AgentEvent, EventHandler, ParameterDef,
-  Constraint, StrategyType, Strategy,
+  Constraint, StrategyType, Strategy, UFEMetrics,
+  ModelConfig, TrialResult, ComparisonConfig, LeaderboardEntry, StatisticalTest,
 } from './interfaces';
 export { MetaLearner } from './strategies';
+export { SeededRNG } from './rng';
+export { UFETracker, AnomalyDetector } from './ufe';
+export { bootstrapCI, mannWhitneyU, wilcoxonSignedRank, cohensD, ELORating } from './statistics';
+export { compareModels, ComparisonReport } from './comparison';
+export { DataRecorder, createRecorder, RecorderConfig } from './recorder';
 export { getMessages, formatDuration, LangCode } from './language';
 export { multiOptimize, MultiObjective, ParetoResult, ParetoFront } from './multi-objective';
 export { parallelOptimize, ParallelConfig } from './parallel';
@@ -25,3 +31,4 @@ export { parseNaturalLanguage, runNatural } from './natural-cli';
 export { generateDocs, writeDocs, DocConfig } from './auto-docs';
 export { runBenchmarks, benchmarkFunctions, BenchmarkResult } from './benchmarks';
 export { AegisDaemon, DaemonConfig, DaemonJob, startDaemon } from './daemon';
+export { LiveMonitor, createMonitor, Alert, AlertSeverity, MonitorConfig, MonitorSnapshot, RunTracker } from './monitor';

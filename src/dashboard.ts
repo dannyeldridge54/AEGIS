@@ -95,6 +95,12 @@ export function createDashboard(port: number = 3333): DashboardServer {
   let currentState: AgentState = {
     best: null, totalEvals: 0, history: [], strategies: [],
     discoveries: [], runtime: 0, phase: 'exploring',
+    ufe: {
+      totalEvals: 0, usefulEvals: 0, ufeRatio: 0,
+      convergenceVelocity: 0, aucc: 0,
+      timeToTarget: { pct10: null, pct50: null, pct90: null },
+      convergenceCurve: [],
+    },
   };
   let logEntries: Array<{ type: string; text: string; time: number }> = [];
   let server: http.Server | null = null;

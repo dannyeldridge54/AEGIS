@@ -69,6 +69,12 @@ export async function parallelOptimize(
     discoveries: [],
     runtime: 0,
     phase: 'exploring',
+    ufe: {
+      totalEvals: 0, usefulEvals: 0, ufeRatio: 0,
+      convergenceVelocity: 0, aucc: 0,
+      timeToTarget: { pct10: null, pct50: null, pct90: null },
+      convergenceCurve: [],
+    },
   };
 
   const startTime = Date.now();

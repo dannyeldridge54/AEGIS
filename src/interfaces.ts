@@ -103,6 +103,8 @@ export interface AgentState {
   runtime: number;
   /** Current phase */
   phase: 'exploring' | 'exploiting' | 'curious' | 'converged';
+  /** UFE metrics tracked throughout the run */
+  ufe: UFEMetrics;
 }
 
 export interface EvalResult {
@@ -114,7 +116,7 @@ export interface EvalResult {
 }
 
 export interface Discovery {
-  type: 'new_best' | 'anomaly' | 'plateau' | 'convergence' | 'constraint_boundary';
+  type: 'new_best' | 'anomaly' | 'plateau' | 'convergence' | 'constraint_boundary' | 'landscape_shift';
   description: string;
   result: EvalResult;
   confidence: number;
@@ -142,6 +144,10 @@ export interface AgentConfig {
   persistence?: { enabled: boolean; path?: string; interval?: number };
   /** Language for output ('en' | 'es' | 'fr' | 'de' | 'ja' | 'zh' | 'pt' | 'ko') */
   language?: string;
+  /** RNG seed for reproducible runs (0 = random seed) */
+  seed?: number;
+  /** Resolution for novelty grid (UFE tracking) */
+  noveltyResolution?: number;
 }
 
 // ─── UFE Metrics ─────────────────────────────────────────────────────────────

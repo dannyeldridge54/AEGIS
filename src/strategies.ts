@@ -4,26 +4,25 @@
  *
  * Implements all optimization strategies + meta-learner that picks
  * the best strategy adaptively based on past performance.
+ * Now with seeded RNG, real gradient estimation, quadratic surrogate,
+ * and eval-count-based annealing.
  */
 
 import {
   ParameterDef, EvalResult, Strategy, StrategyType, Constraint,
 } from './interfaces';
+import { SeededRNG } from './rng';
 
 // ─── Parameter Sampling Helpers ──────────────────────────────────────────────
-
-function randomInRange(min: number, max: number): number {
-  return min + Math.random() * (max - min);
-}
 
 function clamp(val: number, min: number, max: number): number {
   return Math.max(min, Math.min(max, val));
 }
 
-function randomParams(params: ParameterDef[]): Record<string, number> {
+function randomParams(params: ParameterDef[], rng: SeededRNG): Record<string, number> {
   const result: Record<string, number> = {};
   for (const p of params) {
-    result[p.name] = randomInRange(p.min, p.max);
+    result[p.name] = rng.range(p.min, p.max);
   }
   return result;
 }
@@ -57,12 +56,14 @@ export function gridSample(
 export function mutateParams(
   base: Record<string, number>,
   params: ParameterDef[],
-  magnitude: number = 0.1
+  magnitude: number = 0.1,
+  rng?: SeededRNG
 ): Record<string, number> {
   const result: Record<string, number> = {};
   for (const p of params) {
     const range = p.max - p.min;
-    const noise = (Math.random() - 0.5) * 2 * magnitude * range;
+    const r = rng ? rng.random() : Math.random();
+    const noise = (r - 0.5) * 2 * magnitude * range;
     result[p.name] = clamp(base[p.name] + noise, p.min, p.max);
   }
   return result;
@@ -71,40 +72,126 @@ export function mutateParams(
 export function crossover(
   a: Record<string, number>,
   b: Record<string, number>,
-  params: ParameterDef[]
+  params: ParameterDef[],
+  rng?: SeededRNG
 ): Record<string, number> {
   const result: Record<string, number> = {};
   for (const p of params) {
-    result[p.name] = Math.random() < 0.5 ? a[p.name] : b[p.name];
+    result[p.name] = (rng ? rng.random() : Math.random()) < 0.5 ? a[p.name] : b[p.name];
   }
   return result;
 }
 
-export function gradientEstimate(
-  base: Record<string, number>,
+/** Real finite-difference gradient estimation from recent history */
+export function gradientStep(
+  best: EvalResult,
   params: ParameterDef[],
-  scores: Map<string, number>,
-  evaluate: (p: Record<string, number>) => number,
-  stepSize: number = 0.01
+  history: EvalResult[],
+  rng: SeededRNG
 ): Record<string, number> {
-  const result: Record<string, number> = {};
-  for (const p of params) {
-    const range = p.max - p.min;
-    const delta = stepSize * range;
-    const plus = { ...base, [p.name]: clamp(base[p.name] + delta, p.min, p.max) };
-    const minus = { ...base, [p.name]: clamp(base[p.name] - delta, p.min, p.max) };
-    const gradient = (evaluate(plus) - evaluate(minus)) / (2 * delta);
-    result[p.name] = clamp(base[p.name] - gradient * delta * 10, p.min, p.max);
+  if (history.length < params.length * 2) {
+    return mutateParams(best.params, params, 0.05, rng);
   }
+
+  const recent = history.slice(-Math.min(history.length, 50));
+  const result: Record<string, number> = { ...best.params };
+  const lr = 0.1;
+
+  for (const p of params) {
+    // Estimate gradient from nearby points
+    let sumGrad = 0;
+    let count = 0;
+    for (let i = 1; i < recent.length; i++) {
+      const dx = recent[i].params[p.name] - recent[i - 1].params[p.name];
+      const dy = recent[i].score - recent[i - 1].score;
+      if (Math.abs(dx) > 1e-12) {
+        sumGrad += dy / dx;
+        count++;
+      }
+    }
+
+    if (count > 0) {
+      const grad = sumGrad / count;
+      const range = p.max - p.min;
+      result[p.name] = clamp(
+        best.params[p.name] - lr * grad * range * 0.1,
+        p.min, p.max,
+      );
+    } else {
+      result[p.name] = clamp(
+        best.params[p.name] + rng.normal(0, (p.max - p.min) * 0.02),
+        p.min, p.max,
+      );
+    }
+  }
+
+  return result;
+}
+
+/** Quadratic surrogate model for bayesian strategy */
+export function surrogateStep(
+  best: EvalResult,
+  params: ParameterDef[],
+  history: EvalResult[],
+  rng: SeededRNG
+): Record<string, number> {
+  if (history.length < 10) {
+    return randomParams(params, rng);
+  }
+
+  const recent = history.slice(-Math.min(history.length, 100));
+  const result: Record<string, number> = {};
+
+  for (const p of params) {
+    // Fit quadratic: score ≈ a*x² + b*x + c per dimension
+    let sumX = 0, sumX2 = 0, sumX3 = 0, sumX4 = 0;
+    let sumY = 0, sumXY = 0, sumX2Y = 0;
+    const n = recent.length;
+
+    for (const r of recent) {
+      const x = r.params[p.name];
+      const y = r.score;
+      sumX += x; sumX2 += x * x; sumX3 += x * x * x; sumX4 += x * x * x * x;
+      sumY += y; sumXY += x * y; sumX2Y += x * x * y;
+    }
+
+    // Solve least-squares for quadratic coefficients
+    const det = n * (sumX2 * sumX4 - sumX3 * sumX3)
+      - sumX * (sumX * sumX4 - sumX3 * sumX2)
+      + sumX2 * (sumX * sumX3 - sumX2 * sumX2);
+
+    if (Math.abs(det) > 1e-20) {
+      const a = (sumY * (sumX2 * sumX4 - sumX3 * sumX3)
+        - sumXY * (sumX * sumX4 - sumX3 * sumX2)
+        + sumX2Y * (sumX * sumX3 - sumX2 * sumX2)) / det;
+
+      const b = (n * (sumXY * sumX4 - sumX2Y * sumX3)
+        - sumY * (sumX * sumX4 - sumX3 * sumX2)
+        + sumX2 * (sumX * sumX2Y - sumXY * sumX2)) / det;
+
+      // Predicted minimum at x = -b/(2a) if a > 0
+      if (a > 1e-12) {
+        const xMin = clamp(-b / (2 * a), p.min, p.max);
+        // Add small noise around predicted minimum
+        result[p.name] = clamp(xMin + rng.normal(0, (p.max - p.min) * 0.05), p.min, p.max);
+      } else {
+        result[p.name] = rng.range(p.min, p.max);
+      }
+    } else {
+      result[p.name] = rng.range(p.min, p.max);
+    }
+  }
+
   return result;
 }
 
 export function annealingSample(
   best: Record<string, number>,
   params: ParameterDef[],
-  temperature: number
+  temperature: number,
+  rng?: SeededRNG
 ): Record<string, number> {
-  return mutateParams(best, params, temperature);
+  return mutateParams(best, params, temperature, rng);
 }
 
 export function swarmUpdate(
@@ -113,6 +200,7 @@ export function swarmUpdate(
   personalBest: Record<string, number>,
   globalBest: Record<string, number>,
   params: ParameterDef[],
+  rng?: SeededRNG,
   inertia: number = 0.7,
   cognitive: number = 1.5,
   social: number = 1.5
@@ -121,8 +209,8 @@ export function swarmUpdate(
   const newPos: Record<string, number> = {};
 
   for (const p of params) {
-    const r1 = Math.random();
-    const r2 = Math.random();
+    const r1 = rng ? rng.random() : Math.random();
+    const r2 = rng ? rng.random() : Math.random();
     newVel[p.name] = inertia * (velocity[p.name] || 0)
       + cognitive * r1 * ((personalBest[p.name] || position[p.name]) - position[p.name])
       + social * r2 * ((globalBest[p.name] || position[p.name]) - position[p.name]);
@@ -137,9 +225,9 @@ export function swarmUpdate(
 export function noveltySample(
   params: ParameterDef[],
   history: EvalResult[],
-  resolution: number = 20
+  resolution: number = 20,
+  rng?: SeededRNG
 ): Record<string, number> {
-  // Discretize space and find least-visited region
   const bins = new Map<string, number>();
 
   for (const entry of history) {
@@ -150,12 +238,11 @@ export function noveltySample(
     bins.set(key, (bins.get(key) || 0) + 1);
   }
 
-  // Sample from least-visited regions
-  let bestKey = '';
   let minVisits = Infinity;
+  let bestCandidate: Record<string, number> | null = null;
 
   for (let attempt = 0; attempt < 100; attempt++) {
-    const candidate = randomParams(params);
+    const candidate = randomParams(params, rng || new SeededRNG());
     const key = params.map(p => {
       const normalized = (candidate[p.name] - p.min) / (p.max - p.min);
       return Math.floor(normalized * resolution);
@@ -163,13 +250,12 @@ export function noveltySample(
     const visits = bins.get(key) || 0;
     if (visits < minVisits) {
       minVisits = visits;
-      bestKey = key;
+      bestCandidate = candidate;
       if (visits === 0) return candidate;
     }
   }
 
-  // Return random point in least-visited bin
-  return randomParams(params);
+  return bestCandidate || randomParams(params, rng || new SeededRNG());
 }
 
 // ─── Meta-Learner (picks best strategy) ──────────────────────────────────────
@@ -177,9 +263,11 @@ export function noveltySample(
 export class MetaLearner {
   private strategies: Strategy[];
   private explorationRate: number;
+  private rng: SeededRNG;
 
-  constructor(strategyTypes: StrategyType[], explorationRate: number = 0.3) {
+  constructor(strategyTypes: StrategyType[], explorationRate: number = 0.3, rng?: SeededRNG) {
     this.explorationRate = explorationRate;
+    this.rng = rng || new SeededRNG();
     this.strategies = strategyTypes.map(type => ({
       type,
       score: 1.0,
@@ -209,17 +297,15 @@ export class MetaLearner {
   selectStrategy(): Strategy {
     const totalUses = this.strategies.reduce((s, st) => s + st.uses, 0) || 1;
 
-    // Exploration: random pick
-    if (Math.random() < this.explorationRate) {
-      return this.strategies[Math.floor(Math.random() * this.strategies.length)];
+    if (this.rng.random() < this.explorationRate) {
+      return this.rng.pick(this.strategies);
     }
 
-    // UCB1 selection
     let best: Strategy | null = null;
     let bestUCB = -Infinity;
 
     for (const s of this.strategies) {
-      if (s.uses === 0) return s; // Try unused strategies first
+      if (s.uses === 0) return s;
       const exploitation = s.avgImprovement;
       const exploration = Math.sqrt(2 * Math.log(totalUses) / s.uses);
       const ucb = exploitation + exploration;
@@ -232,7 +318,6 @@ export class MetaLearner {
     return best || this.strategies[0];
   }
 
-  /** Update strategy performance after evaluation */
   updateStrategy(type: StrategyType, improvement: number): void {
     const s = this.strategies.find(st => st.type === type);
     if (!s) return;
@@ -254,52 +339,65 @@ export function generateNextPoint(
   best: EvalResult | null,
   history: EvalResult[],
   constraints?: Constraint[],
-  gridIndex?: number
+  gridIndex?: number,
+  rng?: SeededRNG,
+  evalCount?: number
 ): Record<string, number> {
   let candidate: Record<string, number>;
   const maxAttempts = 50;
+  const r = rng || new SeededRNG();
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
     switch (strategy.type) {
       case 'grid':
-        candidate = gridSample(params, strategy.config.resolution || 20, gridIndex || Math.floor(Math.random() * 10000));
+        candidate = gridSample(params, strategy.config.resolution || 20, gridIndex || r.int(0, 9999));
         break;
       case 'random':
-        candidate = randomParams(params);
+        candidate = randomParams(params, r);
         break;
       case 'evolutionary':
         if (best && history.length > 2) {
-          const parent2 = history[Math.floor(Math.random() * Math.min(history.length, 10))];
-          candidate = mutateParams(crossover(best.params, parent2.params, params), params, strategy.config.mutationRate || 0.1);
+          const parent2 = history[r.int(0, Math.min(history.length - 1, 9))];
+          candidate = mutateParams(crossover(best.params, parent2.params, params, r), params, strategy.config.mutationRate || 0.1, r);
         } else {
-          candidate = randomParams(params);
+          candidate = randomParams(params, r);
         }
         break;
       case 'gradient':
-        if (best) {
-          candidate = mutateParams(best.params, params, 0.05);
+        // Real finite-difference gradient estimation
+        if (best && history.length > params.length * 2) {
+          candidate = gradientStep(best, params, history, r);
         } else {
-          candidate = randomParams(params);
+          candidate = best ? mutateParams(best.params, params, 0.05, r) : randomParams(params, r);
+        }
+        break;
+      case 'bayesian':
+        // Quadratic surrogate model
+        if (best && history.length > 10) {
+          candidate = surrogateStep(best, params, history, r);
+        } else {
+          candidate = randomParams(params, r);
         }
         break;
       case 'annealing': {
-        const temp = (strategy.config.initialTemp || 1.0) * Math.pow(strategy.config.coolingRate || 0.995, history.length);
-        candidate = best ? annealingSample(best.params, params, temp) : randomParams(params);
+        // Eval-count-based temperature (not history.length which resets on trim)
+        const evals = evalCount || history.length;
+        const temp = (strategy.config.initialTemp || 1.0) * Math.pow(strategy.config.coolingRate || 0.995, evals);
+        candidate = best ? annealingSample(best.params, params, temp, r) : randomParams(params, r);
         break;
       }
       case 'curiosity':
-        candidate = noveltySample(params, history);
+        candidate = noveltySample(params, history, 20, r);
         break;
       case 'exploit':
-        candidate = best ? mutateParams(best.params, params, strategy.config.mutationMagnitude || 0.02) : randomParams(params);
+        candidate = best ? mutateParams(best.params, params, strategy.config.mutationMagnitude || 0.02, r) : randomParams(params, r);
         break;
       case 'swarm':
-        candidate = best ? mutateParams(best.params, params, 0.15) : randomParams(params);
+        candidate = best ? mutateParams(best.params, params, 0.15, r) : randomParams(params, r);
         break;
-      case 'bayesian':
       case 'bandit':
       default:
-        candidate = best ? mutateParams(best.params, params, 0.1) : randomParams(params);
+        candidate = best ? mutateParams(best.params, params, 0.1, r) : randomParams(params, r);
         break;
     }
 
@@ -308,6 +406,5 @@ export function generateNextPoint(
     }
   }
 
-  // Fallback to random valid point
-  return randomParams(params);
+  return randomParams(params, r);
 }

@@ -4,13 +4,16 @@
  *
  * The main autonomous agent that self-learns, adapts strategies,
  * and optimizes any objective with zero configuration.
+ * Now with seeded RNG, UFE tracking, and anomaly detection.
  */
 
 import {
   Task, Goal, AgentConfig, AgentState, EvalResult,
-  Discovery, AgentEvent, EventHandler, StrategyType,
+  Discovery, AgentEvent, EventHandler, StrategyType, UFEMetrics,
 } from './interfaces';
 import { MetaLearner, generateNextPoint } from './strategies';
+import { SeededRNG } from './rng';
+import { UFETracker, AnomalyDetector } from './ufe';
 import { getMessages, formatDuration } from './language';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -27,6 +30,8 @@ const DEFAULT_CONFIG: Required<AgentConfig> = {
   verbosity: 'normal',
   persistence: { enabled: false, path: './aegis-state.json', interval: 60 },
   language: 'en',
+  seed: 0,
+  noveltyResolution: 20,
 };
 
 // ─── AEGIS Agent ─────────────────────────────────────────────────────────────
@@ -43,16 +48,33 @@ export class AegisAgent {
   private lastBestTime = 0;
   private gridIndex = 0;
   private msg;
+  private rng: SeededRNG;
+  private ufeTracker: UFETracker;
+  private anomalyDetector: AnomalyDetector;
 
   constructor(task: Task, config?: AgentConfig) {
     this.task = task;
     this.config = { ...DEFAULT_CONFIG, ...config } as Required<AgentConfig>;
     this.msg = getMessages(this.config.language);
 
+    // Seeded RNG — deterministic if seed provided
+    this.rng = new SeededRNG(this.config.seed || undefined);
+
     this.metaLearner = new MetaLearner(
       this.config.strategies,
-      this.config.explorationRate
+      this.config.explorationRate,
+      this.rng.fork(),
     );
+
+    const minimize = this.isMinimizing();
+
+    this.ufeTracker = new UFETracker(
+      this.task.parameters,
+      minimize,
+      this.config.noveltyResolution,
+    );
+
+    this.anomalyDetector = new AnomalyDetector(50);
 
     this.state = {
       best: null,
@@ -62,6 +84,12 @@ export class AegisAgent {
       discoveries: [],
       runtime: 0,
       phase: 'exploring',
+      ufe: {
+        totalEvals: 0, usefulEvals: 0, ufeRatio: 0,
+        convergenceVelocity: 0, aucc: 0,
+        timeToTarget: { pct10: null, pct50: null, pct90: null },
+        convergenceCurve: [],
+      },
     };
   }
 
@@ -74,14 +102,14 @@ export class AegisAgent {
   }
 
   /** Run the agent (async, runs until convergence or maxEvals) */
-  async run(): Promise<AgentState> {
+  async run(optimum?: number): Promise<AgentState> {
     this.running = true;
     this.startTime = Date.now();
     this.lastReportTime = this.startTime;
     this.lastBestTime = this.startTime;
 
     this.emit({ type: 'started', config: this.config });
-    this.log(this.msg.started);
+    this.log(`${this.msg.started} (seed=${this.rng.seed})`);
     this.log(`  Task: ${this.task.name} (${this.task.parameters.length} params)`);
 
     while (this.running) {
@@ -111,6 +139,7 @@ export class AegisAgent {
     // Final state
     this.state.runtime = (Date.now() - this.startTime) / 1000;
     this.state.strategies = this.metaLearner.getStrategies();
+    this.state.ufe = this.ufeTracker.getMetrics(optimum);
 
     if (this.config.persistence.enabled) {
       this.saveState();
@@ -128,7 +157,9 @@ export class AegisAgent {
       this.state.best,
       this.state.history,
       this.task.constraints,
-      this.gridIndex++
+      this.gridIndex++,
+      this.rng.fork(),
+      this.state.totalEvals,
     );
 
     const score = await this.task.evaluate(params);
@@ -145,6 +176,31 @@ export class AegisAgent {
       this.state.history = this.state.history.slice(-2500);
     }
 
+    // UFE tracking
+    const ufeResult = this.ufeTracker.record(result);
+
+    // Anomaly detection
+    const anomaly = this.anomalyDetector.check(score);
+    if (anomaly) {
+      anomaly.result = result;
+      this.state.discoveries.push(anomaly);
+      this.emit({ type: 'discovery', discovery: anomaly });
+    }
+
+    // Plateau and shift detection (periodic)
+    if (this.state.totalEvals % 100 === 0) {
+      const plateau = this.anomalyDetector.checkPlateau();
+      if (plateau) {
+        this.state.discoveries.push(plateau);
+        this.emit({ type: 'discovery', discovery: plateau });
+      }
+      const shift = this.anomalyDetector.checkShift();
+      if (shift) {
+        this.state.discoveries.push(shift);
+        this.emit({ type: 'discovery', discovery: shift });
+      }
+    }
+
     // Track improvement (supports both minimize and maximize goals)
     const minimize = this.isMinimizing();
     const previousBest = this.state.best?.score ?? (minimize ? Infinity : -Infinity);
@@ -157,8 +213,8 @@ export class AegisAgent {
 
       // Normalize reward to avoid Infinity poisoning the UCB1 meta-learner
       const reward = this.state.totalEvals === 1
-        ? 1.0 // First eval gets a fixed baseline reward
-        : Math.min(Math.max(improvement, 0.001), 100); // Clamp to [0.001, 100]
+        ? 1.0
+        : Math.min(Math.max(improvement, 0.001), 100);
       this.metaLearner.updateStrategy(strategy.type, reward);
 
       this.emit({ type: 'new_best', result, improvement: Math.max(improvement, 0) });
@@ -194,13 +250,18 @@ export class AegisAgent {
   stop(reason: string = 'User requested'): void {
     this.running = false;
     this.state.runtime = (Date.now() - this.startTime) / 1000;
+    this.state.ufe = this.ufeTracker.getMetrics();
     this.emit({ type: 'stopped', reason, state: this.state });
     this.log(`${this.msg.stopped} ${reason}`);
   }
 
   /** Get current state */
   getState(): AgentState {
-    return { ...this.state, runtime: (Date.now() - this.startTime) / 1000 };
+    return {
+      ...this.state,
+      runtime: (Date.now() - this.startTime) / 1000,
+      ufe: this.ufeTracker.getMetrics(),
+    };
   }
 
   /** Change language at runtime */
@@ -211,7 +272,6 @@ export class AegisAgent {
 
   // ─── Internal ────────────────────────────────────────────────────────────
 
-  /** Determine if we're minimizing based on goal config */
   private isMinimizing(): boolean {
     const goal = this.config.goal;
     if (!goal) return true;
@@ -247,7 +307,6 @@ export class AegisAgent {
     if (this.state.totalEvals < 200) return false;
     if (!this.state.best) return false;
 
-    // No improvement in last 500 evals
     const recentWindow = this.state.history.slice(-500);
     if (recentWindow.length < 500) return false;
 
@@ -264,8 +323,9 @@ export class AegisAgent {
     const best = this.state.best?.score.toFixed(6) ?? 'N/A';
     const strategies = this.metaLearner.getStrategies();
     const topStrategy = strategies[0];
+    const ufe = this.ufeTracker.getMetrics();
 
-    this.log(`${this.msg.progress} ${this.state.totalEvals} ${this.msg.evalCount} | ${this.msg.bestScore}: ${best} | ${this.msg.timeElapsed}: ${elapsed} | Top: ${topStrategy.type}`);
+    this.log(`${this.msg.progress} ${this.state.totalEvals} ${this.msg.evalCount} | ${this.msg.bestScore}: ${best} | UFE: ${(ufe.ufeRatio * 100).toFixed(1)}% | ${this.msg.timeElapsed}: ${elapsed} | Top: ${topStrategy.type}`);
     this.emit({ type: 'report', state: this.getState() });
   }
 
@@ -290,34 +350,10 @@ export class AegisAgent {
 
 // ─── Quick-Start Factory ─────────────────────────────────────────────────────
 
-/**
- * Create an AEGIS agent with minimal setup.
- *
- * @example
- * const agent = aegis({
- *   name: 'tune-model',
- *   evaluate: (p) => myModel.loss(p.lr, p.dropout),
- *   parameters: [
- *     { name: 'lr', min: 0.0001, max: 0.1 },
- *     { name: 'dropout', min: 0, max: 0.5 },
- *   ],
- * });
- * const result = await agent.run();
- */
 export function aegis(task: Task, config?: AgentConfig): AegisAgent {
   return new AegisAgent(task, config);
 }
 
-/**
- * One-liner: run AEGIS and return the best result.
- *
- * @example
- * const best = await optimize(
- *   (p) => (p.x - 3)**2 + (p.y + 1)**2,
- *   [{ name: 'x', min: -10, max: 10 }, { name: 'y', min: -10, max: 10 }]
- * );
- * console.log(best.params); // { x: ~3, y: ~-1 }
- */
 export async function optimize(
   fn: (params: Record<string, number>) => number | Promise<number>,
   parameters: Array<{ name: string; min: number; max: number; description?: string }>,

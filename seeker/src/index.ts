@@ -64,3 +64,6 @@ export { plugins, StrategyPlugin, ReporterPlugin, TransformPlugin, latinHypercub
 
 // Warm Start
 export { saveCheckpoint, loadCheckpoint, autoSave, warmStartFrom, WarmStartData } from './warm-start';
+
+// Live Monitor
+export { LiveMonitor, createMonitor, Alert, AlertSeverity, MonitorConfig, MonitorSnapshot, RunTracker } from './monitor';
