@@ -1,0 +1,34 @@
+{
+  "name": "@aegis/optimizer",
+  "version": "1.0.0",
+  "description": "AEGIS — Autonomous dual-engine optimizer with cross-pollination. Zero-config optimization for any objective function.",
+  "main": "index.js",
+  "author": "Danny Lee Eldridge",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "optimization",
+    "metaheuristic",
+    "autonomous",
+    "dual-engine",
+    "cross-pollination",
+    "parameter-tuning",
+    "hyperparameter",
+    "evolutionary",
+    "swarm",
+    "bayesian",
+    "gradient-free",
+    "black-box"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dannyeldridge54/AEGIS"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "index.js",
+    "examples/",
+    "README.md"
+  ]
+}
