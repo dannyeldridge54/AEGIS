@@ -178,43 +178,45 @@ const levyN13 = () => ({
 });
 
 // Ordered: small/easy → large/hard
+// 50/50 split: torsion tasks interleaved with benchmarks at every difficulty tier
 const tasksByDifficulty = [
-  // ── Easy (low dim, smooth) ────────────────────────────────────────────────
+  // ── Easy tier ─────────────────────────────────────────────────────────────
   sphere(2),
+  aegis.einsteinCartanTask,                          // EC — small param space
   rosenbrock(2),
+  aegis.fTGravityTask,                               // f(T) — 5 params, well-constrained
   levyN13(),
-  sphere(5),
+  aegis.ufeTorsionTask,                              // UFE Mexican hat — 8 params
 
-  // ── Medium (mid dim or multimodal) ────────────────────────────────────────
+  // ── Medium tier ───────────────────────────────────────────────────────────
   ackley(3),
+  aegis.torsionWaveTask,                             // Wave dispersion — 7 params
   rosenbrock(5),
+  aegis.crossDomainTask,                             // Cross-domain unified — 10 params
   styblinskiTang(3),
+  aegis.einsteinCartanTask,                          // EC again with different spectrum slot
   rastrigin(3),
-  griewank(3),
-  schwefel(3),
+  aegis.fTGravityTask,                               // f(T) again
 
-  // ── Hard (high dim, deceptive) ────────────────────────────────────────────
+  // ── Hard tier ─────────────────────────────────────────────────────────────
   ackley(5),
+  aegis.ufeTorsionTask,                              // UFE again — harder spectrum profile
   rastrigin(5),
+  aegis.torsionWaveTask,                             // Wave again
   rosenbrock(10),
-  styblinskiTang(5),
-  griewank(5),
-  schwefel(5),
+  aegis.crossDomainTask,                             // Cross-domain again
 
-  // ── Extreme (high dim, wide range) ────────────────────────────────────────
+  // ── Extreme tier ──────────────────────────────────────────────────────────
   sphere(20),
+  aegis.crossDomainTask,                             // Cross-domain — most budget here
   ackley(8),
+  aegis.ufeTorsionTask,                              // UFE — third pass, extreme exploitation
   rastrigin(10),
-  rosenbrock(2, 50),    // scaled wide
-  rastrigin(5, 20),     // scaled wide
-  ackley(3, 30),        // scaled wide
-
-  // ── Torsion Field Theory ──────────────────────────────────────────────────
-  aegis.einsteinCartanTask,
-  aegis.fTGravityTask,
-  aegis.ufeTorsionTask,
-  aegis.torsionWaveTask,
-  aegis.crossDomainTask,
+  aegis.einsteinCartanTask,                          // EC — extreme
+  schwefel(5),
+  aegis.fTGravityTask,                               // f(T) — extreme
+  griewank(5),
+  aegis.torsionWaveTask,                             // Wave — extreme
 ];
 
 const TASK_COUNT = tasksByDifficulty.length;
