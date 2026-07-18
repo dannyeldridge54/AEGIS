@@ -665,23 +665,43 @@ export function ufeTorsionFunctional(params: Record<string, number>): number {
   if (Math.abs(kappa_f) > 4 * Math.PI) penalty += 10 * (Math.abs(kappa_f) - 4 * Math.PI) ** 2;
 
   // 4. Cosmological bound: Ω_T should contribute to but not exceed dark energy
-  // Target: Ω_T ≈ 0.68 (Planck 2018 dark energy fraction)
   const omega_target = 0.68;
   const cosmoPenalty = (Omega_T - omega_target) ** 2;
 
-  // 5. Non-trivial VEV: reward configurations where T₀ ≈ ±T_vev
-  const vevResidual = T_vev > 0 ? ((Math.abs(T0) - T_vev) / (T_vev + 1e-30)) ** 2 : 10;
+  // 5. NON-TRIVIAL TORSION — hard log-barrier near T₀ = 0
+  // The whole point is to find T₀ ≈ ±T_vev, NOT T₀ = 0.
+  // Log-barrier: blows up as |T₀| → 0, forcing optimizer away from vacuum.
+  const absT0 = Math.abs(T0);
+  const T0_floor = 1e-20; // absolute minimum — below this is numerical noise
+  const logBarrier = absT0 > T0_floor
+    ? 100 * Math.max(0, -Math.log10(absT0) - 5) ** 2  // penalize |T₀| < 1e-5
+    : 1e6; // nuclear option: T₀ at machine epsilon → massive penalty
 
-  // 6. BBN consistency: torsion mass must be large enough to decouple
-  //    before nucleosynthesis. m_T > T_BBN ~ 1 MeV ~ 5.07e9 m⁻¹
+  // 6. VEV proximity: T₀ must sit near the VEV, not at zero
+  // Weight 10x (was 0.1x — that's why optimizer cheated)
+  const vevResidual = T_vev > 0
+    ? ((absT0 - T_vev) / (T_vev + 1e-30)) ** 2
+    : 100; // no VEV possible → heavy penalty (forces μ²>0, λ>0)
+
+  // 7. Minimum VEV scale: T_vev must be physically meaningful
+  // Below ~1e-15 (natural units) torsion is unobservable
+  const minVevScale = 1e-15;
+  const vevScalePenalty = T_vev > 0 && T_vev < minVevScale
+    ? 50 * (Math.log10(minVevScale / T_vev)) ** 2
+    : 0;
+
+  // 8. BBN consistency: torsion mass must decouple before nucleosynthesis
   const m_T = Math.sqrt(Math.max(0, m_T2));
   const bbnScale = 5.07e9;
   const bbnPenalty = m_T < bbnScale ? (1 - m_T / bbnScale) ** 2 : 0;
 
-  // ── Cost function: find non-trivial solutions to the field equation ──
-  // that satisfy all physical constraints and produce interesting cosmology
+  // ── Cost function: find NON-TRIVIAL solutions to the field equation ──
+  // The log-barrier and VEV proximity are weighted heavily to prevent
+  // the optimizer from collapsing to the trivial T₀=0 vacuum.
   return fieldResidual
-    + 0.1 * vevResidual
+    + 10 * vevResidual      // 100x stronger than before
+    + logBarrier             // hard wall against T₀→0
+    + vevScalePenalty        // VEV must be physically real
     + penalty
     + 0.5 * cosmoPenalty
     + 0.3 * bbnPenalty;
@@ -767,15 +787,26 @@ export function crossDomainUFE(params: Record<string, number>): number {
     ? ((T_scalar * T_scalar - Math.abs(T_cosmo)) / (Math.abs(T_cosmo) + 1e-30)) ** 2
     : 0;
 
-  // VEV must be within observational bounds
+  // VEV must be within observational bounds AND physically meaningful
   const vev_penalty = T_vev > 0
-    ? Math.max(0, Math.log10(T_vev) - (-10)) ** 2 // log₁₀(T_vev) < -10
-    : 5;
+    ? Math.max(0, Math.log10(T_vev) - (-10)) ** 2
+    : 50; // no VEV → heavy penalty
 
   // Mexican hat stability
   let stability_penalty = 0;
   if (mu2 <= 0) stability_penalty += 20;
   if (lambda_quartic <= 0) stability_penalty += 20;
+
+  // Non-trivial torsion barrier: T_scalar must not collapse to zero
+  const absT = Math.abs(T_scalar);
+  const crossLogBarrier = absT > 1e-20
+    ? 50 * Math.max(0, -Math.log10(absT) - 5) ** 2
+    : 1e5;
+
+  // VEV proximity: T_scalar should be near the VEV, not zero
+  const crossVevResidual = T_vev > 1e-20
+    ? 5 * ((absT - T_vev) / (T_vev + 1e-30)) ** 2
+    : 50;
 
   // ── Total unified cost ──
   return ec_residual
@@ -784,7 +815,9 @@ export function crossDomainUFE(params: Record<string, number>): number {
     + 0.2 * source_residual
     + 0.1 * ec_fT_consistency
     + vev_penalty
-    + stability_penalty;
+    + stability_penalty
+    + crossLogBarrier
+    + crossVevResidual;
 }
 
 /**
@@ -899,20 +932,20 @@ export const fTGravityTask: Task = {
   ],
 };
 
-/** UFE torsion field theory task — v2 with Mexican hat + fermion sources */
+/** UFE torsion field theory task — v3 with hard non-trivial barriers */
 export const ufeTorsionTask: Task = {
   id: 'ufe-torsion',
-  name: 'UFE Torsion Field (Mexican Hat)',
+  name: 'UFE Torsion Field (Mexican Hat v3)',
   evaluate: ufeTorsionFunctional,
   parameters: [
-    { name: 'mu2', min: 0.01, max: 1e20, description: 'μ² mass parameter (symmetry breaking scale)' },
-    { name: 'lambda', min: 0.001, max: 10, description: 'λ quartic coupling' },
+    { name: 'mu2', min: 1e-5, max: 1e20, description: 'μ² mass parameter (must be positive for SSB)' },
+    { name: 'lambda', min: 1e-4, max: 10, description: 'λ quartic coupling (must be positive)' },
     { name: 'gamma', min: 0.01, max: 10, description: 'γ kinetic/gradient term' },
     { name: 'epsilon', min: -2, max: 2, description: 'ε curvature-torsion mixing' },
     { name: 'kappa_f', min: -10, max: 10, description: 'κ_f fermion axial coupling' },
     { name: 'kappa_g', min: -5, max: 5, description: 'κ_g graviton-torsion coupling' },
-    { name: 'T0', min: -1e-5, max: 1e-5, description: 'Background torsion field' },
-    { name: 'nDensity', min: 0, max: 1e6, description: 'Fermion number density (natural units)' },
+    { name: 'T0', min: 1e-12, max: 1e-3, description: 'Background torsion (forced non-zero)' },
+    { name: 'nDensity', min: 1, max: 1e6, description: 'Fermion number density (natural units)' },
   ],
 };
 
@@ -932,16 +965,16 @@ export const torsionWaveTask: Task = {
   ],
 };
 
-/** Cross-domain unified torsion task — links all 4 sectors */
+/** Cross-domain unified torsion task — v3 with non-trivial barriers */
 export const crossDomainTask: Task = {
   id: 'ufe-cross-domain',
-  name: 'UFE Cross-Domain Unified',
+  name: 'UFE Cross-Domain Unified v3',
   evaluate: crossDomainUFE,
   parameters: [
-    { name: 'T_scalar', min: -1, max: 1, description: 'Torsion scalar magnitude' },
-    { name: 'mu2', min: 0.01, max: 1e10, description: 'μ² mass parameter' },
-    { name: 'lambda_quartic', min: 0.001, max: 5, description: 'Quartic self-coupling' },
-    { name: 'spinDensity', min: 0, max: 1e15, description: 'Spin source' },
+    { name: 'T_scalar', min: 1e-10, max: 1, description: 'Torsion scalar magnitude (forced non-zero)' },
+    { name: 'mu2', min: 1e-3, max: 1e10, description: 'μ² mass parameter (positive for SSB)' },
+    { name: 'lambda_quartic', min: 1e-3, max: 5, description: 'Quartic self-coupling (positive)' },
+    { name: 'spinDensity', min: 1, max: 1e15, description: 'Spin source (non-zero)' },
     { name: 'ec_coupling', min: -5, max: 5, description: 'EC torsion-curvature coupling' },
     { name: 'fT_alpha', min: -3, max: 3, description: 'f(T) amplitude' },
     { name: 'fT_n', min: 0.5, max: 2.5, description: 'f(T) power law index' },
