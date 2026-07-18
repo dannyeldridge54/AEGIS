@@ -32,3 +32,10 @@ export { generateDocs, writeDocs, DocConfig } from './auto-docs';
 export { runBenchmarks, benchmarkFunctions, BenchmarkResult } from './benchmarks';
 export { AegisDaemon, DaemonConfig, DaemonJob, startDaemon } from './daemon';
 export { LiveMonitor, createMonitor, Alert, AlertSeverity, MonitorConfig, MonitorSnapshot, RunTracker } from './monitor';
+export {
+  torsionTasks, einsteinCartanTask, fTGravityTask, ufeTorsionTask, torsionWaveTask,
+  einsteinCartanResidual, fTCosmologyResidual, ufeTorsionFunctional, torsionWaveResidual,
+  fTGravity_PowerLaw, fTGravity_BornInfeld, fTGravity_Logarithmic, fTGravity_Exponential,
+  computeTorsionScalar, computeTraceVector, computeAxialTorsion,
+  TorsionTensor, ContorsionTensor,
+} from './torsion';

@@ -67,3 +67,12 @@ export { saveCheckpoint, loadCheckpoint, autoSave, warmStartFrom, WarmStartData 
 
 // Live Monitor
 export { LiveMonitor, createMonitor, Alert, AlertSeverity, MonitorConfig, MonitorSnapshot, RunTracker } from './monitor';
+
+// Torsion Field Theory
+export {
+  torsionTasks, einsteinCartanTask, fTGravityTask, ufeTorsionTask, torsionWaveTask,
+  einsteinCartanResidual, fTCosmologyResidual, ufeTorsionFunctional, torsionWaveResidual,
+  fTGravity_PowerLaw, fTGravity_BornInfeld, fTGravity_Logarithmic, fTGravity_Exponential,
+  computeTorsionScalar, computeTraceVector, computeAxialTorsion,
+  TorsionTensor, ContorsionTensor,
+} from './torsion';

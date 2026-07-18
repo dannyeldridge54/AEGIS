@@ -1,6 +1,7 @@
 /**
  * AEGIS + Seeker — 24/7 Dual Runner with Live Monitoring
  * Runs both engines continuously with live dashboards.
+ * Now includes torsion field theory optimization.
  *
  * AEGIS Monitor: http://localhost:5555
  * Seeker Monitor: http://localhost:5556
@@ -9,9 +10,9 @@
 const aegis = require('./dist/index.js');
 const seeker = require('./seeker/dist/index.js');
 
-// ─── Benchmark Tasks ─────────────────────────────────────────────────────────
+// ─── Standard Benchmark Tasks ────────────────────────────────────────────────
 
-const tasks = [
+const standardTasks = [
   {
     id: 'rosenbrock', name: 'Rosenbrock 2D',
     evaluate: (p) => Math.pow(1 - p.x, 2) + 100 * Math.pow(p.y - p.x * p.x, 2),
@@ -44,21 +45,20 @@ const tasks = [
     ],
     optimum: 0,
   },
-  {
-    id: 'schwefel', name: 'Schwefel 4D',
-    evaluate: (p) => {
-      const keys = Object.keys(p), n = keys.length;
-      return 418.9829 * n - keys.reduce((s, k) => s + p[k] * Math.sin(Math.sqrt(Math.abs(p[k]))), 0);
-    },
-    parameters: [
-      { name: 'x1', min: -500, max: 500 }, { name: 'x2', min: -500, max: 500 },
-      { name: 'x3', min: -500, max: 500 }, { name: 'x4', min: -500, max: 500 },
-    ],
-    optimum: 0,
-  },
 ];
 
-// ─── Launch AEGIS ────────────────────────────────────────────────────────────
+// ─── Torsion Tasks (loaded from the torsion module) ──────────────────────────
+
+const torsionTasks = [
+  aegis.einsteinCartanTask,
+  aegis.fTGravityTask,
+  aegis.ufeTorsionTask,
+  aegis.torsionWaveTask,
+];
+
+const allTasks = [...standardTasks, ...torsionTasks];
+
+// ─── Launch ──────────────────────────────────────────────────────────────────
 
 console.log(`
 ╔═══════════════════════════════════════════════════════════════════╗
@@ -68,9 +68,13 @@ console.log(`
 ║    / ___ \\| |__| |_| || | ___) |     Discovery Engine            ║
 ║   /_/   \\_\\_____\\____|___|____/                                  ║
 ║                                                                   ║
-║   24/7 Dual Engine — Live Monitoring                             ║
+║   24/7 Dual Engine — Live Monitoring + Torsion Field Theory      ║
+║                                                                   ║
 ║   AEGIS  Monitor: http://localhost:5555                           ║
 ║   Seeker Monitor: http://localhost:5556                           ║
+║                                                                   ║
+║   Tasks: Rosenbrock | Rastrigin | Ackley                         ║
+║          Einstein-Cartan | f(T) Gravity | UFE Torsion | Waves    ║
 ╚═══════════════════════════════════════════════════════════════════╝
 `);
 
@@ -85,7 +89,7 @@ let seekerRun = 0;
 
 async function runAegisLoop() {
   while (true) {
-    for (const task of tasks) {
+    for (const task of allTasks) {
       aegisRun++;
       const runId = `aegis-${task.id}-${aegisRun}`;
       const runName = `AEGIS: ${task.name} #${aegisRun}`;
@@ -99,16 +103,14 @@ async function runAegisLoop() {
       agent.on(aegisMonitor.createHandler(runId));
 
       await agent.run(task.optimum);
-
-      // Brief pause between runs
-      await new Promise(r => setTimeout(r, 3000));
+      await new Promise(r => setTimeout(r, 2000));
     }
   }
 }
 
 async function runSeekerLoop() {
   while (true) {
-    for (const task of tasks) {
+    for (const task of allTasks) {
       seekerRun++;
       const runId = `seeker-${task.id}-${seekerRun}`;
       const runName = `Seeker: ${task.name} #${seekerRun}`;
@@ -122,8 +124,7 @@ async function runSeekerLoop() {
       agent.on(seekerMonitor.createHandler(runId));
 
       await agent.run(task.optimum);
-
-      await new Promise(r => setTimeout(r, 3000));
+      await new Promise(r => setTimeout(r, 2000));
     }
   }
 }
