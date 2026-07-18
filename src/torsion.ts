@@ -756,7 +756,7 @@ export function crossDomainUFE(params: Record<string, number>): number {
   const G = 6.674e-11;
   const ec_source = 8 * Math.PI * G * spinDensity;
   const ec_residual = (T_scalar - ec_source) ** 2
-    + ec_coupling * T_scalar * T_scalar;
+    + (ec_coupling * T_scalar * T_scalar) ** 2; // squared — must be non-negative
 
   // ── (II) f(T) cosmology ──
   const T_cosmo = -6 * H0 * H0; // T = -6H² in FLRW
