@@ -736,6 +736,32 @@ seekerMonitor.startDashboard();
 let aegisCycle = 0, seekerCycle = 0;
 let aegisTotal = 0, seekerTotal = 0;
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// CROSS-POLLINATION — engines share best discoveries
+// When one engine finds a good solution, the other uses it as a seed point
+// ═══════════════════════════════════════════════════════════════════════════════
+const bestKnown = {}; // { taskId: { params, score, source } }
+
+function recordBest(taskId, params, score, source) {
+  if (!isFinite(score) || !params) return;
+  const prev = bestKnown[taskId];
+  if (!prev || score < prev.score) {
+    bestKnown[taskId] = { params: { ...params }, score, source };
+    if (prev && prev.source !== source) {
+      console.log(`\n🔄 [CROSS-POLLINATION] ${source} beat ${prev.source} on ${taskId}: ${score.toFixed(4)} < ${prev.score.toFixed(4)}`);
+    }
+  }
+}
+
+function getSeedParams(taskId, source) {
+  const known = bestKnown[taskId];
+  // Only seed from the OTHER engine's discovery
+  if (known && known.source !== source) {
+    return known;
+  }
+  return null;
+}
+
 async function runAegisLoop() {
   while (true) {
     aegisCycle++;
@@ -757,13 +783,23 @@ async function runAegisLoop() {
         seed: aegisTotal * 1000 + Date.now() % 10000,
         verbosity: 'silent',
       });
+      // Cross-pollinate: seed from Seeker's best discovery
+      const seedData = getSeedParams(task.id, 'AEGIS');
+      if (seedData) {
+        agent.seed(seedData.params, seedData.score);
+        console.log(`   🧬 [AEGIS] Seeded ${task.name} with Seeker's best (${seedData.score.toFixed(2)})`);
+      }
       agent.on(aegisMonitor.createHandler(runId));
 
       try {
         const result = await agent.run(task.optimum);
-        // Log spatial anomalies + equations for torsion runs
+        // Record best for cross-pollination
         const bp = result && result.best ? result.best.params : null;
         const bs = result && result.best ? result.best.score : null;
+        if (bp && isFinite(bs)) {
+          recordBest(task.id, bp, bs, 'AEGIS');
+        }
+        // Log spatial anomalies + equations for torsion runs
         if (bp && task.id.match(/ft-gravity|cross-domain|ufe-torsion|einstein-cartan|torsion-wave/)) {
           logSpatialAnomalies('AEGIS', runId, bp, aegisMonitor);
           logEquation('AEGIS', runId, task.id, bp, bs, aegisWriter);
@@ -798,12 +834,23 @@ async function runSeekerLoop() {
         seed: seekerTotal * 2000 + Date.now() % 10000,
         verbosity: 'silent',
       });
+      // Cross-pollinate: seed from AEGIS's best discovery
+      const seedData = getSeedParams(task.id, 'Seeker');
+      if (seedData) {
+        agent.seed(seedData.params, seedData.score);
+        console.log(`   🧬 [Seeker] Seeded ${task.name} with AEGIS's best (${seedData.score.toFixed(2)})`);
+      }
       agent.on(seekerMonitor.createHandler(runId));
 
       try {
         const result = await agent.run(task.optimum);
+        // Record best for cross-pollination
         const bp = result && result.best ? result.best.params : null;
         const bs = result && result.best ? result.best.score : null;
+        if (bp && isFinite(bs)) {
+          recordBest(task.id, bp, bs, 'Seeker');
+        }
+        // Log spatial anomalies + equations for torsion runs
         if (bp && task.id.match(/ft-gravity|cross-domain|ufe-torsion|einstein-cartan|torsion-wave/)) {
           logSpatialAnomalies('Seeker', runId, bp, seekerMonitor);
           logEquation('Seeker', runId, task.id, bp, bs, seekerWriter);

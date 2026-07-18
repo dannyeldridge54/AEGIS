@@ -98,6 +98,20 @@ export class SeekerAgent {
     return this;
   }
 
+  /** Seed the agent with a known-good starting point (e.g. from another engine) */
+  seed(params: Record<string, number>, score: number): this {
+    if (!isFinite(score)) return this;
+    const result: EvalResult = {
+      params,
+      score,
+      timestamp: Date.now(),
+      strategy: 'exploit' as StrategyType,
+    };
+    this.state.best = result;
+    this.state.history.push(result);
+    return this;
+  }
+
   async run(optimum?: number): Promise<AgentState> {
     this.running = true;
     this.startTime = Date.now();
