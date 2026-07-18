@@ -19,33 +19,177 @@
 
 const aegis = require('../dist/index.js');
 
+// ── Parameter Processing ─────────────────────────────────────────────────────
+// Handles integer, categorical, and conditional parameters by wrapping the
+// user's objective with parameter type enforcement.
+
+function processParameters(parameters) {
+  const processed = [];
+  const integerParams = new Set();
+  const categoricalParams = {};  // name -> { values, indexMap }
+  const conditionalParams = {};  // name -> { dependsOn, condition }
+
+  for (const param of parameters) {
+    if (param.type === 'integer') {
+      integerParams.add(param.name);
+      processed.push({ name: param.name, min: param.min, max: param.max });
+    } else if (param.type === 'categorical') {
+      const values = param.values || param.choices;
+      categoricalParams[param.name] = { values, indexMap: {} };
+      values.forEach((v, i) => { categoricalParams[param.name].indexMap[i] = v; });
+      processed.push({ name: param.name, min: 0, max: values.length - 0.001 });
+    } else if (param.condition) {
+      conditionalParams[param.name] = param.condition;
+      processed.push({ name: param.name, min: param.min, max: param.max });
+    } else {
+      processed.push({ name: param.name, min: param.min, max: param.max });
+    }
+  }
+
+  // Wrapper that converts optimizer's continuous params to typed params
+  function transformParams(rawParams) {
+    const transformed = { ...rawParams };
+    for (const name of integerParams) {
+      if (transformed[name] !== undefined) {
+        transformed[name] = Math.round(transformed[name]);
+      }
+    }
+    for (const [name, cat] of Object.entries(categoricalParams)) {
+      if (transformed[name] !== undefined) {
+        const idx = Math.floor(Math.min(transformed[name], cat.values.length - 1));
+        transformed[name] = cat.values[Math.max(0, idx)];
+      }
+    }
+    return transformed;
+  }
+
+  return { processed, transformParams, integerParams, categoricalParams, conditionalParams };
+}
+
+// ── Constraint Processing ────────────────────────────────────────────────────
+// Wraps the objective with constraint penalties so users can write clean
+// constraint functions instead of manual penalty hacking.
+
+function wrapWithConstraints(objective, constraints, penaltyScale = 1000) {
+  if (!constraints || constraints.length === 0) return objective;
+
+  return (params) => {
+    const score = objective(params);
+    let penalty = 0;
+
+    for (const constraint of constraints) {
+      if (typeof constraint === 'function') {
+        // Function constraint: returns 0 if satisfied, positive if violated
+        const violation = constraint(params);
+        if (violation > 0) penalty += violation * penaltyScale;
+      } else if (constraint.type === 'inequality') {
+        // { type: 'inequality', fn: (p) => p.x + p.y - 100, direction: '<=' }
+        const val = constraint.fn(params);
+        if (constraint.direction === '<=' && val > 0) penalty += val * penaltyScale;
+        if (constraint.direction === '>=' && val < 0) penalty += (-val) * penaltyScale;
+      } else if (constraint.type === 'equality') {
+        // { type: 'equality', fn: (p) => p.x + p.y, target: 100, tolerance: 0.01 }
+        const val = constraint.fn(params);
+        const target = constraint.target || 0;
+        const tol = constraint.tolerance || 0.001;
+        const err = Math.abs(val - target);
+        if (err > tol) penalty += (err - tol) * penaltyScale;
+      } else if (constraint.type === 'range') {
+        // { type: 'range', param: 'x', min: 0, max: 100 }
+        const val = params[constraint.param];
+        if (val < constraint.min) penalty += (constraint.min - val) * penaltyScale;
+        if (val > constraint.max) penalty += (val - constraint.max) * penaltyScale;
+      }
+    }
+
+    return score + penalty;
+  };
+}
+
+// ── Result Export ────────────────────────────────────────────────────────────
+
+function exportResult(result, format = 'json') {
+  if (format === 'csv') {
+    const lines = ['parameter,value'];
+    if (result.best) {
+      for (const [k, v] of Object.entries(result.best.params)) {
+        lines.push(`${k},${v}`);
+      }
+      lines.push(`_score,${result.best.score}`);
+      lines.push(`_totalEvals,${result.totalEvals || ''}`);
+      if (result.ufe) lines.push(`_ufeRatio,${result.ufe.ufeRatio || ''}`);
+    }
+    return lines.join('\n');
+  }
+
+  if (format === 'summary') {
+    const lines = [];
+    lines.push('═══════════════════════════════════════════');
+    lines.push('  AEGIS OPTIMIZER — RESULTS REPORT');
+    lines.push('  Generated: ' + new Date().toISOString());
+    lines.push('═══════════════════════════════════════════');
+    if (result.best) {
+      lines.push(`  Best Score: ${result.best.score}`);
+      lines.push('  Parameters:');
+      for (const [k, v] of Object.entries(result.best.params)) {
+        lines.push(`    ${k}: ${typeof v === 'number' ? v.toPrecision(8) : v}`);
+      }
+    }
+    if (result.totalEvals) lines.push(`  Total Evaluations: ${result.totalEvals}`);
+    if (result.ufe) {
+      lines.push(`  UFE Ratio: ${(result.ufe.ufeRatio * 100).toFixed(1)}%`);
+      lines.push(`  Useful Evals: ${result.ufe.usefulEvals}/${result.ufe.totalEvals}`);
+    }
+    if (result.pollinations) lines.push(`  Cross-Pollinations: ${result.pollinations}`);
+    if (result.cycles) lines.push(`  Dual Cycles: ${result.cycles}`);
+    lines.push('═══════════════════════════════════════════');
+    return lines.join('\n');
+  }
+
+  // Default JSON
+  return JSON.stringify(result, null, 2);
+}
+
 /**
  * Run a single optimization with AEGIS engine.
  * @param {Object} options
  * @param {Function} options.objective - Function (params) => number to minimize
- * @param {Array} options.parameters - Parameter definitions [{name, min, max}]
+ * @param {Array} options.parameters - Parameter definitions [{name, min, max, type?, values?}]
+ * @param {Array} [options.constraints] - Constraint functions or objects
  * @param {number} [options.maxEvals=5000] - Maximum function evaluations
  * @param {number} [options.explorationRate=0.5] - 0=exploit, 1=explore
  * @param {boolean} [options.silent=true] - Suppress console output
+ * @param {Object} [options.warmStart] - Previous result to resume from {params, score}
+ * @param {Function} [options.onProgress] - Called on improvements: (event) => void
  * @returns {Promise<{best: {params, score}, totalEvals, runtime, ufe}>}
  */
 async function optimize(options) {
   const {
     objective,
     parameters,
+    constraints,
     maxEvals = 5000,
     explorationRate = 0.5,
     silent = true,
     strategies,
     seed,
     onProgress,
+    warmStart,
+    penaltyScale,
   } = options;
+
+  // Process parameter types (integer, categorical)
+  const { processed, transformParams } = processParameters(parameters);
+
+  // Wrap objective with type transforms + constraints
+  let wrappedObjective = (rawParams) => objective(transformParams(rawParams));
+  wrappedObjective = wrapWithConstraints(wrappedObjective, constraints, penaltyScale);
 
   const task = {
     id: options.id || 'custom-task',
     name: options.name || 'Custom Optimization',
-    evaluate: objective,
-    parameters,
+    evaluate: wrappedObjective,
+    parameters: processed,
   };
 
   const agent = new aegis.AegisAgent(task, {
@@ -64,10 +208,21 @@ async function optimize(options) {
     });
   }
 
+  // Warm start: seed from previous run
+  if (warmStart && warmStart.params && warmStart.score !== undefined) {
+    agent.seed(warmStart.params, warmStart.score);
+  }
+
   const state = await agent.run(options.optimum);
 
+  // Transform params back to typed values
+  const best = state.best ? {
+    params: transformParams(state.best.params),
+    score: state.best.score,
+  } : null;
+
   return {
-    best: state.best ? { params: state.best.params, score: state.best.score } : null,
+    best,
     totalEvals: state.totalEvals,
     runtime: state.runtime,
     ufe: state.ufe,
@@ -92,18 +247,28 @@ async function dualOptimize(options) {
   const {
     objective,
     parameters,
+    constraints,
     maxEvals = 3000,
     cycles = 5,
     silent = true,
     onCrossPolinate,
     onProgress,
+    warmStart,
+    penaltyScale,
   } = options;
+
+  // Process parameter types
+  const { processed, transformParams } = processParameters(parameters);
+
+  // Wrap with constraints
+  let wrappedObjective = (rawParams) => objective(transformParams(rawParams));
+  wrappedObjective = wrapWithConstraints(wrappedObjective, constraints, penaltyScale);
 
   const task = {
     id: options.id || 'dual-task',
     name: options.name || 'Dual Optimization',
-    evaluate: objective,
-    parameters,
+    evaluate: wrappedObjective,
+    parameters: processed,
   };
 
   // Exploration/exploitation spectrum
@@ -117,6 +282,12 @@ async function dualOptimize(options) {
   let seekerBest = null;
   let totalEvals = 0;
   let pollinations = 0;
+
+  // Warm start both engines if provided
+  if (warmStart && warmStart.params) {
+    aegisBest = { params: { ...warmStart.params }, score: warmStart.score };
+    seekerBest = { params: { ...warmStart.params }, score: warmStart.score };
+  }
 
   for (let cycle = 0; cycle < cycles; cycle++) {
     for (const profile of profiles) {
@@ -167,10 +338,13 @@ async function dualOptimize(options) {
     : (!seekerBest || (aegisBest && aegisBest.score <= seekerBest.score)) ? aegisBest
     : seekerBest;
 
+  // Transform params back to typed values
+  const transformedBest = overallBest ? { params: transformParams(overallBest.params), score: overallBest.score } : null;
+
   return {
-    best: overallBest,
-    aegisBest,
-    seekerBest,
+    best: transformedBest,
+    aegisBest: aegisBest ? { params: transformParams(aegisBest.params), score: aegisBest.score } : null,
+    seekerBest: seekerBest ? { params: transformParams(seekerBest.params), score: seekerBest.score } : null,
     totalEvals,
     pollinations,
     cycles,
@@ -222,6 +396,7 @@ module.exports = {
   optimize,
   dualOptimize,
   optimizeWithMonitor,
+  exportResult,
   AegisAgent: aegis.AegisAgent,
   createMonitor: aegis.createMonitor,
 };
