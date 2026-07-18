@@ -1,10 +1,98 @@
-# AEGIS Optimizer SDK
+# @aegis/optimizer
 
-**Autonomous Dual-Engine Optimization with Cross-Pollination**
+**The engine that discovered the Unified Field Equation — now optimize YOUR problem.**
 
-Drop in any objective function. Get optimal parameters. Zero configuration.
+AEGIS is a dual-engine, autonomous optimizer with cross-pollination. Drop in any objective function, define parameters, get optimal results. Zero configuration required.
 
 *Created by Danny Lee Eldridge — Copyright © 2012-2026*
+
+---
+
+## Install
+
+```bash
+npm install @aegis/optimizer
+```
+
+## Quick Start
+
+```javascript
+const { optimize } = require('@aegis/optimizer');
+
+const result = await optimize({
+  objective: (p) => (p.x - 3)**2 + (p.y - 7)**2,
+  parameters: [
+    { name: 'x', min: -10, max: 10 },
+    { name: 'y', min: -10, max: 10 },
+  ],
+});
+
+console.log(result.best); // { params: { x: 3.0, y: 7.0 }, score: ~0.0 }
+```
+
+## Constraints
+
+```javascript
+const result = await optimize({
+  objective: (p) => -(p.x + p.y),
+  parameters: [
+    { name: 'x', min: 0, max: 100 },
+    { name: 'y', min: 0, max: 100 },
+  ],
+  constraints: [
+    (p) => Math.max(0, p.x + p.y - 50),          // x + y ≤ 50
+    { type: 'range', param: 'x', min: 0, max: 30 },
+  ],
+});
+```
+
+## Typed Parameters
+
+```javascript
+const result = await optimize({
+  objective: costFunction,
+  parameters: [
+    { name: 'workers', min: 1, max: 50, type: 'integer' },
+    { name: 'material', type: 'categorical', values: ['steel', 'aluminum', 'carbon_fiber'] },
+    { name: 'thickness', min: 0.1, max: 10.0 },
+  ],
+});
+```
+
+## Dual-Engine Mode
+
+```javascript
+const { dualOptimize } = require('@aegis/optimizer');
+
+const result = await dualOptimize({
+  objective: complexFn,
+  parameters: myParams,
+  cycles: 10,
+});
+// result.best, result.aegisBest, result.seekerBest, result.pollinations
+```
+
+## Warm Start & Export
+
+```javascript
+const { exportResult } = require('@aegis/optimizer');
+
+// Resume from previous run
+const r2 = await optimize({ objective, parameters, warmStart: r1.best });
+
+// Export
+console.log(exportResult(result, 'summary'));  // Pretty report
+console.log(exportResult(result, 'csv'));       // Spreadsheet-ready
+```
+
+## CLI
+
+```bash
+npx aegis optimize --config myconfig.json
+npx aegis dual --config myconfig.json
+npx aegis benchmark
+npx aegis serve --port 3000
+```
 
 ---
 

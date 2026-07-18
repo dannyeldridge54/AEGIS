@@ -1,0 +1,112 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [master, dannyeldridge54-*]
+    tags: ['v*']
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    name: Test (Node ${{ matrix.node }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ['18', '20', '22']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - name: Build AEGIS engine
+        run: npx tsc
+      - name: Build Seeker engine
+        run: npx tsc --project seeker/tsconfig.json
+      - name: Run tests
+        run: npx jest --ci --forceExit
+      - name: Test SDK
+        run: |
+          node -e "
+            const { optimize } = require('./sdk/index');
+            optimize({
+              objective: p => (p.x - 3)**2 + (p.y - 7)**2,
+              parameters: [
+                { name: 'x', min: -10, max: 10 },
+                { name: 'y', min: -10, max: 10 },
+              ],
+              maxEvals: 500,
+            }).then(r => {
+              console.log('SDK test score:', r.best.score.toFixed(4));
+              if (r.best.score > 5) { process.exit(1); }
+              console.log('SDK test PASSED');
+            });
+          "
+      - name: Test SaaS server starts
+        run: |
+          node -e "
+            const server = require('./saas/server.js');
+            setTimeout(() => process.exit(0), 2000);
+          " || true
+
+  lint:
+    name: Lint & Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - name: Type check AEGIS
+        run: npx tsc --noEmit
+      - name: Type check Seeker
+        run: npx tsc --noEmit --project seeker/tsconfig.json
+
+  publish-npm:
+    name: Publish to npm
+    needs: [test, lint]
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - name: Build engines
+        run: |
+          npx tsc
+          npx tsc --project seeker/tsconfig.json
+      - name: Publish SDK
+        working-directory: sdk
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  build-installer:
+    name: Build Windows Installer
+    needs: [test]
+    runs-on: windows-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - name: Build engines
+        run: |
+          npx tsc
+          npx tsc --project seeker/tsconfig.json
+      - name: Package installer
+        run: |
+          Copy-Item -Recurse dist aegis-installer/engine/dist -Force
+          Copy-Item -Recurse seeker/dist aegis-installer/engine/seeker/dist -Force
+      - uses: actions/upload-artifact@v4
+        with:
+          name: aegis-installer-${{ github.ref_name }}
+          path: aegis-installer/

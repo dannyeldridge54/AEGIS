@@ -12,6 +12,7 @@
 
 const http = require('http');
 const { optimize, dualOptimize } = require('../sdk/index');
+const billing = require('./stripe');
 
 const PORT = process.env.PORT || 3000;
 const API_KEYS = new Set((process.env.API_KEYS || 'demo-key-001').split(','));
@@ -71,6 +72,12 @@ async function handleRequest(req, res) {
     return;
   }
 
+  // Billing routes (Stripe checkout, webhook, usage, tiers)
+  if (url.startsWith('/api/billing')) {
+    const handled = await billing.handleBillingRoute(url, method, req, res, sendJSON);
+    if (handled) return;
+  }
+
   // Health check
   if (url === '/api/health' && method === 'GET') {
     sendJSON(res, 200, {
@@ -126,6 +133,22 @@ async function handleRequest(req, res) {
         return;
       }
 
+      const apiKey = (req.headers['authorization'] || '').replace('Bearer ', '');
+      const evalCount = Math.min(body.maxEvals || 5000, 50000);
+
+      // Check usage limits
+      const usage = billing.checkUsage(apiKey, evalCount);
+      if (!usage.allowed) {
+        sendJSON(res, 429, {
+          error: 'Daily evaluation limit reached',
+          tier: usage.tier,
+          used: usage.used,
+          limit: usage.limit,
+          upgradeUrl: usage.upgradeUrl,
+        });
+        return;
+      }
+
       const jobId = generateJobId();
       const evaluator = buildEvaluator(body.objective);
 
@@ -137,17 +160,19 @@ async function handleRequest(req, res) {
         result: null,
       });
 
-      sendJSON(res, 202, { jobId, status: 'running', message: 'Optimization started' });
+      sendJSON(res, 202, { jobId, status: 'running', message: 'Optimization started', tier: usage.tier, remaining: usage.remaining });
 
       // Run async
       optimize({
         objective: evaluator,
         parameters: body.parameters,
-        maxEvals: Math.min(body.maxEvals || 5000, 50000),
+        constraints: body.constraints,
+        maxEvals: evalCount,
         explorationRate: body.explorationRate || 0.5,
         strategies: body.strategies,
         name: body.name || 'API Optimization',
       }).then(result => {
+        billing.recordUsage(apiKey, evalCount);
         jobs.set(jobId, { ...jobs.get(jobId), status: 'completed', result, completed: new Date().toISOString() });
       }).catch(err => {
         jobs.set(jobId, { ...jobs.get(jobId), status: 'failed', error: err.message });
@@ -168,6 +193,30 @@ async function handleRequest(req, res) {
         return;
       }
 
+      const apiKey = (req.headers['authorization'] || '').replace('Bearer ', '');
+
+      // Dual engine requires Pro tier or higher
+      if (!billing.canUseDualEngine(apiKey)) {
+        sendJSON(res, 403, {
+          error: 'Dual-engine optimization requires Pro tier or higher',
+          currentTier: billing.getCustomerTier(apiKey),
+          upgradeUrl: `${process.env.BASE_URL || 'http://localhost:3000'}/api/billing/checkout`,
+        });
+        return;
+      }
+
+      const evalCount = Math.min(body.maxEvals || 3000, 30000) * 2; // dual uses 2x
+      const usage = billing.checkUsage(apiKey, evalCount);
+      if (!usage.allowed) {
+        sendJSON(res, 429, {
+          error: 'Daily evaluation limit reached',
+          tier: usage.tier,
+          used: usage.used,
+          limit: usage.limit,
+        });
+        return;
+      }
+
       const jobId = generateJobId();
       const evaluator = buildEvaluator(body.objective);
 
@@ -179,15 +228,17 @@ async function handleRequest(req, res) {
         result: null,
       });
 
-      sendJSON(res, 202, { jobId, status: 'running', message: 'Dual optimization started' });
+      sendJSON(res, 202, { jobId, status: 'running', message: 'Dual optimization started', tier: usage.tier });
 
       dualOptimize({
         objective: evaluator,
         parameters: body.parameters,
+        constraints: body.constraints,
         maxEvals: Math.min(body.maxEvals || 3000, 30000),
         cycles: Math.min(body.cycles || 5, 20),
         name: body.name || 'API Dual Optimization',
       }).then(result => {
+        billing.recordUsage(apiKey, evalCount);
         jobs.set(jobId, { ...jobs.get(jobId), status: 'completed', result, completed: new Date().toISOString() });
       }).catch(err => {
         jobs.set(jobId, { ...jobs.get(jobId), status: 'failed', error: err.message });
@@ -237,6 +288,13 @@ server.listen(PORT, () => {
 ║     GET  /api/result/:id      — job results           ║
 ║     GET  /api/health          — health check          ║
 ║     GET  /api/info            — pricing + docs        ║
+║                                                       ║
+║   Billing (Stripe):                                   ║
+║     POST /api/billing/checkout  — start subscription  ║
+║     POST /api/billing/webhook   — Stripe events       ║
+║     GET  /api/billing/usage     — usage stats         ║
+║     GET  /api/billing/tiers     — pricing tiers       ║
+║     POST /api/billing/api-key   — generate API key    ║
 ║                                                       ║
 ║   Auth: Authorization: Bearer <api-key>               ║
 ╚═══════════════════════════════════════════════════════╝

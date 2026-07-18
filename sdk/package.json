@@ -8,7 +8,11 @@
     "aegis": "cli.js",
     "aegis-optimizer": "cli.js"
   },
-  "author": "Danny Lee Eldridge",
+  "scripts": {
+    "prepublishOnly": "cd .. && npx tsc && npx tsc --project seeker/tsconfig.json",
+    "test": "cd .. && npx jest --forceExit"
+  },
+  "author": "Danny Lee Eldridge <danny@aegis-agent.dev>",
   "license": "SEE LICENSE IN LICENSE",
   "keywords": [
     "optimization",
@@ -24,11 +28,18 @@
     "gradient-free",
     "black-box",
     "unified-field",
-    "physics"
+    "physics",
+    "constraints",
+    "integer-programming",
+    "categorical"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/dannyeldridge54/AEGIS"
+  },
+  "homepage": "https://github.com/dannyeldridge54/AEGIS#readme",
+  "bugs": {
+    "url": "https://github.com/dannyeldridge54/AEGIS/issues"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -38,6 +49,7 @@
     "index.d.ts",
     "cli.js",
     "examples/",
+    "INDUSTRY-PLAYBOOK.md",
     "README.md",
     "LICENSE"
   ]
