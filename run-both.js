@@ -310,14 +310,17 @@ function logSpatialAnomalies(engine, runId, bestParams, monitor) {
     };
 
     const anomalies = computeSpatialAnomalies(fTParams);
-    const significant = anomalies.filter(a => a.significance === 'high');
+    const significant = anomalies.filter(a => a.significance === 'high' || a.significance === 'moderate');
 
     if (significant.length > 0) {
-      console.log(`\n🌌 [${engine}] ${runId} — ${significant.length} HIGH-SIGNIFICANCE spatial anomalies:`);
+      const high = significant.filter(a => a.significance === 'high');
+      const mod = significant.filter(a => a.significance === 'moderate');
+      console.log(`\n🌌 [${engine}] ${runId} — ${high.length} HIGH + ${mod.length} MODERATE spatial anomalies:`);
       for (const a of significant) {
-        console.log(`   📍 z=${a.redshift.toFixed(3)} | ${a.survey} | RA ${a.ra} Dec ${a.dec}`);
-        console.log(`      ${a.type}: Δ=${a.deviation_sigma.toFixed(1)}σ | ${a.field_description}`);
-        console.log(`      d=${a.comoving_Mpc.toFixed(0)} Mpc | lookback ${a.lookback_Gyr.toFixed(1)} Gyr | ref: ${a.reference}`);
+        const icon = a.significance === 'high' ? '🔴' : '🟡';
+          console.log(`   ${icon} z=${(a.z||0).toFixed(3)} | ${a.survey} | RA ${a.ra} Dec ${a.dec}`);
+          console.log(`      ${a.anomalyType}: Δ=${(a.deviation_sigma||0).toFixed(1)}σ | ${a.fieldDescription}`);
+          console.log(`      d=${(a.comovingDist_Mpc||0).toFixed(0)} Mpc | lookback ${(a.lookbackTime_Gyr||0).toFixed(1)} Gyr | ref: ${a.reference}`);
       }
 
       // Register as alert
@@ -326,7 +329,7 @@ function logSpatialAnomalies(engine, runId, bestParams, monitor) {
         title: `${significant.length} sky anomalies from ${runId}`,
         severity: 'critical',
         category: 'anomaly',
-        detail: significant.map(a => `z=${a.redshift.toFixed(3)} ${a.survey} ${a.type} ${a.deviation_sigma.toFixed(1)}σ`).join('; '),
+        detail: significant.map(a => `z=${(a.z||0).toFixed(3)} ${a.survey} ${a.anomalyType} ${(a.deviation_sigma||0).toFixed(1)}σ`).join('; '),
         data: { anomalyCount: significant.length, topAnomaly: significant[0] },
       });
     }
@@ -384,9 +387,8 @@ async function runAegisLoop() {
       try {
         const result = await agent.run(task.optimum);
         // Log spatial anomalies + equations for torsion runs
-        const snap = aegisMonitor.getRunSnapshot ? aegisMonitor.getRunSnapshot(runId) : null;
-        const bp = snap?.bestParams || (result && result.bestParams);
-        const bs = snap?.bestScore ?? (result && result.bestScore);
+        const bp = result && result.best ? result.best.params : null;
+        const bs = result && result.best ? result.best.score : null;
         if (bp && task.id.match(/ft-gravity|cross-domain|ufe-torsion|einstein-cartan|torsion-wave/)) {
           logSpatialAnomalies('AEGIS', runId, bp, aegisMonitor);
           logEquation('AEGIS', runId, task.id, bp, bs, aegisWriter);
@@ -425,9 +427,8 @@ async function runSeekerLoop() {
 
       try {
         const result = await agent.run(task.optimum);
-        const snap = seekerMonitor.getRunSnapshot ? seekerMonitor.getRunSnapshot(runId) : null;
-        const bp = snap?.bestParams || (result && result.bestParams);
-        const bs = snap?.bestScore ?? (result && result.bestScore);
+        const bp = result && result.best ? result.best.params : null;
+        const bs = result && result.best ? result.best.score : null;
         if (bp && task.id.match(/ft-gravity|cross-domain|ufe-torsion|einstein-cartan|torsion-wave/)) {
           logSpatialAnomalies('Seeker', runId, bp, seekerMonitor);
           logEquation('Seeker', runId, task.id, bp, bs, seekerWriter);
