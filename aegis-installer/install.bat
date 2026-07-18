@@ -37,9 +37,20 @@ xcopy /E /Y /Q "%~dp0engine\*" "%INSTALL_DIR%\" >nul 2>nul
 echo  [✓] Engine files copied
 
 :: Install dependencies
-echo  [2/4] Installing dependencies...
+echo  [2/4] Installing dependencies and building engine...
 cd /d "%INSTALL_DIR%"
 call npm install --omit=dev --silent 2>nul
+:: Build from source if dist/ is missing
+if not exist "%INSTALL_DIR%\dist" (
+    echo  [→] Building AEGIS engine...
+    call npx --no-install tsc 2>nul
+)
+if not exist "%INSTALL_DIR%\seeker\dist" (
+    echo  [→] Building Seeker engine...
+    cd /d "%INSTALL_DIR%\seeker"
+    call npx --no-install tsc 2>nul
+    cd /d "%INSTALL_DIR%"
+)
 echo  [✓] Dependencies installed
 
 :: Create launch scripts
