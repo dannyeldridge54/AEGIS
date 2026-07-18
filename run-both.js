@@ -288,6 +288,70 @@ console.log(`
 const aegisMonitor = aegis.createMonitor({ port: 5555 });
 const seekerMonitor = seeker.createMonitor({ port: 5556 });
 
+// Spatial anomaly + equation writer integration
+const { computeSpatialAnomalies, HZ_OBSERVATIONS, createEquationWriter } = aegis;
+const aegisWriter = createEquationWriter ? createEquationWriter('AEGIS') : null;
+const seekerWriter = createEquationWriter ? createEquationWriter('Seeker') : null;
+
+function logSpatialAnomalies(engine, runId, bestParams, monitor) {
+  try {
+    if (!bestParams || !computeSpatialAnomalies) return;
+    // Only compute for f(T) and cross-domain runs that have f(T) params
+    const hasAlpha = bestParams.alpha !== undefined || bestParams.fT_alpha !== undefined;
+    const hasN = bestParams.n !== undefined || bestParams.fT_n !== undefined;
+    if (!hasAlpha || !hasN) return;
+
+    const fTParams = {
+      alpha: bestParams.alpha || bestParams.fT_alpha || 0,
+      beta: bestParams.beta || 0,
+      n: bestParams.n || bestParams.fT_n || 1,
+      lambda: bestParams.lambda || bestParams.lambda_quartic || 100,
+      modelType: bestParams.modelType || 0,
+    };
+
+    const anomalies = computeSpatialAnomalies(fTParams);
+    const significant = anomalies.filter(a => a.significance === 'high');
+
+    if (significant.length > 0) {
+      console.log(`\n🌌 [${engine}] ${runId} — ${significant.length} HIGH-SIGNIFICANCE spatial anomalies:`);
+      for (const a of significant) {
+        console.log(`   📍 z=${a.redshift.toFixed(3)} | ${a.survey} | RA ${a.ra} Dec ${a.dec}`);
+        console.log(`      ${a.type}: Δ=${a.deviation_sigma.toFixed(1)}σ | ${a.field_description}`);
+        console.log(`      d=${a.comoving_Mpc.toFixed(0)} Mpc | lookback ${a.lookback_Gyr.toFixed(1)} Gyr | ref: ${a.reference}`);
+      }
+
+      // Register as alert
+      monitor.registerAlert({
+        id: `spatial-${runId}`,
+        title: `${significant.length} sky anomalies from ${runId}`,
+        severity: 'critical',
+        category: 'anomaly',
+        detail: significant.map(a => `z=${a.redshift.toFixed(3)} ${a.survey} ${a.type} ${a.deviation_sigma.toFixed(1)}σ`).join('; '),
+        data: { anomalyCount: significant.length, topAnomaly: significant[0] },
+      });
+    }
+  } catch (e) {
+    // Silent — don't crash the runner
+  }
+}
+
+function logEquation(engine, runId, taskId, bestParams, bestScore, writer) {
+  try {
+    if (!writer || !bestParams) return;
+    // Only for torsion tasks with good scores
+    if (!taskId.match(/ufe-torsion|cross-domain|ft-gravity|einstein-cartan|torsion-wave/)) return;
+    if (bestScore > 500) return; // only log good results
+
+    const eq = writer.synthesize(taskId, bestParams, bestScore);
+    if (eq) {
+      console.log(`\n📐 [${engine}] Equation from ${runId} (score ${bestScore.toFixed(2)}):`);
+      console.log(`   ${eq.plaintext || eq.latex || 'N/A'}`);
+    }
+  } catch (e) {
+    // Silent
+  }
+}
+
 aegisMonitor.startDashboard();
 seekerMonitor.startDashboard();
 
@@ -318,7 +382,15 @@ async function runAegisLoop() {
       agent.on(aegisMonitor.createHandler(runId));
 
       try {
-        await agent.run(task.optimum);
+        const result = await agent.run(task.optimum);
+        // Log spatial anomalies + equations for torsion runs
+        const snap = aegisMonitor.getRunSnapshot ? aegisMonitor.getRunSnapshot(runId) : null;
+        const bp = snap?.bestParams || (result && result.bestParams);
+        const bs = snap?.bestScore ?? (result && result.bestScore);
+        if (bp && task.id.match(/ft-gravity|cross-domain|ufe-torsion|einstein-cartan|torsion-wave/)) {
+          logSpatialAnomalies('AEGIS', runId, bp, aegisMonitor);
+          logEquation('AEGIS', runId, task.id, bp, bs, aegisWriter);
+        }
       } catch (err) {
         console.error(`[AEGIS] Error: ${task.name} [${profile.tag}]: ${err.message}`);
       }
@@ -352,7 +424,14 @@ async function runSeekerLoop() {
       agent.on(seekerMonitor.createHandler(runId));
 
       try {
-        await agent.run(task.optimum);
+        const result = await agent.run(task.optimum);
+        const snap = seekerMonitor.getRunSnapshot ? seekerMonitor.getRunSnapshot(runId) : null;
+        const bp = snap?.bestParams || (result && result.bestParams);
+        const bs = snap?.bestScore ?? (result && result.bestScore);
+        if (bp && task.id.match(/ft-gravity|cross-domain|ufe-torsion|einstein-cartan|torsion-wave/)) {
+          logSpatialAnomalies('Seeker', runId, bp, seekerMonitor);
+          logEquation('Seeker', runId, task.id, bp, bs, seekerWriter);
+        }
       } catch (err) {
         console.error(`[Seeker] Error: ${task.name} [${profile.tag}]: ${err.message}`);
       }
