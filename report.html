@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Torsion Field Theory — Anomaly Report</title>
+<style>
+  body {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    max-width: 900px; margin: 40px auto; padding: 0 20px;
+    color: #1a1a1a; line-height: 1.7; background: #fefefe;
+  }
+  h1 { font-size: 1.8em; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
+  h2 { font-size: 1.4em; color: #2c3e50; margin-top: 2em; border-bottom: 1px solid #bdc3c7; }
+  h3 { font-size: 1.15em; color: #34495e; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #bdc3c7; padding: 8px 12px; text-align: left; font-size: 0.9em; }
+  th { background: #ecf0f1; font-weight: bold; }
+  pre { background: #f8f9fa; padding: 12px; border-radius: 4px; overflow-x: auto; font-size: 0.85em; }
+  code { font-family: 'Consolas', 'Courier New', monospace; }
+  blockquote { border-left: 3px solid #3498db; padding: 8px 16px; margin: 1em 0; background: #f0f7ff; font-style: italic; }
+  hr { border: none; border-top: 1px solid #ccc; margin: 2em 0; }
+  @media print { body { max-width: 100%; } }
+</style>
+</head>
+<body>
+<h1>Torsion Field Theory — Computational Anomaly & Discovery Report</h1></p><p><blockquote><strong>Principal Investigator:</strong> Danny Lee Eldridge</blockquote>
+<blockquote><strong>Date:</strong> 2026-07-18</blockquote>
+<blockquote><strong>Report Generated:</strong> 2026-07-18 18:49:50 UTC</blockquote>
+<blockquote><strong>Engines:</strong> AEGIS v1.0 + Seeker v1.0 (Dual Pincer Configuration)</blockquote>
+<blockquote><strong>Classification:</strong> Preliminary Computational Results — Pre-Print</blockquote></p><p><hr></p><p><h2>Abstract</h2></p><p>This report summarizes anomalies, breakthroughs, and key insights discovered by
+the AEGIS/Seeker autonomous optimization framework while exploring spacetime
+torsion parameter spaces. Two independent engines operate in a pincer strategy —
+AEGIS sweeping from exploration toward exploitation while Seeker converges from
+the opposite direction — ensuring comprehensive coverage of the torsion field
+landscape.</p><p>Four torsion theory domains are under continuous investigation:</p><p>1. <strong>Einstein-Cartan torsion</strong> — 6-component spin-torsion coupling in Riemann-Cartan geometry
+2. <strong>Teleparallel f(T) gravity</strong> — Modified gravity via torsion scalar with cosmological H(z) fitting
+3. <strong>UFE torsion functional</strong> — Unified field-energy functional Φ(T, S, K) with physical constraints
+4. <strong>Torsion wave propagation</strong> — Massive torsion field equation □T + m²T + λT³ = J</p><p><hr></p><p><h2>1. Computational Infrastructure</h2></p><p><table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>AEGIS uptime</td><td>20s</td></tr>
+<tr><td>Seeker uptime</td><td>20s</td></tr>
+<tr><td>Total function evaluations</td><td>114,175</td></tr>
+<tr><td>Total optimization runs</td><td>38</td></tr>
+<tr><td>Torsion-specific runs</td><td>0</td></tr>
+<tr><td>Active anomaly alerts</td><td>27</td></tr>
+<tr><td>Breakthrough events</td><td>150</td></tr>
+<tr><td>Key insights</td><td>3</td></tr></tbody></table>
+<strong>Methodology:</strong> Both engines use adaptive meta-learning across 10 optimization
+strategies (gradient descent, Bayesian surrogate, simulated annealing, particle
+swarm, evolutionary, novelty search, multi-armed bandit, grid search, random
+sampling, pure exploitation). Each run is seeded for reproducibility. UFE
+(Useful Function Evaluation) tracking measures optimization efficiency.
+Strategy selection adapts online based on observed improvement rates.</p><p><strong>Pincer Strategy:</strong> AEGIS begins each cycle with exploration-heavy profiles
+(high exploration rate, curiosity-driven strategies) paired with easy tasks, and
+progresses toward exploitation-heavy profiles on harder tasks. Seeker does the
+reverse. Each cycle they swap direction, guaranteeing complete coverage.</p><p><hr></p><p><h2>2. Torsion Parameter Spaces Under Investigation</h2></p><p><h3>2.1 Einstein-Cartan Torsion (8 parameters)</h3></p><p>Explores the antisymmetric torsion tensor T^a_{bc} in 4D Riemann-Cartan spacetime.
+The cost function minimizes the Cartan equation residual:</p><p><pre><code class="language-">Residual = |T^a_{bc} - 8πG · s^a_{bc}|² + λ · T_{scalar}² + trace penalties
+</code></pre></p><p><table><thead><tr><th>Parameter</th><th>Range</th><th>Description</th></tr></thead><tbody><tr><td>T01, T02, T03, T12, T13, T23</td><td>[-1, 1]</td><td>6 independent torsion components</td></tr>
+<tr><td>spinDensity</td><td>[0, 10²⁰]</td><td>Spin angular momentum density</td></tr>
+<tr><td>couplingLambda</td><td>[-10, 10]</td><td>Torsion-curvature coupling strength</td></tr></tbody></table>
+<h3>2.2 f(T) Teleparallel Gravity (5 parameters)</h3></p><p>Fits modified teleparallel gravity models to 21 observational H(z) data points
+(Planck 2018 + BAO + cosmic chronometers, z = 0 to z = 2.34).</p><p>Four model types compete:
+- <strong>Power law:</strong> f(T) = α·T^n
+- <strong>Born-Infeld:</strong> f(T) = λ(√(1 + 2T/λ) − 1)
+- <strong>Logarithmic:</strong> f(T) = α·T + β·T·ln(T/T₀)
+- <strong>Exponential:</strong> f(T) = α·T(1 − e^{β·T₀/T})</p><p>Baseline: ΛCDM with H₀ = 67.4 km/s/Mpc, Ω_m = 0.315.</p><p><h3>2.3 UFE Torsion Functional (8 parameters)</h3></p><p>The unified torsion-energy functional bridging quantum to cosmological scales:</p><p><pre><code class="language-">Φ(T, S, K) = ∫ [α·T² + β·S·K + γ·∇T·∇T + δ·T⁴ + ε·R·T²] dV
+</code></pre></p><p>Physical constraints enforced:
+- <strong>Stability:</strong> α > 0 (positive mass² term)
+- <strong>Causality:</strong> v² = 2α/γ ≤ c² (subluminal propagation)
+- <strong>Unitarity:</strong> δ > 0 (no ghost modes)
+- <strong>Energy conditions:</strong> ρ ≥ 0 (weak energy condition)
+- <strong>Solar system:</strong> |T₀| < 10⁻¹⁰ (observational bounds)</p><p><h3>2.4 Torsion Wave Propagation (6 parameters)</h3></p><p>Massive torsion field equation sampled at 50 spacetime points:</p><p><pre><code class="language-">□T + m²T + λT³ = J
+</code></pre></p><p><table><thead><tr><th>Parameter</th><th>Range</th><th>Description</th></tr></thead><tbody><tr><td>mass</td><td>[0, 10⁻³ eV]</td><td>Torsion field mass</td></tr>
+<tr><td>coupling</td><td>[-1, 1]</td><td>Quartic self-coupling</td></tr>
+<tr><td>amplitude</td><td>[-10⁵, 10⁵]</td><td>Wave amplitude</td></tr>
+<tr><td>frequency</td><td>[0.1, 100]</td><td>Angular frequency</td></tr>
+<tr><td>phase</td><td>[0, 2π]</td><td>Phase offset</td></tr>
+<tr><td>sourceStrength</td><td>[-10¹⁰, 10¹⁰]</td><td>Spin current source J</td></tr></tbody></table>
+<hr></p><p><h2>3. Anomalies Detected</h2></p><p>27 anomaly event(s) detected across both engines:</p><p><h3>Anomaly 1: anomaly: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 272.917118 (z=3.0σ from rolling mean 73.452525)
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.6013068582829197
+  - score: 272.91711810742675</p><p><h3>Anomaly 2: anomaly: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 275.842222 (z=3.2σ from rolling mean 73.246077)
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.6406509338618201
+  - score: 275.84222211879546</p><p><h3>Anomaly 3: anomaly: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 8.906314 (z=3.3σ from rolling mean 2.276565)
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.6598115879647855
+  - score: 8.90631385619892</p><p><h3>Anomaly 4: anomaly: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 263.542241 (z=3.3σ from rolling mean 177.619875)
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.6543097982269027
+  - score: 263.5422412417319</p><p><h3>Anomaly 5: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 245.631030 (z=3.8σ from rolling mean 32.653766)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.7540428546329285
+  - score: 245.63103017624036</p><p><h3>Anomaly 6: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 200.476788 (z=3.1σ from rolling mean 32.457004)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6126862111385452
+  - score: 200.47678763035566</p><p><h3>Anomaly 7: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 283.976980 (z=3.2σ from rolling mean 46.783300)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.638411669113714
+  - score: 283.9769802459296</p><p><h3>Anomaly 8: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 194.991445 (z=3.2σ from rolling mean 30.869995)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6459233075065115
+  - score: 194.991445270475</p><p><h3>Anomaly 9: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 261.857436 (z=3.3σ from rolling mean 40.993050)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6599397929765838
+  - score: 261.85743604949187</p><p><h3>Anomaly 10: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 269.110396 (z=3.9σ from rolling mean 38.435629)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.7812315867152259
+  - score: 269.11039618151364</p><p><h3>Anomaly 11: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 192.198113 (z=3.2σ from rolling mean 33.312419)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6472941844546524
+  - score: 192.19811297384567</p><p><h3>Anomaly 12: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 185.489450 (z=3.4σ from rolling mean 27.103767)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6823211670979755
+  - score: 185.48945012968167</p><p><h3>Anomaly 13: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 197.800595 (z=3.3σ from rolling mean 30.452599)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6617308015100969
+  - score: 197.80059490489538</p><p><h3>Anomaly 14: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 240.494316 (z=3.4σ from rolling mean 35.003624)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6885204295505165
+  - score: 240.49431556571133</p><p><h3>Anomaly 15: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 235.861960 (z=3.6σ from rolling mean 32.006031)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.723564999325153
+  - score: 235.86195956874468</p><p><h3>Anomaly 16: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 168.677282 (z=3.1σ from rolling mean 26.539043)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6139728097231542
+  - score: 168.67728232458546</p><p><h3>Anomaly 17: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 246.846367 (z=3.1σ from rolling mean 43.411538)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6293991114469291
+  - score: 246.84636713021126</p><p><h3>Anomaly 18: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 282.314818 (z=3.2σ from rolling mean 51.136385)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6462402363149169
+  - score: 282.31481757599505</p><p><h3>Anomaly 19: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 196.675500 (z=3.3σ from rolling mean 32.881799)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6505702941225268
+  - score: 196.67550013239656</p><p><h3>Anomaly 20: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 186.698607 (z=3.1σ from rolling mean 32.404901)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6162337227509171
+  - score: 186.69860656785872</p><p><h3>Anomaly 21: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 177.125949 (z=3.1σ from rolling mean 30.264932)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6132832630830889
+  - score: 177.12594861955301</p><p><h3>Anomaly 22: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 274.158411 (z=3.1σ from rolling mean 55.695832)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6249969396171692
+  - score: 274.158410559663</p><p><h3>Anomaly 23: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 251.587413 (z=3.1σ from rolling mean 54.131988)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6222154988247447
+  - score: 251.5874125233143</p><p><h3>Anomaly 24: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 231.762023 (z=3.0σ from rolling mean 52.724582)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.6059432037573261
+  - score: 231.76202317775972</p><p><h3>Anomaly 25: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 262.844494 (z=3.9σ from rolling mean 46.699067)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.78281199774968
+  - score: 262.8444938962962</p><p><h3>Anomaly 26: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 260.575732 (z=3.7σ from rolling mean 72.987851)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.741163392836137
+  - score: 260.57573207664666</p><p><h3>Anomaly 27: anomaly: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> WARNING
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Category:</strong> anomaly
+- <strong>Detail:</strong> Anomalous score 253.127635 (z=3.8σ from rolling mean 77.345126)
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.7516658827676962
+  - score: 253.12763464984815</p><p><h2>4. Breakthroughs</h2></p><p>150 breakthrough event(s):</p><p><h3>Breakthrough 1: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 7.7560 → 5.5245 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.2877095693900101
+  - score: 5.52453678865281</p><p><h3>Breakthrough 2: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 7.756017 → 5.524537 (28.8% improvement) via annealing at eval #1060
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 7.756017140257967
+  - newBest: 5.52453678865281
+  - improvement: 2.231480351605157
+  - strategy: annealing
+  - eval: 1060
+  - params: `{"x0":-0.9708761421556799,"x1":-0.0403508750621721,"x2":0.9614922327737243,"x3":0.04818260310550457,"x4":-0.007099828346254437,"x5":-0.031111506456870504,"x6":-0.0020403790500473813,"x7":-0.021802961196499188,"x8":1.020057130412102,"x9":-0.9879806244419294}`</p><p><h3>Breakthrough 3: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 9.4505 → 8.4596 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.10485429549425523
+  - score: 8.45959968038585</p><p><h3>Breakthrough 4: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 9.450528 → 8.459600 (10.5% improvement) via annealing at eval #997
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 9.450528151790465
+  - newBest: 8.45959968038585
+  - improvement: 0.9909284714046152
+  - strategy: annealing
+  - eval: 997
+  - params: `{"x0":-0.9187301633550422,"x1":-0.076307970422915,"x2":0.9924768099823705,"x3":0.04216484752973605,"x4":0.03328646651968005,"x5":-0.0032940854945053555,"x6":0.01902772332932027,"x7":0.021351798168430365,"x8":1.0717574213930658,"x9":-0.9537766662524849}`</p><p><h3>Breakthrough 5: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 10.6489 → 9.4609 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.11156558934630989
+  - score: 9.460857289986052</p><p><h3>Breakthrough 6: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 10.648909 → 9.460857 (11.2% improvement) via annealing at eval #932
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 10.648909110831227
+  - newBest: 9.460857289986052
+  - improvement: 1.1880518208451747
+  - strategy: annealing
+  - eval: 932
+  - params: `{"x0":-0.9366060338184113,"x1":-0.0630008560228079,"x2":0.9996392389728402,"x3":0.03950236681362458,"x4":-0.02922766696089164,"x5":0.06721722543688544,"x6":-0.08732884212893266,"x7":0.07187943566348819,"x8":0.9912930573807048,"x9":-0.9640860103141463}`</p><p><h3>Breakthrough 7: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 14.1008 → 10.6568 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.24424429002544365
+  - score: 10.656753375241806</p><p><h3>Breakthrough 8: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 14.100791 → 10.656753 (24.4% improvement) via exploit at eval #775
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 14.100791081817405
+  - newBest: 10.656753375241806
+  - improvement: 3.4440377065755996
+  - strategy: exploit
+  - eval: 775
+  - params: `{"x0":-0.9838325885876406,"x1":-0.025750960852059315,"x2":1.090001846957566,"x3":-0.06995915955681353,"x4":0.029937256420645195,"x5":0.007641321745175032,"x6":-0.08432768705079816,"x7":-0.02546562833178069,"x8":0.9435609397463656,"x9":-1.085809326000105}`</p><p><h3>Breakthrough 9: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 18.4411 → 14.1008 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.23536247443260336
+  - score: 14.100791081817405</p><p><h3>Breakthrough 10: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 18.441144 → 14.100791 (23.5% improvement) via exploit at eval #296
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 18.44114447738353
+  - newBest: 14.100791081817405
+  - improvement: 4.340353395566126
+  - strategy: exploit
+  - eval: 296
+  - params: `{"x0":-1.0794097532209217,"x1":0.020909354453023762,"x2":0.9292871243910719,"x3":0.13238200725766033,"x4":-0.08123714411796587,"x5":-0.03981318736566396,"x6":-0.01405231902475565,"x7":-0.06353915921126696,"x8":0.9103460266865789,"x9":-0.9341659236172788}`</p><p><h3>Breakthrough 11: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 19.6494 → 18.5470 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.0561032556489521
+  - score: 18.546987496694555</p><p><h3>Breakthrough 12: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 24.0312 → 20.0225 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.16681402953114424
+  - score: 20.022465091424024</p><p><h3>Breakthrough 13: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 24.031208 → 20.022465 (16.7% improvement) via exploit at eval #214
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 24.03120767882932
+  - newBest: 20.022465091424024
+  - improvement: 4.008742587405294
+  - strategy: exploit
+  - eval: 214
+  - params: `{"x0":-0.9799533431854368,"x1":0.1146604081275088,"x2":0.8971965755358532,"x3":-0.04474111356354302,"x4":-0.013693701641407624,"x5":-0.09302830549107749,"x6":-0.044121481383254356,"x7":-0.1486365176363545,"x8":0.8391832948882403,"x9":-0.9341434556821635}`</p><p><h3>Breakthrough 14: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 28.1624 → 24.0312 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.14669216381936082
+  - score: 24.03120767882932</p><p><h3>Breakthrough 15: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 28.162413 → 24.031208 (14.7% improvement) via exploit at eval #167
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 28.162412976765495
+  - newBest: 24.03120767882932
+  - improvement: 4.131205297936177
+  - strategy: exploit
+  - eval: 167
+  - params: `{"x0":-1.1496914093702932,"x1":-0.06501557985227638,"x2":0.9168465371131104,"x3":0.08880337180665518,"x4":0.1289479493045217,"x5":-0.19481531814590897,"x6":-0.05868246212478946,"x7":-0.08350033754625052,"x8":1.033619229836415,"x9":-0.9930331381237071}`</p><p><h3>Breakthrough 16: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 33.5863 → 29.9523 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.10820083128936572
+  - score: 29.95226862296019</p><p><h3>Breakthrough 17: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 33.586338 → 29.952269 (10.8% improvement) via exploit at eval #102
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 33.58633835268681
+  - newBest: 29.95226862296019
+  - improvement: 3.634069729726619
+  - strategy: exploit
+  - eval: 102
+  - params: `{"x0":-1.1710230492483449,"x1":0.09357283575532416,"x2":0.7945274262043539,"x3":-0.07657302917673403,"x4":-0.0922262677603684,"x5":-0.05893843658866563,"x6":-0.11145272108824042,"x7":-0.031282724163239024,"x8":0.9612893307601476,"x9":-1.169856179528547}`</p><p><h3>Breakthrough 18: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 39.3360 → 33.5863 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.14616748278401434
+  - score: 33.58633835268681</p><p><h3>Breakthrough 19: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 39.335979 → 33.586338 (14.6% improvement) via exploit at eval #76
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 39.33597945203439
+  - newBest: 33.58633835268681
+  - improvement: 5.749641099347578
+  - strategy: exploit
+  - eval: 76
+  - params: `{"x0":-1.2695421159420175,"x1":0.04925293219242577,"x2":0.8048344548141068,"x3":-0.014344934360487352,"x4":0.017236224484192625,"x5":0.13102670678094847,"x6":-0.027131388800230888,"x7":-0.0856008746118072,"x8":0.8851732358710447,"x9":-1.1383794236934646}`</p><p><h3>Breakthrough 20: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 47.9112 → 39.3360 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.17898111669224637
+  - score: 39.33597945203439</p><p><h3>Breakthrough 21: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 47.911175 → 39.335979 (17.9% improvement) via exploit at eval #57
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 47.911175067686656
+  - newBest: 39.33597945203439
+  - improvement: 8.57519561565227
+  - strategy: exploit
+  - eval: 57
+  - params: `{"x0":-1.0859140022201839,"x1":0.0976598188649257,"x2":0.9098025210164452,"x3":-0.060151785723712624,"x4":0.22058756506901564,"x5":0.05785940329251671,"x6":-0.20781582585375497,"x7":0.010585686958473431,"x8":0.7039345785195064,"x9":-1.0713851575561895}`</p><p><h3>Breakthrough 22: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 53.6230 → 47.9112 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.10651749536436027
+  - score: 47.911175067686656</p><p><h3>Breakthrough 23: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 53.622958 → 47.911175 (10.7% improvement) via exploit at eval #44
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 53.622958277425624
+  - newBest: 47.911175067686656
+  - improvement: 5.711783209738968
+  - strategy: exploit
+  - eval: 44
+  - params: `{"x0":-0.9002648799930254,"x1":0.15128457841096907,"x2":0.7176587584618012,"x3":-0.06586452429576996,"x4":0.06393978542504633,"x5":0.10148494287539529,"x6":-0.23103409350654075,"x7":0.00816770757935728,"x8":0.6862249785770089,"x9":-0.9401112716454308}`</p><p><h3>Breakthrough 24: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 56.9517 → 53.6230 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.05844846755545022
+  - score: 53.622958277425624</p><p><h3>Breakthrough 25: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 65.1576 → 56.9517 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.12593985565745633
+  - score: 56.95169773470005</p><p><h3>Breakthrough 26: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 65.157642 → 56.951698 (12.6% improvement) via exploit at eval #34
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 65.15764172903496
+  - newBest: 56.95169773470005
+  - improvement: 8.205943994334916
+  - strategy: exploit
+  - eval: 34
+  - params: `{"x0":-1.0041661058535074,"x1":-0.18579138702179668,"x2":0.5021142770960572,"x3":0.11643626277890556,"x4":0.13870782132139398,"x5":0.28448260824216737,"x6":-0.22477218715230549,"x7":0.05615970641669776,"x8":0.9915750543132403,"x9":-1.0185943829142015}`</p><p><h3>Breakthrough 27: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 83.7321 → 65.1576 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.22183195266962244
+  - score: 65.15764172903496</p><p><h3>Breakthrough 28: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 83.732096 → 65.157642 (22.2% improvement) via exploit at eval #29
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 83.73209611030425
+  - newBest: 65.15764172903496
+  - improvement: 18.57445438126929
+  - strategy: exploit
+  - eval: 29
+  - params: `{"x0":-0.8644575918175261,"x1":-0.04696724003779696,"x2":0.5296580342429865,"x3":0.2886779051973532,"x4":0.0984012493636902,"x5":0.3807263748411149,"x6":-0.02076421035793155,"x7":0.11857943154286817,"x8":0.8922105371766081,"x9":-0.895326652145711}`</p><p><h3>Breakthrough 29: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 89.7071 → 83.7321 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.06660545020887375
+  - score: 83.73209611030425</p><p><h3>Breakthrough 30: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 96.9773 → 89.7071 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.07496852440645928
+  - score: 89.70707631519994</p><p><h3>Breakthrough 31: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 109.8138 → 101.0553 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.07975747834837434
+  - score: 101.05530164886322</p><p><h3>Breakthrough 32: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 128.0006 → 118.3320 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.07553595210763264
+  - score: 118.33199708776203</p><p><h3>Breakthrough 33: new best: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 142.3697 → 128.0006 via exploit
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - confidence: 0.1009277499962687
+  - score: 128.00064789706033</p><p><h3>Breakthrough 34: 🔥 Breakthrough: AEGIS: Rastrigin 10D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 142.369702 → 128.000648 (10.1% improvement) via exploit at eval #6
+- <strong>Data:</strong>
+  - runId: aegis-rastrigin-10d-bayesian-refine-c1
+  - previousBest: 142.36970154126
+  - newBest: 128.00064789706033
+  - improvement: 14.369053644199681
+  - strategy: exploit
+  - eval: 6
+  - params: `{"x0":1.5104300922656912,"x1":-0.9053223022968461,"x2":0.8916354537298892,"x3":-2.9577656739057736,"x4":0.18910588819518892,"x5":4.661385318389784,"x6":-1.7893064734031165,"x7":0.8842505032489676,"x8":-2.5362860675498835,"x9":1.8504870816460888}`</p><p><h3>Breakthrough 35: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0000 → 0.0000 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.18885684373491288
+  - score: 0.000008578858825547542</p><p><h3>Breakthrough 36: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000011 → 0.000009 (18.9% improvement) via annealing at eval #2982
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.000010576257420513713
+  - newBest: 0.000008578858825547542
+  - improvement: 0.000001997398594966171
+  - strategy: annealing
+  - eval: 2982
+  - params: `{"x0":0.0000011441786466917341,"x1":-0.0000038292728225407295,"x2":0.000001704297240651249,"x3":0.00000178085492676964,"x4":-0.000003447989908461789,"x5":-1.605880734185526e-7,"x6":-0.0000014385804911444053,"x7":8.739694989397154e-7}`</p><p><h3>Breakthrough 37: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0000 → 0.0000 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.10074598973105521
+  - score: 0.000010576257420513713</p><p><h3>Breakthrough 38: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000012 → 0.000011 (10.1% improvement) via annealing at eval #2977
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.000011761145682687157
+  - newBest: 0.000010576257420513713
+  - improvement: 0.0000011848882621734447
+  - strategy: annealing
+  - eval: 2977
+  - params: `{"x0":0.0000013205017405402383,"x1":-0.0000019027677745821331,"x2":-3.348598098512649e-7,"x3":0.000002203212659024226,"x4":-0.00000662653166849349,"x5":-1.7952020424555078e-7,"x6":-5.907789320221261e-7,"x7":-0.0000011410419362578307}`</p><p><h3>Breakthrough 39: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0000 → 0.0000 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.07305514788141616
+  - score: 0.000011761145682687157</p><p><h3>Breakthrough 40: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0000 → 0.0000 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.06555377998763014
+  - score: 0.000012688074868538735</p><p><h3>Breakthrough 41: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0000 → 0.0000 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.09185452241441044
+  - score: 0.00001357817560476704</p><p><h3>Breakthrough 42: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0000 → 0.0000 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.36639860335158386
+  - score: 0.000014955693722118468</p><p><h3>Breakthrough 43: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000024 → 0.000015 (36.6% improvement) via annealing at eval #2824
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.000023604262555654287
+  - newBest: 0.000014955693722118468
+  - improvement: 0.000008648568833535819
+  - strategy: annealing
+  - eval: 2824
+  - params: `{"x0":5.777863842692916e-7,"x1":6.033516602661123e-7,"x2":-0.00000447796647208696,"x3":-0.000004350057563097406,"x4":-0.000008106361447153994,"x5":0.0000014794386007323993,"x6":-0.000002058978185132314,"x7":1.0475515838211224e-7}`</p><p><h3>Breakthrough 44: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0000 → 0.0000 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.1293718629468542
+  - score: 0.000023756869201196906</p><p><h3>Breakthrough 45: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000027 → 0.000024 (12.9% improvement) via annealing at eval #2815
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.000027287045054169567
+  - newBest: 0.000023756869201196906
+  - improvement: 0.0000035301758529726612
+  - strategy: annealing
+  - eval: 2815
+  - params: `{"x0":-0.000008302415412938185,"x1":-0.0000016795037891974386,"x2":2.0829896898679407e-7,"x3":-0.000010394682073044635,"x4":-0.0000073959584143780945,"x5":0.000002171120922336441,"x6":-0.000006530928663961049,"x7":-4.890416581211901e-7}`</p><p><h3>Breakthrough 46: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0000 → 0.0000 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.41949252374997525
+  - score: 0.000027287045054169567</p><p><h3>Breakthrough 47: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000047 → 0.000027 (41.9% improvement) via annealing at eval #2700
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.000047005501514707504
+  - newBest: 0.000027287045054169567
+  - improvement: 0.000019718456460537936
+  - strategy: annealing
+  - eval: 2700
+  - params: `{"x0":-0.000005793211938970028,"x1":0.0000013305250383701417,"x2":-0.0000011252370485349584,"x3":-0.000013354660117537033,"x4":-0.000009964334147230127,"x5":0.0000027521760794868193,"x6":-0.0000058493761245032245,"x7":-0.0000040251044307224784}`</p><p><h3>Breakthrough 48: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0001 → 0.0001 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.2149182952228255
+  - score: 0.000050494504435949494</p><p><h3>Breakthrough 49: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000064 → 0.000050 (21.5% improvement) via annealing at eval #2614
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.00006431751514357487
+  - newBest: 0.000050494504435949494
+  - improvement: 0.000013823010707625372
+  - strategy: annealing
+  - eval: 2614
+  - params: `{"x0":-0.000025839026235020708,"x1":-0.0000031529812168205816,"x2":0.000009601686796605323,"x3":-0.000014849598762287686,"x4":-0.00001009780210928784,"x5":0.000006188542353574048,"x6":1.9599433043283964e-7,"x7":-0.00001199239408746761}`</p><p><h3>Breakthrough 50: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0001 → 0.0001 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.2574293885060606
+  - score: 0.00006431751514357487</p><p><h3>Breakthrough 51: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000087 → 0.000064 (25.7% improvement) via annealing at eval #2598
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.00008661467899218067
+  - newBest: 0.00006431751514357487
+  - improvement: 0.000022297163848605805
+  - strategy: annealing
+  - eval: 2598
+  - params: `{"x0":-0.000019516552115147245,"x1":0.000008452341483010632,"x2":0.000026325021035047927,"x3":0.000001917710294970382,"x4":5.50449118162297e-7,"x5":-0.00001068694425845488,"x6":-0.000010243997654600056,"x7":-0.000026438811492946414}`</p><p><h3>Breakthrough 52: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0001 → 0.0001 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.11340731572893928
+  - score: 0.00008661467899218067</p><p><h3>Breakthrough 53: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000098 → 0.000087 (11.3% improvement) via annealing at eval #2535
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.00009769387964597698
+  - newBest: 0.00008661467899218067
+  - improvement: 0.000011079200653796306
+  - strategy: annealing
+  - eval: 2535
+  - params: `{"x0":-0.00001612000920722903,"x1":0.000023656862762480905,"x2":0.00001924191321869181,"x3":0.000019684033514259567,"x4":0.000014494344810636505,"x5":0.0000013668813325787582,"x6":-0.00002970854360047163,"x7":-0.00003281956416135411}`</p><p><h3>Breakthrough 54: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0001 → 0.0001 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.15068361841079977
+  - score: 0.00009883898968654492</p><p><h3>Breakthrough 55: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000116 → 0.000099 (15.1% improvement) via annealing at eval #2434
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.00011637475954673349
+  - newBest: 0.00009883898968654492
+  - improvement: 0.000017535769860188566
+  - strategy: annealing
+  - eval: 2434
+  - params: `{"x0":-0.000003508811154745553,"x1":0.00001530816284361434,"x2":0.000031753435201359385,"x3":0.000010863915219317695,"x4":-0.000026838977408519798,"x5":-0.00004447008918307061,"x6":-0.000022506671803030036,"x7":0.000017433729023405914}`</p><p><h3>Breakthrough 56: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0001 → 0.0001 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.07254803458443594
+  - score: 0.00012028133348751524</p><p><h3>Breakthrough 57: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0002 → 0.0001 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.24696543047492941
+  - score: 0.0001296900949836477</p><p><h3>Breakthrough 58: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000172 → 0.000130 (24.7% improvement) via annealing at eval #2389
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.00017222329522725843
+  - newBest: 0.0001296900949836477
+  - improvement: 0.000042533200243610736
+  - strategy: annealing
+  - eval: 2389
+  - params: `{"x0":-0.00002321437364982854,"x1":-0.000014681682280303093,"x2":0.000024319004450827682,"x3":0.000010058031203384892,"x4":0.000046379969701704064,"x5":-0.00006684367304898523,"x6":-0.000009389845985629404,"x7":-0.000015751927578549044}`</p><p><h3>Breakthrough 59: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0002 → 0.0002 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.08889305412674085
+  - score: 0.00017222329522725843</p><p><h3>Breakthrough 60: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0003 → 0.0002 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.21747689633853645
+  - score: 0.00019577390770963987</p><p><h3>Breakthrough 61: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000250 → 0.000196 (21.7% improvement) via annealing at eval #2324
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.00025018291063050313
+  - newBest: 0.00019577390770963987
+  - improvement: 0.00005440900292086326
+  - strategy: annealing
+  - eval: 2324
+  - params: `{"x0":-0.00005949997772334082,"x1":-0.000004529860032759598,"x2":0.00003092945983530917,"x3":-0.000020762210356767675,"x4":-0.00009702658218724541,"x5":0.00002229899476922026,"x6":0.00006484566120314533,"x7":0.000008599178376991519}`</p><p><h3>Breakthrough 62: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0004 → 0.0003 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.36125652396359464
+  - score: 0.0002628012237448907</p><p><h3>Breakthrough 63: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000411 → 0.000263 (36.1% improvement) via annealing at eval #2254
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.00041143468951831963
+  - newBest: 0.0002628012237448907
+  - improvement: 0.00014863346577342895
+  - strategy: annealing
+  - eval: 2254
+  - params: `{"x0":-0.000011499930089571908,"x1":0.000007945769164467096,"x2":-0.00008208070355154906,"x3":0.0000629176302440644,"x4":-0.00005313123366662147,"x5":-0.0000757200822109165,"x6":0.00008040828033670331,"x7":0.00009251354173871827}`</p><p><h3>Breakthrough 64: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0004 → 0.0004 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.06905790926480641
+  - score: 0.00041143468951831963</p><p><h3>Breakthrough 65: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0005 → 0.0004 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.1605166412885185
+  - score: 0.00044195519099732294</p><p><h3>Breakthrough 66: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000526 → 0.000442 (16.1% improvement) via annealing at eval #2210
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.0005264609314896695
+  - newBest: 0.00044195519099732294
+  - improvement: 0.0000845057404923466
+  - strategy: annealing
+  - eval: 2210
+  - params: `{"x0":-0.0000956046407228903,"x1":0.00011550949832933474,"x2":-0.00006579291584134083,"x3":0.00009716356129671098,"x4":0.00004029230825942219,"x5":-0.00011059294674800036,"x6":0.00014835230917328282,"x7":0.00015893733925482855}`</p><p><h3>Breakthrough 67: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0007 → 0.0005 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.2456392050804184
+  - score: 0.0005264609314896695</p><p><h3>Breakthrough 68: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.000698 → 0.000526 (24.6% improvement) via annealing at eval #2205
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.0006978901011760463
+  - newBest: 0.0005264609314896695
+  - improvement: 0.00017142916968637678
+  - strategy: annealing
+  - eval: 2205
+  - params: `{"x0":-0.00014613008241301363,"x1":0.00024905522677780013,"x2":0.00002632044179242421,"x3":0.00012098190556548516,"x4":-0.00010063272560917074,"x5":-0.0001081329329535015,"x6":0.000132445726472212,"x7":0.00000485276533475585}`</p><p><h3>Breakthrough 69: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0008 → 0.0007 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.07323883264816834
+  - score: 0.0006978901011760463</p><p><h3>Breakthrough 70: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0008 → 0.0008 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.07691526713966158
+  - score: 0.0007782257453148311</p><p><h3>Breakthrough 71: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0009 → 0.0008 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.0825193502021615
+  - score: 0.0008430707578743757</p><p><h3>Breakthrough 72: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0011 → 0.0009 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.15544646602646953
+  - score: 0.0009188975898948293</p><p><h3>Breakthrough 73: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.001088 → 0.000919 (15.5% improvement) via annealing at eval #2119
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.0010880276417428725
+  - newBest: 0.0009188975898948293
+  - improvement: 0.0001691300518480432
+  - strategy: annealing
+  - eval: 2119
+  - params: `{"x0":-0.0005794854942303818,"x1":0.00007709582772888282,"x2":0.00008718705844509478,"x3":0.00008992693540270898,"x4":-0.00004267176612552989,"x5":0.00023377362788074238,"x6":-0.00006654216756333278,"x7":0.00003590112993772374}`</p><p><h3>Breakthrough 74: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0013 → 0.0011 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.12955118283749562
+  - score: 0.0011413082031919153</p><p><h3>Breakthrough 75: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.001311 → 0.001141 (13.0% improvement) via annealing at eval #2086
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.0013111720995984122
+  - newBest: 0.0011413082031919153
+  - improvement: 0.0001698638964064969
+  - strategy: annealing
+  - eval: 2086
+  - params: `{"x0":-0.0005175069163988955,"x1":0.00020455140132120774,"x2":-0.00031082970984512223,"x3":-0.0001537991348999247,"x4":-0.00007191480157320377,"x5":0.00023919393126168852,"x6":-0.00015685073398261475,"x7":0.0003598315389718394}`</p><p><h3>Breakthrough 76: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0017 → 0.0014 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.1818415132651487
+  - score: 0.001356434353639191</p><p><h3>Breakthrough 77: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.001658 → 0.001356 (18.2% improvement) via annealing at eval #2067
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.0016579114873604972
+  - newBest: 0.001356434353639191
+  - improvement: 0.00030147713372130625
+  - strategy: annealing
+  - eval: 2067
+  - params: `{"x0":-0.0005815110420294111,"x1":0.00014816898651176763,"x2":-0.00007360938150984664,"x3":-0.0005928678677082125,"x4":0.0001051308683704702,"x5":0.000415084352514454,"x6":0.0000611735712998334,"x7":-0.00008736731157950656}`</p><p><h3>Breakthrough 78: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0019 → 0.0017 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.14249039031087488
+  - score: 0.0016579114873604972</p><p><h3>Breakthrough 79: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.001933 → 0.001658 (14.2% improvement) via annealing at eval #2020
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.0019334028081172683
+  - newBest: 0.0016579114873604972
+  - improvement: 0.0002754913207567711
+  - strategy: annealing
+  - eval: 2020
+  - params: `{"x0":-0.0003719946769092204,"x1":0.00038811173039080037,"x2":0.00004526825616755494,"x3":-0.0008162774686187403,"x4":-0.00021083733753475732,"x5":0.000590842027186024,"x6":-0.00009186747125524726,"x7":-0.00000422224889650867}`</p><p><h3>Breakthrough 80: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0021 → 0.0020 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.05373880994007698
+  - score: 0.002029646679958308</p><p><h3>Breakthrough 81: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0029 → 0.0022 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.24250686094134075
+  - score: 0.0021700207946158123</p><p><h3>Breakthrough 82: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.002865 → 0.002170 (24.3% improvement) via annealing at eval #1956
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.0028647398672316804
+  - newBest: 0.0021700207946158123
+  - improvement: 0.0006947190726158681
+  - strategy: annealing
+  - eval: 1956
+  - params: `{"x0":-0.0009574856506213421,"x1":0.0008477008324146101,"x2":-0.0004567236552835064,"x3":-0.00042793968867192007,"x4":-0.000002292177053873608,"x5":0.0004942496122851648,"x6":-0.0002224715023352656,"x7":-0.000014084199506341063}`</p><p><h3>Breakthrough 83: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0033 → 0.0029 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.11877132157302465
+  - score: 0.0028647398672316804</p><p><h3>Breakthrough 84: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.003251 → 0.002865 (11.9% improvement) via annealing at eval #1952
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.003250847296918824
+  - newBest: 0.0028647398672316804
+  - improvement: 0.0003861074296871436
+  - strategy: annealing
+  - eval: 1952
+  - params: `{"x0":-0.0013499375215567048,"x1":0.0009508757004486713,"x2":-0.0005180331468122591,"x3":-0.0009207125967523585,"x4":0.00026076728545481253,"x5":0.00005073993854758351,"x6":-0.00020650454353927363,"x7":0.0002667323255297595}`</p><p><h3>Breakthrough 85: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0034 → 0.0033 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.05435692415729624
+  - score: 0.003250847296918824</p><p><h3>Breakthrough 86: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0039 → 0.0037 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.05860485461513921
+  - score: 0.003711139844515987</p><p><h3>Breakthrough 87: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0045 → 0.0039 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.13182417495679122
+  - score: 0.003942170153213187</p><p><h3>Breakthrough 88: 🔥 Breakthrough: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Score jumped 0.004541 → 0.003942 (13.2% improvement) via annealing at eval #1899
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - previousBest: 0.0045407508934229845
+  - newBest: 0.003942170153213187
+  - improvement: 0.0005985807402097976
+  - strategy: annealing
+  - eval: 1899
+  - params: `{"x0":-0.001697197276107655,"x1":0.0005831919114812662,"x2":-0.000014217918934108077,"x3":-0.0012740974425157238,"x4":0.000342006600716044,"x5":-0.0005476538718823634,"x6":-0.0012514121667943838,"x7":-0.0008636230126632438}`</p><p><h3>Breakthrough 89: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0052 → 0.0047 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.08653074083480106
+  - score: 0.00474342242958814</p><p><h3>Breakthrough 90: new best: AEGIS: Ackley 8D [bayesian-refine]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:48 UTC
+- <strong>Detail:</strong> Major improvement: 0.0056 → 0.0052 via annealing
+- <strong>Data:</strong>
+  - runId: aegis-ackley-8d-bayesian-refine-c1
+  - confidence: 0.07995476465158168
+  - score: 0.005192755401449478</p><p><h3>Breakthrough 91: new best: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 81.7360 → 76.8579 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.059680654982754
+  - score: 76.85794255629384</p><p><h3>Breakthrough 92: new best: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 91.1740 → 81.7360 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.10351592640286242
+  - score: 81.73600060826593</p><p><h3>Breakthrough 93: 🔥 Breakthrough: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 91.173957 → 81.736001 (10.4% improvement) via annealing at eval #822
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - previousBest: 91.17395725760153
+  - newBest: 81.73600060826593
+  - improvement: 9.437956649335604
+  - strategy: annealing
+  - eval: 822
+  - params: `{"x0":3.0013580011867216,"x1":-0.796382249538651,"x2":2.082697787194239,"x3":-1.9804762149567035,"x4":-0.09718582694942658,"x5":1.9995744290887838,"x6":5.12,"x7":0.9317595408263347,"x8":-4.055327554622854,"x9":-1.0571197123835523}`</p><p><h3>Breakthrough 94: new best: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 100.9599 → 95.4026 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.0550445737595586
+  - score: 95.4025907638661</p><p><h3>Breakthrough 95: new best: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 108.7547 → 100.9599 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.07167376481706915
+  - score: 100.95988457723419</p><p><h3>Breakthrough 96: new best: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 133.3564 → 108.7547 via random
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.1844805151975612
+  - score: 108.75474671610417</p><p><h3>Breakthrough 97: 🔥 Breakthrough: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 133.356405 → 108.754747 (18.4% improvement) via random at eval #83
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - previousBest: 133.35640501888219
+  - newBest: 108.75474671610417
+  - improvement: 24.60165830277802
+  - strategy: random
+  - eval: 83
+  - params: `{"x0":0.019370435399065578,"x1":2.058229762385298,"x2":3.172702086385228,"x3":0.9953613532026564,"x4":-1.1390101967952102,"x5":0.19338489983760265,"x6":4.80659383682817,"x7":0.8720936384676365,"x8":-4.364506252241515,"x9":-0.8116944888922646}`</p><p><h3>Breakthrough 98: new best: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 143.6315 → 133.3564 via evolutionary
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.07153819422144538
+  - score: 133.35640501888219</p><p><h3>Breakthrough 99: new best: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 152.2398 → 143.6315 via random
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.05654398941631651
+  - score: 143.63154648785707</p><p><h3>Breakthrough 100: new best: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 163.7146 → 152.2398 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.07009053213815745
+  - score: 152.23979165599593</p><p><h3>Breakthrough 101: new best: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 172.9770 → 163.7146 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.053546906569811925
+  - score: 163.71463773354583</p><p><h3>Breakthrough 102: new best: Seeker: Rastrigin 10D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 191.4080 → 172.9770 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-rastrigin-10d-diverse-mix-c1
+  - confidence: 0.09629135202566307
+  - score: 172.97702217888275</p><p><h3>Breakthrough 103: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 2.2799 → 2.1057 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.07644115810349214
+  - score: 2.1056608063841407</p><p><h3>Breakthrough 104: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 2.6214 → 2.4736 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.056404233142156424
+  - score: 2.4735665898345656</p><p><h3>Breakthrough 105: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 2.9718 → 2.7839 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.06323546269607287
+  - score: 2.7839173164380537</p><p><h3>Breakthrough 106: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 3.4112 → 3.0398 via evolutionary
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.10888512723260789
+  - score: 3.039783917548395</p><p><h3>Breakthrough 107: 🔥 Breakthrough: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 3.411214 → 3.039784 (10.9% improvement) via evolutionary at eval #411
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - previousBest: 3.411214435360311
+  - newBest: 3.039783917548395
+  - improvement: 0.37143051781191616
+  - strategy: evolutionary
+  - eval: 411
+  - params: `{"x0":1.1555849645265537,"x1":0.4505477471638786,"x2":-0.13504430663027933,"x3":-0.14989023463537754,"x4":-0.010697225537575294,"x5":-1.0100399876796926,"x6":-0.002225581809238944,"x7":0.01105289403399573}`</p><p><h3>Breakthrough 108: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 3.6158 → 3.4112 via evolutionary
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.056568692407217944
+  - score: 3.411214435360311</p><p><h3>Breakthrough 109: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 4.3001 → 3.6158 via evolutionary
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.1591527591446239
+  - score: 3.6157528459217834</p><p><h3>Breakthrough 110: 🔥 Breakthrough: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 4.300130 → 3.615753 (15.9% improvement) via evolutionary at eval #113
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - previousBest: 4.300130475832393
+  - newBest: 3.6157528459217834
+  - improvement: 0.6843776299106099
+  - strategy: evolutionary
+  - eval: 113
+  - params: `{"x0":-0.14526407393344556,"x1":0.15344164629650092,"x2":0.6687820368589188,"x3":-0.13978652231635735,"x4":0.7435151301935548,"x5":-0.28956210424715023,"x6":-0.7429867139138056,"x7":0.6967311201214128}`</p><p><h3>Breakthrough 111: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 5.3280 → 4.3001 via evolutionary
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.19291847993545216
+  - score: 4.300130475832393</p><p><h3>Breakthrough 112: 🔥 Breakthrough: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 5.328000 → 4.300130 (19.3% improvement) via evolutionary at eval #106
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - previousBest: 5.3280001696588
+  - newBest: 4.300130475832393
+  - improvement: 1.027869693826407
+  - strategy: evolutionary
+  - eval: 106
+  - params: `{"x0":0.05202960681186031,"x1":-0.13600492091424776,"x2":0.31017258319291025,"x3":-0.07363583230731352,"x4":-1.3838778563550596,"x5":-0.8738840192646913,"x6":-0.036006560279619154,"x7":1.4363172647857776}`</p><p><h3>Breakthrough 113: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 5.9382 → 5.3280 via evolutionary
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.10275575407858016
+  - score: 5.3280001696588</p><p><h3>Breakthrough 114: 🔥 Breakthrough: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 5.938183 → 5.328000 (10.3% improvement) via evolutionary at eval #90
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - previousBest: 5.938182600644311
+  - newBest: 5.3280001696588
+  - improvement: 0.6101824309855104
+  - strategy: evolutionary
+  - eval: 90
+  - params: `{"x0":-0.13740654567761368,"x1":0.607109798561061,"x2":1.9702661683148668,"x3":-0.1834808195811216,"x4":-0.19957242796596653,"x5":-1.326525545181294,"x6":0.15781837947291977,"x7":1.8163012364194489}`</p><p><h3>Breakthrough 115: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 6.9528 → 5.9382 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.1459291537493567
+  - score: 5.938182600644311</p><p><h3>Breakthrough 116: 🔥 Breakthrough: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Score jumped 6.952799 → 5.938183 (14.6% improvement) via swarm at eval #64
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - previousBest: 6.952798619356734
+  - newBest: 5.938182600644311
+  - improvement: 1.0146160187124238
+  - strategy: swarm
+  - eval: 64
+  - params: `{"x0":-0.22134492439992792,"x1":1.2460881041052172,"x2":2.2332675851288886,"x3":-0.5295579061520598,"x4":-0.2563941733023707,"x5":-0.7417745082078715,"x6":0.9575647758127748,"x7":1.8100849735117412}`</p><p><h3>Breakthrough 117: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 7.6598 → 7.2594 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.05228045049482758
+  - score: 7.259365630869759</p><p><h3>Breakthrough 118: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 8.8534 → 8.3983 via random
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.05140655414669069
+  - score: 8.398283239487192</p><p><h3>Breakthrough 119: new best: Seeker: Ackley 8D [diverse-mix]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:49 UTC
+- <strong>Detail:</strong> Major improvement: 10.8532 → 9.8356 via random
+- <strong>Data:</strong>
+  - runId: seeker-ackley-8d-diverse-mix-c1
+  - confidence: 0.09375899238475778
+  - score: 9.835607782839643</p><p><h3>Breakthrough 120: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 1.4340 → 1.3563 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.05419766837912393
+  - score: 1.356269805685163</p><p><h3>Breakthrough 121: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 2.0324 → 1.9140 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.0582495815485561
+  - score: 1.9140037992224135</p><p><h3>Breakthrough 122: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 2.2502 → 2.0324 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.09678805669751087
+  - score: 2.032389645623607</p><p><h3>Breakthrough 123: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 2.4521 → 2.2566 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.07975287813648958
+  - score: 2.256578101303749</p><p><h3>Breakthrough 124: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 2.6731 → 2.4521 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.0826529416529635
+  - score: 2.452143611961702</p><p><h3>Breakthrough 125: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 3.6625 → 3.1119 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.1503474025229914
+  - score: 3.1118863412052824</p><p><h3>Breakthrough 126: 🔥 Breakthrough: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Score jumped 3.662540 → 3.111886 (15.0% improvement) via annealing at eval #925
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - previousBest: 3.6625396667365444
+  - newBest: 3.1118863412052824
+  - improvement: 0.550653325531262
+  - strategy: annealing
+  - eval: 925
+  - params: `{"x0":0.3238404454663022,"x1":0.46485498343000703,"x2":0.30992686309664796,"x3":0.6301469327305452,"x4":-0.8911762210746219,"x5":-0.26790827083916624,"x6":0.49729951399397415,"x7":0.18471770024729967,"x8":0.08549087578400023,"x9":-0.17411716975423877,"x10":0.44299738177704007,"x11":0.24755016378222625,"x12":0.03810006703597026,"x13":-0.1486614183534442,"x14":0.6095403797736161,"x15":0.06622534160006914,"x16":0.28326175618862637,"x17":-0.30280096342995727,"x18":0.3896069349052683,"x19":-0.3633687453763975}`</p><p><h3>Breakthrough 127: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 3.8577 → 3.6625 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.05059983342702976
+  - score: 3.6625396667365444</p><p><h3>Breakthrough 128: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 4.1452 → 3.8577 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.06934840705495571
+  - score: 3.8577407037510185</p><p><h3>Breakthrough 129: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 4.4248 → 4.1452 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.06318327782277422
+  - score: 4.1452039979249475</p><p><h3>Breakthrough 130: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 6.0231 → 5.4482 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.09544481543907397
+  - score: 5.448204254433894</p><p><h3>Breakthrough 131: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 8.4916 → 6.3223 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.25545638444179725
+  - score: 6.322342761924151</p><p><h3>Breakthrough 132: 🔥 Breakthrough: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Score jumped 8.491568 → 6.322343 (25.5% improvement) via annealing at eval #718
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - previousBest: 8.491568028803973
+  - newBest: 6.322342761924151
+  - improvement: 2.169225266879822
+  - strategy: annealing
+  - eval: 718
+  - params: `{"x0":0.6733779332279934,"x1":-0.04981478676168263,"x2":0.9849179023807345,"x3":0.734153506053273,"x4":-1.3435555192986404,"x5":-0.12783460377840294,"x6":-0.041323813243426114,"x7":0.04699426051598944,"x8":0.23837599826212624,"x9":-0.6446731914002019,"x10":0.38937522013184894,"x11":-0.15564010965629402,"x12":0.09670114119990507,"x13":-0.22788003888001107,"x14":0.3633084456079861,"x15":-0.23271386570381059,"x16":1.0857426224363576,"x17":0.08309775765830954,"x18":0.6444784844235607,"x19":-0.18759528373535955}`</p><p><h3>Breakthrough 133: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 9.5111 → 8.4916 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.10719777739227716
+  - score: 8.491568028803973</p><p><h3>Breakthrough 134: 🔥 Breakthrough: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Score jumped 9.511141 → 8.491568 (10.7% improvement) via annealing at eval #709
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - previousBest: 9.511141229018845
+  - newBest: 8.491568028803973
+  - improvement: 1.0195732002148716
+  - strategy: annealing
+  - eval: 709
+  - params: `{"x0":0.9084368148551663,"x1":-0.2690346272352867,"x2":1.0633783944093387,"x3":0.9051977509527935,"x4":-1.4135889451538013,"x5":-0.2947629144757946,"x6":-0.10964319627183255,"x7":0.14840551204161578,"x8":0.02948604567269314,"x9":-0.7141270148575456,"x10":0.4834198472735302,"x11":-0.27906403495550525,"x12":0.08781214936212267,"x13":-0.09012131098589743,"x14":0.31613065927561257,"x15":-0.26611409417079684,"x16":1.2964466209068448,"x17":-0.07774314730456755,"x18":0.8745396281432315,"x19":-0.25291467479876856}`</p><p><h3>Breakthrough 135: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 11.3331 → 9.5111 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.16076807740388205
+  - score: 9.511141229018845</p><p><h3>Breakthrough 136: 🔥 Breakthrough: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Score jumped 11.333150 → 9.511141 (16.1% improvement) via annealing at eval #657
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - previousBest: 11.333149958829797
+  - newBest: 9.511141229018845
+  - improvement: 1.8220087298109515
+  - strategy: annealing
+  - eval: 657
+  - params: `{"x0":0.9904412913680557,"x1":-0.13100907367419404,"x2":1.029906432243379,"x3":0.8258802079852829,"x4":-1.400564063089769,"x5":-0.1611035484565693,"x6":-0.3087791295010695,"x7":0.08139480680832034,"x8":0.17314752946437595,"x9":-0.9896702852795243,"x10":0.6293372005754856,"x11":-0.09167938286530267,"x12":-0.05850616802637836,"x13":-0.35249482430497825,"x14":0.13540929508308386,"x15":-0.23337626017571778,"x16":1.5362817930918669,"x17":0.14857806949621463,"x18":0.6529538896488768,"x19":-0.5076961159422961}`</p><p><h3>Breakthrough 137: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 11.9648 → 11.3331 via annealing
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.05279222363020955
+  - score: 11.333149958829797</p><p><h3>Breakthrough 138: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 12.9992 → 11.9968 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.07711845402866171
+  - score: 11.996753645528191</p><p><h3>Breakthrough 139: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 14.8279 → 12.9992 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.12332472803183382
+  - score: 12.999234514871068</p><p><h3>Breakthrough 140: 🔥 Breakthrough: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Score jumped 14.827879 → 12.999235 (12.3% improvement) via swarm at eval #401
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - previousBest: 14.827878611982905
+  - newBest: 12.999234514871068
+  - improvement: 1.8286440971118374
+  - strategy: swarm
+  - eval: 401
+  - params: `{"x0":1.1936983566094979,"x1":0.4637849387582239,"x2":0.17440575982134887,"x3":0.12846674944583655,"x4":0.15178668105524773,"x5":0.37790879925532295,"x6":-1.3336993800635881,"x7":0.49120208273798416,"x8":0.20477923953097055,"x9":-0.5209325624402102,"x10":0.1841060649944012,"x11":0.7563835819605454,"x12":1.369108114835712,"x13":1.6398290326903677,"x14":0.08336146075965556,"x15":0.1347906535569966,"x16":0.7136739966128232,"x17":1.7116337280498837,"x18":-0.4196876045163078,"x19":0.057660809440361054}`</p><p><h3>Breakthrough 141: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 25.4145 → 14.8279 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.41655773948732405
+  - score: 14.827878611982905</p><p><h3>Breakthrough 142: 🔥 Breakthrough: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Score jumped 25.414475 → 14.827879 (41.7% improvement) via swarm at eval #376
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - previousBest: 25.41447477416791
+  - newBest: 14.827878611982905
+  - improvement: 10.586596162185005
+  - strategy: swarm
+  - eval: 376
+  - params: `{"x0":0.5853062783786052,"x1":-0.9579002456930369,"x2":0.639757187247349,"x3":-0.005389797949695296,"x4":1.1706202124274188,"x5":-0.5403212351871939,"x6":-0.25486530455845835,"x7":-0.1330414248715559,"x8":-0.20571594298944995,"x9":0.19214620390412196,"x10":0.34177382800656786,"x11":0.6668317953031486,"x12":0.43644509439041884,"x13":1.5568689370363733,"x14":1.5850218004432062,"x15":0.41611780747424776,"x16":0.5325396457693884,"x17":1.7292446975505342,"x18":-1.4812350008055133,"x19":0.07084873626768695}`</p><p><h3>Breakthrough 143: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 34.8228 → 26.6606 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.23439244120310257
+  - score: 26.660636786431667</p><p><h3>Breakthrough 144: 🔥 Breakthrough: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Score jumped 34.822849 → 26.660637 (23.4% improvement) via swarm at eval #361
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - previousBest: 34.822849487441225
+  - newBest: 26.660636786431667
+  - improvement: 8.162212701009558
+  - strategy: swarm
+  - eval: 361
+  - params: `{"x0":0.2515809995986059,"x1":-0.5001091842021919,"x2":1.2187870565029173,"x3":0.7628552603788054,"x4":0.8561520697847643,"x5":-1.0139458776555683,"x6":-1.826277024803393,"x7":-0.13062262640662659,"x8":-0.17919842059249902,"x9":-1.1625500123945902,"x10":1.903795184259772,"x11":1.2769925201780588,"x12":-0.9583323894276821,"x13":0.33927182493346786,"x14":2.338877583364227,"x15":-0.4075951379709719,"x16":1.0247809579280562,"x17":1.1988079498922555,"x18":-1.6202415034526798,"x19":0.863217103969552}`</p><p><h3>Breakthrough 145: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 44.1878 → 36.2786 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.17899122778127158
+  - score: 36.278609026352356</p><p><h3>Breakthrough 146: 🔥 Breakthrough: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Score jumped 44.187846 → 36.278609 (17.9% improvement) via swarm at eval #182
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - previousBest: 44.18784579890849
+  - newBest: 36.278609026352356
+  - improvement: 7.9092367725561346
+  - strategy: swarm
+  - eval: 182
+  - params: `{"x0":0.5554522908860855,"x1":-0.7783477094334655,"x2":1.4359376036139722,"x3":1.9813956181583172,"x4":0.35728283952507245,"x5":0.4043414687000768,"x6":-0.14510063733234702,"x7":-0.9363903626517442,"x8":1.2106615995468175,"x9":-0.8692368392490919,"x10":2.207211840296242,"x11":2.531968504362583,"x12":-1.4123679152568942,"x13":1.403583399249687,"x14":1.1265342992712588,"x15":-0.7166138404976563,"x16":-0.8346660870746566,"x17":2.7303879357145004,"x18":-0.775676814255684,"x19":0.4273869143789787}`</p><p><h3>Breakthrough 147: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 53.9314 → 44.1878 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.1806656552201559
+  - score: 44.18784579890849</p><p><h3>Breakthrough 148: 🔥 Breakthrough: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Score jumped 53.931397 → 44.187846 (18.1% improvement) via swarm at eval #160
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - previousBest: 53.9313969693066
+  - newBest: 44.18784579890849
+  - improvement: 9.743551170398106
+  - strategy: swarm
+  - eval: 160
+  - params: `{"x0":-0.4464334366430218,"x1":-1.1452688434505571,"x2":2.8911900820167484,"x3":2.4296631779142013,"x4":-0.3164554544448023,"x5":1.705529784898758,"x6":0.7562612844437072,"x7":0.33592738387281024,"x8":2.630333128551685,"x9":0.19961587674338688,"x10":1.7141781277551367,"x11":1.295394923960012,"x12":-0.9559062124848512,"x13":1.4313735223773623,"x14":0.6060595483748984,"x15":0.38147692841293446,"x16":-1.4084484844707617,"x17":2.706784929268077,"x18":0.4765705305379584,"x19":-0.3646920862703822}`</p><p><h3>Breakthrough 149: new best: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> INFO
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Major improvement: 61.5587 → 53.9314 via swarm
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - confidence: 0.12390234022388762
+  - score: 53.9313969693066</p><p><h3>Breakthrough 150: 🔥 Breakthrough: Seeker: Sphere 20D [annealing-hot]</h3></p><p>- <strong>Severity:</strong> BREAKTHROUGH
+- <strong>Time:</strong> 2026-07-18 18:49:47 UTC
+- <strong>Detail:</strong> Score jumped 61.558659 → 53.931397 (12.4% improvement) via swarm at eval #139
+- <strong>Data:</strong>
+  - runId: seeker-sphere-20d-annealing-hot-c1
+  - previousBest: 61.55865886354361
+  - newBest: 53.9313969693066
+  - improvement: 7.627261894237016
+  - strategy: swarm
+  - eval: 139
+  - params: `{"x0":0.7125917968535453,"x1":-0.09433883522995187,"x2":4.235848816961171,"x3":1.7446688791147196,"x4":-0.2057649779790639,"x5":1.858671102857763,"x6":0.18688477459283515,"x7":-0.08592223127061316,"x8":2.800115468403518,"x9":-0.6384245873656903,"x10":2.0703129444931943,"x11":0.7325409232506815,"x12":-2.3915697021885425,"x13":1.2717782014916803,"x14":-0.41151256490107546,"x15":-0.2364207929930261,"x16":-1.9339448649728062,"x17":1.2854819730457478,"x18":-0.40166021964196386,"x19":-1.643737956025106}`</p><p><h2>5. Best Results by Torsion Domain</h2></p><p><h3>Einstein-Cartan</h3></p><p><blockquote>No completed runs yet.</blockquote></p><p><h3>f(T) Gravity</h3></p><p><blockquote>No completed runs yet.</blockquote></p><p><h3>UFE Torsion</h3></p><p><blockquote>No completed runs yet.</blockquote></p><p><h3>Torsion Wave</h3></p><p><blockquote>No completed runs yet.</blockquote></p><p><h2>6. Key Insights</h2></p><p>1. <strong>Phase shift: AEGIS: Rastrigin 10D [bayesian-refine]</strong> — exploring → exploiting at eval #99. Narrowing in on promising region — high convergence rate.
+2. <strong>Phase shift: Seeker: Rastrigin 10D [diverse-mix]</strong> — exploring → exploiting at eval #99. Narrowing in on promising region — high convergence rate.
+3. <strong>Phase shift: Seeker: Ackley 8D [diverse-mix]</strong> — exploring → exploiting at eval #99. Narrowing in on promising region — high convergence rate.</p><p><h2>7. Physical Interpretation & Discussion</h2></p><p><h3>7.1 Einstein-Cartan Results</h3></p><p>The optimizer searches for torsion tensor configurations satisfying the Cartan
+equation T^a_{bc} + δ^a_b T_c − δ^a_c T_b = 8πG s^a_{bc}. Low residual values
+indicate physically consistent spin-torsion coupling at the explored spin density
+magnitudes. Results near zero residual suggest parameter regimes where torsion
+naturally decouples — consistent with the experimental non-observation of torsion
+at accessible energy scales.</p><p><strong>Key question:</strong> Do any discovered configurations show anomalously low residuals
+at unexpected spin densities? Such configurations could indicate previously
+unidentified resonance conditions in spin-torsion coupling.</p><p><h3>7.2 f(T) Gravity Cosmology</h3></p><p>The f(T) task fits modified teleparallel gravity models to 21 H(z) data points
+spanning z = 0 to z = 2.34. The chi-squared metric against observational data
+directly measures compatibility with observed cosmic expansion history.</p><p><strong>Significance:</strong> Any f(T) model achieving χ² < 21 (≈ 1 per data point) while
+requiring fewer fine-tuned parameters than ΛCDM would constitute evidence for
+torsion-based modifications to gravity. The Born-Infeld and logarithmic models
+are of particular theoretical interest due to their UV-complete behavior.</p><p><h3>7.3 UFE Torsion Functional</h3></p><p>The unified functional Φ(T, S, K) bridges quantum spin-torsion coupling to
+macroscopic spacetime torsion. Physical constraints (stability, causality,
+unitarity, energy conditions, solar system bounds) dramatically restrict the
+viable parameter space.</p><p><strong>Novel aspect:</strong> The gradient energy term γ·∇T·∇T introduces a characteristic
+length scale ℓ = √(γ/2α) for torsion field variations. Discovered values of
+this scale could point to new physics at specific energy thresholds.</p><p><h3>7.4 Torsion Wave Propagation</h3></p><p>If torsion is massive (m > 0), it propagates as a Proca-like field with finite
+range λ_C = ℏ/(mc). The optimizer's best-fit mass values directly predict the
+torsion interaction range.</p><p><strong>Experimental testable:</strong> A torsion mass in the range 10⁻⁶ to 10⁻³ eV
+would produce measurable spin-dependent forces at laboratory scales (μm to mm
+range), potentially detectable by torsion balance experiments or spin-polarized
+test mass experiments.</p><p><hr></p><p><h2>8. Methodology Notes</h2></p><p><h3>8.1 Optimization Framework</h3></p><p>Both AEGIS and Seeker implement adaptive meta-learning across 10 optimization
+strategies. A multi-armed bandit selects strategies based on their empirical
+improvement rates, with Thompson sampling to balance exploration of strategy
+effectiveness. All runs use seeded Xoshiro256** PRNG for reproducibility.</p><p><h3>8.2 UFE Tracking</h3></p><p>Every function evaluation is classified as "useful" if it either:
+- Improves the best-known score, OR
+- Explores a novel region of parameter space (discretized grid)</p><p>The UFE ratio (useful/total) measures optimization efficiency. The AUCC
+(Area Under Convergence Curve) provides a single-number summary of convergence
+quality. Time-to-target metrics report evaluations needed to close 10%, 50%,
+and 90% of the initial optimality gap.</p><p><h3>8.3 Anomaly Detection</h3></p><p>Anomalies are detected via:
+- <strong>Z-score outliers:</strong> Evaluations with |z| > 3σ from running mean
+- <strong>Landscape shifts:</strong> Sudden change in the score distribution
+- <strong>Constraint boundary clustering:</strong> Solutions clustering at physical constraint boundaries
+- <strong>Strategy disruptions:</strong> Unexpected strategy dominance shifts</p><p><h3>8.4 Pincer Configuration</h3></p><p>AEGIS and Seeker operate in opposite-end pincer mode:
+- <strong>AEGIS cycle 1:</strong> Exploration-heavy profiles on easy tasks → exploitation-heavy on hard tasks
+- <strong>Seeker cycle 1:</strong> Exploitation-heavy on easy tasks → exploration-heavy on hard tasks
+- <strong>Each subsequent cycle:</strong> Engines swap direction</p><p>This ensures that every (task, strategy-profile) combination is covered from
+both the exploration and exploitation perspectives.</p><p><hr></p><p><h2>9. Data Availability</h2></p><p>All raw data is available via the live monitoring API:</p><p><table><thead><tr><th>Endpoint</th><th>URL</th></tr></thead><tbody><tr><td>AEGIS snapshot</td><td>http://localhost:5555/api/snapshot</td></tr>
+<tr><td>AEGIS alerts</td><td>http://localhost:5555/api/alerts</td></tr>
+<tr><td>Seeker snapshot</td><td>http://localhost:5556/api/snapshot</td></tr>
+<tr><td>Seeker alerts</td><td>http://localhost:5556/api/alerts</td></tr>
+<tr><td>AEGIS run detail</td><td>http://localhost:5555/api/run/:id</td></tr>
+<tr><td>Seeker run detail</td><td>http://localhost:5556/api/run/:id</td></tr></tbody></table>
+Full convergence curves, UFE metrics, and parameter histories are available
+per-run through the /api/run/:id endpoints.</p><p><hr></p><p><h2>10. References</h2></p><p>1. Hehl, F.W. et al. (1976). "General relativity with spin and torsion."
+   *Rev. Mod. Phys.* 48, 393.
+2. Cai, Y.-F., Capozziello, S., et al. (2016). "f(T) teleparallel gravity
+   and cosmology." *Rep. Prog. Phys.* 79, 106901.
+3. Hammond, R.T. (2002). "Torsion gravity." *Rep. Prog. Phys.* 65, 599.
+4. Shapiro, I.L. (2002). "Physical aspects of the space-time torsion."
+   *Phys. Rep.* 357, 113.
+5. Planck Collaboration (2018). "Planck 2018 results. VI. Cosmological
+   parameters." *A&A* 641, A6.</p><p><hr></p><p>*Report generated automatically by the AEGIS/Seeker Autonomous Discovery Framework.*
+*Copyright © 2012-2026 Danny Lee Eldridge. All rights reserved.*
+
+</body>
+</html>

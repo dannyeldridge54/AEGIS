@@ -214,6 +214,7 @@ const tasksByDifficulty = [
   aegis.fTGravityTask,
   aegis.ufeTorsionTask,
   aegis.torsionWaveTask,
+  aegis.crossDomainTask,
 ];
 
 const TASK_COUNT = tasksByDifficulty.length;

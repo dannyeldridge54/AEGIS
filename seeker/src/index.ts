@@ -71,8 +71,11 @@ export { LiveMonitor, createMonitor, Alert, AlertSeverity, MonitorConfig, Monito
 // Torsion Field Theory
 export {
   torsionTasks, einsteinCartanTask, fTGravityTask, ufeTorsionTask, torsionWaveTask,
+  crossDomainTask, crossDomainUFE,
   einsteinCartanResidual, fTCosmologyResidual, ufeTorsionFunctional, torsionWaveResidual,
   fTGravity_PowerLaw, fTGravity_BornInfeld, fTGravity_Logarithmic, fTGravity_Exponential,
   computeTorsionScalar, computeTraceVector, computeAxialTorsion,
-  TorsionTensor, ContorsionTensor,
+  computeSpatialAnomalies, HZ_OBSERVATIONS,
+  TorsionTensor, ContorsionTensor, HzObservation, SpatialAnomaly,
 } from './torsion';
+export { EquationWriter, createEquationWriter } from './equation-writer';

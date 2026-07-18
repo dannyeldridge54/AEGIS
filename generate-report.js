@@ -1,14 +1,17 @@
 /**
- * AEGIS / Seeker — Astrophysics Anomaly Report Generator
+ * AEGIS / Seeker — Scientific Report Generator
  * Copyright (c) 2012-2026 Danny Lee Eldridge. All rights reserved.
  *
- * Pulls live data from AEGIS (port 5555) and Seeker (port 5556) monitors,
- * generates a formatted scientific report suitable for astrophysicists.
+ * Generates a publication-quality technical report in the style of
+ * Physical Review D / JCAP / Classical and Quantum Gravity.
+ *
+ * Pulls live optimization data from AEGIS and Seeker monitoring endpoints
+ * and formats results with proper scientific structure.
  *
  * Usage:
- *   node generate-report.js                    → prints to stdout
- *   node generate-report.js --out report.md    → writes to file
- *   node generate-report.js --format html      → HTML output
+ *   node generate-report.js                    → prints markdown to stdout
+ *   node generate-report.js --out report.md    → writes markdown file
+ *   node generate-report.js --out report.html --format html  → styled HTML
  */
 
 const http = require('http');
