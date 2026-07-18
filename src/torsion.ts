@@ -144,7 +144,9 @@ export function fTGravity_PowerLaw(T: number, alpha: number, n: number): number 
 }
 
 export function fTGravity_BornInfeld(T: number, lambda: number): number {
-  return lambda * (Math.sqrt(1 + 2 * T / lambda) - 1);
+  const arg = 1 + 2 * T / lambda;
+  if (arg <= 0) return lambda * (-1); // saturate when argument goes negative
+  return lambda * (Math.sqrt(arg) - 1);
 }
 
 export function fTGravity_Logarithmic(T: number, alpha: number, beta: number, T0: number): number {
@@ -548,7 +550,8 @@ export function fTCosmologyResidual(params: Record<string, number>): number {
   }
 
   const regularization = 0.01 * (alpha * alpha + beta * beta + n * n);
-  return chi2 + regularization;
+  const result = chi2 + regularization;
+  return isFinite(result) ? result : 1e6;
 }
 
 // ─── Custom UFE Torsion Field (v2 — Non-trivial Physics) ─────────────────────
