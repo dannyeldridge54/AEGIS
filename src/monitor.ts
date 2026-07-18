@@ -96,6 +96,20 @@ export class LiveMonitor {
   private alertLogStream: fs.WriteStream | null = null;
   private listeners: Array<(alert: Alert) => void> = [];
 
+  // Cross-engine scoreboard + equation data (injected by runner)
+  private scoreboardData: Array<{
+    task: string; taskId: string; aegisScore: number | null; seekerScore: number | null;
+    bestScore: number | null; bestEngine: string; target: number; progress: number;
+    pollinations: number; status: string;
+  }> = [];
+  private equationData: { plaintext: string; latex: string; params: Record<string, number>; score: number; engine: string; taskId: string } | null = null;
+
+  /** Set cross-engine scoreboard data (called by runner) */
+  setScoreboard(data: typeof this.scoreboardData): void { this.scoreboardData = data; }
+
+  /** Set best equation discovered (called by runner) */
+  setEquation(data: typeof this.equationData): void { this.equationData = data; }
+
   constructor(config?: MonitorConfig) {
     this.config = {
       port: config?.port ?? 5555,
@@ -617,6 +631,25 @@ export class LiveMonitor {
   .val.blue { color: #58a6ff; } .val.green { color: #3fb950; } .val.orange { color: #f0883e; }
   .val.red { color: #f85149; } .val.purple { color: #bc8cff; } .val.cyan { color: #39d353; }
 
+  /* Equation banner */
+  .equation-banner { background: linear-gradient(135deg, #0d1117 0%, #1a1e2e 50%, #0d1117 100%); border: 2px solid #58a6ff; border-radius: 8px; padding: 20px 24px; text-align: center; }
+  .equation-banner h2 { color: #f0883e; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .equation-text { color: #e6edf3; font-size: 18px; line-height: 1.8; letter-spacing: 0.5px; padding: 12px 0; }
+  .equation-meta { color: #8b949e; font-size: 11px; margin-top: 8px; }
+  .equation-score { color: #3fb950; font-weight: bold; }
+
+  /* Scoreboard */
+  .scoreboard td { font-size: 12px; }
+  .scoreboard .task-name { color: #f0883e; font-weight: bold; max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .scoreboard .score-cell { font-family: 'SF Mono', monospace; text-align: right; }
+  .scoreboard .best { color: #3fb950; font-weight: bold; }
+  .scoreboard .other { color: #8b949e; }
+  .progress-bar-bg { width: 100px; height: 14px; background: #21262d; border-radius: 7px; overflow: hidden; display: inline-block; vertical-align: middle; }
+  .progress-bar-fill { height: 100%; border-radius: 7px; transition: width 0.5s; }
+  .progress-pct { font-size: 10px; color: #8b949e; margin-left: 4px; }
+  .status-icon { font-size: 12px; }
+  .pollination-badge { background: #1f2937; color: #a78bfa; padding: 1px 6px; border-radius: 8px; font-size: 9px; }
+
   .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; overflow: hidden; }
   .card-title { background: #0d1117; padding: 10px 16px; font-size: 12px; color: #58a6ff; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
   .card-title .count { background: #30363d; color: #c9d1d9; padding: 2px 8px; border-radius: 10px; font-size: 10px; }
@@ -688,6 +721,57 @@ export class LiveMonitor {
     <div class="stat-box"><div class="val purple">${contributions.length}</div><div class="lbl">Contributions</div></div>
     <div class="stat-box"><div class="val cyan">${runs.filter(r => r.status === 'running').length}</div><div class="lbl">Active Now</div></div>
   </div>
+
+  <!-- Best Equation Discovered -->
+${this.equationData ? `
+  <div class="equation-banner full-width">
+    <h2>🧮 Best Torsion Field Equation Discovered</h2>
+    <div class="equation-text">${this.equationData.plaintext}</div>
+    <div class="equation-meta">
+      χ² = <span class="equation-score">${this.equationData.score.toFixed(6)}</span> &nbsp;│&nbsp;
+      Engine: ${this.equationData.engine} &nbsp;│&nbsp;
+      Task: ${this.equationData.taskId} &nbsp;│&nbsp;
+      ${Object.entries(this.equationData.params).map(([k, v]) => fmtParam(k, v as number)).join(' &nbsp;│&nbsp; ')}
+    </div>
+  </div>
+` : ''}
+
+  <!-- Cross-Engine Scoreboard -->
+${this.scoreboardData.length > 0 ? `
+  <div class="card full-width">
+    <div class="card-title">🏁 All-Physics Scoreboard — AEGIS vs Seeker <span class="count">${this.scoreboardData.length} tasks</span></div>
+    <div class="card-body">
+      <table class="scoreboard">
+        <tr>
+          <th></th>
+          <th>Physics Task</th>
+          <th style="text-align:right">AEGIS</th>
+          <th style="text-align:right">Seeker</th>
+          <th style="text-align:right">Best</th>
+          <th>Progress</th>
+          <th style="text-align:center">🧬</th>
+          <th>Status</th>
+        </tr>
+${this.scoreboardData.map((row, i) => {
+  const aegisBest = row.aegisScore !== null && row.bestEngine === 'AEGIS';
+  const seekerBest = row.seekerScore !== null && row.bestEngine === 'Seeker';
+  const progressColor = row.progress >= 95 ? '#3fb950' : row.progress >= 70 ? '#f0883e' : row.progress >= 40 ? '#d29922' : '#f85149';
+  const statusIcon = row.status === 'converged' ? '⚡' : row.status === 'improving' ? '📈' : row.status === 'grinding' ? '🔄' : '🔬';
+  return `<tr>
+    <td style="color:#484f58;font-size:10px">${i + 1}</td>
+    <td class="task-name">${row.task}</td>
+    <td class="score-cell ${aegisBest ? 'best' : 'other'}">${row.aegisScore !== null ? (Math.abs(row.aegisScore) < 0.001 && row.aegisScore !== 0 ? row.aegisScore.toExponential(3) : row.aegisScore.toFixed(4)) : '—'}</td>
+    <td class="score-cell ${seekerBest ? 'best' : 'other'}">${row.seekerScore !== null ? (Math.abs(row.seekerScore) < 0.001 && row.seekerScore !== 0 ? row.seekerScore.toExponential(3) : row.seekerScore.toFixed(4)) : '—'}</td>
+    <td class="score-cell best">${row.bestScore !== null ? (Math.abs(row.bestScore) < 0.001 && row.bestScore !== 0 ? row.bestScore.toExponential(3) : row.bestScore.toFixed(4)) : '—'}</td>
+    <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(row.progress, 100)}%;background:${progressColor}"></div></div><span class="progress-pct">${row.progress.toFixed(0)}%</span></td>
+    <td style="text-align:center">${row.pollinations > 0 ? '<span class="pollination-badge">×' + row.pollinations + '</span>' : ''}</td>
+    <td><span class="status-icon">${statusIcon}</span> ${row.status}</td>
+  </tr>`;
+}).join('\n')}
+      </table>
+    </div>
+  </div>
+` : ''}
 
   <!-- Best Results by Torsion Domain -->
   <div class="card full-width">

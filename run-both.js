@@ -749,6 +749,7 @@ function recordBest(taskId, params, score, source) {
     bestKnown[taskId] = { params: { ...params }, score, source };
     if (prev && prev.source !== source) {
       console.log(`\n🔄 [CROSS-POLLINATION] ${source} beat ${prev.source} on ${taskId}: ${score.toFixed(4)} < ${prev.score.toFixed(4)}`);
+      countPollination(taskId);
     }
   }
 }
@@ -798,6 +799,8 @@ async function runAegisLoop() {
         const bs = result && result.best ? result.best.score : null;
         if (bp && isFinite(bs)) {
           recordBest(task.id, bp, bs, 'AEGIS');
+          updateScoreboard(task.id, bs, 'AEGIS');
+          updateBestEquation('AEGIS', task.id, bp, bs, aegisWriter);
         }
         // Log spatial anomalies + equations for torsion runs
         if (bp && task.id.match(/ft-gravity|cross-domain|ufe-torsion|einstein-cartan|torsion-wave/)) {
@@ -849,6 +852,8 @@ async function runSeekerLoop() {
         const bs = result && result.best ? result.best.score : null;
         if (bp && isFinite(bs)) {
           recordBest(task.id, bp, bs, 'Seeker');
+          updateScoreboard(task.id, bs, 'Seeker');
+          updateBestEquation('Seeker', task.id, bp, bs, seekerWriter);
         }
         // Log spatial anomalies + equations for torsion runs
         if (bp && task.id.match(/ft-gravity|cross-domain|ufe-torsion|einstein-cartan|torsion-wave/)) {
@@ -863,6 +868,145 @@ async function runSeekerLoop() {
     console.log(`[Seeker] Cycle ${seekerCycle} done — ${seekerTotal} lifetime runs`);
   }
 }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// SCOREBOARD + EQUATION TRACKER — pushes to both monitors for dashboard display
+// ═══════════════════════════════════════════════════════════════════════════════
+
+// Track per-engine best scores and cross-pollination counts
+const aegisBests = {};  // { taskId: score }
+const seekerBests = {}; // { taskId: score }
+const pollinationCounts = {}; // { taskId: count }
+
+// Target scores for progress calculation (χ² targets — lower is better)
+const TASK_TARGETS = {
+  'energy-conditions': 0,
+  'einstein-cartan': 0.001,
+  'torsion-wave': 0.01,
+  'rsd-growth': 2,
+  's8-tension': 8,
+  'desi-bao-fit': 10,
+  'dark-energy-eos': 10,
+  'cc-hubble-fit': 12,
+  'ft-gravity': 12,
+  'model-selection-bic': 20,
+  'sne-pantheon-fit': 50,
+  'ufe-cross-domain': 50,
+  'combined-multisurvey': 100,
+  'h0-tension': 10,
+  'ufe-torsion': 100,
+};
+
+// Nice display names
+const TASK_NAMES = {
+  'energy-conditions': 'Energy Conditions',
+  'einstein-cartan': 'Einstein-Cartan Torsion',
+  'torsion-wave': 'Torsion Wave Dispersion',
+  'rsd-growth': 'RSD fσ₈ Growth',
+  's8-tension': 'S₈ Tension',
+  'desi-bao-fit': 'DESI DR1 BAO',
+  'dark-energy-eos': 'Dark Energy EoS w₀wₐ',
+  'cc-hubble-fit': 'Cosmic Chronometer H(z)',
+  'ft-gravity': 'f(T) Teleparallel',
+  'model-selection-bic': 'Model Selection ΔBIC',
+  'sne-pantheon-fit': 'Pantheon+ SNe Ia',
+  'ufe-cross-domain': 'UFE Cross-Domain Unified',
+  'combined-multisurvey': 'Combined Multi-Survey',
+  'h0-tension': 'H₀ Tension Resolver',
+  'ufe-torsion': 'UFE Torsion Mexican Hat',
+};
+
+function updateScoreboard(taskId, score, engine) {
+  if (!isFinite(score)) return;
+  if (engine === 'AEGIS') {
+    if (!aegisBests[taskId] || score < aegisBests[taskId]) aegisBests[taskId] = score;
+  } else {
+    if (!seekerBests[taskId] || score < seekerBests[taskId]) seekerBests[taskId] = score;
+  }
+}
+
+function countPollination(taskId) {
+  pollinationCounts[taskId] = (pollinationCounts[taskId] || 0) + 1;
+}
+
+// Best equation tracker
+let bestEquation = null;
+
+function updateBestEquation(engine, taskId, params, score, writer) {
+  try {
+    if (!writer || !params || !isFinite(score)) return;
+    if (score > 500) return;
+    if (!taskId.match(/ufe-torsion|cross-domain|ft-gravity|einstein-cartan|torsion-wave/)) return;
+    if (bestEquation && score >= bestEquation.score) return;
+    const eq = writer.synthesize(taskId, params, score);
+    if (eq) {
+      bestEquation = {
+        plaintext: eq.plaintext || eq.latex || 'N/A',
+        latex: eq.latex || '',
+        params: { ...params },
+        score,
+        engine,
+        taskId,
+      };
+    }
+  } catch (e) { /* silent */ }
+}
+
+function pushScoreboardToMonitors() {
+  const allTaskIds = Object.keys(TASK_TARGETS);
+  const rows = allTaskIds.map(taskId => {
+    const aScore = aegisBests[taskId] ?? null;
+    const sScore = seekerBests[taskId] ?? null;
+    const bestScore = (aScore !== null && sScore !== null) ? Math.min(aScore, sScore)
+      : aScore !== null ? aScore : sScore;
+    const bestEngine = bestScore === aScore ? 'AEGIS' : 'Seeker';
+    const target = TASK_TARGETS[taskId];
+    // Progress: 100% when score <= target, scales from starting score
+    const startingScore = target * 100 || 10000; // rough initial
+    let progress = 0;
+    if (bestScore !== null) {
+      if (bestScore <= target) progress = 100;
+      else progress = Math.max(0, Math.min(99, (1 - (bestScore - target) / (startingScore - target)) * 100));
+    }
+    // Status
+    let status = 'exploring';
+    if (bestScore !== null) {
+      if (bestScore <= target) status = 'converged';
+      else if (bestScore <= target * 3) status = 'improving';
+      else if (bestScore <= target * 20) status = 'grinding';
+      else status = 'exploring';
+    }
+    return {
+      task: TASK_NAMES[taskId] || taskId,
+      taskId,
+      aegisScore: aScore,
+      seekerScore: sScore,
+      bestScore,
+      bestEngine,
+      target,
+      progress,
+      pollinations: pollinationCounts[taskId] || 0,
+      status,
+    };
+  }).sort((a, b) => {
+    // Sort: converged first, then by progress descending
+    const statusOrder = { converged: 0, improving: 1, grinding: 2, exploring: 3 };
+    const aOrd = statusOrder[a.status] ?? 4;
+    const bOrd = statusOrder[b.status] ?? 4;
+    if (aOrd !== bOrd) return aOrd - bOrd;
+    return b.progress - a.progress;
+  });
+
+  aegisMonitor.setScoreboard(rows);
+  seekerMonitor.setScoreboard(rows);
+  if (bestEquation) {
+    aegisMonitor.setEquation(bestEquation);
+    seekerMonitor.setEquation(bestEquation);
+  }
+}
+
+// Push scoreboard every 5 seconds
+setInterval(pushScoreboardToMonitors, 5000);
 
 // Status printer
 setInterval(() => {

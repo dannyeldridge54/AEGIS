@@ -1,5 +1,5 @@
 /**
- * Seeker — Live Monitor & Alert System
+ * AEGIS — Live Monitor & Alert System
  * Copyright (c) 2012-2026 Danny Lee Eldridge. All rights reserved.
  *
  * Real-time tracking of optimization runs with categorized alerts:
@@ -95,6 +95,20 @@ export class LiveMonitor {
   private startTime = Date.now();
   private alertLogStream: fs.WriteStream | null = null;
   private listeners: Array<(alert: Alert) => void> = [];
+
+  // Cross-engine scoreboard + equation data (injected by runner)
+  private scoreboardData: Array<{
+    task: string; taskId: string; aegisScore: number | null; seekerScore: number | null;
+    bestScore: number | null; bestEngine: string; target: number; progress: number;
+    pollinations: number; status: string;
+  }> = [];
+  private equationData: { plaintext: string; latex: string; params: Record<string, number>; score: number; engine: string; taskId: string } | null = null;
+
+  /** Set cross-engine scoreboard data (called by runner) */
+  setScoreboard(data: typeof this.scoreboardData): void { this.scoreboardData = data; }
+
+  /** Set best equation discovered (called by runner) */
+  setEquation(data: typeof this.equationData): void { this.equationData = data; }
 
   constructor(config?: MonitorConfig) {
     this.config = {
@@ -442,7 +456,7 @@ export class LiveMonitor {
     });
 
     this.server.listen(this.config.port, () => {
-      console.log(`📊 Seeker Monitor: http://localhost:${this.config.port}`);
+      console.log(`📊 AEGIS Monitor: http://localhost:${this.config.port}`);
     });
   }
 
@@ -458,7 +472,7 @@ export class LiveMonitor {
     const lines: string[] = [
       '',
       '╔═══════════════════════════════════════════════════════════════════╗',
-      '║                    Seeker LIVE MONITOR                           ║',
+      '║                    AEGIS LIVE MONITOR                           ║',
       '╠═══════════════════════════════════════════════════════════════════╣',
       `║  Uptime: ${formatUptime(snap.uptime).padEnd(15)} Active runs: ${String(snap.summary.totalRuns).padEnd(20)}║`,
       `║  Evals: ${snap.summary.totalEvals.toLocaleString().padEnd(16)} Breakthroughs: ${String(snap.summary.totalBreakthroughs).padEnd(18)}║`,
@@ -537,56 +551,380 @@ export class LiveMonitor {
 
   private renderDashboardHTML(): string {
     const snap = this.getSnapshot();
+    const runs = Object.values(snap.runs);
+
+    // ── Classify runs by domain ──
+    const domainLabels: Record<string, string> = {
+      'einstein-cartan': 'Einstein-Cartan Torsion',
+      'ft-gravity': 'f(T) Teleparallel Gravity',
+      'ufe-torsion': 'UFE Torsion Field',
+      'torsion-wave': 'Torsion Wave Propagation',
+    };
+    const domains = Object.keys(domainLabels);
+
+    function classifyDomain(id: string): string | null {
+      for (const d of domains) { if (id.includes(d)) return d; }
+      return null;
+    }
+
+    // Best result per domain (all-time)
+    const domainBests: Record<string, RunTracker | null> = {};
+    for (const d of domains) domainBests[d] = null;
+    for (const r of runs) {
+      const d = classifyDomain(r.id);
+      if (!d || r.bestScore === null) continue;
+      if (!domainBests[d] || r.bestScore! < domainBests[d]!.bestScore!) {
+        domainBests[d] = r;
+      }
+    }
+
+    // Extract scientific contributions: breakthroughs + convergences + anomalies
+    const contributions = this.alerts.filter(a =>
+      a.category === 'breakthrough' || a.category === 'anomaly' ||
+      (a.category === 'insight' && a.severity === 'breakthrough')
+    );
+
+    // Major improvements: top N largest score jumps
+    const majorImprovements = this.alerts
+      .filter(a => a.category === 'breakthrough' && a.data?.improvement !== undefined)
+      .sort((a, b) => Math.abs(b.data!.improvement) - Math.abs(a.data!.improvement))
+      .slice(0, 15);
+
+    // Strategy leaderboard across all runs
+    const stratWins: Record<string, number> = {};
+    for (const r of runs) {
+      for (const [strat, count] of Object.entries(r.strategyWins)) {
+        stratWins[strat] = (stratWins[strat] || 0) + (count as number);
+      }
+    }
+    const stratLeaderboard = Object.entries(stratWins).sort((a, b) => b[1] - a[1]);
+    const totalStratWins = stratLeaderboard.reduce((s, e) => s + e[1], 0);
+
+    // UFE efficiency rankings
+    const ufeRanked = runs
+      .filter(r => r.ufe && r.ufe.ufeRatio > 0)
+      .sort((a, b) => b.ufe!.ufeRatio - a.ufe!.ufeRatio)
+      .slice(0, 10);
+
+    // Format helpers
+    const fmtScore = (n: number | null) => n === null ? 'N/A' : Math.abs(n) < 0.001 && n !== 0 ? n.toExponential(4) : n.toFixed(6);
+    const fmtPct = (n: number) => (n * 100).toFixed(1) + '%';
+    const fmtParam = (k: string, v: number) => `<span class="param-name">${k}</span>=<span class="param-val">${Math.abs(v) < 0.001 && v !== 0 ? v.toExponential(3) : v.toFixed(6)}</span>`;
+
     return `<!DOCTYPE html>
-<html><head><title>Seeker Monitor</title>
+<html><head><title>AEGIS Monitor</title>
 <meta http-equiv="refresh" content="5">
 <style>
-  body { background: #0d1117; color: #c9d1d9; font-family: 'Consolas', monospace; margin: 20px; }
-  h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-  .card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 16px; margin: 10px 0; }
-  .alert { padding: 8px 12px; margin: 4px 0; border-left: 3px solid; border-radius: 3px; }
-  .alert.breakthrough { border-color: #f0883e; background: #1c1206; }
-  .alert.critical { border-color: #f85149; background: #1c0606; }
-  .alert.warning { border-color: #d29922; background: #1c1506; }
-  .alert.info { border-color: #58a6ff; background: #061c30; }
-  .stat { display: inline-block; margin: 0 20px 10px 0; }
-  .stat-value { font-size: 24px; color: #58a6ff; font-weight: bold; }
-  .stat-label { font-size: 12px; color: #8b949e; }
-  table { width: 100%; border-collapse: collapse; }
-  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #21262d; }
-  th { color: #8b949e; font-size: 12px; text-transform: uppercase; }
-  .badge { padding: 2px 8px; border-radius: 10px; font-size: 11px; }
-  .running { background: #238636; }
-  .completed { background: #1f6feb; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0e14; color: #c9d1d9; font-family: 'SF Mono', 'Consolas', 'Fira Code', monospace; }
+  .dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px; max-width: 1600px; margin: 0 auto; }
+  .full-width { grid-column: 1 / -1; }
+
+  .header { background: linear-gradient(135deg, #0d1117 0%, #161b22 100%); border: 1px solid #30363d; border-radius: 8px; padding: 20px; }
+  .header h1 { color: #58a6ff; font-size: 20px; margin-bottom: 6px; letter-spacing: 2px; }
+  .header .subtitle { color: #8b949e; font-size: 11px; }
+
+  .stats-bar { display: flex; flex-wrap: wrap; gap: 8px; }
+  .stat-box { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 12px 16px; flex: 1; min-width: 120px; text-align: center; }
+  .stat-box .val { font-size: 26px; font-weight: bold; }
+  .stat-box .lbl { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+  .val.blue { color: #58a6ff; } .val.green { color: #3fb950; } .val.orange { color: #f0883e; }
+  .val.red { color: #f85149; } .val.purple { color: #bc8cff; } .val.cyan { color: #39d353; }
+
+  /* Equation banner */
+  .equation-banner { background: linear-gradient(135deg, #0d1117 0%, #1a1e2e 50%, #0d1117 100%); border: 2px solid #58a6ff; border-radius: 8px; padding: 20px 24px; text-align: center; }
+  .equation-banner h2 { color: #f0883e; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .equation-text { color: #e6edf3; font-size: 18px; line-height: 1.8; letter-spacing: 0.5px; padding: 12px 0; }
+  .equation-meta { color: #8b949e; font-size: 11px; margin-top: 8px; }
+  .equation-score { color: #3fb950; font-weight: bold; }
+
+  /* Scoreboard */
+  .scoreboard td { font-size: 12px; }
+  .scoreboard .task-name { color: #f0883e; font-weight: bold; max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .scoreboard .score-cell { font-family: 'SF Mono', monospace; text-align: right; }
+  .scoreboard .best { color: #3fb950; font-weight: bold; }
+  .scoreboard .other { color: #8b949e; }
+  .progress-bar-bg { width: 100px; height: 14px; background: #21262d; border-radius: 7px; overflow: hidden; display: inline-block; vertical-align: middle; }
+  .progress-bar-fill { height: 100%; border-radius: 7px; transition: width 0.5s; }
+  .progress-pct { font-size: 10px; color: #8b949e; margin-left: 4px; }
+  .status-icon { font-size: 12px; }
+  .pollination-badge { background: #1f2937; color: #a78bfa; padding: 1px 6px; border-radius: 8px; font-size: 9px; }
+
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; overflow: hidden; }
+  .card-title { background: #0d1117; padding: 10px 16px; font-size: 12px; color: #58a6ff; text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 1px solid #30363d; display: flex; justify-content: space-between; align-items: center; }
+  .card-title .count { background: #30363d; color: #c9d1d9; padding: 2px 8px; border-radius: 10px; font-size: 10px; }
+  .card-body { padding: 12px 16px; max-height: 420px; overflow-y: auto; }
+
+  /* Domain cards */
+  .domain-card { padding: 12px; border-bottom: 1px solid #21262d; }
+  .domain-card:last-child { border-bottom: none; }
+  .domain-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .domain-name { color: #f0883e; font-weight: bold; font-size: 13px; }
+  .domain-score { color: #3fb950; font-size: 18px; font-weight: bold; }
+  .domain-score.none { color: #484f58; font-size: 14px; }
+  .params-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 4px; margin-top: 6px; }
+  .param-name { color: #bc8cff; }
+  .param-val { color: #79c0ff; }
+  .domain-meta { color: #8b949e; font-size: 11px; margin-top: 4px; }
+
+  /* Contributions */
+  .contrib { padding: 10px 12px; border-bottom: 1px solid #21262d; }
+  .contrib:last-child { border-bottom: none; }
+  .contrib-header { display: flex; justify-content: space-between; margin-bottom: 4px; }
+  .contrib-title { font-weight: bold; font-size: 12px; }
+  .contrib-time { color: #8b949e; font-size: 10px; }
+  .contrib-detail { color: #8b949e; font-size: 11px; line-height: 1.4; }
+  .contrib.breakthrough .contrib-title { color: #f0883e; }
+  .contrib.anomaly .contrib-title { color: #f85149; }
+  .contrib.convergence .contrib-title { color: #3fb950; }
+
+  /* Improvements table */
+  table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  th { text-align: left; padding: 6px 10px; color: #8b949e; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #30363d; }
+  td { padding: 6px 10px; border-bottom: 1px solid #21262d; }
+  tr:hover { background: #1c2128; }
+
+  /* Strategy bar */
+  .strat-row { display: flex; align-items: center; padding: 4px 0; }
+  .strat-name { width: 100px; font-size: 11px; color: #bc8cff; }
+  .strat-bar-bg { flex: 1; height: 16px; background: #21262d; border-radius: 3px; overflow: hidden; margin: 0 8px; }
+  .strat-bar { height: 100%; border-radius: 3px; transition: width 0.5s; }
+  .strat-count { width: 50px; text-align: right; font-size: 11px; color: #8b949e; }
+
+  /* Runs table */
+  .run-status { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .run-status.running { background: #3fb950; box-shadow: 0 0 4px #3fb950; }
+  .run-status.completed { background: #58a6ff; }
+  .run-status.failed { background: #f85149; }
+
+  /* Scrollbar */
+  .card-body::-webkit-scrollbar { width: 4px; }
+  .card-body::-webkit-scrollbar-track { background: #0d1117; }
+  .card-body::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+
+  @media (max-width: 900px) { .dashboard { grid-template-columns: 1fr; } }
 </style></head><body>
-<h1>⚡ Seeker Live Monitor</h1>
-<div class="card">
-  <div class="stat"><div class="stat-value">${snap.summary.totalRuns}</div><div class="stat-label">Active Runs</div></div>
-  <div class="stat"><div class="stat-value">${snap.summary.totalEvals.toLocaleString()}</div><div class="stat-label">Total Evaluations</div></div>
-  <div class="stat"><div class="stat-value">${snap.summary.totalBreakthroughs}</div><div class="stat-label">Breakthroughs</div></div>
-  <div class="stat"><div class="stat-value">${snap.summary.totalAnomalies}</div><div class="stat-label">Anomalies</div></div>
-  <div class="stat"><div class="stat-value">${snap.summary.activeAlerts}</div><div class="stat-label">Active Alerts</div></div>
-  <div class="stat"><div class="stat-value">${formatUptime(snap.uptime)}</div><div class="stat-label">Uptime</div></div>
-</div>
-<h2>Runs</h2>
-<div class="card"><table><tr><th>Name</th><th>Status</th><th>Evals</th><th>Best Score</th><th>UFE</th><th>Phase</th><th>Improvements</th></tr>
-${Object.values(snap.runs).map(r => `<tr>
-  <td>${r.name}</td>
-  <td><span class="badge ${r.status}">${r.status}</span></td>
-  <td>${r.totalEvals.toLocaleString()}</td>
-  <td>${r.bestScore?.toFixed(8) ?? 'N/A'}</td>
-  <td>${r.ufe ? (r.ufe.ufeRatio * 100).toFixed(1) + '%' : 'N/A'}</td>
-  <td>${r.phase}</td>
-  <td>${r.improvements}</td>
-</tr>`).join('')}
-</table></div>
-<h2>Alerts</h2>
-<div class="card">
-${this.alerts.slice(0, 20).map(a => {
+<div class="dashboard">
+
+  <!-- Header -->
+  <div class="header full-width">
+    <h1>⚡ AEGIS — LIVE SCIENTIFIC MONITOR</h1>
+    <div class="subtitle">Autonomous Evolving General Intelligence System — Torsion Field Theory Exploration &nbsp;|&nbsp; Uptime: ${formatUptime(snap.uptime)} &nbsp;|&nbsp; Last refresh: ${new Date().toISOString().slice(11, 19)} UTC</div>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar full-width">
+    <div class="stat-box"><div class="val blue">${snap.summary.totalEvals.toLocaleString()}</div><div class="lbl">Evaluations</div></div>
+    <div class="stat-box"><div class="val green">${snap.summary.totalRuns}</div><div class="lbl">Runs</div></div>
+    <div class="stat-box"><div class="val orange">${snap.summary.totalBreakthroughs}</div><div class="lbl">Breakthroughs</div></div>
+    <div class="stat-box"><div class="val red">${snap.summary.totalAnomalies}</div><div class="lbl">Anomalies</div></div>
+    <div class="stat-box"><div class="val purple">${contributions.length}</div><div class="lbl">Contributions</div></div>
+    <div class="stat-box"><div class="val cyan">${runs.filter(r => r.status === 'running').length}</div><div class="lbl">Active Now</div></div>
+  </div>
+
+  <!-- Best Equation Discovered -->
+${this.equationData ? `
+  <div class="equation-banner full-width">
+    <h2>🧮 Best Torsion Field Equation Discovered</h2>
+    <div class="equation-text">${this.equationData.plaintext}</div>
+    <div class="equation-meta">
+      χ² = <span class="equation-score">${this.equationData.score.toFixed(6)}</span> &nbsp;│&nbsp;
+      Engine: ${this.equationData.engine} &nbsp;│&nbsp;
+      Task: ${this.equationData.taskId} &nbsp;│&nbsp;
+      ${Object.entries(this.equationData.params).map(([k, v]) => fmtParam(k, v as number)).join(' &nbsp;│&nbsp; ')}
+    </div>
+  </div>
+` : ''}
+
+  <!-- Cross-Engine Scoreboard -->
+${this.scoreboardData.length > 0 ? `
+  <div class="card full-width">
+    <div class="card-title">🏁 All-Physics Scoreboard — AEGIS vs Seeker <span class="count">${this.scoreboardData.length} tasks</span></div>
+    <div class="card-body">
+      <table class="scoreboard">
+        <tr>
+          <th></th>
+          <th>Physics Task</th>
+          <th style="text-align:right">AEGIS</th>
+          <th style="text-align:right">Seeker</th>
+          <th style="text-align:right">Best</th>
+          <th>Progress</th>
+          <th style="text-align:center">🧬</th>
+          <th>Status</th>
+        </tr>
+${this.scoreboardData.map((row, i) => {
+  const aegisBest = row.aegisScore !== null && row.bestEngine === 'AEGIS';
+  const seekerBest = row.seekerScore !== null && row.bestEngine === 'Seeker';
+  const progressColor = row.progress >= 95 ? '#3fb950' : row.progress >= 70 ? '#f0883e' : row.progress >= 40 ? '#d29922' : '#f85149';
+  const statusIcon = row.status === 'converged' ? '⚡' : row.status === 'improving' ? '📈' : row.status === 'grinding' ? '🔄' : '🔬';
+  return `<tr>
+    <td style="color:#484f58;font-size:10px">${i + 1}</td>
+    <td class="task-name">${row.task}</td>
+    <td class="score-cell ${aegisBest ? 'best' : 'other'}">${row.aegisScore !== null ? (Math.abs(row.aegisScore) < 0.001 && row.aegisScore !== 0 ? row.aegisScore.toExponential(3) : row.aegisScore.toFixed(4)) : '—'}</td>
+    <td class="score-cell ${seekerBest ? 'best' : 'other'}">${row.seekerScore !== null ? (Math.abs(row.seekerScore) < 0.001 && row.seekerScore !== 0 ? row.seekerScore.toExponential(3) : row.seekerScore.toFixed(4)) : '—'}</td>
+    <td class="score-cell best">${row.bestScore !== null ? (Math.abs(row.bestScore) < 0.001 && row.bestScore !== 0 ? row.bestScore.toExponential(3) : row.bestScore.toFixed(4)) : '—'}</td>
+    <td><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(row.progress, 100)}%;background:${progressColor}"></div></div><span class="progress-pct">${row.progress.toFixed(0)}%</span></td>
+    <td style="text-align:center">${row.pollinations > 0 ? '<span class="pollination-badge">×' + row.pollinations + '</span>' : ''}</td>
+    <td><span class="status-icon">${statusIcon}</span> ${row.status}</td>
+  </tr>`;
+}).join('\n')}
+      </table>
+    </div>
+  </div>
+` : ''}
+
+  <!-- Best Results by Torsion Domain -->
+  <div class="card full-width">
+    <div class="card-title">🔬 Best Results by Physics Domain <span class="count">${domains.length} domains</span></div>
+    <div class="card-body">
+${domains.map(d => {
+  const best = domainBests[d];
+  const domainRuns = runs.filter(r => classifyDomain(r.id) === d);
+  const completed = domainRuns.filter(r => r.bestScore !== null).length;
+  if (!best) {
+    return `<div class="domain-card">
+      <div class="domain-header"><span class="domain-name">${domainLabels[d]}</span><span class="domain-score none">Awaiting data…</span></div>
+      <div class="domain-meta">${domainRuns.length} run(s) tracked, ${completed} with results</div>
+    </div>`;
+  }
+  const paramsHTML = best.bestParams
+    ? Object.entries(best.bestParams).map(([k, v]) => fmtParam(k, v as number)).join(' &nbsp;│&nbsp; ')
+    : 'N/A';
+  const topStrat = Object.entries(best.strategyWins).sort((a, b) => (b[1] as number) - (a[1] as number))[0];
+  return `<div class="domain-card">
+    <div class="domain-header">
+      <span class="domain-name">${domainLabels[d]}</span>
+      <span class="domain-score">${fmtScore(best.bestScore)}</span>
+    </div>
+    <div class="params-grid">${paramsHTML}</div>
+    <div class="domain-meta">
+      ${completed} runs completed &nbsp;│&nbsp;
+      ${best.totalEvals.toLocaleString()} evals on best run &nbsp;│&nbsp;
+      ${best.improvements} improvements &nbsp;│&nbsp;
+      UFE: ${best.ufe ? fmtPct(best.ufe.ufeRatio) : 'N/A'} &nbsp;│&nbsp;
+      Top strategy: ${topStrat ? topStrat[0] : 'N/A'}
+    </div>
+  </div>`;
+}).join('\n')}
+    </div>
+  </div>
+
+  <!-- Major Improvements (left column) -->
+  <div class="card">
+    <div class="card-title">🏆 Major Improvements <span class="count">${majorImprovements.length}</span></div>
+    <div class="card-body">
+${majorImprovements.length === 0 ? '<p style="color:#484f58;text-align:center;padding:20px;">Accumulating data…</p>' :
+  `<table>
+    <tr><th>Run</th><th>Improvement</th><th>New Score</th><th>Strategy</th><th>Eval #</th></tr>
+    ${majorImprovements.map(a => {
+      const d = a.data || {};
+      const impPct = d.previousBest && d.previousBest !== 0
+        ? (Math.abs(d.improvement) / Math.abs(d.previousBest) * 100).toFixed(1) + '%'
+        : '—';
+      return `<tr>
+        <td style="color:#f0883e">${a.title.replace(/🔥\s*Breakthrough:\s*/, '').substring(0, 35)}</td>
+        <td style="color:#3fb950">${impPct}</td>
+        <td>${fmtScore(d.newBest ?? null)}</td>
+        <td style="color:#bc8cff">${d.strategy || '—'}</td>
+        <td>#${d.eval || '—'}</td>
+      </tr>`;
+    }).join('\n')}
+  </table>`
+}
+    </div>
+  </div>
+
+  <!-- Strategy Effectiveness (right column) -->
+  <div class="card">
+    <div class="card-title">🧠 Strategy Effectiveness <span class="count">${stratLeaderboard.length} strategies</span></div>
+    <div class="card-body" style="padding:16px;">
+${stratLeaderboard.length === 0 ? '<p style="color:#484f58;text-align:center;">No strategy data yet</p>' :
+  stratLeaderboard.map(([name, count], i) => {
+    const pct = totalStratWins > 0 ? count / totalStratWins * 100 : 0;
+    const colors = ['#f0883e', '#58a6ff', '#3fb950', '#bc8cff', '#f85149', '#d29922', '#39d353', '#79c0ff', '#ff7b72', '#d2a8ff'];
+    const color = colors[i % colors.length];
+    return `<div class="strat-row">
+      <span class="strat-name">${name}</span>
+      <div class="strat-bar-bg"><div class="strat-bar" style="width:${pct}%;background:${color}"></div></div>
+      <span class="strat-count">${count}</span>
+    </div>`;
+  }).join('\n')
+}
+    </div>
+  </div>
+
+  <!-- Scientific Contributions Feed (left column) -->
+  <div class="card">
+    <div class="card-title">📡 Scientific Contributions <span class="count">${contributions.length}</span></div>
+    <div class="card-body">
+${contributions.length === 0 ? '<p style="color:#484f58;text-align:center;padding:20px;">No discoveries yet — engines are exploring…</p>' :
+  contributions.slice(0, 25).map(a => {
+    const ts = new Date(a.timestamp).toISOString().slice(11, 19);
+    const cls = a.category === 'breakthrough' ? 'breakthrough' : a.category === 'anomaly' ? 'anomaly' : 'convergence';
+    const icon = a.severity === 'breakthrough' ? '🔥' : a.severity === 'critical' ? '🚨' : '🎯';
+    return `<div class="contrib ${cls}">
+      <div class="contrib-header"><span class="contrib-title">${icon} ${a.title}</span><span class="contrib-time">${ts}</span></div>
+      <div class="contrib-detail">${a.detail}</div>
+    </div>`;
+  }).join('\n')
+}
+    </div>
+  </div>
+
+  <!-- UFE Efficiency Rankings (right column) -->
+  <div class="card">
+    <div class="card-title">📊 UFE Efficiency Rankings <span class="count">Top ${ufeRanked.length}</span></div>
+    <div class="card-body">
+${ufeRanked.length === 0 ? '<p style="color:#484f58;text-align:center;padding:20px;">Waiting for completed runs…</p>' :
+  `<table>
+    <tr><th>Run</th><th>UFE Ratio</th><th>Conv. Velocity</th><th>AUCC</th><th>Evals</th></tr>
+    ${ufeRanked.map(r => `<tr>
+      <td>${r.name.substring(0, 35)}</td>
+      <td style="color:#3fb950">${fmtPct(r.ufe!.ufeRatio)}</td>
+      <td>${r.ufe!.convergenceVelocity.toFixed(4)}</td>
+      <td>${r.ufe!.aucc.toFixed(2)}</td>
+      <td>${r.totalEvals.toLocaleString()}</td>
+    </tr>`).join('\n')}
+  </table>`
+}
+    </div>
+  </div>
+
+  <!-- Active Runs -->
+  <div class="card full-width">
+    <div class="card-title">⚙ Active Runs <span class="count">${runs.length}</span></div>
+    <div class="card-body">
+      <table>
+        <tr><th>Run</th><th>Status</th><th>Evals</th><th>Best Score</th><th>UFE</th><th>Phase</th><th>Improvements</th><th>Top Strategy</th></tr>
+        ${runs.slice(-30).reverse().map(r => {
+          const topS = Object.entries(r.strategyWins).sort((a, b) => (b[1] as number) - (a[1] as number))[0];
+          return `<tr>
+            <td><span class="run-status ${r.status}"></span>${r.name}</td>
+            <td>${r.status}</td>
+            <td>${r.totalEvals.toLocaleString()}</td>
+            <td>${fmtScore(r.bestScore)}</td>
+            <td>${r.ufe ? fmtPct(r.ufe.ufeRatio) : '—'}</td>
+            <td>${r.phase}</td>
+            <td>${r.improvements}</td>
+            <td style="color:#bc8cff">${topS ? topS[0] : '—'}</td>
+          </tr>`;
+        }).join('\n')}
+      </table>
+    </div>
+  </div>
+
+  <!-- Alerts Feed -->
+  <div class="card full-width">
+    <div class="card-title">🔔 All Alerts <span class="count">${this.alerts.length}</span></div>
+    <div class="card-body">
+${this.alerts.slice(0, 30).map(a => {
   const ts = new Date(a.timestamp).toISOString().slice(11, 19);
   return `<div class="alert ${a.severity}"><strong>[${ts}] ${a.title}</strong><br><small>${a.detail}</small></div>`;
-}).join('')}
-${this.alerts.length === 0 ? '<p style="color:#8b949e">No alerts yet</p>' : ''}
+}).join('\n')}
+${this.alerts.length === 0 ? '<p style="color:#484f58">No alerts yet</p>' : ''}
+    </div>
+  </div>
+
 </div>
 <script>setTimeout(() => location.reload(), 5000);</script>
 </body></html>`;
@@ -609,7 +947,7 @@ function formatUptime(seconds: number): string {
  *
  * @example
  * const monitor = createMonitor({ port: 5555 });
- * const agent = new SeekerAgent(task, config);
+ * const agent = new AegisAgent(task, config);
  * agent.on(monitor.createHandler('run-1'));
  * monitor.startDashboard();
  * await agent.run();
