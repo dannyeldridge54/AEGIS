@@ -432,13 +432,13 @@ export class EquationWriter {
   private synthesizeUFETorsion(engine: string, result: EvalResult, score: number): DiscoveredEquation {
     const p = result.params;
 
-    // Derived quantities from Mexican hat
-    const mu2 = p.mu2;
-    const lambda = p.lambda;
+    // Derived quantities from Mexican hat (with safe defaults)
+    const mu2 = p.mu2 || 0;
+    const lambda = p.lambda || p.lambda_quartic || 1;
     const T_vev = mu2 > 0 && lambda > 0 ? Math.sqrt(mu2 / (2 * lambda)) : 0;
     const m_T = Math.sqrt(4 * Math.max(0, mu2));
     const comptonLength = m_T > 0 ? HBAR / (m_T * EV_TO_KG * C) : Infinity;
-    const charLength = p.gamma > 0 && mu2 > 0 ? Math.sqrt(p.gamma / (2 * mu2)) : 0;
+    const charLength = (p.gamma || 0) > 0 && mu2 > 0 ? Math.sqrt((p.gamma || 0) / (2 * mu2)) : 0;
 
     // Energy scale of symmetry breaking
     const energyScale_eV = Math.sqrt(mu2); // in natural units ~ eV
@@ -644,9 +644,15 @@ export class EquationWriter {
 
   private synthesizeCrossDomain(engine: string, result: EvalResult, score: number): DiscoveredEquation {
     const p = result.params;
-    const T_vev = p.mu2 > 0 && p.lambda_quartic > 0 ? Math.sqrt(p.mu2 / (2 * p.lambda_quartic)) : 0;
-    const m_T = Math.sqrt(4 * Math.max(0, p.mu2));
-    const H0_pred = p.H0_rescaled * 70;
+    const mu2 = p.mu2 || 0;
+    const lambda_q = p.lambda_quartic || p.lambda || 1;
+    const T_scalar = p.T_scalar || 0;
+    const fT_alpha = p.fT_alpha || p.alpha || 0;
+    const fT_n = p.fT_n || p.n || 1;
+    const H0_rescaled = p.H0_rescaled || 1;
+    const T_vev = mu2 > 0 && lambda_q > 0 ? Math.sqrt(mu2 / (2 * lambda_q)) : 0;
+    const m_T = Math.sqrt(4 * Math.max(0, mu2));
+    const H0_pred = H0_rescaled * 70;
 
     // Combine all sky targets
     const allTargets: ObservationalTarget[] = [];
@@ -669,7 +675,7 @@ export class EquationWriter {
       coordinates: { ra: '17h 48m 52s', dec: '-24° 46\' 48"' },
       survey: 'Radio timing + X-ray',
       redshiftRange: 'distance: 7.7 kpc',
-      expectedSignal: `EC torsion at T = ${p.T_scalar.toExponential(3)}, cross-coupled to f(T) cosmology`,
+      expectedSignal: `EC torsion at T = ${T_scalar.toExponential(3)}, cross-coupled to f(T) cosmology`,
       detectionMethod: 'Pulsar timing + growth factor measurement at matched z',
     });
 
@@ -681,7 +687,7 @@ export class EquationWriter {
         coordinates: { ra: bestSkyTarget.ra, dec: bestSkyTarget.dec },
         survey: bestSkyTarget.survey,
         redshiftRange: `z = ${bestSkyTarget.zRange[0].toFixed(2)} – ${bestSkyTarget.zRange[1].toFixed(2)}`,
-        expectedSignal: `f(T) modification: α=${p.fT_alpha.toFixed(4)}, n=${p.fT_n.toFixed(4)}`,
+        expectedSignal: `f(T) modification: α=${fT_alpha.toFixed(4)}, n=${fT_n.toFixed(4)}`,
         detectionMethod: 'BAO + RSD measurement deviation from ΛCDM prediction',
       });
     }
@@ -695,14 +701,14 @@ export class EquationWriter {
       latex: this.crossLatex(p, T_vev, m_T, H0_pred),
       plaintext: this.crossPlaintext(p, T_vev, m_T, H0_pred),
       parameters: {
-        'T_scalar': { value: p.T_scalar, unit: 'm⁻¹', description: 'EC torsion scalar' },
-        'μ²': { value: p.mu2, unit: 'eV²', description: 'Symmetry breaking scale' },
-        'λ': { value: p.lambda_quartic, unit: 'dimensionless', description: 'Quartic coupling' },
+        'T_scalar': { value: T_scalar, unit: 'm⁻¹', description: 'EC torsion scalar' },
+        'μ²': { value: mu2, unit: 'eV²', description: 'Symmetry breaking scale' },
+        'λ': { value: lambda_q, unit: 'dimensionless', description: 'Quartic coupling' },
         'T_vev': { value: T_vev, unit: 'm⁻²', description: 'Torsion VEV' },
         'm_T': { value: m_T, unit: 'eV', description: 'Torsion mass' },
         'H₀': { value: H0_pred, unit: 'km/s/Mpc', description: 'Predicted Hubble constant' },
-        'f(T)_α': { value: p.fT_alpha, unit: 'dimensionless', description: 'f(T) amplitude' },
-        'f(T)_n': { value: p.fT_n, unit: 'dimensionless', description: 'f(T) power index' },
+        'f(T)_α': { value: fT_alpha, unit: 'dimensionless', description: 'f(T) amplitude' },
+        'f(T)_n': { value: fT_n, unit: 'dimensionless', description: 'f(T) power index' },
       },
       predictions: [
         {
@@ -878,7 +884,7 @@ $J = ${p.J_spin.toExponential(3)}$`;
 \\begin{itemize}
   \\item $T_{\\text{vev}} = ${T_vev.toExponential(4)}$ — from Mexican hat $V(T) = -\\mu^2 T^2 + \\lambda T^4$
   \\item $m_T = ${m_T.toExponential(4)}$ eV — torsion mass
-  \\item $f(T) = ${p.fT_alpha.toFixed(4)} \\, T^{${p.fT_n.toFixed(4)}}$ — teleparallel modification
+  \\item $f(T) = ${(p.fT_alpha || p.alpha || 0).toFixed(4)} \\, T^{${(p.fT_n || p.n || 1).toFixed(4)}}$ — teleparallel modification
   \\item $H_0 = ${H0.toFixed(2)}$ km/s/Mpc — unified Hubble constant
 \\end{itemize}`;
   }
@@ -960,15 +966,15 @@ Parameters:
 ==================================
 All four torsion sectors self-consistent:
 
-  (I)   Cartan:   T^a_bc = 8πG·s^a_bc         T_scalar = ${p.T_scalar.toExponential(4)}
+  (I)   Cartan:   T^a_bc = 8πG·s^a_bc         T_scalar = ${(p.T_scalar || 0).toExponential(4)}
   (II)  Friedmann: H² = (8πG/3)ρ - f(T)/6     H₀ = ${H0.toFixed(2)} km/s/Mpc
   (III) Wave:     □T + m²T + λT³ = J           m_T = ${m_T.toExponential(4)} eV
   (IV)  VEV:      T₀ = μ/√(2λ)                T_vev = ${T_vev.toExponential(4)} m⁻²
 
 Cross-sector couplings:
-  f(T) model: α = ${p.fT_alpha.toFixed(6)}, n = ${p.fT_n.toFixed(4)}
-  Spin density: σ = ${p.spinDensity.toExponential(4)}
-  EC coupling: ${p.ec_coupling.toFixed(4)}`;
+  f(T) model: α = ${(p.fT_alpha || p.alpha || 0).toFixed(6)}, n = ${(p.fT_n || p.n || 1).toFixed(4)}
+  Spin density: σ = ${(p.spinDensity || 0).toExponential(4)}
+  EC coupling: ${(p.ec_coupling || 0).toFixed(4)}`;
   }
 
   // ── Helpers ─────────────────────────────────────────────────────────────

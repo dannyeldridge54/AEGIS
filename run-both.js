@@ -713,14 +713,27 @@ function logSpatialAnomalies(engine, runId, bestParams, monitor) {
   }
 }
 
+function synthesizeEquation(writer, taskId, params, score) {
+  if (!writer) return null;
+  try {
+    // Use writeDiscovery — the proper API that dispatches to the right method
+    // It expects an EvalResult-like object with .params
+    const fakeResult = { params: { ...params }, score };
+    const eq = writer.writeDiscovery('AEGIS/Seeker', taskId, fakeResult, score);
+    if (eq) {
+      return { plaintext: eq.plaintext || '', latex: eq.latex || '', eq };
+    }
+    return null;
+  } catch (e) { return null; }
+}
+
 function logEquation(engine, runId, taskId, bestParams, bestScore, writer) {
   try {
     if (!writer || !bestParams) return;
-    // Only for torsion tasks with good scores
     if (!taskId.match(/ufe-torsion|cross-domain|ft-gravity|einstein-cartan|torsion-wave/)) return;
-    if (bestScore > 500) return; // only log good results
+    if (bestScore > 500) return;
 
-    const eq = writer.synthesize(taskId, bestParams, bestScore);
+    const eq = synthesizeEquation(writer, taskId, bestParams, bestScore);
     if (eq) {
       console.log(`\n📐 [${engine}] Equation from ${runId} (score ${bestScore.toFixed(2)}):`);
       console.log(`   ${eq.plaintext || eq.latex || 'N/A'}`);
@@ -745,10 +758,12 @@ const bestKnown = {}; // { taskId: { params, score, source } }
 function recordBest(taskId, params, score, source) {
   if (!isFinite(score) || !params) return;
   const prev = bestKnown[taskId];
+  // Strictly less than — don't log "beats" for equal scores
   if (!prev || score < prev.score) {
+    const improved = prev ? prev.score - score : 0;
     bestKnown[taskId] = { params: { ...params }, score, source };
-    if (prev && prev.source !== source) {
-      console.log(`\n🔄 [CROSS-POLLINATION] ${source} beat ${prev.source} on ${taskId}: ${score.toFixed(4)} < ${prev.score.toFixed(4)}`);
+    if (prev && prev.source !== source && improved > 1e-6) {
+      console.log(`\n🔄 [CROSS-POLLINATION] ${source} beat ${prev.source} on ${taskId}: ${score.toFixed(4)} < ${prev.score.toFixed(4)} (Δ${improved.toFixed(4)})`);
       countPollination(taskId);
     }
   }
@@ -758,7 +773,15 @@ function getSeedParams(taskId, source) {
   const known = bestKnown[taskId];
   // Only seed from the OTHER engine's discovery
   if (known && known.source !== source) {
-    return known;
+    // Add jitter to break plateaus — 2% random perturbation
+    const jittered = { ...known.params };
+    for (const key of Object.keys(jittered)) {
+      if (typeof jittered[key] === 'number' && isFinite(jittered[key])) {
+        const scale = Math.abs(jittered[key]) || 1;
+        jittered[key] += (Math.random() - 0.5) * 0.04 * scale;
+      }
+    }
+    return { params: jittered, score: known.score };
   }
   return null;
 }
@@ -938,7 +961,7 @@ function updateBestEquation(engine, taskId, params, score, writer) {
     if (score > 500) return;
     if (!taskId.match(/ufe-torsion|cross-domain|ft-gravity|einstein-cartan|torsion-wave/)) return;
     if (bestEquation && score >= bestEquation.score) return;
-    const eq = writer.synthesize(taskId, params, score);
+    const eq = synthesizeEquation(writer, taskId, params, score);
     if (eq) {
       bestEquation = {
         plaintext: eq.plaintext || eq.latex || 'N/A',
@@ -948,6 +971,8 @@ function updateBestEquation(engine, taskId, params, score, writer) {
         engine,
         taskId,
       };
+      console.log(`\n🏆 [EQUATION UPDATED] ${engine} → ${taskId} (score ${score.toFixed(4)}):`);
+      console.log(`   ${bestEquation.plaintext}`);
     }
   } catch (e) { /* silent */ }
 }
