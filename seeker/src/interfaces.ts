@@ -55,7 +55,8 @@ export type StrategyType =
   | 'annealing'
   | 'bandit'
   | 'curiosity'
-  | 'exploit';
+  | 'exploit'
+  | 'cma-es';
 
 export interface Strategy {
   type: StrategyType;

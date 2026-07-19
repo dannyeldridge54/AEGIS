@@ -1048,6 +1048,62 @@ const controlServer = require('http').createServer((req, res) => {
     return;
   }
 
+  // GET /scoreboard — full scoreboard data
+  if (req.url === '/scoreboard' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    const rows = Object.keys(TASK_TARGETS).map(taskId => {
+      const aScore = aegisBests[taskId] != null ? aegisBests[taskId] : null;
+      const sScore = seekerBests[taskId] != null ? seekerBests[taskId] : null;
+      const bestScore = (aScore != null && sScore != null) ? Math.min(aScore, sScore)
+        : aScore != null ? aScore : sScore;
+      const bestEngine = bestScore === aScore ? 'AEGIS' : 'Seeker';
+      const target = TASK_TARGETS[taskId];
+      return {
+        task: TASK_NAMES[taskId] || taskId, taskId,
+        aegisScore: aScore, seekerScore: sScore,
+        bestScore, bestEngine, target,
+        bestParams: bestKnown[taskId] || null,
+        pollinations: pollinationCounts[taskId] || 0,
+        converged: bestScore !== null && bestScore <= target,
+      };
+    });
+    res.end(JSON.stringify(rows));
+    return;
+  }
+
+  // GET /task/:id — single task details
+  const taskMatch = req.url && req.url.match(/^\/task\/([a-z0-9-]+)$/);
+  if (taskMatch && req.method === 'GET') {
+    const taskId = taskMatch[1];
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      taskId,
+      task: TASK_NAMES[taskId] || taskId,
+      aegisScore: aegisBests[taskId] || null,
+      seekerScore: seekerBests[taskId] || null,
+      target: TASK_TARGETS[taskId] || null,
+      bestParams: bestKnown[taskId] || null,
+      worstSeen: worstScores[taskId] || null,
+      pollinations: pollinationCounts[taskId] || 0,
+    }));
+    return;
+  }
+
+  // POST /restart/:id — clear bestKnown for a stuck task to re-converge
+  const restartMatch = req.url && req.url.match(/^\/restart\/([a-z0-9-]+)$/);
+  if (restartMatch && req.method === 'POST') {
+    const taskId = restartMatch[1];
+    if (bestKnown[taskId]) delete bestKnown[taskId];
+    if (aegisBests[taskId]) delete aegisBests[taskId];
+    if (seekerBests[taskId]) delete seekerBests[taskId];
+    if (worstScores[taskId]) delete worstScores[taskId];
+    saveState();
+    console.log(`🔄 [CONTROL] Reset task "${taskId}" — cleared bestKnown/scores`);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ ok: true, taskId, message: 'Task reset, will re-converge' }));
+    return;
+  }
+
   res.writeHead(404); res.end('Not found');
 });
 controlServer.listen(CONTROL_PORT, () => {

@@ -26,7 +26,7 @@ const DEFAULT_CONFIG: Required<AgentConfig> = {
   maxEvals: 0,
   convergenceThreshold: 1e-8,
   explorationRate: 0.3,
-  strategies: ['random', 'evolutionary', 'gradient', 'annealing', 'curiosity', 'exploit'],
+  strategies: ['random', 'evolutionary', 'gradient', 'annealing', 'curiosity', 'exploit', 'cma-es'],
   verbosity: 'normal',
   persistence: { enabled: false, path: './aegis-state.json', interval: 60 },
   language: 'en',
@@ -46,6 +46,7 @@ export class AegisAgent {
   private startTime = 0;
   private lastReportTime = 0;
   private lastBestTime = 0;
+  private lastBestEval = 0;
   private gridIndex = 0;
   private msg;
   private rng: SeededRNG;
@@ -224,6 +225,7 @@ export class AegisAgent {
     if (!this.state.best || isBetter) {
       this.state.best = result;
       this.lastBestTime = Date.now();
+      this.lastBestEval = this.state.totalEvals;
 
       // Normalize reward to avoid Infinity poisoning the UCB1 meta-learner
       const reward = this.state.totalEvals === 1
@@ -255,6 +257,17 @@ export class AegisAgent {
 
     // Phase management
     this.updatePhase();
+
+    // Stagnation restart — if no improvement for 500 evals, reset history
+    // but keep best solution. Forces re-exploration from scratch.
+    const evalsSinceBest = this.state.totalEvals - (this.lastBestEval || 0);
+    if (evalsSinceBest > 500 && this.state.totalEvals > 600) {
+      this.state.history = this.state.best ? [this.state.best] : [];
+      this.lastBestEval = this.state.totalEvals;
+      if (this.config.verbosity !== 'silent') {
+        this.log(`🔄 Stagnation restart at eval ${this.state.totalEvals} — clearing history, keeping best ${this.state.best?.score.toFixed(6)}`);
+      }
+    }
 
     this.emit({ type: 'evaluation', result });
     return result;

@@ -1,6 +1,6 @@
 # AEGIS/Seeker — Discovered Equations Index
 
-*Last updated: 2026-07-19T05:21:21.015Z*
+*Last updated: 2026-07-19T05:24:43.758Z*
 
 | # | Domain | Title | Score | Confidence | Sky Targets | File |
 |---|--------|-------|-------|------------|-------------|------|
@@ -8,6 +8,11 @@
 | 2 | f(T) Teleparallel Gravity | f(T) Power Law Model — Cosmological Fit | 1.737e+1 | HIGH | eBOSS QSO; eBOSS QSO; eBOSS QSO; eBOSS QSO; Lyman-α Forest | ft-1784438474717 |
 | 3 | Torsion Wave Propagation | Torsion Wave Dispersion Relation | 5.274e-3 | HIGH | LIGO Livingston / Hanford; GW170817 remnant | wave-1784438474720 |
 | 4 | f(T) Teleparallel Gravity | f(T) Power Law Model — Cosmological Fit | 1.713e+1 | HIGH | eBOSS QSO; eBOSS QSO; eBOSS QSO; eBOSS QSO; Lyman-α Forest | ft-1784438481013 |
+| 5 | f(T) Teleparallel Gravity | f(T) Power Law Model — Cosmological Fit | 1.713e+1 | HIGH | eBOSS QSO; eBOSS QSO; eBOSS QSO; eBOSS QSO; Lyman-α Forest | ft-1784438526511 |
+| 6 | f(T) Teleparallel Gravity | f(T) Power Law Model — Cosmological Fit | 1.682e+1 | HIGH | eBOSS QSO; eBOSS QSO; eBOSS QSO; eBOSS QSO; Lyman-α Forest | ft-1784438528022 |
+| 7 | f(T) Teleparallel Gravity | f(T) Power Law Model — Cosmological Fit | 1.678e+1 | HIGH | eBOSS QSO; eBOSS QSO; eBOSS QSO; eBOSS QSO; Lyman-α Forest | ft-1784438556820 |
+| 8 | f(T) Teleparallel Gravity | f(T) Logarithmic Model — Cosmological Fit | 1.614e+1 | HIGH | eBOSS QSO; eBOSS QSO; eBOSS QSO; eBOSS QSO; Lyman-α Forest | ft-1784438604718 |
+| 9 | f(T) Teleparallel Gravity | f(T) Logarithmic Model — Cosmological Fit | 1.614e+1 | HIGH | eBOSS QSO; eBOSS QSO; eBOSS QSO; eBOSS QSO; Lyman-α Forest | ft-1784438683756 |
 
 ## Best Per Domain
 
@@ -48,18 +53,18 @@ Torsion components (m⁻¹):
 
 ### f(T) Teleparallel Gravity
 
-**f(T) Power Law Model — Cosmological Fit** (score: 1.7134e+1, confidence: HIGH)
+**f(T) Logarithmic Model — Cosmological Fit** (score: 1.6139e+1, confidence: HIGH)
 
 ```
-f(T) TELEPARALLEL GRAVITY — POWER LAW MODEL
+f(T) TELEPARALLEL GRAVITY — LOGARITHMIC MODEL
 ==================================================
 Modified Friedmann: H² = (8πG/3)ρ - f(T)/6 + T·f_T/3
 
 Parameters:
-  α = 0.008361
-  β = 2.735042
-  n = 0.9999
-  Λ_BI = 200.7530
+  α = -0.003834
+  β = 0.005246
+  n = 1.7615
+  Λ_BI = 541.4156
 
 Cosmological fit: χ²/d.o.f. against 21 H(z) data points
 ```

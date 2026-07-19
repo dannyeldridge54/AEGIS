@@ -1,6 +1,6 @@
 # AEGIS/Seeker — Discovered Equations Index
 
-*Last updated: 2026-07-19T05:21:48.162Z*
+*Last updated: 2026-07-19T05:25:18.174Z*
 
 | # | Domain | Title | Score | Confidence | Sky Targets | File |
 |---|--------|-------|-------|------------|-------------|------|
@@ -14,12 +14,20 @@
 | 8 | Einstein-Cartan Torsion | Cartan Equation Solution — Spin-Torsion Coupling | 9.026e-4 | MODERATE | PSR J0537-6910; PSR J1748-2446ad; Crab Pulsar (PSR B0531+21) | ec-1784438479046 |
 | 9 | Einstein-Cartan Torsion | Cartan Equation Solution — Spin-Torsion Coupling | 2.097e-4 | MODERATE | PSR J0537-6910; PSR J1748-2446ad; Crab Pulsar (PSR B0531+21) | ec-1784438481299 |
 | 10 | Torsion Wave Propagation | Torsion Wave Dispersion Relation | 3.429e-1 | HIGH | LIGO Livingston / Hanford; GW170817 remnant | wave-1784438508161 |
+| 11 | Einstein-Cartan Torsion | Cartan Equation Solution — Spin-Torsion Coupling | 1.953e-4 | MODERATE | PSR J0537-6910; PSR J1748-2446ad; Crab Pulsar (PSR B0531+21) | ec-1784438544720 |
+| 12 | Einstein-Cartan Torsion | Cartan Equation Solution — Spin-Torsion Coupling | 1.333e-4 | MODERATE | PSR J0537-6910; PSR J1748-2446ad; Crab Pulsar (PSR B0531+21) | ec-1784438561224 |
+| 13 | Einstein-Cartan Torsion | Cartan Equation Solution — Spin-Torsion Coupling | 1.594e-5 | HIGH | PSR J0537-6910; PSR J1748-2446ad; Crab Pulsar (PSR B0531+21) | ec-1784438587304 |
+| 14 | f(T) Teleparallel Gravity | f(T) Logarithmic Model — Cosmological Fit | 1.614e+1 | HIGH | eBOSS QSO; eBOSS QSO; eBOSS QSO; eBOSS QSO; Lyman-α Forest | ft-1784438604164 |
+| 15 | Torsion Wave Propagation | Torsion Wave Dispersion Relation | 3.399e-1 | HIGH | LIGO Livingston / Hanford; GW170817 remnant | wave-1784438643306 |
+| 16 | f(T) Teleparallel Gravity | f(T) Logarithmic Model — Cosmological Fit | 1.614e+1 | HIGH | eBOSS QSO; eBOSS QSO; eBOSS QSO; eBOSS QSO; Lyman-α Forest | ft-1784438684700 |
+| 17 | Torsion Wave Propagation | Torsion Wave Dispersion Relation | 3.381e-1 | HIGH | LIGO Livingston / Hanford; GW170817 remnant | wave-1784438700682 |
+| 18 | Torsion Wave Propagation | Torsion Wave Dispersion Relation | 6.561e-2 | HIGH | LIGO Livingston / Hanford; GW170817 remnant | wave-1784438718171 |
 
 ## Best Per Domain
 
 ### Einstein-Cartan Torsion
 
-**Cartan Equation Solution — Spin-Torsion Coupling** (score: 2.0973e-4, confidence: MODERATE)
+**Cartan Equation Solution — Spin-Torsion Coupling** (score: 1.5938e-5, confidence: HIGH)
 
 ```
 EINSTEIN-CARTAN TORSION SOLUTION
@@ -27,10 +35,10 @@ EINSTEIN-CARTAN TORSION SOLUTION
 Cartan equation: T^a_bc + δ^a_b T_c - δ^a_c T_b = 8πG · s^a_bc
 
 Torsion components (m⁻¹):
-  T⁰₀₁ = -0.123138    T⁰₀₂ = 0.645357    T⁰₀₃ = -0.621394
-  T¹₁₂ = 0.059425    T¹₁₃ = -0.062158    T²₂₃ = -0.000078
+  T⁰₀₁ = -0.996316    T⁰₀₂ = 1.000000    T⁰₀₃ = -0.976029
+  T¹₁₂ = 0.997102    T¹₁₃ = 0.002562    T²₂₃ = -0.004990
 
-|T| = 9.0839e-1 m⁻¹
+|T| = 1.9848e+0 m⁻¹
 λ (coupling) = -10.0000
 σ (spin density) = 0.0000e+0 J·s/m³
 ```
@@ -62,10 +70,10 @@ f(T) TELEPARALLEL GRAVITY — LOGARITHMIC MODEL
 Modified Friedmann: H² = (8πG/3)ρ - f(T)/6 + T·f_T/3
 
 Parameters:
-  α = -0.003679
-  β = 0.005066
-  n = 1.7483
-  Λ_BI = 541.8882
+  α = -0.003758
+  β = 0.005271
+  n = 1.7600
+  Λ_BI = 547.5295
 
 Cosmological fit: χ²/d.o.f. against 21 H(z) data points
 ```
@@ -99,7 +107,7 @@ Cosmological fit: χ²/d.o.f. against 21 H(z) data points
 
 ### Torsion Wave Propagation
 
-**Torsion Wave Dispersion Relation** (score: 3.4287e-1, confidence: HIGH)
+**Torsion Wave Dispersion Relation** (score: 6.5612e-2, confidence: HIGH)
 
 ```
 TORSION WAVE DISPERSION
@@ -113,18 +121,18 @@ Parameters:
   λ_q = 0.001000
   m_eff = 2.3452e-1 eV
   T_vev = 2.2361e+0 m⁻²
-  ω = 0.1000 s⁻¹
+  ω = 0.2233 s⁻¹
   k = 0.0100 m⁻¹
-  v_group = 0.100000 c   (subluminal ✓)
-  Amplitude = -1.185e+1
-  J_spin = -4.365e-2
+  v_group = 0.044776 c   (subluminal ✓)
+  Amplitude = -9.654e+0
+  J_spin = -5.824e-1
 ```
 
 **Where to look:**
 
 - **LIGO Livingston / Hanford** (RA All-sky, Dec All-sky)
   - Survey: LISA (0.1 mHz - 0.1 Hz) | z: local (d < 500 Mpc)
-  - Signal: Torsion wave at f = 1.59e-2 Hz, amplitude 1.18e+1
+  - Signal: Torsion wave at f = 3.55e-2 Hz, amplitude 9.65e+0
   - Method: Strain signal from torsion-graviton mixing, look for anomalous polarization modes
 
 - **GW170817 remnant** (RA 13h 09m 48s, Dec -23° 22' 53")

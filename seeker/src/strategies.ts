@@ -155,6 +155,79 @@ export function surrogateStep(
   return result;
 }
 
+// ─── CMA-ES for Seeker ──────────────────────────────────────────────────────
+
+const seekerCmaStates = new Map<number, {
+  mean: number[]; sigma: number; C: number[][]; pc: number[]; ps: number[];
+  lambda: number; mu: number; weights: number[]; mueff: number;
+  cc: number; cs: number; c1: number; cmu: number; damps: number; chiN: number; gen: number;
+}>();
+
+function getCmaState(dim: number) {
+  if (seekerCmaStates.has(dim)) return seekerCmaStates.get(dim)!;
+  const lambda = 4 + Math.floor(3 * Math.log(dim));
+  const mu = Math.floor(lambda / 2);
+  const weights: number[] = [];
+  for (let i = 0; i < mu; i++) weights.push(Math.log(mu + 0.5) - Math.log(i + 1));
+  const wSum = weights.reduce((a, b) => a + b, 0);
+  for (let i = 0; i < mu; i++) weights[i] /= wSum;
+  const mueff = 1 / weights.reduce((s, w) => s + w * w, 0);
+  const cc = (4 + mueff / dim) / (dim + 4 + 2 * mueff / dim);
+  const cs = (mueff + 2) / (dim + mueff + 5);
+  const c1 = 2 / ((dim + 1.3) ** 2 + mueff);
+  const cmu = Math.min(1 - c1, 2 * (mueff - 2 + 1 / mueff) / ((dim + 2) ** 2 + mueff));
+  const damps = 1 + 2 * Math.max(0, Math.sqrt((mueff - 1) / (dim + 1)) - 1) + cs;
+  const chiN = Math.sqrt(dim) * (1 - 1 / (4 * dim) + 1 / (21 * dim * dim));
+  const C: number[][] = [];
+  for (let i = 0; i < dim; i++) { C[i] = new Array(dim).fill(0); C[i][i] = 1; }
+  const state = {
+    mean: new Array(dim).fill(0.5), sigma: 0.3, C, pc: new Array(dim).fill(0), ps: new Array(dim).fill(0),
+    lambda, mu, weights, mueff, cc, cs, c1, cmu, damps, chiN, gen: 0,
+  };
+  seekerCmaStates.set(dim, state);
+  return state;
+}
+
+function cmaESSampleSeeker(params: ParameterDef[], history: EvalResult[], rng: SeededRNG): Record<string, number> {
+  const dim = params.length;
+  const st = getCmaState(dim);
+
+  if (history.length >= st.lambda && history.length % st.lambda === 0) {
+    const recent = history.slice(-st.lambda);
+    const sorted = [...recent].sort((a, b) => a.score - b.score);
+    const rankedNorm = sorted.map(r => params.map(p => (r.params[p.name] - p.min) / (p.max - p.min)));
+    if (rankedNorm.length >= st.mu) {
+      const oldMean = [...st.mean];
+      st.mean = new Array(dim).fill(0);
+      for (let i = 0; i < st.mu; i++) for (let d = 0; d < dim; d++) st.mean[d] += st.weights[i] * rankedNorm[i][d];
+      const diff = st.mean.map((m, d) => (m - oldMean[d]) / st.sigma);
+      for (let d = 0; d < dim; d++) st.ps[d] = (1 - st.cs) * st.ps[d] + Math.sqrt(st.cs * (2 - st.cs) * st.mueff) * diff[d];
+      const psNorm = Math.sqrt(st.ps.reduce((s, v) => s + v * v, 0));
+      const hsig = psNorm / Math.sqrt(1 - (1 - st.cs) ** (2 * (st.gen + 1))) < (1.4 + 2 / (dim + 1)) * st.chiN ? 1 : 0;
+      for (let d = 0; d < dim; d++) st.pc[d] = (1 - st.cc) * st.pc[d] + hsig * Math.sqrt(st.cc * (2 - st.cc) * st.mueff) * diff[d];
+      for (let i = 0; i < dim; i++) for (let j = 0; j < dim; j++) {
+        let c = (1 - st.c1 - st.cmu) * st.C[i][j] + st.c1 * st.pc[i] * st.pc[j];
+        for (let k = 0; k < st.mu; k++) c += st.cmu * st.weights[k] * ((rankedNorm[k][i] - oldMean[i]) / st.sigma) * ((rankedNorm[k][j] - oldMean[j]) / st.sigma);
+        st.C[i][j] = c;
+      }
+      st.sigma *= Math.exp((st.cs / st.damps) * (psNorm / st.chiN - 1));
+      st.sigma = Math.max(1e-10, Math.min(st.sigma, 2.0));
+      st.gen++;
+    }
+  }
+
+  const z = new Array(dim);
+  for (let i = 0; i < dim; i++) z[i] = rng.normal(0, 1);
+  const result: Record<string, number> = {};
+  for (let i = 0; i < dim; i++) {
+    let s = 0;
+    for (let j = 0; j < dim; j++) s += st.C[i][j] * z[j];
+    const norm = Math.max(0, Math.min(1, st.mean[i] + st.sigma * s));
+    result[params[i].name] = clamp(params[i].min + norm * (params[i].max - params[i].min), params[i].min, params[i].max);
+  }
+  return result;
+}
+
 /**
  * Novelty search — find least-visited regions of param space.
  */
@@ -223,6 +296,7 @@ export class MetaLearner {
       case 'bandit': return { epsilon: 0.1 };
       case 'curiosity': return { noveltyWeight: 0.8 };
       case 'exploit': return { mutationMagnitude: 0.02 };
+      case 'cma-es': return { populationSize: 'auto' };
       default: return {};
     }
   }
@@ -327,6 +401,10 @@ export function generateNextPoint(
         candidate = best
           ? mutateParams(best.params, params, strategy.config.mutationMagnitude || 0.02, rng)
           : randomParams(params, rng);
+        break;
+
+      case 'cma-es':
+        candidate = cmaESSampleSeeker(params, history, rng);
         break;
 
       case 'swarm':
