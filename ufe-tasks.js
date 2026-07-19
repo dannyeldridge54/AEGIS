@@ -125,9 +125,9 @@ const cosmicChronTask = {
     return chi2;
   },
   parameters: [
-    { name: 'H0', min: 60, max: 80, description: 'Hubble constant km/s/Mpc' },
-    { name: 'omega_m', min: 0.20, max: 0.45, description: 'Matter density Ωm₀' },
-    { name: 'beta', min: -0.5, max: 0.5, description: 'Torsion coupling β' },
+    { name: 'H0', min: 55, max: 85, description: 'Hubble constant km/s/Mpc' },
+    { name: 'omega_m', min: 0.15, max: 0.50, description: 'Matter density Ωm₀' },
+    { name: 'beta', min: -0.8, max: 0.8, description: 'Torsion coupling β' },
   ],
 };
 
@@ -164,10 +164,10 @@ const desiBAOTask = {
     return chi2;
   },
   parameters: [
-    { name: 'H0', min: 60, max: 80, description: 'Hubble constant' },
-    { name: 'omega_m', min: 0.20, max: 0.45, description: 'Matter density' },
-    { name: 'beta', min: -0.5, max: 0.5, description: 'Torsion coupling' },
-    { name: 'rs', min: 130, max: 160, description: 'Sound horizon r_s (Mpc)' },
+    { name: 'H0', min: 55, max: 85, description: 'Hubble constant' },
+    { name: 'omega_m', min: 0.15, max: 0.50, description: 'Matter density' },
+    { name: 'beta', min: -0.8, max: 0.8, description: 'Torsion coupling' },
+    { name: 'rs', min: 125, max: 165, description: 'Sound horizon r_s (Mpc)' },
   ],
 };
 
@@ -198,10 +198,10 @@ const sneTask = {
     return chi2;
   },
   parameters: [
-    { name: 'H0', min: 60, max: 100, description: 'Hubble constant' },
-    { name: 'omega_m', min: 0.15, max: 0.45, description: 'Matter density' },
-    { name: 'beta', min: -0.5, max: 0.5, description: 'Torsion coupling' },
-    { name: 'M_B', min: -19.5, max: -19.0, description: 'SNe absolute magnitude' },
+    { name: 'H0', min: 55, max: 100, description: 'Hubble constant' },
+    { name: 'omega_m', min: 0.10, max: 0.50, description: 'Matter density' },
+    { name: 'beta', min: -0.8, max: 0.8, description: 'Torsion coupling' },
+    { name: 'M_B', min: -19.6, max: -18.8, description: 'SNe absolute magnitude' },
   ],
 };
 
@@ -286,10 +286,10 @@ const rsdGrowthTask = {
     return chi2;
   },
   parameters: [
-    { name: 'omega_m', min: 0.20, max: 0.45, description: 'Matter density' },
-    { name: 'beta', min: -0.5, max: 0.5, description: 'Torsion coupling' },
-    { name: 'sigma8', min: 0.65, max: 0.95, description: 'σ₈ amplitude' },
-    { name: 'gamma', min: 0.40, max: 0.70, description: 'Growth index (GR ≈ 0.55)' },
+    { name: 'omega_m', min: 0.15, max: 0.50, description: 'Matter density' },
+    { name: 'beta', min: -0.8, max: 0.8, description: 'Torsion coupling' },
+    { name: 'sigma8', min: 0.60, max: 1.00, description: 'σ₈ amplitude' },
+    { name: 'gamma', min: 0.35, max: 0.75, description: 'Growth index (GR ≈ 0.55)' },
   ],
 };
 
@@ -360,9 +360,9 @@ const s8TensionTask = {
     return planck_chi2 + kids_chi2 + des_chi2 + 0.3 * growth_chi2;
   },
   parameters: [
-    { name: 'omega_m', min: 0.20, max: 0.45, description: 'Matter density' },
-    { name: 'sigma8', min: 0.65, max: 0.90, description: 'σ₈ amplitude' },
-    { name: 'beta', min: -0.5, max: 0.5, description: 'Torsion coupling' },
+    { name: 'omega_m', min: 0.15, max: 0.50, description: 'Matter density' },
+    { name: 'sigma8', min: 0.60, max: 1.00, description: 'σ₈ amplitude' },
+    { name: 'beta', min: -0.8, max: 0.8, description: 'Torsion coupling' },
   ],
 };
 
@@ -404,12 +404,12 @@ const wDETask = {
     return chi2;
   },
   parameters: [
-    { name: 'H0', min: 60, max: 80, description: 'Hubble constant' },
-    { name: 'omega_m', min: 0.20, max: 0.45, description: 'Matter density' },
-    { name: 'beta', min: -0.3, max: 0.3, description: 'Torsion coupling' },
-    { name: 'w0', min: -1.5, max: -0.5, description: 'DE equation of state today' },
-    { name: 'wa', min: -1.0, max: 1.0, description: 'DE evolution parameter' },
-    { name: 'rs', min: 130, max: 160, description: 'Sound horizon' },
+    { name: 'H0', min: 55, max: 85, description: 'Hubble constant' },
+    { name: 'omega_m', min: 0.15, max: 0.50, description: 'Matter density' },
+    { name: 'beta', min: -0.8, max: 0.8, description: 'Torsion coupling' },
+    { name: 'w0', min: -2.0, max: -0.3, description: 'DE equation of state today' },
+    { name: 'wa', min: -2.0, max: 2.0, description: 'DE evolution parameter' },
+    { name: 'rs', min: 125, max: 165, description: 'Sound horizon' },
   ],
 };
 
@@ -453,11 +453,11 @@ const combinedFitTask = {
     return chi2;
   },
   parameters: [
-    { name: 'H0', min: 60, max: 80, description: 'Hubble constant' },
-    { name: 'omega_m', min: 0.20, max: 0.45, description: 'Matter density' },
-    { name: 'beta', min: -0.5, max: 0.5, description: 'Torsion coupling' },
-    { name: 'rs', min: 130, max: 160, description: 'Sound horizon' },
-    { name: 'sigma8', min: 0.65, max: 0.95, description: 'σ₈ amplitude' },
+    { name: 'H0', min: 55, max: 85, description: 'Hubble constant' },
+    { name: 'omega_m', min: 0.15, max: 0.50, description: 'Matter density' },
+    { name: 'beta', min: -0.8, max: 0.8, description: 'Torsion coupling' },
+    { name: 'rs', min: 125, max: 165, description: 'Sound horizon' },
+    { name: 'sigma8', min: 0.60, max: 1.00, description: 'σ₈ amplitude' },
   ],
 };
 
@@ -508,10 +508,10 @@ const modelSelectionTask = {
     return torsion_chi2 + Math.max(0, deltaBIC) * 5;
   },
   parameters: [
-    { name: 'H0', min: 60, max: 80, description: 'Hubble constant' },
-    { name: 'omega_m', min: 0.20, max: 0.45, description: 'Matter density' },
-    { name: 'beta', min: -0.5, max: 0.5, description: 'Torsion coupling' },
-    { name: 'rs', min: 130, max: 160, description: 'Sound horizon' },
+    { name: 'H0', min: 55, max: 85, description: 'Hubble constant' },
+    { name: 'omega_m', min: 0.15, max: 0.50, description: 'Matter density' },
+    { name: 'beta', min: -0.8, max: 0.8, description: 'Torsion coupling' },
+    { name: 'rs', min: 125, max: 165, description: 'Sound horizon' },
   ],
 };
 
