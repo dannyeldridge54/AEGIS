@@ -81,7 +81,33 @@ function torsionHubble(z, H0, omega_m, omega_r, beta) {
   return H0 * Math.sqrt(Math.max(E2, 1e-10));
 }
 
-// Comoving distance via trapezoidal integration (log-spaced for high z)
+// Redshift-dependent torsion: β(z) = β₀ + β₁·z/(1+z)
+// Allows early universe (high z → β₀+β₁) to differ from late universe (z=0 → β₀)
+function torsionHubbleEvolving(z, H0, omega_m, omega_r, beta0, beta1) {
+  const beta_z = beta0 + beta1 * z / (1 + z);
+  const omega_L = 1 - omega_m - omega_r;
+  const zp1 = 1 + z;
+  const E2 = omega_r * Math.pow(zp1, 4)
+    + omega_m * (1 + beta_z) * Math.pow(zp1, 3)
+    + omega_L;
+  return H0 * Math.sqrt(Math.max(E2, 1e-10));
+}
+
+function comovingDistanceEvolving(z, H0, omega_m, omega_r, beta0, beta1, steps = 1000) {
+  if (z <= 0) return 0;
+  const lnZp1 = Math.log(1 + z);
+  const dlnZp1 = lnZp1 / steps;
+  let integral = 0;
+  for (let i = 0; i < steps; i++) {
+    const z1 = Math.exp(i * dlnZp1) - 1;
+    const z2 = Math.exp((i + 1) * dlnZp1) - 1;
+    const dz = z2 - z1;
+    integral += 0.5 * (1 / torsionHubbleEvolving(z1, H0, omega_m, omega_r, beta0, beta1)
+      + 1 / torsionHubbleEvolving(z2, H0, omega_m, omega_r, beta0, beta1)) * dz;
+  }
+  return C_LIGHT * integral;
+}
+
 function comovingDistance(z, H0, omega_m, omega_r, beta, steps = 200) {
   if (z <= 0) return 0;
   // Use log-spaced steps for better accuracy at high z
@@ -226,35 +252,54 @@ const sneTask = {
 // ── TASK 4: H₀ Tension Resolver ─────────────────────────────────────────────
 // Can torsion reconcile Planck (67.4) vs SH0ES (73.0)?
 const h0TensionTask = {
-  id: 'h0-tension', name: 'H₀ Tension — Torsion Resolution',
+  id: 'h0-tension', name: 'H₀ Tension — Evolving Torsion Resolution',
   evaluate: (p) => {
     // CMB constraint: angular size of sound horizon at last scattering
+    // θ* = r_s / d_C (both comoving!) — NOT r_s / D_A
     const z_star = 1089;
-    const DA_star = comovingDistance(z_star, p.H0, p.omega_m, p.omega_r, p.beta, 1000) / (1 + z_star);
-    const theta_star_pred = RS_PLANCK / DA_star;
+    const DC_star = comovingDistanceEvolving(z_star, p.H0, p.omega_m, p.omega_r, p.beta0, p.beta1, 1000);
+    const theta_star_pred = RS_PLANCK / DC_star;
     const theta_star_obs = 0.010411; // rad, from Planck
-    // Use fractional deviation (%) — cap CMB term to prevent it from swamping
-    const cmb_frac = (theta_star_pred / theta_star_obs - 1) / 0.003; // 0.3% tolerance
-    const cmb_chi2 = Math.min(cmb_frac * cmb_frac, 1000); // cap at 1000 so optimizer can navigate
+    // Fractional deviation with 0.3% tolerance
+    const cmb_frac = (theta_star_pred / theta_star_obs - 1) / 0.003;
+    const cmb_chi2 = cmb_frac * cmb_frac; // no cap needed now — values are navigable
 
-    // Local H₀ from SH0ES: 73.04 ± 1.04
+    // Local H₀ from SH0ES: 73.04 ± 1.04 (late universe, β(z≈0) ≈ β₀)
     const shoes_chi2 = ((p.H0 - 73.04) / 1.04) ** 2;
 
-    // Low-z H(z) from cosmic chronometers
+    // Planck CMB H₀: 67.4 ± 0.5 (early universe inference, for reference)
+    // Don't directly penalize — let the CMB θ* constraint handle this
+
+    // Low-z H(z) from cosmic chronometers (uses evolving torsion)
     let cc_chi2 = 0;
     for (const d of CC_DATA.slice(0, 10)) { // z < 0.5
-      const Hpred = torsionHubble(d.z, p.H0, p.omega_m, p.omega_r, p.beta);
+      const Hpred = torsionHubbleEvolving(d.z, p.H0, p.omega_m, p.omega_r, p.beta0, p.beta1);
       cc_chi2 += ((d.H - Hpred) / d.sigma) ** 2;
     }
 
-    const total = cmb_chi2 + shoes_chi2 + 0.5 * cc_chi2;
+    // BAO constraint at intermediate z (uses evolving torsion)
+    let bao_chi2 = 0;
+    const bao_points = [
+      { z: 0.38, DV_obs: 1477, sigma: 16 },  // BOSS DR12
+      { z: 0.51, DV_obs: 1877, sigma: 19 },
+      { z: 0.61, DV_obs: 2140, sigma: 22 },
+    ];
+    for (const b of bao_points) {
+      const DC = comovingDistanceEvolving(b.z, p.H0, p.omega_m, p.omega_r, p.beta0, p.beta1, 200);
+      const Hz = torsionHubbleEvolving(b.z, p.H0, p.omega_m, p.omega_r, p.beta0, p.beta1);
+      const DV = Math.pow(DC * DC * b.z * C_LIGHT / Hz, 1/3); // volume-averaged distance
+      bao_chi2 += ((DV - b.DV_obs) / b.sigma) ** 2;
+    }
+
+    const total = cmb_chi2 + shoes_chi2 + 0.5 * cc_chi2 + 0.3 * bao_chi2;
     return isFinite(total) ? total : 1e6;
   },
   parameters: [
     { name: 'H0', min: 64, max: 76, description: 'Hubble constant (tension range)' },
     { name: 'omega_m', min: 0.25, max: 0.40, description: 'Matter density' },
     { name: 'omega_r', min: 5e-5, max: 2e-4, description: 'Radiation density' },
-    { name: 'beta', min: -0.1, max: 0.1, description: 'Torsion coupling (narrow for CMB stability)' },
+    { name: 'beta0', min: -0.15, max: 0.15, description: 'Torsion coupling at z=0 (late universe)' },
+    { name: 'beta1', min: -0.5, max: 0.5, description: 'Torsion evolution: β(z) = β₀ + β₁·z/(1+z)' },
   ],
 };
 

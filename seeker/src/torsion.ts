@@ -590,16 +590,15 @@ export function fTCosmologyResidual(params: Record<string, number>): number {
  *   6. Nucleosynthesis: torsion decoupled by T_BBN ~ 1 MeV
  */
 export function ufeTorsionFunctional(params: Record<string, number>): number {
-  const {
-    mu2,        // μ² — mass² parameter (positive for symmetry breaking)
-    lambda,     // λ — quartic coupling (positive for stability)
-    gamma,      // γ — gradient/kinetic term
-    epsilon,    // ε — curvature-torsion mixing R·T²
-    kappa_f,    // κ_f — fermion axial coupling
-    kappa_g,    // κ_g — graviton-torsion coupling
-    T0,         // background torsion field value (natural units)
-    nDensity,   // fermion number density (natural units, ~n_baryon)
-  } = params;
+  // Exponentiate log-scale parameters
+  const mu2 = Math.pow(10, params.log_mu2 ?? 10);
+  const lambda = Math.pow(10, params.log_lambda ?? 0);
+  const gamma = params.gamma;
+  const epsilon = params.epsilon;
+  const kappa_f = params.kappa_f;
+  const kappa_g = params.kappa_g;
+  const T0 = Math.pow(10, params.log_T0 ?? -6);
+  const nDensity = Math.pow(10, params.log_nDensity ?? 5);
 
   // ── Mexican-hat potential: V(T) = -μ²T² + λT⁴ ──
   const T2 = T0 * T0;
@@ -649,7 +648,9 @@ export function ufeTorsionFunctional(params: Record<string, number>): number {
   const fieldEqn = -2 * mu2 * T0 + 4 * lambda * T0 * T2
     + 2 * epsilon * R_cosmo * T0
     + kappa_f * nDensity * spinPolarization;
-  const fieldResidual = fieldEqn * fieldEqn;
+  // Normalize by dominant scale to keep residual dimensionless
+  const fieldScale = Math.max(Math.abs(2 * mu2 * T0), Math.abs(4 * lambda * T0 * T2), 1e-30);
+  const fieldResidual = (fieldEqn / fieldScale) ** 2;
 
   // ── Physical constraint penalties ──
   let penalty = 0;
@@ -671,19 +672,18 @@ export function ufeTorsionFunctional(params: Record<string, number>): number {
   const omega_target = 0.68;
   const cosmoPenalty = (Omega_T - omega_target) ** 2;
 
-  // 5. NON-TRIVIAL TORSION — hard log-barrier near T₀ = 0
-  // The whole point is to find T₀ ≈ ±T_vev, NOT T₀ = 0.
-  // Log-barrier: blows up as |T₀| → 0, forcing optimizer away from vacuum.
+  // 5. NON-TRIVIAL TORSION — penalize very small T₀
   const absT0 = Math.abs(T0);
-  const T0_floor = 1e-20; // absolute minimum — below this is numerical noise
-  const logBarrier = absT0 > T0_floor
-    ? 100 * Math.max(0, -Math.log10(absT0) - 5) ** 2  // penalize |T₀| < 1e-5
-    : 1e6; // nuclear option: T₀ at machine epsilon → massive penalty
+  // With log-scale T0, the optimizer naturally explores wide range.
+  // Just penalize if log_T0 is at extreme negative end (< -10)
+  const logBarrier = (params.log_T0 ?? -6) < -10
+    ? 50 * (-10 - (params.log_T0 ?? -6)) ** 2
+    : 0;
 
   // 6. VEV proximity: T₀ must sit near the VEV, not at zero
-  // Weight 10x (was 0.1x — that's why optimizer cheated)
-  const vevResidual = T_vev > 0
-    ? ((absT0 - T_vev) / (T_vev + 1e-30)) ** 2
+  // Use log-ratio for scale-invariant comparison
+  const vevResidual = T_vev > 0 && absT0 > 0
+    ? (Math.log10(absT0 / T_vev)) ** 2
     : 100; // no VEV possible → heavy penalty (forces μ²>0, λ>0)
 
   // 7. Minimum VEV scale: T_vev must be physically meaningful
@@ -938,17 +938,17 @@ export const fTGravityTask: Task = {
 /** UFE torsion field theory task — v3 with hard non-trivial barriers */
 export const ufeTorsionTask: Task = {
   id: 'ufe-torsion',
-  name: 'UFE Torsion Field (Mexican Hat v3)',
+  name: 'UFE Torsion Field (Mexican Hat v4)',
   evaluate: ufeTorsionFunctional,
   parameters: [
-    { name: 'mu2', min: 1e-5, max: 1e25, description: 'μ² mass parameter (must be positive for SSB)' },
-    { name: 'lambda', min: 1e-4, max: 50, description: 'λ quartic coupling (must be positive)' },
+    { name: 'log_mu2', min: -5, max: 25, description: 'log₁₀(μ²) mass parameter' },
+    { name: 'log_lambda', min: -4, max: 2, description: 'log₁₀(λ) quartic coupling' },
     { name: 'gamma', min: 0.001, max: 100, description: 'γ kinetic/gradient term' },
     { name: 'epsilon', min: -20, max: 20, description: 'ε curvature-torsion mixing' },
     { name: 'kappa_f', min: -12, max: 12, description: 'κ_f fermion axial coupling' },
     { name: 'kappa_g', min: -20, max: 20, description: 'κ_g graviton-torsion coupling' },
-    { name: 'T0', min: 1e-12, max: 1, description: 'Background torsion (forced non-zero)' },
-    { name: 'nDensity', min: 1, max: 1e10, description: 'Fermion number density (natural units)' },
+    { name: 'log_T0', min: -12, max: 0, description: 'log₁₀(T₀) background torsion' },
+    { name: 'log_nDensity', min: 0, max: 10, description: 'log₁₀(n) fermion density' },
   ],
 };
 
