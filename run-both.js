@@ -65,9 +65,10 @@ const spectrum = [
   { tag: 'pure-refine',      baseIdx: 10, config: { explorationRate: 0.05, strategies: ['gradient', 'exploit'] } },
 ];
 
-// Dynamic config getter — applies current EVAL_SCALE at call time
-function getProfileConfig(profile) {
-  return { ...profile.config, maxEvals: Math.round(BASE_EVALS[profile.baseIdx] * EVAL_SCALE) };
+// Dynamic config getter — applies current EVAL_SCALE and adaptive task multiplier
+function getProfileConfig(profile, taskId) {
+  const taskMult = taskId ? getTaskMultiplier(taskId) : 1.0;
+  return { ...profile.config, maxEvals: Math.round(BASE_EVALS[profile.baseIdx] * EVAL_SCALE * taskMult) };
 }
 
 const SPECTRUM_LEN = spectrum.length;
@@ -441,7 +442,6 @@ async function runAegisLoop() {
 
     console.log(`\n[AEGIS] ━━ Cycle ${aegisCycle} ━━ ${direction} ━━ ${queue.length} runs (${WORKER_COUNT} threads)`);
 
-    // Process queue in parallel batches
     for (let i = 0; i < queue.length; i += WORKER_COUNT) {
       const batch = queue.slice(i, i + WORKER_COUNT);
       const workerMsgs = batch.map(({ task, profile }) => {
@@ -455,7 +455,7 @@ async function runAegisLoop() {
         return {
           engineName: 'AEGIS',
           taskId: task.id,
-          profileConfig: getProfileConfig(profile),
+          profileConfig: getProfileConfig(profile, task.id),
           seedData: seedData || null,
           runSeed: aegisTotal * 1000 + Date.now() % 10000,
           _runId: runId,
@@ -465,11 +465,9 @@ async function runAegisLoop() {
 
       const results = await runBatch(workerMsgs);
 
-      // Process results on main thread (scoreboard, cross-pollination, anomalies)
       for (let j = 0; j < results.length; j++) {
         const r = results[j];
         const msg = workerMsgs[j];
-        // Complete run on monitor (workers can't fire events)
         completeWorkerRun(aegisMonitor, msg._runId, r.bestScore, r.bestParams, r.evals || 0);
         if (r.error) {
           console.error(`[AEGIS] Error: ${msg.taskId}: ${r.error}`);
@@ -513,7 +511,7 @@ async function runSeekerLoop() {
         return {
           engineName: 'Seeker',
           taskId: task.id,
-          profileConfig: getProfileConfig(profile),
+          profileConfig: getProfileConfig(profile, task.id),
           seedData: seedData || null,
           runSeed: seekerTotal * 2000 + Date.now() % 10000,
           _runId: runId,
@@ -526,7 +524,6 @@ async function runSeekerLoop() {
       for (let j = 0; j < results.length; j++) {
         const r = results[j];
         const msg = workerMsgs[j];
-        // Complete run on monitor (workers can't fire events)
         completeWorkerRun(seekerMonitor, msg._runId, r.bestScore, r.bestParams, r.evals || 0);
         if (r.error) {
           console.error(`[Seeker] Error: ${msg.taskId}: ${r.error}`);
@@ -576,6 +573,21 @@ const TASK_TARGETS = {
   'h0-tension': 10,
   'ufe-torsion': 100,
 };
+
+// Adaptive eval budget: converged tasks get 25% budget, improving get 150%
+function getTaskMultiplier(taskId) {
+  const target = TASK_TARGETS[taskId];
+  if (target === undefined) return 1.0;
+  const aScore = aegisBests[taskId];
+  const sScore = seekerBests[taskId];
+  const best = (aScore != null && sScore != null) ? Math.min(aScore, sScore)
+    : aScore != null ? aScore : sScore;
+  if (best == null) return 1.0; // no data yet — normal budget
+  if (best <= target) return 0.25; // converged — minimal budget
+  if (target > 0 && best <= target * 2) return 1.5; // improving — boost
+  if (target > 0 && best <= target * 5) return 1.25; // grinding — slight boost
+  return 1.0; // exploring — normal
+}
 
 // Nice display names
 const TASK_NAMES = {
