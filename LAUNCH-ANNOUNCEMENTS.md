@@ -43,7 +43,7 @@ The same engine that's discovering the Unified Field Equation — now optimize Y
 
 3 lines of code. Zero config. Dual-engine cross-pollination.
 
-npm install @aegis/optimizer
+npm install aegis-optimizer
 
 🧵👇
 
@@ -51,7 +51,7 @@ npm install @aegis/optimizer
 How it works:
 
 ```js
-const { optimize } = require('@aegis/optimizer');
+const { optimize } = require('aegis-optimizer');
 
 const result = await optimize({
   objective: (p) => costFunction(p.x, p.y),
@@ -74,7 +74,7 @@ What makes AEGIS different:
 
 **Tweet 4:**
 Available as:
-📦 npm SDK — `@aegis/optimizer`
+📦 npm SDK — `aegis-optimizer`
 ⌨️ CLI — `npx aegis optimize`
 🌐 SaaS REST API — with Stripe billing
 🖥️ Desktop app — GUI dashboard
@@ -134,7 +134,7 @@ I've been building AEGIS for years. The core idea: run two different optimizatio
 It's currently running 24/7 on the Unified Field Equation (spacetime torsion fields). The same engine is now packaged as an npm SDK:
 
 ```
-npm install @aegis/optimizer
+npm install aegis-optimizer
 ```
 
 3 lines to optimize anything. Integer params, categorical params, constraints — all built in. No hyperparameter tuning needed.
@@ -148,17 +148,17 @@ AEGIS runs two optimization engines (7 strategies each: evolutionary, swarm, Bay
 
 Benchmarks show 40-70% improvement over single-engine approaches on standard test functions (Rosenbrock, Rastrigin, Ackley, Schwefel).
 
-Now available as npm package: `@aegis/optimizer`
+Now available as npm package: `aegis-optimizer`
 
 GitHub: https://github.com/dannyeldridge54/AEGIS
 
 ### r/node / r/javascript
-**Title:** @aegis/optimizer — Zero-config optimization in 3 lines of JS
+**Title:** aegis-optimizer — Zero-config optimization in 3 lines of JS
 
 Just published: an autonomous optimizer that handles integer params, categorical params, and constraints out of the box.
 
 ```js
-const { optimize } = require('@aegis/optimizer');
+const { optimize } = require('aegis-optimizer');
 const result = await optimize({
   objective: p => (p.x - 42)**2 + (p.y - 7)**2,
   parameters: [
@@ -171,7 +171,7 @@ const result = await optimize({
 
 Has dual-engine mode too — runs two competing engines with cross-pollination.
 
-npm: `@aegis/optimizer`
+npm: `aegis-optimizer`
 GitHub: https://github.com/dannyeldridge54/AEGIS
 
 ---
@@ -188,7 +188,7 @@ The core innovation: two optimization engines run simultaneously with 7 strategi
 It's currently running 24/7 on the hardest problem I could think of — the Unified Field Equation (spacetime torsion fields). Cross-domain score has dropped from 264 to 249 via leapfrog cross-pollination.
 
 Now packaged as a commercial product:
-- npm SDK: @aegis/optimizer
+- npm SDK: aegis-optimizer
 - CLI, REST API, desktop app, Windows installer
 - Free tier available
 

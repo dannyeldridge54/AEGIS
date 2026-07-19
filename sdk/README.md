@@ -1,4 +1,4 @@
-# @aegis/optimizer
+# aegis-optimizer
 
 **The engine that discovered the Unified Field Equation — now optimize YOUR problem.**
 
@@ -11,13 +11,13 @@ AEGIS is a dual-engine, autonomous optimizer with cross-pollination. Drop in any
 ## Install
 
 ```bash
-npm install @aegis/optimizer
+npm install aegis-optimizer
 ```
 
 ## Quick Start
 
 ```javascript
-const { optimize } = require('@aegis/optimizer');
+const { optimize } = require('aegis-optimizer');
 
 const result = await optimize({
   objective: (p) => (p.x - 3)**2 + (p.y - 7)**2,
@@ -62,7 +62,7 @@ const result = await optimize({
 ## Dual-Engine Mode
 
 ```javascript
-const { dualOptimize } = require('@aegis/optimizer');
+const { dualOptimize } = require('aegis-optimizer');
 
 const result = await dualOptimize({
   objective: complexFn,
@@ -75,7 +75,7 @@ const result = await dualOptimize({
 ## Warm Start & Export
 
 ```javascript
-const { exportResult } = require('@aegis/optimizer');
+const { exportResult } = require('aegis-optimizer');
 
 // Resume from previous run
 const r2 = await optimize({ objective, parameters, warmStart: r1.best });
@@ -111,7 +111,7 @@ npx aegis serve --port 3000
 ## Quick Start
 
 ```javascript
-const { optimize } = require('@aegis/optimizer');
+const { optimize } = require('aegis-optimizer');
 
 const result = await optimize({
   objective: (params) => {
@@ -133,7 +133,7 @@ console.log(result.best);
 Two engines attack your problem from opposite ends — one explores wide, one exploits deep. They share discoveries, leapfrogging each other to converge faster than any single optimizer.
 
 ```javascript
-const { dualOptimize } = require('@aegis/optimizer');
+const { dualOptimize } = require('aegis-optimizer');
 
 const result = await dualOptimize({
   objective: myExpensiveFunction,
@@ -151,7 +151,7 @@ console.log(`Cross-pollinations: ${result.pollinations}`);
 ## Live Dashboard
 
 ```javascript
-const { optimizeWithMonitor } = require('@aegis/optimizer');
+const { optimizeWithMonitor } = require('aegis-optimizer');
 
 const result = await optimizeWithMonitor({
   objective: myFunction,

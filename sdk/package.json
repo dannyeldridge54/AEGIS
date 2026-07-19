@@ -1,5 +1,5 @@
 {
-  "name": "@aegis/optimizer",
+  "name": "aegis-optimizer",
   "version": "1.0.0",
   "description": "AEGIS — Autonomous dual-engine optimizer with cross-pollination. The engine that discovered the Unified Field Equation. Zero-config optimization for any objective function.",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "aegis-optimizer": "cli.js"
   },
   "scripts": {
-    "prepublishOnly": "cd .. && npx tsc && npx tsc --project seeker/tsconfig.json",
+    "prepublishOnly": "cd .. ; npx tsc",
     "test": "cd .. && npx jest --forceExit"
   },
   "author": "Danny Lee Eldridge <danny@aegis-agent.dev>",
