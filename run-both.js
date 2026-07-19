@@ -265,6 +265,10 @@ const seekerMonitor = seeker.createMonitor({ port: 5556 });
 // Complete a run on the monitor after worker finishes (workers can't fire events)
 function completeWorkerRun(monitor, runId, bestScore, bestParams, evals) {
   const handler = monitor.createHandler(runId);
+  // Simulate evaluation events so the counter updates
+  for (let i = 0; i < (evals || 0); i += 10) {
+    handler({ type: 'evaluation', result: { params: bestParams || {}, score: bestScore || Infinity, timestamp: Date.now() } });
+  }
   if (bestParams && isFinite(bestScore)) {
     handler({ type: 'new_best', result: { params: bestParams, score: bestScore }, improvement: 0 });
   }

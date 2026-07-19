@@ -74,7 +74,7 @@ parentPort.on('message', async (msg) => {
       taskId,
       bestParams: bp,
       bestScore: isFinite(bs) ? bs : null,
-      evals: (result && result.evaluations) || 0,
+      evals: (result && result.totalEvals) || 0,
     });
   } catch (err) {
     parentPort.postMessage({ taskId, error: err.message });

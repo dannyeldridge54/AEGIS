@@ -1,6 +1,6 @@
 'use strict';
 // -------------------------------------------------------------------------------
-// UFE TASKS MODULE � shared between main thread and worker threads
+// UFE TASKS MODULE � shared between main thread and worker threads
 // Extracted from run-both.js for worker_threads parallelism
 // -------------------------------------------------------------------------------
 // ── Planck 2018 baseline constants ──────────────────────────────────────────
@@ -184,8 +184,8 @@ const sneTask = {
     return chi2;
   },
   parameters: [
-    { name: 'H0', min: 60, max: 80, description: 'Hubble constant' },
-    { name: 'omega_m', min: 0.20, max: 0.45, description: 'Matter density' },
+    { name: 'H0', min: 60, max: 100, description: 'Hubble constant' },
+    { name: 'omega_m', min: 0.15, max: 0.45, description: 'Matter density' },
     { name: 'beta', min: -0.5, max: 0.5, description: 'Torsion coupling' },
     { name: 'M_B', min: -19.5, max: -19.0, description: 'SNe absolute magnitude' },
   ],

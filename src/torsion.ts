@@ -762,16 +762,18 @@ export function crossDomainUFE(params: Record<string, number>): number {
   const OmegaM = 0.315;
 
   // ── (I) Einstein-Cartan residual ──
-  const G = 6.674e-11;
-  const ec_source = 8 * Math.PI * G * spinDensity;
+  // Natural units: G = 1 (Planck), all torsion scalars O(1)
+  const ec_source = 8 * Math.PI * spinDensity; // G=1 in natural units
   const ec_residual = (T_scalar - ec_source) ** 2
     + (ec_coupling * T_scalar * T_scalar) ** 2; // squared — must be non-negative
 
   // ── (II) f(T) cosmology ──
-  const T_cosmo = -6 * H0 * H0; // T = -6H² in FLRW
+  // Convert H0 from km/s/Mpc to natural units (Planck): H0_nat = H0 * 2.4e-18 / 1.22e19
+  const H0_nat = H0 * 1.967e-37; // dimensionless Planck units
+  const T_cosmo = -6 * H0_nat * H0_nat; // T = -6H² in FLRW (natural)
   const fT = fT_alpha * Math.pow(Math.abs(T_cosmo), fT_n) * Math.sign(T_cosmo);
   // Modified Friedmann: deviation from ΛCDM
-  const Hz_predicted = H0 * Math.sqrt(Math.max(0.01, OmegaM + (1 - OmegaM) + fT / (6 * H0 * H0)));
+  const Hz_predicted = H0 * Math.sqrt(Math.max(0.01, OmegaM + (1 - OmegaM) + fT / (6 * H0_nat * H0_nat + 1e-80)));
   const cosmo_residual = ((Hz_predicted - 67.4) / 3.37) ** 2; // 5% uncertainty on H₀
 
   // ── (III) Wave equation consistency ──
@@ -786,8 +788,8 @@ export function crossDomainUFE(params: Record<string, number>): number {
     ? (wave_freq * wave_freq - omega2) ** 2 / (omega2 * omega2 + 1e-30)
     : 10;
 
-  // Source consistency: J should match spin density
-  const J_expected = 8 * Math.PI * G * spinDensity * T_vev;
+  // Source consistency: J should match spin density (G=1 natural units)
+  const J_expected = 8 * Math.PI * spinDensity * T_vev;
   const source_residual = (wave_source - J_expected) ** 2 / (J_expected * J_expected + 1e-30);
 
   // ── (IV) Cross-domain consistency ──
