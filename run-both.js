@@ -261,6 +261,15 @@ console.log(`
 const aegisMonitor = aegis.createMonitor({ port: 5555 });
 const seekerMonitor = seeker.createMonitor({ port: 5556 });
 
+// Complete a run on the monitor after worker finishes (workers can't fire events)
+function completeWorkerRun(monitor, runId, bestScore, bestParams, evals) {
+  const handler = monitor.createHandler(runId);
+  if (bestParams && isFinite(bestScore)) {
+    handler({ type: 'new_best', result: { params: bestParams, score: bestScore }, improvement: 0 });
+  }
+  handler({ type: 'stopped', reason: 'completed', state: { phase: 'done', ufe: null, strategies: [] } });
+}
+
 // Spatial anomaly + equation writer integration
 const { computeSpatialAnomalies, HZ_OBSERVATIONS, createEquationWriter } = aegis;
 const aegisWriter = createEquationWriter ? createEquationWriter('AEGIS') : null;
@@ -460,6 +469,8 @@ async function runAegisLoop() {
       for (let j = 0; j < results.length; j++) {
         const r = results[j];
         const msg = workerMsgs[j];
+        // Complete run on monitor (workers can't fire events)
+        completeWorkerRun(aegisMonitor, msg._runId, r.bestScore, r.bestParams, r.evals || 0);
         if (r.error) {
           console.error(`[AEGIS] Error: ${msg.taskId}: ${r.error}`);
           continue;
@@ -515,6 +526,8 @@ async function runSeekerLoop() {
       for (let j = 0; j < results.length; j++) {
         const r = results[j];
         const msg = workerMsgs[j];
+        // Complete run on monitor (workers can't fire events)
+        completeWorkerRun(seekerMonitor, msg._runId, r.bestScore, r.bestParams, r.evals || 0);
         if (r.error) {
           console.error(`[Seeker] Error: ${msg.taskId}: ${r.error}`);
           continue;

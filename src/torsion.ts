@@ -629,12 +629,11 @@ export function ufeTorsionFunctional(params: Record<string, number>): number {
   const gravitonSource = kappa_g * R_cosmo * T2;
 
   // ── Cosmological sector ──
-  // Torsion dark energy contribution: ρ_T = V(T_vev) + kinetic
-  const rho_torsion = Math.abs(V_mexican) + kinetic;
-  // Critical density today
-  const rho_crit = 3 * H0_natural * H0_natural / (8 * Math.PI * 6.674e-11);
-  // Dark energy fraction from torsion
-  const Omega_T = rho_crit > 0 ? rho_torsion / rho_crit : 0;
+  // Compare V(T_vev) to the Mexican hat vacuum energy scale
+  // At the VEV: V(T_vev) = -μ⁴/(4λ) — this is the vacuum energy density
+  // We want this to be small (not dominate dark energy)
+  // Use dimensionless ratio: log₁₀(|V|/μ⁴) as a soft constraint
+  const V_vev = mu2 > 0 && lambda > 0 ? -(mu2 * mu2) / (4 * lambda) : 0;
 
   // Screening: torsion effects suppressed at high densities
   const T_screen = T_vev > 0 ? T2 / (T2 + T_vev * T_vev) : 1;
@@ -668,9 +667,10 @@ export function ufeTorsionFunctional(params: Record<string, number>): number {
   // 3. Perturbativity: |κ_f| < 4π
   if (Math.abs(kappa_f) > 4 * Math.PI) penalty += 10 * (Math.abs(kappa_f) - 4 * Math.PI) ** 2;
 
-  // 4. Cosmological bound: Ω_T should contribute to but not exceed dark energy
-  const omega_target = 0.68;
-  const cosmoPenalty = (Omega_T - omega_target) ** 2;
+  // 4. Potential stability: V(T₀) should be near V(T_vev) — bounded, not runaway
+  // Dimensionless comparison of current potential to VEV potential
+  const V_ratio = V_vev !== 0 ? Math.abs((V_mexican - V_vev) / V_vev) : Math.abs(V_mexican);
+  const cosmoPenalty = Math.min(V_ratio, 100); // cap to prevent domination
 
   // 5. NON-TRIVIAL TORSION — penalize very small T₀
   const absT0 = Math.abs(T0);
