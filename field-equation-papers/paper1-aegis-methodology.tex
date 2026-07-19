@@ -6,7 +6,7 @@
 % ============================================================================
 
 \documentclass[12pt,preprint]{aastex631}
-\usepackage{amsmath,amssymb,hyperref}
+\usepackage{amsmath,amssymb,hyperref,graphicx}
 
 \begin{document}
 
@@ -174,9 +174,20 @@ beyond initial speed adjustment.
 \section{Performance}
 \label{sec:perf}
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\columnwidth]{figures/scoreboard.pdf}
+\caption{AEGIS 15-task optimization scoreboard showing final cost function
+values after $\sim$125{,}000 evaluations. Green bars indicate converged tasks
+(score $\leq$ target), orange indicates improving, red indicates tasks requiring
+further optimization. Black tick marks show target thresholds.}
+\label{fig:scoreboard}
+\end{figure}
+
 \begin{itemize}
   \item \textbf{Sequential}: $\sim$1 cycle/minute (26 tasks $\times$ 2 engines)
   \item \textbf{12-thread parallel}: $\sim$9 cycles/minute ($9\times$ speedup)
+  \item \textbf{GPU acceleration}: $57$--$186\times$ speedup for distance integrals via precomputed lookup tables (RTX 4070, 12.5M distances in 4.6\,s)
   \item \textbf{Cross-pollination events}: 15+ discoveries transferred between engines
   \item \textbf{State persistence}: zero lost progress across 4+ restarts
 \end{itemize}
