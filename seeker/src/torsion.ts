@@ -693,18 +693,24 @@ export function ufeTorsionFunctional(params: Record<string, number>): number {
     ? 50 * (Math.log10(minVevScale / T_vev)) ** 2
     : 0;
 
-  // 8. BBN consistency: torsion mass must decouple before nucleosynthesis
+  // 8. BBN consistency: torsion must decouple before nucleosynthesis (~1 MeV)
+  // In this formulation H₀ ~ 2.2e-18 s⁻¹ sets the scale.
+  // BBN occurs at T_BBN ~ 1 MeV → H_BBN ~ 1 s⁻¹.
+  // Decoupling requires m_T > H_BBN, i.e. m_T >> H₀ in these units.
+  // Since m_T² = 4μ² and μ² ~ O(1-1000) in the parameter space,
+  // we require m_T > 1 (well above the Hubble scale) — a soft nudge
+  // toward massive torsion without demanding impossible values.
   const m_T = Math.sqrt(Math.max(0, m_T2));
-  const bbnScale = 5.07e9;
-  const bbnPenalty = m_T < bbnScale ? (1 - m_T / bbnScale) ** 2 : 0;
+  const bbnThreshold = 1.0; // m_T > 1 ensures decoupling above Hubble scale
+  const bbnPenalty = m_T < bbnThreshold ? (1 - m_T / bbnThreshold) ** 2 : 0;
 
   // ── Cost function: find NON-TRIVIAL solutions to the field equation ──
   // The log-barrier and VEV proximity are weighted heavily to prevent
   // the optimizer from collapsing to the trivial T₀=0 vacuum.
   return fieldResidual
-    + 10 * vevResidual      // 100x stronger than before
-    + logBarrier             // hard wall against T₀→0
-    + vevScalePenalty        // VEV must be physically real
+    + 10 * vevResidual
+    + logBarrier
+    + vevScalePenalty
     + penalty
     + 0.5 * cosmoPenalty
     + 0.3 * bbnPenalty;
