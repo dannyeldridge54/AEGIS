@@ -266,8 +266,18 @@ function buildAppHTML() {
 
 const appServer = http.createServer((req, res) => {
   if (req.url === '/' || req.url === '/index.html') {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end(buildAppHTML());
+    // Serve the full dashboard
+    const dashPath = path.join(__dirname, 'dashboard.html');
+    if (fs.existsSync(dashPath)) {
+      let html = fs.readFileSync(dashPath, 'utf-8');
+      // Inject API port
+      html = html.replace('window.AEGIS_API_PORT || 3000', 'window.AEGIS_API_PORT || ' + API_PORT);
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(html);
+    } else {
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(buildAppHTML());
+    }
   } else {
     res.writeHead(404);
     res.end('Not found');
