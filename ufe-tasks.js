@@ -1,8 +1,16 @@
 'use strict';
 // -------------------------------------------------------------------------------
-// UFE TASKS MODULE � shared between main thread and worker threads
+// UFE TASKS MODULE — shared between main thread and worker threads
 // Extracted from run-both.js for worker_threads parallelism
 // -------------------------------------------------------------------------------
+
+// Optional GPU distance table — falls back to direct integration if not available
+let distTable = null;
+try {
+  distTable = require('./gpu-distance-table');
+  distTable.loadDistanceTable();
+} catch (_) { /* no table available, use direct integration */ }
+
 // ── Planck 2018 baseline constants ──────────────────────────────────────────
 const H0_PLANCK = 67.4;  // km/s/Mpc
 const OMEGA_M0 = 0.315;
@@ -52,6 +60,12 @@ function comovingDistanceEvolving(z, H0, omega_m, omega_r, beta0, beta1, steps =
 
 function comovingDistance(z, H0, omega_m, omega_r, beta, steps = 200) {
   if (z <= 0) return 0;
+  // Fast path: GPU-precomputed distance table (trilinear interpolation, ~1µs)
+  if (distTable && distTable.isTableLoaded()) {
+    const cached = distTable.tableLookup(z, H0, omega_m, beta);
+    if (cached !== null) return cached;
+  }
+  // Slow path: direct numerical integration (~150-330µs)
   // Use log-spaced steps for better accuracy at high z
   const lnZp1 = Math.log(1 + z);
   const dlnZp1 = lnZp1 / steps;
@@ -505,8 +519,19 @@ module.exports = {
   H0_PLANCK, OMEGA_M0, OMEGA_R0, SIGMA8_0, RS_PLANCK, C_LIGHT,
   torsionHubble, torsionHubbleEvolving,
   comovingDistance, comovingDistanceEvolving, growthFactor,
-  CC_DATA,
+  CC_DATA, SNE_DATA, DESI_BAO, RSD_DATA,
   cosmicChronTask, desiBAOTask, sneTask, h0TensionTask,
   rsdGrowthTask, energyConditionTask, s8TensionTask,
   wDETask, combinedFitTask, modelSelectionTask,
+
+  // GPU batch compute helpers — call from worker or main thread
+  // These collect all z-values needed by a task and return a map z→distance
+  GPU_Z_FIXED: [
+    ...new Set([
+      ...DESI_BAO.map(d => d.z),
+      ...SNE_DATA.map(d => d.z),
+    ])
+  ].sort((a, b) => a - b),
+
+  GPU_Z_EVOLVING: [1089, 0.38, 0.51, 0.61],
 };

@@ -23,6 +23,7 @@ const os = require('os');
 
 // Import shared tasks module (used by both main thread and workers)
 const ufeTasks = require('./ufe-tasks');
+const gpu = require('./gpu-accel');
 const {
   torsionHubble, torsionHubbleEvolving, comovingDistance, comovingDistanceEvolving,
   growthFactor, CC_DATA, RS_PLANCK, C_LIGHT,
@@ -757,6 +758,7 @@ const controlServer = require('http').createServer((req, res) => {
       baseEvals: BASE_EVALS,
       effectiveEvals: BASE_EVALS.map(b => Math.round(b * EVAL_SCALE)),
       spectrumTags: spectrum.map(s => s.tag),
+      gpu: gpu.getGPUInfo(),
     }));
     return;
   }
@@ -800,6 +802,17 @@ pushScoreboardToMonitors(); // show restored scores immediately
 createWorkerPool();
 console.log(`🧵 Worker pool ready: ${WORKER_COUNT} threads`);
 
+// Optional GPU acceleration — auto-detects and falls back gracefully
+gpu.initGPU().then(info => {
+  if (info && info.gpu) {
+    console.log(`⚡ GPU: ${info.device} (${info.vram_gb}GB) — ${info.distances_per_sec.toLocaleString()} dist/sec`);
+  } else if (info) {
+    console.log(`⚡ GPU: NumPy CPU fallback — ${info.distances_per_sec.toLocaleString()} dist/sec`);
+  } else {
+    console.log('⚡ GPU: disabled (Python/NumPy not available)');
+  }
+}).catch(() => {});
+
 Promise.all([runAegisLoop(), runSeekerLoop()]).catch(err => {
   console.error('Fatal error:', err);
 });
@@ -807,6 +820,7 @@ Promise.all([runAegisLoop(), runSeekerLoop()]).catch(err => {
 process.on('SIGINT', () => {
   console.log('\nSaving state before shutdown...');
   saveState();
+  gpu.shutdownGPU();
   // Terminate workers
   for (const w of workerPool) { if (w) w.terminate(); }
   aegisMonitor.stopDashboard();

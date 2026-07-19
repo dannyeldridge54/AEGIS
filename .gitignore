@@ -3,3 +3,5 @@ dist/
 *.log
 
 ufe-state.json
+
+dist-tables/
