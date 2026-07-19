@@ -579,6 +579,15 @@ function computeEmergenceState() {
     state.constraints['torsion-wave'] = { mu2_hint: state.derived.mu2, lambda_hint: state.derived.lambda };
     // VEV constrains cross-domain
     state.constraints['ufe-cross-domain'] = { T_vev_hint: state.derived.T_vev, mu2_hint: state.derived.mu2 };
+
+    // ── UFE EMERGENCE: Feed quantum→cosmology bottom-up ──
+    // Emergence inherits Mexican Hat params from UFE Torsion (Level 2)
+    state.constraints['ufe-emergence'] = {
+      log_mu2_hint: ufe.params.log_mu2,
+      log_lambda_hint: ufe.params.log_lambda,
+      kappa_g_hint: ufe.params.kappa_g || state.derived.kappa_g,
+      kappa_f_hint: ufe.params.kappa_f || state.derived.kappa_f,
+    };
   }
   if (state.level >= 5 && state.derived.beta0 !== undefined) {
     // Evolving β constrains all cosmological tasks
@@ -588,6 +597,14 @@ function computeEmergenceState() {
     state.constraints['sne-pantheon-fit'] = { beta_hint: beta_cosmo };
     state.constraints['rsd-growth'] = { beta_hint: state.derived.beta_at_z1 };
     state.constraints['combined-multisurvey'] = { beta_hint: beta_cosmo };
+
+    // Emergence also inherits β-evolution and H₀ from Level 5
+    if (state.constraints['ufe-emergence']) {
+      state.constraints['ufe-emergence'].beta_quantum_hint = 0; // superposition → 0
+      state.constraints['ufe-emergence'].beta_scale_hint = Math.abs(beta_cosmo) * 1e-3;
+      state.constraints['ufe-emergence'].H0_hint = state.derived.H0_tension;
+      state.constraints['ufe-emergence'].omega_m_hint = 0.30; // near Planck
+    }
   }
 
   return state;
