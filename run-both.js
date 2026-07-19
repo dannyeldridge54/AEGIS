@@ -30,6 +30,7 @@ const {
   cosmicChronTask, desiBAOTask, sneTask, h0TensionTask,
   rsdGrowthTask, energyConditionTask, s8TensionTask,
   wDETask, combinedFitTask, modelSelectionTask,
+  emergenceTask,
 } = ufeTasks;
 
 // Worker pool size — use physical cores minus 2 (leave headroom)
@@ -109,12 +110,14 @@ const tasksByDifficulty = [
   aegis.crossDomainTask,                              // Cross-domain again
   combinedFitTask,                                    // FULL multi-survey — 5 params
   aegis.torsionWaveTask,                              // Wave again
+  emergenceTask,                                      // UFE EMERGENCE — quantum→cosmo in 1 eq
   combinedFitTask,                                    // Combined again — max budget
   aegis.crossDomainTask,                              // Cross-domain — max budget
 
   // ── Tier 5: Critical repeat — highest budget profiles ─────────────────────
   h0TensionTask,                                      // H₀ tension — max exploitation
   aegis.ufeTorsionTask,                               // UFE — max exploitation
+  emergenceTask,                                      // Emergence — max exploitation
   modelSelectionTask,                                 // Model selection — final
   combinedFitTask,                                    // Combined — final pass
 ];
@@ -445,9 +448,16 @@ function recordBest(taskId, params, score, source) {
   }
 }
 
-function getSeedParams(taskId, source) {
+function getSeedParams(taskId, source, task) {
   const known = bestKnown[taskId];
-  // Only seed from the OTHER engine's discovery
+
+  // Priority 1: Emergence cascade seed (quantum → cosmo)
+  if (task && task.parameters && Math.random() < 0.3) {
+    const emergenceSeed = getEmergenceSeed(taskId, task.parameters);
+    if (emergenceSeed) return emergenceSeed;
+  }
+
+  // Priority 2: Cross-pollination from other engine
   if (known && known.source !== source) {
     // Add jitter to break plateaus — 2% random perturbation
     const jittered = { ...known.params };
@@ -460,6 +470,177 @@ function getSeedParams(taskId, source) {
     return { params: jittered, score: known.score };
   }
   return null;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// EMERGENCE CASCADE — quantum results propagate upward to constrain cosmology
+// Level 1: Einstein-Cartan (spin → torsion tensor)
+// Level 2: UFE Torsion (Mexican hat → VEV, mass, condensate)
+// Level 3: Torsion Wave (propagation → dispersion, causality)
+// Level 4: Cross-Domain (unification → β_eff, constraints)
+// Level 5: Cosmology (H(z), BAO, SNe, growth)
+// Level 6: Combined / Model Selection
+// ═══════════════════════════════════════════════════════════════════════════════
+
+const emergenceLevels = {
+  1: ['einstein-cartan'],
+  2: ['ufe-torsion', 'energy-conditions'],
+  3: ['torsion-wave'],
+  4: ['ufe-cross-domain', 'ft-gravity'],
+  5: ['cc-hubble-fit', 'desi-bao-fit', 'sne-pantheon-fit', 'h0-tension', 'rsd-growth', 's8-tension', 'dark-energy-eos'],
+  6: ['combined-multisurvey', 'model-selection-bic'],
+};
+
+// Derive physical quantities from converged lower levels
+function computeEmergenceState() {
+  const state = { level: 0, derived: {}, constraints: {} };
+
+  // ── Level 1: Einstein-Cartan → spin density, torsion scalar ──
+  const ec = bestKnown['einstein-cartan'];
+  if (ec && ec.score < 0.1) {
+    state.level = 1;
+    const T2 = [ec.params.T01, ec.params.T02, ec.params.T03, ec.params.T12, ec.params.T13, ec.params.T23]
+      .reduce((s, t) => s + (t || 0) ** 2, 0);
+    state.derived.torsionScalar = Math.sqrt(T2);
+    state.derived.spinDensity = ec.params.spinDensity || 0;
+    state.derived.ecCoupling = ec.params.couplingLambda || 0;
+  }
+
+  // ── Level 2: UFE Torsion → μ², λ, T_vev, m_T, condensation ──
+  const ufe = bestKnown['ufe-torsion'];
+  if (ufe && ufe.score < 0.01) {
+    state.level = Math.max(state.level, 2);
+    const mu2 = Math.pow(10, ufe.params.log_mu2 || 0);
+    const lambda = Math.pow(10, ufe.params.log_lambda || 0);
+    const T_vev = mu2 > 0 && lambda > 0 ? Math.sqrt(mu2 / (2 * lambda)) : 0;
+    const m_T = Math.sqrt(4 * mu2);
+
+    state.derived.mu2 = mu2;
+    state.derived.lambda = lambda;
+    state.derived.T_vev = T_vev;
+    state.derived.m_T = m_T;
+    state.derived.gamma = ufe.params.gamma;
+    state.derived.kappa_f = ufe.params.kappa_f;
+    state.derived.kappa_g = ufe.params.kappa_g;
+
+    // Derive effective β from torsion condensation
+    // β_eff ≈ κ_g * T_vev² / (8πG * ρ_m) — torsion modifies matter sector
+    // In natural units with T_vev ~ O(1): β_eff ~ κ_g * T_vev²
+    if (T_vev > 0) {
+      state.derived.beta_from_condensation = ufe.params.kappa_g * T_vev * T_vev * 1e-4;
+    }
+  }
+
+  // ── Level 3: Torsion Wave → dispersion, phase velocity ──
+  const wave = bestKnown['torsion-wave'];
+  if (wave && wave.score < 0.1) {
+    state.level = Math.max(state.level, 3);
+    const omega = wave.params.frequency || 0;
+    const k = wave.params.wavenumber || 0;
+    state.derived.omega = omega;
+    state.derived.wavenumber = k;
+    state.derived.v_phase = k > 0 && omega > 0 ? omega / k : 0;
+    state.derived.v_group = omega > 0 ? k / omega : 0;
+    state.derived.waveAmplitude = wave.params.amplitude;
+    state.derived.J_spin = wave.params.J_spin;
+
+    // Wave mass must match Mexican hat: m_wave² ≈ 4μ²
+    if (state.derived.mu2) {
+      state.derived.massConsistency = Math.abs(4 * wave.params.mu2 - 4 * state.derived.mu2) / (4 * state.derived.mu2 + 1e-30);
+    }
+  }
+
+  // ── Level 4: Cross-domain → unified constraints ──
+  const cross = bestKnown['ufe-cross-domain'];
+  if (cross && cross.score < 100) {
+    state.level = Math.max(state.level, 4);
+    state.derived.H0_cross = (cross.params.H0_rescaled || 1) * 70;
+    state.derived.fT_alpha = cross.params.fT_alpha;
+    state.derived.fT_n = cross.params.fT_n;
+  }
+
+  // ── Level 5: H₀ tension → evolving β(z) ──
+  const h0 = bestKnown['h0-tension'];
+  if (h0 && h0.score < 5) {
+    state.level = Math.max(state.level, 5);
+    state.derived.H0_tension = h0.params.H0;
+    state.derived.beta0 = h0.params.beta0;
+    state.derived.beta1 = h0.params.beta1;
+    // β(z) = β₀ + β₁ * z/(1+z)
+    state.derived.beta_at_z0 = h0.params.beta0;
+    state.derived.beta_at_z1 = h0.params.beta0 + h0.params.beta1 * 0.5; // z=1
+    state.derived.beta_at_zinf = h0.params.beta0 + h0.params.beta1;
+  }
+
+  // ── Build constraints for higher levels ──
+  // These narrow the search space for cosmological tasks
+  if (state.level >= 2 && state.derived.T_vev > 0) {
+    // Torsion mass constrains wave equation
+    state.constraints['torsion-wave'] = { mu2_hint: state.derived.mu2, lambda_hint: state.derived.lambda };
+    // VEV constrains cross-domain
+    state.constraints['ufe-cross-domain'] = { T_vev_hint: state.derived.T_vev, mu2_hint: state.derived.mu2 };
+  }
+  if (state.level >= 5 && state.derived.beta0 !== undefined) {
+    // Evolving β constrains all cosmological tasks
+    const beta_cosmo = state.derived.beta0; // use z=0 value for static-β tasks
+    state.constraints['cc-hubble-fit'] = { beta_hint: beta_cosmo };
+    state.constraints['desi-bao-fit'] = { beta_hint: beta_cosmo };
+    state.constraints['sne-pantheon-fit'] = { beta_hint: beta_cosmo };
+    state.constraints['rsd-growth'] = { beta_hint: state.derived.beta_at_z1 };
+    state.constraints['combined-multisurvey'] = { beta_hint: beta_cosmo };
+  }
+
+  return state;
+}
+
+// Generate emergence-seeded starting point for a task
+function getEmergenceSeed(taskId, taskParams) {
+  const emergence = computeEmergenceState();
+  const constraints = emergence.constraints[taskId];
+  if (!constraints) return null;
+
+  // Build a seed point using derived quantum constraints + random for the rest
+  const seed = {};
+  for (const p of taskParams) {
+    if (constraints[p.name + '_hint'] !== undefined) {
+      // Use derived value with small jitter
+      const hint = constraints[p.name + '_hint'];
+      const range = p.max - p.min;
+      const jitter = (Math.random() - 0.5) * 0.1 * range;
+      seed[p.name] = Math.max(p.min, Math.min(p.max, hint + jitter));
+    } else if (p.name === 'beta' && constraints.beta_hint !== undefined) {
+      const hint = constraints.beta_hint;
+      const range = p.max - p.min;
+      const jitter = (Math.random() - 0.5) * 0.2 * range;
+      seed[p.name] = Math.max(p.min, Math.min(p.max, hint + jitter));
+    } else {
+      // Random within bounds
+      seed[p.name] = p.min + Math.random() * (p.max - p.min);
+    }
+  }
+
+  return { params: seed, score: Infinity, source: 'emergence' };
+}
+
+// Log emergence state periodically
+let lastEmergenceLog = 0;
+function logEmergenceState() {
+  const now = Date.now();
+  if (now - lastEmergenceLog < 120000) return; // every 2 min max
+  lastEmergenceLog = now;
+
+  const state = computeEmergenceState();
+  if (state.level === 0) return;
+
+  const levelNames = ['', 'QUANTUM', 'SYMMETRY BREAKING', 'PROPAGATION', 'UNIFICATION', 'COSMOLOGY', 'OBSERVATION'];
+  console.log(`\n🌊 EMERGENCE CASCADE — Level ${state.level}: ${levelNames[state.level]}`);
+
+  if (state.derived.T_vev) console.log(`   L2 → T_vev = ${state.derived.T_vev.toExponential(3)}, m_T = ${state.derived.m_T.toFixed(3)} M_Pl`);
+  if (state.derived.v_phase) console.log(`   L3 → v_phase = ${state.derived.v_phase.toFixed(4)}c, ω = ${state.derived.omega.toFixed(4)}`);
+  if (state.derived.beta0 !== undefined) console.log(`   L5 → β(z) = ${state.derived.beta0.toFixed(4)} + ${state.derived.beta1.toFixed(4)}·z/(1+z), H₀ = ${state.derived.H0_tension.toFixed(2)}`);
+
+  const constrained = Object.keys(state.constraints);
+  if (constrained.length > 0) console.log(`   ↳ Constraining ${constrained.length} tasks: ${constrained.join(', ')}`);
 }
 
 async function runAegisLoop() {
@@ -475,8 +656,10 @@ async function runAegisLoop() {
       const batch = queue.slice(i, i + WORKER_COUNT);
       const workerMsgs = batch.map(({ task, profile }) => {
         aegisTotal++;
-        const seedData = getSeedParams(task.id, 'AEGIS');
-        if (seedData) {
+        const seedData = getSeedParams(task.id, 'AEGIS', task);
+        if (seedData && seedData.source === 'emergence') {
+          console.log(`   🌊 [AEGIS] Emergence seed for ${task.name} (quantum→cosmo)`);
+        } else if (seedData) {
           console.log(`   🧬 [AEGIS] Seeding ${task.name} with Seeker's best (${seedData.score.toFixed(2)})`);
         }
         const runId = `aegis-${task.id}-${profile.tag}-c${aegisCycle}`;
@@ -532,8 +715,10 @@ async function runSeekerLoop() {
       const batch = queue.slice(i, i + WORKER_COUNT);
       const workerMsgs = batch.map(({ task, profile }) => {
         seekerTotal++;
-        const seedData = getSeedParams(task.id, 'Seeker');
-        if (seedData) {
+        const seedData = getSeedParams(task.id, 'Seeker', task);
+        if (seedData && seedData.source === 'emergence') {
+          console.log(`   🌊 [Seeker] Emergence seed for ${task.name} (quantum→cosmo)`);
+        } else if (seedData) {
           console.log(`   🧬 [Seeker] Seeding ${task.name} with AEGIS's best (${seedData.score.toFixed(2)})`);
         }
         const runId = `seeker-${task.id}-${profile.tag}-c${seekerCycle}`;
@@ -600,6 +785,7 @@ const TASK_TARGETS = {
   'model-selection-bic': 20,
   'sne-pantheon-fit': 50,
   'ufe-cross-domain': 50,
+  'ufe-emergence': 30,
   'combined-multisurvey': 100,
   'h0-tension': 10,
   'ufe-torsion': 100,
@@ -634,6 +820,7 @@ const TASK_NAMES = {
   'model-selection-bic': 'Model Selection ΔBIC',
   'sne-pantheon-fit': 'Pantheon+ SNe Ia',
   'ufe-cross-domain': 'UFE Cross-Domain Unified',
+  'ufe-emergence': 'UFE Emergence (Quantum→Cosmos)',
   'combined-multisurvey': 'Combined Multi-Survey',
   'h0-tension': 'H₀ Tension Resolver',
   'ufe-torsion': 'UFE Torsion Mexican Hat',
@@ -983,6 +1170,7 @@ setInterval(() => {
     const summary = Object.entries(types).map(([t, c]) => `${t}:${c}`).join(' ');
     console.log(`NOVEL  │ ${discoveries.length} unreported discoveries │ ${summary}`);
   }
+  logEmergenceState();
   aegisMonitor.printStatus();
   seekerMonitor.printStatus();
   saveState(); // persist discoveries to disk
@@ -1045,6 +1233,29 @@ const controlServer = require('http').createServer((req, res) => {
   if (req.url === '/discoveries' && req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(getDiscoverySummary()));
+    return;
+  }
+
+  // GET /emergence — quantum→cosmo cascade state
+  if (req.url === '/emergence' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    const state = computeEmergenceState();
+    const levelNames = ['NONE', 'QUANTUM', 'SYMMETRY BREAKING', 'PROPAGATION', 'UNIFICATION', 'COSMOLOGY', 'OBSERVATION'];
+    res.end(JSON.stringify({
+      level: state.level,
+      levelName: levelNames[state.level],
+      derived: state.derived,
+      constrainedTasks: Object.keys(state.constraints),
+      constraints: state.constraints,
+      pathway: [
+        { level: 1, name: 'Einstein-Cartan', status: bestKnown['einstein-cartan'] ? 'converged' : 'pending', output: 'spin density → torsion tensor' },
+        { level: 2, name: 'UFE Mexican Hat', status: bestKnown['ufe-torsion'] && bestKnown['ufe-torsion'].score < 0.01 ? 'converged' : 'pending', output: 'μ², λ → T_vev, m_T' },
+        { level: 3, name: 'Torsion Wave', status: bestKnown['torsion-wave'] && bestKnown['torsion-wave'].score < 0.1 ? 'converged' : 'pending', output: 'ω, k → v_phase, dispersion' },
+        { level: 4, name: 'Cross-Domain', status: bestKnown['ufe-cross-domain'] && bestKnown['ufe-cross-domain'].score < 100 ? 'active' : 'pending', output: 'EC ↔ f(T) ↔ Wave ↔ VEV' },
+        { level: 5, name: 'Cosmology', status: bestKnown['h0-tension'] && bestKnown['h0-tension'].score < 5 ? 'converged' : 'active', output: 'β(z), H₀, distances' },
+        { level: 6, name: 'Combined', status: 'active', output: 'multi-survey unified fit' },
+      ],
+    }));
     return;
   }
 

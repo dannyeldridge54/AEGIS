@@ -29,6 +29,7 @@ function getTaskById(taskId) {
     'dark-energy-eos': ufeTasks.wDETask,
     'combined-multisurvey': ufeTasks.combinedFitTask,
     'model-selection-bic': ufeTasks.modelSelectionTask,
+    'ufe-emergence': ufeTasks.emergenceTask,
   };
   if (inlineTasks[taskId]) return inlineTasks[taskId];
 
