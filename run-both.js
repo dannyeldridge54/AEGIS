@@ -23,70 +23,78 @@ const seeker = require('./seeker/dist/index.js');
 // THE SPECTRUM — ordered from pure exploration (index 0) to pure exploitation
 // ═══════════════════════════════════════════════════════════════════════════════
 
+// ── Speed Controls (adjustable via env vars) ────────────────────────────────
+// Usage: EVAL_SCALE=2 node run-both.js      (double all eval budgets)
+//        EVAL_SCALE=0.5 node run-both.js    (halve all — faster cycles)
+//        DELAY_MS=0 node run-both.js        (zero delay between tasks)
+const EVAL_SCALE = parseFloat(process.env.EVAL_SCALE || '1');
+const DELAY_MS = parseInt(process.env.DELAY_MS || '50');
+console.log(`⚙️  Speed: EVAL_SCALE=${EVAL_SCALE}x  DELAY_MS=${DELAY_MS}ms`);
+
 const spectrum = [
   // ── Tier 1: Maximum Exploration ───────────────────────────────────────────
   {
     tag: 'chaos-scan',
-    config: { maxEvals: 1500, explorationRate: 0.95, strategies: ['random', 'curiosity'] },
+    config: { maxEvals: Math.round(800 * EVAL_SCALE), explorationRate: 0.95, strategies: ['random', 'curiosity'] },
     desc: 'Pure random + curiosity, nearly zero exploitation',
   },
   {
     tag: 'wide-swarm',
-    config: { maxEvals: 3000, explorationRate: 0.85, strategies: ['swarm', 'curiosity', 'random'] },
+    config: { maxEvals: Math.round(1200 * EVAL_SCALE), explorationRate: 0.85, strategies: ['swarm', 'curiosity', 'random'] },
     desc: 'Swarm-driven wide search with curiosity bias',
   },
   {
     tag: 'evo-explore',
-    config: { maxEvals: 2500, explorationRate: 0.75, strategies: ['evolutionary', 'swarm', 'curiosity', 'random'] },
+    config: { maxEvals: Math.round(1000 * EVAL_SCALE), explorationRate: 0.75, strategies: ['evolutionary', 'swarm', 'curiosity', 'random'] },
     desc: 'Evolutionary with strong exploration pressure',
   },
 
   // ── Tier 2: Exploration-Leaning ───────────────────────────────────────────
   {
     tag: 'diverse-mix',
-    config: { maxEvals: 2000, explorationRate: 0.65, strategies: ['evolutionary', 'swarm', 'random', 'annealing'] },
+    config: { maxEvals: Math.round(1000 * EVAL_SCALE), explorationRate: 0.65, strategies: ['evolutionary', 'swarm', 'random', 'annealing'] },
     desc: 'Diverse strategy mix with exploration lean',
   },
   {
     tag: 'annealing-hot',
-    config: { maxEvals: 2500, explorationRate: 0.60, strategies: ['annealing', 'swarm', 'curiosity'] },
+    config: { maxEvals: Math.round(1000 * EVAL_SCALE), explorationRate: 0.60, strategies: ['annealing', 'swarm', 'curiosity'] },
     desc: 'High-temperature annealing, lots of jumps',
   },
 
   // ── Tier 3: Balanced ──────────────────────────────────────────────────────
   {
     tag: 'balanced',
-    config: { maxEvals: 2000, explorationRate: 0.50 },
+    config: { maxEvals: Math.round(1000 * EVAL_SCALE), explorationRate: 0.50 },
     desc: 'All strategies, 50/50 explore-exploit balance',
   },
   {
     tag: 'full-suite-deep',
-    config: { maxEvals: 5000, explorationRate: 0.50 },
-    desc: 'All strategies, balanced, high eval budget',
+    config: { maxEvals: Math.round(2000 * EVAL_SCALE), explorationRate: 0.50 },
+    desc: 'All strategies, balanced, moderate budget',
   },
 
   // ── Tier 4: Exploitation-Leaning ──────────────────────────────────────────
   {
     tag: 'bayesian-refine',
-    config: { maxEvals: 3000, explorationRate: 0.35, strategies: ['bayesian', 'gradient', 'annealing', 'exploit'] },
+    config: { maxEvals: Math.round(1200 * EVAL_SCALE), explorationRate: 0.35, strategies: ['bayesian', 'gradient', 'annealing', 'exploit'] },
     desc: 'Surrogate-guided with gradient refinement',
   },
   {
     tag: 'gradient-anneal',
-    config: { maxEvals: 2500, explorationRate: 0.25, strategies: ['gradient', 'annealing', 'exploit'] },
+    config: { maxEvals: Math.round(1000 * EVAL_SCALE), explorationRate: 0.25, strategies: ['gradient', 'annealing', 'exploit'] },
     desc: 'Gradient descent + cold annealing',
   },
 
   // ── Tier 5: Maximum Exploitation ──────────────────────────────────────────
   {
     tag: 'surgical-exploit',
-    config: { maxEvals: 4000, explorationRate: 0.10, strategies: ['gradient', 'bayesian', 'exploit'] },
+    config: { maxEvals: Math.round(1500 * EVAL_SCALE), explorationRate: 0.10, strategies: ['gradient', 'bayesian', 'exploit'] },
     desc: 'Surgical precision, minimal exploration',
   },
   {
     tag: 'pure-refine',
-    config: { maxEvals: 8000, explorationRate: 0.05, strategies: ['gradient', 'exploit'] },
-    desc: 'Pure gradient refinement, maximum budget',
+    config: { maxEvals: Math.round(2000 * EVAL_SCALE), explorationRate: 0.05, strategies: ['gradient', 'exploit'] },
+    desc: 'Pure gradient refinement, focused budget',
   },
 ];
 
@@ -833,7 +841,7 @@ async function runAegisLoop() {
       } catch (err) {
         console.error(`[AEGIS] Error: ${task.name} [${profile.tag}]: ${err.message}`);
       }
-      await new Promise(r => setTimeout(r, 800));
+      await new Promise(r => setTimeout(r, DELAY_MS));
     }
     console.log(`[AEGIS] Cycle ${aegisCycle} done — ${aegisTotal} lifetime runs`);
   }
@@ -886,7 +894,7 @@ async function runSeekerLoop() {
       } catch (err) {
         console.error(`[Seeker] Error: ${task.name} [${profile.tag}]: ${err.message}`);
       }
-      await new Promise(r => setTimeout(r, 800));
+      await new Promise(r => setTimeout(r, DELAY_MS));
     }
     console.log(`[Seeker] Cycle ${seekerCycle} done — ${seekerTotal} lifetime runs`);
   }
