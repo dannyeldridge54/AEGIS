@@ -193,8 +193,8 @@ const sneTask = {
       const mu_pred = 5 * Math.log10(Math.max(dL, 1e-10)) + 25;
       chi2 += ((d.mu - mu_pred) / d.sigma) ** 2;
     }
-    // Absolute magnitude nuisance parameter
-    chi2 += ((p.M_B + 19.25) / 0.03) ** 2; // M_B ≈ -19.25
+    // Absolute magnitude nuisance parameter — wide prior
+    chi2 += ((p.M_B + 19.25) / 0.10) ** 2; // M_B ≈ -19.25 ± 0.10
     return chi2;
   },
   parameters: [
@@ -288,7 +288,7 @@ const rsdGrowthTask = {
   parameters: [
     { name: 'omega_m', min: 0.20, max: 0.45, description: 'Matter density' },
     { name: 'beta', min: -0.5, max: 0.5, description: 'Torsion coupling' },
-    { name: 'sigma8', min: 0.70, max: 0.90, description: 'σ₈ amplitude' },
+    { name: 'sigma8', min: 0.65, max: 0.95, description: 'σ₈ amplitude' },
     { name: 'gamma', min: 0.40, max: 0.70, description: 'Growth index (GR ≈ 0.55)' },
   ],
 };
@@ -457,7 +457,7 @@ const combinedFitTask = {
     { name: 'omega_m', min: 0.20, max: 0.45, description: 'Matter density' },
     { name: 'beta', min: -0.5, max: 0.5, description: 'Torsion coupling' },
     { name: 'rs', min: 130, max: 160, description: 'Sound horizon' },
-    { name: 'sigma8', min: 0.70, max: 0.90, description: 'σ₈ amplitude' },
+    { name: 'sigma8', min: 0.65, max: 0.95, description: 'σ₈ amplitude' },
   ],
 };
 
