@@ -83,43 +83,46 @@ const SPECTRUM_LEN = spectrum.length;
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const tasksByDifficulty = [
-  // ── Tier 1: Small parameter spaces (2-3 params) ───────────────────────────
-  energyConditionTask,                                // 2 params — viability
-  aegis.einsteinCartanTask,                           // EC torsion — 8 params
-  s8TensionTask,                                      // 3 params — S₈ tension
-  aegis.fTGravityTask,                                // f(T) — 5 params
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ALLOCATION: 1/3 UFE cosmology, 1/3 anomaly hunting, 1/3 emergence
+  // Each third gets ~10 task slots in the rotation
+  // ═══════════════════════════════════════════════════════════════════════════
 
-  // ── Tier 2: Medium (3-5 params) ───────────────────────────────────────────
+  // ── THIRD 1: UFE Cosmology (core torsion fits) ────────────────────────────
   cosmicChronTask,                                    // CC H(z) — 3 params
   aegis.ufeTorsionTask,                               // UFE Mexican hat — 8 params
-  rsdGrowthTask,                                      // fσ₈ growth — 4 params
-  aegis.torsionWaveTask,                              // Wave — 7 params
   desiBAOTask,                                        // DESI BAO — 4 params
-  aegis.crossDomainTask,                              // Cross-domain — 10 params
-
-  // ── Tier 3: Hard (4-6 params, joint fits) ─────────────────────────────────
   sneTask,                                            // Pantheon+ SNe — 4 params
-  aegis.einsteinCartanTask,                           // EC again — exploitation profile
   h0TensionTask,                                      // H₀ tension — 4 params
-  aegis.fTGravityTask,                                // f(T) again
-  modelSelectionTask,                                 // ΔBIC — 4 params
-  aegis.ufeTorsionTask,                               // UFE again
-
-  // ── Tier 4: Extreme (5-6 params, combined fits) ───────────────────────────
   wDETask,                                            // w₀wₐCDM + torsion — 6 params
-  aegis.crossDomainTask,                              // Cross-domain again
   combinedFitTask,                                    // FULL multi-survey — 5 params
-  aegis.torsionWaveTask,                              // Wave again
-  emergenceTask,                                      // UFE EMERGENCE — quantum→cosmo in 1 eq
-  combinedFitTask,                                    // Combined again — max budget
+  s8TensionTask,                                      // S₈ tension — 3 params
+  rsdGrowthTask,                                      // fσ₈ growth — 4 params
+  aegis.ufeTorsionTask,                               // UFE — exploitation pass
+
+  // ── THIRD 2: Anomaly Hunting (unreported discoveries) ─────────────────────
+  aegis.einsteinCartanTask,                           // EC torsion — fresh anomalies
+  aegis.fTGravityTask,                                // f(T) teleparallel deviations
+  aegis.torsionWaveTask,                              // Wave dispersion anomalies
+  aegis.crossDomainTask,                              // Cross-domain unified — anomalies
+  modelSelectionTask,                                 // ΔBIC — statistical anomalies
+  energyConditionTask,                                // Energy condition violations
+  aegis.einsteinCartanTask,                           // EC — deeper exploration
+  aegis.fTGravityTask,                                // f(T) — deeper exploration
+  aegis.torsionWaveTask,                              // Wave — deeper exploration
   aegis.crossDomainTask,                              // Cross-domain — max budget
 
-  // ── Tier 5: Critical repeat — highest budget profiles ─────────────────────
-  h0TensionTask,                                      // H₀ tension — max exploitation
-  aegis.ufeTorsionTask,                               // UFE — max exploitation
-  emergenceTask,                                      // Emergence — max exploitation
-  modelSelectionTask,                                 // Model selection — final
-  combinedFitTask,                                    // Combined — final pass
+  // ── THIRD 3: Emergence (quantum→cosmos cascade) ───────────────────────────
+  emergenceTask,                                      // Emergence — initial exploration
+  emergenceTask,                                      // Emergence — exploitation pass 1
+  emergenceTask,                                      // Emergence — exploitation pass 2
+  emergenceTask,                                      // Emergence — exploitation pass 3
+  emergenceTask,                                      // Emergence — exploitation pass 4
+  emergenceTask,                                      // Emergence — exploitation pass 5
+  emergenceTask,                                      // Emergence — exploitation pass 6
+  emergenceTask,                                      // Emergence — deep exploitation
+  emergenceTask,                                      // Emergence — deep exploitation 2
+  emergenceTask,                                      // Emergence — max budget final
 ];
 
 const TASK_COUNT = tasksByDifficulty.length;
