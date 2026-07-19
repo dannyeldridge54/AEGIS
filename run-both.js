@@ -23,80 +23,36 @@ const seeker = require('./seeker/dist/index.js');
 // THE SPECTRUM — ordered from pure exploration (index 0) to pure exploitation
 // ═══════════════════════════════════════════════════════════════════════════════
 
-// ── Speed Controls (adjustable via env vars) ────────────────────────────────
+// ── Speed Controls (adjustable via env vars OR runtime API on :5557) ─────────
 // Usage: EVAL_SCALE=2 node run-both.js      (double all eval budgets)
 //        EVAL_SCALE=0.5 node run-both.js    (halve all — faster cycles)
 //        DELAY_MS=0 node run-both.js        (zero delay between tasks)
-const EVAL_SCALE = parseFloat(process.env.EVAL_SCALE || '1');
-const DELAY_MS = parseInt(process.env.DELAY_MS || '50');
-console.log(`⚙️  Speed: EVAL_SCALE=${EVAL_SCALE}x  DELAY_MS=${DELAY_MS}ms`);
+let EVAL_SCALE = parseFloat(process.env.EVAL_SCALE || '1');
+let DELAY_MS = parseInt(process.env.DELAY_MS || '50');
+const CONTROL_PORT = parseInt(process.env.CONTROL_PORT || '5557');
+console.log(`⚙️  Speed: EVAL_SCALE=${EVAL_SCALE}x  DELAY_MS=${DELAY_MS}ms  Control: http://localhost:${CONTROL_PORT}`);
+
+// Base eval budgets (before EVAL_SCALE multiplier)
+const BASE_EVALS = [800, 1200, 1000, 1000, 1000, 1000, 2000, 1200, 1000, 1500, 2000];
 
 const spectrum = [
-  // ── Tier 1: Maximum Exploration ───────────────────────────────────────────
-  {
-    tag: 'chaos-scan',
-    config: { maxEvals: Math.round(800 * EVAL_SCALE), explorationRate: 0.95, strategies: ['random', 'curiosity'] },
-    desc: 'Pure random + curiosity, nearly zero exploitation',
-  },
-  {
-    tag: 'wide-swarm',
-    config: { maxEvals: Math.round(1200 * EVAL_SCALE), explorationRate: 0.85, strategies: ['swarm', 'curiosity', 'random'] },
-    desc: 'Swarm-driven wide search with curiosity bias',
-  },
-  {
-    tag: 'evo-explore',
-    config: { maxEvals: Math.round(1000 * EVAL_SCALE), explorationRate: 0.75, strategies: ['evolutionary', 'swarm', 'curiosity', 'random'] },
-    desc: 'Evolutionary with strong exploration pressure',
-  },
-
-  // ── Tier 2: Exploration-Leaning ───────────────────────────────────────────
-  {
-    tag: 'diverse-mix',
-    config: { maxEvals: Math.round(1000 * EVAL_SCALE), explorationRate: 0.65, strategies: ['evolutionary', 'swarm', 'random', 'annealing'] },
-    desc: 'Diverse strategy mix with exploration lean',
-  },
-  {
-    tag: 'annealing-hot',
-    config: { maxEvals: Math.round(1000 * EVAL_SCALE), explorationRate: 0.60, strategies: ['annealing', 'swarm', 'curiosity'] },
-    desc: 'High-temperature annealing, lots of jumps',
-  },
-
-  // ── Tier 3: Balanced ──────────────────────────────────────────────────────
-  {
-    tag: 'balanced',
-    config: { maxEvals: Math.round(1000 * EVAL_SCALE), explorationRate: 0.50 },
-    desc: 'All strategies, 50/50 explore-exploit balance',
-  },
-  {
-    tag: 'full-suite-deep',
-    config: { maxEvals: Math.round(2000 * EVAL_SCALE), explorationRate: 0.50 },
-    desc: 'All strategies, balanced, moderate budget',
-  },
-
-  // ── Tier 4: Exploitation-Leaning ──────────────────────────────────────────
-  {
-    tag: 'bayesian-refine',
-    config: { maxEvals: Math.round(1200 * EVAL_SCALE), explorationRate: 0.35, strategies: ['bayesian', 'gradient', 'annealing', 'exploit'] },
-    desc: 'Surrogate-guided with gradient refinement',
-  },
-  {
-    tag: 'gradient-anneal',
-    config: { maxEvals: Math.round(1000 * EVAL_SCALE), explorationRate: 0.25, strategies: ['gradient', 'annealing', 'exploit'] },
-    desc: 'Gradient descent + cold annealing',
-  },
-
-  // ── Tier 5: Maximum Exploitation ──────────────────────────────────────────
-  {
-    tag: 'surgical-exploit',
-    config: { maxEvals: Math.round(1500 * EVAL_SCALE), explorationRate: 0.10, strategies: ['gradient', 'bayesian', 'exploit'] },
-    desc: 'Surgical precision, minimal exploration',
-  },
-  {
-    tag: 'pure-refine',
-    config: { maxEvals: Math.round(2000 * EVAL_SCALE), explorationRate: 0.05, strategies: ['gradient', 'exploit'] },
-    desc: 'Pure gradient refinement, focused budget',
-  },
+  { tag: 'chaos-scan',       baseIdx: 0,  config: { explorationRate: 0.95, strategies: ['random', 'curiosity'] } },
+  { tag: 'wide-swarm',       baseIdx: 1,  config: { explorationRate: 0.85, strategies: ['swarm', 'curiosity', 'random'] } },
+  { tag: 'evo-explore',      baseIdx: 2,  config: { explorationRate: 0.75, strategies: ['evolutionary', 'swarm', 'curiosity', 'random'] } },
+  { tag: 'diverse-mix',      baseIdx: 3,  config: { explorationRate: 0.65, strategies: ['evolutionary', 'swarm', 'random', 'annealing'] } },
+  { tag: 'annealing-hot',    baseIdx: 4,  config: { explorationRate: 0.60, strategies: ['annealing', 'swarm', 'curiosity'] } },
+  { tag: 'balanced',         baseIdx: 5,  config: { explorationRate: 0.50 } },
+  { tag: 'full-suite-deep',  baseIdx: 6,  config: { explorationRate: 0.50 } },
+  { tag: 'bayesian-refine',  baseIdx: 7,  config: { explorationRate: 0.35, strategies: ['bayesian', 'gradient', 'annealing', 'exploit'] } },
+  { tag: 'gradient-anneal',  baseIdx: 8,  config: { explorationRate: 0.25, strategies: ['gradient', 'annealing', 'exploit'] } },
+  { tag: 'surgical-exploit', baseIdx: 9,  config: { explorationRate: 0.10, strategies: ['gradient', 'bayesian', 'exploit'] } },
+  { tag: 'pure-refine',      baseIdx: 10, config: { explorationRate: 0.05, strategies: ['gradient', 'exploit'] } },
 ];
+
+// Dynamic config getter — applies current EVAL_SCALE at call time
+function getProfileConfig(profile) {
+  return { ...profile.config, maxEvals: Math.round(BASE_EVALS[profile.baseIdx] * EVAL_SCALE) };
+}
 
 const SPECTRUM_LEN = spectrum.length;
 
@@ -811,7 +767,7 @@ async function runAegisLoop() {
 
       aegisMonitor.registerRun(runId, runName);
       const agent = new aegis.AegisAgent(task, {
-        ...profile.config,
+        ...getProfileConfig(profile),
         seed: aegisTotal * 1000 + Date.now() % 10000,
         verbosity: 'silent',
       });
@@ -864,7 +820,7 @@ async function runSeekerLoop() {
 
       seekerMonitor.registerRun(runId, runName);
       const agent = new seeker.SeekerAgent(task, {
-        ...profile.config,
+        ...getProfileConfig(profile),
         seed: seekerTotal * 2000 + Date.now() % 10000,
         verbosity: 'silent',
       });
@@ -1051,6 +1007,63 @@ setInterval(() => {
   aegisMonitor.printStatus();
   seekerMonitor.printStatus();
 }, 60000);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RUNTIME CONTROL API — adjust speed from dashboard without restarting
+// ═══════════════════════════════════════════════════════════════════════════════
+const controlServer = require('http').createServer((req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') { res.writeHead(200); res.end(); return; }
+
+  // GET /config — current settings
+  if (req.url === '/config' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      evalScale: EVAL_SCALE,
+      delayMs: DELAY_MS,
+      aegisCycle,
+      seekerCycle,
+      aegisTotal,
+      seekerTotal,
+      baseEvals: BASE_EVALS,
+      effectiveEvals: BASE_EVALS.map(b => Math.round(b * EVAL_SCALE)),
+      spectrumTags: spectrum.map(s => s.tag),
+    }));
+    return;
+  }
+
+  // POST /config — update settings live
+  if (req.url === '/config' && req.method === 'POST') {
+    let body = '';
+    req.on('data', c => body += c);
+    req.on('end', () => {
+      try {
+        const update = JSON.parse(body);
+        if (update.evalScale !== undefined) {
+          EVAL_SCALE = Math.max(0.1, Math.min(10, parseFloat(update.evalScale)));
+          console.log(`⚙️  [CONTROL] EVAL_SCALE changed to ${EVAL_SCALE}x`);
+        }
+        if (update.delayMs !== undefined) {
+          DELAY_MS = Math.max(0, Math.min(5000, parseInt(update.delayMs)));
+          console.log(`⚙️  [CONTROL] DELAY_MS changed to ${DELAY_MS}ms`);
+        }
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, evalScale: EVAL_SCALE, delayMs: DELAY_MS }));
+      } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: e.message }));
+      }
+    });
+    return;
+  }
+
+  res.writeHead(404); res.end('Not found');
+});
+controlServer.listen(CONTROL_PORT, () => {
+  console.log(`🎛️  Control API: http://localhost:${CONTROL_PORT}/config`);
+});
 
 Promise.all([runAegisLoop(), runSeekerLoop()]).catch(err => {
   console.error('Fatal error:', err);
