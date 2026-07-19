@@ -860,9 +860,10 @@ async function runSeekerLoop() {
 // SCOREBOARD + EQUATION TRACKER — pushes to both monitors for dashboard display
 // ═══════════════════════════════════════════════════════════════════════════════
 
-// Track per-engine best scores and cross-pollination counts
+// Track per-engine best scores, worst scores (for progress baseline), and cross-pollination counts
 const aegisBests = {};  // { taskId: score }
 const seekerBests = {}; // { taskId: score }
+const worstScores = {}; // { taskId: score } — highest score ever seen, used as progress baseline
 const pollinationCounts = {}; // { taskId: count }
 
 // Target scores for progress calculation (χ² targets — lower is better)
@@ -905,6 +906,8 @@ const TASK_NAMES = {
 
 function updateScoreboard(taskId, score, engine) {
   if (!isFinite(score)) return;
+  // Track worst score seen (progress baseline)
+  if (!worstScores[taskId] || score > worstScores[taskId]) worstScores[taskId] = score;
   if (engine === 'AEGIS') {
     if (!aegisBests[taskId] || score < aegisBests[taskId]) aegisBests[taskId] = score;
   } else {
@@ -950,19 +953,34 @@ function pushScoreboardToMonitors() {
       : aScore !== null ? aScore : sScore;
     const bestEngine = bestScore === aScore ? 'AEGIS' : 'Seeker';
     const target = TASK_TARGETS[taskId];
-    // Progress: 100% when score <= target, scales from starting score
-    const startingScore = target * 100 || 10000; // rough initial
+    // Progress: use actual worst score seen as baseline, not a guess
+    const worstSeen = worstScores[taskId] || null;
     let progress = 0;
     if (bestScore !== null) {
-      if (bestScore <= target) progress = 100;
-      else progress = Math.max(0, Math.min(99, (1 - (bestScore - target) / (startingScore - target)) * 100));
+      if (bestScore <= target) {
+        progress = 100;
+      } else if (worstSeen !== null && worstSeen > target) {
+        // Real progress = how far we've come from worst to target
+        // Use log scale for scores spanning many orders of magnitude
+        const logBest = Math.log10(Math.max(bestScore, 1e-12));
+        const logWorst = Math.log10(Math.max(worstSeen, 1e-12));
+        const logTarget = Math.log10(Math.max(target, 1e-12));
+        if (logWorst > logTarget) {
+          progress = Math.max(0, Math.min(99, (1 - (logBest - logTarget) / (logWorst - logTarget)) * 100));
+        } else {
+          // Linear fallback when log scale doesn't make sense
+          progress = Math.max(0, Math.min(99, (1 - (bestScore - target) / (worstSeen - target)) * 100));
+        }
+      }
     }
-    // Status
+    // Status — based on ratio of best score to target
     let status = 'exploring';
     if (bestScore !== null) {
       if (bestScore <= target) status = 'converged';
-      else if (bestScore <= target * 3) status = 'improving';
-      else if (bestScore <= target * 20) status = 'grinding';
+      else if (target > 0 && bestScore <= target * 2) status = 'improving';
+      else if (target > 0 && bestScore <= target * 10) status = 'grinding';
+      else if (target === 0 && bestScore < 1) status = 'improving';
+      else if (target === 0 && bestScore < 100) status = 'grinding';
       else status = 'exploring';
     }
     return {
