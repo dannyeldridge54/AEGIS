@@ -10,7 +10,14 @@
     "start": "ts-node src/cli.ts",
     "demo": "ts-node examples/quickstart.ts"
   },
-  "keywords": ["ai-agent", "autonomous", "self-learning", "daemon", "optimization", "natural-language"],
+  "keywords": [
+    "ai-agent",
+    "autonomous",
+    "self-learning",
+    "daemon",
+    "optimization",
+    "natural-language"
+  ],
   "author": "Danny Lee Eldridge <danny@aegis-agent.dev>",
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {

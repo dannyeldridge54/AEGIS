@@ -88,7 +88,7 @@ export interface MonitorConfig {
 
 export class LiveMonitor {
   private config: Required<MonitorConfig>;
-  private runs: Map<string, RunTracker> = new Map();
+  public runs: Map<string, RunTracker> = new Map();
   private alerts: Alert[] = [];
   private alertCounter = 0;
   private server: http.Server | null = null;
@@ -103,12 +103,16 @@ export class LiveMonitor {
     pollinations: number; status: string;
   }> = [];
   private equationData: { plaintext: string; latex: string; params: Record<string, number>; score: number; engine: string; taskId: string } | null = null;
+  private discoveryData: { total: number; discoveries: Array<{ id: number; type: string; title: string; significance: string; taskId: string; score: number }> } = { total: 0, discoveries: [] };
 
   /** Set cross-engine scoreboard data (called by runner) */
   setScoreboard(data: typeof this.scoreboardData): void { this.scoreboardData = data; }
 
   /** Set best equation discovered (called by runner) */
   setEquation(data: typeof this.equationData): void { this.equationData = data; }
+
+  /** Set novel discovery data (called by runner) */
+  setDiscoveries(data: typeof this.discoveryData): void { this.discoveryData = data; }
 
   constructor(config?: MonitorConfig) {
     this.config = {
@@ -230,8 +234,9 @@ export class LiveMonitor {
     run.improvements++;
     run.lastImprovedAt = Date.now();
 
-    // Track which strategy found it
-    run.strategyWins[result.strategy] = (run.strategyWins[result.strategy] || 0) + 1;
+    // Track which strategy found it (guard against undefined from worker threads)
+    const strategy = result.strategy || 'unknown';
+    run.strategyWins[strategy] = (run.strategyWins[strategy] || 0) + 1;
 
     // Determine if this is a breakthrough
     const isBreakthrough = prevBest !== null
@@ -317,9 +322,24 @@ export class LiveMonitor {
 
     this.addAlert('info', 'milestone',
       `Run complete: ${run.name}`,
-      `${reason}. Final score: ${run.bestScore?.toFixed(8)} | ${run.totalEvals} evals | ${run.improvements} improvements | UFE: ${state.ufe ? (state.ufe.ufeRatio * 100).toFixed(1) + '%' : 'N/A'}`,
+      `${reason}. Final score: ${run.bestScore?.toFixed(8) ?? 'N/A'} | ${run.totalEvals} evals | ${run.improvements} improvements | UFE: ${state.ufe ? (state.ufe.ufeRatio * 100).toFixed(1) + '%' : 'N/A'}`,
       { runId: run.id, finalScore: run.bestScore, totalEvals: run.totalEvals, ufe: state.ufe },
     );
+
+    // Prune old completed runs — keep only the last 20 to avoid memory bloat
+    this.pruneCompletedRuns(20);
+  }
+
+  /** Remove oldest completed runs, keeping at most `keep` completed entries */
+  pruneCompletedRuns(keep: number): void {
+    const completed = [...this.runs.entries()]
+      .filter(([, r]) => r.status === 'completed')
+      .sort((a, b) => b[1].lastImprovedAt - a[1].lastImprovedAt);
+    if (completed.length > keep) {
+      for (const [id] of completed.slice(keep)) {
+        this.runs.delete(id);
+      }
+    }
   }
 
   private onConverged(run: RunTracker, result: EvalResult, totalEvals: number): void {
@@ -768,6 +788,34 @@ ${this.scoreboardData.map((row, i) => {
     <td><span class="status-icon">${statusIcon}</span> ${row.status}</td>
   </tr>`;
 }).join('\n')}
+      </table>
+    </div>
+  </div>
+` : ''}
+
+${this.discoveryData.total > 0 ? `
+  <!-- Novel Discoveries — Unreported in Survey Data -->
+  <div class="card full-width">
+    <div class="card-title">🔭 Novel Discoveries — Unreported in Surveys <span class="count" style="background:#f0883e;color:#000">${this.discoveryData.total} found</span></div>
+    <div class="card-body">
+      <table class="scoreboard">
+        <tr>
+          <th>#</th>
+          <th>Discovery</th>
+          <th>Type</th>
+          <th>Significance</th>
+          <th>Task</th>
+          <th style="text-align:right">Score</th>
+        </tr>
+${this.discoveryData.discoveries.map(d => `
+        <tr>
+          <td style="color:#f0883e;font-weight:bold">${d.id}</td>
+          <td class="task-name" style="color:#e2c541">${d.title}</td>
+          <td><span style="background:#21262d;padding:2px 6px;border-radius:3px;font-size:11px;color:#8b949e">${d.type.replace(/_/g, ' ')}</span></td>
+          <td style="color:#3fb950">${d.significance}</td>
+          <td style="color:#8b949e">${d.taskId}</td>
+          <td class="score-cell best">${typeof d.score === 'number' ? d.score.toFixed(4) : '—'}</td>
+        </tr>`).join('\n')}
       </table>
     </div>
   </div>

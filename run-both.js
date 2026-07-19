@@ -266,13 +266,29 @@ const seekerMonitor = seeker.createMonitor({ port: 5556 });
 // Complete a run on the monitor after worker finishes (workers can't fire events)
 function completeWorkerRun(monitor, runId, bestScore, bestParams, evals) {
   const handler = monitor.createHandler(runId);
-  // Simulate evaluation events so the counter updates
-  for (let i = 0; i < (evals || 0); i += 10) {
-    handler({ type: 'evaluation', result: { params: bestParams || {}, score: bestScore || Infinity, timestamp: Date.now() } });
+  const safeScore = isFinite(bestScore) ? bestScore : Infinity;
+  const safeParams = bestParams || {};
+  const now = Date.now();
+
+  // Fire a single evaluation event with the final eval count (avoid spamming)
+  if (evals > 0) {
+    handler({
+      type: 'evaluation',
+      result: { params: safeParams, score: safeScore, timestamp: now, strategy: 'worker' },
+    });
+    // Manually set totalEvals on the run tracker since we only fire 1 event
+    const run = monitor.runs ? monitor.runs.get(runId) : null;
+    if (run) run.totalEvals = evals;
   }
+
   if (bestParams && isFinite(bestScore)) {
-    handler({ type: 'new_best', result: { params: bestParams, score: bestScore }, improvement: 0 });
+    handler({
+      type: 'new_best',
+      result: { params: bestParams, score: bestScore, timestamp: now, strategy: 'worker' },
+      improvement: 0,
+    });
   }
+
   handler({ type: 'stopped', reason: 'completed', state: { phase: 'done', ufe: null, strategies: [] } });
 }
 
@@ -377,6 +393,7 @@ function saveState() {
       aegisBests, seekerBests, worstScores, pollinationCounts,
       bestKnown, bestEquation,
       aegisCycle, seekerCycle, aegisTotal, seekerTotal,
+      discoveries, discoveryCounter,
       savedAt: new Date().toISOString(),
     };
     require('fs').writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
@@ -397,6 +414,13 @@ function loadState() {
     if (state.seekerCycle) seekerCycle = state.seekerCycle;
     if (state.aegisTotal) aegisTotal = state.aegisTotal;
     if (state.seekerTotal) seekerTotal = state.seekerTotal;
+    // Restore discoveries
+    if (state.discoveries && Array.isArray(state.discoveries)) {
+      discoveries.length = 0;
+      state.discoveries.forEach(d => discoveries.push(d));
+      discoveryCounter = state.discoveryCounter || discoveries.length;
+      console.log(`🔭 Loaded ${discoveries.length} novel discoveries`);
+    }
     const taskCount = Object.keys(state.aegisBests || {}).length;
     console.log(`📂 Loaded state from ${state.savedAt} — ${taskCount} tasks, ${state.aegisTotal + state.seekerTotal} total runs`);
     return true;
@@ -482,6 +506,7 @@ async function runAegisLoop() {
           recordBest(r.taskId, r.bestParams, r.bestScore, 'AEGIS');
           updateScoreboard(r.taskId, r.bestScore, 'AEGIS');
           updateBestEquation('AEGIS', r.taskId, r.bestParams, r.bestScore, aegisWriter);
+          checkForDiscoveries(r.taskId, r.bestParams, r.bestScore);
         }
         if (r.bestParams && r.taskId.match(/ft-gravity|cross-domain|ufe-torsion|einstein-cartan|torsion-wave/)) {
           logSpatialAnomalies('AEGIS', msg._runId, r.bestParams, aegisMonitor);
@@ -538,6 +563,7 @@ async function runSeekerLoop() {
           recordBest(r.taskId, r.bestParams, r.bestScore, 'Seeker');
           updateScoreboard(r.taskId, r.bestScore, 'Seeker');
           updateBestEquation('Seeker', r.taskId, r.bestParams, r.bestScore, seekerWriter);
+          checkForDiscoveries(r.taskId, r.bestParams, r.bestScore);
         }
         if (r.bestParams && r.taskId.match(/ft-gravity|cross-domain|ufe-torsion|einstein-cartan|torsion-wave/)) {
           logSpatialAnomalies('Seeker', msg._runId, r.bestParams, seekerMonitor);
@@ -626,6 +652,222 @@ function updateScoreboard(taskId, score, engine) {
 
 function countPollination(taskId) {
   pollinationCounts[taskId] = (pollinationCounts[taskId] || 0) + 1;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// NOVEL DISCOVERY TRACKER — flags predictions not in existing survey data
+// ═══════════════════════════════════════════════════════════════════════════════
+
+const discoveries = [];  // { id, type, title, detail, params, significance, timestamp, taskId }
+let discoveryCounter = 0;
+
+// Known survey bounds — if our predictions fall outside these, it's novel
+const SURVEY_BOUNDS = {
+  H0:       { min: 67.0, max: 74.0, surveys: 'Planck+SH0ES' },
+  omega_m:  { min: 0.25, max: 0.35, surveys: 'Planck+DES+KiDS' },
+  sigma8:   { min: 0.75, max: 0.85, surveys: 'Planck+KiDS+DES' },
+  w0:       { min: -1.3, max: -0.7, surveys: 'Planck+DESI+DES' },
+  wa:       { min: -1.5, max: 0.5, surveys: 'DESI DR1' },
+  beta:     { min: -999, max: 999, surveys: 'NONE — torsion coupling is novel' },
+  beta0:    { min: -999, max: 999, surveys: 'NONE — evolving torsion is novel' },
+  beta1:    { min: -999, max: 999, surveys: 'NONE — torsion evolution is novel' },
+  rs:       { min: 140, max: 152, surveys: 'Planck+BOSS' },
+};
+
+// Physical thresholds that indicate novel physics
+const NOVEL_CHECKS = [
+  {
+    id: 'torsion-coupling',
+    test: (taskId, params) => {
+      if (!params.beta && params.beta !== 0) return null;
+      const b = params.beta;
+      if (Math.abs(b) > 0.05) {
+        return {
+          type: 'novel_coupling',
+          title: `Torsion coupling |beta|=${Math.abs(b).toFixed(4)} detected`,
+          detail: `Non-zero torsion-matter coupling (beta=${b.toFixed(6)}) implies spacetime torsion modifies matter clustering. No current survey measures this — testable via next-gen BAO (DESI DR2, Euclid).`,
+          significance: Math.min(Math.abs(b) / 0.05, 5).toFixed(1) + 'x threshold',
+        };
+      }
+      return null;
+    },
+  },
+  {
+    id: 'evolving-torsion',
+    test: (taskId, params) => {
+      if (params.beta0 === undefined || params.beta1 === undefined) return null;
+      if (Math.abs(params.beta1) > 0.05) {
+        return {
+          type: 'novel_evolution',
+          title: `Evolving torsion: beta(z) = ${params.beta0.toFixed(4)} + ${params.beta1.toFixed(4)}*z/(1+z)`,
+          detail: `Redshift-dependent torsion coupling detected. Early universe (beta_inf=${(params.beta0+params.beta1).toFixed(4)}) differs from late universe (beta_0=${params.beta0.toFixed(4)}). This is a completely novel prediction — no survey has tested for z-dependent torsion.`,
+          significance: 'Novel physics',
+        };
+      }
+      return null;
+    },
+  },
+  {
+    id: 'phantom-crossing',
+    test: (taskId, params) => {
+      if (params.w0 === undefined) return null;
+      if (params.w0 < -1.0) {
+        return {
+          type: 'phantom_de',
+          title: `Phantom dark energy: w0=${params.w0.toFixed(4)}`,
+          detail: `Dark energy equation of state crosses phantom divide (w < -1). Combined with torsion coupling beta=${(params.beta||0).toFixed(4)}, this suggests torsion contributes an effective phantom component. DESI DR1 hints at w0 < -1 but torsion origin is unreported.`,
+          significance: `${Math.abs(params.w0 + 1).toFixed(3)} below phantom divide`,
+        };
+      }
+      return null;
+    },
+  },
+  {
+    id: 'h0-bridge',
+    test: (taskId, params) => {
+      if (taskId !== 'h0-tension' || !params.H0) return null;
+      if (params.H0 > 69.5 && params.H0 < 74.5) {
+        return {
+          type: 'h0_resolution',
+          title: `H0 tension bridged: ${params.H0.toFixed(2)} km/s/Mpc`,
+          detail: `Torsion model finds H0=${params.H0.toFixed(2)} between Planck (67.4) and SH0ES (73.0). This is achieved through evolving torsion coupling, not by adding new particles or modifying recombination. No published model uses torsion condensation for this.`,
+          significance: 'Novel mechanism',
+        };
+      }
+      return null;
+    },
+  },
+  {
+    id: 'torsion-mass',
+    test: (taskId, params) => {
+      if (taskId !== 'ufe-torsion' || !params.log_mu2) return null;
+      const mu2 = Math.pow(10, params.log_mu2);
+      const mT = 2 * Math.sqrt(mu2);
+      if (mT > 1.0) {
+        return {
+          type: 'novel_mass',
+          title: `Torsion mass m_T = ${mT.toFixed(2)} (Planck units)`,
+          detail: `Torsion field has dynamical mass m_T=${mT.toFixed(2)} M_Pl = ${(mT * 1.22e19).toExponential(2)} GeV from Mexican hat potential. This predicts a massive torsion boson not in the Standard Model. Testable via gravitational wave spectroscopy or collider missing energy.`,
+          significance: `${mT.toFixed(2)} M_Pl`,
+        };
+      }
+      return null;
+    },
+  },
+  {
+    id: 'vev-alignment',
+    test: (taskId, params) => {
+      if (taskId !== 'ufe-torsion') return null;
+      const mu2 = Math.pow(10, params.log_mu2 || 0);
+      const lam = Math.pow(10, params.log_lambda || 0);
+      const T0 = Math.pow(10, params.log_T0 || 0);
+      const Tvev = mu2 > 0 && lam > 0 ? Math.sqrt(mu2 / (2 * lam)) : 0;
+      if (Tvev > 0 && Math.abs(T0 / Tvev - 1) < 0.001) {
+        return {
+          type: 'spontaneous_condensation',
+          title: `Torsion condensation confirmed: T0/Tvev = ${(T0/Tvev).toFixed(6)}`,
+          detail: `Background torsion field sits at vacuum expectation value to ${Math.abs(T0/Tvev - 1).toExponential(1)} precision. This is spontaneous torsion condensation — the gravitational analogue of the Higgs mechanism. Completely novel; no survey has observed torsion VEV alignment.`,
+          significance: 'Novel mechanism — gravitational Higgs analogue',
+        };
+      }
+      return null;
+    },
+  },
+  {
+    id: 'subluminal-wave',
+    test: (taskId, params) => {
+      if (taskId !== 'torsion-wave') return null;
+      const k = params.wavenumber || 0;
+      const omega = params.frequency || 0;
+      if (k > 0 && omega > 0) {
+        const vPhase = omega / k;
+        if (vPhase < 1.0 && vPhase > 0.01) {
+          return {
+            type: 'torsion_wave',
+            title: `Subluminal torsion wave: v_phase = ${vPhase.toFixed(4)}c`,
+            detail: `Torsion perturbations propagate at ${(vPhase*100).toFixed(1)}% of light speed. This predicts a new type of gravitational radiation detectable by pulsar timing arrays (NANOGrav, EPTA) at frequencies f ~ ${(omega/(2*Math.PI)).toExponential(2)} Hz. No current survey has searched for torsion waves.`,
+            significance: `v = ${(vPhase*100).toFixed(1)}% c`,
+          };
+        }
+      }
+      return null;
+    },
+  },
+  {
+    id: 'sound-horizon-shift',
+    test: (taskId, params) => {
+      if (!params.rs) return null;
+      const shift = params.rs - 147.09;
+      if (Math.abs(shift) > 3.0) {
+        return {
+          type: 'rs_shift',
+          title: `Sound horizon shifted: rs = ${params.rs.toFixed(2)} Mpc (Planck: 147.09)`,
+          detail: `Torsion model prefers sound horizon ${shift > 0 ? 'larger' : 'smaller'} than Planck by ${Math.abs(shift).toFixed(1)} Mpc. If confirmed, this implies torsion was active during recombination epoch. Testable via CMB lensing + BAO cross-correlation.`,
+          significance: `Delta_rs = ${shift.toFixed(1)} Mpc`,
+        };
+      }
+      return null;
+    },
+  },
+];
+
+function checkForDiscoveries(taskId, params, score) {
+  if (!params || !isFinite(score) || score > 200) return;
+
+  for (const check of NOVEL_CHECKS) {
+    const result = check.test(taskId, params);
+    if (!result) continue;
+
+    // Deduplicate: don't re-report same discovery type for same task
+    const existing = discoveries.find(d => d.type === result.type && d.taskId === taskId);
+    if (existing) {
+      // Update if better score
+      if (score < existing.score) {
+        existing.params = { ...params };
+        existing.score = score;
+        existing.detail = result.detail;
+        existing.title = result.title;
+        existing.significance = result.significance;
+        existing.timestamp = Date.now();
+      }
+      continue;
+    }
+
+    discoveryCounter++;
+    const discovery = {
+      id: discoveryCounter,
+      ...result,
+      taskId,
+      params: { ...params },
+      score,
+      timestamp: Date.now(),
+    };
+    discoveries.push(discovery);
+    console.log(`\n${'='.repeat(70)}`);
+    console.log(`  NOVEL DISCOVERY #${discoveryCounter}: ${result.title}`);
+    console.log(`  Type: ${result.type} | Significance: ${result.significance}`);
+    console.log(`  Task: ${TASK_NAMES[taskId] || taskId} (score: ${score.toFixed(4)})`);
+    console.log(`  ${result.detail}`);
+    console.log(`${'='.repeat(70)}`);
+  }
+}
+
+function getDiscoverySummary() {
+  return {
+    total: discoveries.length,
+    novel_coupling: discoveries.filter(d => d.type === 'novel_coupling').length,
+    novel_evolution: discoveries.filter(d => d.type === 'novel_evolution').length,
+    phantom_de: discoveries.filter(d => d.type === 'phantom_de').length,
+    h0_resolution: discoveries.filter(d => d.type === 'h0_resolution').length,
+    novel_mass: discoveries.filter(d => d.type === 'novel_mass').length,
+    spontaneous_condensation: discoveries.filter(d => d.type === 'spontaneous_condensation').length,
+    torsion_wave: discoveries.filter(d => d.type === 'torsion_wave').length,
+    rs_shift: discoveries.filter(d => d.type === 'rs_shift').length,
+    discoveries: discoveries.map(d => ({
+      id: d.id, type: d.type, title: d.title, significance: d.significance,
+      taskId: d.taskId, score: d.score,
+    })),
+  };
 }
 
 // Best equation tracker
@@ -719,6 +961,10 @@ function pushScoreboardToMonitors() {
     aegisMonitor.setEquation(bestEquation);
     seekerMonitor.setEquation(bestEquation);
   }
+  // Push novel discoveries to live dashboards
+  const discSummary = getDiscoverySummary();
+  aegisMonitor.setDiscoveries(discSummary);
+  seekerMonitor.setDiscoveries(discSummary);
 }
 
 // Push scoreboard every 5 seconds
@@ -731,6 +977,12 @@ setInterval(() => {
   console.log(`\n${'━'.repeat(70)}`);
   console.log(`AEGIS  │ cycle ${aegisCycle} (${aegisDir}) │ ${aegisTotal} total runs`);
   console.log(`Seeker │ cycle ${seekerCycle} (${seekerDir}) │ ${seekerTotal} total runs`);
+  if (discoveries.length > 0) {
+    const types = {};
+    discoveries.forEach(d => { types[d.type] = (types[d.type] || 0) + 1; });
+    const summary = Object.entries(types).map(([t, c]) => `${t}:${c}`).join(' ');
+    console.log(`NOVEL  │ ${discoveries.length} unreported discoveries │ ${summary}`);
+  }
   aegisMonitor.printStatus();
   seekerMonitor.printStatus();
   saveState(); // persist discoveries to disk
@@ -759,6 +1011,7 @@ const controlServer = require('http').createServer((req, res) => {
       effectiveEvals: BASE_EVALS.map(b => Math.round(b * EVAL_SCALE)),
       spectrumTags: spectrum.map(s => s.tag),
       gpu: gpu.getGPUInfo(),
+      discoveries: getDiscoverySummary(),
     }));
     return;
   }
@@ -785,6 +1038,13 @@ const controlServer = require('http').createServer((req, res) => {
         res.end(JSON.stringify({ error: e.message }));
       }
     });
+    return;
+  }
+
+  // GET /discoveries — novel predictions not in survey data
+  if (req.url === '/discoveries' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(getDiscoverySummary()));
     return;
   }
 

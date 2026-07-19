@@ -72,7 +72,8 @@ export type StrategyType =
   | 'annealing'      // Simulated annealing
   | 'bandit'         // Multi-armed bandit (strategy selection)
   | 'curiosity'      // Novelty-seeking exploration
-  | 'exploit';       // Pure exploitation of known best
+  | 'exploit'        // Pure exploitation of known best
+  | 'cma-es';        // Covariance Matrix Adaptation Evolution Strategy
 
 export interface Strategy {
   type: StrategyType;

@@ -1,0 +1,46 @@
+TORSION WAVE DISPERSION
+=======================
+Wave equation: □δT + m²_eff·δT + 3λT_vev·(δT)² = J_spin
+
+Dispersion: ω² = k² + m²_eff   (massive Klein-Gordon type)
+
+Parameters:
+  μ² = 9.8146e-3 eV²
+  λ_q = 0.154292
+  m_eff = 2.3234e-1 eV
+  T_vev = 1.7834e-1 m⁻²
+  ω = 0.1858 s⁻¹
+  k = 0.0101 m⁻¹
+  v_group = 0.054371 c   (subluminal ✓)
+  Amplitude = -2.072e+0
+  J_spin = 4.636e-2
+
+OBSERVATIONAL TARGETS
+=====================
+
+  LIGO Livingston / Hanford
+    Coordinates: RA All-sky, Dec All-sky
+    Survey: LISA (0.1 mHz - 0.1 Hz)
+    Redshift: local (d < 500 Mpc)
+    Expected signal: Torsion wave at f = 2.96e-2 Hz, amplitude 2.07e+0
+    Detection method: Strain signal from torsion-graviton mixing, look for anomalous polarization modes
+
+  GW170817 remnant
+    Coordinates: RA 13h 09m 48s, Dec -23° 22' 53"
+    Survey: LIGO O5+
+    Redshift: z ≈ 0.01 (40 Mpc)
+    Expected signal: Post-merger torsion oscillation at m_T frequency
+    Detection method: GW post-merger signal deviation from GR prediction
+
+PREDICTIONS
+===========
+  Torsion wave frequency: 2.957e-2 Hz
+    Testable: YES — LISA (0.1 mHz - 0.1 Hz)
+  Group velocity: 0.054371 c
+    Testable: YES — Multi-messenger delay between GW and torsion-wave signal
+  Dispersion residual: 1.955e-2 eV²
+    Testable: YES — Frequency-dependent arrival time of GW signals
+
+Confidence: HIGH
+Score: 0.07177164258781281
+Generated: 2026-07-19T01:46:36.263Z

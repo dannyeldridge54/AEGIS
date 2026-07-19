@@ -1,0 +1,48 @@
+EINSTEIN-CARTAN TORSION SOLUTION
+================================
+Cartan equation: T^a_bc + δ^a_b T_c - δ^a_c T_b = 8πG · s^a_bc
+
+Torsion components (m⁻¹):
+  T⁰₀₁ = -0.009360    T⁰₀₂ = -0.003044    T⁰₀₃ = 0.010868
+  T¹₁₂ = -0.004251    T¹₁₃ = 0.000859    T²₂₃ = -0.017021
+
+|T| = 2.2880e-2 m⁻¹
+λ (coupling) = 1.5775
+σ (spin density) = 7.7508e-3 J·s/m³
+
+OBSERVATIONAL TARGETS
+=====================
+
+  PSR J0537-6910
+    Coordinates: RA 05h 37m 47s, Dec -69° 10' 20"
+    Survey: millisecond pulsar
+    Redshift: distance: 49.6 kpc (LMC)
+    Expected signal: Spin-torsion coupling at σ ~ ~10³⁸ J·s/m³
+    Detection method: Pulsar timing residuals, gravitational wave phase shift
+
+  PSR J1748-2446ad
+    Coordinates: RA 17h 48m 52s, Dec -24° 46' 48"
+    Survey: millisecond pulsar
+    Redshift: distance: 7.7 kpc
+    Expected signal: Spin-torsion coupling at σ ~ ~10³⁹ J·s/m³
+    Detection method: Pulsar timing residuals, gravitational wave phase shift
+
+  Crab Pulsar (PSR B0531+21)
+    Coordinates: RA 05h 34m 32s, Dec +22° 00' 52"
+    Survey: young pulsar
+    Redshift: distance: 2.0 kpc
+    Expected signal: Spin-torsion coupling at σ ~ ~10³⁷ J·s/m³
+    Detection method: Pulsar timing residuals, gravitational wave phase shift
+
+PREDICTIONS
+===========
+  Four-fermion coupling G_T: 2.179e-20 m³/(J·s)
+    Testable: YES — Spin-polarized neutron scattering or torsion balance experiment
+  Torsion interaction range: 8.623e-6 m
+    Testable: YES — Sub-mm gravity experiment (Eöt-Wash style)
+  Torsion energy scale: 4.057e+8 eV
+    Testable: YES — Compare with neutron star spin-down rates
+
+Confidence: MODERATE
+Score: 0.0007120221700410199
+Generated: 2026-07-19T01:54:54.441Z
