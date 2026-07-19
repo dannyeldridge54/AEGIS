@@ -762,6 +762,43 @@ let aegisTotal = 0, seekerTotal = 0;
 // CROSS-POLLINATION — engines share best discoveries
 // When one engine finds a good solution, the other uses it as a seed point
 // ═══════════════════════════════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════════════════════════════
+// STATE PERSISTENCE — survive restarts without losing discoveries
+// ═══════════════════════════════════════════════════════════════════════════════
+const STATE_FILE = require('path').join(__dirname, 'ufe-state.json');
+
+function saveState() {
+  try {
+    const state = {
+      aegisBests, seekerBests, worstScores, pollinationCounts,
+      bestKnown, bestEquation,
+      aegisCycle, seekerCycle, aegisTotal, seekerTotal,
+      savedAt: new Date().toISOString(),
+    };
+    require('fs').writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
+  } catch (e) { console.error('⚠️ State save failed:', e.message); }
+}
+
+function loadState() {
+  try {
+    if (!require('fs').existsSync(STATE_FILE)) return false;
+    const state = JSON.parse(require('fs').readFileSync(STATE_FILE, 'utf8'));
+    Object.assign(aegisBests, state.aegisBests || {});
+    Object.assign(seekerBests, state.seekerBests || {});
+    Object.assign(worstScores, state.worstScores || {});
+    Object.assign(pollinationCounts, state.pollinationCounts || {});
+    Object.assign(bestKnown, state.bestKnown || {});
+    if (state.bestEquation) bestEquation = state.bestEquation;
+    if (state.aegisCycle) aegisCycle = state.aegisCycle;
+    if (state.seekerCycle) seekerCycle = state.seekerCycle;
+    if (state.aegisTotal) aegisTotal = state.aegisTotal;
+    if (state.seekerTotal) seekerTotal = state.seekerTotal;
+    const taskCount = Object.keys(state.aegisBests || {}).length;
+    console.log(`📂 Loaded state from ${state.savedAt} — ${taskCount} tasks, ${state.aegisTotal + state.seekerTotal} total runs`);
+    return true;
+  } catch (e) { console.error('⚠️ State load failed:', e.message); return false; }
+}
+
 const bestKnown = {}; // { taskId: { params, score, source } }
 
 function recordBest(taskId, params, score, source) {
@@ -775,6 +812,8 @@ function recordBest(taskId, params, score, source) {
       console.log(`\n🔄 [CROSS-POLLINATION] ${source} beat ${prev.source} on ${taskId}: ${score.toFixed(4)} < ${prev.score.toFixed(4)} (Δ${improved.toFixed(4)})`);
       countPollination(taskId);
     }
+    // Save breakthroughs immediately
+    if (improved > 0.01 || !prev) saveState();
   }
 }
 
@@ -1060,7 +1099,7 @@ function pushScoreboardToMonitors() {
 // Push scoreboard every 5 seconds
 setInterval(pushScoreboardToMonitors, 5000);
 
-// Status printer
+// Status printer + state persistence (every 60s)
 setInterval(() => {
   const aegisDir = aegisCycle % 2 === 1 ? 'EXPLORE→EXPLOIT' : 'EXPLOIT→EXPLORE';
   const seekerDir = seekerCycle % 2 === 0 ? 'EXPLORE→EXPLOIT' : 'EXPLOIT→EXPLORE';
@@ -1069,6 +1108,7 @@ setInterval(() => {
   console.log(`Seeker │ cycle ${seekerCycle} (${seekerDir}) │ ${seekerTotal} total runs`);
   aegisMonitor.printStatus();
   seekerMonitor.printStatus();
+  saveState(); // persist discoveries to disk
 }, 60000);
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -1128,12 +1168,17 @@ controlServer.listen(CONTROL_PORT, () => {
   console.log(`🎛️  Control API: http://localhost:${CONTROL_PORT}/config`);
 });
 
+// Load persisted state before starting
+loadState();
+pushScoreboardToMonitors(); // show restored scores immediately
+
 Promise.all([runAegisLoop(), runSeekerLoop()]).catch(err => {
   console.error('Fatal error:', err);
 });
 
 process.on('SIGINT', () => {
-  console.log('\nShutting down...');
+  console.log('\nSaving state before shutdown...');
+  saveState();
   aegisMonitor.stopDashboard();
   seekerMonitor.stopDashboard();
   process.exit(0);
