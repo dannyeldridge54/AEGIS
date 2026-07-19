@@ -23,8 +23,6 @@ jobs:
       - run: npm install
       - name: Build AEGIS engine
         run: npx tsc
-      - name: Build Seeker engine
-        run: npx tsc --project seeker/tsconfig.json
       - name: Run tests
         run: npx jest --ci --forceExit
       - name: Test SDK
@@ -62,8 +60,6 @@ jobs:
       - run: npm install
       - name: Type check AEGIS
         run: npx tsc --noEmit
-      - name: Type check Seeker
-        run: npx tsc --noEmit --project seeker/tsconfig.json
 
   publish-npm:
     name: Publish to npm
@@ -78,9 +74,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
       - name: Build engines
-        run: |
-          npx tsc
-          npx tsc --project seeker/tsconfig.json
+        run: npx tsc
       - name: Publish SDK
         working-directory: sdk
         run: npm publish --access public
@@ -99,13 +93,10 @@ jobs:
           node-version: '20'
       - run: npm install
       - name: Build engines
-        run: |
-          npx tsc
-          npx tsc --project seeker/tsconfig.json
+        run: npx tsc
       - name: Package installer
         run: |
           Copy-Item -Recurse dist aegis-installer/engine/dist -Force
-          Copy-Item -Recurse seeker/dist aegis-installer/engine/seeker/dist -Force
       - uses: actions/upload-artifact@v4
         with:
           name: aegis-installer-${{ github.ref_name }}
