@@ -171,8 +171,7 @@ const desiBAOTask = {
   ],
 };
 
-// ── TASK 3: Pantheon+ SNe Ia Distance Modulus ───────────────────────────────
-// Subset of key Pantheon+ Type Ia supernovae measurements
+// Legacy SNE_DATA kept for combined/emergence tasks that use representative points
 const SNE_DATA = [
   { z: 0.01, mu: 33.11, sigma: 0.15 }, { z: 0.02, mu: 34.73, sigma: 0.12 },
   { z: 0.03, mu: 35.58, sigma: 0.11 }, { z: 0.05, mu: 36.64, sigma: 0.10 },
@@ -184,18 +183,40 @@ const SNE_DATA = [
   { z: 1.50, mu: 43.92, sigma: 0.12 }, { z: 1.80, mu: 44.27, sigma: 0.15 },
 ];
 
+// ── TASK 3: Pantheon+ SNe Ia — FULL COVARIANCE (1701 SNe → 40 bins) ─────────
+// Uses full STAT+SYS covariance matrix from Brout et al. 2022
+// Binned with inverse-variance weighting; covariance propagated as C_bin = W·C·W^T
+let PANTHEON_BINNED = null;
+try {
+  PANTHEON_BINNED = JSON.parse(require('fs').readFileSync(
+    require('path').join(__dirname, 'data/pantheon/pantheon_binned_fullcov.json'), 'utf8'));
+} catch (_) { /* data not available — task will use fallback */ }
+
 const sneTask = {
-  id: 'sne-pantheon-fit', name: 'Pantheon+ SNe Ia — Evolving Torsion Luminosity Distance',
+  id: 'sne-pantheon-fit', name: 'Pantheon+ 1701 SNe — Full Covariance (STAT+SYS)',
   evaluate: (p) => {
-    let chi2 = 0;
-    for (const d of SNE_DATA) {
-      // Use evolving β(z) = β₀ + β₁·z/(1+z) — same as H₀ tension task
-      const dL = (1 + d.z) * comovingDistanceEvolving(d.z, p.H0, p.omega_m, OMEGA_R0, p.beta0, p.beta1, 200);
+    if (!PANTHEON_BINNED) return 1e6; // data not loaded
+    const { binZ, binMu, covBinInv, nBins } = PANTHEON_BINNED;
+
+    // Compute residual vector: Δ = m_b_obs - m_b_pred
+    // m_b_pred = μ(z) + M_B  where μ = 5·log10(dL/Mpc) + 25
+    const delta = new Float64Array(nBins);
+    for (let i = 0; i < nBins; i++) {
+      const z = binZ[i];
+      const dL = (1 + z) * comovingDistanceEvolving(z, p.H0, p.omega_m, OMEGA_R0, p.beta0, p.beta1, 200);
       const mu_pred = 5 * Math.log10(Math.max(dL, 1e-10)) + 25;
-      chi2 += ((d.mu - mu_pred) / d.sigma) ** 2;
+      const mb_pred = mu_pred + p.M_B;
+      delta[i] = binMu[i] - mb_pred;
     }
-    // Absolute magnitude nuisance parameter — wide prior
-    chi2 += ((p.M_B + 19.25) / 0.10) ** 2; // M_B ≈ -19.25 ± 0.10
+
+    // χ² = Δᵀ · C⁻¹ · Δ  (full covariance, not diagonal!)
+    let chi2 = 0;
+    for (let i = 0; i < nBins; i++) {
+      for (let j = 0; j < nBins; j++) {
+        chi2 += delta[i] * covBinInv[i * nBins + j] * delta[j];
+      }
+    }
+
     return chi2;
   },
   parameters: [
