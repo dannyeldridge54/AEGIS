@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="500" height="350">
+<style>
+  text { font-family: 'Times New Roman', serif; }
+  .axis { stroke: #333; stroke-width: 1.5; fill: none; }
+  .grid { stroke: #ddd; stroke-width: 0.5; }
+  .data-point { fill: #2563eb; stroke: #1d4ed8; stroke-width: 1; }
+  .fit-line { fill: none; stroke-width: 2; }
+  .lcdm { stroke: #666; stroke-dasharray: 6,4; }
+  .ufe { stroke: #dc2626; }
+  .band { opacity: 0.15; }
+  .title { font-size: 14px; font-weight: bold; text-anchor: middle; }
+  .label { font-size: 11px; text-anchor: middle; }
+  .tick { font-size: 9px; }
+</style>
+<rect width="500" height="350" fill="white"/>
+<text x="250" y="20" class="title">w(z) Dark Energy Equation of State</text>
+<g transform="translate(60,40)"><line x1="0" y1="260" x2="410" y2="260" class="axis"/><line x1="0" y1="0" x2="0" y2="260" class="axis"/><line x1="0" y1="151.66666666666669" x2="410" y2="151.66666666666669" stroke="#666" stroke-dasharray="5,4" stroke-width="1.5"/><text x="415" y="155.66666666666669" font-size="9" fill="#666">ΛCDM</text><path d="M0.0,182.1L4.1,190.6L8.2,198.7L12.3,206.6L16.4,214.2L20.5,221.5L24.6,228.5L28.7,235.3L32.8,241.8L36.9,248.2L41.0,254.3L45.1,260.2L49.2,265.9L53.3,271.5L57.4,276.9L61.5,282.1L65.6,287.1L69.7,292.0L73.8,296.8L77.9,301.4L82.0,305.9L86.1,310.2L90.2,314.5L94.3,318.6L98.4,322.6L102.5,326.5L106.6,330.3L110.7,334.0L114.8,337.6L118.9,341.1L123.0,344.6L127.1,347.9L131.2,351.2L135.3,354.4L139.4,357.5L143.5,360.5L147.6,363.5L151.7,366.4L155.8,369.2L159.9,372.0L164.0,374.7L168.1,377.3L172.2,379.9L176.3,382.4L180.4,384.9L184.5,387.3L188.6,389.7L192.7,392.0L196.8,394.3L200.9,396.6L205.0,398.7L209.1,400.9L213.2,403.0L217.3,405.1L221.4,407.1L225.5,409.1L229.6,411.0L233.7,412.9L237.8,414.8L241.9,416.6L246.0,418.4L250.1,420.2L254.2,422.0L258.3,423.7L262.4,425.4L266.5,427.0L270.6,428.6L274.7,430.2L278.8,431.8L282.9,433.3L287.0,434.9L291.1,436.3L295.2,437.8L299.3,439.3L303.4,440.7L307.5,442.1L311.6,443.5L315.7,444.8L319.8,446.1L323.9,447.5L328.0,448.7L332.1,450.0L336.2,451.3L340.3,452.5L344.4,453.7L348.5,454.9L352.6,456.1L356.7,457.3L360.8,458.4L364.9,459.5L369.0,460.6L373.1,461.7L377.2,462.8L381.3,463.9L385.4,464.9L389.5,466.0L393.6,467.0L397.7,468.0L401.8,469.0L405.9,470.0L410.0,471.0" class="fit-line ufe" stroke-width="2.5"/><rect x="0" y="151.66666666666669" width="410" height="108.33333333333331" fill="#dc2626" opacity="0.05"/><text x="10" y="166.66666666666669" font-size="9" fill="#dc2626" opacity="0.7">Phantom (w &lt; −1)</text><text x="0" y="275" class="tick" text-anchor="middle">0.0</text><text x="102.5" y="275" class="tick" text-anchor="middle">0.5</text><text x="205" y="275" class="tick" text-anchor="middle">1.0</text><text x="307.5" y="275" class="tick" text-anchor="middle">1.5</text><text x="410" y="275" class="tick" text-anchor="middle">2.0</text><text x="-8" y="264" class="tick" text-anchor="end">-1.5</text><text x="-8" y="199" class="tick" text-anchor="end">-1.2</text><text x="-8" y="133.99999999999997" class="tick" text-anchor="end">-0.9</text><text x="-8" y="68.99999999999997" class="tick" text-anchor="end">-0.6</text><text x="205" y="300" class="label">Redshift z</text><text x="-40" y="130" class="label" transform="rotate(-90,-40,130)">w(z)</text><text x="10" y="20" font-size="10" fill="#dc2626">w₀ = -1.140</text><text x="10" y="35" font-size="10" fill="#dc2626">wₐ = -2.000</text></g></svg>

@@ -1,0 +1,168 @@
+\documentclass[twocolumn,prd,superscriptaddress,nofootinbib]{revtex4-2}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx,hyperref,booktabs,xcolor}
+
+\begin{document}
+
+\title{UFE Emergence Equation: Quantum Decoherence as the Origin\\
+of Cosmological Torsion}
+
+\author{Danny Lee Eldridge}
+\affiliation{Independent Researcher}
+\email{dannyeldridge54@gmail.com}
+\date{July 19, 2026}
+
+\begin{abstract}
+We introduce the UFE Emergence Equation, a 13-parameter model unifying quantum decoherence with cosmological torsion through a smooth sigmoid transition function $D(z) = 1/(1 + (z/z_\text{dec})^\alpha)$. The equation describes how torsion coupling $\beta$ transitions from quantum superposition ($\beta_\text{quantum} \approx 0$, fluctuations average out) at high redshift to a definite classical condensate value at low redshift, with the decoherence transition itself releasing energy that manifests as phantom dark energy ($w < -1$). The model inherits Mexican-hat parameters ($\mu^2$, $\lambda$, $\kappa_g$) from the converged UFE torsion field theory and $\beta$-evolution from the $H_0$ tension solution via an autonomous emergence cascade. The transition redshift $z_\text{dec}$ and steepness $\alpha$ are free parameters fit against CC+BAO+RSD+SNe data simultaneously. This provides a physical mechanism for \emph{why} torsion evolves with redshift: the universe undergoes a quantum-to-classical transition in its geometric degrees of freedom.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+The UFE framework (Paper I) demonstrates that evolving torsion $\beta(z)$ resolves the Hubble tension at $7.4\sigma$. However, the parameterization $\beta(z) = \beta_0 + \beta_1 z/(1+z)$ is phenomenological---it does not explain \emph{why} torsion evolves. We propose that the answer lies in quantum decoherence of spacetime geometry itself.
+
+In quantum gravity, spacetime may exist in superposition of geometric states at early times. As the universe expands and structures form, environmental decoherence collapses these superpositions into classical definite geometries. We model this via a decoherence function $D(z)$ that interpolates between quantum and classical torsion regimes.
+
+\section{The Emergence Equation}
+
+\subsection{Decoherence Function}
+
+\begin{equation}
+\boxed{D(z) = \frac{1}{1 + (z/z_\text{dec})^\alpha}}
+\label{eq:decoherence}
+\end{equation}
+
+Properties:
+\begin{itemize}
+\item $D(0) = 1$: today, fully classical (observed/measured)
+\item $D(\infty) \to 0$: early universe, quantum superposition
+\item $z_\text{dec}$: decoherence redshift (where transition occurs)
+\item $\alpha$: steepness of the quantum$\to$classical transition
+\end{itemize}
+
+\subsection{Torsion Coupling with Decoherence}
+
+The effective torsion coupling becomes:
+\begin{equation}
+\beta(z) = D(z)\cdot\beta_\text{classical} + (1 - D(z))\cdot\beta_\text{quantum} + \beta_\text{transition}(z)
+\label{eq:beta_emergence}
+\end{equation}
+
+where the classical condensate value derives from the Mexican-hat VEV:
+\begin{equation}
+\beta_\text{classical} = \kappa_g \cdot T_\text{vev}^2 \cdot \beta_\text{scale}
+\end{equation}
+
+The quantum value is:
+\begin{equation}
+\beta_\text{quantum} \approx 0 \quad \text{(fluctuations average in superposition)}
+\end{equation}
+
+\subsection{Transition Energy Peak}
+
+The decoherence transition releases energy (analogous to latent heat in a phase transition):
+\begin{equation}
+\beta_\text{transition}(z) = A_\text{trans} \cdot \exp\left(-\frac{(\ln(1+z) - \ln(1+z_\text{dec}))^2}{2\sigma_\text{trans}^2}\right)
+\label{eq:transition}
+\end{equation}
+
+This Gaussian peak around $z_\text{dec}$ adds effective energy density during the transition, appearing as phantom dark energy ($w < -1$) to observers.
+
+\subsection{Full Modified Friedmann Equation}
+
+\begin{equation}
+H^2(z) = H_0^2\left[\Omega_r(1+z)^4 + \Omega_m(1+\beta(z))(1+z)^3 + \Omega_\Lambda\right]
+\end{equation}
+
+with $\beta(z)$ from Eq.~\ref{eq:beta_emergence}, simultaneously fitting CC, BAO, RSD, and SNe data.
+
+\subsection{Parameters}
+
+\begin{table}[h]
+\caption{UFE Emergence equation parameters.}
+\begin{ruledtabular}
+\begin{tabular}{lcll}
+Parameter & Range & Source & Role \\
+\hline
+\multicolumn{4}{c}{\textit{Quantum sector (from UFE Torsion, Paper III)}} \\
+$\log_{10}\mu^2$ & $[-2, 4]$ & Cascade L2 & Mass parameter \\
+$\log_{10}\lambda$ & $[-3, 3]$ & Cascade L2 & Quartic coupling \\
+$\kappa_g$ & $[0, 5]$ & Cascade L2 & Graviton coupling \\
+\hline
+\multicolumn{4}{c}{\textit{Decoherence sector (free)}} \\
+$z_\text{dec}$ & $[0.1, 5]$ & Free & Decoherence redshift \\
+$\alpha$ & $[0.5, 8]$ & Free & Transition steepness \\
+$\beta_\text{quantum}$ & $[-0.1, 0.1]$ & Free & Quantum $\beta$ \\
+$A_\text{trans}$ & $[0, 0.5]$ & Free & Transition amplitude \\
+$\beta_\text{scale}$ & $[10^{-4}, 0.01]$ & Free & Classical scale \\
+\hline
+\multicolumn{4}{c}{\textit{Cosmological sector (from H$_0$ Tension, Paper I)}} \\
+$\kappa_f$ & $[0, 2]$ & Cascade L2 & Fermion coupling \\
+$H_0$ & $[55, 85]$ & Cascade L5 & Hubble constant \\
+$\Omega_m$ & $[0.15, 0.50]$ & Cascade L5 & Matter density \\
+$r_s$ & $[125, 165]$ & Free & Sound horizon \\
+$\sigma_8$ & $[0.6, 1.0]$ & Free & Fluctuation amp \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\section{Emergence Cascade}
+
+The AEGIS framework implements bottom-up parameter inheritance:
+
+\begin{align*}
+&\text{Level 1: Einstein--Cartan} \to T^a_{bc} \\
+&\text{Level 2: UFE Mexican Hat} \to \mu^2, \lambda, \kappa_g, \kappa_f \\
+&\text{Level 3: Torsion Wave} \to \omega, k, v_\text{phase} \\
+&\text{Level 5: } H_0 \text{ Tension} \to \beta_0, H_0, \Omega_m \\
+&\text{Level 6: Emergence} \leftarrow \text{all above + free decoherence params}
+\end{align*}
+
+Of the 13 parameters, 8 receive emergence-derived seeds from converged lower-level tasks (30\% probability per optimization cycle), leaving only $z_\text{dec}$, $\alpha$, $A_\text{trans}$, $r_s$, $\sigma_8$ to explore freely.
+
+\section{Physical Interpretation}
+
+\subsection{Why Torsion Evolves}
+
+In the emergence picture:
+\begin{itemize}
+\item \textbf{Early universe} ($z \gg z_\text{dec}$): Spacetime geometry is in quantum superposition. Torsion fluctuations average to zero ($\beta \approx 0$), so $\Lambda$CDM is recovered.
+\item \textbf{Transition} ($z \sim z_\text{dec}$): Environmental decoherence (from structure formation, CMB photon bath) collapses the geometric superposition. Energy is released.
+\item \textbf{Today} ($z = 0$): Torsion has fully condensed to its classical VEV. $\beta = \beta_\text{classical} \neq 0$, modifying gravity.
+\end{itemize}
+
+\subsection{Phantom Energy from Decoherence}
+
+The transition peak (Eq.~\ref{eq:transition}) adds effective energy density \emph{during} the collapse. This appears as $w_\text{eff} < -1$ (phantom) because it's transient energy from a geometric phase transition, not a violation of the null energy condition by matter fields.
+
+\subsection{Connection to Measurement Problem}
+
+The emergence equation provides a cosmological realization of the quantum measurement problem: the universe's own expansion and structure formation act as the ``observer'' that collapses geometric superpositions. This connects quantum foundations to observable cosmology.
+
+\section{Predictions}
+
+\begin{enumerate}
+\item \textbf{Decoherence redshift}: $z_\text{dec} \sim 1$--$3$ (testable via $H(z)$ inflection)
+\item \textbf{Phantom crossing}: Transient $w < -1$ at $z \sim z_\text{dec}$ (DESI, Euclid)
+\item \textbf{$\beta(z)$ transition}: Sharp vs gradual depending on $\alpha$ (galaxy surveys)
+\item \textbf{Pre-decoherence}: $\Lambda$CDM-like at $z > 3$ (Ly-$\alpha$ forest)
+\item \textbf{Transition energy}: Excess in matter power spectrum at $z \sim z_\text{dec}$
+\end{enumerate}
+
+\section{Conclusions}
+
+The UFE Emergence Equation provides a physical mechanism for the evolving torsion coupling discovered in Paper I: quantum decoherence of spacetime geometry. The 13-parameter model unifies quantum ($\mu^2$, $\lambda$) and cosmological ($H_0$, $\Omega_m$) physics through a single decoherence function $D(z)$, with the transition itself producing phantom dark energy. This represents the first quantitative model connecting the quantum measurement problem to observable cosmological tensions.
+
+\begin{thebibliography}{8}
+\bibitem{Eldridge2026a} D.~L.~Eldridge, ``The Unified Field Equation'' (Paper I), arXiv:2607.xxxxx (2026).
+\bibitem{Zurek2003} W.~H.~Zurek, Rev.\ Mod.\ Phys.\ \textbf{75}, 715 (2003).
+\bibitem{Penrose1996} R.~Penrose, Gen.\ Rel.\ Grav.\ \textbf{28}, 581 (1996).
+\bibitem{Diosi1987} L.~Di\'osi, Phys.\ Lett.\ A \textbf{120}, 377 (1987).
+\bibitem{DESI2024} DESI Collaboration, arXiv:2404.03002 (2024).
+\bibitem{Planck2020} Planck Collaboration, A\&A \textbf{641}, A6 (2020).
+\bibitem{Riess2022} A.~G.~Riess \textit{et al.}, ApJ \textbf{934}, L7 (2022).
+\bibitem{Hehl1976} F.~W.~Hehl \textit{et al.}, Rev.\ Mod.\ Phys.\ \textbf{48}, 393 (1976).
+\end{thebibliography}
+
+\end{document}
