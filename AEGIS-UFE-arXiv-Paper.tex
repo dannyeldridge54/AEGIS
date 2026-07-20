@@ -18,7 +18,7 @@ Spontaneous Condensation, Hubble Tension Resolution, and Phantom Dark Energy}
 \date{July 19, 2026}
 
 \begin{abstract}
-We present results from an exhaustive autonomous optimization of torsion-modified cosmological models against eight independent observational datasets spanning redshifts $0 < z < 2.36$. Using the AEGIS dual-engine framework (3.2 million evaluations across 15 simultaneous tasks), we report 18 novel physics discoveries. The Unified Field Equation (UFE) introduces a torsion coupling $\beta$ into the Friedmann equation, $H^2(z) = H_0^2[\Omega_r(1+z)^4 + \Omega_m(1+\beta)(1+z)^3 + \Omega_\Lambda]$. Key findings include: (1) spontaneous torsion condensation via a Mexican-hat potential with $T_0/T_\text{vev} = 0.9993$ --- a gravitational Higgs analogue; (2) subluminal torsion wave propagation at $v_\text{phase} = 0.985c$; (3) resolution of the Hubble tension via evolving torsion $\beta(z) = -0.148 + 0.191 \cdot z/(1+z)$, yielding $H_0 = 72.15$ km/s/Mpc ($\chi^2 = 2.86$); (4) phantom dark energy crossing at $w_0 = -1.14$; and (5) a shifted sound horizon $r_s = 152$--$160$ Mpc across three independent fits. All nine tasks including $\beta$ find $|\beta| > 0.05$ at $>5\sigma$, with weighted mean $|\bar{\beta}| \approx 0.55 \pm 0.15$. We provide specific sky coordinates and survey fields for observational verification.
+We present results from an exhaustive autonomous optimization and Markov Chain Monte Carlo (MCMC) posterior analysis of torsion-modified cosmological models against eight independent observational datasets spanning redshifts $0 < z < 2.36$. Using the AEGIS dual-engine framework ($>3.2 \times 10^6$ evaluations across 16 simultaneous tasks with CMA-ES, followed by Metropolis--Hastings uncertainty quantification with Gelman--Rubin convergence diagnostics), we report statistically robust evidence for non-zero spacetime torsion. The Unified Field Equation (UFE) introduces a torsion coupling $\beta$ into the Friedmann equation, $H^2(z) = H_0^2[\Omega_r(1+z)^4 + \Omega_m(1+\beta)(1+z)^3 + \Omega_\Lambda]$. Key findings with MCMC-derived uncertainties: (1) spontaneous torsion condensation via a Mexican-hat potential with $T_0/T_\text{vev} = 0.9993$; (2) subluminal torsion wave propagation at $v_\text{phase} = 0.985c$; (3) resolution of the Hubble tension via evolving torsion $\beta(z) = \beta_0 + \beta_1 z/(1+z)$ with $H_0 = 71.52 \pm 0.74$ km/s/Mpc and $\beta_0 = -0.104 \pm 0.052$ ($\Delta\chi^2 = 75.4$ vs $\Lambda$CDM, $7.4\sigma$); (4) enhanced structure growth ($\Delta\chi^2 = 22.2$, $4.5\sigma$); and (5) $S_8$ tension resolution with $\beta = 0.573 \pm 0.175$ ($3.7\sigma$). We additionally introduce the UFE Emergence equation unifying quantum decoherence with cosmological torsion via a smooth sigmoid transition $D(z) = 1/(1 + (z/z_\text{dec})^\alpha)$. All predictions are testable with DESI, Euclid, and Rubin/LSST. Sky coordinates for verification are provided.
 \end{abstract}
 
 \maketitle
@@ -160,7 +160,50 @@ The Autonomous Exploration and Global Intelligence System (AEGIS) v1.3.0 employs
 
 Six optimization strategies compete via Thompson sampling: Differential Evolution, Simulated Annealing, Latin Hypercube Sampling, Particle Swarm Optimization, Basin Hopping, and CMA-ES (Covariance Matrix Adaptation Evolution Strategy). Stagnation restart triggers after 500 evaluations without improvement.
 
-\textbf{Hardware:} Intel i7-12650H (10C/16T), 64 GB RAM, NVIDIA RTX 4070 Laptop (8 GB VRAM), 12 parallel worker threads. Total computation: $>3.2 \times 10^6$ function evaluations over 15 simultaneous optimization tasks.
+\textbf{Convergence criteria.} A task is marked ``converged'' when its best-fit score satisfies $\chi^2 \leq \chi^2_\text{target}$ for that task, where targets range from $\chi^2 = 0$ (energy conditions) to $\chi^2 = 100$ (combined multi-survey). The score represents the total $\chi^2$ summed over all data points for that task:
+\begin{equation}
+\chi^2 = \sum_{i=1}^{N} \frac{(O_i - M_i(\vec{\theta}))^2}{\sigma_i^2}
+\label{eq:chi2}
+\end{equation}
+where $O_i$ are observed values, $M_i(\vec{\theta})$ model predictions at parameters $\vec{\theta}$, and $\sigma_i$ observational uncertainties.
+
+\textbf{Hardware:} Intel i7-12650H (10C/16T), 64 GB RAM, NVIDIA RTX 4070 Laptop (8 GB VRAM), 12 parallel worker threads. Total computation: $>3.2 \times 10^6$ function evaluations over 16 simultaneous optimization tasks.
+
+\subsection{MCMC Uncertainty Quantification}
+
+Following CMA-ES convergence to best-fit values, we perform Metropolis--Hastings MCMC sampling to obtain posterior distributions for all parameters. For each task:
+
+\begin{enumerate}
+\item Two independent chains of 30,000 samples each, initialized at the best-fit with small random perturbations ($\pm 5\%$ of parameter range)
+\item Burn-in of 5,000 samples with adaptive proposal scaling (target acceptance 25--50\%)
+\item Thinning factor of 3 to reduce autocorrelation
+\item Gaussian random walk proposals with widths 1.5\% of parameter range
+\item Acceptance via $\min(1, e^{-\Delta\chi^2/2})$
+\end{enumerate}
+
+Convergence is assessed via the Gelman--Rubin diagnostic $\hat{R}$, requiring $\hat{R} < 1.1$ for reliable posteriors \cite{Gelman1992}. We report 68\% and 95\% credible intervals from the combined chains (20,000 effective samples per task).
+
+\subsection{Model Comparison}
+
+We compare UFE ($\beta$ free) against $\Lambda$CDM ($\beta = 0$, $H_0 = 67.4$, $\Omega_m = 0.315$) using:
+\begin{itemize}
+\item $\Delta\chi^2 = \chi^2_{\Lambda\text{CDM}} - \chi^2_\text{UFE}$ (positive favors UFE)
+\item Significance via Wilks' theorem: for 1 extra parameter ($\beta$), $\Delta\chi^2$ follows $\chi^2_1$, yielding $p$-values converted to Gaussian $\sigma$
+\item $\chi^2/\text{dof}$ (degrees of freedom = $N_\text{data} - N_\text{params}$) for goodness-of-fit
+\end{itemize}
+
+\subsection{Emergence Cascade}
+
+The AEGIS framework implements an ``emergence cascade'' where converged lower-level tasks constrain higher-level ones:
+\begin{align*}
+\text{L1:} &\quad \text{Einstein--Cartan} \to T^a_{bc}, \,s^a_{bc} \\
+\text{L2:} &\quad \text{UFE Mexican Hat} \to \mu^2, \lambda, T_\text{vev}, m_T \\
+\text{L3:} &\quad \text{Torsion Wave} \to \omega, k, v_\text{phase} \\
+\text{L4:} &\quad \text{Cross-Domain} \to \text{unified constraints} \\
+\text{L5:} &\quad H_0\text{ Tension} \to \beta_0, \beta_1, H_0 \\
+\text{L6:} &\quad \text{UFE Emergence} \to D(z), z_\text{dec}
+\end{align*}
+Converged parameters from lower levels seed 30\% of initial populations for higher levels, narrowing the search space from below.
 
 \subsection{Novel Discovery Tracker}
 

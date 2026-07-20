@@ -1205,6 +1205,220 @@ const controlServer = require('http').createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') { res.writeHead(200); res.end(); return; }
 
+  // GET / — HTML dashboard
+  if ((req.url === '/' || req.url === '') && req.method === 'GET') {
+    const rows = Object.keys(TASK_TARGETS).map(taskId => {
+      const aScore = aegisBests[taskId] != null ? aegisBests[taskId] : null;
+      const sScore = seekerBests[taskId] != null ? seekerBests[taskId] : null;
+      const bestScore = (aScore != null && sScore != null) ? Math.min(aScore, sScore)
+        : aScore != null ? aScore : sScore;
+      const target = TASK_TARGETS[taskId];
+      const converged = bestScore !== null && bestScore <= target;
+      const pct = bestScore != null && target > 0 ? Math.min(100, Math.max(0, (1 - (bestScore - target) / (bestScore + 1)) * 100)).toFixed(0) : converged ? 100 : 0;
+      return { taskId, name: TASK_NAMES[taskId] || taskId, bestScore, target, converged, pct, pollinations: pollinationCounts[taskId] || 0 };
+    }).sort((a, b) => (a.converged ? 0 : 1) - (b.converged ? 0 : 1) || (a.bestScore || 999) - (b.bestScore || 999));
+
+    const convergedCount = rows.filter(r => r.converged).length;
+    const totalRuns = aegisTotal + seekerTotal;
+    const emergenceState = computeEmergenceState();
+    const levelNames = ['NONE', 'QUANTUM', 'SYMMETRY BREAKING', 'PROPAGATION', 'UNIFICATION', 'COSMOLOGY', 'OBSERVATION'];
+
+    const html = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>AEGIS Control Dashboard</title>
+<meta http-equiv="refresh" content="10">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; padding: 20px; }
+  h1 { color: #60a5fa; font-size: 28px; margin-bottom: 5px; }
+  .subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 20px; }
+  .stats { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; }
+  .stat { background: #1e293b; border-radius: 8px; padding: 12px 18px; border: 1px solid #334155; }
+  .stat .label { font-size: 11px; color: #94a3b8; text-transform: uppercase; }
+  .stat .value { font-size: 22px; font-weight: bold; color: #60a5fa; }
+  .stat .value.green { color: #34d399; }
+  .stat .value.yellow { color: #fbbf24; }
+  table { width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 8px; overflow: hidden; }
+  th { background: #334155; padding: 10px 12px; text-align: left; font-size: 12px; color: #94a3b8; text-transform: uppercase; }
+  td { padding: 8px 12px; border-top: 1px solid #334155; font-size: 13px; }
+  tr:hover { background: #334155; }
+  .converged { color: #34d399; font-weight: bold; }
+  .active { color: #fbbf24; }
+  .bar { background: #334155; border-radius: 4px; height: 6px; width: 100px; display: inline-block; vertical-align: middle; }
+  .bar-fill { background: #60a5fa; height: 100%; border-radius: 4px; transition: width 0.3s; }
+  .bar-fill.done { background: #34d399; }
+  .section { margin-top: 25px; margin-bottom: 10px; font-size: 16px; color: #60a5fa; border-bottom: 1px solid #334155; padding-bottom: 5px; }
+  .cascade { background: #1e293b; border-radius: 8px; padding: 15px; border: 1px solid #334155; margin-top: 10px; }
+  .cascade-level { display: flex; align-items: center; gap: 10px; padding: 5px 0; }
+  .cascade-level .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot.green { background: #34d399; }
+  .dot.yellow { background: #fbbf24; }
+  .dot.gray { background: #475569; }
+  a { color: #60a5fa; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .endpoints { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+  .endpoint { background: #1e293b; padding: 6px 12px; border-radius: 4px; font-family: monospace; font-size: 12px; border: 1px solid #334155; }
+</style></head><body>
+<h1>⚡ AEGIS — Autonomous Exploration Engine</h1>
+<p class="subtitle">Unified Field Equation • Torsion Cosmology • Danny Lee Eldridge</p>
+
+<div class="stats">
+  <div class="stat"><div class="label">Converged</div><div class="value green">${convergedCount}/16</div></div>
+  <div class="stat"><div class="label">Total Runs</div><div class="value">${(totalRuns/1e6).toFixed(2)}M</div></div>
+  <div class="stat"><div class="label">AEGIS Cycle</div><div class="value">${aegisCycle}</div></div>
+  <div class="stat"><div class="label">Seeker Cycle</div><div class="value">${seekerCycle}</div></div>
+  <div class="stat"><div class="label">Eval Scale</div><div class="value">${EVAL_SCALE}x</div></div>
+  <div class="stat"><div class="label">Emergence</div><div class="value yellow">L${emergenceState.level}</div></div>
+</div>
+
+<div class="section">📊 Scoreboard</div>
+<table>
+<tr><th>Task</th><th>Best χ²</th><th>Target</th><th>Progress</th><th>Status</th><th>Pollinations</th></tr>
+${rows.map(r => `<tr>
+  <td><a href="/task/${r.taskId}">${r.name}</a></td>
+  <td>${r.bestScore != null ? r.bestScore.toFixed(4) : '—'}</td>
+  <td>${r.target}</td>
+  <td><div class="bar"><div class="bar-fill${r.converged ? ' done' : ''}" style="width:${r.pct}%"></div></div></td>
+  <td class="${r.converged ? 'converged' : 'active'}">${r.converged ? '✅ Converged' : '🔄 Active'}</td>
+  <td>${r.pollinations}</td>
+</tr>`).join('')}
+</table>
+
+<div class="section">🌊 Emergence Cascade — Level ${emergenceState.level}: ${levelNames[emergenceState.level]}</div>
+<div class="cascade">
+  ${[
+    { l: 1, n: 'Einstein-Cartan', s: emergenceState.level >= 1 },
+    { l: 2, n: 'UFE Mexican Hat', s: emergenceState.level >= 2 },
+    { l: 3, n: 'Torsion Wave', s: emergenceState.level >= 3 },
+    { l: 4, n: 'Cross-Domain', s: emergenceState.level >= 4 },
+    { l: 5, n: 'Cosmology (H₀)', s: emergenceState.level >= 5 },
+    { l: 6, n: 'Emergence', s: false },
+  ].map(x => `<div class="cascade-level"><div class="dot ${x.s ? 'green' : 'gray'}"></div> <b>L${x.l}:</b> ${x.n} ${x.s ? '→ feeding upward' : '(pending)'}</div>`).join('')}
+</div>
+
+<div class="section">🔗 API Endpoints</div>
+<div class="endpoints">
+  <a href="/scoreboard" class="endpoint">GET /scoreboard</a>
+  <a href="/discoveries" class="endpoint">GET /discoveries</a>
+  <a href="/emergence" class="endpoint">GET /emergence</a>
+  <a href="/config" class="endpoint">GET /config</a>
+  <a href="/task/h0-tension" class="endpoint">GET /task/:id</a>
+</div>
+
+</body></html>`;
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(html);
+    return;
+  }
+
+  // GET /settings — HTML settings page
+  if (req.url === '/settings' && req.method === 'GET') {
+    const html = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>AEGIS Settings</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; padding: 20px; }
+  h1 { color: #60a5fa; font-size: 24px; margin-bottom: 20px; }
+  .back { color: #60a5fa; text-decoration: none; font-size: 13px; }
+  .card { background: #1e293b; border-radius: 8px; padding: 20px; border: 1px solid #334155; margin-bottom: 15px; }
+  .card h2 { font-size: 16px; color: #60a5fa; margin-bottom: 12px; }
+  label { display: block; font-size: 12px; color: #94a3b8; margin-bottom: 4px; text-transform: uppercase; }
+  input, select { background: #0f172a; border: 1px solid #475569; color: #e2e8f0; padding: 8px 12px; border-radius: 4px; width: 200px; font-size: 14px; margin-bottom: 12px; }
+  button { background: #2563eb; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold; }
+  button:hover { background: #1d4ed8; }
+  button.danger { background: #dc2626; }
+  button.danger:hover { background: #b91c1c; }
+  .row { display: flex; gap: 15px; align-items: end; flex-wrap: wrap; }
+  .status { margin-top: 10px; padding: 8px 12px; background: #064e3b; border-radius: 4px; color: #34d399; font-size: 13px; display: none; }
+  .status.error { background: #7f1d1d; color: #fca5a5; }
+  .tasks { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 8px; margin-top: 10px; }
+  .task-btn { background: #334155; border: 1px solid #475569; color: #e2e8f0; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; text-align: left; }
+  .task-btn:hover { background: #475569; }
+  .current { font-size: 13px; color: #94a3b8; margin-bottom: 8px; }
+</style></head><body>
+<a href="/" class="back">← Back to Dashboard</a>
+<h1>⚙️ AEGIS Settings</h1>
+
+<div class="card">
+  <h2>Speed Controls</h2>
+  <p class="current">Current: EVAL_SCALE = ${EVAL_SCALE}x, DELAY_MS = ${DELAY_MS}ms</p>
+  <div class="row">
+    <div><label>Eval Scale (0.1–10x)</label><input type="number" id="evalScale" value="${EVAL_SCALE}" step="0.1" min="0.1" max="10"></div>
+    <div><label>Delay Between Tasks (ms)</label><input type="number" id="delayMs" value="${DELAY_MS}" step="10" min="0" max="5000"></div>
+    <button onclick="updateConfig()">Apply</button>
+  </div>
+  <div class="status" id="configStatus"></div>
+</div>
+
+<div class="card">
+  <h2>Quick Presets</h2>
+  <div class="row">
+    <button onclick="preset(0.5, 100)">🐢 Slow (0.5x, 100ms)</button>
+    <button onclick="preset(1, 50)">⚡ Normal (1x, 50ms)</button>
+    <button onclick="preset(2, 20)">🔥 Fast (2x, 20ms)</button>
+    <button onclick="preset(4, 0)">🚀 Max Speed (4x, 0ms)</button>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Reset Task (Re-converge)</h2>
+  <p class="current">Warning: This clears all progress for the selected task. Use when stuck.</p>
+  <div class="tasks">
+    ${Object.keys(TASK_TARGETS).map(id => `<button class="task-btn" onclick="restartTask('${id}')">${TASK_NAMES[id] || id}</button>`).join('')}
+  </div>
+  <div class="status" id="restartStatus"></div>
+</div>
+
+<div class="card">
+  <h2>System Info</h2>
+  <p class="current">
+    AEGIS Cycles: ${aegisCycle} | Seeker Cycles: ${seekerCycle}<br>
+    Total Evaluations: ${(aegisTotal + seekerTotal).toLocaleString()}<br>
+    Workers: 12 threads | Port: ${CONTROL_PORT}<br>
+    Tasks: ${Object.keys(TASK_TARGETS).length} | Converged: ${Object.keys(TASK_TARGETS).filter(id => {
+      const a = aegisBests[id], s = seekerBests[id];
+      const best = (a != null && s != null) ? Math.min(a,s) : a != null ? a : s;
+      return best != null && best <= TASK_TARGETS[id];
+    }).length}
+  </p>
+</div>
+
+<script>
+async function updateConfig() {
+  const evalScale = document.getElementById('evalScale').value;
+  const delayMs = document.getElementById('delayMs').value;
+  try {
+    const r = await fetch('/config', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({evalScale: +evalScale, delayMs: +delayMs}) });
+    const d = await r.json();
+    showStatus('configStatus', 'Applied: EVAL_SCALE=' + d.evalScale + 'x, DELAY_MS=' + d.delayMs + 'ms', false);
+  } catch(e) { showStatus('configStatus', 'Error: ' + e.message, true); }
+}
+function preset(scale, delay) {
+  document.getElementById('evalScale').value = scale;
+  document.getElementById('delayMs').value = delay;
+  updateConfig();
+}
+async function restartTask(id) {
+  if (!confirm('Reset ' + id + '? This clears all progress.')) return;
+  try {
+    const r = await fetch('/restart/' + id, { method: 'POST' });
+    const d = await r.json();
+    showStatus('restartStatus', 'Reset: ' + id + ' — will re-converge', false);
+  } catch(e) { showStatus('restartStatus', 'Error: ' + e.message, true); }
+}
+function showStatus(id, msg, isError) {
+  const el = document.getElementById(id);
+  el.textContent = msg;
+  el.className = 'status' + (isError ? ' error' : '');
+  el.style.display = 'block';
+  setTimeout(() => el.style.display = 'none', 4000);
+}
+</script>
+</body></html>`;
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(html);
+    return;
+  }
+
   // GET /config — current settings
   if (req.url === '/config' && req.method === 'GET') {
     res.writeHead(200, { 'Content-Type': 'application/json' });

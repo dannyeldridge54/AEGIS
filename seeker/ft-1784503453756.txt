@@ -1,0 +1,64 @@
+f(T) TELEPARALLEL GRAVITY — POWER LAW MODEL
+==================================================
+Modified Friedmann: H² = (8πG/3)ρ - f(T)/6 + T·f_T/3
+
+Parameters:
+  α = 0.036573
+  β = -2.403603
+  n = 0.8784
+  Λ_BI = 833.2210
+
+Cosmological fit: χ²/d.o.f. against 21 H(z) data points
+
+OBSERVATIONAL TARGETS
+=====================
+
+  eBOSS QSO
+    Coordinates: RA 14h 00m, Dec +30° 00'
+    Survey: SDSS-IV eBOSS
+    Redshift: z = 1.04 ± 0.05
+    Expected signal: H(z) deviation: +30.5 km/s/Mpc (24.7%) from ΛCDM
+    Detection method: Galaxy clustering BAO
+
+  eBOSS QSO
+    Coordinates: RA 14h 00m, Dec +30° 00'
+    Survey: SDSS-IV eBOSS
+    Redshift: z = 1.30 ± 0.05
+    Expected signal: H(z) deviation: +24.7 km/s/Mpc (17.3%) from ΛCDM
+    Detection method: Galaxy clustering BAO
+
+  eBOSS QSO
+    Coordinates: RA 14h 00m, Dec +30° 00'
+    Survey: SDSS-IV eBOSS
+    Redshift: z = 1.53 ± 0.05
+    Expected signal: H(z) deviation: -22.1 km/s/Mpc (-13.6%) from ΛCDM
+    Detection method: Lyman-α forest BAO + QSO
+
+  eBOSS QSO
+    Coordinates: RA 14h 00m, Dec +30° 00'
+    Survey: SDSS-IV eBOSS
+    Redshift: z = 1.75 ± 0.05
+    Expected signal: H(z) deviation: +20.7 km/s/Mpc (11.4%) from ΛCDM
+    Detection method: Lyman-α forest BAO + QSO
+
+  Lyman-α Forest
+    Coordinates: RA 12h 00m, Dec +20° 00'
+    Survey: SDSS-IV eBOSS
+    Redshift: z = 2.34 ± 0.05
+    Expected signal: H(z) deviation: -15.5 km/s/Mpc (-6.5%) from ΛCDM
+    Detection method: Lyman-α forest BAO + QSO
+
+PREDICTIONS
+===========
+  H₀ prediction: 67.75 km/s/Mpc
+    Testable: YES — CMB + BAO combined analysis
+  χ² / d.o.f.: 0.84 per data point
+    Testable: YES — Comparison with 21 H(z) measurements
+  Peak deviation redshift: 1.04 
+    Testable: YES — Lyman-α forest measurement
+  Dark energy equation of state w(z=0): -1.0000 dimensionless
+    Testable: YES — SNIa + CMB + BAO joint fit (compare with w = -1 for ΛCDM)
+
+Confidence: HIGH
+Score: 17.56585081145049
+Generated: 2026-07-19T23:24:13.756Z
