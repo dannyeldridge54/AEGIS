@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "aegis-ufe"
+version = "1.0.0"
+description = "AEGIS: Autonomous Engine for Generalized Iterative Solving — UFE Cosmology"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Danny Eldridge", email = "dannyeldridge54@users.noreply.github.com"},
+]
+keywords = ["cosmology", "torsion", "dark-energy", "hubble-tension", "optimization"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Physics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "emcee>=3.1",
+    "corner>=2.2",
+    "tqdm>=4.65",
+    "flask>=3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov"]
+all = ["getdist>=1.4", "cobaya>=3.3"]
+
+[project.scripts]
+aegis = "aegis.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/dannyeldridge54/AEGIS"
+Repository = "https://github.com/dannyeldridge54/AEGIS"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aegis*"]
