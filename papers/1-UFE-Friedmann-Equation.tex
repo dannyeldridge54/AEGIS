@@ -77,7 +77,7 @@ where $\gamma$ is the growth index (GR predicts $\gamma = 0.545$).
 \begin{itemize}
 \item \textbf{Cosmic Chronometers}: 33 direct $H(z)$ measurements at $0.07 \leq z \leq 2.36$ \cite{Moresco2016,Simon2005}
 \item \textbf{DESI DR1 BAO}: 12 distance ratio measurements ($D_V/r_s$, $D_M/r_s$, $D_H/r_s$) at $0.30 \leq z \leq 2.33$ \cite{DESI2024}
-\item \textbf{Pantheon+ SNe}: 16 binned distance moduli at $0.01 \leq z \leq 1.80$ \cite{Scolnic2022}
+\item \textbf{Pantheon+ SNe}: 1701 Type Ia supernovae with full STAT+SYS covariance matrix, binned to 40 redshift bins via inverse-variance weighting with covariance propagation $C_\text{bin} = W \cdot C_\text{full} \cdot W^\top$ (see Paper~VI for methodology) \cite{Scolnic2022}
 \item \textbf{RSD}: 18 $f\sigma_8(z)$ measurements from BOSS, WiggleZ, 6dF \cite{Blake2012}
 \item \textbf{Weak lensing}: $S_8$ from Planck, KiDS-1000, DES Y3 \cite{Planck2020,KiDS2021,DESY3}
 \end{itemize}
@@ -92,13 +92,14 @@ The AEGIS framework performs global optimization via CMA-ES with adaptive restar
 
 \subsection{MCMC Posterior Analysis}
 
-Following optimization, Metropolis--Hastings MCMC provides proper posteriors:
+Following optimization, ensemble MCMC (\texttt{emcee}~\cite{Foreman-Mackey2013}, affine-invariant sampler) provides proper posteriors:
 \begin{itemize}
-\item 2 independent chains $\times$ 30,000 samples each
-\item Burn-in: 5,000 samples with adaptive proposal widths
-\item Thinning: factor 3 (effective samples: 20,000)
-\item Convergence: Gelman--Rubin $\hat{R} < 1.1$
-\item Acceptance criterion: $\min(1, e^{-\Delta\chi^2/2})$
+\item 64 walkers $\times$ 8000 steps (production run)
+\item Burn-in: 2000 steps discarded per walker
+\item Production samples: 384,000 total
+\item Convergence: Gelman--Rubin $\hat{R} < 1.05$, autocorrelation time $\tau \sim 120$
+\item Initialization: CMA-ES best-fit $\pm$ 1\% scatter
+\item Acceptance fraction: 25--38\% (optimal for stretch move)
 \end{itemize}
 
 \subsection{Model Comparison}
@@ -256,6 +257,7 @@ The Unified Field Equation extends $\Lambda$CDM by a single parameter $\beta$ en
 \bibitem{Planck2020} Planck Collaboration, A\&A \textbf{641}, A6 (2020).
 \bibitem{DESI2024} DESI Collaboration, arXiv:2404.03002 (2024).
 \bibitem{Scolnic2022} D.~M.~Scolnic \textit{et al.}, ApJ \textbf{938}, 113 (2022).
+\bibitem{Brout2022} D.~Brout \textit{et al.}, ApJ \textbf{938}, 110 (2022).
 \bibitem{KiDS2021} KiDS Collaboration, A\&A \textbf{645}, A104 (2021).
 \bibitem{DESY3} DES Collaboration, PRD \textbf{105}, 023520 (2022).
 \bibitem{Hehl1976} F.~W.~Hehl \textit{et al.}, Rev.\ Mod.\ Phys.\ \textbf{48}, 393 (1976).
@@ -263,6 +265,7 @@ The Unified Field Equation extends $\Lambda$CDM by a single parameter $\beta$ en
 \bibitem{Moresco2016} M.~Moresco \textit{et al.}, JCAP \textbf{05}, 014 (2016).
 \bibitem{Simon2005} J.~Simon \textit{et al.}, PRD \textbf{71}, 123001 (2005).
 \bibitem{Blake2012} C.~Blake \textit{et al.}, MNRAS \textbf{425}, 405 (2012).
+\bibitem{Foreman-Mackey2013} D.~Foreman-Mackey \textit{et al.}, PASP \textbf{125}, 306 (2013).
 \bibitem{Gelman1992} A.~Gelman and D.~B.~Rubin, Stat.\ Sci.\ \textbf{7}, 457 (1992).
 \end{thebibliography}
 
