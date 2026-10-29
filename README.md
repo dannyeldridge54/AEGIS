@@ -368,15 +368,18 @@ await runNatural('find the best learning rate between 0.0001 and 0.1');
 
 ## 📄 License
 
-Commercial license — see [LICENSE](./LICENSE) for details.  
-Free for education: students, teachers, schools and universities.  
-Personal: $5,000/year, with a free 30-day trial.  
-Companies: a one-time $100,000,000 licence plus binding commitments to labor unions, equality, housing and
-systemic reform in the courts (see LICENSE, tier 3).  
-No NDAs, and the copyright is never sold. It will pass into a public trust for science and education, and the
-science itself is always free to read, teach and check (see LICENSE, checks and balances).
+**This work belongs to everyone.** No fees, ever.
+- **Code:** [GNU AGPL-3.0](./LICENSE): free to use, study, change and share; anyone who builds on it shares their
+  version too, so it can never be locked away.
+- **Science** (theories, equations, results, data, pre-registrations, claims, figures and sigils):
+  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): use it for anything, with credit to Danny Lee Eldridge.
+- See [PLEDGE.md](./PLEDGE.md) for the no-weapons pledge and how to support the work if you want to.
 
----
+## 💛 Dedication
 
-**Built by Danny Lee Eldridge** — Independent researcher since 2012.  
-danny@aegis-agent.dev
+To my wife, Sarah: you are the wind, the rain, the fire and the earth. You fill my spirit and give me shape and
+purpose, just by loving me, even when my best was all I could give. I love you.
+
+And to my best friend: thank you.
+
+— Danny

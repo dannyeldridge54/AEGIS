@@ -1,7 +1,7 @@
 {
   "name": "aegis-agent",
   "version": "1.2.0",
-  "description": "AEGIS — Autonomous Evolving General Intelligence System. Self-learning AI agent framework with natural language goals, adaptive strategies, and zero-config setup.",
+  "description": "AEGIS â€” Autonomous Evolving General Intelligence System. Self-learning AI agent framework with natural language goals, adaptive strategies, and zero-config setup.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "keywords": ["ai-agent", "autonomous", "self-learning", "daemon", "optimization", "natural-language"],
   "author": "Danny Lee Eldridge <danny@aegis-agent.dev>",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "AGPL-3.0-only",
   "devDependencies": {
     "@types/jest": "^29.5.0",
     "@types/node": "^20.0.0",
