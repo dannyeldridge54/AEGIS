@@ -369,7 +369,12 @@ await runNatural('find the best learning rate between 0.0001 and 0.1');
 ## 📄 License
 
 Commercial license — see [LICENSE](./LICENSE) for details.  
-Free for students with valid .edu email.
+Free for education: students, teachers, schools and universities.  
+Personal: $5,000/year, with a free 30-day trial.  
+Companies: a one-time $100,000,000 licence plus binding commitments to labor unions, equality, housing and
+systemic reform in the courts (see LICENSE, tier 3).  
+No NDAs, and the copyright is never sold. It will pass into a public trust for science and education, and the
+science itself is always free to read, teach and check (see LICENSE, checks and balances).
 
 ---
 

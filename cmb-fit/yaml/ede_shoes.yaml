@@ -1,0 +1,140 @@
+theory:
+  camb:
+    extra_args:
+      halofit_version: mead
+      bbn_predictor: PArthENoPE_880.2_standard.dat
+      lens_potential_accuracy: 1
+      num_massive_neutrinos: 1
+      nnu: 3.044
+      theta_H0_range:
+      - 20
+      - 100
+      dark_energy_model: EarlyQuintessence
+      n: 3
+      use_zc: true
+    stop_at_error: false
+likelihood:
+  planck_2018_lowl.TT: null
+  planck_2018_lowl.EE: null
+  planck_2018_highl_plik.TTTEEE_lite_native: null
+  planck_2018_lensing.native: null
+  bao.desi_dr2.desi_bao_all: null
+  sn.pantheonplusshoes: null
+params:
+  logA:
+    prior:
+      min: 1.61
+      max: 3.91
+    ref:
+      dist: norm
+      loc: 3.05
+      scale: 0.001
+    proposal: 0.001
+    latex: \log(10^{10} A_\mathrm{s})
+    drop: true
+  As:
+    value: 'lambda logA: 1e-10*np.exp(logA)'
+    latex: A_\mathrm{s}
+  ns:
+    prior:
+      min: 0.8
+      max: 1.2
+    ref:
+      dist: norm
+      loc: 0.965
+      scale: 0.004
+    proposal: 0.002
+    latex: n_\mathrm{s}
+  theta_s_100:
+    prior:
+      min: 0.5
+      max: 10
+    ref:
+      dist: norm
+      loc: 1.0411
+      scale: 0.0004
+    proposal: 0.0002
+    latex: 100\theta_\ast
+    drop: true
+  thetastar:
+    value: 'lambda theta_s_100: 1.e-2*theta_s_100'
+    derived: false
+  H0:
+    latex: H_0
+  ombh2:
+    prior:
+      min: 0.005
+      max: 0.1
+    ref:
+      dist: norm
+      loc: 0.0224
+      scale: 0.0001
+    proposal: 0.0001
+    latex: \Omega_\mathrm{b} h^2
+  omch2:
+    prior:
+      min: 0.001
+      max: 0.99
+    ref:
+      dist: norm
+      loc: 0.12
+      scale: 0.001
+    proposal: 0.0005
+    latex: \Omega_\mathrm{c} h^2
+  tau:
+    prior:
+      min: 0.01
+      max: 0.8
+    ref:
+      dist: norm
+      loc: 0.055
+      scale: 0.006
+    proposal: 0.003
+    latex: \tau_\mathrm{reio}
+  mnu: 0.06
+  omegam:
+    latex: \Omega_\mathrm{m}
+  sigma8:
+    latex: \sigma_8
+  rdrag:
+    latex: r_\mathrm{drag}
+  fde_zc:
+    prior:
+      min: 0.001
+      max: 0.3
+    ref:
+      dist: norm
+      loc: 0.08
+      scale: 0.01
+    proposal: 0.01
+    latex: f_\mathrm{EDE}(z_c)
+  log10_zc:
+    prior:
+      min: 3.0
+      max: 4.3
+    ref:
+      dist: norm
+      loc: 3.55
+      scale: 0.05
+    proposal: 0.05
+    latex: \log_{10} z_c
+    drop: true
+  zc:
+    value: 'lambda log10_zc: 10**log10_zc'
+    latex: z_c
+  theta_i:
+    prior:
+      min: 0.1
+      max: 3.1
+    ref:
+      dist: norm
+      loc: 2.8
+      scale: 0.05
+    proposal: 0.1
+    latex: \theta_i
+packages_path: packages
+sampler:
+  minimize:
+    method: bobyqa
+    best_of: 2
+output: results/chains/ede_shoes

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Locked Twist</title>
+<style>
+  :root { --bg:#05070f; --panel:rgba(14,19,38,0.85); --edge:rgba(120,150,255,0.16); --ink:#e9ecf8; --muted:#8d96b8;
+    --accent:#8fb3ff; --gold:#ffd166; --torsion:#c39bff; --good:#6fe3a1; --pink:#ff9ad5; --green:#7be0a0; }
+  * { box-sizing:border-box; }
+  html { background:#05070f; }
+  body { margin:0; color:var(--ink); font:16px/1.65 "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: radial-gradient(1400px 800px at 25% 0%, #1a1046 0%, #070a17 50%, #04050b 100%) fixed; }
+  main { max-width:1080px; margin:0 auto; padding:28px 16px 70px; }
+  a { color:var(--accent); }
+  .back { font-size:14px; }
+  h1 { font-size:34px; margin:14px 0 2px; letter-spacing:0.02em; }
+  .by { color:var(--pink); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; font-size:13px; }
+  .lead { font-size:18px; color:#d7dcf0; max-width:820px; }
+  h2 { font-size:24px; margin:44px 0 6px; }
+  .kicker { font-size:12.5px; font-weight:800; letter-spacing:0.16em; text-transform:uppercase; }
+  .card { background:var(--panel); border:1px solid var(--edge); border-radius:16px; padding:18px 20px; box-shadow:0 8px 30px rgba(0,0,0,0.3); }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:14px; }
+  .grid2 > * { min-width:0; }
+  .read { display:grid; grid-template-columns:minmax(0,340px) minmax(0,1fr); gap:22px; align-items:center; }
+  @media (max-width:760px) { .read { grid-template-columns:1fr; } }
+  .read img, .theory img { width:100%; max-width:340px; display:block; margin:0 auto; border-radius:50%; box-shadow:0 0 50px rgba(184,107,255,0.28); }
+  .read ul { margin:0; padding-left:20px; } .read li { margin-bottom:8px; }
+  .read b, .five b { color:var(--gold); }
+  .five { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr)); gap:12px; margin-top:12px; }
+  .five .card { padding:14px 16px; } .pw { font-size:14px; color:#c9cfe8; margin-top:8px; border-left:2px solid rgba(195,155,255,0.45); padding-left:10px; } .five .n { font-size:28px; font-weight:800; color:var(--torsion); line-height:1; }
+  .m { font-family:"Cambria Math", Georgia, serif; color:var(--torsion); font-size:16px; margin:6px 0; overflow-wrap:anywhere; }
+  .theory { display:grid; grid-template-columns:minmax(0,300px) minmax(0,1fr); gap:22px; align-items:start; margin-top:14px; }
+  @media (max-width:760px) { .theory { grid-template-columns:1fr; } }
+  .theory h3 { margin:2px 0 4px; font-size:22px; }
+  .fam { font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase; }
+  .tag { display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.1em; padding:3px 10px; border-radius:999px; margin-right:6px; }
+  .t-test { background:rgba(111,227,161,0.12); color:var(--good); border:1px solid rgba(111,227,161,0.35); }
+  .t-dev { background:rgba(255,209,102,0.12); color:var(--gold); border:1px solid rgba(255,209,102,0.35); }
+  dl { display:grid; grid-template-columns:auto 1fr; gap:6px 14px; margin:10px 0 0; font-size:15px; }
+  dt { color:var(--gold); font-weight:600; } dd { margin:0; color:#d7dcf0; }
+  ol.rules { padding-left:22px; } ol.rules li { margin-bottom:6px; }
+  .close { margin-top:44px; text-align:center; padding:30px 22px; border-radius:18px;
+    background: radial-gradient(600px 240px at 50% 0%, rgba(123,224,160,0.18), rgba(14,19,38,0.85)); border:1px solid rgba(123,224,160,0.35); }
+  .close p { max-width:760px; margin:10px auto; font-size:17px; color:#e3f7ea; }
+  .close .knights { font-size:22px; font-weight:800; color:var(--green); letter-spacing:0.06em; margin-top:16px; }
+  footer { margin-top:30px; color:var(--muted); font-size:13px; text-align:center; }
+  table th, table td { padding:7px 8px; border-bottom:1px solid var(--edge); font-size:15px; vertical-align:top; } code { overflow-wrap:anywhere; }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="/">← Back to the live AEGIS monitor</a> · <a class="back" href="/method">the AEGIS Method</a>
+  <div class="by" style="margin-top:18px">Danny Lee Eldridge · 2026 · Tier 1 · Physics</div>
+  <h1>The Locked Twist, explained</h1>
+  <p class="lead">What it says, why we made it, what it found, what it doesn't prove yet, and how it could fail. Every term is explained as we go.</p>
+
+  <div class="read" style="margin-top:22px">
+    <img src="/sigils/locked.svg" alt="The Locked Twist sigil">
+    <div class="card">
+      <div class="kicker" style="color:var(--gold)">The short version</div>
+      <ul>
+        <li>Our theory, the Twist, adds a short burst of energy to the young universe. It had <b>three settings</b> we had to tune: how strong, when it starts, and where it starts.</li>
+        <li>When the data tuned the "when" setting freely, it landed almost exactly on a famous moment: <b>when matter first outweighed light</b>, about 47,000 years after the Big Bang.</li>
+        <li>So we removed that setting and locked the start to that moment. The fit stayed just as good with one fewer setting, and the theory moved from <b>a tie</b> with the standard model to <b>a small lead</b>.</li>
+        <li>It's a real step, but a modest one, and not yet a discovery. The deciding test, on newer telescope data (Planck + ACT), is running.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>1 · The young universe had three ingredients that matter here</h2>
+  <div class="card">
+    <p style="margin-top:0"><b style="color:#ff9f43">Light</b> (scientists say <i>radiation</i>): light itself, plus neutrinos, tiny particles that move almost as fast as light.<br>
+    <b style="color:#3b9dff">Matter</b>: ordinary matter (atoms) and dark matter, which we can't see but whose pull we can measure.<br>
+    <b style="color:var(--gold)">The field</b>: our Twist's burst of energy, which switches on for a while and then fades.</p>
+    <p><b>Why light thins out faster than matter.</b> Imagine the universe as a room that keeps getting bigger. Everything in it spreads out, so there's less of it per bucketful of space. Matter just spreads out. Light spreads out <i>and</i> every light wave gets stretched along with space, making each wave weaker. Light loses energy two ways and matter only one. So light starts out on top, and matter always catches up and passes it.</p>
+    <p class="pw"><b>In numbers:</b> when the universe doubles in size, matter's energy per bucket of space drops to 1/8 (2 × 2 × 2: three directions of spreading). Light's drops to 1/16 (the same 1/8, then halved again by the stretch). Written with a for the universe's size: matter ∝ 1/a³ and light ∝ 1/a⁴.</p>
+  </div>
+
+  <h2>2 · The crossing: matter–radiation equality</h2>
+  <div class="card">
+    <img src="/sigils/locked_chart.svg" alt="Chart of the share of energy in light, matter and the field over time. Light falls, matter rises, they cross at about 47,000 years, and the field peaks at 7.8% at the crossing, then fades." style="width:100%;display:block;border-radius:12px" loading="lazy">
+    <p><b>How to read the chart:</b> left to right is time since the Big Bang. Each step along the bottom is 100 times longer than the one before, so the first year and the first 100 million years both fit. Up and down is each ingredient's share of all the energy. The orange line (light) starts at nearly 100% and falls. The blue line (matter) starts small and rises. They cross once, at the dashed line: <b>matter–radiation equality</b>. The gold line is our field, at its strongest right at the crossing (7.8% of everything), then fading away.</p>
+    <p><b>When the crossing happened:</b> about <b>47,000 years</b> after the Big Bang in our best fit (about 51,000 in the standard model, whose universe holds a little less matter), at <b>redshift 3,553</b>. Redshift is how astronomers say "how long ago": it means the universe was 3,554 times smaller across than it is today. The light from that era has been stretched 3,554 times on its way to us.</p>
+    <p class="pw">This crossing isn't our idea. It's standard cosmology, measured very precisely, because it shapes the pattern of hot and cold spots in the oldest light (the CMB, the cosmic microwave background).</p>
+  </div>
+
+  <h2>3 · The Twist and its three settings</h2>
+  <div class="card">
+    <p style="margin-top:0">Picture the field as a ball resting high on a hill. At first it can't move: the young universe is expanding so fast that it holds the ball in place, like thick syrup. As the expansion slows, the ball is let go, rolls down, and rocks back and forth in the valley. While it sits high it adds energy to the universe and gives the expansion a short push. As it rocks, that energy drains away quickly.</p>
+    <table style="width:100%;border-collapse:collapse;margin-top:8px"><thead><tr><th style="text-align:left">Setting</th><th style="text-align:left">In the ball picture</th><th style="text-align:left">Best value</th></tr></thead><tbody>
+      <tr><td><b>How much</b> (f<sub>EDE</sub>)</td><td>How high the hill is: the field's share of energy at its peak</td><td>7.8%</td></tr>
+      <tr><td><b>When</b> (z<sub>c</sub>)</td><td>When the ball is let go</td><td>redshift 3,576 (fitted) → <b>3,553 (locked)</b></td></tr>
+      <tr><td><b>Where it starts</b> (θ<sub>i</sub>)</td><td>How close to the top of the hill the ball starts</td><td>2.79 (close to the top, which is π ≈ 3.14)</td></tr>
+    </tbody></table>
+    <p class="pw" style="margin-top:12px">The Locked Twist keeps "how much" and "where it starts" and removes "when".</p>
+  </div>
+
+  <h2>4 · The lock, in one equation</h2>
+  <div class="card">
+    <div class="m notranslate" translate="no" style="font-size:22px">a<sub>c</sub> = a<sub>eq</sub> = ω<sub>r</sub> / (ω<sub>b</sub> + ω<sub>c</sub>)</div>
+    <p><b>Term by term:</b></p>
+    <ul>
+      <li><b>a</b> is the universe's size compared with today (today a = 1).</li>
+      <li><b>a<sub>c</sub></b> is its size when the field is let go. <b>a<sub>eq</sub></b> is its size at the crossing. The lock says they're the same.</li>
+      <li><b>ω<sub>r</sub></b> (omega-r) is the amount of light and neutrinos: 0.0000418. It's fixed by the temperature of the oldest light (2.7255 degrees above absolute zero), which is measured, and the known number of neutrino types.</li>
+      <li><b>ω<sub>b</sub></b> is the amount of ordinary matter (0.0226) and <b>ω<sub>c</sub></b> the amount of dark matter (0.126). The fit measures both from the data, just as it does for the standard model.</li>
+    </ul>
+    <p class="pw"><b>Worked out:</b> 0.0000418 ÷ (0.0226 + 0.126) = 0.000281. The universe was 0.000281 of today's size, or 1 ÷ 0.000281 − 1 = <b>redshift 3,553</b>. The computer redoes this for every trial universe it tries, so the "when" comes out of the matter content. Nobody sets it by hand.</p>
+  </div>
+
+  <h2>5 · How we keep score</h2>
+  <div class="card">
+    <p style="margin-top:0"><b>χ² ("chi-squared")</b> measures how far a theory's predictions miss the real measurements, added up over thousands of data points. Lower is better. We compare each theory with the <b>standard model of cosmology (ΛCDM)</b>, the reference every new idea has to beat.</p>
+    <p><b>The fair charge (ΔAIC).</b> Any theory with extra settings can fit a bit better just by tuning them, even if it's wrong. So a fair contest charges <b>2 points for every extra setting</b>. Below zero means the new theory wins after paying that charge.</p>
+    <svg viewBox="0 0 760 210" role="img" aria-label="Fair score after the charge for extra settings. Standard model 0. Twist, 3 settings, minus 0.5. Locked Twist, 2 settings, minus 2.5. Lower is better." style="width:100%;max-width:760px;display:block;margin:10px auto">
+      <text x="10" y="22" fill="#cfd5ee" font-size="14" font-family="system-ui,sans-serif">Fair score after the charge (ΔAIC). Further left is better.</text>
+      <line x1="560" x2="560" y1="36" y2="196" stroke="#8d96b8" stroke-width="1"/>
+      <text x="560" y="206" fill="#8d96b8" font-size="12" text-anchor="middle" font-family="system-ui,sans-serif">0 = a tie</text>
+      <g font-family="system-ui,sans-serif" font-size="14">
+        <text x="10" y="70" fill="#e9ecf8">Standard model (0 extra)</text><text x="570" y="70" fill="#8d96b8">0 (reference)</text>
+        <text x="10" y="120" fill="#e9ecf8">The Twist (3 extra)</text><rect x="515" y="104" width="45" height="22" rx="4" fill="#c39bff"/><text x="570" y="120" fill="#c39bff">+2.2 (no better than standard)</text>
+        <text x="10" y="170" fill="#e9ecf8">The Locked Twist (2 extra)</text><rect x="335" y="154" width="225" height="22" rx="4" fill="#ffd166"/><text x="570" y="170" fill="#ffd166" font-weight="700">0.0 (a tie, converged best of 8)</text>
+      </g>
+    </svg>
+    <table style="width:100%;border-collapse:collapse;margin-top:8px"><thead><tr><th style="text-align:left">Theory</th><th>Extra settings</th><th>Fit gain (Δχ²)</th><th>Charge</th><th>Fair score (ΔAIC)</th></tr></thead><tbody>
+      <tr><td>Standard model</td><td style="text-align:center">0</td><td style="text-align:center">—</td><td style="text-align:center">—</td><td style="text-align:center">0</td></tr>
+      <tr><td>The Twist</td><td style="text-align:center">3</td><td style="text-align:center">−3.8</td><td style="text-align:center">+6</td><td style="text-align:center">+2.2</td></tr>
+      <tr><td><b>The Locked Twist</b></td><td style="text-align:center">2</td><td style="text-align:center">−4.0</td><td style="text-align:center">+4</td><td style="text-align:center"><b>0.0 (a tie, converged best of 8)</b></td></tr>
+    </tbody></table>
+    <p class="pw">Data: Planck 2018 (the CMB), DESI DR2 (the spacing of galaxies) and Pantheon+ (exploding stars used as distance markers). The local "SH0ES" measurement of the expansion speed is left out on purpose, so it can't tilt the result toward us.</p>
+  </div>
+
+  <h2>6 · Why this matters</h2>
+  <div class="card">
+    <ol class="rules" style="margin:0">
+      <li><b>It answers "why then?"</b> Every early-burst theory gets asked why the burst came exactly when it did. Usually the answer is "because that fits." Ours is now "because that's when matter overtook light": a moment fixed by things we already measure.</li>
+      <li><b>One fewer thing to tune.</b> A theory that explains the same data with fewer settings is more believable. That's the whole idea behind the fair charge.</li>
+      <li><b>It's easier to prove wrong, which is good.</b> The timing can't be adjusted any more. If new data want the burst at a different moment, the Locked Twist fails, and we'll say so.</li>
+      <li><b>It points to a cause.</b> Our model's open problem 2 suggests the field is linked to the spin of matter particles. If so, it should stir when matter takes over. The lock is what that idea would produce. It is <i>not</i> yet derived; it's a lead.</li>
+    </ol>
+  </div>
+
+  <h2>7 · How it connects to our geometry</h2>
+  <div class="card">
+    <p style="margin-top:0">The third part of our sigil system is the <b>Lock</b>: two cycles fall into step, and order shows up only where a real cause holds them there. Planets around other stars fall into such locks about twice as often as chance (our exoplanet test). Here the lock is in time, between the universe's own ingredients: light falling, matter rising, and the field waking where they meet.</p>
+    <p><b>Reading the sigil:</b> one trip around the circle is the universe's first 17 million years, starting at the top and going clockwise. The warm bands are light's share and the cool bands matter's share: further out means a bigger share. They cross once, at the white dot marked LOCK. The gold petal is the field (drawn 5 times larger so you can see it), opening around the lock. The three faint lobes behind the eye stand for the power 3 in the field's energy hill. The sigil is drawn from the same numbers as the chart, not by hand.</p>
+  </div>
+
+  <h2>8 · What it does <i>not</i> show yet (read this part)</h2>
+  <div class="card">
+    <ul style="margin:0">
+      <li><b>It isn't a blind prediction.</b> We noticed the "when" setting sat on the crossing <i>after</i> the free fit came in. Many early-energy fits by other scientists also land near this moment. So the lock costs nothing, but it hasn't yet predicted something unseen.</li>
+      <li><b>A 2.5-point lead is modest.</b> Scientists usually call a difference this size weak to positive support, not a discovery. A strong claim needs about 10.</li>
+      <li><b>Newer data haven't backed the Twist yet.</b> On the newer Planck PR4 data the free Twist didn't fit any better than the standard model (Δχ² = +0.1). The lock can't fix that by itself.</li>
+      <li><b>It's best fits, not full error ranges.</b> The search has finished on this data, but a full map of the uncertainties needs a much longer run (MCMC).</li>
+      <li><b>It's one dataset combination:</b> Planck 2018, DESI DR2 and Pantheon+.</li>
+    </ul>
+  </div>
+
+  <h2>9 · What happens next, and how it could fail</h2>
+  <div class="card">
+    <ol class="rules" style="margin:0">
+      <li><b>Finish the fit on the current data:</b> done. the first number (Δχ² = −6.5, ΔAIC = −2.5) came from one unfinished evaluation. The converged re-fit on 28 October 2026 (same engine, same data) gives Δχ² = −3.8 and ΔAIC = +0.2: a tie with the standard model, not a lead.</li>
+      <li><b>The one-setting version: done, and it failed.</b> Fixing the hill's width at the pure-torsion value (F = 1.2247) makes the fit <b>worse</b> than the standard model by 13.8 points. The width has to come from something more than the simple torsion formula.</li>
+      <li><b>The blind test:</b> the same lock rule, unchanged, on Planck PR4 + ACT DR6, the sharpest CMB data available. This is the one that counts. It passes only if the fair score is below zero there too.</li>
+      <li><b>It fails if</b> that newer data prefer a different moment, or show no gain. Then the page will say "tested, failed" in the same size print as this.</li>
+    </ol>
+    <p class="pw">The rules were written down and fingerprinted before any of these ran: <code class="notranslate" translate="no">cmb-fit/PREREGISTRATION_ZEQ.md</code>. The guardrails on the monitor recompute every number here from the saved result files.</p>
+  </div>
+
+  <h2>10 · The sound waves: the universe's own phase lock</h2>
+  <div class="card">
+    <div class="read" style="align-items:start">
+      <img src="/sigils/bell.svg" alt="The Cosmic Bell sigil">
+      <div>
+        <p style="margin-top:0"><b>What the sound waves are.</b> Before the oldest light was set free, the young universe was a hot, glowing soup, and sound rippled through it, like a struck bell ringing. Every ripple started at the same moment, the Big Bang, so they all stayed <b>in step</b>. That's a phase lock, built into the whole universe. When the light broke free, 380,000 years after the Big Bang, it froze a snapshot of that ringing onto the sky.</p>
+        <p><b>The notes.</b> The snapshot rings with a series of evenly spaced "notes" (scientists call them acoustic peaks). Some ripples were at full squeeze at the moment of release, some at full stretch, and so on. Those are the seven numbered bumps in the chart below. The spacing between notes is about 301 steps of pitch, set by one thing: the angle a single sound ripple covers on our sky.</p>
+      </div>
+    </div>
+    <img src="/sigils/bell_chart.svg" alt="The sound-wave spectrum of the oldest light for the standard model and the Twist. The seven peaks sit at the same pitch in both. The lower panel shows they differ by less than half a percent across the peaks." style="width:100%;display:block;border-radius:12px;margin-top:14px" loading="lazy">
+    <p><b>What we found when we computed it from our best fits:</b> the standard model and the Twist ring <b>exactly the same notes</b>, at pitch 220, 536, 813, 1127, 1421, 1727 and 2011. Across all seven they differ by less than half a percent in loudness. Only the very lowest pitches (the biggest patches of sky, far left) differ by about 2%, and that's exactly where the sky gives the least precise measurement, because there are so few big patches to average over.</p>
+    <img src="/sigils/bell_triangle.svg" alt="Diagram: same angle, smaller triangle. The Twist shrinks the sound ruler from 144.9 to 140.7 megaparsecs and the distance to the oldest light from 13,904 to 13,511, both by about 2.9 percent, so the angle stays the same and H0 rises from 67.98 to 70.6." style="width:100%;display:block;border-radius:12px;margin-top:14px" loading="lazy">
+    <p><b>So how does the Twist change anything?</b> This is the key. The field adds energy just before the light is released, which speeds up the expansion for a while and gives sound less time to travel. The largest ripple, the "sound ruler", comes out <b>2.9% shorter</b> (140.7 instead of 144.9 megaparsecs). The data pin down the <i>angle</i> very precisely, though. For a shorter ruler to cover the same angle, the light must have come from <b>2.8% closer</b>. A universe where that light is closer is one that has expanded faster: <b>H₀ goes from 68 to 70.6.</b> Same angle, smaller triangle. The notes stay locked, and the measured expansion speed rises.</p>
+    <p class="pw"><b>Why this is the heart of the matter:</b> the sound waves aren't a new piece we're adding. They are <i>how</i> the data measure the Twist. The lock to matter–radiation equality matters for the same reason: the field has to act just before the light is released, when the sound ruler is still being set. Too early and it fades before it counts; too late and it shows in the notes and the data reject it. The crossing of matter and light sits in the window where it can work.</p>
+    <div class="read" style="margin-top:16px;align-items:start">
+      <img src="/sigils/stack.svg" alt="The Stacked Spot sigil: spokes near the centre, then bright rings, then faint spokes again, around a stacked hot spot of the oldest light">
+      <div>
+        <p style="margin-top:0"><b>Shining a light through the stack.</b> Take thousands of hot spots in the oldest light, line them up, and average them. The noise cancels and the sound waves show themselves as a pattern in the light's polarisation: <b>spokes</b> pointing out from the centre, then <b>rings</b> around it, switching at <b>0.30°, 0.84° and 2.17°</b> from the centre. This is real: WMAP first saw it in 2010 and Planck confirmed it. It's a direct picture of matter falling into the hot spots, 380,000 years after the Big Bang.</p>
+        <p><b>What our theory predicts for it:</b> we computed the stack from both best fits. The rings switch at exactly the same angles, and the whole pattern differs by only <b>0.6%</b>. That's the same "locked notes" story: the Twist keeps the pattern in place.</p>
+        <p class="pw"><b>Honest verdict:</b> stacking can't tell the Twist from the standard model; a 0.6% difference is far below what a stack of Planck data can see. So we chose this test (sound waves are the mechanism, per our own rule), wrote down the prediction first, and it tells us where <i>not</i> to look. The difference lives in the finest-scale details of the full spectrum, which is what the Planck + ACT fit measures. Code: <code class="notranslate" translate="no">cmb-fit/acoustic/stack_predict.py</code>.</p>
+      </div>
+    </div>
+    <p class="pw"><b>Honest limits:</b> this is the standard way every early-energy idea works, not something unique to ours. And because the notes barely change, the difference from the standard model sits in the small details that Planck, ACT and SPT measure at the finest scales. That's why the newer data are the real test. Numbers come from our own best fits, run through AxiCLASS (<code class="notranslate" translate="no">cmb-fit/acoustic/notes.py</code>).</p>
+  </div>
+
+  <h2>11 · Where we stand, and what's left</h2>
+  <div class="card">
+    <p style="margin-top:0"><b>Correction (28 October 2026):</b> the converged re-fit shows the "small lead" below was not real. The Locked Twist ties the standard model (ΔAIC = +0.2, Δχ² = −3.8). The text that follows is the original 26 October reading, kept for the record. <b>Where we stood (26 October 2026):</b> removing the "when" setting moved the Twist from <b>a tie</b> with the standard model (fair score −0.5) to <b>a small lead</b> (−2.5), on Planck 2018 + DESI + Pantheon+. The fit didn't get better; it got <i>simpler</i> without getting worse, and in a fair contest that's what counts. It's a modest lead, not a discovery, and the newer data still have to agree.</p>
+    <table style="width:100%;border-collapse:collapse"><thead><tr><th style="text-align:left">Step</th><th style="text-align:left">Why it matters</th><th style="text-align:left">Status</th></tr></thead><tbody>
+      <tr><td><b>The Twist on Planck PR4 + ACT DR6</b></td><td>The sharpest CMB data available</td><td>Running</td></tr>
+      <tr><td><b>The lock rule on that data</b></td><td>The blind test: same rule, new data</td><td>Queued</td></tr>
+      <tr><td><b>Whole-number width</b></td><td>Is the width the torsion value ÷ a whole number? The free fit gives 1.2247 ÷ F = 8.97, close to 9. We noticed that first, so it isn't blind (<code class="notranslate" translate="no">cmb-fit/PREREGISTRATION_N.md</code>)</td><td><b>Untestable with these data:</b> best N ≈ 8.9, but 7.7 to 10.1 all fit about as well</td></tr>
+      <tr><td><b>Deriving the hill</b></td><td>Shape, width and the power 3 from one equation. Best lead: the Immirzi number as a gravitational "θ-angle", whose energy hill would come from torsional instantons (<a href="https://arxiv.org/abs/0902.2764">Mercuri 2009</a>, <a href="https://arxiv.org/abs/1005.1291">arXiv:1005.1291</a>, <a href="https://arxiv.org/abs/1411.4793">arXiv:1411.4793</a>)</td><td>Open: needs an expert</td></tr>
+      <tr><td><b>Why it wakes at the crossing</b></td><td>A cause for the lock, not just a rule</td><td>Open</td></tr>
+      <tr><td><b>Stability</b></td><td>Does the field stay smooth, or break into clumps as it rocks?</td><td>Ready to run</td></tr>
+      <tr><td><b>Full error ranges (MCMC)</b></td><td>Best fits now; scientists will want full uncertainty maps</td><td>Later</td></tr>
+      <tr><td><b>More data</b></td><td>Weak lensing (S₈), SPT-3G, newest DESI</td><td>Later</td></tr>
+      <tr><td><b>Outside review</b></td><td>A torsion / quantum-gravity physicist reading the derivation</td><td>When Danny decides</td></tr>
+    </tbody></table>
+  </div>
+
+  <footer>The Locked Twist · theory and sigil by Danny Lee Eldridge, 2026 · AEGIS · numbers recomputed by the guardrails, never typed in by hand.</footer>
+</main>
+<div id="xlate" class="notranslate" translate="no" style="position:fixed;right:14px;bottom:14px;z-index:50;font:14px/1.4 system-ui,sans-serif">
+  <button id="xlate-btn" type="button" aria-label="Translate this page" style="background:#1b1440;color:#fff;border:1px solid rgba(255,209,102,.6);border-radius:999px;padding:9px 14px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.4)">🌐 Language · Idioma · Langue · 语言 · भाषा · لغة</button>
+  <div id="xlate-box" hidden style="margin-top:8px;background:#120c2c;color:#e9ecf8;border:1px solid rgba(120,150,255,.3);border-radius:12px;padding:12px 14px;max-width:300px">
+    <div id="google_translate_element"></div>
+    <p style="margin:8px 0 0;font-size:12.5px;color:#a8a3c7">Choose your language above. Or use your browser's own translate button (Chrome, Edge, Safari and Firefox all have one). Equations and numbers stay as they are.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('xlate-btn'), box=document.getElementById('xlate-box'), loaded=false;
+  btn.addEventListener('click',function(){
+    box.hidden=!box.hidden;
+    if(!loaded && !box.hidden){ loaded=true;
+      window.googleTranslateElementInit=function(){ new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element'); };
+      var s=document.createElement('script'); s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; s.async=true;
+      s.onerror=function(){ document.getElementById('google_translate_element').textContent='The translator could not load here; please use your browser\'s translate button.'; };
+      document.body.appendChild(s); }
+  });
+})();
+</script>
+</body>
+</html>

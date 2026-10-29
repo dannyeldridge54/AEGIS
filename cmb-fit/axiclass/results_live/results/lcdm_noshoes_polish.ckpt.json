@@ -1,0 +1,36 @@
+{
+  "model": "lcdm_noshoes_polish",
+  "minuslogpost": 1213.0440368823126,
+  "chi2_total": 2434.0622373180404,
+  "chi2": {
+    "planck_2018_lowl.TT": 22.801685567263462,
+    "planck_2018_lowl.EE": 396.22105020128595,
+    "planck_2018_highl_plik.TTTEEE_lite_native": 585.0337915399552,
+    "planck_2018_lensing.native": 9.111740986498727,
+    "bao.desi_dr2.desi_bao_all": 16.004292271045966,
+    "sn.pantheonplus": 1404.889676751991
+  },
+  "best_params": {
+    "logA": 3.043855463151894,
+    "n_s": 0.9679502467406337,
+    "H0": 67.98055819718697,
+    "omega_b": 0.022402867117781305,
+    "omega_cdm": 0.11853130552957665,
+    "tau_reio": 0.05552137934107872,
+    "A_planck": 1.001003793182651
+  },
+  "derived": {
+    "A_s": 2.098599820393792e-09,
+    "Omega_m": 0.3063566182309822,
+    "sigma8": 0.8066525117172844,
+    "rs_drag": 147.4503825168828,
+    "chi2__BAO": 16.004292271045966,
+    "chi2__CMB": 1013.1682682950034,
+    "chi2__SN": 1404.889676751991
+  },
+  "total_evals": 57,
+  "converged": true,
+  "updated": "2026-10-26 12:25:06",
+  "bobyqa_flag": 0,
+  "bobyqa_msg": "Success: rho has reached rhoend"
+}

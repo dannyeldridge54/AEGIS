@@ -1,3 +1,34 @@
 node_modules/
 dist/
 *.log
+
+# --- science work: keep code, results, rules and write-ups; never data dumps, environments or backups ---
+__pycache__/
+*.pyc
+.pytest_cache/
+*.tmp
+ufe-v2/cosmos_map/*
+!ufe-v2/cosmos_map/star_scan_summary.json
+ufe-v2/_archive/
+cmb-fit/venv/
+cmb-fit/venv312/
+cmb-fit/packages/
+cmb-fit/act_dr6/
+cmb-fit/results/chains/
+cmb-fit/results/*.log
+cmb-fit/results/lanes/*.log
+cmb-fit/results/lanes/STOP
+handoff_backup/
+v2-update/
+*.bundle
+*_log.txt
+monitor_log.txt
+launcher_log.txt
+tests_log.txt
+
+# internal agent notes and the local AI agent: kept on this PC, never published
+HANDOFF_LOG.md
+AGENT_HANDOFF.md
+NOTE_FOR_COPILOT.md
+UFE_SOLVE_CHECKLIST.md
+agent/

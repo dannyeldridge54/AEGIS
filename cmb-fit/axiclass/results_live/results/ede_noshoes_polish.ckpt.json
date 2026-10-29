@@ -1,0 +1,41 @@
+{
+  "model": "ede_noshoes_polish",
+  "minuslogpost": 1210.641406866261,
+  "chi2_total": 2427.54342083766,
+  "chi2": {
+    "planck_2018_lowl.TT": 21.72094679793713,
+    "planck_2018_lowl.EE": 396.13865072218937,
+    "planck_2018_highl_plik.TTTEEE_lite_native": 582.5795797264192,
+    "planck_2018_lensing.native": 9.514520245466258,
+    "bao.desi_dr2.desi_bao_all": 11.451452790451476,
+    "sn.pantheonplus": 1406.1382705551964
+  },
+  "best_params": {
+    "logA": 3.0576598544804607,
+    "n_s": 0.9805318656028774,
+    "H0": 70.59870816852937,
+    "omega_b": 0.022609732128152298,
+    "omega_cdm": 0.12604205358586024,
+    "tau_reio": 0.055346205131877754,
+    "f_axion_ac": 0.07831842693978604,
+    "log10_axion_ac": -3.5534727491713607,
+    "scf_param_1": 2.7886650205969787,
+    "A_planck": 1.0012572592622704
+  },
+  "derived": {
+    "A_s": 2.1277705927013543e-09,
+    "Omega_m": 0.29953947560271144,
+    "sigma8": 0.8247859417833879,
+    "rs_drag": 143.16163229942092,
+    "f_ede": 0.07831843397827672,
+    "log10_z_c": 3.553254063621165,
+    "chi2__BAO": 11.451452790451476,
+    "chi2__CMB": 1009.953697492012,
+    "chi2__SN": 1406.1382705551964
+  },
+  "total_evals": 83,
+  "converged": true,
+  "updated": "2026-10-26 12:44:29",
+  "bobyqa_flag": 0,
+  "bobyqa_msg": "Success: rho has reached rhoend"
+}

@@ -4,17 +4,19 @@ Copyright (c) 2012-2026 Danny Lee Eldridge. All rights reserved.
 This software and associated documentation files (the "Software") are the
 proprietary work of Danny Lee Eldridge. Unauthorized copying, modification,
 distribution, or use of this Software, in whole or in part, is strictly
-prohibited without a valid license.
+prohibited without a valid license. The science (theories, results, data products, pre-registrations and
+claims; see measure E) is NOT restricted by this licence and is free for everyone to read, cite, teach and check.
 
 LICENSING TIERS:
 
-0. STUDENT LICENSE — FREE
-   - Valid .edu email required
+0. EDUCATIONAL LICENSE — FREE
+   - For students, teachers, schools, colleges, universities and libraries
+   - Teaching, learning and non-commercial research
    - All features
-   - Non-commercial use only
    - Community support
 
-1. INDIVIDUAL LICENSE — $79/year
+1. PERSONAL LICENSE — $5,000/year
+   - Free 30-day trial (all features, personal use, no payment needed to start)
    - Single user
    - All features
    - Email support
@@ -26,14 +28,26 @@ LICENSING TIERS:
    - Shared state/results
    - Updates included
 
-3. ENTERPRISE LICENSE — $999/year (unlimited seats)
-   - All features
-   - Custom strategy development
-   - Dedicated support channel
-   - On-premise deployment support
+3. CORPORATE LICENSE: ONE-TIME PAYMENT OF $100,000,000 (US dollars)
+   Required for any company or organisation not covered by tiers 0-2 or by measure M (free for non-profits,
+   worker co-operatives and public-interest groups).
+   - All features, unlimited seats, perpetual use of the licensed version
+   - Custom strategy development, dedicated support, on-premise deployment support
    - Updates included
 
-Academic discount: 30% off all paid tiers with valid institutional email.
+   The licence is granted only together with these binding commitments, in writing, signed by an officer of the
+   licensee, renewed and reported publicly every year the Software is in use:
+   a. LABOR UNIONS: recognise and bargain in good faith with any union its workers choose; stay neutral during
+      organising; never retaliate against workers for organising.
+   b. EQUALITY: equal pay for equal work, with a published annual pay-equity audit; no discrimination in hiring,
+      pay or promotion.
+   c. HOUSING: fund or build affordable housing in the communities where it operates, and pay its workers enough
+      to afford a home there.
+   d. SYSTEMIC REFORM IN THE COURTS: support legal aid for people who cannot afford a lawyer, and back fair-court
+      and justice-reform efforts, in court and in public.
+   Breaking any commitment ends the licence. The payment is not refunded.
+
+Education is always free (tier 0).
 
 TERMS:
 
@@ -42,6 +56,56 @@ TERMS:
 3. You may NOT use this Software to build competing products.
 4. You MAY use outputs/results from this Software without restriction.
 5. You MAY modify the Software for internal use under your license tier.
+6. NO NDAs: no licence may require secrecy about the Software, its results or how it is used. Results, findings and
+   problems may always be published and discussed openly.
+
+CHECKS AND BALANCES (binding on the author as well as licensees):
+
+A. NEVER SOLD: the copyright will never be sold, assigned or exclusively licensed to any company or person.
+   No licence is exclusive. Its only permitted transfer is into the public trust below.
+B. PUBLIC TRUST: once the author has a home and the trust can be set up, the copyright passes into a public
+   trust for science and education. Licence income goes to the trust's purposes: open science, education, and
+   the author's basic living needs.
+C. OPEN BOOKS: every corporate licence, its payment and its yearly commitment report is listed publicly.
+D. INDEPENDENT CHECK: each corporate licensee's commitments (tier 3, a-d) are verified every year by an
+   independent auditor approved by the public trust (until it exists, by the author), paid by the licensee, with
+   the report published in full. A failed or missing report ends the licence.
+E. SCIENCE STAYS OPEN: the science itself, meaning the theories, results, data products, pre-registrations and
+   claims, can always be read, cited, taught and checked by anyone, free. Charges apply only to using the
+   Software.
+F. SUCCESSION: if the author dies or becomes unable to act before the public trust exists, the copyright passes
+   at once to that trust or, if it is not yet formed, to a non-profit dedicated to open science and education,
+   bound by every term here. It never passes to a company or is sold to settle any estate.
+G. CREDITOR SHIELD: the copyright is held for the future public trust, not as a personal asset for sale. No debt,
+   judgment or bankruptcy may force its sale or exclusive licence (to be secured with legal help).
+H. ONE-WAY RATCHET: these terms may change only toward more openness, more access and stronger protections, never
+   toward exclusivity, secrecy or sale of the copyright.
+I. OPEN-SOURCE FALLBACK: if the public trust is not formed within 10 years of 29 October 2026, or the project is
+   abandoned for 3 years, the Software becomes free and open source under the GNU Affero General Public License
+   v3, and these checks and balances stay attached.
+J. NO SHELL COMPANIES: subsidiaries, parents, affiliates, contractors and anyone acting for a company count as that
+   company. A company may not use personal or team licences to avoid tier 3.
+K. WHISTLEBLOWERS: anyone may report a broken commitment to the trust (or, until it exists, to the author).
+   Licensees may not retaliate against workers who report; retaliation ends the licence.
+L. NO WEAPONS, NO WAR, NO HARM: the Software and its results may never be used, directly or indirectly, for
+   weapons, the military, defence or intelligence contractors, or any part of the military-industrial complex.
+   Nor for mass surveillance, union-busting, predatory lending, or discrimination in hiring, housing, credit or
+   justice. No licence of any tier can be sold or granted for these uses, and any such use ends every licence
+   held by the user at once.
+L2. EVERY USE DOCUMENTED: every licensee keeps a complete written record of how the Software is used: who uses
+   it, for what purpose, and what it produced. Corporate licensees publish this record every year with their
+   commitment report; any licensee must show it to the trust on request. Undocumented use is unlicensed use.
+M. FAIR PRICING: non-profits, worker co-operatives and public-interest groups use it free (as tier 0). People who
+   cannot afford the personal tier may ask for a pay-what-you-can hardship waiver, and it will not be refused
+   unreasonably.
+N. PRIVACY: the Software does not phone home and collects no data about its users.
+O. TRUST BOARD: the public trust is governed by a board with rotating seats for at least a teacher, a worker, a
+   scientist and a member of the public, open to people of every race, religion, colour and creed. No single
+   person may override it. The author takes no leadership role in the trust and holds no power over it.
+P. DISPUTES: mediation first; then the courts of the State of Oklahoma, under Oklahoma law.
+
+NOTE: these terms state the author's binding intent and have not yet been reviewed by a lawyer. Where a term is
+unenforceable as written, its intent is to be carried out as closely as the law allows.
 
 WARRANTY DISCLAIMER:
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR

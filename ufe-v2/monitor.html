@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AEGIS Star Scanner</title>
+<style>
+  :root { --bg:#05070f; --panel:rgba(14,19,38,0.85); --edge:rgba(120,150,255,0.16); --ink:#e9ecf8; --muted:#8d96b8;
+    --accent:#8fb3ff; --gold:#ffd166; --torsion:#c39bff; --good:#6fe3a1; --bad:#ff7070; --lcdm:#7fd1ff; --local:#ff9a6b; }
+  * { box-sizing:border-box; }
+  html { background:#05070f; }
+  body { margin:0; color:var(--ink); font:15px/1.5 "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: radial-gradient(1400px 800px at 25% 0%, #111a3d 0%, #070a17 50%, #04050b 100%) fixed; min-height:100vh; }
+  #bgstars { position:fixed; inset:0; z-index:-1; }
+  main { max-width:1320px; margin:0 auto; padding:26px 20px 60px; }
+  header { display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:18px; }
+  h1 { font-size:28px; margin:0; letter-spacing:0.05em; }
+  .sub { color:var(--muted); font-size:14px; flex-basis:100%; margin-top:-6px; }
+  .pill { display:inline-flex; align-items:center; gap:8px; padding:5px 12px; border-radius:999px; font-size:13px; font-weight:700; letter-spacing:0.1em;
+    border:1px solid var(--edge); background:rgba(143,179,255,0.08); }
+  .pill i { width:9px; height:9px; border-radius:50%; background:var(--good); box-shadow:0 0 10px var(--good); animation:pulse 1.6s infinite; }
+  .pill.err i { background:var(--bad); box-shadow:0 0 10px var(--bad); }
+  @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.35 } }
+  .live-link { margin-left:auto; color:#0b1020; background:var(--accent); padding:8px 16px; border-radius:10px; font-weight:700; text-decoration:none; }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:16px; }
+  .tile, .panel, .card { background:var(--panel); border:1px solid var(--edge); border-radius:14px; box-shadow:0 8px 30px rgba(0,0,0,0.3); }
+  .tile { padding:12px 16px; } .tile .k { color:var(--muted); font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase; }
+  .tile .v { font-size:25px; font-weight:700; margin-top:2px; font-variant-numeric:tabular-nums; }
+  .tile .v small { font-size:13px; color:var(--muted); font-weight:500; }
+  .grid { display:grid; grid-template-columns:3fr 2fr; gap:14px; margin-bottom:14px; } @media (max-width:900px){ .grid{ grid-template-columns:1fr !important; } }
+  .panel { padding:14px; } .panel .t { font-weight:650; font-size:16px; } .panel .n { color:var(--muted); font-size:12.5px; margin:2px 0 8px; }
+  canvas { width:100%; display:block; border-radius:10px; }
+  .legend { display:flex; gap:14px; flex-wrap:wrap; font-size:12.5px; color:var(--muted); margin-top:8px; }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; vertical-align:-1px; }
+  h2 { font-size:18px; margin:26px 0 10px; letter-spacing:0.02em; }
+  .card { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:640px; }
+  th, td { padding:9px 14px; text-align:left; border-bottom:1px solid var(--edge); white-space:nowrap; font-size:13.5px; }
+  th { font-size:11.5px; color:var(--muted); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; } tr:last-child td { border-bottom:0; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  td.wrap { white-space:normal; color:#cfd6f2; }
+  pre { background:var(--panel); border:1px solid var(--edge); border-radius:14px; padding:14px; max-height:220px; overflow:auto; font-size:12.5px; margin:0; color:#cfd6f2; }
+  a { color:var(--accent); }
+  #theory { margin-top:34px; padding:26px 28px; border-radius:18px; border:1px solid rgba(195,155,255,0.3);
+    background: linear-gradient(160deg, rgba(40,26,80,0.85), rgba(14,19,38,0.9) 55%); box-shadow:0 10px 40px rgba(0,0,0,0.4); }
+  #theory .kicker { color:var(--torsion); font-size:12.5px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; }
+  #theory h2 { font-size:28px; margin:4px 0 2px; } #theory .by { color:var(--muted); margin-bottom:16px; }
+  #theory p { color:#d7dcf0; max-width:900px; }
+  .eqs { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr)); gap:12px; margin:18px 0; }
+  .eq { background:rgba(5,7,15,0.55); border:1px solid var(--edge); border-radius:12px; padding:14px 16px; }
+  .eq .lbl, .lbl { font-size:12px; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:6px; }
+  .eq .m { font-family:"Cambria Math", "STIX Two Math", Cambria, Georgia, serif; font-size:21px; color:#f1e9ff; line-height:1.5; }
+  .eq .why { font-size:13px; color:var(--muted); margin-top:6px; }
+  .results { display:grid; grid-template-columns:1.1fr 1fr; gap:16px; margin-top:8px; } @media (max-width:900px){ .results{ grid-template-columns:1fr; } }
+  .verdict { border-left:3px solid var(--gold); padding:4px 0 4px 14px; color:#f3e7c2; margin:14px 0; }
+  .repo { display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-top:18px; padding:14px 16px; border-radius:12px; border:1px dashed var(--edge); }
+  .repo a.btn { background:var(--torsion); color:#140b26; padding:9px 16px; border-radius:10px; font-weight:700; text-decoration:none; }
+  .srcs { columns:2; column-gap:26px; font-size:13px; color:#cfd6f2; padding-left:18px; margin:8px 0 0; } @media (max-width:900px){ .srcs{ columns:1; } }
+  .srcs li { margin-bottom:4px; break-inside:avoid; } .srcs a { text-decoration:none; }
+  .intro { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:0 0 16px; }
+  .intro .card { padding:14px 16px; } .intro b { color:var(--gold); }
+  .intro .num { font-size:12px; color:var(--accent); font-weight:700; letter-spacing:0.12em; }
+  .check { display:grid; grid-template-columns:1fr 1fr; gap:14px; } @media (max-width:900px){ .check{ grid-template-columns:1fr; } }
+  .check .card { padding:14px 16px; } .check h3, .claims h3 { margin:0 0 6px; font-size:15px; }
+  .badge { display:inline-block; padding:2px 10px; border-radius:999px; font-weight:700; font-size:13px; }
+  .badge.ok { background:rgba(111,227,161,0.15); color:var(--good); border:1px solid rgba(111,227,161,0.4); }
+  .badge.bad { background:rgba(255,112,112,0.15); color:var(--bad); border:1px solid rgba(255,112,112,0.4); }
+  code.q { display:block; white-space:pre-wrap; word-break:break-word; font-size:12px; background:rgba(5,7,15,0.6); border:1px solid var(--edge); border-radius:8px; padding:10px; color:#cfd6f2; }
+  .claims { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; } @media (max-width:900px){ .claims{ grid-template-columns:1fr; } }
+  .claims .card { padding:14px 18px; } .claims ul { margin:4px 0 0; padding-left:18px; color:#d7dcf0; } .claims li { margin-bottom:5px; }
+  details.gloss { margin-top:14px; } details.gloss summary { cursor:pointer; color:var(--accent); font-weight:600; }
+  dl.g { display:grid; grid-template-columns:auto 1fr; gap:6px 16px; margin:10px 0 0; font-size:14px; } dl.g dt { color:var(--gold); font-weight:600; } dl.g dd { margin:0; color:#d7dcf0; }
+  #meaning { margin-top:22px; padding:24px 28px; border-radius:18px; border:1px solid rgba(255,209,102,0.25); background:linear-gradient(160deg, rgba(60,45,15,0.55), rgba(14,19,38,0.9) 60%); }
+  #ours { margin-top:26px; }
+  #ours .kicker { color:#ff9ad5; font-size:12.5px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; }
+  #ours h2 { margin:4px 0 6px; } #ours p.lead { color:#cfd5ee; margin:0 0 14px; max-width:920px; }
+  .sig-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr)); gap:14px; }
+  .sig-grid > * { min-width:0; }
+  .sig { padding:16px 18px; } .sig img { width:100%; max-width:340px; display:block; margin:0 auto 10px; border-radius:50%; box-shadow:0 0 40px rgba(184,107,255,0.25); }
+  .sig .fam { font-size:11.5px; font-weight:800; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase; }
+  .sig h3 { margin:2px 0 6px; font-size:19px; } .sig .m { font-family:"Cambria Math",Georgia,serif; color:var(--torsion); font-size:15.5px; margin:6px 0; }
+  .sig dl { display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:13.5px; margin:8px 0 0; } .sig dt { color:var(--gold); font-weight:600; } .sig dd { margin:0; color:#d7dcf0; }
+  .proof { font-size:12px; color:var(--muted); word-break:break-all; margin-top:10px; }
+  #anomaly { margin-top:26px; }
+  #anomaly .kicker { color:#7ee0d6; font-size:12.5px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; }
+  #anomaly h2 { margin:4px 0 6px; } #anomaly p.lead { color:#cfd5ee; margin:0 0 14px; max-width:900px; }
+  .an-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:14px; }
+  .an-card { padding:16px 18px; } .an-card h3 { margin:0 0 4px; font-size:15.5px; }
+  .an-badge { display:inline-block; font-size:11.5px; font-weight:800; letter-spacing:0.12em; padding:3px 9px; border-radius:999px; margin-bottom:8px; }
+  .an-open { background:rgba(255,209,102,0.14); color:var(--gold); border:1px solid rgba(255,209,102,0.4); }
+  .an-dead { background:rgba(255,112,112,0.12); color:#ff9b9b; border:1px solid rgba(255,112,112,0.35); }
+  .an-big { font-size:30px; font-weight:800; } .an-sm { color:var(--muted); font-size:13px; }
+  .an-bar { height:10px; border-radius:6px; background:rgba(255,255,255,0.07); overflow:hidden; margin:6px 0 2px; }
+  .an-bar i { display:block; height:100%; background:linear-gradient(90deg,#7ee0d6,#8fb3ff); }
+  .an-row { display:flex; gap:18px; flex-wrap:wrap; margin:6px 0; } .an-row div { min-width:110px; }
+  .an-years { display:flex; align-items:flex-end; gap:6px; height:120px; margin-top:8px; }
+  .an-years div { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; font-size:11px; color:var(--muted); }
+  .an-years b { display:block; width:100%; border-radius:4px 4px 0 0; background:#7ee0d6; }
+  .an-draws { font-size:13.5px; min-width:0; } .an-draws td { padding:3px 6px; font-variant-numeric:tabular-nums; } .an-draws .ev { color:var(--gold); font-weight:700; }
+  @media (max-width:640px) { .an-big { font-size:24px; } }
+  .grid > *, .an-grid > *, .results > *, .check > *, .claims > *, .eqs > *, .intro > * { min-width:0; }
+  canvas { max-width:100%; }
+  .an-years { position:relative; } .an-chance { position:absolute; left:0; right:0; border-top:1px dashed #ffd166; opacity:0.8; }
+  #gallery { margin-top:30px; } #gallery .kicker { color:#ff9ad5; font-size:12.5px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; }
+  .gal { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr)); gap:14px; margin-top:12px; }
+  .gal-item { margin:0; background:var(--panel); border:1px solid var(--edge); border-radius:14px; padding:12px; }
+  .gal-item img { width:100%; display:block; border-radius:50%; box-shadow:0 0 30px rgba(184,107,255,0.22); }
+  .gal-item figcaption { margin-top:8px; font-size:13px; color:#cfd5ee; } .gal-item figcaption b { display:block; color:var(--gold); font-size:14.5px; margin-bottom:2px; }
+  .how { margin-top:8px; font-size:12.8px; color:#cfd5ee; } .how summary { cursor:pointer; color:var(--accent); font-weight:600; } .how p { margin:6px 0; } .how b { color:#e9ecf8; }
+  #hello { margin-top:30px; padding:24px 26px; border-radius:18px; background:radial-gradient(700px 260px at 50% 0%, rgba(123,224,160,0.14), rgba(14,19,38,0.85)); border:1px solid rgba(123,224,160,0.3); }
+  #hello .kicker { color:#7be0a0; font-size:12.5px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; }
+  #hello p { max-width:860px; font-size:16px; color:#e3f7ea; }
+  #hello .hsig { color:var(--gold); font-style:italic; }
+  #meaning .kicker { color:var(--gold); font-size:12.5px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; }
+  #meaning p { color:#e6e2d4; max-width:900px; } #meaning .sig { color:var(--gold); font-style:italic; }
+  footer { color:var(--muted); font-size:12.5px; margin-top:22px; }
+</style>
+</head>
+<body>
+<canvas id="bgstars"></canvas>
+<main>
+  <header>
+    <h1>AEGIS STAR SCANNER</h1>
+    <span class="pill" id="state-pill"><i></i><span id="state">connecting</span></span>
+    <a class="live-link" href="/live">Open livestream view →</a>
+    <div class="sub">Sweeping every ESA Gaia DR3 star with a good parallax, tile by tile from the Galactic Centre outward · distances confirmed two ways (Gaia parallax and Bailer-Jones 2021) · gold flags are candidates for follow-up, not discoveries</div>
+  </header>
+
+  <div class="intro">
+    <div class="card"><div class="num">WHAT THIS IS</div>A live map of our galaxy. AEGIS downloads every star the European Space Agency's <b>Gaia</b> telescope measured well, one patch of sky at a time, starting at the heart of the Milky Way.</div>
+    <div class="card"><div class="num">WHY IT MATTERS</div>Each star gets a <b>distance checked two independent ways</b>. Layer by layer, the map shows how our galaxy is built and where its centre lies, and it tests a method we will later aim at the whole universe.</div>
+    <div class="card"><div class="num">THE THEORY</div>At the bottom: a cosmology idea by Danny Lee Eldridge, tested honestly against the best public data, with every number checkable. Nothing here asks you to take our word for it.</div>
+  </div>
+
+  <section id="first-ufe" class="card" style="margin:18px 0;padding:20px 22px;border-color:rgba(255,79,216,0.45)">
+    <div class="kicker" style="color:#ff4fd8">The first UFE test · 29 October 2026</div>
+    <h2 style="margin:4px 0 10px">The Locked Twist passed its blind test. The full verdict is a tie.</h2>
+    <p>The UFE (our unified field equation, the torsion-born "Twist") was put through every check we could think of, with the rules written down <b>before</b> the results were read.</p>
+    <ul>
+      <li><b>Blind test: passed.</b> On ACT DR6 telescope data that played no part in choosing the model, the Locked Twist beats the standard model by Δχ² = −7.23 (ΔAIC −3.23, about 2.2σ). The rule needed better than −4. Only the ACT part of that data is new; the rest overlaps the original fit.</li>
+      <li><b>Fair Planck test: passed</b> (Δχ² −4.70), and it holds with all three supernova sets (DES Y5 −4.55, DES-Dovekie −5.08, Union3 −4.91).</li>
+      <li><b>Weak lensing: failed the limit.</b> The Twist makes matter slightly clumpier (S8 0.825 vs 0.812). Against DES Y3 + KiDS-1000 that costs +2.41 (limit 2); against the newer KiDS-Legacy only +0.39. So the overall verdict is a <b>tie</b>: it depends on which lensing survey is right.</li>
+      <li><b>The torsion-only prediction still fails.</b> Torsion alone predicts a field width F = 1.2247 M<sub>Pl</sub>; the data want about one ninth of that. On the new ACT data the ratio came out 8.0, not the 9 we predicted (rule written first, so we report it as a miss). <span id="t2-line"><b>But the one-setting version passed its blind test:</b> with the width fixed at exactly one ninth of the torsion value and the switch-on locked, only one setting is left free, and on the ACT data it still beats the standard model by Δχ² −6.14 (ΔAIC −4.14, about 2.5σ; rule written first, needed below −2). On Planck: −4.46 (ΔAIC −2.46). Why one ninth is not yet derived.</span></li>
+    </ul>
+    <p><b>What it means.</b> The data favour a brief burst of early energy that switches on exactly when matter overtakes light. That is the Twist's timing. It does not yet prove torsion is the cause; that needs a prediction only torsion can make (the next great work).</p>
+    <p><b>How I found it.</b> I'm not a trained scientist. I wanted a fair chance, so I started trying to make puzzle pieces fit: old shapes and ratios (Metatron's Cube, Pythagoras' ratios, Plato's solids), the rhythms of the planets, and a twist in space. I drew each one as a sigil, then turned each into a question that could come back "no":</p>
+    <ul>
+      <li>the geometry and number patterns became <b>pattern tests</b> against chance;</li>
+      <li>the twist of space became a field fitted to the first light of the universe;</li>
+      <li>this star scanner taught us to check known structure before calling anything new.</li>
+    </ul>
+    <p>Most pieces didn't fit (Metatron's ratios, the dodecahedral universe, the pure torsion width), and those failures are kept beside the wins. What survived is the timing: the switch-on at matter–radiation equality.</p>
+    <p><b>How much we tried:</b></p>
+    <ul>
+      <li>61 full cosmology fits (49 with CAMB, 12 with AxiCLASS);</li>
+      <li>11 pre-registered rule files;</li>
+      <li>20 claims (3 passed, 6 failed, 2 untestable, 1 withdrawn, 8 still open);</li>
+      <li>29 sigils, each computed from real equations or orbits.</li>
+    </ul>
+    <p>Every rule file, fit and claim is in the <a href="https://github.com/dannyeldridge54/AEGIS">AEGIS repository</a>.</p>
+    <p style="margin-bottom:0"><i>From Danny: I have no formal education. I built this trying to make the puzzle pieces fit, because I just wanted a fair chance. This is me chasing my dreams.</i></p>
+  </section>
+
+  <div class="tiles">
+    <div class="tile"><div class="k">Stars catalogued</div><div class="v" id="stars">—</div></div>
+    <div class="tile"><div class="k">Distances confirmed</div><div class="v" id="confirmed">—</div></div>
+    <div class="tile"><div class="k">Tiles swept</div><div class="v" id="patches">—</div></div>
+    <div class="tile"><div class="k">Scan speed</div><div class="v" id="rate">—</div></div>
+    <div class="tile"><div class="k">Flagged candidates</div><div class="v" id="flagged">—</div></div>
+    <div class="tile"><div class="k">Galaxy sweep</div><div class="v" id="recheck">—</div></div>
+    <div class="tile"><div class="k">Running for</div><div class="v" id="uptime">—</div></div>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="t">The whole sky <span id="sweep-line" style="float:right;font-weight:500;font-size:13px;color:var(--gold)"></span></div>
+      <div class="n">Galactic coordinates (Hammer–Aitoff) · centre = the heart of the Milky Way · colour = star colour · glowing tiles = swept so far (brighter = more stars) · rings = tiles being swept now</div>
+      <canvas id="sky" width="1000" height="520"></canvas>
+      <div class="legend" id="shell-legend" style="margin-bottom:-2px"></div>
+      <div class="legend"><span><span class="dot" style="background:#ffd166"></span>flagged candidate</span><span><span class="dot" style="background:#9fb4ff"></span>hot star</span><span><span class="dot" style="background:#ff9a6b"></span>cool star</span><span>faint = distance not yet confirmed</span></div>
+    </div>
+    <div class="panel">
+      <div class="t">The family portrait of stars</div>
+      <div class="n">Hertzsprung–Russell diagram of confirmed stars · colour vs true brightness · dust not corrected</div>
+      <canvas id="hr" width="640" height="520"></canvas>
+    </div>
+  </div>
+
+  <div class="grid" style="grid-template-columns:2fr 3fr">
+    <div class="panel">
+      <div class="t">Where we are in the Milky Way</div>
+      <div class="n" id="gal-note">—</div>
+      <canvas id="galaxy" width="640" height="400"></canvas>
+    </div>
+    <div class="panel">
+      <div class="t">What the gold flags mean</div>
+      <div class="n">Candidates worth a closer look, each with how to confirm it</div>
+      <div class="card" style="box-shadow:none;border:0;background:transparent"><table><thead><tr><th>Flag</th><th class="num">Stars</th><th>Meaning and how to confirm</th></tr></thead><tbody id="flags"></tbody></table></div>
+    </div>
+  </div>
+
+  <h2>Latest swept tiles</h2>
+  <div class="card"><table><thead><tr><th>Time</th><th class="num">Tile</th><th class="num">l</th><th class="num">b</th><th class="num">Stars</th><th class="num">Confirmed</th><th class="num">Flagged</th><th class="num">Seconds</th></tr></thead><tbody id="rows"></tbody></table></div>
+
+  <h2>Check our work</h2>
+  <div class="check">
+    <div class="card"><h3>Independent spot-checks</h3>
+      <div id="chk-sum" style="margin:4px 0 8px">Every 10 minutes AEGIS re-asks ESA how many stars are in a random finished tile and compares with what it saved.</div>
+      <table style="min-width:0"><thead><tr><th>Time</th><th class="num">Tile</th><th class="num">AEGIS</th><th class="num">ESA</th><th>Result</th></tr></thead><tbody id="chk-rows"><tr><td colspan="5" style="color:var(--muted)">first check runs a few minutes after start</td></tr></tbody></table></div>
+    <div class="card"><h3>Look up any star yourself</h3>
+      <div style="color:var(--muted);font-size:13px;margin-bottom:6px">Recently confirmed stars. Each link opens the official Gaia DR3 record at the Strasbourg astronomical data centre (VizieR) or SIMBAD.</div>
+      <table style="min-width:0"><thead><tr><th>Gaia DR3 star</th><th class="num">Distance</th><th>Check</th></tr></thead><tbody id="verify-rows"></tbody></table></div>
+    <div class="card"><h3>The exact question AEGIS asks ESA</h3>
+      <code class="q" id="query">—</code>
+      <div style="color:var(--muted);font-size:13px;margin-top:6px">Anyone can paste this into the <a href="https://gea.esac.esa.int/archive/">Gaia archive</a> (Search → Advanced/ADQL) with a tile's ID range and get the same stars.</div></div>
+    <div class="card"><h3>Download the raw data</h3>
+      <div style="color:var(--muted);font-size:13px;margin-bottom:6px">Each finished tile is saved as a small compressed table (gzip CSV), exactly as received and checked.</div>
+      <div id="tile-links">—</div>
+      <div style="font-size:13px;margin-top:8px">Distances: <a href="https://arxiv.org/abs/2012.05220">Bailer-Jones et al. 2021</a> · Data: <a href="https://arxiv.org/abs/2208.00211">Gaia DR3</a> · Code and fits: GitHub link below</div></div>
+  </div>
+
+  <div class="card" style="margin-top:14px;padding:14px 16px" id="guard">
+    <h3 style="margin:0 0 4px">Guardrails: automatic checks on our math</h3>
+    <div style="color:var(--muted);font-size:13px;margin-bottom:8px">Every few minutes AEGIS re-checks its own numbers. Green means the check passed, red means something needs fixing, grey means waiting for data. Nothing is ever hidden.</div>
+    <div id="guard-sum" style="margin-bottom:6px">—</div>
+    <table style="min-width:0"><thead><tr><th>Check</th><th>In plain words</th><th>Details</th></tr></thead><tbody id="guard-rows"></tbody></table>
+  </div>
+
+  <h2>Scanner log</h2>
+  <pre id="log">waiting…</pre>
+
+  <section id="ours">
+    <div class="kicker">Our theories · by Danny Lee Eldridge</div>
+    <h2>Two tiers, three ideas, one set of rules</h2>
+    <p class="lead">AEGIS keeps two kinds of ideas apart. <b>Tier 1, physics:</b> a twist in spacetime that briefly sped up the young universe (The Twist), the same idea with one setting fewer (The Locked Twist), and the sharper version only a torsion origin could produce (The Fingerprint). <b>Tier 2, framework:</b> the Sigil Model, which says order appears only where a real force acts long enough to lock it in (The Open Eye). Each sigil is drawn from its theory's own equations, and every claim faces the same rules: written down first, compared with "nothing special", charged for every extra setting, checked on independent data, and reported whichever way it falls.</p>
+    <div class="sig-grid">
+      <div class="card sig"><img src="/sigils/torsion.svg" alt="The Twist sigil">
+        <div class="fam">Tier 1 · Physics · theory 1</div><h3>The Twist: torsion-born early dark energy</h3>
+        <div class="m notranslate" translate="no">φ = √(3/2) M<sub>Pl</sub> arsinh(1/γ) ,  V = Λ⁴[1 − cos((φ − φ₀)/F)]³</div>
+        <p>Spacetime can twist as well as curve. The Immirzi number γ of loop quantum gravity becomes a field that gave the young universe a brief push, then faded. In the sharper version it settles at γ₀ ≈ 0.2375, a value we set on purpose from black-hole physics, to test whether the data agree.</p>
+        <dl><dt>Fields</dt><dd>Einstein–Cartan gravity, loop quantum gravity, cosmology (CMB, galaxy clustering, supernovae)</dd>
+          <dt>In the sigil</dt><dd>The double helix is the twist; the gold three-lobed curve is the n = 3 potential; the violet spiral is the field fading; the white point is γ₀.</dd>
+          <dt>Predicts</dt><dd>A brief extra push before the CMB formed, H₀ near 70, and no rotation of the CMB's polarisation.</dd>
+          <dt>Status</dt><dd id="ours-t1">Locked Twist: passed its blind ACT DR6 test (Δχ² −7.23, ΔAIC −3.23) and the fair Planck test (Δχ² −4.70), robust to three supernova sets. Overall verdict a tie, because the extra clumping (S8) is too high for DES Y3 + KiDS-1000 though fine for KiDS-Legacy (29 October 2026). The torsion-only width still fails.</dd></dl></div>
+      <div class="card sig"><img src="/sigils/fingerprint.svg" alt="The Fingerprint sigil">
+        <div class="fam">Tier 1 · Physics · theory 1, sharpened</div><h3>The Fingerprint: periodic in the Immirzi number</h3>
+        <div class="m notranslate" translate="no">V = Λ⁴[1 − cos(g(φ)/F)]³ ,  g ∝ sinh(φ/√(3/2) M<sub>Pl</sub> + x₀)</div>
+        <p>If the potential repeats in γ itself rather than in the field, its shape becomes lopsided in a way generic early dark energy is not. That lopsidedness would point to a torsion origin and nothing else.</p>
+        <dl><dt>Fields</dt><dd>Quantum gravity (Holst and Nieh–Yan terms), CMB precision physics</dd>
+          <dt>In the sigil</dt><dd>Seven rainbow bands trace the lopsided potential; the dotted ghost is the ordinary, symmetric version it must be told apart from.</dd>
+          <dt>Predicts</dt><dd>A small, lopsided change in the CMB pattern that ordinary early dark energy cannot copy, from a field resting at γ₀ = 0.2375.</dd>
+          <dt>Status</dt><dd>Built into our CMB code and checked; its pass-or-fail rule was written down in advance, and the fit is waiting its turn. Open question: what sets the period.</dd></dl></div>
+      <div class="card sig"><img src="/sigils/sigilmodel.svg" alt="The Open Eye sigil">
+        <div class="fam">Tier 2 · Framework · theory 2</div><h3>The Open Eye: the Sigil Model</h3>
+        <div class="m notranslate" translate="no">F = Gm₁m₂/r² · N = 2n² · pω₁ − qω₂ ≈ 0 · a ≈ 2GMR/d³ · P = |ψ|²</div>
+        <p>Structure unfolds from a centre in nested layers; a pull toward a centre shapes systems at many scales; coherence appears where cycles lock into simple ratios; tides are one mechanism that makes the locks (in planet systems, drifting while they formed matters more); and allowed possibilities become odds.</p>
+        <dl><dt>Fields</dt><dd>Orbital mechanics and resonance, atomic structure, tidal physics, probability</dd>
+          <dt>In the sigil</dt><dd>Rainbow rings are the layers; the three circles are the 2:1, 3:2 and 4:3 locks; the pentagram is Venus's real eight-year path; the eye at the centre is the observer.</dd>
+          <dt>Predicts</dt><dd>Wherever we find lasting order, we should be able to name the force that made it. Wherever we can't, we should expect only chance.</dd>
+          <dt>Status</dt><dd>Planet pairs around 1,067 other stars sit just outside simple rhythms (2:1, 3:2) about twice as often as chance (p &lt; 0.0001). The strongest tides did not make more locks, so the main mechanism is planets drifting together while forming.</dd></dl></div>
+    </div>
+    <div class="card" style="margin-top:14px;padding:14px 16px"><h3 style="margin:0 0 8px;font-size:15px">Every version we test, side by side</h3>
+      <table style="min-width:0"><thead><tr><th>Version</th><th>What changes</th><th>Result so far</th></tr></thead><tbody>
+        <tr><td class="wrap"><b>Standard model (ΛCDM)</b></td><td class="wrap">Nothing: the reference everything is measured against</td><td class="wrap">H₀ = 67.98</td></tr>
+        <tr><td class="wrap"><b>The Twist, F free</b></td><td class="wrap">Field strength, timing and start point all fitted</td><td class="wrap">H₀ = 69.65, Δχ² = −3.8, ΔAIC = +2.2; field share ≈ 0.048 (converged, same engine)</td></tr>
+        <tr><td class="wrap"><b>The Locked Twist</b></td><td class="wrap">The field wakes when matter outweighs light (no "when" setting): 2 settings instead of 3</td><td class="wrap"><b>Passed the rule written first</b> (Δχ² &lt; −4): Δχ² = −4.70, ΔAIC = −0.70 against an equally polished standard model. Not blind on Planck (chosen after the free fit). <a href="/locked">Why it matters</a></td></tr>
+        <tr><td class="wrap"><b>The Locked Twist, F fixed by theory</b></td><td class="wrap">Also F = 1.2247 M<sub>Pl</sub>, the pure-torsion width: 1 setting</td><td class="wrap"><b>Failed:</b> Δχ² = +13.8, worse than the standard model. The width needs more than the simple torsion formula</td></tr>
+        <tr><td class="wrap"><b>Whole-number width</b></td><td class="wrap">F = 1.2247 ÷ N</td><td class="wrap">Free width on new ACT data: N = 8.0, not the predicted 9 (miss). Width fixed at ÷ 9, one setting: Δχ² = −6.14, ΔAIC = −4.14 on blind ACT data (passed); −4.46 on Planck</td></tr>
+        <tr><td class="wrap"><b>The Fingerprint</b></td><td class="wrap">Potential periodic in 1/γ, resting at γ₀ = 0.2375</td><td class="wrap">Rule written down; fit not yet run</td></tr>
+        <tr><td class="wrap"><b>The Twist on Planck PR4</b></td><td class="wrap">Same theory, newer Planck data</td><td class="wrap">H₀ = 70.29 vs 67.63, but no better fit to the data itself (Δχ² = +0.1). A cross-check by Copilot caught that our earlier "−3.4" came only from foreground settings; withdrawn</td></tr>
+        <tr><td class="wrap"><b>The Locked Twist on ACT DR6 (blind)</b></td><td class="wrap">Same rule, unchanged, on newer CMB data (Planck cut + ACT DR6 + lensing)</td><td class="wrap"><b>Passed:</b> Δχ² = −7.23, ΔAIC = −3.23 (≈2.2σ). Overall verdict a tie because of weak lensing (S8)</td></tr>
+      </tbody></table></div>
+    <p style="margin:12px 0 0"><a class="live-link" style="display:inline-block" href="/locked">The Locked Twist, explained →</a> · <a href="/method">The AEGIS Method: every claim and its fate →</a></p>
+    <div class="proof" id="sig-proof">Proof of authorship: each sigil file and its SHA-256 fingerprint are published in the AEGIS repository with a dated history.</div>
+  </section>
+
+  <section id="theory">
+    <div class="kicker">The theory behind AEGIS</div>
+    <h2 id="th-title">Torsion-Born Early Dark Energy</h2>
+    <div class="by" id="th-by">by Danny Lee Eldridge</div>
+    <p id="th-summary"></p>
+
+    <div class="eqs">
+      <div class="eq"><div class="lbl">The action</div>
+        <div class="m notranslate" translate="no">S = ∫ d⁴x √−g [ R ⁄ 16πG − ½ (∂φ)² − V(φ) ] + S<sub>matter</sub></div>
+        <div class="why">Gravity plus one new field φ: the Barbero–Immirzi field of Einstein–Cartan–Holst gravity, made dynamical (Taveras &amp; Yunes 2008).</div></div>
+      <div class="eq"><div class="lbl">The potential</div>
+        <div class="m notranslate" translate="no">V(φ) = Λ⁴ [ 1 − cos((φ − φ₀) ⁄ F) ]ⁿ ,   n = 3</div>
+        <div class="why">Flat near the top, so the field waits; then it rolls and oscillates. Λ sets its energy, F its range.</div></div>
+      <div class="eq"><div class="lbl">How the field moves</div>
+        <div class="m notranslate" translate="no">φ̈ + 3H φ̇ + dV ⁄ dφ = 0</div>
+        <div class="why">Expansion (3H) acts like friction: frozen while H is large, released when H drops near z ≈ 3,500.</div></div>
+      <div class="eq"><div class="lbl">How it changes expansion</div>
+        <div class="m notranslate" translate="no">H² = (8πG ⁄ 3) ( ρ<sub>m</sub> + ρ<sub>r</sub> + ρ<sub>Λ</sub> + ρ<sub>φ</sub> ) ,   ρ<sub>φ</sub> = ½ φ̇² + V(φ)</div>
+        <div class="why">A brief boost to H before the CMB forms shrinks the sound horizon, which raises the inferred H₀.</div></div>
+      <div class="eq"><div class="lbl">How fast it fades</div>
+        <div class="m notranslate" translate="no">⟨w⟩ = (n − 1) ⁄ (n + 1) = ½ ,   ρ<sub>φ</sub> ∝ a<sup>−4.5</sup></div>
+        <div class="why">Once oscillating it thins out faster than radiation, so it leaves no trace in today's universe.</div></div>
+      <div class="eq"><div class="lbl">What the data measures</div>
+        <div class="m notranslate" translate="no">f<sub>EDE</sub> = ρ<sub>φ</sub> ⁄ ρ<sub>total</sub> at z<sub>c</sub></div>
+        <div class="why">Best fit: f<sub>EDE</sub> ≈ 0.048 (about 4.8% of the universe's energy) at z<sub>c</sub> ≈ 3,553 (converged, same engine).</div></div>
+    </div>
+
+    <div class="results">
+      <div>
+        <div class="lbl">How fast is the universe expanding? H₀ in km/s/Mpc</div>
+        <canvas id="h0" width="620" height="230"></canvas>
+      </div>
+      <div>
+        <div class="card" style="box-shadow:none"><table style="min-width:0"><thead><tr><th>Data</th><th class="num">Δχ²</th><th class="num">ΔAIC</th></tr></thead>
+          <tbody><tr><td class="wrap">Planck 2018 + DESI DR2 + Pantheon+</td><td class="num">−3.8</td><td class="num">+2.2</td></tr>
+          <tr><td class="wrap">… the Locked Twist (2 settings)</td><td class="num">−4.0</td><td class="num">0.0</td></tr>
+          <tr><td class="wrap">… plus SH0ES</td><td class="num">−25.4</td><td class="num">−19.4</td></tr></tbody></table></div>
+        <div class="verdict">Honest status: allowed by the data and eases the Hubble tension. Not a detection: with three settings it does not beat the standard model once the extra settings are charged (ΔAIC +2.2); with the switch-on locked to matter–radiation equality it is a tie (ΔAIC ≈ 0, converged). The newer Planck PR4 data show no improvement in the fit itself, and the deciding Planck + ACT test has not been run yet.</div>
+        <div style="font-size:13px;color:var(--muted)" id="th-next"></div>
+      </div>
+    </div>
+
+
+    <div class="eq" style="margin-top:6px;border-color:rgba(255,209,102,0.35)" id="fp-box">
+      <div class="lbl" style="color:var(--gold)">A fingerprint only torsion has <span id="fp-status" style="color:var(--muted)"></span></div>
+      <div class="m notranslate" translate="no" id="fp-eq"></div>
+      <div class="why" id="fp-text" style="font-size:14px;color:#d7dcf0"></div>
+    </div>
+
+    <h3 style="margin:22px 0 6px;font-size:15px">Research threads</h3>
+    <div class="card" style="box-shadow:none"><table style="min-width:0"><thead><tr><th>Thread</th><th>Question</th><th>Status</th></tr></thead><tbody id="threads"></tbody></table></div>
+    <div class="repo" id="repo"></div>
+
+    <h3 style="margin:22px 0 4px;font-size:15px">Check our work: sources</h3>
+    <ul class="srcs">
+      <li>Star data: <a href="https://gea.esac.esa.int/archive/">ESA Gaia DR3</a>, <a href="https://arxiv.org/abs/2208.00211">arXiv:2208.00211</a></li>
+      <li>Distances: Bailer-Jones et al. 2021, <a href="https://arxiv.org/abs/2012.05220">arXiv:2012.05220</a></li>
+      <li>CMB: Planck 2018, <a href="https://arxiv.org/abs/1807.06209">arXiv:1807.06209</a></li>
+      <li>CMB: Planck PR4 CamSpec, <a href="https://arxiv.org/abs/2205.10869">arXiv:2205.10869</a></li>
+      <li>CMB: ACT DR6, <a href="https://arxiv.org/abs/2503.14452">arXiv:2503.14452</a></li>
+      <li>BAO: DESI DR2, <a href="https://arxiv.org/abs/2503.14738">arXiv:2503.14738</a></li>
+      <li>Supernovae: Pantheon+, <a href="https://arxiv.org/abs/2202.04077">arXiv:2202.04077</a></li>
+      <li>Local H₀: SH0ES, <a href="https://arxiv.org/abs/2112.04510">arXiv:2112.04510</a></li>
+      <li>Barbero–Immirzi field: Taveras &amp; Yunes 2008, <a href="https://arxiv.org/abs/0807.2652">arXiv:0807.2652</a></li>
+      <li>Early dark energy: Poulin et al. 2019, <a href="https://arxiv.org/abs/1811.04083">arXiv:1811.04083</a></li>
+      <li>EDE after ACT DR6 + DESI DR2: Poulin et al. 2025, <a href="https://arxiv.org/abs/2505.08051">arXiv:2505.08051</a></li>
+      <li>Tools: AxiCLASS <a href="https://arxiv.org/abs/1908.06995">arXiv:1908.06995</a> · Cobaya <a href="https://arxiv.org/abs/2005.05290">arXiv:2005.05290</a></li>
+    </ul>
+  </section>
+
+  <div class="claims">
+    <div class="card"><h3 style="color:var(--good)">What we claim</h3><ul>
+      <li>The torsion field is a consistent theory: its maths was checked by computer (19 of 19 identities).</li>
+      <li>It fits Planck, DESI and Pantheon+ data slightly better than the standard model and moves H₀ from 68 to about 70.5.</li>
+      <li>It predicts no rotation of the CMB's polarisation, which future telescopes can test.</li>
+      <li>Every star count on this page matches ESA's own archive.</li></ul></div>
+    <div class="card"><h3 style="color:var(--bad)">What we do not claim</h3><ul>
+      <li>That the Hubble tension is solved: the improvement is a near tie once extra settings are charged, not a detection.</li>
+      <li>That gold flags are discoveries: they are candidates worth a closer look.</li>
+      <li>That the universe has a centre: that is an open question we are building tools to test.</li>
+      <li>That this proves or disproves any belief: science measures, people interpret.</li></ul></div>
+  </div>
+
+  <details class="gloss"><summary>Words used on this page, in plain English</summary><dl class="g">
+    <dt>Gaia</dt><dd>A European space telescope that measured the positions, motions and distances of about 1.8 billion stars.</dd>
+    <dt>Parallax</dt><dd>The tiny shift of a star's position as Earth goes around the Sun. Bigger shift, closer star.</dd>
+    <dt>Light-year</dt><dd>How far light travels in a year, about 9.5 trillion km. One parsec is 3.26 light-years.</dd>
+    <dt>Galactic Centre</dt><dd>The heart of the Milky Way, home to a black hole four million times the Sun's mass, 26,700 light-years away.</dd>
+    <dt>Galactic poles</dt><dd>The points straight "above" and "below" the flat disk of our galaxy.</dd>
+    <dt>H₀ (Hubble constant)</dt><dd>How fast the universe is expanding today, in km per second per megaparsec.</dd>
+    <dt>Hubble tension</dt><dd>Early-universe measurements give H₀ ≈ 67–68; some nearby measurements give 73. Nobody knows why yet.</dd>
+    <dt>CMB</dt><dd>The cosmic microwave background: light left over from 380,000 years after the Big Bang.</dd>
+    <dt>Torsion</dt><dd>A twisting of spacetime, allowed in Einstein–Cartan gravity alongside ordinary curving.</dd>
+    <dt>Early dark energy</dt><dd>A brief burst of extra energy before the CMB formed, then fading away; one proposed fix for the Hubble tension.</dd>
+    <dt>σ (sigma)</dt><dd>How surprising a result is. 2σ happens by chance about 1 in 20 times; scientists want 5σ (about 1 in 3.5 million) to claim a discovery.</dd>
+    <dt>Δχ² and ΔAIC</dt><dd>Fit scores. Negative Δχ² means a better fit; ΔAIC also charges 2 points for each extra adjustable setting, so it is the fairer score.</dd>
+    <dt>RUWE</dt><dd>How well a single-star model fits Gaia's measurements. Above 1.4 often means a hidden companion star.</dd>
+  </dl></details>
+
+  <section id="gallery">
+    <div class="kicker">The sigils · drawn from real math</div>
+    <h2 style="margin:4px 0 6px">Every sigil, and what it shows</h2>
+    <p style="color:#cfd5ee;max-width:900px;margin:0">Each one is computed, not drawn by hand: the theories from their equations, the planets from their real orbits. Colour runs through the rainbow as time passes. The planet orbits are treated as circles, so the rhythms are exact and the shapes are close.</p>
+    <div class="gal"><figure class="gal-item"><img src="/sigils/torsion.svg" alt="The Twist sigil" loading="lazy"><figcaption><b>The Twist</b><span>Tier 1. The double helix is spacetime's twist; the gold three-lobed curve is the field's energy hill.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> A picture of the Twist's own equations.</p><p><b>How we made it:</b> We plotted the field's energy formula, V = Λ⁴[1 − cos((φ − φ₀)/F)]³, as the gold three-lobed curve (three lobes because of the power 3). The pink-and-blue double helix wraps a ring to show spacetime twisting, and the violet spiral shrinks the way the field's energy fades as the universe grows. The white dot marks where the field comes to rest, γ₀ = 0.2375.</p><p><b>Data:</b> The equations themselves; the theory is tested against <a href="https://pla.esac.esa.int/">Planck</a>, <a href="https://act.princeton.edu/">ACT</a>, <a href="https://data.desi.lbl.gov/">DESI</a> and <a href="https://github.com/PantheonPlusSH0ES/DataRelease">Pantheon+</a> data.</p><p><b>The pattern, in plain words:</b> The shape is the theory: a hill of energy that is high, then rolls down and settles.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/fingerprint.svg" alt="The Fingerprint sigil" loading="lazy"><figcaption><b>The Fingerprint</b><span>Tier 1. The same energy hill measured along a stretched ruler: the lopsided shape only a torsion origin gives.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> The Twist's energy hill, measured along a stretched ruler.</p><p><b>How we made it:</b> Same formula as the Twist, but the field is first passed through a sinh curve (a curve that grows faster and faster). That bunches the lobes up on one side. The faint dotted shape behind it is the ordinary, symmetric version, so you can see the difference.</p><p><b>Data:</b> The equations; the fit using the same CMB data hasn't run yet.</p><p><b>The pattern, in plain words:</b> Lopsided means torsion: if real data ever show this lean, it points to our origin and no other.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/locked.svg" alt="The Locked Twist sigil" loading="lazy"><figcaption><b>The Locked Twist</b><span>Tier 1. One turn = the first 17 million years. Light (warm) and matter (cool) cross once, at the LOCK; the field (gold) opens right there.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> the universe's first 17 million years, wrapped once around a circle, starting at the top and running clockwise.</p><p><b>How we made it:</b> at each moment we computed what share of all energy was light, matter and the twisting field, using our best-fit amounts (ordinary matter 0.0226, dark matter 0.126, field 7.8% at its peak). Distance from the centre shows each share. Light and matter cross once, about 47,000 years after the Big Bang: that is the white LOCK. The gold petal is the field's share, drawn 5 times larger so you can see it. The three faint lobes are the power 3 in its energy hill.</p><p><b>Data:</b> our Planck 2018 + DESI + Pantheon+ fit; the field uses the standard fluid shortcut for this kind of field (Poulin et al. 2018). Full chart on the <a href="/locked">theories page</a>.</p><p><b>The pattern, in plain words:</b> three curves meet at one moment. The field wakes when matter overtakes light, so the timing comes from measured amounts of light and matter instead of a tuned setting.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/bell.svg" alt="The Cosmic Bell sigil" loading="lazy"><figcaption><b>The Cosmic Bell</b><span>Tier 1. The oldest light's sound waves wrapped round a circle. Seven gold rays, seven notes: the standard model (violet) and the Twist (gold) ring the same ones.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> the "sound" of the oldest light. Going clockwise from the top is pitch, from the biggest patches of sky to the smallest. Distance from the centre is how loud each pitch is.</p><p><b>How we made it:</b> we ran our two best fits (standard model and Twist) through AxiCLASS, the same code used for the fits, and drew both spectra on top of each other. The seven peaks are at pitch 220, 536, 813, 1127, 1421, 1727 and 2011 in both.</p><p><b>Data:</b> our Planck 2018 + DESI + Pantheon+ best fits. Full explanation on <a href="/locked">the Locked Twist page</a>.</p><p><b>The pattern, in plain words:</b> every sound wave in the young universe started at the same moment, so they ring in step: a phase lock across the whole sky. The Twist keeps every note in place, but shrinks both the sound ruler and the distance to the light by about 2.9%. That's how it raises H₀ to 70.6.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/metatron.svg" alt="Metatron's Cube sigil" loading="lazy"><figcaption><b>Metatron's Cube (lens)</b><span>13 circles, 78 lines: a cube, a tetrahedron and the hexagram.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> one circle in the middle, six around it, six further out, and every centre joined to every other.</p><p><b>How we made it:</b> exact geometry. Circles of radius r at distances 0, 2r and 4r on six directions; all 78 lines drawn; the hexagram (gold), cube (cyan) and tetrahedron (pink) picked out.</p><p><b>Data:</b> none: the figure has no adjustable settings. Its cosmic cousin, the dodecahedral universe, was tested by <a href="https://www.aanda.org/10.1051/0004-6361/201525829">Planck</a> and ruled out; our own curvature test is running.</p><p><b>The pattern, in plain words:</b> six circles fit exactly around one: the tightest packing there is, the same way atoms stack in metals.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/stack.svg" alt="The Stacked Spot sigil" loading="lazy"><figcaption><b>The Stacked Spot</b><span>Tier 1. Thousands of hot spots of the oldest light, stacked: spokes, then rings, switching at 0.30°, 0.84° and 2.17°.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> the predicted polarisation around an average hot spot. Cyan lines point out (spokes), gold lines go around (rings); longer means stronger.</p><p><b>How we made it:</b> from our best-fit temperature–polarisation spectrum (AxiCLASS), using the standard stacking formula (Komatsu et al. 2011) with a Planck-like 5-arcminute beam.</p><p><b>Data:</b> our Planck 2018 + DESI + Pantheon+ fits. The pattern itself was seen by WMAP and Planck.</p><p><b>The pattern, in plain words:</b> matter falling into hot spots makes the light line up in rings and spokes. The Twist and the standard model differ by just 0.6%, so stacking can't tell them apart. See <a href="/locked">the Locked Twist page</a>.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/sigilmodel.svg" alt="The Open Eye sigil" loading="lazy"><figcaption><b>The Open Eye</b><span>Tier 2. Danny's original sigil: layers, the 2:1, 3:2 and 4:3 locks, and Venus's eight-year pentagram.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Danny's original sigil, the Sigil Model.</p><p><b>How we made it:</b> Hand-designed by Danny from real facts: rainbow rings for layers, three small circles for the 2:1, 3:2 and 4:3 locks found in real orbits, and a pentagram on Venus's true eight-year path in our sky.</p><p><b>Data:</b> Tested on 1,153 planet pairs from the <a href="https://exoplanetarchive.ipac.caltech.edu/">NASA Exoplanet Archive</a>.</p><p><b>The pattern, in plain words:</b> Things fall into step only where a real force acts. Planets around other stars sit near simple rhythms about twice as often as chance.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/planet_mercury.svg" alt="Mercury sigil" loading="lazy"><figcaption><b>Mercury</b><span>Its path as seen from Earth over 7 years: 22 backward loops, one for each time it seems to reverse.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Mercury's real path across our sky for 7 years.</p><p><b>How we made it:</b> Using each planet's orbital period and distance (from NASA JPL), we computed where Mercury sits relative to Earth every few hours, then drew the path. Colour runs through the rainbow as time passes.</p><p><b>Data:</b> <a href="https://ssd.jpl.nasa.gov/planets/approx_pos.html">NASA JPL planetary orbits</a> (orbits treated as circles).</p><p><b>The pattern, in plain words:</b> Each little loop is a time Mercury seems to stop and go backwards, which is Earth and Mercury passing each other. 22 times in 7 years.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/planet_venus.svg" alt="Venus sigil" loading="lazy"><figcaption><b>Venus</b><span>8 years, 5 loops: the real pentagram Venus traces in our sky.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Venus's path across our sky for 8 years.</p><p><b>How we made it:</b> Same method as Mercury.</p><p><b>Data:</b> <a href="https://ssd.jpl.nasa.gov/planets/approx_pos.html">NASA JPL planetary orbits</a></p><p><b>The pattern, in plain words:</b> Venus and Earth fall into a 13:8 rhythm, so Venus draws a five-pointed rose that repeats every 8 years. People have watched this since ancient Babylon.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/planet_earth.svg" alt="Earth sigil" loading="lazy"><figcaption><b>Earth</b><span>The Moon's 19-year spiral: 235 new moons, after which they fall on the same dates again.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> The Moon's 19-year rhythm.</p><p><b>How we made it:</b> Each new moon is placed at its date in the year (the angle) and its year number (the distance from the centre). We used the average time between new moons, 29.53 days.</p><p><b>Data:</b> The average lunar month and the length of the year.</p><p><b>The pattern, in plain words:</b> After 19 years (235 new moons), new moons fall on almost the same calendar dates again: the Metonic cycle, used by Greek, Babylonian, Jewish and Chinese calendars.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/planet_mars.svg" alt="Mars sigil" loading="lazy"><figcaption><b>Mars</b><span>15 years, 7 loops: Mars's backward seasons as seen from Earth.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Mars's path across our sky for 15 years.</p><p><b>How we made it:</b> Same method as Mercury.</p><p><b>Data:</b> <a href="https://ssd.jpl.nasa.gov/planets/approx_pos.html">NASA JPL planetary orbits</a></p><p><b>The pattern, in plain words:</b> Mars loops backward about every 26 months, 7 times in 15 years, which is when Earth overtakes it.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/planet_jupiter.svg" alt="Jupiter sigil" loading="lazy"><figcaption><b>Jupiter</b><span>12 years, 11 loops: one for each year Earth overtakes it.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Jupiter's path across our sky for 12 years.</p><p><b>How we made it:</b> Same method as Mercury.</p><p><b>Data:</b> <a href="https://ssd.jpl.nasa.gov/planets/approx_pos.html">NASA JPL planetary orbits</a></p><p><b>The pattern, in plain words:</b> One loop every year as Earth laps Jupiter; after about 12 years Jupiter is back where it started.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/planet_saturn.svg" alt="Saturn sigil" loading="lazy"><figcaption><b>Saturn</b><span>29.5 years, 28 loops.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Saturn's path across our sky for 29.5 years.</p><p><b>How we made it:</b> Same method as Mercury.</p><p><b>Data:</b> <a href="https://ssd.jpl.nasa.gov/planets/approx_pos.html">NASA JPL planetary orbits</a></p><p><b>The pattern, in plain words:</b> The farther the planet, the more loops: Earth laps Saturn 28 times in one Saturn year.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/planet_uranus.svg" alt="Uranus sigil" loading="lazy"><figcaption><b>Uranus</b><span>84 years, 83 loops.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Uranus's path across our sky for 84 years.</p><p><b>How we made it:</b> Same method as Mercury.</p><p><b>Data:</b> <a href="https://ssd.jpl.nasa.gov/planets/approx_pos.html">NASA JPL planetary orbits</a></p><p><b>The pattern, in plain words:</b> 83 loops in 84 years: one each time Earth laps it.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/planet_neptune.svg" alt="Neptune sigil" loading="lazy"><figcaption><b>Neptune</b><span>165 years, 164 loops.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Neptune's path across our sky for 165 years.</p><p><b>How we made it:</b> Same method as Mercury.</p><p><b>Data:</b> <a href="https://ssd.jpl.nasa.gov/planets/approx_pos.html">NASA JPL planetary orbits</a></p><p><b>The pattern, in plain words:</b> 164 loops: from far away, almost a perfect circle of small turns.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/planet_belt.svg" alt="The Asteroid Belt sigil" loading="lazy"><figcaption><b>The Asteroid Belt</b><span>Gaps carved where an asteroid would lock in step with Jupiter (4:1, 3:1, 5:2, 7:3, 2:1). Gap positions are exact; the dots illustrate.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> The asteroid belt, with the lanes Jupiter keeps clear.</p><p><b>How we made it:</b> We computed exactly where an asteroid would go round the Sun 4, 3, 5/2, 7/3 or 2 times for each Jupiter orbit (a = 5.2 AU × (q/p)^(2/3)). Jupiter's repeated tugs clear those lanes. The dots are scattered for illustration; the gap positions are exact.</p><p><b>Data:</b> Kepler's third law and Jupiter's orbit. Next: plot the real catalogue of over a million asteroids.</p><p><b>The pattern, in plain words:</b> The Kirkwood gaps, found in 1866: real gaps carved by a lock with Jupiter.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/sky_spaceweather.svg" alt="Space Weather sigil" loading="lazy"><figcaption><b>Space Weather</b><span>Sunspots against Earth's magnetic storms, 1932–2026. Each solar cycle draws one loop; storms peak about 16 months after sunspots.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> How the Sun's spots and Earth's magnetic storms move together, 1932–2026.</p><p><b>How we made it:</b> Each month we took the number of sunspots (left to right) and the strength of Earth's magnetic storms (bottom to top), smoothed over 13 months, and joined the dots in time order.</p><p><b>Data:</b> <a href="https://www.sidc.be/SILSO/">SILSO sunspot record</a> (<a href="https://services.swpc.noaa.gov/json/solar-cycle/observed-solar-cycle-indices.json">NOAA copy</a>); <a href="https://kp.gfz.de/">GFZ Potsdam Kp/Ap index</a>.</p><p><b>The pattern, in plain words:</b> Every 11-year cycle draws one loop. The loops open up because Earth's storms peak about 16 months after the sunspots do, when fast solar wind streams out as the cycle winds down.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/sky_equinox.svg" alt="The Equinox Breath sigil" loading="lazy"><figcaption><b>The Equinox Breath</b><span>Earth's magnetic storms through the year: two lobes, at the March and September equinoxes.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Earth's magnetic storms through the year.</p><p><b>How we made it:</b> We divided each month's storm level by that year's solar-cycle level (to remove the 11-year swing), averaged each calendar month over 94 years, and drew the result around a circle with January at the top.</p><p><b>Data:</b> <a href="https://kp.gfz.de/">GFZ Potsdam Kp/Ap index</a></p><p><b>The pattern, in plain words:</b> Two bulges, at the March and September equinoxes, 27% above midsummer and midwinter. This is a 13σ result and a known effect: at the equinoxes Earth's tilt lines our magnetic field up best with the Sun's.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/sky_true13.svg" alt="The True Sky sigil" loading="lazy"><figcaption><b>The True Sky</b><span>The Sun's real path through 13 constellations, sized by days spent in each. Ophiuchus in gold; Draco coiled at the pole.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> The Sun's real path through the stars.</p><p><b>How we made it:</b> We took the dates the Sun enters each constellation on the official 1930 IAU borders and made each slice as wide as the days spent there. Ophiuchus is in gold, and Draco is coiled at the centre around the pole of the planets' circle.</p><p><b>Data:</b> <a href="https://www.iau.org/public/themes/constellations/">IAU constellation borders</a></p><p><b>The pattern, in plain words:</b> The Sun passes through 13 constellations, not 12, and they aren't equal: 44 days in Virgo, 6 in Scorpius, 18 in Ophiuchus.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/lens_issflip.svg" alt="The Flip (lens) sigil" loading="lazy"><figcaption><b>The Flip (lens)</b><span>Why the wing nut on the space station keeps flipping over.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Every possible way a three-sided spinning object can turn, drawn on a ball. Each loop is one steady spin; the gold figure-eight is the spin around the middle axis.</p><p><b>How we made it:</b> We solved Euler's equations for a body whose three axes resist turning in the ratio 1 : 2 : 3, starting from many different spins, and traced each one.</p><p><b>Data:</b> Classical mechanics (Euler, 1758); seen on video by cosmonaut Vladimir Dzhanibekov in 1985.</p><p><b>The pattern, in plain words:</b> Spin around the long or short axis is calm; spin around the middle axis is on a knife edge and flips over, then back, forever. We use it as a lens: wherever three axes are coupled, look for flips.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/lens_dynamo.svg" alt="The Flipping Dynamo (lens) sigil" loading="lazy"><figcaption><b>The Flipping Dynamo (lens)</b><span>The simplest model of a spinning core that makes a magnetic field and reverses it.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Two lobes: the field pointing one way or the other. Every time the path crosses the middle, north and south swap.</p><p><b>How we made it:</b> We solved the Rikitake equations (two coupled spinning discs, settings 2 and 5) for a long time and drew the field against the spin rate.</p><p><b>Data:</b> The Rikitake dynamo (1958), a textbook model of geomagnetic reversals.</p><p><b>The pattern, in plain words:</b> A spinning, field-making system can flip itself with no outside push: 278 flips in our run. Earth's real flips are more random than this model's, so it's a picture of the idea, not a match.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/lens_mixmaster.svg" alt="The Mixmaster (lens) sigil" loading="lazy"><figcaption><b>The Mixmaster (lens)</b><span>How the very early universe may have stretched along one direction, then switched to another, again and again.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> Each white dot is one stage of the early universe; each line is a switch of the stretching direction.</p><p><b>How we made it:</b> We used the Belinsky–Khalatnikov–Lifshitz rule: a number u tracks the stretching; each step u becomes u − 1, and when u drops below 2 the axes swap and u becomes 1/(u − 1).</p><p><b>Data:</b> Einstein's equations near the Big Bang (Belinsky, Khalatnikov and Lifshitz, 1970; Misner's 'mixmaster universe', 1969).</p><p><b>The pattern, in plain words:</b> The early universe's three axes may have flipped like the wing nut. Spin and torsion change these flips, so this is an open lead for our Twist's 'why then?' gap.</p></details></figcaption></figure><figure class="gal-item"><img src="/sigils/lens_skirt.svg" alt="The Ballerina Skirt sigil" loading="lazy"><figcaption><b>The Ballerina Skirt</b><span>The sheet around the Sun where its magnetic field flips direction.</span><details class="how"><summary>How we made it</summary><p><b>What you're looking at:</b> A wavy sheet spiralling out to Saturn's distance, seen from above at a slant. The Sun is at the centre.</p><p><b>How we made it:</b> We tilted the Sun's magnetic equator by 15°, let the Sun spin once every 25.4 days, and carried the field out with a 400 km/s solar wind (the Parker spiral).</p><p><b>Data:</b> The heliospheric current sheet, measured by spacecraft since the 1960s; the Parker spiral (1958).</p><p><b>The pattern, in plain words:</b> As the Sun turns, Earth rides above and below this sheet, so the field around us flips every week or two. That is one reason storms repeat every 27 days. A real, measured flower-like layer.</p></details></figcaption></figure><figure class="gal-item" style="display:flex;flex-direction:column;justify-content:center"><figcaption><b>Comets and catastrophes (no sigil)</b><span>We looked for a repeating rhythm in when big comets and asteroids hit Earth. None passed our test, so there is no sigil.</span><details class="how" open><summary>How we made it</summary><p><b>What we tested:</b> whether impacts repeat about every 30 million years, as the Sun bobs through the Milky Way's disc and stirs up comets.</p><p><b>How:</b> we took 45 well-dated craters 5 km or wider, aged 2–260 million years (<a href="https://en.wikipedia.org/wiki/List_of_impact_structures_on_Earth">Earth Impact Database list</a>), and checked every rhythm from 20 to 45 million years against 10,000 shuffled sets of fake craters. The rules were written down first.</p><p><b>The result, in plain words:</b> the best rhythm was 27.7 million years, close to a famous 1984 claim of 26, but random craters do that well 1 time in 3 (p = 0.33). So: no pattern yet. Better-dated craters could change that.</p></details></figcaption></figure><figure class="gal-item" style="grid-column:1/-1;max-width:760px;margin:0 auto"><img src="/sigils/weave.svg" alt="The Weave: all the sigils on three rings around Danny's eye, joined by coloured threads" loading="lazy"><figcaption><b>The Weave: how they all fit together</b><span>Every sigil on one map. Inner ring: the physics. Middle ring: the measured sky. Outer ring: lenses and old geometry. Solid threads are shared physics or data; dashed threads are ideas to test.</span><details class="how" open><summary>What our theory is, and how we came to it</summary><p><b>The theory, in one breath:</b> space can twist as well as bend. A number from quantum gravity, the Immirzi number, may act like a dimmer switch. Early on it released a short burst of energy that woke when matter first outweighed light, about 47,000 years after the Big Bang. That burst shrank the universe's sound ruler by about 3%, which is why our fit gives a faster expansion today (H₀ ≈ 70.6 instead of 68). With two settings it fits the data 2.5 points better than the standard model on a fair score. A modest lead, not a discovery; newer telescope data are the real test.</p><p><b>How we came to it:</b> no hidden knowledge. Danny is a seeker with a GED and a lot of questions. He started from a hunch that twisting spacetime mattered, then did what anyone can do: read the public papers, used public data from Planck, DESI, Gaia and NASA, wrote the claims down before testing them, and kept what survived. Ideas that failed (crater rhythms, the outer planets and the sunspot cycle, the pure-torsion width, Metatron's numbers) were tested and dropped in the open. AI helped with the code and the maths, and other AI was invited to check the work.</p><p><b>How the threads were drawn:</b> a solid line means two sigils share real physics or the same data (Jupiter carves the Belt; the Cosmic Bell and the Stacked Spot are the same sound waves). A dashed line means one sigil is a lens that suggests where to look (the Mixmaster hints at why the field wakes; Metatron hints at the shape of space). Colours mark the five parts of the sigil system: Law, Layers, Lock, Tide, and Wave, with Lens in violet.</p><p><b>The pattern, in plain words:</b> it isn't one secret that explains everything. It's a handful of simple rules (a pull toward a centre, layers, rhythms falling into step, tides, waves) showing up again and again, from planets to the oldest light. Where a real force acts, order appears. Where none does, we found only chance.</p></details></figcaption></figure></div>
+    <div class="card" style="margin-top:14px;padding:14px 16px"><h3 style="margin:0 0 4px;font-size:15px">What each sigil is tied to</h3>
+      <div style="color:var(--muted);font-size:13px;margin-bottom:8px">The data behind each shape, what it might affect, where it lives in AEGIS, and where it stands. "Tidal pull" compares each planet's tide on the Sun with Earth's.</div>
+      <table style="min-width:900px"><thead><tr><th>Sigil</th><th>Geometry</th><th>Data we test it with</th><th>What it may affect</th><th>Where in AEGIS</th><th>Status</th></tr></thead><tbody><tr><td class='wrap'><b>The Twist</b></td><td class='wrap'>Double helix (twist) around a three-lobed energy hill</td><td class='wrap'>Planck 2018 and PR4, ACT DR6, SPT-3G, DESI DR2 galaxy spacing, Pantheon+ supernovae</td><td class='wrap'>How fast the universe expands (H₀); the size of the early universe's sound ruler</td><td class='wrap'>CMB fits (cmb-fit) · results in the theory section</td><td class='wrap'>Fits better, tie after penalty; P-ACT running</td></tr><tr><td class='wrap'><b>The Fingerprint</b></td><td class='wrap'>Lopsided, sinh-stretched energy hill</td><td class='wrap'>The same CMB data; next: Simons Observatory</td><td class='wrap'>A tiny lopsided change in the CMB pattern; links γ₀ = 0.2375 to black holes</td><td class='wrap'>CMB fits (torsion_shape) · pre-registered</td><td class='wrap'>Rule written; fit not yet run</td></tr><tr><td class='wrap'><b>The Locked Twist</b></td><td class='wrap'>Light and matter bands crossing once; gold petal at the crossing</td><td class='wrap'>The same CMB, galaxy-spacing and supernova data as the Twist</td><td class='wrap'>Why the field woke when it did; H₀</td><td class='wrap'>CMB fits (CMB_LOCK_ZEQ) · PREREGISTRATION_ZEQ.md</td><td class='wrap'>First result: ΔAIC −2.5 (passes; not blind)</td></tr><tr><td class='wrap'><b>The Cosmic Bell</b></td><td class='wrap'>Seven rays: the seven acoustic peaks</td><td class='wrap'>Our best fits run through AxiCLASS; Planck, ACT and SPT measure these notes</td><td class='wrap'>The sound ruler (−2.9%) and so H₀</td><td class='wrap'>cmb-fit/acoustic/notes.py</td><td class='wrap'>Computed: same notes, smaller ruler</td></tr><tr><td class='wrap'><b>Metatron's Cube (lens)</b></td><td class='wrap'>13 circles, 78 lines; cube, tetrahedron, hexagram</td><td class='wrap'>Planck topology search; our curvature fits (Ω<sub>k</sub>)</td><td class='wrap'>The shape of space</td><td class='wrap'>cmb-fit/PREREGISTRATION_OMK.md</td><td class='wrap'>Lens; dodecahedral curvature excluded (+163); space flat</td></tr><tr><td class='wrap'><b>The Open Eye</b></td><td class='wrap'>Centre, layers, 2:1 / 3:2 / 4:3 locks, Venus pentagram</td><td class='wrap'>NASA Exoplanet Archive (1,153 planet pairs); Solar System resonances</td><td class='wrap'>Where order forms: only where a force acts long enough</td><td class='wrap'>research/exoplanet_locks</td><td class='wrap'>Passed (2.1× chance); tidal version amended</td></tr><tr><td class='wrap'><b>Mercury</b></td><td class='wrap'>22 loops in 7 years</td><td class='wrap'>Its tidal pull on the Sun (0.95, Earth = 1); sunspot record 1749–2026 (NOAA / SILSO)</td><td class='wrap'>Tides on the Sun; mostly averages out because it moves so fast</td><td class='wrap'>research/planets_sun</td><td class='wrap'>Part of the solar test</td></tr><tr><td class='wrap'><b>Venus</b></td><td class='wrap'>Pentagram: 5 loops in 8 years</td><td class='wrap'>Venus–Earth–Jupiter tidal rhythm (11.07 yr) vs sunspot minima</td><td class='wrap'>Possible pacing of the 11-year sunspot cycle</td><td class='wrap'>research/planets_sun</td><td class='wrap'>Open: matches on average, not unique</td></tr><tr><td class='wrap'><b>Earth</b></td><td class='wrap'>The Moon's 19-year spiral (235 new moons)</td><td class='wrap'>Ocean tides (measured)</td><td class='wrap'>Tides and calendars; no effect found on random draws</td><td class='wrap'>research (Moon lens rules)</td><td class='wrap'>Tides established; no effect on chance</td></tr><tr><td class='wrap'><b>Mars</b></td><td class='wrap'>7 loops in 15 years</td><td class='wrap'>Its tidal pull on the Sun (0.03)</td><td class='wrap'>Too weak to matter for the Sun</td><td class='wrap'>research/planets_sun</td><td class='wrap'>No effect expected</td></tr><tr><td class='wrap'><b>Jupiter</b></td><td class='wrap'>11 loops in 12 years</td><td class='wrap'>Largest tidal pull on the Sun (2.26); asteroid orbits</td><td class='wrap'>The sunspot cycle (open); the asteroid belt's gaps (established)</td><td class='wrap'>research/planets_sun</td><td class='wrap'>Strongest planet in every test</td></tr><tr><td class='wrap'><b>Saturn · Uranus · Neptune</b></td><td class='wrap'>28, 83 and 164 loops</td><td class='wrap'>The Sun's wobble around the Solar System's centre of mass (about 20-year rhythm)</td><td class='wrap'>Tested against sunspots: no match</td><td class='wrap'>research/planets_sun</td><td class='wrap'>No match found</td></tr><tr><td class='wrap'><b>The Asteroid Belt</b></td><td class='wrap'>Gaps at 4:1, 3:1, 5:2, 7:3, 2:1 with Jupiter</td><td class='wrap'>Known gap positions (exact); next: the real asteroid catalogue (Minor Planet Center)</td><td class='wrap'>Jupiter's locks carving the belt: the Sigil 'Lock' in our own back yard</td><td class='wrap'>sigils/make_planet_sigils.py</td><td class='wrap'>Established physics; real-catalogue check next</td></tr><tr><td class='wrap'><b>Space Weather</b></td><td class='wrap'>One loop per solar cycle; loops open from a 16-month lag</td><td class='wrap'>Sunspots (SILSO/NOAA, 1749–2026); geomagnetic Ap index (GFZ Potsdam, 1932–2026); 10.7 cm solar radio flux (r = 0.97 with sunspots)</td><td class='wrap'>Storms that disturb power grids, satellites, radio and auroras</td><td class='wrap'>sigils/data_spaceweather.json</td><td class='wrap'>Measured: storms lag sunspots by 16 months (r = 0.66)</td></tr><tr><td class='wrap'><b>The Equinox Breath</b></td><td class='wrap'>Two lobes at the equinoxes</td><td class='wrap'>Ap index by month, solar cycle divided out (1932–2026)</td><td class='wrap'>Auroras and storms are 27% stronger near the equinoxes; set by Earth's tilt against the Sun's magnetic field (Russell–McPherron effect)</td><td class='wrap'>sigils/data_spaceweather.json</td><td class='wrap'>Measured: 13σ, a known effect</td></tr><tr><td class='wrap'><b>The True Sky</b></td><td class='wrap'>13 unequal arcs; a coiled pole at the centre</td><td class='wrap'>IAU constellation borders (1930); the Sun's dates in each</td><td class='wrap'>The real sky behind the 12 traditional signs; Ophiuchus, the healer, is the 13th</td><td class='wrap'>sigils/make_sky_sigils.py</td><td class='wrap'>Geometry, not a test</td></tr><tr><td class='wrap'><b>The Flip (lens)</b></td><td class='wrap'>A figure-eight knife edge on the spin sphere</td><td class='wrap'>Euler's equations (exact)</td><td class='wrap'>Wherever three axes couple, flips can appear</td><td class='wrap'>sigils/make_lens_sigils.py</td><td class='wrap'>Lens, not a result</td></tr><tr><td class='wrap'><b>The Flipping Dynamo (lens)</b></td><td class='wrap'>Two lobes, random crossings</td><td class='wrap'>Rikitake equations</td><td class='wrap'>How spinning cores reverse their fields</td><td class='wrap'>sigils/make_lens_sigils.py</td><td class='wrap'>Lens; Earth's flips are more random than this model</td></tr><tr><td class='wrap'><b>The Mixmaster (lens)</b></td><td class='wrap'>Chords between stages on a circle</td><td class='wrap'>Einstein's equations near the Big Bang (BKL rule)</td><td class='wrap'>Could set when our Twist's field switches on, if torsion changes the flips</td><td class='wrap'>sigils/make_lens_sigils.py</td><td class='wrap'>Open lead for the theory</td></tr><tr><td class='wrap'><b>The Ballerina Skirt</b></td><td class='wrap'>A wavy spiral sheet</td><td class='wrap'>Spacecraft measurements of the Sun's field; Parker spiral</td><td class='wrap'>Flips Earth's surrounding field every week or two; the 27-day storm repeat</td><td class='wrap'>sigils/make_lens_sigils.py</td><td class='wrap'>Established physics</td></tr><tr><td class='wrap'><b>No sigil: comets and catastrophes</b></td><td class='wrap'>A ~30-million-year rhythm, if the Sun's passes through the galactic disc stir up comets</td><td class='wrap'>45 dated impact craters (5 km and wider, 2–260 million years old), from the Earth Impact Database list</td><td class='wrap'>Comet impacts: floods, tsunamis, fires, extinctions (Chicxulub, 66 million years ago)</td><td class='wrap'>research/impacts</td><td class='wrap'>Tested: no pattern. Best rhythm 27.7 million years (close to the famous 26-million-year claim), but chance gives that 1 time in 3 (p = 0.33)</td></tr><tr><td class='wrap'><b>No sigil yet: the galaxy</b></td><td class='wrap'>Distance layers around the Galactic Centre</td><td class='wrap'>AEGIS galaxy sweep: Gaia DR3, checked against ESA</td><td class='wrap'>Whether the galaxy has a preferred direction beyond its known shape</td><td class='wrap'>The live sweep on this page · guardrails</td><td class='wrap'>Needs 25% of the sky and 3σ before any claim</td></tr><tr><td class='wrap'><b>The Weave</b></td><td class='wrap'>All sigils on three rings, joined by threads</td><td class='wrap'>Everything above</td><td class='wrap'>How the pieces connect: solid = shared physics or data, dashed = a lens</td><td class='wrap'>sigils/make_weave_sigil.py</td><td class='wrap'>A map, not a proof</td></tr></tbody></table></div>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:8px">Sigils © 2026 Danny Lee Eldridge. Each file's fingerprint is checked by the guardrails above.</p>
+  </section>
+
+  <footer>API: <a href="/api/status">/api/status</a> · <a href="/api/stars">/api/stars</a> · <a href="/api/catalog">/api/catalog</a> (CSV for the mapper) · <a href="/api/flags">/api/flags</a> · <a href="/api/spotlight">/api/spotlight</a> · <a href="/api/science">/api/science</a> · <a href="/api/tiles">/api/tiles</a> · <a href="/api/shells">/api/shells</a> · <a href="/api/log">/api/log</a> · status every 3 s, charts every 20 s</footer>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const num = n => Number(n || 0).toLocaleString();
+const dur = s => { s = Math.floor(s); const d = Math.floor(s/86400), h = Math.floor(s%86400/3600), m = Math.floor(s%3600/60); return d ? `${d}d ${h}h` : h ? `${h}h ${m}m` : `${m}m ${s%60}s`; };
+const isConf = c => c === true || c === 'True';
+const LY_PER_PC = 3.26156;
+const MEANING = {
+  astrometric_excess: ['Wobbly stars', "Gaia's single-star fit is poor (RUWE above 1.4), often an unseen companion tugging on it. Confirm in the Gaia DR3 non-single-star tables."],
+  high_velocity: ['Fast movers', 'Crossing the sky faster than 400 km/s: possible halo stars. Confirm with a radial velocity and an orbit fit.'],
+  distance_mismatch: ['Distance puzzles', 'Inverse parallax disagrees with the Bailer-Jones distance by more than 3× its range. Check the parallax zero-point and crowding.']
+};
+function colourOf(bprp, a = 1) { const t = Math.max(0, Math.min(1, (Number(bprp) + 0.2) / 2.8));
+  return `rgba(${Math.round(150 + 105*t)},${Math.round(185 - 45*t)},${Math.round(255 - 155*t)},${a})`; }
+function hammer(l, b) { let L = ((l + 180) % 360 + 360) % 360 - 180; L = -L * Math.PI/180; const B = b * Math.PI/180; const z = Math.sqrt(1 + Math.cos(B)*Math.cos(L/2)); return [2*Math.SQRT2*Math.cos(B)*Math.sin(L/2)/z, Math.SQRT2*Math.sin(B)/z]; }
+
+(() => { const c = $('bgstars'); c.width = innerWidth; c.height = innerHeight; const g = c.getContext('2d');
+  for (let i = 0; i < 500; i++) { g.fillStyle = `rgba(200,210,255,${Math.random()*0.45+0.08})`; g.fillRect(Math.random()*c.width, Math.random()*c.height, 1, 1); } })();
+
+let STATUS = {}, PTS = [], SCI = null; const hist = [];
+function skyXY(c, l, b) { const W = c.width, H = c.height, [x, y] = hammer(l, b); return [W/2 + x * W/2/2.95, H/2 + 6 - y * (H-40)/2/1.45]; }
+/* Galaxy-sweep tiles: each finished HEALPix tile glows by how many stars it holds, so the Milky Way's band appears as the sweep runs. */
+let TILES = { done: [], active: [], total: 12288 };
+function tileColour(n) { const t = Math.max(0, Math.min(1, Math.log10(n + 1) / 5.2));
+  const r = Math.round(40 + 215 * Math.pow(t, 0.9)), g = Math.round(55 + 180 * Math.pow(t, 1.6)), b = Math.round(150 + 60 * t);
+  return `rgba(${r},${g},${b},${0.35 + 0.5 * t})`; }
+function drawTileLayer(g, proj) {
+  for (const [l, b, n] of TILES.done) { const [X, Y] = proj(l, b), [X2, Y2] = proj(l, Math.min(89.9, b + 1.05));
+    const r = Math.max(1.6, Math.hypot(X2 - X, Y2 - Y)); g.fillStyle = tileColour(n); g.beginPath(); g.arc(X, Y, r, 0, 6.283); g.fill(); }
+}
+function drawGalacticCentre(g, proj, t) {
+  const [X, Y] = proj(0.001, 0), p = 0.5 + 0.5 * Math.sin((t || 0) / 600);
+  const glow = g.createRadialGradient(X, Y, 0, X, Y, 34 + 6 * p); glow.addColorStop(0, 'rgba(255,240,205,0.95)'); glow.addColorStop(0.18, 'rgba(255,205,130,0.55)');
+  glow.addColorStop(0.55, 'rgba(195,155,255,0.18)'); glow.addColorStop(1, 'rgba(195,155,255,0)');
+  g.fillStyle = glow; g.beginPath(); g.arc(X, Y, 34 + 6 * p, 0, 6.283); g.fill();
+  g.fillStyle = '#fff7e0'; g.beginPath(); g.arc(X, Y, 2.6, 0, 6.283); g.fill();
+  g.fillStyle = 'rgba(255,236,200,0.95)'; g.font = '600 13px Segoe UI, system-ui'; g.textAlign = 'center';
+  g.fillText('Galactic Centre · the sweep starts here', X, Y + 62); g.textAlign = 'left';
+}
+function drawActiveTiles(g, proj, t) {
+  for (const [l, b] of TILES.active) { const [X, Y] = proj(l, b);
+    for (let k = 0; k < 3; k++) { const ph = ((t || 0) / 1300 + k / 3) % 1; g.strokeStyle = `rgba(143,179,255,${0.8 * (1 - ph)})`;
+      g.lineWidth = 2; g.beginPath(); g.arc(X, Y, 5 + ph * 30, 0, 6.283); g.stroke(); } }
+  g.lineWidth = 1;
+}
+function sweepText(sc) { if (!sc || sc.mode !== 'sweep') return '';
+  const pct = 100 * (sc.tiles_done || 0) / (sc.tiles_total || 12288);
+  const eta = sc.eta_s ? (sc.eta_s > 86400 ? `${(sc.eta_s / 86400).toFixed(1)} days` : sc.eta_s > 3600 ? `${(sc.eta_s / 3600).toFixed(1)} h` : `${Math.round(sc.eta_s / 60)} min`) : 'estimating…';
+  return { pct, eta, line: `${Number(sc.tiles_done || 0).toLocaleString()} of ${Number(sc.tiles_total || 12288).toLocaleString()} tiles · ${pct.toFixed(pct < 1 ? 2 : 1)}% · about ${eta} to go` }; }
+
+function drawPoles(g, proj) {
+  for (const [b, name, dy] of [[89.99, 'North Galactic Pole', -10], [-89.99, 'South Galactic Pole', -12]]) {
+    const [X, Y] = proj(0, b); g.fillStyle = '#c39bff'; g.shadowColor = '#c39bff'; g.shadowBlur = 10;
+    g.beginPath(); g.moveTo(X, Y - 6); g.lineTo(X + 5, Y); g.lineTo(X, Y + 6); g.lineTo(X - 5, Y); g.closePath(); g.fill(); g.shadowBlur = 0;
+    g.fillStyle = 'rgba(225,210,255,0.95)'; g.font = '600 12.5px Segoe UI, system-ui'; g.textAlign = 'center';
+    g.fillText((b > 0 ? '▲ ' : '▼ ') + name, X, Y + dy); g.textAlign = 'left'; }
+}
+/* Onion layers: for each distance shell, the direction its stars bunch toward (masked dipole fit over swept tiles). */
+let SHELLS = { shells: [], sky_fraction: 0, min_sky_fraction: 0.25 };
+const SHELL_COLS = ['#9fe6ff', '#8fb3ff', '#c39bff', '#ff9ad5', '#ffb36b'];
+function shellLabel(s) { const ly = v => Math.round(v * 3.26156 / 100) * 100; return s.hi_pc ? `${ly(s.lo_pc).toLocaleString()}–${ly(s.hi_pc).toLocaleString()} ly` : `beyond ${ly(s.lo_pc).toLocaleString()} ly`; }
+function drawShellDirections(g, proj) {
+  const sh = (SHELLS.shells || []).map((s, i) => ({ ...s, i })).filter(s => s.l !== undefined);
+  sh.forEach(s => { const [X, Y] = proj(s.l, s.b), r = 9 + 4 * s.i, c = SHELL_COLS[s.i % 5];
+    g.strokeStyle = c; g.lineWidth = 2; g.beginPath(); g.arc(X, Y, r, 0, 6.283); g.stroke(); });
+  g.lineWidth = 1;
+}
+function shellLegendHTML() {
+  const f = SHELLS.sky_fraction || 0, need = SHELLS.min_sky_fraction || 0.25;
+  if (f < need) return `Onion layers: each distance shell's pull direction appears once ${Math.round(need * 100)}% of the sky is swept (now ${(100 * f).toFixed(1)}%).`;
+  if (!(SHELLS.shells || []).some(s => s.l !== undefined)) return 'Onion layers: fitting each distance shell\'s direction…';
+  return 'Onion layers (where each distance shell\'s stars bunch up): ' + (SHELLS.shells || []).map((s, i) => s.l === undefined ? '' :
+    `<span style="color:${SHELL_COLS[i % 5]}">◯ ${shellLabel(s)} → l ${s.l.toFixed(0)}°, b ${s.b.toFixed(0)}° (${(100 * s.amplitude).toFixed(0)}%)</span>`).filter(Boolean).join(' · ');
+}
+
+function drawSky() {
+  const c = $('sky'), g = c.getContext('2d'), W = c.width, H = c.height; g.clearRect(0,0,W,H);
+  g.fillStyle = '#060918'; g.fillRect(0,0,W,H);
+  g.beginPath(); for (let b = -90; b <= 90; b += 2) { const [X,Y] = skyXY(c,179.999,b); b === -90 ? g.moveTo(X,Y) : g.lineTo(X,Y); }
+  for (let b = 90; b >= -90; b -= 2) { const [X,Y] = skyXY(c,-179.999,b); g.lineTo(X,Y); } g.closePath();
+  const grd = g.createRadialGradient(W/2,H/2,10,W/2,H/2,W/2); grd.addColorStop(0,'rgba(60,70,140,0.4)'); grd.addColorStop(1,'rgba(10,14,40,0.3)');
+  g.fillStyle = grd; g.fill(); g.strokeStyle = 'rgba(143,179,255,0.35)'; g.stroke();
+  g.strokeStyle = 'rgba(255,255,255,0.08)';
+  for (let b = -60; b <= 60; b += 30) { g.beginPath(); for (let l = -180; l <= 180; l += 3) { const [X,Y] = skyXY(c, l === 180 ? 179.99 : l, b); l === -180 ? g.moveTo(X,Y) : g.lineTo(X,Y); } g.stroke(); }
+  for (let l = -120; l <= 120; l += 60) { g.beginPath(); for (let b = -90; b <= 90; b += 3) { const [X,Y] = skyXY(c,l,b); b === -90 ? g.moveTo(X,Y) : g.lineTo(X,Y); } g.stroke(); }
+  drawTileLayer(g, (l, b) => skyXY(c, l, b));
+  for (const p of PTS) { const [X,Y] = skyXY(c, +p.l, +p.b); const fl = p.flags && p.flags.length;
+    g.fillStyle = fl ? 'rgba(255,209,102,0.9)' : colourOf(p.bp_rp, isConf(p.confirmed) ? 0.85 : 0.3); g.fillRect(X-0.8, Y-0.8, fl ? 2.2 : 1.6, fl ? 2.2 : 1.6); }
+  drawGalacticCentre(g, (l, b) => skyXY(c, l, b), performance.now());
+  drawPoles(g, (l, b) => skyXY(c, l, b));
+  drawShellDirections(g, (l, b) => skyXY(c, l, b));
+  drawActiveTiles(g, (l, b) => skyXY(c, l, b), performance.now());
+}
+function drawHR() {
+  const c = $('hr'), g = c.getContext('2d'), W = c.width, H = c.height; g.clearRect(0,0,W,H); g.fillStyle = '#060918'; g.fillRect(0,0,W,H);
+  const x0 = 60, x1 = W - 16, y0 = 20, y1 = H - 52, cmin = -0.5, cmax = 4, mmin = -4, mmax = 16;
+  const X = v => x0 + (v - cmin)/(cmax - cmin)*(x1 - x0), Y = m => y0 + (m - mmin)/(mmax - mmin)*(y1 - y0);
+  g.strokeStyle = 'rgba(255,255,255,0.12)'; g.strokeRect(x0, y0, x1-x0, y1-y0); g.fillStyle = '#8d96b8'; g.font = '12px Segoe UI, system-ui';
+  for (let m = -4; m <= 16; m += 4) g.fillText(String(m), x0 - 26, Y(m) + 4); for (let v = 0; v <= 4; v++) g.fillText(String(v), X(v) - 3, y1 + 16);
+  g.fillText('colour (Gaia BP − RP)  →  cooler', x0 + (x1-x0)/2 - 95, y1 + 36);
+  g.save(); g.translate(16, y0 + (y1-y0)/2 + 80); g.rotate(-Math.PI/2); g.fillText('brighter ↑  (absolute G mag)', 0, 0); g.restore();
+  let n = 0; for (const p of PTS) { if (!isConf(p.confirmed)) continue; const d = +p.dist_pc, G = +p.g_mag, v = +p.bp_rp;
+    if (!(d > 0) || !isFinite(G) || !isFinite(v)) continue; const M = G - 5*Math.log10(d) + 5; if (v < cmin || v > cmax || M < mmin || M > mmax) continue;
+    g.fillStyle = colourOf(v, 0.5); g.fillRect(X(v), Y(M), 1.6, 1.6); n++; }
+    g.fillStyle = '#ffd166'; g.shadowColor = '#ffd166'; g.shadowBlur = 12; g.beginPath(); g.arc(X(0.82), Y(4.67), 5, 0, 6.283); g.fill(); g.shadowBlur = 0;
+  g.font = '700 13px Segoe UI, system-ui'; g.fillText('☉ the Sun', X(0.82) + 9, Y(4.67) + 4);
+  g.fillStyle = 'rgba(233,236,248,0.85)'; g.font = '600 13px Segoe UI, system-ui';
+  g.fillText('main sequence', X(1.6), Y(6.5)); g.fillText('giants', X(1.5), Y(-0.5)); g.fillText('white dwarfs', X(-0.3), Y(14.3));
+  g.fillStyle = '#8d96b8'; g.font = '12px Segoe UI, system-ui'; g.fillText(`${num(n)} confirmed stars`, x1 - 140, y0 + 16);
+}
+/* Milky Way, top-down. Galactic Centre at the middle; Sun at R0 = 8.18 kpc (GRAVITY Collaboration 2019), "up" from the Sun
+   points to the Galactic Centre. Catalogued stars are drawn at true scale around the Sun, plus a zoomed inset of our bubble.
+   The spiral arms and bar are a schematic for orientation only, not measured by AEGIS. */
+const R0_PC = 8178;
+function drawMilkyWay(c, pts, noteEl, t) {
+  const g = c.getContext('2d'), W = c.width, H = c.height; g.clearRect(0, 0, W, H); g.fillStyle = '#060918'; g.fillRect(0, 0, W, H);
+  const VIEW = 16500, cx = W * 0.40, cy = H / 2, s = (H / 2 - 8) / VIEW;            // pc -> px
+  const P = (gx, gy) => [cx + gy * s, cy - gx * s];                                   // gx toward Sun->GC axis (GC at 0)
+  // disk glow
+  const disk = g.createRadialGradient(cx, cy, 0, cx, cy, 15000 * s);
+  disk.addColorStop(0, 'rgba(255,226,170,0.55)'); disk.addColorStop(0.12, 'rgba(255,200,140,0.25)');
+  disk.addColorStop(0.45, 'rgba(120,140,255,0.10)'); disk.addColorStop(1, 'rgba(60,70,160,0)');
+  g.fillStyle = disk; g.beginPath(); g.arc(cx, cy, 15000 * s, 0, 6.283); g.fill();
+  // schematic arms: four log spirals, pitch 12 deg
+  const k = Math.tan(12 * Math.PI / 180);
+  g.lineCap = 'round';
+  for (let a = 0; a < 4; a++) { g.beginPath();
+    for (let th = 0; th <= 7.6; th += 0.03) { const r = 3200 * Math.exp(k * th), ang = th + a * Math.PI / 2 + 0.45;
+      if (r > 15500) break; const [X, Y] = P(r * Math.cos(ang), r * Math.sin(ang)); th === 0 ? g.moveTo(X, Y) : g.lineTo(X, Y); }
+    g.strokeStyle = 'rgba(170,190,255,0.20)'; g.lineWidth = 5; g.stroke(); g.strokeStyle = 'rgba(200,215,255,0.28)'; g.lineWidth = 1.4; g.stroke(); }
+  // bar
+  g.save(); g.translate(cx, cy); g.rotate(-27 * Math.PI / 180);
+  const bar = g.createLinearGradient(-4500 * s, 0, 4500 * s, 0); bar.addColorStop(0, 'rgba(255,214,150,0)'); bar.addColorStop(0.5, 'rgba(255,214,150,0.55)'); bar.addColorStop(1, 'rgba(255,214,150,0)');
+  g.fillStyle = bar; g.beginPath(); g.ellipse(0, 0, 4500 * s, 1100 * s, 0, 0, 6.283); g.fill(); g.restore();
+  // Galactic Centre
+  g.fillStyle = '#fff6dc'; g.shadowColor = '#ffd38a'; g.shadowBlur = 14; g.beginPath(); g.arc(cx, cy, 3.2, 0, 6.283); g.fill(); g.shadowBlur = 0;
+  g.fillStyle = 'rgba(255,240,210,0.9)'; g.font = '12px Segoe UI, system-ui'; g.textAlign = 'right'; g.fillText('Galactic Centre', cx - 9, cy - 6); g.textAlign = 'left';
+  // catalogued stars at true scale (heliocentric x_pc points to the GC)
+  const [sx, sy] = P(-R0_PC, 0);
+  for (const p of pts) { const x = +p.x_pc, y = +p.y_pc; if (!isFinite(x) || !isFinite(y)) continue;
+    const [X, Y] = P(x - R0_PC, y); g.fillStyle = (p.flags && p.flags.length) ? 'rgba(255,209,102,0.8)' : 'rgba(170,200,255,0.55)'; g.fillRect(X, Y, 1, 1); }
+  // the Sun: pulsing marker
+  const pulse = 0.5 + 0.5 * Math.sin((t || 0) / 450);
+  g.strokeStyle = `rgba(255,209,102,${0.35 + 0.4 * pulse})`; g.lineWidth = 1.5; g.beginPath(); g.arc(sx, sy, 9 + 5 * pulse, 0, 6.283); g.stroke();
+  g.fillStyle = '#ffe9a8'; g.shadowColor = '#ffd166'; g.shadowBlur = 16; g.beginPath(); g.arc(sx, sy, 4.2, 0, 6.283); g.fill(); g.shadowBlur = 0;
+  g.strokeStyle = 'rgba(255,209,102,0.55)'; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(sx, sy - 14); g.lineTo(cx, cy + 8); g.stroke(); g.setLineDash([]);
+  g.fillStyle = '#ffd166'; g.font = '700 13px Segoe UI, system-ui'; g.fillText('☉ You are here', sx + 12, sy + 4);
+  g.fillStyle = 'rgba(255,224,150,0.85)'; g.font = '12px Segoe UI, system-ui';
+  const midY = (sy + cy) / 2; g.fillText('26,700 light-years', sx + 8, midY + 4);
+  // scale bar: 10,000 ly
+  const L = 10000 / 3.26156 * s, sbY = H * 0.22; g.strokeStyle = 'rgba(233,236,248,0.6)'; g.lineWidth = 1; g.beginPath(); g.moveTo(14, sbY); g.lineTo(14 + L, sbY); g.stroke();
+  g.fillStyle = 'rgba(233,236,248,0.7)'; g.fillText('10,000 light-years', 14, sbY - 6);
+  // inset: our bubble, zoomed
+  const ds = pts.map(p => Math.hypot(+p.x_pc, +p.y_pc)).filter(isFinite).sort((a, b) => a - b);
+  const Rl = Math.max(200, ds[Math.floor(ds.length * 0.98)] || 1000) * 1.05;
+  const ir = Math.min(H * 0.36, W * 0.2), icx = W - ir - 12, icy = ir + 12, is = ir / Rl;
+  g.fillStyle = 'rgba(5,7,15,0.88)'; g.beginPath(); g.arc(icx, icy, ir, 0, 6.283); g.fill();
+  g.strokeStyle = 'rgba(255,209,102,0.5)'; g.stroke();
+  g.save(); g.beginPath(); g.arc(icx, icy, ir - 1, 0, 6.283); g.clip();
+  for (const p of pts) { const X = icx + (+p.y_pc) * is, Y = icy - (+p.x_pc) * is; if (!isFinite(X) || !isFinite(Y)) continue;
+    g.fillStyle = (p.flags && p.flags.length) ? 'rgba(255,209,102,0.85)' : colourOf(p.bp_rp, 0.6); g.fillRect(X, Y, 1.2, 1.2); }
+  g.restore();
+  g.fillStyle = '#ffe9a8'; g.shadowColor = '#ffd166'; g.shadowBlur = 10; g.beginPath(); g.arc(icx, icy, 3, 0, 6.283); g.fill(); g.shadowBlur = 0;
+  // connector from the Sun to the inset
+  g.strokeStyle = 'rgba(255,209,102,0.35)'; g.beginPath(); g.moveTo(sx + 6, sy - 6); g.lineTo(icx - ir * 0.72, icy + ir * 0.72); g.stroke();
+  g.fillStyle = 'rgba(233,236,248,0.8)'; g.font = '11.5px Segoe UI, system-ui';
+  g.fillText(`zoom: our bubble, r ≈ ${Math.round(Rl * 3.26156 / 100) * 100 >= 1000 ? (Math.round(Rl * 3.26156 / 100) * 100).toLocaleString() : Math.round(Rl * 3.26156)} ly`, icx - ir, icy + ir + 14);
+  if (noteEl) noteEl.textContent = 'Stars at true scale · circle = zoom on our scanned bubble · spiral arms are a schematic, not measured';
+}
+
+function drawGalaxy() { drawMilkyWay($('galaxy'), PTS, $('gal-note'), performance.now()); }
+setInterval(() => { if (PTS.length) drawGalaxy(); }, 200);
+function drawH0() {
+  const c = $('h0'), g = c.getContext('2d'), W = c.width, H = c.height; g.clearRect(0,0,W,H); if (!SCI || !SCI.fits) return;
+  const lo = 65.5, hi = 75.5, x0 = 20, x1 = W - 20, X = v => x0 + (v - lo)/(hi - lo)*(x1 - x0), col = { lcdm:'#7fd1ff', torsion:'#c39bff', local:'#ff9a6b' };
+  g.strokeStyle = 'rgba(255,255,255,0.18)'; g.beginPath(); g.moveTo(x0, 190); g.lineTo(x1, 190); g.stroke(); g.fillStyle = '#8d96b8'; g.font = '12px Segoe UI, system-ui';
+  for (let v = 66; v <= 75; v++) { g.fillRect(X(v), 187, 1, 6); g.fillText(String(v), X(v) - 7, 208); }
+  SCI.fits.forEach((f, i) => { const y = 40 + i * 50, cc = col[f.kind] || '#fff';
+    if (f.err) { g.strokeStyle = cc; g.lineWidth = 3; g.beginPath(); g.moveTo(X(f.H0 - f.err), y); g.lineTo(X(f.H0 + f.err), y); g.stroke(); g.lineWidth = 1; }
+    g.fillStyle = cc; g.beginPath(); g.arc(X(f.H0), y, 8, 0, 6.283); g.fill(); g.fillStyle = '#e9ecf8'; g.font = '600 14px Segoe UI, system-ui';
+    const label = `${f.label}: ${f.H0.toFixed(2)}${f.err ? ' ± ' + f.err.toFixed(2) : ''}`; g.fillText(label, Math.max(x0, Math.min(X(f.H0) - 8, x1 - g.measureText(label).width)), y - 14); });
+}
+function fillTheory() {
+  if (!SCI) return; $('th-title').textContent = SCI.title || ''; $('th-by').textContent = 'by ' + (SCI.author || ''); $('th-summary').textContent = SCI.summary || '';
+  if (SCI.next) $('th-next').textContent = 'Next: ' + SCI.next.map(n => `${n.label} (${n.status})`).join(' · ');
+  $('repo').innerHTML = SCI.github
+    ? `<a class="btn" href="${esc(SCI.github)}">See all the code and data on GitHub →</a><span style="color:var(--muted)">Every result above can be re-run from the repository.</span>`
+    : `<span style="color:var(--muted)">GitHub repository link coming soon: all the code, data versions and settings, so anyone can re-run every result.</span>`;
+  if (SCI.fingerprint) { $('fp-eq').textContent = SCI.fingerprint.equation; $('fp-text').textContent = SCI.fingerprint.text; $('fp-status').textContent = '· ' + SCI.fingerprint.status; }
+  if (SCI.threads) $('threads').innerHTML = SCI.threads.map(t => `<tr><td><b>${esc(t.name)}</b></td><td class="wrap">${esc(t.q)}</td><td class="wrap">${esc(t.status)}</td></tr>`).join('');
+  drawH0();
+}
+async function status() {
+  try {
+    STATUS = await (await fetch('/api/status')).json(); const sc = STATUS.scan || {};
+    $('state').textContent = STATUS.state; $('state-pill').className = 'pill' + (STATUS.state === 'error' ? ' err' : '');
+    $('stars').textContent = num(sc.stars); $('patches').textContent = num(sc.patches);
+    $('confirmed').innerHTML = sc.stars ? `${num(sc.confirmed)} <small>${(100*sc.confirmed_frac).toFixed(1)}%</small>` : '—';
+    const fl = sc.flags || {}; $('flagged').textContent = num(Object.values(fl).reduce((a,b) => a+b, 0));
+    $('uptime').textContent = dur(STATUS.uptime_s || 0); { const sw = sweepText(sc); $('recheck').innerHTML = sw ? `${sw.pct.toFixed(sw.pct < 1 ? 2 : 1)}% <small>${esc(sw.eta)} left</small>` : num(sc.awaiting_recheck); $('sweep-line').textContent = sw ? sw.line : ''; }
+    const now = Date.now()/1000; hist.push([now, sc.stars || 0]); while (hist.length && now - hist[0][0] > 120) hist.shift();
+    if (sc.stars_per_min !== undefined && sc.stars_per_min > 0) { $('rate').innerHTML = `${num(Math.round(sc.stars_per_min / 1000))}k <small>stars/min</small>`; } else if (hist.length > 2) { const r = (hist[hist.length-1][1] - hist[0][1]) / Math.max(1, hist[hist.length-1][0] - hist[0][0]) * 60; $('rate').innerHTML = r > 0 ? `${num(Math.round(r))} <small>/ min</small>` : '<small>between patches</small>'; }
+    $('flags').innerHTML = Object.keys(MEANING).map(k => `<tr><td><b style="color:var(--gold)">${MEANING[k][0]}</b></td><td class="num">${num(fl[k])}</td><td class="wrap">${MEANING[k][1]}</td></tr>`).join('');
+    $('rows').innerHTML = (sc.last_patches || []).slice(0, 8).map(p => `<tr><td>${new Date(p.t*1000).toLocaleTimeString()}</td><td class="num">${p.tile ?? '—'}</td><td class="num">${(+p.l).toFixed(1)}</td><td class="num">${(+p.b).toFixed(1)}</td><td class="num">${num(p.stars)}</td><td class="num">${num(p.confirmed)}</td><td class="num">${num(p.flagged)}</td><td class="num">${p.seconds}</td></tr>`).join('');
+    $('log').textContent = STATUS.error ? STATUS.error : await (await fetch('/api/log')).text();
+  } catch (e) { $('state').textContent = 'offline'; $('state-pill').className = 'pill err'; }
+}
+
+async function integrity() {
+  try { const sc = STATUS.scan || {};
+    if (sc.checks_total) { const ok = sc.checks_passed === sc.checks_total;
+      $('chk-sum').innerHTML = `<span class="badge ${ok ? 'ok' : 'bad'}">${num(sc.checks_passed)} of ${num(sc.checks_total)} match ESA exactly</span> &nbsp;re-counted independently every 10 minutes`;
+      $('chk-rows').innerHTML = (sc.last_checks || []).map(c => `<tr><td>${new Date(c.t*1000).toLocaleTimeString()}</td><td class="num">${c.tile}</td><td class="num">${num(c.ours)}</td><td class="num">${num(c.esa)}</td><td>${c.match ? '<span class="badge ok">match</span>' : '<span class="badge bad">mismatch</span>'}</td></tr>`).join(''); }
+    if (sc.query_template) $('query').textContent = sc.query_template;
+    const tl = (sc.last_patches || []).filter(p => p.tile !== undefined).slice(0, 6);
+    if (tl.length) $('tile-links').innerHTML = tl.map(p => { const id = String(p.tile).padStart(5, '0'); return `<a href="/tiles/L5/${id}.csv.gz">tile ${p.tile}</a> <span style="color:var(--muted)">(${num(p.stars)} stars)</span>`; }).join(' · ');
+    const sp = await (await fetch('/api/spotlight')).json();
+    $('verify-rows').innerHTML = (sp.recent || []).slice(0, 6).map(r => { const id = esc(r.source_id);
+      return `<tr><td>${id}</td><td class="num">${num(Math.round(+r.dist_pc * LY_PER_PC))} ly</td><td><a href="https://vizier.cds.unistra.fr/viz-bin/VizieR-5?-source=I/355/gaiadr3&Source=${id}" target="_blank" rel="noopener">VizieR</a> · <a href="https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Gaia+DR3+${id}" target="_blank" rel="noopener">SIMBAD</a></td></tr>`; }).join('') || '<tr><td colspan="3" style="color:var(--muted)">stars appear as the sweep runs</td></tr>';
+  } catch (e) {}
+}
+async function charts() { try { PTS = await (await fetch('/api/stars')).json(); drawSky(); drawHR(); drawGalaxy(); } catch (e) {} }
+async function shells() { try { SHELLS = await (await fetch('/api/shells')).json(); $('shell-legend').innerHTML = shellLegendHTML(); drawSky(); } catch (e) {} }
+async function tiles() { try { TILES = await (await fetch('/api/tiles')).json(); drawSky(); } catch (e) {} }
+async function science() { try { SCI = await (await fetch('/api/science')).json(); fillTheory(); } catch (e) {} }
+async function sigProof() { try { const h = await (await fetch('/sigils/hashes.json')).json(); $('sig-proof').innerHTML = 'Proof of authorship: sigils and theories © ' + esc(h.year) + ' ' + esc(h.author) + '. SHA-256 fingerprints, published with a dated history in the AEGIS repository: ' + Object.entries(h.sha256).map(([k, v]) => `<b>${esc(k)}</b> ${esc(v)}`).join(' · '); } catch (e) {} }
+sigProof();
+async function guard() { try { const g = await (await fetch('/api/guardrails')).json();
+  $('guard-sum').innerHTML = `<b style="color:var(--good)">${g.passed} passed</b> · <b style="color:var(--bad)">${g.failed} failed</b> · <span style="color:var(--muted)">${g.waiting} waiting</span>`;
+  $('guard-rows').innerHTML = g.checks.map(c => `<tr><td><b style="color:${c.ok === true ? 'var(--good)' : c.ok === false ? 'var(--bad)' : 'var(--muted)'}">${c.ok === true ? '✓' : c.ok === false ? '✗' : '…'} ${esc(c.name)}</b></td><td class="wrap">${esc(c.plain)}</td><td class="wrap" style="font-size:12.5px;color:var(--muted)">${esc(c.detail)}</td></tr>`).join('');
+} catch (e) {} }
+guard(); setInterval(guard, 180000);
+status(); charts(); science(); setTimeout(integrity, 1500); setInterval(integrity, 15000); tiles(); setInterval(tiles, 5000); shells(); setInterval(shells, 30000); setInterval(status, 3000); setInterval(charts, 20000); setInterval(science, 300000);
+</script>
+<div id="xlate" class="notranslate" translate="no" style="position:fixed;right:14px;bottom:14px;z-index:50;font:14px/1.4 system-ui,sans-serif">
+  <button id="xlate-btn" type="button" aria-label="Translate this page" style="background:#1b1440;color:#fff;border:1px solid rgba(255,209,102,.6);border-radius:999px;padding:9px 14px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.4)">🌐 Language · Idioma · Langue · 语言 · भाषा · لغة</button>
+  <div id="xlate-box" hidden style="margin-top:8px;background:#120c2c;color:#e9ecf8;border:1px solid rgba(120,150,255,.3);border-radius:12px;padding:12px 14px;max-width:300px">
+    <div id="google_translate_element"></div>
+    <p style="margin:8px 0 0;font-size:12.5px;color:#a8a3c7">Choose your language above. Or use your browser's own translate button (Chrome, Edge, Safari and Firefox all have one). Equations and numbers stay as they are.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('xlate-btn'), box=document.getElementById('xlate-box'), loaded=false;
+  btn.addEventListener('click',function(){
+    box.hidden=!box.hidden;
+    if(!loaded && !box.hidden){ loaded=true;
+      window.googleTranslateElementInit=function(){ new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element'); };
+      var s=document.createElement('script'); s.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; s.async=true;
+      s.onerror=function(){ document.getElementById('google_translate_element').textContent='The translator could not load here; please use your browser\'s translate button.'; };
+      document.body.appendChild(s); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+ "author": "Danny Lee Eldridge",
+ "year": "2026",
+ "sha256": {
+  "torsion.svg": "40af72ba3f0b0db8ee64d45a8ad0fa384e7b59f35da0388d41274cca5adbfdcf",
+  "fingerprint.svg": "5628b0b637cab71d6f7ce00b52bc42245924837794849d1605216f74349a51b0",
+  "sigilmodel.svg": "d1765c766462f01b89544a395880b838f07f8cb56e344098a9e9515562853834",
+  "planet_mercury.svg": "6301db91a8d2cd9e3268dc80d90b6959d0cc6381eb16c5d1e7a535f483b11d8e",
+  "planet_venus.svg": "2490a7a94fd965183a04ff16b3c727b9b2db93e02cfb33f0f4edba0fd1f2e346",
+  "planet_mars.svg": "05c0353f240a07e0521e93c91e2640f80372f9a781aedcfd7358170ed7dfeade",
+  "planet_jupiter.svg": "12ada04497799b46bde1cad9feec17e315607982b19f0e7fb9c3e1f8ee9a8d25",
+  "planet_saturn.svg": "fc3ad2c07d8bd7b2cc4d52f52bfc3f1e2913c731e27d132321cf3497871aea7c",
+  "planet_uranus.svg": "cb8e3c1761e5593cd5562e0d489c196bb7fcec37e2d1ad100bb8c577a4c53602",
+  "planet_neptune.svg": "83f86c1034d69552f77af228bf697dc152af224087505f2d4809d8555339d752",
+  "planet_earth.svg": "ff98a835ff71de28b41253425d5f760f203aa3aea6c5aba0f546e0ec465903c0",
+  "planet_belt.svg": "9aaaada3125f0e708f77fcf8a06aa317874bf3bc8068b6e3eb8e7bd740a130bc",
+  "sky_spaceweather.svg": "5cf521f15c2588b3fa698d489bb74c5cfb2790421ead2bd6a446284238d4eb45",
+  "sky_equinox.svg": "4f401013d1ad312ac4922ba1ad839b340be8d7de2a08694536f8dc1895fdaa84",
+  "sky_true13.svg": "a756c2cff4efea987748a70a19fd78d609e9521444e626bbde087adb8251f10f",
+  "lens_issflip.svg": "b1f3b085bd812bc79ad5cf7d130dffac3a7d0ba867b30f28886af25956345f96",
+  "lens_dynamo.svg": "a902ec73684fe59efc5596c1b8172d6f47351c468bf357c30c2867b61cb1b6af",
+  "lens_mixmaster.svg": "2e8889626e225254e75e8782848b7d17849df75fe6ecfde03e1c272f0d3961dd",
+  "lens_skirt.svg": "c748ee50496a33720474df36e7ac6a1825ef9ff8fc37a3770b31999e0ad888f2",
+  "locked.svg": "05834b3769dd6e0192ffd82177fc6de676ad93082a22312eab3f3fd210403d2c",
+  "locked_chart.svg": "5a4a61f3201b1b472efadd7628b7d45dccf00b0b438dfc19d1c937f6904043a7",
+  "bell.svg": "3b59713a5d1ec8fe6af35863123f4a8c03f700b093a84faf2193718067f97c3a",
+  "bell_chart.svg": "4fd2a5b4aae823e484c80e6d6cb38237e80fb33738e92a8c9a9e5cba2216124a",
+  "bell_triangle.svg": "5ce15256d580a3f562e8a347296ae0b32c035464c8ed56be8ed4e0b351f8d16a",
+  "metatron.svg": "c20bc1cf032fa1c65c625fcb17564be4a7143bf94d7565ed71026d202eeee30d",
+  "stack.svg": "abb70fe057087c9c49f8fbcc1dda9caafd1c634ad6133de3c2f92dd6f7576e15",
+  "weave.svg": "4e6e6fc0c5bb1c2d0e742780eeb612fea979d9569cd2ed94d342dae552931a31"
+ }
+}

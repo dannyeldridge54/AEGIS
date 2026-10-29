@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AEGIS Live Star Survey</title>
+<style>
+  :root {
+    --bg:#05070f; --panel:rgba(14,19,38,0.82); --edge:rgba(120,150,255,0.16); --ink:#e9ecf8; --muted:#8d96b8;
+    --accent:#8fb3ff; --gold:#ffd166; --torsion:#c39bff; --lcdm:#7fd1ff; --local:#ff9a6b; --good:#6fe3a1; --live:#ff4d5e;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; height:100%; background:var(--bg); overflow:hidden; color:var(--ink);
+    font-family:"Segoe UI", system-ui, -apple-system, sans-serif; }
+  #stage { width:1920px; height:1080px; position:absolute; left:50%; top:50%; transform-origin:center center;
+    background: radial-gradient(1200px 700px at 30% 35%, #0e1533 0%, #070a17 55%, #04050b 100%); }
+  #stars-bg { position:absolute; inset:0; }
+  header { position:absolute; left:28px; right:28px; top:18px; height:58px; display:flex; align-items:center; gap:18px; }
+  .brand { font-size:30px; font-weight:700; letter-spacing:0.06em; }
+  .brand small { font-size:15px; font-weight:500; color:var(--muted); letter-spacing:0.02em; margin-left:12px; }
+  .live { display:flex; align-items:center; gap:8px; background:rgba(255,77,94,0.14); border:1px solid rgba(255,77,94,0.5);
+    color:#ffd7db; padding:5px 12px; border-radius:999px; font-weight:700; font-size:15px; letter-spacing:0.12em; }
+  .live i { width:10px; height:10px; border-radius:50%; background:var(--live); box-shadow:0 0 12px var(--live); animation:pulse 1.6s infinite; }
+  @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.35 } }
+  .spacer { flex:1; }
+  .clock { font-size:22px; font-variant-numeric:tabular-nums; color:var(--muted); }
+  .panel { position:absolute; background:var(--panel); border:1px solid var(--edge); border-radius:16px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.35); backdrop-filter: blur(4px); }
+  .ptitle, .pnote { z-index:2; }
+  .ptitle { position:absolute; left:18px; top:12px; font-size:17px; font-weight:650; letter-spacing:0.02em; }
+  .pnote { position:absolute; left:18px; bottom:10px; right:18px; font-size:13px; color:var(--muted); }
+  canvas { position:absolute; display:block; }
+  #sky-panel { left:28px; top:90px; width:1190px; height:610px; }
+  #gal-panel { left:28px; top:716px; width:587px; height:300px; }
+  #h0-panel { left:631px; top:716px; width:587px; height:300px; }
+  #stats { left:1234px; top:90px; width:658px; height:176px; display:grid; grid-template-columns:1fr 1fr; gap:0; padding:14px 18px; }
+  .stat .k { font-size:13px; color:var(--muted); letter-spacing:0.04em; text-transform:uppercase; }
+  .stat .v { font-size:34px; font-weight:700; font-variant-numeric:tabular-nums; line-height:1.15; }
+  .stat .v small { font-size:15px; color:var(--muted); font-weight:500; }
+  #hr-panel { left:1234px; top:282px; width:658px; height:380px; }
+  #card { left:1234px; top:678px; width:658px; height:338px; padding:16px 22px 18px; overflow:hidden; }
+  #card .kicker { font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); font-weight:700; }
+  #card h3 { margin:6px 0 10px; font-size:24px; line-height:1.2; }
+  #card p { margin:0 0 9px; font-size:16.5px; line-height:1.45; color:#d7dcf0; }
+  #card .grid { display:grid; grid-template-columns:auto 1fr; gap:6px 16px; font-size:16.5px; }
+  #card .grid div:nth-child(odd) { color:var(--muted); }
+  #card .src { font-size:14.2px; line-height:1.5; color:#cfd6f2; margin:0; padding-left:18px; }
+  #card .src li { margin:0 0 2px; } #card .src a { color:var(--accent); text-decoration:none; }
+  #card .sig { color:var(--gold); font-style:italic; margin-top:4px; }
+  #card .body { transition:opacity .6s; }
+  #progress { position:absolute; left:0; bottom:0; height:3px; background:var(--accent); opacity:0.7; width:0; }
+  #ticker { position:absolute; left:0; right:0; bottom:0; height:52px; background:rgba(5,7,15,0.92);
+    border-top:1px solid var(--edge); overflow:hidden; white-space:nowrap; }
+  #ticker .run { position:absolute; top:13px; font-size:19px; color:#cdd4ee; will-change:transform; }
+  #ticker b { color:var(--gold); font-weight:600; } #ticker .sep { color:var(--accent); margin:0 22px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="stars-bg" width="1920" height="1080"></canvas>
+  <header>
+    <div class="live"><i></i>LIVE</div>
+    <div class="brand">AEGIS GALAXY SWEEP<small>mapping every Gaia star, from the Galactic Centre outward · torsion cosmology by Danny Lee Eldridge</small></div>
+    <div class="spacer"></div>
+    <div class="clock" id="clock">—</div>
+  </header>
+
+  <div class="panel" id="sky-panel">
+    <div class="ptitle">The whole sky, live — every dot is a real star measured by the Gaia space telescope</div>
+    <canvas id="sky" width="1190" height="610"></canvas>
+    <canvas id="sky-fx" width="1190" height="610"></canvas>
+    <div class="pnote">Galactic coordinates (Hammer–Aitoff) · centre = the heart of the Milky Way · colour = star colour · <span style="color:var(--gold)">gold</span> = flagged for follow-up · glowing tiles = swept so far, brighter = more stars · rings = sweeping now</div>
+  </div>
+
+  <div class="panel" id="gal-panel">
+    <div class="ptitle">Where we are in the Milky Way</div>
+    <canvas id="galaxy" width="587" height="300"></canvas>
+    <div class="pnote" id="gal-note">—</div>
+  </div>
+
+  <div class="panel" id="h0-panel">
+    <div class="ptitle">How fast is the universe expanding? (H₀, km/s/Mpc)</div>
+    <canvas id="h0" width="587" height="300"></canvas>
+    <div class="pnote" id="h0-note">—</div>
+  </div>
+
+  <div class="panel" id="stats">
+    <div class="stat"><div class="k">Stars catalogued</div><div class="v" id="s-stars">—</div></div>
+    <div class="stat"><div class="k">Distance confirmed twice</div><div class="v" id="s-conf">—</div></div>
+    <div class="stat"><div class="k">Galaxy sweep</div><div class="v" id="s-patches">—</div></div>
+    <div class="stat"><div class="k">Scan speed</div><div class="v" id="s-rate">—</div></div>
+  </div>
+
+  <div class="panel" id="hr-panel">
+    <div class="ptitle">The family portrait of stars (Hertzsprung–Russell diagram)</div>
+    <canvas id="hr" width="658" height="380"></canvas>
+    <div class="pnote">Colour vs true brightness of confirmed stars · interstellar dust not corrected</div>
+  </div>
+
+  <div class="panel" id="card"><div class="body" id="card-body"></div><div id="progress"></div></div>
+
+  <div id="ticker"><div class="run" id="tick">Loading the sky…</div></div>
+</div>
+
+<script>
+/* ---------- layout: fixed 1920x1080 stage scaled to the window (OBS browser source: 1920x1080) ---------- */
+const stage = document.getElementById('stage');
+function fit() { const s = Math.min(innerWidth / 1920, innerHeight / 1080); stage.style.transform = `translate(-50%,-50%) scale(${s})`; }
+addEventListener('resize', fit); fit();
+
+/* ---------- helpers ---------- */
+const $ = id => document.getElementById(id);
+const num = n => Number(n || 0).toLocaleString();
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const LY_PER_PC = 3.26156, YEAR = new Date().getFullYear();
+const isConf = c => c === true || c === 'True';
+function colourOf(bprp, a = 1) { const t = Math.max(0, Math.min(1, (Number(bprp) + 0.2) / 2.8));
+  return `rgba(${Math.round(150 + 105*t)},${Math.round(185 - 45*t)},${Math.round(255 - 155*t)},${a})`; }
+function colourClass(bprp) { const c = Number(bprp); if (!isFinite(c)) return '—';
+  if (c < 0.0) return 'B-type · blue-white, very hot'; if (c < 0.37) return 'A-type · white, hot';
+  if (c < 0.74) return 'F-type · yellow-white'; if (c < 0.98) return 'G-type · yellow, like our Sun';
+  if (c < 1.84) return 'K-type · orange, cooler'; return 'M-type · red, coolest'; }
+function lightYear(pc) { const ly = pc * LY_PER_PC, y = Math.round(YEAR - ly);
+  return y > 0 ? `around the year ${y}` : `around ${num(-y)} BCE`; }
+function hammer(l, b) { let L = ((l + 180) % 360 + 360) % 360 - 180; L = -L * Math.PI / 180; const B = b * Math.PI / 180;
+  const z = Math.sqrt(1 + Math.cos(B) * Math.cos(L / 2)); return [2 * Math.SQRT2 * Math.cos(B) * Math.sin(L / 2) / z, Math.SQRT2 * Math.sin(B) / z]; }
+const SKY = { W:1190, H:610, cx:595, cy:325, sx:1190/2/2.95, sy:520/2/1.45 };
+const skyXY = (l, b) => { const [x, y] = hammer(l, b); return [SKY.cx + x * SKY.sx, SKY.cy - y * SKY.sy]; };
+
+/* ---------- twinkling background (static, drawn once) ---------- */
+(() => { const g = $('stars-bg').getContext('2d'); for (let i = 0; i < 900; i++) { const a = Math.random() * 0.5 + 0.1;
+  g.fillStyle = `rgba(200,210,255,${a})`; g.fillRect(Math.random() * 1920, Math.random() * 1080, Math.random() < 0.08 ? 2 : 1, Math.random() < 0.08 ? 2 : 1); } })();
+
+/* ---------- state ---------- */
+let STATUS = {}, SPOT = { recent: [], records: {} }, SCI = null, PTS = [];
+const history = [];   // [time, stars] for the scan-speed estimate
+let spotIdx = 0, focus = null;
+
+/* ---------- sky chart (static layer every 20 s) ---------- */
+/* Galaxy-sweep tiles: each finished HEALPix tile glows by how many stars it holds, so the Milky Way's band appears as the sweep runs. */
+let TILES = { done: [], active: [], total: 12288 };
+function tileColour(n) { const t = Math.max(0, Math.min(1, Math.log10(n + 1) / 5.2));
+  const r = Math.round(40 + 215 * Math.pow(t, 0.9)), g = Math.round(55 + 180 * Math.pow(t, 1.6)), b = Math.round(150 + 60 * t);
+  return `rgba(${r},${g},${b},${0.35 + 0.5 * t})`; }
+function drawTileLayer(g, proj) {
+  for (const [l, b, n] of TILES.done) { const [X, Y] = proj(l, b), [X2, Y2] = proj(l, Math.min(89.9, b + 1.05));
+    const r = Math.max(1.6, Math.hypot(X2 - X, Y2 - Y)); g.fillStyle = tileColour(n); g.beginPath(); g.arc(X, Y, r, 0, 6.283); g.fill(); }
+}
+function drawGalacticCentre(g, proj, t) {
+  const [X, Y] = proj(0.001, 0), p = 0.5 + 0.5 * Math.sin((t || 0) / 600);
+  const glow = g.createRadialGradient(X, Y, 0, X, Y, 34 + 6 * p); glow.addColorStop(0, 'rgba(255,240,205,0.95)'); glow.addColorStop(0.18, 'rgba(255,205,130,0.55)');
+  glow.addColorStop(0.55, 'rgba(195,155,255,0.18)'); glow.addColorStop(1, 'rgba(195,155,255,0)');
+  g.fillStyle = glow; g.beginPath(); g.arc(X, Y, 34 + 6 * p, 0, 6.283); g.fill();
+  g.fillStyle = '#fff7e0'; g.beginPath(); g.arc(X, Y, 2.6, 0, 6.283); g.fill();
+  g.fillStyle = 'rgba(255,236,200,0.95)'; g.font = '600 13px Segoe UI, system-ui'; g.textAlign = 'center';
+  g.fillText('Galactic Centre · the sweep starts here', X, Y + 62); g.textAlign = 'left';
+}
+function drawActiveTiles(g, proj, t) {
+  for (const [l, b] of TILES.active) { const [X, Y] = proj(l, b);
+    for (let k = 0; k < 3; k++) { const ph = ((t || 0) / 1300 + k / 3) % 1; g.strokeStyle = `rgba(143,179,255,${0.8 * (1 - ph)})`;
+      g.lineWidth = 2; g.beginPath(); g.arc(X, Y, 5 + ph * 30, 0, 6.283); g.stroke(); } }
+  g.lineWidth = 1;
+}
+function sweepText(sc) { if (!sc || sc.mode !== 'sweep') return '';
+  const pct = 100 * (sc.tiles_done || 0) / (sc.tiles_total || 12288);
+  const eta = sc.eta_s ? (sc.eta_s > 86400 ? `${(sc.eta_s / 86400).toFixed(1)} days` : sc.eta_s > 3600 ? `${(sc.eta_s / 3600).toFixed(1)} h` : `${Math.round(sc.eta_s / 60)} min`) : 'estimating…';
+  return { pct, eta, line: `${Number(sc.tiles_done || 0).toLocaleString()} of ${Number(sc.tiles_total || 12288).toLocaleString()} tiles · ${pct.toFixed(pct < 1 ? 2 : 1)}% · about ${eta} to go` }; }
+
+function drawPoles(g, proj) {
+  for (const [b, name, dy] of [[89.99, 'North Galactic Pole', -10], [-89.99, 'South Galactic Pole', -12]]) {
+    const [X, Y] = proj(0, b); g.fillStyle = '#c39bff'; g.shadowColor = '#c39bff'; g.shadowBlur = 10;
+    g.beginPath(); g.moveTo(X, Y - 6); g.lineTo(X + 5, Y); g.lineTo(X, Y + 6); g.lineTo(X - 5, Y); g.closePath(); g.fill(); g.shadowBlur = 0;
+    g.fillStyle = 'rgba(225,210,255,0.95)'; g.font = '600 12.5px Segoe UI, system-ui'; g.textAlign = 'center';
+    g.fillText((b > 0 ? '▲ ' : '▼ ') + name, X, Y + dy); g.textAlign = 'left'; }
+}
+/* Onion layers: for each distance shell, the direction its stars bunch toward (masked dipole fit over swept tiles). */
+let SHELLS = { shells: [], sky_fraction: 0, min_sky_fraction: 0.25 };
+const SHELL_COLS = ['#9fe6ff', '#8fb3ff', '#c39bff', '#ff9ad5', '#ffb36b'];
+function shellLabel(s) { const ly = v => Math.round(v * 3.26156 / 100) * 100; return s.hi_pc ? `${ly(s.lo_pc).toLocaleString()}–${ly(s.hi_pc).toLocaleString()} ly` : `beyond ${ly(s.lo_pc).toLocaleString()} ly`; }
+function drawShellDirections(g, proj) {
+  const sh = (SHELLS.shells || []).map((s, i) => ({ ...s, i })).filter(s => s.l !== undefined);
+  sh.forEach(s => { const [X, Y] = proj(s.l, s.b), r = 9 + 4 * s.i, c = SHELL_COLS[s.i % 5];
+    g.strokeStyle = c; g.lineWidth = 2; g.beginPath(); g.arc(X, Y, r, 0, 6.283); g.stroke(); });
+  g.lineWidth = 1;
+}
+function shellLegendHTML() {
+  const f = SHELLS.sky_fraction || 0, need = SHELLS.min_sky_fraction || 0.25;
+  if (f < need) return `Onion layers: each distance shell's pull direction appears once ${Math.round(need * 100)}% of the sky is swept (now ${(100 * f).toFixed(1)}%).`;
+  if (!(SHELLS.shells || []).some(s => s.l !== undefined)) return 'Onion layers: fitting each distance shell\'s direction…';
+  return 'Onion layers (where each distance shell\'s stars bunch up): ' + (SHELLS.shells || []).map((s, i) => s.l === undefined ? '' :
+    `<span style="color:${SHELL_COLS[i % 5]}">◯ ${shellLabel(s)} → l ${s.l.toFixed(0)}°, b ${s.b.toFixed(0)}° (${(100 * s.amplitude).toFixed(0)}%)</span>`).filter(Boolean).join(' · ');
+}
+
+function drawSky() {
+  const g = $('sky').getContext('2d'); g.clearRect(0, 0, SKY.W, SKY.H);
+  g.save(); g.beginPath(); for (let b = -90; b <= 90; b += 2) { const [X, Y] = skyXY(179.999, b); b === -90 ? g.moveTo(X, Y) : g.lineTo(X, Y); }
+  for (let b = 90; b >= -90; b -= 2) { const [X, Y] = skyXY(-179.999, b); g.lineTo(X, Y); } g.closePath();
+  const grd = g.createRadialGradient(SKY.cx, SKY.cy, 10, SKY.cx, SKY.cy, 560); grd.addColorStop(0, 'rgba(60,70,140,0.35)'); grd.addColorStop(1, 'rgba(10,14,40,0.25)');
+  g.fillStyle = grd; g.fill(); g.strokeStyle = 'rgba(143,179,255,0.35)'; g.stroke(); g.restore();
+  g.strokeStyle = 'rgba(255,255,255,0.08)'; g.lineWidth = 1;
+  for (let b = -60; b <= 60; b += 30) { g.beginPath(); for (let l = -180; l <= 180; l += 3) { const [X, Y] = skyXY(l === 180 ? 179.99 : l, b); l === -180 ? g.moveTo(X, Y) : g.lineTo(X, Y); } g.stroke(); }
+  for (let l = -120; l <= 120; l += 60) { g.beginPath(); for (let b = -90; b <= 90; b += 3) { const [X, Y] = skyXY(l, b); b === -90 ? g.moveTo(X, Y) : g.lineTo(X, Y); } g.stroke(); }
+  drawTileLayer(g, skyXY);
+  for (const p of PTS) { const [X, Y] = skyXY(+p.l, +p.b); const fl = p.flags && p.flags.length;
+    g.fillStyle = fl ? 'rgba(255,209,102,0.9)' : colourOf(p.bp_rp, isConf(p.confirmed) ? 0.85 : 0.35);
+    g.fillRect(X - 0.8, Y - 0.8, fl ? 2.2 : 1.6, fl ? 2.2 : 1.6); }
+  g.fillStyle = 'rgba(233,236,248,0.75)'; g.font = '13px Segoe UI, system-ui';
+  drawPoles(g, skyXY);
+  drawShellDirections(g, skyXY);
+}
+
+/* ---------- animated overlay: scan beam, recent patches, spotlight crosshair ---------- */
+let lastFx = 0;
+function fx(t) {
+  requestAnimationFrame(fx); if (t - lastFx < 33) return; lastFx = t;   // ~30 fps, overlay only
+  const g = $('sky-fx').getContext('2d'); g.clearRect(0, 0, SKY.W, SKY.H);
+  drawGalacticCentre(g, skyXY, t);
+  drawActiveTiles(g, skyXY, t);
+  if (TILES.active.length) { const [X, Y] = skyXY(TILES.active[0][0], TILES.active[0][1]);
+    g.fillStyle = '#e9ecf8'; g.font = '600 14px Segoe UI, system-ui'; g.fillText('sweeping now', X + 14, Y - 14); }
+  if (focus) { const [X, Y] = skyXY(+focus.l, +focus.b); const r = 12 + 3 * Math.sin(t / 300);
+    g.strokeStyle = 'rgba(255,209,102,0.95)'; g.lineWidth = 2; g.beginPath(); g.arc(X, Y, r, 0, 6.283); g.stroke();
+    g.beginPath(); g.moveTo(X - r - 10, Y); g.lineTo(X - r + 4, Y); g.moveTo(X + r - 4, Y); g.lineTo(X + r + 10, Y);
+    g.moveTo(X, Y - r - 10); g.lineTo(X, Y - r + 4); g.moveTo(X, Y + r - 4); g.lineTo(X, Y + r + 10); g.stroke(); }
+}
+requestAnimationFrame(fx);
+
+/* ---------- galaxy map (top-down, Sun at centre) ---------- */
+/* Milky Way, top-down. Galactic Centre at the middle; Sun at R0 = 8.18 kpc (GRAVITY Collaboration 2019), "up" from the Sun
+   points to the Galactic Centre. Catalogued stars are drawn at true scale around the Sun, plus a zoomed inset of our bubble.
+   The spiral arms and bar are a schematic for orientation only, not measured by AEGIS. */
+const R0_PC = 8178;
+function drawMilkyWay(c, pts, noteEl, t) {
+  const g = c.getContext('2d'), W = c.width, H = c.height; g.clearRect(0, 0, W, H); g.fillStyle = '#060918'; g.fillRect(0, 0, W, H);
+  const VIEW = 16500, cx = W * 0.40, cy = H / 2, s = (H / 2 - 8) / VIEW;            // pc -> px
+  const P = (gx, gy) => [cx + gy * s, cy - gx * s];                                   // gx toward Sun->GC axis (GC at 0)
+  // disk glow
+  const disk = g.createRadialGradient(cx, cy, 0, cx, cy, 15000 * s);
+  disk.addColorStop(0, 'rgba(255,226,170,0.55)'); disk.addColorStop(0.12, 'rgba(255,200,140,0.25)');
+  disk.addColorStop(0.45, 'rgba(120,140,255,0.10)'); disk.addColorStop(1, 'rgba(60,70,160,0)');
+  g.fillStyle = disk; g.beginPath(); g.arc(cx, cy, 15000 * s, 0, 6.283); g.fill();
+  // schematic arms: four log spirals, pitch 12 deg
+  const k = Math.tan(12 * Math.PI / 180);
+  g.lineCap = 'round';
+  for (let a = 0; a < 4; a++) { g.beginPath();
+    for (let th = 0; th <= 7.6; th += 0.03) { const r = 3200 * Math.exp(k * th), ang = th + a * Math.PI / 2 + 0.45;
+      if (r > 15500) break; const [X, Y] = P(r * Math.cos(ang), r * Math.sin(ang)); th === 0 ? g.moveTo(X, Y) : g.lineTo(X, Y); }
+    g.strokeStyle = 'rgba(170,190,255,0.20)'; g.lineWidth = 5; g.stroke(); g.strokeStyle = 'rgba(200,215,255,0.28)'; g.lineWidth = 1.4; g.stroke(); }
+  // bar
+  g.save(); g.translate(cx, cy); g.rotate(-27 * Math.PI / 180);
+  const bar = g.createLinearGradient(-4500 * s, 0, 4500 * s, 0); bar.addColorStop(0, 'rgba(255,214,150,0)'); bar.addColorStop(0.5, 'rgba(255,214,150,0.55)'); bar.addColorStop(1, 'rgba(255,214,150,0)');
+  g.fillStyle = bar; g.beginPath(); g.ellipse(0, 0, 4500 * s, 1100 * s, 0, 0, 6.283); g.fill(); g.restore();
+  // Galactic Centre
+  g.fillStyle = '#fff6dc'; g.shadowColor = '#ffd38a'; g.shadowBlur = 14; g.beginPath(); g.arc(cx, cy, 3.2, 0, 6.283); g.fill(); g.shadowBlur = 0;
+  g.fillStyle = 'rgba(255,240,210,0.9)'; g.font = '12px Segoe UI, system-ui'; g.textAlign = 'right'; g.fillText('Galactic Centre', cx - 9, cy - 6); g.textAlign = 'left';
+  // catalogued stars at true scale (heliocentric x_pc points to the GC)
+  const [sx, sy] = P(-R0_PC, 0);
+  for (const p of pts) { const x = +p.x_pc, y = +p.y_pc; if (!isFinite(x) || !isFinite(y)) continue;
+    const [X, Y] = P(x - R0_PC, y); g.fillStyle = (p.flags && p.flags.length) ? 'rgba(255,209,102,0.8)' : 'rgba(170,200,255,0.55)'; g.fillRect(X, Y, 1, 1); }
+  // the Sun: pulsing marker
+  const pulse = 0.5 + 0.5 * Math.sin((t || 0) / 450);
+  g.strokeStyle = `rgba(255,209,102,${0.35 + 0.4 * pulse})`; g.lineWidth = 1.5; g.beginPath(); g.arc(sx, sy, 9 + 5 * pulse, 0, 6.283); g.stroke();
+  g.fillStyle = '#ffe9a8'; g.shadowColor = '#ffd166'; g.shadowBlur = 16; g.beginPath(); g.arc(sx, sy, 4.2, 0, 6.283); g.fill(); g.shadowBlur = 0;
+  g.strokeStyle = 'rgba(255,209,102,0.55)'; g.setLineDash([4, 4]); g.beginPath(); g.moveTo(sx, sy - 14); g.lineTo(cx, cy + 8); g.stroke(); g.setLineDash([]);
+  g.fillStyle = '#ffd166'; g.font = '700 13px Segoe UI, system-ui'; g.fillText('☉ You are here', sx + 12, sy + 4);
+  g.fillStyle = 'rgba(255,224,150,0.85)'; g.font = '12px Segoe UI, system-ui';
+  const midY = (sy + cy) / 2; g.fillText('26,700 light-years', sx + 8, midY + 4);
+  // scale bar: 10,000 ly
+  const L = 10000 / 3.26156 * s, sbY = H * 0.22; g.strokeStyle = 'rgba(233,236,248,0.6)'; g.lineWidth = 1; g.beginPath(); g.moveTo(14, sbY); g.lineTo(14 + L, sbY); g.stroke();
+  g.fillStyle = 'rgba(233,236,248,0.7)'; g.fillText('10,000 light-years', 14, sbY - 6);
+  // inset: our bubble, zoomed
+  const ds = pts.map(p => Math.hypot(+p.x_pc, +p.y_pc)).filter(isFinite).sort((a, b) => a - b);
+  const Rl = Math.max(200, ds[Math.floor(ds.length * 0.98)] || 1000) * 1.05;
+  const ir = Math.min(H * 0.36, W * 0.2), icx = W - ir - 12, icy = ir + 12, is = ir / Rl;
+  g.fillStyle = 'rgba(5,7,15,0.88)'; g.beginPath(); g.arc(icx, icy, ir, 0, 6.283); g.fill();
+  g.strokeStyle = 'rgba(255,209,102,0.5)'; g.stroke();
+  g.save(); g.beginPath(); g.arc(icx, icy, ir - 1, 0, 6.283); g.clip();
+  for (const p of pts) { const X = icx + (+p.y_pc) * is, Y = icy - (+p.x_pc) * is; if (!isFinite(X) || !isFinite(Y)) continue;
+    g.fillStyle = (p.flags && p.flags.length) ? 'rgba(255,209,102,0.85)' : colourOf(p.bp_rp, 0.6); g.fillRect(X, Y, 1.2, 1.2); }
+  g.restore();
+  g.fillStyle = '#ffe9a8'; g.shadowColor = '#ffd166'; g.shadowBlur = 10; g.beginPath(); g.arc(icx, icy, 3, 0, 6.283); g.fill(); g.shadowBlur = 0;
+  // connector from the Sun to the inset
+  g.strokeStyle = 'rgba(255,209,102,0.35)'; g.beginPath(); g.moveTo(sx + 6, sy - 6); g.lineTo(icx - ir * 0.72, icy + ir * 0.72); g.stroke();
+  g.fillStyle = 'rgba(233,236,248,0.8)'; g.font = '11.5px Segoe UI, system-ui';
+  g.fillText(`zoom: our bubble, r ≈ ${Math.round(Rl * 3.26156 / 100) * 100 >= 1000 ? (Math.round(Rl * 3.26156 / 100) * 100).toLocaleString() : Math.round(Rl * 3.26156)} ly`, icx - ir, icy + ir + 14);
+  if (noteEl) noteEl.textContent = 'Stars at true scale · circle = zoom on our scanned bubble · spiral arms are a schematic, not measured';
+}
+
+function drawGalaxy() { drawMilkyWay($('galaxy'), PTS, $('gal-note'), performance.now()); }
+setInterval(() => { if (PTS.length) drawGalaxy(); }, 200);
+
+/* ---------- Hertzsprung–Russell diagram ---------- */
+function drawHR() {
+  const c = $('hr'), g = c.getContext('2d'), W = c.width, H = c.height; g.clearRect(0, 0, W, H);
+  const x0 = 64, x1 = W - 20, y0 = 48, y1 = H - 82, cmin = -0.5, cmax = 4.0, mmin = -4, mmax = 16;
+  const X = c_ => x0 + (c_ - cmin) / (cmax - cmin) * (x1 - x0), Y = m => y0 + (m - mmin) / (mmax - mmin) * (y1 - y0);
+  g.strokeStyle = 'rgba(255,255,255,0.12)'; g.strokeRect(x0, y0, x1 - x0, y1 - y0);
+  g.fillStyle = 'rgba(141,150,184,1)'; g.font = '12px Segoe UI, system-ui';
+  for (let m = -4; m <= 16; m += 4) { g.fillText(String(m), x0 - 26, Y(m) + 4); }
+  for (let cc = 0; cc <= 4; cc++) { g.fillText(String(cc), X(cc) - 3, y1 + 16); }
+  g.fillText('colour (Gaia BP − RP)  →  cooler', x0 + 190, y1 + 32);
+  g.save(); g.translate(18, y0 + 190); g.rotate(-Math.PI / 2); g.fillText('brighter ↑   (absolute G mag)', 0, 0); g.restore();
+  let n = 0;
+  for (const p of PTS) { if (!isConf(p.confirmed)) continue; const d = +p.dist_pc, G = +p.g_mag, cc = +p.bp_rp;
+    if (!(d > 0) || !isFinite(G) || !isFinite(cc)) continue; const M = G - 5 * Math.log10(d) + 5;
+    if (cc < cmin || cc > cmax || M < mmin || M > mmax) continue; g.fillStyle = colourOf(cc, 0.5); g.fillRect(X(cc), Y(M), 1.6, 1.6); n++; }
+    g.fillStyle = '#ffd166'; g.shadowColor = '#ffd166'; g.shadowBlur = 12; g.beginPath(); g.arc(X(0.82), Y(4.67), 5, 0, 6.283); g.fill(); g.shadowBlur = 0;
+  g.font = '700 13px Segoe UI, system-ui'; g.fillText('☉ the Sun', X(0.82) + 9, Y(4.67) + 4);
+  g.fillStyle = 'rgba(233,236,248,0.85)'; g.font = '600 13px Segoe UI, system-ui';
+  g.fillText('main sequence', X(1.6), Y(6.5)); g.fillText('giants', X(1.5), Y(-0.5)); g.fillText('white dwarfs', X(-0.3), Y(14.3));
+  g.fillStyle = 'rgba(141,150,184,1)'; g.font = '12px Segoe UI, system-ui'; g.fillText(`${num(n)} confirmed stars plotted`, x1 - 170, y0 + 16);
+}
+
+/* ---------- H0 comparison (fit results) ---------- */
+function drawH0() {
+  const c = $('h0'), g = c.getContext('2d'), W = c.width, H = c.height; g.clearRect(0, 0, W, H);
+  if (!SCI || !SCI.fits) return; const lo = 65.5, hi = 75.5, x0 = 40, x1 = W - 30;
+  const X = v => x0 + (v - lo) / (hi - lo) * (x1 - x0), col = { lcdm:'#7fd1ff', torsion:'#c39bff', local:'#ff9a6b' };
+  g.strokeStyle = 'rgba(255,255,255,0.18)'; g.beginPath(); g.moveTo(x0, 214); g.lineTo(x1, 214); g.stroke();
+  g.fillStyle = 'rgba(141,150,184,1)'; g.font = '12px Segoe UI, system-ui';
+  for (let v = 66; v <= 75; v++) { g.fillRect(X(v), 211, 1, 6); g.fillText(String(v), X(v) - 7, 232); }
+  SCI.fits.forEach((f, i) => { const y = 66 + i * 50, cc = col[f.kind] || '#fff';
+    if (f.err) { g.strokeStyle = cc; g.lineWidth = 3; g.beginPath(); g.moveTo(X(f.H0 - f.err), y); g.lineTo(X(f.H0 + f.err), y); g.stroke(); }
+    g.fillStyle = cc; g.beginPath(); g.arc(X(f.H0), y, 8, 0, 6.283); g.fill();
+    g.fillStyle = '#e9ecf8'; g.font = '600 14px Segoe UI, system-ui';
+    const label = `${f.label}: ${f.H0.toFixed(2)}${f.err ? ' ± ' + f.err.toFixed(2) : ''}`;
+    const tx = Math.min(X(f.H0) - 8, x1 - g.measureText(label).width); g.fillText(label, Math.max(x0, tx), y - 14); });
+  $('h0-note').textContent = 'Best fits: Planck 2018 CMB + DESI DR2 BAO + Pantheon+ (no SH0ES). The torsion field moves H₀ toward the local value.';
+}
+
+/* ---------- rotating story card ---------- */
+const CARDS = [
+  () => { const r = SPOT.recent || []; if (!r.length) return null; const s = r[spotIdx++ % r.length]; focus = s;
+    const pc = +s.dist_pc, ly = pc * LY_PER_PC, G = +s.g_mag, v = s.vtan_kms === null || s.vtan_kms === '' ? null : +s.vtan_kms;
+    const faint = G > 6 ? `about ${num(Math.round(Math.pow(10, 0.4 * (G - 6))))}× too faint for the naked eye` : 'bright enough to see by eye';
+    return `<div class="kicker">Star spotlight · just catalogued</div><h3>Gaia DR3 ${esc(s.source_id)}</h3>
+      <div class="grid"><div>Distance</div><div>${num(Math.round(ly))} light-years (${num(Math.round(pc))} parsecs) — confirmed two ways</div>
+      <div>Its light left</div><div>${lightYear(pc)}</div>
+      <div>Colour type</div><div>${colourClass(s.bp_rp)} <span style="color:var(--muted)">(approx.)</span></div>
+      <div>Brightness</div><div>magnitude ${G.toFixed(1)} · ${faint}</div>
+      ${v !== null ? `<div>Speed across the sky</div><div>${num(Math.round(v))} km/s (${num(Math.round(v * 2237))} mph)</div>` : ''}
+      <div>Sky position</div><div>RA ${(+s.ra).toFixed(3)}°, Dec ${(+s.dec).toFixed(3)}° — marked in gold on the sky</div></div>`; },
+  () => { const R = SPOT.records || {}; if (!R.farthest) return null; focus = R.farthest.star;
+    const row = (k, lbl, f) => R[k] ? `<div>${lbl}</div><div>${f(R[k])} <span style="color:var(--muted)">· Gaia DR3 ${esc(R[k].star.source_id)}</span></div>` : '';
+    return `<div class="kicker">Session records · confirmed stars only</div><h3>Extremes we've found so far</h3><div class="grid">
+      ${row('farthest', 'Farthest', r => `${num(Math.round(r.value * LY_PER_PC))} light-years`)}
+      ${row('nearest', 'Nearest', r => `${num(Math.round(r.value * LY_PER_PC))} light-years`)}
+      ${row('fastest', 'Fastest', r => `${num(Math.round(r.value))} km/s across the sky`)}</div>
+      <p style="margin-top:12px">"Confirmed" means two independent distance methods agree (Gaia parallax and Bailer-Jones 2021) and the star's motion fits cleanly.</p>`; },
+  () => { focus = null; if (!SCI) return null;
+    return `<div class="kicker">The theory · by ${esc(SCI.author)}</div><h3>${esc(SCI.title)}</h3><p>${esc(SCI.summary)}</p>
+      <p style="font-family:Cambria Math, Georgia, serif; color:var(--torsion); font-size:19px">${esc(SCI.equation)}</p>`; },
+  () => { focus = null; if (!SCI) return null;
+    return `<div class="kicker">What the data says · honestly</div><h3>Tested against the real universe</h3>
+      ${SCI.result_lines.map(l => `<p>• ${esc(l)}</p>`).join('')}
+      <p style="color:var(--muted)">Next: ${SCI.next.map(n => esc(n.label) + ' (' + esc(n.status) + ')').join(' · ')}</p>`; },
+  () => { focus = null; if (!SCI || !SCI.fingerprint) return null;
+    return `<div class="kicker">The search for proof</div><h3>${esc(SCI.fingerprint.title)}</h3><p style="font-family:Cambria Math, Georgia, serif; color:var(--torsion); font-size:18px">${esc(SCI.fingerprint.equation)}</p><p>${esc(SCI.fingerprint.text)}</p>`; },
+  () => { focus = null; if (!SCI || !SCI.threads) return null;
+    return `<div class="kicker">Research threads · live</div><h3>Where every question stands</h3><div class="grid" style="font-size:15px">${SCI.threads.slice(0, 8).map(t => `<div>${esc(t.name)}</div><div>${esc(t.status)}</div>`).join('')}</div>`; },
+  () => { focus = null; return `<div class="kicker">A note from Danny</div><h3>Thank you for being here</h3>
+      <p>Whoever you are and wherever you're watching from, you matter, and I'm grateful you're spending some of your time with me. If life has been hard on you, I'm sorry. You're welcome here.</p>
+      <p>This is me following a dream and reaching for the stars. I'm not looking for investors, buyouts or fame, and my family values its privacy, so I'm keeping this simple. If you'd like to support the work, just keep the stream running. Enough for my family, and the chance to keep doing what I love, is all I need.</p>
+      <p class="sig">Take a moment to understand what's happening around you, and choose how you respond. I believe that's how the world gets better. — Danny</p>`; },
+  () => { focus = null; return `<div class="kicker">Check our work · sources</div><h3>Everything here is public and repeatable</h3><ul class="src">
+      <li>Star data: <a href="https://gea.esac.esa.int/archive/">ESA Gaia DR3</a> (Gaia Collaboration 2023, <a href="https://arxiv.org/abs/2208.00211">arXiv:2208.00211</a>)</li>
+      <li>Distances: Bailer-Jones et al. 2021, <a href="https://arxiv.org/abs/2012.05220">arXiv:2012.05220</a></li>
+      <li>CMB: Planck 2018, <a href="https://arxiv.org/abs/1807.06209">arXiv:1807.06209</a> · PR4 CamSpec, <a href="https://arxiv.org/abs/2205.10869">arXiv:2205.10869</a> · ACT DR6, <a href="https://arxiv.org/abs/2503.14452">arXiv:2503.14452</a></li>
+      <li>BAO: DESI DR2, <a href="https://arxiv.org/abs/2503.14738">arXiv:2503.14738</a> · Supernovae: Pantheon+, <a href="https://arxiv.org/abs/2202.04077">arXiv:2202.04077</a></li>
+      <li>Local H₀: SH0ES, Riess et al. 2022, <a href="https://arxiv.org/abs/2112.04510">arXiv:2112.04510</a></li>
+      <li>Theory roots: Taveras & Yunes 2008, <a href="https://arxiv.org/abs/0807.2652">arXiv:0807.2652</a> · Early dark energy: Poulin et al. 2019, <a href="https://arxiv.org/abs/1811.04083">arXiv:1811.04083</a>; 2025, <a href="https://arxiv.org/abs/2505.08051">arXiv:2505.08051</a></li>
+      <li>Tools: AxiCLASS (<a href="https://arxiv.org/abs/1908.06995">arXiv:1908.06995</a>) · Cobaya (<a href="https://arxiv.org/abs/2005.05290">arXiv:2005.05290</a>)</li></ul>`; },
+  () => { focus = null; return `<div class="kicker">The onion method</div><h3>Peeling the sky, layer by layer</h3>
+      <p>AEGIS splits the stars into distance shells, like layers of an onion, and asks which way each layer's stars bunch up. Near the Sun the stars are spread evenly; farther out they should pile up toward the heart of the Milky Way.</p>
+      <p style="font-size:15px">${shellLegendHTML()}</p>
+      <p style="color:var(--muted);font-size:14px">This is a test of the method on our own galaxy. The same method, aimed at a million distant quasars, is how we will look for a preferred direction in the universe itself.</p>`; },
+  () => { focus = null; const fl = (STATUS.scan && STATUS.scan.flags) || {};
+    return `<div class="kicker">What the gold dots mean</div><h3>Candidates for follow-up — not discoveries</h3>
+      <p><b style="color:var(--gold)">Wobbly stars</b> (${num(fl.astrometric_excess)}): Gaia's single-star fit is poor (RUWE above 1.4). Often a hidden companion star tugging on it.</p>
+      <p><b style="color:var(--gold)">Fast movers</b> (${num(fl.high_velocity)}): crossing the sky faster than 400 km/s. Possibly visitors from the Milky Way's halo.</p>
+      <p><b style="color:var(--gold)">Distance puzzles</b> (${num(fl.distance_mismatch)}): the two distance methods disagree. Worth a closer look.</p>`; },
+];
+let cardI = 0, cardT0 = 0; const CARD_MS = 16000;
+function nextCard() { for (let k = 0; k < CARDS.length; k++) { const html = CARDS[cardI++ % CARDS.length](); if (html) {
+    const b = $('card-body'); b.style.opacity = 0; setTimeout(() => { b.innerHTML = html; b.style.opacity = 1; }, 500); cardT0 = performance.now(); return; } } }
+setInterval(() => { $('progress').style.width = Math.min(100, (performance.now() - cardT0) / CARD_MS * 100) + '%'; }, 200);
+
+/* ---------- ticker ---------- */
+function buildTicker() {
+  const sc = STATUS.scan || {}, R = SPOT.records || {}, fl = sc.flags || {}; const items = [
+    sweepText(sc) ? `Galaxy sweep: <b>${sweepText(sc).line}</b>` : '',
+    `<b>${num(sc.stars)}</b> stars catalogued live from ESA's Gaia space telescope`,
+    `<b>${num(sc.confirmed)}</b> distances confirmed by two independent methods`,
+    R.farthest ? `Farthest confirmed star tonight: <b>${num(Math.round(R.farthest.value * LY_PER_PC))} light-years</b> away` : '',
+    R.fastest ? `Fastest confirmed star: <b>${num(Math.round(R.fastest.value))} km/s</b> across the sky` : '',
+    `<b>${num(fl.astrometric_excess)}</b> wobbly stars flagged — many may hide unseen companions`,
+    `Torsion-Born Early Dark Energy — a theory by <b>Danny Lee Eldridge</b>`,
+    `Every number here can be checked: Gaia DR3 · Planck · DESI · Pantheon+ · all public data`,
+    `Thank you for watching — you matter`];
+  $('tick').innerHTML = items.filter(Boolean).join('<span class="sep">✦</span>') + '<span class="sep">✦</span>';
+}
+let tickX = 1920, lastTick = 0;
+function tickLoop(t) { requestAnimationFrame(tickLoop); const dt = lastTick ? t - lastTick : 16; lastTick = t;
+  const el = $('tick'); tickX -= dt * 0.09; if (tickX < -el.scrollWidth) { tickX = 1920; buildTicker(); } el.style.transform = `translateX(${tickX}px)`; }
+requestAnimationFrame(tickLoop);
+
+/* ---------- data refresh ---------- */
+async function getStatus() { try { STATUS = await (await fetch('/api/status')).json(); const sc = STATUS.scan || {};
+    $('s-stars').textContent = num(sc.stars); { const sw = sweepText(sc); $('s-patches').innerHTML = sw ? `${sw.pct.toFixed(sw.pct < 1 ? 2 : 1)}% <small>${sw.eta} left</small>` : num(sc.patches); }
+    $('s-conf').innerHTML = `${num(sc.confirmed)} <small>${sc.stars ? (100 * sc.confirmed_frac).toFixed(1) + '%' : ''}</small>`;
+    const now = Date.now() / 1000; history.push([now, sc.stars || 0]); while (history.length && now - history[0][0] > 120) history.shift();
+    if (sc.stars_per_min > 0) { $('s-rate').innerHTML = `${num(Math.round(sc.stars_per_min))} <small>stars / minute</small>`; } else if (history.length > 2) { const [t0, n0] = history[0], [t1, n1] = history[history.length - 1]; const r = (n1 - n0) / Math.max(1, t1 - t0) * 60;
+      $('s-rate').innerHTML = r > 0 ? `${num(Math.round(r))} <small>stars / minute</small>` : '<small>between sky patches…</small>'; }
+  } catch (e) { $('s-rate').innerHTML = '<small>reconnecting…</small>'; } }
+async function getShells() { try { SHELLS = await (await fetch('/api/shells')).json(); drawSky(); } catch (e) {} }
+async function getTiles() { try { const n0 = TILES.done.length; TILES = await (await fetch('/api/tiles')).json(); if (TILES.done.length !== n0) drawSky(); } catch (e) {} }
+async function getStars() { try { PTS = await (await fetch('/api/stars')).json(); drawSky(); drawGalaxy(); drawHR(); } catch (e) {} }
+async function getSpot() { try { SPOT = await (await fetch('/api/spotlight')).json(); } catch (e) {} }
+async function getSci() { try { SCI = await (await fetch('/api/science')).json(); drawH0(); } catch (e) {} }
+setInterval(() => { $('clock').textContent = new Date().toLocaleString([], { weekday:'short', hour:'2-digit', minute:'2-digit', second:'2-digit' }); }, 1000);
+(async () => { await Promise.all([getStatus(), getSpot(), getSci()]); buildTicker(); nextCard(); getStars();
+  setInterval(getStatus, 3000); getTiles(); setInterval(getTiles, 5000); getShells(); setInterval(getShells, 30000); setInterval(getSpot, 10000); setInterval(getStars, 20000); setInterval(getSci, 300000); setInterval(nextCard, CARD_MS); })();
+</script>
+</body>
+</html>

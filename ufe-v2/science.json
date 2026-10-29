@@ -1,0 +1,210 @@
+{
+ "title": "Torsion-Born Early Dark Energy",
+ "author": "Danny Lee Eldridge",
+ "updated": "2026-10-29",
+ "summary": "In Einstein–Cartan gravity, spacetime can twist (torsion) as well as curve. The Barbero–Immirzi field that comes with torsion behaves like a new scalar field. Danny's theory gives it the potential V = Λ⁴[1 − cos(φ/F)]³: it stays frozen early on, briefly adds about 5?6% to the universe's energy around redshift 3,500 (just before the CMB formed), then fades away. That shrinks the sound horizon and pushes the inferred Hubble constant up.",
+ "equation": "V(φ) = Λ⁴ [1 − cos(φ/F)]ⁿ ,  n = 3",
+ "data": "Planck 2018 CMB (temperature, polarisation, lensing) + DESI DR2 BAO + Pantheon+ supernovae",
+ "fits": [
+  {
+   "label": "Standard model (?CDM, CAMB)",
+   "H0": 68.33,
+   "kind": "lcdm"
+  },
+  {
+   "label": "Torsion field (this theory, CAMB)",
+   "H0": 69.86,
+   "kind": "torsion"
+  },
+  {
+   "label": "Local distance ladder (SH0ES)",
+   "H0": 73.04,
+   "err": 1.04,
+   "kind": "local"
+  }
+ ],
+ "result_lines": [
+  "Planck 2018 + DESI DR2 + Pantheon+ (CAMB, best of 8 starts, 29 Oct 2026): ??? = ?4.0 with 3 extra parameters (?AIC = +2.0, about 1.1?): a tie at best, not a detection",
+  "Planck PR4 cross-check: H? = 70.29 vs 67.63, but no better fit to the data itself (??? = +0.1). The ?3.4 we showed earlier came only from foreground settings, so we withdrew it",
+  "Best fit: f_EDE ? 0.054 at z_c ? 3,790 (free) and 0.057 at 3,495 (locked); S? ? 0.82, slightly higher than the standard model's 0.81",
+  "Unique prediction: no rotation of CMB polarisation (birefringence), unlike photon-coupled EDE",
+  "Honest status: allowed by the data and eases the Hubble tension (SH0ES gap 4.5? ? 3.0?) ? not yet a detection",
+  "Locked Twist (switch-on tied to matter?radiation equality): ??? ?3.96 (??_eff ?4.15) with 2 settings, ?AIC ? 0.0: exactly on our pre-registered line (?4), so a split verdict. It beats free EDE on AIC by 2. Not blind.",
+  "Where the gain comes from (CAMB): mostly the CMB (?3.6, high-? ?2.4), BAO ?0.7, supernovae +0.3",
+  "Open discrepancy: AxiCLASS gave ??? ?6.5 and H? 70.6; CAMB gives ?4.0 and 69.9. Not yet explained; the CAMB numbers are the headline"
+ ],
+ "next": [
+  {
+   "label": "Planck PR4 + ACT DR6 (blind test of the lock)",
+   "status": "running overnight: ACT's P-ACT baseline + A_act prior (deviations disclosed in dossier §7e)"
+  },
+  {
+   "label": "Explain the AxiCLASS vs CAMB gap (evaluate CAMB at the AxiCLASS best point)",
+   "status": "done: engines agree (−6.54 vs −6.52); gap was optimizer convergence. Fair re-polish running"
+  },
+  {
+   "label": "How sharply the data pin z_c (z_c profile)",
+   "status": "running overnight: z_c fixed at 3.25–3.85"
+  },
+  {
+   "label": "Error bars (profile likelihood, AxiCLASS)",
+   "status": "7 points done; CAMB repeat queued"
+  },
+  {
+   "label": "Test against the CCHP local H? (70.4)",
+   "status": "queued"
+  },
+  {
+   "label": "Pre-registered test: F fixed by torsion physics",
+   "status": "queued"
+  },
+  {
+   "label": "Pre-registered Fingerprint shape",
+   "status": "queued"
+  }
+ ],
+ "github": "",
+ "fingerprint": {
+  "title": "A fingerprint only torsion has",
+  "equation": "V(φ) = Λ⁴ [1 − cos(g(φ)/F)]³ ,  g(φ) ∝ sinh(φ/√(3/2) M_Pl + x₀)",
+  "text": "In the torsion picture the natural dial is the Immirzi parameter γ itself. If the potential repeats in γ rather than in the field, it is lopsided in a way generic early dark energy is not. With the field's resting point fixed at loop quantum gravity's γ₀ ≈ 0.2375, it shifts the CMB acoustic angle by about 0.025% and the temperature spectrum by about 0.1%, right at Planck's precision. The fit's decision rule was written down before running.",
+  "status": "queued (pre-registered)"
+ },
+ "threads": [
+  {
+   "name": "Data fits",
+   "q": "How does the field fare against every major dataset?",
+   "status": "Planck 2018 done (near tie); PR4 shows no improvement in the data's own fit; ACT DR6 and SPT not started (data still to unpack)"
+  },
+  {
+   "name": "The Locked Twist",
+   "q": "If the field wakes exactly when matter outweighs light, does the Twist still fit with one fewer setting?",
+   "status": "Converged (CAMB, best of 8): ??? ?3.96 (??_eff ?4.15) with 2 settings, ?AIC ? 0.0: sits exactly on the rule we wrote first (?4), closer than the optimizer's own noise, so these data cannot decide. Locking costs only 0.03 vs the free fit, so z_c is weakly pinned. Not blind; blind test on ACT DR6 next."
+  },
+  {
+   "name": "Whole-number width: result",
+   "q": "Can the data tell whether the width is 1.2247 ÷ a whole number?",
+   "status": "Untestable with these data: best N ≈ 8.9, anything from 7.7 to 10.1 fits within Δχ² = 1; the half-number controls (8.5, 9.5) fit only 0.15 and 0.5 worse than N = 9 (the rule needed 1). Pure-torsion width (N = 1) fails: Δχ² = +13.8."
+  },
+  {
+   "name": "The shape of space",
+   "q": "Is space curved, or wrapped like Metatron-style solids (the dodecahedral universe)?",
+   "status": "Done: the dodecahedral curvature fits 163 points worse than flat (excluded). Curvature free gives Ω_k = 0.0002 for both the standard model and the Locked Twist: flat."
+  },
+  {
+   "name": "The Cosmic Bell",
+   "q": "How does the Twist change the oldest light's sound waves?",
+   "status": "Computed from the AxiCLASS fits: the acoustic peaks don't move; the sound ruler shrinks 2.9% (144.9 ? 140.7 Mpc) so H? rises to 70.6. In CAMB the drag-epoch ruler shrinks 2.1% (147.5 ? 144.4 Mpc), H? 69.9."
+  },
+  {
+   "name": "Torsion-shaped potential",
+   "q": "Is the potential periodic in the Immirzi parameter?",
+   "status": "Built and regression-tested; pre-registered fit queued"
+  },
+  {
+   "name": "Theory-fixed settings",
+   "q": "Does the data accept F set by the torsion physics?",
+   "status": "Pre-registered fit queued"
+  },
+  {
+   "name": "Consistency",
+   "q": "Black-hole γ₀, lab limits, S₈",
+   "status": "Black-hole ?? and lab limits fine. S? ? 0.82 (standard model 0.81): fits KiDS-Legacy (0.815) but sits ?2.5? above DES Y3 (0.776), a mild pressure"
+  },
+  {
+   "name": "Birefringence",
+   "q": "Does CMB light rotate? Torsion says no.",
+   "status": "Data hints 0.28°; awaiting Simons Observatory / LiteBIRD"
+  },
+  {
+   "name": "Independent codes",
+   "q": "Do other codes and machines agree?",
+   "status": "Engines agree: at the same points CAMB and AxiCLASS give Δχ² −6.54 vs −6.52. The earlier size gap was optimizer convergence on both sides. Fair re-polish of all three models running."
+  },
+  {
+   "name": "Galaxy funnel",
+   "q": "Does each distance shell point to the Galactic Centre?",
+   "status": "Sweep complete (192 million stars, 200/200 ESA spot-checks). Every shell points to the Galactic Centre (l ? 345?10?): expected Milky Way structure, a check of the method rather than new physics"
+  },
+  {
+   "name": "Universe direction",
+   "q": "Is there a preferred direction in the quasars?",
+   "status": "Planned"
+  },
+  {
+   "name": "Sigil Model exam",
+   "q": "Do planets around other stars lock into simple rhythms more than chance?",
+   "status": "Passed: 2.1? chance across 1,153 pairs (p < 0.0001). This 'just wide of resonance' excess is already known (Lithwick & Wu 2012; Fabrycky et al. 2014): it confirms the method, not the Sigil Model uniquely. Tidal version not supported, model amended"
+  },
+  {
+   "name": "Planets and the Sun",
+   "q": "Do Venus, Earth and Jupiter pace the 11-year sunspot cycle?",
+   "status": "Open: average matches 11.07 yr, but many planet rhythms land near 11; needs the ice-core record"
+  },
+  {
+   "name": "Bridge between theories",
+   "q": "Does the oscillating field lock into resonance, like the Sigil 'Lock'?",
+   "status": "Planned: stability (Floquet) calculation"
+  },
+  {
+   "name": "Energy from space",
+   "q": "What rhythms do the Sun's light, radio and the solar wind leave on Earth?",
+   "status": "Storms lag sunspots by 16 months; equinox peaks at 13σ; cosmic rays next"
+  },
+  {
+   "name": "Comets and catastrophes",
+   "q": "Do crater ages repeat with the Sun's ~30-million-year passes through the galactic disc?",
+   "status": "Tested on 45 craters: best 27.7 Myr but p = 0.33, no pattern yet; needs better-dated craters"
+  },
+  {
+   "name": "Open problems",
+   "q": "Why does the field switch on near matter–radiation equality? Why does it start near the top? What sets the period?",
+   "status": "Open theory questions"
+  }
+ ],
+ "numbers": {
+  "dchi2": -4.0,
+  "daic": 2.0,
+  "H0_lcdm": 68.33,
+  "H0_ede": 69.86,
+  "f_ede": 0.054,
+  "sigma": 1.1,
+  "profile_best": 0.078,
+  "profile_lo": 0.06,
+  "profile_hi": 0.096,
+  "profile_points": [
+   [
+    0.02,
+    2421.44
+   ],
+   [
+    0.04,
+    2420.53
+   ],
+   [
+    0.06,
+    2418.6
+   ],
+   [
+    0.078,
+    2417.64
+   ],
+   [
+    0.1,
+    2419.19
+   ],
+   [
+    0.12,
+    2423.98
+   ],
+   [
+    0.15,
+    2453.31
+   ]
+  ],
+  "dchi2_pr4": 0.1,
+  "dchi2_zeq": -4.0,
+  "daic_zeq": 0.0,
+  "dchi2_eff_zeq": -4.15
+ }
+}
