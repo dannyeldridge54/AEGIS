@@ -1,7 +1,7 @@
 # Paper: Torsion-Born Early Dark Energy with an Onset Locked to Matter–Radiation Equality
 
 **Files:** [`torsion_born_ede.tex`](./torsion_born_ede.tex) (source) · [`torsion_born_ede.pdf`](./torsion_born_ede.pdf) (built 29 October 2026)
-**Author:** Danny Lee Eldridge, independent researcher, Oklahoma City, OK, USA · dannyeldridge54@gmail.com
+**Author:** Danny Lee Eldridge, independent researcher, Oklahoma, USA · dannyeldridge54@gmail.com
 
 ## 🙏 I am looking for an arXiv endorsement
 
@@ -26,7 +26,7 @@ wrong, and here is why." An endorsement only says the paper is appropriate for t
 
 ## About the license
 
-**A note from me about the license.** I know the license numbers look insane. I'm not a lawyer, and I didn't know what else to do or how to protect myself, my family and this work from being taken. If you are a lawyer, or you know a fairer way to keep it free for people and out of the hands of those who would misuse it, please write to me at dannyeldridge54@gmail.com. I will listen. — Danny
+**A note from me about the license.** I don't want to gatekeep anything. This belongs to everyone. But the system has taken every chance I ever had, and I know the license numbers look insane. I'm not a lawyer; it was the only way I knew to protect this work and my family. I'm one person, a lone knight taking on the dragon, and this is my first step. There is no way but forward. I just need to do my part. If you are a lawyer, or you know a fairer way to keep it free for people and out of the hands of those who would misuse it, please write to me at dannyeldridge54@gmail.com. I will listen. And please respect my family's privacy. — Danny
 
 ## Check it yourself
 
