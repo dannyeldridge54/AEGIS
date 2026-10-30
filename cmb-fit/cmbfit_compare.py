@@ -57,8 +57,14 @@ def make(name):
     zc_fixed = None
     full, sn, shoes = name, None, False
     fwidth = None
-    if name.endswith("_F9"):                        # field width fixed to torsion/9 (PREREG_N_PACT.md, T2)
-        name, fwidth = name[:-3], 9
+    mcmc_chain = None
+    if "_mcmc" in name:                             # MCMC chain K (PREREG_PHASE1.md, step 1.1), e.g. pact_edelock_mcmc2
+        name, k = name.split("_mcmc")
+        mcmc_chain = int(k or 1)
+    import re
+    m_f = re.search(r"_F(\d+)$", name)
+    if m_f:                                         # field width fixed to torsion/N (PREREG_N_PACT.md; PREREG_PHASE1.md 1.2)
+        name, fwidth = name[:m_f.start()], int(m_f.group(1))
     s8 = None
     for suffix in ("_s8A", "_s8B"):                  # add a weak-lensing S8 likelihood (PREREG_S8.md)
         if name.endswith(suffix):
@@ -113,6 +119,9 @@ def make(name):
             _start_near(info, {k: m[k] for k in SCALE if k in m and k != "log10_zc"})
     if os.environ.get("CMB_BEST_OF"):               # more restarts for a re-check (never fewer than the default)
         info["sampler"]["minimize"]["best_of"] = max(best_of, int(os.environ["CMB_BEST_OF"]))
+    if mcmc_chain is not None:                      # independent chain; convergence checked across chains afterwards
+        info["sampler"] = {"mcmc": {"Rminus1_stop": 0.02, "Rminus1_cl_stop": 0.2, "learn_proposal": True,
+                                    "max_tries": 10000, "seed": 1000 + mcmc_chain, "output_every": "60s"}}
     return info
 
 def _archive_stale(name):
@@ -131,8 +140,15 @@ def _archive_stale(name):
 
 def run_one(name):
     from cobaya import run
-    _archive_stale(name)
     t0 = time.time()
+    if "_mcmc" in name:                             # chains resume by themselves; never archive them
+        upd, sampler = run(make(name))
+        json.dump(dict(run=name, seconds=time.time() - t0, kind="mcmc",
+                       chain=os.path.join(C.RESULTS, "chains", "cmp_" + name)),
+                  open(os.path.join(C.RESULTS, f"cmp_{name}.json"), "w"), indent=2)
+        print("done", name, flush=True)
+        return
+    _archive_stale(name)
     upd, sampler = run(make(name))
     row = {k: float(v) for k, v in sampler.products()["minimum"].data.iloc[0].items()
            if isinstance(v, (int, float, np.integer, np.floating))}

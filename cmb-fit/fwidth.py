@@ -25,3 +25,8 @@ class _FWidth(Likelihood):
 
 class FWidth9(_FWidth):
     N = 9
+
+
+# Profile in the divisor N (PREREG_PHASE1.md, step 1.2): the same constraint at every N.
+for _n in (6, 7, 8, 10, 11, 12):
+    globals()[f"FWidth{_n}"] = type(f"FWidth{_n}", (_FWidth,), {"N": _n})

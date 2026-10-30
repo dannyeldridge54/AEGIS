@@ -26,7 +26,9 @@ ROOT = os.path.dirname(HERE)                                                   #
 FITS = os.path.join(ROOT, "cmb-fit", "axiclass", "results_live", "results")
 FITS_PR4 = os.path.join(ROOT, "cmb-fit", "axiclass", "results_live", "results_pr4")
 PREREG = sorted(set([os.path.join(ROOT, "cmb-fit", "axiclass", "torsion_shape", "PREREGISTRATION_SINH.md")]
-                    + glob.glob(os.path.join(ROOT, "cmb-fit", "PREREG*.md"))))   # every rule file is locked on first sight
+                    + [p for p in glob.glob(os.path.join(ROOT, "cmb-fit", "PREREG*.md"))
+                       if not p.endswith("_DEVIATIONS.md")]))   # every rule file is locked on first sight;
+                                                                # deviation logs stay append-only and open
 CAMB_RESULTS = os.path.join(ROOT, "cmb-fit", "results")                       # same-engine CAMB + Cobaya fits
 LOCKFILE = os.path.join(HERE, "guardrails_lock.json")
 EXTRA_PARAMS = 3                                                               # f, z_c, theta_i
