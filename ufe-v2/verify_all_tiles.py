@@ -23,7 +23,7 @@ from aegis.healpix_lite import tile_source_id_range
 OUT = os.path.join(HERE, "cosmos_map")
 STATE = os.path.join(OUT, "sweep_state.json")
 RESULT = os.path.join(OUT, "verify_all.json")
-WORKERS = 4
+WORKERS = int(os.environ.get("AEGIS_AUDIT_WORKERS", "4"))
 lock = threading.Lock()
 
 

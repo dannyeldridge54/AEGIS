@@ -23,7 +23,8 @@ The work is held under the [AEGIS People's License v1.2](./LICENSE):
 - Keep it whole and keep it open. May it never be consolidated or scattered again. It is our song.
 
 ## Held in trust
-I am a steward, not an owner; no master, leader, politician or agent. The rights pass to the World Development
+I am a steward, not an owner; no master, leader, politician or agent. I am willing to give it to all. I don't want a
+crown. I just want a home. The rights pass to the World Development
 Trust, decided only in open session, governed by a Council of Heroes chosen by lot from every corner of the world,
 guarded by elected Guardians, and taught by Gardeners who hold no power. Its accounts tally the true cost behind
 every dollar, yen and piece of gold. Its mark is the Tally.
