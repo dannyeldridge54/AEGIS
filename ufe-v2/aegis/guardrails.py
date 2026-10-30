@@ -25,11 +25,8 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))           # u
 ROOT = os.path.dirname(HERE)                                                   # repo root
 FITS = os.path.join(ROOT, "cmb-fit", "axiclass", "results_live", "results")
 FITS_PR4 = os.path.join(ROOT, "cmb-fit", "axiclass", "results_live", "results_pr4")
-PREREG = [os.path.join(ROOT, "cmb-fit", "PREREGISTRATION_F.md"),
-          os.path.join(ROOT, "cmb-fit", "axiclass", "torsion_shape", "PREREGISTRATION_SINH.md"),
-          os.path.join(ROOT, "cmb-fit", "PREREGISTRATION_ZEQ.md"),
-          os.path.join(ROOT, "cmb-fit", "PREREGISTRATION_N.md"),
-          os.path.join(ROOT, "cmb-fit", "PREREGISTRATION_OMK.md")]
+PREREG = sorted(set([os.path.join(ROOT, "cmb-fit", "axiclass", "torsion_shape", "PREREGISTRATION_SINH.md")]
+                    + glob.glob(os.path.join(ROOT, "cmb-fit", "PREREG*.md"))))   # every rule file is locked on first sight
 CAMB_RESULTS = os.path.join(ROOT, "cmb-fit", "results")                       # same-engine CAMB + Cobaya fits
 LOCKFILE = os.path.join(HERE, "guardrails_lock.json")
 EXTRA_PARAMS = 3                                                               # f, z_c, theta_i
