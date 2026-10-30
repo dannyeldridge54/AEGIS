@@ -387,6 +387,8 @@ await runNatural('find the best learning rate between 0.0001 and 0.1');
 
 ## 📄 License
 
+**A note from me about the license.** I know the license numbers look insane. I'm not a lawyer, and I didn't know what else to do or how to protect myself, my family and this work from being taken. If you are a lawyer, or you know a fairer way to keep it free for people and out of the hands of those who would misuse it, please write to me at dannyeldridge54@gmail.com. I will listen. — Danny
+
 **This work belongs to everyone, held in trust: the AEGIS People's License v1.2.** See [LICENSE](./LICENSE) for the
 full terms and [PLEDGE.md](./PLEDGE.md) for the purpose. In short:
 - **People are free:** individuals, families, students, teachers, schools, libraries, independent creators,

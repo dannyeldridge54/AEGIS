@@ -24,6 +24,10 @@ wrong, and here is why." An endorsement only says the paper is appropriate for t
   derived; and the ACT collaboration's own analysis (arXiv:2503.14454) finds no significant preference for early dark
   energy. Failures are reported beside passes.
 
+## About the license
+
+**A note from me about the license.** I know the license numbers look insane. I'm not a lawyer, and I didn't know what else to do or how to protect myself, my family and this work from being taken. If you are a lawyer, or you know a fairer way to keep it free for people and out of the hands of those who would misuse it, please write to me at dannyeldridge54@gmail.com. I will listen. — Danny
+
 ## Check it yourself
 
 Every number in the paper can be re-derived with one step: `CHECK_MY_WORK.bat` (Windows) or `sh check_my_work.sh`

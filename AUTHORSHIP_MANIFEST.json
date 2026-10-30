@@ -1,17 +1,17 @@
 {
  "author": "Danny Lee Eldridge",
- "created": "2026-10-29T22:06:22-05:00",
+ "created": "2026-10-29T22:22:30-05:00",
  "algorithm": "sha256",
  "files": {
   ".gitattributes": "1df84947e0d933c53fe759123bcf4074fcb674edacd7d3d6de0958311c1e7d4b",
   ".gitignore": "46e3f5653ec1ce0859beba9dbf82ca2f52ffd8e5bdb0d9c5fe2373b9926e3248",
   "AEGIS_METHOD.md": "ccd024b3ad3ff3f0237953441e2158f376aac7ecb92f6a7a3705e8746c4f6ef0",
-  "AUTHORSHIP_MANIFEST.json": "946a53a19c032ec7457e95037f04d6667f85f8e42771a58018fe3dbf88baac5f",
+  "AUTHORSHIP_MANIFEST.json": "c141546675ae82601cdd15fa230285f165b735dcf92b9d66503f25160666b62a",
   "CHECK_MY_WORK.bat": "d8925f74cf373a5bb98ffe9c49c37895a064e434da2a70044a616ac811e8fbf3",
   "LICENSE": "062258236ba6f6e95999aeebda26c18ba36c37c8bafb1428c607488dfd26c509",
   "MODEL_v2.md": "919e9243566b0bdccc80cc2dac0b47e4fcf4f02d511bc9a770cf863fbb0cdeff",
-  "PLEDGE.md": "4570fdc4b0df52b16fab54e3f0b92194fb8cfb2bcd944f7d331d21ec088b50cd",
-  "README.md": "7f0368a7c70b88d2e0dc040d63834e6e364e1af3551a1bc516a6ede4d602ee4f",
+  "PLEDGE.md": "6961e8575092552e4d94334903e401fc65f9cb196232b58a267e81372722735b",
+  "README.md": "f3c3963acc7d48867697d62c13b34a90676f63731cb262863b9f423534a97433",
   "UFE_MASTER_SHEET.xlsx": "36b0e596dbdd5c427e9ab59def17345ce8d777ecc5ad3a8db4bc9a67bd9cebcf",
   "ai.txt": "52cc67aa3d2f94c342bf5911f1599c51fb8318caa78320a7605fb2401ed59464",
   "build_master_sheet.py": "84904d5de277838e4cc872fc0d8f14f99d222191f5087fd81183f50f5cc5b012",
@@ -122,7 +122,7 @@
   "jest.config.js": "08520abe917376b4edcf5579a1dcf934113f3558c736d78aea4f3b8f512e025f",
   "package-lock.json": "a650a160b64a1e09f9e83011222fce5f0de36c79b3fb81b3dfded3aecb89f3bf",
   "package.json": "c16da488732902fcf8498fa4513d70f3102b27c2af5af9f77c6820820707bfe4",
-  "papers/README.md": "0bb3c15d92e80c1ab36d746f1f2485689860af653a15e33ff31f43ced08c777e",
+  "papers/README.md": "0451e58324b069223a84360e3bb7ff32c14cccba3be0f61792add6924de36c64",
   "papers/torsion_born_ede.pdf": "132a0635b5980c3ab3bf42b01f407cfa4618bd51d0ff55b44579346f4b8f5c4f",
   "papers/torsion_born_ede.tex": "9c53c48ab2100dbebde5764a80e49a181afd000c479968b270afcedda7c62108",
   "research/exoplanet_locks/PREREG_EXO.md": "70306895a26e2b7fa2c594b8cec499b71ecef578c06a5ae55e381bb9ce0211d5",
@@ -235,5 +235,5 @@
   "ufe-v2/verify_all_tiles.py": "bcb9db35b4b3a2611d0907ea374868426a7590a9af4e9fc62ac80d9b72355a87",
   "ufe-v2/verify_local.py": "e2e9a464d99ab20bef01c4528990ee79be5cf22515642587a9b8a0a8a49d0bb2"
  },
- "root_sha256": "9d229600a09681fa6b3133a4eb3f03ad6d47690e31e17edd303ac88fc35d7814"
+ "root_sha256": "e7e6edb97691e61b3cea89782b52dabb4a8fd2fa5d456833bc49ed40e9c86989"
 }

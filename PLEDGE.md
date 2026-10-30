@@ -16,6 +16,8 @@ The work is held under the [AEGIS People's License v1.2](./LICENSE):
 - **Never, at any price:** war and weapons, mass surveillance, manipulation, discrimination, ecocide, or any AI use.
 - **Breaking it** ends every right at once, with no cure, and costs three times the fees, recorded in public.
 
+**A note from me about the license.** I know the license numbers look insane. I'm not a lawyer, and I didn't know what else to do or how to protect myself, my family and this work from being taken. If you are a lawyer, or you know a fairer way to keep it free for people and out of the hands of those who would misuse it, please write to me at dannyeldridge54@gmail.com. I will listen. — Danny
+
 ## What I ask beyond the law
 - Never use this work to subjugate, divide or manipulate people, or to steer minds against their own good.
 - Use it to build, to teach and to understand. Test it, and tell the world if it is wrong.
