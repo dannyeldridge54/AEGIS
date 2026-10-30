@@ -13,7 +13,7 @@
 > [CHECK_MY_WORK.bat](./CHECK_MY_WORK.bat)** on Windows, or run `sh check_my_work.sh` on Mac/Linux (needs free Python); it re-derives every number in about two minutes.
 >
 > *It is not a race or a game. It is a stage, and the stage is meant to be shared, not kept.*
-> *I am willing to give it to all. I don't want a crown. I just want a home.* — Danny Lee Eldridge
+> *I am willing to give it to all. I don't want a crown. I just want a home, but never at the cost of the world or its future.* — Danny Lee Eldridge
 >
 > The software below (AEGIS v1) is a classical optimizer: swarm search, UCB1 bandits, parameter search. Its optional
 > coding agent calls language models and is therefore **not licensed for use** (License §6.7–6.8).
