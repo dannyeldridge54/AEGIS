@@ -368,13 +368,19 @@ await runNatural('find the best learning rate between 0.0001 and 0.1');
 
 ## 📄 License
 
-**This work belongs to everyone.** It is free, with no fees, ever, under the
-[Hippocratic License 3.0](./LICENSE) (Copyleft, Ecocide, Media, Military Activities and Mass Surveillance modules),
-covering the code and the science alike.
-- Anyone may use, copy, change and share it, and must keep it under the same license.
-- Using it to violate human rights, for military activities, mass surveillance, ecocide or messages promoting violence
-  ends every right to use it.
-- See [PLEDGE.md](./PLEDGE.md) for its purpose: global development, dignity, liberty and equality.
+**This work belongs to everyone, held in trust: the AEGIS People's License v1.2.** See [LICENSE](./LICENSE) for the
+full terms and [PLEDGE.md](./PLEDGE.md) for the purpose. In short:
+- **People are free:** individuals, families, students, teachers, schools, libraries, independent creators,
+  non-profits, worker co-ops, and colleges and medical carers that serve people, not privilege or profit.
+- **Small owner-run businesses** (under 50 workers, under $10M, no outside investors): $50,000 a year.
+- **Corporations and governments:** a signed agreement, an entry fee of 99% of the median yearly profit of the last
+  9 years, then the greater of $1 billion or 10% of revenue each year, plus fair conditions for every worker.
+  Insurers, middlemen and private-equity-owned businesses are always corporations. Money never gets a vote.
+- **Never, at any price:** weapons or military use, mass surveillance, manipulation, discrimination, ecocide,
+  or **any AI use** (no training, scraping, summarising or generating).
+- **Science stays free to question:** anyone may test, replicate or try to disprove it.
+- **Held for all:** the rights pass to a public World Development Trust, governed in the open by a rotating
+  Council of Heroes chosen by lot, watched by elected Guardians, never consolidated and never scattered.
 
 ## 💛 Dedication
 

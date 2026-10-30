@@ -2,22 +2,30 @@
 
 **This work belongs to everyone.** It is our shared history and our shared universe, written as an equation, offered
 for global development: to help raise the world off its knees and give us our dignity, our liberty and our equality.
-The sun shines its light on all of us.
+The sun shines its light on all of us. We all deserve the water of life.
 
-## The license, and its penalty
-The work is free under the [Hippocratic License 3.0](./LICENSE) (with the Copyleft, Ecocide, Media, Military and
-Mass Surveillance modules). Anyone who uses it to harm people, abuse human rights, or for war, weapons, mass
-surveillance, ecocide or messages promoting violence **loses every right to use it**, and can be held to account in
-court like any copyright infringer.
+It is not a race or a game. It is a stage, and the stage is meant to be shared, not kept.
+
+## The license
+The work is held under the [AEGIS People's License v1.2](./LICENSE):
+- **Free for People:** individuals, families, students, teachers, schools, libraries, independent creators,
+  non-profits and worker co-ops, and colleges and medical carers that serve people rather than privilege or profit.
+- **Paid by those with power:** small owner-run businesses pay $50,000 a year; corporations and governments pay an
+  entry fee of 99% of their median yearly profit over the last 9 years, then the greater of $1 billion or 10% of
+  revenue each year, and must treat every worker fairly. 90% goes to the World Development Trust.
+- **Never, at any price:** war and weapons, mass surveillance, manipulation, discrimination, ecocide, or any AI use.
+- **Breaking it** ends every right at once, with no cure, and costs three times the fees, recorded in public.
 
 ## What I ask beyond the law
 - Never use this work to subjugate, divide or manipulate people, or to steer minds against their own good.
-- Use it to build, to teach and to understand.
+- Use it to build, to teach and to understand. Test it, and tell the world if it is wrong.
 - Every race, religion, colour and creed: we are all human, and we all deserve dignity.
+- Keep it whole and keep it open. May it never be consolidated or scattered again. It is our song.
 
-## Supporting the work (optional)
-Nothing is required. If you want to help, cite it, check it, improve it, or teach it. Any future donations will go
-to keeping this research open and to my family's basic needs, and I hope to place them in a public trust for science
-and education.
+## Held in trust
+I am a steward, not an owner; no master, leader, politician or agent. The rights pass to the World Development
+Trust, decided only in open session, governed by a Council of Heroes chosen by lot from every corner of the world,
+guarded by elected Guardians, and taught by Gardeners who hold no power. Its accounts tally the true cost behind
+every dollar, yen and piece of gold. Its mark is the Tally.
 
 — Danny Lee Eldridge
