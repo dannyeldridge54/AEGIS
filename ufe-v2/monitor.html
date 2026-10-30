@@ -176,6 +176,100 @@
     <div class="card"><div class="num">THE THEORY</div>At the bottom: a cosmology idea by Danny Lee Eldridge, tested honestly against the best public data, with every number checkable. Nothing here asks you to take our word for it.</div>
   </div>
 
+  <section id="paper" class="card" style="margin:18px 0;padding:22px 26px;border-color:rgba(125,211,252,0.45);font-family:Georgia,serif;line-height:1.6">
+    <div class="kicker" style="color:#7dd3fc;font-family:system-ui,sans-serif">Scientific summary · preprint-style · 29 October 2026</div>
+    <h2 style="margin:4px 0 2px;font-size:24px">Torsion-born early dark energy with a locked onset: a pre-registered test against Planck, ACT DR6 and DESI DR2</h2>
+    <div style="color:#aab3d6;margin-bottom:14px">Danny Lee Eldridge (independent researcher, Oklahoma, USA)</div>
+
+    <h3 style="margin:10px 0 4px">Abstract</h3>
+    <p style="margin:0 0 10px">We test a variant of axion-like early dark energy (EDE) in which two usually free parameters are fixed in advance: the
+    onset is locked to matter–radiation equality, and the decay constant is set to F = √(3/2) M<sub>Pl</sub>/9. The scalar is
+    motivated as a torsion (Barbero–Immirzi) field, φ = √(3/2) M<sub>Pl</sub> arsinh(1/γ), whose rest point φ₀ = 2.6265 M<sub>Pl</sub>
+    corresponds to γ = 0.2375. Every test rule was written down before the run. With one free setting (the initial angle θ<sub>i</sub>)
+    the model improves the fit to Planck + ACT DR6 by Δχ² = −6.1 relative to ΛCDM (p = 0.013, ≈ 2.5σ), giving H₀ ≈ 70.4 km s⁻¹ Mpc⁻¹.
+    It slightly worsens the S8 tension, so the pre-registered verdict is a <b>tie</b>. This is a hint, not a detection.</p>
+
+    <h3 style="margin:10px 0 4px">1. Model</h3>
+    <div style="background:rgba(0,0,0,.25);border-radius:10px;padding:10px 14px;font-family:'Cambria Math',Cambria,Georgia,serif;font-size:16px">
+      H² = (8πG/3) [ρ<sub>r</sub> + ρ<sub>m</sub> + ρ<sub>φ</sub> + ρ<sub>Λ</sub>]<br>
+      φ̈ + 3Hφ̇ + dV/dφ = 0,  V(φ) = Λ⁴ [1 − cos(φ/F)]³<br>
+      a<sub>c</sub> = a<sub>eq</sub> = ω<sub>r</sub>/ω<sub>m</sub>  (locked onset, z<sub>c</sub> ≈ 3560),  F = √(3/2) M<sub>Pl</sub>/9 = 0.1361 M<sub>Pl</sub><br>
+      after release: ρ<sub>φ</sub>(a) = 2ρ<sub>φ</sub>(a<sub>c</sub>) / [(a/a<sub>c</sub>)<sup>9/2</sup> + 1],  ⟨w⟩ = (n−1)/(n+1) = 1/2
+    </div>
+    <p style="margin:8px 0 10px">The potential and fluid form are the standard n = 3 EDE of Poulin et al. (2018, 2019). What is new here is the
+    combination: the torsion origin of φ, the onset fixed at equality, and the fixed decay constant.</p>
+
+    <h3 style="margin:10px 0 4px">2. Data and method</h3>
+    <p style="margin:0 0 10px">Boltzmann code CAMB with the Cobaya sampler and minimiser. Likelihoods: Planck 2018 (TT, TE, EE, lensing), ACT DR6
+    combined with Planck ("P-ACT"), DESI DR2 BAO, and Pantheon+, DES Y5, DES-Dovekie and Union3 supernovae, with an S8 penalty from DES Y3 + KiDS-1000
+    and KiDS-Legacy. ΛCDM and the Twist are minimised with identical settings ("same data, same polish"). Each rule (thresholds, data, verdict
+    logic) was locked in a pre-registration file with a published SHA-256 before running; failures are kept beside passes on the claim wall.</p>
+
+    <h3 style="margin:10px 0 4px">3. Results</h3>
+    <table style="width:100%;font-family:system-ui,sans-serif;font-size:14px"><thead><tr><th>Test</th><th>Free settings</th><th class="num">Δχ² vs ΛCDM</th><th class="num">ΔAIC</th><th>H₀</th><th>Verdict</th></tr></thead><tbody>
+      <tr><td>Planck 2018 + DESI DR2 + Pantheon+</td><td>2</td><td class="num">−4.70</td><td class="num">−0.70</td><td>70.5</td><td>pass</td></tr>
+      <tr><td>P-ACT, blind (rule: Δχ² &lt; −4)</td><td>2</td><td class="num">−7.23</td><td class="num">−3.23</td><td>70.4</td><td>pass (≈2.2σ)</td></tr>
+      <tr><td>P-ACT, width fixed (one setting)</td><td>1</td><td class="num">−6.14</td><td class="num">−4.14</td><td>—</td><td>pass (≈2.5σ)</td></tr>
+      <tr><td>Supernova robustness (DES Y5 / Dovekie / Union3)</td><td>2</td><td class="num">−4.55 / −5.08 / −4.91</td><td class="num">—</td><td>—</td><td>pass</td></tr>
+      <tr><td>S8 penalty, DES Y3 + KiDS-1000 (limit 2)</td><td>—</td><td class="num">+2.41</td><td class="num">—</td><td>—</td><td><b>fail</b></td></tr>
+      <tr><td>Width fitted freely (predicted N = 9 ± 0.5)</td><td>2</td><td class="num">N = 8.0</td><td class="num">—</td><td>—</td><td><b>fail</b></td></tr>
+      <tr><td>Pure torsion width F = √(3/2) M<sub>Pl</sub></td><td>1</td><td class="num">+13.8</td><td class="num">—</td><td>—</td><td><b>fail</b></td></tr>
+    </tbody></table>
+    <p style="margin:8px 0 10px">Fitted values: f<sub>EDE</sub> ≈ 0.075–0.078 at release; θ<sub>i</sub> ≈ 2.71–2.77 rad (≈ 0.88π, near the hilltop).
+    The sound horizon shrinks from 144.9 to 140.7 Mpc (−2.9%), which raises H₀ while the measured acoustic angle θ* stays fixed.
+    All arithmetic above was re-derived independently (<code>recheck_math.py</code>: 17 of 17 checks pass).</p>
+
+    <h3 style="margin:10px 0 4px">4. Limitations</h3>
+    <ul style="margin:0 0 10px;padding-left:20px">
+      <li>≈ 2.5σ is a hint. A detection needs ≈ 5σ (Δχ² ≈ 25 for one setting).</li>
+      <li>The ACT collaboration's own analysis (Calabrese et al. 2025, arXiv:2503.14454) finds <b>no evidence</b> for early dark energy.</li>
+      <li>EDE worsens S8; the divisor 9 and the onset lock are assumed, not yet derived; the field must start near its hilltop.</li>
+      <li>H₀ ≈ 70.4 is close to the CCHP TRGB value (Freedman et al. 2025) but does not reach SH0ES (≈ 73).</li>
+      <li>Independent researcher, not peer reviewed. Expert checks are invited.</li>
+    </ul>
+
+    <h3 style="margin:10px 0 4px">5. Prior work</h3>
+    <p style="margin:0 0 10px;font-size:14px">Poulin, Smith, Grin, Karwal & Kamionkowski, PRD 98, 083525 (2018); Poulin et al., PRL 122, 221301 (2019);
+    Smith et al., arXiv:2002.07829; Sakstein & Trodden, PRL 124, 161301 (2020); Karwal et al., arXiv:2106.13290; Lin, McDonough, Hill & Hu,
+    arXiv:2212.08098; Taveras & Yunes, PRD 78, 064070 (2008); Hill et al., arXiv:2003.07355; Ivanov et al., arXiv:2006.11235;
+    DESI DR2, arXiv:2503.14738; ACT DR6, arXiv:2503.14454. Full search: <code>PRIOR_ART.md</code>.</p>
+
+    <h3 style="margin:10px 0 4px">6. Next tests (rules to be written first)</h3>
+    <p style="margin:0">Derive the divisor and the onset from the field equations; replace the S8 penalty with a full weak-lensing likelihood;
+    publish predicted small-scale polarisation spectra; then test blind on SPT-3G and the Simons Observatory.</p>
+
+    <h3 style="margin:14px 0 4px">7. Check it yourself (about two minutes)</h3>
+    <ol style="margin:0 0 10px;padding-left:22px;font-size:14px">
+      <li>Install Python (free, python.org) if you don't have it.</li>
+      <li>Download this work and double-click <code>CHECK_MY_WORK.bat</code>.</li>
+      <li>Read the results: every number above is re-derived on your own computer, with nothing to take on trust.</li>
+    </ol>
+    <p style="margin:0 0 10px;font-size:14px">To redo the full cosmology fits (hours): <code>cmb-fit\SETUP_CMB_FIT.bat</code>, then
+    <code>cmb-fit\RUN_CMB_FIT.bat</code>. To re-check the stars against ESA: <code>ufe-v2\START_AEGIS_MONITOR.bat</code>.
+    If you find a mistake, please say so publicly. That is how this gets better.</p>
+
+    <h3 style="margin:14px 0 4px">8. Acknowledgments</h3>
+    <p style="margin:0 0 8px;font-size:14px">This work stands on the shoulders of thousands of people who built the instruments, gathered the data and
+    shared the tools freely.</p>
+    <ul style="margin:0 0 8px;padding-left:20px;font-size:14px">
+      <li><b>Gaia.</b> This work has made use of data from the European Space Agency (ESA) mission <i>Gaia</i>
+        (https://www.cosmos.esa.int/gaia), processed by the <i>Gaia</i> Data Processing and Analysis Consortium (DPAC,
+        https://www.cosmos.esa.int/web/gaia/dpac/consortium). Funding for the DPAC has been provided by national institutions, in particular
+        the institutions participating in the <i>Gaia</i> Multilateral Agreement. Distances from Bailer-Jones et al. (2021, AJ 161, 147).</li>
+      <li><b>Cosmic microwave background:</b> the ESA <i>Planck</i> Collaboration, and the Atacama Cosmology Telescope (ACT) Collaboration for DR6.</li>
+      <li><b>Large-scale structure and supernovae:</b> the DESI Collaboration (DR2 BAO); Pantheon+; the Dark Energy Survey (DES Y3, Y5 and
+        the Dovekie recalibration); the Union3 compilation; the Kilo-Degree Survey (KiDS-1000 and KiDS-Legacy).</li>
+      <li><b>Software:</b> CAMB (Lewis, Challinor & Lasenby 2000), Cobaya (Torrado & Lewis 2021), NumPy, SciPy, Matplotlib, and the ESA Gaia
+        archive TAP service.</li>
+      <li><b>Ideas:</b> the early dark energy program of V. Poulin, T. L. Smith, T. Karwal, M. Kamionkowski and colleagues; the Barbero–Immirzi
+        field work of V. Taveras and N. Yunes; and every author listed in Prior work.</li>
+      <li><b>For the spirit of it:</b> Carl, of <i>Dungeon Crawler Carl</i> by Matt Dinniman, read by Jeff Hays.</li>
+      <li><b>For everything:</b> my wife Sarah, and my best friend.</li>
+    </ul>
+    <p style="margin:0;font-size:13px;color:#aab3d6">Software tools, including AI assistants, helped prepare code and text before the AEGIS People's
+    License took effect (License §8.10). Every number on this page comes from the saved fits and can be re-derived without them.</p>
+  </section>
+
   <section id="first-ufe" class="card" style="margin:18px 0;padding:20px 22px;border-color:rgba(255,79,216,0.45)">
     <div class="kicker" style="color:#ff4fd8">The first UFE test · 29 October 2026</div>
     <h2 style="margin:4px 0 10px">The Locked Twist passed its blind test. The full verdict is a tie.</h2>

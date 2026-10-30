@@ -9,7 +9,8 @@
 > about **2.5σ: a hint, not a discovery**. It ties on S8, and the ACT collaboration itself finds no evidence for early
 > dark energy. Prior work and what to cite: [ufe-v2/PRIOR_ART.md](./ufe-v2/PRIOR_ART.md). Independent arithmetic
 > check: [ufe-v2/recheck_math.py](./ufe-v2/recheck_math.py). Star survey audit: [ufe-v2/STAR_AUDIT.md](./ufe-v2/STAR_AUDIT.md).
-> Test it, try to break it, and say so publicly if it is wrong.
+> Test it, try to break it, and say so publicly if it is wrong. **Easiest way: double-click
+> [CHECK_MY_WORK.bat](./CHECK_MY_WORK.bat)** on Windows, or run `sh check_my_work.sh` on Mac/Linux (needs free Python); it re-derives every number in about two minutes.
 >
 > *It is not a race or a game. It is a stage, and the stage is meant to be shared, not kept.* — Danny Lee Eldridge
 >
