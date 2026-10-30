@@ -1,6 +1,7 @@
 # Paper: Torsion-Born Early Dark Energy with an Onset Locked to Matter–Radiation Equality
 
 **Files:** [`torsion_born_ede.tex`](./torsion_born_ede.tex) (source) · [`torsion_born_ede.pdf`](./torsion_born_ede.pdf) (built 29 October 2026)
+**DOI:** [10.5281/zenodo.23789830](https://doi.org/10.5281/zenodo.23789830) (Zenodo, CERN)
 **Author:** Danny Lee Eldridge, independent researcher, Oklahoma, USA · dannyeldridge54@gmail.com
 
 ## 🙏 I am looking for an arXiv endorsement

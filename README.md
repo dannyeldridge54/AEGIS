@@ -9,6 +9,7 @@
 > about **2.5σ: a hint, not a discovery**. It ties on S8, and the ACT collaboration itself finds no evidence for early
 > dark energy. Prior work and what to cite: [ufe-v2/PRIOR_ART.md](./ufe-v2/PRIOR_ART.md). Independent arithmetic
 > check: [ufe-v2/recheck_math.py](./ufe-v2/recheck_math.py). Star survey audit: [ufe-v2/STAR_AUDIT.md](./ufe-v2/STAR_AUDIT.md).
+> **Cite:** Eldridge, D. L. (2026), *Torsion-Born Early Dark Energy with an Onset Locked to Matter–Radiation Equality*, Zenodo, [doi:10.5281/zenodo.23789830](https://doi.org/10.5281/zenodo.23789830)
 > **Paper:** [papers/](./papers/) (seeking an arXiv endorsement in astro-ph.CO; please get in touch).
 > Test it, try to break it, and say so publicly if it is wrong. **Easiest way: double-click
 > [CHECK_MY_WORK.bat](./CHECK_MY_WORK.bat)** on Windows, or run `sh check_my_work.sh` on Mac/Linux (needs free Python); it re-derives every number in about two minutes.

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: If you use or discuss this work, please cite it as below.
+title: 'Torsion-Born Early Dark Energy with an Onset Locked to Matter-Radiation Equality: Derivation and Pre-Registered Likelihood Tests'
+authors:
+  - family-names: Eldridge
+    given-names: Danny Lee
+doi: 10.5281/zenodo.23789830
+date-released: 2026-10-29
+url: https://github.com/dannyeldridge54/AEGIS
+license-url: https://github.com/dannyeldridge54/AEGIS/blob/master/LICENSE
