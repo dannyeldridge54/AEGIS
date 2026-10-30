@@ -1,0 +1,5 @@
+# AEGIS: text-and-data mining and every AI use reserved.
+# AEGIS People's License v1.2 s.6.7; EU Directive 2019/790 Art. 4(3) opt-out.
+User-Agent: *
+Disallow: /
+Disallow-Training: /

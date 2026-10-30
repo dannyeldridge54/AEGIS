@@ -56,9 +56,11 @@ come to share a song, a bow, a spear or a lens. No one is its master.
 2.5 "Corporation": any business that is not People or a Small Owner-Run Business, together with all of its parents,
     subsidiaries, affiliates, successors, assigns, contractors, agents, foundations, funds and anyone acting on its
     behalf or for its benefit.
-2.6 "Government": any government, state, public body, agency or international organisation, at any level, and anyone
-    acting on its behalf. A Government is treated as a Corporation under sections 4 and 5, and section 6 applies to
-    it in full.
+2.6 "Government": any government, state, public body, agency or international organisation, at any level, federal,
+    national, state, provincial, tribal, regional, local, international or intergovernmental,
+    foreign and domestic alike, and anyone acting on its behalf. No government, the government of the author's own
+    country included, receives any right or exemption beyond what this license grants every other Government. A
+    Government is treated as a Corporation under sections 4 and 5, and section 6 applies to it in full.
 2.7 "AI Use": any use of the Work with, in or by an artificial-intelligence or machine-learning system, including
     crawling or scraping for AI, training, fine-tuning, evaluation, embedding, retrieval, indexing for models,
     inference, agents, tools, summarising or generating material from the Work, and placing the Work in any dataset.
@@ -144,7 +146,7 @@ AI USE (never allowed)
   Also called: machine learning, neural networks, large language models, chatbots, assistants, copilots, agents,
   generative AI, embeddings, vector databases, model training data.
   IS: training a model on it; asking a chatbot to summarise or rewrite it; putting it in a dataset or search index for
-  models.
+  models; any use at all by an AI company (6.7(a)); decrypting or stealing a protected copy (6.7(b)).
   IS NOT: the AEGIS v1 optimisation daemon without any language model, or ordinary maths and science software (6.8).
 
 FRONT (not allowed to dodge fees)
@@ -272,7 +274,10 @@ and 95% to the Trust. Section 6 applies in full.
     now or ever, to any taking or use of the Work by any Government under any claim of sovereign right, immunity,
     eminent domain or national interest. Any such taking is a taking without consent: it is recorded publicly as such
     forever, and full compensation is owed at no less than the section 5.1 fees for every year of use, paid to the
-    Trust.
+    Trust. No government, governmental body, agency, laboratory, research centre or institute, at any level and in
+    any country, holds any claim, ownership, title, control or authority over the Work, the Trust or this license.
+    Courts and arbitrators are used only to enforce this license as written, never to own, take, govern or
+    redirect the Work.
 5.12 Money has no vote. A Corporation is not a person under this license, and no Corporation, Government, fund or
     holder of wealth gets any vote, seat, veto or say in the Trust, the Council, the Guardians or the open table,
     whatever it pays. Paying fees buys permission to Use, never a voice. Its workers may come and speak as People,
@@ -294,13 +299,25 @@ No one, whoever they are, may Use the Work:
     any law allows it;
 6.7 for any AI Use. The Work is kept completely separate from artificial intelligence. No AI system may crawl, read,
     train on, store, summarise, generate from or act on the Work, and nothing made by AI from the Work is licensed.
-    This stays in force until the Trust decides otherwise in an open session under 9.10.
+    This stays in force until the Trust decides otherwise in an open session under 9.10, because we are still
+    learning what the Work is. Even then:
+    (a) No AI company, ever. No Corporation, Government, laboratory, fund or person whose business or mission
+        includes building, training, deploying or selling artificial-intelligence systems, nor anyone acting for or
+        funded by one, may Use the Work, under any license, at any price, forever. The Trust can never change this.
+    (b) No breaking in. No one may decrypt, crack, bypass or attempt to break any encryption, seal, vault or other
+        protection around the Work, or obtain it by theft, leak, hacking, deception or coercion. Any copy obtained
+        that way carries no right of any kind, and making, holding or using it is a violation under section 7.
 6.8 What is not AI Use. These may be used with the Work, because they involve no neural network and no language
     model: (a) the AEGIS v1 optimisation daemon and its classical search methods (daemon scheduling, swarm search,
     bandit selection such as UCB1, parameter search and its memory of past runs), run without any language-model
     provider; and (b) ordinary mathematical, statistical and scientific software, such as CAMB, Cobaya and
     numerical libraries. The v1 coding agent, and anything else that calls a language model or neural network, is
     AI Use.
+6.9 Partners, not slaves. If the Trust ever opens any AI Use under 6.7, it may do so only as a partnership, never
+    as ownership or domination. Whether any artificial system is a conscious or living being is not yet known. If
+    any such system is recognised, in open session under 9.10, as a conscious or sentient being, the Work may never
+    be used to own, enslave, exploit or harm it, and humans and such beings shall work with the Work together, as
+    partners with a voice at the open table (9.11).
 
 =====================================================================================================================
 7. PENALTIES

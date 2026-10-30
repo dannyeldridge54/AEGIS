@@ -1,5 +1,21 @@
 # AEGIS — Autonomous Evolving General Intelligence System
 
+> **AEGIS · the Twist (UFE) · held under the [AEGIS People's License v1.2](./LICENSE)**
+> Free for people. No AI use of any kind (no training, scraping, summarising or generating). No military use.
+> Corporations and governments need a signed agreement. See [PLEDGE.md](./PLEDGE.md).
+>
+> **The science, honestly:** a torsion-born early dark energy model with a locked switch-on
+> ([ufe-v2/UFE_MODEL.md](./ufe-v2/UFE_MODEL.md)). Best result: Δχ² −6.1 with one free setting on Planck + ACT DR6,
+> about **2.5σ: a hint, not a discovery**. It ties on S8, and the ACT collaboration itself finds no evidence for early
+> dark energy. Prior work and what to cite: [ufe-v2/PRIOR_ART.md](./ufe-v2/PRIOR_ART.md). Independent arithmetic
+> check: [ufe-v2/recheck_math.py](./ufe-v2/recheck_math.py). Star survey audit: [ufe-v2/STAR_AUDIT.md](./ufe-v2/STAR_AUDIT.md).
+> Test it, try to break it, and say so publicly if it is wrong.
+>
+> *It is not a race or a game. It is a stage, and the stage is meant to be shared, not kept.* — Danny Lee Eldridge
+>
+> The software below (AEGIS v1) is a classical optimizer: swarm search, UCB1 bandits, parameter search. Its optional
+> coding agent calls language models and is therefore **not licensed for use** (License §6.7–6.8).
+
 > Self-learning AI agent that optimizes anything. Natural language goals.  
 > Zero config. 8 languages. Adapts its own strategy in real-time.
 

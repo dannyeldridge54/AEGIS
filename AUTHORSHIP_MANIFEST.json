@@ -1,16 +1,17 @@
 {
  "author": "Danny Lee Eldridge",
- "created": "2026-10-29T19:32:08-05:00",
+ "created": "2026-10-29T21:38:25-05:00",
  "algorithm": "sha256",
  "files": {
   ".gitignore": "46e3f5653ec1ce0859beba9dbf82ca2f52ffd8e5bdb0d9c5fe2373b9926e3248",
   "AEGIS_METHOD.md": "ccd024b3ad3ff3f0237953441e2158f376aac7ecb92f6a7a3705e8746c4f6ef0",
-  "AUTHORSHIP_MANIFEST.json": "a8b4758a6b3f96510434fa7776e7b566a209becc883a4011cf961c6474574480",
-  "LICENSE": "8696c892060258dbe1c1648971e36f325b1f0e26429515ea0897a8b565db55e3",
+  "AUTHORSHIP_MANIFEST.json": "4af1a8327eb308b1683141c329ed68205a7b83aa96f5207e25ef7fdd16f257e6",
+  "LICENSE": "81f38405e76d2da5b02ab27862db8f43d903d35016b8c016cb66358067ee8e01",
   "MODEL_v2.md": "919e9243566b0bdccc80cc2dac0b47e4fcf4f02d511bc9a770cf863fbb0cdeff",
   "PLEDGE.md": "447028c51399993bba33bfeb9ff0f526e15c61d9a1a7d810f9ed6b9dcd07f6cf",
-  "README.md": "5a47e87c0687dc65e578bf3565ff095e505fe9ed47d2ef6d5d837936f85891a4",
+  "README.md": "44419b8047c458b6a3260452c530bd067457e8347a966aec7cc9cc7309c0f99e",
   "UFE_MASTER_SHEET.xlsx": "36b0e596dbdd5c427e9ab59def17345ce8d777ecc5ad3a8db4bc9a67bd9cebcf",
+  "ai.txt": "52cc67aa3d2f94c342bf5911f1599c51fb8318caa78320a7605fb2401ed59464",
   "build_master_sheet.py": "84904d5de277838e4cc872fc0d8f14f99d222191f5087fd81183f50f5cc5b012",
   "cmb-fit/PREREGISTRATION_F.md": "0c28b830d0665864d90802a13c7982a64b26eec58f1354a113e688a9a57dbb5f",
   "cmb-fit/PREREGISTRATION_N.md": "8ff7cc029201223ac2371b55c0bb4ba0a699ca5d892084a070d904ee4ca973e5",
@@ -125,6 +126,7 @@
   "research/impacts/PREREG_IMPACTS.md": "1cdecad18319d285ba12d0bd239abd3a79444ad1ff1d16307d5efc2568756070",
   "research/impacts/craters.json": "4455464f99d9487c2e0e6ba75f16f101fec349a4ea67210f95df467346dbc721",
   "research/impacts/impact_test.py": "e98a0eb378d0ec282f6ef6b1ae75058a8779d5df5d96a3bbe6e980fb6f3bd284",
+  "robots.txt": "715adacdca4f09c491f99b7b0ae3c9db1b5366477e6c6a20cc71da68b9bf4896",
   "src/agent.ts": "b582a96f6e0f42164db3dbdb339bc4b86c356a55f75c21ed8af614d53f5113b4",
   "src/auto-docs.ts": "a97f237d72a0ac3e4a93b1e80fb65b0933f4d1b17d0ce51962bf83d62a791d31",
   "src/benchmarks.ts": "e49021df250d6253ee472c976658af4e818b8cc8881ad79692f707d2b4f7a2f8",
@@ -152,6 +154,7 @@
   "ufe-v2/PRIOR_ART.md": "1301d8edfb8c5bee65f0769f4ae3deb554bbe28aa2a84083053c75cb74cecc89",
   "ufe-v2/README.md": "06877914cd934d81a74a135d390b25c2364ec85189bcb91cf8f6f0e04e7c0794",
   "ufe-v2/START_AEGIS_MONITOR.bat": "8b0a050d98e68d2dd2429c2f17fda741f7325eed24d6279525cd63d748fea990",
+  "ufe-v2/STAR_AUDIT.md": "1e6c2f6729b78b642294d8b17957d759a51764134b9c408c60d4514d211b802e",
   "ufe-v2/UFE_MODEL.md": "0a8bb5ea9b07b3d2cd166d93cbb70d31a9b6746b4e24f53cab4af8515417b3a4",
   "ufe-v2/aegis/__init__.py": "c3bb9169bc0f1cea1d09ad559a3ae3631c34f0f075bc1f5bddcd5ce7d30f29ad",
   "ufe-v2/aegis/cosmo_v2.py": "d641ef7a7727513341b00af281f045f8f9c2c4ce2569f3e61ebf0a024d7cf12e",
@@ -173,6 +176,7 @@
   "ufe-v2/method/seed_claims.py": "a4fc3d1272c6fa84fe826659f150da9d54af80b9f500a0bcc80c6b49710a3193",
   "ufe-v2/monitor.html": "38b90185b6d3d208c31f14e81d283893d507c7a695fecbf348633964551ec58b",
   "ufe-v2/monitor_server.py": "59cea2f1a324fdbfa9569f3c8d3ea8b245d98274b8f947b85dce2e10f97f15d5",
+  "ufe-v2/recheck_math.py": "1ada8f1174943c1ff2b2a49b0eb93ec0eec6f7749fce93575e192b1250bfe098",
   "ufe-v2/results_v2.json": "cf4c657f9eaf931e0bc3d5fcc402268551fdc0992519e4edb1848de3e2bdc3c2",
   "ufe-v2/run_v2.py": "50c895003a85c3c3a8d936a1798e8844683b1b1ff8225c32795b113eca33f8b8",
   "ufe-v2/science.json": "6746a036173f42e1891bdc4946f6e4c2b74f5e7222d05d42b8df4b55c256bcf2",
@@ -226,5 +230,5 @@
   "ufe-v2/tests/test_v2.py": "ab9d3568e07e3eb109eb6fc54e4e77b802a0359c14046a08a68bde10aea33876",
   "ufe-v2/verify_all_tiles.py": "dc2269d63089b892b8d61912fa477dfd97ff17daf587b5ad68f34c68873cdfe7"
  },
- "root_sha256": "e63392900362f5c2f8f35fe0a3c618682c9d3c41ccb3a85d7fb16720582276d9"
+ "root_sha256": "2bdc5e72f1c7597d84ad3cb7416247f15ff878014ea5a8cf76df19bd79f50e9f"
 }
