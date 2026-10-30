@@ -42,3 +42,16 @@ Best fit: z ≈ 3,560 (Planck 2018 + DESI DR2 + Pantheon+).
 | Field must start near its hilltop | required (Δχ² +4 to +6 for distant starts) |
 | Pure torsion width F = √(3/2) M_Pl | failed (Δχ² +13.8) |
 | Origin of the 1/9 width and of the lock | open (hypotheses/HOLD_RELEASE.md) |
+
+## The path forward
+The model is advanced with mathematics and the AEGIS v1 daemon only (classical optimisation, no AI). Each step gets
+its rule written down before it runs:
+1. **Daemon search of the width module.** The v1 daemon runs swarm and parameter search over N (the width divisor)
+   and θ_i, each point a full CAMB + Cobaya evaluation, to map exactly how well whole-number N fits on Planck and
+   P-ACT.
+2. **Hold-and-release integration.** Numerically integrate the field with a radiation-fed, matter-drained hold term,
+   and test whether the release start lands at θ_i ≈ 0.88π (hypotheses/HOLD_RELEASE.md, prediction 1).
+3. **One-setting Twist (Twist-1H).** With the width and the lock both fixed, only f_EDE is free; pre-register and fit
+   it on every dataset.
+4. **Weak lensing.** Replace the S8 penalty with a full weak-lensing likelihood to break the tie.
+5. **Next blind data.** SPT-3G, then the Simons Observatory, with the same rules unchanged.

@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 273ace4d128c1bfc
 """The universe's sound waves (acoustic peaks) for the standard model and the Twist best fits.
 Outputs acoustic/notes.json: TT/EE spectra (lensed), peak and trough multipoles, 100*theta_s, r_s, z_*, and
 the 'spacing' between peaks. Uses the same AxiCLASS build and settings as the fits."""

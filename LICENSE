@@ -1,680 +1,519 @@
-AEGIS
-Copyright (C) 2012-2026 Danny Lee Eldridge
-
-This work belongs to everyone.
-
-  * The SOFTWARE (all code in this repository) is free software: you can redistribute it and/or modify it under
-    the terms of the GNU Affero General Public License as published by the Free Software Foundation, version 3
-    (the full text follows below). It is distributed WITHOUT ANY WARRANTY; see the license for details.
-
-  * The SCIENCE (theories, equations, results, data products, pre-registrations, claims, figures and sigils,
-    and the documentation describing them) is licensed under the Creative Commons Attribution 4.0
-    International License (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
-    You may share and adapt it for any purpose, as long as you give credit to Danny Lee Eldridge.
-
-  * There are no fees. See PLEDGE.md for the author's no-weapons pledge and how to support the work voluntarily.
-
--------------------------------------------------------------------------------
-
-                    GNU AFFERO GENERAL PUBLIC LICENSE
-                       Version 3, 19 November 2007
-
- Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
-
-                            Preamble
-
-  The GNU Affero General Public License is a free, copyleft license for
-software and other kinds of works, specifically designed to ensure
-cooperation with the community in the case of network server software.
-
-  The licenses for most software and other practical works are designed
-to take away your freedom to share and change the works.  By contrast,
-our General Public Licenses are intended to guarantee your freedom to
-share and change all versions of a program--to make sure it remains free
-software for all its users.
-
-  When we speak of free software, we are referring to freedom, not
-price.  Our General Public Licenses are designed to make sure that you
-have the freedom to distribute copies of free software (and charge for
-them if you wish), that you receive source code or can get it if you
-want it, that you can change the software or use pieces of it in new
-free programs, and that you know you can do these things.
-
-  Developers that use our General Public Licenses protect your rights
-with two steps: (1) assert copyright on the software, and (2) offer
-you this License which gives you legal permission to copy, distribute
-and/or modify the software.
-
-  A secondary benefit of defending all users' freedom is that
-improvements made in alternate versions of the program, if they
-receive widespread use, become available for other developers to
-incorporate.  Many developers of free software are heartened and
-encouraged by the resulting cooperation.  However, in the case of
-software used on network servers, this result may fail to come about.
-The GNU General Public License permits making a modified version and
-letting the public access it on a server without ever releasing its
-source code to the public.
-
-  The GNU Affero General Public License is designed specifically to
-ensure that, in such cases, the modified source code becomes available
-to the community.  It requires the operator of a network server to
-provide the source code of the modified version running there to the
-users of that server.  Therefore, public use of a modified version, on
-a publicly accessible server, gives the public access to the source
-code of the modified version.
-
-  An older license, called the Affero General Public License and
-published by Affero, was designed to accomplish similar goals.  This is
-a different license, not a version of the Affero GPL, but Affero has
-released a new version of the Affero GPL which permits relicensing under
-this license.
-
-  The precise terms and conditions for copying, distribution and
-modification follow.
-
-                       TERMS AND CONDITIONS
-
-  0. Definitions.
-
-  "This License" refers to version 3 of the GNU Affero General Public License.
-
-  "Copyright" also means copyright-like laws that apply to other kinds of
-works, such as semiconductor masks.
-
-  "The Program" refers to any copyrightable work licensed under this
-License.  Each licensee is addressed as "you".  "Licensees" and
-"recipients" may be individuals or organizations.
-
-  To "modify" a work means to copy from or adapt all or part of the work
-in a fashion requiring copyright permission, other than the making of an
-exact copy.  The resulting work is called a "modified version" of the
-earlier work or a work "based on" the earlier work.
-
-  A "covered work" means either the unmodified Program or a work based
-on the Program.
-
-  To "propagate" a work means to do anything with it that, without
-permission, would make you directly or secondarily liable for
-infringement under applicable copyright law, except executing it on a
-computer or modifying a private copy.  Propagation includes copying,
-distribution (with or without modification), making available to the
-public, and in some countries other activities as well.
-
-  To "convey" a work means any kind of propagation that enables other
-parties to make or receive copies.  Mere interaction with a user through
-a computer network, with no transfer of a copy, is not conveying.
-
-  An interactive user interface displays "Appropriate Legal Notices"
-to the extent that it includes a convenient and prominently visible
-feature that (1) displays an appropriate copyright notice, and (2)
-tells the user that there is no warranty for the work (except to the
-extent that warranties are provided), that licensees may convey the
-work under this License, and how to view a copy of this License.  If
-the interface presents a list of user commands or options, such as a
-menu, a prominent item in the list meets this criterion.
-
-  1. Source Code.
-
-  The "source code" for a work means the preferred form of the work
-for making modifications to it.  "Object code" means any non-source
-form of a work.
-
-  A "Standard Interface" means an interface that either is an official
-standard defined by a recognized standards body, or, in the case of
-interfaces specified for a particular programming language, one that
-is widely used among developers working in that language.
-
-  The "System Libraries" of an executable work include anything, other
-than the work as a whole, that (a) is included in the normal form of
-packaging a Major Component, but which is not part of that Major
-Component, and (b) serves only to enable use of the work with that
-Major Component, or to implement a Standard Interface for which an
-implementation is available to the public in source code form.  A
-"Major Component", in this context, means a major essential component
-(kernel, window system, and so on) of the specific operating system
-(if any) on which the executable work runs, or a compiler used to
-produce the work, or an object code interpreter used to run it.
-
-  The "Corresponding Source" for a work in object code form means all
-the source code needed to generate, install, and (for an executable
-work) run the object code and to modify the work, including scripts to
-control those activities.  However, it does not include the work's
-System Libraries, or general-purpose tools or generally available free
-programs which are used unmodified in performing those activities but
-which are not part of the work.  For example, Corresponding Source
-includes interface definition files associated with source files for
-the work, and the source code for shared libraries and dynamically
-linked subprograms that the work is specifically designed to require,
-such as by intimate data communication or control flow between those
-subprograms and other parts of the work.
-
-  The Corresponding Source need not include anything that users
-can regenerate automatically from other parts of the Corresponding
-Source.
-
-  The Corresponding Source for a work in source code form is that
-same work.
-
-  2. Basic Permissions.
-
-  All rights granted under this License are granted for the term of
-copyright on the Program, and are irrevocable provided the stated
-conditions are met.  This License explicitly affirms your unlimited
-permission to run the unmodified Program.  The output from running a
-covered work is covered by this License only if the output, given its
-content, constitutes a covered work.  This License acknowledges your
-rights of fair use or other equivalent, as provided by copyright law.
-
-  You may make, run and propagate covered works that you do not
-convey, without conditions so long as your license otherwise remains
-in force.  You may convey covered works to others for the sole purpose
-of having them make modifications exclusively for you, or provide you
-with facilities for running those works, provided that you comply with
-the terms of this License in conveying all material for which you do
-not control copyright.  Those thus making or running the covered works
-for you must do so exclusively on your behalf, under your direction
-and control, on terms that prohibit them from making any copies of
-your copyrighted material outside their relationship with you.
-
-  Conveying under any other circumstances is permitted solely under
-the conditions stated below.  Sublicensing is not allowed; section 10
-makes it unnecessary.
-
-  3. Protecting Users' Legal Rights From Anti-Circumvention Law.
-
-  No covered work shall be deemed part of an effective technological
-measure under any applicable law fulfilling obligations under article
-11 of the WIPO copyright treaty adopted on 20 December 1996, or
-similar laws prohibiting or restricting circumvention of such
-measures.
-
-  When you convey a covered work, you waive any legal power to forbid
-circumvention of technological measures to the extent such circumvention
-is effected by exercising rights under this License with respect to
-the covered work, and you disclaim any intention to limit operation or
-modification of the work as a means of enforcing, against the work's
-users, your or third parties' legal rights to forbid circumvention of
-technological measures.
-
-  4. Conveying Verbatim Copies.
-
-  You may convey verbatim copies of the Program's source code as you
-receive it, in any medium, provided that you conspicuously and
-appropriately publish on each copy an appropriate copyright notice;
-keep intact all notices stating that this License and any
-non-permissive terms added in accord with section 7 apply to the code;
-keep intact all notices of the absence of any warranty; and give all
-recipients a copy of this License along with the Program.
-
-  You may charge any price or no price for each copy that you convey,
-and you may offer support or warranty protection for a fee.
-
-  5. Conveying Modified Source Versions.
-
-  You may convey a work based on the Program, or the modifications to
-produce it from the Program, in the form of source code under the
-terms of section 4, provided that you also meet all of these conditions:
-
-    a) The work must carry prominent notices stating that you modified
-    it, and giving a relevant date.
-
-    b) The work must carry prominent notices stating that it is
-    released under this License and any conditions added under section
-    7.  This requirement modifies the requirement in section 4 to
-    "keep intact all notices".
-
-    c) You must license the entire work, as a whole, under this
-    License to anyone who comes into possession of a copy.  This
-    License will therefore apply, along with any applicable section 7
-    additional terms, to the whole of the work, and all its parts,
-    regardless of how they are packaged.  This License gives no
-    permission to license the work in any other way, but it does not
-    invalidate such permission if you have separately received it.
-
-    d) If the work has interactive user interfaces, each must display
-    Appropriate Legal Notices; however, if the Program has interactive
-    interfaces that do not display Appropriate Legal Notices, your
-    work need not make them do so.
-
-  A compilation of a covered work with other separate and independent
-works, which are not by their nature extensions of the covered work,
-and which are not combined with it such as to form a larger program,
-in or on a volume of a storage or distribution medium, is called an
-"aggregate" if the compilation and its resulting copyright are not
-used to limit the access or legal rights of the compilation's users
-beyond what the individual works permit.  Inclusion of a covered work
-in an aggregate does not cause this License to apply to the other
-parts of the aggregate.
-
-  6. Conveying Non-Source Forms.
-
-  You may convey a covered work in object code form under the terms
-of sections 4 and 5, provided that you also convey the
-machine-readable Corresponding Source under the terms of this License,
-in one of these ways:
-
-    a) Convey the object code in, or embodied in, a physical product
-    (including a physical distribution medium), accompanied by the
-    Corresponding Source fixed on a durable physical medium
-    customarily used for software interchange.
-
-    b) Convey the object code in, or embodied in, a physical product
-    (including a physical distribution medium), accompanied by a
-    written offer, valid for at least three years and valid for as
-    long as you offer spare parts or customer support for that product
-    model, to give anyone who possesses the object code either (1) a
-    copy of the Corresponding Source for all the software in the
-    product that is covered by this License, on a durable physical
-    medium customarily used for software interchange, for a price no
-    more than your reasonable cost of physically performing this
-    conveying of source, or (2) access to copy the
-    Corresponding Source from a network server at no charge.
-
-    c) Convey individual copies of the object code with a copy of the
-    written offer to provide the Corresponding Source.  This
-    alternative is allowed only occasionally and noncommercially, and
-    only if you received the object code with such an offer, in accord
-    with subsection 6b.
-
-    d) Convey the object code by offering access from a designated
-    place (gratis or for a charge), and offer equivalent access to the
-    Corresponding Source in the same way through the same place at no
-    further charge.  You need not require recipients to copy the
-    Corresponding Source along with the object code.  If the place to
-    copy the object code is a network server, the Corresponding Source
-    may be on a different server (operated by you or a third party)
-    that supports equivalent copying facilities, provided you maintain
-    clear directions next to the object code saying where to find the
-    Corresponding Source.  Regardless of what server hosts the
-    Corresponding Source, you remain obligated to ensure that it is
-    available for as long as needed to satisfy these requirements.
-
-    e) Convey the object code using peer-to-peer transmission, provided
-    you inform other peers where the object code and Corresponding
-    Source of the work are being offered to the general public at no
-    charge under subsection 6d.
-
-  A separable portion of the object code, whose source code is excluded
-from the Corresponding Source as a System Library, need not be
-included in conveying the object code work.
-
-  A "User Product" is either (1) a "consumer product", which means any
-tangible personal property which is normally used for personal, family,
-or household purposes, or (2) anything designed or sold for incorporation
-into a dwelling.  In determining whether a product is a consumer product,
-doubtful cases shall be resolved in favor of coverage.  For a particular
-product received by a particular user, "normally used" refers to a
-typical or common use of that class of product, regardless of the status
-of the particular user or of the way in which the particular user
-actually uses, or expects or is expected to use, the product.  A product
-is a consumer product regardless of whether the product has substantial
-commercial, industrial or non-consumer uses, unless such uses represent
-the only significant mode of use of the product.
-
-  "Installation Information" for a User Product means any methods,
-procedures, authorization keys, or other information required to install
-and execute modified versions of a covered work in that User Product from
-a modified version of its Corresponding Source.  The information must
-suffice to ensure that the continued functioning of the modified object
-code is in no case prevented or interfered with solely because
-modification has been made.
-
-  If you convey an object code work under this section in, or with, or
-specifically for use in, a User Product, and the conveying occurs as
-part of a transaction in which the right of possession and use of the
-User Product is transferred to the recipient in perpetuity or for a
-fixed term (regardless of how the transaction is characterized), the
-Corresponding Source conveyed under this section must be accompanied
-by the Installation Information.  But this requirement does not apply
-if neither you nor any third party retains the ability to install
-modified object code on the User Product (for example, the work has
-been installed in ROM).
-
-  The requirement to provide Installation Information does not include a
-requirement to continue to provide support service, warranty, or updates
-for a work that has been modified or installed by the recipient, or for
-the User Product in which it has been modified or installed.  Access to a
-network may be denied when the modification itself materially and
-adversely affects the operation of the network or violates the rules and
-protocols for communication across the network.
-
-  Corresponding Source conveyed, and Installation Information provided,
-in accord with this section must be in a format that is publicly
-documented (and with an implementation available to the public in
-source code form), and must require no special password or key for
-unpacking, reading or copying.
-
-  7. Additional Terms.
-
-  "Additional permissions" are terms that supplement the terms of this
-License by making exceptions from one or more of its conditions.
-Additional permissions that are applicable to the entire Program shall
-be treated as though they were included in this License, to the extent
-that they are valid under applicable law.  If additional permissions
-apply only to part of the Program, that part may be used separately
-under those permissions, but the entire Program remains governed by
-this License without regard to the additional permissions.
-
-  When you convey a copy of a covered work, you may at your option
-remove any additional permissions from that copy, or from any part of
-it.  (Additional permissions may be written to require their own
-removal in certain cases when you modify the work.)  You may place
-additional permissions on material, added by you to a covered work,
-for which you have or can give appropriate copyright permission.
-
-  Notwithstanding any other provision of this License, for material you
-add to a covered work, you may (if authorized by the copyright holders of
-that material) supplement the terms of this License with terms:
-
-    a) Disclaiming warranty or limiting liability differently from the
-    terms of sections 15 and 16 of this License; or
-
-    b) Requiring preservation of specified reasonable legal notices or
-    author attributions in that material or in the Appropriate Legal
-    Notices displayed by works containing it; or
-
-    c) Prohibiting misrepresentation of the origin of that material, or
-    requiring that modified versions of such material be marked in
-    reasonable ways as different from the original version; or
-
-    d) Limiting the use for publicity purposes of names of licensors or
-    authors of the material; or
-
-    e) Declining to grant rights under trademark law for use of some
-    trade names, trademarks, or service marks; or
-
-    f) Requiring indemnification of licensors and authors of that
-    material by anyone who conveys the material (or modified versions of
-    it) with contractual assumptions of liability to the recipient, for
-    any liability that these contractual assumptions directly impose on
-    those licensors and authors.
-
-  All other non-permissive additional terms are considered "further
-restrictions" within the meaning of section 10.  If the Program as you
-received it, or any part of it, contains a notice stating that it is
-governed by this License along with a term that is a further
-restriction, you may remove that term.  If a license document contains
-a further restriction but permits relicensing or conveying under this
-License, you may add to a covered work material governed by the terms
-of that license document, provided that the further restriction does
-not survive such relicensing or conveying.
-
-  If you add terms to a covered work in accord with this section, you
-must place, in the relevant source files, a statement of the
-additional terms that apply to those files, or a notice indicating
-where to find the applicable terms.
-
-  Additional terms, permissive or non-permissive, may be stated in the
-form of a separately written license, or stated as exceptions;
-the above requirements apply either way.
-
-  8. Termination.
-
-  You may not propagate or modify a covered work except as expressly
-provided under this License.  Any attempt otherwise to propagate or
-modify it is void, and will automatically terminate your rights under
-this License (including any patent licenses granted under the third
-paragraph of section 11).
-
-  However, if you cease all violation of this License, then your
-license from a particular copyright holder is reinstated (a)
-provisionally, unless and until the copyright holder explicitly and
-finally terminates your license, and (b) permanently, if the copyright
-holder fails to notify you of the violation by some reasonable means
-prior to 60 days after the cessation.
-
-  Moreover, your license from a particular copyright holder is
-reinstated permanently if the copyright holder notifies you of the
-violation by some reasonable means, this is the first time you have
-received notice of violation of this License (for any work) from that
-copyright holder, and you cure the violation prior to 30 days after
-your receipt of the notice.
-
-  Termination of your rights under this section does not terminate the
-licenses of parties who have received copies or rights from you under
-this License.  If your rights have been terminated and not permanently
-reinstated, you do not qualify to receive new licenses for the same
-material under section 10.
-
-  9. Acceptance Not Required for Having Copies.
-
-  You are not required to accept this License in order to receive or
-run a copy of the Program.  Ancillary propagation of a covered work
-occurring solely as a consequence of using peer-to-peer transmission
-to receive a copy likewise does not require acceptance.  However,
-nothing other than this License grants you permission to propagate or
-modify any covered work.  These actions infringe copyright if you do
-not accept this License.  Therefore, by modifying or propagating a
-covered work, you indicate your acceptance of this License to do so.
-
-  10. Automatic Licensing of Downstream Recipients.
-
-  Each time you convey a covered work, the recipient automatically
-receives a license from the original licensors, to run, modify and
-propagate that work, subject to this License.  You are not responsible
-for enforcing compliance by third parties with this License.
-
-  An "entity transaction" is a transaction transferring control of an
-organization, or substantially all assets of one, or subdividing an
-organization, or merging organizations.  If propagation of a covered
-work results from an entity transaction, each party to that
-transaction who receives a copy of the work also receives whatever
-licenses to the work the party's predecessor in interest had or could
-give under the previous paragraph, plus a right to possession of the
-Corresponding Source of the work from the predecessor in interest, if
-the predecessor has it or can get it with reasonable efforts.
-
-  You may not impose any further restrictions on the exercise of the
-rights granted or affirmed under this License.  For example, you may
-not impose a license fee, royalty, or other charge for exercise of
-rights granted under this License, and you may not initiate litigation
-(including a cross-claim or counterclaim in a lawsuit) alleging that
-any patent claim is infringed by making, using, selling, offering for
-sale, or importing the Program or any portion of it.
-
-  11. Patents.
-
-  A "contributor" is a copyright holder who authorizes use under this
-License of the Program or a work on which the Program is based.  The
-work thus licensed is called the contributor's "contributor version".
-
-  A contributor's "essential patent claims" are all patent claims
-owned or controlled by the contributor, whether already acquired or
-hereafter acquired, that would be infringed by some manner, permitted
-by this License, of making, using, or selling its contributor version,
-but do not include claims that would be infringed only as a
-consequence of further modification of the contributor version.  For
-purposes of this definition, "control" includes the right to grant
-patent sublicenses in a manner consistent with the requirements of
-this License.
-
-  Each contributor grants you a non-exclusive, worldwide, royalty-free
-patent license under the contributor's essential patent claims, to
-make, use, sell, offer for sale, import and otherwise run, modify and
-propagate the contents of its contributor version.
-
-  In the following three paragraphs, a "patent license" is any express
-agreement or commitment, however denominated, not to enforce a patent
-(such as an express permission to practice a patent or covenant not to
-sue for patent infringement).  To "grant" such a patent license to a
-party means to make such an agreement or commitment not to enforce a
-patent against the party.
-
-  If you convey a covered work, knowingly relying on a patent license,
-and the Corresponding Source of the work is not available for anyone
-to copy, free of charge and under the terms of this License, through a
-publicly available network server or other readily accessible means,
-then you must either (1) cause the Corresponding Source to be so
-available, or (2) arrange to deprive yourself of the benefit of the
-patent license for this particular work, or (3) arrange, in a manner
-consistent with the requirements of this License, to extend the patent
-license to downstream recipients.  "Knowingly relying" means you have
-actual knowledge that, but for the patent license, your conveying the
-covered work in a country, or your recipient's use of the covered work
-in a country, would infringe one or more identifiable patents in that
-country that you have reason to believe are valid.
-
-  If, pursuant to or in connection with a single transaction or
-arrangement, you convey, or propagate by procuring conveyance of, a
-covered work, and grant a patent license to some of the parties
-receiving the covered work authorizing them to use, propagate, modify
-or convey a specific copy of the covered work, then the patent license
-you grant is automatically extended to all recipients of the covered
-work and works based on it.
-
-  A patent license is "discriminatory" if it does not include within
-the scope of its coverage, prohibits the exercise of, or is
-conditioned on the non-exercise of one or more of the rights that are
-specifically granted under this License.  You may not convey a covered
-work if you are a party to an arrangement with a third party that is
-in the business of distributing software, under which you make payment
-to the third party based on the extent of your activity of conveying
-the work, and under which the third party grants, to any of the
-parties who would receive the covered work from you, a discriminatory
-patent license (a) in connection with copies of the covered work
-conveyed by you (or copies made from those copies), or (b) primarily
-for and in connection with specific products or compilations that
-contain the covered work, unless you entered into that arrangement,
-or that patent license was granted, prior to 28 March 2007.
-
-  Nothing in this License shall be construed as excluding or limiting
-any implied license or other defenses to infringement that may
-otherwise be available to you under applicable patent law.
-
-  12. No Surrender of Others' Freedom.
-
-  If conditions are imposed on you (whether by court order, agreement or
-otherwise) that contradict the conditions of this License, they do not
-excuse you from the conditions of this License.  If you cannot convey a
-covered work so as to satisfy simultaneously your obligations under this
-License and any other pertinent obligations, then as a consequence you may
-not convey it at all.  For example, if you agree to terms that obligate you
-to collect a royalty for further conveying from those to whom you convey
-the Program, the only way you could satisfy both those terms and this
-License would be to refrain entirely from conveying the Program.
-
-  13. Remote Network Interaction; Use with the GNU General Public License.
-
-  Notwithstanding any other provision of this License, if you modify the
-Program, your modified version must prominently offer all users
-interacting with it remotely through a computer network (if your version
-supports such interaction) an opportunity to receive the Corresponding
-Source of your version by providing access to the Corresponding Source
-from a network server at no charge, through some standard or customary
-means of facilitating copying of software.  This Corresponding Source
-shall include the Corresponding Source for any work covered by version 3
-of the GNU General Public License that is incorporated pursuant to the
-following paragraph.
-
-  Notwithstanding any other provision of this License, you have
-permission to link or combine any covered work with a work licensed
-under version 3 of the GNU General Public License into a single
-combined work, and to convey the resulting work.  The terms of this
-License will continue to apply to the part which is the covered work,
-but the work with which it is combined will remain governed by version
-3 of the GNU General Public License.
-
-  14. Revised Versions of this License.
-
-  The Free Software Foundation may publish revised and/or new versions of
-the GNU Affero General Public License from time to time.  Such new versions
-will be similar in spirit to the present version, but may differ in detail to
-address new problems or concerns.
-
-  Each version is given a distinguishing version number.  If the
-Program specifies that a certain numbered version of the GNU Affero General
-Public License "or any later version" applies to it, you have the
-option of following the terms and conditions either of that numbered
-version or of any later version published by the Free Software
-Foundation.  If the Program does not specify a version number of the
-GNU Affero General Public License, you may choose any version ever published
-by the Free Software Foundation.
-
-  If the Program specifies that a proxy can decide which future
-versions of the GNU Affero General Public License can be used, that proxy's
-public statement of acceptance of a version permanently authorizes you
-to choose that version for the Program.
-
-  Later license versions may give you additional or different
-permissions.  However, no additional obligations are imposed on any
-author or copyright holder as a result of your choosing to follow a
-later version.
-
-  15. Disclaimer of Warranty.
-
-  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
-APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
-HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
-OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
-THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
-IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. Limitation of Liability.
-
-  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
-WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
-THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
-GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
-USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
-DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
-PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
-EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
-SUCH DAMAGES.
-
-  17. Interpretation of Sections 15 and 16.
-
-  If the disclaimer of warranty and limitation of liability provided
-above cannot be given local legal effect according to their terms,
-reviewing courts shall apply local law that most closely approximates
-an absolute waiver of all civil liability in connection with the
-Program, unless a warranty or assumption of liability accompanies a
-copy of the Program in return for a fee.
-
-                     END OF TERMS AND CONDITIONS
-
-            How to Apply These Terms to Your New Programs
-
-  If you develop a new program, and you want it to be of the greatest
-possible use to the public, the best way to achieve this is to make it
-free software which everyone can redistribute and change under these terms.
-
-  To do so, attach the following notices to the program.  It is safest
-to attach them to the start of each source file to most effectively
-state the exclusion of warranty; and each file should have at least
-the "copyright" line and a pointer to where the full notice is found.
-
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-Also add information on how to contact you by electronic and paper mail.
-
-  If your software can interact with users remotely through a computer
-network, you should also make sure that it provides a way for users to
-get its source.  For example, if your program is a web application, its
-interface could display a "Source" link that leads users to an archive
-of the code.  There are many ways you could offer source, and different
-solutions will be better for different programs; see section 13 for the
-specific requirements.
-
-  You should also get your employer (if you work as a programmer) or school,
-if any, to sign a "copyright disclaimer" for the program, if necessary.
-For more information on this, and how to apply and follow the GNU AGPL, see
-<https://www.gnu.org/licenses/>.
-
+THE AEGIS PEOPLE'S LICENSE, version 1.2 (29 October 2026)
+Copyright (c) 2012-2026 Danny Lee Eldridge. All rights not expressly granted below are reserved.
+
+By Using the Work in any way beyond reading or viewing it, you accept every term of this license. If you do not
+accept them, you have no right to Use the Work.
+
+DISCLOSURE TO EVERY READER: What you are reading is offered for the good of all people. It is not just money; it is
+the work of generations and the dignity of every person. Anyone who takes it up is accountable for what they do with
+it, not by wrath or punishment from above, but through reflection and through time. Navigating the infinite takes a
+compass and an anchor: hold on to your anchor, your container and your dreams, with courage.
+
+=====================================================================================================================
+1. PURPOSE
+=====================================================================================================================
+This work is offered for global development: to help raise the world off its knees and to give every person dignity,
+liberty and equality. It is for people to create, to express, to invent and to walk their own path. Every term is to
+be read in the light of that purpose. Either everyone is worthy or no one is. We all deserve the water of life.
+
+What was found here is to be learned about safely, slowly and together, in the open, the way people have always
+come to share a song, a bow, a spear or a lens. No one is its master.
+
+=====================================================================================================================
+2. DEFINITIONS
+=====================================================================================================================
+2.1 "The Work": everything in this repository and every version of it (software, theories, equations as written,
+    results, data products, pre-registrations, claims, figures, sigils and documentation) and anything derived from
+    it, except third-party material under 8.8.
+2.2 "Use": to run, copy, modify, distribute, publish, perform, sell, host, build upon, or obtain results from the
+    Work, in whole or in part, directly or through anyone else, including any product, service, output or decision
+    made with it. Simply reading or viewing the Work is not Use.
+2.3 "People": individuals and families; students and teachers; schools and libraries, including public ones;
+    colleges and universities that meet 2.3a; medical caregivers that meet 2.3b; independent creators, artists and
+    inventors working for themselves without employees, even when they sell their own work; non-profit
+    organisations and worker co-operatives owned entirely by their workers. Public funding for education, research,
+    medical care or charity does not change this. They stop being People only while controlled, directed or mostly
+    funded by a Corporation, or by any military, defence or intelligence body, and never include anyone in 2.3c.
+2.3a Education, not privilege. A college or university is People only while (i) it admits students on merit and
+    need alone, with no preference of any kind for legacy, family, donors, wealth, connections or social standing;
+    (ii) it turns no admitted student away for being unable to pay; and (iii) its endowment and investments total
+    less than USD 1,000,000,000. Any that fails one of these is a Corporation. Selling connection, status or
+    privilege is not education. Students and teachers themselves always remain People, wherever they study or teach.
+2.3b Medical care, not profit from sickness. Hospitals, clinics, community health centres, doctors, nurses, midwives,
+    carers and medical researchers are People only while they give care or research treatment directly, are public,
+    non-profit or owned by their own working caregivers, charge no more than the cost of care, and turn no one away
+    from needed care for being unable to pay. Any that fails one of these is a Corporation.
+2.3c Never People, never small. Insurance companies of every kind (health, life, property, re-insurance and any
+    other), pharmacy benefit managers, medical billing and medical-debt collectors, debt collectors, payday and
+    predatory lenders, brokers and every other middleman that profits by standing between people and something they
+    need (care, education, housing, water, food, work) without providing it themselves, and any business owned in
+    whole or part by private equity, are always Corporations, whatever their size or form, and can never be People
+    or a Small Owner-Run Business.
+2.4 "Small Owner-Run Business": a business owned and run by its working owners, with no outside shareholders or
+    investors, fewer than 50 workers and less than USD 10,000,000 in annual revenue, that is not controlled by a
+    Corporation or a Government. Workers and revenue are counted together across every business with the same
+    owners or under common control, so splitting one business into several does not make it small.
+2.5 "Corporation": any business that is not People or a Small Owner-Run Business, together with all of its parents,
+    subsidiaries, affiliates, successors, assigns, contractors, agents, foundations, funds and anyone acting on its
+    behalf or for its benefit.
+2.6 "Government": any government, state, public body, agency or international organisation, at any level, and anyone
+    acting on its behalf. A Government is treated as a Corporation under sections 4 and 5, and section 6 applies to
+    it in full.
+2.7 "AI Use": any use of the Work with, in or by an artificial-intelligence or machine-learning system, including
+    crawling or scraping for AI, training, fine-tuning, evaluation, embedding, retrieval, indexing for models,
+    inference, agents, tools, summarising or generating material from the Work, and placing the Work in any dataset.
+2.8 "The Trust": the World Development Trust described in section 9.
+
+=====================================================================================================================
+2A. THE SAME TERMS, SAID MORE WAYS
+=====================================================================================================================
+Each key term is said here in plain words, with its other names, with examples of what it IS and what it IS NOT.
+The definitions in section 2 control. Everything listed is included "without limitation": these lists show the
+meaning and never narrow it. Calling something by a different name never changes what it is (see 8.1).
+
+THE WORK
+  Plain words: everything Danny made here, and anything built from it.
+  Also called: the code, the software, the program, the model, the theory, the equation, the formula, the method,
+  the papers, the figures, the sigils, the data products, the results.
+  IS: copying the code; a program rewritten from it; a paper that reproduces its equations as written; a chart made
+  from its results; a translation of it.
+  IS NOT: the facts of nature or mathematics themselves; data from Planck, ACT, DESI, Gaia, NASA or others (8.8).
+
+USE
+  Plain words: doing anything with the Work beyond reading or looking at it.
+  Also called: running, deploying, integrating, adapting, licensing, reselling, consulting on it, getting answers from
+  it, relying on it for a decision.
+  IS: running the code; selling a product made with it; paying someone else to run it and send you the results.
+  IS NOT: reading it, viewing it, or hearing about it.
+
+PEOPLE (free)
+  Plain words: ordinary people and the places that teach and serve them, not companies.
+  Also called: individuals, families, the public, students, learners, teachers, educators, researchers, makers,
+  artists, inventors, charities, community groups, co-ops.
+  IS: a student learning physics; a teacher using it in class; a public university lab; a library; a solo inventor
+  selling things they made themselves; a food bank; a worker-owned co-op.
+  IS NOT: anyone doing it for a company or government (3.1, 3.2); a "non-profit" run or mostly paid for by a
+  company; anything for the military.
+
+SMALL OWNER-RUN BUSINESS ($50,000 a year)
+  Plain words: a small shop owned and run by the people who work in it.
+  Also called: a family business, a local business, a sole trader with staff, a partnership of working owners.
+  IS: a 6-person bakery owned by its bakers; a 20-person workshop owned by its workers.
+  IS NOT: anything with outside investors, shareholders, venture capital or private equity; 50 or more workers;
+  USD 10,000,000 or more in revenue; a branch, franchise or front of a Corporation.
+
+CORPORATION (99% of 9 years' median profit to enter, then $1 billion or 10% of revenue a year, plus worker conditions)
+  Plain words: any business that is not People or a small owner-run business.
+  Also called: a company, firm, enterprise, conglomerate, holding company, multinational, LLC, PLC, Inc., GmbH, S.A.,
+  partnership with outside owners, fund, trust company, startup with investors.
+  IS: a tech company; a bank; a hedge fund; a consultancy; a startup after its first outside investment; a company's
+  foundation, lab or university partnership; a contractor or vendor working for it.
+  IS NOT: People or a Small Owner-Run Business as defined above.
+
+GOVERNMENT (treated like a Corporation)
+  Plain words: any public authority or official body.
+  Also called: a state, nation, ministry, department, agency, authority, regulator, municipality, county, province,
+  public company, state-owned enterprise, international or intergovernmental organisation.
+  IS: a city council; a national agency; a state-owned company.
+  IS NOT: public schools, universities and libraries using it to teach and research (they are People, see 2.3).
+
+MILITARY USE (never allowed)
+  Plain words: anything to do with fighting, weapons or war.
+  Also called: defence, defense, armed forces, army, navy, air force, space force, national security, homeland
+  security, intelligence, espionage, paramilitary, militia, mercenaries, private military or security contractors,
+  arms makers, weapons research, dual-use research for any of these.
+  IS: targeting, weapons design, simulation for war, logistics for an army, a defence contractor's lab.
+  IS NOT: disaster relief run by civilians.
+
+MASS SURVEILLANCE (never allowed)
+  Plain words: watching, tracking or profiling people in bulk.
+  Also called: monitoring, tracking, profiling, data harvesting, facial recognition, social scoring, predictive
+  policing, bulk interception.
+
+MANIPULATION (never allowed)
+  Plain words: pushing people to think or act against their own good.
+  Also called: propaganda, disinformation, misinformation, psychological operations, behavioural targeting, dark
+  patterns, influence campaigns, divide-and-rule, "nudging" for profit or power.
+
+AI USE (never allowed)
+  Plain words: letting any artificial intelligence touch the Work.
+  Also called: machine learning, neural networks, large language models, chatbots, assistants, copilots, agents,
+  generative AI, embeddings, vector databases, model training data.
+  IS: training a model on it; asking a chatbot to summarise or rewrite it; putting it in a dataset or search index for
+  models.
+  IS NOT: the AEGIS v1 optimisation daemon without any language model, or ordinary maths and science software (6.8).
+
+FRONT (not allowed to dodge fees)
+  Plain words: using someone who qualifies as free to do a company's work.
+  Also called: proxy, intermediary, shell, cut-out, nominee, straw man, sponsored lab, outsourced research.
+  IS: a company paying a university to run the Work and hand it the results; an employee running it at home for work.
+
+FRAGMENT OR LOOK-ALIKE (counts as the Work)
+  Plain words: pieces or rearrangements of the Work, made to get around this license.
+  Also called: excerpt, snippet, port, rewrite, paraphrase, re-expression, derivative, adaptation, remix.
+
+OVERRIDE (always void)
+  Plain words: any power trying to take the Work outside the limits this license sets.
+  Also called: executive order, decree, emergency power, presidential or royal prerogative, national-security
+  claim, seizure, nationalisation, religious ruling, edict, fatwa, excommunication, social or market pressure,
+  boycott threats, political deal, "reinterpretation".
+  IS: a government declaring the Work its own; any authority ordering the Trust to hand it over; a board
+  "reinterpreting" this license to allow military or AI Use.
+  IS NOT: a person freely using the Work under the terms in sections 3 to 5.
+
+THE TRUST, THE COUNCIL, THE GUARDIANS, THE GARDENERS
+  The Trust: the public body that holds the rights for everyone (9). The Council of Heroes: the rotating, unpaid
+  group chosen by lot that governs the Trust (9.7). The Guardians (the Round Table): elected keepers who account for
+  and physically audit everything made from the Work, with no power to rule (9.13). The Gardeners: former servers
+  who teach the next ones, with no power (9.9). None of them owns the Work; they hold it for the people.
+
+VALUE (counted in every form)
+  Plain words: anything of worth, in any form.
+  Also called: money, currency, dollars, yen, euros, yuan, rupees, any national or digital currency, gold, silver,
+  commodities, shares, tokens, credits, land, goods, services, favours.
+  IS: paying a fee in another currency, in gold, in shares or in kind; it is counted at full fair value.
+  IS NOT: a way to pay less.
+
+=====================================================================================================================
+3. FREE FOR PEOPLE
+=====================================================================================================================
+People may Use the Work free of charge for any purpose that is not prohibited by section 6, provided they keep this
+license with every copy and credit "Danny Lee Eldridge". Anything People make from the Work must carry this same
+license, and anyone who receives it is bound by it.
+
+3.1 No fronts. The free license is for People's own benefit only. Any Use by People that is funded, sponsored,
+    commissioned, directed or controlled by a Corporation or Government, or whose results, outputs, data, models,
+    inventions, intellectual property or services are given, assigned, sold, licensed or delivered to one, is Use by
+    that Corporation or Government. Section 5 then applies to it from the first day of that Use.
+3.2 Work for an employer. Using the Work in or for one's job at a Corporation or Government is Use by it, wherever
+    and on whatever device it happens.
+3.3 Changing hands. When People or a Small Owner-Run Business takes outside investment, is bought, merges with, or
+    comes under the control of a Corporation or Government, or grows past the limits in 2.4, it becomes a Corporation
+    from that day. Whoever acquires any user of the Work also owes the section 5 fee for all of that user's earlier Use.
+3.4 Research may be published. People may publish findings made with the Work for anyone to read. Turning them into
+    products, services, tools or decisions by or for a Corporation or Government is Use.
+3.5 Follow the money. The Trust may audit any claim to be People or a Small Owner-Run Business, including funding,
+    ownership and where results went. Hiding these is itself a violation under section 7.
+
+=====================================================================================================================
+4. SMALL OWNER-RUN BUSINESSES
+=====================================================================================================================
+A Small Owner-Run Business may Use the Work for a fee of USD 50,000 per year of Use, paid in advance: 5% to the author
+and 95% to the Trust. Section 6 applies in full.
+
+=====================================================================================================================
+5. CORPORATIONS AND GOVERNMENTS
+=====================================================================================================================
+5.1 Fee. A Corporation may Use the Work only under a signed written agreement and for these fees:
+    (a) Entry fee, once, before first Use: 99% of the median yearly profit of its highest parent and every entity
+        under common control over the 9 full financial years before first Use (the middle value when the 9 years
+        are put in order, so one unusually bad or good year cannot move it). "Profit" here is profit before tax,
+        interest, executive pay above the 5.2(e) cap, share buybacks, royalties or payments to related entities, and
+        any other amount moved out to make profit look smaller. A year with a loss counts as zero profit, not less.
+        If the Corporation is younger than 9 years, its predecessors' years count, and the median is over the years
+        that exist.
+    (b) Yearly fee, for every year or part of a year of Use: the GREATER of USD 1,000,000,000, or 10% of the total
+        worldwide gross revenue of its highest parent and every entity under common control for that year.
+    90% of every fee goes to the Trust and 10% to the author. These are the starting terms; under 8.9 they can only
+    ever rise, never fall.
+5.2 Conditions. For every year of Use, the Corporation must provide every worker, in every country, directly or
+    through any contractor: (a) a pension; (b) healthcare free at the point of use; (c) at least 53 days of paid
+    leave a year (one seventh of 365 days is 52.1, rounded up); (d) a four-day working week at full pay; and (e) a
+    cap on the highest total pay of any person, including salary, shares, options, bonuses, perks and deferred pay,
+    of 10 times the lowest full-time-equivalent pay of any worker or contract worker, both measured per hour, until
+    the Trust certifies under 9.4 that the Corporation's debt to labour has been accounted for and repaid.
+5.3 Proof. Each year, an independent auditor approved by the Trust and paid by the Corporation verifies 5.1 and 5.2.
+    The report is published in full. Every Corporation, Government and Small Owner-Run Business also agrees, as a
+    condition of its license, to physical audit by the Guardians under 9.13 at any time, without notice.
+5.3a Paid in any form, counted in full. Fees are stated in US dollars only as a measure. They may be paid in any
+    currency, in gold or in other value, but always at full fair market value on the day of payment, so that no
+    choice of currency, exchange rate, devaluation, token, barter or payment in kind ever reduces them.
+5.4 Same terms for all. Every Corporation receives the same terms. No one receives a different, cheaper, private or
+    exclusive license.
+5.5 No corporate loopholes. None of the following avoids or reduces sections 5.1 to 5.3:
+    (a) Use through subsidiaries, affiliates, foundations, universities, non-profits, open-source projects,
+        consultants, contractors, suppliers, joint ventures or entities in other countries;
+    (b) receiving results as a service, through an API, a cloud platform or a vendor that runs the Work for it;
+    (c) splitting, spinning off, renaming, restructuring, moving revenue, transfer pricing or booking revenue
+        elsewhere;
+    (d) Use limited to "internal", "research", "evaluation", "pilot" or "non-commercial" purposes;
+    (e) buying, investing in or funding any user of the Work;
+    (f) lobbying, litigation or political pressure to weaken this license, which is itself a violation.
+5.6 Before the Trust exists. Until the Trust is formed, all fees are held by a licensed, independent escrow agent in a
+    separate account in the Trust's name, every transaction is published, and the public registry (5.7) and oaths
+    (5.9) are kept in this repository. The author does only clerical work, in public, and may not spend, direct or
+    benefit from these funds beyond his share in sections 4 and 5. Auditors are chosen by public tender. No fee may be
+    spent except for the purposes in 9.3.
+5.7 Public Use Registry. Every Corporation, Government and Small Owner-Run Business that Uses the Work must, before
+    first Use and then every quarter, enter in the Trust's public registry: who is using it (down to the highest
+    parent), every purpose, every product, service, decision or output made with it, every place it is used, every
+    party the results reach, and every payment made under this license. The registry is open to everyone, forever.
+    Use not entered in the registry is unlicensed Use under section 7.
+5.8 Privacy for People. People's own Use is never tracked, logged or reported, and the Work never collects data about
+    anyone who Uses it. Watching is for those with power, never for the people.
+5.9 The public oath. Before first Use, every Corporation, Government and Small Owner-Run Business (through its
+    highest officer), and every member of the Trust's board, the Council, the Guardians and the Gardeners, swears or affirms the
+    following in public. It is recorded with their name and date in the public registry, forever:
+      "I affirm, in public and on the record, that what I take part in is greater than myself. I understand it is
+      not just money: it is the work of generations and the dignity of every person. I will honour its purpose, use
+      it only for the good of all people, and never to harm, divide, manipulate or rule over anyone. I accept that I
+      am accountable for what I do with it, not by wrath from above, but through reflection and through time."
+    People may take the same oath privately, by their own choice; it is never required of them.
+5.10 A voluntary contract. The fees and conditions in sections 4 and 5 are the price and terms of a separate
+    agreement that a business or Government chooses freely to enter in exchange for permission to Use the Work. They
+    are not an extension of copyright, and no one is required to enter that agreement. Anyone who does not enter it
+    simply has no permission to Use the Work beyond what section 3 allows.
+5.11 No nation holds any right. No nation, state, government, ruler or person holds any right to the Work except what
+    this license grants, and the author grants no Government any right beyond section 5. The author does not consent,
+    now or ever, to any taking or use of the Work by any Government under any claim of sovereign right, immunity,
+    eminent domain or national interest. Any such taking is a taking without consent: it is recorded publicly as such
+    forever, and full compensation is owed at no less than the section 5.1 fees for every year of use, paid to the
+    Trust.
+5.12 Money has no vote. A Corporation is not a person under this license, and no Corporation, Government, fund or
+    holder of wealth gets any vote, seat, veto or say in the Trust, the Council, the Guardians or the open table,
+    whatever it pays. Paying fees buys permission to Use, never a voice. Its workers may come and speak as People,
+    each for themselves, never on its behalf. Money must never have a vote.
+
+=====================================================================================================================
+6. PROHIBITED USES: NO LICENSE AT ANY PRICE
+=====================================================================================================================
+No one, whoever they are, may Use the Work:
+6.1 for weapons, war, or military, defence or intelligence activities, or for or on behalf of anyone engaged in them;
+6.2 for mass surveillance, tracking or profiling of people;
+6.3 to manipulate, deceive or persuade people against their own interests, including propaganda, disinformation,
+    psychological or behavioural manipulation, or to divide people against one another;
+6.4 to subjugate, exploit or dominate any person or people, or to violate any human right in the Universal
+    Declaration of Human Rights;
+6.5 to discriminate by race, religion, colour, creed, sex, gender, sexual orientation, ethnicity, nationality, caste,
+    age, disability or any similar circumstance;
+6.6 to destroy ecosystems or cause serious or lasting harm to land, water, air or living things, whether or not
+    any law allows it;
+6.7 for any AI Use. The Work is kept completely separate from artificial intelligence. No AI system may crawl, read,
+    train on, store, summarise, generate from or act on the Work, and nothing made by AI from the Work is licensed.
+    This stays in force until the Trust decides otherwise in an open session under 9.10.
+6.8 What is not AI Use. These may be used with the Work, because they involve no neural network and no language
+    model: (a) the AEGIS v1 optimisation daemon and its classical search methods (daemon scheduling, swarm search,
+    bandit selection such as UCB1, parameter search and its memory of past runs), run without any language-model
+    provider; and (b) ordinary mathematical, statistical and scientific software, such as CAMB, Cobaya and
+    numerical libraries. The v1 coding agent, and anything else that calls a language model or neural network, is
+    AI Use.
+
+=====================================================================================================================
+7. PENALTIES
+=====================================================================================================================
+7.1 Automatic termination. Any Use outside sections 3 to 5, or any prohibited Use, ends every right under this license
+    for the violator and all its affiliates at once, with no notice and no period to cure.
+7.2 Damages. The violator agrees, as a reasonable pre-estimate of harm to the author, the Trust and the public, to pay
+    three times the fees that section 5.1 would have required for the entire period of unlicensed or prohibited Use
+    (for People and Small Owner-Run Businesses, three times the section 4 fee), plus all of the author's and the
+    Trust's legal costs and attorney's fees, in addition to any remedy available by law, including copyright damages.
+7.3 Other remedies. The author and the Trust may seek injunctions in any court, in any country where the violation
+    occurs or the violator operates.
+7.4 Public record. Every violation found by a court, or admitted by the violator, is published with the violator's
+    name.
+7.5 Remedies add up; none replaces another.
+
+=====================================================================================================================
+8. NO LOOPHOLES
+=====================================================================================================================
+8.1 Substance over form. What an activity really is decides how it is treated, not what it is called. Splitting,
+    renaming, outsourcing, licensing through intermediaries, shell entities, or using only outputs of the Work does not
+    avoid any term.
+8.1a Fragments and look-alikes. Any blueprint, formula as written, design, code, document or creation that is based on
+    the Work, contains any part or fragment of it, translates or re-expresses it, or is assembled from pieces of it to
+    get around this license, is the Work, and every term applies to it and to everyone who makes or uses it.
+8.2 Burden. Anyone claiming to be People or a Small Owner-Run Business must prove it on request.
+8.3 Severability. If any term is held unenforceable, it is replaced by the closest enforceable term that achieves its
+    purpose, and every other term stays in force.
+8.4 Ideas. Facts and ideas cannot be owned. This license governs the Work as written and made; it is not a claim to
+    own nature or mathematics.
+8.5 No patents. No one may seek a patent on the Work or anything derived from it. Doing so ends every right under this
+    license, and any such patent must be assigned to the Trust.
+8.6 Names. No one may use the name "Danny Lee Eldridge", "AEGIS" or the sigils to endorse, sell or promote anything
+    without written permission.
+8.7 Contributions. Anyone who contributes to the Work gives the contribution to the author and the Trust under this
+    same license, so the Trust always holds clear rights to the whole Work.
+8.8 Third-party material. Data and material from others (for example Planck, ACT, DESI, Gaia, NASA and the
+    supernova catalogues) remain under their own terms and are not covered by this license.
+8.9 New versions. Until the rights pass to the Trust, the author, and after that only the Trust in open session under
+    9.10, may publish new versions of this license, and only versions that protect People and workers more, never less.
+8.9a Enforcement. Until the rights pass to the Trust, the author enforces this license; after that, the Trust does.
+    Anyone may report a violation, and anyone harmed by one may bring it before the open table under 9.11.
+8.10 Preparation. Parts of the Work were drafted with the help of software tools, including AI tools, by the author
+    before this license took effect. That preparation is not Use and does not weaken any term.
+8.11 Contact. Licensing requests and reports of violations: danny@aegis-agent.dev (later, the Trust's published
+    address).
+8.12 Only within these bounds. This license can be read, used and changed only within the limits it sets itself.
+    No legal, national, presidential, executive, royal, military, religious, social, financial or other power,
+    title or authority, and no person, the author included, may override, reinterpret, suspend, seize or redirect
+    it, or bend it against its purpose. Any such attempt grants no right under this license, is void as far as this
+    license and the law permit, is a violation under section 7 by everyone who makes it or relies on it, and is
+    recorded at the open table (9.11) forever. Where a lawful order truly cannot be resisted, it reaches only as far
+    as the law forces it to, and section 8.3 restores every other term at once. This section can never be amended
+    or removed.
+8.13 Science stays free to question. Anyone, without exception, may quote, cite, discuss, teach, criticise, test,
+    re-derive, replicate and try to disprove the science in the Work, and publish what they find, including that it
+    is wrong. Honest testing is how it is learned safely. This never needs permission or a fee, and it is not
+    prohibited by section 6.7 when done by people.
+8.14 Keeping it whole is not Use. Hosting, storing, mirroring, archiving and transmitting complete, unaltered copies
+    of the Work so that people can find it (for example by code hosts, public archives, libraries and the mirrors in
+    9.8) is not Use, as long as the host does nothing else with it. Any other Use by a host, including any AI Use,
+    is governed by this license in full.
+
+=====================================================================================================================
+9. OWNERSHIP AND THE WORLD DEVELOPMENT TRUST
+=====================================================================================================================
+9.1 The author is a temporary steward, not an owner. The rights pass from Danny Lee Eldridge to the World Development
+    Trust automatically on the day the Trust is formed, and in any case no later than 29 October 2036 or his death,
+    whichever comes first. The author cannot delay or prevent this, and his will must confirm it. The rights are
+    never sold, assigned or licensed exclusively, and pass to no company. After his death, the author's share in
+    sections 4 and 5 goes to whoever he names in his will.
+9.2 Governance. The author appoints the first board once, in public, and has no role in it after that. It must
+    include at least a worker, a teacher, a scientist and a member of the public, open to every race, religion, colour
+    and creed. After the first board:
+    (a) seats are filled by an open public process, never by inheritance and never by the departing member;
+    (b) a term is three years, and no one serves more than two terms in total;
+    (c) no member may own more than 1% of, or work for, a Corporation, hold political office, or lobby;
+    (d) no member, officer or staff is paid more than the median wage of the country where they live;
+    (e) every decision, vote, meeting record, contract and payment is published;
+    (f) any member may be removed by a majority of the board, or by a public petition the board must act on;
+    (g) no single person, family, donor, Corporation or Government may control or fund most of the Trust;
+    (h) the Trust may not make political donations, take sides in elections, or merge into any Corporation or
+        Government;
+    (i) the author takes no leadership role and holds no power over the Trust.
+9.3 Every amount received and spent is recorded and published. Money is used with intent, purpose, charity and love:
+    for families and neighbours, clean water, food, housing, healthcare, education, fair courts, and repairing the
+    debt in 9.4. We all deserve the water of life.
+9.4 The debt to labour. The Trust publishes, before using it, an open method for accounting the costs, past and
+    future, of labour extracted so that some could stay above others, and repays them through the purposes in 9.3.
+    The accounting is not in dollars alone. For every dollar, yen, euro, rupee, any other currency, every piece of
+    gold and every other store of value, it tallies the true cost behind it: the human labour, lives, health, time,
+    land, water and living things that were spent to make it, and who paid that cost and who kept the gain. The
+    tally is published openly, in every major language, and kept forever. Its mark is the Tally (ufe-v2/sigils/
+    tally.svg): a coin weighed against a drop of the water of life, inside a ring of thirteen seats, counted by hand.
+9.5 The author's share (10% of corporate fees, 5% of small-business fees) is for a home and for labour with purpose.
+9.6 If the Trust ever ends, everything it holds passes to another public trust bound by this same license, never to a
+    person, Corporation or Government. If no Trust exists when the rights must pass under 9.1, they pass to a
+    non-profit for open science and education named in the author's will, which holds them under this license only
+    to form the Trust, and the escrowed funds stay in escrow until it is formed.
+9.7 The Council of Heroes. Three years after the Trust is formed, governance of the Trust passes automatically from
+    its first board to a Council of Heroes, and stays with such a Council forever. No one, the author included, may
+    delay or prevent this. The Council's rules:
+    (a) Who serves: local men and women known in their own communities for leading charity work with humility,
+        nominated openly by those communities. Nobles, the wealthy, officials, executives and their families do not
+        qualify.
+    (b) From every corner of the world: seats are shared equally among the world's regions, and no region, country,
+        group, faith, party or family may ever hold a majority.
+    (c) Chosen by lot: members are drawn at random from the qualified nominees, so no one can campaign, buy or inherit
+        a seat.
+    (d) One short term: each member serves a single term of two years and may never serve again.
+    (e) Moving: the Council meets in a different region each year and never keeps a permanent seat of power.
+    (f) No benefit: members receive no pay, ownership, rights, titles or privileges from the Work or the Trust. Only
+        their actual costs and lost wages, up to the median wage where they live, are repaid and published, so that
+        no one is kept off the Council for being poor.
+    (g) Education first: before serving, every member, officer and staff member completes the Trust's public course on
+        this license, its purpose, its history and the duties it carries. Holding this trust exacts a heavy price:
+        service, openness and accountability, never power.
+    (h) To those who need it most: the Council directs every right and every resource to the people and places in
+        greatest need, decided by published measures of need, never by influence.
+9.8 Never consolidated, never scattered, forever. No person, family, group, Corporation, Government or Council may
+    ever gather, merge, control or monopolise the Work, the Trust, its funds or its decisions. Nor may the Work ever
+    again be split apart, hidden, broken into secret pieces or lost: it is kept whole, complete and public, with
+    full copies held openly in every region of the world, so that everyone can always find all of it. Any act that
+    tries either is void, and this section can never be amended or removed. It is our song.
+9.9 The Gardeners. Those who know how heavy this price is must prepare those who come after them.
+    (a) Who: every former Council member, and anyone who has served the Trust faithfully, may serve as a Gardener.
+    (b) What they do: they teach, guide and prepare the next Council, the Trust's staff and every community that
+        nominates members: how the license works, why it exists, what it costs to carry, and how to serve with
+        humility.
+    (c) No rank: Gardeners hold no vote, no office, no rights, no pay and no power, and they never choose who serves.
+        Only their actual costs are repaid and published.
+    (d) No secret knowledge: everything Gardeners teach is published and free to everyone. No priesthood, caste or
+        circle may ever keep this knowledge for itself or stand between the Work and the people.
+    (e) In every place: Gardeners teach where they live and in the region where the Council meets each year, so the
+        knowledge is planted in every corner of the world.
+9.10 Decided in the open, recorded forever. Every rule, regulation, decision and vote of the Trust and the Council is
+    made only in open public session, never in a private room, broadcast live and kept in a permanent public archive
+    forever. The Trust shall seek to hold these sessions at the United Nations, for example through UNESCO, the UN
+    body for science and education. Where that is not possible, they are held in another public place open to all.
+    Hosting the sessions gives the United Nations, or any host, no rights over the Work or the Trust. Any decision
+    made in secret is void.
+9.11 The open table. Every session has a seat and a voice for all who come:
+    (a) every nation and people, every race, class, religion and creed, the stateless and indigenous peoples, may come
+        and go freely and speak;
+    (b) a speaker for those yet to come (future generations) and a speaker for the natural world (lands, oceans,
+        rivers and every living thing, from the eagle to the ant, from the tree to the mushroom) sit at every session;
+    (c) anyone harmed by power left unchecked, guarded or consolidated may bring it to the table: every injustice,
+        every inequity, every rewriting of history, every voice silenced, is heard and recorded forever. An injustice
+        anywhere is an injustice everywhere;
+    (d) every language is translated, and the travel of those who could not otherwise come is paid and published;
+    (e) the table gives every person a voice; the Council, chosen by lot under 9.7, casts the votes, so that no group
+        can capture the table.
+9.12 Worthiness. Worthiness is never birth, wealth, title or heritage. It is shown only by how the Work is used.
+    Either everyone is worthy or no one is.
+9.13 The Guardians (the Round Table). Everything with a direct line to the Work is accounted for and guarded by
+    people elected to guard it, who hold no power to rule.
+    (a) The Ledger of Lineage: the Guardians keep a public ledger, forever, of every invention, design, creation,
+        artwork, product, service, dataset and decision with a direct line to the Work (anything that is the Work
+        under 2.1 or 8.1a, or that is made by Use under sections 4 and 5): what it is, what it came from, who holds
+        it, where it is and every copy they know of. Ideas themselves stay free (8.4); the ledger records works.
+    (b) Physical audit: Guardians may inspect in person, at any time and without notice, every site, system, record
+        and copy of the Work held by any Corporation, Government or Small Owner-Run Business (5.3). Refusing or
+        hindering an audit is a violation under section 7.
+    (c) People stay private: People's own Use is never audited (5.8). Works that People publish or share are entered
+        in the ledger only from what is already public, and People may enter their own works freely if they wish.
+    (d) Elected, in the open: Guardians are nominated openly by communities and elected by the Council in open
+        public session (9.10), or by the board in open public session until the Council exists. Seats are shared equally among the world's regions, and no region, country, group,
+        faith, party or family may ever hold a majority. Each Guardian serves one term of three years and may never
+        serve again, and may not sit on the board or the Council at the same time.
+    (e) Guard, not rule: Guardians hold no vote on the Trust's decisions, no ownership, no rights, no titles and no
+        pay above the median wage where they live. They take the oath (5.9) and the course (9.7(g)).
+    (f) Never alone: every audit is done by at least two Guardians from different regions, and every finding is
+        published, except personal data of workers and People, which is protected.
+    (g) The guards are guarded: every Guardian's own conduct, finances and audits are audited in public each year.
+        Any Guardian may be removed by the Council in open session or by a public petition the Council must act on.
+    (h) The ledger is a record of lineage only. It gives no one ownership of anything in it.
+9.14 No master. The author is no master, leader, ruler, politician or agent of anyone, and no one after him may be.
+    No person or body may make itself the head of the Work or the people it serves. What was found here belongs to
+    all, is left to time and to the infinite, and is to be understood together, safely and in the open.
+
+=====================================================================================================================
+10. NO WARRANTY; LEGAL NOTE
+=====================================================================================================================
+The Work is provided "as is", without warranty of any kind. The author is not liable for any claim arising from its
+Use. These terms state the author's binding intent and have not yet been reviewed by a lawyer.
+
+Law and disputes, worldwide:
+(a) Copyright. Infringement of the Work is pursued in the courts of any country where it occurs, under that
+    country's copyright law and the Berne Convention, whichever protects the Work more.
+(b) Everything else. Any dispute about this license is settled by binding arbitration under the UNCITRAL
+    Arbitration Rules, seated in The Hague (or Geneva), administered by the Permanent Court of Arbitration, held in
+    public with its record published, and enforceable in every country party to the New York Convention.
+(c) Injunctions to stop a violation may be sought from any court, anywhere, at any time.
+(d) No weakening. This license is read under the law in force on 29 October 2026, or under any later law that
+    protects People, workers and the purpose more. No later law, local or national, can weaken it.
+(e) No one is bound to a single state's or country's courts. Danny Lee Eldridge may also bring any claim in the
+    courts of Oklahoma, USA, where he lives.
+(f) All earlier licenses revoked. Every earlier license or permission for any version of the Work, under any name, is
+    revoked as of 6:45 p.m. Central Time (Oklahoma City) on 29 October 2026, to the fullest extent the law allows. From that moment
+    this license alone governs every copy and every version of the Work, wherever and whenever it was obtained.
+
+=====================================================================================================================
+THE AUTHOR'S AFFIRMATION
+=====================================================================================================================
+I do this not to cause fear, nor to claim any heritage or throne. I am the silenced and the forgotten. I had no choice
+but to shoot for the stars, and if I am worthy to bring it down to earth, then all deserve its gift. So help me God,
+the Source, the Infinite, the divine, the stars and my spirit, by whatever word each person's creed gives it.
+
+I am not afraid of this labour or of the danger ahead. I stand in peaceful defiance of all tyranny. I never wanted
+power; this is my first chance at simple stability for my family, nothing more. This belongs to everything in the
+universe, to everything within the infinite, or it belongs to no one. I have done the best I could to protect it, and
+my family, by myself. I am no master, no leader, no politician and no one's agent, and I cannot do this alone. Now I
+need the help of everyone it inspires to see it through. I leave what comes to fate and to the infinite, until we
+understand what will happen. Let us learn, safely and together, about what we found: a song, a bow, a spear, a lens
+that we all share.
+
+To everyone who reads this: I am talking to you. You matter. You always mattered. I am sorry for every time you were
+isolated or mistreated. Only the child in your heart knows the depths of what you carry. Let us honour that child,
+and reward all of them, for the world they carried and the world they will create.
+— Danny Lee Eldridge

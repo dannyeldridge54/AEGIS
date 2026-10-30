@@ -1,4 +1,5 @@
 @echo off
+rem Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 9e2a73614369d966
 title AEGIS CMB fit (CAMB) - 4 fits in parallel
 cd /d "%~dp0"
 rem Runs the four Planck 2018 best fits at the same time (3 CPU threads each) with CAMB,

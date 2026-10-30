@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 67b917a1edbfc415
 """AEGIS star scanner — continuous Gaia DR3 sky survey for the cosmos mapper.
 
 Scan:    pick a random point on the sky (uniform on the sphere), query the ESA Gaia archive for the

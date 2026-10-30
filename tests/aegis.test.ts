@@ -1,3 +1,4 @@
+// Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: b19978243f7f45c1
 import { AegisAgent, optimize } from '../src';
 import { MetaLearner } from '../src/strategies';
 

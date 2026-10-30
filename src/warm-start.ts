@@ -1,3 +1,4 @@
+// Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 9ca3f0a1d200fa92
 /**
  * AEGIS — Warm Start / History Resume
  * Copyright (c) 2012-2026 Danny Lee Eldridge. All rights reserved.

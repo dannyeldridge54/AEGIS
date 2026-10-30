@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 347c129a8c0473a3
 """AEGIS UFE v2 — fit LCDM, the v1 legacy-beta model, and the v2 torsion-born EDE model to
 CMB theta* + DESI DR2 BAO + Pantheon+ (full covariance), with and without the SH0ES H0 prior."""
 import json, sys, time

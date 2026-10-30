@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 36eb7947ca9d76f8
 """One workbook with everything relevant to the UFE / Twist question, gathered from this PC.
 
     python build_master_sheet.py      -> UFE_MASTER_SHEET.xlsx (rebuild any time; reads files only)

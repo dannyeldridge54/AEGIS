@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 5032d72c671f43a5
 """Weak-lensing S8 constraint as a Cobaya likelihood (values fixed in PREREG_S8.md before use).
 
 S8 = sigma8 * sqrt(Omega_m / 0.3); an asymmetric Gaussian using the error on the side the model falls on.

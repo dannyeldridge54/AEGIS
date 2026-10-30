@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 8d2486ab56291283
 """The Metatron test: do our measured numbers match Metatron's Cube more often than chance?
 Rule (written before running): build every distance ratio in the figure (13 centres at 0, 2r, 4r on six directions;
 all 78 distances, and all ratios between them). A number 'matches' if some ratio lies inside its measured range.

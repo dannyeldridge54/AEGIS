@@ -368,12 +368,13 @@ await runNatural('find the best learning rate between 0.0001 and 0.1');
 
 ## 📄 License
 
-**This work belongs to everyone.** No fees, ever.
-- **Code:** [GNU AGPL-3.0](./LICENSE): free to use, study, change and share; anyone who builds on it shares their
-  version too, so it can never be locked away.
-- **Science** (theories, equations, results, data, pre-registrations, claims, figures and sigils):
-  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): use it for anything, with credit to Danny Lee Eldridge.
-- See [PLEDGE.md](./PLEDGE.md) for the no-weapons pledge and how to support the work if you want to.
+**This work belongs to everyone.** It is free, with no fees, ever, under the
+[Hippocratic License 3.0](./LICENSE) (Copyleft, Ecocide, Media, Military Activities and Mass Surveillance modules),
+covering the code and the science alike.
+- Anyone may use, copy, change and share it, and must keep it under the same license.
+- Using it to violate human rights, for military activities, mass surveillance, ecocide or messages promoting violence
+  ends every right to use it.
+- See [PLEDGE.md](./PLEDGE.md) for its purpose: global development, dignity, liberty and equality.
 
 ## 💛 Dedication
 

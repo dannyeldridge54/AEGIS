@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 50961350c7a6bba3
 """Likelihoods for AEGIS UFE v2: CMB acoustic angle, DESI DR2 BAO, Pantheon+ SNe, local H0."""
 import numpy as np
 from .cosmo_v2 import LCDM, derived

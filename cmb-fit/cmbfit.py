@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 884cee2be6274b62
 """AEGIS CMB fit — full Boltzmann-code test of the torsion-born EDE model.
 
 The torsion field (canonical Barbero–Immirzi pseudoscalar, V = Lambda^4 [1 - cos(phi/F)]^n) has the

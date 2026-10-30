@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 8942fc94be6e8856
 """Many fits at once until the question is settled.
 
     python run_lanes.py [LANES]       start LANES workers (default 5, 3 CPU threads each)

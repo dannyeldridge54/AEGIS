@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: a5e25f69d45264a4
 import json, numpy as np
 c=json.load(open("craters.json")); t=np.array([x["age"] for x in c]); n=len(t)
 Ps=np.arange(20,45.01,0.05)

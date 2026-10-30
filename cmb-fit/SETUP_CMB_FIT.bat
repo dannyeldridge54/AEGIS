@@ -1,4 +1,5 @@
 @echo off
+rem Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 73c07d6fd77f262b
 title AEGIS CMB fit - setup
 cd /d "%~dp0"
 echo [%date% %time%] setup started > setup_log.txt

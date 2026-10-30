@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: dc1de16517b07e26
 """Fix the field width F = sqrt(3/2) M_Pl / N with a 1% constraint (PREREG_N_PACT.md, test T2).
 
 CAMB solves the decay constant f from (z_c, f_EDE); this reads it back and penalises any departure from the target.

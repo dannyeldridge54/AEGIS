@@ -1,3 +1,4 @@
+// Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 0b5a382d2ceef6fa
 /**
  * AEGIS — Quickstart Example
  *

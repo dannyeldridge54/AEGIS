@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: d097dd5fa73dce02
 """Predicted STACKED polarization around temperature hot spots (the radial/tangential ring pattern first seen by
 WMAP, Komatsu et al. 2011, and confirmed by Planck), for the standard model and the Locked Twist best fits.
 Q_r(theta) = - int l dl/(2 pi) W_l^2 C_l^TE J_2(l theta)   (unweighted-peak approximation, b_nu = 1, b_zeta = 0;
