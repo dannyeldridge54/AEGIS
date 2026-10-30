@@ -7,18 +7,18 @@
 \usepackage{hyperref}
 
 \newcommand{\Mp}{M_{\rm Pl}}
-% ---- Planck PR4 + ACT DR6 pre-registered test: fill in when the fits converge ----
-\newcommand{\PACTstatus}{\textbf{[PENDING: fits running at the time of writing]}}
-\newcommand{\PACTdchiL}{\textbf{[pending]}}   % Locked Twist, likelihood-only Delta chi^2
-\newcommand{\PACTdchiE}{\textbf{[pending]}}   % Locked Twist, with Gaussian nuisance priors
-\newcommand{\PACTdaic}{\textbf{[pending]}}    % Locked Twist, Delta AIC
-\newcommand{\PACTfreeL}{\textbf{[pending]}}   % free Twist, likelihood-only Delta chi^2
-\newcommand{\PACTverdict}{\textbf{[pending]}}
+% ---- Planck + ACT DR6 pre-registered test: completed 29 October 2026 (cmb-fit/results/COMPARE.md) ----
+\newcommand{\PACTstatus}{completed 29 October 2026; \textbf{passed}}
+\newcommand{\PACTdchiL}{\ensuremath{-7.14}}   % Locked Twist, effective chi^2
+\newcommand{\PACTdchiE}{\ensuremath{-7.23}}   % Locked Twist, total chi^2
+\newcommand{\PACTdaic}{\ensuremath{-3.23}}    % Locked Twist, Delta AIC
+\newcommand{\PACTfreeL}{\ensuremath{-7.47}}   % free Twist (3 settings), total chi^2
+\newcommand{\PACTverdict}{\textbf{passed} (rule $\Delta\chi^2<-4$); overall pre-registered verdict a \textbf{tie} because of $S_8$ (\S\ref{sec:verdict})}
 
 \title{\textbf{Torsion-Born Early Dark Energy\\ with an Onset Locked to Matter--Radiation Equality:\\
 Derivation and Pre-Registered Likelihood Tests}}
-\author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma City, OK, USA.
-Code, fit results and pre-registrations: \url{https://github.com/dannyeldridge54/AEGIS}.}}
+\author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma City, OK, USA. Contact: danny@aegis-agent.dev.
+Code, fit results and pre-registrations are available from the author on request.}}
 \date{\today}
 
 \begin{document}
@@ -41,14 +41,23 @@ $\Lambda$CDM the free model improves the fit by $\Delta\chi^2=-6.4$ ($\Delta{\rm
 a tie) and its preferred onset ($z_c\simeq3575$) sits next to equality ($z_{\rm eq}\simeq3553$).
 The locked model fits equally well with two extra parameters, $\Delta\chi^2=-6.4$,
 $\Delta{\rm AIC}=-2.4$, $H_0=70.6$, $f_{\rm EDE}=0.078$; because the lock was chosen after the
-free fit, this is not a blind result. Fixing the width to the pure torsion value
+free fit, this is not a blind result. Re-minimising $\Lambda$CDM and the locked model with
+identical optimiser settings lowers the Planck 2018 gain to $\Delta\chi^2=-4.70$
+($\Delta{\rm AIC}=-0.70$), robust to three other supernova compilations. On the pre-registered
+blind test with ACT DR6 (P-ACT + DESI DR2 + Pantheon+) the locked model improves the fit by
+$\Delta\chi^2=-7.23$ ($\Delta{\rm AIC}=-3.23$, $\approx2.2\sigma$, $H_0=70.4$), passing its rule.
+Fixing the width as well, to $F=\sqrt{3/2}\,\Mp/9$, leaves one free parameter and gives
+$\Delta\chi^2=-6.14$ ($\Delta{\rm AIC}=-4.14$, $p=0.013$, $\approx2.5\sigma$), although a free fit of
+the divisor gives $N=8.0$, missing the pre-registered $9\pm0.5$. Adding the DES Y3 + KiDS-1000
+$S_8$ measurement reduces the Planck gain to $\Delta\chi^2=-2.92$, so the pre-registered overall
+verdict is a tie. The ACT collaboration's own analysis finds no significant preference for
+early dark energy; our $\approx2$--$2.5\sigma$ results are consistent with that.
+Fixing the width to the pure torsion value
 $F=\sqrt{3/2}\,\Mp$ is excluded ($\Delta\chi^2=+14.6$); on Planck PR4 the free model gives no
 likelihood improvement; curvature is consistent with zero. The minimal model predicts no
 measurable cosmic birefringence, and its present-day spin coupling lies 15--19 orders of
-magnitude below laboratory bounds. A pre-registered blind test of the locked onset on
-Planck PR4 + ACT DR6 + DESI DR2 + Pantheon+ is reported in \S\ref{sec:pact}: \PACTstatus.
-We state plainly which parts of the construction are derived, which are assumed, and which
-results failed.
+magnitude below laboratory bounds. We state plainly which parts of the construction are
+derived, which are assumed, and which results failed.
 \end{abstract}
 
 \tableofcontents
@@ -613,18 +622,80 @@ absence of matched circles in Planck \cite{planck2016topo}.
 \end{enumerate}
 
 %======================================================================
-\section{Pre-registered blind test: Planck PR4 + ACT DR6}\label{sec:pact}
+\section{Pre-registered blind test: Planck + ACT DR6}\label{sec:pact}
 The decisive test of the locked onset is on data it was not tuned to. Before running it we
 fixed the rule (repository file \texttt{PREREGISTRATION\_ZEQ.md}): the locked model passes if
-$\Delta{\rm AIC}<0$ against $\Lambda$CDM on the same data, reporting both the likelihood-only
-$\chi^2$ and the $\chi^2$ including Gaussian nuisance priors. The data are Planck PR4 CamSpec
-high-$\ell$ TT,TE,EE \cite{rosenberg2022} with Planck 2018 low-$\ell$ TT and EE, ACT DR6
-power spectra \cite{louis2025} and lensing \cite{madhavacheril2024,qu2024}, DESI DR2 BAO
-\cite{desi2025} and Pantheon+ \cite{scolnic2022,brout2022}, with no distance-ladder prior.
+$\Delta\chi^2<-4$ against $\Lambda$CDM on the same data (equivalently $\Delta{\rm AIC}<0$ for two
+extra parameters), reporting both the total and the effective $\chi^2$. The data are the P-ACT
+combination recommended by the ACT collaboration: Planck 2018 with its high-$\ell$ range cut
+where ACT takes over, ACT DR6 power spectra \cite{louis2025} and ACT DR6 $\times$ Planck PR4 lensing
+\cite{madhavacheril2024,qu2024}, together with DESI DR2 BAO \cite{desi2025} and Pantheon+
+\cite{scolnic2022,brout2022}, with no distance-ladder prior. Both models are minimised with the same
+code (CAMB + Cobaya) and the same optimiser settings.
 
-\paragraph{Result.} Status: \PACTstatus. Locked onset: $\Delta\chi^2_{\rm like}=\PACTdchiL$,
-$\Delta\chi^2=\PACTdchiE$, $\Delta{\rm AIC}=\PACTdaic$. Free onset: $\Delta\chi^2_{\rm like}=\PACTfreeL$.
-Verdict: \PACTverdict.
+\emph{Deviation from the plan, disclosed:} the pre-registration named Planck PR4 and SPT-3G as
+possible blind data. The run used the P-ACT combination above; SPT-3G was not included. Only the
+ACT part of the data is new; the Planck part overlaps the data on which the lock was chosen.
+
+\paragraph{Result.} Status: \PACTstatus. Locked onset (2 parameters): $\Delta\chi^2=\PACTdchiE$
+(total), \PACTdchiL\ (effective), $\Delta{\rm AIC}=\PACTdaic$, $H_0=70.43$; $p=0.027$ for two degrees
+of freedom ($\approx2.2\sigma$). Free onset (3 parameters): $\Delta\chi^2=\PACTfreeL$,
+$\Delta{\rm AIC}=-1.47$, $H_0=70.59$. The lock therefore costs $0.24$ in $\chi^2$ and saves a
+parameter. Verdict on this test: \PACTverdict.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Data (locked model, 2 parameters, vs $\Lambda$CDM) & $\Delta\chi^2$ & $\Delta$AIC & $H_0$ & rule\\
+\midrule
+Planck 2018 + DESI DR2 + Pantheon+ (same polish) & $-4.70$ & $-0.70$ & 70.53 & pass ($<-4$)\\
+P-ACT + DESI DR2 + Pantheon+ (blind) & $-7.23$ & $-3.23$ & 70.43 & pass ($<-4$)\\
+Planck 2018 + DESI DR2 + DES Y5 SNe & $-4.55$ & $-0.55$ & 70.47 & pass ($<-2$)\\
+Planck 2018 + DESI DR2 + DES-Dovekie SNe & $-5.08$ & $-1.08$ & 70.53 & pass ($<-2$)\\
+Planck 2018 + DESI DR2 + Union3 SNe & $-4.91$ & $-0.91$ & 70.55 & pass ($<-2$)\\
+Planck 2018 + DESI DR2 + Pantheon+ + $S_8$ (DES Y3+KiDS-1000) & $-2.92$ & $+1.08$ & 70.81 & --\\
+\bottomrule
+\end{tabular}
+\caption{Pre-registered comparisons of the locked model against $\Lambda$CDM, each re-minimised on
+the same data with identical settings. The $S_8$ line adds a Gaussian $S_8$ likelihood.}
+\label{tab:prereg}
+\end{table}
+
+%======================================================================
+\section{The width module: a one-parameter model}\label{sec:width}
+The free fits prefer $F\simeq0.14\,\Mp$, close to one ninth of the torsion value
+$\sqrt{3/2}\,\Mp=1.2247\,\Mp$. Before looking at ACT DR6 we wrote two tests
+(\texttt{PREREG\_N\_PACT.md}). \textbf{T1}: with $F=\sqrt{3/2}\,\Mp/N$ and $N$ free, the blind data
+must give $N=9\pm0.5$. \textbf{T2}: with $N=9$ fixed and the onset locked, only $\theta_i$ is free,
+and the model must improve on $\Lambda$CDM by $\Delta\chi^2<-2$.
+
+T1 \textbf{failed}: P-ACT gives $N=8.0$ (Planck 2018 with CAMB gives $N\simeq8.5$). T2
+\textbf{passed}: $\Delta\chi^2=-6.14$, $\Delta{\rm AIC}=-4.14$, $p=0.013$ ($\approx2.5\sigma$) on P-ACT, and
+$\Delta\chi^2=-4.46$ ($\Delta{\rm AIC}=-2.46$) on Planck 2018, which is not blind because the 9 was read
+off Planck. We have no derivation of the divisor; it is an empirical regularity until one exists.
+
+%======================================================================
+\section{Overall verdict}\label{sec:verdict}
+The overall rule (\texttt{PREREGISTRATION\_VERDICT.md}) was written before the supernova swaps,
+the $S_8$ penalties and the hilltop runs were read. \emph{Preferred} required the blind test and
+the fair Planck test to pass ($\Delta\chi^2<-4$), each of three supernova sets to give
+$\Delta\chi^2<-2$, and an $S_8$ penalty below 2 against both of two cosmic-shear values
+(\texttt{PREREG\_S8.md}): A, DES Y3 + KiDS-1000, $S_8=0.790^{+0.018}_{-0.014}$ \cite{deskids2023}; B,
+KiDS-Legacy, $S_8=0.815^{+0.016}_{-0.021}$ \cite{kidslegacy2025}. The first three conditions hold
+(Table~\ref{tab:prereg}). The $S_8$ penalty is $+2.41$ against A (over the limit) and $+0.39$ against B.
+The verdict is therefore a \textbf{tie}: the preference depends on which weak-lensing survey is
+right. Two further results are reported beside the verdict: the fit requires the field to start
+near the hilltop ($\theta_i\simeq2.7$--$2.9$, $\Delta\chi^2=+4$ to $+6$ for distant starts), and the
+pure torsion width remains excluded.
+
+\paragraph{Context.} The ACT DR6 extended-model analysis \cite{calabrese2025} reports no
+statistically significant preference for early dark energy or for other models that raise
+$H_0$. Our best-fit improvements of $\approx2$--$2.5\sigma$ do not contradict that statement and do
+not amount to evidence; they motivate the next blind tests (\S\ref{sec:predictions}). Best-fit
+values are not posteriors, and prior-volume effects in EDE posteriors are well known
+\cite{poulin2025}.
 
 %======================================================================
 \section{Anticipated objections}\label{sec:objections}
@@ -733,24 +804,32 @@ Fitted with a full Boltzmann code to Planck 2018, DESI DR2 and Pantheon+, the fr
 with $\Lambda$CDM after its parameter penalty, but it places the onset at matter--radiation
 equality. Locking the onset there removes a parameter at no cost in fit, giving
 $\Delta{\rm AIC}=-2.4$, $H_0=70.6$ and $f_{\rm EDE}=0.078$. This is a modest, post-hoc
-preference, not a detection. The pure torsion width is excluded, Planck PR4 alone shows no
+preference, not a detection; with identical optimiser settings for both models the Planck gain
+is $\Delta\chi^2=-4.70$. The pure torsion width is excluded, Planck PR4 alone shows no
 likelihood improvement, and curvature is consistent with zero. The minimal model predicts
-no cosmic birefringence, which distinguishes it from photon-coupled axion EDE. The locked
-onset now faces a blind, pre-registered test on Planck PR4 + ACT DR6 (\S\ref{sec:pact}),
-whose result we report as it falls: \PACTverdict. The open problems are the origin of the eV
-scale, a derivation of the lock from the fermion sector, and full posterior analyses.
+no cosmic birefringence, which distinguishes it from photon-coupled axion EDE. On the blind,
+pre-registered P-ACT test the locked onset passed ($\Delta\chi^2=-7.23$, $\approx2.2\sigma$), and a
+one-parameter version with $F=\sqrt{3/2}\,\Mp/9$ gave $\Delta\chi^2=-6.14$ ($\approx2.5\sigma$), but
+the divisor fitted freely is $8.0$, not $9$, and the $S_8$ cost makes the pre-registered overall
+verdict a tie. These are hints at the $2\sigma$ level, consistent with the ACT collaboration's
+finding of no significant preference for early dark energy. The open problems are the origin
+of the eV scale, a derivation of the lock and of the divisor from the fermion sector, a full
+weak-lensing likelihood in place of the $S_8$ penalty, posterior analyses, and blind tests on
+SPT-3G and the Simons Observatory with rules written first.
 
 \section*{Data and code availability}
 All code, fit outputs (best-fit points and their $\chi^2$ components), pre-registration files
 with their SHA-256 hashes, and the scripts that recompute every number in this paper are
-public at \url{https://github.com/dannyeldridge54/AEGIS}, branch
-\texttt{ufe-v2-torsion-field}. Results that failed are kept alongside those that passed.
+available from the author on request, under the AEGIS People's License (free for individuals,
+students, teachers and non-profit research). A one-step script (\texttt{CHECK\_MY\_WORK}) re-derives
+every number quoted here. Results that failed are kept alongside those that passed.
 
 \section*{Acknowledgements}
-The author thanks the Planck, ACT, DESI and Pantheon+ teams for public data and likelihoods,
-and the developers of CLASS, AxiCLASS, Cobaya and Py-BOBYQA. The author used Claude
-(Anthropic), an AI system, as an assistant for algebra checks, code, running the fits and
-drafting text; the author takes full responsibility for the content.
+The author thanks the Planck, ACT, DESI, DES, KiDS, Pantheon+ and Union3 teams for public data and
+likelihoods, and the developers of CAMB, CLASS, AxiCLASS, Cobaya and Py-BOBYQA. The author used AI
+assistants (Claude, Anthropic; GitHub Copilot) for algebra checks, code, running the fits and
+drafting text; every number was re-derived by independent scripts, and the author takes full
+responsibility for the content.
 
 %======================================================================
 \appendix
@@ -802,6 +881,12 @@ $10^{-9}$--$10^{-10}$). The field equations use \texttt{solve\_ivp} (DOP853,
 $\mathrm{rtol}=10^{-10}$). Root finding uses \texttt{brentq} and \texttt{fsolve}.
 
 \begin{thebibliography}{99}
+\bibitem{calabrese2025} E.~Calabrese et al.\ (ACT), \emph{The Atacama Cosmology Telescope: DR6
+Constraints on Extended Cosmological Models}, arXiv:2503.14454 (2025).
+\bibitem{deskids2023} DES and KiDS Collaborations, \emph{DES Y3 + KiDS-1000: Consistent cosmology
+combining cosmic shear surveys}, Open J.\ Astrophys.\ (2023), arXiv:2305.17173.
+\bibitem{kidslegacy2025} KiDS Collaboration, \emph{KiDS-Legacy: cosmological constraints from cosmic
+shear with the complete Kilo-Degree Survey} (2025).
 \bibitem{riess2022} A.~G.~Riess et al., ApJL \textbf{934}, L7 (2022).
 \bibitem{planck2020} Planck Collaboration, A\&A \textbf{641}, A6 (2020).
 \bibitem{karwal2016} T.~Karwal, M.~Kamionkowski, Phys.\ Rev.\ D \textbf{94}, 103523 (2016).
