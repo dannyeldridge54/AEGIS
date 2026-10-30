@@ -1,12 +1,12 @@
 {
  "author": "Danny Lee Eldridge",
- "created": "2026-10-29T22:01:48-05:00",
+ "created": "2026-10-29T22:06:22-05:00",
  "algorithm": "sha256",
  "files": {
   ".gitattributes": "1df84947e0d933c53fe759123bcf4074fcb674edacd7d3d6de0958311c1e7d4b",
   ".gitignore": "46e3f5653ec1ce0859beba9dbf82ca2f52ffd8e5bdb0d9c5fe2373b9926e3248",
   "AEGIS_METHOD.md": "ccd024b3ad3ff3f0237953441e2158f376aac7ecb92f6a7a3705e8746c4f6ef0",
-  "AUTHORSHIP_MANIFEST.json": "51add98667631bcb27f7e14db545d796cf3e458bac055650c4c96da774ed4d64",
+  "AUTHORSHIP_MANIFEST.json": "946a53a19c032ec7457e95037f04d6667f85f8e42771a58018fe3dbf88baac5f",
   "CHECK_MY_WORK.bat": "d8925f74cf373a5bb98ffe9c49c37895a064e434da2a70044a616ac811e8fbf3",
   "LICENSE": "062258236ba6f6e95999aeebda26c18ba36c37c8bafb1428c607488dfd26c509",
   "MODEL_v2.md": "919e9243566b0bdccc80cc2dac0b47e4fcf4f02d511bc9a770cf863fbb0cdeff",
@@ -158,7 +158,7 @@
   "ufe-v2/PRIOR_ART.md": "1301d8edfb8c5bee65f0769f4ae3deb554bbe28aa2a84083053c75cb74cecc89",
   "ufe-v2/README.md": "06877914cd934d81a74a135d390b25c2364ec85189bcb91cf8f6f0e04e7c0794",
   "ufe-v2/START_AEGIS_MONITOR.bat": "8b0a050d98e68d2dd2429c2f17fda741f7325eed24d6279525cd63d748fea990",
-  "ufe-v2/STAR_AUDIT.md": "1eb839b79f138bb4ba3adc8882f4aaf348f0966e18184ed6fd5bfbef0a47f396",
+  "ufe-v2/STAR_AUDIT.md": "4fafd07643a33a6da978a9ef98352bdf729419a02d44c7e2654808e55a571802",
   "ufe-v2/UFE_MODEL.md": "0a8bb5ea9b07b3d2cd166d93cbb70d31a9b6746b4e24f53cab4af8515417b3a4",
   "ufe-v2/aegis/__init__.py": "c3bb9169bc0f1cea1d09ad559a3ae3631c34f0f075bc1f5bddcd5ce7d30f29ad",
   "ufe-v2/aegis/cosmo_v2.py": "d641ef7a7727513341b00af281f045f8f9c2c4ce2569f3e61ebf0a024d7cf12e",
@@ -178,7 +178,7 @@
   "ufe-v2/method.html": "f6d8ab7d193ab62b9ddb2ebb20cd3383f2efa462b88572c7add18d6b4c4ec7dd",
   "ufe-v2/method/claims.json": "127b77b030d634f477f240d81eca5af46c6a64f7f11a38402cceb18209155e63",
   "ufe-v2/method/seed_claims.py": "a4fc3d1272c6fa84fe826659f150da9d54af80b9f500a0bcc80c6b49710a3193",
-  "ufe-v2/monitor.html": "157867995ee76097dd445b59df6bf5e090554f5bd234f0ef1a488b75117410f5",
+  "ufe-v2/monitor.html": "5b707b9399c772116f60caa8b134019820e75a3f1d3a13019393662972d7d8fd",
   "ufe-v2/monitor_server.py": "59cea2f1a324fdbfa9569f3c8d3ea8b245d98274b8f947b85dce2e10f97f15d5",
   "ufe-v2/recheck_math.py": "1ada8f1174943c1ff2b2a49b0eb93ec0eec6f7749fce93575e192b1250bfe098",
   "ufe-v2/results_v2.json": "cf4c657f9eaf931e0bc3d5fcc402268551fdc0992519e4edb1848de3e2bdc3c2",
@@ -235,5 +235,5 @@
   "ufe-v2/verify_all_tiles.py": "bcb9db35b4b3a2611d0907ea374868426a7590a9af4e9fc62ac80d9b72355a87",
   "ufe-v2/verify_local.py": "e2e9a464d99ab20bef01c4528990ee79be5cf22515642587a9b8a0a8a49d0bb2"
  },
- "root_sha256": "403c41444a0d0958c8763a878969ce0fe35fb529206f011c01623a8e74e50e82"
+ "root_sha256": "9d229600a09681fa6b3133a4eb3f03ad6d47690e31e17edd303ac88fc35d7814"
 }
