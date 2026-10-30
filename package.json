@@ -11,7 +11,7 @@
     "demo": "ts-node examples/quickstart.ts"
   },
   "keywords": ["ai-agent", "autonomous", "self-learning", "daemon", "optimization", "natural-language"],
-  "author": "Danny Lee Eldridge <danny@aegis-agent.dev>",
+  "author": "Danny Lee Eldridge <dannyeldridge54@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
     "@types/jest": "^29.5.0",
