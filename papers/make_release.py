@@ -111,7 +111,7 @@ def main():
         f"Abstract ({len(abstract)} of {ABSTRACT_LIMIT} characters):\n{abstract}\n\n"
         f"Comments:\n{pages} pages, {tables} tables. Version 2: adds SPT-3G D1 tests, a width-divisor profile, a "
         f"cross-engine check and a fragmentation analysis. Code, fit outputs and hashed pre-registrations in anc/ "
-        f"and at doi:10.5281/zenodo.23789830\n\n"
+        f"and at doi:10.5281/zenodo.23847152\n\n"
         "Primary category:\nastro-ph.CO\n\nCross-list:\ngr-qc\n\n"
         "License (arXiv form):\narXiv.org perpetual, non-exclusive license to distribute this article. It only lets "
         f"arXiv host the paper; the paper itself stays under the {HL3_NAME}, {HL3_URL}, as its License section "

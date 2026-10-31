@@ -4,7 +4,8 @@ title: 'Torsion-Born Early Dark Energy with an Onset Locked to Matter-Radiation 
 authors:
   - family-names: Eldridge
     given-names: Danny Lee
-doi: 10.5281/zenodo.23789830
-date-released: 2026-10-29
+version: "2"
+doi: 10.5281/zenodo.23847152
+date-released: 2026-10-31
 url: https://github.com/dannyeldridge54/AEGIS
 license-url: https://github.com/dannyeldridge54/AEGIS/blob/master/LICENSE
