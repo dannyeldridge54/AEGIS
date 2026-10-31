@@ -57,8 +57,51 @@ fit (`spt_edelock`) are still queued.
 - S8: 0.815 (Twist) vs 0.803 (ΛCDM).
 - Penalty against DES+KiDS (A) is +1.39; against KiDS-Legacy (B) it is −0.33. The S8 verdict depends on which survey is
   right.
-- The Planck-angle contrast (`spt_edelock_th2.78_F9`, not a prediction) is still running.
+- The Planck-angle contrast (`spt_edelock_th2.78_F9`, not a prediction): Δχ² +0.35 (see the next entry).
 
-**What this means:** as the pre-registration says, the silver-ratio mapping is dropped publicly. The Tree's 1 ± √2
+**What this means (silver):** as the pre-registration says, the silver-ratio mapping is dropped publicly. The Tree's 1 ± √2
 modes remain an exact piece of graph mathematics, but they do not set the field's starting angle. The Locked Twist
 itself never depended on this number.
+
+## 2026-10-31 ~17:05 CT: free-width Locked Twist on SPT-3G (`spt_edelock`), and what it decides
+
+| Model | χ² | Δχ² vs ΛCDM | H₀ | f_EDE | θ_i | implied N |
+|---|---|---|---|---|---|---|
+| ΛCDM (`spt_lcdm`) | 1576.57 | 0 | 68.28 | | | |
+| Locked Twist, width free (2 settings) | 1575.30 | **−1.27** | 69.60 | 0.0449 | **3.10** (prior edge) | **24.05** |
+| N = 9, θ_i = 2.78 fixed (`spt_edelock_th2.78_F9`), NOT a prediction | 1576.92 | +0.35 | 70.43 | 0.076 | 2.78 | 9 |
+
+**By data set (free width − ΛCDM):** SPT-3G −1.28, DESI −0.23, Pantheon+ +0.24.
+
+### Verdicts (pre-registered rules applied as written)
+
+| Test | Rule | Result | Verdict |
+|---|---|---|---|
+| **Letters** (PREREGISTRATION_SPT3G_LETTERS.md) | PASS if \|f − 0.0154\| < 0.015; FAIL if > 0.04 | \|0.0449 − 0.0154\| = 0.0295 | **INCONCLUSIVE** |
+| **Width check for N = 9** (PREREGISTRATION_SPT3G_N9.md) | consistent if N in 8–10; inconsistent outside 7–11 | N = 24.05 | **INCONSISTENT** |
+| **Torus Test B, N = 7** (PREREGISTRATION_SPT3G_TORUS.md) | consistent if N in 6–8; inconsistent outside 5–9 | N = 24.05 | **INCONSISTENT** |
+| Torus Test A (N = 7 fit) | Δχ² < −2 and ΔAIC < 0 | still running | pending |
+
+**The free-width model itself** (descriptive; the P-ACT rule, Δχ² < −4 and ΔAIC < 0, quoted only for context):
+Δχ² = −1.27, ΔAIC = −1.27 + 4 = **+2.73**. SPT-3G does not prefer the Locked Twist. On P-ACT the same model gave
+−7.23.
+
+### Notes beside the verdicts (not part of them)
+
+- **The fit ran to the edge of its prior.** θ_i = 3.10 is the prior maximum (`cmbfit.py`: 0.1–3.1), right next to the
+  hilltop at π. With the width free, SPT-3G pushes the field towards a narrow (N ≈ 24, F = 0.051 M_Pl), nearly
+  balanced-on-the-hilltop start with a small energy share (4.5%). The true minimum may lie beyond the prior edge.
+- **Fragmentation risk is higher there.** The stability check (STABILITY_FIRST_PASS.md) covered θ_i ≤ 3.0 at N = 9;
+  growth rises steeply towards π. The linear fits are least trustworthy at this point. A width this far from 9 also
+  leaves the earlier stability numbers untested.
+- **The improvement is small.** −1.27 with two extra settings is what fitting noise alone would often give, so
+  nothing here should be read as a hint either way. SPT-3G simply does not see the early energy that Planck and ACT
+  lean towards.
+- **The letters number** sits closer to this fit (0.045) than the Planck/ACT values (0.074–0.086) suggested, but
+  still 0.03 away: inconclusive, as the rule says.
+- **The 2.78 contrast** (Planck-preferred angle with N = 9, not a prediction) also fails to improve on ΛCDM (+0.35).
+
+**What this means:** on the first fully independent CMB data, every tested version of the Locked Twist fits no better
+than ΛCDM: N = 9 (+0.52), the silver angle (+0.43), the Planck angle (+0.35) and the free width (−1.27, ΔAIC +2.73).
+The Planck/ACT preference is not confirmed by SPT-3G. The N = 9 and N = 7 width ideas are both inconsistent with
+SPT-3G's preferred width. The letters prediction is undecided.

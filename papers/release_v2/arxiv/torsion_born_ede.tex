@@ -15,12 +15,12 @@
 \newcommand{\PACTfreeL}{\ensuremath{-7.47}}   % free Twist (3 settings), total chi^2
 \newcommand{\PACTverdict}{\textbf{passed} (rule $\Delta\chi^2<-4$); overall pre-registered verdict a \textbf{tie} because of $S_8$ (\S\ref{sec:verdict})}
 % ---- SPT-3G D1 (cmb-fit/results/cmp_spt_*.json). Fill the free-width macros when spt_edelock finishes. ----
-\newcommand{\SPTfreeDone}{0}                    % set to 1 when cmp_spt_edelock.json exists
-\newcommand{\SPTfreeDchi}{\ensuremath{\cdots}}  % Delta chi^2, locked model with free width, vs LCDM
-\newcommand{\SPTfreeHz}{\ensuremath{\cdots}}    % its H0
-\newcommand{\SPTfreeF}{\ensuremath{\cdots}}     % its f_EDE
-\newcommand{\SPTfreeN}{\ensuremath{\cdots}}     % implied divisor N = sqrt(3/2)/F
-\newcommand{\SPTfreeVerdict}{still running when this version was built}
+\newcommand{\SPTfreeDone}{1}                    % cmp_spt_edelock.json, 31 Oct 2026 17:04 CT
+\newcommand{\SPTfreeDchi}{\ensuremath{-1.27}}   % Delta chi^2, locked model with free width, vs LCDM
+\newcommand{\SPTfreeHz}{\ensuremath{69.60}}     % its H0
+\newcommand{\SPTfreeF}{\ensuremath{0.045}}      % its f_EDE
+\newcommand{\SPTfreeN}{\ensuremath{24.1}}       % implied divisor N = sqrt(3/2)/F
+\newcommand{\SPTfreeVerdict}{no preference ($\Delta{\rm AIC}=+2.73$)}
 \newcommand{\SPTsevenDchi}{\ensuremath{\cdots}} % N = 7 variant (fixed in advance), pending
 \newcommand{\SPTsevenVerdict}{pending}
 
@@ -50,8 +50,9 @@ width $F=\sqrt{3/2}\,\Mp$ is excluded ($\Delta\chi^2=+14.6$); a profile in $F=\s
 prefers $N=8$ on Planck + ACT and $N=9$ on Planck. On the first fully independent CMB data,
 SPT-3G D1 with DESI DR2 and Pantheon+, the pre-registered one-parameter model ($N=9$) fails
 ($\Delta\chi^2=+0.52$), as does a zero-parameter variant with a fixed initial angle
-($\Delta\chi^2=+0.43$). These results agree with the ACT collaboration's finding of no
-significant preference for EDE. The minimal model predicts no cosmic birefringence. We state
+($\Delta\chi^2=+0.43$), and with the width free the model shows no preference
+($\Delta\chi^2=-1.27$, $\Delta{\rm AIC}=+2.73$). SPT-3G does not confirm the Planck and ACT
+preference, in line with the ACT collaboration's finding of no significant preference for EDE. The minimal model predicts no cosmic birefringence. We state
 which parts are derived, which are assumed, and which results failed.
 \end{abstract}
 
@@ -768,11 +769,14 @@ Model & $k$ & $\chi^2$ & $\Delta\chi^2$ & $H_0$ & $f_{\rm EDE}$ & $\theta_i$\\
 $\Lambda$CDM & 0 & $1576.57$ & $0$ & $68.28$ & -- & --\\
 Locked, $N=9$ & 1 & $1577.09$ & $+0.52$ & $70.49$ & $0.077$ & $2.79$\\
 Locked, $N=9$, $\theta_i=1+\sqrt2$ & 0 & $1577.00$ & $+0.43$ & $69.13$ & $0.035$ & $2.414$\\
-Locked, width free & 2 & -- & \SPTfreeDchi & \SPTfreeHz & \SPTfreeF & --\\
+Locked, width free & 2 & $1575.30$ & \SPTfreeDchi & \SPTfreeHz & \SPTfreeF & $3.10^\dagger$\\
+Locked, $N=9$, $\theta_i=2.78$ fixed$^\ddagger$ & 0 & $1576.92$ & $+0.35$ & $70.43$ & $0.076$ & $2.78$\\
 \bottomrule
 \end{tabular}
 \caption{SPT-3G D1 TT/TE/EE (lite) + $\tau$ prior + DESI DR2 + Pantheon+. Both $N=9$ rows
-\textbf{fail} their pre-registered rules; the free-width row is \SPTfreeVerdict. $\chi^2$ is the total
+\textbf{fail} their pre-registered rules; the free-width row shows \SPTfreeVerdict.
+$^\dagger$At the upper edge of the prior ($0.1\le\theta_i\le3.1$). $^\ddagger$The Planck-preferred angle, run for
+contrast; not a prediction. $\chi^2$ is the total
 including the $\tau$ and calibration priors; the $N=9$ rows have the width constraint's $\chi^2$
 ($<10^{-3}$) removed.}
 \label{tab:spt}
@@ -790,12 +794,22 @@ from a number outside physics (an eigenvalue of a small graph) purely to provide
 and we report it to avoid selective publication. It \textbf{fails} ($\Delta\chi^2=+0.43$), and the
 free-angle fit prefers $\theta_i=2.79$, $0.37$ away. The fragmentation calculation of
 \S\ref{sec:checks}, which predicted $f_{\rm EDE}\approx0.035$ at this angle after the rule was fixed,
-agrees with the fit's $0.035$. Two further values from the same source were pre-registered and are
-pending: $f_{\rm EDE}=0.0154$ for the free-width fit and $N=7$ (\SPTsevenVerdict). We do not regard any
-of them as physically motivated.
+agrees with the fit's $0.035$. Two further values from the same source were pre-registered: $f_{\rm EDE}=0.0154$
+for the free-width fit, which is \emph{inconclusive} under its rule (the fit gives $0.045$, $0.030$ away, between
+the pass and fail bands), and $N=7$, whose width check is \emph{inconsistent} (below) and whose fit is
+\SPTsevenVerdict. We do not regard any of them as physically motivated.
 
 \paragraph{Free width.} The two-parameter locked model with free width is the direct SPT-3G counterpart
-of the P-ACT test. Its result is: \SPTfreeVerdict. Its best-fit width implies $N=\SPTfreeN$.
+of the P-ACT test, where it gave $\Delta\chi^2=-7.23$. On SPT-3G it gives $\Delta\chi^2=\SPTfreeDchi$
+($\Delta{\rm AIC}=+2.73$, $H_0=\SPTfreeHz$, $f_{\rm EDE}=\SPTfreeF$): \textbf{no preference}. Of the change,
+$-1.28$ comes from SPT-3G itself, $-0.23$ from DESI and $+0.24$ from Pantheon+. The best-fit width implies
+$N=\SPTfreeN$, so the pre-registered width checks for $N=9$ (consistent within 8--10) and for $N=7$
+(within 6--8) are both \textbf{inconsistent}. The best fit sits at the upper edge of the prior,
+$\theta_i=3.1$, next to the hilltop, with a narrow width ($F=0.051\,\Mp$) and a small energy fraction; the
+true optimum may lie beyond the prior, and this region, near the hilltop and far from $N=9$, is where the
+fragmentation check of \S\ref{sec:checks} gives least assurance. Fixing $N=9$ at the Planck-preferred angle
+$\theta_i=2.78$ instead, run for contrast and not as a prediction, gives $\Delta\chi^2=+0.35$. On SPT-3G, then,
+no version of the model improves on $\Lambda$CDM by more than fitting noise.
 
 %======================================================================
 \section{Overall verdict}\label{sec:verdict}
@@ -810,8 +824,8 @@ The verdict is therefore a \textbf{tie}: the preference depends on which weak-le
 right. Two further results are reported beside the verdict: the fit requires the field to start
 near the hilltop ($\theta_i\simeq2.7$--$2.9$, $\Delta\chi^2=+4$ to $+6$ for distant starts), and the
 pure torsion width remains excluded. This verdict was defined on Planck and ACT data; the SPT-3G results
-of \S\ref{sec:spt} are reported beside it and weaken it: on the first independent CMB data set, neither
-fixed-width variant improves on $\Lambda$CDM.
+of \S\ref{sec:spt} are reported beside it and weaken it: on the first independent CMB data set, no
+variant, including the free-width model, improves on $\Lambda$CDM.
 
 \paragraph{Context.} The ACT DR6 extended-model analysis \cite{calabrese2025} reports no
 statistically significant preference for early dark energy or for other models that raise
@@ -937,7 +951,8 @@ one-parameter version with $F=\sqrt{3/2}\,\Mp/9$ gave $\Delta\chi^2=-6.14$ ($\ap
 the divisor fitted freely is $8.0$, not $9$, and the $S_8$ cost makes the pre-registered overall
 verdict a tie. Two independent field solvers agree on these numbers, and the field does not fragment.
 On SPT-3G, the first CMB data independent of Planck, the pre-registered $N=9$ model fails
-($\Delta\chi^2=+0.52$), as does a zero-parameter variant. The Planck and ACT preferences are therefore
+($\Delta\chi^2=+0.52$), as does a zero-parameter variant, and the free-width model shows no preference
+($\Delta\chi^2=-1.27$) at a width far from $N=9$. The Planck and ACT preferences are therefore
 hints at the $2\sigma$ level that the first independent data do not confirm, consistent with the ACT
 collaboration's finding of no significant preference for early dark energy. The open problems are the
 origin of the eV scale, a derivation of the lock and of the divisor from the fermion sector, a full
