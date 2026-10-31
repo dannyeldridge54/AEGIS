@@ -14,50 +14,45 @@
 \newcommand{\PACTdaic}{\ensuremath{-3.23}}    % Locked Twist, Delta AIC
 \newcommand{\PACTfreeL}{\ensuremath{-7.47}}   % free Twist (3 settings), total chi^2
 \newcommand{\PACTverdict}{\textbf{passed} (rule $\Delta\chi^2<-4$); overall pre-registered verdict a \textbf{tie} because of $S_8$ (\S\ref{sec:verdict})}
+% ---- SPT-3G D1 (cmb-fit/results/cmp_spt_*.json). Fill the free-width macros when spt_edelock finishes. ----
+\newcommand{\SPTfreeDone}{0}                    % set to 1 when cmp_spt_edelock.json exists
+\newcommand{\SPTfreeDchi}{\ensuremath{\cdots}}  % Delta chi^2, locked model with free width, vs LCDM
+\newcommand{\SPTfreeHz}{\ensuremath{\cdots}}    % its H0
+\newcommand{\SPTfreeF}{\ensuremath{\cdots}}     % its f_EDE
+\newcommand{\SPTfreeN}{\ensuremath{\cdots}}     % implied divisor N = sqrt(3/2)/F
+\newcommand{\SPTfreeVerdict}{still running when this version was built}
+\newcommand{\SPTsevenDchi}{\ensuremath{\cdots}} % N = 7 variant (fixed in advance), pending
+\newcommand{\SPTsevenVerdict}{pending}
 
 \title{\textbf{Torsion-Born Early Dark Energy\\ with an Onset Locked to Matter--Radiation Equality:\\
 Derivation and Pre-Registered Likelihood Tests}}
 \author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma, USA. Contact: dannyeldridge54@gmail.com.
 Code, fit results and pre-registrations: \url{https://github.com/dannyeldridge54/AEGIS}; archived at Zenodo, doi:\href{https://doi.org/10.5281/zenodo.23789830}{10.5281/zenodo.23789830}.}}
-\date{\today}
+\date{Version 2, 31 October 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We construct early dark energy (EDE) from spacetime torsion and test it against current
-data with a full Boltzmann code. Minimal Einstein--Cartan torsion cannot shorten the sound
-horizon: its spin--torsion contact energy is negative and $10^{-58}$--$10^{-57}$ of the
-radiation density at $z\simeq3500$. Promoting the Barbero--Immirzi parameter $\gamma$ to a
-field gives a canonical, ghost-free pseudoscalar $\phi=\sqrt{3/2}\,\Mp\,\mathrm{arsinh}(1/\gamma)$
-whose kinetic energy is the torsion energy and whose screening is dynamical. With one
-assumed potential, $V=\Lambda^4[1-\cos((\phi-\phi_0)/F)]^3$, the Lagrangian is that of
-axion-like EDE. We then (i) propose a reduced model, the \emph{locked onset}, in which the
-field's critical scale factor is fixed to matter--radiation equality,
-$a_c=\omega_r/(\omega_b+\omega_c)$, removing one free parameter, and (ii) fit all variants
-with AxiCLASS and Cobaya to Planck 2018, DESI DR2 BAO and Pantheon+ (no distance-ladder
-prior), with every decision rule written down and hashed before each run. Relative to
-$\Lambda$CDM the free model improves the fit by $\Delta\chi^2=-6.4$ ($\Delta{\rm AIC}=-0.4$,
-a tie) and its preferred onset ($z_c\simeq3575$) sits next to equality ($z_{\rm eq}\simeq3553$).
-The locked model fits equally well with two extra parameters, $\Delta\chi^2=-6.4$,
-$\Delta{\rm AIC}=-2.4$, $H_0=70.6$, $f_{\rm EDE}=0.078$; because the lock was chosen after the
-free fit, this is not a blind result. Re-minimising $\Lambda$CDM and the locked model with
-identical optimiser settings lowers the Planck 2018 gain to $\Delta\chi^2=-4.70$
-($\Delta{\rm AIC}=-0.70$), robust to three other supernova compilations. On the pre-registered
-blind test with ACT DR6 (P-ACT + DESI DR2 + Pantheon+) the locked model improves the fit by
-$\Delta\chi^2=-7.23$ ($\Delta{\rm AIC}=-3.23$, $\approx2.2\sigma$, $H_0=70.4$), passing its rule.
-Fixing the width as well, to $F=\sqrt{3/2}\,\Mp/9$, leaves one free parameter and gives
-$\Delta\chi^2=-6.14$ ($\Delta{\rm AIC}=-4.14$, $p=0.013$, $\approx2.5\sigma$), although a free fit of
-the divisor gives $N=8.0$, missing the pre-registered $9\pm0.5$. Adding the DES Y3 + KiDS-1000
-$S_8$ measurement reduces the Planck gain to $\Delta\chi^2=-2.92$, so the pre-registered overall
-verdict is a tie. The ACT collaboration's own analysis finds no significant preference for
-early dark energy; our $\approx2$--$2.5\sigma$ results are consistent with that.
-Fixing the width to the pure torsion value
-$F=\sqrt{3/2}\,\Mp$ is excluded ($\Delta\chi^2=+14.6$); on Planck PR4 the free model gives no
-likelihood improvement; curvature is consistent with zero. The minimal model predicts no
-measurable cosmic birefringence, and its present-day spin coupling lies 15--19 orders of
-magnitude below laboratory bounds. We state plainly which parts of the construction are
-derived, which are assumed, and which results failed.
+We construct early dark energy (EDE) from spacetime torsion and test it with full Boltzmann
+codes and decision rules hashed before each fit. Minimal Einstein--Cartan torsion cannot shorten
+the sound horizon: its spin--torsion energy is negative and $\sim10^{-57}$ of the radiation
+density near equality. Promoting the Barbero--Immirzi parameter to a field gives a canonical,
+ghost-free pseudoscalar whose kinetic energy is the torsion energy; with one assumed potential,
+$V=\Lambda^4[1-\cos(\phi/F)]^3$, the model is axion-like EDE. We lock the field's onset to
+matter--radiation equality, leaving two extra parameters. On Planck 2018 + DESI DR2 + Pantheon+
+the locked model gives $\Delta\chi^2=-4.70$ ($\Delta{\rm AIC}=-0.70$, $H_0=70.5$); on the
+pre-registered Planck + ACT DR6 test it gives $\Delta\chi^2=-7.23$ ($\Delta{\rm AIC}=-3.23$,
+$\approx2.2\sigma$, $H_0=70.4$), robust to three supernova compilations. Two independent field
+solvers agree to $0.4$ in $\chi^2$, and a Floquet analysis with expansion finds no fragmentation.
+The pre-registered overall verdict is a tie, because the model raises $S_8$. The pure torsion
+width $F=\sqrt{3/2}\,\Mp$ is excluded ($\Delta\chi^2=+14.6$); a profile in $F=\sqrt{3/2}\,\Mp/N$
+prefers $N=8$ on Planck + ACT and $N=9$ on Planck. On the first fully independent CMB data,
+SPT-3G D1 with DESI DR2 and Pantheon+, the pre-registered one-parameter model ($N=9$) fails
+($\Delta\chi^2=+0.52$), as does a zero-parameter variant with a fixed initial angle
+($\Delta\chi^2=+0.43$). These results agree with the ACT collaboration's finding of no
+significant preference for EDE. The minimal model predicts no cosmic birefringence. We state
+which parts are derived, which are assumed, and which results failed.
 \end{abstract}
 
 \tableofcontents
@@ -634,7 +629,8 @@ where ACT takes over, ACT DR6 power spectra \cite{louis2025} and ACT DR6 $\times
 code (CAMB + Cobaya) and the same optimiser settings.
 
 \emph{Deviation from the plan, disclosed:} the pre-registration named Planck PR4 and SPT-3G as
-possible blind data. The run used the P-ACT combination above; SPT-3G was not included. Only the
+possible blind data. The run used the P-ACT combination above; SPT-3G was tested separately
+(\S\ref{sec:spt}). Only the
 ACT part of the data is new; the Planck part overlaps the data on which the lock was chosen.
 
 \paragraph{Result.} Status: \PACTstatus. Locked onset (2 parameters): $\Delta\chi^2=\PACTdchiE$
@@ -648,18 +644,19 @@ parameter. Verdict on this test: \PACTverdict.
 \small
 \begin{tabular}{lcccc}
 \toprule
-Data (locked model, 2 parameters, vs $\Lambda$CDM) & $\Delta\chi^2$ & $\Delta$AIC & $H_0$ & rule\\
+Data & $\Delta\chi^2$ & $\Delta$AIC & $H_0$ & rule\\
 \midrule
-Planck 2018 + DESI DR2 + Pantheon+ (same polish) & $-4.70$ & $-0.70$ & 70.53 & pass ($<-4$)\\
-P-ACT + DESI DR2 + Pantheon+ (blind) & $-7.23$ & $-3.23$ & 70.43 & pass ($<-4$)\\
-Planck 2018 + DESI DR2 + DES Y5 SNe & $-4.55$ & $-0.55$ & 70.47 & pass ($<-2$)\\
-Planck 2018 + DESI DR2 + DES-Dovekie SNe & $-5.08$ & $-1.08$ & 70.53 & pass ($<-2$)\\
-Planck 2018 + DESI DR2 + Union3 SNe & $-4.91$ & $-0.91$ & 70.55 & pass ($<-2$)\\
-Planck 2018 + DESI DR2 + Pantheon+ + $S_8$ (DES Y3+KiDS-1000) & $-2.92$ & $+1.08$ & 70.81 & --\\
+Planck 2018 + Pantheon+ (same polish) & $-4.70$ & $-0.70$ & 70.53 & pass ($<-4$)\\
+P-ACT + Pantheon+ (blind) & $-7.23$ & $-3.23$ & 70.43 & pass ($<-4$)\\
+Planck 2018 + DES Y5 SNe & $-4.55$ & $-0.55$ & 70.47 & pass ($<-2$)\\
+Planck 2018 + DES-Dovekie SNe & $-5.08$ & $-1.08$ & 70.53 & pass ($<-2$)\\
+Planck 2018 + Union3 SNe & $-4.91$ & $-0.91$ & 70.55 & pass ($<-2$)\\
+Planck 2018 + Pantheon+ + $S_8$ & $-2.92$ & $+1.08$ & 70.81 & --\\
 \bottomrule
 \end{tabular}
-\caption{Pre-registered comparisons of the locked model against $\Lambda$CDM, each re-minimised on
-the same data with identical settings. The $S_8$ line adds a Gaussian $S_8$ likelihood.}
+\caption{Pre-registered comparisons of the locked model (2 parameters) against $\Lambda$CDM, each
+re-minimised on the same data with identical settings. Every row includes DESI DR2 BAO. The $S_8$ line
+adds a Gaussian $S_8$ likelihood (DES Y3 + KiDS-1000).}
 \label{tab:prereg}
 \end{table}
 
@@ -676,6 +673,130 @@ T1 \textbf{failed}: P-ACT gives $N=8.0$ (Planck 2018 with CAMB gives $N\simeq8.5
 $\Delta\chi^2=-4.46$ ($\Delta{\rm AIC}=-2.46$) on Planck 2018, which is not blind because the 9 was read
 off Planck. We have no derivation of the divisor; it is an empirical regularity until one exists.
 
+\paragraph{Profile in the divisor.} A second rule (\texttt{PREREG\_PHASE1.md}, step 1.2) fixed $N$ on the
+grid $6$--$12$ with a $1\%$ constraint on $F$, refitting everything else, and declared $N=9$
+\emph{consistent} if $\Delta\chi^2(9)-\min<1$, \emph{disfavoured} between 1 and 4 and \emph{excluded}
+above 4 on P-ACT. Table~\ref{tab:profile} gives the result: the P-ACT minimum is at $N=8$ and
+$\Delta\chi^2(9)-\min=1.11$, so $N=9$ is \textbf{disfavoured}, only $0.11$ over the line and within the
+$0.2$--$0.4$ restart scatter of the optimiser. On Planck 2018 the minimum is at $N=9$. Both profiles are
+shallow: every $N$ from 7 to 11 lies within $\Delta\chi^2\approx1.8$. Reading the width back from the
+free-width best fits gives $N=8.29$ (P-ACT) and $N=8.81$ (Planck 2018).
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccccccc}
+\toprule
+$N$ & 6 & 7 & 8 & 9 & 10 & 11 & 12\\
+\midrule
+P-ACT: $\Delta\chi^2$ & $2.47$ & $0.77$ & $0$ & $1.11$ & $1.74$ & $1.76$ & $2.48$\\
+P-ACT: $H_0$ & $71.02$ & $70.72$ & $70.75$ & $70.37$ & $69.84$ & $69.89$ & $69.79$\\
+P-ACT: $f_{\rm EDE}$ & $0.096$ & $0.086$ & $0.086$ & $0.074$ & $0.056$ & $0.055$ & $0.053$\\
+Planck 2018: $\Delta\chi^2$ & $4.73$ & $1.10$ & $0.50$ & $0$ & $1.62$ & $1.76$ & $2.58$\\
+\bottomrule
+\end{tabular}
+\caption{Profile in the width divisor $N$ (onset locked, $f_{\rm EDE}$ and $\theta_i$ free), each with
+DESI DR2 + Pantheon+. $\Delta\chi^2$ is relative to the minimum on each data set, with the width
+constraint's own $\chi^2$ removed. Best-fit $\theta_i$ lies between 2.53 and 2.89 throughout.}
+\label{tab:profile}
+\end{table}
+
+%======================================================================
+\section{Checks of the computation}\label{sec:checks}
+
+\paragraph{Two independent field solvers.} CAMB's EarlyQuintessence module and AxiCLASS both integrate
+the Klein--Gordon equation for $\phi$ and its perturbations exactly; neither uses a fluid
+approximation. We re-scored CAMB's P-ACT best points with AxiCLASS at the same cosmology
+(Table~\ref{tab:engines}). The two codes agree on the improvement over $\Lambda$CDM to $0.23$ (locked
+model) and $0.42$ ($N=9$), within the $0.5$ tolerance fixed in advance. These are re-scorings of CAMB's
+optima, not independent AxiCLASS minimisations; a re-minimisation could move each value by a few
+tenths in either direction.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Model & $\chi^2_{\rm AxiCLASS}$ & $\chi^2_{\rm CAMB}$ & $\Delta\chi^2_{\rm AxiCLASS}$ & $\Delta\chi^2_{\rm CAMB}$\\
+\midrule
+$\Lambda$CDM & $2239.32$ & $2239.01$ & $0$ & $0$\\
+Locked onset (2 parameters) & $2231.86$ & $2231.78$ & $-7.46$ & $-7.23$\\
+Locked, $N=9$ (1 parameter) & $2232.76$ & $2232.87$ & $-6.56$ & $-6.14$\\
+\bottomrule
+\end{tabular}
+\caption{Cross-engine check at CAMB's best points (P-ACT + DESI DR2 + Pantheon+).}
+\label{tab:engines}
+\end{table}
+
+\paragraph{Does the field fragment?} After release the field oscillates in a potential that is
+flatter than quadratic, which can amplify its own fluctuations by parametric resonance. Linear
+Boltzmann codes assume this does not happen. Without expansion, the Floquet exponent at the best-fit
+angle $\theta_i=2.79$ gives growth $\times31$ per oscillation, rising steeply towards the hilltop
+($\times10^3$ at $\theta_i=3$). With a radiation + matter background, the field released at equality
+and $N=9$, and growth measured against the same mode under pure expansion (metric perturbations
+neglected), the largest total growth is $\times7$--$9$ at $\theta_i=2.79$ and $\times19$ at
+$\theta_i=3.0$. Non-linearity would need $\sim10^5$, so the linear treatment is safe for every angle
+the data allow. The same toy calculation, which knows nothing of the CMB, gives a peak energy fraction
+of $0.081$ at $\theta_i=2.79$, against $f_{\rm EDE}=0.074$--$0.078$ in the full fits at $N=9$.
+
+%======================================================================
+\section{First fully independent CMB data: SPT-3G D1}\label{sec:spt}
+Every test above shares Planck data with the fit on which the lock was chosen. SPT-3G observes a
+different patch of sky with a different instrument, so it is the first test that is independent in
+its CMB data. Before any SPT-3G fit was run, we fixed and published the rules
+(doi:\href{https://doi.org/10.5281/zenodo.23838969}{10.5281/zenodo.23838969} and
+\href{https://doi.org/10.5281/zenodo.23839507}{10.5281/zenodo.23839507}).
+
+\paragraph{Data.} SPT-3G D1 TT/TE/EE \cite{camphuis2025} through its public foreground-marginalised
+(``lite'') \texttt{candl} likelihood \cite{balkenhol2024}, as the only CMB data, with SPT's calibration
+nuisance parameters and a Gaussian prior $\tau=0.051\pm0.006$ from Planck low-$\ell$ EE; plus DESI DR2
+BAO and Pantheon+, without SH0ES. Deviations from the written plan were logged before any result was
+read: the lite likelihood was used in place of the full one, and CAMB's lensing setting differs from
+SPT's template (\texttt{lens\_margin} is not accepted by CAMB 2.0.5).
+
+\paragraph{Rules.} For a model with $k$ extra parameters, PASS required $\Delta\chi^2<-2$ and
+$\Delta{\rm AIC}<0$; $\Delta\chi^2\ge0$ is FAIL; anything between is inconclusive. Each model is
+minimised with the same settings as $\Lambda$CDM, and any width constraint's own $\chi^2$ is removed.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Model & $k$ & $\chi^2$ & $\Delta\chi^2$ & $H_0$ & $f_{\rm EDE}$ & $\theta_i$\\
+\midrule
+$\Lambda$CDM & 0 & $1576.57$ & $0$ & $68.28$ & -- & --\\
+Locked, $N=9$ & 1 & $1577.09$ & $+0.52$ & $70.49$ & $0.077$ & $2.79$\\
+Locked, $N=9$, $\theta_i=1+\sqrt2$ & 0 & $1577.00$ & $+0.43$ & $69.13$ & $0.035$ & $2.414$\\
+Locked, width free & 2 & -- & \SPTfreeDchi & \SPTfreeHz & \SPTfreeF & --\\
+\bottomrule
+\end{tabular}
+\caption{SPT-3G D1 TT/TE/EE (lite) + $\tau$ prior + DESI DR2 + Pantheon+. Both $N=9$ rows
+\textbf{fail} their pre-registered rules; the free-width row is \SPTfreeVerdict. $\chi^2$ is the total
+including the $\tau$ and calibration priors; the $N=9$ rows have the width constraint's $\chi^2$
+($<10^{-3}$) removed.}
+\label{tab:spt}
+\end{table}
+
+\paragraph{Results.} The one-parameter model with $N=9$, which gave $\Delta\chi^2=-6.14$ on P-ACT,
+gives $\Delta\chi^2=+0.52$ ($\Delta{\rm AIC}=+2.52$) on SPT-3G: \textbf{FAIL}. By data set the Twist
+changes $\chi^2$ by $+0.44$ for SPT-3G, $-0.27$ for DESI and $+0.34$ for Pantheon+, so SPT-3G's own CMB
+data do not prefer it. Because the model contains $\Lambda$CDM as a limit, a deeper minimisation could
+lower $\Delta\chi^2$ towards zero, but under the rule that is still a FAIL.
+
+\paragraph{A zero-parameter variant.} We also pre-registered a variant with every EDE parameter fixed in
+advance: onset at equality, $N=9$, and initial angle $\theta_i=1+\sqrt2=2.414$. That angle was taken
+from a number outside physics (an eigenvalue of a small graph) purely to provide a parameter-free test,
+and we report it to avoid selective publication. It \textbf{fails} ($\Delta\chi^2=+0.43$), and the
+free-angle fit prefers $\theta_i=2.79$, $0.37$ away. The fragmentation calculation of
+\S\ref{sec:checks}, which predicted $f_{\rm EDE}\approx0.035$ at this angle after the rule was fixed,
+agrees with the fit's $0.035$. Two further values from the same source were pre-registered and are
+pending: $f_{\rm EDE}=0.0154$ for the free-width fit and $N=7$ (\SPTsevenVerdict). We do not regard any
+of them as physically motivated.
+
+\paragraph{Free width.} The two-parameter locked model with free width is the direct SPT-3G counterpart
+of the P-ACT test. Its result is: \SPTfreeVerdict. Its best-fit width implies $N=\SPTfreeN$.
+
 %======================================================================
 \section{Overall verdict}\label{sec:verdict}
 The overall rule (\texttt{PREREGISTRATION\_VERDICT.md}) was written before the supernova swaps,
@@ -688,7 +809,9 @@ KiDS-Legacy, $S_8=0.815^{+0.016}_{-0.021}$ \cite{kidslegacy2025}. The first thre
 The verdict is therefore a \textbf{tie}: the preference depends on which weak-lensing survey is
 right. Two further results are reported beside the verdict: the fit requires the field to start
 near the hilltop ($\theta_i\simeq2.7$--$2.9$, $\Delta\chi^2=+4$ to $+6$ for distant starts), and the
-pure torsion width remains excluded.
+pure torsion width remains excluded. This verdict was defined on Planck and ACT data; the SPT-3G results
+of \S\ref{sec:spt} are reported beside it and weaken it: on the first independent CMB data set, neither
+fixed-width variant improves on $\Lambda$CDM.
 
 \paragraph{Context.} The ACT DR6 extended-model analysis \cite{calabrese2025} reports no
 statistically significant preference for early dark energy or for other models that raise
@@ -732,7 +855,8 @@ $\Delta\chi^2$ values are what the AIC comparison requires, but the $\Lambda$CDM
 itself shows a near-degeneracy of order one unit of $\chi^2$ between the likelihood and the
 calibration prior (\S\ref{sec:fits}). Differences below about one unit should not be
 over-interpreted. EDE posteriors are also known to suffer prior-volume effects, which is a
-reason to quote profile and best-fit results \cite{poulin2025}.
+reason to quote profile and best-fit results \cite{poulin2025}. MCMC chains (four per model, with a
+Gelman--Rubin rule $R-1<0.02$ fixed in advance) are running and will be reported in a later version.
 
 \paragraph{``The required $\omega_c$ is far from Planck.''} $\omega_c\simeq0.144$ follows
 from geometry (\S\ref{sec:geometry}) for any sound-horizon solution that respects BAO.
@@ -811,11 +935,14 @@ no cosmic birefringence, which distinguishes it from photon-coupled axion EDE. O
 pre-registered P-ACT test the locked onset passed ($\Delta\chi^2=-7.23$, $\approx2.2\sigma$), and a
 one-parameter version with $F=\sqrt{3/2}\,\Mp/9$ gave $\Delta\chi^2=-6.14$ ($\approx2.5\sigma$), but
 the divisor fitted freely is $8.0$, not $9$, and the $S_8$ cost makes the pre-registered overall
-verdict a tie. These are hints at the $2\sigma$ level, consistent with the ACT collaboration's
-finding of no significant preference for early dark energy. The open problems are the origin
-of the eV scale, a derivation of the lock and of the divisor from the fermion sector, a full
-weak-lensing likelihood in place of the $S_8$ penalty, posterior analyses, and blind tests on
-SPT-3G and the Simons Observatory with rules written first.
+verdict a tie. Two independent field solvers agree on these numbers, and the field does not fragment.
+On SPT-3G, the first CMB data independent of Planck, the pre-registered $N=9$ model fails
+($\Delta\chi^2=+0.52$), as does a zero-parameter variant. The Planck and ACT preferences are therefore
+hints at the $2\sigma$ level that the first independent data do not confirm, consistent with the ACT
+collaboration's finding of no significant preference for early dark energy. The open problems are the
+origin of the eV scale, a derivation of the lock and of the divisor from the fermion sector, a full
+weak-lensing likelihood in place of the $S_8$ penalty, posterior analyses, and blind tests on the
+Simons Observatory with rules written first.
 
 \section*{Data and code availability}
 All code, fit outputs (best-fit points and their $\chi^2$ components), pre-registration files
@@ -865,12 +992,18 @@ bought by lowering $\Omega_m$ and raising $r_dh$, both excluded by BAO.}
 \end{table}
 
 \section{Code}\label{app:code}
+\sloppy
 The likelihood fits (\S\ref{sec:fits}--\S\ref{sec:pact}) use AxiCLASS through Cobaya, driven by
 \texttt{cmb\_cloud.py} and \texttt{bestfit.py} in the repository; the locked onset is
 implemented as a Cobaya parameter function of $(\omega_b,\omega_c)$ returning
 $\log_{10}a_c$ from Eq.~\eqref{eq:lock}. The pre-registration files are
 \texttt{PREREGISTRATION\_F.md}, \texttt{\_ZEQ.md}, \texttt{\_N.md}, \texttt{\_OMK.md} and
-\texttt{\_SINH.md}. The background calculations of \S\ref{sec:cosmo}--\S\ref{sec:results} come
+\texttt{\_SINH.md}. Version 2 adds: \texttt{cmbfit\_compare.py} (CAMB + Cobaya fits, including the
+SPT-3G runs), \texttt{fwidth.py} (the width constraint), \texttt{width\_readback.py} (implied $N$),
+\texttt{axiclass/cross\_engine\_pact.py} (\S\ref{sec:checks}), \texttt{floquet\_twist.py} and
+\texttt{floquet\_expanding.py} (fragmentation), and the rule files \texttt{PREREG\_PHASE1.md},
+\texttt{PREREG\_PHASE1\_DEVIATIONS.md} and the SPT-3G pre-registrations, all supplied as ancillary files
+or in the Zenodo record. The background calculations of \S\ref{sec:cosmo}--\S\ref{sec:results} come
 from Python scripts using NumPy and SciPy, supplied as ancillary files.
 \texttt{ec\_calc.py} computes the minimal-EC amplitude (\S\ref{sec:null}).
 \texttt{pheno.py} and \texttt{final.py} handle the fluid profiles and the fixed- and
@@ -883,6 +1016,12 @@ $\mathrm{rtol}=10^{-10}$). Root finding uses \texttt{brentq} and \texttt{fsolve}
 \begin{thebibliography}{99}
 \bibitem{calabrese2025} E.~Calabrese et al.\ (ACT), \emph{The Atacama Cosmology Telescope: DR6
 Constraints on Extended Cosmological Models}, arXiv:2503.14454 (2025).
+\bibitem{camphuis2025} E.~Camphuis et al.\ (SPT-3G), \emph{SPT-3G D1: CMB temperature and polarization
+power spectra and cosmology from 2019 and 2020 observations of the SPT-3G Main field}, Phys.\ Rev.\ D
+\textbf{113}, 083504 (2026), arXiv:2506.20707.
+\bibitem{balkenhol2024} L.~Balkenhol, C.~Trendafilova, K.~Benabed, S.~Galli, \emph{candl: Cosmic
+Microwave Background Analysis with a Differentiable Likelihood}, A\&A \textbf{686}, A10 (2024),
+arXiv:2401.13433.
 \bibitem{deskids2023} DES and KiDS Collaborations, \emph{DES Y3 + KiDS-1000: Consistent cosmology
 combining cosmic shear surveys}, Open J.\ Astrophys.\ (2023), arXiv:2305.17173.
 \bibitem{kidslegacy2025} KiDS Collaboration, \emph{KiDS-Legacy: cosmological constraints from cosmic
