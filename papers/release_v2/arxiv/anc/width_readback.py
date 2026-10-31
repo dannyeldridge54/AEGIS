@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use.
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights.
 """Read the field width back out of a finished best fit: implied N = sqrt(3/2) M_Pl / F.
 
     python width_readback.py NAME [NAME ...]      e.g. spt_edelock  (needs results/cmp_NAME.json)

@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 79901b6df7f8891c
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights. AEGIS-ID: 79901b6df7f8891c
 """Acceptance tests for AEGIS UFE v2. Run: python -m pytest tests/test_v2.py  (or python tests/test_v2.py)"""
 import os, sys
 import numpy as np

@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use.
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights.
 """Cross-engine check on P-ACT (PREREG_PHASE1.md step 1.3, at the best points; not a re-minimisation).
 
 Evaluates AxiCLASS (exact Klein-Gordon scalar field, classy) at the CAMB best points of pact_lcdm, pact_edelock and

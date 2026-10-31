@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: f713a7b3d32ffddb
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights. AEGIS-ID: f713a7b3d32ffddb
 """
 The AEGIS Method, in code: a claim store with walled tiers, pre-registration locks and a ledger of passes and
 failures. The AEGIS Method (Danny Lee Eldridge, 2026).

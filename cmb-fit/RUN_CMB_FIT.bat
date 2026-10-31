@@ -1,5 +1,5 @@
 @echo off
-rem Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 3fb9b3f2ae6c4351
+rem Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights. AEGIS-ID: 3fb9b3f2ae6c4351
 title AEGIS CMB fit - best fits (runs for hours, low priority)
 cd /d "%~dp0"
 rem Two CPU threads and below-normal priority: the star scanner and the PC stay responsive.

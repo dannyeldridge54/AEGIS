@@ -26,8 +26,8 @@ Rebuild everything with `tectonic torsion_born_ede.tex` then `python make_releas
      paper; HL3 still governs it. The Creative Commons options would give away more than HL3 allows.
    - **On Zenodo,** add a *custom license* titled "Hippocratic License 3.0 (HL3-MIL-SV)" with the link above. HL3 is
      not on Zenodo's standard list.
-   - The code files in the AEGIS repository still carry the AEGIS People's License header until the repository is
-     switched as well.
+   - The whole AEGIS repository was switched to HL3-MIL-SV the same day, so the code in `anc/` and the paper share one
+     license.
 3. **arXiv endorsement and sign-in.**
    - First-time authors in astro-ph.CO need an endorsement. The paper README (`papers/README.md`) already asks for one.
    - You submit and sign in yourself; Claude cannot sign in for you.

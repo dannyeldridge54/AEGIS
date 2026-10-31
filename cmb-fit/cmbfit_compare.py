@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 88a710722a5e849d
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights. AEGIS-ID: 88a710722a5e849d
 """Same-data model comparison (Planck 2018 + DESI DR2 + Pantheon+, no SH0ES), CAMB + Cobaya.
 
   python cmbfit_compare.py <lcdm|wcdm|ede|edelock>   one best fit (bobyqa), writes results/cmp_<name>.json

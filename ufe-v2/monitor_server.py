@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: e29c7898cae6f165
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights. AEGIS-ID: e29c7898cae6f165
 """AEGIS v2 — continuous star-catalog scanner and live monitor (for the cosmos mapper).
 
 Runs the Gaia DR3 star scanner forever (aegis/star_scanner.py) and serves:

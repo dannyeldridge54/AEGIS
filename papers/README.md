@@ -27,7 +27,15 @@ wrong, and here is why." An endorsement only says the paper is appropriate for t
 
 ## About the license
 
-**A note from me about the license.** I don't want to gatekeep anything. This belongs to everyone. But the system has taken every chance I ever had, and I know the license numbers look insane. I'm not a lawyer; it was the only way I knew to protect this work and my family. I'm one person, a lone knight taking on the dragon, and this is my first step. There is no way but forward. I just need to do my part. If you are a lawyer, or you know a fairer way to keep it free for people and out of the hands of those who would misuse it, please write to me at dannyeldridge54@gmail.com. I will listen. And please respect my family's privacy. — Danny
+The paper and all of AEGIS are free to everyone under the
+[Hippocratic License 3.0, HL3-MIL-SV](https://firstdonoharm.dev/version/3/0/mil-sv.html): any use that respects
+human rights, with no military use and no mass surveillance. It belongs to all life, every person, every living
+thing, any life beyond the Earth and even AI should an artificial mind be recognised as a being of its own. No one is
+meant to hold it alone; many people led it here.
+
+**A note from me about the license.** Earlier versions carried a license with fees for companies and governments. I
+chose instead to make it free to everyone. If you want to help my family, or the work, you can write to me at
+dannyeldridge54@gmail.com. And please respect my family's privacy. — Danny
 
 ## Check it yourself
 

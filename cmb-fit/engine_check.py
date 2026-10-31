@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 68edd77ee503adc8
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights. AEGIS-ID: 68edd77ee503adc8
 """Engine check: evaluate CAMB at the exact AxiCLASS best-fit points (ΛCDM and free EDE), same data, H0 fixed
 instead of theta_*. If CAMB gives the same chi2 there, the engines agree and the gap is in the optimizers;
 if not, the gap is in the physics/precision of the two EDE codes.

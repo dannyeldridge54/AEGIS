@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE): free for people; no AI use; no military, surveillance or harmful use.
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights.
 # Check my work on Mac or Linux:  sh check_my_work.sh
 cd "$(dirname "$0")"
 echo 'CHECK MY WORK - every number, re-derived on your own computer'

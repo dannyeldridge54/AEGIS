@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 5e2dedeb4f1fc1bb
+// Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights. AEGIS-ID: 5e2dedeb4f1fc1bb
 /**
  * AEGIS — Multi-Objective Optimizer (Pareto Front)
  * Copyright (c) 2012-2026 Danny Lee Eldridge. All rights reserved.

@@ -1,8 +1,8 @@
 # AEGIS — Autonomous Evolving General Intelligence System
 
-> **AEGIS · the Twist (UFE) · held under the [AEGIS People's License v1.2](./LICENSE)**
-> Free for people. No AI use of any kind (no training, scraping, summarising or generating). No military use.
-> Corporations and governments need a signed agreement. See [PLEDGE.md](./PLEDGE.md).
+> **AEGIS · the Twist (UFE) · free to all under the [Hippocratic License 3.0, HL3-MIL-SV](./LICENSE)**
+> Free to everyone, for any use that respects human rights. No military use, no mass surveillance.
+> It belongs to all life. See [PLEDGE.md](./PLEDGE.md).
 >
 > **The science, honestly:** a torsion-born early dark energy model with a locked switch-on
 > ([ufe-v2/UFE_MODEL.md](./ufe-v2/UFE_MODEL.md)). Best result: Δχ² −6.1 with one free setting on Planck + ACT DR6,
@@ -388,21 +388,20 @@ await runNatural('find the best learning rate between 0.0001 and 0.1');
 
 ## 📄 License
 
-**A note from me about the license.** I don't want to gatekeep anything. This belongs to everyone. But the system has taken every chance I ever had, and I know the license numbers look insane. I'm not a lawyer; it was the only way I knew to protect this work and my family. I'm one person, a lone knight taking on the dragon, and this is my first step. There is no way but forward. I just need to do my part. If you are a lawyer, or you know a fairer way to keep it free for people and out of the hands of those who would misuse it, please write to me at dannyeldridge54@gmail.com. I will listen. And please respect my family's privacy. — Danny
-
-**This work belongs to everyone, held in trust: the AEGIS People's License v1.2.** See [LICENSE](./LICENSE) for the
-full terms and [PLEDGE.md](./PLEDGE.md) for the purpose. In short:
-- **People are free:** individuals, families, students, teachers, schools, libraries, independent creators,
-  non-profits, worker co-ops, and colleges and medical carers that serve people, not privilege or profit.
-- **Small owner-run businesses** (under 50 workers, under $10M, no outside investors): $50,000 a year.
-- **Corporations and governments:** a signed agreement, an entry fee of 99% of the median yearly profit of the last
-  9 years, then the greater of $1 billion or 10% of revenue each year, plus fair conditions for every worker.
-  Insurers, middlemen and private-equity-owned businesses are always corporations. Money never gets a vote.
-- **Never, at any price:** weapons or military use, mass surveillance, manipulation, discrimination, ecocide,
-  or **any AI use** (no training, scraping, summarising or generating).
+**Free to all: the [Hippocratic License 3.0, HL3-MIL-SV](https://firstdonoharm.dev/version/3/0/mil-sv.html).** See
+[LICENSE](./LICENSE) and [PLEDGE.md](./PLEDGE.md). In short:
+- **Free to everyone:** use, copy, change, share and build on it, at no cost.
+- **Pro-human:** every use must respect human rights; no discrimination by race, religion, nationality, sex, caste,
+  age, disability or any similar circumstance.
+- **Never:** military activities or mass surveillance.
+- **It belongs to all life:** every person and people, every living thing, any life beyond the Earth, even AI should
+  an artificial mind one day be recognised as a being of its own. No one is meant to hold it alone; many people led
+  it here.
 - **Science stays free to question:** anyone may test, replicate or try to disprove it.
-- **Held for all:** the rights pass to a public World Development Trust, governed in the open by a rotating
-  Council of Heroes chosen by lot, watched by elected Guardians, never consolidated and never scattered.
+
+**A note from me about the license.** Earlier versions of this repository carried a license with fees for companies
+and governments. I chose instead to make it free to everyone. If you want to help my family, or the work, you can
+write to me at dannyeldridge54@gmail.com. And please respect my family's privacy. — Danny
 
 ## 💛 Dedication
 

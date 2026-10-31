@@ -1,5 +1,5 @@
 @echo off
-rem Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under THE AEGIS PEOPLE'S LICENSE (see LICENSE in the AEGIS repository): free for people; no AI use; no military, surveillance or harmful use. AEGIS-ID: 6e27ef29f1e02841
+rem Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights. AEGIS-ID: 6e27ef29f1e02841
 title AEGIS v2 Monitor
 cd /d "%~dp0"
 echo [%date% %time%] launcher started > launcher_log.txt
