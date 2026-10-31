@@ -15,7 +15,8 @@ EXTRA_SETTINGS = {"lcdm": 0, "wcdm": 1, "ede": 3, "edelock": 2, "lcdm8": 0, "ede
                   "lcdmP": 0, "edelockP": 2, "edeP": 3}
 PACT = {"pact_lcdm": 0, "pact_edelock": 2, "pact_ede": 3}     # blind test: same rule, new data (see make)
 SPT = {"spt_lcdm": 0, "spt_edelock": 2, "spt_edelock_F9": 1, "spt_edelock_th2.41421_F9": 0,   # SPT-3G pre-registrations
-       "spt_edelock_th2.78_F9": 0}                            # last one: contrast at the Planck angle, NOT a prediction
+       "spt_edelock_th2.78_F9": 0,                            # contrast at the Planck angle, NOT a prediction
+       "spt_edelock_F7": 1}                                   # torus number N = 7 (PREREGISTRATION_SPT3G_TORUS.md)
 N_DATA = 1994  # approximate; see dossier
 
 LOCK = ("lambda ombh2, omch2: np.log10((ombh2 + omch2) / (2.4728e-5 * (1 + 0.22711 * 3.044)) - 1)")
