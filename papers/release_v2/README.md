@@ -17,13 +17,17 @@ Rebuild everything with `tectonic torsion_born_ede.tex` then `python make_releas
    built, so Table 8 and §14 say "still running". It is the direct SPT-3G counterpart of the P-ACT test. When it
    lands, fill the `\SPTfree…` macros at the top of the .tex, rebuild, and rerun `make_release.py`. The hourly loop
    does this automatically. Recommended: submit after it lands.
-2. **Choose the license.**
-   - The .tex header says *AEGIS People's License* (free for people; no AI use; no military or surveillance use).
-   - arXiv only offers its own options. CC BY 4.0, CC BY-SA 4.0, CC BY-NC-SA 4.0, or the arXiv non-exclusive
-     distribution license are the usual choices; the last grants arXiv only the right to distribute.
-   - Zenodo needs a license id in `.zenodo.json` (currently a placeholder). The Locked Twist record used CC BY-SA 4.0.
-   - Note: the license's "no AI use" clause sits awkwardly beside the acknowledgement that AI assistants helped.
-     Consider rewording it, for example to "no use for training AI models".
+2. **License: Hippocratic License 3.0, HL3-MIL-SV** (chosen 31 Oct 2026).
+   - Free to everyone of every race, creed and people. The core forbids human-rights abuses, including
+     discrimination; the two modules exclude military activities and mass surveillance.
+   - Full text: https://firstdonoharm.dev/version/3/0/mil-sv.html. It is stated in the paper's
+     "License and dedication" section, the .tex header and `LICENSE.md`.
+   - **On arXiv,** pick "arXiv.org perpetual, non-exclusive license to distribute". That only lets arXiv host the
+     paper; HL3 still governs it. The Creative Commons options would give away more than HL3 allows.
+   - **On Zenodo,** add a *custom license* titled "Hippocratic License 3.0 (HL3-MIL-SV)" with the link above. HL3 is
+     not on Zenodo's standard list.
+   - The code files in the AEGIS repository still carry the AEGIS People's License header until the repository is
+     switched as well.
 3. **arXiv endorsement and sign-in.**
    - First-time authors in astro-ph.CO need an endorsement. The paper README (`papers/README.md`) already asks for one.
    - You submit and sign in yourself; Claude cannot sign in for you.

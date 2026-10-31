@@ -45,6 +45,6 @@
       "scheme": "url"
     }
   ],
-  "license": "CHOOSE BEFORE UPLOAD (see README)",
-  "language": "eng"
+  "language": "eng",
+  "notes": "License: Hippocratic License 3.0 (HL3-MIL-SV: core + Military Activities + Mass Surveillance), https://firstdonoharm.dev/version/3/0/mil-sv.html. Free to everyone of every race, creed and people, for any use that respects human rights; not for military activities or mass surveillance. In the Zenodo form, add it as a custom license with this title and link."
 }

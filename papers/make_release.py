@@ -34,6 +34,25 @@ ANC += [(CUBEMIND / n, n) for n in ("floquet_twist.py", "floquet_expanding.py", 
                                     "PREREGISTRATION_SPT3G_DEVIATIONS.md", "SPT3G_RESULTS.md")]
 
 ABSTRACT_LIMIT = 1920                       # arXiv's limit for the abstract field
+HL3_NAME = "Hippocratic License 3.0 (HL3-MIL-SV: core + Military Activities + Mass Surveillance)"
+HL3_URL = "https://firstdonoharm.dev/version/3/0/mil-sv.html"
+LICENSE_MD = f"""# License
+
+Copyright (c) 2012-2026 Danny Lee Eldridge.
+
+This paper, its source and the files released with it are licensed under the **{HL3_NAME}**.
+The full license text is at {HL3_URL}.
+
+**It belongs to everyone.** No one is meant to hold this work alone, its author included. It reached this point
+only because many people led it here: the scientists whose ideas it builds on, and the teams who built the
+telescopes, shared their data and wrote the public codes it uses. It is returned to all of them, and to everyone.
+
+**Free to everyone.** Anyone, of every race, creed, nation and people, without distinction, may read, copy,
+check, reuse and build on this work, provided the use respects the human rights the license sets out (including
+its prohibition of discrimination) and is not used for military activities or mass surveillance.
+
+It is offered especially to the people who will build the technologies and crafts to come.
+"""
 
 
 def latex_to_text(s):
@@ -52,14 +71,20 @@ def main():
     assert PDF.stat().st_mtime >= TEX.stat().st_mtime, "rebuild the PDF first: tectonic torsion_born_ede.tex"
     missing = [str(s) for s, _ in ANC if not s.exists()]
     assert not missing, f"missing ancillary files: {missing}"
+    readme = (OUT / "README.md").read_text(encoding="utf-8") if (OUT / "README.md").exists() else None
     if OUT.exists():
         shutil.rmtree(OUT)
     arx, zen = OUT / "arxiv", OUT / "zenodo"
+    if readme:
+        OUT.mkdir()
+        (OUT / "README.md").write_text(readme, encoding="utf-8")
     (arx / "anc").mkdir(parents=True)
     zen.mkdir(parents=True)
 
     # arXiv: source + anc/, packed as one tar.gz (arXiv builds the PDF itself).
     shutil.copy2(TEX, arx / TEX.name)
+    (arx / "anc" / "LICENSE.md").write_text(LICENSE_MD, encoding="utf-8")
+    (zen / "LICENSE.md").write_text(LICENSE_MD, encoding="utf-8")
     for s, name in ANC:
         (arx / "anc" / name).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(s, arx / "anc" / name)
@@ -86,7 +111,9 @@ def main():
         f"cross-engine check and a fragmentation analysis. Code, fit outputs and hashed pre-registrations in anc/ "
         f"and at doi:10.5281/zenodo.23789830\n\n"
         "Primary category:\nastro-ph.CO\n\nCross-list:\ngr-qc\n\n"
-        "License:\nCHOOSE ONE on the form (see README). The paper's own license line is the AEGIS People's License.\n\n"
+        "License (arXiv form):\narXiv.org perpetual, non-exclusive license to distribute this article. It only lets "
+        f"arXiv host the paper; the paper itself stays under the {HL3_NAME}, {HL3_URL}, as its License section "
+        "and anc/LICENSE.md say. (arXiv's Creative Commons options would grant broader rights than HL3.)\n\n"
         "Upload:\ntorsion_born_ede_v2_arxiv.tar.gz (arXiv compiles the .tex; anc/ becomes ancillary files)\n",
         encoding="utf-8")
 
@@ -115,8 +142,10 @@ def main():
             {"identifier": "10.5281/zenodo.23839507", "relation": "references", "scheme": "doi"},
             {"identifier": "https://github.com/dannyeldridge54/AEGIS", "relation": "isSupplementedBy",
              "scheme": "url"}],
-        "license": "CHOOSE BEFORE UPLOAD (see README)",
         "language": "eng",
+        "notes": f"License: {HL3_NAME}, {HL3_URL}. Free to everyone of every race, creed and people, for any use "
+                 "that respects human rights; not for military activities or mass surveillance. In the Zenodo "
+                 "form, add it as a custom license with this title and link.",
     }
     (zen / ".zenodo.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
     files = sorted(p for p in zen.iterdir() if p.is_file() and p.name != "SHA256SUMS.txt")
