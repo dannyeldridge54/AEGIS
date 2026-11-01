@@ -241,4 +241,12 @@ if __name__ == "__main__":
         for n in sys.argv[2:]:
             save(n)
     else:
+        # Atomic claim so two queue workers never run the same fit (run_grid.sh + run_grid_helper.sh). Scheduling only.
+        claim = f"{OUT}/lanes/{sys.argv[1]}.claim"
+        try:
+            fd = os.open(claim, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            os.write(fd, f"{os.getpid()} {time.strftime('%F %T')}\n".encode()); os.close(fd)
+        except FileExistsError:
+            print(f"{sys.argv[1]} is claimed by another worker; skipping", flush=True)
+            sys.exit(0)
         run(sys.argv[1])
