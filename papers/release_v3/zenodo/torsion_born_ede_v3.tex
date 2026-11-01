@@ -57,9 +57,10 @@ before each fit. On Planck + ACT DR6 + DESI DR2 + Pantheon+ it improves on $\Lam
 $\Delta\chi^2=-7.23$; on SPT-3G D1 alone no version improves meaningfully (best $\Delta\chi^2=-1.27$). On all three CMB
 data sets combined with DESI DR2 and Pantheon+ it passes its pre-registered rule ($\Delta\chi^2=-5.63$,
 $f_{\rm EDE}=0.070$, $H_0=70.15$), but late evolving dark energy ($w_0$--$w_a$) fits better
-($\Delta\chi^2=-10.89$; $\Delta$AIC lower by 5.3). Because the initial angle is undefined when
-$f_{\rm EDE}=0$, the naive significances are upper estimates; a profile likelihood, a look-elsewhere
-correction and a joint early-plus-late fit are pre-registered and running. The data favour the flat-bottomed $n=3$ shape over $n=2$,
+($\Delta\chi^2=-10.89$; $\Delta$AIC lower by 5.3). A profile likelihood prefers $f_{\rm EDE}\approx0.05$--$0.10$
+(68\%), with $f=0$ disfavoured by $\Delta\chi^2=5.98$; because the initial angle is undefined at $f_{\rm EDE}=0$, this
+is an upper estimate of the significance, and a look-elsewhere correction and a joint early-plus-late fit are
+pre-registered and running. The data favour the flat-bottomed $n=3$ shape over $n=2$,
 which we show is not produced by the Nieh--Yan term or by natural instanton or anomaly potentials, and
 the equality lock cannot be derived from the minimal action. Two codes agree to 0.4 in $\chi^2$ and the
 field does not fragment. Fixed-number variants of the width and initial angle all fail. We outline a
@@ -857,13 +858,33 @@ needs AxiCLASS.
 
 \paragraph{Significance, and what is still running.} When $f_{\rm EDE}=0$ the angle $\theta_i$ has no
 meaning, so Wilks' theorem fails and the $\chi^2_2$ significances quoted in this paper are upper estimates.
-Three analyses with rules hashed in advance are running and will be reported in a later version:
-(i) a profile likelihood in $f_{\rm EDE}$ (seven fixed values, everything else refitted), to compare with the
-SPT-3G collaboration's posterior $f_{\rm EDE}<0.070$ (95\%) for the same CMB data \cite{khalife2025}; the first
-points give $\chi^2(f)-\chi^2_{\rm min}=+4.16$, $+2.89$, $+1.22$ at $f=0.01$, $0.02$, $0.04$, against $+5.63$ at
-$f=0$; (ii) a look-elsewhere correction following Gross and Vitells \cite{grossvitells2010}, with $\theta_i$ fixed
-at eight values; and (iii) early and late dark energy fitted together in AxiCLASS, since CAMB cannot run both at
-once.
+\paragraph{Profile in $f_{\rm EDE}$.} With $f_{\rm EDE}$ fixed at seven values and everything else refitted
+(pre-registered rule: early energy preferred if the rise at $f=0$ exceeds 3.84), the profile has its minimum at
+$f_{\rm EDE}\simeq0.08$ ($\chi^2=2396.42$, 0.35 below the free fit, which therefore stopped short of its best point).
+The rise at $f=0$ is 5.98, so early energy is \textbf{preferred} by the rule (profile significance $\approx2.4\sigma$),
+with $f_{\rm EDE}\approx0.049$--$0.102$ at 68\% and $0.015$ to beyond the grid edge (0.12) at 95\%.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccccccc}
+\toprule
+$f_{\rm EDE}$ & 0 & 0.01 & 0.02 & 0.04 & 0.06 & 0.08 & 0.10 & 0.12\\
+$\chi^2-\chi^2_{\rm min}$ & 5.98 & 4.51 & 3.24 & 1.57 & 0.26 & 0 & 0.81 & 2.66\\
+\bottomrule
+\end{tabular}
+\caption{Profile likelihood in $f_{\rm EDE}$ on all CMB data with DESI DR2 and Pantheon+ (locked onset, $n=3$).}
+\label{tab:profile_f}
+\end{table}
+
+The SPT-3G collaboration's posterior for the same CMB data is $f_{\rm EDE}<0.070$ (95\%) \cite{khalife2025}. Our
+profile prefers more early energy. Posteriors for EDE are pulled towards $f=0$ by the prior volume of the angle and
+critical-redshift parameters, and our analysis also adds DESI and Pantheon+ and fixes the onset, so the two are not
+in direct conflict, but they read differently. Wilks' thresholds are only approximate at the $f=0$ boundary.
+
+\paragraph{Still running.} Two further analyses with rules hashed in advance will be reported in a later version:
+(i) a look-elsewhere correction following Gross and Vitells \cite{grossvitells2010}, with $\theta_i$ fixed at eight
+values; and (ii) early and late dark energy fitted together in AxiCLASS, since CAMB cannot run both at once.
 
 %======================================================================
 \section{What geometry does and does not fix}\label{sec:derive}
