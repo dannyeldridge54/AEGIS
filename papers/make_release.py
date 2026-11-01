@@ -18,9 +18,11 @@ FIT = AEGIS / "cmb-fit"
 CUBEMIND = Path.home() / "Desktop" / "CubeMind_side_project"
 VERSION = "3"
 VERSION_NOTE = ("Version 3 adds Planck + ACT + SPT-3G combined tests (the locked model passes its rule; late w0-wa "
-                "evolving dark energy fits better), the potential-power test, why geometry does not fix the potential "
-                "or the lock, and a late-time outlook. Profile, look-elsewhere and early+late analyses are "
-                "pre-registered and running.")
+                "evolving dark energy fits better), a profile likelihood, a look-elsewhere correction (1.2-1.4 sigma "
+                "global), a joint early+late fit (mild), robustness across supernova samples, the potential-power "
+                "test, why geometry does not fix the potential or the lock, and a late-time outlook. The Late Twist "
+                "grid, its DES-Dovekie check and the Coupled Twist fits are pre-registered; see the repository for "
+                "their status.")
 OUT = HERE / f"release_v{VERSION}"
 TEX = HERE / "torsion_born_ede.tex"
 PDF = HERE / "torsion_born_ede.pdf"
@@ -42,7 +44,15 @@ ANC += [(CUBEMIND / n, n) for n in ("floquet_twist.py", "floquet_expanding.py", 
                                     "PREREGISTRATION_LOOK_ELSEWHERE.md", "PREREGISTRATION_EARLY_LATE.md",
                                     "PREREGISTRATION_LATE_TWIST.md", "PREREGISTRATION_NULL_PREDICTIONS.md",
                                     "STEP2_RESULT.md", "step2_potential.py", "STEP3B_RESULT.md", "step3b_trigger.py",
-                                    "look_elsewhere.py")]
+                                    "look_elsewhere.py", "PREREGISTRATION_ROBUSTNESS.md", "PREREGISTRATION_DOVEKIE.md",
+                                    "PREREGISTRATION_SHARED_F.md", "PREREGISTRATION_LOCK_ATTRACTOR.md",
+                                    "PREREGISTRATION_COUPLED_TWIST.md", "PREREGISTRATION_EDGE_SCAN.md",
+                                    "PREREGISTRATION_LATE_DOVEKIE_LEE.md", "PREREGISTRATION_HIGH_MASS_CORNER.md",
+                                    "EARLY_LATE_RESULTS.md", "ROBUSTNESS_RESULTS.md", "LATE_TWIST_RESULTS.md",
+                                    "LATE_TWIST_NULL_MIRROR.md", "LOCK_ATTRACTOR_RESULTS.md", "PROFILE_F_RESULTS.md",
+                                    "LOOK_ELSEWHERE_RESULTS.md", "rank_models.py")]
+ANC += [(FIT / "results" / n, "results/" + n) for n in ("null_mirror_latetwist.json", "null_mirror_nl.json")]
+ANC += [(p, "results/" + p.name) for p in sorted((FIT / "results").glob("cmp_ax_spa_*.json"))]
 ANC += [(p, "results/" + p.name) for p in sorted((FIT / "results").glob("cmp_spa_*.json"))]
 ANC += [(FIT / "axiclass" / "early_late_spa.py", "early_late_spa.py")]
 
@@ -153,7 +163,9 @@ def main():
             {"identifier": "10.5281/zenodo.23838969", "relation": "references", "scheme": "doi"},
             {"identifier": "10.5281/zenodo.23839507", "relation": "references", "scheme": "doi"},
             {"identifier": "https://github.com/dannyeldridge54/AEGIS", "relation": "isSupplementedBy",
-             "scheme": "url"}],
+             "scheme": "url"},
+            {"identifier": "https://github.com/dannyeldridge54/the-twist-torsion-cosmology",
+             "relation": "isSupplementedBy", "scheme": "url"}],
         "language": "eng",
         "notes": f"License: {HL3_NAME}, {HL3_URL}. Free to everyone of every race, creed and people, for any use "
                  "that respects human rights; not for military activities or mass surveillance. In the Zenodo "

@@ -96,3 +96,121 @@ HMcode in this AxiCLASS build refuses a scalar field present today ("Cannot use 
 coded)"). So the Late Twist uses halofit for non-linear lensing, and its references are re-run with the same setting:
 `ax_spa_lcdm_halofit` and `ax_spa_w0wa_halofit` replace `ax_spa_lcdm` and `ax_spa_w0wa` in tests L1 and L2.
 Everything else is unchanged. No result had been read.
+
+## 2026-11-01 07:00 CT: A3 results saved from Cobaya's own files (bookkeeping, no fit changed)
+
+All four A3 fits (`ax_spa_*`) converged, but `early_late_spa.py` crashed while writing `cmp_<name>.json`. The cause was
+`mini.products()["minimum"]`, a Cobaya `OnePoint` with no `keys()`. The JSONs were rebuilt from Cobaya's own
+`results/chains/cmp_<name>.minimum.txt` with a new `save` mode, and `run()` now uses the same path. No fit, prior or rule
+changed, and nothing was rerun.
+## 2026-11-01 07:24 CT: Late Twist minimiser guard (PREREGISTRATION_LATE_TWIST.md; model, priors and rules unchanged)
+
+The first `ax_spa_latetwist` run failed: both bobyqa restarts stopped with a singular matrix after the likelihood sum
+overflowed. No result was produced or read. A diagnostic grid (`axiclass/probe_latetwist.py`, other parameters at the
+AxiCLASS LCDM best fit) shows three regions:
+- **-inf where F x m is too small:** the field cannot hold enough energy to close the budget.
+- **NaN near m ~ 6 H0:** the field overshoots and oscillates.
+- **A finite valley near F ~ 1 M_Pl, m ~ 1.6 H0.**
+
+**Change:** for Late Twist runs only (`ax_spa_latetwist`, `ax_spa_latetwist_desy5`), any non-finite log-posterior,
+or one below -1e5, is returned to the minimiser as -1e5, a clean rejection instead of an overflow. The guard applies
+only during minimisation, so Cobaya's check that redraws non-finite starting points is unchanged. Same priors, same
+references, same best of 2. The run is repeated, and the earlier failed attempt is kept in its log.
+## 2026-11-01 07:46 CT: Late Twist rerun with better starting points (author approved in chat: "Yes, rerun it")
+
+**The result was seen first** (LATE_TWIST_RESULTS.md), so this deviation is disclosed as post-result.
+
+**Why:** the guarded `ax_spa_latetwist` run reported chi2 = 2413.90, but holding its own best (F, m) and moving the
+other parameters to the AxiCLASS LCDM halofit best fit gives chi2 = 2402.66 (`axiclass/probe_corner.py`). The minimiser
+did not find the minimum. Its starting references came from CAMB fits (`_start_from_camb`), whose theta parameter is
+not the same quantity as CLASS's 100*theta_s.
+
+**Change** (Late Twist runs only, `ax_spa_latetwist` and `ax_spa_latetwist_desy5`):
+- The cosmological and calibration references are centred on the AxiCLASS `ax_spa_lcdm_halofit` best fit.
+- **Best of 4** instead of 2.
+
+**Unchanged:** priors, the F and m references, the guard, data, rules and verdict bands.
+
+**Record:** the stalled result is kept as `cmp_ax_spa_latetwist.stalled1.json`, with its verdicts recorded in
+LATE_TWIST_RESULTS.md. The rerun's verdicts are reported beside it, with both runs shown.
+## 2026-11-01 07:52 CT: robustness queue restarted (scheduling only)
+
+`run_robustness.sh` waited for `cmp_ax_spa_latetwist.json`, which was archived for the approved rerun, so batch 1
+never started. It was replaced by `run_robustness2.sh`:
+- batch 1 starts now, at 2 threads per fit beside the 4-thread Late Twist rerun;
+- batch 2 starts after both batch 1 and the rerun have finished.
+
+The runs, settings and rules are unchanged.
+## 2026-11-01 (audit): correction to PREREGISTRATION_SPT3G_LETTERS.md timing statement
+
+The Letters pre-registration says it was written "before any SPT-3G fit of the free-width Locked Twist (spt_edelock)
+had run". The timestamps disagree:
+- the run was **launched at 14:04:34** (its Cobaya input file);
+- the pre-registration was committed at 14:07:35;
+- the run's result (`cmp_spt_edelock.json`) was first written at 17:04:51.
+
+So the rule was locked **after the fit started but about 3 hours before any result existed**. No number from it could
+have been seen. The sentence should have read "before any result of that fit existed". The verdict (Inconclusive)
+stands. The file itself is unchanged (hash `c86f2b75…`).
+
+Every other pre-registration was checked the same way and was committed before its first run started (gaps from
+14 seconds to 9 hours).
+## 2026-11-01 08:08 CT: PREREGISTRATION_COUPLED_TWIST.md time stamp
+
+The header says "Written: 2026-11-01 08:10 CT". That time was hand-written and is wrong (the same mistake as twice on
+31 October). The file was committed at **08:06:59** (commit b75b8f8), after a clock check at 08:05:42 confirmed that
+`cmp_ax_spa_latetwist.json` did not exist. The true written time is therefore **08:05–08:07**. Nothing else is
+affected; the file is unchanged (SHA-256 `1aea70eb…`).
+
+**Process fix:** from now on, the "Written" line is filled from `Get-Date` in the same command that hashes the file.
+## 2026-11-01 08:20 CT: PREREGISTRATION_COUPLED_TWIST.md gate V4 sign wording (before any code exists)
+
+Gate V4 says "β > 0 makes ρ_c fall faster than a⁻³ while φ̇ > 0". The model's own equation,
+ρ̇_c + 3Hρ_c = (β/M_Pl) φ̇ ρ_c, gives faster-than-a⁻³ dilution when **β φ̇ < 0**. The derivation is in
+COUPLED_TWIST_NOTES.md §1; in the φMDE, x = −√(2/3) β, so β > 0 pairs with φ̇ < 0.
+
+**Change:** V4 will be applied as "d ln(ρ_c a³)/dt = (β/M_Pl) φ̇, with the sign of β φ̇", the physical content it
+intended. No model, prior or rule is otherwise changed, and no coupled code or fit exists yet.
+## 2026-11-01 08:12 CT: two hand-typed header times in this log (audit), corrected below
+
+The house check now compares each header's time with the commit that added it. Two headers were typed by hand, after I
+had said times would come from the clock:
+- **header 08:08 corrected** to 08:07: the time-stamp entry was committed at 08:07:14 (3a11f3a);
+- **header 08:20 corrected** to 08:08: the V4 sign-wording entry was committed at 08:08:48 (12a523d).
+
+Also corrected: LATE_TWIST_RESULTS.md said the guard deviation was "logged 07:16"; its commit (8c2c095) is at 07:24:18.
+The order of events is unaffected: each deviation was committed before the run or code it covers. Only the written
+times were wrong. This header was taken from `Get-Date`.
+## 2026-11-01 08:39 CT: Coupled Twist C5, reading of a fit with no finite point (before any coupled fit)
+
+A smoke test of the C5 run (|β| = 0.816 fixed) found no finite likelihood at the reference point. CLASS's
+recombination solver fails ("step size too small") because the field holds about 30% of the energy through the matter
+era (Ω_φ ≈ 2β²f_c²/3 ≈ 0.31). The background code runs fine at β = 0.3 (energy balance 1.2 × 10⁻⁷).
+
+**How C5 will be read:**
+- If the C5 fits (both signs, best of 4, with Cobaya's redraws of the starting point) find **no finite point**, C5 is
+  reported as **EXCLUDED (code-limited)**. The wording says the cosmology cannot be computed, rather than that a χ²
+  was compared.
+- If either sign finds a finite best fit, the rule applies as written.
+
+No rule, prior or band is changed.
+## 2026-11-01 08:58 CT: (F, m) profile grid replaces free (F, m) minimisation for scalar-field late models (author approved: "Yes")
+
+**This change is made after the result was seen.** The Late Twist results (stalled +11.6, then +3.2) were known before
+it.
+
+**Why:** bobyqa stalls on the walled (F, m) surface: restarts disagree by up to 6.8, and probe points that need no fitting
+sit 2.5 or more below the reported minima (DEEP_REVIEW_2026-11-01b.md §3).
+
+**Change:**
+- **Late Twist, Pantheon+ and DES Y5:** F and m are fixed on a grid, log10(F/M_Pl) ∈ {−0.4, −0.2, 0, 0.2, 0.4, 0.5}
+  × log10(m/H₀) ∈ {−0.3, 0, 0.2, 0.4} (24 points, inside the pre-registered priors). At each point the 11 standard
+  parameters are minimised (best of 2). **The fit is the lowest grid χ².** L1–L3 and shared F are judged on it, using the
+  F and m of that point. A grid point with no finite likelihood (closure impossible) is recorded as non-viable.
+  - The grid's resolution is 0.2 dex. It is reported as a caveat; no refinement is added after seeing the results.
+- **Coupled Twist** (no coupled result exists yet):
+  - the C1–C4 fit becomes a 3 × 3 (F, m) grid at ±0.2 dex around the best Late Twist (Pantheon+) grid point, with β
+    free;
+  - C5 (β = ±0.816) and the 5-point β profile are run at the best coupled grid point.
+- **Unchanged:** priors, data, the guard, and every rule and band.
+- **Kept on record:** the two free Late Twist fits.

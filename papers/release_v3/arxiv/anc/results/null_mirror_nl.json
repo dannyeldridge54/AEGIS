@@ -1,0 +1,42 @@
+[
+ {
+  "non_linear": "halofit",
+  "F": 100.0,
+  "m": 0.015,
+  "chi2_lcdm": 2402.256366094469,
+  "chi2_lt": 2403.6100901920872,
+  "diff": 1.3537240976183966,
+  "Omega_m_lcdm": NaN,
+  "Omega_m_lt": NaN
+ },
+ {
+  "non_linear": "halofit",
+  "F": 3.16,
+  "m": 0.5,
+  "chi2_lcdm": 2402.256366094469,
+  "chi2_lt": 2402.648385417267,
+  "diff": 0.3920193227982054,
+  "Omega_m_lcdm": NaN,
+  "Omega_m_lt": NaN
+ },
+ {
+  "non_linear": "none",
+  "F": 100.0,
+  "m": 0.015,
+  "chi2_lcdm": 2408.1992893628485,
+  "chi2_lt": 2408.228302374247,
+  "diff": 0.02901301139854695,
+  "Omega_m_lcdm": NaN,
+  "Omega_m_lt": NaN
+ },
+ {
+  "non_linear": "none",
+  "F": 3.16,
+  "m": 0.5,
+  "chi2_lcdm": 2408.1992893628485,
+  "chi2_lt": 2407.294291619067,
+  "diff": -0.9049977437816779,
+  "Omega_m_lcdm": NaN,
+  "Omega_m_lt": NaN
+ }
+]

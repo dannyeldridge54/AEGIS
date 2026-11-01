@@ -33,8 +33,8 @@
 \newcommand{\AtwoZloc}{\Pending}        % local significance
 \newcommand{\AtwoZglob}{\Pending}       % global (look-elsewhere) significance, conservative
 \newcommand{\AtwoVerdict}{\Pending}
-\newcommand{\AthreeD}{\Pending}         % chi2(early+late) - chi2(late)
-\newcommand{\AthreeVerdict}{\Pending}   % SURVIVES / MILD / NOT NEEDED
+\newcommand{\AthreeD}{\ensuremath{-3.65}}  % chi2(early+late) - chi2(late), AxiCLASS (EARLY_LATE_RESULTS.md)
+\newcommand{\AthreeVerdict}{\textbf{mild}}  % SURVIVES / MILD / NOT NEEDED
 \newcommand{\LateLone}{\Pending}        % Late Twist vs LCDM
 \newcommand{\LateLtwo}{\Pending}        % Late Twist vs w0-wa
 \newcommand{\LateLthree}{\Pending}      % natural range of F and m
@@ -59,8 +59,10 @@ data sets combined with DESI DR2 and Pantheon+ it passes its pre-registered rule
 $f_{\rm EDE}=0.070$, $H_0=70.15$), but late evolving dark energy ($w_0$--$w_a$) fits better
 ($\Delta\chi^2=-10.89$; $\Delta$AIC lower by 5.3). A profile likelihood prefers $f_{\rm EDE}\approx0.05$--$0.10$
 (68\%), with $f=0$ disfavoured by $\Delta\chi^2=5.98$, but after a look-elsewhere correction for the initial angle
-(undefined at $f_{\rm EDE}=0$) the global significance is only $1.2$--$1.4\sigma$, a weak hint. A joint early-plus-late
-fit is pre-registered and running. The data favour the flat-bottomed $n=3$ shape over $n=2$,
+(undefined at $f_{\rm EDE}=0$) the global significance is only $1.2$--$1.4\sigma$, a weak hint. Fitted together with
+late dark energy, early energy still improves $\chi^2$ by 3.65 but does not pay for its two parameters
+($\Delta$AIC $+0.35$): a mild result by its pre-registered rule. The data favour the flat-bottomed $n=3$ shape over
+$n=2$ in a poorly converged comparison,
 which we show is not produced by the Nieh--Yan term or by natural instanton or anomaly potentials, and
 the equality lock cannot be derived from the minimal action. Two codes agree to 0.4 in $\chi^2$ and the
 field does not fragment. Fixed-number variants of the width and initial angle all fail. We outline a
@@ -660,7 +662,7 @@ parameter. Verdict on this test: \PACTverdict.
 Data & $\Delta\chi^2$ & $\Delta$AIC & $H_0$ & rule\\
 \midrule
 Planck 2018 + Pantheon+ (same polish) & $-4.70$ & $-0.70$ & 70.53 & pass ($<-4$)\\
-P-ACT + Pantheon+ (blind) & $-7.23$ & $-3.23$ & 70.43 & pass ($<-4$)\\
+P-ACT + DESI + Pantheon+ (blind) & $-7.23$ & $-3.23$ & 70.43 & pass ($<-4$)\\
 Planck 2018 + DES Y5 SNe & $-4.55$ & $-0.55$ & 70.47 & pass ($<-2$)\\
 Planck 2018 + DES-Dovekie SNe & $-5.08$ & $-1.08$ & 70.53 & pass ($<-2$)\\
 Planck 2018 + Union3 SNe & $-4.91$ & $-0.91$ & 70.55 & pass ($<-2$)\\
@@ -856,7 +858,7 @@ comparison prefers late. With $n=2$ the fit is worse than $\Lambda$CDM, so by it
 flat-bottomed $n=3$ shape. That fit was poorly converged in CAMB, which also cannot run $n=1$; a cleaner test
 needs AxiCLASS.
 
-\paragraph{Significance, and what is still running.} When $f_{\rm EDE}=0$ the angle $\theta_i$ has no
+\paragraph{Significance.} When $f_{\rm EDE}=0$ the angle $\theta_i$ has no
 meaning, so Wilks' theorem fails and the $\chi^2_2$ significances quoted in this paper are upper estimates.
 \paragraph{Profile in $f_{\rm EDE}$.} With $f_{\rm EDE}$ fixed at seven values and everything else refitted
 (pre-registered rule: early energy preferred if the rise at $f=0$ exceeds 3.84), the profile has its minimum at
@@ -890,8 +892,32 @@ Vitells \cite{grossvitells2010} with one upcrossing of the reference level, the 
 $1.2$--$1.4\sigma$: by the pre-registered bands, \textbf{a weak hint}. All the $\sigma$ values quoted elsewhere in this
 paper should be read with this correction in mind.
 
-\paragraph{Still running.} Early and late dark energy fitted together in AxiCLASS, since CAMB cannot run both at once,
-will be reported in a later version.
+\paragraph{Early and late together.} CAMB cannot run the early field and a $w_0$--$w_a$ fluid at once, so all four
+models were refitted in AxiCLASS on the same data (pre-registered: early energy survives if
+$D=\chi^2_{\rm early+late}-\chi^2_{\rm late}<-4$ with $D+4<0$, is not needed if $D\ge-1$, and is mild in between).
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+Model (AxiCLASS) & $\chi^2$ & $\Delta\chi^2$ vs $\Lambda$CDM & $H_0$ & $f_{\rm EDE}$, $\theta_i$ & $w_0$, $w_a$\\
+\midrule
+$\Lambda$CDM & 2402.99 & 0 & 68.12 & -- & --\\
+Late ($w_0$--$w_a$) & 2392.04 & $-10.95$ & 67.62 & -- & $-0.829$, $-0.644$\\
+Early (locked) & 2396.94 & $-6.05$ & 70.39 & 0.080, 2.72 & --\\
+Early + late & 2388.39 & $-14.60$ & 69.40 & 0.069, 2.69 & $-0.858$, $-0.477$\\
+\bottomrule
+\end{tabular}
+\caption{Early and late dark energy on Planck low-$\ell$ + ACT DR6 + SPT-3G D1 + DESI DR2 + Pantheon+ (AxiCLASS).}
+\label{tab:early_late}
+\end{table}
+
+$D=\AthreeD$, so the verdict is \AthreeVerdict: adding early energy to late dark energy still improves the fit, but
+by less than its two parameters cost ($\Delta$AIC $+0.35$). The engines agree: AxiCLASS gives $-6.05$ and $-10.95$
+for the early and late models against CAMB's $-5.63$ and $-10.89$. The early signal is not absorbed by the late one
+($f_{\rm EDE}$ falls only from 0.080 to 0.069), while adding early energy weakens the late signal ($w_a$ moves from
+$-0.64$ to $-0.48$), as Wang and Piao found \cite{wangpiao2025}.
 
 %======================================================================
 \section{What geometry does and does not fix}\label{sec:derive}
@@ -910,7 +936,12 @@ the field at $a/a_{\rm eq}\approx0.07/|\xi|$, so it places the onset near equali
 modifies gravity. No polynomial combination of $R^2$, $R_{\mu\nu}R^{\mu\nu}$ and the Gauss--Bonnet term vanishes in
 both eras without vanishing identically; non-polynomial triggers exist \cite{jing2024} but do not arise from the
 Holst action. The lock is therefore a phenomenological choice. The data exclude a peak later than equality and
-barely distinguish equality from an earlier peak (profile in $z_c$).
+barely distinguish equality from an earlier peak (profile in $z_c$). A pre-registered phase-space test confirms this.
+The autonomous system in $(x,y,\Omega_r)$ has no saddle point at equality, only radiation-era, matter-era and
+radiation-scaling fixed points. Across two decades of $\Lambda^4$ the peak redshift moves by a factor $S\approx3.5$
+without coupling, and by at best $S\approx2.9$ with a conformal CDM coupling $|\beta|\le0.1$, far from the $S<1.5$ a
+derived lock would need. A dynamical lock requires field-dependent couplings to both radiation and matter
+\cite{ramadan2023}, which the minimal action does not provide.
 
 %======================================================================
 \section{Outlook: the twist field as late dark energy}\label{sec:late}
@@ -918,9 +949,12 @@ The findings above point the other way. Late evolving dark energy is what the co
 potential for the field is $n=1$; and the construction $\phi=\sqrt{3/2}\,\Mp\,{\rm arsinh}(1/\gamma)$ gives a
 Planck-scale field range for free. These are exactly the ingredients of thawing pseudo-Goldstone quintessence
 \cite{frieman1995}, whose $w_0>-1$, $w_a<0$ matches the DESI direction, and which has recently been fitted to DESI
-data \cite{lin2025}. In this ``late twist'' the field is all of the dark energy, with $V=\Lambda^4[1-\cos(\phi/F)]$ and
+data \cite{lin2025}. A Barbero--Immirzi scalar has been used as dark energy before, in quintom form via topological
+invariants \cite{pollari2023}. In this ``late twist'' the field is all of the dark energy, with $V=\Lambda^4[1-\cos(\phi/F)]$ and
 two free parameters ($F$, $m$). A pre-registered AxiCLASS test against $\Lambda$CDM and $w_0$--$w_a$, including a
-check that the fitted $F$ and $m$ fall in the field's natural range, is running. The energy scale ($\sim$meV) is still
+check that the fitted $F$ and $m$ fall in the field's natural range, was run in AxiCLASS. The first attempt stalled
+(the reported minimum lay 11 in $\chi^2$ above a point found by hand), so it is being repeated from better starting
+points. Both attempts will be reported. The energy scale ($\sim$meV) is still
 put in by hand, and gravitational-wave bounds on a field evolving today \cite{gao2026} must be respected.
 
 %======================================================================
@@ -981,8 +1015,24 @@ $\Delta\chi^2$ values are what the AIC comparison requires, but the $\Lambda$CDM
 itself shows a near-degeneracy of order one unit of $\chi^2$ between the likelihood and the
 calibration prior (\S\ref{sec:fits}). Differences below about one unit should not be
 over-interpreted. EDE posteriors are also known to suffer prior-volume effects, which is a
-reason to quote profile and best-fit results \cite{poulin2025}. MCMC chains (four per model, with a
-Gelman--Rubin rule $R-1<0.02$ fixed in advance) are running and will be reported in a later version.
+reason to quote profile and best-fit results \cite{poulin2025}. Our profile ($f_{\rm EDE}\approx0.08$, 68\% range
+0.05--0.10) agrees with their independent profile on similar data ($f_{\rm EDE}=0.09\pm0.03$). MCMC chains (four per
+model, Gelman--Rubin rule $R-1<0.02$ fixed in advance) were stopped to save compute. The P-ACT $\Lambda$CDM chains had
+converged ($R-1=0.015$, $H_0=68.29\pm0.27$); the early-energy chains had not ($R-1\approx2.9$) and are not used.
+
+\paragraph{Further limitations.} (i) The axion weak gravity conjecture requires $F\lesssim0.008\,\Mp$ for typical
+EDE parameters \cite{rudelius2022}; our fitted early decay constant is $F\simeq0.145\,\Mp$ and the late role needs
+$F\sim\Mp$, as do most axion EDE and quintessence models. (ii) With the SH0ES distance ladder included, which we
+exclude by design, the locked field improves on $\Lambda$CDM by $\Delta\chi^2=-30.2$ ($H_0=72.2$, $f_{\rm EDE}=0.126$)
+on Planck + DESI + Pantheon+. That improvement is driven by the $H_0$ prior. (iii) Mechanisms that place an EDE
+episode at equality and let one field act both early and late already exist \cite{ramadan2023,brissenden2023}. Our
+lock is a phenomenological stand-in for such a mechanism, not a derivation of one. (iv) Fixing the onset near equality
+is not new: one-parameter EDE with $z_c$ and $\theta_i$ fixed near their Planck best fit ($\log_{10}z_c\simeq3.57$,
+$\theta_i\simeq2.78$) found a $\sim2\sigma$ preference on Planck alone \cite{murgia2021,smith2021}, and a profile
+analysis showed that the inferred $f_{\rm EDE}$ depends strongly on which fixed values are chosen \cite{herold2022}.
+That is the effect our look-elsewhere correction accounts for. What is new here is the torsion motivation, the tie of the
+onset to the fitted $\omega_b+\omega_c$, and the pre-registered tests on the newer data. (v) Torsion cosmology has also
+been fitted directly to DESI DR2 \cite{liu2025torsion}, with a torsion parameter consistent with zero.
 
 \paragraph{``The required $\omega_c$ is far from Planck.''} $\omega_c\simeq0.144$ follows
 from geometry (\S\ref{sec:geometry}) for any sound-horizon solution that respects BAO.
@@ -1045,8 +1095,9 @@ variation of $\gamma$ would falsify this version.
 %======================================================================
 \section{Conclusions}
 \paragraph{Version 3 in brief.} On all CMB data combined with DESI DR2 and Pantheon+, the locked early field passes
-its pre-registered rule ($\Delta\chi^2=-5.63$) but late evolving dark energy fits better, and the quoted
-significances are upper estimates until the running profile and look-elsewhere analyses report. The potential's shape and the lock are assumptions that geometry does not supply
+its pre-registered rule ($\Delta\chi^2=-5.63$) but late evolving dark energy fits better. After the look-elsewhere
+correction the early preference is a weak hint ($1.2$--$1.4\sigma$), and alongside late dark energy it is mild
+($D=\AthreeD$). The potential's shape and the lock are assumptions that geometry does not supply
 (\S\ref{sec:derive}). The torsion construction motivates the field; it does not determine its numbers. The same
 field acting late (\S\ref{sec:late}) uses its natural potential and range, and is the direction we now test.
 
@@ -1173,6 +1224,24 @@ cosmic radiation-matter transition}, Phys.\ Rev.\ D \textbf{109}, 044016 (2024),
 Nambu-Goldstone bosons}, Phys.\ Rev.\ Lett.\ \textbf{75}, 2077 (1995), arXiv:astro-ph/9505060.
 \bibitem{lin2025} W.~Lin, L.~Visinelli, T.~T.~Yanagida, \emph{Testing Quintessence Axion Dark Energy with Recent
 Cosmological Results}, JCAP \textbf{10}, 023 (2025), arXiv:2504.17638.
+\bibitem{murgia2021} R.~Murgia, G.~F.~Abell\'an, V.~Poulin, \emph{Early dark energy resolution to the Hubble tension
+in light of weak lensing surveys and lensing anomalies}, Phys.\ Rev.\ D \textbf{103}, 063502 (2021), arXiv:2009.10733.
+\bibitem{smith2021} T.~L.~Smith et al., \emph{Early dark energy is not excluded by current large-scale structure
+data}, Phys.\ Rev.\ D \textbf{103}, 123542 (2021), arXiv:2009.10740.
+\bibitem{herold2022} L.~Herold, E.~G.~M.~Ferreira, E.~Komatsu, \emph{New constraint on Early Dark Energy from Planck
+and BOSS data using the profile likelihood}, Astrophys.\ J.\ Lett.\ \textbf{929}, L16 (2022), arXiv:2112.12140.
+\bibitem{liu2025torsion} T.~Liu, X.~Li, T.~Xu, M.~Biesiada, J.~Wang, \emph{Torsion cosmology in the light of DESI,
+supernovae and CMB observational constraints}, Eur.\ Phys.\ J.\ C \textbf{85}, 1351 (2025), arXiv:2507.04265.
+\bibitem{rudelius2022} T.~Rudelius, \emph{Constraints on Early Dark Energy from the Axion Weak Gravity Conjecture},
+arXiv:2203.05575 (2022).
+\bibitem{ramadan2023} O.~F.~Ramadan, T.~Karwal, J.~Sakstein, \emph{An Attractive Proposal for Resolving the Hubble
+Tension: Dynamical Attractors that Unify Early and Late Dark Energy}, arXiv:2309.08082 (2023).
+\bibitem{brissenden2023} L.~Brissenden, K.~Dimopoulos, S.~S\'anchez L\'opez, \emph{Explaining the Hubble tension and
+dark energy from alpha-attractors}, arXiv:2303.15523 (2023).
+\bibitem{pollari2023} G.~Pollari, \emph{Cosmological scenarios from topological invariants: Inflation and Quintom theory
+with Barbero--Immirzi scalar field}, arXiv:2308.03145 (2023).
+\bibitem{wangpiao2025} H.~Wang, Y.-S.~Piao, \emph{Dark energy after pre-recombination early dark energy in light of
+DESI DR2 and the latest ACT and SPT data}, arXiv:2511.16606 (2025).
 \bibitem{gao2026} Z.-F.~Gao et al., \emph{Dynamical Barbero--Immirzi field coupled to quintessence: gravitational-wave
 propagation constraints and next-generation forecasts}, arXiv:2608.09487 (2026).
 \bibitem{camphuis2025} E.~Camphuis et al.\ (SPT-3G), \emph{SPT-3G D1: CMB temperature and polarization
