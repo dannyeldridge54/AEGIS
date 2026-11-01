@@ -1,0 +1,150 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights.
+"""ROUTE.md A3: early AND late together, on Planck + ACT + SPT-3G + DESI DR2 + Pantheon+, all in AxiCLASS
+(CubeMind PREREGISTRATION_EARLY_LATE.md). CAMB cannot run its early-quintessence field and a w0-wa fluid at once;
+AxiCLASS (CLASS) can: the twist field is the scalar field, late dark energy is a w0-wa fluid (PPF).
+
+Four models, same engine, same settings (bobyqa, best of 4), so engine offsets cancel:
+    ax_spa_lcdm, ax_spa_w0wa, ax_spa_edelock, ax_spa_edelock_w0wa
+Runs inside WSL (micromamba env 'aegis'):
+    python .../axiclass/early_late_spa.py <name>        -> results/cmp_<name>.json
+    python .../axiclass/early_late_spa.py smoke         -> builds all four, prints finite/not only
+"""
+import json
+import math
+import os
+import sys
+import time
+
+ROOT = "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit"
+PACKAGES = ROOT + "/packages"
+OUT = ROOT + "/results"
+
+LOCK = "lambda omega_b, omega_cdm: np.log10(2.4728e-5 * (1 + 0.22711 * 3.044) / (omega_b + omega_cdm))"
+BASE_ARGS = {"N_ncdm": 1, "m_ncdm": 0.06, "N_ur": 2.0328, "non_linear": "hmcode", "l_max_scalars": 9000}
+EDE_ARGS = {"do_shooting": "yes", "do_shooting_scf": "yes", "scf_potential": "axion", "n_axion": 3,
+            "security_small_Omega_scf": 0.001, "n_axion_security": 2.09, "use_big_theta_scf": "yes",
+            "scf_has_perturbations": "yes", "attractor_ic_scf": "no", "scf_tuning_index": 0}
+
+
+def _theory_class():
+    """This AxiCLASS build ignores scf_theta_ini_cobaya; it only takes the starting angle as the text
+    'scf_parameters = theta, 0.'. Cobaya samples theta_i_scf; this wrapper turns it into that text each step."""
+    from cobaya.theories.classy import classy as _classy
+
+    class ClassyTwist(_classy):
+        def set(self, params_values_dict):
+            p = dict(params_values_dict)
+            if "theta_i_scf" in p:
+                self.extra_args["scf_parameters"] = f"{p.pop('theta_i_scf')}, 0."
+            super().set(p)
+    return ClassyTwist
+
+
+def P(lo, hi, loc, scale, latex=None):
+    d = {"prior": {"min": lo, "max": hi}, "ref": {"dist": "norm", "loc": loc, "scale": scale}, "proposal": scale}
+    if latex:
+        d["latex"] = latex
+    return d
+
+
+CAMB2CLASS = {"logA": "logA", "ns": "n_s", "theta_s_100": "theta_s_1e2", "ombh2": "omega_b", "omch2": "omega_cdm",
+              "tau": "tau_reio", "A_act": "A_act", "P_act": "P_act", "Tcal": "Tcal", "Ecal": "Ecal",
+              "fde_zc": "fraction_axion_ac", "theta_i": "theta_i_scf", "w": "w0_fld", "wa": "wa_fld"}
+
+
+def _start_from_camb(params, early, late):
+    """Start each restart near the CAMB best point of the same model on the same data (spa_*), to cut AxiCLASS run
+    time (~16 s per evaluation). Only the 'ref' centre moves; priors are unchanged. The early+late model takes the
+    early parameters from spa_edelock and w0, wa from spa_w0wa."""
+    srcs = (["spa_edelock"] if early else ["spa_lcdm"]) + (["spa_w0wa"] if late else [])
+    for s in srcs:
+        m = json.load(open(f"{OUT}/cmp_{s}.json"))["minimum"]
+        for ck, xk in CAMB2CLASS.items():
+            if s == "spa_w0wa" and early and ck not in ("w", "wa"):
+                continue
+            if ck in m and xk in params and "ref" in params[xk]:
+                params[xk]["ref"]["loc"] = float(m[ck])
+
+
+def make(name):
+    import candl.interface
+    import spt_candl_data
+    early = "edelock" in name
+    late = "w0wa" in name
+    extra = dict(BASE_ARGS)
+    params = {
+        "logA": dict(P(2.5, 3.5, 3.055, 0.003), drop=True),
+        "A_s": {"value": "lambda logA: 1e-10*np.exp(logA)"},
+        "n_s": P(0.85, 1.1, 0.975 if early else 0.968, 0.003),
+        "theta_s_1e2": dict(P(1.03, 1.05, 1.0412, 0.0002), drop=True),
+        "100*theta_s": {"value": "lambda theta_s_1e2: theta_s_1e2", "derived": False},
+        "omega_b": P(0.019, 0.026, 0.0225, 0.00008),
+        "omega_cdm": P(0.09, 0.16, 0.124 if early else 0.118, 0.0008),
+        "tau_reio": P(0.02, 0.12, 0.057, 0.004),
+        "A_act": P(0.5, 1.5, 1.0, 0.003), "P_act": P(0.9, 1.1, 1.0, 0.01),
+        "Tcal": P(0.8, 1.2, 1.0, 0.003), "Ecal": P(0.8, 1.2, 1.0, 0.005),
+        "H0": {"latex": "H_0"}, "sigma8": {"latex": r"\sigma_8"}, "Omega_m": {"latex": r"\Omega_m"},
+    }
+    if early:
+        extra.update(EDE_ARGS)
+        params["fraction_axion_ac"] = P(0.001, 0.3, 0.07, 0.006)
+        params["log10_axion_ac"] = {"value": LOCK, "derived": False}       # the lock: peak at equality
+        params["theta_i_scf"] = P(0.1, 3.1, 2.75, 0.04, r"\theta_i")
+    prior = {"cal_dip_prior": "lambda A_act: stats.norm.logpdf(A_act, loc=1.0, scale=0.003)",
+             "gaussian_Tcal": "lambda Tcal: stats.norm.logpdf(Tcal, loc=1.0, scale=0.0036)"}
+    if late:
+        extra.update({"Omega_Lambda": 0.0, "use_ppf": "yes",              # w0-wa fluid takes the closure;
+                      "fluid_equation_of_state": "CLP"})                    # this build reads w0/wa only with CLP
+        params["w0_fld"] = P(-3.0, 1.0, -0.84, 0.05)
+        params["wa_fld"] = P(-3.0, 2.0, -0.6, 0.1)
+        prior["w0wa_bound"] = "lambda w0_fld, wa_fld: 0.0 if w0_fld + wa_fld < 0 else -np.inf"
+    likes = {
+        "planck_2018_lowl.TT": None, "planck_2018_lowl.EE": None,
+        "act_dr6_cmbonly.PlanckActCut": None, "act_dr6_cmbonly.ACTDR6CMBonly": None,
+        "act_dr6_lenslike.ACTDR6LensLike": {"variant": "actplanck_baseline", "lens_only": False, "lmax": 4000},
+        "spt3g_d1_tne_lite": {"external": candl.interface.CandlCobayaLikelihood,
+                              "data_set_file": spt_candl_data.SPT3G_D1_TnE, "variant": "lite",
+                              "clear_internal_priors": True, "additional_args": {}, "wrapper": None,
+                              "feedback": False},
+        "bao.desi_dr2.desi_bao_all": None, "sn.pantheonplus": None,
+    }
+    _start_from_camb(params, early, late)
+    return {"theory": {"classytwist": {"external": _theory_class(), "extra_args": extra, "ignore_obsolete": True}},
+            "likelihood": likes,
+            "params": params, "prior": prior, "packages_path": PACKAGES,
+            "sampler": {"minimize": {"method": "bobyqa", "best_of": 2}},      # same for all four models
+            "output": f"{OUT}/chains/cmp_{name}", "resume": False, "force": True}
+
+
+def smoke():
+    import copy
+    from cobaya.model import get_model
+    for n in ("ax_spa_lcdm", "ax_spa_w0wa", "ax_spa_edelock", "ax_spa_edelock_w0wa"):
+        info = copy.deepcopy(make(n))
+        for k in ("sampler", "output", "resume", "force"):
+            info.pop(k, None)
+        t = time.time()
+        try:
+            m = get_model(info)
+            sp = m.parameterization.sampled_params()
+            ok = math.isfinite(m.logposterior(dict(zip(sp, m.prior.reference(random_state=1)))).logpost)
+        except Exception as e:
+            ok = f"ERROR {type(e).__name__}: {str(e)[:160]}"
+        print(f"{n:22s} finite: {ok}   ({time.time() - t:.0f} s incl. setup)", flush=True)
+
+
+def run(name):
+    from cobaya.run import run as crun
+    t = time.time()
+    upd, mini = crun(make(name))
+    m = mini.products()["minimum"]
+    row = {k: float(m[k]) for k in m.keys() if isinstance(m[k], (int, float))}
+    row["chi2"] = float(sum(v for k, v in row.items() if k.startswith("chi2__") and "." not in k[6:]) or
+                        row.get("chi2", float("nan")))
+    json.dump({"run": name, "engine": "AxiCLASS", "seconds": time.time() - t, "minimum": row},
+              open(f"{OUT}/cmp_{name}.json", "w"), indent=2)
+    print("done", name, row.get("H0"), row.get("chi2"), flush=True)
+
+
+if __name__ == "__main__":
+    smoke() if sys.argv[1] == "smoke" else run(sys.argv[1])
