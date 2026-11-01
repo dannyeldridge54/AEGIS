@@ -172,6 +172,10 @@ def make(name):
         info["params"]["theta_i"] = {"value": theta_fixed}
     if core.endswith("P") or name.startswith(("pact_", "spt_", "spa_")):
         _start_near(info, START_EDE if base == "ede" else START_LCDM)
+    if n_pow != 3 and base == "ede" and isinstance(info["params"].get("theta_i"), dict) \
+            and "ref" in info["params"]["theta_i"]:
+        # CAMB's zc/fde solver fails for n = 2 at theta_i ~ 2.8 (smoke test 31 Oct); start lower. Starting point only.
+        info["params"]["theta_i"]["ref"] = {"dist": "norm", "loc": 2.5, "scale": SCALE["theta_i"]}
     if name.startswith("pact_"):
         _pact(info)
     if name.startswith("spt_"):
