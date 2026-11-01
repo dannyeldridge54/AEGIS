@@ -163,9 +163,32 @@ def save(name, seconds=None):
     print("done", name, row.get("H0"), row.get("chi2"), flush=True)
 
 
+PENALTY = -1e5
+
+
+def _guard_minimizer():
+    """Late Twist only (PREREGISTRATION_SPT3G_DEVIATIONS.md, minimiser guard): inside the minimiser, a non-finite or
+    absurd log-posterior (closure impossible, or the field overshoots) becomes a flat PENALTY, so bobyqa rejects the
+    step instead of overflowing. Installed in run(), after Cobaya has already drawn finite starting points."""
+    from cobaya.samplers.minimize.minimize import Minimize
+    orig_run = Minimize.run
+
+    def guarded_run(self):
+        f = self.logp
+
+        def logp(x):
+            v = f(x)
+            return v if math.isfinite(v) and v > PENALTY else PENALTY
+        self.logp = logp
+        return orig_run(self)
+    Minimize.run = guarded_run
+
+
 def run(name):
     from cobaya.run import run as crun
     t = time.time()
+    if "latetwist" in name:
+        _guard_minimizer()
     crun(make(name))
     save(name, time.time() - t)
 
