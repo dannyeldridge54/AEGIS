@@ -1,0 +1,79 @@
+From f2706e4e01096ae8625005915cb2efe896653272 Mon Sep 17 00:00:00 2001
+From: Danny Lee Eldridge <danny@localhost>
+Date: Sun, 1 Nov 2026 14:53:37 -0600
+Subject: [PATCH] nl-scf-fix: field out of halofit/HMcode Omega_m; n_axion=1 no
+ longer forces include_scf_in_delta_m
+
+---
+ external/HMcode/hmcode.c   |  4 +++-
+ external/Halofit/halofit.c | 13 +++++++++++++
+ source/input.c             |  5 ++---
+ 3 files changed, 18 insertions(+), 4 deletions(-)
+
+diff --git a/external/HMcode/hmcode.c b/external/HMcode/hmcode.c
+index 54df307..447fd54 100644
+--- a/external/HMcode/hmcode.c
++++ b/external/HMcode/hmcode.c
+@@ -253,7 +253,9 @@ int hmcode_compute(
+              pba->error_message,
+              pfo->error_message);
+ 
+-  Omega_m = pvecback[pba->index_bg_Omega_m];//TBC (i.e. check if for P_cb here we should use Omega_cb) -- here the total time varying Omega_m is used for delta_c and for Delta_v according to the Mead fit of the Massara simulations.
++  Omega_m = pvecback[pba->index_bg_Omega_m];
++  if (pba->has_scf == _TRUE_) /* nl-scf-fix: the scalar field is dark energy, not rho-3p matter */
++    Omega_m -= (pvecback[pba->index_bg_rho_scf]-3.*pvecback[pba->index_bg_p_scf])/pvecback[pba->index_bg_rho_crit];//TBC (i.e. check if for P_cb here we should use Omega_cb) -- here the total time varying Omega_m is used for delta_c and for Delta_v according to the Mead fit of the Massara simulations.
+ 
+   /*growth = pvecback[pba->index_bg_D];*/ // This would be the simplest approach, but sadly HMcode and CLASS differ a bit in their growth definitions
+   class_call(array_spline_hunt(phg->a_table,
+diff --git a/external/Halofit/halofit.c b/external/Halofit/halofit.c
+index 86f8eba..f4d2ea5 100644
+--- a/external/Halofit/halofit.c
++++ b/external/Halofit/halofit.c
+@@ -106,8 +106,17 @@ int halofit(
+ 
+     Omega_m = pvecback[pba->index_bg_Omega_m];
+     Omega_v = 1.-pvecback[pba->index_bg_Omega_m]-pvecback[pba->index_bg_Omega_r];
++    if (pba->has_scf == _TRUE_) { /* nl-scf-fix: treat the scalar field as dark energy, not rho-3p matter */
++      Omega_m -= (pvecback[pba->index_bg_rho_scf]-3.*pvecback[pba->index_bg_p_scf])/pvecback[pba->index_bg_rho_crit];
++      Omega_v = 1.-Omega_m-(pvecback[pba->index_bg_Omega_r]-3.*pvecback[pba->index_bg_p_scf]/pvecback[pba->index_bg_rho_crit]);
++    }
+     /* until v2.9.3 this function was called at a_0=1 instead of a=pvecback[pba->index_bg_a] */
+     class_call(background_w_fld(pba,pvecback[pba->index_bg_a],&w,&dw_over_da_fld,&integral_fld), pba->error_message, pfo->error_message);
++    if (pba->has_scf == _TRUE_ && pba->has_fld == _FALSE_) { /* nl-scf-fix: effective w of field + Lambda */
++      double rho_de = pvecback[pba->index_bg_rho_scf], p_de = pvecback[pba->index_bg_p_scf];
++      if (pba->has_lambda == _TRUE_) { rho_de += pvecback[pba->index_bg_rho_lambda]; p_de -= pvecback[pba->index_bg_rho_lambda]; }
++      if (rho_de > 0.) w = p_de/rho_de;
++    }
+ 
+   }
+   else {
+@@ -207,6 +216,10 @@ int halofit(
+ 
+   Omega_m = pvecback[pba->index_bg_Omega_m];
+   Omega_v = 1.-pvecback[pba->index_bg_Omega_m]-pvecback[pba->index_bg_Omega_r];
++  if (pba->has_scf == _TRUE_) { /* nl-scf-fix: treat the scalar field as dark energy, not rho-3p matter */
++    Omega_m -= (pvecback[pba->index_bg_rho_scf]-3.*pvecback[pba->index_bg_p_scf])/pvecback[pba->index_bg_rho_crit];
++    Omega_v = 1.-Omega_m-(pvecback[pba->index_bg_Omega_r]-3.*pvecback[pba->index_bg_p_scf]/pvecback[pba->index_bg_rho_crit]);
++  }
+ 
+   // for debugging:
+   //printf("Call Halofit at z=%e\n",1./pvecback[pba->index_bg_a]-1.);
+diff --git a/source/input.c b/source/input.c
+index adab0a9..7776c8a 100644
+--- a/source/input.c
++++ b/source/input.c
+@@ -4627,9 +4627,8 @@ class_call(parser_read_double(pfc,"Omega_scf_shoot_fa",&param4,&flag4,errmsg),
+                     errmsg);
+         if(flag1 == _TRUE_){
+          pba->n_axion = param1;
+-         if(pba->n_axion==1){
+-           ppt->include_scf_in_delta_m = _TRUE_;
+-         }
++         /* nl-scf-fix: n_axion = 1 no longer forces include_scf_in_delta_m (axion dark energy must not dilute
++            delta_m); set include_scf_in_delta_m = yes for axion dark matter. */
+         }
+         else{
+           class_stop(errmsg,"incomprehensible input '%d' for the field 'n_axion'",param1);
+-- 
+2.53.0
+
