@@ -139,8 +139,7 @@ def run(name):
     upd, mini = crun(make(name))
     m = mini.products()["minimum"]
     row = {k: float(m[k]) for k in m.keys() if isinstance(m[k], (int, float))}
-    row["chi2"] = float(sum(v for k, v in row.items() if k.startswith("chi2__") and "." not in k[6:]) or
-                        row.get("chi2", float("nan")))
+    # Cobaya's own total "chi2" (sum of all likelihoods, priors excluded) is kept as reported.
     json.dump({"run": name, "engine": "AxiCLASS", "seconds": time.time() - t, "minimum": row},
               open(f"{OUT}/cmp_{name}.json", "w"), indent=2)
     print("done", name, row.get("H0"), row.get("chi2"), flush=True)
