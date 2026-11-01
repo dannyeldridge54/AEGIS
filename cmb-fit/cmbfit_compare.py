@@ -101,6 +101,9 @@ def make(name):
         name, k = name.split("_mcmc")
         mcmc_chain = int(k or 1)
     import re
+    deep = name.endswith("_deep")                   # robustness re-check, best of 12 (CubeMind PREREGISTRATION_DEEP_SEARCH.md)
+    if deep:
+        name = name[:-5]
     m_f = re.search(r"_F(\d+)$", name)
     if m_f:                                         # field width fixed to torsion/N (PREREG_N_PACT.md; PREREG_PHASE1.md 1.2)
         name, fwidth = name[:m_f.start()], int(m_f.group(1))
@@ -130,7 +133,7 @@ def make(name):
     else:
         core = name[5:] if name.startswith("pact_") else name
     base = "ede" if core.startswith(("ede", "edelock")) else "lcdm"
-    best_of = 8 if core.endswith("8") else 4
+    best_of = 12 if deep else (8 if core.endswith("8") else 4)
     info = C.make_info(base, shoes=shoes,
                        sampler={"minimize": {"method": "bobyqa", "best_of": best_of}},
                        output=os.path.join(C.RESULTS, "chains", "cmp_" + full))
