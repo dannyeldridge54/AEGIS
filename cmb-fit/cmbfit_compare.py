@@ -104,6 +104,10 @@ def make(name):
     deep = name.endswith("_deep")                   # robustness re-check, best of 12 (CubeMind PREREGISTRATION_DEEP_SEARCH.md)
     if deep:
         name = name[:-5]
+    fde_fixed = None
+    m_fde = re.search(r"_fde(\d+\.\d+)$", name)
+    if m_fde:                                       # profile point, f_EDE fixed (CubeMind PREREGISTRATION_PROFILE_F.md)
+        name, fde_fixed = name[:m_fde.start()], float(m_fde.group(1))
     m_f = re.search(r"_F(\d+)$", name)
     if m_f:                                         # field width fixed to torsion/N (PREREG_N_PACT.md; PREREG_PHASE1.md 1.2)
         name, fwidth = name[:m_f.start()], int(m_f.group(1))
@@ -170,6 +174,8 @@ def make(name):
         info["params"]["theta_i"] = {"value": float(name[2:])}
     if theta_fixed is not None:
         info["params"]["theta_i"] = {"value": theta_fixed}
+    if fde_fixed is not None:
+        info["params"]["fde_zc"] = {"value": fde_fixed}
     if core.endswith("P") or name.startswith(("pact_", "spt_", "spa_")):
         _start_near(info, START_EDE if base == "ede" else START_LCDM)
     if n_pow != 3 and base == "ede" and isinstance(info["params"].get("theta_i"), dict) \
