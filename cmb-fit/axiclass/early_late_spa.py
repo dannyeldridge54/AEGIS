@@ -148,17 +148,29 @@ def smoke():
         print(f"{n:22s} finite: {ok}   ({time.time() - t:.0f} s incl. setup)", flush=True)
 
 
-def run(name):
-    from cobaya.run import run as crun
-    t = time.time()
-    upd, mini = crun(make(name))
-    m = mini.products()["minimum"]
-    row = {k: float(m[k]) for k in m.keys() if isinstance(m[k], (int, float))}
+def save(name, seconds=None):
+    """Write results/cmp_<name>.json from Cobaya's own chains/cmp_<name>.minimum.txt (header row, value row).
+    (The minimizer's products() returns a OnePoint object without keys(), which crashed the first A3 save.)"""
+    lines = open(f"{OUT}/chains/cmp_{name}.minimum.txt").read().splitlines()
+    row = {k: float(v) for k, v in zip(lines[0].lstrip("#").split(), lines[1].split())}
     # Cobaya's own total "chi2" (sum of all likelihoods, priors excluded) is kept as reported.
-    json.dump({"run": name, "engine": "AxiCLASS", "seconds": time.time() - t, "minimum": row},
+    json.dump({"run": name, "engine": "AxiCLASS", "seconds": seconds, "minimum": row},
               open(f"{OUT}/cmp_{name}.json", "w"), indent=2)
     print("done", name, row.get("H0"), row.get("chi2"), flush=True)
 
 
+def run(name):
+    from cobaya.run import run as crun
+    t = time.time()
+    crun(make(name))
+    save(name, time.time() - t)
+
+
 if __name__ == "__main__":
-    smoke() if sys.argv[1] == "smoke" else run(sys.argv[1])
+    if sys.argv[1] == "smoke":
+        smoke()
+    elif sys.argv[1] == "save":                     # recover JSONs from finished runs: save <name> [<name> ...]
+        for n in sys.argv[2:]:
+            save(n)
+    else:
+        run(sys.argv[1])
