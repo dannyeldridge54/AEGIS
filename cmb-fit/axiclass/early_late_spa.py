@@ -12,6 +12,7 @@ Runs inside WSL (micromamba env 'aegis'):
 import json
 import math
 import os
+import re
 import sys
 import time
 
@@ -76,6 +77,11 @@ def make(name):
     early = "edelock" in base
     late = "w0wa" in base
     latetwist = "latetwist" in base                 # CubeMind PREREGISTRATION_LATE_TWIST.md
+    # CubeMind PREREGISTRATION_COUPLED_TWIST.md: the Late Twist plus a CDM coupling beta (needs the coupled build,
+    # see run()). "_beta<x>" fixes beta (C5 and the beta profile); otherwise beta is free in [-0.15, 0.15].
+    coupled = "coupledtwist" in base
+    fixed_beta = re.search(r"_beta(-?[0-9.]+)$", base)
+    latetwist = latetwist or coupled
     extra = dict(BASE_ARGS)
     if latetwist or base.endswith("_halofit"):
         # HMcode in this AxiCLASS refuses a scalar field present today ("not yet coded"), so the Late Twist and its
@@ -117,6 +123,11 @@ def make(name):
         params["log10_m"] = dict(P(-0.5, 1.5, 0.3, 0.05, r"\log_{10} m/H_0"), drop=True)
         params["f_axion"] = {"value": "lambda log10_F: 10**log10_F", "derived": False}
         params["m_axion"] = {"value": "lambda log10_m: 10**log10_m", "derived": False}
+    if coupled:
+        if fixed_beta:
+            extra["scf_coupling_beta"] = float(fixed_beta.group(1))
+        else:
+            params["scf_coupling_beta"] = P(-0.15, 0.15, 0.0, 0.02, r"\beta")
     likes = {
         "planck_2018_lowl.TT": None, "planck_2018_lowl.EE": None,
         "act_dr6_cmbonly.PlanckActCut": None, "act_dr6_cmbonly.ACTDR6CMBonly": None,
@@ -147,6 +158,7 @@ def smoke():
     import copy
     from cobaya.model import get_model
     for n in (sys.argv[2:] or ("ax_spa_lcdm", "ax_spa_w0wa", "ax_spa_edelock", "ax_spa_edelock_w0wa")):
+        _maybe_coupled(n)
         info = copy.deepcopy(make(n))
         for k in ("sampler", "output", "resume", "force"):
             info.pop(k, None)
@@ -172,6 +184,17 @@ def save(name, seconds=None):
 
 
 PENALTY = -1e5
+COUPLED_BUILD = "/home/syndyr/AxiCLASS_coupled/python/build"   # coupled/build_coupled.sh
+
+
+def _maybe_coupled(name):
+    """Coupled Twist runs load the coupled AxiCLASS build (coupled/build_coupled.sh), never the installed one."""
+    if "coupledtwist" not in name:
+        return
+    import glob
+    sys.path.insert(0, glob.glob(COUPLED_BUILD + "/lib*")[0])
+    import classy
+    assert classy.__file__.startswith(COUPLED_BUILD), classy.__file__
 
 
 def _guard_minimizer():
@@ -195,7 +218,8 @@ def _guard_minimizer():
 def run(name):
     from cobaya.run import run as crun
     t = time.time()
-    if "latetwist" in name:
+    _maybe_coupled(name)
+    if "latetwist" in name or "coupledtwist" in name:
         _guard_minimizer()
     crun(make(name))
     save(name, time.time() - t)
