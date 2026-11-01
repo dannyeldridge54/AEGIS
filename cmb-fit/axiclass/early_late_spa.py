@@ -128,6 +128,14 @@ def make(name):
         "bao.desi_dr2.desi_bao_all": None, ("sn.desy5" if desy5 else "sn.pantheonplus"): None,
     }
     _start_from_camb(params, early, late)
+    if latetwist:
+        # Rerun deviation (PREREGISTRATION_SPT3G_DEVIATIONS.md): start from the AxiCLASS LCDM halofit best fit, not the
+        # CAMB one (CAMB's theta is a different quantity); F, m references and all priors unchanged; best of 4.
+        best_of = 4
+        m = json.load(open(f"{OUT}/cmp_ax_spa_lcdm_halofit.json"))["minimum"]
+        for k, p in params.items():
+            if k in m and isinstance(p, dict) and "ref" in p:
+                p["ref"]["loc"] = float(m[k])
     return {"theory": {"classytwist": {"external": _theory_class(), "extra_args": extra, "ignore_obsolete": True}},
             "likelihood": likes,
             "params": params, "prior": prior, "packages_path": PACKAGES,
