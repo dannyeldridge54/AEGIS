@@ -73,7 +73,8 @@ def make(name):
     # CubeMind PREREGISTRATION_ROBUSTNESS.md suffixes: _b4 = best of 4 restarts (R1), _desy5 = DES Y5 SNe (R2).
     best_of = 4 if name.endswith("_b4") else 2
     desy5 = "_desy5" in name
-    base = name.replace("_b4", "").replace("_desy5", "")
+    dovekie = "_dovekie" in name                    # CubeMind PREREGISTRATION_DOVEKIE.md (corrected DES sample)
+    base = name.replace("_b4", "").replace("_desy5", "").replace("_dovekie", "")
     early = "edelock" in base
     late = "w0wa" in base
     latetwist = "latetwist" in base                 # CubeMind PREREGISTRATION_LATE_TWIST.md
@@ -143,7 +144,8 @@ def make(name):
                               "data_set_file": spt_candl_data.SPT3G_D1_TnE, "variant": "lite",
                               "clear_internal_priors": True, "additional_args": {}, "wrapper": None,
                               "feedback": False},
-        "bao.desi_dr2.desi_bao_all": None, ("sn.desy5" if desy5 else "sn.pantheonplus"): None,
+        "bao.desi_dr2.desi_bao_all": None,
+        ("sn.desy5" if desy5 else "sn.desdovekie" if dovekie else "sn.pantheonplus"): None,
     }
     _start_from_camb(params, early, late)
     if latetwist:
