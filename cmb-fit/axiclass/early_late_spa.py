@@ -71,7 +71,12 @@ def make(name):
     import spt_candl_data
     early = "edelock" in name
     late = "w0wa" in name
+    latetwist = "latetwist" in name                 # CubeMind PREREGISTRATION_LATE_TWIST.md
     extra = dict(BASE_ARGS)
+    if latetwist or name.endswith("_halofit"):
+        # HMcode in this AxiCLASS refuses a scalar field present today ("not yet coded"), so the Late Twist and its
+        # reference runs (ax_spa_lcdm_halofit, ax_spa_w0wa_halofit) all use halofit (PREREGISTRATION_LATE_TWIST deviation).
+        extra["non_linear"] = "halofit"
     params = {
         "logA": dict(P(2.5, 3.5, 3.055, 0.003), drop=True),
         "A_s": {"value": "lambda logA: 1e-10*np.exp(logA)"},
@@ -98,6 +103,16 @@ def make(name):
         params["w0_fld"] = P(-3.0, 1.0, -0.84, 0.05)
         params["wa_fld"] = P(-3.0, 2.0, -0.6, 0.1)
         prior["w0wa_bound"] = "lambda w0_fld, wa_fld: 0.0 if w0_fld + wa_fld < 0 else -np.inf"
+    if latetwist:
+        # Late Twist: n = 1 cosine, all the dark energy (no Lambda); the starting angle is tuned for closure.
+        extra.update({"scf_potential": "axion", "n_axion": 1, "scf_has_perturbations": "yes",
+                      "attractor_ic_scf": "no", "scf_evolve_as_fluid": "no", "do_shooting": "yes",
+                      "do_shooting_scf": "yes", "Omega_Lambda": 0, "Omega_fld": 0, "Omega_scf": -1,
+                      "scf_tuning_index": 0, "scf_parameters": "1.5, 0."})
+        params["log10_F"] = dict(P(-1.3, 0.5, 0.0, 0.05, r"\log_{10} F/M_{\rm Pl}"), drop=True)
+        params["log10_m"] = dict(P(-0.5, 1.5, 0.3, 0.05, r"\log_{10} m/H_0"), drop=True)
+        params["f_axion"] = {"value": "lambda log10_F: 10**log10_F", "derived": False}
+        params["m_axion"] = {"value": "lambda log10_m: 10**log10_m", "derived": False}
     likes = {
         "planck_2018_lowl.TT": None, "planck_2018_lowl.EE": None,
         "act_dr6_cmbonly.PlanckActCut": None, "act_dr6_cmbonly.ACTDR6CMBonly": None,
@@ -119,7 +134,7 @@ def make(name):
 def smoke():
     import copy
     from cobaya.model import get_model
-    for n in ("ax_spa_lcdm", "ax_spa_w0wa", "ax_spa_edelock", "ax_spa_edelock_w0wa"):
+    for n in (sys.argv[2:] or ("ax_spa_lcdm", "ax_spa_w0wa", "ax_spa_edelock", "ax_spa_edelock_w0wa")):
         info = copy.deepcopy(make(n))
         for k in ("sampler", "output", "resume", "force"):
             info.pop(k, None)
