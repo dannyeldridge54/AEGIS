@@ -1,0 +1,11 @@
+{
+  "run": "ax_spa_edelock_w0wa",
+  "f_axion": 0.1450897184491101,
+  "m_axion": 296366.92764135177,
+  "log10_f_axion": -0.838363362055879,
+  "log10_m_axion": 5.471829737956937,
+  "fraction_axion_ac": "n/a (CosmoSevereError)",
+  "log10_axion_ac": -3.549555891674842,
+  "a_c": "n/a (CosmoSevereError)",
+  "z_c": "n/a (CosmoSevereError)"
+}
