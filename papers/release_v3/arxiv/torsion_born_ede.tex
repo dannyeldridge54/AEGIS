@@ -1,0 +1,1234 @@
+% Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV), https://firstdonoharm.dev/version/3/0/mil-sv.html : free to everyone, of every race, creed and people, for any use that respects human rights. AEGIS-ID: 3f04a9fc2c2bfc02
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\newcommand{\Mp}{M_{\rm Pl}}
+% ---- Planck + ACT DR6 pre-registered test: completed 29 October 2026 (cmb-fit/results/COMPARE.md) ----
+\newcommand{\PACTstatus}{completed 29 October 2026; \textbf{passed}}
+\newcommand{\PACTdchiL}{\ensuremath{-7.14}}   % Locked Twist, effective chi^2
+\newcommand{\PACTdchiE}{\ensuremath{-7.23}}   % Locked Twist, total chi^2
+\newcommand{\PACTdaic}{\ensuremath{-3.23}}    % Locked Twist, Delta AIC
+\newcommand{\PACTfreeL}{\ensuremath{-7.47}}   % free Twist (3 settings), total chi^2
+\newcommand{\PACTverdict}{\textbf{passed} (rule $\Delta\chi^2<-4$); overall pre-registered verdict a \textbf{tie} because of $S_8$ (\S\ref{sec:verdict})}
+% ---- SPT-3G D1 (cmb-fit/results/cmp_spt_*.json). Fill the free-width macros when spt_edelock finishes. ----
+\newcommand{\SPTfreeDone}{1}                    % cmp_spt_edelock.json, 31 Oct 2026 17:04 CT
+\newcommand{\SPTfreeDchi}{\ensuremath{-1.27}}   % Delta chi^2, locked model with free width, vs LCDM
+\newcommand{\SPTfreeHz}{\ensuremath{69.60}}     % its H0
+\newcommand{\SPTfreeF}{\ensuremath{0.045}}      % its f_EDE
+\newcommand{\SPTfreeN}{\ensuremath{24.1}}       % implied divisor N = sqrt(3/2)/F
+\newcommand{\SPTfreeVerdict}{no preference ($\Delta{\rm AIC}=+2.73$)}
+\newcommand{\SPTsevenDchi}{\ensuremath{+1.66}}  % N = 7 variant (fixed in advance), cmp_spt_edelock_F7.json
+\newcommand{\SPTsevenVerdict}{a \textbf{fail} ($\Delta\chi^2=\SPTsevenDchi$)}
+
+% ---- Version 3: results still running on 31 Oct 2026 (CubeMind AUTO_RESULTS.md). Fill when they land. ----
+\newcommand{\Pending}{\textit{[pending]}}
+\newcommand{\AoneLo}{\Pending}          % 95% lower end of f_EDE from the profile (PREREGISTRATION_PROFILE_F.md)
+\newcommand{\AoneHi}{\Pending}          % 95% upper end
+\newcommand{\AoneRise}{\Pending}        % chi2(f=0) - chi2_min
+\newcommand{\AoneVerdict}{\Pending}     % PREFERRED / MILD / NOT PREFERRED
+\newcommand{\AtwoZloc}{\Pending}        % local significance
+\newcommand{\AtwoZglob}{\Pending}       % global (look-elsewhere) significance, conservative
+\newcommand{\AtwoVerdict}{\Pending}
+\newcommand{\AthreeD}{\Pending}         % chi2(early+late) - chi2(late)
+\newcommand{\AthreeVerdict}{\Pending}   % SURVIVES / MILD / NOT NEEDED
+\newcommand{\LateLone}{\Pending}        % Late Twist vs LCDM
+\newcommand{\LateLtwo}{\Pending}        % Late Twist vs w0-wa
+\newcommand{\LateLthree}{\Pending}      % natural range of F and m
+
+\title{\textbf{Torsion-Motivated Early Dark Energy\\ with an Onset Locked to Matter--Radiation Equality:\\
+Pre-Registered Tests on Planck, ACT, SPT-3G and DESI}}
+\author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma, USA. Contact: dannyeldridge54@gmail.com.
+Code, fit results and pre-registrations: \url{https://github.com/dannyeldridge54/AEGIS}; archived at Zenodo, doi:\href{https://doi.org/10.5281/zenodo.23847152}{10.5281/zenodo.23847152}.}}
+\date{Version 3 (draft), November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Promoting the Barbero--Immirzi parameter of Einstein--Cartan--Holst gravity to a field gives a
+canonical, ghost-free pseudoscalar. With an assumed potential $V=\Lambda^4[1-\cos(\phi/F)]^3$ it is
+axion-like early dark energy (EDE); we fix the peak of its energy fraction at matter--radiation
+equality, leaving two extra parameters, and test it with full Boltzmann codes and decision rules hashed
+before each fit. On Planck + ACT DR6 + DESI DR2 + Pantheon+ it improves on $\Lambda$CDM by
+$\Delta\chi^2=-7.23$; on SPT-3G D1 alone no version improves meaningfully (best $\Delta\chi^2=-1.27$). On all three CMB
+data sets combined with DESI DR2 and Pantheon+ it passes its pre-registered rule ($\Delta\chi^2=-5.63$,
+$f_{\rm EDE}=0.070$, $H_0=70.15$), but late evolving dark energy ($w_0$--$w_a$) fits better
+($\Delta\chi^2=-10.89$; $\Delta$AIC lower by 5.3). Because the initial angle is undefined when
+$f_{\rm EDE}=0$, the naive significances are upper estimates; a profile likelihood, a look-elsewhere
+correction and a joint early-plus-late fit are pre-registered and running. The data favour the flat-bottomed $n=3$ shape over $n=2$,
+which we show is not produced by the Nieh--Yan term or by natural instanton or anomaly potentials, and
+the equality lock cannot be derived from the minimal action. Two codes agree to 0.4 in $\chi^2$ and the
+field does not fragment. Fixed-number variants of the width and initial angle all fail. We outline a
+late-time alternative in which the same field, with the natural $n=1$ potential and a Planck-scale range,
+acts as thawing dark energy. We state which parts are derived, which are assumed, and which failed.
+\end{abstract}
+
+\tableofcontents
+
+%======================================================================
+\section{Introduction}\label{sec:intro}
+
+\subsection{The problem}
+Distance-ladder measurements give $H_0\simeq73$~km\,s$^{-1}$\,Mpc$^{-1}$
+\cite{riess2022}. The Planck CMB analysis under flat $\Lambda$CDM gives
+$67.36\pm0.54$ \cite{planck2020}. The CMB measures the angle
+\begin{equation}
+\theta_*=\frac{r_s^*}{D_C(z_*)}
+\end{equation}
+to about $0.03\%$. Here $r_s^*$ is the comoving sound horizon at photon decoupling and
+$D_C(z_*)$ the comoving distance to it. If new physics shortens $r_s^*$, a shorter
+$D_C(z_*)$, and therefore a larger $H_0$, becomes compatible with the same angle. A
+component of energy that briefly matters near matter--radiation equality and then
+dilutes faster than radiation does exactly this. That is the idea behind early dark
+energy (EDE) \cite{karwal2016,poulin2019}.
+
+\subsection{What this paper adds}
+EDE is usually introduced as a scalar field with no stated origin. Here we derive such a
+field from the geometry of spacetime, specifically from torsion, and show that the
+derivation fixes its sign, its kinetic structure and its screening behaviour. The paper
+is organised so that every step falls into one of three classes:
+\begin{itemize}
+\item \textbf{Derived:} follows from the stated action with no further input
+(\S\ref{sec:ec}--\S\ref{sec:immirzi}, \S\ref{sec:cosmo}).
+\item \textbf{Assumed:} the scalar potential $V(\phi)$ (\S\ref{sec:potential}). This is the
+only free functional input.
+\item \textbf{Computed:} every number, by code that is supplied (Appendix~\ref{app:code}).
+\item \textbf{Tested:} a reduced model whose onset is locked to matter--radiation equality
+(\S\ref{sec:lock}), and every variant fitted with a full Boltzmann code and likelihoods
+(\S\ref{sec:fits}--\S\ref{sec:pact}), with decision rules fixed and hashed in advance.
+\end{itemize}
+\S\ref{sec:objections} collects the objections a referee is likely to raise and answers
+each one, or states that it remains open.
+
+\paragraph{Conventions.} Signature $(-,+,+,+)$; $\kappa=8\pi G=\Mp^{-2}$ with $\Mp$ the
+reduced Planck mass; $\hbar=c=1$ unless restored. Densities $\omega_i\equiv\Omega_ih^2$.
+
+%======================================================================
+\section{Einstein--Cartan gravity}\label{sec:ec}
+
+\subsection{Action and the Cartan equation}
+EC theory keeps the metric $g_{\mu\nu}$ but lets the connection be non-symmetric. Its
+antisymmetric part is the torsion,
+\begin{equation}
+T^\lambda{}_{\mu\nu}=\Gamma^\lambda{}_{\mu\nu}-\Gamma^\lambda{}_{\nu\mu}.
+\end{equation}
+In first-order (tetrad) form, with tetrad $e^a{}_\mu$ and spin connection
+$\omega^{ab}{}_\mu$ varied independently, the action including the Holst term is
+\cite{holst1996}
+\begin{equation}
+S_{\rm grav}=\frac{1}{2\kappa}\int d^4x\;e\;e^\mu{}_a e^\nu{}_b
+\left(R^{ab}{}_{\mu\nu}-\frac{1}{2\gamma}\,\epsilon^{ab}{}_{cd}R^{cd}{}_{\mu\nu}\right),
+\label{eq:holst}
+\end{equation}
+where $R^{ab}{}_{\mu\nu}(\omega)$ is the curvature of the spin connection and $\gamma$ is
+the Barbero--Immirzi parameter \cite{barbero1995,immirzi1997}. Overall signs of the
+Holst term differ between references; none of the results below depend on that choice.
+For \emph{constant} $\gamma$ and no fermions, the Holst term does not change the field
+equations. It matters only when $\gamma$ varies, or when fermions are present.
+
+Varying $\omega^{ab}{}_\mu$ gives the Cartan equation, which is algebraic in torsion. With
+minimally coupled matter of canonical spin tensor $s_{\mu\nu}{}^\lambda$ and constant
+$\gamma$ it reads \cite{hehl1976}
+\begin{equation}
+T^\lambda{}_{\mu\nu}+\delta^\lambda_\mu T^\sigma{}_{\nu\sigma}
+-\delta^\lambda_\nu T^\sigma{}_{\mu\sigma}=\kappa\,s_{\mu\nu}{}^{\lambda}.
+\label{eq:cartan}
+\end{equation}
+Torsion does not propagate. It is fixed pointwise by its source and can be eliminated,
+leaving Einstein's equations with extra terms quadratic in the source. Those terms carry
+one extra power of $\kappa$.
+
+\subsection{Minimal EC with fermions: the null result}\label{sec:null}
+For a Weyssenhoff spin fluid with randomly oriented spins, eliminating torsion and
+averaging gives an effective perfect fluid with \cite{gasperini1986,obukhov1987}
+\begin{equation}
+\tilde\rho=\rho-\frac{\kappa}{4}\langle S^2\rangle,\qquad
+\tilde p=p-\frac{\kappa}{4}\langle S^2\rangle,
+\qquad
+H^2=\frac{\kappa}{3}\left(\rho-\frac{\kappa}{4}\langle S^2\rangle\right).
+\label{eq:spinfluid}
+\end{equation}
+Two treatments of fermionic matter appear in the literature, and they differ in their
+coefficient but agree in sign. For number density $n$ (with $\hbar$ and $c$ restored):
+\begin{itemize}
+\item \emph{Spin fluid} (Hehl--von der Heyde--Kerlick averaging, $\langle S^2\rangle=\hbar^2n^2/8$):
+$\tilde\rho_s=\tilde p_s=-\alpha_{\rm sf}n^2/c^2$ with
+$\alpha_{\rm sf}=\kappa(\hbar c)^2/32=6.49\times10^{-96}$~J\,m$^3$. Since $n\propto a^{-3}$,
+this term scales as $a^{-6}$ with $w=1$, which is consistent with
+$\dot\rho_s+3H(\rho_s+p_s)=0$.
+\item \emph{Dirac fields} (totally antisymmetric spin tensor, the Hehl--Datta
+interaction \cite{hehldatta1971}): Pop{\l}awski \cite{poplawski2012} finds
+$\tilde\epsilon_s=-\alpha_Dn^2$ and $\tilde p_s=+\alpha_Dn^2$, with
+$\alpha_D=\tfrac{9}{16}\kappa(\hbar c)^2=1.17\times10^{-94}$~J\,m$^3$, eighteen times
+$\alpha_{\rm sf}$.
+\end{itemize}
+In both treatments the contribution to the energy density, and hence to $H^2$, is
+negative and scales as $n^2\propto a^{-6}$.
+
+The cosmic fermion number is dominated by relic neutrinos,
+$n_\nu=3\cdot\frac{3}{11}n_\gamma=3.36\times10^8$~m$^{-3}$ today. Electrons and nucleons
+are smaller by nine orders of magnitude. Then
+\begin{equation}
+\frac{\Omega_s}{\Omega_r}\Big|_{z=3540}=
+\begin{cases}-1.3\times10^{-58} & \text{(spin fluid)}\\ -2.3\times10^{-57} & \text{(Dirac)}\end{cases}
+\end{equation}
+$|\rho_s|$ reaches $\rho_r$ only near $T\sim10^{19}$~GeV ($7\times10^{19}$ and
+$2\times10^{19}$~GeV for the two coefficients), the regime of EC bounce cosmology
+\cite{poplawski2010,poplawski2012}. Minimal EC torsion therefore fails on two counts.
+\begin{enumerate}
+\item \emph{Sign.} The contact energy is negative. It \emph{lengthens} $r_s^*$ and lowers
+the inferred $H_0$. A component with this scaling and the EC sign, of size $f=0.05$ at
+$z_c=3540$, gives $H_0=62.8$ at fixed $\theta_*$ (Appendix~\ref{app:pheno}).
+\item \emph{Magnitude.} The amplitude is fixed by $Gn^2$ and is $56$--$57$ orders of
+magnitude too small. No coupling constant of order one can repair this.
+\end{enumerate}
+Both failures share one cause: torsion sourced by spin is tied to particle density. The
+next section removes that tie.
+
+%======================================================================
+\section{The Barbero--Immirzi field}\label{sec:immirzi}
+
+\subsection{Promoting $\gamma$ to a field}
+Let $\gamma\to\gamma(x)$ in \eqref{eq:holst}, and write $\bar\gamma\equiv1/\gamma$. The
+Holst term is no longer topological, and the Cartan equation acquires a source
+proportional to $\partial_\mu\bar\gamma$. Taveras and Yunes \cite{taveras2008} solved it
+for vacuum gravity (matter not coupled to the connection). The torsion is algebraically
+determined by $\partial_\mu\bar\gamma$, and vanishes wherever $\bar\gamma$ is constant
+(their Eq.~15). Substituting the solution back into the action gives (their Eq.~49)
+\begin{equation}
+S_{\rm eff}=\frac{1}{2\kappa}\int d^4x\sqrt{-g}\left[R(g)
+-\frac32\,\frac{g^{\mu\nu}\partial_\mu\bar\gamma\,\partial_\nu\bar\gamma}{1+\bar\gamma^2}\right],
+\label{eq:Seff}
+\end{equation}
+with $R(g)$ the ordinary Levi-Civita curvature. All second derivatives of $\bar\gamma$
+cancel identically.
+
+\subsection{Canonical field}
+Define $\phi$ by
+\begin{equation}
+\frac{1}{2\kappa}\cdot\frac32\,\frac{(\partial\bar\gamma)^2}{1+\bar\gamma^2}
+\equiv\frac12(\partial\phi)^2
+\quad\Longleftrightarrow\quad
+\frac{d\phi}{d\bar\gamma}=\sqrt{\frac{3}{2\kappa}}\,\frac{1}{\sqrt{1+\bar\gamma^2}} .
+\end{equation}
+Since $\int d\bar\gamma/\sqrt{1+\bar\gamma^2}=\mathrm{arsinh}\,\bar\gamma$,
+\begin{equation}
+\phi=\sqrt{\tfrac32}\,\Mp\;\mathrm{arsinh}\!\left(\frac1\gamma\right),
+\qquad
+\gamma=\frac{1}{\sinh\!\big(\phi/\sqrt{3/2}\,\Mp\big)} ,
+\label{eq:canonical}
+\end{equation}
+and \eqref{eq:Seff} becomes
+\begin{equation}
+S_{\rm eff}=\int d^4x\sqrt{-g}\left[\frac{\Mp^2}{2}R-\frac12(\partial\phi)^2\right].
+\label{eq:canonical_action}
+\end{equation}
+The map \eqref{eq:canonical} is a monotonic bijection $\mathbb{R}\to\mathbb{R}$, so no field
+range is lost.
+
+\subsection{Three consequences that are derived, not assumed}
+\begin{enumerate}
+\item \textbf{Positive energy, no ghost.} In signature $(-,+,+,+)$ the kinetic term
+$-\frac12(\partial\phi)^2$ has the healthy sign. The energy density
+$\frac12\dot\phi^2+V\ge0$, and $\rho+p=\dot\phi^2\ge0$, so the null energy condition holds
+at all times. This repairs the sign failure of \S\ref{sec:null}.
+\item \textbf{The kinetic energy is the torsion energy.} The kinetic term in
+\eqref{eq:Seff} is precisely what remains after the torsion-squared terms are
+substituted out. Torsion scales as $|\partial\bar\gamma|\propto|\dot\phi|$, and the
+torsion contact energy is $\frac12\dot\phi^2$.
+\item \textbf{Built-in screening.} Torsion is non-zero only while $\phi$ moves. A field
+frozen by Hubble friction at early times has zero torsion. A field settled at a potential
+minimum at late times also has zero torsion. The screening profile that earlier drafts
+had to postulate is replaced by field dynamics.
+\end{enumerate}
+The amplitude is no longer tied to $Gn^2$. It is set by the energy stored in $\phi$, which
+repairs the magnitude failure of \S\ref{sec:null}.
+
+%======================================================================
+\section{The one assumption: the potential}\label{sec:potential}
+The effective action \eqref{eq:canonical_action} has no potential. We add one, and this is
+the only element of the model not derived from \eqref{eq:holst}:
+\begin{equation}
+V(\phi)=\Lambda^4\left[1-\cos\!\left(\frac{\phi}{F}\right)\right]^n .
+\label{eq:V}
+\end{equation}
+Three considerations motivate this form. First, the Holst term is parity-odd, so
+$\bar\gamma$, and hence $\phi$, is a pseudoscalar. Second, a pseudoscalar's shift
+symmetry is broken in the generic case by periodic, non-perturbative terms. Third,
+the power $n$ controls how fast the energy dilutes after the field is released. Near
+the minimum, $V\simeq\Lambda^4(\phi/F)^{2n}/2^n$, and a field oscillating in a
+$\phi^{2n}$ potential has time-averaged equation of state \cite{turner1983}
+\begin{equation}
+w_n=\frac{n-1}{n+1}\qquad(n=1:0;\ n=2:\tfrac13;\ n=3:\tfrac12;\ n\to\infty:1).
+\label{eq:wn}
+\end{equation}
+For $n\ge2$ the component dilutes at least as fast as radiation.
+
+\paragraph{Where the field settles.} Because only $\partial\phi$ and $V'$ enter the
+dynamics, the potential's minimum can sit at any $\phi_0$ without changing any
+cosmological prediction: write $V=\Lambda^4[1-\cos((\phi-\phi_0)/F)]^n$. We place it at the
+value of the Immirzi parameter fixed by black-hole entropy counting in loop quantum
+gravity, $\gamma_0\simeq0.2375$ (Domagala--Lewandowski; Meissner), i.e.\
+$\phi_0=\sqrt{3/2}\,\Mp\,\mathrm{arsinh}(1/\gamma_0)\simeq2.63\,\Mp$. The field then relaxes
+to the $\gamma$ that loop quantum gravity requires today, and torsion still vanishes once
+$\phi$ stops moving. (Placing the minimum at $\phi=0$, i.e.\ $\gamma\to\infty$, would switch
+the Holst term off entirely but contradict that entropy calibration.)
+
+\paragraph{Parameters.} $\{\Lambda,F,\theta_i,n\}$, with
+$\theta_i\equiv\phi_i/F$ the initial misalignment. We fix $\theta_i=2.8$, close to the
+hilltop and in the range preferred by EDE fits \cite{poulin2019}, and report
+$n=2,3,4$. $\Lambda$ and $F$ are then traded for the observable pair
+$(z_c,f)$: the redshift at which the field's energy fraction peaks, and the peak fraction.
+
+%======================================================================
+\section{A reduced model: the locked onset}\label{sec:lock}
+In the full-likelihood fits of \S\ref{sec:fits} the EDE sector has three free parameters:
+the peak fraction $f_{\rm EDE}$, the critical redshift $z_c$ (equivalently the scale factor
+$a_c$ at which the field is released), and the initial angle $\theta_i$. Each costs two
+units of AIC. When $z_c$ is left free, its best-fit value lands next to matter--radiation
+equality computed for the same cosmology (\S\ref{sec:fits}). This motivates a reduced model
+in which the onset is not a parameter:
+\begin{equation}
+a_c\equiv a_{\rm eq}=\frac{\omega_r}{\omega_b+\omega_c},\qquad
+\omega_r=\omega_\gamma\left(1+\tfrac{7}{8}\left(\tfrac{4}{11}\right)^{4/3}N_{\rm eff}\right)
+=2.4728\times10^{-5}\,(1+0.22711\,N_{\rm eff}),
+\label{eq:lock}
+\end{equation}
+with $N_{\rm eff}=3.044$, evaluated for every trial cosmology from its own densities. The
+model has two extra parameters over $\Lambda$CDM ($f_{\rm EDE}$, $\theta_i$).
+
+\paragraph{Status of the lock.} We do not derive Eq.~\eqref{eq:lock}. A physical reason to
+expect the field to be released when matter overtakes radiation could come from the fermion
+sector: the Holst action couples $\partial_\mu\bar\gamma$ to the fermion axial current
+(\S\ref{sec:predictions}), so the field's environment changes character at equality. We
+have not computed this, and we present the lock as a phenomenological hypothesis that
+removes a tuned number and can be falsified: on any new data set the onset must coincide
+with equality. We also disclose that the lock was chosen \emph{after} seeing the free fit;
+the first data set on which it is tested blind is that of \S\ref{sec:pact}.
+
+\paragraph{The torsion width.} If the potential were periodic with period $2\pi$ in the
+natural torsion variable $\mathrm{arsinh}(1/\gamma)$, the width would be
+$F=\sqrt{3/2}\,\Mp=1.2247\,\Mp$. Combining this with Eq.~\eqref{eq:lock} leaves a single
+free parameter. We test it in \S\ref{sec:fits}; it is excluded.
+
+%======================================================================
+\section{Cosmological dynamics}\label{sec:cosmo}
+
+\subsection{Equations in e-folds}
+Let $N=\ln a$ and $'\equiv d/dN$, so that $\dot\phi=H\phi'$. Write
+$H=100\,\mathcal{E}$~km\,s$^{-1}$\,Mpc$^{-1}$, measure $\phi$ in units of $\Mp$, and
+measure energy densities in units of $3\Mp^2H_{100}^2$, so that
+$\omega_i$ and $v\equiv V/(3\Mp^2H_{100}^2)$ are dimensionless. Then:
+
+\noindent\emph{Friedmann.} $3\Mp^2H^2=\rho_{\rm bg}+\frac12H^2\phi'^2+V$ gives
+\begin{equation}
+\mathcal{E}^2=\frac{\omega_ma^{-3}+\omega_ra^{-4}+\omega_\Lambda+v(\phi)}{1-\phi'^2/6}.
+\label{eq:friedmann}
+\end{equation}
+\emph{Klein--Gordon.} From $\ddot\phi+3H\dot\phi+V_{,\phi}=0$ and
+$\ddot\phi=H^2\phi''+H\dot H/H\,\phi'$,
+\begin{equation}
+\phi''+\left(3+\frac{\mathcal{E}'}{\mathcal{E}}\right)\phi'+\frac{3\,v_{,\phi}}{\mathcal{E}^2}=0 .
+\label{eq:kg}
+\end{equation}
+\emph{Raychaudhuri.} From $\dot H=-(\rho+p)/2\Mp^2$,
+\begin{equation}
+\frac{\mathcal{E}'}{\mathcal{E}}=-\frac32\,
+\frac{\omega_ma^{-3}+\frac43\omega_ra^{-4}}{\mathcal{E}^2}-\frac{\phi'^2}{2}.
+\label{eq:ray}
+\end{equation}
+The scalar energy fraction is $f_\phi(a)=\rho_\phi/\rho_{\rm tot}=1-(\omega_ma^{-3}+\omega_ra^{-4}+\omega_\Lambda)/\mathcal{E}^2$.
+We define $f\equiv\max_af_\phi$ and $z_c$ its location. Flatness gives
+$\omega_\Lambda=h^2-\omega_m-\omega_r-\rho_\phi(1)$, where the last term is negligible.
+
+\subsection{Initial conditions and screening}
+Deep in radiation domination, $\phi=\phi_i$ and $\phi'=0$. Hubble friction holds the field
+fixed while $H\gg m_{\rm eff}$, so $\rho_\phi=V(\phi_i)$ is constant and
+\begin{equation}
+f_\phi\propto a^4\quad(\text{radiation era}).
+\end{equation}
+At $T=1$~MeV this gives $f_\phi\approx4\times10^{-25}$ for every model below, so BBN is
+unaffected. (This also corrects a claim in earlier drafts, that a profile of the form
+$2/[1+(a/a_c)^6]$ ``does not screen''. A constant early energy density \emph{is}
+screened, because its fraction falls as $a^4$. That profile is the $n\to\infty$ fluid
+limit of \eqref{eq:V} and is physically admissible.)
+
+\subsection{Observables}
+\begin{align}
+r_s(a_{\rm e})&=\frac{c}{H_{100}}\int_0^{a_{\rm e}}
+\frac{da}{a^2\mathcal{E}(a)\sqrt{3\big(1+\frac{3\omega_b}{4\omega_\gamma}a\big)}},
+\qquad
+D_C(z)=\frac{c}{H_{100}}\int_0^z\frac{dz'}{\mathcal{E}(z')},
+\end{align}
+with $c/H_{100}=2997.92458$~Mpc, $r_s^*=r_s(a_*)$ and $r_d=r_s(a_d)$. The decoupling and
+drag redshifts are taken from the Hu--Sugiyama \cite{hu1996} and Eisenstein--Hu
+\cite{eisenstein1998} fits. The latter is rescaled by $1.03848$ to reproduce Planck's
+$z_d=1059.94$. Fixed inputs are $\omega_b=0.02237$, $\omega_\gamma=2.473\times10^{-5}$ and
+$N_{\rm eff}=3.046$. The $\Lambda$CDM baseline ($\omega_c=0.1200$, $h=0.6736$) gives
+$r_s^*=144.27$~Mpc, $r_d=147.10$~Mpc, $\theta_*=1.03834\times10^{-2}$ and
+$r_dh=99.09$~Mpc. All fits below hold $\theta_*$ and $r_dh$ at these values.
+
+%======================================================================
+\section{Why $\Omega_m$ is pinned and $\omega_c$ must rise}\label{sec:geometry}
+This result is independent of the torsion sector, so it is worth deriving first.
+
+\paragraph{Fixed $\omega_m$ fails.} At fixed physical densities, $h$ enters $D_C(z_*)$
+only through $\omega_\Lambda=h^2-\omega_m-\omega_r$. Differentiating,
+\begin{equation}
+\left.\frac{\partial\ln D_C(z_*)}{\partial\ln h}\right|_{\omega}
+=-h^2\,\frac{\int_0^{z_*}\mathcal{E}^{-3}dz}{\int_0^{z_*}\mathcal{E}^{-1}dz}=-0.1937 .
+\end{equation}
+Matching $\theta_*$ then amplifies any fractional cut in $r_s^*$ about fivefold in $h$.
+This drives $\Omega_m=\omega_m/h^2$ and $r_dh$ far from their BAO values
+(Appendix~\ref{app:pheno}, Table~\ref{tab:A}).
+
+\paragraph{Matching $\theta_*$ and $r_dh$ together.} Write
+$\theta_*=(r_s^*h)/(hD_C)$. Across all solutions $r_s^*/r_d$ changes by less than
+$0.03\%$, so fixing $r_dh$ fixes $r_s^*h$. Then $\theta_*$ fixes
+$hD_C(z_*)=(c/H_{100})\int dz/E(z)$, which depends only on $\Omega_m$ (and weakly on
+$\Omega_r$). Therefore $\Omega_m$ stays near its baseline value $0.314$, and
+\begin{equation}
+\omega_c\simeq\Omega_m^{\rm base}h^2-\omega_b
+\ \xrightarrow{\ h=0.728\ }\ 0.1439 .
+\label{eq:wc}
+\end{equation}
+Any model that raises $H_0$ by shortening the sound horizon while respecting BAO must
+raise $\omega_c$ in proportion to $h^2$. The torsion field's role is to supply the
+reduction of $r_s^*$ that makes this $\omega_c$ consistent with $\theta_*$.
+
+%======================================================================
+\section{Background solutions}\label{sec:results}
+This section solves the background equations alone, holding $\theta_*$ and $r_dh$ at their
+$\Lambda$CDM values, to show what the model can do in principle. The full-likelihood fits,
+which also fit perturbations and all other parameters, are in \S\ref{sec:fits}; they prefer
+a smaller $f_{\rm EDE}$ and $H_0$. The system \eqref{eq:friedmann}--\eqref{eq:ray} is integrated from $a=10^{-8}$ to
+$10^{-2}$ with an 8th-order Runge--Kutta scheme (relative tolerance $10^{-10}$). Beyond
+$a=10^{-2}$ the scalar density is continued with the fitted power law, and it is
+negligible. For each Lagrangian parameter set we solve for $(h,\omega_c)$ such that
+$\theta_*$ and $r_dh$ match the baseline. Both residuals are below $10^{-15}$ in every
+case.
+
+\subsection{The original target point}
+Tuning $(\Lambda,F)$ so that $f=0.12$ and $z_c=3540$ at $\Lambda$CDM densities
+($\Lambda^4=4.641\times10^8$ in units of $3\Mp^2H_{100}^2$, $F=0.1683\,\Mp$, $n=3$), the
+joint fit gives
+\begin{equation}
+H_0=70.65,\quad \omega_c=0.1343,\quad \Omega_m=0.3139,\quad
+r_s^*=137.56\ \mathrm{Mpc},\quad r_d=140.25\ \mathrm{Mpc},
+\end{equation}
+with $(z_c,f)$ shifting slightly to $(3507,0.119)$ at the fitted densities.
+
+\subsection{Models reaching $H_0=72.8$}
+Fixing $z_c=3540$ and solving for the $F$ that yields $h=0.728$:
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+& $n=2$ & $n=3$ & $n=4$\\
+\midrule
+$w_n$ predicted, Eq.~\eqref{eq:wn} & $0.333$ & $0.500$ & $0.600$\\
+$w$ measured over $z=100$--$1000$ & $0.334$ & $0.495$ & $0.555$\\
+\midrule
+$F/\Mp$ & $0.1496$ & $0.2139$ & $0.2767$\\
+$\phi_i/\Mp=\theta_iF$ & $0.419$ & $0.599$ & $0.775$\\
+$\gamma_i$ from Eq.~\eqref{eq:canonical} & $2.87$ & $1.97$ & $1.48$\\
+$\Lambda$ [eV] & $0.566$ & $0.510$ & $0.451$\\
+\midrule
+peak fraction $f$ & $0.159$ & $0.183$ & $0.201$\\
+$f_\phi$ at $z_*$ & $0.059$ & $0.044$ & $0.022$\\
+$f_\phi$ at 1 MeV & $3.5\times10^{-25}$ & $4.5\times10^{-25}$ & $5.3\times10^{-25}$\\
+\midrule
+$H_0$ [km\,s$^{-1}$Mpc$^{-1}$] & $72.80$ & $72.80$ & $72.80$\\
+$\omega_c$ & $0.1437$ & $0.1441$ & $0.1442$\\
+$\Omega_m$ & $0.3133$ & $0.3141$ & $0.3143$\\
+$r_s^*$ [Mpc] & $133.50$ & $133.48$ & $133.46$\\
+$r_d$ [Mpc] & $136.11$ & $136.11$ & $136.11$\\
+\bottomrule
+\end{tabular}
+\caption{Torsion-born EDE solutions with $z_c=3540$, $\theta_i=2.8$, and $\theta_*$,
+$r_dh$ held at the $\Lambda$CDM baseline. For $n=4$ the late-time $w$ is still approaching
+its asymptotic value at $z=100$.}
+\label{tab:main}
+\end{table}
+
+Four features of Table~\ref{tab:main} stand out. (a) The measured late-time equation of
+state reproduces \eqref{eq:wn}, which validates the integration. (b) $\omega_c$ agrees
+with the geometric prediction \eqref{eq:wc} to $0.3\%$ for all $n$. (c) All field values are
+sub-Planckian. (d) The energy scale $\Lambda\approx0.5$~eV is set by the requirement
+$m_{\rm eff}\sim H(z_c)$. It is not explained by the model (\S\ref{sec:objections}).
+
+%======================================================================
+\section{Relation to early dark energy and current data}\label{sec:data}
+After the field redefinition \eqref{eq:canonical}, the model's Lagrangian,
+\eqref{eq:canonical_action} plus \eqref{eq:V}, is \emph{identical} to axion-like EDE
+\cite{poulin2019}. This has two consequences, and both should be stated openly.
+\begin{itemize}
+\item \textbf{Strength.} Every published Boltzmann-code and likelihood analysis of
+axion EDE, including perturbations, applies to this model without modification. The model
+is not an untested construction. It is a geometric origin for a well-studied one.
+\item \textbf{Limitation.} In the pure-gravity sector the model makes no prediction that
+distinguishes it from EDE. Distinguishing signatures require the fermion sector
+(\S\ref{sec:predictions}).
+\end{itemize}
+
+The most recent combined analysis, of Planck, ACT DR6 and DESI DR2 BAO by Poulin, Smith,
+Calder\'on and Simon \cite{poulin2025}, finds the following.
+\begin{itemize}
+\item Without the distance-ladder prior, the 95\% upper limit is $f(z_c)<0.109$, with
+$H_0=69.71^{+0.64}_{-1.3}$.
+\item With it, $f(z_c)=0.126\pm0.021$ and $H_0=72.34\pm0.72$.
+\item The profile likelihood without the distance ladder gives
+$f=0.090^{+0.030}_{-0.033}$ and $H_0=71.96^{+1.08}_{-0.99}$, a preference for $f>0$ at about
+$2.5\sigma$.
+\end{itemize}
+The residual tension with the distance ladder falls below $2\sigma$, but the authors note
+a worsened $\Omega_m$ tension with Pantheon+ and DES-Y5 supernovae.
+
+Our background-only estimate requires $f\simeq0.18$ ($n=3$) for $H_0=72.8$. That is larger
+than the full-likelihood values above, for two reasons. We hold $r_dh$ at the Planck
+$\Lambda$CDM value, which is lower than DESI prefers. We also keep $n_s$ and the other
+primordial parameters fixed, although they shift in a full fit. The data-preferred range,
+$f\approx0.09$--$0.13$ with $H_0\approx72$, is the region a full analysis should target.
+In plain terms, current data allow this model to reduce the tension substantially, not
+to eliminate it. Our own full-likelihood fits (\S\ref{sec:fits}) find $f_{\rm EDE}=0.078$ and
+$H_0=70.6$ without the distance-ladder prior.
+
+%======================================================================
+\section{Full-likelihood fits}\label{sec:fits}
+
+\subsection{Pipeline and data}
+We use AxiCLASS \cite{poulin2018,blas2011}, the CLASS extension that evolves the field
+$\phi$ and its perturbations for the potential \eqref{eq:V} with $n=3$, and Cobaya
+\cite{torrado2021} for the likelihoods. Best fits are found with the derivative-free
+BOBYQA optimiser \cite{powell2009,cartis2019}, from several independent starting points,
+with a final ``polish'' restart from the best point. The baseline data are:
+\begin{itemize}
+\item Planck 2018 \cite{planck2020like,planck2020lens}: low-$\ell$ TT and EE, high-$\ell$
+Plik TT,TE,EE (\texttt{lite}), and CMB lensing;
+\item DESI DR2 BAO \cite{desi2025};
+\item Pantheon+ supernovae \cite{scolnic2022,brout2022}, without the SH0ES distance-ladder prior.
+\end{itemize}
+We also use Planck PR4 (CamSpec high-$\ell$ \cite{rosenberg2022} and PR4 lensing
+\cite{carron2022}) in place of the Planck 2018 high-$\ell$ and lensing likelihoods.
+
+\paragraph{Fit statistic.} The optimiser minimises the posterior, which includes the
+Gaussian prior on the Planck calibration $A_{\rm planck}$ ($1\pm0.0025$). Two independent
+$\Lambda$CDM optima have the same posterior to $0.04$ but likelihood-only $\chi^2$ values that
+differ by $1.6$, the difference being absorbed by the calibration prior. We therefore compare
+models with $\chi^2\equiv\chi^2_{\rm like}+[(A_{\rm planck}-1)/0.0025]^2$, which is the quantity
+consistently minimised, and quote likelihood-only values alongside. The $\Lambda$CDM reference
+is $\chi^2=2434.22$ ($\chi^2_{\rm like}=2434.06$). Model comparison uses
+$\Delta{\rm AIC}=\Delta\chi^2+2k$ for $k$ extra parameters \cite{akaike1974}.
+
+\paragraph{Pre-registration.} Before each test below we wrote the hypothesis, the data and
+the pass/fail rule into a text file and recorded its SHA-256 hash; the files are in the
+repository (Appendix~\ref{app:code}). The rule for the locked onset was $\Delta\chi^2<-4$
+against $\Lambda$CDM, i.e.\ $\Delta{\rm AIC}<0$.
+
+\subsection{Results}
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Model & $k$ & $\Delta\chi^2$ & $\Delta\chi^2_{\rm like}$ & $\Delta$AIC & $H_0$ & $f_{\rm EDE}$\\
+\midrule
+$\Lambda$CDM & 0 & $0$ & $0$ & $0$ & $67.98$ & --\\
+Free onset ($f_{\rm EDE},z_c,\theta_i$) & 3 & $-6.43$ & $-6.52$ & $-0.43$ & $70.60$ & $0.078$\\
+\textbf{Locked onset}, Eq.~\eqref{eq:lock} & 2 & $\mathbf{-6.39}$ & $-6.48$ & $\mathbf{-2.39}$ & $70.60$ & $0.078$\\
+Locked, $F=\sqrt{3/2}\,\Mp$ & 1 & $+14.63$ & $+13.82$ & $+16.63$ & $71.19$ & $0.074$\\
+\midrule
+$\Lambda$CDM, $\Omega_k$ free & 1 & $-0.86$ & $-0.93$ & $+1.14$ & $68.04$ & --\\
+$\Lambda$CDM, $\Omega_k=-0.013$ fixed & 0 & $+165.2$ & $+163.3$ & $+165.2$ & $65.98$ & --\\
+Locked onset, $\Omega_k$ free & 3 & $-6.79$ & $-7.00$ & $-0.79$ & $70.60$ & $0.078$\\
+\bottomrule
+\end{tabular}
+\caption{Best fits to Planck 2018 + DESI DR2 + Pantheon+ (no SH0ES). $\Delta\chi^2$ includes
+the Planck calibration prior (see text); $\Delta\chi^2_{\rm like}$ is likelihood only.
+$H_0$ in km\,s$^{-1}$Mpc$^{-1}$. These rows come from the original single-run
+fits and are superseded for the free and locked onsets by Table~\ref{tab:camb}, whose
+numbers are converged and use one engine for every model.}
+\label{tab:fits}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Model & $k$ & $\chi^2$ & $\Delta\chi^2$ & $\Delta$AIC & $\Delta$BIC & $H_0$\\
+\midrule
+$\Lambda$CDM (best of 8) & 0 & $2433.58$ & $0$ & $0$ & $0$ & $68.33$\\
+$w$CDM & 1 & $2433.22$ & $-0.36$ & $+1.64$ & $+7.2$ & $68.03$\\
+Free onset ($f_{\rm EDE},z_c,\theta_i$) & 3 & $2429.74$ & $-3.84$ & $+2.16$ & $+18.9$ & $69.65$\\
+Locked onset, Eq.~\eqref{eq:lock} (best of 8) & 2 & $2429.62$ & $-3.96$ & $+0.04$ & $+11.2$ & $69.93$\\
+\bottomrule
+\end{tabular}
+\caption{Same-engine comparison (CAMB 2.0.5 with Cobaya, bobyqa, Planck 2018 + DESI DR2 +
+Pantheon+, no SH0ES). $\Delta$ is relative to the best $\Lambda$CDM fit; $\Delta$BIC uses
+$N\approx1994$ data points (estimated). The free onset and $w$CDM are best of 4 restarts,
+the others best of 8. The locked onset is a statistical tie with $\Lambda$CDM on AIC and
+is disfavoured on BIC; it narrowly misses the pre-registered rule $\Delta\chi^2<-4$.
+Do not compare these values with those in Table~\ref{tab:fits}, which use a different engine.}
+\label{tab:camb}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+& $\Lambda$CDM & Free onset & Locked onset\\
+\midrule
+$100\,\omega_b$ & $2.240$ & $2.261$ & $2.261$\\
+$\omega_c$ & $0.1185$ & $0.1260$ & $0.1260$\\
+$n_s$ & $0.9680$ & $0.9805$ & $0.9805$\\
+$\tau_{\rm reio}$ & $0.0555$ & $0.0553$ & $0.0553$\\
+$z_c$ & -- & $3575$ & $3553$ (locked to $z_{\rm eq}$)\\
+$\theta_i$ & -- & $2.789$ & $2.789$\\
+$F/\Mp$ & -- & $0.137$ & $0.137$\\
+$r_d$ [Mpc] & $147.45$ & $143.16$ & $143.16$\\
+$\Omega_m$ & $0.3064$ & $0.2995$ & $0.2995$\\
+$S_8$ & $0.815$ & $0.824$ & $0.824$\\
+\bottomrule
+\end{tabular}
+\caption{Best-fit parameters for the main models of Table~\ref{tab:fits}.}
+\label{tab:params}
+\end{table}
+
+The results, all reported whichever way they fell, are as follows.
+\begin{enumerate}
+\item \textbf{Free onset.} $\Delta\chi^2=-6.43$ for three extra parameters,
+$\Delta{\rm AIC}=-0.43$: a tie. The preferred onset $z_c=3575$ is within $1\%$ of matter--radiation
+equality for the same cosmology, $z_{\rm eq}=3553$.
+\item \textbf{Locked onset.} With $z_c$ removed the fit is unchanged ($\Delta\chi^2=-6.39$), so
+$\Delta{\rm AIC}=-2.39$. This passes the pre-registered rule. It is a modest preference
+(an AIC difference of about 2), and not a blind one.
+\item \textbf{Torsion width.} Fixing $F=\sqrt{3/2}\,\Mp$ worsens the fit to
+$\Delta\chi^2=+14.63$; the hypothesis is excluded. The best-fit width is
+$F\simeq0.137\,\Mp\simeq\sqrt{3/2}\,\Mp/8.9$. A pre-registered scan of $F=\sqrt{3/2}\,\Mp/N$
+over $N=7$--$11$ (with half-integer controls) finds a minimum at $N=8.9$ with a
+$\Delta\chi^2=1$ half-width of $1.2$; the data cannot distinguish integer $N$, and we make
+no claim.
+\item \textbf{Profile in $f_{\rm EDE}$.} Fixing $f_{\rm EDE}$ on a grid and refitting all other
+parameters gives a minimum at $f_{\rm EDE}\simeq0.08$, with $f_{\rm EDE}=0.12$ indistinguishable
+from $\Lambda$CDM and $f_{\rm EDE}=0.15$ excluded ($\Delta\chi^2\simeq+29$).
+\item \textbf{Planck PR4.} With CamSpec PR4 and PR4 lensing in place of Planck 2018, the free
+model gives $\Delta\chi^2_{\rm like}=+0.09$ (no improvement) and $\Delta\chi^2=-3.35$ when the
+CamSpec Gaussian foreground priors are included, with $H_0=70.29$ against $67.63$. Neither
+favours the model after the parameter penalty.
+\item \textbf{Curvature.} Leaving $\Omega_k$ free gives $\Omega_k=0.0002$ in both
+$\Lambda$CDM and the locked model, an improvement below one unit of $\chi^2$: no curvature is
+detected. The positively curved Poincar\'e dodecahedral space \cite{luminet2003}, which
+requires $\Omega_k\simeq-0.013$, is excluded by $\Delta\chi^2=+165$, consistent with the
+absence of matched circles in Planck \cite{planck2016topo}.
+\end{enumerate}
+
+%======================================================================
+\section{Pre-registered blind test: Planck + ACT DR6}\label{sec:pact}
+The decisive test of the locked onset is on data it was not tuned to. Before running it we
+fixed the rule (repository file \texttt{PREREGISTRATION\_ZEQ.md}): the locked model passes if
+$\Delta\chi^2<-4$ against $\Lambda$CDM on the same data (equivalently $\Delta{\rm AIC}<0$ for two
+extra parameters), reporting both the total and the effective $\chi^2$. The data are the P-ACT
+combination recommended by the ACT collaboration: Planck 2018 with its high-$\ell$ range cut
+where ACT takes over, ACT DR6 power spectra \cite{louis2025} and ACT DR6 $\times$ Planck PR4 lensing
+\cite{madhavacheril2024,qu2024}, together with DESI DR2 BAO \cite{desi2025} and Pantheon+
+\cite{scolnic2022,brout2022}, with no distance-ladder prior. Both models are minimised with the same
+code (CAMB + Cobaya) and the same optimiser settings.
+
+\emph{Deviation from the plan, disclosed:} the pre-registration named Planck PR4 and SPT-3G as
+possible blind data. The run used the P-ACT combination above; SPT-3G was tested separately
+(\S\ref{sec:spt}). Only the
+ACT part of the data is new; the Planck part overlaps the data on which the lock was chosen.
+
+\paragraph{Result.} Status: \PACTstatus. Locked onset (2 parameters): $\Delta\chi^2=\PACTdchiE$
+(total), \PACTdchiL\ (effective), $\Delta{\rm AIC}=\PACTdaic$, $H_0=70.43$; $p=0.027$ for two degrees
+of freedom ($\approx2.2\sigma$). Free onset (3 parameters): $\Delta\chi^2=\PACTfreeL$,
+$\Delta{\rm AIC}=-1.47$, $H_0=70.59$. The lock therefore costs $0.24$ in $\chi^2$ and saves a
+parameter. Verdict on this test: \PACTverdict.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Data & $\Delta\chi^2$ & $\Delta$AIC & $H_0$ & rule\\
+\midrule
+Planck 2018 + Pantheon+ (same polish) & $-4.70$ & $-0.70$ & 70.53 & pass ($<-4$)\\
+P-ACT + Pantheon+ (blind) & $-7.23$ & $-3.23$ & 70.43 & pass ($<-4$)\\
+Planck 2018 + DES Y5 SNe & $-4.55$ & $-0.55$ & 70.47 & pass ($<-2$)\\
+Planck 2018 + DES-Dovekie SNe & $-5.08$ & $-1.08$ & 70.53 & pass ($<-2$)\\
+Planck 2018 + Union3 SNe & $-4.91$ & $-0.91$ & 70.55 & pass ($<-2$)\\
+Planck 2018 + Pantheon+ + $S_8$ & $-2.92$ & $+1.08$ & 70.81 & --\\
+\bottomrule
+\end{tabular}
+\caption{Pre-registered comparisons of the locked model (2 parameters) against $\Lambda$CDM, each
+re-minimised on the same data with identical settings. Every row includes DESI DR2 BAO. The $S_8$ line
+adds a Gaussian $S_8$ likelihood (DES Y3 + KiDS-1000).}
+\label{tab:prereg}
+\end{table}
+
+%======================================================================
+\section{The width module: a one-parameter model}\label{sec:width}
+The free fits prefer $F\simeq0.14\,\Mp$, close to one ninth of the torsion value
+$\sqrt{3/2}\,\Mp=1.2247\,\Mp$. Before looking at ACT DR6 we wrote two tests
+(\texttt{PREREG\_N\_PACT.md}). \textbf{T1}: with $F=\sqrt{3/2}\,\Mp/N$ and $N$ free, the blind data
+must give $N=9\pm0.5$. \textbf{T2}: with $N=9$ fixed and the onset locked, only $\theta_i$ is free,
+and the model must improve on $\Lambda$CDM by $\Delta\chi^2<-2$.
+
+T1 \textbf{failed}: P-ACT gives $N=8.0$ (Planck 2018 with CAMB gives $N\simeq8.5$). T2
+\textbf{passed}: $\Delta\chi^2=-6.14$, $\Delta{\rm AIC}=-4.14$, $p=0.013$ ($\approx2.5\sigma$) on P-ACT, and
+$\Delta\chi^2=-4.46$ ($\Delta{\rm AIC}=-2.46$) on Planck 2018, which is not blind because the 9 was read
+off Planck. We have no derivation of the divisor; it is an empirical regularity until one exists.
+
+\paragraph{Profile in the divisor.} A second rule (\texttt{PREREG\_PHASE1.md}, step 1.2) fixed $N$ on the
+grid $6$--$12$ with a $1\%$ constraint on $F$, refitting everything else, and declared $N=9$
+\emph{consistent} if $\Delta\chi^2(9)-\min<1$, \emph{disfavoured} between 1 and 4 and \emph{excluded}
+above 4 on P-ACT. Table~\ref{tab:profile} gives the result: the P-ACT minimum is at $N=8$ and
+$\Delta\chi^2(9)-\min=1.11$, so $N=9$ is \textbf{disfavoured}, only $0.11$ over the line and within the
+$0.2$--$0.4$ restart scatter of the optimiser. On Planck 2018 the minimum is at $N=9$. Both profiles are
+shallow: every $N$ from 7 to 11 lies within $\Delta\chi^2\approx1.8$. Reading the width back from the
+free-width best fits gives $N=8.29$ (P-ACT) and $N=8.81$ (Planck 2018).
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccccccc}
+\toprule
+$N$ & 6 & 7 & 8 & 9 & 10 & 11 & 12\\
+\midrule
+P-ACT: $\Delta\chi^2$ & $2.47$ & $0.77$ & $0$ & $1.11$ & $1.74$ & $1.76$ & $2.48$\\
+P-ACT: $H_0$ & $71.02$ & $70.72$ & $70.75$ & $70.37$ & $69.84$ & $69.89$ & $69.79$\\
+P-ACT: $f_{\rm EDE}$ & $0.096$ & $0.086$ & $0.086$ & $0.074$ & $0.056$ & $0.055$ & $0.053$\\
+Planck 2018: $\Delta\chi^2$ & $4.73$ & $1.10$ & $0.50$ & $0$ & $1.62$ & $1.76$ & $2.58$\\
+\bottomrule
+\end{tabular}
+\caption{Profile in the width divisor $N$ (onset locked, $f_{\rm EDE}$ and $\theta_i$ free), each with
+DESI DR2 + Pantheon+. $\Delta\chi^2$ is relative to the minimum on each data set, with the width
+constraint's own $\chi^2$ removed. Best-fit $\theta_i$ lies between 2.53 and 2.89 throughout.}
+\label{tab:profile}
+\end{table}
+
+%======================================================================
+\section{Checks of the computation}\label{sec:checks}
+
+\paragraph{Two independent field solvers.} CAMB's EarlyQuintessence module and AxiCLASS both integrate
+the Klein--Gordon equation for $\phi$ and its perturbations exactly; neither uses a fluid
+approximation. We re-scored CAMB's P-ACT best points with AxiCLASS at the same cosmology
+(Table~\ref{tab:engines}). The two codes agree on the improvement over $\Lambda$CDM to $0.23$ (locked
+model) and $0.42$ ($N=9$), within the $0.5$ tolerance fixed in advance. These are re-scorings of CAMB's
+optima, not independent AxiCLASS minimisations; a re-minimisation could move each value by a few
+tenths in either direction.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+Model & $\chi^2_{\rm AxiCLASS}$ & $\chi^2_{\rm CAMB}$ & $\Delta\chi^2_{\rm AxiCLASS}$ & $\Delta\chi^2_{\rm CAMB}$\\
+\midrule
+$\Lambda$CDM & $2239.32$ & $2239.01$ & $0$ & $0$\\
+Locked onset (2 parameters) & $2231.86$ & $2231.78$ & $-7.46$ & $-7.23$\\
+Locked, $N=9$ (1 parameter) & $2232.76$ & $2232.87$ & $-6.56$ & $-6.14$\\
+\bottomrule
+\end{tabular}
+\caption{Cross-engine check at CAMB's best points (P-ACT + DESI DR2 + Pantheon+).}
+\label{tab:engines}
+\end{table}
+
+\paragraph{Does the field fragment?} After release the field oscillates in a potential that is
+flatter than quadratic, which can amplify its own fluctuations by parametric resonance. Linear
+Boltzmann codes assume this does not happen. Without expansion, the Floquet exponent at the best-fit
+angle $\theta_i=2.79$ gives growth $\times31$ per oscillation, rising steeply towards the hilltop
+($\times10^3$ at $\theta_i=3$). With a radiation + matter background, the field released at equality
+and $N=9$, and growth measured against the same mode under pure expansion (metric perturbations
+neglected), the largest total growth is $\times7$--$9$ at $\theta_i=2.79$ and $\times19$ at
+$\theta_i=3.0$. Non-linearity would need $\sim10^5$, so the linear treatment is safe for every angle
+the data allow. The same toy calculation, which knows nothing of the CMB, gives a peak energy fraction
+of $0.081$ at $\theta_i=2.79$, against $f_{\rm EDE}=0.074$--$0.078$ in the full fits at $N=9$.
+
+%======================================================================
+\section{First fully independent CMB data: SPT-3G D1}\label{sec:spt}
+Every test above shares Planck data with the fit on which the lock was chosen. SPT-3G observes a
+different patch of sky with a different instrument, so it is the first test that is independent in
+its CMB data. Before any SPT-3G fit was run, we fixed and published the rules
+(doi:\href{https://doi.org/10.5281/zenodo.23838969}{10.5281/zenodo.23838969} and
+\href{https://doi.org/10.5281/zenodo.23839507}{10.5281/zenodo.23839507}).
+
+\paragraph{Data.} SPT-3G D1 TT/TE/EE \cite{camphuis2025} through its public foreground-marginalised
+(``lite'') \texttt{candl} likelihood \cite{balkenhol2024}, as the only CMB data, with SPT's calibration
+nuisance parameters and a Gaussian prior $\tau=0.051\pm0.006$ from Planck low-$\ell$ EE; plus DESI DR2
+BAO and Pantheon+, without SH0ES. Deviations from the written plan were logged before any result was
+read: the lite likelihood was used in place of the full one, and CAMB's lensing setting differs from
+SPT's template (\texttt{lens\_margin} is not accepted by CAMB 2.0.5).
+
+\paragraph{Rules.} For a model with $k$ extra parameters, PASS required $\Delta\chi^2<-2$ and
+$\Delta{\rm AIC}<0$; $\Delta\chi^2\ge0$ is FAIL; anything between is inconclusive. Each model is
+minimised with the same settings as $\Lambda$CDM, and any width constraint's own $\chi^2$ is removed.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Model & $k$ & $\chi^2$ & $\Delta\chi^2$ & $H_0$ & $f_{\rm EDE}$ & $\theta_i$\\
+\midrule
+$\Lambda$CDM & 0 & $1576.57$ & $0$ & $68.28$ & -- & --\\
+Locked, $N=9$ & 1 & $1577.09$ & $+0.52$ & $70.49$ & $0.077$ & $2.79$\\
+Locked, $N=9$, $\theta_i=1+\sqrt2$ & 0 & $1577.00$ & $+0.43$ & $69.13$ & $0.035$ & $2.414$\\
+Locked, width free & 2 & $1575.30$ & \SPTfreeDchi & \SPTfreeHz & \SPTfreeF & $3.10^\dagger$\\
+Locked, $N=7$ & 1 & $1578.23$ & \SPTsevenDchi & $70.68$ & $0.085$ & $2.62$\\
+Locked, $N=9$, $\theta_i=2.78$ fixed$^\ddagger$ & 0 & $1576.92$ & $+0.35$ & $70.43$ & $0.076$ & $2.78$\\
+\bottomrule
+\end{tabular}
+\caption{SPT-3G D1 TT/TE/EE (lite) + $\tau$ prior + DESI DR2 + Pantheon+. Both $N=9$ rows
+and the $N=7$ row \textbf{fail} their pre-registered rules; the free-width row shows \SPTfreeVerdict.
+$^\dagger$At the upper edge of the prior ($0.1\le\theta_i\le3.1$). $^\ddagger$The Planck-preferred angle, run for
+contrast; not a prediction. $\chi^2$ is the total
+including the $\tau$ and calibration priors; the $N=9$ rows have the width constraint's $\chi^2$
+($<10^{-3}$) removed.}
+\label{tab:spt}
+\end{table}
+
+\paragraph{Results.} The one-parameter model with $N=9$, which gave $\Delta\chi^2=-6.14$ on P-ACT,
+gives $\Delta\chi^2=+0.52$ ($\Delta{\rm AIC}=+2.52$) on SPT-3G: \textbf{FAIL}. By data set the Twist
+changes $\chi^2$ by $+0.44$ for SPT-3G, $-0.27$ for DESI and $+0.34$ for Pantheon+, so SPT-3G's own CMB
+data do not prefer it. Because the model contains $\Lambda$CDM as a limit, a deeper minimisation could
+lower $\Delta\chi^2$ towards zero, but under the rule that is still a FAIL.
+
+\paragraph{A zero-parameter variant.} We also pre-registered a variant with every EDE parameter fixed in
+advance: onset at equality, $N=9$, and initial angle $\theta_i=1+\sqrt2=2.414$. That angle was taken
+from a number outside physics (an eigenvalue of a small graph) purely to provide a parameter-free test,
+and we report it to avoid selective publication. It \textbf{fails} ($\Delta\chi^2=+0.43$), and the
+free-angle fit prefers $\theta_i=2.79$, $0.37$ away. The fragmentation calculation of
+\S\ref{sec:checks}, which predicted $f_{\rm EDE}\approx0.035$ at this angle after the rule was fixed,
+agrees with the fit's $0.035$. Two further values from the same source were pre-registered: $f_{\rm EDE}=0.0154$
+for the free-width fit, which is \emph{inconclusive} under its rule (the fit gives $0.045$, $0.030$ away, between
+the pass and fail bands), and $N=7$, whose width check is \emph{inconsistent} (below) and whose fit is
+\SPTsevenVerdict. We do not regard any of them as physically motivated.
+
+\paragraph{Free width.} The two-parameter locked model with free width is the direct SPT-3G counterpart
+of the P-ACT test, where it gave $\Delta\chi^2=-7.23$. On SPT-3G it gives $\Delta\chi^2=\SPTfreeDchi$
+($\Delta{\rm AIC}=+2.73$, $H_0=\SPTfreeHz$, $f_{\rm EDE}=\SPTfreeF$): \textbf{no preference}. Of the change,
+$-1.28$ comes from SPT-3G itself, $-0.23$ from DESI and $+0.24$ from Pantheon+. The best-fit width implies
+$N=\SPTfreeN$, so the pre-registered width checks for $N=9$ (consistent within 8--10) and for $N=7$
+(within 6--8) are both \textbf{inconsistent}. The best fit sits at the upper edge of the prior,
+$\theta_i=3.1$, next to the hilltop, with a narrow width ($F=0.051\,\Mp$) and a small energy fraction; the
+true optimum may lie beyond the prior, and this region, near the hilltop and far from $N=9$, is where the
+fragmentation check of \S\ref{sec:checks} gives least assurance. Fixing $N=9$ at the Planck-preferred angle
+$\theta_i=2.78$ instead, run for contrast and not as a prediction, gives $\Delta\chi^2=+0.35$. On SPT-3G, then,
+no version of the model improves on $\Lambda$CDM by more than fitting noise.
+
+%======================================================================
+\section{All CMB data combined: Planck + ACT + SPT-3G}\label{sec:combined}
+All rules in this section were hashed before the runs (CubeMind pre-registrations
+\texttt{COMBINED\_CMB}, \texttt{PROFILE\_F}, \texttt{LOOK\_ELSEWHERE}, \texttt{EARLY\_LATE}, \texttt{POWER\_N}).
+The data are P-ACT (as in \S\ref{sec:pact}) plus SPT-3G D1 lite, DESI DR2 and Pantheon+. Overlapping sky
+between ACT and SPT-3G is treated as independent, as in the SPT-3G collaboration's own combination.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+Model & $k$ & $\Delta\chi^2$ & $\Delta$AIC & $H_0$ & notes\\
+\midrule
+$\Lambda$CDM & 0 & $0$ & $0$ & $68.17$ & $\chi^2=2402.40$\\
+Locked onset, $n=3$ & 2 & $-5.63$ & $-1.63$ & $70.15$ & $f_{\rm EDE}=0.070$, $\theta_i=2.74$; \textbf{pass}\\
+Locked onset, $n=2$ & 2 & $+4.72$ & $+8.72$ & $70.29$ & poorly converged (1 of 4 restarts)\\
+$w_0$--$w_a$ (late) & 2 & $-10.89$ & $-6.89$ & $67.65$ & $w_0=-0.84$, $w_a=-0.62$; \textbf{pass}\\
+\bottomrule
+\end{tabular}
+\caption{All CMB data combined (CAMB). Restart spreads are 0.6--0.8 in $\chi^2$ for the $n=3$ and
+$\Lambda$CDM runs.}
+\label{tab:combined}
+\end{table}
+
+\paragraph{Results.} The locked model passes its rule ($\Delta\chi^2<-4$, $\Delta{\rm AIC}<0$). The gain
+comes from Planck ($-2.66$ high-$\ell$, $-2.08$ low-$\ell$ EE) and ACT ($-1.57$); SPT-3G alone pulls against it
+($+1.55$). Late evolving dark energy fits better, by 5.26 in AIC, so the pre-registered early-versus-late
+comparison prefers late. With $n=2$ the fit is worse than $\Lambda$CDM, so by its rule the data require the
+flat-bottomed $n=3$ shape. That fit was poorly converged in CAMB, which also cannot run $n=1$; a cleaner test
+needs AxiCLASS.
+
+\paragraph{Significance, and what is still running.} When $f_{\rm EDE}=0$ the angle $\theta_i$ has no
+meaning, so Wilks' theorem fails and the $\chi^2_2$ significances quoted in this paper are upper estimates.
+Three analyses with rules hashed in advance are running and will be reported in a later version:
+(i) a profile likelihood in $f_{\rm EDE}$ (seven fixed values, everything else refitted), to compare with the
+SPT-3G collaboration's posterior $f_{\rm EDE}<0.070$ (95\%) for the same CMB data \cite{khalife2025}; the first
+points give $\chi^2(f)-\chi^2_{\rm min}=+4.16$, $+2.89$, $+1.22$ at $f=0.01$, $0.02$, $0.04$, against $+5.63$ at
+$f=0$; (ii) a look-elsewhere correction following Gross and Vitells \cite{grossvitells2010}, with $\theta_i$ fixed
+at eight values; and (iii) early and late dark energy fitted together in AxiCLASS, since CAMB cannot run both at
+once.
+
+%======================================================================
+\section{What geometry does and does not fix}\label{sec:derive}
+\paragraph{The potential.} $(1-\cos x)^3=\tfrac52-\tfrac{15}{4}\cos x+\tfrac32\cos2x-\tfrac14\cos3x$. Its harmonics
+satisfy $\sum k^2a_k=\sum k^4a_k=0$, which is why the potential has no $x^2$ or $x^4$ term and the field decays faster
+than radiation. Any derivation must produce both cancellations. The Nieh--Yan density is exact,
+$N=d(e^a\wedge T_a)$, so it integrates to zero on closed manifolds and generates no instanton potential by itself.
+Dilute instanton series and the chiral potential from an anomaly with a confining sector both have a mass term
+at the minimum, i.e.\ $n=1$ behaviour. String-theory constructions meet the same coincidence of scales
+\cite{mcdonough2022}. The data nevertheless prefer $n=3$ (\S\ref{sec:combined}): the potential remains assumed.
+
+\paragraph{The lock.} In flat FRW the Holst contraction $\epsilon^{abcd}R_{abcd}$ of the Levi-Civita curvature
+vanishes, and after torsion is solved the field keeps only its kinetic term, so the minimal action contains no
+trigger. The Ricci scalar does track the transition, $R/H^2=3\Omega_m(a)$, but a coupling $\xi R\phi^2$ starts
+the field at $a/a_{\rm eq}\approx0.07/|\xi|$, so it places the onset near equality only for $|\xi|\approx0.1$ and
+modifies gravity. No polynomial combination of $R^2$, $R_{\mu\nu}R^{\mu\nu}$ and the Gauss--Bonnet term vanishes in
+both eras without vanishing identically; non-polynomial triggers exist \cite{jing2024} but do not arise from the
+Holst action. The lock is therefore a phenomenological choice. The data exclude a peak later than equality and
+barely distinguish equality from an earlier peak (profile in $z_c$).
+
+%======================================================================
+\section{Outlook: the twist field as late dark energy}\label{sec:late}
+The findings above point the other way. Late evolving dark energy is what the combined data prefer; the natural
+potential for the field is $n=1$; and the construction $\phi=\sqrt{3/2}\,\Mp\,{\rm arsinh}(1/\gamma)$ gives a
+Planck-scale field range for free. These are exactly the ingredients of thawing pseudo-Goldstone quintessence
+\cite{frieman1995}, whose $w_0>-1$, $w_a<0$ matches the DESI direction, and which has recently been fitted to DESI
+data \cite{lin2025}. In this ``late twist'' the field is all of the dark energy, with $V=\Lambda^4[1-\cos(\phi/F)]$ and
+two free parameters ($F$, $m$). A pre-registered AxiCLASS test against $\Lambda$CDM and $w_0$--$w_a$, including a
+check that the fitted $F$ and $m$ fall in the field's natural range, is running. The energy scale ($\sim$meV) is still
+put in by hand, and gravitational-wave bounds on a field evolving today \cite{gao2026} must be respected.
+
+%======================================================================
+\section{Overall verdict}\label{sec:verdict}
+The overall rule (\texttt{PREREGISTRATION\_VERDICT.md}) was written before the supernova swaps,
+the $S_8$ penalties and the hilltop runs were read. \emph{Preferred} required the blind test and
+the fair Planck test to pass ($\Delta\chi^2<-4$), each of three supernova sets to give
+$\Delta\chi^2<-2$, and an $S_8$ penalty below 2 against both of two cosmic-shear values
+(\texttt{PREREG\_S8.md}): A, DES Y3 + KiDS-1000, $S_8=0.790^{+0.018}_{-0.014}$ \cite{deskids2023}; B,
+KiDS-Legacy, $S_8=0.815^{+0.016}_{-0.021}$ \cite{kidslegacy2025}. The first three conditions hold
+(Table~\ref{tab:prereg}). The $S_8$ penalty is $+2.41$ against A (over the limit) and $+0.39$ against B.
+The verdict is therefore a \textbf{tie}: the preference depends on which weak-lensing survey is
+right. Two further results are reported beside the verdict: the fit requires the field to start
+near the hilltop ($\theta_i\simeq2.7$--$2.9$, $\Delta\chi^2=+4$ to $+6$ for distant starts), and the
+pure torsion width remains excluded. This verdict was defined on Planck and ACT data; the SPT-3G results
+of \S\ref{sec:spt} are reported beside it and weaken it: on the first independent CMB data set, no
+variant, including the free-width model, improves on $\Lambda$CDM.
+
+\paragraph{Context.} The ACT DR6 extended-model analysis \cite{calabrese2025} reports no
+statistically significant preference for early dark energy or for other models that raise
+$H_0$. Our best-fit improvements of $\approx2$--$2.5\sigma$ do not contradict that statement and do
+not amount to evidence; they motivate the next blind tests (\S\ref{sec:predictions}). Best-fit
+values are not posteriors, and prior-volume effects in EDE posteriors are well known
+\cite{poulin2025}.
+
+%======================================================================
+\section{Anticipated objections}\label{sec:objections}
+
+\paragraph{``Torsion is negligible in cosmology.''} For torsion sourced by fermion spin
+this is correct, and \S\ref{sec:null} quantifies it ($10^{-58}$--$10^{-57}$). The present model's
+torsion is sourced by $\partial_\mu\bar\gamma$, and its amplitude is set by $V(\phi_i)$,
+not by $Gn^2$.
+
+\paragraph{``This is just EDE with a new name.''} At the level of the gravitational
+Lagrangian, yes, and \S\ref{sec:data} says so. The contribution is a derivation of the
+field's existence, its kinetic normalisation, its pseudoscalar nature and its
+late-time return to standard gravity from the Holst action. The potential is assumed.
+
+\paragraph{``Ghosts, instabilities, energy conditions.''} $\phi$ is a canonical scalar
+with a healthy kinetic sign. Its perturbations propagate at the speed of light in its rest
+frame, and $\rho+p=\dot\phi^2\ge0$. Unlike the fluid profiles of earlier drafts
+(Appendix~\ref{app:pheno}), no energy-exchange sector is needed.
+
+\paragraph{``Coincidence: why $z_c$ near matter--radiation equality?''} In the free fit the
+data place $z_c$ within $1\%$ of equality, and the locked model (\S\ref{sec:lock}) turns this
+into a rule with one fewer parameter. The rule is not derived: $\Lambda\approx0.5$~eV is
+still put in by hand, and the lock is a hypothesis to be tested on new data
+(\S\ref{sec:pact}), not an explanation.
+
+\paragraph{``The lock was chosen after looking at the data.''} Correct, and stated wherever
+the Planck 2018 result is quoted. The AIC charge of two parameters is therefore optimistic
+on that data set. This is why the decision rule for the next data set was fixed and hashed
+before the fit was run.
+
+\paragraph{``Best fits are not posteriors.''} Correct. We report maximum-posterior points
+from a local optimiser with multiple starts, not MCMC credible intervals. Best-fit
+$\Delta\chi^2$ values are what the AIC comparison requires, but the $\Lambda$CDM optimum
+itself shows a near-degeneracy of order one unit of $\chi^2$ between the likelihood and the
+calibration prior (\S\ref{sec:fits}). Differences below about one unit should not be
+over-interpreted. EDE posteriors are also known to suffer prior-volume effects, which is a
+reason to quote profile and best-fit results \cite{poulin2025}. MCMC chains (four per model, with a
+Gelman--Rubin rule $R-1<0.02$ fixed in advance) are running and will be reported in a later version.
+
+\paragraph{``The required $\omega_c$ is far from Planck.''} $\omega_c\simeq0.144$ follows
+from geometry (\S\ref{sec:geometry}) for any sound-horizon solution that respects BAO.
+In $\Lambda$CDM the Planck error is $\pm0.0012$, but in EDE fits $\omega_c$ is strongly
+degenerate with $f$, so that error does not apply directly. The larger $\omega_c$ also
+increases late-time clustering ($S_8$), a known cost of this model class.
+
+\paragraph{``The recombination treatment is approximate.''} Correct. The field holds
+$2$--$6\%$ of the energy at $z_*$, which shifts recombination in ways fitting formulas
+do not capture. The full-Boltzmann EDE analyses \cite{poulin2025} do capture them and
+apply to this Lagrangian.
+
+\paragraph{``Is a varying Immirzi parameter consistent with quantum gravity?''} The
+model is a classical effective theory, and the derivation of \eqref{eq:Seff} is classical
+\cite{taveras2008}. The background dynamics do not depend on where the minimum $\phi_0$
+sits; we place it at the black-hole-entropy value $\gamma_0\simeq0.2375$
+\cite{domagala2004,meissner2004} as an \emph{input}, so that the field relaxes to the value
+loop quantum gravity uses today. This choice is not a prediction of the model.
+
+%======================================================================
+\section{Predictions and how the model can fail}\label{sec:predictions}
+\begin{enumerate}
+\item \textbf{Background (shared with EDE).} A peak energy fraction $f\sim0.1$--$0.2$
+near $z_c\sim3500$, $\omega_c\approx0.14$, and $\Omega_m\approx0.31$. If future CMB
+analyses push $f<0.05$, the model cannot address the Hubble tension.
+\item \textbf{Fermion coupling (distinctive).} With fermions present, the axial torsion
+is sourced both by $\partial_\mu\bar\gamma$ and by the fermion axial current
+$J_5^\mu$. Eliminating torsion therefore generates a cross term
+$\propto\partial_\mu\bar\gamma\,J_5^\mu$, a derivative coupling of $\phi$ to fermion
+spin. Its coefficient is fixed by the Holst action and is not free. Computing it, and the
+resulting spin-dependent effects while $\phi$ rolls, is the most direct route to a
+signature that separates this model from generic EDE. We leave it to future work.
+\item \textbf{Locked onset.} On every data set the onset must coincide with
+matter--radiation equality for that data set's own densities. A significant preference for a
+different $z_c$ on new data falsifies Eq.~\eqref{eq:lock} (\S\ref{sec:pact}).
+\item \textbf{No cosmic birefringence.} In minimal Einstein--Cartan--Holst coupling the
+photon does not couple to torsion, so there is no tree-level $\phi F\tilde F$ term. A
+photon coupling can only arise through the fermion loop of the derivative coupling
+$\partial_\mu\phi J_5^\mu$, and for a vector-like theory this is suppressed by
+$(\omega/m)^2$ \cite{quevillon2019}; for CMB photons and electrons this is
+$\lesssim(0.3\,{\rm eV}/511\,{\rm keV})^2\sim3\times10^{-13}$. The minimal model therefore
+predicts an isotropic polarisation rotation $\beta\ll10^{-9}$ degrees, unlike photon-coupled
+axion EDE \cite{carroll1998,murai2023}. Planck and WMAP data show a hint of
+$\beta=0.34^\circ\pm0.09^\circ$ \cite{minami2020,eskilt2022}. If this is confirmed and shown
+to arise from early dark energy, the minimal torsion origin is excluded; Simons Observatory
+\cite{so2019} and LiteBIRD \cite{litebird2023} can decide. This is an effective-field-theory
+estimate; a full one-loop calculation in an expanding background is still needed.
+\item \textbf{Laboratory spin coupling.} Today the field acts on fermions as an axial
+background $b_0\simeq\frac34\,\dot{\bar\gamma}$. At the best fit ($F=0.137\,\Mp$,
+$\theta_i=2.79$, $z_c\simeq3570$, $n=3$) the oscillation amplitude decays as $a^{-3/(n+1)}$,
+giving $\theta\simeq6\times10^{-3}$ and a frequency $\lesssim10^{-33}$~eV today, hence
+$b_0\sim6\times10^{-46}$~GeV. Bounds from Lorentz-violation tests are about
+$10^{-31}$--$2\times10^{-27}$~GeV \cite{kostelecky2008}. The model is safe, and not testable
+in the laboratory today.
+\item \textbf{Late-time limit.} The field settles at its minimum, so the model predicts no
+dynamical torsion today beyond the negligible residual above. Any detected late-time
+variation of $\gamma$ would falsify this version.
+\end{enumerate}
+
+%======================================================================
+\section{Conclusions}
+\paragraph{Version 3 in brief.} On all CMB data combined with DESI DR2 and Pantheon+, the locked early field passes
+its pre-registered rule ($\Delta\chi^2=-5.63$) but late evolving dark energy fits better, and the quoted
+significances are upper estimates until the running profile and look-elsewhere analyses report. The potential's shape and the lock are assumptions that geometry does not supply
+(\S\ref{sec:derive}). The torsion construction motivates the field; it does not determine its numbers. The same
+field acting late (\S\ref{sec:late}) uses its natural potential and range, and is the direction we now test.
+
+\paragraph{Version 2 (unchanged).}
+Minimal Einstein--Cartan torsion cannot shorten the sound horizon: it has the wrong sign
+and is $56$--$57$ orders of magnitude too weak. Promoting the Barbero--Immirzi parameter to a
+field changes both facts: the torsion energy becomes the positive kinetic energy of a
+canonical pseudoscalar, screening follows from the field's dynamics, and with one assumed
+potential the model is axion-like early dark energy.
+
+Fitted with a full Boltzmann code to Planck 2018, DESI DR2 and Pantheon+, the free model ties
+with $\Lambda$CDM after its parameter penalty, but it places the onset at matter--radiation
+equality. Locking the onset there removes a parameter at no cost in fit, giving
+$\Delta{\rm AIC}=-2.4$, $H_0=70.6$ and $f_{\rm EDE}=0.078$. This is a modest, post-hoc
+preference, not a detection; with identical optimiser settings for both models the Planck gain
+is $\Delta\chi^2=-4.70$. The pure torsion width is excluded, Planck PR4 alone shows no
+likelihood improvement, and curvature is consistent with zero. The minimal model predicts
+no cosmic birefringence, which distinguishes it from photon-coupled axion EDE. On the blind,
+pre-registered P-ACT test the locked onset passed ($\Delta\chi^2=-7.23$, $\approx2.2\sigma$), and a
+one-parameter version with $F=\sqrt{3/2}\,\Mp/9$ gave $\Delta\chi^2=-6.14$ ($\approx2.5\sigma$), but
+the divisor fitted freely is $8.0$, not $9$, and the $S_8$ cost makes the pre-registered overall
+verdict a tie. Two independent field solvers agree on these numbers, and the field does not fragment.
+On SPT-3G, the first CMB data independent of Planck, the pre-registered $N=9$ model fails
+($\Delta\chi^2=+0.52$), as does a zero-parameter variant, and the free-width model shows no preference
+($\Delta\chi^2=-1.27$) at a width far from $N=9$. The Planck and ACT preferences are therefore
+hints at the $2\sigma$ level that the first independent data do not confirm, consistent with the ACT
+collaboration's finding of no significant preference for early dark energy. The open problems are the
+origin of the eV scale, a derivation of the lock and of the divisor from the fermion sector, a full
+weak-lensing likelihood in place of the $S_8$ penalty, posterior analyses, and blind tests on the
+Simons Observatory with rules written first.
+
+\section*{Data and code availability}
+All code, fit outputs (best-fit points and their $\chi^2$ components), pre-registration files
+with their SHA-256 hashes, and the scripts that recompute every number in this paper are
+public at \url{https://github.com/dannyeldridge54/AEGIS}. A one-step script (\texttt{CHECK\_MY\_WORK}) re-derives
+every number quoted here. Results that failed are kept alongside those that passed.
+
+\section*{License and dedication}
+This work belongs to everyone, and to all life: every living thing, any life beyond the Earth we may one
+day meet, and even an artificial mind, should one be recognised as a being of its own. No one is meant to
+hold it alone, its author included: it reached this
+point only because many people led it here, from the scientists whose ideas it builds on to the teams who
+built the telescopes, shared their data and wrote the public codes it uses. It is returned to all of
+them, and to everyone else. It is free to people of every race, creed, nation and background, without
+distinction. It is released under the Hippocratic License 3.0 with the Military Activities and Mass
+Surveillance modules (HL3-MIL-SV, \url{https://firstdonoharm.dev/version/3/0/mil-sv.html}). Anyone may
+read, copy, check, reuse and build on it, provided the use respects the human rights the license sets
+out, including its prohibition of discrimination, and is not used for military activities or mass
+surveillance. It is offered especially to the people who will build the technologies and crafts to come.
+
+\section*{Acknowledgements}
+The author thanks the Planck, ACT, DESI, DES, KiDS, Pantheon+ and Union3 teams for public data and
+likelihoods, and the developers of CAMB, CLASS, AxiCLASS, Cobaya and Py-BOBYQA. The author used AI
+assistants (Claude, Anthropic; GitHub Copilot) for algebra checks, code, running the fits and
+drafting text; every number was re-derived by independent scripts, and the author takes full
+responsibility for the content.
+
+%======================================================================
+\appendix
+\section{Fluid profiles and the fixed-$\omega_m$ branch}\label{app:pheno}
+Earlier drafts used phenomenological profiles for a torsion-like fluid with
+$\Omega_\tau(a_c)=f/(1-f)\,[\Omega_ma_c^{-3}+\Omega_ra_c^{-4}]$:
+P1, $\Omega_\tau\propto4x^6/(1+x^6)^2$, and P2, $\Omega_\tau\propto\Theta(x-1)x^{-6}$, with
+$x=a/a_c$. A separately conserved fluid has
+$w_{\rm eff}=-1-\frac13\,d\ln\Omega_\tau/d\ln a$. For P1 this gives
+$w_{\rm eff}=-1-2(1-x^6)/(1+x^6)$, which reaches $-3$ as $x\to0$ and violates the null
+energy condition. The scalar model of \S\ref{sec:immirzi} removes this problem.
+
+Linear response at fixed $(h,\omega_i)$, $\delta\ln r_s^*/[f/(1-f)]$: P1 $-0.246$, P2
+$-0.079$ at $z_c=3540$. The response vanishes as $z_c\to z_*$. With the EC sign,
+$f=0.05$ \emph{lengthens} $r_s^*$ by $1.35\%$ and gives $H_0=62.8$.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ccccccc}
+\toprule
+$f$ & $h$ & $r_s^*$ [Mpc] & $r_d$ [Mpc] & $D_C(z_*)$ [Mpc] & $\Omega_m$ & $r_dh$ [Mpc]\\
+\midrule
+0    & 0.6736 & 144.27 & 147.10 & 13894.4 & 0.3138 & 99.09\\
+0.05 & 0.7181 & 142.47 & 145.28 & 13720.6 & 0.2761 & 104.33\\
+0.10 & 0.7666 & 140.60 & 143.41 & 13541.2 & 0.2423 & 109.93\\
+0.15 & 0.8195 & 138.68 & 141.46 & 13355.6 & 0.2120 & 115.92\\
+0.25 & 0.9421 & 134.59 & 137.34 & 12962.1 & 0.1604 & 129.39\\
+\bottomrule
+\end{tabular}
+\caption{P1, $z_c=3540$, fixed $\omega_c=0.1200$, $\theta_*$ matched. The rise in $H_0$ is
+bought by lowering $\Omega_m$ and raising $r_dh$, both excluded by BAO.}
+\label{tab:A}
+\end{table}
+
+\section{Code}\label{app:code}
+\sloppy
+The likelihood fits (\S\ref{sec:fits}--\S\ref{sec:pact}) use AxiCLASS through Cobaya, driven by
+\texttt{cmb\_cloud.py} and \texttt{bestfit.py} in the repository; the locked onset is
+implemented as a Cobaya parameter function of $(\omega_b,\omega_c)$ returning
+$\log_{10}a_c$ from Eq.~\eqref{eq:lock}. The pre-registration files are
+\texttt{PREREGISTRATION\_F.md}, \texttt{\_ZEQ.md}, \texttt{\_N.md}, \texttt{\_OMK.md} and
+\texttt{\_SINH.md}. Version 2 adds: \texttt{cmbfit\_compare.py} (CAMB + Cobaya fits, including the
+SPT-3G runs), \texttt{fwidth.py} (the width constraint), \texttt{width\_readback.py} (implied $N$),
+\texttt{axiclass/cross\_engine\_pact.py} (\S\ref{sec:checks}), \texttt{floquet\_twist.py} and
+\texttt{floquet\_expanding.py} (fragmentation), and the rule files \texttt{PREREG\_PHASE1.md},
+\texttt{PREREG\_PHASE1\_DEVIATIONS.md} and the SPT-3G pre-registrations, all supplied as ancillary files
+or in the Zenodo record. The background calculations of \S\ref{sec:cosmo}--\S\ref{sec:results} come
+from Python scripts using NumPy and SciPy, supplied as ancillary files.
+\texttt{ec\_calc.py} computes the minimal-EC amplitude (\S\ref{sec:null}).
+\texttt{pheno.py} and \texttt{final.py} handle the fluid profiles and the fixed- and
+free-$\omega_m$ fits (Appendix~\ref{app:pheno}). \texttt{scalar\_model.py} and
+\texttt{run\_scalar.py} solve the Barbero--Immirzi field model
+(\S\ref{sec:results}). Quadratures use \texttt{quad} in $\ln a$ (relative tolerance
+$10^{-9}$--$10^{-10}$). The field equations use \texttt{solve\_ivp} (DOP853,
+$\mathrm{rtol}=10^{-10}$). Root finding uses \texttt{brentq} and \texttt{fsolve}.
+
+\begin{thebibliography}{99}
+\bibitem{calabrese2025} E.~Calabrese et al.\ (ACT), \emph{The Atacama Cosmology Telescope: DR6
+Constraints on Extended Cosmological Models}, arXiv:2503.14454 (2025).
+\bibitem{khalife2025} SPT-3G Collaboration, \emph{SPT-3G D1: Axion early dark energy with CMB experiments
+and DESI observations}, Phys.\ Rev.\ D \textbf{113}, 103546 (2026), arXiv:2507.23355.
+\bibitem{grossvitells2010} E.~Gross, O.~Vitells, \emph{Trial factors for the look elsewhere effect in high energy
+physics}, Eur.\ Phys.\ J.\ C \textbf{70}, 525 (2010), arXiv:1005.1891.
+\bibitem{mcdonough2022} E.~McDonough, M.~Scalisi, \emph{Towards Early Dark Energy in String Theory}, arXiv:2209.00011.
+\bibitem{jing2024} C.~Jing, S.~Tian, Z.-H.~Zhu, \emph{Early dark energy triggered by spacetime dynamics that encodes
+cosmic radiation-matter transition}, Phys.\ Rev.\ D \textbf{109}, 044016 (2024), arXiv:2402.03684.
+\bibitem{frieman1995} J.~A.~Frieman, C.~T.~Hill, A.~Stebbins, I.~Waga, \emph{Cosmology with ultralight pseudo
+Nambu-Goldstone bosons}, Phys.\ Rev.\ Lett.\ \textbf{75}, 2077 (1995), arXiv:astro-ph/9505060.
+\bibitem{lin2025} W.~Lin, L.~Visinelli, T.~T.~Yanagida, \emph{Testing Quintessence Axion Dark Energy with Recent
+Cosmological Results}, JCAP \textbf{10}, 023 (2025), arXiv:2504.17638.
+\bibitem{gao2026} Z.-F.~Gao et al., \emph{Dynamical Barbero--Immirzi field coupled to quintessence: gravitational-wave
+propagation constraints and next-generation forecasts}, arXiv:2608.09487 (2026).
+\bibitem{camphuis2025} E.~Camphuis et al.\ (SPT-3G), \emph{SPT-3G D1: CMB temperature and polarization
+power spectra and cosmology from 2019 and 2020 observations of the SPT-3G Main field}, Phys.\ Rev.\ D
+\textbf{113}, 083504 (2026), arXiv:2506.20707.
+\bibitem{balkenhol2024} L.~Balkenhol, C.~Trendafilova, K.~Benabed, S.~Galli, \emph{candl: Cosmic
+Microwave Background Analysis with a Differentiable Likelihood}, A\&A \textbf{686}, A10 (2024),
+arXiv:2401.13433.
+\bibitem{deskids2023} DES and KiDS Collaborations, \emph{DES Y3 + KiDS-1000: Consistent cosmology
+combining cosmic shear surveys}, Open J.\ Astrophys.\ (2023), arXiv:2305.17173.
+\bibitem{kidslegacy2025} KiDS Collaboration, \emph{KiDS-Legacy: cosmological constraints from cosmic
+shear with the complete Kilo-Degree Survey} (2025).
+\bibitem{riess2022} A.~G.~Riess et al., ApJL \textbf{934}, L7 (2022).
+\bibitem{planck2020} Planck Collaboration, A\&A \textbf{641}, A6 (2020).
+\bibitem{karwal2016} T.~Karwal, M.~Kamionkowski, Phys.\ Rev.\ D \textbf{94}, 103523 (2016).
+\bibitem{poulin2019} V.~Poulin, T.~L.~Smith, T.~Karwal, M.~Kamionkowski,
+  Phys.\ Rev.\ Lett.\ \textbf{122}, 221301 (2019).
+\bibitem{poulin2025} V.~Poulin, T.~L.~Smith, R.~Calder\'on, T.~Simon,
+  \emph{Impact of ACT DR6 and DESI DR2 for Early Dark Energy and the Hubble tension},
+  arXiv:2505.08051 (2025).
+\bibitem{holst1996} S.~Holst, Phys.\ Rev.\ D \textbf{53}, 5966 (1996).
+\bibitem{barbero1995} J.~F.~Barbero, Phys.\ Rev.\ D \textbf{51}, 5507 (1995).
+\bibitem{immirzi1997} G.~Immirzi, Class.\ Quantum Grav.\ \textbf{14}, L177 (1997).
+\bibitem{taveras2008} V.~Taveras, N.~Yunes, \emph{The Barbero--Immirzi parameter as a
+  scalar field: K-inflation from loop quantum gravity?}, Phys.\ Rev.\ D \textbf{78},
+  064070 (2008), arXiv:0807.2652.
+\bibitem{hehl1976} F.~W.~Hehl, P.~von der Heyde, G.~D.~Kerlick, J.~M.~Nester,
+  Rev.\ Mod.\ Phys.\ \textbf{48}, 393 (1976).
+\bibitem{hehldatta1971} F.~W.~Hehl, B.~K.~Datta, J.\ Math.\ Phys.\ \textbf{12}, 1334 (1971).
+\bibitem{gasperini1986} M.~Gasperini, Phys.\ Rev.\ Lett.\ \textbf{56}, 2873 (1986).
+\bibitem{obukhov1987} Yu.~N.~Obukhov, V.~A.~Korotky, Class.\ Quantum Grav.\
+  \textbf{4}, 1633 (1987).
+\bibitem{poplawski2010} N.~J.~Pop{\l}awski, Phys.\ Lett.\ B \textbf{694}, 181 (2010).
+\bibitem{poplawski2012} N.~J.~Pop{\l}awski, Phys.\ Rev.\ D \textbf{85}, 107502 (2012).
+\bibitem{turner1983} M.~S.~Turner, Phys.\ Rev.\ D \textbf{28}, 1243 (1983).
+\bibitem{hu1996} W.~Hu, N.~Sugiyama, ApJ \textbf{471}, 542 (1996).
+\bibitem{eisenstein1998} D.~J.~Eisenstein, W.~Hu, ApJ \textbf{496}, 605 (1998).
+\bibitem{poulin2018} V.~Poulin, T.~L.~Smith, D.~Grin, T.~Karwal, M.~Kamionkowski,
+  Phys.\ Rev.\ D \textbf{98}, 083525 (2018), arXiv:1806.10608.
+\bibitem{blas2011} D.~Blas, J.~Lesgourgues, T.~Tram, JCAP \textbf{07}, 034 (2011), arXiv:1104.2933.
+\bibitem{torrado2021} J.~Torrado, A.~Lewis, JCAP \textbf{05}, 057 (2021), arXiv:2005.05290.
+\bibitem{powell2009} M.~J.~D.~Powell, \emph{The BOBYQA algorithm for bound constrained
+  optimization without derivatives}, Cambridge report DAMTP 2009/NA06 (2009).
+\bibitem{cartis2019} C.~Cartis, J.~Fiala, B.~Marteau, L.~Roberts, ACM Trans.\ Math.\ Softw.\
+  \textbf{45}, 32 (2019), arXiv:1804.00154.
+\bibitem{planck2020like} Planck Collaboration, A\&A \textbf{641}, A5 (2020), arXiv:1907.12875.
+\bibitem{planck2020lens} Planck Collaboration, A\&A \textbf{641}, A8 (2020), arXiv:1807.06210.
+\bibitem{desi2025} DESI Collaboration, \emph{DESI DR2 Results II: Measurements of Baryon
+  Acoustic Oscillations and Cosmological Constraints}, arXiv:2503.14738 (2025).
+\bibitem{scolnic2022} D.~Scolnic et al., ApJ \textbf{938}, 113 (2022), arXiv:2112.03863.
+\bibitem{brout2022} D.~Brout et al., ApJ \textbf{938}, 110 (2022), arXiv:2202.04077.
+\bibitem{rosenberg2022} E.~Rosenberg, S.~Gratton, G.~Efstathiou, MNRAS \textbf{517}, 4620
+  (2022), arXiv:2205.10869.
+\bibitem{carron2022} J.~Carron, M.~Mirmelstein, A.~Lewis, JCAP \textbf{09}, 039 (2022),
+  arXiv:2206.07773.
+\bibitem{louis2025} T.~Louis et al.\ (ACT), \emph{The Atacama Cosmology Telescope: DR6 Power
+  Spectra, Likelihoods and $\Lambda$CDM Parameters}, arXiv:2503.14452 (2025).
+\bibitem{madhavacheril2024} M.~S.~Madhavacheril et al.\ (ACT), ApJ \textbf{962}, 113 (2024),
+  arXiv:2304.05203.
+\bibitem{qu2024} F.~J.~Qu et al.\ (ACT), ApJ \textbf{962}, 112 (2024), arXiv:2304.05202.
+\bibitem{akaike1974} H.~Akaike, IEEE Trans.\ Autom.\ Control \textbf{19}, 716 (1974).
+\bibitem{luminet2003} J.-P.~Luminet, J.~R.~Weeks, A.~Riazuelo, R.~Lehoucq, J.-P.~Uzan,
+  Nature \textbf{425}, 593 (2003), arXiv:astro-ph/0310253.
+\bibitem{planck2016topo} Planck Collaboration, A\&A \textbf{594}, A18 (2016), arXiv:1502.01593.
+\bibitem{domagala2004} M.~Domagala, J.~Lewandowski, Class.\ Quantum Grav.\ \textbf{21}, 5233
+  (2004), arXiv:gr-qc/0407051.
+\bibitem{meissner2004} K.~A.~Meissner, Class.\ Quantum Grav.\ \textbf{21}, 5245 (2004),
+  arXiv:gr-qc/0407052.
+\bibitem{quevillon2019} J.~Quevillon, C.~Smith, Eur.\ Phys.\ J.\ C \textbf{79}, 822 (2019),
+  arXiv:1903.12559.
+\bibitem{carroll1998} S.~M.~Carroll, Phys.\ Rev.\ Lett.\ \textbf{81}, 3067 (1998),
+  arXiv:astro-ph/9806099.
+\bibitem{murai2023} K.~Murai, F.~Naokawa, T.~Namikawa, E.~Komatsu, Phys.\ Rev.\ D
+  \textbf{107}, L041302 (2023), arXiv:2209.07804.
+\bibitem{minami2020} Y.~Minami, E.~Komatsu, Phys.\ Rev.\ Lett.\ \textbf{125}, 221301 (2020),
+  arXiv:2011.11254.
+\bibitem{eskilt2022} J.~R.~Eskilt, E.~Komatsu, Phys.\ Rev.\ D \textbf{106}, 063503 (2022),
+  arXiv:2205.13962.
+\bibitem{so2019} P.~Ade et al.\ (Simons Observatory), JCAP \textbf{02}, 056 (2019),
+  arXiv:1808.07445.
+\bibitem{litebird2023} LiteBIRD Collaboration, Prog.\ Theor.\ Exp.\ Phys.\ \textbf{2023},
+  042F01 (2023), arXiv:2202.02773.
+\bibitem{kostelecky2008} V.~A.~Kosteleck\'y, N.~Russell, J.~D.~Tasson, Phys.\ Rev.\ Lett.\
+  \textbf{100}, 111102 (2008), arXiv:0712.4393.
+\end{thebibliography}
+
+\end{document}

@@ -24,36 +24,47 @@
 \newcommand{\SPTsevenDchi}{\ensuremath{+1.66}}  % N = 7 variant (fixed in advance), cmp_spt_edelock_F7.json
 \newcommand{\SPTsevenVerdict}{a \textbf{fail} ($\Delta\chi^2=\SPTsevenDchi$)}
 
-\title{\textbf{Torsion-Born Early Dark Energy\\ with an Onset Locked to Matter--Radiation Equality:\\
-Derivation and Pre-Registered Likelihood Tests}}
+% ---- Version 3: results still running on 31 Oct 2026 (CubeMind AUTO_RESULTS.md). Fill when they land. ----
+\newcommand{\Pending}{\textit{[pending]}}
+\newcommand{\AoneLo}{\Pending}          % 95% lower end of f_EDE from the profile (PREREGISTRATION_PROFILE_F.md)
+\newcommand{\AoneHi}{\Pending}          % 95% upper end
+\newcommand{\AoneRise}{\Pending}        % chi2(f=0) - chi2_min
+\newcommand{\AoneVerdict}{\Pending}     % PREFERRED / MILD / NOT PREFERRED
+\newcommand{\AtwoZloc}{\Pending}        % local significance
+\newcommand{\AtwoZglob}{\Pending}       % global (look-elsewhere) significance, conservative
+\newcommand{\AtwoVerdict}{\Pending}
+\newcommand{\AthreeD}{\Pending}         % chi2(early+late) - chi2(late)
+\newcommand{\AthreeVerdict}{\Pending}   % SURVIVES / MILD / NOT NEEDED
+\newcommand{\LateLone}{\Pending}        % Late Twist vs LCDM
+\newcommand{\LateLtwo}{\Pending}        % Late Twist vs w0-wa
+\newcommand{\LateLthree}{\Pending}      % natural range of F and m
+
+\title{\textbf{Torsion-Motivated Early Dark Energy\\ with an Onset Locked to Matter--Radiation Equality:\\
+Pre-Registered Tests on Planck, ACT, SPT-3G and DESI}}
 \author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma, USA. Contact: dannyeldridge54@gmail.com.
 Code, fit results and pre-registrations: \url{https://github.com/dannyeldridge54/AEGIS}; archived at Zenodo, doi:\href{https://doi.org/10.5281/zenodo.23847152}{10.5281/zenodo.23847152}.}}
-\date{Version 2, 31 October 2026}
+\date{Version 3 (draft), November 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We construct early dark energy (EDE) from spacetime torsion and test it with full Boltzmann
-codes and decision rules hashed before each fit. Minimal Einstein--Cartan torsion cannot shorten
-the sound horizon: its spin--torsion energy is negative and $\sim10^{-57}$ of the radiation
-density near equality. Promoting the Barbero--Immirzi parameter to a field gives a canonical,
-ghost-free pseudoscalar whose kinetic energy is the torsion energy; with one assumed potential,
-$V=\Lambda^4[1-\cos(\phi/F)]^3$, the model is axion-like EDE. We lock the field's onset to
-matter--radiation equality, leaving two extra parameters. On Planck 2018 + DESI DR2 + Pantheon+
-the locked model gives $\Delta\chi^2=-4.70$ ($\Delta{\rm AIC}=-0.70$, $H_0=70.5$); on the
-pre-registered Planck + ACT DR6 test it gives $\Delta\chi^2=-7.23$ ($\Delta{\rm AIC}=-3.23$,
-$\approx2.2\sigma$, $H_0=70.4$), robust to three supernova compilations. Two independent field
-solvers agree to $0.4$ in $\chi^2$, and a Floquet analysis with expansion finds no fragmentation.
-The pre-registered overall verdict is a tie, because the model raises $S_8$. The pure torsion
-width $F=\sqrt{3/2}\,\Mp$ is excluded ($\Delta\chi^2=+14.6$); a profile in $F=\sqrt{3/2}\,\Mp/N$
-prefers $N=8$ on Planck + ACT and $N=9$ on Planck. On the first fully independent CMB data,
-SPT-3G D1 with DESI DR2 and Pantheon+, the pre-registered one-parameter model ($N=9$) fails
-($\Delta\chi^2=+0.52$), as does a zero-parameter variant with a fixed initial angle
-($\Delta\chi^2=+0.43$), and with the width free the model shows no preference
-($\Delta\chi^2=-1.27$, $\Delta{\rm AIC}=+2.73$). SPT-3G does not confirm the Planck and ACT
-preference, in line with the ACT collaboration's finding of no significant preference for EDE. The minimal model predicts no cosmic birefringence. We state
-which parts are derived, which are assumed, and which results failed.
+Promoting the Barbero--Immirzi parameter of Einstein--Cartan--Holst gravity to a field gives a
+canonical, ghost-free pseudoscalar. With an assumed potential $V=\Lambda^4[1-\cos(\phi/F)]^3$ it is
+axion-like early dark energy (EDE); we fix the peak of its energy fraction at matter--radiation
+equality, leaving two extra parameters, and test it with full Boltzmann codes and decision rules hashed
+before each fit. On Planck + ACT DR6 + DESI DR2 + Pantheon+ it improves on $\Lambda$CDM by
+$\Delta\chi^2=-7.23$; on SPT-3G D1 alone no version improves meaningfully (best $\Delta\chi^2=-1.27$). On all three CMB
+data sets combined with DESI DR2 and Pantheon+ it passes its pre-registered rule ($\Delta\chi^2=-5.63$,
+$f_{\rm EDE}=0.070$, $H_0=70.15$), but late evolving dark energy ($w_0$--$w_a$) fits better
+($\Delta\chi^2=-10.89$; $\Delta$AIC lower by 5.3). Because the initial angle is undefined when
+$f_{\rm EDE}=0$, the naive significances are upper estimates; a profile likelihood, a look-elsewhere
+correction and a joint early-plus-late fit are pre-registered and running. The data favour the flat-bottomed $n=3$ shape over $n=2$,
+which we show is not produced by the Nieh--Yan term or by natural instanton or anomaly potentials, and
+the equality lock cannot be derived from the minimal action. Two codes agree to 0.4 in $\chi^2$ and the
+field does not fragment. Fixed-number variants of the width and initial angle all fail. We outline a
+late-time alternative in which the same field, with the natural $n=1$ potential and a Planck-scale range,
+acts as thawing dark energy. We state which parts are derived, which are assumed, and which failed.
 \end{abstract}
 
 \tableofcontents
@@ -813,6 +824,78 @@ $\theta_i=2.78$ instead, run for contrast and not as a prediction, gives $\Delta
 no version of the model improves on $\Lambda$CDM by more than fitting noise.
 
 %======================================================================
+\section{All CMB data combined: Planck + ACT + SPT-3G}\label{sec:combined}
+All rules in this section were hashed before the runs (CubeMind pre-registrations
+\texttt{COMBINED\_CMB}, \texttt{PROFILE\_F}, \texttt{LOOK\_ELSEWHERE}, \texttt{EARLY\_LATE}, \texttt{POWER\_N}).
+The data are P-ACT (as in \S\ref{sec:pact}) plus SPT-3G D1 lite, DESI DR2 and Pantheon+. Overlapping sky
+between ACT and SPT-3G is treated as independent, as in the SPT-3G collaboration's own combination.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+Model & $k$ & $\Delta\chi^2$ & $\Delta$AIC & $H_0$ & notes\\
+\midrule
+$\Lambda$CDM & 0 & $0$ & $0$ & $68.17$ & $\chi^2=2402.40$\\
+Locked onset, $n=3$ & 2 & $-5.63$ & $-1.63$ & $70.15$ & $f_{\rm EDE}=0.070$, $\theta_i=2.74$; \textbf{pass}\\
+Locked onset, $n=2$ & 2 & $+4.72$ & $+8.72$ & $70.29$ & poorly converged (1 of 4 restarts)\\
+$w_0$--$w_a$ (late) & 2 & $-10.89$ & $-6.89$ & $67.65$ & $w_0=-0.84$, $w_a=-0.62$; \textbf{pass}\\
+\bottomrule
+\end{tabular}
+\caption{All CMB data combined (CAMB). Restart spreads are 0.6--0.8 in $\chi^2$ for the $n=3$ and
+$\Lambda$CDM runs.}
+\label{tab:combined}
+\end{table}
+
+\paragraph{Results.} The locked model passes its rule ($\Delta\chi^2<-4$, $\Delta{\rm AIC}<0$). The gain
+comes from Planck ($-2.66$ high-$\ell$, $-2.08$ low-$\ell$ EE) and ACT ($-1.57$); SPT-3G alone pulls against it
+($+1.55$). Late evolving dark energy fits better, by 5.26 in AIC, so the pre-registered early-versus-late
+comparison prefers late. With $n=2$ the fit is worse than $\Lambda$CDM, so by its rule the data require the
+flat-bottomed $n=3$ shape. That fit was poorly converged in CAMB, which also cannot run $n=1$; a cleaner test
+needs AxiCLASS.
+
+\paragraph{Significance, and what is still running.} When $f_{\rm EDE}=0$ the angle $\theta_i$ has no
+meaning, so Wilks' theorem fails and the $\chi^2_2$ significances quoted in this paper are upper estimates.
+Three analyses with rules hashed in advance are running and will be reported in a later version:
+(i) a profile likelihood in $f_{\rm EDE}$ (seven fixed values, everything else refitted), to compare with the
+SPT-3G collaboration's posterior $f_{\rm EDE}<0.070$ (95\%) for the same CMB data \cite{khalife2025}; the first
+points give $\chi^2(f)-\chi^2_{\rm min}=+4.16$, $+2.89$, $+1.22$ at $f=0.01$, $0.02$, $0.04$, against $+5.63$ at
+$f=0$; (ii) a look-elsewhere correction following Gross and Vitells \cite{grossvitells2010}, with $\theta_i$ fixed
+at eight values; and (iii) early and late dark energy fitted together in AxiCLASS, since CAMB cannot run both at
+once.
+
+%======================================================================
+\section{What geometry does and does not fix}\label{sec:derive}
+\paragraph{The potential.} $(1-\cos x)^3=\tfrac52-\tfrac{15}{4}\cos x+\tfrac32\cos2x-\tfrac14\cos3x$. Its harmonics
+satisfy $\sum k^2a_k=\sum k^4a_k=0$, which is why the potential has no $x^2$ or $x^4$ term and the field decays faster
+than radiation. Any derivation must produce both cancellations. The Nieh--Yan density is exact,
+$N=d(e^a\wedge T_a)$, so it integrates to zero on closed manifolds and generates no instanton potential by itself.
+Dilute instanton series and the chiral potential from an anomaly with a confining sector both have a mass term
+at the minimum, i.e.\ $n=1$ behaviour. String-theory constructions meet the same coincidence of scales
+\cite{mcdonough2022}. The data nevertheless prefer $n=3$ (\S\ref{sec:combined}): the potential remains assumed.
+
+\paragraph{The lock.} In flat FRW the Holst contraction $\epsilon^{abcd}R_{abcd}$ of the Levi-Civita curvature
+vanishes, and after torsion is solved the field keeps only its kinetic term, so the minimal action contains no
+trigger. The Ricci scalar does track the transition, $R/H^2=3\Omega_m(a)$, but a coupling $\xi R\phi^2$ starts
+the field at $a/a_{\rm eq}\approx0.07/|\xi|$, so it places the onset near equality only for $|\xi|\approx0.1$ and
+modifies gravity. No polynomial combination of $R^2$, $R_{\mu\nu}R^{\mu\nu}$ and the Gauss--Bonnet term vanishes in
+both eras without vanishing identically; non-polynomial triggers exist \cite{jing2024} but do not arise from the
+Holst action. The lock is therefore a phenomenological choice. The data exclude a peak later than equality and
+barely distinguish equality from an earlier peak (profile in $z_c$).
+
+%======================================================================
+\section{Outlook: the twist field as late dark energy}\label{sec:late}
+The findings above point the other way. Late evolving dark energy is what the combined data prefer; the natural
+potential for the field is $n=1$; and the construction $\phi=\sqrt{3/2}\,\Mp\,{\rm arsinh}(1/\gamma)$ gives a
+Planck-scale field range for free. These are exactly the ingredients of thawing pseudo-Goldstone quintessence
+\cite{frieman1995}, whose $w_0>-1$, $w_a<0$ matches the DESI direction, and which has recently been fitted to DESI
+data \cite{lin2025}. In this ``late twist'' the field is all of the dark energy, with $V=\Lambda^4[1-\cos(\phi/F)]$ and
+two free parameters ($F$, $m$). A pre-registered AxiCLASS test against $\Lambda$CDM and $w_0$--$w_a$, including a
+check that the fitted $F$ and $m$ fall in the field's natural range, is running. The energy scale ($\sim$meV) is still
+put in by hand, and gravitational-wave bounds on a field evolving today \cite{gao2026} must be respected.
+
+%======================================================================
 \section{Overall verdict}\label{sec:verdict}
 The overall rule (\texttt{PREREGISTRATION\_VERDICT.md}) was written before the supernova swaps,
 the $S_8$ penalties and the hilltop runs were read. \emph{Preferred} required the blind test and
@@ -933,6 +1016,13 @@ variation of $\gamma$ would falsify this version.
 
 %======================================================================
 \section{Conclusions}
+\paragraph{Version 3 in brief.} On all CMB data combined with DESI DR2 and Pantheon+, the locked early field passes
+its pre-registered rule ($\Delta\chi^2=-5.63$) but late evolving dark energy fits better, and the quoted
+significances are upper estimates until the running profile and look-elsewhere analyses report. The potential's shape and the lock are assumptions that geometry does not supply
+(\S\ref{sec:derive}). The torsion construction motivates the field; it does not determine its numbers. The same
+field acting late (\S\ref{sec:late}) uses its natural potential and range, and is the direction we now test.
+
+\paragraph{Version 2 (unchanged).}
 Minimal Einstein--Cartan torsion cannot shorten the sound horizon: it has the wrong sign
 and is $56$--$57$ orders of magnitude too weak. Promoting the Barbero--Immirzi parameter to a
 field changes both facts: the torsion energy becomes the positive kinetic energy of a
@@ -1044,6 +1134,19 @@ $\mathrm{rtol}=10^{-10}$). Root finding uses \texttt{brentq} and \texttt{fsolve}
 \begin{thebibliography}{99}
 \bibitem{calabrese2025} E.~Calabrese et al.\ (ACT), \emph{The Atacama Cosmology Telescope: DR6
 Constraints on Extended Cosmological Models}, arXiv:2503.14454 (2025).
+\bibitem{khalife2025} SPT-3G Collaboration, \emph{SPT-3G D1: Axion early dark energy with CMB experiments
+and DESI observations}, Phys.\ Rev.\ D \textbf{113}, 103546 (2026), arXiv:2507.23355.
+\bibitem{grossvitells2010} E.~Gross, O.~Vitells, \emph{Trial factors for the look elsewhere effect in high energy
+physics}, Eur.\ Phys.\ J.\ C \textbf{70}, 525 (2010), arXiv:1005.1891.
+\bibitem{mcdonough2022} E.~McDonough, M.~Scalisi, \emph{Towards Early Dark Energy in String Theory}, arXiv:2209.00011.
+\bibitem{jing2024} C.~Jing, S.~Tian, Z.-H.~Zhu, \emph{Early dark energy triggered by spacetime dynamics that encodes
+cosmic radiation-matter transition}, Phys.\ Rev.\ D \textbf{109}, 044016 (2024), arXiv:2402.03684.
+\bibitem{frieman1995} J.~A.~Frieman, C.~T.~Hill, A.~Stebbins, I.~Waga, \emph{Cosmology with ultralight pseudo
+Nambu-Goldstone bosons}, Phys.\ Rev.\ Lett.\ \textbf{75}, 2077 (1995), arXiv:astro-ph/9505060.
+\bibitem{lin2025} W.~Lin, L.~Visinelli, T.~T.~Yanagida, \emph{Testing Quintessence Axion Dark Energy with Recent
+Cosmological Results}, JCAP \textbf{10}, 023 (2025), arXiv:2504.17638.
+\bibitem{gao2026} Z.-F.~Gao et al., \emph{Dynamical Barbero--Immirzi field coupled to quintessence: gravitational-wave
+propagation constraints and next-generation forecasts}, arXiv:2608.09487 (2026).
 \bibitem{camphuis2025} E.~Camphuis et al.\ (SPT-3G), \emph{SPT-3G D1: CMB temperature and polarization
 power spectra and cosmology from 2019 and 2020 observations of the SPT-3G Main field}, Phys.\ Rev.\ D
 \textbf{113}, 083504 (2026), arXiv:2506.20707.

@@ -1,0 +1,62 @@
+{
+  "pact_lcdm": {
+    "axiclass": {
+      "planck_2018_lowl.TT": 21.912436195270516,
+      "planck_2018_lowl.EE": 397.67653690932417,
+      "act_dr6_cmbonly.PlanckActCut": 220.97027680926652,
+      "act_dr6_cmbonly.ACTDR6CMBonly": 159.66405136069207,
+      "act_dr6_lenslike.ACTDR6LensLike": 20.084966223812618,
+      "bao.desi_dr2.desi_bao_all": 13.525921376546236,
+      "sn.pantheonplus": 1405.484090894
+    },
+    "camb": {
+      "planck_2018_lowl.TT": 21.876421287744222,
+      "planck_2018_lowl.EE": 397.68061668052604,
+      "bao.desi_dr2.desi_bao_all": 13.489031860177443,
+      "sn.pantheonplus": 1405.483828136347,
+      "act_dr6_cmbonly.PlanckActCut": 220.7877179960602,
+      "act_dr6_cmbonly.ACTDR6CMBonly": 159.47374598078068,
+      "act_dr6_lenslike.ACTDR6LensLike": 20.214024666758817
+    }
+  },
+  "pact_edelock": {
+    "axiclass": {
+      "planck_2018_lowl.TT": 21.23920051369487,
+      "planck_2018_lowl.EE": 396.26823177919704,
+      "act_dr6_cmbonly.PlanckActCut": 217.33214654165906,
+      "act_dr6_cmbonly.ACTDR6CMBonly": 158.6945273436655,
+      "act_dr6_lenslike.ACTDR6LensLike": 20.037853703716205,
+      "bao.desi_dr2.desi_bao_all": 12.27803048681263,
+      "sn.pantheonplus": 1406.0086913412124
+    },
+    "camb": {
+      "planck_2018_lowl.TT": 21.21721734793715,
+      "planck_2018_lowl.EE": 396.26823177919704,
+      "bao.desi_dr2.desi_bao_all": 12.232463885889093,
+      "sn.pantheonplus": 1406.0084280179065,
+      "act_dr6_cmbonly.PlanckActCut": 217.63463682800642,
+      "act_dr6_cmbonly.ACTDR6CMBonly": 158.2941037122685,
+      "act_dr6_lenslike.ACTDR6LensLike": 20.12082736428867
+    }
+  },
+  "pact_edelock_F9": {
+    "axiclass": {
+      "planck_2018_lowl.TT": 21.28784903886998,
+      "planck_2018_lowl.EE": 395.91266018662884,
+      "act_dr6_cmbonly.PlanckActCut": 217.52859584636656,
+      "act_dr6_cmbonly.ACTDR6CMBonly": 159.23632007377128,
+      "act_dr6_lenslike.ACTDR6LensLike": 20.42868906350069,
+      "bao.desi_dr2.desi_bao_all": 12.460685929901372,
+      "sn.pantheonplus": 1405.9073484858752
+    },
+    "camb": {
+      "planck_2018_lowl.TT": 21.265490005272795,
+      "planck_2018_lowl.EE": 395.926164630009,
+      "bao.desi_dr2.desi_bao_all": 12.410895569001122,
+      "sn.pantheonplus": 1405.9070942854896,
+      "act_dr6_cmbonly.PlanckActCut": 217.85838866994095,
+      "act_dr6_cmbonly.ACTDR6CMBonly": 158.9651336991258,
+      "act_dr6_lenslike.ACTDR6LensLike": 20.53554653645936
+    }
+  }
+}
