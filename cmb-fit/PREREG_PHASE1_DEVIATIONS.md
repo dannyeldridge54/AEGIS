@@ -40,3 +40,10 @@ is read. Rules, data and priors are never changed.
    Step 1.3 as written (P-ACT, Locked Twist and Twist-1H, re-minimised) has not been run, so no verdict is claimed
    here. AxiCLASS is now built in WSL (Ubuntu, micromamba env 'aegis', classy 3.3.0, smoke test passed), so the step
    can still be run as a same-data cross-engine check if wanted. Logged by Claude.
+## 10. 2026-10-31 18:45 CT: step 1.1 MCMC chains stopped (Danny's decision)
+
+All 12 step 1.1 chains (pact_lcdm, pact_edelock, pact_edelock_F9; 4 each), started 12:49, were stopped at Danny's
+request to free the cores for two new pre-registered tests (combined Planck + ACT + SPT-3G, and late-time w0-wa dark
+energy; CubeMind PREREGISTRATION_COMBINED_CMB.md). No chain output was read or summarised before stopping. The chain
+files are kept and can be resumed with Cobaya's resume option; step 1.1 stays open, not failed.
+Correction (same entry): the chains were stopped at about 20:00 CT, not 18:45; the status entries carry the corrected time.

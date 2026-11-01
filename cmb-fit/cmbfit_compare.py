@@ -17,6 +17,7 @@ PACT = {"pact_lcdm": 0, "pact_edelock": 2, "pact_ede": 3}     # blind test: same
 SPT = {"spt_lcdm": 0, "spt_edelock": 2, "spt_edelock_F9": 1, "spt_edelock_th2.41421_F9": 0,   # SPT-3G pre-registrations
        "spt_edelock_th2.78_F9": 0,                            # contrast at the Planck angle, NOT a prediction
        "spt_edelock_F7": 1}                                   # torus number N = 7 (PREREGISTRATION_SPT3G_TORUS.md)
+SPA = {"spa_lcdm": 0, "spa_edelock": 2, "spa_w0wa": 2}       # Planck + ACT + SPT-3G (CubeMind PREREGISTRATION_COMBINED_CMB.md)
 N_DATA = 1994  # approximate; see dossier
 
 LOCK = ("lambda ombh2, omch2: np.log10((ombh2 + omch2) / (2.4728e-5 * (1 + 0.22711 * 3.044)) - 1)")
@@ -57,23 +58,35 @@ def _spt(info):
     """SPT-3G D1 TT/TE/EE as the only CMB data (PREREGISTRATION_SPT3G_N9.md / _SILVER.md in CubeMind): the 'lite'
     (foreground-marginalised) candl likelihood from spt_candl_data, with SPT's own template settings: Gaussian tau prior
     N(0.051, 0.006) standing in for Planck low-l EE, Tcal/Ecal calibrations, Tcal ~ N(1, 0.0036). + DESI DR2 + Pantheon+."""
-    import candl.interface
-    import spt_candl_data
     L = info["likelihood"]
     for k in ("planck_2018_lowl.TT", "planck_2018_lowl.EE", "planck_2018_highl_plik.TTTEEE_lite_native",
               "planck_2018_lensing.native"):
         L.pop(k)
-    L["spt3g_d1_tne_lite"] = {"external": candl.interface.CandlCobayaLikelihood,
-                              "data_set_file": spt_candl_data.SPT3G_D1_TnE, "variant": "lite",
-                              "clear_internal_priors": True, "additional_args": {}, "wrapper": None, "feedback": False}
+    _add_spt(info)
     # SPT's template also sets lens_margin=1250, which CAMB 2.0.5 does not accept; lens accuracy 4 as for P-ACT.
     info["theory"]["camb"]["extra_args"].update(lens_potential_accuracy=4, lAccuracyBoost=1.0,
                                                 lSampleBoost=1.0, AccuracyBoost=1.0)
     info["params"]["tau"]["prior"] = {"dist": "norm", "loc": 0.051, "scale": 0.006}
+
+
+def _add_spt(info):
+    """The SPT-3G D1 TT/TE/EE lite likelihood with its calibrations and Tcal prior, added to whatever CMB data is set."""
+    import candl.interface
+    import spt_candl_data
+    info["likelihood"]["spt3g_d1_tne_lite"] = {
+        "external": candl.interface.CandlCobayaLikelihood, "data_set_file": spt_candl_data.SPT3G_D1_TnE,
+        "variant": "lite", "clear_internal_priors": True, "additional_args": {}, "wrapper": None, "feedback": False}
     for k in ("Tcal", "Ecal"):
         info["params"][k] = {"prior": {"min": 0.8, "max": 1.2}, "ref": {"dist": "norm", "loc": 1.0, "scale": SCALE[k]},
                              "proposal": SCALE[k]}
-    info["prior"] = {"gaussian_Tcal": "lambda Tcal: stats.norm.logpdf(Tcal, loc=1.0, scale=0.0036)"}
+    info.setdefault("prior", {})["gaussian_Tcal"] = "lambda Tcal: stats.norm.logpdf(Tcal, loc=1.0, scale=0.0036)"
+
+
+def _spa(info):
+    """Planck + ACT + SPT-3G ("SPA"): P-ACT exactly as _pact (Planck low-l sets tau, so no tau prior) plus SPT-3G D1
+    lite, + DESI DR2 + Pantheon+. Overlapping sky is treated as independent (disclosed in the pre-registration)."""
+    _pact(info)
+    _add_spt(info)
 
 
 SN_SWAP = {"_desy5": "sn.desy5", "_dovekie": "sn.desdovekie", "_union3": "sn.union3"}   # robustness: other SN sets
@@ -112,7 +125,7 @@ def make(name):
         zc_fixed, core = float(name[2:]), "edeP"
     elif name.startswith("th"):                     # hilltop test (PREREG_THETA.md): free EDE with theta_i fixed
         core = "edeP"
-    elif name.startswith("spt_"):
+    elif name.startswith(("spt_", "spa_")):
         core = name[4:]
     else:
         core = name[5:] if name.startswith("pact_") else name
@@ -139,6 +152,13 @@ def make(name):
         info["params"]["w"] = {"prior": {"min": -2.0, "max": -0.4},
                                "ref": {"dist": "norm", "loc": -1.0, "scale": 0.03},
                                "proposal": 0.03, "latex": "w"}
+    if core == "w0wa":                              # late evolving dark energy, w(a) = w0 + wa (1 - a), CAMB PPF
+        extra["dark_energy_model"] = "ppf"          # (PREREGISTRATION_COMBINED_CMB.md: w0 in [-3,1], wa in [-3,2], w0+wa<0)
+        info["params"]["w"] = {"prior": {"min": -3.0, "max": 1.0}, "ref": {"dist": "norm", "loc": -0.8, "scale": 0.05},
+                               "proposal": 0.05, "latex": "w_0"}
+        info["params"]["wa"] = {"prior": {"min": -3.0, "max": 2.0}, "ref": {"dist": "norm", "loc": -0.6, "scale": 0.1},
+                                "proposal": 0.1, "latex": "w_a"}
+        info.setdefault("prior", {})["w0wa_bound"] = "lambda w, wa: 0.0 if w + wa < 0 else -np.inf"
     if core.startswith("edelock"):
         info["params"]["log10_zc"] = {"value": LOCK, "derived": False}
     if zc_fixed is not None:
@@ -147,12 +167,14 @@ def make(name):
         info["params"]["theta_i"] = {"value": float(name[2:])}
     if theta_fixed is not None:
         info["params"]["theta_i"] = {"value": theta_fixed}
-    if core.endswith("P") or name.startswith(("pact_", "spt_")):
+    if core.endswith("P") or name.startswith(("pact_", "spt_", "spa_")):
         _start_near(info, START_EDE if base == "ede" else START_LCDM)
     if name.startswith("pact_"):
         _pact(info)
     if name.startswith("spt_"):
         _spt(info)
+    if name.startswith("spa_"):
+        _spa(info)
     seed = os.environ.get("CMB_START_FROM")         # e.g. zc3.55: start this fit from another run's best point
     if seed:
         p = os.path.join(C.RESULTS, f"cmp_{seed}.json")
@@ -229,6 +251,10 @@ def report():
         t4, _ = _table(SPT, ("spt_lcdm",), "SPT-3G D1 TT/TE/EE (lite) + tau prior + DESI DR2 + Pantheon+: "
                                             "pre-registered tests (CubeMind PREREGISTRATION_SPT3G_N9.md, _SILVER.md)")
         out += [""] + t4
+    if any(os.path.exists(os.path.join(C.RESULTS, f"cmp_{n}.json")) for n in SPA):
+        t5, _ = _table(SPA, ("spa_lcdm",), "Planck + ACT + SPT-3G + DESI DR2 + Pantheon+: early vs late "
+                                           "(CubeMind PREREGISTRATION_COMBINED_CMB.md)")
+        out += [""] + t5
     for suffix, title in (("_desy5", "Planck 2018 + DESI DR2 + DES Y5 supernovae (instead of Pantheon+)"),
                           ("_dovekie", "Planck 2018 + DESI DR2 + DES-Dovekie supernovae (instead of Pantheon+)"),
                           ("_union3", "Planck 2018 + DESI DR2 + Union3 supernovae (instead of Pantheon+)"),
