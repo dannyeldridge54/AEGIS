@@ -80,7 +80,10 @@ def make(name):
     # CubeMind PREREGISTRATION_COUPLED_TWIST.md: the Late Twist plus a CDM coupling beta (needs the coupled build,
     # see run()). "_beta<x>" fixes beta (C5 and the beta profile); otherwise beta is free in [-0.15, 0.15].
     coupled = "coupledtwist" in base
-    fixed_beta = re.search(r"_beta(-?[0-9.]+)$", base)
+    fixed_beta = re.search(r"_beta(-?[0-9.]+)", base)
+    # (F, m) profile grid (deviation 08:58): "_gF<log10 F>m<log10 m>" fixes F and m; only the standard parameters
+    # (and beta, if free) are minimised.
+    grid = re.search(r"_gF(-?[0-9.]+)m(-?[0-9.]+)", base)
     latetwist = latetwist or coupled
     extra = dict(BASE_ARGS)
     if latetwist or base.endswith("_halofit"):
@@ -119,10 +122,14 @@ def make(name):
                       "attractor_ic_scf": "no", "scf_evolve_as_fluid": "no", "do_shooting": "yes",
                       "do_shooting_scf": "yes", "Omega_Lambda": 0, "Omega_fld": 0, "Omega_scf": -1,
                       "scf_tuning_index": 0, "scf_parameters": "1.5, 0."})
-        params["log10_F"] = dict(P(-1.3, 0.5, 0.0, 0.05, r"\log_{10} F/M_{\rm Pl}"), drop=True)
-        params["log10_m"] = dict(P(-0.5, 1.5, 0.3, 0.05, r"\log_{10} m/H_0"), drop=True)
-        params["f_axion"] = {"value": "lambda log10_F: 10**log10_F", "derived": False}
-        params["m_axion"] = {"value": "lambda log10_m: 10**log10_m", "derived": False}
+        if grid:
+            extra["f_axion"] = 10 ** float(grid.group(1))
+            extra["m_axion"] = 10 ** float(grid.group(2))
+        else:
+            params["log10_F"] = dict(P(-1.3, 0.5, 0.0, 0.05, r"\log_{10} F/M_{\rm Pl}"), drop=True)
+            params["log10_m"] = dict(P(-0.5, 1.5, 0.3, 0.05, r"\log_{10} m/H_0"), drop=True)
+            params["f_axion"] = {"value": "lambda log10_F: 10**log10_F", "derived": False}
+            params["m_axion"] = {"value": "lambda log10_m: 10**log10_m", "derived": False}
     if coupled:
         if fixed_beta:
             extra["scf_coupling_beta"] = float(fixed_beta.group(1))
@@ -142,7 +149,7 @@ def make(name):
     if latetwist:
         # Rerun deviation (PREREGISTRATION_SPT3G_DEVIATIONS.md): start from the AxiCLASS LCDM halofit best fit, not the
         # CAMB one (CAMB's theta is a different quantity); F, m references and all priors unchanged; best of 4.
-        best_of = 4
+        best_of = 2 if grid else 4          # grid points minimise only smooth standard parameters
         m = json.load(open(f"{OUT}/cmp_ax_spa_lcdm_halofit.json"))["minimum"]
         for k, p in params.items():
             if k in m and isinstance(p, dict) and "ref" in p:

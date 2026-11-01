@@ -15,7 +15,7 @@ from early_late_spa import make, OUT
 from cobaya.model import get_model
 
 name = sys.argv[1]
-info = copy.deepcopy(make("ax_spa_latetwist" + ("_desy5" if "desy5" in name else "")))
+info = copy.deepcopy(make(name if "_gF" in name else "ax_spa_latetwist" + ("_desy5" if "desy5" in name else "")))
 for k in ("sampler", "output", "resume", "force"):
     info.pop(k, None)
 model = get_model(info)
