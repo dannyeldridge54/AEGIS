@@ -105,3 +105,26 @@ itself never depended on this number.
 than ΛCDM: N = 9 (+0.52), the silver angle (+0.43), the Planck angle (+0.35) and the free width (−1.27, ΔAIC +2.73).
 The Planck/ACT preference is not confirmed by SPT-3G. The N = 9 and N = 7 width ideas are both inconsistent with
 SPT-3G's preferred width. The letters prediction is undecided.
+
+## 2026-10-31 ~18:28 CT: torus prediction N = 7 (PREREGISTRATION_SPT3G_TORUS.md), Test A: **FAIL**
+
+| Model | χ² | H₀ | f_EDE | θ_i |
+|---|---|---|---|---|
+| ΛCDM (`spt_lcdm`) | 1576.57 | 68.28 | | |
+| Locked Twist, N = 7 (`spt_edelock_F7`) | 1578.23 | 70.68 | 0.085 | 2.62 |
+
+**The rule:** Δχ² = 1578.234 − 0.001 (width constraint) − 1576.570 = **+1.66**; ΔAIC = +3.66. PASS needed Δχ² < −2
+and ΔAIC < 0; FAIL is Δχ² ≥ 0. **FAIL.**
+
+**By data set (N = 7 − ΛCDM):** SPT-3G +1.51, DESI −0.06, Pantheon+ +0.21.
+
+**Test B** (width readback, logged above): implied N = 24.05, outside 5–9, **INCONSISTENT**.
+
+**What this means:** as the pre-registration says, the torus → width mapping is dropped publicly. The torus facts (K7,
+Tree + Da'at genus 1) stay true as mathematics. With this, every pre-registered SPT-3G test is decided:
+- N = 9: FAIL.
+- Silver: FAIL.
+- Torus N = 7: FAIL.
+- Letters: INCONCLUSIVE.
+- Both width checks: INCONSISTENT.
+- The free-width model: no preference.

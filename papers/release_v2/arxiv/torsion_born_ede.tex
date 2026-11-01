@@ -21,8 +21,8 @@
 \newcommand{\SPTfreeF}{\ensuremath{0.045}}      % its f_EDE
 \newcommand{\SPTfreeN}{\ensuremath{24.1}}       % implied divisor N = sqrt(3/2)/F
 \newcommand{\SPTfreeVerdict}{no preference ($\Delta{\rm AIC}=+2.73$)}
-\newcommand{\SPTsevenDchi}{\ensuremath{\cdots}} % N = 7 variant (fixed in advance), pending
-\newcommand{\SPTsevenVerdict}{pending}
+\newcommand{\SPTsevenDchi}{\ensuremath{+1.66}}  % N = 7 variant (fixed in advance), cmp_spt_edelock_F7.json
+\newcommand{\SPTsevenVerdict}{a \textbf{fail} ($\Delta\chi^2=\SPTsevenDchi$)}
 
 \title{\textbf{Torsion-Born Early Dark Energy\\ with an Onset Locked to Matter--Radiation Equality:\\
 Derivation and Pre-Registered Likelihood Tests}}
@@ -770,11 +770,12 @@ $\Lambda$CDM & 0 & $1576.57$ & $0$ & $68.28$ & -- & --\\
 Locked, $N=9$ & 1 & $1577.09$ & $+0.52$ & $70.49$ & $0.077$ & $2.79$\\
 Locked, $N=9$, $\theta_i=1+\sqrt2$ & 0 & $1577.00$ & $+0.43$ & $69.13$ & $0.035$ & $2.414$\\
 Locked, width free & 2 & $1575.30$ & \SPTfreeDchi & \SPTfreeHz & \SPTfreeF & $3.10^\dagger$\\
+Locked, $N=7$ & 1 & $1578.23$ & \SPTsevenDchi & $70.68$ & $0.085$ & $2.62$\\
 Locked, $N=9$, $\theta_i=2.78$ fixed$^\ddagger$ & 0 & $1576.92$ & $+0.35$ & $70.43$ & $0.076$ & $2.78$\\
 \bottomrule
 \end{tabular}
 \caption{SPT-3G D1 TT/TE/EE (lite) + $\tau$ prior + DESI DR2 + Pantheon+. Both $N=9$ rows
-\textbf{fail} their pre-registered rules; the free-width row shows \SPTfreeVerdict.
+and the $N=7$ row \textbf{fail} their pre-registered rules; the free-width row shows \SPTfreeVerdict.
 $^\dagger$At the upper edge of the prior ($0.1\le\theta_i\le3.1$). $^\ddagger$The Planck-preferred angle, run for
 contrast; not a prediction. $\chi^2$ is the total
 including the $\tau$ and calibration priors; the $N=9$ rows have the width constraint's $\chi^2$
