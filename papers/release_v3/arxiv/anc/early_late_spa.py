@@ -74,7 +74,8 @@ def make(name):
     best_of = 4 if name.endswith("_b4") else 2
     desy5 = "_desy5" in name
     dovekie = "_dovekie" in name                    # CubeMind PREREGISTRATION_DOVEKIE.md (corrected DES sample)
-    base = name.replace("_b4", "").replace("_desy5", "").replace("_dovekie", "")
+    # "_nlfix": the same run on the B0-fixed build (CubeMind PREREGISTRATION_NLFIX_REPLICATION.md); see _maybe_coupled().
+    base = name.replace("_b4", "").replace("_desy5", "").replace("_dovekie", "").replace("_nlfix", "")
     early = "edelock" in base
     late = "w0wa" in base
     latetwist = "latetwist" in base                 # CubeMind PREREGISTRATION_LATE_TWIST.md
@@ -153,6 +154,11 @@ def make(name):
         # CAMB one (CAMB's theta is a different quantity); F, m references and all priors unchanged; best of 4.
         best_of = 2 if grid else 4          # grid points minimise only smooth standard parameters
         m = json.load(open(f"{OUT}/cmp_ax_spa_lcdm_halofit.json"))["minimum"]
+        # NR warm start (deviation 18:59:09): a "_nlfix" run starts from its same-named original run's minimum when that
+        # run exists. Priors, ref widths and best-of are unchanged.
+        orig = f"{OUT}/cmp_{name.replace('_nlfix', '')}.json"
+        if "_nlfix" in name and os.path.exists(orig):
+            m = json.load(open(orig))["minimum"]
         for k, p in params.items():
             if k in m and isinstance(p, dict) and "ref" in p:
                 p["ref"]["loc"] = float(m[k])
@@ -194,16 +200,24 @@ def save(name, seconds=None):
 
 PENALTY = -1e5
 COUPLED_BUILD = "/home/syndyr/AxiCLASS_coupled/python/build"   # coupled/build_coupled.sh
+NLFIX_BUILD = "/home/syndyr/AxiCLASS_nlfix/python/build"       # nlfix/build_nlfix.sh (B0 fix)
+COUPLED_NLFIX_BUILD = "/home/syndyr/AxiCLASS_coupled_nlfix/python/build"   # nlfix/build_coupled_nlfix.sh
 
 
 def _maybe_coupled(name):
-    """Coupled Twist runs load the coupled AxiCLASS build (coupled/build_coupled.sh), never the installed one."""
-    if "coupledtwist" not in name:
+    """Coupled Twist runs load the coupled AxiCLASS build (coupled/build_coupled.sh), never the installed one.
+    "_nlfix" runs load the B0-fixed build (Late Twist) or the B0-fixed coupled build (Coupled Twist)."""
+    nlfix = "_nlfix" in name
+    if "coupledtwist" in name:
+        build = COUPLED_NLFIX_BUILD if nlfix else COUPLED_BUILD
+    elif nlfix:
+        build = NLFIX_BUILD
+    else:
         return
     import glob
-    sys.path.insert(0, glob.glob(COUPLED_BUILD + "/lib*")[0])
+    sys.path.insert(0, glob.glob(build + "/lib*")[0])
     import classy
-    assert classy.__file__.startswith(COUPLED_BUILD), classy.__file__
+    assert classy.__file__.startswith(build), classy.__file__
 
 
 def _guard_minimizer():

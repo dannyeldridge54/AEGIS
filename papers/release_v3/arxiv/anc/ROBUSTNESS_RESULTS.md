@@ -57,3 +57,18 @@ D = χ²(early + late) − χ²(late only). The bands: SURVIVES if D < −4; NOT
 ## R2: the Late Twist with DES Y5
 
 The (F, m) grid is running (deviation at 08:58). It is reported when complete.
+
+## R2 for the Late Twist: DES Y5 (2026-11-01 17:43)
+
+The official DES Y5 fit (24 grid + 8 locked edge points) is complete:
+- **L1 with DES Y5: Δχ² = −5.32 → PASS**, which CHANGES the Pantheon+ verdict (FAIL, +0.96);
+- **L3 with DES Y5: INCONSISTENT** (F at the prior edge; m = 1.0 H₀).
+
+The Late Twist verdict therefore depends on the supernova sample, as A3 did. The LD check (DES-Dovekie) decides
+whether the DES Y5 gain survives the calibration fix. Look-elsewhere: Z_glob = 1.03σ.
+
+## LD verdict (2026-11-01 21:31)
+
+**NOT CONFIRMED** (Δ_D = +0.18; offset-corrected −1.17). The DES Y5-only Late Twist PASS (R2, −5.32) does not survive
+the corrected DES-Dovekie sample. Together with A3 (SURVIVES only with uncorrected DES Y5), the pattern is consistent:
+gains that appear only with DES Y5 shrink or vanish with Dovekie.

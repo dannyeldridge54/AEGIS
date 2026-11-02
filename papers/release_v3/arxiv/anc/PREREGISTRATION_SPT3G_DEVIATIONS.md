@@ -214,3 +214,55 @@ sit 2.5 or more below the reported minima (DEEP_REVIEW_2026-11-01b.md §3).
   - C5 (β = ±0.816) and the 5-point β profile are run at the best coupled grid point.
 - **Unchanged:** priors, data, the guard, and every rule and band.
 - **Kept on record:** the two free Late Twist fits.
+
+## 2026-11-01 14:34:07: B0 halofit fix brought forward (build and validation only)
+
+- **Decision:** Danny asked to fix the halofit artefact now (LATE_TWIST_NULL_MIRROR.md), instead of after G1–G3.
+- **What changes:** a separate copy, /home/syndyr/AxiCLASS_nlfix, is patched so that halofit and HMcode take the scalar
+  field out of Omega_m and Omega_r and treat it as dark energy with its own w = p_scf/rho_scf. It is built into its own
+  python/build and NOT installed.
+- **What does not change:**
+  - Running and queued fits (grid, edge, LD, HC, Coupled Twist) keep using the installed AxiCLASS.
+  - Every official verdict stays as written.
+- **Validation (rule written now, before running):** the null mirror with halofit ON on the fixed build must give
+  |chi2(frozen field) − chi2(true Lambda)| < 0.15. The +0.03 non-linear-off value plus numerical noise is the reference.
+- **Any re-evaluation** of best points on the fixed build is post-hoc. It is reported beside the official verdicts and
+  never replaces them.
+
+## 2026-11-01 14:41:32: B0 addendum (first fix FAILED its validation; second change written before testing)
+
+- **First attempt failed.** Taking the field out of halofit's and HMcode's Omega_m gave a frozen-field residual of
+  +2.77 with halofit on, worse than +1.35. FAIL by the 14:34:07 rule. The LCDM chi² was unchanged on that build
+  (2402.256), so the patch broke nothing else (results/null_mirror_nlfix.json).
+- **New cause found in the source:**
+  - AxiCLASS forces `include_scf_in_delta_m = TRUE` whenever `n_axion == 1` (input.c, about line 4631), which is meant
+    for axion dark matter.
+  - For the Late Twist (n = 1 axion as dark energy), this adds rho_scf to the matter weights in delta_m
+    (perturbations.c, about lines 7660 and 7685), diluting delta_m and corrupting the non-linear input.
+  - With non_linear off, delta_m does not feed the CMB, which matches the +0.03.
+- **Second change (same separate copy, still not installed):**
+  - input.c no longer forces the flag for n_axion == 1;
+  - the validation run passes `include_scf_in_delta_m = no` for the Late Twist;
+  - the halofit and HMcode Omega_m change is kept.
+- **Validation rule:** unchanged, |chi2(frozen) − chi2(LCDM)| < 0.15 with halofit on.
+- **Not changed:** running fits and every official verdict.
+
+## 2026-11-01 18:59:09: NR replication, two speed changes (written before any NR fit; NR results at this moment: 0)
+
+Danny asked (1 Nov) to speed up the NR replication (PREREGISTRATION_NLFIX_REPLICATION.md, locked 18:37:37). Two
+changes; no test, threshold, data, reference, prior or restart count changes.
+
+1. **Start timing.**
+   - NR stage 1 starts as soon as fewer than 8 fits are running, instead of waiting for every one of tonight's queues
+     to finish. Stage 1 does not depend on tonight's results.
+   - Stages 2–4 keep their order and dependencies (LD after stage 1; Coupled grid after stage 1; C5 + β profile after
+     the Coupled grid).
+   - NR stage 2 uses the DES-Dovekie ΛCDM/w0–wa references produced by tonight's LD, so it waits for "LD finished".
+2. **Warm start.**
+   - Each `_nlfix` fit centres the starting distribution ("ref") of its sampled parameters on the minimum of the
+     same-named original run when that run exists; otherwise it keeps the ΛCDM-halofit centre as before.
+   - Priors, ref widths and best-of-2 random restarts are unchanged.
+   - Because the B0 fix shifts χ² smoothly (about 1) and leaves the background unchanged, this only shortens the
+     minimiser's path. It is disclosed here because it is a change of starting point.
+
+**Addendum 2026-11-01 19:01:06 (before any NR fit):** scheduling only. Until tonight's official queues finish (HC finished, grid fits finished), NR uses at most 4 slots, so the official runs keep priority. After that it uses up to 8.

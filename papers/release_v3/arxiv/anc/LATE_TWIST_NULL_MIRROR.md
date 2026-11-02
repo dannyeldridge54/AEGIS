@@ -64,5 +64,33 @@ evaluated with the non-linear correction on and off, for ΛCDM and for the Late 
 **Status of the verdicts:** unchanged. L1 is still FAIL as written. The offset-corrected reading (≈ −0.2, a tie) now
 has a confirmed cause, not only a measured size.
 
-**A fix** (a halofit Ω_m without the scalar field) would be a code change. It must be logged as a deviation before any
-rerun, and is the user's decision.
+## Fix (B0, 1 November 2026, deviations 14:34:07 and 14:41:32): two bugs, both needed
+
+**Code:** `axiclass/nlfix/` (patch, build, validation script, `0001-nl-scf-fix-*.patch`), built separately in
+/home/syndyr/AxiCLASS_nlfix. It is **not installed**, so running fits are untouched.
+
+**Validation:** halofit on, at the same fixed ΛCDM best fit. Rule: |frozen| < 0.15.
+
+| Build | Frozen field − ΛCDM | Edge-like (F 3.16, m 0.5) − ΛCDM | Verdict |
+|---|---|---|---|
+| Installed AxiCLASS | +1.354 | +0.392 | (the artefact) |
+| Ω_m fix only (halofit + HMcode) | +2.773 | +1.823 | FAIL |
+| δ_m fix only (n_axion = 1 no longer forces `include_scf_in_delta_m`) | −0.743 | −1.730 | FAIL |
+| **Both fixes** | **+0.129** | **−0.845** | **PASS** |
+| Reference: non-linear off | +0.029 | −0.905 | — |
+
+**What was wrong:**
+1. **δ_m (AxiCLASS-specific).** For `n_axion = 1`, `input.c` forces `include_scf_in_delta_m = TRUE`. That is right for axion
+   dark matter, but for axion *dark energy* it adds ρ_scf to the matter weights and dilutes δ_m, the input to the
+   non-linear step.
+2. **Ω_m (shared with CLASS).** `background.c` counts a scalar field as ρ − 3p of matter, and halofit and HMcode read that
+   Ω_m. A dark-energy field therefore appears as +4 Ω_scf of matter.
+
+The two errors partly cancel. Each fix alone over- or under-corrects, and together they return the code to its Λ
+limit.
+
+**Physics reading (post-hoc, no verdict changes):**
+- On the fixed code a slightly thawed field is better than Λ by about 0.85, consistent with the non-linear-off test.
+- The Pantheon+ grid best (+0.96 as written) would be about −0.4 on the fixed code, a tie, as the offset correction
+  estimated.
+- The official verdicts stay as written. Re-evaluating best points on the fixed build is a later, post-hoc step.
