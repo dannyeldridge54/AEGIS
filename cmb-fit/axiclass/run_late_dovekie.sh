@@ -6,7 +6,7 @@ PY=/home/syndyr/micromamba/envs/aegis/bin/python
 A=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass
 running() { ps -eo args | grep 'early_late_spa.py ax_' | grep -v grep | grep -vc 'bash -c'; }
 until grep -q "edge scan finished" "$R/lanes/run_edge.log" 2>/dev/null; do sleep 300; done
-while ps -eo args | grep 'early_late_spa.py ax_spa_latetwist_gF' | grep -v grep | grep -v 'bash -c' | grep -qv '_dovekie'; do sleep 300; done
+while ps -eo args | grep 'early_late_spa.py ax_spa_latetwist_gF' | grep -v grep | grep -v 'bash -c' | grep -v '_nlfix' | grep -qv '_dovekie'; do sleep 300; done   # NR runs do not block LD
 names=$($PY $A/pick_late_dovekie.py)
 echo "$(date '+%F %T') LD points: $(echo $names)"
 for n in $names; do
