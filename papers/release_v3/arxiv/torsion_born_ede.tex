@@ -24,20 +24,8 @@
 \newcommand{\SPTsevenDchi}{\ensuremath{+1.66}}  % N = 7 variant (fixed in advance), cmp_spt_edelock_F7.json
 \newcommand{\SPTsevenVerdict}{a \textbf{fail} ($\Delta\chi^2=\SPTsevenDchi$)}
 
-% ---- Version 3: results still running on 31 Oct 2026 (CubeMind AUTO_RESULTS.md). Fill when they land. ----
-\newcommand{\Pending}{\textit{[pending]}}
-\newcommand{\AoneLo}{\Pending}          % 95% lower end of f_EDE from the profile (PREREGISTRATION_PROFILE_F.md)
-\newcommand{\AoneHi}{\Pending}          % 95% upper end
-\newcommand{\AoneRise}{\Pending}        % chi2(f=0) - chi2_min
-\newcommand{\AoneVerdict}{\Pending}     % PREFERRED / MILD / NOT PREFERRED
-\newcommand{\AtwoZloc}{\Pending}        % local significance
-\newcommand{\AtwoZglob}{\Pending}       % global (look-elsewhere) significance, conservative
-\newcommand{\AtwoVerdict}{\Pending}
 \newcommand{\AthreeD}{\ensuremath{-3.65}}  % chi2(early+late) - chi2(late), AxiCLASS (EARLY_LATE_RESULTS.md)
 \newcommand{\AthreeVerdict}{\textbf{mild}}  % SURVIVES / MILD / NOT NEEDED
-\newcommand{\LateLone}{\textbf{fail}}   % Late Twist vs LCDM, Pantheon+ grid: +0.96 (LATE_TWIST_RESULTS.md)
-\newcommand{\LateLtwo}{\textbf{worse}}  % Late Twist vs w0-wa: D = +10.92 (Pantheon+), +14.44 (DES Y5)
-\newcommand{\LateLthree}{\textbf{inconsistent}}  % F at the prior's upper edge in both SN sets
 
 \title{\textbf{Torsion-Motivated Early Dark Energy\\ with an Onset Locked to Matter--Radiation Equality:\\
 Pre-Registered Tests on Planck, ACT, SPT-3G and DESI}}
@@ -684,7 +672,7 @@ must give $N=9\pm0.5$. \textbf{T2}: with $N=9$ fixed and the onset locked, only 
 and the model must improve on $\Lambda$CDM by $\Delta\chi^2<-2$.
 
 T1 \textbf{failed}: P-ACT gives $N=8.0$ (Planck 2018 with CAMB gives $N\simeq8.5$). T2
-\textbf{passed}: $\Delta\chi^2=-6.14$, $\Delta{\rm AIC}=-4.14$, $p=0.013$ ($\approx2.5\sigma$) on P-ACT, and
+\textbf{passed}: $\Delta\chi^2=-6.13$, $\Delta{\rm AIC}=-4.13$, $p=0.013$ ($\approx2.5\sigma$) on P-ACT, and
 $\Delta\chi^2=-4.46$ ($\Delta{\rm AIC}=-2.46$) on Planck 2018, which is not blind because the 9 was read
 off Planck. We have no derivation of the divisor; it is an empirical regularity until one exists.
 
@@ -736,7 +724,7 @@ Model & $\chi^2_{\rm AxiCLASS}$ & $\chi^2_{\rm CAMB}$ & $\Delta\chi^2_{\rm AxiCL
 \midrule
 $\Lambda$CDM & $2239.32$ & $2239.01$ & $0$ & $0$\\
 Locked onset (2 parameters) & $2231.86$ & $2231.78$ & $-7.46$ & $-7.23$\\
-Locked, $N=9$ (1 parameter) & $2232.76$ & $2232.87$ & $-6.56$ & $-6.14$\\
+Locked, $N=9$ (1 parameter) & $2232.76$ & $2232.87$ & $-6.56$ & $-6.13$\\
 \bottomrule
 \end{tabular}
 \caption{Cross-engine check at CAMB's best points (P-ACT + DESI DR2 + Pantheon+).}
@@ -797,7 +785,7 @@ including the $\tau$ and calibration priors; the $N=9$ rows have the width const
 \label{tab:spt}
 \end{table}
 
-\paragraph{Results.} The one-parameter model with $N=9$, which gave $\Delta\chi^2=-6.14$ on P-ACT,
+\paragraph{Results.} The one-parameter model with $N=9$, which gave $\Delta\chi^2=-6.13$ on P-ACT,
 gives $\Delta\chi^2=+0.52$ ($\Delta{\rm AIC}=+2.52$) on SPT-3G: \textbf{FAIL}. By data set the Twist
 changes $\chi^2$ by $+0.44$ for SPT-3G, $-0.27$ for DESI and $+0.34$ for Pantheon+, so SPT-3G's own CMB
 data do not prefer it. Because the model contains $\Lambda$CDM as a limit, a deeper minimisation could
@@ -1138,11 +1126,12 @@ switch ratio $R$, is offered as a test, and it was locked before it was computed
 not trust but checkability: every rule is hashed and committed before its result, every number is recomputed by
 public scripts from public fit files, and a ten-minute guide for checking the record is part of the repository.
 
-\paragraph{``The required $\omega_c$ is far from Planck.''} $\omega_c\simeq0.144$ follows
-from geometry (\S\ref{sec:geometry}) for any sound-horizon solution that respects BAO.
-In $\Lambda$CDM the Planck error is $\pm0.0012$, but in EDE fits $\omega_c$ is strongly
-degenerate with $f$, so that error does not apply directly. The larger $\omega_c$ also
-increases late-time clustering ($S_8$), a known cost of this model class.
+\paragraph{``The required $\omega_c$ is far from Planck.''} Reaching $H_0=72.8$ would need
+$\omega_c\simeq0.144$, which follows from geometry (\S\ref{sec:geometry}) for any sound-horizon
+solution that respects BAO. The full-likelihood fits do not go that far: they settle at
+$\omega_c\approx0.126$ and $H_0\approx70$ (Table~\ref{tab:camb} and \S\ref{sec:combined}). In $\Lambda$CDM the
+Planck error is $\pm0.0012$, but in EDE fits $\omega_c$ is strongly degenerate with $f$, so that error does not
+apply directly. The larger $\omega_c$ also increases late-time clustering ($S_8$), a known cost of this model class.
 
 \paragraph{``The recombination treatment is approximate.''} Correct. The field holds
 $2$--$6\%$ of the energy at $z_*$, which shifts recombination in ways fitting formulas
@@ -1159,16 +1148,18 @@ loop quantum gravity uses today. This choice is not a prediction of the model.
 %======================================================================
 \section{Predictions and how the model can fail}\label{sec:predictions}
 \begin{enumerate}
-\item \textbf{Background (shared with EDE).} A peak energy fraction $f\sim0.1$--$0.2$
-near $z_c\sim3500$, $\omega_c\approx0.14$, and $\Omega_m\approx0.31$. If future CMB
-analyses push $f<0.05$, the model cannot address the Hubble tension.
+\item \textbf{Background (shared with EDE).} The fits prefer a peak energy fraction
+$f\approx0.05$--$0.10$ (68\% profile) near $z_c\approx3550$, with $\omega_c\approx0.126$ and
+$H_0\approx70$ (\S\ref{sec:fits}, \S\ref{sec:combined}). Reaching $H_0\approx73$ would need $f\approx0.12$ and
+$\omega_c\approx0.14$ (\S\ref{sec:results}), which the data do not prefer. If future CMB analyses push $f<0.05$,
+the model cannot address the Hubble tension.
 \item \textbf{Fermion coupling (distinctive).} With fermions present, the axial torsion
 is sourced both by $\partial_\mu\bar\gamma$ and by the fermion axial current
-$J_5^\mu$. Eliminating torsion therefore generates a cross term
-$\propto\partial_\mu\bar\gamma\,J_5^\mu$, a derivative coupling of $\phi$ to fermion
-spin. Its coefficient is fixed by the Holst action and is not free. Computing it, and the
-resulting spin-dependent effects while $\phi$ rolls, is the most direct route to a
-signature that separates this model from generic EDE. We leave it to future work.
+$J_5^\mu$. Eliminating torsion therefore generates a derivative coupling of $\phi$ to fermion spin,
+$-(\sqrt6/4\Mp)\,\partial_\mu\phi\,J_5^\mu$ \cite{mercuri2009}, with an extra $1/\cosh\chi$ in the Holst form
+\cite{torresgomez2009}. Its coefficient is fixed, not free. Its two consequences are worked out in
+\S\ref{sec:late}: no measurable photon coupling (item~4), and a spin background far below laboratory limits
+(item~6).
 \item \textbf{Locked onset.} On every data set the onset must coincide with
 matter--radiation equality for that data set's own densities. A significant preference for a
 different $z_c$ on new data falsifies Eq.~\eqref{eq:lock} (\S\ref{sec:pact}).
@@ -1195,9 +1186,10 @@ $b_0\sim6\times10^{-46}$~GeV. Bounds from Lorentz-violation tests are about
 $10^{-31}$--$2\times10^{-27}$~GeV \cite{kostelecky2008}, and $\sim10^{-33}$~GeV for neutrons
 \cite{brown2010}. The late field gives $b_0=1.4$--$3.5\times10^{-43}$~GeV. The model is safe, and not
 testable in the laboratory today.
-\item \textbf{Late-time limit.} The field settles at its minimum, so the model predicts no
-dynamical torsion today beyond the negligible residual above. Any detected late-time
-variation of $\gamma$ would falsify this version.
+\item \textbf{Late-time limit (early role).} As early dark energy the field settles at its minimum, so that
+version predicts no dynamical torsion today beyond the negligible residual above, and any detected late-time
+variation of $\gamma$ would falsify it. In the late role (\S\ref{sec:late}) the field is rolling today by
+construction; the two roles use different potentials and are tested separately.
 \end{enumerate}
 
 %======================================================================
@@ -1230,7 +1222,7 @@ is $\Delta\chi^2=-4.70$. The pure torsion width is excluded, Planck PR4 alone sh
 likelihood improvement, and curvature is consistent with zero. The minimal model predicts
 no cosmic birefringence, which distinguishes it from photon-coupled axion EDE. On the blind,
 pre-registered P-ACT test the locked onset passed ($\Delta\chi^2=-7.23$, $\approx2.2\sigma$), and a
-one-parameter version with $F=\sqrt{3/2}\,\Mp/9$ gave $\Delta\chi^2=-6.14$ ($\approx2.5\sigma$), but
+one-parameter version with $F=\sqrt{3/2}\,\Mp/9$ gave $\Delta\chi^2=-6.13$ ($\approx2.5\sigma$), but
 the divisor fitted freely is $8.0$, not $9$, and the $S_8$ cost makes the pre-registered overall
 verdict a tie. Two independent field solvers agree on these numbers, and the field does not fragment.
 On SPT-3G, the first CMB data independent of Planck, the pre-registered $N=9$ model fails

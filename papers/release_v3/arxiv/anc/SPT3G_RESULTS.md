@@ -128,3 +128,5 @@ Tree + Da'at genus 1) stay true as mathematics. With this, every pre-registered 
 - Letters: INCONCLUSIVE.
 - Both width checks: INCONSISTENT.
 - The free-width model: no preference.
+
+**Correction (2026-11-02 13:12, rounding only; no verdict changes):** the N = 9 P-ACT gain is **−6.13**, not −6.14. The exact files give 2232.8709 − 2239.0054 = −6.1345. The earlier figure subtracted two values already rounded to two decimals. ΔAIC is −4.13, and p = 0.013 is unchanged. Found by `paper_numbers_check.py`.
