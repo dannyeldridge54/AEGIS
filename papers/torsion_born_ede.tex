@@ -44,7 +44,7 @@ Pre-Registered Tests on Planck, ACT, SPT-3G and DESI}}
 \author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma, USA. Contact: dannyeldridge54@gmail.com.
 Code, fit results and pre-registrations: \url{https://github.com/dannyeldridge54/the-twist-torsion-cosmology}
 (working repository \url{https://github.com/dannyeldridge54/AEGIS}); archived at Zenodo, doi:\href{https://doi.org/10.5281/zenodo.23847152}{10.5281/zenodo.23847152}.}}
-\date{Version 3 (draft), November 2026}
+\date{Version 3, November 2026}
 
 \begin{document}
 \maketitle
@@ -67,8 +67,10 @@ $n=2$ in a poorly converged comparison,
 which we show is not produced by the Nieh--Yan term or by natural instanton or anomaly potentials, and
 the equality lock cannot be derived from the minimal action. Two codes agree to 0.4 in $\chi^2$ and the
 field does not fragment. Fixed-number variants of the width and initial angle all fail. Acting late with its
-natural $n=1$ potential, the field at best ties $\Lambda$CDM, and the torsion-natural dark-matter coupling is
-excluded. We state which parts are derived, which are assumed, and which failed.
+natural $n=1$ potential, on code corrected for two AxiCLASS bugs we found, the field ties $\Lambda$CDM with Pantheon+,
+gains a weak, sample-dependent $\Delta\chi^2=-6.2$ with DES Y5, and never beats $w_0$--$w_a$. The torsion-natural
+dark-matter coupling is excluded, and the minimal field cannot produce the measured cosmic birefringence. We state
+which parts are derived, which are assumed, and which failed.
 \end{abstract}
 
 \tableofcontents
@@ -971,28 +973,75 @@ non-viable (the field cannot close the energy budget unless $m^2F^2\gtrsim1.2$).
 installed AxiCLASS gave $\chi^2$ higher than true $\Lambda$ by $+1.35$. Two bugs combine: for $n=1$ the field is
 forced into the matter perturbation $\delta_m$, and the non-linear (halofit/HMcode) step reads a matter density that
 counts the field as $\rho-3p$. Fixing both (and only both) returns the frozen limit to $+0.13$. The fix and its
-validation are released with this paper. The as-written results below carry the artefact; a pre-registered
-replication of every $n=1$ test on the corrected code is reported in the accompanying repository and supersedes them
-for the late models.
+validation are released with this paper. Every $n=1$ test was then rerun on the corrected code under a replication
+rule hashed before any corrected fit; the corrected results are the headline, and Table~\ref{tab:nr} keeps the
+as-written ones beside them.
 
-\paragraph{Results (as written).} With Pantheon+, the best grid point ($F=3.16\,\Mp$, $m=0.50\,H_0$) gives
-$\Delta\chi^2=+0.96$ against $\Lambda$CDM: \LateLone\ by the rule, a tie once corrected. With DES Y5 it gives
-$-5.32$ (only $1.0\sigma$ after the look-elsewhere correction), but on DES-Dovekie the gain does not survive
-($\Delta_D=+0.18$; the DES Y5 best point is $+4.27$ there): \textbf{not confirmed}. Against $w_0$--$w_a$ it is
-\LateLtwo\ with every sample, and the best $F$ sits at the top of the searched range (\LateLthree). The corner of
-sub-Planckian $F$ and large $m$ favoured in Refs.~\cite{lin2025,shiu2026} is much worse ($\geq+38$) in our setup,
-possibly because our closure method does not start the field close enough to the hilltop.
+\begin{table}[h]\centering\small
+\caption{Late-field tests as written (installed AxiCLASS) and on the corrected code. $\Delta\chi^2$ against
+$\Lambda$CDM unless stated; verdicts are those of the pre-registered rules.}\label{tab:nr}
+\begin{tabular}{lll}
+\hline
+Test & As written & Corrected code \\
+\hline
+Late field, Pantheon+ & $+0.96$ (fail) & $+0.09$ (fail) \\
+Late field, DES Y5 & $-5.32$ (pass) & $-6.23$ (pass) \\
+Against $w_0$--$w_a$ (Pantheon+ / DES Y5) & $+10.92$ / $+14.43$ (worse) & $+10.05$ / $+13.53$ (worse) \\
+Best $F$ inside the searched range & no & yes \\
+Look-elsewhere, DES Y5 (global) & $1.0\sigma$ (weak hint) & $1.3\sigma$ (weak hint) \\
+DES-Dovekie check & $+0.18$ (not confirmed) & $-1.33$ (weakened) \\
+High-mass corner & $+38.0$ (worse) & $+37.0$ (worse) \\
+Coupled field & $-6.80$ (pass) & $-7.91$ (pass) \\
+Coupling needed (coupled vs uncoupled) & $-7.76$ & $-8.00$ \\
+Coupled vs $w_0$--$w_a$ ($\Delta$AIC) & $+5.16$ (worse) & $+4.05$ (worse) \\
+Torsion-natural $|\beta|=0.816$ & excluded & excluded ($+7.2\times10^4$) \\
+\hline
+\end{tabular}\end{table}
+
+\paragraph{Results.} With Pantheon+, the best grid point ($F=2.51\,\Mp$, $m=0.50\,H_0$) ties $\Lambda$CDM
+($\Delta\chi^2=+0.09$, a fail by the rule). With DES Y5 the best point ($F=1.00\,\Mp$, $m=1.26\,H_0$) gains
+$\Delta\chi^2=-6.23$, only $1.3\sigma$ after the look-elsewhere correction over the searched $F$ values; on the
+recalibrated DES-Dovekie sample the gain shrinks to $-1.33$ (\textbf{weakened}). Against $w_0$--$w_a$ the field is
+worse with every sample. The corner of sub-Planckian $F$ and large $m$ favoured in Refs.~\cite{lin2025,shiu2026}
+remains much worse ($+37$) in our setup, possibly because our closure method does not start the field close enough to
+the hilltop. At the best points the field leaves structure growth unchanged: $S_8=0.820$ and $0.819$ against
+$\Lambda$CDM's $0.818$ and $0.819$ on the same data.
 
 \paragraph{The coupled twist.} Allowing a conformal coupling to dark matter, $m_c\propto e^{\beta\phi/\Mp}$, improves
-the fit by about 8 over the uncoupled field ($-6.80$ against $\Lambda$CDM). The profile allows only
-$|\beta|\approx0.05$ ($|\beta|=0.1$ costs more than 100), with two modes of similar quality, and only $\beta<0$
-produces an apparent phantom crossing (near $z\approx0.8$). All three features match Babu and Amendola
-\cite{babu2026}. The torsion-natural $|\beta|=0.816$ is excluded: it does not yield a physical cosmology. The
-coupled field is still worse than $w_0$--$w_a$ once its parameters are counted.
+the fit by about 8 over the uncoupled field ($-7.91$ against $\Lambda$CDM). The profile is bimodal: $\beta=\pm0.05$
+give $-7.37$ and $-7.34$, $\beta=0$ gives $-0.63$, and $\beta=-0.1$ and $+0.1$ cost $+128$ and $+94$. Only $\beta<0$
+produces an apparent phantom crossing (near $z\approx0.8$). These features match Babu and Amendola \cite{babu2026}.
+The torsion-natural $|\beta|=0.816$ is excluded ($\Delta\chi^2\approx+7.2\times10^4$ for either sign). The coupled
+field is still worse than $w_0$--$w_a$ once its parameters are counted, and its coupling raises $\sigma_8$ by 1.4\%:
+$S_8=0.828$, $0.84\sigma$ further than $\Lambda$CDM from the DES Y6 3$\times$2pt value $0.789\pm0.012$
+\cite{desy6}. Weak lensing is not in the fit, so part of its gain is paid for elsewhere.
 
-\paragraph{Reading.} The natural late field ties $\Lambda$CDM at best and does not reproduce DESI's preference for
-$w_0$--$w_a$; the torsion-natural coupling is ruled out. The energy scale ($\sim$meV) is put in by hand, and
-gravitational-wave bounds on a dynamical Barbero--Immirzi field \cite{gao2026} apply.
+\paragraph{Birefringence, pre-registered.} The minimal fermion coupling is fixed by the action:
+$\mathcal L\supset-(\sqrt6/4\Mp)\,\partial_\mu\phi\,J_5^\mu$ in the Nieh--Yan form \cite{mercuri2009}, with an extra
+$1/\cosh\chi$ in the Holst form \cite{torresgomez2009}. Rotating it into the chiral anomaly gives
+$\beta=2c\,S\,(\alpha/2\pi)\,\Delta\phi$ with $c=\sqrt6/4\Mp$ and $S=\sum N_cQ^2$, but a pure derivative coupling
+decouples from photons when the fermions are heavier than the field's mass \cite{bauer2017}, so the standard reading
+gives $\beta\approx0$. Between recombination and today the field moves by $\Delta\phi=0.08$--$0.20\,\Mp$; even counting
+all charged fermions without decoupling ($S=8$) gives only $0.05^\circ$--$0.13^\circ$. Against the measured
+$0.24^\circ\pm0.06^\circ$ the pre-registered primary verdict is \textbf{excluded} ($4.0\sigma$), and it is unchanged
+against the joint ACT + Planck value $0.277^\circ\pm0.057^\circ$ \cite{eskilt2026}. With one added photon coefficient
+the angle fits by construction, which is not evidence. The model's real prediction is then the ratio of the rotation
+of reionisation-era to recombination-era light, $R=[\phi_0-\phi(z_{\rm re})]/[\phi_0-\phi(z_{\rm rec})]=0.997$ for
+both supernova fits. The field switches on late (10\% of its move is done by $z=1.5$, half by $z=0.38$), whereas
+dark-matter-like axions give $R\approx0$. Planck finds no significant scale dependence of the angle
+\cite{ballardini2025}, which is consistent, but the decisive low-$\ell$ test awaits LiteBIRD.
+
+\paragraph{Spins.} The same coupling acts on electron and neutron spins as $b_0=(\sqrt6/4)\dot\phi/\Mp$. At the late
+best fits $b_0=1.4$--$3.5\times10^{-43}$~GeV, about $10^{10}$ below the neutron bound of $\sim10^{-33}$~GeV
+\cite{brown2010}: safe, and invisible in the laboratory.
+
+\paragraph{Reading.} On corrected code the natural late field ties $\Lambda$CDM with Pantheon+, gains a weak and
+sample-dependent $-6.2$ with DES Y5, and never reproduces DESI's preference for $w_0$--$w_a$. The torsion-natural
+coupling is ruled out, the minimal field cannot explain the measured birefringence, and the energy scale ($\sim$meV)
+is put in by hand. Gravitational-wave bounds on a dynamical Barbero--Immirzi field \cite{gao2026} apply. Exploratory
+pre-registered tests for silver- or golden-ratio spacings in particle masses and atomic ionisation energies found
+nothing: an initial $p=0.044$ on $Z=2$--$20$ did not replicate on $Z=21$--$60$ ($p=0.56$). They are kept in the
+repository for completeness.
 
 %======================================================================
 \section{Overall verdict}\label{sec:verdict}
@@ -1108,22 +1157,26 @@ different $z_c$ on new data falsifies Eq.~\eqref{eq:lock} (\S\ref{sec:pact}).
 \item \textbf{No cosmic birefringence.} In minimal Einstein--Cartan--Holst coupling the
 photon does not couple to torsion, so there is no tree-level $\phi F\tilde F$ term. A
 photon coupling can only arise through the fermion loop of the derivative coupling
-$\partial_\mu\phi J_5^\mu$, and for a vector-like theory this is suppressed by
-$(\omega/m)^2$ \cite{quevillon2019}; for CMB photons and electrons this is
-$\lesssim(0.3\,{\rm eV}/511\,{\rm keV})^2\sim3\times10^{-13}$. The minimal model therefore
-predicts an isotropic polarisation rotation $\beta\ll10^{-9}$ degrees, unlike photon-coupled
-axion EDE \cite{carroll1998,murai2023}. Planck and WMAP data show a hint of
-$\beta=0.34^\circ\pm0.09^\circ$ \cite{minami2020,eskilt2022}. If this is confirmed and shown
-to arise from early dark energy, the minimal torsion origin is excluded; Simons Observatory
-\cite{so2019} and LiteBIRD \cite{litebird2023} can decide. This is an effective-field-theory
-estimate; a full one-loop calculation in an expanding background is still needed.
+$\partial_\mu\phi J_5^\mu$, and fermions heavier than the field decouple from it, suppressed by
+$(m_\phi/m_f)^2$ \cite{bauer2017,quevillon2019}. The minimal model therefore predicts no
+measurable isotropic polarisation rotation, unlike photon-coupled axion EDE
+\cite{carroll1998,murai2023}. The measured angle is $0.277^\circ\pm0.057^\circ$ (joint ACT + Planck
+\cite{eskilt2026}; earlier $0.34^\circ\pm0.09^\circ$ \cite{minami2020,eskilt2022}). By our pre-registered
+test (\S\ref{sec:late}) the minimal torsion origin of that signal is therefore \textbf{excluded} unless the
+measurement proves to be a systematic. Simons Observatory \cite{so2019} and LiteBIRD \cite{litebird2023} can
+decide. This is an effective-field-theory estimate; the Jackiw--Kosteleck\'y regularisation ambiguity of an
+induced Chern--Simons term is not resolved here.
+\item \textbf{Switch ratio (late field with one added photon coefficient).} The late field switches on at
+$z\approx1.5$, so the rotation of reionisation-era light is $R=0.997$ of the recombination-era rotation. A
+measured $R$ far from 1 at low $\ell$ rules this version out.
 \item \textbf{Laboratory spin coupling.} Today the field acts on fermions as an axial
 background $b_0\simeq\frac34\,\dot{\bar\gamma}$. At the best fit ($F=0.137\,\Mp$,
 $\theta_i=2.79$, $z_c\simeq3570$, $n=3$) the oscillation amplitude decays as $a^{-3/(n+1)}$,
 giving $\theta\simeq6\times10^{-3}$ and a frequency $\lesssim10^{-33}$~eV today, hence
 $b_0\sim6\times10^{-46}$~GeV. Bounds from Lorentz-violation tests are about
-$10^{-31}$--$2\times10^{-27}$~GeV \cite{kostelecky2008}. The model is safe, and not testable
-in the laboratory today.
+$10^{-31}$--$2\times10^{-27}$~GeV \cite{kostelecky2008}, and $\sim10^{-33}$~GeV for neutrons
+\cite{brown2010}. The late field gives $b_0=1.4$--$3.5\times10^{-43}$~GeV. The model is safe, and not
+testable in the laboratory today.
 \item \textbf{Late-time limit.} The field settles at its minimum, so the model predicts no
 dynamical torsion today beyond the negligible residual above. Any detected late-time
 variation of $\gamma$ would falsify this version.
@@ -1135,10 +1188,13 @@ variation of $\gamma$ would falsify this version.
 its pre-registered rule ($\Delta\chi^2=-5.63$) but late evolving dark energy fits better. After the look-elsewhere
 correction the early preference is a weak hint ($1.2$--$1.4\sigma$), and alongside late dark energy it is mild
 ($D=\AthreeD$). The potential's shape and the lock are assumptions that geometry does not supply
-(\S\ref{sec:derive}). The torsion construction motivates the field; it does not determine its numbers. Acting late
-with its natural potential (\S\ref{sec:late}), the field ties $\Lambda$CDM at best, its DES Y5 gain does not survive
-recalibrated supernovae, and the torsion-natural dark-matter coupling is excluded. A null test along the way exposed
-two AxiCLASS bugs for axion dark energy, which we fix.
+(\S\ref{sec:derive}). The torsion construction motivates the field; it does not determine its numbers. A null test
+exposed two AxiCLASS bugs for axion dark energy, which we fix; every late test was rerun on the corrected code under a
+pre-registered rule. Acting late with its natural potential (\S\ref{sec:late}), the field ties $\Lambda$CDM with
+Pantheon+, gains a weak $\Delta\chi^2=-6.2$ ($1.3\sigma$ global) with DES Y5 that weakens on recalibrated supernovae,
+and loses to $w_0$--$w_a$; the torsion-natural dark-matter coupling is excluded, and a small coupling raises $S_8$. The
+minimal field cannot produce the measured cosmic birefringence; with one added photon coefficient it predicts a
+reionisation-to-recombination rotation ratio $R=0.997$, a clean target for LiteBIRD.
 
 \paragraph{Version 2 (unchanged).}
 Minimal Einstein--Cartan torsion cannot shorten the sound horizon: it has the wrong sign
@@ -1356,6 +1412,20 @@ shear with the complete Kilo-Degree Survey} (2025).
   arXiv:gr-qc/0407052.
 \bibitem{quevillon2019} J.~Quevillon, C.~Smith, Eur.\ Phys.\ J.\ C \textbf{79}, 822 (2019),
   arXiv:1903.12559.
+\bibitem{bauer2017} M.~Bauer, M.~Neubert, A.~Thamm, \emph{Collider probes of axion-like particles}, JHEP
+  \textbf{12}, 044 (2017), arXiv:1708.00443.
+\bibitem{mercuri2009} S.~Mercuri, V.~Taveras, \emph{Interaction of the Barbero--Immirzi field with matter and
+  pseudo-scalar perturbations}, Phys.\ Rev.\ D \textbf{80}, 104007 (2009), arXiv:0903.4407.
+\bibitem{torresgomez2009} A.~Torres-Gomez, K.~Krasnov, \emph{Remarks on Barbero--Immirzi parameter as a field},
+  Phys.\ Rev.\ D \textbf{79}, 104014 (2009), arXiv:0811.1998.
+\bibitem{eskilt2026} J.~R.~Eskilt, \emph{Cosmic birefringence from a joint analysis of ACT and Planck},
+  arXiv:2608.06480 (2026).
+\bibitem{ballardini2025} M.~Ballardini, A.~Gruppuso, S.~Paradiso, S.~S.~Sirletti, P.~Natoli, \emph{Planck
+  constraints on the scale dependence of isotropic cosmic birefringence}, arXiv:2507.16714 (2025).
+\bibitem{desy6} T.~M.~C.~Abbott et al.\ (DES), \emph{Dark Energy Survey Year 6 results: cosmological constraints
+  from galaxy clustering and weak lensing}, arXiv:2601.14559 (2026).
+\bibitem{brown2010} J.~M.~Brown, S.~J.~Smullin, T.~W.~Kornack, M.~V.~Romalis, \emph{New limit on Lorentz- and
+  CPT-violating neutron spin interactions}, Phys.\ Rev.\ Lett.\ \textbf{105}, 151604 (2010), arXiv:1006.5425.
 \bibitem{carroll1998} S.~M.~Carroll, Phys.\ Rev.\ Lett.\ \textbf{81}, 3067 (1998),
   arXiv:astro-ph/9806099.
 \bibitem{murai2023} K.~Murai, F.~Naokawa, T.~Namikawa, E.~Komatsu, Phys.\ Rev.\ D
