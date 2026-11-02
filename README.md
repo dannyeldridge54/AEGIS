@@ -17,6 +17,8 @@ That covers every fit, the code that ran it, and two AxiCLASS bug fixes. The cle
 
 This is a careful test with weak hints, **not a discovery**.
 
+**Archived:** Zenodo version 3, doi:[10.5281/zenodo.23867116](https://doi.org/10.5281/zenodo.23867116) (published 2 November 2026).
+
 **Where to look:**
 - **Paper:** [papers/torsion_born_ede.pdf](./papers/torsion_born_ede.pdf) (27 pp.).
 - **Check everything in 10 minutes:** `REVIEWER_QUICK_CHECK.md` in the release repository.
