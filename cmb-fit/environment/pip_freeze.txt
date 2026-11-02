@@ -1,0 +1,71 @@
+# pip freeze of the fit environment (2026-11-01). Local builds are installed by setup_twist_env.sh:
+#   classy        <- AxiCLASS at ae9609e1f96ddebbb6cc8a46de94512514c68781 (PoulinV/AxiCLASS)
+#   spt_candl_data <- SouthPoleTelescope/spt_candl_data at f22611a9671d50af6135f048a2ea3f43ef4c2f62
+absl-py==2.5.1
+ACT-DR6-CMBonly @ git+https://github.com/ACTCollaboration/DR6-ACT-lite.git@627aeafb88ae5ad1aa66b406bea2d65cfa66a27d
+act_dr6_lenslike==1.2.1
+astropy==8.0.2
+astropy-iers-data==0.2026.10.19.0.52.1
+beartype==0.23.1
+candl-like==2.0.3
+certifi==2026.10.23
+charset-normalizer==3.5.2
+# classy @ file:///home/syndyr/AxiCLASS/python
+clipy-like==0.15
+cloudpickle==3.1.2
+cobaya==3.6.2
+contourpy==1.3.3
+cycler==0.12.1
+Cython @ file:///home/conda/feedstock_root/build_artifacts/cython_1702977799506/work
+dill==0.4.1
+equinox==0.13.8
+fonttools==4.68.0
+getdist==1.7.7
+gpjax==1.0.0
+idna==3.20
+iniconfig==2.3.1
+jax==0.10.2
+jaxlib==0.10.2
+jaxtyping==0.3.11
+joblib==1.6.0
+kiwisolver==1.5.1
+lineax==0.1.1
+markdown-it-py==4.2.0
+matplotlib==3.11.2
+mdurl==0.1.2
+ml_dtypes==0.6.0
+multipledispatch==1.0.0
+narwhals==2.28.0
+numpy==2.4.6
+numpyro==0.22.0
+opt_einsum==3.4.0
+optax==0.2.8
+packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1785888127/work
+pandas==3.1.0
+paramax==0.0.5
+pillow==13.0.0
+pluggy==1.7.0
+portalocker==4.4.2
+Py-BOBYQA==1.5.0
+pyerfa==2.0.1.5
+Pygments==2.21.0
+pyparsing==3.3.3
+pytest==9.2.0
+python-dateutil==3.0.0
+PyYAML==6.0.3
+RapidFuzz==3.14.6
+requests==2.34.2
+rich==15.0.0
+sacc==2.4
+scikit-learn==1.9.1
+scipy @ file:///home/conda/feedstock_root/build_artifacts/scipy-split_1779873994451/work/dist/scipy-1.17.1-cp311-cp311-linux_x86_64.whl#sha256=fb9bc72e4de1a7def4fdab777e350fa5c075ed66f9ad0ac80fa09bd588a1a625
+seaborn==0.13.2
+sigfig==1.4.0
+six==1.17.0
+# spt_candl_data @ file:///mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/spt_candl_data
+threadpoolctl==3.7.0
+tqdm==4.70.1
+typing_extensions==4.16.0
+tzdata==2026.6
+urllib3==2.8.0
+wadler_lindig==0.1.8

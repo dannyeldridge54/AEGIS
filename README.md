@@ -1,24 +1,62 @@
-# AEGIS — Autonomous Evolving General Intelligence System
+# AEGIS: the working repository of "The Twist" (cosmology), plus the AEGIS optimizer (software)
 
-> **AEGIS · the Twist (UFE) · free to all under the [Hippocratic License 3.0, HL3-MIL-SV](./LICENSE)**
-> Free to everyone, for any use that respects human rights. No military use, no mass surveillance.
-> It belongs to all life. See [PLEDGE.md](./PLEDGE.md).
->
-> **The science, honestly:** a torsion-born early dark energy model with a locked switch-on
-> ([ufe-v2/UFE_MODEL.md](./ufe-v2/UFE_MODEL.md)). Best result: Δχ² −6.1 with one free setting on Planck + ACT DR6,
-> about **2.5σ: a hint, not a discovery**. It ties on S8, and the ACT collaboration itself finds no evidence for early
-> dark energy. Prior work and what to cite: [ufe-v2/PRIOR_ART.md](./ufe-v2/PRIOR_ART.md). Independent arithmetic
-> check: [ufe-v2/recheck_math.py](./ufe-v2/recheck_math.py). Star survey audit: [ufe-v2/STAR_AUDIT.md](./ufe-v2/STAR_AUDIT.md).
-> **Cite:** Eldridge, D. L. (2026), *Torsion-Born Early Dark Energy with an Onset Locked to Matter–Radiation Equality*, Zenodo, [doi:10.5281/zenodo.23789830](https://doi.org/10.5281/zenodo.23789830)
-> **Paper:** [papers/](./papers/) (seeking an arXiv endorsement in astro-ph.CO; please get in touch).
-> Test it, try to break it, and say so publicly if it is wrong. **Easiest way: double-click
-> [CHECK_MY_WORK.bat](./CHECK_MY_WORK.bat)** on Windows, or run `sh check_my_work.sh` on Mac/Linux (needs free Python); it re-derives every number in about two minutes.
->
+**If you are an astronomer or physicist, start here.** This repository holds the full working record of a
+pre-registered test of a torsion-motivated scalar field (the Barbero–Immirzi field) as early and late dark energy.
+That covers every fit, the code that ran it, and two AxiCLASS bug fixes. The clean, citable release is
+**[the-twist-torsion-cosmology](https://github.com/dannyeldridge54/the-twist-torsion-cosmology)**.
+
+## The results, honestly (version 3, 2 November 2026)
+
+| Test | Result |
+|---|---|
+| Early dark energy (Planck + ACT + SPT-3G + DESI + Pantheon+) | Passes its rule (Δχ² −5.6), but only **1.2–1.4σ** after look-elsewhere: a weak hint |
+| Late field, corrected code | Ties ΛCDM with Pantheon+ (+0.09); −6.2 with DES Y5 (1.3σ global), weakened on DES-Dovekie; **never beats w0–wa** |
+| Coupled to dark matter | −7.9 with β ≈ ±0.05, worse than w0–wa, raises S8; the torsion-natural β = 0.816 is **excluded** |
+| Cosmic birefringence | The minimal field **cannot** produce the measured 0.24–0.28°. One open prediction: R = 0.997 (LiteBIRD) |
+| **AxiCLASS bugs (n = 1 fields)** | A frozen field that must equal Λ gives σ8 = 0.25 instead of 0.81. Fixed, validated, with a 10-second reproducer |
+
+This is a careful test with weak hints, **not a discovery**.
+
+**Where to look:**
+- **Paper:** [papers/torsion_born_ede.pdf](./papers/torsion_born_ede.pdf) (27 pp.).
+- **Check everything in 10 minutes:** `REVIEWER_QUICK_CHECK.md` in the release repository.
+
+## Use it to check our data
+
+| You want to… | Do this |
+|---|---|
+| Check that the rules came first and recompute every number | Clone the release repository and run `python verify.py`, then `python code/analysis/nr_verdicts.py` (Python only) |
+| See the AxiCLASS bug | [cmb-fit/axiclass/nlfix/BUG_REPORT.md](./cmb-fit/axiclass/nlfix/BUG_REPORT.md): `python cmb-fit/axiclass/nlfix/bug_reproducer.py <AxiCLASS>/python/build` |
+| Rerun any fit on the same code and data | `bash cmb-fit/environment/setup_twist_env.sh`, then `$TWIST_PY cmb-fit/axiclass/early_late_spa.py <run name>` (see REPRODUCE.md in the release) |
+| Use the pipeline for your own model | `cmb-fit/axiclass/early_late_spa.py` is an AxiCLASS + Cobaya driver for Planck, ACT DR6, SPT-3G D1, DESI DR2 and three SN samples. Run names encode model and data |
+
+- **Folders:**
+  - `cmb-fit/axiclass/`: the fitter, queue scripts, `nlfix/` (bug fixes) and `coupled/` (β patch);
+  - `cmb-fit/results/`: every fit's `cmp_*.json`;
+  - `cmb-fit/environment/`: exact versions and the setup script;
+  - `papers/`: the paper and the arXiv/Zenodo build.
+- **Paths:** scripts find each other relative to their own location. Override with `TWIST_RESULTS`, `TWIST_BUILDS`,
+  `TWIST_PY` and `COBAYA_PACKAGES_PATH`.
+
+**Corrections are welcome and credited:** open an issue, or email dannyeldridge54@gmail.com. Please also say so
+publicly if it is wrong.
+
+**Licence:** free to everyone under the [Hippocratic License 3.0, HL3-MIL-SV](./LICENSE), for any use that respects
+human rights. No military use, no mass surveillance. See [PLEDGE.md](./PLEDGE.md).
+
 > *It is not a race or a game. It is a stage, and the stage is meant to be shared, not kept.*
 > *I am willing to give it to all. I don't want a crown. I just want a home, but never at the cost of the world or its future.* — Danny Lee Eldridge
->
-> The software below (AEGIS v1) is a classical optimizer: swarm search, UCB1 bandits, parameter search. Its optional
-> coding agent calls language models and is therefore **not licensed for use** (License §6.7–6.8).
+
+**Earlier versions:**
+- Version 2 (early field only): [ufe-v2/](./ufe-v2/), Zenodo [doi:10.5281/zenodo.23789830](https://doi.org/10.5281/zenodo.23789830).
+- Its one-click arithmetic check: `CHECK_MY_WORK.bat` (Windows) or `sh check_my_work.sh`.
+
+---
+
+# The other project here: the AEGIS optimizer (software, unrelated to the cosmology results)
+
+AEGIS v1 is a classical optimizer: swarm search, UCB1 bandits, parameter search. Its optional coding agent calls
+language models and is therefore **not licensed for use** (License §6.7–6.8).
 
 > Self-learning AI agent that optimizes anything. Natural language goals.  
 > Zero config. 8 languages. Adapts its own strategy in real-time.
