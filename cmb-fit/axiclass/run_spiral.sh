@@ -8,7 +8,8 @@ CM="${CUBEMIND:-/mnt/c/Users/Danny/Desktop/CubeMind_side_project}"
 grep -q '"dLCDM_limit"' "$CM/spiral_fit_mirror.json" || { echo "gate file missing"; exit 1; }
 $PY -c "import json,sys; d=json.load(open('$CM/spiral_fit_mirror.json')); sys.exit(0 if abs(d['dLCDM_limit'])<=1.0 else 1)" \
   || { echo "$(date '+%F %T') SF gate FAILED: no fits"; exit 1; }
-until grep -q "PC finished" "$R/lanes/run_pincer.log" 2>/dev/null; do sleep 120; done
+# Starts together with the pincer batch once the torsion-F runners finish (3 + 3 fits x 2 threads fit in 16 cores).
+until grep -q "TF finished" "$R/lanes/run_torsion_f.log" 2>/dev/null && grep -q "TFP finished" "$R/lanes/run_torsion_f_planck.log" 2>/dev/null; do sleep 120; done
 for n in ax_spa_spiraltwist_nlfix ax_spa_spiraltwist_dovekie_nlfix ax_spa_spiraltwist_union3_nlfix; do
   [ -f "$R/cmp_$n.json" ] && continue
   echo "$(date '+%F %T') SF start $n"
