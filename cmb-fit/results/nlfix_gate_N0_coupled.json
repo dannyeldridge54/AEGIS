@@ -1,0 +1,8 @@
+{
+ "gate": "N0",
+ "kind": "coupled",
+ "run": "ax_spa_coupledtwist_beta0_gF2m-1.824_nlfix",
+ "diff": 0.12713163823673312,
+ "verdict": "PASS",
+ "classy": "/home/syndyr/AxiCLASS_coupled_nlfix/python/build/lib.linux-x86_64-cpython-311/classy.cpython-311-x86_64-linux-gnu.so"
+}
