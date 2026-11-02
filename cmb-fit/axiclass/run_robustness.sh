@@ -1,9 +1,13 @@
 #!/bin/bash
 # CubeMind PREREGISTRATION_ROBUSTNESS.md (post-hoc): wait for the three Late Twist fits, then
 # batch 1 = R1 (best of 4) + R2 A3 part (DES Y5), 3 threads each; batch 2 = R2 Late Twist part, 5 threads each.
-R=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results
-PY=/home/syndyr/micromamba/envs/aegis/bin/python
-S=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass/early_late_spa.py
+# Portable paths (make_portable.py): override with TWIST_RESULTS, TWIST_BUILDS, TWIST_PY.
+AXI="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+RES="${TWIST_RESULTS:-$(dirname "$AXI")/results}"
+BLD="${TWIST_BUILDS:-$HOME}"
+PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] || PY=python3
+R=$RES
+S=$AXI/early_late_spa.py
 need="ax_spa_latetwist ax_spa_lcdm_halofit ax_spa_w0wa_halofit"
 while true; do
   missing=0

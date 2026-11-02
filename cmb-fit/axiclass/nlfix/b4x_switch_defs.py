@@ -2,11 +2,15 @@
 """Ratio replication S3 (CubeMind PREREGISTRATION_RATIO_REPLICATION.md, locked 2026-11-02 12:01:34): H(z_on)/H0 at the NR
 best fits for switch definitions f = 5, 10, 20, 50% of the field's move since recombination.
     python b4x_switch_defs.py <run> [<run> ...]"""
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 import early_late_spa as E                                      # noqa: E402
 
 E._maybe_coupled(sys.argv[1])

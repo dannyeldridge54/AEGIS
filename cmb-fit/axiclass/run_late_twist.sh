@@ -1,9 +1,13 @@
 #!/bin/bash
 # Late Twist (CubeMind PREREGISTRATION_LATE_TWIST.md): wait for the four A3 AxiCLASS fits, then run the Late Twist and
 # its two halofit reference runs in parallel, 5 threads each.
-R=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results
-PY=/home/syndyr/micromamba/envs/aegis/bin/python
-S=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass/early_late_spa.py
+# Portable paths (make_portable.py): override with TWIST_RESULTS, TWIST_BUILDS, TWIST_PY.
+AXI="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+RES="${TWIST_RESULTS:-$(dirname "$AXI")/results}"
+BLD="${TWIST_BUILDS:-$HOME}"
+PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] || PY=python3
+R=$RES
+S=$AXI/early_late_spa.py
 need="ax_spa_lcdm ax_spa_w0wa ax_spa_edelock ax_spa_edelock_w0wa"
 while true; do
   missing=0

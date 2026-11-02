@@ -3,11 +3,15 @@
 from (f_EDE, z_c, theta_i). Recomputes the given best fit once and prints what classy exposes.
     python early_F.py ax_spa_edelock_w0wa   -> results/earlyF_<name>.json
 """
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 from early_late_spa import make, OUT
 from cobaya.model import get_model
 

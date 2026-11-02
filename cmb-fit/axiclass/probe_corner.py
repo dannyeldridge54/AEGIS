@@ -2,11 +2,15 @@
 """Post-hoc diagnostic for the Late Twist L1 result (chi2 above LCDM): can the field reach the LCDM-like limit
 (large F, small m) inside its pre-registered prior? Evaluates chi2 at a few (F, m) points with the cosmological and
 nuisance parameters held at the AxiCLASS LCDM (halofit) best fit, and at the Late Twist best fit itself. No fit."""
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 from early_late_spa import make, OUT
 from cobaya.model import get_model
 

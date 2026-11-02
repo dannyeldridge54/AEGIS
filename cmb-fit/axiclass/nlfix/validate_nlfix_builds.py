@@ -3,11 +3,15 @@
 early_late_spa's own make() and _maybe_coupled(), the frozen field (F 100, m 0.015) at the LCDM halofit best fit must give
 |chi2 - chi2_LCDM| < 0.15, for the Late Twist (fixed build) and for the Coupled Twist at beta = 0 (fixed coupled build).
 Run once per process (each loads one classy build):  python validate_nlfix_builds.py latetwist|coupled"""
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 import early_late_spa as E                                     # noqa: E402
 
 kind = sys.argv[1]

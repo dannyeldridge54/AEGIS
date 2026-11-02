@@ -5,17 +5,21 @@ Evaluates AxiCLASS (exact Klein-Gordon scalar field, classy) at the CAMB best po
 pact_edelock_F9, with the same P-ACT + DESI DR2 + Pantheon+ likelihoods, and compares dchi2 (EDE - LCDM) between the
 two engines, so engine offsets cancel as in engine_check.py. Runs inside WSL (micromamba env 'aegis'):
 
-    python /mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass/cross_engine_pact.py
+    python cmb-fit/axiclass/cross_engine_pact.py
 
 H0 is passed directly from CAMB's best point (rather than theta_*), so both engines describe the same cosmology.
 """
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import json
 import math
 import os
 
 from cobaya.model import get_model
 
-ROOT = "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit"
+ROOT = _os.path.dirname(_AXI)
 PACKAGES = ROOT + "/packages"
 
 LIKES = {

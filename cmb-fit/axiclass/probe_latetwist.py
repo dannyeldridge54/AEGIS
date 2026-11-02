@@ -1,12 +1,16 @@
 # Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights.
 """Diagnose the ax_spa_latetwist minimiser crash (likelihood overflow): evaluate the Late Twist on a coarse (F, m) grid
 with the other parameters at the AxiCLASS LCDM best fit, and print the log-posterior and each chi2. No fit, no result."""
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import math
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 from early_late_spa import make, OUT
 from cobaya.model import get_model
 

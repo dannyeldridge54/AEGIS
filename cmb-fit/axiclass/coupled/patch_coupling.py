@@ -8,8 +8,12 @@
                  theta_c' = -(aH + beta phi') theta_c + beta k^2 dphi    (theta_cdm now evolved in this gauge)
                  dphi''  += -3 a^2 beta rho_cdm delta_c
 Every edit is an exact-anchor replacement that must match once. beta = 0 (the default) leaves the code path unchanged.
-Usage: python patch_coupling.py /home/syndyr/AxiCLASS_coupled
+Usage: python patch_coupling.py <path to your AxiCLASS clone>
 """
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import sys
 
 ROOT = sys.argv[1]

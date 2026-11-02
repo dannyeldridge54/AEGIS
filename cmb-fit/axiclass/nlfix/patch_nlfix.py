@@ -4,7 +4,11 @@ background.c counts a scalar field as (rho - 3p) of matter and 3p of radiation. 
 a field acting as late dark energy (p = -rho) appears as +4 Omega_scf of matter. This patch takes the field back out of
 Omega_m and Omega_r in the non-linear modules and gives halofit the effective w of the dark energy (field + Lambda).
 Nothing else in CLASS changes. Exact-anchor edits; each must match once.
-Usage: python patch_nlfix.py /home/syndyr/AxiCLASS_nlfix"""
+Usage: python patch_nlfix.py <path to your AxiCLASS clone>"""
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import os
 import sys
 

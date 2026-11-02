@@ -1,10 +1,14 @@
 """Run AxiCLASS directly at the pact_edelock CAMB best point and print CLASS's own error message."""
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import json
 import math
 
 from classy import Class, CosmoComputationError, CosmoSevereError
 
-m = json.load(open("/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results/cmp_pact_edelock.json"))["minimum"]
+m = json.load(open(_os.path.join(_RESULTS, "cmp_pact_edelock.json")))["minimum"]
 p = {"A_s": m["As"], "n_s": m["ns"], "H0": m["H0"], "omega_b": m["ombh2"], "omega_cdm": m["omch2"],
      "tau_reio": m["tau"], "N_ncdm": 1, "m_ncdm": 0.06, "N_ur": 2.0328, "output": "tCl,pCl,lCl", "lensing": "yes",
      "do_shooting": "yes", "do_shooting_scf": "yes", "scf_potential": "axion", "n_axion": 3,

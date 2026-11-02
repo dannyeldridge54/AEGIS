@@ -4,9 +4,13 @@
 # Stage 2 (LD) waits for stage 1 and for tonight's "LD finished" (it uses the DES-Dovekie references). Stage 3 (Coupled
 # grid) follows stage 1; stage 4 (C5 + beta profile) follows stage 3. 2 threads per fit; early_late_spa.py loads the
 # fixed builds for "_nlfix" names and warm-starts from the same-named original run.
-R=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results
-A=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass
-PY=/home/syndyr/micromamba/envs/aegis/bin/python
+# Portable paths (make_portable.py): override with TWIST_RESULTS, TWIST_BUILDS, TWIST_PY.
+AXI="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")"/.. && pwd)"
+RES="${TWIST_RESULTS:-$(dirname "$AXI")/results}"
+BLD="${TWIST_BUILDS:-$HOME}"
+PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] || PY=python3
+R=$RES
+A=$AXI
 T=$A/nlfix/nlfix_tools.py
 running() { ps -eo args | grep 'early_late_spa.py ax_' | grep -v grep | grep -vc 'bash -c'; }
 nr_running() { ps -eo args | grep 'early_late_spa.py ax_.*_nlfix' | grep -v grep | grep -vc 'bash -c'; }

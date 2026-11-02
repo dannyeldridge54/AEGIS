@@ -2,9 +2,13 @@
 # Helper worker for the (F, m) grid (scheduling only; no setting changes). Waits until the Dovekie and best-of-4 fits
 # have freed their cores, then takes Late Twist grid points from the END of the stage-1 list (DES Y5 first, reversed)
 # while run_grid.sh works from the start. early_late_spa.py claims each run atomically, so no point runs twice.
-R=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results
-A=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass
-PY=/home/syndyr/micromamba/envs/aegis/bin/python
+# Portable paths (make_portable.py): override with TWIST_RESULTS, TWIST_BUILDS, TWIST_PY.
+AXI="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+RES="${TWIST_RESULTS:-$(dirname "$AXI")/results}"
+BLD="${TWIST_BUILDS:-$HOME}"
+PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] || PY=python3
+R=$RES
+A=$AXI
 run() { [ -f "$R/lanes/$1.claim" ] && exit 0
         OMP_NUM_THREADS=2 $PY $A/early_late_spa.py "$1" > "$R/lanes/$1.helper.log" 2>&1
         grep -q "claimed by another worker" "$R/lanes/$1.helper.log" && rm -f "$R/lanes/$1.helper.log" && exit 0

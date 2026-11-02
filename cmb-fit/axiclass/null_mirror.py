@@ -3,12 +3,16 @@
 the hilltop), the Late Twist should reproduce LCDM's chi2. Evaluates chi2 with the cosmological and calibration
 parameters fixed at the AxiCLASS LCDM (halofit) best fit, for fields from 'edge-like' to 'deeply frozen'. No fit.
 A residual that tends to a constant as the field freezes is a numerical offset; one that tends to 0 means none."""
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import math
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 from early_late_spa import make, OUT
 from cobaya.model import get_model
 

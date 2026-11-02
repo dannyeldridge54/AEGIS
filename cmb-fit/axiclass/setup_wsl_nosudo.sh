@@ -1,9 +1,14 @@
 #!/bin/bash
 # AxiCLASS + Cobaya inside WSL Ubuntu WITHOUT sudo (AEGIS Phase 1 step 1.3). Uses micromamba (conda-forge) for the
 # compilers, make, git and Python, all inside $HOME. Logged to setup_wsl.log next to this file. Safe to re-run.
-#   bash /mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass/setup_wsl_nosudo.sh
+#   bash $AXI/setup_wsl_nosudo.sh
+# Portable paths (make_portable.py): override with TWIST_RESULTS, TWIST_BUILDS, TWIST_PY.
+AXI="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+RES="${TWIST_RESULTS:-$(dirname "$AXI")/results}"
+BLD="${TWIST_BUILDS:-$HOME}"
+PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] || PY=python3
 set -euo pipefail
-HERE=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass
+HERE=$AXI
 LOG="$HERE/setup_wsl.log"
 exec > >(tee -a "$LOG") 2>&1
 echo "=== $(date) start, no-sudo route (user $(whoami))"

@@ -2,17 +2,21 @@
 """B0 validation (CubeMind PREREGISTRATION_SPT3G_DEVIATIONS.md, 14:34:07): the null mirror with halofit ON on the fixed
 build. Pass if |chi2(frozen field) - chi2(true Lambda)| < 0.15. Same fixed LCDM halofit best fit as null_mirror.py; no fit.
 The edge-like point is reported too (expected near the non-linear-off value, -0.9)."""
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import glob
 import json
 import math
 import sys
 
-BUILD = glob.glob("/home/syndyr/AxiCLASS_nlfix/python/build/lib*")[0]
+BUILD = glob.glob(_os.path.join(_BUILDS, "AxiCLASS_nlfix/python/build/lib*"))[0]
 sys.path.insert(0, BUILD)
 import classy                                                  # noqa: E402
 assert classy.__file__.startswith(BUILD), classy.__file__
-sys.path.insert(1, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(1, _AXI)
 from early_late_spa import make, OUT                           # noqa: E402
 from cobaya.model import get_model                             # noqa: E402
 

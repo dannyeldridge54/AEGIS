@@ -5,12 +5,16 @@ best fits. Evaluates each best fit once on the fixed build and reads the backgro
   z_on = redshift where the field has covered 10% of its move since recombination
   b0   = (sqrt6/4) phi_dot(today) / M_Pl, in GeV (phi' is d phi/d tau in M_Pl/Mpc; a = 1 today)
     python b4x_switch.py <run> [<run> ...]"""
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import math
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 import early_late_spa as E                                      # noqa: E402
 
 E._maybe_coupled(sys.argv[1])

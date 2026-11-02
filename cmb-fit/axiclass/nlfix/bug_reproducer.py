@@ -3,10 +3,14 @@
 
 A frozen n = 1 field (F = 100 M_Pl, m = 0.015 H0, so it never moves) IS a cosmological constant. Its matter power
 spectrum and sigma8 must equal LCDM's. Run with a build's classy on the path:
-    python bug_reproducer.py /home/syndyr/AxiCLASS/python/build        (installed: differs)
-    python bug_reproducer.py /home/syndyr/AxiCLASS_nlfix/python/build  (fixed: matches)
+    python bug_reproducer.py $TWIST_BUILDS/AxiCLASS/python/build        (installed: differs)
+    python bug_reproducer.py $TWIST_BUILDS/AxiCLASS_nlfix/python/build  (fixed: matches)
 The causes: input.c forces include_scf_in_delta_m for n_axion = 1, and halofit/HMcode take Omega_m from a total
 that counts the field as rho - 3p (patch: nlfix/0001-nl-scf-fix.patch)."""
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import glob
 import sys
 

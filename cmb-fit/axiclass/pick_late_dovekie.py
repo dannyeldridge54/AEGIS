@@ -2,12 +2,16 @@
 """CubeMind PREREGISTRATION_LATE_DOVEKIE_LEE.md: choose the LD points by rule and print the run names (one per line).
 DES Y5 official best = lowest chi2 over grid + edge points; Pantheon+ official best = lowest chi2 over grid points only.
 Grid points have m in {-0.3, 0, 0.2, 0.4}; edge points (PREREGISTRATION_EDGE_SCAN.md) carry 3-decimal m values."""
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import glob
 import json
 import os
 import re
 
-OUT = "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results"
+OUT = _RESULTS
 GRID_M = {"-0.3", "0", "0.2", "0.4"}
 
 

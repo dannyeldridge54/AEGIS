@@ -1,11 +1,16 @@
 #!/bin/bash
 # AxiCLASS + Cobaya inside WSL Ubuntu, for AEGIS Phase 1 step 1.3 (exact scalar-field solution instead of CAMB's
 # fluid approximation). Run once from the Ubuntu window:
-#   bash /mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass/setup_wsl.sh
+#   bash $AXI/setup_wsl.sh
 # It asks for your Ubuntu (sudo) password once, for the system build tools. Everything is logged to setup_wsl.log
 # next to this file, so it can be read from Windows. Safe to run again: finished steps are skipped.
+# Portable paths (make_portable.py): override with TWIST_RESULTS, TWIST_BUILDS, TWIST_PY.
+AXI="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+RES="${TWIST_RESULTS:-$(dirname "$AXI")/results}"
+BLD="${TWIST_BUILDS:-$HOME}"
+PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] || PY=python3
 set -euo pipefail
-HERE=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass
+HERE=$AXI
 LOG="$HERE/setup_wsl.log"
 exec > >(tee -a "$LOG") 2>&1
 echo "=== $(date) start (user $(whoami))"

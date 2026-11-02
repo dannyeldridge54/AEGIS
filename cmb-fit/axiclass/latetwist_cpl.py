@@ -4,13 +4,17 @@ and the CPL-equivalent (w0, wa), a least-squares fit of w(a) = w0 + wa (1 - a) o
     python latetwist_cpl.py <run name>      -> results/cpl_<run name>.json
     python latetwist_cpl.py test            -> same at the reference point (log10 F = 0, log10 m = 0.2), no file
 """
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import sys
 
 import numpy as np
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 from early_late_spa import make, OUT
 from cobaya.model import get_model
 

@@ -6,6 +6,10 @@
 
 The coupled build is loaded from its own build folder; the installed classy is never touched.
 """
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import glob
 import json
@@ -13,8 +17,8 @@ import sys
 
 import numpy as np
 
-COUPLED = "/home/syndyr/AxiCLASS_coupled"
-OUT = "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results"
+COUPLED = _os.path.join(_BUILDS, "AxiCLASS_coupled")
+OUT = _RESULTS
 POINT = {"log10_F": 0.0, "log10_m": 0.2}           # a viable Late Twist point (probe_latetwist.py)
 
 
@@ -28,7 +32,7 @@ def use_coupled():
 def chi2(which, beta):
     if which == "coupled":
         use_coupled()
-    sys.path.insert(1, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+    sys.path.insert(1, _AXI)
     from early_late_spa import make
     from cobaya.model import get_model
     import classy
@@ -49,7 +53,7 @@ def chi2(which, beta):
 
 def background(beta, no_baryons=False):
     classy = use_coupled()
-    sys.path.insert(1, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+    sys.path.insert(1, _AXI)
     from early_late_spa import make
     extra = dict(make("ax_spa_latetwist")["theory"]["classytwist"]["extra_args"])
     best = json.load(open(f"{OUT}/cmp_ax_spa_lcdm_halofit.json"))["minimum"]

@@ -3,12 +3,16 @@
 rho_r as 3p, so a frozen field (p = -rho) enters Omega_m(z) as +4 Omega_scf. Halofit reads that Omega_m. If the +1.35
 offset comes from halofit, it should vanish when both LCDM and the frozen Late Twist are evaluated with non_linear = none.
 Same fixed LCDM halofit best-fit parameters as null_mirror.py. No fit."""
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import math
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 from early_late_spa import make, OUT
 from cobaya.model import get_model
 

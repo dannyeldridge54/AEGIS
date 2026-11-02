@@ -1,8 +1,12 @@
 """Check the NR warm start: an _nlfix grid run's ref centres equal its original run's minimum."""
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import json
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 import early_late_spa as E
 
 for n in ("ax_spa_latetwist_gF0.5m-0.3_nlfix", "ax_spa_coupledtwist_gF0.3m-0.1_nlfix", "ax_spa_latetwist_gF-0.6m0.751_nlfix"):

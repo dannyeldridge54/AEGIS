@@ -3,13 +3,17 @@
 fit once on the build chosen by the first run name and prints sigma8, the true Omega_m (cdm + b + ncdm, never the
 field) and S8 = sigma8 sqrt(Omega_m / 0.3). Appends to results/s8_fixed_code.json.
     python s8_check.py <run> [<run> ...]"""
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import math
 import os
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 import early_late_spa as E                                      # noqa: E402
 
 E._maybe_coupled(sys.argv[1])

@@ -4,13 +4,17 @@
     python nlfix_tools.py ld         -> LD points chosen by the LD rule on the stage 1 NR results (DES-Dovekie)
     python nlfix_tools.py coupled    -> 3x3 Coupled Twist grid around the best stage 1 Pantheon+ GRID point
     python nlfix_tools.py final      -> C5 and the beta profile at the best stage 3 point"""
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import glob
 import json
 import os
 import re
 import sys
 
-OUT = "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results"
+OUT = _RESULTS
 LF = (-0.4, -0.2, 0.0, 0.2, 0.4, 0.5)
 LM = (-0.3, 0.0, 0.2, 0.4)
 EDGE = ("gF0m0.057", "gF0m0.102", "gF0.2m-0.143", "gF0.2m-0.098", "gF0.4m-0.343", "gF0.4m-0.298", "gF0.5m-0.443",

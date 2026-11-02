@@ -5,13 +5,17 @@
     python grid_tools.py final                -> C5 (beta = +-0.816) and the 5-point beta profile at the best coupled point
     python grid_tools.py best <prefix>        -> best grid run for a prefix (name, chi2, log10F, log10m)
 """
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import glob
 import json
 import os
 import re
 import sys
 
-OUT = "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results"
+OUT = _RESULTS
 LF = (-0.4, -0.2, 0.0, 0.2, 0.4, 0.5)
 LM = (-0.3, 0.0, 0.2, 0.4)
 

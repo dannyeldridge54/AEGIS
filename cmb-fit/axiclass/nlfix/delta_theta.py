@@ -3,11 +3,15 @@
 and today, at the corrected-code (NR) best fits. Evaluates each best-fit point once on the fixed build (no fitting) and
 reads phi_scf(z) from AxiCLASS's background table. Prints theta(z_rec), theta(0) and delta_theta.
     python delta_theta.py <run> [<run> ...]       (run names ending in _nlfix)"""
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import sys
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 import early_late_spa as E                                      # noqa: E402
 
 E._maybe_coupled(sys.argv[1])

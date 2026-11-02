@@ -6,13 +6,17 @@ w_eff = -1 - (1/3) dln(rho_DE,eff)/dlna. CROSSES if w_eff < -1 anywhere in 0.3 <
 Also reports today's true Omega_m and S8 (with the coupling, the solver's own Omega_m is the early-time value).
     python coupled_weff.py ax_spa_coupledtwist     -> results/weff_<name>.json
 """
+import os as _os
+_AXI = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import copy
 import json
 import sys
 
 import numpy as np
 
-sys.path.insert(0, "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass")
+sys.path.insert(0, _AXI)
 from early_late_spa import make, OUT, _maybe_coupled
 
 name = sys.argv[1]

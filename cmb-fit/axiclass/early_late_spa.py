@@ -9,6 +9,10 @@ Runs inside WSL (micromamba env 'aegis'):
     python .../axiclass/early_late_spa.py <name>        -> results/cmp_<name>.json
     python .../axiclass/early_late_spa.py smoke         -> builds all four, prints finite/not only
 """
+import os as _os
+_AXI = _os.path.dirname(_os.path.abspath(__file__))
+_RESULTS = _os.environ.get("TWIST_RESULTS", _os.path.join(_os.path.dirname(_AXI), "results"))
+_BUILDS = _os.environ.get("TWIST_BUILDS", _os.path.expanduser("~"))
 import json
 import math
 import os
@@ -16,9 +20,9 @@ import re
 import sys
 import time
 
-ROOT = "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit"
-PACKAGES = ROOT + "/packages"
-OUT = ROOT + "/results"
+ROOT = _os.path.dirname(_AXI)
+PACKAGES = _os.environ.get("COBAYA_PACKAGES_PATH", ROOT + "/packages")   # likelihood data (cobaya-install)
+OUT = _RESULTS
 
 LOCK = "lambda omega_b, omega_cdm: np.log10(2.4728e-5 * (1 + 0.22711 * 3.044) / (omega_b + omega_cdm))"
 BASE_ARGS = {"N_ncdm": 1, "m_ncdm": 0.06, "N_ur": 2.0328, "non_linear": "hmcode", "l_max_scalars": 9000}
@@ -206,9 +210,9 @@ def save(name, seconds=None):
 
 
 PENALTY = -1e5
-COUPLED_BUILD = "/home/syndyr/AxiCLASS_coupled/python/build"   # coupled/build_coupled.sh
-NLFIX_BUILD = "/home/syndyr/AxiCLASS_nlfix/python/build"       # nlfix/build_nlfix.sh (B0 fix)
-COUPLED_NLFIX_BUILD = "/home/syndyr/AxiCLASS_coupled_nlfix/python/build"   # nlfix/build_coupled_nlfix.sh
+COUPLED_BUILD = _os.path.join(_BUILDS, "AxiCLASS_coupled/python/build")   # coupled/build_coupled.sh
+NLFIX_BUILD = _os.path.join(_BUILDS, "AxiCLASS_nlfix/python/build")       # nlfix/build_nlfix.sh (B0 fix)
+COUPLED_NLFIX_BUILD = _os.path.join(_BUILDS, "AxiCLASS_coupled_nlfix/python/build")   # nlfix/build_coupled_nlfix.sh
 
 
 def _maybe_coupled(name):
