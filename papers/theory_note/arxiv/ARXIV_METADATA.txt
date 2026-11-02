@@ -1,0 +1,19 @@
+TITLE
+The Barbero-Immirzi Field as a Hyperbolic Axion-Dilaton: a Fixed Kinetic Mixing, Tests of a Torsion Dark-Energy Field, and Predictions Locked Before the Data
+
+AUTHORS
+D. L. Eldridge
+
+PRIMARY CATEGORY
+astro-ph.CO
+CROSS-LISTS
+gr-qc, hep-th
+
+COMMENTS
+4 pages, 4 tables. Scripts, fits and pre-registered rules: https://github.com/dannyeldridge54/the-twist-torsion-cosmology ; archived at doi:10.5281/zenodo.23899237
+
+ABSTRACT
+We test the Barbero-Immirzi (BI) parameter of loop quantum gravity, promoted to a dynamical pseudoscalar coupled to torsion (the "Twist"), as late-time dark energy, using Planck, ACT DR6, SPT-3G, DESI DR2 and three supernova samples, with every test rule fixed and hashed before its data were seen. A minimal thawing Twist ties LCDM on Pantheon+; its best preference (DES Y5, Delta chi^2 = -6.2) vanishes when that sample is split at z = 0.1 (the whole gain is a low/high-redshift calibration offset, as for w0-wa), and weakens on Union3 (-1.8). We then point out that the N=1 supergravity embedding of the BI field (Gates, Ketov & Yunes) is a dilaton-axion pair on a hyperbolic field space of curvature -2/3 (alpha = 1), which fixes the axion's kinetic coupling to exp(lambda chi) with lambda = -2 sqrt(2/3), a structure known to produce apparent phantom crossing. A two-field solver, validated against published attractors to 1e-10 and implemented in AxiCLASS (cross-check 2e-5), shows the fixed geometry is weak mixing (xi = 0.82 versus >~370 needed for the strong-mixing DESI benefit). The remaining route, the BI angle as a fraction f of the dark matter, is dark matter coupled to the dilaton with strength 0.816 f; it bends the w0-wa reading toward DESI, but existing coupling bounds (f <~ 6-9%) allow only Delta wa = -0.05 to -0.09. We report solar-system, inflation (n_s tension 2.4 sigma) and early-energy checks, a closure caveat in the coupled AxiCLASS build, and forward predictions hash-locked before DESI DR3, Euclid, LiteBIRD and LISA data exist.
+
+LICENCE
+arXiv non-exclusive licence (as chosen for submission 8311238)

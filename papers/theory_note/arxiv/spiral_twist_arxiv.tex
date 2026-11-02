@@ -1,0 +1,172 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\newcommand{\Mp}{M_{\rm Pl}}
+
+\title{\textbf{The Barbero--Immirzi Field as a Hyperbolic Axion--Dilaton:\\
+a Fixed Kinetic Mixing, Tests of a Torsion Dark-Energy Field,\\ and Predictions Locked Before the Data}}
+\author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma, USA. dannyeldridge54@gmail.com.
+Scripts, fits and locked rules: \url{https://github.com/dannyeldridge54/the-twist-torsion-cosmology};
+archived at doi:10.5281/zenodo.23899237 and doi:10.5281/zenodo.23867116.}}
+\date{2 November 2026}
+
+\begin{document}
+\sloppy
+\maketitle
+
+\begin{abstract}
+We test the Barbero--Immirzi (BI) parameter of loop quantum gravity, promoted to a dynamical pseudoscalar coupled to
+torsion (the ``Twist''), as late-time dark energy, using Planck, ACT DR6, SPT-3G, DESI DR2 and three supernova
+samples, with every test rule fixed and hashed before its data were seen. A minimal thawing Twist ties $\Lambda$CDM
+on Pantheon+; its best preference (DES Y5, $\Delta\chi^2=-6.2$) vanishes when that sample is split at $z=0.1$ (the
+whole gain is a low/high-redshift calibration offset, as for $w_0$--$w_a$), and weakens on Union3 ($-1.8$). We then
+point out that the $\mathcal N=1$ supergravity embedding of the BI field (Gates, Ketov \& Yunes) is a dilaton--axion
+pair on a hyperbolic field space of curvature $-2/3$ ($\alpha=1$), which fixes the axion's kinetic coupling to
+$e^{\lambda\chi}$ with $\lambda=-2\sqrt{2/3}$, a structure known to produce apparent phantom crossing. A two-field solver,
+validated against published attractors to $10^{-10}$ and implemented in AxiCLASS (cross-check $2\times10^{-5}$), shows
+the fixed geometry is weak mixing ($\xi\simeq0.82$ versus $\gtrsim370$ needed for the strong-mixing DESI benefit). The
+remaining route, the BI angle as a fraction $f$ of the dark matter, is dark matter coupled to the dilaton with strength
+$0.816f$; it bends the $w_0$--$w_a$ reading toward DESI, but existing coupling bounds ($f\lesssim6$--$9\%$) allow only
+$\Delta w_a\simeq-0.05$ to $-0.09$. We report solar-system, inflation ($n_s$ tension $2.4\sigma$) and early-energy
+checks, a closure caveat in the coupled AxiCLASS build, and forward predictions hash-locked before DESI DR3, Euclid,
+LiteBIRD and LISA data exist.
+\end{abstract}
+
+\section{Introduction}
+DESI DR2 BAO, combined with the CMB and supernovae, prefers an evolving dark-energy equation of state that appears to
+cross $w=-1$ \cite{desi2025}. A canonical field cannot cross $w=-1$, but two-field systems with kinetic mixing can
+\emph{appear} to cross in a $w_0$--$w_a$ analysis while obeying the null energy condition \cite{toomey2025,ramos2026}.
+Loop quantum gravity contains a natural pseudoscalar: the Barbero--Immirzi parameter $\gamma$. Promoted to a field it
+couples to torsion through the Holst or Nieh--Yan terms \cite{taveras2008,calcagni2009}. We ask two questions:
+does the minimal BI field fit the late-time data, and what does its own supergravity geometry imply? Every test below
+had its rule written, timestamped and hashed before computing; failures are reported at the same size as successes.
+
+\section{The minimal Twist against the data}
+The late field is a thawing pseudoscalar with $V=m^2F^2(1-\cos\phi/F)$, fitted in AxiCLASS with Cobaya to Planck
+low-$\ell$, ACT DR6 (with Planck high-$\ell$ cut and lensing), SPT-3G D1, DESI DR2 BAO and one supernova sample, on a
+build in which we found and fixed two AxiCLASS bugs that affect $n=1$ fields (documented separately).
+\begin{center}\footnotesize
+\begin{tabular}{lcc}
+\toprule
+Test (locked rule) & Result & Verdict \\
+\midrule
+Pantheon+ & $\Delta\chi^2=+0.09$ vs $\Lambda$CDM & tie \\
+DES Y5 & $-6.23$ (1.3$\sigma$ after look-elsewhere) & weak hint \\
+DES Y5 split at $z=0.1$ & $+0.53$ ($z>0.1$), $-0.29$ ($z\le0.1$), $r=-0.06$ & calibration-sensitive \\
+DES-Dovekie / Union3 & $-1.33$ / $-1.82$ & weakened \\
+Without DESI (DES Y5) & $-5.33$ & not DESI-driven \\
+Against $w_0$--$w_a$ & worse by 10--13 & loses \\
+$H(z)$ chronometers, $f\sigma_8$ (no refit) & $|\Delta\chi^2|<0.5$ & neutral \\
+\bottomrule
+\end{tabular}
+\end{center}
+The DES Y5 preference exists only when nearby and distant supernovae share one absolute magnitude; neither half
+prefers the field, and $w_0$--$w_a$ shows the same pattern ($r=-0.17$). This matches independent analyses that trace
+the DES Y5 excess to low-redshift calibration \cite{huang2025,zhang2026}.
+
+\section{The BI field's supergravity geometry}\label{sec:geo}
+Gates, Ketov \& Yunes \cite{gky2009} show that a dynamical BI parameter in $\mathcal N=1$ supergravity is a chiral
+dilaton--axion superfield $\Phi=\phi+ia$, with $\Omega=e^{\Phi+\bar\Phi}(\Phi+\bar\Phi)$ and $K=-3\ln(-\Omega/3)$,
+$\phi<0$. The linear part of $K$ drops out of the metric:
+\begin{equation}
+K_{\Phi\bar\Phi}=\frac{3}{(\Phi+\bar\Phi)^2},\qquad
+\mathcal L_{\rm kin}=-\tfrac12(\partial\chi)^2-\tfrac12e^{\lambda\chi}(\partial\tilde a)^2,\qquad
+\boxed{\lambda=-2\sqrt{2/3}},
+\end{equation}
+with $|\phi|=e^{\sqrt{2/3}\chi}$, $\tilde a=\sqrt{3/2}\,a$: the hyperbolic plane of curvature $-2/3$, i.e.\ the
+$\alpha=1$ case of $\lambda=-2\sqrt{2/(3\alpha)}$ \cite{qalpha2026}. Toomey et al.\ fit this coupling to Planck + DESI
+and find $\lambda=-1.3^{+1.3}_{-1.5}$ \cite{toomey2025}; the fixed value lies inside, a consistency found after their fit.
+
+\paragraph{Matter coupling.} If matter couples to the supergravity Jordan frame, $A^2=-3/\Omega$ and
+$\alpha_{\rm DEF}=(2/\sqrt3)(|\phi|-\tfrac12)$: a general-relativity point at $\phi=-\tfrac12$ that is a
+Damour--Nordtvedt attractor, but Cassini pins the dilaton within $|\Delta\chi|<0.0072\,\Mp$ today, paralleling the
+Brax--Martin no-go theorem \cite{brax2007}. A rolling dilaton therefore needs matter blind to it, which is natural in
+scale-invariant Einstein--Cartan gravity \cite{karananas2021,piani2022}.
+
+\paragraph{Simplest potential.} A constant superpotential gives $V=\tfrac{81}{2}W^2(-\phi-1)e^{-6\phi}/\phi^2$, with a
+turning point exactly at $\phi=-\tfrac12$ and its minimum at $\phi=-\tfrac23$, both at negative energy; an uplift is
+required.
+
+\section{The Spiral Twist: solver, validation, implications}
+\paragraph{Model.} Einstein frame, matter blind to the dilaton:
+$\mathcal L=-\tfrac12(\partial\chi)^2-\tfrac12e^{\lambda\chi}(\partial\theta)^2-V_0e^{-\kappa\chi}-m^2F^2(1-\cos\theta/F)$,
+with $\lambda$ fixed as above and $F=(4/\pi)\sqrt{3/2}\,\Mp$ from the Nieh--Yan period at a Planck-length torsion scale.
+\paragraph{Validation.} Exact $\Lambda$CDM and single-field limits; true $w\ge-1$ always; no ghost (kinetic matrix
+positive, sound speeds 1). The late-time attractors of the published autonomous system of \cite{ramos2026}
+($(\lambda_p,\xi)=(2,10),(2,100),(8,20)$) are reproduced to $\le5\times10^{-10}$. An attempt to reproduce the
+benchmark of \cite{toomey2025} did not succeed (inputs not fully stated). In AxiCLASS, an exponential field plus dark
+matter coupled as $m_c\propto e^{\beta\phi}$ agrees with the solver to $3\times10^{-8}$ ($\beta=0$) and $2\times10^{-5}$
+($\beta=0.05$); with $\kappa=0.05$, $\beta=0$ the full pipeline reproduces the $\Lambda$CDM $\chi^2$ within 0.08.
+\paragraph{Closure caveat.} For $\beta\ne0$ the coupled build closes on its actual $H(0)$, which differs from the input
+$h$ by up to $0.6\%$; reported $H_0$ and $\sigma_8$ labels carry this offset, $\chi^2$ does not.
+\paragraph{Weak mixing.} In the notation of \cite{ramos2026}, $\xi=-\lambda/2=0.82$, while their DESI benefit requires
+$\log_{10}\xi>2.5$. A scan with $F$ fixed gives at best $w_0\simeq-0.84$, $w_a\simeq-0.24$, the thawing relation.
+\paragraph{Matter-like angle.} An oscillating angle has $m_{\rm eff}=m\,e^{-\lambda\chi/2}$: dark matter coupled to the
+dilaton with $d\ln m/d\chi=0.816$, i.e.\ $\beta_{\rm eff}\simeq0.816f$ for a fraction $f$ of the matter.
+\begin{center}\small
+\begin{tabular}{cccccc}
+\toprule
+$\kappa$ & $f$ & $\beta_{\rm eff}$ & $w_0$ & $w_a$ & thawing $w_a$ \\
+\midrule
+1.2 & 4.2\% & 0.034 & $-0.777$ & $-0.356$ & $-0.341$\\
+1.2 & 9.7\% & 0.079 & $-0.795$ & $-0.401$ & $-0.314$\\
+1.2 & 18.1\% & 0.148 & $-0.830$ & $-0.599$ & $-0.260$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Coupled thawing quintessence bounds $|\beta|<0.073$ \cite{babu2026} ($f\lesssim9\%$), and our coupled fit prefers
+$|\beta|\simeq0.05$ ($f\simeq6\%$); the bend is then $\Delta w_a\simeq-0.05$ to $-0.09$. A full fit of this effective
+model (two dark-energy parameters, as for $w_0$--$w_a$) is running under a locked rule.
+
+\section{Further checks}
+\begin{center}\small
+\begin{tabular}{p{0.36\textwidth}p{0.42\textwidth}p{0.14\textwidth}}
+\toprule
+Check & Result & Verdict\\
+\midrule
+Inflation from $\alpha=1$ & $n_s=0.9667$ at $N=60$ vs $0.974\pm0.003$ \cite{act2025} & tension ($2.4\sigma$)\\
+Dilaton as early dark energy & $\le2.5\%$ at $z=3500$; $G$ changes $\times13$ at BBN & too small\\
+Torsion-natural coupling $\beta=0.816$ (all dark matter) & $\Delta\chi^2=+71{,}655$ & excluded\\
+Minimal-field CMB birefringence & $|\beta_{\rm rot}|\approx0$ vs $0.24^\circ$ & excluded\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Predictions locked before the data}
+Hash-locked on 2 November 2026 (SHA-256 begins \texttt{b629f534}; file and numbers archived with
+doi:10.5281/zenodo.23899237): DESI DR3 $D_M/r_d$, $D_H/r_d$ at the DR2 redshifts (preferred if $\Delta\chi^2\le-4$);
+$w(z)\ge-1$ at all $z$ for the minimal and coupled fields; $S_8$ unchanged (minimal) or 0.828 (coupled); CMB
+birefringence ratio $R=0.997$ if photon-coupled; tensor ratio $r=0.0033$--$0.0048$ for $\alpha=1$ inflation
+(excluded if $r<0.002$); gravitational-wave velocity birefringence $\sim10^{-43}$--$10^{-42}$\,GeV.
+
+\section{Conclusions}
+The minimal BI dark-energy field is consistent with the data but not preferred; its strongest hint is a supernova
+calibration effect. The BI field's own supergravity geometry fixes a kinetic mixing of the type behind apparent phantom
+crossing, but too weakly to matter unless part of the dark matter is the BI angle, which existing bounds keep small.
+The locked predictions above will decide the remaining routes.
+
+\section*{Acknowledgements}
+We thank the Planck, ACT, SPT, DESI, DES, Pantheon+ and Union teams for public data, and the developers of CLASS,
+AxiCLASS, CAMB and Cobaya. The author used AI assistants (Claude, Anthropic) for algebra checks, code, running the fits
+and drafting; every number is reproduced by archived scripts, and the author takes full responsibility.
+
+\begin{thebibliography}{99}
+\bibitem{desi2025} DESI Collaboration, arXiv:2503.14738.
+\bibitem{toomey2025} M.~W.~Toomey, E.~Hughes, M.~M.~Ivanov, J.~M.~Sullivan, arXiv:2511.23463.
+\bibitem{ramos2026} M.~Ramos-Hamud, G.~Garc\'ia-Arroyo, F.~Quevedo, J.~A.~V\'azquez, arXiv:2609.22539.
+\bibitem{taveras2008} V.~Taveras, N.~Yunes, arXiv:0807.2652.
+\bibitem{calcagni2009} G.~Calcagni, S.~Mercuri, arXiv:0902.0957.
+\bibitem{gky2009} S.~J.~Gates, S.~V.~Ketov, N.~Yunes, Phys.\ Rev.\ D 80, 065003 (2009), arXiv:0906.4978.
+\bibitem{qalpha2026} \emph{Quintessential $\alpha$-attractors, updated}, arXiv:2608.19781.
+\bibitem{brax2007} P.~Brax, J.~Martin, Phys.\ Lett.\ B 647, 320 (2007), hep-th/0612208.
+\bibitem{karananas2021} G.~K.~Karananas, M.~Shaposhnikov, A.~Shkerin, S.~Zell, arXiv:2108.05897.
+\bibitem{piani2022} M.~Piani, J.~Rubio, JCAP 05 (2022) 009, arXiv:2202.04665.
+\bibitem{babu2026} J.~Y.~Babu, L.~Amendola, arXiv:2610.23497.
+\bibitem{huang2025} Huang et al., arXiv:2502.04212.
+\bibitem{zhang2026} T.~Zhang, MNRAS 552 (2026), doi:10.1093/mnras/stag1868.
+\bibitem{act2025} T.~Louis et al.\ (ACT), arXiv:2503.14452.
+\end{thebibliography}
+\end{document}
