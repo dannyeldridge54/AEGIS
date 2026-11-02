@@ -1,0 +1,37 @@
+{
+ "ax_spa_latetwist_gF0.4m-0.3_nlfix": {
+  "sigma8": 0.8114138106882366,
+  "Omega_m_true": 0.3064348222358017,
+  "S8": 0.8200698131440588,
+  "build_from": "ax_spa_latetwist_gF0.4m-0.3_nlfix",
+  "Omega_m_class": 3.0545435051832706
+ },
+ "ax_spa_latetwist_gF0m0.102_desy5_nlfix": {
+  "sigma8": 0.7997858670073507,
+  "Omega_m_true": 0.31426263323314524,
+  "S8": 0.81857687336431,
+  "build_from": "ax_spa_latetwist_gF0.4m-0.3_nlfix",
+  "Omega_m_class": 2.893355510553778
+ },
+ "ax_spa_lcdm_halofit": {
+  "sigma8": 0.8127913590882229,
+  "Omega_m_true": 0.3034905456153764,
+  "S8": 0.8175061599183074,
+  "build_from": "ax_spa_latetwist_gF0.4m-0.3_nlfix",
+  "Omega_m_class": 0.30349040468452915
+ },
+ "ax_spa_lcdm_halofit_desy5": {
+  "sigma8": 0.8139406195768777,
+  "Omega_m_true": 0.3039834421842063,
+  "S8": 0.8193266085553434,
+  "build_from": "ax_spa_latetwist_gF0.4m-0.3_nlfix",
+  "Omega_m_class": 0.30398330109391036
+ },
+ "ax_spa_coupledtwist_gF0.4m-0.1_nlfix": {
+  "sigma8": 0.8240249401739547,
+  "Omega_m_true": 0.30260220658760695,
+  "S8": 0.8275910290004432,
+  "build_from": "ax_spa_coupledtwist_gF0.4m-0.1_nlfix",
+  "Omega_m_class": 2.972464808429821
+ }
+}
