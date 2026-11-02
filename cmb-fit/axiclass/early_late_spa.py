@@ -41,6 +41,12 @@ def _theory_class():
             p = dict(params_values_dict)
             if "theta_i_scf" in p:
                 self.extra_args["scf_parameters"] = f"{p.pop('theta_i_scf')}, 0."
+            if "spiral_kappa" in p:    # effective Spiral Twist: double_exp, V = mu1^4 e^(-kappa phi), mu1 tuned (index 2)
+                import spiral_guess
+                k = p.pop("spiral_kappa")
+                mu = spiral_guess.mu1_guess(k, p.get("scf_coupling_beta", 0.0), p.get("omega_b", 0.0224),
+                                            p.get("omega_cdm", 0.12))
+                self.extra_args["scf_parameters"] = f"{k}, 0.0, {mu}, 0.0, 0.0, 0.0"
             super().set(p)
     return ClassyTwist
 
@@ -100,8 +106,11 @@ def make(name):
     # CubeMind PREREGISTRATION_TORSION_F.md: "_fF<log10 F>" fixes F at a torsion-natural value; m stays free.
     fonly = re.search(r"_fF(-?[0-9.]+)", base)
     latetwist = latetwist or coupled
+    # CubeMind PREREGISTRATION_SPIRAL_FIT.md: effective Spiral Twist = exponential dilaton (kappa) + dark matter coupled
+    # with beta_eff = 0.816 f (the matter-like angle), on the coupled B0-fixed build. beta_eff in [0, 0.12] (sign fixed).
+    spiral = "spiraltwist" in base
     extra = dict(BASE_ARGS)
-    if latetwist or base.endswith("_halofit"):
+    if latetwist or spiral or base.endswith("_halofit"):
         # HMcode in this AxiCLASS refuses a scalar field present today ("not yet coded"), so the Late Twist and its
         # reference runs (ax_spa_lcdm_halofit, ax_spa_w0wa_halofit) all use halofit (PREREGISTRATION_LATE_TWIST deviation).
         extra["non_linear"] = "halofit"
@@ -149,6 +158,15 @@ def make(name):
             params["log10_m"] = dict(P(-0.5, 1.5, 0.3, 0.05, r"\log_{10} m/H_0"), drop=True)
             params["f_axion"] = {"value": "lambda log10_F: 10**log10_F", "derived": False}
             params["m_axion"] = {"value": "lambda log10_m: 10**log10_m", "derived": False}
+    if spiral:
+        # double_exp with lambda2 = mu2 = 0 is a pure exponential; this build sets phi_ini = scf_parameters[0] and
+        # phi'_ini = scf_parameters[1] = 0 (CubeMind spiral_class_mirror.py: PASS vs an independent solver)
+        extra.update({"scf_potential": "double_exp", "scf_has_perturbations": "yes", "attractor_ic_scf": "no",
+                      "scf_evolve_as_fluid": "no", "do_shooting": "yes", "do_shooting_scf": "yes",
+                      "Omega_Lambda": 0, "Omega_fld": 0, "Omega_scf": -1, "scf_tuning_index": 2,
+                      "scf_parameters": "1.0, 0.0, 0.0182, 0.0, 0.0, 0.0"})
+        params["spiral_kappa"] = P(0.05, 3.0, 1.0, 0.1, r"\kappa")
+        params["scf_coupling_beta"] = P(0.0, 0.12, 0.03, 0.01, r"\beta_{\rm eff}")
     if coupled:
         if fixed_beta:
             extra["scf_coupling_beta"] = float(fixed_beta.group(1))
@@ -170,7 +188,7 @@ def make(name):
     if cmbonly:
         likes = {k: v for k, v in likes.items() if not k.startswith(("bao.", "sn."))}
     _start_from_camb(params, early, late)
-    if latetwist:
+    if latetwist or spiral:
         # Rerun deviation (PREREGISTRATION_SPT3G_DEVIATIONS.md): start from the AxiCLASS LCDM halofit best fit, not the
         # CAMB one (CAMB's theta is a different quantity); F, m references and all priors unchanged; best of 4.
         best_of = 4 if cold else 2 if grid else 4      # grid points minimise only smooth standard parameters
@@ -229,7 +247,7 @@ def _maybe_coupled(name):
     """Coupled Twist runs load the coupled AxiCLASS build (coupled/build_coupled.sh), never the installed one.
     "_nlfix" runs load the B0-fixed build (Late Twist) or the B0-fixed coupled build (Coupled Twist)."""
     nlfix = "_nlfix" in name
-    if "coupledtwist" in name:
+    if "coupledtwist" in name or "spiraltwist" in name:
         build = COUPLED_NLFIX_BUILD if nlfix else COUPLED_BUILD
     elif nlfix:
         build = NLFIX_BUILD
