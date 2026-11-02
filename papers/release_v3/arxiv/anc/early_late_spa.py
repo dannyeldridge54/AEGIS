@@ -82,9 +82,10 @@ def make(name):
     # best of 4 from the LCDM halofit reference, never warm-started from an earlier minimum.
     nobao = "_nobao" in name
     cold = "_r4" in name
+    union3 = "_union3" in name                      # CubeMind PREREGISTRATION_LATE_UNION3.md (independent SN sample)
     # "_nlfix": the same run on the B0-fixed build (CubeMind PREREGISTRATION_NLFIX_REPLICATION.md); see _maybe_coupled().
     base = (name.replace("_b4", "").replace("_desy5", "").replace("_dovekie", "").replace("_nlfix", "")
-            .replace("_nobao", "").replace("_r4", ""))
+            .replace("_nobao", "").replace("_r4", "").replace("_union3", ""))
     early = "edelock" in base
     late = "w0wa" in base
     latetwist = "latetwist" in base                 # CubeMind PREREGISTRATION_LATE_TWIST.md
@@ -155,7 +156,7 @@ def make(name):
                               "clear_internal_priors": True, "additional_args": {}, "wrapper": None,
                               "feedback": False},
         "bao.desi_dr2.desi_bao_all": None,
-        ("sn.desy5" if desy5 else "sn.desdovekie" if dovekie else "sn.pantheonplus"): None,
+        ("sn.desy5" if desy5 else "sn.desdovekie" if dovekie else "sn.union3" if union3 else "sn.pantheonplus"): None,
     }
     if nobao:
         likes.pop("bao.desi_dr2.desi_bao_all")
