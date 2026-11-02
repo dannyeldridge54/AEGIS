@@ -1,0 +1,18 @@
+{
+ "ax_spa_latetwist_gF0.4m-0.3_nlfix": {
+  "F": 2.51188643150958,
+  "phi_key": "phi_scf",
+  "theta_rec": 1.9134246888707314,
+  "theta_today": 1.8802415567650437,
+  "delta_theta": -0.033183132105687685,
+  "phi_units_note": "AxiCLASS phi_scf and f_axion share units, so phi/F is unit-free"
+ },
+ "ax_spa_latetwist_gF0m0.102_desy5_nlfix": {
+  "F": 1.0,
+  "phi_key": "phi_scf",
+  "theta_rec": 2.010016796218644,
+  "theta_today": 1.8078534916127018,
+  "delta_theta": -0.20216330460594234,
+  "phi_units_note": "AxiCLASS phi_scf and f_axion share units, so phi/F is unit-free"
+ }
+}
