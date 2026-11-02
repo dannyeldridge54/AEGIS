@@ -6,7 +6,8 @@
 # Then:  export TWIST_PY=<env>/bin/python   and run any fit:  $TWIST_PY ../axiclass/early_late_spa.py <run name>
 set -e
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
-AXI="$(dirname "$HERE")/axiclass"
+AXI="$(dirname "$HERE")/axiclass"                               # AEGIS layout: cmb-fit/{environment,axiclass}
+[ -d "$AXI" ] || AXI="$(dirname "$HERE")/code/axiclass"         # release layout: {environment,code/axiclass}
 BLD="${TWIST_BUILDS:-$HOME}"
 PKG="${COBAYA_PACKAGES_PATH:-$(dirname "$HERE")/packages}"
 AXICLASS_COMMIT=ae9609e1f96ddebbb6cc8a46de94512514c68781        # PoulinV/AxiCLASS, the base of all four builds
