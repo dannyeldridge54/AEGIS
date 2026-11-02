@@ -5,7 +5,7 @@ A="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
 R="${TWIST_RESULTS:-$(dirname "$A")/results}"
 PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] || PY=python3
 CM="${CUBEMIND:-/mnt/c/Users/Danny/Desktop/CubeMind_side_project}"
-until grep -q "finished" "$R/lanes/run_torsion_f.log" 2>/dev/null && grep -q "finished" "$R/lanes/run_torsion_f_planck.log" 2>/dev/null; do
+[ -n "$NO_WAIT" ] || until grep -q "finished" "$R/lanes/run_torsion_f.log" 2>/dev/null && grep -q "finished" "$R/lanes/run_torsion_f_planck.log" 2>/dev/null; do
   sleep 120
 done
 for n in ax_spa_lcdm_halofit_cmbonly ax_spa_latetwist_gF0m0.102_cmbonly_nlfix ax_spa_latetwist_gF0.4m-0.3_cmbonly_nlfix; do
