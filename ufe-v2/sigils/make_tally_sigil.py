@@ -1,5 +1,5 @@
 """
-The Tally: the mark of the price that is paid (a hope in PLEDGE.md: the World Development Trust's tally).
+The Tally: the mark of the price that is paid.
 A symbol, not a result.
 
   gold ring with 13 marks   every coin, currency and piece of gold; one mark for each seat of the table

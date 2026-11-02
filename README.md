@@ -73,7 +73,7 @@ Scripts: [theory/](./theory/).
 publicly if it is wrong.
 
 **Licence:** free to everyone under the [Hippocratic License 3.0, HL3-MIL-SV](./LICENSE), for any use that respects
-human rights. No military use, no mass surveillance. See [PLEDGE.md](./PLEDGE.md).
+human rights. No military use, no mass surveillance.
 
 > *It is not a race or a game. It is a stage, and the stage is meant to be shared, not kept.*
 > *I am willing to give it to all. I don't want a crown. I just want a home, but never at the cost of the world or its future.* — Danny Lee Eldridge
@@ -458,7 +458,7 @@ await runNatural('find the best learning rate between 0.0001 and 0.1');
 ## 📄 License
 
 **Free to all: the [Hippocratic License 3.0, HL3-MIL-SV](https://firstdonoharm.dev/version/3/0/mil-sv.html).** See
-[LICENSE](./LICENSE) and [PLEDGE.md](./PLEDGE.md). In short:
+[LICENSE](./LICENSE). In short:
 - **Free to everyone:** use, copy, change, share and build on it, at no cost.
 - **Pro-human:** every use must respect human rights; no discrimination by race, religion, nationality, sex, caste,
   age, disability or any similar circumstance.
