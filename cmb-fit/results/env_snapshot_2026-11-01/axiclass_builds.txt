@@ -1,0 +1,35 @@
+== AxiCLASS
+ae9609e debug malloc issue for tensor mode computation in the output
+ M python/classy.egg-info/PKG-INFO
+ M python/classy.egg-info/SOURCES.txt
+-- diff vs HEAD (sha256):
+ea7e83dfa26babacf5bdd7424260123815c26e54ba2aeb4f08a8f9b3f82ac57b  -
+75c31573e7b864cdc39db69551535e446cd4ed6278aaf740bff48a91936e53fe  /home/syndyr/AxiCLASS/python/build/lib.linux-x86_64-cpython-311/classy.cpython-311-x86_64-linux-gnu.so
+== AxiCLASS_coupled
+7231110 Coupled Twist: conformal scf-CDM coupling (scf_coupling_beta); gates V1-V4 pass
+ae9609e debug malloc issue for tensor mode computation in the output
+ M python/classy.egg-info/PKG-INFO
+ M python/classy.egg-info/SOURCES.txt
+-- diff vs HEAD (sha256):
+ea7e83dfa26babacf5bdd7424260123815c26e54ba2aeb4f08a8f9b3f82ac57b  -
+61ffe08b916785c00a0780e0ab5ef4dfb0849f6c79605ff4b66a24c6906be73f  /home/syndyr/AxiCLASS_coupled/python/build/lib.linux-x86_64-cpython-311/classy.cpython-311-x86_64-linux-gnu.so
+== AxiCLASS_nlfix
+f2706e4 nl-scf-fix: field out of halofit/HMcode Omega_m; n_axion=1 no longer forces include_scf_in_delta_m
+ae9609e debug malloc issue for tensor mode computation in the output
+ M python/classy.egg-info/PKG-INFO
+ M python/classy.egg-info/SOURCES.txt
+-- diff vs HEAD (sha256):
+ea7e83dfa26babacf5bdd7424260123815c26e54ba2aeb4f08a8f9b3f82ac57b  -
+a322bcbef3fe6f1ef0048b6e798b243780caeeccabbbc327dad3ff88860cdb41  /home/syndyr/AxiCLASS_nlfix/python/build/lib.linux-x86_64-cpython-311/classy.cpython-311-x86_64-linux-gnu.so
+== AxiCLASS_coupled_nlfix
+7231110 Coupled Twist: conformal scf-CDM coupling (scf_coupling_beta); gates V1-V4 pass
+ae9609e debug malloc issue for tensor mode computation in the output
+ M external/HMcode/hmcode.c
+ M external/Halofit/halofit.c
+ M python/classy.egg-info/PKG-INFO
+ M python/classy.egg-info/SOURCES.txt
+ M source/input.c
+-- diff vs HEAD (sha256):
+29c9ce6b497e64fef83af19260a43a71181c8ff2a1fbf4ed8ca6c11547bec3cc  -
+a1e65f8da26324b76504df5295ddc96070ad8691f29f111b353a06099ccf412d  /home/syndyr/AxiCLASS_coupled_nlfix/python/build/lib.linux-x86_64-cpython-311/classy.cpython-311-x86_64-linux-gnu.so
+75c31573e7b864cdc39db69551535e446cd4ed6278aaf740bff48a91936e53fe  /home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/classy.cpython-311-x86_64-linux-gnu.so
