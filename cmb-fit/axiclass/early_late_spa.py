@@ -96,6 +96,8 @@ def make(name):
     # (F, m) profile grid (deviation 08:58): "_gF<log10 F>m<log10 m>" fixes F and m; only the standard parameters
     # (and beta, if free) are minimised.
     grid = re.search(r"_gF(-?[0-9.]+)m(-?[0-9.]+)", base)
+    # CubeMind PREREGISTRATION_TORSION_F.md: "_fF<log10 F>" fixes F at a torsion-natural value; m stays free.
+    fonly = re.search(r"_fF(-?[0-9.]+)", base)
     latetwist = latetwist or coupled
     extra = dict(BASE_ARGS)
     if latetwist or base.endswith("_halofit"):
@@ -137,6 +139,10 @@ def make(name):
         if grid:
             extra["f_axion"] = 10 ** float(grid.group(1))
             extra["m_axion"] = 10 ** float(grid.group(2))
+        elif fonly:
+            extra["f_axion"] = 10 ** float(fonly.group(1))
+            params["log10_m"] = dict(P(-0.5, 1.5, 0.3, 0.05, r"\log_{10} m/H_0"), drop=True)
+            params["m_axion"] = {"value": "lambda log10_m: 10**log10_m", "derived": False}
         else:
             params["log10_F"] = dict(P(-1.3, 0.5, 0.0, 0.05, r"\log_{10} F/M_{\rm Pl}"), drop=True)
             params["log10_m"] = dict(P(-0.5, 1.5, 0.3, 0.05, r"\log_{10} m/H_0"), drop=True)
