@@ -1,9 +1,10 @@
 #!/bin/bash
 # CubeMind PREREGISTRATION_ROBUSTNESS_II.md (locked 2026-11-02 12:35:12): B2 BAO dissection + R3 cold restarts.
 # 8 fits at 2 threads each. (Not run_robustness2.sh, which is the October R1/R2 batch.)
-R=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results
-A=/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/axiclass
-PY=/home/syndyr/micromamba/envs/aegis/bin/python
+# Portable paths: override with TWIST_RESULTS, TWIST_PY.
+A="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+R="${TWIST_RESULTS:-$(dirname "$A")/results}"
+PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] || PY=python3
 RUNS="ax_spa_lcdm_halofit_desy5_nobao ax_spa_latetwist_gF0m0.102_desy5_nobao_nlfix ax_spa_w0wa_halofit_desy5_nobao
 ax_spa_lcdm_halofit_nobao ax_spa_coupledtwist_gF0.4m-0.1_nobao_nlfix ax_spa_w0wa_halofit_nobao
 ax_spa_latetwist_gF0m0.102_desy5_nlfix_r4 ax_spa_coupledtwist_gF0.4m-0.1_nlfix_r4"
