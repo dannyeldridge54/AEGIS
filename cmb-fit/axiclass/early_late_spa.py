@@ -83,9 +83,10 @@ def make(name):
     nobao = "_nobao" in name
     cold = "_r4" in name
     union3 = "_union3" in name                      # CubeMind PREREGISTRATION_LATE_UNION3.md (independent SN sample)
+    cmbonly = "_cmbonly" in name                    # CubeMind PREREGISTRATION_PINCER.md: CMB likelihoods only
     # "_nlfix": the same run on the B0-fixed build (CubeMind PREREGISTRATION_NLFIX_REPLICATION.md); see _maybe_coupled().
     base = (name.replace("_b4", "").replace("_desy5", "").replace("_dovekie", "").replace("_nlfix", "")
-            .replace("_nobao", "").replace("_r4", "").replace("_union3", ""))
+            .replace("_nobao", "").replace("_r4", "").replace("_union3", "").replace("_cmbonly", ""))
     early = "edelock" in base
     late = "w0wa" in base
     latetwist = "latetwist" in base                 # CubeMind PREREGISTRATION_LATE_TWIST.md
@@ -166,6 +167,8 @@ def make(name):
     }
     if nobao:
         likes.pop("bao.desi_dr2.desi_bao_all")
+    if cmbonly:
+        likes = {k: v for k, v in likes.items() if not k.startswith(("bao.", "sn."))}
     _start_from_camb(params, early, late)
     if latetwist:
         # Rerun deviation (PREREGISTRATION_SPT3G_DEVIATIONS.md): start from the AxiCLASS LCDM halofit best fit, not the
