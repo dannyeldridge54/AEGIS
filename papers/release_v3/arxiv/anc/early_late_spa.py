@@ -74,8 +74,13 @@ def make(name):
     best_of = 4 if name.endswith("_b4") else 2
     desy5 = "_desy5" in name
     dovekie = "_dovekie" in name                    # CubeMind PREREGISTRATION_DOVEKIE.md (corrected DES sample)
+    # CubeMind PREREGISTRATION_ROBUSTNESS_II.md: "_nobao" drops DESI DR2 BAO (B2); "_r4" is a cold restart test (R3):
+    # best of 4 from the LCDM halofit reference, never warm-started from an earlier minimum.
+    nobao = "_nobao" in name
+    cold = "_r4" in name
     # "_nlfix": the same run on the B0-fixed build (CubeMind PREREGISTRATION_NLFIX_REPLICATION.md); see _maybe_coupled().
-    base = name.replace("_b4", "").replace("_desy5", "").replace("_dovekie", "").replace("_nlfix", "")
+    base = (name.replace("_b4", "").replace("_desy5", "").replace("_dovekie", "").replace("_nlfix", "")
+            .replace("_nobao", "").replace("_r4", ""))
     early = "edelock" in base
     late = "w0wa" in base
     latetwist = "latetwist" in base                 # CubeMind PREREGISTRATION_LATE_TWIST.md
@@ -148,16 +153,18 @@ def make(name):
         "bao.desi_dr2.desi_bao_all": None,
         ("sn.desy5" if desy5 else "sn.desdovekie" if dovekie else "sn.pantheonplus"): None,
     }
+    if nobao:
+        likes.pop("bao.desi_dr2.desi_bao_all")
     _start_from_camb(params, early, late)
     if latetwist:
         # Rerun deviation (PREREGISTRATION_SPT3G_DEVIATIONS.md): start from the AxiCLASS LCDM halofit best fit, not the
         # CAMB one (CAMB's theta is a different quantity); F, m references and all priors unchanged; best of 4.
-        best_of = 2 if grid else 4          # grid points minimise only smooth standard parameters
+        best_of = 4 if cold else 2 if grid else 4      # grid points minimise only smooth standard parameters
         m = json.load(open(f"{OUT}/cmp_ax_spa_lcdm_halofit.json"))["minimum"]
         # NR warm start (deviation 18:59:09): a "_nlfix" run starts from its same-named original run's minimum when that
-        # run exists. Priors, ref widths and best-of are unchanged.
+        # run exists. Priors, ref widths and best-of are unchanged. Cold ("_r4") runs never warm-start.
         orig = f"{OUT}/cmp_{name.replace('_nlfix', '')}.json"
-        if "_nlfix" in name and os.path.exists(orig):
+        if "_nlfix" in name and os.path.exists(orig) and not cold:
             m = json.load(open(orig))["minimum"]
         for k, p in params.items():
             if k in m and isinstance(p, dict) and "ref" in p:

@@ -10,6 +10,8 @@ import math
 import os
 
 RES = r"C:\Users\Danny\.copilot\repos\AEGIS\cmb-fit\results"
+if not os.path.isdir(RES):                       # inside the public repository: code/analysis/ -> fit_results/
+    RES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "fit_results")
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "MODEL_RANKING.md")
 K = {"lcdm": 0, "w0wa": 2, "edelock": 2, "edelock_w0wa": 4, "latetwist": 2}
 LABEL = {"lcdm": "ΛCDM", "w0wa": "Late w0–wa", "edelock": "Early (Locked Twist)", "edelock_w0wa": "Early + late",

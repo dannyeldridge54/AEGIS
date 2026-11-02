@@ -1117,6 +1117,27 @@ That is the effect our look-elsewhere correction accounts for. What is new here 
 onset to the fitted $\omega_b+\omega_c$, and the pre-registered tests on the newer data. (v) Torsion cosmology has also
 been fitted directly to DESI DR2 \cite{liu2025torsion}, with a torsion parameter consistent with zero.
 
+\paragraph{``The code fix could have been tuned to help the model.''} The fix had to pass a test whose tolerance was
+written before it: a frozen $n=1$ field is a cosmological constant, so its $\chi^2$ must equal $\Lambda$CDM's to within
+0.15. The installed code gave $+1.35$, the fix gives $+0.13$. A ten-second reproducer with no likelihoods shows the
+installed code returning $\sigma_8=0.25$ instead of $0.81$ for that frozen field. The fix moves the late results by at
+most 1.5 in $\chi^2$. It changes three verdicts: both consistency checks (the fitted $F$ is no longer at the edge of
+its range) and the DES-Dovekie check (from not confirmed to weakened). Both versions are reported side by side
+(Table~\ref{tab:nr}).
+
+\paragraph{``Many tests were run; something will fit by chance.''} Every pre-registered test is reported, including
+every failure, and searched parameters carry a look-elsewhere correction. The strongest late-field result is
+$1.3\sigma$ after that correction. Exploratory pattern tests that looked suggestive on first data (one at $p=0.044$)
+were re-tested on fresh data and failed, and are reported as such.
+
+\paragraph{``A photon coupling was added after the birefringence test failed.''} Correct, and labelled. The added
+coefficient fits the angle by construction and is not counted as support. Only its parameter-free consequence, the
+switch ratio $R$, is offered as a test, and it was locked before it was computed.
+
+\paragraph{``AI-assisted work.''} The author used AI assistants for code, fitting and drafting. The safeguard is
+not trust but checkability: every rule is hashed and committed before its result, every number is recomputed by
+public scripts from public fit files, and a ten-minute guide for checking the record is part of the repository.
+
 \paragraph{``The required $\omega_c$ is far from Planck.''} $\omega_c\simeq0.144$ follows
 from geometry (\S\ref{sec:geometry}) for any sound-horizon solution that respects BAO.
 In $\Lambda$CDM the Planck error is $\pm0.0012$, but in EDE fits $\omega_c$ is strongly
