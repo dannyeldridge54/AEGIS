@@ -1,0 +1,45 @@
+{
+ "beta=0.0": {
+  "kappa_matched": 1.0,
+  "scf_columns": [
+   "(.)rho_scf",
+   "(.)Omega_scf",
+   "(.)p_scf",
+   "(.)p_prime_scf",
+   "(.)w_scf",
+   "(.)dw_scf",
+   "phi_scf",
+   "phi'_scf",
+   "V_scf",
+   "V'_scf",
+   "V''_scf"
+  ],
+  "max_dw": 2.6122986884757893e-08,
+  "max_dE_rel": 7.318381189946876e-08,
+  "w0_class": -0.8462029351610668,
+  "w0_solver": -0.8462029352960544,
+  "pass": true
+ },
+ "beta=0.05": {
+  "kappa_matched": 1.0,
+  "scf_columns": [
+   "(.)rho_scf",
+   "(.)Omega_scf",
+   "(.)p_scf",
+   "(.)p_prime_scf",
+   "(.)w_scf",
+   "(.)dw_scf",
+   "phi_scf",
+   "phi'_scf",
+   "V_scf",
+   "V'_scf",
+   "V''_scf"
+  ],
+  "max_dw": 2.0963732573986427e-05,
+  "max_dE_rel": 7.970956401215368e-05,
+  "w0_class": -0.864130048376447,
+  "w0_solver": -0.8641509585005991,
+  "pass": true
+ },
+ "MIRROR": "PASS"
+}

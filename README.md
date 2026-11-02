@@ -14,10 +14,38 @@ That covers every fit, the code that ran it, and two AxiCLASS bug fixes. The cle
 | Coupled to dark matter | −7.9 with β ≈ ±0.05, worse than w0–wa, raises S8; the torsion-natural β = 0.816 is **excluded** |
 | Cosmic birefringence | The minimal field **cannot** produce the measured 0.24–0.28°. One open prediction: R = 0.997 (LiteBIRD) |
 | **AxiCLASS bugs (n = 1 fields)** | A frozen field that must equal Λ gives σ8 = 0.25 instead of 0.81. Fixed, validated, with a 10-second reproducer |
+| **Late field's DES Y5 hint (new, 2 Nov)** | A supernova **calibration effect**: split at z = 0.1, neither half prefers the field (+0.53 / −0.29); w0–wa behaves the same. Weakened on Union3 (−1.82) |
+| H(z) chronometers and fσ8 (new) | NEUTRAL for every model: these data cannot separate them |
 
 This is a careful test with weak hints, **not a discovery**.
 
 **Archived:** Zenodo version 3, doi:[10.5281/zenodo.23867116](https://doi.org/10.5281/zenodo.23867116) (published 2 November 2026).
+
+## New theory (2 November 2026): the BI field's supergravity geometry and the Spiral Twist
+
+**Theory note:** doi:[10.5281/zenodo.23899237](https://doi.org/10.5281/zenodo.23899237) (version 2; version 1:
+[10.5281/zenodo.23898709](https://doi.org/10.5281/zenodo.23898709)). Source and PDFs: [papers/theory_note/](./papers/theory_note/).
+Scripts: [theory/](./theory/).
+
+- **Exact:** in N = 1 supergravity the BI field is a dilaton–axion pair on a hyperbolic field space (α = 1), so the
+  axion's kinetic term carries e^{λχ} with **λ = −2√(2/3), fixed**.
+- **Validated:** a two-field solver (matches Ramos-Hamud et al.'s published attractors to 10⁻¹⁰) and its AxiCLASS
+  version (`cmb-fit/axiclass/early_late_spa.py`, run names `ax_spa_spiraltwist_*`; cross-check 2×10⁻⁵).
+- **What it implies:**
+  - the fixed geometry is weak mixing (ξ ≈ 0.82, not the ≳ 370 that strong-mixing DESI fits need);
+  - with the BI angle as a small part of the dark matter (≲ 6–9%), the w0–wa reading bends toward DESI but only reaches
+    the edge of the DESI-like region.
+
+  The decisive fit is not yet run.
+- **Checks:**
+  - solar system passes only if the dilaton is pinned, or matter is blind to it (scale invariance);
+  - inflation from α = 1 is in 2.4σ tension with ACT DR6;
+  - the dilaton cannot be the early field.
+- **Predictions locked before the data** (2 Nov 2026, 16:19:51 CST; SHA-256 b629f534…23cb):
+  [theory/PREDICTIONS_LOCKED_2026-11-02.md](./theory/PREDICTIONS_LOCKED_2026-11-02.md). Covers DESI DR3 BAO, w ≥ −1, S8,
+  birefringence R, tensor ratio r and gravitational-wave parity.
+- **Code note:** in the coupled AxiCLASS build, a nonzero β makes the actual H(z=0) differ from the input h by up to
+  0.6%, so reported H0 and σ8 labels in coupled runs carry that offset (χ² unaffected).
 
 **Where to look:**
 - **Paper:** [papers/torsion_born_ede.pdf](./papers/torsion_born_ede.pdf) (27 pp.).
@@ -36,7 +64,8 @@ This is a careful test with weak hints, **not a discovery**.
   - `cmb-fit/axiclass/`: the fitter, queue scripts, `nlfix/` (bug fixes) and `coupled/` (β patch);
   - `cmb-fit/results/`: every fit's `cmp_*.json`;
   - `cmb-fit/environment/`: exact versions and the setup script;
-  - `papers/`: the paper and the arXiv/Zenodo build.
+  - `papers/`: the paper and the arXiv/Zenodo build; `papers/theory_note/`: the BI-supergravity theory note;
+  - `theory/`: scripts and outputs for the theory note, and the locked predictions.
 - **Paths:** scripts find each other relative to their own location. Override with `TWIST_RESULTS`, `TWIST_BUILDS`,
   `TWIST_PY` and `COBAYA_PACKAGES_PATH`.
 

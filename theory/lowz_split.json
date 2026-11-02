@@ -1,0 +1,35 @@
+{
+ "zcut": 0.1,
+ "parts": {
+  "twist": {
+   "full_recomputed": 1639.8399267763687,
+   "full_own_logp": 1639.8399267763664,
+   "full_stored": 1639.8399,
+   "full_from_cov": 1639.8399267861596,
+   "low": 182.5493578749934,
+   "high": 1449.438901055663,
+   "n_low": 197,
+   "n_high": 1632,
+   "logpost": -1286.7089448587249,
+   "logpost_stored": -1286.7112
+  },
+  "lcdm": {
+   "full_recomputed": 1648.7291499062678,
+   "full_own_logp": 1648.7291499062324,
+   "full_stored": 1648.7291,
+   "full_from_cov": 1648.7291499144944,
+   "low": 182.84144837352235,
+   "high": 1448.910284573772,
+   "n_low": 197,
+   "n_high": 1632,
+   "logpost": -1289.9839811086626,
+   "logpost_stored": -1289.9845
+  }
+ },
+ "mirror_pass": true,
+ "delta_full": -8.889223129899165,
+ "delta_high": 0.5286164818910493,
+ "delta_low": -0.29209049852894964,
+ "r": -0.05946711812340857,
+ "verdict": "CALIBRATION-SENSITIVE"
+}

@@ -1,0 +1,152 @@
+% Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV), https://firstdonoharm.dev/version/3/0/mil-sv.html
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\newcommand{\Mp}{M_{\rm Pl}}
+
+\title{\textbf{The Barbero--Immirzi Field as a Hyperbolic Axion--Dilaton:\\
+a Fixed Kinetic Mixing, a Validated Spiral Twist Solver,\\ and Predictions Locked Before the Data}}
+\author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma, USA. Contact: dannyeldridge54@gmail.com.
+Every script and result file behind the numbers here is attached to this record. Version 1 of this note:
+doi:\href{https://doi.org/10.5281/zenodo.23898709}{10.5281/zenodo.23898709}; companion paper and fits:
+doi:\href{https://doi.org/10.5281/zenodo.23867116}{10.5281/zenodo.23867116}.}}
+\date{Theory note, version 2, 2 November 2026}
+
+\begin{document}
+\sloppy
+\maketitle
+
+\begin{abstract}
+Promoting the Barbero--Immirzi (BI) parameter to a field in $\mathcal N=1$ supergravity gives a dilaton--axion pair
+on a hyperbolic field space of curvature $-2/3$ ($\alpha=1$), so the BI axion's kinetic term is multiplied by
+$e^{\lambda\chi}$ with $\lambda=-2\sqrt{2/3}$ fixed (version 1). Here we (i) validate a two-field background solver
+against the published autonomous system of Ramos-Hamud et al.\ (agreement $10^{-10}$) and implement the model in a
+Boltzmann code (AxiCLASS), cross-checked against that solver ($w$ to $2\times10^{-5}$, $H$ to $8\times10^{-5}$);
+(ii) show that the fixed geometry is a \emph{weak} kinetic coupling, $\xi=\sqrt{2/3}\simeq0.82$, while the DESI
+benefit reported for strong mixing requires $\xi\gtrsim370$, so in that regime the ``Spiral Twist'' is plain thawing
+quintessence ($w_0\simeq-0.84$, $w_a\simeq-0.24$); (iii) identify the remaining route, the BI angle acting as a
+fraction $f$ of the dark matter, as dark matter coupled to the dilaton with a fixed strength $0.816$ per unit $f$.
+It bends the $w_0$--$w_a$ reading toward DESI in proportion to $f$, but existing coupled-dark-matter fits cap
+$f\lesssim6$--$9\%$, where the bend is $\Delta w_a\simeq-0.05$ to $-0.09$; one setting reaches the edge of the
+DESI-like region ($w_0=-0.80$, $w_a=-0.40$, $f=9.7\%$). We report solar-system, inflation and early-energy checks,
+a closure caveat in the coupled AxiCLASS build, and forward predictions (DESI DR3 BAO, $w\ge-1$, $S_8$, CMB
+birefringence, tensor ratio $r$, gravitational-wave parity) hash-locked on 2 November 2026 before those data exist.
+\end{abstract}
+
+\section{Status}
+Exact: the field-space geometry and $\lambda$ (\S\ref{sec:geo}). Validated numerically: the solver and its AxiCLASS
+implementation (\S\ref{sec:val}). Everything else is a hypothesis with its checks reported, including failures and
+tensions. In the companion analysis, the minimal late-time Twist field's best data preference (DES Y5 supernovae,
+$\Delta\chi^2=-6.23$) is a calibration effect: splitting that sample at $z=0.1$, neither half prefers the field
+($+0.53$ above, $-0.29$ below; the whole gain is the low/high-redshift offset, and $w_0$--$w_a$ behaves the same).
+On Union3 and DES-Dovekie the preference weakens to $-1.82$ and $-1.33$.
+
+\section{Geometry}\label{sec:geo}
+Gates, Ketov \& Yunes \cite{gky2009}: $\Omega=e^{\Phi+\bar\Phi}(\Phi+\bar\Phi)$, $K=-3\ln(-\Omega/3)$,
+$\Phi=\phi+ia$, $\phi<0$. Then $K_{\Phi\bar\Phi}=3/(\Phi+\bar\Phi)^2$; with $|\phi|=e^{\sqrt{2/3}\chi}$ and
+$\tilde a=\sqrt{3/2}\,a$,
+\begin{equation}
+\mathcal L_{\rm kin}=-\tfrac12(\partial\chi)^2-\tfrac12e^{\lambda\chi}(\partial\tilde a)^2,\qquad
+\lambda=-2\sqrt{2/3}=-2\sqrt{2/(3\alpha)}\big|_{\alpha=1}.
+\end{equation}
+In the notation of Ramos-Hamud et al.\ \cite{ramos2026} ($W=e^{-\xi\phi_1}$) this is $\xi=-\lambda/2=\sqrt{2/3}$.
+
+\section{Validation}\label{sec:val}
+\paragraph{Solver.} Background equations for $\chi$ and $\theta$ (the BI angle) with matter, radiation and closure.
+Limits: exact $\Lambda$CDM; single field; null energy condition (true $w\ge-1$ always). Literature mirror: the
+late-time attractors of the autonomous system of \cite{ramos2026} (exponential potential, kinetic coupling) for
+$(\lambda_p,\xi)=(2,10),(2,100),(8,20)$: $w=-0.818182,-0.980198,-0.666667$ in both codes (differences
+$\le5\times10^{-10}$), with matching energy split. Our attempt to reproduce the Fig.~1 benchmark of Toomey et al.\
+\cite{toomey2025} did not succeed (0 of 86 settings of the inputs that paper does not state); we therefore rely on the
+\cite{ramos2026} mirror.
+\paragraph{Ghosts.} The kinetic matrix ${\rm diag}(1,e^{\lambda\chi})$ is positive definite and both sound speeds are
+1: no ghost, gradient instability or strong coupling.
+\paragraph{Boltzmann code.} In the coupled AxiCLASS build, an exponential field plus dark matter coupled as
+$m_c\propto e^{\beta\phi}$ agrees with the solver to $3\times10^{-8}$ ($\beta=0$) and
+$2\times10^{-5}$ in $w$, $8\times10^{-5}$ in $H$ ($\beta=0.05$).
+\paragraph{A closure caveat (found here).} For $\beta\neq0$ that build closes the universe on its \emph{actual}
+$H(z{=}0)$, which differs from the input $h$: $H(0)/H_0^{\rm in}=0.998$ ($\beta=+0.05$), $0.994$ ($\beta=-0.05$).
+Distances and spectra are self-consistent, but quantities labelled with the input $h$ (the reported $H_0$; $\sigma_8$
+at $8\,h^{-1}$Mpc) are offset by up to $0.6\%$ in coupled runs.
+
+\section{What the fixed geometry implies}
+\paragraph{Weak mixing.} $\xi\simeq0.82$, whereas the DESI fits of \cite{ramos2026} benefit only for
+$\log_{10}\xi>2.5$ ($\xi\gtrsim370$). Reaching that with the hyperbolic geometry would need $\alpha<5\times10^{-6}$,
+abandoning the BI derivation. With the decay constant fixed by the Nieh--Yan period ($F=(4/\pi)\sqrt{3/2}\,\Mp$),
+a scan of 80 settings gives at best $w_0\simeq-0.84$, $w_a\simeq-0.24$: the thawing relation
+$w_a\simeq-1.53(1+w_0)$.
+
+\paragraph{Matter-like angle.} If the angle oscillates ($m\gg H_0$), its effective mass $m\,e^{-\lambda\chi/2}$
+depends on the dilaton: it is dark matter coupled with $d\ln m/d\chi=0.816$. As a fraction $f$ of the matter this is an
+effective coupling $\beta_{\rm eff}\simeq0.816f$.
+\begin{center}\small
+\begin{tabular}{cccccc}
+\toprule
+$\kappa$ & $f$ & $\beta_{\rm eff}$ & $w_0$ & $w_a$ & thawing $w_a$ at that $w_0$\\
+\midrule
+1.0 & 4.0\% & 0.033 & $-0.850$ & $-0.256$ & $-0.230$\\
+1.2 & 4.2\% & 0.034 & $-0.777$ & $-0.356$ & $-0.341$\\
+1.2 & 9.7\% & 0.079 & $-0.795$ & $-0.401$ & $-0.314$\\
+1.2 & 18.1\% & 0.148 & $-0.830$ & $-0.599$ & $-0.260$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The direction is toward DESI. Two existing results cap $f$: coupled thawing quintessence gives $|\beta|<0.073$
+\cite{babu2026} ($f\lesssim9\%$), and the companion Coupled Twist fit prefers $|\beta|\simeq0.05$ ($f\simeq6\%$). At
+those values the bend is $\Delta w_a\simeq-0.05$ to $-0.09$. DESI's central point ($w_0\simeq-0.75$, $w_a\simeq-0.86$)
+is not reached. A full fit (implemented, \S\ref{sec:val}) is the next step.
+
+\section{Other checks (rules fixed before computing)}
+\begin{center}\small
+\begin{tabular}{p{0.36\textwidth}p{0.42\textwidth}p{0.14\textwidth}}
+\toprule
+Check & Result & Verdict\\
+\midrule
+Solar system (matter on the supergravity frame) & GR point $\phi=-\tfrac12$ is an attractor; Cassini band $|\Delta\chi|<0.0072\,\Mp$ & passes only if pinned\\
+Simplest potential (constant $W$) & turning point exactly at $\phi=-\tfrac12$; negative energy & needs uplift\\
+Inflation from $\alpha=1$ & $n_s=0.9667$ at $N=60$ vs $0.974\pm0.003$ & tension ($2.4\sigma$)\\
+Dilaton as early dark energy & $\le2.5\%$ at $z=3500$; $G$ changes $\times13$ at BBN & too small\\
+\bottomrule
+\end{tabular}
+\end{center}
+Matter blindness (needed if the dilaton rolls) is natural in scale-invariant Einstein--Cartan gravity
+\cite{karananas2021,piani2022}; whether it coexists with $\alpha=1$ is open.
+
+\section{Predictions locked before the data (2 November 2026, 16:19:51 CST)}
+The attached prediction file \texttt{PREDICTIONS\_LOCKED\_2026-11-02.md} (SHA-256 begins
+\texttt{b629f534}, ends \texttt{23cb}) and the numbers file \texttt{forward\_predictions.json} freeze, from the stored
+best fits:
+\begin{itemize}
+\item DESI DR3 BAO: $D_M/r_d$, $D_H/r_d$ at the DR2 redshifts for the Late Twist, Coupled Twist, $\Lambda$CDM and
+$w_0$--$w_a$; the rule is $\Delta\chi^2\le-4$ preferred, $\ge+4$ disfavoured.
+\item $w(z)\ge-1$ at all $z$ for the minimal and Coupled Twist: a $>3\sigma$ model-independent phantom bin excludes them.
+\item $S_8$: the Late Twist is indistinguishable from $\Lambda$CDM; the Coupled Twist is higher (0.828).
+\item CMB birefringence ratio $R=0.997$ (if photon-coupled).
+\item Tensor ratio from $\alpha=1$ inflation: $r=0.0033$--$0.0048$; $r<0.002$ (95\%) excludes it.
+\item Gravitational-wave velocity birefringence $\sim10^{-43}$--$10^{-42}$\,GeV; a detection above $10^{-41}$\,GeV is
+not the Twist.
+\end{itemize}
+
+\section{How to falsify}
+(1) A full fit of the effective Spiral Twist ($\kappa$, $\beta_{\rm eff}$; no DES Y5) that does no better than thawing.
+(2) A derivation showing the dilaton must couple to matter (Cassini then excludes a rolling dilaton). (3) Any locked
+prediction above failing on its named data.
+
+\section*{Acknowledgements}
+The author used AI assistants (Claude, Anthropic) for algebra checks, code, running the computations and drafting;
+every number is reproduced by the attached scripts, and the author takes full responsibility for the content.
+
+\begin{thebibliography}{99}
+\bibitem{gky2009} S.~J.~Gates, S.~V.~Ketov, N.~Yunes, Phys.\ Rev.\ D 80, 065003 (2009), arXiv:0906.4978.
+\bibitem{ramos2026} M.~Ramos-Hamud, G.~Garc\'ia-Arroyo, F.~Quevedo, J.~A.~V\'azquez, arXiv:2609.22539.
+\bibitem{toomey2025} M.~W.~Toomey, E.~Hughes, M.~M.~Ivanov, J.~M.~Sullivan, arXiv:2511.23463.
+\bibitem{babu2026} J.~Y.~Babu, L.~Amendola, arXiv:2610.23497.
+\bibitem{karananas2021} G.~K.~Karananas, M.~Shaposhnikov, A.~Shkerin, S.~Zell, arXiv:2108.05897.
+\bibitem{piani2022} M.~Piani, J.~Rubio, JCAP 05 (2022) 009, arXiv:2202.04665.
+\bibitem{brax2007} P.~Brax, J.~Martin, Phys.\ Lett.\ B 647, 320 (2007), hep-th/0612208.
+\bibitem{act2025} T.~Louis et al.\ (ACT), arXiv:2503.14452.
+\end{thebibliography}
+\end{document}

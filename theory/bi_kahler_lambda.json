@@ -1,0 +1,11 @@
+{
+ "kahler_metric": "3/(Phi + Phibar)**2",
+ "metric_at_Phi=phi": "3/(4*phi**2)",
+ "canonical_dilaton": "chi = sqrt(3/2) ln|phi|",
+ "axion_factor": "f(chi) = exp(lambda chi), after rescaling a_canonical = sqrt(3/2) a",
+ "lambda": -1.632993161855452,
+ "lambda_exact": "-2 sqrt(2/3)",
+ "residual_check(should be 0)": "0",
+ "toomey_2511.23463_posterior_planck_desi": "lambda = -1.3 (+1.3 / -1.5), prior (-3, 0)",
+ "field_space_curvature": "metric (3/2)(dphi^2 + da^2)/phi^2: Gaussian curvature -2/3 (hyperbolic; alpha-attractor alpha = 1)"
+}
