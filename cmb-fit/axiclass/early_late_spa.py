@@ -154,6 +154,11 @@ def make(name):
         # CAMB one (CAMB's theta is a different quantity); F, m references and all priors unchanged; best of 4.
         best_of = 2 if grid else 4          # grid points minimise only smooth standard parameters
         m = json.load(open(f"{OUT}/cmp_ax_spa_lcdm_halofit.json"))["minimum"]
+        # NR warm start (deviation 18:59:09): a "_nlfix" run starts from its same-named original run's minimum when that
+        # run exists. Priors, ref widths and best-of are unchanged.
+        orig = f"{OUT}/cmp_{name.replace('_nlfix', '')}.json"
+        if "_nlfix" in name and os.path.exists(orig):
+            m = json.load(open(orig))["minimum"]
         for k, p in params.items():
             if k in m and isinstance(p, dict) and "ref" in p:
                 p["ref"]["loc"] = float(m[k])
