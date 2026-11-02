@@ -35,9 +35,9 @@
 \newcommand{\AtwoVerdict}{\Pending}
 \newcommand{\AthreeD}{\ensuremath{-3.65}}  % chi2(early+late) - chi2(late), AxiCLASS (EARLY_LATE_RESULTS.md)
 \newcommand{\AthreeVerdict}{\textbf{mild}}  % SURVIVES / MILD / NOT NEEDED
-\newcommand{\LateLone}{\Pending}        % Late Twist vs LCDM
-\newcommand{\LateLtwo}{\Pending}        % Late Twist vs w0-wa
-\newcommand{\LateLthree}{\Pending}      % natural range of F and m
+\newcommand{\LateLone}{\textbf{fail}}   % Late Twist vs LCDM, Pantheon+ grid: +0.96 (LATE_TWIST_RESULTS.md)
+\newcommand{\LateLtwo}{\textbf{worse}}  % Late Twist vs w0-wa: D = +10.92 (Pantheon+), +14.44 (DES Y5)
+\newcommand{\LateLthree}{\textbf{inconsistent}}  % F at the prior's upper edge in both SN sets
 
 \title{\textbf{Torsion-Motivated Early Dark Energy\\ with an Onset Locked to Matter--Radiation Equality:\\
 Pre-Registered Tests on Planck, ACT, SPT-3G and DESI}}
@@ -66,9 +66,9 @@ late dark energy, early energy still improves $\chi^2$ by 3.65 but does not pay 
 $n=2$ in a poorly converged comparison,
 which we show is not produced by the Nieh--Yan term or by natural instanton or anomaly potentials, and
 the equality lock cannot be derived from the minimal action. Two codes agree to 0.4 in $\chi^2$ and the
-field does not fragment. Fixed-number variants of the width and initial angle all fail. We outline a
-late-time alternative in which the same field, with the natural $n=1$ potential and a Planck-scale range,
-acts as thawing dark energy. We state which parts are derived, which are assumed, and which failed.
+field does not fragment. Fixed-number variants of the width and initial angle all fail. Acting late with its
+natural $n=1$ potential, the field at best ties $\Lambda$CDM, and the torsion-natural dark-matter coupling is
+excluded. We state which parts are derived, which are assumed, and which failed.
 \end{abstract}
 
 \tableofcontents
@@ -920,6 +920,14 @@ for the early and late models against CAMB's $-5.63$ and $-10.89$. The early sig
 ($f_{\rm EDE}$ falls only from 0.080 to 0.069), while adding early energy weakens the late signal ($w_a$ moves from
 $-0.64$ to $-0.48$), as Wang and Piao found \cite{wangpiao2025}.
 
+\paragraph{Robustness across supernova samples.} The same comparison with DES Y5 supernovae gives $D=-4.70$
+(``survives''), and with the recalibrated DES-Dovekie sample (pre-registered as a bracket) $D=-2.70$ (``mild''). The
+early hint is therefore fragile: it passes its threshold only with the uncorrected DES Y5 calibration. Jhaveri et
+al.\ \cite{jhaveri2026}, combining EDE with thawing quintessence, describe EDE as nearly unaffected across supernova
+sets. Our test differs in two ways: the late model is $w_0$--$w_a$ rather than thawing, and early energy is judged
+by its gain on top of the late model rather than by its own $\Delta\chi^2$. We report the difference without
+resolving it.
+
 %======================================================================
 \section{What geometry does and does not fix}\label{sec:derive}
 \paragraph{The potential.} $(1-\cos x)^3=\tfrac52-\tfrac{15}{4}\cos x+\tfrac32\cos2x-\tfrac14\cos3x$. Its harmonics
@@ -945,18 +953,46 @@ derived lock would need. A dynamical lock requires field-dependent couplings to 
 \cite{ramadan2023}, which the minimal action does not provide.
 
 %======================================================================
-\section{Outlook: the twist field as late dark energy}\label{sec:late}
+\section{The twist field as late dark energy}\label{sec:late}
 The findings above point the other way. Late evolving dark energy is what the combined data prefer; the natural
 potential for the field is $n=1$; and the construction $\phi=\sqrt{3/2}\,\Mp\,{\rm arsinh}(1/\gamma)$ gives a
-Planck-scale field range for free. These are exactly the ingredients of thawing pseudo-Goldstone quintessence
+Planck-scale field range for free. These are the ingredients of thawing pseudo-Goldstone quintessence
 \cite{frieman1995}, whose $w_0>-1$, $w_a<0$ matches the DESI direction, and which has recently been fitted to DESI
 data \cite{lin2025}. A Barbero--Immirzi scalar has been used as dark energy before, in quintom form via topological
-invariants \cite{pollari2023}. In this ``late twist'' the field is all of the dark energy, with $V=\Lambda^4[1-\cos(\phi/F)]$ and
-two free parameters ($F$, $m$). A pre-registered AxiCLASS test against $\Lambda$CDM and $w_0$--$w_a$, including a
-check that the fitted $F$ and $m$ fall in the field's natural range, was run in AxiCLASS. The first attempt stalled
-(the reported minimum lay 11 in $\chi^2$ above a point found by hand), so it is being repeated from better starting
-points. Both attempts will be reported. The energy scale ($\sim$meV) is still
-put in by hand, and gravitational-wave bounds on a field evolving today \cite{gao2026} must be respected.
+invariants \cite{pollari2023}. In this ``late twist'' the field is all of the dark energy, with $V=\Lambda^4[1-\cos(\phi/F)]$.
+
+\paragraph{Method.} Free fits in $(F,m)$ stalled twice, so (as a logged deviation) the two parameters were profiled
+on a pre-registered $6\times4$ grid ($\log_{10}F\in[-0.4,0.5]$, $\log_{10}m\in[-0.3,0.4]$, $F$ in $\Mp$, $m$ in $H_0$),
+plus an edge scan near the viability line (locked blind for DES Y5), a check on the recalibrated DES-Dovekie sample,
+a look-elsewhere rule over the searched $F$ values, and a separate high-mass corner. Ten of the 24 grid points are
+non-viable (the field cannot close the energy budget unless $m^2F^2\gtrsim1.2$).
+
+\paragraph{A code artefact, found by a null test.} In its frozen limit the field is a cosmological constant, yet the
+installed AxiCLASS gave $\chi^2$ higher than true $\Lambda$ by $+1.35$. Two bugs combine: for $n=1$ the field is
+forced into the matter perturbation $\delta_m$, and the non-linear (halofit/HMcode) step reads a matter density that
+counts the field as $\rho-3p$. Fixing both (and only both) returns the frozen limit to $+0.13$. The fix and its
+validation are released with this paper. The as-written results below carry the artefact; a pre-registered
+replication of every $n=1$ test on the corrected code is reported in the accompanying repository and supersedes them
+for the late models.
+
+\paragraph{Results (as written).} With Pantheon+, the best grid point ($F=3.16\,\Mp$, $m=0.50\,H_0$) gives
+$\Delta\chi^2=+0.96$ against $\Lambda$CDM: \LateLone\ by the rule, a tie once corrected. With DES Y5 it gives
+$-5.32$ (only $1.0\sigma$ after the look-elsewhere correction), but on DES-Dovekie the gain does not survive
+($\Delta_D=+0.18$; the DES Y5 best point is $+4.27$ there): \textbf{not confirmed}. Against $w_0$--$w_a$ it is
+\LateLtwo\ with every sample, and the best $F$ sits at the top of the searched range (\LateLthree). The corner of
+sub-Planckian $F$ and large $m$ favoured in Refs.~\cite{lin2025,shiu2026} is much worse ($\geq+38$) in our setup,
+possibly because our closure method does not start the field close enough to the hilltop.
+
+\paragraph{The coupled twist.} Allowing a conformal coupling to dark matter, $m_c\propto e^{\beta\phi/\Mp}$, improves
+the fit by about 8 over the uncoupled field ($-6.80$ against $\Lambda$CDM). The profile allows only
+$|\beta|\approx0.05$ ($|\beta|=0.1$ costs more than 100), with two modes of similar quality, and only $\beta<0$
+produces an apparent phantom crossing (near $z\approx0.8$). All three features match Babu and Amendola
+\cite{babu2026}. The torsion-natural $|\beta|=0.816$ is excluded: it does not yield a physical cosmology. The
+coupled field is still worse than $w_0$--$w_a$ once its parameters are counted.
+
+\paragraph{Reading.} The natural late field ties $\Lambda$CDM at best and does not reproduce DESI's preference for
+$w_0$--$w_a$; the torsion-natural coupling is ruled out. The energy scale ($\sim$meV) is put in by hand, and
+gravitational-wave bounds on a dynamical Barbero--Immirzi field \cite{gao2026} apply.
 
 %======================================================================
 \section{Overall verdict}\label{sec:verdict}
@@ -1099,8 +1135,10 @@ variation of $\gamma$ would falsify this version.
 its pre-registered rule ($\Delta\chi^2=-5.63$) but late evolving dark energy fits better. After the look-elsewhere
 correction the early preference is a weak hint ($1.2$--$1.4\sigma$), and alongside late dark energy it is mild
 ($D=\AthreeD$). The potential's shape and the lock are assumptions that geometry does not supply
-(\S\ref{sec:derive}). The torsion construction motivates the field; it does not determine its numbers. The same
-field acting late (\S\ref{sec:late}) uses its natural potential and range, and is the direction we now test.
+(\S\ref{sec:derive}). The torsion construction motivates the field; it does not determine its numbers. Acting late
+with its natural potential (\S\ref{sec:late}), the field ties $\Lambda$CDM at best, its DES Y5 gain does not survive
+recalibrated supernovae, and the torsion-natural dark-matter coupling is excluded. A null test along the way exposed
+two AxiCLASS bugs for axion dark energy, which we fix.
 
 \paragraph{Version 2 (unchanged).}
 Minimal Einstein--Cartan torsion cannot shorten the sound horizon: it has the wrong sign
@@ -1225,6 +1263,11 @@ cosmic radiation-matter transition}, Phys.\ Rev.\ D \textbf{109}, 044016 (2024),
 Nambu-Goldstone bosons}, Phys.\ Rev.\ Lett.\ \textbf{75}, 2077 (1995), arXiv:astro-ph/9505060.
 \bibitem{lin2025} W.~Lin, L.~Visinelli, T.~T.~Yanagida, \emph{Testing Quintessence Axion Dark Energy with Recent
 Cosmological Results}, JCAP \textbf{10}, 023 (2025), arXiv:2504.17638.
+\bibitem{shiu2026} G.~Shiu, F.~Tonioni, H.~V.~Tran, \emph{Bounding axion dark energy}, arXiv:2604.09141 (2026).
+\bibitem{babu2026} J.~Y.~Babu, L.~Amendola, \emph{Can coupled thawing quintessence reproduce DESI DR2? A test with two
+potentials}, arXiv:2610.23497 (2026).
+\bibitem{jhaveri2026} T.~Jhaveri, T.~Karwal, T.~Crawford, W.~Hu, A.~R.~Khalife, L.~Balkenhol, F.~Ge,
+\emph{Disentangling cosmic distance tensions with early and late dark energy}, arXiv:2604.08530 (2026).
 \bibitem{murgia2021} R.~Murgia, G.~F.~Abell\'an, V.~Poulin, \emph{Early dark energy resolution to the Hubble tension
 in light of weak lensing surveys and lensing anomalies}, Phys.\ Rev.\ D \textbf{103}, 063502 (2021), arXiv:2009.10733.
 \bibitem{smith2021} T.~L.~Smith et al., \emph{Early dark energy is not excluded by current large-scale structure
