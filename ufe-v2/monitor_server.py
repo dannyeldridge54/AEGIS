@@ -7,6 +7,9 @@ Runs the Gaia DR3 star scanner forever (aegis/star_scanner.py) and serves:
     http://localhost:8765/api/status     JSON: totals, flag counts, recent patches
     http://localhost:8765/api/stars      JSON: charted stars (downsampled to 20,000)
     http://localhost:8765/api/flags      CSV:  flagged candidates
+    http://localhost:8765/api/anomalies  CSV:  flagged gravity (GWOSC) and quantum (NIST beacon) anomalies
+    http://localhost:8765/api/anomalies.json?wavelength=&object=&flag=&source=   JSON: filtered anomalies plus facet counts
+    http://localhost:8765/api/compare    CSV:  old-vs-new distance (KS, Wasserstein) per anomaly category
     http://localhost:8765/api/catalog    CSV:  the full star catalog for the mapper
     http://localhost:8765/api/log        plain-text log
     http://localhost:8765/live           livestream view (1920x1080, for OBS "Browser source")
@@ -15,6 +18,9 @@ Runs the Gaia DR3 star scanner forever (aegis/star_scanner.py) and serves:
     http://localhost:8765/tiles/L5/NNNNN.csv.gz   raw data of one swept tile (gzip CSV)
     http://localhost:8765/api/science    JSON: torsion-field fit results shown on the stream
     http://localhost:8765/api/guardrails JSON: automatic checks on our own math (fits, pre-registration, theory, data, geometry, authorship)
+
+Anomaly scanner extras: put NAME.csv (header row, then one number per line in the first column) in ./cosmos_map/incoming/ to
+compare new data against that category's earlier data; swept Gaia tiles are compared against earlier tiles automatically.
 
 Data files are written to ./cosmos_map/ and survive restarts (scanning resumes where it left off).
 Start: python monitor_server.py   (Windows: double-click START_AEGIS_MONITOR.bat). Stop: close the window.
@@ -72,6 +78,14 @@ def worker():
             STATUS["state"] = "error"; STATUS["error"] = traceback.format_exc()
         log("ERROR: " + STATUS["error"].splitlines()[-1])
 
+def anomaly_worker():
+    try:
+        from aegis.anomaly_scanner import AnomalyScanner
+        A = AnomalyScanner(OUT, status=SCANNER.setdefault("anomaly", {}), log=log)
+        A.run_forever()
+    except Exception:
+        log("ANOMALY SCANNER ERROR: " + traceback.format_exc().splitlines()[-1])
+
 def _read(path, default=""):
     return open(path, encoding="utf-8").read() if os.path.exists(path) else default
 
@@ -87,12 +101,24 @@ class Handler(BaseHTTPRequestHandler):
             with LOCK:
                 s = dict(STATUS); s["uptime_s"] = time.time() - STATUS["started"]
                 s["scan"] = {k: v for k, v in SCANNER.get("status", {}).items() if k != "recent_stars"}
+                s["anomaly"] = dict(SCANNER.get("anomaly", {}))
             self._send(200, json.dumps(s), "application/json")
         elif p == "/api/stars":
             pts = SCANNER["s"].chart_points() if "s" in SCANNER else []
             self._send(200, json.dumps(pts), "application/json")
         elif p == "/api/flags":
             self._send(200, _read(os.path.join(OUT, "cosmos_map_flags.csv")), "text/csv; charset=utf-8")
+        elif p == "/api/anomalies.json":                           # filter: ?wavelength=x-ray&object=star,black_hole&flag=..&source=..&limit=..
+            from urllib.parse import urlparse, parse_qs
+            from aegis.anomaly_scanner import query_anomalies
+            q = {k: v[0] for k, v in parse_qs(urlparse(self.path).query).items()}
+            rows, facets = query_anomalies(OUT, q.get("wavelength"), q.get("object"), q.get("flag"), q.get("source"),
+                                           min(int(q.get("limit", 200) or 200), 5000))
+            self._send(200, json.dumps({"rows": rows, "facets": facets}), "application/json")
+        elif p == "/api/anomalies":
+            self._send(200, _read(os.path.join(OUT, "cosmos_map_anomalies.csv")), "text/csv; charset=utf-8")
+        elif p == "/api/compare":
+            self._send(200, _read(os.path.join(OUT, "anomaly_compare.csv")), "text/csv; charset=utf-8")
         elif p == "/api/catalog":
             self._send(200, _read(os.path.join(OUT, "cosmos_map_stars.csv")), "text/csv; charset=utf-8")
         elif p == "/api/log":
@@ -170,6 +196,7 @@ if __name__ == "__main__":
     _lock = single_instance()
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
     threading.Thread(target=worker, daemon=True).start()
+    threading.Thread(target=anomaly_worker, daemon=True).start()
     url = f"http://localhost:{PORT}/"
     log(f"AEGIS star scanner monitor at {url}   (API: {url}api/status)")
     try:

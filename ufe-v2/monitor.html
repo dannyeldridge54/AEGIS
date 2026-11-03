@@ -339,6 +339,20 @@
     </div>
   </div>
 
+  <h2>Gravity and quantum anomalies</h2>
+  <div class="card"><div id="an-sum" style="color:var(--muted);font-size:13px;margin-bottom:6px">Waiting for the first scan.</div>
+    <table><thead><tr><th>Flag</th><th class="num">Records</th><th>Meaning and how to confirm</th></tr></thead><tbody id="an-flags"></tbody></table>
+    <div style="color:var(--muted);font-size:13px;margin:10px 0 4px">Old vs new: each category's new data is measured against its previous data sets. KS is the largest gap between the two distributions (0 = identical); the control is the same measure between two halves of the old data, i.e. what "no change" looks like.</div>
+    <table style="min-width:0"><thead><tr><th>Category</th><th class="num">Old</th><th class="num">New</th><th class="num">KS</th><th class="num">Control KS</th><th class="num">p</th><th class="num">Wasserstein (σ)</th><th>Verdict</th></tr></thead><tbody id="an-cmp"></tbody></table>
+    <div style="margin:12px 0 4px;color:var(--muted);font-size:13px">Filter everything found so far (stars, black holes, the Sun, small bodies, lab sources) by wavelength or messenger, object and flag:</div>
+    <div id="an-filters" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px">
+      <select id="f-wavelength"><option value="">all wavelengths</option></select>
+      <select id="f-object"><option value="">all objects</option></select>
+      <select id="f-flag"><option value="">all flags</option></select>
+      <span id="f-count" style="color:var(--muted);align-self:center"></span>
+    </div>
+    <table style="min-width:0"><thead><tr><th>Source</th><th>Wavelength</th><th>Object</th><th>Record</th><th>Flags</th><th>Notes</th></tr></thead><tbody id="an-rows"></tbody></table></div>
+
   <h2>Latest swept tiles</h2>
   <div class="card"><table><thead><tr><th>Time</th><th class="num">Tile</th><th class="num">l</th><th class="num">b</th><th class="num">Stars</th><th class="num">Confirmed</th><th class="num">Flagged</th><th class="num">Seconds</th></tr></thead><tbody id="rows"></tbody></table></div>
 
@@ -524,7 +538,7 @@
     <p style="font-size:12.5px;color:var(--muted);margin-top:8px">Sigils © 2026 Danny Lee Eldridge. Each file's fingerprint is checked by the guardrails above.</p>
   </section>
 
-  <footer>API: <a href="/api/status">/api/status</a> · <a href="/api/stars">/api/stars</a> · <a href="/api/catalog">/api/catalog</a> (CSV for the mapper) · <a href="/api/flags">/api/flags</a> · <a href="/api/spotlight">/api/spotlight</a> · <a href="/api/science">/api/science</a> · <a href="/api/tiles">/api/tiles</a> · <a href="/api/shells">/api/shells</a> · <a href="/api/log">/api/log</a> · status every 3 s, charts every 20 s</footer>
+  <footer>API: <a href="/api/status">/api/status</a> · <a href="/api/stars">/api/stars</a> · <a href="/api/catalog">/api/catalog</a> (CSV for the mapper) · <a href="/api/flags">/api/flags</a> · <a href="/api/anomalies">/api/anomalies</a> · <a href="/api/compare">/api/compare</a> · <a href="/api/spotlight">/api/spotlight</a> · <a href="/api/science">/api/science</a> · <a href="/api/tiles">/api/tiles</a> · <a href="/api/shells">/api/shells</a> · <a href="/api/log">/api/log</a> · status every 3 s, charts every 20 s</footer>
 </main>
 <script>
 const $ = id => document.getElementById(id);
@@ -537,6 +551,41 @@ const MEANING = {
   astrometric_excess: ['Wobbly stars', "Gaia's single-star fit is poor (RUWE above 1.4), often an unseen companion tugging on it. Confirm in the Gaia DR3 non-single-star tables."],
   high_velocity: ['Fast movers', 'Crossing the sky faster than 400 km/s: possible halo stars. Confirm with a radial velocity and an orbit fit.'],
   distance_mismatch: ['Distance puzzles', 'Inverse parallax disagrees with the Bailer-Jones distance by more than 3× its range. Check the parallax zero-point and crowding.']
+};
+const FACET_SEEN = {};
+async function loadAnomalies() {
+  const q = new URLSearchParams(); for (const k of ['wavelength', 'object', 'flag']) { const v = $('f-' + k).value; if (v) q.set(k, v); }
+  const d = await (await fetch('/api/anomalies.json?limit=50&' + q)).json();
+  for (const k of ['wavelength', 'object', 'flag']) { const sel = $('f-' + k), cur = sel.value; if (cur) continue;
+    const names = Object.keys(d.facets[k]).sort(); if (names.join() !== FACET_SEEN[k]) { FACET_SEEN[k] = names.join();
+      sel.innerHTML = `<option value="">all ${k}s</option>` + names.map(n => `<option value="${esc(n)}">${esc(n)} (${num(d.facets[k][n])})</option>`).join(''); } }
+  $('f-count').textContent = `${num(Object.values(d.facets.source).reduce((a, b) => a + b, 0))} matches, newest ${d.rows.length} shown`;
+  $('an-rows').innerHTML = d.rows.map(r => `<tr><td>${esc(r.source)}</td><td>${esc(r.wavelength)}</td><td>${esc(r.object)}</td><td>${esc(r.id)}</td><td>${esc(r.flags)}</td><td class="wrap">${esc(r.flag_notes)}</td></tr>`).join('');
+}
+document.addEventListener('change', e => { if (e.target.id && e.target.id.startsWith('f-')) loadAnomalies(); });
+const AN_MEANING = {
+  lower_mass_gap: ['Lower mass gap', 'A component mass between 2.5 and 5 solar masses. Confirm with the posterior samples on GWOSC.'],
+  upper_mass_gap: ['Upper mass gap', 'A component mass between 60 and 130 solar masses (pair-instability gap). Confirm the posterior excludes the gap.'],
+  high_spin: ['High spin', 'Effective spin above 0.6 in size. Check the posterior and waveform models.'],
+  far_source: ['Very distant', 'Luminosity distance above 5 Gpc. Check the redshift prior and detector sensitivity.'],
+  weak_detection: ['Marginal detection', 'False alarm rate above 1 per year or SNR below 8. Possible noise artefact.'],
+  bit_bias: ['Bit bias', 'A quantum-beacon pulse has lopsided bits (p below 0.001). Re-test neighbouring pulses.'],
+  runs_anomaly: ['Streaky bits', 'Too many or too few runs of equal bits in a beacon pulse. Re-test neighbouring pulses.'],
+  xray_flare: ['X-ray flare', 'Solar X-ray flux at M-class or stronger. Confirm on the GOES flare list.'],
+  proton_event: ['Proton event', 'Proton flux above 10 pfu at 10 MeV or more (S1 storm). Confirm with SOHO/ACE.'],
+  southward_bz: ['Southward Bz', 'Interplanetary Bz at or below -10 nT. Confirm with DSCOVR/ACE.'],
+  geomagnetic_storm: ['Geomagnetic storm', 'Planetary Kp at 5 or higher. Confirm with ground magnetometers.'],
+  fast_wind: ['Fast solar wind', 'Solar wind at 700 km/s or more. Confirm with DSCOVR/ACE.'],
+  dense_wind: ['Dense solar wind', 'Proton density at 30 per cm3 or more, usually a shock.'],
+  electron_event: ['Electron event', 'Relativistic electrons at 1000 pfu or more. Confirm on GOES.'],
+  field_depression: ['Field depression', 'GOES Hp at 20 nT or less. Confirm with ground magnetometers.'],
+  fast_cme: ['Fast CME', 'Coronal mass ejection of 1000 km/s or more (NASA DONKI).'],
+  x_class_flare: ['X-class flare', 'Flare of class X or stronger (NASA DONKI).'],
+  close_approach: ['Close approach', 'Small body inside the Moon\'s distance (JPL). Confirm with SBDB.'],
+  large_fireball: ['Large fireball', 'Fireball of 1 kt or more (JPL). Confirm with the fireball database.'],
+  dataset_drift: ['Dataset drift', 'New data differs from the previous data sets (KS test p below 0.001). Compare with the control KS.'],
+  telemetry_outlier: ['Telemetry outlier', 'More than 6 robust sigmas from its own series. Rule out instrument glitches.'],
+  beacon_status: ['Beacon status', 'NIST reports a nonzero status code for the pulse.']
 };
 function colourOf(bprp, a = 1) { const t = Math.max(0, Math.min(1, (Number(bprp) + 0.2) / 2.8));
   return `rgba(${Math.round(150 + 105*t)},${Math.round(185 - 45*t)},${Math.round(255 - 155*t)},${a})`; }
@@ -729,6 +778,11 @@ async function status() {
     const now = Date.now()/1000; hist.push([now, sc.stars || 0]); while (hist.length && now - hist[0][0] > 120) hist.shift();
     if (sc.stars_per_min !== undefined && sc.stars_per_min > 0) { $('rate').innerHTML = `${num(Math.round(sc.stars_per_min / 1000))}k <small>stars/min</small>`; } else if (hist.length > 2) { const r = (hist[hist.length-1][1] - hist[0][1]) / Math.max(1, hist[hist.length-1][0] - hist[0][0]) * 60; $('rate').innerHTML = r > 0 ? `${num(Math.round(r))} <small>/ min</small>` : '<small>between patches</small>'; }
     $('flags').innerHTML = Object.keys(MEANING).map(k => `<tr><td><b style="color:var(--gold)">${MEANING[k][0]}</b></td><td class="num">${num(fl[k])}</td><td class="wrap">${MEANING[k][1]}</td></tr>`).join('');
+    { const an = STATUS.anomaly || {}, afl = an.flags || {}, sc2 = an.scanned || {};
+      $('an-sum').textContent = `Scanned ${num(sc2.gravity || 0)} gravitational-wave events (GWOSC), ${num(sc2.quantum || 0)} quantum-beacon pulses (NIST) and ${num(['xray','radio','particle','magnetic','geomagnetic','solar_wind','solar_wind_density','electron','geomagnetic_field','sunspots','cme','flare_catalog','near_earth','fireball'].reduce((a, k) => a + (sc2[k] || 0), 0))} space-telemetry readings (NOAA SWPC: X-ray, radio, particle, magnetic). Flags are candidates, not discoveries.`;
+      $('an-flags').innerHTML = Object.keys(AN_MEANING).map(k => `<tr><td><b style="color:var(--gold)">${AN_MEANING[k][0]}</b></td><td class="num">${num(afl[k])}</td><td class="wrap">${AN_MEANING[k][1]}</td></tr>`).join('');
+      $('an-cmp').innerHTML = Object.entries(an.compare || {}).map(([k, c]) => `<tr><td>${esc(k)}</td><td class="num">${num(c.n_old)}</td><td class="num">${num(c.n_new)}</td><td class="num">${c.ks}</td><td class="num">${c.baseline_ks ?? '—'}</td><td class="num">${(+c.p).toExponential(1)}</td><td class="num">${c.wasserstein_sigma}</td><td>${esc(c.verdict)}</td></tr>`).join('') || '<tr><td colspan="8">Collecting a previous data set to compare against.</td></tr>';
+      loadAnomalies(); }
     $('rows').innerHTML = (sc.last_patches || []).slice(0, 8).map(p => `<tr><td>${new Date(p.t*1000).toLocaleTimeString()}</td><td class="num">${p.tile ?? '—'}</td><td class="num">${(+p.l).toFixed(1)}</td><td class="num">${(+p.b).toFixed(1)}</td><td class="num">${num(p.stars)}</td><td class="num">${num(p.confirmed)}</td><td class="num">${num(p.flagged)}</td><td class="num">${p.seconds}</td></tr>`).join('');
     $('log').textContent = STATUS.error ? STATUS.error : await (await fetch('/api/log')).text();
   } catch (e) { $('state').textContent = 'offline'; $('state-pill').className = 'pill err'; }
