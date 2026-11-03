@@ -1,3 +1,4 @@
+# Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV; see LICENSE): free to everyone, for any use that respects human rights.
 """AEGIS anomaly scanner: gravity (LIGO/Virgo/KAGRA events), quantum (NIST Randomness Beacon) and space telemetry
 (NOAA SWPC: X-ray, radio, particle, magnetic, geomagnetic).
 
@@ -6,7 +7,7 @@ appended to cosmos_map/cosmos_map_anomalies.csv, per-flag counts and recent reco
 cosmos_map/anomaly_scan_summary.json, and the monitor serves them at /api/anomalies and in /api/status["anomaly"].
 Flags are candidates worth a closer look, never discoveries.
 """
-import csv, json, math, os, threading, time, urllib.request
+import csv, io, json, math, os, threading, time, urllib.request
 import numpy as np
 
 GWOSC_EVENTS = "https://gwosc.org/eventapi/json/allevents/"
@@ -30,6 +31,18 @@ SOURCE_TAGS = {
     "near_earth": ("optical", "small_body"), "fireball": ("optical", "small_body"),
     "star": ("optical", "star"), "star_vtan": ("optical", "star"), "star_ruwe": ("optical", "star"), "star_dist": ("optical", "star"),
 }
+
+
+# Licence and credit of every upstream source; served at /api/licenses and shown on the dashboard.
+DATA_LICENSES = {
+    "gravity": ("GWOSC event catalogue (LIGO, Virgo, KAGRA)", "CC BY 4.0", "https://gwosc.org/"),
+    "quantum": ("NIST Randomness Beacon 2.0", "US Government work, public domain", "https://beacon.nist.gov/"),
+    "space telemetry": ("NOAA Space Weather Prediction Center", "US Government work, public domain", "https://www.swpc.noaa.gov/"),
+    "solar events": ("NASA DONKI", "NASA open data (public domain; credit NASA)", "https://ccmc.gsfc.nasa.gov/tools/DONKI/"),
+    "small bodies": ("JPL Solar System Dynamics APIs", "NASA/JPL open data (credit NASA/JPL-Caltech)", "https://ssd-api.jpl.nasa.gov/"),
+    "stars": ("ESA Gaia DR3 and Bailer-Jones 2021 distances", "CC BY-SA 3.0 IGO (Gaia); credit ESA/Gaia/DPAC", "https://gea.esac.esa.int/archive/"),
+}
+SIMBAD = "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Gaia+DR3+"
 
 
 def tag_row(r):
@@ -69,6 +82,26 @@ def query_anomalies(outdir, wavelength=None, obj=None, flag=None, source=None, l
                 take(dict(source="star", id=r.get("source_id"), time="", value=f"dist_pc={r.get('dist_pc')} l={r.get('l')} b={r.get('b')}",
                           flags=r.get("flags", ""), flag_notes=r.get("flag_notes", "")))
     return rows, facets
+
+
+def to_ecsv(rows):
+    """Astropy-readable ECSV: Table.read(file, format='ascii.ecsv'); TOPCAT reads it too."""
+    cols = FIELDS
+    head = ["# %ECSV 1.0", "# ---", "# datatype:"] + [f"# - {{name: {c}, datatype: string}}" for c in cols]
+    head += ["# meta:", "#   producer: AEGIS anomaly scanner", "#   licence: HL3-MIL-SV code; data licences at /api/licenses"]
+    q = lambda v: v if v and not any(c in v for c in ' "#\t') else '"' + v.replace('"', '""') + '"'
+    lines = [" ".join(cols)] + [" ".join(q(str(r.get(c, ""))) for c in cols) for r in rows]
+    return "\n".join(head + lines) + "\n"
+
+
+def to_votable(rows):
+    """VOTable 1.4, readable by Aladin, TOPCAT, Astropy (votable.parse) and any IVOA tool."""
+    from xml.sax.saxutils import escape
+    f = "".join(f'<FIELD name="{c}" datatype="char" arraysize="*"/>' for c in FIELDS)
+    body = "".join("<TR>" + "".join(f"<TD>{escape(str(r.get(c, '')))}</TD>" for c in FIELDS) + "</TR>" for r in rows)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n<VOTABLE version="1.4" xmlns="http://www.ivoa.net/xml/VOTable/v1.3">'
+            '<RESOURCE name="AEGIS anomalies"><DESCRIPTION>Flagged candidates, not discoveries. Data licences: /api/licenses</DESCRIPTION>'
+            f'<TABLE name="anomalies">{f}<DATA><TABLEDATA>{body}</TABLEDATA></DATA></TABLE></RESOURCE></VOTABLE>')
 
 
 def _gw_object(m1, m2):

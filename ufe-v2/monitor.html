@@ -350,6 +350,7 @@
       <select id="f-object"><option value="">all objects</option></select>
       <select id="f-flag"><option value="">all flags</option></select>
       <span id="f-count" style="color:var(--muted);align-self:center"></span>
+      <a href="#" id="f-ecsv">ECSV</a> <a href="#" id="f-vot">VOTable</a> <a href="/api/licenses">data licences</a>
     </div>
     <table style="min-width:0"><thead><tr><th>Source</th><th>Wavelength</th><th>Object</th><th>Record</th><th>Flags</th><th>Notes</th></tr></thead><tbody id="an-rows"></tbody></table></div>
 
@@ -483,6 +484,7 @@
 
     <h3 style="margin:22px 0 4px;font-size:15px">Check our work: sources</h3>
     <ul class="srcs">
+      <li>Anomaly data: GWOSC (CC BY 4.0), NIST Randomness Beacon, NOAA SWPC, NASA DONKI and JPL SSD (public domain / NASA open data); see <a href="/api/licenses">/api/licenses</a></li>
       <li>Star data: <a href="https://gea.esac.esa.int/archive/">ESA Gaia DR3</a>, <a href="https://arxiv.org/abs/2208.00211">arXiv:2208.00211</a></li>
       <li>Distances: Bailer-Jones et al. 2021, <a href="https://arxiv.org/abs/2012.05220">arXiv:2012.05220</a></li>
       <li>CMB: Planck 2018, <a href="https://arxiv.org/abs/1807.06209">arXiv:1807.06209</a></li>
@@ -559,8 +561,9 @@ async function loadAnomalies() {
   for (const k of ['wavelength', 'object', 'flag']) { const sel = $('f-' + k), cur = sel.value; if (cur) continue;
     const names = Object.keys(d.facets[k]).sort(); if (names.join() !== FACET_SEEN[k]) { FACET_SEEN[k] = names.join();
       sel.innerHTML = `<option value="">all ${k}s</option>` + names.map(n => `<option value="${esc(n)}">${esc(n)} (${num(d.facets[k][n])})</option>`).join(''); } }
+  for (const [id, ext] of [['f-ecsv', 'ecsv'], ['f-vot', 'vot']]) $(id).href = `/api/anomalies.${ext}?` + q;
   $('f-count').textContent = `${num(Object.values(d.facets.source).reduce((a, b) => a + b, 0))} matches, newest ${d.rows.length} shown`;
-  $('an-rows').innerHTML = d.rows.map(r => `<tr><td>${esc(r.source)}</td><td>${esc(r.wavelength)}</td><td>${esc(r.object)}</td><td>${esc(r.id)}</td><td>${esc(r.flags)}</td><td class="wrap">${esc(r.flag_notes)}</td></tr>`).join('');
+  $('an-rows').innerHTML = d.rows.map(r => `<tr><td>${esc(r.source)}</td><td>${esc(r.wavelength)}</td><td>${esc(r.object)}</td><td>${r.source === 'star' ? `<a href="https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Gaia+DR3+${encodeURIComponent(r.id)}">${esc(r.id)}</a>` : esc(r.id)}</td><td>${esc(r.flags)}</td><td class="wrap">${esc(r.flag_notes)}</td></tr>`).join('');
 }
 document.addEventListener('change', e => { if (e.target.id && e.target.id.startsWith('f-')) loadAnomalies(); });
 const AN_MEANING = {

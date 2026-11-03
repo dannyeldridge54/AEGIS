@@ -9,6 +9,8 @@ Runs the Gaia DR3 star scanner forever (aegis/star_scanner.py) and serves:
     http://localhost:8765/api/flags      CSV:  flagged candidates
     http://localhost:8765/api/anomalies  CSV:  flagged gravity (GWOSC) and quantum (NIST beacon) anomalies
     http://localhost:8765/api/anomalies.json?wavelength=&object=&flag=&source=   JSON: filtered anomalies plus facet counts
+    http://localhost:8765/api/anomalies.ecsv|.vot  same filters, as ECSV or VOTable for Astropy, TOPCAT, Aladin
+    http://localhost:8765/api/licenses   JSON: licence and credit of each upstream data source
     http://localhost:8765/api/compare    CSV:  old-vs-new distance (KS, Wasserstein) per anomaly category
     http://localhost:8765/api/catalog    CSV:  the full star catalog for the mapper
     http://localhost:8765/api/log        plain-text log
@@ -108,6 +110,18 @@ class Handler(BaseHTTPRequestHandler):
             self._send(200, json.dumps(pts), "application/json")
         elif p == "/api/flags":
             self._send(200, _read(os.path.join(OUT, "cosmos_map_flags.csv")), "text/csv; charset=utf-8")
+        elif p == "/api/licenses":
+            from aegis.anomaly_scanner import DATA_LICENSES
+            self._send(200, json.dumps({k: dict(zip(("source", "licence", "url"), v)) for k, v in DATA_LICENSES.items()}), "application/json")
+        elif p in ("/api/anomalies.ecsv", "/api/anomalies.vot"):    # same filters as .json; opens in Astropy, TOPCAT, Aladin
+            from urllib.parse import urlparse, parse_qs
+            from aegis.anomaly_scanner import query_anomalies, to_ecsv, to_votable
+            q = {k: v[0] for k, v in parse_qs(urlparse(self.path).query).items()}
+            rows, _ = query_anomalies(OUT, q.get("wavelength"), q.get("object"), q.get("flag"), q.get("source"), 100000)
+            if p.endswith(".ecsv"):
+                self._send(200, to_ecsv(rows), "text/plain; charset=utf-8")
+            else:
+                self._send(200, to_votable(rows), "application/x-votable+xml")
         elif p == "/api/anomalies.json":                           # filter: ?wavelength=x-ray&object=star,black_hole&flag=..&source=..&limit=..
             from urllib.parse import urlparse, parse_qs
             from aegis.anomaly_scanner import query_anomalies
