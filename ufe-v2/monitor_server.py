@@ -210,7 +210,8 @@ if __name__ == "__main__":
     _lock = single_instance()
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
     threading.Thread(target=worker, daemon=True).start()
-    threading.Thread(target=anomaly_worker, daemon=True).start()
+    if os.environ.get("AEGIS_ANOMALIES", "1") != "0":             # set AEGIS_ANOMALIES=0 to run the star scanner alone
+        threading.Thread(target=anomaly_worker, daemon=True).start()
     url = f"http://localhost:{PORT}/"
     log(f"AEGIS star scanner monitor at {url}   (API: {url}api/status)")
     try:

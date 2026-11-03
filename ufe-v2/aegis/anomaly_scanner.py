@@ -362,7 +362,7 @@ def assess_telemetry(band, rows, key, vkey, rule):
             if mad > 0 and abs(v - med) / mad > OUTLIER_Z:
                 flags.append(("telemetry_outlier", f"{v:.4g} vs median {med:.4g} (MAD sigma {mad:.3g})"))
             recs.append(dict(source=band, id=f"{name}:{r['time_tag']}" if name else r["time_tag"], time=r["time_tag"], x=v,
-                             value=f"{vkey}={v:.6g}", flags=";".join(f[0] for f in flags), flag_notes=" | ".join(f[1] for f in flags)))
+                             series=name, value=f"{vkey}={v:.6g}", flags=";".join(f[0] for f in flags), flag_notes=" | ".join(f[1] for f in flags)))
     return recs
 
 
@@ -419,13 +419,25 @@ class AnomalyScanner:
         self.summary_path = os.path.join(outdir, "anomaly_scan_summary.json")
         self.history_path = os.path.join(outdir, "anomaly_history.jsonl")
         self.compare_path = os.path.join(outdir, "anomaly_compare.csv")
+        self.seen_path = os.path.join(outdir, "anomaly_seen.tsv")
+        self.done_path = os.path.join(outdir, "anomaly_local_done.txt")
         self.history, self.compare, self.feed_due, self.local_done = {}, {}, {}, set()
         self.lock = threading.Lock()
         self.seen = set(); self.counts = {"gravity": 0, "quantum": 0}
         self.counts.update({t[0]: 0 for t in TELEMETRY}); self.flag_counts = {}; self.recent = []
         self._load()
 
+    @staticmethod
+    def _log_line(path, line):
+        with open(path, "a", encoding="utf-8") as fh:
+            fh.write(line + "\n")
+
     def _load(self):
+        for path, add in ((self.seen_path, lambda l: self.seen.add(tuple(l.split("\t", 1)))), (self.done_path, self.local_done.add)):
+            if os.path.exists(path):
+                for line in open(path, encoding="utf-8"):
+                    if line.strip("\n"):
+                        add(line.rstrip("\n"))
         if os.path.exists(self.history_path):          # previous data sets survive restarts
             for line in open(self.history_path, encoding="utf-8"):
                 try:
@@ -442,8 +454,7 @@ class AnomalyScanner:
         try:
             old = json.load(open(self.summary_path, encoding="utf-8"))
             self.counts.update(old.get("scanned", {}))
-            self.seen.update(tuple(k) for k in old.get("seen", []))
-            self.local_done.update(old.get("local_done", []))
+
             self.flag_counts = old.get("flags", self.flag_counts)
         except Exception:
             pass
@@ -454,7 +465,7 @@ class AnomalyScanner:
             uniq = {(r["source"], r["id"]): r for r in recs}
             new = [r for k, r in uniq.items() if k not in self.seen]
             for r in new:
-                self.seen.add((r["source"], r["id"])); self.counts[r["source"]] = self.counts.get(r["source"], 0) + 1
+                self.seen.add((r["source"], r["id"])); self._log_line(self.seen_path, f'{r["source"]}\t{r["id"]}'); self.counts[r["source"]] = self.counts.get(r["source"], 0) + 1
                 for f in filter(None, r["flags"].split(";")):
                     self.flag_counts[f] = self.flag_counts.get(f, 0) + 1
             self._compare(new)
@@ -477,7 +488,7 @@ class AnomalyScanner:
         by = {}
         for r in new:
             if r.get("x") is not None:
-                by.setdefault(r["source"], []).append(r["x"])
+                by.setdefault(f'{r["source"]}:{r["series"]}' if r.get("series") else r["source"], []).append(r["x"])
         rows = [c for c in (self.compare_batch(src, xs) for src, xs in by.items()) if c]
         self._write_compare(rows)
 
@@ -518,7 +529,7 @@ class AnomalyScanner:
             tdir = os.path.join(self.outdir, "tiles", "L5")
             tiles = sorted(f for f in os.listdir(tdir) if f.endswith(".csv.gz")) if os.path.isdir(tdir) else []
             for f in [f for f in tiles if "tile:" + f not in done][:LOCAL_TILES_PER_CYCLE]:
-                done.add("tile:" + f)
+                done.add("tile:" + f); self._log_line(self.done_path, "tile:" + f)
                 try:
                     with gzip.open(os.path.join(tdir, f), "rt", encoding="utf-8", newline="") as fh:
                         recs = list(csv.DictReader(fh))
@@ -533,7 +544,7 @@ class AnomalyScanner:
             idir = os.path.join(self.outdir, "incoming")
             for f in sorted(os.listdir(idir)) if os.path.isdir(idir) else []:
                 if f.endswith(".csv") and "file:" + f not in done:      # name.csv: first numeric column, category = file name
-                    done.add("file:" + f)
+                    done.add("file:" + f); self._log_line(self.done_path, "file:" + f)
                     with open(os.path.join(idir, f), newline="", encoding="utf-8") as fh:
                         recs = list(csv.reader(fh))
                     xs = [_num(r[0]) for r in recs[1:] if r]
@@ -544,9 +555,9 @@ class AnomalyScanner:
         self.log(f"local: {len(self.local_done)} files compared so far")
 
     def _summary(self):
-        s = dict(scanned=dict(self.counts), flags=dict(self.flag_counts), recent=self.recent, compare=self.compare, local_done=sorted(self.local_done),
-                 seen=sorted(list(k) for k in self.seen) if len(self.seen) < 50000 else [], updated=time.time())
-        self.status.update({k: v for k, v in s.items() if k not in ("seen", "local_done")})
+        s = dict(scanned=dict(self.counts), flags=dict(self.flag_counts), recent=self.recent, compare=self.compare,
+                 updated=time.time())
+        self.status.update(s)
         json.dump(s, open(self.summary_path, "w"), indent=2)
 
     def scan_gravity(self):
