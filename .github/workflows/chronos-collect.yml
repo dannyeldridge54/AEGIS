@@ -25,6 +25,9 @@ jobs:
           [ -f data/recorded/started.txt ] || date -u +%s > data/recorded/started.txt
           start=$(cat data/recorded/started.txt)
           if [ $(( $(date -u +%s) - start )) -gt 432000 ]; then echo "active=no" >> "$GITHUB_OUTPUT"; else echo "active=yes" >> "$GITHUB_OUTPUT"; fi
+      - name: Backfill previous data (once)
+        if: steps.window.outputs.active == 'yes'
+        run: '[ -f data/recorded/backfill_report.json ] || python backfill.py'
       - name: Collect one pass
         if: steps.window.outputs.active == 'yes'
         run: python collect_once.py
