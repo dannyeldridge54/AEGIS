@@ -29,6 +29,7 @@ SOURCE_TAGS = {
     "magnetic": ("magnetic_field", "solar_wind"), "solar_wind": ("plasma", "solar_wind"), "solar_wind_density": ("plasma", "solar_wind"),
     "geomagnetic": ("magnetic_field", "earth"), "geomagnetic_field": ("magnetic_field", "earth_magnetosphere"),
     "near_earth": ("optical", "small_body"), "fireball": ("optical", "small_body"),
+    "impact_risk": ("optical", "small_body"), "exoplanet": ("optical", "exoplanet"), "gamma_transient": ("gamma-ray", "transient"),
     "star": ("optical", "star"), "star_vtan": ("optical", "star"), "star_ruwe": ("optical", "star"), "star_dist": ("optical", "star"),
 }
 
@@ -39,6 +40,8 @@ DATA_LICENSES = {
     "quantum": ("NIST Randomness Beacon 2.0", "US Government work, public domain", "https://beacon.nist.gov/"),
     "space telemetry": ("NOAA Space Weather Prediction Center", "US Government work, public domain", "https://www.swpc.noaa.gov/"),
     "solar events": ("NASA DONKI", "NASA open data (public domain; credit NASA)", "https://ccmc.gsfc.nasa.gov/tools/DONKI/"),
+    "exoplanets": ("NASA Exoplanet Archive", "NASA open data (credit NASA Exoplanet Archive)", "https://exoplanetarchive.ipac.caltech.edu/"),
+    "gamma-ray and transient alerts": ("NASA GCN circulars", "NASA open data (credit NASA GCN)", "https://gcn.nasa.gov/"),
     "small bodies": ("JPL Solar System Dynamics APIs", "NASA/JPL open data (credit NASA/JPL-Caltech)", "https://ssd-api.jpl.nasa.gov/"),
     "stars": ("ESA Gaia DR3 and Bailer-Jones 2021 distances", "CC BY-SA 3.0 IGO (Gaia); credit ESA/Gaia/DPAC", "https://gea.esac.esa.int/archive/"),
 }
@@ -267,6 +270,22 @@ def _adapt_donki_flare(rows):
     return out
 
 
+def _adapt_sentry(doc):
+    return [dict(time_tag=d.get("last_obs") or d.get("des"), ps=d.get("ps_cum"), des=d.get("des")) for d in doc.get("data", [])]
+
+
+def _adapt_exoplanets(rows):
+    return [dict(time_tag=r.get("pl_name"), per=r.get("pl_orbper")) for r in rows or []]
+
+
+GCN_WORDS = ("GRB", "GW", "S2", "FRB", "neutrino", "IceCube", "SGR", "magnetar", "kilonova", "supernova")
+
+
+def _adapt_gcn(doc):
+    rows = doc if isinstance(doc, list) else doc.get("items", [])
+    return [dict(time_tag=f"{c.get('circularId')}", score=1.0 if any(w in str(c.get("subject", "")) for w in GCN_WORDS) else 0.0) for c in rows]
+
+
 # Further feeds: optional dict gives "adapt" (reshape the JSON into rows), "period" (seconds between fetches).
 TELEMETRY += [
     ("solar_wind", SWPC + "rtsw/rtsw_wind_1m.json", None, "proton_speed",
@@ -292,7 +311,22 @@ TELEMETRY += [
      {"adapt": _adapt_fireball, "period": 3600}),
 ]
 
+TELEMETRY += [
+    ("impact_risk", "https://ssd-api.jpl.nasa.gov/sentry.api", None, "ps",
+     ("sentry_risk", lambda v, r: v >= -2.0, "object on JPL's Sentry impact-risk table with cumulative Palermo scale at or above -2. Confirm with JPL Sentry and NEODyS"),
+     {"adapt": _adapt_sentry, "period": 21600}),
+    ("exoplanet", "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper+from+ps+where+default_flag=1+and+pl_orbper+is+not+null&format=json",
+     None, "per", ("ultra_short_period", lambda v, r: v < 0.5, "planet with an orbital period under 12 hours (NASA Exoplanet Archive). Confirm in the discovery paper"),
+     {"adapt": _adapt_exoplanets, "period": 21600}),
+    ("gamma_transient", "https://gcn.nasa.gov/circulars/archive.json?limit=100", None, "score",
+     ("gcn_transient", lambda v, r: v >= 1.0, "NASA GCN circular about a gamma-ray burst, gravitational wave, neutrino, FRB or similar transient. Read the circular on gcn.nasa.gov"),
+     {"adapt": _adapt_gcn, "period": 900}),
+]
+
 TELEMETRY_MEANING = {
+    "sentry_risk": ("Impact risk", "On the JPL Sentry list at Palermo -2 or higher. Confirm with JPL Sentry."),
+    "ultra_short_period": ("Ultra-short period planet", "Orbit under 12 hours. Confirm in the discovery paper."),
+    "gcn_transient": ("GCN transient", "NASA GCN circular about a gamma-ray, gravitational-wave, neutrino or radio transient."),
     "fast_wind": ("Fast solar wind", "Solar wind at 700 km/s or more. Confirm with DSCOVR/ACE."),
     "dense_wind": ("Dense solar wind", "Proton density at 30 per cm3 or more, usually a shock or compression."),
     "electron_event": ("Electron event", "Relativistic electrons at 1000 pfu or more. Confirm on GOES electron data."),

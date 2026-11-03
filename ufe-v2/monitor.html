@@ -592,6 +592,9 @@ const AN_MEANING = {
   x_class_flare: ['X-class flare', 'Flare of class X or stronger (NASA DONKI).'],
   close_approach: ['Close approach', 'Small body inside the Moon\'s distance (JPL). Confirm with SBDB.'],
   large_fireball: ['Large fireball', 'Fireball of 1 kt or more (JPL). Confirm with the fireball database.'],
+  sentry_risk: ['Impact risk', 'On JPL Sentry at Palermo -2 or higher. Confirm with JPL Sentry.'],
+  ultra_short_period: ['Ultra-short period planet', 'Orbit under 12 hours. Confirm in the discovery paper.'],
+  gcn_transient: ['GCN transient', 'GCN circular about a gamma-ray, gravitational-wave, neutrino or radio transient.'],
   dataset_drift: ['Dataset drift', 'New data differs from the previous data sets (KS test p below 0.001). Compare with the control KS.'],
   telemetry_outlier: ['Telemetry outlier', 'More than 6 robust sigmas from its own series. Rule out instrument glitches.'],
   beacon_status: ['Beacon status', 'NIST reports a nonzero status code for the pulse.']
@@ -788,7 +791,7 @@ async function status() {
     if (sc.stars_per_min !== undefined && sc.stars_per_min > 0) { $('rate').innerHTML = `${num(Math.round(sc.stars_per_min / 1000))}k <small>stars/min</small>`; } else if (hist.length > 2) { const r = (hist[hist.length-1][1] - hist[0][1]) / Math.max(1, hist[hist.length-1][0] - hist[0][0]) * 60; $('rate').innerHTML = r > 0 ? `${num(Math.round(r))} <small>/ min</small>` : '<small>between patches</small>'; }
     $('flags').innerHTML = Object.keys(MEANING).map(k => `<tr><td><b style="color:var(--gold)">${MEANING[k][0]}</b></td><td class="num">${num(fl[k])}</td><td class="wrap">${MEANING[k][1]}</td></tr>`).join('');
     { const an = STATUS.anomaly || {}, afl = an.flags || {}, sc2 = an.scanned || {};
-      $('an-sum').textContent = `Scanned ${num(sc2.gravity || 0)} gravitational-wave events (GWOSC), ${num(sc2.quantum || 0)} quantum-beacon pulses (NIST) and ${num(['xray','radio','particle','magnetic','geomagnetic','solar_wind','solar_wind_density','electron','geomagnetic_field','sunspots','cme','flare_catalog','near_earth','fireball'].reduce((a, k) => a + (sc2[k] || 0), 0))} space-telemetry readings (NOAA SWPC: X-ray, radio, particle, magnetic). Flags are candidates, not discoveries.`;
+      $('an-sum').textContent = `Scanned ${num(sc2.gravity || 0)} gravitational-wave events (GWOSC), ${num(sc2.quantum || 0)} quantum-beacon pulses (NIST) and ${num(['xray','radio','particle','magnetic','geomagnetic','solar_wind','solar_wind_density','electron','geomagnetic_field','sunspots','cme','flare_catalog','near_earth','fireball','impact_risk','exoplanet','gamma_transient'].reduce((a, k) => a + (sc2[k] || 0), 0))} space-telemetry readings (NOAA SWPC: X-ray, radio, particle, magnetic). Flags are candidates, not discoveries.`;
       $('an-flags').innerHTML = Object.keys(AN_MEANING).map(k => `<tr><td><b style="color:var(--gold)">${AN_MEANING[k][0]}</b></td><td class="num">${num(afl[k])}</td><td class="wrap">${AN_MEANING[k][1]}</td></tr>`).join('');
       $('an-cmp').innerHTML = Object.entries(an.compare || {}).map(([k, c]) => `<tr><td>${esc(k)}</td><td class="num">${num(c.n_old)}</td><td class="num">${num(c.n_new)}</td><td class="num">${c.ks}</td><td class="num">${c.baseline_ks ?? '—'}</td><td class="num">${(+c.p).toExponential(1)}</td><td class="num">${c.wasserstein_sigma}</td><td>${esc(c.verdict)}</td></tr>`).join('') || '<tr><td colspan="8">Collecting a previous data set to compare against.</td></tr>';
       loadAnomalies(); }
