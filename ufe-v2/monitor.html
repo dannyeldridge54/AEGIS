@@ -555,6 +555,12 @@ const MEANING = {
   distance_mismatch: ['Distance puzzles', 'Inverse parallax disagrees with the Bailer-Jones distance by more than 3× its range. Check the parallax zero-point and crowding.']
 };
 const FACET_SEEN = {};
+/* Link each record out to the standard lookup for its kind: SIMBAD, VizieR and Aladin for Gaia stars, the GWOSC event page for gravitational waves, JPL SBDB for small bodies. */
+function rowLinks(r) { const id = encodeURIComponent(r.id), L = (u, t) => `<a href="${u}">${t}</a>`;
+  if (r.source === 'star') return `${esc(r.id)} · ` + [L('https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Gaia+DR3+' + id, 'SIMBAD'), L('https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=I/355/gaiadr3&Source=' + id, 'VizieR'), L('https://aladin.cds.unistra.fr/AladinLite/?target=Gaia%20DR3%20' + id, 'Aladin')].join(' ');
+  if (r.source === 'gravity') return `${esc(r.id)} · ` + L('https://gwosc.org/eventapi/html/allevents/', 'GWOSC');
+  if (r.source === 'near_earth') return `${esc(r.id)} · ` + L('https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html', 'JPL SBDB');
+  return esc(r.id); }
 async function loadAnomalies() {
   const q = new URLSearchParams(); for (const k of ['wavelength', 'object', 'flag']) { const v = $('f-' + k).value; if (v) q.set(k, v); }
   const d = await (await fetch('/api/anomalies.json?limit=50&' + q)).json();
@@ -563,7 +569,7 @@ async function loadAnomalies() {
       sel.innerHTML = `<option value="">all ${k}s</option>` + names.map(n => `<option value="${esc(n)}">${esc(n)} (${num(d.facets[k][n])})</option>`).join(''); } }
   for (const [id, ext] of [['f-ecsv', 'ecsv'], ['f-vot', 'vot']]) $(id).href = `/api/anomalies.${ext}?` + q;
   $('f-count').textContent = `${num(Object.values(d.facets.source).reduce((a, b) => a + b, 0))} matches, newest ${d.rows.length} shown`;
-  $('an-rows').innerHTML = d.rows.map(r => `<tr><td>${esc(r.source)}</td><td>${esc(r.wavelength)}</td><td>${esc(r.object)}</td><td>${r.source === 'star' ? `<a href="https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Gaia+DR3+${encodeURIComponent(r.id)}">${esc(r.id)}</a>` : esc(r.id)}</td><td>${esc(r.flags)}</td><td class="wrap">${esc(r.flag_notes)}</td></tr>`).join('');
+  $('an-rows').innerHTML = d.rows.map(r => `<tr><td>${esc(r.source)}</td><td>${esc(r.wavelength)}</td><td>${esc(r.object)}</td><td>${rowLinks(r)}</td><td>${esc(r.flags)}</td><td class="wrap">${esc(r.flag_notes)}</td></tr>`).join('');
 }
 document.addEventListener('change', e => { if (e.target.id && e.target.id.startsWith('f-')) loadAnomalies(); });
 const AN_MEANING = {
