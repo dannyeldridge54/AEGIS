@@ -17,7 +17,7 @@ jobs:
           python-version: "3.12"
       - run: pip install numpy pytest
       - name: Run tests
-        run: python -m pytest -q scanner/tests research/matter_synthesis research/licensing
+        run: python -m pytest -q scanner/tests research/matter_synthesis research/licensing research/resonance
       - name: Stop after 5 days
         id: window
         run: |
