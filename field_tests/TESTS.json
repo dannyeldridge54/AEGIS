@@ -35,6 +35,19 @@
    "rule_source": "the-twist-torsion-cosmology/preregistrations/PREREGISTRATION_SPIRAL_FIT.md"
   },
   {
+   "id": "SF2",
+   "title": "Does the BI angle matter in the Spiral? (beta_eff = 0 vs free)",
+   "where": "PC (AxiCLASS, coupled build)",
+   "rule": "field_tests/rules/PREREG_SF2_ANGLE.md",
+   "locked": "2026-11-07T21:32:03Z",
+   "scorer": "sf2_score.py",
+   "runs": [
+    "ax_spa_spiraltwist_beta0_union3_nlfix",
+    "ax_spa_spiraltwist_beta0_nlfix",
+    "ax_spa_spiraltwist_beta0_dovekie_nlfix"
+   ]
+  },
+  {
    "id": "TF",
    "title": "Heuristic F values sqrt(3/2) and sqrt6 fixed, m free",
    "where": "PC (AxiCLASS)",
