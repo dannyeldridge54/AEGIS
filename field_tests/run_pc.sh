@@ -51,6 +51,7 @@ TWIST_RESULTS="$RES" "$PY" "$HERE/score.py" > /dev/null && say "STATUS written: 
 if [ "${1:-}" = "--push" ]; then
   cd "$ROOT" || exit 1
   files=$(for n in $QUEUE; do [ -f "$RES/cmp_$n.json" ] && echo "$RES/cmp_$n.json"; done)
+  for f in "$FPDIR/fp_regress.json" "$FPDIR/fp_score.json"; do [ -f "$f" ] && files="$files $f"; done
   git add -f $files field_tests/STATUS.md field_tests/STATUS.json 2>/dev/null
   git commit -q -m "field tests: results and locked-rule scores $(date '+%F %T')" -- $files field_tests/STATUS.md field_tests/STATUS.json \
     && git push -q origin HEAD:refs/heads/field-results && say "pushed to branch field-results"
