@@ -50,6 +50,6 @@ normalisation, ν_min = 1, true periodicity, ℓ = √G).
 
 | Test | Status | Nieh–Yan expects |
 |---|---|---|
-| TF-P, F = 1.559 fixed (locked 2 Nov) | not run; grid read on DES Y5: G −5.49, D +0.74 | D_F ≤ 1 on all samples; **Union3 is blind** |
+| TF-P, F = 1.559 fixed (locked 2 Nov) | **ran 3 Nov: SUPPORTED on DES Y5** (D 0.00, G −7.42); Union3 DISFAVOURED (information) | D_F ≤ 1 on all samples; **Union3 is blind** |
 | Fingerprint vs plain cosine (locked 26 Oct) | not run | within ±2, or cosine better |
 | GW velocity birefringence | future (LISA, ET, CE) | none at tree level |
