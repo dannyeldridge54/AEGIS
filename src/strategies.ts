@@ -185,6 +185,190 @@ export function noveltySample(
   return bestCandidate;
 }
 
+// ─── Rank helper ─────────────────────────────────────────────────────────────
+
+/** Map finite scores to [0, 1] by rank (1 = best). Robust to scale and outliers. */
+function rankRewards(history: EvalResult[], minimize: boolean): { r: EvalResult; reward: number }[] {
+  const finite = history.filter(h => Number.isFinite(h.score));
+  const sorted = [...finite].sort((a, b) => minimize ? a.score - b.score : b.score - a.score);
+  const n = sorted.length;
+  return sorted.map((r, i) => ({ r, reward: n > 1 ? 1 - i / (n - 1) : 1 }));
+}
+
+function normalize(values: Record<string, number>, params: ParameterDef[]): number[] {
+  return params.map(p => (values[p.name] - p.min) / ((p.max - p.min) || 1));
+}
+
+// ─── Bayesian-style surrogate search ─────────────────────────────────────────
+
+/**
+ * Surrogate-model search: a kernel-regression model of the (rank-transformed)
+ * objective predicts each candidate's quality and uncertainty, and the candidate
+ * with the best optimistic estimate (UCB) is chosen. Candidates are half global,
+ * half around the current best. A light, dependency-free stand-in for a Gaussian process.
+ */
+export function surrogateSample(
+  params: ParameterDef[],
+  best: EvalResult | null,
+  history: EvalResult[],
+  minimize: boolean,
+  kappa: number = 1.5,
+  stepScale: number = 1,
+  constraints?: Constraint[]
+): Record<string, number> {
+  const data = rankRewards(history.slice(-300), minimize);
+  if (data.length < 5 || !best) return randomParams(params);
+
+  const X = data.map(d => normalize(d.r.params, params));
+  const y = data.map(d => d.reward);
+  const d = params.length;
+  const ell = 0.15 * Math.sqrt(d);
+  const inv2l2 = 1 / (2 * ell * ell);
+  const meanY = y.reduce((a, b) => a + b, 0) / y.length;
+  const stdY = Math.sqrt(y.reduce((a, b) => a + (b - meanY) ** 2, 0) / y.length) || 1;
+
+  const acquisition = (c: Record<string, number>): number => {
+    const x = normalize(c, params);
+    let wSum = 0, wy = 0;
+    for (let i = 0; i < X.length; i++) {
+      let dist2 = 0;
+      for (let j = 0; j < d; j++) dist2 += (x[j] - X[i][j]) ** 2;
+      const w = Math.exp(-dist2 * inv2l2);
+      wSum += w; wy += w * y[i];
+    }
+    const mu = (wy + meanY * 0.1) / (wSum + 0.1); // shrink toward the mean where data is thin
+    const sigma = stdY / Math.sqrt(1 + wSum);      // fewer nearby points → more uncertain
+    return mu + kappa * sigma;
+  };
+
+  // Only feasible candidates are scored, so the caller never has to refit for a retry
+  let bestCand: Record<string, number> | null = null;
+  let bestAcq = -Infinity;
+  for (let i = 0; i < 150; i++) {
+    const c = i % 2 === 0 ? randomParams(params) : mutateParams(best.params, params, 0.1 * Math.min(1, stepScale * 2));
+    if (!satisfiesConstraints(c, constraints)) continue;
+    const a = acquisition(c);
+    if (a > bestAcq) { bestAcq = a; bestCand = c; }
+  }
+  return bestCand ?? randomParams(params);
+}
+
+// ─── Region bandit ───────────────────────────────────────────────────────────
+
+/**
+ * Multi-armed bandit over regions: each dimension is split into bins, every bin is
+ * an arm whose reward is the mean rank of the points sampled in it, and a bin is
+ * picked per dimension by UCB1. Balances revisiting good regions with trying rare ones.
+ */
+export function banditSample(
+  params: ParameterDef[],
+  history: EvalResult[],
+  minimize: boolean,
+  bins: number = 8
+): Record<string, number> {
+  const data = rankRewards(history.slice(-1000), minimize);
+  const result: Record<string, number> = {};
+  const total = Math.max(data.length, 1);
+  for (const p of params) {
+    const count = new Array(bins).fill(0);
+    const sum = new Array(bins).fill(0);
+    const bestIn: Array<number | null> = new Array(bins).fill(null); // best coordinate seen per bin
+    const bestReward = new Array(bins).fill(-1);
+    const range = (p.max - p.min) || 1;
+    for (const { r, reward } of data) {
+      const v = r.params[p.name];
+      const b = Math.min(bins - 1, Math.max(0, Math.floor(((v - p.min) / range) * bins)));
+      count[b]++; sum[b] += reward;
+      if (reward > bestReward[b]) { bestReward[b] = reward; bestIn[b] = v; }
+    }
+    let pick = 0, bestUcb = -Infinity;
+    for (let b = 0; b < bins; b++) {
+      const ucb = count[b] === 0 ? Infinity : sum[b] / count[b] + Math.sqrt(2 * Math.log(total) / count[b]);
+      if (ucb > bestUcb || (ucb === bestUcb && Math.random() < 0.5)) { bestUcb = ucb; pick = b; }
+    }
+    const width = range / bins;
+    const lo = p.min + pick * width;
+    const anchor = bestIn[pick];
+    if (anchor !== null && Math.random() < 0.5) {
+      // Exploit the chosen region: sample close to its best point (refines below bin width)
+      const spread = width * 0.25 * Math.pow(Math.random(), 2);
+      result[p.name] = clamp(anchor + (Math.random() * 2 - 1) * spread, p.min, p.max);
+    } else {
+      result[p.name] = lo + Math.random() * width;
+    }
+  }
+  return result;
+}
+
+// ─── Particle swarm (stateful) ───────────────────────────────────────────────
+
+interface Particle { x: Record<string, number>; v: Record<string, number>; pbest: Record<string, number> | null; pbestScore: number }
+interface SwarmState { particles: Particle[]; next: number; pending: WeakMap<object, number> }
+
+function swarmState(strategy: Strategy): SwarmState {
+  if (!strategy.config._swarm) {
+    // Non-enumerable so checkpoints/JSON of the strategy list stay small and serializable
+    Object.defineProperty(strategy.config, '_swarm', {
+      value: { particles: [], next: 0, pending: new WeakMap() } as SwarmState,
+      enumerable: false, writable: true,
+    });
+  }
+  return strategy.config._swarm;
+}
+
+/** Particle swarm optimization: each call advances the next particle one step. */
+export function swarmSample(
+  strategy: Strategy,
+  params: ParameterDef[],
+  best: EvalResult | null
+): Record<string, number> {
+  const st = swarmState(strategy);
+  const n = strategy.config.particles || 10;
+  const i = st.next++ % n;
+  let pt = st.particles[i];
+  let x: Record<string, number>;
+  if (!pt) {
+    x = randomParams(params);
+    const v: Record<string, number> = {};
+    for (const p of params) v[p.name] = (Math.random() - 0.5) * 0.2 * (p.max - p.min);
+    pt = st.particles[i] = { x, v, pbest: null, pbestScore: NaN };
+  } else {
+    const g = best?.params ?? pt.pbest ?? pt.x;
+    const upd = swarmUpdate(pt.x, pt.v, pt.pbest ?? pt.x, g, params, strategy.config.inertia ?? 0.7);
+    // Cap velocity at 20% of the range to keep particles inside the box
+    for (const p of params) {
+      const vmax = 0.2 * (p.max - p.min);
+      upd.velocity[p.name] = clamp(upd.velocity[p.name], -vmax, vmax);
+    }
+    pt.v = upd.velocity;
+    x = upd.position;
+    pt.x = x;
+  }
+  st.pending.set(x, i);
+  return x;
+}
+
+/**
+ * Feed an evaluated point back to stateful strategies (currently the particle swarm).
+ * Safe to call for any strategy; a no-op when nothing is waiting for the result.
+ */
+export function observeResult(
+  strategy: Strategy,
+  params: Record<string, number>,
+  score: number,
+  minimize: boolean = true
+): void {
+  if (strategy.type !== 'swarm' || !strategy.config._swarm || !Number.isFinite(score)) return;
+  const st: SwarmState = strategy.config._swarm;
+  const i = st.pending.get(params);
+  if (i === undefined) return;
+  st.pending.delete(params);
+  const pt = st.particles[i];
+  if (!pt) return;
+  const better = Number.isNaN(pt.pbestScore) || (minimize ? score < pt.pbestScore : score > pt.pbestScore);
+  if (better) { pt.pbest = { ...params }; pt.pbestScore = score; }
+}
+
 // ─── Meta-Learner (picks best strategy) ──────────────────────────────────────
 
 export class MetaLearner {
@@ -206,12 +390,12 @@ export class MetaLearner {
     switch (type) {
       case 'grid': return { resolution: 20 };
       case 'random': return {};
-      case 'bayesian': return { acquisitionFn: 'ei', kappa: 2.5 };
+      case 'bayesian': return { acquisitionFn: 'ucb', kappa: 1.5 };
       case 'evolutionary': return { populationSize: 20, mutationRate: 0.1 };
       case 'gradient': return { learningRate: 0.01, momentum: 0.9 };
       case 'swarm': return { particles: 10, inertia: 0.7 };
       case 'annealing': return { initialTemp: 1.0, coolingRate: 0.995 };
-      case 'bandit': return { epsilon: 0.1 };
+      case 'bandit': return { bins: 8 };
       case 'curiosity': return { noveltyWeight: 0.8 };
       case 'exploit': return { mutationMagnitude: 0.02 };
       default: return {};
@@ -319,10 +503,14 @@ export function generateNextPoint(
         candidate = best ? mutateParams(best.params, params, (strategy.config.mutationMagnitude || 0.02) * stepScale) : randomParams(params);
         break;
       case 'swarm':
-        candidate = best ? mutateParams(best.params, params, 0.15) : randomParams(params);
+        candidate = swarmSample(strategy, params, best);
         break;
       case 'bayesian':
+        candidate = surrogateSample(params, best, history, minimize, strategy.config.kappa ?? 1.5, stepScale, constraints);
+        break;
       case 'bandit':
+        candidate = banditSample(params, history, minimize, strategy.config.bins || 8);
+        break;
       default:
         candidate = best ? mutateParams(best.params, params, 0.1) : randomParams(params);
         break;

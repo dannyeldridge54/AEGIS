@@ -11,7 +11,7 @@ import {
   Task, Goal, AgentConfig, AgentState, EvalResult,
   Discovery, AgentEvent, EventHandler, StrategyType,
 } from './interfaces';
-import { MetaLearner, generateNextPoint } from './strategies';
+import { MetaLearner, generateNextPoint, observeResult } from './strategies';
 import { getMessages, formatDuration } from './language';
 import { writeFileAtomic } from './fs-util';
 
@@ -26,7 +26,7 @@ const DEFAULT_CONFIG: Required<AgentConfig> = {
   maxEvals: 0,
   convergenceThreshold: 1e-8,
   explorationRate: 0.3,
-  strategies: ['random', 'evolutionary', 'gradient', 'annealing', 'curiosity', 'exploit'],
+  strategies: ['random', 'evolutionary', 'gradient', 'annealing', 'curiosity', 'exploit', 'swarm', 'bayesian', 'bandit'],
   verbosity: 'normal',
   persistence: { enabled: false, path: './aegis-state.json', interval: 60 },
   language: 'en',
@@ -162,7 +162,7 @@ export class AegisAgent {
       strategy,
       this.task.parameters,
       this.localBest,
-      strategy.type === 'curiosity' ? this.state.history : this.localHistory,
+      strategy.type === 'curiosity' || strategy.type === 'bandit' ? this.state.history : this.localHistory,
       this.task.constraints,
       this.gridIndex++,
       this.isMinimizing(),
@@ -180,6 +180,8 @@ export class AegisAgent {
       timestamp: Date.now(),
       strategy: strategy.type,
     };
+
+    observeResult(strategy, params, score, minimize);
 
     this.state.totalEvals++;
     this.state.history.push(result);

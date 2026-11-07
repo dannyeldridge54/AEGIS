@@ -8,7 +8,7 @@
  */
 
 import { Task, ParameterDef, EvalResult, AgentConfig, AgentState } from './interfaces';
-import { MetaLearner, generateNextPoint } from './strategies';
+import { MetaLearner, generateNextPoint, observeResult } from './strategies';
 import { getMessages, formatDuration } from './language';
 
 export interface ParallelConfig extends AgentConfig {
@@ -58,7 +58,7 @@ export async function parallelOptimize(
   const msg = getMessages(lang);
 
   const metaLearner = new MetaLearner(
-    config?.strategies || ['random', 'evolutionary', 'gradient', 'annealing', 'curiosity', 'exploit'],
+    config?.strategies || ['random', 'evolutionary', 'gradient', 'annealing', 'curiosity', 'exploit', 'swarm', 'bayesian', 'bandit'],
     config?.explorationRate || 0.3
   );
 
@@ -154,6 +154,8 @@ export async function parallelOptimize(
 
     // Process results
     for (const result of results) {
+      const strat = metaLearner.getStrategies().find(st => st.type === result.strategy);
+      if (strat) observeResult(strat, result.params, result.score, minimize);
       state.history.push(result);
 
       const previousBest = state.best?.score ?? (minimize ? Infinity : -Infinity);
