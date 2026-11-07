@@ -1,0 +1,5 @@
+{
+  "output": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results/restarts/scheduled_baseline_20261105",
+  "job_dir": "/mnt/c/Users/Danny/.copilot/session-state/15aa6a15-5008-4db2-98c3-692ad70a05d2/files/comparison_attempt_20261105",
+  "policy": "One attempt only; interruption/failure requires a new decision"
+}

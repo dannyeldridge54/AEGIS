@@ -3,20 +3,23 @@
 
 Runs the Gaia DR3 star scanner forever (aegis/star_scanner.py) and serves:
 
-    http://localhost:8765/               live dashboard: sky chart, galaxy map, flags, scan log
-    http://localhost:8765/api/status     JSON: totals, flag counts, recent patches
+    http://localhost:8765/               catalog review: saved Gaia evidence, candidate rows, definitions and provenance
+    http://localhost:8765/api/status     JSON: active scanner mode and totals; scan.stars is mode-specific
+    http://localhost:8765/api/checks     JSON: persisted ESA tile-count verification telemetry
     http://localhost:8765/api/stars      JSON: charted stars (downsampled to 20,000)
     http://localhost:8765/api/flags      CSV:  flagged candidates
+    http://localhost:8765/api/anomaly-report.json|.md  saved offline local anomaly report (no generation or downloads)
     http://localhost:8765/api/catalog    CSV:  the full star catalog for the mapper
     http://localhost:8765/api/log        plain-text log
     http://localhost:8765/live           livestream view (1920x1080, for OBS "Browser source")
-    http://localhost:8765/api/spotlight  JSON: recent confirmed stars and session records
+    http://localhost:8765/api/spotlight  JSON: recent distance-quality-pass rows and session records
     http://localhost:8765/api/tiles      JSON: galaxy-sweep tiles done / in progress (galactic l, b, stars)
     http://localhost:8765/tiles/L5/NNNNN.csv.gz   raw data of one swept tile (gzip CSV)
     http://localhost:8765/api/science    JSON: torsion-field fit results shown on the stream
     http://localhost:8765/api/guardrails JSON: automatic checks on our own math (fits, pre-registration, theory, data, geometry, authorship)
 
 Data files are written to ./cosmos_map/ and survive restarts (scanning resumes where it left off).
+Set AEGIS_RUN_ID to use a fresh, isolated ./cosmos_map/runs/<id>/ archive without changing prior runs.
 Start: python monitor_server.py   (Windows: double-click START_AEGIS_MONITOR.bat). Stop: close the window.
 """
 import json, os, re, sys, threading, time, traceback, webbrowser
@@ -26,9 +29,20 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 PORT = int(os.environ.get("AEGIS_MONITOR_PORT", "8765"))
 MODE = os.environ.get("AEGIS_MODE", "sweep")   # "sweep" (default) or "random"
-OUT = os.path.join(HERE, "cosmos_map")
+RUN_ID = os.environ.get("AEGIS_RUN_ID", "")
+if RUN_ID and not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,63}", RUN_ID):
+    raise ValueError("AEGIS_RUN_ID must be 1-64 letters, digits, dots, underscores or hyphens")
+OUT = os.path.abspath(os.environ.get(
+    "AEGIS_OUT_DIR",
+    os.path.join(HERE, "cosmos_map", "runs", RUN_ID) if RUN_ID else os.path.join(HERE, "cosmos_map"),
+))
+OPEN_BROWSER = os.environ.get("AEGIS_OPEN_BROWSER", "1") != "0"
 
-STATUS = {"state": "starting", "started": time.time(), "error": None}
+REPORT_REFRESH_S = 600
+STATUS = {
+    "state": "starting", "started": time.time(), "error": None,
+    "report": {"state": "starting", "generated_utc": None, "error": None},
+}
 LOG = []
 LOCK = threading.Lock()
 SCANNER = {}
@@ -72,6 +86,32 @@ def worker():
             STATUS["state"] = "error"; STATUS["error"] = traceback.format_exc()
         log("ERROR: " + STATUS["error"].splitlines()[-1])
 
+def generate_anomaly_report():
+    """Refresh the immutable local report without touching catalog data or making network requests."""
+    from aegis.anomaly_report import write_report
+
+    try:
+        json_path, _ = write_report(outdir=OUT)
+    except Exception as exc:
+        with LOCK:
+            STATUS["report"] = {"state": "error", "generated_utc": None, "error": repr(exc)}
+        log(f"ERROR: anomaly report refresh failed: {exc!r}")
+        return None
+    with LOCK:
+        STATUS["report"] = {
+            "state": "available",
+            "generated_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "path": os.path.relpath(json_path, OUT),
+            "error": None,
+        }
+    log(f"anomaly report refreshed: {os.path.relpath(json_path, OUT)}")
+    return json_path
+
+def report_worker():
+    while True:
+        generate_anomaly_report()
+        time.sleep(REPORT_REFRESH_S)
+
 def _read(path, default=""):
     return open(path, encoding="utf-8").read() if os.path.exists(path) else default
 
@@ -85,12 +125,28 @@ class Handler(BaseHTTPRequestHandler):
         p = self.path.split("?")[0]
         if p == "/api/status":
             with LOCK:
-                s = dict(STATUS); s["uptime_s"] = time.time() - STATUS["started"]
+                s = dict(STATUS); s["uptime_s"] = time.time() - STATUS["started"]; s["run_id"] = RUN_ID or "default"
                 s["scan"] = {k: v for k, v in SCANNER.get("status", {}).items() if k != "recent_stars"}
+                if s["state"] == "scanning" and s["scan"].get("collection_state") in ("blocked", "degraded"):
+                    s["state"] = s["scan"]["collection_state"]
             self._send(200, json.dumps(s), "application/json")
+        elif p == "/api/checks":
+            scanner = SCANNER.get("s")
+            if scanner is None or not hasattr(scanner, "checks"):
+                self._send(200, "[]", "application/json")
+            else:
+                with scanner.lock:
+                    self._send(200, json.dumps(scanner.checks), "application/json")
         elif p == "/api/stars":
             pts = SCANNER["s"].chart_points() if "s" in SCANNER else []
             self._send(200, json.dumps(pts), "application/json")
+        elif p in ("/api/anomaly-report.json", "/api/anomaly-report.md"):
+            from aegis.anomaly_report import latest_report
+            body = latest_report(OUT, markdown=p.endswith(".md"))
+            if body is None:
+                self._send(404, "No local report. Run: python -m aegis.anomaly_report", "text/plain; charset=utf-8")
+            else:
+                self._send(200, body, "text/markdown; charset=utf-8" if p.endswith(".md") else "application/json")
         elif p == "/api/flags":
             self._send(200, _read(os.path.join(OUT, "cosmos_map_flags.csv")), "text/csv; charset=utf-8")
         elif p == "/api/catalog":
@@ -170,10 +226,12 @@ if __name__ == "__main__":
     _lock = single_instance()
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
     threading.Thread(target=worker, daemon=True).start()
+    threading.Thread(target=report_worker, daemon=True).start()
     url = f"http://localhost:{PORT}/"
     log(f"AEGIS star scanner monitor at {url}   (API: {url}api/status)")
-    try:
-        webbrowser.open(url)
-    except Exception:
-        pass
+    if OPEN_BROWSER:
+        try:
+            webbrowser.open(url)
+        except Exception:
+            pass
     srv.serve_forever()

@@ -125,14 +125,16 @@ dark energy is the dilaton's effective w (their eq. 11), not the total. With eq.
 - To close it: ask the authors for the benchmark inputs or code, or rebuild from their equations with a scan over the
   missing inputs and match their Fig. 1 curves.
 
-### Mirror, third attempt (scan of the unstated inputs): **0 of 86 match**
+### Mirror, third attempt (scan of the unstated inputs): **0 matches; 86 of 120 solved**
 
 `spiral_w.py mirror` → `spiral_mirror_scan.json`. Their f = 0.082 M_Pl fixed; scanned λ ∈ {−1.25, −1.633},
 κ ∈ {1, 1.7, 3}, m ∈ {3, 5, 11, 30, 100} H₀, θᵢ/f ∈ {2.5, 3.0, 3.12, 3.14}. Target: w_eff above −1 today, below −1 at
 z = 1, and (w0_eff, wa_eff) inside their 1σ box. **No combination matches.** Typical result: a thawing curve
 (w0_eff ≈ −0.86, wa_eff ≈ −0.19). Either our implementation differs from theirs, or the effect needs inputs outside
-this range (for example a large angle energy counted as matter). **Open; the clean fix is to ask the authors for the
-benchmark inputs or code (an outward step: Danny's call).** Until then, no spiral w(z) number is used for any claim.
+this range (for example a large angle energy counted as matter). The rerun attempted all 120 points, solved 86, and
+recorded 34 integration failures with their parameters and exception text; they are no longer silently omitted.
+**Open; the clean fix is to ask the authors for the benchmark inputs or code (an outward step: Danny's call).**
+Until then, no spiral w(z) number is used for any claim.
 
 ## Scan (80 combinations: κ ∈ {0, 1, 3, 5, 7}, m ∈ {1, 3, 10, 30} H₀, θᵢ ∈ {0.05, 0.15, 0.5, 1.5})
 
@@ -155,9 +157,26 @@ It reaches DESI's w0 but not its wa. The phantom-illusion region needs either a 
 published model uses about 0.08 M_Pl or less) or the angle as a matter-like component. **Both conclusions wait on
 fixing the failed mirror.**
 
+## Existing cosmological likelihood fit (effective branch)
+
+The local AxiCLASS/Cobaya fit in `cmb-fit/axiclass/early_late_spa.py` is an effective one-field exponential plus
+coupled CDM, not the full derivation-constrained two-field Spiral Twist theory. Its potential slope κ and effective
+coupling β are free parameters. Saved four-start minima use Planck low-ℓ TT/EE, ACT DR6, ACT×Planck PR4 lensing,
+SPT-3G D1, DESI DR2 BAO, and alternate supernova samples:
+
+| Supernova sample | Spiral χ² | Δχ² vs ΛCDM | Δχ² vs w0–wa |
+|---|---:|---:|---:|
+| Pantheon+ | 2392.444 | −9.815 | +0.142 |
+| DES-Dovekie | 2619.455 | −12.373 | +0.864 |
+| Union3 | 1012.288 | −12.688 | +2.308 |
+
+These are likelihood minima, not posterior constraints. The effective model improves on ΛCDM but does not beat the
+matched two-parameter w0–wa control. The Spiral Twist potential and its release history remain hypotheses; the
+separate Nieh–Yan/QCD axion branch is not included in this fit.
+
 ## Next (in order)
 
-1. Fix the mirror: read Toomey et al.'s equations and initial conditions in full and reproduce their benchmark.
-2. Rerun the scan, including a "matter-like angle" branch with the true matter density lowered so the total early
-   matter matches the CMB.
-3. Only then lock a Spiral Twist prediction and fit it (AxiCLASS would need a two-field module: about a day of work).
+1. Obtain Toomey et al.'s exact benchmark inputs/code, then test whether the effective-w mirror can be reproduced.
+2. Implement and test the derivation-constrained two-field model, including the matter-like-angle branch with the
+   true matter density lowered so total early matter matches the CMB; compare it to the saved effective-model fit.
+3. Add posterior sampling and the required weak-lensing/data-robustness checks before locking a full-theory prediction.

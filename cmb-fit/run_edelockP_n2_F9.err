@@ -1,0 +1,4 @@
+C:\Users\Danny\.copilot\repos\AEGIS\cmb-fit\venv312\Lib\site-packages\cobaya\model.py:109: RuntimeWarning: overflow encountered in scalar add
+  self, "loglike", sum(self.loglikes) if self.loglikes is not None else None
+C:\Users\Danny\.copilot\repos\AEGIS\cmb-fit\venv312\Lib\site-packages\pybobyqa\model.py:259: RuntimeWarning: overflow encountered in multiply
+  col_scale = lambda A, scale: (A.T * scale).T  # Uses the trick that A*x scales the 0th column of A by x[0], etc.

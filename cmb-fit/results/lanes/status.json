@@ -341,5 +341,473 @@
   "end": "2026-10-29T16:16:04",
   "minutes": 14.6,
   "note": ""
+ },
+ "pact_edelock_F8": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-10-30T03:10:54",
+  "env": {
+   "CMB_START_FROM": "pact_edelock_F9"
+  },
+  "end": "2026-10-30T06:58:36",
+  "note": "result file present; stale 'running' entry closed at restart 2026-10-31"
+ },
+ "pact_edelock_F10": {
+  "status": "done",
+  "lane": 1,
+  "start": "2026-10-30T03:10:59",
+  "env": {
+   "CMB_START_FROM": "pact_edelock_F9"
+  },
+  "end": "2026-10-30T07:15:22",
+  "note": "result file present; stale 'running' entry closed at restart 2026-10-31"
+ },
+ "pact_edelock_F7": {
+  "status": "done",
+  "lane": 2,
+  "start": "2026-10-30T03:11:04",
+  "env": {
+   "CMB_START_FROM": "pact_edelock_F9"
+  },
+  "end": "2026-10-30T05:02:29",
+  "note": "result file present; stale 'running' entry closed at restart 2026-10-31"
+ },
+ "pact_edelock_F11": {
+  "status": "done",
+  "lane": 3,
+  "start": "2026-10-30T03:11:09",
+  "env": {
+   "CMB_START_FROM": "pact_edelock_F9"
+  },
+  "end": "2026-10-30T05:11:17",
+  "note": "result file present; stale 'running' entry closed at restart 2026-10-31"
+ },
+ "pact_edelock_F6": {
+  "status": "done",
+  "lane": null,
+  "start": null,
+  "end": "2026-10-30T05:54:44",
+  "env": {
+   "CMB_START_FROM": "pact_edelock_F9"
+  },
+  "note": "result file already present; not rerun (restart 2026-10-31)"
+ },
+ "pact_edelock_F12": {
+  "status": "done",
+  "lane": null,
+  "start": null,
+  "end": "2026-10-30T05:48:00",
+  "env": {
+   "CMB_START_FROM": "pact_edelock_F9"
+  },
+  "note": "result file already present; not rerun (restart 2026-10-31)"
+ },
+ "edelockP_F7": {
+  "status": "done",
+  "lane": null,
+  "start": null,
+  "end": "2026-10-30T06:24:23",
+  "env": {
+   "CMB_START_FROM": "edelockP_F9"
+  },
+  "note": "result file already present; not rerun (restart 2026-10-31)"
+ },
+ "edelockP_F11": {
+  "status": "done",
+  "lane": null,
+  "start": null,
+  "end": "2026-10-30T06:37:04",
+  "env": {
+   "CMB_START_FROM": "edelockP_F9"
+  },
+  "note": "result file already present; not rerun (restart 2026-10-31)"
+ },
+ "edelockP_F6": {
+  "status": "done",
+  "lane": null,
+  "start": null,
+  "end": "2026-10-30T06:52:35",
+  "env": {
+   "CMB_START_FROM": "edelockP_F9"
+  },
+  "note": "result file already present; not rerun (restart 2026-10-31)"
+ },
+ "edelockP_F8": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-10-31T10:10:57",
+  "env": {
+   "CMB_START_FROM": "edelockP_F9"
+  },
+  "end": "2026-10-31T10:41:40",
+  "minutes": 30.7,
+  "note": ""
+ },
+ "edelockP_F10": {
+  "status": "done",
+  "lane": 1,
+  "start": "2026-10-31T10:11:02",
+  "env": {
+   "CMB_START_FROM": "edelockP_F9"
+  },
+  "end": "2026-10-31T10:49:35",
+  "minutes": 38.6,
+  "note": ""
+ },
+ "edelockP_F12": {
+  "status": "done",
+  "lane": 2,
+  "start": "2026-10-31T10:11:07",
+  "env": {
+   "CMB_START_FROM": "edelockP_F9"
+  },
+  "end": "2026-10-31T11:02:21",
+  "minutes": 51.2,
+  "note": ""
+ },
+ "pact_edelock_mcmc1": {
+  "status": "stopped",
+  "lane": 0,
+  "start": "2026-10-31T12:49:03",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_edelock_mcmc2": {
+  "status": "stopped",
+  "lane": 1,
+  "start": "2026-10-31T12:49:08",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_edelock_mcmc3": {
+  "status": "stopped",
+  "lane": 2,
+  "start": "2026-10-31T12:49:13",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_edelock_mcmc4": {
+  "status": "stopped",
+  "lane": 3,
+  "start": "2026-10-31T12:49:18",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_edelock_F9_mcmc1": {
+  "status": "stopped",
+  "lane": 4,
+  "start": "2026-10-31T12:49:23",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_edelock_F9_mcmc2": {
+  "status": "stopped",
+  "lane": 5,
+  "start": "2026-10-31T12:49:28",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_edelock_F9_mcmc3": {
+  "status": "stopped",
+  "lane": 6,
+  "start": "2026-10-31T12:49:33",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_edelock_F9_mcmc4": {
+  "status": "stopped",
+  "lane": 7,
+  "start": "2026-10-31T12:49:38",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_lcdm_mcmc1": {
+  "status": "stopped",
+  "lane": 8,
+  "start": "2026-10-31T12:49:43",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_lcdm_mcmc2": {
+  "status": "stopped",
+  "lane": 9,
+  "start": "2026-10-31T12:49:48",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_lcdm_mcmc3": {
+  "status": "stopped",
+  "lane": 10,
+  "start": "2026-10-31T12:49:53",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "pact_lcdm_mcmc4": {
+  "status": "stopped",
+  "lane": 11,
+  "start": "2026-10-31T12:49:58",
+  "env": {},
+  "end": "2026-10-31T20:00",
+  "note": "stopped at Danny request 31 Oct to free cores for combined-CMB and w0wa tests; chain files kept, resumable; no results read"
+ },
+ "spt_lcdm": {
+  "status": "done",
+  "lane": 12,
+  "start": "2026-10-31T12:50:03",
+  "env": {},
+  "end": "2026-10-31T14:04:29",
+  "minutes": 74.4,
+  "note": ""
+ },
+ "spt_edelock_F9": {
+  "status": "done",
+  "lane": 13,
+  "start": "2026-10-31T12:50:08",
+  "env": {},
+  "end": "2026-10-31T14:34:50",
+  "minutes": 104.7,
+  "note": ""
+ },
+ "spt_edelock_th2.41421_F9": {
+  "status": "done",
+  "lane": 14,
+  "start": "2026-10-31T12:50:13",
+  "env": {},
+  "end": "2026-10-31T16:02:09",
+  "minutes": 191.9,
+  "note": ""
+ },
+ "spt_edelock": {
+  "status": "done",
+  "lane": 12,
+  "start": "2026-10-31T14:04:29",
+  "env": {},
+  "end": "2026-10-31T17:04:52",
+  "minutes": 180.4,
+  "note": ""
+ },
+ "spt_edelock_th2.78_F9": {
+  "status": "done",
+  "lane": 13,
+  "start": "2026-10-31T14:34:50",
+  "env": {},
+  "end": "2026-10-31T17:06:44",
+  "minutes": 151.9,
+  "note": ""
+ },
+ "spt_edelock_F7": {
+  "status": "done",
+  "lane": 14,
+  "start": "2026-10-31T16:51:09",
+  "env": {},
+  "end": "2026-10-31T18:28:27",
+  "minutes": 97.3,
+  "note": ""
+ },
+ "spa_lcdm": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-10-31T20:10:37",
+  "env": {},
+  "end": "2026-10-31T20:25:52",
+  "minutes": 15.2,
+  "note": ""
+ },
+ "spa_edelock": {
+  "status": "done",
+  "lane": 1,
+  "start": "2026-10-31T20:10:42",
+  "env": {},
+  "end": "2026-10-31T20:43:42",
+  "minutes": 33.0,
+  "note": ""
+ },
+ "spa_w0wa": {
+  "status": "done",
+  "lane": 2,
+  "start": "2026-10-31T20:10:47",
+  "env": {},
+  "end": "2026-10-31T20:29:54",
+  "minutes": 19.1,
+  "note": ""
+ },
+ "spa_lcdm_deep": {
+  "status": "stopped",
+  "lane": 0,
+  "start": "2026-10-31T20:43:13",
+  "env": {},
+  "end": "2026-10-31T20:56",
+  "note": "stopped at Danny request to focus on plan step 3b; no results read; resumable"
+ },
+ "spa_edelock_deep": {
+  "status": "stopped",
+  "lane": 2,
+  "start": "2026-10-31T20:43:14",
+  "env": {},
+  "end": "2026-10-31T20:56",
+  "note": "stopped at Danny request to focus on plan step 3b; no results read; resumable"
+ },
+ "spt_lcdm_deep": {
+  "status": "stopped",
+  "lane": 1,
+  "start": "2026-10-31T20:43:43",
+  "env": {},
+  "end": "2026-10-31T20:56",
+  "note": "stopped at Danny request to focus on plan step 3b; no results read; resumable"
+ },
+ "spa_edelock_n2": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-10-31T21:05:10",
+  "env": {},
+  "end": "2026-10-31T21:13:01",
+  "minutes": 7.8,
+  "note": ""
+ },
+ "spa_edelock_fde0.01": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-10-31T21:13:41",
+  "env": {},
+  "end": "2026-10-31T21:32:26",
+  "minutes": 18.7,
+  "note": ""
+ },
+ "spa_edelock_fde0.02": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-10-31T21:32:26",
+  "env": {},
+  "end": "2026-10-31T21:51:53",
+  "minutes": 19.4,
+  "note": ""
+ },
+ "spa_edelock_fde0.04": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-10-31T21:51:53",
+  "env": {},
+  "end": "2026-10-31T22:19:07",
+  "minutes": 27.2,
+  "note": ""
+ },
+ "spa_edelock_fde0.06": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-10-31T22:19:07",
+  "env": {},
+  "end": "2026-10-31T23:12:18",
+  "minutes": 53.2,
+  "note": ""
+ },
+ "spa_edelock_fde0.08": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-10-31T23:12:18",
+  "env": {},
+  "end": "2026-11-01T00:32:18",
+  "minutes": 80.0,
+  "note": ""
+ },
+ "spa_edelock_fde0.10": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-11-01T00:32:18",
+  "env": {},
+  "end": "2026-11-01T01:54:08",
+  "minutes": 81.8,
+  "note": ""
+ },
+ "spa_edelock_fde0.12": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-11-01T01:54:08",
+  "env": {},
+  "end": "2026-11-01T02:42:46",
+  "minutes": 108.6,
+  "note": ""
+ },
+ "spa_edelock_th0.5": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-11-01T02:42:47",
+  "env": {},
+  "end": "2026-11-01T03:25:14",
+  "minutes": 42.5,
+  "note": ""
+ },
+ "spa_edelock_th1.0": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-11-01T03:25:14",
+  "env": {},
+  "end": "2026-11-01T03:51:21",
+  "minutes": 26.1,
+  "note": ""
+ },
+ "spa_edelock_th1.5": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-11-01T03:51:21",
+  "env": {},
+  "end": "2026-11-01T04:14:23",
+  "minutes": 23.0,
+  "note": ""
+ },
+ "spa_edelock_th2.0": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-11-01T04:14:24",
+  "env": {},
+  "end": "2026-11-01T04:40:54",
+  "minutes": 26.5,
+  "note": ""
+ },
+ "spa_edelock_th2.4": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-11-01T04:40:54",
+  "env": {},
+  "end": "2026-11-01T05:04:16",
+  "minutes": 23.4,
+  "note": ""
+ },
+ "spa_edelock_th2.7": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-11-01T05:04:16",
+  "env": {},
+  "end": "2026-11-01T05:18:20",
+  "minutes": 14.1,
+  "note": ""
+ },
+ "spa_edelock_th2.9": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-11-01T05:18:20",
+  "env": {},
+  "end": "2026-11-01T05:32:01",
+  "minutes": 13.7,
+  "note": ""
+ },
+ "spa_edelock_th3.05": {
+  "status": "done",
+  "lane": 0,
+  "start": "2026-11-01T05:32:01",
+  "env": {},
+  "end": "2026-11-01T05:56:47",
+  "minutes": 24.8,
+  "note": ""
  }
 }

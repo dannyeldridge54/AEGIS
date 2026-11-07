@@ -1,0 +1,4 @@
+{
+  "status": "Interrupted, not a valid model comparison",
+  "reason": "Added external hard-domain likelihood consumed w0_fld/wa_fld without explicit theory routing; fluid parameters absent from solver.pars. No w0wa fit started. Restart required after explicit routing and sensitivity tests."
+}

@@ -1,0 +1,42 @@
+{
+  "model": "homogeneous BI axion with low-energy QCD anomaly",
+  "potential": "V(theta) = chi_QCD * (1 - cos(theta)); theta = a / F_phi",
+  "quantum_input": "QCD topological susceptibility is an externally supplied low-energy effective parameter; no instanton or quantum-loop calculation is performed.",
+  "target_fraction_at_equality": 0.05,
+  "qcd_scales": {
+    "qcd_susceptibility_quarter_MeV": 75.6,
+    "F_phi_reduced_planck": 0.8213552361396304,
+    "mass_from_susceptibility_eV": 2.85768e-12,
+    "oscillation_temperature_MeV": 46.219924107143534,
+    "a_equality_over_a_oscillation": 80937504.51623194
+  },
+  "evolution": {
+    "theta_initial_rad": 3.1898947846825427e-05,
+    "integration_steps": 1154,
+    "wkb_started": true,
+    "wkb_threshold_m_over_H": 300.0,
+    "wkb_switch_log_a": 2.3025851240448265,
+    "equality_log_a": 18.209187865657135,
+    "equality_method": "WKB matter-like redshifting after m/H reached the configured threshold",
+    "scalar_density_normalized_at_equality": 2.453023756762933e-33,
+    "background_density_normalized_at_equality": 4.660481091768054e-32,
+    "scalar_fraction_at_equality": 0.05000269117138242,
+    "H_ratio_if_added_to_LCDM": 1.025979805290126,
+    "H_ratio_if_replaces_equal_CDM_density": 1.0
+  },
+  "lcdm_comparison": {
+    "scope": "homogeneous background at matter-radiation equality; not a data likelihood",
+    "extra_component": "If the scalar density is added on top of the reference matter and radiation, the Hubble ratio is reported in evolution.",
+    "matched_cold_dark_matter": "After rapid oscillations, this field redshifts as matter. If its density replaces the same amount of CDM, the background Hubble history is degenerate with flat LCDM after oscillation.",
+    "delta_chi2": null,
+    "reason_no_likelihood": "The repository's CAMB/AxiCLASS likelihood runs do not implement this fixed QCD-mass scalar's perturbation evolution; no fit or model-preference claim is made."
+  },
+  "assumptions_and_limits": [
+    "The dilaton is frozen; coupled dilaton-axion evolution is not solved.",
+    "The QCD potential is the leading zero-temperature cosine approximation.",
+    "The field starts with zero velocity at the approximate onset H=m/3.",
+    "The post-onset WKB continuation assumes small-amplitude oscillations behave as matter.",
+    "No scalar perturbations, thermal QCD susceptibility, nuisance parameters, or CMB/BAO/SN likelihoods are included.",
+    "This n=1 QCD axion is not the separately fitted n=3 equality-locked Twist EDE ansatz."
+  ]
+}

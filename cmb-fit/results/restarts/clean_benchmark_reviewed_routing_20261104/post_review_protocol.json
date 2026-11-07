@@ -1,0 +1,12 @@
+{
+  "original_pid": 224125,
+  "original_start_ticks": "34153608",
+  "reviewer_sha256": "d81cdba7ee3774f8251ecf8bce80b620c29d5c4b48b4ecba658f6ecb4c3d693e",
+  "review_driver_sha256": "c0912c741847027024318580e58edd530deeaefe8eaa876519c3b5965fb33dc5",
+  "review_runner_sha256": "adf6bc250ebf56a4f6cc3239cec847c836bb4c0fc86af0f27ca3679af4998b2b",
+  "policy": "Wait for original run; rehash solver/data, strictly reproduce minima, check all restart evidence and dense accuracy. At most one independent dense rerun if needed.",
+  "waiting_limit_days": 7,
+  "stops_original": false,
+  "refinement_directory": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results/restarts/clean_benchmark_reviewed_routing_20261104_dense_review",
+  "scope": "No Gaia changes, no theory alteration, no held-out evidence claim."
+}

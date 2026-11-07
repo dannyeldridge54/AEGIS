@@ -27,7 +27,23 @@ H0DN_2026 = (73.50, 0.81)                  # Local Distance Network, Casertano e
 def load_pantheon_binned(path):
     """Pantheon+ 1701 SNe binned to 40 redshift bins with the full STAT+SYS covariance
     (produced by the repo's preprocess/bin-pantheon scripts)."""
-    d = json.load(open(path))
-    z = np.array(d["binZ"]); mu = np.array(d["binMu"])
-    cov = np.array(d["covBin"]).reshape(d["nBins"], d["nBins"])
+    with open(path, encoding="utf-8") as stream:
+        d = json.load(stream)
+    count = d["nBins"]
+    if type(count) is not int or count <= 0:
+        raise ValueError("Pantheon bin count must be a positive integer")
+    z = np.asarray(d["binZ"], dtype=float)
+    mu = np.asarray(d["binMu"], dtype=float)
+    cov = np.asarray(d["covBin"], dtype=float)
+    if (z.shape != (count,) or mu.shape != (count,)
+            or not np.isfinite(z).all() or not np.isfinite(mu).all()
+            or np.any(z <= 0) or np.any(np.diff(z) <= 0)):
+        raise ValueError("Pantheon bins require matching finite vectors and positive ordered redshifts")
+    if cov.shape not in ((count * count,), (count, count)):
+        raise ValueError("Pantheon covariance dimensions do not match bin count")
+    cov = cov.reshape(count, count)
+    if (not np.isfinite(cov).all()
+            or not np.allclose(cov, cov.T, rtol=1e-12, atol=0)):
+        raise ValueError("Pantheon covariance must be finite and symmetric")
+    np.linalg.cholesky(cov)
     return z, mu, cov

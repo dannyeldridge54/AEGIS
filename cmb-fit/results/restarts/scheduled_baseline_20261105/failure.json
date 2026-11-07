@@ -1,0 +1,5 @@
+{
+  "status": "blocked",
+  "error": "Command '['/home/syndyr/micromamba/envs/aegis/bin/python', '/mnt/c/Users/Danny/.copilot/session-state/140cec95-10b4-4eb8-af24-c664085ac6b3/files/clean_reviewed_routing_20261104_scripts/clean_cosmology_benchmark.py']' died with <Signals.SIGTERM: 15>.",
+  "output": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/results/restarts/scheduled_baseline_20261105"
+}

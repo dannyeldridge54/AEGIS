@@ -11,13 +11,17 @@ sweep_state.json (finished tiles + totals), sweep_view.json (chart sample, spotl
 Every finished tile is written atomically, so stopping AEGIS at any moment loses at most the tiles in progress.
 """
 import csv, gzip, io, json, math, os, random, threading, time
+import urllib.error
+from pathlib import Path
 
+from aegis.anomaly_report import _sweep_summary
+from aegis.tap_async import AsyncJobBlockedError, TerminalJobError, query_async
 from aegis.healpix_lite import n_tiles, tile_center_radec, tile_source_id_range
-from aegis.star_scanner import (STAR_FIELDS, SPOT_KEYS, assess, lower_priority, tap_query, to_galactic)
+from aegis.star_scanner import (GAIA_SELECT, STAR_FIELDS, SPOT_KEYS, assess, lower_priority, tap_query, to_galactic)
 
 LEVEL = 5
 WORKERS = 2                 # tiles in flight at once (polite to the ESA archive)
-PAGE_ROWS = (50000, 20000, 8000)   # rows per request; smaller pages are tried after a timeout
+PAGE_ROWS = (8000, 4000, 2000)   # smaller pages after sync failures or definitively terminal async jobs
 SAMPLE_MAX = 20000
 RECENT_STARS = 40
 VIEW_SAVE_S = 60
@@ -25,8 +29,7 @@ SHELLS_PC = (0, 500, 1000, 2000, 4000, 1e9)   # onion layers: distance shells fo
 MIN_SKY_FRAC = 0.25                          # fit a shell direction once this much of the sky is swept
 SPOT_CHECK_S = 600                           # every 10 min: re-count a random finished tile at ESA and compare
 
-COLS = ("g.source_id, g.ra, g.dec, g.parallax, g.parallax_error, g.pmra, g.pmdec, g.radial_velocity, "
-        "g.phot_g_mean_mag, g.bp_rp, g.ruwe, d.r_med_geo, d.r_lo_geo, d.r_hi_geo")
+COLS = f"{GAIA_SELECT}, d.r_med_geo, d.r_lo_geo, d.r_hi_geo"
 
 
 def adql_range(lo, hi, after, top):
@@ -67,25 +70,29 @@ class SkySweep:
         self.order = sorted(range(self.ntiles), key=lambda t: _angdist(self.centres[t][0], self.centres[t][1], 0.0, 0.0))
         self.done = {}            # tile -> {"n", "conf", "flags": {...}}
         self.active = {}          # tile -> {"t0", "rows"}
+        self.blocked = {}         # tile -> explicit failure; excluded until an operator restarts
         self.recent_tiles = []
         self.sample, self.n_sampled, self.recent, self.records = [], 0, [], {}
         self.t_start, self.stars_at_start = time.time(), 0
         self.checks = []          # independent spot-checks: our stored count vs a fresh COUNT at ESA
+        self.async_ranges = os.environ.get("AEGIS_TAP_ASYNC", "0") == "1"
         self._load()
         self._summary()
 
     # ---------- persistence ----------
     def _load(self):
-        try:
-            st = json.load(open(self.state_path, encoding="utf-8"))
+        if os.path.exists(self.state_path):
+            with open(self.state_path, encoding="utf-8") as stream:
+                st = json.load(stream)
+            if not isinstance(st, dict) or type(st.get("level")) is not int or st["level"] != self.level:
+                raise ValueError("Saved sweep level does not match the requested HEALPix level")
+            _sweep_summary(json.dumps(st), Path(self.outdir))
             self.done = {int(k): v for k, v in st.get("done", {}).items()}
             self.recent_tiles = st.get("recent_tiles", [])
             self.checks = st.get("checks", [])
-        except (OSError, ValueError):
-            pass
         for t in list(self.done):                       # a tile only counts if its file exists
             if not os.path.exists(self._tile_path(t)):
-                del self.done[t]
+                raise ValueError(f"Completed tile {t} is missing; refusing to silently rescan or replace evidence")
         try:
             v = json.load(open(self.view_path, encoding="utf-8"))
             self.sample, self.n_sampled = v.get("sample", []), v.get("n_sampled", 0)
@@ -101,7 +108,7 @@ class SkySweep:
 
     def _save_state(self):
         tmp = self.state_path + ".tmp"
-        json.dump({"level": self.level, "done": self.done, "recent_tiles": self.recent_tiles[-30:], "checks": self.checks[-200:]}, open(tmp, "w", encoding="utf-8"))
+        json.dump({"level": self.level, "done": self.done, "recent_tiles": self.recent_tiles[-30:], "checks": self.checks}, open(tmp, "w", encoding="utf-8"))
         os.replace(tmp, self.state_path)
 
     def _save_view(self):
@@ -112,11 +119,14 @@ class SkySweep:
         os.replace(tmp, self.view_path)
 
     # ---------- per-star bookkeeping ----------
-    _CHART_KEYS = ("l", "b", "x_pc", "y_pc", "z_pc", "dist_pc", "g_mag", "bp_rp", "confirmed", "flags")
+    _CHART_KEYS = ("l", "b", "x_pc", "y_pc", "z_pc", "dist_pc", "g_mag", "bp_rp",
+                   "parallax_error", "pmra_error", "pmdec_error", "pmra_pmdec_corr", "r_lo_geo", "r_hi_geo",
+                   "astrometric_quality_pass", "confirmed", "flags")
 
     def _note(self, r):
         self.n_sampled += 1
-        rec = {k: r[k] for k in self._CHART_KEYS}
+        rec = {k: r[k] for k in self._CHART_KEYS if k != "astrometric_quality_pass"}
+        rec["astrometric_quality_pass"] = r.get("astrometric_quality_pass", r.get("confirmed"))
         if len(self.sample) < SAMPLE_MAX:
             self.sample.append(rec)
         else:
@@ -140,10 +150,17 @@ class SkySweep:
     def _next_tile(self):
         with self.lock:
             for t in self.order:
-                if t not in self.done and t not in self.active:
+                if t not in self.done and t not in self.active and t not in self.blocked:
                     self.active[t] = {"t0": time.time(), "rows": 0}
+                    self.status["active"] = self._active_status()
                     return t
         return None
+
+    def _active_status(self):
+        return [
+            {"tile": t, "l": self.centres[t][0], "b": self.centres[t][1], "rows": active["rows"]}
+            for t, active in self.active.items()
+        ]
 
     def sweep_tile(self, t):
         """Page through one tile and stream it to disk; memory use stays at one page however dense the tile."""
@@ -157,13 +174,26 @@ class SkySweep:
             while True:
                 top = PAGE_ROWS[min(page_i, len(PAGE_ROWS) - 1)]
                 try:
-                    rows = self.query(adql_range(lo, hi, after, top), timeout=180)
+                    rows = self._range_query(adql_range(lo, hi, after, top))
                     fails = 0
+                except TerminalJobError as e:
+                    if page_i >= len(PAGE_ROWS) - 1:
+                        raise
+                    page_i += 1
+                    self.log(f"tile {t}: terminal ESA job preserved ({e!r}); "
+                             f"trying the same unfinished source range with {PAGE_ROWS[page_i]:,}-row pages")
+                    time.sleep(10)
+                    continue
+                except AsyncJobBlockedError:
+                    raise
                 except Exception as e:
-                    fails += 1; page_i += 1
+                    fails += 1
+                    if not self.async_ranges:
+                        page_i += 1
                     if fails > 8:
                         raise
-                    self.log(f"tile {t}: request failed ({e!r}); retrying with {PAGE_ROWS[min(page_i, len(PAGE_ROWS)-1)]:,}-row pages")
+                    self.log(f"tile {t}: request failed ({e!r}); retrying the same async job" if self.async_ranges
+                             else f"tile {t}: request failed ({e!r}); retrying with {PAGE_ROWS[min(page_i, len(PAGE_ROWS)-1)]:,}-row pages")
                     time.sleep(min(120, 5 * 2 ** fails))
                     continue
                 recs = [r for r in (assess(x) for x in rows) if r is not None]
@@ -181,22 +211,40 @@ class SkySweep:
                     for r in recs:
                         self._note(r)
                     self.active[t]["rows"] = n
+                    self.status["active"] = self._active_status()
                 if len(rows) < top:
                     break
                 after = int(rows[-1]["source_id"])
         os.replace(tmp, self._tile_path(t))
         l, b = self.centres[t]
         with self.lock:
-            self.done[t] = {"n": n, "conf": conf, "flags": flags, "shells": shells}
+            self.done[t] = {
+                "n": n, "conf": conf, "flags": flags, "shells": shells,
+                "columns": list(STAR_FIELDS),
+                "query_template": adql_range(lo, hi, lo - 1, PAGE_ROWS[0]),
+            }
             self.active.pop(t, None)
             info = dict(t=time.time(), tile=t, l=l, b=b, stars=n, new=n, confirmed=conf,
                         flagged=sum(flags.values()), seconds=round(time.time() - t0, 1), distances="gaia+bailer-jones")
             self.recent_tiles.append(info); self.recent_tiles = self.recent_tiles[-30:]
             self._save_state()
             self._summary()
-        self.log(f"tile {t} done (l {l:.1f}, b {b:+.1f}): {n:,} stars, {conf:,} confirmed, "
+        self.log(f"tile {t} done (l {l:.1f}, b {b:+.1f}): {n:,} stars, {conf:,} distance-quality passes, "
                  f"{sum(flags.values()):,} flagged, {time.time() - t0:.1f} s · {len(self.done):,}/{self.ntiles:,} tiles")
         return info
+
+    def _range_query(self, query):
+        if self.query is not tap_query:
+            return self.query(query, timeout=180)
+        if not self.async_ranges:
+            try:
+                return self.query(query, timeout=180)
+            except (TimeoutError, urllib.error.HTTPError) as error:
+                if isinstance(error, urllib.error.HTTPError) and error.code not in (502, 503, 504):
+                    raise
+                self.log(f"ESA sync range query failed ({error!r}); switching range queries to durable async jobs")
+                self.async_ranges = True
+        return query_async(query, Path(self.outdir) / "tap_jobs", log=self.log)
 
     def _summary(self):
         n = sum(d["n"] for d in self.done.values()); c = sum(d["conf"] for d in self.done.values())
@@ -210,13 +258,19 @@ class SkySweep:
         left = self.ntiles - len(self.done)
         self.status.update(dict(
             mode="sweep", level=self.level, tiles_total=self.ntiles, tiles_done=len(self.done),
-            patches=len(self.done), stars=n, confirmed=c, confirmed_frac=(c / n) if n else 0.0, flags=flags,
+            patches=len(self.done), stars=n,
+            star_count_basis=("Rows satisfying parallax_over_error > 5 in completed, non-overlapping "
+                              "Gaia DR3 source_id HEALPix ranges; active tile rows are excluded."),
+            confirmed=c, confirmed_frac=(c / n) if n else 0.0, flags=flags,
             stars_per_min=rate, eta_s=(left / tiles_rate) if tiles_rate > 1e-6 else None,
             last_patches=[dict(p, ra=0.0, dec=0.0) for p in self.recent_tiles[-15:][::-1]],
-            active=[dict(tile=t, l=self.centres[t][0], b=self.centres[t][1], rows=a["rows"]) for t, a in self.active.items()],
+            active=self._active_status(),
             awaiting_recheck=0, workers=WORKERS,
             checks_total=len(self.checks), checks_passed=sum(1 for c in self.checks if c["match"]),
             last_checks=self.checks[-5:][::-1],
+            collection_state=("blocked" if self.blocked and not self.active else
+                              "degraded" if self.blocked else "scanning"),
+            blocked_tiles=[{"tile": t, "error": error} for t, error in self.blocked.items()],
             query_template=adql_range(0, 0, -1, PAGE_ROWS[0]).replace("BETWEEN 0 AND 0", "BETWEEN <tile start> AND <tile end>")))
 
     # ---------- API for the monitor ----------
@@ -232,6 +286,11 @@ class SkySweep:
         with self.lock:
             return {"level": self.level, "total": self.ntiles,
                     "done": [[self.centres[t][0], self.centres[t][1], d["n"]] for t, d in self.done.items()],
+                    "done_detail": [
+                        {"tile": t, "l": self.centres[t][0], "b": self.centres[t][1],
+                         "stars": d["n"], "flags": dict(d["flags"])}
+                        for t, d in self.done.items()
+                    ],
                     "active": [[self.centres[t][0], self.centres[t][1], a["rows"]] for t, a in self.active.items()]}
 
     def shell_directions(self):
@@ -277,12 +336,25 @@ class SkySweep:
         while not stop():
             t = self._next_tile()
             if t is None:
-                self.log("sweep complete: every tile catalogued"); return
+                if self.blocked:
+                    self.log(f"sweep workers idle: {len(self.blocked)} blocked tiles require operator attention; "
+                             "catalogue is incomplete")
+                else:
+                    self.log("sweep complete: every tile catalogued")
+                return
             try:
                 self.sweep_tile(t)
+            except AsyncJobBlockedError as e:
+                with self.lock:
+                    self.active.pop(t, None)
+                    self.blocked[t] = repr(e)
+                    self._summary()
+                self.log(f"tile {t} BLOCKED ({e!r}); preserved jobs, no automatic resubmission; "
+                         "continuing other tiles")
             except Exception as e:
                 with self.lock:
                     self.active.pop(t, None)
+                    self.status["active"] = self._active_status()
                 self.log(f"tile {t} failed ({e!r}); will retry later"); time.sleep(30)
 
     def spot_check(self):
@@ -296,7 +368,7 @@ class SkySweep:
         theirs = int(rows[0]["n"])
         c = {"t": time.time(), "tile": t, "ours": ours, "esa": theirs, "match": ours == theirs}
         with self.lock:
-            self.checks.append(c); self.checks = self.checks[-200:]
+            self.checks.append(c)
             self._save_state(); self._summary()
         self.log(f"spot-check tile {t}: AEGIS stored {ours:,} stars, ESA counts {theirs:,} -> {'MATCH' if c['match'] else 'MISMATCH'}")
         return c

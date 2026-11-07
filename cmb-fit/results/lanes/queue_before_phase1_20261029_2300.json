@@ -1,0 +1,179 @@
+[
+ {
+  "name": "pact_lcdm"
+ },
+ {
+  "name": "lcdmP"
+ },
+ {
+  "name": "zc3.65",
+  "env": {
+   "CMB_START_FROM": "zc3.55",
+   "CMB_BEST_OF": "8"
+  }
+ },
+ {
+  "name": "zc3.95",
+  "env": {
+   "CMB_START_FROM": "zc3.85"
+  }
+ },
+ {
+  "name": "zc4.05",
+  "env": {
+   "CMB_START_FROM": "zc3.85"
+  }
+ },
+ {
+  "name": "zc3.50",
+  "env": {
+   "CMB_START_FROM": "zc3.55"
+  }
+ },
+ {
+  "name": "zc3.60",
+  "env": {
+   "CMB_START_FROM": "zc3.55"
+  }
+ },
+ {
+  "name": "lcdmP_dovekie"
+ },
+ {
+  "name": "edelockP_dovekie",
+  "env": {
+   "CMB_START_FROM": "edelockP"
+  }
+ },
+ {
+  "name": "edeP_dovekie",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "zc4.15",
+  "env": {
+   "CMB_START_FROM": "zc3.85"
+  }
+ },
+ {
+  "name": "zc4.25",
+  "env": {
+   "CMB_START_FROM": "zc3.85"
+  }
+ },
+ {
+  "name": "lcdmP_desy5"
+ },
+ {
+  "name": "edelockP_desy5",
+  "env": {
+   "CMB_START_FROM": "edelockP"
+  }
+ },
+ {
+  "name": "edeP_desy5",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "lcdmP_union3"
+ },
+ {
+  "name": "edelockP_union3",
+  "env": {
+   "CMB_START_FROM": "edelockP"
+  }
+ },
+ {
+  "name": "edeP_union3",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "lcdmP_shoes"
+ },
+ {
+  "name": "edelockP_shoes",
+  "env": {
+   "CMB_START_FROM": "edelockP"
+  }
+ },
+ {
+  "name": "edeP_shoes",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "th2.00",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "th1.50",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "th2.40",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "th3.10",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "th2.60",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "th2.95",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "lcdmP_s8A",
+  "env": {
+   "CMB_START_FROM": "lcdmP"
+  }
+ },
+ {
+  "name": "edelockP_s8A",
+  "env": {
+   "CMB_START_FROM": "edelockP"
+  }
+ },
+ {
+  "name": "edeP_s8A",
+  "env": {
+   "CMB_START_FROM": "edeP"
+  }
+ },
+ {
+  "name": "pact_edelock_F9",
+  "env": {
+   "CMB_START_FROM": "pact_edelock",
+   "CMB_BEST_OF": "6"
+  }
+ },
+ {
+  "name": "edelockP_F9",
+  "env": {
+   "CMB_START_FROM": "edelockP",
+   "CMB_BEST_OF": "6"
+  }
+ }
+]

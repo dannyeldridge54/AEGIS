@@ -1,0 +1,27 @@
+{
+ "verdict": "NO VERDICT (mirror)",
+ "lqg_values": [
+  0.2375,
+  0.274
+ ],
+ "rows": {
+  "ax_spa_latetwist_gF0.4m-0.3_nlfix": {
+   "phi_today": 4.722953254398563,
+   "gamma_today": 0.2593175933407692,
+   "within10": [
+    true,
+    true
+   ],
+   "mirror": false
+  },
+  "ax_spa_latetwist_gF0m0.102_desy5_nlfix": {
+   "phi_today": 1.8078534916127018,
+   "gamma_today": 0.6774580335594845,
+   "within10": [
+    false,
+    false
+   ],
+   "mirror": true
+  }
+ }
+}

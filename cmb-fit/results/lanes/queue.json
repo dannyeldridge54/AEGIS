@@ -1,179 +1,222 @@
 [
  {
-  "name": "pact_lcdm"
- },
- {
-  "name": "lcdmP"
- },
- {
-  "name": "zc3.65",
+  "name": "pact_edelock_F8",
   "env": {
-   "CMB_START_FROM": "zc3.55",
-   "CMB_BEST_OF": "8"
+   "CMB_START_FROM": "pact_edelock_F9"
   }
  },
  {
-  "name": "zc3.95",
+  "name": "pact_edelock_F10",
   "env": {
-   "CMB_START_FROM": "zc3.85"
+   "CMB_START_FROM": "pact_edelock_F9"
   }
  },
  {
-  "name": "zc4.05",
+  "name": "pact_edelock_F7",
   "env": {
-   "CMB_START_FROM": "zc3.85"
+   "CMB_START_FROM": "pact_edelock_F9"
   }
  },
  {
-  "name": "zc3.50",
+  "name": "pact_edelock_F11",
   "env": {
-   "CMB_START_FROM": "zc3.55"
+   "CMB_START_FROM": "pact_edelock_F9"
   }
  },
  {
-  "name": "zc3.60",
+  "name": "pact_edelock_F6",
   "env": {
-   "CMB_START_FROM": "zc3.55"
+   "CMB_START_FROM": "pact_edelock_F9"
   }
  },
  {
-  "name": "lcdmP_dovekie"
- },
- {
-  "name": "edelockP_dovekie",
+  "name": "pact_edelock_F12",
   "env": {
-   "CMB_START_FROM": "edelockP"
+   "CMB_START_FROM": "pact_edelock_F9"
   }
  },
  {
-  "name": "edeP_dovekie",
+  "name": "edelockP_F8",
   "env": {
-   "CMB_START_FROM": "edeP"
+   "CMB_START_FROM": "edelockP_F9"
   }
  },
  {
-  "name": "zc4.15",
+  "name": "edelockP_F10",
   "env": {
-   "CMB_START_FROM": "zc3.85"
+   "CMB_START_FROM": "edelockP_F9"
   }
  },
  {
-  "name": "zc4.25",
+  "name": "edelockP_F7",
   "env": {
-   "CMB_START_FROM": "zc3.85"
+   "CMB_START_FROM": "edelockP_F9"
   }
  },
  {
-  "name": "lcdmP_desy5"
- },
- {
-  "name": "edelockP_desy5",
+  "name": "edelockP_F11",
   "env": {
-   "CMB_START_FROM": "edelockP"
+   "CMB_START_FROM": "edelockP_F9"
   }
  },
  {
-  "name": "edeP_desy5",
+  "name": "edelockP_F6",
   "env": {
-   "CMB_START_FROM": "edeP"
+   "CMB_START_FROM": "edelockP_F9"
   }
  },
  {
-  "name": "lcdmP_union3"
- },
- {
-  "name": "edelockP_union3",
+  "name": "edelockP_F12",
   "env": {
-   "CMB_START_FROM": "edelockP"
+   "CMB_START_FROM": "edelockP_F9"
   }
  },
  {
-  "name": "edeP_union3",
-  "env": {
-   "CMB_START_FROM": "edeP"
-  }
+  "name": "pact_edelock_mcmc1"
  },
  {
-  "name": "lcdmP_shoes"
+  "name": "pact_edelock_mcmc2"
  },
  {
-  "name": "edelockP_shoes",
-  "env": {
-   "CMB_START_FROM": "edelockP"
-  }
+  "name": "pact_edelock_mcmc3"
  },
  {
-  "name": "edeP_shoes",
-  "env": {
-   "CMB_START_FROM": "edeP"
-  }
+  "name": "pact_edelock_mcmc4"
  },
  {
-  "name": "th2.00",
-  "env": {
-   "CMB_START_FROM": "edeP"
-  }
+  "name": "pact_edelock_F9_mcmc1"
  },
  {
-  "name": "th1.50",
-  "env": {
-   "CMB_START_FROM": "edeP"
-  }
+  "name": "pact_edelock_F9_mcmc2"
  },
  {
-  "name": "th2.40",
-  "env": {
-   "CMB_START_FROM": "edeP"
-  }
+  "name": "pact_edelock_F9_mcmc3"
  },
  {
-  "name": "th3.10",
-  "env": {
-   "CMB_START_FROM": "edeP"
-  }
+  "name": "pact_edelock_F9_mcmc4"
  },
  {
-  "name": "th2.60",
-  "env": {
-   "CMB_START_FROM": "edeP"
-  }
+  "name": "pact_lcdm_mcmc1"
  },
  {
-  "name": "th2.95",
-  "env": {
-   "CMB_START_FROM": "edeP"
-  }
+  "name": "pact_lcdm_mcmc2"
  },
  {
-  "name": "lcdmP_s8A",
-  "env": {
-   "CMB_START_FROM": "lcdmP"
-  }
+  "name": "pact_lcdm_mcmc3"
  },
  {
-  "name": "edelockP_s8A",
-  "env": {
-   "CMB_START_FROM": "edelockP"
-  }
+  "name": "pact_lcdm_mcmc4"
  },
  {
-  "name": "edeP_s8A",
-  "env": {
-   "CMB_START_FROM": "edeP"
-  }
+  "name": "spt_lcdm",
+  "env": {}
  },
  {
-  "name": "pact_edelock_F9",
-  "env": {
-   "CMB_START_FROM": "pact_edelock",
-   "CMB_BEST_OF": "6"
-  }
+  "name": "spt_edelock_F9",
+  "env": {}
  },
  {
-  "name": "edelockP_F9",
-  "env": {
-   "CMB_START_FROM": "edelockP",
-   "CMB_BEST_OF": "6"
-  }
+  "name": "spt_edelock_th2.41421_F9",
+  "env": {}
+ },
+ {
+  "name": "spt_edelock",
+  "env": {}
+ },
+ {
+  "name": "spt_edelock_th2.78_F9",
+  "env": {}
+ },
+ {
+  "name": "spt_edelock_F7",
+  "env": {}
+ },
+ {
+  "name": "spa_lcdm",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock",
+  "env": {}
+ },
+ {
+  "name": "spa_w0wa",
+  "env": {}
+ },
+ {
+  "name": "spa_lcdm_deep",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_deep",
+  "env": {}
+ },
+ {
+  "name": "spt_lcdm_deep",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_n2",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_fde0.01",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_fde0.02",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_fde0.04",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_fde0.06",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_fde0.08",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_fde0.10",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_fde0.12",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_th0.5",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_th1.0",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_th1.5",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_th2.0",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_th2.4",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_th2.7",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_th2.9",
+  "env": {}
+ },
+ {
+  "name": "spa_edelock_th3.05",
+  "env": {}
  }
 ]

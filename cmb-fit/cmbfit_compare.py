@@ -2,17 +2,18 @@
 """Same-data model comparison (Planck 2018 + DESI DR2 + Pantheon+, no SH0ES), CAMB + Cobaya.
 
   python cmbfit_compare.py <lcdm|wcdm|ede|edelock>   one best fit (bobyqa), writes results/cmp_<name>.json
+  python cmbfit_compare.py biqcdP                    matched QCD-axion-as-CDM fit (Planck+DESI+Pantheon+)
   python cmbfit_compare.py report                    table with chi2, dAIC, dBIC vs LCDM
 
 edelock = Twist-2: switch-on locked to matter-radiation equality (PREREGISTRATION_ZEQ.md formula).
 Written 28 Oct 2026 after seeing earlier fits, so the lock result is NOT blind.
 """
-import copy, glob, json, os, sys, time
+import copy, glob, json, os, random, sys, time
 import numpy as np
 import cmbfit as C
 
 EXTRA_SETTINGS = {"lcdm": 0, "wcdm": 1, "ede": 3, "edelock": 2, "lcdm8": 0, "edelock8": 2, "ede8": 3,
-                  "lcdmP": 0, "edelockP": 2, "edeP": 3}
+                  "lcdmP": 0, "edelockP": 2, "edeP": 3, "biqcdP": 0}
 PACT = {"pact_lcdm": 0, "pact_edelock": 2, "pact_ede": 3}     # blind test: same rule, new data (see make)
 SPT = {"spt_lcdm": 0, "spt_edelock": 2, "spt_edelock_F9": 1, "spt_edelock_th2.41421_F9": 0,   # SPT-3G pre-registrations
        "spt_edelock_th2.78_F9": 0,                            # contrast at the Planck angle, NOT a prediction
@@ -132,6 +133,8 @@ def make(name):
         zc_fixed, core = float(name[2:]), "edeP"
     elif name.startswith("th"):                     # hilltop test (PREREG_THETA.md): free EDE with theta_i fixed
         core = "edeP"
+    elif name == "lcdmP_biqcdmatch":
+        core = "lcdmP"
     elif name.startswith(("spt_", "spa_")):
         core = name[4:]
     else:
@@ -218,6 +221,11 @@ def _archive_stale(name):
 def run_one(name):
     from cobaya import run
     t0 = time.time()
+    if name in ("biqcdP_deep", "lcdmP_biqcdmatch_deep"):
+        # Use paired starts and identical model settings for the pressureless
+        # CDM equivalence check; output paths remain separate.
+        np.random.seed(20261103)
+        random.seed(20261103)
     if "_mcmc" in name:                             # chains resume by themselves; never archive them
         upd, sampler = run(make(name))
         json.dump(dict(run=name, seconds=time.time() - t0, kind="mcmc",
@@ -229,7 +237,22 @@ def run_one(name):
     upd, sampler = run(make(name))
     row = {k: float(v) for k, v in sampler.products()["minimum"].data.iloc[0].items()
            if isinstance(v, (int, float, np.integer, np.floating))}
-    json.dump(dict(run=name, seconds=time.time() - t0, minimum=row),
+    result = dict(run=name, seconds=time.time() - t0, minimum=row)
+    if name.startswith("biqcd"):
+        fraction = 0.05
+        scalar_density = (
+            2 * fraction * (row["ombh2"] + row["omch2"])
+        )
+        if scalar_density >= row["omch2"]:
+            raise ValueError("the requested BI-QCD fraction exceeds the fitted CDM density")
+        result["effective_cdm_split"] = {
+            "target_scalar_fraction_at_equality": fraction,
+            "omega_biqcd_h2": scalar_density,
+            "omega_ordinary_cdm_h2": row["omch2"] - scalar_density,
+            "omega_cdm_total_h2_passed_to_camb": row["omch2"],
+            "perturbation_model": "pressureless CDM effective limit",
+        }
+    json.dump(result,
               open(os.path.join(C.RESULTS, f"cmp_{name}.json"), "w"), indent=2)
     print("done", name, row.get("H0"), row.get("chi2"), flush=True)
 
@@ -258,6 +281,24 @@ def report():
     prior A_planck ~ N(1, 0.0025)). dAIC/dBIC use chi2; the _eff columns repeat dchi2/dAIC with chi2_eff.
     Each table is measured against the best ΛCDM on the same data (any number of restarts)."""
     out, ref = _table(EXTRA_SETTINGS, ("lcdm", "lcdm8", "lcdmP"), "Planck 2018 + DESI DR2 + Pantheon+")
+    if os.path.exists(os.path.join(C.RESULTS, "cmp_biqcdP.json")):
+        out += [
+            "",
+            "`biqcdP` uses the validated rapid-oscillation, pressureless-CDM limit. Its fixed 5% equality scalar "
+            "fraction is a derived split of the fitted total CDM density, not an added component or extra parameter. "
+            "The CAMB perturbation source therefore remains the same total-CDM fluid as ΛCDM.",
+        ]
+    matched_biqcd = {
+        "lcdmP_biqcdmatch_deep": 0,
+        "biqcdP_deep": 0,
+    }
+    if all(os.path.exists(os.path.join(C.RESULTS, f"cmp_{name}.json")) for name in matched_biqcd):
+        matched, _ = _table(
+            matched_biqcd,
+            ("lcdmP_biqcdmatch",),
+            "Matched pressureless-CDM control: QCD axion as a fixed CDM share vs ordinary CDM",
+        )
+        out += [""] + matched
     t2, _ = _table(PACT, ("pact_lcdm",), "P-ACT (Planck cut + ACT DR6 + ACT×PR4 lensing) + DESI DR2 + Pantheon+: blind test")
     out += [""] + t2
     if any(os.path.exists(os.path.join(C.RESULTS, f"cmp_{n}.json")) for n in SPT):

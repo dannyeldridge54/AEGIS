@@ -1,0 +1,43 @@
+{
+  "models": [
+    "ax_spa_lcdm_halofit_planckfull_nlfix",
+    "ax_spa_w0wa_halofit_planckfull_nlfix",
+    "ax_spa_latetwist_planckfull_nlfix"
+  ],
+  "branch": "Existing effective one-field Late Twist, not full two-field theory",
+  "seed": 20261104,
+  "best_of": 4,
+  "max_evals_per_restart": 10000,
+  "objective": "Likelihood minimum within existing priors; ignore_prior=True",
+  "data": "Planck 2018 low-l, high-l lite and lensing + DESI DR2 + Pantheon+",
+  "classy": "/home/syndyr/aegis-clean-benchmark-build-20261104/AxiCLASS_nlfix/python/build/lib.linux-x86_64-cpython-311/classy.cpython-311-x86_64-linux-gnu.so",
+  "classy_sha256": "35acf72207cd47f558ecf7a94d9d04c2bc8c6b0275227616689d4504ba38aead",
+  "runner_sha256": "adf6bc250ebf56a4f6cc3239cec847c836bb4c0fc86af0f27ca3679af4998b2b",
+  "driver_sha256": "c0912c741847027024318580e58edd530deeaefe8eaa876519c3b5965fb33dc5",
+  "patch_sha256": "c498380acda02eebb6fc34a7be2fa6df885029c1f8369e661b3a9c07b7648443",
+  "numerics": {
+    "tol_background_integration": 1e-10,
+    "tol_perturbations_integration": 1e-08,
+    "l_linstep": 10,
+    "l_logstep": 1.02
+  },
+  "dense_verification_numerics": {
+    "tol_background_integration": 1e-10,
+    "tol_perturbations_integration": 1e-08,
+    "l_linstep": 10,
+    "l_logstep": 1.02,
+    "accurate_lensing": 1,
+    "delta_l_max": 1000,
+    "num_mu_minus_lmax": 1000,
+    "k_step_sub": 0.015,
+    "k_step_super": 0.0001,
+    "k_step_super_reduction": 0.1,
+    "q_linstep": 0.2,
+    "perturbations_sampling_stepsize": 0.025
+  },
+  "spectrum_gate": "Frozen/control relative spectra < 1e-4, k=0.001..1/Mpc at z=0 and ell=30..2500. Differential null chi2 stable within 0.02 under dense refinement.",
+  "restart_gate": "At least two successful restarts and successful-minimum chi2 spread <0.1.",
+  "null_gate": "Absolute frozen-field chi2 difference < 0.15 at original F=100,m=0.015. Accuracy and spectra convergence must also pass; a passing finite-field variant alone is insufficient.",
+  "reproduction_gate": "Absolute uncached likelihood chi2 difference < 0.02",
+  "limitations": "No claim of theory validation before spectra, restart spread, and held-out checks. BIC omitted without a justified effective data count."
+}

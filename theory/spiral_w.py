@@ -1,5 +1,5 @@
 """Spiral Twist background (exploratory feasibility, NOT a pre-registered test): what w0-wa would a CPL analysis see?
-    python spiral_w.py validate   -> checks: LCDM limit, single-field limit, energy conservation
+    python spiral_w.py validate   -> checks: LCDM limit, single-field limit, null energy condition
     python spiral_w.py scan       -> spiral_w_scan.json + summary
 Model (Einstein frame, Reading B: matter blind to the dilaton; reduced Planck units, H in units of H0):
     L = -1/2 (d chi)^2 - 1/2 e^(lam chi) (d theta)^2 - V,   V = V0 e^(-kap chi) + m^2 F^2 (1 - cos(theta/F))
@@ -22,18 +22,38 @@ N0 = -math.log(1 + 1e5)
 ZFIT = np.linspace(0.0, 2.5, 120)
 
 
-def solve(V0, kap, m, th0, lam=LAM, F=FDEC, chi0=0.0, dense=True, tp0=0.0, N1=0.0, cp0=0.0):
+def _friedmann_h2(rm, rr, potential, kin):
+    values = (rm, rr, potential, kin)
+    if not all(math.isfinite(value) for value in values):
+        raise ValueError("Non-finite Friedmann state")
+    if kin < 0 or kin >= 3:
+        raise ValueError("Invalid Friedmann kinetic denominator")
+    h2 = (rm + rr + potential) / (3 - kin)
+    if not math.isfinite(h2) or h2 <= 0:
+        raise ValueError("Friedmann H squared must be finite and positive")
+    return h2
+
+
+def solve(V0, kap, m, th0, lam=LAM, F=FDEC, chi0=0.0, dense=True, tp0=0.0, N1=0.0, cp0=0.0,
+          rtol=1e-9, atol=1e-11):
+    if not all(math.isfinite(value) for value in (V0, kap, m, th0, lam, F, chi0, tp0, N1, cp0)):
+        raise ValueError("Solver inputs must be finite")
+    if F <= 0 or N1 <= N0:
+        raise ValueError("Decay constant must be positive and integration endpoint must follow N0")
+    if not all(math.isfinite(value) and value > 0 for value in (rtol, atol)):
+        raise ValueError("Solver tolerances must be finite and positive")
+    matter, radiation = OM, ORAD
+    if not all(math.isfinite(value) and value >= 0 for value in (matter, radiation)):
+        raise ValueError("Background densities must be finite and nonnegative")
     def V(c, t):
-        return V0 * math.exp(-kap * c) + m * m * F * F * (1 - math.cos(t / F))
+        return V0 * math.exp(-kap * c) + m * m * F * F * 2 * math.sin(t / (2 * F))**2
 
     def rhs(N, y):
         c, cp, t, tp = y
         e = math.exp(lam * c)
-        rm, rr = 3 * OM * math.exp(-3 * N), 3 * ORAD * math.exp(-4 * N)
+        rm, rr = 3 * matter * math.exp(-3 * N), 3 * radiation * math.exp(-4 * N)
         kin = 0.5 * cp * cp + 0.5 * e * tp * tp
-        if kin >= 3:
-            return [0, 0, 0, 0]
-        H2 = (rm + rr + V(c, t)) / (3 - kin)
+        H2 = _friedmann_h2(rm, rr, V(c, t), kin)
         eps = (rm + 4 * rr / 3 + H2 * (cp * cp + e * tp * tp)) / (2 * H2)
         Vc = -kap * V0 * math.exp(-kap * c)
         Vt = m * m * F * math.sin(t / F)
@@ -41,17 +61,29 @@ def solve(V0, kap, m, th0, lam=LAM, F=FDEC, chi0=0.0, dense=True, tp0=0.0, N1=0.
         tpp = -(3 - eps) * tp - lam * cp * tp - Vt / (e * H2)
         return [cp, cpp, tp, tpp]
 
-    sol = solve_ivp(rhs, (N0, N1), [chi0, cp0, th0, tp0], method="LSODA", rtol=1e-9, atol=1e-11,
+    sol = solve_ivp(rhs, (N0, N1), [chi0, cp0, th0, tp0], method="LSODA", rtol=rtol, atol=atol,
                     dense_output=dense)
+    sol.background_densities = (matter, radiation)
+    sol.action_parameters = (V0, kap, m, F, lam)
+    sol.action_potential = V
     return sol, V
 
 
 def H2_of(sol, V, N, lam=LAM):
+    if not sol.success or sol.sol is None:
+        raise ValueError("Cannot evaluate failed integration or missing dense output")
+    if lam != sol.action_parameters[4]:
+        raise ValueError("Evaluation coupling does not match the solved trajectory")
+    if V is not sol.action_potential:
+        raise ValueError("Evaluation potential does not belong to the solved trajectory")
+    if not math.isfinite(N) or N < sol.t[0] or N > sol.t[-1]:
+        raise ValueError("Evaluation lies outside the integrated interval")
     c, cp, t, tp = sol.sol(N)
     e = math.exp(lam * c)
-    rm, rr = 3 * OM * math.exp(-3 * N), 3 * ORAD * math.exp(-4 * N)
+    matter, radiation = sol.background_densities
+    rm, rr = 3 * matter * math.exp(-3 * N), 3 * radiation * math.exp(-4 * N)
     kin = 0.5 * cp * cp + 0.5 * e * tp * tp
-    H2 = (rm + rr + V(c, t)) / (3 - kin)
+    H2 = _friedmann_h2(rm, rr, V(c, t), kin)
     rho_de = H2 * kin + V(c, t)
     p_de = H2 * kin - V(c, t)
     return H2, rho_de, p_de
@@ -59,9 +91,16 @@ def H2_of(sol, V, N, lam=LAM):
 
 def closed(kap, m, th0, **kw):
     """Tune V0 so that H(z=0) = 1."""
+    if not kw.pop("dense", True):
+        raise ValueError("Closure validation requires dense output")
+    endpoint = kw.get("N1", 0.0)
+    if not math.isfinite(endpoint) or endpoint < 0:
+        raise ValueError("Closure integration must reach today")
     def f(V0):
         sol, V = solve(V0, kap, m, th0, dense=True, **kw)
-        return H2_of(sol, V, 0.0, kw.get("lam", LAM))[0] - 1 if sol.success else 1e3
+        if not sol.success:
+            raise ValueError(f"Closure integration failed: {sol.message}")
+        return H2_of(sol, V, 0.0, kw.get("lam", LAM))[0] - 1
     lo, hi = 0.0, 10.0
     if f(lo) > 0:
         raise ValueError("overclosed: the angle alone exceeds the dark-energy budget")
@@ -71,21 +110,33 @@ def closed(kap, m, th0, **kw):
             raise ValueError("cannot close: the dilaton runs away too fast to supply the dark energy")
     V0 = brentq(f, lo, hi, xtol=1e-10)
     sol, V = solve(V0, kap, m, th0, **kw)
+    if not sol.success:
+        raise ValueError(f"Final closure integration failed: {sol.message}")
+    final_h2 = H2_of(sol, V, 0.0, kw.get("lam", LAM))[0]
+    if abs(final_h2 - 1) > 1e-8:
+        raise ValueError(f"Final closure residual exceeds tolerance: {final_h2 - 1}")
     return V0, sol, V
 
 
 def cpl_fit(sol, V, lam=LAM):
     E2 = np.array([H2_of(sol, V, -math.log(1 + z), lam)[0] for z in ZFIT])
+    if not np.all(np.isfinite(E2)) or np.any(E2 <= 0):
+        raise ValueError("CPL approximation requires finite positive expansion values")
+    radiation = sol.background_densities[1]
 
     def model(p):
         om, w0, wa = p
         a = 1 / (1 + ZFIT)
-        de = (1 - om - ORAD) * a ** (-3 * (1 + w0 + wa)) * np.exp(-3 * wa * (1 - a))
-        return om * (1 + ZFIT) ** 3 + ORAD * (1 + ZFIT) ** 4 + de
+        de = (1 - om - radiation) * a ** (-3 * (1 + w0 + wa)) * np.exp(-3 * wa * (1 - a))
+        return om * (1 + ZFIT) ** 3 + radiation * (1 + ZFIT) ** 4 + de
 
     r = least_squares(lambda p: (model(p) - E2) / E2, [0.3, -0.9, -0.2],
                       bounds=([0.1, -3, -5], [0.6, 1, 3]))
+    if not r.success or not np.all(np.isfinite(r.x)):
+        raise ValueError(f"CPL approximation failed: {r.message}")
     resid = float(np.max(np.abs((model(r.x) - E2) / E2)))
+    if not math.isfinite(resid):
+        raise ValueError("CPL approximation residual is non-finite")
     return {"Om_eff": float(r.x[0]), "w0": float(r.x[1]), "wa": float(r.x[2]), "max_rel_resid": resid}
 
 
@@ -93,6 +144,8 @@ def w_true(sol, V, lam=LAM):
     out = {}
     for z in (0.0, 0.5, 1.0, 2.0):
         H2, rho, p = H2_of(sol, V, -math.log(1 + z), lam)
+        if not math.isfinite(rho) or rho <= 0:
+            raise ValueError("Scalar equation of state requires finite positive density")
         out[str(z)] = p / rho
     return out
 
@@ -144,37 +197,32 @@ def scan():
           f"(-0.9 <= w0 <= -0.7, wa <= -0.4): {len(desi_like)}")
 
 
-def w_chi_eff_fit(sol, V0, kap, lam):
+def _w_chi_eff_at(sol, V, V0, kap, lam, z):
+    N = -math.log(1 + z)
+    H2 = H2_of(sol, V, N, lam)[0]
+    c, cp, t, tp = sol.sol(N)
+    e = math.exp(lam * c)
+    cd2, td2 = H2 * cp * cp, H2 * tp * tp
+    Vc = V0 * math.exp(-kap * c)
+    denominator = cd2 + 2 * Vc + (e - 1) * td2
+    if not math.isfinite(denominator) or denominator == 0:
+        raise ValueError("Effective dilaton equation of state has a singular denominator")
+    value = (cd2 - 2 * Vc + (e - 1) * td2) / denominator
+    if not math.isfinite(value):
+        raise ValueError("Effective dilaton equation of state is non-finite")
+    return value
+
+
+def w_chi_eff_fit(sol, V, V0, kap, lam):
     """Toomey et al. eq. 11: w_chi,eff = (chi'^2 - 2V(chi) + (f-1) phi'^2) / (chi'^2 + 2V(chi) + (f-1) phi'^2), with
     V(chi) = V0 e^(-kap chi) and dots = H d/dN; the angle is counted with matter. Fit w0 + wa (1 - a) on 0 < z < 2.5."""
     zs = np.linspace(0.0, 2.5, 100)
-    ws = []
-    for z in zs:
-        N = -math.log(1 + z)
-        c, cp, t, tp = sol.sol(N)
-        e = math.exp(lam * c)
-        rm, rr = 3 * OM * math.exp(-3 * N), 3 * ORAD * math.exp(-4 * N)
-        # H^2 from the full Friedmann equation needs the angle's potential too; reuse the closure-consistent form
-        Vt = 0.0
-        H2 = None
-        ws.append((c, cp, tp, e, N))
-    out = []
-    for (c, cp, tp, e, N), z in zip(ws, zs):
-        H2 = H2_cache(sol, N, V0, kap, lam)
-        cd2, td2 = H2 * cp * cp, H2 * tp * tp
-        Vc = V0 * math.exp(-kap * c)
-        out.append((cd2 - 2 * Vc + (e - 1) * td2) / (cd2 + 2 * Vc + (e - 1) * td2))
+    out = [_w_chi_eff_at(sol, V, V0, kap, lam, z) for z in zs]
     a = 1 / (1 + zs)
     A = np.vstack([np.ones_like(a), 1 - a]).T
     (w0, wa), *_ = np.linalg.lstsq(A, np.array(out), rcond=None)
-    return {"w0_eff": float(w0), "wa_eff": float(wa), "w_eff_z0": float(out[0]), "w_eff_z1": float(out[40])}
-
-
-_H2C = {}
-
-
-def H2_cache(sol, N, V0, kap, lam):
-    return H2_of(sol, _H2C["V"], N, lam)[0]
+    return {"w0_eff": float(w0), "wa_eff": float(wa), "w_eff_z0": float(out[0]),
+            "w_eff_z1": float(_w_chi_eff_at(sol, V, V0, kap, lam, 1.0))}
 
 
 def benchmark():
@@ -189,8 +237,7 @@ def benchmark():
             try:
                 V0, sol, V = closed(kap, m, 3.12 * f, lam=lam, F=f, chi0=1e-4)
                 fit = cpl_fit(sol, V, lam)
-                _H2C["V"] = V
-                out[f"{label}_kap{kap}"] = {**fit, **w_chi_eff_fit(sol, V0, kap, lam),
+                out[f"{label}_kap{kap}"] = {**fit, **w_chi_eff_fit(sol, V, V0, kap, lam),
                                             "w_true": w_true(sol, V, lam), "V0": V0}
             except Exception as ex:
                 out[f"{label}_kap{kap}"] = {"error": str(ex)[:100]}
@@ -205,24 +252,32 @@ def mirror_scan():
     (w0_eff, wa_eff) inside their CMB+DESI 1-sigma box (-0.50 +- 0.21, -1.51 +- 0.60). f fixed at their 0.082 M_Pl."""
     f = 10 ** 26.3 / 2.435e27
     rows = []
+    attempted = 0
     for lam in (-1.25, LAM):
         for kap in (1.0, 1.7, 3.0):
             for m in (3.0, 5.0, 11.0, 30.0, 100.0):
                 for th in (2.5, 3.0, 3.12, 3.14):
+                    attempted += 1
                     try:
                         V0, sol, V = closed(kap, m, th * f, lam=lam, F=f, chi0=1e-4)
-                    except Exception:
+                    except Exception as ex:
+                        rows.append({"lam": lam, "kap": kap, "m": m, "theta_over_f": th,
+                                     "error": f"{type(ex).__name__}: {ex}"[:200]})
                         continue
-                    _H2C["V"] = V
-                    e = w_chi_eff_fit(sol, V0, kap, lam)
+                    e = w_chi_eff_fit(sol, V, V0, kap, lam)
                     hit = (abs(e["w0_eff"] + 0.50) <= 0.21 and abs(e["wa_eff"] + 1.51) <= 0.60
                            and e["w_eff_z0"] > -1 and e["w_eff_z1"] < -1)
                     rows.append({"lam": lam, "kap": kap, "m": m, "theta_over_f": th, **e, "match": hit})
                     print(f"lam {lam:+.3f} kap {kap} m {m:5.1f} th {th} | w0_eff {e['w0_eff']:+.3f} "
                           f"wa_eff {e['wa_eff']:+.3f} w(0) {e['w_eff_z0']:+.3f} w(1) {e['w_eff_z1']:+.3f} "
                           f"{'MATCH' if hit else ''}", flush=True)
-    json.dump({"rows": rows, "n_match": sum(r["match"] for r in rows)}, open("spiral_mirror_scan.json", "w"), indent=1)
-    print("matches:", sum(r["match"] for r in rows), "of", len(rows))
+    n_match = sum(r.get("match", False) for r in rows)
+    n_solved = sum("match" in r for r in rows)
+    n_failed = sum("error" in r for r in rows)
+    json.dump({"rows": rows, "n_attempted": attempted, "n_solved": n_solved,
+               "n_failed": n_failed, "n_match": n_match},
+              open("spiral_mirror_scan.json", "w"), indent=1)
+    print(f"solved: {n_solved} | failed: {n_failed} | matches: {n_match} of {attempted}")
 
 
 def matter_angle():
@@ -243,15 +298,24 @@ def matter_angle():
                         V0, sol, V = closed(kap, m, th, F=FDEC)
                         c, cp, t, tp = sol.sol(0.0)
                         H2 = H2_of(sol, V, 0.0)[0]
-                        rho_ang = 0.5 * math.exp(LAM * c) * H2 * tp * tp + m * m * FDEC ** 2 * (1 - math.cos(t / FDEC))
+                        rho_ang = 0.5 * math.exp(LAM * c) * H2 * tp * tp + m * m * FDEC ** 2 * 2 * math.sin(t / (2 * FDEC))**2
                         f = rho_ang / (rho_ang + 3 * OM)
                         OM = 0.30 * (1 - f)
+                    V0, sol, V = closed(kap, m, th, F=FDEC)
+                    c, cp, t, tp = sol.sol(0.0)
+                    H2 = H2_of(sol, V, 0.0)[0]
+                    rho_ang = 0.5 * math.exp(LAM * c) * H2 * tp * tp + m * m * FDEC ** 2 * 2 * math.sin(t / (2 * FDEC))**2
+                    matter_residual = abs((rho_ang + 3 * OM) / 3 - 0.30)
+                    if matter_residual > 1e-5:
+                        raise ValueError(f"Matter-angle normalization did not converge: residual {matter_residual}")
+                    f = rho_ang / (rho_ang + 3 * OM)
                     fit = cpl_fit(sol, V)
                 except Exception as ex:
                     rows.append({"kap": kap, "m": m, "theta_i": th, "error": str(ex)[:80]})
                     OM = 0.30
                     continue
                 r = {"kap": kap, "m": m, "theta_i": th, "angle_fraction_of_matter": f, "Om_true": OM, **fit,
+                     "matter_normalization_residual": matter_residual,
                      "beta_eff": f * (-LAM / 2)}
                 rows.append(r)
                 print(f"kap {kap} m {m:5.0f} th {th:5.3f} | angle {f:6.3f} of matter, beta_eff {r['beta_eff']:.3f} | "
@@ -271,6 +335,13 @@ def coupled_exp_w(kap, beta, om_b, om_c, orad, zs):
     rho_cdm = rho_c,unc a^-3 e^(beta (chi - chi_i)); force on chi = -beta rho_cdm. V0 tuned so H(0) = 1 (units H0).
     Returns w_scf(z) and E(z) = H/H0 on zs (for the CLASS mirror)."""
     from scipy.integrate import solve_ivp as ivp
+    if not all(math.isfinite(v) for v in (kap, beta, om_b, om_c, orad)):
+        raise ValueError("Coupled background inputs must be finite")
+    if min(om_b, om_c, orad) < 0:
+        raise ValueError("Background densities must be nonnegative")
+    zs = list(zs)
+    if not all(math.isfinite(z) and 0 <= z <= math.expm1(-N0) for z in zs):
+        raise ValueError("Redshifts must lie inside the integrated interval")
 
     def run(V0):
         def rhs(N, y):
@@ -278,18 +349,23 @@ def coupled_exp_w(kap, beta, om_b, om_c, orad, zs):
             rb, rc = 3 * om_b * math.exp(-3 * N), 3 * om_c * math.exp(-3 * N) * math.exp(beta * c)
             rr = 3 * orad * math.exp(-4 * N)
             V = V0 * math.exp(-kap * c)
-            H2 = (rb + rc + rr + V) / (3 - 0.5 * cp * cp)
+            H2 = _friedmann_h2(rb + rc, rr, V, 0.5 * cp * cp)
             eps = (rb + rc + 4 * rr / 3 + H2 * cp * cp) / (2 * H2)
             return [cp, -(3 - eps) * cp + (kap * V - beta * rc) / H2]
         return ivp(rhs, (N0, 0.0), [0.0, 0.0], method="LSODA", rtol=1e-10, atol=1e-12, dense_output=True), rhs
 
     def h2(sol, N, V0):
+        if not sol.success or sol.sol is None:
+            raise ValueError("Coupled background integration failed or lacks dense output")
         c, cp = sol.sol(N)
         rb, rc = 3 * om_b * math.exp(-3 * N), 3 * om_c * math.exp(-3 * N) * math.exp(beta * c)
         rr = 3 * orad * math.exp(-4 * N)
         V = V0 * math.exp(-kap * c)
-        H2 = (rb + rc + rr + V) / (3 - 0.5 * cp * cp)
-        return H2, (0.5 * H2 * cp * cp - V) / (0.5 * H2 * cp * cp + V)
+        H2 = _friedmann_h2(rb + rc, rr, V, 0.5 * cp * cp)
+        rho = 0.5 * H2 * cp * cp + V
+        if not math.isfinite(rho) or rho <= 0:
+            raise ValueError("Coupled scalar density must be finite and positive")
+        return H2, (0.5 * H2 * cp * cp - V) / rho
 
     V0 = brentq(lambda v: h2(run(v)[0], 0.0, v)[0] - 1, 1e-4, 50, xtol=1e-12)
     sol, _ = run(V0)
@@ -301,6 +377,8 @@ def coupled_exp_w(kap, beta, om_b, om_c, orad, zs):
 def class_mu1_guess(kap, beta, om_b, om_c, orad, h):
     """Shooting guess for AxiCLASS double_exp (V = mu1^4 e^(-kap phi), phi_ini = kap): from this solver's closure V0
     (units H0^2, field starting at 0): mu1^4 e^(-kap^2) = V0 H0^2 with H0 = h/2997.92458 Mpc^-1."""
+    if not math.isfinite(h) or h <= 0:
+        raise ValueError("Hubble parameter h must be finite and positive")
     coupled_exp_w(kap, beta, om_b, om_c, orad, [0.0])
     H0 = h / 2997.92458
     return (coupled_exp_w.last_V0 * H0 * H0 * math.exp(kap * kap)) ** 0.25
@@ -321,7 +399,12 @@ def mirror_ramos():
             return [-3 * x1 + 1.5 * Pi * x1 + math.sqrt(1.5) * (lam_p * y * y - 2 * xi * x2 * x2),
                     -3 * x2 + 1.5 * Pi * x2 + math.sqrt(6) * xi * x1 * x2,
                     1.5 * Pi * y - math.sqrt(1.5) * lam_p * x1 * y]
-        s = ivp(f, (0, 200), [1e-3, 1e-3, 0.1], rtol=1e-10, atol=1e-12).y[:, -1]
+        independent = ivp(f, (0, 200), [1e-3, 1e-3, 0.1], rtol=1e-10, atol=1e-12)
+        if not independent.success:
+            raise ValueError(f"Independent mirror integration failed: {independent.message}")
+        s = independent.y[:, -1]
+        if not np.all(np.isfinite(s)):
+            raise ValueError("Independent mirror endpoint is non-finite")
         x1, x2, y = s
         w_theirs = (x1 * x1 + x2 * x2 - y * y) / (x1 * x1 + x2 * x2 + y * y)
         # ours: start with a small axion velocity so the mixing is active; run to N = +40 (matter negligible)
@@ -339,8 +422,19 @@ def mirror_ramos():
     out["MIRROR"] = "PASS" if ok else "FAIL"
     json.dump(out, open("spiral_mirror_ramos.json", "w"), indent=1)
     print(json.dumps(out, indent=1))
+    return ok
+
+
+def main():
+    actions = {"validate": validate, "scan": scan, "benchmark": benchmark, "mirror": mirror_scan,
+               "mirror_ramos": mirror_ramos, "matter_angle": matter_angle}
+    if len(sys.argv) != 2 or sys.argv[1] not in actions:
+        raise SystemExit("Usage: spiral_w.py {" + ",".join(actions) + "}")
+    action = sys.argv[1]
+    result = actions[action]()
+    if action in ("validate", "mirror_ramos") and not result:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
-    {"validate": validate, "scan": scan, "benchmark": benchmark, "mirror": mirror_scan,
-     "mirror_ramos": mirror_ramos, "matter_angle": matter_angle}[sys.argv[1]]()
+    main()
