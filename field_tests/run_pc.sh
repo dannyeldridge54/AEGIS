@@ -36,6 +36,7 @@ bash "$HERE/sync_check.sh" > /dev/null 2>&1 && grep -q "⚠" "$HERE/SYNC.md" && 
 say "field tests start: lanes=$LANES python=$PY results=$RES"
 for n in $QUEUE; do
   [ -f "$RES/cmp_$n.json" ] && { say "skip (done) $n"; continue; }
+  [ -f "$RES/lanes/$n.claim" ] && { say "skip (claimed: running in another window; if that run died, move lanes/$n.claim aside) $n"; continue; }
   if [[ "$n" == *spiraltwist* && "$GATE_OK" != 1 ]]; then say "skip $n: SF gate failed"; continue; fi
   if [[ "$n" == fp_* && "$FP_OK" != 1 ]]; then say "skip $n: FP regression gate not passed"; continue; fi
   DRIVER="$AXI/early_late_spa.py"; [[ "$n" == fp_* ]] && DRIVER="$FPDIR/fp_fit.py"
