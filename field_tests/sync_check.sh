@@ -18,7 +18,7 @@ OUT="$HERE/SYNC.md"
   echo "| Repo | Branch | Uncommitted files | Commits not pushed | Last commit |"
   echo "|---|---|---|---|---|"
   for r in $(printf '%s\n' "${REPOS[@]}" | awk '!seen[$0]++'); do
-    git -C "$r" fetch -q origin 2>/dev/null
+    GIT_TERMINAL_PROMPT=0 GCM_INTERACTIVE=never timeout 20 git -C "$r" fetch -q origin </dev/null >/dev/null 2>&1
     br=$(git -C "$r" rev-parse --abbrev-ref HEAD 2>/dev/null)
     dirty=$(git -C "$r" status --porcelain 2>/dev/null | wc -l)
     ahead=$(git -C "$r" rev-list --count "@{u}..HEAD" 2>/dev/null || echo "no upstream")
