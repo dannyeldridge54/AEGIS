@@ -115,7 +115,7 @@ export interface EvalResult {
 }
 
 export interface Discovery {
-  type: 'new_best' | 'anomaly' | 'plateau' | 'convergence' | 'constraint_boundary';
+  type: 'new_best' | 'anomaly' | 'plateau' | 'convergence' | 'constraint_boundary' | 'restart';
   description: string;
   result: EvalResult;
   confidence: number;
@@ -143,6 +143,11 @@ export interface AgentConfig {
   persistence?: { enabled: boolean; path?: string; interval?: number };
   /** Language for output ('en' | 'es' | 'fr' | 'de' | 'ja' | 'zh' | 'pt' | 'ko') */
   language?: string;
+  /**
+   * Restart the local search after this many evaluations without local improvement,
+   * keeping the global best. Escapes local minima. -1 = automatic (default), 0 = never.
+   */
+  restartAfter?: number;
 }
 
 // ─── Events ──────────────────────────────────────────────────────────────────

@@ -15,6 +15,9 @@ import { MetaLearner, generateNextPoint } from './strategies';
 import { getMessages, formatDuration } from './language';
 import { writeFileAtomic } from './fs-util';
 
+/** Strategies that search around the current best (their step size is adapted). */
+const LOCAL_STRATEGIES = new Set<StrategyType>(['gradient', 'exploit', 'annealing', 'evolutionary']);
+
 // ─── Default Configuration ───────────────────────────────────────────────────
 
 const DEFAULT_CONFIG: Required<AgentConfig> = {
@@ -27,6 +30,7 @@ const DEFAULT_CONFIG: Required<AgentConfig> = {
   verbosity: 'normal',
   persistence: { enabled: false, path: './aegis-state.json', interval: 60 },
   language: 'en',
+  restartAfter: -1,
 };
 
 // ─── AEGIS Agent ─────────────────────────────────────────────────────────────
@@ -43,6 +47,15 @@ export class AegisAgent {
   private lastBestTime = 0;
   private gridIndex = 0;
   private msg;
+  // Local search state (reset on restart); the global best lives in state.best
+  private localBest: EvalResult | null = null;
+  private localHistory: EvalResult[] = [];
+  private sinceLocalImprovement = 0;
+  private sinceGlobalImprovement = 0;
+  private restarts = 0;
+  private finalPhase = false;
+  /** Step-size multiplier for local strategies, adapted by the 1/5th success rule */
+  private stepScale = 1;
 
   constructor(task: Task, config?: AgentConfig) {
     this.task = task;
@@ -131,15 +144,29 @@ export class AegisAgent {
 
   /** Run a single step */
   async step(): Promise<EvalResult> {
+    // Final phase: spend the last quarter of a fixed budget polishing the global best
+    if (!this.finalPhase && this.config.maxEvals > 0 && this.state.totalEvals >= 0.75 * this.config.maxEvals
+        && this.state.best && Number.isFinite(this.state.best.score)) {
+      this.finalPhase = true;
+      if (this.localBest !== this.state.best) {
+        this.localBest = this.state.best;
+        this.localHistory = this.state.history.slice(-1000);
+        this.sinceLocalImprovement = 0;
+        this.stepScale = Math.min(this.stepScale, 0.5);
+      }
+    }
     const strategy = this.metaLearner.selectStrategy();
+    // Local strategies work around the current basin (since the last restart);
+    // curiosity looks at everything ever sampled so restarts go somewhere new.
     const params = generateNextPoint(
       strategy,
       this.task.parameters,
-      this.state.best,
-      this.state.history,
+      this.localBest,
+      strategy.type === 'curiosity' ? this.state.history : this.localHistory,
       this.task.constraints,
       this.gridIndex++,
-      this.isMinimizing()
+      this.isMinimizing(),
+      this.stepScale
     );
 
     const raw = await this.task.evaluate(params);
@@ -160,6 +187,29 @@ export class AegisAgent {
       this.state.history = this.state.history.slice(-2500);
     }
 
+    this.localHistory.push(result);
+    if (this.localHistory.length > 2500) this.localHistory = this.localHistory.slice(-1250);
+
+    // Local improvement drives strategy rewards and restarts
+    const prevLocal = this.localBest?.score ?? (minimize ? Infinity : -Infinity);
+    const localBetter = Number.isFinite(score) && (minimize ? score < prevLocal : score > prevLocal);
+    const localGain = localBetter && Number.isFinite(prevLocal)
+      ? Math.min(Math.max(Math.abs(prevLocal - score) / (Math.abs(prevLocal) + 1e-12), 0.01), 1)
+      : (localBetter ? 1 : 0);
+    if (localBetter) {
+      this.localBest = result;
+      this.sinceLocalImprovement = 0;
+    } else {
+      this.sinceLocalImprovement++;
+    }
+    // 1/5th success rule: success ×1.5, failure ×1.5^(-1/4) → steps settle where ~20% succeed
+    if (LOCAL_STRATEGIES.has(strategy.type)) {
+      this.stepScale = localBetter
+        ? Math.min(4, this.stepScale * 1.5)
+        : Math.max(1e-6, this.stepScale * 0.9036);
+    }
+    this.metaLearner.updateStrategy(strategy.type, localGain);
+
     // Track improvement (supports both minimize and maximize goals)
     const previousBest = this.state.best?.score ?? (minimize ? Infinity : -Infinity);
     const isBetter = minimize ? score < previousBest : score > previousBest;
@@ -168,13 +218,11 @@ export class AegisAgent {
     if (Number.isFinite(score) && (!this.state.best || !Number.isFinite(this.state.best.score) || isBetter)) {
       this.state.best = result;
       this.lastBestTime = Date.now();
-
-      // Scale-free reward in [0.01, 1]: relative improvement, so UCB1's exploration term
-      // (which is O(1)) stays comparable whatever the units of the objective are.
-      const reward = !Number.isFinite(previousBest)
-        ? 1.0
-        : Math.min(Math.max(improvement / (Math.abs(previousBest) + 1e-12), 0.01), 1);
-      this.metaLearner.updateStrategy(strategy.type, reward);
+      if (!Number.isFinite(previousBest) || improvement > this.config.convergenceThreshold) {
+        this.sinceGlobalImprovement = 0;
+      } else {
+        this.sinceGlobalImprovement++;
+      }
 
       this.emit({ type: 'new_best', result, improvement: Math.max(improvement, 0) });
 
@@ -196,7 +244,29 @@ export class AegisAgent {
       }
     } else {
       if (!this.state.best) this.state.best = result; // keep a placeholder until a finite score arrives
-      this.metaLearner.updateStrategy(strategy.type, 0);
+      this.sinceGlobalImprovement++;
+    }
+
+    // Restart the local search when it has stalled (global best is kept)
+    const restartAfter = this.restartWindow();
+    // Stalled = no local improvement for a window, or the adapted step has collapsed
+    // (the basin is solved to ~1e-4 of the range; further polishing is the final phase's job)
+    const stalled = this.sinceLocalImprovement >= restartAfter || this.stepScale < 1e-2;
+    if (restartAfter > 0 && !this.finalPhase && this.localBest && stalled) {
+      this.restarts++;
+      const discovery: Discovery = {
+        type: 'restart',
+        description: `Restart #${this.restarts}: local search converged at ${this.localBest.score.toFixed(6)}`,
+        result: this.localBest,
+        confidence: 1,
+        timestamp: Date.now(),
+      };
+      this.state.discoveries.push(discovery);
+      this.emit({ type: 'discovery', discovery });
+      this.localBest = null;
+      this.localHistory = [];
+      this.sinceLocalImprovement = 0;
+      this.stepScale = 1;
     }
 
     // Phase management
@@ -260,20 +330,25 @@ export class AegisAgent {
     }
   }
 
+  /** Evaluations without local improvement before a restart (0 = never). */
+  private restartWindow(): number {
+    const r = this.config.restartAfter;
+    if (r === 0) return 0;
+    if (r > 0) return r;
+    return Math.max(150, 50 * this.task.parameters.length);
+  }
+
+  /** Number of local-search restarts so far. */
+  getRestarts(): number { return this.restarts; }
+
   private checkConvergence(): boolean {
     if (this.state.totalEvals < 200) return false;
-    if (!this.state.best) return false;
-
-    // No improvement in last 500 evals
-    const recentWindow = this.state.history.slice(-500);
-    if (recentWindow.length < 500) return false;
-
-    const minimize = this.isMinimizing();
-    const bestFn = minimize ? Math.min : Math.max;
-    const recentBest = bestFn(...recentWindow.map(r => r.score));
-    const olderBest = bestFn(...this.state.history.slice(-1000, -500).map(r => r.score));
-
-    return Math.abs(recentBest - olderBest) < this.config.convergenceThreshold;
+    if (!this.state.best || !Number.isFinite(this.state.best.score)) return false;
+    // Converged when the global best has not improved (by more than the threshold) for
+    // a whole window. With restarts on, the window spans several restarts first.
+    const restart = this.restartWindow();
+    const window = restart > 0 ? Math.max(1000, 4 * restart) : 500;
+    return this.sinceGlobalImprovement >= window;
   }
 
   private report(): void {

@@ -268,7 +268,9 @@ export function generateNextPoint(
   history: EvalResult[],
   constraints?: Constraint[],
   gridIndex?: number,
-  minimize: boolean = true
+  minimize: boolean = true,
+  /** Multiplier on local mutation sizes (adapted by the agent; 1 = default sizes) */
+  stepScale: number = 1
 ): Record<string, number> {
   let candidate: Record<string, number>;
   const maxAttempts = 50;
@@ -293,28 +295,28 @@ export function generateNextPoint(
           }
           const pool = elite.length > 0 ? elite : history;
           const parent2 = pool[Math.floor(Math.random() * pool.length)];
-          candidate = mutateParams(crossover(best.params, parent2.params, params), params, strategy.config.mutationRate || 0.1);
+          candidate = mutateParams(crossover(best.params, parent2.params, params), params, (strategy.config.mutationRate || 0.1) * Math.min(1, stepScale * 2));
         } else {
           candidate = randomParams(params);
         }
         break;
       case 'gradient':
         if (best) {
-          candidate = mutateParams(best.params, params, 0.05);
+          candidate = mutateParams(best.params, params, 0.05 * stepScale);
         } else {
           candidate = randomParams(params);
         }
         break;
       case 'annealing': {
         const temp = (strategy.config.initialTemp || 1.0) * Math.pow(strategy.config.coolingRate || 0.995, history.length);
-        candidate = best ? annealingSample(best.params, params, temp) : randomParams(params);
+        candidate = best ? annealingSample(best.params, params, Math.max(temp, 0.02 * stepScale)) : randomParams(params);
         break;
       }
       case 'curiosity':
         candidate = noveltySample(params, history);
         break;
       case 'exploit':
-        candidate = best ? mutateParams(best.params, params, strategy.config.mutationMagnitude || 0.02) : randomParams(params);
+        candidate = best ? mutateParams(best.params, params, (strategy.config.mutationMagnitude || 0.02) * stepScale) : randomParams(params);
         break;
       case 'swarm':
         candidate = best ? mutateParams(best.params, params, 0.15) : randomParams(params);
