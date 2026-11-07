@@ -1,0 +1,19 @@
+{
+  "errors": {
+    "pk": 1.6049668802864403e-06,
+    "pk_lin": 4.855092268218897e-07,
+    "tt": 1.2351823786005411e-06,
+    "ee": 1.3541096680613762e-06
+  },
+  "dense_errors": {
+    "pk": 1.6056776994677335e-06,
+    "pk_lin": 4.81952452280332e-07,
+    "tt": 9.463806200926683e-07,
+    "ee": 1.2342033173240452e-06
+  },
+  "dense_delta_chi2": 0.0012391698264764273,
+  "differential_null_stable": true,
+  "absolute_baseline_accuracy_shift": 0.6109819590519692,
+  "passed": true,
+  "qualification": "This gate validates the null, not accuracy at fitted non-null points."
+}

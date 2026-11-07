@@ -1,0 +1,38 @@
+{
+  "fluid": [
+    {
+      "routed": {
+        "w0_fld": -1.0,
+        "wa_fld": 0.0
+      },
+      "chi2": 2498.069174658889,
+      "H0": 67.97054887954714
+    },
+    {
+      "routed": {
+        "w0_fld": -0.9,
+        "wa_fld": 0.0
+      },
+      "chi2": 2531.5755947674006,
+      "H0": 64.95058899202748
+    },
+    {
+      "routed": {
+        "w0_fld": -1.0,
+        "wa_fld": -0.2
+      },
+      "chi2": 2500.4885516735876,
+      "H0": 69.59169533387734
+    }
+  ],
+  "twist": {
+    "routed": {
+      "f_axion": 1.0,
+      "m_axion": 1.9952623149688795
+    },
+    "chi2": 2588.09169468292,
+    "H0": 62.07636716527928
+  },
+  "passed": true,
+  "scope": "Actual solver parameter and independent w0/wa sensitivity checks before optimization"
+}

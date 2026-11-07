@@ -90,9 +90,17 @@ def make(name):
     cold = "_r4" in name
     union3 = "_union3" in name                      # CubeMind PREREGISTRATION_LATE_UNION3.md (independent SN sample)
     cmbonly = "_cmbonly" in name                    # CubeMind PREREGISTRATION_PINCER.md: CMB likelihoods only
+    planckfull = "_planckfull" in name              # Planck high-l + lensing, separate from the overlapping ACT/SPT suite
+    sn_variants = [(tag, like) for tag, like in (
+        ("_snjla", "sn.jla"), ("_snpantheon", "sn.pantheon"), ("_snshoes", "sn.pantheonplusshoes"))
+        if tag in name]
+    if len(sn_variants) > 1:
+        raise ValueError(f"Only one explicit supernova variant may be selected: {name}")
+    sn_variant = sn_variants[0] if sn_variants else None
     # "_nlfix": the same run on the B0-fixed build (CubeMind PREREGISTRATION_NLFIX_REPLICATION.md); see _maybe_coupled().
     base = (name.replace("_b4", "").replace("_desy5", "").replace("_dovekie", "").replace("_nlfix", "")
-            .replace("_nobao", "").replace("_r4", "").replace("_union3", "").replace("_cmbonly", ""))
+            .replace("_nobao", "").replace("_r4", "").replace("_union3", "").replace("_cmbonly", "")
+            .replace("_planckfull", "").replace("_snjla", "").replace("_snpantheon", "").replace("_snshoes", ""))
     early = "edelock" in base
     late = "w0wa" in base
     latetwist = "latetwist" in base                 # CubeMind PREREGISTRATION_LATE_TWIST.md
@@ -132,8 +140,12 @@ def make(name):
         params["fraction_axion_ac"] = P(0.001, 0.3, 0.07, 0.006)
         params["log10_axion_ac"] = {"value": LOCK, "derived": False}       # the lock: peak at equality
         params["theta_i_scf"] = P(0.1, 3.1, 2.75, 0.04, r"\theta_i")
-    prior = {"cal_dip_prior": "lambda A_act: stats.norm.logpdf(A_act, loc=1.0, scale=0.003)",
-             "gaussian_Tcal": "lambda Tcal: stats.norm.logpdf(Tcal, loc=1.0, scale=0.0036)"}
+    prior = ({} if planckfull else
+             {"cal_dip_prior": "lambda A_act: stats.norm.logpdf(A_act, loc=1.0, scale=0.003)",
+              "gaussian_Tcal": "lambda Tcal: stats.norm.logpdf(Tcal, loc=1.0, scale=0.0036)"})
+    if planckfull:
+        for key in ("A_act", "P_act", "Tcal", "Ecal"):
+            params.pop(key)
     if late:
         extra.update({"Omega_Lambda": 0.0, "use_ppf": "yes",              # w0-wa fluid takes the closure;
                       "fluid_equation_of_state": "CLP"})                    # this build reads w0/wa only with CLP
@@ -175,27 +187,47 @@ def make(name):
             extra["scf_coupling_beta"] = float(fixed_beta.group(1))
         else:
             params["scf_coupling_beta"] = P(-0.15, 0.15, 0.0, 0.02, r"\beta")
-    likes = {
-        "planck_2018_lowl.TT": None, "planck_2018_lowl.EE": None,
-        "act_dr6_cmbonly.PlanckActCut": None, "act_dr6_cmbonly.ACTDR6CMBonly": None,
-        "act_dr6_lenslike.ACTDR6LensLike": {"variant": "actplanck_baseline", "lens_only": False, "lmax": 4000},
-        "spt3g_d1_tne_lite": {"external": candl.interface.CandlCobayaLikelihood,
-                              "data_set_file": spt_candl_data.SPT3G_D1_TnE, "variant": "lite",
-                              "clear_internal_priors": True, "additional_args": {}, "wrapper": None,
-                              "feedback": False},
-        "bao.desi_dr2.desi_bao_all": None,
-        ("sn.desy5" if desy5 else "sn.desdovekie" if dovekie else "sn.union3" if union3 else "sn.pantheonplus"): None,
-    }
+    if planckfull:
+        likes = {
+            "planck_2018_lowl.TT": None, "planck_2018_lowl.EE": None,
+            "planck_2018_highl_plik.TTTEEE_lite_native": None, "planck_2018_lensing.native": None,
+            "bao.desi_dr2.desi_bao_all": None,
+        }
+    else:
+        likes = {
+            "planck_2018_lowl.TT": None, "planck_2018_lowl.EE": None,
+            "act_dr6_cmbonly.PlanckActCut": None, "act_dr6_cmbonly.ACTDR6CMBonly": None,
+            "act_dr6_lenslike.ACTDR6LensLike": {"variant": "actplanck_baseline", "lens_only": False, "lmax": 4000},
+            "spt3g_d1_tne_lite": {"external": candl.interface.CandlCobayaLikelihood,
+                                  "data_set_file": spt_candl_data.SPT3G_D1_TnE, "variant": "lite",
+                                  "clear_internal_priors": True, "additional_args": {}, "wrapper": None,
+                                  "feedback": False},
+            "bao.desi_dr2.desi_bao_all": None,
+        }
+    sn_like = (sn_variant[1] if sn_variant else
+               "sn.desy5" if desy5 else "sn.desdovekie" if dovekie else
+               "sn.union3" if union3 else "sn.pantheonplus")
+    likes[sn_like] = None
     if nobao:
         likes.pop("bao.desi_dr2.desi_bao_all")
     if cmbonly:
         likes = {k: v for k, v in likes.items() if not k.startswith(("bao.", "sn."))}
-    _start_from_camb(params, early, late)
+    # These profiles use a matched AxiCLASS baseline below; isolated run directories need not contain CAMB outputs.
+    if not (latetwist or spiral):
+        _start_from_camb(params, early, late)
     if latetwist or spiral:
         # Rerun deviation (PREREGISTRATION_SPT3G_DEVIATIONS.md): start from the AxiCLASS LCDM halofit best fit, not the
         # CAMB one (CAMB's theta is a different quantity); F, m references and all priors unchanged; best of 4.
         best_of = 4 if cold else 2 if grid else 4      # grid points minimise only smooth standard parameters
-        m = json.load(open(f"{OUT}/cmp_ax_spa_lcdm_halofit.json"))["minimum"]
+        reference = "ax_spa_lcdm_halofit"
+        if planckfull:
+            sn_suffix = (sn_variants[0][0] if sn_variant else
+                         "_desy5" if desy5 else "_dovekie" if dovekie else "_union3" if union3 else "")
+            reference += f"_planckfull{sn_suffix}"
+        reference_path = f"{OUT}/cmp_{reference}.json"
+        if not os.path.exists(reference_path):
+            raise FileNotFoundError(f"Run the matched AxiCLASS reference before this profile: {reference_path}")
+        m = json.load(open(reference_path))["minimum"]
         # NR warm start (deviation 18:59:09): a "_nlfix" run starts from its same-named original run's minimum when that
         # run exists. Priors, ref widths and best-of are unchanged. Cold ("_r4") runs never warm-start.
         orig = f"{OUT}/cmp_{name.replace('_nlfix', '')}.json"
@@ -229,11 +261,18 @@ def smoke():
         print(f"{n:22s} finite: {ok}   ({time.time() - t:.0f} s incl. setup)", flush=True)
 
 
-def save(name, seconds=None):
-    """Write results/cmp_<name>.json from Cobaya's own chains/cmp_<name>.minimum.txt (header row, value row).
+def save(name, seconds=None, *, ignore_prior=False):
+    """Write results/cmp_<name>.json from Cobaya's minimum or likelihood-bestfit collection (header row, value row).
     (The minimizer's products() returns a OnePoint object without keys(), which crashed the first A3 save.)"""
-    lines = open(f"{OUT}/chains/cmp_{name}.minimum.txt").read().splitlines()
+    extension = "bestfit" if ignore_prior else "minimum"
+    lines = open(f"{OUT}/chains/cmp_{name}.{extension}.txt").read().splitlines()
     row = {k: float(v) for k, v in zip(lines[0].lstrip("#").split(), lines[1].split())}
+    if all(k in row for k in ("Omega_m", "omega_b", "omega_cdm", "H0")):
+        # AxiCLASS's derived Omega_m can include the n=1 scalar field. Preserve that raw
+        # value, but expose the standard present-day matter density in the canonical field.
+        row["Omega_m_class_reported"] = row["Omega_m"]
+        h = row["H0"] / 100.0
+        row["Omega_m"] = (row["omega_b"] + row["omega_cdm"] + 0.06 / 93.14) / (h * h)
     # Cobaya's own total "chi2" (sum of all likelihoods, priors excluded) is kept as reported.
     json.dump({"run": name, "engine": "AxiCLASS", "seconds": seconds, "minimum": row},
               open(f"{OUT}/cmp_{name}.json", "w"), indent=2)
@@ -264,10 +303,15 @@ def _maybe_coupled(name):
 
 def _guard_minimizer():
     """Late Twist only (PREREGISTRATION_SPT3G_DEVIATIONS.md, minimiser guard): inside the minimiser, a non-finite or
-    absurd log-posterior (closure impossible, or the field overshoots) becomes a flat PENALTY, so bobyqa rejects the
-    step instead of overflowing. Installed in run(), after Cobaya has already drawn finite starting points."""
-    from cobaya.samplers.minimize.minimize import Minimize
+    absurd log-posterior (closure impossible, or the field overshoots) becomes a flat PENALTY. Cobaya can report
+    convergence on that flat region, so discard any restart whose minimum does not reproduce before choosing a fit."""
+    from itertools import chain
+
+    import numpy as np
+    from cobaya.samplers.minimize.minimize import Minimize, evals_attr
+
     orig_run = Minimize.run
+    orig_process_results = Minimize.process_results
 
     def guarded_run(self):
         f = self.logp
@@ -275,9 +319,45 @@ def _guard_minimizer():
         def logp(x):
             v = f(x)
             return v if math.isfinite(v) and v > PENALTY else PENALTY
+
         self.logp = logp
         return orig_run(self)
+
+    def guarded_process_results(self, results, successes, affine_transform_baselines, transform_matrices):
+        results = list(chain(*results))
+        successes = list(chain(*successes))
+        affine_transform_baselines = list(chain(*affine_transform_baselines))
+        transform_matrices = list(chain(*transform_matrices))
+        evals_attr_ = evals_attr[self.method.lower()]
+        for i, (result, success, baseline, transform_matrix) in enumerate(
+            zip(results, successes, affine_transform_baselines, transform_matrices)
+        ):
+            if not success:
+                continue
+            self._affine_transform_baseline = baseline
+            self._inv_affine_transform_matrix = transform_matrix
+            point = self.inv_affine_transform(result.x)
+            recomputed = self.model.logposterior(point, cached=False)
+            recomputed_logp = recomputed.loglike if self.ignore_prior else recomputed.logpost
+            minimized_logp = -float(getattr(result, evals_attr_))
+            if not np.isfinite(recomputed_logp) or not np.isclose(
+                minimized_logp, recomputed_logp, atol=1e-2, rtol=0
+            ):
+                successes[i] = False
+                self.log.warning(
+                    "Discarding minimizer restart %d: its minimum does not reproduce "
+                    "(stored log-posterior %g, recomputed %g; sampled point %s).",
+                    i + 1,
+                    minimized_logp,
+                    recomputed_logp,
+                    point,
+                )
+        return orig_process_results(
+            self, [results], [successes], [affine_transform_baselines], [transform_matrices]
+        )
+
     Minimize.run = guarded_run
+    Minimize.process_results = guarded_process_results
 
 
 def run(name):

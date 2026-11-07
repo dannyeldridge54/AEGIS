@@ -1,0 +1,19 @@
+{
+  "models": [
+    "ax_spa_lcdm_halofit_planckfull_nlfix",
+    "ax_spa_w0wa_halofit_planckfull_nlfix",
+    "ax_spa_latetwist_planckfull_nlfix"
+  ],
+  "branch": "Existing effective one-field Late Twist, not full two-field theory",
+  "seed": 20261104,
+  "best_of": 4,
+  "max_evals_per_restart": 10000,
+  "objective": "Likelihood minimum within existing priors; ignore_prior=True",
+  "data": "Planck 2018 low-l, high-l lite and lensing + DESI DR2 + Pantheon+",
+  "classy": "/home/syndyr/AxiCLASS_nlfix/python/build/lib.linux-x86_64-cpython-311/classy.cpython-311-x86_64-linux-gnu.so",
+  "classy_sha256": "a322bcbef3fe6f1ef0048b6e798b243780caeeccabbbc327dad3ff88860cdb41",
+  "runner_sha256": "d60793baff9fa88cfe7eae4ccd60bb0a1b96cff6a674b1f108b3f7dc8d9072bf",
+  "null_gate": "Absolute frozen-field chi2 difference < 0.15; spectra validation remains a separate required check",
+  "reproduction_gate": "Absolute uncached likelihood chi2 difference < 0.02",
+  "limitations": "No claim of theory validation before spectra, restart spread, and held-out checks. BIC omitted without a justified effective data count."
+}

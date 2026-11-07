@@ -1,0 +1,2 @@
+C:\Users\Danny\.copilot\repos\AEGIS\cmb-fit\venv312\Lib\site-packages\act_dr6_lenslike\act_dr6_lenslike.py:422: UserWarning: Hartlap correction to cinv: 0.949874686716792
+  warnings.warn(f"Hartlap correction to cinv: {hartlap_correction}")

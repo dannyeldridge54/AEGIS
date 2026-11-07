@@ -2,7 +2,8 @@
 """B0 halofit fix (CubeMind PREREGISTRATION_SPT3G_DEVIATIONS.md, 14:34:07; LATE_TWIST_NULL_MIRROR.md).
 background.c counts a scalar field as (rho - 3p) of matter and 3p of radiation. Halofit and HMcode read that Omega_m, so
 a field acting as late dark energy (p = -rho) appears as +4 Omega_scf of matter. This patch takes the field back out of
-Omega_m and Omega_r in the non-linear modules and gives halofit the effective w of the dark energy (field + Lambda).
+Omega_m and Omega_r in the non-linear modules, including the present-day neutrino-fraction denominator, and gives
+halofit the effective w of the dark energy (field + Lambda).
 Nothing else in CLASS changes. Exact-anchor edits; each must match once.
 Usage: python patch_nlfix.py <path to your AxiCLASS clone>"""
 import os as _os
@@ -25,6 +26,16 @@ W_EFF = ("{i}if (pba->has_scf == _TRUE_ && pba->has_fld == _FALSE_) {{ /* nl-scf
          "{i}}}\n")
 
 EDITS = [
+    ("external/Halofit/halofit.c",
+     "    fnu = pba->Omega0_ncdm_tot/pba->Omega0_m;",
+     "    /* nl-scf-fix: neutrino fraction uses present-day matter, not scalar dark energy. */\n"
+     "    Omega_m = pba->Omega0_m;\n"
+     "    if (pba->has_scf == _TRUE_) {\n"
+     "      class_call(background_at_tau(pba,pba->conformal_age,long_info,inter_normal,&last_index,pvecback),\n"
+     "                 pba->error_message,pfo->error_message);\n"
+     "      Omega_m -= (pvecback[pba->index_bg_rho_scf]-3.*pvecback[pba->index_bg_p_scf])/pvecback[pba->index_bg_rho_crit];\n"
+     "    }\n"
+     "    fnu = pba->Omega0_ncdm_tot/Omega_m;"),
     ("external/Halofit/halofit.c",
      "    Omega_v = 1.-pvecback[pba->index_bg_Omega_m]-pvecback[pba->index_bg_Omega_r];\n"
      "    /* until v2.9.3",

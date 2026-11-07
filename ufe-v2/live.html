@@ -22,8 +22,13 @@
   .live { display:flex; align-items:center; gap:8px; background:rgba(255,77,94,0.14); border:1px solid rgba(255,77,94,0.5);
     color:#ffd7db; padding:5px 12px; border-radius:999px; font-weight:700; font-size:15px; letter-spacing:0.12em; }
   .live i { width:10px; height:10px; border-radius:50%; background:var(--live); box-shadow:0 0 12px var(--live); animation:pulse 1.6s infinite; }
+  .live.verify { background:rgba(111,227,161,0.12); border-color:rgba(111,227,161,0.45); color:#c9ffe0; }
+  .live.verify i { background:var(--good); box-shadow:0 0 10px var(--good); animation:none; }
+  .live.error { background:rgba(255,77,94,0.2); }
   @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.35 } }
   .spacer { flex:1; }
+  .report-link { color:var(--accent); border:1px solid var(--edge); border-radius:999px; padding:7px 12px;
+    font-size:13px; font-weight:650; letter-spacing:0.06em; text-decoration:none; white-space:nowrap; }
   .clock { font-size:22px; font-variant-numeric:tabular-nums; color:var(--muted); }
   .panel { position:absolute; background:var(--panel); border:1px solid var(--edge); border-radius:16px;
     box-shadow:0 10px 40px rgba(0,0,0,0.35); backdrop-filter: blur(4px); }
@@ -60,17 +65,19 @@
 <div id="stage">
   <canvas id="stars-bg" width="1920" height="1080"></canvas>
   <header>
-    <div class="live"><i></i>LIVE</div>
-    <div class="brand">AEGIS GALAXY SWEEP<small>mapping every Gaia star, from the Galactic Centre outward · torsion cosmology by Danny Lee Eldridge</small></div>
+    <div class="live" id="live-badge"><i></i>CONNECTING</div>
+    <div class="brand">AEGIS GALAXY SWEEP<small>Gaia DR3 sky survey · cosmology fit results are shown separately</small></div>
     <div class="spacer"></div>
+    <a class="report-link" href="/api/anomaly-report.json" target="_blank" rel="noopener">DATA REPORT</a>
+    <a class="report-link" href="/api/checks" target="_blank" rel="noopener">ESA CHECKS</a>
     <div class="clock" id="clock">—</div>
   </header>
 
   <div class="panel" id="sky-panel">
-    <div class="ptitle">The whole sky, live — every dot is a real star measured by the Gaia space telescope</div>
+    <div class="ptitle">Whole-sky Gaia DR3 coverage — dots are an up-to-20,000-star reservoir sample</div>
     <canvas id="sky" width="1190" height="610"></canvas>
     <canvas id="sky-fx" width="1190" height="610"></canvas>
-    <div class="pnote">Galactic coordinates (Hammer–Aitoff) · centre = the heart of the Milky Way · colour = star colour · <span style="color:var(--gold)">gold</span> = flagged for follow-up · glowing tiles = swept so far, brighter = more stars · rings = sweeping now</div>
+    <div class="pnote">Galactic coordinates · sampled stars are coloured by Gaia BP−RP; <span style="color:var(--gold)">gold</span> = candidate flags · glowing tiles summarize all catalogued rows; the full records remain in per-tile archives</div>
   </div>
 
   <div class="panel" id="gal-panel">
@@ -87,15 +94,15 @@
 
   <div class="panel" id="stats">
     <div class="stat"><div class="k">Stars catalogued</div><div class="v" id="s-stars">—</div></div>
-    <div class="stat"><div class="k">Distance confirmed twice</div><div class="v" id="s-conf">—</div></div>
+    <div class="stat"><div class="k">Distance estimates consistent</div><div class="v" id="s-conf">—</div></div>
     <div class="stat"><div class="k">Galaxy sweep</div><div class="v" id="s-patches">—</div></div>
-    <div class="stat"><div class="k">Scan speed</div><div class="v" id="s-rate">—</div></div>
+    <div class="stat"><div class="k">ESA checks retained</div><div class="v" id="s-rate">—</div></div>
   </div>
 
   <div class="panel" id="hr-panel">
-    <div class="ptitle">The family portrait of stars (Hertzsprung–Russell diagram)</div>
+    <div class="ptitle">The family portrait of sampled stars (Hertzsprung–Russell diagram)</div>
     <canvas id="hr" width="658" height="380"></canvas>
-    <div class="pnote">Colour vs true brightness of confirmed stars · interstellar dust not corrected</div>
+    <div class="pnote">Colour vs estimated absolute brightness for distance-consistent sample stars · interstellar dust not corrected</div>
   </div>
 
   <div class="panel" id="card"><div class="body" id="card-body"></div><div id="progress"></div></div>
@@ -128,13 +135,8 @@ function hammer(l, b) { let L = ((l + 180) % 360 + 360) % 360 - 180; L = -L * Ma
 const SKY = { W:1190, H:610, cx:595, cy:325, sx:1190/2/2.95, sy:520/2/1.45 };
 const skyXY = (l, b) => { const [x, y] = hammer(l, b); return [SKY.cx + x * SKY.sx, SKY.cy - y * SKY.sy]; };
 
-/* ---------- twinkling background (static, drawn once) ---------- */
-(() => { const g = $('stars-bg').getContext('2d'); for (let i = 0; i < 900; i++) { const a = Math.random() * 0.5 + 0.1;
-  g.fillStyle = `rgba(200,210,255,${a})`; g.fillRect(Math.random() * 1920, Math.random() * 1080, Math.random() < 0.08 ? 2 : 1, Math.random() < 0.08 ? 2 : 1); } })();
-
 /* ---------- state ---------- */
 let STATUS = {}, SPOT = { recent: [], records: {} }, SCI = null, PTS = [];
-const history = [];   // [time, stars] for the scan-speed estimate
 let spotIdx = 0, focus = null;
 
 /* ---------- sky chart (static layer every 20 s) ---------- */
@@ -164,8 +166,13 @@ function drawActiveTiles(g, proj, t) {
 }
 function sweepText(sc) { if (!sc || sc.mode !== 'sweep') return '';
   const pct = 100 * (sc.tiles_done || 0) / (sc.tiles_total || 12288);
+  const active = (sc.active || []).length;
+  if (pct >= 100 && active === 0) {
+    const checks = `${Number(sc.checks_passed || 0).toLocaleString()}/${Number(sc.checks_total || 0).toLocaleString()} retained ESA spot checks matched`;
+    return { pct, eta: 'catalogue complete', line: `${Number(sc.tiles_done || 0).toLocaleString()} of ${Number(sc.tiles_total || 12288).toLocaleString()} tiles · 100% · catalogue complete · ${checks}` };
+  }
   const eta = sc.eta_s ? (sc.eta_s > 86400 ? `${(sc.eta_s / 86400).toFixed(1)} days` : sc.eta_s > 3600 ? `${(sc.eta_s / 3600).toFixed(1)} h` : `${Math.round(sc.eta_s / 60)} min`) : 'estimating…';
-  return { pct, eta, line: `${Number(sc.tiles_done || 0).toLocaleString()} of ${Number(sc.tiles_total || 12288).toLocaleString()} tiles · ${pct.toFixed(pct < 1 ? 2 : 1)}% · about ${eta} to go` }; }
+  return { pct, eta: `${active} tiles active · about ${eta} left`, line: `${Number(sc.tiles_done || 0).toLocaleString()} of ${Number(sc.tiles_total || 12288).toLocaleString()} tiles · ${pct.toFixed(pct < 1 ? 2 : 1)}% · ${active} active · about ${eta} left` }; }
 
 function drawPoles(g, proj) {
   for (const [b, name, dy] of [[89.99, 'North Galactic Pole', -10], [-89.99, 'South Galactic Pole', -12]]) {
@@ -284,7 +291,7 @@ function drawMilkyWay(c, pts, noteEl, t) {
   g.strokeStyle = 'rgba(255,209,102,0.35)'; g.beginPath(); g.moveTo(sx + 6, sy - 6); g.lineTo(icx - ir * 0.72, icy + ir * 0.72); g.stroke();
   g.fillStyle = 'rgba(233,236,248,0.8)'; g.font = '11.5px Segoe UI, system-ui';
   g.fillText(`zoom: our bubble, r ≈ ${Math.round(Rl * 3.26156 / 100) * 100 >= 1000 ? (Math.round(Rl * 3.26156 / 100) * 100).toLocaleString() : Math.round(Rl * 3.26156)} ly`, icx - ir, icy + ir + 14);
-  if (noteEl) noteEl.textContent = 'Stars at true scale · circle = zoom on our scanned bubble · spiral arms are a schematic, not measured';
+  if (noteEl) noteEl.textContent = 'Sample stars at estimated distance scale · circle = zoom on our scanned bubble · spiral arms are schematic, not measured';
 }
 
 function drawGalaxy() { drawMilkyWay($('galaxy'), PTS, $('gal-note'), performance.now()); }
@@ -309,7 +316,7 @@ function drawHR() {
   g.font = '700 13px Segoe UI, system-ui'; g.fillText('☉ the Sun', X(0.82) + 9, Y(4.67) + 4);
   g.fillStyle = 'rgba(233,236,248,0.85)'; g.font = '600 13px Segoe UI, system-ui';
   g.fillText('main sequence', X(1.6), Y(6.5)); g.fillText('giants', X(1.5), Y(-0.5)); g.fillText('white dwarfs', X(-0.3), Y(14.3));
-  g.fillStyle = 'rgba(141,150,184,1)'; g.font = '12px Segoe UI, system-ui'; g.fillText(`${num(n)} confirmed stars plotted`, x1 - 170, y0 + 16);
+  g.fillStyle = 'rgba(141,150,184,1)'; g.font = '12px Segoe UI, system-ui';   g.fillText(`${num(n)} distance-consistent sample stars plotted`, x1 - 230, y0 + 16);
 }
 
 /* ---------- H0 comparison (fit results) ---------- */
@@ -326,7 +333,7 @@ function drawH0() {
     g.fillStyle = '#e9ecf8'; g.font = '600 14px Segoe UI, system-ui';
     const label = `${f.label}: ${f.H0.toFixed(2)}${f.err ? ' ± ' + f.err.toFixed(2) : ''}`;
     const tx = Math.min(X(f.H0) - 8, x1 - g.measureText(label).width); g.fillText(label, Math.max(x0, tx), y - 14); });
-  $('h0-note').textContent = 'Best fits: Planck 2018 CMB + DESI DR2 BAO + Pantheon+ (no SH0ES). The torsion field moves H₀ toward the local value.';
+  $('h0-note').textContent = SCI.status_scope || 'Historical fit snapshot; not live fit status or current theory-validation evidence.';
 }
 
 /* ---------- rotating story card ---------- */
@@ -334,8 +341,8 @@ const CARDS = [
   () => { const r = SPOT.recent || []; if (!r.length) return null; const s = r[spotIdx++ % r.length]; focus = s;
     const pc = +s.dist_pc, ly = pc * LY_PER_PC, G = +s.g_mag, v = s.vtan_kms === null || s.vtan_kms === '' ? null : +s.vtan_kms;
     const faint = G > 6 ? `about ${num(Math.round(Math.pow(10, 0.4 * (G - 6))))}× too faint for the naked eye` : 'bright enough to see by eye';
-    return `<div class="kicker">Star spotlight · just catalogued</div><h3>Gaia DR3 ${esc(s.source_id)}</h3>
-      <div class="grid"><div>Distance</div><div>${num(Math.round(ly))} light-years (${num(Math.round(pc))} parsecs) — confirmed two ways</div>
+    return `<div class="kicker">Star spotlight · Gaia DR3 catalog record</div><h3>Gaia DR3 ${esc(s.source_id)}</h3>
+      <div class="grid"><div>Distance estimate</div><div>${num(Math.round(ly))} light-years (${num(Math.round(pc))} parsecs) — Gaia parallax and Bailer-Jones consistent</div>
       <div>Its light left</div><div>${lightYear(pc)}</div>
       <div>Colour type</div><div>${colourClass(s.bp_rp)} <span style="color:var(--muted)">(approx.)</span></div>
       <div>Brightness</div><div>magnitude ${G.toFixed(1)} · ${faint}</div>
@@ -343,22 +350,23 @@ const CARDS = [
       <div>Sky position</div><div>RA ${(+s.ra).toFixed(3)}°, Dec ${(+s.dec).toFixed(3)}° — marked in gold on the sky</div></div>`; },
   () => { const R = SPOT.records || {}; if (!R.farthest) return null; focus = R.farthest.star;
     const row = (k, lbl, f) => R[k] ? `<div>${lbl}</div><div>${f(R[k])} <span style="color:var(--muted)">· Gaia DR3 ${esc(R[k].star.source_id)}</span></div>` : '';
-    return `<div class="kicker">Session records · confirmed stars only</div><h3>Extremes we've found so far</h3><div class="grid">
+    return `<div class="kicker">Catalogue records · stars passing mapper checks</div><h3>Extremes in the full catalogue</h3><div class="grid">
       ${row('farthest', 'Farthest', r => `${num(Math.round(r.value * LY_PER_PC))} light-years`)}
       ${row('nearest', 'Nearest', r => `${num(Math.round(r.value * LY_PER_PC))} light-years`)}
       ${row('fastest', 'Fastest', r => `${num(Math.round(r.value))} km/s across the sky`)}</div>
-      <p style="margin-top:12px">"Confirmed" means two independent distance methods agree (Gaia parallax and Bailer-Jones 2021) and the star's motion fits cleanly.</p>`; },
+      <p style="margin-top:12px">These are mapper consistency checks, not independent confirmations: Bailer-Jones distances use Gaia astrometry. Radial velocities are not available for every source.</p>`; },
   () => { focus = null; if (!SCI) return null;
-    return `<div class="kicker">The theory · by ${esc(SCI.author)}</div><h3>${esc(SCI.title)}</h3><p>${esc(SCI.summary)}</p>
+    return `<div class="kicker">Effective model · by ${esc(SCI.author)}</div><h3>${esc(SCI.title)}</h3><p>This research tests an effective scalar-field potential. Its assumed periodic shape is not yet derived from the microscopic torsion action, and no current reviewed comparison establishes a preference for it.</p>
       <p style="font-family:Cambria Math, Georgia, serif; color:var(--torsion); font-size:19px">${esc(SCI.equation)}</p>`; },
   () => { focus = null; if (!SCI) return null;
-    return `<div class="kicker">What the data says · honestly</div><h3>Tested against the real universe</h3>
-      ${SCI.result_lines.map(l => `<p>• ${esc(l)}</p>`).join('')}
-      <p style="color:var(--muted)">Next: ${SCI.next.map(n => esc(n.label) + ' (' + esc(n.status) + ')').join(' · ')}</p>`; },
+    return `<div class="kicker">Historical research snapshot</div><h3>Archived results, not current fit status</h3>
+      <p>${esc(SCI.status_scope || 'These are historical records, not current fit status.')}</p>
+      <p>Detailed historical result text is withheld from this live view because its stored symbols are damaged and its task statuses are outdated. Original records are preserved; no numerical values or symbols have been reconstructed.</p>
+      <p style="color:var(--muted)">Current execution and comparison readiness must be checked separately from the archived snapshot.</p>`; },
   () => { focus = null; if (!SCI || !SCI.fingerprint) return null;
     return `<div class="kicker">The search for proof</div><h3>${esc(SCI.fingerprint.title)}</h3><p style="font-family:Cambria Math, Georgia, serif; color:var(--torsion); font-size:18px">${esc(SCI.fingerprint.equation)}</p><p>${esc(SCI.fingerprint.text)}</p>`; },
   () => { focus = null; if (!SCI || !SCI.threads) return null;
-    return `<div class="kicker">Research threads · live</div><h3>Where every question stands</h3><div class="grid" style="font-size:15px">${SCI.threads.slice(0, 8).map(t => `<div>${esc(t.name)}</div><div>${esc(t.status)}</div>`).join('')}</div>`; },
+    return `<div class="kicker">Research threads · historical snapshot</div><h3>Archived questions and outcomes</h3><p>${esc(SCI.status_scope || 'Not live fit status.')}</p><div class="grid" style="font-size:15px">${SCI.threads.slice(0, 8).map(t => `<div>${esc(t.name)}</div><div>${esc(t.status)}</div>`).join('')}</div>`; },
   () => { focus = null; return `<div class="kicker">A note from Danny</div><h3>Thank you for being here</h3>
       <p>Whoever you are and wherever you're watching from, you matter, and I'm grateful you're spending some of your time with me. If life has been hard on you, I'm sorry. You're welcome here.</p>
       <p>This is me following a dream and reaching for the stars. I'm not looking for investors, buyouts or fame, and my family values its privacy, so I'm keeping this simple. If you'd like to support the work, just keep the stream running. Enough for my family, and the chance to keep doing what I love, is all I need.</p>
@@ -377,8 +385,8 @@ const CARDS = [
       <p style="color:var(--muted);font-size:14px">This is a test of the method on our own galaxy. The same method, aimed at a million distant quasars, is how we will look for a preferred direction in the universe itself.</p>`; },
   () => { focus = null; const fl = (STATUS.scan && STATUS.scan.flags) || {};
     return `<div class="kicker">What the gold dots mean</div><h3>Candidates for follow-up — not discoveries</h3>
-      <p><b style="color:var(--gold)">Wobbly stars</b> (${num(fl.astrometric_excess)}): Gaia's single-star fit is poor (RUWE above 1.4). Often a hidden companion star tugging on it.</p>
-      <p><b style="color:var(--gold)">Fast movers</b> (${num(fl.high_velocity)}): crossing the sky faster than 400 km/s. Possibly visitors from the Milky Way's halo.</p>
+      <p><b style="color:var(--gold)">Astrometric-excess flags</b> (${num(fl.astrometric_excess)}): RUWE above 1.4 is a heuristic single-star-fit diagnostic. Crowding, systematics or companions require separate checks; this is not a companion classifier.</p>
+      <p><b style="color:var(--gold)">High tangential-speed flags</b> (${num(fl.high_velocity)}): estimated transverse speed above 400 km/s. Distance, uncertainty, radial velocity and orbit validation are needed before interpreting origin or escape.</p>
       <p><b style="color:var(--gold)">Distance puzzles</b> (${num(fl.distance_mismatch)}): the two distance methods disagree. Worth a closer look.</p>`; },
 ];
 let cardI = 0, cardT0 = 0; const CARD_MS = 16000;
@@ -389,12 +397,13 @@ setInterval(() => { $('progress').style.width = Math.min(100, (performance.now()
 /* ---------- ticker ---------- */
 function buildTicker() {
   const sc = STATUS.scan || {}, R = SPOT.records || {}, fl = sc.flags || {}; const items = [
+    `Run <b>${esc(STATUS.run_id || 'default')}</b>`,
     sweepText(sc) ? `Galaxy sweep: <b>${sweepText(sc).line}</b>` : '',
-    `<b>${num(sc.stars)}</b> stars catalogued live from ESA's Gaia space telescope`,
-    `<b>${num(sc.confirmed)}</b> distances confirmed by two independent methods`,
-    R.farthest ? `Farthest confirmed star tonight: <b>${num(Math.round(R.farthest.value * LY_PER_PC))} light-years</b> away` : '',
-    R.fastest ? `Fastest confirmed star: <b>${num(Math.round(R.fastest.value))} km/s</b> across the sky` : '',
-    `<b>${num(fl.astrometric_excess)}</b> wobbly stars flagged — many may hide unseen companions`,
+    `<b>${num(sc.stars)}</b> Gaia DR3 source rows catalogued (all swept tiles; chart shows a sample)`,
+    `<b>${num(sc.confirmed)}</b> sources pass the Gaia parallax / Bailer-Jones distance-consistency check`,
+    R.farthest ? `Farthest distance-consistent source: <b>${num(Math.round(R.farthest.value * LY_PER_PC))} light-years</b> away` : '',
+    R.fastest ? `Fastest source passing mapper checks: <b>${num(Math.round(R.fastest.value))} km/s</b> across the sky` : '',
+    `<b>${num(fl.astrometric_excess)}</b> astrometric-excess flags — heuristic follow-up only, not companion detections`,
     `Torsion-Born Early Dark Energy — a theory by <b>Danny Lee Eldridge</b>`,
     `Every number here can be checked: Gaia DR3 · Planck · DESI · Pantheon+ · all public data`,
     `Thank you for watching — you matter`];
@@ -406,13 +415,33 @@ function tickLoop(t) { requestAnimationFrame(tickLoop); const dt = lastTick ? t 
 requestAnimationFrame(tickLoop);
 
 /* ---------- data refresh ---------- */
-async function getStatus() { try { STATUS = await (await fetch('/api/status')).json(); const sc = STATUS.scan || {};
-    $('s-stars').textContent = num(sc.stars); { const sw = sweepText(sc); $('s-patches').innerHTML = sw ? `${sw.pct.toFixed(sw.pct < 1 ? 2 : 1)}% <small>${sw.eta} left</small>` : num(sc.patches); }
+async function getStatus() { try {
+    const response = await fetch('/api/status', {cache:'no-store'});
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const nextStatus = await response.json();
+    if (!nextStatus || typeof nextStatus.state !== 'string' || !nextStatus.scan) throw new Error('Invalid live status');
+    STATUS = nextStatus; const sc = STATUS.scan;
+    const badge = $('live-badge'), checks = sc.last_checks || [], lastCheck = checks[0];
+    const checkFresh = lastCheck && Date.now() / 1000 - lastCheck.t < 1800;
+    const complete = sc.mode === 'sweep' && sc.tiles_done >= sc.tiles_total && !(sc.active || []).length;
+    if (STATUS.state === 'error') { badge.className = 'live error'; badge.innerHTML = '<i></i>ERROR'; }
+    else if (complete && checkFresh) { badge.className = 'live verify'; badge.innerHTML = '<i></i>VERIFYING'; }
+    else if (complete) { badge.className = 'live verify'; badge.innerHTML = '<i></i>CATALOGUED'; }
+    else { badge.className = 'live'; badge.innerHTML = `<i></i>${esc(STATUS.state === 'scanning' ? 'SCANNING' : STATUS.state.toUpperCase())}`; }
+    $('s-stars').textContent = num(sc.stars); { const sw = sweepText(sc); $('s-patches').innerHTML = sw ? `${sw.pct.toFixed(sw.pct < 1 ? 2 : 1)}% <small>${sw.eta}</small>` : num(sc.patches); }
     $('s-conf').innerHTML = `${num(sc.confirmed)} <small>${sc.stars ? (100 * sc.confirmed_frac).toFixed(1) + '%' : ''}</small>`;
-    const now = Date.now() / 1000; history.push([now, sc.stars || 0]); while (history.length && now - history[0][0] > 120) history.shift();
-    if (sc.stars_per_min > 0) { $('s-rate').innerHTML = `${num(Math.round(sc.stars_per_min))} <small>stars / minute</small>`; } else if (history.length > 2) { const [t0, n0] = history[0], [t1, n1] = history[history.length - 1]; const r = (n1 - n0) / Math.max(1, t1 - t0) * 60;
-      $('s-rate').innerHTML = r > 0 ? `${num(Math.round(r))} <small>stars / minute</small>` : '<small>between sky patches…</small>'; }
-  } catch (e) { $('s-rate').innerHTML = '<small>reconnecting…</small>'; } }
+    const passed = Number(sc.checks_passed || 0), total = Number(sc.checks_total || 0);
+    $('s-rate').innerHTML = `${num(passed)} / ${num(total)} <small>${lastCheck ? (checkFresh ? 'latest ' : 'last ') + new Date(lastCheck.t * 1000).toLocaleTimeString() : 'waiting for first check'}</small>`;
+  } catch (e) {
+    STATUS = {state:'unavailable',scan:{}};
+    $('live-badge').className = 'live error';
+    $('live-badge').innerHTML = '<i></i>UNAVAILABLE';
+    $('s-stars').textContent = 'Unavailable';
+    $('s-patches').textContent = 'Unavailable';
+    $('s-conf').textContent = 'Unavailable';
+    $('s-rate').textContent = `Live status unavailable: ${e.message}`;
+    $('tick').textContent = 'Live telemetry unavailable; previously shown counts are not current.';
+  } }
 async function getShells() { try { SHELLS = await (await fetch('/api/shells')).json(); drawSky(); } catch (e) {} }
 async function getTiles() { try { const n0 = TILES.done.length; TILES = await (await fetch('/api/tiles')).json(); if (TILES.done.length !== n0) drawSky(); } catch (e) {} }
 async function getStars() { try { PTS = await (await fetch('/api/stars')).json(); drawSky(); drawGalaxy(); drawHR(); } catch (e) {} }

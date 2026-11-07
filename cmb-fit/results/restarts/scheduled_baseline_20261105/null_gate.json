@@ -1,0 +1,9 @@
+{
+  "control_chi2": 2498.069174658889,
+  "frozen_chi2": 2498.0699726819257,
+  "difference": 0.000798023036622908,
+  "passed": true,
+  "F": 100.0,
+  "m": 0.015,
+  "qualification": "Do not select alternative limits or accuracy settings solely to pass."
+}

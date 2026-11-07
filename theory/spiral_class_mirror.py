@@ -16,6 +16,7 @@ import classy  # noqa: E402
 
 sys.path.insert(0, HERE)
 import spiral_w as S  # noqa: E402
+from mirror_background import prepare_background  # noqa: E402
 
 ZS = np.linspace(0, 3, 31)
 KAP = float(os.environ.get("KAP", "1.0"))
@@ -39,25 +40,10 @@ for beta in (0.0, 0.05):
         if key in bg:
             break
     keys_scf = [k for k in bg if "scf" in k]
-    z = np.array(bg["z"])
-    o = np.argsort(z)
-    w_cl = np.interp(ZS, z[o], (np.array(bg["(.)p_scf"]) / np.array(bg["(.)rho_scf"]))[o])
-    H = np.array(bg["H [1/Mpc]"])
-    E_cl = np.interp(ZS, z[o], H[o]) / H[o][0]
+    E_cl, w_cl, h, orad = prepare_background(bg, ZS)
     # the coupled build closes the universe on its ACTUAL H(z=0), which differs from the input h when beta != 0
     # (H(0)/H0_in = 0.998 at beta = 0.05): use the actual h for the solver's densities
-    h = H[o][0] * 2997.92458
     om_b, om_c = 0.0224 / h ** 2, 0.12 / h ** 2
-    orad = (np.array(bg["(.)rho_g"])[o][0] + np.array(bg["(.)rho_ur"])[o][0]) / np.array(bg["(.)rho_crit"])[o][0]
-    # kappa from CLASS's own w(0): solve for the kappa that gives the same w(0) in the solver, then compare whole curves
-    from scipy.optimize import brentq
-    def g(k):
-        try:
-            return S.coupled_exp_w(k, beta, om_b, om_c, orad, [0.0])[1][0] - w_cl[0]
-        except Exception:
-            return float("nan")
-    ks = np.linspace(0.05, 1.6, 32)
-    gs = [g(k) for k in ks]
     print("CLASS w0", w_cl[0], flush=True)
     kap = KAP           # no matching: the same kappa goes into both codes
     E_s, w_s = S.coupled_exp_w(kap, beta, om_b, om_c, orad, ZS)
@@ -71,3 +57,5 @@ for beta in (0.0, 0.05):
 rows["MIRROR"] = "PASS" if all(v["pass"] for v in rows.values() if isinstance(v, dict)) else "FAIL"
 json.dump(rows, open(os.path.join(HERE, "spiral_class_mirror.json"), "w"), indent=1)
 print(rows["MIRROR"])
+if rows["MIRROR"] != "PASS":
+    raise SystemExit(1)

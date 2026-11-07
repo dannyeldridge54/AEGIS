@@ -1,0 +1,1347 @@
+[
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/__init__.py",
+    "bytes": 865,
+    "sha256": "46ba03f21f0a3b7d0adea3d92d1fbad36da2f436607cd2de6fcad33dcd7f9e64"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/desi_bao_all.py",
+    "bytes": 242,
+    "sha256": "ef8c3b4a02daa7e75ed086753dc4719b5fe823d92040933355de2327b7b4119c"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/desi_bao_all.yaml",
+    "bytes": 368,
+    "sha256": "fd7e9bf2dcf5ffee90a9a30b18227f4337d6d5c1978782c63513cbe0d8280daa"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/desi_bao_bgs.yaml",
+    "bytes": 399,
+    "sha256": "4f5e5a3c6b116233af24c02773850b5e8c006092f2424b950996f4a397fd2331"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/desi_bao_elg2.yaml",
+    "bytes": 425,
+    "sha256": "44b43cda1a876aff14c64513baa84619752b2ed341ef1d5ca53536877a737d88"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/desi_bao_lrg1.yaml",
+    "bytes": 395,
+    "sha256": "a8e0da476077a715cee070b072b1d25bb51885a2f76a0574722f85aa8823c879"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/desi_bao_lrg2.yaml",
+    "bytes": 395,
+    "sha256": "4e0bb3b91343fb8c3d386a3066726e749c6df48772a38fadc340e32b314d7137"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/desi_bao_lrg3pluselg1.yaml",
+    "bytes": 402,
+    "sha256": "4fcc38656cb6ec1ff7fc57fa1b1a09df9c69f945d91e041bfc78dc07f6cd1098"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/desi_bao_lya.yaml",
+    "bytes": 360,
+    "sha256": "e7799520d49e29d9547084fd468b7478a9b1188dd961d6090a0b6174ee72542a"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/desi_bao_qso.yaml",
+    "bytes": 360,
+    "sha256": "116256ab7925f059c50ae331405a837c8dfb3f5c461b6678df55c5819a39a470"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/bao/desi_dr2/desi_dr2.bibtex",
+    "bytes": 649,
+    "sha256": "2585f503d9346c211e262131793df17f693038cf61df280291fa3e877a04a43d"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/EE.py",
+    "bytes": 227,
+    "sha256": "abebb1fa6d60f4e9a07f6737efe677017a241211157eddc61ee53bcdcbcdeef8"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/EE.yaml",
+    "bytes": 550,
+    "sha256": "3b0b5bbbd4e1610ad70e23e657afb734d7d865ddd442bc23f1ef983fa1fa1dfd"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TE.py",
+    "bytes": 227,
+    "sha256": "c6888cd79519833d30dee90ad94a3ff2860973f4ecb68e06212e1352381841ba"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TE.yaml",
+    "bytes": 569,
+    "sha256": "05b9165ab679ab3f76d90db02394ecaaed54d9d1c58625c0acaef8dd3514523b"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TT.py",
+    "bytes": 220,
+    "sha256": "c07d702f08c41cc9849d1c3366682e68c669ef976d264021fb9e4b42d90f91cc"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TT.yaml",
+    "bytes": 574,
+    "sha256": "dbc582edf1a78c85c0b9cf7156f7c27e283403920b6bec0c2c08220472451f6f"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TTTEEE.py",
+    "bytes": 236,
+    "sha256": "d3ee4ab1b609e16bba206cfd449ac02a2fefed3c0aa195693e69011fb675612b"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TTTEEE.yaml",
+    "bytes": 629,
+    "sha256": "536b2e2834dc6beb556edcecede8bd2edb1e98250a3647637bd0013dae29d60c"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TTTEEE_lite.py",
+    "bytes": 272,
+    "sha256": "d7a2017efab9a24c24b9cecc237c70d0172661f5546de6e44e6874d721b159a8"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TTTEEE_lite.yaml",
+    "bytes": 576,
+    "sha256": "b537a2fe360014de914f5fe9a0418d79baf32fe26d9b540c783dd9785895656a"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TTTEEE_lite_native.py",
+    "bytes": 357,
+    "sha256": "fef75c51084b420079d5e8170704a2f35256ef18ed49b572accb183e7d987a51"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TTTEEE_lite_native.yaml",
+    "bytes": 631,
+    "sha256": "4f8e0187651269f1dd49fc0971e5ce01db0d1ff256699e48b2f25fcf33309c98"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TTTEEE_unbinned.py",
+    "bytes": 254,
+    "sha256": "218578985982821a7745473f36646f044d3068d7b35b64f12402715fa1e53982"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TTTEEE_unbinned.yaml",
+    "bytes": 652,
+    "sha256": "aa9043a3fa87ab5e7e8db37103b365c94ecca011ee8e114e25eec6c1a954b58a"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TT_lite.py",
+    "bytes": 256,
+    "sha256": "7d5053785d937c45d88c9ad64914f7d96e5f40381d9562e89c3d714f718cb477"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TT_lite.yaml",
+    "bytes": 563,
+    "sha256": "f2811d4005d3773259e8dadffee56b68265bc502fbb08525af0f085302f514c6"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TT_lite_native.py",
+    "bytes": 341,
+    "sha256": "cbf5f20de79a6791cc71139bc9a84d2f4efb74218a63e516c887429365458f3e"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TT_lite_native.yaml",
+    "bytes": 615,
+    "sha256": "73a0587afd60b88372f91176641162adb2d09e327b1635cf12a556750cc7196e"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TT_unbinned.py",
+    "bytes": 238,
+    "sha256": "542246329c326667d8a10a3add32106ddf0ebdd5333c8aa755073c4d43989151"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/TT_unbinned.yaml",
+    "bytes": 595,
+    "sha256": "6c8174d565de3285b75505dfc393d5b85b967b8f05eeec8681ca89546d2d9f78"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/__init__.py",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/params_EE.yaml",
+    "bytes": 1091,
+    "sha256": "09851b5775a77388a96639690db2fdccf267cbb8f54e10301a2021eaf6299bd8"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/params_TE.yaml",
+    "bytes": 1425,
+    "sha256": "663d136eaf00f3b740c55296c854d4f5666a6a28e2108eb11bc1d7c9a2bc4e64"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/params_TT.yaml",
+    "bytes": 2651,
+    "sha256": "ff0bf348f31809781b7b4e7b271962f566f66d78fe5383905b6e6e22bdaeda71"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/params_calib_pol.yaml",
+    "bytes": 150,
+    "sha256": "cce1092b1ceb152e1826ad1069278c7f46f9f4606cd5de75f2f86954ed16999f"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/params_calib_temp.yaml",
+    "bytes": 429,
+    "sha256": "d80e997504c146c5543da6ae57551369fca1de99ca85f22a867ef8af57d178e0"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_highl_plik/prior_SZ.yaml",
+    "bytes": 88,
+    "sha256": "a829e1bfaa6259dc2ea0e03722e4a24062f2ee2bf5c0b370b9a5be21158e7a3f"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lensing/CMBMarged.yaml",
+    "bytes": 673,
+    "sha256": "1982af6638bf4eaa28c04cfaaddcb473ba7aa121dedbb19dbf4b8711986c7dba"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lensing/PlanckLensing2018.bibtex",
+    "bytes": 386,
+    "sha256": "f5e05c8f476224fc250cac22a6420d69e16c7236ae3977621977405d289494c3"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lensing/__init__.py",
+    "bytes": 882,
+    "sha256": "0da17f732cfaa4f751fe003764f64e4482318e9c94dc42c73c7802b5f3914fba"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lensing/clik.py",
+    "bytes": 292,
+    "sha256": "5211400c5b42bb091b8222253db1a519ee14802c10029510c2bfbde9090079b8"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lensing/clik.yaml",
+    "bytes": 559,
+    "sha256": "041b418be669bb4712bbf4b62965f0ffac632d573d1a73c057ba9b32483964f8"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lensing/native.yaml",
+    "bytes": 618,
+    "sha256": "6e27213e3628b5fe0252bf1492e5f92536b3b58ddb4bf858faa72ac7a0fb1178"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lowl/EE.py",
+    "bytes": 2336,
+    "sha256": "f7904497d21214c615837b0f1196569c09dfebaa84a652e3c2794a874507496b"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lowl/EE_clik.py",
+    "bytes": 192,
+    "sha256": "213f9f80df7860dabbc44043fa3aea363d0ba95b497e838b89569212204c3305"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lowl/EE_clik.yaml",
+    "bytes": 524,
+    "sha256": "2fd258aebd231558ec7afb8a726254e6e2e05111c30303b7de8137b7b339e8d9"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lowl/EE_sroll2.bibtex",
+    "bytes": 451,
+    "sha256": "1fe941805fd16528712f8ea175c32ad68bb67e0bc4109c281f885661141addef"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lowl/EE_sroll2.py",
+    "bytes": 668,
+    "sha256": "4f909bde2dca1f2d4f1d008b9dec7d853ff3910bee2bc985d9161a60998ef0fe"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lowl/TT.py",
+    "bytes": 4829,
+    "sha256": "7976e9cbec2442076bce8e86ef910650607891463591d30d8cb65804cfc249b6"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lowl/TT_clik.py",
+    "bytes": 210,
+    "sha256": "78bfc23526a9485660d2f9b3ada9ee13bbe5f5272c79092940f60d86fd4d77f4"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lowl/TT_clik.yaml",
+    "bytes": 511,
+    "sha256": "cf3b32982029d252025c4ecc59af5c40775f51a603fb675f2576fd195e8fd6d5"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/planck_2018_lowl/__init__.py",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/__init__.py",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/desdovekie.py",
+    "bytes": 1374,
+    "sha256": "c02a58600e3ebf970bd9aa7c5f330cea3a63f380664e0a66eaee75e25c6d24fc"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/desdovekie.yaml",
+    "bytes": 402,
+    "sha256": "4badbb89aa829556cf0de5e0a4d1e29a6f64fe94e59c2897d5cc9e6bf16fb662"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/desy5.bibtex",
+    "bytes": 548,
+    "sha256": "444d351ff781d12e76905516a0d7082bff59b89811410268da586d3206bfc6bc"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/desy5.py",
+    "bytes": 479,
+    "sha256": "9dab3e85662ba2fcc117a2b1ca0b54487bbff0b44a17a6ac55cd8b3f4a303efe"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/desy5.yaml",
+    "bytes": 385,
+    "sha256": "4803c0bee7180c5a563c9e92b1518d9e10c85003b9e463cef73abc12c084c49a"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/jla.bibtex",
+    "bytes": 662,
+    "sha256": "dceaac44b993de978984e3a56cf6618cb3751a8a464e755794a657dda52c2f65"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/jla.py",
+    "bytes": 231,
+    "sha256": "28accef7627b3e4b1e4ee9a7b74f5760cc7eb0516f6361930cb151761e4589e2"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/jla.yaml",
+    "bytes": 889,
+    "sha256": "95f23fc006296ca77b37ddaa737210da261a6d3b5da6568a662e60830eb59b69"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/jla_lite.bibtex",
+    "bytes": 662,
+    "sha256": "dceaac44b993de978984e3a56cf6618cb3751a8a464e755794a657dda52c2f65"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/jla_lite.py",
+    "bytes": 280,
+    "sha256": "c2cd163bf409c55e691aeec363facce40e09e4857cbf5c2346e8675abf8778e8"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/jla_lite.yaml",
+    "bytes": 918,
+    "sha256": "68afd3de50dca1cd45b16ace09f1e83ee2264b121397244ae69e18c5fd0dcb55"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/pantheon.bibtex",
+    "bytes": 681,
+    "sha256": "bb85ab5c3474b8c439b74a142a86e7a261dac88bee8988af0f3a8691958daf64"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/pantheon.py",
+    "bytes": 232,
+    "sha256": "3df801b932c96bfeb5b9c3b5db7c9979d35b013f4f34a20f4880cbfb144c789a"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/pantheon.yaml",
+    "bytes": 448,
+    "sha256": "cbf729a6bf3dafe931eb327027cc302fcf76a1a59133f14025dffb1e6206affc"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/pantheonplus.bibtex",
+    "bytes": 367,
+    "sha256": "ac0777eeb80ff985d1fd17be05de160de6082877143d8d29b475887e74784056"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/pantheonplus.py",
+    "bytes": 2970,
+    "sha256": "cbd0c5c54072f18851f68d4db2df3ca48f13555ca581ea0476de4a12730c2fd5"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/pantheonplus.yaml",
+    "bytes": 447,
+    "sha256": "f16521b280a18c514a291bec1f6c11334155ca1dac6532801daabf193d4e15b9"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/pantheonplusshoes.py",
+    "bytes": 1105,
+    "sha256": "686112767ea2bea8cdfb176641dbb3d7c8eade0f8899ab27bd82515970dfdc1d"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/pantheonplusshoes.yaml",
+    "bytes": 452,
+    "sha256": "bb3d257ab1294bf5986d010c368e4776d41adc54788ac714f367fff616c18e06"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/union3.bibtex",
+    "bytes": 290,
+    "sha256": "d3eed226c769ce5cd6a0d336ce70ed886370655d45b2b0e35eea30596e39c2a7"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/union3.py",
+    "bytes": 489,
+    "sha256": "e6ca4d642f767a9a23ddee13af7290afa758c3242ee77cdab3ff501d9d310c45"
+  },
+  {
+    "path": "/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/cobaya/likelihoods/sn/union3.yaml",
+    "bytes": 326,
+    "sha256": "d514c2ded8e3c1cefe5b3a8d79ad29f4df8cc1ec2365f7247a8f6e94761b8b29"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_cov.txt",
+    "bytes": 2547,
+    "sha256": "252a143274c8a07c78694c119617d36594f6d7965d00319ca611c6ffb886e509"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_ALL_GCcomb_mean.txt",
+    "bytes": 472,
+    "sha256": "9ac154ab583ce759c0f7eef3c978c7c70a6ead2d18774caceadf1a350a640585"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_BGS_BRIGHT-21.35_GCcomb_cov.txt",
+    "bytes": 15,
+    "sha256": "06d7260009fa0030171753fe2f8ece92c5e167da5fdf57f3a98aa2dfe9dc142f"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_BGS_BRIGHT-21.35_GCcomb_mean.txt",
+    "bytes": 63,
+    "sha256": "06fc72ca4f4b4a03973c514bf7568c856716ff76a8c05df02e42b93aca769d59"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_ELG_LOPnotqso_GCcomb_z1.1-1.6_cov.txt",
+    "bytes": 62,
+    "sha256": "8d1afedca817a80f44c9dd492101d6653f1f353a59da6f24a6bcb0f0d80ad6bc"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_ELG_LOPnotqso_GCcomb_z1.1-1.6_mean.txt",
+    "bytes": 98,
+    "sha256": "75d2dd246d2f17145f202fccf80da0bd723a67270a76f83b5be204161e204794"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_LRG+ELG_LOPnotqso_GCcomb_cov.txt",
+    "bytes": 62,
+    "sha256": "8c8f5270dc3db24cbecd9aee1e463819a93e4fbfb0805fdf18357c39e5a8e95a"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_LRG+ELG_LOPnotqso_GCcomb_mean.txt",
+    "bytes": 98,
+    "sha256": "c34585b9afdb683e68c2522e9715950fd24b63435ceb8a94ae52acd5d2626f4a"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_LRG_GCcomb_z0.4-0.6_cov.txt",
+    "bytes": 62,
+    "sha256": "1fc0b21fd34a0e194f3fce2601ea3d1f411b03c7c1006c5b865b9f66991b8740"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_LRG_GCcomb_z0.4-0.6_mean.txt",
+    "bytes": 98,
+    "sha256": "86336445497058eee24ecf255e8a7486d8b46d709daa7a919566a58818dbed0c"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_LRG_GCcomb_z0.6-0.8_cov.txt",
+    "bytes": 62,
+    "sha256": "16fa8c323f54139ef1249a24f8f9c8663dbac7890d5a6d9c3b97e84ee89847ae"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_LRG_GCcomb_z0.6-0.8_mean.txt",
+    "bytes": 98,
+    "sha256": "6d2f38d0727b2aefcd82fdd5a1c6df5a7d34ad8459437c195d575b5ad0c6ab32"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_Lya_GCcomb_cov.txt",
+    "bytes": 102,
+    "sha256": "02a049dbf3a1cd391189948516378a694abfd8d5b5cba1a15e97c6c5cf972357"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_Lya_GCcomb_mean.txt",
+    "bytes": 99,
+    "sha256": "9b4ab92080d038d0a0a5d76b9abead4e3919d7227e343d1e7feab7103e1f30cb"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_QSO_GCcomb_cov.txt",
+    "bytes": 62,
+    "sha256": "7445c6bca01e2732b15ff29e832cc7b682c27d096f3b3ae8a171b63b20e8f6da"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/bao_data/desi_bao_dr2/desi_gaussian_bao_QSO_GCcomb_mean.txt",
+    "bytes": 98,
+    "sha256": "9bffdd0bf27615ab5225e5232fcdf53e16318bf9d06b031a2756d6e89368dadd"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_2018_pliklite_native/blmax.dat",
+    "bytes": 16125,
+    "sha256": "c28ade0fa5270c7e87ba07bdcb68aef8783b132b352bfaa36c04d17694ab4014"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_2018_pliklite_native/blmin.dat",
+    "bytes": 16125,
+    "sha256": "325b351cbf8f694556bb13e98f285344e8d66811bb8eef18bcdcf1626518719d"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_2018_pliklite_native/bweight.dat",
+    "bytes": 185925,
+    "sha256": "8afcbd8bad769e2de96bacd80177e6543f96b2b406e6c2da1fd0d26718c9e415"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_2018_pliklite_native/c_matrix_plik_v22.dat",
+    "bytes": 3006160,
+    "sha256": "ad90378c50bd67841764179c90ae6711fa4317c649966ab2b0712143b31e0a32"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_2018_pliklite_native/cl_cmb_plik_v22.dat",
+    "bytes": 37393,
+    "sha256": "dac0d9d493213e77c940a10a968cf0da3c5730bae60e1356c4cd8bcff96377ff"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_2018_pliklite_native/plik_lite_v22.dataset",
+    "bytes": 415,
+    "sha256": "0dc7318de1b1b8fe0ad79e6bdb13135eae0190c9678e52a0a4f5120ceafa64ca"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_2018_pliklite_native/version.dat",
+    "bytes": 2,
+    "sha256": "3bfc269594ef649228e9a74bab00f042efc91d5acc6fbee31a382e80d42388fe"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/planck_calib.paramnames",
+    "bytes": 24,
+    "sha256": "bc0155dd4026afff8e100a84ff3b3aae3c121b57071312a5cf19c47b79c6489b"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2.dataset",
+    "bytes": 788,
+    "sha256": "5e88cd8c52c6469682be4400f147f203b345f0fc19a7ab85001f2ed0ca268f37"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged.dataset",
+    "bytes": 503,
+    "sha256": "61497b57d9fbd6a118aa97398fa2ad9014161764f88893886648d9f3436f537f"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_cov.dat",
+    "bytes": 4966,
+    "sha256": "62c25f5bfa6a4303dacecd7e69f4ba1e0239fdedf69dbcdced6a274722365cdd"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window1.dat",
+    "bytes": 703,
+    "sha256": "70dd857079f7205f4fd303b5255b40e6d7251d52500535214b8654820669beb6"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window10.dat",
+    "bytes": 703,
+    "sha256": "7a0ce0122762ec2e3e1b90d2de747b76b9da08e5c03016d7ab37ef5834b055d5"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window11.dat",
+    "bytes": 703,
+    "sha256": "9c6610b3a7c26384e6cdbede31a4c2b72b623950503426f5af9c43cba37f467d"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window12.dat",
+    "bytes": 703,
+    "sha256": "6e8c5cc0ea72b4d058a7279ef804e8e9e63e0fc065092dc9f4cf3fcdbc0ba137"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window13.dat",
+    "bytes": 703,
+    "sha256": "d4fa0678ca64abe6a51c9a338bed83dad83ed405380a3f7fe8d1478da55c4aa0"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window14.dat",
+    "bytes": 703,
+    "sha256": "fd46938bc63b61266d945bf9504db76258d678d732b53cfc14d3400914c09d18"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window2.dat",
+    "bytes": 703,
+    "sha256": "2e4cc1bd9c65099e5375af7eae22227bf59c229c03b626e06efc390389237940"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window3.dat",
+    "bytes": 703,
+    "sha256": "586c39ba3be4d02137628bed966a7ecd28bb1c07f906bde20f2db42045ba3c67"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window4.dat",
+    "bytes": 703,
+    "sha256": "3f854729b72b8eaa8f43052da67151a0d04da7c0567036bf2664c4c146bff482"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window5.dat",
+    "bytes": 703,
+    "sha256": "844cc82caefc35bdfeb7cffc96caef26f705112cefb1fd7a96a676a98bdb9850"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window6.dat",
+    "bytes": 703,
+    "sha256": "afd763498f3cdb676b9efd34bec5512f3982b0ca8b717f23304a58f16ea312c5"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window7.dat",
+    "bytes": 703,
+    "sha256": "89ae8e5c96e55b875c034f0aeaf9cbcee0a1a84629aace0d2bdf45025300d696"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window8.dat",
+    "bytes": 703,
+    "sha256": "57bc1acf6d87037d392e6b241247903c6ccc34dda6240d949b4d5acbb5d8809a"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lens_delta_window/window9.dat",
+    "bytes": 703,
+    "sha256": "1531038c96b8e05e644c3a66586f18927656b2a081bff3c520ebb86eddb47896"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_CMBmarged_lensing_fiducial_correction.dat",
+    "bytes": 315,
+    "sha256": "3d49d46fda717b7a56f795ec94ffe5c8d99f6890295eeb137433a610f877d735"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_bandpowers.dat",
+    "bytes": 885,
+    "sha256": "022ecd45a4dc0d8ea42643b084811e5ff295040cbc3fead7d4e7ecf6c0c2254e"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_cov.dat",
+    "bytes": 4982,
+    "sha256": "b9e25a798e6b30a6503981e71b0d1f963d040d909236c2b45f6c3d97224170cd"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window1.dat",
+    "bytes": 147655,
+    "sha256": "c8c2da6eed2300e8e6d644287daf61eb0f4803f0cc790421fb6f8453d8e47105"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window10.dat",
+    "bytes": 147332,
+    "sha256": "bd5880020dbe52ede744b493776c03b89fd810a716157d2cdfe1af108eb4a5d6"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window11.dat",
+    "bytes": 147310,
+    "sha256": "8dd505f2ce7a076f8c27946ad78489e32b075c3d2c5747ebf78c87464c1e8a32"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window12.dat",
+    "bytes": 147341,
+    "sha256": "45f21cee4fe22d2432014572791bad5d7a775edd7867f3df984b15c2b5946b27"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window13.dat",
+    "bytes": 147282,
+    "sha256": "20a47b54d79459b43922d570eca070a9fe852e5e0a132644e6a52d970ed16370"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window14.dat",
+    "bytes": 146925,
+    "sha256": "4dca84053b66c3a4fab890cfc9a6530d36d92013fd4e9d6894b554af0fc571b5"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window2.dat",
+    "bytes": 147689,
+    "sha256": "47694e3b0b6563a0e97541108e4ec098226baee603a9e3a7a0a58f4fc84a7883"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window3.dat",
+    "bytes": 147783,
+    "sha256": "181e2248a6daa2cda5cbd74fcea2882314352ba53b0cbe133b0acb2b37ee9cbb"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window4.dat",
+    "bytes": 147896,
+    "sha256": "649bee5c65508e9f88edda9052433210a27ff4328b6cc0216f90593dd01564f3"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window5.dat",
+    "bytes": 147969,
+    "sha256": "b7811734b07ec244aa9a60ee921b37b060e60f7aaddad50cf8e5492ab7ebaaae"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window6.dat",
+    "bytes": 147916,
+    "sha256": "7c7a687f80059812cadb4247d7000284b073e7de74751ddddebc472c1017bc91"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window7.dat",
+    "bytes": 147613,
+    "sha256": "61befead2c3bcae9a07666fc43a6f8d77746cfe263b29f992d0c733cff8ba75d"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window8.dat",
+    "bytes": 147302,
+    "sha256": "a9e0c3512bfaeeee852f605abfe8d495f828c9074bfe2933377c40eb377fa787"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lens_delta_window/window9.dat",
+    "bytes": 147319,
+    "sha256": "d2104d87b92577b3cc38e3452b6581ec1a43b3c75563c014983ffa6ffe8e8f08"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_lensing_fiducial_correction.dat",
+    "bytes": 315,
+    "sha256": "a3a222a9b7853852ca0f1ef786f861c9973cde9eb992d450ffe77fe2548f3efb"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window1.dat",
+    "bytes": 247,
+    "sha256": "af07ac9f9f4f20d3e4ec2f245a856dba26c282ef61cfc6597397e3d48b92c33b"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window10.dat",
+    "bytes": 1900,
+    "sha256": "9e9a607c816c50599bad0d67e036d3bb3e60ca9a138b1b05de59ed574c9513a2"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window11.dat",
+    "bytes": 2128,
+    "sha256": "bc6d990f3599b2dd2511f01f0d0b2a8de29175c3187f27257979a581cf0c6790"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window12.dat",
+    "bytes": 2375,
+    "sha256": "797c72e681c07ca7c44493981b2f4230c3f9a561917236016cee38e5d3ca6503"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window13.dat",
+    "bytes": 2641,
+    "sha256": "38096c64fde6b9aa54770961566898831f7d93e086fe7ef81ded6769c56a6e49"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window14.dat",
+    "bytes": 21793,
+    "sha256": "1115b0bca0a2700d8f046b7ba4a8e7a83957db3c71bc13a26bda47969361f2e2"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window2.dat",
+    "bytes": 361,
+    "sha256": "1149b6d97ad290c6db12bba12a5211a44110cb1005743fb88e6807349bb9ec24"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window3.dat",
+    "bytes": 494,
+    "sha256": "8abe1fc61f6451b53b320faf0127eb23161bb2786f007c2c10fd6f2c76de2f41"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window4.dat",
+    "bytes": 665,
+    "sha256": "8af892fd33954d7bedf3849125759e19a27cd415359b64f1c95146faa3443f0b"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window5.dat",
+    "bytes": 836,
+    "sha256": "a089acc6bdb20f5e796136c89ed6b3df22d8385803d8c29f0f81532d46e137e1"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window6.dat",
+    "bytes": 1026,
+    "sha256": "10f0db8a34e64e1f160f8e5ad4e60f423da1c0b6a0005ec9bdd6637466c677b3"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window7.dat",
+    "bytes": 1235,
+    "sha256": "b1068a06050e50684ee05bad367ad5db6117db46445b08915b5c31795a2108de"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window8.dat",
+    "bytes": 1425,
+    "sha256": "79030a5f9ac661122b9d8906785e9f35751e56963d98a698f0c0b9aae6493183"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_agr2_window/window9.dat",
+    "bytes": 1653,
+    "sha256": "0b6afe514d3003d3aeae519f90f2d2f0407e6d180449f4f0d7b93403c543c2ed"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8.dataset",
+    "bytes": 806,
+    "sha256": "7bc37c8c17191c857425c0b1213c2df66cc99360a831009e8be765da4fe8d51c"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged.dataset",
+    "bytes": 519,
+    "sha256": "0a07733b77522b369766ca678a328397deed4c2ae8a588af3bc9fd53141dfdeb"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_cov.dat",
+    "bytes": 2053,
+    "sha256": "1ce3e79dbe1e72858eb50ade73b5ba18a8c5f17a6d48c9f8708d3c65d567b2a4"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_lens_delta_window/window1.dat",
+    "bytes": 703,
+    "sha256": "f60906b71823351552bb2b6b2b90d0d42e0bff5ce74a1f10f153ac92fdc00e7f"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_lens_delta_window/window2.dat",
+    "bytes": 703,
+    "sha256": "2944563cb8ceec52716677b8b9b1a5183f068a584bc8c61190d0f3479871b533"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_lens_delta_window/window3.dat",
+    "bytes": 703,
+    "sha256": "061c3f49d004b66e9466b73cacf7408942d6a0312052e7c279f64a6db3414cfc"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_lens_delta_window/window4.dat",
+    "bytes": 703,
+    "sha256": "521d8b11823c631ea3ffca4e3259491a896b2a10a21952b67264ad957bc6a182"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_lens_delta_window/window5.dat",
+    "bytes": 703,
+    "sha256": "44010273e787013d3bea3bcdfc692aa5c25833c680dcdd6ec9efe6cda93d25a8"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_lens_delta_window/window6.dat",
+    "bytes": 703,
+    "sha256": "3e82460f4b4db176166dc5990917e04adfd3e481cfe6d037fd7c11522eee9221"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_lens_delta_window/window7.dat",
+    "bytes": 703,
+    "sha256": "38ab12bdcdfb5cd89f63bd05a59106f795244d2dd814df8f9528378676cc3986"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_lens_delta_window/window8.dat",
+    "bytes": 703,
+    "sha256": "ea4c7a29d85bfa4b6e529b3a75708b803dc8ce622f705764c0b7659630cc7fd5"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_lens_delta_window/window9.dat",
+    "bytes": 703,
+    "sha256": "37e5356ec9640337d6d2368c7837076bccbd7508bb81a517248d96549fbf4b67"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_CMBmarged_lensing_fiducial_correction.dat",
+    "bytes": 210,
+    "sha256": "26f97ac6c742656cf5f6f8b9fc5c22c6e6384de9c9340b33bbcd47685c3fcb28"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_bandpowers.dat",
+    "bytes": 590,
+    "sha256": "0113871c95b026dbf544c21f3c0cd667bea25ad146dddb93db4189cff660a6f0"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_cov.dat",
+    "bytes": 2061,
+    "sha256": "fdd19b43dacd3c65a3d092442c291401a3497cc4fddf9ce08bb098d5a428efc0"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_lens_delta_window/window1.dat",
+    "bytes": 147689,
+    "sha256": "96420a282e53a730f586234b93de651a73aea2dcdececbcb06a4f62c2f867d07"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_lens_delta_window/window2.dat",
+    "bytes": 147823,
+    "sha256": "d6cf6e596965af6caecbe52dd01f465ad3384f1dd098126288cbe6ebed29e8ec"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_lens_delta_window/window3.dat",
+    "bytes": 147950,
+    "sha256": "487e1e1a9e4e8740dcc34a7c31e4168655db074a8739e067a4e59a8f7fc750e1"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_lens_delta_window/window4.dat",
+    "bytes": 147961,
+    "sha256": "670a647e10ca0f7cd5ca9c5465f5f19e9b27978f836262e49c9420b8defb58dd"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_lens_delta_window/window5.dat",
+    "bytes": 147826,
+    "sha256": "0be8a018e39addf52cf6bae689e7d483fa441582a5966c7592d4cac577657608"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_lens_delta_window/window6.dat",
+    "bytes": 147507,
+    "sha256": "f95bb176d365bc78cd3fedcf98e220cadf25f09711960124197ea74104a308c6"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_lens_delta_window/window7.dat",
+    "bytes": 147291,
+    "sha256": "63e595b7dc6585ad280497f3b2c3e438db2c09cc482a781a89b8667349d48598"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_lens_delta_window/window8.dat",
+    "bytes": 147357,
+    "sha256": "59eadaa2c60c487574b1cee5b0ee9dc84140bb4063bb93f48f8dcdcf768851c4"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_lens_delta_window/window9.dat",
+    "bytes": 147315,
+    "sha256": "a7d5bbb519e100ec87d8e8b5ce4e1bef017ef66e9c2a37a39f458b230e86cb8f"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_lensing_fiducial_correction.dat",
+    "bytes": 210,
+    "sha256": "d186f5cc43556f8a4178a275fc73142b69b7ba1976fea383bfb5763f4e133cd6"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_window/window1.dat",
+    "bytes": 627,
+    "sha256": "da21c0c323f3d43b896c0b08832801d553812000e82aa4d30581574f1483c5f6"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_window/window2.dat",
+    "bytes": 836,
+    "sha256": "5a610ba5e9a158cdb4bf1b787c241d980d53f4937141fe7602a107fa6b04996f"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_window/window3.dat",
+    "bytes": 855,
+    "sha256": "29cee1f5ec34a643a6c7091489e58995ee0680f2d2a79df5a99275116fcd07cc"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_window/window4.dat",
+    "bytes": 855,
+    "sha256": "deda1ebff7dcf07c7da63e54ceb90b1fb6cc20d52b22b06b37f705583e805f56"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_window/window5.dat",
+    "bytes": 855,
+    "sha256": "15f649bec0438cdab5c9efab0bed6a92ae139bff00c74e0cf99e89217f72a183"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_window/window6.dat",
+    "bytes": 855,
+    "sha256": "c110f460478ad285899b50ed495f11de2c0f8c7e67f11f4eaabd0d1506e523ca"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_window/window7.dat",
+    "bytes": 855,
+    "sha256": "7225217ea62d9909cbca9adb4b7351072040f925f462a7f47f2b6c262c12fd76"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_window/window8.dat",
+    "bytes": 855,
+    "sha256": "9952b5112111eb998078f7387e01abf139d4b720e17b54097167312f8e2d8d0e"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpp_p_teb_consext8_window/window9.dat",
+    "bytes": 874,
+    "sha256": "6389ed1301c686cfe4d4d9b237ff63363423918657163fc59bd806909e191db6"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2.dataset",
+    "bytes": 793,
+    "sha256": "31c6c353368f7699e3322925582db3ebb52b1cbee84b5ec23123ac48519d1fed"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged.dataset",
+    "bytes": 519,
+    "sha256": "d6825ea665679a8d5a7de218660c5e4a9dd4250e139865e10e0d537714413828"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_cov.dat",
+    "bytes": 4968,
+    "sha256": "8aa7730215a8a6dfd0cbabd1975cd3635174ea38cc3de5ad3da2f692c7c48a93"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window1.dat",
+    "bytes": 703,
+    "sha256": "1e235aeca57f57bf3ba91b175f06e3c632bfc2ec101030accab4357ddc6e7580"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window10.dat",
+    "bytes": 703,
+    "sha256": "0a65d74ead404be13bd89ef87ef0be47e7c62ce8e4dc7aefc74dd5d97497069e"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window11.dat",
+    "bytes": 703,
+    "sha256": "cbbaa38f315352e2972cf064318bbd200c4e0d59c6b3c229f5e1c90498b4f2b4"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window12.dat",
+    "bytes": 703,
+    "sha256": "c04af96ef5af4d6bdff37b0daf2a9949ab51a9585193e3301a0f296dd22a8fd0"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window13.dat",
+    "bytes": 703,
+    "sha256": "ac7ae4dc672535180f7a358ca623a0e0686a56a112398b759be872b96cffaeb4"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window14.dat",
+    "bytes": 703,
+    "sha256": "a0994f2a234e5aa0eb4cdf18c294b26ce09fed1c9e700e9a885906b8f54ee40b"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window2.dat",
+    "bytes": 703,
+    "sha256": "f3885ac83e4f8a23449316c1a19fb9a391a142dc2d5e272c9c7b13777b23af87"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window3.dat",
+    "bytes": 703,
+    "sha256": "ee2f8fc017aaf23b7954d8db113b606c752519c11d95740b5497b578aa8820c6"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window4.dat",
+    "bytes": 703,
+    "sha256": "cc6a280f40dec7dc9d94ce6eaae26e408c63c0c5d4b9a90ce9840ee35054e689"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window5.dat",
+    "bytes": 703,
+    "sha256": "bcee23c9775eabcab7b273dd074f9f16fa3f0e0a6784614e0ff132aa8ebade64"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window6.dat",
+    "bytes": 703,
+    "sha256": "ce98035910493d4690919ac58df7c23f20901462d7ba457fc5d88d0b579548c4"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window7.dat",
+    "bytes": 703,
+    "sha256": "0a581f779f48a61b37df3a19bcbd7ef8f86771e6dd2210eb79dc7921b30bfb0a"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window8.dat",
+    "bytes": 703,
+    "sha256": "8c476e1f8e621820d28653c4a58d65ff9baa3956813f53508dbc91484bdc50b5"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lens_delta_window/window9.dat",
+    "bytes": 703,
+    "sha256": "b6118cbdab0a7de31c11477f15069cf34c1b2456e4556ae831a0a3c50c8dacaa"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_CMBmarged_lensing_fiducial_correction.dat",
+    "bytes": 315,
+    "sha256": "f9a19a565a2cfd72ca01f34f55e4ce6a52f1df8fdba21da5204bf2f5a737e7ee"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_bandpowers.dat",
+    "bytes": 885,
+    "sha256": "68847a203d3c55515f20564f0b9a1a6155ae69ca1a8624ab0ca4f44512fb6970"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_cov.dat",
+    "bytes": 4968,
+    "sha256": "2b6f0c3a0e36399fbb5524549c2463f50d4ffc71269fdb573e475cad3e2c7aa5"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window1.dat",
+    "bytes": 80814,
+    "sha256": "e1064156b651234af4c884992ad23b7595e7fe09ba821c2d6e667bfc81c1a1c0"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window10.dat",
+    "bytes": 80511,
+    "sha256": "84c8ebbe6a99bee4476ca1aa396ea0b923b880f1cdad758bdc00a1a9f9082110"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window11.dat",
+    "bytes": 80567,
+    "sha256": "b7e2172acfc25755f561fc62f923e78fefc4f03353cc27d6e9bb4cbaa9edc567"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window12.dat",
+    "bytes": 80539,
+    "sha256": "52b4bc95005e0cffb0546dd4112bce34490d6dfa6834c4fb03d4f152921ca8fd"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window13.dat",
+    "bytes": 80455,
+    "sha256": "589880c963eb16dc9496891e1b23a6ce2d22d1780f88ca9ae8dc0341f8fa2697"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window14.dat",
+    "bytes": 80277,
+    "sha256": "aa2e4a4347740475652a4c98194f770cce964d9bcac76792cc4d9d98615ff9d2"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window2.dat",
+    "bytes": 80845,
+    "sha256": "77f839d0662aa008447f83b5658679a2149b37bf966e7f0f2b66ac412e815254"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window3.dat",
+    "bytes": 80897,
+    "sha256": "3d88e6fb64814063bf7a474adaa4c0462d52c502d2d32f30429b9184b9bbd941"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window4.dat",
+    "bytes": 80917,
+    "sha256": "cf14ae5442b17741fc6327d499bab8ba4692f11e8f2ce0f39f698b020bf924a8"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window5.dat",
+    "bytes": 80914,
+    "sha256": "ff98257ee8a3004d7aed5a2deaefcec3fe34d2d3b2d75cadbff146d6b20c226c"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window6.dat",
+    "bytes": 80866,
+    "sha256": "2581e9d4a0d0a7f5cf41d7051d203f796ebbe187538704575e51d65874b2da37"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window7.dat",
+    "bytes": 80620,
+    "sha256": "144bcf42f1c84e12aaaad49cb2f5903d5091d7b9d2c35336ee429c09aa9018a2"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window8.dat",
+    "bytes": 80451,
+    "sha256": "07dd1af365f24b7490ab050c99ba1859e702c0b322fa6f5f8a26a60f73b858a4"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lens_delta_window/window9.dat",
+    "bytes": 80511,
+    "sha256": "450d430f1cc3efaae2e7072bf555b7f01f6cc5270dd65e38c62d19a965de7a03"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_lensing_fiducial_correction.dat",
+    "bytes": 315,
+    "sha256": "c682e7136bb6894618982849ca4fa6aa2cab5be94c52747c00c9558b7e216a52"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window1.dat",
+    "bytes": 247,
+    "sha256": "e4d9e959be3b10c94e9cf76d09931bacf24c3a2a2ce4fc85b4281f7dba3c6298"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window10.dat",
+    "bytes": 1900,
+    "sha256": "ea1aa0e5f6349c35af352a6983b72b6bd775e9aa6ebdb4cc84a0622680b7e65d"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window11.dat",
+    "bytes": 2128,
+    "sha256": "b4748140c14093dfe220dfa346eb71c623d19ed0a39538159796b0948f62faad"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window12.dat",
+    "bytes": 2375,
+    "sha256": "913bfd632406121dc79f8c2b7997efac7f39e126095eeaa4a5d7f904184204df"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window13.dat",
+    "bytes": 2641,
+    "sha256": "97cb49788cf3d4012a1ccac501dd7b2954e2685a9445b0c9118d92589d76a934"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window14.dat",
+    "bytes": 21793,
+    "sha256": "b5603640f8aff414269ff8e5ee7fd1064d892fcb563470de391ebb6d0b1dafee"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window2.dat",
+    "bytes": 361,
+    "sha256": "5dc0fd764fa3437feffbd13f38efce52011d3776e9c2e2d9d6f5de2d42f42cae"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window3.dat",
+    "bytes": 494,
+    "sha256": "45a89a4a4da1c8780066913d839981bd5a5afa3fd4dcb5ad22317ab22ef22738"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window4.dat",
+    "bytes": 665,
+    "sha256": "79771c864cef684dfbf2d91ca1252168b4859ff2c675e3604ee528e824f0d1b1"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window5.dat",
+    "bytes": 836,
+    "sha256": "86bc8961538eed1ed7f94db44e6ab3a64512efbb55c386c437dd52f89530a52f"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window6.dat",
+    "bytes": 1026,
+    "sha256": "2f46b2d85c07bf69f564677c8aab72d9b470ec2f26c3c61a352be18eee445b98"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window7.dat",
+    "bytes": 1235,
+    "sha256": "84f8c5fb2b5220dd634cd883277e5580ead85e82173937971ceaa24ac5e161c9"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window8.dat",
+    "bytes": 1425,
+    "sha256": "f4f1f70f0bd00f95c05ba44ab338bc4d65390a8e2e7ae2e6256abc862ca52723"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_agr2_window/window9.dat",
+    "bytes": 1653,
+    "sha256": "1584e7c03e8988af23d21d8262e1558bba479687af5a112c164f47586f150241"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8.dataset",
+    "bytes": 811,
+    "sha256": "74a33a8ddeae7df4c4b612dadf6159465b73f93808a02b1b6b800cb4cec1ae9c"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged.dataset",
+    "bytes": 535,
+    "sha256": "1c65bb1dcb009478b6bd9f57b89dfea768936600dba01aa2e339eccbdb1d9301"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_cov.dat",
+    "bytes": 2055,
+    "sha256": "d6ebca4d6a86be728f5ce9c018662ee9e7ccf131d68b7984c187ce58e61f8734"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_lens_delta_window/window1.dat",
+    "bytes": 703,
+    "sha256": "d0c95c45e1af7c7dd88d4e4e4bf5d1c5512d665aefe6becdd969cba6d323c249"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_lens_delta_window/window2.dat",
+    "bytes": 703,
+    "sha256": "9d9bb782d4e8d30d5ffc0d72c41d6a5ca1b969750d21e61dbfbc35a63fa28b03"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_lens_delta_window/window3.dat",
+    "bytes": 703,
+    "sha256": "cb9d40306e69e785eb1be60ee4c8278aedd8777604de319ef44026d1c987e833"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_lens_delta_window/window4.dat",
+    "bytes": 703,
+    "sha256": "460ff2062edb462c2c30f98362f4a49f3f2dcd383246c15285be348a66c69975"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_lens_delta_window/window5.dat",
+    "bytes": 703,
+    "sha256": "1318c8d7474da21a84ced21ca627ff32a022d0f466a5907b5380a1f58a58b71a"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_lens_delta_window/window6.dat",
+    "bytes": 703,
+    "sha256": "f4ae2fb5b651a6b5ac3fa8e53ceb1673e17e723ed7e0292ca4601c8334b4972b"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_lens_delta_window/window7.dat",
+    "bytes": 703,
+    "sha256": "6516e537aef782107546bce07f9610c7660d67388f0cc29326d3c4aca2e3c98a"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_lens_delta_window/window8.dat",
+    "bytes": 703,
+    "sha256": "d8d2d661727b84723d6154e477b69b48d437ee05796d1b24295ca5118006d321"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_lens_delta_window/window9.dat",
+    "bytes": 703,
+    "sha256": "02e5a83dff7764bf99373755c65b208e71e2ca762bb474e9e0879780eedd69b8"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_CMBmarged_lensing_fiducial_correction.dat",
+    "bytes": 210,
+    "sha256": "68a883f1d3ea4802e322a3ca7b5249f579efff833dcdd1341bddb014d6a8d5bf"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_bandpowers.dat",
+    "bytes": 590,
+    "sha256": "7da57f8214732e48203a5894af9204cbee1eebc024d0d7131ef1cbee3bf82f31"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_cov.dat",
+    "bytes": 2057,
+    "sha256": "50a6e3df56f5372dd69eb330c3e30d70f6aa3eb574d91ffb94bf4cdc1ab37b40"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_lens_delta_window/window1.dat",
+    "bytes": 80839,
+    "sha256": "96b293383f0fbb4d5069c1f9162a6451e699fd0e27c5cf09e2f15e391fd5ce65"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_lens_delta_window/window2.dat",
+    "bytes": 80904,
+    "sha256": "c0627ea82bc763c7c6b82d89938685e772cb3b456bcc8dc941273f4d68743687"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_lens_delta_window/window3.dat",
+    "bytes": 80922,
+    "sha256": "81337ac8888cda180ce524f22a8efc3e996e4a685dbca7324bf037ef437d1ae2"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_lens_delta_window/window4.dat",
+    "bytes": 80890,
+    "sha256": "c058d02d0aa3d26dfc0dacd75b7de4f202e673f61526da34efdd4a6d7551e27f"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_lens_delta_window/window5.dat",
+    "bytes": 80794,
+    "sha256": "1f39e86f6cf7eca58982ad0186a0c2b3d15101bf5a4fa848a576cb06dc6e999a"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_lens_delta_window/window6.dat",
+    "bytes": 80524,
+    "sha256": "374b0051771e4f9909ac74a92743e0ff7cf503f5e31c70ef1f936c69fb652ab8"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_lens_delta_window/window7.dat",
+    "bytes": 80443,
+    "sha256": "7dac3b8dadb46d602f1125abb0fb108cf9db7363fd3b11bedf2bd8996ed94425"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_lens_delta_window/window8.dat",
+    "bytes": 80472,
+    "sha256": "72c4c8770899ab8c1f8f2cef6c548dd97f66da3181928e62b835c545568261c5"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_lens_delta_window/window9.dat",
+    "bytes": 80512,
+    "sha256": "a82f519a93e7d8697735a60789b15a76e648f783b63a96eaaa550cafdf1ef5b9"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_lensing_fiducial_correction.dat",
+    "bytes": 210,
+    "sha256": "b171cd8cc5b50c2631b7c3053dd28905a9465e23a8a7674970f76c357e893190"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_window/window1.dat",
+    "bytes": 627,
+    "sha256": "8b49189f656926a51291908315d9f9cb77fe710c61f6c1178efbf0b81ec52c7b"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_window/window2.dat",
+    "bytes": 836,
+    "sha256": "1048a381f424b14801e792044a4b1ed712d4b5c361b042b2a55fb0116a8ee4ab"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_window/window3.dat",
+    "bytes": 855,
+    "sha256": "242f571352e769d011ac1d79c9e47282958dbacdf2c479c74de5e6e7c73ece28"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_window/window4.dat",
+    "bytes": 855,
+    "sha256": "2ebf859554806f6b8039d0004c88ef7a2ffdaa8550912a9094fd7cddc30f2d75"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_window/window5.dat",
+    "bytes": 855,
+    "sha256": "f08e3eae4f65d4ffd2feac3277a649aa3319d6ed34339a6f31ff6288ddf77e82"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_window/window6.dat",
+    "bytes": 855,
+    "sha256": "63028b73f3fb62a084f6260d2d35735a652770d41268ccd0e94aa1def25e8962"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_window/window7.dat",
+    "bytes": 855,
+    "sha256": "2c23fe4deafd4132a5a75d8a141e1cd9078f3a229ead2127a647dcecfdd1c43f"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_window/window8.dat",
+    "bytes": 855,
+    "sha256": "0feda8642f33a7d330a581446320f7443a44d1c25c4a3f06ced11336ce79bc5c"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/planck_supp_data_and_covmats/lensing/2018/smicadx12_Dec5_ftl_mv2_ndclpttptt_p_teb_consext8_window/window9.dat",
+    "bytes": 874,
+    "sha256": "fdb25790bdab8dbec13f6cae520818261ba1e46bdc50811ea8d6bf39722f6dfe"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/sn_data/PantheonPlus/Pantheon+SH0ES.dat",
+    "bytes": 579283,
+    "sha256": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/sn_data/PantheonPlus/Pantheon+SH0ES_STAT+SYS.cov",
+    "bytes": 33284960,
+    "sha256": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc"
+  },
+  {
+    "path": "/mnt/c/Users/Danny/.copilot/repos/AEGIS/cmb-fit/packages/data/sn_data/PantheonPlus/config.dataset",
+    "bytes": 157,
+    "sha256": "80e7104bec01b27ab1d1ad0adcc66effc3df28138c5e5da992d775b5171b93cb"
+  }
+]

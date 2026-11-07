@@ -1,5 +1,5 @@
 {
- "V(phi)": "81*W**2*(-phi - 1)*exp(-6*phi)/(2*phi**2)",
+ "V(phi)": "-81*W**2*(phi + 1)*exp(-6*phi)/(2*phi**2)",
  "zeros_phi": [
   "-1"
  ],
@@ -7,49 +7,75 @@
   "-2/3",
   "-1/2"
  ],
+ "critical_points": [
+  {
+   "phi": "-2/3",
+   "type": "local minimum",
+   "V_over_W2": -1658.4188072567563,
+   "d2V_dchi2_over_W2": 2211.2250763423417
+  },
+  {
+   "phi": "-1/2",
+   "type": "local maximum",
+   "V_over_W2": -1626.9284907782012,
+   "d2V_dchi2_over_W2": -1084.618993852134
+  }
+ ],
  "V_at_GR_point_over_W2": -1626.9284907782012,
+ "potential_sign_domain": "positive for phi < -1; zero at phi = -1; negative for -1 < phi < 0",
+ "global_stability": "unbounded below as phi approaches 0 from below; no stable global vacuum",
+ "signed_log_slope_definition": "s = -d ln(V) / d chi; reported only for V > 0",
+ "slope_orientation": "s is negative on phi < -1 for chi = sqrt(3/2) ln|phi|; its magnitude alone is not a positive-s runaway criterion",
+ "spiral_twist_potential_derived": false,
  "samples": [
   {
    "phi": -0.25,
    "chi": -1.6978569090206654,
    "V_over_W2": -2178.1008881842995,
-   "steepness": 0.6804138174397716
+   "potential_sign": "negative",
+   "signed_log_slope_s": null
   },
   {
    "phi": -0.5,
    "chi": -0.8489284545103327,
    "V_over_W2": -1626.9284907782012,
-   "steepness": -3.436060392633132e-17
+   "potential_sign": "negative",
+   "signed_log_slope_s": null
   },
   {
    "phi": -0.9,
-   "chi": -0.12903975119909594,
-   "V_over_W2": -1107.0320810209357,
-   "steepness": 4.572380853195268
+   "chi": -0.12903975119909597,
+   "V_over_W2": -1107.0320810209355,
+   "potential_sign": "negative",
+   "signed_log_slope_s": null
   },
   {
    "phi": -1.0,
    "chi": 0.0,
    "V_over_W2": 0.0,
-   "steepness": -3.265986323710904
+   "potential_sign": "zero",
+   "signed_log_slope_s": null
   },
   {
    "phi": -1.5,
    "chi": 0.4965913116837105,
    "V_over_W2": 72927.75534817846,
-   "steepness": -8.16496580927726
+   "potential_sign": "positive",
+   "signed_log_slope_s": -8.16496580927726
   },
   {
    "phi": -2.0,
    "chi": 0.8489284545103327,
    "V_over_W2": 1647892.2631174147,
-   "steepness": -9.797958971132712
+   "potential_sign": "positive",
+   "signed_log_slope_s": -9.797958971132712
   },
   {
    "phi": -3.0,
-   "chi": 1.3455197661940435,
+   "chi": 1.3455197661940432,
    "V_over_W2": 590939722.2359746,
-   "steepness": -14.288690166235206
+   "potential_sign": "positive",
+   "signed_log_slope_s": -14.288690166235206
   }
  ]
 }

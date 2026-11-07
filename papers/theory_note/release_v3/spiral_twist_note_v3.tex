@@ -1,0 +1,205 @@
+% Copyright (c) 2012-2026 Danny Lee Eldridge. Licensed under the Hippocratic License 3.0 with the Military Activities and Mass Surveillance modules (HL3-MIL-SV), https://firstdonoharm.dev/version/3/0/mil-sv.html
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\newcommand{\Mp}{M_{\rm Pl}}
+
+\title{\textbf{The Barbero--Immirzi Field as a Hyperbolic Axion--Dilaton:\\
+Fixed Kinetic Mixing, the Spiral Twist Hypothesis, and a QCD-Anomaly Scale Test}}
+\author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma, USA. Contact: dannyeldridge54@gmail.com.
+Scripts and data for every number: \url{https://github.com/dannyeldridge54/the-twist-torsion-cosmology};
+previous version: doi:\href{https://doi.org/10.5281/zenodo.23899237}{10.5281/zenodo.23899237};
+all versions: doi:\href{https://doi.org/10.5281/zenodo.23898708}{10.5281/zenodo.23898708};
+companion paper and fits: doi:\href{https://doi.org/10.5281/zenodo.23867116}{10.5281/zenodo.23867116}.}}
+\date{Theory note, version 3, 3 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Promoting the Barbero--Immirzi (BI) parameter to a field in $\mathcal N=1$ supergravity is equivalent to adding a
+dilaton--axion chiral superfield with a fixed K\"ahler potential (Gates, Ketov \& Yunes 2009). We point out that
+this K\"ahler potential has metric $K_{\Phi\bar\Phi}=3/(\Phi+\bar\Phi)^2$, i.e.\ a hyperbolic field space of
+curvature $-2/3$ (the $\alpha=1$ attractor geometry), so the BI axion's kinetic term is multiplied by
+$e^{\lambda\chi}$ of the canonical dilaton with $\lambda=-2\sqrt{2/3}\simeq-1.633$ \emph{fixed, with no free
+parameter}. This is the kinetic-mixing structure shown to produce an apparent (``illusory'') phantom crossing in
+DESI-type analyses while obeying the null energy condition (Toomey et al.\ 2025), whose fit gives
+$\lambda=-1.3^{+1.3}_{-1.5}$. We are not aware of earlier work deriving this geometry, and hence $\lambda$, from the
+BI field. We then report what survives four consistency checks: (i) with matter on the supergravity frame, the
+dilaton has a general-relativity point at $\phi=-\tfrac12$ that is a cosmological attractor, but Cassini forces the
+dilaton within $|\Delta\chi|<0.0072\,\Mp$ of it today, which switches the mechanism off; scale (Weyl) invariance
+offers a known route to matter blindness; (ii) the simplest supergravity potential (constant superpotential) has
+a turning point exactly at $\phi=-\tfrac12$ but negative energy; (iii) the same $\alpha=1$ geometry as an inflaton
+gives $n_s=0.967$ at $N=60$, $2.4\sigma$ below ACT DR6; (iv) the dilaton cannot be the early-dark-energy field.
+A first background calculation with the decay constant fixed by the Nieh--Yan period ($F=(4/\pi)\sqrt{3/2}\,\Mp$)
+behaves as a thawing dilaton ($w_0\simeq-0.84$, $w_a\simeq-0.24$); a literature cross-check of the illusion is not
+yet reproduced. The constant-superpotential result does not derive the positive periodic potential used in the
+Spiral Twist model. A separate QCD-anomaly scale check gives a natural $n=1$ BI-axion mass near
+$2.9\times10^{-12}\,\mathrm{eV}$, implying oscillations long before equality, not the fitted $n=3$ EDE or a
+late-time quintessence field. We state the model and the tests that can falsify it.
+\end{abstract}
+
+\section{Status in one paragraph}
+This note fixes a theoretical result and a hypothesis, with their checks, before the hypothesis is fitted to data.
+The algebra in \S\ref{sec:geometry} is exact and was verified symbolically. Everything after it is a
+\emph{hypothesis}: some checks fail or are in tension, and they are reported as such. The companion analysis
+(doi:10.5281/zenodo.23867116 and its updates) finds that the minimal late-time Twist field's best preference in
+data (DES Y5 supernovae) is a calibration effect: it vanishes when the supernova sample is split at $z=0.1$, and
+weakens on DES-Dovekie and Union3. The present note is therefore motivated by theory, not by a fit.
+
+\section{The BI field's supergravity geometry}\label{sec:geometry}
+Gates, Ketov \& Yunes \cite{gky2009} show that a dynamical BI parameter in $\mathcal N=1$ supergravity is
+equivalent to a chiral superfield $\Phi=\phi+ia$ whose imaginary part couples to the (supersymmetric) Holst term and
+whose real part couples to the curvature, with (their eqs.~5.36--5.37)
+\begin{equation}
+\Omega=e^{\Phi+\bar\Phi}\,(\Phi+\bar\Phi),\qquad K=-3\ln(-\Omega/3),\qquad \phi<0 .
+\end{equation}
+The linear piece $-3(\Phi+\bar\Phi)$ of $K$ drops out of the metric, leaving
+\begin{equation}
+K_{\Phi\bar\Phi}=\frac{3}{(\Phi+\bar\Phi)^2},\qquad
+\mathcal L_{\rm kin}=-\frac{3}{4\phi^2}\left[(\partial\phi)^2+(\partial a)^2\right]
+\end{equation}
+(reduced Planck units): the upper-half-plane metric with Gaussian curvature $-2/3$, i.e.\ the $\alpha=1$ case of
+$K=-3\alpha\ln(\Phi+\bar\Phi)$. With the canonical dilaton $|\phi|=e^{\sqrt{2/3}\,\chi}$ and canonical axion
+$\tilde a=\sqrt{3/2}\,a$,
+\begin{equation}
+\mathcal L_{\rm kin}=-\tfrac12(\partial\chi)^2-\tfrac12\,e^{\lambda\chi}(\partial\tilde a)^2,\qquad
+\boxed{\lambda=-2\sqrt{2/3}\simeq-1.633}.
+\end{equation}
+The same number follows from the general $\alpha$-attractor relation $\lambda=-2\sqrt{2/(3\alpha)}$
+\cite{qalpha2026} at $\alpha=1$. Toomey et al.\ \cite{toomey2025} fit this kinetic coupling to Planck + DESI DR2
+and find $\lambda=-1.3^{+1.3}_{-1.5}$ (prior $(-3,0)$); the fixed value lies inside their $1\sigma$ range. This match
+was found after their fit and is a consistency, not a test. It becomes a test when $\lambda$ is held fixed in a fit.
+The sign of $\lambda$ depends on the orientation of the dilaton.
+
+\section{Matter coupling and the solar system}
+If matter couples to the frame in which $\Omega$ multiplies $R$ (``reading A''), the Einstein-frame metric is
+$g_E=(-\Omega/3)g_J$ and matter feels $A^2=-3/\Omega$, so
+\begin{equation}
+\alpha_{\rm DEF}(\chi)=\sqrt2\,\frac{d\ln A}{d\chi}=\frac{2}{\sqrt3}\left(|\phi|-\tfrac12\right).
+\end{equation}
+The coupling vanishes at $\phi=-\tfrac12$, where $\Omega$ is stationary, and $d^2\ln A/d\chi^2=+1/3$ there: a
+Damour--Nordtvedt attractor. Cassini ($|\gamma-1|<2.3\times10^{-5}$, $|\alpha|<3.39\times10^{-3}$) requires
+$|\Delta\chi|<0.0072\,\Mp$ today. A dilaton pinned this tightly cannot drive the kinetic-mixing effect, so in
+reading A the model reduces to a single axion today. This parallels the Brax--Martin no-go theorem for no-scale quintessence
+\cite{brax2007}. The BI field's own kinetic structure is discussed in \cite{taveras2008,calcagni2009}.
+
+\emph{Reading B} (matter blind to the dilaton) is natural if the theory is scale (Weyl) invariant: the dilaton is
+then the Goldstone mode of broken scale symmetry with only derivative couplings \cite{blas2011,ferreira2017}, and
+Einstein--Cartan gravity admits this symmetry with non-propagating torsion \cite{karananas2021,piani2022}. Whether
+reading B can coexist with the $\alpha=1$ geometry above is open.
+
+\section{The simplest supergravity potential}
+With a constant superpotential $W$, $V=e^K(K^{\Phi\bar\Phi}|K_\Phi W|^2-3|W|^2)$ gives
+\begin{equation}
+V(\phi)=\frac{81}{2}\,W^2\,\frac{(-\phi-1)\,e^{-6\phi}}{\phi^2},
+\end{equation}
+with extrema at $\phi=-\tfrac12$ (a local maximum, exactly at the GR point) and $\phi=-\tfrac23$ (a local minimum),
+both at negative energy; $V=0$ at $\phi=-1$. The $\phi=-\tfrac23$ minimum is only local: $V\to-\infty$ as
+$\phi\to0^{-}$, so this potential has no stable global vacuum. For $\phi<-1$ it is positive, but the signed slope
+$s=-d\ln V/d\chi$ is negative in the stated convention $\chi=\sqrt{3/2}\ln|\phi|$ (for example, $s\simeq-8.16$
+at $\phi=-1.5$ and $s\simeq-14.29$ at $\phi=-3$). Its magnitude alone is not the positive-s runaway criterion.
+This constant-$W$ calculation is not an uplift and does not derive the exponential or periodic terms in the Spiral
+Twist model.
+
+\section{The Spiral Twist hypothesis}
+In the Einstein frame with reading B:
+\begin{equation}
+\mathcal L=-\tfrac12(\partial\chi)^2-\tfrac12e^{\lambda\chi}(\partial\theta)^2-V_0e^{-\kappa\chi}
+-m^2F^2\left[1-\cos(\theta/F)\right],
+\end{equation}
+with $\lambda=-2\sqrt{2/3}$ (above) and $F=(4/\pi)\sqrt{3/2}\,\Mp\simeq1.56\,\Mp$, the value at which the
+Nieh--Yan index has period one for a Planck-length torsion scale (companion analysis). The angle $\theta$ is the BI
+(Twist) field and the radius $\chi$ grows as the spiral unwinds. Free: $\kappa$, $m$, $\theta_i$; $V_0$ is set by
+closure.
+
+\paragraph{Potential-origin gap.} The exponential dilaton term and the positive periodic angle term in this
+Lagrangian are hypotheses, not consequences of the constant-superpotential calculation above. The microscopic
+torsion mechanism that fixes their signs, amplitudes, periodicity, and the release epoch remains to be derived.
+
+\paragraph{QCD-anomaly scale check.}
+The Nieh--Yan BI field has a derivative coupling to the fermion axial current; after the chiral rotation, Mercuri and
+Taveras derive its pion mixing and the fixed interaction scale
+$F_\varphi=2/\sqrt{6\kappa}\simeq2.0\times10^{18}\,\mathrm{GeV}$, together with
+$m_\varphi\simeq3.0\times10^{-12}\,\mathrm{eV}$ \cite{mercuri2009}. For a low-energy comparison, write the leading
+periodic QCD-anomaly potential as
+\begin{equation}
+V_{\rm QCD}(\varphi)=\chi_{\rm QCD}(0)\left[1-\cos\left(\frac{\varphi}{F_\varphi}\right)\right],
+\qquad
+m_\varphi^2=V_{\rm QCD}''(0)=\frac{\chi_{\rm QCD}(0)}{F_\varphi^2}.
+\end{equation}
+Using $\chi_{\rm QCD}(0)^{1/4}=75.6\,\mathrm{MeV}$ gives
+$\chi_{\rm QCD}(0)=3.27\times10^{-5}\,\mathrm{GeV}^4$ and
+$m_\varphi=2.86\times10^{-12}\,\mathrm{eV}$, consistent with the published mass at the accuracy of these inputs
+\cite{lu2020}. This is a curvature match to the leading periodic approximation, not a derivation of the exact
+temperature-dependent QCD potential or of the separate AEGIS field map.
+
+The scale comparison is decisive for the cosmological role. With $H_{\rm eq}=2.50\times10^{-28}\,\mathrm{eV}$,
+$m_\varphi/H_{\rm eq}=1.14\times10^{16}$. Defining oscillation onset by $3H=m_\varphi$ and assuming radiation
+domination with $g_*=g_{*s}=10.75$ gives $T_{\rm osc}\simeq46\,\mathrm{MeV}$; entropy conservation then gives
+$a_{\rm eq}/a_{\rm osc}\simeq8.1\times10^7$. For $m\gg H$, harmonic oscillations average to $w_\varphi\simeq0$ and
+redshift as matter. A small-angle estimate that supplies 5\% of the \emph{total} density at equality requires
+$\varphi_i/F_\varphi\simeq3.5\times10^{-5}$; it assumes the field is subdominant and the oscillations are already
+harmonic, and is not a Boltzmann fit. The susceptibility density is about twice the total background at the
+nominal onset for an order-one angle, so the radiation-dominated estimate must not be extrapolated to large initial
+angles. The calculation uses zero-temperature susceptibility, fixed relativistic degrees of freedom, and the
+published Nieh--Yan normalization. It therefore supplies neither the transient $n=3$ equality-locked EDE potential
+nor the late-time thawing field used in the Spiral Twist fits.
+
+\paragraph{First background pass.} A two-field solver (validated: exact $\Lambda$CDM limit; single-field limit;
+null energy condition) with a CPL fit to $H(z)$ gives, over 80 settings, at best $w_0\simeq-0.84$, $w_a\simeq-0.24$
+(at $\kappa=1$), the thawing relation $w_a\simeq-1.53(1+w_0)$; with $F=1.56\,\Mp$ the angle carries too little
+energy for the mixing to matter. Using Toomey et al.'s effective dilaton equation of state, the illusion appears and
+is stronger with the fixed $\lambda$ ($w_{\rm eff}(0)=-1.50$ against $-1.09$ at their $\lambda$), but in the opposite
+time direction to their posterior; their benchmark inputs are not fully specified, and this cross-check is
+\textbf{not yet reproduced}. These numbers are provisional.
+
+\section{Consistency checks (rules fixed before computing)}
+\begin{center}\small
+\begin{tabular}{p{0.34\textwidth}p{0.42\textwidth}p{0.16\textwidth}}
+\toprule
+Check & Result & Verdict \\
+\midrule
+Inflation from $\alpha=1$ ($n_s=1-2/N$, $r=12/N^2$) & $n_s=0.9667$ at $N=60$ vs $0.974\pm0.003$ & tension ($2.4\sigma$) \\
+Dilaton relaxation as early dark energy & $\Omega_\chi(z{=}3500)\le0.025$; $G$ changes $\times13$ at BBN & too small \\
+Solar system (reading A) & attractor at $\phi=-\tfrac12$, band $0.0072\,\Mp$ & passes only if pinned \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{How to falsify it}
+\begin{enumerate}
+\item Fit the Spiral Twist with $\lambda$ and $F$ fixed (two dark-energy parameters, as in $w_0$--$w_a$) to CMB, DESI
+and the three supernova samples; it fails if it does no better than the thawing single field.
+\item Derive reading B from a Weyl-invariant Einstein--Cartan action containing the BI field; if the dilaton
+necessarily couples to matter, the model is excluded by Cassini.
+\item With reading B, the dilaton is a light field coupled only to the dark sector: parity-violating gravitational
+waves and CMB birefringence from the angle remain the direct probes (companion analysis).
+\end{enumerate}
+
+\section*{Acknowledgements}
+The author used AI assistants (Claude, Anthropic) for algebra checks, code and drafting; every number is reproduced
+by scripts in the repository (\texttt{bi\_kahler\_lambda.py}, \texttt{solar\_lowz.py},
+\texttt{bi\_superpotential.py}, \texttt{bi\_qcd\_axion.py}, \texttt{ufe\_checks.py}, \texttt{spiral\_w.py}), and the
+author takes full responsibility for the content.
+
+\begin{thebibliography}{99}\small
+\bibitem{gky2009} S.~J.~Gates, S.~V.~Ketov, N.~Yunes, Phys.\ Rev.\ D 80, 065003 (2009), arXiv:0906.4978.
+\bibitem{toomey2025} M.~W.~Toomey, E.~Hughes, M.~M.~Ivanov, J.~M.~Sullivan, arXiv:2511.23463.
+\bibitem{qalpha2026} \emph{Quintessential $\alpha$-attractors, updated}, arXiv:2608.19781.
+\bibitem{brax2007} P.~Brax, J.~Martin, Phys.\ Lett.\ B 647, 320 (2007), hep-th/0612208.
+\bibitem{blas2011} D.~Blas, M.~Shaposhnikov, D.~Zenh\"ausern, arXiv:1104.1392.
+\bibitem{ferreira2017} P.~G.~Ferreira, C.~T.~Hill, G.~G.~Ross, ``No fifth force in a scale invariant universe'',
+Phys.\ Rev.\ D 95, 064038 (2017).
+\bibitem{karananas2021} G.~K.~Karananas, M.~Shaposhnikov, A.~Shkerin, S.~Zell, arXiv:2108.05897.
+\bibitem{piani2022} M.~Piani, J.~Rubio, JCAP 05 (2022) 009, arXiv:2202.04665.
+\bibitem{taveras2008} V.~Taveras, N.~Yunes, arXiv:0807.2652.
+\bibitem{calcagni2009} G.~Calcagni, S.~Mercuri, arXiv:0902.0957.
+\bibitem{act2025} T.~Louis et al.\ (ACT), arXiv:2503.14452.
+\bibitem{mercuri2009} S.~Mercuri, V.~Taveras, Phys.\ Rev.\ D 80, 104007 (2009), arXiv:0903.4407.
+\bibitem{lu2020} Z.-Y.~Lu et al., JHEP 05 (2020) 001, arXiv:2003.01625.
+\end{thebibliography}
+\end{document}

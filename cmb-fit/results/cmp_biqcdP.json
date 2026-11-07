@@ -1,0 +1,39 @@
+{
+  "run": "biqcdP",
+  "seconds": 123.72356653213501,
+  "minimum": {
+    "weight": 1.0,
+    "minuslogpost": 1211.4016120741487,
+    "logA": 3.0505378210774814,
+    "ns": 0.970020033118531,
+    "theta_s_100": 1.0413482704606505,
+    "ombh2": 0.022524361969969143,
+    "omch2": 0.11788626583961223,
+    "tau": 0.05886280969880074,
+    "A_planck": 1.0016009730689657,
+    "As": 2.112670375419952e-09,
+    "H0": 68.28805106434513,
+    "omegam": 0.30248279134528056,
+    "sigma8": 0.807557192051265,
+    "rdrag": 147.4924796199134,
+    "chi2__BAO": 12.850854091067326,
+    "chi2__CMB": 1014.9932477016239,
+    "chi2__SN": 1405.5595789777935,
+    "minuslogprior": -5.3002283110936865,
+    "minuslogprior__0": -5.3002283110936865,
+    "chi2": 2433.4036807704847,
+    "chi2__planck_2018_lowl.TT": 22.497212024641613,
+    "chi2__planck_2018_lowl.EE": 396.93312274412943,
+    "chi2__planck_2018_highl_plik.TTTEEE_lite_native": 586.5410119876174,
+    "chi2__planck_2018_lensing.native": 9.02190094523553,
+    "chi2__bao.desi_dr2.desi_bao_all": 12.850854091067326,
+    "chi2__sn.pantheonplus": 1405.5595789777935
+  },
+  "effective_cdm_split": {
+    "target_scalar_fraction_at_equality": 0.05,
+    "omega_biqcd_h2": 0.014780066085219094,
+    "omega_ordinary_cdm_h2": 0.10310619975439314,
+    "omega_cdm_total_h2_passed_to_camb": 0.11788626583961223,
+    "perturbation_model": "pressureless CDM effective limit"
+  }
+}

@@ -6,16 +6,16 @@ Scan:    pick a random point on the sky (uniform on the sphere), query the ESA G
          archive times out) with a measured parallax (parallax_over_error > 5). The archive returns at most
          2000 rows per patch with no ordering, so a patch of exactly 2000 is truncated: do not use per-patch
          star counts as a density.
-Confirm: a star's distance is CONFIRMED when two independent estimates agree:
-           (1) inverse parallax, 1000 / parallax  [pc], from Gaia astrometry, and
-           (2) Bailer-Jones et al. (2021) geometric distance r_med_geo, with its 16-84% range,
-         and the astrometric fit is good (RUWE < 1.4).
+Quality pass: the legacy `confirmed` field is true when inverse-parallax distance
+         is consistent with the Bailer-Jones et al. (2021) geometric-distance interval
+         and RUWE < 1.4. Both distance estimates use Gaia astrometry; this is a
+         consistency/quality heuristic, not independent confirmation.
 Chart:   every star gets galactic coordinates (l, b) and a 3D position (x, y, z in parsecs, Sun at origin,
          x toward the Galactic centre) for the interactive map.
 Flag:    CANDIDATES for follow-up (not discoveries):
            high_velocity       tangential speed > 400 km/s (halo or high-velocity star candidates)
            astrometric_excess  RUWE > 1.4 (often an unresolved binary companion)
-           distance_mismatch   inverse parallax outside the Bailer-Jones 16-84% range by > 3x its width
+           distance_mismatch   inverse-parallax distance differs from the Bailer-Jones median by > 3x the 16-84% width
          Each flag says what it is and what would confirm it.
 
 Output (in the folder passed to StarScanner):
@@ -38,15 +38,26 @@ MIN_CYCLE_S = 4.0     # per worker: at most one query every 4 s (polite to the p
 SAMPLE_MAX = 20000    # stars kept in memory for the live charts (reservoir sample)
 RECENT_PATCHES = 200  # patches kept in memory; full history is appended to cosmos_map_patches.jsonl
 RECHECK_BATCH = 400   # stars re-checked per query by the re-confirm worker
-REWRITE_EVERY_S = 1800   # write re-confirmed stars back into the catalogue at most every 30 min (the file is large)
+REWRITE_EVERY_S = 1800   # write re-checked stars back into the catalogue at most every 30 min (the file is large)
 REWRITE_BATCH = 150_000   # ... or sooner once this many stars are waiting to be written
 
-COLUMNS = ["source_id", "ra", "dec", "parallax", "parallax_error", "pmra", "pmdec", "radial_velocity",
+ASTROMETRY_FIELDS = (
+    "parallax", "ref_epoch", "astrometric_params_solved", "nu_eff_used_in_astrometry",
+    "pseudocolour", "ecl_lat", "ra_error", "dec_error", "ra_dec_corr",
+    "ra_parallax_corr", "ra_pmra_corr", "ra_pmdec_corr", "dec_parallax_corr",
+    "dec_pmra_corr", "dec_pmdec_corr", "parallax_pmra_corr", "parallax_pmdec_corr",
+    "radial_velocity_error",
+)
+COLUMNS = ["source_id", "ra", "dec", "parallax", "parallax_error", "pmra", "pmra_error", "pmdec",
+           "pmdec_error", "pmra_pmdec_corr", "radial_velocity",
            "phot_g_mean_mag", "bp_rp", "ruwe", "r_med_geo", "r_lo_geo", "r_hi_geo"]
+GAIA_QUERY_FIELDS = tuple(dict.fromkeys(
+    [column for column in COLUMNS if not column.startswith("r_")] + list(ASTROMETRY_FIELDS)
+))
+GAIA_SELECT = ", ".join(f"g.{column}" for column in GAIA_QUERY_FIELDS)
 
 def adql(ra0, dec0, join=True, radius=None):
-    g = ("g.source_id, g.ra, g.dec, g.parallax, g.parallax_error, g.pmra, g.pmdec, g.radial_velocity, "
-         "g.phot_g_mean_mag, g.bp_rp, g.ruwe")
+    g = GAIA_SELECT
     where = (f"WHERE 1=CONTAINS(POINT('ICRS', g.ra, g.dec), CIRCLE('ICRS', {ra0:.6f}, {dec0:.6f}, {radius or RADIUS_DEG})) "
              "AND g.parallax_over_error > 5")
     if join:
@@ -58,8 +69,7 @@ def adql(ra0, dec0, join=True, radius=None):
 def adql_by_id(ids):
     """Re-query specific stars (by Gaia source_id) with both distance sources."""
     idlist = ",".join(str(int(i)) for i in ids)
-    return ("SELECT g.source_id, g.ra, g.dec, g.parallax, g.parallax_error, g.pmra, g.pmdec, g.radial_velocity, "
-            "g.phot_g_mean_mag, g.bp_rp, g.ruwe, d.r_med_geo, d.r_lo_geo, d.r_hi_geo "
+    return (f"SELECT {GAIA_SELECT}, d.r_med_geo, d.r_lo_geo, d.r_hi_geo "
             "FROM gaiadr3.gaia_source AS g LEFT OUTER JOIN external.gaiaedr3_distance AS d "
             f"ON g.source_id = d.source_id WHERE g.source_id IN ({idlist})")
 
@@ -93,7 +103,7 @@ def to_galactic(ra, dec):
     return l, b, v
 
 def assess(row):
-    """Return the chart record for one Gaia row: confirmation status, 3D position, flags."""
+    """Return one Gaia chart record, including the legacy distance-quality flag and candidate flags."""
     plx, eplx = _f(row.get("parallax")), _f(row.get("parallax_error"))
     ra, dec = _f(row.get("ra")), _f(row.get("dec"))
     if None in (plx, eplx, ra, dec) or plx <= 0:
@@ -102,9 +112,11 @@ def assess(row):
     d_plx = 1000.0 / plx
     rmed, rlo, rhi = _f(row.get("r_med_geo")), _f(row.get("r_lo_geo")), _f(row.get("r_hi_geo"))
     has_bj = None not in (rmed, rlo, rhi)
+    if has_bj and (rlo <= 0 or rhi <= rlo or not rlo <= rmed <= rhi):
+        raise ValueError(f"Invalid Bailer-Jones distance interval for source {row.get('source_id')}")
     agree = has_bj and (rlo <= d_plx <= rhi or abs(d_plx - rmed) <= 2 * 1000.0 * eplx / plx**2)
     good_fit = ruwe is not None and ruwe < 1.4
-    confirmed = bool(agree and good_fit)
+    quality_pass = bool(agree and good_fit)
     dist = rmed if has_bj else d_plx
     l, b, unit = to_galactic(ra, dec)
     x, y, z = (unit * dist).tolist()
@@ -118,19 +130,30 @@ def assess(row):
     if has_bj and (rhi - rlo) > 0 and abs(d_plx - rmed) > 3 * (rhi - rlo):
         flags.append(("distance_mismatch", f"1/parallax {d_plx:.0f} pc vs Bailer-Jones {rmed:.0f} pc "
                                            f"[{rlo:.0f}-{rhi:.0f}]; check zero-point and crowding"))
-    return dict(source_id=row.get("source_id"), ra=ra, dec=dec, l=round(l, 5), b=round(b, 5),
+    record = dict(source_id=row.get("source_id"), ra=ra, dec=dec, parallax_error=eplx,
+                pmra_error=_f(row.get("pmra_error")), pmdec_error=_f(row.get("pmdec_error")),
+                pmra_pmdec_corr=_f(row.get("pmra_pmdec_corr")),
+                r_lo_geo=rlo if has_bj else None, r_hi_geo=rhi if has_bj else None,
+                l=round(l, 5), b=round(b, 5),
                 dist_pc=round(dist, 2), dist_plx_pc=round(d_plx, 2), dist_bj_pc=rmed,
                 x_pc=round(x, 2), y_pc=round(y, 2), z_pc=round(z, 2),
                 g_mag=_f(row.get("phot_g_mean_mag")), bp_rp=_f(row.get("bp_rp")), ruwe=ruwe,
                 pmra=pmra, pmdec=pmdec, rv=_f(row.get("radial_velocity")),
                 vtan_kms=round(vtan, 1) if vtan is not None else None,
-                confirmed=confirmed, flags=";".join(f[0] for f in flags), flag_notes=" | ".join(f[1] for f in flags))
+                astrometric_quality_pass=quality_pass, confirmed=quality_pass,
+                flags=";".join(f[0] for f in flags), flag_notes=" | ".join(f[1] for f in flags))
+    record.update({field: _f(row.get(field)) for field in ASTROMETRY_FIELDS})
+    return record
 
-SPOT_KEYS = ("source_id", "ra", "dec", "l", "b", "dist_pc", "g_mag", "bp_rp", "ruwe", "vtan_kms", "rv", "flags")
+SPOT_KEYS = ("source_id", "ra", "dec", "l", "b", "dist_pc", "g_mag", "bp_rp", "ruwe", "vtan_kms", "rv",
+             "parallax_error", "pmra_error", "pmdec_error", "pmra_pmdec_corr", "r_lo_geo", "r_hi_geo", "flags")
 RECENT_STARS = 40
 
 STAR_FIELDS = ["source_id", "ra", "dec", "l", "b", "dist_pc", "dist_plx_pc", "dist_bj_pc", "x_pc", "y_pc", "z_pc",
-               "g_mag", "bp_rp", "ruwe", "pmra", "pmdec", "rv", "vtan_kms", "confirmed", "flags", "flag_notes"]
+               "g_mag", "bp_rp", "ruwe", "pmra", "pmdec", "rv", "vtan_kms",
+               "astrometric_quality_pass", "confirmed", "flags", "flag_notes",
+               "parallax_error", "pmra_error", "pmdec_error", "pmra_pmdec_corr", "r_lo_geo", "r_hi_geo",
+               *ASTROMETRY_FIELDS]
 
 def lower_priority():
     """Run below normal CPU priority so the PC stays responsive (Windows; harmless elsewhere)."""
@@ -168,7 +191,7 @@ class StarScanner:
                 for f in filter(None, r["flags"].split(";")):
                     self.flag_counts[f] = self.flag_counts.get(f, 0) + 1
                 self._add_sample(r); self._note_record(r)
-                if r["confirmed"] == "True":                     # seed the stream spotlight with the latest confirmed stars
+                if r["confirmed"] == "True":                     # seed the stream spotlight with recent quality-pass rows
                     self.recent.append({k: r.get(k) for k in SPOT_KEYS}); self.recent = self.recent[-RECENT_STARS:]
         old_json = os.path.join(outdir, "cosmos_map_patches.json")       # earlier format: convert once
         if os.path.exists(old_json) and not os.path.exists(self.patch_path):
@@ -185,11 +208,14 @@ class StarScanner:
             self.patches = self.patches[-RECENT_PATCHES:]
         self._summary()
 
-    _CHART_KEYS = ("l", "b", "x_pc", "y_pc", "z_pc", "dist_pc", "g_mag", "bp_rp", "confirmed", "flags")
+    _CHART_KEYS = ("l", "b", "x_pc", "y_pc", "z_pc", "dist_pc", "g_mag", "bp_rp",
+                   "parallax_error", "pmra_error", "pmdec_error", "pmra_pmdec_corr", "r_lo_geo", "r_hi_geo",
+                   "astrometric_quality_pass", "confirmed", "flags")
     def _add_sample(self, r):
         """Reservoir sampling: a fair random subset of all stars, fixed size, O(1) per star."""
         self.n_sampled += 1
-        rec = {k: r[k] for k in self._CHART_KEYS}
+        rec = {k: r.get(k) for k in self._CHART_KEYS if k != "astrometric_quality_pass"}
+        rec["astrometric_quality_pass"] = r.get("astrometric_quality_pass", r.get("confirmed"))
         if len(self.sample) < SAMPLE_MAX:
             self.sample.append(rec)
         else:
@@ -202,21 +228,28 @@ class StarScanner:
         seen, kept, dropped = set(), 0, 0
         tmp = path + ".dedupe"
         with open(path, newline="", encoding="utf-8", errors="replace") as fin, open(tmp, "w", newline="", encoding="utf-8") as fout:
+            reader = csv.DictReader(fin)
+            schema_changed = reader.fieldnames != STAR_FIELDS
             w = csv.DictWriter(fout, fieldnames=STAR_FIELDS); w.writeheader()
-            for r in csv.DictReader(fin):
+            for r in reader:
                 sid = (r.get("source_id") or "").strip()
-                ok = sid.isdigit() and sid not in seen and r.get("confirmed") in ("True", "False") and None not in r
+                legacy_quality = r.get("astrometric_quality_pass", r.get("confirmed"))
+                ok = sid.isdigit() and sid not in seen and legacy_quality in ("True", "False") and None not in r
                 if not ok:
                     dropped += 1; continue
-                seen.add(sid); w.writerow({k: r.get(k, "") for k in STAR_FIELDS}); kept += 1
-        if dropped:
+                seen.add(sid)
+                normalized = {k: r.get(k, "") for k in STAR_FIELDS}
+                normalized["astrometric_quality_pass"] = legacy_quality
+                w.writerow(normalized); kept += 1
+        if dropped or schema_changed:
             os.replace(tmp, path)
-            self.log(f"catalogue repair: kept {kept:,} stars in {os.path.basename(path)}, removed {dropped:,} duplicate or broken rows")
+            self.log(f"catalogue repair: kept {kept:,} stars in {os.path.basename(path)}, "
+                     f"removed {dropped:,} duplicate or broken rows; schema updated={schema_changed}")
         else:
             os.remove(tmp)
 
     def _note_record(self, r):
-        """Session-wide records among CONFIRMED stars (both distances agree, good astrometric fit)."""
+        """Track extrema among rows that pass the distance-quality heuristic."""
         if r["confirmed"] not in (True, "True"):
             return
         try:
@@ -234,7 +267,7 @@ class StarScanner:
                 self.records[key] = {"value": val, "star": star}
 
     def spotlight(self):
-        """Recent confirmed stars and session records, for the livestream page."""
+        """Recent distance-quality-pass stars and session records, for the livestream page."""
         with self.lock:
             return {"recent": list(self.recent[::-1]), "records": dict(self.records)}
 
@@ -262,7 +295,12 @@ class StarScanner:
             rows = self.query(adql(ra0, dec0, False, RADIUS_DEG / 4))
         recs = [r for r in (assess(x) for x in rows) if r is not None]
         with self.lock:
-            new = [r for r in recs if r["source_id"] not in self.seen]
+            new, patch_seen = [], set()
+            for record in recs:
+                source_id = record["source_id"]
+                if source_id not in self.seen and source_id not in patch_seen:
+                    new.append(record)
+                    patch_seen.add(source_id)
             write_header = not os.path.exists(self.stars_path)
             with open(self.stars_path, "a", newline="", encoding="utf-8") as fh:
                 w = csv.DictWriter(fh, fieldnames=STAR_FIELDS)
@@ -297,7 +335,8 @@ class StarScanner:
             self._summary()
             n = self.n_patches
         self.log(f"patch {n} at RA {ra0:.2f}, Dec {dec0:+.2f} (l {l0:.1f}, b {b0:+.1f}): "
-                 f"{len(recs)} stars, {patch['confirmed']} confirmed, {len(flagged)} flagged, {patch['seconds']} s")
+             f"{len(recs)} row encounters, {len(new)} new unique source IDs, "
+             f"{patch['confirmed']} distance-quality passes, {len(flagged)} flagged, {patch['seconds']} s")
         return patch
 
     def recheck_once(self):
@@ -318,12 +357,12 @@ class StarScanner:
             self._summary()
             if self.updates and (time.time() - self.last_rewrite > REWRITE_EVERY_S or len(self.updates) >= REWRITE_BATCH):
                 self._rewrite_catalogue()
-        self.log(f"re-checked {len(batch)} stars ({sum(r['confirmed'] for r in recs.values())} now confirmed); "
+        self.log(f"re-checked {len(batch)} stars ({sum(r['confirmed'] for r in recs.values())} now pass the distance-quality rule); "
                  f"{len(self.needs_check)} left to re-check")
         return len(batch)
 
     def _rewrite_catalogue(self):
-        """Apply re-confirmed rows to the catalogue (atomic replace) and rebuild the counts. Caller holds the lock."""
+        """Apply re-checked rows to the catalogue (atomic replace) and rebuild the counts. Caller holds the lock."""
         tmp = self.stars_path + ".tmp"; ftmp = self.flags_path + ".tmp"
         self.n_conf = 0; self.flag_counts = {}; self.sample = []; self.n_sampled = 0
         with open(self.stars_path, newline="", encoding="utf-8") as fin, \
@@ -359,11 +398,14 @@ class StarScanner:
                 time.sleep(max(0.0, MIN_CYCLE_S - (time.time() - t0)))
 
     def _summary(self):
-        s = dict(patches=self.n_patches, stars=len(self.seen), confirmed=self.n_conf,
+        s = dict(patches=self.n_patches, stars=len(self.seen),
+                 star_count_basis="Unique Gaia source IDs in the random-patch catalog; overlapping patch encounters are excluded.",
+                 confirmed=self.n_conf,
                  confirmed_frac=(self.n_conf / len(self.seen)) if self.seen else 0.0,
                  flags=dict(self.flag_counts), last_patches=self.patches[-15:][::-1],
                  workers=WORKERS, min_cycle_s=MIN_CYCLE_S,
-                 awaiting_recheck=len(self.needs_check), rechecked=self.n_rechecked)
+                 awaiting_recheck=len(self.needs_check), rechecked=self.n_rechecked,
+                 rechecks_attempted=self.n_rechecked)
         self.status.update(s)
         if self.n_patches % 10 == 0:                               # summary file: every 10 patches is plenty
             json.dump(s, open(os.path.join(self.outdir, "star_scan_summary.json"), "w"), indent=2)

@@ -1,0 +1,55 @@
+{
+  "models": [
+    {
+      "H0": 67.97054887954714,
+      "Omega_m": 0.30550708424950535,
+      "sigma8": 0.8081737274850984,
+      "age": 13.793630620835085,
+      "chi2": 2499.2876926198996,
+      "likelihood_chi2": {
+        "planck_2018_lowl.TT": 23.574181217089972,
+        "planck_2018_lowl.EE": 396.5719200894151,
+        "planck_2018_highl_plik.TTTEEE_lite_native": 648.5467395347183,
+        "planck_2018_lensing.native": 8.831897575166616,
+        "bao.desi_dr2.desi_bao_all": 16.73511149596447,
+        "sn.pantheonplus": 1405.0278427075455
+      },
+      "name": "ax_spa_lcdm_halofit_planckfull_nlfix"
+    },
+    {
+      "H0": 67.97022721816307,
+      "Omega_m": 3.0831201187648434,
+      "sigma8": 0.8081709156959547,
+      "age": 13.793635402769265,
+      "chi2": 2499.288583352032,
+      "likelihood_chi2": {
+        "planck_2018_lowl.TT": 23.57419803509191,
+        "planck_2018_lowl.EE": 396.5719200894151,
+        "planck_2018_highl_plik.TTTEEE_lite_native": 648.5484780425072,
+        "planck_2018_lensing.native": 8.831906329895086,
+        "bao.desi_dr2.desi_bao_all": 16.735704552384053,
+        "sn.pantheonplus": 1405.0263763027388
+      },
+      "name": "ax_spa_latetwist_gF2m-1.824_planckfull_nlfix"
+    }
+  ],
+  "errors": {
+    "linear_pk_max_relative": 5.51219291544669e-07,
+    "nonlinear_pk_max_relative": 1.6069356518766398e-06,
+    "tt_max_relative": 1.1871176031075237e-06,
+    "tt_max_relative_ell": 896,
+    "unlensed_tt_max_relative": 1.3636418896290081e-06,
+    "ee_max_relative": 4.627386880118323e-06,
+    "ee_max_relative_ell": 1666,
+    "unlensed_ee_max_relative": 7.811813396152445e-06
+  },
+  "k_range_per_Mpc": [
+    0.001,
+    1.0
+  ],
+  "z": 0.0,
+  "ell_range": [
+    30,
+    2500
+  ]
+}

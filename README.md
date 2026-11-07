@@ -2,6 +2,12 @@
 
 # AEGIS: the working repository of "The Twist" (cosmology), plus the AEGIS optimizer (software)
 
+**Current project handoff (5 November 2026 UTC):**
+[AEGIS research synthesis](papers/AEGIS_RESEARCH_SYNTHESIS.md) brings together
+theory, local data, Star Mapper, corrected-fit readiness, tests, schedules and
+unresolved evidence. The versioned results below are historical; they are not
+scores for the incomplete corrected November benchmark.
+
 **If you are an astronomer or physicist, start here.** This repository holds the full working record of a
 pre-registered test of a torsion-motivated scalar field (the Barbero–Immirzi field) as early and late dark energy.
 That covers every fit, the code that ran it, and two AxiCLASS bug fixes. The clean, citable release is

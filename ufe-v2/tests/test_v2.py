@@ -56,11 +56,24 @@ def test_star_scanner_coordinates():
     l, b, _ = to_galactic(269.4520, 4.6934)              # Barnard's star (l 31.0087, b 14.0628)
     assert abs(l - 31.0087) < 1e-3 and abs(b - 14.0628) < 1e-3
 
-def test_star_scanner_confirmation_and_flags():
-    from aegis.star_scanner import assess
+def test_star_scanner_quality_pass_and_flags():
+    from aegis.star_scanner import adql, adql_by_id, assess
     ok = assess(dict(source_id="1", ra=10, dec=20, parallax=10, parallax_error=0.1, pmra=5, pmdec=5, radial_velocity="",
+                     pmra_error=0.2, pmdec_error=0.3, pmra_pmdec_corr=0.1,
                      phot_g_mean_mag=12, bp_rp=0.8, ruwe=1.0, r_med_geo=100, r_lo_geo=99, r_hi_geo=101))
-    assert ok["confirmed"] and ok["flags"] == ""
+    assert ok["astrometric_quality_pass"] and ok["confirmed"] and ok["flags"] == ""
+    assert ok["astrometric_quality_pass"] == ok["confirmed"]
+    assert ok["parallax_error"] == 0.1
+    assert (ok["pmra_error"], ok["pmdec_error"], ok["pmra_pmdec_corr"]) == (0.2, 0.3, 0.1)
+    assert (ok["r_lo_geo"], ok["r_hi_geo"]) == (99, 101)
+    assert "g.pmra_error" in adql(0, 0) and "g.pmdec_error" in adql(0, 0, join=False)
+    assert "g.pmra_pmdec_corr" in adql_by_id(["1"])
+    rejected = assess(dict(source_id="3", ra=10, dec=20, parallax=10, parallax_error=0.1, pmra=5, pmdec=5,
+                           phot_g_mean_mag=12, bp_rp=0.8, ruwe=1.5, r_med_geo=100, r_lo_geo=99, r_hi_geo=101))
+    assert not rejected["astrometric_quality_pass"] and not rejected["confirmed"]
+    legacy = assess(dict(source_id="4", ra=10, dec=20, parallax=10, parallax_error=0.1, pmra=5, pmdec=5,
+                         phot_g_mean_mag=12, bp_rp=0.8, ruwe=1.0))
+    assert legacy["pmra_error"] is None and legacy["r_lo_geo"] is None
     fast = assess(dict(source_id="2", ra=10, dec=20, parallax=1, parallax_error=0.05, pmra=100, pmdec=60, radial_velocity="",
                        phot_g_mean_mag=15, bp_rp=1.0, ruwe=1.1, r_med_geo=1000, r_lo_geo=960, r_hi_geo=1040))
     assert "high_velocity" in fast["flags"]

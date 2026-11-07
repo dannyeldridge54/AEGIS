@@ -21,6 +21,25 @@
 | pact_edelock | 2 | 2231.78 | -7.23 | -3.23 | +7.97 | -7.14 | -3.14 | 70.43 |
 | pact_ede | 3 | 2231.53 | -7.47 | -1.47 | +15.32 | -7.47 | -1.47 | 70.59 |
 
+### SPT-3G D1 TT/TE/EE (lite) + tau prior + DESI DR2 + Pantheon+: pre-registered tests (CubeMind PREREGISTRATION_SPT3G_N9.md, _SILVER.md)
+
+| Model | extra | chi2 | dchi2 | dAIC | dBIC | dchi2_eff | dAIC_eff | H0 |
+|---|---|---|---|---|---|---|---|---|
+| spt_lcdm | 0 | 1576.57 | +0.00 | +0.00 | +0.00 | +0.00 | +0.00 | 68.28 |
+| spt_edelock | 2 | 1575.30 | -1.27 | +2.73 | +13.93 | -1.27 | +2.73 | 69.60 |
+| spt_edelock_F9 | 1 | 1577.09 | +0.52 | +2.52 | +8.12 | +0.52 | +2.52 | 70.49 |
+| spt_edelock_th2.41421_F9 | 0 | 1577.00 | +0.43 | +0.43 | +0.43 | +0.43 | +0.43 | 69.13 |
+| spt_edelock_th2.78_F9 | 0 | 1576.92 | +0.35 | +0.35 | +0.35 | +0.35 | +0.35 | 70.43 |
+| spt_edelock_F7 | 1 | 1578.23 | +1.66 | +3.66 | +9.26 | +1.66 | +3.66 | 70.68 |
+
+### Planck + ACT + SPT-3G + DESI DR2 + Pantheon+: early vs late (CubeMind PREREGISTRATION_COMBINED_CMB.md)
+
+| Model | extra | chi2 | dchi2 | dAIC | dBIC | dchi2_eff | dAIC_eff | H0 |
+|---|---|---|---|---|---|---|---|---|
+| spa_lcdm | 0 | 2402.40 | +0.00 | +0.00 | +0.00 | +0.00 | +0.00 | 68.17 |
+| spa_edelock | 2 | 2396.77 | -5.63 | -1.63 | +9.57 | -5.71 | -1.71 | 70.15 |
+| spa_w0wa | 2 | 2391.51 | -10.89 | -6.89 | +4.31 | -11.06 | -7.06 | 67.65 |
+
 ### Planck 2018 + DESI DR2 + DES Y5 supernovae (instead of Pantheon+)
 
 | Model | extra | chi2 | dchi2 | dAIC | dBIC | dchi2_eff | dAIC_eff | H0 |

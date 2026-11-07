@@ -1,0 +1,48 @@
+{
+  "title": "The Barbero-Immirzi Field as a Hyperbolic Axion-Dilaton: Fixed Kinetic Mixing, the Spiral Twist Hypothesis, and a QCD-Anomaly Scale Test",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "version": "3",
+  "publication_date": "2026-11-03",
+  "description": "<p><strong>Version 3.</strong> This theory note separates the exact N=1 supergravity field-space geometry from the hypothesized Spiral Twist potentials and cosmological roles. The BI axion kinetic coupling remains fixed at lambda = -2 sqrt(2/3); the tests of the weak-mixing regime, solar-system constraints, and the constant-superpotential potential are retained with their limitations.</p><p>New in this version: an explicit QCD-anomaly scale assessment using the Nieh-Yan BI normalization F_phi = 2/sqrt(6 kappa) approximately 2.0e18 GeV and chi_QCD(0)^(1/4) = 75.6 MeV. The leading periodic approximation gives m_phi = sqrt(chi_QCD)/F_phi = 2.86e-12 eV, m_phi/H_eq = 1.14e16, and a radiation-dominated onset estimate T_osc approximately 46 MeV for 3 H = m_phi. It therefore describes an n=1 field that oscillates and redshifts as matter long before equality, not the separate n=3 equality-locked EDE ansatz or late-time quintessence.</p><p>The susceptibility is fixed at its zero-temperature value; relativistic degrees of freedom are held fixed; the equality-angle estimate uses a subdominant small-angle harmonic approximation and is not a Boltzmann likelihood fit. Thermal susceptibility, full BI-field normalization matching to the AEGIS arsinh map, and a full cosmological likelihood for this QCD candidate remain open.</p>",
+  "creators": [
+    {
+      "name": "Eldridge, Danny Lee",
+      "affiliation": "Independent researcher"
+    }
+  ],
+  "keywords": [
+    "Barbero-Immirzi parameter",
+    "torsion",
+    "Nieh-Yan gravity",
+    "supergravity",
+    "hyperbolic field space",
+    "Spiral Twist",
+    "QCD axion",
+    "early dark energy",
+    "cosmology"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23899237",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.23867116",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/dannyeldridge54/AEGIS",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/dannyeldridge54/the-twist-torsion-cosmology",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    }
+  ],
+  "language": "eng"
+}

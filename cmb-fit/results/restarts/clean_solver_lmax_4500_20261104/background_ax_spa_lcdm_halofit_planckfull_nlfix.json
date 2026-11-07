@@ -1,0 +1,16 @@
+{
+  "H0": 67.97054887954714,
+  "Omega_m": 0.30550708424950535,
+  "sigma8": 0.8081737274850984,
+  "age": 13.793630620835085,
+  "chi2": 2499.2876926198996,
+  "likelihood_chi2": {
+    "planck_2018_lowl.TT": 23.574181217089972,
+    "planck_2018_lowl.EE": 396.5719200894151,
+    "planck_2018_highl_plik.TTTEEE_lite_native": 648.5467395347183,
+    "planck_2018_lensing.native": 8.831897575166616,
+    "bao.desi_dr2.desi_bao_all": 16.73511149596447,
+    "sn.pantheonplus": 1405.0278427075455
+  },
+  "name": "ax_spa_lcdm_halofit_planckfull_nlfix"
+}

@@ -2,6 +2,7 @@
  "title": "Torsion-Born Early Dark Energy",
  "author": "Danny Lee Eldridge",
  "updated": "2026-10-29",
+ "status_scope": "Historical 29 October 2026 research snapshot, not live fit status. The corrected November benchmark has no reviewed matched minima; no current model preference can be scored from it.",
  "summary": "In Einstein–Cartan gravity, spacetime can twist (torsion) as well as curve. The Barbero–Immirzi field that comes with torsion behaves like a new scalar field. Danny's theory gives it the potential V = Λ⁴[1 − cos(φ/F)]³: it stays frozen early on, briefly adds about 5?6% to the universe's energy around redshift 3,500 (just before the CMB formed), then fades away. That shrinks the sound horizon and pushes the inferred Hubble constant up.",
  "equation": "V(φ) = Λ⁴ [1 − cos(φ/F)]ⁿ ,  n = 3",
  "data": "Planck 2018 CMB (temperature, polarisation, lensing) + DESI DR2 BAO + Pantheon+ supernovae",
@@ -134,7 +135,7 @@
   {
    "name": "Sigil Model exam",
    "q": "Do planets around other stars lock into simple rhythms more than chance?",
-   "status": "Passed: 2.1? chance across 1,153 pairs (p < 0.0001). This 'just wide of resonance' excess is already known (Lithwick & Wu 2012; Fabrycky et al. 2014): it confirms the method, not the Sigil Model uniquely. Tidal version not supported, model amended"
+   "status": "Historical reported result only: local exo_rows.json and exo_result.json are missing, so the reported 1,153-pair pass cannot be reproduced here. The known resonance excess is not unique evidence for AEGIS; do not label this a locally verified pass."
   },
   {
    "name": "Planets and the Sun",

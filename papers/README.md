@@ -1,5 +1,10 @@
 # Paper: Torsion-Born Early Dark Energy with an Onset Locked to Matter–Radiation Equality
 
+**Current working synthesis and cross-agent handoff:**
+[AEGIS_RESEARCH_SYNTHESIS.md](./AEGIS_RESEARCH_SYNTHESIS.md) (5 November 2026 UTC).
+It distinguishes current readiness from the historical paper/results below,
+records missing inputs and blocked fits, and does not supersede a published release.
+
 **Files:** [`torsion_born_ede.tex`](./torsion_born_ede.tex) (source) · [`torsion_born_ede.pdf`](./torsion_born_ede.pdf) (version 2, 31 October 2026)
 **DOI:** version 2 [10.5281/zenodo.23847152](https://doi.org/10.5281/zenodo.23847152); version 1
 [10.5281/zenodo.23789830](https://doi.org/10.5281/zenodo.23789830) (Zenodo, CERN)

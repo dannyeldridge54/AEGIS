@@ -1,0 +1,3 @@
+{
+  "error": "RuntimeError('Null gate failed: delta chi2=0.1743470865785639; benchmark halted')"
+}

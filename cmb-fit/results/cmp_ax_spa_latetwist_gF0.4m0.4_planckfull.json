@@ -1,0 +1,32 @@
+{
+  "run": "ax_spa_latetwist_gF0.4m0.4_planckfull",
+  "engine": "AxiCLASS",
+  "seconds": 3382.7929360866547,
+  "minimum": {
+    "weight": 1.0,
+    "minuslogpost": 1345.3046,
+    "logA": 3.0615805,
+    "n_s": 0.98076721,
+    "theta_s_1e2": 1.0424929,
+    "omega_b": 0.022944799,
+    "omega_cdm": 0.1137059,
+    "tau_reio": 0.066697589,
+    "A_planck": 1.0034942,
+    "A_s": 2.1361293e-09,
+    "H0": 58.538207,
+    "sigma8": 0.27822107,
+    "Omega_m": 1.36989,
+    "chi2__BAO": 58.853525,
+    "chi2__CMB": 1051.2868,
+    "chi2__SN": 1619.1045,
+    "minuslogprior": -19.317772,
+    "minuslogprior__0": -19.317772,
+    "chi2": 2729.2448,
+    "chi2__planck_2018_lowl.TT": 21.682855,
+    "chi2__planck_2018_lowl.EE": 399.12557,
+    "chi2__planck_2018_highl_plik.TTTEEE_lite_native": 612.21693,
+    "chi2__planck_2018_lensing.native": 18.261415,
+    "chi2__bao.desi_dr2.desi_bao_all": 58.853525,
+    "chi2__sn.pantheonplus": 1619.1045
+  }
+}

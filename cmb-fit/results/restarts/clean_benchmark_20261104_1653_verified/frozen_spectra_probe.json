@@ -1,0 +1,8 @@
+{
+  "errors": {
+    "tt_max_relative_30_2500": 0.000516390868625316,
+    "ee_max_relative_30_2500": 0.002109454621048834,
+    "nonlinear_pk_max_relative_k_0p001_1_per_Mpc": 0.005074011665169964
+  },
+  "scope": "Numerical diagnostics, not a cosmology detection or a substituted null gate"
+}
