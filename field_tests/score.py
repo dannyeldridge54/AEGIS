@@ -18,8 +18,9 @@ OUT = os.path.join(HERE, "out")
 def run_scorer(name):
     os.makedirs(OUT, exist_ok=True)
     env = dict(os.environ, TWIST_RESULTS=RES)
-    r = subprocess.run([sys.executable, os.path.join(HERE, "scorers", name)], cwd=OUT, env=env,
-                       capture_output=True, text=True)
+    parts = name.split()
+    script = os.path.join(ROOT, parts[0]) if "/" in parts[0] else os.path.join(HERE, "scorers", parts[0])
+    r = subprocess.run([sys.executable, script, *parts[1:]], cwd=OUT, env=env, capture_output=True, text=True)
     return r.stdout.strip() + (("\n" + r.stderr.strip()) if r.returncode else "")
 
 
@@ -28,11 +29,15 @@ def done(names):
 
 
 def gate_ok(t):
+    """True, False, or None when the gate has not been run yet."""
     g = t.get("gate")
     if not g:
         return True
-    d = json.load(open(os.path.join(HERE, g["file"])))
-    return abs(d[g["key"]]) <= g["max_abs"]
+    p = os.path.join(HERE, g["file"])
+    if not os.path.exists(p):
+        return None
+    v = json.load(open(p)).get(g["key"])
+    return v == g["equals"] if "equals" in g else abs(v) <= g["max_abs"]
 
 
 def main():
@@ -40,8 +45,11 @@ def main():
     for t in TESTS["tests"]:
         runs = t.get("runs", [])
         have = done(runs)
-        status = ("code missing" if t.get("code_missing") else
-                  "gate FAILED: no fits count" if not gate_ok(t) else
+        gate = gate_ok(t)
+        status = ("draft rule: lock it first (S8_WL/SETUP.md)" if t.get("draft") else
+                  "code missing" if t.get("code_missing") else
+                  "gate not run yet (build + regression first)" if gate is None else
+                  "gate FAILED: no fits count" if not gate else
                   "complete" if runs and len(have) == len(runs) else
                   f"{len(have)}/{len(runs)} runs" if runs else "external")
         rows.append({"id": t["id"], "title": t["title"], "where": t["where"], "status": status,

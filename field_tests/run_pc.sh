@@ -24,13 +24,23 @@ print(' '.join(sorted(runs, key=lambda r: (0 if 'union3' in r else 1, runs.index
 # SF counts only if its locked gate passed.
 GATE_OK=$($PY -c "import json; d=json.load(open('$HERE/gates/spiral_fit_mirror.json')); print(int(abs(d['dLCDM_limit'])<=1.0))")
 
+# FP needs its own build and the rule's regression check first (sequential, before the lanes start).
+FPDIR="$AXI/torsion_shape"
+if [ ! -f "$FPDIR/fp_regress.json" ]; then
+  say "FP: building the Fingerprint AxiCLASS and running its regression check"
+  bash "$FPDIR/build_sinh.sh" >> "$LOG" 2>&1 && "$PY" "$FPDIR/regress_sinh.py" >> "$LOG" 2>&1 || say "FP build/regression did not pass; FP fits skipped"
+fi
+FP_OK=$($PY -c "import json,os; p='$FPDIR/fp_regress.json'; print(int(os.path.exists(p) and json.load(open(p)).get('pass') is True))")
+
 say "field tests start: lanes=$LANES python=$PY results=$RES"
 for n in $QUEUE; do
   [ -f "$RES/cmp_$n.json" ] && { say "skip (done) $n"; continue; }
   if [[ "$n" == *spiraltwist* && "$GATE_OK" != 1 ]]; then say "skip $n: SF gate failed"; continue; fi
+  if [[ "$n" == fp_* && "$FP_OK" != 1 ]]; then say "skip $n: FP regression gate not passed"; continue; fi
+  DRIVER="$AXI/early_late_spa.py"; [[ "$n" == fp_* ]] && DRIVER="$FPDIR/fp_fit.py"
   while [ "$(jobs -rp | wc -l)" -ge "$LANES" ]; do wait -n; done
   say "start $n"
-  ( OMP_NUM_THREADS=2 nice -n 5 "$PY" "$AXI/early_late_spa.py" "$n" > "$RES/lanes/$n.log" 2>&1
+  ( OMP_NUM_THREADS=2 nice -n 5 "$PY" "$DRIVER" "$n" > "$RES/lanes/$n.log" 2>&1
     if [ -f "$RES/cmp_$n.json" ]; then say "done $n"; else say "NO RESULT $n (counts as the rule says; see lanes/$n.log)"; fi ) &
   sleep 15
 done
