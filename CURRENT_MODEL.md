@@ -46,7 +46,7 @@ unification with constant W.
 | Stage-3 P-ACT bracket | after BR |
 
 ## Where things are
-- Run and score every test: `field_tests/` (`STATUS.md`, `score.py`, `run_pc.sh`). PC results not yet merged: PR #13.
+- Run and score every test: `field_tests/` (`STATUS.md`, `score.py`, `run_pc.sh`). PC results merged 7 Nov (PR #13).
 - Locked rules: `field_tests/rules/` and `cmb-fit/PREREG*`; theory checks: `theory/` (audit `THEORY_AUDIT_2026-11-07.md`).
 - Cloud refits and tournament: `aegis-Kronos-syndyr/research/refit/`.
 
