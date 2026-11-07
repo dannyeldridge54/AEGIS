@@ -129,3 +129,25 @@ proposed in test A do worse. **Caveats:** (i) this is a grid read, not the locke
 itself a low/high-redshift calibration effect (split at z = 0.1), so "SUPPORTED on DES Y5" is weak; (iii) the TF-P
 look-elsewhere count is three F values; (iv) **Union3 is the blind sample and must still be run.** Next step on the
 PC: the three locked `ax_spa_latetwist_fF0.1930*_nlfix` runs.
+
+## Running F: can the dilaton make one BI axion do both jobs? (`dilaton_running_F.py`)
+
+Hypothesis (from today's F = 1.559/|φ|): the dilaton sits at |φ| ≈ 9–13 at equality, giving the early width the data
+want (stored F-scan: F ≈ 0.12–0.17, best 0.136–0.153; at F = 0.204 the gain is gone), and rolls to |φ| ≈ 1 today, giving
+the late Nieh–Yan width. Dilaton in the GKY supergravity potential with W = W₀ e^{bΦ}, matter blind:
+
+| b | tracker move z = 3500 → 0 | |φ| at equality (if 1 today) | early F | in the data window? |
+|---|---|---|---|---|
+| **0 (constant W, the derived case)** | **4.06** | **5.1** | **0.31** | **no** |
+| 1.0 | 6.07 | 7.1 | 0.22 | no |
+| 1.5 | 8.08 | 9.1 | 0.17 | edge |
+| 1.7 | 9.30 | 10.3 | 0.15 | yes |
+| 1.8 | 10.06 | 11.1 | 0.14 | yes |
+| 1.9 | 10.96 | 12.0 | 0.13 | yes |
+
+Reading: **with the simplest supergravity potential the idea fails**: the dilaton moves only ~4 between equality and
+today, so the early width comes out 0.31, about twice too wide. It works for b ≈ 1.7–1.9, but b is then a new
+parameter chosen to fit, not derived (in the no-scale frame this is W ∝ e^{(3+b)Φ}; no reason for that value is
+known). Larger amplitudes make the dilaton overshoot and freeze, so there is no running at all. The estimate ignores
+the region |φ| ≈ 1–3 where the potential changes shape (V = 0 at |φ| = 1, negative below, needing an uplift).
+Status: HYPOTHESIS, not supported in its derived form. Worth a locked test only if a reason for b ≈ 1.8 is found.
