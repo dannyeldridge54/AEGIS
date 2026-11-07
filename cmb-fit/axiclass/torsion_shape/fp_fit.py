@@ -27,7 +27,7 @@ BEST_OF = 4
 def info(name):
     import early_late_spa as E
     extra = dict(E.BASE_ARGS, **E.EDE_ARGS)
-    if name == "fp_sinh":
+    if name.startswith("fp_sinh"):
         extra["axion_sinh_x0"] = X0
     P = E.P
     params = {
@@ -40,7 +40,8 @@ def info(name):
         "omega_cdm": P(0.09, 0.16, 0.124, 0.0008),
         "tau_reio": P(0.02, 0.12, 0.057, 0.004),
         "fraction_axion_ac": P(0.001, 0.3, 0.07, 0.006),
-        "log10_axion_ac": P(-4.3, -3.0, -3.55, 0.05, r"\log_{10} a_c"),
+        "log10_axion_ac": ({"value": E.LOCK, "derived": False} if name.endswith("_lock")   # FP-L: UFE locked onset
+                           else P(-4.3, -3.0, -3.55, 0.05, r"\log_{10} a_c")),
         "theta_i_scf": P(0.1, 3.1, 2.75, 0.04, r"\theta_i"),
         "H0": {"latex": "H_0"}, "sigma8": {"latex": r"\sigma_8"}, "Omega_m": {"latex": r"\Omega_m"},
     }
@@ -54,6 +55,13 @@ def info(name):
 
 
 def fit(name):
+    # Atomic claim so two queue runs never fit the same model (as in early_late_spa.py).
+    os.makedirs(f"{RES}/lanes", exist_ok=True)
+    try:
+        fd = os.open(f"{RES}/lanes/{name}.claim", os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        os.write(fd, f"{os.getpid()} {time.strftime('%F %T')}\n".encode()); os.close(fd)
+    except FileExistsError:
+        sys.exit(f"{name} is claimed by another worker; skipping")
     gate = os.path.join(HERE, "fp_regress.json")
     if not (os.path.exists(gate) and json.load(open(gate)).get("pass")):
         sys.exit("FP gate not passed: run build_sinh.sh and regress_sinh.py first")
@@ -75,12 +83,13 @@ def chi2_eff(m):
     return m["chi2"] + ((m.get("A_planck", 1.0) - 1) / 0.0025) ** 2
 
 
-def score():
+def score(suffix=""):
     def load(n):
         p = f"{RES}/cmp_{n}.json"
         return json.load(open(p))["minimum"] if os.path.exists(p) else None
-    s, c = load("fp_sinh"), load("fp_cosine")
-    out = {"rule": "PREREGISTRATION_SINH.md (locked 2026-10-26 16:10)"}
+    s, c = load("fp_sinh" + suffix), load("fp_cosine" + suffix)
+    out = {"rule": "PREREGISTRATION_SINH.md (locked 2026-10-26 16:10)" if not suffix else
+           "field_tests/rules/PREREG_FP_LOCK.md (UFE locked onset)"}
     if s is None or c is None:
         out["verdict"] = "pending"
     else:
@@ -94,9 +103,12 @@ def score():
                                                  "favours Nieh-Yan (plain cosine)"),
                     "locked_reference_2427.80_delta": chi2_eff(s) - LOCKED_REF,
                     "note": "The 2427.80 reference is from a withdrawn, unconverged run; the same-engine delta decides."})
-    json.dump(out, open(os.path.join(HERE, "fp_score.json"), "w"), indent=1)
+    json.dump(out, open(os.path.join(HERE, f"fp_score{suffix}.json"), "w"), indent=1)
     print(json.dumps(out, indent=1))
 
 
 if __name__ == "__main__":
-    (score if sys.argv[1] == "score" else lambda: fit(sys.argv[1]))()
+    if sys.argv[1] == "score":
+        score("_lock" if "--lock" in sys.argv else "")
+    else:
+        fit(sys.argv[1])
