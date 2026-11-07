@@ -103,12 +103,12 @@
   {
    "id": "S8WL",
    "title": "Full weak-lensing likelihood instead of the S8 penalty (Master Plan 1.4)",
-   "where": "PC (CosmoSIS), after the author locks the rule",
-   "rule": "field_tests/S8_WL/DRAFT_PREREG_S8_WL.md",
-   "locked": "NOT LOCKED (draft)",
-   "draft": true,
+   "where": "Part 1 done (stored fits); Part 2 PC (CosmoSIS)",
+   "rule": "field_tests/rules/PREREG_S8_WL.md",
+   "locked": "2026-11-07T22:01:24Z",
    "runs": [],
-   "setup": "field_tests/S8_WL/SETUP.md"
+   "setup": "field_tests/S8_WL/SETUP.md",
+   "scorer": "s8wl_score.py"
   }
  ]
 }

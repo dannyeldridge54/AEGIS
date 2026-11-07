@@ -1,3 +1,5 @@
+> **Superseded by the locked `../rules/PREREG_S8_WL.md` (7 Nov).**
+
 # DRAFT pre-registration: S8-WL, the full weak-lensing test (Master Plan step 1.4)
 
 **Status: DRAFT. Not locked, no hash.** Written 7 Nov 2026 with AI assistance. The author edits, then locks it (SHA-256 +
