@@ -70,7 +70,7 @@ mapping should be written out explicitly.
 | D | n = 2 refit restart (`edelockP_n2_deep` failed: flat start, all 19 evaluations equal) | PC | Open |
 | E | GW friction and birefringence for the Nieh–Yan coupling | Literature | **Done**, see below |
 | F | Sign map to Babu–Amendola's phantom mode | Solver + algebra | **Done**, see below |
-| G | Holst or Nieh–Yan: the model uses both (new, from E) | Theory | Open: the author's choice |
+| G | Holst or Nieh–Yan: the model uses both (new, from E) | Theory | **Decided: Nieh–Yan** (`COUPLING_CHOICE_NIEH_YAN.md`) |
 
 ## Follow-up, same day: tests A, E, F and the new item G
 

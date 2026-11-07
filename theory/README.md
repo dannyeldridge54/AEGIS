@@ -24,4 +24,4 @@ Theory note: doi:[10.5281/zenodo.23899237](https://doi.org/10.5281/zenodo.238992
 `TWIST_RESULTS`. The pure-Python ones (`bi_kahler_lambda.py`, `solar_lowz.py`, `bi_superpotential.py`,
 `ufe_checks.py`, `spiral_w.py`) need only numpy, scipy and sympy.
 
-**Audit, 7 Nov 2026 (AI-assisted, not pre-registered):** `THEORY_AUDIT_2026-11-07.md`.
+**Audit, 7 Nov 2026 (AI-assisted, not pre-registered):** `THEORY_AUDIT_2026-11-07.md`. **Coupling decision (7 Nov):** `COUPLING_CHOICE_NIEH_YAN.md`.
