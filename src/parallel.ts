@@ -10,6 +10,7 @@
 import { Task, ParameterDef, EvalResult, AgentConfig, AgentState } from './interfaces';
 import { MetaLearner, generateNextPoint, observeResult } from './strategies';
 import { getMessages, formatDuration } from './language';
+import { goalMinimizes } from './agent';
 
 export interface ParallelConfig extends AgentConfig {
   /** Number of concurrent evaluations (default: 4) */
@@ -74,9 +75,7 @@ export async function parallelOptimize(
 
   const startTime = Date.now();
   const goal = config?.goal;
-  const minimize = !goal ? true
-    : typeof goal === 'string' ? !/(maximize|maximise|highest|largest|most|best score)/i.test(goal)
-    : goal.minimize !== false;
+  const minimize = goalMinimizes(goal);
   let failedBatches = 0;
 
   if (verbosity !== 'silent') {

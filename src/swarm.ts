@@ -8,7 +8,7 @@
  */
 
 import { EventEmitter } from 'events';
-import { AegisAgent } from './agent';
+import { AegisAgent, goalMinimizes, isBetterScore } from './agent';
 import { Task, AgentConfig, EvalResult, AgentState, ParameterDef } from './interfaces';
 
 // ─── Message Protocol ────────────────────────────────────────────────────────
@@ -36,6 +36,7 @@ export class Swarm extends EventEmitter {
   private messageQueue: AgentMessage[] = [];
   private globalBest: EvalResult | null = null;
   private discoveries: Array<{ agent: string; result: EvalResult; description: string }> = [];
+  private minimize = true;
 
   constructor(private config?: { maxAgents?: number; shareInterval?: number }) {
     super();
@@ -52,6 +53,7 @@ export class Swarm extends EventEmitter {
       ...agentConfig,
       verbosity: 'silent',
     });
+    if (this.agents.size === 0) this.minimize = goalMinimizes(agentConfig?.goal);
 
     // Wire up discovery sharing
     agent.on((event) => {
@@ -200,7 +202,7 @@ export class Swarm extends EventEmitter {
   }
 
   private updateGlobalBest(result: EvalResult, agentId: string): void {
-    if (!this.globalBest || result.score < this.globalBest.score) {
+    if (isBetterScore(result.score, this.globalBest?.score, this.minimize)) {
       this.globalBest = result;
       this.discoveries.push({
         agent: agentId,

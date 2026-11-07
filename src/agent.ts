@@ -33,6 +33,20 @@ const DEFAULT_CONFIG: Required<AgentConfig> = {
   restartAfter: -1,
 };
 
+/** Whether a goal (string or Goal object) asks to minimize. Default: minimize. */
+export function goalMinimizes(goal: AgentConfig['goal']): boolean {
+  if (!goal) return true;
+  if (typeof goal === 'string') return !/(maximize|maximise|highest|largest|most|best score)/i.test(goal);
+  return goal.minimize !== false;
+}
+
+/** True if `a` is a better score than `b` for this direction (non-finite never wins). */
+export function isBetterScore(a: number, b: number | undefined, minimize: boolean): boolean {
+  if (!Number.isFinite(a)) return false;
+  if (b === undefined || !Number.isFinite(b)) return true;
+  return minimize ? a < b : a > b;
+}
+
 // ─── AEGIS Agent ─────────────────────────────────────────────────────────────
 
 export class AegisAgent {
@@ -302,12 +316,7 @@ export class AegisAgent {
 
   /** Determine if we're minimizing based on goal config */
   private isMinimizing(): boolean {
-    const goal = this.config.goal;
-    if (!goal) return true;
-    if (typeof goal === 'string') {
-      return !/(maximize|maximise|highest|largest|most|best score)/i.test(goal);
-    }
-    return goal.minimize !== false;
+    return goalMinimizes(this.config.goal);
   }
 
   private updatePhase(): void {

@@ -19,7 +19,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as http from 'http';
-import { AegisAgent } from './agent';
+import { AegisAgent, goalMinimizes, isBetterScore } from './agent';
 import { Task, AgentConfig, AgentState, EvalResult, AgentEvent } from './interfaces';
 import { Memory } from './memory';
 import { Swarm } from './swarm';
@@ -317,7 +317,7 @@ export class AegisDaemon {
     agent.on((event: AgentEvent) => {
       if (event.type === 'new_best') {
         // Only update best if this result is actually better (preserve across runs)
-        if (!state.best || event.result.score < state.best.score) {
+        if (isBetterScore(event.result.score, state.best?.score, goalMinimizes(job.config?.goal))) {
           state.best = event.result;
         }
         this.dashboard?.addLog({ type: 'new_best', text: `[${job.name}] ⭐ ${event.result.score.toFixed(6)}` });
@@ -347,7 +347,7 @@ export class AegisDaemon {
       currentState.runs++;
       currentState.totalEvals += result.totalEvals;
       // Preserve best across continuous runs
-      if (result.best && (!currentState.best || result.best.score < currentState.best.score)) {
+      if (result.best && isBetterScore(result.best.score, currentState.best?.score, goalMinimizes(job.config?.goal))) {
         currentState.best = result.best;
       }
       currentState.history.push({

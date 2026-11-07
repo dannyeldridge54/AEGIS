@@ -47,3 +47,17 @@ describe('real swarm / bayesian / bandit strategies', () => {
     expect(state.best!.score).toBeLessThan(1);
   });
 });
+
+describe('maximize goals in swarm', () => {
+  test('swarm keeps the highest score as global best when maximizing', async () => {
+    const { Swarm } = require('../src');
+    const log = jest.spyOn(console, 'log').mockImplementation(() => {});
+    const swarm = new Swarm();
+    const task = { id: 't', name: 't', evaluate: (p: any) => -((p.x - 0.5) ** 2), parameters: [{ name: 'x', min: 0, max: 1 }] };
+    swarm.addAgent('a', task, 'explorer', { goal: { description: 'max', minimize: false } });
+    swarm.addAgent('b', task, 'explorer', { goal: { description: 'max', minimize: false } });
+    const res = await swarm.run(400);
+    log.mockRestore();
+    expect(res.globalBest.score).toBeGreaterThan(-1e-3);
+  });
+});
