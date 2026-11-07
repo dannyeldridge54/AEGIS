@@ -5,20 +5,21 @@
    "id": "TF-P",
    "title": "Nieh-Yan decay constant F = (4/pi) sqrt(3/2) M_Pl fixed, m free",
    "where": "PC (AxiCLASS)",
-   "rule": "the-twist-torsion-cosmology/preregistrations/PREREGISTRATION_TORSION_F_PLANCK.md",
+   "rule": "field_tests/rules/PREREGISTRATION_TORSION_F_PLANCK.md",
    "locked": "2026-11-02 14:55:36",
    "scorer": "lu_tf_score.py",
    "runs": [
     "ax_spa_latetwist_fF0.1930_union3_nlfix",
     "ax_spa_latetwist_fF0.1930_desy5_nlfix",
     "ax_spa_latetwist_fF0.1930_nlfix"
-   ]
+   ],
+   "rule_source": "the-twist-torsion-cosmology/preregistrations/PREREGISTRATION_TORSION_F_PLANCK.md"
   },
   {
    "id": "SF",
    "title": "Effective Spiral Twist fit (kappa, beta_eff)",
    "where": "PC (AxiCLASS, coupled build)",
-   "rule": "the-twist-torsion-cosmology/preregistrations/PREREGISTRATION_SPIRAL_FIT.md",
+   "rule": "field_tests/rules/PREREGISTRATION_SPIRAL_FIT.md",
    "locked": "2026-11-02 17:01:01",
    "scorer": "spiral_score.py",
    "gate": {
@@ -30,13 +31,14 @@
     "ax_spa_spiraltwist_union3_nlfix",
     "ax_spa_spiraltwist_nlfix",
     "ax_spa_spiraltwist_dovekie_nlfix"
-   ]
+   ],
+   "rule_source": "the-twist-torsion-cosmology/preregistrations/PREREGISTRATION_SPIRAL_FIT.md"
   },
   {
    "id": "TF",
    "title": "Heuristic F values sqrt(3/2) and sqrt6 fixed, m free",
    "where": "PC (AxiCLASS)",
-   "rule": "the-twist-torsion-cosmology/preregistrations/PREREGISTRATION_TORSION_F.md",
+   "rule": "field_tests/rules/PREREGISTRATION_TORSION_F.md",
    "locked": "2026-11-02 14:51:28",
    "scorer": "lu_tf_score.py",
    "runs": [
@@ -46,7 +48,8 @@
     "ax_spa_latetwist_fF0.3891_desy5_nlfix",
     "ax_spa_latetwist_fF0.0880_nlfix",
     "ax_spa_latetwist_fF0.3891_nlfix"
-   ]
+   ],
+   "rule_source": "the-twist-torsion-cosmology/preregistrations/PREREGISTRATION_TORSION_F.md"
   },
   {
    "id": "FP",

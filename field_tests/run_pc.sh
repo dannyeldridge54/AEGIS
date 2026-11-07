@@ -32,6 +32,7 @@ if [ ! -f "$FPDIR/fp_regress.json" ]; then
 fi
 FP_OK=$($PY -c "import json,os; p='$FPDIR/fp_regress.json'; print(int(os.path.exists(p) and json.load(open(p)).get('pass') is True))")
 
+bash "$HERE/sync_check.sh" > /dev/null 2>&1 && grep -q "⚠" "$HERE/SYNC.md" && say "WARNING: unpushed or uncommitted work on this PC (field_tests/SYNC.md)"
 say "field tests start: lanes=$LANES python=$PY results=$RES"
 for n in $QUEUE; do
   [ -f "$RES/cmp_$n.json" ] && { say "skip (done) $n"; continue; }
@@ -47,12 +48,13 @@ done
 wait
 say "all runs finished; scoring"
 TWIST_RESULTS="$RES" "$PY" "$HERE/score.py" > /dev/null && say "STATUS written: field_tests/STATUS.md"
+bash "$HERE/sync_check.sh" > /dev/null 2>&1
 
 if [ "${1:-}" = "--push" ]; then
   cd "$ROOT" || exit 1
   files=$(for n in $QUEUE; do [ -f "$RES/cmp_$n.json" ] && echo "$RES/cmp_$n.json"; done)
   for f in "$FPDIR/fp_regress.json" "$FPDIR/fp_score.json"; do [ -f "$f" ] && files="$files $f"; done
-  git add -f $files field_tests/STATUS.md field_tests/STATUS.json 2>/dev/null
-  git commit -q -m "field tests: results and locked-rule scores $(date '+%F %T')" -- $files field_tests/STATUS.md field_tests/STATUS.json \
+  git add -f $files field_tests/STATUS.md field_tests/STATUS.json field_tests/SYNC.md 2>/dev/null
+  git commit -q -m "field tests: results and locked-rule scores $(date '+%F %T')" -- $files field_tests/STATUS.md field_tests/STATUS.json field_tests/SYNC.md \
     && git push -q origin HEAD:refs/heads/field-results && say "pushed to branch field-results"
 fi
