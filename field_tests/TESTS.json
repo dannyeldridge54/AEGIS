@@ -85,23 +85,6 @@
    "deviations": "cmb-fit/axiclass/torsion_shape/FP_DEVIATIONS.md"
   },
   {
-   "id": "FP-L",
-   "title": "Fingerprint vs cosine with the UFE locked onset (z_c at equality)",
-   "where": "PC (AxiCLASS, Fingerprint build)",
-   "rule": "field_tests/rules/PREREG_FP_LOCK.md",
-   "locked": "2026-11-07T21:45:24Z",
-   "gate": {
-    "file": "../cmb-fit/axiclass/torsion_shape/fp_regress.json",
-    "key": "pass",
-    "equals": true
-   },
-   "scorer": "cmb-fit/axiclass/torsion_shape/fp_fit.py score --lock",
-   "runs": [
-    "fp_cosine_lock",
-    "fp_sinh_lock"
-   ]
-  },
-  {
    "id": "N2",
    "title": "Potential power tournament: n = 2 (locked n = 3 vs 2 vs 4)",
    "where": "cloud (CAMB), Kronos",

@@ -1,3 +1,5 @@
+> **SUPERSEDED (7 Nov 2026).** Older model notes; some numbers here are withdrawn or failed. Current model and results: [CURRENT_MODEL.md](CURRENT_MODEL.md).
+
 # The AEGIS model, version 2 (reframed 26 October 2026)
 
 Danny Lee Eldridge. Everything here is organised in two tiers, kept separate on purpose.

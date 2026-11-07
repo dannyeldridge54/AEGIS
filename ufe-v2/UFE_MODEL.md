@@ -1,3 +1,5 @@
+> **SUPERSEDED (7 Nov 2026).** The UFE v2 (29 Oct) model; the N = 9 width module later failed on SPT-3G. Current model: [../CURRENT_MODEL.md](../CURRENT_MODEL.md).
+
 # The UFE model: torsion-born early dark energy with a locked switch-on
 *Danny Lee Eldridge · 29 October 2026 · every number from the saved fits in cmb-fit/results*
 
