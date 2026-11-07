@@ -44,3 +44,19 @@ unchanged).
 
 N2 and the bracket use the CAMB pipeline and run in the cloud chat; their results land in
 `aegis-Kronos-syndyr/data/fits/refit5/` and are scored by `research/refit/tournament.py` and `bracket.py`.
+
+## Safeguards (added 7 Nov, after the 6 Nov stall)
+
+What went wrong: GitHub refused every cloud job (billing) with no alert; a queue waited for files that never came; the
+F derivation and three locked rules lived only in the release repository; TF-P, SF and TF never ran. Now:
+
+1. **No paid cloud queue.** All Kronos GitHub Actions workflows are disabled. Fits run on the PC (`run_pc.sh`) or in a
+   cloud chat, never on Actions minutes. Re-enable a workflow only after checking billing.
+2. **No waiting on other jobs.** `run_pc.sh` starts what is missing and skips what is done; a nightly resume picks up
+   anything that stopped.
+3. **Rules live here.** `rules/` holds byte-identical copies of the locked TF, TF-P and SF rules and the Nieh–Yan
+   derivation; `ufe-v2/tests/test_field_rules_locked.py` fails if any copy stops matching its lock hash.
+4. **Nothing stays only on the PC.** `sync_check.sh` runs at the start and end of every PC run and writes `SYNC.md`:
+   uncommitted files and unpushed commits in every project repo it finds, flagged ⚠. It is pushed with the results.
+5. **Someone checks every morning.** The daily scheduled score (08:58 CT) reports verdicts, ⚠ sync flags, GitHub jobs
+   that failed to start, and results that have not moved for two days.
