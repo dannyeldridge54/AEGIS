@@ -41,7 +41,8 @@ unification with constant W.
 |---|---|
 | **SF2** does the BI angle matter? (β = 0 vs free) | running on the PC (`field_tests`, rule locked 7 Nov) |
 | **FP** Fingerprint (Holst) vs cosine (Nieh–Yan) | running on the PC (gate passed) |
-| BR bracket (early-field variants) | cloud, 2 of 6 fits done |
+| **UB-1** can the coupled axion–dilaton do both jobs? (background only) | rule locked 7 Nov 23:45 UTC; runs on the PC right after SF2/FP, before the bracket |
+| BR bracket (early-field variants) | 2 of 6 done; the other 4 start on the PC after UB-1 |
 | **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; PC, needs CosmoSIS |
 | Stage-3 P-ACT bracket | after BR |
 
