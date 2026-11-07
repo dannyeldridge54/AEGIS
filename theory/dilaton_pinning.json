@@ -1,0 +1,51 @@
+{
+ "period_in_a_implied_by_note": 8.0,
+ "F_formula": "F = sqrt(3/2) P / (2 pi |phi|) = (4/pi) sqrt(3/2) / |phi|",
+ "points": [
+  {
+   "pin": "chi = 0",
+   "abs_phi": 1.0,
+   "chi": 0.0,
+   "reason": "coordinate choice used in the note; no physics fixes it",
+   "F_MPl": 1.5594,
+   "log10_F_run_name": 0.193,
+   "V_curvature_over_W2": 98033.2,
+   "is_extremum_of_V": false,
+   "rests_there_with_constant_uplift": false,
+   "alpha_DEF": 0.5774,
+   "passes_Cassini_if_light": false
+  },
+  {
+   "pin": "GR point",
+   "abs_phi": 0.5,
+   "chi": -0.8489,
+   "reason": "matter in the supergravity Jordan frame: alpha_DEF = 0",
+   "F_MPl": 3.1188,
+   "log10_F_run_name": 0.494,
+   "V_curvature_over_W2": -1084.6,
+   "is_extremum_of_V": true,
+   "rests_there_with_constant_uplift": false,
+   "alpha_DEF": 0.0,
+   "passes_Cassini_if_light": true
+  },
+  {
+   "pin": "W=const minimum",
+   "abs_phi": 0.6666666666666666,
+   "chi": -0.4966,
+   "reason": "local minimum of the simplest potential; constant uplift keeps it",
+   "F_MPl": 2.3391,
+   "log10_F_run_name": 0.369,
+   "V_curvature_over_W2": 2211.2,
+   "is_extremum_of_V": true,
+   "rests_there_with_constant_uplift": true,
+   "alpha_DEF": 0.1925,
+   "passes_Cassini_if_light": false
+  }
+ ],
+ "reading": [
+  "The GR point is a local MAXIMUM of the W = const potential: a light dilaton cannot rest there with this W.",
+  "At the W = const minimum, alpha_DEF = 0.19, about 50x the Cassini limit, so the dilaton there must be heavy (Yukawa range below the ~0.05 mm torsion-balance scale, mass above ~5 meV).",
+  "A pinned dilaton cannot also roll as dark energy. So the Spiral (rolling dilaton) and a fixed F exclude each other: either the dilaton rolls and F is free, or it is pinned and the late field is the axion alone with one of the discrete F values above.",
+  "F = (4/pi) sqrt(6) = 3.119 at the GR point is the 'sqrt(6)'-type value already listed in MIRROR_MAP row 10."
+ ]
+}

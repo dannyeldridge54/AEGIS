@@ -14,6 +14,7 @@ Theory note: doi:[10.5281/zenodo.23899237](https://doi.org/10.5281/zenodo.238992
 | `forward_predictions.py` | Frozen predictions from the stored best fits | `forward_predictions.json` |
 | `lowz_split.py` | DES Y5 supernova χ² split at z = 0.1 | `lowz_split.json` |
 | `f_dilaton_degeneracy.py` | Audit 7 Nov: is the Spiral's F a constraint, or absorbed by the dilaton? | `f_dilaton_degeneracy.json` |
+| `dilaton_pinning.py` | Audit test A: what fixes the dilaton, and the F each choice gives | `dilaton_pinning.json` |
 | `alpha1_inflation_squeeze.py` | Audit 7 Nov: ACT n_s versus the locked α = 1 tensor ratio | `alpha1_inflation_squeeze.json` |
 
 **Rules written before computing:** `PREREGISTRATION_UFE_CHECKS.md`, `PREREGISTRATION_SOLAR_LOWZ.md`.
