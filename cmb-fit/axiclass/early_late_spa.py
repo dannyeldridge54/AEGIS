@@ -179,6 +179,9 @@ def make(name):
                       "scf_parameters": "1.0, 0.0, 0.0182, 0.0, 0.0, 0.0"})
         params["spiral_kappa"] = P(0.05, 3.0, 1.0, 0.1, r"\kappa")
         params["scf_coupling_beta"] = P(0.0, 0.12, 0.03, 0.01, r"\beta_{\rm eff}")
+        if fixed_beta:   # SF2 (field_tests/rules/PREREG_SF2_ANGLE.md): "_beta<x>" fixes beta_eff; kappa stays free
+            params.pop("scf_coupling_beta")
+            extra["scf_coupling_beta"] = float(fixed_beta.group(1))
     if coupled:
         if fixed_beta:
             extra["scf_coupling_beta"] = float(fixed_beta.group(1))

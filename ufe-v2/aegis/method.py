@@ -38,6 +38,21 @@ def sha(path):
         return hashlib.sha256(f.read()).hexdigest()
 
 
+def sha_variants(path):
+    """SHA-256 of the file as stored, with LF line endings, and with CRLF line endings.
+    A rule file locked on Windows (CRLF) and checked out on Linux or macOS (LF) has identical text but a different
+    raw hash. Only line endings are normalised, so any change to the words still fails the lock."""
+    with open(path, "rb") as f:
+        b = f.read()
+    lf = b.replace(b"\r\n", b"\n")
+    return {hashlib.sha256(x).hexdigest() for x in (b, lf, lf.replace(b"\n", b"\r\n"))}
+
+
+def same_as_lock(path, locked):
+    """True if the file matches its locked hash, ignoring only line endings."""
+    return locked in sha_variants(path)
+
+
 def load(path=STORE):
     if not os.path.exists(path):
         return {"claims": {}, "threads": []}
@@ -106,7 +121,7 @@ def check(store=None):
         bad += _check_claim(c)
         if c.get("prereg"):
             p = os.path.join(ROOT, c["prereg"])
-            if os.path.exists(p) and c.get("prereg_sha") and sha(p) != c["prereg_sha"]:
+            if os.path.exists(p) and c.get("prereg_sha") and not same_as_lock(p, c["prereg_sha"]):
                 bad.append(f"{c['id']}: rule file {c['prereg']} changed after it was locked")
     for t in store["threads"]:
         A, B = store["claims"].get(t["a"]), store["claims"].get(t["b"])

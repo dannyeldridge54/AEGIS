@@ -1,0 +1,47 @@
+{
+ "check": "F vs dilaton starting value in the Spiral Twist",
+ "F_paper": 1.5593936024673523,
+ "paper_model_equals": "dilaton starting at the GR point |phi| = 1/2 with F = 0.7797",
+ "if_dilaton_pinned_at_GR_point_and_F_is_the_Nieh_Yan_value": "paper-convention F = 3.1187, not 1.5594",
+ "tolerance": 1e-06,
+ "cases": [
+  {
+   "kap": 1.2,
+   "m": 3.0,
+   "theta0": 1.0,
+   "chi_shift": -0.8489,
+   "F_equivalent": 0.7797149161479983,
+   "max_diff": 1.230279433883652e-09,
+   "same_cosmology": true
+  },
+  {
+   "kap": 1.2,
+   "m": 3.0,
+   "theta0": 1.0,
+   "chi_shift": 0.5,
+   "F_equivalent": 2.345609586670311,
+   "max_diff": 4.2370373876110534e-10,
+   "same_cosmology": true
+  },
+  {
+   "kap": 0.5,
+   "m": 3.0,
+   "theta0": 0.5,
+   "chi_shift": -0.8489,
+   "F_equivalent": 0.7797149161479983,
+   "max_diff": 6.878444480662438e-10,
+   "same_cosmology": true
+  },
+  {
+   "kap": 0.5,
+   "m": 3.0,
+   "theta0": 0.5,
+   "chi_shift": 1.0,
+   "F_equivalent": 3.528220408480775,
+   "max_diff": 3.1375080311590864e-10,
+   "same_cosmology": true
+  }
+ ],
+ "verdict": "DEGENERATE: F is not a constraint unless the dilaton's value is fixed",
+ "note": "lambda itself is not affected; only F is absorbed. Matter blind to the dilaton is the assumption."
+}

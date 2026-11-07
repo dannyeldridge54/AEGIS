@@ -1,3 +1,5 @@
+> **SUPERSEDED (7 Nov 2026).** Older model notes; some numbers here are withdrawn or failed. Current model and results: [CURRENT_MODEL.md](CURRENT_MODEL.md).
+
 # The AEGIS model, version 2 (reframed 26 October 2026)
 
 Danny Lee Eldridge. Everything here is organised in two tiers, kept separate on purpose.
@@ -21,6 +23,12 @@ S = ∫ d⁴x √−g [ M_Pl² R/2 − ½(∂φ)² − V(φ) ] + S_matter
 V(φ) = Λ⁴ [1 − cos((φ − φ₀)/F)]³ ,  φ₀ = 2.63 M_Pl  (rest point at γ₀ = 0.2375)
 Fingerprint:  (φ − φ₀) → g(φ) = s[sinh(φ/s) − sinh(φ₀/s)]/cosh(φ₀/s),  s = √(3/2) M_Pl
 ```
+
+**Coupling (decided 7 Nov 2026, hypothesis tier):** the Twist couples through the **Nieh–Yan** term, so the canonical
+field is linear, φ = √(3/2) M_Pl β, and the predicted potential is the plain cosine in the displacement d (the form
+every fit already uses), with F = (4/π)√(3/2) M_Pl at a Planck-length Nieh–Yan scale. The arsinh map and the
+Fingerprint above are the **Holst** alternative; the Fingerprint's locked rule now also tests the choice. Details:
+`theory/COUPLING_CHOICE_NIEH_YAN.md`.
 
 
 **Field convention (fixed 26 Oct after Copilot's review):** the code variable is the displacement d = φ_abs − φ₀, with φ₀ = 2.63 M_Pl at γ₀ = 0.2375. The implemented potential is V = Λ⁴[1 − cos(d/F)]ⁿ, minimum at d = 0. The Fingerprint maps d through g(d) = s[sinh((d + φ₀)/s) − sinh(φ₀/s)]/cosh(φ₀/s), s = √(3/2) M_Pl.

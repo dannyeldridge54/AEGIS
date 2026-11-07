@@ -151,8 +151,8 @@
    "prereg_sha": "0e630bd0240aaaa56810999eeda36ebf4ddd417b0b51a8b8ec2d742a9173181e",
    "result": null,
    "source": null,
-   "note": "Rule written; fit not yet run.",
-   "updated": "2026-10-29"
+   "note": "Rule written; fit not yet run. Since 7 Nov the Twist uses the Nieh-Yan coupling, whose prediction is the plain cosine; the Fingerprint is the Holst alternative, so this rule now also tests the coupling choice.",
+   "updated": "2026-11-07"
   },
   "cosmic_bell": {
    "id": "cosmic_bell",
@@ -279,6 +279,20 @@
    "source": "cmb-fit/results: cmp_pact_edelock_F9 vs cmp_pact_lcdm; cmp_edelockP_F9 vs cmp_lcdmP; F read from CAMB at each minimum",
    "note": "Split: the free width drifts (Planck 8.5-9.0, ACT 8.0), yet fixing it at 1/9 costs little and wins on AIC. The S8 tension (twist_verdict: tie) is not addressed by this. N = 9 is not derived from physics.",
    "updated": "2026-10-29"
+  },
+  "coupling_nieh_yan": {
+   "id": "coupling_nieh_yan",
+   "tier": "hypothesis",
+   "statement": "The Twist couples to torsion through the Nieh-Yan term, not Holst: canonical field phi = sqrt(3/2) M_Pl beta, a potential periodic in phi (plain cosine), and F = (4/pi) sqrt(3/2) M_Pl if the Nieh-Yan length is the Planck length.",
+   "status": "open",
+   "mechanism": "Mercuri-Taveras coupling (1/2 kappa) beta N; Chandia-Zanelli index; Calcagni-Mercuri kinetic term 3/4 (linear map). Matches the shift-symmetric GKY axion.",
+   "data": null,
+   "prereg": null,
+   "prereg_sha": null,
+   "result": null,
+   "source": "the-twist-torsion-cosmology results_notes/NIEH_YAN_PERIOD.md; theory/COUPLING_CHOICE_NIEH_YAN.md",
+   "note": "Chosen 7 Nov 2026 by the author. Tests: TF-P (locked 2 Nov, Union3 blind, not yet run) and the Fingerprint rule (a Fingerprint win > 2 in chi2 favours Holst over Nieh-Yan).",
+   "updated": "2026-11-07"
   }
  },
  "threads": [
@@ -341,6 +355,18 @@
    "b": "dodecahedral_space",
    "kind": "dashed",
    "part": "lens"
+  },
+  {
+   "a": "coupling_nieh_yan",
+   "b": "fingerprint",
+   "kind": "solid",
+   "part": "coupling"
+  },
+  {
+   "a": "coupling_nieh_yan",
+   "b": "twist_free",
+   "kind": "solid",
+   "part": "width"
   }
  ]
 }
