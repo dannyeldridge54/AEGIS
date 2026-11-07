@@ -85,6 +85,16 @@
    "deviations": "cmb-fit/axiclass/torsion_shape/FP_DEVIATIONS.md"
   },
   {
+   "id": "UB",
+   "title": "Can the coupled BI axion-dilaton do both dark-energy jobs? (background, step 1)",
+   "where": "PC (Python, background only)",
+   "rule": "field_tests/rules/PREREG_UNIFY_BG.md",
+   "locked": "2026-11-07T23:45:53Z",
+   "runs": [],
+   "script": "theory/unify_hyperbolic_bg.py",
+   "result": "theory/unify_hyperbolic_bg.json"
+  },
+  {
    "id": "N2",
    "title": "Potential power tournament: n = 2 (locked n = 3 vs 2 vs 4)",
    "where": "cloud (CAMB), Kronos",
