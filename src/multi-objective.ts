@@ -91,6 +91,8 @@ export async function multiOptimize(
   );
 
   const allResults: ParetoResult[] = [];
+  // Scalarized history, maintained incrementally (rebuilding it per candidate was O(n^2))
+  const history: EvalResult[] = [];
   let totalEvals = 0;
   let best: EvalResult | null = null;
 
@@ -104,13 +106,7 @@ export async function multiOptimize(
     const batch: Record<string, number>[] = [];
 
     for (let i = 0; i < batchSize; i++) {
-      const history = allResults.map(r => ({
-        params: r.params,
-        score: Object.values(r.scores).reduce((a, b) => a + b, 0),
-        timestamp: Date.now(),
-        strategy: strategy.type,
-      }));
-      batch.push(generateNextPoint(strategy, parameters, best, history as EvalResult[]));
+      batch.push(generateNextPoint(strategy, parameters, best, history));
     }
 
     // Evaluate batch
@@ -123,17 +119,20 @@ export async function multiOptimize(
       totalEvals++;
 
       // Track scalar best for strategy learning
-      const scalar = objectives.reduce((sum, obj, i) =>
-        sum + scores[obj.name] * (obj.weight || 1) * (obj.minimize !== false ? 1 : -1), 0);
-      if (!best || scalar < best.score) {
-        best = { params, score: scalar, timestamp: Date.now(), strategy: strategy.type };
+      const scalar = objectives.reduce((sum, obj) =>
+        sum + scores[obj.name] * (obj.weight ?? 1) * (obj.minimize !== false ? 1 : -1), 0);
+      const entry: EvalResult = { params, score: scalar, timestamp: Date.now(), strategy: strategy.type };
+      history.push(entry);
+      if (Number.isFinite(scalar) && (!best || scalar < best.score)) {
+        best = entry;
         metaLearner.updateStrategy(strategy.type, 1);
+      } else {
+        metaLearner.updateStrategy(strategy.type, 0);
       }
     }
 
     if (verbosity === 'normal' && totalEvals % (popSize * 5) === 0) {
-      const front = allResults.filter(r => !r.dominated);
-      console.log(`  [${totalEvals}/${maxEvals}] Pareto front size: ${front.length}`);
+      console.log(`  [${totalEvals}/${maxEvals}] evaluated, best scalarized score: ${best?.score.toFixed(6)}`);
     }
   }
 

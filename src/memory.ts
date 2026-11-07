@@ -12,6 +12,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import { writeFileAtomic } from './fs-util';
 
 export interface MemoryEntry {
   id: string;
@@ -62,7 +63,8 @@ export class Memory {
 
   /** Search memory by text (TF-IDF inspired scoring) */
   search(query: string, limit: number = 10): MemoryEntry[] {
-    const terms = query.toLowerCase().split(/\s+/);
+    const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+    if (terms.length === 0) return [];
     const scored = this.entries.map(entry => {
       const text = `${entry.content} ${entry.tags.join(' ')}`.toLowerCase();
       let score = 0;
@@ -176,9 +178,7 @@ export class Memory {
       nodes: [...this.nodes.entries()],
       edges: this.edges,
     };
-    const dir = path.dirname(this.storePath);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(this.storePath, JSON.stringify(data));
+    writeFileAtomic(this.storePath, JSON.stringify(data));
   }
 
   load(): void {

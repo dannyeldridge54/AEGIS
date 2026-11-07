@@ -18,6 +18,27 @@ import { Task, ParameterDef, AgentConfig } from './interfaces';
 import { CodingAgent, createCoder } from './coding-agent';
 import { optimize } from './agent';
 import * as fs from 'fs';
+import * as path from 'path';
+
+type Objective = (params: Record<string, number>) => number | Promise<number>;
+
+/**
+ * Load an objective function from a JS (or, under ts-node, TS) module.
+ * Accepts `module.exports = fn`, `export default fn`, or a named `evaluate`/`objective` export.
+ */
+export function loadObjective(modulePath: string): Objective {
+  const resolved = path.resolve(modulePath);
+  if (!fs.existsSync(resolved)) throw new Error(`Objective module not found: ${resolved}`);
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const mod = require(resolved);
+  const fn = typeof mod === 'function' ? mod
+    : typeof mod?.default === 'function' ? mod.default
+    : typeof mod?.evaluate === 'function' ? mod.evaluate
+    : typeof mod?.objective === 'function' ? mod.objective
+    : null;
+  if (!fn) throw new Error(`${resolved} must export a function (module.exports = fn, default, evaluate or objective)`);
+  return fn;
+}
 
 interface ParsedGoal {
   type: 'optimize' | 'code' | 'review' | 'explain' | 'test' | 'unknown';
@@ -78,12 +99,13 @@ function extractParameters(input: string): ParameterDef[] {
     let match;
     while ((match = pattern.exec(input)) !== null) {
       const name = match[1].replace(/^(the|my|a)\s*/i, '');
-      params.push({
-        name: name.toLowerCase().replace(/\s+/g, '_'),
-        min: parseFloat(match[2]),
-        max: parseFloat(match[3]),
-        description: name,
-      });
+      const key = name.toLowerCase().replace(/\s+/g, '_');
+      let lo = parseFloat(match[2]);
+      let hi = parseFloat(match[3]);
+      if (!Number.isFinite(lo) || !Number.isFinite(hi) || lo === hi) continue;
+      if (lo > hi) [lo, hi] = [hi, lo];
+      if (params.some(p => p.name === key)) continue;
+      params.push({ name: key, min: lo, max: hi, description: name });
     }
   }
 
@@ -131,6 +153,9 @@ export async function runNatural(input: string, options?: {
   file?: string;
   verbose?: boolean;
   language?: string;
+  /** Path to a module exporting the objective function to optimize */
+  objective?: string;
+  maxEvals?: number;
 }): Promise<void> {
   const parsed = parseNaturalLanguage(input);
   const verbose = options?.verbose ?? true;
@@ -147,17 +172,28 @@ export async function runNatural(input: string, options?: {
         console.log(`   Budget: ${parsed.maxEvals} evaluations\n`);
       }
 
-      // Create a synthetic objective if no real one provided
-      // In production, this would connect to the user's actual function
-      const demoFn = (params: Record<string, number>) => {
-        return Object.values(params).reduce((sum, v) => sum + v * v, 0);
-      };
+      let fn: Objective;
+      if (options?.objective) {
+        fn = loadObjective(options.objective);
+      } else {
+        // Without a real objective there is nothing meaningful to optimize: say so plainly
+        console.log('⚠  No objective given (--objective <file.js>). Running a DEMO objective');
+        console.log('   (sum of squares of the parameters); the result says nothing about your problem.\n');
+        fn = (params) => Object.values(params).reduce((sum, v) => sum + v * v, 0);
+      }
 
-      const result = await optimize(demoFn, parsed.parameters!, {
-        maxEvals: parsed.maxEvals,
+      const result = await optimize(fn, parsed.parameters!, {
+        maxEvals: options?.maxEvals || parsed.maxEvals,
         verbosity: verbose ? 'normal' : 'silent',
+        goal: { description: input, minimize: parsed.minimize !== false },
       });
 
+      if (!Number.isFinite(result.score)) {
+        console.log(`\n⚠  No valid score: the objective returned NaN/Infinity for every point.`);
+        console.log(`   It received only: ${parsed.parameters!.map(p => p.name).join(', ')}.`);
+        console.log(`   Name every parameter it uses with a range, e.g. "layers between 1 and 12".`);
+        break;
+      }
       console.log(`\n✅ Optimization complete!`);
       console.log(`   Best score: ${result.score.toFixed(6)}`);
       console.log(`   Parameters: ${JSON.stringify(result.params, null, 2)}`);

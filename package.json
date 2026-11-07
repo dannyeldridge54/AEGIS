@@ -1,16 +1,27 @@
 {
   "name": "aegis-agent",
   "version": "1.2.0",
-  "description": "AEGIS â€” Autonomous Evolving General Intelligence System. Self-learning AI agent framework with natural language goals, adaptive strategies, and zero-config setup.",
+  "description": "AEGIS — Autonomous Evolving General Intelligence System. Self-learning AI agent framework with natural language goals, adaptive strategies, and zero-config setup.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "aegis": "dist/cli.js"
+  },
   "scripts": {
     "build": "tsc",
     "test": "jest",
     "start": "ts-node src/cli.ts",
-    "demo": "ts-node examples/quickstart.ts"
+    "demo": "ts-node examples/quickstart.ts",
+    "bench": "ts-node src/benchmarks.ts"
   },
-  "keywords": ["ai-agent", "autonomous", "self-learning", "daemon", "optimization", "natural-language"],
+  "keywords": [
+    "ai-agent",
+    "autonomous",
+    "self-learning",
+    "daemon",
+    "optimization",
+    "natural-language"
+  ],
   "author": "Danny Lee Eldridge <dannyeldridge54@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
@@ -20,5 +31,13 @@
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.0",
     "typescript": "^5.4.0"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
   }
 }

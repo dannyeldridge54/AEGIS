@@ -19,13 +19,16 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as http from 'http';
-import { AegisAgent } from './agent';
+import { AegisAgent, goalMinimizes, isBetterScore } from './agent';
 import { Task, AgentConfig, AgentState, EvalResult, AgentEvent } from './interfaces';
 import { Memory } from './memory';
 import { Swarm } from './swarm';
 import { saveCheckpoint, loadCheckpoint } from './warm-start';
 import { createDashboard, dashboardHandler } from './dashboard';
 import { formatDuration } from './language';
+import { writeFileAtomic } from './fs-util';
+import { fetchText } from './real-data';
+import { createHash } from 'crypto';
 
 // ─── Daemon Configuration ────────────────────────────────────────────────────
 
@@ -50,6 +53,11 @@ export interface DaemonConfig {
   logFile?: string;
   /** Enable persistent memory */
   enableMemory?: boolean;
+  /**
+   * Interface the API and dashboard listen on. Defaults to 127.0.0.1 (this computer only).
+   * Set to '0.0.0.0' to expose them on your network — they have no authentication.
+   */
+  host?: string;
 }
 
 export interface DaemonJob {
@@ -61,8 +69,10 @@ export interface DaemonJob {
   schedule: 'continuous' | 'once' | number;
   /** Chain: feed results to another job */
   chainTo?: string;
-  /** Watch: re-run when this file/URL changes */
+  /** Watch: re-run when this file (path) or URL (http/https) changes */
   watch?: string;
+  /** How often to check `watch`, in seconds (default: 2 for files, 60 for URLs) */
+  watchInterval?: number;
   /** Priority (higher = runs first) */
   priority?: number;
   /** Tags for filtering */
@@ -94,6 +104,8 @@ export class AegisDaemon {
   private dashboard: ReturnType<typeof createDashboard> | null = null;
   private intervals: NodeJS.Timeout[] = [];
   private activeAgents: Map<string, AegisAgent> = new Map();
+  private watchers: Map<string, () => void> = new Map(); // jobId → stop watching
+  private rerunPending: Set<string> = new Set();
   private logStream: fs.WriteStream | null = null;
 
   constructor(config?: DaemonConfig) {
@@ -108,6 +120,7 @@ export class AegisDaemon {
       language: config?.language || 'en',
       logFile: config?.logFile || '',
       enableMemory: config?.enableMemory !== false,
+      host: config?.host || '127.0.0.1',
     };
 
     // Ensure work directory exists
@@ -146,10 +159,12 @@ export class AegisDaemon {
       });
     }
     this.log(`Job added: ${job.name} [${job.id}] schedule=${job.schedule}`);
+    if (this.running && job.watch) this.startWatching(job);
   }
 
   /** Remove a job (stops it if running) */
   removeJob(id: string): boolean {
+    this.stopWatching(id);
     const agent = this.activeAgents.get(id);
     if (agent) agent.stop('Job removed');
     this.activeAgents.delete(id);
@@ -201,13 +216,16 @@ export class AegisDaemon {
 
     // Start dashboard
     if (this.config.dashboardPort > 0) {
-      this.dashboard = createDashboard(this.config.dashboardPort);
+      this.dashboard = createDashboard(this.config.dashboardPort, this.config.host);
       this.dashboard.start();
     }
 
     // Auto-save interval
     const saveTimer = setInterval(() => this.saveState(), this.config.saveInterval * 1000);
     this.intervals.push(saveTimer);
+
+    // File/URL watchers
+    for (const job of this.jobs.values()) if (job.watch) this.startWatching(job);
 
     // Main loop
     const loopTimer = setInterval(() => this.tick(), 1000);
@@ -228,6 +246,7 @@ export class AegisDaemon {
 
     // Clear intervals
     for (const timer of this.intervals) clearInterval(timer);
+    for (const id of [...this.watchers.keys()]) this.stopWatching(id);
     this.intervals = [];
 
     // Stop servers
@@ -298,7 +317,7 @@ export class AegisDaemon {
     agent.on((event: AgentEvent) => {
       if (event.type === 'new_best') {
         // Only update best if this result is actually better (preserve across runs)
-        if (!state.best || event.result.score < state.best.score) {
+        if (isBetterScore(event.result.score, state.best?.score, goalMinimizes(job.config?.goal))) {
           state.best = event.result;
         }
         this.dashboard?.addLog({ type: 'new_best', text: `[${job.name}] ⭐ ${event.result.score.toFixed(6)}` });
@@ -328,12 +347,12 @@ export class AegisDaemon {
       currentState.runs++;
       currentState.totalEvals += result.totalEvals;
       // Preserve best across continuous runs
-      if (result.best && (!currentState.best || result.best.score < currentState.best.score)) {
+      if (result.best && isBetterScore(result.best.score, currentState.best?.score, goalMinimizes(job.config?.goal))) {
         currentState.best = result.best;
       }
       currentState.history.push({
         timestamp: Date.now(),
-        score: result.best?.score || Infinity,
+        score: result.best?.score ?? Infinity,
         evals: result.totalEvals,
       });
 
@@ -393,7 +412,74 @@ export class AegisDaemon {
     }
 
     this.activeAgents.delete(jobId);
+
+    // A watched input changed while this job was running: run it again now
+    if (this.rerunPending.delete(jobId)) {
+      const st = this.jobStates.get(jobId);
+      if (st && st.status !== 'paused' && this.jobs.has(jobId)) {
+        st.status = 'queued';
+        st.nextRun = Date.now();
+      }
+    }
   }
+
+  // ─── Watching ────────────────────────────────────────────────────────────
+
+  /** Re-queue a job because its watched input changed. */
+  private triggerWatch(jobId: string, what: string): void {
+    const job = this.jobs.get(jobId);
+    const state = this.jobStates.get(jobId);
+    if (!job || !state || !this.running) return;
+    this.log(`Change detected in ${what}: re-running ${job.name}`);
+    if (state.status === 'running') {
+      this.rerunPending.add(jobId);
+    } else if (state.status !== 'paused') {
+      state.status = 'queued';
+      state.nextRun = Date.now();
+    }
+  }
+
+  private startWatching(job: DaemonJob): void {
+    if (!job.watch || this.watchers.has(job.id)) return;
+    const target = job.watch;
+
+    if (/^https?:\/\//i.test(target)) {
+      const everyMs = Math.max(0.05, job.watchInterval ?? 60) * 1000;
+      let lastHash: string | null = null;
+      let busy = false;
+      const poll = async () => {
+        if (busy) return;
+        busy = true;
+        try {
+          const hash = createHash('sha256').update(await fetchText(target)).digest('hex');
+          if (lastHash !== null && hash !== lastHash) this.triggerWatch(job.id, target);
+          lastHash = hash;
+        } catch (err: any) {
+          this.log(`  watch ${target}: ${err.message}`);
+        } finally {
+          busy = false;
+        }
+      };
+      poll(); // baseline
+      const timer = setInterval(poll, everyMs);
+      this.watchers.set(job.id, () => clearInterval(timer));
+    } else {
+      const file = path.resolve(target);
+      const everyMs = Math.max(0.05, job.watchInterval ?? 2) * 1000;
+      const listener = (curr: fs.Stats, prev: fs.Stats) => {
+        if (curr.mtimeMs !== prev.mtimeMs || curr.size !== prev.size) this.triggerWatch(job.id, file);
+      };
+      fs.watchFile(file, { interval: everyMs, persistent: false }, listener);
+      this.watchers.set(job.id, () => fs.unwatchFile(file, listener));
+    }
+    this.log(`  Watching ${target} for ${job.name}`);
+  }
+
+  private stopWatching(jobId: string): void {
+    const stop = this.watchers.get(jobId);
+    if (stop) { stop(); this.watchers.delete(jobId); }
+  }
+
 
   // ─── HTTP API ────────────────────────────────────────────────────────────
 
@@ -401,7 +487,13 @@ export class AegisDaemon {
     this.server = http.createServer((req, res) => {
       const url = req.url || '/';
       res.setHeader('Content-Type', 'application/json');
-      res.setHeader('Access-Control-Allow-Origin', '*');
+      // No wildcard CORS: any web page you visit could otherwise read job data.
+
+      if (req.method !== 'GET' && req.method !== 'HEAD') {
+        res.statusCode = 405;
+        res.end(JSON.stringify({ error: 'method not allowed' }));
+        return;
+      }
 
       if (url === '/api/status') {
         res.end(JSON.stringify({
@@ -422,16 +514,22 @@ export class AegisDaemon {
       } else if (url === '/api/memory') {
         res.end(JSON.stringify(this.memory.recent(20)));
       } else if (url.startsWith('/api/job/')) {
-        const jobId = url.split('/api/job/')[1];
+        let jobId = url.split('/api/job/')[1];
+        try { jobId = decodeURIComponent(jobId); } catch { /* keep raw */ }
         const state = this.jobStates.get(jobId);
+        if (!state) res.statusCode = 404;
         res.end(JSON.stringify(state || { error: 'not found' }));
       } else {
         res.end(JSON.stringify({ endpoints: ['/api/status', '/api/jobs', '/api/best', '/api/memory', '/api/job/:id'] }));
       }
     });
 
-    this.server.listen(this.config.apiPort, () => {
-      this.log(`API: http://localhost:${this.config.apiPort}`);
+    this.server.on('error', (err: NodeJS.ErrnoException) => {
+      this.log(`API server error on port ${this.config.apiPort}: ${err.code || err.message} (API disabled, jobs keep running)`);
+      this.server = null;
+    });
+    this.server.listen(this.config.apiPort, this.config.host, () => {
+      this.log(`API: http://${this.config.host}:${this.config.apiPort}`);
     });
   }
 
@@ -460,13 +558,18 @@ export class AegisDaemon {
 
   private saveState(): void {
     const statePath = path.join(this.config.workDir, 'daemon-state.json');
+    const { webhookUrl, ...safeConfig } = this.config; // webhook URLs often embed secrets
     const data = {
-      config: this.config,
+      config: { ...safeConfig, webhookUrl: webhookUrl ? '(set)' : '' },
       jobStates: [...this.jobStates.entries()],
       startTime: this.startTime,
       savedAt: new Date().toISOString(),
     };
-    fs.writeFileSync(statePath, JSON.stringify(data, null, 2));
+    try {
+      writeFileAtomic(statePath, JSON.stringify(data, null, 2));
+    } catch (err: any) {
+      this.log(`Could not save state: ${err.message}`);
+    }
   }
 
   private loadState(): void {

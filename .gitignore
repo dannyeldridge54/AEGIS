@@ -32,3 +32,10 @@ AGENT_HANDOFF.md
 NOTE_FOR_COPILOT.md
 UFE_SOLVE_CHECKLIST.md
 agent/
+
+# --- AEGIS optimizer runtime files ---
+.aegis-sandbox/
+.aegis-daemon/
+.aegis-memory.json
+.aegis-checkpoint-*.json
+aegis-state.json

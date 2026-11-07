@@ -59,23 +59,32 @@ function refresh() {
     document.getElementById('evals').textContent = s.totalEvals.toLocaleString();
     document.getElementById('best').textContent = s.best ? s.best.score.toFixed(6) : '—';
     document.getElementById('runtime').textContent = s.runtime.toFixed(1) + 's';
-    document.getElementById('phase').innerHTML = '<span class="phase ' + s.phase + '">' + s.phase + '</span>';
+    const phaseEl = document.createElement('span');
+    phaseEl.className = 'phase ' + String(s.phase).replace(/[^a-z]/g, '');
+    phaseEl.textContent = s.phase;
+    document.getElementById('phase').replaceChildren(phaseEl);
     if (s.best) {
       document.getElementById('params').textContent = JSON.stringify(s.best.params, null, 2);
     }
     const stratEl = document.getElementById('strategies');
-    stratEl.innerHTML = s.strategies.slice(0, 6).map((st, i) =>
-      '<div class="strat' + (i === 0 ? ' top' : '') + '">' + st.type + ' (' + st.avgImprovement.toFixed(3) + ')</div>'
-    ).join('');
+    stratEl.replaceChildren(...s.strategies.slice(0, 6).map((st, i) => {
+      const d = document.createElement('div');
+      d.className = 'strat' + (i === 0 ? ' top' : '');
+      d.textContent = st.type + ' (' + st.avgImprovement.toFixed(3) + ')';
+      return d;
+    }));
   }).catch(() => {});
 }
 function refreshLog() {
   fetch('/api/log').then(r => r.json()).then(entries => {
     const logEl = document.getElementById('log');
-    logEl.innerHTML = entries.slice(-50).reverse().map(e => {
-      const cls = e.type === 'new_best' ? 'best' : e.type === 'discovery' ? 'discovery' : '';
-      return '<div class="log-entry ' + cls + '">' + e.text + '</div>';
-    }).join('');
+    // textContent, never innerHTML: log text includes job names and descriptions
+    logEl.replaceChildren(...entries.slice(-50).reverse().map(e => {
+      const d = document.createElement('div');
+      d.className = 'log-entry' + (e.type === 'new_best' ? ' best' : e.type === 'discovery' ? ' discovery' : '');
+      d.textContent = e.text;
+      return d;
+    }));
   }).catch(() => {});
 }
 setInterval(refresh, 1000);
@@ -92,7 +101,7 @@ export interface DashboardServer {
   addLog(entry: { type: string; text: string }): void;
 }
 
-export function createDashboard(port: number = 3333): DashboardServer {
+export function createDashboard(port: number = 3333, host: string = '127.0.0.1'): DashboardServer {
   let currentState: AgentState = {
     best: null, totalEvals: 0, history: [], strategies: [],
     discoveries: [], runtime: 0, phase: 'exploring',
@@ -104,10 +113,11 @@ export function createDashboard(port: number = 3333): DashboardServer {
     const url = req.url || '/';
 
     if (url === '/api/state') {
-      res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
-      res.end(JSON.stringify(currentState));
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      // history can hold thousands of entries; the page never uses it
+      res.end(JSON.stringify({ ...currentState, history: [] }));
     } else if (url === '/api/log') {
-      res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+      res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify(logEntries.slice(-100)));
     } else {
       res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -118,8 +128,12 @@ export function createDashboard(port: number = 3333): DashboardServer {
   return {
     start() {
       server = http.createServer(requestHandler);
-      server.listen(port, () => {
-        console.log(`[AEGIS Dashboard] http://localhost:${port}`);
+      server.on('error', (err: NodeJS.ErrnoException) => {
+        console.log(`[AEGIS Dashboard] could not listen on ${host}:${port}: ${err.code || err.message}`);
+        server = null;
+      });
+      server.listen(port, host, () => {
+        console.log(`[AEGIS Dashboard] http://${host === '0.0.0.0' ? 'localhost' : host}:${port}`);
       });
     },
     stop() {
