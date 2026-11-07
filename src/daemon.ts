@@ -27,6 +27,8 @@ import { saveCheckpoint, loadCheckpoint } from './warm-start';
 import { createDashboard, dashboardHandler } from './dashboard';
 import { formatDuration } from './language';
 import { writeFileAtomic } from './fs-util';
+import { fetchText } from './real-data';
+import { createHash } from 'crypto';
 
 // ─── Daemon Configuration ────────────────────────────────────────────────────
 
@@ -67,8 +69,10 @@ export interface DaemonJob {
   schedule: 'continuous' | 'once' | number;
   /** Chain: feed results to another job */
   chainTo?: string;
-  /** Watch: re-run when this file/URL changes */
+  /** Watch: re-run when this file (path) or URL (http/https) changes */
   watch?: string;
+  /** How often to check `watch`, in seconds (default: 2 for files, 60 for URLs) */
+  watchInterval?: number;
   /** Priority (higher = runs first) */
   priority?: number;
   /** Tags for filtering */
@@ -100,6 +104,8 @@ export class AegisDaemon {
   private dashboard: ReturnType<typeof createDashboard> | null = null;
   private intervals: NodeJS.Timeout[] = [];
   private activeAgents: Map<string, AegisAgent> = new Map();
+  private watchers: Map<string, () => void> = new Map(); // jobId → stop watching
+  private rerunPending: Set<string> = new Set();
   private logStream: fs.WriteStream | null = null;
 
   constructor(config?: DaemonConfig) {
@@ -153,10 +159,12 @@ export class AegisDaemon {
       });
     }
     this.log(`Job added: ${job.name} [${job.id}] schedule=${job.schedule}`);
+    if (this.running && job.watch) this.startWatching(job);
   }
 
   /** Remove a job (stops it if running) */
   removeJob(id: string): boolean {
+    this.stopWatching(id);
     const agent = this.activeAgents.get(id);
     if (agent) agent.stop('Job removed');
     this.activeAgents.delete(id);
@@ -216,6 +224,9 @@ export class AegisDaemon {
     const saveTimer = setInterval(() => this.saveState(), this.config.saveInterval * 1000);
     this.intervals.push(saveTimer);
 
+    // File/URL watchers
+    for (const job of this.jobs.values()) if (job.watch) this.startWatching(job);
+
     // Main loop
     const loopTimer = setInterval(() => this.tick(), 1000);
     this.intervals.push(loopTimer);
@@ -235,6 +246,7 @@ export class AegisDaemon {
 
     // Clear intervals
     for (const timer of this.intervals) clearInterval(timer);
+    for (const id of [...this.watchers.keys()]) this.stopWatching(id);
     this.intervals = [];
 
     // Stop servers
@@ -400,7 +412,74 @@ export class AegisDaemon {
     }
 
     this.activeAgents.delete(jobId);
+
+    // A watched input changed while this job was running: run it again now
+    if (this.rerunPending.delete(jobId)) {
+      const st = this.jobStates.get(jobId);
+      if (st && st.status !== 'paused' && this.jobs.has(jobId)) {
+        st.status = 'queued';
+        st.nextRun = Date.now();
+      }
+    }
   }
+
+  // ─── Watching ────────────────────────────────────────────────────────────
+
+  /** Re-queue a job because its watched input changed. */
+  private triggerWatch(jobId: string, what: string): void {
+    const job = this.jobs.get(jobId);
+    const state = this.jobStates.get(jobId);
+    if (!job || !state || !this.running) return;
+    this.log(`Change detected in ${what}: re-running ${job.name}`);
+    if (state.status === 'running') {
+      this.rerunPending.add(jobId);
+    } else if (state.status !== 'paused') {
+      state.status = 'queued';
+      state.nextRun = Date.now();
+    }
+  }
+
+  private startWatching(job: DaemonJob): void {
+    if (!job.watch || this.watchers.has(job.id)) return;
+    const target = job.watch;
+
+    if (/^https?:\/\//i.test(target)) {
+      const everyMs = Math.max(0.05, job.watchInterval ?? 60) * 1000;
+      let lastHash: string | null = null;
+      let busy = false;
+      const poll = async () => {
+        if (busy) return;
+        busy = true;
+        try {
+          const hash = createHash('sha256').update(await fetchText(target)).digest('hex');
+          if (lastHash !== null && hash !== lastHash) this.triggerWatch(job.id, target);
+          lastHash = hash;
+        } catch (err: any) {
+          this.log(`  watch ${target}: ${err.message}`);
+        } finally {
+          busy = false;
+        }
+      };
+      poll(); // baseline
+      const timer = setInterval(poll, everyMs);
+      this.watchers.set(job.id, () => clearInterval(timer));
+    } else {
+      const file = path.resolve(target);
+      const everyMs = Math.max(0.05, job.watchInterval ?? 2) * 1000;
+      const listener = (curr: fs.Stats, prev: fs.Stats) => {
+        if (curr.mtimeMs !== prev.mtimeMs || curr.size !== prev.size) this.triggerWatch(job.id, file);
+      };
+      fs.watchFile(file, { interval: everyMs, persistent: false }, listener);
+      this.watchers.set(job.id, () => fs.unwatchFile(file, listener));
+    }
+    this.log(`  Watching ${target} for ${job.name}`);
+  }
+
+  private stopWatching(jobId: string): void {
+    const stop = this.watchers.get(jobId);
+    if (stop) { stop(); this.watchers.delete(jobId); }
+  }
+
 
   // ─── HTTP API ────────────────────────────────────────────────────────────
 

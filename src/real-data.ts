@@ -15,7 +15,7 @@ import * as http from 'http';
 const FETCH_TIMEOUT_MS = 20000;
 
 /** GET a URL as text: 20 s timeout, follows up to 3 redirects, rejects on non-2xx. */
-function fetchText(url: string, headers?: Record<string, string>, redirects = 3): Promise<string> {
+export function fetchText(url: string, headers?: Record<string, string>, redirects = 3): Promise<string> {
   return new Promise((resolve, reject) => {
     const parsed = new URL(url);
     const lib = parsed.protocol === 'https:' ? https : http;

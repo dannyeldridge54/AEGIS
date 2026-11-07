@@ -180,7 +180,7 @@ Switch at runtime: `agent.setLanguage('fr')`
 
 ---
 
-## 🎯 6 Built-in Strategies (Self-Selected)
+## 🎯 9 Built-in Strategies (Self-Selected)
 
 AEGIS uses a **meta-learner** (UCB1 multi-armed bandit) that automatically picks the best strategy based on what's working:
 
@@ -191,9 +191,30 @@ AEGIS uses a **meta-learner** (UCB1 multi-armed bandit) that automatically picks
 | **Annealing** | Escaping local minima |
 | **Curiosity** | Discovering unknown regions |
 | **Exploit** | Fine-tuning near optimum |
+| **Swarm** | Particle swarm: smooth or noisy problems, very precise |
+| **Bayesian** | Surrogate model picks promising points: expensive evaluations |
+| **Bandit** | UCB1 over regions of each parameter: deciding where to look |
 | **Random** | Initial exploration, baseline |
 
 You never need to pick — AEGIS learns which works best for YOUR problem.
+
+**Escaping local minima:** step sizes adapt as the search goes (the 1/5th success rule). When the local search
+has converged, AEGIS restarts it somewhere new while keeping the best result found, and it spends the last
+quarter of a fixed budget polishing that best result. Set `restartAfter: 0` to turn restarts off.
+
+Benchmarks, 30 runs of 3000 evaluations each (misses = didn't reach the global optimum within 1):
+
+| Function | Median gap | Misses |
+|---|---|---|
+| Rosenbrock 2D | 2e-5 | 0/30 |
+| Rastrigin 2D | 8e-6 | 0/30 |
+| Ackley 2D | 8e-4 | 0/30 |
+| Sphere 5D | 5e-5 | 0/30 |
+| Styblinski-Tang 4D | 7e-4 | 0/30 |
+| Griewank 3D | 0.08 | 0/30 |
+| Schwefel 3D | 0.02 | 9–12/30 |
+
+Run them yourself with `aegis --bench`.
 
 ---
 
@@ -380,7 +401,8 @@ const daemon = startDaemon('My AI Daemon', [
 - Webhook alerts on discoveries
 - Graceful shutdown/restart with checkpoint resume (state files are written atomically)
 - The API and dashboard stay responsive while jobs run
-- File/URL watching (`watch`) is reserved for a future version and not implemented yet
+- File/URL watching: `watch: 'data.csv'` or `watch: 'https://…'` re-runs the job when it changes
+  (`watchInterval` seconds; default 2 for files, 60 for URLs)
 
 **Network:** the API and dashboard listen on `127.0.0.1` (this computer only) and have no authentication.
 Pass `host: '0.0.0.0'` in the daemon config only on a network you trust.
