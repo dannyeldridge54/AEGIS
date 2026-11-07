@@ -87,7 +87,8 @@ human rights. No military use, no mass surveillance.
 # The other project here: the AEGIS optimizer (software, unrelated to the cosmology results)
 
 AEGIS v1 is a classical optimizer: swarm search, UCB1 bandits, parameter search. Its optional coding agent calls
-language models and is therefore **not licensed for use** (License §6.7–6.8).
+language models. (The "not licensed for use" restriction was §6.7–6.8 of the AEGIS People's License v1.2, which
+the current [LICENSE](./LICENSE), HL3-MIL-SV, replaced on 31 October 2026.)
 
 > Self-learning AI agent that optimizes anything. Natural language goals.  
 > Zero config. 8 languages. Adapts its own strategy in real-time.

@@ -1,0 +1,78 @@
+{
+ "N_for_central_ACT_ns": 76.9,
+ "N_range_1sigma": [
+  69.0,
+  87.0
+ ],
+ "r_at_central_N": 0.00203,
+ "r_range_1sigma": [
+  0.00159,
+  0.00252
+ ],
+ "grid": [
+  {
+   "N": 50,
+   "n_s": 0.96,
+   "pull_sigma": 4.67,
+   "r": 0.0048,
+   "r_excluded_by_lock": false
+  },
+  {
+   "N": 55,
+   "n_s": 0.9636,
+   "pull_sigma": 3.45,
+   "r": 0.00397,
+   "r_excluded_by_lock": false
+  },
+  {
+   "N": 60,
+   "n_s": 0.9667,
+   "pull_sigma": 2.44,
+   "r": 0.00333,
+   "r_excluded_by_lock": false
+  },
+  {
+   "N": 65,
+   "n_s": 0.9692,
+   "pull_sigma": 1.59,
+   "r": 0.00284,
+   "r_excluded_by_lock": false
+  },
+  {
+   "N": 70,
+   "n_s": 0.9714,
+   "pull_sigma": 0.86,
+   "r": 0.00245,
+   "r_excluded_by_lock": false
+  },
+  {
+   "N": 75,
+   "n_s": 0.9733,
+   "pull_sigma": 0.22,
+   "r": 0.00213,
+   "r_excluded_by_lock": false
+  },
+  {
+   "N": 77,
+   "n_s": 0.974,
+   "pull_sigma": -0.01,
+   "r": 0.00202,
+   "r_excluded_by_lock": false
+  },
+  {
+   "N": 80,
+   "n_s": 0.975,
+   "pull_sigma": -0.33,
+   "r": 0.00187,
+   "r_excluded_by_lock": true
+  },
+  {
+   "N": 90,
+   "n_s": 0.9778,
+   "pull_sigma": -1.26,
+   "r": 0.00148,
+   "r_excluded_by_lock": true
+  }
+ ],
+ "reading": "Within 1 sigma of ACT's n_s, alpha = 1 needs N = 69-87 e-folds and gives r = 0.0016-0.0025, straddling the locked kill line r < 0.002. The locked r range (N = 50-60) is the range in 2.4-4.7 sigma tension with ACT. The two locked statements pull against each other unless reheating gives unusually many e-folds."
+}

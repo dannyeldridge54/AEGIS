@@ -202,7 +202,9 @@ def check_prereg():
     first = {k: v for k, v in now.items() if k not in lock}
     if first:
         lock.update(first); json.dump(lock, open(LOCKFILE, "w"), indent=1)
-    changed = [k for k, v in now.items() if lock.get(k) != v]
+    from aegis.method import same_as_lock                 # ignores only Windows/Linux line-ending differences
+    paths = {os.path.basename(p): p for p in files}
+    changed = [k for k in now if not same_as_lock(paths[k], lock.get(k))]
     ok = not changed
     return {"name": "Pre-registration", "ok": ok,
             "detail": "; ".join(f"{k} sha256 {v[:16]}…" for k, v in now.items()) + (f"; CHANGED after lock: {changed}" if changed else ""),

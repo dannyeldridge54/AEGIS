@@ -13,6 +13,8 @@ Theory note: doi:[10.5281/zenodo.23899237](https://doi.org/10.5281/zenodo.238992
 | `spiral_class_mirror.py` | AxiCLASS effective spiral against the solver | `spiral_class_mirror.json` |
 | `forward_predictions.py` | Frozen predictions from the stored best fits | `forward_predictions.json` |
 | `lowz_split.py` | DES Y5 supernova χ² split at z = 0.1 | `lowz_split.json` |
+| `f_dilaton_degeneracy.py` | Audit 7 Nov: is the Spiral's F a constraint, or absorbed by the dilaton? | `f_dilaton_degeneracy.json` |
+| `alpha1_inflation_squeeze.py` | Audit 7 Nov: ACT n_s versus the locked α = 1 tensor ratio | `alpha1_inflation_squeeze.json` |
 
 **Rules written before computing:** `PREREGISTRATION_UFE_CHECKS.md`, `PREREGISTRATION_SOLAR_LOWZ.md`.
 **Predictions locked before the data:** `PREDICTIONS_LOCKED_2026-11-02.md`, with its SHA-256 in the `.sha256` file.
@@ -20,3 +22,5 @@ Theory note: doi:[10.5281/zenodo.23899237](https://doi.org/10.5281/zenodo.238992
 **Paths:** scripts that rebuild fits read `TWIST_AXI` (default: this repository's `cmb-fit/axiclass` inside WSL) and
 `TWIST_RESULTS`. The pure-Python ones (`bi_kahler_lambda.py`, `solar_lowz.py`, `bi_superpotential.py`,
 `ufe_checks.py`, `spiral_w.py`) need only numpy, scipy and sympy.
+
+**Audit, 7 Nov 2026 (AI-assisted, not pre-registered):** `THEORY_AUDIT_2026-11-07.md`.
