@@ -13,8 +13,7 @@ import {
 } from './interfaces';
 import { MetaLearner, generateNextPoint } from './strategies';
 import { getMessages, formatDuration } from './language';
-import * as fs from 'fs';
-import * as path from 'path';
+import { writeFileAtomic } from './fs-util';
 
 // ─── Default Configuration ───────────────────────────────────────────────────
 
@@ -85,8 +84,18 @@ export class AegisAgent {
     this.log(this.msg.started);
     this.log(`  Task: ${this.task.name} (${this.task.parameters.length} params)`);
 
+    let lastYield = Date.now();
     while (this.running) {
       await this.step();
+
+      // Yield to the event loop every ~16 ms. Without this a synchronous objective
+      // starves timers, HTTP servers (daemon API, dashboard) and stop() calls, and
+      // "parallel" swarm agents run strictly one after another.
+      if (Date.now() - lastYield >= 16) {
+        await new Promise<void>(resolve => setImmediate(resolve));
+        lastYield = Date.now();
+        if (!this.running) break;
+      }
 
       // Check stopping conditions
       if (this.config.maxEvals > 0 && this.state.totalEvals >= this.config.maxEvals) {
@@ -279,9 +288,7 @@ export class AegisAgent {
 
   private saveState(): void {
     const statePath = this.config.persistence.path || './aegis-state.json';
-    const dir = path.dirname(statePath);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(statePath, JSON.stringify(this.getState(), null, 2));
+    writeFileAtomic(statePath, JSON.stringify(this.getState(), null, 2));
   }
 
   private emit(event: AgentEvent): void {

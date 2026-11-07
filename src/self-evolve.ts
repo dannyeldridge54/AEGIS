@@ -9,7 +9,20 @@
  */
 
 import { ParameterDef, EvalResult, StrategyType } from './interfaces';
-import { MetaLearner } from './strategies';
+import { generateNextPoint } from './strategies';
+
+/** Valid range of every evolvable hyperparameter, per strategy type. */
+const STRATEGY_SPACE: Array<{ type: StrategyType; paramRanges: Record<string, [number, number]> }> = [
+  { type: 'evolutionary', paramRanges: { mutationRate: [0.01, 0.5], populationSize: [5, 50] } },
+  { type: 'annealing', paramRanges: { initialTemp: [0.1, 5.0], coolingRate: [0.9, 0.999] } },
+  { type: 'gradient', paramRanges: { learningRate: [0.001, 0.5], momentum: [0, 0.99] } },
+  { type: 'exploit', paramRanges: { mutationMagnitude: [0.005, 0.2] } },
+  { type: 'curiosity', paramRanges: { noveltyWeight: [0.3, 1.0] } },
+];
+
+function rangesFor(type: StrategyType): Record<string, [number, number]> {
+  return STRATEGY_SPACE.find(s => s.type === type)?.paramRanges || {};
+}
 
 export interface EvolutionConfig {
   /** How many generations to evolve strategy configs */
@@ -56,16 +69,8 @@ export class SelfEvolver {
   }
 
   private initPopulation(): void {
-    const strategySpace: Array<{ type: StrategyType; paramRanges: Record<string, [number, number]> }> = [
-      { type: 'evolutionary', paramRanges: { mutationRate: [0.01, 0.5], populationSize: [5, 50] } },
-      { type: 'annealing', paramRanges: { initialTemp: [0.1, 5.0], coolingRate: [0.9, 0.999] } },
-      { type: 'gradient', paramRanges: { learningRate: [0.001, 0.5], momentum: [0, 0.99] } },
-      { type: 'exploit', paramRanges: { mutationMagnitude: [0.005, 0.2] } },
-      { type: 'curiosity', paramRanges: { noveltyWeight: [0.3, 1.0] } },
-    ];
-
     for (let i = 0; i < this.config.populationSize; i++) {
-      const template = strategySpace[i % strategySpace.length];
+      const template = STRATEGY_SPACE[i % STRATEGY_SPACE.length];
       const config: Record<string, number> = {};
       for (const [key, [min, max]] of Object.entries(template.paramRanges)) {
         config[key] = min + Math.random() * (max - min);
@@ -80,44 +85,40 @@ export class SelfEvolver {
   }
 
   /**
-   * Evaluate a genome by running a mini-optimization and measuring improvement.
+   * Evaluate a genome by running a short optimization driven by that genome's
+   * strategy and hyperparameters. Fitness is the negated best score reached
+   * (higher = better), so every genome is judged on the same scale.
    */
   async evaluateGenome(
     genome: StrategyGenome,
-    task: { evaluate: (p: Record<string, number>) => number; parameters: ParameterDef[] },
+    task: { evaluate: (p: Record<string, number>) => number | Promise<number>; parameters: ParameterDef[] },
     budget: number = 200
   ): Promise<number> {
-    let best = Infinity;
-    let improvement = 0;
+    const strategy = { type: genome.type, score: 0, uses: 0, avgImprovement: 0, config: genome.config };
+    const history: EvalResult[] = [];
+    let best: EvalResult | null = null;
+    // A short random warm-up gives every genome the same kind of starting point
+    const warmup = Math.min(10, Math.floor(budget / 4));
 
     for (let i = 0; i < budget; i++) {
-      const params: Record<string, number> = {};
-      for (const p of task.parameters) {
-        // Generate using genome's strategy type and config
-        const magnitude = genome.config.mutationMagnitude || genome.config.mutationRate || 0.1;
-        if (best < Infinity && Math.random() > 0.3) {
-          // Exploit-like behavior scaled by genome config
-          params[p.name] = p.min + Math.random() * (p.max - p.min);
-        } else {
-          params[p.name] = p.min + Math.random() * (p.max - p.min);
-        }
-      }
-
-      const score = task.evaluate(params);
-      if (score < best) {
-        improvement += best - score;
-        best = score;
-      }
+      const params = i < warmup
+        ? generateNextPoint({ ...strategy, type: 'random' }, task.parameters, null, history)
+        : generateNextPoint(strategy, task.parameters, best, history, undefined, i);
+      const raw = await task.evaluate(params);
+      const score = Number.isFinite(raw) ? raw : Infinity;
+      const result: EvalResult = { params, score, timestamp: Date.now(), strategy: genome.type };
+      history.push(result);
+      if (!best || score < best.score) best = result;
     }
 
-    return improvement;
+    return best && Number.isFinite(best.score) ? -best.score : -Infinity;
   }
 
   /**
    * Run one generation of evolution.
    */
   async evolveGeneration(
-    task: { evaluate: (p: Record<string, number>) => number; parameters: ParameterDef[] }
+    task: { evaluate: (p: Record<string, number>) => number | Promise<number>; parameters: ParameterDef[] }
   ): Promise<void> {
     // Evaluate all genomes
     for (const genome of this.population) {
@@ -129,7 +130,7 @@ export class SelfEvolver {
 
     // Track best
     if (!this.bestGenome || this.population[0].fitness > this.bestGenome.fitness) {
-      this.bestGenome = { ...this.population[0] };
+      this.bestGenome = { ...this.population[0], config: { ...this.population[0].config } };
     }
 
     // Selection + mutation
@@ -146,10 +147,13 @@ export class SelfEvolver {
         generation: this.generation + 1,
       };
 
-      // Mutate config values
+      // Mutate config values (±50%), clamped to each hyperparameter's valid range
+      const ranges = rangesFor(child.type);
       for (const key of Object.keys(child.config)) {
         if (Math.random() < this.config.mutationRate) {
-          child.config[key] *= 0.5 + Math.random(); // ±50% mutation
+          child.config[key] *= 0.5 + Math.random();
+          const r = ranges[key];
+          if (r) child.config[key] = Math.min(r[1], Math.max(r[0], child.config[key]));
         }
       }
 
@@ -164,7 +168,7 @@ export class SelfEvolver {
    * Full evolution run — returns the best strategy configuration found.
    */
   async evolve(
-    task: { evaluate: (p: Record<string, number>) => number; parameters: ParameterDef[] },
+    task: { evaluate: (p: Record<string, number>) => number | Promise<number>; parameters: ParameterDef[] },
     verbose: boolean = true
   ): Promise<{ type: StrategyType; config: Record<string, number> }> {
     if (verbose) {
@@ -176,7 +180,7 @@ export class SelfEvolver {
 
       if (verbose && g % 5 === 0) {
         const best = this.population[0];
-        console.log(`  Gen ${g}: best=${best.type} fitness=${best.fitness.toFixed(4)} config=${JSON.stringify(best.config)}`);
+        console.log(`  Gen ${g}: best=${best.type} best score=${(-best.fitness).toFixed(6)} config=${JSON.stringify(best.config)}`);
       }
     }
 

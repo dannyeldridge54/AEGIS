@@ -10,6 +10,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { AgentState, EvalResult } from './interfaces';
+import { writeFileAtomic } from './fs-util';
 
 export interface WarmStartData {
   taskId: string;
@@ -29,8 +30,6 @@ export function saveCheckpoint(
   filePath?: string
 ): string {
   const savePath = filePath || path.join(process.cwd(), `.aegis-checkpoint-${taskId}.json`);
-  const dir = path.dirname(savePath);
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
   const data: WarmStartData = {
     taskId,
@@ -43,7 +42,7 @@ export function saveCheckpoint(
     version: AEGIS_VERSION,
   };
 
-  fs.writeFileSync(savePath, JSON.stringify(data, null, 2));
+  writeFileAtomic(savePath, JSON.stringify(data, null, 2));
   return savePath;
 }
 

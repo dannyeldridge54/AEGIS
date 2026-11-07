@@ -26,6 +26,7 @@ import { Swarm } from './swarm';
 import { saveCheckpoint, loadCheckpoint } from './warm-start';
 import { createDashboard, dashboardHandler } from './dashboard';
 import { formatDuration } from './language';
+import { writeFileAtomic } from './fs-util';
 
 // ─── Daemon Configuration ────────────────────────────────────────────────────
 
@@ -50,6 +51,11 @@ export interface DaemonConfig {
   logFile?: string;
   /** Enable persistent memory */
   enableMemory?: boolean;
+  /**
+   * Interface the API and dashboard listen on. Defaults to 127.0.0.1 (this computer only).
+   * Set to '0.0.0.0' to expose them on your network — they have no authentication.
+   */
+  host?: string;
 }
 
 export interface DaemonJob {
@@ -108,6 +114,7 @@ export class AegisDaemon {
       language: config?.language || 'en',
       logFile: config?.logFile || '',
       enableMemory: config?.enableMemory !== false,
+      host: config?.host || '127.0.0.1',
     };
 
     // Ensure work directory exists
@@ -201,7 +208,7 @@ export class AegisDaemon {
 
     // Start dashboard
     if (this.config.dashboardPort > 0) {
-      this.dashboard = createDashboard(this.config.dashboardPort);
+      this.dashboard = createDashboard(this.config.dashboardPort, this.config.host);
       this.dashboard.start();
     }
 
@@ -333,7 +340,7 @@ export class AegisDaemon {
       }
       currentState.history.push({
         timestamp: Date.now(),
-        score: result.best?.score || Infinity,
+        score: result.best?.score ?? Infinity,
         evals: result.totalEvals,
       });
 
@@ -401,7 +408,13 @@ export class AegisDaemon {
     this.server = http.createServer((req, res) => {
       const url = req.url || '/';
       res.setHeader('Content-Type', 'application/json');
-      res.setHeader('Access-Control-Allow-Origin', '*');
+      // No wildcard CORS: any web page you visit could otherwise read job data.
+
+      if (req.method !== 'GET' && req.method !== 'HEAD') {
+        res.statusCode = 405;
+        res.end(JSON.stringify({ error: 'method not allowed' }));
+        return;
+      }
 
       if (url === '/api/status') {
         res.end(JSON.stringify({
@@ -422,16 +435,22 @@ export class AegisDaemon {
       } else if (url === '/api/memory') {
         res.end(JSON.stringify(this.memory.recent(20)));
       } else if (url.startsWith('/api/job/')) {
-        const jobId = url.split('/api/job/')[1];
+        let jobId = url.split('/api/job/')[1];
+        try { jobId = decodeURIComponent(jobId); } catch { /* keep raw */ }
         const state = this.jobStates.get(jobId);
+        if (!state) res.statusCode = 404;
         res.end(JSON.stringify(state || { error: 'not found' }));
       } else {
         res.end(JSON.stringify({ endpoints: ['/api/status', '/api/jobs', '/api/best', '/api/memory', '/api/job/:id'] }));
       }
     });
 
-    this.server.listen(this.config.apiPort, () => {
-      this.log(`API: http://localhost:${this.config.apiPort}`);
+    this.server.on('error', (err: NodeJS.ErrnoException) => {
+      this.log(`API server error on port ${this.config.apiPort}: ${err.code || err.message} (API disabled, jobs keep running)`);
+      this.server = null;
+    });
+    this.server.listen(this.config.apiPort, this.config.host, () => {
+      this.log(`API: http://${this.config.host}:${this.config.apiPort}`);
     });
   }
 
@@ -460,13 +479,18 @@ export class AegisDaemon {
 
   private saveState(): void {
     const statePath = path.join(this.config.workDir, 'daemon-state.json');
+    const { webhookUrl, ...safeConfig } = this.config; // webhook URLs often embed secrets
     const data = {
-      config: this.config,
+      config: { ...safeConfig, webhookUrl: webhookUrl ? '(set)' : '' },
       jobStates: [...this.jobStates.entries()],
       startTime: this.startTime,
       savedAt: new Date().toISOString(),
     };
-    fs.writeFileSync(statePath, JSON.stringify(data, null, 2));
+    try {
+      writeFileAtomic(statePath, JSON.stringify(data, null, 2));
+    } catch (err: any) {
+      this.log(`Could not save state: ${err.message}`);
+    }
   }
 
   private loadState(): void {
