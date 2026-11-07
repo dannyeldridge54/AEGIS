@@ -12,31 +12,37 @@ import * as http from 'http';
 
 // ─── Generic HTTP Fetcher ────────────────────────────────────────────────────
 
-function fetchJSON(url: string, headers?: Record<string, string>): Promise<any> {
+const FETCH_TIMEOUT_MS = 20000;
+
+/** GET a URL as text: 20 s timeout, follows up to 3 redirects, rejects on non-2xx. */
+function fetchText(url: string, headers?: Record<string, string>, redirects = 3): Promise<string> {
   return new Promise((resolve, reject) => {
     const parsed = new URL(url);
     const lib = parsed.protocol === 'https:' ? https : http;
-    lib.get(url, { headers: headers || {} }, (res) => {
+    const req = lib.get(url, { headers: { 'User-Agent': 'aegis-agent', ...(headers || {}) } }, (res) => {
+      const status = res.statusCode || 0;
+      if (status >= 300 && status < 400 && res.headers.location && redirects > 0) {
+        res.resume();
+        resolve(fetchText(new URL(res.headers.location, url).toString(), headers, redirects - 1));
+        return;
+      }
       let data = '';
+      res.setEncoding('utf8');
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
-        try { resolve(JSON.parse(data)); }
-        catch { reject(new Error(`Failed to parse: ${data.slice(0, 200)}`)); }
+        if (status < 200 || status >= 300) reject(new Error(`HTTP ${status} from ${parsed.host}: ${data.slice(0, 200)}`));
+        else resolve(data);
       });
-    }).on('error', reject);
+    });
+    req.setTimeout(FETCH_TIMEOUT_MS, () => req.destroy(new Error(`Timed out after ${FETCH_TIMEOUT_MS} ms: ${parsed.host}`)));
+    req.on('error', reject);
   });
 }
 
-function fetchText(url: string): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const parsed = new URL(url);
-    const lib = parsed.protocol === 'https:' ? https : http;
-    lib.get(url, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => resolve(data));
-    }).on('error', reject);
-  });
+async function fetchJSON(url: string, headers?: Record<string, string>): Promise<any> {
+  const data = await fetchText(url, headers);
+  try { return JSON.parse(data); }
+  catch { throw new Error(`Failed to parse JSON from ${new URL(url).host}: ${data.slice(0, 200)}`); }
 }
 
 // ─── Physics & Cosmology Data ────────────────────────────────────────────────

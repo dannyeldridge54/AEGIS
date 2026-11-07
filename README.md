@@ -264,7 +264,36 @@ Or clone and build:
 ```bash
 git clone https://github.com/dannyeldridge54/AEGIS.git
 cd AEGIS && npm install && npm run build
+npm link            # optional: puts the `aegis` command on your PATH
 ```
+
+### Command line
+
+```bash
+aegis                                   # demo (Rosenbrock)
+aegis --task task.json --out best.json  # optimize your own function
+aegis --bench                           # benchmark suite
+aegis "maximize accuracy with lr between 0.0001 and 0.1 and layers between 1 and 12" --objective model.js
+aegis --help
+```
+
+A task file names a module that exports the objective (`module.exports = (params) => number`):
+
+```json
+{
+  "name": "Tune my model",
+  "objective": "./model.js",
+  "parameters": [
+    { "name": "lr", "min": 0.0001, "max": 0.1 },
+    { "name": "layers", "min": 1, "max": 12, "step": 1 }
+  ],
+  "goal": "maximize",
+  "maxEvals": 2000
+}
+```
+
+Parameters with a `step` are searched on that grid (so `layers` stays an integer). Press **Ctrl+C** once to
+stop early and keep the best result found so far.
 
 ---
 
@@ -337,8 +366,8 @@ const daemon = startDaemon('My AI Daemon', [
   },
 ]);
 
-// HTTP API at :4444 — GET /api/status, /api/jobs, /api/best
-// Dashboard at :3333
+// HTTP API at http://127.0.0.1:4444 — GET /api/status, /api/jobs, /api/best
+// Dashboard at http://127.0.0.1:3333
 // Persistent memory learns across runs
 // Auto-saves state, resumes on restart
 ```
@@ -349,8 +378,12 @@ const daemon = startDaemon('My AI Daemon', [
 - Persistent memory (learns which strategies work)
 - HTTP REST API for querying results
 - Webhook alerts on discoveries
-- Graceful shutdown/restart with checkpoint resume
-- File/URL watching for re-optimization triggers
+- Graceful shutdown/restart with checkpoint resume (state files are written atomically)
+- The API and dashboard stay responsive while jobs run
+- File/URL watching (`watch`) is reserved for a future version and not implemented yet
+
+**Network:** the API and dashboard listen on `127.0.0.1` (this computer only) and have no authentication.
+Pass `host: '0.0.0.0'` in the daemon config only on a network you trust.
 
 ---
 
@@ -363,8 +396,8 @@ import { createCoder } from 'aegis-agent';
 
 const coder = createCoder({ provider: 'openai', apiKey: '...' });
 
-// Generate a project
-await coder.generateProject('REST API with JWT auth', 'typescript');
+// Generate a project (returns the files; nothing is executed)
+const files = await coder.generateProject('REST API with JWT auth', { language: 'typescript' });
 
 // Fix broken code
 const fixed = await coder.fix(brokenCode, 'TypeError: undefined is not a function');
@@ -372,9 +405,15 @@ const fixed = await coder.fix(brokenCode, 'TypeError: undefined is not a functio
 // Review code
 const review = await coder.review(myCode);
 
-// Execute safely in sandbox
-const result = await coder.execute('console.log(2+2)', 'typescript');
+// Run generated code (only after opting in — see below)
+const runner = createCoder({ provider: 'ollama', allowExec: true });
+const result = await runner.getSandbox().execute('console.log(2+2)', 'javascript');
 ```
+
+**Safety:** generated code runs as *your* user, with access to your files and network. The "sandbox" is only a
+working folder (`.aegis-sandbox/`), not an isolation boundary. Execution is therefore **off by default**:
+pass `allowExec: true` (or set `AEGIS_ALLOW_EXEC=1`) to enable it, preferably inside a VM or container.
+Without it, `generate()` still writes the code to the folder but does not run it.
 
 ---
 
@@ -448,10 +487,12 @@ const results = await runBenchmarks({ maxEvals: 5000 });
 ```typescript
 import { runNatural } from 'aegis-agent';
 
-// English → optimization
-await runNatural('minimize f(x,y) = x^2 + y^2 with x in [-5,5] and y in [-5,5]');
-await runNatural('find the best learning rate between 0.0001 and 0.1');
+// English → optimization of your own function (a module exporting it)
+await runNatural('find the best learning rate between 0.0001 and 0.1', { objective: './loss.js' });
 ```
+
+Without `objective`, the run uses a demo function (sum of squares) and says so: the sentence describes the
+parameters and the direction (minimize/maximize), not the function itself.
 
 ---
 
