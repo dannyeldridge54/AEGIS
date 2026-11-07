@@ -5,7 +5,8 @@ GKY superfield Phi = phi + i a, K = -3 ln(-Omega/3). Axion kinetic term -(3/(4 p
 is a_c = sqrt(3/2) a / |phi|. A period P in a therefore gives a canonical decay constant F = sqrt(3/2) P / (2 pi |phi|):
 F depends on where the dilaton sits. The note's F = (4/pi) sqrt(3/2) is the |phi| = 1 value, which implies P = 8.
 Candidate pinning points:
-  |phi| = 1    no physical reason found (it is chi = 0, a coordinate choice)
+  |phi| = 1    Einstein-Cartan matching: GKY kinetic metric 3/(4 phi^2) = 3/4, the Calcagni-Mercuri coefficient used
+               by nieh_yan_period.py (the-twist-torsion-cosmology); not an extremum of V
   |phi| = 1/2  Jordan-frame GR point (alpha_DEF = 0, Damour-Nordtvedt attractor)
   |phi| = 2/3  minimum of the W = const potential (a constant uplift does not move it)
 For each: F, log10 F (the `_fF` run-name value), the curvature of V there, and alpha_DEF."""
@@ -38,7 +39,7 @@ def point(name, absphi, reason):
 
 
 def run():
-    pts = [point("chi = 0", 1.0, "coordinate choice used in the note; no physics fixes it"),
+    pts = [point("Einstein-Cartan matching", 1.0, "GKY kinetic coefficient equals the Einstein-Cartan 3/4 here; not an extremum of V"),
            point("GR point", 0.5, "matter in the supergravity Jordan frame: alpha_DEF = 0"),
            point("W=const minimum", 2 / 3, "local minimum of the simplest potential; constant uplift keeps it")]
     return {

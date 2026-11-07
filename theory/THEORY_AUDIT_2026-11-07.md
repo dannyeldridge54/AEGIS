@@ -25,12 +25,19 @@ value is an exact symmetry once F, θᵢ, m and V₀ are rescaled. `f_dilaton_de
 ≤ 1.2 × 10⁻⁹ for four cases. So "F = (4/π)√(3/2) M_Pl, fixed" constrains nothing in the Spiral fits until something
 physical fixes where the dilaton sits. If the dilaton were pinned at the Jordan-frame GR point (|φ| = 1/2), the
 Nieh–Yan F would correspond to F = 3.12 in the note's convention, not 1.56. **λ is not affected.** In the single-field
-late Twist (no dilaton), F is physical and the TF-P test is meaningful.
+late Twist (no dilaton), F is physical and the TF-P test is meaningful. *Correction, same day:* |φ| = 1 is not
+arbitrary. There the GKY kinetic metric 3/(4φ²) equals the Einstein–Cartan coefficient 3/4 of Calcagni–Mercuri, which
+is what `nieh_yan_period.py` uses. So F = 1.559 is the value when the dilaton sits at the Einstein–Cartan matching
+point; the degeneracy means the Spiral must state that the dilaton is there (as `spiral_w.py` assumes at the start),
+and F drifts as it rolls.
 
-**2. The F derivation is not in the repository.** `spiral_w.py` cites `nieh_yan_period.py`; the run script cites
-`PREREGISTRATION_TORSION_F_PLANCK.md` and `PREREGISTRATION_TORSION_F.md`; the `_fF0.1930` results are not committed
-either. GKY do not discuss periodicity; the period rests on the Nieh–Yan integral's normalisation and the choice of a
-Planck-length torsion scale, both of which need to be shown. Push these files from the PC.
+**2. ~~The F derivation is not in the repository.~~ Corrected: it is in the release repository.**
+`the-twist-torsion-cosmology` has `code/analysis/nieh_yan_period.py`, `results_notes/NIEH_YAN_PERIOD.md` and both
+pre-registrations (TF locked 2 Nov 14:51:28, TF-P 14:55:36); CubeMind has copies. They were just not in AEGIS. The
+derivation: Mercuri–Taveras coupling (1/2κ)β N; Chandía–Zanelli ∫N = 4π²ℓ²ν; period Δβ = κ/(πℓ²) = 8 at ℓ = √G;
+linear Nieh–Yan map φ = √(3/2)β; F = √(3/2)/(2π²ℓ²) = (4/π)√(3/2) M_Pl. Re-checked here: correct, with the four
+assumptions it states itself (coupling normalisation, ν_min = 1, true periodicity, ℓ = √G). **The TF-P runs never
+ran**: no `_fF0.1930` result exists in any repository. See the TF-P section below.
 
 **3. The two locked α = 1 inflation statements pull against each other.** `alpha1_inflation_squeeze.py`: matching ACT's
 n_s within 1σ needs N = 69–87 e-folds, which gives r = 0.0016–0.0025, straddling the locked kill line r < 0.002. The
@@ -58,7 +65,7 @@ mapping should be written out explicitly.
 | # | Test | Where | Status |
 |---|---|---|---|
 | A | What fixes the dilaton's value? | `dilaton_pinning.py` | **Done**, see below |
-| B | Push `nieh_yan_period.py` and the TF / TF-P rules and results | PC | Open |
+| B | Run the three locked TF-P fits (rules and derivation exist in the release repository) | PC | Open: Union3 is the blind one |
 | C | Coupled-angle fit (fraction f, 2 DE parameters), "running under a locked rule" | PC (AxiCLASS) | Open |
 | D | n = 2 refit restart (`edelockP_n2_deep` failed: flat start, all 19 evaluations equal) | PC | Open |
 | E | GW friction and birefringence for the Nieh–Yan coupling | Literature | **Done**, see below |
@@ -72,11 +79,11 @@ gives F = √(3/2) P/(2π|φ|). The note's value implies P = 8 at |φ| = 1, and 
 
 | Pin | \|φ\| | F (M_Pl) | `_fF` value | Extremum of V (W = const)? | α_DEF | Light dilaton passes Cassini? |
 |---|---|---|---|---|---|---|
-| χ = 0 (note's choice) | 1 | 1.559 | 0.193 | no | 0.58 | no |
+| Einstein–Cartan matching (note's choice) | 1 | 1.559 | 0.193 | no | 0.58 | no |
 | GR point | 1/2 | 3.119 = (4/π)√6 | 0.494 | yes, a **maximum** | 0 | yes |
 | W = const minimum | 2/3 | 2.339 | 0.369 | yes, a minimum | 0.19 | no: must be heavy (≳ 5 meV) |
 
-Reading: (1) |φ| = 1 has no physical reason; it is a coordinate choice. (2) A pinned dilaton cannot also roll as dark
+Reading: (1) |φ| = 1 is where GKY matches Einstein–Cartan (kinetic coefficient 3/4), but it is not an extremum of V, so something must hold the dilaton there. (2) A pinned dilaton cannot also roll as dark
 energy, so **a fixed F and the rolling Spiral exclude each other**: either the dilaton rolls and F is free (+1 parameter),
 or it is pinned and the late field is the axion alone with one of the discrete F values above. (3) With W = const the
 GR point is a maximum, so a light dilaton cannot rest where Cassini needs it; a different W, or a heavy dilaton at
@@ -103,3 +110,22 @@ are the Holst result, while the decay constant F and Q6 are argued from the Nieh
 coupling (or state how both appear) before the torsion-specific numbers are consistent.
 
 Scripts: `f_dilaton_degeneracy.py`, `alpha1_inflation_squeeze.py`, `dilaton_pinning.py` (outputs `.json` beside them).
+
+## TF-P read from the existing grid (indicative, not the locked test)
+
+The TF-P pre-registration itself notes that the grid already holds log₁₀F = 0.2, 0.007 dex from F_P. Profiling the
+stored `cmp_ax_spa_latetwist_gF*m*` fits over the grid's m values (an upper bound on χ²: freeing m can only lower it),
+with TF's D_F and G_F:
+
+| log₁₀F | F (M_Pl) | DES Y5 G_F | DES Y5 D_F | TF rule would read | Pantheon+ G_F |
+|---|---|---|---|---|---|
+| 0.0 | 1.00 | −6.23 | 0 | (grid best) | −0.19 |
+| **0.2** | **1.58 ≈ F_P** | **−5.49** | **+0.74** | **SUPPORTED** | −0.41 |
+| 0.4 | 2.51 ≈ W = const minimum (2.34) | −4.67 | +1.56 | DISFAVOURED | −0.02 |
+| 0.5 | 3.16 ≈ GR point (3.12) | −4.41 | +1.82 | DISFAVOURED | −0.10 |
+
+Reading: the Einstein–Cartan / Nieh–Yan value F_P sits where the data are best; the two dilaton-pinned values I
+proposed in test A do worse. **Caveats:** (i) this is a grid read, not the locked runs; (ii) the DES Y5 preference is
+itself a low/high-redshift calibration effect (split at z = 0.1), so "SUPPORTED on DES Y5" is weak; (iii) the TF-P
+look-elsewhere count is three F values; (iv) **Union3 is the blind sample and must still be run.** Next step on the
+PC: the three locked `ax_spa_latetwist_fF0.1930*_nlfix` runs.

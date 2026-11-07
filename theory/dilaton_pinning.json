@@ -3,10 +3,10 @@
  "F_formula": "F = sqrt(3/2) P / (2 pi |phi|) = (4/pi) sqrt(3/2) / |phi|",
  "points": [
   {
-   "pin": "chi = 0",
+   "pin": "Einstein-Cartan matching",
    "abs_phi": 1.0,
    "chi": 0.0,
-   "reason": "coordinate choice used in the note; no physics fixes it",
+   "reason": "GKY kinetic coefficient equals the Einstein-Cartan 3/4 here; not an extremum of V",
    "F_MPl": 1.5594,
    "log10_F_run_name": 0.193,
    "V_curvature_over_W2": 98033.2,
