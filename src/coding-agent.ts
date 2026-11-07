@@ -40,6 +40,38 @@ export interface GenerateOptions {
   stop?: string[];
 }
 
+// ─── HTTP helper ─────────────────────────────────────────────────────────────
+
+/** POST JSON with a timeout; rejects on network errors and non-2xx responses. */
+function postJSON(url: string, body: string, headers: Record<string, string>, timeoutMs: number): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const parsed = new URL(url);
+    const lib = parsed.protocol === 'https:' ? https : http;
+    const req = lib.request({
+      hostname: parsed.hostname,
+      port: parsed.port,
+      path: parsed.pathname + parsed.search,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', ...headers, 'Content-Length': Buffer.byteLength(body) },
+    }, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        const status = res.statusCode || 0;
+        if (status < 200 || status >= 300) {
+          reject(new Error(`LLM request to ${parsed.host} failed: HTTP ${status} ${data.slice(0, 300)}`));
+        } else {
+          resolve(data);
+        }
+      });
+    });
+    req.setTimeout(timeoutMs, () => req.destroy(new Error(`LLM request to ${parsed.host} timed out after ${timeoutMs} ms`)));
+    req.on('error', reject);
+    req.write(body);
+    req.end();
+  });
+}
+
 // ─── OpenAI Provider ─────────────────────────────────────────────────────────
 
 export class OpenAIProvider implements LLMProvider {
@@ -47,11 +79,13 @@ export class OpenAIProvider implements LLMProvider {
   private apiKey: string;
   private baseUrl: string;
   private defaultModel: string;
+  private timeoutMs: number;
 
-  constructor(config?: { apiKey?: string; baseUrl?: string; model?: string }) {
+  constructor(config?: { apiKey?: string; baseUrl?: string; model?: string; timeoutMs?: number }) {
     this.apiKey = config?.apiKey || process.env.OPENAI_API_KEY || '';
-    this.baseUrl = config?.baseUrl || 'https://api.openai.com/v1';
+    this.baseUrl = (config?.baseUrl || 'https://api.openai.com/v1').replace(/\/+$/, '');
     this.defaultModel = config?.model || 'gpt-4o-mini';
+    this.timeoutMs = config?.timeoutMs || 120000;
   }
 
   async generate(prompt: string, options?: GenerateOptions): Promise<string> {
@@ -67,34 +101,12 @@ export class OpenAIProvider implements LLMProvider {
       stop: options?.stop,
     });
 
-    const response = await this.httpPost(`${this.baseUrl}/chat/completions`, body, {
-      'Content-Type': 'application/json',
+    const response = await postJSON(`${this.baseUrl}/chat/completions`, body, {
       'Authorization': `Bearer ${this.apiKey}`,
-    });
+    }, this.timeoutMs);
 
     const data = JSON.parse(response);
     return data.choices?.[0]?.message?.content || '';
-  }
-
-  private httpPost(url: string, body: string, headers: Record<string, string>): Promise<string> {
-    return new Promise((resolve, reject) => {
-      const parsed = new URL(url);
-      const lib = parsed.protocol === 'https:' ? https : http;
-      const req = lib.request({
-        hostname: parsed.hostname,
-        port: parsed.port,
-        path: parsed.pathname + parsed.search,
-        method: 'POST',
-        headers: { ...headers, 'Content-Length': Buffer.byteLength(body) },
-      }, (res) => {
-        let data = '';
-        res.on('data', chunk => data += chunk);
-        res.on('end', () => resolve(data));
-      });
-      req.on('error', reject);
-      req.write(body);
-      req.end();
-    });
   }
 }
 
@@ -104,10 +116,12 @@ export class OllamaProvider implements LLMProvider {
   name = 'ollama';
   private baseUrl: string;
   private defaultModel: string;
+  private timeoutMs: number;
 
-  constructor(config?: { baseUrl?: string; model?: string }) {
-    this.baseUrl = config?.baseUrl || 'http://localhost:11434';
+  constructor(config?: { baseUrl?: string; model?: string; timeoutMs?: number }) {
+    this.baseUrl = (config?.baseUrl || 'http://localhost:11434').replace(/\/+$/, '');
     this.defaultModel = config?.model || 'llama3.2';
+    this.timeoutMs = config?.timeoutMs || 300000; // local models can be slow
   }
 
   async generate(prompt: string, options?: GenerateOptions): Promise<string> {
@@ -125,28 +139,12 @@ export class OllamaProvider implements LLMProvider {
       },
     });
 
-    return new Promise((resolve, reject) => {
-      const parsed = new URL(`${this.baseUrl}/api/chat`);
-      const req = http.request({
-        hostname: parsed.hostname,
-        port: parsed.port,
-        path: parsed.pathname,
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) },
-      }, (res) => {
-        let data = '';
-        res.on('data', chunk => data += chunk);
-        res.on('end', () => {
-          try {
-            const parsed = JSON.parse(data);
-            resolve(parsed.message?.content || '');
-          } catch { resolve(data); }
-        });
-      });
-      req.on('error', reject);
-      req.write(body);
-      req.end();
-    });
+    const data = await postJSON(`${this.baseUrl}/api/chat`, body, {}, this.timeoutMs);
+    try {
+      return JSON.parse(data).message?.content || '';
+    } catch {
+      return data;
+    }
   }
 }
 
@@ -160,6 +158,13 @@ export interface ExecutionResult {
   success: boolean;
 }
 
+/**
+ * Working directory for generated code.
+ *
+ * NOT a security boundary: when execution is enabled, code runs as your user with
+ * full access to your files and network. Execution is therefore off unless you pass
+ * `allowExec: true` (or set AEGIS_ALLOW_EXEC=1). Use a VM/container for untrusted code.
+ */
 export class Sandbox {
   private workDir: string;
   private timeout: number;
@@ -168,14 +173,16 @@ export class Sandbox {
   constructor(config?: { workDir?: string; timeout?: number; allowExec?: boolean }) {
     this.workDir = path.resolve(config?.workDir || path.join(process.cwd(), '.aegis-sandbox'));
     this.timeout = config?.timeout || 30000;
-    this.allowExec = config?.allowExec !== false; // Explicit opt-in awareness
+    this.allowExec = config?.allowExec ?? process.env.AEGIS_ALLOW_EXEC === '1'; // opt-in only
     if (!fs.existsSync(this.workDir)) fs.mkdirSync(this.workDir, { recursive: true });
   }
 
   /** Validate that a path stays within the sandbox */
   private validatePath(relativePath: string): string {
     const resolved = path.resolve(this.workDir, relativePath);
-    if (!resolved.startsWith(this.workDir)) {
+    const rel = path.relative(this.workDir, resolved);
+    // `startsWith(workDir)` alone would also accept sibling dirs such as "<workDir>-evil"
+    if (rel === '' || rel.startsWith('..') || path.isAbsolute(rel)) {
       throw new Error(`Path traversal blocked: "${relativePath}" resolves outside sandbox`);
     }
     return resolved;
@@ -184,7 +191,7 @@ export class Sandbox {
   /** Execute code in a sandboxed environment */
   async execute(code: string, language: string = 'typescript'): Promise<ExecutionResult> {
     if (!this.allowExec) {
-      return { stdout: '', stderr: 'Execution disabled (set allowExec: true)', exitCode: 1, success: false, duration: 0 };
+      return { stdout: '', stderr: EXEC_DISABLED, exitCode: 1, success: false, duration: 0 };
     }
     const start = Date.now();
     const ext = this.getExtension(language);
@@ -199,13 +206,14 @@ export class Sandbox {
       return { ...result, duration: Date.now() - start };
     } finally {
       try { fs.unlinkSync(filepath); } catch {}
+      try { fs.unlinkSync(`${filepath}.exe`); } catch {}
     }
   }
 
   /** Execute a shell command (only within sandbox workDir) */
   async shell(command: string): Promise<ExecutionResult> {
     if (!this.allowExec) {
-      return { stdout: '', stderr: 'Execution disabled (set allowExec: true)', exitCode: 1, success: false, duration: 0 };
+      return { stdout: '', stderr: EXEC_DISABLED, exitCode: 1, success: false, duration: 0 };
     }
     const start = Date.now();
     const result = await this.run(command);
@@ -243,6 +251,7 @@ export class Sandbox {
   }
 
   getWorkDir(): string { return this.workDir; }
+  canExecute(): boolean { return this.allowExec; }
 
   private getExtension(lang: string): string {
     const map: Record<string, string> = {
@@ -278,13 +287,16 @@ export class Sandbox {
         resolve({
           stdout: stdout || '',
           stderr: stderr || '',
-          exitCode: error?.code ?? 0,
+          exitCode: typeof error?.code === 'number' ? error.code : (error ? 1 : 0),
           success: !error,
         });
       });
     });
   }
 }
+
+const EXEC_DISABLED = 'Execution disabled: generated code runs with your full user permissions. '
+  + 'Pass allowExec: true (or set AEGIS_ALLOW_EXEC=1) to enable it, ideally inside a VM or container.';
 
 // ─── Coding Agent ────────────────────────────────────────────────────────────
 
@@ -323,11 +335,14 @@ export class CodingAgent {
     provider?: LLMProvider;
     sandboxDir?: string;
     timeout?: number;
+    /** Run generated code (default false — it runs with your full permissions) */
+    allowExec?: boolean;
   }) {
     this.llm = config?.provider || new OllamaProvider();
     this.sandbox = new Sandbox({
       workDir: config?.sandboxDir,
       timeout: config?.timeout || 30000,
+      allowExec: config?.allowExec,
     });
   }
 
@@ -362,6 +377,7 @@ export class CodingAgent {
     let testsPassed = false;
     let attempts = 0;
     let lastResult: ExecutionResult | undefined;
+    let finalCode = code;
 
     // Run tests if provided
     if (task.testCode) {
@@ -376,11 +392,15 @@ export class CodingAgent {
 
         if (lastResult.success) {
           testsPassed = true;
-        } else {
+        } else if (!this.sandbox.canExecute()) {
+          break; // nothing to fix: the tests were never run
+        } else if (attempts < maxRetries) {
           // Auto-fix: send error back to LLM
           currentCode = await this.autoFix(currentCode, lastResult, task, lang);
         }
       }
+      finalCode = currentCode;
+      if (files.length === 0) this.sandbox.writeFile(`main${this.getExt(lang)}`, finalCode);
     } else {
       // Just run the code
       lastResult = await this.sandbox.execute(code, lang);
@@ -389,9 +409,9 @@ export class CodingAgent {
     }
 
     return {
-      code,
+      code: finalCode, // the auto-fixed version, not the first draft
       language: lang,
-      files: files.length > 0 ? files : [{ path: `main${this.getExt(lang)}`, content: code }],
+      files: files.length > 0 ? files : [{ path: `main${this.getExt(lang)}`, content: finalCode }],
       testsPassed,
       attempts,
       explanation: this.extractExplanation(response),
@@ -490,8 +510,8 @@ console.log('STRATEGY_VALID');
 `;
 
     const execResult = await this.sandbox.execute(testWrapper, 'typescript');
-    if (execResult.stdout.includes('STRATEGY_VALID')) {
-      return code;
+    if (execResult.stdout.includes('STRATEGY_VALID') || !this.sandbox.canExecute()) {
+      return code; // unvalidated when execution is disabled
     }
 
     // Retry with fix
@@ -513,7 +533,8 @@ console.log('STRATEGY_VALID');
 
     // Auto-execute code blocks if present
     const code = this.extractCode(response, 'typescript');
-    if (code && response.includes('```') && response.toLowerCase().includes('run')) {
+    // Only when execution was explicitly enabled; never just because the reply says "run"
+    if (this.sandbox.canExecute() && code && response.includes('```') && /\brun (it|this)\b/i.test(message)) {
       const result = await this.sandbox.execute(code, 'typescript');
       if (result.stdout) {
         return `${response}\n\n**Output:**\n\`\`\`\n${result.stdout}\n\`\`\``;
@@ -664,6 +685,7 @@ export function createCoder(config?: {
   apiKey?: string;
   baseUrl?: string;
   sandboxDir?: string;
+  allowExec?: boolean;
 }): CodingAgent {
   let provider: LLMProvider;
 
@@ -682,5 +704,5 @@ export function createCoder(config?: {
     });
   }
 
-  return new CodingAgent({ provider, sandboxDir: config?.sandboxDir });
+  return new CodingAgent({ provider, sandboxDir: config?.sandboxDir, allowExec: config?.allowExec });
 }
