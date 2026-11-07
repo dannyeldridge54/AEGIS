@@ -129,10 +129,15 @@ export class AegisAgent {
       this.state.best,
       this.state.history,
       this.task.constraints,
-      this.gridIndex++
+      this.gridIndex++,
+      this.isMinimizing()
     );
 
-    const score = await this.task.evaluate(params);
+    const raw = await this.task.evaluate(params);
+    const minimize = this.isMinimizing();
+    // A NaN/Infinity score must never become the best (NaN compares false with everything,
+    // which would freeze the search). Record it as the worst possible value instead.
+    const score = Number.isFinite(raw) ? raw : (minimize ? Infinity : -Infinity);
     const result: EvalResult = {
       params,
       score,
@@ -147,19 +152,19 @@ export class AegisAgent {
     }
 
     // Track improvement (supports both minimize and maximize goals)
-    const minimize = this.isMinimizing();
     const previousBest = this.state.best?.score ?? (minimize ? Infinity : -Infinity);
     const isBetter = minimize ? score < previousBest : score > previousBest;
     const improvement = minimize ? (previousBest - score) : (score - previousBest);
 
-    if (!this.state.best || isBetter) {
+    if (Number.isFinite(score) && (!this.state.best || !Number.isFinite(this.state.best.score) || isBetter)) {
       this.state.best = result;
       this.lastBestTime = Date.now();
 
-      // Normalize reward to avoid Infinity poisoning the UCB1 meta-learner
-      const reward = this.state.totalEvals === 1
-        ? 1.0 // First eval gets a fixed baseline reward
-        : Math.min(Math.max(improvement, 0.001), 100); // Clamp to [0.001, 100]
+      // Scale-free reward in [0.01, 1]: relative improvement, so UCB1's exploration term
+      // (which is O(1)) stays comparable whatever the units of the objective are.
+      const reward = !Number.isFinite(previousBest)
+        ? 1.0
+        : Math.min(Math.max(improvement / (Math.abs(previousBest) + 1e-12), 0.01), 1);
       this.metaLearner.updateStrategy(strategy.type, reward);
 
       this.emit({ type: 'new_best', result, improvement: Math.max(improvement, 0) });
@@ -169,7 +174,7 @@ export class AegisAgent {
       }
 
       // Log discovery (only after initial baseline)
-      if (this.state.totalEvals > 1 && Math.abs(improvement) > Math.abs(previousBest) * 0.05) {
+      if (Number.isFinite(previousBest) && Math.abs(improvement) > Math.abs(previousBest) * 0.05) {
         const discovery: Discovery = {
           type: 'new_best',
           description: `Major improvement: ${previousBest.toFixed(4)} → ${score.toFixed(4)} via ${strategy.type}`,
@@ -181,6 +186,7 @@ export class AegisAgent {
         this.emit({ type: 'discovery', discovery });
       }
     } else {
+      if (!this.state.best) this.state.best = result; // keep a placeholder until a finite score arrives
       this.metaLearner.updateStrategy(strategy.type, 0);
     }
 
@@ -201,7 +207,8 @@ export class AegisAgent {
 
   /** Get current state */
   getState(): AgentState {
-    return { ...this.state, runtime: (Date.now() - this.startTime) / 1000 };
+    const runtime = this.startTime ? (Date.now() - this.startTime) / 1000 : 0;
+    return { ...this.state, runtime };
   }
 
   /** Change language at runtime */

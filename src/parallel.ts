@@ -73,6 +73,11 @@ export async function parallelOptimize(
   };
 
   const startTime = Date.now();
+  const goal = config?.goal;
+  const minimize = !goal ? true
+    : typeof goal === 'string' ? !/(maximize|maximise|highest|largest|most|best score)/i.test(goal)
+    : goal.minimize !== false;
+  let failedBatches = 0;
 
   if (verbosity !== 'silent') {
     console.log(`${msg.started} [parallel: ${concurrency}x]`);
@@ -91,7 +96,9 @@ export async function parallelOptimize(
         task.parameters,
         state.best,
         state.history,
-        task.constraints
+        task.constraints,
+        undefined,
+        minimize
       );
       candidates.push({ params, strategy: strategy.type });
     }
@@ -127,32 +134,37 @@ export async function parallelOptimize(
       }
     }
 
-    // Count all attempted evaluations (successful + failed) toward the limit
-    state.totalEvals += results.length;
+    // Count all attempted evaluations (successful + failed) toward the limit,
+    // so a task that keeps failing can never loop forever.
+    state.totalEvals += results.length + batchFailures;
 
-    // Abort if entire batch failed (prevents infinite loop)
+    // Abort if entire batch failed
     if (results.length === 0 && batchFailures > 0) {
       const consecutiveFailThreshold = 3;
-      (state as any).__failedBatches = ((state as any).__failedBatches || 0) + 1;
-      if ((state as any).__failedBatches >= consecutiveFailThreshold) {
+      failedBatches++;
+      if (failedBatches >= consecutiveFailThreshold) {
         if (verbosity !== 'silent') {
           console.log(`⚠️ ${consecutiveFailThreshold} consecutive batches failed. Stopping.`);
         }
         break;
       }
     } else {
-      (state as any).__failedBatches = 0;
+      failedBatches = 0;
     }
 
     // Process results
     for (const result of results) {
       state.history.push(result);
 
-      const previousBest = state.best?.score ?? Infinity;
-      if (!state.best || result.score < previousBest) {
-        const improvement = previousBest - result.score;
+      const previousBest = state.best?.score ?? (minimize ? Infinity : -Infinity);
+      const better = minimize ? result.score < previousBest : result.score > previousBest;
+      if (!state.best || better) {
+        const improvement = Math.abs(previousBest - result.score);
         state.best = result;
-        metaLearner.updateStrategy(result.strategy as any, Math.min(Math.max(improvement, 0.001), 100));
+        const reward = Number.isFinite(previousBest)
+          ? Math.min(Math.max(improvement / (Math.abs(previousBest) + 1e-12), 0.01), 1)
+          : 1;
+        metaLearner.updateStrategy(result.strategy as any, reward);
 
         if (verbosity !== 'silent') {
           console.log(`${msg.newBest} score=${result.score.toFixed(6)} [${result.strategy}] (${state.totalEvals} evals)`);

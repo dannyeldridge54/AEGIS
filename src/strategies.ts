@@ -29,6 +29,20 @@ function randomParams(params: ParameterDef[]): Record<string, number> {
   return result;
 }
 
+/** Snap discrete parameters (those with a `step`) onto their grid and keep them in range. */
+export function quantize(
+  values: Record<string, number>,
+  params: ParameterDef[]
+): Record<string, number> {
+  for (const p of params) {
+    let v = values[p.name];
+    if (!Number.isFinite(v)) v = randomInRange(p.min, p.max);
+    if (p.step && p.step > 0) v = p.min + Math.round((v - p.min) / p.step) * p.step;
+    values[p.name] = clamp(v, p.min, p.max);
+  }
+  return values;
+}
+
 function satisfiesConstraints(
   values: Record<string, number>,
   constraints?: Constraint[]
@@ -142,35 +156,33 @@ export function noveltySample(
 ): Record<string, number> {
   // Discretize space and find least-visited region
   const bins = new Map<string, number>();
+  const binKey = (values: Record<string, number>) => params.map(p => {
+    const range = p.max - p.min || 1;
+    const normalized = (values[p.name] - p.min) / range;
+    // Clamp so the upper bound falls in the last bin rather than its own extra bin
+    return Math.min(resolution - 1, Math.max(0, Math.floor(normalized * resolution)));
+  }).join(',');
 
   for (const entry of history) {
-    const key = params.map(p => {
-      const normalized = (entry.params[p.name] - p.min) / (p.max - p.min);
-      return Math.floor(normalized * resolution);
-    }).join(',');
+    const key = binKey(entry.params);
     bins.set(key, (bins.get(key) || 0) + 1);
   }
 
-  // Sample from least-visited regions
-  let bestKey = '';
+  // Sample candidates and keep the one in the least-visited region
+  let bestCandidate = randomParams(params);
   let minVisits = Infinity;
 
   for (let attempt = 0; attempt < 100; attempt++) {
-    const candidate = randomParams(params);
-    const key = params.map(p => {
-      const normalized = (candidate[p.name] - p.min) / (p.max - p.min);
-      return Math.floor(normalized * resolution);
-    }).join(',');
-    const visits = bins.get(key) || 0;
+    const candidate = attempt === 0 ? bestCandidate : randomParams(params);
+    const visits = bins.get(binKey(candidate)) || 0;
     if (visits < minVisits) {
       minVisits = visits;
-      bestKey = key;
-      if (visits === 0) return candidate;
+      bestCandidate = candidate;
+      if (visits === 0) break;
     }
   }
 
-  // Return random point in least-visited bin
-  return randomParams(params);
+  return bestCandidate;
 }
 
 // ─── Meta-Learner (picks best strategy) ──────────────────────────────────────
@@ -255,22 +267,32 @@ export function generateNextPoint(
   best: EvalResult | null,
   history: EvalResult[],
   constraints?: Constraint[],
-  gridIndex?: number
+  gridIndex?: number,
+  minimize: boolean = true
 ): Record<string, number> {
   let candidate: Record<string, number>;
   const maxAttempts = 50;
+  let elite: EvalResult[] | null = null;
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
     switch (strategy.type) {
       case 'grid':
-        candidate = gridSample(params, strategy.config.resolution || 20, gridIndex || Math.floor(Math.random() * 10000));
+        candidate = gridSample(params, strategy.config.resolution || 20, gridIndex ?? Math.floor(Math.random() * 10000));
         break;
       case 'random':
         candidate = randomParams(params);
         break;
       case 'evolutionary':
         if (best && history.length > 2) {
-          const parent2 = history[Math.floor(Math.random() * Math.min(history.length, 10))];
+          // Second parent comes from the elite (top 10 by score), not the oldest samples
+          if (!elite) {
+            elite = [...history]
+              .filter(r => Number.isFinite(r.score))
+              .sort((a, b) => minimize ? a.score - b.score : b.score - a.score)
+              .slice(0, 10);
+          }
+          const pool = elite.length > 0 ? elite : history;
+          const parent2 = pool[Math.floor(Math.random() * pool.length)];
           candidate = mutateParams(crossover(best.params, parent2.params, params), params, strategy.config.mutationRate || 0.1);
         } else {
           candidate = randomParams(params);
@@ -304,11 +326,16 @@ export function generateNextPoint(
         break;
     }
 
+    quantize(candidate, params);
     if (satisfiesConstraints(candidate, constraints)) {
       return candidate;
     }
   }
 
-  // Fallback to random valid point
-  return randomParams(params);
+  // Fallback: random points, still preferring ones that satisfy the constraints
+  for (let attempt = 0; attempt < 200; attempt++) {
+    const fallback = quantize(randomParams(params), params);
+    if (satisfiesConstraints(fallback, constraints)) return fallback;
+  }
+  return quantize(randomParams(params), params);
 }
