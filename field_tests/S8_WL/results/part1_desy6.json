@@ -1,0 +1,30 @@
+{
+ "rule": "PREREG_S8_WL.md Part 1",
+ "data": "DES Y6 cosmic shear S8 = 0.798 +0.014/-0.015",
+ "rows": {
+  "Locked Twist (Planck+DESI+Pantheon+)": {
+   "S8_model": 0.8253,
+   "S8_LCDM": 0.8117,
+   "penalty": 2.86,
+   "reading": "OVER"
+  },
+  "Spiral, Pantheon+": {
+   "S8_model": 0.8326,
+   "S8_LCDM": 0.8175,
+   "penalty": 4.17,
+   "reading": "OVER"
+  },
+  "Spiral, DES-Dovekie": {
+   "S8_model": 0.8338,
+   "S8_LCDM": 0.8162,
+   "penalty": 4.87,
+   "reading": "OVER"
+  },
+  "Spiral, Union3": {
+   "S8_model": 0.8395,
+   "S8_LCDM": 0.8168,
+   "penalty": 6.97,
+   "reading": "OVER"
+  }
+ }
+}

@@ -29,6 +29,7 @@ doi:10.5281/zenodo.23899237).
 | Early field, three SN sets | −4.55 / −5.08 / −4.91 | pass |
 | Early field vs w0–wa (combined CMB) | −5.63 vs −10.89 | loses to w0–wa |
 | Weak lensing S8 penalty | 2.87 (DES+KiDS-1000) / 0.75 (KiDS-Legacy) | **TIE** overall |
+| **S8-WL Part 1**, DES Y6 shear (S8 0.798) | Locked Twist 2.86; Spiral 4.17 / 4.87 / 6.97 | **OVER** for all (limit 2); reported beside the verdict |
 | Potential power n = 3 vs 2, 4 | n = 2: no better than ΛCDM; n = 4: tie | **n = 3 stays** |
 
 **Failed and dropped (kept on record):** N = 9 width on SPT-3G; silver-ratio angle; pure torsion width F = √(3/2) M_Pl
@@ -41,7 +42,7 @@ unification with constant W.
 | **SF2** does the BI angle matter? (β = 0 vs free) | running on the PC (`field_tests`, rule locked 7 Nov) |
 | **FP** Fingerprint (Holst) vs cosine (Nieh–Yan) | running on the PC (gate passed) |
 | BR bracket (early-field variants) | cloud, 2 of 6 fits done |
-| **S8WL** full weak-lensing likelihoods | draft rule: Danny locks it |
+| **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; PC, needs CosmoSIS |
 | Stage-3 P-ACT bracket | after BR |
 
 ## Where things are
