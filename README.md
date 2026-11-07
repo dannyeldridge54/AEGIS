@@ -1,3 +1,5 @@
+> **Start with [CURRENT_MODEL.md](./CURRENT_MODEL.md)**: the current model (UFE / Spiral Twist), every locked result, what is open, and what is superseded.
+
 # AEGIS: the working repository of "The Twist" (cosmology), plus the AEGIS optimizer (software)
 
 **If you are an astronomer or physicist, start here.** This repository holds the full working record of a

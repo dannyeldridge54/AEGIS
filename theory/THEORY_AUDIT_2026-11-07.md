@@ -65,7 +65,7 @@ mapping should be written out explicitly.
 | # | Test | Where | Status |
 |---|---|---|---|
 | A | What fixes the dilaton's value? | `dilaton_pinning.py` | **Done**, see below |
-| B | Run the three locked TF-P fits (rules and derivation exist in the release repository) | PC | Open: Union3 is the blind one |
+| B | The three locked TF-P fits | PC | **Done 3 Nov**: SUPPORTED on DES Y5; Union3 DISFAVOURED (information) |
 | C | Coupled-angle fit (fraction f, 2 DE parameters), "running under a locked rule" | PC (AxiCLASS) | Open |
 | D | n = 2 refit restart (`edelockP_n2_deep` failed: flat start, all 19 evaluations equal) | PC | Open |
 | E | GW friction and birefringence for the Nieh–Yan coupling | Literature | **Done**, see below |

@@ -1,3 +1,5 @@
+> **Status 7 Nov:** TF-P, SF and TF are **complete** (run on the PC 2–3 Nov; scores in `../CURRENT_MODEL.md`). Running now: SF2 and FP. FP-L was withdrawn before running (`rules/WITHDRAWN_FP_LOCK.md`).
+
 # Field tests: everything left to complete the field
 
 Set up 7 Nov 2026 (AI-assisted). Every test here has its pass/fail rule **locked before its data**; this folder only

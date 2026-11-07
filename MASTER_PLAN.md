@@ -1,3 +1,5 @@
+> **SUPERSEDED (7 Nov 2026).** Older model notes; some numbers here are withdrawn or failed. Current model and results: [CURRENT_MODEL.md](CURRENT_MODEL.md).
+
 # AEGIS / the Twist: master plan
 
 Every step below gets its rule written down and hashed **before** it runs (the AEGIS method), and failures are
