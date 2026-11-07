@@ -1,0 +1,39 @@
+{
+ "note": "Every open test needed to complete the field, with its locked rule. Order of runs = run order (blind first).",
+ "tests": [
+  {
+   "id": "TF-P", "title": "Nieh-Yan decay constant F = (4/pi) sqrt(3/2) M_Pl fixed, m free", "where": "PC (AxiCLASS)",
+   "rule": "the-twist-torsion-cosmology/preregistrations/PREREGISTRATION_TORSION_F_PLANCK.md", "locked": "2026-11-02 14:55:36",
+   "scorer": "lu_tf_score.py",
+   "runs": ["ax_spa_latetwist_fF0.1930_union3_nlfix", "ax_spa_latetwist_fF0.1930_desy5_nlfix", "ax_spa_latetwist_fF0.1930_nlfix"]
+  },
+  {
+   "id": "SF", "title": "Effective Spiral Twist fit (kappa, beta_eff)", "where": "PC (AxiCLASS, coupled build)",
+   "rule": "the-twist-torsion-cosmology/preregistrations/PREREGISTRATION_SPIRAL_FIT.md", "locked": "2026-11-02 17:01:01",
+   "scorer": "spiral_score.py",
+   "gate": {"file": "gates/spiral_fit_mirror.json", "key": "dLCDM_limit", "max_abs": 1.0},
+   "runs": ["ax_spa_spiraltwist_union3_nlfix", "ax_spa_spiraltwist_nlfix", "ax_spa_spiraltwist_dovekie_nlfix"]
+  },
+  {
+   "id": "TF", "title": "Heuristic F values sqrt(3/2) and sqrt6 fixed, m free", "where": "PC (AxiCLASS)",
+   "rule": "the-twist-torsion-cosmology/preregistrations/PREREGISTRATION_TORSION_F.md", "locked": "2026-11-02 14:51:28",
+   "scorer": "lu_tf_score.py",
+   "runs": ["ax_spa_latetwist_fF0.0880_union3_nlfix", "ax_spa_latetwist_fF0.3891_union3_nlfix",
+            "ax_spa_latetwist_fF0.0880_desy5_nlfix", "ax_spa_latetwist_fF0.3891_desy5_nlfix",
+            "ax_spa_latetwist_fF0.0880_nlfix", "ax_spa_latetwist_fF0.3891_nlfix"]
+  },
+  {
+   "id": "FP", "title": "Fingerprint (Holst) vs plain cosine (Nieh-Yan): tests the coupling", "where": "PC, after rebuilding the axion_sinh_x0 option",
+   "rule": "cmb-fit/axiclass/torsion_shape/PREREGISTRATION_SINH.md", "locked": "2026-10-26 16:10",
+   "code_missing": true, "runs": []
+  },
+  {
+   "id": "N2", "title": "Potential power tournament: n = 2 (locked n = 3 vs 2 vs 4)", "where": "cloud (CAMB), Kronos",
+   "rule": "aegis-Kronos-syndyr/research/refit/PREREG_TOURNAMENT.md", "locked": "see .sha256", "runs": []
+  },
+  {
+   "id": "BR", "title": "Knockout bracket over fixed-setting variants (stage 1: 6 fits)", "where": "cloud (CAMB), Kronos",
+   "rule": "aegis-Kronos-syndyr/research/refit/PREREG_BRACKET.md", "locked": "see .sha256", "runs": []
+  }
+ ]
+}
