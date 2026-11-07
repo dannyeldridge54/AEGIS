@@ -35,7 +35,7 @@ withdrawn, unconverged run, so the plain cosine is refitted on the same engine).
 
 Original note:
 
-The `axion_sinh_x0` AxiCLASS option behind the Fingerprint (`PREREGISTRATION_SINH.md`) is not in any repository. To
+The `axion_sinh_x0` AxiCLASS option behind the Fingerprint (`PREREGISTRATION_SINH.md`) was not in any repository (rebuilt 7 Nov, see above). To
 run FP: re-add the option to the potential (V, dV, ddV) using g(d) = s[sinh((d+φ₀)/s) − sinh(φ₀/s)]/cosh(φ₀/s),
 s = √(3/2), x₀ = arsinh(1/γ₀) = 2.1445 fixed; confirm that with the option off it reproduces the current build to every
 printed digit (the rule's own regression check); then fit Planck 2018 + DESI DR2 + Pantheon+ and compare with the
@@ -50,7 +50,7 @@ N2 and the bracket use the CAMB pipeline and run in the cloud chat; their result
 ## Safeguards (added 7 Nov, after the 6 Nov stall)
 
 What went wrong: GitHub refused every cloud job (billing) with no alert; a queue waited for files that never came; the
-F derivation and three locked rules lived only in the release repository; TF-P, SF and TF never ran. Now:
+F derivation and three locked rules lived only in the release repository; TF-P, SF and TF had run on the PC (2–3 Nov) but their results never left it. Now:
 
 1. **No paid cloud queue.** All Kronos GitHub Actions workflows are disabled. Fits run on the PC (`run_pc.sh`) or in a
    cloud chat, never on Actions minutes. Re-enable a workflow only after checking billing.
