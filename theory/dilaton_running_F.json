@@ -1,0 +1,60 @@
+{
+ "target": "F_early 0.12-0.17 (best 0.136-0.153, stored F-scan) <=> |phi| 9-13 at z = 3500",
+ "rows": [
+  {
+   "b": 0.0,
+   "exponent_6_minus_2b": 6.0,
+   "tracker_move_z3500_to_today": 4.06,
+   "analytic_ln(rho_eq/rho_0)/exponent": 3.88,
+   "abs_phi_at_z3500_if_1_today": 5.06,
+   "F_early_implied": 0.308,
+   "in_data_window_0.12_to_0.17": false
+  },
+  {
+   "b": 1.0,
+   "exponent_6_minus_2b": 4.0,
+   "tracker_move_z3500_to_today": 6.07,
+   "analytic_ln(rho_eq/rho_0)/exponent": 5.82,
+   "abs_phi_at_z3500_if_1_today": 7.07,
+   "F_early_implied": 0.221,
+   "in_data_window_0.12_to_0.17": false
+  },
+  {
+   "b": 1.5,
+   "exponent_6_minus_2b": 3.0,
+   "tracker_move_z3500_to_today": 8.08,
+   "analytic_ln(rho_eq/rho_0)/exponent": 7.76,
+   "abs_phi_at_z3500_if_1_today": 9.08,
+   "F_early_implied": 0.172,
+   "in_data_window_0.12_to_0.17": false
+  },
+  {
+   "b": 1.7,
+   "exponent_6_minus_2b": 2.6,
+   "tracker_move_z3500_to_today": 9.3,
+   "analytic_ln(rho_eq/rho_0)/exponent": 8.95,
+   "abs_phi_at_z3500_if_1_today": 10.3,
+   "F_early_implied": 0.151,
+   "in_data_window_0.12_to_0.17": true
+  },
+  {
+   "b": 1.8,
+   "exponent_6_minus_2b": 2.4,
+   "tracker_move_z3500_to_today": 10.06,
+   "analytic_ln(rho_eq/rho_0)/exponent": 9.7,
+   "abs_phi_at_z3500_if_1_today": 11.06,
+   "F_early_implied": 0.141,
+   "in_data_window_0.12_to_0.17": true
+  },
+  {
+   "b": 1.9,
+   "exponent_6_minus_2b": 2.2,
+   "tracker_move_z3500_to_today": 10.96,
+   "analytic_ln(rho_eq/rho_0)/exponent": 10.58,
+   "abs_phi_at_z3500_if_1_today": 11.96,
+   "F_early_implied": 0.13,
+   "in_data_window_0.12_to_0.17": true
+  }
+ ],
+ "reading": "b = 0 (constant W, the simplest supergravity potential) is the derived case; any b != 0 is a new free parameter, not a derivation. Larger amplitudes overshoot and freeze the dilaton (no running at all). The tracker estimate ignores the regime near |phi| ~ 1-3, where the potential changes shape (V = 0 at |phi| = 1, negative below), so it is an order-of-magnitude check."
+}
