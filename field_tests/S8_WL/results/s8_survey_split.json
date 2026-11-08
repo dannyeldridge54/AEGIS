@@ -1,0 +1,82 @@
+{
+ "note": "Reported only, no verdict (option 2, 8 Nov). Survey S8: DES Y3 shear 0.759+0.025-0.023; DES Y6 0.798+0.014-0.015; KiDS-1000 0.759+0.024-0.021; KiDS-Legacy 0.815+0.016-0.021; HSC Y3 0.769+0.031-0.034. Penalty = chi2(model) - chi2(LCDM same data), side-dependent sigma; Omega_m from omega_b+omega_cdm+omega_nu as in s8wl_score.py.",
+ "rows": {
+  "Locked Twist": {
+   "S8_model": 0.8253,
+   "S8_LCDM": 0.8117,
+   "penalty": {
+    "DES Y3": 2.61,
+    "DES Y6": 2.86,
+    "KiDS-1000": 2.83,
+    "KiDS-Legacy": 0.39,
+    "HSC Y3": 1.41
+   }
+  },
+  "Spiral P+": {
+   "S8_model": 0.8326,
+   "S8_LCDM": 0.8175,
+   "penalty": {
+    "DES Y3": 3.19,
+    "DES Y6": 4.17,
+    "KiDS-1000": 3.46,
+    "KiDS-Legacy": 1.19,
+    "HSC Y3": 1.76
+   }
+  },
+  "Spiral Dov": {
+   "S8_model": 0.8338,
+   "S8_LCDM": 0.8162,
+   "penalty": {
+    "DES Y3": 3.73,
+    "DES Y6": 4.87,
+    "KiDS-1000": 4.05,
+    "KiDS-Legacy": 1.38,
+    "HSC Y3": 2.06
+   }
+  },
+  "Spiral U3": {
+   "S8_model": 0.8395,
+   "S8_LCDM": 0.8168,
+   "penalty": {
+    "DES Y3": 5.01,
+    "DES Y6": 6.97,
+    "KiDS-1000": 5.44,
+    "KiDS-Legacy": 2.33,
+    "HSC Y3": 2.79
+   }
+  },
+  "UB-2 P+": {
+   "S8_model": 0.8074,
+   "S8_LCDM": 0.8117,
+   "penalty": {
+    "DES Y3": -0.68,
+    "DES Y6": -0.5,
+    "KiDS-1000": -0.74,
+    "KiDS-Legacy": 0.1,
+    "HSC Y3": -0.36
+   }
+  },
+  "UB-2 Dov": {
+   "S8_model": 0.8172,
+   "S8_LCDM": 0.813,
+   "penalty": {
+    "DES Y3": 0.76,
+    "DES Y6": 0.74,
+    "KiDS-1000": 0.82,
+    "KiDS-Legacy": 0.01,
+    "HSC Y3": 0.41
+   }
+  },
+  "UB-2 U3": {
+   "S8_model": 0.814,
+   "S8_LCDM": 0.8104,
+   "penalty": {
+    "DES Y3": 0.6,
+    "DES Y6": 0.51,
+    "KiDS-1000": 0.65,
+    "KiDS-Legacy": -0.05,
+    "HSC Y3": 0.32
+   }
+  }
+ }
+}

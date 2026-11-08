@@ -1,0 +1,38 @@
+{
+ "ax_spa_spiraltwist_nlfix": {
+  "S8": 0.8326,
+  "chi2_S8": 6.11,
+  "chi2_stored": 2393.034,
+  "chi2_joint_expected": 2399.144
+ },
+ "ax_spa_spiraltwist_dovekie_nlfix": {
+  "S8": 0.8338,
+  "chi2_S8": 6.553,
+  "chi2_stored": 2620.387,
+  "chi2_joint_expected": 2626.941
+ },
+ "ax_spa_spiraltwist_union3_nlfix": {
+  "S8": 0.8395,
+  "chi2_S8": 8.777,
+  "chi2_stored": 1012.095,
+  "chi2_joint_expected": 1020.872
+ },
+ "ax_spa_lcdm_halofit": {
+  "S8": 0.8175,
+  "chi2_S8": 1.941,
+  "chi2_stored": 2402.258,
+  "chi2_joint_expected": 2404.2
+ },
+ "ax_spa_lcdm_halofit_dovekie": {
+  "S8": 0.8162,
+  "chi2_S8": 1.684,
+  "chi2_stored": 2631.828,
+  "chi2_joint_expected": 2633.512
+ },
+ "ax_spa_lcdm_halofit_union3": {
+  "S8": 0.8168,
+  "chi2_S8": 1.808,
+  "chi2_stored": 1024.976,
+  "chi2_joint_expected": 1026.784
+ }
+}
