@@ -153,6 +153,82 @@
      -6486.934
     ]
    }
+  },
+  "UB-2 joined field, Pantheon+": {
+   "model": {
+    "run": "ub2B",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ub2B_round3_own_best.ini",
+    "chi2_WL": -6486.229,
+    "data_chi2": 237.213,
+    "S8": 0.8072
+   },
+   "LCDM": {
+    "run": "lcdmP",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_lcdmP_round3_own_best.ini",
+    "chi2_WL": -6485.864,
+    "data_chi2": 237.614,
+    "S8": 0.8114
+   },
+   "Delta_WL": -0.37,
+   "reading": "PASSES",
+   "tries": {
+    "ub2B": [
+     -6484.704,
+     -6484.867,
+     -6485.65,
+     -6486.136,
+     -6486.228,
+     -6486.229,
+     -6486.217
+    ],
+    "lcdmP": [
+     -6484.26,
+     -6485.182,
+     -6485.574,
+     -6485.574,
+     -6485.763,
+     -6485.864,
+     -6485.86
+    ]
+   }
+  },
+  "UB-2 joined field, DES-Dovekie": {
+   "model": {
+    "run": "ub2B_dovekie",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ub2B_dovekie_round3_own_best.ini",
+    "chi2_WL": -6487.384,
+    "data_chi2": 235.888,
+    "S8": 0.8169
+   },
+   "LCDM": {
+    "run": "lcdmP_dovekie",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_lcdmP_dovekie_round3_cross_best.ini",
+    "chi2_WL": -6487.38,
+    "data_chi2": 235.127,
+    "S8": 0.8127
+   },
+   "Delta_WL": -0.0,
+   "reading": "PASSES",
+   "tries": {
+    "ub2B_dovekie": [
+     -6484.2,
+     -6484.443,
+     -6485.554,
+     -6486.537,
+     -6484.525,
+     -6487.384,
+     -6485.682
+    ],
+    "lcdmP_dovekie": [
+     -6483.876,
+     -6484.059,
+     -6484.285,
+     -6484.376,
+     -6485.575,
+     -6485.587,
+     -6487.38
+    ]
+   }
   }
  }
 }
