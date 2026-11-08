@@ -28,4 +28,17 @@ It is a run plan for an **already locked** rule, not a new rule. It becomes acti
   If it fails, the early role's n = 3 shape still has no quantum derivation, and that gap is stated plainly.
 
 ## Engine smoke test (8 Nov, cloud, no data)
-_(filled in below when it finishes)_
+Same AxiCLASS build as the Spiral fits, at the `ax_spa_edelock` best point, CMB spectra to ℓ = 2500, 400 s limit per case:
+
+| n | θ_i | Result |
+|---|---|---|
+| 3 (reference) | 2.717 | OK in 8 s, H0 70.39 |
+| 1 | 2.717 | did not finish (hung > 400 s) |
+| 1 | 2.0 | did not finish (hung > 400 s) |
+| 1 | 1.0 | did not finish (hung > 400 s) |
+
+**Outcome: AxiCLASS cannot run n = 1 in this setup either** (its shooting for the energy fraction at the locked
+switch-on does not converge). The test stays **deferred**; this plan is **not locked**, and the after-S8 queue will not
+start the n = 1 fit. Possible routes later, each needing its own check first: (a) AxiCLASS's fluid approximation for
+n = 1 (`scf_evolve_as_fluid`), (b) our two-field CAMB module at λ = 0 with a Python shooting step (no CAMB solver).
+Context, not our result: the literature finds n = 1 fails as early dark energy because it fades like matter.
