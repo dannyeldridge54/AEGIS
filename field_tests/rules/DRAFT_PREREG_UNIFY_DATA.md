@@ -9,32 +9,29 @@ Can **one** BI axion–dilaton (fixed λ = −2√(2/3), F = F_P/|φ|, F_P = 1.5
 data as well as the two separate pieces we have now (the Locked Twist early, the Spiral late) and better than ΛCDM?
 
 ## Model (fixed when locked)
-- Exactly the UB-1 model, in the variant(s) UB-1 passed (A: derived GKY potential; B: exponential, κ free).
+- Exactly the UB-1 model, in the variant(s) that passed: B (exponential, κ free; UB-1 D1) and, if UB-1b passes, C
+  (derived potential with W = W0 e^{bΦ}, b free).
 - Free beyond the standard six (A is set by flatness, replacing Λ): ln L, θ_i, |φ|_i, plus κ for variant B.
   **3 extra parameters (A) or 4 (B)**, against 2 for w0–wa.
 - Prior box: the UB-1 box, cut to the region where UB-1 found R2–R5 met (UB-1 used no data, so this is allowed).
 
-## Engine (fixed when locked) — code ready: `cmb-fit/ub2_fit.py`
-- CAMB 2.0.5 + Cobaya 3.6.2 on the PC (venv312), as for the Locked Twist fits. For each parameter point CAMB's own
-  background gives every non-field density; the two-field equations (`theory/unify_hyperbolic_bg_v2.py`, DOP853) are
-  solved on it, A is fixed by flatness, and the field's w(a) (smoothed over 0.1 e-fold) goes to CAMB as one dark-energy
-  table (`DarkEnergyPPF`, w(a), 300 rows, cell-averaged). H0 is sampled directly (the field history depends
-  on Ω_m, so CAMB's θ → H0 search cannot be used).
-- This is an **approximation**: it ignores the oscillating angle's scale-dependent sound speed and the two-field
-  entropy mode. The gates below decide whether it is good enough. If not, UB-2 waits for a full two-field module.
+## Engine (fixed when locked) — code ready: `cmb-fit/ub2_fit.py` + `cmb-fit/ub2_camb/`
+- CAMB 2.0.5 rebuilt with a **two-field dark-energy module** (`ub2_camb/DarkEnergyUBField.f90`, built by
+  `ub2_camb/build_ub2_camb.sh`) + Cobaya 3.6.2. For each parameter point CAMB's own background gives every non-field
+  density; the two-field background (`theory/unify_hyperbolic_bg_ub1b.py` equations, DOP853, = UB-1 D1 + variant C) is
+  solved on it with A fixed by flatness, and passed to the module, which evolves **both fields' perturbations** in
+  synchronous gauge (no fluid or PPF approximation). H0 is sampled directly.
+- Tested 7 Nov before any gate or fit: with λ = 0 the module reproduces CAMB's own EarlyQuintessence at the Locked
+  Twist best fit to 2×10⁻⁵ in TT/EE (ℓ 2–2500) and 2×10⁻¹¹ in H(z) (`ub2_camb/validate_single_field.py`); with the full
+  two-field background H(z) matches the stand-alone solver to ≤ 10⁻⁶. The earlier fluid route (low-ℓ TT ×50) and PPF
+  route (2.5% TT) are dropped.
+- Building it on the PC needs gfortran (WSL micromamba env: `micromamba install -c conda-forge gfortran`).
 
 ## Gates (code checks, must pass before any UB-2 fit; no UB-2 data fit is involved)
-- **G1 early:** the fluid route applied to the stored Locked Twist best fit (`cmp_edelockP.json`) reproduces the full
-  EarlyQuintessence χ² within 1.0.
+- **G1 early:** the module in its λ = 0 limit, at the stored Locked Twist best fit (`cmp_edelockP.json`), reproduces
+  the full EarlyQuintessence χ² within 1.0.
 - **G2 ΛCDM limit:** with L → 0 and a flat potential, the χ² is within 1.0 of the stored ΛCDM fit on the same data.
 - **G3 background:** CAMB's H(z) with the UB fluid matches the stand-alone solver to 10⁻³ (z = 0–3000).
-- **Engine work, 7 Nov (before any gate ran):** (1) a factor-3 error in the potential force of the first UB-2 solver
-  was found and fixed (the energy of the field was not conserved; UB-1's own code was checked and is right). After the
-  fix, CAMB's H(z) matches the solver to ≤ 1.3×10⁻⁴ at 15 random points (G3 should pass). (2) CAMB's fluid with sound
-  speed 1 is unstable for these histories (low-ℓ TT ×50 at the Locked Twist point), so the background goes in as a w(a)
-  table with **PPF** perturbations instead. (3) Expected G1 result: at the Locked Twist best fit the PPF route is off by
-  up to 2.5% in TT and 5% in EE at ℓ 30–2000 against CAMB's real field, which is likely many χ² → **G1 will probably
-  FAIL**, meaning UB-2 needs a real two-field perturbation module (CAMB Fortran) before any data fit can count.
 - Run: `python ub2_fit.py gates` → `results/ub2_gates.json`. The fit command refuses to run until this rule is locked.
 
 ## Data (fixed when locked)

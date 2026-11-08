@@ -1,0 +1,43 @@
+--- a/camb/dark_energy.py
++++ b/camb/dark_energy.py
+@@ -274,3 +274,40 @@
+ 
+ # short names for models that support w/wa
+ F2003Class._class_names.update({"fluid": DarkEnergyFluid, "ppf": DarkEnergyPPF})
++
++
++@fortran_class
++class UBField(DarkEnergyModel):
++    r"""
++    Two-field dark energy for the Twist (AEGIS UB-2): the Barbero-Immirzi axion-dilaton on a hyperbolic field space,
++    field-space metric diag(1, F(chi)^2), F = F_P exp(lam chi/2), potential 8 pi G V = VA u(chi) + VL (1 - cos theta)^3.
++    The background is set with set_table (solved in Python on CAMB's own background); both fields' linear
++    perturbations are evolved in Fortran (no fluid/PPF approximation).
++    """
++
++    _fields_ = (
++        ("VA", c_double, "dilaton potential amplitude, 8piG V in 1/Mpc^2"),
++        ("VL", c_double, "angle potential amplitude, 8piG V in 1/Mpc^2"),
++        ("kpar", c_double, "kappa (var=2) or b (var=3)"),
++        ("FP", c_double, "F at |phi| = 1 (reduced Planck units)"),
++        ("lam", c_double, "kinetic mixing lambda"),
++        ("var", c_int, "1: GKY constant W, 2: exponential, 3: GKY with W0 exp(b Phi)"),
++        ("ntab", c_int, "rows in the background table"),
++        ("loga", AllocatableArrayDouble),
++        ("chi", AllocatableArrayDouble),
++        ("th", AllocatableArrayDouble),
++        ("chip", AllocatableArrayDouble),
++        ("thp", AllocatableArrayDouble),
++        ("__d2chi", AllocatableArrayDouble),
++        ("__d2th", AllocatableArrayDouble),
++        ("__d2chip", AllocatableArrayDouble),
++        ("__d2thp", AllocatableArrayDouble),
++    )
++    _fortran_class_module_ = "UBField"
++    _fortran_class_name_ = "TUBField"
++    _methods_ = (("SetTable", [numpy_1d, numpy_1d, numpy_1d, numpy_1d, numpy_1d, POINTER(c_int)]),)
++
++    def set_table(self, loga, chi, th, chip, thp) -> "UBField":
++        arrs = [np.ascontiguousarray(x, dtype=np.float64) for x in (loga, chi, th, chip, thp)]
++        self.f_SetTable(*arrs, byref(c_int(len(arrs[0]))))
++        return self

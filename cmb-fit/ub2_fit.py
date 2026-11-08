@@ -4,6 +4,7 @@ CAMB 2.0.5 + Cobaya 3.6.2 (venv312), Planck 2018 + DESI DR2 + one supernova set,
     python ub2_fit.py gates                  G1-G3 engine checks -> results/ub2_gates.json (no UB-2 fit involved)
     python ub2_fit.py ub2A[_dovekie|_union3]  one fit (variant A, derived potential), best of 4 -> results/cmp_<name>.json
     python ub2_fit.py ub2B[...]               variant B (exponential dilaton, kappa free)
+    python ub2_fit.py ub2C[...]               variant C (derived potential with W = W0 exp(b Phi), b free; UB-1b)
     python ub2_fit.py w0waP[...]              the w0-wa reference on the same data and engine
 
 Model: theory/unify_hyperbolic_bg.py (UB-1), same fields, metric, potentials and constants. For each point: a ΛCDM-like
@@ -25,11 +26,10 @@ from scipy.optimize import brentq
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "theory"))
-import unify_hyperbolic_bg_v2 as UB       # noqa: E402  (fields, metric, potentials, constants: one definition)
+import unify_hyperbolic_bg_ub1b as UB     # noqa: E402  (= UB-1 D1 code + variant C)  (fields, metric, potentials, constants: one definition)
 import cmbfit as C                       # noqa: E402
 
 NA = 3000
-NTAB = 300                                            # rows passed to CAMB (see w_table)
 LNA = np.linspace(math.log(1e-7), 0.0, NA)          # w-table grid (ln a)
 UB_PARAMS = {
     "ub_lnL": (0.0, 40.0, 22.0, 1.0, r"\ln L"),
@@ -37,6 +37,7 @@ UB_PARAMS = {
     "ub_phii": (1.1, 60.0, 10.0, 1.0, r"|\phi|_i"),
 }
 UB_KAPPA = ("ub_kappa", (-3.0, 3.0, 0.5, 0.1, r"\kappa"))
+UB_B = ("ub_b", (0.0, 2.9, 1.0, 0.1, "b"))
 
 
 class FieldError(Exception):
@@ -62,7 +63,7 @@ def field_history(par, var, rho, rhop, other0):
     """Solve UB-1's equations on the given non-field background; A fixed by flatness (H(today) = H0).
     Returns rho_field(N)/rho_field(0) on LNA and diagnostics."""
     lnL, thi, phii = par["ub_lnL"], par["ub_thi"], par["ub_phii"]
-    k = par.get("ub_kappa", 0.0)
+    k = par.get("ub_kappa", par.get("ub_b", 0.0))
     L = math.exp(lnL)
     c0 = math.log(phii) / UB.S
     need = 1.0 - other0                                      # field share of H0^2 today (flat)
@@ -116,24 +117,35 @@ def field_history(par, var, rho, rhop, other0):
     lnA = brentq(lambda x: today(x)[0] if today(x)[0] is not None else 1.0, *br[0], xtol=1e-10)
     _, (s, parts) = today(lnA)
     rf = np.empty(NA)
+    tab = {k: np.empty(NA) for k in ("chi", "th", "chiN", "thN", "H2")}
     for i, N in enumerate(LNA):
-        V, K, H2, _, _ = parts(N, s.sol(N))
+        y = s.sol(N)
+        V, K, H2, _, _ = parts(N, y)
         rf[i] = K * H2 / 3 + V                                  # field density in units of 3 H0^2
+        tab["chi"][i], tab["th"][i], tab["chiN"][i], tab["thN"][i], tab["H2"][i] = y[0], y[1], y[2], y[3], H2
     if not np.all(rf > 0):
         raise FieldError("negative field density")
-    return rf, lnA
+    tab.update(A=math.exp(lnA), L=L, var=var, k=k)
+    return rf, lnA, tab
 
 
-def w_table(rf):
-    """CAMB fluid table (NTAB rows, uniform in ln a): each row's w is the cell average -1 - (1/3) dln rho/dln a over
-    its own cell, so CAMB's integral of w gives back the solved density (tested: H(z) to <= 2.4e-4, 5 points).
-    Clipped to -1 + 1e-7 <= w <= 1 for CAMB's fluid (the solved w stays inside that range up to rounding)."""
-    lr = CubicSpline(LNA, np.log(rf))
-    nodes = np.linspace(LNA[0], 0.0, NTAB)
-    h = nodes[1] - nodes[0]
-    lo, hi = np.maximum(nodes - h / 2, LNA[0]), np.minimum(nodes + h / 2, 0.0)
-    w = -1 - (lr(hi) - lr(lo)) / (3 * (hi - lo))
-    return np.exp(nodes), np.clip(w, -1 + 1e-7, 1.0)
+def ub_darkenergy(tab, H0):
+    """The two-field CAMB module (cmb-fit/ub2_camb/DarkEnergyUBField.f90, a CAMB 2.0.5 build that includes it): the
+    background table plus both fields' perturbations. 8piG V = H0^2 (A u + L (1-cos)^3) in 1/Mpc^2; conformal-time
+    derivatives d/dtau = a H d/dN."""
+    from camb.dark_energy import UBField
+    h0 = H0 / 299792.458
+    a = np.exp(LNA)
+    aH = a * h0 * np.sqrt(tab["H2"])
+    de = UBField()
+    de.var = {"A": 1, "B": 2, "C": 3}[tab["var"]]
+    de.kpar = tab["k"]
+    de.VA = h0 ** 2 * tab["A"]
+    de.VL = h0 ** 2 * tab["L"]
+    de.lam = UB.LAM
+    de.FP = UB.FP
+    de.set_table(LNA, tab["chi"], tab["th"], tab["chiN"] * aH, tab["thN"] * aH)
+    return de
 
 
 def ub_theory():
@@ -147,18 +159,14 @@ def ub_theory():
             cp = super().set(p, state)
             if cp is None or not ub:
                 return cp
-            var = "B" if "ub_kappa" in ub else "A"
+            var = "B" if "ub_kappa" in ub else "C" if "ub_b" in ub else "A"
             try:
                 rho, rhop, other0 = other_densities(cp)
-                rf, lnA = field_history(ub, var, rho, rhop, other0)
+                rf, lnA, tab = field_history(ub, var, rho, rhop, other0)
             except (FieldError, ValueError, OverflowError) as e:
                 self.log.debug("UB field failed: %s", e)
                 return None
-            a, w = w_table(rf)
-            from camb.dark_energy import DarkEnergyPPF
-            de = DarkEnergyPPF()
-            de.set_w_a_table(a, w)
-            cp.DarkEnergy = de
+            cp.DarkEnergy = ub_darkenergy(tab, cp.H0)
             state.setdefault("derived_extra", {})["ub_lnA"] = lnA
             return cp
 
@@ -168,7 +176,7 @@ def ub_theory():
             helpers = super().get_helper_theories()
             tr = self._camb_transfers
             base = tr.get_can_support_params
-            tr.get_can_support_params = lambda: set(base()) | set(UB_PARAMS) | {UB_KAPPA[0]}
+            tr.get_can_support_params = lambda: set(base()) | set(UB_PARAMS) | {UB_KAPPA[0], UB_B[0]}
             return helpers
 
     return UBCamb
@@ -201,7 +209,7 @@ def make(name):
                     "proposal": 0.1, "latex": "w_a"}
         info["prior"] = {"w0wa_bound": "lambda w, wa: 0.0 if w + wa < 0 else -np.inf"}
         return info
-    if core not in ("ub2A", "ub2B"):
+    if core not in ("ub2A", "ub2B", "ub2C"):
         raise SystemExit(f"unknown run {name}")
     # H0 is sampled directly: the field history depends on Omega_m, so CAMB's theta -> H0 search cannot be used.
     for k in ("theta_s_100", "thetastar"):
@@ -214,6 +222,8 @@ def make(name):
     keys = dict(UB_PARAMS)
     if core == "ub2B":
         keys[UB_KAPPA[0]] = UB_KAPPA[1]
+    if core == "ub2C":
+        keys[UB_B[0]] = UB_B[1]
     box = json.load(open(BOX)) if os.path.exists(BOX) else {}
     for k, (lo, hi, loc, sc, tex) in keys.items():
         lo, hi = box.get(k, (lo, hi))
@@ -236,79 +246,83 @@ def chi2_at(info, point):
     return -2 * sum(lp.values())
 
 
+def eq_replica(r):
+    """UBField with lam = 0 and a constant dilaton term that reproduces a CAMB EarlyQuintessence + Lambda result r."""
+    from camb.dark_energy import UBField
+    eq = r.Params.DarkEnergy
+    G, hbar, c, Mpc = 6.67430e-11, 1.054571817e-34, 2.99792458e8, 3.085677581e22
+    units = (Mpc / c) ** 2 / (8 * math.pi * G * hbar / c ** 5)
+    a = np.asarray(eq.sampled_a)
+    de = UBField()
+    de.var, de.kpar, de.lam, de.FP = 2, 0.0, 0.0, eq.f
+    de.VA, de.VL = r.grhov, units * eq.m ** 2 * eq.f ** 2
+    de.set_table(np.log(a), np.zeros_like(a), np.asarray(eq.phi_a) / eq.f, np.zeros_like(a), np.asarray(eq.phidot_a) / eq.f)
+    return de
+
+
 def gates():
-    """G1: the fluid route at the stored Locked Twist best fit reproduces CAMB's EarlyQuintessence chi2 (<= 1.0).
-    G2: a UB point with the angle negligible and the field frozen reproduces the stored LCDM chi2 (<= 1.0).
-    G3: CAMB's H(z) with the UB fluid matches the stand-alone two-field solver (<= 1e-3)."""
+    """G1: the two-field module (lam = 0 replica) at the stored Locked Twist best fit reproduces CAMB's EarlyQuintessence
+    chi2 (<= 1.0). G2: a UB point with the angle negligible and a flat dilaton reproduces the stored LCDM chi2 (<= 1.0).
+    G3: CAMB's H(z) with the module matches the stand-alone two-field solver (<= 1e-3)."""
     import camb
     import cmbfit_compare as CC
+    from cobaya.theories.camb import CAMB
     out = {}
-    # G1
     lt = json.load(open(os.path.join(C.RESULTS, "cmp_edelockP.json")))["minimum"]
     info = CC.make("edelockP")
     c_full = chi2_at(info, lt)
     m = info["theory"]["camb"]["extra_args"]
+    zc = lt.get("zc") or (lt["ombh2"] + lt["omch2"]) / (2.4728e-5 * (1 + 0.22711 * 3.044)) - 1
     p = camb.set_params(H0=lt["H0"], ombh2=lt["ombh2"], omch2=lt["omch2"], mnu=0.06, num_massive_neutrinos=1,
                         nnu=3.044, tau=lt["tau"], As=1e-10 * math.exp(lt["logA"]), ns=lt["ns"],
-                        dark_energy_model="EarlyQuintessence", n=3, use_zc=True, zc=lt.get("zc") or (lt["ombh2"] + lt["omch2"]) / (2.4728e-5 * (1 + 0.22711 * 3.044)) - 1,
-                        fde_zc=lt["fde_zc"], theta_i=lt["theta_i"], bbn_predictor=m["bbn_predictor"])
-    r = camb.get_background(p)
-    a = np.exp(LNA)
-    rho_de, w_de = r.get_dark_energy_rho_w(a)
-    rho_de = np.asarray(rho_de, dtype=float)
-    good = np.isfinite(rho_de) & (rho_de > 0)               # CAMB reports 0 before the field is evolved (frozen = const)
-    rho_de[:np.argmax(good)] = rho_de[np.argmax(good)]
-    a_t, w_t = w_table(rho_de)                 # same 300-row cell-average table as the UB fits
-    fl = C.make_info("lcdm")
-    fl["params"].pop("theta_s_100"); fl["params"].pop("thetastar")
-    fl["params"]["H0"] = {"prior": {"min": 20.0, "max": 100.0}, "ref": lt["H0"]}
-    from cobaya.theories.camb import CAMB
+                        dark_energy_model="EarlyQuintessence", n=3, use_zc=True, zc=zc, fde_zc=lt["fde_zc"],
+                        theta_i=lt["theta_i"], bbn_predictor=m["bbn_predictor"])
+    rep = eq_replica(camb.get_background(p))
 
-    class FluidCamb(CAMB):
+    class ReplicaCamb(CAMB):
         def set(self, pv, state):
             cp = super().set(pv, state)
             if cp is not None:
-                from camb.dark_energy import DarkEnergyPPF
-                de = DarkEnergyPPF()
-                de.set_w_a_table(a_t, w_t)
-                cp.DarkEnergy = de
+                cp.DarkEnergy = rep
             return cp
 
-    fl["theory"] = {"fluidcamb": {"external": FluidCamb, "extra_args": {k: v for k, v in m.items() if k not in
+    fl = C.make_info("lcdm")
+    fl["params"].pop("theta_s_100"); fl["params"].pop("thetastar")
+    fl["params"]["H0"] = {"prior": {"min": 20.0, "max": 100.0}, "ref": lt["H0"]}
+    fl["theory"] = {"replicacamb": {"external": ReplicaCamb, "extra_args": {k: v for k, v in m.items() if k not in
                     ("dark_energy_model", "n", "use_zc", "theta_H0_range")}, "stop_at_error": False}}
-    pt = dict(lt)
-    c_fluid = chi2_at(fl, pt)
-    out["G1"] = {"chi2_EarlyQuintessence": round(c_full, 3), "chi2_fluid": round(c_fluid, 3),
-                 "diff": round(c_fluid - c_full, 3), "pass": abs(c_fluid - c_full) <= 1.0}
-    # G2
+    c_rep = chi2_at(fl, dict(lt))
+    out["G1"] = {"chi2_EarlyQuintessence": round(c_full, 3), "chi2_two_field_module": round(c_rep, 3),
+                 "diff": round(c_rep - c_full, 3), "pass": abs(c_rep - c_full) <= 1.0}
     lc = json.load(open(os.path.join(C.RESULTS, "cmp_lcdmP.json")))["minimum"]
     info = make("ub2B")
-    pt = dict(lc, ub_lnL=0.0, ub_thi=0.1, ub_phii=10.0, ub_kappa=0.0)
-    c_ub = chi2_at(info, pt)
+    c_ub = chi2_at(info, dict(lc, ub_lnL=0.0, ub_thi=0.1, ub_phii=10.0, ub_kappa=0.0))
     out["G2"] = {"chi2_LCDM_stored": round(lc["chi2"], 3), "chi2_UB_limit": round(c_ub, 3),
                  "diff": round(c_ub - lc["chi2"], 3), "pass": abs(c_ub - lc["chi2"]) <= 1.0}
-    # G3: background consistency at an arbitrary in-box point (no data involved)
-    p = camb.set_params(H0=lc["H0"], ombh2=lc["ombh2"], omch2=lc["omch2"], mnu=0.06, num_massive_neutrinos=1,
-                        nnu=3.044, As=2.1e-9, ns=0.965)
-    rho, rhop, other0 = other_densities(p)
-    par = {"ub_lnL": 20.0, "ub_thi": 2.5, "ub_phii": 10.0, "ub_kappa": 0.5}
-    try:
-        rf, lnA = field_history(par, "B", rho, rhop, other0)
-        aa, w = w_table(rf)
-        de = __import__("camb").dark_energy.DarkEnergyPPF()
-        de.set_w_a_table(aa, w)
-        p.DarkEnergy = de
-        r = camb.get_background(p, no_thermo=True)
-        zs = np.array([0.0, 0.5, 1.0, 2.0, 10.0, 100.0, 1000.0, 3000.0])
-        hc = np.array([r.hubble_parameter(z) for z in zs]) / lc["H0"]
-        hs = np.array([math.sqrt(rho(-math.log(1 + z)) + rf[np.searchsorted(LNA, -math.log(1 + z))]) for z in zs])
-        dev = float(np.max(np.abs(hc / hs - 1)))
-        out["G3"] = {"max_rel_H_diff": dev, "pass": dev <= 1e-3}
-    except FieldError as e:
-        out["G3"] = {"error": str(e), "pass": False}
+    out["G3"] = g3(lc["H0"], lc["ombh2"], lc["omch2"])
     out["all_pass"] = all(v["pass"] for v in out.values() if isinstance(v, dict))
     json.dump(out, open(os.path.join(C.RESULTS, "ub2_gates.json"), "w"), indent=1)
     print(json.dumps(out, indent=1))
+
+
+def g3(H0, ombh2, omch2, par=None, var="B"):
+    """Background consistency, no data: CAMB with the module vs the stand-alone solver, z = 0 to 3000."""
+    import camb
+    p = camb.set_params(H0=H0, ombh2=ombh2, omch2=omch2, mnu=0.06, num_massive_neutrinos=1, nnu=3.044,
+                        As=2.1e-9, ns=0.965)
+    rho, rhop, other0 = other_densities(p)
+    par = par or {"ub_lnL": 20.0, "ub_thi": 2.5, "ub_phii": 10.0, "ub_kappa": 0.5}
+    try:
+        rf, lnA, tab = field_history(par, var, rho, rhop, other0)
+    except FieldError as e:
+        return {"error": str(e), "pass": False}
+    p.DarkEnergy = ub_darkenergy(tab, H0)
+    r = camb.get_background(p, no_thermo=True)
+    zs = np.geomspace(1e-3, 3000.0, 80)
+    hc = np.array([r.hubble_parameter(z) for z in zs]) / H0
+    hs = np.array([math.sqrt(rho(-math.log(1 + z)) + math.exp(np.interp(-math.log(1 + z), LNA, np.log(rf)))) for z in zs])
+    dev = float(np.max(np.abs(hc / hs - 1)))
+    return {"max_rel_H_diff": dev, "pass": dev <= 1e-3}
 
 
 def run(name):

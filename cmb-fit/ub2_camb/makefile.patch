@@ -1,0 +1,11 @@
+--- a/fortran/Makefile_main
++++ b/fortran/Makefile_main
+@@ -6,7 +6,7 @@
+ REIONIZATION_FILES ?= reionization
+ RECOMBINATION_FILES ?= recfast
+ NONLINEAR_FILES     ?= halofit SPkNonLinear SecondOrderPK ExternalNonLinearRatio
+-DARKENERGY_FILES  ?= DarkEnergyFluid DarkEnergyPPF PowellMinimize DarkEnergyQuintessence
++DARKENERGY_FILES  ?= DarkEnergyFluid DarkEnergyPPF PowellMinimize DarkEnergyQuintessence DarkEnergyUBField
+ 
+ BISPECTRUM ?= SeparableBispectrum
+ 
