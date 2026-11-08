@@ -1,0 +1,42 @@
+# S8-L lensing re-check with an ultralight-field nonlinear model (DRAFT, not locked)
+
+**Status: DRAFT.** Written 8 Nov 2026 at Danny's request ("Fix lessening issues"). It becomes a rule only when Danny
+says to lock it (SHA-256 + UTC time). No DES Y3 shear number is computed with the new model before the lock.
+
+## Why
+S8-L Part 2 (8 Nov, reported) came out Δ_WL = +15.74 / +15.45 / +14.47, OVER. That run turned the linear power into the
+nonlinear power with halofit, which is not calibrated for an ultralight-field (ULA) share. Measured symptom
+(`field_tests/S8_WL/results/s8l_nonlinear_check.txt`): at k = 0.05–0.2 h/Mpc the S8-L and Spiral linear power agree to
+within 2.4%, but halofit gives S8-L 6–21% more nonlinear power. The recorded OVER is **not** changed or replaced by this
+test; both are reported side by side.
+
+## Question
+Does S8-L pass the locked Part 2 lensing rule (`PREREG_S8_WL.md` Part 2: Δ_WL ≤ +2 PASSES, else OVER) when the
+nonlinear power of **both** models comes from a halo model built for mixed ultralight + cold dark matter?
+
+## Method (fixed when locked)
+- **Nonlinear model:** axionHMcode (Vogt et al. 2022; Dome et al. 2024 calibration, `version = 'dome'`, `alpha = True`,
+  `concentration_param = True`, as its README recommends), commit a85ba2679cba5abe68b4cfd1e49b7a52bdcda424.
+- **Both sides the same code:** S8-L at its stored best fits (cmp_spiralL*.json: ax fraction = omega_fld / (omega_fld +
+  omega_cdm), mass from the stored log10_a_c as in spiral_l_score.py); ΛCDM at its stored best fits with ax fraction 0
+  (the model then reduces to HMcode-2020). No cosmology is refitted; only the DES Y3 nuisance parameters are minimised,
+  exactly as `run_part2.py` (same pairs, same equal effort, best of the same tries).
+- **Linear input:** per-component linear power (CDM, baryons, ULA, total) from AxiCLASS at the stored points, same
+  builds as the stored fits; σ8 must equal the stored value to 1e-5.
+- **Redshifts:** the model is evaluated on a z grid of 0–3 (at least 30 points) and interpolated in z to the
+  pipeline's grid. Outside its calibrated range (z < 1) it is used as is; this is stated as a limitation, not adjusted.
+
+## Code gates (must pass before any shear χ² is computed)
+- **G1:** ΛCDM (ax fraction 0) axionHMcode vs CAMB HMcode-2020 at the stored ΛCDM Pantheon+ point: |ratio − 1| ≤ 2%
+  for 0.01 ≤ k ≤ 10 h/Mpc at z = 0, 0.5, 1.
+- **G2:** S8-L linear total power from the component sum equals the stored pk_spiralL.npz linear power to 0.5%.
+- A failed gate stops the test; the failure is reported, and fixing it is a logged deviation.
+
+## Readings
+Per SN set: Δ_WL = χ²_WL(S8-L) − χ²_WL(ΛCDM), PASSES if ≤ +2, else OVER. Overall: **LENSING FIXED (full shear)** if
+PASSES on at least 2 of 3; **NOT FIXED** otherwise. The halofit result (+14 to +16) is quoted beside it.
+
+## What this test cannot do
+- It does not refit the cosmology with the new nonlinear model (the stored fits used halofit in CMB lensing; the
+  effect there is small but not zero).
+- It is one extra attempt at the lensing problem; that is counted in the ledger.
