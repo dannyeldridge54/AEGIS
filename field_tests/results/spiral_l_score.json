@@ -1,0 +1,49 @@
+{
+ "rule": "PREREG_SPIRAL_L.md",
+ "rows": {
+  "Pantheon+": {
+   "chi2": 2389.515,
+   "delta_vs_LCDM": -12.74,
+   "S8": 0.817,
+   "S8_LCDM": 0.8175,
+   "S8_SF": 0.8326,
+   "DES_Y6_penalty": -0.1,
+   "delta_vs_SF": -3.52,
+   "dAIC_vs_SF": -1.52,
+   "log10_a_c": -4.76,
+   "mass_eV_approx": "1.41e-25",
+   "beta_eff": 0.0503,
+   "light_share_f": 0.0616
+  },
+  "DES-Dovekie": {
+   "chi2": 2618.147,
+   "delta_vs_LCDM": -13.68,
+   "S8": 0.8168,
+   "S8_LCDM": 0.8162,
+   "S8_SF": 0.8338,
+   "DES_Y6_penalty": 0.12,
+   "delta_vs_SF": -2.24,
+   "dAIC_vs_SF": -0.24,
+   "log10_a_c": -4.735,
+   "mass_eV_approx": "1.26e-25",
+   "beta_eff": 0.0525,
+   "light_share_f": 0.0644
+  },
+  "Union3": {
+   "chi2": 1010.365,
+   "delta_vs_LCDM": -14.61,
+   "S8": 0.819,
+   "S8_LCDM": 0.8168,
+   "S8_SF": 0.8395,
+   "DES_Y6_penalty": 0.45,
+   "delta_vs_SF": -1.73,
+   "dAIC_vs_SF": 0.27,
+   "log10_a_c": -4.766,
+   "mass_eV_approx": "1.45e-25",
+   "beta_eff": 0.0529,
+   "light_share_f": 0.0649
+  }
+ },
+ "vs_LCDM": "BEATS",
+ "lensing": "LENSING FIXED"
+}
