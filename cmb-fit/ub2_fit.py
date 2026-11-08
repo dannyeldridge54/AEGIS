@@ -29,6 +29,8 @@ import unify_hyperbolic_bg_v2 as UB       # noqa: E402  (fields, metric, potenti
 import cmbfit as C                       # noqa: E402
 
 NA = 3000
+SMOOTH = float(os.environ.get("UB_SMOOTH", 0.1))      # e-folds; ln rho smoothing window
+NTAB = 300                                            # rows passed to CAMB (see w_table)
 LNA = np.linspace(math.log(1e-7), 0.0, NA)          # w-table grid (ln a)
 UB_PARAMS = {
     "ub_lnL": (0.0, 40.0, 22.0, 1.0, r"\ln L"),
@@ -127,12 +129,14 @@ def w_table(rf):
     """w from the density history, w = -1 - (1/3) dln rho/dln a, after smoothing ln rho over ~0.1 e-fold so that fast
     oscillations are averaged (the background the CMB sees). Clipped to w >= -1 + 1e-7 for CAMB's fluid."""
     lr = np.log(rf)
-    win = max(3, int(0.1 / (LNA[1] - LNA[0])) | 1)
+    win = max(3, int(SMOOTH / (LNA[1] - LNA[0])) | 1)
     ker = np.ones(win) / win
     pad = np.concatenate([np.full(win // 2, lr[0]), lr, np.full(win // 2, lr[-1])])
     sm = np.convolve(pad, ker, mode="valid")
     w = -1 - np.gradient(sm, LNA) / 3
-    return np.exp(LNA), np.clip(w, -1 + 1e-7, 1.0)
+    # CAMB 2.0.5's fluid table: ~900+ points corrupts memory and 400+ made HMCode time out in tests; 300 works.
+    idx = np.linspace(0, NA - 1, NTAB).astype(int)
+    return np.exp(LNA[idx]), np.clip(w[idx], -1 + 1e-7, 1.0)
 
 
 def ub_theory():
@@ -140,12 +144,6 @@ def ub_theory():
 
     class UBCamb(CAMB):
         """CAMB whose dark energy is the UB field, given as a fluid w(a) table computed per point."""
-        _ub = None
-
-        def initialize(self):
-            super().initialize()
-            self._ub = [p for p in list(UB_PARAMS) + [UB_KAPPA[0]] if p in self.input_params]
-
         def set(self, params_values_dict, state):
             p = dict(params_values_dict)
             ub = {k: p.pop(k) for k in list(p) if k.startswith("ub_")}
@@ -167,8 +165,14 @@ def ub_theory():
             state.setdefault("derived_extra", {})["ub_lnA"] = lnA
             return cp
 
-        def get_can_support_params(self):
-            return list(super().get_can_support_params()) + list(UB_PARAMS) + [UB_KAPPA[0]]
+        def get_helper_theories(self):
+            # The UB parameters change the background, so they must reach CAMB's transfer step (CambTransfers), which
+            # is what calls set(); cobaya routes a parameter to the helper whose get_can_support_params lists it.
+            helpers = super().get_helper_theories()
+            tr = self._camb_transfers
+            base = tr.get_can_support_params
+            tr.get_can_support_params = lambda: set(base()) | set(UB_PARAMS) | {UB_KAPPA[0]}
+            return helpers
 
     return UBCamb
 

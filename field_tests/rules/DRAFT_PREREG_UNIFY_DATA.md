@@ -28,6 +28,9 @@ data as well as the two separate pieces we have now (the Locked Twist early, the
   EarlyQuintessence χ² within 1.0.
 - **G2 ΛCDM limit:** with L → 0 and a flat potential, the χ² is within 1.0 of the stored ΛCDM fit on the same data.
 - **G3 background:** CAMB's H(z) with the UB fluid matches the stand-alone solver to 10⁻³ (z = 0–3000).
+- **Known problem (7 Nov, before any gate ran):** CAMB 2.0.5's fluid table only takes ~300 rows (more crashed or
+  timed out HMCode in tests), which cannot follow the field's sharp w changes: at test points H(z) was off by
+  0.00003–18%. G3 will likely fail; then UB-2 needs a real two-field module in CAMB (Fortran) before any fit.
 - Run: `python ub2_fit.py gates` → `results/ub2_gates.json`. The fit command refuses to run until this rule is locked.
 
 ## Data (fixed when locked)
