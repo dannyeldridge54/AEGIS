@@ -1,0 +1,34 @@
+{
+ "rule": "field_tests/rules/PREREG_UNIFY_BG.md",
+ "verdict": "FAIL",
+ "rows": [
+  {
+   "variant": "A",
+   "samples": 20000,
+   "polished": 40,
+   "best_miss": 2.8134,
+   "best_params(lnA, lnL, th_i, phi_i[, kappa])": [
+    -124.9062,
+    3.0545,
+    1.0088,
+    34.3258
+   ],
+   "best_point": {
+    "f_peak": 0.13924,
+    "z_peak": 100000.0,
+    "peak_in_window": false,
+    "f_1090": 0.0,
+    "f_max_20_500": 0.00025,
+    "w0": -1.0,
+    "Om0": 0.30079,
+    "phi_today": 5e-05,
+    "F_today": 28398.07852,
+    "F_at_peak": 13480.07745
+   },
+   "requirements": {
+    "R2_peak": false,
+    "R3_fades": true,
+    "R4_quiet": true,
+    "R5_late": true
+   },
+   "ALL_MET": 

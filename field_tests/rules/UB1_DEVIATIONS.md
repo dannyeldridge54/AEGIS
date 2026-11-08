@@ -9,3 +9,10 @@ result with Radau (implicit) and DOP853 (ln A = -0.607 both). No requirement, bo
 
 Per the rule, **both** are run and reported: the locked version as written (`unify_hyperbolic_bg.json`) and D1
 (`unify_hyperbolic_bg_v2.json`). If they disagree, both verdicts are stated and the reason is the integrator.
+
+## D2, 2026-11-08T01:09:04Z: result file could not be written (numpy bool), re-run with a JSON fix
+Both first runs finished the search and computed the verdict, then crashed writing the result (`Object of type bool is
+not JSON serializable`): the files stop after the first row. Verdict lines already written: **locked version FAIL**,
+**D1 PASS**; the variant B rows were lost. The partial files are kept (`*_crashed_partial.json`). Both are re-run
+unchanged through `theory/run_ub1_d2.py`, which only lets json.dump write numpy booleans. The search is seeded and
+deterministic, so the re-run must reproduce the same verdicts; if it does not, that is reported.
