@@ -16,3 +16,11 @@
   state carry-over, not a model result). The script also crashed writing numpy booleans to JSON.
 - Fix: one process per run (`gate_pc <run>`), per-likelihood chi2 written for each, `gate_sum` combines them; booleans
   cast. The gate threshold and the rule are unchanged. Old outputs kept with suffix _D1fail.
+
+## S8J-D3 (8 Nov 2026, 13:10 UTC): two extra restarts for each ΛCDM reference; rule unchanged
+- The SF engine fits ΛCDM with best of 2 (as the stored SF ΛCDM references were), and the three ΛCDM+S8 fits ran that
+  way (all converged, finished 06:10–06:47 CST). The rule says "best of 4" for the Spiral and "same treatment" for
+  ΛCDM, which can be read as 4 for both.
+- To remove the doubt in the conservative direction (extra effort can only help ΛCDM, i.e. work against the Spiral),
+  each ΛCDM reference gets 2 more restarts (`s8_joint_fit.py more <run>` → cmp_<run>_more.json); the scorer uses the
+  lower chi2. Started while the Spiral fits run. Nothing else changes.

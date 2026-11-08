@@ -107,7 +107,9 @@ def gate_sum():
     print("all_pass", out["all_pass"])
 
 
-def run(name):
+def run(name, more=False):
+    """more=True (deviation S8J-D3): two further restarts for a LCDM reference, saved as cmp_<name>_more.json; the
+    scorer uses the lower chi2 of the two files, so LCDM gets the same 4 restarts as the Spiral."""
     assert name.endswith("_s8y6") and name[:-5] in RUNS, f"unknown run {name}"
     assert os.path.exists(RULE + ".sha256"), "PREREG_S8_JOINT.md is not locked; no fit runs before the lock"
     import early_late_spa as E
@@ -117,9 +119,13 @@ def run(name):
     E._maybe_coupled(base)
     info = E.make(base)                                  # the SF fit, unchanged
     add_s8(info)
-    info["output"] = f"{E.OUT}/chains/cmp_{name}"
+    tag = name + ("_more" if more else "")
+    if more:
+        assert "lcdm" in name, "extra restarts are only for the LCDM references"
+        info["sampler"]["minimize"]["best_of"] = 2
+    info["output"] = f"{E.OUT}/chains/cmp_{tag}"
     crun(info)
-    E.save(name, time.time() - t)
+    E.save(tag, time.time() - t)
 
 
 if __name__ == "__main__":
@@ -129,5 +135,7 @@ if __name__ == "__main__":
         gate_pc(sys.argv[2])
     elif sys.argv[1] == "gate_sum":
         gate_sum()
+    elif sys.argv[1] == "more":
+        run(sys.argv[2], more=True)
     else:
         run(sys.argv[1])

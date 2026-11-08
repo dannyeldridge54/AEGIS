@@ -12,6 +12,13 @@ def load(n):
     return json.load(open(p))["minimum"] if os.path.exists(p) else None
 
 
+def best_lcdm(n):
+    """Deviation S8J-D3: the LCDM reference is the lower chi2 of its 2 restarts and the 2 extra restarts (_more)."""
+    a, b = load(n), load(n + "_more")
+    c = [x for x in (a, b) if x and math.isfinite(x["chi2"])]
+    return min(c, key=lambda x: x["chi2"]) if c else None
+
+
 def s8(m):
     return m["sigma8"] * math.sqrt((m["omega_b"] + m["omega_cdm"] + ONU) / (m["H0"] / 100) ** 2 / 0.3)
 
@@ -22,7 +29,7 @@ def no_s8(m):
 
 rows, ds = {}, []
 for sn, suf in SETS.items():
-    sj, lj = load(f"ax_spa_spiraltwist{suf}_nlfix_s8y6"), load(f"ax_spa_lcdm_halofit{suf}_s8y6")
+    sj, lj = load(f"ax_spa_spiraltwist{suf}_nlfix_s8y6"), best_lcdm(f"ax_spa_lcdm_halofit{suf}_s8y6")
     sf, lf = load(f"ax_spa_spiraltwist{suf}_nlfix"), load(f"ax_spa_lcdm_halofit{suf}")
     if not (sj and lj and all(math.isfinite(x["chi2"]) for x in (sj, lj))):
         rows[sn] = {"verdict": "NO VERDICT (fit missing or non-finite)"}
