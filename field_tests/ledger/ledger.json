@@ -99,6 +99,20 @@
    "lock_time": "2026-11-08T20:58:10Z"
   },
   {
+   "rule": "PREREG_V3_STREAMS.md",
+   "origin": "AEGIS",
+   "sha256": "c7bfb929173781c05fb8ddb0c369762d32427893007bbe3911a6dc619dadc755",
+   "verified": true,
+   "lock_time": "2026-11-08T21:19:38Z"
+  },
+  {
+   "rule": "PREREG_V6_EVIDENCE.md",
+   "origin": "AEGIS",
+   "sha256": "777d530529ba5051eeda6cb8ad07d6266a89dd2a8b54fa7a1f72a494b577e8ee",
+   "verified": true,
+   "lock_time": "2026-11-08T21:18:09Z"
+  },
+  {
    "rule": "PREREG_V7_LOOK_ELSEWHERE.md",
    "origin": "AEGIS",
    "sha256": "17bd9eb225bccc9041e9eeb3f8dbaa0e8d824cbb3fe47819d8dc9a222aae54fd",
@@ -927,6 +941,14 @@
   },
   {
    "id": "",
+   "test": "**S8-LNL** S8-L on the full DES Y3 shear with axionHMcode (built for ultralight fields) on both sides (PREREG_S8L_NONLINEAR.md, locked 8 Nov; deviations D1\u2013D4 logged before any shear \u03c7\u00b2, D4 approved by Danny)",
+   "verdict": "**NOT FIXED** (0 of 3 pass). Close to the plain Spiral's +2.6 to +4.0 (that one used halofit)",
+   "result": "\u0394_WL +2.65 / +3.21 / +2.57 (P+ / Dovekie / Union3; limit +2; 7 tries each side). The halofit run (+15.74 / +15.45 / +14.47) was an artifact of the wrong nonlinear model; it stays on record",
+   "source": "CURRENT_MODEL",
+   "class": "pass"
+  },
+  {
+   "id": "",
    "test": "**V7 look-elsewhere** (PREREG_V7_LOOK_ELSEWHERE.md, locked 8 Nov; N = 64 late/early-field variants tried on the same data; \u0160id\u00e1k, conservative)",
    "verdict": "**NOT SIGNIFICANT AFTER LOOK-ELSEWHERE** (both). Quote local and global together from now on",
    "result": "Spiral local 2.6 / 2.9 / 3.2\u03c3 \u2192 global 0.7 / 1.3 / 1.7\u03c3; S8-L local 2.8 / 2.9 / 3.1\u03c3 \u2192 global 1.1 / 1.3 / 1.5\u03c3 (P+ / Dovekie / Union3)",
@@ -965,7 +987,7 @@
   }
  ],
  "counts": {
-  "pass": 19,
+  "pass": 20,
   "fail": 17,
   "neutral": 10,
   "open": 4,

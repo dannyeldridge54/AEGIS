@@ -495,6 +495,120 @@
      -6486.135
     ]
    }
+  },
+  "S8-LNL axionHMcode, Pantheon+": {
+   "model": {
+    "run": "spiralL_axhm",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_spiralL_axhm_round3_own_best.ini",
+    "chi2_WL": -6484.611,
+    "data_chi2": 237.42,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_axhm",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_axhm_round3_own_best.ini",
+    "chi2_WL": -6487.256,
+    "data_chi2": 235.316,
+    "S8": NaN
+   },
+   "Delta_WL": 2.65,
+   "reading": "OVER",
+   "tries": {
+    "spiralL_axhm": [
+     -6480.662,
+     -6483.692,
+     -6482.043,
+     -6484.517,
+     -6484.249,
+     -6484.611,
+     -6484.257
+    ],
+    "ax_spa_lcdm_halofit_axhm": [
+     -6484.411,
+     -6484.452,
+     -6487.194,
+     -6487.24,
+     -6487.196,
+     -6487.256,
+     -6487.178
+    ]
+   }
+  },
+  "S8-LNL axionHMcode, DES-Dovekie": {
+   "model": {
+    "run": "spiralL_dovekie_axhm",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_spiralL_dovekie_axhm_round3_own_best.ini",
+    "chi2_WL": -6484.328,
+    "data_chi2": 237.905,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_dovekie_axhm",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_dovekie_axhm_round3_own_best.ini",
+    "chi2_WL": -6487.537,
+    "data_chi2": 235.041,
+    "S8": NaN
+   },
+   "Delta_WL": 3.21,
+   "reading": "OVER",
+   "tries": {
+    "spiralL_dovekie_axhm": [
+     -6480.784,
+     -6483.065,
+     -6482.612,
+     -6483.082,
+     -6484.256,
+     -6484.328,
+     -6484.264
+    ],
+    "ax_spa_lcdm_halofit_dovekie_axhm": [
+     -6484.695,
+     -6484.73,
+     -6487.474,
+     -6487.536,
+     -6485.978,
+     -6487.537,
+     -6487.447
+    ]
+   }
+  },
+  "S8-LNL axionHMcode, Union3": {
+   "model": {
+    "run": "spiralL_union3_axhm",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_spiralL_union3_axhm_round3_own_best.ini",
+    "chi2_WL": -6484.814,
+    "data_chi2": 237.293,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_union3_axhm",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_union3_axhm_round3_own_best.ini",
+    "chi2_WL": -6487.383,
+    "data_chi2": 235.2,
+    "S8": NaN
+   },
+   "Delta_WL": 2.57,
+   "reading": "OVER",
+   "tries": {
+    "spiralL_union3_axhm": [
+     -6482.465,
+     -6484.467,
+     -6481.397,
+     -6484.81,
+     -6483.656,
+     -6484.814,
+     -6484.607
+    ],
+    "ax_spa_lcdm_halofit_union3_axhm": [
+     -6484.752,
+     -6484.769,
+     -6486.187,
+     -6486.208,
+     -6487.37,
+     -6487.383,
+     -6487.045
+    ]
+   }
   }
  }
 }

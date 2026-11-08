@@ -1,0 +1,30 @@
+{
+ "rule": "PREREG_S8L_NONLINEAR.md",
+ "deviations": "D1-D4 (DEVIATIONS_S8LNL.md)",
+ "rows": {
+  "Pantheon+": {
+   "Delta_WL": 2.65,
+   "reading": "OVER",
+   "chi2_WL_S8L": -6484.611,
+   "chi2_WL_LCDM": -6487.256
+  },
+  "DES-Dovekie": {
+   "Delta_WL": 3.21,
+   "reading": "OVER",
+   "chi2_WL_S8L": -6484.328,
+   "chi2_WL_LCDM": -6487.537
+  },
+  "Union3": {
+   "Delta_WL": 2.57,
+   "reading": "OVER",
+   "chi2_WL_S8L": -6484.814,
+   "chi2_WL_LCDM": -6487.383
+  }
+ },
+ "halofit_result_beside": {
+  "Pantheon+": 15.74,
+  "DES-Dovekie": 15.45,
+  "Union3": 14.47
+ },
+ "verdict": "NOT FIXED"
+}

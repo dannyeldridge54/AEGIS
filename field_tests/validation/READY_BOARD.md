@@ -6,7 +6,6 @@ when the data arrive. Ledger rebuilt 8 Nov: 51 locked files, 0 hash problems; 73
 ## Running now
 | Item | Where | Waits on |
 |---|---|---|
-| S8-LNL: S8-L lensing with axionHMcode (locked 8 Nov, D1–D4 logged) | cloud | run finishing (~1–2 h) |
 | Bracket round 2 (9 fits) | PC | started 14:57 CT (all 9 logs growing); overnight |
 | Gaia stream download for V3 | PC collector | ESA rate limits (HTTP 429); retries daily on its own |
 | Release watch (DESI DR3, Euclid DR1, Gaia DR4, SO) | PC collector, daily | new papers (Gaia DR4 hits so far are pre-release papers) |
@@ -32,3 +31,4 @@ when the data arrive. Ledger rebuilt 8 Nov: 51 locked files, 0 hash problems; 73
 
 ## Done today
 - V7 look-elsewhere (locked, scored): N = 64; Spiral 0.7–1.7σ global, S8-L 1.1–1.5σ global → NOT SIGNIFICANT AFTER LOOK-ELSEWHERE.
+- S8-LNL (locked, scored): Δ_WL +2.65 / +3.21 / +2.57 → NOT FIXED on the full DES Y3 shear.

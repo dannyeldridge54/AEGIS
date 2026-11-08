@@ -1,0 +1,18 @@
+{
+ "run": "spiralL",
+ "rule": "PREREG_S8L_NONLINEAR.md",
+ "flags": {
+  "alpha": true,
+  "eta_given": true,
+  "one_halo_damping": true,
+  "two_halo_damping": true,
+  "concentration_param": true,
+  "full_2h": false
+ },
+ "ax_fraction": 0.061586606380384025,
+ "m_ax_eV": 1.4099057499792231e-25,
+ "nz": 31,
+ "G2_max_dev_total_from_components": 0.0035986136117627243,
+ "G2": "PASS",
+ "seconds": 124.36909866333008
+}
