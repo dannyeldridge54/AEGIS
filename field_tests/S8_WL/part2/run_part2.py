@@ -19,8 +19,11 @@ PAIRS = {"Locked Twist (Planck+DESI+Pantheon+)": (("edelock", "edelockP"), ("lcd
          "UB-2 joined field, Pantheon+": (("ub", "ub2B"), ("lcdm", "lcdmP")),
          "UB-2 joined field, DES-Dovekie": (("ub", "ub2B_dovekie"), ("lcdm", "lcdmP_dovekie")),
          "UB-2 joined field, Union3": (("ub", "ub2B_union3"), ("lcdm", "lcdmP_union3"))}
-# The Spiral pairs of the rule need the coupled-dark-matter AxiCLASS power spectrum, which CAMB cannot make:
-SPIRAL = ["Spiral, Pantheon+", "Spiral, DES-Dovekie", "Spiral, Union3"]
+# Spiral pairs: AxiCLASS (coupled build) power spectra written by axiclass_pk.py, loaded with load_pk.py
+PAIRS.update({"Spiral, Pantheon+": (("pk", "ax_spa_spiraltwist_nlfix"), ("pk", "ax_spa_lcdm_halofit")),
+              "Spiral, DES-Dovekie": (("pk", "ax_spa_spiraltwist_dovekie_nlfix"), ("pk", "ax_spa_lcdm_halofit_dovekie")),
+              "Spiral, Union3": (("pk", "ax_spa_spiraltwist_union3_nlfix"), ("pk", "ax_spa_lcdm_halofit_union3"))})
+SPIRAL = []
 
 VALUES = """[cosmological_parameters]
 h0 = {h0}
@@ -185,11 +188,20 @@ def run(model, run_name):
     m = json.load(open(os.path.join(RES, f"cmp_{run_name}.json")))["minimum"]
     tag = os.path.join(OUT, f"part2_{run_name}")
     vals = tag + "_values.ini"
-    open(vals, "w").write(VALUES.format(h0=m["H0"] / 100, ombh2=m["ombh2"], omch2=m["omch2"],
-                                        As=m.get("As", 1e-10 * math.exp(m["logA"])), ns=m["ns"], tau=m["tau"]))
+    if model == "pk":            # AxiCLASS fits: P(k, z) etc. from axiclass_pk.py; cosmology lines are placeholders
+        open(vals, "w").write(VALUES.format(h0=m["H0"] / 100, ombh2=m["omega_b"], omch2=m["omega_cdm"],
+                                            As=1e-10 * math.exp(m["logA"]), ns=m["n_s"], tau=m["tau_reio"]))
+    else:
+        open(vals, "w").write(VALUES.format(h0=m["H0"] / 100, ombh2=m["ombh2"], omch2=m["omch2"],
+                                            As=m.get("As", 1e-10 * math.exp(m["logA"])), ns=m["ns"], tau=m["tau"]))
     ini = tag + "_pipeline.ini"
-    open(ini, "w").write(PIPE.format(sampler=os.environ.get("S8WL_SAMPLER", "maxlike"), out=tag, values=vals, module=os.path.join(HERE, "aegis_camb.py"), model=model,
-                                     point=os.path.join(RES, f"cmp_{run_name}.json")))
+    txt = PIPE.format(sampler=os.environ.get("S8WL_SAMPLER", "maxlike"), out=tag, values=vals,
+                      module=os.path.join(HERE, "aegis_camb.py"), model=model, point=os.path.join(RES, f"cmp_{run_name}.json"))
+    if model == "pk":
+        txt = txt.replace("modules = consistency camb", "modules = camb")
+        txt = txt.replace(f"file = {os.path.join(HERE, 'aegis_camb.py')}",
+                          f"file = {os.path.join(HERE, 'load_pk.py')}\npk_file = {os.path.join(OUT, f'pk_{run_name}.npz')}")
+    open(ini, "w").write(txt)
     env = dict(os.environ, AEGIS_DIR=AEGIS)
     if not os.environ.get("S8WL_REUSE") or not os.path.exists(tag + ".txt"):
         subprocess.run(["cosmosis", ini], cwd=CSL, env=env, check=True)
