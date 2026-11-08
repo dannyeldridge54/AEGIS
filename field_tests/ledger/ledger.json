@@ -29,6 +29,13 @@
    "lock_time": "2026-11-07T21:45:24Z"
   },
   {
+   "rule": "PREREG_S8L_NONLINEAR.md",
+   "origin": "AEGIS",
+   "sha256": "033030abe5b1f5ad4a3bcb659bd21b44ab5d79aed62922ac3ca24bd67ac02c22",
+   "verified": true,
+   "lock_time": "2026-11-08T20:12:59Z"
+  },
+  {
    "rule": "PREREG_S8_JOINT.md",
    "origin": "AEGIS",
    "sha256": "dd4f1820fc62cbbabdbbe91ac88100061722b685d4a4205fa520f237670a3295",
@@ -890,29 +897,40 @@
   },
   {
    "id": "",
-   "test": "**S8-J** Spiral refit with DES Y6 S8 inside the fit",
-   "verdict": "(running) **rule locked 8 Nov 10:58 UTC**; gate G-J then 6 fits on the PC (START_S8J.bat). Not blind: with the S8 term added at the stored fits (no refit) the Spiral leads \u039bCDM by \u22125.06 / \u22126.57 / \u22125.91",
+   "test": "**S8-J** Spiral and \u039bCDM refit with DES Y6 S8 (NLA, 0.798) in the likelihood; best of 4 (\u039bCDM best of 2+2, D3)",
+   "verdict": "**SURVIVES LENSING** (\u0394\u03c7\u00b2 \u2264 \u22124 on 3 of 3; 8 Nov; deviations D1\u2013D3)",
+   "result": "\u0394\u03c7\u00b2 vs \u039bCDM \u22127.32 / \u22128.14 / \u22128.23 (P+ / Dovekie / Union3); lensing cost +0.28 / +0.88 / +1.64; S8 0.822 / 0.826 / 0.827 vs \u039bCDM 0.814\u20130.816; \u03b2_eff 0.037\u20130.042 (SF 0.042\u20130.049)",
    "source": "CURRENT_MODEL",
-   "class": "open"
+   "class": "pass"
   },
   {
    "id": "",
-   "test": "**S8-L** light angle (option 4): the angle share f = \u03b2_eff/0.816 as an ultralight field, +1 parameter (mass)",
-   "verdict": "(running) engine built and code-checked (\u03c38 equal to 2\u00d710\u207b\u2078); no-data check: S8 \u22120.003 at a_c = 10\u207b\u2075, \u22120.035 at 10\u207b\u2074\u00b7\u2075; **rule locked 8 Nov**; PC: build, gate G-L, then 3 fits",
-   "source": "CURRENT_MODEL",
-   "class": "open"
-  },
-  {
-   "id": "",
-   "test": "BR bracket (early-field variants)",
-   "verdict": "(running) 2 of 6 done: \u03b8 2.414 F8 \u03c7\u00b2 2432.00 (score 2430.00), F9 2432.72 (2430.72), vs locked fit 2428.83, so both lose so far. The other 4 (\u03b8 2.414 F10, \u03b8 2.777 F8/F9/F10) stopped part-way at about 04:40\u201305:00 UTC 8 Nov when their windows were closed. The rule says failed jobs are not re-run; whether a closed window counts as failed is Danny's call",
+   "test": "**S8-L** light angle (option 4): the angle share f = \u03b2_eff/0.816 as an ultralight field, +1 parameter (mass); rule locked 8 Nov, scored by spiral_l_score.py",
+   "verdict": "**BEATS \u039bCDM; LENSING FIXED** (DES Y6 S8 test, 8 Nov). Part 2 (full DES Y3 shear, reported): \u0394_WL +15.74 / +15.45 / +14.47, **OVER** (equal effort, 7 tries each). Caveat, measured: halofit gives S8-L ~15% more nonlinear power than the Spiral at k \u2248 0.1 h/Mpc where the linear power agrees to 0.3% (s8l_nonlinear_check.txt); halofit is not calibrated for an ultralight share, so this lensing number is not reliable either way",
+   "result": "\u0394\u03c7\u00b2 vs \u039bCDM \u221212.74 / \u221213.68 / \u221214.61 (P+ / Dovekie / Union3); S8 0.817 / 0.817 / 0.819 (\u039bCDM 0.816\u20130.818, SF 0.833\u20130.840); DES Y6 penalty vs \u039bCDM \u22120.10 / +0.12 / +0.45 (limit +2); vs SF \u0394\u03c7\u00b2 \u22123.52 / \u22122.24 / \u22121.73, \u0394AIC \u22121.52 / \u22120.24 / +0.27; mass \u2248 1.3\u20131.5\u00d710\u207b\u00b2\u2075 eV (approx.); f 0.062\u20130.065",
    "source": "CURRENT_MODEL",
    "class": "fail"
   },
   {
    "id": "",
+   "test": "BR bracket (early-field variants), round 1 (PREREG_BRACKET.md; score = deep \u03c7\u00b2 \u2212 2)",
+   "verdict": "**Round 1: \u03b8 2.777 F9, F8, F10 advance** (the 3 lowest; bracket.py stage 2). Round 2 (DES Y5 + Dovekie + Union3, 9 fits): START_BRACKET_R2.bat ready on the PC, 8 Nov; a winner must beat the locked fit's summed value by \u2265 2",
+   "result": "all 6 done (4 restarted from scratch 8 Nov, Danny's call): \u03b8 2.414 F8 2430.00, F9 2430.72, F10 2431.34; \u03b8 2.777 F8 2426.77, F9 2426.72, F10 2427.06; locked fit 2428.48 (edelockP_deep, as bracket.py reads it; 2428.83 was the non-deep fit)",
+   "source": "CURRENT_MODEL",
+   "class": "reported"
+  },
+  {
+   "id": "",
    "test": "**S8WL Part 2** full DES Y3 shear likelihood",
    "verdict": "(running) rule locked 7 Nov; run in the cloud. Locked Twist \u0394_WL = +1.14 **PASSES** (limit +2); Spiral +2.57 / +3.47 / +3.99 **OVER**; UB-2 joined field \u22120.37 / 0.00 / +0.14 **PASSES** (equal effort, all pairs done 8 Nov)",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "**S8-J Part 2** S8-J joint Spiral on the full DES Y3 shear likelihood (same locked Part 2 rule, equal effort: 7 tries each side)",
+   "verdict": "**MIXED: PASSES 2 of 3, Dovekie OVER by 0.01** (8 Nov; minimiser spread between tries ~1 unit, reported as is)",
+   "result": "\u0394_WL +0.79 / +2.01 / +1.38 (P+ / Dovekie / Union3; limit +2)",
    "source": "CURRENT_MODEL",
    "class": "fail"
   },
@@ -925,11 +943,11 @@
   }
  ],
  "counts": {
-  "pass": 18,
-  "fail": 16,
+  "pass": 19,
+  "fail": 17,
   "neutral": 10,
-  "open": 6,
-  "reported": 21,
+  "open": 4,
+  "reported": 22,
   "mixed": 1
  }
 }

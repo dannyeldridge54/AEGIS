@@ -11,3 +11,4 @@
 | 2026-11-08 | V4 | DES Y6 shear S8: NLA 0.798 (+0.014/−0.015), TATT 0.783 (+0.019/−0.015) | arXiv:2602.10065 |
 | 2026-11-08 | V5 | Nieh–Yan instantons: −2K e^(−S) cos η | arXiv:1411.4793 |
 | 2026-11-08 | V1 | Spiral (P+) forward numbers computed (test) | theory/fpc_ax_spa_spiraltwist_nlfix.json |
+| 2026-11-08 | V1/V2/V4 | Frozen forward predictions for ΛCDM, Spiral, S8-J, S8-L (3 SN sets each) | theory/PREDICTIONS_FROZEN_8NOV.md |
