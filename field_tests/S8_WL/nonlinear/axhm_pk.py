@@ -91,7 +91,7 @@ def cosmo(best, h, z, fax, m_ax):
     open(f, "w").write("\n".join([f"omega_b_0 = {best['omega_b']}", f"omega_d_0 = {wd}", f"ax_fraction = {fax}",
                                   f"m_ax = {m_ax}", f"h = {h}", f"z = {z}", "M_min = 7", "M_max = 18",
                                   f"ns = {best['n_s']}", f"As = {1e-10 * math.exp(best['logA'])}", "k_piv = 0.05",
-                                  "transfer_kmax = 100", "version = 'basic'"]   # D4 (Danny approved 8 Nov)) + "\n")
+                                  "transfer_kmax = 100", "version = 'basic'"]) + "\n")   # version: D4 (Danny approved 8 Nov)
     c = load_cosmology.load_cosmology_input(f, LCDM=(fax == 0))
     os.remove(f)
     return c
