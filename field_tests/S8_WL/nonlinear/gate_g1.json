@@ -1,0 +1,25 @@
+{
+ "flags": {
+  "alpha": true,
+  "eta_given": true,
+  "one_halo_damping": true,
+  "two_halo_damping": true,
+  "concentration_param": true,
+  "full_2h": false
+ },
+ "rows": {
+  "0": {
+   "max_dev": 0.020522168586800005,
+   "k_at_max": 0.16802566621772516
+  },
+  "0.5": {
+   "max_dev": 0.01587433581600728,
+   "k_at_max": 0.16802566621772516
+  },
+  "1": {
+   "max_dev": 0.01168729899302734,
+   "k_at_max": 0.16802566621772516
+  }
+ },
+ "G1": "FAIL"
+}

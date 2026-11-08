@@ -16,7 +16,8 @@ nonlinear power of **both** models comes from a halo model built for mixed ultra
 
 ## Method (fixed when locked)
 - **Nonlinear model:** axionHMcode (Vogt et al. 2022; Dome et al. 2024 calibration, `version = 'dome'`, `alpha = True`,
-  `concentration_param = True`, as its README recommends), commit a85ba2679cba5abe68b4cfd1e49b7a52bdcda424.
+  `concentration_param = True`, as its README recommends), with `eta_given = True`, `one_halo_damping = True`,
+  `two_halo_damping = True`, `full_2h = False` (the HMcode-2020 set) on **both** sides, commit a85ba2679cba5abe68b4cfd1e49b7a52bdcda424.
 - **Both sides the same code:** S8-L at its stored best fits (cmp_spiralL*.json: ax fraction = omega_fld / (omega_fld +
   omega_cdm), mass from the stored log10_a_c as in spiral_l_score.py); ΛCDM at its stored best fits with ax fraction 0
   (the model then reduces to HMcode-2020). No cosmology is refitted; only the DES Y3 nuisance parameters are minimised,
@@ -40,3 +41,12 @@ PASSES on at least 2 of 3; **NOT FIXED** otherwise. The halofit result (+14 to +
 - It does not refit the cosmology with the new nonlinear model (the stored fits used halofit in CMB lensing; the
   effect there is small but not zero).
 - It is one extra attempt at the lensing problem; that is counted in the ledger.
+
+## Pre-lock gate log (code checks only, no survey data)
+- 8 Nov, G1 try 1 (eta_given, two_halo_damping off): max deviation from CAMB HMcode-2020 21–24%. Those two switches are
+  part of HMcode-2020, so the flag set above was changed to include them. Changed before the lock, logged here.
+- 8 Nov, G1 try 2 (flag set above): max deviation 2.05% (z = 0), 1.59% (z = 0.5), 1.17% (z = 1), worst at
+  k = 0.17 h/Mpc (the BAO-wiggle region). **Fails the 2% line by 0.05% at z = 0.** Not changed; Danny decides before the
+  lock whether to keep 2% (then the cause is investigated first) or set another line. The same code is used on both
+  sides, so a shared offset of this size largely cancels in Δ_WL; that is a reason, not a proof.
+- Execution-only fix: numpy 2 renamed np.trapz; the gate script maps it to np.trapezoid (same function).
