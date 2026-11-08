@@ -59,3 +59,9 @@ ultralight field out (cold matter + neutrinos only). BAO, H0, r_d and w(z) are u
 - `fpc_spiralL.json` 9b04d937a4e02c6ced21d6ed9c48ef91a6f6ed34fa7056ae9e4fcd6939e02e97
 - `fpc_spiralL_dovekie.json` cb37182f610bda3e5d9fc2f95f5b47ddddfb266da24a5fc21dcaf9078d722d34
 - `fpc_spiralL_union3.json` 827bb655c23e0de28cd647421fbf29fa2cf2683e7c9dfc2549abf388e5498f88
+
+## Added 8 Nov 16:55 CT: Locked Twist (early field, CAMB EarlyQuintessence n = 3; `forward_predictions_camb.py`, σ8 gate passed)
+- Pantheon+: H0 70.53, r_d 143.16, S8 0.8252, D_V/r_d at z = 0.295/0.51/0.706/0.934/1.321/1.484/2.33: 7.940 / 12.682 / 16.301 / 19.791 / 24.333 / 25.846 / 31.275; fσ8(0.5) 0.4789. SHA-256 `fpc_edelockP.json` 99814d538db593af9f953ea1e6363e2d9eda540e0c9aad798d01b3064b8ba58b
+- DES-Dovekie: H0 70.53, r_d 143.14, S8 0.8269, D_V/r_d at z = 0.295/0.51/0.706/0.934/1.321/1.484/2.33: 7.941 / 12.683 / 16.302 / 19.792 / 24.334 / 25.846 / 31.275; fσ8(0.5) 0.4799. SHA-256 `fpc_edelockP_dovekie.json` 7e048e980a97ef9756ce2088ac1c67f9d0a0f58b0593e4c5f843acf4e7b66819
+- Union3: H0 70.55, r_d 143.22, S8 0.8255, D_V/r_d at z = 0.295/0.51/0.706/0.934/1.321/1.484/2.33: 7.936 / 12.677 / 16.295 / 19.785 / 24.327 / 25.840 / 31.270; fσ8(0.5) 0.4793. SHA-256 `fpc_edelockP_union3.json` 982e5c80e9876fbdb762d7097b4f97c3729446e292375a520f92e0bc1421fa3c
+Note: these Locked Twist numbers were frozen after PREREG_V1_DESI_DR3.md was locked (20:58 UTC); V1 scores only the four models it names. The Locked Twist is scored with the same statistic and reported beside them, marked as frozen at 22:55 UTC, still before DR3.
