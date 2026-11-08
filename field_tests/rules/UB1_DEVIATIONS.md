@@ -16,3 +16,10 @@ not JSON serializable`): the files stop after the first row. Verdict lines alrea
 **D1 PASS**; the variant B rows were lost. The partial files are kept (`*_crashed_partial.json`). Both are re-run
 unchanged through `theory/run_ub1_d2.py`, which only lets json.dump write numpy booleans. The search is seeded and
 deterministic, so the re-run must reproduce the same verdicts; if it does not, that is reported.
+
+## D1b-1, 2026-11-08T02:54:59Z: UB-1b run in parallel (execution only)
+The serial UB-1b run did not finish in 60 min on this container's 2 cores (variant C integrations are slow) and was
+stopped by the job time limit; nothing was written. `theory/run_ub1b_parallel.py` runs the same search: same sample
+points, same scoring, same 40 polishes read in the same order with the same stopping rule; only the evaluations are
+spread over worker processes, so the result is identical to the serial code's. It runs here (2 workers) and is queued
+on the PC (WSL, 12 workers) with START_BRACKET.bat; whichever finishes first is reported, and if both finish they must agree.
