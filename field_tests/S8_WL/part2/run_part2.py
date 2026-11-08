@@ -184,9 +184,9 @@ covmat_name = COVMAT
 """
 
 
-def run(model, run_name):
+def run(model, run_name, start=None, tag_suffix=""):
     m = json.load(open(os.path.join(RES, f"cmp_{run_name}.json")))["minimum"]
-    tag = os.path.join(OUT, f"part2_{run_name}")
+    tag = os.path.join(OUT, f"part2_{run_name}{tag_suffix}")
     vals = tag + "_values.ini"
     if model == "pk":            # AxiCLASS fits: P(k, z) etc. from axiclass_pk.py; cosmology lines are placeholders
         open(vals, "w").write(VALUES.format(h0=m["H0"] / 100, ombh2=m["omega_b"], omch2=m["omega_cdm"],
@@ -194,6 +194,12 @@ def run(model, run_name):
     else:
         open(vals, "w").write(VALUES.format(h0=m["H0"] / 100, ombh2=m["ombh2"], omch2=m["omch2"],
                                             As=m.get("As", 1e-10 * math.exp(m["logA"])), ns=m["ns"], tau=m["tau"]))
+    if start:                                   # nuisance starting values from another run's best (same ranges, priors)
+        import re
+        src = re.sub(r"np\.float64\(([^)]*)\)", r"\1", open(start).read())
+        own = open(vals).read().split("[shear_calibration_parameters]")[0]
+        secs = re.split(r"(?m)^(?=\[)", src)
+        open(vals, "w").write(own + "\n" + "".join(x for x in secs if x.strip() and not x.startswith("[cosmological_parameters]")))
     ini = tag + "_pipeline.ini"
     txt = PIPE.format(sampler=os.environ.get("S8WL_SAMPLER", "maxlike"), out=tag, values=vals,
                       module=os.path.join(HERE, "aegis_camb.py"), model=model, point=os.path.join(RES, f"cmp_{run_name}.json"))
@@ -204,6 +210,8 @@ def run(model, run_name):
     open(ini, "w").write(txt)
     env = dict(os.environ, AEGIS_DIR=AEGIS)
     if not os.environ.get("S8WL_REUSE") or not os.path.exists(tag + ".txt"):
+        if os.path.exists(tag + ".txt"):
+            os.remove(tag + ".txt")
         subprocess.run(["cosmosis", ini], cwd=CSL, env=env, check=True)
     head, row = None, None
     for line in open(tag + ".txt"):
@@ -214,26 +222,52 @@ def run(model, run_name):
     d = dict(zip(head, row))
     post = [v for k, v in d.items() if k.endswith("post")][0]
     chi = [v for k, v in d.items() if "2pt_chi2" in k.lower()]
-    return {"run": run_name, "chi2_WL": round(-2 * post, 3), "data_chi2": round(chi[0], 3) if chi else None,
+    return {"run": run_name, "best_ini": tag + "_best.ini", "chi2_WL": round(-2 * post, 3), "data_chi2": round(chi[0], 3) if chi else None,
             "S8": round(d.get("COSMOLOGICAL_PARAMETERS--SIGMA_8", float("nan")) * math.sqrt(json.load(open(os.path.join(RES, f"cmp_{run_name}.json")))["minimum"].get("omegam", float("nan")) / 0.3), 4)}
+
+
+def minimise_pair(a, b):
+    """Same search for both models of a pair: Nelder-Mead from the survey's fiducial start; then repeated restarts, each
+    model from its own best AND from the partner's best, until neither improves by more than 0.05 in chi2_WL (max 3
+    rounds). Reports every try and the minimum of each model. (Fixed 8 Nov: a single Nelder-Mead run stopped early.)"""
+    from concurrent.futures import ThreadPoolExecutor
+    pool = ThreadPoolExecutor(int(os.environ.get("S8WL_WORKERS", "2")))
+    fa, fb = pool.submit(run, *a), pool.submit(run, *b)
+    tries = {a[1]: [fa.result()], b[1]: [fb.result()]}
+    for rnd in range(1, 4):
+        best = {k: min(v, key=lambda r: r["chi2_WL"]) for k, v in tries.items()}
+        jobs = []
+        for (mod, name), other in ((a, b[1]), (b, a[1])):
+            for src, lab in ((best[name], "own"), (best[other], "cross")):
+                jobs.append((name, pool.submit(run, mod, name, src["best_ini"], f"_round{rnd}_{lab}")))
+        improved = False
+        for name, f in jobs:
+            r = f.result()
+            tries[name].append(r)
+            improved |= r["chi2_WL"] < best[name]["chi2_WL"] - 0.05
+        if not improved:
+            break
+    return {k: min(v, key=lambda r: r["chi2_WL"]) for k, v in tries.items()}, tries
 
 
 def main():
     os.makedirs(OUT, exist_ok=True)
     want = sys.argv[1:] or list(PAIRS)
-    out = {"rule": "PREREG_S8_WL.md Part 2", "data": "DES Y3 cosmic shear (CosmoSIS standard library, fiducial cuts)",
-           "rows": {}}
+    path = os.path.join(OUT, "part2_desy3.json")
+    out = json.load(open(path)) if os.path.exists(path) else {
+        "rule": "PREREG_S8_WL.md Part 2", "data": "DES Y3 cosmic shear (CosmoSIS standard library, fiducial cuts)", "rows": {}}
     for lab in want:
         (mm, mr), (lm, lr) = PAIRS[lab]
         if not os.path.exists(os.path.join(RES, f"cmp_{mr}.json")):
             out["rows"][lab] = "pending (fit not found)"
             continue
-        a, b = run(mm, mr), run(lm, lr)
+        best, tries = minimise_pair((mm, mr), (lm, lr))
+        a, b = best[mr], best[lr]
         d = a["chi2_WL"] - b["chi2_WL"]
-        out["rows"][lab] = {"model": a, "LCDM": b, "Delta_WL": round(d, 2), "reading": "PASSES" if d <= 2 else "OVER"}
-    for lab in SPIRAL:
-        out["rows"][lab] = "NO VERDICT so far: needs the coupled-DM AxiCLASS P(k) (not CAMB); see SETUP_PART2.md"
-    json.dump(out, open(os.path.join(OUT, "part2_desy3.json"), "w"), indent=1)
+        out["rows"][lab] = {"model": a, "LCDM": b, "Delta_WL": round(d, 2), "reading": "PASSES" if d <= 2 else "OVER",
+                            "tries": {k: [t["chi2_WL"] for t in v] for k, v in tries.items()}}
+        json.dump(out, open(path, "w"), indent=1)                     # saved after every pair
+    json.dump(out, open(path, "w"), indent=1)
     print(json.dumps(out, indent=1))
 
 
