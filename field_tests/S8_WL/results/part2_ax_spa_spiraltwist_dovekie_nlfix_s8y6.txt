@@ -14,16 +14,16 @@
 #module_7=cl_to_xi_fullsky 1
 #module_8=shear_bias 1
 #module_9=2pt_like #name from ini file
-#timestamp=2026-11-08T10:11:33.661626
+#timestamp=2026-11-08T10:46:20.503301
 #platform=Linux-6.18.44-fc-v310-x86_64-with-glibc2.39
 #platform_version=#1 SMP @0
-#uuid=b8359e2a6bac4ecf86ff10a59ee2a338
+#uuid=8e174a429ed4445d950f30609085fb79
 #cosmosis_git_version=
 #csl_git_version=
-#cwd_git_version=2bad18f599538ebfc5299a77e33d6c6f611cd9b4
+#cwd_git_version=
 #tolerance=0.001
 #maxiter=6000
-#output_ini=/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_dovekie_nlfix_s8y6_best.ini
+#output_ini=/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_dovekie_nlfix_s8y6_best.ini
 #output_covmat=
 #output_block=
 #method=Nelder-Mead
@@ -44,16 +44,16 @@
 ## method = Nelder-Mead
 ## tolerance = 1e-3
 ## maxiter = 6000
-## output_ini = /home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_dovekie_nlfix_s8y6_best.ini
+## output_ini = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_dovekie_nlfix_s8y6_best.ini
 ## max_posterior = T
 ## 
 ## [output]
-## filename = /home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_dovekie_nlfix_s8y6.txt
+## filename = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_dovekie_nlfix_s8y6.txt
 ## format = text
 ## 
 ## [pipeline]
 ## modules = camb fast_pt fits_nz source_photoz_bias IA pk_to_cl add_intrinsic 2pt_shear shear_m_bias 2pt_like
-## values = /home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_dovekie_nlfix_s8y6_values.ini
+## values = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_dovekie_nlfix_s8y6_values.ini
 ## priors = examples/des-y3-priors.ini
 ## extra_output = cosmological_parameters/sigma_8 data_vector/2pt_chi2
 ## timing = F
@@ -63,8 +63,8 @@
 ## file = utility/consistency/consistency_interface.py
 ## 
 ## [camb]
-## file = /home/claude/aegis/field_tests/S8_WL/part2/load_pk.py
-## pk_file = /home/claude/aegis/field_tests/S8_WL/part2/../results/pk_ax_spa_spiraltwist_dovekie_nlfix_s8y6.npz
+## file = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/load_pk.py
+## pk_file = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/pk_ax_spa_spiraltwist_dovekie_nlfix_s8y6.npz
 ## aegis_model = pk
 ## aegis_point = /home/claude/aegis/cmb-fit/results/cmp_ax_spa_spiraltwist_dovekie_nlfix_s8y6.json
 ## mode = power

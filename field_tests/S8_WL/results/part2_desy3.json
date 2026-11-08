@@ -267,6 +267,120 @@
      -6487.759
     ]
    }
+  },
+  "S8-J joint Spiral, Pantheon+": {
+   "model": {
+    "run": "ax_spa_spiraltwist_nlfix_s8y6",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_nlfix_s8y6_round3_cross_best.ini",
+    "chi2_WL": -6484.244,
+    "data_chi2": 238.163,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_s8y6",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_s8y6_round3_own_best.ini",
+    "chi2_WL": -6485.034,
+    "data_chi2": 237.374,
+    "S8": NaN
+   },
+   "Delta_WL": 0.79,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_nlfix_s8y6": [
+     -6483.962,
+     -6484.013,
+     -6483.273,
+     -6484.013,
+     -6484.013,
+     -6484.013,
+     -6484.244
+    ],
+    "ax_spa_lcdm_halofit_s8y6": [
+     -6484.22,
+     -6484.282,
+     -6484.593,
+     -6484.955,
+     -6484.626,
+     -6485.034,
+     -6484.626
+    ]
+   }
+  },
+  "S8-J joint Spiral, DES-Dovekie": {
+   "model": {
+    "run": "ax_spa_spiraltwist_dovekie_nlfix_s8y6",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_dovekie_nlfix_s8y6_round2_cross_best.ini",
+    "chi2_WL": -6484.583,
+    "data_chi2": 237.734,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_dovekie_s8y6_more",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_dovekie_s8y6_more_round3_cross_best.ini",
+    "chi2_WL": -6486.593,
+    "data_chi2": 235.913,
+    "S8": NaN
+   },
+   "Delta_WL": 2.01,
+   "reading": "OVER",
+   "tries": {
+    "ax_spa_spiraltwist_dovekie_nlfix_s8y6": [
+     -6483.01,
+     -6483.091,
+     -6484.195,
+     -6484.577,
+     -6484.583,
+     -6484.583,
+     -6484.573
+    ],
+    "ax_spa_lcdm_halofit_dovekie_s8y6_more": [
+     -6483.793,
+     -6484.2,
+     -6484.169,
+     -6485.448,
+     -6485.463,
+     -6485.597,
+     -6486.593
+    ]
+   }
+  },
+  "S8-J joint Spiral, Union3": {
+   "model": {
+    "run": "ax_spa_spiraltwist_union3_nlfix_s8y6",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_union3_nlfix_s8y6_round3_cross_best.ini",
+    "chi2_WL": -6486.002,
+    "data_chi2": 236.273,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_union3_s8y6_more",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8j_run/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_union3_s8y6_more_round3_own_best.ini",
+    "chi2_WL": -6487.378,
+    "data_chi2": 235.272,
+    "S8": NaN
+   },
+   "Delta_WL": 1.38,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_union3_nlfix_s8y6": [
+     -6484.603,
+     -6484.63,
+     -6484.453,
+     -6484.639,
+     -6484.713,
+     -6485.426,
+     -6486.002
+    ],
+    "ax_spa_lcdm_halofit_union3_s8y6_more": [
+     -6484.331,
+     -6484.39,
+     -6485.751,
+     -6486.131,
+     -6486.386,
+     -6487.378,
+     -6485.753
+    ]
+   }
   }
  }
 }

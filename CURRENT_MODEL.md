@@ -49,6 +49,7 @@ unification with constant W.
 | **S8-L** light angle (option 4): the angle share f = β_eff/0.816 as an ultralight field, +1 parameter (mass) | engine built and code-checked (σ8 equal to 2×10⁻⁸); no-data check: S8 −0.003 at a_c = 10⁻⁵, −0.035 at 10⁻⁴·⁵; **rule locked 8 Nov**; PC: build, gate G-L, then 3 fits |
 | BR bracket (early-field variants) | 2 of 6 done: θ 2.414 F8 χ² 2432.00 (score 2430.00), F9 2432.72 (2430.72), vs locked fit 2428.83, so both lose so far. The other 4 (θ 2.414 F10, θ 2.777 F8/F9/F10) stopped part-way at about 04:40–05:00 UTC 8 Nov when their windows were closed. The rule says failed jobs are not re-run; whether a closed window counts as failed is Danny's call |
 | **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; run in the cloud. Locked Twist Δ_WL = +1.14 **PASSES** (limit +2); Spiral +2.57 / +3.47 / +3.99 **OVER**; UB-2 joined field −0.37 / 0.00 / +0.14 **PASSES** (equal effort, all pairs done 8 Nov) |
+| **S8-J Part 2** S8-J joint Spiral on the full DES Y3 shear likelihood (same locked Part 2 rule, equal effort: 7 tries each side) | Δ_WL +0.79 / +2.01 / +1.38 (P+ / Dovekie / Union3; limit +2) | **MIXED: PASSES 2 of 3, Dovekie OVER by 0.01** (8 Nov; minimiser spread between tries ~1 unit, reported as is) |
 | Stage-3 P-ACT bracket | after BR |
 
 ## Where things are
