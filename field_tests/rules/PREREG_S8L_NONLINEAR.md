@@ -1,7 +1,8 @@
-# S8-L lensing re-check with an ultralight-field nonlinear model (DRAFT, not locked)
+# S8-L lensing re-check with an ultralight-field nonlinear model (S8-LNL)
 
-**Status: DRAFT.** Written 8 Nov 2026 at Danny's request ("Fix lessening issues"). It becomes a rule only when Danny
-says to lock it (SHA-256 + UTC time). No DES Y3 shear number is computed with the new model before the lock.
+**Status: LOCKED** on Danny's word (8 Nov 2026: "Yes, lock it and run"); fingerprint and UTC time in
+`PREREG_S8L_NONLINEAR.md.sha256`. Written at his request ("Fix lessening issues"). No DES Y3 shear number was computed
+with the new model before the lock. G2 runs after the lock, before any shear χ².
 
 ## Why
 S8-L Part 2 (8 Nov, reported) came out Δ_WL = +15.74 / +15.45 / +14.47, OVER. That run turned the linear power into the
