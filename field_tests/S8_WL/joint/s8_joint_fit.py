@@ -39,12 +39,17 @@ def likelihood_class():
     from cobaya.likelihood import Likelihood
 
     class DESY6S8(Likelihood):
+        # Deviation S8J-D1 (S8J_DEVIATIONS.md): omega_b and omega_cdm are the SAMPLED inputs (aliases below), as the rule
+        # and s8wl_score.py use. Asking the theory for "omega_cdm" returned the coupled build's present-day value.
+        params = {"s8in_omega_b": None, "s8in_omega_cdm": None}
+
         def get_requirements(self):
-            return {"sigma8": None, "omega_b": None, "omega_cdm": None, "H0": None}
+            return {"sigma8": None, "H0": None}
 
         def logp(self, **params_values):
             g = self.provider.get_param
-            return -0.5 * chi2_s8(s8(g("sigma8"), g("omega_b"), g("omega_cdm"), g("H0")))
+            return -0.5 * chi2_s8(s8(g("sigma8"), params_values["s8in_omega_b"], params_values["s8in_omega_cdm"],
+                                     g("H0")))
 
     return DESY6S8
 
@@ -62,6 +67,12 @@ def gate():
     print(json.dumps(out, indent=1))
 
 
+def add_s8(info):
+    info["likelihood"]["s8_desy6"] = {"external": likelihood_class()}
+    info["params"]["s8in_omega_b"] = {"value": "lambda omega_b: omega_b", "derived": False}
+    info["params"]["s8in_omega_cdm"] = {"value": "lambda omega_cdm: omega_cdm", "derived": False}
+
+
 def gate_pc():
     """G-J on the PC: through the full fitter (SF engine + the S8 term), at each stored SF best fit, the total chi2
     must equal the stored chi2 + chi2_S8 within 0.05. Evaluation only, no fitting; allowed before the lock."""
@@ -72,7 +83,7 @@ def gate_pc():
     for r in RUNS:
         E._maybe_coupled(r)
         info = E.make(r)
-        info["likelihood"]["s8_desy6"] = {"external": likelihood_class()}
+        add_s8(info)
         info.pop("sampler", None); info.pop("output", None)
         model = get_model(info)
         m = json.load(open(f"{E.OUT}/cmp_{r}.json"))["minimum"]
@@ -94,7 +105,7 @@ def run(name):
     t = time.time()
     E._maybe_coupled(base)
     info = E.make(base)                                  # the SF fit, unchanged
-    info["likelihood"]["s8_desy6"] = {"external": likelihood_class()}
+    add_s8(info)
     info["output"] = f"{E.OUT}/chains/cmp_{name}"
     crun(info)
     E.save(name, time.time() - t)
