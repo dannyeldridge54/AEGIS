@@ -229,6 +229,44 @@
      -6487.38
     ]
    }
+  },
+  "UB-2 joined field, Union3": {
+   "model": {
+    "run": "ub2B_union3",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ub2B_union3_round3_cross_best.ini",
+    "chi2_WL": -6487.622,
+    "data_chi2": 235.059,
+    "S8": 0.8137
+   },
+   "LCDM": {
+    "run": "lcdmP_union3",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_lcdmP_union3_round3_cross_best.ini",
+    "chi2_WL": -6487.759,
+    "data_chi2": 234.911,
+    "S8": 0.8102
+   },
+   "Delta_WL": 0.14,
+   "reading": "PASSES",
+   "tries": {
+    "ub2B_union3": [
+     -6484.863,
+     -6485.878,
+     -6485.705,
+     -6486.707,
+     -6486.727,
+     -6487.621,
+     -6487.622
+    ],
+    "lcdmP_union3": [
+     -6484.241,
+     -6485.571,
+     -6485.966,
+     -6486.409,
+     -6487.047,
+     -6487.756,
+     -6487.759
+    ]
+   }
   }
  }
 }
