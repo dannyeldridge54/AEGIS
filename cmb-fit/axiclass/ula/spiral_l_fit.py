@@ -66,9 +66,9 @@ def gate_pc():
         point = {k: (m["omega_cdm"] if k == "omega_dm" else m[k]) for k in model.parameterization.sampled_params()}
         chi2 = -2 * sum(model.loglikes(point, as_dict=True)[0].values())
         out[name] = {"chi2": round(chi2, 3), "stored_SF": round(m["chi2"], 3), "diff": round(chi2 - m["chi2"], 3),
-                     "pass": abs(chi2 - m["chi2"]) <= 0.1}
+                     "pass": bool(abs(chi2 - m["chi2"]) <= 0.1)}
         print(name, out[name], flush=True)
-    out["all_pass"] = all(v["pass"] for v in out.values() if isinstance(v, dict))
+    out["all_pass"] = bool(all(v["pass"] for v in out.values() if isinstance(v, dict)))
     json.dump(out, open(os.path.join(E.OUT, "spiral_l_gate_pc.json"), "w"), indent=1)
 
 

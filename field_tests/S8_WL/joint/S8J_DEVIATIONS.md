@@ -9,3 +9,10 @@
   CLASS. Cloud check at the same point: chi2_S8 = 6.109 (expected 6.11).
 - The failed gate output is kept as results/s8j_gate_pc_D1fail.json and the log as s8j_pc_log_D1fail.txt. The gate is
   then rerun unchanged; fits start only if it passes.
+
+## S8J-D2 (8 Nov 2026, ~11:30 UTC): gate run one process per run; JSON write fixed; no fit had run
+- The first G-J run evaluated all six runs in one process. The Spiral runs load the coupled CLASS build first, so the
+  three ΛCDM evaluations then ran on that build instead of their own (their chi2 came out 15–18 above expectation, a
+  state carry-over, not a model result). The script also crashed writing numpy booleans to JSON.
+- Fix: one process per run (`gate_pc <run>`), per-likelihood chi2 written for each, `gate_sum` combines them; booleans
+  cast. The gate threshold and the rule are unchanged. Old outputs kept with suffix _D1fail.

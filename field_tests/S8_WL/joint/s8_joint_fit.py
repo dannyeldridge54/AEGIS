@@ -7,7 +7,8 @@ Engine: exactly the SF fit (cmb-fit/axiclass/early_late_spa.make), unchanged, pl
 Runs (best of 4, starting points as SF):  <SF run name>_s8y6, e.g. ax_spa_spiraltwist_dovekie_nlfix_s8y6.
 
     python s8_joint_fit.py gate              # expected joint chi2 at the stored SF best fits (cloud, no engine)
-    python s8_joint_fit.py gate_pc           # G-J: the same through the full fitter (PC, evaluation only)
+    python s8_joint_fit.py gate_pc <run>     # G-J for one run through the full fitter (PC, evaluation only)
+    python s8_joint_fit.py gate_sum          # combine the six into results/s8j_gate_pc.json
     python s8_joint_fit.py <run>_s8y6        # one fit (PC, WSL env "aegis")
 """
 import json
@@ -73,27 +74,37 @@ def add_s8(info):
     info["params"]["s8in_omega_cdm"] = {"value": "lambda omega_cdm: omega_cdm", "derived": False}
 
 
-def gate_pc():
-    """G-J on the PC: through the full fitter (SF engine + the S8 term), at each stored SF best fit, the total chi2
-    must equal the stored chi2 + chi2_S8 within 0.05. Evaluation only, no fitting; allowed before the lock."""
+def gate_pc(r):
+    """G-J for ONE run (one process per run, so no CLASS build or likelihood state carries over): through the full
+    fitter (SF engine + the S8 term), at the stored SF best fit, total chi2 must equal stored chi2 + chi2_S8 within 0.05.
+    Writes results/s8j_gate_<run>.json; `gate_sum` combines them into results/s8j_gate_pc.json. Evaluation only."""
     import early_late_spa as E
     from cobaya.model import get_model
     exp = json.load(open(os.path.join(HERE, "s8j_gate.json")))
+    E._maybe_coupled(r)
+    info = E.make(r)
+    add_s8(info)
+    info.pop("sampler", None); info.pop("output", None)
+    model = get_model(info)
+    m = json.load(open(f"{E.OUT}/cmp_{r}.json"))["minimum"]
+    point = {p: m[p] for p in model.parameterization.sampled_params()}
+    parts = {k: round(-2 * float(v), 3) for k, v in model.loglikes(point, as_dict=True)[0].items()}
+    chi2 = sum(parts.values())
+    out = {"chi2": round(chi2, 3), "expected": exp[r]["chi2_joint_expected"], "parts": parts,
+           "pass": bool(abs(chi2 - exp[r]["chi2_joint_expected"]) <= 0.05)}
+    print(r, out, flush=True)
+    json.dump(out, open(os.path.join(E.OUT, f"s8j_gate_{r}.json"), "w"), indent=1)
+
+
+def gate_sum():
+    res = os.environ.get("TWIST_RESULTS", os.path.join(AEGIS, "cmb-fit", "results"))
     out = {}
     for r in RUNS:
-        E._maybe_coupled(r)
-        info = E.make(r)
-        add_s8(info)
-        info.pop("sampler", None); info.pop("output", None)
-        model = get_model(info)
-        m = json.load(open(f"{E.OUT}/cmp_{r}.json"))["minimum"]
-        point = {p: m[p] for p in model.parameterization.sampled_params()}
-        chi2 = -2 * sum(model.loglikes(point, as_dict=True)[0].values())
-        out[r] = {"chi2": round(chi2, 3), "expected": exp[r]["chi2_joint_expected"],
-                  "pass": abs(chi2 - exp[r]["chi2_joint_expected"]) <= 0.05}
-        print(r, out[r], flush=True)
-    out["all_pass"] = all(v["pass"] for v in out.values() if isinstance(v, dict))
-    json.dump(out, open(os.path.join(E.OUT, "s8j_gate_pc.json"), "w"), indent=1)
+        p = os.path.join(res, f"s8j_gate_{r}.json")
+        out[r] = json.load(open(p)) if os.path.exists(p) else {"pass": False, "missing": True}
+    out["all_pass"] = all(v["pass"] for v in out.values())
+    json.dump(out, open(os.path.join(res, "s8j_gate_pc.json"), "w"), indent=1)
+    print("all_pass", out["all_pass"])
 
 
 def run(name):
@@ -112,4 +123,11 @@ def run(name):
 
 
 if __name__ == "__main__":
-    {"gate": gate, "gate_pc": gate_pc}.get(sys.argv[1], lambda: run(sys.argv[1]))()
+    if sys.argv[1] == "gate":
+        gate()
+    elif sys.argv[1] == "gate_pc":
+        gate_pc(sys.argv[2])
+    elif sys.argv[1] == "gate_sum":
+        gate_sum()
+    else:
+        run(sys.argv[1])

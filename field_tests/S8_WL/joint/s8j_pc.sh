@@ -11,7 +11,11 @@ mkdir -p "$R/lanes"
 say() { echo "$(date '+%F %T') $*" | tee -a "$LOG"; }
 [ -f "$ROOT/field_tests/rules/PREREG_S8_JOINT.md.sha256" ] || { say "rule not locked: nothing runs"; exit 1; }
 say "S8-J gate G-J start (python $PY)"
-(cd "$J" && OMP_NUM_THREADS=4 "$PY" s8_joint_fit.py gate_pc) >> "$LOG" 2>&1 || { say "gate script FAILED (see log): no fits"; exit 1; }
+RUNS="ax_spa_spiraltwist_nlfix ax_spa_spiraltwist_dovekie_nlfix ax_spa_spiraltwist_union3_nlfix ax_spa_lcdm_halofit ax_spa_lcdm_halofit_dovekie ax_spa_lcdm_halofit_union3"
+for r in $RUNS; do   # one process per run (S8J-D2)
+  (cd "$J" && OMP_NUM_THREADS=4 "$PY" s8_joint_fit.py gate_pc "$r") >> "$LOG" 2>&1 || say "gate run $r FAILED (see log)"
+done
+(cd "$J" && "$PY" s8_joint_fit.py gate_sum) >> "$LOG" 2>&1
 "$PY" -c "import json,sys; sys.exit(0 if json.load(open('$R/s8j_gate_pc.json'))['all_pass'] else 1)" \
   || { say "gate G-J FAILED: no fits (results/s8j_gate_pc.json)"; exit 1; }
 say "gate G-J passed"
