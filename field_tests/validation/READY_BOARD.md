@@ -17,13 +17,13 @@ when the data arrive. Ledger rebuilt 8 Nov: 51 locked files, 0 hash problems; 73
 | V1 DESI DR3 BAO | DESI DR3 | not public as of 8 Nov | predictions frozen (`theory/PREDICTIONS_FROZEN_8NOV.md`); scoring rule **locked** (PREREG_V1_DESI_DR3.md, 20:58 UTC) |
 | V2 Euclid / Rubin, lab nulls | Euclid DR1 cosmology | mid-2027 | S8, fσ8, w(z) frozen; nulls list in V2 (lock on Danny's word) |
 | V4 growth, clusters | DESI / Euclid fσ8 | 2027 | fσ8(z) frozen |
+| V3 dark-matter-only force (streams) | published Gaia DR4-era stream analyses | 2027 | prediction locked (PREREG_V3_STREAMS.md): β_KK = 0.053–0.075; scored against published limits |
 | V4 #5 r, n_s | Simons Observatory / LiteBIRD | 2027+ | locked 2 Nov (kill line r < 0.002) |
 
 ## Can run on data we have now, but needs a rule locked first
 | Step | Why it waits |
 |---|---|
-| V3 dark matter vs stars (Sgr, GD-1) | stream download incomplete + membership/scoring rule not locked |
-| V6 posteriors and Bayesian evidence | thresholds rule not locked; PC chains (days): queued after bracket round 2 so the 9 fits are not slowed |
+| V6 posteriors and Bayesian evidence | rule **locked** 21:18 UTC; PC chains (days) start after bracket round 2 |
 | POWER_N n = 1 on AxiCLASS | deferred: AxiCLASS cannot run n = 1 (engine smoke test 8 Nov); needs another engine route |
 
 ## Known caveats carried forward
