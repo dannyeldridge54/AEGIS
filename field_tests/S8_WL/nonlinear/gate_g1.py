@@ -11,12 +11,15 @@ from camb import model
 from halo_model import HMcode_params, PS_nonlin_cold
 from cosmology.overdensities import func_D_z_unnorm_int  # noqa: F401 (import check)
 from axionCAMB_and_lin_PS import load_cosmology
+sys.path.insert(0, HERE if "HERE" in dir() else os.path.dirname(os.path.abspath(__file__)))
+from dewiggle import dewiggle_ratio
+DW = os.environ.get("DEWIGGLE", "1") == "1"   # HMcode-2020 BAO damping of the two-halo term (patched copy)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 P = dict(h=0.6817, omega_b_0=0.02237, omega_d_0=0.1190, ns=0.966, As=2.1e-9)   # near the stored LCDM P+ point
 FLAGS = dict(alpha=True, eta_given=True, one_halo_damping=True, two_halo_damping=True, concentration_param=True,
              full_2h=False)
-out = {"flags": FLAGS, "rows": {}}
+out = {"flags": FLAGS, "dewiggle": DW, "axhm": os.environ.get("AXHM", ""), "rows": {}}
 ok = True
 for z in (0.0, 0.5, 1.0):
     f = os.path.join(HERE, "_g1_in.txt")
@@ -36,6 +39,8 @@ for z in (0.0, 0.5, 1.0):
     kn, _, pn = r.get_matter_power_spectrum(minkh=1e-4, maxkh=100, npoints=600)
     M = np.logspace(cos["M_min"], cos["M_max"], 100)
     hp = HMcode_params.HMCode_param_dic(cos, kh, pk[0])
+    if DW:
+        hp["dw"] = dewiggle_ratio(kh, pk[0], P["h"], P["omega_b_0"] + P["omega_d_0"], P["omega_b_0"], P["ns"])
     nl = PS_nonlin_cold.func_non_lin_PS_matter(M, kh, pk[0], cos, hp, cos["Omega_m_0"], **FLAGS)[0]
     sel = (kh >= 0.01) & (kh <= 10)
     ratio = nl[sel] / pn[0][sel]
@@ -45,5 +50,5 @@ for z in (0.0, 0.5, 1.0):
     print(z, dev, flush=True)
 os.remove(os.path.join(HERE, "_g1_in.txt"))
 out["G1"] = "PASS" if ok else "FAIL"
-json.dump(out, open(os.path.join(HERE, "gate_g1.json"), "w"), indent=1)
+json.dump(out, open(os.path.join(HERE, "gate_g1%s.json" % ("_dw" if DW else "")), "w"), indent=1)
 print(out["G1"])

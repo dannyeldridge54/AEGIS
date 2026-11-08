@@ -17,7 +17,9 @@ nonlinear power of **both** models comes from a halo model built for mixed ultra
 ## Method (fixed when locked)
 - **Nonlinear model:** axionHMcode (Vogt et al. 2022; Dome et al. 2024 calibration, `version = 'dome'`, `alpha = True`,
   `concentration_param = True`, as its README recommends), with `eta_given = True`, `one_halo_damping = True`,
-  `two_halo_damping = True`, `full_2h = False` (the HMcode-2020 set) on **both** sides, commit a85ba2679cba5abe68b4cfd1e49b7a52bdcda424.
+  `two_halo_damping = True`, `full_2h = False` (the HMcode-2020 set) on **both** sides, commit a85ba2679cba5abe68b4cfd1e49b7a52bdcda424, plus one patch
+  (`field_tests/S8_WL/nonlinear/axionHMcode_bao_damping.patch`): the two-halo linear power is BAO-damped as in HMcode-2020
+  (Mead et al. 2020 eqs. 14–16; `dewiggle.py`), the one piece of HMcode-2020 axionHMcode leaves out.
 - **Both sides the same code:** S8-L at its stored best fits (cmp_spiralL*.json: ax fraction = omega_fld / (omega_fld +
   omega_cdm), mass from the stored log10_a_c as in spiral_l_score.py); ΛCDM at its stored best fits with ax fraction 0
   (the model then reduces to HMcode-2020). No cosmology is refitted; only the DES Y3 nuisance parameters are minimised,
@@ -50,3 +52,7 @@ PASSES on at least 2 of 3; **NOT FIXED** otherwise. The halofit result (+14 to +
   lock whether to keep 2% (then the cause is investigated first) or set another line. The same code is used on both
   sides, so a shared offset of this size largely cancels in Δ_WL; that is a reason, not a proof.
 - Execution-only fix: numpy 2 renamed np.trapz; the gate script maps it to np.trapezoid (same function).
+- 8 Nov, cause found (Danny chose "find the cause first"): with the trend removed, the smooth part of the ratio agrees to
+  0.13%; the whole miss is BAO wiggles (±1.9%), because axionHMcode's two-halo term uses the undamped linear power while
+  HMcode-2020 damps the wiggles. Fix: the patch above.
+- 8 Nov, G1 try 3 (patch on): max deviation **0.12%** (z = 0), 0.08% (0.5), 0.06% (1). **G1 PASS** at the unchanged 2% line.

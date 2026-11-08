@@ -1,0 +1,27 @@
+{
+ "flags": {
+  "alpha": true,
+  "eta_given": true,
+  "one_halo_damping": true,
+  "two_halo_damping": true,
+  "concentration_param": true,
+  "full_2h": false
+ },
+ "dewiggle": true,
+ "axhm": "/home/claude/builds/ext/axionHMcode_dw",
+ "rows": {
+  "0": {
+   "max_dev": 0.0011682990916260794,
+   "k_at_max": 2.737761799661083
+  },
+  "0.5": {
+   "max_dev": 0.0007914903585567457,
+   "k_at_max": 0.2604310856476997
+  },
+  "1": {
+   "max_dev": 0.0006092985392676109,
+   "k_at_max": 0.2604310856476997
+  }
+ },
+ "G1": "PASS"
+}

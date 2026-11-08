@@ -1,0 +1,77 @@
+diff -u axionHMcode/halo_model/PS_nonlin_axion.py axionHMcode_dw/halo_model/PS_nonlin_axion.py
+--- axionHMcode/halo_model/PS_nonlin_axion.py	2026-11-08 14:05:46.713400428 -0600
++++ axionHMcode_dw/halo_model/PS_nonlin_axion.py	2026-11-08 14:10:59.985567019 -0600
+@@ -111,12 +111,12 @@
+     #see appendix A in https://arxiv.org/abs/2005.00009
+     if two_halo_damping == True:
+         if full_2h == True:
+-            two_halo_term_cross =  PS_cold* (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))\
++            two_halo_term_cross =  PS_cold * hmcode_dic.get('dw', 1.0)* (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))\
+                                 * factor2_cross[0] \
+                                 * integrate.simpson(integrand_arr_two_halo_2_cross, x = axion_dic['M_int'], axis = 0)[:] \
+                                 / (func_rho_comp_0(cosmo_dic['Omega_ax_0']) * axion_dic['frac_cluster']) 
+         else:
+-            two_halo_term_cross =  PS_cold* (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))
++            two_halo_term_cross =  PS_cold * hmcode_dic.get('dw', 1.0)* (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))
+         
+     else:
+         if full_2h == True:
+@@ -125,7 +125,7 @@
+                                 * integrate.simpson(integrand_arr_two_halo_2_cross, x = axion_dic['M_int'], axis = 0)[:] \
+                                 / (func_rho_comp_0(cosmo_dic['Omega_ax_0']) * axion_dic['frac_cluster']) 
+         else:
+-            two_halo_term_cross =  PS_cold
++            two_halo_term_cross =  PS_cold * hmcode_dic.get('dw', 1.0)
+ 
+     ### axion two halo term ###
+     #two halo damping, if wanted
+@@ -133,18 +133,18 @@
+     #see appendix A in https://arxiv.org/abs/2005.00009
+     if two_halo_damping == True:
+         if full_2h == True:
+-            two_halo_term_ax =  PS_cold * (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))\
++            two_halo_term_ax =  PS_cold * hmcode_dic.get('dw', 1.0) * (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))\
+                             * integrate.simpson(integrand_arr_two_halo_ax, x = axion_dic['M_int'], axis = 0)[:]**2 \
+                             / (func_rho_comp_0(cosmo_dic['Omega_ax_0']) * axion_dic['frac_cluster'])**2 
+         else:
+-            two_halo_term_ax =  PS_cold * (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))
++            two_halo_term_ax =  PS_cold * hmcode_dic.get('dw', 1.0) * (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))
+     else:
+         if full_2h == True:
+             two_halo_term_ax =  PS_cold\
+                             * integrate.simpson(integrand_arr_two_halo_ax, x = axion_dic['M_int'], axis = 0)[:]**2 \
+                             / (func_rho_comp_0(cosmo_dic['Omega_ax_0']) * axion_dic['frac_cluster'])**2 
+         else:
+-            two_halo_term_ax =  PS_cold
++            two_halo_term_ax =  PS_cold * hmcode_dic.get('dw', 1.0)
+     
+     ##########################################
+     ############# Cross term #################
+diff -u axionHMcode/halo_model/PS_nonlin_cold.py axionHMcode_dw/halo_model/PS_nonlin_cold.py
+--- axionHMcode/halo_model/PS_nonlin_cold.py	2026-11-08 14:05:46.713400428 -0600
++++ axionHMcode_dw/halo_model/PS_nonlin_cold.py	2026-11-08 14:10:59.985183306 -0600
+@@ -66,9 +66,9 @@
+                                 * ( 1 - integrate.simpson(M[:, None] * halo_mass_func_arr[:, None] * halo_bias_arr[:, None], x = M, axis = 0) / func_rho_comp_0(Omega_0)) 
+             factor2 = integrate.simpson(integrand_arr_two, x = M, axis = 0) / func_rho_comp_0(Omega_0) + summand2 
+             
+-            two_halo = PS * factor2[0]**2 * (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))
++            two_halo = PS * hmcode_dic.get('dw', 1.0) * factor2[0]**2 * (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))
+         else:
+-            two_halo = PS * (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))
++            two_halo = PS * hmcode_dic.get('dw', 1.0) * (1-hmcode_dic['f'] * (k/hmcode_dic['k_d'])**hmcode_dic['n_d']/(1+(k/hmcode_dic['k_d'])**hmcode_dic['n_d']))
+ 
+     else:
+         if full_2h == True:
+@@ -80,9 +80,9 @@
+                                 * ( 1 - integrate.simpson(M[:, None] * halo_mass_func_arr[:, None] * halo_bias_arr[:, None], x = M, axis = 0) / func_rho_comp_0(Omega_0)) 
+             factor2 = integrate.simpson(integrand_arr_two, x = M, axis = 0) / func_rho_comp_0(Omega_0) + summand2 
+             
+-            two_halo = PS * factor2[0]**2
++            two_halo = PS * hmcode_dic.get('dw', 1.0) * factor2[0]**2
+         else:
+-            two_halo = PS
++            two_halo = PS * hmcode_dic.get('dw', 1.0)
+     #smooth the transition
+     if alpha == True:
+         k_piv = 0.5*10**0 # h/cMpc
+Common subdirectories: axionHMcode/halo_model/__pycache__ and axionHMcode_dw/halo_model/__pycache__
