@@ -1,0 +1,70 @@
+{
+ "rule": "field_tests/rules/PREREG_UNIFY_BG.md",
+ "verdict": "FAIL",
+ "rows": [
+  {
+   "variant": "A",
+   "samples": 20000,
+   "polished": 40,
+   "best_miss": 2.8134,
+   "best_params(lnA, lnL, th_i, phi_i[, kappa])": [
+    -124.9062,
+    3.0545,
+    1.0088,
+    34.3258
+   ],
+   "best_point": {
+    "f_peak": 0.13924,
+    "z_peak": 100000.0,
+    "peak_in_window": false,
+    "f_1090": 0.0,
+    "f_max_20_500": 0.00025,
+    "w0": -1.0,
+    "Om0": 0.30079,
+    "phi_today": 5e-05,
+    "F_today": 28398.07852,
+    "F_at_peak": 13480.07745
+   },
+   "requirements": {
+    "R2_peak": false,
+    "R3_fades": true,
+    "R4_quiet": true,
+    "R5_late": true
+   },
+   "ALL_MET": false
+  },
+  {
+   "variant": "B",
+   "samples": 20000,
+   "polished": 40,
+   "best_miss": 2.0199,
+   "best_params(lnA, lnL, th_i, phi_i[, kappa])": [
+    4.0532,
+    30.927,
+    2.3458,
+    10.7098,
+    -1.1335
+   ],
+   "best_point": {
+    "f_peak": 0.04171,
+    "z_peak": 45224.73114,
+    "peak_in_window": false,
+    "f_1090": 0.00094,
+    "f_max_20_500": 0.00039,
+    "w0": -0.81043,
+    "Om0": 0.32943,
+    "phi_today": 12.57577,
+    "F_today": 0.124,
+    "F_at_peak": 0.14596
+   },
+   "requirements": {
+    "R2_peak": false,
+    "R3_fades": true,
+    "R4_quiet": true,
+    "R5_late": true
+   },
+   "ALL_MET": false
+  }
+ ],
+ "reading": "PASS: some setting of the free scales and starting values meets R2-R5 -> write and lock the step-2 data test. FAIL: none found in the locked search box; this does not prove impossibility, and the closest point and its missed requirements are reported. Neither is evidence about data."
+}

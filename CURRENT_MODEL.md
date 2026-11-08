@@ -32,6 +32,7 @@ doi:10.5281/zenodo.23899237).
 | **S8-WL Part 1**, DES Y6 shear (S8 0.798) | Locked Twist 2.86; Spiral 4.17 / 4.87 / 6.97 | **OVER** for all (limit 2); reported beside the verdict |
 | **SF2** does the BI angle matter? (β = 0 vs free; Pantheon+ / Dovekie / Union3) | removing the angle costs Δχ² +8.53 / +8.73 / +11.70; β = 0 alone vs ΛCDM −0.70 / −2.72 / −1.19 | **ANGLE NEEDED** (7 Nov) |
 | **FP** Fingerprint (Holst) vs cosine (Nieh–Yan), same engine | Δχ²_eff = +0.86 (sinh worse) | **cannot tell apart yet**; no coupling preference |
+| **UB-1** can one coupled axion–dilaton do both jobs? (background, no data) | locked code: FAIL (A and B); D1 integrator fix: **B PASS** (κ = −0.145: bump 3.2% at z ≈ 5,800, quiet, w0 = −0.997, Ω_m 0.295), A FAIL | **PASS only with the extra slope κ (D1)**; the derived potential (A) fails; dilaton barely moves (|φ| 12.4 → 12.1) |
 | Potential power n = 3 vs 2, 4 | n = 2: no better than ΛCDM; n = 4: tie | **n = 3 stays** |
 
 **Failed and dropped (kept on record):** N = 9 width on SPT-3G; silver-ratio angle; pure torsion width F = √(3/2) M_Pl
@@ -41,7 +42,6 @@ unification with constant W.
 ## Open (in progress)
 | Test | State |
 |---|---|
-| **UB-1** can the coupled axion–dilaton do both jobs? (background only) | rule locked 7 Nov 23:45 UTC; the PC queue line did not fire, so it is running in the cloud container (light, ~15 min); locked version + deviation D1 (integrator fix), both reported |
 | **UB-2** unified field vs data (draft rule; code `cmb-fit/ub2_fit.py`) | engine gates G1–G3 + 3 w0–wa references queued with the bracket; locks only if UB-1 passes |
 | BR bracket (early-field variants) | 2 of 6 done; the other 4 start on the PC after UB-1 |
 | **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; PC, needs CosmoSIS |
