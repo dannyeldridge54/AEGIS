@@ -191,17 +191,19 @@ def run(model, run_name):
     open(ini, "w").write(PIPE.format(sampler=os.environ.get("S8WL_SAMPLER", "maxlike"), out=tag, values=vals, module=os.path.join(HERE, "aegis_camb.py"), model=model,
                                      point=os.path.join(RES, f"cmp_{run_name}.json")))
     env = dict(os.environ, AEGIS_DIR=AEGIS)
-    subprocess.run(["cosmosis", ini], cwd=CSL, env=env, check=True)
+    if not os.environ.get("S8WL_REUSE") or not os.path.exists(tag + ".txt"):
+        subprocess.run(["cosmosis", ini], cwd=CSL, env=env, check=True)
     head, row = None, None
     for line in open(tag + ".txt"):
-        if line.startswith("#") and "post" in line:
+        if head is None and line.startswith("#") and not line.startswith("##"):
             head = line.lstrip("#").split()
         elif not line.startswith("#") and line.strip():
             row = [float(x) for x in line.split()]
     d = dict(zip(head, row))
     post = [v for k, v in d.items() if k.endswith("post")][0]
-    chi = [v for k, v in d.items() if "2pt_chi2" in k]
-    return {"run": run_name, "chi2_WL": round(-2 * post, 3), "data_chi2": round(chi[0], 3) if chi else None}
+    chi = [v for k, v in d.items() if "2pt_chi2" in k.lower()]
+    return {"run": run_name, "chi2_WL": round(-2 * post, 3), "data_chi2": round(chi[0], 3) if chi else None,
+            "S8": round(d.get("COSMOLOGICAL_PARAMETERS--SIGMA_8", float("nan")) * math.sqrt(json.load(open(os.path.join(RES, f"cmp_{run_name}.json")))["minimum"].get("omegam", float("nan")) / 0.3), 4)}
 
 
 def main():

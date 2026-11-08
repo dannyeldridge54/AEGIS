@@ -14,9 +14,13 @@ Built 7 Nov 2026 (night). Code: `S8_WL/part2/` (`aegis_camb.py` CosmoSIS module,
    optimum; the pure data χ² is reported beside it.
 4. **Run:** `CSL_DIR=<standard library> python run_part2.py` → `S8_WL/results/part2_desy3.json`.
 
-**Not covered yet: the Spiral pairs.** The Spiral needs the coupled-dark-matter matter power spectrum from the AxiCLASS
-coupled build, which CAMB cannot produce. Plan: write P(k, z) and distances from AxiCLASS (PC, WSL) to files and load
-them with a small CosmoSIS module in place of `aegis_camb.py`. Until then those rows are NO VERDICT, as the rule says.
+**Spiral pairs.** The Spiral needs the coupled-dark-matter matter power spectrum from the AxiCLASS coupled build, which
+CAMB cannot produce and which exists only on the PC (WSL). `axiclass_pk.py` writes P(k, z) (linear and halofit), distances
+and growth of a stored AxiCLASS best fit, with the fit's own settings, on the same (z, k) grids as the CAMB runs
+(`pk_grids.npz`), to `results/pk_<run>.npz`; `load_pk.py` then feeds the file to the same DES Y3 pipeline in place of a
+Boltzmann code. Loader check (7 Nov): the ΛCDM P(k) written out and read back through `load_pk.py` gives exactly the same
+likelihood as the CAMB module (3007.047 = 3007.047). Runs: Spiral `ax_spa_spiraltwist[_dovekie|_union3]_nlfix` vs
+`ax_spa_lcdm_halofit[_dovekie|_union3]`, queued in START_BRACKET.bat (WSL step), then minimised here.
 
 **Fixes logged while building (no rule change):** CAMB's `get_BAO` re-initialises EarlyQuintessence (Fortran
 "already allocated"); `aegis_camb.py` computes the same four BAO quantities from the existing background instead.
