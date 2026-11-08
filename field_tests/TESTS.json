@@ -159,7 +159,7 @@
    "title": "UB-2 lands inside the UB-1 passing region (prediction test)",
    "where": "scored from UB-2",
    "rule": "field_tests/rules/PREREG_UB2_PREDICTIONS.md",
-   "locked": "pending (before any UB-2 result)",
+   "locked": "2026-11-08T05:33:24Z",
    "runs": [],
    "scorer": "ub_p_score.py"
   }

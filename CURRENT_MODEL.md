@@ -34,6 +34,7 @@ doi:10.5281/zenodo.23899237).
 | **FP** Fingerprint (Holst) vs cosine (Nieh–Yan), same engine | Δχ²_eff = +0.86 (sinh worse) | **cannot tell apart yet**; no coupling preference |
 | **UB-1** can one coupled axion–dilaton do both jobs? (background, no data) | locked code: FAIL (A and B); D1 integrator fix: **B PASS** (κ = −0.145: bump 3.2% at z ≈ 5,800, quiet, w0 = −0.997, Ω_m 0.295), A FAIL | **PASS only with the extra slope κ (D1)**; the derived potential (A) fails; dilaton barely moves (|φ| 12.4 → 12.1) |
 | **UB-1b** derived potential with W = W0 e^{bΦ} (b free), background only | closest point misses by 0.038 (peak at z = 1,930, just below 2,000; Ω_m = 0.330, just above 0.33), b = 2.80 | **FAIL** (D1b-1: same search run in parallel) |
+| **UB-P** does UB-2 land where UB-1 predicted? | **locked 8 Nov 05:33 UTC, before any UB-2 result**: F 0.057–0.177, z_peak 2500–6000, f_peak 0.031–0.125, w0 −1.000 to −0.974, κ −0.42 to 0.15 | pending (scored from UB-2) |
 | Potential power n = 3 vs 2, 4 | n = 2: no better than ΛCDM; n = 4: tie | **n = 3 stays** |
 
 **Failed and dropped (kept on record):** N = 9 width on SPT-3G; silver-ratio angle; pure torsion width F = √(3/2) M_Pl

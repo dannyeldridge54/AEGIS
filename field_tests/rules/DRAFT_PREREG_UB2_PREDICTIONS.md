@@ -1,3 +1,5 @@
+> **Superseded by the locked `PREREG_UB2_PREDICTIONS.md` (8 Nov).**
+
 # DRAFT pre-registration UB-P: what the joined field predicts for UB-2 (from the UB-1 map)
 
 **Status: DRAFT, numbers pending.** Written 7 Nov 2026, 22:26 CT with AI assistance at Danny's request ("prep").
