@@ -34,3 +34,6 @@ deferred (both engines hang).
 - V-PRED: 2 Nov locks cover the Late and Coupled Twist only. **Gap: lock predictions for the Spiral + Locked Twist (and
   S8-J/S8-L once scored) before DESI DR3 (not out) and Euclid DR1 cosmology (mid-2027).**
 - V-CLUSTER, V-LYA, V-CODE: not started (V-CODE partly covered by existing mirrors).
+
+## Per-step folders (8 Nov)
+Prep, data collected and to-do for each scheduled step: `field_tests/validation/V1..V5_*.md`; running log `field_tests/validation/DATA_LOG.md` (each check-in appends what it finds).
