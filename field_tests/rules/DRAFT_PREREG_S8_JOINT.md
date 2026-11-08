@@ -1,3 +1,5 @@
+> **Superseded by the locked `PREREG_S8_JOINT.md` (8 Nov).**
+
 # DRAFT pre-registration S8-J: the Spiral refit with weak lensing inside the fit
 
 **Status: DRAFT, not locked, no hash.** Written 8 Nov 2026 with AI assistance at Danny's request ("set up the tests").
