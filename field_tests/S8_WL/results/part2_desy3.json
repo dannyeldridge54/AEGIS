@@ -381,6 +381,120 @@
      -6485.753
     ]
    }
+  },
+  "S8-L light angle, Pantheon+": {
+   "model": {
+    "run": "spiralL",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_spiralL_round3_own_best.ini",
+    "chi2_WL": -6472.076,
+    "data_chi2": 246.306,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_round3_own_best.ini",
+    "chi2_WL": -6487.82,
+    "data_chi2": 234.372,
+    "S8": NaN
+   },
+   "Delta_WL": 15.74,
+   "reading": "OVER",
+   "tries": {
+    "spiralL": [
+     -6464.978,
+     -6466.274,
+     -6471.471,
+     -6471.998,
+     -6463.29,
+     -6472.076,
+     -6462.193
+    ],
+    "ax_spa_lcdm_halofit": [
+     -6484.205,
+     -6484.22,
+     -6487.33,
+     -6487.796,
+     -6486.284,
+     -6487.82,
+     -6485.464
+    ]
+   }
+  },
+  "S8-L light angle, DES-Dovekie": {
+   "model": {
+    "run": "spiralL_dovekie",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_spiralL_dovekie_round3_cross_best.ini",
+    "chi2_WL": -6471.577,
+    "data_chi2": 246.642,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_dovekie",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_dovekie_round3_own_best.ini",
+    "chi2_WL": -6487.026,
+    "data_chi2": 235.568,
+    "S8": NaN
+   },
+   "Delta_WL": 15.45,
+   "reading": "OVER",
+   "tries": {
+    "spiralL_dovekie": [
+     -6470.499,
+     -6471.506,
+     -6471.454,
+     -6471.569,
+     -6471.504,
+     -6471.573,
+     -6471.577
+    ],
+    "ax_spa_lcdm_halofit_dovekie": [
+     -6484.428,
+     -6484.453,
+     -6485.54,
+     -6486.096,
+     -6485.329,
+     -6487.026,
+     -6487.01
+    ]
+   }
+  },
+  "S8-L light angle, Union3": {
+   "model": {
+    "run": "spiralL_union3",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_spiralL_union3_round2_own_best.ini",
+    "chi2_WL": -6471.889,
+    "data_chi2": 246.288,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_union3",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8l_run/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_union3_round3_own_best.ini",
+    "chi2_WL": -6486.361,
+    "data_chi2": 236.167,
+    "S8": NaN
+   },
+   "Delta_WL": 14.47,
+   "reading": "OVER",
+   "tries": {
+    "spiralL_union3": [
+     -6471.868,
+     -6471.888,
+     -6470.899,
+     -6471.889,
+     -6471.525,
+     -6471.889,
+     -6471.77
+    ],
+    "ax_spa_lcdm_halofit_union3": [
+     -6483.896,
+     -6484.061,
+     -6486.179,
+     -6486.359,
+     -6486.354,
+     -6486.361,
+     -6486.135
+    ]
+   }
   }
  }
 }

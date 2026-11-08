@@ -1,0 +1,13 @@
+S8-L P(k) diagnostic (8 Nov, reported, not a verdict): ratio of S8-L to plain Spiral and to LCDM, z = 0, Pantheon+ runs
+k[h/Mpc]  lin L/SF  lin L/LCDM  nl L/SF  nl L/LCDM
+   0.010     1.002       0.982    1.004      0.984
+   0.050     1.000       1.003    1.055      1.059
+   0.101     0.997       1.012    1.146      1.165
+   0.198     0.976       0.994    1.207      1.237
+   0.498     0.798       0.818    1.033      1.067
+   1.001     0.678       0.698    0.898      0.929
+   3.017     0.579       0.597    0.726      0.751
+   9.949     0.565       0.583    0.691      0.716
+  29.982     0.561       0.579    0.726      0.753
+Reading: linear power matches the Spiral to 0.3% at k=0.1 but the halofit nonlinear power is ~15% higher there;
+halofit is not calibrated for an ultralight-field share, so the Part 2 numbers for S8-L rest on an unvalidated nonlinear model.
