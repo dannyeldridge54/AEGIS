@@ -301,8 +301,9 @@ def gates():
                  "diff": round(c_ub - lc["chi2"], 3), "pass": abs(c_ub - lc["chi2"]) <= 1.0}
     out["G3"] = g3(lc["H0"], lc["ombh2"], lc["omch2"])
     out["all_pass"] = all(v["pass"] for v in out.values() if isinstance(v, dict))
-    json.dump(out, open(os.path.join(C.RESULTS, "ub2_gates.json"), "w"), indent=1)
-    print(json.dumps(out, indent=1))
+    conv = lambda o: o.item() if hasattr(o, "item") else str(o)     # numpy bool/float -> JSON
+    json.dump(out, open(os.path.join(C.RESULTS, "ub2_gates.json"), "w"), indent=1, default=conv)
+    print(json.dumps(out, indent=1, default=conv))
 
 
 def g3(H0, ombh2, omch2, par=None, var="B"):

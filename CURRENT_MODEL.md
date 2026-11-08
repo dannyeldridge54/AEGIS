@@ -42,7 +42,7 @@ unification with constant W.
 ## Open (in progress)
 | Test | State |
 |---|---|
-| **UB-2** unified field vs data (draft rule; code `cmb-fit/ub2_fit.py`) | engine gates G1–G3 + 3 w0–wa references queued with the bracket; locks only if UB-1 passes |
+| **UB-2** unified field vs data (draft rule) | engine: two-field CAMB module built; gates **G1 Δχ² 0.000, G2 Δχ² 0.000, G3 H to 1e-6: ALL PASS** (7 Nov, cloud copy of the same Planck/DESI/SN data); next: Danny's 4 choices → lock → fits on the PC |
 | BR bracket (early-field variants) | 2 of 6 done; the other 4 start on the PC after UB-1 |
 | **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; PC, needs CosmoSIS |
 | Stage-3 P-ACT bracket | after BR |

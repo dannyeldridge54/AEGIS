@@ -1,0 +1,19 @@
+{
+ "G1": {
+  "chi2_EarlyQuintessence": 2428.825,
+  "chi2_two_field_module": 2428.825,
+  "diff": -0.0,
+  "pass": true
+ },
+ "G2": {
+  "chi2_LCDM_stored": 2433.523,
+  "chi2_UB_limit": 2433.523,
+  "diff": -0.0,
+  "pass": true
+ },
+ "G3": {
+  "max_rel_H_diff": 9.475371141043354e-07,
+  "pass": true
+ },
+ "all_pass": true
+}
