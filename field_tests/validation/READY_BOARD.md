@@ -6,7 +6,8 @@ when the data arrive. Ledger rebuilt 8 Nov: 51 locked files, 0 hash problems; 73
 ## Running now
 | Item | Where | Waits on |
 |---|---|---|
-| Bracket round 2 (9 fits) | PC | started 14:57 CT (all 9 logs growing); overnight |
+| KiDS-Legacy full-shear test (locked; gate passed 124.266 vs 124.291) | cloud | 9 pairs, S8-J first; long (about 1 day), resumes in 2 h chunks |
+| Bracket round 3 (winner θ 2.777 F9: P-ACT, S8 A/B; reported only) | PC | started 17:06 CT |
 | Gaia stream download for V3 | PC collector | ESA rate limits (HTTP 429); retries daily on its own |
 | Release watch (DESI DR3, Euclid DR1, Gaia DR4, SO) | PC collector, daily | new papers (Gaia DR4 hits so far are pre-release papers) |
 
@@ -32,3 +33,5 @@ when the data arrive. Ledger rebuilt 8 Nov: 51 locked files, 0 hash problems; 73
 ## Done today
 - V7 look-elsewhere (locked, scored): N = 64; Spiral 0.7–1.7σ global, S8-L 1.1–1.5σ global → NOT SIGNIFICANT AFTER LOOK-ELSEWHERE.
 - S8-LNL (locked, scored): Δ_WL +2.65 / +3.21 / +2.57 → NOT FIXED on the full DES Y3 shear.
+- Bracket round 2: winner θ 2.777 F9 (beats the locked fit by 5.69 via the AIC credit; raw χ² +0.31).
+- Locked Twist DESI DR3 forecasts frozen (CAMB, σ8 gate passed).
