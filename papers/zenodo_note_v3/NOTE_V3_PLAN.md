@@ -17,7 +17,7 @@ Verdicts marked ⟨…⟩ are filled from the locked scorers' output only; nothi
    Interpretation with Giarè & Sakstein (no steeper middle phase, no drain).
 5. **Weak lensing** (new) — S8-WL Part 1 (DES Y6 NLA 0.798; TATT 0.783 also stated); Part 2 full DES Y3: Locked Twist
    +1.14 PASSES, Spiral +2.57 / +3.47 / +3.99 OVER, UB-2 −0.37 / 0.00 / +0.14 PASSES; survey split (DES-driven,
-   KiDS-Legacy mild); S8-J ⟨verdict, deltas, lensing cost⟩; S8-L light angle ⟨verdict, mass, penalties⟩.
+   KiDS-Legacy mild); S8-J SURVIVES LENSING (Δχ² −7.32 / −8.14 / −8.23; DES Y6 cost +0.28 / +0.88 / +1.64), Part 2 MIXED (Δ_WL +0.79 / +2.01 / +1.38, Dovekie OVER by 0.01); S8-L light angle BEATS ΛCDM, LENSING FIXED (Δχ² −12.74 / −13.68 / −14.61; S8 0.817–0.819; penalties −0.10 / +0.12 / +0.45; ΔAIC vs Spiral −1.52 / −0.24 / +0.27; m ≈ 1.3–1.5×10⁻²⁵ eV), Part 2 running.
 6. **Quantum side** (new) — Nieh–Yan instantons give a cosine (Kaul & Sengupta), not n = 3; instanton-action target
    S ≈ 240 for the S8-L mass window; starting-angle tension (≈0.03 rad late share vs 2.4–2.8 rad early).
 7. **Predictions locked before the data** — v2's list plus every rule locked since, each with its SHA-256 and time
@@ -31,7 +31,7 @@ Scripts and result JSONs behind every number above (scorers, gates, fit drivers,
 checked against the repo before upload, as in v2.
 
 ## Before publishing (checklist)
-- [ ] S8-J and S8-L scored; Part 2 reruns done or marked pending.
+- [x] S8-J and S8-L scored (8 Nov); S8-J Part 2 done; S8-L Part 2 pending.
 - [ ] All ⟨…⟩ filled from scorer output; no number typed by hand.
 - [ ] PDF built and read through once.
 - [ ] Danny's word to publish.
