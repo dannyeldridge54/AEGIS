@@ -1,6 +1,6 @@
-# V6: posteriors and Bayesian evidence, Spiral vs ΛCDM (DRAFT, not locked)
+# V6: posteriors and Bayesian evidence, Spiral vs ΛCDM 
 
-**Status: DRAFT** (8 Nov 2026). Runs on the PC after bracket round 2 finishes, so the 9 fits are not slowed.
+**Status: LOCKED** on Danny's word (8 Nov 2026: "we don't need the data in order to lock it and do it", after "Get everything going by yourself"). No chain had been run. Runs on the PC after bracket round 2 finishes, so the 9 fits are not slowed.
 
 ## Question
 With full posteriors instead of best fits, how strongly do the data prefer the Spiral (and S8-L) over ΛCDM once the
