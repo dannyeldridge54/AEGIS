@@ -77,7 +77,7 @@ def table_rows(path, origin):
 
 def classify(v):
     t = v.upper()
-    for k, lab in (("FAIL", "fail"), ("EXCLUDED", "fail"), ("DOES NOT", "fail"), ("NOT COMPETITIVE", "fail"),
+    for k, lab in (("NOT FIXED", "fail"), ("MIXED", "mixed"), ("FAIL", "fail"), ("EXCLUDED", "fail"), ("DOES NOT", "fail"), ("NOT COMPETITIVE", "fail"),
                    ("DISFAVOURED", "fail"), ("OVER", "fail"), ("LOSES", "fail"), ("NO LOCK", "fail"),
                    ("RUNNING", "open"), ("OPEN", "open"), ("NO VERDICT", "open"), ("MIXED", "mixed"), ("TIE", "neutral"),
                    ("NEUTRAL", "neutral"), ("CANNOT TELL", "neutral"), ("WEAK", "neutral"), ("MILD", "neutral"),

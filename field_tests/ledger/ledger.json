@@ -905,7 +905,7 @@
    "verdict": "**vs \u039bCDM MIXED; vs w0\u2013wa NOT COMPETITIVE; DOES NOT UNIFY** (8 Nov)",
    "result": "\u0394\u03c7\u00b2 vs \u039bCDM \u22120.69 / \u22125.96 / \u22121.93; vs w0\u2013wa +8.42 / +5.87 / +13.09 (\u0394AIC +12.4 / +9.9 / +17.1); stored Spiral pieces \u22129.22 / \u221211.44 / \u221212.88",
    "source": "CURRENT_MODEL",
-   "class": "fail"
+   "class": "mixed"
   },
   {
    "id": "",
@@ -945,7 +945,7 @@
    "verdict": "**NOT FIXED** (0 of 3 pass). Close to the plain Spiral's +2.6 to +4.0 (that one used halofit)",
    "result": "\u0394_WL +2.65 / +3.21 / +2.57 (P+ / Dovekie / Union3; limit +2; 7 tries each side). The halofit run (+15.74 / +15.45 / +14.47) was an artifact of the wrong nonlinear model; it stays on record",
    "source": "CURRENT_MODEL",
-   "class": "pass"
+   "class": "fail"
   },
   {
    "id": "",
@@ -976,7 +976,7 @@
    "verdict": "**MIXED: PASSES 2 of 3, Dovekie OVER by 0.01** (8 Nov; minimiser spread between tries ~1 unit, reported as is)",
    "result": "\u0394_WL +0.79 / +2.01 / +1.38 (P+ / Dovekie / Union3; limit +2)",
    "source": "CURRENT_MODEL",
-   "class": "fail"
+   "class": "mixed"
   },
   {
    "id": "",
@@ -987,11 +987,11 @@
   }
  ],
  "counts": {
-  "pass": 20,
-  "fail": 17,
+  "pass": 19,
+  "fail": 16,
   "neutral": 10,
   "open": 4,
   "reported": 23,
-  "mixed": 1
+  "mixed": 3
  }
 }
