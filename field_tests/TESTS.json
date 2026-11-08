@@ -162,6 +162,127 @@
    "locked": "2026-11-08T05:33:24Z",
    "runs": [],
    "scorer": "ub_p_score.py"
+  },
+  {
+   "id": "MAP",
+   "title": "Full equation map: every term of the Twist's action marked derived / chosen / fitted",
+   "where": "cloud, paper work",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "first: the foundation for the rest"
+  },
+  {
+   "id": "V-ALPHA",
+   "title": "No drift of the constants of nature (dilaton touches only dark matter)",
+   "where": "cloud, calculation vs published quasar and atomic-clock limits",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "cheap"
+  },
+  {
+   "id": "V-GW",
+   "title": "Gravitational-wave speed equals light speed (GW170817)",
+   "where": "cloud, calculation",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "cheap"
+  },
+  {
+   "id": "V-BBN",
+   "title": "Early field adds no extra radiation at nucleosynthesis (N_eff, D/H, helium)",
+   "where": "cloud, calculation from stored best fits",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "cheap"
+  },
+  {
+   "id": "V-BIREF",
+   "title": "CMB birefringence: how much the BI angle twists CMB polarisation",
+   "where": "cloud, calculation vs Planck/ACT limits",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "cheap"
+  },
+  {
+   "id": "V-FIFTH",
+   "title": "Dark-matter-only fifth force vs galaxy and cluster dynamics (Bullet Cluster, tidal streams)",
+   "where": "cloud, calculation vs published bounds",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "cheap"
+  },
+  {
+   "id": "V-PRED",
+   "title": "Predictions locked now for future data (DESI DR3, Euclid, Rubin, Simons Observatory)",
+   "where": "cloud, computed from stored best fits, then locked",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "cheap, highest weight"
+  },
+  {
+   "id": "V-FS8",
+   "title": "Growth rate f*sigma8 from redshift-space distortions (DESI, BOSS)",
+   "where": "PC fits",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "medium"
+  },
+  {
+   "id": "V-CLUSTER",
+   "title": "S8 from cluster counts (eROSITA, SPT clusters), a third independent method",
+   "where": "PC fits or published likelihood",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "medium"
+  },
+  {
+   "id": "V-LYA",
+   "title": "Lyman-alpha forest: the light angle's small-scale cutoff (only if S8-L works)",
+   "where": "PC/cloud, needs Lyman-alpha likelihood",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "after S8-L"
+  },
+  {
+   "id": "V-CODE",
+   "title": "Second independent code: same numbers in CLASS and CAMB for every headline result",
+   "where": "cloud + PC",
+   "rule": null,
+   "locked": null,
+   "runs": [],
+   "scorer": null,
+   "status": "planned (added 8 Nov at Danny's request; runs after the current S8 tests and the bracket; each needs its own locked rule before any data)",
+   "cost": "medium"
   }
  ]
 }
