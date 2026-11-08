@@ -1,0 +1,44 @@
+{
+ "rule": "PREREG_S8_WL.md Part 2",
+ "data": "DES Y3 cosmic shear (CosmoSIS standard library, fiducial cuts)",
+ "rows": {
+  "Locked Twist (Planck+DESI+Pantheon+)": {
+   "model": {
+    "run": "edelockP",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_edelockP_round3_cross_best.ini",
+    "chi2_WL": -6485.823,
+    "data_chi2": 236.624,
+    "S8": 0.8252
+   },
+   "LCDM": {
+    "run": "lcdmP",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_lcdmP_round3_own_best.ini",
+    "chi2_WL": -6486.965,
+    "data_chi2": 235.632,
+    "S8": 0.8114
+   },
+   "Delta_WL": 1.14,
+   "reading": "PASSES",
+   "tries": {
+    "edelockP": [
+     -6483.868,
+     -6483.923,
+     -6484.205,
+     -6484.324,
+     -6485.709,
+     -6485.797,
+     -6485.823
+    ],
+    "lcdmP": [
+     -6484.26,
+     -6485.182,
+     -6485.03,
+     -6486.884,
+     -6485.663,
+     -6486.965,
+     -6486.783
+    ]
+   }
+  }
+ }
+}

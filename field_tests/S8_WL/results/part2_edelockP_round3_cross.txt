@@ -1,0 +1,268 @@
+#intrinsic_alignment_parameters--a1	intrinsic_alignment_parameters--a2	intrinsic_alignment_parameters--alpha1	intrinsic_alignment_parameters--alpha2	intrinsic_alignment_parameters--bias_ta	shear_calibration_parameters--m1	shear_calibration_parameters--m2	shear_calibration_parameters--m3	shear_calibration_parameters--m4	wl_photoz_errors--bias_1	wl_photoz_errors--bias_2	wl_photoz_errors--bias_3	wl_photoz_errors--bias_4	COSMOLOGICAL_PARAMETERS--SIGMA_8	DATA_VECTOR--2PT_CHI2	prior	like	post
+#sampler=maxlike
+#n_varied=13
+#module_0=consistency 1.1
+#module_1=camb #name from ini file
+#module_2=fast_pt 1
+## CITE https://iopscience.iop.org/article/10.1088/1475-7516/2016/09/015
+## CITE https://doi.org/10.1088/1475-7516/2017/02/030
+#module_3=load_nz_fits 1
+#module_4=photoz_bias 1
+#module_5=tatt 1
+## CITE https://journals.aps.org/prd/abstract/10.1103/PhysRevD.100.103506
+#module_6=project_2d 1.0
+#module_7=add_intrinsic 1.0
+#module_8=cl_to_xi_fullsky 1
+#module_9=shear_bias 1
+#module_10=2pt_like #name from ini file
+#timestamp=2026-11-08T00:20:27.998820
+#platform=Linux-6.18.44-fc-v310-x86_64-with-glibc2.39
+#platform_version=#1 SMP @0
+#uuid=d5c1ecd1b390423c9cfe6f344c5d48f1
+#cosmosis_git_version=
+#csl_git_version=
+#cwd_git_version=ff599a198b5bec7f007ef02ba4eaf0c18590348f
+#tolerance=0.001
+#maxiter=6000
+#output_ini=/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_edelockP_round3_cross_best.ini
+#output_covmat=
+#output_block=
+#method=Nelder-Mead
+#max_posterior=True
+#repeats=1
+#reiterations=1
+#nsteps=1
+#start_method=
+## START_OF_PARAMS_INI
+## [DEFAULT]
+## 2pt_file = likelihood/des-y3/2pt_NG_final_2ptunblind_02_24_21_wnz_covupdate.v2.fits
+## 
+## [runtime]
+## sampler = maxlike
+## verbosity = quiet
+## 
+## [maxlike]
+## method = Nelder-Mead
+## tolerance = 1e-3
+## maxiter = 6000
+## output_ini = /home/claude/aegis/field_tests/S8_WL/part2/../results/part2_edelockP_round3_cross_best.ini
+## max_posterior = T
+## 
+## [output]
+## filename = /home/claude/aegis/field_tests/S8_WL/part2/../results/part2_edelockP_round3_cross.txt
+## format = text
+## 
+## [pipeline]
+## modules = consistency camb fast_pt fits_nz source_photoz_bias IA pk_to_cl add_intrinsic 2pt_shear shear_m_bias 2pt_like
+## values = /home/claude/aegis/field_tests/S8_WL/part2/../results/part2_edelockP_round3_cross_values.ini
+## priors = examples/des-y3-priors.ini
+## extra_output = cosmological_parameters/sigma_8 data_vector/2pt_chi2
+## timing = F
+## debug = F
+## 
+## [consistency]
+## file = utility/consistency/consistency_interface.py
+## 
+## [camb]
+## file = /home/claude/aegis/field_tests/S8_WL/part2/aegis_camb.py
+## aegis_model = edelock
+## aegis_point = /home/claude/aegis/cmb-fit/results/cmp_edelockP.json
+## mode = power
+## lmax = 2500
+## feedback = 0
+## accuracyboost = 1.1
+## do_tensors = F
+## do_lensing = F
+## nonlinear = pk
+## halofit_version = takahashi
+## zmin_background = 0.
+## zmax_background = 4.
+## nz_background = 401
+## kmin = 1e-4
+## kmax = 50.0
+## kmax_extrapolate = 500.0
+## nk = 700
+## 
+## [fits_nz]
+## file = number_density/load_nz_fits/load_nz_fits.py
+## nz_file = %(2PT_FILE)s
+## data_sets = source
+## prefix_section = T
+## prefix_extension = T
+## 
+## [source_photoz_bias]
+## file = number_density/photoz_bias/photoz_bias.py
+## mode = additive
+## sample = nz_source
+## bias_section = wl_photoz_errors
+## interpolation = linear
+## 
+## [fast_pt]
+## file = structure/fast_pt/fast_pt_interface.py
+## do_ia = T
+## k_res_fac = 0.5
+## verbose = F
+## 
+## [IA]
+## file = intrinsic_alignments/tatt/tatt_interface.py
+## sub_lowk = F
+## do_galaxy_intrinsic = F
+## ia_model = tatt
+## 
+## [pk_to_cl]
+## file = structure/projection/project_2d.py
+## ell_min_logspaced = 0.1
+## ell_max_logspaced = 5.0e5
+## n_ell_logspaced = 100
+## shear-shear = source-source
+## shear-intrinsic = source-source
+## intrinsic-intrinsic = source-source
+## intrinsicb-intrinsicb = source-source
+## verbose = F
+## get_kernel_peaks = F
+## sig_over_dchi = 20.
+## shear_kernel_dchi = 10.
+## 
+## [add_intrinsic]
+## file = shear/add_intrinsic/add_intrinsic.py
+## shear-shear = T
+## position-shear = F
+## perbin = F
+## 
+## [2pt_shear]
+## file = shear/cl_to_xi_fullsky/cl_to_xi_interface.py
+## ell_max = 40000
+## xi_type = EB
+## theta_file = %(2PT_FILE)s
+## bin_avg = T
+## input_section_name = shear_cl shear_cl_bb
+## output_section_name = shear_xi_plus shear_xi_minus
+## 
+## [shear_m_bias]
+## file = shear/shear_bias/shear_m_bias.py
+## m_per_bin = True
+## cl_section = shear_xi_plus shear_xi_minus
+## cross_section = galaxy_shear_xi
+## verbose = F
+## 
+## [2pt_like]
+## file = likelihood/2pt/2pt_point_mass/2pt_point_mass.py
+## do_pm_marg = False
+## include_norm = True
+## data_file = %(2PT_FILE)s
+## data_sets = xip xim
+## make_covariance = F
+## covmat_name = COVMAT
+## angle_range_xip_1_1 = 2.475 999.0
+## angle_range_xip_1_2 = 6.21691892 999.0
+## angle_range_xip_1_3 = 6.21691892 999.0
+## angle_range_xip_1_4 = 4.93827423 999.0
+## angle_range_xip_2_2 = 6.21691892 999.0
+## angle_range_xip_2_3 = 6.21691892 999.0
+## angle_range_xip_2_4 = 6.21691892 999.0
+## angle_range_xip_3_3 = 6.21691892 999.0
+## angle_range_xip_3_4 = 6.21691892 999.0
+## angle_range_xip_4_4 = 4.93827423 999.0
+## angle_range_xim_1_1 = 24.75 999.0
+## angle_range_xim_1_2 = 62.16918918 999.0
+## angle_range_xim_1_3 = 62.16918918 999.0
+## angle_range_xim_1_4 = 49.3827423 999.0
+## angle_range_xim_2_2 = 62.16918918 999.0
+## angle_range_xim_2_3 = 78.26637209 999.0
+## angle_range_xim_2_4 = 78.26637209 999.0
+## angle_range_xim_3_3 = 78.26637209 999.0
+## angle_range_xim_3_4 = 78.26637209 999.0
+## angle_range_xim_4_4 = 62.16918918 999.0
+## angle_range_gammat_1_1 = 24.75 999.0
+## angle_range_gammat_1_2 = 24.75 999.0
+## angle_range_gammat_1_3 = 24.75 999.0
+## angle_range_gammat_1_4 = 24.75 999.0
+## angle_range_gammat_2_1 = 15.61619428 999.0
+## angle_range_gammat_2_2 = 15.61619428 999.0
+## angle_range_gammat_2_3 = 15.61619428 999.0
+## angle_range_gammat_2_4 = 15.61619428 999.0
+## angle_range_gammat_3_1 = 12.40438403 999.0
+## angle_range_gammat_3_2 = 12.40438403 999.0
+## angle_range_gammat_3_3 = 12.40438403 999.0
+## angle_range_gammat_3_4 = 12.40438403 999.0
+## angle_range_gammat_4_1 = 12.40438403 999.0
+## angle_range_gammat_4_2 = 12.40438403 999.0
+## angle_range_gammat_4_3 = 12.40438403 999.0
+## angle_range_gammat_4_4 = 12.40438403 999.0
+## angle_range_gammat_5_1 = 9.85315247 999.0
+## angle_range_gammat_5_2 = 9.85315247 999.0
+## angle_range_gammat_5_3 = 9.85315247 999.0
+## angle_range_gammat_5_4 = 9.85315247 999.0
+## angle_range_wtheta_1_1 = 39.22610651 999.0
+## angle_range_wtheta_2_2 = 24.75 999.0
+## angle_range_wtheta_3_3 = 19.65962381 999.0
+## angle_range_wtheta_4_4 = 15.61619428 999.0
+## angle_range_wtheta_5_5 = 12.40438403 999.0
+## 
+## END_OF_PARAMS_INI
+## START_OF_VALUES_INI
+## [cosmological_parameters]
+## h0 = 0.7053152440923782
+## ombh2 = 0.02262171231040793
+## omch2 = 0.12605205191893176
+## omega_k = 0.0
+## mnu = 0.06
+## num_massive_neutrinos = 1
+## nnu = 3.044
+## a_s = 2.127659994830691e-09
+## n_s = 0.9807333561505545
+## tau = 0.05636477115198938
+## w = -1.0
+## wa = 0.0
+## 
+## [intrinsic_alignment_parameters]
+## a1 = -5.0    0.7558595397122012    5.0
+## a2 = -5.0    0.05115704633380247    5.0
+## alpha1 = -5.0    4.999455615974666    5.0
+## alpha2 = -5.0    -4.601930970197565    5.0
+## bias_ta = 0.0    0.2336921559522554    2.0
+## z_piv = 0.62
+## 
+## [shear_calibration_parameters]
+## m1 = -0.1    -0.007069082533073784    0.1
+## m2 = -0.1    -0.02166364021462326    0.1
+## m3 = -0.1    -0.025241291288639556    0.1
+## m4 = -0.1    -0.03704982892289406    0.1
+## 
+## [wl_photoz_errors]
+## bias_1 = -0.1    0.005142861340576538    0.1
+## bias_2 = -0.1    -0.019542248985425253    0.1
+## bias_3 = -0.1    0.0018990614175485587    0.1
+## bias_4 = -0.1    -0.0059964716887627445    0.1
+## 
+## END_OF_VALUES_INI
+## START_OF_PRIORS_INI
+## [wl_photoz_errors]
+## bias_1 = gaussian 0.00 0.018
+## bias_2 = gaussian 0.00 0.015
+## bias_3 = gaussian 0.00 0.011
+## bias_4 = gaussian 0.0  0.017
+## 
+## [shear_calibration_parameters]
+## m1 = gaussian -0.0063 0.0091
+## m2 = gaussian -0.0198 0.0078
+## m3 = gaussian -0.0241 0.0076
+## m4 = gaussian -0.0369 0.0076
+## 
+## [lens_photoz_errors]
+## bias_1 = gaussian  0.006 0.004
+## bias_2 = gaussian  0.001 0.003
+## bias_3 = gaussian  0.004 0.003
+## bias_4 = gaussian -0.002 0.005
+## bias_5 = gaussian -0.007 0.010
+## width_5 = gaussian  1.23  0.054
+## 
+## [planck]
+## a_planck = gaussian 1.0 0.0025
+## 
+## END_OF_PRIORS_INI
+#start_input=
+0.7869875458564257	0.07004194429705901	4.978039717904082	-4.623284982484904	0.25746672999587267	-0.006154939245294616	-0.02181577876492935	-0.025192037235114303	-0.03749942714032188	0.008027559187584687	-0.019994925238704234	0.0014968594202869195	-0.006829276350829569	0.8250005905322614	236.62448646825283	17.73403274447049	3225.1774908087937	3242.911523553264
+#evaluations=361
+#successes=361
+#complete=1
