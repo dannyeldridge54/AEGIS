@@ -1,0 +1,56 @@
+{
+ "rule": "PREREG_UNIFY_DATA.md",
+ "rows": {
+  "Pantheon+": {
+   "chi2": 2432.83,
+   "dLCDM": -0.69,
+   "dAIC_vs_LCDM": 7.31,
+   "dW0WA": 8.42,
+   "dAIC_vs_W0WA": 12.42,
+   "best_piece": {
+    "name": "Spiral SF (AxiCLASS, own LCDM)",
+    "dLCDM": -9.22
+   },
+   "within_2_of_best_piece": false,
+   "S8": 0.8074,
+   "S8_penalty_vs_LCDM": -0.5,
+   "kappa": -0.5846485209511822,
+   "H0": 67.78
+  },
+  "DES-Dovekie": {
+   "chi2": 2657.13,
+   "dLCDM": -5.96,
+   "dAIC_vs_LCDM": 2.04,
+   "dW0WA": 5.87,
+   "dAIC_vs_W0WA": 9.87,
+   "best_piece": {
+    "name": "Spiral SF (AxiCLASS, own LCDM)",
+    "dLCDM": -11.44
+   },
+   "within_2_of_best_piece": false,
+   "S8": 0.8172,
+   "S8_penalty_vs_LCDM": 0.74,
+   "kappa": -0.5577310811905756,
+   "H0": 68.79
+  },
+  "Union3": {
+   "chi2": 1054.36,
+   "dLCDM": -1.93,
+   "dAIC_vs_LCDM": 6.07,
+   "dW0WA": 13.09,
+   "dAIC_vs_W0WA": 17.09,
+   "best_piece": {
+    "name": "Spiral SF (AxiCLASS, own LCDM)",
+    "dLCDM": -12.88
+   },
+   "within_2_of_best_piece": false,
+   "S8": 0.814,
+   "S8_penalty_vs_LCDM": 0.51,
+   "kappa": -0.37057382258189897,
+   "H0": 68.6
+  }
+ },
+ "vs_LCDM": "MIXED",
+ "vs_w0wa": "NOT COMPETITIVE",
+ "unification": "DOES NOT UNIFY"
+}

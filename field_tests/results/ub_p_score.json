@@ -1,0 +1,79 @@
+{
+ "rule": "PREREG_UB2_PREDICTIONS.md",
+ "ranges": {
+  "F_at_peak": [
+   0.057,
+   0.177
+  ],
+  "z_peak": [
+   2500.0,
+   6000.0
+  ],
+  "f_peak": [
+   0.031,
+   0.125
+  ],
+  "w0": [
+   -1.0,
+   -0.974
+  ],
+  "kappa": [
+   -0.42,
+   0.15
+  ]
+ },
+ "rows": {
+  "Pantheon+": {
+   "values": {
+    "F_at_peak": 0.1188,
+    "z_peak": 60291.055,
+    "f_peak": 0.0254,
+    "w0": -0.9483,
+    "kappa": -0.5846
+   },
+   "inside": {
+    "F_at_peak": true,
+    "z_peak": false,
+    "f_peak": false,
+    "w0": false,
+    "kappa": false
+   },
+   "reading": "FAILS"
+  },
+  "DES-Dovekie": {
+   "values": {
+    "F_at_peak": 0.1326,
+    "z_peak": 3951.4431,
+    "f_peak": 0.0431,
+    "w0": -0.9529,
+    "kappa": -0.5577
+   },
+   "inside": {
+    "F_at_peak": true,
+    "z_peak": true,
+    "f_peak": true,
+    "w0": false,
+    "kappa": false
+   },
+   "reading": "PARTLY"
+  },
+  "Union3": {
+   "values": {
+    "F_at_peak": 0.1163,
+    "z_peak": 4283.2745,
+    "f_peak": 0.0225,
+    "w0": -0.9792,
+    "kappa": -0.3706
+   },
+   "inside": {
+    "F_at_peak": true,
+    "z_peak": true,
+    "f_peak": false,
+    "w0": true,
+    "kappa": true
+   },
+   "reading": "PARTLY"
+  }
+ },
+ "verdict": "MIXED"
+}

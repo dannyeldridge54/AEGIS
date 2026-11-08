@@ -34,7 +34,8 @@ doi:10.5281/zenodo.23899237).
 | **FP** Fingerprint (Holst) vs cosine (Nieh–Yan), same engine | Δχ²_eff = +0.86 (sinh worse) | **cannot tell apart yet**; no coupling preference |
 | **UB-1** can one coupled axion–dilaton do both jobs? (background, no data) | locked code: FAIL (A and B); D1 integrator fix: **B PASS** (κ = −0.145: bump 3.2% at z ≈ 5,800, quiet, w0 = −0.997, Ω_m 0.295), A FAIL | **PASS only with the extra slope κ (D1)**; the derived potential (A) fails; dilaton barely moves (|φ| 12.4 → 12.1) |
 | **UB-1b** derived potential with W = W0 e^{bΦ} (b free), background only | closest point misses by 0.038 (peak at z = 1,930, just below 2,000; Ω_m = 0.330, just above 0.33), b = 2.80 | **FAIL** (D1b-1: same search run in parallel) |
-| **UB-P** does UB-2 land where UB-1 predicted? | **locked 8 Nov 05:33 UTC, before any UB-2 result**: F 0.057–0.177, z_peak 2500–6000, f_peak 0.031–0.125, w0 −1.000 to −0.974, κ −0.42 to 0.15 | pending (scored from UB-2) |
+| **UB-2** one field vs Planck 2018 + DESI + SN (variant B, 4 extra parameters, best of 4 restarts each) | Δχ² vs ΛCDM −0.69 / −5.96 / −1.93; vs w0–wa +8.42 / +5.87 / +13.09 (ΔAIC +12.4 / +9.9 / +17.1); stored Spiral pieces −9.22 / −11.44 / −12.88 | **vs ΛCDM MIXED; vs w0–wa NOT COMPETITIVE; DOES NOT UNIFY** (8 Nov) |
+| **UB-P** does UB-2 land where UB-1 predicted? (locked 05:33 UTC, before any UB-2 result) | Pantheon+: 1 of 5 inside (peak at z ≈ 60,000, κ −0.58); Dovekie: 3 of 5 (w0, κ outside); Union3: 4 of 5 (f_peak 0.023 below 0.031) | **MIXED** (8 Nov) |
 | Potential power n = 3 vs 2, 4 | n = 2: no better than ΛCDM; n = 4: tie | **n = 3 stays** |
 
 **Failed and dropped (kept on record):** N = 9 width on SPT-3G; silver-ratio angle; pure torsion width F = √(3/2) M_Pl
@@ -44,9 +45,8 @@ unification with constant W.
 ## Open (in progress)
 | Test | State |
 |---|---|
-| **UB-2** unified field (variant B) vs Planck 2018 + DESI + 3 SN sets | **rule locked 8 Nov 03:53 UTC**; engine gates all pass; fits run on the PC (WSL) after START_BRACKET.bat; ACT/SPT is the declared follow-up |
 | BR bracket (early-field variants) | 2 of 6 done; the other 4 start on the PC after UB-1 |
-| **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; PC, needs CosmoSIS |
+| **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; run in the cloud. Locked Twist Δ_WL = +1.14 **PASSES** (limit +2); Spiral ×3 running; UB-2 pairs next |
 | Stage-3 P-ACT bracket | after BR |
 
 ## Where things are
