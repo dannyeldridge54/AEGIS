@@ -9,12 +9,14 @@ S8 at the stored best fits (Pantheon+ / DES-Dovekie / Union3):
 - ΛCDM 0.8175 / 0.8162 / 0.8168
 - Spiral 0.8326 / 0.8338 / 0.8395
 - S8-J 0.8221 / 0.8260 / 0.8269
-- S8-L 0.8170 / 0.8168 / 0.8190 (caveat S8-LNL D2: cold matter only; the total-matter value is computed and frozen
-  beside it before the lock, with the same code, no refit)
+- S8-L 0.8170 / 0.8168 / 0.8190 (S8-LNL D2 check, 8 Nov: with the ultralight field included the total-matter S8 is
+  0.8170 / 0.8168 / 0.8190, i.e. the same to 4 decimals; `theory/s8l_total_matter_S8.json`)
 
-## Data to be scored (whichever is published first; each scored separately)
-1. DES Y6 full cosmic-shear likelihood (beyond the S8 summary already used), 2. KiDS-Legacy cosmic shear,
-3. Euclid DR1 cosmic shear (mid-2027), 4. Rubin/LSST Y1 when available.
+## Data to be scored (only results not yet public at the lock; each scored separately)
+1. DES Y6 full cosmic-shear likelihood (its S8 summary is already public and already used; the 2pt data products were
+   not public on 8 Nov), 2. Euclid DR1 cosmic shear (mid-2027), 3. Rubin/LSST Y1.
+KiDS-Legacy is already public (data vectors, covariance, n(z), CosmoSIS files): it is a test on existing data, with its
+own rule (`DRAFT_KIDS_LEGACY_SHEAR.md`), not a forecast.
 
 ## Test A (summary S8; runs as soon as each survey quotes S8)
 penalty = ((S8_model − S8_obs)/σ)² with the survey's own asymmetric errors; ΔP = penalty(model) − penalty(ΛCDM).

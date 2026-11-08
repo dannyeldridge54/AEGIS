@@ -16,6 +16,18 @@ locked; otherwise the rule says plainly that this is an add-on.
 Spiral fit unchanged, plus one parameter ξ (momentum-exchange strength) acting on the dark-matter velocity equation
 only. Background identical to the Spiral at the same parameters (checked as gate G-M1). +1 parameter vs the Spiral.
 
+## Tools found (8 Nov)
+- Linear: Dark Scattering CLASS, github.com/PedroCarrilho/class_public branch `IDE_DS` (commit 7a909f4), CPL fluid
+  dark energy with the friction term; KiDS-1000 analysis: Carrion et al. 2024, arXiv:2402.18562 (positive A_ds lowers
+  S8; KiDS+CMB+BAO prefers A_ds ≈ 10.6 (+4.5/−7.3) b/GeV at ~2σ).
+- Nonlinear: ReACT / ACTio-ReACTio, github.com/nebblu/ACTio-ReACTio (commit a36dda0), model `ds` (w0, wa, ξh), with a
+  CosmoSIS module; calibrated in arXiv:2111.13598. Valid for −1.3 < w0 < −0.7, −1.5 < wa < 0.6, z ≤ 2.5 (all
+  Spiral-family CPL values are inside).
+- The effect scales with (1 + w): the Spiral's thawing field (w0 ≈ −0.92) gives it something to act on; ΛCDM would not.
+- Our Spiral's dark energy is a scalar field in the coupled AxiCLASS build, not a CPL fluid: the friction term must be
+  ported into that build (θ_c' gets −a ξ (1+w_φ) ρ_φ (θ_c − θ_φ)), and checked against DS-CLASS run with the Spiral's
+  own CPL (w0, wa) (gate G-M0). ReACT is given the Spiral's CPL fit; that approximation is stated with the result.
+
 ## Engine gates (before any data fit)
 - **G-M0:** find a public, published implementation (CLASS or CAMB) and reproduce one figure/number from its paper;
   if none exists, write the patch and reproduce the paper's linear growth suppression within 2%.

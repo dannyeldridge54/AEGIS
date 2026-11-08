@@ -1,0 +1,23 @@
+{
+ "spiralL": {
+  "sigma8_cold_recomputed": 0.8038553955065756,
+  "sigma8_stored": 0.80385578,
+  "sigma8_total": 0.8038298303275997,
+  "S8_cold": 0.8170177023821052,
+  "S8_total": 0.8169917185995684
+ },
+ "spiralL_dovekie": {
+  "sigma8_cold_recomputed": 0.8004811369985109,
+  "sigma8_stored": 0.80048151,
+  "sigma8_total": 0.8004336270959566,
+  "S8_cold": 0.8168013175519728,
+  "S8_total": 0.8167528390192386
+ },
+ "spiralL_union3": {
+  "sigma8_cold_recomputed": 0.79170562672785,
+  "sigma8_stored": 0.7917058,
+  "sigma8_total": 0.7916999471172647,
+  "S8_cold": 0.8190325475040455,
+  "S8_total": 0.8190266718530844
+ }
+}
