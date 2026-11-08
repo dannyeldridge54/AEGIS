@@ -46,7 +46,7 @@ unification with constant W.
 | Test | State |
 |---|---|
 | **S8-J** Spiral refit with DES Y6 S8 inside the fit | **rule locked 8 Nov 10:58 UTC**; gate G-J then 6 fits on the PC (START_S8J.bat). Not blind: with the S8 term added at the stored fits (no refit) the Spiral leads ΛCDM by −5.06 / −6.57 / −5.91 |
-| **S8-L** light angle (option 4): the angle share f = β_eff/0.816 as an ultralight field, +1 parameter (mass) | engine built and code-checked (σ8 equal to 2×10⁻⁸); no-data check: S8 −0.003 at a_c = 10⁻⁵, −0.035 at 10⁻⁴·⁵; rule **DRAFT** (`DRAFT_PREREG_SPIRAL_L.md`); PC builds + gates now, fits start when locked |
+| **S8-L** light angle (option 4): the angle share f = β_eff/0.816 as an ultralight field, +1 parameter (mass) | engine built and code-checked (σ8 equal to 2×10⁻⁸); no-data check: S8 −0.003 at a_c = 10⁻⁵, −0.035 at 10⁻⁴·⁵; **rule locked 8 Nov**; PC: build, gate G-L, then 3 fits |
 | BR bracket (early-field variants) | 2 of 6 done: θ 2.414 F8 χ² 2432.00 (score 2430.00), F9 2432.72 (2430.72), vs locked fit 2428.83, so both lose so far. The other 4 (θ 2.414 F10, θ 2.777 F8/F9/F10) stopped part-way at about 04:40–05:00 UTC 8 Nov when their windows were closed. The rule says failed jobs are not re-run; whether a closed window counts as failed is Danny's call |
 | **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; run in the cloud. Locked Twist Δ_WL = +1.14 **PASSES** (limit +2); Spiral +2.57 / +3.47 / +3.99 **OVER**; UB-2 joined field −0.37 / 0.00 / +0.14 **PASSES** (equal effort, all pairs done 8 Nov) |
 | Stage-3 P-ACT bracket | after BR |

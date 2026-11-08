@@ -1,3 +1,5 @@
+> **Superseded by the locked `PREREG_SPIRAL_L.md` (8 Nov).**
+
 # DRAFT pre-registration S8-L: the Spiral with a light angle (weak-lensing option 4)
 
 **Status: DRAFT, not locked, no hash.** Written 8 Nov 2026 with AI assistance; Danny chose "Option 4 only" to build today.
