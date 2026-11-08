@@ -105,9 +105,12 @@ def run(nl, pkname, fit, start=None, tag_suffix=""):
     ini = tag + "_pipeline.ini"
     open(ini, "w").write(p)
     os.makedirs(os.path.join(OUT, "WnLog"), exist_ok=True)
-    if os.path.exists(tag + ".txt"):
-        os.remove(tag + ".txt")
-    subprocess.run(["cosmosis", ini], cwd=OUT, check=True, stdout=open(tag + ".log", "w"), stderr=subprocess.STDOUT)
+    done = os.path.exists(tag + ".txt") and os.path.exists(tag + "_best.ini") and \
+        any(not ln.startswith("#") and ln.strip() for ln in open(tag + ".txt"))
+    if not (os.environ.get("KIDS_REUSE") and done):          # resume: a finished try (output + best point) is kept
+        if os.path.exists(tag + ".txt"):
+            os.remove(tag + ".txt")
+        subprocess.run(["cosmosis", ini], cwd=OUT, check=True, stdout=open(tag + ".log", "w"), stderr=subprocess.STDOUT)
     head, row = None, None
     for line in open(tag + ".txt"):
         if head is None and line.startswith("#") and not line.startswith("##"):
