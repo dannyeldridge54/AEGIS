@@ -1,3 +1,5 @@
+> **Superseded by the locked `PREREG_UNIFY_DATA.md` (7 Nov).**
+
 # DRAFT pre-registration UB-2: the unified BI axion–dilaton against data
 
 **Status: DRAFT, not locked, no hash.** Written 7 Nov 2026 with AI assistance at Danny's request. It is locked only if

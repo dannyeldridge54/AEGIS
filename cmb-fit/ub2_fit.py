@@ -32,11 +32,11 @@ import cmbfit as C                       # noqa: E402
 NA = 3000
 LNA = np.linspace(math.log(1e-7), 0.0, NA)          # w-table grid (ln a)
 UB_PARAMS = {
-    "ub_lnL": (0.0, 40.0, 22.0, 1.0, r"\ln L"),
-    "ub_thi": (0.1, 3.0, 2.5, 0.1, r"\theta_i"),
-    "ub_phii": (1.1, 60.0, 10.0, 1.0, r"|\phi|_i"),
+    "ub_lnL": (0.0, 40.0, 22.70, 0.5, r"\ln L"),      # starts at the UB-1 D1 passing point (no data used there)
+    "ub_thi": (0.1, 3.0, 2.426, 0.05, r"\theta_i"),
+    "ub_phii": (1.1, 60.0, 12.41, 0.5, r"|\phi|_i"),
 }
-UB_KAPPA = ("ub_kappa", (-3.0, 3.0, 0.5, 0.1, r"\kappa"))
+UB_KAPPA = ("ub_kappa", (-3.0, 3.0, -0.145, 0.05, r"\kappa"))
 UB_B = ("ub_b", (0.0, 2.9, 1.0, 0.1, "b"))
 
 

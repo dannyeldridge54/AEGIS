@@ -33,6 +33,7 @@ doi:10.5281/zenodo.23899237).
 | **SF2** does the BI angle matter? (β = 0 vs free; Pantheon+ / Dovekie / Union3) | removing the angle costs Δχ² +8.53 / +8.73 / +11.70; β = 0 alone vs ΛCDM −0.70 / −2.72 / −1.19 | **ANGLE NEEDED** (7 Nov) |
 | **FP** Fingerprint (Holst) vs cosine (Nieh–Yan), same engine | Δχ²_eff = +0.86 (sinh worse) | **cannot tell apart yet**; no coupling preference |
 | **UB-1** can one coupled axion–dilaton do both jobs? (background, no data) | locked code: FAIL (A and B); D1 integrator fix: **B PASS** (κ = −0.145: bump 3.2% at z ≈ 5,800, quiet, w0 = −0.997, Ω_m 0.295), A FAIL | **PASS only with the extra slope κ (D1)**; the derived potential (A) fails; dilaton barely moves (|φ| 12.4 → 12.1) |
+| **UB-1b** derived potential with W = W0 e^{bΦ} (b free), background only | closest point misses by 0.038 (peak at z = 1,930, just below 2,000; Ω_m = 0.330, just above 0.33), b = 2.80 | **FAIL** (D1b-1: same search run in parallel) |
 | Potential power n = 3 vs 2, 4 | n = 2: no better than ΛCDM; n = 4: tie | **n = 3 stays** |
 
 **Failed and dropped (kept on record):** N = 9 width on SPT-3G; silver-ratio angle; pure torsion width F = √(3/2) M_Pl
@@ -42,7 +43,7 @@ unification with constant W.
 ## Open (in progress)
 | Test | State |
 |---|---|
-| **UB-2** unified field vs data (draft rule) | engine: two-field CAMB module built; gates **G1 Δχ² 0.000, G2 Δχ² 0.000, G3 H to 1e-6: ALL PASS** (7 Nov, cloud copy of the same Planck/DESI/SN data); next: Danny's 4 choices → lock → fits on the PC |
+| **UB-2** unified field (variant B) vs Planck 2018 + DESI + 3 SN sets | **rule locked 8 Nov 03:53 UTC**; engine gates all pass; fits run on the PC (WSL) after START_BRACKET.bat; ACT/SPT is the declared follow-up |
 | BR bracket (early-field variants) | 2 of 6 done; the other 4 start on the PC after UB-1 |
 | **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; PC, needs CosmoSIS |
 | Stage-3 P-ACT bracket | after BR |

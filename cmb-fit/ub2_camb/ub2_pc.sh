@@ -24,3 +24,14 @@ say "validate: two-field module vs CAMB EarlyQuintessence"
 say "UB-2 gates G1-G3"
 (cd "$CF" && COBAYA_PACKAGES_PATH="${COBAYA_PACKAGES_PATH:-$CF/packages}" "$PY" ub2_fit.py gates) >> "$LOG" 2>&1 \
   && say "gates written: results/ub2_gates.json" || say "gates FAILED (see log)"
+# UB-2 fits (only once the rule is locked): variant B on the three supernova sets, in parallel, 2 threads each
+if [ -f "$CF/../field_tests/rules/PREREG_UNIFY_DATA.md.sha256" ]; then
+  for n in ub2B ub2B_dovekie ub2B_union3; do
+    if [ ! -f "$CF/results/cmp_$n.json" ] && [ ! -f "$CF/results/${n}_log.txt" ]; then
+      say "UB-2 fit $n start"
+      (cd "$CF" && OMP_NUM_THREADS=2 COBAYA_PACKAGES_PATH="${COBAYA_PACKAGES_PATH:-$CF/packages}" nice -n 5 "$PY" ub2_fit.py "$n" > "results/${n}_log.txt" 2>&1 \
+        && say "UB-2 fit $n done" || say "UB-2 fit $n FAILED (see results/${n}_log.txt)") &
+    fi
+  done
+  wait
+fi

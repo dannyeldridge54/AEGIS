@@ -1,0 +1,39 @@
+{
+ "rule": "field_tests/rules/PREREG_UNIFY_BG_1B.md",
+ "verdict": "FAIL",
+ "rows": [
+  {
+   "variant": "C",
+   "samples": 20000,
+   "polished": 40,
+   "best_miss": 0.0381,
+   "best_params(lnA, lnL, th_i, phi_i[, kappa])": [
+    0.2953,
+    19.6672,
+    1.984,
+    8.1534,
+    2.7967
+   ],
+   "best_point": {
+    "f_peak": 0.02996,
+    "z_peak": 1930.15666,
+    "peak_in_window": false,
+    "f_1090": 0.01078,
+    "f_max_20_500": 0.00204,
+    "w0": -0.75043,
+    "Om0": 0.33003,
+    "phi_today": 5.02339,
+    "F_today": 0.31043,
+    "F_at_peak": 0.19174
+   },
+   "requirements": {
+    "R2_peak": false,
+    "R3_fades": true,
+    "R4_quiet": true,
+    "R5_late": false
+   },
+   "ALL_MET": false
+  }
+ ],
+ "reading": "PASS: some setting of the free scales and starting values meets R2-R5 -> write and lock the step-2 data test. FAIL: none found in the locked search box; this does not prove impossibility, and the closest point and its missed requirements are reported. Neither is evidence about data."
+}
