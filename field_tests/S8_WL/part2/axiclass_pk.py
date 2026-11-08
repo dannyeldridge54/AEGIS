@@ -38,7 +38,7 @@ def one(name):
         import spiral_l_fit
         info, _ = spiral_l_fit.make(name)
     else:
-        make_name = name[:-5] if name.endswith("_s8y6") else name
+        make_name = name.replace("_s8y6_more", "").replace("_s8y6", "")
         E._maybe_coupled(make_name)             # puts the run's own AxiCLASS build first on sys.path
         info = E.make(make_name)
     import classy

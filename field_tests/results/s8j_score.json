@@ -2,7 +2,22 @@
  "rule": "PREREG_S8_JOINT.md",
  "rows": {
   "Pantheon+": {
-   "verdict": "NO VERDICT (fit missing or non-finite)"
+   "chi2_spiral_S8": 2396.778,
+   "chi2_LCDM_S8": 2404.102,
+   "delta": -7.32,
+   "lensing_cost": 0.28,
+   "chi2_S8_term": {
+    "spiral": 2.97,
+    "LCDM": 1.34
+   },
+   "S8": {
+    "spiral": 0.8221,
+    "LCDM": 0.8142,
+    "spiral_SF": 0.8326
+   },
+   "beta_eff": 0.0373,
+   "beta_eff_SF": 0.0424,
+   "kappa": 0.772
   },
   "DES-Dovekie": {
    "chi2_spiral_S8": 2625.075,

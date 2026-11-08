@@ -24,8 +24,21 @@ PAIRS.update({"Spiral, Pantheon+": (("pk", "ax_spa_spiraltwist_nlfix"), ("pk", "
               "Spiral, DES-Dovekie": (("pk", "ax_spa_spiraltwist_dovekie_nlfix"), ("pk", "ax_spa_lcdm_halofit_dovekie")),
               "Spiral, Union3": (("pk", "ax_spa_spiraltwist_union3_nlfix"), ("pk", "ax_spa_lcdm_halofit_union3"))})
 # S8-J (PREREG_S8_JOINT.md, reported: Part 2 Delta_WL at the joint best fits) and S8-L (PREREG_SPIRAL_L.md, reported)
+def _better_lcdm(suf):
+    """S8J-D3: the LCDM+S8 reference is whichever of _s8y6 / _s8y6_more has the lower chi2."""
+    res = os.environ.get("TWIST_RESULTS", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "cmb-fit", "results"))
+    best, name = None, f"ax_spa_lcdm_halofit{suf}_s8y6"
+    for n in (name, name + "_more"):
+        p = os.path.join(res, f"cmp_{n}.json")
+        if os.path.exists(p):
+            c = json.load(open(p))["minimum"]["chi2"]
+            if best is None or c < best:
+                best, name = c, n
+    return name
+
+
 for sn, suf in (("Pantheon+", ""), ("DES-Dovekie", "_dovekie"), ("Union3", "_union3")):
-    PAIRS[f"S8-J joint Spiral, {sn}"] = (("pk", f"ax_spa_spiraltwist{suf}_nlfix_s8y6"), ("pk", f"ax_spa_lcdm_halofit{suf}_s8y6"))
+    PAIRS[f"S8-J joint Spiral, {sn}"] = (("pk", f"ax_spa_spiraltwist{suf}_nlfix_s8y6"), ("pk", _better_lcdm(suf)))
     PAIRS[f"S8-L light angle, {sn}"] = (("pk", f"spiralL{suf}"), ("pk", f"ax_spa_lcdm_halofit{suf}"))
 SPIRAL = []
 
