@@ -40,6 +40,9 @@ def _better_lcdm(suf):
 for sn, suf in (("Pantheon+", ""), ("DES-Dovekie", "_dovekie"), ("Union3", "_union3")):
     PAIRS[f"S8-J joint Spiral, {sn}"] = (("pk", f"ax_spa_spiraltwist{suf}_nlfix_s8y6"), ("pk", _better_lcdm(suf)))
     PAIRS[f"S8-L light angle, {sn}"] = (("pk", f"spiralL{suf}"), ("pk", f"ax_spa_lcdm_halofit{suf}"))
+    # S8-LNL (PREREG_S8L_NONLINEAR.md): same pairs, nonlinear power from axionHMcode on both sides (nonlinear/axhm_pk.py);
+    # cmp_<run>_axhm.json = the stored fit's own file (TWIST_RESULTS folder with links)
+    PAIRS[f"S8-LNL axionHMcode, {sn}"] = (("pk", f"spiralL{suf}_axhm"), ("pk", f"ax_spa_lcdm_halofit{suf}_axhm"))
 SPIRAL = []
 
 VALUES = """[cosmological_parameters]

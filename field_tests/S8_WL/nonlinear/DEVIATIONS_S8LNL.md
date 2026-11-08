@@ -17,3 +17,18 @@ gets the true total (ULA included) as `power_total`, with `power_cold` and `powe
 is what the rule's method asks for (per-component power, the ULA included); only the G2 comparison target is restated.
 Consequence for earlier results (reported, nothing edited): the stored S8-L sigma8 and S8 (spiral_l_score.json) and the
 halofit Part 2 run used the cold-matter power, not the total.
+
+## D3, 2026-11-08 (execution fix, before any shear chi2): numpy 2 compatibility in axionHMcode
+`axion_density_profile.py` converts scipy's size-1 root array with float(), which numpy 2 refuses. Changed to
+float(np.ravel(x)[0]) (same number). Added to the patch file. No physics or setting changed.
+
+## D4, 2026-11-08 — PROPOSED, needs Danny's OK (method setting): use version = 'basic', not 'dome'
+Found by a code-path check (path_check.py), before any shear chi2 with the new model. Same linear power fed to both
+paths; the ULA path should match the cold (HMcode-2020) path as the ULA share goes to 0.
+- 'dome' (the locked setting), ULA share 0.001: off by up to 2.6% at z = 0 and **6.6% at z = 1**; at share 0.06 with
+  no suppression in the input it swings from -18% to +18%. It does not reduce to HMcode-2020, so ULA side vs LCDM side
+  would differ by code path alone, not physics. Its own README says 'dome' is calibrated for 1 < z < 8 only; DES Y3
+  lensing comes mostly from z < 1.
+- 'basic', ULA share 0.001: matches the cold path to 0.1% at every k and z tested.
+Proposal: switch to 'basic' for both sides; everything else unchanged. The rule's own assumption ("the model then
+reduces to HMcode-2020") holds only for 'basic'. Not applied until Danny says so.

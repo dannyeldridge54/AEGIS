@@ -75,3 +75,24 @@ diff -u axionHMcode/halo_model/PS_nonlin_cold.py axionHMcode_dw/halo_model/PS_no
      if alpha == True:
          k_piv = 0.5*10**0 # h/cMpc
 Common subdirectories: axionHMcode/halo_model/__pycache__ and axionHMcode_dw/halo_model/__pycache__
+diff -u axionHMcode/halo_model/axion_density_profile.py axionHMcode_dw/halo_model/axion_density_profile.py
+--- axionHMcode/halo_model/axion_density_profile.py	2026-11-08 14:05:46.713400428 -0600
++++ axionHMcode_dw/halo_model/axion_density_profile.py	2026-11-08 14:23:34.219752727 -0600
+@@ -232,7 +232,7 @@
+         if np.abs(guess - dens_param) > 100.:
+             return 0.
+         else:
+-            return float(dens_param)
++            return float(np.ravel(dens_param)[0])   # numpy 2: size-1 array to float (execution only)
+             
+     else:
+         dens_param_arr = []
+@@ -266,7 +266,7 @@
+             if np.abs(guess - dens_param) > 100:
+                 dens_param_arr.append(0.)
+             else:
+-                dens_param_arr.append(float(dens_param))
++                dens_param_arr.append(float(np.ravel(dens_param)[0]))   # numpy 2 (execution only)
+                 
+         return dens_param_arr
+ 
