@@ -1,6 +1,6 @@
-# Lensing on KiDS-Legacy cosmic shear (Part 3) (DRAFT, not locked)
+# Lensing on KiDS-Legacy cosmic shear (Part 3)
 
-**Status: DRAFT** (8 Nov 2026). An independent full-shear test on public data we have not yet looked at: KiDS-Legacy
+**Status: LOCKED** on Danny's word (8 Nov 2026: "Get them all ready and set and scheduled ... Just let's try to fix the lensing. Do what you need to"). Fingerprint and UTC time in the .sha256 file. An independent full-shear test on public data we have not yet looked at: KiDS-Legacy
 (Wright et al. 2025, A&A 703, A158), released with data vectors, covariance, n(z) and CosmoSIS configuration files
 (kids.strw.leidenuniv.nl/sciencedata.php). Different telescope, sky, shape method and photo-z than DES Y3.
 

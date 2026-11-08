@@ -1,6 +1,6 @@
-# Lensing forecasts for the coming surveys (DRAFT, not locked)
+# Lensing forecasts for the coming surveys
 
-**Status: DRAFT** (8 Nov 2026, Danny: "For lensing, let's try to get it right"). To be locked before any of the
+**Status: LOCKED** on Danny's word (8 Nov 2026: "Get them all ready and set and scheduled ... Just let's try to fix the lensing. Do what you need to"). Fingerprint and UTC time in the .sha256 file. To be locked before any of the
 named results are public. Purpose: the fair test of the lensing question is new data scored against numbers frozen in
 advance, not more runs on DES Y3.
 
