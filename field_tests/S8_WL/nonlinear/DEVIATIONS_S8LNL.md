@@ -22,7 +22,7 @@ halofit Part 2 run used the cold-matter power, not the total.
 `axion_density_profile.py` converts scipy's size-1 root array with float(), which numpy 2 refuses. Changed to
 float(np.ravel(x)[0]) (same number). Added to the patch file. No physics or setting changed.
 
-## D4, 2026-11-08 — PROPOSED, needs Danny's OK (method setting): use version = 'basic', not 'dome'
+## D4, 2026-11-08 — APPROVED by Danny ("Approve: use 'basic'") (method setting): use version = 'basic', not 'dome'
 Found by a code-path check (path_check.py), before any shear chi2 with the new model. Same linear power fed to both
 paths; the ULA path should match the cold (HMcode-2020) path as the ULA share goes to 0.
 - 'dome' (the locked setting), ULA share 0.001: off by up to 2.6% at z = 0 and **6.6% at z = 1**; at share 0.06 with
@@ -31,4 +31,4 @@ paths; the ULA path should match the cold (HMcode-2020) path as the ULA share go
   lensing comes mostly from z < 1.
 - 'basic', ULA share 0.001: matches the cold path to 0.1% at every k and z tested.
 Proposal: switch to 'basic' for both sides; everything else unchanged. The rule's own assumption ("the model then
-reduces to HMcode-2020") holds only for 'basic'. Not applied until Danny says so.
+reduces to HMcode-2020") holds only for 'basic'. Applied after his approval, before any shear chi2.
