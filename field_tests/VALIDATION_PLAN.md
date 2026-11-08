@@ -37,3 +37,14 @@ deferred (both engines hang).
 
 ## Per-step folders (8 Nov)
 Prep, data collected and to-do for each scheduled step: `field_tests/validation/V1..V5_*.md`; running log `field_tests/validation/DATA_LOG.md` (each check-in appends what it finds).
+
+## Credibility items added 8 Nov (priority by expected referee impact)
+| Priority | ID | Item | Cost | Status |
+|---|---|---|---|---|
+| 1 | V1 | Locked predictions for DESI DR3 (before release) | cloud, cheap | scheduled today 16:47 |
+| 2 | V6 | Full posteriors (MCMC) and Bayesian evidence (MCEvidence/PolyChord) | PC, ~2–4 days | plan written |
+| 3 | V7 | Programme-wide look-elsewhere correction (local vs global σ) | cloud, cheap | plan written; inventory base = ledger |
+| 4 | V9 | Pre-registration ledger with hash verification | cloud, cheap | **built**: 50 files verified, 72 verdicts |
+| 5 | V8 | One-command reproducibility package | cloud + PC export | plan written |
+| 6 | V5 | Instanton height (derived mass) | theory | scheduled 12 Nov |
+Wording: `field_tests/WORDING_STANDARD.md` applies to all write-ups.

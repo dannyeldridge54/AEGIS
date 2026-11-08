@@ -1,0 +1,935 @@
+{
+ "rules": [
+  {
+   "rule": "PREREGISTRATION_SPIRAL_FIT.md",
+   "origin": "AEGIS",
+   "sha256": "58574b44a903fb38b6c442b2ec9ad4d5385e28c36291982477b180fd1d52df88",
+   "verified": true,
+   "lock_time": "2026-11-07T11:25:01-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_TORSION_F.md",
+   "origin": "AEGIS",
+   "sha256": "71a8909fa0799020964cd3a6dbe148222a6f237a3a72e24bf4c7bfbc44a41347",
+   "verified": true,
+   "lock_time": "2026-11-07T11:25:01-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_TORSION_F_PLANCK.md",
+   "origin": "AEGIS",
+   "sha256": "73b62ff11e6aa1dcca17191bd55a3ab2aaadec70e3ff7d4bbb44939896c424e0",
+   "verified": true,
+   "lock_time": "2026-11-07T11:25:01-06:00"
+  },
+  {
+   "rule": "PREREG_FP_LOCK.md",
+   "origin": "AEGIS",
+   "sha256": "8499d9505fddfc001d86f003bdaa8d5de6600d83f91b40f767eacfdca71e4817",
+   "verified": true,
+   "lock_time": "2026-11-07T21:45:24Z"
+  },
+  {
+   "rule": "PREREG_S8_JOINT.md",
+   "origin": "AEGIS",
+   "sha256": "dd4f1820fc62cbbabdbbe91ac88100061722b685d4a4205fa520f237670a3295",
+   "verified": true,
+   "lock_time": "2026-11-08T10:58:17Z"
+  },
+  {
+   "rule": "PREREG_S8_WL.md",
+   "origin": "AEGIS",
+   "sha256": "c43eca870c09067437f9676688188679412d4fab3431b9dbf402408f14104029",
+   "verified": true,
+   "lock_time": "2026-11-07T22:01:24Z"
+  },
+  {
+   "rule": "PREREG_SF2_ANGLE.md",
+   "origin": "AEGIS",
+   "sha256": "fe1b8544487df73fd1739fc5078be35d30e3434eaac96b962e1bc5843f53674b",
+   "verified": true,
+   "lock_time": "2026-11-07T21:32:03Z"
+  },
+  {
+   "rule": "PREREG_SPIRAL_L.md",
+   "origin": "AEGIS",
+   "sha256": "fc9f1f4fe2396ac1081014013287a867dff09b6cae74436726b0f1ba0ce3048a",
+   "verified": true,
+   "lock_time": "2026-11-08T11:14:29Z"
+  },
+  {
+   "rule": "PREREG_UB2_PREDICTIONS.md",
+   "origin": "AEGIS",
+   "sha256": "bcbc3c785bfcdca6ab60b49790623033f5c6cae2f37e5a0847ca0c765471284a",
+   "verified": true,
+   "lock_time": "2026-11-08T05:33:24Z"
+  },
+  {
+   "rule": "PREREG_UNIFY_BG.md",
+   "origin": "AEGIS",
+   "sha256": "f7098ea22d534c895e6b9e60d6a89415e319eeaa27d8824ca8d6b2c4b6d4ee7b",
+   "verified": true,
+   "lock_time": "2026-11-07T23:45:53Z"
+  },
+  {
+   "rule": "PREREG_UNIFY_BG_1B.md",
+   "origin": "AEGIS",
+   "sha256": "56cce18538c5ca1c63578471f3c4be07120159463b94fb78e0f355e002bd4eb9",
+   "verified": true,
+   "lock_time": "2026-11-08T01:57:15Z"
+  },
+  {
+   "rule": "PREREG_UNIFY_DATA.md",
+   "origin": "AEGIS",
+   "sha256": "539b34e15af347305b9214367aef09feec073f7191d0f9447a62c389c6cb913d",
+   "verified": true,
+   "lock_time": "2026-11-08T03:53:33Z"
+  },
+  {
+   "rule": "PREDICTIONS_LOCKED_2026-11-02.md",
+   "origin": "CubeMind",
+   "sha256": "b629f5347fef5bea31ae30df2c5b35c4fda00d741147318bae28cf5d892023cb",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_B4X_PHOTON_COUPLING.md",
+   "origin": "CubeMind",
+   "sha256": "9e714bad9bedb2d7257f662cdfafe6d04f982ad65bb27f25824cda6e46b8c06c",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_B4_BIREFRINGENCE.md",
+   "origin": "CubeMind",
+   "sha256": "4a38898d2013a5978eaf0cbc94435cdd6c2ad1b44a2fdf3b8579fd657334490e",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_COMBINED_CMB.md",
+   "origin": "CubeMind",
+   "sha256": "c35316fd3a1822c7f1f8402afc3c0abe19d11c493cc5c507ea5d644c3ae301d2",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_COUPLED_TWIST.md",
+   "origin": "CubeMind",
+   "sha256": "1aea70eb59eff42b7b49c379fab6aa95f46c5d1782a1e8a0032362db4cd73d7c",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_DEEP_SEARCH.md",
+   "origin": "CubeMind",
+   "sha256": "b99f597c1a2deea96a6f67641c268bba5d92a5d3f93253af65dbd801d08871eb",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_DOVEKIE.md",
+   "origin": "CubeMind",
+   "sha256": "a6022ea73f6e1635b080fc7670ab662a779f9fdd9b35e01a0b98b904dca2c035",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_EARLY_LATE.md",
+   "origin": "CubeMind",
+   "sha256": "612d2e1471894068c30379fbf9c7d1d3c51a5318ad923998efb3083d9c82d567",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_EDGE_SCAN.md",
+   "origin": "CubeMind",
+   "sha256": "1a895f18f72507b4a21013fd4921c62b7a6f3b78ba8737553a73d5c990bcfc84",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_GROWTH_HZ.md",
+   "origin": "CubeMind",
+   "sha256": "f6425a7c6956f082f850fcf9556e086f01c6e3be0dd276389b0617366b0e9665",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_HIGH_MASS_CORNER.md",
+   "origin": "CubeMind",
+   "sha256": "e8418f3e1a38784b5162e2b212f7a603a08d29486c0c037f4f22fd4c4cd68502",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_LATE_DOVEKIE_LEE.md",
+   "origin": "CubeMind",
+   "sha256": "84eebc685a1d89a5d49406b7877d21245ec2b0768bdc1f9852407dbbebd8a4b7",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_LATE_TWIST.md",
+   "origin": "CubeMind",
+   "sha256": "e2c585ee83987364d924d95d2d4892784f6481cdf3c79d8f319ccf0618fde434",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_LATE_UNION3.md",
+   "origin": "CubeMind",
+   "sha256": "79af399edd4a9b223f3e644501cad2a8a582e3b5e1adb7dc54832cc4e8b61538",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_LOCK_ATTRACTOR.md",
+   "origin": "CubeMind",
+   "sha256": "ad5db2ad7a3505f3384086f2c9efa36478db63f7dbb4ed7b1f2e6b6e62eb3fb6",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_LOOK_ELSEWHERE.md",
+   "origin": "CubeMind",
+   "sha256": "2ffa740969e888121505202b8435acafdefc5700f97e38150ded1cc5d1425629",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_NLFIX_REPLICATION.md",
+   "origin": "CubeMind",
+   "sha256": "16e0410cd177673b602bf17ac75d075c4e3de628bc11d014271c1e816f57fc93",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_NULL_PREDICTIONS.md",
+   "origin": "CubeMind",
+   "sha256": "3dced3d4e0ea72fd8c452d0c6f385c2792cc2d7a92294961734225e2d9f19261",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_PINCER.md",
+   "origin": "CubeMind",
+   "sha256": "01848f8b16660d6ecbefcef62f7727157138d2878fff0ee857529777aa3b435b",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_POWER_N.md",
+   "origin": "CubeMind",
+   "sha256": "a0264bfc69a472b501dbc81037f018174cabf3aec70666fb112c5ed9df8b1f80",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_PROFILE_F.md",
+   "origin": "CubeMind",
+   "sha256": "faabebed5daadf4b551315c827643dd011af49fd99b5ec5710aa03e4d5b51015",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_RATIO_REPLICATION.md",
+   "origin": "CubeMind",
+   "sha256": "4e1caef4b6273de1fd95926c206645f1d6f69bd672d3f105cfa216eb0005bf04",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_ROBUSTNESS.md",
+   "origin": "CubeMind",
+   "sha256": "320d59af57075331297b6ac0bda0fb98f2da73452604e976dc4c6984fe984bfc",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_ROBUSTNESS_II.md",
+   "origin": "CubeMind",
+   "sha256": "25480e62329bbf6b6a155d1cd5d3f698cf9e32f4dacddc134be6ca1130675f06",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_S8_FIXED_CODE.md",
+   "origin": "CubeMind",
+   "sha256": "f6b1d78e98c4ae8b8ce7719e07592f77cc66bdbb5b3083f49fbc6a64bd335ba1",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_SHARED_F.md",
+   "origin": "CubeMind",
+   "sha256": "e9f927fda4e7076a8e5bc06a2e14a126049c9787fd4f25e2a6ccacdb4e4d9175",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_SOLAR_LOWZ.md",
+   "origin": "CubeMind",
+   "sha256": "c6bebdf018b564f761ab1331ed9af5c6acf96bb2255449a5616f2e119d91c325",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_SPIRAL_FIT.md",
+   "origin": "CubeMind",
+   "sha256": "58574b44a903fb38b6c442b2ec9ad4d5385e28c36291982477b180fd1d52df88",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_SPT3G_LETTERS.md",
+   "origin": "CubeMind",
+   "sha256": "c86f2b752b1a68f3b9db49489e12997b8d42d53ee6d0ce0b24c08afbc67376a2",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_SPT3G_N9.md",
+   "origin": "CubeMind",
+   "sha256": "c400ed9608fd4af2d0dadbd9dd83563d16ffc66ac6ae6485705f126ccff48404",
+   "verified": "line endings only",
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_SPT3G_SILVER.md",
+   "origin": "CubeMind",
+   "sha256": "8cd05a4c5314b1f5fd9527ffb21745649ef59c9bec2c7bc080a467cce89db648",
+   "verified": "line endings only",
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "tree_quantum.py",
+   "origin": "CubeMind",
+   "sha256": "aa4af3c2a2317fdc21746af6393b0293bea5b86704b005ed5de51ff29df6a248",
+   "verified": "line endings only",
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_SPT3G_TORUS.md",
+   "origin": "CubeMind",
+   "sha256": "db69889e5b8964f4d1161ac6a1a80ef658bdcfec6023d0a7c401dbc3d4070f96",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_STAR_FRACTAL.md",
+   "origin": "CubeMind",
+   "sha256": "eb9a1895c4347c11c9ff2f62d72458d92c67840fc30d852879e6b240507c9bb3",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_STAR_FRACTAL_ND.md",
+   "origin": "CubeMind",
+   "sha256": "1274e0208b5f7ac45bb24be43e1042771f2bae085ab5960d16b4e2f8677ca2c6",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_TORSION_F.md",
+   "origin": "CubeMind",
+   "sha256": "71a8909fa0799020964cd3a6dbe148222a6f237a3a72e24bf4c7bfbc44a41347",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_TORSION_F_PLANCK.md",
+   "origin": "CubeMind",
+   "sha256": "73b62ff11e6aa1dcca17191bd55a3ab2aaadec70e3ff7d4bbb44939896c424e0",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  },
+  {
+   "rule": "PREREGISTRATION_UFE_CHECKS.md",
+   "origin": "CubeMind",
+   "sha256": "ca145d5a5c7a44636cf66e6cfb98db36820f445ef2f421661911e9d8566b3e35",
+   "verified": true,
+   "lock_time": "2026-11-02T17:15:45-06:00"
+  }
+ ],
+ "verdicts": [
+  {
+   "id": "E1",
+   "test": "Planck + DESI + Pantheon+ prefer early energy",
+   "verdict": "PASS (\u0394\u03c7\u00b2 \u22124.70)",
+   "rule": "AEGIS lock files (`F/VERDICT_LOCK.json`)",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "E2",
+   "test": "Planck + ACT DR6 (blind)",
+   "verdict": "PASS (\u0394\u03c7\u00b2 \u22127.23)",
+   "rule": "`F/N_PACT_LOCK.json`",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "E3",
+   "test": "SPT-3G D1 alone",
+   "verdict": "FAIL (best \u22121.27)",
+   "rule": "`P/PREREGISTRATION_SPT3G_N9.md`, `_SILVER`, `_TORUS`, `_LETTERS`",
+   "source": "CLAIMS_INDEX",
+   "class": "fail"
+  },
+  {
+   "id": "E4",
+   "test": "All three CMB + DESI + Pantheon+",
+   "verdict": "PASS (\u0394\u03c7\u00b2 \u22125.63)",
+   "rule": "`P/PREREGISTRATION_COMBINED_CMB.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "E5",
+   "test": "A1: profile in f",
+   "verdict": "PREFERRED (f = 0 costs 5.98)",
+   "rule": "`P/PREREGISTRATION_PROFILE_F.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "E6",
+   "test": "A2: look-elsewhere",
+   "verdict": "WEAK HINT (1.2\u20131.4\u03c3 global)",
+   "rule": "`P/PREREGISTRATION_LOOK_ELSEWHERE.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "neutral"
+  },
+  {
+   "id": "E7",
+   "test": "A3: early on top of late",
+   "verdict": "MILD (D \u22123.65)",
+   "rule": "`P/PREREGISTRATION_EARLY_LATE.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "neutral"
+  },
+  {
+   "id": "E8",
+   "test": "R1: A3 minimiser stability",
+   "verdict": "STABLE (MILD, \u22123.96)",
+   "rule": "`P/PREREGISTRATION_ROBUSTNESS.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "neutral"
+  },
+  {
+   "id": "E9",
+   "test": "A3 with DES-Dovekie",
+   "verdict": "MILD (\u22122.70)",
+   "rule": "`P/PREREGISTRATION_DOVEKIE.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "neutral"
+  },
+  {
+   "id": "E10",
+   "test": "Potential power n = 3 vs 2",
+   "verdict": "n = 3 favoured",
+   "rule": "`P/PREREGISTRATION_POWER_N.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "E11",
+   "test": "Zero predictions (no birefringence, no GW friction)",
+   "verdict": "open / consistent",
+   "rule": "`P/PREREGISTRATION_NULL_PREDICTIONS.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "open"
+  },
+  {
+   "id": "E12",
+   "test": "Lock from the dynamics",
+   "verdict": "NO LOCK",
+   "rule": "`P/PREREGISTRATION_LOCK_ATTRACTOR.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "fail"
+  },
+  {
+   "id": "E13",
+   "test": "Symbol-derived predictions (P1\u2013P4)",
+   "verdict": "FAIL / INCONCLUSIVE",
+   "rule": "`P/PREREGISTRATION_SPT3G_*`",
+   "source": "CLAIMS_INDEX",
+   "class": "fail"
+  },
+  {
+   "id": "L1",
+   "test": "Late Twist vs \u039bCDM (Pantheon+)",
+   "verdict": "**NR: FAIL (+0.09, a tie)**; as written FAIL (+0.96)",
+   "rule": "`P/PREREGISTRATION_LATE_TWIST.md` + deviation 08:58",
+   "source": "CLAIMS_INDEX",
+   "class": "fail"
+  },
+  {
+   "id": "L2",
+   "test": "Late Twist vs w0\u2013wa",
+   "verdict": "**NR: WORSE** (D +10.05 / +13.53); as written WORSE",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "L3",
+   "test": "F, m in natural range",
+   "verdict": "**NR: CONSISTENT**; as written INCONSISTENT",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "L4",
+   "test": "Shared F (one decay constant)",
+   "verdict": "DIFFERENT",
+   "rule": "`P/PREREGISTRATION_SHARED_F.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "R2",
+   "test": "L1 with DES Y5",
+   "verdict": "**NR: PASS (\u22126.23)**; as written PASS (\u22125.32)",
+   "rule": "`P/PREREGISTRATION_ROBUSTNESS.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "ES",
+   "test": "Edge scan",
+   "verdict": "done (32/32 DES Y5 points accounted)",
+   "rule": "`P/PREREGISTRATION_EDGE_SCAN.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "LD",
+   "test": "Late Twist on DES-Dovekie",
+   "verdict": "**NR: WEAKENED (\u22121.33)**; as written NOT CONFIRMED (+0.18)",
+   "rule": "`P/PREREGISTRATION_LATE_DOVEKIE_LEE.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "neutral"
+  },
+  {
+   "id": "LEE-G",
+   "test": "Grid look-elsewhere",
+   "verdict": "**NR: DES Y5 WEAK HINT (1.27\u03c3 global)**; Pantheon+ NOT SIGNIFICANT",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "neutral"
+  },
+  {
+   "id": "HC",
+   "test": "High-mass corner",
+   "verdict": "**NR: WORSE (+37.0)**; as written WORSE (+38.0)",
+   "rule": "`P/PREREGISTRATION_HIGH_MASS_CORNER.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "NM",
+   "test": "Null mirror (code check)",
+   "verdict": "two AxiCLASS bugs found and fixed; fixed build +0.13 PASS",
+   "rule": "post-hoc check + deviations 14:34:07, 14:41:32",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "NR",
+   "test": "Replication of every n = 1 test on corrected code",
+   "verdict": "done; side-by-side table",
+   "rule": "`P/PREREGISTRATION_NLFIX_REPLICATION.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "B2",
+   "test": "Does each gain depend on DESI?",
+   "verdict": "Late Twist DES Y5 **NOT DESI-DRIVEN** (\u22125.33 without, 86% kept); Coupled **DESI-DRIVEN** (+0.74 without); w0\u2013wa PARTLY",
+   "rule": "`P/PREREGISTRATION_ROBUSTNESS_II.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "R3",
+   "test": "Cold restarts of the two best points",
+   "verdict": "Late DES Y5 **STABLE** (+0.13); Coupled **COLD-START WORSE** (+2.37; the warm minimum stands, minimiser-sensitive)",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "LU",
+   "test": "Late Twist DES Y5 point on Union3 (independent SNe)",
+   "verdict": "**WEAKENED (\u22121.82)**; Union3 SNe \u22124.10; w0\u2013wa \u221215.00 (context)",
+   "rule": "`P/PREREGISTRATION_LATE_UNION3.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "neutral"
+  },
+  {
+   "id": "TF",
+   "test": "F fixed at \u221a(3/2) and \u221a6 M_Pl (m free)",
+   "verdict": "*pending*",
+   "rule": "`P/PREREGISTRATION_TORSION_F.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "TF-P",
+   "test": "F fixed at (4/\u03c0)\u221a(3/2) M_Pl, derived from the Nieh\u2013Yan period",
+   "verdict": "*pending*",
+   "rule": "`P/PREREGISTRATION_TORSION_F_PLANCK.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "LZ",
+   "test": "Low-z split of the DES Y5 supernova gain",
+   "verdict": "**CALIBRATION-SENSITIVE** (r = \u22120.06): neither half alone prefers the Twist; the gain is the low/high-z offset (w0\u2013wa the same, r = \u22120.17)",
+   "rule": "`P/PREREGISTRATION_SOLAR_LOWZ.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "SSG",
+   "test": "BI dilaton vs Cassini (Spiral Twist gate)",
+   "verdict": "**ATTRACTOR-PROTECTED** (Reading A): GR point at \u03d5 = \u2212\u00bd, band \\",
+   "rule": "\u0394\u03c7\\",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "S8",
+   "test": "S8 on corrected code",
+   "verdict": "Late Twist NEUTRAL; Coupled Twist WORSENS (+0.84\u03c3 vs DES Y6)",
+   "rule": "`P/PREREGISTRATION_S8_FIXED_CODE.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "neutral"
+  },
+  {
+   "id": "V1\u2013V4",
+   "test": "Code validation gates",
+   "verdict": "PASS",
+   "rule": "`P/PREREGISTRATION_COUPLED_TWIST.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "C1",
+   "test": "Coupled vs \u039bCDM",
+   "verdict": "**NR: PASS (\u22127.91)**; as written PASS (\u22126.80)",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "C2",
+   "test": "Coupling needed",
+   "verdict": "**NR: NEEDED (\u22128.00)**; as written NEEDED",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "C3",
+   "test": "Coupled vs w0\u2013wa (\u0394AIC)",
+   "verdict": "**NR: WORSE (+4.05)**; as written WORSE (+5.16)",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "C5",
+   "test": "Torsion-natural \u03b2 = 0.816",
+   "verdict": "**EXCLUDED** (both codes; NR +71,655 for either sign)",
+   "rule": "same + deviation 08:39",
+   "source": "CLAIMS_INDEX",
+   "class": "fail"
+  },
+  {
+   "id": "\u03b2P",
+   "test": "\u03b2 profile (NR)",
+   "verdict": "bimodal: \u00b10.05 \u2192 \u22127.37 / \u22127.34; 0 \u2192 \u22120.63; \u22120.1 / +0.1 \u2192 +128 / +94",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "B4",
+   "test": "Minimal field explains the measured CMB rotation",
+   "verdict": "**EXCLUDED** (primary, 4.0\u03c3); the generous S = 8 reading is CONSISTENT only at the DES Y5 fit and target-sensitive",
+   "rule": "`P/PREREGISTRATION_B4_BIREFRINGENCE.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "fail"
+  },
+  {
+   "id": "B4-X",
+   "test": "One added photon coupling: switch ratio R",
+   "verdict": "fits by construction; **R = 0.997, OPEN** (LiteBIRD)",
+   "rule": "`P/PREREGISTRATION_B4X_PHOTON_COUPLING.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "open"
+  },
+  {
+   "id": "X7",
+   "test": "Atomic spin echo below lab limits",
+   "verdict": "**PASS** (b\u2080 \u2248 10\u207b\u2074\u00b3 GeV, 10\u00b9\u2070 below the neutron bound)",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "X9",
+   "test": "Silver (quantum) / golden (atomic) ratio spacings",
+   "verdict": "NOT SUPPORTED / SUGGESTIVE (p 0.044)",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "G2/S2/S3",
+   "test": "Ratio replication on new data",
+   "verdict": "golden NOT REPLICATED (p 0.56); silver NOT SUPPORTED; switch value DEFINITION-DEPENDENT",
+   "rule": "`P/PREREGISTRATION_RATIO_REPLICATION.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "pass"
+  },
+  {
+   "id": "IN",
+   "test": "\u03b1 = 1 geometry gives acceptable inflation",
+   "verdict": "**TENSION** (n_s 0.9667 at N = 60, 2.4\u03c3 low)",
+   "rule": "`P/PREREGISTRATION_UFE_CHECKS.md`",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "ER",
+   "test": "Dilaton relaxation supplies the early energy",
+   "verdict": "**TOO SMALL** (\u2264 2.5%; G \u00d713 at BBN)",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "LQ",
+   "test": "BI value today matches LQG \u03b3",
+   "verdict": "**NO VERDICT** (mirror 0.087)",
+   "rule": "same",
+   "source": "CLAIMS_INDEX",
+   "class": "open"
+  },
+  {
+   "id": "GH",
+   "test": "Stored fits vs H(z) chronometers and f\u03c38",
+   "verdict": "**NEUTRAL** (all \\",
+   "rule": "\u0394\\",
+   "source": "CLAIMS_INDEX",
+   "class": "neutral"
+  },
+  {
+   "id": "H1",
+   "test": "Stars in 1D\u20136D (correlation dimension)",
+   "verdict": "homogeneous above 3 pc; fractal-like in phase space",
+   "rule": "`P/PREREGISTRATION_STAR_FRACTAL.md`, `_ND`",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "H2",
+   "test": "Old books and sources",
+   "verdict": "logged and checked",
+   "rule": "\u2014",
+   "source": "CLAIMS_INDEX",
+   "class": "reported"
+  },
+  {
+   "id": "",
+   "test": "**SF** Spiral vs \u039bCDM / w0\u2013wa: Pantheon+, Dovekie, Union3",
+   "verdict": "**BEATS \u039bCDM**, **COMPETITIVE** with w0\u2013wa",
+   "result": "\u22129.22 / +0.73; \u221211.44 / +1.80; \u221212.88 / +2.12",
+   "source": "CURRENT_MODEL",
+   "class": "pass"
+  },
+  {
+   "id": "",
+   "test": "SF implied angle share f",
+   "verdict": "under the 9% bound",
+   "result": "5.2\u20135.9% (\u03b2_eff 0.042\u20130.049)",
+   "source": "CURRENT_MODEL",
+   "class": "reported"
+  },
+  {
+   "id": "",
+   "test": "SR-B2 (is SF DESI-driven?)",
+   "verdict": "reported",
+   "result": "Pantheon+, Dovekie DESI-driven; Union3 partly",
+   "source": "CURRENT_MODEL",
+   "class": "reported"
+  },
+  {
+   "id": "",
+   "test": "SR-R3 (cold restarts)",
+   "verdict": "reported",
+   "result": "all three stable",
+   "source": "CURRENT_MODEL",
+   "class": "reported"
+  },
+  {
+   "id": "",
+   "test": "**TF-P** F = 1.559 fixed (Nieh\u2013Yan)",
+   "verdict": "**SUPPORTED** (3-value look-elsewhere); Union3 DISFAVOURED, Pantheon+ CONSISTENT (information)",
+   "result": "DES Y5 D 0.00, G \u22127.42",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "TF F = \u221a(3/2), \u221a6",
+   "verdict": "both **DISFAVOURED**",
+   "result": "DES Y5",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "Early field, fair Planck / blind P-ACT",
+   "verdict": "pass",
+   "result": "\u22124.70 / \u22127.23",
+   "source": "CURRENT_MODEL",
+   "class": "pass"
+  },
+  {
+   "id": "",
+   "test": "Early field, three SN sets",
+   "verdict": "pass",
+   "result": "\u22124.55 / \u22125.08 / \u22124.91",
+   "source": "CURRENT_MODEL",
+   "class": "pass"
+  },
+  {
+   "id": "",
+   "test": "Early field vs w0\u2013wa (combined CMB)",
+   "verdict": "loses to w0\u2013wa",
+   "result": "\u22125.63 vs \u221210.89",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "Weak lensing S8 penalty",
+   "verdict": "**TIE** overall",
+   "result": "2.87 (DES+KiDS-1000) / 0.75 (KiDS-Legacy)",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "**S8-WL Part 1**, DES Y6 shear (S8 0.798)",
+   "verdict": "**OVER** for all (limit 2); reported beside the verdict",
+   "result": "Locked Twist 2.86; Spiral 4.17 / 4.87 / 6.97",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "**SF2** does the BI angle matter? (\u03b2 = 0 vs free; Pantheon+ / Dovekie / Union3)",
+   "verdict": "**ANGLE NEEDED** (7 Nov)",
+   "result": "removing the angle costs \u0394\u03c7\u00b2 +8.53 / +8.73 / +11.70; \u03b2 = 0 alone vs \u039bCDM \u22120.70 / \u22122.72 / \u22121.19",
+   "source": "CURRENT_MODEL",
+   "class": "reported"
+  },
+  {
+   "id": "",
+   "test": "**FP** Fingerprint (Holst) vs cosine (Nieh\u2013Yan), same engine",
+   "verdict": "**cannot tell apart yet**; no coupling preference",
+   "result": "\u0394\u03c7\u00b2_eff = +0.86 (sinh worse)",
+   "source": "CURRENT_MODEL",
+   "class": "neutral"
+  },
+  {
+   "id": "",
+   "test": "**UB-1** can one coupled axion\u2013dilaton do both jobs? (background, no data)",
+   "verdict": "**PASS only with the extra slope \u03ba (D1)**; the derived potential (A) fails; dilaton barely moves (",
+   "result": "locked code: FAIL (A and B); D1 integrator fix: **B PASS** (\u03ba = \u22120.145: bump 3.2% at z \u2248 5,800, quiet, w0 = \u22120.997, \u03a9_m 0.295), A FAIL",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "**UB-1b** derived potential with W = W0 e^{b\u03a6} (b free), background only",
+   "verdict": "**FAIL** (D1b-1: same search run in parallel)",
+   "result": "closest point misses by 0.038 (peak at z = 1,930, just below 2,000; \u03a9_m = 0.330, just above 0.33), b = 2.80",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "**UB-2** one field vs Planck 2018 + DESI + SN (variant B, 4 extra parameters, best of 4 restarts each)",
+   "verdict": "**vs \u039bCDM MIXED; vs w0\u2013wa NOT COMPETITIVE; DOES NOT UNIFY** (8 Nov)",
+   "result": "\u0394\u03c7\u00b2 vs \u039bCDM \u22120.69 / \u22125.96 / \u22121.93; vs w0\u2013wa +8.42 / +5.87 / +13.09 (\u0394AIC +12.4 / +9.9 / +17.1); stored Spiral pieces \u22129.22 / \u221211.44 / \u221212.88",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "**UB-P** does UB-2 land where UB-1 predicted? (locked 05:33 UTC, before any UB-2 result)",
+   "verdict": "**MIXED** (8 Nov)",
+   "result": "Pantheon+: 1 of 5 inside (peak at z \u2248 60,000, \u03ba \u22120.58); Dovekie: 3 of 5 (w0, \u03ba outside); Union3: 4 of 5 (f_peak 0.023 below 0.031)",
+   "source": "CURRENT_MODEL",
+   "class": "mixed"
+  },
+  {
+   "id": "",
+   "test": "Potential power n = 3 vs 2, 4",
+   "verdict": "**n = 3 stays**",
+   "result": "n = 2: no better than \u039bCDM; n = 4: tie",
+   "source": "CURRENT_MODEL",
+   "class": "pass"
+  },
+  {
+   "id": "",
+   "test": "**S8-J** Spiral refit with DES Y6 S8 inside the fit",
+   "verdict": "(running) **rule locked 8 Nov 10:58 UTC**; gate G-J then 6 fits on the PC (START_S8J.bat). Not blind: with the S8 term added at the stored fits (no refit) the Spiral leads \u039bCDM by \u22125.06 / \u22126.57 / \u22125.91",
+   "source": "CURRENT_MODEL",
+   "class": "open"
+  },
+  {
+   "id": "",
+   "test": "**S8-L** light angle (option 4): the angle share f = \u03b2_eff/0.816 as an ultralight field, +1 parameter (mass)",
+   "verdict": "(running) engine built and code-checked (\u03c38 equal to 2\u00d710\u207b\u2078); no-data check: S8 \u22120.003 at a_c = 10\u207b\u2075, \u22120.035 at 10\u207b\u2074\u00b7\u2075; **rule locked 8 Nov**; PC: build, gate G-L, then 3 fits",
+   "source": "CURRENT_MODEL",
+   "class": "open"
+  },
+  {
+   "id": "",
+   "test": "BR bracket (early-field variants)",
+   "verdict": "(running) 2 of 6 done: \u03b8 2.414 F8 \u03c7\u00b2 2432.00 (score 2430.00), F9 2432.72 (2430.72), vs locked fit 2428.83, so both lose so far. The other 4 (\u03b8 2.414 F10, \u03b8 2.777 F8/F9/F10) stopped part-way at about 04:40\u201305:00 UTC 8 Nov when their windows were closed. The rule says failed jobs are not re-run; whether a closed window counts as failed is Danny's call",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "**S8WL Part 2** full DES Y3 shear likelihood",
+   "verdict": "(running) rule locked 7 Nov; run in the cloud. Locked Twist \u0394_WL = +1.14 **PASSES** (limit +2); Spiral +2.57 / +3.47 / +3.99 **OVER**; UB-2 joined field \u22120.37 / 0.00 / +0.14 **PASSES** (equal effort, all pairs done 8 Nov)",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "Stage-3 P-ACT bracket",
+   "verdict": "(running) after BR",
+   "source": "CURRENT_MODEL",
+   "class": "open"
+  }
+ ],
+ "counts": {
+  "pass": 18,
+  "fail": 16,
+  "neutral": 10,
+  "open": 6,
+  "reported": 21,
+  "mixed": 1
+ }
+}

@@ -17,7 +17,7 @@ Latest public record: Nov 3 "UFE/Spiral Twist update" (supplement to Zenodo v3 d
 doi:10.5281/zenodo.23899237).
 
 ## Locked results
-| Test | Result | Verdict |
+| Test | Result | Verdict (rule labels; see field_tests/WORDING_STANDARD.md for definitions) |
 |---|---|---|
 | **SF** Spiral vs ΛCDM / w0–wa: Pantheon+, Dovekie, Union3 | −9.22 / +0.73; −11.44 / +1.80; −12.88 / +2.12 | **BEATS ΛCDM**, **COMPETITIVE** with w0–wa |
 | SF implied angle share f | 5.2–5.9% (β_eff 0.042–0.049) | under the 9% bound |
