@@ -1,0 +1,45 @@
+{
+ "rule": "PREREG_S8_JOINT.md",
+ "rows": {
+  "Pantheon+": {
+   "verdict": "NO VERDICT (fit missing or non-finite)"
+  },
+  "DES-Dovekie": {
+   "chi2_spiral_S8": 2625.075,
+   "chi2_LCDM_S8": 2633.214,
+   "delta": -8.14,
+   "lensing_cost": 0.88,
+   "chi2_S8_term": {
+    "spiral": 4.01,
+    "LCDM": 1.59
+   },
+   "S8": {
+    "spiral": 0.826,
+    "LCDM": 0.8157,
+    "spiral_SF": 0.8338
+   },
+   "beta_eff": 0.0413,
+   "beta_eff_SF": 0.0454,
+   "kappa": 0.85
+  },
+  "Union3": {
+   "chi2_spiral_S8": 1018.098,
+   "chi2_LCDM_S8": 1026.333,
+   "delta": -8.23,
+   "lensing_cost": 1.64,
+   "chi2_S8_term": {
+    "spiral": 4.27,
+    "LCDM": 1.27
+   },
+   "S8": {
+    "spiral": 0.8269,
+    "LCDM": 0.8137,
+    "spiral_SF": 0.8395
+   },
+   "beta_eff": 0.0418,
+   "beta_eff_SF": 0.0485,
+   "kappa": 0.977
+  }
+ },
+ "verdict_vs_LCDM": "SURVIVES LENSING"
+}
