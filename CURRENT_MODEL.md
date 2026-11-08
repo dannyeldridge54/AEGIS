@@ -30,6 +30,8 @@ doi:10.5281/zenodo.23899237).
 | Early field vs w0–wa (combined CMB) | −5.63 vs −10.89 | loses to w0–wa |
 | Weak lensing S8 penalty | 2.87 (DES+KiDS-1000) / 0.75 (KiDS-Legacy) | **TIE** overall |
 | **S8-WL Part 1**, DES Y6 shear (S8 0.798) | Locked Twist 2.86; Spiral 4.17 / 4.87 / 6.97 | **OVER** for all (limit 2); reported beside the verdict |
+| **SF2** does the BI angle matter? (β = 0 vs free; Pantheon+ / Dovekie / Union3) | removing the angle costs Δχ² +8.53 / +8.73 / +11.70; β = 0 alone vs ΛCDM −0.70 / −2.72 / −1.19 | **ANGLE NEEDED** (7 Nov) |
+| **FP** Fingerprint (Holst) vs cosine (Nieh–Yan), same engine | Δχ²_eff = +0.86 (sinh worse) | **cannot tell apart yet**; no coupling preference |
 | Potential power n = 3 vs 2, 4 | n = 2: no better than ΛCDM; n = 4: tie | **n = 3 stays** |
 
 **Failed and dropped (kept on record):** N = 9 width on SPT-3G; silver-ratio angle; pure torsion width F = √(3/2) M_Pl
@@ -39,9 +41,7 @@ unification with constant W.
 ## Open (in progress)
 | Test | State |
 |---|---|
-| **SF2** does the BI angle matter? (β = 0 vs free) | running on the PC (`field_tests`, rule locked 7 Nov) |
-| **FP** Fingerprint (Holst) vs cosine (Nieh–Yan) | running on the PC (gate passed) |
-| **UB-1** can the coupled axion–dilaton do both jobs? (background only) | rule locked 7 Nov 23:45 UTC; runs on the PC right after SF2/FP, before the bracket; locked version + deviation D1 (integrator fix), both reported |
+| **UB-1** can the coupled axion–dilaton do both jobs? (background only) | rule locked 7 Nov 23:45 UTC; the PC queue line did not fire, so it is running in the cloud container (light, ~15 min); locked version + deviation D1 (integrator fix), both reported |
 | **UB-2** unified field vs data (draft rule; code `cmb-fit/ub2_fit.py`) | engine gates G1–G3 + 3 w0–wa references queued with the bracket; locks only if UB-1 passes |
 | BR bracket (early-field variants) | 2 of 6 done; the other 4 start on the PC after UB-1 |
 | **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; PC, needs CosmoSIS |
