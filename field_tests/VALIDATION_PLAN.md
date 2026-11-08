@@ -21,3 +21,16 @@ after today's S8-J, S8-L and the bracket.
 Also open from the quantum-side list (`theory/QUANTUM_SIDE_NOTES_2026-11-08.md`): instanton height (the angle's
 mass), origin of n = 3, the starting-angle conflict, Holst mixing before the next FP test. The n = 1 test stays
 deferred (both engines hang).
+
+## Status after the first pass (8 Nov, 10 AM; details in the Claude doc "The Twist equation map")
+- MAP: **done (first version)**. 5 derived, 1 derived in kind, 4 chosen, 5 fitted.
+- V-GW: passes by construction (Einstein–Cartan + Nieh–Yan reduces to GR; theory audit E). Rule only needs to record it.
+- V-ALPHA: Twist predicts no drift at tree level; limits gathered (ESPRESSO 1.3 ± 1.4 ppm; clocks (1.0 ± 1.1)e-18/yr).
+- V-FIFTH: Twist force ratio 2β² ≈ 0.4% vs Sagittarius-stream bound ≈ 4% (β_KK < 0.2). Must first state whether the
+  coupling acts on all dark matter (as fitted) or only on the 5% angle share at full strength.
+- V-BBN: early field frozen at BBN; estimate negligible. Rule should compute it from the stored fits.
+- V-BIREF: already done 2 Nov (B4): the Twist does not explain the measured 0.24°; EXCLUDED as an explanation.
+- V-FS8: GH (2 Nov) NEUTRAL for older fits; redo for the Spiral and S8-J/S8-L fits.
+- V-PRED: 2 Nov locks cover the Late and Coupled Twist only. **Gap: lock predictions for the Spiral + Locked Twist (and
+  S8-J/S8-L once scored) before DESI DR3 (not out) and Euclid DR1 cosmology (mid-2027).**
+- V-CLUSTER, V-LYA, V-CODE: not started (V-CODE partly covered by existing mirrors).
