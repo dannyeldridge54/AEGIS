@@ -23,6 +23,10 @@ PAIRS = {"Locked Twist (Planck+DESI+Pantheon+)": (("edelock", "edelockP"), ("lcd
 PAIRS.update({"Spiral, Pantheon+": (("pk", "ax_spa_spiraltwist_nlfix"), ("pk", "ax_spa_lcdm_halofit")),
               "Spiral, DES-Dovekie": (("pk", "ax_spa_spiraltwist_dovekie_nlfix"), ("pk", "ax_spa_lcdm_halofit_dovekie")),
               "Spiral, Union3": (("pk", "ax_spa_spiraltwist_union3_nlfix"), ("pk", "ax_spa_lcdm_halofit_union3"))})
+# S8-J (PREREG_S8_JOINT.md, reported: Part 2 Delta_WL at the joint best fits) and S8-L (PREREG_SPIRAL_L.md, reported)
+for sn, suf in (("Pantheon+", ""), ("DES-Dovekie", "_dovekie"), ("Union3", "_union3")):
+    PAIRS[f"S8-J joint Spiral, {sn}"] = (("pk", f"ax_spa_spiraltwist{suf}_nlfix_s8y6"), ("pk", f"ax_spa_lcdm_halofit{suf}_s8y6"))
+    PAIRS[f"S8-L light angle, {sn}"] = (("pk", f"spiralL{suf}"), ("pk", f"ax_spa_lcdm_halofit{suf}"))
 SPIRAL = []
 
 VALUES = """[cosmological_parameters]

@@ -29,10 +29,19 @@ C_KMS = 299792.458
 
 def one(name):
     """Same theory settings as the stored fit (early_late_spa.make, incl. the ClassyTwist parameter translation); CLASS is
-    asked for P(k, z) up to z_max_pk (a z_pk list string is rejected by this build), then read directly."""
-    E._maybe_coupled(name)                      # puts the run's own AxiCLASS build first on sys.path
+    asked for P(k, z) up to z_max_pk (a z_pk list string is rejected by this build), then read directly.
+    S8-J runs "<SF run>_s8y6" use their SF run's settings (the S8 term changes no theory setting); S8-L runs "spiralL*"
+    use spiral_l_fit.make (ULA build, dark-matter split, log10_a_c from the stored point)."""
+    ula = name.startswith("spiralL")
+    if ula:
+        sys.path.insert(0, os.path.join(AX, "ula"))
+        import spiral_l_fit
+        info, _ = spiral_l_fit.make(name)
+    else:
+        make_name = name[:-5] if name.endswith("_s8y6") else name
+        E._maybe_coupled(make_name)             # puts the run's own AxiCLASS build first on sys.path
+        info = E.make(make_name)
     import classy
-    info = E.make(name)
     zpk, zbg, zgr, kh = G["z_pk"], G["z_bg"], G["z_growth"], G["k_h"]
     best = json.load(open(os.path.join(E.OUT, f"cmp_{name}.json")))["minimum"]
     args = dict(info["theory"]["classytwist"]["extra_args"])
@@ -41,6 +50,8 @@ def one(name):
                  "omega_b": best["omega_b"], "omega_cdm": best["omega_cdm"], "tau_reio": best["tau_reio"]})
     if "scf_coupling_beta" in best:
         args["scf_coupling_beta"] = best["scf_coupling_beta"]
+    if ula:                                        # S8-L: omega_cdm, omega_fld, log10_a_c as stored (derived split)
+        args.update({"omega_cdm": best["omega_cdm"], "omega_fld": best["omega_fld"], "log10_a_c": best["log10_a_c"]})
     if "spiral_kappa" in best:
         import spiral_guess
         k = best["spiral_kappa"]
@@ -53,7 +64,7 @@ def one(name):
     c.compute()
     h = c.h()
     kmax = 50.0                                                   # 1/Mpc, computed range; beyond: log-log extrapolation
-    out = {"h0": h, "omega_m": (best["omega_b"] + best["omega_cdm"] + 0.06 / 93.14) / h ** 2}
+    out = {"h0": h, "omega_m": (best["omega_b"] + best["omega_cdm"] + best.get("omega_fld", 0.0) + 0.06 / 93.14) / h ** 2}
     kM = kh * h
 
     def pk_row(fun, z):
