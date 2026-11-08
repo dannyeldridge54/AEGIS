@@ -29,7 +29,6 @@ import unify_hyperbolic_bg_v2 as UB       # noqa: E402  (fields, metric, potenti
 import cmbfit as C                       # noqa: E402
 
 NA = 3000
-SMOOTH = float(os.environ.get("UB_SMOOTH", 0.1))      # e-folds; ln rho smoothing window
 NTAB = 300                                            # rows passed to CAMB (see w_table)
 LNA = np.linspace(math.log(1e-7), 0.0, NA)          # w-table grid (ln a)
 UB_PARAMS = {
@@ -87,8 +86,8 @@ def field_history(par, var, rho, rhop, other0):
             V, K, H2, du, f2 = parts(N, y)
             eps = K + 3 * rhop(N) / (2 * H2)
             vth = L * 3 * (1 - math.cos(th)) ** 2 * math.sin(th)
-            return [cp, tp, -(3 - eps) * cp + UB.LAM / 2 * f2 * tp * tp - A * du / (3 * H2),
-                    -(3 - eps) * tp - UB.LAM * cp * tp - vth / (3 * f2 * H2)]
+            return [cp, tp, -(3 - eps) * cp + UB.LAM / 2 * f2 * tp * tp - A * du / H2,   # V here is in units of 3 H0^2, so the force is 3 dV/(H^2/H0^2)
+                    -(3 - eps) * tp - UB.LAM * cp * tp - vth / (f2 * H2)]
         return parts, rhs
 
     def today(lnA):
@@ -126,17 +125,15 @@ def field_history(par, var, rho, rhop, other0):
 
 
 def w_table(rf):
-    """w from the density history, w = -1 - (1/3) dln rho/dln a, after smoothing ln rho over ~0.1 e-fold so that fast
-    oscillations are averaged (the background the CMB sees). Clipped to w >= -1 + 1e-7 for CAMB's fluid."""
-    lr = np.log(rf)
-    win = max(3, int(SMOOTH / (LNA[1] - LNA[0])) | 1)
-    ker = np.ones(win) / win
-    pad = np.concatenate([np.full(win // 2, lr[0]), lr, np.full(win // 2, lr[-1])])
-    sm = np.convolve(pad, ker, mode="valid")
-    w = -1 - np.gradient(sm, LNA) / 3
-    # CAMB 2.0.5's fluid table: ~900+ points corrupts memory and 400+ made HMCode time out in tests; 300 works.
-    idx = np.linspace(0, NA - 1, NTAB).astype(int)
-    return np.exp(LNA[idx]), np.clip(w[idx], -1 + 1e-7, 1.0)
+    """CAMB fluid table (NTAB rows, uniform in ln a): each row's w is the cell average -1 - (1/3) dln rho/dln a over
+    its own cell, so CAMB's integral of w gives back the solved density (tested: H(z) to <= 2.4e-4, 5 points).
+    Clipped to -1 + 1e-7 <= w <= 1 for CAMB's fluid (the solved w stays inside that range up to rounding)."""
+    lr = CubicSpline(LNA, np.log(rf))
+    nodes = np.linspace(LNA[0], 0.0, NTAB)
+    h = nodes[1] - nodes[0]
+    lo, hi = np.maximum(nodes - h / 2, LNA[0]), np.minimum(nodes + h / 2, 0.0)
+    w = -1 - (lr(hi) - lr(lo)) / (3 * (hi - lo))
+    return np.exp(nodes), np.clip(w, -1 + 1e-7, 1.0)
 
 
 def ub_theory():
@@ -158,8 +155,8 @@ def ub_theory():
                 self.log.debug("UB field failed: %s", e)
                 return None
             a, w = w_table(rf)
-            from camb.dark_energy import DarkEnergyFluid
-            de = DarkEnergyFluid(cs2=1.0)
+            from camb.dark_energy import DarkEnergyPPF
+            de = DarkEnergyPPF()
             de.set_w_a_table(a, w)
             cp.DarkEnergy = de
             state.setdefault("derived_extra", {})["ub_lnA"] = lnA
@@ -258,19 +255,22 @@ def gates():
     r = camb.get_background(p)
     a = np.exp(LNA)
     rho_de, w_de = r.get_dark_energy_rho_w(a)
+    rho_de = np.asarray(rho_de, dtype=float)
+    good = np.isfinite(rho_de) & (rho_de > 0)               # CAMB reports 0 before the field is evolved (frozen = const)
+    rho_de[:np.argmax(good)] = rho_de[np.argmax(good)]
+    a_t, w_t = w_table(rho_de)                 # same 300-row cell-average table as the UB fits
     fl = C.make_info("lcdm")
     fl["params"].pop("theta_s_100"); fl["params"].pop("thetastar")
     fl["params"]["H0"] = {"prior": {"min": 20.0, "max": 100.0}, "ref": lt["H0"]}
-    wt = np.clip(np.asarray(w_de), -1 + 1e-7, 1.0)
     from cobaya.theories.camb import CAMB
 
     class FluidCamb(CAMB):
         def set(self, pv, state):
             cp = super().set(pv, state)
             if cp is not None:
-                from camb.dark_energy import DarkEnergyFluid
-                de = DarkEnergyFluid(cs2=1.0)
-                de.set_w_a_table(a, wt)
+                from camb.dark_energy import DarkEnergyPPF
+                de = DarkEnergyPPF()
+                de.set_w_a_table(a_t, w_t)
                 cp.DarkEnergy = de
             return cp
 
@@ -295,7 +295,7 @@ def gates():
     try:
         rf, lnA = field_history(par, "B", rho, rhop, other0)
         aa, w = w_table(rf)
-        de = __import__("camb").dark_energy.DarkEnergyFluid(cs2=1.0)
+        de = __import__("camb").dark_energy.DarkEnergyPPF()
         de.set_w_a_table(aa, w)
         p.DarkEnergy = de
         r = camb.get_background(p, no_thermo=True)
