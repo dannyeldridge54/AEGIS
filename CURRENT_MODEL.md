@@ -46,7 +46,7 @@ unification with constant W.
 | Test | State |
 |---|---|
 | BR bracket (early-field variants) | 2 of 6 done; the other 4 start on the PC after UB-1 |
-| **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; run in the cloud. Locked Twist Δ_WL = +1.14 **PASSES** (limit +2); Spiral ×3 running; UB-2 pairs next |
+| **S8WL Part 2** full DES Y3 shear likelihood | rule locked 7 Nov; run in the cloud. Locked Twist Δ_WL = +1.14 **PASSES** (limit +2); Spiral +2.57 / +3.47 / +3.99 **OVER** (7 tries each side, equal effort); UB-2 pairs running |
 | Stage-3 P-ACT bracket | after BR |
 
 ## Where things are
