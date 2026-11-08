@@ -39,9 +39,9 @@ def main():
                 acc += 1
         pts.append(x.copy()); rows.append(d)
     islands = []
-    for p0 in lo + (hi - lo) * rng.random((400, 5)):
+    for p0 in lo + (hi - lo) * rng.random((60, 5)):
         r = minimize(lambda p: M.miss(M.solve(p, "B")), p0, method="Nelder-Mead",
-                     options={"maxfev": 300, "xatol": 1e-3, "fatol": 1e-4})
+                     options={"maxfev": 200, "xatol": 1e-3, "fatol": 1e-4})
         if r.fun == 0:
             islands.append([round(float(v), 4) for v in r.x])
     keys = ["F_at_peak", "z_peak", "f_peak", "w0", "phi_today", "F_today", "f_1090"]
@@ -51,7 +51,7 @@ def main():
            "walk_steps": steps, "accept_rate": round(acc / steps, 3),
            "ranges_5_50_95": {k: q([r[k] for r in rows]) for k in keys},
            "params_5_50_95": {n: q(P[:, i]) for i, n in enumerate(["lnA", "lnL", "theta_i", "phi_i", "kappa"])},
-           "other_islands_from_400_random_starts": islands}
+           "other_islands_from_60_random_starts": islands}
     json.dump(out, open("ub1_map_region.json", "w"), indent=1, default=lambda o: o.item() if hasattr(o, "item") else str(o))
     print(json.dumps(out, indent=1, default=lambda o: o.item() if hasattr(o, "item") else str(o)))
 
