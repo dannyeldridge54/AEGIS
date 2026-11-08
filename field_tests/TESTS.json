@@ -119,6 +119,49 @@
    "runs": [],
    "setup": "field_tests/S8_WL/SETUP.md",
    "scorer": "s8wl_score.py"
+  },
+  {
+   "id": "UB1b",
+   "title": "Derived potential with W = W0 exp(b Phi): can it do both jobs? (background)",
+   "where": "cloud/PC (Python)",
+   "rule": "field_tests/rules/PREREG_UNIFY_BG_1B.md",
+   "locked": "2026-11-08T01:57:15Z",
+   "runs": [],
+   "script": "theory/run_ub1b_parallel.py",
+   "result": "theory/unify_hyperbolic_bg_ub1b.json",
+   "verdict": "FAIL (miss 0.038)"
+  },
+  {
+   "id": "UB2",
+   "title": "Unified BI axion-dilaton (variant B) vs Planck 2018 + DESI DR2 + SN",
+   "where": "WSL on the PC via cmb-fit/ub2_camb/ub2_pc.sh (not run_pc.sh)",
+   "rule": "field_tests/rules/PREREG_UNIFY_DATA.md",
+   "locked": "2026-11-08T03:53:33Z",
+   "runs": [
+    "ub2B",
+    "ub2B_dovekie",
+    "ub2B_union3",
+    "w0waP",
+    "w0waP_dovekie",
+    "w0waP_union3"
+   ],
+   "driver": "cmb-fit/ub2_fit.py",
+   "build": "cmb-fit/ub2_camb/ub2_pc.sh",
+   "gate": {
+    "file": "../cmb-fit/results/ub2_gates.json",
+    "key": "all_pass",
+    "equals": true
+   },
+   "scorer": "ub2_score.py"
+  },
+  {
+   "id": "UBP",
+   "title": "UB-2 lands inside the UB-1 passing region (prediction test)",
+   "where": "scored from UB-2",
+   "rule": "field_tests/rules/PREREG_UB2_PREDICTIONS.md",
+   "locked": "pending (before any UB-2 result)",
+   "runs": [],
+   "scorer": "ub_p_score.py"
   }
  ]
 }
