@@ -46,7 +46,7 @@ def class_ratios(run, best, zs, kh):
     if s8a:                                # PREREG_LATE_BASE.md: angle-coupled build; CLASS P(k) counts the angle
         sys.path.insert(0, os.path.join(AP.AX, "angle"))
         import angle_fit
-        info, _ = angle_fit.make(run)
+        info, _ = angle_fit.make(run.split("__js")[0])      # JOINT-SHEAR design points
     else:
         sys.path.insert(0, os.path.join(AP.AX, "ula"))
         import spiral_l_fit

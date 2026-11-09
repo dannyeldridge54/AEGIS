@@ -1,0 +1,130 @@
+{
+ "S8A__jsc": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd00": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd01": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd02": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd03": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd04": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd05": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd06": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd07": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd08": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd09": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd10": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd11": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsd12": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jsh00": [
+  "S8A",
+  "heldout"
+ ],
+ "S8A__jsh01": [
+  "S8A",
+  "heldout"
+ ],
+ "S8A__jsh02": [
+  "S8A",
+  "heldout"
+ ],
+ "S8A__jsh03": [
+  "S8A",
+  "heldout"
+ ],
+ "ax_spa_lcdm_halofit__jsc": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jsd00": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jsd01": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jsd02": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jsd03": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jsd04": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jsd05": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jsd06": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jsd07": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jsd08": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jsh00": [
+  "LCDM",
+  "heldout"
+ ],
+ "ax_spa_lcdm_halofit__jsh01": [
+  "LCDM",
+  "heldout"
+ ],
+ "ax_spa_lcdm_halofit__jsh02": [
+  "LCDM",
+  "heldout"
+ ],
+ "ax_spa_lcdm_halofit__jsh03": [
+  "LCDM",
+  "heldout"
+ ]
+}

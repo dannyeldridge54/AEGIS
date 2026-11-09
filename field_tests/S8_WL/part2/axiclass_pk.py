@@ -37,13 +37,13 @@ def one(name):
     if s8a:                                    # S8-A (PREREG_LATE_BASE.md): angle-coupled build, angle in delta_m
         sys.path.insert(0, os.path.join(AX, "angle"))
         import angle_fit
-        info, _ = angle_fit.make(name)
+        info, _ = angle_fit.make(name.split("__js")[0])      # JOINT-SHEAR design points: theory of the base run
     elif ula:
         sys.path.insert(0, os.path.join(AX, "ula"))
         import spiral_l_fit
         info, _ = spiral_l_fit.make(name)
     else:
-        make_name = name.replace("_s8y6_more", "").replace("_s8y6", "")
+        make_name = name.split("__js")[0].replace("_s8y6_more", "").replace("_s8y6", "")
         E._maybe_coupled(make_name)             # puts the run's own AxiCLASS build first on sys.path
         info = E.make(make_name)
     import classy
