@@ -33,7 +33,12 @@ def main(run, i):
     info["sampler"] = {"mcmc": {"Rminus1_stop": 0.02, "Rminus1_cl_stop": 0.2, "learn_proposal": True,
                                 "max_tries": 100000, "seed": 1000 + 17 * int(i)}}
     os.makedirs(f"{E.OUT}/chains/v6", exist_ok=True)
-    info["output"] = f"{E.OUT}/chains/v6/{run}_c{i}"
+    cov = f"{E.OUT}/chains/v6/{run}.covmat"           # V6-D1: Laplace-step covariance as the starting proposal
+    tag = ""
+    if os.path.exists(cov):
+        info["sampler"]["mcmc"]["covmat"] = cov
+        tag = "_cov"
+    info["output"] = f"{E.OUT}/chains/v6/{run}{tag}_c{i}"
     info["resume"] = True
     info.pop("force", None)
     crun(info)
