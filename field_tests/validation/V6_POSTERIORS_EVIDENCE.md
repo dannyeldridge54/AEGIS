@@ -26,3 +26,14 @@ Only after the current S8 fits and the bracket finish.
 
 **Prep done (8 Nov).** This plan. **Next:** check PC for `polychord`/`mcevidence` (pip), estimate per-evaluation time
 from the SF logs, draft the rule.
+
+## Status 9 Nov 07:41 UTC check-in
+The step-6 schedule asked for a new draft rule. Not written: PREREG_V6_EVIDENCE.md was already locked (8 Nov, on
+Danny's word) and its chains started on the PC 9 Nov 11:24 UTC (Pantheon+ first; Spiral, S8-L, ΛCDM × 4 chains;
+see DATA_LOG). Differences between the schedule's request and the locked rule, reported, nothing changed:
+- w0–wa is not in the locked V6 (the schedule asked for it). Adding it needs a new rule; cost about one more model's
+  chains.
+- Evidence tools: MCEvidence is not on PyPI; it installs from GitHub (yabebalFantaye/MCEvidence, HEAD ade1dcb) and is
+  pure Python, so it is installed at scoring time. PolyChord is not on PyPI either (PolyChordLite needs a Fortran
+  compiler); the locked rule does not use it.
+- Per-evaluation time: being read from the running chains' speed measurement (not yet printed at 11:29 UTC).

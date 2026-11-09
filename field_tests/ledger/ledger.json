@@ -22,6 +22,13 @@
    "lock_time": "2026-11-07T11:25:01-06:00"
   },
   {
+   "rule": "PREREG_FLAGSHIP.md",
+   "origin": "AEGIS",
+   "sha256": "a3b647c832d1fda586db9f4a4ab6251afd768499e62046bed3c779fb2db7310a",
+   "verified": true,
+   "lock_time": "2026-11-09T07:38:57Z"
+  },
+  {
    "rule": "PREREG_FP_LOCK.md",
    "origin": "AEGIS",
    "sha256": "8499d9505fddfc001d86f003bdaa8d5de6600d83f91b40f767eacfdca71e4817",
@@ -41,6 +48,13 @@
    "sha256": "deca2fc16ce05d91f88985aa2184d07dee80ddc33e5751c72753a20f08cce31c",
    "verified": true,
    "lock_time": "2026-11-08T22:48:19Z"
+  },
+  {
+   "rule": "PREREG_PRED_EUCLID.md",
+   "origin": "AEGIS",
+   "sha256": "1290331b1b363f3fc3ea4cdb710cb1e6a8f141d2461e0787eea9d8ab5e96bd16",
+   "verified": true,
+   "lock_time": "2026-11-09T07:38:57Z"
   },
   {
    "rule": "PREREG_S8L_NONLINEAR.md",
@@ -125,6 +139,34 @@
    "sha256": "c7bfb929173781c05fb8ddb0c369762d32427893007bbe3911a6dc619dadc755",
    "verified": true,
    "lock_time": "2026-11-08T21:19:38Z"
+  },
+  {
+   "rule": "PREREG_V4_CLUSTERS.md",
+   "origin": "AEGIS",
+   "sha256": "2cbad83ad1d61d36fc68cef7ab69801e8df9a1d27ce842d77756048648b0d39b",
+   "verified": true,
+   "lock_time": "2026-11-09T07:38:57Z"
+  },
+  {
+   "rule": "PREREG_V4_CMB_PATTERN_SO.md",
+   "origin": "AEGIS",
+   "sha256": "0d2b2305650d9ca743ec5905611b477df02dadb1257adb92153c9b28f0b8ce27",
+   "verified": true,
+   "lock_time": "2026-11-09T07:38:57Z"
+  },
+  {
+   "rule": "PREREG_V4_H0.md",
+   "origin": "AEGIS",
+   "sha256": "baec56f4ffb1507d2d31e7295a6a78580d5bcf4fd9fde5f6707ab4b00c61701e",
+   "verified": true,
+   "lock_time": "2026-11-09T07:38:57Z"
+  },
+  {
+   "rule": "PREREG_V4_RNS.md",
+   "origin": "AEGIS",
+   "sha256": "d635c1806b2349c4afff37e0d6ad9f5f6a01d4006ba2c1af6bf215e853efefc9",
+   "verified": true,
+   "lock_time": "2026-11-09T07:38:57Z"
   },
   {
    "rule": "PREREG_V6_EVIDENCE.md",
@@ -970,6 +1012,14 @@
   },
   {
    "id": "",
+   "test": "**SIMPLIFY-L** can the Spiral's slope \u03ba be fixed? (PREREG_SIMPLIFY_LATE.md, locked 8 Nov; 2 candidates; score \u03c7\u00b2 \u2212 2 per fit)",
+   "verdict": "**WINNER K2: \u03ba = 1** (beats free \u03ba by 5.60 \u2265 2; K1 by 0.69 only; two candidates tried). Flag (rule's check): fixed-\u03ba \u03c7\u00b2 below free by 0.13\u20130.40 on P+ and Dovekie, so the stored free-\u03ba fits are not fully converged; reported, nothing rerun. Note: the rule text quotes free \u03ba 0.86 / 0.97 / 1.17; the stored fits it scores have 0.83 / 0.87 / 1.05 (text error in the rule, left as locked)",
+   "result": "K1 \u03ba = 0.8165: \u03c7\u00b2 \u22120.40 / \u22120.39 / +1.87 vs free; K2 \u03ba = 1: \u22120.13 / +0.09 / +0.44 (P+ / Dovekie / Union3). Summed scores: free 6025.52, K1 6020.60, K2 6019.91",
+   "source": "CURRENT_MODEL",
+   "class": "pass"
+  },
+  {
+   "id": "",
    "test": "**V7 look-elsewhere** (PREREG_V7_LOOK_ELSEWHERE.md, locked 8 Nov; N = 64 late/early-field variants tried on the same data; \u0160id\u00e1k, conservative)",
    "verdict": "**NOT SIGNIFICANT AFTER LOOK-ELSEWHERE** (both). Quote local and global together from now on",
    "result": "Spiral local 2.6 / 2.9 / 3.2\u03c3 \u2192 global 0.7 / 1.3 / 1.7\u03c3; S8-L local 2.8 / 2.9 / 3.1\u03c3 \u2192 global 1.1 / 1.3 / 1.5\u03c3 (P+ / Dovekie / Union3)",
@@ -1010,10 +1060,26 @@
   {
    "id": "",
    "test": "**S8-J on KiDS-Legacy** full shear (PREREG_KIDS_LEGACY_SHEAR.md, locked 8 Nov; gate passed 124.266 vs 124.291; KiDS baseline HMcode-2020 + feedback on both sides, D1)",
-   "verdict": "**PASSES on KiDS-Legacy** (2 of 3 already pass; S8-J fits KiDS slightly better than \u039bCDM). Spiral and S8-L pairs not run yet",
-   "result": "\u0394_KiDS \u22120.41 / \u22120.26 / (Union3 not run yet) (P+ / Dovekie; limit +2; equal effort, 5 tries each side)",
+   "verdict": "**PASSES on KiDS-Legacy, 3 of 3** (S8-J fits KiDS slightly better than \u039bCDM).",
+   "result": "\u0394_KiDS \u22120.41 / \u22120.26 / \u22120.47 (P+ / Dovekie / Union3; limit +2; equal effort, 5 tries each side)",
    "source": "CURRENT_MODEL",
    "class": "pass"
+  },
+  {
+   "id": "",
+   "test": "**Spiral on KiDS-Legacy** (same rule and settings)",
+   "verdict": "**PASSES on KiDS-Legacy, 3 of 3.** It was OVER on the full DES Y3 shear (+2.6 to +4.0): by the rule, passing KiDS but not DES is reported as a question about survey systematics, not as a fix",
+   "result": "\u0394_KiDS +0.46 / +0.57 / +1.15 (limit +2; 5 tries each side)",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
+  },
+  {
+   "id": "",
+   "test": "**S8-L on KiDS-Legacy** (same rule; both sides axionHMcode basic + BAO damping, no baryon feedback, logT_AGN fixed 8.0, the limitation the rule anticipates)",
+   "verdict": "**OVER, 0 of 3.** Fails both surveys (S8-LNL on DES Y3 also NOT FIXED): by the rule, S8-L's lensing tension reads as real",
+   "result": "\u0394_KiDS +6.80 / +7.98 / +7.81 (limit +2; 5 tries each side, spread \u2264 0.014)",
+   "source": "CURRENT_MODEL",
+   "class": "fail"
   },
   {
    "id": "",
@@ -1024,8 +1090,8 @@
   }
  ],
  "counts": {
-  "pass": 21,
-  "fail": 16,
+  "pass": 22,
+  "fail": 18,
   "neutral": 10,
   "open": 4,
   "reported": 23,
