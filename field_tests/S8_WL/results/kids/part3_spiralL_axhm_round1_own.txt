@@ -1,0 +1,287 @@
+#intrinsic_alignment_parameters--uncorr_a	intrinsic_alignment_parameters--uncorr_beta	intrinsic_alignment_parameters--uncorr_log10_m_mean_1	intrinsic_alignment_parameters--uncorr_log10_m_mean_2	intrinsic_alignment_parameters--uncorr_log10_m_mean_3	intrinsic_alignment_parameters--uncorr_log10_m_mean_4	intrinsic_alignment_parameters--uncorr_log10_m_mean_5	intrinsic_alignment_parameters--uncorr_log10_m_mean_6	nofz_shifts--uncorr_bias_1	nofz_shifts--uncorr_bias_2	nofz_shifts--uncorr_bias_3	nofz_shifts--uncorr_bias_4	nofz_shifts--uncorr_bias_5	nofz_shifts--uncorr_bias_6	COSMOLOGICAL_PARAMETERS--S_8	COSMOLOGICAL_PARAMETERS--SIGMA_8	COSMOLOGICAL_PARAMETERS--A_S	COSMOLOGICAL_PARAMETERS--OMEGA_M	COSMOLOGICAL_PARAMETERS--OMEGA_NU	COSMOLOGICAL_PARAMETERS--OMEGA_LAMBDA	COSMOLOGICAL_PARAMETERS--COSMOMC_THETA	INTRINSIC_ALIGNMENT_PARAMETERS--A	INTRINSIC_ALIGNMENT_PARAMETERS--BETA	INTRINSIC_ALIGNMENT_PARAMETERS--LOG10_M_MEAN_1	INTRINSIC_ALIGNMENT_PARAMETERS--LOG10_M_MEAN_2	INTRINSIC_ALIGNMENT_PARAMETERS--LOG10_M_MEAN_3	INTRINSIC_ALIGNMENT_PARAMETERS--LOG10_M_MEAN_4	INTRINSIC_ALIGNMENT_PARAMETERS--LOG10_M_MEAN_5	INTRINSIC_ALIGNMENT_PARAMETERS--LOG10_M_MEAN_6	NOFZ_SHIFTS--BIAS_1	NOFZ_SHIFTS--BIAS_2	NOFZ_SHIFTS--BIAS_3	NOFZ_SHIFTS--BIAS_4	NOFZ_SHIFTS--BIAS_5	NOFZ_SHIFTS--BIAS_6	prior	like	post
+#sampler=maxlike
+#n_varied=14
+#module_0=correlated_dz_priors #name from ini file
+#module_1=load_nz_fits 1
+#module_2=kids_pk #name from ini file
+#module_3=extrapolate 1.0
+#module_4=photoz_bias 1
+#module_5=correlated_massdep_priors #name from ini file
+#module_6=linear_alignments 1.0
+## CITE MNRAS 424 3 1647 (2012)
+## CITE New J Phys 9 12 444 (2007)
+#module_7=project_2d 1.0
+#module_8=mass_dependent_ia_model 1.0
+#module_9=add_intrinsic 1.0
+#module_10=cosebis Jan2023
+## CITE https://arxiv.org/abs/1201.2669
+## CITE https://arxiv.org/abs/1601.00115
+#module_11=scale_cuts #name from ini file
+#module_12=likelihood #name from ini file
+#timestamp=2026-11-08T22:17:29.415046
+#platform=Linux-6.18.44-fc-v310-x86_64-with-glibc2.39
+#platform_version=#1 SMP @0
+#uuid=7e18bba7a9324774814a63750b3fe295
+#cosmosis_git_version=
+#csl_git_version=
+#cwd_git_version=9103b1cc3477466d1b42024336d540607cd01837
+#tolerance=0.001
+#maxiter=6000
+#output_ini=/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_spiralL_axhm_round1_own_best.ini
+#output_covmat=
+#output_block=
+#method=Nelder-Mead
+#max_posterior=True
+#repeats=1
+#reiterations=1
+#nsteps=1
+#start_method=
+## START_OF_PARAMS_INI
+## [DEFAULT]
+## wnlogpath = %(COSMOPIPE_PATH)s/config/cosebis/WnLog/
+## my_path = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/
+## output_folder = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/
+## config_folder = /home/claude/builds/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/chains_and_config_files/cosebis/
+## data_folder = /home/claude/builds/kids_legacy/KiDS_Legacy_cosmic_shear_data_release/data/
+## csl_path = /home/claude/builds/csl/
+## 2pt_stats_path = /home/claude/builds/kids_legacy/2pt_stats/
+## cosmopowercosmosis_path = /home/claude/builds/kids_legacy/CosmoPowerCosmosis/
+## cosmopipe_path = /home/claude/builds/kids_legacy/CosmoPipe/
+## kcap_path = %(COSMOPIPE_PATH)s/kcap/
+## data_file = %(DATA_FOLDER)s/KiDS_Legacy_cosebis.fits
+## stats_name = cosebis
+## redshift_name = source
+## sampler_name = maxlike
+## run_name = %(SAMPLER_NAME)s_%(stats_name)s_Fiducial
+## tmin_cosebis = 2.00
+## tmax_cosebis = 300.00
+## nmax_cosebis = 6
+## 
+## [pipeline]
+## modules = correlated_dz_priors load_nz_fits kids_pk extrapolate_power source_photoz_bias correlated_massdep_priors linear_alignment projection mass_dependence_for_ia add_intrinsic cosebis scale_cuts likelihood
+## values = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_spiralL_axhm_round1_own_values.ini
+## priors = %(CONFIG_FOLDER)s/KiDS_Legacy_priors.ini
+## likelihoods = loglike
+## extra_output = cosmological_parameters/S_8 cosmological_parameters/sigma_8 cosmological_parameters/A_s cosmological_parameters/omega_m cosmological_parameters/omega_nu cosmological_parameters/omega_lambda cosmological_parameters/cosmomc_theta intrinsic_alignment_parameters/a intrinsic_alignment_parameters/beta intrinsic_alignment_parameters/log10_m_mean_1 intrinsic_alignment_parameters/log10_m_mean_2 intrinsic_alignment_parameters/log10_m_mean_3 intrinsic_alignment_parameters/log10_m_mean_4 intrinsic_alignment_parameters/log10_m_mean_5 intrinsic_alignment_parameters/log10_m_mean_6  nofz_shifts/bias_1 nofz_shifts/bias_2 nofz_shifts/bias_3 nofz_shifts/bias_4 nofz_shifts/bias_5 nofz_shifts/bias_6
+## verbosity = silent
+## timing = F
+## debug = F
+## 
+## [runtime]
+## sampler = %(SAMPLER_NAME)s
+## 
+## [output]
+## filename = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_spiralL_axhm_round1_own.txt
+## format = text
+## 
+## [cosebis]
+## file = %(2PT_STATS_PATH)s/cl_to_cosebis/cl_to_cosebis_interface.so
+## theta_min = %(tmin_cosebis)s
+## theta_max = %(tmax_cosebis)s
+## n_max = %(nmax_cosebis)s
+## roots_n_norms_foldername = %(COSMOPIPE_PATH)s/config/cosebis//TLogsRootsAndNorms/
+## wn_output_foldername = %(WnLogPath)s
+## tn_output_foldername = %(2PT_STATS_PATH)s/TpnLog/
+## output_section_name = cosebis
+## add_2d_cterm = 0
+## add_c_term = 0
+## input_section_name = shear_cl
+## 
+## [scale_cuts]
+## file = %(KCAP_PATH)s/modules/scale_cuts/scale_cuts.py
+## output_section_name = scale_cuts_output
+## data_and_covariance_fits_filename = %(data_file)s
+## simulate = F
+## simulate_with_noise = T
+## mock_filename =
+## use_stats = En
+## keep_ang_en = 0.5 6.5
+## cosebis_extension_name = En
+## cosebis_section_name = cosebis
+## 
+## [cosmopower]
+## file = %(COSMOPOWERCOSMOSIS_PATH)s/cosmosis_modules/cosmopower_interface_S8.py
+## path_2_trained_emulator = %(COSMOPOWERCOSMOSIS_PATH)s/train_emulator_camb_S8/outputs/
+## use_specific_k_modes = F
+## kmax = 10.0
+## kmin = 1e-5
+## nk = 200
+## 
+## [camb]
+## file = %(CSL_PATH)s/boltzmann/camb/camb_interface.py
+## do_reionization = F
+## mode = background
+## nonlinear = pk
+## halofit_version = original
+## neutrino_hierarchy = normal
+## kmax = 20.0
+## zmid = 2.0
+## nz_mid = 100
+## zmax = 6.0
+## nz = 150
+## zmax_background = 6.0
+## zmin_background = 0.0
+## nz_background = 6000
+## 
+## [nautilus]
+## live_points = 4000
+## enlarge_per_dim = 1.1
+## split_threshold = 100
+## n_networks = 8
+## n_batch = 720
+## filepath = %(OUTPUT_FOLDER)s/run_nautilus.hdf5
+## resume = False
+## f_live = 0.01
+## discard_exploration = True
+## verbose = True
+## n_eff = 20000
+## 
+## [add_intrinsic]
+## file = %(CSL_PATH)s/shear/add_intrinsic/add_intrinsic.py
+## shear-shear = T
+## position-shear = F
+## perbin = F
+## 
+## [correlated_dz_priors]
+## file = %(KCAP_PATH)s/utils/correlated_priors.py
+## uncorrelated_parameters = nofz_shifts/uncorr_bias_1 nofz_shifts/uncorr_bias_2 nofz_shifts/uncorr_bias_3 nofz_shifts/uncorr_bias_4 nofz_shifts/uncorr_bias_5 nofz_shifts/uncorr_bias_6
+## output_parameters = nofz_shifts/bias_1 nofz_shifts/bias_2 nofz_shifts/bias_3 nofz_shifts/bias_4 nofz_shifts/bias_5 nofz_shifts/bias_6
+## covariance = %(DATA_FOLDER)s/Nz_covariance.txt
+## 
+## [correlated_massdep_priors]
+## file = %(KCAP_PATH)s/utils/correlated_priors.py
+## uncorrelated_parameters = intrinsic_alignment_parameters/uncorr_a intrinsic_alignment_parameters/uncorr_beta intrinsic_alignment_parameters/uncorr_log10_M_mean_1 intrinsic_alignment_parameters/uncorr_log10_M_mean_2 intrinsic_alignment_parameters/uncorr_log10_M_mean_3 intrinsic_alignment_parameters/uncorr_log10_M_mean_4 intrinsic_alignment_parameters/uncorr_log10_M_mean_5 intrinsic_alignment_parameters/uncorr_log10_M_mean_6
+## output_parameters = intrinsic_alignment_parameters/a intrinsic_alignment_parameters/beta intrinsic_alignment_parameters/log10_M_mean_1 intrinsic_alignment_parameters/log10_M_mean_2 intrinsic_alignment_parameters/log10_M_mean_3 intrinsic_alignment_parameters/log10_M_mean_4 intrinsic_alignment_parameters/log10_M_mean_5 intrinsic_alignment_parameters/log10_M_mean_6
+## covariance = %(COSMOPIPE_PATH)s/ia_models/mass_dependent_ia/massdep_cov.txt
+## 
+## [extrapolate_power]
+## file = %(CSL_PATH)s/boltzmann/extrapolate/extrapolate_power.py
+## kmax = 500.0
+## 
+## [likelihood]
+## file = %(KCAP_PATH)s/utils/mini_like.py
+## input_section_name = scale_cuts_output
+## like_name = loglike
+## 
+## [linear_alignment]
+## file = %(CSL_PATH)s/intrinsic_alignments/la_model/linear_alignments_interface.py
+## method = bk_corrected
+## 
+## [load_nz_fits]
+## file = %(CSL_PATH)s/number_density/load_nz_fits/load_nz_fits.py
+## nz_file = %(data_file)s
+## data_sets = %(redshift_name)s
+## 
+## [mass_dependence_for_ia]
+## file = %(COSMOPIPE_PATH)s/ia_models/mass_dependent_ia/mass_dependent_ia_model.py
+## 
+## [projection]
+## file = %(CSL_PATH)s/structure/projection/project_2d.py
+## ell_min_logspaced = 1.0
+## ell_max_logspaced = 1.0e5
+## n_ell_logspaced = 50
+## position-shear = F
+## verbose = F
+## get_kernel_peaks = F
+## shear-shear = %(redshift_name)s-%(redshift_name)s
+## shear-intrinsic = %(redshift_name)s-%(redshift_name)s
+## intrinsic-intrinsic = %(redshift_name)s-%(redshift_name)s
+## 
+## [sample_S8]
+## file = %(KCAP_PATH)s/utils/sample_S8.py
+## s8_name = s_8_input
+## sigma8_name = sigma_8
+## 
+## [source_photoz_bias]
+## file = %(CSL_PATH)s/number_density/photoz_bias/photoz_bias.py
+## mode = additive
+## sample = nz_%(redshift_name)s
+## bias_section = nofz_shifts
+## interpolation = cubic
+## output_deltaz = T
+## output_section_name = delta_z_out
+## 
+## [kids_pk]
+## file = /home/claude/aegis/field_tests/S8_WL/kids/kids_pk.py
+## pk_file = /home/claude/aegis/field_tests/S8_WL/kids/../results/pk_spiralL_axhm.npz
+## nonlinear = stored
+## omega_b = 0.022414578
+## omega_cdm = 0.11982272499999998
+## n_s = 0.97038686
+## w0 = -0.9119063612033546
+## wa = -0.14019232884706034
+## cache_file = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/boost_spiralL_axhm.npz
+## 
+## [maxlike]
+## method = Nelder-Mead
+## tolerance = 1e-3
+## maxiter = 6000
+## output_ini = /tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_spiralL_axhm_round1_own_best.ini
+## max_posterior = T
+## 
+## END_OF_PARAMS_INI
+## START_OF_VALUES_INI
+## [cosmological_parameters]
+## omch2 = 0.11244325
+## ombh2 = 0.022414578
+## h0 = 0.67900646
+## n_s = 0.97038686
+## omega_k = 0.0
+## w = -1.0
+## wa = 0.0
+## mnu = 0.06
+## 
+## [halo_model_parameters]
+## logt_agn = 8.0
+## 
+## [intrinsic_alignment_parameters]
+## uncorr_a = 14.7707    19.550414474517904    24.7707
+## uncorr_beta = 25.7487    30.925560130850137    35.7487
+## uncorr_log10_m_mean_1 = 39.3084    43.67008355517971    49.3084
+## uncorr_log10_m_mean_2 = -37.0614    -32.08876066366938    -27.0614
+## uncorr_log10_m_mean_3 = 138.921    143.95413914718466    148.921
+## uncorr_log10_m_mean_4 = -142.82    -137.79916249076126    -132.82
+## uncorr_log10_m_mean_5 = -207.851    -202.85333990397035    -197.851
+## uncorr_log10_m_mean_6 = 414.836    419.840017101144    424.836
+## log10_m_piv = 13.5
+## f_r_1 = 0.158
+## f_r_2 = 0.198
+## f_r_3 = 0.206
+## f_r_4 = 0.258
+## f_r_5 = 0.207
+## f_r_6 = 0.026
+## 
+## [nofz_shifts]
+## uncorr_bias_1 = -2.4626    2.533869730449563    7.5374
+## uncorr_bias_2 = -7.44484    -1.2743915920065012    2.55516
+## uncorr_bias_3 = -6.37982    -1.892535191389583    3.62018
+## uncorr_bias_4 = -5.49428    -0.39593704259468865    4.50572
+## uncorr_bias_5 = -3.59766    1.3408697026359824    6.40234
+## uncorr_bias_6 = 1.26323    6.18239054802692    11.2632
+## 
+## END_OF_VALUES_INI
+## START_OF_PRIORS_INI
+## [intrinsic_alignment_parameters]
+## uncorr_a = gaussian 1.977069603580704893e+01 1.0
+## uncorr_beta = gaussian 3.074866003109325874e+01 1.0
+## uncorr_log10_m_mean_1 = gaussian 4.430836735636641777e+01 1.0
+## uncorr_log10_m_mean_2 = gaussian -3.206136674281972887e+01 1.0
+## uncorr_log10_m_mean_3 = gaussian 1.439212386242852517e+02 1.0
+## uncorr_log10_m_mean_4 = gaussian -1.378196728635030013e+02 1.0
+## uncorr_log10_m_mean_5 = gaussian -2.028513316870826202e+02 1.0
+## uncorr_log10_m_mean_6 = gaussian 4.198363708097585913e+02 1.0
+## 
+## [nofz_shifts]
+## uncorr_bias_1 = gaussian 2.5374 1.0
+## uncorr_bias_2 = gaussian -2.44484 1.0
+## uncorr_bias_3 = gaussian -1.37982 1.0
+## uncorr_bias_4 = gaussian -0.494275 1.0
+## uncorr_bias_5 = gaussian 1.40234 1.0
+## uncorr_bias_6 = gaussian 6.26323 1.0
+## 
+## END_OF_PRIORS_INI
+#start_input=
+19.54743628375014	30.922585659731762	43.67492593341893	-32.09891501572258	143.9493854851284	-137.81186900358375	-202.85643198617032	419.83473350189325	2.536596072611048	-1.2764314152304133	-1.892814719848384	-0.40729046108173605	1.3317763895905617	6.18258507621525	nan	0.8038550311805142	nan	0.30990481615061904	nan	nan	nan	5.675181291822722	0.4492209514111009	11.525091265525731	12.243690163241888	12.552417008278669	12.747524233178861	12.926491102367098	13.104191916788249	0.025817074576374357	-0.0025300352875105517	-0.005763805021413328	-0.006060506056771074	0.014639440670881715	0.05217031057445581	-13.930644826988535	-67.85274631858745	-81.78339114557599
+#evaluations=183
+#successes=183
+#complete=1

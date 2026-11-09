@@ -22,3 +22,4 @@
 - field_tests/rules/DRAFT_V3B_STREAM_TEST.md (draft): predictions per picture, published limits (best β_KK ≈ 0.2–0.3),
   test design. Not locked.
 - KiDS-Legacy: S8-J Union3 Δ_KiDS −0.47 (S8-J passes 3 of 3); plain Spiral Pantheon+ +0.46 (passes).
+- 9 Nov 2026 ~04:50 UTC: KiDS-Legacy full-shear test (PREREG_KIDS_LEGACY_SHEAR.md) complete, all 9 pairs. S8-J −0.41 / −0.26 / −0.47 PASSES; Spiral +0.46 / +0.57 / +1.15 PASSES; S8-L +6.80 / +7.98 / +7.81 OVER (no feedback on either side). Files in field_tests/S8_WL/results/kids/.

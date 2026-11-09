@@ -149,6 +149,176 @@
      157.033
     ]
    }
+  },
+  "Spiral, DES-Dovekie": {
+   "model": {
+    "run": "ax_spa_spiraltwist_dovekie_nlfix",
+    "fit": "ax_spa_spiraltwist_dovekie_nlfix",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_spiraltwist_dovekie_nlfix_round1_own_best.ini",
+    "chi2_KiDS": 157.635,
+    "data_chi2": 130.005,
+    "w0": -0.9095586317611069,
+    "wa": -0.14408627771809257
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_dovekie",
+    "fit": "ax_spa_lcdm_halofit_dovekie",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_lcdm_halofit_dovekie_round1_own_best.ini",
+    "chi2_KiDS": 157.063,
+    "data_chi2": 129.391,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": 0.57,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_dovekie_nlfix": [
+     157.641,
+     157.635,
+     157.635
+    ],
+    "ax_spa_lcdm_halofit_dovekie": [
+     157.097,
+     157.063,
+     157.063
+    ]
+   }
+  },
+  "Spiral, Union3": {
+   "model": {
+    "run": "ax_spa_spiraltwist_union3_nlfix",
+    "fit": "ax_spa_spiraltwist_union3_nlfix",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_spiraltwist_union3_nlfix_round1_own_best.ini",
+    "chi2_KiDS": 158.238,
+    "data_chi2": 130.576,
+    "w0": -0.86250618944571,
+    "wa": -0.21836847557046382
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_union3",
+    "fit": "ax_spa_lcdm_halofit_union3",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_lcdm_halofit_union3_round1_own_best.ini",
+    "chi2_KiDS": 157.088,
+    "data_chi2": 129.414,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": 1.15,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_union3_nlfix": [
+     158.239,
+     158.238,
+     158.238
+    ],
+    "ax_spa_lcdm_halofit_union3": [
+     157.108,
+     157.088,
+     157.089
+    ]
+   }
+  },
+  "S8-L light angle, Pantheon+": {
+   "model": {
+    "run": "spiralL_axhm",
+    "fit": "spiralL",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_spiralL_axhm_best.ini",
+    "chi2_KiDS": 163.567,
+    "data_chi2": 135.695,
+    "w0": -0.9119063612033546,
+    "wa": -0.14019232884706034
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_axhm",
+    "fit": "ax_spa_lcdm_halofit",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_lcdm_halofit_axhm_best.ini",
+    "chi2_KiDS": 156.768,
+    "data_chi2": 129.14,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": 6.8,
+   "reading": "OVER",
+   "tries": {
+    "spiralL_axhm": [
+     163.567,
+     163.567,
+     163.568
+    ],
+    "ax_spa_lcdm_halofit_axhm": [
+     156.768,
+     156.768,
+     156.768
+    ]
+   }
+  },
+  "S8-L light angle, DES-Dovekie": {
+   "model": {
+    "run": "spiralL_dovekie_axhm",
+    "fit": "spiralL_dovekie",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_spiralL_dovekie_axhm_round1_own_best.ini",
+    "chi2_KiDS": 164.769,
+    "data_chi2": 136.857,
+    "w0": -0.8855828868277394,
+    "wa": -0.1821000596903598
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_dovekie_axhm",
+    "fit": "ax_spa_lcdm_halofit_dovekie",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_lcdm_halofit_dovekie_axhm_round1_own_best.ini",
+    "chi2_KiDS": 156.787,
+    "data_chi2": 129.128,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": 7.98,
+   "reading": "OVER",
+   "tries": {
+    "spiralL_dovekie_axhm": [
+     164.77,
+     164.769,
+     164.771
+    ],
+    "ax_spa_lcdm_halofit_dovekie_axhm": [
+     156.791,
+     156.787,
+     156.788
+    ]
+   }
+  },
+  "S8-L light angle, Union3": {
+   "model": {
+    "run": "spiralL_union3_axhm",
+    "fit": "spiralL_union3",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_spiralL_union3_axhm_round1_own_best.ini",
+    "chi2_KiDS": 164.629,
+    "data_chi2": 136.711,
+    "w0": -0.8238724558763016,
+    "wa": -0.2779326749205793
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_union3_axhm",
+    "fit": "ax_spa_lcdm_halofit_union3",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_lcdm_halofit_union3_axhm_round1_own_best.ini",
+    "chi2_KiDS": 156.815,
+    "data_chi2": 129.165,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": 7.81,
+   "reading": "OVER",
+   "tries": {
+    "spiralL_union3_axhm": [
+     164.643,
+     164.629,
+     164.629
+    ],
+    "ax_spa_lcdm_halofit_union3_axhm": [
+     156.817,
+     156.815,
+     156.815
+    ]
+   }
   }
  }
 }
