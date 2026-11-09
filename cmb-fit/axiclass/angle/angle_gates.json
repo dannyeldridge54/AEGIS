@@ -1,0 +1,40 @@
+{
+ "base_point": "spiralL stored best fit",
+ "beta_a": 0.816496580927726,
+ "G-A0": {
+  "max_rel_diffs": {
+   "sigma8": 0.0,
+   "H0": 0.0,
+   "Omega_m": 0.0,
+   "tt": 0.0,
+   "ee": 0.0
+  },
+  "pass": true
+ },
+ "G-A1": {
+  "max_rel_diffs": {
+   "sigma8": 0.27306471880610994,
+   "H0": 0.0006003304860247027,
+   "tt": 0.00459354973206605
+  },
+  "pass": false,
+  "note": "heavy angle (a_c=1e-7) coupled at sqrt(2/3) vs CDM coupled at sqrt(2/3); 1% uncoupled rest"
+ },
+ "G-A2": {
+  "share_f": 0.06154915057072162,
+  "S8L_build": {
+   "sigma8": 0.8038542554050436,
+   "S8": 2.4807801488244965,
+   "H0": 67.90063399775926,
+   "Omega_m": 2.8572167040513867,
+   "phi_today": 0.5403759924488695
+  },
+  "angle_coupled": {
+   "sigma8": 0.7976356044364092,
+   "S8": 2.4557676080397304,
+   "H0": 67.46556402513272,
+   "Omega_m": 2.8437192963088536,
+   "phi_today": 0.6047534084389782
+  }
+ }
+}
