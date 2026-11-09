@@ -75,4 +75,27 @@ edit("source/perturbations.c",
      "          dy[pv->index_pt_phi_prime_scf] -= 3.*a2*pba->fld_coupling_beta*(1.-pvecback[pba->index_bg_w_fld])\n"
      "            *pvecback[pba->index_bg_rho_fld]*y[pv->index_pt_delta_fld];\n")
 # (the default-variables restriction is enforced by the fitter, angle_fit.py)
+
+# delta_m option (S8-A): count the pheno_axion fluid as matter in delta_m / theta_m, so sigma8, S8, f sigma8 and P_m
+# include the angle (CLASS leaves it out by default: the S8-LNL D2 caveat). Off by default: unchanged code path.
+edit("include/background.h",
+     "  double fld_coupling_beta; /**< S8-A: m_angle ~ exp(beta_a phi/M_Pl) on the pheno_axion fluid; 0 = uncoupled */",
+     "  double fld_coupling_beta; /**< S8-A: m_angle ~ exp(beta_a phi/M_Pl) on the pheno_axion fluid; 0 = uncoupled */\n"
+     "  int fld_in_delta_m;       /**< S8-A: 1 = count the pheno_axion fluid as matter in delta_m (sigma8, P_m) */")
+edit("source/input.c",
+     "  pba->fld_coupling_beta = 0.;",
+     "  pba->fld_coupling_beta = 0.;\n  pba->fld_in_delta_m = 0;")
+edit("source/input.c",
+     "    class_read_double(\"fld_coupling_beta\",pba->fld_coupling_beta);",
+     "    class_read_double(\"fld_coupling_beta\",pba->fld_coupling_beta);\n"
+     "    class_read_int(\"fld_in_delta_m\",pba->fld_in_delta_m);")
+edit("source/perturbations.c",
+     "    if (ppt->has_source_delta_m == _TRUE_)\n      ppw->delta_m = delta_rho_m/rho_m;\n",
+     "    if (pba->has_fld == _TRUE_ && pba->fld_in_delta_m == 1 && pba->use_ppf == _FALSE_) {   /* S8-A */\n"
+     "      delta_rho_m += ppw->delta_rho_fld;\n"
+     "      rho_m += ppw->pvecback[pba->index_bg_rho_fld];\n"
+     "      rho_plus_p_theta_m += ppw->rho_plus_p_theta_fld;\n"
+     "      rho_plus_p_m += (1.+ppw->pvecback[pba->index_bg_w_fld])*ppw->pvecback[pba->index_bg_rho_fld];\n"
+     "    }\n"
+     "    if (ppt->has_source_delta_m == _TRUE_)\n      ppw->delta_m = delta_rho_m/rho_m;\n")
 print("patched; build with build_angle.sh")

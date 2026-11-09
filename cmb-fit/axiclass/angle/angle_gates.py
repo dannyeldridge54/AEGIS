@@ -88,13 +88,22 @@ def main():
     ratio = eff["fld"] / eff["cdm"]
     res["G-A1"] = {"beta": beta, "pp_effect": eff, "pp_effect_ratio": ratio, "H0_effect_diff": bg["H0"],
                    "phi_shift_diff": dphi, "pass": abs(ratio - 1) <= 0.05 and bg["H0"] <= 1e-3 and dphi <= 1e-3}
+    # G-A3: with fld_in_delta_m = 1 the heavy uncoupled fluid (99%) gives the cold-dark-matter sigma8 within 3e-3
+    h3 = run(ANG, dict(a, omega_cdm=om*(1-f), omega_fld=om*f, log10_a_c=-7.0, scf_coupling_beta=0.0,
+                       fld_coupling_beta=0.0, fld_in_delta_m=1))
+    d3 = abs(h3["sigma8"] / R[("cdm", 0.0)]["sigma8"] - 1)
+    res["G-A3"] = {"sigma8_rel_diff": d3, "pass": d3 <= 3e-3}
     # G-A2: the physical S8-A point (report)
     beff = best.get("scf_coupling_beta")
     fa = beff / BETA_A
-    phys = dict(a, omega_cdm=om * (1 - fa), omega_fld=om * fa, scf_coupling_beta=0.0, fld_coupling_beta=BETA_A)
+    phys = dict(a, omega_cdm=om * (1 - fa), omega_fld=om * fa, scf_coupling_beta=0.0, fld_coupling_beta=BETA_A,
+                fld_in_delta_m=1)
     r3 = run(ANG, phys)
-    res["G-A2"] = {"share_f": fa, "S8L_build": {k: r_ula[k] for k in ("sigma8", "S8", "H0", "Omega_m", "phi_today")},
-                   "angle_coupled": {k: r3[k] for k in ("sigma8", "S8", "H0", "Omega_m", "phi_today")}}
+    r_ulam = run(ANG, dict(a, fld_coupling_beta=0.0, fld_in_delta_m=1))   # S8-L (picture A), angle counted
+    res["G-A2"] = {"share_f": fa, "S8L_build": {k: r_ula[k] for k in ("sigma8", "H0", "phi_today")},
+                   "S8L_angle_counted": {k: r_ulam[k] for k in ("sigma8", "H0")},
+                   "angle_coupled_angle_counted": {k: r3[k] for k in ("sigma8", "H0", "phi_today")},
+                   "note": "CLASS Omega_m label is wrong in the coupled builds; S8 not taken from it"}
     json.dump(res, open(os.path.join(HERE, "angle_gates.json"), "w"), indent=1)
     print(json.dumps(res, indent=1))
 

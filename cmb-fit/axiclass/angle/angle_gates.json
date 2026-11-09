@@ -22,21 +22,26 @@
   "phi_shift_diff": 2.392117397309601e-05,
   "pass": true
  },
+ "G-A3": {
+  "sigma8_rel_diff": 0.00035890162996510266,
+  "pass": true
+ },
  "G-A2": {
   "share_f": 0.06154915057072162,
   "S8L_build": {
    "sigma8": 0.8038542554050436,
-   "S8": 2.4807801488244965,
    "H0": 67.90063399775926,
-   "Omega_m": 2.8572167040513867,
    "phi_today": 0.5403759924488695
   },
-  "angle_coupled": {
-   "sigma8": 0.7976356044364092,
-   "S8": 2.4557676080397304,
+  "S8L_angle_counted": {
+   "sigma8": 0.8038322340498981,
+   "H0": 67.90063399775926
+  },
+  "angle_coupled_angle_counted": {
+   "sigma8": 0.7996416992864666,
    "H0": 67.46556402513272,
-   "Omega_m": 2.8437192963088536,
    "phi_today": 0.6047534084389782
-  }
+  },
+  "note": "CLASS Omega_m label is wrong in the coupled builds; S8 not taken from it"
  }
 }
