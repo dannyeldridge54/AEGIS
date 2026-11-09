@@ -23,3 +23,4 @@
   test design. Not locked.
 - KiDS-Legacy: S8-J Union3 Δ_KiDS −0.47 (S8-J passes 3 of 3); plain Spiral Pantheon+ +0.46 (passes).
 - 9 Nov 2026 ~04:50 UTC: KiDS-Legacy full-shear test (PREREG_KIDS_LEGACY_SHEAR.md) complete, all 9 pairs. S8-J −0.41 / −0.26 / −0.47 PASSES; Spiral +0.46 / +0.57 / +1.15 PASSES; S8-L +6.80 / +7.98 / +7.81 OVER (no feedback on either side). Files in field_tests/S8_WL/results/kids/.
+- 9 Nov 2026 07:30 UTC: SIMPLIFY-L scored (fits finished on the PC 8 Nov 22:37 CT): WINNER K2 κ = 1, margin 5.60; free-κ fits flagged not fully converged (P+, Dovekie). field_tests/results/simplify_late_score.json. Bracket round 3 (reported only): θ 2.777 F9 deep P-ACT χ² 2232.088 (locked 2231.776), S8-A 2432.117 (locked 2432.109), S8-B 2429.077.

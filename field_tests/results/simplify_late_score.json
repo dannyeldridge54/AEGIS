@@ -1,0 +1,45 @@
+{
+ "rule": "PREREG_SIMPLIFY_LATE.md",
+ "free_chi2": [
+  2393.034,
+  2620.387,
+  1012.095
+ ],
+ "free_sum": 6025.516,
+ "candidates": {
+  "K1 kappa=0.8165": {
+   "chi2": [
+    2392.638,
+    2620.001,
+    1013.963
+   ],
+   "score_sum": 6020.602,
+   "raw_minus_free": [
+    -0.396,
+    -0.387,
+    1.868
+   ]
+  },
+  "K2 kappa=1": {
+   "chi2": [
+    2392.9,
+    2620.476,
+    1012.538
+   ],
+   "score_sum": 6019.914,
+   "raw_minus_free": [
+    -0.134,
+    0.089,
+    0.443
+   ]
+  }
+ },
+ "winner_margin_vs_free": 5.602,
+ "verdict": "WINNER K2 kappa=1",
+ "candidates_tried": 2,
+ "convergence_flags_free_fit": [
+  "K1 kappa=0.8165 P+: fixed chi2 below free by 0.396",
+  "K1 kappa=0.8165 Dovekie: fixed chi2 below free by 0.387",
+  "K2 kappa=1 P+: fixed chi2 below free by 0.134"
+ ]
+}
