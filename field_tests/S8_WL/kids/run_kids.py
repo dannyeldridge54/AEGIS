@@ -43,6 +43,8 @@ for sn, suf in SN:
                                          ("boost", _better_lcdm(suf), _better_lcdm(suf)))
     PAIRS[f"S8-L light angle, {sn}"] = (("stored", f"spiralL{suf}_axhm", f"spiralL{suf}"),
                                         ("stored", f"ax_spa_lcdm_halofit{suf}_axhm", f"ax_spa_lcdm_halofit{suf}"))
+    PAIRS[f"S8-A angle coupled, {sn}"] = (("stored", f"S8A{suf}_axhm", f"S8A{suf}"),            # LATE-BASE
+                                          ("stored", f"ax_spa_lcdm_halofit{suf}_axhm", f"ax_spa_lcdm_halofit{suf}"))
 
 
 def _cpl(fit):

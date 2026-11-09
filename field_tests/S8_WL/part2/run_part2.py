@@ -43,6 +43,7 @@ for sn, suf in (("Pantheon+", ""), ("DES-Dovekie", "_dovekie"), ("Union3", "_uni
     # S8-LNL (PREREG_S8L_NONLINEAR.md): same pairs, nonlinear power from axionHMcode on both sides (nonlinear/axhm_pk.py);
     # cmp_<run>_axhm.json = the stored fit's own file (TWIST_RESULTS folder with links)
     PAIRS[f"S8-LNL axionHMcode, {sn}"] = (("pk", f"spiralL{suf}_axhm"), ("pk", f"ax_spa_lcdm_halofit{suf}_axhm"))
+    PAIRS[f"S8-A axionHMcode, {sn}"] = (("pk", f"S8A{suf}_axhm"), ("pk", f"ax_spa_lcdm_halofit{suf}_axhm"))   # LATE-BASE
 SPIRAL = []
 
 VALUES = """[cosmological_parameters]

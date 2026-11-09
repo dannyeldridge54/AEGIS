@@ -25,6 +25,7 @@ from dewiggle import dewiggle_ratio                       # noqa: E402
 
 FLAGS = dict(alpha=True, eta_given=True, one_halo_damping=True, two_halo_damping=True, concentration_param=True,
              full_2h=False)
+FAX_TODAY = None
 NZ = 31                                    # rule: z grid 0-3, at least 30 points
 H100_EV = 2.1332e-33
 OGR, ONU = 4.18e-5, 0.06 / 93.14
@@ -41,18 +42,25 @@ def class_ratios(run, best, zs, kh):
     sys.path.insert(0, os.path.join(HERE, "..", "part2"))
     import axiclass_pk as AP
     E = AP.E
-    sys.path.insert(0, os.path.join(AP.AX, "ula"))
-    import spiral_l_fit
-    info, _ = spiral_l_fit.make(run)
+    s8a = run.startswith("S8A")
+    if s8a:                                # PREREG_LATE_BASE.md: angle-coupled build; CLASS P(k) counts the angle
+        sys.path.insert(0, os.path.join(AP.AX, "angle"))
+        import angle_fit
+        info, _ = angle_fit.make(run)
+    else:
+        sys.path.insert(0, os.path.join(AP.AX, "ula"))
+        import spiral_l_fit
+        info, _ = spiral_l_fit.make(run)
+    beta = best.get("scf_coupling_beta", best.get("beta_eff"))
     import classy
     a = dict(info["theory"]["classytwist"]["extra_args"])
     a.update({"A_s": 1e-10 * np.exp(best["logA"]), "n_s": best["n_s"], "100*theta_s": best["theta_s_1e2"],
               "omega_b": best["omega_b"], "omega_cdm": best["omega_cdm"], "tau_reio": best["tau_reio"],
-              "scf_coupling_beta": best["scf_coupling_beta"], "omega_fld": best["omega_fld"],
+              "scf_coupling_beta": 0.0 if s8a else best["scf_coupling_beta"], "omega_fld": best["omega_fld"],
               "log10_a_c": best["log10_a_c"]})
     import spiral_guess
     k = best["spiral_kappa"]
-    mu = spiral_guess.mu1_guess(k, best["scf_coupling_beta"], best["omega_b"], best["omega_cdm"])
+    mu = spiral_guess.mu1_guess(k, beta, best["omega_b"], best["omega_cdm"])
     a["scf_parameters"] = f"{k}, 0.0, {mu}, 0.0, 0.0, 0.0"
     a.pop("l_max_scalars", None)
     a.update({"output": "mPk,mTk", "z_max_pk": float(max(zs)) + 0.05, "P_k_max_1/Mpc": 60.0})
@@ -60,6 +68,12 @@ def class_ratios(run, best, zs, kh):
     out, g2 = {}, 0.0
     wc, wb, wa, wn = best["omega_cdm"], best["omega_b"], best["omega_fld"], ONU
     h = c.h()
+    if s8a:
+        bg = c.get_background()
+        zb = bg["z"][::-1]
+        bg = {n: np.array(bg[n])[::-1] for n in ("(.)rho_cdm", "(.)rho_b", "(.)rho_fld", "(.)rho_ncdm[0]")}
+        global FAX_TODAY                   # the angle's share of the dark matter today (its mass has run since z = 1100)
+        FAX_TODAY = float(bg["(.)rho_fld"][0] / (bg["(.)rho_fld"][0] + bg["(.)rho_cdm"][0]))
     for z in zs:
         t = c.get_transfer(z)
         kt = np.array(t["k (h/Mpc)"])
@@ -67,6 +81,11 @@ def class_ratios(run, best, zs, kh):
         # CLASS's matter P(k) in this build counts CDM + baryons + massive neutrinos, not the ULA (a "fluid"): see D2
         dcl = (wc * dc + wb * db + wn * dn) / (wc + wb + wn)
         dm = (wc * dc + wb * db + wa * da + wn * dn) / (wc + wb + wa + wn)      # true total matter, ULA included
+        if s8a:                            # S8-A: fld_in_delta_m = 1, CLASS's own P(k) is total matter, weighted by the
+            bz = {n: float(np.interp(z, zb, bg[n])) for n in ("(.)rho_cdm", "(.)rho_b", "(.)rho_fld", "(.)rho_ncdm[0]")}
+            rc, rb, ra, rn = (bz[n] for n in ("(.)rho_cdm", "(.)rho_b", "(.)rho_fld", "(.)rho_ncdm[0]"))
+            dm = (rc * dc + rb * db + ra * da + rn * dn) / (rc + rb + ra + rn)   # actual densities (the angle's mass runs)
+            dcl = dm
         # G2: component sum x primordial spectrum vs CLASS's own linear matter power (= the stored file)
         sel = (kt >= 1e-3) & (kt <= 10)
         kM = kt[sel] * h
@@ -103,11 +122,13 @@ def main(run, gate_only=False):
     src = dict(np.load(os.path.join(RESD, f"pk_{run}.npz")))
     kh, zp, plin = src["k_h"], src["z_pk"], src["p_k_lin"]
     h = float(src["h0"])
-    ula = run.startswith("spiralL")
+    ula = run.startswith(("spiralL", "S8A"))
     fax = best["omega_fld"] / (best["omega_fld"] + best["omega_cdm"]) if ula else 0.0
     m_ax = mass_ev(best) if ula else 1e-25
     zs = list(np.linspace(0.0, float(zp.max()), NZ))
     ratios, g2 = class_ratios(run, best, zs, kh) if ula else ({}, 0.0)
+    if run.startswith("S8A"):
+        fax = FAX_TODAY                    # LATE-BASE: actual share today, not the early input share
     info = {"run": run, "rule": "PREREG_S8L_NONLINEAR.md", "flags": FLAGS, "ax_fraction": fax, "m_ax_eV": m_ax,
             "nz": NZ, "G2_max_dev_total_from_components": g2, "G2": "PASS" if g2 <= 0.005 else "FAIL"}
     print(run, "fax %.4f m %.3g G2 %.2e" % (fax, m_ax, g2), flush=True)

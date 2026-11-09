@@ -32,8 +32,13 @@ def one(name):
     asked for P(k, z) up to z_max_pk (a z_pk list string is rejected by this build), then read directly.
     S8-J runs "<SF run>_s8y6" use their SF run's settings (the S8 term changes no theory setting); S8-L runs "spiralL*"
     use spiral_l_fit.make (ULA build, dark-matter split, log10_a_c from the stored point)."""
-    ula = name.startswith("spiralL")
-    if ula:
+    ula = name.startswith(("spiralL", "S8A"))
+    s8a = name.startswith("S8A")
+    if s8a:                                    # S8-A (PREREG_LATE_BASE.md): angle-coupled build, angle in delta_m
+        sys.path.insert(0, os.path.join(AX, "angle"))
+        import angle_fit
+        info, _ = angle_fit.make(name)
+    elif ula:
         sys.path.insert(0, os.path.join(AX, "ula"))
         import spiral_l_fit
         info, _ = spiral_l_fit.make(name)
@@ -50,12 +55,15 @@ def one(name):
                  "omega_b": best["omega_b"], "omega_cdm": best["omega_cdm"], "tau_reio": best["tau_reio"]})
     if "scf_coupling_beta" in best:
         args["scf_coupling_beta"] = best["scf_coupling_beta"]
+    if s8a:
+        args["scf_coupling_beta"] = 0.0                       # CDM uncoupled; the angle coupling is in extra_args
     if ula:                                        # S8-L: omega_cdm, omega_fld, log10_a_c as stored (derived split)
         args.update({"omega_cdm": best["omega_cdm"], "omega_fld": best["omega_fld"], "log10_a_c": best["log10_a_c"]})
     if "spiral_kappa" in best:
         import spiral_guess
         k = best["spiral_kappa"]
-        mu = spiral_guess.mu1_guess(k, best.get("scf_coupling_beta", 0.0), best["omega_b"], best["omega_cdm"])
+        mu = spiral_guess.mu1_guess(k, best.get("scf_coupling_beta", best.get("beta_eff", 0.0)), best["omega_b"],
+                                    best["omega_cdm"])
         args["scf_parameters"] = f"{k}, 0.0, {mu}, 0.0, 0.0, 0.0"
     args.pop("l_max_scalars", None)                # CMB-only setting; unread without CMB output
     args.update({"output": "mPk", "z_max_pk": float(zpk.max()) + 0.05, "P_k_max_1/Mpc": 60.0})
