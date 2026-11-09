@@ -11,8 +11,10 @@ LOG="$R/flagship_v6_log.txt"
 PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] || PY=python3
 export COBAYA_PACKAGES_PATH="${COBAYA_PACKAGES_PATH:-$CF/packages}" TWIST_RESULTS="$R"
 say() { echo "$(date '+%F %T') $*" | tee -a "$LOG"; }
-P0="$(pgrep -o -f run_flagship_v6.sh || true)"
-[ -n "$P0" ] && kill "$P0" && say "V6-D1: stopped the first launcher loop (pid $P0); flagship fits keep running"
+for p in $(pgrep -f run_flagship_v6.sh); do      # keep the subshells that own a running flagship fit
+  pgrep -P "$p" -f flagship_fit.py >/dev/null && continue
+  kill "$p" 2>/dev/null && say "V6-D1: stopped launcher process $p (flagship fits keep running)"
+done
 pkill -f "v6_chains.py" && say "V6-D1: stopped the first V6 chains (no proposal covariance)"
 laplace() { ( cd "$V" && OMP_NUM_THREADS=1 nice -n 10 "$PY" v6_laplace.py "$1" "$2" > "$R/lanes/v6_laplace_$1.log" 2>&1 \
               && say "V6 Laplace $1 done" || say "V6 Laplace $1 FAILED (see results/lanes/v6_laplace_$1.log)" ); }
