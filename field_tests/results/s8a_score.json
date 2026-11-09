@@ -1,0 +1,52 @@
+{
+ "rule": "PREREG_S8A_ANGLE.md",
+ "rows": {
+  "Pantheon+": {
+   "chi2": 2391.905,
+   "delta_vs_LCDM": -10.35,
+   "S8": 0.8211,
+   "S8_LCDM": 0.8175,
+   "S8_S8L": 0.817,
+   "DES_Y6_penalty": 0.77,
+   "delta_vs_S8L": 2.39,
+   "H0": 67.73,
+   "log10_a_c": -4.969,
+   "mass_eV_approx": "3.65e-25",
+   "beta_eff": 0.0443,
+   "angle_share_f": 0.0542,
+   "kappa": 0.802
+  },
+  "DES-Dovekie": {
+   "chi2": 2617.883,
+   "delta_vs_LCDM": -13.94,
+   "S8": 0.8105,
+   "S8_LCDM": 0.8162,
+   "S8_S8L": 0.8168,
+   "DES_Y6_penalty": -0.88,
+   "delta_vs_S8L": -0.26,
+   "H0": 67.54,
+   "log10_a_c": -4.714,
+   "mass_eV_approx": "1.15e-25",
+   "beta_eff": 0.0536,
+   "angle_share_f": 0.0656,
+   "kappa": 0.919
+  },
+  "Union3": {
+   "chi2": 1009.93,
+   "delta_vs_LCDM": -15.05,
+   "S8": 0.8126,
+   "S8_LCDM": 0.8168,
+   "S8_S8L": 0.819,
+   "DES_Y6_penalty": -0.72,
+   "delta_vs_S8L": -0.43,
+   "H0": 66.84,
+   "log10_a_c": -4.72,
+   "mass_eV_approx": "1.17e-25",
+   "beta_eff": 0.0568,
+   "angle_share_f": 0.0696,
+   "kappa": 1.085
+  }
+ },
+ "vs_LCDM": "BEATS",
+ "lensing": "LENSING FIXED"
+}

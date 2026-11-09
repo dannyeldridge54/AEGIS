@@ -1,0 +1,21 @@
+{
+ "S8A": {
+  "chi2": 2389.562,
+  "stored_S8L": 2389.515,
+  "diff": 0.047,
+  "pass": true
+ },
+ "S8A_dovekie": {
+  "chi2": 2618.203,
+  "stored_S8L": 2618.147,
+  "diff": 0.056,
+  "pass": true
+ },
+ "S8A_union3": {
+  "chi2": 1010.405,
+  "stored_S8L": 1010.365,
+  "diff": 0.04,
+  "pass": true
+ },
+ "all_pass": true
+}
