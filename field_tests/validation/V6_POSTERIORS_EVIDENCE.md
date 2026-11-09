@@ -36,4 +36,12 @@ see DATA_LOG). Differences between the schedule's request and the locked rule, r
 - Evidence tools: MCEvidence is not on PyPI; it installs from GitHub (yabebalFantaye/MCEvidence, HEAD ade1dcb) and is
   pure Python, so it is installed at scoring time. PolyChord is not on PyPI either (PolyChordLite needs a Fortran
   compiler); the locked rule does not use it.
-- Per-evaluation time: being read from the running chains' speed measurement (not yet printed at 11:29 UTC).
+- Per-evaluation time (Cobaya's own measurement, Spiral Pantheon+ chain 1, 11:30 UTC): CLASS 0.014 evaluations/s, i.e.
+  **~71 s per theory call**, single-threaded on a loaded PC (3 flagship fits + 12 chains on 16 cores). Likelihoods are
+  fast (ACT 155/s, Planck low-ℓ 500–1100/s), so CLASS is the whole cost.
+- **Time estimate (rough):** R − 1 < 0.02 with 8 slow parameters usually takes ~2–5 × 10⁴ slow steps → **2.5–6 weeks**
+  per chain at 71 s; ~1–2 weeks at ~20–30 s once the flagship fits finish and chains can use more threads. The
+  Pantheon+ stage alone is weeks, not days; Dovekie and Union3 follow it. Options (not taken; Danny's call): give each
+  chain the minimiser's covariance as its starting proposal (sampler tuning, priors untouched; would be a logged
+  deviation), more threads per chain with fewer chains at once, or report the Laplace evidence (already in the rule as
+  the cross-check) first.
