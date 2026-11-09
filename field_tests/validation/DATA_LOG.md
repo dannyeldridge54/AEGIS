@@ -12,3 +12,4 @@
 | 2026-11-08 | V5 | Nieh–Yan instantons: −2K e^(−S) cos η | arXiv:1411.4793 |
 | 2026-11-08 | V1 | Spiral (P+) forward numbers computed (test) | theory/fpc_ax_spa_spiraltwist_nlfix.json |
 | 2026-11-08 | V1/V2/V4 | Frozen forward predictions for ΛCDM, Spiral, S8-J, S8-L (3 SN sets each) | theory/PREDICTIONS_FROZEN_8NOV.md |
+| 2026-11-09 | V2 | Spiral dark-matter mass change since z=1100: -0.82 / -0.95 / -0.89 % (code says shrinks; 7 Nov audit said grows: open); S8-L step k_half ≈ 0.57 h/Mpc | theory/v2_frozen_numbers.json |

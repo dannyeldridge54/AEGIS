@@ -1,0 +1,22 @@
+{
+ "ax_spa_spiraltwist_nlfix": {
+  "rho_cdm_a3_today_over_z1100": 0.9918531356376331,
+  "change_pct": -0.814686436236689,
+  "beta": 0.042438019
+ },
+ "ax_spa_spiraltwist_dovekie_nlfix": {
+  "rho_cdm_a3_today_over_z1100": 0.9905235916097539,
+  "change_pct": -0.9476408390246105,
+  "beta": 0.045352721
+ },
+ "ax_spa_spiraltwist_union3_nlfix": {
+  "rho_cdm_a3_today_over_z1100": 0.9911117592765811,
+  "change_pct": -0.8888240723418872,
+  "beta": 0.048497815
+ },
+ "S8L_step": {
+  "k_half_suppression_h_per_Mpc": 0.5703256744789396,
+  "suppression_at_k10": 0.4351688164074534,
+  "note": "cold-matter linear P(k) ratio S8-L/Spiral at z=0 (S8-LNL D2: cold+nu)"
+ }
+}

@@ -29,6 +29,20 @@
    "lock_time": "2026-11-07T21:45:24Z"
   },
   {
+   "rule": "PREREG_KIDS_LEGACY_SHEAR.md",
+   "origin": "AEGIS",
+   "sha256": "dc2810a27e6d9d547a5964948614aad5ef9b7f01378122fd5bb18034d9061b09",
+   "verified": true,
+   "lock_time": "2026-11-08T22:48:19Z"
+  },
+  {
+   "rule": "PREREG_LENSING_FORECASTS.md",
+   "origin": "AEGIS",
+   "sha256": "deca2fc16ce05d91f88985aa2184d07dee80ddc33e5751c72753a20f08cce31c",
+   "verified": true,
+   "lock_time": "2026-11-08T22:48:19Z"
+  },
+  {
    "rule": "PREREG_S8L_NONLINEAR.md",
    "origin": "AEGIS",
    "sha256": "033030abe5b1f5ad4a3bcb659bd21b44ab5d79aed62922ac3ca24bd67ac02c22",
@@ -55,6 +69,13 @@
    "sha256": "fe1b8544487df73fd1739fc5078be35d30e3434eaac96b962e1bc5843f53674b",
    "verified": true,
    "lock_time": "2026-11-07T21:32:03Z"
+  },
+  {
+   "rule": "PREREG_SIMPLIFY_LATE.md",
+   "origin": "AEGIS",
+   "sha256": "a06df075e39e9e83af0fc495b4f5a5e815c475dbf3e917c08ae5b9c329b87a73",
+   "verified": true,
+   "lock_time": "2026-11-09T00:22:12Z"
   },
   {
    "rule": "PREREG_SPIRAL_L.md",
@@ -965,6 +986,14 @@
   },
   {
    "id": "",
+   "test": "BR bracket, round 2 (DES Y5 + Dovekie + Union3; score = \u03c7\u00b2 \u2212 2 per set)",
+   "verdict": "**WINNER \u03b8 2.777, F9** (beats the locked fit by 5.69 \u2265 2). Honest reading: the margin is the AIC credit for fixing \u03b8 (\u22122 \u00d7 3); raw \u03c7\u00b2 is +0.31 worse in sum, so fixing \u03b8 at the fitted value and the width at torsion/9 costs nothing in fit. Six candidates were tried; the locked result stands beside it. Round 3 (P-ACT, S8 A/B; reported only) started 8 Nov 17:06 CT",
+   "result": "sums: \u03b8 2.777 F9 6376.32, F8 6376.41, F10 6376.96; locked fit 6382.01 (per set 2672.82 / 2658.01 / 1051.18; F9 2670.79 / 2656.20 / 1049.32)",
+   "source": "CURRENT_MODEL",
+   "class": "pass"
+  },
+  {
+   "id": "",
    "test": "**S8WL Part 2** full DES Y3 shear likelihood",
    "verdict": "(running) rule locked 7 Nov; run in the cloud. Locked Twist \u0394_WL = +1.14 **PASSES** (limit +2); Spiral +2.57 / +3.47 / +3.99 **OVER**; UB-2 joined field \u22120.37 / 0.00 / +0.14 **PASSES** (equal effort, all pairs done 8 Nov)",
    "source": "CURRENT_MODEL",
@@ -980,6 +1009,14 @@
   },
   {
    "id": "",
+   "test": "**S8-J on KiDS-Legacy** full shear (PREREG_KIDS_LEGACY_SHEAR.md, locked 8 Nov; gate passed 124.266 vs 124.291; KiDS baseline HMcode-2020 + feedback on both sides, D1)",
+   "verdict": "**PASSES on KiDS-Legacy** (2 of 3 already pass; S8-J fits KiDS slightly better than \u039bCDM). Spiral and S8-L pairs not run yet",
+   "result": "\u0394_KiDS \u22120.41 / \u22120.26 / (Union3 not run yet) (P+ / Dovekie; limit +2; equal effort, 5 tries each side)",
+   "source": "CURRENT_MODEL",
+   "class": "pass"
+  },
+  {
+   "id": "",
    "test": "Stage-3 P-ACT bracket",
    "verdict": "(running) after BR",
    "source": "CURRENT_MODEL",
@@ -987,7 +1024,7 @@
   }
  ],
  "counts": {
-  "pass": 19,
+  "pass": 21,
   "fail": 16,
   "neutral": 10,
   "open": 4,
