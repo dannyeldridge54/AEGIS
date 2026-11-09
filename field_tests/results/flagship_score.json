@@ -1,0 +1,54 @@
+{
+ "rule": "PREREG_FLAGSHIP.md (locked 2026-11-09T07:38:57Z)",
+ "fits": "ax_spa_spiraltwist_kappa1{,_dovekie,_union3}_nlfix_s8y6 (PC, finished 9 Nov 15:17-15:35 UTC)",
+ "vs_LCDM_S8": {
+  "P+": -4.708,
+  "Dovekie": -6.011,
+  "Union3": -7.69,
+  "reading": "SURVIVES (Delta <= -4 on 3 of 3)"
+ },
+ "vs_S8J": {
+  "raw_chi2_flagship_minus_S8J": {
+   "P+": 2.616,
+   "Dovekie": 2.128,
+   "Union3": 0.545
+  },
+  "score_sum_flagship": 6039.24,
+  "chi2_sum_S8J": 6039.951,
+  "reading": "FLAGSHIP KEPT (score sum lower by 0.71)"
+ },
+ "reported": {
+  "beta_eff": [
+   0.0411,
+   0.0447,
+   0.0383
+  ],
+  "H0": [
+   67.16,
+   67.36,
+   67.02
+  ],
+  "S8": [
+   0.8251,
+   0.8282,
+   0.8249
+  ],
+  "w0": [
+   -0.872,
+   -0.873,
+   -0.871
+  ],
+  "wa": [
+   -0.203,
+   -0.201,
+   -0.204
+  ],
+  "rd_Mpc": [
+   147.45,
+   147.38,
+   147.52
+  ]
+ },
+ "predictions_frozen": "theory/fpc_ax_spa_spiraltwist_kappa1{,_dovekie,_union3}_nlfix_s8y6.json (CAMB/AxiCLASS forward, cloud, 9 Nov)",
+ "not_blind": "flagship chosen after S8-J and SIMPLIFY-L results (stated in the rule)"
+}
