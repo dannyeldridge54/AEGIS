@@ -28,6 +28,10 @@ only. Background identical to the Spiral at the same parameters (checked as gate
   ported into that build (θ_c' gets −a ξ (1+w_φ) ρ_φ (θ_c − θ_φ)), and checked against DS-CLASS run with the Spiral's
   own CPL (w0, wa) (gate G-M0). ReACT is given the Spiral's CPL fit; that approximation is stated with the result.
 
+## Status 8 Nov (theory/MOMENTUM_COUPLING_NOTE.md)
+Not derivable from the Twist's couplings (chosen add-on). DS-CLASS smoke test: σ8 only −0.45% at A_ds ≈ 10 and −1.07%
+at A_ds ≈ 30 for the Spiral's w(z): a weak lever. Not locked; revisit only if KiDS and DES both show a real tension.
+
 ## Engine gates (before any data fit)
 - **G-M0:** find a public, published implementation (CLASS or CAMB) and reproduce one figure/number from its paper;
   if none exists, write the patch and reproduce the paper's linear growth suppression within 2%.
