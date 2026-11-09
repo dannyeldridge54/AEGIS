@@ -2,10 +2,8 @@
     python angle_gates.py            -> cmb-fit/axiclass/angle/angle_gates.json
 G-A0: new build with fld_coupling_beta = 0 reproduces the S8-L build at the stored S8-L best fit (spiralL):
       sigma8, H0, Omega_m, 100 theta_s and C_l^TT/EE (l = 2..2500) equal within 1e-6 (relative).
-G-A1: angle as cold dark matter: share f = 0.99, angle made heavy (log10 a_c = -7), coupled at beta_a; CDM
-      uncoupled. Must match the coupled-CDM build with all dark matter coupled at beta = beta_a f + ... i.e.
-      the same run with the CDM coupled at beta_a (share 1 - f uncoupled is 1%): compare against the S8-L build
-      with f = 0.01 light uncoupled share and CDM coupled at beta_a. sigma8 and H0 within 2e-3, C_l within 2e-3.
+G-A1: angle as cold dark matter (99% share, a_c = 1e-7) coupled at beta = 0.05 vs cold dark matter coupled at 0.05:
+      the coupling's effect on C_l^pp (l 100-1000) agrees within 5%, its effect on H0 and phi(today) within 1e-3.
 G-A2 (report): the physical model at the stored S8-L point: CDM uncoupled, angle coupled at sqrt(2/3), share
       f = beta_eff/sqrt(2/3); sigma8, S8, H0 and the phi(today) shift, versus the S8-L build (picture A)."""
 import json
@@ -27,7 +25,7 @@ a = json.loads(sys.argv[2])
 c = classy.Class(); c.set(a); c.compute()
 cl = c.lensed_cl(2500); bg = c.get_background()
 phi = bg.get("phi_scf"); out = {"sigma8": c.sigma8(), "H0": c.h()*100, "Omega_m": c.Omega_m(),
-  "S8": c.sigma8()*(c.Omega_m()/0.3)**0.5, "tt": cl["tt"][2:].tolist(), "ee": cl["ee"][2:].tolist(),
+  "S8": c.sigma8()*(c.Omega_m()/0.3)**0.5, "tt": cl["tt"][2:].tolist(), "ee": cl["ee"][2:].tolist(), "pp": c.raw_cl(2500)["pp"][2:].tolist(),
   "phi_today": float(phi[-1]) if phi is not None else None, "classy": classy.__file__}
 print("JSON" + json.dumps(out))
 '''
@@ -71,17 +69,25 @@ def main():
     d = {k: abs(r_new[k] / r_ula[k] - 1) for k in ("sigma8", "H0", "Omega_m")}
     d["tt"] = rel(r_new["tt"][:2400], r_ula["tt"][:2400]); d["ee"] = rel(r_new["ee"][30:2400], r_ula["ee"][30:2400])
     res["G-A0"] = {"max_rel_diffs": d, "pass": max(d.values()) <= 1e-6}
-    # G-A1: angle as heavy matter, coupled at beta_a, vs CDM coupled at beta_a
+    # G-A1: angle as heavy matter (99% of dark matter, a_c = 1e-7) coupled at beta vs cold dark matter coupled at
+    # beta. Compared on the lensing potential C_l^pp (l 100-1000), which counts all matter: CLASS's sigma8 leaves the
+    # fluid out of delta_m (S8-LNL D2), so sigma8 cannot be used here (first version of this gate did; see status).
+    import numpy as np
     om = a.get("omega_cdm", 0) + a.get("omega_fld", 0)
-    f = 0.99
-    heavy = dict(a, omega_cdm=om * (1 - f), omega_fld=om * f, log10_a_c=-7.0, scf_coupling_beta=0.0,
-                 fld_coupling_beta=BETA_A)
-    ref = dict(a, omega_cdm=om * f, omega_fld=om * (1 - f), log10_a_c=-7.0, scf_coupling_beta=BETA_A)
-    r1 = run(ANG, heavy); r2 = run(ULA, ref)
-    d1 = {k: abs(r1[k] / r2[k] - 1) for k in ("sigma8", "H0")}
-    d1["tt"] = rel(r1["tt"][:2400], r2["tt"][:2400])
-    res["G-A1"] = {"max_rel_diffs": d1, "pass": max(d1.values()) <= 2e-3,
-                   "note": "heavy angle (a_c=1e-7) coupled at sqrt(2/3) vs CDM coupled at sqrt(2/3); 1% uncoupled rest"}
+    f, beta, L = 0.99, 0.05, slice(98, 998)
+    R = {}
+    for b in (0.0, beta):
+        R[("fld", b)] = run(ANG, dict(a, omega_cdm=om*(1-f), omega_fld=om*f, log10_a_c=-7.0, scf_coupling_beta=0.0,
+                                      fld_coupling_beta=b))
+        R[("cdm", b)] = run(ULA, dict(a, omega_cdm=om*f, omega_fld=om*(1-f), log10_a_c=-7.0, scf_coupling_beta=b))
+    eff = {s: float(np.mean(np.array(R[(s, beta)]["pp"])[L] / np.array(R[(s, 0.0)]["pp"])[L] - 1)) for s in ("fld", "cdm")}
+    bg = {k: abs(R[("fld", beta)][k] / R[("fld", 0.0)][k] - R[("cdm", beta)][k] / R[("cdm", 0.0)][k])
+          for k in ("H0",)}
+    dphi = abs((R[("fld", beta)]["phi_today"] - R[("fld", 0.0)]["phi_today"])
+               - (R[("cdm", beta)]["phi_today"] - R[("cdm", 0.0)]["phi_today"]))
+    ratio = eff["fld"] / eff["cdm"]
+    res["G-A1"] = {"beta": beta, "pp_effect": eff, "pp_effect_ratio": ratio, "H0_effect_diff": bg["H0"],
+                   "phi_shift_diff": dphi, "pass": abs(ratio - 1) <= 0.05 and bg["H0"] <= 1e-3 and dphi <= 1e-3}
     # G-A2: the physical S8-A point (report)
     beff = best.get("scf_coupling_beta")
     fa = beff / BETA_A

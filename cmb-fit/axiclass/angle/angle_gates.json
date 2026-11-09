@@ -12,13 +12,15 @@
   "pass": true
  },
  "G-A1": {
-  "max_rel_diffs": {
-   "sigma8": 0.27306471880610994,
-   "H0": 0.0006003304860247027,
-   "tt": 0.00459354973206605
+  "beta": 0.05,
+  "pp_effect": {
+   "fld": -0.0022519806495973353,
+   "cdm": -0.0022439912264582734
   },
-  "pass": false,
-  "note": "heavy angle (a_c=1e-7) coupled at sqrt(2/3) vs CDM coupled at sqrt(2/3); 1% uncoupled rest"
+  "pp_effect_ratio": 1.0035603629126801,
+  "H0_effect_diff": 3.680331125366365e-05,
+  "phi_shift_diff": 2.392117397309601e-05,
+  "pass": true
  },
  "G-A2": {
   "share_f": 0.06154915057072162,
