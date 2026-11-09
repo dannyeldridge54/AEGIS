@@ -11,6 +11,8 @@ when the data arrive. Ledger rebuilt 8 Nov: 51 locked files, 0 hash problems; 73
 | Gaia stream download for V3 | PC collector | ESA rate limits (HTTP 429); retries daily on its own |
 | Release watch (DESI DR3, Euclid DR1, Gaia DR4, SO) | PC collector, daily | new papers (Gaia DR4 hits so far are pre-release papers) |
 
+## V4 drafts (9 Nov, not locked): GH2 growth, clusters, r–n_s, SO EE/TE pattern (frozen), H0. See validation/V4_GROWTH_CLUSTERS_LONG.md
+
 ## Ready, waiting for new data
 | Step | Data | When expected | Ready? |
 |---|---|---|---|
