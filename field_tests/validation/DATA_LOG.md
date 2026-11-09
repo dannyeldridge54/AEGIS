@@ -13,3 +13,12 @@
 | 2026-11-08 | V1 | Spiral (P+) forward numbers computed (test) | theory/fpc_ax_spa_spiraltwist_nlfix.json |
 | 2026-11-08 | V1/V2/V4 | Frozen forward predictions for ΛCDM, Spiral, S8-J, S8-L (3 SN sets each) | theory/PREDICTIONS_FROZEN_8NOV.md |
 | 2026-11-09 | V2 | Spiral dark-matter mass change since z=1100: -0.82 / -0.95 / -0.89 % (code says shrinks; 7 Nov audit said grows: open); S8-L step k_half ≈ 0.57 h/Mpc | theory/v2_frozen_numbers.json |
+
+## 9 Nov 2026, 03:15 UTC: V3 check-in and KiDS rows
+- theory/DM_COUPLING_PICTURE.md: the action couples only the BI angle (0.816); "all dark matter at β = 0.816 f" is the
+  background stand-in (same expansion, different forces). At S8-L's fitted mass the angle is smooth on galaxy scales,
+  so the action predicts β_KK ≈ 0 in streams; the locked V3 numbers (0.053–0.075) are the fits' picture A. Locked
+  rule unchanged. Mass-change sign settled for the fitted models: shrinks (angle particles −14 to −16% under B).
+- field_tests/rules/DRAFT_V3B_STREAM_TEST.md (draft): predictions per picture, published limits (best β_KK ≈ 0.2–0.3),
+  test design. Not locked.
+- KiDS-Legacy: S8-J Union3 Δ_KiDS −0.47 (S8-J passes 3 of 3); plain Spiral Pantheon+ +0.46 (passes).

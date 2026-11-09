@@ -77,6 +77,78 @@
      157.149
     ]
    }
+  },
+  "S8-J joint Spiral, Union3": {
+   "model": {
+    "run": "ax_spa_spiraltwist_union3_nlfix_s8y6",
+    "fit": "ax_spa_spiraltwist_union3_nlfix_s8y6",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_spiraltwist_union3_nlfix_s8y6_round1_cross_best.ini",
+    "chi2_KiDS": 156.809,
+    "data_chi2": 129.183,
+    "w0": -0.8788309248175887,
+    "wa": -0.19220602055139166
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_union3_s8y6_more",
+    "fit": "ax_spa_lcdm_halofit_union3_s8y6_more",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_lcdm_halofit_union3_s8y6_more_round2_own_best.ini",
+    "chi2_KiDS": 157.28,
+    "data_chi2": 129.577,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": -0.47,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_union3_nlfix_s8y6": [
+     156.863,
+     156.81,
+     156.809,
+     156.809,
+     156.81
+    ],
+    "ax_spa_lcdm_halofit_union3_s8y6_more": [
+     157.314,
+     157.29,
+     157.281,
+     157.28,
+     157.281
+    ]
+   }
+  },
+  "Spiral, Pantheon+": {
+   "model": {
+    "run": "ax_spa_spiraltwist_nlfix",
+    "fit": "ax_spa_spiraltwist_nlfix",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_spiraltwist_nlfix_round1_own_best.ini",
+    "chi2_KiDS": 157.492,
+    "data_chi2": 129.867,
+    "w0": -0.9174718049603293,
+    "wa": -0.13157967369857654
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit",
+    "fit": "ax_spa_lcdm_halofit",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_lcdm_halofit_round1_own_best.ini",
+    "chi2_KiDS": 157.033,
+    "data_chi2": 129.373,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": 0.46,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_nlfix": [
+     157.496,
+     157.492,
+     157.492
+    ],
+    "ax_spa_lcdm_halofit": [
+     157.052,
+     157.033,
+     157.033
+    ]
+   }
   }
  }
 }
