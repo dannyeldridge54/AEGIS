@@ -1,7 +1,8 @@
-# JOINT-SHEAR: fit with the full DES Y3 shear inside, judge with the full shear (DRAFT, not locked)
+# JOINT-SHEAR: fit with the full DES Y3 shear inside, judge with the full shear
 
-**Status: DRAFT** (9 Nov 2026, after Danny: "keep at it, let's get it together best we can"). AI-assisted. Lock only on
-Danny's word. No joint-shear fit exists.
+**Locked:** 9 Nov 2026, time in `PREREG_JOINT_SHEAR.md.sha256` (UTC), on Danny's word ("Keep on with lensing", 17:48 CT,
+after the plan: one last clean lensing test, then lensing is written up as open if it fails). AI-assisted. No
+joint-shear fit or calibration point exists at lock. **KiDS S8-A (LATE-BASE) is not known at lock** (running).
 
 **Why, stated plainly.** Twice now (S8-L, S8-A) a model passed the compressed one-number S8 test and then missed the
 full shear test (S8-A on DES Y3: +1.76 / +2.32 / +2.76, OVER, `PREREG_LATE_BASE.md`). The models are tuned without the
@@ -16,10 +17,15 @@ shear data and graded on it afterwards. This rule fits with the shear data insid
   The DES Y6 S8 term is **not** added (no double counting of shear).
 
 ## How the shear enters (steer with an emulator, judge with the full pipeline)
-1. **Calibrate:** for each model, run the full shear pipeline (nuisance-profiled χ²_WL) at the stored best fit and 12
-   design points spread in (S8, Ω_m) over ±3σ of the stored fit's posterior width (plus β_eff for S8-A). Fit a
-   quadratic χ²_WL ≈ q(S8, Ω_m[, β_eff]).
-2. **Gate G-JS (before any fit):** at 4 held-out points per model, |q − full| ≤ 0.5. If not, add 8 points and refit q
+1. **Calibrate (cloud, `field_tests/S8_WL/joint_shear/js_calibrate.py`):** centre = the stored Pantheon+ best fit
+   (`S8A`, `ax_spa_lcdm_halofit`; the shear does not use the SN data). Design points vary only ln(10¹⁰A_s) (±0.06) and
+   ω_dm (S8-A) / ω_cdm (ΛCDM) (±0.005), plus β_eff over [0, 0.12] for S8-A, other parameters at the centre; fixed
+   seed-0 Latin hypercube: **13 points for S8-A, 9 for ΛCDM**, plus the centre. At each point the full shear χ²_WL is
+   minimised over the nuisances by two Nelder–Mead runs in sequence, the first from that model's LATE-BASE best
+   nuisances, the second from the first's result; the lower counts. Fit by least squares a quadratic
+   **q(S8, Ω_m[, β_eff])** in the CLASS-computed S8 and Ω_m.
+2. **Gate G-JS (before any fit):** 4 held-out points per model (seed 1), which also vary 100θ_s (±0.0005), n_s
+   (±0.008) and ω_b (±0.0003). Pass if |q − full| ≤ 0.5 at all of them. If not: add 8 points (seed 2) and refit q
    once; if it still fails: NO FITS, NO VERDICT (logged).
 3. **Fit (PC):** minimise χ²_CMB+BAO+SN + q, best of 4, as above. 6 fits (2 models × 3 SN sets).
 4. **Judge with the full pipeline, not the emulator:** at each joint best fit, the full shear χ²_WL replaces q. If
@@ -37,4 +43,5 @@ No change of data, priors, design points or thresholds after any joint result; f
 a pass. Counted +1 in V7. Does not change LATE-BASE: its base choice stands on its own rule.
 
 ## Cost (estimate)
-Calibration: ~34 full shear runs (cloud, ~10–15 min each, resumable). Fits: 6 on the PC (same cost as the S8-A fits).
+Calibration: 32 full shear points (cloud, ~20 min of CPU each, resumable; ~6–10 h wall time). Fits: 6 on the PC
+(same cost as the S8-A fits).
