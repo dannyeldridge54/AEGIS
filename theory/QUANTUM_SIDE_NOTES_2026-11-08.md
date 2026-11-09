@@ -10,8 +10,7 @@ estimates, not results; nothing here is a test. Each item that predicts a number
   - m = 10⁻²⁶ eV → Λ⁴ ≈ 1.4×10³ eV⁴; m = 10⁻²⁵ eV → Λ⁴ ≈ 1.4×10⁵ eV⁴.
   - If Λ⁴ ≈ M_P⁴ e^(−S) (K ~ M_P⁴ assumed): **S ≈ 245 (10⁻²⁶ eV) to 241 (10⁻²⁵ eV)**. Dark energy (~2.2 meV)⁴ needs
     S ≈ 280.
-- Next: write the instanton action in our variables (Kaul & Sengupta's S = (π/(3√2)) F_a Q and their F_a² = β − 1/8),
-  and see whether S ≈ 240 corresponds to a natural coupling. If S8-L finds a mass, compare.
+- Done 9 Nov: theory/INSTANTON_HEIGHT.md (not derived: S ≈ 240 needs β ~ 10⁵ or f ~ 0.008 M_P; at F = 1.559 M_P, S ≈ 1.2).
 
 ## 2. Where could n = 3 come from? (early role)
 - STEP2_RESULT.md (31 Oct): (1 − cos x)³ = 5/2 − (15/4) cos x + (3/2) cos 2x − (1/4) cos 3x needs two exact
