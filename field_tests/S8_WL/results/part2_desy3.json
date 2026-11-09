@@ -609,6 +609,120 @@
      -6487.045
     ]
    }
+  },
+  "S8-A axionHMcode, Pantheon+": {
+   "model": {
+    "run": "S8A_axhm",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_S8A_axhm_round3_own_best.ini",
+    "chi2_WL": -6485.922,
+    "data_chi2": 235.854,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_axhm",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_axhm_round3_own_best.ini",
+    "chi2_WL": -6487.678,
+    "data_chi2": 234.71,
+    "S8": NaN
+   },
+   "Delta_WL": 1.76,
+   "reading": "PASSES",
+   "tries": {
+    "S8A_axhm": [
+     -6481.651,
+     -6484.585,
+     -6482.658,
+     -6485.819,
+     -6484.911,
+     -6485.922,
+     -6485.685
+    ],
+    "ax_spa_lcdm_halofit_axhm": [
+     -6484.411,
+     -6484.452,
+     -6483.799,
+     -6484.453,
+     -6487.593,
+     -6487.678,
+     -6487.406
+    ]
+   }
+  },
+  "S8-A axionHMcode, DES-Dovekie": {
+   "model": {
+    "run": "S8A_dovekie_axhm",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_S8A_dovekie_axhm_round2_own_best.ini",
+    "chi2_WL": -6485.212,
+    "data_chi2": 237.235,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_dovekie_axhm",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_dovekie_axhm_round3_own_best.ini",
+    "chi2_WL": -6487.534,
+    "data_chi2": 235.046,
+    "S8": NaN
+   },
+   "Delta_WL": 2.32,
+   "reading": "OVER",
+   "tries": {
+    "S8A_dovekie_axhm": [
+     -6482.391,
+     -6485.173,
+     -6481.671,
+     -6485.212,
+     -6485.15,
+     -6485.212,
+     -6485.208
+    ],
+    "ax_spa_lcdm_halofit_dovekie_axhm": [
+     -6484.695,
+     -6484.73,
+     -6486.32,
+     -6486.327,
+     -6487.521,
+     -6487.534,
+     -6487.525
+    ]
+   }
+  },
+  "S8-A axionHMcode, Union3": {
+   "model": {
+    "run": "S8A_union3_axhm",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_S8A_union3_axhm_round3_own_best.ini",
+    "chi2_WL": -6483.309,
+    "data_chi2": 238.976,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_union3_axhm",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_union3_axhm_round3_cross_best.ini",
+    "chi2_WL": -6486.068,
+    "data_chi2": 236.628,
+    "S8": NaN
+   },
+   "Delta_WL": 2.76,
+   "reading": "OVER",
+   "tries": {
+    "S8A_union3_axhm": [
+     -6480.366,
+     -6480.393,
+     -6481.679,
+     -6481.68,
+     -6482.625,
+     -6483.309,
+     -6482.193
+    ],
+    "ax_spa_lcdm_halofit_union3_axhm": [
+     -6484.752,
+     -6484.769,
+     -6484.99,
+     -6485.057,
+     -6484.763,
+     -6485.082,
+     -6486.068
+    ]
+   }
   }
  }
 }

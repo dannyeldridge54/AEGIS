@@ -1,0 +1,18 @@
+{
+ "run": "S8A_dovekie",
+ "rule": "PREREG_S8L_NONLINEAR.md",
+ "flags": {
+  "alpha": true,
+  "eta_given": true,
+  "one_halo_damping": true,
+  "two_halo_damping": true,
+  "concentration_param": true,
+  "full_2h": false
+ },
+ "ax_fraction": 0.0535113958207307,
+ "m_ax_eV": 1.1456788611232106e-25,
+ "nz": 31,
+ "G2_max_dev_total_from_components": 0.002263128641858403,
+ "G2": "PASS",
+ "seconds": 108.57032990455627
+}

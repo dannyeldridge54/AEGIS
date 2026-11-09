@@ -13,5 +13,6 @@
  "m_ax_eV": 3.6526499058781556e-25,
  "nz": 31,
  "G2_max_dev_total_from_components": 0.00167483247273581,
- "G2": "PASS"
+ "G2": "PASS",
+ "seconds": 127.59700679779053
 }
