@@ -182,6 +182,9 @@ def make(name):
         if fixed_beta:   # SF2 (field_tests/rules/PREREG_SF2_ANGLE.md): "_beta<x>" fixes beta_eff; kappa stays free
             params.pop("scf_coupling_beta")
             extra["scf_coupling_beta"] = float(fixed_beta.group(1))
+        fixed_kappa = re.search(r"_kappa([0-9.]+)", base)
+        if fixed_kappa:  # simplification bracket (field_tests/rules/PREREG_SIMPLIFY_LATE.md): "_kappa<x>" fixes kappa
+            params["spiral_kappa"] = float(fixed_kappa.group(1))
     if coupled:
         if fixed_beta:
             extra["scf_coupling_beta"] = float(fixed_beta.group(1))
