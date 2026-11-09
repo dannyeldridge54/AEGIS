@@ -1,0 +1,82 @@
+{
+ "rule": "PREREG_KIDS_LEGACY_SHEAR.md",
+ "data": "KiDS-Legacy COSEBIs (Wright et al. 2025), fiducial settings",
+ "rows": {
+  "S8-J joint Spiral, Pantheon+": {
+   "model": {
+    "run": "ax_spa_spiraltwist_nlfix_s8y6",
+    "fit": "ax_spa_spiraltwist_nlfix_s8y6",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_spiraltwist_nlfix_s8y6_round1_own_best.ini",
+    "chi2_KiDS": 156.849,
+    "data_chi2": 129.197,
+    "w0": -0.9272661295741143,
+    "wa": -0.11605805273915494
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_s8y6",
+    "fit": "ax_spa_lcdm_halofit_s8y6",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_lcdm_halofit_s8y6_round2_own_best.ini",
+    "chi2_KiDS": 157.255,
+    "data_chi2": 129.553,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": -0.41,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_nlfix_s8y6": [
+     156.864,
+     156.849,
+     156.85,
+     156.849,
+     156.849
+    ],
+    "ax_spa_lcdm_halofit_s8y6": [
+     157.353,
+     157.263,
+     157.256,
+     157.255,
+     157.255
+    ]
+   }
+  },
+  "S8-J joint Spiral, DES-Dovekie": {
+   "model": {
+    "run": "ax_spa_spiraltwist_dovekie_nlfix_s8y6",
+    "fit": "ax_spa_spiraltwist_dovekie_nlfix_s8y6",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_spiraltwist_dovekie_nlfix_s8y6_round1_own_best.ini",
+    "chi2_KiDS": 156.888,
+    "data_chi2": 129.253,
+    "w0": -0.9113071449681855,
+    "wa": -0.14137248008586809
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_dovekie_s8y6_more",
+    "fit": "ax_spa_lcdm_halofit_dovekie_s8y6_more",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/kids_run/part3_ax_spa_lcdm_halofit_dovekie_s8y6_more_round1_own_best.ini",
+    "chi2_KiDS": 157.148,
+    "data_chi2": 129.466,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": -0.26,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_dovekie_nlfix_s8y6": [
+     156.953,
+     156.888,
+     156.889,
+     156.888,
+     156.888
+    ],
+    "ax_spa_lcdm_halofit_dovekie_s8y6_more": [
+     157.156,
+     157.148,
+     157.148,
+     157.148,
+     157.149
+    ]
+   }
+  }
+ }
+}
