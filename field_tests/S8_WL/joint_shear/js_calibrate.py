@@ -1,5 +1,5 @@
 """JOINT-SHEAR calibration (field_tests/rules/PREREG_JOINT_SHEAR.md; refuses to run before the lock).
-    TWIST_RESULTS=<scratch dir with links to cmb-fit/results> CSL_DIR=... python js_calibrate.py points|run|fit
+    PYTHONPATH=<plain AxiCLASS build lib> TWIST_RESULTS=<scratch dir with links to cmb-fit/results> CSL_DIR=... python js_calibrate.py points|run|fit
 points: write the design (seed 0) and held-out (seed 1) points as cmp_<base>__js<tag>.json into TWIST_RESULTS.
 run:    for each point not yet done: axiclass_pk -> axhm_pk -> two sequential Nelder-Mead shear minimisations
         (first from the model's LATE-BASE best nuisances, second from the first); appends to js_calib.json.

@@ -1,6 +1,7 @@
 """JOINT-SHEAR scoring (field_tests/rules/PREREG_JOINT_SHEAR.md), cloud, after the 6 PC fits (cmp_<base>__jsfit.json)
 are copied into cmb-fit/results.
-    TWIST_RESULTS=<scratch dir with links to cmb-fit/results> CSL_DIR=... python js_score.py
+    PYTHONPATH=<plain AxiCLASS build lib> TWIST_RESULTS=<scratch dir with links to cmb-fit/results> CSL_DIR=... python js_score.py
+LCDM P(k) uses the plain AxiCLASS build (the one that made the stored LCDM files; checked bit-identical 10 Nov).
 Per SN set: P(k) (axiclass_pk) -> axionHMcode (axhm_pk) -> the full DES Y3 shear chi2_WL with the LATE-BASE equal-effort
 search (run_part2.minimise_pair), S8-A vs LCDM. Then
   total(model) = chi2(fit) - chi2__js_shear (the emulator term) + chi2_WL(full)
