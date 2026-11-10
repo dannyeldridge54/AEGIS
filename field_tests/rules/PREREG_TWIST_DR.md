@@ -1,7 +1,8 @@
-# TWIST-DR: the flagship plus dark radiation and running of the primordial tilt (DRAFT, not locked)
+# TWIST-DR: the flagship plus dark radiation and running of the primordial tilt
 
-**Status: DRAFT** (10 Nov 2026). Lock only on Danny's word; on lock it is renamed `PREREG_TWIST_DR.md`. AI-assisted.
-No TWIST-DR fit exists.
+**Status: LOCKED** on Danny's word ("Alright, go ahead and get things rolling", 10 Nov 2026, 13:09 CT), right after the
+plan and this draft were reported to him. AI-assisted. No TWIST-DR fit exists at lock. Code: `cmb-fit/axiclass/darkrad/dr_fit.py`.
+Cloud check before lock: with both parameters at 0, every term the cloud can run is identical to FLAG-1.
 
 **Not blind.**
 - arXiv 2604.26541 (Planck + ACT DR6 + DESI DR2 + uncalibrated Pantheon+): interacting dark radiation with running gives
