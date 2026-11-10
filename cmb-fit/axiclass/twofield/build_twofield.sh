@@ -10,6 +10,8 @@ export PATH="$ENV/bin:/usr/bin:/bin"
 SRC=$BLD/AxiCLASS_coupled_nlfix
 DST=$BLD/AxiCLASS_twofield
 [ -d "$DST" ] || { cp -a "$SRC" "$DST"; "$PY" "$AXI/twofield/patch_twofield.py" "$DST"; }
+# a build made before the HALOFIT fix (TWOFIELD_DEVIATIONS.md, D1) gets only that fix
+grep -q "two-field: the dilaton is dark energy" "$DST/external/Halofit/halofit.c" || "$PY" "$AXI/twofield/patch_twofield.py" "$DST" --halofit-only
 rm -rf "$DST/python/build"
 cd "$DST"
 make -j4 MDIR="$DST" libclass.a > /tmp/twofield_make.log 2>&1 || { tail -30 /tmp/twofield_make.log; exit 1; }

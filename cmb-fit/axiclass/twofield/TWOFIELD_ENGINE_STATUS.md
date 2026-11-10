@@ -51,3 +51,9 @@ Parametrisation for fits: the early field's exact f_EDE and z_c are matched by a
 targets (`tf_gates_ede.match`, ~4 background runs). A two-field fit wrapper and the rule (data, priors, verdicts,
 equal-effort ΛCDM/flagship/Locked Twist references) come next; **no two-field fit runs before that rule is locked.**
 Notes: AxiCLASS's `Omega_m()` is wrong in these builds (known quirk; S8 must be computed from ω's, as elsewhere).
+
+**Correction (10 Nov 2026, TWOFIELD_DEVIATIONS.md D1):** G-2F2's C_l agreement (6e-6) was without the nonlinear
+(HALOFIT) correction. With HALOFIT, the pre-fix build counted "dil" as matter in HALOFIT: nonlinear P(k) off by up to 79%,
+lensed C_l off by ~8% rms. Fixed in `patch_twofield.py` (`halofit()`); after the fix, lensed C_l to l = 9000 agree with
+the flagship to 4e-5 (TT) / 6e-6 (EE) / 9e-6 (phi-phi) rms, nonlinear P(k) to 2e-5.
+

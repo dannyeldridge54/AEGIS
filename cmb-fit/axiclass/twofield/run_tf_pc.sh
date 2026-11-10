@@ -7,7 +7,8 @@ PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] ||
 export TWIST_PY="$PY" COBAYA_PACKAGES_PATH="${COBAYA_PACKAGES_PATH:-$CF/packages}" TWIST_RESULTS="$R"
 BLD="${TWIST_BUILDS:-$HOME}"; mkdir -p "$R/lanes"; say() { echo "$(date '+%F %T') $*" | tee -a "$LOG"; }
 say "start"
-if ! ls "$BLD"/AxiCLASS_twofield/python/build/lib*/classy*.so >/dev/null 2>&1; then
+if ! ls "$BLD"/AxiCLASS_twofield/python/build/lib*/classy*.so >/dev/null 2>&1 \
+   || ! grep -q "two-field: the dilaton is dark energy" "$BLD/AxiCLASS_twofield/external/Halofit/halofit.c"; then
   bash "$T/build_twofield.sh" >> "$LOG" 2>&1 && say "two-field build done" || { say "two-field build FAILED"; exit 1; }
 fi
 ( cd "$T" && OMP_NUM_THREADS=2 "$PY" twofield_fit.py gate_pc > "$R/lanes/tf_gate_pc.log" 2>&1 ) \

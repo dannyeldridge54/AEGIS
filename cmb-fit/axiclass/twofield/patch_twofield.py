@@ -26,6 +26,50 @@ def edit(path, old, new, count=1):
     print(f"ok  {path}: {old.strip().splitlines()[0][:70]}")
 
 
+# ---------------- halofit (external/Halofit/halofit.c): the flagship build's nl-scf-fix treats its scf dilaton as dark
+# energy (not rho-3p matter) in HALOFIT's Omega_m, Omega_v, w and f_nu. The dilaton now lives in "dil", so it gets the
+# same treatment (G-TF-PC diagnosis, 10 Nov 2026: without this HALOFIT counts the dilaton as matter -> lensing at high l).
+HF = "external/Halofit/halofit.c"
+DILHF = ("    if (pba->has_dil == _TRUE_) { /* two-field: the dilaton is dark energy for HALOFIT, as the flagship's scf */\n"
+         "      Omega_m -= (pvecback[pba->index_bg_rho_dil]-3.*pvecback[pba->index_bg_p_dil])/pvecback[pba->index_bg_rho_crit];\n"
+         "      Omega_v = 1.-Omega_m-pvecback[pba->index_bg_Omega_r]+3.*pvecback[pba->index_bg_p_dil]/pvecback[pba->index_bg_rho_crit]\n"
+         "        + ((pba->has_scf == _TRUE_) ? 3.*pvecback[pba->index_bg_p_scf]/pvecback[pba->index_bg_rho_crit] : 0.);\n"
+         "    }\n")
+
+
+def halofit():
+    edit(HF,
+         "    fnu = pba->Omega0_ncdm_tot/Omega_m;\n",
+         "    if (pba->has_dil == _TRUE_) {   /* two-field: present-day matter excludes the dilaton too */\n"
+         "      class_call(background_at_tau(pba,pba->conformal_age,long_info,inter_normal,&last_index,pvecback),\n"
+         "                 pba->error_message,pfo->error_message);\n"
+         "      Omega_m -= (pvecback[pba->index_bg_rho_dil]-3.*pvecback[pba->index_bg_p_dil])/pvecback[pba->index_bg_rho_crit];\n"
+         "    }\n"
+         "    fnu = pba->Omega0_ncdm_tot/Omega_m;\n")
+    edit(HF,
+         "      Omega_v = 1.-Omega_m-(pvecback[pba->index_bg_Omega_r]-3.*pvecback[pba->index_bg_p_scf]/pvecback[pba->index_bg_rho_crit]);\n    }\n"
+         "    /* until v2.9.3",
+         "      Omega_v = 1.-Omega_m-(pvecback[pba->index_bg_Omega_r]-3.*pvecback[pba->index_bg_p_scf]/pvecback[pba->index_bg_rho_crit]);\n    }\n"
+         + DILHF + "    /* until v2.9.3")
+    edit(HF,
+         "    if (pba->has_scf == _TRUE_ && pba->has_fld == _FALSE_) { /* nl-scf-fix: effective w of field + Lambda */\n"
+         "      double rho_de = pvecback[pba->index_bg_rho_scf], p_de = pvecback[pba->index_bg_p_scf];\n",
+         "    if ((pba->has_scf == _TRUE_ || pba->has_dil == _TRUE_) && pba->has_fld == _FALSE_) { /* nl-scf-fix: effective w of fields + Lambda */\n"
+         "      double rho_de = 0., p_de = 0.;\n"
+         "      if (pba->has_scf == _TRUE_) { rho_de += pvecback[pba->index_bg_rho_scf]; p_de += pvecback[pba->index_bg_p_scf]; }\n"
+         "      if (pba->has_dil == _TRUE_) { rho_de += pvecback[pba->index_bg_rho_dil]; p_de += pvecback[pba->index_bg_p_dil]; }\n")
+    edit(HF,
+         "    Omega_v = 1.-Omega_m-(pvecback[pba->index_bg_Omega_r]-3.*pvecback[pba->index_bg_p_scf]/pvecback[pba->index_bg_rho_crit]);\n  }\n\n"
+         "  // for debugging:",
+         "    Omega_v = 1.-Omega_m-(pvecback[pba->index_bg_Omega_r]-3.*pvecback[pba->index_bg_p_scf]/pvecback[pba->index_bg_rho_crit]);\n  }\n"
+         + DILHF.replace("\n    ", "\n  ").replace("    if (pba->has_dil", "  if (pba->has_dil", 1) + "\n  // for debugging:")
+
+
+if len(sys.argv) > 2 and sys.argv[2] == "--halofit-only":   # an already-patched build that predates this fix
+    halofit()
+    sys.exit()
+
+
 DILON = "(pba->has_dil == _TRUE_ && pba->dil_beta != 0.)"
 
 # ---------------- background.h
@@ -197,4 +241,5 @@ edit(PERT,
 edit("include/perturbations.h",
      "  int index_pt_phi_scf;",
      "  int index_pt_phi_dil, index_pt_phi_prime_dil;  /**< two-field dilaton */\n  int index_pt_phi_scf;")
+halofit()
 print("patched", ROOT)
