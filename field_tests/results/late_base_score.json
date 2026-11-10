@@ -1,0 +1,10 @@
+{
+ "rule": "PREREG_LATE_BASE.md (locked 2026-11-09T21:37:37Z)",
+ "part1": {
+  "DES Y3 shear (Delta_WL, <= +2 passes)": {"Pantheon+": 1.76, "DES-Dovekie": 2.32, "Union3": 2.76, "passes": 1, "reading": "OVER"},
+  "KiDS-Legacy COSEBIs (Delta_KiDS, <= +2 passes)": {"Pantheon+": 2.96, "DES-Dovekie": 10.11, "Union3": 11.3, "passes": 0, "reading": "OVER"}
+ },
+ "part2": {"S8-A becomes late base": false, "reason": "passes on no survey", "late base": "FLAG-1 (Spiral, kappa = 1)"},
+ "sources": ["field_tests/S8_WL/results/part2_desy3.json", "field_tests/S8_WL/results/kids/part3_kids_legacy.json"],
+ "reported_not_verdict": "S8-A best-fit sigma8 0.809 / 0.795 / 0.788; KiDS gets worse as sigma8 drops (Dovekie, Union3), DES Y3 is near the line on all three."
+}

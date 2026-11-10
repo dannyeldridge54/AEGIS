@@ -319,6 +319,111 @@
      156.815
     ]
    }
+  },
+  "S8-A angle coupled, Pantheon+": {
+   "model": {
+    "run": "S8A_axhm",
+    "fit": "S8A",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8a_run/kids/part3_S8A_axhm_round1_cross_best.ini",
+    "chi2_KiDS": 159.724,
+    "data_chi2": 131.972,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_axhm",
+    "fit": "ax_spa_lcdm_halofit",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8a_run/kids/part3_ax_spa_lcdm_halofit_axhm_best.ini",
+    "chi2_KiDS": 156.768,
+    "data_chi2": 129.14,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": 2.96,
+   "reading": "OVER",
+   "tries": {
+    "S8A_axhm": [
+     159.732,
+     159.725,
+     159.724
+    ],
+    "ax_spa_lcdm_halofit_axhm": [
+     156.768,
+     156.768,
+     156.768
+    ]
+   }
+  },
+  "S8-A angle coupled, DES-Dovekie": {
+   "model": {
+    "run": "S8A_dovekie_axhm",
+    "fit": "S8A_dovekie",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8a_run/kids/part3_S8A_dovekie_axhm_round1_own_best.ini",
+    "chi2_KiDS": 166.902,
+    "data_chi2": 138.867,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_dovekie_axhm",
+    "fit": "ax_spa_lcdm_halofit_dovekie",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8a_run/kids/part3_ax_spa_lcdm_halofit_dovekie_axhm_round1_own_best.ini",
+    "chi2_KiDS": 156.787,
+    "data_chi2": 129.128,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": 10.11,
+   "reading": "OVER",
+   "tries": {
+    "S8A_dovekie_axhm": [
+     166.903,
+     166.902,
+     166.902
+    ],
+    "ax_spa_lcdm_halofit_dovekie_axhm": [
+     156.791,
+     156.787,
+     156.787
+    ]
+   }
+  },
+  "S8-A angle coupled, Union3": {
+   "model": {
+    "run": "S8A_union3_axhm",
+    "fit": "S8A_union3",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8a_run/kids/part3_S8A_union3_axhm_round1_cross_best.ini",
+    "chi2_KiDS": 168.118,
+    "data_chi2": 140.058,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_union3_axhm",
+    "fit": "ax_spa_lcdm_halofit_union3",
+    "best_ini": "/tmp/claude-0/-home-claude/c19a5ec8-2fdf-518d-a2d4-024b6ab629a5/scratchpad/s8a_run/kids/part3_ax_spa_lcdm_halofit_union3_axhm_round1_own_best.ini",
+    "chi2_KiDS": 156.815,
+    "data_chi2": 129.165,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": 11.3,
+   "reading": "OVER",
+   "tries": {
+    "S8A_union3_axhm": [
+     168.119,
+     168.119,
+     168.118
+    ],
+    "ax_spa_lcdm_halofit_union3_axhm": [
+     156.817,
+     156.815,
+     156.815
+    ]
+   }
   }
+ },
+ "notes": {
+  "S8-A": "LATE-BASE (PREREG_LATE_BASE.md): S8-A rows run 9 Nov in a scratch folder with KIDS_REUSE; the LCDM partner files from that run are in s8a_lcdm_partner/."
  }
 }
