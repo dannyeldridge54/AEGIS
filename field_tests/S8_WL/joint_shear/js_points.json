@@ -126,5 +126,69 @@
  "ax_spa_lcdm_halofit__jsh03": [
   "LCDM",
   "heldout"
+ ],
+ "S8A__jse00": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jse01": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jse02": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jse03": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jse04": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jse05": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jse06": [
+  "S8A",
+  "design"
+ ],
+ "S8A__jse07": [
+  "S8A",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jse00": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jse01": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jse02": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jse03": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jse04": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jse05": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jse06": [
+  "LCDM",
+  "design"
+ ],
+ "ax_spa_lcdm_halofit__jse07": [
+  "LCDM",
+  "design"
  ]
 }

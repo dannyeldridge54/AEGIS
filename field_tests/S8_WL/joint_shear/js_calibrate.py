@@ -74,6 +74,22 @@ def make_points():
     print(len(pts), "points")
 
 
+def add_points():
+    """PREREG_JOINT_SHEAR gate G-JS, failure branch: 8 more points per model (seed 2), then refit q once. Read as
+    design points of the same kind as the seed-0 design (same varied dims); the held-out points are unchanged."""
+    assert os.path.exists(RULE + ".sha256")
+    allp = json.load(open(os.path.join(HERE, "js_points.json")))
+    for m, s in MODELS.items():
+        for i, u in enumerate(lhs(len(s["dims"]), 8, 2)):
+            name = f"{s['base']}__jse{i:02d}"
+            mn = point(m, u, s["dims"])
+            for n in (name, name + "_axhm"):
+                json.dump({"minimum": mn, "js": {"model": m, "kind": "design"}}, open(os.path.join(RES, f"cmp_{n}.json"), "w"), indent=1)
+            allp[name] = [m, "design"]
+    json.dump(allp, open(os.path.join(HERE, "js_points.json"), "w"), indent=1)
+    print(len(allp), "points")
+
+
 def sh(cmd, cwd):
     r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
     if r.returncode:
@@ -135,4 +151,4 @@ def fit():
 
 
 if __name__ == "__main__":
-    {"points": make_points, "run": run_all, "fit": fit}[sys.argv[1]]()
+    {"points": make_points, "add": add_points, "run": run_all, "fit": fit}[sys.argv[1]]()
