@@ -36,3 +36,17 @@ same physics family, but the CDM-only coupling keeps the Twist on the side that 
 
 ## Already in the toolkit
 Constants check, inverse distance ladder (SH0ES and JWST), local-void shells, DESI (w0, wa) mapping.
+
+## Status update (10 Nov 2026, evening)
+- **Phase 1 TWIST-DR:** NOT WORTH IT (2 of 3; the Pantheon+ fit died = NO VERDICT). ΔN_eff → 0, H0 unchanged.
+- **Phase 3 feasibility, TWIST-G** (`field_tests/twist_g/toy_geff.py`, background-only toy, EXPLORATORY). The coupling is
+  G_eff = 1 + A (φ − φ0)², a quadratic coupling about today's field, so G_eff = G0 today and Cassini and lunar ranging are
+  met at first order. With the flagship's own φ(z) this gives a bump peaking near z ≈ 2, the same shape arXiv 2511.04610
+  reconstructs.
+  - DESI DR2 BAO + Pantheon+ (uncalibrated) + Planck distance priors: best A = 0.047 (δG/G 0.3% at z = 2), Δχ² −0.08,
+    ΔH0 −0.01. That holds from three different starting points.
+  - Forcing the paper-sized 8% bump (A = 1.5) costs Δχ² +71 and lowers H0 to 66.5. The opposite sign (A = −1.5) costs
+    +97 for H0 67.3.
+  - **Not worth the hi_class build:** the background alone already rejects it, and perturbations cannot rescue H0.
+    The paper's H0 gain needs a free-form G(z) and the SH0ES-calibrated SNe.
+- **Phase 2 TWIST-DCDM:** not pursued (Phase 1 was negative, and the literature evidence ties with ΛCDM).

@@ -35,4 +35,5 @@ out = {"note": "EXPLORATORY, not pre-registered", "phi(z=1100,0.89,0)": [P(1100)
        "beta_e_for_0.78pct_at_rec": beta_e, "implied_dlnme_z0.89": beta_e * late, "quasar_bound": 1.5e-7,
        "implied_dlnme_dt_per_yr": beta_e * dphidt, "clock_bound_per_yr": 1e-16}
 json.dump(out, open(os.path.join(HERE, "phi_history.json"), "w"), indent=1)
+np.savez(os.path.join(HERE, "phi_of_z.npz"), z=z, phi=phi)
 print(json.dumps(out, indent=1))
