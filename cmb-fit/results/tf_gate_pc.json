@@ -1,0 +1,21 @@
+{
+ "TF": {
+  "chi2": 2399.481,
+  "stored_FLAG1": 2399.394,
+  "diff": 0.087,
+  "pass": true
+ },
+ "TF_dovekie": {
+  "chi2": 2627.319,
+  "stored_FLAG1": 2627.203,
+  "diff": 0.116,
+  "pass": true
+ },
+ "TF_union3": {
+  "chi2": 1018.678,
+  "stored_FLAG1": 1018.643,
+  "diff": 0.035,
+  "pass": true
+ },
+ "all_pass": true
+}
