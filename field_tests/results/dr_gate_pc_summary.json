@@ -1,0 +1,7 @@
+{
+ "DR": 0.012,
+ "DR_dovekie": -0.003,
+ "DR_union3": 0.002,
+ "all_pass": true,
+ "note": "diffs only; full file on the PC (cmb-fit/results/dr_gate_pc.json)"
+}

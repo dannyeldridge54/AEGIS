@@ -5,6 +5,11 @@
 # Heartbeat: method/runner/heartbeat (updated every 30 s). Stop: close the AEGIS-RUNNER window.
 REPO="$(cd "$(dirname "$0")/../.." && pwd)"; Q="$REPO/method/runner/queue"; S="$REPO/method/runner/started"
 mkdir -p "$Q" "$S"; LOG="$REPO/method/runner/runner_log.txt"
+# single instance: if another runner beat in the last 60 s, this one exits quietly
+HB="$REPO/method/runner/heartbeat"
+if [ -f "$HB" ] && [ $(( $(date +%s) - $(date -d "$(cat "$HB")" +%s 2>/dev/null || echo 0) )) -lt 60 ]; then
+  echo "$(date '+%F %T') second runner not started (one is already running)" >> "$LOG"; exit 0
+fi
 echo "$(date '+%F %T') runner up (pid $$)" >> "$LOG"
 while true; do
   date '+%F %T' > "$REPO/method/runner/heartbeat"
@@ -17,7 +22,7 @@ while true; do
     esac
     case "$rel" in *..*) echo "$(date '+%F %T') REFUSED $j: $rel" >> "$LOG"; mv "$j" "$S/$(basename "$j").refused"; continue ;; esac
     if [ -f "$REPO/$rel" ]; then
-      mv "$j" "$S/"
+      mv "$j" "$S/" 2>/dev/null || continue          # another runner took it
       echo "$(date '+%F %T') start $rel" >> "$LOG"
       ( bash "$REPO/$rel" >> "$LOG" 2>&1; echo "$(date '+%F %T') finished $rel (exit $?)" >> "$LOG" ) &
     else
