@@ -22,3 +22,32 @@ Cause (known in the EDE literature): the fluid description is poor for a field s
    quintessence", not the Twist's coupled model. Not recommended as the main test.
 
 Recommendation: route 1, after the V6 evidence and S8-A results are in (so one engine job at a time).
+
+## Route 1 built (9–10 Nov): `AxiCLASS_twofield` (`patch_twofield.py`, `build_twofield.sh`)
+Design choice: the **early n = 3 field uses AxiCLASS's own scalar field** (scf: full Klein–Gordon, its fluid switch
+after many oscillations, its shooting), because that machinery is the tested part; the **late dilaton is the new second
+field "dil"** (`dilaton = yes`, `dil_kappa`, `dil_beta`, `dil_phi_ini`), with the flagship's exact equations
+(V = μ⁴e^(−κφ), CDM mass ∝ e^(β(φ−φ_ini)), Klein–Gordon background and synchronous-gauge perturbations, fifth force on
+CDM). Closure: input leaves Λ as the closure; the background hands Λ's budget to dil and iterates μ⁴ until
+ρ_tot(today) = H0² (rel. 1e-9). Late base = FLAG-1 (LATE-BASE result, 9 Nov). Synchronous gauge only.
+
+Gates (cloud, no data; set by me when writing the scripts, not by a locked rule):
+| Gate | What | Result |
+|---|---|---|
+| G-2F0 | dilaton off = AxiCLASS_coupled_nlfix at the FLAG-1 best fit (σ8, H0, C_l TT/EE/pp) | **PASS** (bit-identical) |
+| G-2F2 | flagship dilaton moved from scf to dil (no early field): σ8, H0 ≤ 1e-4; C_l ≤ 1e-4 rms | **FAIL as written**: C_l agree to 6e-6 rms, but H0 differs by 1.08e-3 and σ8 by 7.5e-4 |
+| G-2F3 | native scf n = 3 field (dil off) vs CAMB EarlyQuintessence at edelockP, exact f_EDE and z_c matched: ≤ 0.3% rms | **PASS**: TT 0.23%, EE 0.19% rms (ΛCDM engine agreement 0.22% / 0.17%; the fluid route gave 4.5% / 8.7%) |
+| G-2F4 | both fields present (dil frozen, κ = 1e-6) = Λ closure at the same point: ≤ 1e-5 rms | **PASS** (5e-6) |
+| smoke | both fields live (edelockP early field + FLAG-1 dilaton, no refit) | runs, finite, 34 s per C_l |
+
+**G-2F2 diagnosis (checked, threshold not changed):** the flagship's own scf closure (CLASS shooting) leaves its actual
+expansion today 0.108% below its H0 parameter (H(z=0)/H0 = 0.99892; Ω_scf 0.687453 vs wished 0.685972). The dil
+closure is exact, and its H0 (67.086) equals the flagship's actual H(z=0) (67.159 × 0.99892 = 67.086). So the new
+field reproduces the flagship's physics (C_l to 6e-6) and the difference is in how the flagship *reports* H0.
+Consequence worth knowing: **stored FLAG-1 (and other scf-closure) H0 values are ~0.1% high** (≈ 0.07 km/s/Mpc);
+χ² are unaffected (all observables use the integrated background). Reported, not corrected anywhere.
+
+Parametrisation for fits: the early field's exact f_EDE and z_c are matched by an outer secant on AxiCLASS's shooting
+targets (`tf_gates_ede.match`, ~4 background runs). A two-field fit wrapper and the rule (data, priors, verdicts,
+equal-effort ΛCDM/flagship/Locked Twist references) come next; **no two-field fit runs before that rule is locked.**
+Notes: AxiCLASS's `Omega_m()` is wrong in these builds (known quirk; S8 must be computed from ω's, as elsewhere).
