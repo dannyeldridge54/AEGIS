@@ -13,7 +13,11 @@
    ],
    "Delta_M": -0.186,
    "sigma": -5.86,
-   "H0_needed_for_SH0ES_M": 73.17
+   "H0_needed_for_SH0ES_M": 73.17,
+   "vs_JWST_TRGB": {
+    "Delta_M": -0.0827,
+    "sigma": -1.37
+   }
   },
   "ax_spa_lcdm_halofit_s8y6": {
    "H0": 68.2461,
@@ -23,7 +27,15 @@
    ],
    "Delta_M": -0.1717,
    "sigma": -5.41,
-   "H0_needed_for_SH0ES_M": 73.86
+   "H0_needed_for_SH0ES_M": 73.86,
+   "vs_JWST_TRGB": {
+    "Delta_M": -0.0683,
+    "sigma": -1.13
+   }
   }
- }
+ },
+ "M_JWST_TRGB_approx": [
+  -19.3522,
+  0.0597
+ ]
 }

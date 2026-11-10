@@ -32,3 +32,15 @@ for run, H0 in (("ax_spa_spiraltwist_kappa1_nlfix_s8y6", 67.1585), ("ax_spa_lcdm
                           "sigma": round(dM / np.hypot(e, e_sh), 2), "H0_needed_for_SH0ES_M": round(H0 * 10 ** (-dM / 5), 2)}
 json.dump(out, open(os.path.join(HERE, "inverse_ladder.json"), "w"), indent=1)
 print(json.dumps(out, indent=1))
+
+# JWST/CCHP calibration (Freedman et al. 2025, arXiv 2408.06153v3: TRGB HST+JWST H0 = 70.39 +- 1.22 stat +- 1.33 sys
+# +- 0.70 sigma_SN). Its M on the Pantheon+ scale: the SH0ES M shifted by the H0 ratio, using the Pantheon+ Hubble-flow
+# H0 that the SH0ES M gives here (73.82, ../local_void/void_shells.json fit A); error from the quoted H0 error.
+H0_sh_hf, H0_j, eH0_j = 73.82, 70.39, float(np.sqrt(1.22 ** 2 + 1.33 ** 2 + 0.70 ** 2))
+M_j = M_sh + 5 * np.log10(H0_j / H0_sh_hf); e_j = 5 / np.log(10) * eH0_j / H0_j
+out["M_JWST_TRGB_approx"] = [round(float(M_j), 4), round(float(e_j), 4)]
+for run, r in out["models"].items():
+    M, e = r["M_implied"]
+    r["vs_JWST_TRGB"] = {"Delta_M": round(M - M_j, 4), "sigma": round((M - M_j) / np.hypot(e, e_j), 2)}
+json.dump(out, open(os.path.join(HERE, "inverse_ladder.json"), "w"), indent=1)
+print("JWST", out["M_JWST_TRGB_approx"], {k: v["vs_JWST_TRGB"] for k, v in out["models"].items()})

@@ -1,0 +1,16 @@
+{
+ "note": "EXPLORATORY, not pre-registered",
+ "phi(z=1100,0.89,0)": [
+  0.9201288980873717,
+  0.5908955783572402,
+  0.7994640045366642
+ ],
+ "Delta_phi_rec_to_today": -0.12066489355070753,
+ "Delta_phi_z0.89_to_today": 0.20856842617942406,
+ "late_over_early": -1.7284930193202919,
+ "beta_e_for_0.78pct_at_rec": 0.06464183384641344,
+ "implied_dlnme_z0.89": 0.013482245550698276,
+ "quasar_bound": 1.5e-07,
+ "implied_dlnme_dt_per_yr": 2.352457315777037e-12,
+ "clock_bound_per_yr": 1e-16
+}
