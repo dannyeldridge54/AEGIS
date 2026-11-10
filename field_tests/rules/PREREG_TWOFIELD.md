@@ -1,12 +1,13 @@
-# Two-field Twist: early n = 3 field + the flagship's late dilaton in one model (TWOFIELD) — DRAFT, not locked
+# Two-field Twist: early n = 3 field + the flagship's late dilaton in one model (TWOFIELD)
 
-**Status: DRAFT** (9 Nov 2026). Lock only on Danny's word; when locked it is renamed `PREREG_TWOFIELD.md` (the fit code
-refuses to run before that file's `.sha256` exists). AI-assisted. No two-field fit exists.
+**Status: LOCKED** on Danny's word ("Get it goin", 9 Nov 2026, 23:29 CT). Drafted as `DRAFT_TWOFIELD.md`; the only edit at
+lock is this status line and the smoke numbers below corrected to the stored file. AI-assisted. No two-field fit exists at
+lock; the JOINT-SHEAR calibration (gate G-JS, second round) is running and its result is not known.
 
 **Not blind, stated plainly.** Known at writing: the Locked Twist (early field alone, CAMB, Planck-lite data) gives
 H0 ≈ 70.5; the flagship (FLAG-1) beats ΛCDM+S8 by 4.71 / 6.01 / 7.69 on the newer CMB set (Planck low-ℓ + ACT DR6 +
 SPT-3G) but sits at H0 ≈ 67; S8-A missed both full-shear tests (LATE-BASE: flagship stays the base). A smoke run (no
-refit) of both fields at the FLAG-1 point gave H0 71.7, σ8 0.784: that says only that the engine runs.
+refit) of both fields at the FLAG-1 point gave H0 71.5, σ8 0.785 (`tf_smoke_both.json`): that says only that the engine runs.
 
 ## Question
 With the early field added to the flagship, does H0 rise while the fit to CMB + BAO + SN + S8 stays at least as good as
