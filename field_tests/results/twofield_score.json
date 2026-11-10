@@ -1,0 +1,62 @@
+{
+ "rule": "PREREG_TWOFIELD.md (+ TWOFIELD_DEVIATIONS.md D1)",
+ "sets": {
+  "TF": {
+   "chi2": 2398.4195,
+   "FLAG1_on_engine": 2399.481,
+   "Delta_F": -1.062,
+   "reading_vs_FLAG1": "NOT WORTH IT",
+   "chi2_LCDM_S8": 2404.1015,
+   "Delta_LCDM": -5.682,
+   "reading_vs_LCDM": "SURVIVES",
+   "H0": 67.756831,
+   "H0_FLAG1": 67.158526,
+   "dH0": 0.598,
+   "fraction_axion_ac": 0.037319646,
+   "log10_axion_ac": -3.5127809,
+   "theta_i": 2.7201927,
+   "beta_eff": 0.034794426,
+   "sigma8": 0.80626861,
+   "S8": 0.8275
+  },
+  "TF_dovekie": {
+   "chi2": 2626.3242,
+   "FLAG1_on_engine": 2627.319,
+   "Delta_F": -0.995,
+   "reading_vs_FLAG1": "NOT WORTH IT",
+   "chi2_LCDM_S8": 2633.2136,
+   "Delta_LCDM": -6.889,
+   "reading_vs_LCDM": "SURVIVES",
+   "H0": 67.477272,
+   "H0_FLAG1": 67.36362,
+   "dH0": 0.114,
+   "fraction_axion_ac": 0.02466037,
+   "log10_axion_ac": -3.4954209,
+   "theta_i": 2.7913451,
+   "beta_eff": 0.032958266,
+   "sigma8": 0.80238851,
+   "S8": 0.8217
+  },
+  "TF_union3": {
+   "chi2": 1019.297,
+   "FLAG1_on_engine": 1018.678,
+   "Delta_F": 0.619,
+   "reading_vs_FLAG1": "NOT WORTH IT",
+   "chi2_LCDM_S8": 1026.3326,
+   "Delta_LCDM": -7.036,
+   "reading_vs_LCDM": "SURVIVES",
+   "H0": 67.626176,
+   "H0_FLAG1": 67.020081,
+   "dH0": 0.606,
+   "fraction_axion_ac": 0.040282238,
+   "log10_axion_ac": -3.4985291,
+   "theta_i": 2.7422509,
+   "beta_eff": 0.028257658,
+   "sigma8": 0.80351893,
+   "S8": 0.8248
+  }
+ },
+ "verdict_vs_FLAG1": "NOT WORTH IT (3 of 3)",
+ "verdict_vs_LCDM": "SURVIVES (3 of 3)",
+ "H0_RISES": false
+}
