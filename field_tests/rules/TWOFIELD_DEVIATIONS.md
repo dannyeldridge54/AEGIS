@@ -41,3 +41,9 @@ Cloud check after the fix, at the same point:
 - Nothing else changes: model, priors, ranges, data, thresholds and readings are all as locked.
 
 Danny asked for the fix ("Fix", 9 Nov 2026, 23:48 CT) after the failed gate was reported to him; the cause was found after that.
+
+**D1 addendum (10 Nov 2026, 00:20 CT): build-script fix only.** The first PC rebuild stopped before changing any file.
+The PC's flagship build follows the git patch `0001-nl-scf-fix`, so its HALOFIT computes f_ν with the plain `Omega0_m`.
+The cloud build is the later `patch_nlfix.py`, which also takes the field out of f_ν. To match the PC flagship exactly,
+the f_ν line is now left as it is in such a build; the dark-energy changes to Ω_m, Ω_v and w are applied as before.
+Tested on a copy of that HALOFIT version: it patches and compiles. No gate had been rerun at this point.

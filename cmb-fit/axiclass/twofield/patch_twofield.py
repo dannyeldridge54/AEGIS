@@ -38,7 +38,14 @@ DILHF = ("    if (pba->has_dil == _TRUE_) { /* two-field: the dilaton is dark en
 
 
 def halofit():
-    edit(HF,
+    # f_nu: only builds whose nl-scf-fix also moved the scf out of f_nu (patch_nlfix.py after B0) get the dil there too;
+    # an older flagship build (the PC's: plain Omega0_m, as the git patch 0001-nl-scf-fix) is matched by leaving it alone.
+    src = open(f"{ROOT}/{HF}").read()
+    if "    fnu = pba->Omega0_ncdm_tot/Omega_m;\n" not in src:
+        assert src.count("    fnu = pba->Omega0_ncdm_tot/pba->Omega0_m;\n") == 1, "halofit.c: unknown f_nu line"
+        print("ok  external/Halofit/halofit.c: f_nu uses Omega0_m in this build (as the flagship build): unchanged")
+    else:
+     edit(HF,
          "    fnu = pba->Omega0_ncdm_tot/Omega_m;\n",
          "    if (pba->has_dil == _TRUE_) {   /* two-field: present-day matter excludes the dilaton too */\n"
          "      class_call(background_at_tau(pba,pba->conformal_age,long_info,inter_normal,&last_index,pvecback),\n"
