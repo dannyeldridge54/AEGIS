@@ -1,0 +1,53 @@
+{
+ "rule": "PREREG_TWIST_ME.md",
+ "sets": {
+  "ME": {
+   "chi2": 2398.8562,
+   "FLAG1_on_engine": 2399.406,
+   "Delta_F": -0.55,
+   "reading_vs_FLAG1": "NOT WORTH IT",
+   "chi2_LCDM_S8": 2404.1015,
+   "Delta_LCDM": -5.245,
+   "reading_vs_LCDM": "SURVIVES",
+   "H0": 67.883013,
+   "H0_FLAG1": 67.158526,
+   "dH0": 0.724,
+   "varying_me": 1.009155,
+   "beta_eff": 0.028253736,
+   "S8": 0.8223
+  },
+  "ME_dovekie": {
+   "chi2": 2626.8752,
+   "FLAG1_on_engine": 2627.2,
+   "Delta_F": -0.325,
+   "reading_vs_FLAG1": "NOT WORTH IT",
+   "chi2_LCDM_S8": 2633.2136,
+   "Delta_LCDM": -6.338,
+   "reading_vs_LCDM": "SURVIVES",
+   "H0": 67.142011,
+   "H0_FLAG1": 67.36362,
+   "dH0": -0.222,
+   "varying_me": 0.99800781,
+   "beta_eff": 0.045247072,
+   "S8": 0.8261
+  },
+  "ME_union3": {
+   "chi2": 1018.4968,
+   "FLAG1_on_engine": 1018.645,
+   "Delta_F": -0.148,
+   "reading_vs_FLAG1": "NOT WORTH IT",
+   "chi2_LCDM_S8": 1026.3326,
+   "Delta_LCDM": -7.836,
+   "reading_vs_LCDM": "SURVIVES",
+   "H0": 67.18043,
+   "H0_FLAG1": 67.020081,
+   "dH0": 0.16,
+   "varying_me": 1.0023673,
+   "beta_eff": 0.034762158,
+   "S8": 0.8231
+  }
+ },
+ "verdict_vs_FLAG1": "NOT WORTH IT (3 of 3)",
+ "verdict_vs_LCDM": "SURVIVES (3 of 3)",
+ "H0_RISES": false
+}

@@ -1,6 +1,6 @@
 # TWIST-ME-α: the flagship plus early electron mass AND fine-structure constant (DRAFT, not locked)
 
-**Status: DRAFT** (10 Nov 2026). Lock only on Danny's word, and only if TWIST-ME (PREREG_TWIST_ME.md) reads EARNS or
+**Status: DROPPED** (10 Nov 2026: TWIST-ME read NOT WORTH IT on 3 of 3, so per its rule this draft is not locked). Was: DRAFT (10 Nov 2026). Lock only on Danny's word, and only if TWIST-ME (PREREG_TWIST_ME.md) reads EARNS or
 WEAK on 2 of 3 sets, as that rule says. Otherwise this draft is dropped. AI-assisted.
 
 **Not blind.** In the literature (Seto et al., arXiv 2508.09025) m_e + α does better than m_e alone with Planck + ACT
