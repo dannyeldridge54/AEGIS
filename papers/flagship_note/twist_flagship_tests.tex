@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\newcommand{\Mp}{M_{\rm Pl}}
+
+\title{\textbf{A Dark-Matter-Coupled Dilaton Against Planck, ACT DR6, SPT-3G and DESI DR2:\\
+an Apparent Phantom Crossing, the Hubble Constant,\\ and Six Pre-Registered Attempts to Raise It}}
+\author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma, USA. dannyeldridge54@gmail.com.
+Scripts, fits, locked rules and every number below: \url{https://github.com/dannyeldridge54/AEGIS}.}}
+\date{Draft, 10 November 2026 (not yet archived)}
+
+\begin{document}
+\sloppy
+\maketitle
+
+\begin{abstract}
+We fit a dilaton dark-energy field coupled only to cold dark matter (the ``Spiral Twist'' flagship, FLAG-1: coupling
+$\beta_{\rm eff}$ free, field-space slope fixed at $\kappa=1$) to Planck low-$\ell$, ACT DR6, SPT-3G D1, ACT DR6 lensing,
+DESI DR2 BAO, a DES Y6 $S_8$ term and, in turn, Pantheon+, DES-Dovekie and Union3. Every test rule is fixed and hashed
+before its fits are run. FLAG-1 improves on $\Lambda$CDM with the same $S_8$ term by $\Delta\chi^2=-4.71/-6.01/-7.69$
+(one extra parameter), with $\beta_{\rm eff}\simeq0.04$ and $H_0\simeq67.2$ km\,s$^{-1}$Mpc$^{-1}$. Read with the
+uncoupled-dark-matter assumption of the DESI analysis, the coupled field looks like dark energy whose $w$ crosses $-1$
+near $z\simeq1$ (effective $w_0\simeq-0.85$, $w_a\simeq-0.33$), although the field itself never crosses. On the Hubble
+constant, the supernova absolute magnitude implied by FLAG-1 ($M=-19.435$) differs from the SH0ES Cepheid calibration by
+$0.186$ mag ($5.9\sigma$; $\Lambda$CDM $5.4\sigma$), but only by $0.083$ mag ($1.4\sigma$) from an approximate JWST
+tip-of-the-red-giant-branch calibration. Six attempts to raise $H_0$ inside the model all fail, three of them as
+pre-registered fits: an early $n=3$ field, a heavier electron before recombination, and extra dark radiation with
+running. Three cheaper checks also fail: a universal coupling of the same dilaton to the electron breaks quasar and
+atomic-clock limits by $\sim10^{5}$ and $\sim10^{4}$; a quadratic gravity coupling is not wanted by background data;
+and the Pantheon+ Hubble-flow shows no local-void signature. A joint fit with the full DES Y3 shear likelihood could not
+be performed because its emulator failed its locked accuracy gate twice; weak lensing remains open. Failures are reported
+at full size beside the passes.
+\end{abstract}
+
+\section{Introduction}
+DESI DR2 BAO combined with the CMB and supernovae prefers evolving dark energy at $2.8$--$4.2\sigma$, with $w$
+apparently crossing $-1$~\cite{desi2025}. A canonical scalar field cannot cross, but an analysis that assumes
+uncoupled cold dark matter (CDM) can read a dark-energy--dark-matter energy exchange as a crossing. Dilaton fields that
+couple to matter are natural in string-motivated models~\cite{damour1994,smith2025}. Here we test the simplest member of
+this family, coupled to CDM only, against current data, and ask what it can and cannot do for the Hubble tension. The
+work was run with pre-registration: each test's model, priors, data, gates and pass/fail bars were written down and
+SHA-256 hashed before its fits ran. Deviations are logged before any rerun. AI assistance is stated in the
+acknowledgements.
+
+\section{Model and method}
+The action is GR plus a scalar $\phi$ (reduced Planck units) with $V=\mu^4 e^{-\kappa\phi}$ ($\kappa=1$, fixed), and CDM
+whose mass depends on $\phi$ with coupling $\beta_{\rm eff}$; baryons and photons are uncoupled. We use a modified
+AxiCLASS (CLASS v3.3) with the coupling in the background and perturbations and a corrected HALOFIT treatment of the
+field (the ``nl-scf-fix''). Fits use Cobaya minimisation, best of four starts. Data: Planck 2018 low-$\ell$ TT and EE,
+ACT DR6 CMB-only with the Planck cut, SPT-3G D1 TT/TE/EE (lite), ACT DR6 lensing, DESI DR2 BAO, a DES Y6 $S_8$ Gaussian
+term, and one supernova set per fit (Pantheon+, DES-Dovekie, Union3). The reference is $\Lambda$CDM fitted to the same
+data with the same $S_8$ term (lower of two restarts). Rules: \texttt{field\_tests/rules/PREREG\_*.md} with their
+\texttt{.sha256} files.
+
+\section{The flagship fit}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+ & Pantheon+ & DES-Dovekie & Union3\\
+\midrule
+$\Delta\chi^2$ vs $\Lambda$CDM+$S_8$ & $-4.71$ & $-6.01$ & $-7.69$\\
+$\beta_{\rm eff}$ & 0.041 & 0.045 & 0.038\\
+$H_0$ [km\,s$^{-1}$Mpc$^{-1}$] & 67.2 & 67.4 & 67.0\\
+$S_8$ & 0.825 & 0.828 & 0.825\\
+\bottomrule
+\end{tabular}
+\end{center}
+The locked bar ($\Delta\chi^2\le-4$ on at least two of three sets) is met on all three. This test is not blind: the
+model was chosen after earlier fits, and the rule says so. A closure detail of the build makes the reported $H_0$
+0.108\% higher than the true $H(z{=}0)$ (about $0.07$ km\,s$^{-1}$Mpc$^{-1}$); $\chi^2$ values are unaffected.
+
+\section{The DESI reading: an apparent phantom crossing}
+Following the DESI convention, we define the dark energy that an uncoupled-CDM analysis would infer,
+$\rho_{\rm DE,eff}(a)=\rho_{\rm tot}-\rho_b-\rho_r-\rho_\nu-\rho_{\rm cdm,0}a^{-3}$, with $w_{\rm eff}=-1-\frac13\,
+d\ln\rho_{\rm DE,eff}/d\ln a$. Fitting $w_0+w_a(1-a)$ over $0<z<2$, weighted by $\rho_{\rm DE,eff}$, gives
+$w_0=-0.847$ and $w_a=-0.33$ for all three fits. $w_{\rm eff}$ runs from $-1.09$ at $z=2$ through $-1.00$ at $z\simeq1$
+to $-0.86$ today. The field's own equation of state stays above $-1$. Against DESI DR2 + CMB + Pantheon+ ($w_0=-0.838\pm
+0.055$, $w_a=-0.62\pm0.21$), $w_0$ agrees and $w_a$ is $1.4\sigma$ weaker (one parameter at a time; the published
+$w_0$--$w_a$ correlation is not used). The DES-Y5 and Union3 combinations sit $2$--$2.6\sigma$ away. This is a
+consistency statement, not a prediction: FLAG-1 was itself fitted to DESI DR2 BAO. The mechanism is the same one
+proposed for dark-axion and dark-baryon couplings~\cite{prl2026}.
+
+\section{The Hubble constant}
+\paragraph{Inverse distance ladder.} At each best fit we compute the supernova distances and fit the Pantheon+ absolute
+magnitude $M$ over the Hubble-flow SNe ($z>0.0233$, full STAT+SYS covariance). The SH0ES Cepheid hosts give
+$M=-19.249\pm0.030$. FLAG-1 implies $M=-19.435\pm0.010$, a $0.186$ mag gap ($5.9\sigma$); $\Lambda$CDM+$S_8$ gives
+$-19.421$ ($5.4\sigma$). On the Pantheon+ scale, the JWST/HST tip-of-the-red-giant-branch result ($H_0=70.39\pm1.94$,
+\cite{freedman2025}) corresponds to $M\simeq-19.352\pm0.060$. The gap is then $0.083$ mag ($1.4\sigma$) for FLAG-1 and
+$1.1\sigma$ for $\Lambda$CDM. This conversion is approximate: it rescales the SH0ES $M$ by the $H_0$ ratio.
+\paragraph{No local void.} The same SH0ES-calibrated fit, with a separate $H_0$ in six redshift shells from $z=0.023$ to
+$2.5$, is flat. The nearby shells ($z<0.15$) lie $0.5$--$0.7\%\pm1\%$ below the most distant one; a void that alone
+explains the tension needs about $+8\%$. Freeing $H_0$ per shell improves $\chi^2$ by only $3.1$ for five extra
+parameters, and a north/south split shows nothing. Whatever separates $73$ from $67$ is the same at every distance: it
+sits in the calibration or before recombination, not in our neighbourhood.
+
+\section{Six attempts to raise $H_0$ within the model}
+\begin{center}
+\small
+\begin{tabular}{p{4.1cm}p{5.6cm}p{4.6cm}}
+\toprule
+Extension (rule) & Result & Reading\\
+\midrule
+Early $n=3$ field + dilaton (TWOFIELD) & $\Delta\chi^2$ vs FLAG-1 $-1.06/-1.00/+0.62$; $H_0$ $67.8/67.5/67.6$ & NOT WORTH IT (3/3); $H_0$ does not rise\\
+Electron mass before $z=50$ (TWIST-ME) & $m_e/m_{e0}=1.009/0.998/1.002$; $\Delta\chi^2$ $-0.55/-0.33/-0.15$ & NOT WORTH IT (3/3)\\
+Dark radiation + running (TWIST-DR) & $\Delta N_{\rm eff}\to0.000$; $\Delta\chi^2$ $-1.04/-0.47$ (Pantheon+ fit died) & NOT WORTH IT (2/3)\\
+Universal coupling $m_e\propto e^{g\phi}$ & $\phi$ moves $0.12$ since recombination but $0.21$ since $z=0.89$ & breaks quasar and clock limits by $\sim10^5$, $\sim10^4$\\
+Quadratic gravity coupling $G_{\rm eff}=1+A(\phi-\phi_0)^2$ (toy) & best $A=0.047$, $\Delta\chi^2=-0.08$; forcing an 8\% bump costs $+71$ & not wanted (background only)\\
+Local void & shells flat (above) & no\\
+\bottomrule
+\end{tabular}
+\end{center}
+The first three are pre-registered fits on the full likelihood; the last three are exploratory checks, marked so in the
+repository. In TWOFIELD a HALOFIT bug (the new field was treated as matter) made the locked engine gate fail. It was
+logged as deviation D1, fixed, and the gate rerun once and passed (lensed $C_\ell$ then match the flagship to
+$4\times10^{-5}$). In TWIST-ME, where $m_e$ rose the coupling fell ($\beta_{\rm eff}$ $0.041\to0.028$), so the two
+partly do the same job. In the gravity toy, $(\phi-\phi_0)^2$ from the flagship's own field history peaks near $z\simeq2$,
+the shape reconstructed in Ref.~\cite{scalartensor2025}. That analysis's $H_0$ gain relies on SH0ES-calibrated
+supernovae and a free-form $G(z)$, and does not survive here. Our results match the literature's finding that, once DESI
+BAO is included, recombination-era fixes cannot raise $H_0$ much without lowering $\Omega_m$ below what BAO
+allows~\cite{recomb2026}.
+
+\section{Weak lensing: open}
+A late-time variant with a dark-matter angle (S8-A) passed a one-number $S_8$ test but missed the full DES Y3 shear
+($\Delta\chi^2_{\rm WL}=+1.76/+2.32/+2.76$) and KiDS-Legacy ($+2.96/+10.11/+11.30$) tests, so the flagship stayed the
+base. A joint refit with DES Y3 shear inside the likelihood (rule JOINT-SHEAR) needed a quadratic emulator of the shear
+$\chi^2$. It missed held-out points by up to $3.8$ (S8-A) and $2.2$ ($\Lambda$CDM); after the one allowed enlargement of
+the calibration it still missed by up to $1.8$ and $2.0$, against a limit of $0.5$. No fits ran and no verdict exists.
+The full-shear tests at the FLAG-1 best fits themselves have not yet been run.
+
+\section{Relation to the axiodilaton}
+Ref.~\cite{smith2025} couples a dilaton to all matter. The electron mass then varies through recombination, giving
+$H_0\simeq69.2$ without SH0ES and an apparent phantom crossing, but the coupling needs screening to pass solar-system
+tests. FLAG-1 is the other side of the same trade-off. Coupling to CDM only keeps it clear of laboratory, quasar and
+solar-system limits and keeps the apparent crossing, but leaves $H_0$ near 67. Our universal-coupling check shows why
+the Twist cannot simply take the other side: its field moves more after $z\simeq1$ than before recombination.
+
+\section{Limitations and how to falsify it}
+FLAG-1 was not chosen blind. $\kappa=1$ is fixed by hand. The $S_8$ term is a Gaussian summary, not the full shear. The
+JWST conversion is approximate. The $w_0$--$w_a$ comparison ignores the published correlation. The gravity check is
+background only. The model is falsified if DESI DR3 + CMB drive $w_a$ to zero while the coupling stays required. It is
+also falsified if structure-growth data ($f\sigma_8$) depart from the frozen predictions in
+\texttt{theory/fpc\_*kappa1*\_s8y6.json}, or if the full shear tests at its best fits come out OVER.
+
+\section{Conclusions}
+A dilaton coupled only to dark matter fits the newest CMB, BAO and supernova data better than $\Lambda$CDM. It reproduces
+DESI's apparent phantom crossing without a phantom field, and passes laboratory tests by construction. It does not
+resolve the gap to SH0ES; nothing we added inside it does. Its $H_0$ is within $1.4\sigma$ of the JWST red-giant
+calibration. Weak lensing is unresolved.
+
+\section*{Acknowledgements}
+We thank the Planck, ACT, SPT, DESI, DES, Pantheon+ and Union teams for public data, and the developers of CLASS,
+AxiCLASS, CAMB and Cobaya. The author used AI assistants (Claude, Anthropic) for code, running the fits and drafting;
+every number is reproduced by archived scripts and locked rules, and the author takes full responsibility.
+
+\begin{thebibliography}{99}
+\bibitem{desi2025} DESI Collaboration, arXiv:2503.14738.
+\bibitem{damour1994} T.~Damour, A.~M.~Polyakov, Nucl.\ Phys.\ B 423, 532 (1994), hep-th/9401069.
+\bibitem{smith2025} A.~Smith, M.~Mylova, C.~van de Bruck, C.~P.~Burgess, E.~Di Valentino, arXiv:2512.13544.
+\bibitem{prl2026} \emph{Apparent $w<-1$ and a lower $S_8$ from dark axion and dark baryons interactions}, Phys.\ Rev.\ Lett., doi:10.1103/w4qb-plk8.
+\bibitem{freedman2025} W.~L.~Freedman et al., arXiv:2408.06153.
+\bibitem{scalartensor2025} arXiv:2511.04610.
+\bibitem{recomb2026} arXiv:2606.06495.
+\bibitem{seto2025} O.~Seto et al., arXiv:2508.09025.
+\bibitem{kanekar2015} N.~Kanekar et al., quasar methanol bound on $\Delta\mu/\mu$ (2015).
+\bibitem{nakashima2008} M.~Nakashima et al., arXiv:0803.0247.
+\end{thebibliography}
+\end{document}
