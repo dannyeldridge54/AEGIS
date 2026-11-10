@@ -1,0 +1,91 @@
+{
+ "note": "EXPLORATORY tool; envelope estimates",
+ "Delta0": 0.0078,
+ "BBN_dYp_over_Yp": 0.00577,
+ "BBN_dYp_abs": 0.00141,
+ "Planck_sigma_YHe": 0.012,
+ "thaw_table": [
+  {
+   "z_thaw": 50,
+   "m_phi_eV": 2.95e-31,
+   "Delta(z=0.89)": 3.97e-07,
+   "quasar_ok": false,
+   "drift_per_yr": 1.66e-15,
+   "clock_ok": false,
+   "no_clustering": true
+  },
+  {
+   "z_thaw": 70,
+   "m_phi_eV": 4.86e-31,
+   "Delta(z=0.89)": 1.47e-07,
+   "quasar_ok": true,
+   "drift_per_yr": 1.02e-15,
+   "clock_ok": false,
+   "no_clustering": true
+  },
+  {
+   "z_thaw": 100,
+   "m_phi_eV": 8.28e-31,
+   "Delta(z=0.89)": 5.11e-08,
+   "quasar_ok": true,
+   "drift_per_yr": 6.01e-16,
+   "clock_ok": false,
+   "no_clustering": true
+  },
+  {
+   "z_thaw": 150,
+   "m_phi_eV": 1.52e-30,
+   "Delta(z=0.89)": 1.53e-08,
+   "quasar_ok": true,
+   "drift_per_yr": 3.31e-16,
+   "clock_ok": false,
+   "no_clustering": true
+  },
+  {
+   "z_thaw": 200,
+   "m_phi_eV": 2.36e-30,
+   "Delta(z=0.89)": 6.48e-09,
+   "quasar_ok": true,
+   "drift_per_yr": 2.17e-16,
+   "clock_ok": false,
+   "no_clustering": true
+  },
+  {
+   "z_thaw": 300,
+   "m_phi_eV": 4.38e-30,
+   "Delta(z=0.89)": 1.93e-09,
+   "quasar_ok": true,
+   "drift_per_yr": 1.2e-16,
+   "clock_ok": false,
+   "no_clustering": true
+  },
+  {
+   "z_thaw": 500,
+   "m_phi_eV": 9.65e-30,
+   "Delta(z=0.89)": 4.19e-10,
+   "quasar_ok": true,
+   "drift_per_yr": 5.74e-17,
+   "clock_ok": true,
+   "no_clustering": true
+  },
+  {
+   "z_thaw": 800,
+   "m_phi_eV": 2.02e-29,
+   "Delta(z=0.89)": 1.02e-10,
+   "quasar_ok": true,
+   "drift_per_yr": 2.95e-17,
+   "clock_ok": true,
+   "no_clustering": true
+  }
+ ],
+ "allowed_z_thaw": [
+  500,
+  800
+ ],
+ "flagship_dilaton_linear": {
+  "Delta(z=0.89)": 0.013482245550698276,
+  "drift_per_yr": 2.352457315777037e-12,
+  "quasar_ok": false,
+  "clock_ok": false
+ }
+}
