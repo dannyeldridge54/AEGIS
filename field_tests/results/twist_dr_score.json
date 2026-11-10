@@ -1,0 +1,41 @@
+{
+ "rule": "PREREG_TWIST_DR.md",
+ "sets": {
+  "DR": "NO VERDICT: the fit process died during restart 3 of 4 (16:21 CT, no Python error; the other two fits ran on). Not rerun: per the rule a failed fit is NO VERDICT, and the 2-of-3 readings below are already decided by the other two sets.",
+  "DR_dovekie": {
+   "chi2": 2626.1646,
+   "FLAG1_on_engine": 2627.2,
+   "Delta_F": -1.035,
+   "reading_vs_FLAG1": "NOT WORTH IT",
+   "chi2_LCDM_S8": 2633.2136,
+   "Delta_LCDM": -7.049,
+   "reading_vs_LCDM": "SURVIVES",
+   "H0": 67.239368,
+   "H0_FLAG1": 67.36362,
+   "dH0": -0.124,
+   "delta_neff": 2.7755576e-17,
+   "alpha_s": 0.0040342608,
+   "beta_eff": 0.043224639,
+   "S8": 0.8277
+  },
+  "DR_union3": {
+   "chi2": 1018.1719,
+   "FLAG1_on_engine": 1018.645,
+   "Delta_F": -0.473,
+   "reading_vs_FLAG1": "NOT WORTH IT",
+   "chi2_LCDM_S8": 1026.3326,
+   "Delta_LCDM": -8.161,
+   "reading_vs_LCDM": "SURVIVES",
+   "H0": 67.098627,
+   "H0_FLAG1": 67.020081,
+   "dH0": 0.079,
+   "delta_neff": 0.0,
+   "alpha_s": 0.003983934,
+   "beta_eff": 0.040644287,
+   "S8": 0.8268
+  }
+ },
+ "verdict_vs_FLAG1": "NOT WORTH IT (2 of 3; third NO VERDICT)",
+ "verdict_vs_LCDM": "SURVIVES (2 of 3)",
+ "H0_RISES": false
+}
