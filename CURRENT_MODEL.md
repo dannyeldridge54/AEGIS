@@ -23,6 +23,7 @@ Planck-length Nieh–Yan scale. Two roles:
 
 Latest public record: Nov 3 "UFE/Spiral Twist update" (supplement to Zenodo v3 doi:10.5281/zenodo.23867116; theory note
 doi:10.5281/zenodo.23899237).
+Flagship tests note: doi:10.5281/zenodo.24125958 (v2 of the Spiral Twist record, 11 Nov; DES Y3 pass in; KiDS pass and the Frozen predictions section are in the repo PDF, not yet on Zenodo).
 
 ## Locked results
 | Test | Result | Verdict (rule labels; see field_tests/WORDING_STANDARD.md for definitions) |
@@ -73,6 +74,7 @@ unification with constant W.
 | **S8-J on KiDS-Legacy** full shear (PREREG_KIDS_LEGACY_SHEAR.md, locked 8 Nov; gate passed 124.266 vs 124.291; KiDS baseline HMcode-2020 + feedback on both sides, D1) | Δ_KiDS −0.41 / −0.26 / −0.47 (P+ / Dovekie / Union3; limit +2; equal effort, 5 tries each side) | **PASSES on KiDS-Legacy, 3 of 3** (S8-J fits KiDS slightly better than ΛCDM). |
 | **Spiral on KiDS-Legacy** (same rule and settings) | Δ_KiDS +0.46 / +0.57 / +1.15 (limit +2; 5 tries each side) | **PASSES on KiDS-Legacy, 3 of 3.** It was OVER on the full DES Y3 shear (+2.6 to +4.0): by the rule, passing KiDS but not DES is reported as a question about survey systematics, not as a fix |
 | **S8-L on KiDS-Legacy** (same rule; both sides axionHMcode basic + BAO damping, no baryon feedback, logT_AGN fixed 8.0, the limitation the rule anticipates) | Δ_KiDS +6.80 / +7.98 / +7.81 (limit +2; 5 tries each side, spread ≤ 0.014) | **OVER, 0 of 3.** Fails both surveys (S8-LNL on DES Y3 also NOT FIXED): by the rule, S8-L's lensing tension reads as real |
+| **FLAG-1 on the full shear** (S8-WL Part 2 rule for DES Y3; PREREG_KIDS_LEGACY_SHEAR.md for KiDS; same matched ΛCDM+S8 partners and equal effort) | DES Y3 Δ_WL +0.15 / +1.33 / +0.91; KiDS-Legacy Δ_KiDS −0.47 / −0.31 / −0.47 (P+ / Dovekie / Union3; limit +2) | **PASSES on both surveys, 3 of 3 each** (10–11 Nov). Weak lensing is no longer an open risk for the flagship at its best fits. Forward tests: lensing-forecast addendum for FLAG-1 (Euclid DR1, Rubin, DES Y6 full shear) drafted, awaiting lock |
 | Stage-3 P-ACT bracket | after BR |
 
 ## Where things are
