@@ -23,7 +23,7 @@ Planck-length Nieh–Yan scale. Two roles:
 
 Latest public record: Nov 3 "UFE/Spiral Twist update" (supplement to Zenodo v3 doi:10.5281/zenodo.23867116; theory note
 doi:10.5281/zenodo.23899237).
-Flagship tests note: doi:10.5281/zenodo.24125958 (v2 of the Spiral Twist record, 11 Nov; DES Y3 pass in; KiDS pass and the Frozen predictions section are in the repo PDF, not yet on Zenodo).
+Flagship tests note: doi:10.5281/zenodo.24136806 (v3 of the Spiral Twist record, 11 Nov; DES Y3 and KiDS-Legacy passes, Frozen predictions section). v2 (before KiDS): doi:10.5281/zenodo.24125958.
 
 ## Locked results
 | Test | Result | Verdict (rule labels; see field_tests/WORDING_STANDARD.md for definitions) |

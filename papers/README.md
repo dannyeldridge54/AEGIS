@@ -54,6 +54,8 @@ Every number in the paper can be re-derived with one step: `CHECK_MY_WORK.bat` (
 
 ## Flagship tests note (archived 11 Nov 2026)
 **DOI:** [10.5281/zenodo.24125958](https://doi.org/10.5281/zenodo.24125958), published as version 2 of the Spiral Twist
+
+**Updated 11 Nov 2026 (04:30 CT): v3, DOI 10.5281/zenodo.24136806.** Adds the KiDS-Legacy full-shear pass and the Frozen predictions section (DESI DR3, lensing forecasts under PREREG_LENSING_FORECASTS_FLAG1, nulls). File: twist_flagship_tests_2026-11-11b.pdf (md5 b13a66ee4ad6299ab6b3e1b5db805d7b = repo PDF at this commit).
 record (version 1: the theory note, doi:10.5281/zenodo.23898709).
 `flagship_note/twist_flagship_tests.pdf` (5 pp.) covers the flagship fit on Planck + ACT DR6 + SPT-3G + DESI DR2,
 the DESI-style apparent phantom crossing (DESI-MOCK), the H0 inverse ladder, six pre-registered or exploratory
