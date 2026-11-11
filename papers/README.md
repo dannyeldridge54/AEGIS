@@ -1,5 +1,17 @@
 # Paper: Torsion-Born Early Dark Energy with an Onset Locked to Matter–Radiation Equality
 
+> **Status notice (11 Nov 2026).** This early-dark-energy paper is kept as a historical record; it is no longer the
+> project's current model. Three later, pre-registered results change how it should be read:
+> 1. **Look-elsewhere.** Its improvements over ΛCDM (Δχ² = −7.23 with two parameters, −6.14 with one; 2.2σ and 2.5σ
+>    locally) fall to about 0.2σ and 0.6σ after correcting for the 66 model variants tried on the same data (V7
+>    statistic, Šidák, conservative; `field_tests/scorers/v7_flag1_exploratory.py` uses the same method).
+> 2. **The early field is not wanted alongside the late coupling.** Adding an n = 3 early field to the flagship
+>    (TWOFIELD, locked 9 Nov) changed χ² by only −1.06 / −1.00 / +0.62: NOT WORTH IT on all three supernova sets.
+> 3. **The paper's own S8 caveat stands.** The early field worsens the weak-lensing tension, as the paper already said.
+>
+> The current model is the dark-matter-coupled dilaton (FLAG-1); see the flagship tests note below
+> (doi:10.5281/zenodo.24136806), whose fit preference is also not significant after look-elsewhere.
+
 **Current working synthesis and cross-agent handoff:**
 [AEGIS_RESEARCH_SYNTHESIS.md](./AEGIS_RESEARCH_SYNTHESIS.md) (5 November 2026 UTC).
 It distinguishes current readiness from the historical paper/results below,

@@ -21,7 +21,9 @@ We fit a dilaton dark-energy field coupled only to cold dark matter (the ``Spira
 $\beta_{\rm eff}$ free, field-space slope fixed at $\kappa=1$) to Planck low-$\ell$, ACT DR6, SPT-3G D1, ACT DR6 lensing,
 DESI DR2 BAO, a DES Y6 $S_8$ term and, in turn, Pantheon+, DES-Dovekie and Union3. Every test rule is fixed and hashed
 before its fits are run. FLAG-1 improves on $\Lambda$CDM with the same $S_8$ term by $\Delta\chi^2=-4.71/-6.01/-7.69$
-(one extra parameter), with $\beta_{\rm eff}\simeq0.04$ and $H_0\simeq67.2$ km\,s$^{-1}$Mpc$^{-1}$. Read with the
+(one extra parameter; $2.2$--$2.8\sigma$ locally), with $\beta_{\rm eff}\simeq0.04$ and $H_0\simeq67.2$
+km\,s$^{-1}$Mpc$^{-1}$. After correcting for the 66 model variants we tried on the same data, the improvement is not
+significant ($0.2$--$1.0\sigma$, conservative). Read with the
 uncoupled-dark-matter assumption of the DESI analysis, the coupled field looks like dark energy whose $w$ crosses $-1$
 near $z\simeq1$, although the field itself never crosses: a pre-registered DESI-style fit to a mock flagship universe
 prefers $w_0w_a$ at $2.9\sigma$ with $w_0=-0.83$, $w_a=-0.45$, matching DESI DR2 + CMB + Pantheon+ ($2.8\sigma$). On the Hubble
@@ -41,7 +43,11 @@ at full size beside the passes.
 DESI DR2 BAO combined with the CMB and supernovae prefers evolving dark energy at $2.8$--$4.2\sigma$, with $w$
 apparently crossing $-1$~\cite{desi2025}. A canonical scalar field cannot cross, but an analysis that assumes
 uncoupled cold dark matter (CDM) can read a dark-energy--dark-matter energy exchange as a crossing. Dilaton fields that
-couple to matter are natural in string-motivated models~\cite{damour1994,smith2025}. Here we test the simplest member of
+couple to matter are natural in string-motivated models~\cite{damour1994,smith2025}. Antusch, King and Wang set out how a
+quintessence field that sets the CDM mass produces this apparent crossing without a phantom field, and why the field
+must stay nearly frozen until after recombination~\cite{antusch2026}; non-parametric reconstructions of DESI DR2 point
+the same way~\cite{you2025}, and analytic interacting models fitted to it show the crossing too~\cite{figueruelo2026}.
+FLAG-1 is a concrete, fitted member of that class. Here we test the simplest member of
 this family, coupled to CDM only, against current data, and ask what it can and cannot do for the Hubble tension. The
 work was run with pre-registration: each test's model, priors, data, gates and pass/fail bars were written down and
 SHA-256 hashed before its fits ran. Deviations are logged before any rerun. AI assistance is stated in the
@@ -74,6 +80,13 @@ The locked bar ($\Delta\chi^2\le-4$ on at least two of three sets) is met on all
 model was chosen after earlier fits, and the rule says so. A closure detail of the build makes the reported $H_0$
 0.108\% higher than the true $H(z{=}0)$ (about $0.07$ km\,s$^{-1}$Mpc$^{-1}$); $\chi^2$ values are unaffected.
 
+\paragraph{Look-elsewhere.} Taken alone, one extra parameter gives local significances of $2.2$, $2.5$ and $2.8\sigma$
+(Wilks). But FLAG-1 was chosen after many tries. Counting the distinct late- and early-field variants fitted to the
+same data by our locked look-elsewhere rule (V7), there are now $N=66$; the \v{S}id\'ak correction, an upper bound because
+the variants are correlated, gives $0.2$, $0.5$ and $1.0\sigma$. By V7's bands this is NOT SIGNIFICANT AFTER LOOK-ELSEWHERE.
+This is an exploratory application of V7's statistic, since V7 was locked before FLAG-1 existed. The fit preference
+alone does not establish the model; the case for it rests on the tests that follow and on the frozen predictions.
+
 \section{The DESI reading: an apparent phantom crossing}
 Following the DESI convention, we define the dark energy that an uncoupled-CDM analysis would infer,
 $\rho_{\rm DE,eff}(a)=\rho_{\rm tot}-\rho_b-\rho_r-\rho_\nu-\rho_{\rm cdm,0}a^{-3}$, with $w_{\rm eff}=-1-\frac13\,
@@ -82,8 +95,8 @@ $w_0=-0.847$ and $w_a=-0.33$ for all three fits. $w_{\rm eff}$ runs from $-1.09$
 to $-0.86$ today. The field's own equation of state stays above $-1$. Against DESI DR2 + CMB + Pantheon+ ($w_0=-0.838\pm
 0.055$, $w_a=-0.62\pm0.21$), $w_0$ agrees and $w_a$ is $1.4\sigma$ weaker (one parameter at a time; the published
 $w_0$--$w_a$ correlation is not used). The DES-Y5 and Union3 combinations sit $2$--$2.6\sigma$ away. This is a
-consistency statement, not a prediction: FLAG-1 was itself fitted to DESI DR2 BAO. The mechanism is the same one
-proposed for dark-axion and dark-baryon couplings~\cite{prl2026}.
+consistency statement, not a prediction: FLAG-1 was itself fitted to DESI DR2 BAO. The mechanism is the one set out
+in Ref.~\cite{antusch2026}, and proposed for dark-axion and dark-baryon couplings~\cite{prl2026}.
 
 \paragraph{A DESI-style fit of a flagship universe (pre-registered, DESI-MOCK).} We generate noiseless mock DESI DR2 BAO,
 Pantheon+ and compressed CMB data ($100\theta_*$, $\omega_b$, $\omega_{bc}$ as seen at recombination) from the FLAG-1
@@ -198,7 +211,8 @@ while the coupling stays required, if growth or BAO data depart from the frozen 
 test at the frozen best fits comes out OVER.
 
 \section{Conclusions}
-A dilaton coupled only to dark matter fits the newest CMB, BAO and supernova data better than $\Lambda$CDM. It reproduces
+A dilaton coupled only to dark matter fits the newest CMB, BAO and supernova data better than $\Lambda$CDM, though not
+significantly once the variants we tried are counted. It reproduces
 DESI's apparent phantom crossing without a phantom field, and passes laboratory tests by construction. It does not
 resolve the gap to SH0ES; nothing we added inside it does. Its $H_0$ is within $1.4\sigma$ of the JWST red-giant
 calibration. It passes the full DES Y3 and KiDS-Legacy shear tests.
@@ -210,6 +224,12 @@ every number is reproduced by archived scripts and locked rules, and the author 
 
 \begin{thebibliography}{99}
 \bibitem{desi2025} DESI Collaboration, arXiv:2503.14738.
+\bibitem{antusch2026} S.~Antusch, S.~F.~King, X.~Wang, \emph{Coupled dark energy and dark matter for DESI: an effective
+guide to the phantom divide}, arXiv:2604.08449.
+\bibitem{you2025} C.~You, D.~Wang, T.~Yang, \emph{Dynamical dark energy implies a coupled dark sector: insights from DESI
+DR2 via a data-driven approach}, arXiv:2504.00985.
+\bibitem{figueruelo2026} D.~Figueruelo, M.~van der Westhuizen, A.~Abebe, E.~Di Valentino, \emph{Late-time background
+constraints on linear and non-linear interacting dark energy after DESI DR2}, arXiv:2601.03122.
 \bibitem{damour1994} T.~Damour, A.~M.~Polyakov, Nucl.\ Phys.\ B 423, 532 (1994), hep-th/9401069.
 \bibitem{smith2025} A.~Smith, M.~Mylova, C.~van de Bruck, C.~P.~Burgess, E.~Di Valentino, arXiv:2512.13544.
 \bibitem{prl2026} \emph{Apparent $w<-1$ and a lower $S_8$ from dark axion and dark baryons interactions}, Phys.\ Rev.\ Lett., doi:10.1103/w4qb-plk8.
