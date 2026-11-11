@@ -45,6 +45,8 @@ for sn, suf in SN:
                                         ("stored", f"ax_spa_lcdm_halofit{suf}_axhm", f"ax_spa_lcdm_halofit{suf}"))
     PAIRS[f"S8-A angle coupled, {sn}"] = (("stored", f"S8A{suf}_axhm", f"S8A{suf}"),            # LATE-BASE
                                           ("stored", f"ax_spa_lcdm_halofit{suf}_axhm", f"ax_spa_lcdm_halofit{suf}"))
+    PAIRS[f"FLAG-1 flagship, {sn}"] = (("boost", f"ax_spa_spiraltwist_kappa1{suf}_nlfix_s8y6", f"ax_spa_spiraltwist_kappa1{suf}_nlfix_s8y6"),
+                                       ("boost", _better_lcdm(suf), _better_lcdm(suf)))   # PREREG_FLAGSHIP.md, reported
 
 
 def _cpl(fit):

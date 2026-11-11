@@ -44,6 +44,8 @@ for sn, suf in (("Pantheon+", ""), ("DES-Dovekie", "_dovekie"), ("Union3", "_uni
     # cmp_<run>_axhm.json = the stored fit's own file (TWIST_RESULTS folder with links)
     PAIRS[f"S8-LNL axionHMcode, {sn}"] = (("pk", f"spiralL{suf}_axhm"), ("pk", f"ax_spa_lcdm_halofit{suf}_axhm"))
     PAIRS[f"S8-A axionHMcode, {sn}"] = (("pk", f"S8A{suf}_axhm"), ("pk", f"ax_spa_lcdm_halofit{suf}_axhm"))   # LATE-BASE
+    # FLAG-1 (PREREG_FLAGSHIP.md: shear rules rerun at the flagship best fits, reported), same partners as S8-J
+    PAIRS[f"FLAG-1 flagship, {sn}"] = (("pk", f"ax_spa_spiraltwist_kappa1{suf}_nlfix_s8y6"), ("pk", _better_lcdm(suf)))
 SPIRAL = []
 
 VALUES = """[cosmological_parameters]

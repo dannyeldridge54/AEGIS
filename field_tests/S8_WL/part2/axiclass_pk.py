@@ -59,9 +59,11 @@ def one(name):
         args["scf_coupling_beta"] = 0.0                       # CDM uncoupled; the angle coupling is in extra_args
     if ula:                                        # S8-L: omega_cdm, omega_fld, log10_a_c as stored (derived split)
         args.update({"omega_cdm": best["omega_cdm"], "omega_fld": best["omega_fld"], "log10_a_c": best["log10_a_c"]})
-    if "spiral_kappa" in best:
+    kfix = info.get("params", {}).get("spiral_kappa")              # FLAG-1: kappa fixed (not in "minimum")
+    kfix = kfix.get("value") if isinstance(kfix, dict) else kfix
+    if "spiral_kappa" in best or isinstance(kfix, (int, float)):
         import spiral_guess
-        k = best["spiral_kappa"]
+        k = best.get("spiral_kappa", kfix)
         mu = spiral_guess.mu1_guess(k, best.get("scf_coupling_beta", best.get("beta_eff", 0.0)), best["omega_b"],
                                     best["omega_cdm"])
         args["scf_parameters"] = f"{k}, 0.0, {mu}, 0.0, 0.0, 0.0"

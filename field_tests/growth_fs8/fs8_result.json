@@ -1,0 +1,7 @@
+{"note": "EXPLORATORY, not pre-registered; SDSS DR16 consensus BAO+RSD fsigma8, diagonal errors (approximate chi2); 6 points",
+ "data": [[0.15, 0.53, 0.16], [0.38, 0.497, 0.045], [0.51, 0.459, 0.038], [0.70, 0.473, 0.041], [0.85, 0.315, 0.095], [1.48, 0.462, 0.045]],
+ "FLAG-1": {"Pantheon+": 6.692, "DES-Dovekie": 6.424, "Union3": 6.746},
+ "LCDM+S8": {"Pantheon+": 6.229, "DES-Dovekie": 6.166, "Union3": 6.222},
+ "Delta_FLAG1_minus_LCDM": {"Pantheon+": 0.463, "DES-Dovekie": 0.258, "Union3": 0.524},
+ "reading": "Both consistent with the data (chi2 about 6.2-6.7 for 6 points); the flagship's ~2% lower growth costs +0.3 to +0.5, i.e. growth data do not distinguish them yet",
+ "source": "https://www.sdss4.org/science/final-bao-and-rsd-measurements-table/"}
