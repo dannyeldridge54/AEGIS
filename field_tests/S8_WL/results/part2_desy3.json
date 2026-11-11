@@ -723,6 +723,120 @@
      -6486.068
     ]
    }
+  },
+  "FLAG-1 flagship, Pantheon+": {
+   "model": {
+    "run": "ax_spa_spiraltwist_kappa1_nlfix_s8y6",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_kappa1_nlfix_s8y6_round3_cross_best.ini",
+    "chi2_WL": -6487.125,
+    "data_chi2": 235.273,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_s8y6",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_s8y6_round3_own_best.ini",
+    "chi2_WL": -6487.277,
+    "data_chi2": 235.354,
+    "S8": NaN
+   },
+   "Delta_WL": 0.15,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_kappa1_nlfix_s8y6": [
+     -6483.837,
+     -6483.935,
+     -6484.649,
+     -6484.671,
+     -6483.944,
+     -6484.682,
+     -6487.125
+    ],
+    "ax_spa_lcdm_halofit_s8y6": [
+     -6484.22,
+     -6484.282,
+     -6484.635,
+     -6484.703,
+     -6486.525,
+     -6487.277,
+     -6485.243
+    ]
+   }
+  },
+  "FLAG-1 flagship, DES-Dovekie": {
+   "model": {
+    "run": "ax_spa_spiraltwist_kappa1_dovekie_nlfix_s8y6",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_kappa1_dovekie_nlfix_s8y6_round3_cross_best.ini",
+    "chi2_WL": -6485.31,
+    "data_chi2": 237.175,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_dovekie_s8y6_more",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_dovekie_s8y6_more_round3_own_best.ini",
+    "chi2_WL": -6486.64,
+    "data_chi2": 235.928,
+    "S8": NaN
+   },
+   "Delta_WL": 1.33,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_kappa1_dovekie_nlfix_s8y6": [
+     -6483.36,
+     -6484.386,
+     -6484.509,
+     -6484.537,
+     -6485.231,
+     -6485.256,
+     -6485.31
+    ],
+    "ax_spa_lcdm_halofit_dovekie_s8y6_more": [
+     -6483.793,
+     -6484.2,
+     -6486.358,
+     -6486.637,
+     -6485.507,
+     -6486.64,
+     -6486.629
+    ]
+   }
+  },
+  "FLAG-1 flagship, Union3": {
+   "model": {
+    "run": "ax_spa_spiraltwist_kappa1_union3_nlfix_s8y6",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_spiraltwist_kappa1_union3_nlfix_s8y6_round3_cross_best.ini",
+    "chi2_WL": -6485.937,
+    "data_chi2": 236.565,
+    "S8": NaN
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_union3_s8y6_more",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/part2/../results/part2_ax_spa_lcdm_halofit_union3_s8y6_more_round3_own_best.ini",
+    "chi2_WL": -6486.844,
+    "data_chi2": 235.792,
+    "S8": NaN
+   },
+   "Delta_WL": 0.91,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_kappa1_union3_nlfix_s8y6": [
+     -6484.437,
+     -6484.972,
+     -6484.982,
+     -6484.982,
+     -6485.861,
+     -6485.935,
+     -6485.937
+    ],
+    "ax_spa_lcdm_halofit_union3_s8y6_more": [
+     -6484.331,
+     -6484.39,
+     -6486.667,
+     -6486.778,
+     -6486.674,
+     -6486.844,
+     -6486.757
+    ]
+   }
   }
  }
 }
