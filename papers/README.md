@@ -51,3 +51,9 @@ Every number in the paper can be re-derived with one step: `CHECK_MY_WORK.bat` (
 ## Build
 
 `tectonic torsion_born_ede.tex` (or `pdflatex` twice). arXiv builds the PDF from the `.tex` source.
+
+## New draft (10 Nov 2026, not archived)
+`flagship_note/twist_flagship_tests.pdf` (5 pp.) covers the flagship fit on Planck + ACT DR6 + SPT-3G + DESI DR2,
+the DESI-style apparent phantom crossing (DESI-MOCK), the H0 inverse ladder, six pre-registered or exploratory
+attempts to raise H0, and the open weak-lensing problem. It goes to Zenodo or arXiv only on the author's word.
+

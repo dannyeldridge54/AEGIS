@@ -1,4 +1,12 @@
-# CURRENT MODEL: read this first (updated 7 Nov 2026)
+# CURRENT MODEL: read this first (updated 10 Nov 2026)
+
+> **Status at 10 Nov 2026.** The model carried forward is **FLAG-1** (Spiral, κ = 1, dilaton coupled only to CDM,
+> β_eff ≈ 0.04): −4.71 / −6.01 / −7.69 vs ΛCDM+S8 on Planck + ACT DR6 + SPT-3G + DESI DR2. DESI-MOCK: it reproduces
+> DESI's evolving-dark-energy signal (2.9σ vs DESI's 2.8σ; w0 −0.83, wa −0.45). H0 stays ≈ 67: six extensions
+> (TWOFIELD, TWIST-ME, TWIST-DR, universal coupling, gravity coupling, local void) failed to raise it. It sits 5.9σ from
+> SH0ES but 1.4σ from JWST TRGB. Weak lensing is open (JOINT-SHEAR: no verdict). DESI DR3 predictions are frozen
+> (PREREG_PRED_DESI_DR3.md). Draft paper: `papers/flagship_note/`. The model text below is the 7 Nov picture; the
+> results table has every row.
 
 **One page, the source of truth.** Anything elsewhere that disagrees with this page is older; older pages carry a
 "SUPERSEDED" banner pointing here. Every number below is from a locked test (rule hashed before its data).
