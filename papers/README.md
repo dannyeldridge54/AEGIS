@@ -52,8 +52,10 @@ Every number in the paper can be re-derived with one step: `CHECK_MY_WORK.bat` (
 
 `tectonic torsion_born_ede.tex` (or `pdflatex` twice). arXiv builds the PDF from the `.tex` source.
 
-## New draft (10 Nov 2026, not archived)
+## Flagship tests note (archived 11 Nov 2026)
+**DOI:** [10.5281/zenodo.24125958](https://doi.org/10.5281/zenodo.24125958), published as version 2 of the Spiral Twist
+record (version 1: the theory note, doi:10.5281/zenodo.23898709).
 `flagship_note/twist_flagship_tests.pdf` (5 pp.) covers the flagship fit on Planck + ACT DR6 + SPT-3G + DESI DR2,
 the DESI-style apparent phantom crossing (DESI-MOCK), the H0 inverse ladder, six pre-registered or exploratory
-attempts to raise H0, and the open weak-lensing problem. It goes to Zenodo or arXiv only on the author's word.
+attempts to raise H0, and weak lensing (DES Y3 full shear PASSES 3 of 3; KiDS-Legacy pending).
 
