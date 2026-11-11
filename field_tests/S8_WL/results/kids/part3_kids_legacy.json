@@ -421,9 +421,120 @@
      156.815
     ]
    }
+  },
+  "FLAG-1 flagship, Pantheon+": {
+   "model": {
+    "run": "ax_spa_spiraltwist_kappa1_nlfix_s8y6",
+    "fit": "ax_spa_spiraltwist_kappa1_nlfix_s8y6",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/results/kids/part3_ax_spa_spiraltwist_kappa1_nlfix_s8y6_round1_own_best.ini",
+    "chi2_KiDS": 156.789,
+    "data_chi2": 129.158,
+    "w0": -0.8718449064700196,
+    "wa": -0.20283549280565524
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_s8y6",
+    "fit": "ax_spa_lcdm_halofit_s8y6",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/results/kids/part3_ax_spa_lcdm_halofit_s8y6_round2_own_best.ini",
+    "chi2_KiDS": 157.255,
+    "data_chi2": 129.553,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": -0.47,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_kappa1_nlfix_s8y6": [
+     156.91,
+     156.789,
+     156.789,
+     156.789,
+     156.789
+    ],
+    "ax_spa_lcdm_halofit_s8y6": [
+     157.353,
+     157.263,
+     157.256,
+     157.255,
+     157.255
+    ]
+   }
+  },
+  "FLAG-1 flagship, DES-Dovekie": {
+   "model": {
+    "run": "ax_spa_spiraltwist_kappa1_dovekie_nlfix_s8y6",
+    "fit": "ax_spa_spiraltwist_kappa1_dovekie_nlfix_s8y6",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/results/kids/part3_ax_spa_spiraltwist_kappa1_dovekie_nlfix_s8y6_round1_own_best.ini",
+    "chi2_KiDS": 156.835,
+    "data_chi2": 129.214,
+    "w0": -0.873473356247944,
+    "wa": -0.200816753123463
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_dovekie_s8y6_more",
+    "fit": "ax_spa_lcdm_halofit_dovekie_s8y6_more",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/results/kids/part3_ax_spa_lcdm_halofit_dovekie_s8y6_more_round1_own_best.ini",
+    "chi2_KiDS": 157.148,
+    "data_chi2": 129.466,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": -0.31,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_kappa1_dovekie_nlfix_s8y6": [
+     156.901,
+     156.835,
+     156.835,
+     156.835,
+     156.835
+    ],
+    "ax_spa_lcdm_halofit_dovekie_s8y6_more": [
+     157.156,
+     157.148,
+     157.148,
+     157.148,
+     157.149
+    ]
+   }
+  },
+  "FLAG-1 flagship, Union3": {
+   "model": {
+    "run": "ax_spa_spiraltwist_kappa1_union3_nlfix_s8y6",
+    "fit": "ax_spa_spiraltwist_kappa1_union3_nlfix_s8y6",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/results/kids/part3_ax_spa_spiraltwist_kappa1_union3_nlfix_s8y6_round1_own_best.ini",
+    "chi2_KiDS": 156.806,
+    "data_chi2": 129.173,
+    "w0": -0.8705115273390271,
+    "wa": -0.20432762047158623
+   },
+   "LCDM": {
+    "run": "ax_spa_lcdm_halofit_union3_s8y6_more",
+    "fit": "ax_spa_lcdm_halofit_union3_s8y6_more",
+    "best_ini": "/home/claude/aegis/field_tests/S8_WL/results/kids/part3_ax_spa_lcdm_halofit_union3_s8y6_more_round1_cross_best.ini",
+    "chi2_KiDS": 157.281,
+    "data_chi2": 129.573,
+    "w0": -1.0,
+    "wa": 0.0
+   },
+   "Delta_KiDS": -0.47,
+   "reading": "PASSES",
+   "tries": {
+    "ax_spa_spiraltwist_kappa1_union3_nlfix_s8y6": [
+     156.853,
+     156.806,
+     156.806
+    ],
+    "ax_spa_lcdm_halofit_union3_s8y6_more": [
+     157.314,
+     157.29,
+     157.281
+    ]
+   }
   }
  },
  "notes": {
-  "S8-A": "LATE-BASE (PREREG_LATE_BASE.md): S8-A rows run 9 Nov in a scratch folder with KIDS_REUSE; the LCDM partner files from that run are in s8a_lcdm_partner/."
+  "S8-A": "LATE-BASE (PREREG_LATE_BASE.md): S8-A rows run 9 Nov in a scratch folder with KIDS_REUSE; the LCDM partner files from that run are in s8a_lcdm_partner/.",
+  "FLAG-1": "FLAG-1 rows run 10-11 Nov 2026 in the cloud with KIDS_REUSE (one relaunch after the 2 h task limit; resumed, no change of settings). The LCDM s8y6 partner files from that run are in flag1_lcdm_partner/; the tracked partner files in this folder are the originals."
  }
 }
