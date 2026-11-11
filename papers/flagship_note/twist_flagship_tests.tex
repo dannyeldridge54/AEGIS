@@ -10,7 +10,7 @@
 an Apparent Phantom Crossing, the Hubble Constant,\\ and Six Pre-Registered Attempts to Raise It}}
 \author{D.~L.~Eldridge\thanks{Independent researcher, Oklahoma, USA. dannyeldridge54@gmail.com.
 Scripts, fits, locked rules and every number below: \url{https://github.com/dannyeldridge54/AEGIS}.}}
-\date{Draft, 10 November 2026 (not yet archived)}
+\date{11 November 2026}
 
 \begin{document}
 \sloppy
@@ -31,8 +31,9 @@ tip-of-the-red-giant-branch calibration. Six attempts to raise $H_0$ inside the 
 pre-registered fits: an early $n=3$ field, a heavier electron before recombination, and extra dark radiation with
 running. Three cheaper checks also fail: a universal coupling of the same dilaton to the electron breaks quasar and
 atomic-clock limits by $\sim10^{5}$ and $\sim10^{4}$; a quadratic gravity coupling is not wanted by background data;
-and the Pantheon+ Hubble-flow shows no local-void signature. A joint fit with the full DES Y3 shear likelihood could not
-be performed because its emulator failed its locked accuracy gate twice; weak lensing remains open. Failures are reported
+and the Pantheon+ Hubble-flow shows no local-void signature. Against the full DES Y3 cosmic-shear likelihood, FLAG-1
+costs $\Delta\chi^2_{\rm WL}=+0.15/+1.33/+0.91$ relative to $\Lambda$CDM, within the pre-registered limit of $+2$ on all
+three supernova sets; the KiDS-Legacy test is in progress. Failures are reported
 at full size beside the passes.
 \end{abstract}
 
@@ -132,13 +133,19 @@ supernovae and a free-form $G(z)$, and does not survive here. Our results match 
 BAO is included, recombination-era fixes cannot raise $H_0$ much without lowering $\Omega_m$ below what BAO
 allows~\cite{recomb2026}.
 
-\section{Weak lensing: open}
+\section{Weak lensing}
 A late-time variant with a dark-matter angle (S8-A) passed a one-number $S_8$ test but missed the full DES Y3 shear
 ($\Delta\chi^2_{\rm WL}=+1.76/+2.32/+2.76$) and KiDS-Legacy ($+2.96/+10.11/+11.30$) tests, so the flagship stayed the
 base. A joint refit with DES Y3 shear inside the likelihood (rule JOINT-SHEAR) needed a quadratic emulator of the shear
 $\chi^2$. It missed held-out points by up to $3.8$ (S8-A) and $2.2$ ($\Lambda$CDM); after the one allowed enlargement of
 the calibration it still missed by up to $1.8$ and $2.0$, against a limit of $0.5$. No fits ran and no verdict exists.
-The full-shear tests at the FLAG-1 best fits themselves have not yet been run.
+
+The locked full-shear test (rule S8-WL, Part 2) was then run at the FLAG-1 best fits: cosmology fixed at each fit, the DES
+Y3 nuisance parameters (intrinsic alignments, photometric-redshift shifts, shear calibration) minimised, best of seven
+starts, against the matched $\Lambda$CDM fits treated the same way. FLAG-1 gives $\Delta\chi^2_{\rm WL}=+0.15$ (Pantheon+),
+$+1.33$ (DES-Dovekie) and $+0.91$ (Union3): \textbf{PASSES} on all three (limit $+2$). The earlier Spiral fits without the
+$S_8$ term were OVER ($+2.57/+3.47/+3.99$). The same test against KiDS-Legacy is running and will be reported whatever
+it gives; weak lensing is settled for FLAG-1 only once both surveys are in.
 
 \section{Relation to the axiodilaton}
 Ref.~\cite{smith2025} couples a dilaton to all matter. The electron mass then varies through recombination, giving
@@ -152,13 +159,13 @@ FLAG-1 was not chosen blind. $\kappa=1$ is fixed by hand. The $S_8$ term is a Ga
 JWST conversion is approximate. The $w_0$--$w_a$ comparison ignores the published correlation. The gravity check is
 background only. The model is falsified if DESI DR3 + CMB drive $w_a$ to zero while the coupling stays required. It is
 also falsified if structure-growth data ($f\sigma_8$) depart from the frozen predictions in
-\texttt{theory/fpc\_*kappa1*\_s8y6.json}, or if the full shear tests at its best fits come out OVER.
+\texttt{theory/fpc\_*kappa1*\_s8y6.json}, or if the KiDS-Legacy shear test at its best fits comes out OVER.
 
 \section{Conclusions}
 A dilaton coupled only to dark matter fits the newest CMB, BAO and supernova data better than $\Lambda$CDM. It reproduces
 DESI's apparent phantom crossing without a phantom field, and passes laboratory tests by construction. It does not
 resolve the gap to SH0ES; nothing we added inside it does. Its $H_0$ is within $1.4\sigma$ of the JWST red-giant
-calibration. Weak lensing is unresolved.
+calibration. It passes the full DES Y3 shear test; the KiDS-Legacy test is pending.
 
 \section*{Acknowledgements}
 We thank the Planck, ACT, SPT, DESI, DES, Pantheon+ and Union teams for public data, and the developers of CLASS,
