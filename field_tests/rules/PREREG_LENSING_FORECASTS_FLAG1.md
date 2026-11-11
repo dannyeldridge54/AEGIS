@@ -1,6 +1,6 @@
 # Lensing forecasts, addendum: the flagship (FLAG-1)
 
-**Status: DRAFT.** Lock only on Danny's word. AI-assisted. This adds FLAG-1 to `PREREG_LENSING_FORECASTS.md` (locked
+**Status: LOCKED** on Danny's word ("Lock, then post", 11 Nov 2026, 04:23 CT, answering "Lock it before I post to Zenodo?"); time and fingerprint in the .sha256 file. AI-assisted. This adds FLAG-1 to `PREREG_LENSING_FORECASTS.md` (locked
 8 Nov), which named only the pre-flagship models (Spiral, S8-J, S8-L) because FLAG-1 did not exist yet. Tests A and B,
 the readings and the "what may not happen" lines are those of the parent rule, unchanged. Nothing here changes the
 parent rule or its scores for the older models.
