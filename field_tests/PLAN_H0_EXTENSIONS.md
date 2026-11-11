@@ -50,3 +50,15 @@ Constants check, inverse distance ladder (SH0ES and JWST), local-void shells, DE
   - **Not worth the hi_class build:** the background alone already rejects it, and perturbations cannot rescue H0.
     The paper's H0 gain needs a free-form G(z) and the SH0ES-calibrated SNe.
 - **Phase 2 TWIST-DCDM:** not pursued (Phase 1 was negative, and the literature evidence ties with ΛCDM).
+
+## Data gaps list (10 Nov 2026, 21:10 CT): status
+1. **Full shear at the FLAG-1 fits:** DES Y3 running in the cloud; KiDS-Legacy next (pairs added to both pipelines).
+2. **Error bars:** FLAG-1 MCMC, 4 chains on the PC via the runner (started 21:06 CT; R−1 < 0.02 or 40k samples).
+3. **Growth fσ8:** done, exploratory (`field_tests/growth_fs8/`). χ² 6.4–6.7 for 6 points vs ΛCDM 6.2: no distinction.
+4. **Planck high-ℓ:** already in the fits. The CMB set is P-ACT (Planck PR3 lite, cut at ℓ < 1000 TT / 600 TE-EE, as
+   ACT DR6 recommends) + ACT DR6 + SPT-3G. A Planck-only robustness refit is possible but low value; not run.
+5. **DESI-MOCK with the full CMB:** deferred. It needs mock ACT/SPT/Planck spectra fed through their likelihoods (new
+   code, about a day). It is worth doing only for the paper's final version.
+6. **Null predictions:** locked (`PREREG_NULLS.md`). **V6 Laplace:** dropped as superseded. It computed ln B for the
+   pre-flagship models (old Spiral, ΛCDM, S8-L), and the job died on the PC on 9 Nov; it is not restarted. A Bayes
+   factor for FLAG-1 can come from the MCMC (item 2) if needed.
