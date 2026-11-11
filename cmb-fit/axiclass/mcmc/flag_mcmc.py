@@ -25,4 +25,5 @@ info["sampler"] = {"mcmc": {"learn_proposal": True, "Rminus1_stop": 0.02, "Rminu
                             "measure_speeds": False}}
 info["output"] = f"{E.OUT}/chains/FLAG1_mcmc_c{i}"
 info["resume"] = True
+info.pop("force", None)
 run(info)
