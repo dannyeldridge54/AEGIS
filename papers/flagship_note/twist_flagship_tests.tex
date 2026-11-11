@@ -133,7 +133,7 @@ supernovae and a free-form $G(z)$, and does not survive here. Our results match 
 BAO is included, recombination-era fixes cannot raise $H_0$ much without lowering $\Omega_m$ below what BAO
 allows~\cite{recomb2026}.
 
-\section{Weak lensing}
+\section{Weak lensing}\label{sec:wl}
 A late-time variant with a dark-matter angle (S8-A) passed a one-number $S_8$ test but missed the full DES Y3 shear
 ($\Delta\chi^2_{\rm WL}=+1.76/+2.32/+2.76$) and KiDS-Legacy ($+2.96/+10.11/+11.30$) tests, so the flagship stayed the
 base. A joint refit with DES Y3 shear inside the likelihood (rule JOINT-SHEAR) needed a quadratic emulator of the shear
@@ -154,12 +154,46 @@ tests. FLAG-1 is the other side of the same trade-off. Coupling to CDM only keep
 solar-system limits and keeps the apparent crossing, but leaves $H_0$ near 67. Our universal-coupling check shows why
 the Twist cannot simply take the other side: its field moves more after $z\simeq1$ than before recombination.
 
+\section{Frozen predictions}\label{sec:pred}
+Before the relevant data are public, the FLAG-1 best fits and the numbers below are frozen by SHA-256 under locked rules
+in the archive. No refit is allowed under any of them. Each line is scored once, whatever the outcome.
+
+\textbf{DESI DR3} (rule \texttt{PREREG\_PRED\_DESI\_DR3}; Pantheon+ fit primary). The fit gives $r_d=147.45$\,Mpc,
+$H_0=67.16$, $\sigma_8=0.807$, $S_8=0.825$, and $f\sigma_8=0.419$, $0.457$, $0.459$, $0.450$, $0.425$, $0.373$ at
+$z=0$, $0.3$, $0.5$, $0.7$, $1.0$, $1.5$.
+\begin{itemize}\setlength\itemsep{0pt}
+\item[P1] \emph{Dark-energy reading.} DESI's own $w_0w_a$ fit to DR3 BAO + CMB + Pantheon+ should land near
+$w_0=-0.833$, $w_a=-0.451$. It is CONSISTENT if each value is within $2\sigma$, and FAILS if either is beyond $3\sigma$.
+\item[P2] \emph{The signal persists.} The model FAILS if DR3 + CMB + Pantheon+ prefers $w_0w_a$ over $\Lambda$CDM at
+less than $1\sigma$.
+\item[P3] \emph{BAO distances.} $\chi^2$ of the DR3 points against the frozen $D_M/r_d$, $D_H/r_d$, $D_V/r_d$, with no
+free parameter. It FAILS if $p<0.001$ and is CONSISTENT if $p\ge0.01$.
+\item[P4] \emph{Growth.} The same test for DESI full-shape $f\sigma_8$ against the values above.
+\end{itemize}
+
+\textbf{Weak lensing} (rule \texttt{PREREG\_LENSING\_FORECASTS} with its FLAG-1 addendum). The forecasts are
+$S_8=0.825/0.828/0.825$ (Pantheon+/DES-Dovekie/Union3), against $0.814/0.816/0.814$ for the matched $\Lambda$CDM fits. The
+targets are Euclid DR1 and Rubin/LSST Y1 cosmic shear, plus the DES Y6 full-shear likelihood. The tests are the same
+summary and full-shear tests as Section~\ref{sec:wl}, with the same $+2$ limit.
+
+\textbf{Nulls} (rule \texttt{PREREG\_NULLS}). Because only dark matter couples, FLAG-1 predicts no effect in each of the
+following:
+\begin{itemize}\setlength\itemsep{0pt}
+\item gravitational waves travel at $c$ with GR's friction ($\Xi_0=1$), and there is no circular polarisation of the GW
+background;
+\item no drift of the fine-structure constant;
+\item no fifth force on ordinary matter;
+\item $N_{\rm eff}=3.044$ at BBN;
+\item cosmic birefringence $\simeq0^\circ$.
+\end{itemize}
+Any measurement of one of these effects at $\ge5\sigma$ fails that line.
+
 \section{Limitations and how to falsify it}
 FLAG-1 was not chosen blind. $\kappa=1$ is fixed by hand. The $S_8$ term is a Gaussian summary, not the full shear. The
 JWST conversion is approximate. The $w_0$--$w_a$ comparison ignores the published correlation. The gravity check is
-background only. The model is falsified if DESI DR3 + CMB drive $w_a$ to zero while the coupling stays required. It is
-also falsified if structure-growth data ($f\sigma_8$) depart from the frozen predictions in
-\texttt{theory/fpc\_*kappa1*\_s8y6.json}, or if the KiDS-Legacy shear test at its best fits comes out OVER.
+background only. The model is falsified by any FAIL among the frozen predictions above: chiefly if DESI DR3 + CMB drive $w_a$ to zero
+while the coupling stays required, if growth or BAO data depart from the frozen values, or if the KiDS-Legacy shear
+test at its best fits, or a future survey's, comes out OVER.
 
 \section{Conclusions}
 A dilaton coupled only to dark matter fits the newest CMB, BAO and supernova data better than $\Lambda$CDM. It reproduces
