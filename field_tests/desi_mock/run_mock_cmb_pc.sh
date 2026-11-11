@@ -7,6 +7,7 @@ PY="${TWIST_PY:-/home/syndyr/micromamba/envs/aegis/bin/python}"; [ -x "$PY" ] ||
 export TWIST_PY="$PY" COBAYA_PACKAGES_PATH="${COBAYA_PACKAGES_PATH:-$AEG/cmb-fit/packages}" TWIST_RESULTS="$R"
 mkdir -p "$R/lanes" "$R/chains"; say() { echo "$(date '+%F %T') $*" | tee -a "$LOG"; }
 say "waiting for the FLAG-1 MCMC to finish"
+sleep 180  # let a requeued MCMC start first (both jobs can be picked up in the same runner pass)
 while pgrep -f flag_mcmc.py >/dev/null; do sleep 600; done
 say "MCMC done; DESI-MOCK-CMB start"
 cd "$T"
