@@ -10,7 +10,7 @@
 > 3. **The paper's own S8 caveat stands.** The early field worsens the weak-lensing tension, as the paper already said.
 >
 > The current model is the dark-matter-coupled dilaton (FLAG-1); see the flagship tests note below
-> (doi:10.5281/zenodo.24136806), whose fit preference is also not significant after look-elsewhere.
+> (doi:10.5281/zenodo.24140195), whose fit preference is also not significant after look-elsewhere.
 
 **Current working synthesis and cross-agent handoff:**
 [AEGIS_RESEARCH_SYNTHESIS.md](./AEGIS_RESEARCH_SYNTHESIS.md) (5 November 2026 UTC).
@@ -66,6 +66,10 @@ Every number in the paper can be re-derived with one step: `CHECK_MY_WORK.bat` (
 
 ## Flagship tests note (archived 11 Nov 2026)
 **DOI:** [10.5281/zenodo.24125958](https://doi.org/10.5281/zenodo.24125958), published as version 2 of the Spiral Twist
+
+**Updated 11 Nov 2026 (10:00 CT): v4, DOI 10.5281/zenodo.24140195.** Adds the look-elsewhere correction (V7 statistic,
+N = 66: global 0.2–1.0σ, not significant) and cites Antusch–King–Wang (arXiv:2604.08449), You–Wang–Yang (2504.00985) and
+Figueruelo et al. (2601.03122). File twist_flagship_tests_2026-11-11c.pdf (md5 c5383f53fe5ffadb19e7328dcdcc0b5a).
 
 **Updated 11 Nov 2026 (04:30 CT): v3, DOI 10.5281/zenodo.24136806.** Adds the KiDS-Legacy full-shear pass and the Frozen predictions section (DESI DR3, lensing forecasts under PREREG_LENSING_FORECASTS_FLAG1, nulls). File: twist_flagship_tests_2026-11-11b.pdf (md5 b13a66ee4ad6299ab6b3e1b5db805d7b = repo PDF at this commit).
 record (version 1: the theory note, doi:10.5281/zenodo.23898709).
