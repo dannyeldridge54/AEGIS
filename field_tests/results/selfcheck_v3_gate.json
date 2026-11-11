@@ -1,0 +1,61 @@
+{
+ "rd_fid_mpch_class": 99.0845851266713,
+ "rd_fid_table11": 99.0792,
+ "rows": {
+  "BGS": {
+   "fs_table11": 0.4723,
+   "fs_template_direct": 0.47223,
+   "fs_template_via_Eq11": 0.47212,
+   "dev_direct": -0.00016,
+   "dev_Eq11": -0.00039,
+   "A": 1.0,
+   "m": 0.0
+  },
+  "LRG1": {
+   "fs_table11": 0.4733,
+   "fs_template_direct": 0.47325,
+   "fs_template_via_Eq11": 0.47334,
+   "dev_direct": -0.00011,
+   "dev_Eq11": 8e-05,
+   "A": 1.0,
+   "m": 0.0
+  },
+  "LRG2": {
+   "fs_table11": 0.4608,
+   "fs_template_direct": 0.46072,
+   "fs_template_via_Eq11": 0.46073,
+   "dev_direct": -0.00018,
+   "dev_Eq11": -0.00015,
+   "A": 1.0,
+   "m": 0.0
+  },
+  "LRG3": {
+   "fs_table11": 0.4398,
+   "fs_template_direct": 0.43971,
+   "fs_template_via_Eq11": 0.43977,
+   "dev_direct": -0.00019,
+   "dev_Eq11": -7e-05,
+   "A": 1.0,
+   "m": 0.0
+  },
+  "ELG2": {
+   "fs_table11": 0.3944,
+   "fs_template_direct": 0.39437,
+   "fs_template_via_Eq11": 0.3944,
+   "dev_direct": -7e-05,
+   "dev_Eq11": 1e-05,
+   "A": 1.0,
+   "m": 0.0
+  },
+  "QSO": {
+   "fs_table11": 0.375,
+   "fs_template_direct": 0.37493,
+   "fs_template_via_Eq11": 0.37501,
+   "dev_direct": -0.0002,
+   "dev_Eq11": 3e-05,
+   "A": 1.0,
+   "m": 0.0
+  }
+ },
+ "GATE": "PASS"
+}
