@@ -1,0 +1,100 @@
+{
+ "rule": "field_tests/rules/PREREG_SELFCHECK.md",
+ "V4": {
+  "eRASS1 (arXiv:2402.08458)": {
+   "S8_obs": 0.86,
+   "sigma": 0.01,
+   "rows": {
+    "Pantheon+": {
+     "S8_flag1": 0.8251,
+     "S8_lcdm": 0.8142,
+     "penalty_flag1": 12.18,
+     "penalty_lcdm": 20.976,
+     "dP": -8.796
+    },
+    "Dovekie": {
+     "S8_flag1": 0.8282,
+     "S8_lcdm": 0.8157,
+     "penalty_flag1": 10.112,
+     "penalty_lcdm": 19.625,
+     "dP": -9.513
+    },
+    "Union3": {
+     "S8_flag1": 0.8249,
+     "S8_lcdm": 0.8137,
+     "penalty_flag1": 12.32,
+     "penalty_lcdm": 21.437,
+     "dP": -9.117
+    }
+   },
+   "passes_on": 3,
+   "reading": "PASSES"
+  },
+  "SPT clusters (arXiv:2401.02075)": {
+   "S8_obs": 0.795,
+   "sigma": 0.029,
+   "rows": {
+    "Pantheon+": {
+     "S8_flag1": 0.8251,
+     "S8_lcdm": 0.8142,
+     "penalty_flag1": 1.077,
+     "penalty_lcdm": 0.438,
+     "dP": 0.639
+    },
+    "Dovekie": {
+     "S8_flag1": 0.8282,
+     "S8_lcdm": 0.8157,
+     "penalty_flag1": 1.311,
+     "penalty_lcdm": 0.51,
+     "dP": 0.801
+    },
+    "Union3": {
+     "S8_flag1": 0.8249,
+     "S8_lcdm": 0.8137,
+     "penalty_flag1": 1.063,
+     "penalty_lcdm": 0.416,
+     "dP": 0.647
+    }
+   },
+   "passes_on": 3,
+   "reading": "PASSES"
+  }
+ },
+ "V5": {
+  "convention": "m_c ∝ e^(beta phi), phi in reduced Planck units; G_eff/G - 1 = 2 beta^2",
+  "Pettorino2013": {
+   "beta": 0.0364,
+   "sigma": 0.0163,
+   "data": "Planck WP + BAO"
+  },
+  "stream_bound": {
+   "G_eff_over_G_minus_1_max": 0.1,
+   "source": "Kesden & Kamionkowski 2006 via arXiv:0903.4458"
+  },
+  "cluster_bound": "none found with a stated convention (11 Nov 2026); not quoted",
+  "rows": {
+   "Pantheon+": {
+    "beta_eff": 0.04107,
+    "G_eff_over_G_minus_1": 0.00337,
+    "pull_vs_Pettorino_sigma": 0.29,
+    "within_2sigma_Pettorino": true,
+    "inside_stream_bound": true
+   },
+   "Dovekie": {
+    "beta_eff": 0.04473,
+    "G_eff_over_G_minus_1": 0.004,
+    "pull_vs_Pettorino_sigma": 0.51,
+    "within_2sigma_Pettorino": true,
+    "inside_stream_bound": true
+   },
+   "Union3": {
+    "beta_eff": 0.03834,
+    "G_eff_over_G_minus_1": 0.00294,
+    "pull_vs_Pettorino_sigma": 0.12,
+    "within_2sigma_Pettorino": true,
+    "inside_stream_bound": true
+   }
+  },
+  "reading": "PASSES"
+ }
+}
