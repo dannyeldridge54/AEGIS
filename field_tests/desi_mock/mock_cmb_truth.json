@@ -1,0 +1,24 @@
+{
+ "real_chi2_at_truth": {
+  "act_dr6_cmbonly.PlanckActCut": 220.2569960831397,
+  "act_dr6_cmbonly.ACTDR6CMBonly": 160.12040621304143,
+  "act_dr6_lenslike.ACTDR6LensLike": 19.858657773269712,
+  "spt3g_d1_tne_lite": 162.83287048339844,
+  "bao.desi_dr2.desi_bao_all": 8.645552343694808,
+  "sn.pantheonplus": 1403.7814676099608
+ },
+ "point": {
+  "logA": 3.0578909,
+  "n_s": 0.97347713,
+  "theta_s_1e2": 1.0417431,
+  "omega_b": 0.022465871,
+  "omega_cdm": 0.11848917,
+  "tau_reio": 0.0618686,
+  "A_act": 1.0012547,
+  "P_act": 1.0025158,
+  "Tcal": 0.99916605,
+  "Ecal": 1.0071768,
+  "scf_coupling_beta": 0.041070992,
+  "A_planck": 1.0013885
+ }
+}
