@@ -26,7 +26,7 @@ TAU = 0.0636
 TR = json.load(open(os.path.join(E.OUT, "cmp_ax_spa_lcdm_halofit_s8y6.json")))["minimum"]
 M1_FULL = os.path.join(HERE, "m1", "full.json")
 HOLD_Z = 0.706
-LABELS = ["const_dr2", "bz_dr2", "const_dr1", "bz_dr1", "const_dr2_ho", "bz_dr2_ho"]
+LABELS = ["const_dr2", "bz_dr2", "sm_dr2", "const_dr1", "bz_dr1", "const_dr2_ho", "bz_dr2_ho", "sm_dr2_ho"]
 BMAX = 0.15
 
 
@@ -35,7 +35,7 @@ def bao_data(rel):
     return m[:, 0].astype(float), m[:, 1].astype(float), m[:, 2], np.loadtxt(os.path.join(D, "bao_data", BAOF[rel][1]))
 
 
-def run_class(h, wb, wc, beta=None, bins=None):
+def run_class(h, wb, wc, beta=None, bins=None, beta_a=None):
     if beta is None:
         a = dict(LCDM, h=h, omega_b=wb, omega_cdm=wc, tau_reio=TAU, output="")
     else:
@@ -44,6 +44,8 @@ def run_class(h, wb, wc, beta=None, bins=None):
                  scf_parameters=f"1.0, 0.0, {g}, 0.0, 0.0, 0.0")
         if bins is not None:
             a.update(scf_beta1=bins[0], scf_beta2=bins[1], scf_beta3=bins[2])
+        if beta_a is not None:
+            a["scf_beta_a"] = beta_a
     c = classy.Class(); c.set(a); c.compute()
     return c
 
@@ -76,15 +78,18 @@ def make_chi2(rel, hold):
     keep = ~np.isclose(BZ, HOLD_Z) if hold else np.ones(len(BZ), bool)
     Ci = np.linalg.inv(BC[np.ix_(keep, keep)]); TC = cmb_target()
 
-    def chi2(p, binned):
-        h, wb, wc, be = p[:4]; bins = p[4:7] if binned else None
+    def chi2(p, binned, smooth=False):
+        h, wb, wc, be = p[:4]; bins = p[4:7] if binned else None; ba = p[4] if smooth else None
         if binned:
             if any(abs(x) > BMAX for x in p[3:7]):
+                return 1e10
+        elif smooth:
+            if abs(be) > BMAX or abs(ba) > 0.1:
                 return 1e10
         elif not (0.0 <= be <= 0.12):
             return 1e10
         try:
-            c = run_class(h, wb, wc, be, bins); bao, mu, th, wce = observables(c, BZ, BQ, True); c.struct_cleanup(); c.empty()
+            c = run_class(h, wb, wc, be, bins, ba); bao, mu, th, wce = observables(c, BZ, BQ, True); c.struct_cleanup(); c.empty()
         except Exception:
             return 1e10
         rb = (BV - bao)[keep]; y = MU_OBS - mu
@@ -125,6 +130,15 @@ def fit(label):
         starts = [t + [0.01], [t[0] - 0.01, t[1] + 0.0002, t[2] + 0.002, 0.04], [t[0] + 0.01, t[1] - 0.0002, t[2] - 0.002, 0.08]]
         runs = [nm(lambda q: chi2(q, False), s, 1500) for s in starts]
         best = min(runs); out = {"label": label, "chi2": best[0], "params": best[1], "names": ["h", "omega_b", "omega_c", "beta"]}
+    elif kind == "sm":
+        cp = json.load(open(os.path.join(OUTD, f"const_{label[3:]}.json")))["params"]
+        starts = [cp + [0.0], cp + [0.03], cp + [-0.03]]
+        runs = [nm(lambda q: chi2(q, False, True), s, 3000) for s in starts]
+        best = min(runs)
+        out = {"label": label, "chi2": best[0], "params": best[1], "names": ["h", "omega_b", "omega_c", "beta_early", "beta_a"],
+               "all_starts": [r[0] for r in runs]}
+        if not hold:
+            out["errors"] = hessian_errors(lambda q: chi2(q, False, True), best[1], [1e-4, 1e-4, 1e-4, 0.005, 0.005])
     else:
         cf = os.path.join(OUTD, f"const_{label[3:]}.json")
         cp = json.load(open(cf))["params"]; b = cp[3]
@@ -144,7 +158,8 @@ def predict_holdout(label):
     r = json.load(open(os.path.join(OUTD, f"{label}.json"))); p = r["params"]
     BZ, BV, BQ, BC = bao_data("dr2"); m = np.isclose(BZ, HOLD_Z)
     bins = p[4:7] if label.startswith("bz") else None
-    c = run_class(p[0], p[1], p[2], p[3], bins); bao, *_ = observables(c, BZ, BQ, True); c.struct_cleanup(); c.empty()
+    ba = p[4] if label.startswith("sm") else None
+    c = run_class(p[0], p[1], p[2], p[3], bins, ba); bao, *_ = observables(c, BZ, BQ, True); c.struct_cleanup(); c.empty()
     d = (BV - bao)[m]; return float(d @ np.linalg.inv(BC[np.ix_(m, m)]) @ d)
 
 
@@ -167,12 +182,20 @@ def score():
     out["B2"] = {"shift_in_dr1_sigma": {k: (round(v, 2) if v is not None else None) for k, v in shifts.items()},
                  "beta_dr1": dict(zip(s1["names"][3:], [round(v, 4) for v in s1["params"][3:]])), "reading": rb2,
                  "note": "DR2 contains DR1; correlated, a consistency check"}
+    ds = R["const_dr2"]["chi2"] - R["sm_dr2"]["chi2"]
+    out["B1s"] = {"delta": round(ds, 3), "p_chi2_1": float(C2.sf(max(ds, 0), 1)),
+                  "beta_early": round(R["sm_dr2"]["params"][3], 4), "beta_a": round(R["sm_dr2"]["params"][4], 4),
+                  "beta_a_err": (round(R["sm_dr2"]["errors"][4], 4) if R["sm_dr2"]["errors"][4] else None),
+                  "reading": "NO VERDICT" if not gate else ("SMOOTH CHANGE NEEDED" if ds >= 3.84 else "NOT NEEDED")}
     pb, pc = predict_holdout("bz_dr2_ho"), predict_holdout("const_dr2_ho"); d3 = pb - pc
+    psm = predict_holdout("sm_dr2_ho"); d3s = psm - pc
+    out["B3s"] = {"chi2_pred_smooth": round(psm, 3), "delta": round(d3s, 3),
+                  "reading": "NO VERDICT" if not gate else ("SMOOTH PREDICTS BETTER" if d3s <= -1 else "WORSE" if d3s >= 1 else "SAME")}
     out["B3"] = {"chi2_pred_betaz": round(pb, 3), "chi2_pred_const": round(pc, 3), "delta": round(d3, 3),
                  "reading": "NO VERDICT" if not gate else ("BETA(z) PREDICTS BETTER" if d3 <= -1 else "WORSE" if d3 >= 1 else "SAME")}
     out["fits"] = {l: {"chi2": round(r["chi2"], 3), "params": [round(v, 5) for v in r["params"]]} for l, r in R.items()}
     json.dump(out, open(os.path.join(AEG, "field_tests", "results", "betaz.json"), "w"), indent=1)
-    print(json.dumps({k: out[k] for k in ("gate", "B1", "B2", "B3")}, indent=1))
+    print(json.dumps({k: out[k] for k in ("gate", "B1", "B1s", "B2", "B3", "B3s")}, indent=1))
 
 
 if __name__ == "__main__":

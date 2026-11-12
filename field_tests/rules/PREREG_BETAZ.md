@@ -17,8 +17,14 @@ reconstruction. M1's partial outputs exist on disk but their numbers were not re
 FLAG-1 (κ = 1, the same potential and closure), with the coupling piecewise constant in redshift:
 β₁ (z < 0.5), β₂ (0.5 ≤ z < 1), β₃ (1 ≤ z < 2), β_early (z ≥ 2). The CDM mass follows d ln m_c = β(z) dφ, so energy is
 conserved across bin edges. Each β ∈ [−0.15, 0.15] (a sign change is allowed).
+**Smooth variant (added 12 Nov, before any fit, at Danny's suggestion of "a part of the equation set by how the
+redshift expands"):** β(a) = β_early + β_a·a, where a = 1/(1+z) is the size of the universe. The early universe keeps
+β_early; the coupling changes smoothly as the universe expands, to β_early + β_a today. One extra parameter, β_a ∈
+[−0.1, 0.1]. (A first form, β₀ + β_a(1 − a), was dropped before any fit: it changes the coupling most at early times,
+where the CMB fixes it, and its closure failed for β_a = 0.05.) Points where the build's closure fails count as
+χ² = 10¹⁰.
 - **Build gate (done before this draft):** with β₁ = β₂ = β₃ = β_early the build reproduces the original coupled build
-  (r_d, 100θ*, D_M and H at z = 0.3–2.3) to better than 10⁻⁷ relative.
+  (r_d, 100θ*, D_M and H at z = 0.3–2.3) to better than 10⁻⁷ relative; the smooth variant with β_a = 0 does the same.
 - **Limitation (stated):** background only. The perturbation equations still use β_early, so growth, E_G and
   lensing are not predicted by this model, and none is scored under this rule.
 
@@ -27,6 +33,8 @@ conserved across bin edges. Each β ∈ [−0.15, 0.15] (a sign change is allowe
   background-only. DR2 is primary; DR1 (`desi_2024_gaussian_bao_ALL_GCcomb`) for B2.
 - Constant-β FLAG-1: as in M1 (β ∈ [0, 0.12]), refitted with this build. **Fit gate:** its DR2 χ² equals M1's
   full-data FLAG-1 χ² to within 0.05; if not, NO VERDICT on everything.
+- Smooth model: parameters h, ω_b, ω_c, β_early, β_a. Nelder–Mead, best of 3 starts: the constant-β best fit with
+  β_a = 0, +0.03 and −0.03. maxfev 3000.
 - β(z) model: parameters h, ω_b, ω_c, β_early, β₁, β₂, β₃. Nelder–Mead, best of 3 starts: (i) the constant-β best fit
   with all β equal to it; (ii) the same with β₁ − 0.03, β₃ + 0.03; (iii) with β₁ + 0.03, β₃ − 0.03. maxfev 4000.
 - Errors on the β's from a finite-difference Hessian at the best fit (steps 0.005 in β, 1e-4 in h, ω).
@@ -35,6 +43,9 @@ conserved across bin edges. Each β ∈ [−0.15, 0.15] (a sign change is allowe
 - **B1, does β change with time? (decides)** Δ = χ²(constant β) − χ²(β(z)), on DR2. Three extra parameters.
   - **TIME VARIATION NEEDED:** Δ ≥ 7.81 (p < 0.05 for χ²₃).
   - **NOT NEEDED:** otherwise. Reported either way: the β(z) shape with errors, and whether it changes sign.
+- **B1s, does a smooth change help? (decides for the smooth variant)** Δ_s = χ²(constant β) − χ²(smooth), on DR2. One
+  extra parameter. **SMOOTH CHANGE NEEDED:** Δ_s ≥ 3.84 (p < 0.05 for χ²₁). **NOT NEEDED:** otherwise. Reported: β_a
+  with its error, and B3's held-out prediction for the smooth variant (same bands).
 - **B2, is the shape stable from DR1 to DR2?** The β(z) fit on DR1 and on DR2. For each of β₁, β₂, β₃:
   shift = |β_DR2 − β_DR1| / σ_DR1.
   - **STABLE:** every shift < 1. **WANDERS:** any shift > 2. **UNCLEAR:** otherwise.
@@ -45,8 +56,8 @@ conserved across bin edges. Each β ∈ [−0.15, 0.15] (a sign change is allowe
   - **β(z) PREDICTS BETTER:** Δ3 ≤ −1. **WORSE:** Δ3 ≥ +1. **SAME:** otherwise.
 
 ## What may not happen
-No change of bins, bounds, starts, data, thresholds or the held-out bin after any fit. No extra bins added to chase a
-reading. Each reading is reported once. Counted +3 in V7.
+No change of bins, the smooth form, bounds, starts, data, thresholds or the held-out bin after any fit. No extra bins added to chase a
+reading. Each reading is reported once. Counted +4 in V7 (B1, B1s, B2, B3).
 
 ## Code
 `field_tests/missing_piece/betaz_build.py` (loads the build), `betaz_fit.py` (fits, Hessians, score). Results:
