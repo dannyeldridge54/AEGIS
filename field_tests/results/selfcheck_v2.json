@@ -1,0 +1,45 @@
+{
+ "rule": "PREREG_SELFCHECK.md V2",
+ "delta_noSN": -2.748,
+ "reading": "WEAK",
+ "fits": {
+  "FLAG1": {
+   "chi2": 995.3007,
+   "H0": 67.215089,
+   "sigma8": 0.80860858,
+   "Omega_m": 0.3138698399305927,
+   "scf_coupling_beta": 0.042798409,
+   "chi2_parts": {
+    "chi2__BAO": 8.6395829,
+    "chi2__CMB": 640.07776,
+    "chi2__planck_2018_lowl.TT": 22.434481,
+    "chi2__planck_2018_lowl.EE": 397.58237,
+    "chi2__act_dr6_cmbonly.PlanckActCut": 220.06091,
+    "chi2__act_dr6_cmbonly.ACTDR6CMBonly": 160.35798,
+    "chi2__act_dr6_lenslike.ACTDR6LensLike": 19.769581,
+    "chi2__spt3g_d1_tne_lite": 162.13844,
+    "chi2__bao.desi_dr2.desi_bao_all": 8.6395829,
+    "chi2__s8_desy6": 4.3173447
+   }
+  },
+  "LCDM": {
+   "chi2": 998.0484,
+   "H0": 68.372414,
+   "sigma8": 0.81165488,
+   "Omega_m": 0.30053257325777394,
+   "scf_coupling_beta": null,
+   "chi2_parts": {
+    "chi2__BAO": 11.674479,
+    "chi2__CMB": 641.43036,
+    "chi2__planck_2018_lowl.TT": 21.851606,
+    "chi2__planck_2018_lowl.EE": 398.98407,
+    "chi2__act_dr6_cmbonly.PlanckActCut": 220.59469,
+    "chi2__act_dr6_cmbonly.ACTDR6CMBonly": 161.0183,
+    "chi2__act_dr6_lenslike.ACTDR6LensLike": 19.700351,
+    "chi2__spt3g_d1_tne_lite": 163.17062,
+    "chi2__bao.desi_dr2.desi_bao_all": 11.674479,
+    "chi2__s8_desy6": 1.0542889
+   }
+  }
+ }
+}
