@@ -61,3 +61,30 @@ print(f"D3: gravitino yield at T_RH = {TR:.0e} GeV: Y ~ {Y32(TR):.1e} (lower bou
 # each decaying gravitino leaves one lightest superpartner (if R-parity holds): Omega h^2 ~ 2.7e8 (m/GeV) Y
 mmax = 0.12 / (2.7e8 * Y32(TR))
 print(f"D3: a stable lightest superpartner from those decays must be lighter than ~{mmax:.2f} GeV to not overfill dark matter")
+
+# ---- Development 4 (12 Nov): where the early speed comes from ----
+# Needed speed relative to the natural scale H*M_P at T_F, and back at reheating if the angle rolls freely since then
+# (phidot ~ a^-3, H ~ a^-2 in radiation, so phidot/(H M_P) ~ 1/a ~ T).
+HF = H(T_eq)
+r_F = phidot_F / (HF * MP)
+print(f"D4: H(T_F) = {HF:.1e} GeV; needed phidot/(H M_P) at T_F = {r_F:.1e} (kinetic share {r_F**2/6:.1e})")
+for TRH in (1e14, 1e15):
+    print(f"D4: same, at reheating T_RH = {TRH:.0e} GeV: phidot/(H M_P) = {r_F * TRH / T_eq:.2f}")
+# Hyperbolic field space (lambda = -2 sqrt(2/3), fixed): the angle's momentum a^3 e^{lambda sigma/M_P} thetadot is
+# conserved (shift symmetry), so a dilaton excursion d_sigma rescales the angle speed by e^{-lambda d_sigma}.
+lam = -2 * math.sqrt(2 / 3)
+for ds in (0.5, 1.0, 2.0):
+    print(f"D4: dilaton excursion {ds} M_P after inflation changes the angle speed by x{math.exp(-lam * ds):.1f}")
+
+# ---- Development 5 (12 Nov): the neutrino-mass link ----
+# The lepton-number process (Weinberg operator) rate grows with sum m_i^2, so heavier neutrinos lower the freeze-out
+# temperature T_F (and with it the gravitino pressure). dm21^2 = 7.4e-5, dm31^2 = 2.5e-3 eV^2.
+def TF(masses_eV):
+    s2 = sum((m * 1e-9) ** 2 for m in masses_eV)
+    return 1.66 * math.sqrt(gs) * 4 * math.pi ** 3 * v ** 4 / (3 * MPL * s2)
+cases = {"normal, lightest 0 (sum 0.059 eV)": [0, 0.0086, 0.050],
+         "inverted, lightest 0 (sum 0.10 eV)": [0, 0.0492, 0.050],
+         "degenerate, sum 0.15 eV": [0.05, 0.05, 0.05],
+         "degenerate, sum 0.30 eV": [0.1, 0.1, 0.1]}
+for k, m in cases.items():
+    print(f"D5: {k}: T_F ~ {TF(m):.1e} GeV")
