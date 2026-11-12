@@ -25,8 +25,8 @@ where the CMB fixes it, and its closure failed for β_a = 0.05.) Points where th
 χ² = 10¹⁰.
 - **Build gate (done before this draft):** with β₁ = β₂ = β₃ = β_early the build reproduces the original coupled build
   (r_d, 100θ*, D_M and H at z = 0.3–2.3) to better than 10⁻⁷ relative; the smooth variant with β_a = 0 does the same.
-- **Limitation (stated):** background only. The perturbation equations still use β_early, so growth, E_G and
-  lensing are not predicted by this model, and none is scored under this rule.
+- **Scope (stated):** background only. Since 12 Nov the build's growth equations also use β(z) (gate: equal bins match
+  P(k) and σ8 to 2×10⁻⁶), but growth, E_G and lensing are not scored under this rule; that is PREREG_CONSISTENCY.md.
 
 ## Likelihood and fits
 - Exactly the M1 / V1 real-data anchor: DESI BAO (ALL covariance), Pantheon+ (analytic M), compressed CMB vector,

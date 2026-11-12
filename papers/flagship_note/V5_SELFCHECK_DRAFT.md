@@ -40,11 +40,28 @@ REPRODUCES DESI'S SIGNAL. Caveat: FLAG-1 was fitted to DESI DR2, so this is a co
 held-out version (FLAG-1 fitted without DESI, then asked to predict it) is locked as `PREREG_DESI_HOLDOUT.md` and is
 pending. *(field_tests/desi_mock/desi_mock_result.json, mock_cmb_result.json)*
 
-**Summary.** FLAG-1 passes every check that could have ruled it out, and its local significance is correctly
-calibrated, but it is not significant globally, and the self-checks give no evidence that it is preferred over ΛCDM.
+**Does the preference hold on older data? (DATA-GEN.)** Refitting on earlier generations of late-time data, FLAG-1 is
+disfavoured on the SDSS era (Δχ² +2.76 with 6dF/SDSS DR7/DR12 BAO + JLA; +6.46 with SDSS DR16 + Pantheon) and favoured
+only with DESI (−2.47 DR1; −4.71 DR2). The coupling stays at β ≈ 0.04 throughout. With the Planck-only CMB the DESI-era
+preference is −3.91. Reading: DOES NOT HOLD. *(field_tests/results/datagen.json)*
 
-*Still to add when finished: DATA-GEN (PREREG_DATA_GENERATIONS.md), DESI-HOLDOUT, the FLAG-1 MCMC error bars, and V6
-(Planck PR4) if it is run.*
+**Where in DESI does it live? (M1, bin jackknife, compressed likelihood.)** Dropping DESI's z ≈ 0.71 LRG bin takes the
+preference from −5.32 to −2.10; every other single bin leaves it between −4.9 and −6.1. Reading: PARTLY CONCENTRATED.
+This is the bin where DESI and SDSS differ in transverse distance (D_M about −0.9% vs +2.9% relative to ΛCDM, about
+1.8σ apart), and the bin that published analyses find drives DESI's w0 > −1 signal (arXiv:2504.04417).
+*(missing_piece_m1.json)*
+
+**A direct fifth-force test (M2, E_G).** FLAG-1 predicts E_G (lensing compared with galaxy velocities) about 4.8% above
+ΛCDM. Against ACT DR6 × BOSS (errors ~17%) the two cannot be told apart (Δχ² +0.81, NO DISCRIMINATION); about ±2.4% is
+needed. The FLAG-1 E_G curve is frozen as a forecast (`PREREG_EG_FORECAST_FLAG1.md`). *(missing_piece_m2.json)*
+
+**Summary.** FLAG-1 passes every check that could have ruled it out, and its local significance is correctly
+calibrated, but it is not significant globally, its preference appears only with DESI-era data, and most of it sits in
+one DESI redshift bin where DESI and SDSS disagree. Whether that is physics or a survey-level difference is set out
+as frozen tests for DESI DR3 and the next independent survey (`PREREG_WATCH_DESI_SDSS_SPLIT.md`).
+
+*Still to add when finished: DESI-HOLDOUT (FLAG-1 fitted without DESI, predicting it), M3 (DESI vs SDSS residual map),
+the FLAG-1 MCMC error bars, and V6 (Planck PR4) if it is run.*
 
 ---
 
@@ -52,10 +69,12 @@ calibrated, but it is not significant globally, and the self-checks give no evid
 
 > Version 5 adds pre-registered self-checks of FLAG-1, the coupled-dilaton "Spiral Twist" with κ = 1. A 200-mock
 > calibration confirms the local significance (2.2–2.8σ; global 0.2–1.0σ after a 66-test look-elsewhere correction). The
-> preference weakens without supernovae (Δχ² −2.75). DESI DR1 full-shape growth, cluster S8 and dark-matter
+> preference weakens without supernovae (Δχ² −2.75), is absent on SDSS-era data (+2.76, +6.46), and sits mostly in
+> DESI's z ≈ 0.71 bin, where DESI and SDSS disagree. DESI DR1 full-shape growth, E_G, cluster S8 and dark-matter
 > fifth-force bounds are all consistent. A DESI-style analysis of a FLAG-1 universe recovers DESI's evolving-dark-energy
 > signal (w0 −0.83, wa −0.46, 2.9σ), as a consistency check, because FLAG-1 was fitted to DESI. Conclusion: FLAG-1 is a
-> viable, honestly tested alternative that the data do not prefer over ΛCDM. Every rule was locked before its test was
+> viable, honestly tested alternative that the data do not prefer over ΛCDM; its frozen predictions for DESI DR3,
+> E_G and the next independent BAO survey will decide it. Every rule was locked before its test was
 > run; the code, rules and results are at github.com/dannyeldridge54/AEGIS. AI-assisted.
 
 ## Note on the stale v3 record
