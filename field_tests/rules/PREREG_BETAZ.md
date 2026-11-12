@@ -1,6 +1,6 @@
 # BETA(z): FLAG-1 with a coupling that changes over cosmic time
 
-**Status: DRAFT**, written 12 Nov 2026 at Danny's request ("Can you go ahead and do that? Can you make that for ours?",
+**Status: LOCKED** on Danny's word ("schedule them all to set automatically in q", 12 Nov 2026, 14:17 CT, asking for every pending test to be queued to run). Draft text below unchanged except this line. Drafted, written 12 Nov 2026 at Danny's request ("Can you go ahead and do that? Can you make that for ours?",
 13:13 CT). It becomes LOCKED only on Danny's word; no fit under this rule runs before the lock, and none before
 MISSING-PIECE M1 and M3 are scored. AI-assisted. Cloud.
 

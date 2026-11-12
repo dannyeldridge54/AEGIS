@@ -1,6 +1,6 @@
 # CC: cosmic chronometers, an independent check of the expansion rate
 
-**Status: DRAFT**, written 12 Nov 2026 at Danny's request ("Set this up", 13:33 CT). It becomes LOCKED only on
+**Status: LOCKED** on Danny's word ("schedule them all to set automatically in q", 12 Nov 2026, 14:17 CT, asking for every pending test to be queued to run). Draft text below unchanged except this line. Drafted, written 12 Nov 2026 at Danny's request ("Set this up", 13:33 CT). It becomes LOCKED only on
 Danny's word; nothing under it is computed before the lock. AI-assisted. Cloud.
 
 **Why.** DESI and SDSS both show the expansion running slightly fast near z ≈ 0.5–0.7 (D_H a few percent short), and

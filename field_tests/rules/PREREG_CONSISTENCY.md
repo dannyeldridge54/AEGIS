@@ -1,6 +1,6 @@
 # CONSISTENCY: does one coupling explain both expansion and growth?
 
-**Status: DRAFT**, written 12 Nov 2026 at Danny's request ("Yes", 13:21 CT, to "draft the consistency test as a rule
+**Status: LOCKED** on Danny's word ("schedule them all to set automatically in q", 12 Nov 2026, 14:17 CT, asking for every pending test to be queued to run). Draft text below unchanged except this line. Drafted, written 12 Nov 2026 at Danny's request ("Yes", 13:21 CT, to "draft the consistency test as a rule
 for your lock, to run after β(z)"). It becomes LOCKED only on Danny's word, and runs only after PREREG_BETAZ.md is
 scored. AI-assisted. Cloud.
 
