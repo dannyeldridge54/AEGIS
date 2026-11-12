@@ -35,5 +35,19 @@
   "delta_A_DESI_included": -4.087,
   "reading": "LCDM PREDICTS DESI BETTER"
  },
- "testB": "not run yet"
+ "testB": {
+  "reading": "REPRODUCES DESI'S SIGNAL",
+  "BAO+CMB+SN": {
+   "delta_chi2": 18.145327827989465,
+   "sigma_2dof": 3.857056977083355,
+   "w0": -0.790241026294526,
+   "wa": -0.7853775872886725
+  },
+  "BAO+CMB": {
+   "delta_chi2": 13.383006810500657,
+   "sigma_2dof": 3.2291897384818413,
+   "w0": -0.512616137403066,
+   "wa": -1.5358418209264575
+  }
+ }
 }
