@@ -267,8 +267,12 @@ def score():
     res["reading"] = reading
     if isinstance(r, dict):
         res["vs_DESI_DR2_CMB_PantheonPlus"] = {"w0_sigma": (r["w0"] + 0.838) / 0.055, "wa_sigma": (r["wa"] + 0.62) / 0.21}
-        comp = json.load(open(os.path.join(HERE, "desi_mock_result.json")))["BAO+CMB+SN"]
-        res["compressed_DESI_MOCK"] = {k: comp[k] for k in ("delta_chi2", "sigma_2dof", "w0", "wa")}
+        cp = os.path.join(HERE, "desi_mock_result.json")   # side comparison only; see DESI_MOCK_CMB_DEVIATIONS.md D1
+        if os.path.exists(cp):
+            comp = json.load(open(cp))["BAO+CMB+SN"]
+            res["compressed_DESI_MOCK"] = {k: comp[k] for k in ("delta_chi2", "sigma_2dof", "w0", "wa")}
+        else:
+            res["compressed_DESI_MOCK"] = "not available (desi_mock_result.json missing); reading unaffected"
     json.dump(res, open(os.path.join(HERE, "mock_cmb_result.json"), "w"), indent=1)
     print(reading, json.dumps(res, indent=1))
 
