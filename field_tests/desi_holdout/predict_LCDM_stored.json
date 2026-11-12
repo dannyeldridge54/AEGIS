@@ -1,0 +1,18 @@
+{
+ "which": "LCDM",
+ "minimum_from": "cmp_ax_spa_lcdm_halofit_s8y6.json",
+ "chi2_DESI": 12.732510224864921,
+ "parts": {
+  "planck_2018_lowl.TT": 22.093856105453767,
+  "planck_2018_lowl.EE": 398.5648997948476,
+  "act_dr6_cmbonly.PlanckActCut": 220.08118346849957,
+  "act_dr6_cmbonly.ACTDR6CMBonly": 161.42846861309198,
+  "act_dr6_lenslike.ACTDR6LensLike": 19.79545189319583,
+  "spt3g_d1_tne_lite": 162.5024871826172,
+  "bao.desi_dr2.desi_bao_all": 12.732510224864921,
+  "sn.pantheonplus": 1405.609114905639,
+  "s8_desy6": 1.3443591785882747
+ },
+ "expected": 12.733,
+ "pass": true
+}

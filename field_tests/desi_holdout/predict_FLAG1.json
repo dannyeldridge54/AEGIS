@@ -1,0 +1,16 @@
+{
+ "which": "FLAG1",
+ "minimum_from": "cmp_ax_spa_spiraltwist_kappa1_nlfix_nodesi_s8y6.json",
+ "chi2_DESI": 30.214704507710188,
+ "parts": {
+  "planck_2018_lowl.TT": 22.706520857438818,
+  "planck_2018_lowl.EE": 396.37223642428114,
+  "act_dr6_cmbonly.PlanckActCut": 220.32808348864697,
+  "act_dr6_cmbonly.ACTDR6CMBonly": 160.8219570547491,
+  "act_dr6_lenslike.ACTDR6LensLike": 20.133762919601146,
+  "spt3g_d1_tne_lite": 162.50411987304688,
+  "bao.desi_dr2.desi_bao_all": 30.214704507710188,
+  "sn.pantheonplus": 1402.7101412030474,
+  "s8_desy6": 3.8046744867504545
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "rule": "PREREG_DESI_HOLDOUT.md",
+ "gate": {
+  "FLAG1": {
+   "chi2_DESI": 8.646,
+   "expected": 8.646,
+   "pass": true
+  },
+  "LCDM": {
+   "chi2_DESI": 12.733,
+   "expected": 12.733,
+   "pass": true
+  }
+ },
+ "holdout_fits": {
+  "FLAG1": {
+   "chi2": 2389.3277,
+   "H0": 69.202229,
+   "sigma8": 0.8289934,
+   "Omega_m": 0.29733837727046664,
+   "scf_coupling_beta": 0.064256968
+  },
+  "LCDM": {
+   "chi2": 2390.0052,
+   "H0": 67.903426,
+   "sigma8": 0.81411984,
+   "Omega_m": 0.3072241547945506,
+   "scf_coupling_beta": null
+  }
+ },
+ "testA": {
+  "chi2_DESI_FLAG1": 30.215,
+  "chi2_DESI_LCDM": 17.753,
+  "delta_A": 12.462,
+  "delta_A_DESI_included": -4.087,
+  "reading": "LCDM PREDICTS DESI BETTER"
+ },
+ "testB": "not run yet"
+}
