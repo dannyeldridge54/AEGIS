@@ -99,6 +99,18 @@ def make_chi2(rel, hold):
     return chi2, (BZ, BV, BQ, BC, keep)
 
 
+def starts_resumable(label, f, starts, maxfev):
+    """Best of N starts, each saved to betaz/<label>_s<i>.json as it finishes, so a killed run resumes (same method)."""
+    runs = []
+    for i, x0 in enumerate(starts):
+        sf = os.path.join(OUTD, f"{label}_s{i}.json")
+        if os.path.exists(sf):
+            r = json.load(open(sf)); runs.append((r["chi2"], r["params"])); continue
+        r = nm(f, x0, maxfev); json.dump({"chi2": r[0], "params": r[1], "start": list(map(float, x0))}, open(sf, "w"))
+        print(label, "start", i, round(r[0], 3), flush=True); runs.append(r)
+    return runs
+
+
 def nm(f, x0, maxfev):
     r = minimize(f, x0, method="Nelder-Mead", options={"xatol": 1e-6, "fatol": 1e-3, "maxiter": maxfev, "maxfev": maxfev})
     return float(r.fun), [float(v) for v in r.x]
@@ -128,12 +140,12 @@ def fit(label):
     t = [TR["H0"] / 100, TR["omega_b"], TR["omega_cdm"]]
     if kind == "const":
         starts = [t + [0.01], [t[0] - 0.01, t[1] + 0.0002, t[2] + 0.002, 0.04], [t[0] + 0.01, t[1] - 0.0002, t[2] - 0.002, 0.08]]
-        runs = [nm(lambda q: chi2(q, False), s, 1500) for s in starts]
+        runs = starts_resumable(label, lambda q: chi2(q, False), starts, 1500)
         best = min(runs); out = {"label": label, "chi2": best[0], "params": best[1], "names": ["h", "omega_b", "omega_c", "beta"]}
     elif kind == "sm":
         cp = json.load(open(os.path.join(OUTD, f"const_{label[3:]}.json")))["params"]
         starts = [cp + [0.0], cp + [0.03], cp + [-0.03]]
-        runs = [nm(lambda q: chi2(q, False, True), s, 3000) for s in starts]
+        runs = starts_resumable(label, lambda q: chi2(q, False, True), starts, 3000)
         best = min(runs)
         out = {"label": label, "chi2": best[0], "params": best[1], "names": ["h", "omega_b", "omega_c", "beta_early", "beta_a"],
                "all_starts": [r[0] for r in runs]}
@@ -143,7 +155,7 @@ def fit(label):
         cf = os.path.join(OUTD, f"const_{label[3:]}.json")
         cp = json.load(open(cf))["params"]; b = cp[3]
         starts = [cp[:3] + [b, b, b, b], cp[:3] + [b, b - 0.03, b, b + 0.03], cp[:3] + [b, b + 0.03, b, b - 0.03]]
-        runs = [nm(lambda q: chi2(q, True), s, 4000) for s in starts]
+        runs = starts_resumable(label, lambda q: chi2(q, True), starts, 4000)
         best = min(runs)
         out = {"label": label, "chi2": best[0], "params": best[1],
                "names": ["h", "omega_b", "omega_c", "beta_early", "beta1_z<0.5", "beta2_z0.5-1", "beta3_z1-2"],
