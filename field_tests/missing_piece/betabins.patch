@@ -1,5 +1,5 @@
 --- AxiCLASS_coupled_nlfix/include/background.h	2026-11-07 23:42:56.455159850 -0600
-+++ AxiCLASS_coupled_betabins/include/background.h	2026-11-12 13:55:10.390964852 -0600
++++ AxiCLASS_coupled_betabins/include/background.h	2026-11-12 13:57:40.628729658 -0600
 @@ -169,6 +169,11 @@
    short attractor_ic_scf;   /**< whether the scalar field has attractor initial conditions */
    double phi_ini_scf;       /**< \f$ \phi(t_0) \f$: scalar field initial value */
@@ -20,6 +20,15 @@
    int index_bi_phi_scf;       /**< {B} scalar field value */
    int index_bi_phi_prime_scf; /**< {B} scalar field derivative wrt conformal time */
  
+@@ -555,6 +561,8 @@
+                                double* me
+                                );
+ 
++  double background_beta_of_a(struct background *pba, double a);
++
+   int background_init(
+                       struct precision *ppr,
+                       struct background *pba
 --- AxiCLASS_coupled_nlfix/source/input.c	2026-11-07 23:42:56.482731260 -0600
 +++ AxiCLASS_coupled_betabins/source/input.c	2026-11-12 13:24:19.220512130 -0600
 @@ -4401,6 +4401,13 @@
@@ -47,14 +56,14 @@
    /** 9.b.3) Tuning parameter */
    pba->scf_tuning_index = 0;
 --- AxiCLASS_coupled_nlfix/source/background.c	2026-11-07 23:42:56.458165964 -0600
-+++ AxiCLASS_coupled_betabins/source/background.c	2026-11-12 13:55:10.387738462 -0600
++++ AxiCLASS_coupled_betabins/source/background.c	2026-11-12 13:57:40.628059167 -0600
 @@ -113,6 +113,18 @@
   */
  
  #include "background.h"
 +
 +/* MISSING-PIECE beta(z): piecewise-constant coupling; z>=2 uses scf_coupling_beta. */
-+static double beta_of_a_scf(struct background *pba, double a) {
++double background_beta_of_a(struct background *pba, double a) {
 +  double z = 1./a - 1.;
 +  if (pba->has_scf_beta_bins != _TRUE_) return pba->scf_coupling_beta;
 +  if (pba->has_scf_beta_a == _TRUE_) return pba->scf_coupling_beta + pba->scf_beta_a*a;   /* early universe keeps scf_coupling_beta */
@@ -110,9 +119,9 @@
 -    if (pba->has_cdm == _TRUE_ && pba->scf_coupling_beta != 0.)   /* Coupled Twist: -3 a^2 beta rho_cdm, per dlna */
 -      dy[pba->index_bi_phi_prime_scf] -= a*3.*pba->scf_coupling_beta*pvecback[pba->index_bg_rho_cdm]/H;
 +    if (pba->has_cdm == _TRUE_ && (pba->scf_coupling_beta != 0. || pba->has_scf_beta_bins == _TRUE_))   /* Coupled Twist: -3 a^2 beta rho_cdm, per dlna */
-+      dy[pba->index_bi_phi_prime_scf] -= a*3.*beta_of_a_scf(pba,a)*pvecback[pba->index_bg_rho_cdm]/H;
++      dy[pba->index_bi_phi_prime_scf] -= a*3.*background_beta_of_a(pba,a)*pvecback[pba->index_bg_rho_cdm]/H;
 +    if (pba->has_scf_beta_bins == _TRUE_)
-+      dy[pba->index_bi_lnmc_scf] = beta_of_a_scf(pba,a)*dy[pba->index_bi_phi_scf];
++      dy[pba->index_bi_lnmc_scf] = background_beta_of_a(pba,a)*dy[pba->index_bi_phi_scf];
  
      dy[pba->index_bi_rho_scf] = 0; //Update the scf density until the fluid equation starts.
      // printf("aEvolving scalar field using KG equation. phi %e phi prime %e \n", y[pba->index_bi_phi_scf],y[pba->index_bi_phi_prime_scf]);
@@ -124,3 +133,68 @@
      if(pba->background_verbose > 11) printf("Evolving scalar field using fluid equation, rho %e rho prime %e.\n",y[pba->index_bi_rho_scf],dy[pba->index_bi_rho_scf]);
  
      //
+--- AxiCLASS_coupled_nlfix/source/perturbations.c	2026-11-07 23:42:56.463523934 -0600
++++ AxiCLASS_coupled_betabins/source/perturbations.c	2026-11-12 13:57:40.631601986 -0600
+@@ -4066,7 +4066,7 @@
+     /* cdm */
+ 
+     class_define_index(ppv->index_pt_delta_cdm,pba->has_cdm,index_pt,1); /* cdm density */
+-    class_define_index(ppv->index_pt_theta_cdm,pba->has_cdm && ((ppt->gauge == newtonian) || (pba->scf_coupling_beta != 0.)),index_pt,1); /* cdm velocity */
++    class_define_index(ppv->index_pt_theta_cdm,pba->has_cdm && ((ppt->gauge == newtonian) || ((pba->scf_coupling_beta != 0. || pba->has_scf_beta_bins == _TRUE_))),index_pt,1); /* cdm velocity */
+ 
+     /* idm */
+     class_define_index(ppv->index_pt_delta_idm,pba->has_idm,index_pt,1); /* idm density */
+@@ -4541,7 +4541,7 @@
+         ppv->y[ppv->index_pt_delta_cdm] =
+           ppw->pv->y[ppw->pv->index_pt_delta_cdm];
+ 
+-        if ((ppt->gauge == newtonian) || (pba->scf_coupling_beta != 0.)) {
++        if ((ppt->gauge == newtonian) || ((pba->scf_coupling_beta != 0. || pba->has_scf_beta_bins == _TRUE_))) {
+           ppv->y[ppv->index_pt_theta_cdm] =
+             ppw->pv->y[ppw->pv->index_pt_theta_cdm];
+         }
+@@ -7435,7 +7435,7 @@
+     /* cdm contribution */
+     if (pba->has_cdm == _TRUE_) {
+       ppw->delta_rho += ppw->pvecback[pba->index_bg_rho_cdm]*y[ppw->pv->index_pt_delta_cdm]; // contribution to total perturbed stress-energy
+-      if ((ppt->gauge == newtonian) || (pba->scf_coupling_beta != 0.))
++      if ((ppt->gauge == newtonian) || ((pba->scf_coupling_beta != 0. || pba->has_scf_beta_bins == _TRUE_)))
+         ppw->rho_plus_p_theta = ppw->rho_plus_p_theta + ppw->pvecback[pba->index_bg_rho_cdm]*y[ppw->pv->index_pt_theta_cdm]; // contribution to total perturbed stress-energy
+ 
+       ppw->rho_plus_p_tot += ppw->pvecback[pba->index_bg_rho_cdm];
+@@ -7445,7 +7445,7 @@
+         rho_m += ppw->pvecback[pba->index_bg_rho_cdm];
+       }
+       if ((ppt->has_source_delta_m == _TRUE_) || (ppt->has_source_theta_m == _TRUE_)) {
+-        if ((ppt->gauge == newtonian) || (pba->scf_coupling_beta != 0.))
++        if ((ppt->gauge == newtonian) || ((pba->scf_coupling_beta != 0. || pba->has_scf_beta_bins == _TRUE_)))
+           rho_plus_p_theta_m += ppw->pvecback[pba->index_bg_rho_cdm]*y[ppw->pv->index_pt_theta_cdm]; // contribution to [(rho+p)theta]_matter
+         rho_plus_p_m += ppw->pvecback[pba->index_bg_rho_cdm];
+       }
+@@ -10306,10 +10306,11 @@
+ 
+       if (ppt->gauge == synchronous) {
+         dy[pv->index_pt_delta_cdm] = -metric_continuity; /* cdm density */
+-        if (pba->scf_coupling_beta != 0.) {   /* Coupled Twist: fifth force on CDM only */
+-          dy[pv->index_pt_delta_cdm] += -y[pv->index_pt_theta_cdm] + pba->scf_coupling_beta*y[pv->index_pt_phi_prime_scf];
+-          dy[pv->index_pt_theta_cdm] = -(a_prime_over_a + pba->scf_coupling_beta*pvecback[pba->index_bg_phi_prime_scf])*y[pv->index_pt_theta_cdm]
+-            + pba->scf_coupling_beta*k2*y[pv->index_pt_phi_scf];
++        if ((pba->scf_coupling_beta != 0. || pba->has_scf_beta_bins == _TRUE_)) {   /* Coupled Twist: fifth force on CDM only */
++          double bta = background_beta_of_a(pba,a);   /* beta(z) build: = scf_coupling_beta unless bins/smooth set */
++          dy[pv->index_pt_delta_cdm] += -y[pv->index_pt_theta_cdm] + bta*y[pv->index_pt_phi_prime_scf];
++          dy[pv->index_pt_theta_cdm] = -(a_prime_over_a + bta*pvecback[pba->index_bg_phi_prime_scf])*y[pv->index_pt_theta_cdm]
++            + bta*k2*y[pv->index_pt_phi_scf];
+         }
+       }
+     }
+@@ -10580,8 +10581,8 @@
+         - metric_continuity*pvecback[pba->index_bg_phi_prime_scf] //  metric_continuity = h'/2
+         // - 2*a2/k2*metric_euler*pvecback[pba->index_bg_dV_scf] //VP: This term was missing in newtonian gauge, but we do not follow psi' so we cannot yet solve the perturbed KG equation in newtonian gauge.
+         - (k2 + a2*pvecback[pba->index_bg_ddV_scf])*y[pv->index_pt_phi_scf]; //checked
+-        if (pba->has_cdm == _TRUE_ && pba->scf_coupling_beta != 0.)   /* Coupled Twist */
+-          dy[pv->index_pt_phi_prime_scf] -= 3.*a2*pba->scf_coupling_beta*pvecback[pba->index_bg_rho_cdm]*y[pv->index_pt_delta_cdm];
++        if (pba->has_cdm == _TRUE_ && (pba->scf_coupling_beta != 0. || pba->has_scf_beta_bins == _TRUE_))   /* Coupled Twist */
++          dy[pv->index_pt_phi_prime_scf] -= 3.*a2*background_beta_of_a(pba,a)*pvecback[pba->index_bg_rho_cdm]*y[pv->index_pt_delta_cdm];
+ 
+ 
+         // if(index_k==0)printf("phi' %e ddV %e\n",pvecback[pba->index_bg_phi_prime_scf],pvecback[pba->index_bg_ddV_scf]);
