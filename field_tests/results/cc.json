@@ -1,0 +1,47 @@
+{
+ "rule": "PREREG_CC.md",
+ "n_points": 32,
+ "sets": {
+  "Pantheon+": {
+   "chi2_FLAG1": 12.351,
+   "p_FLAG1": 0.9993122925641569,
+   "chi2_LCDM": 12.655,
+   "p_LCDM": 0.9991172178455394,
+   "delta": -0.304,
+   "window": {
+    "cc_mean_frac": -0.0066,
+    "sigma_w": 0.0472,
+    "flag1_mean_frac": 0.0123,
+    "needed_sigma_2sig": 0.0061
+   }
+  },
+  "Dovekie": {
+   "chi2_FLAG1": 12.269,
+   "p_FLAG1": 0.9993580113668561,
+   "chi2_LCDM": 12.644,
+   "p_LCDM": 0.9991247176792252,
+   "delta": -0.375,
+   "window": {
+    "cc_mean_frac": -0.0068,
+    "sigma_w": 0.0472,
+    "flag1_mean_frac": 0.0134,
+    "needed_sigma_2sig": 0.0067
+   }
+  },
+  "Union3": {
+   "chi2_FLAG1": 12.413,
+   "p_FLAG1": 0.9992757797249012,
+   "chi2_LCDM": 12.628,
+   "p_LCDM": 0.9991359378208559,
+   "delta": -0.215,
+   "window": {
+    "cc_mean_frac": -0.0069,
+    "sigma_w": 0.0472,
+    "flag1_mean_frac": 0.0111,
+    "needed_sigma_2sig": 0.0055
+   }
+  }
+ },
+ "CC1": "NO DISCRIMINATION",
+ "CC2": "NOT RESOLVED"
+}
