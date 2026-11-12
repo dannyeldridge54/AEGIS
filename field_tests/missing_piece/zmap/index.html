@@ -1,0 +1,209 @@
+<meta name="dash-one-writer">
+<style>
+.zm { display: grid; gap: var(--cds-gap-xl); font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+.zm-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+.zm-lede { font-size: var(--cds-font-size-body); max-width: 68ch; margin: 0; line-height: 1.5; }
+.zm-lede b { font-variant-numeric: tabular-nums; }
+.zm-sec { display: grid; gap: var(--cds-gap-sm); min-width: 0; }
+.zm-sec h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; text-wrap: balance; }
+.zm-note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; max-width: 72ch; line-height: 1.45; }
+.zm-chart { position: relative; min-height: 240px; width: 100%; }
+.zm-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.zm-chart .tick text, .zm-chart .ax-label { fill: var(--cds-text-secondary); font-size: var(--cds-font-size-caption); font-family: var(--font-anthropic-sans); }
+.zm-chart .tick line, .zm-chart .domain { stroke: var(--cds-chart-axis); }
+.zm-chart .grid line { stroke: var(--cds-chart-grid); }
+.zm-chart .zero { stroke: var(--cds-chart-reference); stroke-dasharray: 3 3; }
+.zm-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border);
+  box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: var(--cds-pad-xs) var(--cds-pad-sm);
+  font-size: var(--cds-font-size-caption); color: var(--color-fg); white-space: nowrap; font-variant-numeric: tabular-nums; z-index: 2; }
+.zm-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.zm-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.zm-key { width: 14px; height: 3px; display: inline-block; border-radius: 2px; }
+.zm-dot { width: 8px; height: 8px; display: inline-block; border-radius: 50%; }
+.zm-fail { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); padding: var(--cds-pad-md) 0; }
+[data-dash-source-state=refreshing] { opacity: .5; }
+details.zm-more summary { cursor: pointer; font-size: var(--cds-font-size-body); }
+details.zm-more p { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); max-width: 72ch; line-height: 1.5; }
+</style>
+
+<div class="zm">
+  <header id="top" class="zm-sec">
+    <h1 class="zm-title">FLAG-1 Redshift Map</h1>
+    <p class="zm-lede">Every probe on one redshift axis, read against the standard model (ΛCDM). Expansion and growth have to be explained by the same coupling β at the same redshift. Where DESI and SDSS both measured sideways distance near z ≈ 0.7, they differ by <b data-draw="gap" data-source="gap07" data-field="gap_pct">—</b>%, about <b data-draw="gapsig" data-source="gap07" data-field="sigma">—</b>σ apart.</p>
+  </header>
+
+  <section id="dm" class="zm-sec">
+    <h2>Sideways distance D_M: data and FLAG-1, relative to ΛCDM</h2>
+    <div class="zm-legend"><span><i class="zm-dot" data-c="0"></i>DESI DR2</span><span><i class="zm-dot" data-c="1"></i>SDSS (DR12, DR16)</span><span><i class="zm-key" data-c="2"></i>FLAG-1</span><span><i class="zm-key" style="background:var(--cds-chart-reference)"></i>ΛCDM (0)</span></div>
+    <div class="zm-chart" data-draw="dmchart" data-source="bao curves"></div>
+    <p class="zm-note">Percent offset of each BAO distance from the ΛCDM fit. Negative means the ruler looks bigger, so distances are shorter. Near z ≈ 0.7 DESI runs short (FLAG-1's direction) while SDSS runs long.</p>
+  </section>
+
+  <section id="dh" class="zm-sec">
+    <h2>Depth D_H (expansion rate): data and FLAG-1, relative to ΛCDM</h2>
+    <div class="zm-chart" data-draw="dhchart" data-source="bao curves"></div>
+    <p class="zm-note">D_H = c/H. Negative means faster expansion at that time. Both surveys see it a little fast at z ≈ 0.5–0.7. SDSS DR12 reports H; its offset is shown with the sign flipped to match D_H.</p>
+  </section>
+
+  <section id="growth" class="zm-sec">
+    <h2>Growth of structure fσ8</h2>
+    <div class="zm-legend"><span><i class="zm-key" data-c="2"></i>FLAG-1</span><span><i class="zm-key" style="background:var(--cds-chart-muted)"></i>ΛCDM</span><span><i class="zm-dot" data-c="0"></i>DESI DR1 full-shape</span></div>
+    <div class="zm-chart" data-draw="fschart" data-source="curves fs8"></div>
+    <p class="zm-note">Curves are fσ8 from each fit. DESI's points are its ShapeFit values; the like-for-like model predictions at each tracer (self-check V3) are in the tooltip. Both models fit (χ² ≈ 5 for 6 points).</p>
+  </section>
+
+  <section id="eg" class="zm-sec">
+    <h2>E_G: lensing compared with galaxy motion (the fifth-force probe)</h2>
+    <div class="zm-legend"><span><i class="zm-key" data-c="2"></i>FLAG-1 (frozen forecast)</span><span><i class="zm-key" style="background:var(--cds-chart-muted)"></i>ΛCDM</span><span><i class="zm-dot" data-c="0"></i>ACT DR6 × BOSS</span></div>
+    <div class="zm-chart" data-draw="egchart" data-source="curves eg"></div>
+    <p class="zm-note">FLAG-1's dark-matter fifth force puts E_G about 3–5% above ΛCDM. Today's errors are about 17%; about 2.4% is needed to tell them apart. The FLAG-1 curve is locked as a forecast.</p>
+  </section>
+
+  <section id="beta" class="zm-sec">
+    <h2>The coupling β across cosmic time</h2>
+    <div class="zm-legend"><span><i class="zm-key" data-c="2"></i>FLAG-1, constant β</span><span><i class="zm-key" style="background:var(--cds-chart-grid);height:10px"></i>β(z) bins to be fitted</span></div>
+    <div class="zm-chart" data-draw="betachart" data-source="curves"></div>
+    <p class="zm-note">FLAG-1 uses one β for all time. The β(z) model lets β take its own value at z &lt; 0.5, 0.5–1 and 1–2. Its fit waits for its rule to be locked and for the M1 and M3 results; the bins fill in here when it runs.</p>
+  </section>
+
+  <details class="zm-more">
+    <summary>What the fits are, and the limits</summary>
+    <p>FLAG-1 is the coupled-dilaton Spiral Twist with κ = 1 (β ≈ 0.041), fitted to Planck + ACT DR6 + SPT-3G, DESI DR2 BAO, Pantheon+ and DES Y6 S8; ΛCDM is the matching fit. The DESI-versus-SDSS comparison here is an informal look against the ΛCDM fit that includes DESI; the locked comparison (MISSING-PIECE M3) uses a fit without any BAO. E_G assumes galaxies move with the dark matter. All numbers come from the attached files listed in Sources.</p>
+  </details>
+</div>
+
+<script>
+window.ZM = (function () {
+  const num = (v) => (v === null || v === undefined || v === '' ? NaN : +v);
+  const X = [0, 2.55];
+  function frame(el, h, yDomain, yLabel) {
+    el.replaceChildren();
+    const W = Math.max(300, el.clientWidth || 600);
+    const m = { t: 10, r: 14, b: 34, l: 52 };
+    const svg = d3.select(el).append('svg').attr('viewBox', `0 0 ${W} ${h}`).attr('role', 'img');
+    const x = d3.scaleLinear().domain(X).range([m.l, W - m.r]);
+    const y = d3.scaleLinear().domain(yDomain).nice().range([h - m.b, m.t]);
+    svg.append('g').attr('class', 'grid').attr('transform', `translate(${m.l},0)`)
+      .call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r)).tickFormat('')).call((g) => g.select('.domain').remove());
+    svg.append('g').attr('transform', `translate(0,${h - m.b})`).call(d3.axisBottom(x).ticks(W < 480 ? 5 : 10));
+    svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5));
+    svg.append('text').attr('class', 'ax-label').attr('x', W - m.r).attr('y', h - 4).attr('text-anchor', 'end').text('redshift z');
+    svg.append('text').attr('class', 'ax-label').attr('x', 4).attr('y', m.t + 2).attr('dy', '0.7em').text(yLabel);
+    const tip = d3.select(el).append('div').attr('class', 'zm-tip').style('display', 'none');
+    const show = (ev, html) => {
+      const r = el.getBoundingClientRect();
+      tip.style('display', null).selectAll('div').data(html).join('div').text((d) => d);
+      const tw = tip.node().offsetWidth;
+      let left = ev.clientX - r.left + 12; if (left + tw > r.width) left = Math.max(0, ev.clientX - r.left - tw - 12);
+      tip.style('left', left + 'px').style('top', Math.max(0, ev.clientY - r.top - 10) + 'px');
+    };
+    const hide = () => tip.style('display', 'none');
+    return { svg, x, y, W, h, m, show, hide };
+  }
+  function line(F, rows, key, color, dash) {
+    F.svg.append('path').datum(rows.filter((r) => isFinite(num(r[key]))))
+      .attr('fill', 'none').style('stroke', color).attr('stroke-width', 2).attr('stroke-dasharray', dash || null)
+      .attr('d', d3.line().x((r) => F.x(num(r.z))).y((r) => F.y(num(r[key]))));
+  }
+  function bad(el, sts) {
+    if (sts.some((s) => s === 'error' || s === 'declined')) { el.replaceChildren(); const d = document.createElement('div'); d.className = 'zm-fail'; d.textContent = 'Failed to load'; el.append(d); return true; }
+    if (sts.some((s) => s !== 'ok')) { el.textContent = '—'; return true; }
+    return false;
+  }
+  return { num, frame, line, bad };
+})();
+
+dash.onData(() => {
+  document.querySelectorAll('.zm-legend [data-c]').forEach((n) => { n.style.background = dash.colors[+n.dataset.c] || ''; });
+});
+
+dash.calc('gap07', {
+  inputs: ['bao'],
+  title: 'DESI minus SDSS, sideways distance near z ≈ 0.7',
+  description: 'DESI DR2 D_M offset at z = 0.706 minus SDSS DR16 LRG D_M offset at z = 0.698 (percent of ΛCDM), and that gap in combined standard deviations.',
+  fn: (baoPoints) => {
+    const pick = (set, z) => baoPoints.find((r) => r.dataset === set && Math.abs(+r.z - z) < 0.005 && r.quantity === 'DM');
+    const a = pick('DESI DR2', 0.706), b = pick('SDSS DR16 LRG', 0.698);
+    if (!a || !b) return [];
+    const gap = Math.abs(+a.resid_pct - +b.resid_pct), s = Math.hypot(+a.err_pct, +b.err_pct);
+    return [{ gap_pct: +gap.toFixed(1), sigma: +(gap / s).toFixed(1) }];
+  },
+});
+
+dash.draw('gap', (el) => { const g = dash.data('gap07'); el.textContent = g.status === 'ok' && g.data && g.data[0] ? g.data[0].gap_pct.toFixed(1) : '—'; });
+dash.draw('gapsig', (el) => { const g = dash.data('gap07'); el.textContent = g.status === 'ok' && g.data && g.data[0] ? g.data[0].sigma.toFixed(1) : '—'; });
+
+function baoChart(el, q, label) {
+  const B = dash.data('bao'), C = dash.data('curves');
+  if (ZM.bad(el, [B.status, C.status])) return;
+  const pts = B.data.filter((r) => r.quantity === q);
+  const ext = d3.extent(pts.flatMap((r) => [+r.resid_pct - +r.err_pct, +r.resid_pct + +r.err_pct]).concat([0]));
+  const F = ZM.frame(el, 260, [Math.min(ext[0], -1), Math.max(ext[1], 1)], label);
+  F.svg.attr('aria-label', `${label}: DESI and SDSS offsets from ΛCDM by redshift, with the FLAG-1 curve`);
+  F.svg.append('line').attr('class', 'zero').attr('x1', F.x(0)).attr('x2', F.x(2.55)).attr('y1', F.y(0)).attr('y2', F.y(0));
+  ZM.line(F, C.data, q === 'DM' ? 'dm_flag1_vs_lcdm_pct' : 'dh_flag1_vs_lcdm_pct', dash.colors[2]);
+  const col = (r) => (r.survey === 'DESI DR2' ? dash.colors[0] : dash.colors[1]);
+  const off = (r) => (r.survey === 'DESI DR2' ? -0.008 : 0.008);
+  const g = F.svg.append('g').selectAll('g').data(pts).join('g');
+  g.append('line').attr('x1', (r) => F.x(+r.z + off(r))).attr('x2', (r) => F.x(+r.z + off(r)))
+    .attr('y1', (r) => F.y(+r.resid_pct - +r.err_pct)).attr('y2', (r) => F.y(+r.resid_pct + +r.err_pct)).style('stroke', col).attr('stroke-width', 1.5);
+  g.append('circle').attr('cx', (r) => F.x(+r.z + off(r))).attr('cy', (r) => F.y(+r.resid_pct)).attr('r', 4.5).style('fill', col)
+    .style('stroke', 'var(--color-bg)').attr('stroke-width', 1.5)
+    .on('pointerenter pointermove', (ev, r) => {
+      const cz = C.data.reduce((a, b) => (Math.abs(+b.z - +r.z) < Math.abs(+a.z - +r.z) ? b : a));
+      const fl = q === 'DM' ? cz.dm_flag1_vs_lcdm_pct : cz.dh_flag1_vs_lcdm_pct;
+      F.show(ev, [`${r.dataset}, z = ${(+r.z).toFixed(3)}`, `${q}: ${(+r.resid_pct >= 0 ? '+' : '')}${(+r.resid_pct).toFixed(2)}% ± ${(+r.err_pct).toFixed(2)}%`, `FLAG-1 near here: ${(+fl >= 0 ? '+' : '')}${(+fl).toFixed(2)}%`]);
+    }).on('pointerleave', F.hide);
+}
+dash.draw('dmchart', (el) => baoChart(el, 'DM', 'D_M offset from ΛCDM (%)'));
+dash.draw('dhchart', (el) => baoChart(el, 'DH', 'D_H offset from ΛCDM (%)'));
+
+dash.draw('fschart', (el) => {
+  const C = dash.data('curves'), P = dash.data('fs8');
+  if (ZM.bad(el, [C.status, P.status])) return;
+  const vals = C.data.flatMap((r) => [+r.fs8_lcdm, +r.fs8_flag1]).concat(P.data.flatMap((r) => [+r.fs8 - +r.err, +r.fs8 + +r.err]));
+  const F = ZM.frame(el, 240, d3.extent(vals), 'fσ8');
+  F.svg.attr('aria-label', 'Growth rate fσ8 by redshift for FLAG-1 and ΛCDM, with DESI DR1 full-shape points');
+  ZM.line(F, C.data, 'fs8_lcdm', 'var(--cds-chart-muted)', '5 4');
+  ZM.line(F, C.data, 'fs8_flag1', dash.colors[2]);
+  const g = F.svg.append('g').selectAll('g').data(P.data).join('g');
+  g.append('line').attr('x1', (r) => F.x(+r.z)).attr('x2', (r) => F.x(+r.z)).attr('y1', (r) => F.y(+r.fs8 - +r.err)).attr('y2', (r) => F.y(+r.fs8 + +r.err)).style('stroke', dash.colors[0]).attr('stroke-width', 1.5);
+  g.append('circle').attr('cx', (r) => F.x(+r.z)).attr('cy', (r) => F.y(+r.fs8)).attr('r', 4.5).style('fill', dash.colors[0]).style('stroke', 'var(--color-bg)').attr('stroke-width', 1.5)
+    .on('pointerenter pointermove', (ev, r) => F.show(ev, [`DESI DR1 ${r.tracer}, z = ${r.z}`, `fσ8 ${(+r.fs8).toFixed(3)} ± ${(+r.err).toFixed(3)}`, `FLAG-1 predicts ${(+r.flag1_pred).toFixed(3)}`, `ΛCDM predicts ${(+r.lcdm_pred).toFixed(3)}`]))
+    .on('pointerleave', F.hide);
+});
+
+dash.draw('egchart', (el) => {
+  const C = dash.data('curves'), P = dash.data('eg');
+  if (ZM.bad(el, [C.status, P.status])) return;
+  const vals = C.data.flatMap((r) => [+r.eg_lcdm, +r.eg_flag1]).concat(P.data.flatMap((r) => [+r.eg - +r.err_lo, +r.eg + +r.err_up]));
+  const F = ZM.frame(el, 240, d3.extent(vals), 'E_G');
+  F.svg.attr('aria-label', 'E_G by redshift: the FLAG-1 forecast, ΛCDM, and the ACT DR6 times BOSS measurements');
+  ZM.line(F, C.data, 'eg_lcdm', 'var(--cds-chart-muted)', '5 4');
+  ZM.line(F, C.data, 'eg_flag1', dash.colors[2]);
+  const g = F.svg.append('g').selectAll('g').data(P.data).join('g');
+  g.append('line').attr('x1', (r) => F.x(+r.z)).attr('x2', (r) => F.x(+r.z)).attr('y1', (r) => F.y(+r.eg - +r.err_lo)).attr('y2', (r) => F.y(+r.eg + +r.err_up)).style('stroke', dash.colors[0]).attr('stroke-width', 1.5);
+  g.append('circle').attr('cx', (r) => F.x(+r.z)).attr('cy', (r) => F.y(+r.eg)).attr('r', 4.5).style('fill', dash.colors[0]).style('stroke', 'var(--color-bg)').attr('stroke-width', 1.5)
+    .on('pointerenter pointermove', (ev, r) => {
+      const cz = C.data.reduce((a, b) => (Math.abs(+b.z - +r.z) < Math.abs(+a.z - +r.z) ? b : a));
+      F.show(ev, [`${r.label}, z = ${r.z}`, `E_G ${(+r.eg).toFixed(2)} (+${r.err_up} / −${r.err_lo})`, `FLAG-1 ${(+cz.eg_flag1).toFixed(3)} · ΛCDM ${(+cz.eg_lcdm).toFixed(3)} (z ${cz.z})`]);
+    }).on('pointerleave', F.hide);
+});
+
+dash.draw('betachart', (el) => {
+  const C = dash.data('curves');
+  if (ZM.bad(el, [C.status])) return;
+  const F = ZM.frame(el, 200, [-0.02, 0.08], 'coupling β');
+  F.svg.attr('aria-label', 'Coupling beta by redshift: FLAG-1 constant value, with the three redshift bins the time-varying model will fit');
+  [[0, 0.5], [0.5, 1], [1, 2]].forEach(([a, b], i) => {
+    F.svg.append('rect').attr('x', F.x(a) + 1).attr('width', F.x(b) - F.x(a) - 2).attr('y', F.y(0.08)).attr('height', F.y(-0.02) - F.y(0.08))
+      .style('fill', 'var(--cds-chart-grid)').attr('opacity', 0.5);
+    F.svg.append('text').attr('class', 'ax-label').attr('x', (F.x(a) + F.x(b)) / 2).attr('y', F.y(-0.012)).attr('text-anchor', 'middle').text(`β${i + 1}`);
+  });
+  F.svg.append('line').attr('class', 'zero').attr('x1', F.x(0)).attr('x2', F.x(2.55)).attr('y1', F.y(0)).attr('y2', F.y(0));
+  ZM.line(F, C.data, 'beta_flag1', dash.colors[2]);
+  const b = +C.data[0].beta_flag1;
+  F.svg.append('rect').attr('x', F.x(0)).attr('width', F.x(2.55) - F.x(0)).attr('y', F.y(b) - 8).attr('height', 16).style('fill', 'transparent')
+    .on('pointerenter pointermove', (ev) => F.show(ev, [`FLAG-1 constant β = ${b.toFixed(4)}`, 'β(z) bins: not yet fitted'])).on('pointerleave', F.hide);
+});
+</script>
