@@ -1,0 +1,224 @@
+{
+ "rule": "PREREG_MISSING_PIECE.md M3",
+ "reference": "DESI-HOLDOUT LCDM (no BAO)",
+ "gate": {
+  "chi2_DESI_LCDM_here": 17.753,
+  "testA_cobaya": 17.752896571115013,
+  "pass": true
+ },
+ "residuals": {
+  "DESI DR2": [
+   {
+    "z": 0.295,
+    "q": "DV_over_rs",
+    "frac_resid": -0.00667,
+    "err": 0.00952,
+    "flag1_frac": -0.02675
+   },
+   {
+    "z": 0.51,
+    "q": "DM_over_rs",
+    "frac_resid": 0.01374,
+    "err": 0.01256,
+    "flag1_frac": -0.02665
+   },
+   {
+    "z": 0.51,
+    "q": "DH_over_rs",
+    "frac_resid": -0.03425,
+    "err": 0.01894,
+    "flag1_frac": -0.02711
+   },
+   {
+    "z": 0.706,
+    "q": "DM_over_rs",
+    "frac_resid": -0.0135,
+    "err": 0.01023,
+    "flag1_frac": -0.0261
+   },
+   {
+    "z": 0.706,
+    "q": "DH_over_rs",
+    "frac_resid": -0.03256,
+    "err": 0.0166,
+    "flag1_frac": -0.02125
+   },
+   {
+    "z": 0.934,
+    "q": "DM_over_rs",
+    "frac_resid": -0.01358,
+    "err": 0.0074,
+    "flag1_frac": -0.02445
+   },
+   {
+    "z": 0.934,
+    "q": "DH_over_rs",
+    "frac_resid": 0.00571,
+    "err": 0.01146,
+    "flag1_frac": -0.01395
+   },
+   {
+    "z": 1.321,
+    "q": "DM_over_rs",
+    "frac_resid": -0.01267,
+    "err": 0.01161,
+    "flag1_frac": -0.02104
+   },
+   {
+    "z": 1.321,
+    "q": "DH_over_rs",
+    "frac_resid": 0.00794,
+    "err": 0.01597,
+    "flag1_frac": -0.00389
+   },
+   {
+    "z": 1.484,
+    "q": "DM_over_rs",
+    "frac_resid": 0.01203,
+    "err": 0.02533,
+    "flag1_frac": -0.01968
+   },
+   {
+    "z": 1.484,
+    "q": "DH_over_rs",
+    "frac_resid": -0.0053,
+    "err": 0.0402,
+    "flag1_frac": -0.00073
+   },
+   {
+    "z": 2.33,
+    "q": "DH_over_rs",
+    "frac_resid": 0.00013,
+    "err": 0.01171,
+    "flag1_frac": 0.00844
+   },
+   {
+    "z": 2.33,
+    "q": "DM_over_rs",
+    "frac_resid": -0.00197,
+    "err": 0.01361,
+    "flag1_frac": -0.01419
+   }
+  ],
+  "SDSS DR12": [
+   {
+    "z": 0.38,
+    "q": "DM_over_rs",
+    "frac_resid": -0.01056,
+    "err": 0.01635,
+    "flag1_frac": -0.02609
+   },
+   {
+    "z": 0.38,
+    "q": "bao_Hz_rs",
+    "frac_resid": -0.02103,
+    "err": 0.02855,
+    "flag1_frac": 0.03055
+   },
+   {
+    "z": 0.51,
+    "q": "DM_over_rs",
+    "frac_resid": -0.00279,
+    "err": 0.01519,
+    "flag1_frac": -0.02665
+   },
+   {
+    "z": 0.51,
+    "q": "bao_Hz_rs",
+    "frac_resid": 0.01442,
+    "err": 0.02599,
+    "flag1_frac": 0.02787
+   },
+   {
+    "z": 0.61,
+    "q": "DM_over_rs",
+    "frac_resid": 0.00055,
+    "err": 0.01608,
+    "flag1_frac": -0.02653
+   },
+   {
+    "z": 0.61,
+    "q": "bao_Hz_rs",
+    "frac_resid": 0.03974,
+    "err": 0.02629,
+    "flag1_frac": 0.02489
+   }
+  ],
+  "SDSS DR16 LRG": [
+   {
+    "z": 0.698,
+    "q": "DM_over_rs",
+    "frac_resid": 0.02475,
+    "err": 0.01883,
+    "flag1_frac": -0.02615
+   },
+   {
+    "z": 0.698,
+    "q": "DH_over_rs",
+    "frac_resid": -0.04364,
+    "err": 0.02636,
+    "flag1_frac": -0.02151
+   }
+  ],
+  "SDSS DR16 QSO": [
+   {
+    "z": 1.48,
+    "q": "DM_over_rs",
+    "frac_resid": 0.0196,
+    "err": 0.02652,
+    "flag1_frac": -0.01971
+   },
+   {
+    "z": 1.48,
+    "q": "DH_over_rs",
+    "frac_resid": 0.02698,
+    "err": 0.04275,
+    "flag1_frac": -0.0008
+   }
+  ]
+ },
+ "chi2_by_survey": {
+  "LCDM": {
+   "DESI DR2": 17.753,
+   "SDSS DR12": 3.852,
+   "SDSS DR16 LRG": 3.394,
+   "SDSS DR16 QSO": 0.686
+  },
+  "FLAG-1": {
+   "DESI DR2": 30.215,
+   "SDSS DR12": 9.65,
+   "SDSS DR16 LRG": 7.313,
+   "SDSS DR16 QSO": 2.203
+  }
+ },
+ "desi_minus_sdss": {
+  "pairs": [
+   "DESI DR2 z0.51 DM_over_rs vs SDSS DR12 z0.51 DM_over_rs",
+   "DESI DR2 z0.51 DH_over_rs vs SDSS DR12 z0.51 bao_Hz_rs",
+   "DESI DR2 z0.706 DM_over_rs vs SDSS DR16 LRG z0.698 DM_over_rs",
+   "DESI DR2 z0.706 DH_over_rs vs SDSS DR16 LRG z0.698 DH_over_rs",
+   "DESI DR2 z1.484 DM_over_rs vs SDSS DR16 QSO z1.48 DM_over_rs",
+   "DESI DR2 z1.484 DH_over_rs vs SDSS DR16 QSO z1.48 DH_over_rs"
+  ],
+  "diff": [
+   0.01654,
+   -0.01983,
+   -0.03825,
+   0.01108,
+   -0.00757,
+   -0.03228
+  ],
+  "err": [
+   0.01971,
+   0.03216,
+   0.02143,
+   0.03116,
+   0.03667,
+   0.05868
+  ],
+  "chi2": 4.404,
+  "dof": 6,
+  "p": 0.6221844297316301
+ },
+ "reading": "SURVEYS AGREE"
+}
