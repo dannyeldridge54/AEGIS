@@ -50,3 +50,14 @@ F_twist = (4 / math.pi) * math.sqrt(1.5) * MP
 print(f"D1: field travel after T_F: {dphi:.1e} GeV = {dphi / MP:.1e} M_P = {dphi / F_twist:.1e} rad of the Twist angle")
 for TRH in (1e14, 1e15):
     print(f"D1: if rolling freely since T_RH = {TRH:.0e} GeV: travel ~ {dphi * TRH / T_eq / MP:.1e} M_P")
+
+# ---- Development 3 (12 Nov): the gravitino (K3) ----
+# Thermal gravitino yield, Pradler & Steffen style fit as quoted in arXiv:0804.3745 (valid 1e5-1e12 GeV; extrapolated):
+def Y32(TR):
+    t = TR / 1e8; L = math.log(t)
+    return 2.3e-14 * t * (1 + 0.015 * L - 0.0009 * L * L)      # transverse part; longitudinal part adds for light m_3/2
+TR = T_eq
+print(f"D3: gravitino yield at T_RH = {TR:.0e} GeV: Y ~ {Y32(TR):.1e} (lower bound; extrapolated past 1e12 GeV)")
+# each decaying gravitino leaves one lightest superpartner (if R-parity holds): Omega h^2 ~ 2.7e8 (m/GeV) Y
+mmax = 0.12 / (2.7e8 * Y32(TR))
+print(f"D3: a stable lightest superpartner from those decays must be lighter than ~{mmax:.2f} GeV to not overfill dark matter")
