@@ -1,0 +1,143 @@
+{
+ "rule": "PREREG_MISSING_PIECE.md M2",
+ "data": "Wenzl et al. 2024 arXiv:2405.12795, ACT-only rows",
+ "sets": {
+  "Pantheon+": {
+   "FLAG-1": {
+    "fit": "ax_spa_spiraltwist_kappa1_nlfix_s8y6",
+    "E_G": {
+     "z0.555": {
+      "E_G": 0.41093,
+      "Omega_m_eff": 0.30921,
+      "f": 0.75245
+     },
+     "z0.316": {
+      "E_G": 0.46416,
+      "Omega_m_eff": 0.30974,
+      "f": 0.6673
+     }
+    },
+    "chi2_EG": 2.817
+   },
+   "LCDM": {
+    "fit": "ax_spa_lcdm_halofit_s8y6",
+    "E_G": {
+     "z0.555": {
+      "E_G": 0.39219,
+      "Omega_m_eff": 0.30083,
+      "f": 0.76706,
+      "f_class": 0.7666
+     },
+     "z0.316": {
+      "E_G": 0.44324,
+      "Omega_m_eff": 0.30083,
+      "f": 0.67872,
+      "f_class": 0.67827
+     }
+    },
+    "chi2_EG": 2.0076
+   },
+   "delta_EG": 0.8094,
+   "frac_diff": {
+    "z0.555": 0.04779,
+    "z0.316": 0.04721
+   },
+   "sigma_needed_2sig_frac": {
+    "z0.555": 0.0239,
+    "z0.316": 0.0236
+   }
+  },
+  "Dovekie": {
+   "FLAG-1": {
+    "fit": "ax_spa_spiraltwist_kappa1_dovekie_nlfix_s8y6",
+    "E_G": {
+     "z0.555": {
+      "E_G": 0.40905,
+      "Omega_m_eff": 0.30733,
+      "f": 0.75134
+     },
+     "z0.316": {
+      "E_G": 0.46245,
+      "Omega_m_eff": 0.3079,
+      "f": 0.66581
+     }
+    },
+    "chi2_EG": 2.7222
+   },
+   "LCDM": {
+    "fit": "ax_spa_lcdm_halofit_dovekie_s8y6",
+    "E_G": {
+     "z0.555": {
+      "E_G": 0.39207,
+      "Omega_m_eff": 0.30071,
+      "f": 0.76696,
+      "f_class": 0.7665
+     },
+     "z0.316": {
+      "E_G": 0.44313,
+      "Omega_m_eff": 0.30071,
+      "f": 0.6786,
+      "f_class": 0.67815
+     }
+    },
+    "chi2_EG": 2.0032
+   },
+   "delta_EG": 0.719,
+   "frac_diff": {
+    "z0.555": 0.0433,
+    "z0.316": 0.0436
+   },
+   "sigma_needed_2sig_frac": {
+    "z0.555": 0.02165,
+    "z0.316": 0.0218
+   }
+  },
+  "Union3": {
+   "FLAG-1": {
+    "fit": "ax_spa_spiraltwist_kappa1_union3_nlfix_s8y6",
+    "E_G": {
+     "z0.555": {
+      "E_G": 0.41205,
+      "Omega_m_eff": 0.31028,
+      "f": 0.75301
+     },
+     "z0.316": {
+      "E_G": 0.46517,
+      "Omega_m_eff": 0.31078,
+      "f": 0.6681
+     }
+    },
+    "chi2_EG": 2.8746
+   },
+   "LCDM": {
+    "fit": "ax_spa_lcdm_halofit_union3_s8y6",
+    "E_G": {
+     "z0.555": {
+      "E_G": 0.39182,
+      "Omega_m_eff": 0.30043,
+      "f": 0.76675,
+      "f_class": 0.76629
+     },
+     "z0.316": {
+      "E_G": 0.44288,
+      "Omega_m_eff": 0.30043,
+      "f": 0.67835,
+      "f_class": 0.6779
+     }
+    },
+    "chi2_EG": 1.9937
+   },
+   "delta_EG": 0.8809,
+   "frac_diff": {
+    "z0.555": 0.05165,
+    "z0.316": 0.05032
+   },
+   "sigma_needed_2sig_frac": {
+    "z0.555": 0.02582,
+    "z0.316": 0.02516
+   }
+  }
+ },
+ "gate_f_vs_class_1pct": true,
+ "reading": "NO DISCRIMINATION"
+}
