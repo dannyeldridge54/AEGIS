@@ -37,13 +37,9 @@ def gate(which):
     E, info, m = setup(which)
     info.pop("sampler", None); info.pop("output", None)
     model = get_model(info)
-    def start(p):
-        if p in m:
-            return float(m[p])
-        d = info["params"].get(p) or {}                     # a PR4 nuisance parameter: its own reference value
-        r = d.get("ref", {}) if isinstance(d, dict) else {}
-        return float(r.get("loc", r) if isinstance(r, dict) else r) if r != {} else float(d.get("prior", {}).get("loc", 0.0))
-    point = {p: start(p) for p in model.parameterization.sampled_params()}
+    names = list(model.parameterization.sampled_params())
+    point = dict(zip(names, map(float, model.prior.reference())))   # PR4 nuisance parameters: their own reference values
+    point.update({p: float(m[p]) for p in names if p in m})          # everything else: the stored fit-C minimum
     parts = {k: -2 * float(v) for k, v in model.loglikes(point, as_dict=True)[0].items()}
     ok = all(math.isfinite(v) for v in parts.values())
     out = {"which": which, "parts": parts, "pass": ok}
