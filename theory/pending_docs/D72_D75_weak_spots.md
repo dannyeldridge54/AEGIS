@@ -1686,3 +1686,20 @@ SU(8)×SU(9) is dropped in favour of a single pure-E₈ condensate.
 **Conditions/costs:** no other condensate with b_a ≠ b may be significant (it would pin T at the self-dual point); the cosmological constant
 is tuned to zero (as in BGW); supersymmetry is broken by the E₈ condensate at a high scale (no TeV SUSY implied); BGW assume full SL(2,Z)
 — the Γ₀(9) version (D194) and the coupling of BGW's sector to the Twist's helper field are not checked. D193 is superseded.
+
+**D201 — coupling the BGW hidden sector to the Twist (reasoned; tree level exact, loops estimated).** Set-up: K = k(ℓ) − 3 ln(u − gE SS̄ +
+ζE²(SS̄)²), W = W_hid + √3 m S T, with the BGW condition b_a = b so F^T = 0 and V_hid = 0 (tuned) for every T (D200).
+(i) **Tree level, S = 0:** D_T W = D_T W_hid = 0 and D_S W = √3 m T + K_S W_hid = √3 m T (K_S = 0 at S = 0), and the hidden F-terms cancel
+against −3|W_hid|² by the tuning. So V(T) is EXACTLY the Twist's (the overall e^{k(ℓ)} is a constant once ℓ is fixed, absorbed in m).
+(ii) **Soft mass of the helper S:** K is separable between ℓ and (T, S), so R_{ℓℓ̄SS̄} = 0 and with V₀ = 0, F^T = 0 the canonical soft mass is
+m_3/2² — independent of T. (In canonical S the ζ-term's E-dependence also cancels: ζE²|S|⁴/u → ζu|S_c|⁴/(9g²).)
+(iii) **One loop:** S's bosons have m² = m_s(u)² + m_3/2², its fermion m_s(u)²; STr M⁴ ⊃ 4 m_s(u)² m_3/2², the only T-dependent piece. Today
+m_s ~ 10–300 H₀ (S is heavy only relative to H, D159/D197), so V_1-loop(T) ~ m_s² m_3/2²/(16π²) ≲ V_DE requires m_3/2 ≲ 0.1 M_P — no constraint
+in practice. The cosmological constant itself is still tuned (as in any quintessence model).
+(iv) **Inflation:** the Twist's energy multiplies e^{k(ℓ)} and pushes on ℓ; stability needs m_ℓ ≫ H_inf ≈ 1.5×10¹³ GeV. In BGW m_ℓ is a
+multiple of m_3/2, so m_3/2 must be ≳ 10¹²–10¹³ GeV — high-scale supersymmetry breaking, which a pure-E₈ condensate naturally gives (not
+computed here). (v) **Γ₀(9):** BGW's T-independence at b_a = b comes from the anomaly coefficients matching, not from the specific form of η;
+the same cancellation should hold with Γ₀(9) forms — argued, not shown.
+**Verdict:** the BGW sector and the Twist decouple at tree level and up to harmless loops; the conditions are b_a = b, V₀ tuned, and a high
+gravitino mass (≳ 10¹² GeV). The heterotic home now has a complete, consistent effective-theory chain except for n (chosen), n_s (data),
+and the Γ₀(9)-BGW check.
