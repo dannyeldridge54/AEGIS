@@ -1,0 +1,2 @@
+hidden SU(8) glueball ~1e+14 GeV: Planck-suppressed width 8.1e-22 GeV, lifetime 8.1e-04 s (BBN at ~1 s)
+SU(8) confinement scale from the kick height: ~7.7e+13 GeV

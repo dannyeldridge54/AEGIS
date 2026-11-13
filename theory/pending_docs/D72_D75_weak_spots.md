@@ -516,3 +516,15 @@ tests, and would very likely be excluded by the CMB and BAO on its own — not c
 couples the field to dark matter only). So the data results describe the Twist *with* a working shield. Stated plainly:
 PURE-TWIST's fits test the tail's shape; they do not test the unshielded theory, which is excluded by Cassini already.
 Label: consistency note; it belongs beside the main open problem in REVIEW_GUIDE.
+
+## Development 98 — the remaining observables, and a coverage table
+
+Scripts: theory/inflation/extra_observables.py; results/extra_observables.txt, hidden_glueballs.txt; table: theory/COVERAGE.md.
+Inflation at the Twist's own N* = 57.6: n_s 0.9654, running α_s = −6.0×10⁻⁴, r 0.0035, tensor tilt n_t = −4.4×10⁻⁴ (the
+single-field consistency relation n_t = −r/8 — a test for a future B-mode experiment), squeezed non-Gaussianity
+f_NL ≈ 0.014 (unobservably small, as for any single-field slow roll), inflation scale V^{1/4} ≈ 7.9×10¹⁵ GeV, H* ≈ 1.5×10¹³ GeV.
+Hidden SU(8): confines near 10¹⁴ GeV (from the kick height); its glueballs decay through Planck-suppressed operators in
+~10⁻³ s, before nucleosynthesis — no relic, no extra radiation. Nucleosynthesis: the field is frozen from kination until it
+thaws in the last few billion years, so constants at BBN equal today's (given a shield). Hubble constant: PURE-TWIST gives
+H₀ ≈ 66.8, so the Twist does not ease the SH0ES tension. Areas the Twist does not address: black holes, the Big Bang
+singularity, and LQG's quantum geometry itself. The full area-by-area table is theory/COVERAGE.md.
