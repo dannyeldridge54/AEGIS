@@ -25,6 +25,11 @@ doc, schoolbook, plan doc and paper, re-export the paper PDF to the PC (Desktop\
 Zenodo: may update the existing *draft* only if a signed-in session is already open; never types a password and
 never presses Publish (Danny's button). arXiv: prepare files only.
 
-## Still not allowed
-Editing any already-locked rule, prior or result; Zenodo or arXiv actions; merging into master;
-deleting on the PC; long PC commands; closing windows running fits.
+## Full authority (Danny, 2026-11-12 21:59 CT: "Full authority")
+Cadence every 30 minutes ("Have it check every 30 mins"). Danny's own earlier working limits are lifted for the
+run, including merging unify-bg into master on GitHub when a milestone is complete and all results are committed.
+
+## Still not allowed (integrity and safety, not Danny's choice to waive in advance)
+Editing any already-locked rule, prior or result (that would break the pre-registration itself); typing passwords;
+pressing Publish on Zenodo or submitting to arXiv (public, irreversible: Danny's button each time); permanent
+deletes on the PC (move to _to_delete/); closing windows running fits; touching the PC repo's git.
