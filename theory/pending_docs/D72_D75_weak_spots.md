@@ -1920,3 +1920,9 @@ supergravity check of TWIST-K with ζ = 3×10⁵: V along the path equals the Tw
 +4H² everywhere; m_S²/H² = 310 (CMB point), 2.4×10⁴ (cliff), 6×10⁵ (x = 1), 2.6×10⁴ (today); and at x = 5×10⁻⁷ m_S²/H² = −0.8, matching the formula
 −2 + 8ζx (edge x_b = 8.3×10⁻⁷) — a check of the D217 analysis. No observable changes (S = 0 along the path). Model card updated; the lumpy-start
 status becomes "robust by analogy, with 6.2 M_P of stable plateau beyond the CMB point".
+D218 correction — the gain is mostly cut off by the tower floor. D123 (volume-modulus assumption, winding modes m ~ M_P x for x < 1) puts the
+EFT's edge where the tower reaches H, at x ≈ 6×10⁻⁶ — HIGHER than the new tachyon edge (8.3×10⁻⁷). So the usable plateau beyond the CMB point is
+set by the tower, not by ζ: 3.8 M_P (tower = H) or 2.4 M_P (tower = 3H), versus 3.4 M_P with the old ζ. Raising ζ removes the S-tachyon as the
+binding limit (worth keeping: the potential and all predictions are unchanged) but gains only ~0.4 M_P; "6.2 M_P" in D218 and the model card
+is withdrawn. Lumpy-start status: "robust by analogy, ~2.5–3.8 M_P of plateau beyond the CMB point inside the EFT (tower-limited, under the
+volume-modulus assumption)".

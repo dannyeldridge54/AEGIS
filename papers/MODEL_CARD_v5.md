@@ -25,7 +25,7 @@ which no known string setting provides together with a neutral Standard Model (D
 | m (inflaton mass) | 2.1×10⁻⁵ M_P | fixed by A_s; **related** to a gauge coupling (e^{−b(f₀−κ)}, α₂ ≈ 0.005–0.03), at the cost of a ~7% cancellation between b f₀ ≈ 134 and n = 125 (D126, D136) |
 | π/4 in the cliff | |q| = e^{−πx/4} (worldsheet-instanton form; alternatively 2π/8 from SU(8)) | **assumed** (SU(8) condensate form; the SU(8) coupling is strong, g² ~ 10²–10⁴, through all of inflation, so the formula is outside control — D136) |
 | μ | 1 | chosen (constant term in S's metric, D127) |
-| ζ | 3×10⁵ (was 3×10⁴) | chosen; raised for lumpy-start robustness (D217–D218): S stable for x > 1/(4ζ) = 8×10⁻⁷, 6.2 M_P of plateau beyond the CMB point; re-run: V unchanged to 10 digits, angle +4H², m_S²/H² 310–6×10⁵ along the path; no prediction changes |
+| ζ | 3×10⁵ (was 3×10⁴) | chosen; raised for lumpy-start robustness (D217–D218): S stable for x > 1/(4ζ) = 8×10⁻⁷, so the binding limit on the plateau becomes the tower floor (D123, x ≈ 6×10⁻⁶): ~2.5–3.8 M_P beyond the CMB point (D218 correction); re-run: V unchanged to 10 digits, angle +4H², m_S²/H² 310–6×10⁵ along the path; no prediction changes |
 | m_σ (hidden axion) | ≈ 6×10¹⁰ GeV (refit) | chosen to fit the matter amount; confirmation run pending (D124) |
 | h, x₀ (χ mass) | h 0.2–1 M_P, x₀ 0.02–0.1 | chosen, matched to the 0.8% heat share (D118) |
 | Heat share | ≈ 0.65–0.8% | derived from χ's decay (D105, D118) |
