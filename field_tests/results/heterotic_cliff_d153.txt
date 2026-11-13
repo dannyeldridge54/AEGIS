@@ -1,0 +1,4 @@
+N2 2: n = 125 needs an N=2 beta coefficient b'_2 = -1571 (realistic |b'| ~ 1-30) -> n from thresholds ~ 2.39 at most
+N2 3: n = 125 needs an N=2 beta coefficient b'_2 = -2356 (realistic |b'| ~ 1-30) -> n from thresholds ~ 1.59 at most
+N2 8: n = 125 needs an N=2 beta coefficient b'_2 = -6283 (realistic |b'| ~ 1-30) -> n from thresholds ~ 0.60 at most
+the same threshold carries a linear term -(b'_2/4pi^2)(-pi T/12): e^{-b f_2} picks up e^{-(b b'_2/48 pi) T}, reshaping the tail unless cancelled

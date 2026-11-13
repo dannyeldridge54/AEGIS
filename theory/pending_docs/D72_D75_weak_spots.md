@@ -1177,3 +1177,14 @@ separately (standard but not shown here); (b) in heterotic language the hidden c
 e^{−πT/4} form is not yet reproduced (T-duality relates small and large x — the plateau sits at small x — worth checking);
 (c) higher-loop/α′ corrections to the Kähler potential still set the perturbative leak, which must fall as 1/x⁴ or faster (D142).
 Status: fifth force → "consistent EFT shield with a candidate heterotic Z₃ realization"; not a derivation.
+
+**D153 — the cliff in heterotic language: the exponent fits, the depth does not (results/heterotic_cliff_d153.txt).** With
+T = 8 T_het (the Kähler potential keeps the same rung), the cliff's factor e^{−πT/4} is exactly e^{−2πT_het} = q, the modular nome
+that runs every heterotic worldsheet-instanton and threshold effect — so the "SU(8)" exponent has a second, natural origin. The
+κq term of D119 then arises from N = 2 threshold corrections, f₂ ⊃ −(b′₂/4π²) ln η(T_het) ⊃ (b′₂/4π²) q, giving n = −b′₂/(2πN₂).
+But n = 125 would need |b′₂| ≈ 1600–6300; real beta coefficients are O(1–30), so thresholds give n ≲ 2. Two further problems:
+N = 2 sectors are exactly what Z₃ lacks (D152 used that to protect the SM), and the same threshold carries a term linear in T that
+reshapes the tail unless cancelled. Status: the exponent π/4 has a natural heterotic meaning (q of the modular group); the cliff
+depth n ≈ 125 cannot come from thresholds and stays chosen; a consistent orbifold (N = 2 sector seen by the hidden group only) is
+not found. Plateau note: the inflation region x ~ 10⁻⁴ is T_het ~ 10⁻⁵, the T-dual of a very large radius — the plateau may be
+better described in the dual frame (not pursued).
