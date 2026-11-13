@@ -1,0 +1,9 @@
+triples of 7 units: 35; on a Fano line (closed: 1, e_a, e_b, e_c span a copy of the quaternions): 7; triangles (not closed): 28
+lines: [(1, 2, 4), (1, 3, 7), (1, 5, 6), (2, 3, 5), (2, 6, 7), (3, 4, 6), (4, 5, 7)]
+rung 3alpha = 1:  7 ways to choose the disks; closed under multiplication: 7
+rung 3alpha = 2: 21 ways to choose the disks; closed under multiplication: 0
+rung 3alpha = 3: 35 ways to choose the disks; closed under multiplication: 7
+rung 3alpha = 4: 35 ways to choose the disks; closed under multiplication: 0
+rung 3alpha = 5: 21 ways to choose the disks; closed under multiplication: 0
+rung 3alpha = 6:  7 ways to choose the disks; closed under multiplication: 0
+rung 3alpha = 7:  1 ways to choose the disks; closed under multiplication: 1

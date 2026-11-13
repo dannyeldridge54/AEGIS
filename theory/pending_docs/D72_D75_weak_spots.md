@@ -1401,3 +1401,17 @@ stays frozen at its post-kick value (0.5–0.9 rad) until long after the QCD tra
    primordial black holes of interest.
 4. **TWIST-L is quantum-stable**: S and graviton loops shift V by 10⁻¹² to 4×10⁻¹¹ of itself; the two-loop correction to the running
    coupling behind the log factor changes the effective b by ~10%, which moves the prediction along the locked n_s–r curve, not off it.
+
+## Development 175 — rung 3 is the QUATERNION rung (theory/geometry/fano_rung3_d175.py; results/fano_rung3_d175.txt)
+Literature check first (correction to D138): the seven-disk papers (arXiv:1610.04163, 1704.04829) identify disks by hand
+(T₁ = … = T_k) and do not use the Fano plane; the octonion link is elsewhere — Duff & Ferrara (hep-th/0610314, 0704.0507): N = 8
+black-hole entropy is Cartan's E₇ invariant, E₇ ⊃ SL(2)⁷ gives seven qubits, and the seven tripartite (three-qubit, STU-type)
+pieces are exactly the seven lines of the Fano plane, which is the octonions' multiplication table.
+Computation: of the 35 ways to identify three of seven disks, exactly 7 lie on a Fano line, and those are exactly the triples that
+close under octonion multiplication — {1, e_a, e_b, e_c} is then a copy of the quaternions. Doing the same for every rung: closed
+choices exist only for 3α = 1 (7 ways: one unit, a copy of the complex numbers), 3α = 3 (7 ways: the quaternions) and 3α = 7 (1 way:
+the octonions); rungs 2, 4, 5, 6 have none. So the rungs that respect the algebra are exactly the normed division algebras C, H, O
+(imaginary dimensions 1, 3, 7 — Hurwitz's theorem), and **the Twist's rung 3 is the quaternionic one**: the Twist's single field is
+the diagonal of an STU triple sitting on one Fano line. Hypothesis (not derived): if consistent truncations must close under the
+octonion product, only rungs 1, 3, 7 occur — r ≈ 0.0012, 0.0036, 0.0084 at N ≈ 57 and dark energy w0 ≈ −0.68, −0.90, −0.96.
+That is a sharp, falsifiable selection rule; locked as PREREG_DIVISION_RUNGS.
