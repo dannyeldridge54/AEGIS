@@ -1336,3 +1336,10 @@ string mechanism must make the hierarchy's exponent itself grow as (1 − e^{−
 8πK/(3g_sM) must turn on with T (for example, if the effective g_s or flux charge depends on T through a factor 1 − |q|). With that
 form, obstacle (ii) of D166 disappears (the tail's leftover dies as e^{−πx/4}, as required). Status: n's origin narrowed to
 "an exponent proportional to (1 − |q|) with coefficient 2n ≈ 250 = 8πK/(3g_sM)"; what makes the exponent switch on is open.
+
+## Development 168 — base physics: the full late-universe prediction set (theory/observables/; locked PREREG_GROWTH)
+From the rung-3 tail alone (no string input): w(z) = −0.899 (z = 0), −0.949 (0.5), −0.974 (1), −0.996 (3). At the same Ω_m and H₀ as
+ΛCDM: H(z)/H_ΛCDM peaks at +1.9% (z ≈ 0.5); D_M is 1.4–1.5% short at z ≈ 0.7–1; σ8 is 1.5% lower today (the S8 tension goes the
+Twist's way, modestly); f σ8 is 3.2% lower at z = 0.3–0.5, fading to 0.4% by z = 3; the growth index stays GR-like (0.557 → 0.548,
+within 0.003 of ΛCDM) because the field neither clusters nor couples to matter. These are the numbers DESI DR3 full-shape, Euclid and
+Rubin will measure; locked as PREREG_GROWTH (a γ deviation > 0.05 or an f σ8 excess at z = 0.3–0.7 at > 3σ disfavours the Twist).
