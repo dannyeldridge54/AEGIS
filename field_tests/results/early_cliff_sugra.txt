@@ -1,0 +1,12 @@
+Inflation can end on the cliff only if n > 2 sqrt(2)/c = 3.464
+n   125, m2   1.0: N* 55.71, n_s 0.96415, r 0.00376, x_end/m2 7.04e-03
+n   125, m2 100.0: N* 55.71, n_s 0.96415, r 0.00376, x_end/m2 7.04e-03
+n    10, m2   1.0: N* 55.76, n_s 0.96387, r 0.00383, x_end/m2 1.07e-01
+n     6, m2   1.0: N* 55.81, n_s 0.96363, r 0.0039, x_end/m2 2.14e-01
+n   4.5, m2   1.0: N* 55.87, n_s 0.96339, r 0.00396, x_end/m2 3.52e-01
+n   4.0, m2   1.0: N* 55.92, n_s 0.96324, r 0.004, x_end/m2 4.64e-01
+n   3.7, m2   1.0: N* 55.98, n_s 0.9631, r 0.00403, x_end/m2 5.98e-01
+n  3.55, m2   1.0: N* 56.04, n_s 0.96301, r 0.00406, x_end/m2 7.33e-01
+n   3.5, m2   1.0: N* 56.08, n_s 0.96296, r 0.00407, x_end/m2 8.22e-01
+n  3.47, m2   1.0: N* 56.12, n_s 0.96291, r 0.00408, x_end/m2 9.22e-01
+n   3.0, m2   1.0: inflation never ends on the cliff (slope stays below sqrt 2)
