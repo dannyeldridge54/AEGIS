@@ -1851,3 +1851,13 @@ violation; (iii) caveats: TCC is a conjecture; the bound is asymptotic and the T
 (negligible today). This is a genuine structural plus: the "rung 3" that the cosmology picked is exactly where quantum-gravity
 consistency (as conjectured) puts its edge. It also matches the observation that no-scale (K = −3 ln) exponentials saturate TCC, which
 is known in the swampland literature — so this is a recognition, not a discovery.
+
+**D213 — the same conjecture cuts the other way for inflation (honesty check on D212).** Bedroya–Brandenberger–Loverde–Vafa (1909.11106)
+apply TCC to inflation: "the energy scale of inflation has to be lower than 10⁹ GeV" and ε < 10⁻³¹, i.e. negligible r. The Twist's inflation has
+V^{1/4} ≈ 7.9×10¹⁵ GeV (r = 0.0036) — 8×10⁶ over that bound — and ε = 2×10⁻⁴. So TCC, taken at face value, EXCLUDES the Twist's inflation
+(as it excludes every standard high-scale plateau model, Starobinsky included), while its asymptotic-slope form (D212) singles out the
+Twist's dark-energy tail. One cannot use TCC selectively: either (a) TCC holds in its strong form, and the Twist's inflation sector — like
+all detectable-r inflation — is ruled out, with r ≈ 0.0036 detection by LiteBIRD/CMB-S4 then falsifying TCC itself; or (b) TCC is too strong
+(several papers argue the inflation bound can be relaxed, e.g. 2001.00040), and D212 is only a suggestive coincidence. Recorded framing:
+D212 is a consistency observation, NOT support; the r measurement will test the Twist and the strong TCC against each other — a sharp,
+two-sided outcome worth stating in the paper.
