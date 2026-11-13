@@ -24,3 +24,6 @@ Danny: "Fix". Speed measurement (measure_speeds) re-evaluates every likelihood c
 per CLASS call under heavy PC load this can take hours. Turned off (Cobaya then uses default speed ordering). Empty output (85-byte
 .progress, no chain files) moved to _to_delete/spa_chain_D3/; both chains restarted fresh. Sampler efficiency only; likelihoods, priors,
 data and the stopping rule unchanged.
+D3 add (17:12): still no first evaluation after 6 min, while the same evaluation took 24 s in the diagnostic. The difference: the chains run
+at "nice -n 5" (low priority) and the PC's cores are taken by the FLAG-1 chains and matter checks at normal priority, so the chains were
+starved of CPU — the likely cause of the 2-hour stall too. Removed the nice; restarted fresh (still no samples existed).
