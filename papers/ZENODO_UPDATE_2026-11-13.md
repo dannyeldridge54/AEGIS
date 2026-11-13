@@ -28,3 +28,5 @@ https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md).
   18 pages; also in papers/release_twist/). Note: the 10:41 copy to the PC desktop silently kept the 09:45 file; fixed 10:44
   (desktop file now matches the md5 above).
 - Not done: the v4 status notice (editing a published record means publishing the edit — Danny's call).
+- 10:49: status notice added to the top of the v4 description and saved as a draft edit (the public record is unchanged until
+  Danny presses Publish on https://zenodo.org/uploads/24140195).
