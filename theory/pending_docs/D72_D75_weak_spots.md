@@ -1956,3 +1956,7 @@ anomalous dimension, so the needed effect is naturally loop-sized; (ii) the sign
 TWIST-L's curve (TWIST-L: n_s 0.9735 at r 0.0073; TWIST-G−: 0.974 at r 0.0068), so future data will hardly separate those two, but both
 separate from TWIST-P (higher r) and TWIST-M9 (lower n_s). Not done: a full two-field supergravity check of W ∝ T^{1+γ} (branch cut on the
 negative real axis, irrelevant for Re T > 0) and a derivation of γ from a specific loop.
+**D221 — TWIST-G− passes the full two-field supergravity check (theory/kahler_cliff/twistgn_sugra_d221.py; results/twistgn_sugra_d221.txt).**
+γ = −0.0085, ζ = 3×10⁵: V/V_Twist = x^{2γ} exactly as intended (1.164 at the CMB point, 1.081 at the cliff, 1 at x = 1, 0.927 today — the
+tilt and nothing else); m_S²/H² unchanged (310, 2.4×10⁴, 6×10⁵, 2.6×10⁴); the angle's mass is +3.966 H² everywhere (vs +4 at γ = 0) — stable.
+So TWIST-G− is a consistent supergravity model; what is missing is a derivation of γ ≈ −0.0085 from a specific loop.
