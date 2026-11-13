@@ -1,0 +1,9 @@
+r 0.0034: Omega_GW h^2 at LISA (0.001 Hz) ~ 3.9e-18
+r 0.0034: Omega_GW h^2 at DECIGO/BBO (0.1 Hz) ~ 3.9e-18
+r 0.0034: Omega_GW h^2 at LIGO/ET (100 Hz) ~ 3.9e-18
+r 0.004: Omega_GW h^2 at LISA (0.001 Hz) ~ 4.5e-18
+r 0.004: Omega_GW h^2 at DECIGO/BBO (0.1 Hz) ~ 4.5e-18
+r 0.004: Omega_GW h^2 at LIGO/ET (100 Hz) ~ 4.5e-18
+kination boost starts at f ~ 8e+06 Hz (T_RH 3e+14 GeV), max factor ~ e^(N_k) ~ 10
+kination boost starts at f ~ 1e+07 Hz (T_RH 5e+14 GeV), max factor ~ e^(N_k) ~ 10
+Reach (rough): LISA ~1e-13, BBO ~1e-17, DECIGO ~1e-18, ET ~1e-12
