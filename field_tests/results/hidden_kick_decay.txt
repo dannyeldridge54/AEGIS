@@ -1,0 +1,2 @@
+m 6e9 y 0.0: n_B/s 8.31e-11 (x0.95); peak hidden 0.62; end 5.61e-01; T 2.4e+10; dilution x1.00
+m 6e9 y 0.1: n_B/s 6.13e-11 (x0.71); peak hidden 0.15; end 3.48e-07; T 2.7e+10; dilution x1.22
