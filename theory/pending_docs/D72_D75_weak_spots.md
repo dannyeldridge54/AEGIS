@@ -322,3 +322,18 @@ and today (x ≈ 450). Superpartner masses set by gravity mediation would move w
 masses that D80 shows would swamp the tail through loops. So the Twist needs supersymmetry breaking whose visible-sector
 effects do not follow x (sequestered, e.g. anomaly- or gauge-mediated with a T-independent messenger sector). This sharpens
 D80; it does not solve it.
+
+## Development 89 — correction to D73: if T were a string volume modulus, branes would not shield matter
+
+Script: inline; results/volume_modulus_fifth_force.txt.
+D73 said: put the Standard Model on D3 branes, whose gauge coupling does not depend on T, and the proton mass stops
+depending on x. That holds in string units, not in Planck units. If T were the overall volume modulus (K = −3 ln(T + T̄)
+is exactly its Kähler form), the string scale in Planck units goes as M_s/M_P ∝ V^{−1/2} ∝ x^{−3/4}, and every brane
+mass (Λ_QCD, so the proton) follows it: β_m = (3/4)√(2/3) ≈ 0.61, excluded by Cassini ×180. This is the known reason a
+light volume modulus cannot be quintessence.
+What it means for the Twist. T must not be the string volume modulus. In the Twist T is the Barbero–Immirzi field, which
+shares the volume modulus's Kähler form but whose value need not set the string scale — so the conflict is avoided only
+if that identification holds and the Planck-to-string ratio is fixed by something else. The brane language used in D70
+(hidden SU(8) on a separate cycle) and D73 (Standard Model on D3 branes) is therefore an analogy borrowed from string
+constructions, not a construction of the Twist. Label: correction (D73's justification was incomplete); open: an
+explicit setting in which a field with K = −3 ln(T + T̄) is light today without setting the string scale.

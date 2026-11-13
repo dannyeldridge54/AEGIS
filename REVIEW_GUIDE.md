@@ -92,7 +92,8 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 6. The helper field S is tachyonic (m_S² ≈ −2H²) with K exactly as written; a standard quartic term ζ(SS̄)² inside
    the log with ζ ≳ 3×10⁴ (m_S²/H² ≈ −2 + 8ζx on the plateau; Development 81) makes it heavy and leaves every number at S = 0 unchanged (Development 72, chosen).
 7. Ordinary matter must not feel the tail field: natural bulk weights give a fifth force ×120–360 over Cassini, so
-   the Standard Model must be sequestered (D3 branes, T-independent Higgs sector). An assumption (Development 73).
+   the Standard Model must be sequestered (D3 branes, T-independent Higgs sector). An assumption (Development 73). And T
+   must not be a string volume modulus, or the string scale itself moves with x (β ≈ 0.61, Development 89).
 8. The field moves Δφ ≈ 19–21 M_P from the CMB point to today, in tension with the swampland distance conjecture —
    generic to one-field inflation-plus-quintessence models; open (Development 75).
 9. The twist angle y is heavy during inflation (m_y² = 4H²) but tachyonic on the tail for x ≲ 500 (x today ≈ 360 at the computed heat share: mildly, −0.8H²); it is stable
