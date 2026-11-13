@@ -11,7 +11,7 @@ estimate / locked / open). AI-assisted.
 | End of inflation | reshaped cliff exp(−n(1 − e^{−πT/4})); no PBHs | chosen after data | D71, D79 |
 | Reheating | instant preheating, heat share 0.04–0.4%, T_RH 2–4×10¹⁴ GeV, χ must be supersymmetric | derived (g, h chosen) | D62, D77 |
 | Kination | ~2 e-folds of stiff expansion after the cliff | derived | D84 |
-| Matter–antimatter | hidden SU(8) axion kick + lepto-axiogenesis; m_σ ≈ 1.5×10¹⁰ GeV for 1× with the reshaped cliff (2.29× at 6×10⁹) | derived + chosen + estimate | D35–D62, D70 |
+| Matter–antimatter | hidden SU(8) axion kick + lepto-axiogenesis; at 0.8% heat 7.53× at 6×10⁹ GeV (prediction 2–3× missed) → m_σ ≈ 6×10¹⁰ GeV by refit, confirmation run pending | derived + chosen + estimate | D35–D62, D70 |
 | Neutrinos | Majorana, normal ordering, Σm_ν 0.059–0.064 eV | derived from the mechanism | D69 |
 | Dark matter | gravity-only fermion, ≈ 100–500 TeV: the two routes add and χ̃ bremsstrahlung gives ≥ 99% (10⁸ GeV only if χ̃ cannot decay to SM fermions); no direct detection; β = 0 | estimate, conditional | D58, D64, D85, D106, D112 |
 | Superpartners, gravitino | none for the Standard Model (it sits outside the supersymmetric sector, D104), so no R-parity assumption; gravitino ~massless today (W = 0 at S = 0); χ's partner decays via Planck-suppressed couplings (D106) | assumption / estimate | D88, D104–D106 |
@@ -25,7 +25,7 @@ estimate / locked / open). AI-assisted.
 | Birefringence | zero, robustly | locked; 4.9σ tension today | D82 |
 | Fifth force, equivalence principle, varying constants | unshielded matter feels the field (β ≈ 0.4); no weights or screening fix it | **main open problem** | D73, D89–D91, D96–D97 |
 | Quantum stability of the tail | needs every particle >6 meV to have a field-independent mass | open, severe, generic | D80 |
-| Field distance | ≈ 16 M_P (5 in inflation, 11 after); a tower stays above the bath for λ ≤ √(2/3) if it starts near M_P, crosses for λ = 1 | open, quantified | D75, D113 |
+| Field distance | ≈ 16 M_P; with a volume-modulus tower (KK for x > 1, winding for x < 1) the tower stays ≥ 20× H and ≥ 76× T on the whole history; floors the plateau at x ≈ 6×10⁻⁶ | passes (assumption: volume-type T) | D75, D113, D123 |
 | Loop quantum gravity link | y = 4 route failed (D102); self-dual γ = ±i removes the entropy constraint (Frodden et al. 2012) — the field's γ is then cosmological only | resolved by choice, not derived | D83, D117, D120 |
 | Black holes | no hair, GR-like mergers, no superradiance; LQG entropy needs γ ≈ 0.24, which the field does not give; pulsars feel the unshielded field | outline / open | D99 |
 | Big Bang singularity | LQC bounce at ~0.4 ρ_Pl, then plateau inflation is likely (Bonga & Gupt) — inherits the γ-mapping problem | outline, not derived | D100 |

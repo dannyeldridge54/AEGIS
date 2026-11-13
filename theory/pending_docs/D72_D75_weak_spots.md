@@ -902,3 +902,18 @@ ones. The Twist's plateau departs from flat as x = e^{√(2/3)φ}, i.e. on the s
 Starobinsky's, the super-Planckian case — and is unbounded upward (D114), so a lumpy patch can start far from the CMB point.
 By analogy with those results the Twist sits in the more robust plateau class; the cliff is ~5 M_P below the CMB point, so it
 plays no role at the start. Status: open, generic → "robust by analogy with published simulations (not run for the Twist)".
+
+**D123 — which λ for the field distance (results/tower_volume_d123.txt).** If T behaves like a volume-type modulus (the
+K = −3 ln(T + T̄) form), the tower is Kaluza–Klein modes, m ~ M_P/x for x > 1 (λ = √(2/3)), and, by T-duality, winding modes
+m ~ M_P x for x < 1 (assumption; O(1) factors dropped). Along the Twist trajectory: tower/H = 20 at the CMB point, 1400 at the end
+of inflation; after inflation the smallest tower/T is 76 (right at the end), then 10³–10⁶; today (x ≈ 73) the tower is
+~3×10¹⁶ GeV. **Passes everywhere on the observed history.** But it puts a floor on the plateau: the tower drops to H at
+x ≈ H/M_P ≈ 6×10⁻⁶ (p ≈ −14.7), so the far plateau is outside the EFT. That clashes with D114: kinetic-dominated starts needed
+p₀ ≲ −16. Under this assumption only near-rest starts in p₀ ≈ −14.7 … −11 are inside the theory (≥ 300 e-folds from rest there);
+fast starts are not. Status: field distance — passes (with the volume-modulus assumption); initial conditions — narrowed.
+
+**D124 — the 0.8%-heat matter check: prediction MISSED (results/matter_h005_check.txt).** Pre-registered prediction 2–3× at
+m_σ = 6×10⁹ GeV; result **7.53×** (entropy dilution ×1.84 instead of ×5.6 at 0.13%: more heat, less dilution by the hidden field's
+decay). The angle ends at y = 1.21 (vs 15.4 at 0.13% heat). Refit with yield ∝ m_σ^−0.89 → **m_σ ≈ 5.8×10¹⁰ GeV**, a ~10× extrapolation
+of the scaling law, so a confirmation run at 5.8×10¹⁰ GeV was locked (matter_refit_check.py, prediction 0.6–1.6×) before running.
+Note: with D118's saturating χ mass the heat share is ~0.65–0.75%, slightly lower.

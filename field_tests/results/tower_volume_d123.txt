@@ -1,0 +1,15 @@
+during inflation (H ~ 1.5e13 GeV):
+  60 e-folds before the end: x 1.25e-04, tower 3.0e+14 GeV, tower/H 20
+  55 e-folds before the end: x 1.36e-04, tower 3.3e+14 GeV, tower/H 22
+  40 e-folds before the end: x 1.86e-04, tower 4.5e+14 GeV, tower/H 30
+  20 e-folds before the end: x 3.65e-04, tower 8.9e+14 GeV, tower/H 59
+   0 e-folds before the end: x 8.84e-03, tower 2.2e+16 GeV, tower/H 1435
+after inflation (bath T ~ T_RH e^-N):
+  N    0: x    0.0125, tower 3.0e+16 GeV, T 4.0e+14, tower/T 7.6e+01
+  N    1: x    0.0662, tower 1.6e+17 GeV, T 1.5e+14, tower/T 1.1e+03
+  N    2: x     0.484, tower 1.2e+18 GeV, T 5.4e+13, tower/T 2.2e+04
+  N    3: x       3.3, tower 7.4e+17 GeV, T 2.0e+13, tower/T 3.7e+04
+  N    5: x        40, tower 6.1e+16 GeV, T 2.7e+12, tower/T 2.3e+04
+  N   10: x      72.4, tower 3.4e+16 GeV, T 1.8e+10, tower/T 1.9e+06
+  N   40: x      72.7, tower 3.3e+16 GeV, T 1.7e-03, tower/T 2.0e+19
+  smallest tower/T after inflation: 7.6e+01; today x ~ 73: tower 3.3e+16 GeV
