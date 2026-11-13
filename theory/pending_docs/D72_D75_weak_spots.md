@@ -976,3 +976,13 @@ number decides. If INCONSISTENT: the D108 falsifier is effectively met by curren
 polynomial attractor (contradicts K = −3 ln, D108) or a larger N* (more kination than D84 allows).
 D131 add: with this plateau (n_s ≈ 1 − 2/N*) reaching 0.973 needs N* ≈ 74 (0.968 → 63; 0.975 → 80), i.e. 15–20 more e-folds than
 D84's kination gives (+1.9); a stiff phase cannot supply that (the usual upper bound is N* ≈ 60–63). That escape is closed.
+
+**D132 — can the n_s problem be fixed inside the model? Checked; no.** (i) Any plateau that approaches flat as 1 − A e^{√(2/3)φ}
+gives n_s ≈ 1 − 2/N* whatever A is: μ, the cliff's own x and x² terms (already in the numbers) and α in K = −3α ln all leave it.
+(ii) Kination: at the 0.8% heat share it adds ΔN ≈ (1/12)·3 ln(1/f) ≈ 1.2 (not D84's 1.9), so n_s is ~0.965, slightly lower.
+(iii) Heavy fields (S at 30 H², the angle at 8 H²) change n_s negligibly; loops +0.002 are already in the 0.965–0.968 range.
+(iv) Only a different approach to the plateau (polynomial, D108) raises n_s, and that means a different Kähler potential — a new
+model. Changing the model now, against the very data that shows the problem, would be fitting to the result; if pursued, it must
+be written and locked as a new model and tested on data it has not seen. Context (not a fix): the high n_s comes mostly from
+adding DESI BAO to the CMB; CMB-SPA alone gives 0.9684 ± 0.0030, ~1σ from the Twist, and the authors of arXiv:2510.18656 note
+the shift may reflect a BAO/CMB tension. Status: wait for the locked NS-SPA reading; report it at full size.
