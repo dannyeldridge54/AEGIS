@@ -1523,3 +1523,11 @@ Y = S − (δ_GS/16π²) ln(T + T̄). If moduli stabilisation fixes the holomorp
 GS-corrected Y (the field the gauge couplings actually see), which is the natural variable for Kähler/racetrack stabilisation in these
 models but must be checked in any explicit construction. Added to the weak-heterotic home's list of conditions: (1) cliff instanton of
 degree ≳ 9 with no lower-degree terms (D164); (2) Y, not S, stabilised (D186); (3) perturbative leaks falling as 1/x⁴ (D142).
+
+**D187 — the heterotic-M-theory alternative (rung 4) made testable next to the Twist (results/rung4_vs_rung3_d187.txt).** Same late-
+universe calculation as D168 with slope 1/√2 instead of √(2/3): w0 −0.925 (vs −0.899), w(z=0.5) −0.963 (vs −0.949); H(z)/H_ΛCDM peaks
+at +1.4% (vs +1.9%); D_M short by 1.0–1.1% at z ≈ 0.5–1 (vs 1.3–1.5%); σ8 −1.1% (vs −1.5%); f σ8 −2.4% at z ≈ 0.3 (vs −3.2%); growth
+index GR-like in both. The rung-4 signal is about 70–75% of the rung-3 signal throughout — DESI DR3 + Euclid (w0 to ~0.03–0.05) can
+separate them only at the ~1σ level; Euclid + Rubin growth adds a second handle. So the data can weakly discriminate which string
+setting (weakly coupled heterotic → rung 3; heterotic M-theory → rung 4) the field lives in. Not locked separately: PREREG_GROWTH and
+WATCH-PURE-DR3 fix the rung-3 numbers; the rung-4 numbers are recorded here for comparison.
