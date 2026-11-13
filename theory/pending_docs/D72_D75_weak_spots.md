@@ -2030,3 +2030,6 @@ is sharply tuned — n_s moves by ~0.01 for Δc ~ 2×10⁻⁷ — a new small nu
 makes V rise toward the rim for u ≲ 2c ~ 7×10⁻⁷, inside the region already outside the EFT (tower floor u ≈ 1.2×10⁻⁵), so harmless.
 Not done: full supergravity check (the angle's mass now depends on c through |T + c|²). Status: post-data, locked; ranks below TWIST-G− on
 naturalness, distinct from it on r.
+**D228 — TWIST-C passes the full supergravity check (theory/kahler_cliff/twistc_sugra_d228.py).** c = 3.5×10⁻⁷: V/V_Twist = (1 + 2c/u)² as
+intended (1.0054 at the CMB point, 1.00007 at the cliff, 1 + 8×10⁻⁹ today — the dark energy is untouched); m_S²/H² unchanged; the angle's
+mass +3.98 H² at the CMB point, +4.00 elsewhere — stable.
