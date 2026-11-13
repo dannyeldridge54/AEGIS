@@ -5,19 +5,25 @@
 One page: the model as it now stands, every number we chose, every assumption we added, and what would prove it wrong.
 Development numbers (D…) point to theory/pending_docs/D72_D75_weak_spots.md. Consistency pass: field_tests/results/consistency_v5.txt.
 
-## The model
-- Kähler potential: K = −3 ln(T + T̄ − SS̄(1 + (T + T̄)/2μ) + ζ(SS̄)²)   (D72, D81, D127)
-- Superpotential: W = √3 m S T exp(−n(1 − e^{−πT/4}))   (D79 cliff, D126 origin)
+## The model — main construction: TWIST-K (adopted 13:56; D159)
+- Kähler potential: K = −3 ln(T + T̄ − g E(T+T̄) SS̄ + ζ E(T+T̄)² (SS̄)²),  g = 1 + (T+T̄)/2μ,  E(u) = exp(2n(1 − e^{−πu/8}))
+  (the cliff lives in S's metric; e^{−πx/4} = |q| is the form of a worldsheet-instanton correction)
+- Superpotential: W = √3 m S T  (W = 0 at S = 0, so the gravitino is massless)
 - Reheating field χ: W ⊃ (h/2)(1 − e^{−2π(T − T₀)})χ², decays through Planck-suppressed operators linear in χ   (D105, D110, D118)
-- Standard Model: non-supersymmetric, outside the supergravity sector, minimally coupled in the Einstein frame   (D104)
-- Hidden sectors: SU(8) (gives e^{−πT/4}); two copies of G₂ swapped by Z₂ (S → −S) form the racetrack that gives W   (D119, D126)
+- Standard Model: neutral under the isometries of the T-disk (the shield, D140–D142)
+- Potential along real T identical to the earlier form (checked to 10 digits in full supergravity); every inflation and late-time
+  observable is unchanged. The angle is +4H² everywhere (no cliff tachyon); matter is being recomputed (D160).
+
+Alternative construction (kept on record): W = √3 m S T exp(−n(1 − e^{−πT/4})) with the cliff from a hidden SU(8) and a Z₂
+racetrack of two G₂ groups (D119, D126, D148), K without E. Same potential along real T; needs a hidden gauge coupling linear in T,
+which no known string setting provides together with a neutral Standard Model (D154).
 
 ## Numbers
 | Number | Value | Status |
 |---|---|---|
 | n (cliff depth) | ≈ 125 (124.6 reproduces ρ_DE) | **chosen** — a tuning of today's dark energy (Δn ≈ 0.35 per factor 2 in ρ_DE); = 2πκ/N₂ in D126 |
 | m (inflaton mass) | 2.1×10⁻⁵ M_P | fixed by A_s; **related** to a gauge coupling (e^{−b(f₀−κ)}, α₂ ≈ 0.005–0.03), at the cost of a ~7% cancellation between b f₀ ≈ 134 and n = 125 (D126, D136) |
-| 4/π in the cliff | 2π/8 | **assumed** (SU(8) condensate form; the SU(8) coupling is strong, g² ~ 10²–10⁴, through all of inflation, so the formula is outside control — D136) |
+| π/4 in the cliff | |q| = e^{−πx/4} (worldsheet-instanton form; alternatively 2π/8 from SU(8)) | **assumed** (SU(8) condensate form; the SU(8) coupling is strong, g² ~ 10²–10⁴, through all of inflation, so the formula is outside control — D136) |
 | μ | 1 | chosen (constant term in S's metric, D127) |
 | ζ | ≳ 3×10⁴ | chosen (lower bound from S stability) |
 | m_σ (hidden axion) | ≈ 6×10¹⁰ GeV (refit) | chosen to fit the matter amount; confirmation run pending (D124) |
@@ -28,7 +34,7 @@ Development numbers (D…) point to theory/pending_docs/D72_D75_weak_spots.md. C
 1. **No coupling between the tail field and the Standard Model** — now a named symmetry: the SM is neutral under both isometries of the T-disk (scaling and shift), broken only by the cliff's instanton (passes every test by ≥10¹⁹, D140–D142) and by perturbative leaks, which must fall as 1/x⁴ or faster (atomic clocks). Locked: PREREG_SHIELD. Previously: needs an unexplained symmetry. The D110 argument that lets χ decay also generically gives (φ/M_P)·O_SM couplings with β = O(1), excluded by Cassini. **The fifth force is the main open problem** (D135).
 2. χ → −χ broken at the Planck scale (D110) — needed for χ to decay.
 3. χ's mass saturates via a single instanton, or an SU(2) condensate with SM loops cut off below ~10¹⁶ GeV (D118, D128) — needed for the tail's quantum stability.
-4. The Z₂ racetrack of two hidden G₂ groups with the operator Tr W₈² Tr W₂²/M_P³, coefficient ~20 N₂ (D119, D126).
+4. The cliff is a worldsheet-instanton correction to S's Kähler metric whose resummed size at small volume is 2n ≈ 250 (TWIST-K, D159, D161). (Alternative: the Z₂ racetrack of two hidden G₂ groups, D119/D126.)
 5. **Where T lives** (D150–D152): in type IIB a rung-3 volume modulus moves the string scale and couples to matter at Planck strength (excluded). Working candidate: the heterotic string on the Z₃ orbifold, where T is the overall modulus (K = −3 ln, rung 3) but the string scale is set by the dilaton, Z₃ has no T-dependent gauge thresholds, untwisted Yukawas are T-independent and twisted ones instanton-suppressed — matter is neutral as the shield needs. Open: dilaton stabilisation, the cliff's form in heterotic language, higher-order Kähler corrections (must fall as 1/x⁴).
 6. γ is the self-dual value for black-hole entropy (D120) — a choice; LQG link is motivation only.
 7. Dark matter is a gravity-only fermion; its 100–500 TeV mass needs χ̃ to decay to SM fermions (D112).
