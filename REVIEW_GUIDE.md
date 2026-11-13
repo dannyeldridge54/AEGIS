@@ -100,7 +100,9 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 2. The hidden SU(8) is matched in form (gaugino-condensation cross term), not constructed in full; its required height
    (~10⁻¹⁸ M_P⁴) is reached without tuning if the hidden branes wrap a separate stabilised cycle of size τ ≈ 30, with
    the gravitino factor m₃/₂/M_P included (Development 70, following arXiv:2303.03414) — an assumption, not derived.
-3. Heavy superpartners (m ≈ 10¹¹–10¹³ GeV) at T_RH need R-parity violation (window 10⁻⁵–10⁻³, estimate).
+3. Superpartners: with the Standard Model outside the supersymmetric sector (Development 104) there are no Standard-Model
+   superpartners, so the earlier R-parity-violation assumption (window 10⁻⁵–10⁻³) is no longer needed; the supersymmetric
+   sector (T, S, χ, hidden SU(8)) keeps its own partners, and χ's fermion partner raises the dark-matter question (D106).
 4. Instant preheating: χ's couplings g ≈ 0.1 and Yukawa h = 0.1–1 are natural choices, not derived.
 5. The dark-matter fermion argument and PIDM threshold factor are estimates.
 6. The helper field S is tachyonic (m_S² ≈ −2H²) with K exactly as written; a standard quartic term ζ(SS̄)² inside

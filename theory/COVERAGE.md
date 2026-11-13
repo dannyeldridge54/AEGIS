@@ -14,7 +14,7 @@ estimate / locked / open). AI-assisted.
 | Matter–antimatter | hidden SU(8) axion kick + lepto-axiogenesis; m_σ ≈ 1.5×10¹⁰ GeV for 1× with the reshaped cliff (2.29× at 6×10⁹) | derived + chosen + estimate | D35–D62, D70 |
 | Neutrinos | Majorana, normal ordering, Σm_ν 0.059–0.064 eV | derived from the mechanism | D69 |
 | Dark matter | gravity-only fermion; mass unsettled: ≈ 1–6×10⁸ GeV from freeze-in, or ≈ 250–500 TeV (factor of a few) if made by the reheating field's fermion partner (D106, leaning); no direct detection; β = 0 | estimate / open | D58, D64, D85, D106 |
-| Superpartners, gravitino | heavy; R-parity violation 10⁻⁵–10⁻³; gravitinos harmless; m₃/₂ moves with x | assumption / estimate | D88 |
+| Superpartners, gravitino | none for the Standard Model (it sits outside the supersymmetric sector, D104), so no R-parity assumption; gravitino ~massless today (W = 0 at S = 0); χ's partner decays via Planck-suppressed couplings (D106) | assumption / estimate | D88, D104–D106 |
 | Hidden SU(8) leftovers | confines near 10¹⁴ GeV; glueballs decay (Planck-suppressed) in ~10⁻³ s, before nucleosynthesis | estimate | D98 |
 | Nucleosynthesis, N_eff | field frozen from kination until recently, so constants at BBN = today's (if shielded); no extra radiation (kination waves Ω ~10⁻¹⁶) | estimate | D86, D98 |
 | Gravitational-wave propagation | no extra friction, no GW birefringence today (ξ = 0); related two-field work arXiv:2608.09487 bounds such friction with dark sirens | prediction | D107 |
