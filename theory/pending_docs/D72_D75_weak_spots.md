@@ -1425,3 +1425,14 @@ survives: their 4+3 split is built by hand and its rung-3 direction (T², T³, T
 take the three moduli of an associative triad (a Fano line, rung 3) and the four of its coassociative complement (rung 4). In that
 version the Twist's rung-3 field is literally the quaternionic (associative) part of the octonionic structure. Whether a Hamming-code
 superpotential gives that split with two flat directions is a concrete construction problem (open; candidate next step).
+
+**D177 — the G2-natural 4+3 split, built (theory/geometry/g2_split_d177.py; results/g2_split_d177.txt).** Superpotential in the
+Kallosh–Linde–Wrase–Yamada style restricted to two blocks, W = M[Σ_{A}(T_i − T_j)² + Σ_{C}(T_i − T_j)²], with A = {1,2,4} a Fano line
+(associative triad) and C = {3,5,6,7} its complement (a coassociative quadruple — checked for all 7 lines: no complement contains a
+line). Mass matrix eigenvalues (in units of M): 0, 0, 6, 6, 8, 8, 8 — exactly two flat directions, T_A and T_C, with all other moduli
+heavy. T_A is three identified disks: K = −3 ln(T + T̄), rung 3 — the Twist. T_C is rung 4. All seven such splits are equivalent under
+the Fano plane's symmetry. Contrast: Gunaydin–Kallosh–Linde–Yamada's hand-made 4+3 split puts {2,3,6} — not a Fano line — in the rung-3
+block. So the Twist can be read as the associative (quaternionic) flat direction of a G2-structured split, with a rung-4 companion
+modulus T_C. Open: whether this split follows from the octonion/Hamming-code superpotential of GKLY rather than being written in block
+form; and what the companion T_C does (it would be a second light field — fixed by other effects, or a second, rung-4 dark-energy-like
+field with w0 ≈ −0.93, wa ≈ −0.11 if it also thaws).

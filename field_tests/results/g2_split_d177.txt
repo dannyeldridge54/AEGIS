@@ -1,0 +1,5 @@
+split A = (1, 2, 4) (Fano line), C = (3, 5, 6, 7): mass eigenvalues [0. 0. 6. 6. 8. 8. 8.]; flat directions: 2
+  T_A (rung 3) lies in the flat space: True
+  T_C (rung 4) lies in the flat space: True
+all 7 complements of Fano lines contain no line (coassociative quadruples): True
+GKLY 4+3 split rung-3 set {2,3,6} is a Fano line: False
