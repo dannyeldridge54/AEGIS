@@ -709,3 +709,15 @@ fields and do not discuss fifth forces; the Twist uses one field for both jobs, 
 The Twist's own statement: in the Einstein frame the tail field does not multiply R, and the angle — the only part with a
 Nieh–Yan coupling — is static today (D82), so the Twist predicts no extra gravitational-wave friction and no parity-violating
 (birefringent) gravitational-wave propagation today: ξ = 0 in their language. Testable by ET+CE dark sirens at the ~10⁻² level.
+
+**D106 developed — the graviton channel cannot be switched off.** Once χ̃ has any decay to Standard-Model fermions
+(χ̃ → ψ + X), the same decay with a virtual graviton emitting a dark-matter pair (χ̃ → ψ + X + DM DM̄) is allowed whatever
+symmetry the dark matter carries: the pair is neutral under any charge, and gravity couples to everything. Its branching ratio is
+set by gravity alone, ~(m_χ/M_P)²/(several hundred) ≈ 10⁻⁶–10⁻⁵ at m_χ ≈ 0.05 M_P. So option (i) (a protecting symmetry) fails.
+What remains: (ii) the dark matter is this decay product — a gravity-only fermion of roughly 10 MeV–10 GeV (the range covers the
+fermion share and the branching-ratio uncertainty), born with energy ~m_χ/3 but redshifted to v ~10⁻⁹ c today, so cold; freeze-
+in from the bath is then negligible (Ω ∝ m). Or (iii) fermionic preheating far below the bosonic one, which instant preheating
+does not suggest. Leaning: (ii). Consequence if confirmed: the Twist's dark-matter prediction moves from ~10⁸ GeV (freeze-in) to
+a light, gravity-only fermion of MeV–GeV mass, made non-thermally at reheating — still invisible to direct detection, but a
+different number. Not adopted until the fermion share and branching ratio are computed; the reviewer guide flags the mass as
+unsettled.
