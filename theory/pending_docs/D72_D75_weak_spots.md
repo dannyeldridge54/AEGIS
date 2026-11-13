@@ -1278,3 +1278,13 @@ n_s 0.9688, r 0.0048; b = 2: 0.9715, 0.0061; b = 3: 0.9735, 0.0073; b = 5: 0.976
 (8–24 H²), the angle +4H², the tail unchanged. Built after seeing the n_s data → locked for future CMB data only. Compared with TWIST-P:
 stays on the seven-disk ladder (the geometric picture survives), and predicts a lower r at the same n_s (0.006 vs 0.011 at 0.971) —
 future r measurements can tell them apart. Open: b ≈ 2–5 is large for a one-loop log (needs many fields) — naturalness not shown.
+
+**D163 — TWIST-L's log can be natural (results/twistl_naturalness_d163.txt).** An ordinary one-loop log (L = 1 + κ ln(1/x)) has the
+wrong form (it tilts the plateau the wrong way). TWIST-L needs an INVERSE log, b/ln(1/x) — which is exactly how a running gauge
+coupling depends on scale. If S's metric gets a correction C·g²(μ) from a gauge sector whose relevant scale is set by T (μ = x M, e.g.
+winding/KK masses at x < 1), and that coupling is IR-free (like QED: it weakens logarithmically at low scales), then
+1/g² = (|b_β|/8π²)(ln(1/x) + ln(Λ_L/M)) and L = 1 + C g² reproduces TWIST-L's form with b = 8π²C/|b_β|. For b = 2–5 and beta
+coefficients |b_β| = 1–20: C ≈ 0.03–1.3 — natural sizes for a tree-level coupling of S to that sector. So the naturalness worry of D162
+(b "large for a one-loop log") is answered by the inverse-log/running-coupling reading: b is large because 8π²/|b_β| is large, not
+because many fields run in a loop. The Landau scale must sit near M (ln(Λ_L/M) ≈ 1) — one condition, not derived. Status: plausible
+origin, not derived; the TWIST-L lock is unchanged.

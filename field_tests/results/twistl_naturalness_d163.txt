@@ -1,0 +1,13 @@
+|beta coefficient|  1, needed b 2: metric coefficient C = 0.03
+|beta coefficient|  1, needed b 3: metric coefficient C = 0.04
+|beta coefficient|  1, needed b 5: metric coefficient C = 0.06  (natural O(0.1-1))
+|beta coefficient|  3, needed b 2: metric coefficient C = 0.08  (natural O(0.1-1))
+|beta coefficient|  3, needed b 3: metric coefficient C = 0.11  (natural O(0.1-1))
+|beta coefficient|  3, needed b 5: metric coefficient C = 0.19  (natural O(0.1-1))
+|beta coefficient| 10, needed b 2: metric coefficient C = 0.25  (natural O(0.1-1))
+|beta coefficient| 10, needed b 3: metric coefficient C = 0.38  (natural O(0.1-1))
+|beta coefficient| 10, needed b 5: metric coefficient C = 0.63  (natural O(0.1-1))
+|beta coefficient| 20, needed b 2: metric coefficient C = 0.51  (natural O(0.1-1))
+|beta coefficient| 20, needed b 3: metric coefficient C = 0.76  (natural O(0.1-1))
+|beta coefficient| 20, needed b 5: metric coefficient C = 1.27  (natural O(0.1-1))
+sign check: as x -> 0 the IR-free coupling g^2 -> 0 logarithmically, so L -> 1 + b/ln(1/x): the plateau form used in TWIST-L
