@@ -1363,3 +1363,16 @@ neutrino mass (Σm_ν 0.06 → 0.10 eV, H₀ 66.9). But the redshift shapes diff
 neutrino-mass shift; DESI DR3's redshift coverage can separate them. Consequence for interpretation: a ΛCDM analysis of a
 Twist universe would be pulled toward a somewhat HIGHER neutrino mass at z ≈ 0.5 and lower at z ≈ 0.3–1.5, partially cancelling;
 no claim is made here about DESI's own neutrino-mass result (that needs the full likelihood).
+
+## Development 172 — strong CP and the ISW effect (theory/observables/strongcp_isw_d172.py; results/strongcp_isw_d172.txt)
+**(a) Can the twist angle be the QCD axion? It could solve strong CP, but as it stands it makes far too much dark matter.** A
+shift-symmetric y·GG̃ coupling is allowed (D144). The angle's decay constant on the frozen tail is f ≈ 4–5×10¹⁶ GeV; QCD's potential
+then dominates the angle's own (the T-sector shifts the QCD minimum by only ~10⁻⁴³, far below the 10⁻¹⁰ bound), so θ_QCD relaxes to 0
+— strong CP solved. But the angle then oscillates as axion dark matter: for an initial angle of order one it gives 3–4×10⁵ times the
+observed dark matter, and the Twist's own runs leave it 0.5–0.9 rad from a minimum. It would need θ_i ≈ 2×10⁻³ (or a dilution of
+~10⁵ after the QCD transition). Status: the angle is NOT the QCD axion in the Twist as computed; strong CP stays unaddressed. Lead
+noted: if the angle's kick could be arranged to stop within ~10⁻³ rad of a minimum, the angle would solve strong CP AND be the dark
+matter (replacing the gravity-only fermion) — a different, testable model (axion haloscopes at f ~ 5×10¹⁶ GeV, m_a ~ 10⁻¹⁰ eV, the
+ABRACADABRA/DMRadio range). Not pursued without a mechanism.
+**(b) ISW.** The late-time integrated Sachs–Wolfe signal (the change of the potentials since z ≈ 3) is 5.0% stronger than ΛCDM's at
+the same Ω_m — a small, definite prediction for CMB × galaxy cross-correlations (current precision ~10–20%; future surveys a few %).

@@ -1,0 +1,5 @@
+(a) x 72.7: angle decay constant f = 5.2e+16 GeV; axion dark matter for theta_i ~ 1 is 4e+05 x observed; needs theta_i ~ 2e-03 rad
+(a) x 88.9: angle decay constant f = 4.3e+16 GeV; axion dark matter for theta_i ~ 1 is 3e+05 x observed; needs theta_i ~ 2e-03 rad
+    QCD minimum shift from the T-sector's own angle potential: ~ V_tail / (m_pi^2 f_pi^2) ~ 2e-43 (bound 1e-10)
+    the Twist's runs leave the angle at y = 1.2 (0.8% heat) or 15.4 (0.13%): theta_i = 0.94 or 0.47 rad from a minimum
+(b) late ISW signal (change of D/a since z = 3), Twist / LCDM: 1.050
