@@ -1582,3 +1582,16 @@ the string scale, M_s/M_P ~ V^(−1/2) = τ^(−3/4). In canonical units that is
 **Verdict:** option (1) of D191 is closed. In IIB, "rung 3" and "matter neutral" are incompatible for a structural reason (the
 volume sets M_s/M_P), not a model-building one. Combined with D189–D191: no string setting found derives n while keeping A + C;
 n stays chosen. The remaining open string question is the weakly coupled heterotic home with n accepted as an input.
+
+**D193 — stabilising the heterotic dilaton Y (theory/string_home/dilaton_kl_d193.py): works, with a narrow window.** A Kallosh–Linde-type
+racetrack of two hidden condensates, W_Y = W0 + A e^{−aY} − B e^{−bY} with SU(8) × SU(9) (a = 2π/8, b = 2π/9), imposing W_Y = W_Y' = 0 at
+Re Y₀ = 2 (g² ≈ 1/2): B/A = 0.945, W0 = 0.026 A. Results: (i) Y₀ is fixed by W_Y alone, so gauge couplings do not depend on T (the
+shield survives — Z₃ has no T-dependent thresholds, D152); (ii) with W_Y = 0 at the minimum the T-sector potential is exactly the Twist's
+(no gravitino mass from this sector, no cross terms); (iii) Y's mass m_Y = e^{K/2}|W''|/K_YȲ scales as x^(−3/2), so it changes ×10³ across
+inflation (x 10⁻⁴ → 10⁻²). Requiring m_Y > 10 H_inf at the end of inflation and m_Y < M_s (~0.25 M_P) at its start gives
+A ≈ 5×10⁻⁷ – 2×10⁻⁶ — a window of only ~×4 (A = 1 would put m_Y above M_P). Today m_Y ≈ 10⁻¹¹ M_P ~ 10⁷ GeV (no Y fifth force).
+**Costs, stated plainly:** one tuning (W_Y = 0 at the minimum — the KL condition), a narrow prefactor window, and supersymmetry breaking
+must come from a separate sector whose vacuum energy only shifts the constant (the cosmological-constant problem is not solved by the
+Twist, as in any quintessence model). **D186's requirement is met in principle.** The weakly coupled heterotic home now has: A (rung 3),
+C (neutral matter, Z₃), Y stabilised (this note), degree-9 cliff via a Z₉ rule (D188); n chosen; cliff form and modular (T-duality)
+consistency still to be shown (D-notes ~1177–1332).
