@@ -1269,7 +1269,7 @@ This needs a specific compact geometry and the matter-metric's instanton expansi
 single-term form exp(−2n|q|) used in TWIST-K is a model of that resummation, not derived. Status: route to deriving n identified
 and stated precisely; n still chosen.
 
-## Development 162 — TWIST-L: raising n_s without leaving rung 3 (locked 14:0x, PREREG_TWISTL.md)
+## Development 162 — TWIST-L: raising n_s without leaving rung 3 (locked 13:59, PREREG_TWISTL.md)
 Key observation: any plateau that approaches flat as a power of x = e^{cφ} gives n_s ≈ 1 − 2/N (D132), but a LOGARITHM of x is
 linear in φ, so a factor 1/ln(1/x) in V gives a polynomial approach (V ≈ 1 − b/(c|φ|), k = 1) while T's own kinetic term — the
 rung-3 disk — is untouched. In TWIST-K the cliff already lives in S's Kähler metric, so a log factor there (L = 1 + b/(1 + ln(1+2/u)),
