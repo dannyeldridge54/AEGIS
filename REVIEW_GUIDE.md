@@ -163,3 +163,8 @@ bringing the field-dependent vacuum energy to ≤ 10⁻⁸⁸ ρ_DE at the cost 
 condition (the angle near an integer when χ's mass crosses zero). The cliff's double exponential has a construction route through a
 second hidden group (D119; n becomes an operator coefficient, still chosen). The γ conflict is resolved by choosing the self-dual
 value (D120) — a choice, not a derivation.
+**Update 12:10 (D121–D128).** D118's angle condition passes (D121). Lumpy starts: robust class by analogy (D122). Field distance passes
+with a volume-type tower but floors the plateau (D123). Matter at 0.8% heat: 7.53× (prediction 2–3× MISSED); refit m_σ ≈ 6×10¹⁰ GeV,
+confirmation pending (D124). Tail w0/wa insensitive to heat (D125). The whole W = √3 m S F(T) now follows from a Z₂ racetrack of two
+hidden groups (D126) plus a constant term in S's Kähler metric (D127, V unchanged for real T; S stays heavy) — except n, still chosen.
+D118's factor needs a single instanton or SU(2) with an SM cutoff below ~10¹⁶ GeV (D128).
