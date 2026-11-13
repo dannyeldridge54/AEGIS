@@ -29,7 +29,7 @@ Development numbers (D…) point to theory/pending_docs/D72_D75_weak_spots.md. C
 2. χ → −χ broken at the Planck scale (D110) — needed for χ to decay.
 3. χ's mass saturates via a single instanton, or an SU(2) condensate with SM loops cut off below ~10¹⁶ GeV (D118, D128) — needed for the tail's quantum stability.
 4. The Z₂ racetrack of two hidden G₂ groups with the operator Tr W₈² Tr W₂²/M_P³, coefficient ~20 N₂ (D119, D126).
-5. **T is NOT the overall volume** (working choice, 13:35, D150): if it were, the SM's string-scale cutoff would scale with x and give a fifth force β ≈ 0.6 (Cassini excludes; Burgess–Quevedo). Cost: the distance-conjecture check of D123 (which used a volume tower) no longer applies — field distance ≈ 16 M_P is open again. Solar-system data decide this fork; the distance conjecture is a conjecture.
+5. **Where T lives** (D150–D152): in type IIB a rung-3 volume modulus moves the string scale and couples to matter at Planck strength (excluded). Working candidate: the heterotic string on the Z₃ orbifold, where T is the overall modulus (K = −3 ln, rung 3) but the string scale is set by the dilaton, Z₃ has no T-dependent gauge thresholds, untwisted Yukawas are T-independent and twisted ones instanton-suppressed — matter is neutral as the shield needs. Open: dilaton stabilisation, the cliff's form in heterotic language, higher-order Kähler corrections (must fall as 1/x⁴).
 6. γ is the self-dual value for black-hole entropy (D120) — a choice; LQG link is motivation only.
 7. Dark matter is a gravity-only fermion; its 100–500 TeV mass needs χ̃ to decay to SM fermions (D112).
 
