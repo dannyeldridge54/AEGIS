@@ -51,6 +51,8 @@ out-of-sample test than a new survey.
 | Extra radiation | ΔN_eff ~ 3×10⁻⁸ | — |
 
 ## Known costs
+- Strong CP is not solved (the angle would overproduce axion dark matter, D172); neutrino masses are assumed (seesaw scale fits the Twist's scales, D173).
+- Late ISW 5% stronger than ΛCDM (D172b).
 - Hubble tension: the Twist lowers the CMB-inferred H₀ to ≈ 65.7 km/s/Mpc (ΛCDM 67.4), moving away from local ~73 (D169).
 - Growth: σ8 1.5% lower and f σ8 3% lower at z ≈ 0.4 than ΛCDM at fixed Ω_m (D168, locked PREREG_GROWTH) — helps the S8 tension slightly.
 

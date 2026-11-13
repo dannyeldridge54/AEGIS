@@ -126,3 +126,16 @@ seeing the n_s data, so only future CMB results can score it; TWIST-P is the alt
 - m_σ confirmation (D124), then the new-form matter check (D129), then the yield-sensitivity test (D137).
 - PURE parameter chain (3,000+ steps).
 - Evidence fits (first of four models).
+
+## 9. Added 13 Nov afternoon (D164–D173)
+- **Growth and expansion (locked PREREG_GROWTH):** σ8 −1.5%, f σ8 −3% at z ≈ 0.4, growth index GR-like (0.557); H(z) up to +1.9%;
+  BAO: D_M/r_d +1.3% at z = 0.3 → 0 by z = 2.3 (CMB-anchored).
+- **Costs:** H₀ ≈ 65.7 km/s/Mpc once the CMB fixes the early universe (Hubble tension slightly worse). Late ISW 5% stronger than ΛCDM.
+- **Neutrino mass:** the Twist's distance signal mimics +0.044 eV at z = 0.5 but has a steeper redshift shape (separable by DR3).
+- **Full-data chains** (estimation only, PREREG_SPA_CHAIN) running on the PC.
+- **String side:** the heterotic home is strongly coupled where it matters (g_s ≈ 26 today) unless the cliff instanton has degree ≳ 9
+  with no lower-degree curves (D164). Curve counts on the quintic (computed via mirror symmetry) give ≲ 0.01 against the 250 needed:
+  n must come from an exponent, most naturally flux warping, 2n = 8πK/(3g_sM) with K/(g_sM) ≈ 30 — provided the exponent switches on
+  as (1 − e^{−πx/4}) (D165–D167).
+- **Strong CP:** the angle could relax θ_QCD but would overproduce axion dark matter ~4×10⁵-fold; it cannot self-relax before QCD (D172).
+- **Neutrino masses:** the seesaw scale (6×10¹²–6×10¹⁴ GeV) matches the Twist's hidden-confinement and reheating scales (D173, lead).
