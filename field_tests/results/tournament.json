@@ -1,0 +1,181 @@
+{
+ "rule": "PREREG_TOURNAMENT.md",
+ "gate": {
+  "LCDM_FULL": 1401.1758319819446,
+  "FLAG1_FULL": 1395.852299391856,
+  "m1_LCDM": 1401.175766395106,
+  "m1_FLAG1": 1395.852342208966,
+  "pass": true
+ },
+ "rows": {
+  "LCDM": {
+   "k": 0,
+   "dchi2_FULL": 0.0,
+   "dAIC_FULL": 0.0,
+   "dP_DESI": 0.0,
+   "dP_SDSS": 0.0,
+   "d_SDSS": 0.0,
+   "params_FULL": [
+    0.68462,
+    0.02246,
+    0.11711
+   ],
+   "params_NOBAO": [
+    0.68015,
+    0.02244,
+    0.11824
+   ],
+   "predicts": true
+  },
+  "W0WA": {
+   "k": 2,
+   "dchi2_FULL": -6.205,
+   "dAIC_FULL": -2.205,
+   "dP_DESI": -3.871,
+   "dP_SDSS": -0.168,
+   "d_SDSS": -3.274,
+   "params_FULL": [
+    0.6745,
+    0.02246,
+    0.1174,
+    -0.8717,
+    -0.36747
+   ],
+   "params_NOBAO": [
+    0.67201,
+    0.02246,
+    0.11765,
+    -0.9178,
+    -0.17588
+   ],
+   "predicts": true
+  },
+  "SPIRAL0": {
+   "k": 0,
+   "dchi2_FULL": 1.114,
+   "dAIC_FULL": 1.114,
+   "dP_DESI": 0.62,
+   "dP_SDSS": -0.359,
+   "d_SDSS": 1.017,
+   "params_FULL": [
+    0.66132,
+    0.02252,
+    0.11581
+   ],
+   "params_NOBAO": [
+    0.6572,
+    0.02248,
+    0.11713
+   ],
+   "predicts": false
+  },
+  "FLAG1": {
+   "k": 1,
+   "dchi2_FULL": -5.324,
+   "dAIC_FULL": -3.324,
+   "dP_DESI": 10.88,
+   "dP_SDSS": 10.376,
+   "d_SDSS": -1.195,
+   "params_FULL": [
+    0.67194,
+    0.02246,
+    0.11823,
+    0.04071
+   ],
+   "params_NOBAO": [
+    0.68859,
+    0.02246,
+    0.11846,
+    0.05898
+   ],
+   "predicts": false
+  },
+  "SPIRAL": {
+   "k": 2,
+   "dchi2_FULL": -6.331,
+   "dAIC_FULL": -2.331,
+   "dP_DESI": -6.271,
+   "dP_SDSS": 0.386,
+   "d_SDSS": -3.265,
+   "params_FULL": [
+    0.67608,
+    0.02246,
+    0.11798,
+    0.0353,
+    0.84775
+   ],
+   "params_NOBAO": [
+    0.67485,
+    0.02246,
+    0.11785,
+    0.0289,
+    0.78737
+   ],
+   "predicts": false
+  },
+  "ON2": {
+   "k": 1,
+   "dchi2_FULL": -1.467,
+   "dAIC_FULL": 0.533,
+   "dP_DESI": -1.901,
+   "dP_SDSS": -0.374,
+   "d_SDSS": -0.781,
+   "params_FULL": [
+    0.66344,
+    0.02252,
+    0.11597,
+    0.06449
+   ],
+   "params_NOBAO": [
+    0.66283,
+    0.02246,
+    0.11743,
+    0.15
+   ],
+   "predicts": true
+  },
+  "ON1": {
+   "k": 1,
+   "dchi2_FULL": -0.411,
+   "dAIC_FULL": 1.589,
+   "dP_DESI": 0.463,
+   "dP_SDSS": -0.369,
+   "d_SDSS": -0.108,
+   "params_FULL": [
+    0.66199,
+    0.02251,
+    0.11594,
+    0.07693
+   ],
+   "params_NOBAO": [
+    0.65776,
+    0.02246,
+    0.11724,
+    0.0729
+   ],
+   "predicts": false
+  },
+  "ON05": {
+   "k": 1,
+   "dchi2_FULL": 0.974,
+   "dAIC_FULL": 2.974,
+   "dP_DESI": 0.627,
+   "dP_SDSS": -0.36,
+   "d_SDSS": 0.901,
+   "params_FULL": [
+    0.66131,
+    0.02252,
+    0.11582,
+    0.01077
+   ],
+   "params_NOBAO": [
+    0.65717,
+    0.02247,
+    0.11715,
+    0.01079
+   ],
+   "predicts": false
+  }
+ },
+ "reading": "PREDICTS BUT NOT PREFERRED (ON2)"
+}
