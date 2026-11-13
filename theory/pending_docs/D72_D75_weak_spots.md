@@ -287,8 +287,9 @@ the Twist the bath forms during kination (D84), when the universe expands faster
 so less dark matter is made from the bath. With the radiation share at bath formation taken from D84's kination e-folds
 (f_eff ≈ 4×10⁻⁴ at the computed heat share), the yield falls by ×19–58 and the dark-matter mass needed rises to
 ≈ 1×10⁸–6×10⁸ GeV (range 6×10⁷–1×10⁹ over heat shares 0.4–0.04%). Still far below T_RH, so the light branch holds.
-Label: estimate (no full Boltzmann run; gravitational production directly from the moving inflaton during kination is
-not included and could add to the yield — open).
+Label: estimate (no full Boltzmann run). Gravitational production directly from the inflaton is small here: the usual
+channel needs an oscillating inflaton condensate, and in kination the field does not oscillate; the fermion is conformal
+when light, so the change of expansion at the cliff makes almost none. Residual open item: a full Boltzmann run.
 
 ## Development 86 — kination tilts the primordial gravitational waves blue (estimate)
 
