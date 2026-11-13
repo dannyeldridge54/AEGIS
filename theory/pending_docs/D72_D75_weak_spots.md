@@ -1937,3 +1937,22 @@ field-theory QCD axion; if it is the dark matter, lattice results put m_a ≈ 40
 axion solution of strong CP): haloscopes should find the axion, if at all, in the ~40–600 μeV range (MADMAX, ALPHA-class), and string-scale
 (f ~ 10¹⁶ GeV) axions — including the heterotic model-independent axion — cannot be the solution unless their mass is lifted during
 inflation. Generic to any detectable-r inflation, stated here as a Twist corollary.
+
+**D220 — online literature on the n_s problem, and TWIST-G− (locked PREREG_TWISTGN, results/twistgn_scan.txt).** Recent papers (2025–26) show
+the α-Starobinsky family reaches the ACT n_s ≈ 0.974 by (a) a multiplicative power tilt V(1 − u)² u^{−δ√α} with δ ≈ 0.017 (arXiv:2606.24131),
+(b) an added log term δL(u)^p (same paper), (c) a Coleman–Weinberg factor 1 + δ ln φ (arXiv:2506.12436; small effect at α ≈ 1), or (d) a
+plateau truncated to a power-law approach (arXiv:2609.10991, n_s ≈ 1 − 4/(3N)). Our files already held (b)/(c)-type (TWIST-L) and (d)-type
+(TWIST-P); (a) was new. In the Twist it is W = √3 m S T^{1+γ}: a small non-integer power, the form of an anomalous dimension.
+Run (after locks; the first lock PREREG_TWISTG had the sign wrong — deviation D1 — its γ ≥ 0 branch LOWERS n_s and is recorded as such):
+| γ | n_s (N* 55.7/57) | r | asymptotic tail slope |
+| 0 | 0.9642/0.9650 | 0.0037/0.0036 | 0.8165 (= TCC) |
+| −0.005 | 0.9703/0.9710 | 0.0054/0.0052 | 0.8247 |
+| −0.0085 | 0.9740/0.9747 | 0.0069/0.0067 | 0.8304 |
+| −0.012 | 0.9772/0.9780 | 0.0087/0.0084 | 0.8361 |
+γ ≈ −0.0085 lands on the ACT central value with r ≈ 0.007. Three properties worth recording: (i) |γ| ≈ 1.3/(16π²) — the size of a one-loop
+anomalous dimension, so the needed effect is naturally loop-sized; (ii) the sign that raises n_s also makes the dark-energy tail STEEPER
+(λ = √(2/3)(1 − 2γ)), so TWIST-G− stays on the allowed side of the TCC bound — unlike a positive tilt; (iii) dark energy barely moves: w0
+−0.895 vs −0.899, σ8 −1.53% vs −1.47% (LAM = 0.8304 run). Status: post-data, locked, scored only on future CMB data. It sits close to
+TWIST-L's curve (TWIST-L: n_s 0.9735 at r 0.0073; TWIST-G−: 0.974 at r 0.0068), so future data will hardly separate those two, but both
+separate from TWIST-P (higher r) and TWIST-M9 (lower n_s). Not done: a full two-field supergravity check of W ∝ T^{1+γ} (branch cut on the
+negative real axis, irrelevant for Re T > 0) and a derivation of γ from a specific loop.
