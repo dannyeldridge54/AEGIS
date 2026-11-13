@@ -1268,3 +1268,13 @@ small volume. So "n = a count of curves" is too naive; "n = the resummed instant
 This needs a specific compact geometry and the matter-metric's instanton expansion — a research project, not attempted here. The
 single-term form exp(−2n|q|) used in TWIST-K is a model of that resummation, not derived. Status: route to deriving n identified
 and stated precisely; n still chosen.
+
+## Development 162 — TWIST-L: raising n_s without leaving rung 3 (locked 14:0x, PREREG_TWISTL.md)
+Key observation: any plateau that approaches flat as a power of x = e^{cφ} gives n_s ≈ 1 − 2/N (D132), but a LOGARITHM of x is
+linear in φ, so a factor 1/ln(1/x) in V gives a polynomial approach (V ≈ 1 − b/(c|φ|), k = 1) while T's own kinetic term — the
+rung-3 disk — is untouched. In TWIST-K the cliff already lives in S's Kähler metric, so a log factor there (L = 1 + b/(1 + ln(1+2/u)),
+the shape a loop/running correction takes) does this. Results (twistl_scan.txt, b = 0 reproduces TWIST-K's 0.9649/0.0036): b = 1:
+n_s 0.9688, r 0.0048; b = 2: 0.9715, 0.0061; b = 3: 0.9735, 0.0073; b = 5: 0.9762, 0.0095; b = 10: 0.9791, 0.0140. S stays heavy
+(8–24 H²), the angle +4H², the tail unchanged. Built after seeing the n_s data → locked for future CMB data only. Compared with TWIST-P:
+stays on the seven-disk ladder (the geometric picture survives), and predicts a lower r at the same n_s (0.006 vs 0.011 at 0.971) —
+future r measurements can tell them apart. Open: b ≈ 2–5 is large for a one-loop log (needs many fields) — naturalness not shown.
