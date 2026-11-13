@@ -1,0 +1,2 @@
+line (1, 2, 4): compatible terms [((2, 4), (5, 6)), ((3, 5), (6, 7)), ((5, 7), (1, 2))] -> flat directions 3; moduli moving together: [[1, 4], [2], [3], [5, 6, 7]]
+line (2, 3, 5): compatible terms [((3, 5), (6, 7)), ((4, 6), (7, 1)), ((6, 1), (2, 3))] -> flat directions 3; moduli moving together: [[1, 6, 7], [2, 5], [3], [4]]

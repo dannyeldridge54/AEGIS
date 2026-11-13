@@ -1,0 +1,11 @@
+N2 2: needs n_1 ~ 6283
+N2 3: needs n_1 ~ 9425
+N2 4: needs n_1 ~ 12566
+N2 8: needs n_1 ~ 25133
+  quintic P4[5]: n_1 = 2875 -> N2 ~ 0.9
+  P5[3,3]: n_1 = 1053 -> N2 ~ 0.3
+  P5[2,4]: n_1 = 1280 -> N2 ~ 0.4
+  P(1,1,1,1,2)[6]: n_1 = 7884 -> N2 ~ 2.5
+  P(1,1,1,1,4)[8]: n_1 = 29504 -> N2 ~ 9.4
+  P(1,1,1,2,5)[10]: n_1 = 231200 -> N2 ~ 73.6
+normalisation uncertain by O(1)-O(2 pi): order-of-magnitude lead only

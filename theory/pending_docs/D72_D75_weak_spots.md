@@ -1464,3 +1464,16 @@ superpotential itself — consistent with GKLY finding their 4+3 split only by h
 structural statement: within the exact octonion superpotential, rung 3 does not come out aligned with a quaternionic subalgebra.
 Status: the "Twist = quaternionic rung of the octonions" picture is geometric (D175, D177), but NOT derived from the published
 octonion superpotential; it needs a different (still octonion-built) superpotential. Recorded as a precise negative result.
+
+**D181 — why the exact octonion superpotential refuses (results/gkly_compatible_d181.txt).** For a Fano-line split only 3 of GKLY's 7
+octonion terms are compatible (one of their pairs lies inside the line or inside its complement); those 3 leave THREE flat directions
+that are not clean disk identifications. So within the octonion-fixed pairing (pairs of index difference 2 and 1 in the cyclic
+labelling), an associative-aligned split is under-constrained — the obstruction is structural, not numerical.
+
+**D182 — a lead for n from curve counts after all, via the gauge function (results/kappa_counts_d182.txt; order of magnitude).** D153
+dismissed threshold corrections because beta coefficients are small. But in heterotic (2,2) models the moduli-dependent thresholds also
+involve the Yukawa/prepotential instanton series, whose coefficients are curve counts (thousands). If the gauge-function correction κq
+carries κ ~ n₁/(16π²), the requirement n = 2πκ/N₂ = 125 needs n₁ ~ 3,160·N₂: the quintic (2,875) gives N₂ ~ 0.9, P(1,1,1,1,2)[6]
+(7,884) N₂ ~ 2.5, P(1,1,1,1,4)[8] (29,504) N₂ ~ 9.3 — the right range for a small hidden group. Normalisation uncertain by O(1)–O(2π);
+this is a lead only. But it reconnects the two failed routes (D153 thresholds, D165 metric instantons): the large number could be a
+curve count sitting in a gauge coupling's instanton correction, inside an exponent — exactly the form D167 requires.
