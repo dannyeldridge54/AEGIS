@@ -1,0 +1,60 @@
+{'muQ1': np.float64(1.0682), 'muR': np.float64(-1.0682), 'muQ3': np.float64(0.8636), 'muu3': np.float64(-0.6591), 'mul': np.float64(0.5227), 'muH': np.float64(0.4773)}
+mu_l / mu_A = 0.523;  n_B/s = 3.96e-03 x (mu_A/T);  needed mu_A/T = 2.20e-08
+earlier generic estimate needed mu/T = 2.30e-08 -> ratio 0.96
+exit 0
+(b) thermal: instanton potential ~ 2.5e-113 GeV^4 vs needed ~ 2.6e+51 GeV^4 -> short by 10^164
+(a) hidden axion mixing (toy, radiation era):
+   hidden energy fraction 0.003: peak angle speed r = 0.013  (estimate Omega_h M_P/F = 0.002; need ~0.02)
+   hidden energy fraction 0.010: peak angle speed r = 0.025  (estimate Omega_h M_P/F = 0.006; need ~0.02)
+   hidden energy fraction 0.030: peak angle speed r = 0.035  (estimate Omega_h M_P/F = 0.019; need ~0.02)
+   hidden energy fraction 0.100: peak angle speed r = 0.043  (estimate Omega_h M_P/F = 0.064; need ~0.02)
+exit 0
+T_RH 1e+12 GeV: gravitino DM needs m_3/2 = 9.2e+11 GeV -> OK (m < T_RH)
+T_RH 1e+13 GeV: gravitino DM needs m_3/2 = 2.0e+14 GeV -> NOT POSSIBLE: m_3/2 > T_RH, no thermal production
+T_RH 1e+14 GeV: gravitino DM needs m_3/2 = 4.3e+16 GeV -> NOT POSSIBLE: m_3/2 > T_RH, no thermal production
+T_RH 1e+15 GeV: gravitino DM needs m_3/2 = 9.2e+18 GeV -> NOT POSSIBLE: m_3/2 > T_RH, no thermal production
+exit 0
+Nieh-Yan period in the angle: 8.000 -> instanton exponent A = 0.7854
+cliff m2 0.5: N_end 259.7, n_s 0.9631, r 0.0040 | n_B/s 1.44e-07 (x1.7e+03 of observed), peak angle speed 8.78e-01
+cliff m2 1.0: N_end 259.7, n_s 0.9631, r 0.0040 | n_B/s 3.63e-07 (x4.2e+03 of observed), peak angle speed 1.76e+00
+cliff m2 2.0: N_end 259.7, n_s 0.9631, r 0.0040 | n_B/s 7.92e-07 (x9.1e+03 of observed), peak angle speed 2.07e+00
+exit 0
+angle-dependent amplitude (coefficient of cos A y): A*W_0*W_c*exp(-A*x)/(2*x**2)
+matches A W0 Wc e^{-Ax}/(2x^2): True
+inflaton mass m = 2.07e-05 M_P = 5.0e+13 GeV
+W0/Wc   0.1  m_3/2 1e+11 GeV -> delta_eff ~ 1.1e-06
+W0/Wc   0.1  m_3/2 3e+11 GeV -> delta_eff ~ 1.0e-05
+W0/Wc   0.1  m_3/2 1e+12 GeV -> delta_eff ~ 1.1e-04
+W0/Wc   0.1  m_3/2 1e+13 GeV -> delta_eff ~ 1.1e-02
+W0/Wc   1.0  m_3/2 1e+11 GeV -> delta_eff ~ 1.1e-05
+W0/Wc   1.0  m_3/2 3e+11 GeV -> delta_eff ~ 1.0e-04
+W0/Wc   1.0  m_3/2 1e+12 GeV -> delta_eff ~ 1.1e-03
+W0/Wc   1.0  m_3/2 1e+13 GeV -> delta_eff ~ 1.1e-01
+W0/Wc  10.0  m_3/2 1e+11 GeV -> delta_eff ~ 1.1e-04
+W0/Wc  10.0  m_3/2 3e+11 GeV -> delta_eff ~ 1.0e-03
+W0/Wc  10.0  m_3/2 1e+12 GeV -> delta_eff ~ 1.1e-02
+W0/Wc  10.0  m_3/2 1e+13 GeV -> delta_eff ~ 1.1e+00
+exit 0
+required mu/T at freeze-out: 2.30e-08
+K1 T=130 GeV: phidot=3.2e-39 GeV^2, mu/T=1.0e-59, shortfall factor ~1e51
+K2: Weinberg-operator equilibrium above T_F ~ 2.1e+13 GeV
+K2: needed phidot ~ 1.2e+24 GeV^2; kinetic/radiation at T_F = 1.0e-07 (falls as T^2 afterwards)
+K2: same ratio at BBN (1 MeV): 2.4e-40
+K3: needs reheating T_RH >= 2e+13 GeV; usual gravitino bound T_RH <~ 1e9-1e10 GeV unless m_3/2 >~ 10-100 TeV
+D1: c_A = sqrt(3/8) = 0.612; needed phidot at T_F: 1.9e+24 GeV^2
+D1: field travel after T_F: 3.1e+15 GeV = 1.3e-03 M_P = 8.3e-04 rad of the Twist angle
+D1: if rolling freely since T_RH = 1e+14 GeV: travel ~ 6.2e-03 M_P
+D1: if rolling freely since T_RH = 1e+15 GeV: travel ~ 6.2e-02 M_P
+D3: gravitino yield at T_RH = 2e+13 GeV: Y ~ 5.0e-09 (lower bound; extrapolated past 1e12 GeV)
+D3: a stable lightest superpartner from those decays must be lighter than ~0.09 GeV to not overfill dark matter
+D4: H(T_F) = 6.0e+08 GeV; needed phidot/(H M_P) at T_F = 1.3e-03 (kinetic share 2.8e-07)
+D4: same, at reheating T_RH = 1e+14 GeV: phidot/(H M_P) = 0.01
+D4: same, at reheating T_RH = 1e+15 GeV: phidot/(H M_P) = 0.06
+D4: dilaton excursion 0.5 M_P after inflation changes the angle speed by x2.3
+D4: dilaton excursion 1.0 M_P after inflation changes the angle speed by x5.1
+D4: dilaton excursion 2.0 M_P after inflation changes the angle speed by x26.2
+D5: normal, lightest 0 (sum 0.059 eV): T_F ~ 2.1e+13 GeV
+D5: inverted, lightest 0 (sum 0.10 eV): T_F ~ 1.1e+13 GeV
+D5: degenerate, sum 0.15 eV: T_F ~ 7.1e+12 GeV
+D5: degenerate, sum 0.30 eV: T_F ~ 1.8e+12 GeV
+exit 0
