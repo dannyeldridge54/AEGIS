@@ -1552,3 +1552,16 @@ the instanton sum changes ln(metric) by O(10⁻⁴–1) where it is under contro
 in the metric" for the selected sum too (extends D165). n stays with an exponent (flux warping, D166–D167) or a non-geometric phase near
 the conifold (where τ ≈ 1.2 and the large-volume description itself ends). The degree condition and n are therefore NOT set by the same
 sum (corrects the hope at the end of D188): they are two separate requirements.
+
+**D190 — can the flux-warping route for n (D166) live in the heterotic home? (literature check).** D166's exponent 2n = 8πK/(3g_sM) is
+Klebanov–Strassler/GKP warping, a type IIB mechanism (RR + NS three-form flux on a deformed conifold). The heterotic analogue is the
+resolved conifold with torsion (Carlevaro–Israël, arXiv:0910.3190; local models review arXiv:1109.1534): there the coupling can be kept
+small everywhere and a double-scaling limit isolates a throat, but the warp factor is **power-like** in the blow-up parameter a
+("acquires a power-like behavior" when a is small compared with the magnetic charges), not exponential in a ratio of flux quanta.
+So in heterotic, a hierarchy like e^{−250} must be put into a by hand — it relocates n rather than deriving it.
+**Verdict:** the frontier is now sharper. Matter-neutrality (C) and the rung-3 disk (A) point to weakly coupled heterotic; the only
+lead found that turns integers into an exponential depth n (flux warping) is type IIB, where C fails (D150–D151). D189 closed instanton
+sums in the metric. Remaining honest options for n: (i) a IIB construction that evades D151's matter coupling (e.g. matter on D3-branes
+far from the volume modulus, sequestered — a known but model-dependent escape); (ii) heterotic/F-theory duality, where the IIB flux
+integers map to heterotic bundle data — whether the exponent survives the map is the precise open question; (iii) accept n as a
+chosen number (as now). (ii) is the most promising next lead.
