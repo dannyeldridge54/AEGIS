@@ -5,7 +5,9 @@ import mpmath as mp, sys
 mp.mp.dps = 30
 n = 125
 def eta(y): return mp.e ** (-2 * mp.pi * y / 24) * mp.qp(mp.e ** (-2 * mp.pi * y))
-def h(y): return (eta(y) / eta(9 * y)) ** 3
+def h(y):
+    if y < mp.mpf(1) / 3: return (3 * eta(1 / y) / eta(1 / (9 * y))) ** 3
+    return (eta(y) / eta(9 * y)) ** 3
 def lnV_twist(u): return -mp.log(1 + u / 2) - 2 * n * (1 - mp.exp(-mp.pi * u / 8))
 def make_M(c):
     return lambda u: -mp.log(1 + u / 2) - 2 * n * (c * h(u / 16)) / (1 + c * h(u / 16))
@@ -15,9 +17,10 @@ def analyse(lnV, label, Nstar=(55.7, 57)):
     d1 = lambda p: mp.diff(f, p); d2 = lambda p: mp.diff(f, p, 2)
     eps = lambda p: d1(p) ** 2 / 2
     # end of inflation: eps = 1, scanning down from large phi
-    p = mp.mpf(3)
-    while eps(p) > 1 and p > -40: p -= mp.mpf("0.02")
-    pend = mp.findroot(lambda q: eps(q) - 1, p)
+    p = mp.mpf(6)
+    while eps(p) < 1: p -= mp.mpf("0.02")   # down the tail to the cliff (D196 fix: scan, then bracket)
+    while eps(p) > 1: p -= mp.mpf("0.02")   # across the cliff to the plateau edge
+    pend = mp.findroot(lambda q: eps(q) - 1, (p, p + mp.mpf('0.02')), solver='anderson')
     out = []
     for Ns in Nstar:
         # N = int_{pend}^{p*} dphi / sqrt(2 eps) ; integrate backwards (phi decreases into the plateau)

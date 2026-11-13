@@ -1620,3 +1620,17 @@ version costs nothing observable at c = 1, and needs no second huge number** —
 It does NOT fix n_s (still ~0.965, so D157's INCONSISTENT verdict applies to TWIST-M equally), and n is still chosen. Must be redone
 before any claim: heating and matter (they depend on where the cliff sits), N* range, and D164's coupling check at the new cliff.
 Status: T-duality obstacle (D194) resolved in principle by Γ₀(9) at no observable cost; post-data construction, no new predictions.
+
+**D196 — TWIST-M9: the degree-9 duality-consistent cliff (theory/string_home/twistm9_d196.py).** Using s = 1/(1 + h⁹) (h the Γ₀(9)
+hauptmodul; h⁹ is still Γ₀(9)-invariant): at the large-radius cusp 1/h⁹ = q⁹(1 + 27q + …) — the leftover STARTS at degree 9 with no lower
+degrees, which is exactly D164's escape condition, now built in by modular symmetry rather than imposed. Matching the tail gives
+Im T_het = x/72; today (x = 89) 1/h⁹ = 4.44×10⁻³¹ vs the Twist's e^{−πx/4} = 4.39×10⁻³¹ (tail kept), and Im T_het = 1.24, R ≈ 1.11,
+g_s ≈ 0.96 — weakly coupled, but only just. **Cost:** the cliff moves out to u ≈ 23 (x ≈ 11.5); the stretch between the plateau and
+the cliff (where V ∝ 1/(1 + u/2) is a power-law slope with ε ≈ 1/3) adds e-folds, pushing the CMB point and giving n_s = 0.9596/0.9606,
+r = 0.0051/0.0048 at N* = 55.7/57 — further from the data than the Twist (0.964–0.965) or TWIST-M (0.965–0.966).
+Fix note: the end-of-inflation search in D195 started on the tail; it now scans down the tail, across the cliff, and brackets the
+plateau-side edge. D195's numbers are unchanged on rerun (0.9651/0.9658, r 0.0038/0.0036).
+**Verdict:** there is a trade-off inside the duality-consistent family: degree 1 (TWIST-M) keeps n_s ≈ 0.965 but sits at strong heterotic
+coupling today (g_s ≈ 26, D164); degree 9 (TWIST-M9) is weakly coupled today (g_s ≈ 0.96) but lowers n_s to ≈ 0.960. Neither reaches the
+data's n_s ≈ 0.974 (D157). Changing μ (the g-term) could shorten the intermediate stretch — not tried here, because tuning it after
+seeing n_s would be post-data fitting; if pursued it must be locked as a separate model first.
