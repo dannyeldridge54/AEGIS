@@ -1722,3 +1722,13 @@ Twist's preheating efficiency, and with an upper edge (x ≲ 91) so it is also a
 physics (Δφ ∝ ln(1/f)) and the same thawing; the actual M9 heating (χ's coupling must be re-placed at the new cliff) is not computed.
 **Verdict:** TWIST-M9 trades the strong-coupling problem for a reheating requirement f ≈ 0.35 ± 0.02 — a new, checkable condition and a
 fine-tuning. Together with its lower n_s, M9 is a weaker candidate than first appeared; the heterotic-home question remains open at this point.
+
+**D204 — TWIST-M9 freeze/thaw computed (theory/inflation/m9_freeze_d204.py; results/m9_freeze_d204.txt): weak coupling today is out of reach.**
+Full D185 machinery with the M9 potential. Heat share → frozen x, today x, g_s today: 0.8% → 1.98×10⁴, 2.43×10⁴, 4.4×10³; 5% → 3147, 3862, 279;
+20% → 771, 946, 34; 35% → 432, 530, 14; 50% → 297, 364, 8.1. Today's x falls only ~1/f, so even 100% heat would leave x ≈ 180 and g_s ≈ 3;
+weak coupling needs x ≲ 91. The dark energy is unaffected (w0 −0.900, wa −0.145 at every heat share — the leftover is negligible this far out).
+This corrects D203 (its calibration ignored the late thaw and the different post-cliff dynamics; it said f ≈ 0.35 suffices — wrong) and
+D196 (which assumed today's x = 89). **Verdict:** no version found has weakly coupled heterotic strings today: degree 1 gives g_s ≈ 26
+(D164), degree 9 gives g_s ≳ 3 even with total reheating. Today's Twist field sits in the strongly coupled (Hořava–Witten) regime in
+every heterotic realisation tried, where the shield's protections (no T in the SM couplings, rung 3) fail (D154, D184). The string home is
+therefore OPEN again at the level of "no known setting"; the effective-theory shield (PREREG_SHIELD) stands as an assumption, not a derivation.
