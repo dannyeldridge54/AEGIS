@@ -1,0 +1,1 @@
+mu 1, f_rh 0.0147, m 6e9, y 0.1: n_B/s 3.70e-10 (x4.3); peak hidden 0.27; end 4.47e-06; T 1.0e+10; dilution x1.52
