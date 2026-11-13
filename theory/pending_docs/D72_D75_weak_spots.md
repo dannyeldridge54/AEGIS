@@ -1836,3 +1836,18 @@ direction's KK tower (the distance-conjecture tower) coupling to brane matter at
 every "move far in moduli space" route fails: something becomes light (KK tower here, strong coupling in heterotic) and couples to matter.
 This is a general lesson for question 9: a field that travels ~16 M_P will, in every string setting examined, make some tower light enough
 to break matter neutrality by the time it reaches today's value. The string home is open; the shield remains an EFT assumption.
+
+**D212 — the Twist's dark-energy tail sits EXACTLY on the Trans-Planckian Censorship bound (theory/darkenergy/tcc_rungs_d212.py).**
+Bedroya–Vafa (arXiv:1909.11063, eq. 19) derive (|V′|/V)_∞ ≥ 2/√((d−1)(d−2)) in the asymptotic region of field space; in 4-d this is
+√(2/3) = 0.8165. On rung 3α = k the tail slope is λ = √(2/k): rung 3 gives λ = √(2/3) — equality, to every digit. Rungs 4–7 (λ 0.71–0.53)
+VIOLATE the bound; rungs 1–2 satisfy it. Combined with D207 (integer-power plateau superpotential needs an odd rung), the allowed set is
+{1, 3}. Rung 1 (λ = √2) gives w0 −0.68, σ8 −5.4%, H +5.8% at z = 0.3, D_M short 3.3% (LAM=1.414 run) — signals ~3× the Twist's, very likely
+excluded by DESI DR2 (not fitted). So rung 3 is the SHALLOWEST tail TCC permits and the only TCC-allowed odd rung compatible with the
+data's mild w0 ≈ −0.9 — a selection argument for rung 3 independent of the octonion story (D175) and of r.
+Consequences: (i) the HW rung-4 alternative (D187, PREREG_TWIST4) violates TCC — a third strike against it; (ii) the Twist makes a sharp
+swampland-facing prediction: today's dark energy is an exponential tail with the minimal TCC slope, so any measurement implying a
+shallower asymptotic slope (w0 closer to −1 with the same thawing shape, e.g. w0 > −0.93 with |wa| small) would push it into TCC
+violation; (iii) caveats: TCC is a conjecture; the bound is asymptotic and the Twist's tail is asymptotic only up to e^{−πx/4} leftovers
+(negligible today). This is a genuine structural plus: the "rung 3" that the cosmology picked is exactly where quantum-gravity
+consistency (as conjectured) puts its edge. It also matches the observation that no-scale (K = −3 ln) exponentials saturate TCC, which
+is known in the swampland literature — so this is a recognition, not a discovery.
