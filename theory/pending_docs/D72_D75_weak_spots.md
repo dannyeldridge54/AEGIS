@@ -1656,3 +1656,17 @@ against quasar/clock bounds ~10⁻⁶ ⇒ needs |δ_GS| ≲ 0.01. For the degree
 coefficients b′ₐ = 0, hidden groups included), OR the dilaton must be stabilised in its invariant form with no T-dependence (e.g. Kähler
 stabilisation — not shown). D193's "works" is downgraded to "works only if δ_GS ≈ 0". This also names a falsifiable signature: if any
 leak exists it is a drift of α tracking ln(u|η|⁴), i.e. ∝ T at late times — the same redshift shape PREREG_SHIELD already fixes.
+
+**D199 — a no-go: on a Z₃-type orbifold, δ_GS = 0 forbids every condensing gauge group (theory/string_home/gs_zero_d199.py).** Using
+Ibanez–Lüst's duality-anomaly coefficient b′ⁱₐ = −C(Gₐ) + Σ T(R)(1 + 2nⁱ_R) (hep-th/9202046 eq. 3.6; δⁱ_GS = b′ⁱₐ/kₐ for every factor when no
+N = 2 sectors) with Z₃ modular weights (untwisted −δᵢⱼ, three copies; twisted −2/3 per plane; oscillator states −5/3 in one plane). The code
+reproduces the literature's b′ = −30 for both the hidden E₈ and the (2,2) E₆ (a check). Algebra: b′ = −C + U − Tw/3 − Osc, while the N = 1
+beta coefficient is b = −3C + 3U + Tw + Osc. Setting b′ = 0 gives b = 2·Tw + 4·Osc ≥ 0: **no asymptotically free group survives** (brute
+scan: 0 counter-cases). So δ_GS = 0 (needed by D198) and gaugino condensation (needed by D193's racetrack, and for any hidden-sector dilaton
+stabilisation) cannot coexist on a Z₃-type orbifold.
+**Consequences:** (i) the heterotic Z₃ home with condensate-stabilised dilaton predicts an α drift of order 10⁻⁴ × |δ_GS| (D198) — excluded
+for any |δ_GS| ≳ 0.01, and every example in the literature has |δ_GS| = 9–30 per plane; (ii) the only escapes are a dilaton stabilised by
+something other than condensates (non-perturbative Kähler corrections / the invariant linear-multiplet dilaton fixed T-independently — the
+precise open question), or an orbifold where the Twist's modulus is a plane that is NOT completely rotated (then δ_GS need not equal b′/k, but
+such planes have N = 2 sectors, which reintroduce T-thresholds for the SM unless the SM avoids them — D152's original worry).
+Status: the heterotic Z₃ home is under real pressure; "matter neutral" (C) now requires a dilaton-stabilisation mechanism not yet known.
