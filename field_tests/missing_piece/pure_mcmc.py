@@ -49,7 +49,7 @@ def run(m):
         except Exception:
             tau = float("nan")
         conv = bool(np.all(rh < 0.02) and (it // 2) > 30 * tau)
-        json.dump({"steps": it, "R_minus_1": rh.tolist(), "tau": tau, "converged": conv},
+        json.dump({"steps": int(it), "R_minus_1": [float(v) for v in rh], "tau": tau, "converged": conv},
                   open(os.path.join(OUTD, f"{m}_status.json"), "w"))
         print(m, it, "R-1", np.round(rh, 4).tolist(), "tau", round(tau, 1), "converged", conv, flush=True)
         if conv:
