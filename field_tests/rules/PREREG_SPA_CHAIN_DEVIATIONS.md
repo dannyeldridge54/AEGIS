@@ -27,3 +27,10 @@ data and the stopping rule unchanged.
 D3 add (17:12): still no first evaluation after 6 min, while the same evaluation took 24 s in the diagnostic. The difference: the chains run
 at "nice -n 5" (low priority) and the PC's cores are taken by the FLAG-1 chains and matter checks at normal priority, so the chains were
 starved of CPU — the likely cause of the 2-hour stall too. Removed the nice; restarted fresh (still no samples existed).
+## D4 (13 Nov 17:24) — the actual cause found; both chains now sampling
+A debug-logged restart showed every candidate start failing with CosmoSevereError('S8 was not recognized as a derived parameter'): the
+script requested "S8" from CLASS as a derived parameter, which CLASS does not provide, so every point was rejected (up to max_tries; this
+is what sat at "Getting initial point" for hours and likely what ended in the segfault). The D2 re-centring and the D3 changes (speed
+measurement off, no nice) were not the cause. Fix: drop "S8" from the requested derived list; S8 = σ8 √(Ω_m/0.3) is computed from the
+chains afterwards. Likelihoods, priors, data and the stopping rule unchanged. Both chains started sampling at 17:24 (fresh output, no
+earlier samples existed). Lesson: the posterior diagnostic should have built the exact sampler configuration first.

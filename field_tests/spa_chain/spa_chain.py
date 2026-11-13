@@ -16,7 +16,7 @@ def main(model):
         if isinstance(p, dict) and "prior" in p and k in m:          # D2: every sampled parameter, not only those with a ref
             old = p.get("ref"); sc = old.get("scale") if isinstance(old, dict) else None
             p["ref"] = {"dist": "norm", "loc": float(m[k]), "scale": abs(float(sc)) if sc else 1e-3 * max(abs(float(m[k])), 1e-3)}
-    for d in ("H0", "Omega_m", "sigma8", "S8"):
+    for d in ("H0", "Omega_m", "sigma8"):          # D4: S8 is not a CLASS derived parameter (every point failed); S8 = sigma8 sqrt(Omega_m/0.3) in post-processing
         info["params"].setdefault(d, {"latex": d})
     info["sampler"] = {"mcmc": {"Rminus1_stop": 0.02, "Rminus1_cl_stop": 0.2, "max_tries": 1000, "learn_proposal": True,
                                 "output_every": "60s", "measure_speeds": False}}
