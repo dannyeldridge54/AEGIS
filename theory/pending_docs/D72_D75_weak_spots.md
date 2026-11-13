@@ -2013,3 +2013,20 @@ D158) is partly the same BAO pull, so a high-τ resolution would weaken the dark
 SN-driven part would survive; (iii) n_s is positively correlated with τ in CMB fits, so a higher τ would, if anything, raise the inferred n_s
 further (not quantified in the paper) — bad for the plain Twist, neutral for TWIST-G−/L. A direct τ measurement (LiteBIRD, CLASS, ground
 low-ℓ) therefore bears on both of the Twist's main data questions at once. Recorded as a known systematic, not a result.
+
+**D227 — TWIST-C: a constant helper term W = √3 m S (T + c) (locked PREREG_TWISTC 3cfaf39; results/twistc_scan.txt).** Prompted by
+Gialamas–Katsoulas–Tamvakis (arXiv:2505.03608), who keep K = −3 ln(T + T̄ − |S|²/3) and fix Starobinsky's n_s with a small integer-power
+superpotential correction. In the Twist the most generic such term is a constant linear in S. Scan (a sign bug in the plateau check — the
+slope is negative on the plateau — was fixed in code before any result was read; the locked rule is unchanged):
+| c | n_s (N* 55.7/57) | r |
+| −3×10⁻⁷ | 0.9567/0.9574 | 0.0030/0.0028 |
+| 0 | 0.9642/0.9650 | 0.0037/0.0036 |
+| +1×10⁻⁷ | 0.9669/0.9677 | 0.0040/0.0039 |
+| +3×10⁻⁷ | 0.9724/0.9734 | 0.0047/0.0046 |
+| +1×10⁻⁶ | 0.9946/0.9964 | 0.0084 |
+c ≈ +3.5×10⁻⁷ reaches n_s ≈ 0.974 with r ≈ 0.005 — LOWER r than TWIST-G− (0.0068) or TWIST-L (0.0073) at the same n_s, so the three are separable
+by r at the ~0.002 level (LiteBIRD/CMB-S4 σ(r) ~ 0.001). Costs: (i) c must be ~10⁻³ of the field value at the CMB point (u* ≈ 2.5×10⁻⁴) and
+is sharply tuned — n_s moves by ~0.01 for Δc ~ 2×10⁻⁷ — a new small number with no explanation, unlike G−'s loop-sized γ; (ii) the term
+makes V rise toward the rim for u ≲ 2c ~ 7×10⁻⁷, inside the region already outside the EFT (tower floor u ≈ 1.2×10⁻⁵), so harmless.
+Not done: full supergravity check (the angle's mass now depends on c through |T + c|²). Status: post-data, locked; ranks below TWIST-G− on
+naturalness, distinct from it on r.
