@@ -679,7 +679,7 @@ Status: D80 is reduced to the field-dependent cosmological-constant problem (gen
 decay (option recorded; the matter-yield check at 0.8% heat — queued — covers it too).
 D105 (c) refined. A minimally coupled scalar decays through gravity mainly into non-conformal scalars — here the Higgs
 (4 real degrees of freedom); decays into fermions are suppressed by (m_f/m_χ)² and into gauge bosons by the trace anomaly.
-With Γ = 4m_χ³/(32πM_P²): χ decays after Δφ ≈ 0.6 M_P, heat share ≈ 1% (range 0.8–1.2% over the decay-rate conventions), still
+With Γ = 4m_χ³/(32πM_P²) (Higgs): χ decays after Δφ ≈ 0.52 M_P, heat share ≈ 0.8% (0.8–1.1% over the decay-rate conventions), still
 T_RH ≈ 4×10¹⁴ GeV. Decays into the gravity-only dark-matter fermion are suppressed by (m_DM/m_χ)² ~ 10⁻¹⁸ — no direct
 overproduction. Open detail: χ's fermion partner also has to decay (e.g. to a Higgs and a light fermion, or a gravitino);
 not worked out.
