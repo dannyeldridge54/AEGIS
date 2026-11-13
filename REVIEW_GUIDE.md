@@ -38,7 +38,7 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 | Late universe, PURE-TWIST | locked | `PREREG_PURE_TWIST.md`, `pure_twist.json` | **PREFERRED** (Δχ² −3.37, compressed likelihood); full PR4 likelihood Δχ² −3.85 (`ns_pure.json`) |
 | Flagship FLAG-1 on Planck PR4 | locked | `PREREG_V6_PR4.md`, `selfcheck_v6.json` | **HOLDS ON PR4** (Δχ² −7.81) |
 | Supernova-set robustness | locked | `PREREG_DESY5_SWAP.md`, `PREREG_SN_SWAP.md`; `desy5_swap.json`, `sn_swap_union3.json` | DES Y5: PURE −11.19 (STRAINED vs w₀w_a −16.17), FLAG-1 −14.88 (HOLDS); Union3: PURE −5.29 (STRAINED), FLAG-1 −8.87 (HOLDS); K816 (base slope, β 0.030) on DES Y5: −12.79, **HOLDS** (`desy5_k816.json`); Dovekie: PURE −5.06, FLAG-1 −7.38 vs w₀w_a −8.78, both **HOLD** (`sn_swap_dovekie.json`); K816 on Union3: −7.28, **HOLDS** (`sn_k816_union3.json`); K816 on Dovekie running |
-| Matter asymmetry | derived + chosen + estimate | `theory/matter/`, matter doc D35–D50 | observed amount for m_σ ≈ 3×10¹⁰ GeV (power-law fit through 3 runs) |
+| Matter asymmetry | derived + chosen + estimate | `theory/matter/`, matter doc D35–D50 | observed amount for m_σ ≈ 3×10¹⁰ GeV at heat share 1.5%; at the computed share (~0.1%) ≈ 6×10⁹ GeV (check running); yield is not monotonic in the heat share |
 | Reheating | derived (g, h chosen) | `theory/inflation/reheating_derived.py`, `chi_decay_distance.py` | 0.04–0.4% heat at g = 0.1; T_RH 2.1–3.7×10¹⁴ GeV |
 | Dark matter, gravity-only fermion | estimate | `pidm_abundance.py`, `dm_inflation_production.py` | 3.5×10⁶–1.9×10⁷ GeV |
 | w_a ceiling ≥ −0.40 | locked | `PREREG_WA_CEILING.md`, `effective_w.json` | pending DESI DR3 (today's −0.73 would be a tension) |
