@@ -11,10 +11,10 @@ on INSPIRE-HEP (inspirehep.net) or their institution page before writing — onl
 | Simone Mercuri | Barbero–Immirzi field and Nieh–Yan / instanton angle (arXiv:0902.2764, 1005.1291 with Randono) | The period-8 angle and A = π/4 | check INSPIRE |
 | Keith Olive (with John Ellis, Dimitri Nanopoulos) | no-scale supergravity inflation; gravitational dark-matter production (arXiv:2112.15214) | Reheating, gravitino/superpartner issue, gravity-only dark matter | check INSPIRE |
 | Giacomo Pollari | closest prior work: Barbero–Immirzi scalar for inflation + quintom (arXiv:2308.03145) | How the Twist differs; any overlap we missed | Masaryk University, Brno (as printed in that paper) |
+| Michele Cicoli / Philippe Brax | light moduli as quintessence and fifth forces (string quintessence reviews; coupled dark energy and screening) | Is a non-supersymmetric Standard Model coupled minimally in the Einstein frame a consistent way to shield matter from a no-scale tail field (Developments 90–104)? | check INSPIRE |
 
 Practical notes
 - An arXiv endorser in gr-qc / astro-ph.CO is needed for a first submission; a positive reply from one of these
   people is the usual route.
 - Send the Zenodo DOI (after you press Publish), the PDF, and the repository link with REVIEW_GUIDE.md.
 - Say plainly that the work is independent and AI-assisted; experts respond better to that than to finding out later.
-| Michele Cicoli / Philippe Brax | light moduli as quintessence and fifth forces (string quintessence reviews; coupled dark energy and screening) | Is a non-supersymmetric Standard Model coupled minimally in the Einstein frame a consistent way to shield matter from a no-scale tail field (Developments 90–104)? | check INSPIRE |
