@@ -1,0 +1,4 @@
+heat   2.0%: frozen x  29.23, today x  35.61, w0 -0.9054, wa -0.1371, heterotic g_s today ~ 6.66 (strong)
+heat   5.0%: frozen x  11.85, today x  14.71, w0 -0.8965, wa -0.1415, heterotic g_s today ~ 1.77 (strong)
+heat   7.0%: frozen x   8.54, today x  12.95, w0 -0.8135, wa -0.0964, heterotic g_s today ~ 1.46 (strong)
+heat  10.0%: frozen x   6.06, today x  13.71, w0 -0.8773, wa 0.3339, heterotic g_s today ~ 1.59 (strong)

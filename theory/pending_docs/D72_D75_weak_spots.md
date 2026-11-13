@@ -1508,3 +1508,10 @@ Unified frontier: the Twist's natural string home is weakly coupled heterotic; w
 heterotic coupling when the cliff is the basic instanton. Closing the gap = a cliff instanton of action ~9× the basic one (degree ≳ 9,
 or 9-fold wrapping) with no lower-degree contributions (D164 add). Side result: a heterotic-M-theory Twist would sit on rung 4 and
 predict w0 ≈ −0.93, wa ≈ −0.11 — distinguishable from the rung-3 Twist (−0.90, −0.15) by DESI DR3 + Euclid.
+
+**D185 — the heat-share route to weak heterotic coupling is closed (theory/inflation/heat_window_d185.py).** More reheating freezes the
+field earlier: frozen x = 29 (2%), 12 (5%), 8.5 (7%), 6.1 (10%). But (i) the late thaw carries it back to x ≈ 13–36 today, never
+below ~13, so g_s today stays ≥ 1.46 (weak coupling needs x < 10); and (ii) once the field freezes near the cliff (x ≲ 12) the
+cliff's leftover reshapes the dark energy — w0 −0.81, wa −0.10 at 7% and wa = +0.33 at 10% (the thaw solver fails above that). The
+insensitivity of the prediction to the heat share (D125) holds only while the field freezes at x ≳ 15. So the weak-coupling window
+cannot be reached by heating; the degree-≳9 cliff instanton (D164/D184) remains the only route found.
