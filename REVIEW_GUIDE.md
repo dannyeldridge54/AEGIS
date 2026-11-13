@@ -48,13 +48,14 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 | Matter asymmetry | derived + chosen + estimate | `theory/matter/`, matter doc D35–D50 | at the computed heat share (0.13%) a pre-stated check gave 0.87× at m_σ = 6×10⁹ GeV (predicted 1.0×), so m_σ ≈ 5×10⁹ GeV for 1× (`confirm_f0013_m6e9.txt`); with the reshaped cliff (m2 = 4/π) the same settings give 2.29×, so
   m_σ ≈ 1.5×10¹⁰ GeV (`kick_cliff_v2.txt`); yield is not monotonic in the heat share |
 | Reheating | derived (g, h chosen) | `theory/inflation/reheating_derived.py`, `chi_decay_distance.py` | 0.04–0.4% heat at g = 0.1; T_RH 2.1–3.7×10¹⁴ GeV |
-| Dark matter, gravity-only fermion (see D106: the reheating field's fermion partner may overproduce it) | estimate | `pidm_abundance.py`, `dm_inflation_production.py`, `dm_kination.py` | 3.5×10⁶–1.9×10⁷ GeV with radiation after reheating; ≈ 1×10⁸–6×10⁸ GeV once kination is included (Development 85) |
+| Dark matter, gravity-only fermion (D106: if made by the reheating field's fermion partner, ≈ 250–500 TeV instead) | estimate, unsettled | `pidm_abundance.py`, `dm_inflation_production.py`, `dm_kination.py` | 3.5×10⁶–1.9×10⁷ GeV with radiation after reheating; ≈ 1×10⁸–6×10⁸ GeV once kination is included (Development 85) |
 | w_a ceiling ≥ −0.40 | locked | `PREREG_WA_CEILING.md`, `effective_w.json` | pending DESI DR3 (today's −0.73 would be a tension) |
 | Kination after the cliff adds ~2 e-folds | derived | `theory/inflation/kination_Nstar.py` | n_s 0.9654, r 0.0035 at the computed heat share (instant-reheating 0.9642); with loops (D77) ≈ 0.965–0.968 — an upward systematic found after locking (Development 84) |
 | n_s is fixed by the e-fold count | derived | `theory/inflation/kahler_correction_ns.py` | deforming the 3 moves n_s by < 0.002 (α 0.5–5); 0.973 unreachable |
 | Neutrinos: normal ordering, Σm_ν 0.059–0.064 eV, Majorana | derived (from the matter mechanism) | Development 69 | testable by JUNO, cosmology, 0νββ |
 | w_a for the theory's own β = 0 version | derived | `theory/darkenergy/tail_bend_wa.py` | between about −0.15 and 0 (w₀ ≥ −0.90); the tail's bend only moves w toward −1 |
 | Full tail at the computed heat share | locked | `PREREG_TAIL_F.md`, `tail_f.json` | **DISFAVOURED** (Δχ² +29.2); free heat share → 0.01% (PURE-TWIST limit) |
+| Gravitational-wave propagation | derived | Development 107 | no extra friction, no GW birefringence today (ξ = 0); testable by Einstein Telescope + Cosmic Explorer dark sirens |
 | Birefringence β = 0 | locked | `PREREG_BIREF_NULL.md` | pending; measured 0.28 ± 0.06° (4.9σ tension) |
 | Six lab nulls | locked | `PREREG_LAB_NULLS.md` | consistent with all bounds |
 | Growth (fσ₈ −3%, E_G +5%) | frozen | `pure_twist_growth.json` | pending DESI full-shape, Euclid |
