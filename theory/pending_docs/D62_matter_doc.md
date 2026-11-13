@@ -18,3 +18,6 @@ The base-slope coupled Twist (K816: κ = √(2/3), β fitted) is the headline la
 - Growth: fσ₈ about 1–1.6% below ΛCDM at z = 0.5 (the coupling partly offsets the slower growth of PURE-TWIST, −3.3%); E_G about 3.4–3.6% above ΛCDM.
 - S₈ = 0.807–0.808 vs ΛCDM 0.798–0.800: the coupling makes matter clump slightly **more**, the opposite of PURE-TWIST (0.793). Weak-lensing surveys that prefer S₈ ≈ 0.78 would favour PURE-TWIST over K816 — a way to tell the two apart.
 - BAO distances at the DESI DR2 redshifts: per-bin D_M/r_d and D_H/r_d with % differences from ΛCDM, stored in the JSON.
+
+## Correction to D42 and D62 (13 Nov 08:20, written before the confirming run)
+D42's sentence "less initial heat means more matter" is wrong: its own runs give 1.1× at f = 0.15% and 4.4× at f = 1.47% (m_σ = 6×10⁹ GeV), and D37 gave 0.71× at f = 0.99. The yield rises from f = 0.15% to 1.5% and falls again by f ≈ 1 (not monotonic). D62's "the matter yield rises somewhat at the smaller f" is wrong for the same reason. Consequence: at the computed heat share (f ≈ 0.04–0.4%, D62) the yield at m_σ = 6×10⁹ GeV is about 1×, so the hidden mass for exactly 1× is back near **6×10⁹ GeV**, not 3×10¹⁰ (D50 was at f = 1.47%). Pre-stated check: f = 0.0013 (g 0.1, h 0.3), m_σ = 6×10⁹ GeV, μ = 1, y = 0.1 → predicted ≈ 1.0×.
