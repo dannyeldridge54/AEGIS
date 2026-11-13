@@ -170,3 +170,17 @@ seeing the n_s data, so only future CMB results can score it; TWIST-P is the alt
 - **Bottom line:** no string setting found keeps matter neutral at today's field value; in each, the long field excursion (~16 M_P) makes
   some tower light or some coupling strong — the distance conjecture in practice. The shield stays an effective-theory assumption with a
   locked, falsifiable signature (PREREG_SHIELD). Open-problem doc: questions 1–10 with partial answers.
+
+## 12. Added 13 Nov evening (D212–D218)
+- **TCC (D212–D213):** the tail slope √(2/3) equals the Trans-Planckian Censorship asymptotic bound in 4-d; rungs 4–7 violate it, and with the
+  odd-rung rule (D207) rung 3 is the shallowest allowed tail. The same conjecture excludes the Twist's inflation scale (7.9×10¹⁵ vs 10⁹ GeV), so
+  this is an observation, not support: an r ≈ 0.0036 detection tests the Twist and strong TCC against each other.
+- **Neutrinos (D214):** M_R ~ m_3/2 ~ 2×10¹⁴ GeV (high-scale SUSY) gives m_ν ≈ 0.05 eV for Yukawa ~0.6 — optional, conditional.
+- **n's statistics (D215):** an integer-scanned n gives a log-flat prior on ρ_DE; numerically comparable to Weinberg's argument for Λ — no extra
+  penalty, no explanation either.
+- **Leak shapes (D216):** string-type (growing) leaks have a fingerprint just outside the locked falling-leak band (z = 0.14: 0.30 vs 0.22);
+  PREREG_SHIELD D2 adds the fitted exponent as a reported quantity.
+- **Lumpy starts (D217–D218):** the helper's tachyon edge x = 1/(4ζ) is removed as the binding limit by ζ = 3×10⁵ (full re-run: potential and
+  predictions unchanged); the plateau beyond the CMB point inside the EFT is then tower-limited, ~2.5–3.8 M_P.
+- **Computing:** the full-data chains were blocked for hours by a requested derived parameter ("S8") that CLASS does not provide; fixed
+  (deviation D4), both chains sampling since 17:24. Old FLAG-1 chains stopped at Danny's request.
