@@ -357,3 +357,19 @@ couples to the supergravity compensator; I have not settled this. If it does, th
 ≈ 0.41 (excluded ×120), and the fifth-force problem returns in full — the same as D73's "weight 1" case. So the honest
 status of D73/D89 is: the fifth-force problem is not solved in either reading; it reduces to whether all Standard-Model
 scales can be made T-independent, which needs a mechanism not in the Twist. Label: open, severe (alongside D80).
+
+## Development 90 — the QCD scale does move with x: the fifth-force problem is real (settles the D89 caveat)
+
+Script: theory/darkenergy/fifth_force_KL.py; results/fifth_force_KL.txt.
+The physical gauge coupling in supergravity depends on K and on the matter metrics through the anomaly (Kaplunovsky–Louis):
+1/g² = Re f + (b/16π²) ln(M_P²/μ²) + (c/16π²)K − Σ T(r)/(8π²) ln det Z_r. For QCD in the MSSM (c = 3, b = 3), with
+K = −3 ln(2x) and matter metric Z = (2x)^{−n}, Λ_QCD ∝ x^{(3 − 6n)/... }: computed exponents
+  - n = 1 (sequestered / D3 form): Λ_QCD ∝ x^{−1/2}, Yukawas fixed → proton mass moves, β ≈ 0.41 (Cassini ×120).
+  - n = 0 or 3/2: Λ_QCD ∝ x^{±3/2} → β ≈ 1.2.
+  - n = 3/4 (the one weight that fixes Λ_QCD): Yukawas then go as x^{−3/8}; the ~5% of the nucleon mass from quark masses
+    gives β ~ 0.015 (×4.5 Cassini), and electrons and nuclei with different quark content fall differently (equivalence
+    principle, far above MICROSCOPE). And 3/4 is not a natural weight.
+Conclusion. No modular-weight choice shields ordinary matter from a light T. The fifth-force problem is a real, unsolved
+problem of the one-field Twist: if T is today's dark energy, matter feels it at the 1–100% level. Options (Danny's call):
+(1) find a shielding mechanism (none known); (2) let a separate, shielded field carry dark energy, keeping T for inflation,
+reheating and the kick; (3) state it as the theory's main open problem. Status recorded: (3), with (2) as the clean fallback.

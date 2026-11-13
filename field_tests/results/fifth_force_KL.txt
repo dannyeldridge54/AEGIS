@@ -1,0 +1,5 @@
+weight n 0: Lambda_QCD ~ x^+1.500, Yukawa ~ x^-1.500; beta from Lambda 1.225, from quark masses ~0.061 (Cassini 3.4e-3)
+weight n 0.5: Lambda_QCD ~ x^+0.500, Yukawa ~ x^-0.750; beta from Lambda 0.408, from quark masses ~0.031 (Cassini 3.4e-3)
+weight n 0.75: Lambda_QCD ~ x^-0.000, Yukawa ~ x^-0.375; beta from Lambda 0.000, from quark masses ~0.015 (Cassini 3.4e-3)
+weight n 1.0: Lambda_QCD ~ x^-0.500, Yukawa ~ x^+0.000; beta from Lambda 0.408, from quark masses ~0.000 (Cassini 3.4e-3)
+weight n 1.5: Lambda_QCD ~ x^-1.500, Yukawa ~ x^+0.750; beta from Lambda 1.225, from quark masses ~0.031 (Cassini 3.4e-3)

@@ -76,6 +76,8 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
   Development 78b). **Response (Development 79, made after this result):** the cliff factor was reshaped to
   exp(−n(1 − e^{−πT/4})), which leaves inflation identical (n_s 0.9642, r 0.0038) and gives the PURE-TWIST tail at any
   heat share. A post-hoc change: only new data test it.
+- **FIFTH FORCE (Development 90): UNSOLVED.** If T is today's dark energy, ordinary matter's mass depends on it
+  (β ≈ 0.4 for the sequestered form; no modular weight gives β below Cassini's 3.4×10⁻³).
 - **Withdrawn numbers:** the hidden mass 3–6×10⁹ GeV (a pre-stated check failed; corrected to ~3×10¹⁰ GeV);
   several earlier developments (D26 gravitino, D31) superseded. All kept in the matter doc and git history.
 
@@ -94,8 +96,9 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 7. Ordinary matter must not feel the tail field: natural bulk weights give a fifth force ×120–360 over Cassini, so
    the Standard Model must be sequestered (D3 branes, T-independent Higgs sector). An assumption (Development 73). And T
    must not be a string volume modulus, or the string scale itself moves with x (β ≈ 0.61, Development 89); even in a pure
-   4D supergravity reading, dimensionful matter parameters scale as x^{−1/2}. Making every Standard-Model scale
-   T-independent needs a mechanism the Twist does not have — open, severe.
+   4D supergravity reading, dimensionful matter parameters scale as x^{−1/2}. Kaplunovsky–Louis anomaly terms make
+   Λ_QCD move with x for every modular weight but 3/4 (Development 90): no weight shields matter. **The fifth-force
+   problem is unsolved — the main open problem of the one-field Twist.**
 8. The field moves Δφ ≈ 19–21 M_P from the CMB point to today, in tension with the swampland distance conjecture —
    generic to one-field inflation-plus-quintessence models; open (Development 75).
 9. The twist angle y is heavy during inflation (m_y² = 4H²) but tachyonic on the tail for x ≲ 500 (x today ≈ 360 at the computed heat share: mildly, −0.8H²); it is stable
