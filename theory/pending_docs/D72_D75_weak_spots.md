@@ -1773,3 +1773,17 @@ D207 add — a selection rule falls out: an integer-power plateau superpotential
 (p = 0, 1, 2, 3). Even rungs (2, 4, 6) need half-integer powers. This overlaps with, but is not the same as, the octonion-closure set
 {1, 3, 7} of D175 (rung 5 passes here, fails there). Rung 3 is the only rung in both sets with p = 1, the simplest S·T coupling.
 A mild structural argument for rung 3; it does not by itself choose the string setting.
+
+**D208 — CORRECTION to D205–D206: the rung-4 path in heterotic M-theory changes the Standard-Model gauge coupling.** D184's own output
+says it: the scale-preserving HW path has a_S = −1 per unit ln T (S·T fixed), and "gauge coupling 1/g² = Re S also varies along any path with
+a_S ≠ 0". With symmetric vacua f = S exactly, so along the rung-4 direction d ln α/dφ = 1/√2 ≈ 0.71 — a thaw of Δφ ~ 0.1 since z ~ 1 would move
+α by ~7%, against quasar/clock bounds ~10⁻⁶. So the rung-4 "home" of D205–D206 is NOT matter-neutral; I missed D184's caveat. Holding BOTH
+the scale and the coupling fixed in HW forces Re S fixed AND the orbifold length fixed, leaving only Calabi–Yau SHAPE moduli at fixed volume.
+Example (K3/T⁴-fibred volume t₁t₂², path t₁ = e^σ, t₂ = e^{−σ/2}): k_eff = 1 + 2·¼ = 1.5, i.e. "rung 1.5", tail slope λ = √(2/1.5) = 1.155.
+Late universe for λ = 1.155 (late_predictions_rung.py, LAM=1.155): w0 −0.79, w(0.5) −0.89, H up to +4.1%, D_M short ~3% at z ≈ 0.5–1,
+σ8 −3.2%, f σ8 −7% at z ≈ 0.3–0.5 — signals ~2× the Twist's, likely in tension with DESI DR2 BAO at the ~1% level (not fitted here).
+Shape moduli are also not rung 3, so the inflation sector would have to change too (D207: integer-power plateau needs odd rungs).
+**Status after the correction:** PREREG_TWIST4 stays locked (locks are not withdrawn) but is marked VOID-AS-HOME by deviation D2: its numbers
+describe a direction that is not matter-neutral. Every heterotic home examined fails at least one need today: weak coupling unreachable
+(D204); HW rung-4 path moves α (this note); HW shape moduli give a steep tail and are not rung 3. The string home is OPEN; the shield is an
+effective-theory assumption (PREREG_SHIELD), which is where it stood before today's string work — now with the obstructions mapped.
