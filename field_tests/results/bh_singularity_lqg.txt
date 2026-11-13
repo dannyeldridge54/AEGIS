@@ -1,0 +1,8 @@
+gamma 0.2375: LQC bounce density rho_c = 0.409 rho_Pl
+gamma 0.274: LQC bounce density rho_c = 0.267 rho_Pl
+gamma 0.2375: smallest area 5.17 l_P^2
+gamma 0.274: smallest area 5.96 l_P^2
+gamma 0.01: smallest area 0.22 l_P^2
+gamma 1.0: smallest area 21.77 l_P^2
+unshielded coupling beta 0.41 vs binary-pulsar/Cassini alpha0 < ~3e-3: excluded (same fifth-force problem)
+tail field mass ~ H0 ~ 1e-33 eV: superradiance needs 1e-20-1e-10 eV -> no black-hole clouds

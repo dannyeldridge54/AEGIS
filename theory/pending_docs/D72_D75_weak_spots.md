@@ -528,3 +528,35 @@ Hidden SU(8): confines near 10¹⁴ GeV (from the kick height); its glueballs de
 thaws in the last few billion years, so constants at BBN equal today's (given a shield). Hubble constant: PURE-TWIST gives
 H₀ ≈ 66.8, so the Twist does not ease the SH0ES tension. Areas the Twist does not address: black holes, the Big Bang
 singularity, and LQG's quantum geometry itself. The full area-by-area table is theory/COVERAGE.md.
+
+## Development 99 — black holes
+
+Results: field_tests/results/bh_singularity_lqg.txt.
+  - No hair: a static black hole cannot carry a charge of a minimally coupled light scalar (Bekenstein), so black holes
+    in the Twist look exactly like general relativity's; the slow cosmological roll gives only negligible "hair".
+  - Mergers: no scalar radiation from black-hole pairs, and c_gw = c (locked null). Neutron stars are different: if matter
+    is unshielded they carry the field's charge (β ≈ 0.4), and binary pulsars would radiate dipole waves — excluded, a
+    second face of the main open problem (D90).
+  - Superradiance: the tail field's mass is ~H₀ ~10⁻³³ eV, far below the 10⁻²⁰–10⁻¹⁰ eV window where black holes grow
+    scalar clouds — no signal.
+  - Black-hole entropy: LQG's S = A/4 fixes γ ≈ 0.24–0.27 at the horizon. In the Twist γ is a field; its value at a
+    horizon would be today's cosmic value, which (D83) is not 0.24 under the mapping used. So the Twist does not reproduce
+    LQG's entropy counting as it stands — the same open mismatch, seen from black holes.
+
+## Development 100 — the Big Bang singularity
+
+In loop quantum cosmology the singularity is replaced by a bounce at ρ_c = √3/(32π²γ³) ρ_Pl ≈ 0.41 ρ_Pl for γ = 0.2375
+(0.27 ρ_Pl for 0.274). For plateau (Starobinsky-type) potentials a slow-roll phase after the bounce is "almost inevitable"
+(Bonga & Gupt, arXiv:1510.00680), and the Twist's plateau has the same α = 1 shape, so a bounce-then-inflation history is
+plausible. Two catches, stated: (i) with γ a field, ρ_c would depend on its value at the bounce, and under the mapping used
+(1/γ = y/x, y = 0) γ is not ~0.24 there either; (ii) the helper field S and the hidden sector were never followed through a
+bounce. Label: not derived; a consistent-looking outline that inherits the γ-mapping problem.
+
+## Development 101 — loop quantum gravity's quantum geometry
+
+LQG's area spectrum has a smallest area 4√3πγ ℓ_P² (≈ 5.2 ℓ_P² for γ = 0.2375). If γ is a field, the size of the area
+quanta would change with it — over cosmic history and from place to place. No experiment can see Planck-scale areas, so
+this gives no test, and the Twist uses none of LQG's quantum geometry in its calculations. Stated plainly: the Twist is a
+supergravity model motivated by LQG; it does not derive anything from LQG's quantum geometry, and its γ field does not sit
+at the value LQG needs (D83). Making that link real (a mapping under which today's field gives γ ≈ 0.24, or a reason γ's
+black-hole value is not the cosmic field value) is the open foundational task.

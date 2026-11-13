@@ -26,4 +26,6 @@ estimate / locked / open). AI-assisted.
 | Quantum stability of the tail | needs every particle >6 meV to have a field-independent mass | open, severe, generic | D80 |
 | Field distance | ~20 M_P, against the swampland distance conjecture | open, generic | D75 |
 | Loop quantum gravity link | today's field does not sit at γ ≈ 0.24 | open mismatch | D83 |
-| Black holes, the Big Bang singularity, the quantum geometry itself | not addressed by the Twist | not covered | — |
+| Black holes | no hair, GR-like mergers, no superradiance; LQG entropy needs γ ≈ 0.24, which the field does not give; pulsars feel the unshielded field | outline / open | D99 |
+| Big Bang singularity | LQC bounce at ~0.4 ρ_Pl, then plateau inflation is likely (Bonga & Gupt) — inherits the γ-mapping problem | outline, not derived | D100 |
+| LQG quantum geometry | area quanta would vary with γ; no test; the Twist uses none of it | motivation only | D101 |
