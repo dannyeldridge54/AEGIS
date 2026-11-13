@@ -220,3 +220,28 @@ superpartner masses that do not depend on x — e.g. supersymmetry breaking in a
 cancellation surviving at one loop. Neither is shown. This is the Kolda–Lyth problem shared by every quintessence
 model with a rolling modulus, and the cosmological-constant problem behind it is not solved here either.
 Label: open, generic, severe. Stated in REVIEW_GUIDE assumptions.
+
+## Development 81 — how early S is stable, the size of ζ, and where inflation starts
+
+Script: inline (cliff_v2 + the D72 rule m_S²/H² = −2 + 8ζx); results/s_early_efolds.txt. Reshaped cliff, m2 = 4/π:
+CMB point x* = 1.34×10⁻⁴ (N* 55.7).
+  ζ = 10⁴: S stable for 248 e-folds before the CMB point, but only heavy (m_S > 3H) from 1.3 e-folds after it.
+  ζ = 3×10⁴: stable 856 e-folds before, heavy from 109 e-folds before the CMB point.
+  ζ = 10⁵: heavy from 496 e-folds before.
+So the working value is raised to ζ ≳ 3×10⁴ (Λ = 1/√ζ ≈ 6×10⁻³ M_P ≈ 1.4×10¹⁶ GeV — still the GUT scale). D72's
+"ζ ≳ 10⁴" is superseded for the reshaped cliff.
+
+Initial conditions. The plateau runs on to x → 0, so inflation can start anywhere earlier on it; with ζ ≳ 3×10⁴ there
+are hundreds of e-folds of plateau on which S is heavy before the CMB scales leave. What is not addressed is the general
+plateau-inflation question of why a patch starts smooth and potential-dominated (Ijjas–Steinhardt–Loeb); the Twist
+says nothing new about it. Label: open, generic.
+
+## Development 82 — birefringence: the Twist's zero is robust (two independent reasons)
+
+The measured rotation 0.28 ± 0.06° (4.9σ, calibration-dependent) is in tension with our locked β = 0. Why we predict 0:
+  1. The photon's coupling to the angle would come from a T-dependent gauge kinetic function. The Standard Model is
+     sequestered on D3 branes (D73, needed against fifth forces), so there is no y F F̃ term.
+  2. Even with such a term the rotation is (k/2)(y_today − y_last-scattering). The angle sits at its minimum on the tail
+     (stable, D79), unmoved since long before last scattering, so the difference is zero.
+Both would have to fail for the Twist to give a rotation. So if a calibration-independent birefringence is confirmed at
+≥ 5σ, the Twist is falsified on this point — no adjustment available. (Already a stated falsifier.)
