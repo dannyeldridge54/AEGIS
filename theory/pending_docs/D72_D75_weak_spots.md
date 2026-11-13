@@ -887,3 +887,10 @@ area (Frodden, Geiller, Noui & Perez, arXiv:1212.4060), so the entropy calculati
 value (whatever y settles at) is not contradicted. Cost: the Twist's γ is then a cosmological field unrelated to the LQG area
 spectrum, and the "LQG link" becomes motivation only (as COVERAGE already lists for quantum geometry). Status: open mismatch →
 resolved by choice (labelled as such), not by derivation.
+
+**D121 — D118's condition checked: PASSES (results/crossing_angle_d118.txt; theory/matter/crossing_angle_d118.py).** Two-field run
+with the matter-check settings (exp cliff 4/π, heat 0.8%), traced for 2 e-folds after inflation: the field passes x = 0.02–0.1
+between 0.4 and 1.2 e-folds after the end, and the angle is still |y| < 5×10⁻⁵ there (the kick that later carries it to y ≈ 15
+comes afterwards). So the saturating mass's minimum at the crossing is 2h|sin πy| ≤ 3×10⁻⁴ h ≤ 3×10⁻⁴ M_P, below the
+non-adiabatic window √(g φ̇) ≈ 5×10⁻⁴ M_P: instant preheating proceeds as with the linear mass. (Upper bound from the printed
+precision; the true |y| is smaller.) D118 stands as a candidate fix with one new assumption.

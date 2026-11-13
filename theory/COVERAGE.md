@@ -30,4 +30,4 @@ estimate / locked / open). AI-assisted.
 | Black holes | no hair, GR-like mergers, no superradiance; LQG entropy needs γ ≈ 0.24, which the field does not give; pulsars feel the unshielded field | outline / open | D99 |
 | Big Bang singularity | LQC bounce at ~0.4 ρ_Pl, then plateau inflation is likely (Bonga & Gupt) — inherits the γ-mapping problem | outline, not derived | D100 |
 | LQG quantum geometry | area quanta would vary with γ; no test; the Twist uses none of it | motivation only | D101 |
-| Field-dependent vacuum energy | χ's inflaton-dependent mass + Planck links to the non-SUSY SM gave δV ~ 10⁵²–10¹⁰⁸ ρ_DE (D116); a saturating mass (1 − e^{−2π(T−T₀)}) brings it to ≤ 10⁻⁸⁸ ρ_DE | candidate fix (estimate), one new assumption; needs y ≈ integer at the crossing | D105, D116, D118 |
+| Field-dependent vacuum energy | χ's inflaton-dependent mass + Planck links to the non-SUSY SM gave δV ~ 10⁵²–10¹⁰⁸ ρ_DE (D116); a saturating mass (1 − e^{−2π(T−T₀)}) brings it to ≤ 10⁻⁸⁸ ρ_DE | candidate fix (estimate), one new assumption; angle condition passes (D121) | D105, D116, D118 |
