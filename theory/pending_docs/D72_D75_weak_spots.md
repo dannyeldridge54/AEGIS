@@ -1712,3 +1712,13 @@ satisfied). Condensation scale ~0.09 M_P ≈ 2×10¹⁷ GeV. D201's loop bound (
 broken at ~10¹⁴ GeV — no superpartners at colliders (a genuine prediction of this home), the Higgs mass hierarchy is not explained by SUSY,
 and the gravitino (10¹⁴ GeV) decays long before nucleosynthesis. Caveat: the numbers are BGW's example parameters (A_f chosen by them);
 m_3/2 depends exponentially on ⟨ℓ⟩, so it is a plausibility check, not a derivation.
+
+**D203 — TWIST-M9's weak coupling today is NOT automatic: it needs strong reheating (estimate).** D196 took today's x ≈ 89 from the Twist.
+But in TWIST-M9 inflation ends at x ≈ 11.5 instead of 0.0088, and the kination run after the cliff is set by the heat share f. Calibrating on
+the Twist (0.0088 → freeze at 73 for f = 0.8%) gives Δφ ≈ 2.29 ln(1/f). Then for TWIST-M9: f = 0.8% → freeze at x ~ 10⁵, T_het ~ 1300,
+g_s ~ 3×10⁴ (strongly coupled — the M9 advantage is lost); f = 5% → g_s ~ 200; f = 20% → g_s ~ 4; landing at x ≈ 73–89 needs f ≈ 0.33–0.37.
+Weak coupling (g_s < 1 ⇔ x ≲ 91 today) therefore requires a third or more of the inflaton energy to become heat at the cliff — ~45× the
+Twist's preheating efficiency, and with an upper edge (x ≲ 91) so it is also a tuning. Caveats: the calibration assumes the same kination
+physics (Δφ ∝ ln(1/f)) and the same thawing; the actual M9 heating (χ's coupling must be re-placed at the new cliff) is not computed.
+**Verdict:** TWIST-M9 trades the strong-coupling problem for a reheating requirement f ≈ 0.35 ± 0.02 — a new, checkable condition and a
+fine-tuning. Together with its lower n_s, M9 is a weaker candidate than first appeared; the heterotic-home question remains open at this point.
