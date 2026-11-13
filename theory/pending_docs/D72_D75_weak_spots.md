@@ -1232,3 +1232,11 @@ Consequences, stated plainly: (1) the D108 falsifier is met on current data: the
 inconsistent with CMB-SPA + DESI at the locked level. (2) TWIST-P was built for this and can only be scored on future data.
 (3) Caveat recorded, not used to soften the reading: the high n_s is driven by combining DESI BAO with the CMB (CMB-SPA alone gives
 0.968 ± 0.003 in the literature), which some authors attribute to a BAO–CMB tension.
+
+**D158 — where the dark-energy preference went on the full SPA data (diagnostic only; PC results cmp_ns_spa_pure_free.json vs
+cmp_ax_spa_lcdm_halofit_s8y6.json).** PURE-TWIST (n_s free) minus ΛCDM (n_s free), per likelihood: DESI BAO −0.63, Pantheon+ −2.55,
+DES Y6 S8 −0.04 (late universe: −3.2, the Twist still wins) — but CMB: Planck low-ℓ TT −0.26, low-ℓ EE +1.03, Planck/ACT cut +1.13,
+ACT DR6 +0.66, ACT lensing +0.67, SPT-3G +1.47 (CMB: +4.7, the Twist loses). Net +1.45. So the Twist's late-time dark energy still
+fits the late-time data better; the full high-precision CMB pays for it, presumably through the parameter shifts needed to keep the
+distance to last scattering fixed. Caveat (not used to change any reading): the four minimiser starts for PURE free landed at
+n_s 0.9732–0.9759, so minimiser scatter of order 1 in χ² cannot be excluded; an MCMC would settle it. The locked readings stand.
