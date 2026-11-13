@@ -1634,3 +1634,11 @@ plateau-side edge. D195's numbers are unchanged on rerun (0.9651/0.9658, r 0.003
 coupling today (g_s ≈ 26, D164); degree 9 (TWIST-M9) is weakly coupled today (g_s ≈ 0.96) but lowers n_s to ≈ 0.960. Neither reaches the
 data's n_s ≈ 0.974 (D157). Changing μ (the g-term) could shorten the intermediate stretch — not tried here, because tuning it after
 seeing n_s would be post-data fitting; if pursued it must be locked as a separate model first.
+
+**D197 — PREREG_TWISTM9 scan, run as locked (ce4be11; results/twistm9_mu_scan.txt).** All eight μ pass the exclusion tests (inflation ends
+at the cliff, u ≈ 23; g_s today 0.96; S heavy, m_S²/H² 930–10⁵). Locked prediction curve (N* = 55.7 / 57):
+μ 0.125: n_s 0.9568/0.9579, r 0.0058/0.0055 · μ 1: 0.9596/0.9606, r 0.0051/0.0048 · μ 16: 0.9639/0.9648, r 0.0040/0.0038.
+n_s rises only slowly with μ (≈ +0.001 per doubling) and stays below 0.965 across the whole grid: TWIST-M9 cannot reach the data's
+n_s ≈ 0.974 at any locked μ. Its curve (n_s 0.957–0.965 with r 0.0038–0.0058, r FALLING as n_s rises) is distinct from TWIST-L and
+TWIST-P (where r rises with n_s) — future CMB data can tell the three apart. Plain reading: the weakly coupled, duality-consistent
+heterotic version is, on current data, worse than the Twist; it is kept only as a locked, falsifiable alternative.
