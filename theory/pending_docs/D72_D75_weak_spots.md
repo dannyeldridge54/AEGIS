@@ -493,3 +493,16 @@ Danny's call; nothing is changed until he chooses.
 **Decision (Danny, 10:03): route A.** Keep the light tail; one field does everything; the fifth force (D90–D91) and the
 tail's quantum stability (D80) are stated as the theory's main open problems. Routes B and the angle-dark-energy lead
 (D92–D94) stay written up as alternatives.
+
+## Development 96 — no choice of modular weights shields all of the Standard Model (strengthens D90)
+
+Script: theory/darkenergy/weights_shield.py; results/weights_shield.txt.
+D90 used one weight for all matter. Allowing every MSSM multiplet its own weight (Q, U, D, L, E, H_u, H_d; generation-
+universal), we asked for all seven conditions at once: the three gauge couplings fixed (Kaplunovsky–Louis), the up, down and
+lepton Yukawas fixed, and the μ-term fixed. The equations have rank 5 and are inconsistent: no exact solution exists.
+Relaxing any one of SU(3), the up or down Yukawa, or μ still leaves no solution; relaxing one of SU(2), U(1) or the lepton
+Yukawa allows one, but what is left over is far outside the bounds:
+  - SU(2) or U(1) left free: d ln α/dφ ≈ 0.01–0.04, against atomic-clock and quasar limits of ~10⁻⁶;
+  - lepton Yukawa left free: m_e ∝ x^{3/2}, an equivalence-principle violation η ~ 6×10⁻⁹ against MICROSCOPE's 10⁻¹⁵.
+So the obstruction is structural (it comes from the Standard Model's own anomaly coefficients), not a matter of choosing
+weights. This confirms D90: with the light tail (route A) the fifth force cannot be removed inside this framework at one loop.

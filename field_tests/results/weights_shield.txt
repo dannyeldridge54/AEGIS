@@ -1,0 +1,22 @@
+rank 5 of 7 unknowns; 7 conditions; residual []
+  n_Q = +0.8084
+  n_U = +1.6663
+  n_D = -0.1159
+  n_L = +1.5608
+  n_E = +1.8081
+  n_Hu = +1.3616
+  n_Hd = +1.3875
+all conditions met: False
+best compromise residuals: {'SU(3)': np.float64(0.502), 'SU(2)': np.float64(-0.293), 'U(1)': np.float64(-0.488), 'up Yukawa': np.float64(0.836), 'down Yukawa': np.float64(-0.92), 'lepton Yukawa': np.float64(1.756), 'mu': np.float64(-0.251)}
+rank of [A|b]: 6 vs rank A 5
+  without SU(3): exact solution does not exist
+  without SU(2): exact solution exists
+  without U(1): exact solution exists
+  without up Yukawa: exact solution does not exist
+  without down Yukawa: exact solution does not exist
+  without lepton Yukawa: exact solution exists
+  without mu: exact solution does not exist
+Keep everything except one condition; how far is the dropped quantity from fixed?
+  drop SU(2): d ln alpha_2 / d phi = 3.90e-02  (atomic-clock / quasar bounds need ~1e-6 or less)
+  drop U(1): d ln alpha_1 / d phi = 1.19e-02  (atomic-clock / quasar bounds need ~1e-6 or less)
+  drop lepton Yukawa: that Yukawa (electron mass) goes as x^+1.500; d ln m_e / d phi = +1.225; MICROSCOPE estimate eta ~ (1.6e-5 * 1.22) * (2.7e-4 * 1.22) = 6e-09 (bound 1e-15)
