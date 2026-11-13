@@ -77,7 +77,8 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
   exp(−n(1 − e^{−πT/4})), which leaves inflation identical (n_s 0.9642, r 0.0038) and gives the PURE-TWIST tail at any
   heat share. A post-hoc change: only new data test it.
 - **FIFTH FORCE (Development 90): UNSOLVED.** If T is today's dark energy, ordinary matter's mass depends on it
-  (β ≈ 0.4 for the sequestered form; no modular weight gives β below Cassini's 3.4×10⁻³).
+  (β ≈ 0.4 for the sequestered form; no modular weight gives β below Cassini's 3.4×10⁻³), and no standard screening
+  mechanism applies to an exponential tail (Development 91).
 - **Withdrawn numbers:** the hidden mass 3–6×10⁹ GeV (a pre-stated check failed; corrected to ~3×10¹⁰ GeV);
   several earlier developments (D26 gravitino, D31) superseded. All kept in the matter doc and git history.
 

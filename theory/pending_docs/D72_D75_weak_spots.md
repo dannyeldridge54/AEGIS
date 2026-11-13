@@ -373,3 +373,17 @@ Conclusion. No modular-weight choice shields ordinary matter from a light T. The
 problem of the one-field Twist: if T is today's dark energy, matter feels it at the 1–100% level. Options (Danny's call):
 (1) find a shielding mechanism (none known); (2) let a separate, shielded field carry dark energy, keeping T for inflation,
 reheating and the kick; (3) state it as the theory's main open problem. Status recorded: (3), with (2) as the clean fallback.
+
+## Development 91 — screening does not rescue it (option 1 checked)
+
+Script: theory/darkenergy/screening_check.py; results/screening_check.txt.
+Known ways a light coupled field hides from solar-system tests, checked against the Twist's tail:
+  - Chameleon (Khoury–Weltman): with the Twist's exponential tail and β ≈ 0.41, the field's Compton wavelength inside the
+    Sun is 1.8 AU and inside the Earth 0.9 AU — far larger than the bodies (needs ≪ radius). No thin shell: NOT screened.
+    (Chameleons need inverse-power potentials that steepen toward small field; an exponential does not.)
+  - Damour–Polyakov least coupling: needs the matter coupling A(φ) to have a minimum the field is drawn to; here masses
+    are power laws in x (D90), monotonic — no minimum.
+  - Symmetron: needs a Z₂ symmetry and a symmetry-breaking potential; the tail has neither.
+  - Vainshtein/derivative screening: needs higher-derivative interactions absent from two-derivative supergravity.
+Conclusion: none of the standard mechanisms applies. Option 1 is closed within known physics; the remaining choices are
+(2) a separate, shielded dark-energy field, or (3) the stated open problem.

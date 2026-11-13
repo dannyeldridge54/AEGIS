@@ -1,0 +1,3 @@
+Sun (mean): Compton wavelength 2.7e+11 m (1.8e+00 AU); radius 7.0e+08 m -> NOT screened
+Earth (mean): Compton wavelength 1.4e+11 m (9.3e-01 AU); radius 6.4e+06 m -> NOT screened
+interplanetary: Compton wavelength 1.0e+23 m (6.9e+11 AU); free space
