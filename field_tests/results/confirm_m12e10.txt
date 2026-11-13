@@ -1,0 +1,2 @@
+PREDICTED ~2.1x before running (1/m from 4.3x at 6e9). mu 1, f_rh 0.0147, m 1.2e10, y 0.1: n_B/s 2.22e-10 (x2.5); end hidden 3.18e-06; dilution x2.09
+fit: matter ~ m^-0.89; 1x at m = 3.28e+10 GeV
