@@ -21,20 +21,31 @@ def full(m, q):
     return "W0WA", list(q)
 
 
+M_CUR = None; LO = HI = None
+
+
+def pt(u):
+    return LO + u * (HI - LO)
+
+
+def ll(q):
+    if M_CUR == "W0WA" and q[3] + q[4] >= 0:
+        return -1e100
+    v, p = full(M_CUR, q); x = T.chi2(v, p, SETS)
+    return -0.5 * x if x < 1e9 else -1e100
+
+
 def run(m):
-    global SETS
+    global SETS, M_CUR, LO, HI
     import dynesty
     assert os.path.exists(RULE + ".sha256"), "rule not locked"
-    SETS = T.bao_desi(); B = SH + EXTRA[m]; lo = np.array([b[0] for b in B]); hi = np.array([b[1] for b in B])
-    def pt(u):
-        return lo + u * (hi - lo)
-    def ll(q):
-        if m == "W0WA" and q[3] + q[4] >= 0:
-            return -1e100
-        v, p = full(m, q); x = T.chi2(v, p, SETS)
-        return -0.5 * x if x < 1e9 else -1e100
-    s = dynesty.NestedSampler(ll, pt, len(B), nlive=300, sample="rwalk", rstate=np.random.default_rng(1))
-    s.run_nested(dlogz=0.1, print_progress=False)
+    SETS = T.bao_desi(); B = SH + EXTRA[m]; LO = np.array([b[0] for b in B]); HI = np.array([b[1] for b in B]); M_CUR = m
+    ck = os.path.join(OUTD, f"{m}.save")                                   # deviation D2: checkpoint + resume
+    if os.path.exists(ck):
+        s = dynesty.NestedSampler.restore(ck); s.run_nested(resume=True, dlogz=0.1, print_progress=False, checkpoint_file=ck, checkpoint_every=600)
+    else:
+        s = dynesty.NestedSampler(ll, pt, len(B), nlive=300, sample="rwalk", rstate=np.random.default_rng(1))
+        s.run_nested(dlogz=0.1, print_progress=False, checkpoint_file=ck, checkpoint_every=600)
     r = s.results
     out = {"model": m, "logz": float(r.logz[-1]), "logzerr": float(r.logzerr[-1]), "ncall": int(sum(r.ncall)),
            "max_logl": float(np.max(r.logl))}
