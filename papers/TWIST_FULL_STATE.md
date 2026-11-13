@@ -74,8 +74,9 @@ theory/pending_docs/D72_D75_weak_spots.md; the model card (papers/MODEL_CARD_v5.
 ## 5. What the data say now
 
 - **Dark energy:** PURE-TWIST fits DESI DR2 + supernovae + CMB slightly better than ΛCDM (Δχ² −3.4; 0.7–1.7σ after look-elsewhere).
-- **n_s:** the most serious pressure. The Twist's 0.965 is ~1σ from CMB alone but 2–3σ from CMB + DESI. The locked verdict
-  (NS-SPA) is still being computed on Danny's PC.
+- **n_s — locked verdict: INCONSISTENT (D157).** Fixing n_s at the Twist's 0.964 costs Δχ² = 11.7 against CMB-SPA + DESI (threshold 9);
+  ΛCDM at the same n_s costs 8.5. With n_s free, PURE-TWIST fits this full data set slightly worse than ΛCDM (+1.45). The
+  Twist's inflation, as it stands, is disfavoured by current data; TWIST-P waits for future data.
 - **Results against the model, kept on record:**
   - the original cliff failed TAIL-F (Δχ² +29), and the reshape that followed was after the fact
   - the γ = 1/4 idea failed
@@ -95,7 +96,7 @@ theory/pending_docs/D72_D75_weak_spots.md; the model card (papers/MODEL_CARD_v5.
 
 ## 7. Open, in order of importance
 
-1. n_s against current data (verdict pending).
+1. n_s: the locked test says INCONSISTENT (D157). The inflation sector needs TWIST-P (future data) or a new idea.
 2. n ≈ 125 is chosen (plays Λ's role); no route found (D109, D119, D153).
 3. A string setting with rung 3 + linear-T hidden gauge function + neutral matter together (D154) — none known.
 4. The cliff in heterotic language: the exponent fits (q), the depth does not.
@@ -105,6 +106,5 @@ theory/pending_docs/D72_D75_weak_spots.md; the model card (papers/MODEL_CARD_v5.
 ## 8. Running now
 
 - m_σ confirmation (D124), then the new-form matter check (D129), then the yield-sensitivity test (D137).
-- NS-SPA verdict on Danny's PC.
 - PURE parameter chain (3,000+ steps).
 - Evidence fits (first of four models).

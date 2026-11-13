@@ -46,7 +46,7 @@ its original cliff failed a locked test (Δχ² +29) and the cliff was reshaped 
 matter check missed its prediction (7.5× against 2–3×); two hypotheses (γ = 1/4, a derivation of n) failed. Seven added
 assumptions are listed in a model card. The main open problem is a fifth force on ordinary matter: removing it requires an
 unexplained symmetry forbidding couplings between the tail field and the Standard Model. The late-time test is generic thawing
-quintessence with slope √(2/3). An independent referee-style review is summarised in the repository. The model's n_s ≈ 0.965 sits ~1σ from CMB-SPA alone but 2–3σ from CMB + DESI BAO ({NSSPA}); a separate model,
+quintessence with slope √(2/3). An independent referee-style review is summarised in the repository. The model's n_s ≈ 0.965 sits ~1σ from CMB-SPA alone but 2–3σ from CMB + DESI BAO — INCONSISTENT on the locked NS-SPA test: fixing n_s at 0.964 costs Δχ² = 11.7 against CMB-SPA + DESI (ΛCDM at the same n_s: 8.5); on that full data set PURE-TWIST with n_s free also fits slightly worse than ΛCDM (Δχ² +1.45); a separate model,
 TWIST-P (a different Kähler potential, built after seeing this data), was locked before any test and predicts n_s 0.965–0.971
 with r 0.0036–0.011, to be scored on future CMB data only. Frozen predictions for
 DESI DR3, Euclid, LiteBIRD and Simons Observatory are listed. Scripts, locked rules and every number:

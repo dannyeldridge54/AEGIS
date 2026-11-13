@@ -5,7 +5,8 @@
 > confirmation running); dark matter ≈ 100–500 TeV, conditional and not a prediction; the angle is heavy (+8H²) on the tail;
 > kination ΔN ≈ 1.2. **The fifth force is the main open problem** (D135: the "SM outside SUGRA" fix needs an unexplained symmetry).
 > 4/π is assumed (SU(8) is strongly coupled during inflation). TWIST-P is a separate model built after seeing the n_s data.
-> The n_s test against CMB-SPA (PREREG_NS_SPA) is the most important pending result. An independent referee review (13 Nov) found
+> **The n_s test against CMB-SPA (PREREG_NS_SPA) scored INCONSISTENT** (D157): cost 11.7 at n_s = 0.964 (ΛCDM 8.5); PURE-TWIST
+> free is +1.45 worse than ΛCDM on that full data set. An independent referee review (13 Nov) found
 > these inconsistencies; the corrections are D135–D137 in theory/pending_docs/D72_D75_weak_spots.md.
 
 Author: Danny Eldridge (independent researcher). Analysis and code were AI-assisted (Anthropic's Claude); every

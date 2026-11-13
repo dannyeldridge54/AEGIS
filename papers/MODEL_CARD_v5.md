@@ -45,6 +45,7 @@ out-of-sample test than a new survey.
 | Extra radiation | ΔN_eff ~ 3×10⁻⁸ | — |
 
 ## Results today that went against the model (kept on record)
+- **D157: NS-SPA INCONSISTENT** — n_s fixed at 0.964 costs Δχ² 11.7 vs CMB-SPA + DESI (ΛCDM 8.5); PURE-TWIST free fits this set +1.45 worse than ΛCDM.
 - TAIL-F: full tail disfavoured (Δχ² +29) with the old cliff → cliff reshaped (post hoc, labelled).
 - D102: y = 4 / γ = 1/4 hypothesis FAILS.
 - D109: n ≈ 124 leads fail.
