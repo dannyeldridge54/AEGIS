@@ -1802,3 +1802,24 @@ gives 3α = 7 for the overall scaling) — not checked further.
 **Verdict:** "rung 3 + neutral matter + weak coupling today" is obstructed generically, not just in the examples: a matter-neutral volume
 direction in a perturbative string drives the 10-d coupling up as x^{3/2}. A home needs either matter whose scale does NOT track M_s (non-
 perturbative / strongly coupled sectors), or a rung-3 direction that is not the overall volume. Recorded as the precise form of question 9.
+
+**D210 — a lead that evades D209: the IIB overall COMPLEX-STRUCTURE modulus with D3-brane matter (theory/string_home/iib_complex_structure_d210.py).**
+D209's obstruction is for a VOLUME direction. On a factorisable T⁶ orientifold the overall complex-structure modulus U (all three tori
+stretched alike, volume fixed) has K = −3 ln(U + Ū): rung 3. Tree level, with SM matter on D3-branes:
+- D3 gauge coupling f = S: U-independent. M_s/M_P ∝ g_s^{1/4} V^{−1/2}: U-independent. 10-d coupling g_s = 1/Re S: U-independent — so moving U
+  never drives the string to strong coupling (the failure of every heterotic version, D204/D209, is absent).
+- D3–D3 matter metric Z_i ∝ 1/(t_i u_i) (from hep-th/0404134's D5 metric 1/(s u₁) by T-duality on T²₁; flagged as derived, not quoted) ⇒
+  physical Yukawa Y = e^{K/2}W/√(Z₁Z₂Z₃) = W/√s: independent of every u_i AND t_i (sympy check).
+- Complex-structure moduli space has no α′ corrections in IIB; its large-complex-structure periods carry exponentials e^{2πiU} (mirror of
+  worldsheet instantons) — a natural source of the cliff's e^{−aU} form.
+- Geometry at today's value (u ≈ 89): a T² of area 89–300 string units has radii ~89–160 and ~1–1.8 string lengths — KK modes of the long
+  direction at ~M_s/100, harmless at the M_s implied by these volumes.
+So this is the FIRST setting found with rung 3 + neutral matter + weak coupling holding simultaneously at tree level.
+**Open (in order of danger):** (1) string loops: Berg–Haack–Körs-type corrections carry Eisenstein series E₂(U) ≈ 2ζ(4)(Im U)², i.e. a KK
+Casimir term GROWING as u²/(s t): rough size δK ~ 10⁻³ at u = 89 (s ~ 10, t ~ 90) — if it enters the D3 matter metric at that size it gives
+β ~ 10⁻³, near Cassini and probably over composition-dependent EP/clock bounds; this needs the actual one-loop matter metric. (2) SL(2,Z)_U is
+a geometric symmetry of each torus (u ↔ 1/u relabels cycles): plateau (small u) and tail (large u) must be made distinct — D7-branes or flux
+on specific cycles break it to Γ₀(N) (D194's mechanism carries over). (3) Fluxes usually fix U: the construction needs U left unfixed by
+flux (its potential then comes only from the Twist sector). (4) The helper field and the S·U coupling: GVW flux superpotentials are polynomial
+in U (terms linear in U are standard), suggestive but not built. (5) n. Status: a genuine new lead; the shield's string home is no longer
+"none known" at tree level — it is "IIB complex structure with D3 matter, pending a one-loop check".
