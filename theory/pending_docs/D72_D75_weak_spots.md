@@ -1926,3 +1926,14 @@ set by the tower, not by ζ: 3.8 M_P (tower = H) or 2.4 M_P (tower = 3H), versus
 binding limit (worth keeping: the potential and all predictions are unchanged) but gains only ~0.4 M_P; "6.2 M_P" in D218 and the model card
 is withdrawn. Lumpy-start status: "robust by analogy, ~2.5–3.8 M_P of plateau beyond the CMB point inside the EFT (tower-limited, under the
 volume-modulus assumption)".
+
+**D219 — strong CP next to the Twist: only a post-inflationary QCD axion survives (theory/observables/axion_isocurvature_d219.py; estimate).**
+(i) The shield forbids the Twist's own angle from being the QCD axion: a θ-term coupling Im T·GG̃ comes from a gauge kinetic function f_SM ⊃ cT,
+whose real part is exactly the Re T–gauge coupling the shield excludes (D140, D198). (ii) Any OTHER axion with its Peccei–Quinn symmetry
+broken during inflation gets quantum spread δθ = H/(2πf) with H_inf = 1.5×10¹³ GeV; requiring axion isocurvature below Planck's bound
+(S_rms < 9×10⁻⁶) needs θ_i below its own spread for every f from 10¹⁰ to 10¹⁶ GeV — excluded (the standard tension between detectable r and
+pre-inflationary axions). (iii) What remains: PQ symmetry restored during or after inflation (f ≲ H_inf), i.e. a post-inflationary,
+field-theory QCD axion; if it is the dark matter, lattice results put m_a ≈ 40–180 μeV. Prediction (conditional on the Twist's r and an
+axion solution of strong CP): haloscopes should find the axion, if at all, in the ~40–600 μeV range (MADMAX, ALPHA-class), and string-scale
+(f ~ 10¹⁶ GeV) axions — including the heterotic model-independent axion — cannot be the solution unless their mass is lifted during
+inflation. Generic to any detectable-r inflation, stated here as a Twist corollary.
