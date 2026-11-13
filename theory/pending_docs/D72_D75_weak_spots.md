@@ -1989,3 +1989,9 @@ modulus is localised in the extra dimensions, away from the SM" — is sequester
 and which for a local (blow-up) modulus does not give rung 3. One tension flagged for follow-up: the review cites Tosone et al. finding
 ∇V/V ≲ 0.31 for thawing exponential quintessence (pre-DESI-DR2 data, as quoted); our own DR2-era fits prefer the Twist's 0.82 slope over ΛCDM
 (Δχ² −3.4), so the data preference has moved — but a referee may cite the older bound; the paper should quote the DR2-era result explicitly.
+D224 add — resolved with DR2-era literature (arXiv:2504.04226): an exponential-quintessence fit to DESI DR2 with other data gives
+λ = 0.698 +0.173/−0.202 (flat; 0.722 with curvature free), a ~3.5σ preference for λ ≠ 0 and a 3.3–3.8σ preference over ΛCDM. The Twist's
+λ = √(2/3) = 0.8165 sits +0.7σ from that central value; rung 4 (0.707) would sit at the centre, rung 1 (√2) is 4σ off. The older
+"∇V/V ≲ 0.31" bound is superseded by DR2. Note the irony worth stating in the paper: the data's central slope (0.70) is slightly BELOW the
+TCC bound (0.8165); the Twist sits exactly on the bound and +0.7σ above the data's central value — data and the conjecture pull in opposite
+directions by less than 1σ, and DR3 will sharpen this.
