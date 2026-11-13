@@ -78,7 +78,9 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
   heat share. A post-hoc change: only new data test it.
 - **FIFTH FORCE (Development 90): UNSOLVED.** If T is today's dark energy, ordinary matter's mass depends on it
   (β ≈ 0.4 for the sequestered form; no modular weight gives β below Cassini's 3.4×10⁻³), and no standard screening
-  mechanism applies to an exponential tail (Development 91).
+  mechanism applies to an exponential tail (Development 91). Parking the field in a valley meets the moduli problem unless
+  inflation itself ends in the valley (Developments 94–95); the author keeps the light tail and states this as the
+  theory's main open problem (decision 13 Nov).
 - **Withdrawn numbers:** the hidden mass 3–6×10⁹ GeV (a pre-stated check failed; corrected to ~3×10¹⁰ GeV);
   several earlier developments (D26 gravitino, D31) superseded. All kept in the matter doc and git history.
 
