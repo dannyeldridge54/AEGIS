@@ -387,3 +387,24 @@ Known ways a light coupled field hides from solar-system tests, checked against 
   - Vainshtein/derivative screening: needs higher-derivative interactions absent from two-derivative supergravity.
 Conclusion: none of the standard mechanisms applies. Option 1 is closed within known physics; the remaining choices are
 (2) a separate, shielded dark-energy field, or (3) the stated open problem.
+
+## Development 92 — a lead: the twist ANGLE as dark energy, with the size half stabilised
+
+Script: theory/darkenergy/angle_dark_energy.py; results/angle_dark_energy.txt.
+Idea. Both severe problems (D80 loops, D90 fifth force) come from the SIZE half x being light today. The ANGLE half y is
+different: matter couples to it only through its rate of change (Nieh–Yan, shift symmetry), so a slowly rolling angle gives
+no fifth force, and its potential is protected from loop corrections by that symmetry (the original motivation of
+pseudo-Nambu–Goldstone quintessence, Frieman–Hill–Stebbins–Waga 1995). So: let x settle in a minimum after the cliff
+(heavy, short range) and let the angle carry dark energy. One field T still does everything — size for inflation, angle for
+the matter kick and for dark energy.
+Numbers (angle potential L⁴(1 + cos(φ_y/f)), f = 1.56 M_P, thawing from rest at angle θ_i from the top, Ω_DE 0.69):
+  θ_i 0.1–0.6 → w₀ ≈ −1.00 to −0.99 (ΛCDM-like); 1.0 → −0.98, w_a −0.03; 1.5 → −0.94, −0.09; 2.0 → w₀ −0.80, w_a −0.30;
+  beyond ~2.2 no dark-energy solution. So the angle gives a one-parameter family from ΛCDM to (−0.80, −0.30), along the
+  direction DESI points. θ_i would be where the angle came to rest after the kick — set by the matter-making dynamics, so in
+  principle computable rather than free.
+What it needs (not done): (a) a minimum for x after the cliff (moduli stabilisation; a model change, and the PURE-TWIST tail
+predictions would be replaced); (b) the angle's potential height ≈ ρ_DE (the cliff factor already makes the potential
+periodic in y with period 8, D79, with a height suppressed like e^{−πx/4} — whether it lands at ρ_DE depends on where x
+settles); (c) f from the kinetic weight at the settled x (1.56 M_P was computed elsewhere on the path); (d) θ_i from the kick.
+Label: lead, exploratory. If it works it removes both severe problems while keeping the one-field claim. Danny's call
+whether to develop it (it changes the late-time model).

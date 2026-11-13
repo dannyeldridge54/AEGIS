@@ -1,0 +1,8 @@
+start angle 0.1 rad from the top: w0 -1.000, wa -0.000
+start angle 0.3 rad from the top: w0 -0.999, wa -0.002
+start angle 0.6 rad from the top: w0 -0.994, wa -0.009
+start angle 1.0 rad from the top: w0 -0.980, wa -0.029
+start angle 1.5 rad from the top: w0 -0.940, wa -0.090
+start angle 2.0 rad from the top: w0 -0.798, wa -0.304
+theta_i 2.4: no solution
+theta_i 2.8: no solution
