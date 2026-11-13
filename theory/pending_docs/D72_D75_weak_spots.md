@@ -1453,3 +1453,14 @@ first version that fixed signs by sorting gave unequal counts and was discarded)
 G2-natural 4+3 split — the Twist's rung 3 as the associative (quaternionic) flat direction — arises from the same octonionic
 ingredients GKLY use, not only from the block form of D177. Open: whether the specific signs fixed by the octonion structure constants
 (the coassociative 4-form) are among the 1,824 — the last step to "derived from the octonions" rather than "built from their pieces".
+
+**D180 — GKLY's EXACT octonion superpotential does NOT contain the associative split (theory/geometry/gkly_exact_split_d180.py).**
+Their W_O (arXiv:2008.01494 eq. 4.7) has one fixed term per Fano line: (T^{r+2} − T^{r+4})(T^{r+5} − T^{r+6}), with pairings and signs set
+by the octonion structure; the full W_O leaves one flat direction (all seven equal, rung 7), as they state. Testing every subset of
+those exact terms (127 subsets, with unit and with random coefficients): none gives the two flat directions T_A (a Fano line) and T_C
+(its complement). So D179's 1,824 split superpotentials all need pairings or signs that differ from the octonion-fixed ones. Reading:
+the associative/coassociative split can be built from octonionic PIECES but is not obtained by removing codewords from the octonion
+superpotential itself — consistent with GKLY finding their 4+3 split only by hand (and with a non-Fano rung-3 set). This looks like a
+structural statement: within the exact octonion superpotential, rung 3 does not come out aligned with a quaternionic subalgebra.
+Status: the "Twist = quaternionic rung of the octonions" picture is geometric (D175, D177), but NOT derived from the published
+octonion superpotential; it needs a different (still octonion-built) superpotential. Recorded as a precise negative result.

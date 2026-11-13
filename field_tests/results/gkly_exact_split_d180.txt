@@ -1,0 +1,4 @@
+GKLY terms: [((2, 4), (5, 6)), ((3, 5), (6, 7)), ((4, 6), (7, 1)), ((5, 7), (1, 2)), ((6, 1), (2, 3)), ((7, 2), (3, 4)), ((1, 3), (4, 5))]
+unit coefficients: subsets of GKLY's exact terms giving exactly the split T_A + T_C: 0 []
+random coefficients: subsets of GKLY's exact terms giving exactly the split T_A + T_C: 0 []
+full W_O flat directions: 1
