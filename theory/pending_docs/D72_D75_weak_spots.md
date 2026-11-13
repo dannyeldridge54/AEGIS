@@ -1415,3 +1415,13 @@ the octonions); rungs 2, 4, 5, 6 have none. So the rungs that respect the algebr
 the diagonal of an STU triple sitting on one Fano line. Hypothesis (not derived): if consistent truncations must close under the
 octonion product, only rungs 1, 3, 7 occur — r ≈ 0.0012, 0.0036, 0.0084 at N ≈ 57 and dark energy w0 ≈ −0.68, −0.90, −0.96.
 That is a sharp, falsifiable selection rule; locked as PREREG_DIVISION_RUNGS.
+
+**D176 — novelty check of D175 (Gunaydin, Kallosh, Linde & Yamada, arXiv:2008.01494).** They already tie the seven disks to octonions:
+the superpotential is built from the associative triads (= Fano lines = quaternionic subalgebras) via the (7,4) Hamming code, giving
+3α = 7 and, through "split" models (6+1, 5+2, 4+3), all seven benchmarks. Consequences: (1) the octonion/Fano connection is theirs;
+(2) rungs 2, 5, 6 do arise in octonion-structured constructions, so D175's "only 1, 3, 7" selection rule is NOT implied by them —
+recorded as deviation D1 of PREREG_DIVISION_RUNGS (kept as an independent, stricter conjecture); (3) a genuinely new observation
+survives: their 4+3 split is built by hand and its rung-3 direction (T², T³, T⁶) is NOT a Fano line. The G2-natural 4+3 split would
+take the three moduli of an associative triad (a Fano line, rung 3) and the four of its coassociative complement (rung 4). In that
+version the Twist's rung-3 field is literally the quaternionic (associative) part of the octonionic structure. Whether a Hamming-code
+superpotential gives that split with two flat directions is a concrete construction problem (open; candidate next step).
