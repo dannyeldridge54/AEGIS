@@ -11,3 +11,8 @@ cutoff 4e-03 M_P, h 0.1: SM-loop-induced plateau shift dV/V ~ 1.6e-02
 cutoff 4e-04 M_P, h 0.03: SM-loop-induced plateau shift dV/V ~ 1.4e-05
 cutoff 4e-04 M_P, h 0.1: SM-loop-induced plateau shift dV/V ~ 1.6e-04
 reheating with smaller h: Delta-phi = sqrt(8 pi phidot/(h^2 g)) ~ 1/h -> h 0.05: heat share ~0.8%, T_RH ~4e14 GeV (D62 scaling)
+refined: h 0.03: eta(Ti-Pt) ~ 1.1e-17 (MICROSCOPE 1e-15: ok)
+refined: h 0.05: eta(Ti-Pt) ~ 8.5e-17 (MICROSCOPE 1e-15: ok)
+refined: h 0.08: eta(Ti-Pt) ~ 5.6e-16 (MICROSCOPE 1e-15: ok)
+refined: h 0.1: eta(Ti-Pt) ~ 1.4e-15 (MICROSCOPE 1e-15: no)
+refined: h 0.3: eta(Ti-Pt) ~ 1.1e-13 (MICROSCOPE 1e-15: no)
