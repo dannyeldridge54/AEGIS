@@ -1732,3 +1732,15 @@ D196 (which assumed today's x = 89). **Verdict:** no version found has weakly co
 (D164), degree 9 gives g_s ≳ 3 even with total reheating. Today's Twist field sits in the strongly coupled (Hořava–Witten) regime in
 every heterotic realisation tried, where the shield's protections (no T in the SM couplings, rung 3) fail (D154, D184). The string home is
 therefore OPEN again at the level of "no known setting"; the effective-theory shield (PREREG_SHIELD) stands as an assumption, not a derivation.
+
+**D205 — why weak coupling today is structurally hard, and the pivot to heterotic M-theory (rung 4; locked PREREG_TWIST4).**
+Structural reason behind D164/D204: at fixed 4-d gauge coupling g_s ≈ g_YM R³, so weak coupling needs R within ~0.9–1.1 of the self-dual
+radius — a window of only Δφ ≈ 0.5 M_P in the canonical field, while the Twist's history spans ~16 M_P and today's point is set by
+reheating and thawing, not by the self-dual point. Landing inside that window today would be a coincidence. The natural regime for a
+far-travelled modulus is the strongly coupled one: heterotic M-theory, where the 11-d description is valid at large orbifold length. There:
+the matter-neutral direction is rung 4 (D184); there is no exact T-duality (D194's issue absent); open-membrane instantons between the walls
+give e^{−aT} terms (a natural cliff source); the visible threshold f = S + εT that broke the shield in D154 vanishes when the two walls carry
+equal instanton numbers with no five-branes (the symmetric case; literature to be checked). Rung-4 inflation (rung4_inflation_d205.py, E-model
+check reproduces Starobinsky): n_s 0.9644–0.9652, r 0.0045–0.0047 after the rung-3 offset; late predictions D187. Locked as PREREG_TWIST4
+(future data only, both rung readings reported). Status: the most consistent home found is heterotic M-theory with the Twist on rung 4;
+r ≈ 0.0046 instead of 0.0036 and w0 −0.925 instead of −0.899 are the observable differences. n_s and n are unchanged problems.
