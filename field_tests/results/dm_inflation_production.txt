@@ -1,0 +1,7 @@
+scalar m = 1e+05 GeV: rho_X/s = 5.0e+15 GeV vs needed 4.4e-10 -> overproduced by 10^25
+scalar m = 1e+06 GeV: rho_X/s = 1.6e+14 GeV vs needed 4.4e-10 -> overproduced by 10^24
+scalar m = 1e+07 GeV: rho_X/s = 5.0e+12 GeV vs needed 4.4e-10 -> overproduced by 10^22
+fermion branch at the derived T_RH (D42, 3-5e14 GeV), scaling D38's fermion light branch m = 1.79e8 (1e14/T_RH)^3:
+  T_RH 3e+14: m = 6.6e+06 GeV
+  T_RH 4e+14: m = 2.8e+06 GeV
+  T_RH 5e+14: m = 1.4e+06 GeV
