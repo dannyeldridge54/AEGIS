@@ -1,0 +1,9 @@
+beta 0.001, x 2.3e-4: V/V_twist 1.000000, m_S^2/H^2 53.18
+beta 0.001, x 0.01: V/V_twist 1.000000, m_S^2/H^2 2354
+beta 0.001, x 89: V/V_twist 1.000000, m_S^2/H^2 2636
+beta 0.01, x 5.4e-4: V/V_twist 1.000000, m_S^2/H^2 127.5
+beta 0.01, x 0.01: V/V_twist 1.000000, m_S^2/H^2 2354
+beta 0.01, x 89: V/V_twist 1.000000, m_S^2/H^2 2636
+beta 0.1, x 1.55e-3: V/V_twist 1.000000, m_S^2/H^2 -0.003028
+beta 0.1, x 0.01: V/V_twist 1.000000, m_S^2/H^2 2352
+beta 0.1, x 89: V/V_twist 1.000000, m_S^2/H^2 2636

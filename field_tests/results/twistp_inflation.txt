@@ -1,0 +1,6 @@
+beta 0.0    : instant N* 55.7 n_s 0.9642 r 3.75e-03 (x* 1.34e-04) | kination +1.2: n_s 0.9649 r 3.60e-03
+beta 0.0001 : instant N* 55.7 n_s 0.9645 r 3.79e-03 (x* 1.49e-04) | kination +1.2: n_s 0.9652 r 3.64e-03
+beta 0.001  : instant N* 55.8 n_s 0.9672 r 4.54e-03 (x* 2.31e-04) | kination +1.2: n_s 0.9679 r 4.37e-03
+beta 0.01   : instant N* 56.0 n_s 0.9702 r 8.62e-03 (x* 5.44e-04) | kination +1.2: n_s 0.9709 r 8.33e-03
+beta 0.1    : instant N* 56.4 n_s 0.9703 r 2.23e-02 (x* 1.55e-03) | kination +1.2: n_s 0.9710 r 2.16e-02
+beta 1.0    : instant N* 57.3 n_s 0.9662 r 6.41e-02 (x* 4.72e-03) | kination +1.2: n_s 0.9670 r 6.22e-02
