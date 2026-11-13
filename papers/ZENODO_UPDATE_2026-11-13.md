@@ -20,3 +20,11 @@ and slope √(2/3) (PURE-TWIST), because its dark matter is gravity-only; (2) tw
 the full one-field model (TAIL-F) rejected its original cliff shape, which was then reshaped (a post-hoc change, stated
 as such). Current status, all locked rules and all results, passes and failures:
 https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md).
+
+## Draft created 13 Nov 10:46 CT (Danny presses Publish)
+- Zenodo draft https://zenodo.org/uploads/24202422 — Preprint, CC BY 4.0, creator Eldridge, Danny Lee, title and description
+  as in ZENODO_NEW_RECORD_TWIST.md (fifth-force sentence updated for D104), 6 keywords, DOI to be minted on publish.
+- File: Twist_one_field_2026-11-13.pdf, 485,185 bytes, md5 9401de409b335b4f922f2b58a5c155cf (paper doc exported 10:41,
+  18 pages; also in papers/release_twist/). Note: the 10:41 copy to the PC desktop silently kept the 09:45 file; fixed 10:44
+  (desktop file now matches the md5 above).
+- Not done: the v4 status notice (editing a published record means publishing the edit — Danny's call).
