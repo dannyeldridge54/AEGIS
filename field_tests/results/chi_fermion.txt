@@ -1,0 +1,3 @@
+fermion share 1.0: n_DM/s ~ 1.4e-08; DM mass for the observed abundance ~ 3.3e-02 GeV (vs 1-6e8 GeV gravity-only freeze-in: overproduced x3e+09 at 1e8 GeV)
+fermion share 0.1: n_DM/s ~ 1.4e-09; DM mass for the observed abundance ~ 3.3e-01 GeV (vs 1-6e8 GeV gravity-only freeze-in: overproduced x3e+08 at 1e8 GeV)
+fermion share 0.01: n_DM/s ~ 1.4e-10; DM mass for the observed abundance ~ 3.3e+00 GeV (vs 1-6e8 GeV gravity-only freeze-in: overproduced x3e+07 at 1e8 GeV)

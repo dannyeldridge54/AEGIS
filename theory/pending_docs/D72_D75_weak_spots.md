@@ -683,3 +683,19 @@ With Γ = 4m_χ³/(32πM_P²) (Higgs): χ decays after Δφ ≈ 0.52 M_P, heat s
 T_RH ≈ 4×10¹⁴ GeV. Decays into the gravity-only dark-matter fermion are suppressed by (m_DM/m_χ)² ~ 10⁻¹⁸ — no direct
 overproduction. Open detail: χ's fermion partner also has to decay (e.g. to a Higgs and a light fermion, or a gravitino);
 not worked out.
+
+## Development 106 — a new gap: χ's fermion partner must decay, and that threatens the dark-matter count
+
+Results: field_tests/results/chi_fermion.txt.
+χ must be supersymmetric (D77), so it has a fermion partner χ̃ with the same growing mass g|φ − φ₀|. Instant preheating makes
+fermions too (non-adiabatic production at the crossing is comparable to bosons). Gravity alone cannot make χ̃ decay (minimal
+gravity conserves fermion number mod 2 per species, and with Hubble-induced splitting χ̃ is the lighter member), so without a
+decay χ̃ — heavier and heavier along the roll — would come to dominate the universe. It therefore needs a Planck-suppressed
+coupling to the Standard Model (e.g. χ̃ψH/M_P), which is fine for decay (rate ~m³/M_P²). But the same class of operators lets
+χ̃ make gravity-only dark-matter pairs (three-body, branching ~(m_χ/M_P)²/64π² ~ 4×10⁻⁶), giving n_DM/s ~ 10⁻⁸ × (fermion share).
+For 1×10⁸ GeV dark matter that overproduces by ~10⁹–10¹¹.
+Options: (i) a symmetry that forbids χ̃ → dark matter far below gravitational strength (needs a gauged symmetry, since gravity
+breaks global ones); (ii) dark matter made this way instead of by freeze-in — the observed amount then needs m_DM ≈ 0.03–3 GeV
+(fermion share 1–0.01), produced very relativistic but cold enough today (velocity ~10⁻¹⁰ c); this would replace the 10⁸ GeV
+prediction; (iii) fermionic preheating strongly suppressed (not expected). None checked in detail.
+Status: open, new. It touches the dark-matter prediction (D58/D85) and must be settled before that number is quoted firmly.
