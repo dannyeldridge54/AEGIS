@@ -1,0 +1,6 @@
+untwisted physical Yukawa exponent: K/2 gives (2x)^(-3/2); 1/sqrt(Z1 Z2 Z3) gives (2x)^(+3/2) -> total x^0 -> beta 0
+string scale vs Planck: depends on S only -> beta 0 from Lambda_QCD at fixed S
+twisted Yukawa e^(-2 pi T/3): beta 2.1e-79 (MICROSCOPE 1.2e-6) PASS by 10^73
+cliff instanton e^(-pi T/4): beta 2.7e-29 (MICROSCOPE 1.2e-6) PASS by 10^23
+weights check (D96 used modular weights for MSSM-in-SUGRA): untwisted n=1 x3 is the case where Yukawas are T-independent;
+the QCD scale is T-independent here because the threshold Delta(T) = 0 on Z3, not because of a weight choice.

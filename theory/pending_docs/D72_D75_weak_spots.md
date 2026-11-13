@@ -1164,3 +1164,16 @@ Thawing from rest, λ = √(2/(3α)): rung 1: w0 −0.68, wa −0.44; rung 2: �
 switch would be a new model, built after seeing the data, and must be locked and tested on new data only.
 Status: fifth force = main open problem at the string level (EFT shield exists; string realization of a neutral SM with a rung-3
 modulus unknown).
+
+**D152 — a candidate string home for OUR rung-3 Twist: heterotic string on the Z₃ orbifold (heterotic_z3_d152.py).** Danny: "can we
+just work on ours". The volume problem (D150/D151) is a type IIB statement: there the string scale tracks the Einstein-frame volume.
+In the heterotic string, M_s/M_P is set by the 4-d dilaton S, so the overall modulus T can move at fixed S without moving the string
+scale. On the Z₃ orbifold: (i) T has K = −3 ln(T + T̄) — rung 3, the Twist's; (ii) T-dependent gauge thresholds come only from N = 2
+sectors (Dixon–Kaplunovsky–Louis) and Z₃ has none, so the SM gauge couplings (f = S) do not depend on T at one loop; (iii) untwisted
+matter (weight 1 each) has physical Yukawas ∝ x⁰; (iv) twisted Yukawas come from worldsheet instantons ∝ e^{−2πT/3} — instanton-type
+breaking, β ≈ 10⁻⁷⁹ (passes by 10⁷³). So matter is neutral at tree level and one loop, and the remaining breaking is
+non-perturbative — exactly the shield of D140–D142, now with a known string setting. Open: (a) the dilaton S must be stabilised
+separately (standard but not shown here); (b) in heterotic language the hidden condensates depend on T through η(T), and the cliff's
+e^{−πT/4} form is not yet reproduced (T-duality relates small and large x — the plateau sits at small x — worth checking);
+(c) higher-loop/α′ corrections to the Kähler potential still set the perturbative leak, which must fall as 1/x⁴ or faster (D142).
+Status: fifth force → "consistent EFT shield with a candidate heterotic Z₃ realization"; not a derivation.
