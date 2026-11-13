@@ -21,3 +21,5 @@ The base-slope coupled Twist (K816: κ = √(2/3), β fitted) is the headline la
 
 ## Correction to D42 and D62 (13 Nov 08:20, written before the confirming run)
 D42's sentence "less initial heat means more matter" is wrong: its own runs give 1.1× at f = 0.15% and 4.4× at f = 1.47% (m_σ = 6×10⁹ GeV), and D37 gave 0.71× at f = 0.99. The yield rises from f = 0.15% to 1.5% and falls again by f ≈ 1 (not monotonic). D62's "the matter yield rises somewhat at the smaller f" is wrong for the same reason. Consequence: at the computed heat share (f ≈ 0.04–0.4%, D62) the yield at m_σ = 6×10⁹ GeV is about 1×, so the hidden mass for exactly 1× is back near **6×10⁹ GeV**, not 3×10¹⁰ (D50 was at f = 1.47%). Pre-stated check: f = 0.0013 (g 0.1, h 0.3), m_σ = 6×10⁹ GeV, μ = 1, y = 0.1 → predicted ≈ 1.0×.
+
+**Check result (09:00).** f = 0.0013, m_σ = 6×10⁹ GeV, μ = 1, y = 0.1 → **0.87×** observed (predicted ≈ 1.0×; within 13%), hidden share at end 6×10⁻¹⁹, dilution 5.3. Confirmed. With the yield ∝ m_σ^−0.89 near this point, exactly 1× needs **m_σ ≈ 5×10⁹ GeV** at the theory's own reheating. Numbers: field_tests/results/confirm_f0013_m6e9.txt.

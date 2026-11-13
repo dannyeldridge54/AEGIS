@@ -1,0 +1,6 @@
+needed 9.1e-19 M_P^4, m3/2 1e+11 GeV: e^(-a tau) = 2.2e-11 -> hidden cycle tau = 31 (a = pi/4)
+needed 9.1e-19 M_P^4, m3/2 1e+12 GeV: e^(-a tau) = 2.2e-12 -> hidden cycle tau = 34 (a = pi/4)
+needed 9.1e-19 M_P^4, m3/2 1e+13 GeV: e^(-a tau) = 2.2e-13 -> hidden cycle tau = 37 (a = pi/4)
+needed 2.3e-17 M_P^4, m3/2 1e+11 GeV: e^(-a tau) = 5.6e-10 -> hidden cycle tau = 27 (a = pi/4)
+needed 2.3e-17 M_P^4, m3/2 1e+12 GeV: e^(-a tau) = 5.6e-11 -> hidden cycle tau = 30 (a = pi/4)
+needed 2.3e-17 M_P^4, m3/2 1e+13 GeV: e^(-a tau) = 5.6e-12 -> hidden cycle tau = 33 (a = pi/4)
