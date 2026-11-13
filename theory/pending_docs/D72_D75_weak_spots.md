@@ -1703,3 +1703,12 @@ the same cancellation should hold with Γ₀(9) forms — argued, not shown.
 **Verdict:** the BGW sector and the Twist decouple at tree level and up to harmless loops; the conditions are b_a = b, V₀ tuned, and a high
 gravitino mass (≳ 10¹² GeV). The heterotic home now has a complete, consistent effective-theory chain except for n (chosen), n_s (data),
 and the Γ₀(9)-BGW check.
+
+**D202 — the E₈ condensate's gravitino mass clears the inflation bound (literature numbers, Gaillard–Wu hep-th/9605170).** BGW give
+m_3/2 = (b/4)√⟨ūu⟩ (eq. 3.38), b = C/8π² = 0.380 for E₈, with no T-dependence; their worked example (A_f = 6.92) settles at ⟨ℓ⟩ = 0.45 with
+m_3/2 = 7.6×10⁻⁵ M_P = 1.9×10¹⁴ GeV. Against the Twist's H_inf = 6.1×10⁻⁶ M_P (1.5×10¹³ GeV): m_3/2 ≈ 12 H_inf. The dilaton mass in this class
+is enhanced over m_3/2 by ~1/b² (≈ 7; an estimate, not from the paper), so m_ℓ ≈ 90 H_inf — the dilaton is stable during inflation (D201 (iv)
+satisfied). Condensation scale ~0.09 M_P ≈ 2×10¹⁷ GeV. D201's loop bound (m_3/2 ≲ 0.1 M_P) is met by ~10³. Implications: supersymmetry is
+broken at ~10¹⁴ GeV — no superpartners at colliders (a genuine prediction of this home), the Higgs mass hierarchy is not explained by SUSY,
+and the gravitino (10¹⁴ GeV) decays long before nucleosynthesis. Caveat: the numbers are BGW's example parameters (A_f chosen by them);
+m_3/2 depends exponentially on ⟨ℓ⟩, so it is a plausibility check, not a derivation.
