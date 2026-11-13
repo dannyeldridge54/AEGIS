@@ -58,7 +58,7 @@ def run(m_sigma, ycoup, Omega0=0.05, fdec=0.1, f_rh=0.99, p0=-13.0, Nafter=11.0,
         k = C.GW(T) / H; Yeq = -C.KEQ * C.cA * r * H / T; Y = Yeq + (Y - Yeq) * math.exp(-k * step)
         f_dil = math.exp(-0.75 * Gam * Hc * ds * ds / rr * step); Y *= f_dil; dil *= f_dil
     return {"N_end": Ne, "nBs": (28 / 79) * abs(Y), "peak_hidden_share": peak_hid, "hidden_share_end": hid,
-            "T_end": T, "entropy_dilution": 1 / dil, "Gamma_GeV": Gam * m_inf}
+            "T_end": T, "entropy_dilution": 1 / dil, "Gamma_GeV": Gam * m_inf, "x_end": math.exp(c * p), "y_end": y}
 
 
 if __name__ == "__main__":
