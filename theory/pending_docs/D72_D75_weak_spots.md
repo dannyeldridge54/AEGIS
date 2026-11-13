@@ -469,3 +469,23 @@ m_σ = 6×10⁹ GeV, y = 0.1, cliff-switchable copy of hidden_kick_decay.py): n_
 vs 0.87× and dilution 5.32 in confirm_f0013_m6e9.txt. The two runs differ by 18%; the 09:00 command line was not saved, so
 some setting (probably s0, the hidden field's start) must have differed. Both are within ~15% of 1×, so m_σ ≈ 5–6×10⁹ GeV
 stands; the old-vs-new-cliff comparison below uses one script and one set of settings, so it is like for like.
+
+## Development 95 — the structural choice behind D90–D94
+
+Putting D90–D94 together:
+  - A size half x that is light today gives a fifth force (D90), with no screening (D91) and no loop protection (D80).
+  - Any fix makes x heavy today. If x reaches its valley late (after kination), its oscillation overcloses the universe or
+    dilutes the matter unless it lands within ~10⁻⁶ of the floor (D94). That holds for option (2a) too: a separate
+    dark-energy field does not remove the need to park x.
+  - The one moduli-safe way to park x is a valley right after the cliff, with a mass near the inflaton's (~10¹³ GeV): then
+    x simply oscillates and decays as the inflaton does in standard models — reheating by inflaton decay, no kination.
+So the real fork is:
+  (A) Keep the light tail (one field does everything, PURE-TWIST predictions w₀ ≈ −0.90, w_a ≈ −0.15) and carry the fifth-force
+      and loop problems as the theory's main open problems (the status today).
+  (B) End inflation in a valley (cliff → minimum). Inflation's n_s, r stay (plateau unchanged); reheating, N*, the kick, the
+      dark-matter mass and n_s's kination shift must all be redone; dark energy must then come from somewhere else — a
+      constant, the angle (needs a height source other than the SU(8) term, which is far too large at x ~ 1), or a separate
+      shielded field. PURE-TWIST's late-time predictions would be dropped; the late universe would be ΛCDM-like unless a new
+      dark-energy piece is added.
+(A) is a bold, testable theory with a known hole; (B) is safer but gives up the late-time half of the "one field" claim.
+Danny's call; nothing is changed until he chooses.
