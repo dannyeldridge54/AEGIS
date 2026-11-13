@@ -1903,3 +1903,14 @@ with ~3% shape precision, which a future joint clock + quasar data set could rea
 Both shapes keep "almost nothing new above z ≈ 3" (ratio ≤ 1.38), so the DISFAVOURED-shield clause (z > 3 more than 1.5× the z = 1 value)
 is unaffected. Added as a reported (non-verdict) quantity by PREREG_SHIELD deviation D2: if a leak is detected, fit p and report whether
 it is falling (EFT shield with perturbative leaks) or growing (tower/strong-coupling leak, the string-generic case).
+
+**D217 — lumpy starts: the Twist-specific risk is the helper's tachyon edge, and it is set by ζ (theory/inflation/lumpy_tachyon_d217.py).**
+D122 placed the Twist in the robust plateau class by analogy (super-Planckian plateau scale 1.22 M_P). The model-specific danger is that S is
+tachyonic for x < x_b = 1/(4ζ) (m_S²/H² = −2 + 8ζx, D136): an inhomogeneous patch whose field starts deeper than x_b does not inflate along the
+Twist's path. With the model's ζ = 3×10⁴: x_b = 8.3×10⁻⁶, leaving 3.4 M_P of stable plateau beyond the CMB point and at most ~900 e-folds from the
+edge (check: the code reproduces N* = 55.7 from the CMB point). Plateau-model simulations (D122) need patches that start a few M_P up the
+plateau; 3.4 M_P is marginal for large initial gradients. ζ only shapes S's quartic term — with S = 0 along the path it changes none of the
+predictions — and the stable range grows as ln ζ: ζ = 3×10⁵ → 6.2 M_P (9×10³ e-folds), 3×10⁶ → 9.1 M_P, 3×10⁸ → 14.7 M_P. So the lumpy-start
+risk is removable by a larger ζ at no observational cost; the remaining limit is the distance-conjecture tower floor deep on the plateau
+(D123), which a larger stable range runs into first. Status: "robust by analogy, provided ζ ≳ 3×10⁵ (a free, unobservable coefficient)";
+noted as a recommended model-card change, not applied (changing a coefficient after the fact would need its own consistency re-run).
