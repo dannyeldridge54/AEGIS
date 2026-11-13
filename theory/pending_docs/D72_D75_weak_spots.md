@@ -1995,3 +1995,12 @@ D224 add — resolved with DR2-era literature (arXiv:2504.04226): an exponential
 "∇V/V ≲ 0.31" bound is superseded by DR2. Note the irony worth stating in the paper: the data's central slope (0.70) is slightly BELOW the
 TCC bound (0.8165); the Twist sits exactly on the bound and +0.7σ above the data's central value — data and the conjecture pull in opposite
 directions by less than 1σ, and DR3 will sharpen this.
+
+**D225 — how exact the shield must be TODAY, from current clocks (literature + computation).** The best laboratory drift bound is
+α̇/α = (1.8 ± 2.5)×10⁻¹⁹ /yr (Yb⁺ E3/E2 ratios, quoted in the ²²⁹Th review arXiv:2606.26600). The Twist's field moves today at dφ/dN = 0.457,
+i.e. 3.2×10⁻¹¹ M_P/yr. So any coupling of α to the field must satisfy |d ln α/dφ| < 1.6×10⁻⁸ (2σ) — five orders of magnitude tighter than the
+Cassini bound on the matter coupling (3.4×10⁻³). A thorium nuclear clock with enhancement K ~ 10⁴ at 10⁻¹⁸ stability would push this to ~3×10⁻¹²
+per M_P. For comparison, every string leak estimated today was O(10⁻⁴–10) per M_P (D198, D208, D211). Reading: the shield must be exact to
+~10⁻⁸ in α already; the instanton-only breaking of PREREG_SHIELD item 1 (β ~ 10⁻⁷⁹) passes with enormous margin, while ANY perturbative leak
+must be suppressed below 10⁻⁸ today — which is why the perturbative leak was required to fall as 1/x⁴ (D142). Nuclear clocks are the experiment
+that will test the shield most directly in the next decade.
