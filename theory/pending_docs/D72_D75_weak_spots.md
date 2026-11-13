@@ -506,3 +506,13 @@ Yukawa allows one, but what is left over is far outside the bounds:
   - lepton Yukawa left free: m_e ∝ x^{3/2}, an equivalence-principle violation η ~ 6×10⁻⁹ against MICROSCOPE's 10⁻¹⁵.
 So the obstruction is structural (it comes from the Standard Model's own anomaly coefficients), not a matter of choosing
 weights. This confirms D90: with the light tail (route A) the fifth force cannot be removed inside this framework at one loop.
+
+## Development 97 — what the fifth force means for the data tests (consistency note)
+
+Every late-time fit (PURE-TWIST, K816, FLAG-1, TAIL-F) let the tail field couple to nothing (PURE) or to dark matter only.
+If ordinary matter is not shielded (D90, D96), the theory as written also couples the field to baryons, with β_b ≈ 0.4.
+Such a coupling would change the cosmology too (baryon clustering and the baryon acoustic scale), not only solar-system
+tests, and would very likely be excluded by the CMB and BAO on its own — not computed here (the coupled AxiCLASS build
+couples the field to dark matter only). So the data results describe the Twist *with* a working shield. Stated plainly:
+PURE-TWIST's fits test the tail's shape; they do not test the unshielded theory, which is excluded by Cassini already.
+Label: consistency note; it belongs beside the main open problem in REVIEW_GUIDE.
