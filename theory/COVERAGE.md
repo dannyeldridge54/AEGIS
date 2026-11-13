@@ -11,7 +11,7 @@ estimate / locked / open). AI-assisted.
 | End of inflation | reshaped cliff exp(−n(1 − e^{−πT/4})); no PBHs | chosen after data | D71, D79 |
 | Reheating | instant preheating, heat share 0.04–0.4%, T_RH 2–4×10¹⁴ GeV, χ must be supersymmetric | derived (g, h chosen) | D62, D77 |
 | Kination | ~2 e-folds of stiff expansion after the cliff | derived | D84 |
-| Matter–antimatter | hidden SU(8) axion kick + lepto-axiogenesis; m_σ ≈ 5–6×10⁹ GeV for 1× | derived + chosen + estimate; recheck with new cliff running | D35–D62, D70 |
+| Matter–antimatter | hidden SU(8) axion kick + lepto-axiogenesis; m_σ ≈ 1.5×10¹⁰ GeV for 1× with the reshaped cliff (2.29× at 6×10⁹) | derived + chosen + estimate | D35–D62, D70 |
 | Neutrinos | Majorana, normal ordering, Σm_ν 0.059–0.064 eV | derived from the mechanism | D69 |
 | Dark matter | gravity-only fermion; mass unsettled: ≈ 1–6×10⁸ GeV from freeze-in, or ≈ 2–200 TeV if made by the reheating field's fermion partner (D106, leaning); no direct detection; β = 0 | estimate / open | D58, D64, D85, D106 |
 | Superpartners, gravitino | heavy; R-parity violation 10⁻⁵–10⁻³; gravitinos harmless; m₃/₂ moves with x | assumption / estimate | D88 |
