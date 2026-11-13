@@ -1769,3 +1769,7 @@ So PREREG_TWIST4's "same plateau shape on rung 4" assumes a superpotential the r
 the effective field is a combination of S, T and the CY volume, so W along that direction need not be a pure power — this must be built
 before the rung-4 inflation numbers are trusted (the late-universe numbers, set by the tail slope 1/√2, do not depend on it). Caveat added
 to PREREG_TWIST4 by deviation file, not by editing the lock.
+D207 add — a selection rule falls out: an integer-power plateau superpotential needs p = (3α − 1)/2 ∈ ℤ, i.e. 3α odd — rungs 1, 3, 5, 7
+(p = 0, 1, 2, 3). Even rungs (2, 4, 6) need half-integer powers. This overlaps with, but is not the same as, the octonion-closure set
+{1, 3, 7} of D175 (rung 5 passes here, fails there). Rung 3 is the only rung in both sets with p = 1, the simplest S·T coupling.
+A mild structural argument for rung 3; it does not by itself choose the string setting.
