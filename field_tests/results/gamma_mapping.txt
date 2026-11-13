@@ -7,3 +7,13 @@ where the angle's valley lies across the cliff (reshaped cliff): V(x, y)/V(x, 0)
   x  3.00: y=0: 1.00e+00, y=2: 6.62e-11, y=4: 5.15e-21, y=6: 1.42e-10, y=8: 3.63e+00
   x 10.00: y=0: 1.00e+00, y=2: 9.29e-01, y=4: 8.98e-01, y=6: 1.08e+00, y=8: 1.33e+00
 mappings for gamma today if the angle froze at y = 4 (x_today ~ 450): 1/gamma = y -> 0.25; 1/gamma = y/x -> 112
+
+barrier in y along the path (reshaped cliff): y of the maximum of V(x, y) for y in (0, 2), its height / V(x,0), canonical distance sqrt(3/2) y_b / x
+  x  0.0001: barrier at y ~ 0.112, height x4.74e+05, distance 1374.19 M_P
+  x  0.0010: barrier at y ~ 0.112, height x4.75e+03, distance 137.42 M_P
+  x  0.0100: barrier at y ~ 0.112, height x4.82e+01, distance 13.74 M_P
+  x  0.0300: barrier at y ~ 0.112, height x5.78e+00, distance 4.58 M_P
+  x  0.1000: barrier at y ~ 0.063, height x1.05e+00, distance 0.77 M_P
+  x  0.3000: barrier at y ~ 0.000, height x1.00e+00, distance 0.00 M_P
+  x  1.0000: barrier at y ~ 0.000, height x1.00e+00, distance 0.00 M_P
+  x  3.0000: barrier at y ~ 0.000, height x1.00e+00, distance 0.00 M_P
