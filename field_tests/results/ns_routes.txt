@@ -1,0 +1,18 @@
+Base (instant reheating, cliff at slow-roll end): N* 55.56, n_s 0.96532, r 0.00343
+R1 kination (radiation fraction f at the cliff):
+  f 5e-01: N_kin 0.0, N* 55.56, n_s 0.96532 (dn_s +0.0000), r 0.00343
+  f 1e-01: N_kin 1.1, N* 56.1, n_s 0.96565 (dn_s +0.0003), r 0.00337
+  f 1e-02: N_kin 2.3, N* 56.7, n_s 0.966 (dn_s +0.0007), r 0.0033
+  f 1e-03: N_kin 3.45, N* 57.27, n_s 0.96633 (dn_s +0.0010), r 0.00324
+  f 1e-06: N_kin 6.91, N* 58.99, n_s 0.96729 (dn_s +0.0020), r 0.00306
+  f 1e-12: N_kin 13.82, N* 62.41, n_s 0.96904 (dn_s +0.0037), r 0.00275
+R2 early cliff (cliff N_c e-folds above the slow-roll end):
+  N_c 2: N* 55.33, n_s 0.96636 (dn_s +0.0010), r 0.00323, H at cliff 1.18e+13 GeV
+  N_c 5: N* 55.26, n_s 0.96796 (dn_s +0.0026), r 0.00294, H at cliff 1.23e+13 GeV
+  N_c 10: N* 55.2, n_s 0.97034 (dn_s +0.0050), r 0.00253, H at cliff 1.19e+13 GeV
+  N_c 15: N* 55.16, n_s 0.97239 (dn_s +0.0071), r 0.0022, H at cliff 1.13e+13 GeV
+  N_c 20: N* 55.12, n_s 0.97417 (dn_s +0.0089), r 0.00193, H at cliff 1.06e+13 GeV
+  N_c 30: N* 55.06, n_s 0.97713 (dn_s +0.0118), r 0.00152, H at cliff 9.52e+12 GeV
+  n_s = 0.9712 needs N_c = 12.0 (r 0.00239, H at cliff 1.16e+13 GeV)
+  n_s = 0.9737 needs N_c = 18.6 (r 0.002, H at cliff 1.08e+13 GeV)
+R3 second-order slow roll: |correction| ~ e*(1/N) ~ 7.7e-06 (negligible)
