@@ -36,7 +36,7 @@ exp(−n(1 − e^{−πT/4})) ends inflation; its 4/π is assumed to come from a
 not under calculational control), and the superpotential can be obtained from a Z₂ racetrack of two hidden gauge groups that
 keeps the gravitino massless; the cliff depth n ≈ 125 is chosen — a tuning of today's dark energy. Instant
 preheating heats ~0.8% of the energy; a hidden SU(8) axion kicks the twist angle and lepto-axiogenesis makes the observed
-baryon asymmetry for a hidden mass ≈ {MSIGMA} GeV (not yet stable); dark matter is a gravity-only fermion (mass estimate not
+baryon asymmetry for a hidden mass ≈ 6×10¹⁰ GeV (refit after a missed prediction; confirmation running); dark matter is a gravity-only fermion (mass estimate not
 yet stable).
 The tail is thawing dark energy: w₀ ≈ −0.90, w_a ≈ −0.14, insensitive to the heat share. Every data test was fixed and
 SHA-256 hashed before its fit. PURE-TWIST fits DESI DR2 BAO + supernovae + CMB better than ΛCDM with no extra parameters
