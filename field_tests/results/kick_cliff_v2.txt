@@ -1,0 +1,5 @@
+old cliff m2 1.0000: n_B/s 8.964e-11 (x1.030); end hidden 7.18e-19; dilution x4.48 [2442s]
+exp cliff m2 1.0000: n_B/s 7.713e-11 (x0.887); end hidden 4.01e-19; dilution x5.08 [1992s]
+exp cliff m2 1.2732: n_B/s 1.990e-10 (x2.287); end hidden 7.10e-19; dilution x5.64 [1792s]
+
+[exited with code 0]

@@ -727,3 +727,10 @@ n_χ̃/s ≈ (3/8)T_RH/m_χ ≈ 1.2×10⁻³. The graviton-mediated branching to
 factor C = 3–30, is 6×10⁻⁷–6×10⁻⁶. The observed dark matter then needs **m_DM ≈ 0.07–0.65 GeV** (70–650 MeV). This is the
 Twist's dark-matter mass if D106 (ii) holds — about 10⁹ times lighter than the freeze-in estimate. Order of magnitude; the
 gravitational four-body rate deserves a proper calculation before this becomes a stated prediction.
+
+**Matter recheck, complete (11:03; results/kick_cliff_v2.txt).** Same script and settings (μ = 1, heat 0.13%, m_σ = 6×10⁹ GeV,
+y = 0.1): old cliff 1.03×; reshaped cliff with m2 = 1: 0.887×; reshaped cliff with m2 = 4/π (the SU(8) value, D79): **2.29×**
+(dilution 5.6). The m2 = 4/π version moves the cliff to slightly larger x (x_end 8.8×10⁻³ vs 7.0×10⁻³), where the kick term
+e^{−(π/4)x} is the same but the inflaton is faster, and the yield rises by 2.6×. With yield ∝ m_σ^−0.89, exactly 1× needs
+**m_σ ≈ 1.5×10¹⁰ GeV** for the adopted cliff (was ≈ 5–6×10⁹). Matter-making survives the reshaped cliff; only the hidden
+mass shifts, by a factor ~2.5.
