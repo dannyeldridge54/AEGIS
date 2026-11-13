@@ -1,0 +1,2 @@
+heat 0.13%: flat plateau Omega_GW h^2 3.5e-18 below 2e+05 Hz; rises ~ f up to x48 = 1.7e-16 near 8e+06 Hz (BBN/N_eff bound ~1e-6; far below any planned detector)
+heat 0.04%: flat plateau Omega_GW h^2 3.5e-18 below 6e+04 Hz; rises ~ f up to x88 = 3.1e-16 near 6e+06 Hz (BBN/N_eff bound ~1e-6; far below any planned detector)

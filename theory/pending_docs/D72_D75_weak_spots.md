@@ -289,3 +289,10 @@ so less dark matter is made from the bath. With the radiation share at bath form
 ≈ 1×10⁸–6×10⁸ GeV (range 6×10⁷–1×10⁹ over heat shares 0.4–0.04%). Still far below T_RH, so the light branch holds.
 Label: estimate (no full Boltzmann run; gravitational production directly from the moving inflaton during kination is
 not included and could add to the yield — open).
+
+## Development 86 — kination tilts the primordial gravitational waves blue (estimate)
+
+Script: theory/inflation/gw_kination.py; results/gw_kination.txt. Inflation's waves (r ≈ 0.0035) give a flat
+Ω_GW h² ≈ 3.5×10⁻¹⁸ at low frequency. Modes that re-entered during kination are boosted ∝ frequency, up to ×50–90 at
+≈ 10⁷ Hz (Ω_GW h² ≈ 2–3×10⁻¹⁶). A real feature of the Twist (a stiff phase after inflation), but far below the N_eff
+bound and below any planned detector. Not a near-term test; recorded as a prediction of shape.
