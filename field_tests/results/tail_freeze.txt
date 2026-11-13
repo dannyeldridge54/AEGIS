@@ -1,0 +1,13 @@
+f 0.0015, mu 10000: frozen at x = 312, slope seen today kappa_eff = 0.0247 (0.030 of sqrt(2/3)), dp/dN left -1.4e-14
+f 0.0015, mu 100: frozen at x = 312, slope seen today kappa_eff = 0.6182 (0.757 of sqrt(2/3)), dp/dN left -1.4e-14
+f 0.0015, mu 1: frozen at x = 310, slope seen today kappa_eff = 0.8139 (0.997 of sqrt(2/3)), dp/dN left -1.4e-14
+f 0.0015, mu 0.01: frozen at x = 272, slope seen today kappa_eff = 0.8165 (1.000 of sqrt(2/3)), dp/dN left -1.5e-14
+f 0.0147, mu 10000: frozen at x = 32, slope seen today kappa_eff = 0.0026 (0.003 of sqrt(2/3)), dp/dN left -1.0e-14
+f 0.0147, mu 100: frozen at x = 32, slope seen today kappa_eff = 0.1979 (0.242 of sqrt(2/3)), dp/dN left -1.0e-14
+f 0.0147, mu 1: frozen at x = 31.9, slope seen today kappa_eff = 0.7916 (0.970 of sqrt(2/3)), dp/dN left -1.0e-14
+f 0.0147, mu 0.01: frozen at x = 27.9, slope seen today kappa_eff = 0.8162 (1.000 of sqrt(2/3)), dp/dN left -1.0e-14
+f 0.5, mu 10000: frozen at x = 2.17, slope seen today kappa_eff = 0.0002 (0.000 of sqrt(2/3)), dp/dN left 9.0e-02
+f 0.5, mu 100: frozen at x = 2.17, slope seen today kappa_eff = 0.0173 (0.021 of sqrt(2/3)), dp/dN left 9.0e-02
+f 0.5, mu 1: frozen at x = 2.13, slope seen today kappa_eff = 0.5553 (0.680 of sqrt(2/3)), dp/dN left 8.9e-02
+f 0.5, mu 0.01: frozen at x = 1.98, slope seen today kappa_eff = 0.8124 (0.995 of sqrt(2/3)), dp/dN left 8.5e-02
+Cliff depth that sets the dark-energy scale: exp(-2n) m^2/4 = rho_DE -> n = 126.8
