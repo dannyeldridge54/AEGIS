@@ -31,7 +31,8 @@ def run(mu=1.0, delta=0.1, a=1.0, p0=5.6, after=6.0):
         return [dp, dy, -c * g * dy * dy - (3 - eps) * (dp + vp / v), 2 * c * dp * dy - (3 - eps) * (dy + vy / (g * v))]
     end = lambda N, z: 0.5 * (z[2] ** 2 + 1.5 * math.exp(-2 * c * z[0]) * z[3] ** 2) - 1
     end.direction = 1
-    sol = solve_ivp(rhs, [0, 400], [p0, 0, 0, 0], events=end, rtol=1e-10, atol=1e-13, dense_output=True, method="LSODA")
+    far = lambda N, z: z[0] + 40; far.terminal = True
+    sol = solve_ivp(rhs, [0, 400], [p0, 0, 0, 0], events=[end, far], rtol=1e-10, atol=1e-13, dense_output=True, method="LSODA")
     Ne = sol.t_events[0][0]
     def at(N):
         p, y, dp, dy = sol.sol(N); g = 1.5 * math.exp(-2 * c * p); eps = 0.5 * (dp * dp + g * dy * dy)
