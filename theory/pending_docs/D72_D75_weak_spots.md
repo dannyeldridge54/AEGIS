@@ -1574,3 +1574,11 @@ to a heterotic region that is either strongly coupled or outside the perturbativ
 put the Twist. **Verdict:** no gain at weak heterotic coupling; the exponent does not obviously survive. Status of n: no derivation
 route is open in the weakly coupled heterotic home. Ranked remaining: (1) IIB with sequestered D3-brane matter (evades D151 for matter
 on distant branes, but must then rebuild the shield for the volume modulus — a concrete next construction); (2) accept n as chosen.
+
+**D192 — IIB with sequestered D3-brane matter (theory/string_home/sequestered_d192.py): fails.** Sequestering makes the SM gauge couplings
+dilaton-set and T-independent, but in IIB the only rung-3 direction is the overall volume, and every local scale on a D3-brane is tied to
+the string scale, M_s/M_P ~ V^(−1/2) = τ^(−3/4). In canonical units that is a universal matter coupling β = (3/4)/√(3/2) = 0.61 —
+181× above the Cassini bound (3.4×10⁻³). Other IIB moduli that matter could be sequestered from (blow-ups, fibres) are not rung 3.
+**Verdict:** option (1) of D191 is closed. In IIB, "rung 3" and "matter neutral" are incompatible for a structural reason (the
+volume sets M_s/M_P), not a model-building one. Combined with D189–D191: no string setting found derives n while keeping A + C;
+n stays chosen. The remaining open string question is the weakly coupled heterotic home with n accepted as an input.
