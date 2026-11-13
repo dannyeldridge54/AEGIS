@@ -71,7 +71,7 @@ n becomes the resummed instanton sum at small volume (a precise route to derivin
 
 ## 3c. TWIST-L — raising n_s while keeping rung 3 (D162–D163; locked PREREG_TWISTL, future data only)
 A logarithmic factor in the helper field's metric, L = 1 + b/(1 + ln(1 + 2/u)), makes the plateau approach flat as 1/φ while T's
-geometry stays on rung 3. b = 1–10 gives n_s 0.969–0.979 with r 0.0048–0.014 (S heavy, angle +4H², tail unchanged to ~10⁻⁵).
+geometry stays on rung 3. b = 1–10 gives n_s 0.969–0.979 with r 0.0048–0.014 (S heavy, angle +4H², tail slope changed by ≤1%, so w0 moves by ~0.002).
 The inverse log is the shape of an IR-free running coupling at a T-set scale; b = 8π²C/|b_β| needs only C ≈ 0.03–1.3. Built after
 seeing the n_s data, so only future CMB results can score it; TWIST-P is the alternative (higher r at the same n_s).
 

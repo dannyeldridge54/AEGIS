@@ -1288,3 +1288,6 @@ coefficients |b_β| = 1–20: C ≈ 0.03–1.3 — natural sizes for a tree-leve
 (b "large for a one-loop log") is answered by the inverse-log/running-coupling reading: b is large because 8π²/|b_β| is large, not
 because many fields run in a loop. The Landau scale must sit near M (ln(Λ_L/M) ≈ 1) — one condition, not derived. Status: plausible
 origin, not derived; the TWIST-L lock is unchanged.
+D162 add (tail check, results/twistl_tail_check.txt): on the tail L adds ≤ 1% to the slope √(2/3) (0.5–1.2% for b = 1–10), so w0
+moves by ~0.002 and wa negligibly — TWIST-L's dark energy is the Twist's within DESI DR3's reach. (The full-state note first said
+"unchanged to ~10⁻⁵"; corrected.)
