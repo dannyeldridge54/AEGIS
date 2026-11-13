@@ -50,6 +50,7 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 | n_s is fixed by the e-fold count | derived | `theory/inflation/kahler_correction_ns.py` | deforming the 3 moves n_s by < 0.002 (α 0.5–5); 0.973 unreachable |
 | Neutrinos: normal ordering, Σm_ν 0.059–0.064 eV, Majorana | derived (from the matter mechanism) | Development 69 | testable by JUNO, cosmology, 0νββ |
 | w_a for the theory's own β = 0 version | derived | `theory/darkenergy/tail_bend_wa.py` | between about −0.15 and 0 (w₀ ≥ −0.90); the tail's bend only moves w toward −1 |
+| Full tail at the computed heat share | locked | `PREREG_TAIL_F.md`, `tail_f.json` | **DISFAVOURED** (Δχ² +29.2); free heat share → 0.01% (PURE-TWIST limit) |
 | Birefringence β = 0 | locked | `PREREG_BIREF_NULL.md` | pending; measured 0.28 ± 0.06° (4.9σ tension) |
 | Six lab nulls | locked | `PREREG_LAB_NULLS.md` | consistent with all bounds |
 | Growth (fσ₈ −3%, E_G +5%) | frozen | `pure_twist_growth.json` | pending DESI full-shape, Euclid |
@@ -66,6 +67,10 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 - **TOURNAMENT:** no Twist version both predicts held-out BAO and earns its parameter (reading PREDICTS BUT NOT
   PREFERRED). **KAPPA-ALPHA1: NOT PREDICTIVE.**
 - **NS-PURE: NO VERDICT** (gate missed by 0.0005); the late-time Twist moves n_s up, not down.
+- **TAIL-F: FULL TAIL DISFAVOURED (Δχ² +29.2).** With the computed heat share (0.13%) the cliff's leftover slope
+  makes today's dark energy too stiff (w₀ −0.74, w_a −0.34). Freed, the heat share runs to the lower edge (0.01%,
+  the PURE-TWIST limit; Δχ² −2.79). PURE-TWIST therefore needs far less heat or a reshaped cliff (`tail_f.json`,
+  Development 78b).
 - **Withdrawn numbers:** the hidden mass 3–6×10⁹ GeV (a pre-stated check failed; corrected to ~3×10¹⁰ GeV);
   several earlier developments (D26 gravitino, D31) superseded. All kept in the matter doc and git history.
 

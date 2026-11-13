@@ -1,0 +1,21 @@
+{
+ "rule": "PREREG_TAIL_F.md",
+ "FIXED": {
+  "dchi2_vs_LCDM": 29.228,
+  "w0wa": [
+   -0.7383270594162833,
+   -0.3426814618796222
+  ],
+  "reading": "FULL TAIL DISFAVOURED"
+ },
+ "RANGE": {
+  "dchi2_vs_LCDM": -2.79,
+  "best_f_percent": 0.01,
+  "w0wa": [
+   -0.88905538874363,
+   -0.15948892996547018
+  ],
+  "minus_w0wa_chi2": 3.415,
+  "reading": "DATA WANT LESS HEAT THAN COMPUTED"
+ }
+}

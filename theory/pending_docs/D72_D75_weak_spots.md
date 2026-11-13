@@ -155,3 +155,19 @@ matter yield — choosing the point. At the computed heat share it sits at w₀ 
 ceiling, and closer to the DESI DR2 direction (w₀ ≈ −0.75 to −0.80) than PURE-TWIST, though DESI's w_a (≈ −0.7) is
 still deeper. This replaces the exponential numbers in D78. Not yet tested against data: a locked test (heat share
 fixed from D42's computed range, not fitted) is the natural next step.
+
+## TAIL-F result (locked PREREG_TAIL_F, 13 Nov 2026 09:09; scored the same morning)
+
+FIXED (heat share 0.13%, w₀ −0.74, w_a −0.34, no free extra parameter): Δχ² = +29.2 vs ΛCDM → **FULL TAIL
+DISFAVOURED**. RANGE (heat share free 0.01–0.25%): best at the lower edge, 0.01% (w₀ −0.89, w_a −0.16, i.e. the
+PURE-TWIST limit), Δχ² = −2.79 vs ΛCDM, +3.4 behind free w₀w_a → **DATA WANT LESS HEAT THAN COMPUTED**.
+
+What this means. The model as written, with the reheating we computed, makes today's dark energy too stiff, and the
+data reject it strongly. The data are happy only in the limit where the cliff's leftover slope has died away — which
+is PURE-TWIST. So PURE-TWIST is not automatic: the theory must do one of
+  (a) make far less heat (≲ 0.01%: g ≈ 0.1 → smaller, which also moves the matter yield), or
+  (b) change the cliff factor so its leftover slope dies off fast (e.g. exp(−nT²/(T² + m2²))) — a new model version
+      that keeps the computed reheating and returns the √(2/3) tail;
+  (c) let the field keep travelling further after the cliff by some other route (not identified).
+None is taken yet; this is Danny's call. Until then the honest summary is: PURE-TWIST fits; the full model with its
+computed reheating does not.
