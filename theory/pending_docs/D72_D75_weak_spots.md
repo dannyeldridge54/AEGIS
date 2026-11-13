@@ -1670,3 +1670,19 @@ something other than condensates (non-perturbative Kähler corrections / the inv
 precise open question), or an orbifold where the Twist's modulus is a plane that is NOT completely rotated (then δ_GS need not equal b′/k, but
 such planes have N = 2 sectors, which reintroduce T-thresholds for the SM unless the SM avoids them — D152's original worry).
 Status: the heterotic Z₃ home is under real pressure; "matter neutral" (C) now requires a dilaton-stabilisation mechanism not yet known.
+
+**D200 — the escape exists in the literature: Binétruy–Gaillard–Wu Kähler stabilisation with a condensate whose beta coefficient equals the
+GS coefficient (hep-th/9611149; literature check).** In BGW's modular-invariant linear-multiplet formalism the condensate is
+ρ_a² ∝ Π_I [(t^I + t̄^I)|η(t^I)|⁴]^{(b − b_a)/b_a} (their eq. 2.28; b = GS coefficient, b_a = condensing group's), and the moduli-dependent
+part of the potential is ∝ d_a = (b − b_a)(1 + 4ζ Re t) (eq. 2.34). When b_a = b — exactly the case of a pure hidden E₈ on Z₃ (b′_E₈ = −C(E₈) =
+−30 = δ_GS per plane, D199's check) — "the potential is independent of the moduli, which therefore remain undetermined", while the dilaton
+(the duality-INVARIANT ℓ) "is completely determined by string nonperturbative effects" (⟨ℓ⟩ ≈ B/2 for f = A e^{−B/V}). Since V then has
+no t-dependence, ℓ cannot depend on t.
+**What this fixes:** (i) the α drift of D198 came from fixing the HOLOMORPHIC dilaton with a racetrack; fixing the invariant ℓ with
+nonperturbative Kähler corrections leaves physical gauge couplings (k_a/g_s²(ℓ), Z₃ thresholds zero) independent of T — the shield survives
+with δ_GS ≠ 0, so D199's no-go is sidestepped, not violated; (ii) T stays flat under the hidden sector (F_T = 0 since d_a = 0), so the Twist's
+own potential is the only one T feels at this order — exactly what the model needs; (iii) TWIST-K has no hidden racetrack, so D193's
+SU(8)×SU(9) is dropped in favour of a single pure-E₈ condensate.
+**Conditions/costs:** no other condensate with b_a ≠ b may be significant (it would pin T at the self-dual point); the cosmological constant
+is tuned to zero (as in BGW); supersymmetry is broken by the E₈ condensate at a high scale (no TeV SUSY implied); BGW assume full SL(2,Z)
+— the Γ₀(9) version (D194) and the coupling of BGW's sector to the Twist's helper field are not checked. D193 is superseded.
