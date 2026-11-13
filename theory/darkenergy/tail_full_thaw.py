@@ -36,10 +36,11 @@ def solve(pf):
     return w0, wa, w[-1], math.exp(c * s.y[0, -1])
 
 
-for f in (1e-4, 4e-4, 8e-4, 1.3e-3, 2e-3, 4e-3):
-    xf = run(mu, n=n, m2=m2, f=f)[0]
-    try:
-        w0, wa, wt, xt = solve(math.log(xf) / c)
-        print(f"heat share {f * 100:.3f}%: x_f {xf:.0f} -> today x {xt:.0f}; w0 {w0:.3f}, wa {wa:.3f} (w today {wt:.3f})", flush=True)
-    except ValueError:
-        print(f"heat share {f * 100:.3f}%: x_f {xf:.0f}; no solution with Omega_DE 0.69 (too steep)", flush=True)
+if __name__ == "__main__":
+  for f in (1e-4, 4e-4, 8e-4, 1.3e-3, 2e-3, 4e-3):
+      xf = run(mu, n=n, m2=m2, f=f)[0]
+      try:
+          w0, wa, wt, xt = solve(math.log(xf) / c)
+          print(f"heat share {f * 100:.3f}%: x_f {xf:.0f} -> today x {xt:.0f}; w0 {w0:.3f}, wa {wa:.3f} (w today {wt:.3f})", flush=True)
+      except ValueError:
+          print(f"heat share {f * 100:.3f}%: x_f {xf:.0f}; no solution with Omega_DE 0.69 (too steep)", flush=True)
