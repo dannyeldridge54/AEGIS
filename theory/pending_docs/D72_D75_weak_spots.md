@@ -1220,3 +1220,15 @@ came from χ's mass growing linearly with the inflaton (curvature 2g² in φ). W
 ~+3×10⁻⁶–1×10⁻⁵ — negligible. Consequence: the Twist's n_s is ≈ 0.964–0.965 (instant reheating to kination), not 0.965–0.968; the
 n_s tension is slightly WORSE than quoted. The locked bands (TWIST-P: "+0.000…+0.003") contain this, so no lock changes; the model
 card and full-state numbers are corrected.
+
+## Development 157 — the locked n_s test is scored: INCONSISTENT (PREREG_NS_SPA; results/ns_spa.json; PC run, scored 13:20)
+Data: ACT DR6 + SPT-3G + Planck low-ℓ + ACT lensing + DESI DR2 BAO + Pantheon+ + DES Y6 S8, with the PURE-TWIST late universe.
+**Cost of fixing n_s at the Twist's value 0.964: Δχ² = 11.73 → INCONSISTENT** (locked thresholds: ≤ 4 consistent, 4–9 tension,
+> 9 inconsistent). With n_s free the Twist's late universe prefers n_s = 0.9756 (ΛCDM: 0.9732). Reported beside it: ΛCDM with
+n_s fixed at 0.964 costs 8.46 (TENSION) — so this data set disfavours n_s = 0.964 for either late universe, a bit more strongly
+with the Twist's. Also: on this data set PURE-TWIST with n_s free fits WORSE than ΛCDM by Δχ² = +1.45 (it was −3.4 on the
+compressed DESI+SN+CMB set) — the dark-energy preference does not survive the full SPA likelihood here.
+Consequences, stated plainly: (1) the D108 falsifier is met on current data: the Twist's inflation (n_s ≈ 0.964–0.965, D156) is
+inconsistent with CMB-SPA + DESI at the locked level. (2) TWIST-P was built for this and can only be scored on future data.
+(3) Caveat recorded, not used to soften the reading: the high n_s is driven by combining DESI BAO with the CMB (CMB-SPA alone gives
+0.968 ± 0.003 in the literature), which some authors attribute to a BAO–CMB tension.

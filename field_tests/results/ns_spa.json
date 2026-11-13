@@ -1,0 +1,15 @@
+{
+ "rule": "PREREG_NS_SPA.md",
+ "cost_PURE": 11.734,
+ "cost_LCDM": 8.46,
+ "n_s_PURE_free": 0.97562378,
+ "n_s_LCDM_free": 0.97323687,
+ "PURE_free_minus_LCDM_free": 1.452,
+ "reading": "INCONSISTENT",
+ "chi2": {
+  "PURE_free": 2405.554,
+  "PURE_fixed": 2417.2879,
+  "LCDM_free": 2404.1015,
+  "LCDM_fixed": 2412.5613
+ }
+}
