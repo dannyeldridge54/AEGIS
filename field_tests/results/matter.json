@@ -1,0 +1,37 @@
+{
+ "rule": "PREREG_MATTER.md",
+ "target_nB_s": 8.7e-11,
+ "c_A": 0.6123724356957945,
+ "mu_l_over_mu_A": 0.5227,
+ "rows": {
+  "1e+13": {
+   "nB_s_per_unit_r": 3.872140950908756e-09,
+   "r_needed": 0.02246819036367514,
+   "angle_energy_share_at_TRH": 8.413659636972408e-05
+  },
+  "3e+13": {
+   "nB_s_per_unit_r": 1.7440630445656404e-08,
+   "r_needed": 0.004988351784133318,
+   "angle_energy_share_at_TRH": 4.147275587044344e-06
+  },
+  "1e+14": {
+   "nB_s_per_unit_r": 2.4891927520137865e-08,
+   "r_needed": 0.0034951090038975873,
+   "angle_energy_share_at_TRH": 2.0359644915209974e-06
+  },
+  "1e+15": {
+   "nB_s_per_unit_r": 2.8801836150183704e-09,
+   "r_needed": 0.030206407517336387,
+   "angle_energy_share_at_TRH": 0.00015207117585056603
+  }
+ },
+ "K_TEMP_min_TRH": 10000000000000.0,
+ "K_TEMP": "VIABLE",
+ "K_KIN_flag": {
+  "1e+13": false,
+  "3e+13": false,
+  "1e+14": false,
+  "1e+15": false
+ },
+ "note": "K-GRAV: gravitino yield at the minimum T_RH from twist_baryogenesis_estimates.py (D3)"
+}

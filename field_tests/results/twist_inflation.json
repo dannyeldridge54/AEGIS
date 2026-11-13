@@ -1,0 +1,20 @@
+{
+ "N": 55.56027086925401,
+ "n_s": 0.9653215794762984,
+ "r": 0.003431488482837412,
+ "V*": 1.0668241657237363e-10,
+ "rho_end": 4.7129820601169274e-11,
+ "H_inf_GeV": 14520606637939.662,
+ "T_reh_instant_GeV": 2620814715667485.5,
+ "NS_NOW_pulls": {
+  "Planck 2018": 0.1,
+  "Planck+ACT+SPT": -1.03,
+  "Planck+ACT+DESI": -2.64
+ },
+ "band_check": {
+  "n_s in 0.9636-0.9649": false,
+  "r in 0.0037-0.0040": false
+ },
+ "R_FUTURE": "PENDING (no r measurement with sigma(r) <= 0.002 yet)",
+ "rule": "PREREG_TWIST_INFLATION.md"
+}

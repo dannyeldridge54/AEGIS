@@ -55,7 +55,7 @@ def run():
     tmin = min(ok) if ok else None
     out = {"rule": "PREREG_MATTER.md", "target_nB_s": TARGET, "c_A": cA, "mu_l_over_mu_A": RATIO, "rows": rows,
            "K_TEMP_min_TRH": tmin, "K_TEMP": ("VIABLE" if tmin is not None and tmin <= 1e15 else "NOT VIABLE"),
-           "K_KIN_flag": {k: v_["angle_energy_share_at_TRH"] > 0.01 for k, v_ in rows.items()},
+           "K_KIN_flag": {k: bool(v_["angle_energy_share_at_TRH"] > 0.01) for k, v_ in rows.items()},
            "note": "K-GRAV: gravitino yield at the minimum T_RH from twist_baryogenesis_estimates.py (D3)"}
     json.dump(out, open(os.path.join(AEG, "field_tests", "results", "matter.json"), "w"), indent=1)
     print(out["K_TEMP"], tmin)
