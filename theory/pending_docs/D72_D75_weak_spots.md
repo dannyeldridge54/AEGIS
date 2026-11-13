@@ -1976,7 +1976,7 @@ Status: natural size and a plausible mechanism identified; no explicit model com
 0.9638 ± 0.0040, ACT 0.9666 ± 0.0076, SPT 0.948 ± 0.012, CMB-SPA 0.9693 ± 0.0029; adding DESI BAO shifts each up (+0.004 to +0.010): CMB-SPA + DESI
 0.9737 ± 0.0025. The authors attribute the shift to the BAO–CMB tension (n_s is partly degenerate with the BAO-sensitive parameters). The
 Twist's 0.9645 sits −1.7σ from CMB-SPA alone, −0.2σ from Planck, +1.4σ from SPT, but −3.7σ from CMB-SPA + DESI; TWIST-G− (0.9743) is the mirror
-image (+0.2σ with DESI, +1.7σ without, +2.2σ vs Planck). So the INCONSISTENT verdict (D157) is a statement about CMB + BAO jointly. Our own
+image (+0.2σ vs CMB-SPA + DESI, +1.7σ vs CMB-SPA alone, +2.6σ vs Planck, +2.2σ vs SPT). So the INCONSISTENT verdict (D157) is a statement about CMB + BAO jointly. Our own
 NS-SPA run already tested the natural hope that the Twist's dynamical dark energy would relieve the BAO–CMB tension and found it does not
 (free-n_s minima 0.973–0.976 with the PURE background, D157 context). Practical consequence: which branch survives (Twist vs TWIST-G−/L) will be
 decided as much by how the BAO–CMB tension resolves (DESI DR3, Simons Observatory) as by n_s itself — worth stating in the paper.
