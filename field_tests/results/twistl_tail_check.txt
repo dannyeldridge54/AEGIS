@@ -1,0 +1,8 @@
+b 1, x 73.0: extra tail slope from L = 5.4e-03 (tail slope sqrt(2/3) = 0.816; relative 7e-03)
+b 1, x 89.0: extra tail slope from L = 4.5e-03 (tail slope sqrt(2/3) = 0.816; relative 5e-03)
+b 3, x 73.0: extra tail slope from L = 8.1e-03 (tail slope sqrt(2/3) = 0.816; relative 1e-02)
+b 3, x 89.0: extra tail slope from L = 6.7e-03 (tail slope sqrt(2/3) = 0.816; relative 8e-03)
+b 5, x 73.0: extra tail slope from L = 9.1e-03 (tail slope sqrt(2/3) = 0.816; relative 1e-02)
+b 5, x 89.0: extra tail slope from L = 7.5e-03 (tail slope sqrt(2/3) = 0.816; relative 9e-03)
+b 10, x 73.0: extra tail slope from L = 9.9e-03 (tail slope sqrt(2/3) = 0.816; relative 1e-02)
+b 10, x 89.0: extra tail slope from L = 8.1e-03 (tail slope sqrt(2/3) = 0.816; relative 1e-02)

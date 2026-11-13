@@ -70,3 +70,6 @@ A DIFFERENT model, built after seeing the n_s data — D108 says the Twist's own
 TWIST-P changes it. Construction: the Twist plus one Kähler term β/(T + T̄) that reshapes only the deep plateau (a polynomial attractor there); V along real T is
 unchanged. Built after seeing the n_s data, so only post-lock CMB results can score it. Prediction: n_s 0.965–0.971 (+ loops
 ≤ 0.974) with r 0.0036–0.011 rising together; it does not reach n_s = 0.974 at tree level. Isocurvature: estimated safe (D134), unverified until D137; if D137 fails for the angle, only the β ≤ 2.2×10⁻³ segment stands.
+
+## Separate model: TWIST-L (locked 13:59; PREREG_TWISTL.md)
+TWIST-K plus a logarithmic factor in S's metric (an IR-free running coupling at a T-set scale, D163). Keeps rung 3. Predicts n_s 0.965–0.979 with r 0.0036–0.014 rising together (lower r than TWIST-P at the same n_s). Built after seeing the n_s data; scored only on future CMB results.
