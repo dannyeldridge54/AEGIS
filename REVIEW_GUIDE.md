@@ -20,7 +20,7 @@ TorsionΛ, UFE, n = 3 early field) is superseded unless listed here.
 - Matter: lepto-axiogenesis (Weinberg operator, μ_ℓ/μ_A = 0.523, sphalerons 28/79).
 - Reheating: instant preheating, g ≈ 0.1, χ decay distance computed → T_RH ≈ 2.1–3.7×10¹⁴ GeV.
 - Dark matter: gravity-only (Planckian-interacting) fermion, about 3.5×10⁶–1.9×10⁷ GeV at that T_RH.
-- Dark energy: the tail; n ≈ 127 sets its size; μ ≲ 1 puts today's slope at √(2/3) (PURE-TWIST);
+- Dark energy: the tail; n ≈ 127 is **chosen** to give its size (not predicted, Development 74); μ ≲ 1 puts today's slope at √(2/3) (PURE-TWIST);
   optional dark-matter coupling β (FLAG-1: κ = 1, β ≈ 0.04).
 - Late-time versions tested: PURE-TWIST (κ = √(2/3), β = 0; zero extra parameters), K816 (κ = √(2/3), β free),
   FLAG-1 (κ = 1, β free). **The theory's own prediction is PURE-TWIST (β = 0)**: gravity-only dark matter cannot
@@ -76,7 +76,13 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 3. Heavy superpartners (m ≈ 10¹¹–10¹³ GeV) at T_RH need R-parity violation (window 10⁻⁵–10⁻³, estimate).
 4. Instant preheating: χ's couplings g ≈ 0.1 and Yukawa h = 0.1–1 are natural choices, not derived.
 5. The dark-matter fermion argument and PIDM threshold factor are estimates.
-6. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
+6. The helper field S is tachyonic (m_S² ≈ −2H²) with K exactly as written; a standard quartic term ζ(SS̄)² inside
+   the log with ζ ≳ 10⁴ makes it heavy and leaves every number at S = 0 unchanged (Development 72, chosen).
+7. Ordinary matter must not feel the tail field: natural bulk weights give a fifth force ×120–360 over Cassini, so
+   the Standard Model must be sequestered (D3 branes, T-independent Higgs sector). An assumption (Development 73).
+8. The field moves Δφ ≈ 15–18 M_P from the CMB point to today, in tension with the swampland distance conjecture —
+   generic to one-field inflation-plus-quintessence models; open (Development 75).
+9. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
 
 ## 5. How to reproduce
 

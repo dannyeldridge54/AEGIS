@@ -1,0 +1,7 @@
+Cassini: universal coupling beta < 3.4e-03
+  natural weight 1 (q=-1/2): beta = 0.41 -> excluded by x120
+  natural q=3/2 (e^{K/2}): beta = 1.22 -> excluded by x361
+  SM on D3 branes (QCD scale independent of T): nucleon mass ~99% fixed; Higgs-sector 1% with q=-1/2 -> beta ~ 4.1e-03 (still above Cassini by x1.2); composition differences ~1e-4 of that -> EP eta ~ 3e-09 vs MICROSCOPE 1e-15
+field excursion CMB point -> today (x_f=30): 15.4 M_P
+field excursion CMB point -> today (x_f=300): 18.2 M_P
+dark-energy size: exp(-2n) m^2/4 = rho_DE needs n = 126.8 -> e^{-254}: chosen to match, not predicted
