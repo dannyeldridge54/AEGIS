@@ -1,0 +1,13 @@
+phidot = 3.03e-06 M_P^2
+g 0.03, h 0.1: chi decays after dphi = 0.504 M_P -> f = 3.6e-04, T_RH = 2.02e+14 GeV
+g 0.03, h 0.3: chi decays after dphi = 0.168 M_P -> f = 1.2e-04, T_RH = 1.54e+14 GeV
+g 0.03, h 1.0: chi decays after dphi = 0.050 M_P -> f = 3.6e-05, T_RH = 1.14e+14 GeV
+g 0.1, h 0.1: chi decays after dphi = 0.276 M_P -> f = 4.0e-03, T_RH = 3.69e+14 GeV
+g 0.1, h 0.3: chi decays after dphi = 0.092 M_P -> f = 1.3e-03, T_RH = 2.80e+14 GeV
+g 0.1, h 1.0: chi decays after dphi = 0.028 M_P -> f = 4.0e-04, T_RH = 2.08e+14 GeV
+g 0.3, h 0.1: chi decays after dphi = 0.159 M_P -> f = 3.6e-02, T_RH = 6.39e+14 GeV
+g 0.3, h 0.3: chi decays after dphi = 0.053 M_P -> f = 1.2e-02, T_RH = 4.86e+14 GeV
+g 0.3, h 1.0: chi decays after dphi = 0.016 M_P -> f = 3.6e-03, T_RH = 3.59e+14 GeV
+T_RH 2.1e+14: fermion DM mass 1.9e+07 GeV
+T_RH 2.8e+14: fermion DM mass 8.2e+06 GeV
+T_RH 3.7e+14: fermion DM mass 3.5e+06 GeV
