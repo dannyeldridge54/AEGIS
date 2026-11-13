@@ -1882,3 +1882,8 @@ combination m² e^{−2n} is scanned (as Λ is in ΛCDM): then the Twist inherit
 **Status:** the Twist does not solve the cosmological-constant problem (stated since D129); this note sharpens what it would take to
 explain n: either a mechanism fixing n, or a landscape in which the dark-energy SCALE (not n) is uniformly scanned near zero. If the cliff
 depth really were a flux integer, the Twist would be in a statistically worse position than a bare Λ — a point a referee would raise.
+D215 correction (same session, after running the numbers): the comparison above overstated the case. With a log-flat prior the chance of
+landing within a decade of the observed value is 8% (cut-off 10 decades down), 1.6% (60), 0.8% (120); the simple uniform-in-ρ estimate for
+Weinberg's case, P(ρ < ρ_obs | ρ < 200 ρ_obs), is ~0.5% (careful galaxy-weighted versions give ~5–10%). So the integer-n reading is NOT clearly
+worse than a bare Λ — the two are comparable unless the log-flat range is extremely deep. Revised status: n chosen costs about the same as
+Λ chosen; neither is explained; no extra penalty for the Twist from this argument. The "referee point" sentence above is withdrawn.
