@@ -51,7 +51,7 @@ out-of-sample test than a new survey.
 | Extra radiation | ΔN_eff ~ 3×10⁻⁸ | — |
 
 ## Known costs
-- Strong CP is not solved (the angle would overproduce axion dark matter, D172); neutrino masses are assumed (seesaw scale fits the Twist's scales, D173).
+- Strong CP is not solved (the angle would overproduce axion dark matter, D172); neutrino masses are assumed (seesaw scale fits the Twist's scales, D173; with high-scale SUSY, M_R ~ m_3/2 ~ 2×10¹⁴ GeV gives 0.05 eV for Yukawa ~0.6, D214 — optional).
 - Late ISW 5% stronger than ΛCDM (D172b).
 - Hubble tension: the Twist lowers the CMB-inferred H₀ to ≈ 65.7 km/s/Mpc (ΛCDM 67.4), moving away from local ~73 (D169).
 - Growth: σ8 1.5% lower and f σ8 3% lower at z ≈ 0.4 than ΛCDM at fixed Ω_m (D168, locked PREREG_GROWTH) — helps the S8 tension slightly.
@@ -64,8 +64,13 @@ out-of-sample test than a new survey.
 - D124: matter at 0.8% heat 7.53× (prediction 2–3× MISSED).
 
 ## Open
-The fifth force (main open problem, D135) · isocurvature unverified until D137 · initial conditions: only near-rest starts at
-x ≈ 10⁻⁵–10⁻⁴ (fast starts sit where S is tachyonic, D136) · n not derived · inhomogeneous starts only by analogy · SU(8) strongly coupled on the far plateau · m_σ confirmation pending.
+The fifth force: an effective-theory assumption — no string setting examined keeps matter neutral at today's field value (D188–D211);
+locked signature PREREG_SHIELD, with the leak's growth exponent now a reported quantity (D216) · n not derived (statistically no worse than
+a chosen Λ, D215) · n_s: INCONSISTENT on current data; no fix inside rung-3 plateaus (D131–D132), TWIST-L/P/M9 locked for future data ·
+initial conditions: with ζ = 3×10⁵ the helper is stable down to x = 8×10⁻⁷, so the binding limit is the tower floor (x ≈ 6×10⁻⁶, D123):
+fast starts (x ≈ 2×10⁻⁶) remain outside the EFT; inhomogeneous starts robust by analogy with ~2.5–3.8 M_P of plateau (D217–D218) ·
+isocurvature: D137 (PC run) · m_σ confirmation pending (PC run). (The SU(8) item applies only to the old superpotential construction,
+not TWIST-K.)
 
 ## Consistency pass (final form, one run)
 V identical to the old form for real T · N* 55.7 (instant), n_s 0.9642, r 0.0038 · tail at 0.8%: x frozen 73, today 89, w0 −0.902, wa −0.142 ·
