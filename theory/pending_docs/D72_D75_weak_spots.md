@@ -1486,3 +1486,14 @@ sizes for such invariants, ~5× larger than the 1/16π² guess. Caveat: these co
 Standard Model's coupling picks up T; and they correct Re S (shared by both E₈'s) unless the hidden sector sits on a different wall.
 Status: the "big count in an exponent" route has a concrete published mechanism (M5-instanton corrections to the gauge coupling,
 weighted by BPS counts), with the right order of magnitude; its compatibility with the shield is the open point.
+
+**D183 — heterotic M-theory with the hidden force on the other wall (results/hw_walls_d183.txt; standard Hořava–Witten relations,
+order of magnitude).** The wall couplings are 1/g² = Re S + b_wall Re T, with b_wall set by the wall's bundle and five-brane charges and
+anomaly cancellation c₂(V_vis) + c₂(V_hid) + [M5] = c₂(TX). Choosing c₂(V_vis) = c₂(TX)/2 makes b_vis = 0 — the Standard Model's gauge
+coupling loses its linear T term — while the hidden wall keeps b_hid = −[M5] ≠ 0, i.e. a hidden coupling linear in T (need B) and an
+instanton-corrected hidden sector for n (D182). So the coupling half of C can be engineered. But the UV scale cannot: M_GUT/M_P ∝
+(Re S·Re T)^{−1/2}, so at fixed S the QCD scale tracks x^{−1/2} and β ≈ 0.41 — 120× over Cassini, the same scale problem as D150.
+Status: in heterotic M-theory A and B hold and the gauge-coupling part of C can be arranged, but the Standard Model's mass scale still
+follows T. The frontier is now down to ONE precise obstruction across every setting checked: the matter sector's UV scale tracks the
+rung-3 modulus. Anything that fixes M_GUT/M_P independently of T (a different modulus setting it, or T not being the volume-like
+direction that also sets the interval) would close the gap.

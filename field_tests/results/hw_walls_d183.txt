@@ -1,0 +1,7 @@
+Horava-Witten (standard relations, order of magnitude):
+  1/g_vis^2 = Re S + b_vis Re T,  1/g_hid^2 = Re S + b_hid Re T,  b_wall ~ integral omega ^ (c2(V_wall) - c2(TX)/2) (+ five-branes)
+  anomaly cancellation: c2(V_vis) + c2(V_hid) + [M5] = c2(TX)
+  choose c2(V_vis) = c2(TX)/2  ->  b_vis = 0 (SM coupling has no linear T term: need C at this order)
+  then c2(V_hid) + [M5] = c2(TX)/2 -> b_hid = -[M5] (+ position terms): hidden coupling linear in T (need B)
+UV scale: M_P^2 ~ V rho / kappa11^2, M_GUT ~ V^(-1/6); with Re S ~ V, Re T ~ rho V^(1/3):  M_GUT/M_P ~ (Re S Re T)^(-1/2)
+  at fixed S: Lambda_QCD ~ M_GUT ~ x^(-1/2) -> beta = 0.41 (Cassini 3.4e-3: 120x too big)
