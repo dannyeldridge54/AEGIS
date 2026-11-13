@@ -1240,3 +1240,21 @@ ACT DR6 +0.66, ACT lensing +0.67, SPT-3G +1.47 (CMB: +4.7, the Twist loses). Net
 fits the late-time data better; the full high-precision CMB pays for it, presumably through the parameter shifts needed to keep the
 distance to last scattering fixed. Caveat (not used to change any reading): the four minimiser starts for PURE free landed at
 n_s 0.9732–0.9759, so minimiser scatter of order 1 in χ² cannot be excluded; an MCMC would settle it. The locked readings stand.
+
+## Development 159 — the cliff without any hidden gauge sector: TWIST-K (theory/kahler_cliff/; results/kahler_cliff_d159.txt)
+(Danny 13:50: "stop old things and develop through new".) Put the cliff in the helper field's Kähler metric instead of W:
+K = −3 ln(u − g E(u) SS̄ + ζ E(u)² (SS̄)²), E(u) = exp(2n(1 − e^{−πu/8})), u = T + T̄;  W = √3 m S T (no exponential at all).
+Full two-field supergravity check (step sizes scaled to E, 200 digits): **V along real T equals the Twist's to 10 digits at every
+x from the CMB point to today**; S stays heavy everywhere (m_S²/H² = 29 at the CMB point, 2355–68,000 through the cliff, 2636 today).
+New: the angle stays at +4H² everywhere — the Twist's tachyonic angle region at the cliff (m_y²/H² = −18 to −259 at x = 0.3–3)
+disappears, and V no longer has the 8-fold angle symmetry (y enters only through |T|²).
+What this buys: (1) no SU(8), no G₂ racetrack, no mixed operator — need B of D154 is gone; (2) E depends on Re T only, so it is
+shift-symmetric (the shield's isometry), and its tail dependence e^{−πx/4} = |q| is the form of a worldsheet-instanton correction to
+a Kähler metric — present precisely in the heterotic and IIA settings where matter is neutral (A + C, D152, D155). So a string home
+with A + C may now be enough. (3) n becomes the coefficient of that instanton correction in ln(K_SS̄): 2n ≈ 250. Worldsheet-instanton
+coefficients are integer curve counts (Gromov–Witten invariants), often in the hundreds to thousands — a possible route to DERIVING n
+(not done; e.g. the quintic's degree-1 count 2875 = 23 × 125 is noted as a coincidence only, no relation derived).
+What it costs / changes: (a) the angle's dynamics change (no cliff tachyon) — the matter yield must be recomputed (D160, locked
+before running); (b) the hidden axion's kick needs an instanton term coupling σ to the angle, now taken as a worldsheet instanton
+∝ |q| cos(πy/4 − σ/f) instead of SU(8); (c) inflation, the cliff, the tail and every late-time observable are unchanged — so n_s is
+still INCONSISTENT (D157); TWIST-K fixes the construction, not the data problem.
