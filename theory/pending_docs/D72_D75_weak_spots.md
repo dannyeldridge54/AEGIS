@@ -489,3 +489,7 @@ So the real fork is:
       dark-energy piece is added.
 (A) is a bold, testable theory with a known hole; (B) is safer but gives up the late-time half of the "one field" claim.
 Danny's call; nothing is changed until he chooses.
+
+**Decision (Danny, 10:03): route A.** Keep the light tail; one field does everything; the fifth force (D90–D91) and the
+tail's quantum stability (D80) are stated as the theory's main open problems. Routes B and the angle-dark-energy lead
+(D92–D94) stay written up as alternatives.
