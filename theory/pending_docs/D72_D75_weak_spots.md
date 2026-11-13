@@ -996,3 +996,11 @@ reaches 0.974. Self-consistency limits: the angle's mass falls as m_y² = 8H²/(
 S fails for β ≳ 0.04. Locked segment: n_s 0.965–0.969 (+ loops ≤ 0.972) with r 0.0036–0.0052, rising together — a joint n_s–r
 test for SO/LiteBIRD/CMB-S4. Honest size of the gain: at most ~+0.004 on n_s inside the allowed range; vs today's P-ACT-LB
 0.9752 ± 0.0030 that is ~2σ instead of ~3σ — a partial relief, not a fix.
+
+**D134 — isocurvature from light spectators (both models; results/isocurvature_check.txt; estimate).** Bound used: uncorrelated
+CDM-equivalent isocurvature P_S/P_ζ < ~0.04 → baryon S_B < 5×10⁻⁵. (a) The angle: its quantum kick at the CMB point is δy ≈
+(H/2π)/√(2K_TT̄) ≈ 1–2×10⁻¹⁰ for β = 0 … 0.022 (the large kinetic metric at small x makes it tiny), so even TWIST-P's light-angle
+range gives S_B ≲ 2×10⁻¹⁰ — safe by 10⁵. (b) A gap in BOTH models, now checked: the hidden axion σ (m_σ ≈ 6×10¹⁰ GeV ≪ H) is
+light during inflation; δσ/σ₀ = (H/2π)/(f M_P) ≈ 10⁻⁵ for f = 0.1, and with dlnY/dlnσ₀ ≈ cot(1) ≈ 0.64 for the kick force,
+S_B ≈ 6×10⁻⁶ — safe by ×8 (×4 at f = 0.05, ×24 at f = 0.3). Order of magnitude; the yield's true sensitivity to σ₀ was not run.
+A prediction follows: baryon isocurvature at the 10⁻⁶–10⁻⁵ level, below current reach.
