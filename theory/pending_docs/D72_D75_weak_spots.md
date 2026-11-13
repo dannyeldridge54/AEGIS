@@ -1291,3 +1291,14 @@ origin, not derived; the TWIST-L lock is unchanged.
 D162 add (tail check, results/twistl_tail_check.txt): on the tail L adds ≤ 1% to the slope √(2/3) (0.5–1.2% for b = 1–10), so w0
 moves by ~0.002 and wa negligibly — TWIST-L's dark energy is the Twist's within DESI DR3's reach. (The full-state note first said
 "unchanged to ~10⁻⁵"; corrected.)
+
+**D164 — the heterotic home is NOT self-consistent as matched (results/heterotic_coupling_d164.txt).** At fixed 4-d coupling the
+heterotic 10-d coupling grows as g_s ≈ g_YM R³. With the cliff's exponent matched to the heterotic instanton (T_het = x/8, D153),
+weak coupling (g_s < 1) holds only for 6.4 < x < 10.1 (R ≈ 0.9–1.1). Along the history: during inflation the (T-dual) radius is
+25–250 and g_s ~ 10⁴–10⁷; today (x ≈ 89) R ≈ 3.3 and g_s ≈ 26. So both inflation and today sit at STRONG heterotic coupling — the
+heterotic M-theory (Hořava–Witten) regime, where D154 found the Standard Model's coupling picks up T (f = S + εT) and the shield
+fails. D152's weak-coupling properties (no T-thresholds on Z₃) therefore do not apply where they are needed. Escape (not checked):
+if the cliff came from an instanton of action 2π·N·T_het (a degree-N curve, or N-fold wrapping), T_het = x/(8N) and today's
+point is weakly coupled for N ≳ 9; high-degree curve counts are enormous, which might also bear on n (D161) — a lead, not a result.
+Inflation would still sit at strong coupling (dual radius large). Status: the string-home question reopens; D152 downgraded from
+"candidate" to "candidate only if the cliff instanton has degree ≳ 9".

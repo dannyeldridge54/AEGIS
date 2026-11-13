@@ -1,0 +1,6 @@
+      CMB scales: T_het 1.62e-05, R 0.00403 (dual 248), 10-d coupling g_s ~ 1.1e+07 (STRONG), KK tower ~ 2.0e+15 GeV
+end of inflation: T_het 1.56e-03, R 0.0395 (dual 25.3), 10-d coupling g_s ~ 1.1e+04 (STRONG), KK tower ~ 2.0e+16 GeV
+   x = 8 (R = 1): T_het 1.00e+00, R 1 (dual 1), 10-d coupling g_s ~ 0.71 (weak), KK tower ~ 5.0e+17 GeV
+          frozen: T_het 9.09e+00, R 3.01 (dual 3.01), 10-d coupling g_s ~ 19 (STRONG), KK tower ~ 1.7e+17 GeV
+           today: T_het 1.11e+01, R 3.33 (dual 3.33), 10-d coupling g_s ~ 26 (STRONG), KK tower ~ 1.5e+17 GeV
+weak coupling needs R < 1.12, i.e. x < 10.1 (and, by T-duality, x > 6.36)

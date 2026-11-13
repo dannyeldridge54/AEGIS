@@ -60,6 +60,9 @@ theory/pending_docs/D72_D75_weak_spots.md; the model card (papers/MODEL_CARD_v5.
 5. **The frontier (D154).** No known string setting gives all three needs at once: rung 3 (A), a hidden gauge function linear in T
    for the cliff (B), and matter neutral under T (C). IIB volume: A+B, not C. Heterotic Z₃: A+C, not B. Heterotic M-theory: B, not C.
    Fibre moduli: C, not A.
+6. **Heterotic self-consistency (D164).** With the cliff matched to the basic heterotic instanton, both inflation and today sit at
+   strong 10-d coupling (g_s ≈ 26 today), outside the weakly coupled regime the shield argument used. It survives only if the cliff
+   instanton has degree/wrapping N ≳ 9 — a lead that might also bear on deriving n.
 
 ## 3b. TWIST-K — the same model with no hidden forces (D159–D161)
 The cliff can sit in the helper field's Kähler metric instead of the superpotential: K ⊃ E(u) SS̄ with E = exp(2n(1 − e^{−πu/8})),
