@@ -1,0 +1,13 @@
+h 0.03: d ln m_f/d phi 6.0e-07; beta_N 1.6e-07 (Cassini 3.4e-3: ok); eta ~ 3e-16 (MICROSCOPE 1e-15: ok)
+h 0.1: d ln m_f/d phi 6.7e-06; beta_N 1.8e-06 (Cassini 3.4e-3: ok); eta ~ 3e-14 (MICROSCOPE 1e-15: no)
+h 0.3: d ln m_f/d phi 6.0e-05; beta_N 1.6e-05 (Cassini 3.4e-3: ok); eta ~ 3e-12 (MICROSCOPE 1e-15: no)
+h 1.0: d ln m_f/d phi 6.7e-04; beta_N 1.8e-04 (Cassini 3.4e-3: ok); eta ~ 3e-10 (MICROSCOPE 1e-15: no)
+gravity-only loops: suppressed by the field's near-exact shift symmetry today (V ~ 1e-120 M_P^4) -> negligible
+supersymmetry breaking felt by the SM: none at tree level; the SUSY sector's breaking today is F_S ~ sqrt(rho_DE) ~ meV
+cutoff 1e+00 M_P, h 0.03: SM-loop-induced plateau shift dV/V ~ 8.8e+01
+cutoff 1e+00 M_P, h 0.1: SM-loop-induced plateau shift dV/V ~ 9.7e+02
+cutoff 4e-03 M_P, h 0.03: SM-loop-induced plateau shift dV/V ~ 1.4e-03
+cutoff 4e-03 M_P, h 0.1: SM-loop-induced plateau shift dV/V ~ 1.6e-02
+cutoff 4e-04 M_P, h 0.03: SM-loop-induced plateau shift dV/V ~ 1.4e-05
+cutoff 4e-04 M_P, h 0.1: SM-loop-induced plateau shift dV/V ~ 1.6e-04
+reheating with smaller h: Delta-phi = sqrt(8 pi phidot/(h^2 g)) ~ 1/h -> h 0.05: heat share ~0.8%, T_RH ~4e14 GeV (D62 scaling)

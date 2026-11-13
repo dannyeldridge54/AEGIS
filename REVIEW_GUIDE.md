@@ -83,7 +83,10 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
   theory's main open problem (decision 13 Nov). The late-time fits assume ordinary matter is uncoupled, i.e. they test the
   tail's shape given a working shield (Development 97); no choice of modular weights provides one (Development 96). Narrowed (Development 103): the coupling comes from putting
   the Standard Model inside the no-scale supergravity; coupled minimally in the Einstein frame it vanishes at tree level, and
-  what remains needs a supersymmetry-breaking scale independent of T (e.g. D-term breaking) — open.
+  what remains needs a supersymmetry-breaking scale independent of T (e.g. D-term breaking) — open. **Proposed
+  resolution (Development 104, estimate):** the Standard Model is not supersymmetric and couples minimally to the
+  Einstein-frame metric; then only a χ-loop coupling survives, below Cassini and MICROSCOPE if the χ–SM Yukawa h ≲ 0.05 and
+  the SM–χ cutoff is ≲ the GUT scale. To be confirmed (matter yield at the larger heat share; careful MICROSCOPE estimate).
 - **Withdrawn numbers:** the hidden mass 3–6×10⁹ GeV (a pre-stated check failed; corrected to ~3×10¹⁰ GeV);
   several earlier developments (D26 gravitino, D31) superseded. All kept in the matter doc and git history.
 
