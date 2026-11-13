@@ -19,7 +19,7 @@ def main(model):
     for d in ("H0", "Omega_m", "sigma8", "S8"):
         info["params"].setdefault(d, {"latex": d})
     info["sampler"] = {"mcmc": {"Rminus1_stop": 0.02, "Rminus1_cl_stop": 0.2, "max_tries": 1000, "learn_proposal": True,
-                                "output_every": "60s", "measure_speeds": True}}
+                                "output_every": "60s", "measure_speeds": False}}
     info["output"] = f"{E.OUT}/chains/spa_chain_{model.lower()}"; info.pop("force", None); info.pop("resume", None)
     t = time.time(); crun(info, resume=True, force=False); print(f"{model} chain done in {time.time()-t:.0f}s", flush=True)
 if __name__ == "__main__":

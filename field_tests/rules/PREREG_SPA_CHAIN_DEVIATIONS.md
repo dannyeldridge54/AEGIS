@@ -19,3 +19,8 @@ D2 add (17:05): diagnostic for both models at the start point — LCDM logpost �
 57 s, 3 GB; all 11 sampled parameters already had ref entries at the best fit (so the D2 re-centring changed nothing in practice). The
 restarted chains were again at "Getting initial point" after 10 min; the remaining suspects are CPU contention (4 FLAG-1 chains, 3 matter
 checks, 2 SPA chains on the PC) and Cobaya's speed measurement. No further change made; the 21:01 check reports.
+## D3 (13 Nov 17:05) — chains again stuck at "Getting initial point"; no samples
+Danny: "Fix". Speed measurement (measure_speeds) re-evaluates every likelihood component repeatedly before the first step; with ~24 s+
+per CLASS call under heavy PC load this can take hours. Turned off (Cobaya then uses default speed ordering). Empty output (85-byte
+.progress, no chain files) moved to _to_delete/spa_chain_D3/; both chains restarted fresh. Sampler efficiency only; likelihoods, priors,
+data and the stopping rule unchanged.
