@@ -1,0 +1,8 @@
+stage: x, |q| = e^{-pi x/4}, arg q (deg), ln|q|
+  CMB scales: x 0.000125, |q| 0.999902, arg -0 deg, ln|q| -9.82e-05
+  end of inflation: x 0.0125, |q| 0.990231, arg -0 deg, ln|q| -0.00982
+  after the kick: x 3.3, |q| 0.0748841, arg -27 deg, ln|q| -2.59
+  frozen tail: x 72.7, |q| 1.5939e-25, arg -54 deg, ln|q| -57.1
+  today: x 88.9, |q| 4.75046e-31, arg -54 deg, ln|q| -69.8
+potential ratio rim/centre e^(2n) = 10^109; dark-energy pressure at the centre: w0 = -0.90 (p = -0.90 rho)
+kinetic metric 3|dq|^2/(|q| ln|q|^2)^2: distance to the centre is infinite (cusp); to the rim infinite (plateau) — both ends are boundaries

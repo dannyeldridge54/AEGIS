@@ -1050,3 +1050,19 @@ it leaves the seven-disk ladder. The geometric picture favours the original Twis
 shapes" are not something these equations compute.
 **Testable:** the seven rungs predict r ≈ 0.0011·3α at N ≈ 57 — LiteBIRD/CMB-S4 can tell rung 3 (the Twist) from its
 neighbours 2 and 4 only marginally (Δr ≈ 0.0012 against σ(r) ~ 0.001).
+
+**D139 — the Twist's history as a disk, a cusp and a 2-torus (Danny's picture: "Metatron's cube … pressure out of the centre …
+toroid … tesseract"; theory/geometry/q_disk.py, results/q_disk.txt, q_disk.png).** Calculated, not imagined:
+(1) In the cliff's own variable q = e^{−πT/4} the period-8 angle closes, so the field space is exactly the unit disk once round:
+rim |q| → 1 = the inflation plateau (CMB scales at |q| = 0.9999, end of inflation 0.990), centre q → 0 = the dark-energy tail
+(|q| ≈ 10⁻²⁵ frozen, 5×10⁻³¹ today). The whole history is one inward spiral, rim → centre, turning by arg q = −πy/4 (about −54°
+for y ≈ 1.2 at 0.8% heat). The potential falls by e^{2n} ≈ 10¹⁰⁹ from rim to centre; the centre holds today's dark energy, a
+NEGATIVE pressure (p = −0.90ρ) — the "pressure at the centre" in the picture, though it pulls the expansion outward rather than
+radiating out.
+(2) The kinetic metric in q, ds² = 3|dq|²/(|q| ln|q|²)², is a hyperbolic disk with a cusp at the centre (pseudosphere/horn
+geometry): both the rim and the centre are infinitely far away — the history runs between two boundaries at infinity.
+(3) With S, the field space has 4 real dimensions and two angles (arg q, arg S): a 2-torus over a 2-d base — a genuine toroidal,
+four-dimensional structure. It is not a tesseract (a tesseract is a 4-d cube; the 4-torus would need all four directions
+periodic; here only two are).
+(4) Not found: no 13-circle (Metatron's cube) or 12-around-1 structure appears in any equation; nothing in the model computes
+the shape of bound particles. Recorded as interpretation, not prediction.
