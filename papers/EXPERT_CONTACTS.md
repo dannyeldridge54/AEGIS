@@ -18,3 +18,10 @@ Practical notes
   people is the usual route.
 - Send the Zenodo DOI (after you press Publish), the PDF, and the repository link with REVIEW_GUIDE.md.
 - Say plainly that the work is independent and AI-assisted; experts respond better to that than to finding out later.
+
+## Updated questions (13 Nov, afternoon — after D140–D161)
+| Who | Question |
+|---|---|
+| Cliff Burgess / Fernando Quevedo (no-scale scaling, axio-dilatons, fifth forces) | Is there a known setting where the Standard Model is neutral under BOTH isometries (scaling and shift) of a rung-3 no-scale modulus, so the only matter coupling comes from instantons? Our tests say perturbative leaks must fall as 1/x⁴ (atomic clocks). (D140–D142, D150) |
+| Michele Cicoli (string quintessence, fibre moduli) | Heterotic Z₃ / IIA keep matter neutral for the overall modulus (string scale set by the dilaton). Can a worldsheet-instanton correction to a matter Kähler metric of the form exp(−2n e^{−2π Re T}) arise there, and what sets its resummed size at small volume? (D152, D159, D161) |
+| Renata Kallosh / Andrei Linde (α-attractors, seven-disk ladder) | Our rung-3 model's n_s ≈ 0.964 is inconsistent with CMB-SPA + DESI at our locked level. Is there a principled way to raise n_s on the seven-disk ladder without leaving it (we found none; the polynomial-attractor variant leaves it)? (D138, D149, D157) |
