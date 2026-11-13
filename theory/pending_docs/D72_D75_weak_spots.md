@@ -950,3 +950,10 @@ Status: the 1/√ factor → derived from a natural Kähler term; D126 + D127 gi
 CMB point 29.2 / 29.2 (matches −2 + 8ζx); x = 0.01: 2402 / 2355; x = 1: 2.5×10⁵ / 6.8×10⁴; today (x = 89): 2.1×10⁷ / 2.6×10³. The new
 constant term weakens S's mass on the tail by ~10⁴ but S remains ≫ H everywhere, so it stays at S = 0. (Today m_S ~ 50 H₀ is
 cosmologically light, as before; S = 0 is protected by D126's Z₂, so S has no linear coupling to anything — no fifth force.) Passes.
+
+**D128 — can D118's new factor come from a gauge theory? (results/chi_su2_d128.txt).** D118 used a single-instanton factor
+e^{−2π(T−T₀)}. A gaugino condensate of SU(N) with f = T gives e^{−2πT/N}. Checked at x = 73 (field leaves its frozen value during
+the late thaw) and 89 (today), worst case SM loops to 0.05 M_P: single instanton ≤ 10⁻⁸⁹ ρ_DE (passes); **SU(2), e^{−πT}: up to
+~10¹¹ ρ_DE at x = 73 — passes only if SM loops are cut off below ~10¹⁶ GeV** (at x = 89 it passes fully); SU(3): 10⁴⁴ (fails).
+So the fix needs either a stringy (single) instanton, or an SU(2) condensate plus an SM cutoff under ~10¹⁶ GeV. Status: D118's
+assumption narrowed to two options; preheating/decay numbers unchanged (Δφ 0.44–0.49 M_P).
