@@ -11,11 +11,11 @@ from scipy.integrate import solve_ivp
 c = math.sqrt(2 / 3); NSTAR = 55.6
 
 
-def make(mu, delta, a, n, m2, gamma=math.pi / 2):
-    d = delta * cmath.exp(1j * gamma)
+def make(mu, delta, a, n, m2, gamma=math.pi / 2, mk=None):
+    d = delta * cmath.exp(1j * gamma); mk = mu if mk is None else mk     # mk: where the kick switches on
     def V(p, y):
         x = math.exp(c * p); T = complex(x, y)
-        F = (T / cmath.sqrt(1 + T / mu) + d * T * cmath.exp(-a * mu / T) / (1 + T / mu)) * cmath.exp(-n * T / (T + m2))
+        F = (T / cmath.sqrt(1 + T / mu) + d * T * cmath.exp(-a * mk / T) / (1 + T / mu)) * cmath.exp(-n * T / (T + m2))
         return abs(F) ** 2 / (4 * x * x)
     def G(p, y, h=1e-6):
         return ((math.log(V(p + h, y)) - math.log(V(p - h, y))) / (2 * h), (math.log(V(p, y + h)) - math.log(V(p, y - h))) / (2 * h))
@@ -24,8 +24,8 @@ def make(mu, delta, a, n, m2, gamma=math.pi / 2):
     return V, G, M
 
 
-def run(mu=1.0, delta=0.1, a=1.0, n=10.0, m2=100.0, p0=-5.6, Nafter=4.0, step=0.25):
-    V, G, M = make(mu, delta, a, n, m2)
+def run(mu=1.0, delta=0.1, a=1.0, n=10.0, m2=100.0, p0=-5.6, Nafter=4.0, step=0.25, mk=None):
+    V, G, M = make(mu, delta, a, n, m2, mk=mk)
     def rhs(N, z):
         p, y, dp, dy = z; g = 1.5 * math.exp(-2 * c * p); e = 0.5 * (dp * dp + g * dy * dy); gp, gy = G(p, y)
         return [dp, dy, -c * g * dy * dy - (3 - e) * (dp + gp), 2 * c * dp * dy - (3 - e) * (dy + gy / g)]

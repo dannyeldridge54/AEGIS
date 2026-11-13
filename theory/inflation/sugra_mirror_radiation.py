@@ -17,13 +17,13 @@ def T_of(rho):                                        # rho in code units -> GeV
     return (30 * rho * m2 * MP ** 4 / (math.pi ** 2 * gs)) ** 0.25
 
 
-def run(delta=0.1, f=0.9, Nafter=6.0, step=0.25, mu=1.0, a=1.0, n=10.0, m2c=100.0):
-    V, G, Mm = M.make(mu, delta, a, n, m2c)
+def run(delta=0.1, f=0.9, Nafter=6.0, step=0.25, mu=1.0, a=1.0, n=10.0, m2c=100.0, mk=None, p0=-5.6):
+    V, G, Mm = M.make(mu, delta, a, n, m2c, mk=mk)
     def rhs_inf(N, z):
         p, y, dp, dy = z; g = 1.5 * math.exp(-2 * c * p); e = 0.5 * (dp * dp + g * dy * dy); gp, gy = G(p, y)
         return [dp, dy, -c * g * dy * dy - (3 - e) * (dp + gp), 2 * c * dp * dy - (3 - e) * (dy + gy / g)]
     end = lambda N, z: 0.5 * (z[2] ** 2 + 1.5 * math.exp(-2 * c * z[0]) * z[3] ** 2) - 1; end.terminal = True; end.direction = 1
-    s = solve_ivp(rhs_inf, [0, 300], [-5.6, 0, 0, 0], events=end, rtol=1e-8, atol=1e-11, method="LSODA")
+    s = solve_ivp(rhs_inf, [0, 400], [p0, 0, 0, 0], events=end, rtol=1e-8, atol=1e-11, method="LSODA")
     Ne = s.t_events[0][0]; p, y, dp, dy = s.y_events[0][0]
     # energy at the end (code units): H^2 = V/(3 - K), rho_tot = 3 H^2
     K = 0.5 * (dp * dp + 1.5 * math.exp(-2 * c * p) * dy * dy); H2 = V(p, y) / (3 - K)
