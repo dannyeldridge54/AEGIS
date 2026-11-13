@@ -1343,3 +1343,9 @@ From the rung-3 tail alone (no string input): w(z) = −0.899 (z = 0), −0.949 
 Twist's way, modestly); f σ8 is 3.2% lower at z = 0.3–0.5, fading to 0.4% by z = 3; the growth index stays GR-like (0.557 → 0.548,
 within 0.003 of ΛCDM) because the field neither clusters nor couples to matter. These are the numbers DESI DR3 full-shape, Euclid and
 Rubin will measure; locked as PREREG_GROWTH (a γ deviation > 0.05 or an f σ8 excess at z = 0.3–0.7 at > 3σ disfavours the Twist).
+
+**D169 — the Twist and the Hubble tension (theory/observables/h0_shift_d169.py; background-only estimate).** Holding the early universe
+fixed by the CMB (ω_m = 0.1430 and the distance to last scattering at their ΛCDM values), the Twist's thawing tail needs H₀ = 65.7
+km/s/Mpc (ΛCDM 67.4) and Ω_m = 0.331 (ΛCDM 0.315). So the Twist moves H₀ AWAY from local measurements (~73): it makes the Hubble
+tension slightly worse, as thawing quintessence generically does. Stated plainly as a cost of the model; the Twist offers no
+resolution of the Hubble tension. (Full CMB fits shift parameters together; the NS-SPA PURE fits are the precise version.)

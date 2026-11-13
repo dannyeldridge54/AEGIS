@@ -50,6 +50,10 @@ out-of-sample test than a new survey.
 | GW propagation | Ξ₀ = 1, no birefringence (locked: PREREG_GW_FRICTION) | Ξ₀ ≠ 1 measured |
 | Extra radiation | ΔN_eff ~ 3×10⁻⁸ | — |
 
+## Known costs
+- Hubble tension: the Twist lowers the CMB-inferred H₀ to ≈ 65.7 km/s/Mpc (ΛCDM 67.4), moving away from local ~73 (D169).
+- Growth: σ8 1.5% lower and f σ8 3% lower at z ≈ 0.4 than ΛCDM at fixed Ω_m (D168, locked PREREG_GROWTH) — helps the S8 tension slightly.
+
 ## Results today that went against the model (kept on record)
 - **D157: NS-SPA INCONSISTENT** — n_s fixed at 0.964 costs Δχ² 11.7 vs CMB-SPA + DESI (ΛCDM 8.5); PURE-TWIST free fits this set +1.45 worse than ΛCDM.
 - TAIL-F: full tail disfavoured (Δχ² +29) with the old cliff → cliff reshaped (post hoc, labelled).
