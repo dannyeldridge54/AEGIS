@@ -986,3 +986,13 @@ model. Changing the model now, against the very data that shows the problem, wou
 be written and locked as a new model and tested on data it has not seen. Context (not a fix): the high n_s comes mostly from
 adding DESI BAO to the CMB; CMB-SPA alone gives 0.9684 ± 0.0030, ~1σ from the Twist, and the authors of arXiv:2510.18656 note
 the shift may reflect a BAO/CMB tension. Status: wait for the locked NS-SPA reading; report it at full size.
+
+## Development 133 — a new model, TWIST-P (locked 12:23, PREREG_TWISTP.md, sha256 c7fcb64f…)
+Built on Danny's word after D131/D132 (so its agreement with current data is not evidence). Extra Kähler term β/(T + T̄) — a
+pole of order 3 that dominates only deep on the plateau (polynomial attractor there) — with S's metric scaled by e^{β/u} so the
+potential along real T is exactly the Twist's (checked in full SUGRA). Results (theory/twistp/, results/twistp_*.txt): n_s rises
+with β but saturates at 0.9713 (β ≈ 0.02–0.05) because the cliff's steep linear term (~nπ/2 · x) ends the plateau first; it never
+reaches 0.974. Self-consistency limits: the angle's mass falls as m_y² = 8H²/(1 + β/3x*), heavy (> 9/4 H²) only for β ≤ 2.2×10⁻³;
+S fails for β ≳ 0.04. Locked segment: n_s 0.965–0.969 (+ loops ≤ 0.972) with r 0.0036–0.0052, rising together — a joint n_s–r
+test for SO/LiteBIRD/CMB-S4. Honest size of the gain: at most ~+0.004 on n_s inside the allowed range; vs today's P-ACT-LB
+0.9752 ± 0.0030 that is ~2σ instead of ~3σ — a partial relief, not a fix.
