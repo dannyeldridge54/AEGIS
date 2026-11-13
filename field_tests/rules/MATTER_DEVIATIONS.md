@@ -11,3 +11,9 @@
 The D124 confirmation run (locked 11:55, prediction 0.6–1.6× at m_σ = 5.8×10¹⁰) was stopped by the tool's background time limit,
 not by the code, and wrote no result. Rerun unchanged with a 2-hour limit, followed by D129 (matter_d127_form.py, also unchanged).
 No result had been seen, so this is not a rerun to chase a result.
+
+## D-PC (13 Nov 14:07): the four locked matter checks moved to Danny's PC — no result had been produced or read
+At m_σ = 5.8×10¹⁰ GeV the hidden field oscillates ~10× faster than at 6×10⁹, so each run needs several hours; the cloud session kills
+background jobs at 2 hours (the refit was already killed once). The refit (D124), new-form (D129), TWIST-K (D160) and yield-sensitivity
+(D137) checks were stopped here without output and started in parallel on the PC runner (field_tests/matter_pc/run_matter_pc.sh,
+14:05:47). Scripts are unchanged except that absolute paths became paths relative to the script; predictions and readings unchanged.
