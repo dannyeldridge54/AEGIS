@@ -1188,3 +1188,17 @@ reshapes the tail unless cancelled. Status: the exponent π/4 has a natural hete
 depth n ≈ 125 cannot come from thresholds and stays chosen; a consistent orbifold (N = 2 sector seen by the hidden group only) is
 not found. Plateau note: the inflation region x ~ 10⁻⁴ is T_het ~ 10⁻⁵, the T-dual of a very large radius — the plateau may be
 better described in the dual frame (not pursued).
+
+**D154 — the string-level frontier, stated precisely.** Three things the Twist needs at once: (A) rung 3, K = −3 ln(T + T̄) for the
+moving field; (B) a hidden gauge group whose gauge function is linear in T (f = f₀ + T) — that is what makes the cliff and the
+racetrack (D119, D126, D148); (C) Standard-Model constants independent of T (the shield). Known settings give two of the three:
+- Type IIB, T the overall volume, hidden branes (D7) on its 4-cycle: A + B, but the string scale tracks T → C fails (D150).
+- Weakly coupled heterotic Z₃: A + C (D152), but there all gauge functions are f = k S (dilaton) at tree level; T enters only via
+  small thresholds (ln η), which cannot give a linear-T gauge function nor n ≈ 125 (D153) → B fails.
+- Heterotic M-theory (Hořava–Witten): f_hidden = S − εT and f_visible = S + εT gives B for the hidden group, but the same threshold
+  puts T into the SM's coupling → C fails.
+- LVS fibre / blow-up moduli: C can hold (suppressed couplings, Tasinato et al.), but their Kähler potentials are not rung 3 → A fails.
+**No known string setting gives A, B and C together.** This is now the Twist's sharpest theoretical open problem (alongside n). A
+possible direction (not worked): a type IIB setting with T the overall volume and the SM on D3-branes in a strongly warped throat
+whose local scale is fixed by fluxes, with the T-dependence of the warped scale cancelled — would need explicit checking against
+D150's β ≈ 0.6.

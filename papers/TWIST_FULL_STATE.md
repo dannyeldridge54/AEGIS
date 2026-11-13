@@ -57,6 +57,9 @@ theory/pending_docs/D72_D75_weak_spots.md; the model card (papers/MODEL_CARD_v5.
 4. **Where it can live.** Type IIB volume moduli fail at leading order (Burgess–Quevedo; D150–D151). The heterotic Z₃ orbifold
    keeps matter neutral: string scale set by the dilaton, no T-dependent gauge thresholds, untwisted masses T-independent,
    twisted ones instanton-suppressed (D152). Open: dilaton stabilisation; higher-order corrections.
+5. **The frontier (D154).** No known string setting gives all three needs at once: rung 3 (A), a hidden gauge function linear in T
+   for the cliff (B), and matter neutral under T (C). IIB volume: A+B, not C. Heterotic Z₃: A+C, not B. Heterotic M-theory: B, not C.
+   Fibre moduli: C, not A.
 
 ## 4. Assumptions (each a place it could fail)
 
@@ -94,7 +97,7 @@ theory/pending_docs/D72_D75_weak_spots.md; the model card (papers/MODEL_CARD_v5.
 
 1. n_s against current data (verdict pending).
 2. n ≈ 125 is chosen (plays Λ's role); no route found (D109, D119, D153).
-3. The shield's string realization: dilaton stabilisation, higher-order corrections falling as 1/x⁴.
+3. A string setting with rung 3 + linear-T hidden gauge function + neutral matter together (D154) — none known.
 4. The cliff in heterotic language: the exponent fits (q), the depth does not.
 5. Matter chain: m_σ confirmation, the new-form check, and the yield sensitivity (isocurvature) — all running.
 6. Field distance (16 M_P) vs the distance conjecture — depends on the string home.
