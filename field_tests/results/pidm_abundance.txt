@@ -1,0 +1,22 @@
+Gravity-only dark matter: mass(es) giving Omega h^2 = 0.12, by reheating temperature (GeV)
+T_RH 1e+13  scalar : m = 1.02e+12 GeV (4.2e-07 M_P), m = 4.59e+13 GeV (1.9e-05 M_P)
+T_RH 1e+13  fermion: m = 1.79e+11 GeV (7.3e-08 M_P), m = 6.04e+13 GeV (2.5e-05 M_P)
+T_RH 3e+13  scalar : m = 3.76e+10 GeV (1.5e-08 M_P), m = 2.40e+14 GeV (9.8e-05 M_P)
+T_RH 3e+13  fermion: m = 6.62e+09 GeV (2.7e-09 M_P), m = 2.75e+14 GeV (1.1e-04 M_P)
+T_RH 1e+14  scalar : m = 1.02e+09 GeV (4.2e-10 M_P), m = 1.12e+15 GeV (4.6e-04 M_P)
+T_RH 1e+14  fermion: m = 1.79e+08 GeV (7.3e-11 M_P), m = 1.22e+15 GeV (5.0e-04 M_P)
+T_RH 3e+14  scalar : m = 3.76e+07 GeV (1.5e-11 M_P), m = 4.16e+15 GeV (1.7e-03 M_P)
+T_RH 3e+14  fermion: m = 6.62e+06 GeV (2.7e-12 M_P), m = 4.47e+15 GeV (1.8e-03 M_P)
+T_RH 1e+15  scalar : m = 1.02e+06 GeV (4.2e-13 M_P), m = 1.67e+16 GeV (6.9e-03 M_P)
+T_RH 1e+15  fermion: m = 1.79e+05 GeV (7.3e-14 M_P), m = 1.77e+16 GeV (7.3e-03 M_P)
+PIDM upper bound m_max = 0.023 r^1/4 M_P (gamma=1, r=0.0037) = 1.38e+16 GeV
+T_RH 4.40e+14 scalar : 1.19e+07 GeV, 6.50e+15 GeV
+T_RH 4.40e+14 fermion: 2.10e+06 GeV, 6.95e+15 GeV
+T_RH 7.80e+14 scalar : 2.14e+06 GeV, 1.26e+16 GeV
+T_RH 7.80e+14 fermion: 3.77e+05 GeV, 1.34e+16 GeV
+T_RH 1.17e+15 scalar : 6.34e+05 GeV, 2.00e+16 GeV
+T_RH 1.17e+15 fermion: 1.12e+05 GeV, 2.12e+16 GeV
+T_RH 1.39e+15 scalar : 3.78e+05 GeV, 2.43e+16 GeV
+T_RH 1.39e+15 fermion: 6.66e+04 GeV, 2.57e+16 GeV
+T_RH 1.46e+15 scalar : 3.26e+05 GeV, 2.57e+16 GeV
+T_RH 1.46e+15 fermion: 5.74e+04 GeV, 2.71e+16 GeV

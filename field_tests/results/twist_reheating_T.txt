@@ -1,0 +1,8 @@
+n=10 f_rh=0.01: H_end=4.71e+12 GeV, T_RH=4.40e+14 GeV
+n=10 f_rh=0.1: H_end=4.71e+12 GeV, T_RH=7.82e+14 GeV
+n=10 f_rh=0.5: H_end=4.71e+12 GeV, T_RH=1.17e+15 GeV
+n=10 f_rh=0.99: H_end=4.71e+12 GeV, T_RH=1.39e+15 GeV
+n=125 f_rh=0.01: H_end=5.21e+12 GeV, T_RH=4.63e+14 GeV
+n=125 f_rh=0.1: H_end=5.21e+12 GeV, T_RH=8.23e+14 GeV
+n=125 f_rh=0.5: H_end=5.21e+12 GeV, T_RH=1.23e+15 GeV
+n=125 f_rh=0.99: H_end=5.21e+12 GeV, T_RH=1.46e+15 GeV
