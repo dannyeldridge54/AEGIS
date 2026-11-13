@@ -946,3 +946,7 @@ V = m²|T cliff(T)|²/(4x²(1 + x/μ)) — **identical to the old potential for 
 (+8.000 at the CMB point) and at the cliff (−274 vs −273 at x = 1), and today (x ≈ 89) is +8.0 instead of +4.1 — the angle stays
 heavy either way. Open check: the S mass on the tail with the new metric (rough estimate: ζ-term still dominates, S stays heavy).
 Status: the 1/√ factor → derived from a natural Kähler term; D126 + D127 give the whole W = √3 m S F(T) from a Z₂ racetrack except n.
+**D127 check — S stays heavy (results/s_mass_d127.txt; full two-field F-term potential, ζ = 3×10⁴).** m_S²/H², old vs new metric:
+CMB point 29.2 / 29.2 (matches −2 + 8ζx); x = 0.01: 2402 / 2355; x = 1: 2.5×10⁵ / 6.8×10⁴; today (x = 89): 2.1×10⁷ / 2.6×10³. The new
+constant term weakens S's mass on the tail by ~10⁴ but S remains ≫ H everywhere, so it stays at S = 0. (Today m_S ~ 50 H₀ is
+cosmologically light, as before; S = 0 is protected by D126's Z₂, so S has no linear coupling to anything — no fifth force.) Passes.
