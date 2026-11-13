@@ -1,0 +1,10 @@
+A a b  0.1: b f0 = 133.6, b(f0 - kappa) = 8.6; N2 2: f0 42.5, kappa 39.8, 1/g2^2 at T->0 = 2.75 (alpha2 0.029), on the tail = 42.5
+A a b  0.1: b f0 = 133.6, b(f0 - kappa) = 8.6; N2 3: f0 63.8, kappa 59.7, 1/g2^2 at T->0 = 4.12 (alpha2 0.019), on the tail = 63.8
+A a b  0.1: b f0 = 133.6, b(f0 - kappa) = 8.6; N2 8: f0 170.1, kappa 159.2, 1/g2^2 at T->0 = 10.99 (alpha2 0.007), on the tail = 170.1
+A a b  1.0: b f0 = 135.9, b(f0 - kappa) = 10.9; N2 2: f0 43.3, kappa 39.8, 1/g2^2 at T->0 = 3.48 (alpha2 0.023), on the tail = 43.3
+A a b  1.0: b f0 = 135.9, b(f0 - kappa) = 10.9; N2 3: f0 64.9, kappa 59.7, 1/g2^2 at T->0 = 5.22 (alpha2 0.015), on the tail = 64.9
+A a b  1.0: b f0 = 135.9, b(f0 - kappa) = 10.9; N2 8: f0 173.1, kappa 159.2, 1/g2^2 at T->0 = 13.92 (alpha2 0.006), on the tail = 173.1
+A a b 10.0: b f0 = 138.2, b(f0 - kappa) = 13.2; N2 2: f0 44.0, kappa 39.8, 1/g2^2 at T->0 = 4.21 (alpha2 0.019), on the tail = 44.0
+A a b 10.0: b f0 = 138.2, b(f0 - kappa) = 13.2; N2 3: f0 66.0, kappa 59.7, 1/g2^2 at T->0 = 6.32 (alpha2 0.013), on the tail = 66.0
+A a b 10.0: b f0 = 138.2, b(f0 - kappa) = 13.2; N2 8: f0 176.0, kappa 159.2, 1/g2^2 at T->0 = 16.85 (alpha2 0.005), on the tail = 176.0
+inflaton mass m = 2.1e-05 M_P comes out as e^(-b Re f2(0)) x O(1): the plateau scale is a gauge-coupling hierarchy

@@ -923,3 +923,15 @@ freezes at x ≈ 5800 / 446 / 89 / 73 and today sits at x ≈ 7100 / 547 / 110 /
 **w0 = −0.899 … −0.902, wa = −0.146 … −0.142.** The dark-energy prediction is insensitive to the heat share (the leftover slope
 dies like e^{−πx/4}, so where the field freezes hardly matters once the tail thaws). Today's x ≈ 89 (not 73) used in D116/D118
 changes nothing: the e^{−πx/4} switch-off still fails (needs ≳ 150), the saturating mass gains margin.
+
+**D126 — D119 completed: how the condensate enters W as S·T·(…) (results/racetrack_d126.txt).** Take two copies of G₂ (rank N₂)
+exchanged by a Z₂ under which S → −S, with gauge functions f_± = f₀ − κ e^{−πT/4} ∓ a S T (holomorphic; the e^{−πT/4} piece from
+the SU(8) condensate as in D119). Their condensates form a racetrack:
+W = A[e^{−b f₊} − e^{−b f₋}] = 2A sinh(b a S T) e^{−b f₀ + n e^{−πT/4}} ≈ 2A a b e^{n − b f₀} · S · T · exp(−n(1 − e^{−πT/4})),
+b = 2π/N₂, n = bκ. So: (i) W is odd in S and vanishes at S = 0 — the property the Twist assumed (m₃/₂ = 0, D111) is now protected by
+the Z₂; (ii) the S³ terms vanish with their first two derivatives at S = 0, so they change neither V nor m_S²; (iii) the factor S·T
+comes out of the expansion of sinh; (iv) the inflaton mass is a gauge-coupling hierarchy: √3 m = 2Aab e^{−b(f₀ − κ)}, and
+m = 2.1×10⁻⁵ M_P needs b(f₀ − κ) ≈ 9–13 (for Aab = 0.1–10), i.e. 1/g₂² ≈ 3–17 at T → 0 (α₂ ≈ 0.005–0.03, weakly coupled) — the
+plateau scale is explained by a perturbative coupling, not put in by hand. Left over: the 1/√(1 + T/μ) factor (must come from the
+prefactor A(T) — e.g. a one-loop threshold — not derived), κ ≈ 20 N₂ (n still chosen, D119), and the SU(8) sector is strongly
+coupled near x → 0. Status: SU(8)/cliff construction → mostly constructed (two pieces open).
