@@ -1531,3 +1531,13 @@ index GR-like in both. The rung-4 signal is about 70–75% of the rung-3 signal 
 separate them only at the ~1σ level; Euclid + Rubin growth adds a second handle. So the data can weakly discriminate which string
 setting (weakly coupled heterotic → rung 3; heterotic M-theory → rung 4) the field lives in. Not locked separately: PREREG_GROWTH and
 WATCH-PURE-DR3 fix the rung-3 numbers; the rung-4 numbers are recorded here for comparison.
+
+**D188 — how a "degree ≳ 9 only" cliff could arise, and its catch (reasoning note).** On a smooth one-modulus Calabi–Yau, curves of
+degree 1 exist (n₁ = 2875 on the quintic), so lower-degree instantons are generic. They can be removed for a SPECIFIC coupling by a
+discrete selection rule: if the helper field S carries a Z₉ charge and a degree-d worldsheet instanton carries charge d mod 9 (the
+standard way orbifold/discrete symmetries forbid Yukawa couplings), only d ≡ 0 mod 9 contributes to S's metric. That would give
+exactly D164's requirement. The catch: curve counts grow ~10³ per degree (the quintic's n₉ is ~10²⁶ by extrapolation of D165's table),
+so if those counts appear as coefficients the correction is enormous rather than the ~250 n needs — unless the coefficient is a
+different, much smaller invariant (e.g. a BPS index of the specific coupling, or counts suppressed by a high power of the loop factor).
+Status: a mechanism for the degree condition exists (discrete selection rule); the size of the resulting coefficient is the open issue.
+Two of the frontier conditions (degree ≳ 9; n ≈ 125) are therefore linked — the same instanton sum sets both.
