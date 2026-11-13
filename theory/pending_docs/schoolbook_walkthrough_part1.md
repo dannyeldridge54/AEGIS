@@ -6,11 +6,11 @@ Everything in the Twist comes from one field, called **T**. It was born in quant
 
 | Stage | What happens | Key numbers | How it is being tested |
 |---|---|---|---|
-| Plateau | Inflation | ripple tilt n_s 0.963–0.965; gravitational-wave strength r 0.0034–0.0040 | Planck, ACT, SPT, Simons Observatory, LiteBIRD |
-| Cliff | Inflation ends, heat, the kick | heat 3–5×10¹⁴ GeV | the amount of matter (observed) |
+| Plateau | Inflation | ripple tilt n_s 0.963–0.965 (locked; best estimate now 0.965–0.968); gravitational-wave strength r 0.0034–0.0040 | Planck, ACT, SPT, Simons Observatory, LiteBIRD |
+| Cliff | Inflation ends, heat, the kick | heat 2–4×10¹⁴ GeV | the amount of matter (observed) |
 | Kick | Matter beats antimatter | 6 extra matter particles per 10 billion light particles | matches by construction of the hidden mass |
-| Heat | Gravity-only dark matter | a fermion of 1.4–6.6×10⁶ GeV (1.4–6.6 million proton masses) | dark-matter detectors should see nothing |
-| Tail | Dark energy today | w₀ ≈ −0.90, w_a ≥ −0.40 | DESI, Euclid |
+| Heat | Gravity-only dark matter | a fermion of about 1–6×10⁸ GeV (100–600 million proton masses; estimate) | dark-matter detectors should see nothing |
+| Tail | Dark energy today | w₀ ≈ −0.90, w_a ≈ −0.15 (locked ceiling w_a ≥ −0.40) | DESI, Euclid |
 
 ---
 

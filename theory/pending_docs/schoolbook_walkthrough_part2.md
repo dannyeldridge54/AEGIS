@@ -26,7 +26,7 @@ This one function draws the whole history — a plateau, a cliff and a tail. In 
 
 **E-folds (N).** *What it is:* the count of how many times space grew by a factor e ≈ 2.718. The CMB scales we see left the horizon N* ≈ 55 e-folds before inflation ended. *How we know it:* calculated from the model's energy at the end of inflation and the heat after it.
 
-**The ripple tilt n_s and the wave strength r.** *What they are:* n_s says whether large or small ripples are slightly stronger (n_s < 1: large ones slightly stronger). r is how strong the gravitational waves from inflation are compared with the density ripples. *How we know them:* the Twist predicts n_s = 0.963–0.965 and r = 0.0034–0.0040 (frozen, locked). Measured n_s: about 0.964 from Planck + DESI (agrees), about 0.973 when ACT and SPT are added (about 4σ tension). r is not yet measured; LiteBIRD (launch planned ~2032) can see it. *Joins into:* the CMB tests.
+**The ripple tilt n_s and the wave strength r.** *What they are:* n_s says whether large or small ripples are slightly stronger (n_s < 1: large ones slightly stronger). r is how strong the gravitational waves from inflation are compared with the density ripples. *How we know them:* the Twist predicts n_s = 0.963–0.965 and r = 0.0034–0.0040 (frozen, locked); two corrections found later — the stiff "kination" phase after the cliff adds about 2 e-folds, and quantum loops — move the best estimate to n_s ≈ 0.965–0.968, r ≈ 0.0035. Measured n_s: about 0.964 from Planck + DESI (agrees), about 0.973 when ACT and SPT are added (about 4σ tension). r is not yet measured; LiteBIRD (launch planned ~2032) can see it. *Joins into:* the CMB tests.
 
 **The Hubble rate during inflation, H ≈ 10¹³ GeV.** *What it is:* how fast space was growing then. *How we know it:* calculated from the plateau height. *Why it matters:* every light field picks up quantum jitter of size H/2π — important for dark matter (Step 10) and for the hidden field's uneven-matter check (safe by ~100×).
 
@@ -36,7 +36,7 @@ This one function draws the whole history — a plateau, a cliff and a tail. In 
 
 **Kination.** *What it is:* a short era (about 2 e-folds) right after the cliff when the universe's energy is mostly the field's motion. Such energy thins out faster than heat (as a⁻⁶ instead of a⁻⁴), so heat soon takes over. *How we know it:* calculated in the model.
 
-**Instant preheating (coupling g).** *What it is:* the inflaton is coupled to another field χ by g²φ²χ²/2. As the inflaton races past the cliff, χ is suddenly light and is created in a burst; the χ particles then decay into ordinary particles — heat. *How we know it:* the mechanism is standard (Felder, Kofman & Linde); the inflaton's speed comes from the model; **g ≈ 0.1** is a natural choice, not fitted. *What it does to spacetime:* fills it with a hot plasma — the start of the hot Big Bang. *Result:* about 0.15–1.5% of the energy becomes heat at once, and the **reheating temperature T_RH ≈ 3–5×10¹⁴ GeV**. *Joins into:* matter-making (Step 9) and dark matter (Step 10).
+**Instant preheating (coupling g).** *What it is:* the inflaton is coupled to another field χ by g²φ²χ²/2. As the inflaton races past the cliff, χ is suddenly light and is created in a burst; the χ particles then decay into ordinary particles — heat. *How we know it:* the mechanism is standard (Felder, Kofman & Linde); the inflaton's speed comes from the model; **g ≈ 0.1** is a natural choice, not fitted. *What it does to spacetime:* fills it with a hot plasma — the start of the hot Big Bang. *Result:* about 0.04–0.4% of the energy becomes heat at once (0.13% at the central values), and the **reheating temperature T_RH ≈ 2–4×10¹⁴ GeV**. The field's motion still dominates for a while afterwards ("kination") until the heat takes over. The χ field must be part of a supersymmetric pair, or its quantum energy would spoil the plateau. *Joins into:* matter-making (Step 9) and dark matter (Step 10).
 
 ---
 
@@ -66,15 +66,15 @@ This one function draws the whole history — a plateau, a cliff and a tail. In 
 
 ### Step 10 — Dark matter
 
-**Gravity-only dark matter.** *What it is:* a particle that interacts with ordinary matter only through gravity. It is made in the hot plasma when two ordinary particles swap a graviton. *How we know it:* the production rate is calculated (Clery, Mambrini, Olive & Verner); with the Twist's heat it gives the observed amount for a mass of about 10⁵–10⁷ GeV. Inflation itself would make far too many light scalar particles (by 10²²+), so it must be a **fermion**: about **1.4–6.6×10⁶ GeV**. *What it does to spacetime:* provides the extra gravity that holds galaxies together. *Prediction:* dark-matter detectors keep seeing nothing.
+**Gravity-only dark matter.** *What it is:* a particle that interacts with ordinary matter only through gravity. It is made in the hot plasma when two ordinary particles swap a graviton. *How we know it:* the production rate is calculated (Clery, Mambrini, Olive & Verner); with the Twist's heat, and allowing for the kination phase (which makes less of it), it gives the observed amount for a mass of about **1–6×10⁸ GeV** (estimate). Inflation itself would make far too many light scalar particles (by 10²²+), so it must be a **fermion**. *What it does to spacetime:* provides the extra gravity that holds galaxies together. *Prediction:* dark-matter detectors keep seeing nothing.
 
 ---
 
 ### Step 11 — The tail and dark energy
 
-**Dark energy.** *What it is:* the energy that makes the expansion speed up today (about 69% of everything). *How we know it:* supernovae, BAO and the CMB. In the Twist it is the energy left on the tail: its size is set by the cliff depth (n ≈ 127).
+**Dark energy.** *What it is:* the energy that makes the expansion speed up today (about 69% of everything). *How we know it:* supernovae, BAO and the CMB. In the Twist it is the energy left on the tail: its size is set by the cliff depth (n ≈ 124) — a number chosen to match, not predicted.
 
-**Thawing and w.** *What it is:* w is the ratio of pressure to energy; w = −1 is a pure cosmological constant. On the tail the field was frozen for most of history and is now just starting to roll ("thawing"), so w rises slightly above −1: **w₀ ≈ −0.90**, changing slowly (**w_a ≈ −0.1**). *How we know it:* calculated from the slope √(2/3). *Tested by:* DESI, which today prefers w₀ ≈ −0.80 and w_a ≈ −0.73 — the Twist cannot go below w_a = −0.40 (locked).
+**Thawing and w.** *What it is:* w is the ratio of pressure to energy; w = −1 is a pure cosmological constant. On the tail the field was frozen for most of history and is now just starting to roll ("thawing"), so w rises slightly above −1: **w₀ ≈ −0.90**, changing slowly (**w_a ≈ −0.15**). *How we know it:* calculated from the slope √(2/3). *Tested by:* DESI, which today prefers w₀ ≈ −0.80 and w_a ≈ −0.73 — the Twist cannot go below w_a = −0.40 (locked).
 
 **The dark-matter coupling β (FLAG-1 version).** *What it is:* an optional small energy exchange between dark energy and dark matter, β ≈ 0.04. *How we know it:* fitted to data (the one extra number in FLAG-1). *What it does:* makes dark energy look as if it crosses w = −1 to someone who assumes ordinary dark matter, pushing the apparent w_a to about −0.27. The **pure Twist** (β = 0) needs no extra number and fits the newest Planck + DESI data better than standard cosmology (Δχ² −3.85).
 
@@ -91,7 +91,7 @@ This one function draws the whole history — a plateau, a cliff and a tail. In 
 
 | Test | The Twist says | It fails if |
 |---|---|---|
-| n_s | 0.963–0.965 | Simons Observatory confirms ~0.973 |
+| n_s | 0.963–0.965 (best estimate 0.965–0.968) | Simons Observatory confirms ~0.973 |
 | r | 0.0034–0.0040 (locked rule uses 0.0037–0.0040) | a measurement with error ≤ 0.002 finds r < 0.002 or r > 0.008 (95%) |
 | w_a | ≥ −0.40 | DESI DR3 finds w_a + 3σ < −0.40 |
 | Birefringence | 0 | a calibration-independent β at 5σ |
