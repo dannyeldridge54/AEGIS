@@ -1,0 +1,20 @@
+genus-0 curve counts of the quintic (computed here):
+  n_1 = 2875
+  n_2 = 609250
+  n_3 = 317206375
+  n_4 = 242467530000
+  n_5 = 229305888887625
+  n_6 = 248249742118022000
+  n_7 = 295091050570845659250
+
+instanton share of e^{-K} and the change of ln(matter metric) it can produce:
+  tau 3: R = 3.330e-08, (1/3) ln(1+R) = 1.110e-08
+  tau 2: R = 4.118e-05, (1/3) ln(1+R) = 1.373e-05
+  tau 1.5: R = 1.794e-03, (1/3) ln(1+R) = 5.974e-04
+  tau 1.2: R = 2.643e-02, (1/3) ln(1+R) = 8.697e-03
+  tau 1.0: R = 7.557e+02, (1/3) ln(1+R) = 2.210e+00
+  tau 0.8: R = 3.080e+09, (1/3) ln(1+R) = 7.283e+00
+
+conifold point (edge of the geometric phase) at tau ~ 1.21 (series truncated at order 12; indicative)
+needed for TWIST-K: change of ln(matter metric) = 2n ~ 250
+warping: 2n = 8 pi K/(3 g_s M) = 250 needs K/(g_s M) = 29.8; e.g. g_s 0.1: K/M = 3.0 (M=20 -> K=60); g_s 0.3: K/M = 9.0
