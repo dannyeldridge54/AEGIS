@@ -1744,3 +1744,13 @@ equal instanton numbers with no five-branes (the symmetric case; literature to b
 check reproduces Starobinsky): n_s 0.9644–0.9652, r 0.0045–0.0047 after the rung-3 offset; late predictions D187. Locked as PREREG_TWIST4
 (future data only, both rung readings reported). Status: the most consistent home found is heterotic M-theory with the Twist on rung 4;
 r ≈ 0.0046 instead of 0.0036 and w0 −0.925 instead of −0.899 are the observable differences. n_s and n are unchanged problems.
+
+**D206 — the heterotic-M-theory home has a known matter-neutral class: symmetric vacua (literature check, hep-th/9908100).** Benakli/Donagi–
+Lukas–Ovrut–Waldram-type "symmetric vacua" (c₂(V₁) = c₂(V₂) = ½c₂(TX), no five-branes) have, per the abstract, gauge kinetic functions with
+"no perturbative threshold corrections", no corrections to the matter Kähler metric, and flat space as the 5-d vacuum; the βᵢTⁱ threshold
+(the εT that broke the shield in D154) vanishes exactly. They exist on some complete-intersection Calabi–Yaus (not on elliptically fibred
+ones) and can give three generations. So need C (neutral matter) is satisfied at the perturbative level in a concrete, published class of
+heterotic-M-theory vacua — at strong coupling, where D204 says the Twist's field actually is. Remaining for this home: (i) the rung of the
+direction the Twist moves along must be checked in symmetric vacua specifically (D184 gave 4 for the generic matter-neutral direction; with
+β = 0 the matter metric has no T correction, so fewer moduli may need to move — could even restore rung 3); (ii) the cliff from open-membrane
+instantons in E(T) form; (iii) dilaton/orbifold-length stabilisation (BGW-type analogue at strong coupling); (iv) n. Status: best home so far.
