@@ -152,3 +152,9 @@ n_s confirmed ≈ 0.973 by Simons Observatory (it would point to a polynomial at
 against K = −3 ln(T + T̄) itself — Development 108); r < 0.002 or > 0.008 (95%) once σ(r) ≤ 0.002; DESI DR3 w_a + 3σ <
 −0.40; a calibration-independent birefringence ≥ 5σ; a confirmed fifth force, equivalence-principle violation,
 α drift or dark-matter detection.
+
+**Update 12:05, 13 Nov (D112–D117).** Dark matter now ≈ 100–500 TeV (the two production routes add; bremsstrahlung in χ̃ decays
+gives ≥ 99%), conditional on χ̃ decaying to SM fermions. Field distance ≈ 16 M_P, quantified against a tower of light states (D113).
+Homogeneous initial conditions are generic (D114). **Sharpest open weak point (D116):** χ's inflaton-dependent mass plus the
+Planck-suppressed links to the non-supersymmetric Standard Model give a field-dependent vacuum energy ~10⁵²+ times today's
+dark energy unless the χ sector decouples from the tail; the one protection tried (e^{−πT/4} switch-off) fails.
