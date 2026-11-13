@@ -18,12 +18,13 @@ TorsionΛ, UFE, n = 3 early field) is superseded unless listed here.
 - Angle coupling to matter: Nieh–Yan, c_A = √(3/8), L ⊃ c_A ∂y · J₅ / M_P; angle period 8 → A = π/4.
 - Kick: hidden axion σ with Λ⁴ e^{−A x} [1 − cos(A y − σ/f)] (form of SU(8) gaugino condensation, f = T).
 - Matter: lepto-axiogenesis (Weinberg operator, μ_ℓ/μ_A = 0.523, sphalerons 28/79).
-- Reheating: instant preheating, g ≈ 0.1 → T_RH ≈ 3–5×10¹⁴ GeV.
-- Dark matter: gravity-only (Planckian-interacting) fermion, 1.4–6.6×10⁶ GeV.
+- Reheating: instant preheating, g ≈ 0.1, χ decay distance computed → T_RH ≈ 2.1–3.7×10¹⁴ GeV.
+- Dark matter: gravity-only (Planckian-interacting) fermion, about 3.5×10⁶–1.9×10⁷ GeV at that T_RH.
 - Dark energy: the tail; n ≈ 127 sets its size; μ ≲ 1 puts today's slope at √(2/3) (PURE-TWIST);
   optional dark-matter coupling β (FLAG-1: κ = 1, β ≈ 0.04).
 - Late-time versions tested: PURE-TWIST (κ = √(2/3), β = 0; zero extra parameters), K816 (κ = √(2/3), β free),
-  FLAG-1 (κ = 1, β free).
+  FLAG-1 (κ = 1, β free). **Headline since 13 Nov: K816** — the base theory's own slope with one fitted coupling
+  (it holds on DES Y5, where PURE-TWIST is strained; FLAG-1's κ = 1 is not the base slope).
 
 ## 2. Status of each claim
 
@@ -36,10 +37,10 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 | n_s 0.963–0.965, r 0.0034–0.0040 | derived, locked | `PREREG_TWIST_INFLATION.md`, `twist_inflation.json` | r pending; n_s: agrees with Planck PR4 + DESI (ΛCDM 0.9635, `ns_pure.json`), ~4σ from CMB-SPA + DESI 0.974 |
 | Late universe, PURE-TWIST | locked | `PREREG_PURE_TWIST.md`, `pure_twist.json` | **PREFERRED** (Δχ² −3.37, compressed likelihood); full PR4 likelihood Δχ² −3.85 (`ns_pure.json`) |
 | Flagship FLAG-1 on Planck PR4 | locked | `PREREG_V6_PR4.md`, `selfcheck_v6.json` | **HOLDS ON PR4** (Δχ² −7.81) |
-| Supernova-set robustness | locked | `PREREG_DESY5_SWAP.md`, `PREREG_SN_SWAP.md`; `desy5_swap.json`, `sn_swap_union3.json` | DES Y5: PURE −11.19 (STRAINED vs w₀w_a −16.17), FLAG-1 −14.88 (HOLDS); Union3: PURE −5.29 (STRAINED), FLAG-1 −8.87 (HOLDS); Dovekie, K816 running |
+| Supernova-set robustness | locked | `PREREG_DESY5_SWAP.md`, `PREREG_SN_SWAP.md`; `desy5_swap.json`, `sn_swap_union3.json` | DES Y5: PURE −11.19 (STRAINED vs w₀w_a −16.17), FLAG-1 −14.88 (HOLDS); Union3: PURE −5.29 (STRAINED), FLAG-1 −8.87 (HOLDS); K816 (base slope, β 0.030) on DES Y5: −12.79, **HOLDS** (`desy5_k816.json`); Dovekie and K816 on Union3/Dovekie running |
 | Matter asymmetry | derived + chosen + estimate | `theory/matter/`, matter doc D35–D50 | observed amount for m_σ ≈ 3×10¹⁰ GeV (power-law fit through 3 runs) |
-| Reheating | derived (g chosen) | `theory/inflation/reheating_derived.py` | 0.15–1.5% heat at g = 0.1 |
-| Dark matter, gravity-only fermion | estimate | `pidm_abundance.py`, `dm_inflation_production.py` | 1.4–6.6×10⁶ GeV |
+| Reheating | derived (g, h chosen) | `theory/inflation/reheating_derived.py`, `chi_decay_distance.py` | 0.04–0.4% heat at g = 0.1; T_RH 2.1–3.7×10¹⁴ GeV |
+| Dark matter, gravity-only fermion | estimate | `pidm_abundance.py`, `dm_inflation_production.py` | 3.5×10⁶–1.9×10⁷ GeV |
 | w_a ceiling ≥ −0.40 | locked | `PREREG_WA_CEILING.md`, `effective_w.json` | pending DESI DR3 (today's −0.73 would be a tension) |
 | Birefringence β = 0 | locked | `PREREG_BIREF_NULL.md` | pending; measured 0.28 ± 0.06° (4.9σ tension) |
 | Six lab nulls | locked | `PREREG_LAB_NULLS.md` | consistent with all bounds |
@@ -65,7 +66,7 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 1. μ ≲ 1 (tail on its slope today) was chosen knowing PURE-TWIST was preferred; only new data (DESI DR3) can test it.
 2. The hidden SU(8) is matched in form (gaugino-condensation cross term), not constructed in full.
 3. Heavy superpartners (m ≈ 10¹¹–10¹³ GeV) at T_RH need R-parity violation (window 10⁻⁵–10⁻³, estimate).
-4. Instant preheating's decay distance Δφ is taken as 0.1–1 M_P, not computed.
+4. Instant preheating: χ's couplings g ≈ 0.1 and Yukawa h = 0.1–1 are natural choices, not derived.
 5. The dark-matter fermion argument and PIDM threshold factor are estimates.
 6. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
 
