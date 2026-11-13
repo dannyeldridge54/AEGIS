@@ -1302,3 +1302,7 @@ if the cliff came from an instanton of action 2π·N·T_het (a degree-N curve, o
 point is weakly coupled for N ≳ 9; high-degree curve counts are enormous, which might also bear on n (D161) — a lead, not a result.
 Inflation would still sit at strong coupling (dual radius large). Status: the string-home question reopens; D152 downgraded from
 "candidate" to "candidate only if the cliff instanton has degree ≳ 9".
+D164 add: the degree-N escape has a price. Lower-degree instantons (d < N) would give slower exponentials e^{−πxd/(4N)}; for N = 9 at
+x = 89 a degree-1 term is ~4×10⁻⁴ — 10²⁷ times the cliff's leftover — which would reshape the dark-energy tail and break the shield's
+margins (D142). So the escape needs the curve counts of degree 1…N−1 to vanish (or be cancelled) in the relevant metric: a strong,
+checkable condition on the compact geometry, not a natural default.
