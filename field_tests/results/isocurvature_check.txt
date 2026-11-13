@@ -1,2 +1,4 @@
 s0=fdec=0.1: n_B/s 2.2177e-10
 s0=fdec=0.11: n_B/s 2.5613e-10
+s0=0.11 (fdec 0.1): n_B/s 2.1062e-10
+clean: dlnY/dln s0 = -0.54; dsigma/sigma 7.8e-6 (H 1.2e13 GeV, s0 0.1 M_P); S_b -4.2e-6; CDM-equivalent/zeta 0.017; beta_iso ~3e-4 (Planck ~0.04)
