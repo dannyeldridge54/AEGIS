@@ -1,7 +1,7 @@
 # NS-PURE: does the Twist's own dark energy bring the CMB+DESI spectral index back to its inflation prediction?
 
-**Status: DRAFT**, written 12 Nov 2026 (~21:50 CT) as step 1 of the plan Danny asked for ("Plan out all our next steps",
-"Keep working on it"). LOCKED only on Danny's word. AI-assisted. PC (full CMB likelihoods), after V6 finishes.
+**Status: LOCKED** on Danny's word ("Get them going", 12 Nov 2026, 21:46 CT), before any of its numbers were computed. Drafted 12 Nov 2026 (~21:45 CT) as step 1 of the plan Danny asked for ("Plan out all our next steps",
+"Keep working on it"). AI-assisted. PC (full CMB likelihoods), after V6 finishes.
 
 **Why.** Twist inflation (α = 1) predicts n_s = 0.963–0.965. CMB alone agrees (Planck 0.9638 ± 0.0040), but adding DESI
 BAO under ΛCDM pushes n_s up (Planck + DESI 0.9690 ± 0.0035; CMB-SPA + DESI 0.9737 ± 0.0025), and arXiv:2512.05108
