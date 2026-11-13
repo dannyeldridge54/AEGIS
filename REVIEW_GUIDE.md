@@ -86,7 +86,9 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
   what remains needs a supersymmetry-breaking scale independent of T (e.g. D-term breaking) — open. **Proposed
   resolution (Development 104, estimate):** the Standard Model is not supersymmetric and couples minimally to the
   Einstein-frame metric; then only a χ-loop coupling survives, below Cassini and MICROSCOPE if the χ–SM Yukawa h ≲ 0.05 and
-  the SM–χ cutoff is ≲ the GUT scale. To be confirmed (matter yield at the larger heat share; careful MICROSCOPE estimate).
+  the SM–χ cutoff is ≲ the GUT scale — or χ reaches the SM only gravitationally, which still reheats (heat share ≈ 0.8%) and makes
+  the residue Planck-suppressed (Development 105). The tail's quantum stability then reduces to the field-dependent part of
+  the cosmological-constant problem (generic, open). To be confirmed: matter yield at the larger heat share (queued).
 - **Withdrawn numbers:** the hidden mass 3–6×10⁹ GeV (a pre-stated check failed; corrected to ~3×10¹⁰ GeV);
   several earlier developments (D26 gravitino, D31) superseded. All kept in the matter doc and git history.
 

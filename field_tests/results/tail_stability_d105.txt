@@ -1,0 +1,6 @@
+(a) chi multiplet, splitting ~H0^2: dV/rho_DE 7.6e-03, slope shift 9.8e-04 of the tail slope
+(a) helper field S (m_S^2 ~ 8 zeta x H0^2, goldstino partner): dV/rho_DE 1.5e-108
+(b) SM cutoff TeV: x-dependent vacuum energy via chi: h-coupled 2e+20 x rho_DE, gravity-only 1e-08 x rho_DE
+(b) SM cutoff 1e10 GeV: x-dependent vacuum energy via chi: h-coupled 2e+62 x rho_DE, gravity-only 1e+48 x rho_DE
+(b) SM cutoff GUT 1e16: x-dependent vacuum energy via chi: h-coupled 2e+98 x rho_DE, gravity-only 1e+96 x rho_DE
+(c) gravitational chi decay: decays after dphi 0.52 M_P (m_chi 0.052 M_P), heat share ~0.8%
