@@ -917,3 +917,9 @@ m_σ = 6×10⁹ GeV; result **7.53×** (entropy dilution ×1.84 instead of ×5.6
 decay). The angle ends at y = 1.21 (vs 15.4 at 0.13% heat). Refit with yield ∝ m_σ^−0.89 → **m_σ ≈ 5.8×10¹⁰ GeV**, a ~10× extrapolation
 of the scaling law, so a confirmation run at 5.8×10¹⁰ GeV was locked (matter_refit_check.py, prediction 0.6–1.6×) before running.
 Note: with D118's saturating χ mass the heat share is ~0.65–0.75%, slightly lower.
+
+**D125 — the tail at the D105 heat share (results/tail_at_08_d125.txt).** Reshaped cliff, heat 0.01 / 0.13 / 0.65 / 0.8%: the field
+freezes at x ≈ 5800 / 446 / 89 / 73 and today sits at x ≈ 7100 / 547 / 110 / 89, but the late-time curve barely moves:
+**w0 = −0.899 … −0.902, wa = −0.146 … −0.142.** The dark-energy prediction is insensitive to the heat share (the leftover slope
+dies like e^{−πx/4}, so where the field freezes hardly matters once the tail thaws). Today's x ≈ 89 (not 73) used in D116/D118
+changes nothing: the e^{−πx/4} switch-off still fails (needs ≳ 150), the saturating mass gains margin.

@@ -1,0 +1,4 @@
+heat 0.01%: frozen x 5793.5, today x 7109.0; w0 -0.8993, wa -0.1455
+heat 0.13%: frozen x 446.0, today x 547.1; w0 -0.8997, wa -0.1450
+heat 0.65%: frozen x 89.4, today x 109.5; w0 -0.9014, wa -0.1427
+heat 0.80%: frozen x 72.7, today x 88.9; w0 -0.9018, wa -0.1421
