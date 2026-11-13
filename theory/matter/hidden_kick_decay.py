@@ -17,8 +17,8 @@ def T_of(rho):
     return (30 * rho * m2u * MP ** 4 / (math.pi ** 2 * gs)) ** 0.25
 
 
-def run(m_sigma, ycoup, Omega0=0.05, fdec=0.1, f_rh=0.99, p0=-13.0, Nafter=11.0, step=0.02):
-    mus = m_sigma / m_inf; s0 = fdec; Gam = ycoup ** 2 * m_sigma / (8 * math.pi) / m_inf
+def run(m_sigma, ycoup, Omega0=0.05, fdec=0.1, f_rh=0.99, p0=-13.0, Nafter=11.0, step=0.02, s0=None):
+    mus = m_sigma / m_inf; s0 = fdec if s0 is None else s0; Gam = ycoup ** 2 * m_sigma / (8 * math.pi) / m_inf
     L4x = lambda p: Omega0 * 3 * mus ** 2 * math.exp(-A * math.exp(c * p))
     def Vinf(p, y):
         x = math.exp(c * p); T = complex(x, y)
