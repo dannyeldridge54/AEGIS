@@ -51,7 +51,7 @@ model faces; it is not solved here, only stated sharply. Falsifier unchanged: an
 Dark energy today needs e^{−2n}m²/4 = ρ_DE, i.e. n = 126.8 (e^{−254}). n was set to match; the theory does not
 compute it. This is the cosmological-constant problem restated, not solved. Label changed from "sets" to "chosen
 (fitted to ρ_DE)" in REVIEW_GUIDE. Update (D79/D84): the tail energy is m²e^{−2n}μ/(4x_f) with the field frozen at
-x_f ≈ 350–450, so the matching value is n ≈ 124.0 (126.8 ignored the 1/x_f factor); the runs use n = 125, close enough for
+x_f ≈ 350–450, so the matching value is n ≈ 123.8 (126.8 ignored the 1/x_f factor); the runs use n = 125, close enough for
 shapes. Either way chosen. What the theory does predict is the shape (w₀ ≈ −0.90, w_a ∈ [−0.15, 0]) once
 the size is fixed.
 
