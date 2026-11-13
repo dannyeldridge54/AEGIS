@@ -1,0 +1,1 @@
+heat   0.8%: frozen x 1.978e+04, today x 2.427e+04, w0 -0.8993, wa -0.1456, g_s today ~ 4.39e+03
