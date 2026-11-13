@@ -1870,3 +1870,15 @@ m_3/2 ≈ 2×10¹⁴ GeV (D202) and Dirac Yukawa y: m_ν = y²v²/M_R = 0.15 y²
 argument (D201–D202) needed anyway, puts the seesaw scale where the data want it with order-one Yukawas, and the Twist's own matter
 mechanism (lepto-axiogenesis via the angle) does not need thermal leptogenesis from N. Caveats: this relies on the BGW sector, whose string
 home failed the shield test today (D204–D211); within the effective theory it is a coherent, optional add-on, not a prediction.
+
+**D215 — what "n is chosen" costs statistically: the Twist turns the cosmological-constant problem into a prior on n.** Today's dark energy
+scales as ρ_DE ∝ m² e^{−2n}: one unit of n moves ρ_DE by e² ≈ 7.4, one decade is Δn = 1.15. Two readings of "n is an input":
+(a) n comes from integers in some sector (flux numbers, instanton degrees — D166, D188): then a flat distribution over those integers is
+a LOG-FLAT distribution over ρ_DE. Weinberg's anthropic argument works because a prior flat in ρ (near ρ = 0) favours values near the upper
+anthropic bound (~10²–10³ ρ_obs), so the observed value is unsurprising. A log-flat prior gives equal weight per decade all the way down,
+so the chance of landing within a decade of the observed value is ~1/(number of allowed decades) — 1/12 to 1/120 for a lower cut-off 10–120
+decades below — the anthropic explanation largely fails unless something caps how small ρ_DE can be. (b) n is continuous and only the
+combination m² e^{−2n} is scanned (as Λ is in ΛCDM): then the Twist inherits exactly Weinberg's argument and is no worse than ΛCDM.
+**Status:** the Twist does not solve the cosmological-constant problem (stated since D129); this note sharpens what it would take to
+explain n: either a mechanism fixing n, or a landscape in which the dark-energy SCALE (not n) is uniformly scanned near zero. If the cliff
+depth really were a flux integer, the Twist would be in a statistically worse position than a bare Λ — a point a referee would raise.
