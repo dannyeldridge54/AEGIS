@@ -753,3 +753,8 @@ not −3 ln(T + T̄), and that form is the base of the Twist (the Gates–Ketov�
 Conclusion: there is no honest route inside the Twist to n_s = 0.974. If Simons Observatory confirms ~0.974, it would be
 measuring a different pole order — the Twist's founding Kähler potential would be wrong, not just a parameter. This sharpens the
 locked falsifier: n_s ≈ 0.973 (confirmed) rules out the no-scale base of the theory. Label: derived (standard results).
+**D106 coefficient (11:25).** Zheng (arXiv:2208.05859, eqs. 3.2 and 3.4) gives the gravitational bremsstrahlung width as
+Γ = C λ² m⁵/M_P⁴ with C ≈ 4.1–4.3×10⁻⁹ for fermion dark matter (from scalar or fermion plasma particles). Relative to the
+two-body width λ²m/(8π) (or /16π) that is BR ≈ 1.1–2.1×10⁻⁷ (m_χ/M_P)⁴ ≈ 0.8–1.5×10⁻¹² at m_χ ≈ 0.052 M_P — i.e. c̃ ≈ 0.04–0.08
+in the earlier form. Then **m_DM ≈ 2.5–5×10⁵ GeV (250–500 TeV)** in the χ̃-decay route. Remaining uncertainties: the fermion
+share and m_χ at decay (BR ∝ m_χ⁴), each worth a factor of a few. Coverage and paper updated to "hundreds of TeV".
