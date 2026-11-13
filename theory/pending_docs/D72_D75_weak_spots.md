@@ -1026,5 +1026,5 @@ quintessence with λ = √(2/3); the supergravity structure plays no role in it 
 WATCH-PURE-DR3 is not fully out of sample; its reading is weaker than a fresh survey's.
 
 **D137 — the yield's sensitivity, locked before running (field_tests/missing_piece/yield_sensitivity.py).** Prediction
-written first: |dlnY/dlnσ₀| ≤ 5 and |dlnY/dy₀| ≤ 10⁴ (the bounds for S_B < 5×10⁻⁵ given δσ/σ₀ ≈ 10⁻⁵ and δy ≈ 10⁻¹⁰ —
-wait: δy ≈ 2×10⁻¹⁰ gives the y-bound 2.5×10⁵; the stated 10⁴ is stricter and stands). If exceeded, D134 fails for that source.
+written first: |dlnY/dlnσ₀| ≤ 5 and |dlnY/dy₀| ≤ 10⁴. (The isocurvature bound S_B < 5×10⁻⁵ allows |dlnY/dlnσ₀| up to 5 for
+δσ/σ₀ ≈ 10⁻⁵, and |dlnY/dy₀| up to 2.5×10⁵ for δy ≈ 2×10⁻¹⁰; the y prediction is set stricter, at 10⁴.) If a bound is exceeded, D134 fails for that source.
