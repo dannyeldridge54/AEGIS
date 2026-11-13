@@ -740,3 +740,16 @@ c̃ = O(1) — fourth power, not second. At m_χ ≈ 0.05 M_P: BR ≈ 1.8×10⁻
 matter needs **m_DM ≈ 2×10⁴ GeV / c̃ (2–200 TeV for c̃ = 10–0.1)**, replacing the 70–650 MeV of the first estimate. Freeze-in
 then adds only ~10⁻⁴ of the abundance; the particles are born with E ~ m_χ/4 but are cold today (v ~ 10⁻¹⁶ c). So in this
 route the Twist's dark matter is a gravity-only fermion of tens of TeV. Still an estimate (c̃ for this decay not computed).
+
+## Development 108 — can n_s reach 0.974? Not with K = −3 ln(T + T̄): the measurement tests the "3" itself
+
+Results: field_tests/results/ns_routes_d108.txt.
+For any plateau reached exponentially — which is what the no-scale Kähler potential's order-2 pole gives — n_s ≈ 1 − 2/N
+(here 0.9653 at the Twist's N* = 57.6; reshaping the potential, D66's α-deformation and kination change this only slightly).
+Reaching 0.974 that way needs N ≈ 77 e-folds, which no reheating history allows. Polynomial α-attractors, whose plateau is
+approached as a power (Kallosh & Linde, arXiv:2202.06492), give n_s = 1 − (2/N)(k + 1)/(k + 2): for k = 2, 1 − 3/(2N) = 0.974 at
+N = 57.6 — exactly the ACT/SPT value. But those need a kinetic pole of a different order (q ≠ 2), i.e. a Kähler potential that is
+not −3 ln(T + T̄), and that form is the base of the Twist (the Gates–Ketov–Yunes superfield and the slope √(2/3)).
+Conclusion: there is no honest route inside the Twist to n_s = 0.974. If Simons Observatory confirms ~0.974, it would be
+measuring a different pole order — the Twist's founding Kähler potential would be wrong, not just a parameter. This sharpens the
+locked falsifier: n_s ≈ 0.973 (confirmed) rules out the no-scale base of the theory. Label: derived (standard results).

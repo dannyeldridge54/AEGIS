@@ -143,6 +143,7 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 
 ## 6. What would falsify the model
 
-n_s confirmed ≈ 0.973 by Simons Observatory; r < 0.002 or > 0.008 (95%) once σ(r) ≤ 0.002; DESI DR3 w_a + 3σ <
+n_s confirmed ≈ 0.973 by Simons Observatory (it would point to a polynomial attractor with a different kinetic pole, i.e.
+against K = −3 ln(T + T̄) itself — Development 108); r < 0.002 or > 0.008 (95%) once σ(r) ≤ 0.002; DESI DR3 w_a + 3σ <
 −0.40; a calibration-independent birefringence ≥ 5σ; a confirmed fifth force, equivalence-principle violation,
 α drift or dark-matter detection.
