@@ -27,6 +27,8 @@ gives a simple rule: on the plateau m_S²/H² ≈ −2 + 8ζx. So S is stable at
 ζ > ~2300 and heavy (m_S > 3H) for ζ ≳ 1.4×10⁴; earlier in inflation (smaller x) needs proportionally larger ζ.
 Cliff and tail: S is stable there even with ζ = 0 (m_S²/H² = +4 at x = 0.01, +430 at 0.1, +4000 at 1, +75 at
 30), and ζ only adds 8ζx. So the stabilising term is needed only on the plateau, and the tail is safe.
+Is ζ ≈ 10⁴ natural? ζ = 1/Λ² with Λ ≈ 10⁻² M_P ≈ 2×10¹⁶ GeV, the grand-unification scale: it is what heavy
+fields of GUT mass leave behind when integrated out (Kallosh–Linde 2013), so no special tuning. Label: chosen, natural.
 (A first attempt with smaller finite-difference steps in double precision gave noisy numbers; discarded.)
 
 ## Development 73 — fifth force on ordinary matter: the Standard Model must not feel Re T
