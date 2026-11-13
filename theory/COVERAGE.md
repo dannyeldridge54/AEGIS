@@ -7,7 +7,7 @@ estimate / locked / open). AI-assisted.
 | Origin of the field | Barbero–Immirzi parameter promoted to an N = 1 superfield, K = −3 ln(T + T̄) | from the literature; its role as the one field is assumed | D83, paper §2 |
 | Inflation: n_s, r | locked 0.963–0.965 / 0.0034–0.0040; best estimate 0.965–0.968 / 0.0035 | locked + derived corrections | D66, D77, D84 |
 | Inflation: running, tensor tilt, non-Gaussianity | α_s ≈ −6×10⁻⁴, n_t ≈ −4.4×10⁻⁴, f_NL ≈ 0.014; energy scale V^{1/4} ≈ 7.9×10¹⁵ GeV, H* ≈ 1.5×10¹³ GeV | derived (single-field) | D98 |
-| Inflation: initial conditions, helper field S | hundreds of plateau e-folds with S heavy for ζ ≳ 3×10⁴; homogeneous starts generic (any velocity from ≳ 5 M_P up the plateau, D114); inhomogeneous start not addressed | derived (homogeneous) / open, generic | D72, D81, D114 |
+| Inflation: initial conditions, helper field S | hundreds of plateau e-folds with S heavy for ζ ≳ 3×10⁴; homogeneous starts generic (any velocity from ≳ 5 M_P up the plateau, D114); lumpy starts: super-Planckian plateau scale (1.22 M_P), the robust class in published simulations | derived (homogeneous) / by analogy (lumpy) | D72, D81, D114, D122 |
 | End of inflation | reshaped cliff exp(−n(1 − e^{−πT/4})); no PBHs | chosen after data | D71, D79 |
 | Reheating | instant preheating, heat share 0.04–0.4%, T_RH 2–4×10¹⁴ GeV, χ must be supersymmetric | derived (g, h chosen) | D62, D77 |
 | Kination | ~2 e-folds of stiff expansion after the cliff | derived | D84 |

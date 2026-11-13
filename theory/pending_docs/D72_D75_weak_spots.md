@@ -894,3 +894,11 @@ between 0.4 and 1.2 e-folds after the end, and the angle is still |y| < 5×10⁻
 comes afterwards). So the saturating mass's minimum at the crossing is 2h|sin πy| ≤ 3×10⁻⁴ h ≤ 3×10⁻⁴ M_P, below the
 non-adiabatic window √(g φ̇) ≈ 5×10⁻⁴ M_P: instant preheating proceeds as with the linear mass. (Upper bound from the printed
 precision; the true |y| is smaller.) D118 stands as a candidate fix with one new assumption.
+
+**D122 — inhomogeneous starts: placed in the literature (not simulated).** Numerical-relativity studies of inflation from lumpy
+initial data (Clough et al., arXiv:1608.04408; Aurrekoetxea, Clough, Flauger & Lim, arXiv:1910.12547) find convex potentials
+robust and concave (plateau) potentials robust when the potential varies on super-Planckian scales, much less so on sub-Planckian
+ones. The Twist's plateau departs from flat as x = e^{√(2/3)φ}, i.e. on the scale √(3/2) M_P ≈ 1.22 M_P — the same scale as
+Starobinsky's, the super-Planckian case — and is unbounded upward (D114), so a lumpy patch can start far from the CMB point.
+By analogy with those results the Twist sits in the more robust plateau class; the cliff is ~5 M_P below the CMB point, so it
+plays no role at the start. Status: open, generic → "robust by analogy with published simulations (not run for the Twist)".
