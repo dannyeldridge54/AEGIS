@@ -1595,3 +1595,17 @@ must come from a separate sector whose vacuum energy only shifts the constant (t
 Twist, as in any quintessence model). **D186's requirement is met in principle.** The weakly coupled heterotic home now has: A (rung 3),
 C (neutral matter, Z₃), Y stabilised (this note), degree-9 cliff via a Z₉ rule (D188); n chosen; cliff form and modular (T-duality)
 consistency still to be shown (D-notes ~1177–1332).
+
+**D194 — T-duality vs the rim/centre picture, and a Γ₀(9) cusp escape (theory/string_home/modular_cusps_d194.py).** Problem: if the
+heterotic modulus has full SL(2,Z) duality, V(T) = V(−1/T), so the small-x plateau (rim) and the large-x tail (centre) would be the same
+physics — the Twist's E (≈1 on the plateau, ≈e^{2n} on the tail) is not duality-invariant. Escape: a duality group Γ₀(N) without the
+Fricke involution (typical with Wilson lines / orbifolds with fixed tori) has inequivalent cusps 0 and i∞ — rim and centre become two
+genuinely different cusps. N = 9 is a genus-zero level with hauptmodul h = (η(T)/η(9T))³ (24/(N−1) = 3, an integer), and it ties in with
+D188's Z₉. Computed: h → 27 e^{−2π/(9 Im T)} at the cusp 0 (checked: 1.869×10⁻¹⁴ both ways at Im T = 0.02) and h ~ e^{2π Im T} at i∞. So
+s = 1/(1 + c h) builds a duality-covariant E = exp(2n(1 − s)): E → 1 on the plateau (corrections e^{−2π/(9T)} — far flatter than the
+Twist's), E → e^{2n} on the tail with leftover ∝ e^{−2πT_het} = e^{−πx/4} (the Twist's tail exactly).
+**Price:** a modular function switches near the self-dual region: with c = 1 the cliff sits at Im T_het = 0.205, x = 1.64, not x ≈ 0.01.
+Keeping x ≈ 0.01 needs c ≈ 10²⁴¹ — a second huge number, no better than n. So the duality-consistent version is a DIFFERENT model
+(call it TWIST-M: cliff at x ≈ 1.6, plateau exactly flat in E) whose inflation must be recomputed before anything is claimed. Status:
+the T-duality obstacle is real for the Twist as written; Γ₀(9) is a concrete way out that changes the cliff's location. Next: compute
+TWIST-M's inflation (N*, n_s, r) with the D159 helper, and lock its predictions before any comparison with data.
