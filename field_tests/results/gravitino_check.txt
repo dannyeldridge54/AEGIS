@@ -1,0 +1,5 @@
+m_3/2 1e+11 GeV: Y 3e-08, decays at T ~ 1.4e+06 GeV, energy share at decay ~ 2.9e-03 (<1: never dominates; long before BBN)
+m_3/2 1e+12 GeV: Y 3e-08, decays at T ~ 4.4e+07 GeV, energy share at decay ~ 9.2e-04 (<1: never dominates; long before BBN)
+m_3/2 1e+13 GeV: Y 3e-08, decays at T ~ 1.4e+09 GeV, energy share at decay ~ 2.9e-04 (<1: never dominates; long before BBN)
+m_3/2 ratio reheating (x=0.01) / today (x=450): 9.5e+06
+m_3/2 ratio reheating (x=1.0) / today (x=450): 9.5e+03

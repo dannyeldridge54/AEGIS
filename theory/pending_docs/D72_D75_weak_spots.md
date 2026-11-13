@@ -310,3 +310,15 @@ but not at, the unification value (~1/25); an SU(8) condensate (n = 8π²/(8g²)
 Status: a story, not a construction. Nothing here derives the threshold correction's size or sign, and "α ≈ 1/20" is a
 numerical observation with obvious look-elsewhere risk (several conventions tried). Recorded as a lead to check against
 string constructions (e.g. moduli-dependent threshold corrections, Dixon–Kaplunovsky–Louis), not as support.
+
+## Development 88 — gravitinos are safe from the heat, but their mass moves with x (estimate)
+
+Script: theory/matter/gravitino_check.py; results/gravitino_check.txt.
+At T_RH ≈ 3×10¹⁴ GeV the plasma makes gravitinos with Y ~ 3×10⁻⁸. For m₃/₂ = 10¹¹–10¹³ GeV they decay at T ≈ 10⁶–10⁹ GeV,
+holding only 0.03–0.3% of the energy then — never dominant, long before nucleosynthesis. (Their decay products need the
+R-parity violation already assumed.) The D26 gravitino worry is therefore not a problem at these masses.
+But with a constant W₀ the gravitino mass is m₃/₂ = |W₀|(2x)^{−3/2}: it falls by ~10⁴–10⁷ between reheating (x ≈ 0.01–1)
+and today (x ≈ 450). Superpartner masses set by gravity mediation would move with x the same way — exactly the x-dependent
+masses that D80 shows would swamp the tail through loops. So the Twist needs supersymmetry breaking whose visible-sector
+effects do not follow x (sequestered, e.g. anomaly- or gauge-mediated with a T-independent messenger sector). This sharpens
+D80; it does not solve it.
