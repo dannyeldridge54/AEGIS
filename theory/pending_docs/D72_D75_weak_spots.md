@@ -607,3 +607,6 @@ e^K, so a Fayet–Iliopoulos term in a T-blind U(1) gives a supersymmetry-breaki
 frame, and supersymmetry is broken by a T-independent D-term (with mediation that does not bring back an x-dependent F-term;
 gravitino-mediated contributions, ∝ m₃/₂(x), must stay subdominant). Not built; known D-term-breaking models exist, but whether
 one fits here is open. Label: narrows D90/D96 to a specific, checkable route; open.
+Caveat on (3): a constant Fayet–Iliopoulos term in supergravity is constrained (Komargodski–Seiberg: it needs a gauged
+R-symmetry); newer constructions allow constant FI terms without one (Cribiori, Farakos, Tournoy & Van Proeyen, 2017). Which
+applies here, and whether the gravitino-mediated pieces stay small enough (they scale as m₃/₂(x)), are the first checks.
