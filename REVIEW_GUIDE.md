@@ -23,8 +23,10 @@ TorsionΛ, UFE, n = 3 early field) is superseded unless listed here.
 - Dark energy: the tail; n ≈ 127 sets its size; μ ≲ 1 puts today's slope at √(2/3) (PURE-TWIST);
   optional dark-matter coupling β (FLAG-1: κ = 1, β ≈ 0.04).
 - Late-time versions tested: PURE-TWIST (κ = √(2/3), β = 0; zero extra parameters), K816 (κ = √(2/3), β free),
-  FLAG-1 (κ = 1, β free). **Headline since 13 Nov: K816** — the base theory's own slope with one fitted coupling
-  (it holds on DES Y5, where PURE-TWIST is strained; FLAG-1's κ = 1 is not the base slope).
+  FLAG-1 (κ = 1, β free). **The theory's own prediction is PURE-TWIST (β = 0)**: gravity-only dark matter cannot
+  couple to the twist field, and natural modular weights give β = 0 or |β| ≥ 0.41 (Development 64). K816's small
+  β ≈ 0.03 is a data preference the theory does not explain (it holds on DES Y5 and Union3, where PURE-TWIST is
+  strained). FLAG-1's κ = 1 is not the base slope.
 
 ## 2. Status of each claim
 
@@ -63,6 +65,7 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 
 ## 4. Assumptions a reviewer should challenge
 
+0. The data mildly prefer a dark-matter coupling β ≈ 0.03 that the theory does not produce (Development 64).
 1. μ ≲ 1 (tail on its slope today) was chosen knowing PURE-TWIST was preferred; only new data (DESI DR3) can test it.
 2. The hidden SU(8) is matched in form (gaugino-condensation cross term), not constructed in full.
 3. Heavy superpartners (m ≈ 10¹¹–10¹³ GeV) at T_RH need R-parity violation (window 10⁻⁵–10⁻³, estimate).

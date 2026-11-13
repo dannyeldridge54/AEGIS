@@ -1,0 +1,8 @@
+fitted beta 0.030-0.034  ->  q = 0.0367 - 0.0416   (needs modular weight n = 1.537-1.542)
+modular weight n = 0: q = -1.50, beta = -1.225
+modular weight n = 0.5: q = -1.00, beta = -0.816
+modular weight n = 1: q = -0.50, beta = -0.408
+modular weight n = 1.5: q = +0.00, beta = +0.000
+modular weight n = 2: q = +0.50, beta = +0.408
+modular weight n = 3: q = +1.50, beta = +1.225
+data: beta > ~0.1 not computable (CLASS fails) and disfavoured; fits give 0.030-0.034
