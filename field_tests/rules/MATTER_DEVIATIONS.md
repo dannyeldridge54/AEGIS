@@ -6,3 +6,8 @@
   asymmetry is already frozen; the readings are taken as computed and this simplification is reported with them.
 - **D2 (12 Nov 2026, 18:2x CT):** the first run computed all rows but crashed when saving (a numpy boolean in
   K_KIN_flag is not JSON-serialisable). Fix: wrap it in bool(). No input, rate or reading changed; rerun once.
+
+## D-refit (13 Nov 12:30): matter_refit_check.py killed by the session's 30-min background limit before printing
+The D124 confirmation run (locked 11:55, prediction 0.6–1.6× at m_σ = 5.8×10¹⁰) was stopped by the tool's background time limit,
+not by the code, and wrote no result. Rerun unchanged with a 2-hour limit, followed by D129 (matter_d127_form.py, also unchanged).
+No result had been seen, so this is not a rerun to chase a result.
