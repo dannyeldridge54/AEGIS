@@ -1092,3 +1092,11 @@ order (Brans–Dicke-like, too large), because matter masses scale with the extr
 sequestered so its masses do not come from the T-sector geometry. That is still an assumption, now with a name and a precise test
 (the perturbative order p ≥ 3). Novelty: the specific combination (the cliff's own instanton as the only breaking, with π/4 set by
 SU(8)) appears to be new; the mechanism class is not.
+
+**D142 — the isometry shield, constructed explicitly and run against every precision test (shield_tests_d142.py;
+results/shield_tests_d142.txt, shield_fingerprint.txt); predictions locked (PREREG_SHIELD.md).** Using the full thawing solution
+(x = 72.7 at BBN, 73.1 at z = 3, 75.8 at z = 1, 85.0 at z = 0.14, 88.9 today; d ln x/dt = 2.5×10⁻¹¹ /yr): the instanton part passes
+quasars by 10¹⁹, Oklo 10²¹, BBN 10²³, clocks 10²¹. A perturbative leak c_p/x^p is limited most tightly by **atomic clocks** (not
+MICROSCOPE as D140 said): p = 1 needs c_p < 3.5×10⁻⁶; p = 2, c_p < 1.6×10⁻⁴; p = 3, c_p < 9×10⁻³; p = 4, c_p < 0.6. Correction to
+D140: an O(1) leak needs p ≥ 4. New signature: because the field is frozen until late, any leak has a fixed redshift shape — about
+78% of the total change happens at z < 1 and almost nothing above z ≈ 3 — and ties clock drifts to quasar shifts.

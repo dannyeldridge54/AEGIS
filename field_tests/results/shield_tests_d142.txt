@@ -1,0 +1,15 @@
+tail: x(z=1e9) 72.69, x(3) 73.12, x(1) 75.78, x(0.14) 85.04, today 88.94; d ln x/dt today 2.54e-11 /yr
+
+(a) instanton part, c_q = 1:
+   quasars z=3: d alpha/alpha 1.1e-25 (limit 1e-06) PASS by 10^19
+   quasars z=1: d alpha/alpha 1.4e-26 (limit 1e-06) PASS by 10^20
+   Oklo z=0.14: d alpha/alpha 9.4e-30 (limit 1e-08) PASS by 10^21
+   BBN: d alpha/alpha 1.6e-25 (limit 1e-02) PASS by 10^23
+   clocks: |alpha_dot/alpha| 8.2e-40 /yr (limit 1e-18) PASS by 10^21
+
+(c) perturbative part c_p/x^p: largest coefficient c_p each test allows
+   p = 1.0: quasar z=3 4.1e-04, Oklo 1.9e-05, BBN 4.0e+00, clocks 3.5e-06, MICROSCOPE 1.3e-04, Cassini 3.7e-01  -> tightest: clocks (c_p < 3.5e-06)
+   p = 1.5: quasar z=3 2.5e-03, Oklo 1.2e-04, BBN 2.4e+01, clocks 2.2e-05, MICROSCOPE 8.2e-04, Cassini 2.3e+00  -> tightest: clocks (c_p < 2.2e-05)
+   p = 2.0: quasar z=3 1.6e-02, Oklo 8.4e-04, BBN 1.6e+02, clocks 1.6e-04, MICROSCOPE 5.8e-03, Cassini 1.6e+01  -> tightest: clocks (c_p < 1.6e-04)
+   p = 3.0: quasar z=3 8.8e-01, Oklo 4.9e-02, BBN 8.5e+03, clocks 9.2e-03, MICROSCOPE 3.4e-01, Cassini 9.8e+02  -> tightest: clocks (c_p < 9.2e-03)
+   p = 4.0: quasar z=3 5.3e+01, Oklo 3.2e+00, BBN 5.0e+05, clocks 6.2e-01, MICROSCOPE 2.3e+01, Cassini 6.5e+04  -> tightest: clocks (c_p < 6.2e-01)
