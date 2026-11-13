@@ -100,3 +100,40 @@ the Hubble-size mass splitting is left: ΔV/V ≈ 1%, Δη ≈ +0.001, so n_s mo
 the coefficient depends on how χ couples in supergravity). Route (taken): χ is a chiral superfield coupled through the
 superpotential, as standard in supergravity preheating. Consequence: n_s ≈ 0.964 may sit nearer 0.966 — still far
 from 0.974. Label: estimate; a full one-loop supergravity calculation is open.
+
+## Development 78 — correction: the slope the field sees today is steeper than √(2/3) at the derived heat share
+
+Script: theory/darkenergy/tail_slope_full.py; results/tail_slope_full.txt.
+
+What we found. Backlog L (tail_freeze.py) located where the field freezes after the cliff, x_f, but took today's slope
+as c·x/(x + μ), keeping only the μ factor. The full tail also keeps a leftover of the cliff,
+−d ln V/dφ = c·x·[2n·m2/(x + m2)² + 1/(x + μ)], and that leftover is not small unless x_f ≫ 2n ≈ 250.
+Results (μ = 1, n = 125, m2 = 1; thawing field, exponential approximation, CPL fit):
+  - heat share 0.04%: x_f ≈ 1160, slope 1.21 × √(2/3) = 0.99; w₀ ≈ −0.85, w_a ≈ −0.22; angle stable (+1.1 H²)
+  - heat share 0.13% (the computed central value): x_f ≈ 360, slope 1.69 × √(2/3) = 1.38; w₀ ≈ −0.69, w_a ≈ −0.42;
+    angle slightly unstable (−0.8 H²)
+  - heat share 0.4%: x_f ≈ 120, slope 2.5: too steep to be today's dark energy.
+Reference, slope √(2/3) exactly (PURE-TWIST): w₀ −0.90, w_a −0.15.
+
+What it means.
+  1. PURE-TWIST (κ = √(2/3)) is the limit x_f ≫ 250, which needs a heat share ≲ 0.01%. At the computed heat share the
+     full model is steeper. The locked PURE-TWIST results stand as tests of that tail; but calling PURE-TWIST "the
+     theory's own prediction" now needs this condition. REVIEW_GUIDE updated.
+  2. The tail's slope is tied to reheating: more heat → the field stops earlier → steeper slope today. This links the
+     matter and dark-energy sectors through one number; it is a prediction once f is pinned down.
+  3. At the central heat share the predicted w_a ≈ −0.42 sits just past the locked ceiling (w_a ≥ −0.40,
+     PREREG_WA_CEILING) — not a new test (the ceiling was locked for the √(2/3) tail), but noted.
+  4. The exponential approximation overstates steepness slightly (the slope falls as the field moves on); a
+     full-potential late-time run is the next check.
+  5. Observation, not a claim: at f ≈ 0.04% the slope is ≈ 1, the value FLAG-1 uses. FLAG-1 was fitted, so this is a
+     coincidence until tested on new data.
+
+Options to recover √(2/3) without a tiny heat share (each a new model version; would need its own locked tests):
+  (a) a cliff factor that saturates faster, e.g. exp(−n T²/(T² + m2²)) or exp(−n(1 − e^{−T/m2})): leftover slope falls
+      like 1/x² or e^{−x} instead of 1/x;
+  (b) lower heat share (smaller g): moves the matter yield too;
+  (c) accept the steeper tail and test it — the honest default.
+We take (c) for now: no model change, the condition is recorded, and the late-time fits are not rerun.
+
+Correction to D76: at the central heat share x today ≈ 360, so the angle is mildly unstable today (m_y² ≈ −0.8H²,
+|m_y| < H: slow growth from a tiny start; probably harmless, not computed). Correction to D75: field distance ≈ 19 M_P.

@@ -1,0 +1,5 @@
+reference, slope sqrt(2/3) (PURE-TWIST): w0 -0.899, wa -0.146
+heat share 0.04%: frozen at x = 1163; old slope 0.999, full slope 1.21 x sqrt(2/3) = 0.99; angle m_y^2/H^2 +1.14; w0 -0.849, wa -0.215
+heat share 0.13%: frozen at x = 358; old slope 0.997, full slope 1.69 x sqrt(2/3) = 1.38; angle m_y^2/H^2 -0.77; w0 -0.692, wa -0.418
+heat share 0.40%: frozen at x = 117; old slope 0.991, full slope 3.10 x sqrt(2/3) = 2.53; angle m_y^2/H^2 -6.37; no thawing solution with Omega_DE 0.69
+heat share 1.47%: frozen at x = 32; old slope 0.970, full slope 8.35 x sqrt(2/3) = 6.82; angle m_y^2/H^2 -26.61; no thawing solution with Omega_DE 0.69

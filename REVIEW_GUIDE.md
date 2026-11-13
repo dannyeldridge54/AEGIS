@@ -23,7 +23,9 @@ TorsionΛ, UFE, n = 3 early field) is superseded unless listed here.
 - Dark energy: the tail; n ≈ 127 is **chosen** to give its size (not predicted, Development 74); μ ≲ 1 puts today's slope at √(2/3) (PURE-TWIST);
   optional dark-matter coupling β (FLAG-1: κ = 1, β ≈ 0.04).
 - Late-time versions tested: PURE-TWIST (κ = √(2/3), β = 0; zero extra parameters), K816 (κ = √(2/3), β free),
-  FLAG-1 (κ = 1, β free). **The theory's own prediction is PURE-TWIST (β = 0)**: gravity-only dark matter cannot
+  FLAG-1 (κ = 1, β free). **The theory's own prediction is PURE-TWIST (β = 0)** — with one condition found 13 Nov (Development 78): the
+  slope √(2/3) holds only if the field freezes far down the tail (heat share ≲ 0.01%); at the computed heat share 0.13%
+  the cliff's leftover makes today's slope ≈ 1.4 (w₀ ≈ −0.69, w_a ≈ −0.42, exponential approximation). Also: gravity-only dark matter cannot
   couple to the twist field, and natural modular weights give β = 0 or |β| ≥ 0.41 (Development 64). K816's small
   β ≈ 0.03 is a data preference the theory does not explain (it holds on DES Y5 and Union3, where PURE-TWIST is
   strained). FLAG-1's κ = 1 is not the base slope.
@@ -80,14 +82,16 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
    the log with ζ ≳ 10⁴ (m_S²/H² ≈ −2 + 8ζx on the plateau; S is stable after the cliff anyway) makes it heavy and leaves every number at S = 0 unchanged (Development 72, chosen).
 7. Ordinary matter must not feel the tail field: natural bulk weights give a fifth force ×120–360 over Cassini, so
    the Standard Model must be sequestered (D3 branes, T-independent Higgs sector). An assumption (Development 73).
-8. The field moves Δφ ≈ 21 M_P from the CMB point to today, in tension with the swampland distance conjecture —
+8. The field moves Δφ ≈ 19–21 M_P from the CMB point to today, in tension with the swampland distance conjecture —
    generic to one-field inflation-plus-quintessence models; open (Development 75).
-9. The twist angle y is heavy during inflation (m_y² = 4H²) but tachyonic on the tail for x ≲ 500; it is stable
+9. The twist angle y is heavy during inflation (m_y² = 4H²) but tachyonic on the tail for x ≲ 500 (x today ≈ 360 at the computed heat share: mildly, −0.8H²); it is stable
    today only if x today ≳ 3000, which is also what the √(2/3) slope needs — a condition, not yet derived from the
    dynamics (Development 76).
 10. The reheating field χ must be supersymmetric, or its loop energy destroys the plateau; with it, n_s shifts by
    about +0.002 (estimate, Development 77).
-11. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
+11. Today's slope depends on reheating (Development 78): PURE-TWIST's √(2/3) needs heat share ≲ 0.01%; at the
+   computed 0.13% the slope is ≈ 1.4. A correction to Backlog L, which kept only the μ factor.
+12. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
 
 ## 5. How to reproduce
 
