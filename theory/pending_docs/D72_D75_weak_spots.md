@@ -1887,3 +1887,19 @@ landing within a decade of the observed value is 8% (cut-off 10 decades down), 1
 Weinberg's case, P(ρ < ρ_obs | ρ < 200 ρ_obs), is ~0.5% (careful galaxy-weighted versions give ~5–10%). So the integer-n reading is NOT clearly
 worse than a bare Λ — the two are comparable unless the log-flat range is extremely deep. Revised status: n chosen costs about the same as
 Λ chosen; neither is explained; no extra penalty for the Twist from this argument. The "referee point" sentence above is withdrawn.
+
+**D216 — the leak's redshift shape tells WHICH kind of leak it is (theory/darkenergy/leak_shape_growing_d216.py).** PREREG_SHIELD item 2
+fixed the fingerprint Δα(z)/Δα(z=1) for leaks that FALL as x^{−p}, p = 3–4 (what atomic clocks allow in an EFT shield). Today's string survey
+found the generic leaks GROW with the field (∝ x from a KK tower, D211; ∝ x^{3/2} from strong coupling, D204/D209). Since the field moved only
+0.20 M_P since z = 1 (0.24 since z = 3), every leak is close to linear in Δφ and the shape changes only mildly with p:
+| p | z = 0.14 | 0.5 | 2 | 3 | 6 |
+| 4 | 0.218 | 0.655 | 1.254 | 1.327 | 1.374 |
+| 3 | 0.233 | 0.672 | 1.232 | 1.299 | 1.340 |
+| 1 | 0.263 | 0.706 | 1.193 | 1.247 | 1.280 |
+| −1 (KK tower) | 0.296 | 0.739 | 1.160 | 1.202 | 1.228 |
+| −1.5 (strong coupling) | 0.305 | 0.747 | 1.152 | 1.192 | 1.217 |
+So a string-type (growing) leak sits OUTSIDE the locked band (0.22–0.23 at z = 0.14; 1.23–1.25 at z = 2) by 0.07–0.10 — distinguishable
+with ~3% shape precision, which a future joint clock + quasar data set could reach only if a leak is detected well above threshold.
+Both shapes keep "almost nothing new above z ≈ 3" (ratio ≤ 1.38), so the DISFAVOURED-shield clause (z > 3 more than 1.5× the z = 1 value)
+is unaffected. Added as a reported (non-verdict) quantity by PREREG_SHIELD deviation D2: if a leak is detected, fit p and report whether
+it is falling (EFT shield with perturbative leaks) or growing (tower/strong-coupling leak, the string-generic case).
