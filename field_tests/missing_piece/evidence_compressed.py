@@ -34,7 +34,7 @@ def run(m):
         v, p = full(m, q); x = T.chi2(v, p, SETS)
         return -0.5 * x if x < 1e9 else -1e100
     s = dynesty.NestedSampler(ll, pt, len(B), nlive=300, sample="rwalk", rstate=np.random.default_rng(1))
-    s.run_nested(dlogz=0.1, print_progress=False, checkpoint_file=os.path.join(OUTD, f"{m}.save"))
+    s.run_nested(dlogz=0.1, print_progress=False)
     r = s.results
     out = {"model": m, "logz": float(r.logz[-1]), "logzerr": float(r.logzerr[-1]), "ncall": int(sum(r.ncall)),
            "max_logl": float(np.max(r.logl))}
