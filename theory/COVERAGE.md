@@ -17,6 +17,7 @@ estimate / locked / open). AI-assisted.
 | Superpartners, gravitino | heavy; R-parity violation 10⁻⁵–10⁻³; gravitinos harmless; m₃/₂ moves with x | assumption / estimate | D88 |
 | Hidden SU(8) leftovers | confines near 10¹⁴ GeV; glueballs decay (Planck-suppressed) in ~10⁻³ s, before nucleosynthesis | estimate | D98 |
 | Nucleosynthesis, N_eff | field frozen from kination until recently, so constants at BBN = today's (if shielded); no extra radiation (kination waves Ω ~10⁻¹⁶) | estimate | D86, D98 |
+| Gravitational-wave propagation | no extra friction, no GW birefringence today (ξ = 0); related two-field work arXiv:2608.09487 bounds such friction with dark sirens | prediction | D107 |
 | Gravitational waves | CMB B-modes r ≈ 0.0035 (LiteBIRD); blue kination tail ~10⁻¹⁶ at 10⁷ Hz; preheating peak ~10¹¹ Hz | derived / estimate | D59, D71, D86 |
 | Dark energy | PURE-TWIST tail: w₀ ≈ −0.90, w_a ≈ −0.15; scale n ≈ 124 chosen | locked tests + chosen | D64–D65, D74, D79 |
 | Growth, lensing | fσ₈ ~3% low, E_G ~+5%, S₈ 0.793 | frozen predictions | pure_twist_growth.json |

@@ -699,3 +699,13 @@ breaks global ones); (ii) dark matter made this way instead of by freeze-in — 
 (fermion share 1–0.01), produced very relativistic but cold enough today (velocity ~10⁻¹⁰ c); this would replace the 10⁸ GeV
 prediction; (iii) fermionic preheating strongly suppressed (not expected). None checked in detail.
 Status: open, new. It touches the dark-matter prediction (D58/D85) and must be settled before that number is quoted firmly.
+
+## Development 107 — related new work (Aug 2026) and the Twist's gravitational-wave propagation prediction
+
+Gao, Wang, Garcia de Andrade et al., arXiv:2608.09487 (18 Aug 2026), promote the Barbero–Immirzi parameter to a dynamical
+field in Einstein–Cartan–Holst gravity, couple it to a separate Ratra–Peebles quintessence field, and bound the resulting
+gravitational-wave friction with dark sirens (GWTC-3: |ξ_BI| ≲ 0.7, |ξ_coup| ≲ 0.13; ET+CE forecast σ ~ 10⁻²). They use two
+fields and do not discuss fifth forces; the Twist uses one field for both jobs, so this is related, not overlapping (to cite).
+The Twist's own statement: in the Einstein frame the tail field does not multiply R, and the angle — the only part with a
+Nieh–Yan coupling — is static today (D82), so the Twist predicts no extra gravitational-wave friction and no parity-violating
+(birefringent) gravitational-wave propagation today: ξ = 0 in their language. Testable by ET+CE dark sirens at the ~10⁻² level.
