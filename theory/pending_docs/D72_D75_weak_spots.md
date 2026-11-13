@@ -297,3 +297,16 @@ Script: theory/inflation/gw_kination.py; results/gw_kination.txt. Inflation's wa
 Ω_GW h² ≈ 3.5×10⁻¹⁸ at low frequency. Modes that re-entered during kination are boosted ∝ frequency, up to ×50–90 at
 ≈ 10⁷ Hz (Ω_GW h² ≈ 2–3×10⁻¹⁶). A real feature of the Twist (a stiff phase after inflation), but far below the N_eff
 bound and below any planned detector. Not a near-term test; recorded as a prediction of shape.
+
+## Development 87 — a candidate origin for the reshaped cliff (speculative)
+
+Script: inline; results/n_instanton.txt.
+Write the cliff factor as a condensate of the inflation sector itself: exp(−n(1 − e^{−πT/4})) = exp(−b·f(T)) with a gauge
+kinetic function f(T) = (n/b)(1 − e^{−πT/4}). Near the plateau f ≈ (n/b)(π/4)T — the standard linear f = kT; once the
+hidden SU(8) condensate (∝ e^{−πT/4}) has switched off, f saturates at n/b. So the reshaped cliff is what a T-dependent
+gauge coupling would give if the hidden SU(8) condensate enters the inflation sector's coupling as a threshold
+correction. This also turns n into a coupling: one instanton, n = 8π²/g², gives α = g²/4π ≈ 1/20 for n ≈ 124 — near,
+but not at, the unification value (~1/25); an SU(8) condensate (n = 8π²/(8g²)) would need α ≈ 1/158.
+Status: a story, not a construction. Nothing here derives the threshold correction's size or sign, and "α ≈ 1/20" is a
+numerical observation with obvious look-elsewhere risk (several conventions tried). Recorded as a lead to check against
+string constructions (e.g. moduli-dependent threshold corrections, Dixon–Kaplunovsky–Louis), not as support.
