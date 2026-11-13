@@ -31,10 +31,10 @@ Files: the refreshed PDF (new export) + MODEL_CARD_v5.md content is in the PDF's
 
 We study whether one field — the Barbero–Immirzi parameter promoted to an N = 1 supergravity superfield with the no-scale
 Kähler potential K = −3 ln(T + T̄) (Gates, Ketov & Yunes 2009) — can run inflation, make the matter–antimatter asymmetry,
-and act as today's dark energy. Plateau inflation gives n_s ≈ 0.965 (0.965–0.968 with loops) and r ≈ 0.0035. A cliff
-exp(−n(1 − e^{−πT/4})) ends inflation; its 4/π is assumed to come from a hidden SU(8) (strongly coupled during inflation, so
-not under calculational control), and the superpotential can be obtained from a Z₂ racetrack of two hidden gauge groups that
-keeps the gravitino massless; the cliff depth n ≈ 125 is chosen — a tuning of today's dark energy. Instant
+and act as today's dark energy. Plateau inflation gives n_s ≈ 0.964–0.965 and r ≈ 0.0036. A cliff
+exp(−n(1 − e^{−πT/4})) ends inflation; in the main construction (TWIST-K) the cliff sits in the helper field's Kähler metric as a
+worldsheet-instanton-like correction, with W = √3 m S T and no hidden gauge sector (a hidden-gauge construction is kept as an
+alternative); the cliff depth n ≈ 125 is chosen — a tuning of today's dark energy. Instant
 preheating heats ~0.8% of the energy; a hidden SU(8) axion kicks the twist angle and lepto-axiogenesis makes the observed
 baryon asymmetry for a hidden mass ≈ 6×10¹⁰ GeV (refit after a missed prediction; confirmation running); dark matter is a gravity-only fermion (mass estimate not
 yet stable).
@@ -48,7 +48,8 @@ assumptions are listed in a model card. The main open problem is a fifth force o
 unexplained symmetry forbidding couplings between the tail field and the Standard Model. The late-time test is generic thawing
 quintessence with slope √(2/3). An independent referee-style review is summarised in the repository. The model's n_s ≈ 0.965 sits ~1σ from CMB-SPA alone but 2–3σ from CMB + DESI BAO — INCONSISTENT on the locked NS-SPA test: fixing n_s at 0.964 costs Δχ² = 11.7 against CMB-SPA + DESI (ΛCDM at the same n_s: 8.5); on that full data set PURE-TWIST with n_s free also fits slightly worse than ΛCDM (Δχ² +1.45); a separate model,
 TWIST-P (a different Kähler potential, built after seeing this data), was locked before any test and predicts n_s 0.965–0.971
-with r 0.0036–0.011, to be scored on future CMB data only. Frozen predictions for
+with r 0.0036–0.011, to be scored on future CMB data only; a second, TWIST-L (a logarithmic helper-field metric that keeps the
+seven-disk geometry), predicts n_s 0.965–0.979 with r 0.0036–0.014, also for future data only. Frozen predictions for
 DESI DR3, Euclid, LiteBIRD and Simons Observatory are listed. Scripts, locked rules and every number:
 https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md, papers/MODEL_CARD_v5.md).
 AI-assisted (Claude, Anthropic); the author takes full responsibility.
