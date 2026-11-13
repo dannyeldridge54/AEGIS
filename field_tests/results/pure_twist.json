@@ -1,0 +1,44 @@
+{
+ "rule": "PREREG_PURE_TWIST.md",
+ "gate": {
+  "LCDM_FULL_recomputed": 1401.1758319819446,
+  "stored": 1401.1758319819446,
+  "pass": true
+ },
+ "vs_LCDM": {
+  "dchi2_FULL": -3.372,
+  "dP_DESI": -0.886,
+  "dP_SDSS": -0.406,
+  "d_SDSS": -2.668
+ },
+ "vs_SPIRAL0": {
+  "dchi2_FULL": -4.486,
+  "dP_DESI": -1.506,
+  "dP_SDSS": -0.047,
+  "d_SDSS": -3.685
+ },
+ "vs_K816": {
+  "dchi2_FULL": 2.926,
+  "dP_DESI": 5.835,
+  "dP_SDSS": -1.303,
+  "d_SDSS": 0.367
+ },
+ "params": {
+  "FULL": [
+   0.66922,
+   0.0225,
+   0.11622
+  ],
+  "NOBAO": [
+   0.66515,
+   0.02247,
+   0.11741
+  ],
+  "SDSS": [
+   0.66529,
+   0.02247,
+   0.11737
+  ]
+ },
+ "reading": "PREFERRED"
+}
