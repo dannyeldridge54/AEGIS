@@ -1,0 +1,4 @@
+m_sigma 3e+09 GeV: n_B/s 1.28e-11 (x0.15); peak shares angle 1.6e-09 hidden 5.2e-03
+m_sigma 1e+10 GeV: n_B/s 1.41e-10 (x1.6); peak shares angle 1.9e-07 hidden 9.9e-03
+m_sigma 3e+10 GeV: n_B/s 1.17e-09 (x13); peak shares angle 1.3e-05 hidden 1.4e-02
+m_sigma 1e+11 GeV: n_B/s 5.98e-09 (x69); peak shares angle 2.9e-04 hidden 2.3e-02
