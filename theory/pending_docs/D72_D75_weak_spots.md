@@ -1202,3 +1202,5 @@ racetrack (D119, D126, D148); (C) Standard-Model constants independent of T (the
 possible direction (not worked): a type IIB setting with T the overall volume and the SM on D3-branes in a strongly warped throat
 whose local scale is fixed by fluxes, with the T-dependence of the warped scale cancelled — would need explicit checking against
 D150's β ≈ 0.6.
+D154 add: the warped-throat direction checked at leading order — the warped tip scale goes as V^{−1/3} e^{A₀} with V ∝ x^{3/2}, so SM
+masses ∝ x^{−1/2}: β ≈ 0.41, still ~120× over Cassini. Warping does not rescue the IIB volume case. The frontier stands.
