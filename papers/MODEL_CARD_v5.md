@@ -52,3 +52,8 @@ n not derived · inhomogeneous starts only by analogy · SU(8) strongly coupled 
 ## Consistency pass (final form, one run)
 V identical to the old form for real T · N* 55.7 (instant), n_s 0.9642, r 0.0038 · tail at 0.8%: x frozen 73, today 89, w0 −0.902, wa −0.142 ·
 angle mass +8H² at the CMB point and today · S mass 30 H² (CMB point), 2600 H² (today). All pass.
+
+## Companion model: TWIST-P (locked 12:23 and 12:25; PREREG_TWISTP.md, PREREG_TWISTP_L.md)
+Same model plus one Kähler term β/(T + T̄) that reshapes only the deep plateau (a polynomial attractor there); V along real T is
+unchanged. Built after seeing the n_s data, so only post-lock CMB results can score it. Prediction: n_s 0.965–0.971 (+ loops
+≤ 0.974) with r 0.0036–0.011 rising together; it does not reach n_s = 0.974 at tree level. Isocurvature safe (D134).
