@@ -131,7 +131,9 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
    problems.
 14. Link to loop quantum gravity (Development 83): the Barbero–Immirzi superfield is from the literature; its
    identification with the whole model's modulus, W and F are assumptions. Today the angle sits at y = 0, so the
-   field does not take LQG's black-hole value γ ≈ 0.24 under the mapping used before (1/γ = y/x) — an open mismatch.
+   field does not take LQG's black-hole value γ ≈ 0.24 under the mapping used before (1/γ = y/x) — an open mismatch. A
+   pre-stated test of the hypothesis that the angle settles at y = 4 (giving γ = 0.25) FAILED: the angle ends at y = 15.4
+   (Development 102).
 15. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
 
 ## 5. How to reproduce

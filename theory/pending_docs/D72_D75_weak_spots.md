@@ -779,3 +779,12 @@ gauge symmetry protects it. (If it were exact, χ would be stable and would come
 n_k = e^{−πk²/(g|φ̇|)} (Greene & Kofman; Peloso & Sorbo), so a complex scalar (2 dof) and its Weyl partner (2 dof) are made in equal
 numbers: the fermion share used in D106 (equal numbers) stands. With the decay coefficient range in (1), m_χ at decay is
 0.052–0.074 M_P; BR ∝ m_χ⁴ then spans ×4, so the χ̃-route dark-matter mass is ≈ 100–500 TeV.
+
+**D102 result (11:38): the hypothesis FAILS as stated.** The pre-registered check (angle_end_check.py; prediction written in
+D102 before the run) gives, 11 e-folds after the end of inflation: x_end ≈ 145, **y_end = 15.40**, y mod 8 = 7.40. The stated
+rule was "y mod 8 ≈ 4 survives, ≈ 0 fails"; 7.40 is 0.6 from 8 ≡ 0 and 3.4 from 4, so the reading is FAILS. What happened: the
+kick did carry the angle past the barrier, but it kept turning — about two full periods — and stopped near a multiple of 8, not in
+the y = 4 valley (the valley's pull has faded by the time the angle slows: the potential has dropped ~10⁻⁸⁰ through the cliff).
+Under the direct mapping 1/γ = y this gives γ ≈ 0.065, not 0.25. (On the far tail the angle's restoring force is not periodic,
+so y = 15.4 is not equivalent to 0; either way it is not 4.) Matter yield in the same run: 2.29× (as in the matter recheck).
+Status: the γ = 0.25 route is closed; the LQG mismatch (D83) stands as an open problem.
