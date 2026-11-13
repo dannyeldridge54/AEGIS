@@ -1,0 +1,5 @@
+type IIB (S: k=1, T: k=3): scale-preserving path a_S = -3.00 per unit ln T -> behaves like rung 3alpha = 12 (tail slope 0.408)
+heterotic M-theory (S: k=1, T: k=3): scale-preserving path a_S = -1.00 per unit ln T -> behaves like rung 3alpha = 4 (tail slope 0.707)
+weakly coupled heterotic (S: k=1, T: k=3): scale-preserving path a_S = +0.00 per unit ln T -> behaves like rung 3alpha = 3 (tail slope 0.816)
+gauge coupling 1/g^2 = Re S (+ b Re T) also varies along any path with a_S != 0: holding BOTH the UV scale and 1/g^2 fixed
+needs two conditions on the a_i -> at least three moduli moving together.

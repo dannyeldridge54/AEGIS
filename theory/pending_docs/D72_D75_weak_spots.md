@@ -1497,3 +1497,14 @@ Status: in heterotic M-theory A and B hold and the gauge-coupling part of C can 
 follows T. The frontier is now down to ONE precise obstruction across every setting checked: the matter sector's UV scale tracks the
 rung-3 modulus. Anything that fixes M_GUT/M_P independently of T (a different modulus setting it, or T not being the volume-like
 direction that also sets the interval) would close the gap.
+
+**D184 — the matter-neutral direction and its rung, setting by setting (theory/darkenergy/scale_preserving_d184.py).** Moving several
+moduli together so that the matter sector's UV scale stays fixed defines a path in moduli space; its kinetic term behaves like a single
+disk of rung 3α_eff. Results: type IIB → 3α_eff = 12 (tail slope 0.41, beyond the seven-disk ladder); heterotic M-theory → 3α_eff = 4
+(slope 0.71: w0 ≈ −0.93, wa ≈ −0.11); weakly coupled heterotic → 3α_eff = 3 exactly, with the gauge coupling (Re S) also fixed. So the
+ONLY setting where the matter-neutral direction is the Twist's own rung 3 — with both the scale and the couplings fixed — is weakly
+coupled heterotic (consistent with D152). In the others, keeping both fixed needs at least three moduli moving together.
+Unified frontier: the Twist's natural string home is weakly coupled heterotic; what breaks it is D164 — today's x ≈ 89 maps to strong
+heterotic coupling when the cliff is the basic instanton. Closing the gap = a cliff instanton of action ~9× the basic one (degree ≳ 9,
+or 9-fold wrapping) with no lower-degree contributions (D164 add). Side result: a heterotic-M-theory Twist would sit on rung 4 and
+predict w0 ≈ −0.93, wa ≈ −0.11 — distinguishable from the rung-3 Twist (−0.90, −0.15) by DESI DR3 + Euclid.
