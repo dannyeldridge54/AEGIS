@@ -440,3 +440,26 @@ supersymmetry breaking for the Standard Model must come from elsewhere (gauge-me
 cosmologically allowed); (iii) the minimum must sit where kination leaves the field (≈300 at ~0.2% heat) or x oscillates
 (moduli problem); (iv) the mass estimate is order-of-magnitude (m_x ~ a²x|W₂|e^{K/2}). Status: not ruled out; worth a
 proper two-field calculation if Danny wants this route.
+
+## Development 94 — the stabilised-size route meets the cosmological moduli problem
+
+Script: theory/darkenergy/modulus_problem.py; results/modulus_problem.txt.
+If x is held in a valley at x_s today, it was not there all along: kination leaves it frozen at x_f, and it starts to
+oscillate about x_s when H falls to m_x. Its oscillation then behaves like matter and grows relative to radiation:
+  - m_x = 4×10⁻³ eV (just enough against fifth forces): starts at T ~ 750 GeV; with an amplitude of 1 M_P the relic is
+    ~10¹¹ × the critical density; it must start within 1.3×10⁻⁶ M_P of the valley (x_s = x_f to 1 part in 10⁶).
+  - heavier, non-decaying moduli are worse (1 eV: 3×10⁻⁷; 1 MeV: 10⁻⁸).
+  - very heavy moduli (≳10⁵ GeV) decay before nucleosynthesis, but their decay releases entropy that dilutes the matter
+    asymmetry made at the kick — the matter match (D62) would be lost by a large factor.
+Also: if x_s lies below x_f, the field passes the valley during kination with far more kinetic energy than the valley's
+depth (~m₃/₂²) and overshoots (Brustein–Steinhardt).
+Way out, untested: adiabatic tracking (Linde 1996) — if x carried a Hubble-induced mass well above H all the way from the
+cliff, it would follow its valley and oscillations would be exponentially small; that contradicts the free kination
+roll the reheating and matter results rely on.
+Conclusion for the D92/D93 route: it trades the fifth force for a moduli problem that needs x_s = x_f to ~10⁻⁶ (or a
+tracking mechanism that changes reheating). Ranking of the three options after D90–D94:
+  (2a) separate shielded dark-energy field: clean, gives up "one field does everything" for dark energy;
+  (2b) angle as dark energy with stabilised size (D92–94): elegant, keeps one field, but needs a 10⁻⁶ coincidence or new
+       tracking physics;
+  (3) one-field tail as is: fits data (PURE-TWIST) but has the unsolved fifth-force and loop problems.
+Danny's call. Status recorded: (3), with (2a) and (2b) written up.

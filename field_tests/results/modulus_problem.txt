@@ -1,0 +1,12 @@
+m_x 4e-03 eV: starts at T ~ 7.5e+02 GeV; amplitude 1 M_P -> relic ~ 2e+11 x critical
+m_x 4e-03 eV: starts at T ~ 7.5e+02 GeV; amplitude 0.001 M_P -> relic ~ 2e+05 x critical
+   amplitude must be below 1.3e-06 M_P (x_s/x_f within 1e-06) unless it decays
+m_x 1e+00 eV: starts at T ~ 1.2e+04 GeV; amplitude 1 M_P -> relic ~ 2e+12 x critical
+m_x 1e+00 eV: starts at T ~ 1.2e+04 GeV; amplitude 0.001 M_P -> relic ~ 2e+06 x critical
+   amplitude must be below 3.2e-07 M_P (x_s/x_f within 3e-07) unless it decays
+m_x 1e+06 eV: starts at T ~ 1.2e+07 GeV; amplitude 1 M_P -> relic ~ 2e+15 x critical
+m_x 1e+06 eV: starts at T ~ 1.2e+07 GeV; amplitude 0.001 M_P -> relic ~ 2e+09 x critical
+   amplitude must be below 1.0e-08 M_P (x_s/x_f within 8e-09) unless it decays
+m_x 1e+14 eV: starts at T ~ 1.2e+11 GeV; amplitude 1 M_P -> relic ~ 2e+19 x critical
+m_x 1e+14 eV: starts at T ~ 1.2e+11 GeV; amplitude 0.001 M_P -> relic ~ 2e+13 x critical
+   amplitude must be below 1.0e-10 M_P (x_s/x_f within 8e-11) unless it decays
