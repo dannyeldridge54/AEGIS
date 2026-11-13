@@ -1443,3 +1443,13 @@ runs away (ε_C = 4) and destroys inflation. So T_C needs its own stabilisation 
 Minkowski vacuum (W_C = ∂W_C = 0, so W = 0 at S = 0 and the gravitino stays massless) with m_C ≫ H_inf ≈ 1.5×10¹³ GeV. Then e^{K_C} is a
 constant absorbed into m, and every Twist prediction is unchanged. A second thawing (rung-4) dark-energy field is excluded unless its mass
 were purely Hubble-induced — not the case for a racetrack. One more ingredient (standard in the literature), no change to observables.
+
+**D179 — the octonionic building blocks DO produce the associative/coassociative split (theory/geometry/g2_split_signs_d179.py;
+results/g2_split_search_d179.txt).** Search over every superpotential built only from Gunaydin–Kallosh–Linde–Yamada-type terms — one
+product (T_i − T_j)(T_k − T_l) per coassociative quadruple, any of its 3 pairings, either sign (823,543 combinations) — keeping those
+whose supersymmetric flat directions are exactly T_A (a Fano line) and T_C (its complement), with every term vanishing there.
+Result: 1,824 such superpotentials for each of the 7 lines (equal counts, as the Fano symmetry requires — the check on the code; a
+first version that fixed signs by sorting gave unequal counts and was discarded), the smallest using 4 of the 7 quadruples. So the
+G2-natural 4+3 split — the Twist's rung 3 as the associative (quaternionic) flat direction — arises from the same octonionic
+ingredients GKLY use, not only from the block form of D177. Open: whether the specific signs fixed by the octonion structure constants
+(the coassociative 4-form) are among the 1,824 — the last step to "derived from the octonions" rather than "built from their pieces".
