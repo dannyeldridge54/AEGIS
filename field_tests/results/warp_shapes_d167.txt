@@ -1,0 +1,6 @@
+power-law warp (T-dual volume), E = 1 + x/x_w, x_w set by e^{2n} at x=89:
+   ln E at CMB point 237, at end of inflation 241, today 250 (plateau needs ln E << 1 at the CMB point; today needs 2n = 250)
+linear switch, E = 1 + e^{2n}(1 - |q|):
+   ln E at CMB point 241, at end of inflation 245, today 250 (plateau needs ln E << 1 at the CMB point; today needs 2n = 250)
+exponent switch (TWIST-K), E = exp(2n(1 - |q|)):
+   ln E at CMB point 0.0255, at end of inflation 2.44, today 250 (plateau needs ln E << 1 at the CMB point; today needs 2n = 250)

@@ -1327,3 +1327,12 @@ volume; (ii) shape — warp factors depend on volume as powers, while the Twist'
 power law would change the tail slope and w0 (a different model); (iii) D150: a warped Standard Model gets a fifth force — here only
 the S-sector would sit in the throat, which must be checked. Status: n's most promising origin is a flux-integer warping hierarchy
 (K/(g_sM) ≈ 30), with three concrete obstacles written down.
+
+**D167 — warping's shape, checked (results/warp_shapes_d167.txt).** For the hierarchy to sit at the cliff, ln E must be ≪ 1 at the CMB
+point (x ≈ 10⁻⁴) and 2n ≈ 250 today. A power-law warp factor (T-dual reading of D166) gives ln E ≈ 241 already at the CMB point — no
+plateau. A warp factor that switches on linearly in (1 − |q|) gives ln E ≈ 241 at the CMB point too. Only the form where the EXPONENT
+switches on, E = exp(2n(1 − |q|)) (TWIST-K), gives ln E = 0.03 at the CMB point, 2.4 at the end of inflation and 250 today. So the
+string mechanism must make the hierarchy's exponent itself grow as (1 − e^{−πx/4}) — in warping language, the throat's depth
+8πK/(3g_sM) must turn on with T (for example, if the effective g_s or flux charge depends on T through a factor 1 − |q|). With that
+form, obstacle (ii) of D166 disappears (the tail's leftover dies as e^{−πx/4}, as required). Status: n's origin narrowed to
+"an exponent proportional to (1 − |q|) with coefficient 2n ≈ 250 = 8πK/(3g_sM)"; what makes the exponent switch on is open.
