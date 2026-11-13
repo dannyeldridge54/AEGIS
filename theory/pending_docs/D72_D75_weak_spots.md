@@ -621,3 +621,7 @@ A point in its favour: the Twist's superpotential W = √3 m S F(T) already has 
 the standard stabiliser-field structure), and the added W₀ − A e^{−aT} pieces would break it; so a gauged U(1)_R with a
 constant FI term is structurally available for the inflation sector as written. Whether it survives anomaly cancellation and
 coexists with the SU(8) and supersymmetry-breaking sectors is the concrete next check.
+
+**Matter recheck, second result (10:37).** Reshaped cliff, m2 = 1 (same settings, same script): n_B/s 7.71×10⁻¹¹ (0.887×),
+dilution 5.08, hidden share at end 4×10⁻¹⁹ — vs 1.030× with the old cliff. The reshaped cliff changes the matter yield by
+−14%; m_σ ≈ 5–6×10⁹ GeV still gives the observed amount. (m2 = 4/π case running.)
