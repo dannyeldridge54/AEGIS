@@ -106,7 +106,10 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
    particle heavier than ~6 meV with an x-dependent mass would swamp the tail through loops. Needs the SM and the
    superpartners sequestered from T — not shown; the generic quintessence (Kolda–Lyth) and cosmological-constant
    problems.
-14. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
+14. Link to loop quantum gravity (Development 83): the Barbero–Immirzi superfield is from the literature; its
+   identification with the whole model's modulus, W and F are assumptions. Today the angle sits at y = 0, so the
+   field does not take LQG's black-hole value γ ≈ 0.24 under the mapping used before (1/γ = y/x) — an open mismatch.
+15. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
 
 ## 5. How to reproduce
 

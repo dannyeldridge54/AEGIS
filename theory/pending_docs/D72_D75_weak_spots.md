@@ -245,3 +245,23 @@ The measured rotation 0.28 ± 0.06° (4.9σ, calibration-dependent) is in tensio
      (stable, D79), unmoved since long before last scattering, so the difference is zero.
 Both would have to fail for the Twist to give a rotation. So if a calibration-independent birefringence is confirmed at
 ≥ 5σ, the Twist is falsified on this point — no adjustment available. (Already a stated falsifier.)
+
+## Development 83 — the link to loop quantum gravity: what is derived, what is assumed, and a mismatch today
+
+What is from the literature. Promoting the Barbero–Immirzi parameter to a field (Taveras–Yunes 2008; Calcagni–Mercuri
+2009) and embedding it in N = 1 supergravity with K = −3 ln(T + T̄) (Gates–Ketov–Yunes 2009, arXiv:0906.4978) are
+published constructions. The Twist starts from them, so the α = 1 field space and the slope √(2/3) are inherited.
+
+What the Twist assumes. (1) That this field is the no-scale modulus T of the whole model (inflaton, dark energy). (2) The
+superpotential W = √3 m S F(T) and the shape of F — chosen, not derived from LQG. (3) The Nieh–Yan coupling c_A = √(3/8)
+(D-level choice, COUPLING_CHOICE_NIEH_YAN.md). Nothing in the Twist uses LQG's quantum geometry itself (spin networks,
+area spectrum); the "loop quantum gravity" content is the name and origin of the field.
+
+A mismatch. In LQG the parameter has a value fixed by black-hole entropy, γ ≈ 0.24–0.27. With the mapping used
+earlier (UFE check LQ: real part of the field multiplies R, imaginary part multiplies the Holst term, so 1/γ = y/x),
+the Twist today has y = 0 (the angle sits at its minimum, D79/D82), so 1/γ = 0: the Holst term is switched off today,
+not set to 0.24. With x today ≈ 450 no simple alternative mapping gives 0.24 either (1/x ≈ 0.002). So the Twist does
+not reproduce the LQG value of γ today. Either the mapping is different (open), or γ's black-hole value is not the
+present value of this field (then the link to LQG's entropy counting is lost). Label: open; a reviewer from LQG will
+ask this first. (The older UFE-LQ "match" of 0.259 was for a different, superseded model in which the angle carried
+the late-time field.)
