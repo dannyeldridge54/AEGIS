@@ -11,3 +11,7 @@ far-out draw is the likely cause of the segfault. Fix: re-centre EVERY sampled p
 ref scale, else 10⁻³·max(|value|, 10⁻³)), and max_tries 1000. Also the job log printed "exit 0" for every chain because $? was read after
 $(date) — logging only; fixed to capture the exit code first. Code-only; likelihoods, priors, data and the stopping rule are unchanged; the
 chains are estimation-only and have produced no samples, so nothing is being re-run to chase a result.
+D2 add (17:00): the first restart could not resume (Cobaya failed to re-read the old info file: "cannot find 'ClassyTwist' in module
+early_late_spa"); the old output held no samples (.progress 85 bytes, no chain files), so it was moved to _to_delete/spa_chain_D2/ on the PC
+and both chains started fresh at ~16:55 with the D2 start point. PC load at restart: four flag_mcmc.py jobs running for 2 d 7 h (~2 cores each)
+plus the three matter checks, so evaluations are slow; the 21:01 scheduled check reports progress.
