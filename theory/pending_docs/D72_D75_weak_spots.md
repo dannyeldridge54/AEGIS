@@ -60,3 +60,43 @@ distance conjecture says towers of states get light as e^{−λΔφ}, λ ~ O(1),
 far before 15 M_P. Every α-attractor + quintessence-from-one-field model (and most large-excursion models) has the
 same issue. Label: open, generic. Note that inflation itself only spans ~5 M_P; the rest is the post-inflation
 roll to the tail.
+
+## Development 76 — the twist angle y: heavy during inflation, unstable in the middle of the tail
+
+Scripts: theory/inflation/plateau_checks.py, angle_valley.py; results/plateau_checks.txt, angle_valley.txt.
+
+What we checked. With S = 0 the landscape is V(x, y) = m²|F(x + iy)|²/(4x²). We computed the mass of the angle y
+(canonical, with the same weight 3/(4x²) as x) along the whole path.
+
+Plateau. m_y² = 4H² from x = 10⁻⁵ to 10⁻², so y is heavy all through inflation: it stays at y = 0, leaves no
+isocurvature of its own and does not bend the path. Good.
+
+After the cliff. Along y = 0 the landscape is a ridge, not a valley: m_y²/H² ≈ 2 − 8n x²/(x+1)³ (H² = V/3), i.e.
+−3.5 at x = 0.1, −121 at x = 1, −28 at x = 30, crossing zero at x ≈ 500 (= 4n) and +1.7 at x = 3000. The cause is
+the factor e^{−nT/(T+1)}: its size falls when T gets an imaginary part. The true valley lies at large y (y ≈ 23 at
+x = 0.1, ≈ 120 at x = 30), hundreds of Planck lengths away in canonical distance, so the field cannot reach it;
+the question is only whether small y grows.
+
+Why it is probably harmless, and the condition. (1) Between the cliff and today the universe is dominated by
+radiation and matter, whose H is far larger than the tail's own √(V/3), so y is frozen by Hubble friction exactly as x
+is. (2) Today the tail dominates, so what matters is x today. The tail has the slope √(2/3) that PURE-TWIST assumes
+only for x ≳ 3000 (slope 1.08×√(2/3) at 3000, 1.25× at 1000, 8.8× at 30). In that same range y is stable
+(m_y² ≈ +1.7H²). So the assumption the late-time fits already make (tail on its √(2/3) slope) also makes y stable.
+Condition recorded: x today ≳ 3000 (equivalently: the kination after the cliff carries x that far). Not yet shown
+from the dynamics. Open too: the hidden-axion kick gives y a velocity at the cliff, where y is tachyonic; a two-field
+run of the cliff with the full V(x, y) should check how far y moves (it would need to move ~20 in T units to fall into
+the valley, which looks impossible, but it is not computed).
+
+Correction to D75: with x today ≳ 3000 the field distance from the CMB point is about 21 M_P (not 15–18).
+
+## Development 77 — loop corrections from the reheating field: χ must be supersymmetric
+
+What we checked. χ couples as g²(φ − φ₀)²χ²/2 with g ≈ 0.1. On the plateau the CMB point is 5.1 M_P from the end of
+inflation, so χ is very heavy there (M = g|φ − φ₀| ≈ 0.5 M_P) and its quantum (Coleman–Weinberg) energy is huge.
+
+Result. Without supersymmetry: ΔV/V ≈ 2×10⁷ — the plateau is destroyed; keeping the n_s shift below 0.001 would need
+g < 2×10⁻⁴, far too small for preheating. With χ in a chiral multiplet the boson and fermion pieces cancel and only
+the Hubble-size mass splitting is left: ΔV/V ≈ 1%, Δη ≈ +0.001, so n_s moves up by about +0.002 (order-of-magnitude:
+the coefficient depends on how χ couples in supergravity). Route (taken): χ is a chiral superfield coupled through the
+superpotential, as standard in supergravity preheating. Consequence: n_s ≈ 0.964 may sit nearer 0.966 — still far
+from 0.974. Label: estimate; a full one-loop supergravity calculation is open.

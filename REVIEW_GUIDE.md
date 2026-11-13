@@ -80,9 +80,14 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
    the log with ζ ≳ 10⁴ (m_S²/H² ≈ −2 + 8ζx on the plateau; S is stable after the cliff anyway) makes it heavy and leaves every number at S = 0 unchanged (Development 72, chosen).
 7. Ordinary matter must not feel the tail field: natural bulk weights give a fifth force ×120–360 over Cassini, so
    the Standard Model must be sequestered (D3 branes, T-independent Higgs sector). An assumption (Development 73).
-8. The field moves Δφ ≈ 15–18 M_P from the CMB point to today, in tension with the swampland distance conjecture —
+8. The field moves Δφ ≈ 21 M_P from the CMB point to today, in tension with the swampland distance conjecture —
    generic to one-field inflation-plus-quintessence models; open (Development 75).
-9. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
+9. The twist angle y is heavy during inflation (m_y² = 4H²) but tachyonic on the tail for x ≲ 500; it is stable
+   today only if x today ≳ 3000, which is also what the √(2/3) slope needs — a condition, not yet derived from the
+   dynamics (Development 76).
+10. The reheating field χ must be supersymmetric, or its loop energy destroys the plateau; with it, n_s shifts by
+   about +0.002 (estimate, Development 77).
+11. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
 
 ## 5. How to reproduce
 

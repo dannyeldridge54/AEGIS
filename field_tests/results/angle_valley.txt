@@ -1,0 +1,17 @@
+x    0.03: valley at y =    22.623 (y/x  754.11), V_valley/V(y=0) = 1.658e-101
+x    0.10: valley at y =    23.375 (y/x  233.75), V_valley/V(y=0) = 8.404e-96
+x    0.30: valley at y =    25.399 (y/x   84.66), V_valley/V(y=0) = 1.837e-81
+x    1.00: valley at y =    31.464 (y/x   31.46), V_valley/V(y=0) = 5.371e-53
+x    3.00: valley at y =    44.384 (y/x   14.79), V_valley/V(y=0) = 2.347e-26
+x   10.00: valley at y =    73.054 (y/x    7.31), V_valley/V(y=0) = 1.806e-09
+x   30.00: valley at y =   120.069 (y/x    4.00), V_valley/V(y=0) = 2.215e-03
+x  100.00: valley at y =   199.738 (y/x    2.00), V_valley/V(y=0) = 3.136e-01
+
+slope of ln V vs canonical distance along the valley (y = 0 line gives sqrt(2/3) x correction):
+  x   0.03-  0.10: valley slope 0.167, y=0 slope 11.760 (sqrt(2/3) = 0.816)
+  x   0.10-  0.30: valley slope 0.170, y=0 slope 28.685 (sqrt(2/3) = 0.816)
+  x   0.30-  1.00: valley slope 0.191, y=0 slope 51.358 (sqrt(2/3) = 0.816)
+  x   1.00-  3.00: valley slope 0.231, y=0 slope 51.597 (sqrt(2/3) = 0.816)
+  x   3.00- 10.00: valley slope 0.342, y=0 slope 30.922 (sqrt(2/3) = 0.816)
+  x  10.00- 30.00: valley slope 0.537, y=0 slope 12.818 (sqrt(2/3) = 0.816)
+  x  30.00-100.00: valley slope 0.909, y=0 slope 5.133 (sqrt(2/3) = 0.816)
