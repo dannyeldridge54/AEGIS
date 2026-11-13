@@ -25,11 +25,12 @@ def V(K, W, T, S):
     D = [WT + KT * w, WS + KS * w]
     F = sum(Gi[i, j] * D[i] * mp.conj(D[j]) for i in range(2) for j in range(2))   # K^{i jbar} D_i W conj(D_j W)
     return mp.re(mp.exp(k(T, Tb, S, Sb)) * (F - 3 * abs(w) ** 2)), G[1, 1]
-for x in ("1.3e-4", "0.01", "1", "89"):
-    T = mp.mpf(x); out = []
-    for lab, new in (("old", False), ("new", True)):
-        K, W = setup(new); s = mp.mpf("1e-6")
-        v0, kss = V(K, W, T, mp.mpf(0)); vp, _ = V(K, W, T, s); vm, _ = V(K, W, T, -s)
-        Vss = (vp - 2 * v0 + vm) / (s * s)
-        out.append(f"{lab}: m_S^2/H^2 {float(Vss / (2 * kss) / (v0 / 3)):.4g}")
-    print(f"x {x}: " + "   ".join(out))
+if __name__ == "__main__":
+    for x in ("1.3e-4", "0.01", "1", "89"):
+        T = mp.mpf(x); out = []
+        for lab, new in (("old", False), ("new", True)):
+            K, W = setup(new); s = mp.mpf("1e-6")
+            v0, kss = V(K, W, T, mp.mpf(0)); vp, _ = V(K, W, T, s); vm, _ = V(K, W, T, -s)
+            Vss = (vp - 2 * v0 + vm) / (s * s)
+            out.append(f"{lab}: m_S^2/H^2 {float(Vss / (2 * kss) / (v0 / 3)):.4g}")
+        print(f"x {x}: " + "   ".join(out))

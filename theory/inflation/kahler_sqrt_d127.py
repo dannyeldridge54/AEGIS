@@ -9,9 +9,10 @@ MU, NN, m2 = 1, 125, 4 / mp.pi
 cl = lambda T: mp.exp(-NN * (1 - mp.exp(-T / m2)))
 V_old = lambda x, y: abs(mp.mpc(x, y) * cl(mp.mpc(x, y))) ** 2 / (4 * x * x * abs(1 + mp.mpc(x, y) / MU))
 V_new = lambda x, y: abs(mp.mpc(x, y) * cl(mp.mpc(x, y))) ** 2 / (4 * x * x * (1 + x / MU))
-for x in (mp.mpf("1.3e-4"), mp.mpf("1e-3"), mp.mpf("0.01"), mp.mpf("0.1"), mp.mpf(1), mp.mpf(89)):
-    out = []
-    for lab, V in (("old", V_old), ("new", V_new)):
-        d2 = mp.diff(lambda y: V(x, y), 0, 2)
-        out.append(f"{lab}: m_y^2/H^2 {float(d2 / (3 / (4 * x * x)) / (V(x, 0) / 3)):+.4f}")
-    print(f"x {float(x):.1e}: " + "  ".join(out) + f"   V equal at y=0: {mp.almosteq(V_old(x,0), V_new(x,0))}")
+if __name__ == "__main__":
+    for x in (mp.mpf("1.3e-4"), mp.mpf("1e-3"), mp.mpf("0.01"), mp.mpf("0.1"), mp.mpf(1), mp.mpf(89)):
+        out = []
+        for lab, V in (("old", V_old), ("new", V_new)):
+            d2 = mp.diff(lambda y: V(x, y), 0, 2)
+            out.append(f"{lab}: m_y^2/H^2 {float(d2 / (3 / (4 * x * x)) / (V(x, 0) / 3)):+.4f}")
+        print(f"x {float(x):.1e}: " + "  ".join(out) + f"   V equal at y=0: {mp.almosteq(V_old(x,0), V_new(x,0))}")

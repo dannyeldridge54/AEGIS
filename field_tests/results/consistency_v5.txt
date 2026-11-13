@@ -1,0 +1,5 @@
+V_new == V_old for real T: True
+inflation (instant-reheating N*): N* 55.7, n_s 0.9642, r 0.0038; with kination dN ~ +1.9 (D84) n_s ~0.965
+tail at 0.8% heat: frozen x 72.7, today x 88.9, w0 -0.9018, wa -0.1421
+CMB point (x 0.000134): m_y^2/H^2 +8.000, m_S^2/H^2 30.26  (both must be > 0; S >> 1)
+today (x 88.9): m_y^2/H^2 +8.000, m_S^2/H^2 2638  (both must be > 0; S >> 1)
