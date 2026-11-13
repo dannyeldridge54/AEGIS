@@ -1,0 +1,5 @@
+rho_DE = 7.29e-121 M_P^4
+SU(8) cosine height 1e-18 M_P^4 at the cliff -> e^(-A x) L4 = rho_DE at x = 299
+SU(8) cosine height 3e-18 M_P^4 at the cliff -> e^(-A x) L4 = rho_DE at x = 301
+SU(8) cosine height 1e-17 M_P^4 at the cliff -> e^(-A x) L4 = rho_DE at x = 302
+kination freeze point with the reshaped cliff (cliff_v2, m2 = 4/pi): x ~ 1450 / 446 / 145 at heat 0.04 / 0.13 / 0.4%

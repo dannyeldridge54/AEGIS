@@ -408,3 +408,23 @@ periodic in y with period 8, D79, with a height suppressed like e^{−πx/4} —
 settles); (c) f from the kinetic weight at the settled x (1.56 M_P was computed elsewhere on the path); (d) θ_i from the kick.
 Label: lead, exploratory. If it works it removes both severe problems while keeping the one-field claim. Danny's call
 whether to develop it (it changes the late-time model).
+
+## Development 93 — working on D92: where the angle's dark-energy height comes from, and what still blocks it
+
+Results: field_tests/results/angle_de_scale.txt.
+(1) The height. After σ decays, the SU(8) linking term leaves the angle a potential Λ⁴e^{−(π/4)x}[1 − cos(πy/4)] — periodic
+with the angle's own period 8. With the height the matter kick needs at the cliff (Λ⁴ ≈ 10⁻¹⁸–10⁻¹⁷ M_P⁴, D68/D70), this
+equals today's dark energy (7.3×10⁻¹²¹ M_P⁴) when x ≈ 299–302. The reshaped cliff's kination run leaves the field at
+x ≈ 446 / 145 for heat share 0.13% / 0.4% — x ≈ 300 corresponds to a heat share of about 0.2%, inside the computed range.
+So the same term that makes matter would, at the size where kination leaves the field, have the height of dark energy:
+the dark-energy scale would follow from the matter sector instead of being chosen (n would no longer set it; the size
+half's own leftover e^{−2n} must then be smaller, n ≳ 124). Caution: one coincidence, found by looking; not support yet.
+(2) The block. For no fifth force the size half must be heavy (range < ~50 μm, m_x ≳ 4×10⁻³ eV) with its minimum at
+x ≈ 300 and its own energy there ≈ 0. A light, merely frozen x still gives the β ≈ 0.4 force (D90). So the route needs a
+stabilising potential for x whose minimum sits at the kination freeze point — a coincidence of two scales unless one
+mechanism sets both — and whose zero is tuned (the cosmological-constant problem moves there). If the minimum is not where
+the field arrives, x oscillates with Planckian amplitude and becomes a moduli problem (dilutes the matter made at the kick).
+(3) Where it stands. Better than D80/D90 (no fifth force from the angle, loop-protected potential, dark-energy scale tied
+to matter), but it trades them for a stabilisation problem for x. Next concrete steps, if pursued: a superpotential term
+that gives x a minimum near 300 without touching the plateau; the angle's resting value θ_i after the kick (decides w₀,
+w_a); f at x ≈ 300. Label: lead, exploratory.
