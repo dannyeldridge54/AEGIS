@@ -1565,3 +1565,12 @@ sums in the metric. Remaining honest options for n: (i) a IIB construction that 
 far from the volume modulus, sequestered — a known but model-dependent escape); (ii) heterotic/F-theory duality, where the IIB flux
 integers map to heterotic bundle data — whether the exponent survives the map is the precise open question; (iii) accept n as a
 chosen number (as now). (ii) is the most promising next lead.
+
+**D191 — heterotic/F-theory duality as a home for warped n (reasoned assessment, not computed).** IIB/F-theory three-form flux maps under
+the standard duality chain (Dasgupta–Rajesh–Sethi hep-th/9908088; Becker–Becker–Dasgupta–Green hep-th/0301161) to heterotic compactifications
+on non-Kähler manifolds with torsion; the flux integers become torsion/H-flux and bundle data. The heterotic torsional throats that
+exist at weak coupling (D190) have power-like warping. An exponentially deep IIB throat therefore maps, as far as the literature shows,
+to a heterotic region that is either strongly coupled or outside the perturbative torsional description — the same place D164 already
+put the Twist. **Verdict:** no gain at weak heterotic coupling; the exponent does not obviously survive. Status of n: no derivation
+route is open in the weakly coupled heterotic home. Ranked remaining: (1) IIB with sequestered D3-brane matter (evades D151 for matter
+on distant branes, but must then rebuild the shield for the volume modulus — a concrete next construction); (2) accept n as chosen.

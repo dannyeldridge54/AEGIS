@@ -139,3 +139,15 @@ seeing the n_s data, so only future CMB results can score it; TWIST-P is the alt
   as (1 − e^{−πx/4}) (D165–D167).
 - **Strong CP:** the angle could relax θ_QCD but would overproduce axion dark matter ~4×10⁵-fold; it cannot self-relax before QCD (D172).
 - **Neutrino masses:** the seesaw scale (6×10¹²–6×10¹⁴ GeV) matches the Twist's hidden-confinement and reheating scales (D173, lead).
+
+## 10. Added 13 Nov evening (D174–D191)
+- **Tier 2 checks pass** (D174). **Octonions (D175–D181):** only rungs 1, 3, 7 close under octonion multiplication — rung 3 is the
+  quaternion rung; but the seven-disk/octonion link is Duff–Ferrara/GKLY and they realise every rung, so the "division rung" rule is a
+  conjecture, not a derivation. The associative/coassociative 4+3 split needs a superpotential GKLY's exact W cannot give.
+- **String home narrowed (D184–D191):** the matter-neutral direction is rung 3 only in weakly coupled heterotic (heterotic M-theory gives
+  rung 4, IIB gives 12). The heat-share route is closed; the dilaton Y must be stabilised. A Z₉ selection rule can enforce the
+  degree ≳ 9 cliff (D188) but the selected instanton sum (computed to degree 19) moves the matter metric by ~2×10⁻⁴, not 250 (D189).
+  The only exponential route to n found (flux warping) is type IIB; heterotic throats warp only as a power (D190), and duality does not
+  obviously carry the exponent to weak heterotic coupling (D191). **n has no derivation route in the heterotic home; it stays chosen.**
+- **Rung 4 vs rung 3 (D187):** a heterotic-M-theory variant would give w0 −0.925, σ8 −1.1%, fσ8 −2.4% — about 70–75% of the Twist's
+  signals; DESI DR3 + Euclid separate them at only ~1σ.
