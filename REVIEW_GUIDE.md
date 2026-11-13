@@ -55,7 +55,7 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 | Neutrinos: normal ordering, Σm_ν 0.059–0.064 eV, Majorana | derived (from the matter mechanism) | Development 69 | testable by JUNO, cosmology, 0νββ |
 | w_a for the theory's own β = 0 version | derived | `theory/darkenergy/tail_bend_wa.py` | between about −0.15 and 0 (w₀ ≥ −0.90); the tail's bend only moves w toward −1 |
 | Full tail at the computed heat share | locked | `PREREG_TAIL_F.md`, `tail_f.json` | **DISFAVOURED** (Δχ² +29.2); free heat share → 0.01% (PURE-TWIST limit) |
-| Gravitational-wave propagation | derived | Development 107 | no extra friction, no GW birefringence today (ξ = 0); testable by Einstein Telescope + Cosmic Explorer dark sirens |
+| Gravitational-wave propagation | derived, locked | Development 107, `PREREG_GW_FRICTION.md` | no extra friction, no GW birefringence today (ξ = 0); testable by Einstein Telescope + Cosmic Explorer dark sirens |
 | Birefringence β = 0 | locked | `PREREG_BIREF_NULL.md` | pending; measured 0.28 ± 0.06° (4.9σ tension) |
 | Six lab nulls | locked | `PREREG_LAB_NULLS.md` | consistent with all bounds |
 | Growth (fσ₈ −3%, E_G +5%) | frozen | `pure_twist_growth.json` | pending DESI full-shape, Euclid |
