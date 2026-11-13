@@ -101,7 +101,11 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
    computed 0.13% the full tail gives w₀ ≈ −0.74, w_a ≈ −0.34 (D78b). A correction to Backlog L, which kept only the μ factor.
 12. The cliff factor exp(−n(1 − e^{−πT/4})) (Development 79) was chosen after TAIL-F; its SU(8)-condensate form and
    period-8 angle are motivation, not derivation.
-13. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
+13. Quantum stability of the tail (Development 80): tree level is safe (no-scale cancels any constant W₀), but any
+   particle heavier than ~20 meV with an x-dependent mass would swamp the tail through loops. Needs the SM and the
+   superpartners sequestered from T — not shown; the generic quintessence (Kolda–Lyth) and cosmological-constant
+   problems.
+14. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
 
 ## 5. How to reproduce
 

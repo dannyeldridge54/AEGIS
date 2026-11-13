@@ -1,0 +1,6 @@
+rho_DE = 2.6e-11 GeV^4
+  one loop of a electron whose mass depends on x: ~ 1.1e-16 GeV^4 = 10^-5 x rho_DE
+  one loop of a muon whose mass depends on x: ~ 2.0e-07 GeV^4 = 10^4 x rho_DE
+  one loop of a TeV superpartner whose mass depends on x: ~ 1.6e+09 GeV^4 = 10^20 x rho_DE
+  one loop of a gravitino 1e5 GeV whose mass depends on x: ~ 1.6e+17 GeV^4 = 10^28 x rho_DE
+  heaviest particle allowed an x-dependent mass (10% of rho_DE): ~ 6343113 meV

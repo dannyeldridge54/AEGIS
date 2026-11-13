@@ -204,3 +204,19 @@ Consequence for the tests. The new version's tail is PURE-TWIST, so PURE-TWIST's
 full model at its computed heat share; but this was arranged after TAIL-F, so new data (DESI DR3, Euclid) are the real
 test. Inflation's locked predictions (n_s, r) are untouched. Matter: the end of inflation is unchanged for m2 = 1 and
 rescaled in x for m2 = 4/π (x_end 8.8×10⁻³ vs 7.0×10⁻³); the kick and yield are expected to be unchanged — to be rechecked.
+
+## Development 80 — quantum stability of the tail and supersymmetry breaking today (open, severe, generic)
+
+Script: inline arithmetic, results/tail_quantum.txt.
+
+Tree level is safe. Adding a constant W₀ (the source of today's gravitino mass, m₃/₂ = |W₀|/(2x)^{3/2}) leaves the
+potential unchanged at S = 0: the no-scale structure cancels K^{TT̄}|D_TW|² against −3|W|² exactly, so the tail keeps
+its shape whatever W₀ is. (The S field's own F-term breaks supersymmetry only at the meV scale, √ρ_DE.)
+
+Loops are not. Any particle whose mass depends on x adds ~m⁴/(64π²) to the vacuum energy with an x-dependence, which
+would swamp the tail: an electron 10³⁴ × ρ_DE, a TeV superpartner 10⁵⁸ ×. Only particles lighter than ~20 meV may have
+x-dependent masses. So the theory needs (a) the Standard Model sequestered from T (as D73 already requires) and (b)
+superpartner masses that do not depend on x — e.g. supersymmetry breaking in a sequestered sector with no-scale
+cancellation surviving at one loop. Neither is shown. This is the Kolda–Lyth problem shared by every quintessence
+model with a rolling modulus, and the cosmological-constant problem behind it is not solved here either.
+Label: open, generic, severe. Stated in REVIEW_GUIDE assumptions.
