@@ -758,3 +758,11 @@ locked falsifier: n_s ≈ 0.973 (confirmed) rules out the no-scale base of the t
 two-body width λ²m/(8π) (or /16π) that is BR ≈ 1.1–2.1×10⁻⁷ (m_χ/M_P)⁴ ≈ 0.8–1.5×10⁻¹² at m_χ ≈ 0.052 M_P — i.e. c̃ ≈ 0.04–0.08
 in the earlier form. Then **m_DM ≈ 2.5–5×10⁵ GeV (250–500 TeV)** in the χ̃-decay route. Remaining uncertainties: the fermion
 share and m_χ at decay (BR ∝ m_χ⁴), each worth a factor of a few. Coverage and paper updated to "hundreds of TeV".
+
+## Development 109 — the n ≈ 124 leads checked: no consistent identification
+
+Results: field_tests/results/n_leads_check.txt. If the cliff depth were an instanton action, n = 2π/α would need α ≈ 1/19.7;
+the MSSM unified value (~1/24.3) gives n ≈ 153, which misses today's dark energy by e^{−58}. Tying n to the hidden SU(8)'s
+own cycle (D70, τ ≈ 27–37) gives n ≈ 170–232 for one instanton, or needs τ ≈ 158 for an SU(8) condensate — neither matches
+the τ ≈ 30 the kick needs. Conclusion: D87's "α ≈ 1/20" and the SU(8) links do not survive a consistency check; n stays
+**chosen**. Dropped as leads (kept on record).

@@ -1,0 +1,4 @@
+n = 2 pi / alpha  -> alpha = 1/19.7   (MSSM unification ~1/24.3 would give n = 153)
+if n = 2 pi tau (one instanton on a cycle of size tau): tau = 19.7  (D70 hidden cycle tau 27-37 -> n 170-232)
+if n = (pi/4) tau (an SU(8) condensate on that cycle): tau = 158
+dark energy with n = 152.7 (alpha_GUT) instead of 123.8: off by e^-58
