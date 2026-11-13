@@ -1,0 +1,8 @@
+start -4.0 from the bend: w0 -1.000, wa -0.000, w today -1.000, slope seen today 0.04 x sqrt(2/3)
+start -2.0 from the bend: w0 -0.997, wa -0.004, w today -0.997, slope seen today 0.17 x sqrt(2/3)
+start -1.0 from the bend: w0 -0.990, wa -0.014, w today -0.990, slope seen today 0.32 x sqrt(2/3)
+start +0.0 from the bend: w0 -0.974, wa -0.039, w today -0.973, slope seen today 0.52 x sqrt(2/3)
+start +1.0 from the bend: w0 -0.950, wa -0.074, w today -0.949, slope seen today 0.72 x sqrt(2/3)
+start +2.0 from the bend: w0 -0.928, wa -0.105, w today -0.927, slope seen today 0.86 x sqrt(2/3)
+start +4.0 from the bend: w0 -0.906, wa -0.136, w today -0.905, slope seen today 0.97 x sqrt(2/3)
+start +8.0 from the bend: w0 -0.900, wa -0.145, w today -0.899, slope seen today 1.00 x sqrt(2/3)
