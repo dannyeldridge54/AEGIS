@@ -1,0 +1,11 @@
+End of inflation: H = 5.21e+12 GeV, phidot = 3.03e-06 M_P^2 (sqrt = 4.24e+15 GeV)
+  dphi 0.1 M_P, g 0.01: efficiency f = 4.63e-06, T_RH = 6.79e+13 GeV
+  dphi 0.1 M_P, g 0.03: efficiency f = 7.22e-05, T_RH = 1.35e+14 GeV
+  dphi 0.1 M_P, g 0.1: efficiency f = 1.47e-03, T_RH = 2.86e+14 GeV
+  dphi 0.1 M_P, g 0.3: efficiency f = 2.28e-02, T_RH = 5.69e+14 GeV
+  dphi 0.1 M_P, g 1.0: efficiency f = 4.63e-01, T_RH = 1.21e+15 GeV
+  dphi 1.0 M_P, g 0.01: efficiency f = 4.63e-05, T_RH = 1.21e+14 GeV
+  dphi 1.0 M_P, g 0.03: efficiency f = 7.22e-04, T_RH = 2.40e+14 GeV
+  dphi 1.0 M_P, g 0.1: efficiency f = 1.47e-02, T_RH = 5.09e+14 GeV
+  dphi 1.0 M_P, g 0.3: efficiency f = 2.28e-01, T_RH = 1.01e+15 GeV
+  dphi 1.0 M_P, g 1.0: efficiency f = 1.00e+00, T_RH = 1.46e+15 GeV
