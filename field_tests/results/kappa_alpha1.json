@@ -1,0 +1,47 @@
+{
+ "rule": "PREREG_KAPPA_ALPHA1.md",
+ "gate": {
+  "LCDM_FULL_recomputed": 1401.1758319819446,
+  "stored": 1401.1758319819446,
+  "pass": true
+ },
+ "K816": {
+  "dAIC_FULL": -4.297,
+  "dP_DESI": -6.721,
+  "dP_SDSS": 0.897,
+  "d_SDSS": -3.035
+ },
+ "FLAG1": {
+  "dAIC_FULL": -3.324,
+  "dP_DESI": 10.88,
+  "dP_SDSS": 10.376,
+  "d_SDSS": -1.195
+ },
+ "K_VS_FLAG1": {
+  "dAIC_FULL": -0.973,
+  "dP_DESI": -17.601,
+  "dP_SDSS": -9.479,
+  "d_SDSS": -1.84
+ },
+ "params": {
+  "FULL": [
+   0.67683,
+   0.02246,
+   0.11794,
+   0.03421
+  ],
+  "NOBAO": [
+   0.67632,
+   0.02246,
+   0.11791,
+   0.03338
+  ],
+  "SDSS": [
+   0.66906,
+   0.02246,
+   0.11781,
+   0.02006
+  ]
+ },
+ "reading": "NOT PREDICTIVE"
+}
