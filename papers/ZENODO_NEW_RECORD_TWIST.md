@@ -24,3 +24,27 @@ AI-assisted (Claude, Anthropic); the author takes full responsibility.
 
 Keywords: Barbero-Immirzi parameter; no-scale supergravity; alpha-attractors; inflation; baryogenesis; thawing quintessence;
 dark energy; DESI DR2; pre-registration
+
+---
+## Description v2 (13 Nov afternoon) — replaces the above once {MSIGMA} is filled from D124/D129
+Files: the refreshed PDF (new export) + MODEL_CARD_v5.md content is in the PDF's addendum.
+
+We study whether one field — the Barbero–Immirzi parameter promoted to an N = 1 supergravity superfield with the no-scale
+Kähler potential K = −3 ln(T + T̄) (Gates, Ketov & Yunes 2009) — can run inflation, make the matter–antimatter asymmetry,
+and act as today's dark energy. Plateau inflation gives n_s ≈ 0.965 (0.965–0.968 with loops) and r ≈ 0.0035. A cliff
+exp(−n(1 − e^{−πT/4})), whose 4/π comes from a hidden SU(8), ends inflation; the whole superpotential W = √3 m S T(cliff)
+follows from a Z₂ racetrack of two hidden gauge groups, which also keeps the gravitino massless and explains the inflaton
+mass by a weak gauge coupling; the cliff depth n ≈ 125 is chosen and plays the role of the cosmological constant. Instant
+preheating heats ~0.8% of the energy; a hidden SU(8) axion kicks the twist angle and lepto-axiogenesis makes the observed
+baryon asymmetry for a hidden mass ≈ {MSIGMA} GeV; dark matter is a gravity-only fermion of ≈ 100–500 TeV (conditional).
+The tail is thawing dark energy: w₀ ≈ −0.90, w_a ≈ −0.14, insensitive to the heat share. Every data test was fixed and
+SHA-256 hashed before its fit. PURE-TWIST fits DESI DR2 BAO + supernovae + CMB better than ΛCDM with no extra parameters
+(Δχ² −3.4 compressed; −3.85 with full Planck PR4) and beats ΛCDM on DES Y5, Union3 and DES-Dovekie supernovae; the
+look-elsewhere correction leaves 0.7–1.7σ globally. Results against the model are reported at full size: the full model with
+its original cliff failed a locked test (Δχ² +29) and the cliff was reshaped afterwards (stated as post hoc); a pre-registered
+matter check missed its prediction (7.5× against 2–3×); two hypotheses (γ = 1/4, a derivation of n) failed. Seven added
+assumptions are listed in a model card — among them that the Standard Model sits outside the supergravity sector (removing
+the fifth force) and that the reheating field's mass saturates (keeping the tail quantum-stable). Frozen predictions for
+DESI DR3, Euclid, LiteBIRD and Simons Observatory are listed. Scripts, locked rules and every number:
+https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md, papers/MODEL_CARD_v5.md).
+AI-assisted (Claude, Anthropic); the author takes full responsibility.
