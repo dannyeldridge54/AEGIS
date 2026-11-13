@@ -2004,3 +2004,12 @@ per M_P. For comparison, every string leak estimated today was O(10⁻⁴–10) 
 ~10⁻⁸ in α already; the instanton-only breaking of PREREG_SHIELD item 1 (β ~ 10⁻⁷⁹) passes with enormous margin, while ANY perturbative leak
 must be suppressed below 10⁻⁸ today — which is why the perturbative leak was required to fall as 1/x⁴ (D142). Nuclear clocks are the experiment
 that will test the shield most directly in the next decade.
+
+**D226 — a risk to the dark-energy evidence: a higher optical depth (literature, Jhaveri–Karwal–Hu arXiv:2504.21813).** The CMB+BAO tension
+(BAO prefer low Ω_m, which pushes the inferred neutrino mass below the oscillation floor) can be removed if the reionisation optical depth is
+τ ≈ 0.091 ± 0.011 instead of the low-ℓ EE value ~0.054–0.065 (trade-off ΔM_ν ≈ 5Δτ). In that case the CMB+BAO preference for w0–wa dark energy
+drops below 95% CL; the supernova preference remains (and remains in tension with BAO). For the Twist: (i) its BAO + SN advantage (−3.2,
+D158) is partly the same BAO pull, so a high-τ resolution would weaken the dark-energy case for the Twist as for every thawing model; (ii) the
+SN-driven part would survive; (iii) n_s is positively correlated with τ in CMB fits, so a higher τ would, if anything, raise the inferred n_s
+further (not quantified in the paper) — bad for the plain Twist, neutral for TWIST-G−/L. A direct τ measurement (LiteBIRD, CLASS, ground
+low-ℓ) therefore bears on both of the Twist's main data questions at once. Recorded as a known systematic, not a result.
