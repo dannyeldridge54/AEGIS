@@ -108,3 +108,5 @@ f_EDE = 0.078 / H₀ = 70.6 (withdrawn, unconverged engine); the N = 9 "width mo
 `MODEL_v2.md`, `ufe-v2/UFE_MODEL.md`, the Oct 30 FINISH_PLAN / MATH_SHEET on the Desktop; "TF-P never ran" (it ran
 3 Nov; results were only on the PC until 7 Nov).
 | BIREF-NULL | Locked 13 Nov 01:27 CT (driver, standing authority). Twist predicts beta = 0; today's ACT+Planck 0.277 +/- 0.057 deg is a 4.9 sigma tension (context, not scored). Scores the first future calibration-independent measurement with error <= 0.10 deg. | pending |
+| V6-PR4 | Scored 13 Nov 02:21 CT (PC). FLAG-1 vs LCDM on Planck PR4 (NPIPE CamSpec) + DESI DR2 + Pantheon+ + DES Y6 S8: delta chi2 = -7.808 (PR3 fit-C was -3.911). FLAG-1: H0 67.01, Omega_m 0.314, sigma8 0.802, beta 0.040. LCDM: H0 68.00, Omega_m 0.305. Reading as computed: HOLDS ON PR4. | HOLDS ON PR4 |
+| NS-PURE | First run crashed (setup recursion) before fitting, 13 Nov 02:28; fixed per NS_PURE_DEVIATIONS.md D1 and restarted 04:48 CT. | pending |
