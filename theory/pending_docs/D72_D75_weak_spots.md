@@ -463,3 +463,9 @@ tracking mechanism that changes reheating). Ranking of the three options after D
        tracking physics;
   (3) one-field tail as is: fits data (PURE-TWIST) but has the unsolved fifth-force and loop problems.
 Danny's call. Status recorded: (3), with (2a) and (2b) written up.
+
+**Matter recheck, first result (old cliff reproduced, 10:00).** Same nominal settings as the 09:00 check (μ = 1, f = 0.0013,
+m_σ = 6×10⁹ GeV, y = 0.1, cliff-switchable copy of hidden_kick_decay.py): n_B/s 8.96×10⁻¹¹ (1.03×), dilution 4.48 —
+vs 0.87× and dilution 5.32 in confirm_f0013_m6e9.txt. The two runs differ by 18%; the 09:00 command line was not saved, so
+some setting (probably s0, the hidden field's start) must have differed. Both are within ~15% of 1×, so m_σ ≈ 5–6×10⁹ GeV
+stands; the old-vs-new-cliff comparison below uses one script and one set of settings, so it is like for like.
