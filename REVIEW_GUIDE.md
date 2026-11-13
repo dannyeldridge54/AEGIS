@@ -14,7 +14,8 @@ TorsionΛ, UFE, n = 3 early field) is superseded unless listed here.
 - Field: one chiral superfield T = x + i y built from the Barbero–Immirzi parameter (Gates–Ketov–Yunes form);
   x = exp(√(2/3) φ). Kähler potential K = −3 ln(T + T̄ − S S̄) (no-scale, α = 1).
 - Superpotential W = √3 m S F(T); along S = 0: V = m² |F(T)|² / (4x²), m ≈ 5×10¹³ GeV from A_s.
-- F(T) = T / √(1 + T/μ) · exp(−nT/(T + m2)): plateau (inflation), cliff at x ≈ m2 (end of inflation), tail.
+- F(T) = T / √(1 + T/μ) · exp(−n(1 − e^{−πT/4})): plateau (inflation), cliff at x ≈ 0.01 (end of inflation), tail.
+  (Cliff factor reshaped 13 Nov from exp(−nT/(T + m2)) after TAIL-F; Development 79.)
 - Angle coupling to matter: Nieh–Yan, c_A = √(3/8), L ⊃ c_A ∂y · J₅ / M_P; angle period 8 → A = π/4.
 - Kick: hidden axion σ with Λ⁴ e^{−A x} [1 − cos(A y − σ/f)] (form of SU(8) gaugino condensation, f = T).
 - Matter: lepto-axiogenesis (Weinberg operator, μ_ℓ/μ_A = 0.523, sphalerons 28/79).

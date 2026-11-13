@@ -6,15 +6,17 @@
 
 ---
 
-### Step 5 — The shape: F(T) = T/√(1 + T/μ) · e^{−nT/(T + m2)}
+### Step 5 — The shape: F(T) = T/√(1 + T/μ) · e^{−n(1 − e^{−πT/4})}
 
-This one function draws the whole history — a plateau, a cliff and a tail. In the mirrored form used here the field starts at small size x and moves to larger x.
+This one function draws the whole history — a plateau, a cliff and a tail. In the mirrored form used here the field starts at small size x and moves to larger x. (Updated 13 Nov 2026, Development 79: the cliff factor used to be e^{−nT/(T+m2)}; see the box below.)
 
-**The plateau (small x).** *What it is:* for x much smaller than m2, the exponential is nearly 1 and the landscape is nearly flat: V ≈ ¼ · m² · e^{−(2n/m2)x}. *How we know it:* its shape is fixed by the 3 (Step 2); its height is set by m. *What it does to spacetime:* drives inflation (Step 6).
+**The plateau (small x).** *What it is:* for small x the cliff factor is nearly 1 and the landscape is nearly flat: V ≈ ¼ · m² · e^{−(2n·π/4)x}. *How we know it:* its shape is fixed by the 3 (Step 2); its height is set by m. *What it does to spacetime:* drives inflation (Step 6).
 
-**The cliff (x ≈ m2), set by n and m2.** *What it is:* the factor e^{−nT/(T+m2)} switches from 1 to e^{−n} around x ≈ m2 — the landscape drops by a factor e^{−2n}. *How we know it:* **n ≈ 127** is fixed by the size of dark energy today (the cliff's depth sets how much energy is left on the tail, Step 11); **m2** only slides the whole picture along and changes nothing observable (checked, D41). The cliff must be steep enough for inflation to end there: n > 3.46. *What it does to spacetime:* ends inflation; the field's energy turns into motion and then heat. *Joins into:* reheating and the kick (Steps 7–8).
+**The cliff (x ≈ 4/(πn) ≈ 0.01), set by n.** *What it is:* the factor e^{−n(1 − e^{−πT/4})} switches from 1 to e^{−n} once (π/4)·n·x passes about 1 — the landscape drops by a factor e^{−2n}. The number π/4 is the same one that appears in the hidden SU(8) force (Step 8): e^{−πT/4} = e^{−2πT/8} is the mark an SU(8) condensate leaves, and it makes the cliff repeat every 8 in the twist angle, the angle's own period. *How we know it:* **n ≈ 127** is chosen to match the size of dark energy today (the cliff's depth sets how much energy is left on the tail, Step 11) — chosen, not predicted. The cliff must be steep enough for inflation to end there. *What it does to spacetime:* ends inflation; the field's energy turns into motion and then heat. *Joins into:* reheating and the kick (Steps 7–8).
 
-**The tail (x > m2), set by μ.** *What it is:* after the drop, V ≈ m² e^{−2n} / (4(1 + x/μ)) — flat until x ≈ μ, then sloping down as e^{−√(2/3)φ}. *How we know it:* **μ ≲ 1** is chosen so the field freezes on the sloping part, where the base theory's slope √(2/3) applies; this choice was informed by data already seen and is tested on new data (DESI DR3). *What it does to spacetime:* the leftover energy is dark energy (Step 11).
+> **Why the cliff was reshaped.** With the old factor e^{−nT/(T+m2)}, a little of the cliff's slope lingers far down the tail (it fades only like 1/x). A locked test (TAIL-F) showed that at the heat our reheating produces, this lingering slope makes today's dark energy too stiff, and the data reject it (Δχ² +29). The new factor gives exactly the same inflation (n_s 0.9642, r 0.0038) but its lingering slope fades like e^{−x}, so the tail has the clean √(2/3) slope whatever the reheating. This change was made after seeing that result, so only new data can test it.
+
+**The tail (far past the cliff), set by μ.** *What it is:* after the drop, V ≈ m² e^{−2n} / (4(1 + x/μ)) — flat until x ≈ μ, then sloping down as e^{−√(2/3)φ}. *How we know it:* **μ ≲ 1** is chosen so the field freezes on the sloping part, where the base theory's slope √(2/3) applies; with the reshaped cliff the field freezes at x ≈ 450, far down that slope; this choice was informed by data already seen and is tested on new data (DESI DR3). *What it does to spacetime:* the leftover energy is dark energy (Step 11).
 
 ---
 
