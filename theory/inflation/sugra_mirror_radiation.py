@@ -40,7 +40,7 @@ def run(delta=0.1, f=0.9, Nafter=6.0, step=0.25, mu=1.0, a=1.0, n=10.0, m2c=100.
     def row(N, z):
         p, y, dp, dy, lnr = z; g = 1.5 * math.exp(-2 * c * p); K = 0.5 * (dp * dp + g * dy * dy)
         v = V(p, y); rr = math.exp(lnr); H2 = (v + rr) / (3 - K)
-        return (N - Ne, T_of(rr), math.sqrt(g) * abs(dy), 0.5 * g * dy * dy / 3, rr / (3 * H2))
+        return (N - Ne, T_of(rr), math.sqrt(g) * dy, 0.5 * g * dy * dy / 3, rr / (3 * H2))
     rows.append(row(N, z))
     while N < Ne + Nafter - 1e-9:
         z = list(solve_ivp(rhs, [N, N + step], z, rtol=1e-7, atol=1e-10, method="LSODA").y[:, -1]); N += step
