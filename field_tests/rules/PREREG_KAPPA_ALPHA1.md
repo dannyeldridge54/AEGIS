@@ -1,7 +1,7 @@
 # KAPPA-ALPHA1: the late slope fixed by the α = 1 geometry
 
-**Status: DRAFT**, written 12 Nov 2026 after the TOURNAMENT score, during the plan Danny asked for ("Keep going").
-LOCKED only on Danny's word. AI-assisted. Cloud.
+**Status: LOCKED** on Danny's word ("Start trsting them", 12 Nov 2026, 18:14 CT, replying to the pending draft rules), before any of its numbers were computed. Drafted:, written 12 Nov 2026 after the TOURNAMENT score, during the plan Danny asked for ("Keep going").
+AI-assisted. Cloud.
 
 **Why.** The α = 1 field-space geometry (Twist inflation; Dimopoulos & Owen, arXiv:1703.00305) fixes the late
 exponential slope at κ = 2/√(6α) = √(2/3) = 0.81650, with no fitting. The flagship uses κ = 1.

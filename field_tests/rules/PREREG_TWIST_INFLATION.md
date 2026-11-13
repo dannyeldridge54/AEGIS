@@ -1,7 +1,6 @@
 # TWIST INFLATION: the α = 1 prediction from the Twist's field-space curvature
 
-**Status: DRAFT**, written 12 Nov 2026 during the 10-hour plan Danny asked for ("Do them all", 17:49 CT). LOCKED only
-on Danny's word. AI-assisted.
+**Status: LOCKED** on Danny's word ("Start trsting them", 12 Nov 2026, 18:14 CT, replying to the pending draft rules), before any of its numbers were computed. Drafted:, written 12 Nov 2026 during the 10-hour plan Danny asked for ("Do them all", 17:49 CT). AI-assisted.
 
 **Why.** The Twist fixes its field-space curvature (λ = −2√(2/3), so K = −λ²/4 = −2/3), which is the α = 1 attractor
 geometry (Starobinsky class). Twist leptogenesis needs near-instant reheating (≳ 2 × 10¹³ GeV). Together they predict the

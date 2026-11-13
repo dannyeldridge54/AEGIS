@@ -1,8 +1,8 @@
 # V6: the flagship on Planck PR4 (NPIPE) instead of Planck 2018
 
-**Status: DRAFT**, written 12 Nov 2026 when Danny asked for every pending test to be queued ("schedule them all to set
+**Status: LOCKED** on Danny's word ("Start trsting them", 12 Nov 2026, 18:14 CT, replying to the pending draft rules), before any of its numbers were computed. Drafted:, written 12 Nov 2026 when Danny asked for every pending test to be queued ("schedule them all to set
 automatically in q", 14:17 CT). V6 had no rule yet (PREREG_SELFCHECK.md: "It gets its own rule"), so this one is a
-draft and becomes LOCKED only on Danny's word. AI-assisted. PC.
+draft and becomes AI-assisted. PC.
 
 **Why.** All flagship fits use Planck 2018 (PR3) data. Planck's final reprocessing, PR4 (NPIPE), has lower noise and
 different systematics handling. If FLAG-1's edge depends on PR3's particular processing, it should change on PR4.

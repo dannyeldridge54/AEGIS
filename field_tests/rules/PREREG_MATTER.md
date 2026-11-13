@@ -1,7 +1,7 @@
 # MATTER: does the Twist make the observed matter? (full calculation)
 
-**Status: DRAFT**, written 12 Nov 2026 during the matter-formation work Danny asked for ("Start developing it",
-"keep going", 17:25–17:42 CT). LOCKED only on Danny's word. AI-assisted. Cloud.
+**Status: LOCKED** on Danny's word ("Start trsting them", 12 Nov 2026, 18:14 CT, replying to the pending draft rules), before any of its numbers were computed. Drafted:, written 12 Nov 2026 during the matter-formation work Danny asked for ("Start developing it",
+"keep going", 17:25–17:42 CT). AI-assisted. Cloud.
 
 **Why.** Developments 1–5 (doc "How matter formed: the Twist hypothesis"; `theory/matter/`) give an order-of-magnitude
 route: the Barbero–Immirzi angle, rolling after inflation, couples to the fermion spin current with the derived
