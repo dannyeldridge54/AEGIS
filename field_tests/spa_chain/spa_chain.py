@@ -13,11 +13,12 @@ def main(model):
     E._maybe_coupled(BASE[model]); info = E.make(BASE[model]); J.add_s8(info)
     m = json.load(open(f"{E.OUT}/cmp_{START[model]}.json"))["minimum"]
     for k, p in info["params"].items():
-        if isinstance(p, dict) and "ref" in p and k in m:
-            p["ref"] = {"dist": "norm", "loc": float(m[k]), "scale": abs(float(p["ref"].get("scale", 0.001))) if isinstance(p["ref"], dict) else 0.001}
+        if isinstance(p, dict) and "prior" in p and k in m:          # D2: every sampled parameter, not only those with a ref
+            old = p.get("ref"); sc = old.get("scale") if isinstance(old, dict) else None
+            p["ref"] = {"dist": "norm", "loc": float(m[k]), "scale": abs(float(sc)) if sc else 1e-3 * max(abs(float(m[k])), 1e-3)}
     for d in ("H0", "Omega_m", "sigma8", "S8"):
         info["params"].setdefault(d, {"latex": d})
-    info["sampler"] = {"mcmc": {"Rminus1_stop": 0.02, "Rminus1_cl_stop": 0.2, "max_tries": 100000, "learn_proposal": True,
+    info["sampler"] = {"mcmc": {"Rminus1_stop": 0.02, "Rminus1_cl_stop": 0.2, "max_tries": 1000, "learn_proposal": True,
                                 "output_every": "60s", "measure_speeds": True}}
     info["output"] = f"{E.OUT}/chains/spa_chain_{model.lower()}"; info.pop("force", None); info.pop("resume", None)
     t = time.time(); crun(info, resume=True, force=False); print(f"{model} chain done in {time.time()-t:.0f}s", flush=True)
