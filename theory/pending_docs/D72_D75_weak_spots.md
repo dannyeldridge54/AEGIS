@@ -974,3 +974,5 @@ n_s ≈ 0.973–0.976. The locked reading (fixed n_s = 0.964 vs free) is still r
 the widths is a cost of ~9–12 in χ² at 0.964 (the TENSION/INCONSISTENT border) and ~4 at 0.968 — expectation only, the locked
 number decides. If INCONSISTENT: the D108 falsifier is effectively met by current data, and the only escapes on file are a
 polynomial attractor (contradicts K = −3 ln, D108) or a larger N* (more kination than D84 allows).
+D131 add: with this plateau (n_s ≈ 1 − 2/N*) reaching 0.973 needs N* ≈ 74 (0.968 → 63; 0.975 → 80), i.e. 15–20 more e-folds than
+D84's kination gives (+1.9); a stiff phase cannot supply that (the usual upper bound is N* ≈ 60–63). That escape is closed.
