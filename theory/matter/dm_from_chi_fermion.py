@@ -9,6 +9,8 @@ Dark matter today: rho_DM/s = 0.44 eV -> m_DM = 0.44e-9 GeV / (n_DM/s). AI-assis
 import math
 MP = 2.435e18; T = 4e14; m = 0.052 * MP
 ns = 3 / 8 * T / m
-for C in (3, 10, 30):
-    BR = (m / MP) ** 2 / (16 * math.pi ** 2 * C); nDM = ns * BR
-    print(f"C {C}: chi-tilde n/s {ns:.1e}, BR {BR:.1e}, n_DM/s {nDM:.1e} -> m_DM for the observed amount {0.44e-9 / nDM:.2f} GeV")
+print("first estimate (superseded): BR ~ (m/M_P)^2/(16 pi^2 C) -> m_DM 0.07-0.65 GeV")
+# literature form (Zheng, arXiv:2208.05859, eq. 2.11, gravity: M ~ M_P): BR = c (1/(4 pi^2))^2 (m/4)^4 / M_P^4, c ~ O(1)
+for c in (0.1, 1.0, 10.0):
+    BR = c * (1 / (4 * math.pi ** 2)) ** 2 * (m / 4 / MP) ** 4; nDM = ns * BR
+    print(f"bremsstrahlung form, c {c}: BR {BR:.1e}, n_DM/s {nDM:.1e} -> m_DM for the observed amount {0.44e-9 / nDM:.1e} GeV")

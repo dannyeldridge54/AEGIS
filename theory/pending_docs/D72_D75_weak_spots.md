@@ -734,3 +734,9 @@ y = 0.1): old cliff 1.03×; reshaped cliff with m2 = 1: 0.887×; reshaped cliff 
 e^{−(π/4)x} is the same but the inflaton is faster, and the yield rises by 2.6×. With yield ∝ m_σ^−0.89, exactly 1× needs
 **m_σ ≈ 1.5×10¹⁰ GeV** for the adopted cliff (was ≈ 5–6×10⁹). Matter-making survives the reshaped cliff; only the hidden
 mass shifts, by a factor ~2.5.
+**D106 correction (11:08).** The branching ratio above was too big. The literature form for dark-matter pairs emitted by a
+virtual graviton in a two-body decay (Zheng, arXiv:2208.05859, eq. 2.11 with M ≃ M_P) is BR = c̃(1/4π²)²(m_χ/4M_P)⁴ with
+c̃ = O(1) — fourth power, not second. At m_χ ≈ 0.05 M_P: BR ≈ 1.8×10⁻¹¹ c̃, so n_DM/s ≈ 2×10⁻¹⁴ c̃ and the observed dark
+matter needs **m_DM ≈ 2×10⁴ GeV / c̃ (2–200 TeV for c̃ = 10–0.1)**, replacing the 70–650 MeV of the first estimate. Freeze-in
+then adds only ~10⁻⁴ of the abundance; the particles are born with E ~ m_χ/4 but are cold today (v ~ 10⁻¹⁶ c). So in this
+route the Twist's dark matter is a gravity-only fermion of tens of TeV. Still an estimate (c̃ for this decay not computed).

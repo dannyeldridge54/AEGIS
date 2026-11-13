@@ -1,3 +1,4 @@
-C 3: chi-tilde n/s 1.2e-03, BR 5.7e-06, n_DM/s 6.8e-09 -> m_DM for the observed amount 0.07 GeV
-C 10: chi-tilde n/s 1.2e-03, BR 1.7e-06, n_DM/s 2.0e-09 -> m_DM for the observed amount 0.22 GeV
-C 30: chi-tilde n/s 1.2e-03, BR 5.7e-07, n_DM/s 6.8e-10 -> m_DM for the observed amount 0.65 GeV
+first estimate (superseded): BR ~ (m/M_P)^2/(16 pi^2 C) -> m_DM 0.07-0.65 GeV
+bremsstrahlung form, c 0.1: BR 1.8e-12, n_DM/s 2.2e-15 -> m_DM for the observed amount 2.0e+05 GeV
+bremsstrahlung form, c 1.0: BR 1.8e-11, n_DM/s 2.2e-14 -> m_DM for the observed amount 2.0e+04 GeV
+bremsstrahlung form, c 10.0: BR 1.8e-10, n_DM/s 2.2e-13 -> m_DM for the observed amount 2.0e+03 GeV
