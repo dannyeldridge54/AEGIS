@@ -337,3 +337,14 @@ if that identification holds and the Planck-to-string ratio is fixed by somethin
 (hidden SU(8) on a separate cycle) and D73 (Standard Model on D3 branes) is therefore an analogy borrowed from string
 constructions, not a construction of the Twist. Label: correction (D73's justification was incomplete); open: an
 explicit setting in which a field with K = −3 ln(T + T̄) is light today without setting the string scale.
+
+**D89 addendum — the 4D supergravity reading (a way through).** If the Twist is read as a 4D supergravity with no string
+scale behind it (T is the Barbero–Immirzi field, nothing more), the question is only how matter's masses depend on T in
+Planck units. Put matter in the sequestered no-scale form K = −3 ln(T + T̄ − Σ|Q|²/3) (matter metric K_Q = 1/(T + T̄)).
+Then a physical Yukawa coupling is e^{K/2}·Y/√(K_Q K_Q' K_H) = (2x)^{−3/2}·Y·(2x)^{3/2} = Y: independent of T. The QCD
+scale is fixed if f_QCD does not depend on T. Tree-level scalar masses vanish (no-scale). What still depends on T is any
+dimensionful superpotential term: a μ-term gives physical μ = e^{K/2}μ/K_H ∝ x^{−1/2}, so the Higgs vev, and with it the
+electron and quark masses, would follow x unless μ is generated in a T-independent way (e.g. from the same sequestered
+SUSY-breaking sector, D88). So in the 4D reading the fifth-force problem reduces to D73's residual Higgs-sector question,
+and the string-volume objection of D89 does not apply. Label: derivation of a known property (conformal sequestering);
+the μ-term origin stays open.
