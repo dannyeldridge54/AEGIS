@@ -1385,3 +1385,6 @@ inflationary Hubble rate 1.5×10¹³ GeV. A right-handed-neutrino mass set by th
 place with Yukawas 0.3–1 — a natural lead, not built (and absent in TWIST-K, which has no SU(8); there it would need another source).
 Caveat: right-handed neutrinos at ~10¹⁴ GeV below T_RH would be produced after inflation and their decays add ordinary leptogenesis
 on top of lepto-axiogenesis — a second matter source to be checked if this is pursued.
+D172 add (strong-CP lead checked): could the angle relax toward a minimum by itself before the QCD era, giving the small θ_i the lead
+needs? No — its mass comes from the T-sector potential (m_y² ≈ 4V_T/3), which during the radiation era is far below H², so the angle
+stays frozen at its post-kick value (0.5–0.9 rad) until long after the QCD transition. The lead needs an external mechanism.
