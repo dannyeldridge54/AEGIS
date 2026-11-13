@@ -1,0 +1,5 @@
+g 0.1, T_RH 2.1e+14: preheating GW peak today ~ 1.2e+11 Hz
+g 0.1, T_RH 3.7e+14: preheating GW peak today ~ 6.8e+10 Hz
+g 0.3, T_RH 2.1e+14: preheating GW peak today ~ 2.1e+11 Hz
+g 0.3, T_RH 3.7e+14: preheating GW peak today ~ 1.2e+11 Hz
+ripple size at the cliff: P ~ H^2/(8 pi^2 eps) falls as eps -> 1 (steepening): no enhancement -> no primordial black holes
