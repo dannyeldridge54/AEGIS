@@ -1,0 +1,7 @@
+rung 3alpha = 1: lambda 1.414: w0 -0.675, wa -0.438
+rung 3alpha = 2: lambda 1.000: w0 -0.846, wa -0.219
+rung 3alpha = 3: lambda 0.816: w0 -0.899, wa -0.146   <- the Twist
+rung 3alpha = 4: lambda 0.707: w0 -0.925, wa -0.109
+rung 3alpha = 5: lambda 0.632: w0 -0.940, wa -0.087
+rung 3alpha = 6: lambda 0.577: w0 -0.950, wa -0.073
+rung 3alpha = 7: lambda 0.535: w0 -0.958, wa -0.062

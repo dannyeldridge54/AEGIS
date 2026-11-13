@@ -1151,3 +1151,16 @@ condition (Euler number 0) applied to a volume-type T; for a non-volume T the le
 re-derived; (2) D123's tower argument used the volume (KK for x > 1, winding for x < 1); for a non-volume T the distance-conjecture
 tower is not known — the field distance (≈ 16 M_P) goes back to "open". Status: a real fork, recorded for Danny: volume-type T
 (distance conjecture OK, fifth force fails at O(1)) versus non-volume T (shield possible, distance conjecture open).
+
+**D151 — the volume problem is the known one, and the ladder gives each rung's dark energy (rung_tails_d151.py).** In string
+compactifications a single modulus with K = −3 ln(T + T̄) (rung 3α = 3) is the overall volume (or the diagonal of three equal tori),
+and a light volume modulus couples to matter at Planck strength — a known exclusion (Tasinato et al., arXiv:1203.6655, which
+propose instead a FIBRE modulus whose coupling is suppressed by ε ~ m₃/₂/M_P and whose leading potential does not depend on it).
+So the rung-3 Twist has no known string realization that avoids the fifth force; D140–D142's shield is a consistent effective
+theory, not a string-derived one. Note: the Twist has m₃/₂ = 0 along S = 0, which in a fibre-type set-up would push ε further down —
+a possible advantage, not computed. A fibre-type field would sit on a different rung, which changes the dark-energy prediction.
+Thawing from rest, λ = √(2/(3α)): rung 1: w0 −0.68, wa −0.44; rung 2: −0.85, −0.22; **rung 3 (Twist): −0.90, −0.15**; rung 4:
+−0.93, −0.11; rung 5: −0.94, −0.09; rung 6: −0.95, −0.07; rung 7: −0.96, −0.06. DESI DR2 alone pulls toward the lower rungs; any
+switch would be a new model, built after seeing the data, and must be locked and tested on new data only.
+Status: fifth force = main open problem at the string level (EFT shield exists; string realization of a neutral SM with a rung-3
+modulus unknown).
