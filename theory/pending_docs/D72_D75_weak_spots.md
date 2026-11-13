@@ -1004,3 +1004,27 @@ range gives S_B ≲ 2×10⁻¹⁰ — safe by 10⁵. (b) A gap in BOTH models, n
 light during inflation; δσ/σ₀ = (H/2π)/(f M_P) ≈ 10⁻⁵ for f = 0.1, and with dlnY/dlnσ₀ ≈ cot(1) ≈ 0.64 for the kick force,
 S_B ≈ 6×10⁻⁶ — safe by ×8 (×4 at f = 0.05, ×24 at f = 0.3). Order of magnitude; the yield's true sensitivity to σ₀ was not run.
 A prediction follows: baryon isocurvature at the 10⁻⁶–10⁻⁵ level, below current reach.
+
+## Developments 135–137 — corrections after the independent referee review (13:05; full report in the session)
+
+**D135 — the fifth force is reopened as the main open problem.** The referee is right that D104 and D110 are inconsistent.
+D110 argues that gravity generically produces Planck-suppressed operators linear in χ (so χ can decay). The same reasoning
+produces operators linear in the tail field, (φ/M_P)·O_SM, with O(1) coefficients — a coupling β = O(1), against Cassini's
+β² < ~10⁻⁵. "SM outside SUGRA, minimally coupled" (D104) does not forbid them; it simply sets them to zero. So either (i) an
+unexplained symmetry forbids every φ–SM coupling while allowing χ–SM ones (none is known: Re T has no shift symmetry), or (ii) the
+fifth force is real. Status: main open problem (as before D104); assumption 1 is relabelled "unexplained symmetry required".
+
+**D136 — labels corrected.** (a) 4/π: "assumed (SU(8) form)", not "derived" — with f = T the SU(8) coupling g² = 1/x is 10²–10⁴
+through the whole inflationary region, so the condensate formula is outside control there. (b) The inflaton mass: "related to a
+gauge coupling", not "explained" — b·f₀ ≈ 134 must sit ≈ 9 above b·κ = 125 (a ~7% cancellation). (c) n: a tuning of ρ_DE
+(n = 124.6 reproduces ρ_DE at x = 89; Δn ≈ 0.35 per factor 2). Single value used everywhere: n ≈ 125. (d) Isocurvature (D134):
+"unverified" until D137. (e) Initial conditions (D114): fast starts are excluded — they begin at x ≈ 2×10⁻⁶, where S is tachyonic
+(m_S²/H² = −2 + 8ζx < 0 for x < 8.3×10⁻⁶) and below the tower floor (D123). Only near-rest starts in x ≈ 10⁻⁵–10⁻⁴ remain.
+(f) Matter (m_σ) and dark matter (100–500 TeV) are removed from the predictions table until they stop moving. (g) Kination ΔN at
+0.8% heat is 1.2 (D132), not 1.9; consistency_v5's quoted "+1.9" is superseded. (h) The late-time test is generic thawing
+quintessence with λ = √(2/3); the supergravity structure plays no role in it — stated plainly. (i) DR3 is cumulative with DR2, so
+WATCH-PURE-DR3 is not fully out of sample; its reading is weaker than a fresh survey's.
+
+**D137 — the yield's sensitivity, locked before running (field_tests/missing_piece/yield_sensitivity.py).** Prediction
+written first: |dlnY/dlnσ₀| ≤ 5 and |dlnY/dy₀| ≤ 10⁴ (the bounds for S_B < 5×10⁻⁵ given δσ/σ₀ ≈ 10⁻⁵ and δy ≈ 10⁻¹⁰ —
+wait: δy ≈ 2×10⁻¹⁰ gives the y-bound 2.5×10⁵; the stated 10⁴ is stricter and stands). If exceeded, D134 fails for that source.
