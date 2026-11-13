@@ -77,7 +77,7 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 4. Instant preheating: χ's couplings g ≈ 0.1 and Yukawa h = 0.1–1 are natural choices, not derived.
 5. The dark-matter fermion argument and PIDM threshold factor are estimates.
 6. The helper field S is tachyonic (m_S² ≈ −2H²) with K exactly as written; a standard quartic term ζ(SS̄)² inside
-   the log with ζ ≳ 10⁴ makes it heavy and leaves every number at S = 0 unchanged (Development 72, chosen).
+   the log with ζ ≳ 10⁴ (m_S²/H² ≈ −2 + 8ζx on the plateau; S is stable after the cliff anyway) makes it heavy and leaves every number at S = 0 unchanged (Development 72, chosen).
 7. Ordinary matter must not feel the tail field: natural bulk weights give a fifth force ×120–360 over Cassini, so
    the Standard Model must be sequestered (D3 branes, T-independent Higgs sector). An assumption (Development 73).
 8. The field moves Δφ ≈ 15–18 M_P from the CMB point to today, in tension with the swampland distance conjecture —

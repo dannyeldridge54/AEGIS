@@ -22,8 +22,12 @@ plateau's prefactor, so the inflation numbers would need redoing. (c) Nilpotent 
 removes S's scalar altogether; clean, ties to string constructions. We keep (a) because it leaves every computed
 number unchanged.
 
-Open. The cliff and tail were not rechecked with ζ (S's mass there should only grow, since |F| falls); the
-late-universe tail then needs S still at zero — to check before claims about the tail's full supergravity form.
+Check with 40-digit arithmetic (s_stability_mp.py, analytic Kähler derivatives) confirms the plateau numbers and
+gives a simple rule: on the plateau m_S²/H² ≈ −2 + 8ζx. So S is stable at the CMB point (x* ≈ 1.1×10⁻⁴) for
+ζ > ~2300 and heavy (m_S > 3H) for ζ ≳ 1.4×10⁴; earlier in inflation (smaller x) needs proportionally larger ζ.
+Cliff and tail: S is stable there even with ζ = 0 (m_S²/H² = +4 at x = 0.01, +430 at 0.1, +4000 at 1, +75 at
+30), and ζ only adds 8ζx. So the stabilising term is needed only on the plateau, and the tail is safe.
+(A first attempt with smaller finite-difference steps in double precision gave noisy numbers; discarded.)
 
 ## Development 73 — fifth force on ordinary matter: the Standard Model must not feel Re T
 
