@@ -151,3 +151,22 @@ seeing the n_s data, so only future CMB results can score it; TWIST-P is the alt
   obviously carry the exponent to weak heterotic coupling (D191). **n has no derivation route in the heterotic home; it stays chosen.**
 - **Rung 4 vs rung 3 (D187):** a heterotic-M-theory variant would give w0 −0.925, σ8 −1.1%, fσ8 −2.4% — about 70–75% of the Twist's
   signals; DESI DR3 + Euclid separate them at only ~1σ.
+
+## 11. Added 13 Nov late afternoon (D188–D211): the string-home search, concluded for now
+- **Instantons cannot give n** (D188–D189): a Z₉ selection rule can keep only degree-9 terms, but that sum (quintic counts to degree 19,
+  n₉ = 5.04×10²⁶) moves the matter metric by ~2×10⁻⁴ where it converges, against 250 needed. Flux warping is IIB-only (D190–D191).
+- **T-duality** (D194–D197): full SL(2,Z) would identify the plateau with the tail; Γ₀(9) without Fricke keeps them apart. TWIST-M (degree 1)
+  keeps n_s/r/tail unchanged; TWIST-M9 (degree 9, locked PREREG_TWISTM9) gives n_s 0.957–0.965, r 0.0038–0.0058, r falling as n_s rises.
+- **Dilaton** (D193, D198–D202): a condensate racetrack makes α drift through Green–Schwarz mixing; δ_GS = 0 is impossible with any
+  condensing group on Z₃-type orbifolds (D199, a no-go); BGW Kähler stabilisation with a pure hidden E₈ (b_a = b) avoids it — T stays flat,
+  couplings fixed, m_3/2 ~ 10¹⁴ GeV (no collider SUSY).
+- **Coupling today** (D203–D204, D209): computed post-inflation rolls put today's field at strong heterotic coupling in every version
+  (g_s ≥ 3 even with total reheating). General reason: a matter-neutral volume direction forces g_s ∝ x^{3/2}.
+- **Other homes** (D192, D205–D208, D210–D211): IIB volume β = 0.61; heterotic M-theory's rung-4 path moves α (locked PREREG_TWIST4 kept,
+  marked not-a-home); IIB complex structure with D3 matter is neutral at tree level but fails at one loop (KK tower of the long direction,
+  β ≈ 0.1–16, growing with U).
+- **Selection rule** (D207): a plateau from an integer-power superpotential W = c S Tᵖ needs p = (3α−1)/2 — odd rungs only; the Twist's
+  √3 m S T is exactly rung 3.
+- **Bottom line:** no string setting found keeps matter neutral at today's field value; in each, the long field excursion (~16 M_P) makes
+  some tower light or some coupling strong — the distance conjecture in practice. The shield stays an effective-theory assumption with a
+  locked, falsifiable signature (PREREG_SHIELD). Open-problem doc: questions 1–10 with partial answers.
