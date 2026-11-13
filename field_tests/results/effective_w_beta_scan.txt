@@ -1,0 +1,10 @@
+FLAG-1 (kappa 1, beta 0.041) {'w0_eff': -0.857, 'wa_eff': -0.266, 'w_eff_z0': -0.861, 'w_eff_z1': -0.99, 'min_w_eff_z_lt2': -1.036}
+SPIRAL free (kappa 0.85, beta 0.035) {'w0_eff': -0.899, 'wa_eff': -0.178, 'w_eff_z0': -0.9, 'w_eff_z1': -0.99, 'min_w_eff_z_lt2': -1.013}
+W0WA fit (check) {'w0_eff': -0.879, 'wa_eff': -0.308, 'w_eff_z0': -0.87, 'w_eff_z1': -1.039, 'min_w_eff_z_lt2': -1.06}
+beta 0.000: w0_eff -0.852, wa_eff -0.175, min w -0.952; chi2 at fixed (h, wb, wc) 1851.48
+beta 0.020: w0_eff -0.854, wa_eff -0.225, min w -0.995; chi2 at fixed (h, wb, wc) 1620.29
+beta 0.041: w0_eff -0.857, wa_eff -0.266, min w -1.037; chi2 at fixed (h, wb, wc) 1395.94
+beta 0.060: w0_eff -0.861, wa_eff -0.291, min w -1.060; chi2 at fixed (h, wb, wc) 1857.22
+beta 0.080: w0_eff -0.866, wa_eff -0.304, min w -1.068; chi2 at fixed (h, wb, wc) 3999.81
+beta 0.1 CLASS failed
+beta 0.12 CLASS failed

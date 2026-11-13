@@ -112,3 +112,4 @@ f_EDE = 0.078 / H₀ = 70.6 (withdrawn, unconverged engine); the N = 9 "width mo
 | NS-PURE | First run crashed (setup recursion) before fitting, 13 Nov 02:28; fixed per NS_PURE_DEVIATIONS.md D1 and restarted 04:48 CT. | pending |
 | LAB-NULLS | Locked 13 Nov (driver, standing authority). Six lab-scale classes; predictions zero except the static cosmic-frame spin coupling 2.8-4.0e-34 eV. Scored per class on future confirmed results. | pending |
 | PURE-MCMC | Locked 13 Nov (driver, standing authority). emcee posteriors for PURE-TWIST and LCDM on the TOURNAMENT likelihood (stored best chi2 1397.804 / 1401.176). Running in the cloud. | pending |
+| WA-CEILING | Locked 13 Nov (driver, standing authority). All thawing Twist versions predict effective wa >= -0.40 (FLAG-1 -0.27, PURE -0.10, saturates ~-0.30). Scores DESI DR3 headline w0wa. Today's DR2+DESY5 -0.73 (+0.21) is a TENSION by its own readings (context only). | pending |
