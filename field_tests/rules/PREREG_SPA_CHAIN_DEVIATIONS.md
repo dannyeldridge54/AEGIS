@@ -15,3 +15,7 @@ D2 add (17:00): the first restart could not resume (Cobaya failed to re-read the
 early_late_spa"); the old output held no samples (.progress 85 bytes, no chain files), so it was moved to _to_delete/spa_chain_D2/ on the PC
 and both chains started fresh at ~16:55 with the D2 start point. PC load at restart: four flag_mcmc.py jobs running for 2 d 7 h (~2 cores each)
 plus the three matter checks, so evaluations are slow; the 21:01 scheduled check reports progress.
+D2 add (17:05): diagnostic for both models at the start point — LCDM logpost −1169.02, PURE −1169.78, each first evaluation 24 s, model build
+57 s, 3 GB; all 11 sampled parameters already had ref entries at the best fit (so the D2 re-centring changed nothing in practice). The
+restarted chains were again at "Getting initial point" after 10 min; the remaining suspects are CPU contention (4 FLAG-1 chains, 3 matter
+checks, 2 SPA chains on the PC) and Cobaya's speed measurement. No further change made; the 21:01 check reports.
