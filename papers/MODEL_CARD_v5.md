@@ -89,7 +89,7 @@ TWIST-K plus a logarithmic factor in S's metric (an IR-free running coupling at 
 | Model | Change | n_s at ACT value | r there | Notes |
 |---|---|---|---|---|
 | TWIST-M9 (PREREG_TWISTM9) | Γ₀(9) degree-9 cliff, μ grid | does not reach (0.957–0.965) | 0.0038–0.0058 | r falls as n_s rises; weak coupling not reached (D204) |
-| TWIST-G− (PREREG_TWISTGN; TWISTG D1 records the sign error) | W = √3 m S T^{1+γ}, γ ≈ −0.0085 | 0.974–0.975 | 0.0067–0.0069 | γ is loop-sized (D222); tail steeper, TCC-safe; full SUGRA check passes (D221) |
+| TWIST-G− (PREREG_TWISTGN; TWISTG D1 records the sign error) | W = √3 m S T^{1+γ}, γ ≈ −0.0085 | 0.974–0.975 | 0.0067–0.0069 | γ is loop-sized but needs a string-like multiplicative correction — a plain field-theory loop gives ~10⁻⁵ (D222, D230); tail steeper, TCC-safe; full SUGRA check passes (D221) |
 | TWIST-C (PREREG_TWISTC) | W = √3 m S (T + c), c ≈ +3.5×10⁻⁷ | ≈ 0.974 | ≈ 0.005 | lowest r of the n_s fixes; c sharply tuned; full SUGRA check passes (D228) |
 | TWIST-4 (PREREG_TWIST4, D1–D2) | rung 4 | — | ≈ 0.0046 | NOT a matter-neutral home (D208); TCC-violating tail; kept on record only |
 Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA alone 0.9693 ± 0.0029, the Twist −1.7σ; with DESI 0.9737 ± 0.0025,
