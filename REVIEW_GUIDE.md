@@ -25,7 +25,8 @@ TorsionΛ, UFE, n = 3 early field) is superseded unless listed here.
 - Late-time versions tested: PURE-TWIST (κ = √(2/3), β = 0; zero extra parameters), K816 (κ = √(2/3), β free),
   FLAG-1 (κ = 1, β free). **The theory's own prediction is PURE-TWIST (β = 0)** — with one condition found 13 Nov (Development 78): the
   slope √(2/3) holds only if the field freezes far down the tail (heat share ≲ 0.01%); at the computed heat share 0.13%
-  the cliff's leftover makes today's slope ≈ 1.4 (w₀ ≈ −0.69, w_a ≈ −0.42, exponential approximation). Also: gravity-only dark matter cannot
+  the cliff's leftover steepens today's tail: w₀ ≈ −0.74, w_a ≈ −0.34 (full tail shape, Development 78b; the heat
+  share picks a point on one (w₀, w_a) curve). Also: gravity-only dark matter cannot
   couple to the twist field, and natural modular weights give β = 0 or |β| ≥ 0.41 (Development 64). K816's small
   β ≈ 0.03 is a data preference the theory does not explain (it holds on DES Y5 and Union3, where PURE-TWIST is
   strained). FLAG-1's κ = 1 is not the base slope.
@@ -90,7 +91,7 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 10. The reheating field χ must be supersymmetric, or its loop energy destroys the plateau; with it, n_s shifts by
    about +0.002 (estimate, Development 77).
 11. Today's slope depends on reheating (Development 78): PURE-TWIST's √(2/3) needs heat share ≲ 0.01%; at the
-   computed 0.13% the slope is ≈ 1.4. A correction to Backlog L, which kept only the μ factor.
+   computed 0.13% the full tail gives w₀ ≈ −0.74, w_a ≈ −0.34 (D78b). A correction to Backlog L, which kept only the μ factor.
 12. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
 
 ## 5. How to reproduce

@@ -137,3 +137,21 @@ We take (c) for now: no model change, the condition is recorded, and the late-ti
 
 Correction to D76: at the central heat share x today ≈ 360, so the angle is mildly unstable today (m_y² ≈ −0.8H²,
 |m_y| < H: slow growth from a tiny start; probably harmless, not computed). Correction to D75: field distance ≈ 19 M_P.
+
+## Development 78b — the full tail shape softens it: one curve of (w₀, w_a) set by the heat share
+
+Script: theory/darkenergy/tail_full_thaw.py; results/tail_full_thaw.txt. Same as D78 but the field thaws on the
+full tail shape (its slope eases as it moves), not a fixed exponential.
+
+  heat share 0.01%: w₀ −0.89, w_a −0.16 (≈ PURE-TWIST)
+  heat share 0.04%: w₀ −0.86, w_a −0.20
+  heat share 0.08%: w₀ −0.81, w_a −0.27
+  heat share 0.13% (computed): w₀ −0.74, w_a −0.34; field today at x ≈ 520, where the angle is just stable (D76)
+  heat share 0.20%: w₀ −0.64, w_a −0.44
+  heat share 0.40%: w₀ −0.40 — far too stiff.
+
+So the full model predicts a one-parameter curve in (w₀, w_a), with the heat share — the same number that sets the
+matter yield — choosing the point. At the computed heat share it sits at w₀ ≈ −0.74, w_a ≈ −0.34: inside the locked
+ceiling, and closer to the DESI DR2 direction (w₀ ≈ −0.75 to −0.80) than PURE-TWIST, though DESI's w_a (≈ −0.7) is
+still deeper. This replaces the exponential numbers in D78. Not yet tested against data: a locked test (heat share
+fixed from D42's computed range, not fitted) is the natural next step.

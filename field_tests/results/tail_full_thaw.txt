@@ -1,0 +1,6 @@
+heat share 0.010%: x_f 4651 -> today x 5774; w0 -0.889, wa -0.159 (w today -0.889)
+heat share 0.040%: x_f 1163 -> today x 1497; w0 -0.856, wa -0.203 (w today -0.858)
+heat share 0.080%: x_f 582 -> today x 787; w0 -0.807, wa -0.265 (w today -0.812)
+heat share 0.130%: x_f 358 -> today x 519; w0 -0.738, wa -0.343 (w today -0.751)
+heat share 0.200%: x_f 233 -> today x 376; w0 -0.635, wa -0.437 (w today -0.662)
+heat share 0.400%: x_f 117 -> today x 287; w0 -0.403, wa -0.362 (w today -0.459)
