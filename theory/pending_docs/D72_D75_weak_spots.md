@@ -583,3 +583,27 @@ away), shrinks through the end of inflation (×48 and 14 M_P at x = 0.01; ×1.05
 x ≈ 0.3: past there y = 0 is a ridge. But by then the potential has fallen by ~10⁻⁸⁰ and kination dominates, so the ridge
 exerts almost no force: whether y reaches 4 is decided by how far the kick's velocity carries it while coasting. That is
 exactly what the queued run measures (y_end).
+
+## Development 103 — where the fifth force really comes from, and the one avenue left
+
+Results: field_tests/results/fifth_force_frames.txt.
+(1) Origin. In the Gates–Ketov–Yunes superfield the real part of T multiplies the curvature R — it is a conformal (Weyl)
+factor. Put the Standard Model inside the same no-scale supergravity and it is conformally coupled: every mass scales as
+x^{−1/2}. That, plus the Kaplunovsky–Louis anomaly terms, is D90's fifth force. It is a feature of the embedding, not of the
+Barbero–Immirzi idea: in Einstein–Cartan–Holst gravity alone the field meets matter only through torsion (the Nieh–Yan
+coupling to the axial current, a derivative coupling) — the Twist's original claim of "no fifth force".
+(2) The fix at tree level. Let the Standard Model couple minimally to the Einstein-frame metric (outside the no-scale log),
+meeting the twist field only through gravity and the Nieh–Yan term. Then β = 0 at tree level, and late-time loops cannot
+regenerate it much: the canonical field has a nearly exact shift symmetry today (its potential is ~10⁻¹²⁰ M_P⁴), so induced
+couplings are suppressed by V''.
+(3) What breaks it again: supersymmetry thresholds. Below the superpartner mass m_soft the strong coupling runs with the
+Standard Model coefficient (7) instead of the MSSM one (3), so Λ_QCD ∝ m_soft^{4/7}. If m_soft depends on x, the proton mass does:
+  - gravity mediation, m_soft ~ m₃/₂ ∝ x^{−3/2}: β ≈ 0.70 (excluded);
+  - F-term gauge mediation, F/M ∝ x^{−1/2}: β ≈ 0.23 (excluded);
+  - a soft scale independent of T: β ≈ 0 (allowed).
+Every F-term carries e^{K/2}, so F-term breaking always feels x. D-term breaking does not: the D-term potential carries no
+e^K, so a Fayet–Iliopoulos term in a T-blind U(1) gives a supersymmetry-breaking scale independent of x.
+(4) Status. The main open problem narrows to one concrete requirement: the Standard Model couples minimally in the Einstein
+frame, and supersymmetry is broken by a T-independent D-term (with mediation that does not bring back an x-dependent F-term;
+gravitino-mediated contributions, ∝ m₃/₂(x), must stay subdominant). Not built; known D-term-breaking models exist, but whether
+one fits here is open. Label: narrows D90/D96 to a specific, checkable route; open.

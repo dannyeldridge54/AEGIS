@@ -81,7 +81,9 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
   mechanism applies to an exponential tail (Development 91). Parking the field in a valley meets the moduli problem unless
   inflation itself ends in the valley (Developments 94–95); the author keeps the light tail and states this as the
   theory's main open problem (decision 13 Nov). The late-time fits assume ordinary matter is uncoupled, i.e. they test the
-  tail's shape given a working shield (Development 97); no choice of modular weights provides one (Development 96).
+  tail's shape given a working shield (Development 97); no choice of modular weights provides one (Development 96). Narrowed (Development 103): the coupling comes from putting
+  the Standard Model inside the no-scale supergravity; coupled minimally in the Einstein frame it vanishes at tree level, and
+  what remains needs a supersymmetry-breaking scale independent of T (e.g. D-term breaking) — open.
 - **Withdrawn numbers:** the hidden mass 3–6×10⁹ GeV (a pre-stated check failed; corrected to ~3×10¹⁰ GeV);
   several earlier developments (D26 gravitino, D31) superseded. All kept in the matter doc and git history.
 
