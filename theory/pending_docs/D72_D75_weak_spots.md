@@ -1609,3 +1609,14 @@ Keeping x ≈ 0.01 needs c ≈ 10²⁴¹ — a second huge number, no better tha
 (call it TWIST-M: cliff at x ≈ 1.6, plateau exactly flat in E) whose inflation must be recomputed before anything is claimed. Status:
 the T-duality obstacle is real for the Twist as written; Γ₀(9) is a concrete way out that changes the cliff's location. Next: compute
 TWIST-M's inflation (N*, n_s, r) with the D159 helper, and lock its predictions before any comparison with data.
+
+**D195 — TWIST-M's inflation and tail, computed (theory/string_home/twistm_inflation_d195.py).** Along real T with S = 0 the potential is
+exactly V = m²/(4 g(u) E(u)) (u = T + T̄, g = 1 + u/2). Check: the Twist's E reproduces n_s 0.9642/0.9650 and r 0.0037/0.0036 at
+N* = 55.7/57 (matches the model card). TWIST-M with the Γ₀(9) hauptmodul and c = 1: inflation ends at u ≈ 1.03 (Twist: 0.018), the CMB
+point moves to u* ≈ 0.054, and n_s = 0.9651/0.9658, r = 0.0038/0.0036 — the same predictions (it is the same exponential-plateau
+attractor; the plateau slope now comes from g instead of E's linear term). Tail: for c = 1, 1/(c h) = e^{−πu/8}(1 + O(e^{−πu/8})), so
+the dark-energy tail is the Twist's to leading order (corrections ~e^{−πx/4} relative, negligible today). **So the duality-consistent
+version costs nothing observable at c = 1, and needs no second huge number** — the cliff simply moves to near the self-dual radius.
+It does NOT fix n_s (still ~0.965, so D157's INCONSISTENT verdict applies to TWIST-M equally), and n is still chosen. Must be redone
+before any claim: heating and matter (they depend on where the cliff sits), N* range, and D164's coupling check at the new cliff.
+Status: T-duality obstacle (D194) resolved in principle by Γ₀(9) at no observable cost; post-data construction, no new predictions.
