@@ -1861,3 +1861,12 @@ all detectable-r inflation — is ruled out, with r ≈ 0.0036 detection by Lite
 (several papers argue the inflation bound can be relaxed, e.g. 2001.00040), and D212 is only a suggestive coincidence. Recorded framing:
 D212 is a consistency observation, NOT support; the r measurement will test the Twist and the strong TCC against each other — a sharp,
 two-sided outcome worth stating in the paper.
+
+**D214 — neutrino masses: a Giudice–Masiero-type Majorana mass at the gravitino scale (lead, conditional).** TWIST-K dropped the hidden
+SU(8) that D173 used to place the seesaw scale. A standard replacement: a Kähler term (c/2) N N + h.c. for right-handed neutrinos gives a
+Majorana mass M_R ≈ c·m_3/2 once supersymmetry is broken (the Giudice–Masiero mechanism applied to N). With the BGW E₈ example's
+m_3/2 ≈ 2×10¹⁴ GeV (D202) and Dirac Yukawa y: m_ν = y²v²/M_R = 0.15 y² eV — y ≈ 0.6 gives 0.05 eV (the atmospheric scale), y ≈ 0.1 gives
+0.0015 eV; the full seesaw window 6×10¹²–6×10¹⁴ GeV (D173) brackets it. So high-scale supersymmetry breaking, which the dilaton-stability
+argument (D201–D202) needed anyway, puts the seesaw scale where the data want it with order-one Yukawas, and the Twist's own matter
+mechanism (lepto-axiogenesis via the angle) does not need thermal leptogenesis from N. Caveats: this relies on the BGW sector, whose string
+home failed the shield test today (D204–D211); within the effective theory it is a coherent, optional add-on, not a prediction.
