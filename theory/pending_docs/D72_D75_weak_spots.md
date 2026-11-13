@@ -766,3 +766,16 @@ the MSSM unified value (~1/24.3) gives n ≈ 153, which misses today's dark ener
 own cycle (D70, τ ≈ 27–37) gives n ≈ 170–232 for one instanton, or needs τ ≈ 158 for an SU(8) condensate — neither matches
 the τ ≈ 30 the kick needs. Conclusion: D87's "α ≈ 1/20" and the SU(8) links do not survive a consistency check; n stays
 **chosen**. Dropped as leads (kept on record).
+
+## Development 110 — two refinements to the χ picture
+
+(1) What "χ decays through gravity" means precisely. Pure graviton exchange cannot make a single χ decay: gravity couples to
+the stress tensor, which is quadratic in χ around ⟨χ⟩ = 0, and the preheating coupling g²φ²χ² has a χ → −χ symmetry. So χ
+(and χ̃) decay only through operators linear in χ, e.g. χ(∂H)²/M_P or χ̃ψH/M_P. Effective-theory reasoning expects such
+Planck-suppressed operators (gravity is not expected to respect global symmetries), and with coefficients of order one they
+give Γ ~ m_χ³/(8–32π M_P²), as used in D105. Stated as an assumption: the χ → −χ symmetry is broken at the Planck scale and no
+gauge symmetry protects it. (If it were exact, χ would be stable and would come to dominate — excluded.)
+(2) Fermion share confirmed. For a Yukawa-type mass m = g|φ − φ₀|, fermions crossing m = 0 get the same occupation as bosons,
+n_k = e^{−πk²/(g|φ̇|)} (Greene & Kofman; Peloso & Sorbo), so a complex scalar (2 dof) and its Weyl partner (2 dof) are made in equal
+numbers: the fermion share used in D106 (equal numbers) stands. With the decay coefficient range in (1), m_χ at decay is
+0.052–0.074 M_P; BR ∝ m_χ⁴ then spans ×4, so the χ̃-route dark-matter mass is ≈ 100–500 TeV.
