@@ -788,3 +788,17 @@ the y = 4 valley (the valley's pull has faded by the time the angle slows: the p
 Under the direct mapping 1/γ = y this gives γ ≈ 0.065, not 0.25. (On the far tail the angle's restoring force is not periodic,
 so y = 15.4 is not equivalent to 0; either way it is not 4.) Matter yield in the same run: 2.29× (as in the matter recheck).
 Status: the γ = 0.25 route is closed; the LQG mismatch (D83) stands as an open problem.
+
+## Development 111 — a new gap: slow gravitinos at the cliff
+
+Literature: Kolb, Long & McDonough (arXiv:2102.10113) found "catastrophic" production of the helicity-½ gravitino when its sound
+speed c_s vanishes; later work (e.g. arXiv:2104.03749, "Slow and safe gravitinos") shows unconstrained superfields are protected by
+goldstino–inflatino mixing, and that the danger is confined to doubly constrained (orthogonal) set-ups; a model with an unconstrained
+stabiliser S and a quartic Kähler term was found safe (its F-term is not suppressed).
+The Twist: S is unconstrained with the quartic term (D72) — the protected class. But two features are specific: W = 0 along S = 0, so
+m₃/₂ = 0 throughout; and the inflaton's own F-term vanishes (F_T = 0), so φ̇·F* = 0 holds identically and c_s² reduces to (p/ρ)²,
+which passes through zero once, where kinetic and potential energy are equal — at the cliff, as w goes from −1 to +1. One crossing
+(not repeated oscillations) limits the effect, and the mixing argument should apply, but neither has been checked for this
+superpotential. If longitudinal modes were made efficiently they would be light fermions (m₃/₂ ≈ 0) — extra radiation (N_eff) — or
+contribute to the dark-matter question (D106).
+Status: open, new; a dedicated calculation (the helicity-½ mode equation through the cliff) is the check.
