@@ -1,0 +1,4 @@
+a 0.05: A needed 1.0e-19 M_P^3 -> on the plateau (x~1e-4) this term ~ A = 1.0e-19 vs inflation W ~ 1e-5: small
+a 0.1: A needed 8.4e-14 M_P^3 -> on the plateau (x~1e-4) this term ~ A = 8.4e-14 vs inflation W ~ 1e-5: small
+a 0.2: A needed 2.2e-01 M_P^3 -> on the plateau (x~1e-4) this term ~ A = 2.2e-01 vs inflation W ~ 1e-5: spoils the plateau
+a 0.3: A needed 1.1e+12 M_P^3 -> on the plateau (x~1e-4) this term ~ A = 1.1e+12 vs inflation W ~ 1e-5: spoils the plateau
