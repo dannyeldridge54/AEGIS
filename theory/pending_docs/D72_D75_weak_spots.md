@@ -617,3 +617,7 @@ scales like the other dimensionful scales (∝ x^{−1/2} for the soft scale), g
 open the avenue. What remains is the old-style constant FI term with a gauged R-symmetry (V_D = g²ξ²/(2 Re f), T-blind if f
 is), which brings its own constraints (the superpotential must carry R-charge, anomaly cancellation). Status: D103's route
 narrows further to "a gauged-R, T-blind D-term"; still open, and harder than it first looked.
+A point in its favour: the Twist's superpotential W = √3 m S F(T) already has an R-symmetry (S carries R-charge 2, T none —
+the standard stabiliser-field structure), and the added W₀ − A e^{−aT} pieces would break it; so a gauged U(1)_R with a
+constant FI term is structurally available for the inflation sector as written. Whether it survives anomaly cancellation and
+coexists with the SU(8) and supersymmetry-breaking sectors is the concrete next check.
