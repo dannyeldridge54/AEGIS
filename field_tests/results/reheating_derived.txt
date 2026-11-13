@@ -9,3 +9,5 @@ End of inflation: H = 5.21e+12 GeV, phidot = 3.03e-06 M_P^2 (sqrt = 4.24e+15 GeV
   dphi 1.0 M_P, g 0.1: efficiency f = 1.47e-02, T_RH = 5.09e+14 GeV
   dphi 1.0 M_P, g 0.3: efficiency f = 2.28e-01, T_RH = 1.01e+15 GeV
   dphi 1.0 M_P, g 1.0: efficiency f = 1.00e+00, T_RH = 1.46e+15 GeV
+f_rh 0.0015: n_B/s 9.99e-11 (x1.1); peak hidden 0.61; end 5.79e-19; T 8.0e+09; dilution x4.29
+f_rh 0.0147: n_B/s 3.82e-10 (x4.4); peak hidden 0.27; end 1.39e-06; T 1.0e+10; dilution x1.49
