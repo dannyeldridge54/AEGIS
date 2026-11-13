@@ -17,3 +17,4 @@ Practical notes
   people is the usual route.
 - Send the Zenodo DOI (after you press Publish), the PDF, and the repository link with REVIEW_GUIDE.md.
 - Say plainly that the work is independent and AI-assisted; experts respond better to that than to finding out later.
+| Michele Cicoli / Philippe Brax | light moduli as quintessence and fifth forces (string quintessence reviews; coupled dark energy and screening) | Is a non-supersymmetric Standard Model coupled minimally in the Einstein frame a consistent way to shield matter from a no-scale tail field (Developments 90–104)? | check INSPIRE |
