@@ -1477,3 +1477,12 @@ carries κ ~ n₁/(16π²), the requirement n = 2πκ/N₂ = 125 needs n₁ ~ 3,
 (7,884) N₂ ~ 2.5, P(1,1,1,1,4)[8] (29,504) N₂ ~ 9.3 — the right range for a small hidden group. Normalisation uncertain by O(1)–O(2π);
 this is a lead only. But it reconnects the two failed routes (D153 thresholds, D165 metric instantons): the large number could be a
 curve count sitting in a gauge coupling's instanton correction, inside an exponent — exactly the form D167 requires.
+D182 add (literature normalisation; arXiv:2408.12458, "Non-perturbative resolution of strong coupling singularities in 4d N=1
+heterotic/M-theory"): (i) on toroidal orbifolds the holomorphic threshold is f_a ⊃ −(b_a/16π³) ln η(iT)¹² — its q-coefficient is
+~12 b_a/16π³ ≈ 0.024 b_a, confirming D153 (too small); (ii) on Calabi–Yaus the large instanton corrections to the gauge coupling come
+from M5-brane instantons, Re S → r − (1/32π³) Σ_γ Re[Ω̄_γ …], with Ω̄_γ generalised Donaldson–Thomas (BPS) invariants — counts, but
+not genus-0 curve counts. With the 1/(32π³) prefactor, κ ≈ 20 N₂ needs BPS counts ~2×10⁴·N₂ (about 4×10⁴ for N₂ = 2) — plausible
+sizes for such invariants, ~5× larger than the 1/16π² guess. Caveat: these corrections live in heterotic M-theory, where D154 found the
+Standard Model's coupling picks up T; and they correct Re S (shared by both E₈'s) unless the hidden sector sits on a different wall.
+Status: the "big count in an exponent" route has a concrete published mechanism (M5-instanton corrections to the gauge coupling,
+weighted by BPS counts), with the right order of magnitude; its compatibility with the shield is the open point.

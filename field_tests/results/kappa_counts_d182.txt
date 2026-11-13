@@ -9,3 +9,6 @@ N2 8: needs n_1 ~ 25133
   P(1,1,1,1,4)[8]: n_1 = 29504 -> N2 ~ 9.4
   P(1,1,1,2,5)[10]: n_1 = 231200 -> N2 ~ 73.6
 normalisation uncertain by O(1)-O(2 pi): order-of-magnitude lead only
+N2 2: kappa = 39.8 -> with prefactor 1/(32 pi^3): BPS count ~ 39478; with 1/(16 pi^2): ~6283
+N2 3: kappa = 59.7 -> with prefactor 1/(32 pi^3): BPS count ~ 59218; with 1/(16 pi^2): ~9425
+N2 8: kappa = 159.2 -> with prefactor 1/(32 pi^3): BPS count ~ 157914; with 1/(16 pi^2): ~25133
