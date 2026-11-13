@@ -1980,3 +1980,12 @@ image (+0.2σ vs CMB-SPA + DESI, +1.7σ vs CMB-SPA alone, +2.6σ vs Planck, +2.2
 NS-SPA run already tested the natural hope that the Twist's dynamical dark energy would relieve the BAO–CMB tension and found it does not
 (free-n_s minima 0.973–0.976 with the PURE background, D157 context). Practical consequence: which branch survives (Twist vs TWIST-G−/L) will be
 decided as much by how the BAO–CMB tension resolves (DESI DR3, Simons Observatory) as by n_s itself — worth stating in the paper.
+
+**D224 — swampland-review check of today's string conclusions (literature: "Hitchhiker's Guide to the Swampland", arXiv:2509.02632).**
+Consistent with D209–D213: (i) the TCC bound s₁ ≥ 2/√((d − 1)(d − 2)) = 2/√6 in 4-d is quoted (our D212 slope check); (ii) for quintessence
+coupled to matter at gravitational strength, fifth-force limits need (|∇V|/V)² ≲ 10⁻⁵ (Chiang–Murayama) — incompatible with any O(1) slope,
+which is why the Twist needs an exact shield, not a small coupling; (iii) the review's stated escape — "fifth forces are avoided if the
+modulus is localised in the extra dimensions, away from the SM" — is sequestering by locality, which D192 showed fails for the overall volume
+and which for a local (blow-up) modulus does not give rung 3. One tension flagged for follow-up: the review cites Tosone et al. finding
+∇V/V ≲ 0.31 for thawing exponential quintessence (pre-DESI-DR2 data, as quoted); our own DR2-era fits prefer the Twist's 0.82 slope over ΛCDM
+(Δχ² −3.4), so the data preference has moved — but a referee may cite the older bound; the paper should quote the DR2-era result explicitly.
