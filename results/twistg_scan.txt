@@ -1,0 +1,6 @@
+gamma      0: N*=55.7: n_s=0.9642 r=0.0037; N*=57: n_s=0.9650 r=0.0036; tail slope at x=89 0.8074 (TCC 0.8165 VIOLATED)
+gamma  0.002: N*=55.7: n_s=0.9616 r=0.0032; N*=57: n_s=0.9624 r=0.0031; tail slope at x=89 0.8042 (TCC 0.8165 VIOLATED)
+gamma  0.005: N*=55.7: n_s=0.9573 r=0.0025; N*=57: n_s=0.9581 r=0.0024; tail slope at x=89 0.7993 (TCC 0.8165 VIOLATED)
+gamma 0.0085: N*=55.7: n_s=0.9519 r=0.0019; N*=57: n_s=0.9527 r=0.0018; tail slope at x=89 0.7935 (TCC 0.8165 VIOLATED)
+gamma  0.012: N*=55.7: n_s=0.9461 r=0.0014; N*=57: n_s=0.9469 r=0.0013; tail slope at x=89 0.7878 (TCC 0.8165 VIOLATED)
+gamma   0.02: N*=55.7: n_s=0.9315 r=0.0007; N*=57: n_s=0.9322 r=0.0006; tail slope at x=89 0.7748 (TCC 0.8165 VIOLATED)
