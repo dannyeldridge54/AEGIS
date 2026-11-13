@@ -1,0 +1,14 @@
+{
+ "rule": "PREREG_SN_K816.md",
+ "set": "DOVEKIE",
+ "chi2": 1638.9964773543313,
+ "params": [
+  0.6767444712310199,
+  0.022458477878700533,
+  0.11792519872007132,
+  0.03403874725284708
+ ],
+ "delta_vs_LCDM": -8.02,
+ "delta_vs_W0WA": 0.762,
+ "reading": "TWIST HOLDS ON DOVEKIE"
+}
