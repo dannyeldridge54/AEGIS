@@ -1914,3 +1914,9 @@ predictions — and the stable range grows as ln ζ: ζ = 3×10⁵ → 6.2 M_P (
 risk is removable by a larger ζ at no observational cost; the remaining limit is the distance-conjecture tower floor deep on the plateau
 (D123), which a larger stable range runs into first. Status: "robust by analogy, provided ζ ≳ 3×10⁵ (a free, unobservable coefficient)";
 noted as a recommended model-card change, not applied (changing a coefficient after the fact would need its own consistency re-run).
+
+**D218 — ζ = 3×10⁵ adopted after a full re-run (theory/kahler_cliff/zeta3e5_check_d218.py; results/zeta3e5_check_d218.txt).** Full two-field
+supergravity check of TWIST-K with ζ = 3×10⁵: V along the path equals the Twist's to 10 digits at x = 5×10⁻⁷, 1.3×10⁻⁴, 0.01, 1, 89; the angle stays at
++4H² everywhere; m_S²/H² = 310 (CMB point), 2.4×10⁴ (cliff), 6×10⁵ (x = 1), 2.6×10⁴ (today); and at x = 5×10⁻⁷ m_S²/H² = −0.8, matching the formula
+−2 + 8ζx (edge x_b = 8.3×10⁻⁷) — a check of the D217 analysis. No observable changes (S = 0 along the path). Model card updated; the lumpy-start
+status becomes "robust by analogy, with 6.2 M_P of stable plateau beyond the CMB point".

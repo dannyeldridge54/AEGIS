@@ -1,0 +1,5 @@
+x 5e-7: V_new/V_twist 1.0000000000; m_S^2/H^2 -0.8; m_y^2/H^2 new +4.000 (Twist +4.000)
+x 1.3e-4: V_new/V_twist 1.0000000000; m_S^2/H^2 309.9; m_y^2/H^2 new +4.000 (Twist +4.000)
+x 0.01: V_new/V_twist 1.0000000000; m_S^2/H^2 2.353e+04; m_y^2/H^2 new +4.000 (Twist +3.969)
+x 1: V_new/V_twist 1.0000000000; m_S^2/H^2 6.081e+05; m_y^2/H^2 new +4.000 (Twist -136.623)
+x 89: V_new/V_twist 1.0000000000; m_S^2/H^2 2.637e+04; m_y^2/H^2 new +4.000 (Twist +4.000)
