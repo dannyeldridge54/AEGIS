@@ -2033,3 +2033,11 @@ naturalness, distinct from it on r.
 **D228 — TWIST-C passes the full supergravity check (theory/kahler_cliff/twistc_sugra_d228.py).** c = 3.5×10⁻⁷: V/V_Twist = (1 + 2c/u)² as
 intended (1.0054 at the CMB point, 1.00007 at the cliff, 1 + 8×10⁻⁹ today — the dark energy is untouched); m_S²/H² unchanged; the angle's
 mass +3.98 H² at the CMB point, +4.00 elsewhere — stable.
+
+**D229 — birefringence watch (literature check, no eligible data yet).** The pre-lock ACT + Planck value β = 0.277° ± 0.057° (4.8σ; 3.5σ in the
+reduced-dust test; Eskilt arXiv:2608.06480) still stands in ~4.9σ tension with the Twist's locked null (PREREG_BIREF_NULL), with the author's
+own caveat that unresolved systematics must be understood first. No measurement with an independent angle calibration has appeared yet:
+2512.14407 (Tau A + Moon calibration of a 31 GHz instrument) and 2606.20171 (POLOCALC airborne calibrators, goal 0.01°) are calibration
+papers, not β results; Simons Observatory's sparse-wire-grid calibration (2512.19102) is in place. The locked reading will be triggered by the
+first calibrator-based β with total error ≤ 0.10°. This remains the Twist's sharpest near-term risk besides n_s: a calibrated β ≈ 0.28° at ≥ 5σ
+would make PREREG_BIREF_NULL NOT SUPPORTED, leaving only the anomaly route (β ≤ 0.075°), which that value would also exclude.
