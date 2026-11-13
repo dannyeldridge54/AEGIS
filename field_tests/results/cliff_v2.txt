@@ -1,0 +1,76 @@
+old cliff, m2 = 1.0: N* 55.7, n_s 0.9642, r 0.0038; CMB point x 1.06e-04, end x 7.00e-03; angle on plateau m_y^2/H^2 +4.00
+   heat 0.04%: frozen x 1.16e+03, slope 1.214 x sqrt(2/3); w0 -0.856, wa -0.203; angle today m_y^2/H^2 +1.34
+   heat 0.13%: frozen x 358, slope 1.692 x sqrt(2/3); w0 -0.738, wa -0.343; angle today m_y^2/H^2 +0.09
+   heat 0.40%: frozen x 117, slope 3.101 x sqrt(2/3); w0 -0.403, wa -0.362; angle today m_y^2/H^2 -1.43
+new cliff, m2 = 0.1: N* 55.2, n_s 0.9641, r 0.0010; CMB point x 5.13e-04, end x 5.90e-03; angle on plateau m_y^2/H^2 +4.03
+   heat 0.04%: frozen x 504, slope 0.998 x sqrt(2/3); w0 -0.900, wa -0.145; angle today m_y^2/H^2 +2.01
+   heat 0.13%: frozen x 155, slope 0.994 x sqrt(2/3); w0 -0.900, wa -0.144; angle today m_y^2/H^2 +2.02
+   heat 0.40%: frozen x 50.4, slope 0.983 x sqrt(2/3); w0 -0.903, wa -0.141; angle today m_y^2/H^2 +2.06
+new cliff, m2 = 0.3: N* 55.2, n_s 0.9645, r 0.0010; CMB point x 1.50e-03, end x 1.76e-02; angle on plateau m_y^2/H^2 +4.02
+   heat 0.04%: frozen x 1.51e+03, slope 0.999 x sqrt(2/3); w0 -0.899, wa -0.145; angle today m_y^2/H^2 +2.00
+   heat 0.13%: frozen x 464, slope 0.998 x sqrt(2/3); w0 -0.900, wa -0.145; angle today m_y^2/H^2 +2.01
+   heat 0.40%: frozen x 151, slope 0.995 x sqrt(2/3); w0 -0.900, wa -0.144; angle today m_y^2/H^2 +2.01
+new cliff, m2 = 1.0: N* 55.2, n_s 0.9657, r 0.0012; CMB point x 4.59e-03, end x 5.81e-02; angle on plateau m_y^2/H^2 +4.02
+   heat 0.04%: frozen x 5e+03, slope 1.000 x sqrt(2/3); w0 -0.899, wa -0.146; angle today m_y^2/H^2 +2.00
+   heat 0.13%: frozen x 1.54e+03, slope 1.000 x sqrt(2/3); w0 -0.899, wa -0.145; angle today m_y^2/H^2 +2.00
+   heat 0.40%: frozen x 501, slope 1.000 x sqrt(2/3); w0 -0.899, wa -0.145; angle today m_y^2/H^2 +2.00
+new cliff, m2 = 3.0: N* 55.3, n_s 0.9673, r 0.0017; CMB point x 1.10e-02, end x 1.70e-01; angle on plateau m_y^2/H^2 +4.01
+   heat 0.04%: frozen x 1.49e+04, slope 1.000 x sqrt(2/3); w0 -0.899, wa -0.146; angle today m_y^2/H^2 +2.00
+   heat 0.13%: frozen x 4.57e+03, slope 1.000 x sqrt(2/3); w0 -0.899, wa -0.146; angle today m_y^2/H^2 +2.00
+   heat 0.40%: frozen x 1.49e+03, slope 1.001 x sqrt(2/3); w0 -0.899, wa -0.146; angle today m_y^2/H^2 +1.99
+exp cliff, m2 = 1.0: N* 55.7, n_s 0.9642, r 0.0038; CMB point x 1.06e-04, end x 6.95e-03; angle on plateau m_y^2/H^2 +4.00
+   heat 0.04%: frozen x 1.14e+03, slope 0.999 x sqrt(2/3); w0 -0.899, wa -0.145; angle today m_y^2/H^2 +2.00
+   heat 0.13%: frozen x 351, slope 0.997 x sqrt(2/3); w0 -0.900, wa -0.145; angle today m_y^2/H^2 +2.01
+   heat 0.40%: frozen x 114, slope 0.991 x sqrt(2/3); w0 -0.901, wa -0.143; angle today m_y^2/H^2 +2.03
+exp cliff, m2 = 1.2732395: N* 55.7, n_s 0.9642, r 0.0038; CMB point x 1.34e-04, end x 8.84e-03; angle on plateau m_y^2/H^2 +4.00
+   heat 0.04%: frozen x 1.45e+03, slope 0.999 x sqrt(2/3); w0 -0.899, wa -0.145; angle today m_y^2/H^2 +2.00
+   heat 0.13%: frozen x 446, slope 0.998 x sqrt(2/3); w0 -0.900, wa -0.145; angle today m_y^2/H^2 +2.01
+   heat 0.40%: frozen x 145, slope 0.993 x sqrt(2/3); w0 -0.901, wa -0.144; angle today m_y^2/H^2 +2.02
+exp cliff, m2 = 0.5: N* 55.7, n_s 0.9642, r 0.0038; CMB point x 5.30e-05, end x 3.48e-03; angle on plateau m_y^2/H^2 +4.00
+   heat 0.04%: frozen x 571, slope 0.998 x sqrt(2/3); w0 -0.900, wa -0.145; angle today m_y^2/H^2 +2.01
+   heat 0.13%: frozen x 176, slope 0.994 x sqrt(2/3); w0 -0.900, wa -0.144; angle today m_y^2/H^2 +2.02
+   heat 0.40%: frozen x 57.2, slope 0.983 x sqrt(2/3); w0 -0.903, wa -0.141; angle today m_y^2/H^2 +2.06
+
+exp cliff m2 = 1.0000: angle m_y^2/H^2 along the path (old cliff for comparison)
+   x 0.0001: new     +4.00   old     +4.00
+   x 0.003: new     +4.00   old     +3.99
+   x 0.01: new     +3.95   old     +3.90
+   x 0.03: new     +3.56   old     +3.17
+   x 0.1: new     -0.54   old     -3.53
+   x 0.3: new    -29.44   old    -37.07
+   x 1: new   -180.44   old   -121.50
+   x 3: new   -221.17   old   -137.75
+   x 10: new     +0.08   old    -72.78
+   x 30: new     +2.13   old    -28.08
+   x 100: new     +2.04   old     -7.67
+   x 1000: new     +2.00   old     +1.01
+
+exp cliff m2 = 1.2732: angle m_y^2/H^2 along the path (old cliff for comparison)
+   x 0.0001: new     +4.00   old     +4.00
+   x 0.003: new     +4.00   old     +3.99
+   x 0.01: new     +3.97   old     +3.90
+   x 0.03: new     +3.73   old     +3.17
+   x 0.1: new     +1.13   old     -3.53
+   x 0.3: new    -18.04   old    -37.07
+   x 1: new   -137.12   old   -121.50
+   x 3: new   -260.22   old   -137.75
+   x 10: new     -9.63   old    -72.78
+   x 30: new     +2.13   old    -28.08
+   x 100: new     +2.04   old     -7.67
+   x 1000: new     +2.00   old     +1.01
+zeta = 0.0:
+   x 1e-04: V 2.451e-01, m_S^2/H^2: Re -2.00, Im -2.00
+   x 1e-03: V 2.052e-01, m_S^2/H^2: Re -1.96, Im -1.96
+   x 1e-02: V 3.501e-02, m_S^2/H^2: Re +1.83, Im +1.83
+   x 1e-01: V 1.430e-09, m_S^2/H^2: Re +330.80, Im +330.80
+   x 1e+00: V 1.062e-60, m_S^2/H^2: Re +8102.18, Im +8102.18
+   x 1e+01: V 6.685e-111, m_S^2/H^2: Re +0.79, Im +0.79
+   x 1e+02: V 6.607e-112, m_S^2/H^2: Re -1.02, Im -1.02
+zeta = 10000.0:
+   x 1e-04: V 2.451e-01, m_S^2/H^2: Re +6.00, Im +6.00
+   x 1e-03: V 2.052e-01, m_S^2/H^2: Re +78.04, Im +78.04
+   x 1e-02: V 3.501e-02, m_S^2/H^2: Re +801.83, Im +801.83
+   x 1e-01: V 1.430e-09, m_S^2/H^2: Re +8330.80, Im +8330.80
+   x 1e+00: V 1.062e-60, m_S^2/H^2: Re +88102.18, Im +88102.18
+   x 1e+01: V 6.685e-111, m_S^2/H^2: Re +800000.79, Im +800000.79
+   x 1e+02: V 6.607e-112, m_S^2/H^2: Re +7999998.98, Im +7999998.98

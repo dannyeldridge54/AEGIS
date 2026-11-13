@@ -70,7 +70,9 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 - **TAIL-F: FULL TAIL DISFAVOURED (Δχ² +29.2).** With the computed heat share (0.13%) the cliff's leftover slope
   makes today's dark energy too stiff (w₀ −0.74, w_a −0.34). Freed, the heat share runs to the lower edge (0.01%,
   the PURE-TWIST limit; Δχ² −2.79). PURE-TWIST therefore needs far less heat or a reshaped cliff (`tail_f.json`,
-  Development 78b).
+  Development 78b). **Response (Development 79, made after this result):** the cliff factor was reshaped to
+  exp(−n(1 − e^{−πT/4})), which leaves inflation identical (n_s 0.9642, r 0.0038) and gives the PURE-TWIST tail at any
+  heat share. A post-hoc change: only new data test it.
 - **Withdrawn numbers:** the hidden mass 3–6×10⁹ GeV (a pre-stated check failed; corrected to ~3×10¹⁰ GeV);
   several earlier developments (D26 gravitino, D31) superseded. All kept in the matter doc and git history.
 
@@ -97,7 +99,9 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
    about +0.002 (estimate, Development 77).
 11. Today's slope depends on reheating (Development 78): PURE-TWIST's √(2/3) needs heat share ≲ 0.01%; at the
    computed 0.13% the full tail gives w₀ ≈ −0.74, w_a ≈ −0.34 (D78b). A correction to Backlog L, which kept only the μ factor.
-12. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
+12. The cliff factor exp(−n(1 − e^{−πT/4})) (Development 79) was chosen after TAIL-F; its SU(8)-condensate form and
+   period-8 angle are motivation, not derivation.
+13. Compressed CMB likelihood (θ*, ω_b, ω_b + ω_c) in TOURNAMENT-family tests; full-likelihood tests are V6 and NS-PURE.
 
 ## 5. How to reproduce
 

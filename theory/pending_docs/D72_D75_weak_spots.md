@@ -171,3 +171,36 @@ is PURE-TWIST. So PURE-TWIST is not automatic: the theory must do one of
   (c) let the field keep travelling further after the cliff by some other route (not identified).
 None is taken yet; this is Danny's call. Until then the honest summary is: PURE-TWIST fits; the full model with its
 computed reheating does not.
+
+## Development 79 — a reshaped cliff: exp(−n(1 − e^{−πT/4})) keeps inflation and gives the √(2/3) tail at any heat
+
+Script: theory/inflation/cliff_v2.py; results/cliff_v2.txt. Done after TAIL-F failed (so: a model change made after
+seeing data — labelled as such).
+
+The problem (TAIL-F). The old cliff factor exp(−nT/(T + m2)) leaves a slope that dies only like 1/x, so at the
+computed heat share the tail is too steep (Δχ² +29).
+
+Tried.
+  (i) exp(−nT²/(T² + m2²)) (leftover dies like 1/x²): tail becomes exactly PURE-TWIST, but the cliff's quadratic term
+      takes over the plateau and r drops to 0.0010–0.0017, breaking the locked r = 0.0034–0.0040. Rejected.
+  (ii) exp(−n(1 − e^{−T/m2})) (leftover dies like e^{−x/m2}): at small x it is −nT/m2, the same linear term as the old
+      cliff, so the plateau is unchanged; at large x the leftover vanishes exponentially. Taken.
+
+Results for (ii), μ = 1, n = 125:
+  - Inflation unchanged: N* 55.7, n_s 0.9642, r 0.0038 (old: identical), for m2 = 0.5, 1 and 4/π.
+  - Tail: slope (0.99–1.00) × √(2/3) and w₀ −0.90, w_a −0.145 at heat share 0.04%, 0.13% and 0.4% alike — the tail no
+    longer depends on reheating. The field freezes at x ≈ 350–450 at 0.13%.
+  - Angle y: heavy on the plateau (+4H²); unstable only while crossing the cliff (x ≈ 0.3–10, passed in kination);
+    stable on the tail from x ≈ 30 (+2H²; old cliff only from x ≈ 500).
+  - Helper field S: same plateau rule (−2 + 8ζx); with this cliff S is slightly unstable far down the tail if ζ = 0
+    (−1.0H² at x = 100), so the ζ ≳ 10⁴ term of D72 is now needed on the tail too; with it S is heavy everywhere.
+
+Choice of m2: m2 = 4/π. Then e^{−T/m2} = e^{−2πT/8}, the exponent of an SU(8) gaugino condensate — the same hidden
+SU(8) and the same A = π/4 as the matter kick — and the cliff factor becomes periodic in the angle y with period 8,
+the twist angle's own period. (The old cliff broke that periodicity.) This is a motivated form, not a derivation:
+why the condensate appears inside an exponential (a "double exponential") is not explained. Label: chosen.
+
+Consequence for the tests. The new version's tail is PURE-TWIST, so PURE-TWIST's locked results now apply to the
+full model at its computed heat share; but this was arranged after TAIL-F, so new data (DESI DR3, Euclid) are the real
+test. Inflation's locked predictions (n_s, r) are untouched. Matter: the end of inflation is unchanged for m2 = 1 and
+rescaled in x for m2 = 4/π (x_end 8.8×10⁻³ vs 7.0×10⁻³); the kick and yield are expected to be unchanged — to be rechecked.
