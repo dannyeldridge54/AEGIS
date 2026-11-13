@@ -1754,3 +1754,8 @@ heterotic-M-theory vacua — at strong coupling, where D204 says the Twist's fie
 direction the Twist moves along must be checked in symmetric vacua specifically (D184 gave 4 for the generic matter-neutral direction; with
 β = 0 the matter metric has no T correction, so fewer moduli may need to move — could even restore rung 3); (ii) the cliff from open-membrane
 instantons in E(T) form; (iii) dilaton/orbifold-length stabilisation (BGW-type analogue at strong coupling); (iv) n. Status: best home so far.
+D206 add — point (i) settled: symmetric vacua do NOT restore rung 3. Witten's tree-level relations G_N = κ²/(16π²Vρ), α_GUT = (4πκ²)^{2/3}/(2V)
+give G_N M_GUT² = (2α_GUT)^{3/2}/(64π³ ρM_GUT): at fixed coupling, M_GUT/M_P ∝ (ρM_GUT)^{−1/2}, i.e. ∝ T^{−1/2}. Moving T alone gives every
+matter scale a universal coupling β = (1/2)/√(3/2) = 0.41 (Cassini: 3.4×10⁻³) — a tree-level effect that the vanishing thresholds do not
+remove. So the matter-neutral direction must move several moduli together, which is D184's rung 4. Symmetric vacua remove the
+threshold/matter-metric leaks along that direction; the rung stays 4 and PREREG_TWIST4's numbers stand.
