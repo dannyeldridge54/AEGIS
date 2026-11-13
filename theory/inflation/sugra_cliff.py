@@ -12,11 +12,12 @@ from scipy.integrate import solve_ivp
 c = math.sqrt(2 / 3); NSTAR = 55.6
 
 
-def make(mu, delta, a, n, m2, gamma=math.pi / 2):
+def make(mu, delta, a, n, m2, gamma=math.pi / 2, scaled=False):
     d = delta * cmath.exp(1j * gamma)
     def V(p, y):
         x = math.exp(c * p); T = complex(x, y)
-        F = (T ** 1.5 / cmath.sqrt(T + mu) + d * cmath.exp(-a * T)) * cmath.exp(-n * m2 / (T + m2))
+        kick = d * cmath.exp(-a * T) * (T ** 1.5 if scaled else 1)       # scaled: the kick shrinks with the rest below the plateau
+        F = (T ** 1.5 / cmath.sqrt(T + mu) + kick) * cmath.exp(-n * m2 / (T + m2))
         return abs(F) ** 2 / (4 * x * x)
     def lnV_grad(p, y, h=1e-6):
         return ((math.log(V(p + h, y)) - math.log(V(p - h, y))) / (2 * h), (math.log(V(p, y + h)) - math.log(V(p, y - h))) / (2 * h))
@@ -25,12 +26,12 @@ def make(mu, delta, a, n, m2, gamma=math.pi / 2):
     return V, lnV_grad, m2_over_V
 
 
-def run(mu=1.0, delta=0.1, a=1.0, n=10.0, m2=1.0, p0=5.6, Nafter=4.0):
-    V, G, M = make(mu, delta, a, n, m2)
+def run(mu=1.0, delta=0.1, a=1.0, n=10.0, m2=1.0, p0=5.6, Nafter=4.0, scaled=False):
+    V, G, M = make(mu, delta, a, n, m2, scaled=scaled)
     def rhs(N, z):
         p, y, dp, dy = z; g = 1.5 * math.exp(-2 * c * p); eps = 0.5 * (dp * dp + g * dy * dy); gp, gy = G(p, y)
         return [dp, dy, -c * g * dy * dy - (3 - eps) * (dp + gp), 2 * c * dp * dy - (3 - eps) * (dy + gy / g)]
-    end = lambda N, z: 0.5 * (z[2] ** 2 + 1.5 * math.exp(-2 * c * z[0]) * z[3] ** 2) - 1; end.direction = 1
+    end = lambda N, z: 0.5 * (z[2] ** 2 + 1.5 * math.exp(-2 * c * z[0]) * z[3] ** 2) - 1; end.direction = 1; end.terminal = True
     s1 = solve_ivp(rhs, [0, 400], [p0, 0, 0, 0], events=end, rtol=1e-10, atol=1e-13, dense_output=True, method="LSODA")
     if not s1.t_events[0].size:
         return None
