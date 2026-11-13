@@ -1066,3 +1066,15 @@ four-dimensional structure. It is not a tesseract (a tesseract is a 4-d cube; th
 periodic; here only two are).
 (4) Not found: no 13-circle (Metatron's cube) or 12-around-1 structure appears in any equation; nothing in the model computes
 the shape of bound particles. Recorded as interpretation, not prediction.
+
+**D140 — constructed and tested: the "scaling shield" against the fifth force (theory/darkenergy/scaling_shield_d140.py;
+results/scaling_shield_d140.txt).** Construction: K = −3 ln(T + T̄) has the no-scale scaling symmetry T → λT; put the SM in
+sequestered (Einstein-frame minimal) form so its couplings respect it; χ carries no scaling charge, so its Planck links to the SM
+stay allowed (D110) — the χ/φ asymmetry D135 needed now comes from a named symmetry. A φ–SM coupling then needs a source that breaks
+the scaling. Tested against Cassini (β < 3.4×10⁻³) and MICROSCOPE (β < ~1.2×10⁻⁶) at x = 73 and today's 89:
+(a) instanton breaking ∝ q^k (the cliff's own e^{−πT/4}): β ≈ 3×10⁻²⁹ — passes by 10²³; (b) D118's e^{−2πT}: passes by 10²³⁴;
+(d) the superpotential's breaking reaches the SM only via gravity, β ~ 10⁻¹²⁰ — passes; (c) **perturbative breaking ∝ c_p/x^p
+decides it**: p = ½ or 1 fails Cassini even for c_p = 1; p = 3/2 (the α′³ form in string theory) passes Cassini but needs
+c_p < 8×10⁻⁴ for MICROSCOPE; p = 2 needs c_p < 6×10⁻³; p = 3 passes with c_p < 0.3. Status: fifth force → **conditional**:
+safe if the scaling symmetry is broken only non-perturbatively, or perturbatively at order ≥ 1/x³ (or ≥ 1/x^{3/2} with a
+coefficient below 10⁻³). The open question is now precise: which perturbative corrections the SM–T sector has.

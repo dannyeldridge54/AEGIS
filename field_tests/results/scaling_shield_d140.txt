@@ -1,0 +1,24 @@
+tests: Cassini beta < 3.4e-03; MICROSCOPE beta < 1.2e-06
+
+x = 73.0 (field frozen (late universe)):
+  (a) instanton breaking q^1: beta 5.9e-24  -> PASS (margin 10^17)
+  (a) instanton breaking q^2: beta 1.5e-48  -> PASS (margin 10^42)
+  (b) single instanton e^(-2 pi T): beta 2.4e-197 -> PASS (margin 10^191)
+  (c) perturbative 1/x^0.5 (coefficient 1): beta 4.8e-02 -> Cassini FAIL, MICROSCOPE FAIL; coefficient must be < 2.5e-05 for MICROSCOPE
+  (c) perturbative 1/x^1.0 (coefficient 1): beta 1.1e-02 -> Cassini FAIL, MICROSCOPE FAIL; coefficient must be < 1.1e-04 for MICROSCOPE
+  (c) perturbative 1/x^1.5 (coefficient 1): beta 2.0e-03 -> Cassini PASS, MICROSCOPE FAIL; coefficient must be < 6.1e-04 for MICROSCOPE
+  (c) perturbative 1/x^2.0 (coefficient 1): beta 3.1e-04 -> Cassini PASS, MICROSCOPE FAIL; coefficient must be < 3.9e-03 for MICROSCOPE
+  (c) perturbative 1/x^3.0 (coefficient 1): beta 6.3e-06 -> Cassini PASS, MICROSCOPE FAIL; coefficient must be < 1.9e-01 for MICROSCOPE
+  (d) superpotential breaking via gravity: beta ~ V_tail/M_P^4 ~ 7e-121 -> PASS
+
+x = 88.9 (today):
+  (a) instanton breaking q^1: beta 2.7e-29  -> PASS (margin 10^23)
+  (a) instanton breaking q^2: beta 2.6e-59  -> PASS (margin 10^53)
+  (b) single instanton e^(-2 pi T): beta 1.2e-240 -> PASS (margin 10^234)
+  (c) perturbative 1/x^0.5 (coefficient 1): beta 4.3e-02 -> Cassini FAIL, MICROSCOPE FAIL; coefficient must be < 2.8e-05 for MICROSCOPE
+  (c) perturbative 1/x^1.0 (coefficient 1): beta 9.2e-03 -> Cassini FAIL, MICROSCOPE FAIL; coefficient must be < 1.3e-04 for MICROSCOPE
+  (c) perturbative 1/x^1.5 (coefficient 1): beta 1.5e-03 -> Cassini PASS, MICROSCOPE FAIL; coefficient must be < 8.2e-04 for MICROSCOPE
+  (c) perturbative 1/x^2.0 (coefficient 1): beta 2.1e-04 -> Cassini PASS, MICROSCOPE FAIL; coefficient must be < 5.8e-03 for MICROSCOPE
+  (c) perturbative 1/x^3.0 (coefficient 1): beta 3.5e-06 -> Cassini PASS, MICROSCOPE FAIL; coefficient must be < 3.4e-01 for MICROSCOPE
+  (d) superpotential breaking via gravity: beta ~ V_tail/M_P^4 ~ 7e-121 -> PASS
+
