@@ -1,0 +1,11 @@
+Audit of tonight's numbers by independent re-derivation (AI-assisted, 13 Nov 02:30 CT)
+D38 scalar light branch, T_RH 1e+13: analytic m = 1.015e+12 GeV (script: 1.02e12)
+D38 scalar light branch, T_RH 1e+14: analytic m = 1.015e+09 GeV (script: 1.02e9)
+D35 matter yield vs hidden mass exponent p = 1.99 (claimed ~2)
+D37 mass restoring 1x from 0.71x: 7.13e+09 GeV (claimed ~7e9)
+D42 mass for 1x at 4.4x: 2.85e+09; at 1.1x: 5.72e+09 (claimed 3-6e9)
+D40 kination f=0.01: N_k 2.30, dN* = N_k/2 = 1.15 (Planck Eq.47 form, w=1)
+D40 kination f=1e-12: N_k 13.82, dN* = N_k/2 = 6.91 (Planck Eq.47 form, w=1)
+D43 n for exp(-2n) m^2/4 = rho_DE: 126.8 (claimed 126.8)
+D45 beta=0 pull vs 0.277+/-0.057: 4.9 sigma (claimed 4.9)
+D46 a = 2pi/N = pi/4 -> N = 8
