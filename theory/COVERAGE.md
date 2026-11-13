@@ -23,7 +23,7 @@ estimate / locked / open). AI-assisted.
 | Growth, lensing | fσ₈ ~3% low, E_G ~+5%, S₈ 0.793 | frozen predictions | pure_twist_growth.json |
 | Hubble constant | H₀ ≈ 66.8 (PURE-TWIST on PR4): does not ease the SH0ES tension | locked fit | NS-PURE |
 | Birefringence | zero, robustly | locked; 4.9σ tension today | D82 |
-| Fifth force, equivalence principle, varying constants | D104's "SM outside SUGRA" would remove it, but D110's own argument gives generic (φ/M_P)·O_SM couplings with β = O(1); forbidding them needs an unexplained symmetry | **main open problem** | D90–D96, D104, D135 |
+| Fifth force, equivalence principle, varying constants | isometry shield (SM neutral under scaling + shift of the T-disk): instanton leak passes every test by ≥10¹⁹; perturbative leaks must fall as 1/x⁴ (clocks); locked fingerprint (PREREG_SHIELD); candidate home heterotic Z₃ — but no known string setting also gives the linear-T hidden coupling the cliff needs | EFT consistent; string-level open (D154) | D90–D96, D104, D135, D140–D155 |
 | Quantum stability of the tail | needs every particle >6 meV to have a field-independent mass | open, severe, generic | D80 |
 | Field distance | ≈ 16 M_P; with a volume-modulus tower (KK for x > 1, winding for x < 1) the tower stays ≥ 20× H and ≥ 76× T on the whole history; floors the plateau at x ≈ 6×10⁻⁶ | passes (assumption: volume-type T) | D75, D113, D123 |
 | Loop quantum gravity link | y = 4 route failed (D102); self-dual γ = ±i removes the entropy constraint (Frodden et al. 2012) — the field's γ is then cosmological only | resolved by choice, not derived | D83, D117, D120 |
@@ -32,3 +32,6 @@ estimate / locked / open). AI-assisted.
 | LQG quantum geometry | area quanta would vary with γ; no test; the Twist uses none of it | motivation only | D101 |
 | Field-dependent vacuum energy | χ's inflaton-dependent mass + Planck links to the non-SUSY SM gave δV ~ 10⁵²–10¹⁰⁸ ρ_DE (D116); a saturating mass (1 − e^{−2π(T−T₀)}) brings it to ≤ 10⁻⁸⁸ ρ_DE | candidate fix (estimate), one new assumption; angle condition passes (D121) | D105, D116, D118 |
 | Isocurvature (hidden axion, angle) | estimated S_B ~ 6×10⁻⁶ (σ) and ~10⁻¹⁰ (angle), assuming the yield is not very sensitive — being tested | unverified | D134, D137 |
+| Spectral index n_s vs current data | locked NS-SPA: cost Δχ² 11.7 at n_s = 0.964 (ΛCDM 8.5) — INCONSISTENT; loop shift negligible (n_s 0.964–0.965) | **failed (inflation sector)**; TWIST-P waits for future data | D108, D131, D132, D156, D157 |
+| Late-time fit on full SPA data | Twist wins BAO + SN by −3.2, loses CMB by +4.7; net +1.45 vs ΛCDM | diagnostic | D158 |
+| String home | rung 3 + linear-T hidden gauge coupling + neutral SM: no known setting gives all three (IIB, heterotic Z₃, heterotic M, IIA, fibre checked) | open — sharpest theory problem | D150–D155 |

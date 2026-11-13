@@ -76,7 +76,8 @@ theory/pending_docs/D72_D75_weak_spots.md; the model card (papers/MODEL_CARD_v5.
 - **Dark energy:** PURE-TWIST fits DESI DR2 + supernovae + CMB slightly better than ΛCDM (Δχ² −3.4; 0.7–1.7σ after look-elsewhere).
 - **n_s — locked verdict: INCONSISTENT (D157).** Fixing n_s at the Twist's 0.964 costs Δχ² = 11.7 against CMB-SPA + DESI (threshold 9);
   ΛCDM at the same n_s costs 8.5. With n_s free, PURE-TWIST fits this full data set slightly worse than ΛCDM (+1.45). The
-  Twist's inflation, as it stands, is disfavoured by current data; TWIST-P waits for future data.
+  Twist's inflation, as it stands, is disfavoured by current data; TWIST-P waits for future data. Per likelihood (D158) the Twist
+  still wins the late-universe data (BAO + SN −3.2) and loses the precise CMB (+4.7).
 - **Results against the model, kept on record:**
   - the original cliff failed TAIL-F (Δχ² +29), and the reshape that followed was after the fact
   - the γ = 1/4 idea failed
