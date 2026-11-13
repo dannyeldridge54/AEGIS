@@ -1,7 +1,7 @@
 # WATCH-PURE-DR3: the PURE-TWIST prediction for DESI DR3 (and the next independent BAO survey)
 
-**Status: DRAFT**, written 12 Nov 2026 (~21:05 CT) during the theory work Danny asked for ("Keep developing it").
-LOCKED only on Danny's word. AI-assisted.
+**Status: LOCKED** on Danny's word ("Get it ready to test", 12 Nov 2026, 20:59 CT), before any DESI release after DR2 exists. Drafted 12 Nov 2026 (~21:05 CT) during the theory work Danny asked for ("Keep developing it").
+AI-assisted.
 
 **Why.** PURE-TWIST (κ = √(2/3), β = 0, no parameter beyond ΛCDM) was PREFERRED on 12 Nov 2026 (DESI DR2, SDSS,
 Pantheon+, CMB distance priors). Its frozen predictions are in `field_tests/results/pure_twist_predictions.json`:
