@@ -1130,3 +1130,13 @@ Through gravitons: ~ V_tail/M_P⁴ ~ 10⁻¹²⁰. All pass. The only dangerous 
 **D147 — the dark-matter route survives the shield.** χ is neutral under both isometries, so the χ̃ψH/M_P operator that lets χ̃ decay
 to SM fermions (D106/D112) is allowed; the 100–500 TeV estimate is unchanged by the shield (still conditional and out of the
 predictions table until it settles).
+
+**D148 — the SU(8) strong-coupling problem has a simple cure (results/su8_weak_d148.txt).** With f_SU(8) = f₀ + T (f₀ a constant from
+another modulus, e.g. a dilaton) the condensate is e^{−2π(f₀+T)/8} = e^{−πf₀/4}·e^{−πT/4}: the cliff's 4/π is unchanged, but the
+coupling 1/g² = f₀ + x ≥ f₀ through all of inflation. f₀ = 2: α ≤ 0.04 ('t Hooft λ ≤ 4) — weakly coupled, formula under control;
+cost: the D119/D126 mixed-operator coefficient must grow by e^{πf₀/4} ≈ 4.8, to c ~ 190–770. f₀ = 4: α ≤ 0.02, c ~ 1000–4000.
+Trade-off: control of SU(8) versus a larger operator coefficient (n is still chosen, now inside c). Status: referee point 3(a) →
+fixable at the price of a larger coefficient; 4/π can be called "SU(8) form, weakly coupled for f₀ ≳ 2".
+
+**D149 — can the seven-disk ladder move n_s? No.** On any rung n_s ≈ 1 − 2/N at leading order (α only sets r ≈ 12α/N²); a merger
+of disks during inflation changes r, not n_s. The ladder cannot help the n_s tension (consistent with D108/D132).

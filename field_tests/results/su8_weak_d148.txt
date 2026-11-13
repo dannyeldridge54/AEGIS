@@ -1,0 +1,5 @@
+f0 0.5: alpha_SU8 <= 0.159 during inflation (was ~10^2-10^4 strong), 't Hooft lambda = 8 g^2 <= 16.0; mixed-operator coefficient x1.5 -> c ~ 59-237 (N2 = 2-8)
+f0 1: alpha_SU8 <= 0.080 during inflation (was ~10^2-10^4 strong), 't Hooft lambda = 8 g^2 <= 8.0; mixed-operator coefficient x2.2 -> c ~ 88-351 (N2 = 2-8)
+f0 2: alpha_SU8 <= 0.040 during inflation (was ~10^2-10^4 strong), 't Hooft lambda = 8 g^2 <= 4.0; mixed-operator coefficient x4.8 -> c ~ 192-770 (N2 = 2-8)
+f0 3: alpha_SU8 <= 0.027 during inflation (was ~10^2-10^4 strong), 't Hooft lambda = 8 g^2 <= 2.7; mixed-operator coefficient x10.6 -> c ~ 422-1688 (N2 = 2-8)
+f0 4: alpha_SU8 <= 0.020 during inflation (was ~10^2-10^4 strong), 't Hooft lambda = 8 g^2 <= 2.0; mixed-operator coefficient x23.1 -> c ~ 926-3703 (N2 = 2-8)
