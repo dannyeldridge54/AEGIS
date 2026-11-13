@@ -84,3 +84,13 @@ unchanged. Built after seeing the n_s data, so only post-lock CMB results can sc
 
 ## Separate model: TWIST-L (locked 13:59; PREREG_TWISTL.md)
 TWIST-K plus a logarithmic factor in S's metric (an IR-free running coupling at a T-set scale, D163). Keeps rung 3. Predicts n_s 0.965–0.979 with r 0.0036–0.014 rising together (lower r than TWIST-P at the same n_s). Built after seeing the n_s data; scored only on future CMB results.
+
+## Separate models added 13 Nov evening (all built after seeing the n_s data; only post-lock CMB results score them)
+| Model | Change | n_s at ACT value | r there | Notes |
+|---|---|---|---|---|
+| TWIST-M9 (PREREG_TWISTM9) | Γ₀(9) degree-9 cliff, μ grid | does not reach (0.957–0.965) | 0.0038–0.0058 | r falls as n_s rises; weak coupling not reached (D204) |
+| TWIST-G− (PREREG_TWISTGN; TWISTG D1 records the sign error) | W = √3 m S T^{1+γ}, γ ≈ −0.0085 | 0.974–0.975 | 0.0067–0.0069 | γ is loop-sized (D222); tail steeper, TCC-safe; full SUGRA check passes (D221) |
+| TWIST-C (PREREG_TWISTC) | W = √3 m S (T + c), c ≈ +3.5×10⁻⁷ | ≈ 0.974 | ≈ 0.005 | lowest r of the n_s fixes; c sharply tuned; full SUGRA check passes (D228) |
+| TWIST-4 (PREREG_TWIST4, D1–D2) | rung 4 | — | ≈ 0.0046 | NOT a matter-neutral home (D208); TCC-violating tail; kept on record only |
+Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA alone 0.9693 ± 0.0029, the Twist −1.7σ; with DESI 0.9737 ± 0.0025,
+−3.7σ). How the BAO–CMB tension resolves (and the optical depth, D226) decides between the plain Twist and these variants as much as n_s does.
