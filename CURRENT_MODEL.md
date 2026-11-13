@@ -114,3 +114,4 @@ f_EDE = 0.078 / H₀ = 70.6 (withdrawn, unconverged engine); the N = 9 "width mo
 | PURE-MCMC | Locked 13 Nov (driver, standing authority). emcee posteriors for PURE-TWIST and LCDM on the TOURNAMENT likelihood (stored best chi2 1397.804 / 1401.176). Running in the cloud. | pending |
 | WA-CEILING | Locked 13 Nov (driver, standing authority). All thawing Twist versions predict effective wa >= -0.40 (FLAG-1 -0.27, PURE -0.10, saturates ~-0.30). Scores DESI DR3 headline w0wa. Today's DR2+DESY5 -0.73 (+0.21) is a TENSION by its own readings (context only). | pending |
 | DESY5-SWAP | Locked 13 Nov (driver, standing authority). TOURNAMENT FULL likelihood with DES Y5 SNe in place of Pantheon+: LCDM, W0WA, PURE-TWIST, FLAG-1 refit. Running in the cloud. | pending |
+| SN-SWAP | Locked 13 Nov (driver, standing authority). DESY5-SWAP repeated with Union3 and DES-Dovekie. Queued after DESY5-SWAP. | pending |
