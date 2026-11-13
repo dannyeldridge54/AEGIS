@@ -1,0 +1,4 @@
+D141: with the scaling symmetry ALONE, couplings g(y/x) O_SM are allowed (y/x is scaling-invariant).
+  today y/x = 0.0135; beta = |g'| * 0.0110 -> Cassini needs |g'| < 0.31, MICROSCOPE |g'| < 1.1e-04  (FAILS for g' ~ 1)
+  with the scaling AND the axion shift T -> T + i c (the full affine isometry group of the disk), no invariant function of T exists:
+  every phi-SM coupling must break one of them; the cliff breaks the shift only through q = e^(-pi T/4) -> beta ~ 3e-29 (as D140 (a))

@@ -1078,3 +1078,17 @@ decides it**: p = ½ or 1 fails Cassini even for c_p = 1; p = 3/2 (the α′³ f
 c_p < 8×10⁻⁴ for MICROSCOPE; p = 2 needs c_p < 6×10⁻³; p = 3 passes with c_p < 0.3. Status: fifth force → **conditional**:
 safe if the scaling symmetry is broken only non-perturbatively, or perturbatively at order ≥ 1/x³ (or ≥ 1/x^{3/2} with a
 coefficient below 10⁻³). The open question is now precise: which perturbative corrections the SM–T sector has.
+
+**D141 — correction to D140, and the literature (13:30).** (1) With the scaling symmetry alone, couplings g(y/x)·O_SM are allowed
+(y/x is invariant); today y/x ≈ 0.013 gives β ≈ 0.011 g′ — Cassini needs g′ < 0.3, MICROSCOPE g′ < 10⁻⁴: fails for g′ ~ 1. The
+shield needs BOTH isometries of the disk — the scaling T → λT and the axion shift T → T + ic — which together act transitively,
+so no invariant function of T exists and every φ–SM coupling must break one of them. The cliff breaks the shift only through
+q = e^{−πT/4}, so D140's (a) numbers stand for the combined construction; (c) (perturbative 1/x^p breaking) still decides it.
+(2) Literature: the general idea — approximate global symmetries suppressing quintessence couplings to matter — is Carroll's
+(1998, "Quintessence and the rest of the world"). Burgess, Quevedo and collaborators (arXiv:2111.07286, 2212.14870) study the
+no-scale scaling symmetry in detail and find that in string constructions matter generically couples to the dilaton at LEADING
+order (Brans–Dicke-like, too large), because matter masses scale with the extra-dimensional size; they need other mechanisms
+("axion homeopathy", screening). So the Twist's shield works only if the SM is genuinely neutral under both isometries — i.e.
+sequestered so its masses do not come from the T-sector geometry. That is still an assumption, now with a name and a precise test
+(the perturbative order p ≥ 3). Novelty: the specific combination (the cliff's own instanton as the only breaking, with π/4 set by
+SU(8)) appears to be new; the mechanism class is not.
