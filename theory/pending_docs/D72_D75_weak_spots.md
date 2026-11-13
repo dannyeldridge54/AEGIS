@@ -1823,3 +1823,16 @@ on specific cycles break it to Γ₀(N) (D194's mechanism carries over). (3) Flu
 flux (its potential then comes only from the Twist sector). (4) The helper field and the S·U coupling: GVW flux superpotentials are polynomial
 in U (terms linear in U are standard), suggestive but not built. (5) n. Status: a genuine new lead; the shield's string home is no longer
 "none known" at tree level — it is "IIB complex structure with D3 matter, pending a one-loop check".
+
+**D211 — the D210 lead fails at one loop (rough estimate, theory/string_home/iib_oneloop_d211.py).** Berg–Haack–Körs (hep-th/0508171 eq. 12)
+give K⁽¹⁾ = (1/256π⁶) Σ [E₂^{D3}(A_I, U_I)/((S − S̄)(ρ_I − ρ̄_I)) + E₂^{D7}(0, U_I)/(…)]. The D3 position/matter fields A sit INSIDE the Eisenstein
+function, so the one-loop D3 matter metric depends on U. Its leading piece comes from the KK modes of the torus's long direction (radius ∝ √U)
+and grows ∝ Im U: δZ/Z ≈ 8πU₂·4π²ζ(2)·c/(256π⁶ Re S) ≈ 6.6×10⁻³ c U₂/Re S. With the Standard Model on the D3-branes its coupling FIXES
+Re S = 1/g² ≈ 2, so at today's U₂ ≈ 89: δZ/Z ≈ 0.3 (c = 1) to ~40 (c = 128, BHK's brane-multiplicity coefficient), β ≈ 0.1–16 — 30× to 5000×
+over Cassini, and growing with U rather than falling as 1/x⁴. Even Re S = 100 leaves β ≈ 2×10⁻³–0.3. Caveats: order-of-magnitude (the
+normalisation of A and the exact E₂(A,U) expansion are not done carefully); but the GROWTH ∝ U is robust — it is the decompactifying
+direction's KK tower (the distance-conjecture tower) coupling to brane matter at one loop.
+**Verdict:** the IIB complex-structure direction is neutral at tree level but not at one loop; it fails for the same structural reason that
+every "move far in moduli space" route fails: something becomes light (KK tower here, strong coupling in heterotic) and couples to matter.
+This is a general lesson for question 9: a field that travels ~16 M_P will, in every string setting examined, make some tower light enough
+to break matter neutrality by the time it reaches today's value. The string home is open; the shield remains an EFT assumption.
