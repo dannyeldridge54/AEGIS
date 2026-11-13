@@ -957,3 +957,20 @@ the late thaw) and 89 (today), worst case SM loops to 0.05 M_P: single instanton
 ~10¹¹ ρ_DE at x = 73 — passes only if SM loops are cut off below ~10¹⁶ GeV** (at x = 89 it passes fully); SU(3): 10⁴⁴ (fails).
 So the fix needs either a stringy (single) instanton, or an SU(2) condensate plus an SM cutoff under ~10¹⁶ GeV. Status: D118's
 assumption narrowed to two options; preheating/decay numbers unchanged (Δφ 0.44–0.49 M_P).
+
+## Developments 130–131 — the two data gaps (12:20)
+
+**D130 — the reshaped cliff already has a locked out-of-sample test.** Its late-time curve (w0 −0.902, wa −0.142 at 0.8% heat;
+−0.899…−0.902 over all heat shares, D125) coincides with PURE-TWIST's (w0 −0.900, wa −0.143), which WATCH-PURE-DR3 locked on
+12 Nov 20:59 before any post-DR2 data. So DESI DR3 (and the next independent BAO survey) tests the reshaped model fairly, even
+though the reshape itself was post hoc. No new lock needed; stated in the model card.
+
+**D131 — n_s against the CMB-SPA data: the locked test is running; what is known so far.** Published: P-ACT-LB n_s = 0.9752 ±
+0.0030, CMB-SPA + DESI 0.9728 ± 0.0027, CMB-SPA alone 0.9684 ± 0.0030 (arXiv:2510.18656, ΛCDM). The Twist gives 0.964–0.968
+(instant reheating to kination with loops). Naively that is ~1σ from CMB-SPA alone but ~2–3σ once DESI BAO is added. One hope
+was that the Twist's own dark energy (w0 ≈ −0.90) would remove the BAO-driven shift, since those published numbers assume ΛCDM.
+The finished leg of the locked NS-SPA test (PURE background, n_s free; PC, 11:08) says it does **not**: its minimiser runs land at
+n_s ≈ 0.973–0.976. The locked reading (fixed n_s = 0.964 vs free) is still running (PURE_FIXED, run 3/4); a rough expectation from
+the widths is a cost of ~9–12 in χ² at 0.964 (the TENSION/INCONSISTENT border) and ~4 at 0.968 — expectation only, the locked
+number decides. If INCONSISTENT: the D108 falsifier is effectively met by current data, and the only escapes on file are a
+polynomial attractor (contradicts K = −3 ln, D108) or a larger N* (more kination than D84 allows).
