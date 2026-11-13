@@ -1541,3 +1541,14 @@ so if those counts appear as coefficients the correction is enormous rather than
 different, much smaller invariant (e.g. a BPS index of the specific coupling, or counts suppressed by a high power of the loop factor).
 Status: a mechanism for the degree condition exists (discrete selection rule); the size of the resulting coefficient is the open issue.
 Two of the frontier conditions (degree ≳ 9; n ≈ 125) are therefore linked — the same instanton sum sets both.
+
+**D189 — the Z₉-selected instanton sum, computed (theory/string_home/z9_selection_d189.py).** Quintic curve counts extended to degree 19
+via mirror symmetry: n₉ = 5.04×10²⁶ (confirms D188's estimate), n₁₈ = 2.40×10⁵⁵; growth n_d/n_(d−1) → 1640, so the sum converges only for
+τ ≳ 1.18 (conifold estimate 1.21 — consistent). Keeping only degrees ≡ 0 mod 9: at the convergence edge the degree-9 share of e^{−K} is
+2×10⁻⁴, so (1/3)ln(1+R) ≈ 2×10⁻⁴ against the 2n ≈ 250 needed. Inside the controlled region it is ≲ 10⁻³; past the edge, degree 18 overtakes
+degree 9 (×90 at τ = 1.1, ×2.6×10⁴ at τ = 1) — the sum is uncontrolled, and even its truncation only reaches ~10 by τ = 0.85.
+**Verdict:** a Z₉ selection rule can enforce D164's degree condition, but it cannot simultaneously supply n through the matter metric —
+the instanton sum changes ln(metric) by O(10⁻⁴–1) where it is under control, ~10³× too little at best. This closes "n from instantons
+in the metric" for the selected sum too (extends D165). n stays with an exponent (flux warping, D166–D167) or a non-geometric phase near
+the conifold (where τ ≈ 1.2 and the large-volume description itself ends). The degree condition and n are therefore NOT set by the same
+sum (corrects the hope at the end of D188): they are two separate requirements.
