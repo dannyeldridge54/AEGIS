@@ -44,7 +44,9 @@ look-elsewhere correction leaves 0.7–1.7σ globally. Results against the model
 its original cliff failed a locked test (Δχ² +29) and the cliff was reshaped afterwards (stated as post hoc); a pre-registered
 matter check missed its prediction (7.5× against 2–3×); two hypotheses (γ = 1/4, a derivation of n) failed. Seven added
 assumptions are listed in a model card — among them that the Standard Model sits outside the supergravity sector (removing
-the fifth force) and that the reheating field's mass saturates (keeping the tail quantum-stable). Frozen predictions for
+the fifth force) and that the reheating field's mass saturates (keeping the tail quantum-stable). The model's n_s ≈ 0.965 sits ~1σ from CMB-SPA alone but 2–3σ from CMB + DESI BAO ({NSSPA}); a companion model,
+TWIST-P (one extra Kähler term), was locked before any test and predicts n_s 0.965–0.971 with r 0.0036–0.011 for future CMB
+data only. Frozen predictions for
 DESI DR3, Euclid, LiteBIRD and Simons Observatory are listed. Scripts, locked rules and every number:
 https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md, papers/MODEL_CARD_v5.md).
 AI-assisted (Claude, Anthropic); the author takes full responsibility.
