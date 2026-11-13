@@ -1204,3 +1204,12 @@ whose local scale is fixed by fluxes, with the T-dependence of the warped scale 
 D150's β ≈ 0.6.
 D154 add: the warped-throat direction checked at leading order — the warped tip scale goes as V^{−1/3} e^{A₀} with V ∝ x^{3/2}, so SM
 masses ∝ x^{−1/2}: β ≈ 0.41, still ~120× over Cassini. Warping does not rescue the IIB volume case. The frontier stands.
+
+**D155 — type IIA checked for D154.** In IIA the string scale in Planck units is set by the 4-d dilaton (like heterotic), and three
+equal torus Kähler moduli give K = −3 ln(T + T̄): A ✓, C ✓ at leading order. But gauge groups live on D6-branes wrapping 3-cycles,
+so their gauge functions depend on the complex-structure moduli U, not on T, and the T-dependence of the superpotential comes from
+fluxes (polynomial in T) and worldsheet instantons (powers of q = e^{−2πT}). The cliff needs the condensate inside an exponent,
+exp(n q), with n ≈ 125 — not the form either source gives. B ✗. IIA joins heterotic Z₃ as "A + C, not B". Pattern across all five
+settings: wherever matter is neutral to T (C), T cannot also carry a hidden gauge coupling linear in T (B). If that pattern is a
+theorem, the Twist's cliff must come from somewhere other than a T-dependent gauge coupling — a concrete redirection for the
+construction programme (open).
