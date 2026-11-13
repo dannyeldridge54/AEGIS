@@ -1100,3 +1100,33 @@ quasars by 10¹⁹, Oklo 10²¹, BBN 10²³, clocks 10²¹. A perturbative leak 
 MICROSCOPE as D140 said): p = 1 needs c_p < 3.5×10⁻⁶; p = 2, c_p < 1.6×10⁻⁴; p = 3, c_p < 9×10⁻³; p = 4, c_p < 0.6. Correction to
 D140: an O(1) leak needs p ≥ 4. New signature: because the field is frozen until late, any leak has a fixed redshift shape — about
 78% of the total change happens at z < 1 and almost nothing above z ≈ 3 — and ties clock drifts to quasar shifts.
+
+## Developments 143–147 — working the afternoon worklist (theory/pending_docs/WORKLIST_2026-11-13_afternoon.md)
+
+**D143 — the shield vs a volume-type T: a sharp geometric condition (shield_vs_volume_d143.py).** D123 assumed T behaves like the
+volume of the extra dimensions. Then string α′³ corrections (Becker–Becker–Haack–Louis) give a 1/x^{3/2} leak with size ξ ∝ Euler
+number χ of the compact space: ξ = −ζ(3)χ/(2(2π)³). The clock limit for p = 3/2 is c_p < 2.2×10⁻⁵. Unsequestered SM: fails for every
+χ ≠ 0. Sequestered SM (one loop): still fails unless |χ| < 1.4 — **the compact space must have Euler number zero** (such spaces exist,
+e.g. Schoen's manifold and some toroidal orbifolds), or T must not be the volume (and then D123's tower argument needs redoing).
+Status: a concrete, checkable condition on the extra-dimensional geometry; the two Twist assumptions (D123 and the shield) are
+compatible only on χ = 0 spaces.
+
+**D144 — what couplings of the angle y to the SM the shift symmetry still allows.** Shift-invariant couplings are derivative
+(∂_μ y J^μ, the lepto-axiogenesis coupling c_A, which the model needs) or topological (y·G G̃). Neither gives a monopole (composition-
+dependent) force: derivative couplings vanish for a static field and give only spin/velocity-dependent effects; a y·GG̃ coupling would
+make the angle QCD-axion-like (a potential ~ m_π² f_π² ~ 10⁻³ GeV⁴, negligible against the angle's +8H² on the plateau; today the angle
+already sits at its minimum) and gives a spin-dependent force only with an extra CP-violating scalar coupling, which the shift forbids.
+Status: consistent; the shield keeps exactly the coupling baryogenesis needs.
+
+**D145 — the SM's gauge couplings must not come from T.** The hidden SU(8) and G₂ have f = T; the SM's f must come from another
+modulus (or be constant). A Planck-suppressed mixed operator c Tr W₈² Tr W_SM²/M_P³ is allowed and gives f_SM ⊃ c q — instanton-
+suppressed, i.e. already in D142's part (a): passes by 10¹⁹⁺. Status: consistent, one more assumption made explicit (SM gauge
+kinetic functions independent of T).
+
+**D146 — two-step loop leaks T → X → SM.** Through χ: χ's T-dependence is the saturating e^{−2πT} (D118) → leak ∝ e^{−2πx} ≈ 10⁻²⁴³.
+Through S: Z₂-odd, at S = 0, couples in pairs only via gravity → ≲ (H₀/M_P)² ~ 10⁻¹²². Through the hidden sectors: via q (as D145).
+Through gravitons: ~ V_tail/M_P⁴ ~ 10⁻¹²⁰. All pass. The only dangerous leak is perturbative (D142 (c), D143).
+
+**D147 — the dark-matter route survives the shield.** χ is neutral under both isometries, so the χ̃ψH/M_P operator that lets χ̃ decay
+to SM fermions (D106/D112) is allowed; the 100–500 TeV estimate is unchanged by the shield (still conditional and out of the
+predictions table until it settles).

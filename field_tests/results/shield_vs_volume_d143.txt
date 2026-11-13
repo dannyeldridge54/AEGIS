@@ -1,0 +1,6 @@
+Euler number    -2: xi 0.0048; leak if unsequestered 4.8e-03 (FAIL), sequestered (one loop) 3.1e-05 (FAIL)
+Euler number   -20: xi 0.0485; leak if unsequestered 4.8e-02 (FAIL), sequestered (one loop) 3.1e-04 (FAIL)
+Euler number  -100: xi 0.2423; leak if unsequestered 2.4e-01 (FAIL), sequestered (one loop) 1.5e-03 (FAIL)
+Euler number  -200: xi 0.4846; leak if unsequestered 4.8e-01 (FAIL), sequestered (one loop) 3.1e-03 (FAIL)
+Euler number  -300: xi 0.7269; leak if unsequestered 7.3e-01 (FAIL), sequestered (one loop) 4.6e-03 (FAIL)
+needed: |xi| < 2.2e-05 unsequestered, or |xi| < 3.5e-03 sequestered -> |chi| < 1.4
