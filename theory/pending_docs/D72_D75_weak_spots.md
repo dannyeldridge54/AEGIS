@@ -1759,3 +1759,13 @@ give G_N M_GUT² = (2α_GUT)^{3/2}/(64π³ ρM_GUT): at fixed coupling, M_GUT/M_
 matter scale a universal coupling β = (1/2)/√(3/2) = 0.41 (Cassini: 3.4×10⁻³) — a tree-level effect that the vanishing thresholds do not
 remove. So the matter-neutral direction must move several moduli together, which is D184's rung 4. Symmetric vacua remove the
 threshold/matter-metric leaks along that direction; the rung stays 4 and PREREG_TWIST4's numbers stand.
+
+**D207 — the rung-4 home needs a different superpotential: W linear in T is special to rung 3 (algebra).** With K = −3α ln(u − gE SS̄ + …)
+and W = c S Tᵖ, at S = 0: W = 0, D_S W = c Tᵖ, K_SS̄ = 3α gE/u, so V = e^K K^{SS̄}|W_S|² = u^{−3α} · u/(3α gE) · c²|T|^{2p} ∝ u^{2p+1−3α}/(gE).
+A plateau (V → const on the rim apart from g and E) needs p = (3α − 1)/2: p = 1 for rung 3 — exactly the Twist's √3 m S T — but p = 3/2 for
+rung 4. A half-integer power of T is not a natural superpotential (branch cut at T = 0; T^{3/2} cannot arise from integer instanton
+expansions). With integer p on rung 4: p = 1 gives V ∝ 1/u (rolls away from the rim — no plateau), p = 2 gives V ∝ u (rolls to the rim).
+So PREREG_TWIST4's "same plateau shape on rung 4" assumes a superpotential the rung-4 home does not obviously supply; in heterotic M-theory
+the effective field is a combination of S, T and the CY volume, so W along that direction need not be a pure power — this must be built
+before the rung-4 inflation numbers are trusted (the late-universe numbers, set by the tail slope 1/√2, do not depend on it). Caveat added
+to PREREG_TWIST4 by deviation file, not by editing the lock.
