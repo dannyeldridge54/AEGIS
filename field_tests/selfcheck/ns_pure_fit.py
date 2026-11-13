@@ -10,6 +10,7 @@ import v6_pr4_fit as V
 RULE = os.path.join(AEG, "field_tests", "rules", "PREREG_NS_PURE.md")
 V.RULE = RULE
 V.BASE = dict(V.BASE, PURE="ax_spa_spiraltwist_kappa0.8165_beta0_nlfix")
+_V6_SETUP = V.setup                       # NS_PURE_DEVIATIONS.md D1: keep the original before patching
 
 
 def _setup(which):
@@ -17,14 +18,14 @@ def _setup(which):
     if which == "PURE":
         orig = V.BASE["PURE"]
         try:
-            return V.setup("PURE")
+            return _V6_SETUP("PURE")
         except FileNotFoundError:
             import early_late_spa as E, s8_joint_fit as J
             E._maybe_coupled(V.engine("PURE")); info = E.make(V.engine("PURE"))
             info["likelihood"].pop(V.OLD); info["likelihood"][V.NEW] = None; J.add_s8(info)
             m = json.load(open(f"{E.OUT}/cmp_{V.BASE['LCDM']}_cmbplanck_s8y6.json"))["minimum"]
             return E, info, m
-    return V.setup(which)
+    return _V6_SETUP(which)
 
 
 V.setup = _setup
