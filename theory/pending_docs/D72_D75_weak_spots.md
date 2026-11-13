@@ -721,3 +721,9 @@ does not suggest. Leaning: (ii). Consequence if confirmed: the Twist's dark-matt
 a light, gravity-only fermion of MeV–GeV mass, made non-thermally at reheating — still invisible to direct detection, but a
 different number. Not adopted until the fermion share and branching ratio are computed; the reviewer guide flags the mass as
 unsettled.
+**D106 numbers (script theory/matter/dm_from_chi_fermion.py; results/dm_from_chi_fermion.txt).** Instant preheating makes χ's
+scalar and fermion in equal numbers (same occupation, same mass). With χ → Higgs making the bath and χ̃'s own decay doubling it,
+n_χ̃/s ≈ (3/8)T_RH/m_χ ≈ 1.2×10⁻³. The graviton-mediated branching to a dark-matter pair, (m_χ/M_P)²/(16π²C) with phase-space
+factor C = 3–30, is 6×10⁻⁷–6×10⁻⁶. The observed dark matter then needs **m_DM ≈ 0.07–0.65 GeV** (70–650 MeV). This is the
+Twist's dark-matter mass if D106 (ii) holds — about 10⁹ times lighter than the freeze-in estimate. Order of magnitude; the
+gravitational four-body rate deserves a proper calculation before this becomes a stated prediction.

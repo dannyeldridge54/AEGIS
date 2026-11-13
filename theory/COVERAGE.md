@@ -13,7 +13,7 @@ estimate / locked / open). AI-assisted.
 | Kination | ~2 e-folds of stiff expansion after the cliff | derived | D84 |
 | Matter–antimatter | hidden SU(8) axion kick + lepto-axiogenesis; m_σ ≈ 5–6×10⁹ GeV for 1× | derived + chosen + estimate; recheck with new cliff running | D35–D62, D70 |
 | Neutrinos | Majorana, normal ordering, Σm_ν 0.059–0.064 eV | derived from the mechanism | D69 |
-| Dark matter | gravity-only fermion; mass unsettled: ≈ 1–6×10⁸ GeV from freeze-in, or ~10 MeV–10 GeV if made by the reheating field's fermion partner (D106, leaning); no direct detection; β = 0 | estimate / open | D58, D64, D85, D106 |
+| Dark matter | gravity-only fermion; mass unsettled: ≈ 1–6×10⁸ GeV from freeze-in, or ≈ 70–650 MeV if made by the reheating field's fermion partner (D106, leaning); no direct detection; β = 0 | estimate / open | D58, D64, D85, D106 |
 | Superpartners, gravitino | heavy; R-parity violation 10⁻⁵–10⁻³; gravitinos harmless; m₃/₂ moves with x | assumption / estimate | D88 |
 | Hidden SU(8) leftovers | confines near 10¹⁴ GeV; glueballs decay (Planck-suppressed) in ~10⁻³ s, before nucleosynthesis | estimate | D98 |
 | Nucleosynthesis, N_eff | field frozen from kination until recently, so constants at BBN = today's (if shielded); no extra radiation (kination waves Ω ~10⁻¹⁶) | estimate | D86, D98 |
