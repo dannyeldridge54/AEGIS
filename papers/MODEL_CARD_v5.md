@@ -25,11 +25,11 @@ Development numbers (D…) point to theory/pending_docs/D72_D75_weak_spots.md. C
 | Heat share | ≈ 0.65–0.8% | derived from χ's decay (D105, D118) |
 
 ## Assumptions added beyond the original model (each is a place it could fail)
-1. **No coupling between the tail field and the Standard Model** — needs an unexplained symmetry. The D110 argument that lets χ decay also generically gives (φ/M_P)·O_SM couplings with β = O(1), excluded by Cassini. **The fifth force is the main open problem** (D135).
+1. **No coupling between the tail field and the Standard Model** — now a named symmetry: the SM is neutral under both isometries of the T-disk (scaling and shift), broken only by the cliff's instanton (passes every test by ≥10¹⁹, D140–D142) and by perturbative leaks, which must fall as 1/x⁴ or faster (atomic clocks). Locked: PREREG_SHIELD. Previously: needs an unexplained symmetry. The D110 argument that lets χ decay also generically gives (φ/M_P)·O_SM couplings with β = O(1), excluded by Cassini. **The fifth force is the main open problem** (D135).
 2. χ → −χ broken at the Planck scale (D110) — needed for χ to decay.
 3. χ's mass saturates via a single instanton, or an SU(2) condensate with SM loops cut off below ~10¹⁶ GeV (D118, D128) — needed for the tail's quantum stability.
 4. The Z₂ racetrack of two hidden G₂ groups with the operator Tr W₈² Tr W₂²/M_P³, coefficient ~20 N₂ (D119, D126).
-5. T behaves like a volume-type modulus for the distance conjecture (D123) — passes, but floors the plateau at x ≈ 6×10⁻⁶.
+5. **T is NOT the overall volume** (working choice, 13:35, D150): if it were, the SM's string-scale cutoff would scale with x and give a fifth force β ≈ 0.6 (Cassini excludes; Burgess–Quevedo). Cost: the distance-conjecture check of D123 (which used a volume tower) no longer applies — field distance ≈ 16 M_P is open again. Solar-system data decide this fork; the distance conjecture is a conjecture.
 6. γ is the self-dual value for black-hole entropy (D120) — a choice; LQG link is motivation only.
 7. Dark matter is a gravity-only fermion; its 100–500 TeV mass needs χ̃ to decay to SM fermions (D112).
 
