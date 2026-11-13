@@ -1028,3 +1028,25 @@ WATCH-PURE-DR3 is not fully out of sample; its reading is weaker than a fresh su
 **D137 — the yield's sensitivity, locked before running (field_tests/missing_piece/yield_sensitivity.py).** Prediction
 written first: |dlnY/dlnσ₀| ≤ 5 and |dlnY/dy₀| ≤ 10⁴. (The isocurvature bound S_B < 5×10⁻⁵ allows |dlnY/dlnσ₀| up to 5 for
 δσ/σ₀ ≈ 10⁻⁵, and |dlnY/dy₀| up to 2.5×10⁵ for δy ≈ 2×10⁻¹⁰; the y prediction is set stricter, at 10⁴.) If a bound is exceeded, D134 fails for that source.
+
+## Development 138 — geometry already inside the Twist (Danny's question, 13:14: "find geometric shapes that fit our numbers")
+Checked which geometric structures are genuinely present, as opposed to number coincidences.
+**Genuine (follow from the model's equations):**
+(1) The inflaton's field space is a hyperbolic disk (Poincaré disk, SU(1,1)/U(1)): K = −3 ln(T + T̄) gives constant negative
+curvature R = −2/(3α) with 3α = 3. The plateau, n_s ≈ 1 − 2/N and r ≈ 12α/N² all come from the disk's boundary.
+(2) That disk is one rung of the "seven-disk" ladder from maximal (N = 8) supergravity / M-theory (Ferrara, Kallosh & Linde,
+arXiv:1610.04163; Kallosh, Linde, Wrase, Yamada, arXiv:1704.04829): seven complex scalars whose geometry, built on the
+seven imaginary octonions (the Fano plane's 7 points and 7 lines), allows only 3α = 1, 2, …, 7. The Twist sits at 3α = 3.
+Its r = 0.0036 at N* ≈ 56 matches that rung (12α/N² ≈ 0.0039). So the Twist's Kähler potential is one of seven discrete,
+geometrically allowed shapes — not a free choice. (Whether 3α = 3 means "three disks merged along a Fano line" is suggestive
+but not checked here.)
+(3) The hidden SU(8) that gives the cliff's 4/π = 2π/8 is the same group as the maximal compact subgroup in N = 8
+supergravity's scalar manifold E7(7)/SU(8) (70 scalars). The Twist's two pieces — the disk and SU(8) — both point at the same
+parent geometry. Suggestive, not derived.
+(4) The cliff makes Im T periodic with period 8 (an 8-fold rotation, Z₈); the D126 racetrack adds a mirror Z₂ (S → −S).
+**Consequence for TWIST-P:** its extra term β/(T + T̄) adds a pole of order 3, so its field space is no longer a hyperbolic disk —
+it leaves the seven-disk ladder. The geometric picture favours the original Twist over TWIST-P.
+**Not found / not claimed:** no geometric meaning for n ≈ 125, m_σ, y_end, or 0.8%; bound states of particles "joining into
+shapes" are not something these equations compute.
+**Testable:** the seven rungs predict r ≈ 0.0011·3α at N ≈ 57 — LiteBIRD/CMB-S4 can tell rung 3 (the Twist) from its
+neighbours 2 and 4 only marginally (Δr ≈ 0.0012 against σ(r) ~ 0.001).
