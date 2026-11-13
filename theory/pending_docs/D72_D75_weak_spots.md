@@ -265,3 +265,14 @@ not reproduce the LQG value of γ today. Either the mapping is different (open),
 present value of this field (then the link to LQG's entropy counting is lost). Label: open; a reviewer from LQG will
 ask this first. (The older UFE-LQ "match" of 0.259 was for a different, superseded model in which the angle carried
 the late-time field.)
+
+## Development 84 — kination after the cliff adds about 2 e-folds: n_s moves up to ≈ 0.9654
+
+Script: theory/inflation/kination_Nstar.py; results/kination_Nstar.txt (reshaped cliff, m2 = 4/π).
+The locked n_s (0.963–0.965) used N* for instant reheating. In the Twist the inflaton's motion dominates after the cliff
+(kination, w = 1) until the reheating radiation takes over. A stiff phase adds e-folds: ΔN = ¼ ln(ρ_end/ρ) − ΔN_a, computed
+on the actual background: +2.23 / +1.94 / +1.66 at heat share 0.04% / 0.13% / 0.4%. At 0.13%: N* 57.6, n_s 0.9654,
+r 0.0035 (instant reheating: 55.7, 0.9642, 0.0038).
+Together with the loop estimate of D77 (+0.002, order of magnitude) the Twist's best number is n_s ≈ 0.965–0.968,
+r ≈ 0.0035. This is an upward systematic on the locked prediction, found after locking; the locked rule is scored as
+written (its range 0.963–0.965 sits at the edge). It eases the ACT/SPT tension (0.974) by about a third, not more.

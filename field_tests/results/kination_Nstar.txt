@@ -1,0 +1,4 @@
+instant reheating: N* 55.70, n_s 0.9642, r 0.0038
+heat share 0.04%: kination adds dN = +2.23 (converged: +2.23, +2.23, +2.23); N* 57.94, n_s 0.9655, r 0.0035
+heat share 0.13%: kination adds dN = +1.94 (converged: +1.94, +1.94, +1.94); N* 57.64, n_s 0.9654, r 0.0035
+heat share 0.40%: kination adds dN = +1.66 (converged: +1.66, +1.66, +1.66); N* 57.36, n_s 0.9652, r 0.0035
