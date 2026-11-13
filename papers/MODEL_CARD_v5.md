@@ -40,7 +40,7 @@ out-of-sample test than a new survey.
 | Observable | Twist | Kills it |
 |---|---|---|
 | Dark energy | w0 ≈ −0.90, wa ≈ −0.14, insensitive to heat share (D125) | w0, wa pinned at ΛCDM (−1, 0) by DESI/Euclid |
-| n_s, r | n_s ≈ 0.965 (0.965–0.968 with loops), r ≈ 0.0036 | n_s ≥ 0.973 at > 3σ (D108); r > 0.0112 detected at > 3σ, or r < 0.0030 at 95% |
+| n_s, r | n_s ≈ 0.964–0.965 (loop shift negligible with the saturating χ, D156), r ≈ 0.0036 | n_s ≥ 0.973 at > 3σ (D108); r > 0.0112 detected at > 3σ, or r < 0.0030 at 95% |
 | GW propagation | Ξ₀ = 1, no birefringence (locked: PREREG_GW_FRICTION) | Ξ₀ ≠ 1 measured |
 | Extra radiation | ΔN_eff ~ 3×10⁻⁸ | — |
 

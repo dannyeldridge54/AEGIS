@@ -1213,3 +1213,10 @@ exp(n q), with n ≈ 125 — not the form either source gives. B ✗. IIA joins 
 settings: wherever matter is neutral to T (C), T cannot also carry a hidden gauge coupling linear in T (B). If that pattern is a
 theorem, the Twist's cliff must come from somewhere other than a T-dependent gauge coupling — a concrete redirection for the
 construction programme (open).
+
+**D156 — the loop shift of n_s redone with the saturating χ mass (referee minor point; results/loop_shift_d156.txt).** D77's +0.002
+came from χ's mass growing linearly with the inflaton (curvature 2g² in φ). With D118's saturating mass, χ's mass on the plateau is
+≈ 2πh(x₀ − x), almost constant across the CMB window: the curvature drops by x*/x₀ ≈ 1.3×10⁻³–6.5×10⁻³, so the loop shift is
+~+3×10⁻⁶–1×10⁻⁵ — negligible. Consequence: the Twist's n_s is ≈ 0.964–0.965 (instant reheating to kination), not 0.965–0.968; the
+n_s tension is slightly WORSE than quoted. The locked bands (TWIST-P: "+0.000…+0.003") contain this, so no lock changes; the model
+card and full-state numbers are corrected.

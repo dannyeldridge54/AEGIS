@@ -35,7 +35,7 @@ theory/pending_docs/D72_D75_weak_spots.md; the model card (papers/MODEL_CARD_v5.
 | Era | What happens | Status |
 |---|---|---|
 | Start | field near rest on the plateau, x ≈ 10⁻⁵–10⁻⁴ | assumed; fast starts excluded (S unstable there, D136); lumpy starts robust by analogy (D122) |
-| Inflation | slow roll on the disk's rim | **derived**: N* 55.7–57, n_s 0.964–0.968, r ≈ 0.0036 |
+| Inflation | slow roll on the disk's rim | **derived**: N* 55.7–57, n_s 0.964–0.965 (loop shift negligible, D156), r ≈ 0.0036 |
 | End | the cliff (x ≈ 0.01) | derived from W |
 | Heating | χ's mass passes zero; instant preheating; ~0.8% of the energy becomes heat | derived from the assumed χ form (D105, D118, D121) |
 | Hand-off to matter | χ decays to the Higgs via Planck-scale links | assumed (generic in quantum gravity, D110) |
