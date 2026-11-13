@@ -278,3 +278,14 @@ r 0.0035 (instant reheating: 55.7, 0.9642, 0.0038).
 Together with the loop estimate of D77 (+0.002, order of magnitude) the Twist's best number is n_s ≈ 0.965–0.968,
 r ≈ 0.0035. This is an upward systematic on the locked prediction, found after locking; the locked rule is scored as
 written (its range 0.963–0.965 sits at the edge). It eases the ACT/SPT tension (0.974) by about a third, not more.
+
+## Development 85 — kination also changes the dark-matter mass (estimate)
+
+Script: theory/matter/dm_kination.py; results/dm_kination.txt.
+The gravity-only dark-matter estimate (D38, D58: 3.5×10⁶–1.9×10⁷ GeV) assumed radiation domination from T_RH down. In
+the Twist the bath forms during kination (D84), when the universe expands faster than radiation alone would make it,
+so less dark matter is made from the bath. With the radiation share at bath formation taken from D84's kination e-folds
+(f_eff ≈ 4×10⁻⁴ at the computed heat share), the yield falls by ×19–58 and the dark-matter mass needed rises to
+≈ 1×10⁸–6×10⁸ GeV (range 6×10⁷–1×10⁹ over heat shares 0.4–0.04%). Still far below T_RH, so the light branch holds.
+Label: estimate (no full Boltzmann run; gravitational production directly from the moving inflaton during kination is
+not included and could add to the yield — open).

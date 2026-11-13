@@ -20,7 +20,8 @@ TorsionΛ, UFE, n = 3 early field) is superseded unless listed here.
 - Kick: hidden axion σ with Λ⁴ e^{−A x} [1 − cos(A y − σ/f)] (form of SU(8) gaugino condensation, f = T).
 - Matter: lepto-axiogenesis (Weinberg operator, μ_ℓ/μ_A = 0.523, sphalerons 28/79).
 - Reheating: instant preheating, g ≈ 0.1, χ decay distance computed → T_RH ≈ 2.1–3.7×10¹⁴ GeV.
-- Dark matter: gravity-only (Planckian-interacting) fermion, about 3.5×10⁶–1.9×10⁷ GeV at that T_RH.
+- Dark matter: gravity-only (Planckian-interacting) fermion, about 1×10⁸–6×10⁸ GeV at that T_RH once the kination phase
+  is included (3.5×10⁶–1.9×10⁷ GeV without it; Development 85, estimate).
 - Dark energy: the tail; n ≈ 127 is **chosen** to give its size (not predicted, Development 74); μ ≲ 1 puts today's slope at √(2/3) (PURE-TWIST);
   optional dark-matter coupling β (FLAG-1: κ = 1, β ≈ 0.04).
 - Late-time versions tested: PURE-TWIST (κ = √(2/3), β = 0; zero extra parameters), K816 (κ = √(2/3), β free),
@@ -46,7 +47,7 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 | Supernova-set robustness | locked | `PREREG_DESY5_SWAP.md`, `PREREG_SN_SWAP.md`; `desy5_swap.json`, `sn_swap_union3.json` | DES Y5: PURE −11.19 (STRAINED vs w₀w_a −16.17), FLAG-1 −14.88 (HOLDS); Union3: PURE −5.29 (STRAINED), FLAG-1 −8.87 (HOLDS); K816 (base slope, β 0.030) on DES Y5: −12.79, **HOLDS** (`desy5_k816.json`); Dovekie: PURE −5.06, FLAG-1 −7.38 vs w₀w_a −8.78, both **HOLD** (`sn_swap_dovekie.json`); K816 on Union3: −7.28, **HOLDS** (`sn_k816_union3.json`); K816 on Dovekie: -8.02, **TWIST HOLDS ON DOVEKIE** (`sn_k816_dovekie.json`) |
 | Matter asymmetry | derived + chosen + estimate | `theory/matter/`, matter doc D35–D50 | at the computed heat share (0.13%) a pre-stated check gave 0.87× at m_σ = 6×10⁹ GeV (predicted 1.0×), so m_σ ≈ 5×10⁹ GeV for 1× (`confirm_f0013_m6e9.txt`); yield is not monotonic in the heat share |
 | Reheating | derived (g, h chosen) | `theory/inflation/reheating_derived.py`, `chi_decay_distance.py` | 0.04–0.4% heat at g = 0.1; T_RH 2.1–3.7×10¹⁴ GeV |
-| Dark matter, gravity-only fermion | estimate | `pidm_abundance.py`, `dm_inflation_production.py` | 3.5×10⁶–1.9×10⁷ GeV |
+| Dark matter, gravity-only fermion | estimate | `pidm_abundance.py`, `dm_inflation_production.py`, `dm_kination.py` | 3.5×10⁶–1.9×10⁷ GeV with radiation after reheating; ≈ 1×10⁸–6×10⁸ GeV once kination is included (Development 85) |
 | w_a ceiling ≥ −0.40 | locked | `PREREG_WA_CEILING.md`, `effective_w.json` | pending DESI DR3 (today's −0.73 would be a tension) |
 | Kination after the cliff adds ~2 e-folds | derived | `theory/inflation/kination_Nstar.py` | n_s 0.9654, r 0.0035 at the computed heat share (instant-reheating 0.9642); with loops (D77) ≈ 0.965–0.968 — an upward systematic found after locking (Development 84) |
 | n_s is fixed by the e-fold count | derived | `theory/inflation/kahler_correction_ns.py` | deforming the 3 moves n_s by < 0.002 (α 0.5–5); 0.973 unreachable |
