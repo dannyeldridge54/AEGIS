@@ -1642,3 +1642,17 @@ n_s rises only slowly with μ (≈ +0.001 per doubling) and stays below 0.965 ac
 n_s ≈ 0.974 at any locked μ. Its curve (n_s 0.957–0.965 with r 0.0038–0.0058, r FALLING as n_s rises) is distinct from TWIST-L and
 TWIST-P (where r rises with n_s) — future CMB data can tell the three apart. Plain reading: the weakly coupled, duality-consistent
 heterotic version is, on current data, worse than the Twist; it is kept only as a locked, falsifiable alternative.
+
+**D198 — attempting Q4 of the open-problem doc exposes a new leak: Green–Schwarz mixing (theory/string_home/gs_leak_d198.py; estimate).**
+Good part first: at the Z₃ ORBIFOLD point the untwisted moduli space is the exact coset (free worldsheet CFT), so the α′³ (χζ(3)) correction
+that would give a 1/x³ leak on a smooth Calabi–Yau is absent; one-loop thresholds carry no T (no N = 2 sectors; Mayr–Stieberger hep-th/9303017:
+"the moduli dependence … arises only from the orbifold sectors" with N = 2). Problem: the gauge couplings depend on the duality-INVARIANT
+string coupling, 1/g_s² = Re Y + (κ/2) ln u_het with κ ∝ δ_GS/8π² (Z₃ generally has δ_GS ≠ 0). D193 fixed the holomorphic Y with
+T-independent prefactors, which is not duality-covariant. Making it covariant (each racetrack term carries η(T) powers so all have weight −3)
+keeps the two KL conditions consistent but gives Re Y₀(T) = c − 2κ ln|η|, so 1/g_s² = c + (κ/2) ln(u_het|η|⁴) — this grows LINEARLY in
+T at large T. Rough size (ΔT_het since z ≈ 1 taken as 0.3 for TWIST-M9 — a guess, to be computed from the tail): |Δα/α| ~ 10⁻⁴ × δ_GS,
+against quasar/clock bounds ~10⁻⁶ ⇒ needs |δ_GS| ≲ 0.01. For the degree-1 matching it is ~10× worse.
+**Verdict:** a new condition for the heterotic home — the Green–Schwarz coefficient of the overall modulus must vanish (all duality-anomaly
+coefficients b′ₐ = 0, hidden groups included), OR the dilaton must be stabilised in its invariant form with no T-dependence (e.g. Kähler
+stabilisation — not shown). D193's "works" is downgraded to "works only if δ_GS ≈ 0". This also names a falsifiable signature: if any
+leak exists it is a drift of α tracking ln(u|η|⁴), i.e. ∝ T at late times — the same redshift shape PREREG_SHIELD already fixes.
