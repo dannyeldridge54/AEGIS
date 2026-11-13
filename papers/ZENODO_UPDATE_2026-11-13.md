@@ -30,3 +30,11 @@ https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md).
 - Not done: the v4 status notice (editing a published record means publishing the edit — Danny's call).
 - 10:49: status notice added to the top of the v4 description and saved as a draft edit (the public record is unchanged until
   Danny presses Publish on https://zenodo.org/uploads/24140195).
+
+## 14:15 CT — draft 24202422 refreshed (not published)
+- PDF replaced: Twist_one_field_2026-11-13.pdf, 23 pages, 581,335 bytes, md5 71eecf2d6b0a7c2ec14bf4fb4b9a312f (matches the PC copy at
+  C:\Users\Danny\Desktop\AEGIS_zenodo\ and the Zenodo file listing).
+- Description replaced with the v2 text (TWIST-K main construction; NS-SPA INCONSISTENT reported up front; m_σ ≈ 6×10¹⁰ GeV as a
+  refit with its confirmation running on the PC; shield; TWIST-P and TWIST-L locked for future data).
+- Saved as draft; verified after reload. Publish is Danny's button. Note: the DOI question shows "Yes, I already have one" after
+  reload with an empty DOI box — choose "No, I need one" (or press "Get a DOI now!") before publishing.
