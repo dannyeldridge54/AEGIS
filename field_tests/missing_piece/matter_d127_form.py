@@ -10,6 +10,6 @@ src = open("/home/claude/aegis/theory/matter/hidden_kick_decay_v2.py").read()
 old = "abs(T / cmath.sqrt(1 + T / MU) * (cmath.exp(-N * (1 - cmath.exp(-T / M2))) if CLIFF == \"exp\" else cmath.exp(-N * T / (T + M2)))) ** 2 / (4 * x * x)"
 assert old in src
 new = "abs(T * cmath.exp(-N * (1 - cmath.exp(-T / M2)))) ** 2 / (4 * x * x * (1 + x / MU))"
-ns = {}; exec(compile(src.replace(old, new).replace('CLIFF = "old"', 'CLIFF = "exp"').replace("MU, N, M2 = 1e4, 125.0, 1.0", "MU, N, M2 = 1.0, 125.0, 4 / math.pi"), "d127", "exec"), ns)
+ns = {"__file__": "/home/claude/aegis/theory/matter/hidden_kick_decay_v2.py", "__name__": "d127"}; exec(compile(src.replace(old, new).replace('CLIFF = "old"', 'CLIFF = "exp"').replace("MU, N, M2 = 1e4, 125.0, 1.0", "MU, N, M2 = 1.0, 125.0, 4 / math.pi"), "d127", "exec"), ns)
 o = ns["run"](5.8e10, 0.1, f_rh=0.008)
 print(f"D127 form, m_sigma 5.8e10, f 0.8%: n_B/s {o['nBs']:.3e} (x{o['nBs'] / C.TARGET:.3f}); dilution x{o['entropy_dilution']:.2f}; y_end {o['y_end']:.4f}", flush=True)
