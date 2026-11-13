@@ -802,3 +802,10 @@ which passes through zero once, where kinetic and potential energy are equal —
 superpotential. If longitudinal modes were made efficiently they would be light fermions (m₃/₂ ≈ 0) — extra radiation (N_eff) — or
 contribute to the dark-matter question (D106).
 Status: open, new; a dedicated calculation (the helicity-½ mode equation through the cliff) is the check.
+**D111 worked out (11:45; results/gravitino_cliff.txt).** With m₃/₂ = 0 and F_T = 0, the Kolb–Long–McDonough sound speed is
+c_s² = 1 − 4|φ̇|²|F|²/ρ² = (p/ρ)², zero once at the cliff. For unconstrained superfields (the Twist's case) Dudas et al.
+(arXiv:2104.03749) show that when c_s → 0 the longitudinal gravitino becomes mostly inflatino and the physical eigenmodes do not
+slow down: production is that of ordinary fermions at gravitational strength, not UV-catastrophic. Here the fermions are the T̃–S̃
+pair, which get a Dirac mass from W_TS = √3 m F′(T) (inflaton-scale on the plateau, ~e^{−n}m — negligible — on the tail). Made once
+at the crossing with H ≈ 1.5×10¹³ GeV, their energy share is ~(H/M_P)² ≈ 4×10⁻¹¹, i.e. ~5×10⁻⁹ of the radiation: ΔN_eff ~ 3×10⁻⁸
+(bound ~0.3). Resolved (estimate, by the published result for this model class); no dark-matter or N_eff consequence.
