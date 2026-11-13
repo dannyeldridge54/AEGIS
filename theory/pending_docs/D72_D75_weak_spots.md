@@ -2041,3 +2041,14 @@ own caveat that unresolved systematics must be understood first. No measurement 
 papers, not β results; Simons Observatory's sparse-wire-grid calibration (2512.19102) is in place. The locked reading will be triggered by the
 first calibrator-based β with total error ≤ 0.10°. This remains the Twist's sharpest near-term risk besides n_s: a calibrated β ≈ 0.28° at ≥ 5σ
 would make PREREG_BIREF_NULL NOT SUPPORTED, leaving only the anomaly route (β ≤ 0.075°), which that value would also exclude.
+
+**D230 — a naive field-theory loop does NOT give TWIST-G−'s tilt (check of D222).** Try the simplest explicit loop: N chiral pairs with
+W ⊃ (y S + λ T) Φ Φ̄, integrated out, give the one-loop Kähler correction ΔK = −(N/16π²)|yS + λT|² ln(|yS + λT|²/Λ²), so
+ΔK_SS̄ ≈ −(N y²/16π²) ln(λ²|T|²/Λ²) — an ABSOLUTE correction ∝ ln u. But the helper's tree metric is K⁽⁰⁾_SS̄ = 3gE/u ≈ 3/u on the plateau
+(large, ~10⁴ at the CMB point), so the relative change is ~(N y²/48π²) u ln u ~ 10⁻⁵ there — far too small, and not a power law. A pure
+tilt u^{−2γ} needs the loop correction to be MULTIPLICATIVE on the helper's metric, i.e. to carry the same modular weight as the tree term:
+K_SS̄ = (3gE/u)[1 + c ln u]. That is the structure of string one-loop matter-metric corrections (the T-dependence multiplies the tree metric,
+AGNT hep-th/9212045), not of a generic field-theory loop with T-independent cutoff. So D222's "loop-sized γ" holds only if the helper behaves
+like string matter with a modular weight (its loops scale with u like the tree metric); in a plain field-theory completion the tilt is not
+generated. Status of TWIST-G−'s origin: plausible in a string-like completion with a cutoff tied to the modulus (Λ ∝ M_s-type scale with the
+right weight), not in a generic EFT. Recorded so the paper does not overclaim "naturally a loop".
