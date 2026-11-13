@@ -1,0 +1,9 @@
+D67 loop estimate for beta (gravity-only fermion, tree beta = 0):
+  beta_loop ~ n_eff sqrt(2/3)/(16 pi^2), n_eff 1: 0.0052
+  beta_loop ~ n_eff sqrt(2/3)/(16 pi^2), n_eff 2: 0.0103
+  beta_loop ~ n_eff sqrt(2/3)/(16 pi^2), n_eff 4: 0.0207
+  beta_loop ~ n_eff sqrt(2/3)/(16 pi^2), n_eff 8: 0.0414
+D68 hidden SU(8) height: needed cosine height vs a pure gaugino-condensation scale
+  m_sigma 6e+09: height^(1/4) 7.5e+13 GeV = 9.1e-19 M_P^4 -> needs exp(-(pi/4) Re T) ~ that, i.e. Re T ~ 53 if the prefactor is O(1)
+  m_sigma 3e+10: height^(1/4) 1.7e+14 GeV = 2.3e-17 M_P^4 -> needs exp(-(pi/4) Re T) ~ that, i.e. Re T ~ 49 if the prefactor is O(1)
+D69 neutrino masses (normal ordering, lightest 0): sum = 0.0589 eV; DESI DR2 + CMB bound ~0.064 eV (95%)

@@ -44,6 +44,8 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 | Reheating | derived (g, h chosen) | `theory/inflation/reheating_derived.py`, `chi_decay_distance.py` | 0.04–0.4% heat at g = 0.1; T_RH 2.1–3.7×10¹⁴ GeV |
 | Dark matter, gravity-only fermion | estimate | `pidm_abundance.py`, `dm_inflation_production.py` | 3.5×10⁶–1.9×10⁷ GeV |
 | w_a ceiling ≥ −0.40 | locked | `PREREG_WA_CEILING.md`, `effective_w.json` | pending DESI DR3 (today's −0.73 would be a tension) |
+| n_s is fixed by the e-fold count | derived | `theory/inflation/kahler_correction_ns.py` | deforming the 3 moves n_s by < 0.002 (α 0.5–5); 0.973 unreachable |
+| Neutrinos: normal ordering, Σm_ν 0.059–0.064 eV, Majorana | derived (from the matter mechanism) | Development 69 | testable by JUNO, cosmology, 0νββ |
 | w_a for the theory's own β = 0 version | derived | `theory/darkenergy/tail_bend_wa.py` | between about −0.15 and 0 (w₀ ≥ −0.90); the tail's bend only moves w toward −1 |
 | Birefringence β = 0 | locked | `PREREG_BIREF_NULL.md` | pending; measured 0.28 ± 0.06° (4.9σ tension) |
 | Six lab nulls | locked | `PREREG_LAB_NULLS.md` | consistent with all bounds |
@@ -68,7 +70,9 @@ Labels: **derived** (follows from the base theory), **chosen** (a modelling choi
 
 0. The data mildly prefer a dark-matter coupling β ≈ 0.03 that the theory does not produce (Development 64).
 1. μ ≲ 1 (tail on its slope today) was chosen knowing PURE-TWIST was preferred; only new data (DESI DR3) can test it.
-2. The hidden SU(8) is matched in form (gaugino-condensation cross term), not constructed in full.
+2. The hidden SU(8) is matched in form (gaugino-condensation cross term), not constructed in full; its required height
+   (~10⁻¹⁸ M_P⁴ at the cliff, Re T ≈ 1) needs either a weakly coupled hidden sector (f = kT, k ≈ 50) or a small
+   prefactor — a hidden tuning (Development 68).
 3. Heavy superpartners (m ≈ 10¹¹–10¹³ GeV) at T_RH need R-parity violation (window 10⁻⁵–10⁻³, estimate).
 4. Instant preheating: χ's couplings g ≈ 0.1 and Yukawa h = 0.1–1 are natural choices, not derived.
 5. The dark-matter fermion argument and PIDM threshold factor are estimates.

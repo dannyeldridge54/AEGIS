@@ -1,0 +1,11 @@
+(A) coefficient 3 -> 3 alpha (alpha = 1 is the base theory)
+  alpha 0.50: N* 55.3, n_s 0.9647, r 0.0018
+  alpha 0.80: N* 55.5, n_s 0.9651, r 0.0028
+  alpha 0.90: N* 55.5, n_s 0.9652, r 0.0031
+  alpha 1.00: N* 55.6, n_s 0.9653, r 0.0034
+  alpha 1.10: N* 55.6, n_s 0.9654, r 0.0037
+  alpha 1.50: N* 55.7, n_s 0.9657, r 0.0049
+  alpha 2.00: N* 55.8, n_s 0.9660, r 0.0063
+  alpha 5.00: N* 56.1, n_s 0.9671, r 0.0132
+  n_s = 0.97: not reachable for alpha in [0.05, 50]
+  n_s = 0.973: not reachable for alpha in [0.05, 50]
