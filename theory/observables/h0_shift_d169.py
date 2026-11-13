@@ -24,7 +24,7 @@ def DM(E2, h):                    # in units of c/(100 km/s/Mpc)
     return (quad(f, 0, 3, limit=200)[0] + quad(f, 3, 50, limit=200)[0] + quad(f, 50, zs, limit=400)[0]) / h
 hL = 0.674; OmL = wm / hL ** 2; E2L = lambda a: OmL * a ** -3 + wr / hL ** 2 * a ** -4 + (1 - OmL - wr / hL ** 2)
 target = DM(E2L, hL)
-hT = brentq(lambda h: DM(twist_E2(h), h) - target, 0.60, 0.70, xtol=1e-6)
+hT = 0.6572 if __name__ != "__main__" else brentq(lambda h: DM(twist_E2(h), h) - target, 0.60, 0.70, xtol=1e-6)
 print(f"LCDM: H0 = {100*hL:.2f}, Omega_m = {OmL:.4f}")
 print(f"Twist (same omega_m and theta*): H0 = {100*hT:.2f} km/s/Mpc ({100*(hT-hL):+.2f}), Omega_m = {wm/hT**2:.4f}")
 print(f"SH0ES-type local value ~73: the Twist moves H0 {'away from' if hT < hL else 'towards'} it")

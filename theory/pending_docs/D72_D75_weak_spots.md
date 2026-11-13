@@ -1349,3 +1349,9 @@ fixed by the CMB (ω_m = 0.1430 and the distance to last scattering at their ΛC
 km/s/Mpc (ΛCDM 67.4) and Ω_m = 0.331 (ΛCDM 0.315). So the Twist moves H₀ AWAY from local measurements (~73): it makes the Hubble
 tension slightly worse, as thawing quintessence generically does. Stated plainly as a cost of the model; the Twist offers no
 resolution of the Hubble tension. (Full CMB fits shift parameters together; the NS-SPA PURE fits are the precise version.)
+
+**D170 — what DESI will actually see: CMB-anchored BAO ratios (theory/observables/bao_ratios_d170.py; results/bao_ratios_d170.txt).**
+Same early universe as Planck-ΛCDM (ω_m, r_d, θ* fixed; Twist H₀ 65.7): D_M/r_d is larger than ΛCDM's by +1.3% at z = 0.30, +0.8% at
+0.51, +0.5% at 0.71, +0.3% at 0.93, +0.1% at 1.3–1.5, ~0 at 2.3; D_H/r_d is smaller by 0.4–0.5% at z = 0.5–1.5 (larger by 0.3% at
+z = 0.3). The signal is concentrated at z < 1 and is largest in the transverse distance at low z — where DESI's own w0wa preference
+comes from. These are the numbers behind WATCH-PURE-DR3 (already locked; not re-locked here).
