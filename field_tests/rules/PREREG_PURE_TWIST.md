@@ -1,7 +1,7 @@
 # PURE-TWIST: the supergravity-embedded Twist with no free dark-energy parameter
 
-**Status: DRAFT**, written 12 Nov 2026 (20:45 CT) during the theory work Danny asked for ("Keep going plan out our next
-steps research and hypothesize and continue"). LOCKED only on Danny's word. AI-assisted. Cloud.
+**Status: LOCKED** on Danny's word ("Start testing", 12 Nov 2026, 20:37 CT, replying to the pending PURE-TWIST draft), before any of its numbers were computed. Drafted 12 Nov 2026 (20:45 CT) during the theory work Danny asked for ("Keep going plan out our next
+steps research and hypothesize and continue"). AI-assisted. Cloud.
 
 **Why.** In the plateau -> cliff -> tail supergravity model (matter doc, Developments 19–22), the late slope is fixed at
 κ = √(2/3) by the α = 1 geometry, and the natural coupling of dark matter to the field is **zero** (matter masses do not
