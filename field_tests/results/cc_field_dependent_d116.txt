@@ -1,0 +1,7 @@
+today's dark energy 2.5e-47 GeV^4
+  SM loops to 1e+03 GeV, m_chi(tail) 1.2e+17 GeV: field-dependent dV ~ 1e+05 GeV^4 = 4e+51 x rho_DE; an e^(-pi x/4) switch-off needs x >~ 151
+  SM loops to 1e+03 GeV, m_chi(tail) 1.2e+18 GeV: field-dependent dV ~ 1e+07 GeV^4 = 4e+53 x rho_DE; an e^(-pi x/4) switch-off needs x >~ 157
+  SM loops to 1e+10 GeV, m_chi(tail) 1.2e+17 GeV: field-dependent dV ~ 1e+33 GeV^4 = 4e+79 x rho_DE; an e^(-pi x/4) switch-off needs x >~ 233
+  SM loops to 1e+10 GeV, m_chi(tail) 1.2e+18 GeV: field-dependent dV ~ 1e+35 GeV^4 = 4e+81 x rho_DE; an e^(-pi x/4) switch-off needs x >~ 239
+  SM loops to 1e+17 GeV, m_chi(tail) 1.2e+17 GeV: field-dependent dV ~ 2e+61 GeV^4 = 9e+107 x rho_DE; an e^(-pi x/4) switch-off needs x >~ 316
+  SM loops to 1e+17 GeV, m_chi(tail) 1.2e+18 GeV: field-dependent dV ~ 2e+63 GeV^4 = 9e+109 x rho_DE; an e^(-pi x/4) switch-off needs x >~ 322

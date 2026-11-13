@@ -809,3 +809,50 @@ slow down: production is that of ordinary fermions at gravitational strength, no
 pair, which get a Dirac mass from W_TS = √3 m F′(T) (inflaton-scale on the plateau, ~e^{−n}m — negligible — on the tail). Made once
 at the crossing with H ≈ 1.5×10¹³ GeV, their energy share is ~(H/M_P)² ≈ 4×10⁻¹¹, i.e. ~5×10⁻⁹ of the radiation: ΔN_eff ~ 3×10⁻⁸
 (bound ~0.3). Resolved (estimate, by the published result for this model class); no dark-matter or N_eff consequence.
+
+## Developments 112–117 — the remaining gaps, one by one (11:45–12:05; results/gaps_d112.txt, cc_field_dependent_d116.txt)
+
+**D112 — dark-matter mass settled (conditional).** Freeze-in from the bath and bremsstrahlung in χ̃ decays make the *same*
+gravity-only particle, and neither yield depends on its mass (m_DM ≪ T_RH, m_χ), so the yields add: 1/m = 1/m_freeze-in + 1/m_brems.
+At 0.8% heat (freeze-in alone ≈ 0.5–2.6×10⁸ GeV, scaled from dm_kination.txt), bremsstrahlung supplies ≥ 99% of the dark matter and
+**m_DM ≈ 100–500 TeV**. The 10⁸ GeV value is only the fallback if χ̃ has no decay to Standard-Model fermions (D106 (ii) fails) —
+which D110's Planck-scale breaking of χ → −χ makes unlikely. Status: unsettled → derived-conditional (fermion DM; estimate).
+
+**D113 — field distance, with a timeline.** Reshaped cliff, heat 0.8%: CMB point → end of inflation 5.1 M_P; end → frozen
+11.0 M_P (x frozen ≈ 73); total ≈ **16 M_P** (replaces the ~19–21 M_P of D75, which used the old cliff). Most of it is crossed in
+the first ~5 e-folds after inflation, while the bath is hot (T ≈ 10¹²–10¹⁴ GeV). Distance-conjecture test: a tower with mass
+M_P e^{−λΔφ} (taking it at M_P at the CMB point) stays above the bath temperature for λ = 1/√2 (the sharpened bound) and
+λ = √(2/3) (natural for this Kähler potential; margin ~5× at N ≈ 3), but falls below it for λ = 1 at N ≈ 3 (1.0×10¹³ vs
+2×10¹³ GeV). If the tower starts below M_P (e.g. string scale ~10¹⁷ GeV), λ = √(2/3) also crosses. Status: open, now
+quantitative — survives for λ ≤ √(2/3) with a tower near M_P; fails otherwise.
+
+**D114 — initial conditions.** Starts on the plateau with any kinetic share: from rest anywhere up to p₀ = −13 (2 M_P above
+the CMB point) gives ≥ 300 e-folds and the CMB point is crossed on the attractor (v/v_sr = 0.994). A kinetic-dominated start
+(ρ/V = 100–10⁴, moving toward the cliff) overshoots if it starts within ~3–4 M_P of the CMB point (p₀ = −13: only 11–44
+e-folds, off attractor ×50–110), but works from p₀ ≤ −16 (≥ 107 e-folds, on attractor). Moving up the plateau is always fine.
+Kination overshoot distance ≈ ln(ρ₀/V)/√6, so a Planck-density kinetic start needs p₀ ≲ p* − 10 ≈ −21: the plateau is
+unbounded, so this is generic. Not addressed: inhomogeneous starts (a patch ≳ H⁻¹ must be smooth — the standard plateau critique).
+Status: homogeneous initial conditions generic (derived numerically); inhomogeneity open (generic to plateau models).
+
+**D115 — c̃ (bremsstrahlung coefficient) already pinned.** The 11:25 Zheng value (C ≈ 4.1–4.3×10⁻⁹, i.e. c̃ ≈ 0.04–0.08)
+stands. What remains is a factor-2 width normalisation (8π vs 16π) and the m_χ⁴ spread (×4), both inside the 100–500 TeV range.
+No further work possible without the full χ̃ → ψH + graviton matrix element.
+
+**D116 — the field-dependent vacuum-energy problem, quantified (rough).** χ's mass depends on the inflaton; χ and χ̃ cancel
+in loops except for their splitting, and the Planck-suppressed links to the non-SUSY Standard Model that D110 needs split them by
+δm² ~ Λ⁴/(16π² M_P²). Then δV(φ) ~ m_χ(φ)² δm²/(16π²) ≈ 10⁵ GeV⁴ (SM loops only to 1 TeV) up to 10⁶¹ GeV⁴ (to 0.05 M_P):
+**10⁵²–10¹⁰⁸ × ρ_DE.** Possible protection checked: if χ's inflaton dependence ran through the SU(8) factor e^{−πT/4}, it would
+switch off on the tail, but that needs x ≳ 150–320 and the field freezes at x ≈ 73 — **fails**. Status: open, and now the
+sharpest weak point: the χ sector must decouple from the tail by ~10⁻⁵² or better (e.g. preheating via a different field, or
+χ's mass not depending on the tail direction). Same problem every quintessence model with couplings has (Kolda & Lyth 1999).
+
+**D117 — γ mismatch and the SU(8) construction: what would be needed.**
+(a) γ: D102 closed the y = 4 route. Three routes left, none tested: (i) the Twist's γ is a running/field value and the
+black-hole-entropy γ (0.2375 or 0.274 by counting scheme) is a separate, Planck-scale quantity — consistent but drops the link;
+(ii) the self-dual choice γ = ±i with analytic continuation (Frodden, Geiller, Noui & Perez 2012) reproduces Bekenstein–Hawking
+without fixing a real γ, which removes the entropy constraint; (iii) a different map from y to γ. Status: open, choice not data.
+(b) SU(8): the 4/π in the cliff equals 2π/8, which is what an SU(8) gaugino condensate with gauge function f = T gives
+(W ∝ e^{−2πT/8}). But the Twist uses that factor *inside* an exponent, exp(−n(1 − e^{−πT/4})), which a single condensate does
+not give. A construction needs: an SU(8) sector with f = T; a second sector whose gauge function contains the SU(8) condensate
+(f₂ ∝ n(1 − e^{−πT/4})) so that its condensate supplies the outer exponential; n ≈ 125 still chosen (D109). Status: requirements
+written; not constructed.

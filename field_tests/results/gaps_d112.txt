@@ -1,0 +1,23 @@
+inflation: N* 55.7, n_s 0.9642, CMB point p* -10.92 (x 1.34e-04), end p -5.79 (x 0.01)
+
+(A) dark matter, both routes together (heat 0.8%; freeze-in scaled from dm_kination.txt as f^-0.45):
+  freeze-in alone 4.7e+07, bremsstrahlung alone 1e+05 -> combined 9.98e+04 GeV; bremsstrahlung share 0.9979
+  freeze-in alone 4.7e+07, bremsstrahlung alone 5e+05 -> combined 4.95e+05 GeV; bremsstrahlung share 0.9895
+  freeze-in alone 2.6e+08, bremsstrahlung alone 1e+05 -> combined 1.00e+05 GeV; bremsstrahlung share 0.9996
+  freeze-in alone 2.6e+08, bremsstrahlung alone 5e+05 -> combined 4.99e+05 GeV; bremsstrahlung share 0.9981
+
+(B) distance: CMB point -> end of inflation 5.13 M_P; end -> frozen 11.04 M_P (x frozen 73); total 16.17 M_P
+  N= 0.5 after end: travelled  6.42 M_P, T ~ 2.4e+14 GeV; tower mass (from M_P at CMB point) lam 0.71: 2.6e+16, lam 0.82: 1.3e+16, lam 1.00: 4.0e+15
+  N=   1 after end: travelled  7.59 M_P, T ~ 1.5e+14 GeV; tower mass (from M_P at CMB point) lam 0.71: 1.1e+16, lam 0.82: 4.9e+15, lam 1.00: 1.2e+15
+  N=   2 after end: travelled 10.03 M_P, T ~ 5.4e+13 GeV; tower mass (from M_P at CMB point) lam 0.71: 2.0e+15, lam 0.82: 6.8e+14, lam 1.00: 1.1e+14
+  N=   3 after end: travelled 12.38 M_P, T ~ 2.0e+13 GeV; tower mass (from M_P at CMB point) lam 0.71: 3.8e+14, lam 0.82: 9.9e+13, lam 1.00: 1.0e+13
+  N=   5 after end: travelled 15.44 M_P, T ~ 2.7e+12 GeV; tower mass (from M_P at CMB point) lam 0.71: 4.4e+13, lam 0.82: 8.2e+12, lam 1.00: 4.8e+11
+  N=  10 after end: travelled 16.16 M_P, T ~ 1.8e+10 GeV; tower mass (from M_P at CMB point) lam 0.71: 2.6e+13, lam 0.82: 4.5e+12, lam 1.00: 2.3e+11
+  (tower mass must stay above T and H, else new light states appear in the bath / the 4d theory breaks down)
+
+(C) initial conditions (e-folds of inflation N_tot; on attractor at the CMB point if |dp/dp_sr - 1| small):
+ p0 -30 (x 2.3e-11): K0 0.0+: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.97+: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.97-: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.9997+: N_tot    nan, from CMB pt   nan, v/v_sr nan
+ p0 -25 (x 1.4e-09): K0 0.0+: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.97+: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.97-: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.9997+: N_tot    nan, from CMB pt   nan, v/v_sr nan
+ p0 -20 (x 8.1e-08): K0 0.0+: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.97+: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.97-: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.9997+: N_tot 2750.8, from CMB pt  57.2, v/v_sr 0.996
+ p0 -16 (x 2.1e-06): K0 0.0+: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.97+: N_tot  489.9, from CMB pt  57.3, v/v_sr 0.994 | K0 2.97-: N_tot    nan, from CMB pt   nan, v/v_sr nan | K0 2.9997+: N_tot  107.6, from CMB pt  57.3, v/v_sr 0.994
+ p0 -13 (x 2.5e-05): K0 0.0+: N_tot  311.2, from CMB pt  57.3, v/v_sr 0.994 | K0 2.97+: N_tot   43.8, from CMB pt  42.8, v/v_sr 48.341 | K0 2.97-: N_tot 2276.5, from CMB pt  57.3, v/v_sr 0.995 | K0 2.9997+: N_tot   11.0, from CMB pt  10.1, v/v_sr 112.185
