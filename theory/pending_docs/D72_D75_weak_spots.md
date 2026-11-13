@@ -1787,3 +1787,18 @@ Shape moduli are also not rung 3, so the inflation sector would have to change t
 describe a direction that is not matter-neutral. Every heterotic home examined fails at least one need today: weak coupling unreachable
 (D204); HW rung-4 path moves α (this note); HW shape moduli give a steep tail and are not rung 3. The string home is OPEN; the shield is an
 effective-theory assumption (PREREG_SHIELD), which is where it stood before today's string work — now with the obstructions mapped.
+
+**D209 — a general obstruction for question 9 (perturbative strings with matter at the string scale).** For any 10-d string compactification,
+M_P² ∝ M_s² V/g_s² (V in string units), so (M_s/M_P)² ∝ g_s²/V. If the Standard Model's scales track M_s (true for heterotic, and for D-brane
+matter in IIA/IIB), a direction that grows the overall volume (the rung-3 field, x ∝ V^{1/3}) keeps the SM scale fixed ONLY if g_s² ∝ V,
+i.e. g_s ∝ x^{3/2}. Two ways to read it: (a) fix g_s (IIB-like) → the SM scale drifts, β ≈ 0.61 (D150, D192); (b) fix the 4-d dilaton
+(heterotic, IIA with D6-branes) → the 10-d coupling grows as x^{3/2}. Case (b) is weakly coupled only where V ≲ 1/g_YM² ~ 2, i.e. at the string
+scale. The Twist can sit there today only if the cliff's instanton is calibrated so that today's x maps to V ~ 1: degree d ≈ x_today/10 (D164).
+That calibration plus T-duality (which needs the cliff near the self-dual point, D194–D195) plus the computed post-cliff roll (which carries the
+field ~10²–10⁴ times further, D204) are mutually incompatible in every version built. IIA with D6-branes has the same structure as heterotic
+(gauge couplings set by complex-structure moduli, f independent of Kähler T; Yukawas instanton-suppressed) — it inherits case (b) and the
+same strong-coupling problem, going over to M-theory on G₂ manifolds, where the overall-volume direction is a different rung (K = −3 ln V₇
+gives 3α = 7 for the overall scaling) — not checked further.
+**Verdict:** "rung 3 + neutral matter + weak coupling today" is obstructed generically, not just in the examples: a matter-neutral volume
+direction in a perturbative string drives the 10-d coupling up as x^{3/2}. A home needs either matter whose scale does NOT track M_s (non-
+perturbative / strongly coupled sectors), or a rung-3 direction that is not the overall volume. Recorded as the precise form of question 9.
