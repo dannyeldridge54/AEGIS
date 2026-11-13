@@ -8,3 +8,4 @@ beta 0.060: w0_eff -0.861, wa_eff -0.291, min w -1.060; chi2 at fixed (h, wb, wc
 beta 0.080: w0_eff -0.866, wa_eff -0.304, min w -1.068; chi2 at fixed (h, wb, wc) 3999.81
 beta 0.1 CLASS failed
 beta 0.12 CLASS failed
+K816 (kappa sqrt(2/3), beta 0.03421): w0_eff -0.907, wa_eff -0.162, min w -1.008
