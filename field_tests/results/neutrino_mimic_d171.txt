@@ -1,0 +1,5 @@
+Twist D_V(z=0.51) relative to Planck-LCDM: 1.00437
+LCDM mimics it with d_omega = +0.00047 -> Sigma m_nu shift +0.044 eV (from 0.06 to +0.104 eV); its H0 = 66.94
+  check z = 0.295: Twist 1.0095 vs mimic 1.0053
+  check z = 0.934: Twist 1.0006 vs mimic 1.0030
+  check z = 1.484: Twist 0.9997 vs mimic 1.0019

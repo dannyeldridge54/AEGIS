@@ -1355,3 +1355,11 @@ Same early universe as Planck-ΛCDM (ω_m, r_d, θ* fixed; Twist H₀ 65.7): D_M
 0.51, +0.5% at 0.71, +0.3% at 0.93, +0.1% at 1.3–1.5, ~0 at 2.3; D_H/r_d is smaller by 0.4–0.5% at z = 0.5–1.5 (larger by 0.3% at
 z = 0.3). The signal is concentrated at z < 1 and is largest in the transverse distance at low z — where DESI's own w0wa preference
 comes from. These are the numbers behind WATCH-PURE-DR3 (already locked; not re-locked here).
+
+**D171 — neutrino mass degeneracy (theory/observables/neutrino_mimic_d171.py; background-only estimate).** At z = 0.51 the Twist's
+CMB-anchored distance signal (D_V +0.44% over Planck-ΛCDM) can be mimicked in ΛCDM by adding late-time matter worth +0.044 eV of
+neutrino mass (Σm_ν 0.06 → 0.10 eV, H₀ 66.9). But the redshift shapes differ: at z = 0.30 the Twist gives +0.95% vs the mimic's
++0.53%; at z = 0.93, +0.06% vs +0.30%; at z = 1.48, −0.03% vs +0.19%. So the Twist's signal is steeper toward low redshift than a
+neutrino-mass shift; DESI DR3's redshift coverage can separate them. Consequence for interpretation: a ΛCDM analysis of a
+Twist universe would be pulled toward a somewhat HIGHER neutrino mass at z ≈ 0.5 and lower at z ≈ 0.3–1.5, partially cancelling;
+no claim is made here about DESI's own neutrino-mass result (that needs the full likelihood).
