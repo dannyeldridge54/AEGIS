@@ -348,3 +348,12 @@ electron and quark masses, would follow x unless μ is generated in a T-independ
 SUSY-breaking sector, D88). So in the 4D reading the fifth-force problem reduces to D73's residual Higgs-sector question,
 and the string-volume objection of D89 does not apply. Label: derivation of a known property (conformal sequestering);
 the μ-term origin stays open.
+
+**D89 addendum, caveat (written after checking the scaling more carefully).** In the sequestered no-scale form the matter
+sector is conformally coupled: canonically normalised, dimensionless couplings are T-independent, but every dimensionful
+parameter in it scales as x^{−1/2} in the Einstein frame (μ, any supersymmetry-breaking F-term, hence soft masses). Whether a
+dynamically generated scale such as Λ_QCD (so the proton mass) also scales as x^{−1/2} depends on how the trace anomaly
+couples to the supergravity compensator; I have not settled this. If it does, the proton mass moves with x, β_m = ½√(2/3)
+≈ 0.41 (excluded ×120), and the fifth-force problem returns in full — the same as D73's "weight 1" case. So the honest
+status of D73/D89 is: the fifth-force problem is not solved in either reading; it reduces to whether all Standard-Model
+scales can be made T-independent, which needs a mechanism not in the Twist. Label: open, severe (alongside D80).
