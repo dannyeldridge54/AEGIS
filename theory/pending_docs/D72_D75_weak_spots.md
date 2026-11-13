@@ -856,3 +856,34 @@ without fixing a real γ, which removes the entropy constraint; (iii) a differen
 not give. A construction needs: an SU(8) sector with f = T; a second sector whose gauge function contains the SU(8) condensate
 (f₂ ∝ n(1 − e^{−πT/4})) so that its condensate supplies the outer exponential; n ≈ 125 still chosen (D109). Status: requirements
 written; not constructed.
+
+## Developments 118–120 — working the open items (12:00–12:15)
+
+**D118 — a fix for D116: χ's mass saturates (results/chi_saturating_d118.txt).** Replace the linear preheating mass
+m_χ = g|φ − φ₀| by a holomorphic, saturating one: W ⊃ (h/2)(1 − e^{−2π(T−T₀)}) χ². Since χ = 0 during inflation this term does
+not touch V(T). m_χ vanishes at x₀ (instant preheating as before), grows almost linearly just after, and tends to h on the tail,
+where its leftover dependence on the tail field is ∝ e^{−2πx}. Matching D105's slope g = 0.1 at the crossing (x₀ = 0.02–0.1 gives
+h = 0.2–1.0 M_P), χ reaches its decay mass 0.052 M_P after Δφ = 0.44–0.49 M_P (D105: 0.52) — heat share ~0.65–0.75% instead of
+0.77%, within the matter check's range. During inflation |m_χ| ≤ 0.13–0.17 M_P ≫ H, so χ stays put. On the tail (x ≈ 73):
+**field-dependent vacuum energy 10⁻¹⁴⁵ (SM loops to TeV) to 10⁻⁸⁸ (to 0.05 M_P) × ρ_DE** — D116's 10⁵²–10¹⁰⁸ removed. The
+constant part (~h²δm²/16π²) joins the ordinary cosmological-constant problem (tuned, as in every model).
+Costs: (i) a new assumption — a single-instanton factor e^{−2πT} of the same T (action 2π Re T; the cliff's SU(8) factor is
+e^{−2πT/8}); (ii) e^{−2πT} has Im T period 1, so m_χ at the crossing is 2h|sin πy|: preheating needs y close to an integer when the
+field crosses x₀ (y ≈ 0 at the end of inflation; to be checked against the two-field run); (iii) the faster-than-linear growth
+shifts χ's decay slightly earlier (above). Status: D116 → candidate fix (estimate), with one new assumption.
+
+**D119 — a construction route for the cliff's double exponential.** A second hidden gauge group G₂ (rank N₂) whose gauge
+function picks up the SU(8) condensate through the Planck-suppressed mixed operator ∫d²θ (c/M_P³) Tr W₈² Tr W₂²: when SU(8)
+condenses, ⟨Tr W₈²⟩ ∝ M_P³ e^{−2πT/8}, so f₂ = f₀ − κ e^{−πT/4} with κ = c × O(1). G₂'s condensate is then
+Λ₂³ ∝ e^{−2πf₂/N₂} = e^{−2πf₀/N₂} · exp(n e^{−πT/4}) with **n = 2πκ/N₂**. The constant e^{−2πf₀/N₂} only rescales m, so the cliff
+depth is n — no tuning of f₀ against κ is needed (only f₀ > κ for weak coupling). n ≈ 125 needs κ ≈ 20 N₂ (c ~ 40–160 for N₂ =
+2–8): a large coefficient, so n is still chosen — now as c. Not yet shown: how Λ₂³ enters W multiplied by S·T/√(1+T/μ) (needs G₂
+matter whose masses involve S and T), and the SU(8) sector being strongly coupled near x → 0 (the plateau) is outside control.
+Status: route written; partly constructed; n relocated, not explained.
+
+**D120 — the γ mismatch: route chosen.** Of D117's three routes, (ii) is the only one that removes the conflict rather than
+renaming it: with the self-dual value γ = ±i and analytic continuation, black-hole entropy comes out as Bekenstein–Hawking for any
+area (Frodden, Geiller, Noui & Perez, arXiv:1212.4060), so the entropy calculation no longer fixes a real γ, and the Twist's field
+value (whatever y settles at) is not contradicted. Cost: the Twist's γ is then a cosmological field unrelated to the LQG area
+spectrum, and the "LQG link" becomes motivation only (as COVERAGE already lists for quantum geometry). Status: open mismatch →
+resolved by choice (labelled as such), not by derivation.

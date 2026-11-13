@@ -1,0 +1,12 @@
+x0 0.02: h 0.97 M_P (saturated chi mass), decay mass 0.052 M_P reached after dphi 0.44 M_P (D105 linear: 0.52); during inflation |m_chi| <= 0.131 M_P vs H 6e-6
+   SM loops to      TeV: field-dependent dV on the tail ~ 10^-145 x rho_DE
+   SM loops to 1e10 GeV: field-dependent dV on the tail ~ 10^-117 x rho_DE
+   SM loops to 0.05 M_P: field-dependent dV on the tail ~ 10^-88 x rho_DE
+x0 0.05: h 0.39 M_P (saturated chi mass), decay mass 0.052 M_P reached after dphi 0.46 M_P (D105 linear: 0.52); during inflation |m_chi| <= 0.144 M_P vs H 6e-6
+   SM loops to      TeV: field-dependent dV on the tail ~ 10^-145 x rho_DE
+   SM loops to 1e10 GeV: field-dependent dV on the tail ~ 10^-117 x rho_DE
+   SM loops to 0.05 M_P: field-dependent dV on the tail ~ 10^-89 x rho_DE
+x0 0.1: h 0.19 M_P (saturated chi mass), decay mass 0.052 M_P reached after dphi 0.49 M_P (D105 linear: 0.52); during inflation |m_chi| <= 0.170 M_P vs H 6e-6
+   SM loops to      TeV: field-dependent dV on the tail ~ 10^-146 x rho_DE
+   SM loops to 1e10 GeV: field-dependent dV on the tail ~ 10^-118 x rho_DE
+   SM loops to 0.05 M_P: field-dependent dV on the tail ~ 10^-89 x rho_DE
