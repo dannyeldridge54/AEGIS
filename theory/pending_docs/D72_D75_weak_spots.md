@@ -1960,3 +1960,14 @@ negative real axis, irrelevant for Re T > 0) and a derivation of γ from a speci
 γ = −0.0085, ζ = 3×10⁵: V/V_Twist = x^{2γ} exactly as intended (1.164 at the CMB point, 1.081 at the cliff, 1 at x = 1, 0.927 today — the
 tilt and nothing else); m_S²/H² unchanged (310, 2.4×10⁴, 6×10⁵, 2.6×10⁴); the angle's mass is +3.966 H² everywhere (vs +4 at γ = 0) — stable.
 So TWIST-G− is a consistent supergravity model; what is missing is a derivation of γ ≈ −0.0085 from a specific loop.
+
+**D222 — where a loop-sized γ in TWIST-G− could come from (sketch with literature; not a calculation).** V ∝ e^K K^{SS̄}|W_S|², so W ∝ S T^{1+γ}
+is equivalent to the helper's metric carrying an extra factor u^{−2γ} = u^{+0.017}: a small shift of the helper's effective modular weight.
+Antoniadis–Gava–Narain–Taylor (hep-th/9212045) show one-loop string corrections to matter Kähler metrics contain an infrared part that
+reproduces the field-theory anomalous dimensions plus a moduli-dependent part. In effective-field-theory language: if the scale at which the
+helper's wavefunction Z_S is evaluated depends on T as μ ∝ u^a, running gives Z_S ∝ u^{a γ_S}; matching needs a·γ_S ≈ 0.017 — γ_S ≈ 0.017
+(a = 1), 0.034 (a = ½), 0.051 (a = ⅓), i.e. 2.7–8/(16π²): one-loop size, e.g. order-one Yukawa couplings of S to a handful of fields.
+Catch: with full modular invariance the loop combination is ln[(T + T̄)|η(T)|⁴], not ln(T + T̄); at the plateau (T → 0, the dual cusp) that
+gives an exponentially flat factor, NOT a power tilt — so the TWIST-G− mechanism needs the modulus NOT to have exact SL(2,Z) duality (fine in
+the effective theory and in settings without exact T-duality; under the Γ₀(9) option of D194 the behaviour at the cusp 0 must be checked).
+Status: natural size and a plausible mechanism identified; no explicit model computes γ.
