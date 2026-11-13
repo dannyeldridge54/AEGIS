@@ -1140,3 +1140,14 @@ fixable at the price of a larger coefficient; 4/π can be called "SU(8) form, we
 
 **D149 — can the seven-disk ladder move n_s? No.** On any rung n_s ≈ 1 − 2/N at leading order (α only sets r ≈ 12α/N²); a merger
 of disks during inflation changes r, not n_s. The ladder cannot help the n_s tension (consistent with D108/D132).
+
+**D150 — why would the SM be neutral? The volume picture says it cannot be (worklist item 14).** Where the SM's constants come from
+matters: on D3-branes its gauge couplings come from the axio-dilaton, not T (good, D145), but its UV cutoff is still the string or
+KK scale. If T is the volume (D123), M_s ∝ M_P/√V ∝ x^{−3/4}, and Λ_QCD = M_s e^{−8π²/(b g²(M_s))} inherits that: β = (3/4)√(2/3)
+≈ 0.61 — 180× over Cassini, at leading order. This is exactly Burgess and Quevedo's finding (D141). So **the shield requires that T
+is NOT the overall volume**: the SM's UV scale must not depend on T (e.g. T a fibre or other non-volume Kähler modulus, with the SM's
+cycle and the volume stabilised separately — the "fibre quintessence" direction in the literature). Consequences: (1) D143's α′³
+condition (Euler number 0) applied to a volume-type T; for a non-volume T the leading corrections are different and must be
+re-derived; (2) D123's tower argument used the volume (KK for x > 1, winding for x < 1); for a non-volume T the distance-conjecture
+tower is not known — the field distance (≈ 16 M_P) goes back to "open". Status: a real fork, recorded for Danny: volume-type T
+(distance conjecture OK, fifth force fails at O(1)) versus non-volume T (shield possible, distance conjecture open).
