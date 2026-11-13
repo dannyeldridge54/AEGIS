@@ -1436,3 +1436,10 @@ block. So the Twist can be read as the associative (quaternionic) flat direction
 modulus T_C. Open: whether this split follows from the octonion/Hamming-code superpotential of GKLY rather than being written in block
 form; and what the companion T_C does (it would be a second light field — fixed by other effects, or a second, rung-4 dark-energy-like
 field with w0 ≈ −0.93, wa ≈ −0.11 if it also thaws).
+
+**D178 — the rung-4 companion must be stabilised, and then the Twist stays one light field (results/companion_d178.txt).** With the G2
+split, K gains −4 ln(T_C + T̄_C), so the inflation potential carries e^{K_C} = (2x_C)^{−4} ∝ e^{−2√2 φ_C}: an unstabilised companion
+runs away (ε_C = 4) and destroys inflation. So T_C needs its own stabilisation — e.g. a Kallosh–Linde racetrack giving a supersymmetric
+Minkowski vacuum (W_C = ∂W_C = 0, so W = 0 at S = 0 and the gravitino stays massless) with m_C ≫ H_inf ≈ 1.5×10¹³ GeV. Then e^{K_C} is a
+constant absorbed into m, and every Twist prediction is unchanged. A second thawing (rung-4) dark-energy field is excluded unless its mass
+were purely Hubble-induced — not the case for a racetrack. One more ingredient (standard in the literature), no change to observables.

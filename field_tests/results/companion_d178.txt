@@ -1,0 +1,4 @@
+unstabilised companion: V ~ exp(-2.828 phi_C), epsilon_C = 4.0 -> runaway, inflation destroyed
+needs m_C >> H_inf = 6.2e-06 M_P (1.5e+13 GeV); then e^(K_C) is a constant absorbed into m and the Twist stays one light field
+a thawing companion is excluded: it would have to be light (m_C << H_inf) during inflation, where its slope 2.83 makes it run away
+rung-4 thawing (if it were ever light late): w0 -0.93, wa -0.11 (rung_tails_d151) — excluded by the inflation argument unless its mass is Hubble-induced only
