@@ -1,0 +1,7 @@
+(3) heat share 0.008: GW burst today at f ~ 1.4e+11 Hz with Omega_GW h^2 ~ 7e-14 (BBN/N_eff limit ~1e-6; ultra-high-frequency proposals need >~1e-1 at GHz)
+(3) heat share 0.0055: GW burst today at f ~ 1.4e+11 Hz with Omega_GW h^2 ~ 3e-14 (BBN/N_eff limit ~1e-6; ultra-high-frequency proposals need >~1e-1 at GHz)
+    small-scale lumps: the cliff acts ~0 e-folds before the end, on scales ~1/(a_e H_e) — far below any astrophysical scale; no PBHs of interest
+(4) S loop (m_S^2 = 8 H^2): dV/V ~ 1e-12
+(4) S loop (m_S^2 = 22 H^2): dV/V ~ 1e-11
+(4) graviton loops: dV/V ~ H^2/M_P^2 ~ 4e-11
+(4) two-loop correction to the running coupling behind the log factor: ~10% change in the effective b -> moves the prediction along the locked n_s-r curve, not off it

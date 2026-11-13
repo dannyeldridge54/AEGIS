@@ -1,0 +1,4 @@
+b 3.0: H_end/H_end(b=0) 0.835; x0 0.02: phi_dot ratio 0.815 -> heat share x0.74, x0 0.05: phi_dot ratio 0.799 -> heat share x0.71, x0 0.1: phi_dot ratio 0.799 -> heat share x0.71
+b 10.0: H_end/H_end(b=0) 0.639; x0 0.02: phi_dot ratio 0.610 -> heat share x0.48, x0 0.05: phi_dot ratio 0.590 -> heat share x0.45, x0 0.1: phi_dot ratio 0.589 -> heat share x0.45
+b 3.0 (A_s-normalised): heat share relative to the Twist x0 0.02: x0.83, x0 0.05: x0.81, x0 0.1: x0.81
+b 10.0 (A_s-normalised): heat share relative to the Twist x0 0.02: x0.71, x0 0.05: x0.68, x0 0.1: x0.67

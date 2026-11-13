@@ -1388,3 +1388,16 @@ on top of lepto-axiogenesis — a second matter source to be checked if this is 
 D172 add (strong-CP lead checked): could the angle relax toward a minimum by itself before the QCD era, giving the small θ_i the lead
 needs? No — its mass comes from the T-sector potential (m_y² ≈ 4V_T/3), which during the radiation era is far below H², so the angle
 stays frozen at its post-kick value (0.5–0.9 rad) until long after the QCD transition. The lead needs an external mechanism.
+
+## Development 174 — the four Tier-2 checks (theory/twistl/twistl_history_check.py, twistl_reheating_check.py, tier2_estimates.py)
+1. **TWIST-L is stable along the whole history** (b = 3 and 10, full two-field SUGRA): m_S²/H² = 22 at x = 10⁻⁴, 2355–68,000 through
+   the cliff, 2636 today; the angle +4H² everywhere. Same as TWIST-K.
+2. **Reheating carries over.** TWIST-K has the Twist's potential and kinetic term along real T exactly, so its reheating is identical.
+   TWIST-L (normalised to the observed A_s) heats a little less: heat share ×0.81–0.83 (b = 3) and ×0.67–0.71 (b = 10) of the Twist's,
+   i.e. ~0.65% and ~0.55% instead of 0.8% — inside the range already covered (D118: 0.65–0.75%); the tail is insensitive (D125); the
+   matter yield at those heat shares would need its own check if TWIST-L is ever favoured.
+3. **The cliff's gravitational-wave burst is invisible**: f ≈ 10¹¹ Hz today with Ω_GW h² ~ 10⁻¹⁴ (BBN bound ~10⁻⁶; ultra-high-frequency
+   proposals need ≳ 0.1 at GHz). Small-scale features sit at the end-of-inflation horizon, far below astrophysical scales: no
+   primordial black holes of interest.
+4. **TWIST-L is quantum-stable**: S and graviton loops shift V by 10⁻¹² to 4×10⁻¹¹ of itself; the two-loop correction to the running
+   coupling behind the log factor changes the effective b by ~10%, which moves the prediction along the locked n_s–r curve, not off it.
