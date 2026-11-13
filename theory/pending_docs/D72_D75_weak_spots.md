@@ -1258,3 +1258,13 @@ What it costs / changes: (a) the angle's dynamics change (no cliff tachyon) — 
 before running); (b) the hidden axion's kick needs an instanton term coupling σ to the angle, now taken as a worldsheet instanton
 ∝ |q| cos(πy/4 − σ/f) instead of SU(8); (c) inflation, the cliff, the tail and every late-time observable are unchanged — so n_s is
 still INCONSISTENT (D157); TWIST-K fixes the construction, not the data problem.
+
+**D161 — n as an instanton sum: what it would take (TWIST-K).** In TWIST-K the dark-energy scale is set by
+ln E(∞) − ln E(0) = 2n ≈ 250, the total change of ln K_SS̄ between the plateau (x → 0, |q| → 1) and the tail (|q| → 0). With a
+worldsheet-instanton series ln K_SS̄ ⊃ −Σ_k c_k |q|^k, that change is Σ_k c_k evaluated at |q| = 1 — the FULL resummed instanton
+sum at small volume, not a single curve count. Genus-0 counts N_d grow exponentially with degree (the series converges only away
+from the small-volume/conifold region), so this sum is finite only after resummation, where it is governed by the geometry near
+small volume. So "n = a count of curves" is too naive; "n = the resummed instanton sum at small volume" is the precise target.
+This needs a specific compact geometry and the matter-metric's instanton expansion — a research project, not attempted here. The
+single-term form exp(−2n|q|) used in TWIST-K is a model of that resummation, not derived. Status: route to deriving n identified
+and stated precisely; n still chosen.

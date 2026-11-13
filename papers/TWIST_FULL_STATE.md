@@ -61,6 +61,14 @@ theory/pending_docs/D72_D75_weak_spots.md; the model card (papers/MODEL_CARD_v5.
    for the cliff (B), and matter neutral under T (C). IIB volume: A+B, not C. Heterotic Z₃: A+C, not B. Heterotic M-theory: B, not C.
    Fibre moduli: C, not A.
 
+## 3b. TWIST-K — the same model with no hidden forces (D159–D161)
+The cliff can sit in the helper field's Kähler metric instead of the superpotential: K ⊃ E(u) SS̄ with E = exp(2n(1 − e^{−πu/8})),
+W = √3 m S T. Full supergravity check: the potential along the inflaton's path equals the Twist's to 10 digits; S stays heavy; the
+angle stays at +4H² everywhere (no cliff tachyon). No SU(8), no racetrack — the frontier's need B disappears, and the cliff's
+e^{−πx/4} has the form of a worldsheet-instanton correction, available in the heterotic and IIA settings where matter is neutral.
+n becomes the resummed instanton sum at small volume (a precise route to deriving it; not done). Matter must be recomputed
+(D160, locked, running). Observables otherwise unchanged — including the failed n_s.
+
 ## 4. Assumptions (each a place it could fail)
 
 1. SM neutral under the disk's isometries (shield) — candidate heterotic Z₃ home.
