@@ -1,0 +1,8 @@
+seesaw: m_nu = y^2 v^2 / M_R  ->  M_R needed for the heaviest neutrino (0.05 eV) and for 0.1 eV:
+  Yukawa 1.0: m_nu 0.05 eV -> M_R = 6.1e+14 GeV
+  Yukawa 1.0: m_nu 0.1 eV -> M_R = 3.0e+14 GeV
+  Yukawa 0.3: m_nu 0.05 eV -> M_R = 5.4e+13 GeV
+  Yukawa 0.3: m_nu 0.1 eV -> M_R = 2.7e+13 GeV
+  Yukawa 0.1: m_nu 0.05 eV -> M_R = 6.1e+12 GeV
+  Yukawa 0.1: m_nu 0.1 eV -> M_R = 3.0e+12 GeV
+Twist scales: m_sigma 6e10, H_inf 1.5e13, hidden SU(8) confinement ~1e14 (D98), T_RH ~4e14, chi mass ~1e17 GeV

@@ -1376,3 +1376,12 @@ matter (replacing the gravity-only fermion) — a different, testable model (axi
 ABRACADABRA/DMRadio range). Not pursued without a mechanism.
 **(b) ISW.** The late-time integrated Sachs–Wolfe signal (the change of the potentials since z ≈ 3) is 5.0% stronger than ΛCDM's at
 the same Ω_m — a small, definite prediction for CMB × galaxy cross-correlations (current precision ~10–20%; future surveys a few %).
+
+**D173 — where neutrino masses could come from (lead; results/neutrino_scale_d173.txt).** The matter mechanism (lepto-axiogenesis)
+uses neutrino masses but the Twist does not explain them. With the standard seesaw, m_ν = y²v²/M_R: the heaviest neutrino (~0.05 eV)
+needs M_R ≈ 6×10¹⁴ GeV for an order-one Yukawa, 5×10¹³ for y = 0.3, 6×10¹² for y = 0.1. That is the Twist's own range of scales:
+the hidden SU(8) confines near 10¹⁴ GeV (D98, hidden-gauge construction), the reheating temperature is ~4×10¹⁴ GeV, and the
+inflationary Hubble rate 1.5×10¹³ GeV. A right-handed-neutrino mass set by the hidden confinement scale would land in the right
+place with Yukawas 0.3–1 — a natural lead, not built (and absent in TWIST-K, which has no SU(8); there it would need another source).
+Caveat: right-handed neutrinos at ~10¹⁴ GeV below T_RH would be produced after inflation and their decays add ordinary leptogenesis
+on top of lepto-axiogenesis — a second matter source to be checked if this is pursued.
