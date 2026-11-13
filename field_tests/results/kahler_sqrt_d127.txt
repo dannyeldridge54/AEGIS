@@ -1,0 +1,6 @@
+x 1.3e-04: old: m_y^2/H^2 +8.0000  new: m_y^2/H^2 +8.0000   V equal at y=0: True
+x 1.0e-03: old: m_y^2/H^2 +7.9994  new: m_y^2/H^2 +7.9994   V equal at y=0: True
+x 1.0e-02: old: m_y^2/H^2 +7.9384  new: m_y^2/H^2 +7.9388   V equal at y=0: True
+x 1.0e-01: old: m_y^2/H^2 +2.2644  new: m_y^2/H^2 +2.2974   V equal at y=0: True
+x 1.0e+00: old: m_y^2/H^2 -274.2456  new: m_y^2/H^2 -273.2456   V equal at y=0: True
+x 8.9e+01: old: m_y^2/H^2 +4.0884  new: m_y^2/H^2 +8.0000   V equal at y=0: True

@@ -935,3 +935,14 @@ m = 2.1×10⁻⁵ M_P needs b(f₀ − κ) ≈ 9–13 (for Aab = 0.1–10), i.e.
 plateau scale is explained by a perturbative coupling, not put in by hand. Left over: the 1/√(1 + T/μ) factor (must come from the
 prefactor A(T) — e.g. a one-loop threshold — not derived), κ ≈ 20 N₂ (n still chosen, D119), and the SU(8) sector is strongly
 coupled near x → 0. Status: SU(8)/cliff construction → mostly constructed (two pieces open).
+
+**D127 — the 1/√(1 + T/μ) factor moved into the Kähler potential (results/kahler_sqrt_d127.txt).** Instead of the superpotential
+(where it would need a negative-power threshold), put it in S's kinetic term:
+K = −3 ln(T + T̄ − SS̄(1 + (T + T̄)/(2μ)) + ζ(SS̄)²) ≈ −3 ln(T + T̄) + 3SS̄[1/(T + T̄) + 1/(2μ)] + … —
+i.e. S's metric is the no-scale piece plus an ordinary constant (canonical) piece. At S = 0, K^{SS̄} gains 1/(1 + x/μ), so with
+W = √3 m S T cliff(T) (exactly D126's racetrack form, no prefactor function needed):
+V = m²|T cliff(T)|²/(4x²(1 + x/μ)) — **identical to the old potential for real T**, so inflation (n_s, r, N*), the cliff, the tail
+(w0, wa) and every fit are unchanged. Only the angle direction differs: m_y²/H² is the same to 4 digits through inflation
+(+8.000 at the CMB point) and at the cliff (−274 vs −273 at x = 1), and today (x ≈ 89) is +8.0 instead of +4.1 — the angle stays
+heavy either way. Open check: the S mass on the tail with the new metric (rough estimate: ζ-term still dominates, S stays heavy).
+Status: the 1/√ factor → derived from a natural Kähler term; D126 + D127 give the whole W = √3 m S F(T) from a Z₂ racetrack except n.
