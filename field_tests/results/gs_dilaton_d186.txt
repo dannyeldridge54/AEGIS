@@ -1,0 +1,7 @@
+delta_GS  3, Re Y 2.0: d(1/g^2)/dphi = 0.016 -> beta from Lambda_QCD ~ 0.41 (Cassini 3.4e-3) if S, not Y, is fixed
+delta_GS  3, Re Y 4.0: d(1/g^2)/dphi = 0.016 -> beta from Lambda_QCD ~ 0.41 (Cassini 3.4e-3) if S, not Y, is fixed
+delta_GS 10, Re Y 2.0: d(1/g^2)/dphi = 0.052 -> beta from Lambda_QCD ~ 1.36 (Cassini 3.4e-3) if S, not Y, is fixed
+delta_GS 10, Re Y 4.0: d(1/g^2)/dphi = 0.052 -> beta from Lambda_QCD ~ 1.36 (Cassini 3.4e-3) if S, not Y, is fixed
+delta_GS 30, Re Y 2.0: d(1/g^2)/dphi = 0.155 -> beta from Lambda_QCD ~ 4.08 (Cassini 3.4e-3) if S, not Y, is fixed
+delta_GS 30, Re Y 4.0: d(1/g^2)/dphi = 0.155 -> beta from Lambda_QCD ~ 4.08 (Cassini 3.4e-3) if S, not Y, is fixed
+if the stabilised field is the GS-corrected dilaton Y, 1/g^2 = Re Y is fixed and beta = 0 at this order

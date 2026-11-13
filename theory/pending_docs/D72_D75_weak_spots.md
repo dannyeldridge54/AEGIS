@@ -1515,3 +1515,11 @@ below ~13, so g_s today stays ≥ 1.46 (weak coupling needs x < 10); and (ii) on
 cliff's leftover reshapes the dark energy — w0 −0.81, wa −0.10 at 7% and wa = +0.33 at 10% (the thaw solver fails above that). The
 insensitivity of the prediction to the heat share (D125) holds only while the field freezes at x ≳ 15. So the weak-coupling window
 cannot be reached by heating; the degree-≳9 cliff instanton (D164/D184) remains the only route found.
+
+**D186 — a subtlety inside the weakly coupled heterotic home: which dilaton is stabilised (results/gs_dilaton_d186.txt).** On Z₃ the
+modular anomaly is cancelled by the universal Green–Schwarz term, so the physical coupling is 1/g² = Re Y with
+Y = S − (δ_GS/16π²) ln(T + T̄). If moduli stabilisation fixes the holomorphic S, then 1/g² drifts with ln x and the QCD scale picks up
+β ~ (8π²/b)(δ_GS/16π²)√(2/3) ≈ 0.4–4 for δ_GS = 3–30 — far over Cassini. The shield therefore needs the stabilisation to fix the
+GS-corrected Y (the field the gauge couplings actually see), which is the natural variable for Kähler/racetrack stabilisation in these
+models but must be checked in any explicit construction. Added to the weak-heterotic home's list of conditions: (1) cliff instanton of
+degree ≳ 9 with no lower-degree terms (D164); (2) Y, not S, stabilised (D186); (3) perturbative leaks falling as 1/x⁴ (D142).
