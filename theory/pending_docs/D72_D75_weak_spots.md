@@ -363,7 +363,7 @@ scales can be made T-independent, which needs a mechanism not in the Twist. Labe
 Script: theory/darkenergy/fifth_force_KL.py; results/fifth_force_KL.txt.
 The physical gauge coupling in supergravity depends on K and on the matter metrics through the anomaly (Kaplunovsky–Louis):
 1/g² = Re f + (b/16π²) ln(M_P²/μ²) + (c/16π²)K − Σ T(r)/(8π²) ln det Z_r. For QCD in the MSSM (c = 3, b = 3), with
-K = −3 ln(2x) and matter metric Z = (2x)^{−n}, Λ_QCD ∝ x^{(3 − 6n)/... }: computed exponents
+K = −3 ln(2x) and matter metric Z = (2x)^{−n}, Λ_QCD ∝ x^{3/2 − 2n}:
   - n = 1 (sequestered / D3 form): Λ_QCD ∝ x^{−1/2}, Yukawas fixed → proton mass moves, β ≈ 0.41 (Cassini ×120).
   - n = 0 or 3/2: Λ_QCD ∝ x^{±3/2} → β ≈ 1.2.
   - n = 3/4 (the one weight that fixes Λ_QCD): Yukawas then go as x^{−3/8}; the ~5% of the nucleon mass from quark masses
