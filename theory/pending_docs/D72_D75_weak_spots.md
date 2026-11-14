@@ -3109,3 +3109,17 @@ Reading: this removes one route to a Planck systematic (detector-to-detector inc
 offset). The Planck–ACT disagreement (D301) and the need for absolute calibration (drones/SO, D303) stand.
 Twist status: the base model predicts β = 0. TWIST+ALP is the locked fallback if β is confirmed. Gap 4: HIGH, not rising (unchanged); the decider
 is still an absolutely calibrated measurement (SO with drone calibrators, ~2027+).
+
+**D331 (pp, 06:30 CT, gap 11 Hubble): a 2026 compilation makes the Twist's low H₀ a sharper cost (literature + arithmetic; estimate).**
+"Dissecting the Hubble tension" (arXiv:2601.00650): of 54 sound-horizon-free, non-ladder H₀ values, the combined one-step value is
+68.67 ± 0.46. By category: local with ΛCDM assumed (sirens, lensing, FRBs) 67.18 ± 0.90; pure local, model-independent (masers, cosmic
+chronometers, cosmography, EPM) 70.38 ± 1.00; CMB r_s-free 68.71 ± 0.63. Distance ladder 72.74 ± 0.40, which is 4.5σ (correlations included)
+from one-step. TDCOSMO (A&A, Jan 2026): ≈ 71.6, 4.6%.
+The Twist's background-only H₀ = 65.7 (D169), with an assumed ±0.5 (not computed): 1.4σ below category 2, 4.2σ below category 3, 3.7σ below
+category 4, 4.4σ below the one-step combination, and 1.8σ below TDCOSMO. The fair comparison for a non-ΛCDM background is the model-independent
+category 3 (≈ 4σ). Categories 2 and 4 assume ΛCDM.
+Caveats: the compilation is heterogeneous (cosmic-chronometer systematics; the paper itself finds a 2.4σ internal tension among one-step methods);
+the Twist value is a background-only estimate without a full fit; and the error is assumed.
+Verdict: gap 11 LOW–MEDIUM → MEDIUM. The low H₀ is no longer only "a cost against the ladder". Model-independent non-ladder probes also sit
+~4σ above it (estimate). Next: a full-fit H₀ posterior from the stored NS-SPA PURE chains (computing it would be a reading of already-used data,
+so state it as a sensitivity, not a test).
