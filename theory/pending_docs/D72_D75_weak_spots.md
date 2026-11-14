@@ -3949,3 +3949,10 @@ per-factor GS), caveats, prior work credited (Carroll 1998, Choi 1999/2000, Acha
 Murayama, Conlon–Palti). Framed as a quantitative sharpening of Choi's argument for the DESI era, not a new mechanism. Needs before posting:
 an independent check of the coefficient against Kaplunovsky–Louis eq. (and the n_r = k/3 locality argument for k ≠ 3), the EP conversion
 η ≈ 10⁻³ζ², and a reference check; then Danny's "Publish".
+
+**D402 (14:45 CT, pre-posting checks of the D401 draft) — passed.** (1) Coefficient: the Kaplunovsky–Louis form quoted in Conlon–Palti
+(0901.4350, eq. 1: g⁻² ⊃ (Σn_rT_a(r) − T(G))K̂/16π² − Σ_rT_a(r) ln det Z^r/8π²) is the one used in kl_coeff.py. Cross-check: for the
+volume of local D3 models (K̂ = −2 ln𝒱, Z ∝ 𝒱^{−2/3}) our rule gives −(2/3)b_a per ln𝒱, which is exactly Conlon–Palti's b_a ln M_X² with
+M_X ∝ 𝒱^{−1/3}. Added to the draft. (2) EP conversion η ≈ 10⁻³ζ² is the one used by Martins et al. (2204.02930), attributed. (3) References
+verified: Choi PRD 62, 043509 (2000); Filzinger et al. PRL 130, 253001 (2023); Murphy et al. A&A 658, A123 (2022); MICROSCOPE PRL 129, 121102
+(2022); DESI DR2 arXiv:2503.14738. Remaining before posting: Danny's "Publish". (A separate-reviewer pass was offered, not run.)

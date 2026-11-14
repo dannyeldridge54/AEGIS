@@ -54,6 +54,10 @@ For MSSM content, b_a = (33/5, 1, −3) in GUT normalisation, so d(1/α_em)/d ln
 
 **d ln α_em / d ln x = 6.97×10⁻³ × (k/3).**
 
+**Cross-check.** Applied to the overall volume of a local D3 model (K̂ = −2 ln 𝒱, locality Z ∝ 𝒱^(−2/3)), the same rule gives
+16π² d(1/g_a²)/d ln 𝒱 = −(2/3) b_a, i.e. exactly the b_a ln M_X² with M_X ∝ 𝒱^(−1/3) found by Conlon and Palti [10] from the same formula.
+The T(G_a) ln(1/g_a²) term only feeds back the shift at higher order and is dropped.
+
 The shift is a constant offset of 1/α at the matching scale, so it is carried unchanged to low energies by ordinary running. (The
 gluon coupling, and hence Λ_QCD and m_p/m_e, also drift; we use α_em only, which is conservative.)
 
