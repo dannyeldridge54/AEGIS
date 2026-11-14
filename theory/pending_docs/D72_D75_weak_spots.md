@@ -2270,3 +2270,5 @@ has already decayed by z ≈ 8) — a sharp tomography signature: the low-ℓ re
 coupling × initial angle is c·θ ≈ 4.5 (e.g. anomaly coefficient c ≈ 2–5 with θ ≈ 1–2 rad) — natural; the energy is 6×10⁻⁵ of the dark energy, so
 the Twist's dark energy, growth and inflation are untouched. Status: the extension works cleanly for 10⁻³² ≲ m ≲ 10⁻²⁸ eV; it is a post-data
 two-field option, locked, scored only if a calibrated β is confirmed; its distinctive test is LiteBIRD's low-ℓ EB (R ≈ 0 vs R ≈ 1).
+D251 add: last grid point m = 10⁻²⁸ eV: R = 0.001, c·θ ≈ 8.9 (the field begins rolling before recombination, so part of its motion is missed
+by β_rec), energy fraction 3.6×10⁻⁴ — still a negligible spectator; the Planck EB-shape exclusions start just above (D250).
