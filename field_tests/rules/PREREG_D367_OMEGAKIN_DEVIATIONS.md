@@ -10,3 +10,4 @@ D2 (08:48 CT, before any scored output): the PC VM kills background processes wh
 script is therefore run in segments by theory/review/omegakin_d367_ckpt.py. This is identical to omegakin_d367.py except that it pickles the
 loop state (z, N, Y, peak, dilution) after 150 s and resumes from it. The state is exact (the loop already restarts solve_ivp every step from z).
 The validation rule (n_B/s at N − N_e = 11 within 1% of 1.090×10⁻¹⁰) guards against any restart effect. The rule and reading are unchanged.
+D3 (09:00 CT, operational): late steps are slow (single step > 25 s), so segments timed out before checkpointing; the checkpoint time limit is now an environment variable (D367_TLIM, used at 90 s). No physics change.

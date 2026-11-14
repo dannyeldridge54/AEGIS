@@ -57,7 +57,7 @@ def run(m_sigma, ycoup, Omega0=0.05, fdec=0.1, f_rh=0.99, p0=-13.0, Nafter=11.0,
         peak_hid = max(peak_hid, hid)
         k = C.GW(T) / H; Yeq = -C.KEQ * C.cA * r * H / T; Y = Yeq + (Y - Yeq) * math.exp(-k * step)
         f_dil = math.exp(-0.75 * Gam * Hc * ds * ds / rr * step); Y *= f_dil; dil *= f_dil
-        if _ck and _t.time() - _t0 > 150:
+        if _ck and _t.time() - _t0 > float(_os.environ.get('D367_TLIM', '150')):
             pickle.dump((z, Nn, Y, peak_hid, dil), open(_ck, 'wb')); print('checkpoint at N-Ne', round(Nn - Ne, 3), flush=True); raise SystemExit(3)
         if abs(((Nn - Ne) / 0.5) - round((Nn - Ne) / 0.5)) < 1e-6 or abs(Nn - Ne - 11.0) < 1e-6:
             print(f"N-Ne {Nn-Ne:5.2f} T {T:.3e} Omega_kin_x {(dp*dp+g*dy*dy)/6:.3e} Omega_V {v/(3*H2):.3e} Omega_sigma {hid:.3e} x {math.exp(c*p):.3f} dp {dp:.3e} nBs {(28/79)*abs(Y):.4e}", flush=True)
