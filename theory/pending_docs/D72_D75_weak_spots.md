@@ -2205,3 +2205,16 @@ plateau curvature scale is what matters, and it is super-Planckian. Remaining Tw
 2.5–3.8 M_P (tower-limited, D218 correction); the paper's robust runs have ~100 e-folds available, which the Twist's plateau supplies (~900 e-folds
 from the old tachyon edge, more inside the tower limit). Gap 10 status: "robust by analogy" upgraded to "robust by the published r_crit
 criterion (extrapolated to the Twist's r)"; LOW.
+
+**D246 (pp loop 13) — gap 13: D230 was too pessimistic — a field-theory loop CAN give TWIST-G−'s tilt, if the loop masses come from the
+inflaton itself (literature, arXiv:2506.18077).** "Radiatively corrected Starobinsky inflation": a one-loop Coleman–Weinberg term
+κ φ⁴ ln(φ/μ) in the Jordan frame (κ = N λ²/16π², from particles whose masses are set by the inflaton field φ), divided by the conformal factor,
+gives n_s ≈ 0.970–0.975 with r ≈ 0.004–0.006 for N* 50–60 (their RG-improved benchmarks; κ ~ 10⁻⁴ inferred from their table). On the plateau
+ln φ is linear in the canonical field, so V(1 + κ ln φ) ≈ V u^{δ} to first order — the same first-order deformation as TWIST-G−'s u^{2γ}, with
+a log rather than a pure power (the slope drifts logarithmically; the difference shows only at second order). What D230 got right: a loop whose
+masses do NOT track the inflaton (T-independent cutoff, helper-only couplings) gives a negligible, non-tilting correction. What it missed: if
+the loop particles get their masses from the field that sets the plateau, the correction multiplies the potential and tilts it at κ ~ 10⁻⁴–10⁻²
+— loop-sized. For the Twist this means γ could come from fields coupled to T through W ⊃ λ T Φ Φ̄ IF their contribution enters the potential
+multiplicatively along the plateau; not computed in the Twist's supergravity structure (the Twist is not a Higgs-like non-minimal model; the
+mapping is only at the level of the Einstein-frame potential shape). Status of gap 13: "TWIST-G− needs string-like loops" (D230) softened to
+"a loop whose masses track the inflaton gives the tilt at first order (literature analogue); the Twist-specific calculation is not done".
