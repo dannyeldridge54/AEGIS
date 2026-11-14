@@ -12,7 +12,7 @@ Replace it with:
 >
 > Two options remain:
 >
-> **(i) A near-massless gravitino.** Superpartner masses are not tied to m_3/2. Only helicity-3/2 states are produced, giving ΔN_eff ~ 3×10⁻⁸.
+> **(i) A light gravitino from low-scale gauge mediation.** m_3/2 ≈ 0.8–4.7 eV today, between the Higgs-mass lower limit [Ibe & Yanagida, arXiv:1608.01610] and the cosmological upper limit [Osato et al., arXiv:1601.07386]. Along the Twist's history it is 0.5–3 GeV during inflation (≪ H) and a few keV at the cliff, so it is harmless. Keeping V ≈ 0 at every x makes the SUSY-breaking scale slide as x^{−3/2} too. Superpartner masses would then change by ~30% between nucleosynthesis and today, shifting α_em by ~10⁻³ through thresholds (estimate). So this option needs the shield to cover the SUSY-breaking scale seen by the Standard Model (D272).
 >
 > **(ii) W ⊃ w T^{3/2} plus a constant uplift.** This gives an x-independent m_3/2.
 > - It leaves the plateau intact: a full supergravity check finds V changes by ≤ 0.6% for m_3/2 ≤ 10¹³ GeV.

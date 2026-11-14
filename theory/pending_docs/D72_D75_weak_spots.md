@@ -2436,3 +2436,16 @@ below P-ACT-LB — consistent with the Twist's kination value 0.9654 and our ver
 arXiv:2609.03062 finds plain thawing at Δχ² −3.93 (ΔAIC −1.93, "insufficient"), close to PURE-TWIST's −3.37; an interacting thawing model
 (Q = βHρ_de) improves to −10 — the same pattern as our fitted-β versions, which fit better but did not predict. Gaps 8–15: no new
 information expected from literature; unchanged. Gap 6 waits on D268; gap 7 on the 21:01 PC check.
+
+**D272 (pp loop 25, gap 3 option i) — what "near-massless gravitino" has to mean, and what it costs.**
+With V ≈ 0 today, m_3/2 = F/(√3 M_P), so superpartners need F ≠ 0; a gravitino ≪ GeV means low-scale gauge mediation. Literature: Osato,
+Sekiguchi, Shirasaki, Kamada & Yoshida (JCAP 06 (2016) 004, arXiv:1601.07386): m_3/2 < 4.7 eV (95%, Planck + lensing + cosmic shear + BAO);
+Ibe & Yanagida (PLB 2017, arXiv:1608.01610): m_H ≈ 125 GeV needs m_3/2 ≳ 0.8 eV (strongly coupled messengers). Window: 0.8–4.7 eV today.
+In the Twist m_3/2 ∝ x^{−3/2}: 0.8–4.7 eV today → 0.45–2.7 GeV during inflation (≪ H, harmless), ~0.7–4 keV at the cliff, 1.08–6.3 eV
+at nucleosynthesis — the gravitino itself is fine (thermalised light gravitino, as in the cited bounds). The cost: V ≈ 0 at every x needs
+|F|² = 3m_3/2² M_P², so F also scales as x^{−3/2}; gauge-mediated superpartner masses (∝ F/M_mess) then change by Δln m ≈ 0.30 between
+nucleosynthesis (x = 73) and today (x = 89), which through threshold corrections shifts α_em by ~10⁻³ (estimate) — about 10³ above quasar
+limits. So option (i) works only if the shield also keeps the SUSY-breaking scale seen by the Standard Model x-independent; the gravitino
+problem reduces to the fifth-force problem (gap 2), not a separate failure. Status of gap 3: option (i) = low-scale gauge mediation,
+m_3/2 ≈ 1–5 eV today, conditional on the shield; option (ii) needs the uplift sector to stabilise the angle (D270); constant high-scale W₀
+excluded (D267). To go into v6 §5.2.
