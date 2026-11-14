@@ -2816,3 +2816,17 @@ flavon's modular weight p_φ = 0 and leaves the D293 conditions on the quark/lep
 worldsheet-instanton hierarchies at no extra cost — the obstruction stays the D302 one (universal δ_GS with extra matter + fixed dilaton + weak
 coupling today). Caveat: a fixed dilaton with K_S = 0 would make ξ vanish (their stabilisation point), so the FI term must come from K_S ≠ 0 at the
 minimum — model-dependent. Gap 2 unchanged (HIGH); the fermion hierarchy is not an independent obstruction.
+
+**D309 (deep loop 8, gap 2/9: is there a weakly coupled heterotic regime with a fixed dilaton while a volume modulus rolls?) — no; this is
+Witten's 1996 strong-coupling relation.** Read: Witten, "Strong coupling expansion of Calabi–Yau compactification" (hep-th/9602070).
+Weakly coupled heterotic: G_N = e^{2φ}α′⁴/(64πV), α_GUT = e^{2φ}α′³/(16πV), so G_N = α_GUT α′/4; weak coupling e^{2φ} ≤ 1 needs
+V ≤ α′³/α_GUT. At fixed α_GUT (what the shield needs: x-independent gauge couplings), e^{2φ} = 16π α_GUT V/α′³ grows linearly with the
+compactification volume — so any rolling of a volume-type modulus toward large V drives the 10d coupling strong. For the Twist, V ∝ x³ in
+string units (D209: g_s ∝ x^{3/2}), and x grows from 1.3×10⁻⁴ to 89 (factor 7×10⁵, i.e. 3×10¹⁷ in V): weak coupling today would require
+e^{2φ} ~ 10⁻¹⁷ during inflation — unphysical with α_GUT ~ 1/25 and string-scale V. The strong-coupling continuation is heterotic M-theory
+(G_N = κ²/(16π²Vρ), α_GUT = (4πκ²)^{2/3}/(2V)), where the interval ρ — not the CY volume — can grow at fixed α_GUT; our D205–D208 found the
+matter-neutral direction there is rung 4 and moves the SM coupling (d ln α/dφ ≈ 0.71). Verdict: the D302 obstruction is a theorem-level
+relation of weakly coupled heterotic strings, not a model-building gap; the Twist's x-direction cannot be a heterotic volume modulus with a
+fixed gauge coupling. Remaining logical options for a string home: (i) a non-volume modulus with rung-3 geometry (e.g. a complex-structure or
+blow-up modulus with K = −3 ln), which D210–D211 found leaks at one loop in IIB; (ii) M-theory with a non-volume direction. Gap 9 unchanged
+(MEDIUM), but its framing is sharper: "a volume modulus is excluded by α_GUT ∝ g_s²/V at fixed coupling".

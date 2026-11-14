@@ -92,3 +92,9 @@ Add to the exploratory note:
 Add to §7:
 
 > No controlled string regime is known for a thawing tail like this one. Cicoli et al. (Fortsch. Phys. 2022) find no slow-roll region in the parametrically controlled tree-level type II or heterotic moduli space; heterotic runaways give ε = 4. For minimal Z₃/Z₇ orbifolds, the modulus-independent gauge couplings needed by the shield are excluded by duality-anomaly matching [Ibáñez & Lüst, hep-th/9202046], so they require extra charged matter.
+
+## 13. Why the tail field cannot be a heterotic volume modulus (D309)
+
+Add to §7:
+
+> In the weakly coupled heterotic string, α_GUT = e^{2φ}α′³/(16πV) [Witten, hep-th/9602070]. Keeping the gauge couplings fixed while the volume grows (as the shield requires) therefore drives the string coupling strong. The Twist's x cannot be a heterotic volume modulus. The strong-coupling continuation, heterotic M-theory, moves the Standard Model coupling along its matter-neutral direction (D208).
