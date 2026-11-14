@@ -2310,3 +2310,10 @@ thresholds), this is the standard instanton re-labelling of the cosmological-con
 also faces (e.g. gr-qc/0204033, hep-th/0110137 consider such origins). It is no worse than "n chosen" and reads better ("the dark-energy
 scale is set by a hidden coupling α ≈ 1/40"), but it is not a derivation. Gap 5 status: unchanged; the paper may state the re-labelling
 honestly, with the 0.3% precision requirement. (Consistent with D153/D136: thresholds cannot supply n; a single exponent can, given α_h.)
+
+**D256 (pp loop 21) — LiteBIRD timing (IPMU news, KDP2 passed Sept 2025).** LiteBIRD cleared JAXA's Key Decision Point 2 in September 2025 and
+heads into mission definition and Phase A; launch "in the 2030s" (no firmer date given). Consequences for the Twist's tests: the r readings of
+the locked inflation variants will first be decided by the Simons Observatory (σ(r) ≈ 0.7–1.2×10⁻³ through 2035, D248), not LiteBIRD; the
+birefringence TOMOGRAPHY test of TWIST+ALP (low-ℓ reionisation bump, D250–D251) needs full sky and so waits for LiteBIRD (late 2030s at the
+earliest, given ≥ 3 years of observation). Ordered timeline now: calibrated β (ground, any year) → DESI 5-yr + Euclid (2027) → SO r/n_s
+(~2028–2035) → nuclear clocks (years) → LiteBIRD (late 2030s).
