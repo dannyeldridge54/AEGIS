@@ -2525,3 +2525,15 @@ end. (3) The main dark matter (gravity-only fermion, 100–500 TeV, from gravito
 the SUSY-breaking sector only gravitationally, so their mass splitting is ~m_3/2 (eV) and χ̃ → χ + gravitino has no phase space to compete.
 (4) The gravitino problem that excluded a gravitino dark matter (D261) no longer applies in this reading; the gravitino is a few-percent warm
 component, not the dark matter. Status: estimates; to v6 (§5.2) and the model card's predictions (extra radiation row).
+
+**D280 (pp loop 32, gap 4: specify the domain-wall fallback for birefringence) — literature, not built into the Twist.** Kitajima, Kozai,
+Takahashi & Yin, "Power spectrum of domain-wall network and its implications for isotropic and anisotropic cosmic birefringence"
+(arXiv:2205.05083): an axion-like field with a periodic potential forms walls; with L = −c_γ(α/4π)(φ/f)FF̃ the isotropic rotation is
+β ≃ 0.21 c_γ deg, independent of the ALP mass and f. For the current β = 0.277° ± 0.057°: c_γ ≈ 1.3 (1.0–1.6 at 1σ) — consistent with D252's
+"C_γ ≈ 5" only up to the definition of the coupling (D252 used a different normalisation; this paper's number is the one to quote). Its
+signature: each direction is rotated by either 0 or 0.42c_γ deg (observer in one of two vacua), giving a correlated anisotropic
+birefringence spectrum with a peak near the horizon scale at recombination, amplitude ∝ β² (shown in their Fig. 2, factor-2 band),
+detectable by CMB-S4/PICO even at the low end of β. A homogeneous rolling ALP (TWIST+ALP) gives the same isotropic β without this pattern but
+with its own tomographic ratio R = β_reion/β_rec (D250). So the two fallbacks are distinguishable: anisotropic spectrum (walls) vs R (rolling
+ALP). Neither is locked as a Twist prediction beyond PREREG_TWIST_ALP; if a calibrated β is confirmed, a wall-network lock should be written
+before the next anisotropic-birefringence release. Gap 4 status unchanged (HIGH, rising); fallback now specified with a literature number.
