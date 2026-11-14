@@ -2304,7 +2304,7 @@ combined DESI + Euclid analysis (expected ~2027–28) is the realistic first dec
 **D255 (pp loop 20) — gap 5: "n as an instanton action" is a re-labelling, not an explanation (check).** If the cliff depth came from one
 instanton of a hidden gauge group, e^{−2n} = e^{−2π/α_h}, i.e. n = π/α_h: n = 125 ↔ α_h = 1/39.8 — a perfectly ordinary weak gauge coupling (SM
 couplings run to ~1/40–1/50 near the Planck scale), which makes the 10⁻¹⁰⁸ suppression look "natural". But the sensitivity is exponential:
-α_h⁻¹ = 38/40/42/45 gives n = 119/126/132/141 and shifts ρ_DE by e^{+12}, e^{−1}, e^{−14}, e^{−33}; landing within a factor 2 of the observed ρ_DE
+α_h⁻¹ = 38/40/42/45 gives n = 119/126/132/141 and shifts ρ_DE by e^{+11}, e^{−1}, e^{−14}, e^{−33}; landing within a factor 2 of the observed ρ_DE
 needs α_h⁻¹ to ±0.11 (0.3%). So unless a theory PREDICTS α_h⁻¹ to three digits (e.g. tied to SM couplings by unification with known
 thresholds), this is the standard instanton re-labelling of the cosmological-constant problem, which the literature on Λ-from-instantons
 also faces (e.g. gr-qc/0204033, hep-th/0110137 consider such origins). It is no worse than "n chosen" and reads better ("the dark-energy
