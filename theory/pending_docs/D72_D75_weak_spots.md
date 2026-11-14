@@ -2923,3 +2923,18 @@ m = 10⁵ GeV → τ ≈ 10²⁹ s (at the limit); 2×10⁵ → 3×10²⁷ s (ne
 photon channels. Verdict: for ξ ~ 1 only the bottom of the window (~100 TeV) survives; the rest needs a suppressed gravity-portal coupling
 (ξ ≲ 0.06 at 500 TeV) — or minimal coupling, where the decay must go through higher operators. Status: gap 13 LOW → LOW–MEDIUM (the
 conditional DM is under pressure, still not a prediction); a decaying-DM signal at ~100 TeV (IceCube/LHAASO) remains the target named in D242.
+
+**D318 (deep loop 17, gap 13 follow-up to D317: does the DM production work at ~100 TeV, and is the gravity-portal coupling ξ natural?) —
+production yes by construction; ξ is not predicted (literature + argument).**
+(1) Production: D112's bremsstrahlung yield (graviton emission in χ̃ decays) and the freeze-in yield do not depend on m_DM (m_DM ≪ T_RH, m_χ),
+so the relic density fixes m_DM; 100 TeV is inside D112's 100–500 TeV band, at the end corresponding to the larger yield (heat share near
+0.8%). Nothing new needs computing; the low end of the band is the one D317 leaves open.
+(2) ξ: Catà, Ibarra & Ingenhütt (arXiv:1603.03696, scalar case; arXiv:1611.00725, fermions) write the leading term as −ξ R F(DM, SM). It is the
+only decay source when a flat-space symmetry forbids the renormalisable coupling (for a singlet fermion, the Yukawa ψ̄ L̃ H, which would make it
+decay at once). Hence: if that symmetry is gauged (e.g. a discrete gauge Z₂), gravity respects it too, so ξ = 0 and the DM is stable, giving no
+signal. If it is global, quantum gravity is expected to break it, but by an unknown amount (typically exponentially small, wormhole/instanton
+size). So ξ ~ O(1) is not "natural" in any sense that fixes it. For the scalar case, the same papers need ξ ≲ 10⁻¹⁶ at 300 TeV, so a scalar
+candidate would be excluded unless finely suppressed; the Twist's choice of a fermion (D105) is what keeps an O(1) ξ in play at all.
+Verdict: the DM's existence and mass (~100 TeV end preferred by D317) stand as conditional; the decaying-DM signal is OPTIONAL, not a prediction.
+It appears only if DM stability rests on a global symmetry with gravity-strength breaking. Gap 13 stays LOW–MEDIUM; the wording "signal worth
+flagging" (D242) is narrowed to "possible signal if stability is not gauged".
