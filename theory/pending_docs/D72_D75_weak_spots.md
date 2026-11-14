@@ -3183,3 +3183,14 @@ parametrisation prefers quintom-B (w₀ > −1 today, phantom in the past).
 For the Twist: a thawing field cannot cross w = −1, so the data's preferred shape stays out of reach. The Twist captures only the w₀ > −1 part,
 which is why its Δχ² gain is modest (FULL −3.4 vs ΛCDM, pure_twist.json). Physical-prior analyses (D290) give 1–2σ, and the bispectrum weakens
 the evidence (D307). Gap 5: MEDIUM, unchanged. The decider is still DESI's full-survey results (2027).
+
+**D337 (deep loop 24, gap 14 neutrino masses: cosmology vs the Twist's assumed normal ordering) — a possible new pressure point; a check is
+needed (literature).** "Measuring cosmic neutrino masses independently of dark energy" (arXiv:2607.24742): DESI DR2 + CMB + lensing gives
+Σm_ν < 0.056 eV (95%) in ΛCDM, < 0.080 in wCDM, < 0.152 in w0wa (σ inflated ×1.4 and ×2.5). The data prefer an effective negative mass
+(≈ −0.10 eV in ΛCDM) that the positivity prior turns into the tight limit. A dark-energy-independent route gives only < 0.41.
+The Twist assumes normal ordering with the lightest mass zero, Σm_ν ≈ 0.059 eV. That is just above the ΛCDM limit and inside the w0wa one. The
+Twist's background is thawing (w > −1, no crossing). Thawing quintessence is generally expected to tighten neutrino bounds rather than relax them
+(the w > −1 direction is degenerate with lower Σm_ν; literature expectation, not checked here). So the Twist with Σm_ν = 0.059 may sit at or
+beyond the 95% edge.
+To do (sensitivity, already-used data): read the Twist fits' Σm_ν setting and, if fixed at 0.06, note it. A free-Σm_ν Twist fit would be a new
+computation and needs a lock plus PC/cloud time. Gap 14: LOW → LOW–MEDIUM (flagged, not yet a failure).
