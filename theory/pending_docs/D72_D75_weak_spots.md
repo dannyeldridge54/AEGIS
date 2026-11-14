@@ -4143,3 +4143,6 @@ this agreement is partly by construction (ε fitted to n_s); the real tests move
 plain Starobinsky at the same n_s), α_s = −7.7×10⁻⁴ and B1 = +2.5×10⁻³. Physical reading: a small constant-like piece in the stabiliser
 superpotential (W ⊃ ε S·cliff/√(1+T/μ)), natural in no-scale models with a flux constant; its size relative to the main term (~2.5×10⁻³ at x*)
 is a mild tuning, stated.
+
+**D420 (17:55 CT) — Twist-2 paper published: Zenodo record 24235736, DOI 10.5281/zenodo.24235736 (v1).** Abstract states the crown failure of the
+undeformed n_s (Δχ² 7.95) and the Route A fit (ε = 3.0×10⁻⁷ → r = 0.0046, α_s = −7.7×10⁻⁴); weak points listed; prior art credited.

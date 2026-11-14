@@ -83,3 +83,9 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
   dark energy" (preprint, v1, CC-BY-4.0, publisher Zenodo). Related: isDerivedFrom the Twist concept DOI 10.5281/zenodo.24202420.
 - File Eldridge_alpha_nogo_v1_2026-11-14.pdf (md5 e156f9580c52d9fd08eb2d32690e3c70, matches the repo build from papers/alpha_nogo/ALPHA_NOGO_v1.md).
 - Basis: D400 (locked), D402 checks, D403 bridge 2. AI assistance disclosed in the record and the paper.
+
+## Twist-2 paper published (17:55 CT, 14 Nov 2026; Danny 17:19: "once the basis is made write paper and publish")
+- New record 24235736, DOI 10.5281/zenodo.24235736: "Twist-2: one no-scale field for inflation and the vacuum energy, with thermal capture,
+  gauge-decay pinning and pre-registered null tests" (preprint v1, CC-BY-4.0). Related: isDerivedFrom 10.5281/zenodo.24202420; references
+  10.5281/zenodo.24232382. File Eldridge_Twist2_v1_2026-11-14.pdf md5 d1a7289055a6a3b31811ba6bcf649aea (matches repo build).
+- Basis: crown D410 scored (senses disagree for undeformed n_s), Route A D419, first full ladder pass D407–D418.
