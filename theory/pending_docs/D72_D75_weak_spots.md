@@ -3253,3 +3253,9 @@ Consequence: the moduli dependence in D323/D334, which comes from the rescaling 
 It is not a one-loop accident that higher orders could cancel. Beyond one loop, only the NSVZ-type ln g_c term adds, which multiplies the same
 drift by 1 + O(α). So D334's no-go holds to all orders in the gauge couplings (up to 1/M D-terms), with the same escapes (weights, GS).
 Gap 2: HIGH; the no-go is firmer.
+
+**D344 (pp, 07:14 CT, gap 1 n_s: any new SPT-3G release?) — none found (literature).** Searches return SPT-3G D1 (2019/20 Main field,
+arXiv:2506.20707; used in NS-SPA), an APS April 2026 talk on D1 ΛCDM constraints, and a Perimeter talk (June 2026) on the same 2019/20
+polarisation maps, with no new data release, no new n_s value and no Ext-10k timeline. The forecast in D296 (Ext-10k + Planck σ(n_s) ≈ 0.003)
+stands as the next decisive SPT step. Gap 1: HIGH, unchanged; the deciders remain DESI DR3 / SO resolving the BAO–CMB tension (D223, D329)
+and SPT-3G Ext-10k.
