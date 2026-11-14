@@ -151,3 +151,7 @@ The weight-3 stabiliser gives V = k²[(x − x_E)² + y²], so the angle y gets 
 ## 21. Neutrino mass with the tail (locked D355, scored 14 Nov 09:51)
 
 Add to the neutrino discussion: "Freeing Σm_ν on the NS-SPA data set, the thawing tail penalises the minimal normal-ordering value 0.06 eV by Δχ² = 5.2 (best fit at the 0.001 eV prior edge), against 1.9 for ΛCDM; the locked reading is TIGHTER (D = 3.35). TWIST-I, with w = −1, carries the ΛCDM value. The tail variant therefore has an extra neutrino-mass cost." This is a sensitivity on already-used data, not evidence.
+
+## 22. Kinetic share of x after inflation (D367b, provisional)
+
+Replace D362's background estimate (Ω_kin,x ≈ 0.02–0.17 at T = 2×10¹³ GeV) with the matter run's own value, Ω_kin,x ≈ 0.70. Kination dominates until ~3.5 e-folds after inflation. The TWIST-I capture conclusions are unchanged. Mark provisional until a stiff-solver run reaches the 11-e-fold validation point.

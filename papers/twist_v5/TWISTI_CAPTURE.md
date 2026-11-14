@@ -10,7 +10,7 @@ Dark energy is a cosmological constant.
 ## What capture must achieve
 - x must decay or be held so that no long-lived oscillation is left. A coherent residual displacement Δφ dilutes n_B/s and DM by
   ≈ (Δφ²/6M_P²)(m/H)²T_osc/T_decay, which requires Δφ ≲ 10⁻⁷–10⁻⁵ M_P (D359–D360a, numerically checked).
-- x's kinetic energy is harmless if capture is late (dilution ∝ T_c³; x carries Ω_kin ≈ 0.02–0.17 at 2×10¹³ GeV, D362; D367 will compute it).
+- x's kinetic energy is harmless if capture is late (dilution ∝ T_c³; x carries Ω_kin ≈ 0.70 at 2×10¹³ GeV, computed in D367b (provisional; D362’s 0.02–0.17 withdrawn); kinetic energy dominates until ~3.5 e-folds after inflation and is negligible (≲10⁻⁴) by T ~ 4×10¹¹ GeV).
 - The mass at the minimum must be ≳ 10⁵ GeV so that the remnants decay before BBN (D357).
 
 ## The construction

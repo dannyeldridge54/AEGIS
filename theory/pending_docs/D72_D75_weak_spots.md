@@ -3824,3 +3824,13 @@ trapping (D363) holds x at x_E from crossing until T_c, which needs the trapped 
 ~10⁷ GeV. Neither is checked.
 Status: UV/IR origin of the stabiliser OPEN; best candidate now "Higgs-branch pinning switched on at T_c ~ v". Next step (needs a lock):
 compute whether trapping holds x at x_E down to T_c, using D367's trajectory and D377's λ window.
+
+**D367b (scored PROVISIONAL, locked PREREG_D367_OMEGAKIN + D1–D6; results/omegakin_d367.txt) — D362 FAILED: x's kinetic share at
+T = 2×10¹³ GeV is Ω_kin,x = 0.70, ×4.1 above D362's upper value 0.17 (outside the ×3 band). Validation NOT REACHED (integrator stalls at
+N − N_e = 10.36); post-hoc, n_B/s at the last printed point (9.5) is 1.0942×10⁻¹⁰, 0.39% from 1.090×10⁻¹⁰. x still rolling at 9.5
+(dp 3.4×10⁻³ > 10⁻³).** Arithmetic in code: log-T interpolation between 2.186×10¹³ (0.7409) and 1.330×10¹³ (0.5219) gives 0.702 (the 0.741
+quoted at 11:00 was the 2.186×10¹³ value; corrected). Kination dominates (Ω_kin > 0.5) until N − N_e ≈ 3.5; σ peaks at Ω_σ 0.58 (4.5);
+radiation-dominated (Ω_rad > 0.99) from 6.5 on (D387). x: 3.09 at 3.0 (freeze-out), 27.2 at 6.0, 29.74 at 9.5, free-roll limit ≈ 29.83 (D390).
+Consequences: D362's numbers are replaced by these. TWIST-I capture (D375/D376/D384) used D367a's trajectory, which these lines confirm,
+so its conclusions stand (crossing of x_E ≈ 27–29.5 at T ≈ 1.7×10¹²–1.5×10¹¹ GeV, per the 6.0–8.5 lines). The verdict is provisional until a
+stiff-integrator run (Radau/BDF; deviation first) reaches 11.

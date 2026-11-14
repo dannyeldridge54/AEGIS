@@ -13,7 +13,7 @@ This note lists corrections and new results found after v5 was published on 13 N
 5. **Locked tests since v5 (all pass):** the matter yield is 1.25× observed. The isocurvature sensitivity is 3.70, and 3.68 under the alternative coupling reading. At the alternative fit point m_σ = 3×10¹⁰ GeV it is 1.2, giving a margin of 4.2×.
 6. **Updated costs and calendar:** the full-fit H₀ for the tail is 66.8 (ΛCDM 68.0; back to ΛCDM under TWIST-I). The n_s tension depends on the dark-energy background. CMB-S4 is cancelled; the r test rests on the expanded Simons Observatory (σ_r ≈ 1.2×10⁻³) and LiteBIRD (δr = 0.001, launch JFY 2032). DESI and Euclid dark-energy results are due in 2027.
 7. **Free neutrino mass (locked D355, item 21):** the thawing tail penalises Σm_ν = 0.06 eV by Δχ² = 5.2, against 1.9 for ΛCDM (reading TIGHTER). TWIST-I carries the ΛCDM value; the tail variant has an extra cost.
-8. **Kinetic-share consistency run (locked D367):** D367_PLACEHOLDER
+8. **Kinetic-share consistency run (locked D367):** x's kinetic share at T = 2×10¹³ GeV, from the v5 matter run itself, is Ω_kin ≈ 0.70, about four times the earlier background estimate (0.02–0.17, D362), which is withdrawn. Kinetic energy dominates until ~3.5 e-folds after inflation; x is ≈ 3 at matter freeze-out, ≈ 27 at T ≈ 1.7×10¹² GeV and ≈ 29.7 at T ≈ 5×10¹⁰ GeV, still rolling slowly. The matter yield along the way, n_B/s = 1.094×10⁻¹⁰ at the last computed point, agrees with the published 1.090×10⁻¹⁰ to 0.4%. Provisional: the locked validation point (11 e-folds) was not reached because the integrator stalls at 10.4 e-folds; a stiff-solver run will finish it. The TWIST-I capture conclusions are unchanged.
 
 ## Itemised corrections (as queued for v6)
 
