@@ -3259,3 +3259,15 @@ arXiv:2506.20707; used in NS-SPA), an APS April 2026 talk on D1 ΛCDM constraint
 polarisation maps, with no new data release, no new n_s value and no Ext-10k timeline. The forecast in D296 (Ext-10k + Planck σ(n_s) ≈ 0.003)
 stands as the next decisive SPT step. Gap 1: HIGH, unchanged; the deciders remain DESI DR3 / SO resolving the BAO–CMB tension (D223, D329)
 and SPT-3G Ext-10k.
+
+**D345 (pp, 07:17 CT, gaps 2/9: does the string literature already state D334's kind of no-go?) — yes, in general form; D334 is a sharper
+special case (literature, partly read).** Acharya, Maharana & Muia, "Hidden sectors in string theory: kinetic mixings, fifth forces and
+quintessence" (arXiv:1811.10633; first 100k characters): light moduli must live in hidden sectors with weaker-than-Planck couplings to the SM;
+"the sequestering is never complete", since loops and kinetic mixings always couple geometrically separated sectors. Their results are "lower
+bounds on the strengths of the interactions", and the couplings fall only as inverse powers of the volume. Quintessence also needs
+functional-level tuning against visible-sector loops.
+Relation to the Twist: this is the general statement, while D323–D334 give a specific and stronger one for a K ⊃ −3 ln rolling field. There the
+leak is O(1) per e-fold of x, fixed by rescaling anomalies, d(1/α_a)/d ln x = −b_a/4π, not volume-suppressed, because the rolling field itself
+sets e^K. Citing 1811.10633 alongside Kaplunovsky–Louis and Conlon–Palti makes v6 item 16's framing standard rather than novel. The new part is
+the explicit −b_a/4π coefficient and the six-fix test.
+Gap 2: HIGH, unchanged; v6 item 16 should add this citation.
