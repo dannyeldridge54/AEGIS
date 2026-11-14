@@ -3864,3 +3864,10 @@ With T_RH ~ 5×10¹⁴ GeV > M₁, N₁ is thermal: standard thermal leptogenesi
 10¹²) to 10⁻³ (10¹³); with n_B/s ~ 10⁻³ ε₁ κ and washout κ ~ 0.01–0.1 this gives ~10⁻⁹–10⁻⁷ ≫ 0.87×10⁻¹⁰. Viable with room; it
 becomes a prediction only once the neutrino Yukawas are tied to the Twist (not done). Caveat: T_RH ≫ 10⁹ GeV needs the light-gravitino
 branch (D292) to avoid gravitino overproduction; not rechecked here.
+
+**D395 (13:15 CT, Danny: "Based on everything … map out one") — Twist-2 baseline mapped (papers/twist_v6/TWIST2_MODEL_MAP.md; design,
+nothing scored).** Baseline: Twist inflation (N* 57.2, D391) + kination + thermal leptogenesis (D394) + TWIST-I capture with χ-condensate
+pinning (D390, open) + Λ from the cliff (w = −1) + a separate light axion for birefringence + gravity-only 100–200 TeV DM. Six dials, each
+fixed by one dataset. Single-axion dark-energy-plus-birefringence (D393) kept as the switch-on variant if DESI's evolution is confirmed
+by a non-DESY5 sample. Trade-offs recorded: the angle-driven matter genesis and its isocurvature signature are given up; β is fitted in
+the baseline.
