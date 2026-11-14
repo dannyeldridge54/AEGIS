@@ -86,3 +86,9 @@ Add to §5.2:
 Add to the exploratory note:
 
 > With the late angle mass from §5.2 (~1–5 eV), the angle's leftover displacement after matter formation (φ_i ≈ 1.1×10¹¹ GeV, computed) gives a cold, ALP-like relic. It makes up roughly 12–28% of the dark matter (order-of-magnitude estimate), so it does not overclose. This is a consequence that could be tested; it is not yet locked.
+
+## 12. Literature framing for the string-home limitation (D302, D304)
+
+Add to §7:
+
+> No controlled string regime is known for a thawing tail like this one. Cicoli et al. (Fortsch. Phys. 2022) find no slow-roll region in the parametrically controlled tree-level type II or heterotic moduli space; heterotic runaways give ε = 4. For minimal Z₃/Z₇ orbifolds, the modulus-independent gauge couplings needed by the shield are excluded by duality-anomaly matching [Ibáñez & Lüst, hep-th/9202046], so they require extra charged matter.

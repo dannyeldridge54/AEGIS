@@ -2763,3 +2763,14 @@ error ≤ 0.10° with calibration independent of the Galactic-foreground EB meth
 no systematic budget ≤ 0.1° is published yet. Expected decider: SO SATs (and CLASS) with drone calibration, plausibly within a few years; LiteBIRD
 in the 2030s. Combined with D301 (Planck–ACT angles disagree > 3σ), gap 4 stays HIGH but the current 0.28° signal is increasingly likely to be
 tested by an absolute calibration before any satellite. No status change.
+
+**D304 (deep loop 3, gap 9/2: can heterotic moduli space host the tail at weak coupling at all?)** Read: Cicoli et al., "Quintessence and the
+swampland: the parametrically controlled regime of moduli space" (Fortsch. Phys. 2022). Result: in tree-level type II and heterotic supergravity,
+no slow-roll region exists in any parametrically controlled (weak-coupling, large-volume) regime — heterotic: V = e^{K₀}|W_cs|²/(2s), runaway in
+dilaton and volume with ε = ε_s + ε_κ = 1 + 3 = 4; type IIB ε ≥ 3; IIA ε ≈ 4. Slow roll needs corrections that break the tree-level Kähler
+structure; their sequel finds viable quintessence "requires non-supersymmetric vacua". No fifth-force analysis. Reading for the Twist: (1) this
+is the published version of our D204/D209 dead end — the controlled heterotic region does not give a w ≈ −0.9 tail; the Twist's tail (slope
+√(2/3), ε ≈ 1/3 asymptotically) comes from the cliff-modified no-scale sector, i.e. from exactly the kind of non-tree-level structure they say is
+required, and it sits outside the controlled regime (g_s ≥ 3 today). (2) It reinforces gap 9: a controlled string home for any DESI-like thawing
+tail is an open problem in the field, not specific to the Twist. Gap 2/9 status unchanged; framing for v6 §7: "no controlled string regime is
+known for this tail (consistent with Cicoli et al. 2022)".
