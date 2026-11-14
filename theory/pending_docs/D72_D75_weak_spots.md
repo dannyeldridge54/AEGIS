@@ -2830,3 +2830,14 @@ relation of weakly coupled heterotic strings, not a model-building gap; the Twis
 fixed gauge coupling. Remaining logical options for a string home: (i) a non-volume modulus with rung-3 geometry (e.g. a complex-structure or
 blow-up modulus with K = −3 ln), which D210–D211 found leaks at one loop in IIB; (ii) M-theory with a non-volume direction. Gap 9 unchanged
 (MEDIUM), but its framing is sharper: "a volume modulus is excluded by α_GUT ∝ g_s²/V at fixed coupling".
+
+**D310 (deep loop 9, gaps 9/5: α = 1 in the 2026 attractor-quintessence literature).** Read: Borys, Masias & Scalisi, "Quintessential
+α-attractors fit DESI" (arXiv:2606.02701). Model: T-model V = V₁(tanh(φ/√(6α)) − c)², the "knee" between plateau and tail. Mapping the DESI
+axion-like benchmark onto it gives allowed ranges — c = 0: 0.06 < α < 1.06 (Pantheon+), 0.02–2.01 (Union3), 0.04–5.80 (DES Y5); c = 1:
+0.04–0.73, 0.02–1.39, 0.03–4.00 — "the preferred values are generically of order unity". So α = 1 (the Twist) is allowed with c = 0 on all
+three SN sets and excluded only for c = 1 with Pantheon+. String side: they cite the seven-disk M-theory-on-T⁷ origin, α = n/3, and type IIB CY flux
+compactifications with 3α = 1, 2, 3 — the same discrete "rungs" the Twist uses (3α = 3 ↔ α = 1). No fifth-force or n_s discussion.
+Reading: (1) independent support that an α = 1 tail is in the DESI-allowed window (consistent with our PURE-TWIST fits and D224); (2) the
+seven-disk/T⁷ picture gives α = 1 as three unit disks — in that picture T is not a single volume modulus but a combination of disk moduli, which
+is a candidate "non-volume α = 1 direction" for gap 9 (to examine: whether matter can be neutral under it, cf. D309). Gap 5 unchanged; gap 9:
+one concrete lead (seven-disk M-theory) to check next.
