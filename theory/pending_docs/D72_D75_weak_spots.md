@@ -2914,3 +2914,12 @@ open-problem list for an M-theory expert now has a concrete construction to chec
 **D316 (deep loop 15) — the G₂ lead written up.** papers/twist_v5/G2_HOME_PROPOSAL.md collects D309–D315 into one self-contained proposal
 (why not heterotic; the block split; SM on a block-free 3-cycle; ABKKV stabilisation of the fixed block with W = 0; D292 SUSY breaking; cliff
 condensate; what is not shown) and states question 12 for M-theory experts. v6 corrections item 14 adds it to the exploratory note.
+
+**D317 (deep loop 16, gap 13: the conditional 100–500 TeV gravity-portal DM vs current decaying-DM limits) — squeezed (estimate).**
+LHAASO, "Constraints on heavy decaying dark matter from 570 days" (arXiv:2210.15989; 10⁵–10⁹ GeV scanned; limits shown in plots, e.g.
+τ(bb̄) ≈ 6.3×10²⁸ s used at 10⁷ GeV; IceCube stronger for νν); 2025 LHAASO update reported tighter limits (news release; numbers not
+extracted). Scaling D242's anchor (τ ≈ 10²⁴ s at 10⁶ GeV for an O(1) non-minimal gravity-portal coupling ξ, τ ∝ m⁻⁵ ξ⁻²):
+m = 10⁵ GeV → τ ≈ 10²⁹ s (at the limit); 2×10⁵ → 3×10²⁷ s (needs ξ ≲ 0.6); 5×10⁵ → 3×10²⁵ s (needs ξ ≲ 0.06) against τ ≳ 10²⁸ s for hadronic/
+photon channels. Verdict: for ξ ~ 1 only the bottom of the window (~100 TeV) survives; the rest needs a suppressed gravity-portal coupling
+(ξ ≲ 0.06 at 500 TeV) — or minimal coupling, where the decay must go through higher operators. Status: gap 13 LOW → LOW–MEDIUM (the
+conditional DM is under pressure, still not a prediction); a decaying-DM signal at ~100 TeV (IceCube/LHAASO) remains the target named in D242.
