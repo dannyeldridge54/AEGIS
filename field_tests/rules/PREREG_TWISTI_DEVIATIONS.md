@@ -8,3 +8,10 @@ D2 (same review, consequence, not a rule change): the eV-branch angle relic (D29
 φ_i² ∝ (y/x)², so it is ×(73/x_min)². At x_min ≈ 30 it would be ~0.7–1.7 of the observed DM, i.e. possible overclosure. TWIST-I therefore
 needs x_min ≳ 50 in the eV-gravitino branch, or an angle stabilised together with x (the stabilising sector then also fixes Im T). Order-of-
 magnitude estimate; to be checked.
+D3 (07:40 CT, second review; before any scoring): "m_x ≥ 5 meV" is not enough. x arrives at x_min while rolling, so it oscillates about the
+minimum with a Planckian amplitude (a cosmological moduli problem). A light (meV–keV) x would dominate and overclose. A heavy x must decay before
+BBN. With Γ ≈ m³/(8π M_P²), T_decay ≈ 0.1 MeV at 10 TeV, 1.4 MeV at 50 TeV and 3.9 MeV at 100 TeV, so T_decay ≳ 4–5 MeV needs m_x ≳ 100 TeV
+(O(1) coefficient; estimate). Revised assumption: the stabilising sector gives x, and the angle y with it, masses ≳ 100 TeV, or the settling
+is adiabatic (minimum mass ≫ H throughout) so that no oscillation energy is left. With a heavy angle, D2's relic bound on x_min no longer
+applies (the angle decays). The decay of x adds entropy after matter genesis, which dilutes n_B/s and shifts N* by a small amount; both still
+need computing. The scored rules are unchanged.

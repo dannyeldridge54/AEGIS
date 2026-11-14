@@ -99,7 +99,7 @@ Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA a
 
 
 ## Update 14 Nov 2026, 07:30: adopted reading TWIST-I (PREREG_TWISTI + D1–D2)
-- The Twist is the inflaton; x rolls through matter genesis (to x ≈ 30) and then settles at x_min ≥ 30 (≳ 50 in the eV-gravitino branch) before BBN; dark energy is Λ.
+- The Twist is the inflaton; x rolls through matter genesis (to x ≈ 30) and then settles at x_min ≥ 30 with m_x, m_y ≳ 100 TeV (decay before BBN) or adiabatically (D3); dark energy is Λ.
 - Reason: the one-loop shield no-go (D323–D345): a rolling −3 ln field moves the SM couplings by d(1/α_a)/d ln x = −b_a/4π.
 - Future-data rules: r in [0.002, 0.008]; n_s 0.9642–0.9654 within 3σ of SO/SPT-3G; w = −1 (fails if excluded at > 5σ); β = 0.
-- Open: the stabilising sector (m_x ≥ 5 meV, no drift); the angle relic bound on x_min.
+- Open: the stabilising sector (m ≳ 100 TeV or adiabatic); the dilution of n_B/s from x decay; the N* shift.

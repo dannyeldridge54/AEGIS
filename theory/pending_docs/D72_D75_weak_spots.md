@@ -3373,3 +3373,13 @@ that also fixes the angle. Recorded as deviation D2 (a consequence, not a rule c
 Other checks in this review: the D355 wrapper reuses ns_spa_fit.setup() unchanged (the same likelihoods, including S8, the same builds and
 best_of 4); the hashes match on cloud and PC; the launcher path matches the connected repo; E.save's derived Ω_m keeps 0.06 hard-coded (a
 derived quantity only, it does not affect χ²; noted). D320 is still running (started 05:50).
+
+**D357 (second review, 07:40 CT) — TWIST-I has a moduli problem; the assumption is revised (deviation D3).** A field that arrives at its
+minimum while rolling oscillates with a Planckian amplitude. A light x (the lock's m_x ≥ 5 meV) would overclose. The standard way out is a heavy
+modulus that decays before BBN: Γ ≈ m³/8πM_P² gives T_decay ≈ 0.12 / 1.4 / 3.9 MeV for m = 10 / 50 / 100 TeV, so m_x ≳ 100 TeV (estimate).
+Alternatively the settling is adiabatic. If the stabiliser also makes the angle heavy, D356's relic problem (x_min ≳ 50) disappears.
+New consequences to compute: entropy from x decay dilutes n_B/s (the fitted m_σ shifts down again) and changes N* slightly (and so n_s, r at
+the 10⁻⁴ level). Both are inside the TWIST-I record as open items. Status: TWIST-I stays adopted; its open list is (a) a stabiliser with
+m_x, m_y ≳ 100 TeV or adiabatic settling, (b) the x-decay dilution of the matter yield, (c) the N* shift.
+Also checked in this pass: TWIST-I rule 3 ("any of the three SN samples" at > 5σ) is strict but well defined; rule 2 uses ΛCDM-background
+n_s, which is the right background for TWIST-I; D355's setup is unchanged.
