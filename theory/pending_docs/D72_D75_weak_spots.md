@@ -2086,3 +2086,8 @@ fixed — not this tree-level geometric relation along the Twist's direction. So
 survive, and the x⁻³ forecast (D232) applies only to a hypothetical setting in which the overall modulus at strong coupling had no tree-level
 scale relation — none is known. D231/D232 are kept on record but marked superseded; question 11 in the open-problem doc gets this caveat.
 Lesson: before importing a mechanism, check it against the tree-level relations already derived in our own notes (here D206/D208).
+
+**D234 — the late-ISW cost is far below current sensitivity (literature).** The Twist's late ISW is ~5% stronger than ΛCDM (D172b), i.e.
+A_ISW ≈ 1.05. The best galaxy cross-correlation measurement quoted in arXiv:2512.24369 is A_ISW = 0.98 ± 0.35 (DESI Legacy Survey, Hang et al.
+2021); void/supercluster stacks give 1.5–5 with larger errors. The Twist and ΛCDM differ by 0.05, i.e. ~0.15σ of the best measurement — this
+cost is not testable before LSST-era cross-correlations (σ(A_ISW) ~ 0.1 would still give only 0.5σ). Removed from the list of near-term risks.
