@@ -2129,3 +2129,13 @@ used in D212. Under the sharpened form only rung 1 (λ = √2) is allowed, and r
 TCC-derived bound the Twist saturates it (D212); with the sharpened bound the Twist — like every exponential quintessence that fits DESI —
 violates it. Which bound applies is itself debated in the swampland literature. D212's "rung 3 is the shallowest allowed tail" holds only for the
 weaker (TCC-derived) form; the paper section should state both. Recorded; the paper text is updated to say so.
+
+**D239 (pp loop 5) — birefringence systematics: the signal survives an internal consistency test (literature, arXiv:2609.09149, Sept 2026).**
+A "birefringence-blind" estimator compares Planck NPIPE detector-set maps (the common rotation cancels) without using the foreground EB model:
+the relative detector-angle pattern agrees with the Minami–Komatsu calibration (χ² = 8.18/7, PTE 0.32); dust EE/BB ratios ≈ 1.4 imply a
+cross-frequency bias < 0.01°; a conditional reconstruction gives β = 0.37° ± 0.12° (~3σ). The authors stress this is NOT an independent absolute
+measurement (same maps; the absolute zero point is not fixed). arXiv:2602.12019 is a methods paper (fits instrument angle jointly; no new β).
+For the Twist: the two most obvious systematic explanations (inconsistent detector angles; dust EB bias in the frequency combination) are
+now disfavoured for the Planck part of the signal, which RAISES the chance the 0.28° signal is real. The locked rule still waits for a
+calibrator-based β (PREREG_BIREF_NULL), and the absolute-angle loophole remains open. Gap 2 status: risk raised from "high" to "high and
+growing"; it is now the single most likely way the Twist (in its anomaly-free form, β = 0) fails in the next ~2 years.
