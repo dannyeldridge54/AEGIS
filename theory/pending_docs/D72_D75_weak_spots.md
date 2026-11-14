@@ -2195,3 +2195,13 @@ SUSY, so M_R ~ TeV, with an SO(3) flavour symmetry making two N degenerate and e
 SUSY (m_3/2 ~ 2×10¹⁴ GeV in BGW's example, D202) the same operator puts M_R at the seesaw scale and gives m_ν ≈ 0.05 eV for Yukawa ≈ 0.6 (D214).
 Caveats unchanged: it relies on the BGW-type sector, and the Twist's matter comes from the angle (lepto-axiogenesis), so N's leptogenesis is
 not needed. Gap 11 status: the optional lead is now literature-backed; still optional and outside the predictions table.
+
+**D245 (pp loop 12) — gap 10: lumpy starts — a 2025 numerical-relativity result puts the Twist far on the robust side (literature,
+arXiv:2512.13673).** For α-attractor T-models with large gradient and kinetic inhomogeneities, inflation succeeds above a critical
+tensor-to-scalar ratio r_crit ≈ 4×10⁻⁶ – 1.3×10⁻⁵ (horizon-scale perturbations, homogeneous run fixed at 100 e-folds); the authors' r–μ relation
+maps r = 0.003–0.004 to μ ≈ 0.46–0.54 m_P, ~500–1000× above r_crit and beyond their scanned range (extrapolation, not simulated; the E-model/
+Starobinsky shape itself was not run). The Twist (r ≈ 0.0036; TWIST-G− 0.007) therefore sits deep in the robust regime by this criterion — the
+plateau curvature scale is what matters, and it is super-Planckian. Remaining Twist-specific limit: the usable plateau inside the EFT is
+2.5–3.8 M_P (tower-limited, D218 correction); the paper's robust runs have ~100 e-folds available, which the Twist's plateau supplies (~900 e-folds
+from the old tachyon edge, more inside the tower limit). Gap 10 status: "robust by analogy" upgraded to "robust by the published r_crit
+criterion (extrapolated to the Twist's r)"; LOW.
