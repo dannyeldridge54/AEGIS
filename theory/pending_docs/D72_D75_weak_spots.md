@@ -3634,3 +3634,16 @@ Radiative stability (D366): the stabiliser's positive m_x² = (4/3)k²x_E² must
 m_x ≳ 6×10⁴ GeV for λ = 1, m̃_χ = 10⁵ GeV (computed). That is consistent with the ≳ 100 TeV BBN requirement.
 Status: TWIST-I's capture problem now has a consistent tree + one-loop skeleton with a single new parameter set (T_E, k, λ, and the χ, Y masses)
 and no fine-tuning. The open items are its origin (UV) and the factor-~2 dilution against the matter yield. This upgrades D362–D366.
+
+**D376 (pp, 09:10 CT, D375's open point: can the matter and DM yields absorb TWIST-I's capture dilution Δ ~ 1.5–3?) — yes, by refits;
+it moves two numbers (estimate from known scalings; aegis-checked in code).**
+(1) Matter: the yield scales as m_σ^−0.89 (D297), and exact 1× observed sits at m_σ ≈ 7.5×10¹⁰ GeV (canonical reading). A dilution Δ is absorbed
+by m_σ → 7.5×10¹⁰ Δ^{−1/0.89}: Δ = 1.5 gives 4.8×10¹⁰, Δ = 2 gives 3.4×10¹⁰, Δ = 3 gives 2.2×10¹⁰ GeV. m_σ is the one fitted input, so this is a refit,
+not a failure. The isocurvature sensitivity was ~3.7 at both m_σ values tested so far (D277, D320b; D360 T1 at 3×10¹⁰ is pending), so the margin
+should hold.
+(2) Dark matter: the gravity-only fermion's yield is mass-independent (D112), so Ω ∝ m_DM/Δ and its mass rises by Δ: 100–200 TeV becomes
+150–300 (Δ = 1.5) or 200–400 TeV (Δ = 2). That pushes it into the region where an O(1) gravity-portal coupling is excluded (D341: ξ ~ 1 survives to
+~200 TeV). The candidate still survives with ξ ≪ 1 or a gauged stabilising symmetry (ξ = 0, D318). The decay signal becomes less likely, and
+the DM itself is unaffected.
+Status: TWIST-I's capture skeleton (D375) is consistent with the matter and DM sectors after refits. Recorded consequences: m_σ moves down by
+up to ×2–3, and m_DM moves up by Δ.
