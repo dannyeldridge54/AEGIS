@@ -4109,3 +4109,13 @@ under both U(1)_X and hypercharge the kinetic mixing is not generated at one loo
 (consistent with D412's ΔN_eff budget). Part 7 — the birefringence axion's CP-odd coupling does not shift α (F1). Part 9 — soft masses
 x-independent (D292), so no sliding SUSY scale after capture.
 (c) CENTRE: F1 PASS, bridges unchanged. No new scored result → WALL 1.
+
+**D418 (cycle 11; PART 11 string embedding, WHOLE; literature + collected flags, no new locked computation) — first full pass complete.**
+(a) ALONE: closest prior art for the capture-and-pin chain is the "string Higgs effect" (Watson, hep-th/0404177): extra states become
+massless at an enhanced-symmetry point of the radion, and their backreaction plus Hubble damping stabilises it there — our thermal trap
+(D396) is the same physics in a 4d supergravity form; cite it with Kofman et al. and Danos–Frey–Brandenberger. Hidden U(1)s with vector-like
+matter are generic in IIB orientifolds with D7-branes (Goodsell–Jaeckel–Redondo–Ringwald, arXiv:0912.4206), so U(1)_X (D407, D412, D417) has a
+natural home. Open, unchanged: (i) a local (T − T_E) coupling is not available from IIB shift symmetry or IIA fluxes (D388); (ii) control at
+x ≲ 1 during inflation and the first ~2.5 e-folds after it (D408, D409); (iii) string flags TCC/dS/distance (D408, D413).
+(b) CONNECTIONS: parts 2, 5, 6, 10 — consistent with their notes; the birefringence axion (part 7) wants a second modulus axion, generic in
+multi-moduli compactifications. (c) CENTRE: no filter or bridge changes. No scored result → WALL 2 → interval 5 → 30 min.

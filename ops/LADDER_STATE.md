@@ -1,9 +1,9 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
-interval_min: 5
-consecutive_walls: 1
-cycle: 10
-next_part: 11
+interval_min: 30
+consecutive_walls: 0
+cycle: 11
+next_part: 1
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -54,3 +54,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
    related: isDerivedFrom 10.5281/zenodo.24202420 and references 10.5281/zenodo.24232382; verify md5; log in ZENODO_UPDATE; commit; report DOI.
 4. Then resume the loop.
 - cycle 10 (17:24): PART 10 — D417 α frozen after pinning (Δln α ≲ 2e-14), 1.6% shift only before capture; U(1)_X vector-like, ε = 0. No scored result → WALL 1.
+- cycle 11 (17:31): PART 11 — D418 string embedding: capture chain ≈ 'string Higgs effect' (Watson 2004) + hidden D7 U(1)s; open (T−T_E) origin, x≲1 control, TCC/dS flags. WALL 2 → interval 30 min (walls reset at new interval). FIRST FULL PASS DONE; standing task waits for crown.
