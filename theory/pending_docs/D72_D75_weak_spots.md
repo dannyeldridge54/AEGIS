@@ -3074,3 +3074,14 @@ route were ever adopted it would be a new locked variant, scored only on future 
 Status of the loophole: inflation-compatible for s ≳ 1, so inflation is not the obstruction here. It still rests on two unverified string
 conditions: an N=2 sector with no SM-charged states, and complete twisted-moduli cancellation (which the known Z₃/Z₇ orientifolds lack, D326).
 Gap 2: HIGH; the one surviving route is identified and passes the inflation test at s ≳ 1.
+
+**D328 (pp, 06:22 CT, gap 2: does a known model realise D326/D327's loophole?) — not found, and the loophole narrows (literature).**
+Lüst & Stieberger, "Gauge threshold corrections in intersecting brane world models" (hep-th/0302221; abstract read, the full text did not
+render): in N=1 intersecting D6-brane orientifolds, "N=1 subsectors give rise to moduli-dependent one-loop corrections", in contrast with
+ordinary orbifolds, where only N=2 sectors do. Intersecting/magnetised branes are T-dual to IIB D3/D7 models with U-dependent setups, so
+"no SM-charged N=2 states" is not sufficient there. The N=1 sectors also feed moduli dependence through the brane angles. Whether the dependence
+is on T or U was not extractable from the abstract.
+Consequence: D326's loophole needs (i) D3-branes at an orbifold point (where only N=2 sectors carry moduli dependence), (ii) the rolling U-plane's
+N=2 sector free of SM-charged states, and (iii) complete twisted-moduli GS (absent in the known Z₃/Z₇ cases, D326), plus D327's s ≳ 1.04.
+No published model with all of these was found in this search. Gap 2: HIGH; the loophole stays open but narrow. Suggested next step, when Danny
+chooses: treat the shield as an explicit assumption with this precise list of conditions, or split inflation from the tail.
