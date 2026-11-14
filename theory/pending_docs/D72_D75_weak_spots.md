@@ -3271,3 +3271,13 @@ leak is O(1) per e-fold of x, fixed by rescaling anomalies, d(1/α_a)/d ln x = �
 sets e^K. Citing 1811.10633 alongside Kaplunovsky–Louis and Conlon–Palti makes v6 item 16's framing standard rather than novel. The new part is
 the explicit −b_a/4π coefficient and the six-fix test.
 Gap 2: HIGH, unchanged; v6 item 16 should add this citation.
+
+**D346 (pp, 07:20 CT, test timelines for gap 1 and the r prediction) — CMB-S4 is cancelled; the paper's "CMB-S4 class" wording is outdated
+(literature).** Scientific American: on 10 July (2025, per the article's dating) DOE and NSF jointly ended support for CMB-S4 ("can no longer
+support the CMB-S4 project"), citing ageing South Pole infrastructure and budgets; the PI (Carlstrom) calls it effectively cancelled. DOE plans
+near-term upgrades of existing South Pole and Chile experiments. What remains: Simons Observatory (now operating in Chile), BICEP Array and
+SPT-3G at the Pole, AliCPT (Tibet; phase 1 built), and LiteBIRD (JAXA, launch targeted for the early 2030s). The article gives no quantitative r
+reach. SO's design goal is σ(r) ≈ 0.002–0.003 (prior knowledge, not re-checked here).
+For the Twist: TWIST-INFLATION's r = 0.0035–0.0038 is about 1.5–2σ for SO, so the decisive r test moves to LiteBIRD (2030s). The exploratory
+note says "LiteBIRD and CMB-S4 can separate" the variants, and the paper's table says "Simons Observatory, LiteBIRD, CMB-S4 class". v6 item 17:
+replace "CMB-S4" with "SO (+ upgrades), BICEP Array, LiteBIRD", and note that the r decision is likely early-2030s.

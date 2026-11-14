@@ -114,3 +114,7 @@ Add to the n_s discussion:
 Replace the shield paragraph's "assumption" wording with a precise statement:
 
 > If the dark-energy field X enters as K ⊃ −3 ln(X + X̄) (which makes the plateau and the tail), the holomorphic f and Yukawas are X-independent, and the matter metrics are universal, then at one loop the Standard Model's Yukawas and gauge couplings cannot both be X-independent. Keeping Yukawas fixed gives d(1/α_a)/d ln x = −b_a/4π [Kaplunovsky–Louis; local-model form in arXiv:0901.4350; general hidden-sector statement in arXiv:1811.10633], so d ln α_em/d ln x ≈ 7×10⁻³. Non-universal weights with a Giudice–Masiero μ need a Green–Schwarz term. The dilaton version of that shifts the no-scale α by ∓0.014 and spoils inflation (locked test). A twisted-moduli version passes inflation only with group-dependent couplings ∝ b_a, which no known model provides. The shield is therefore an assumption beyond known string constructions, with a precisely stated requirement.
+
+## 17. CMB-S4 cancelled (D346)
+
+DOE and NSF ended support for CMB-S4 in July 2025. In the paper's tests table, replace "Simons Observatory, LiteBIRD, CMB-S4 class" with "Simons Observatory (and upgrades), BICEP Array, LiteBIRD". In the exploratory note §5, replace "LiteBIRD and CMB-S4" with "LiteBIRD and Simons Observatory". Add: with r ≈ 0.0036, a decisive r test is expected from LiteBIRD (early 2030s).
