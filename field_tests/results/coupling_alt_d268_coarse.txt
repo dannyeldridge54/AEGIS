@@ -1,0 +1,5 @@
+/bin/bash: line 1:  3915 Killed                  timeout 3000 python3 -u theory/review/coupling_alt_d268_coarse.py
+
+real	18m2.670s
+user	17m44.491s
+sys	0m7.570s

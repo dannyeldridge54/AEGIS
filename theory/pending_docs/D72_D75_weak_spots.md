@@ -2693,3 +2693,8 @@ condition (heavy sgoldstino) is unchanged. D292 + D294 + D295 together: a comple
 (SPT-3G, arXiv:2510.24669, dated Jul 2026): pipeline/forecast on mock Planck-cosmology data; σ(n_s) = 0.0051 (Ext-10k TT/TE/EE), 0.0045
 (+φφ), 0.0029 (+ Planck). No central value, no DESI. For the Twist (n_s 0.9642–0.9654) the decisive split is still BAO–CMB (D223, D240):
 an independent CMB-only σ ≈ 0.003 measurement will separate 0.965 from 0.974 at ~3σ by itself, without DESI. Gap 1 unchanged.
+
+**D268 status note (22:05).** The coarse-step copy (step 0.1) was killed by the container's memory limit after 18 min (3.8 GB resident);
+the full run (step 0.02) is at 2.3 GB and climbing after 90 min. The matter chain leaks memory in this container. On Danny's PC the same
+code finished each locked run in ~5 min (D277). The coupling comparison is best run on the PC — that needs Danny's OK (no PC jobs
+unattended). Leaving the full run going in case it finishes under the limit.
