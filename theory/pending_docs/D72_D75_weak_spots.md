@@ -2177,3 +2177,14 @@ Planck/new-physics scale), requiring a lifetime ≳ 10²⁴ s (conservative) all
 sits below the ~10⁶ GeV edge for ξ ~ O(1) — allowed, but within a factor 2–10 of it, so a gravity-portal Twist DM would be a DECAYING dark
 matter with a lifetime possibly near current neutrino/gamma-ray limits — a potential signal (IceCube/KM3NeT high-energy neutrinos, LHAASO
 gamma rays) worth flagging as a target, not a prediction (the candidate is still conditional and out of the predictions table).
+
+**D243 (pp loop 10) — gap 6/D238: the string-side answer to DESI is the opposite of the Twist's shield (literature, Andriot "Phantom matters",
+arXiv:2505.10410).** To make steep, swampland-compatible tails (λ = √2 or √(8/3)) fit DESI, Andriot couples the quintessence field to (dark)
+matter: the coupling makes the effective dark energy cross into phantom at z ≈ 0.6–1.1 and reproduces w0 ≈ −0.67, wa ≈ −0.92 (vs DESI+CMB+Union3
+−0.667 ± 0.088, −1.09). The paper is explicitly "agnostic" about fifth forces and varying constants, suggesting only that coupling part of the
+DARK matter might reduce them. Contrast with the Twist: the Twist keeps λ = √(2/3) (TCC-saturating, D212) and forbids matter couplings (the
+shield) — so it cannot phantom-cross and fits DESI less well than the coupled models (D237), but has no fifth-force problem by construction.
+Two consistent pictures thus exist in the literature: (a) steep tail + dark-matter coupling (swampland-friendly, phantom-capable, fifth-force
+problem pushed into the dark sector); (b) the Twist: shallower tail + exact shield. A clean discriminant: (a) predicts dark-matter–dark-energy
+interaction signatures (scale-dependent growth, DM mass drift) and phantom crossing; (b) predicts none. Gap 6 status: unchanged; recorded as
+the main competing string-inspired picture for the paper's discussion.
