@@ -3043,3 +3043,20 @@ both. The GS fix spoils inflation.** To pass, |α − 1| ≲ 0.003 would need �
 f_SM = S.
 Verdict: six fixes tested, none works. Remaining options: per-group tuning (~10⁻⁶); a rolling field that is not a volume; or separating
 inflation from the dark-energy tail (only the tail needs the shield). Gap 2: HIGH, no-go now includes the GS route.
+
+**D326 (deep loop 21, gap 2 option "a rolling field that is not a volume": IIB complex-structure U with twisted-moduli GS) — no clean escape
+(literature + argument).** Lens-space n scan skipped: the G₂ home was downgraded (D323–D324), so n-in-G₂ is moot.
+Idea: the rolling field is the diagonal U of three tori, K ⊃ −3 ln(U+Ū). M_s/M_P does not depend on U, so there is no matching-scale slide.
+D3 untwisted matter has Z_i ∝ (U_i+Ū_i)^{−1}, so Yukawas e^{K/2}/√(Z₁Z₂Z₃) are U-independent automatically (μ via Giudice–Masiero, as in D325).
+The Kaplunovsky–Louis term −b_a ln u remains. In IIB, sigma-model anomalies can be cancelled by twisted closed-string moduli M_k with
+non-universal couplings (Ibáñez–Rabadán–Uranga). Since K ⊃ ½(M+M̄ − δ ln(U+Ū))² is quadratic, the α shift would be only second order
+(δ²/3 at the D-flat point), which avoids D325's inflation failure.
+Literature check (Lalak, Lavignac & Nilles, "Target-space duality in heterotic and type I effective Lagrangians", hep-th/9912206):
+(i) In the Z₃/Z₇ type I orientifolds the one-loop couplings keep a non-harmonic −(b′_a/16π²) ln(T+T̄) term. The GS mechanism alone cannot cancel
+both sigma-gauge and sigma-gravitational anomalies ("troublesome" term; duality is "an accidental, tree-level symmetry"). So the residual
+drift is literally present in the known models.
+(ii) Moduli-dependent thresholds come from N=2 subsectors, b^{N=2}_{a,i} of the invariant planes. An untwisted U modulus exists only for a
+plane on which some twist acts as −1, which is exactly an N=2 sector. U-moduli therefore come with b^{N=2} terms generically.
+Verdict: the non-volume route has one conditional loophole: a rolling U-plane whose N=2 sector contains no SM-charged states (b^{N=2}_a = 0
+for SU(3), SU(2), U(1)_Y), together with complete twisted-moduli GS cancellation of the rest. The known orientifolds do not show the latter
+(LLN). Gap 2: HIGH; no-go covers G₂ (D323–D324), EFT weights + GS (D325), and IIB U with twisted GS (this note), apart from that loophole.
