@@ -3323,3 +3323,12 @@ For the Twist: at σ(n_s) ≈ 0.0015, the gap between the Twist (0.9642–0.9654
 central value held. If the BAO–CMB tension resolves toward the CMB-only/w0wa value (0.964–0.969, D329), the Twist is fine. SO therefore sharpens
 gap 1 into a clean test, with its outcome tied to the BAO–CMB resolution. The gap 7 isocurvature margin (1.4–1.5×) has no SO forecast here; the
 general expectation of a factor ~2 (D278) is unchanged and unsourced.
+
+**D352 (pp, 07:39 CT, gap 7: a sourced isocurvature forecast?) — still none for scale-invariant uncorrelated modes (literature).** "The
+benefits of CMB delensing" (arXiv:2111.15036): delensing substantially improves f_cdi constraints, nearly reaching unlensed-spectra precision
+for blue-tilted uncorrelated CDI, for generic experiments A/B/C. It gives no numbers in the text, no SO/S4 naming, and no baryon isocurvature.
+Other hits (compensated isocurvature forecasts for LiteBIRD/CORE, 1701.07039; CORE inflation, 1612.08270) cover other modes or a
+non-funded mission.
+Conclusion: there is no sourced forecast for the scale-invariant uncorrelated isocurvature bound the Twist's hidden axion faces. D278's "factor
+~2 (SO class)" stays an unsourced expectation, and it should not be stated as a forecast in v6. Gap 7: LOW–MEDIUM, unchanged; the D320 locked
+run is still pending.
