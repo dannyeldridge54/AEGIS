@@ -3927,3 +3927,17 @@ thermal trap, then a χ condensate lock, with Λ = the cliff value at the trap) 
 Verdict: no publishable novelty claim of a new mechanism. What is ours: the integrated, pre-registered model and its computed numbers
 (D367b, D387, D391, D393, D396). A Zenodo item could only honestly be a "model study with locked tests", not a discovery; per Danny's
 condition ("if it's ours") nothing was posted. Citations added to v6 item 23.
+
+**D400 (scored, locked PREREG_D400_DESI_ALPHA; results/kl_coeff.txt, results/desi_alpha_d400.txt) — EXCLUDED: every DESI-preferred CPL
+fit realised by a modulus with K ⊃ −k ln(X+X̄) (k = 1, 2, 3) violates α-variation and equivalence-principle bounds at one loop by
+large factors.** Coefficient (sympy, kl_coeff.py): with locality weights, 16π² d(1/g_a²)/d ln x = −b_a (k = 3; MSSM b = 33/5, 1, −3),
+d ln α_em/d ln x = 6.97×10⁻³; general k: ×k/3, with d ln x/dφ = √(2/k), so ζ ≡ d ln α_em/dφ = 3.3–5.7×10⁻³. No choice of matter weights plus a
+universal GS shift cancels all three gauge drifts with x-independent Yukawas and μ (empty solution set); dropping the μ condition forces
+n_Hu + n_Hd = 12, so μ ∝ x^4.5 (the electroweak scale drifts). The earlier "−3b_a" in chat was a slip (it ignored matter metrics).
+Field excursion since z = 1.15 (canonical, w clipped at −1, an underestimate): Δφ = 0.107 (PantheonPlus), 0.147 (DESY5), 0.184 (Union3).
+Results: Δα/α(z = 1.15) = 3.5×10⁻⁴–1.0×10⁻³ (250–750σ vs ESPRESSO); α̇/α today = 1.3–3.3×10⁻¹³ yr⁻¹ (5×10⁵–1.3×10⁶σ vs clocks);
+η ≈ 10⁻³ζ² = 1.1–3.2×10⁻⁸ (0.8–2.5×10⁶σ vs MICROSCOPE). Hand checks (aegis): 5.69×10⁻³ × 0.107 = 6.1×10⁻⁴; √(3·0.69·0.167)·6.89×10⁻¹¹ yr⁻¹
+× 5.69×10⁻³ = 2.3×10⁻¹³ yr⁻¹; 10⁻³ × (5.69×10⁻³)² = 3.2×10⁻⁸.
+Reading: to survive, the one-loop coupling must be suppressed by ≳ 10³ in ζ (EP) — i.e. the modulus must not be the field that sets e^K
+for the visible sector, or the SM must be sequestered beyond locality, or dark energy must be axionic. This is the basis of the
+paper draft papers/alpha_nogo/ (D401).
