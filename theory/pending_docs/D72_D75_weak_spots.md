@@ -3673,3 +3673,8 @@ sits inside the no-scale log, K = −3 ln(T + T̄ − |φ|²) (KKLMMT-type; e.g.
 SEPARATE field φ, not the volume T. In the Twist, the rolling field is Re T, so m_χ ∝ |T − T_E| would need the separation to be locked to T,
 which is not automatic. A route where φ is the rolling field changes the Twist's construction (its −3 ln structure comes from T). Not
 pursued; the UV origin of (T − T_E) stays open.
+
+**D381 (pp, 09:35 CT, run-risk check) — D360 T1 may hit the cloud 2-hour cap.** Its two runs were started at ~07:52 CT. The comparable D320
+single run took 1 h 56 min. The cloud background cap is 2 h, so T1 is due ~09:48–09:52 with a hard stop at ~09:52. If it is killed, that is
+recorded as a crash (no result), and a crash rerun under a deviation will be proposed with a split plan (e.g. one run per session slot, or
+on the PC). Not a result-chasing rerun.
