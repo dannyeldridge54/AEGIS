@@ -2462,3 +2462,13 @@ lightness, not for the matter shield. (c) No published mechanism found that make
 Gap 2 unchanged in severity; sharper statement for v6 §5.1: "the shield must also keep the Standard Model's SUSY-breaking scale independent of x;
 generic supergravity quintessence violates this (Brax & Martin 2006); no-scale isometry protects the field's lightness (Brax, Davis &
 Sakstein 2012) but not the matter couplings."
+
+**D274 (pp loop 27, gap 2: does sequestering shield the SUSY-breaking scale?) — no.** Aparicio, Cicoli, Krippendorf, Maharana, Muia &
+Quevedo, "Sequestered de Sitter string scenarios: soft-terms" (arXiv:1409.1931): with matter sequestered from the volume modulus, soft terms
+are suppressed relative to m_3/2 — M_1/2 ~ m_3/2 (ln V)^{3/2}/V, m_0² ~ m_3/2² (ln V)^{3/2}/V (local) — but "the soft terms still depend on
+the volume" through m_3/2 ∝ 1/V and ε_s ~ 1/ln V. In those models the volume is stabilised, so this is harmless there; for the Twist, whose
+modulus rolls, any power law m_soft ∝ x^{−p} gives Δln m_soft = p ln(89/73) ≈ 0.2p between nucleosynthesis and today — the same order as
+D272's 0.30, i.e. α_em shifts ~10⁻³ via thresholds. Sequestering lowers the soft scale but does not remove its x-dependence. Gap 2: unchanged;
+known escapes now all checked against the SUSY-breaking scale (screening D90-91, frames, sequestering) — none works; the shield remains an
+assumed symmetry acting on the hidden SUSY-breaking sector as well. Brax-Martin's open "sequestered" case answered in the negative for a
+rolling modulus.
