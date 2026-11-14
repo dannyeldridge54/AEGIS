@@ -2091,3 +2091,11 @@ Lesson: before importing a mechanism, check it against the tree-level relations 
 A_ISW ≈ 1.05. The best galaxy cross-correlation measurement quoted in arXiv:2512.24369 is A_ISW = 0.98 ± 0.35 (DESI Legacy Survey, Hang et al.
 2021); void/supercluster stacks give 1.5–5 with larger errors. The Twist and ΛCDM differ by 0.05, i.e. ~0.15σ of the best measurement — this
 cost is not testable before LSST-era cross-correlations (σ(A_ISW) ~ 0.1 would still give only 0.5σ). Removed from the list of near-term risks.
+
+**D235 (pp loop 1) — the Hubble cost in context: every DESI-preferred dynamical dark energy lowers H₀ (literature, arXiv:2503.21600).**
+w0wa fits give H₀ = 63.6 (+1.6/−2.1) for CMB + DESI DR2, and 67.5 ± 0.6 / 65.9 ± 0.8 / 66.7 ± 0.6 with Pantheon+ / Union3 / DES-Y5 supernovae.
+The Twist's ≈ 65.7 (D169) sits inside that family (between the Union3 and DES-Y5 values), so its H₀ cost is the generic cost of the dynamical
+dark energy DESI prefers, not a Twist-specific defect. The same paper shows the other side: adding a SH0ES prior (with early dark energy to
+accommodate it) drops the dynamical-dark-energy preference from 2.8–4.2σ to 1.3–2.4σ. So if the local H₀ ≈ 73 is confirmed as cosmological,
+the case for thawing dark energy — the Twist's included — weakens; if it turns out to be a local/systematic effect, nothing changes.
+Gap 9 status: unchanged in size, re-labelled "shared with all DESI-favoured dark energy"; it couples to the dark-energy evidence (gap 4).
