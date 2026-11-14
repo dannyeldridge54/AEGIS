@@ -3678,3 +3678,14 @@ pursued; the UV origin of (T − T_E) stays open.
 single run took 1 h 56 min. The cloud background cap is 2 h, so T1 is due ~09:48–09:52 with a hard stop at ~09:52. If it is killed, that is
 recorded as a crash (no result), and a crash rerun under a deviation will be proposed with a split plan (e.g. one run per session slot, or
 on the PC). Not a result-chasing rerun.
+
+**D367a (08:55 CT, PRELIMINARY reading of the locked D367 run; segments 1–3 to N − N_e = 9.4; not yet scored, since the validation at
+N − N_e = 11 is still pending).** From seg1, v5 matter-run background (m_σ 5.8×10¹⁰, heat 0.8%):
+T = 2.19×10¹³ GeV: Ω_kin,x = 0.741, x = 3.09. T = 8.2×10¹²: Ω_kin 0.24, x 12.7. T = 1.7×10¹²: Ω_kin 2.2×10⁻³, x 27.2. T = 1.5×10¹¹: Ω_kin 1.5×10⁻⁵,
+x 29.6. n_B/s settles to ≈ 1.10×10⁻¹⁰ by T ≈ 2×10¹¹.
+Two corrections to D362 follow, if confirmed. (1) Ω_kin,x at 2×10¹³ GeV is ≈ 0.74, not 0.02–0.17 (D362 ignored the potential-driven roll down
+the cliff), which is outside ×3, so the rule will read FAILED. (2) More important: x is only ≈ 3 at matter freeze-out and reaches ≈ 30 only at
+T ≈ 10¹¹–10¹² GeV, when Ω_kin,x ≈ 10⁻⁵–10⁻³. D355/D356's "x ≈ 30 at freeze-out" was wrong. The matter yield keeps evolving until
+T ≈ 10¹² GeV (σ entropy), so capture at x_E ≳ 30 automatically happens late (T_c ≲ 10¹² GeV), with Ω_kin ≲ 10⁻³. That makes D362's
+"capture late" condition automatic for x_E ≳ 30. The D375 trapping-plus-stabiliser skeleton then sees a small kinetic share, and the global-well
+issue becomes the main source of capture energy. To be finalised in D367b.
