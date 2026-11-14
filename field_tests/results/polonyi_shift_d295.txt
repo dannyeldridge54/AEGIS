@@ -1,0 +1,3 @@
+x 1.0: X_min 0.076265, canonical shift 0.0269638, V_min/w^2 -0.012117749
+x 10.0: X_min 2.4117, canonical shift 0.0269638, V_min/w^2 -0.012117749
+x 89.0: X_min 64.034, canonical shift 0.0269638, V_min/w^2 -0.012117749

@@ -2682,3 +2682,9 @@ m_X ~ 30 eV, shift ~4×10⁻³ M_P) would be displaced after inflation and overc
 sgoldstino is heavy, q ≳ 10⁷ (Λ ≲ 10¹⁵ GeV) — which is the generic case in low-scale gauge mediation, where the SUSY-breaking dynamics at
 √F ~ 10⁵ GeV gives the sgoldstino a mass far above m_3/2. Added condition for v6: the SUSY-breaking sector must be dynamical
 (heavy sgoldstino), not a bare Polonyi field. Gap 3 stays LOW–MEDIUM.
+
+**D295 (overnight pp loop 3) — D294's claim verified numerically (polonyi_shift_d295.py; results/polonyi_shift_d295.txt).** q = 10,
+μ⁴ = 3w²/8, V minimised over real X at x = 1, 10, 89: the vacuum sits at canonical X = 0.026964 M_P and V_min = −0.0121177 w² at all three
+x, identical to 8 digits. The Polonyi shift only lowers the constant (retune μ⁴ by 1.2×10⁻² w² to restore V = 0), and the sector stays
+x-independent. D294's linearised shift (2√6/(12q − 2) = 0.042) overestimated the exact value (0.027) by ~1.5×; the Polonyi-problem
+condition (heavy sgoldstino) is unchanged. D292 + D294 + D295 together: a complete x-independent SUSY-breaking sector at tree level.
