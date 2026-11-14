@@ -2715,3 +2715,13 @@ wherever the matter-genesis dynamics left it; it starts oscillating when H ≈ m
 returns near zero), which does not settle it: |y_end| ~ 10⁻⁴ would overclose by ~10². A precision rerun of the baseline (yend_precise_d298.py,
 6 significant figures) is running (~2 h in the cloud). Escapes if it fails: tune c = 1/2 (massless angle today — then its relic is pure kinetic,
 ∝ a⁻⁶, harmless), or a heavy gravitino branch where m_θ > H when the angle is released. Status: OPEN, pending the rerun; new gap item.
+
+**D299 — D298 resolved: the angle relic does not overclose; it is a 12–28% dark-matter component (estimate) (results/yend_precise_d298.txt).**
+Precision rerun of the baseline (m_σ 5.8×10¹⁰ GeV, heat 0.8%; also reproduces D268/D297 exactly): at the end of the matter run
+(11 e-folds after inflation, x_end = 29.8) y_end = 1.1085×10⁻⁶, i.e. a canonical misalignment φ_i = √(3/2) y/x M_P = 1.1×10¹¹ GeV. With D292's
+late angle mass m_θ ~ 1–5 eV (ALP misalignment, Ω h² ≈ 0.12 (m/10⁻²² eV)^{1/2}(φ_i/10¹⁷ GeV)²): Ω_θ h² ≈ 0.015 (1 eV) – 0.033 (5 eV),
+i.e. ~12–28% of the dark matter — below overclosure by 4–8×. Caveats: y keeps coasting after the run ends (x 29.8 → 73); the residual velocity
+decays as a⁻³, so the drift should be small but is not computed; the relic formula is order-of-magnitude. Consequences: (1) D298's problem is
+not realised for the computed history; (2) the eV-gravitino branch predicts a cold ALP-like component from the Immirzi angle at the 10–30%
+level, with mass √(4c − 2) m_3/2 — a new, testable consequence (not locked; would need a lock before any data comparison). (3) The escape
+c = 1/2 is not needed.

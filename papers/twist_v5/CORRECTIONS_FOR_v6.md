@@ -80,3 +80,9 @@ Replace the §5.2 options with:
 Add to §5.2:
 
 > X = 0 is shifted by a Polonyi tadpole to X ≈ 2√6/(12q − 2) M_P. That shift is x-independent in canonical units. The sector must also give the sgoldstino a mass far above m_3/2 (q ≳ 10⁷); otherwise its late oscillations overclose the universe. This holds for dynamical SUSY breaking at √F ~ 10⁵ GeV, but not for a bare Polonyi field.
+
+## 11. Angle relic in the eV-gravitino branch (D298–D299)
+
+Add to the exploratory note:
+
+> With the late angle mass from §5.2 (~1–5 eV), the angle's leftover displacement after matter formation (φ_i ≈ 1.1×10¹¹ GeV, computed) gives a cold, ALP-like relic. It makes up roughly 12–28% of the dark matter (order-of-magnitude estimate), so it does not overclose. This is a consequence that could be tested; it is not yet locked.
