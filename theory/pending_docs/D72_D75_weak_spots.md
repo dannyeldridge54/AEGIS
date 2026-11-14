@@ -2739,3 +2739,17 @@ ACT angles "differ by > 3σ", which they say "hints that a polarisation miscalib
 consistent on this). A cosmic β is the same on every experiment; a > 3σ disagreement between experiments favours instrumental angles. For the
 Twist (BIREF-NULL, β = 0): mildly favourable but not scored — the locked rule needs a calibration-independent measurement. Gap 4 HIGH →
 HIGH but no longer "rising".
+
+**D302 (deep loop 1, gap 2) — D293 put in string context with Ibáñez & Lüst (hep-th/9202046, read).** One-loop couplings:
+1/g_a² = k_a/g_s² + (b_a/16π²) ln(M_s²/μ²) − (1/16π²) Σ_i (b'^i_a − k_a δ^i_GS) ln[(T_i + T̄_i)|η(T_i)|⁴], with
+b'_a = −3C(G_a) + ΣT(R)(3 + 2n_R) for the overall modulus (their weights n = −p in our notation). The moduli dependence cancels completely only
+when b'_a/k_a is the same for every group (= δ_GS), absorbed into the dilaton by the Green–Schwarz shift S → S − (k_a/8π²)δ_GS ln(…); for
+Z₃ (all planes rotated, no N = 2 threshold) this is the only option. Their result: for Z₃ and Z₇ at level one, NO allowed MSSM weight assignment
+satisfies the universality conditions — minimal Z₃/Z₇ models are excluded — and minimal unification instead needs T-dependent thresholds with
+n_Q = n_D = −1, n_U = −2, n_L = n_E = −3 and Re T ~ 16. Reading for the Twist: D293's "no solution" is the field-theory face of this known
+result (MSSM-only spectrum). Escape: a non-minimal spectrum (extra charged states) that makes b'_a/k_a universal, so the GS shift removes all
+T-dependence from the gauge couplings; then the physical couplings depend only on the GS-shifted dilaton, and they are x-independent if
+that dilaton is fixed independently of T (the D200 BGW route). That route already failed for another reason — the string coupling is strong
+today (D204, D209). So gap 2 reduces to a single string-level problem: a heterotic model with universal δ_GS (extra matter), a BGW-type
+dilaton, and weak coupling at x ≈ 89. Yukawas: untwisted-sector couplings are T-independent; twisted ones carry η(T) factors (to check in a
+later loop). Gap 2 status unchanged (HIGH), but the obstruction is now located precisely.
