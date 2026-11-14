@@ -92,6 +92,6 @@ TWIST-K plus a logarithmic factor in S's metric (an IR-free running coupling at 
 | TWIST-G− (PREREG_TWISTGN; TWISTG D1 records the sign error) | W = √3 m S T^{1+γ}, γ ≈ −0.0085 | 0.974–0.975 | 0.0067–0.0069 | γ is loop-sized; a loop whose masses track the inflaton gives such a tilt at first order (literature analogue, D246; softens D230), Twist-specific calculation not done; tail steeper, TCC-safe; full SUGRA check passes (D221) |
 | TWIST-C (PREREG_TWISTC) | W = √3 m S (T + c), c ≈ +3.5×10⁻⁷ | ≈ 0.974 | ≈ 0.005 | lowest r of the n_s fixes; c sharply tuned; full SUGRA check passes (D228) |
 | TWIST-4 (PREREG_TWIST4, D1–D2) | rung 4 | — | ≈ 0.0046 | NOT a matter-neutral home (D208); TCC-violating tail; kept on record only |
+| TWIST+ALP (PREREG_TWIST_ALP) | + spectator axion −(g/4)aFF̃, m 10⁻³²–10⁻²⁸ eV | (n_s unchanged) | (unchanged) | only if a calibrated β ≈ 0.3° is confirmed; R = β_reion/β_rec ≈ 1 (m < 2×10⁻³² eV) → ≈ 0 (m > 10⁻³¹ eV); c·θ ≈ 4.5; swampland-tense (D251–D252) |
 Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA alone 0.9693 ± 0.0029, the Twist −1.7σ; with DESI 0.9737 ± 0.0025,
 −3.7σ). How the BAO–CMB tension resolves (and the optical depth, D226) decides between the plain Twist and these variants as much as n_s does.
-| TWIST+ALP (PREREG_TWIST_ALP) | + spectator axion −(g/4)aFF̃, m 10⁻³²–10⁻²⁸ eV | (n_s unchanged) | (unchanged) | only if a calibrated β ≈ 0.3° is confirmed; R = β_reion/β_rec ≈ 1 (m < 2×10⁻³² eV) → ≈ 0 (m > 10⁻³¹ eV); c·θ ≈ 4.5; swampland-tense (D251–D252) |
