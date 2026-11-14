@@ -3689,3 +3689,17 @@ T ≈ 10¹¹–10¹² GeV, when Ω_kin,x ≈ 10⁻⁵–10⁻³. D355/D356's "x 
 T ≈ 10¹² GeV (σ entropy), so capture at x_E ≳ 30 automatically happens late (T_c ≲ 10¹² GeV), with Ω_kin ≲ 10⁻³. That makes D362's
 "capture late" condition automatic for x_E ≳ 30. The D375 trapping-plus-stabiliser skeleton then sees a small kinetic share, and the global-well
 issue becomes the main source of capture energy. To be finalised in D367b.
+
+**D382 (pp "research gaps", 09:30 CT, gaps 10 and 13 under TWIST-I: what happens to the Twist angle y?) — the angle becomes heavy, which
+removes two old costs (argument from D373's exact potential).** The weight-3 stabiliser gives V = k²|T − T_E|² = k²[(x − x_E)² + y²]
+(D373), so after capture the angle y gets the same mass as x, ≳ 10⁵ GeV, and decays with it before BBN.
+(1) Gap 10 (strong CP): the v5 cost "the angle would overproduce axion dark matter by ~4×10⁵" assumed a light, long-lived angle acting as the
+QCD axion. Under TWIST-I the angle is not a light axion today, so it cannot be the QCD axion and cannot overproduce. The cost becomes simply
+"strong CP is not addressed; a separate post-inflation QCD axion (40–600 μeV, ALPHA/MADMAX) would be needed". It is the same requirement,
+without the overproduction tension.
+(2) Gap 13 / D298–D300 (the eV-branch angle relic, 12–28% of DM, and the D356 x_min ≳ 50 bound): moot under TWIST-I, since a heavy angle
+decays and leaves no relic. D356's bound is withdrawn for the D375 construction.
+(3) Matter genesis is unaffected: the angle's dynamics that make n_B/s happen at T ≳ 10¹² GeV, before capture (D367a: x reaches ~30 only at
+T ~ 10¹¹–10¹²). Birefringence (β = 0, TWIST+ALP fallback) is also unaffected.
+Status changes under TWIST-I: gap 10 is unchanged in severity (LOW–MEDIUM) but loses its overproduction clause; the D298–D300 relic item is closed.
+To go into v6 item 18.

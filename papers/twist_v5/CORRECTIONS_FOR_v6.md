@@ -126,3 +126,8 @@ Present v6 with two readings. (a) **TWIST-I (adopted):** the Twist is the inflat
 ## 19. TWIST-I's CMB predictions are Starobinsky-class (D368)
 
 Add to the TWIST-I description: "At N* = 55.7–57.6, the Twist's n_s and r agree with the α = 1 attractor formulas (n_s = 1 − 2/N*, r = 12/N*²) to within 10⁻⁴ and 3×10⁻⁴. The inflationary test therefore probes the plateau class and, through N*, the Twist's reheating history (its built-in kination phase raises N* to 55.7–57.6, toward but not into the N* ≳ 58 that refined Starobinsky analyses need for ACT compatibility, arXiv:2504.20757; D370). The model-specific content is in N*, the matter mechanism and its isocurvature, and the dark-matter window."
+
+
+## 20. Under TWIST-I the Twist angle is heavy (D382)
+
+The weight-3 stabiliser gives V = k²[(x − x_E)² + y²], so the angle y gets the same mass as x (≳ 10⁵ GeV) and decays before BBN. In the exploratory note §7, replace the strong-CP line's "the angle would overproduce axion dark matter by ~4×10⁵" with "the angle is heavy after capture and is not the QCD axion; a separate post-inflation axion (40–600 μeV) is still needed". The eV-branch angle relic (item 11) does not arise under TWIST-I.
