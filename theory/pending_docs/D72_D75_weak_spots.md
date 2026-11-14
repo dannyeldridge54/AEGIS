@@ -3294,3 +3294,14 @@ SPIE 2024): target total δr = 0.001 "including systematic errors and margin"; l
 (r = 0.0035–0.0038): a ~3.5σ detection is expected if the model is right. The locked failure conditions (r < 0.002 or > 0.008 at 95%) become
 decisive, so the r test date is ~2033–35, allowing for survey time. Recent status not re-checked (the 2024 paper is the latest found).
 Together with D346–D347: SO gives a ~1–2σ hint in the late 2020s, and LiteBIRD decides in the 2030s.
+
+**D349 (pp, 07:28 CT, test calendar for the tail predictions (E_G, growth, w_a)) — Euclid cosmology slips to mid-2027 at the earliest
+(blog report of the official timeline).** P. Coles, "Euclid update – revised timeline" (telescoper.blog, 16 Jun 2026): DR1 is now staged. The
+first tranche ("DR-Foundation", LE1+LE2 only) comes in November 2026, and the full DR1 in mid-2027 (probably June). "There will be no official
+cosmology results from Euclid DR1 until mid-2027 at the earliest", since LE3 (needed for cosmology) is added in 2027. The official ESA page
+(cosmos.esa.int DR1 timeline) was not read.
+Test calendar for the Twist (D290, D307, D346–D348):
+- 2027: DESI full-survey dark energy (w₀/w_a, WATCH-PURE-DR3, WA-CEILING, GROWTH) and Euclid DR1 cosmology (growth/E_G at stated conditioning).
+- Late 2020s: SO r hint (~1–2σ), SO absolute birefringence calibration, ALPHA axion (2027–28), SPT-3G Ext-10k n_s.
+- 2030s: LiteBIRD r (decisive).
+So the dark-energy-side tests come first, in 2027.
