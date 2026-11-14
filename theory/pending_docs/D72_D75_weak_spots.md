@@ -2472,3 +2472,15 @@ D272's 0.30, i.e. α_em shifts ~10⁻³ via thresholds. Sequestering lowers the 
 known escapes now all checked against the SUSY-breaking scale (screening D90-91, frames, sequestering) — none works; the shield remains an
 assumed symmetry acting on the hidden SUSY-breaking sector as well. Brax-Martin's open "sequestered" case answered in the negative for a
 rolling modulus.
+
+**D275 (pp loop 28, gap 15: is TWIST-G−'s tilt natural inside the Twist?) — yes at the estimate level, with the right sign
+(gminus_loop_d275.py).** A chiral field X inside the no-scale log has physical mass m_X² = |W_XX|²/(2x) ∝ x⁻¹. Give it W ⊃ (M/2)X² + (λ/2)S X²:
+the stabiliser's F-term splits its scalars by ±Δ with Δ² ≈ λ²V (O(1) factors not fixed). The Coleman–Weinberg supertrace then gives
+δV ≈ (N/64π²)·2Δ²(ln m_X² + 3/2) — the SUSY mass M⁴ terms cancel — so δV/V ≈ −(Nλ²/32π²) ln x + const, i.e. V ∝ x^{2γ} with
+γ = −Nλ²/(64π²) < 0: the SIGN TWIST-G− needs (the first TWISTG lock had the wrong sign, D1). γ = −0.0085 needs λ ≈ 2.3 (N = 1), 1.6 (N = 2),
+1.2 (N = 4): λ²/16π² ≈ 0.01–0.03, perturbative. The supertrace formula was checked against the exact expression (agrees to 2% at Δ/m² = 0.5).
+Consistency: today F_S is set by the dark energy, so the same loop is Δ²-sized, i.e. ~(Nλ²/32π²)ρ_DE ln x — it does not reintroduce a
+Kolda–Lyth problem; it steepens the tail slightly, exactly the "tail slightly steeper" in PREREG_TWISTGN. Caveats: estimate only (O(1)
+factors in Δ, gravitational loops, the X field is a new ingredient, not the reheating field χ); the constant tilt over the CMB window
+assumes m_X² ≫ Δ throughout. Gap 15: G−'s naturalness concern (D230) is answered at estimate level — a perturbative coupling of one
+extra field gives the needed tilt. G− stays a post-data model, scored only on future CMB data.
