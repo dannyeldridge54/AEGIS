@@ -2508,3 +2508,11 @@ field_tests/results/matter_pc/).** All at m_σ = 5.8×10¹⁰ GeV, heat share 0.
 - TWIST-P deviation D1 condition ("void PREREG_TWISTP_L if D137 fails for the angle") not triggered: TWISTP_L stands.
 Gap 7 status: matter confirmed in TWIST-K at m_σ ≈ 6×10¹⁰ GeV (still a fit); isocurvature passes the locked rule but is marginal and
 restricts the hidden axion's decay constant to f ≳ 0.1 M_P (estimate from δσ/σ₀ = H/2πΛ, D257).
+
+**D278 (pp loop 30, gap 7: is the isocurvature bound tighter now?) — no; margin stands at ~1.4–1.5×.** ACT DR6 extended models
+(Calabrese et al., arXiv:2503.14454): scale-invariant uncorrelated CDM isocurvature 10¹⁰ P_II < 1.1 (P-ACT, 95%), Planck alone < 0.9; lensing
++ BAO do not change it. Converted to baryon isocurvature (S_b = S_c Ω_c/Ω_b, ratio 5.36): S_b < 5.1×10⁻⁵ (Planck), 5.6×10⁻⁵ (P-ACT) — the
+same as D134's 5×10⁻⁵. With D277's sensitivity the hidden axion gives S_B ≈ 3.7×10⁻⁵ at f = 0.1 M_P: margin 1.4× (Planck) / 1.5× (P-ACT).
+The axion's fluctuations are nearly scale-invariant and uncorrelated with curvature, so the scale-invariant uncorrelated bound is the right one.
+Gap 7 unchanged: passes, marginal; a future factor-~2 improvement in isocurvature limits (Simons Observatory / CMB-S4 class) would test the
+f ≈ 0.1 M_P end. Not a locked prediction — recorded as a sensitivity.
