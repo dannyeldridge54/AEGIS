@@ -2516,3 +2516,12 @@ same as D134's 5×10⁻⁵. With D277's sensitivity the hidden axion gives S_B �
 The axion's fluctuations are nearly scale-invariant and uncorrelated with curvature, so the scale-invariant uncorrelated bound is the right one.
 Gap 7 unchanged: passes, marginal; a future factor-~2 improvement in isocurvature limits (Simons Observatory / CMB-S4 class) would test the
 f ≈ 0.1 M_P end. Not a locked prediction — recorded as a sensitivity.
+
+**D279 (pp loop 31, gap 13 + D272 consequences) — what the eV gravitino adds and changes.** With the adopted 0.8–4.7 eV gravitino (D272):
+(1) It thermalises through its goldstino couplings (√F ≈ 10⁵ GeV) and is a warm relic: Ω_3/2/Ω_DM ≈ m_3/2/86 eV ≈ 0.9–5.5% (86 eV = full DM,
+Osato et al. 2016) — inside the 4.7 eV bound by construction. (2) Extra radiation: ΔN_eff ≈ (10.75/g*_dec)^{4/3} ≈ 0.017–0.047 (g*_dec 229–107)
+— replaces the model card's "ΔN_eff ~ 3×10⁻⁸" (that was a heavy/massless-gravitino estimate). CMB-S4-class σ(N_eff) ≈ 0.03 could reach the upper
+end. (3) The main dark matter (gravity-only fermion, 100–500 TeV, from graviton bremsstrahlung in χ̃ decays) is unaffected: χ and χ̃ couple to
+the SUSY-breaking sector only gravitationally, so their mass splitting is ~m_3/2 (eV) and χ̃ → χ + gravitino has no phase space to compete.
+(4) The gravitino problem that excluded a gravitino dark matter (D261) no longer applies in this reading; the gravitino is a few-percent warm
+component, not the dark matter. Status: estimates; to v6 (§5.2) and the model card's predictions (extra radiation row).

@@ -41,3 +41,7 @@ Add after the shield paragraph:
 
 - **m_σ.** Replace "confirmation pending" with: "the locked confirmation run gives 1.25× observed at m_σ = 5.8×10¹⁰ GeV, the same in TWIST-K; entropy dilution ×4.6".
 - **§1.4 Isocurvature.** Replace "unverified" with: "the locked sensitivity run gives |d ln Y/d ln σ₀| = 3.70, which passes the locked limit of 5. S_B ≈ 3.7×10⁻⁵ against a bound of 5×10⁻⁵ at f = 0.1 M_P is marginal, and requires f ≳ 0.1 M_P. The yield is very sensitive to the angle's starting value (y₀ = 0.01 multiplies it by about 9000), so the heavy angle during inflation is essential." The earlier "8× below the bound" is withdrawn.
+
+## 6. Gravitino consequences (D279)
+
+Add to §5.2 option (i): "The gravitino is a thermal warm relic, making up m_3/2/86 eV ≈ 1–5% of the dark matter, with ΔN_eff ≈ 0.02–0.05. The main dark-matter candidate is unaffected."

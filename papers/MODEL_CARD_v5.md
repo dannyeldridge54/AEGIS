@@ -48,7 +48,7 @@ out-of-sample test than a new survey.
 | Dark energy | w0 ≈ −0.90, wa ≈ −0.14, insensitive to heat share (D125) | w0, wa pinned at ΛCDM (−1, 0) by DESI/Euclid |
 | n_s, r | n_s ≈ 0.964–0.965 (loop shift negligible with the saturating χ, D156), r ≈ 0.0036 | n_s ≥ 0.973 at > 3σ (D108); r > 0.0112 detected at > 3σ, or r < 0.0030 at 95% |
 | GW propagation | Ξ₀ = 1, no birefringence (locked: PREREG_GW_FRICTION) | Ξ₀ ≠ 1 measured |
-| Extra radiation | ΔN_eff ~ 3×10⁻⁸ | — |
+| Extra radiation | ΔN_eff ≈ 0.02–0.05 from the 0.8–4.7 eV gravitino (D279; was 3×10⁻⁸ for a heavy gravitino) | ΔN_eff excluded below 0.02 is not decisive; upper end testable at σ ≈ 0.03 |
 
 ## Known costs
 - Strong CP is not solved (the angle would overproduce axion dark matter, D172); neutrino masses are assumed (seesaw scale fits the Twist's scales, D173; with high-scale SUSY, M_R ~ m_3/2 ~ 2×10¹⁴ GeV gives 0.05 eV for Yukawa ~0.6, D214 — optional).
