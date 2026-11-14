@@ -3660,3 +3660,10 @@ proposal: T_E ≳ 30, λ in that window, k from m_x ≳ 10⁵ GeV, χ and Y at w
 
 **D378 (09:20 CT) — TWIST-I capture consolidated in papers/twist_v5/TWISTI_CAPTURE.md (D355–D377).** No new physics; this is one place for the
 construction W ⊃ (T − T_E)(λ M_P χχ̄ + k Y) (χ at weight 3/2, Y at weight 3), its bounds, its consequences and its open items.
+
+**D379 (pp, 09:25 CT, status + one candidate origin for (T − T_E)).** Status: D355's LCDM fit has 3 of 4 minimiser runs converged; PURE is
+still waiting. D360 T1 is still running. Candidate UV origin (idea, not checked): in D-brane language, χ would be strings stretched between
+two branes whose separation is tied to T, so m_χ ∝ |T − T_E| arises when the branes coincide at T = T_E. That is the setting of the original
+trapping paper (hep-th/0403001, D363). A Twist-specific realisation would need the brane separation to be a function of the same modulus
+whose −3 ln K drives inflation (e.g. a D3/D7 position combined with the volume, K = −3 ln(T + T̄ − |φ|²) type). This is listed as the first
+place to look for the UV origin; not pursued further here.
