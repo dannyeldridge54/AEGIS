@@ -29,7 +29,7 @@ W ⊃ (T − T_E) (λ M_P χχ̄ + k Y),  with χ, χ̄ at modular weight 3/2 an
 
 ## Consequences
 - Entropy release at capture: if x_E is crossed during the roll (x_E ≈ 27–29.5; x converges to ≈ 29.8, D367a), Δ ≈ 1 + O(10⁻³) and nothing needs refitting (D384). Only if x_E ≳ 29.8 does the well have to pull x in, giving Δ ~ 2 and the refits of D376.
-- The CMB predictions are Starobinsky-class at N* 55.7–57.6 (D368–D370). w = −1. β = 0.
+- The CMB predictions are Starobinsky-class at N* 56.7 on the full TWIST-I trajectory (D387; D368–D370 quoted 55.7–57.6). w = −1. β = 0.
 
 ## Open
 - The UV origin of the factor (T − T_E), of T_E ≳ 30 and of the weights.

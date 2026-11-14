@@ -3771,3 +3771,15 @@ calibration method that recovers the DIFFERENCE of two instruments' angles from 
 relative method; it does not fix an absolute zero by itself, which is what an isotropic β needs (consistent with D330). No numbers in the abstract.
 Status: gap 4 HIGH, unscored; latest numbers are still ACT DR6 0.215 ± 0.074° and Planck 0.37 ± 0.11° (D353). TWIST-I predicts β = 0
 (TWIST+ALP fallback locked). The first decisive input is still a calibrated SO/LiteBIRD measurement (late 2020s).
+
+**D387 (scored, locked PREREG_D387_NSTAR_TRAJ; results/nstar_traj_d387.txt, rc 0) — on the full TWIST-I trajectory the kination
+shift is dN* = +0.996 (converged: identical at N − N_e = 8.0 and 9.0), so N* = 56.70 and n_s = 0.9648. This is LOWER than the
+55.7–57.6 range quoted since D84 and below the ACT-2σ Starobinsky region (N* ≥ 58). CORRECTION to the "N* 57.6" figure for TWIST-I.**
+The radiation share stalls at Ω_rad ≈ 0.31–0.41 for N − N_e ≈ 4–5 because the hidden σ sector (matter-like, Ω_σ up to 0.58) holds part of
+the energy; dN* peaks at +1.18 (N − N_e = 4) and falls back to +1.00 once σ decays. Development 84's +1.66–2.23 had no σ sector and lower
+heat shares, so it overstated the shift by 0.66 (vs its 0.4% row). Arithmetic in code (aegis-checked): N* 55.70 + 0.996 = 56.70;
+n_s (table interpolation) 0.9648, attractor 1 − 2/N* 0.9647 (agree). Distances: CMB-SPA 1.2σ; CMB-SPA+DESI 3.0σ; shortfall to the
+SPA+DESI 68% edge (64.5) is 7.8 e-folds.
+Cross-sector: n_B/s and the DM yield are not changed by this (same trajectory as D367); r = 12/N*² = 0.0037.
+Docs to correct: TWISTI_CAPTURE.md, MODEL_CARD_v5.md, v6 item 19 and the D368–D370 range "55.7–57.6" → "56.7 (TWIST-I trajectory; 55.7
+instant)". Status: gap 1 HIGH, slightly worse (2.8σ → 3.0σ for SPA+DESI).

@@ -1,0 +1,19 @@
+N-Ne  0.50 Omega_rad 0.00170 dNstar -0.1124
+N-Ne  1.00 Omega_rad 0.00364 dNstar +0.0776
+N-Ne  1.50 Omega_rad 0.00979 dNstar +0.3251
+N-Ne  2.00 Omega_rad 0.02568 dNstar +0.5662
+N-Ne  2.50 Omega_rad 0.06343 dNstar +0.7921
+N-Ne  3.00 Omega_rad 0.13801 dNstar +0.9856
+N-Ne  3.50 Omega_rad 0.24270 dNstar +1.1238
+N-Ne  4.00 Omega_rad 0.31391 dNstar +1.1751
+N-Ne  4.50 Omega_rad 0.33869 dNstar +1.1469
+N-Ne  5.00 Omega_rad 0.41331 dNstar +1.0848
+N-Ne  5.50 Omega_rad 0.61909 dNstar +1.0276
+N-Ne  6.00 Omega_rad 0.89765 dNstar +0.9994
+N-Ne  6.50 Omega_rad 0.99746 dNstar +0.9957
+N-Ne  7.00 Omega_rad 0.99971 dNstar +0.9958
+N-Ne  7.50 Omega_rad 0.99989 dNstar +0.9959
+N-Ne  8.00 Omega_rad 0.99996 dNstar +0.9959
+N-Ne  8.50 Omega_rad 0.99999 dNstar +0.9959
+N-Ne  9.00 Omega_rad 0.99999 dNstar +0.9959
+final None

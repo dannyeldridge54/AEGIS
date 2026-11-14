@@ -103,7 +103,7 @@ Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA a
 - Λ = V_Twist(x_E) ∝ e^{−2n}: Λ from the cliff is kept (n ≈ 124.1; n_s and r unchanged, D383). Dark energy is exactly w = −1.
 - Reason: the one-loop shield no-go (D323–D345): a rolling −3 ln field moves the SM couplings by d(1/α_a)/d ln x = −b_a/4π.
 - Future-data rules: r in [0.002, 0.008]; n_s 0.9642–0.9654 within 3σ of SO/SPT-3G; w = −1 (fails if excluded at > 5σ); β = 0.
-- CMB predictions are Starobinsky-class at N* 55.7–57.6 (D368–D370). The angle is heavy after capture (no axion overproduction, no angle relic, D382).
+- CMB predictions are Starobinsky-class at N* 56.7, n_s 0.9648, r 0.0037 on the full TWIST-I trajectory (locked D387; D368–D370's 55.7–57.6 corrected). 1.2σ from CMB-SPA, 3.0σ from CMB-SPA+DESI (D385). The angle is heavy after capture (no axion overproduction, no angle relic, D382).
 - Open: the UV origin of (T − T_E) and the weights.
 - Locked tests today: isocurvature under the alternative coupling PASS (3.68 ≤ 5, margin 1.39×, D320b); at the alternative fit point m_σ = 3×10¹⁰, PASS (1.2, margin 4.2×, D360b).
 - Running: D355 (free-neutrino fit, PC), D367 (x's kinetic share; preliminary D367a).

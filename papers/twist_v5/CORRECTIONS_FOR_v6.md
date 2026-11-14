@@ -141,6 +141,8 @@ The tests table splits accordingly: r, n_s and β apply to both; w = −1 applie
 
 Add to the TWIST-I description: "At N* = 55.7–57.6, the Twist's n_s and r agree with the α = 1 attractor formulas (n_s = 1 − 2/N*, r = 12/N*²) to within 10⁻⁴ and 3×10⁻⁴. The inflationary test therefore probes the plateau class and, through N*, the Twist's reheating history (its built-in kination phase raises N* to 55.7–57.6, toward but not into the N* ≳ 58 that refined Starobinsky analyses need for ACT compatibility, arXiv:2504.20757; D370). The model-specific content is in N*, the matter mechanism and its isocurvature, and the dark-matter window."
 
+**Update (D387, locked, 11:15 CT 14 Nov):** on the full TWIST-I trajectory, including the hidden σ sector, the kination shift is +1.0, so use N* = 56.7, n_s = 0.9648, r = 0.0037 in place of "55.7–57.6" (57.6 came from Development 84, which had no σ sector). Distance: 1.2σ from CMB-SPA, 3.0σ from CMB-SPA+DESI (arXiv:2609.19296, D385).
+
 
 ## 20. Under TWIST-I the Twist angle is heavy (D382)
 
