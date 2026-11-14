@@ -15,3 +15,6 @@ BBN. With Γ ≈ m³/(8π M_P²), T_decay ≈ 0.1 MeV at 10 TeV, 1.4 MeV at 50 T
 is adiabatic (minimum mass ≫ H throughout) so that no oscillation energy is left. With a heavy angle, D2's relic bound on x_min no longer
 applies (the angle decays). The decay of x adds entropy after matter genesis, which dilutes n_B/s and shifts N* by a small amount; both still
 need computing. The scored rules are unchanged.
+D4 (07:45 CT; a consequence, not a rule change): a decaying ≳ 100 TeV x (D3) still dilutes n_B/s and DM by Δ ≈ (Δφ²/6M_P²) T_osc/T_decay
+(10⁷–10¹³ for 10⁻³–1 M_P displacements, D359). TWIST-I therefore assumes ADIABATIC capture of x at x_min (residual displacement ≲ 10⁻⁷–10⁻³ M_P
+depending on m_x), not merely a heavy decaying modulus. The scored rules are unchanged.

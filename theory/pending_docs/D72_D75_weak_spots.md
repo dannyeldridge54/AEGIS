@@ -3398,3 +3398,18 @@ m ≳ 100 TeV". D320 is still running; D355 has not started (waiting for Danny's
 **D355a (07:42 CT) — D355 started.** Danny was away from home, so the launcher was opened through computer use (File Explorer, click
 tier; double-click on Desktop\RUN_D355_MNUFREE.bat). The log reads "2026-11-14 07:40:21 D355 start". Both fits (PURE, LCDM) initialised their
 likelihoods (DESI DR2 BAO etc.) and entered the minimiser. Expected ~1.5 h, so the score is due ~09:15 CT. No other PC action was taken.
+
+**D359 (pp loop, 07:45 CT, TWIST-I open item (b): entropy from x settling) — a 100 TeV decaying x is NOT enough; settling must be adiabatic
+(estimate).** Checks first: D320 still running (cloud); D355 running on the PC since 07:40 (both fits in the minimiser).
+Estimate (standard moduli cosmology; g* = 106.75, Γ = m³/8πM_P²): x starts oscillating when H ≈ m_x (capped at matter freeze-out,
+T ≈ 2×10¹³ GeV) with ρ_x/ρ_r ≈ (Δφ/M_P)²/6, grows ∝ 1/T, and dilutes everything by Δ ≈ (Δφ²/6M_P²) T_osc/T_decay when it decays.
+- m_x = 100 TeV: T_osc 2.7×10¹¹, T_decay 2.2 MeV → Δ ≈ 2×10¹³ at Δφ = M_P, still 2×10⁷ at 10⁻³ M_P.
+- m_x = 10⁹ GeV: T_decay 2 TeV → Δ ≈ 1.5×10⁹ (M_P) and 1.5×10³ (10⁻³ M_P).
+- m_x = 10¹³ GeV: T_decay 2×10⁹ GeV → Δ ≈ 1.5×10³ (M_P) and ≈ 1 (10⁻³ M_P).
+The v5 matter yield is 1.25× observed (D277), so any Δ ≫ 1 destroys n_B/s, and the gravity-only DM yield (D112) as well.
+Verdict: D357's "≳ 100 TeV, decays before BBN" removes the BBN problem but not the dilution problem. TWIST-I needs the field to arrive at
+x_min with a canonical displacement ≲ 10⁻⁷ M_P (100 TeV) to ≲ 10⁻³ M_P (10¹³ GeV), i.e. ADIABATIC capture: the minimum must form gradually
+around the rolling field, with m_x ≫ H throughout. Equivalently, the stabiliser must switch on smoothly as the field arrives (a minimum that
+tracks the field). This is the hardest TWIST-I requirement so far; it is an estimate (no full computation; f_x at arrival is model-dependent).
+Status: TWIST-I stays adopted, but its open list now leads with "(a') adiabatic capture of x". The x-only dilution of item (b) is moot if
+capture is adiabatic.
