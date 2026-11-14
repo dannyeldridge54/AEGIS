@@ -2594,3 +2594,18 @@ c is what a one-loop correction from a field of roughly the inflaton's mass insi
 field's mass and the renormalisation scale (the ln μ piece multiplies V/x, so b is scheme-dependent and effectively a renormalised
 parameter). TWIST-G−'s power-law tilt is NOT what this loop produces. Status: estimate-level, one field, one-loop, no gravitational loops.
 Gap 15 updated: C gains a loop origin (D285); G−'s naturalness reverts to "loop analogue only" (D246). Both stay post-data models.
+
+**D286 (pp loop 38) — two corrections from rechecking D285, and a new assumption for the reheating field χ.**
+(a) Units error in D285: its scripts set m = 1 and M_P = 1 together, so the Coleman–Weinberg term (∝ m⁴) was compared with V (∝ m²M_P²)
+without the factor (m/M_P)² = 4.4×10⁻¹⁰. Real dV/V = 4.4×10⁻¹⁰ × the printed values. Consequences: M_code = 1 (m_F ~ 60m at x*) gives
+dV/V ~ 5×10⁻⁸ — negligible, not "destroys the plateau" (withdrawn). TWIST-C's b ≈ 0.0053 needs W_XX ≈ 6.7×10⁻³ M_P, i.e. a field of physical
+mass m_F ≈ 0.4 M_P at the CMB point inside the no-scale log — not "about the inflaton mass" (withdrawn). The qualitative D285 results stand:
+the universal Hubble-induced term dominates, dV/V ∝ 1/x, and the TWIST-C form (c ≈ 3.4×10⁻⁷) follows; only the required mass changes.
+The X tachyon for small M (m² ≈ −1.4H², tree level) is unaffected.
+(b) The reheating field χ (W_χχ ≈ 2πh x₀ ≈ 0.13 M_P on the plateau, D118) placed inside the no-scale log would give real dV/V ≈ 6.8 at
+the CMB point (4.3 at x = 2×10⁻⁴), ∝ 1/x — an order-one, b ≈ 7 deformation that would push n_s far above 1: inconsistent. Placed with a flat
+Kähler term |χ|² its physical mass picks up e^{K/2} = (2x)^{−3/2} ≈ 2×10⁵ — worse. The x-independent choice is modular weight 3/2,
+K ⊃ |χ|²/(T + T̄)^{3/2}: then e^K|W_χχ|²/K_χχ̄² = |W_χχ|², the loop term is ∝ V (no tilt), and D156's "loop shift negligible" holds.
+D156 implicitly assumed this. **New assumption for v6: χ has modular weight 3/2** (analytic; not run numerically). Without it the plain
+Twist's inflation prediction is not what is quoted. Gap 15 updated (C: loop origin needs a ~0.4 M_P field inside the log; G−: analogue
+only). Corrections file updated.

@@ -45,3 +45,13 @@ Add after the shield paragraph:
 ## 6. Gravitino consequences (D279)
 
 Add to §5.2 option (i): "The gravitino is a thermal warm relic, making up m_3/2/86 eV ≈ 1–5% of the dark matter, with ΔN_eff ≈ 0.02–0.05. The main dark-matter candidate is unaffected."
+
+## 7. A new stated assumption: the reheating field χ has modular weight 3/2 (D286)
+
+Add to the assumptions list:
+
+> **The reheating field χ enters the Kähler potential as |χ|²/(T + T̄)^{3/2}.** Its physical mass is then independent of x, and its one-loop correction to the plateau is negligible, as D156 assumes.
+>
+> The other placements fail:
+> - Inside the no-scale log, the one-loop term would be an order-one ∝ 1/x deformation (dV/V ≈ 7 at the CMB point).
+> - With a flat Kähler term, it would be larger still.
