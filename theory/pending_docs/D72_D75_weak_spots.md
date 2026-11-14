@@ -2118,3 +2118,14 @@ single canonical field cannot do. This is the known "phantom crossing" issue for
 fit (Δχ² −3.4 vs ΛCDM, D157 context) is the right comparison, not the w0wa point. Gap 4 status: the overall evidence for evolving dark energy
 softened (4.2 → 3.2σ with DES); the Twist's own Δχ² vs ΛCDM should be re-checked against DES-Dovekie when its likelihood is public (added to the
 future-data list; no lock change needed — WATCH-PURE-DR3 is scored on DESI DR3).
+
+**D238 (pp loop 4) — gap 5 (n) via the "dark dimension": no help; and a needed caveat to D212 (literature, arXiv:2402.00981).** The dark-
+dimension scenario ties the dark-energy scale to a tower, m_tower ≲ Λ^{1/4} (R ≳ 88 μm), treating Λ as a constant. The Twist's tower today is
+~3×10¹⁶ GeV (D123) — about 10²⁸ times heavier than Λ^{1/4} ~ meV — so this relation cannot fix n in the Twist; it would require a completely
+different (micron-decompactified) picture. Gap 5 unchanged.
+**Caveat to D212 (important):** the same paper quotes the asymptotic slope bound as (V′/V)² ≥ 4/(d − 2), i.e. |V′/V| ≥ √2 in 4-d — the
+"sharpened" de Sitter conjecture (Rudelius; also the form in Bedroya–Vafa's abstract), STRONGER than the TCC-derived 2/√((d − 1)(d − 2)) = √(2/3)
+used in D212. Under the sharpened form only rung 1 (λ = √2) is allowed, and rung 1 is ~4σ from DESI DR2's exponential fit (D224). So: with the
+TCC-derived bound the Twist saturates it (D212); with the sharpened bound the Twist — like every exponential quintessence that fits DESI —
+violates it. Which bound applies is itself debated in the swampland literature. D212's "rung 3 is the shallowest allowed tail" holds only for the
+weaker (TCC-derived) form; the paper section should state both. Recorded; the paper text is updated to say so.
