@@ -2099,3 +2099,12 @@ dark energy DESI prefers, not a Twist-specific defect. The same paper shows the 
 accommodate it) drops the dynamical-dark-energy preference from 2.8–4.2σ to 1.3–2.4σ. So if the local H₀ ≈ 73 is confirmed as cosmological,
 the case for thawing dark energy — the Twist's included — weakens; if it turns out to be a local/systematic effect, nothing changes.
 Gap 9 status: unchanged in size, re-labelled "shared with all DESI-favoured dark energy"; it couples to the dark-energy evidence (gap 4).
+
+**D236 (pp loop 2) — D219's strong-CP corollary checked against the literature (arXiv:2506.03348): confirmed, with one named loophole.**
+Standard isocurvature bound for a pre-inflationary QCD axion: H_I/(f_a θ_i) < 2.8×10⁻⁵ with θ_i = (7.4×10¹¹ GeV/f_a)^{7/12}, i.e.
+H_I ≲ 2.3×10² GeV (f_a/GeV)^{5/12}: 2×10⁷ GeV at f_a = 10¹², 10⁹ GeV at 10¹⁶, 4×10⁹ at 10¹⁸. The Twist's H_I = 1.5×10¹³ GeV exceeds these by 10⁴–10⁶ —
+D219's conclusion (pre-inflationary axions excluded) stands, and the literature's numbers are close to my own estimate. Loophole the paper
+develops: a non-minimal coupling ξR|Φ|² with small quartic makes the PQ field larger DURING inflation (f_a^(inf) ≫ f_a), weakening the bound;
+but for Starobinsky-type inflation they find f_a^(inf)/f_a ≲ 60–180 before parametric resonance restores PQ and makes strings, while the Twist
+would need an enhancement of ~1.5×10⁴ at f_a = 10¹⁶ GeV — outside the rescued range. So for the Twist: post-inflationary axion (m_a ≈ 40–180 μeV if
+it is all the dark matter) remains the only standard option. Gap 8 status: confirmed by literature; prediction sharpened, not changed.
