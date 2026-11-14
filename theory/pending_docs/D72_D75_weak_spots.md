@@ -3194,3 +3194,13 @@ Twist's background is thawing (w > −1, no crossing). Thawing quintessence is g
 beyond the 95% edge.
 To do (sensitivity, already-used data): read the Twist fits' Σm_ν setting and, if fixed at 0.06, note it. A free-Σm_ν Twist fit would be a new
 computation and needs a lock plus PC/cloud time. Gap 14: LOW → LOW–MEDIUM (flagged, not yet a failure).
+
+**D338 (pp, 06:57 CT, D337 follow-up: which Σm_ν did our fits use?) — fixed at 0.06 eV everywhere (repo read).** Every fit configuration in
+the repo fixes the neutrino sector at the Planck baseline: one massive neutrino with m_ncdm/mnu = 0.06 eV and N_ur = 2.0328 (AxiCLASS:
+early_late_spa.py, cross_engine_pact.py, debug_ede.py, twofield/*, torsion_shape/*; CAMB: ub2_fit.py, tf_camb_ref.py; cobaya yaml/*).
+So all of our Twist and ΛCDM χ² values and the NS-SPA/PURE comparisons assume Σm_ν = 0.06 eV. That is in fact the Twist's own assumption
+(normal ordering, lightest ≈ 0, Σ ≈ 0.059), so the fits are self-consistent for the model as stated.
+What is not known is whether the data penalise Σ = 0.06 more in the Twist background than in ΛCDM. Since the fits fix it, our Δχ²(Twist − ΛCDM)
+compares the two at the same Σm_ν, which is fair. Whether 0.06 itself is disfavoured is a statement about both models (DESI ΛCDM limit 0.056,
+D337). A free-Σm_ν Twist fit would tell whether thawing tightens it further; that is a new computation (lock + PC time), left for Danny to decide.
+Gap 14: LOW–MEDIUM (flagged; the Twist–ΛCDM comparison is unaffected).
