@@ -2323,6 +2323,6 @@ baryogenesis set by a light field's phase during inflation, the baryon isocurvat
 α_iso = (Ω_B/Ω_DM)² P_S/P_R must stay below the CMB bound; light-field (m ≪ H) set-ups are viable only if H/Λ is small. The Twist's hidden axion σ
 is exactly this case (m_σ ≈ 6×10¹⁰ GeV ≪ H): with Λ = f M_P and f = 0.05–0.3, H/Λ = 2×10⁻⁵ – 1.2×10⁻⁴ and δσ/σ₀ = H/(2πΛ) ≈ 3×10⁻⁶ – 2×10⁻⁵ —
 the same numbers D134 used (≈10⁻⁵ at f = 0.1), giving S_B ≈ 6×10⁻⁶ (safe ×8) for |dlnY/dlnσ₀| ≈ 0.64. The paper's stricter "one decade of
-anthropic room" criterion (H/Λ ≲ 1.2×10⁻⁵) is met only for f ≳ 0.2 M_P. Gap 7 status: the analytic part is literature-consistent; the
+anthropic room" criterion (H/Λ ≲ 1.2×10⁻⁵) is met only for f ≳ 0.5 M_P (not for f = 0.05–0.3: H/Λ = 2.1×10⁻⁵ at f = 0.3) — but that criterion concerns anthropic tuning room, not the CMB bound itself. Gap 7 status: the analytic part is literature-consistent; the
 remaining unknown is exactly what the locked PC run D137 measures (the yield's true sensitivity |dlnY/dlnσ₀|, locked ≤ 5); a value above ~5
-would push the model to f ≳ 0.2 or fail D134. The 21:01 check scores it.
+would push the model to larger f or fail D134. The 21:01 check scores it.
