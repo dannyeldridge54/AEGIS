@@ -11,3 +11,4 @@ script is therefore run in segments by theory/review/omegakin_d367_ckpt.py. This
 loop state (z, N, Y, peak, dilution) after 150 s and resumes from it. The state is exact (the loop already restarts solve_ivp every step from z).
 The validation rule (n_B/s at N − N_e = 11 within 1% of 1.090×10⁻¹⁰) guards against any restart effect. The rule and reading are unchanged.
 D3 (09:00 CT, operational): late steps are slow (single step > 25 s), so segments timed out before checkpointing; the checkpoint time limit is now an environment variable (D367_TLIM, used at 90 s). No physics change.
+D4 (09:02 CT, before scoring): late steps slow to ~0.1 e-fold per 3-minute segment (stiff σ oscillations), so reaching N − N_e = 16 would take ~2 h of segments. The run is stopped at N − N_e = 11 (the validation point); the 'is x still rolling at the end' item is reported at N − N_e = 11 instead of 16. The Ω_kin reading at 2×10¹³ GeV and the validation are unchanged.
