@@ -3608,3 +3608,15 @@ whatever the shape.
 Status: TWIST-I capture now has a concrete tree-level skeleton: an ESP-trapping χ sector, plus a localised weight-3 stabiliser Y with
 W ⊃ Y g(T) and g(T_E) = 0. It is untilted, its minimum is exact at T_E, and it decays before BBN if m ≳ 100 TeV. Open: the origin of a localised
 g(T) and of T_E; loop-level tilts (D323-type) on the minimum.
+
+**D374 (pp, 09:00 CT, D373 open point: do loops tilt the weight-3 stabiliser's minimum?) — negligibly, in the eV-gravitino branch (estimate,
+aegis-checked in code).** A one-loop vacuum term tilts the minimum only through fields whose masses depend on x and whose boson–fermion
+splitting is non-zero (STr M⁴ ln M²). (i) Weight-neutral sectors (the D292 SUSY-breaking sector and messengers, χ at weight 3/2, Y) have
+x-independent masses: no tilt. (ii) The χ trapping sector depends on |T − T_E|², which is stationary at T_E: no tilt. (iii) Heavy sectors with
+x-dependent masses (e.g. the inflaton partner S, m_S ~ 10¹⁰–10¹³ GeV) are split only by gravity-mediated SUSY breaking, ~m_3/2 ~ eV, which
+gives a tilt ~ m_S² m_3/2²/16π² and a minimum shift ~10⁻⁴⁸–10⁻⁴² M_P for m_x = 100 TeV. That is utterly negligible. (iv) The SM itself: the
+D323 drift concerns couplings, not the vacuum energy at the minimum; once x is frozen there is no drift. Its vacuum loop is x-independent
+through the D292 weights, up to the same −b_a/4π threshold effect, which shifts SM loop energies by ~(m_soft⁴/16π²)×7×10⁻³ per unit ln x.
+That gives a tilt ~10¹⁴ GeV⁴/M_P and a shift ~10⁻²⁷ M_P. Also negligible.
+Verdict: at loop level the stabiliser minimum stays at T_E to far better than the 10⁻⁷ M_P needed. TWIST-I's capture skeleton (D373) is
+consistent at one loop. What is still open is model building only: where a localised g(T), T_E and the χ sector come from.
