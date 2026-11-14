@@ -3726,3 +3726,12 @@ Key fact from D367a: x converges to x_∞ ≈ 29.8 (dp falls ~×0.6 per half e-f
 Revised recommendation: take x_E ≈ 27–29.5 (crossed at T ≈ 10¹¹–2×10¹² GeV, after the matter yield has settled, D367a). Then D376's refits are
 unnecessary: m_σ stays at the v5 fit and m_DM stays at 100–200 TeV. The D383 n shift is essentially unchanged (Δn = ½ ln(90/(1 + x_E)) ≈ 0.54–0.58).
 TWISTI_CAPTURE.md and v6 item 18 are updated accordingly. Final numbers wait for D367b (validation pending).
+
+**D360b (T1 scored, locked PREREG_D360_TESTS; results/alt_isocurv_d360_base.txt and _s105.txt; both exit 0, finished before the 2 h cap) —
+PASS, with a larger margin.** At the alternative reading's fit point m_σ = 3.0×10¹⁰ GeV: Y_alt(base) = 7.915×10⁻¹¹ (0.910× observed, inside the
+0.5–2× "fit point" window); Y_alt(σ₀ × 1.05) = 8.394×10⁻¹¹; **S_alt = 1.205 ≤ 5 → PASS**. Margin at f = 0.1 M_P: 5.1/1.205 = **4.2×**. The same
+runs give a canonical-reading sensitivity of 1.19 at m_σ = 3×10¹⁰ (yield 2.04× observed there).
+Reading: the yield's sensitivity to σ₀ depends on m_σ. It is ≈ 3.7 at 5.8×10¹⁰ (D277, D320b) and ≈ 1.2 at 3.0×10¹⁰, so the isocurvature
+margin grows from 1.4× to 4.2× at the lower mass. This is relevant to D376: a lower m_σ, if ever needed, would improve the isocurvature margin.
+D320's stated limitation is closed. Gap 7: LOW–MEDIUM → LOW at the alternative fit point. The canonical fit point (m_σ ≈ 7.5×10¹⁰) keeps the
+~1.4× margin.
