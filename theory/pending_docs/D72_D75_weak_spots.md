@@ -2616,3 +2616,11 @@ m² = 3.8316×10⁷ m² at every x (x-independent to 5 digits); the Hubble-induc
 dV/V = 3.994×10⁶ × (m/M_P)² = 1.8×10⁻³, constant across the CMB window — it only renormalises the amplitude (absorbed by A_s);
 γ_eff ≈ −1×10⁻¹⁰ (no tilt). So with modular weight 3/2 the plain Twist's n_s ≈ 0.964–0.965 stands; D156's conclusion is confirmed, now with
 its hidden assumption stated and checked. Assumption list for v6: χ weight 3/2 (verified consistent, not derived).
+
+**D288 (pp loop 40) — Hubble-induced masses of light fields during inflation (e.g. the Higgs), three Kähler placements, full SUGRA at the
+CMB point (λ = 0, M = 10⁻⁶ m; scripts gminus_sugra_loop_d285.py, chi_weight32_d287.py, light_flat_d288.py).** m²/H²: inside the no-scale
+log +2.0; modular weight 3/2 +3.0; flat |X|² +3.7 (of which 0.7 is the e^{K/2}-enhanced SUSY mass). All positive: a light field stays at
+its origin during inflation; no Higgs-instability or runaway from supergravity alone. For m²/H² = 2 (inside the log) superhorizon
+fluctuations decay as a^{−1} (ν = 1/2), negligible after ~55 e-folds; for ≥ 2.25 they are not produced. The tachyon seen in D285
+(m² ≈ −1.4H²) came from the direct coupling λ S X² with λ = 1 — so the condition is: Standard-Model scalars must not couple to the
+stabiliser S at O(1). Recorded as a consistency condition (not a new assumption: the SM already has no S coupling in the model).
