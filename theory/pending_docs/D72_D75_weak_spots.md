@@ -2639,3 +2639,14 @@ Pantheon+ ~1σ, Union3 ~2σ, DES Y5 ~3σ (possibly low-z systematics). No λ pos
 Reading: once dark energy is required to be a physical thawing field, the evidence for evolution is ~1–2σ except with DES Y5 — the same
 size as PURE-TWIST's 1.8σ local / 0.6–1.0σ trials-corrected (D262), and our DES Y5 swap also gave the Twist its strongest result. Gap 5
 unchanged (no evidence on current data; DES Y5 is the one dataset that prefers it, with a systematics caveat).
+
+**D291 (pp loop, gap 3: is the 0.8–4.7 eV gravitino window still open?) — narrowly, and only in non-minimal models.** Lu & Shirai,
+"Low-scale gauge mediation after LHC Run 2" (arXiv:1712.02359): perturbative low-scale GMSB with m_3/2 = 4.7–16 eV is largely excluded
+(gluino ≳ 2 TeV, wino ≳ 0.7 TeV); minimal GMSB cannot give m_H = 125 GeV below ~10 eV; strongly coupled messengers "still endure" (rough).
+Hook, McGehee & Murayama, "Cosmologically viable low-energy supersymmetry breaking" (arXiv:1801.10160): a vector-mediated model with
+tree-level U(1) D-term breaking gives m_H = 125 GeV, gluino > 2.03 TeV, with m_3/2 as low as 1.0–2.3 eV (v_S ≈ 44–240 TeV) — the window is
+open there; they warn better cosmic-shear data (DES, HSC) could close low-energy SUSY breaking altogether. Reading for the Twist: option (i)
+needs a specific non-minimal sector (e.g. Hook–McGehee–Murayama vector mediation or strongly coupled messengers); minimal GMSB does not work.
+Note a tension to check later: their SUSY breaking is a D-term, while the no-scale V ≈ 0 argument of D272 used F-terms; a D-term
+contributes +D²/2 and must still be cancelled by −3m_3/2² (fine at the level of the CC tuning). Gap 3 stays MEDIUM; a new falsifier: an
+improved cosmic-shear bound below ~1 eV would remove option (i). Added to the v6 corrections.

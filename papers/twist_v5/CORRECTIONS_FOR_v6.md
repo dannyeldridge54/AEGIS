@@ -55,3 +55,9 @@ Add to the assumptions list:
 > The other placements fail:
 > - Inside the no-scale log, the one-loop term would be an order-one ∝ 1/x deformation (dV/V ≈ 7 at the CMB point).
 > - With a flat Kähler term, it would be larger still.
+
+## 8. Option (i) needs a non-minimal SUSY-breaking sector (D291)
+
+Add to §5.2:
+
+> The 0.8–4.7 eV window is open only in non-minimal models, such as vector-mediated D-term breaking [Hook, McGehee & Murayama, arXiv:1801.10160] or strongly coupled messengers [Lu & Shirai, arXiv:1712.02359]. Minimal gauge mediation is excluded. A cosmic-shear bound below ~1 eV would remove this option.
