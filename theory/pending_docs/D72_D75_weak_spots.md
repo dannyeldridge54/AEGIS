@@ -3281,3 +3281,10 @@ reach. SO's design goal is σ(r) ≈ 0.002–0.003 (prior knowledge, not re-chec
 For the Twist: TWIST-INFLATION's r = 0.0035–0.0038 is about 1.5–2σ for SO, so the decisive r test moves to LiteBIRD (2030s). The exploratory
 note says "LiteBIRD and CMB-S4 can separate" the variants, and the paper's table says "Simons Observatory, LiteBIRD, CMB-S4 class". v6 item 17:
 replace "CMB-S4" with "SO (+ upgrades), BICEP Array, LiteBIRD", and note that the r decision is likely early-2030s.
+
+**D347 (pp, 07:23 CT, checking D346's prior-knowledge number) — SO target confirmed (literature).** "The Simons Observatory: combining
+delensing and foreground cleaning for improved constraints on inflation" (arXiv:2405.13201): nominal target σ(r = 0) ≤ 0.003; delensing
+lowers σ(r) by 27–37% depending on the foreground model (exact delensed values only in their Fig. 4). Hence σ(r) ≈ 0.002–0.003, as D346 assumed.
+For TWIST-INFLATION (r = 0.0035–0.0038): ~1.2–1.9σ with SO. That is a hint, not a decision. The locked rule fails the model if r < 0.002 or
+r > 0.008 at 95%, so SO can fail it only on the r > 0.008 side or with a clear null. Decisive: LiteBIRD (σ(r) ≲ 0.001 design, early 2030s).
+D346 now rests on a source.
