@@ -3941,3 +3941,11 @@ Results: Δα/α(z = 1.15) = 3.5×10⁻⁴–1.0×10⁻³ (250–750σ vs ESPRES
 Reading: to survive, the one-loop coupling must be suppressed by ≳ 10³ in ζ (EP) — i.e. the modulus must not be the field that sets e^K
 for the visible sector, or the SM must be sequestered beyond locality, or dark energy must be axionic. This is the basis of the
 paper draft papers/alpha_nogo/ (D401).
+
+**D401 (14:35 CT, Danny: "Start that and draft paper") — draft written: papers/alpha_nogo/ALPHA_NOGO_DRAFT.md + PDF (3 pages; DRAFT,
+not posted).** Title: "One-loop gauge-coupling drift rules out modulus quintessence at DESI-preferred dark energy." Content: D400's
+coefficient −(k/3) b_a, the empty weights+GS solution set, DESI field excursions, the exclusion table, escapes (axions, true sequestering,
+per-factor GS), caveats, prior work credited (Carroll 1998, Choi 1999/2000, Acharya–Maharana–Muia 2018, Kaplunovsky–Louis, Arkani-Hamed–
+Murayama, Conlon–Palti). Framed as a quantitative sharpening of Choi's argument for the DESI era, not a new mechanism. Needs before posting:
+an independent check of the coefficient against Kaplunovsky–Louis eq. (and the n_r = k/3 locality argument for k ≠ 3), the EP conversion
+η ≈ 10⁻³ζ², and a reference check; then Danny's "Publish".
