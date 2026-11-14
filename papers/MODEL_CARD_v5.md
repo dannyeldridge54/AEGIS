@@ -94,3 +94,4 @@ TWIST-K plus a logarithmic factor in S's metric (an IR-free running coupling at 
 | TWIST-4 (PREREG_TWIST4, D1–D2) | rung 4 | — | ≈ 0.0046 | NOT a matter-neutral home (D208); TCC-violating tail; kept on record only |
 Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA alone 0.9693 ± 0.0029, the Twist −1.7σ; with DESI 0.9737 ± 0.0025,
 −3.7σ). How the BAO–CMB tension resolves (and the optical depth, D226) decides between the plain Twist and these variants as much as n_s does.
+| TWIST+ALP (PREREG_TWIST_ALP) | + spectator axion −(g/4)aFF̃, m 10⁻³²–10⁻²⁸ eV | (n_s unchanged) | (unchanged) | only if a calibrated β ≈ 0.3° is confirmed; R = β_reion/β_rec ≈ 1 (m < 2×10⁻³² eV) → ≈ 0 (m > 10⁻³¹ eV); c·θ ≈ 4.5; swampland-tense (D251–D252) |
