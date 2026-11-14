@@ -3552,3 +3552,17 @@ after inflation). Starobinsky's usual N* is 51–55 with gravitational reheating
 0.961–0.964. (ii) Matter genesis through the angle, and its isocurvature (D278, D320b). (iii) The DM window (~100–200 TeV, D341). (iv) β = 0, w = −1.
 Consequence for v6 item 18: say plainly that TWIST-I's CMB predictions are Starobinsky-class at high N*. The distinguishing content is
 N* ≈ 56–58 (testable through n_s at the ±0.0015 level with SO, D351) and the matter/DM sector. This is an honest narrowing, not a failure.
+
+**D369 (pp, 08:20 CT, checking D368's "Starobinsky usual N* 51–55" claim) — partly corrected; the Twist's distinctive point is stronger
+than stated (literature, abstract).** "Refined predictions for Starobinsky inflation and post-inflationary constraints in light of ACT"
+(arXiv:2504.20757): with refined (non-analytic) predictions, Starobinsky is consistent with ACT at 2σ only for N* ≳ 58. That needs a
+stiff reheating equation of state, ω ≳ 0.462 (perturbative reheating, ω ≈ 0, is excluded). With ω ≤ 1, T_rh ≲ 2×10¹⁰ GeV; 1σ with ACT needs
+0.8 ≲ ω ≤ 1 and 4 MeV ≲ T_rh ≲ 10 GeV.
+Correction to D368: "the usual N* 51–55" was from memory; the relevant literature statement is that standard (perturbative) reheating gives
+too low an N* for ACT, and reaching N* ≳ 58 requires a kination-like phase. The Twist's post-inflation history IS a kination phase (f_heat
+0.65–0.8%, D362: x's kinetic energy dominates until a/a_end ≈ 11–12), with T_RH ≈ 5.6×10¹⁴ GeV. So the Twist naturally realises the stiff, ω → 1,
+high-N* history that ACT-compatible Starobinsky needs, though at a much higher T_RH than that paper's 1σ window (its bound T_rh ≲ 2×10¹⁰ assumes
+the reheating phase ends at T_rh; in the Twist, radiation coexists with kination from the start). Not directly comparable; an N* comparison in
+the paper's conventions would need their formulas (not read).
+D368's conclusion stands and strengthens: TWIST-I's CMB distinctiveness is its N* via its built-in kination. That is a real model-specific
+statement worth putting in v6 item 19.
