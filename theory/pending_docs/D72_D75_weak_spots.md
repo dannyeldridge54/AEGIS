@@ -2650,3 +2650,16 @@ needs a specific non-minimal sector (e.g. Hook–McGehee–Murayama vector media
 Note a tension to check later: their SUSY breaking is a D-term, while the no-scale V ≈ 0 argument of D272 used F-terms; a D-term
 contributes +D²/2 and must still be cancelled by −3m_3/2² (fine at the level of the CC tuning). Gap 3 stays MEDIUM; a new falsifier: an
 improved cosmic-shear bound below ~1 eV would remove option (i). Added to the v6 corrections.
+
+**D292 (overnight pp loop 2, gap 3) — a SUSY-breaking sector with x-INDEPENDENT scales fits the Twist (weight3_polonyi_d292.py, sympy, exact).**
+W ⊃ w T^{3/2} + μ² X, K ⊃ |X|² (T + T̄)^{−3} [1 + c((T − T̄)/(T + T̄))²] (Polonyi field X with modular weight 3, angle-dependent metric
+coefficient c). At X = 0, exactly: V(real T) = μ⁴ − 3w²/8 — a constant for every x, set to zero by the single CC tuning μ⁴ = 3w²/8 (no
+separate "uplift" put in by hand: X's F-term is the uplift); m_3/2 = w/2^{3/2}, x-independent; the physical F_X = e^{K/2}(K^{XX̄})^{1/2}μ²
+= μ², x-independent; the angle mass m_θ² = (4c − 2) m_3/2² — stable for c > 1/2 (D270's −2m_3/2² is the c = 0 case). Consequences:
+(1) D267's sliding gravitino and D272/D289's sliding SUSY-breaking scale are both removed by modular weights (T^{3/2} in W, weight 3 for X);
+gauge-mediated soft masses ∝ F_X/M_mess are x-independent if the messengers carry weight 3/2 (as χ, D287). (2) Options (i) and (ii) merge:
+the same sector serves an eV gravitino (low-scale gauge mediation, D291's non-minimal models) or a heavy one. (3) The angle gets mass
+~m_3/2 at all times: for the eV gravitino that is ≪ H during matter formation (angle light then) and ≫ H₀ today (angle pinned at zero —
+consistent with BIREF-NULL). (4) Effect on inflation: w ~ m_3/2 ≪ m, negligible (D269). Status: gap 3 MEDIUM → LOW–MEDIUM; the
+SUSY-breaking part of the shield is achieved by weight assignments (assumed, not derived); the rest of the shield (Yukawas, gauge kinetic
+functions independent of T) remains gap 2. Weights now assumed: χ 3/2, messengers 3/2, X 3, W ∋ T^{3/2}.

@@ -61,3 +61,16 @@ Add to the assumptions list:
 Add to §5.2:
 
 > The 0.8–4.7 eV window is open only in non-minimal models, such as vector-mediated D-term breaking [Hook, McGehee & Murayama, arXiv:1801.10160] or strongly coupled messengers [Lu & Shirai, arXiv:1712.02359]. Minimal gauge mediation is excluded. A cosmic-shear bound below ~1 eV would remove this option.
+
+## 9. A supersymmetry-breaking sector with x-independent scales (D292; supersedes the two-option text in item 1)
+
+Replace the §5.2 options with:
+
+> **W ⊃ w T^{3/2} + μ² X, with the Polonyi field X at modular weight 3:** K ⊃ |X|²(T + T̄)^{−3}[1 + c((T − T̄)/(T + T̄))²].
+>
+> - Along real T, exactly: V = μ⁴ − 3w²/8, the same for every x. A single cosmological-constant tuning sets it to zero.
+> - m_3/2 = w/2^{3/2} and F_X = μ², both x-independent.
+> - The angle mass is (4c − 2) m_3/2², so the angle is stable for c > 1/2.
+> - With messengers at modular weight 3/2, the gauge-mediated soft masses do not slide. This removes the α_em drift of D289.
+> - The eV gravitino window (D291) is realised in this sector.
+> - The modular weights are assumed, not derived.
