@@ -102,3 +102,9 @@ Add to §7:
 ## 14. Exploratory note: a candidate string home (papers/twist_v5/G2_HOME_PROPOSAL.md, D309–D315)
 
 Add a short section summarising the G₂ block-split proposal, and list question 12 among the open questions for string theorists.
+
+## 15. n_s inconsistency is background-conditional (D223, D329)
+
+Add to the n_s discussion:
+
+> The NS-SPA inconsistency arises from CMB + BAO jointly. For Planck + DESI, freeing (w₀, w_a) returns n_s = 0.9638 ± 0.0038, the CMB-only value [arXiv:2512.05108]. The Twist's own, milder dark-energy evolution does not do this: our NS-SPA fit with the Twist background still prefers n_s ≈ 0.973–0.976. The verdict therefore depends on how the BAO–CMB tension resolves (DESI DR3, Simons Observatory).

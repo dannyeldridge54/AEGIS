@@ -3085,3 +3085,16 @@ Consequence: D326's loophole needs (i) D3-branes at an orbifold point (where onl
 N=2 sector free of SM-charged states, and (iii) complete twisted-moduli GS (absent in the known Z₃/Z₇ cases, D326), plus D327's s ≳ 1.04.
 No published model with all of these was found in this search. Gap 2: HIGH; the loophole stays open but narrow. Suggested next step, when Danny
 chooses: treat the shield as an explicit assumption with this precise list of conditions, or split inflation from the tail.
+
+**D329 (pp, 06:25 CT, gap 1 n_s: does the published analysis change D223?) — one new number; D223's conclusion stands (literature).**
+arXiv:2512.05108 v2 (rest of the text read, offset 100k): for Planck + DESI DR2 in w0waCDM with broad priors they cite n_s = 0.9638 ± 0.0038,
+"nearly identical" to Planck alone (ΛCDM 0.9638 ± 0.0040), against 0.9690 ± 0.0035 for Planck + DESI in ΛCDM. So freeing (w0, wa) fully
+removes the DESI-driven upward shift of n_s; the authors call the Planck + DESI n_s "entangled with the DESI evidence for dynamical dark energy".
+No CMB-SPA + DESI w0wa value is given.
+Comparison with our own result (D157/D223): our NS-SPA run with the Twist's PURE background still preferred n_s 0.973–0.976, so the Twist's own
+tail does not relieve the tension. Reading: the relief needs the DESI-sized evolution (w0wa free, wa ≈ −0.7 class), and the Twist's tail is much
+milder (E_G conditioning, D290's 1–2σ). The Twist's 0.9642–0.9654 agrees with the w0wa-free number (0.0–0.4σ), but that is not its own
+background, so this is not a rescoring. NS-SPA INCONSISTENT stands as scored.
+Consequence for the paper (v6 item): state that the n_s inconsistency is conditional on the background. Under a DESI-like w0wa it vanishes for
+Planck + DESI, but under the Twist's own milder tail it does not. Gap 1: HIGH, unchanged; the decider remains DESI DR3/SO resolving the
+BAO–CMB tension (D223, D296).
