@@ -2805,3 +2805,14 @@ LRG bispectrum to full shape + DR2 BAO raises σ8, S8 by ~1.1–1.2σ (errors �
 + DES-Dovekie 3.1σ; DESI + DES-Dovekie 1.6σ — "the bispectrum consistently weakens evidence for time-varying dark energy". For the Twist: in line
 with D262/D290 (no current evidence); the slightly higher σ8 from the bispectrum moves away from the Twist's −1.5% σ8 suppression, but within
 errors. Gap 5 unchanged; gap 1 unchanged (no new n_s).
+
+**D308 (deep loop 7, gap 2: can Froggatt–Nielsen give the fermion hierarchy without x-dependence?) — yes in principle, via the anomalous-U(1)
+FI term, if the dilaton is fixed.** Read: Higaki, Kawamura, Kobayashi & Nakano (hep-ph/0311315): in heterotic models ξ = δ_GS ⟨K_S⟩ M_P², set
+by the dilaton (value and Kähler form), with "the ratio of the FI term to the Planck mass squared … an origin of coupling hierarchies"
+(Froggatt–Nielsen). Analysis for the Twist: the canonical flavon vev solves K_φφ̄|φ|² ≈ ξ, so ε = φ_can/M_P = (δ_GS K_S)^{1/2} depends on the
+dilaton only — x-independent if the dilaton is fixed independently of T (the same BGW condition as D302). Holomorphic Yukawas
+y_ij ∝ (φ/M)^{q_ij} are then x-independent after normalisation if each term's weights sum to 3 including flavon insertions, which forces the
+flavon's modular weight p_φ = 0 and leaves the D293 conditions on the quark/lepton/Higgs weights. So the FN route replaces D306's forbidden
+worldsheet-instanton hierarchies at no extra cost — the obstruction stays the D302 one (universal δ_GS with extra matter + fixed dilaton + weak
+coupling today). Caveat: a fixed dilaton with K_S = 0 would make ξ vanish (their stabilisation point), so the FI term must come from K_S ≠ 0 at the
+minimum — model-dependent. Gap 2 unchanged (HIGH); the fermion hierarchy is not an independent obstruction.
