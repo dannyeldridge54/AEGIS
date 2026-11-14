@@ -1,0 +1,12 @@
+decoupling with SM g* = 106.75
+   1 Weyl fermion (2 dof)                               ΔN_eff = 0.047   vs ACT P-ACT < 0.14 (95%): OK
+   1 Dirac fermion (4 dof)                              ΔN_eff = 0.094   vs ACT P-ACT < 0.14 (95%): OK
+   1 complex scalar (2 dof)                             ΔN_eff = 0.054   vs ACT P-ACT < 0.14 (95%): OK
+   massless dark photon (2 dof)                         ΔN_eff = 0.054   vs ACT P-ACT < 0.14 (95%): OK
+   chiral U(1)_X anomaly-free minimum: 3 Weyl (6 dof)   ΔN_eff = 0.141   vs ACT P-ACT < 0.14 (95%): EXCLUDED
+decoupling with MSSM g* = 228.75
+   1 Weyl fermion (2 dof)                               ΔN_eff = 0.017   vs ACT P-ACT < 0.14 (95%): OK
+   1 Dirac fermion (4 dof)                              ΔN_eff = 0.034   vs ACT P-ACT < 0.14 (95%): OK
+   1 complex scalar (2 dof)                             ΔN_eff = 0.019   vs ACT P-ACT < 0.14 (95%): OK
+   massless dark photon (2 dof)                         ΔN_eff = 0.019   vs ACT P-ACT < 0.14 (95%): OK
+   chiral U(1)_X anomaly-free minimum: 3 Weyl (6 dof)   ΔN_eff = 0.051   vs ACT P-ACT < 0.14 (95%): OK

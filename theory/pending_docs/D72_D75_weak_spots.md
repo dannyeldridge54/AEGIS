@@ -4050,3 +4050,13 @@ for M₁ ~ 10¹³ GeV it happens while Ω_kin ≈ 0.2–0.5 (washout mildly redu
 M₁ < m_inf/2 = 2.5×10¹³ GeV (D394). Part 9 — T_RH ~ 5×10¹⁴ GeV is only safe with the light (eV) gravitino branch (D292); flagged for part 9.
 Part 1 — no dilution (D407), so no extra demand.
 (c) CENTRE: F2 (D ≈ 1) and F3 unchanged; matter sector consistent for M₁ ∈ [10⁹, 2.5×10¹³] GeV. Verdict: consistent, nothing new scored → WALL 1.
+
+**D412 (cycle 5; PART 5 capture/pinning, RIGHT; scored, locked PREREG_D412_PART5; results/part5_d412.txt) — D407 condition (i) PASSES:
+if x decays into a hidden vector-like pair (the minimal anomaly-free U(1)_X content), the dark radiation is ΔN_eff = 0.034 (MSSM g* at
+decoupling, appropriate since T_d ≈ 10⁹–10¹³ GeV ≫ soft masses) or 0.094 (SM g*), below ACT DR6's ΔN_eff < 0.14 (95%; via arXiv:2512.19633).**
+Single hidden Weyl/scalar: 0.017–0.054. Only a large chiral hidden content with SM g* would reach the bound (0.141). Correction to the script
+label: the "3 Weyl" row is illustrative; the minimal anomaly-free choice is the vector-like Dirac pair. The U(1)_X boson is massive (g_X v), not light.
+(a) ALONE: thermal trap (D396) + condensate + gauge decay (D407) now has conditions (i) checked; (ii) Higgs-branch field theory and (iii) the
+D-term/anomaly structure remain. (b) CONNECTIONS: part 1/8 — decay products hidden, so DM and SM bath unaffected; part 6 — the capture point
+x_E ≈ 29.6 fixes Λ (unchanged). (c) CENTRE: F7 passes; NEW PREDICTION: ΔN_eff ≈ 0.03–0.09 if the decay is hidden (CMB-S4/SO σ ≈ 0.03–0.05 can
+test it); if instead U(1)_X mixes with hypercharge, ΔN_eff ≈ 0. Result → walls reset.

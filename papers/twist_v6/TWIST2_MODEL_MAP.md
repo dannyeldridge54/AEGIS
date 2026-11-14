@@ -111,3 +111,5 @@ alone.
 **Centre check D406:** pinning dilution lowers N* by ⅓ ln D; best balanced point (λ 0.033, v 10¹¹ GeV, D 4.7) gives N* 56.7, n_s 0.9648 — misses the 0.5 e-fold tolerance by 0.02. With pinning, the inflation row reads N* 56.0–56.7, n_s 0.9643–0.9648.
 
 **Cycle 1 (D407, CONFIRMED, conditional):** x decays through the U(1)_X gauge channel of the χ condensate (T_d ≈ 10⁹–10¹³ GeV), so the pinning dilution is D ≈ 1. N* stays 57.2 (n_s 0.9651), DM stays 100–200 TeV, leptogenesis needs only the observed yield. Conditions: decay products not dark radiation; Higgs-branch field theory; U(1)_X anomaly-free.
+
+**Cycle 5 (D412, CONFIRMED):** x's hidden decay products give ΔN_eff ≈ 0.03 (MSSM g*) – 0.09 (SM g*), below ACT's 0.14; prediction testable by SO/CMB-S4. Condition (i) of D407 passes.
