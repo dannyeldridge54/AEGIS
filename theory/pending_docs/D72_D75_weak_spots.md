@@ -2285,3 +2285,12 @@ crossing a thin axion domain wall, Δθ ≈ C_γ α/(2π) ≈ 10⁻³ C_γ, so 0
 Twist this second route adds an axion with a wall network instead of a light spectator; not built. Status: if a calibrated β is confirmed, two
 extension routes are on file (spectator ALP — D251, swampland-tense; domain wall — not built, swampland-friendly); choosing between them waits
 on the data's shape (anisotropy / ℓ-dependence).
+
+**D253 (pp loop 18) — gap 3: the nuclear-clock test of the shield, with the measured thorium sensitivity (literature, Beeks et al., Nat.
+Commun. 16 (2025), DOI 10.1038/s41467-025-64191-7).** Measured α-enhancement of the ²²⁹Th clock transition: K = 5900 ± 2300 (uncertainty from
+the nuclear charge-radius change). A thorium/strontium frequency-ratio drift bound at 10⁻¹⁸ per year then gives |α̇/α| < 1.7×10⁻²² /yr and,
+with the Twist's field speed today (3.15×10⁻¹¹ M_P/yr, D225), |d ln α/dφ| < 5×10⁻¹² — three to four orders below today's atomic-clock limit
+(1.6×10⁻⁸); at 10⁻¹⁹/yr ratio stability, 5×10⁻¹³. (K = 3600, the low end, weakens these by ×1.6.) JILA's 2026 work demonstrates the clock and
+the UV–strontium comparison but quotes no α bound yet. For the Twist: the shield's instanton-only breaking (~10⁻⁷⁹) passes any foreseeable
+clock; any perturbative leak (D216: falling or growing) above ~10⁻¹² per M_P would be caught by a thorium clock at 10⁻¹⁸/yr. Gap 3 status:
+test quantified with a measured K; timing depends on long-term Th/Sr ratio campaigns (years).
