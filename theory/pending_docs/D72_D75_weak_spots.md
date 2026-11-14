@@ -2688,3 +2688,8 @@ sgoldstino is heavy, q ≳ 10⁷ (Λ ≲ 10¹⁵ GeV) — which is the generic c
 x, identical to 8 digits. The Polonyi shift only lowers the constant (retune μ⁴ by 1.2×10⁻² w² to restore V = 0), and the sector stays
 x-independent. D294's linearised shift (2√6/(12q − 2) = 0.042) overestimated the exact value (0.027) by ~1.5×; the Polonyi-problem
 condition (heavy sgoldstino) is unchanged. D292 + D294 + D295 together: a complete x-independent SUSY-breaking sector at tree level.
+
+**D296 (overnight pp loop 4, gap 1 n_s) — no new n_s measurement; SPT-3G Ext-10k is a forecast.** Vitrier, Fichman, Balkenhol et al.
+(SPT-3G, arXiv:2510.24669, dated Jul 2026): pipeline/forecast on mock Planck-cosmology data; σ(n_s) = 0.0051 (Ext-10k TT/TE/EE), 0.0045
+(+φφ), 0.0029 (+ Planck). No central value, no DESI. For the Twist (n_s 0.9642–0.9654) the decisive split is still BAO–CMB (D223, D240):
+an independent CMB-only σ ≈ 0.003 measurement will separate 0.965 from 0.974 at ~3σ by itself, without DESI. Gap 1 unchanged.
