@@ -30,3 +30,9 @@ D268 is running. Insert its result here: the matter yield when the Nieh–Yan cu
 ## 3. Table of assumptions, item 4
 
 Replace the item with: "Supersymmetry breaking: a near-massless gravitino with superpartner masses not tied to m_3/2 (adopted); W ∝ T^{3/2} plus uplift needs the uplift sector to stabilise the angle and works at best for m_3/2 ≈ 10⁸–10⁹ GeV; a constant W₀ is excluded."
+
+## 4. Section 5.1 (fifth force): add precedents (D273)
+
+Add after the shield paragraph:
+
+> In generic supergravity quintessence, every MSSM soft term and fermion mass depends on the field through e^{K/2}, and Cassini then requires a tuned cancellation [Brax & Martin, hep-th/0605228]. The shield must therefore also keep the Standard Model's supersymmetry-breaking scale independent of x. The no-scale isometry protects the field's own lightness from gravitino-induced masses [Brax, Davis & Sakstein, arXiv:1212.4392], but not its couplings to matter.

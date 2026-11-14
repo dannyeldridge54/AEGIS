@@ -2449,3 +2449,16 @@ limits. So option (i) works only if the shield also keeps the SUSY-breaking scal
 problem reduces to the fifth-force problem (gap 2), not a separate failure. Status of gap 3: option (i) = low-scale gauge mediation,
 m_3/2 ≈ 1–5 eV today, conditional on the shield; option (ii) needs the uplift sector to stabilise the angle (D270); constant high-scale W₀
 excluded (D267). To go into v6 §5.2.
+
+**D273 (pp loop 26, gap 2 shield, with the D272 twist) — literature on SUSY breaking + quintessence couplings.**
+(a) Brax & Martin, "Dark energy and the MSSM" (arXiv:hep-th/0605228): in supergravity quintessence, m_3/2 = e^{κK_Q/2} m_3/2⁰ and every MSSM soft
+term and fermion mass inherits Q-dependence through e^{κK_Q/2} and v_u,d(Q); u- and d-type fermions couple differently, so equivalence-principle
+violation is "intrinsic" to the MSSM; no generic suppression — Cassini needs a tuned cancellation; sequestered Kähler forms left for future
+work. This is exactly D272's finding (superpartner/fermion masses slide with x through e^{K/2}), now with a published precedent.
+(b) Brax, Davis & Sakstein, "SUPER-Screening" (arXiv:1212.4392): SUSY breaking gives a scalar a soft mass of order m_3/2, killing light
+screened scalars — "only no-scale Kähler potentials with a certain isometry group for the scalar manifold can evade these constraints."
+The Twist's field is exactly such a no-scale (SU(1,1)-isometric) modulus, so its tail stays light — literature support for the field's own
+lightness, not for the matter shield. (c) No published mechanism found that makes the MSSM soft terms independent of the quintessence field.
+Gap 2 unchanged in severity; sharper statement for v6 §5.1: "the shield must also keep the Standard Model's SUSY-breaking scale independent of x;
+generic supergravity quintessence violates this (Brax & Martin 2006); no-scale isometry protects the field's lightness (Brax, Davis &
+Sakstein 2012) but not the matter couplings."
