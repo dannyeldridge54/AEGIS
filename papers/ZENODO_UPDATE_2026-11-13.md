@@ -71,3 +71,9 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
   and to the concept DOI 10.5281/zenodo.24202420, which always resolves to the latest version. The v5.1 pointers were removed. The original
   descriptions were checked as intact after the edit. The non-Twist records carry "is continued by 10.5281/zenodo.24223673".
 - 10:00 CT: D355 scored (TIGHTER, D = 3.35); the result is in the repo (field_tests/results/d355_mnufree.json, D355b). Not on Zenodo (v5.2 says it was running).
+
+## v5.3 published (12:55 CT, 14 Nov 2026; Danny: "Yes get documents ready" / "Then publish")
+- New version of 24223673: record 24226521, DOI 10.5281/zenodo.24226521, version v5.3, title "(v5.3: v5 plus updated errata)". Concept DOI 10.5281/zenodo.24202420 now resolves to it (checked).
+- Files: v5 code zip, exploratory note, consolidated paper (unchanged, imported) + Twist_v5.3_errata_2026-11-14.pdf (md5 36faa86335a1cb39f74564b4e45f56cc, matches the repo build). The v5.2 errata file was removed from the new version only.
+- Notice: D355 TIGHTER; D367b provisional (Ω_kin 0.70; validation point not reached); D387 N* 56.7, n_s 0.9648 (57.6 withdrawn).
+- Pointers: 24221993, 24210532, 24202422, 24140195, 24136806, 24125958, 23898709, 23918236, 23867116, 23847152, 23790573, 23789830, 23839507, 23838969 now point to v5.3 (24223673 → 24226521; "The Twist v5.2" → "v5.3"; description lengths unchanged, so original text intact; "is continued by" updated where present, 11 records). 24223673 (v5.2) got a new pointer paragraph and an "is continued by" link to 24226521.
