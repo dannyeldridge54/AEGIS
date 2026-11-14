@@ -108,5 +108,5 @@ Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA a
 - Locked tests today: isocurvature under the alternative coupling PASS (3.68 ≤ 5, margin 1.39×, D320b); at the alternative fit point m_σ = 3×10¹⁰, PASS (1.2, margin 4.2×, D360b).
 - Running: D355 (free-neutrino fit, PC), D367 (x's kinetic share; preliminary D367a).
 - Free neutrino mass (locked D355): TIGHTER for the tail (penalty for Σm_ν = 0.06 is Δχ² 5.2 vs ΛCDM 1.9); TWIST-I carries the ΛCDM value.
-- Kinetic share (locked D367b, provisional): Ω_kin,x = 0.70 at 2×10¹³ GeV (D362's 0.02–0.17 withdrawn); n_B/s 1.094×10⁻¹⁰ at the last computed point (0.4% from 1.090).
+- Kinetic share (locked D367, FINAL): Ω_kin,x = 0.70 at 2×10¹³ GeV (D362's 0.02–0.17 withdrawn); validation n_B/s 1.092×10⁻¹⁰ at 11 e-folds (0.18% from 1.090); x stops at ≈ 29.81.
 - Bridge tests (locked D403): inflation B1 = r − 3(1−n_s)² ≈ −0.9×10⁻⁴ and B2 ≈ 0 (N*-free); dark-energy↔clock bridge out of balance by ~5×10⁵σ for any rolling modulus; birefringence↔dark-energy bridge β² = 2.5×10⁻³(c_γ/f)²(1+w₀) balanced at c_γ/f ≈ 10–13.

@@ -3979,3 +3979,11 @@ Honest limit (aegis cross-check): a pure polarisation miscalibration ALSO gives 
 axion) or miscalibration" (ρ ≈ 1) from "field that moved before reionization" (early-dark-energy or dark-matter-like axion, ρ ≠ 1); it does
 not by itself separate the dark-energy axion from a systematic. That separation needs the calibration-independent methods (D330, D386)
 or a reionization-bump analysis that fits miscalibration jointly (2108.09287).
+
+**D367c (FINAL score, locked PREREG_D367_OMEGAKIN + D1–D8; results/omegakin_d367.txt) — VALID; D362 FAILED (final). Validation:
+n_B/s at N − N_e = 11 is 1.0920×10⁻¹⁰, 0.18% from 1.090×10⁻¹⁰ (within 1%). Reading: Ω_kin,x at T = 2×10¹³ GeV = 0.70 (D367b), outside ×3
+of D362's 0.02–0.17 → D362 FAILED. Still rolling at the end (dp > 10⁻³)? NO: dp = 7.7×10⁻⁴ at N − N_e = 11 (x = 29.806, T = 1.2×10¹⁰ GeV);
+x = 29.813 at 11.5.** The Radau continuation (D7) passed the LSODA stall in seconds; D8 fixed a print-tolerance bug that had hidden the
+lines (also the missing 10.00 line). D367b's "provisional" label is removed. The free-roll limit 29.83 (D390) is consistent with the
+trajectory (29.81 at 11.5, still creeping). Consequence for TWIST-I/Twist-2: unchanged (crossing of x_E ≈ 27–29.6 happens at T ≈ 10¹²–10¹¹ GeV
+while x still moves; D396's late-capture point x_E ≈ 29.6 is crossed at T ≈ 1.5×10¹¹ GeV, as used).

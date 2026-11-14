@@ -21,3 +21,7 @@ N-Ne  9.50 T 5.336e+10 Omega_kin_x 1.993e-06 Omega_V 1.866e-09 Omega_sigma 1.866
 # Checkpoints after 9.5: 10.04 ... 10.36 (no half-e-fold line printed past 9.5; the 10.00 line was skipped by float drift in the print test).
 # The integration stalls at N − N_e = 10.36: VM segments 25–28 (4 × 175 s) and the cloud run (D5, ~116 min, killed rc 137) made no progress.
 # The validation point N − N_e = 11 was not reached (DEVIATIONS D6).
+# Continuation (DEVIATIONS D7 Radau + D8 print fix), cloud, from ck.pkl at 10.36:
+N-Ne 10.50 T 1.963e+10 Omega_kin_x 2.803e-07 Omega_V 6.212e-08 Omega_sigma 6.212e-08 x 29.793 dp 1.264e-03 nBs 1.0924e-10
+N-Ne 11.00 T 1.191e+10 Omega_kin_x 1.015e-07 Omega_V 1.216e-07 Omega_sigma 1.216e-07 x 29.806 dp 7.679e-04 nBs 1.0920e-10
+N-Ne 11.50 T 7.222e+09 Omega_kin_x 2.359e-07 Omega_V 5.656e-09 Omega_sigma 5.656e-09 x 29.813 dp 4.675e-04 nBs 1.0917e-10

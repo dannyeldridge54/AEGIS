@@ -154,7 +154,7 @@ Add to the neutrino discussion: "Freeing Σm_ν on the NS-SPA data set, the thaw
 
 ## 22. Kinetic share of x after inflation (D367b, provisional)
 
-Replace D362's background estimate (Ω_kin,x ≈ 0.02–0.17 at T = 2×10¹³ GeV) with the matter run's own value, Ω_kin,x ≈ 0.70. Kination dominates until ~3.5 e-folds after inflation. The TWIST-I capture conclusions are unchanged. Mark provisional until a stiff-solver run reaches the 11-e-fold validation point.
+Replace D362's background estimate (Ω_kin,x ≈ 0.02–0.17 at T = 2×10¹³ GeV) with the matter run's own value, Ω_kin,x ≈ 0.70. Kination dominates until ~3.5 e-folds after inflation. The TWIST-I capture conclusions are unchanged. Final (D367c): the stiff-solver run reached the 11-e-fold validation point; n_B/s = 1.092×10⁻¹⁰ (0.18% from 1.090×10⁻¹⁰), so the result is valid and no longer provisional. x has essentially stopped by then (x = 29.81, dp 7.7×10⁻⁴).
 
 ## 23. Prior art must be cited (D398)
 
