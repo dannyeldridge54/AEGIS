@@ -3846,3 +3846,21 @@ DESI+CMB+SNe and, with c_γ ~ 1–20, the birefringence angle (2504.17638). Desi
 dial each, nested fallbacks. Key new finding (estimate, code): the Twist angle y cannot be quintessence: f = √(3/2)/(a x₀) ≈ 0.004 M_P
 for a potential of size ρ_Λ (a x₀ ≈ 277), so m/H₀ ~ 250 and a hilltop tuning ~10⁻¹¹⁶ would be needed; an aligned second axion
 (f_eff 0.1–1 M_P) is the candidate fix. Next computations listed in §5 of the note; each to be locked first.
+
+**D393 (scored, locked PREREG_D393_AXION_THAW; results/axion_thaw_d393.txt, rc 0) — Twist-2 sector II: PASS against
+CMB+DESI+PantheonPlus, FAIL against CMB+DESI+DESY5; the pass needs f ≈ M_P and c_γ ≈ 10.** Best grid point f = 1 M_P, θ_i = 1.5:
+w0 = −0.812, wa = −0.290, Ω_DE 0.690, Δθ = 0.332 since recombination, β = 0.222° for c_γ = 10. Distances (code): PantheonPlus w0 0.4σ,
+wa 1.8σ, β 0.6σ → PASS. DESY5 w0 1.1σ, wa 2.6σ → FAIL (wa too shallow). Consistency check (aegis): the thawing relation
+wa ≈ −1.58(1 + w0) = −0.297 matches the fit (−0.290). f = 0.3 gives a solution only at θ_i = 0.1 (near-Λ: w0 −0.981, β 0.18° at c_γ = 10).
+Limitation (not fixed, to avoid chasing): most f = 0.1/0.3 points and θ_i ≥ 2 return "no flat solution" because the locked L4 bracket
+[10⁻³, 50] is too narrow for hilltop starts; those points are untested, not excluded.
+Reading: one thawing axion can give the PantheonPlus-preferred dark energy AND the birefringence angle with a single coupling c_γ ≈ 10,
+but only for f ≈ M_P. That sharpens D392's obstacle: the alignment must reach f_eff ~ M_P (the Twist angle alone has ~0.004 M_P), which
+is where weak-gravity-type arguments push hardest. It cannot give the steeper DESY5 wa (a known limit of thawing fields).
+
+**D394 (13:40 CT, Twist-2 sector IV viability, estimate in code; not locked) — leptogenesis has ample room.** m_inf = 5.0×10¹³ GeV, so
+inflaton decay to N₁ needs M₁ < 2.5×10¹³ GeV (D214's M_R ~ 2×10¹⁴ is too heavy for that channel; heavier N₂,₃ can keep it for m_ν).
+With T_RH ~ 5×10¹⁴ GeV > M₁, N₁ is thermal: standard thermal leptogenesis. Davidson–Ibarra maximum ε₁ = 3M₁m₃/(16πv²) = 10⁻⁴ (M₁ =
+10¹²) to 10⁻³ (10¹³); with n_B/s ~ 10⁻³ ε₁ κ and washout κ ~ 0.01–0.1 this gives ~10⁻⁹–10⁻⁷ ≫ 0.87×10⁻¹⁰. Viable with room; it
+becomes a prediction only once the neutrino Yukawas are tied to the Twist (not done). Caveat: T_RH ≫ 10⁹ GeV needs the light-gravitino
+branch (D292) to avoid gravitino overproduction; not rechecked here.

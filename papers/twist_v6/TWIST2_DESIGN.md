@@ -81,3 +81,12 @@ m_σ and the heat share, and removes the matter-like phase that cost 0.5 e-fold 
 - Calibrated β consistent with 0 at < 0.05° while DESI keeps w₀ > −0.9 → sector II's c_γ link fails.
 - Varying-α or fifth-force signal correlated with dark energy → contradicts sector II's symmetry (good for us to know).
 - No natural alignment giving f_eff ≳ 0.05 M_P in the no-scale setting → sector II reverts to Λ (TWIST-I).
+
+## 7. Test results (14 Nov 2026, 13:40 CT)
+
+- **D391 (locked):** N* 57.2, n_s 0.9651 without σ (2.9σ from CMB-SPA+DESI in ΛCDM; 1.1σ from CMB-SPA).
+- **D393 (locked) sector II:** one thawing axion with f = M_P, θ_i = 1.5 gives w0 −0.81, wa −0.29 and, with c_γ = 10, β = 0.22°.
+  PASS vs CMB+DESI+PantheonPlus (w0 0.4σ, wa 1.8σ, β 0.6σ); FAIL vs DESY5 (wa 2.6σ, too shallow). Needs f ≈ M_P, so the alignment
+  obstacle (§3 II) becomes the key theory problem. f ≤ 0.3 points with hilltop starts were not reached by the locked scan.
+- **D394 (estimate):** thermal leptogenesis with M₁ ~ 10¹²–10¹³ GeV gives n_B/s up to ~10⁻⁷, ample room.
+- **Not yet run:** the decisive n_s refit in an evolving-dark-energy background (§5 item 4; PC cobaya run).

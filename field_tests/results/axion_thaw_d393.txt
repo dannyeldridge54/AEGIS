@@ -1,0 +1,25 @@
+f/MP theta_i  w0(fit)  wa(fit)  w(a=1)  Omega_DE  dtheta  beta[c=1,10,20] deg
+ 0.1  0.10  no flat solution
+ 0.1  0.30  no flat solution
+ 0.1  0.50  no flat solution
+ 0.1  1.00  no flat solution
+ 0.1  1.50  no flat solution
+ 0.1  2.00  no flat solution
+ 0.1  2.50  no flat solution
+ 0.1  3.00  no flat solution
+ 0.3  0.10  -0.981  -0.034  -0.973  0.690  +0.269  0.018 0.180 0.359
+ 0.3  0.30  no flat solution
+ 0.3  0.50  no flat solution
+ 0.3  1.00  no flat solution
+ 0.3  1.50  no flat solution
+ 0.3  2.00  no flat solution
+ 0.3  2.50  no flat solution
+ 0.3  3.00  no flat solution
+ 1.0  0.10  -1.000  -0.001  -1.000  0.690  +0.015  0.001 0.010 0.020
+ 1.0  0.30  -0.996  -0.006  -0.996  0.690  +0.046  0.003 0.031 0.061
+ 1.0  0.50  -0.989  -0.017  -0.988  0.690  +0.078  0.005 0.052 0.104
+ 1.0  1.00  -0.946  -0.083  -0.942  0.690  +0.173  0.012 0.116 0.231
+ 1.0  1.50  -0.812  -0.290  -0.796  0.690  +0.332  0.022 0.222 0.444
+ 1.0  2.00  no flat solution
+ 1.0  2.50  no flat solution
+ 1.0  3.00  no flat solution
