@@ -3897,3 +3897,17 @@ edge for λ = 0.004. (3) Correction to the Twist-2 map: the heat share is not a 
 cliff (D118 and D80–D82: 0.65–0.8% over decay-rate conventions). The map's "derive the heat share" item is replaced by "re-derive it
 without σ (unchanged by construction, since σ never entered it)".
 Status: Twist-2 baseline after D396–D397: pinning OK (estimate), matter OK, DM shifts to 4–45 PeV for λ ≥ 0.01 and is stable (no signal).
+
+**D398 (13:50 CT, Danny: "Is our theory unique") — partly; the combination is ours, the parts are known, and a close prior paper was not
+cited (literature).** arXiv:2008.09099 builds quintessential inflation in N = 1 no-scale supergravity: one inflaton drives inflation,
+then kination (ρ ∝ a⁻⁶) with instant preheating through a Higgs-like field, then its residual potential acts as dark energy (scale tuned
+by a SUSY-breaking parameter); n_s 0.9631 / r 0.0027 at N* = 55, blue-tilted GW from kination. That is structurally the v5 Twist
+(no-scale inflaton, kination, instant preheating via χ̃, Λ from the residual potential). It is not cited anywhere in the repo or the v5
+papers: v6 must cite it (and Ellis–Nanopoulos–Olive no-scale Starobinsky, arXiv:1307.3537; Peebles–Vilenkin quintessential inflation;
+Kofman et al. moduli trapping, hep-th/0403001). Known ingredients: no-scale Starobinsky inflation; quintessential inflation with
+kination; moduli trapping at enhanced-symmetry points; axion birefringence; thermal leptogenesis; gravity-only heavy DM.
+What is specific to the Twist / Twist-2 (as far as the searches found): Λ = the cliff value at a trapping point x_E, with the trap set
+thermally by χ and locked by a χ condensate (D396); the one-loop no-go for a rolling −3 ln field as dark energy (D323; to be checked
+against literature before claiming novelty); the locked-test record. Observationally the inflation sector is Starobinsky-class (D368);
+distinctive handles are N* ≈ 57.2 from built-in kination, the kination blue GW tilt (D86), and the sector-split predictions.
+Added to v6: item 23 (prior-art citations).

@@ -155,3 +155,7 @@ Add to the neutrino discussion: "Freeing Σm_ν on the NS-SPA data set, the thaw
 ## 22. Kinetic share of x after inflation (D367b, provisional)
 
 Replace D362's background estimate (Ω_kin,x ≈ 0.02–0.17 at T = 2×10¹³ GeV) with the matter run's own value, Ω_kin,x ≈ 0.70. Kination dominates until ~3.5 e-folds after inflation. The TWIST-I capture conclusions are unchanged. Mark provisional until a stiff-solver run reaches the 11-e-fold validation point.
+
+## 23. Prior art must be cited (D398)
+
+Cite arXiv:2008.09099 (quintessential inflation in no-scale supergravity: kination, instant preheating, residual potential as dark energy), which is structurally close to v5 and was missing. Also cite Ellis–Nanopoulos–Olive no-scale Starobinsky (arXiv:1307.3537), Peebles–Vilenkin quintessential inflation, and Kofman et al. moduli trapping (hep-th/0403001). State plainly which parts are new (Λ fixed at a thermally trapped and condensate-locked point; the one-loop no-go, after a literature check) and which are standard.
