@@ -2953,3 +2953,12 @@ so the prefactor logarithm would need ~0.1 precision. No such computation exists
 Verdict: one step beyond D283. In the G₂ setting n is no longer a free real coupling but a discrete-data-plus-threshold quantity, "derivable in
 principle". This is not a prediction: the integer choices are free, and the anthropic/landscape reading of D283 remains. Gap 8 unchanged
 (n chosen). Add to question 12 of the G₂ proposal: "Can the one-loop prefactors fix Re T₁ to the per-mille level needed for n?"
+
+**D320 (deep loop 19, gap 7: isocurvature under the alternative coupling reading) — argument, plus a locked run started.**
+Argument: the alternative reading (D268/D297) changes only the source (μ₅ ∝ y′ − c p′ y instead of y′); the field histories y(t), x(t), σ(t) are
+identical. δσ/σ₀ (from H and f) does not depend on the reading. What can change is the yield's sensitivity to σ₀: Y_alt also depends on the
+displacement y, not only the speed y′. D277 found the canonical sensitivity, 3.70, is already non-linear, so it cannot be assumed to carry over.
+It is now measured: PREREG_D320_ALT_ISOCURV (locked and pushed before running) reruns the D268 one-pass script with σ₀ × 1.05. It validates
+against D277's canonical 1.306×10⁻¹⁰ and scores |S_alt| ≤ 5, with margin 5.1/S_alt at f = 0.1 M_P. Limitation (stated in the lock): the run
+is at m_σ = 5.8×10¹⁰, not at the alternative fit point 3.0×10¹⁰. Running in the cloud (~2 h); result to be appended as D320b.
+Gap 7 status until then: passes, marginal (canonical); alternative reading pending.
