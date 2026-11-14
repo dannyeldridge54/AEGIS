@@ -3233,3 +3233,12 @@ range; not read.
 Revised reading of D317 (τ ≈ 10²⁴ s (10⁶ GeV/m)⁵ ξ⁻²): against ~10²⁷–10²⁸ s, ξ ~ 1 is allowed up to ~150–250 TeV (10²⁸ at 100 TeV; 3×10²⁷ at 200
 TeV). At 500 TeV it needs ξ ≲ 0.06–0.2. D317's "only ~100 TeV survives" becomes "≲ 200 TeV survives for ξ ~ 1". Both are order-of-magnitude,
 and the anchor (D242) is itself a reading of plots. Gap 13: LOW–MEDIUM, unchanged; the decaying-DM signal is still optional (D318).
+
+**D342 (pp, 07:09 CT, gap 15: naturalness of the post-data n_s variants) — the literature keeps finding tree-level deformations of the
+Starobinsky attractor that reach ACT's n_s; nothing new for the Twist's variants (literature).** Ijaz, Pirzada & Rehman (arXiv:2607.04504,
+Jul 2026): in a shifted-hybrid non-minimal Higgs model, the leading non-renormalisable superpotential operator "induces a controlled
+deformation of the Starobinsky attractor" that shifts n_s into the ACT-preferred range, with r ~ 10⁻³–10⁻². This is the same class as
+TWIST-P/L (Kähler deformations) and TWIST-G− (W ∝ T^{1+ε}), and they do not compute loops. The search also returned 2504.06002 ("Has ACT
+measured radiative corrections to tree-level Higgs-like inflation?"), a radiative route analogous to D285's TWIST-C origin.
+Reading: an ACT-sized n_s shift from one small deformation is generic in this model class. The Twist's variants are neither more nor less natural
+than published ones, and their agreement with ACT is not evidence (they are scored only on future data). Gap 15: LOW, unchanged.
