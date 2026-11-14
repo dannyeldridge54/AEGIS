@@ -21,5 +21,5 @@ Literature placement of the starting premise: promoting the Barbero–Immirzi pa
 2009; Gates–Ketov–Yunes, "Seeking the loop quantum gravity Barbero–Immirzi parameter and field in 4D, N = 1 supergravity" — already cited in the
 paper); the Twist's new content is the single-field history, the cliff, the locked predictions and the shield, not the premise itself.
 
-Near-term decisive tests, in likely order: calibrated birefringence (gap 2) · DESI DR3 (gaps 1, 4) · Simons Observatory n_s/r (gap 1) · nuclear
+Near-term decisive tests, in likely order: calibrated birefringence (gap 2) · DESI five-year results, expected 2027 (gaps 1, 4; D247) · Simons Observatory n_s/r (gap 1) · nuclear
 clocks (gap 3) · LiteBIRD/CMB-S4 r (variants, TCC).

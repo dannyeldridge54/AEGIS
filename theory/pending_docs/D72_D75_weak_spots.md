@@ -2218,3 +2218,10 @@ the loop particles get their masses from the field that sets the plateau, the co
 multiplicatively along the plateau; not computed in the Twist's supergravity structure (the Twist is not a Higgs-like non-minimal model; the
 mapping is only at the level of the Einstein-frame potential shape). Status of gap 13: "TWIST-G− needs string-like loops" (D230) softened to
 "a loop whose masses track the inflaton gives the tilt at first order (literature analogue); the Twist-specific calculation is not done".
+
+**D247 (pp loop 14) — timing of the decisive dark-energy data (literature/news, UKRI 15 Apr 2026).** DESI finished its planned five-year
+survey ahead of schedule (April 2026); the first dark-energy results from the full five-year data set are expected in 2027; further studies
+on the first three years are expected during 2026; the survey is extended through 2028 (14,000 → 17,000 deg², fainter LRGs). For the Twist:
+WATCH-PURE-DR3 (w0 −0.90, wa −0.14), PREREG_GROWTH and the BAO–CMB question behind the n_s verdict (D223/D240) will be scored on the 2027 full-
+survey release (cumulative with DR2, as already noted in D136(i)). Planning note: the gap review's "near-term decisive tests" order becomes:
+calibrated birefringence (any time) · DESI five-year (2027) · Simons Observatory n_s/r (2026–28) · nuclear clocks · LiteBIRD/CMB-S4 (2030s).
