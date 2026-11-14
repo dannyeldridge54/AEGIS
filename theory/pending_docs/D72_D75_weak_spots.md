@@ -2706,3 +2706,12 @@ both readings in one pass (m_σ 5.8×10¹⁰ GeV, heat 0.8%, TWIST-K-equivalent 
 with the yield ∝ m_σ^−0.89, exact 1× needs m_σ ≈ 7.5×10¹⁰ GeV (canonical) or ≈ 3.0×10¹⁰ GeV (alternative). So the referee's issue 10 is
 quantified: the matter mechanism works under either reading; the normalisation choice moves the fitted hidden mass by ×2.5 and is a stated
 choice, not a hidden one. c_A = √(3/8) remains "fixed given the normalisation". Gap 6: closed at this level (MEDIUM → LOW).
+
+**D298 (overnight pp loop 9) — a possible new problem from D292: the angle's misalignment energy.** D292 gives the Immirzi angle a
+late-time mass m_θ = √(4c − 2) m_3/2 ~ 1–5 eV. During the radiation era its Twist-sector mass (∝ V_tail) is ≪ H, so the angle is frozen
+wherever the matter-genesis dynamics left it; it starts oscillating when H ≈ m_θ (T ~ 5×10⁴ GeV) and behaves like an ALP relic:
+Ω h² ≈ 0.12 (m_θ/10⁻²² eV)^{1/2} (φ_i/10¹⁷ GeV)². Not overclosing needs φ_i ≲ 3×10¹¹ GeV (1 eV) – 2×10¹¹ GeV (5 eV), i.e. a leftover
+|y_end| ≲ 5–8×10⁻⁶ at x ≈ 73 (canonical φ = √(3/2) y/x M_P). The matter runs print y_end = 0.000 (3 decimals; the angle reverses twice and
+returns near zero), which does not settle it: |y_end| ~ 10⁻⁴ would overclose by ~10². A precision rerun of the baseline (yend_precise_d298.py,
+6 significant figures) is running (~2 h in the cloud). Escapes if it fails: tune c = 1/2 (massless angle today — then its relic is pure kinetic,
+∝ a⁻⁶, harmless), or a heavy gravitino branch where m_θ > H when the angle is released. Status: OPEN, pending the rerun; new gap item.
