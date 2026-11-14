@@ -107,3 +107,4 @@ Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA a
 - Open: the UV origin of (T − T_E) and the weights.
 - Locked tests today: isocurvature under the alternative coupling PASS (3.68 ≤ 5, margin 1.39×, D320b); at the alternative fit point m_σ = 3×10¹⁰, PASS (1.2, margin 4.2×, D360b).
 - Running: D355 (free-neutrino fit, PC), D367 (x's kinetic share; preliminary D367a).
+- Free neutrino mass (locked D355): TIGHTER for the tail (penalty for Σm_ν = 0.06 is Δχ² 5.2 vs ΛCDM 1.9); TWIST-I carries the ΛCDM value.

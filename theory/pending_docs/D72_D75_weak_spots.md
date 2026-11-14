@@ -3735,3 +3735,12 @@ Reading: the yield's sensitivity to σ₀ depends on m_σ. It is ≈ 3.7 at 5.8�
 margin grows from 1.4× to 4.2× at the lower mass. This is relevant to D376: a lower m_σ, if ever needed, would improve the isocurvature margin.
 D320's stated limitation is closed. Gap 7: LOW–MEDIUM → LOW at the alternative fit point. The canonical fit point (m_σ ≈ 7.5×10¹⁰) keeps the
 ~1.4× margin.
+
+**D355b (scored, locked PREREG_D355_MNU_FREE + D1–D2; field_tests/results/d355_mnufree.json; scored 09:51 CT on the PC) — TIGHTER.**
+On the NS-SPA data set (n_s free): with the PURE Twist tail, χ² is 2405.554 at Σm_ν = 0.06 and 2400.332 with m free (best m = 0.001 eV, the prior edge),
+so P_PURE = 5.222. For ΛCDM, χ² is 2404.102 and 2402.232 (best 0.016 eV), so P_ΛCDM = 1.870. **D = 3.352 > 1 → TIGHTER** (aegis-check:
+recomputed). The thawing tail penalises the minimal normal-ordering neutrino mass by Δχ² ≈ 5.2 (~2.3σ), against 1.9 (~1.4σ) for ΛCDM: it
+tightens the neutrino bound, as expected for w > −1 dark energy (D337). This is a sensitivity on already-used data, not evidence.
+Consequences: (1) under the adopted TWIST-I (Λ, w = −1), the relevant penalty is ΛCDM's 1.9, so gap 14 is unchanged for the adopted model;
+(2) the original tail (the conditional variant) carries an extra neutrino-mass cost of ΔD ≈ 3.4. That is one more cost of the tail, alongside
+the shield no-go and the H₀ shift, and it further supports the TWIST-I choice. Gap 14: LOW–MEDIUM (TWIST-I); MEDIUM for the tail variant.

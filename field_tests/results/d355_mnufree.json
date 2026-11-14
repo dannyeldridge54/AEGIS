@@ -1,0 +1,8 @@
+{
+ "rule": "PREREG_D355_MNU_FREE.md",
+ "PURE": {"chi2_fixed006": 2405.554, "chi2_free": 2400.3318, "P": 5.222, "m_ncdm_best": 0.001},
+ "LCDM": {"chi2_fixed006": 2404.1015, "chi2_free": 2402.2317, "P": 1.87, "m_ncdm_best": 0.015738976},
+ "D": 3.352,
+ "reading": "TIGHTER",
+ "note": "copied from the PC (cmb-fit/results via field_tests/results/d355_mnufree.json), scored 2026-11-14 09:51:29 CT by the D2 runner"
+}

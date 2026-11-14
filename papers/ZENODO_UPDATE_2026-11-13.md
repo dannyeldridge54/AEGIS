@@ -70,3 +70,4 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - Every earlier record (v5.1, v5, v4, FLAG-1 v1–v4, torsion EDE v1–v5, both pre-registrations; 14 records) now opens with a pointer to v5.2
   and to the concept DOI 10.5281/zenodo.24202420, which always resolves to the latest version. The v5.1 pointers were removed. The original
   descriptions were checked as intact after the edit. The non-Twist records carry "is continued by 10.5281/zenodo.24223673".
+- 10:00 CT: D355 scored (TIGHTER, D = 3.35); the result is in the repo (field_tests/results/d355_mnufree.json, D355b). Not on Zenodo (v5.2 says it was running).
