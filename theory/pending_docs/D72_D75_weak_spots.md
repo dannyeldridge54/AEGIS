@@ -3657,3 +3657,6 @@ across the window, with a slope ∝ x/x_E ~ 10⁻⁵ at the CMB point. That is n
 k²|T − T_E|² ~ 10⁻²⁷ M_P⁴ (k ~ 10⁻¹⁵), also negligible.
 Verdict: the D375 skeleton is consistent with inflation and the EFT for 0.004 ≲ λ ≲ 0.03. TWIST-I's capture sector is now a bounded, consistent
 proposal: T_E ≳ 30, λ in that window, k from m_x ≳ 10⁵ GeV, χ and Y at weights 3/2 and 3.
+
+**D378 (09:20 CT) — TWIST-I capture consolidated in papers/twist_v5/TWISTI_CAPTURE.md (D355–D377).** No new physics; this is one place for the
+construction W ⊃ (T − T_E)(λ M_P χχ̄ + k Y) (χ at weight 3/2, Y at weight 3), its bounds, its consequences and its open items.
