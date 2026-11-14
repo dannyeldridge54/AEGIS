@@ -2241,3 +2241,17 @@ within a few years (also SO's sparse-wire-grid system, 2309.02035). Why the Twis
 Re T, CP-even, which can only couple as φFF (α variation, forbidden by the shield), not φFF̃; the CP-odd angle Im T has mass ≈ 2H and sits at
 its minimum, so its Δφ since last scattering is ~0 (D14 context, PREREG_BIREF_NULL). If a calibrated β ≈ 0.3° is confirmed, the Twist as a single
 field is falsified on this observable; an extension would need an additional light pseudoscalar coupled to photons — a different model.
+
+**D250 — research for the "Twist + one photon-coupled axion" option (literature: arXiv:2506.20824, 2203.08560).** If a calibrated β ≈ 0.3° is
+confirmed, the minimal extension is a spectator ALP φ with −(g/2)φFF̃:
+- Planck EB fits (2506.20824): masses log₁₀(m/eV) ≈ −27.8 … −26.5 are partly excluded at > 2σ (the EB acoustic structure shifts, e.g. near ℓ ≈ 400);
+  m ≲ 10⁻²⁸ eV is unconstrained and needs |g φ_ini/2| ≈ 0.3° with a negligible energy fraction (spectator) — consistent with my estimate
+  (c·Δθ ≈ 4.5 for a decay constant ~10¹⁶ GeV, ~0.04% of the dark energy).
+- Tomography (2203.08560): for m ≲ 10⁻³² eV the field is frozen between recombination and today, so the rotation is one angle at all ℓ —
+  exactly like a miscalibration; for 10⁻³² ≲ m ≲ 10⁻³¹ eV the reionisation bump (ℓ ≤ 10) is rotated differently from high ℓ — an ℓ-dependent
+  signature miscalibration cannot fake, measurable only by a full-sky satellite (LiteBIRD).
+Design consequence: the ALP should sit at 10⁻³² ≲ m ≲ 10⁻²⁸ eV (rolls between last scattering and today; m ≲ 10⁻²⁸ to avoid the Planck-excluded
+band), and a mass in 10⁻³²–10⁻³¹ eV gives the cleanest test (LiteBIRD low-ℓ/high-ℓ ratio). Shield: the FF̃ coupling is topological — no fifth
+force, no α drift — so the Twist's other predictions are untouched. Status: a ready, literature-backed extension; not built or locked (Danny's
+call: it makes the Twist a two-field model). If built, its distinctive prediction would be an ℓ-dependent EB at ℓ ≤ 10 for the 10⁻³²–10⁻³¹ eV
+choice, or a pure constant angle for lighter masses.
