@@ -3123,3 +3123,12 @@ the Twist value is a background-only estimate without a full fit; and the error 
 Verdict: gap 11 LOW–MEDIUM → MEDIUM. The low H₀ is no longer only "a cost against the ladder". Model-independent non-ladder probes also sit
 ~4σ above it (estimate). Next: a full-fit H₀ posterior from the stored NS-SPA PURE chains (computing it would be a reading of already-used data,
 so state it as a sensitivity, not a test).
+
+**D332 (pp, 06:33 CT, gap 11): CORRECTION to D331 using the stored full fits (field_tests/results/ns_pure.json; already-used data, so a
+sensitivity, not a test).** Planck NPIPE + low-ℓ + lensing + DESI DR2 + Pantheon+ + DES Y6 S8 best fits: PURE Twist H₀ = 66.78, Ω_m = 0.313;
+ΛCDM H₀ = 68.00, Ω_m = 0.305. D169's background-only 65.7 overstated the shift: the full fit moves H₀ by −1.2, not −1.7.
+Redone with an assumed ±0.5 on the fit value: Twist vs model-independent category 3 (70.4 ± 1.0) is 3.2σ (ΛCDM: 2.1σ); vs the one-step combination
+2.8σ (ΛCDM 1.0σ); vs category 2 0.4σ. So the Twist adds about 1σ to the tension that ΛCDM already has with the model-independent non-ladder
+probes. D331's "~4σ" is withdrawn.
+Gap 11: MEDIUM → LOW–MEDIUM. Stated cost: "the Twist's full-fit H₀ = 66.8 is ~1.2 below ΛCDM on the same data, about +1σ worse against
+non-ladder probes; it does not address the ladder tension." The model card line is updated.
