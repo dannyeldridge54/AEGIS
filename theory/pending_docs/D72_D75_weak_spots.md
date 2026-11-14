@@ -3060,3 +3060,17 @@ plane on which some twist acts as −1, which is exactly an N=2 sector. U-moduli
 Verdict: the non-volume route has one conditional loophole: a rolling U-plane whose N=2 sector contains no SM-charged states (b^{N=2}_a = 0
 for SU(3), SU(2), U(1)_Y), together with complete twisted-moduli GS cancellation of the rest. The known orientifolds do not show the latter
 (LLN). Gap 2: HIGH; no-go covers G₂ (D323–D324), EFT weights + GS (D325), and IIB U with twisted GS (this note), apart from that loophole.
+
+**D327 (Danny "Test", 06:20 CT): inflation test of D326's loophole (locked, PREREG_D327_TWISTED_GS; results/twisted_gs_ns_d327.txt).**
+Twisted-moduli GS enters K quadratically, so at the D-flat point α = 1 + δ²/3 (sign fixed, second order). Cancelling −b_a ln u needs
+s_a δ = b_a/8π². Results (baseline n_s 0.9650, r 0.0036):
+- s = 1: δ 0.0836, α 1.00233 → n_s 0.9693 (Δ +0.0043), r 0.0047.
+- s = 2: α 1.00058 → n_s 0.9661 (Δ +0.0011), r 0.0038.
+- s = ½: α 1.00932 → n_s 0.9795 (Δ +0.0145), r 0.0096.
+Scored rule (|Δn_s| ≤ 0.004 at s = 1): **FAIL, narrowly (0.0043)**. It passes for s ≳ 1.04, i.e. if the twisted modulus couples to U(1)_Y slightly
+more strongly than unit strength. This is far milder than D325's GS dilaton (Δn_s +0.0195 or no solution).
+Note (post-data, NOT evidence): the shift is always upward (α > 1), toward ACT's higher n_s, with r rising together (0.0047 at s = 1). If this
+route were ever adopted it would be a new locked variant, scored only on future data, like TWIST-P/L.
+Status of the loophole: inflation-compatible for s ≳ 1, so inflation is not the obstruction here. It still rests on two unverified string
+conditions: an N=2 sector with no SM-charged states, and complete twisted-moduli cancellation (which the known Z₃/Z₇ orientifolds lack, D326).
+Gap 2: HIGH; the one surviving route is identified and passes the inflation test at s ≳ 1.
