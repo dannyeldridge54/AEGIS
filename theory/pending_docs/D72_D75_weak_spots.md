@@ -2075,3 +2075,14 @@ allow), now with a physical origin. Size, with leak = c·x⁻³ and today's cloc
 - the M9 history (x today ≈ 2.4×10⁴ at the Twist's heat share): the leak is ~10⁻¹⁵ — invisible.
 Status: a conditional, falsifiable sharpening — IF strong-coupling couplings extremise (open question 11), the Twist's leak is p = 3 with a
 clock-scale amplitude for the degree-1 history. Recorded as a hypothesis-dependent forecast, not a locked prediction.
+
+**D233 — CORRECTION to D231–D232: the strong-coupling regime already breaks neutrality at TREE level, so a DPV-type attractor cannot rescue it.**
+D231/D232 treated the strong-coupling problem as a matter of small corrections that might be extremised away. But at strong heterotic coupling
+the correct description is heterotic M-theory, where the tree-level relations (Witten; D206 add, D208) already fix the answer: holding the
+4-d gauge coupling fixed, M_GUT/M_P ∝ (ρ M_GUT)^{−1/2}, so the overall modulus cannot move without moving either the Standard-Model scale
+(β ≈ 0.41) or the Standard-Model coupling (d ln α/dφ ≈ 0.71); only Calabi–Yau shape moduli are neutral, and they are not rung 3 (D208). DPV's
+least-coupling attractor concerns the coupling functions of the DILATON in the limit of infinite bare coupling, with the internal geometry
+fixed — not this tree-level geometric relation along the Twist's direction. So the hope that "strong coupling helps the shield" (D231) does not
+survive, and the x⁻³ forecast (D232) applies only to a hypothetical setting in which the overall modulus at strong coupling had no tree-level
+scale relation — none is known. D231/D232 are kept on record but marked superseded; question 11 in the open-problem doc gets this caveat.
+Lesson: before importing a mechanism, check it against the tree-level relations already derived in our own notes (here D206/D208).
