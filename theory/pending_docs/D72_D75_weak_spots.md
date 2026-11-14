@@ -2962,3 +2962,21 @@ It is now measured: PREREG_D320_ALT_ISOCURV (locked and pushed before running) r
 against D277's canonical 1.306×10⁻¹⁰ and scores |S_alt| ≤ 5, with margin 5.1/S_alt at f = 0.1 M_P. Limitation (stated in the lock): the run
 is at m_σ = 5.8×10¹⁰, not at the alternative fit point 3.0×10¹⁰. Running in the cloud (~2 h); result to be appended as D320b.
 Gap 7 status until then: passes, marginal (canonical); alternative reading pending.
+
+**D321 (pp, 06:00 CT, G₂ follow-up: do known compact G₂ manifolds have rigid 3-cycles of the kind D313–D315 use?) — partly; the
+"SM cycle" type is not among them (literature).**
+- Corti, Haskins, Nordström & Pacini (arXiv:1207.4470, Duke 2015): twisted-connected-sum (TCS) G₂ manifolds contain finitely many rigid
+  associatives ≅ S¹ × S², one for each rigid (−1,−1) rational curve in a semi-Fano building block, for long necks (their Prop. 5.15). These
+  were the first proven rigid compact associatives. Being S¹ × C with C in one building block, they are localised in one half of the TCS.
+  The text read does not show which block hosts them in each example.
+- Associative submanifolds in TCS G₂ manifolds (arXiv:2209.00156): rigid associatives glued across the neck from S¹ × curves in both halves
+  (Thm 5.3), giving S³, RP³ and RP³#RP³ examples. These meet both halves.
+Relevance: (i) A smooth rigid associative gives an M2-brane instanton term in W ∝ exp(−2π ∫_C Φ) = exp(−2π Σ N_i T_i), set by its class. That
+is an alternative to the condensate cliff of D315, but it has the same control caveat at small cycle volume. Whether it is any better is not
+known until the cliff's location in Re T₂ is mapped onto the cycle volume (not done). (ii) The SM in M-theory needs ADE singularities along a
+3-cycle plus conical points for chiral matter. Smooth TCS manifolds have neither. The N₂ = 0 SM cycle of D313 therefore needs a singular G₂
+(Joyce orbifold resolutions kept partly singular, or the Acharya-type local models). No compact example with that cycle is known from this search.
+(iii) The "one cycle per half" localisation is the feature the block split needs; TCS provides it for instanton cycles. The (4,3) block split of D311
+was found on a toroidal orbifold, so whether TCS realises the same Kähler split is open.
+Verdict: question 12 is sharpened, not answered. TCS gives localised rigid instanton cycles (a possible cliff source); the SM cycle needs singular G₂.
+G₂ lead status unchanged (a proposal).

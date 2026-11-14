@@ -41,3 +41,5 @@ M-theory on a G₂ manifold. Gauge groups and chiral matter sit at singularities
 
 
 **Addendum (D319, 14 Nov 05:40 CT).** In this picture the cliff depth n becomes integers (ranks, wrapping numbers) times a logarithm of one-loop condensate prefactors, via the ABKKV vacuum condition A₂/A₁ = α⁻¹exp[−(b₁N¹ − b₂N²)·s] (hep-th/0701034). Question 12 gains a sub-question: can these prefactors fix Re T₁ to the ~0.3% level that today's Λ ∝ e^{−2n} needs?
+
+**Addendum (D321, 14 Nov 06:00 CT).** Smooth twisted-connected-sum G₂ manifolds contain rigid associatives S¹×S² localised in one building block (Corti–Haskins–Nordström–Pacini, arXiv:1207.4470), and others glued across the neck (arXiv:2209.00156). These could give an M2-instanton cliff term in place of the condensate, with the same small-volume control caveat. The SM cycle (N₂ = 0) needs ADE singularities, which smooth TCS manifolds lack, so it requires a singular G₂. Sub-question for question 12: does a singular TCS-type G₂ realise the (4,3) Kähler split with the SM cycle in the fixed block?
