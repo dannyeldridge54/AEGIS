@@ -2624,3 +2624,10 @@ its origin during inflation; no Higgs-instability or runaway from supergravity a
 fluctuations decay as a^{−1} (ν = 1/2), negligible after ~55 e-folds; for ≥ 2.25 they are not produced. The tachyon seen in D285
 (m² ≈ −1.4H²) came from the direct coupling λ S X² with λ = 1 — so the condition is: Standard-Model scalars must not couple to the
 stabiliser S at O(1). Recorded as a consistency condition (not a new assumption: the SM already has no S coupling in the model).
+
+**D289 (overnight pp loop 1, gap 2) — D272's α drift sharpened (soft_drift_alpha_d289.py).** If MSSM superpartner masses slide as
+x^{−3/2} (eV-gravitino reading without a shield on the SUSY-breaking scale), their QED threshold contributions (Δb = 8.33: squarks,
+sleptons, H±, two charginos) give Δ(1/α) = (Δb/2π)Δln m = 0.394 between nucleosynthesis and today, i.e. Δα/α ≈ 2.9×10⁻³ (D272's
+order-of-magnitude 10⁻³ confirmed, factor 3 larger). Today's rate, with d ln x/dt = √(2/3)·0.45H₀ = 2.5×10⁻¹¹/yr: d ln α/dt ≈ 3.7×10⁻¹³/yr,
+about 4×10⁵ times the atomic-clock bound (~10⁻¹⁸/yr). So the shield on the SUSY-breaking scale must hold to ≲ 3×10⁻⁶ in d ln m_soft/d ln x —
+quantified requirement added to gap 2. No status change.
