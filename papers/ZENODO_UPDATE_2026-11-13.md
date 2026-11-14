@@ -52,3 +52,13 @@ https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md).
 Record 24210532, DOI 10.5281/zenodo.24210532 (concept 10.5281/zenodo.24202420 now resolves to v5). Files: Twist_v5_consolidated_2026-11-13.pdf
 (md5 f19faeaf22364bda8c425e16b1b3c4f5), Twist_v5_exploratory_note_2026-11-13.pdf, AEGIS_twist_v5_code_and_rules.zip. v4 (24202422) stays in the
 version history (Zenodo never deletes published versions). Claude Doc of v5: https://claude.ai/artifact/4Z9b5Yd5AoHxH2NrSCC2tg
+
+## 14 Nov 2026, 08:35 CT: v5.1 published (Danny: "Update zenodo.org", chose "v5.1 errata" and "publish FLAG-1"; "all previous work point to new one")
+- New version **v5.1**: record 24221993, DOI 10.5281/zenodo.24221993 (concept 24202420). Files: the three v5 files (imported unchanged) plus
+  Twist_v5.1_errata_2026-11-14.pdf (md5 b23b3915cc8604cf87319eaca03989cf, matching papers/twist_v5/). Title "(v5.1: v5 plus errata)"; version
+  v5.1; the description is prefixed with a v5.1 summary.
+- Pointer notice ("Update (14 November 2026): the current version of this work is The Twist v5.1 (DOI 10.5281/zenodo.24221993)…") added
+  and published on every earlier record by Danny, all versions: 24210532 (v5), 24202422 (v4), 24140195 (FLAG-1 v4; the saved FLAG-1 notice was
+  published with it), 24136806, 24125958, 23898709 (FLAG-1 v3–v1), 23918236 and 23867116, 23847152, 23790573, 23789830 (torsion EDE, all
+  versions), 23839507 and 23838969 (pre-registrations). The records outside the Twist concept also got a related identifier
+  "is continued by 10.5281/zenodo.24221993". Done through the Zenodo API in Danny's signed-in Chrome (no credentials handled).
