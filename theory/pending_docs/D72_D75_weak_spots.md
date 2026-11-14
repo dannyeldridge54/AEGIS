@@ -2980,3 +2980,19 @@ known until the cliff's location in Re T₂ is mapped onto the cycle volume (not
 was found on a toroidal orbifold, so whether TCS realises the same Kähler split is open.
 Verdict: question 12 is sharpened, not answered. TCS gives localised rigid instanton cycles (a possible cliff source); the SM cycle needs singular G₂.
 G₂ lead status unchanged (a proposal).
+
+**D322 (deep loop 20, G₂ follow-up: are G₂ threshold corrections computable, for D319's n and for the shield?) — yes, topologically
+(literature; formula itself not extracted).**
+Friedmann & Witten, "Unification scale, proton decay, and manifolds of G₂ holonomy" (arXiv:hep-th/0211269): the one-loop threshold correction
+for a gauge group on a 3-manifold Q of ADE singularities is given by the Ray–Singer analytic torsion of Q. This is a topological invariant,
+"computed explicitly based on topological assumptions, without needing to know the detailed form of the G₂ metric", and fully explicit for
+lens spaces Q = S³/Z_q (their §3 and appendices; not read in full here).
+Consequences:
+(1) D319 (n): the prefactors A_k entering n are of this type. If the hidden ABKKV and cliff groups sit on lens-space cycles, ln(A₁/A₂) is an
+explicit function of the integers (q, ranks, Wilson lines). n then becomes fully discrete data: a finite list of possible values, not a
+continuous fit. Whether any choice gives α_h⁻¹ ≈ 39.8 to ~0.3% is a concrete, finite computation (not done; it needs their lens-space formula).
+(2) Shield: the threshold for the SM on its cycle Q_SM is metric-independent at one loop. So moduli, including x, cannot enter the SM gauge
+coupling through thresholds at this order. That supports D313's "SM coupling x-independent" beyond tree level, given N₂ = 0 for Q_SM.
+(Caveat: the Friedmann–Witten setting expresses the threshold together with the volume V_Q, whose tree-level part is the N₂ = 0 statement.)
+Verdict: positive for the G₂ lead. Question 12 gains a computable sub-task: scan lens-space hidden cycles for n. Gap 8 remains "chosen" until
+that scan is done. Not a prediction.
