@@ -3483,3 +3483,19 @@ coherent modulus; (iii) χ must decay before BBN; (iv) at the trapped point x mu
 n_χ-dependent potential that dilutes. Possible caveat: as n_χ dilutes, the trap weakens and the modulus can drift again unless a true
 minimum exists at the ESP (the usual statement is that trapping holds the field long enough for other effects to stabilise it).
 Status: TWIST-I open item (a') becomes "an ESP at x ≳ 30 plus a stabilising minimum there". This is a mechanism to evaluate, not a solution.
+
+**D364 (pp, 08:22 CT, D363 follow-up: does ESP trapping meet D362's 10⁻⁷–10⁻⁵ M_P bound?) — plausibly yes, and symmetry removes the
+positional tuning (estimate; standard trapping formulas, aegis-checked in code).** Trapping: when x passes the ESP, χ particles with mass
+g|Δφ| are produced, n_χ ≈ (gφ̇)^{3/2}/(2π)³, and the field stops within d ≈ φ̇²/(2g n_χ) of the ESP. With x's kinetic share
+Ω_kin ≈ 0.02 (T_c/2×10¹³ GeV)² (D362) and φ̇ = √(6Ω_kin) H M_P:
+- T_c = 10¹² GeV: d ≈ 1.2×10⁻⁵ M_P (g = 1), 3.9×10⁻³ (g = 0.1).
+- T_c = 10¹⁰ GeV: 1.2×10⁻⁸ (g = 1), 3.9×10⁻⁶ (g = 0.1).
+- T_c = 10⁸ GeV: 10⁻¹¹ to 4×10⁻⁹.
+So trapping at T_c ≲ 10¹⁰ GeV with g ≳ 0.1 lands x within D362's bound.
+Key point: at an enhanced symmetry point, the stabilising potential is stationary by symmetry, so its minimum sits exactly at the ESP if it
+is a minimum rather than a maximum. The 10⁻⁶ M_P coincidence of D362 then becomes a property of the symmetry, not a tuning. The kinetic energy
+goes into χ, which must decay to radiation before BBN, and is harmless because capture is late (D362).
+Revised TWIST-I requirement (replacing D362's tuning): an ESP on the Twist range at x ≳ 30, crossed at T ≲ 10¹⁰–10¹² GeV, with coupling g ≳ 0.1
+to some χ, and a stabiliser for which the ESP is a minimum (m ≳ 100 TeV for BBN). All of this is model building, with no tuning of positions.
+Not yet checked: whether x actually still rolls at those temperatures (in v5 it keeps thawing to today, so yes); and the n_B/s and DM
+dilution from χ decay (≈ Ω_kin at capture, ≲ 10⁻⁴: negligible).

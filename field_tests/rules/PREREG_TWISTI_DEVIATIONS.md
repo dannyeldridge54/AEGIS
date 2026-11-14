@@ -20,3 +20,4 @@ D4 (07:45 CT; a consequence, not a rule change): a decaying ≳ 100 TeV x (D3) s
 depending on m_x), not merely a heavy decaying modulus. The scored rules are unchanged.
 D5 (08:00 CT; correction to D4): the residual-displacement bound is ≲ 10⁻⁷–10⁻⁵ M_P for any m_x (D360a numerical check; D359 underestimated the heavy-x case).
 D6 (08:12 CT; consequence, not a rule change): kinetic energy at capture is harmless if capture is late (Δ ∝ T_c³); the binding requirement is that x_min coincides with x's resting point to ≲ 10⁻⁷–10⁻⁵ M_P, a positional tuning (D362).
+D7 (08:22 CT; consequence): D6's positional tuning is avoidable if x is trapped at an enhanced symmetry point (ESP) at x ≳ 30 crossed at T ≲ 10¹⁰–10¹² GeV with coupling g ≳ 0.1, where the stabiliser has its minimum by symmetry (D363–D364).
