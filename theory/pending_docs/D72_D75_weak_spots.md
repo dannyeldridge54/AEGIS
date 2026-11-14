@@ -3028,3 +3028,18 @@ move as d(1/α_a)/d ln x = −b_a/4π, and no matter content, weight assignment 
 to any compactification where the UV matching scale is set by the same volume (distance-conjecture form). The shield (gap 2) therefore needs
 either a tuned per-group cancellation to ~10⁻⁶ (unnatural), or a rolling field that is not a volume. Gap 2: HIGH, sharpened into a no-go
 statement. G₂ proposal: downgraded to "tree-level only; fails at one loop".
+
+**D325 ("fix test" continued, 06:30 CT): a sixth fix that lifts D293's μ obstruction, then fails on inflation (locked, PREREG_D325_GS_ALPHA).**
+(1) Algebra (gm_mu_fix_d325.py): a Giudice–Masiero μ-term, K ⊃ λ(T+T̄)^{−q}H_uH_d, gives μ_phys ∝ m_3/2(2x)^{−q+(p_Hu+p_Hd)/2}. With m_3/2
+x-independent (D292), q = (p_Hu+p_Hd)/2 removes the holomorphic μ condition. D293's remaining system then has a two-parameter family, always with
+p_Hu + p_Hd = 12 (so q = 6) and a universal Green–Schwarz term δ = −27. The smallest weights are max|p| = 6 (p_Q −11/3, p_U = p_D = 2/3, p_L 3,
+p_E −6, p_Hu = p_Hd = 6). In EFT this would cancel the one-loop drift for all three SM couplings with discrete choices, not a 10⁻⁶ tuning.
+(2) Side effect: the GS term needs a dilaton with K ⊃ −ln ℓ, ℓ = S+S̄ − δ′ln(T+T̄), δ′ = 27/16π² = 0.171, and ℓ = 2/g² = 3.98 fixed by
+α_GUT = 1/25. With ℓ held by the heavy dilaton, K_T K^{TT̄} K_T̄ = 3 − δ′/ℓ exactly, i.e. the no-scale α shifts to 1 ∓ δ′/(3ℓ) = 1 ∓ 0.0143.
+The Twist's plateau needs α = 1 exactly (rung 3).
+(3) Locked test (gs_alpha_ns_d325.py; one logged crash fix, D1): baseline n_s 0.9650, r 0.0036. α = 0.98568 → NO 57-e-fold solution (the
+plateau tilts the wrong way; N = −5.5). α = 1.01432 → n_s 0.9844 (Δn_s +0.0195), r 0.0150. Rule |Δn_s| ≤ 0.004 for both signs: **FAILS for
+both. The GS fix spoils inflation.** To pass, |α − 1| ≲ 0.003 would need ℓ ≳ 19, i.e. α_GUT ≈ 1/120, which is inconsistent with the SM's
+f_SM = S.
+Verdict: six fixes tested, none works. Remaining options: per-group tuning (~10⁻⁶); a rolling field that is not a volume; or separating
+inflation from the dark-energy tail (only the tail needs the shield). Gap 2: HIGH, no-go now includes the GS route.
