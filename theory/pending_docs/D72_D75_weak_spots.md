@@ -2149,3 +2149,9 @@ covariance properly makes the n_s shift largely disappear. Our own reading (D223
 CMB-SPA alone. Gap 1 status: unchanged as a LOCKED verdict (NS-SPA used CMB+BAO and stays INCONSISTENT as scored), but its interpretation is
 now explicitly contested in the literature; the plain Twist and the post-data variants are effectively waiting on the BAO–CMB resolution. To do
 when the Ferreira paper is found: read it and record its numbers (no rescoring of the locked test).
+D240 add (pp loop 7) — the "Ferreira et al." report is the SAME paper already read: arXiv:2507.12459 by Ferreira, McDonough, Balkenhol,
+Kallosh, Knox and Linde, published in Phys. Rev. D on 18 Feb 2026 (Editor's Suggestion, DOI 10.1103/lq71-b84v). Its numbers are those recorded
+above (ACT alone 0.9666 ± 0.0076; ACT + DESI DR2 0.9770 ± 0.0070); the press release's "evidence against standard inflationary models weakens
+significantly" is the paper's dataset-consistency argument, not a new fit. To-do closed; nothing to rescore. Notable for the paper: two of the
+authors (Kallosh, Linde) are the α-attractor authors, so the Twist's family has authoritative backing that the CMB+BAO n_s is not yet a
+clean test.
