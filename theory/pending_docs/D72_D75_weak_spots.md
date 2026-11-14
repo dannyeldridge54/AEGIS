@@ -2753,3 +2753,13 @@ that dilaton is fixed independently of T (the D200 BGW route). That route alread
 today (D204, D209). So gap 2 reduces to a single string-level problem: a heterotic model with universal δ_GS (extra matter), a BGW-type
 dilaton, and weak coupling at x ≈ 89. Yukawas: untwisted-sector couplings are T-independent; twisted ones carry η(T) factors (to check in a
 later loop). Gap 2 status unchanged (HIGH), but the obstruction is now located precisely.
+
+**D303 (deep loop 2, gap 4: when will a calibration-independent β exist?)** Read: Coppi et al., PROTOCALC (arXiv:2502.14473) — a drone-borne
+W-band polarised source, deployed twice in the Atacama with the Simons Observatory SATs and CLASS; field data constrain the source roll angle to
+0.045° (statistical; lab camera-to-grid offset 0.03° ± 0.002°); the SO requirement for B-modes is 0.2°, and birefringence needs "even more
+stringent". Novelli et al., POLOCALC (arXiv:2606.20171) — drone source, target accuracy 0.1° → 0.01°, flights to 5600 m, observed with SO SATs
+and CLASS; "further improvements are required", no achieved absolute accuracy and no timeline. Reading against PREREG_BIREF_NULL (needs total
+error ≤ 0.10° with calibration independent of the Galactic-foreground EB method): the hardware exists and is at the ~0.05° statistical level, but
+no systematic budget ≤ 0.1° is published yet. Expected decider: SO SATs (and CLASS) with drone calibration, plausibly within a few years; LiteBIRD
+in the 2030s. Combined with D301 (Planck–ACT angles disagree > 3σ), gap 4 stays HIGH but the current 0.28° signal is increasingly likely to be
+tested by an absolute calibration before any satellite. No status change.
