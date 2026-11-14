@@ -4069,3 +4069,14 @@ de Sitter minimum, which the refined dS conjecture disfavours and which no contr
 arXiv:2603.25797). (b) CONNECTIONS: part 5 — the pin (D396, x_E ≈ 29.6) only needs ±1% accuracy for Λ at the ±1% level; part 7 — the
 birefringence axion is separate and does not shift Λ. (c) CENTRE: w = −1 exactly in the baseline; the crown fit (D410) tests the thawing
 variant. Result → walls 0. Crown status: THAW runs converging (runs 1–2 of 4 done at 16:52).
+
+**D414 (cycle 7; PART 7 birefringence axion, RIGHT; scored, locked PREREG_D414_PART7; results/part7_d414.txt) — NATURAL: a separate
+light axion with m between ~2 H0 and H_rec (3×10⁻³³–3×10⁻²⁹ eV), θ_i ~ 1–2.5 and photon coupling c_γ ≈ 1.6–3.9 gives β = 0.261°, with a
+sub-Planckian f ≤ 0.1 M_P and an energy share Ω_a ≤ 3×10⁻³ (estimate).** So the baseline does NOT need the f ≈ M_P that troubled the
+single-axion dark-energy variant (D392/D393); it is weak-gravity-conjecture friendly. (a) ALONE: frozen at recombination, oscillates or
+rolls by today, Δθ ≈ θ_i for m ≳ 2H0; for m ≲ H0 it barely moves and needs c_γ ≳ 40–90. (b) CONNECTIONS: part 6 — Ω_a ≤ 3×10⁻³ leaves Λ and
+w ≈ −1 untouched; part 10 — CP-odd coupling, no α drift (F1 passes). The Twist's own angle is heavy after capture (D382), so this must be
+another axion (e.g. a second modulus's). (c) CENTRE: B3 (β–w link) does not apply to the baseline; NEW bridge consequence for B4: for
+m ≳ H(z ≈ 10) ≈ 20 H0 the field is already oscillating at reionization, so β_reio/β_rec < 1 — unlike both the dark-energy axion and a
+calibration error (ratio ≈ 1). LiteBIRD's two-bump measurement can therefore tell this baseline apart (to be quantified when computed).
+Result → walls 0.

@@ -113,3 +113,5 @@ alone.
 **Cycle 1 (D407, CONFIRMED, conditional):** x decays through the U(1)_X gauge channel of the χ condensate (T_d ≈ 10⁹–10¹³ GeV), so the pinning dilution is D ≈ 1. N* stays 57.2 (n_s 0.9651), DM stays 100–200 TeV, leptogenesis needs only the observed yield. Conditions: decay products not dark radiation; Higgs-branch field theory; U(1)_X anomaly-free.
 
 **Cycle 5 (D412, CONFIRMED):** x's hidden decay products give ΔN_eff ≈ 0.03 (MSSM g*) – 0.09 (SM g*), below ACT's 0.14; prediction testable by SO/CMB-S4. Condition (i) of D407 passes.
+
+**Cycle 7 (D414, CONFIRMED estimate):** the baseline birefringence axion is natural: c_γ ≈ 1.6–3.9, f ≤ 0.1 M_P, Ω_a ≤ 3×10⁻³, mass 3×10⁻³³–3×10⁻²⁹ eV; if m ≳ 20 H0 it predicts β_reio/β_rec < 1 (LiteBIRD can separate it from the dark-energy axion and from miscalibration).
