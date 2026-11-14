@@ -2731,3 +2731,11 @@ c_A ∂θ J₅/M_P; the induced axion-electron coupling is g_ae ≈ 2c_A m_e/M_P
 bounds (~10⁻¹³); no photon coupling (D249 structural), so no haloscope/helioscope or birefringence signal. As a coherently oscillating field
 with m ≳ 1 eV it is ordinary cold dark matter on all cosmological scales (Jeans scale far below Mpc). So the 12–28% component is invisible to
 current probes — "testable" in D299 should read "consistent but practically unobservable"; correction recorded here.
+
+**D301 (pp loop, gap 4 birefringence) — a combined SPIDER + Planck + ACT fit points toward miscalibration.** Yin, Xiong, Kochappan, Lee &
+Ghosh, arXiv:2510.25489 (v2, Nov 2025): they fit the total angle α + β (miscalibration + cosmic), since "α and β cannot be fully disentangled";
+EB: SPIDER 0.35° ± 0.69°, Planck 0.29° ± 0.03°, ACT 0.19° (+0.03/−0.04°), Planck+ACT 0.21° ± 0.03°, all three 0.22° ± 0.03°. The Planck and
+ACT angles "differ by > 3σ", which they say "hints that a polarisation miscalibration angle may be preferred" (their conclusion is not fully
+consistent on this). A cosmic β is the same on every experiment; a > 3σ disagreement between experiments favours instrumental angles. For the
+Twist (BIREF-NULL, β = 0): mildly favourable but not scored — the locked rule needs a calibration-independent measurement. Gap 4 HIGH →
+HIGH but no longer "rising".
