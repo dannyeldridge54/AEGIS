@@ -2797,3 +2797,11 @@ d ln y/d ln x ≈ −186, i.e. d ln y/dt ≈ 4.7×10⁻⁹/yr today — ~10⁸ a
 the Twist, every Standard Model Yukawa must be untwisted or same-fixed-point (no instanton-generated hierarchy), with the D293 weight condition
 on top. Fermion-mass hierarchies would then need another origin (e.g. Froggatt–Nielsen with x-independent flavon vevs). Gap 2: requirement
 sharpened; status HIGH unchanged.
+
+**D307 (deep loop 6, gaps 5/1: newest DESI) — survey complete; bispectrum weakens evolving-DE evidence.** (a) DESI finished its five-year
+survey (>47 million galaxies and quasars; OSU news, 16 Apr 2026); first full-survey dark-energy results expected in 2027, observations continue
+to 2028 — the WATCH-PURE-DR3 / WA-CEILING / GROWTH test date stands. (b) Forero-Sánchez et al. (DESI, arXiv:2606.23936, Jun 2026): adding the DR1
+LRG bispectrum to full shape + DR2 BAO raises σ8, S8 by ~1.1–1.2σ (errors −26–28%); w0waCDM: DESI-only within 1σ of ΛCDM; DESI + CMB 2.8σ;
++ DES-Dovekie 3.1σ; DESI + DES-Dovekie 1.6σ — "the bispectrum consistently weakens evidence for time-varying dark energy". For the Twist: in line
+with D262/D290 (no current evidence); the slightly higher σ8 from the bispectrum moves away from the Twist's −1.5% σ8 suppression, but within
+errors. Gap 5 unchanged; gap 1 unchanged (no new n_s).
