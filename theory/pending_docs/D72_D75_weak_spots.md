@@ -3532,3 +3532,12 @@ Verdict: the ESP route does not by itself give a stabilised TWIST-I. A Z₂ or l
 stabiliser) would. Status: TWIST-I capture is still open, now sharply stated: "a symmetry point at x ≳ 30 respected by the stabilising sector,
 with net positive curvature there, ≳ 100 TeV". Correction to the optimism of D364–D365 (the trapping numbers stand; the minimum does not
 follow).
+
+**D367a (08:12 CT, compute plan; Danny: "Schedule all needed compute").** Needed compute and where it runs:
+(1) D355 free-ν fits (PC): LCDM running, PURE rerun queued (D2), score due ~10:45.
+(2) D360 T1 isocurvature at the alternative fit point (cloud): two runs, started 07:57, due ~09:30–10:00.
+(3) D367 x kinetic share from the v5 matter run (cloud): locked. It starts when the T1 runs free the cloud cores (a background job is
+capped at 2 h, so the pp loop launches it then), and is due ~2.5 h after start.
+(4) D366's sign question (is the ESP a minimum?) is settled by the standard radiative argument, so no compute is needed unless a model is chosen.
+(5) TWIST-I N* shift: none if capture is late and adiabatic (D362: dilution ≪ 1), so no compute is needed.
+No other open item needs compute now. The free-ν fit already covers TWIST-I's ΛCDM background (its LCDM half).
