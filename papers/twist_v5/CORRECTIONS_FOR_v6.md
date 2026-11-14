@@ -119,9 +119,23 @@ Replace the shield paragraph's "assumption" wording with a precise statement:
 
 DOE and NSF ended support for CMB-S4 in July 2025. In the paper's tests table, replace "Simons Observatory, LiteBIRD, CMB-S4 class" with "Simons Observatory (and upgrades), BICEP Array, LiteBIRD". In the exploratory note §5, replace "LiteBIRD and CMB-S4" with "LiteBIRD and Simons Observatory". Add: with r ≈ 0.0036, the expanded Simons Observatory (six SATs to 2035, σ_r ≈ 1.2×10⁻³ baseline, arXiv:2512.15833) reaches ~3σ, and LiteBIRD (δr = 0.001, launch JFY 2032, arXiv:2406.02724) is comparable; an r decision is expected ~2032–35.
 
-## 18. The split model TWIST-I (Danny's choice, 14 Nov 07:08; PREREG_TWISTI + D1–D2)
+## 18. The split model TWIST-I (Danny's choice, 14 Nov 07:08; PREREG_TWISTI + D1–D9; full write-up papers/twist_v5/TWISTI_CAPTURE.md)
 
-Present v6 with two readings. (a) **TWIST-I (adopted):** the Twist is the inflaton; its field rolls through matter genesis as in v5 and then settles at x_min ≥ 30 and is stabilised with m_x (and the angle) ≳ 100 TeV so that it decays before BBN, and is captured adiabatically (residual displacement ≲ 10⁻⁷–10⁻⁵ M_P, D359–D360a), since a non-adiabatic arrival dilutes n_B/s and DM by 10³–10¹³ (PREREG_TWISTI D1–D4); dark energy is Λ. Cost: the stabiliser minimum must coincide with the point where x comes to rest to within ~10⁻⁷–10⁻⁵ M_P (D362), a third tuning besides Λ and n — unless x is trapped at an enhanced symmetry point (ESP) at x ≳ 30, crossed at T ≲ 10¹⁰–10¹² GeV with coupling g ≳ 0.1, where the stabiliser has its minimum by symmetry (moduli trapping, hep-th/0403001; D363–D364). A χ-sector ESP alone is radiatively a maximum (D366); a weight-3 stabiliser Y sharing the same factor, W ⊃ (T − T_E)(λ M_P χχ̄ + k Y), has V = k²|T − T_E|² exactly, so its minimum coincides with the ESP by construction (D373–D375). Capturing late makes x's kinetic energy harmless. This removes the shield problem (item 16) and the H₀ cost, and gives up the tail predictions (w = −1 exactly). "Λ from the cliff" is kept: with the stabiliser at V = 0, Λ = V_Twist(x_E) ∝ e^{−2n}, so n ≈ 124.1 instead of 124.6, with no effect on n_s or r (D383). (b) **The original tail** is kept as a conditional variant, valid only if the shield no-go (item 16) is evaded. The tests table splits accordingly: r, n_s and β apply to both; w = −1 applies to TWIST-I; the tail tests (WATCH-PURE-DR3, WA-CEILING, GROWTH, E_G) apply only to (b).
+Present v6 with two readings.
+
+(a) **TWIST-I (adopted).** The Twist field rolls exactly as in v5 through inflation, reheating and matter genesis. It is only x ≈ 3 at matter freeze-out, and converges to x ≈ 29.8 by T ~ 10¹¹ GeV (D367a). It is captured at a point x_E ≈ 27–29.5 that it crosses at T ≈ 10¹¹–2×10¹² GeV, after the matter yield has settled. The construction is W ⊃ (T − T_E)(λ M_P χχ̄ + k Y), with χ at modular weight 3/2 and Y at weight 3:
+- χ is massless at T_E and traps x there (moduli trapping, hep-th/0403001).
+- Y gives V = k²|T − T_E|² exactly (no e^K tilt), so the minimum coincides with the trapping point by construction (D373–D375).
+- x and the angle get masses ≳ 10⁵ GeV and decay before BBN.
+- Loop tilts are negligible (D374).
+- Bounds: 0.004 ≲ λ ≲ 0.03 (D377).
+- The capture energy is tiny (Δ ≈ 1 + O(10⁻³), D384), so no refits are needed.
+
+The vacuum energy after capture is V_Twist(x_E) ∝ e^{−2n}, so "Λ from the cliff" is kept, with n ≈ 124.1 instead of 124.6 and no effect on n_s or r (D383). Dark energy is exactly w = −1 (no tail). With the angle heavy, the axion-overproduction clause and the eV-branch angle relic disappear (D382; item 20). This removes the shield problem (item 16) and the H₀ cost. It is not derived from a UV theory: the factor (T − T_E) and the weights are assumed.
+
+(b) **The original tail** is kept as a conditional variant, valid only if the shield no-go (item 16) is evaded.
+
+The tests table splits accordingly: r, n_s and β apply to both; w = −1 applies to (a); the tail tests (WATCH-PURE-DR3, WA-CEILING, GROWTH, E_G) apply only to (b).
 
 ## 19. TWIST-I's CMB predictions are Starobinsky-class (D368)
 

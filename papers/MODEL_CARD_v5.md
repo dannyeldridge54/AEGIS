@@ -98,10 +98,12 @@ Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA a
 −3.7σ). How the BAO–CMB tension resolves (and the optical depth, D226) decides between the plain Twist and these variants as much as n_s does.
 
 
-## Update 14 Nov 2026, 07:30: adopted reading TWIST-I (PREREG_TWISTI + D1–D2)
-- The Twist is the inflaton; x rolls through matter genesis (to x ≈ 30) and then settles at x_min ≥ 30 with m_x, m_y ≳ 100 TeV (decay before BBN) or adiabatically (D3); dark energy is Λ.
+## Update 14 Nov 2026 (rev. 09:55): adopted reading TWIST-I (PREREG_TWISTI + D1–D9; papers/twist_v5/TWISTI_CAPTURE.md)
+- The Twist is the inflaton. x rolls as in v5 (x ≈ 3 at matter freeze-out, converging to ≈ 29.8 by T ~ 10¹¹ GeV) and is captured at x_E ≈ 27–29.5 by W ⊃ (T − T_E)(λ M_P χχ̄ + k Y): trapping plus an exact, untilted weight-3 stabiliser. m_x, m_y ≳ 10⁵ GeV; capture energy Δ ≈ 1 + O(10⁻³).
+- Λ = V_Twist(x_E) ∝ e^{−2n}: Λ from the cliff is kept (n ≈ 124.1; n_s and r unchanged, D383). Dark energy is exactly w = −1.
 - Reason: the one-loop shield no-go (D323–D345): a rolling −3 ln field moves the SM couplings by d(1/α_a)/d ln x = −b_a/4π.
 - Future-data rules: r in [0.002, 0.008]; n_s 0.9642–0.9654 within 3σ of SO/SPT-3G; w = −1 (fails if excluded at > 5σ); β = 0.
-- Open: the stabilising sector (m ≳ 100 TeV or adiabatic); the dilution of n_B/s from x decay; the N* shift.
-- Isocurvature under the alternative coupling reading: locked D320 PASS (sensitivity 3.68 ≤ 5; margin 1.39× at f = 0.1 M_P).
-- Isocurvature at the alternative fit point m_σ = 3×10¹⁰: locked D360 T1 PASS (sensitivity 1.2; margin 4.2×).
+- CMB predictions are Starobinsky-class at N* 55.7–57.6 (D368–D370). The angle is heavy after capture (no axion overproduction, no angle relic, D382).
+- Open: the UV origin of (T − T_E) and the weights.
+- Locked tests today: isocurvature under the alternative coupling PASS (3.68 ≤ 5, margin 1.39×, D320b); at the alternative fit point m_σ = 3×10¹⁰, PASS (1.2, margin 4.2×, D360b).
+- Running: D355 (free-neutrino fit, PC), D367 (x's kinetic share; preliminary D367a).

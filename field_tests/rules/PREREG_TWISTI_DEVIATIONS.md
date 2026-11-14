@@ -22,3 +22,6 @@ D5 (08:00 CT; correction to D4): the residual-displacement bound is ≲ 10⁻⁷
 D6 (08:12 CT; consequence, not a rule change): kinetic energy at capture is harmless if capture is late (Δ ∝ T_c³); the binding requirement is that x_min coincides with x's resting point to ≲ 10⁻⁷–10⁻⁵ M_P, a positional tuning (D362).
 D7 (08:22 CT; consequence): D6's positional tuning is avoidable if x is trapped at an enhanced symmetry point (ESP) at x ≳ 30 crossed at T ≲ 10¹⁰–10¹² GeV with coupling g ≳ 0.1, where the stabiliser has its minimum by symmetry (D363–D364).
 D8 (09:05 CT; consequence): with W ⊃ (T − T_E)(λ M_P χχ̄ + k Y), Y at weight 3, the ESP and the stabiliser minimum coincide exactly by construction; the positional tuning of D6 is removed; m_x ≳ 6×10⁴ GeV keeps the ESP a minimum against χ loops (D373–D375).
+D9 (09:55 CT; text correction, not a rule change): the lock's sentence "Λ is a free tuning (the v5 tail's 'Λ from the cliff' is given up)" is
+superseded. With the D373 stabiliser at V = 0, Λ = V_Twist(x_E) ∝ e^{−2n} (D383), and the capture point is x_E ≈ 27–29.5, crossed at
+T ≈ 10¹¹–2×10¹² GeV (D367a, D384), not "x ≈ 30 at matter genesis". The scored rules (r, n_s, w = −1, β = 0) are unchanged.
