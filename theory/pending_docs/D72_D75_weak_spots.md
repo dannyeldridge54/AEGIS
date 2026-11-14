@@ -3223,3 +3223,13 @@ fail even for small gradient and kinetic energy. Caveats: two models only, confo
 The Twist has α = 1 (x = e^{√(2/3)φ}), the same field-space scale as Starobinsky, so it is in the robust class. Its extra structure, the cliff
 at the far end, lies on the side the field rolls toward, not on the side kicks come from. D288 already showed light fields are safe.
 Gap 12: LOW, unchanged and better supported.
+
+**D341 (pp, 07:06 CT, referee m1 on D317: limits at 10⁵ GeV, not 10⁷) — D317 is somewhat too strong; the ξ ~ 1 window reaches ~200 TeV
+(literature; order of magnitude).** IceCube 6-year HESE update (arXiv:1903.12623): limits appear only as curves (their Fig. 5, not read
+numerically). The text says they are largely unchanged from the 4-year analysis, except ν and charged-lepton channels at ~100–200 TeV, which
+tighten by ~10×. The best-fit lifetimes (Table 1) set the scale, in 10²⁸ s: W⁺W⁻ 0.37 at 412 TeV, bb̄ 0.07 at 1.1 PeV. So hadronic limits at a few
+hundred TeV sit at ~10²⁷–10²⁸ s, below the 6×10²⁸ s LHAASO number at 10 PeV used in D317. HAWC (Virgo, arXiv:2309.03973) is in the same
+range; not read.
+Revised reading of D317 (τ ≈ 10²⁴ s (10⁶ GeV/m)⁵ ξ⁻²): against ~10²⁷–10²⁸ s, ξ ~ 1 is allowed up to ~150–250 TeV (10²⁸ at 100 TeV; 3×10²⁷ at 200
+TeV). At 500 TeV it needs ξ ≲ 0.06–0.2. D317's "only ~100 TeV survives" becomes "≲ 200 TeV survives for ξ ~ 1". Both are order-of-magnitude,
+and the anchor (D242) is itself a reading of plots. Gap 13: LOW–MEDIUM, unchanged; the decaying-DM signal is still optional (D318).
