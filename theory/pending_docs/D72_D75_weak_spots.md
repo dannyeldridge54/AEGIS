@@ -2564,3 +2564,16 @@ constant from degenerate vacua" (arXiv:hep-th/0110137): the residual vacuum ener
 by the input, not predicted. The Twist's e^{−2n} with 2n ≈ 249 is the same structure (D255: n = π/α_h, α_h ≈ 1/39.8; the prefactors differ).
 Like Yokoyama's, it trades one tuning (Λ) for one gauge coupling known to ~0.3%. Gap 8 unchanged: n is chosen; a derivation would need a
 UV theory that fixes a hidden gauge coupling at the per-mille level. No further literature search planned for this gap.
+
+**D284 (pp loop 36, gap 1 n_s: D275 against the published radiative-correction work).** (a) Ellis, Gherghetta, Kaneta, Ke & Olive,
+"Effects of radiative corrections on Starobinsky inflation" (arXiv:2510.15137): non-SUSY one-loop corrections from Yukawa couplings to the
+inflaton reach the ACT value (n_s 0.9752 ± 0.0030) for 3.8×10⁻⁴ < y < 5.6×10⁻⁴ (T_RH ≈ 2×10¹¹ GeV); scalar trilinears never reach it; the
+corrections are additive polynomial-log terms, not a multiplicative power; in exact SUSY they cancel (supertrace), SUSY breaking gives
+O(m̃²φ²/64π²), and no-scale supergravity Starobinsky is explicitly left for future work. (b) Gialamas, Karam, Racioppi & Raidal
+(arXiv:2504.06002): λ_eff = λ[1 + δ ln(φ/M_P)], δ ≈ 1–3% reaches ACT, Δr ≈ 4δ/N — the multiplicative-log structure D275 finds, for
+non-minimal Higgs inflation. Reading: D275's mechanism — inflaton-sector F_S splitting of a field inside the no-scale log, giving
+V ∝ x^{2γ} with γ = −Nλ²/64π² — is not in the published literature we found; it is the supergravity case Ellis et al. leave open, and it
+evades the exact-SUSY cancellation they note because the splitting comes from the inflaton's own F-term. Its predicted r (≈ 0.0068 for
+G−, from the locked scan) is consistent with Gialamas et al.'s Δr ≈ 4δ/N scaling (δ ≈ 2γ-equivalent). Gap 1: unchanged as a verdict
+(INCONSISTENT for the plain Twist); the G− variant now has a computed (estimate-level) mechanism and a literature gap it would fill. Worth a
+proper one-loop supergravity calculation if Danny wants to develop G−.
