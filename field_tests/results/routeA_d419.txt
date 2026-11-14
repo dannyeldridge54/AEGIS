@@ -1,0 +1,17 @@
+ ε            n_s       r          α_s         B1          B2         x*        x_end     (1+ε/x)²_end  (1+ε/x_E)²
++0.0e+00   0.96510  0.003562  -6.089e-04  -9.19e-05  +1.49e-07  1.31e-04  8.84e-03  1.000000      1.000000000
++1.0e-06   0.99661  0.008353  -1.376e-03  +8.32e-03  -1.37e-03  1.04e-04  8.84e-03  1.000226      1.000000068
++3.0e-06   1.13123  0.094133  -1.140e-02  +4.25e-02  -2.79e-03  4.54e-05  8.83e-03  1.000679      1.000000203
++1.0e-05   failed: ValueError
++2.0e-05   failed: ValueError
++3.0e-05   failed: ValueError
+-1.0e-06   0.94144  0.001701  -2.918e-04  -8.59e-03  +1.42e-03  1.56e-04  8.84e-03  0.999774      0.999999932
+-3.0e-06   0.90603  0.000480  -7.372e-05  -2.60e-02  +4.34e-03  2.01e-04  8.84e-03  0.999321      0.999999797
+/home/claude/aegis/theory/twist2/routeA_d419.py:23: IntegrationWarning: Extremely bad integrand behavior occurs at some points of the
+  integration interval.
+  Nof = lambda p: quad(lambda q: -1 / DL(q) if DL(q) < 0 else 1e9, p, pend, limit=400)[0]
+-1.0e-05   0.82724  0.000017  +6.465e-06  -8.95e-02  +1.49e-02  3.28e-04  8.85e-03  0.997741      0.999999324
+/home/claude/aegis/theory/twist2/routeA_d419.py:23: IntegrationWarning: The integral is probably divergent, or slowly convergent.
+  Nof = lambda p: quad(lambda q: -1 / DL(q) if DL(q) < 0 else 1e9, p, pend, limit=400)[0]
+-2.0e-05   0.75237  0.000000  +6.853e-05  -1.84e-01  +3.07e-02  4.61e-04  8.86e-03  0.995491      0.999998649
+ε for n_s = 0.9736: +3.036e-07 → r = 0.00455, α_s = -7.717e-04, B1 = +2.46e-03, B2 = -4.23e-04, Λ factor 1.000000021

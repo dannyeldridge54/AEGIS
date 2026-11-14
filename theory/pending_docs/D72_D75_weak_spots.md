@@ -4130,3 +4130,16 @@ Key numbers: n_s in a thawing background = 0.9736 (ΛCDM 0.9737) — letting dar
 helps little (Δχ² −2.2 vs ΛCDM with one extra parameter) while free w0–wa gains −10.0, so the data prefer a steeper (phantom-crossing)
 shape than any single thawing field. Reading (outcome 3 of the 16:19 discussion): the Twist's inflation sector is ~2.8σ off on CMB-SPA+DESI
 +Pantheon+ regardless of the dark-energy branch; all other sectors pass their checks. This goes into the Twist-2 paper's abstract.
+
+**D419 (LEFT ladder + CENTRE; scored, locked PREREG_D419_ROUTE_A; results/routeA_d419.txt) — ROUTE A WORKS: one tiny holomorphic term,
+F → (T + ε)·cliff/√(1+T/μ) with K = −3 ln(T + T̄) unchanged, gives n_s = 0.9736 at N* = 57.2 for ε = +3.04×10⁻⁷ (M_P units).**
+Locked new inflation predictions (n_s is now FITTED, not predicted): r = 0.0046, α_s = −7.7×10⁻⁴, B1 = r − 3(1−n_s)² = +2.5×10⁻³ (bridge 1 now
+broken in a definite direction: r is 2.2× the plain-Starobinsky value 0.0021 at the same n_s), B2 = −4.2×10⁻⁴. Cross-sector (centre): factor at
+the end of inflation 1.00007 (kination, heat share, N* unchanged), Λ factor 1 + 2×10⁻⁸ (absorbed in n). Window: n_s ∈ 0.9736 ± 0.003 needs ε ∈
+(2.0–4.0)×10⁻⁷ — a ±33% window, comparable to the R³ precedent (arXiv:2505.03608, α ∈ −4.2 to −1.9×10⁻⁵); ε/x* ≈ 2.5×10⁻³ at the CMB point.
+Crown consequence (from the scored D410 fits, no new run): at n_s = 0.9736 the THAW_FREE fit is better than ΛCDM in every sense (CMB −2.77,
+BAO −0.41, SN −2.48; total −2.15), and the single-axion β link needs c_γ/f = 24.9 ≤ 30 — so with Route A all five senses agree. Honest label:
+this agreement is partly by construction (ε fitted to n_s); the real tests move to r = 0.0046 (LiteBIRD σ_r ~ 10⁻³: ~4.5σ detection; 2.4σ from
+plain Starobinsky at the same n_s), α_s = −7.7×10⁻⁴ and B1 = +2.5×10⁻³. Physical reading: a small constant-like piece in the stabiliser
+superpotential (W ⊃ ε S·cliff/√(1+T/μ)), natural in no-scale models with a flux constant; its size relative to the main term (~2.5×10⁻³ at x*)
+is a mild tuning, stated.

@@ -117,3 +117,5 @@ alone.
 **Cycle 7 (D414, CONFIRMED estimate):** the baseline birefringence axion is natural: c_γ ≈ 1.6–3.9, f ≤ 0.1 M_P, Ω_a ≤ 3×10⁻³, mass 3×10⁻³³–3×10⁻²⁹ eV; if m ≳ 20 H0 it predicts β_reio/β_rec < 1 (LiteBIRD can separate it from the dark-energy axion and from miscalibration).
 
 **Cycle 9 (D416, CONFIRMED):** total extra radiation (light gravitino + hidden decay products) ΔN_eff ≈ 0.08 (0.05–0.10) < 0.14; requires m_3/2 ≤ 4.7 eV. Prediction for SO/CMB-S4.
+
+**Crown + Route A (D410, D419, CONFIRMED with label):** the crown (CMB-SPA+DESI+Pantheon+) rejects the undeformed Twist n_s 0.9651 (Δχ² 7.95). One tiny holomorphic term (ε = 3.0×10⁻⁷, K unchanged) gives n_s 0.9736; then every sense fits better than ΛCDM. New locked inflation predictions: r = 0.0046, α_s = −7.7×10⁻⁴, B1 = +2.5×10⁻³ (n_s now fitted).
