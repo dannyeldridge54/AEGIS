@@ -2609,3 +2609,10 @@ K ⊃ |χ|²/(T + T̄)^{3/2}: then e^K|W_χχ|²/K_χχ̄² = |W_χχ|², the lo
 D156 implicitly assumed this. **New assumption for v6: χ has modular weight 3/2** (analytic; not run numerically). Without it the plain
 Twist's inflation prediction is not what is quoted. Gap 15 updated (C: loop origin needs a ~0.4 M_P field inside the log; G−: analogue
 only). Corrections file updated.
+
+**D287 (pp loop 39) — D286's weight-3/2 assumption for χ verified in full supergravity (chi_weight32_d287.py; results/chi_weight32_d287.txt).**
+K ⊃ |χ|²/(T + T̄)^{3/2}, W_χχ = 6190 m (≈ 0.13 M_P, D118), λ = 0, TWIST-K background, x = 5×10⁻⁵–4×10⁻⁴: fermion and both scalar masses
+m² = 3.8316×10⁷ m² at every x (x-independent to 5 digits); the Hubble-induced shift is the same at every x; the one-loop term is
+dV/V = 3.994×10⁶ × (m/M_P)² = 1.8×10⁻³, constant across the CMB window — it only renormalises the amplitude (absorbed by A_s);
+γ_eff ≈ −1×10⁻¹⁰ (no tilt). So with modular weight 3/2 the plain Twist's n_s ≈ 0.964–0.965 stands; D156's conclusion is confirmed, now with
+its hidden assumption stated and checked. Assumption list for v6: χ weight 3/2 (verified consistent, not derived).
