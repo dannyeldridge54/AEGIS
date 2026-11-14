@@ -1,9 +1,9 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 5
-consecutive_walls: 0
-cycle: 9
-next_part: 10
+consecutive_walls: 1
+cycle: 10
+next_part: 11
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -53,3 +53,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 3. Publish as a NEW Zenodo record (authorised by this instruction): preprint, CC-BY-4.0, creator as before, publisher Zenodo,
    related: isDerivedFrom 10.5281/zenodo.24202420 and references 10.5281/zenodo.24232382; verify md5; log in ZENODO_UPDATE; commit; report DOI.
 4. Then resume the loop.
+- cycle 10 (17:24): PART 10 — D417 α frozen after pinning (Δln α ≲ 2e-14), 1.6% shift only before capture; U(1)_X vector-like, ε = 0. No scored result → WALL 1.

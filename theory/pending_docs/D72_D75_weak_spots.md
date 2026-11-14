@@ -4097,3 +4097,15 @@ SUSY-breaking scale √F = (√3 m_3/2 M_P)^{1/2} ≲ 1.4×10⁵ GeV — consist
 GeV; low-scale gauge mediation with m_h = 125 GeV also bounds m_3/2 from below (arXiv:1608.01610; not read — next cycle on part 9). (b) Part 4:
 the light gravitino is what allows T_RH ~ 5×10¹⁴ GeV (no gravitino overproduction for m_3/2 ≲ 16 eV), so leptogenesis stands. (c) CENTRE:
 F7 PASS (0.081) with a sharpened prediction: ΔN_eff ≈ 0.05–0.10 in total (SO/CMB-S4 testable). Result → walls 0.
+
+**D417 (cycle 10; PART 10 SM couplings / α, RIGHT; consistency arithmetic from locked results, no new locked computation).** (a) ALONE:
+D400's one-loop drift d ln α_em/d ln x = 6.97×10⁻³ applies to Twist-2 only while x moves, i.e. before capture. From matter freeze-out (x ≈ 3.1,
+T ≈ 2×10¹³ GeV) to the pin (x_E ≈ 29.6, T ≈ 1.5×10¹¹ GeV) α_em shifts by 1.6% — all long before BBN, with no observable at that epoch except
+the matter yield, which D367c computed along the same trajectory (couplings in the yield are taken at the matter epoch, consistent). After
+pinning and the gauge decay (T_d ≈ 10⁹–10¹³ GeV), the residual displacement ≲ 10⁻¹⁰ M_P (D396) gives Δln α ≲ 2×10⁻¹⁴: α at BBN, recombination,
+quasars, Oklo and today is the same → F1 passes by construction (clock bridge balanced at R = 0, unlike any rolling modulus).
+(b) CONNECTIONS: part 1 — D407 condition (iii): U(1)_X must be anomaly-free; a vector-like hidden pair (D412) is, and with no state charged
+under both U(1)_X and hypercharge the kinetic mixing is not generated at one loop (ε = 0), so the hidden decay products stay hidden
+(consistent with D412's ΔN_eff budget). Part 7 — the birefringence axion's CP-odd coupling does not shift α (F1). Part 9 — soft masses
+x-independent (D292), so no sliding SUSY scale after capture.
+(c) CENTRE: F1 PASS, bridges unchanged. No new scored result → WALL 1.
