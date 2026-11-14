@@ -3166,3 +3166,11 @@ Verdict: D333's local D3 + bulk-U candidate fails condition (a), unless twisted 
 is not shown in any model. Gap 2: HIGH; the no-go now covers volume, G₂ and complex-structure rolling fields alike. The weak point is the
 Twist's own e^K ∝ x^{−3}, which is what makes it rung 3.
 v6 suggestion: state this no-go explicitly in §5.1 as the precise form of the shield assumption.
+
+**D335 (deep loop 23, gap 10 strong CP: any change since D281?) — timelines confirmed, no exclusion yet (literature).** (D333(a) was settled
+in D334, so this loop took gap 10.) CERN Courier, "In pursuit of the post-inflation axion": the post-inflation window lies within one or two
+decades up to ~100 μeV. ALPHA (plasma haloscope, 40–400 μeV) Phase I covers 40–80 μeV, with physics data from 2026 (dark photons first)
+and a full axion search in 2027–28; Phase II goes up to 200 μeV at DFSZ. MADMAX (40–400 μeV): its 2024 prototype at ~19 GHz found no excess
+and set world-best dark-photon limits at 78.6–84.0 μeV. Installation in the Morpurgo magnet is planned for LHC LS3 (mid-2026–2029), with a
+4 T magnet ~2030. ADMX/CAPP/HAYSTAC lead below 25 μeV. The Twist's needed separate post-inflation axion (40–600 μeV) is not yet probed at QCD
+coupling; first coverage is ALPHA 2027–28 (lower end). Gap 10: LOW–MEDIUM, unchanged (D281 timelines confirmed).
