@@ -2725,3 +2725,9 @@ decays as a⁻³, so the drift should be small but is not computed; the relic fo
 not realised for the computed history; (2) the eV-gravitino branch predicts a cold ALP-like component from the Immirzi angle at the 10–30%
 level, with mass √(4c − 2) m_3/2 — a new, testable consequence (not locked; would need a lock before any data comparison). (3) The escape
 c = 1/2 is not needed.
+
+**D300 (overnight pp loop 21) — is D299's eV angle relic constrained? No.** Its only matter coupling is the Nieh–Yan axial coupling
+c_A ∂θ J₅/M_P; the induced axion-electron coupling is g_ae ≈ 2c_A m_e/M_P ≈ 3×10⁻²² — nine orders below red-giant/white-dwarf cooling
+bounds (~10⁻¹³); no photon coupling (D249 structural), so no haloscope/helioscope or birefringence signal. As a coherently oscillating field
+with m ≳ 1 eV it is ordinary cold dark matter on all cosmological scales (Jeans scale far below Mpc). So the 12–28% component is invisible to
+current probes — "testable" in D299 should read "consistent but practically unobservable"; correction recorded here.
