@@ -2841,3 +2841,17 @@ Reading: (1) independent support that an α = 1 tail is in the DESI-allowed wind
 seven-disk/T⁷ picture gives α = 1 as three unit disks — in that picture T is not a single volume modulus but a combination of disk moduli, which
 is a candidate "non-volume α = 1 direction" for gap 9 (to examine: whether matter can be neutral under it, cf. D309). Gap 5 unchanged; gap 9:
 one concrete lead (seven-disk M-theory) to check next.
+
+**D311 (deep loop 10, gap 9: the seven-disk M-theory lead from D310).** Read: Gunaydin, Kallosh, Linde & Yamada, "M-theory cosmology, octonions,
+error correcting codes" (arXiv:2008.01494). M-theory on a twisted T⁷/G₂ has seven moduli T^i multiplying the seven associative 3-forms
+(Φ = t_i φ^i); the G₂ volume is a product, V = Π(2T^i). Kähler K = −Σ log(T^i + T̄^i). The α values 3α = 7…1 come from identifying moduli
+into blocks; e.g. the (4,3) split T¹=T⁴=T⁵=T⁷ ≡ T₍₁₎, T²=T³=T⁶ ≡ T₍₂₎ gives K = −4 log(T₍₁₎+T̄₍₁₎) − 3 log(T₍₂₎+T̄₍₂₎) — so a 3α = 3 (α = 1)
+direction is a three-modulus block T₍₂₎ with the other block T₍₁₎ held fixed. Reading for gap 9: (1) yes — in this picture the Twist's α = 1
+field is not the overall volume but a sub-block (with V ∝ T₍₁₎⁴T₍₂₎³, rolling T₍₂₎ at fixed T₍₁₎ still changes the G₂ volume as T₍₂₎³);
+(2) matter/gauge localisation is not discussed — in M-theory on G₂, non-abelian gauge fields and chiral matter live on codimension-4/7
+singularities, and their gauge couplings scale with the volume of the associative 3-cycle they wrap; matter is neutral under T₍₂₎ only if the SM
+3-cycle's volume involves T₍₁₎ alone. That is a concrete, checkable condition (SM on a 3-cycle calibrated by T₍₁₎-type forms), not obviously
+excluded — the first non-excluded lead for gap 9. Caveats: twisted T⁷ is a toy; real G₂ compactifications with chiral matter need
+singularities; the 4d Planck mass scales with V, so a rolling block changes M_P/M_11 (must be checked for varying-G). Status: gap 9 MEDIUM,
+with an open lead (seven-disk sub-block with the SM on a complementary 3-cycle). Worth a follow-up by an M-theory expert (question 12 for the
+open-problem doc).
