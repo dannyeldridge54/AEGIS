@@ -64,6 +64,7 @@ out-of-sample test than a new survey.
 - D124: matter at 0.8% heat 7.53× (prediction 2–3× MISSED).
 
 ## Open
+**Supersymmetry breaking (D267, after v5 was published):** a constant W₀ makes m_3/2 ∝ x^{−3/2} (a factor 5.7×10⁸ from the CMB point to today). That is either super-Planckian during inflation or ≲ 3×10⁴ GeV today, and at the Twist's T_RH the latter breaks nucleosynthesis, so it is excluded. The options left are (i) a near-massless gravitino with superpartners not tied to m_3/2, or (ii) W ∝ T^{3/2} plus a sequestered uplift (an extra tuning). v5 §5.2 and assumption 4 must be corrected in the next version.
 The fifth force: an effective-theory assumption — no string setting examined keeps matter neutral at today's field value (D188–D211);
 locked signature PREREG_SHIELD, with the leak's growth exponent now a reported quantity (D216) · n not derived (statistically no worse than
 a chosen Λ, D215) · n_s: INCONSISTENT on current data; no fix inside rung-3 plateaus (D131–D132), TWIST-L/P/M9 locked for future data ·
