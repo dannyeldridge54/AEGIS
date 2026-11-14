@@ -3744,3 +3744,21 @@ tightens the neutrino bound, as expected for w > −1 dark energy (D337). This i
 Consequences: (1) under the adopted TWIST-I (Λ, w = −1), the relevant penalty is ΛCDM's 1.9, so gap 14 is unchanged for the adopted model;
 (2) the original tail (the conditional variant) carries an extra neutrino-mass cost of ΔD ≈ 3.4. That is one more cost of the tail, alongside
 the shield no-go and the H₀ shift, and it further supports the TWIST-I choice. Gap 14: LOW–MEDIUM (TWIST-I); MEDIUM for the tail variant.
+
+**D385 (pp "research gaps", 10:55 CT, gap 1 n_s: what do the newest CMB+BAO combinations say about the Twist's N*?) — the tension is
+~1σ against CMB alone and ~2.8σ once DESI is added; under TWIST-I (ΛCDM background) the DESI number applies, so gap 1 stays HIGH
+(literature + arithmetic in code, aegis-checked).** "A Global Overview of Starobinsky Inflation beyond slow-roll with CMB-BAO data"
+(arXiv:2609.19296): CMB-SPA n_s = 0.9684 ± 0.0030; CMB-SPA+DESI 0.9728 ± 0.0027. Starobinsky's fitted N* (prior N(60,20)) is 62.5 (+5.3/−7.6)
+for CMB-SPA and 72.1 (+5.6/−7.6) for CMB-SPA+DESI, so the data want N* ~ 63–72, with best-fit T_re ~ 10¹² GeV (SPA) or ~4×10⁸ GeV (SPA+DESI)
+at instant reheating. "The spectrum of n_s constraints from DESI and CMB data" (arXiv:2512.05108): adding DESI raises n_s in every CMB
+combination, most with ACT, and τ moves up with it (an n_s–τ interplay); Starobinsky-type models are disfavoured at >2σ for SPA+DESI.
+Twist (kination_Nstar.txt, heat share 0.04–0.4%; 0.65–0.8% extrapolates to N* ≈ 57.2): N* 57.4–57.9, n_s 0.9651–0.9655.
+Distance (computed): CMB-SPA 1.0–1.1σ (inside the 68% N* interval, whose lower edge is 54.9); CMB-SPA+DESI 2.7–2.8σ (N* is ~7 below the
+68% lower edge 64.5). Instant reheating (N* 55.7): 1.4σ and 3.2σ.
+Reading: consistent with D329/D370 (the tension is background-conditional). Two possible relief routes, both outside our control:
+(i) a better τ (n_s–τ correlation; LiteBIRD/CLASS low-ℓ), (ii) the BAO–CMB tension resolving away from ΛCDM. TWIST-I has a ΛCDM
+background (w = −1), so it cannot use (ii) itself. No model change and no new prediction; the locked TWIST-I n_s rule is unchanged.
+Open check for later (not computed, needs a lock first): kination_Nstar.py predates the TWIST-I/σ sector; the D367 trajectory keeps
+Ω_kin > 0.5 until N − N_e ≈ 3.5 (vs ≈ 2.4 for a pure 0.8% heat share), which would add ~+0.5 to N*, while σ's matter-like share (up to
+0.58 at N − N_e ≈ 4.5) would subtract. Net sign unknown; |ΔN*| ≲ 1 cannot close the ~7 e-fold gap to SPA+DESI.
+Status: gap 1 HIGH, unchanged; quantified as ~1σ (CMB-SPA) / ~2.8σ (CMB-SPA+DESI).
