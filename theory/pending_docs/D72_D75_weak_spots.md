@@ -4146,3 +4146,12 @@ is a mild tuning, stated.
 
 **D420 (17:55 CT) — Twist-2 paper published: Zenodo record 24235736, DOI 10.5281/zenodo.24235736 (v1).** Abstract states the crown failure of the
 undeformed n_s (Δχ² 7.95) and the Route A fit (ε = 3.0×10⁻⁷ → r = 0.0046, α_s = −7.7×10⁻⁴); weak points listed; prior art credited.
+
+**D421 (17:58 CT, Danny: "Has anyone done this yet") — the bound side is done; the one-loop prediction side appears not to be (literature).**
+Martins et al. / Euclid (arXiv:2105.09746) treat dark energy's coupling to electromagnetism as a free parameter ζ and, combining quasars,
+clocks and MICROSCOPE (with Euclid forecasts), get ζ = (−3.6 ± 5.9)×10⁻⁸ (w0wa fiducial) — ~60× tighter than the MICROSCOPE-only 3.6×10⁻⁶ used
+in the α paper; they note such couplings "unavoidably exist in string theory" but do not compute them. arXiv:2209.12189 couples the field's
+kinetic term to F²; arXiv:2604.12032 (DESI-era coupled DE) couples to dark matter only; arXiv:2411.08774 uses JWST α constraints; none
+derives ζ from a Kähler potential. So the α paper's specific contribution — ζ = 3.3–5.7×10⁻³ predicted at one loop for K ⊃ −k ln(X+X̄),
+hence ~10⁵ above the combined bound — was not found elsewhere (Choi 1999 is the qualitative precursor). For a v2 of the α paper: add the
+2105.09746 combined bound (strengthens the exclusion from ~10³ to ~10⁵ in ζ).
