@@ -3353,3 +3353,14 @@ CMB telescopes. No achieved accuracy, no named experiments and no date for a cal
 relative calibration.
 Reading: 0.01° would test β = 0.2–0.37° at ≫10σ, so the BIREF-NULL rule becomes decisive once a drone-calibrated SO/CLASS β is published.
 The date is open; likely late 2020s. Gap 4: HIGH, not rising, unchanged.
+
+**D355 (07:25 CT, Danny's choices: split model + free-neutrino PC fit + scheduled loops) — locks written; PC job prepared.**
+(1) PREREG_TWISTI.md (locked and pushed): TWIST-I = v5 inflation/reheating/matter/DM unchanged, x stabilised after reheating (m_x ≥ 5 meV),
+Λ for dark energy. It removes gap 2 (no drift if x is frozen), the H₀ cost (D332) and the tail's n_s background dependence, and gives up the
+"Λ from the cliff" and the tail predictions. Four future-data rules: r, n_s, w = −1, β = 0. The already-seen ΛCDM-background n_s cost (8.46)
+is stated as not evidence. Open (to check in loops): does the matter yield need x to keep rolling after reheating? (freeze-out ~2×10¹³ GeV;
+the stabilisation must come later); and what stabilises x without reintroducing drift.
+(2) PREREG_D355_MNU_FREE.md + DEVIATIONS (D1, before running), mirrored and hash-checked on the PC (34da959e…). Runner:
+cmb-fit/axiclass/run_mnufree_d355.sh (two fits in parallel, OMP 4 each, then score to field_tests/results/d355_mnufree.json); launcher
+Desktop\RUN_D355_MNUFREE.bat. These are new files only, with no git operation on the PC repo. The fits run in WSL, which this session cannot
+start, so Danny double-clicks the .bat (~1.5 h, by the NS-SPA timings of 5100 s/fit).
