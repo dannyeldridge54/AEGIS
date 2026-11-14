@@ -2294,3 +2294,9 @@ with the Twist's field speed today (3.15×10⁻¹¹ M_P/yr, D225), |d ln α/dφ|
 the UV–strontium comparison but quotes no α bound yet. For the Twist: the shield's instanton-only breaking (~10⁻⁷⁹) passes any foreseeable
 clock; any perturbative leak (D216: falling or growing) above ~10⁻¹² per M_P would be caught by a thorium clock at 10⁻¹⁸/yr. Gap 3 status:
 test quantified with a measured K; timing depends on long-term Th/Sr ratio campaigns (years).
+
+**D254 (pp loop 19) — gap 4 / PREREG_GROWTH timing: Euclid's first cosmology results are expected in 2027 (Euclid Consortium news;
+Schrabback et al. 2026, A&A 708, 345 is a single-cluster lensing pilot, no S8/σ8/w0 constraint).** So both of the Twist's main late-universe
+tests — DESI's five-year dark energy (D247) and Euclid's first growth/lensing cosmology — land in 2027. PREREG_GROWTH (σ8 −1.5%, f σ8 −3% at
+z ≈ 0.4, growth index ≈ 0.557) will first be scored then; at fixed Ω_m the σ8 shift is small compared with early Euclid errors, so the
+combined DESI + Euclid analysis (expected ~2027–28) is the realistic first decisive growth test. Gap 4 timeline sharpened; no status change.
