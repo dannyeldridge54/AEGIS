@@ -1,0 +1,4 @@
+m 1e+09, A 1.0: numerical dilution 2.48e+09 (D359 est 1.5e+09); ratio 1.66; status 1
+m 1e+09, A 0.001: numerical dilution 2.17e+03 (D359 est 1.5e+03); ratio 1.44; status 1
+m 1e+13, A 1.0: numerical dilution 2.48e+05 (D359 est 1.5e+03); ratio 165.58; status 1
+m 1e+13, A 0.001: numerical dilution 1.19e+00 (D359 est 1.0e+00); ratio 1.19; status 1

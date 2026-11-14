@@ -3420,3 +3420,14 @@ canonical sensitivity of 3.734 (D277: 3.70). Alternative reading: n_B/s 5.7694×
 **S_alt = 3.681 ≤ 5 → PASS**. Margin at f = 0.1 M_P: 5.1/3.681 = 1.39 ≥ 1, so isocurvature passes under the alternative reading too, with the
 same ~1.4× margin as the canonical one (D278). Stated limitation (in the lock): m_σ = 5.8×10¹⁰, not the alternative fit point 3.0×10¹⁰.
 Gap 7: LOW–MEDIUM, unchanged; the coupling-reading question no longer affects isocurvature.
+
+**D360a (Danny "More test", T2 scored; PREREG_D360_TESTS + D1; results/modulus_dilution_d360.txt) — D359's arithmetic holds where its
+assumptions hold; one case fails, and the failure exposes an UNDERESTIMATE in D359 (correction).**
+Averaged modulus + radiation + decay from H = m: m = 10⁹, A = 1 gives 2.48×10⁹ (est 1.5×10⁹, ratio 1.66, pass). m = 10⁹, A = 10⁻³ gives 2.17×10³
+(ratio 1.44, pass). m = 10¹³, A = 10⁻³ gives 1.19 (pass). m = 10¹³, A = 1 gives 2.48×10⁵ (est 1.5×10³, ratio 166, FAIL).
+Reason for the fail: D359 capped the start of oscillation at matter freeze-out (T = 2×10¹³ GeV) but kept the energy fraction at A²/6. That
+fraction is only right when oscillation starts at H = m. For m ≫ H_arrival (H at 2×10¹³ GeV is 5.6×10⁸ GeV), the fraction at arrival is
+(A²/6)(m/H)², which is larger. Corrected requirement for Δ ≤ 1 (aegis-check: recomputed in code): A ≲ 2×10⁻⁷ M_P at m = 10⁵ GeV,
+≲ 1.4×10⁻⁵ M_P at 10⁹ GeV, and ≲ 1.4×10⁻⁶ M_P at 10¹³ GeV. D359's "≲ 10⁻³ M_P at 10¹³ GeV" is withdrawn.
+Conclusion strengthened: TWIST-I needs adiabatic capture with a residual displacement of 10⁻⁷–10⁻⁵ M_P for any m_x. T1 (isocurvature at
+the alternative fit point) is running in the cloud (~2 h).
