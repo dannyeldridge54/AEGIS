@@ -3990,3 +3990,13 @@ while x still moves; D396's late-capture point x_E ≈ 29.6 is crossed at T ≈ 
 
 **D405 (15:58 CT, Danny: "Publish") — the α no-go paper is on Zenodo: record 24232382, DOI 10.5281/zenodo.24232382 (v1).** Content as D401 +
 D402 cross-check + D403 bridge 2. Linked to the Twist concept DOI (isDerivedFrom). Log in papers/ZENODO_UPDATE_2026-11-13.md.
+
+**D406 (scored, locked PREREG_D406_BALANCE; results/balance_d406.txt) — first centre check of the two-ladder process: NO BALANCE
+(narrowly). The right ladder's pinning dilution always costs the left ladder more than 0.5 e-fold of N*.** Every scan point passes the right
+ladder (trapped, T_d ≥ 5 MeV, D ≤ 10³), but ΔN* = −(1/3) ln D ranges from −2.26 (λ 0.004, v 10⁹, D 886) to −0.518 (λ 0.033, v 10¹¹ GeV, D 4.7).
+Best point: N* = 56.68, n_s = 0.9648, r ≈ 0.0037 (1.2σ from CMB-SPA, 3.0σ from CMB-SPA+DESI) — the same N* as D387 with σ, so Twist-2's
+gain from dropping σ (D391, +0.5 e-fold) is cancelled by the pinning dilution. Corrections: D396/D397 did not include this cross-effect;
+D395's map value N* = 57.2 must read 56.7–56.0 with pinning (λ 0.033, v 10¹¹–10⁹). The balanced region wants the largest λ (D377's upper edge)
+and v close to the crossing temperature (condensate right after capture), i.e. the least dilution. Returned to rung 10 (right ladder) with
+the task: reduce D below ~4.5 without breaking trapping or T_d (options: v at T_x, a larger λ if D377's upper bound can move, or a decay
+channel for x that is faster than gravitational).

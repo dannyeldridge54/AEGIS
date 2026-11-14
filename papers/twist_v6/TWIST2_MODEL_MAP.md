@@ -107,3 +107,5 @@ alone.
 | 2. Dark energy ↔ clocks | (α̇/α)/[H₀√(3Ω_DE(1+w₀))] = ζ ≈ 3–6×10⁻³ (rolling modulus) | measured (4.4 ± 6.2)×10⁻⁹ | out of balance by ~5×10⁵σ: no rolling modulus (why Twist-2 uses Λ or an axion) |
 | 3. Birefringence ↔ dark energy | β² = 2.5×10⁻³ (c_γ/f)² (1+w₀) deg² | balanced at c_γ/f ≈ 10–13 | measures c_γ/f today; a test once a second arm (reionization-era β) exists |
 | 4. Reionization ↔ recombination birefringence | ρ_β = β_reio/β_rec = 1 − ε, ε ≤ 3.5×10⁻³ (single DE axion) | computed (D404) | awaits LiteBIRD; ρ ≈ 1 also from miscalibration, so it separates late vs early fields, not signal vs systematic |
+
+**Centre check D406:** pinning dilution lowers N* by ⅓ ln D; best balanced point (λ 0.033, v 10¹¹ GeV, D 4.7) gives N* 56.7, n_s 0.9648 — misses the 0.5 e-fold tolerance by 0.02. With pinning, the inflation row reads N* 56.0–56.7, n_s 0.9643–0.9648.
