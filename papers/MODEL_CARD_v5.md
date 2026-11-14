@@ -26,7 +26,7 @@ which no known string setting provides together with a neutral Standard Model (D
 | π/4 in the cliff | |q| = e^{−πx/4} (worldsheet-instanton form; alternatively 2π/8 from SU(8)) | **assumed** (SU(8) condensate form; the SU(8) coupling is strong, g² ~ 10²–10⁴, through all of inflation, so the formula is outside control — D136) |
 | μ | 1 | chosen (constant term in S's metric, D127) |
 | ζ | 3×10⁵ (was 3×10⁴) | chosen; raised for lumpy-start robustness (D217–D218): S stable for x > 1/(4ζ) = 8×10⁻⁷, so the binding limit on the plateau becomes the tower floor (D123, x ≈ 6×10⁻⁶): ~2.5–3.8 M_P beyond the CMB point (D218 correction); re-run: V unchanged to 10 digits, angle +4H², m_S²/H² 310–6×10⁵ along the path; no prediction changes |
-| m_σ (hidden axion) | ≈ 6×10¹⁰ GeV (refit) | chosen to fit the matter amount; confirmation run pending (D124) |
+| m_σ (hidden axion) | ≈ 6×10¹⁰ GeV (refit) | chosen to fit the matter amount; CONFIRMED by the locked run (1.25× observed at 5.8×10¹⁰, D277); same in TWIST-K (D160 pass) |
 | h, x₀ (χ mass) | h 0.2–1 M_P, x₀ 0.02–0.1 | chosen, matched to the 0.8% heat share (D118) |
 | Heat share | ≈ 0.65–0.8% | derived from χ's decay (D105, D118) |
 
@@ -70,7 +70,7 @@ locked signature PREREG_SHIELD, with the leak's growth exponent now a reported q
 a chosen Λ, D215) · n_s: INCONSISTENT on current data; no fix inside rung-3 plateaus (D131–D132), TWIST-L/P/M9 locked for future data ·
 initial conditions: with ζ = 3×10⁵ the helper is stable down to x = 8×10⁻⁷, so the binding limit is the tower floor (x ≈ 6×10⁻⁶, D123):
 fast starts (x ≈ 2×10⁻⁶) remain outside the EFT; inhomogeneous starts robust by analogy with ~2.5–3.8 M_P of plateau (D217–D218) ·
-isocurvature: D137 (PC run) · m_σ confirmation pending (PC run). (The SU(8) item applies only to the old superpotential construction,
+isocurvature: D137 PASSED (dlnY/dlnσ₀ = 3.70 ≤ 5) but marginal — S_B ≈ 3.7×10⁻⁵ vs bound 5×10⁻⁵ at f = 0.1 M_P; needs f ≳ 0.1 M_P (D277). (The SU(8) item applies only to the old superpotential construction,
 not TWIST-K.)
 
 ## Consistency pass (final form, one run)

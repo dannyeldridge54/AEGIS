@@ -1,0 +1,3 @@
+sigma0 x1.05: n_B/s 1.3060e-10 (x1.501); y_end -0.000
+y0 = 0.01: n_B/s 8.0423e-07 (x9243.973); y_end -0.324
+dlnY/dln sigma0 and dlnY/dy0 computed against matter_refit_check.txt's baseline in the record.

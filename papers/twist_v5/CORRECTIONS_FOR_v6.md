@@ -36,3 +36,8 @@ Replace the item with: "Supersymmetry breaking: a near-massless gravitino with s
 Add after the shield paragraph:
 
 > In generic supergravity quintessence, every MSSM soft term and fermion mass depends on the field through e^{K/2}, and Cassini then requires a tuned cancellation [Brax & Martin, hep-th/0605228]. The shield must therefore also keep the Standard Model's supersymmetry-breaking scale independent of x. The no-scale isometry protects the field's own lightness from gravitino-induced masses [Brax, Davis & Sakstein, arXiv:1212.4392], but not its couplings to matter.
+
+## 5. Exploratory note §1.3–1.4: locked PC results (D277)
+
+- **m_σ.** Replace "confirmation pending" with: "the locked confirmation run gives 1.25× observed at m_σ = 5.8×10¹⁰ GeV, the same in TWIST-K; entropy dilution ×4.6".
+- **§1.4 Isocurvature.** Replace "unverified" with: "the locked sensitivity run gives |d ln Y/d ln σ₀| = 3.70, which passes the locked limit of 5. S_B ≈ 3.7×10⁻⁵ against a bound of 5×10⁻⁵ at f = 0.1 M_P is marginal, and requires f ≳ 0.1 M_P. The yield is very sensitive to the angle's starting value (y₀ = 0.01 multiplies it by about 9000), so the heavy angle during inflation is essential." The earlier "8× below the bound" is withdrawn.

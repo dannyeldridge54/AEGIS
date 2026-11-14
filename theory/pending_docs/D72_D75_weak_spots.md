@@ -2491,3 +2491,20 @@ free scale, and 6×10¹²–6×10¹⁴ GeV still sits inside the model's scales 
 masses are assumed. Gap 11 (Hubble): no new primary local-H₀ result found in this search — only secondary reports (a news summary of a
 ~73 km/s/Mpc sub-1% distance-ladder result with no paper named, Apr 2026; a review noting CCHP values often fall between SH0ES and Planck).
 Not used. The Twist's H₀ ≈ 65.7 cost is unchanged; gap 11 stays LOW–MEDIUM.
+
+**D277 — the four locked PC matter checks, scored at full size (scheduled check 21:01 CT; runs finished 18:04–18:16 CT on the PC; copies in
+field_tests/results/matter_pc/).** All at m_σ = 5.8×10¹⁰ GeV, heat share 0.8%, exp cliff 4/π, μ = 1, n = 125.
+- D124 confirmation (locked: 0.6–1.6× observed): matter_refit_check n_B/s = 1.090×10⁻¹⁰ = **1.253×** → PASS. m_σ ≈ 6×10¹⁰ GeV stands
+  (exact 1× would sit slightly higher, ∝ m_σ^−0.89 → ≈ 7.5×10¹⁰ GeV). Entropy dilution in this run ×4.59 (not the 1.2–1.5 quoted earlier for
+  the n = 10-era runs — corrected here).
+- D129 (D127 Kähler form within 10% of the refit): 1.257× vs 1.253× (0.3%) → PASS.
+- D160 (TWIST-K within ×3 of the gauge construction): 1.256× vs 1.253× → PASS. The matter yield is the same in the adopted construction.
+- D137 (locked: |dlnY/dlnσ₀| ≤ 5 and |dlnY/dy₀| ≤ 10⁴): σ₀ × 1.05 → 1.501×, so dlnY/dlnσ₀ = **3.70** → PASS; y₀ = 0.01 → 9244×, so
+  dlnY/dy₀ = **891** (secant) → PASS. Consequences: hidden-axion isocurvature S_B = 3.70 · δσ/σ₀ = 1.1×10⁻⁵ (δσ/σ₀ = 3×10⁻⁶), 3.7×10⁻⁵
+  (10⁻⁵), 7.4×10⁻⁵ (2×10⁻⁵) against the D134 bound 5×10⁻⁵: passes for decay constants f ≳ 0.1 M_P but with a margin of only ~1.4× at
+  f = 0.1, and FAILS for the smallest f (δσ/σ₀ ≈ 2×10⁻⁵). The earlier "8× below" (sensitivity 0.64 assumed) is withdrawn. The angle's
+  contribution, 891 × 2×10⁻¹⁰ ≈ 2×10⁻⁷, is safe — but the y₀ response is strongly non-linear (y₀ = 0.01 gives 9244×): the yield depends
+  sharply on the angle's start, so the matter result needs y₀ ≈ 0 at the end of inflation (which the heavy angle, m/H ≈ 2, provides).
+- TWIST-P deviation D1 condition ("void PREREG_TWISTP_L if D137 fails for the angle") not triggered: TWISTP_L stands.
+Gap 7 status: matter confirmed in TWIST-K at m_σ ≈ 6×10¹⁰ GeV (still a fit); isocurvature passes the locked rule but is marginal and
+restricts the hidden axion's decay constant to f ≳ 0.1 M_P (estimate from δσ/σ₀ = H/2πΛ, D257).

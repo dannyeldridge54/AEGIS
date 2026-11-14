@@ -184,3 +184,5 @@ seeing the n_s data, so only future CMB results can score it; TWIST-P is the alt
   predictions unchanged); the plateau beyond the CMB point inside the EFT is then tower-limited, ~2.5–3.8 M_P.
 - **Computing:** the full-data chains were blocked for hours by a requested derived parameter ("S8") that CLASS does not provide; fixed
   (deviation D4), both chains sampling since 17:24. Old FLAG-1 chains stopped at Danny's request.
+
+- 13 Nov 21:05 (D277): locked PC matter checks all PASS — D124 1.25× at m_σ 5.8e10; D129 and D160 within 0.3%; D137 dlnY/dlnσ₀ 3.70 (≤5), dlnY/dy₀ 891 (≤1e4). Isocurvature passes but is marginal (needs f ≳ 0.1 M_P).
