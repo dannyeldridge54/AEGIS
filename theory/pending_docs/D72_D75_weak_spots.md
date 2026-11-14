@@ -3566,3 +3566,12 @@ the reheating phase ends at T_rh; in the Twist, radiation coexists with kination
 the paper's conventions would need their formulas (not read).
 D368's conclusion stands and strengthens: TWIST-I's CMB distinctiveness is its N* via its built-in kination. That is a real model-specific
 statement worth putting in v6 item 19.
+
+**D370 (pp, 08:24 CT, self-check of D369; aegis-check like-with-like) — D369 overstated the match. The Twist's kination gives N* 55.7–57.6,
+just BELOW the N* ≳ 58 that refined Starobinsky needs for ACT at 2σ.** The Twist's own N* (TWIST-K table: 55.7 instant, 57.6 with the 0.65–0.8%
+heat share) already includes its kination phase, and its n_s 0.9642–0.9654 is what the NS-SPA test found INCONSISTENT with SPA + DESI. So the Twist
+has a stiff post-inflation phase of the kind that raises N*, but not enough of it: it falls ~0.5–2 e-folds short of the ACT-preferred region
+(n_s ≥ 0.966 needs N* ≳ 59 in the attractor formula 1 − 2/N*; aegis-checked: 1 − 2/59 = 0.9661). This is consistent with gap 1 (HIGH) and with
+D329 (the tension is background-conditional).
+Correction: v6 item 19's added clause is softened to "the Twist's built-in kination raises N* toward, but not into, the ACT-preferred range
+(N* ≳ 58)". The distinctive content is still N* through its reheating history; the direction of the n_s tension is unchanged.
