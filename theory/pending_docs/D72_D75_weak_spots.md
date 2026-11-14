@@ -4022,3 +4022,14 @@ far from a large-volume regime if x is read as a volume modulus (x ∝ V^{1/3});
 of this modulus, gets lighter in Planck units as x grows; whether it stays above T and H along the roll is the check for part 3. Part 11
 (string embedding) inherits the control flag at x ~ 10⁻⁴.
 (c) WHOLE / CENTRE: B1 = −0.9×10⁻⁴, B2 ≈ 0 balanced (D403); F3 n_s 0.9651 (1.1σ / 2.9σ); F6 three flags as above. Result recorded (no model change).
+
+**D409 (cycle 3; PART 3 kination/reheating, LEFT; scored, locked PREREG_D409_PART3; results/part3_d409.txt) — the distance-conjecture tower
+is NOT a danger after inflation: m_KK/T ≥ 2.4×10⁴ and M_s/T ≥ 4.4×10⁴ at every D367 point (volume reading 𝒱 ~ x^{3/2}, O(1) factors = 1).**
+(a) ALONE: heat share derived (0.65–0.8%, χ̃ decay, D80–D82/D118); kination dominates to N − N_e ≈ 3.5 (D367c); +1.5 e-folds of N* (D391).
+(b) CONNECTIONS: from part 2 (D408) — the tower drops by e^{−λΔφ} along the roll, but it starts far above T and H (m_KK = M_P/x falls only from
+~10¹⁹ to 8×10¹⁶ GeV while T falls from 3×10¹⁴ to 10¹⁰), so no tower state is excited and the 4d description holds once x ≳ 1. The weak point is
+the start: for x < 1 (N − N_e ≲ 2.5, and all of inflation) m_KK and M_s formally exceed M_P, i.e. the volume is sub-stringy and the geometric
+reading fails — D408's control flag extends through the first ~2.5 e-folds of kination. To part 4 (leptogenesis): T_RH ~ 5×10¹⁴ GeV < M_s, OK.
+To part 5 (capture): unchanged.
+(c) CENTRE: filters F2/F3 unchanged; bridges unchanged. Verdict: D408's "distance conjecture SEVERE" downgraded to "control issue at x ≲ 1
+only"; the post-inflation roll is safe. Result → no wall.
