@@ -29,4 +29,4 @@ D268 is running. Insert its result here: the matter yield when the Nieh–Yan cu
 
 ## 3. Table of assumptions, item 4
 
-Replace the item with: "Supersymmetry breaking: either a near-massless gravitino, or W ∝ T^{3/2} with an uplift and a quartic stabiliser (m_3/2 ≈ 10⁸–10⁹ GeV); a constant W₀ is excluded."
+Replace the item with: "Supersymmetry breaking: a near-massless gravitino with superpartner masses not tied to m_3/2 (adopted); W ∝ T^{3/2} plus uplift needs the uplift sector to stabilise the angle and works at best for m_3/2 ≈ 10⁸–10⁹ GeV; a constant W₀ is excluded."
