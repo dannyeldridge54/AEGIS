@@ -3437,3 +3437,18 @@ traceback (most likely the process was killed for memory while two coupled-build
 deviation D2 (written and pushed first), RUN_D355_PURE.bat was opened by computer use at 07:54:58. It waits for the LCDM result, then runs
 PURE alone with unchanged settings, then scores. New ETA: LCDM ~09:15, PURE ~10:45, score right after. The original runner will log
 "D355 score FAILED" when LCDM ends (no PURE result yet); that is expected, and the D2 runner scores afterwards.
+
+**D361 (pp, 08:05 CT, TWIST-I (a'): adiabatic capture) — Linde's adiabatic mechanism does not apply directly; the right criterion is the
+kinetic share of x at capture (literature + estimate; aegis-checked in code).**
+Read: "Relaxing the cosmological moduli problem by adiabatic suppression" (arXiv:1109.2073). With a Hubble-induced mass cH (c ≳ 30), the
+modulus tracks its moving minimum and the relic is suppressed exponentially in c. But: (i) the field must sit in a Hubble-induced minimum
+throughout; (ii) the minimum must not move faster than the curvature; (iii) a finite-H start leaves power-law residuals. "The adiabatic solution
+does not work" if the curvature vanishes temporarily or the minimum jumps.
+For TWIST-I: x is the inflaton and then a rolling field, so it is never in a heavy Hubble-tracked minimum before capture, and condition (i)
+fails. Reframing (this corrects D359/D360a's static-displacement picture): a field arriving with velocity φ̇ in a well of mass m ≫ H keeps
+an oscillation amplitude ≈ φ̇/m, so ρ_osc/ρ_tot ≈ Ω_kin,x at capture, independent of m. The dilution is then Δ ≈ Ω_kin,x · T_arr/T_decay(m).
+Δ ≤ 1 needs Ω_kin,x < 1×10⁻¹⁰ (m = 10⁹ GeV), 1×10⁻⁷ (10¹¹), 1×10⁻⁴ (10¹³), 3.5×10⁻³ (10¹⁴), 0.1 (10¹⁵ GeV) (T_arr = 2×10¹³ GeV).
+So the realistic TWIST-I is a very heavy stabiliser (m_x ≳ 10¹⁴–10¹⁵ GeV, decaying almost at once), with x slow (Ω_kin ≲ 10⁻³–10⁻¹) when captured.
+Next check: x's kinetic share at T ≈ 2×10¹³ GeV in the v5 matter run (hidden_kick_decay_v2.py tracks x; its output gives the fraction).
+A heavier stabiliser also means m_x near the inflaton/heavy-scale range. Is the cliff itself the stabiliser? That is open.
+Status: TWIST-I open item (a') is restated: "a ≳ 10¹⁴ GeV stabiliser capturing a slow x at x ≈ 30".
