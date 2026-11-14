@@ -2317,3 +2317,12 @@ the locked inflation variants will first be decided by the Simons Observatory (�
 birefringence TOMOGRAPHY test of TWIST+ALP (low-ℓ reionisation bump, D250–D251) needs full sky and so waits for LiteBIRD (late 2030s at the
 earliest, given ≥ 3 years of observation). Ordered timeline now: calibrated β (ground, any year) → DESI 5-yr + Euclid (2027) → SO r/n_s
 (~2028–2035) → nuclear clocks (years) → LiteBIRD (late 2030s).
+
+**D257 (pp loop 22) — gap 7: the Twist's matter-sector isocurvature estimate matches the literature's scaling (arXiv:1207.2135).** For
+baryogenesis set by a light field's phase during inflation, the baryon isocurvature power is P_S = H²/(4π²θ²Λ²) (Λ = field amplitude), and
+α_iso = (Ω_B/Ω_DM)² P_S/P_R must stay below the CMB bound; light-field (m ≪ H) set-ups are viable only if H/Λ is small. The Twist's hidden axion σ
+is exactly this case (m_σ ≈ 6×10¹⁰ GeV ≪ H): with Λ = f M_P and f = 0.05–0.3, H/Λ = 2×10⁻⁵ – 1.2×10⁻⁴ and δσ/σ₀ = H/(2πΛ) ≈ 3×10⁻⁶ – 2×10⁻⁵ —
+the same numbers D134 used (≈10⁻⁵ at f = 0.1), giving S_B ≈ 6×10⁻⁶ (safe ×8) for |dlnY/dlnσ₀| ≈ 0.64. The paper's stricter "one decade of
+anthropic room" criterion (H/Λ ≲ 1.2×10⁻⁵) is met only for f ≳ 0.2 M_P. Gap 7 status: the analytic part is literature-consistent; the
+remaining unknown is exactly what the locked PC run D137 measures (the yield's true sensitivity |dlnY/dlnσ₀|, locked ≤ 5); a value above ~5
+would push the model to f ≳ 0.2 or fail D134. The 21:01 check scores it.
