@@ -3762,3 +3762,12 @@ Open check for later (not computed, needs a lock first): kination_Nstar.py preda
 Ω_kin > 0.5 until N − N_e ≈ 3.5 (vs ≈ 2.4 for a pure 0.8% heat share), which would add ~+0.5 to N*, while σ's matter-like share (up to
 0.58 at N − N_e ≈ 4.5) would subtract. Net sign unknown; |ΔN*| ≲ 1 cannot close the ~7 e-fold gap to SPA+DESI.
 Status: gap 1 HIGH, unchanged; quantified as ~1σ (CMB-SPA) / ~2.8σ (CMB-SPA+DESI).
+
+**D386 (pp "continue", 11:00 CT, gap 4 birefringence: anything since D353?) — no new calibrated β; nothing changes (literature, abstracts).**
+(1) SPT-3G polarised-beam paper (arXiv:2602.06334): measures the sidelobe depolarisation parameter β_pol (0.89 ± 0.10 / 1.08 ± 0.10 /
+0.90 ± 0.22 at 95/150/220 GHz), not a birefringence angle; it reduces one SPT-3G polarisation systematic, which matters for a future
+SPT β but gives none now. (2) Rigouzzo (KCL), CERN "Cosmological Probes of the Early Universe" talk, 30 June 2026: a cross-instrument
+calibration method that recovers the DIFFERENCE of two instruments' angles from data alone (proof of concept on SO LAT and Planck). A
+relative method; it does not fix an absolute zero by itself, which is what an isotropic β needs (consistent with D330). No numbers in the abstract.
+Status: gap 4 HIGH, unscored; latest numbers are still ACT DR6 0.215 ± 0.074° and Planck 0.37 ± 0.11° (D353). TWIST-I predicts β = 0
+(TWIST+ALP fallback locked). The first decisive input is still a calibrated SO/LiteBIRD measurement (late 2020s).
