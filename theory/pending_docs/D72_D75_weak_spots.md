@@ -2272,3 +2272,16 @@ the Twist's dark energy, growth and inflation are untouched. Status: the extensi
 two-field option, locked, scored only if a calibrated β is confirmed; its distinctive test is LiteBIRD's low-ℓ EB (R ≈ 0 vs R ≈ 1).
 D251 add: last grid point m = 10⁻²⁸ eV: R = 0.001, c·θ ≈ 8.9 (the field begins rolling before recombination, so part of its motion is missed
 by β_rec), energy fraction 3.6×10⁻⁴ — still a negligible spectator; the Planck EB-shape exclusions start just above (D250).
+
+**D252 (pp loop 17) — the TWIST+ALP option meets the same swampland tension the rest of the Twist does; a domain-wall alternative exists
+(literature, "Wading the String Bog: CMB Birefringence in the Swampland", arXiv:2607.27318).** For an ultralight axion that is frozen until
+recombination (m ≲ 10⁻²⁸ eV) the magnetic weak-gravity conjecture suggests m ≳ 10⁻²⁸–10⁻²³ eV — "in the right ballpark" for tension at the
+lower end; the electric WGC (f·S ≲ M_P) leaves instanton effects unsuppressed for large f. The authors claim tension, not exclusion (imprecise
+coefficients). Our computed window (D251: 10⁻³² ≲ m ≲ 10⁻²⁸ eV, f ~ 10¹⁶ GeV, c·θ ≈ 4.5) sits BELOW their suggested floor, so the spectator-ALP fix
+is swampland-disfavoured in the same sense as the Twist's own long excursion and TCC questions (D211–D213, D238) — consistent at least: the
+Twist is an EFT that the swampland programme, as currently conjectured, presses on in several places. Alternative they propose: rotation from
+crossing a thin axion domain wall, Δθ ≈ C_γ α/(2π) ≈ 10⁻³ C_γ, so 0.3° (5.2×10⁻³ rad) needs C_γ ≈ 5 — no ultralight field, no Planckian range,
+"little if any friction" with the swampland, and a different observational shape (the authors note isotropy tests separate the two). For the
+Twist this second route adds an axion with a wall network instead of a light spectator; not built. Status: if a calibrated β is confirmed, two
+extension routes are on file (spectator ALP — D251, swampland-tense; domain wall — not built, swampland-friendly); choosing between them waits
+on the data's shape (anisotropy / ℓ-dependence).
