@@ -2669,6 +2669,6 @@ functions independent of T) remains gap 2. Weights now assumed: χ 3/2, messenge
 = 3), gauge couplings x-independent at one loop including the Kaplunovsky–Louis terms up to a universal Green–Schwarz δ
 (−3(ΣT_a(r) − T(G_a)) + 2ΣT_a(r)p_r = δ for SU(3), SU(2), U(1)_Y), and an x-independent μ-term (p_Hu + p_Hd = 3). Results: with the μ
 condition — no solution, with or without δ. Dropping the μ condition — a two-parameter family exists but needs δ_GS = −27 and weights far
-from string values (smallest max|p| over the family ≈ 4–5; e.g. p_Hu = 12 − p_Hd); a universal GS term of that size is unavailable on Z₃-type
+from string values (smallest max|p| over the family = 6, e.g. p_Q −11/3, p_U = p_D = 2/3, p_L 3, p_E −6, p_Hu = p_Hd = 6); a universal GS term of that size is unavailable on Z₃-type
 orbifolds (D199). So the D292 weight trick fixes the SUSY-breaking scale but cannot make the MSSM's couplings and masses T-independent: the
 remaining shield (gap 2) is not a modular-weight assignment. Gap 2 unchanged; requirement restated precisely for v6.
