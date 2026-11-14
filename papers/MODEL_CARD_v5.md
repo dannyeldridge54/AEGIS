@@ -103,3 +103,4 @@ Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA a
 - Reason: the one-loop shield no-go (D323–D345): a rolling −3 ln field moves the SM couplings by d(1/α_a)/d ln x = −b_a/4π.
 - Future-data rules: r in [0.002, 0.008]; n_s 0.9642–0.9654 within 3σ of SO/SPT-3G; w = −1 (fails if excluded at > 5σ); β = 0.
 - Open: the stabilising sector (m ≳ 100 TeV or adiabatic); the dilution of n_B/s from x decay; the N* shift.
+- Isocurvature under the alternative coupling reading: locked D320 PASS (sensitivity 3.68 ≤ 5; margin 1.39× at f = 0.1 M_P).

@@ -3413,3 +3413,10 @@ around the rolling field, with m_x ≫ H throughout. Equivalently, the stabilise
 tracks the field). This is the hardest TWIST-I requirement so far; it is an estimate (no full computation; f_x at arrival is model-dependent).
 Status: TWIST-I stays adopted, but its open list now leads with "(a') adiabatic capture of x". The x-only dilution of item (b) is moot if
 capture is adiabatic.
+
+**D320b (scored, locked PREREG_D320_ALT_ISOCURV; results/alt_isocurv_d320.txt, finished 07:4x CT) — PASS.** Validation: the canonical
+yield with σ₀ × 1.05 is 1.3078×10⁻¹⁰ against D277's 1.3060×10⁻¹⁰ (+0.14%, within 1%), so the run is valid. The same run gives a
+canonical sensitivity of 3.734 (D277: 3.70). Alternative reading: n_B/s 5.7694×10⁻¹¹ at σ₀ × 1.05 (baseline 4.8209×10⁻¹¹), giving
+**S_alt = 3.681 ≤ 5 → PASS**. Margin at f = 0.1 M_P: 5.1/3.681 = 1.39 ≥ 1, so isocurvature passes under the alternative reading too, with the
+same ~1.4× margin as the canonical one (D278). Stated limitation (in the lock): m_σ = 5.8×10¹⁰, not the alternative fit point 3.0×10¹⁰.
+Gap 7: LOW–MEDIUM, unchanged; the coupling-reading question no longer affects isocurvature.

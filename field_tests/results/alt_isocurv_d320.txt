@@ -1,0 +1,3 @@
+canonical y'/x : n_B/s 1.3078e-10 (x1.503 observed)
+alternative (y/x)': n_B/s 5.7694e-11 (x0.663 observed); ratio 0.441; y_end -0.000
+S_canon 3.734 (D277: 3.70); S_alt 3.681
