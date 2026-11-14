@@ -3431,3 +3431,9 @@ fraction is only right when oscillation starts at H = m. For m ≫ H_arrival (H 
 ≲ 1.4×10⁻⁵ M_P at 10⁹ GeV, and ≲ 1.4×10⁻⁶ M_P at 10¹³ GeV. D359's "≲ 10⁻³ M_P at 10¹³ GeV" is withdrawn.
 Conclusion strengthened: TWIST-I needs adiabatic capture with a residual displacement of 10⁻⁷–10⁻⁵ M_P for any m_x. T1 (isocurvature at
 the alternative fit point) is running in the cloud (~2 h).
+
+**D355c (07:55 CT) — PURE fit crashed; crash rerun queued (deviation D2).** The log shows "07:52:09 fit PURE FAILED", ~10 min in, with no Python
+traceback (most likely the process was killed for memory while two coupled-build fits ran in parallel). The LCDM fit is still running. Under
+deviation D2 (written and pushed first), RUN_D355_PURE.bat was opened by computer use at 07:54:58. It waits for the LCDM result, then runs
+PURE alone with unchanged settings, then scores. New ETA: LCDM ~09:15, PURE ~10:45, score right after. The original runner will log
+"D355 score FAILED" when LCDM ends (no PURE result yet); that is expected, and the D2 runner scores afterwards.
