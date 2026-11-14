@@ -2333,3 +2333,58 @@ full-shape + BAO: σ8 = 0.842 ± 0.034 (4%), "broadly consistent" with the CMB's
 and ~−3% in fσ8 are 0.1–0.4 of today's 1σ errors — current growth data neither help nor hurt; a 3σ test of the Twist's growth suppression
 needs ~1% per-point fσ8 (DESI five-year + Euclid, 2027–28, D254). The Twist's GR-like growth index (≈ 0.557) is consistent with μ0 ≈ 0. Gap 4:
 no change; PREREG_GROWTH stays a future test.
+
+## Fixes after the independent referee review of the published paper (13 Nov 2026, 19:00; papers/REFEREE_REPORT_2026-11-13.md)
+Numbers: theory/review/referee_fixes_d259.py → field_tests/results/referee_fixes_d259.txt.
+
+**D259 — tail-slope fraction (referee check FAILED in v4; corrected).** The slope seen today is √(2/3)·x/(x + μ). At μ = 1: x = 2 → 66.7%,
+x = 30 → 96.8%, x = 73 (frozen, 0.8% heat) → 98.6%, x = 89 (today) → 98.9%. v4's "97–100% for x_f ≈ 2–300" was wrong at the low end:
+≥ 97% needs x ≳ 30. At the derived heat share (0.65–0.8%, TWIST-K consistency pass) the field sits at x ≈ 73–89, so the statement
+"98.6–98.9% of √(2/3)" stands; the 0.01% heat-share case (x ≈ 360) gives 99.7%. The μ = 10⁴ range is 0.02–3%, not 0.3–3%.
+
+**D260 — instant-reheating temperature (corrected).** From H_end = 5.2×10¹² GeV, ρ_end = 3H²M_P², g* = 106.75: T_RH(f = 1) = 1.9×10¹⁵ GeV
+(v4 said 2.6×10¹⁵). Derived heat share 0.65–0.8%: T_RH = 5.5–5.8×10¹⁴ GeV (v4's 3–5×10¹⁴ corresponded to 0.15–0.5%). Effect on N*:
+ΔN* ≈ ⅓ ln(2.6/1.9) ≈ 0.1, Δn_s ≈ 6×10⁻⁵ — negligible; numbers below unchanged.
+
+**D261 — gravitino (v4 inconsistency resolved; Dudas et al. read in full).** v4 said "a gravitino heavier than T_RH is not produced",
+but its own m_3/2 ≈ 10¹¹–10¹³ GeV is below T_RH ≈ 5.6×10¹⁴ GeV, and it also said "the gravitino stays massless". Resolution:
+(a) W = √3 m S T vanishes at S = 0, so the inflaton sector contributes nothing to m_3/2; the gravitino mass comes from a separate
+supersymmetry-breaking sector that the model does not specify (assumption), taken below the inflaton mass (m_3/2 ≲ 5×10¹³ GeV) so the
+plateau is undisturbed. (b) arXiv:1710.07341 (read in full now): its escape needs ALL superpartners above the inflaton mass and T_RH, and a
+stable gravitino with Ω h² ≈ 0.11 (0.1 EeV/m)³ (T_RH/2×10¹⁰ GeV)⁷ — at T_RH ≈ 5.6×10¹⁴ GeV a stable gravitino is excluded for any
+m_3/2 below the inflaton mass. So the v4 citation does not support the v4 claim; withdrawn. (c) What does work (estimate, standard
+thermal yield Y ≈ 1.9×10⁻¹²(T_RH/10¹⁰ GeV)(1 + m_g̃²/3m²)): superpartners at or below m_3/2 in the bath, Y ≈ 1.5×10⁻⁷; for
+m_3/2 = 10¹¹–10¹⁴ GeV the gravitino decays at T ≈ 4×10⁶–10¹¹ GeV, long before nucleosynthesis, carrying ≤ 0.4% of the energy (no
+dilution of the asymmetry); with R-parity violated (the v4 assumption) the LSP decays too. Status: the gravitino problem is avoided for
+m_3/2 ≳ 10¹¹ GeV under two stated assumptions (separate SUSY-breaking sector; R-parity violation). The gravitino is not the dark matter.
+
+**D262 — trials correction for PURE-TWIST (new).** Δχ² = −3.37 with no extra parameter ≈ 1.84σ locally (two-sided p = 0.066). With 6–12
+late-time variants tried on the same data (six in the tournament table, plus TAIL-F, NS-PURE and the SN/DES swaps), the Šidák-corrected
+significance is 0.6–1.0σ. Held-out improvements (−0.89, −0.41) are noise-level. On the full CMB-SPA + DESI + SN data (NS-SPA leg, n_s
+free) PURE-TWIST is worse than ΛCDM by Δχ² = +1.45. Verdict: no evidence for the Twist's tail on current data; its value is the locked
+prediction for new data.
+
+**D263 — coupling definition (made explicit).** All matter code uses the locally canonical angle speed: with metric ds² = dφ² + e^{λφ}dθ²
+and T = x + iy, θ = √(3/2)·y and the speed entering μ_A is v_θ ≡ e^{λφ/2}θ̇ = √(3/2) ẏ/x (sugra_mirror_radiation.py, "r = √g_yy |y'|").
+So ℒ ⊃ (c_A/M_P) √(3/2) (∂_μy/x) J₅^μ with c_A = √(3/8) is the coupling used. The alternative reading, coupling to ∂_μ(y/x) (the
+1/γ = y/x Immirzi mapping), adds −(y/x)ẋ/x, which is not small during kination; it is not what was computed. c_A = √(3/8) is "fixed" only
+given this normalisation choice; stated as an assumption. (The "400× in the other frame" remark concerns the Jordan- vs Einstein-frame
+temperature, a separate choice.)
+
+**D264 — growth and w_a reconciled (one conditioning per number).** (i) E_G: at each model's own best fit (pure_twist_growth.json)
+PURE-TWIST E_G is +4.9% at z = 0.5 (0.4182 vs 0.3987), but ≈ 4 points of that is the different best-fit Ω_m (0.310 vs 0.298); at equal
+Ω_m the β = 0 tail gives E_G within ≈ 1% of ΛCDM. v4's two statements ("5% higher" and "matches ΛCDM") were the two conditionings
+unlabelled. Adopted: quote best-fit values, with Ω_m stated. (ii) w_a: −0.10 (WA-CEILING, effective_w.py: w_eff fitted uniformly in a over
+z ≤ 2, as an observer assuming ordinary dark matter) vs −0.14 (CPL fit to the field's own w over z < 2 with the paper's weighting). Same
+model, two fitting conventions; the locked rule uses its own. (iii) BAO: the frozen table (each model at its own best fit, neither refitted)
+is the one tied to the drafted DR3 scoring; the addendum's +1.3% / +1.9% were at fixed Ω_m and H₀ (CMB-anchored) — a theory sensitivity,
+not an observable forecast. Both now labelled.
+
+**D265 — cliff depth n reconciled.** exp(−2n) m²/[4(1 + x/μ)] = ρ_DE with m = 2.1×10⁻⁵ M_P: n = 126.9 without the (1 + x/μ) factor,
+124.6 with x = 89, μ = 1. Adopted n = 124.6 (≈ 125); v4's 127 omitted the factor; 124 was rounding; n = 10 was the numerics value.
+
+**D266 — internal contradictions removed (bookkeeping, no new physics).** One construction (TWIST-K); the hidden-gauge (SU(8) + Z₂ racetrack)
+construction of the inflaton sector is dropped. The kick sector of the matter mechanism still uses a hidden gauge group with f ∝ T, whose
+coupling is strong at Re T ≲ 1 where the kick acts — the same loss of control as the old cliff (stated in the exploratory note). TWIST-K's
+claims that worldsheet instantons "remove the conflict found at the string level" and give "a precise route to deriving n" are withdrawn
+(D189, D204–D211, D233 superseded them). Parameter values: one table (consolidated paper, Sec. 2), from MODEL_CARD_v5.

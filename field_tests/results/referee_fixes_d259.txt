@@ -1,0 +1,14 @@
+D259 x=   2: slope fraction 0.667
+D259 x=  30: slope fraction 0.968
+D259 x=  73: slope fraction 0.986
+D259 x=  89: slope fraction 0.989
+D259 x= 360: slope fraction 0.997
+D260 T_RH instant 1.92e+15 GeV; f=0.65%: 5.46e+14; f=0.8%: 5.75e+14; f=0.15%: 3.79e+14
+D261 m32=1e+11: Y=1.5e-07, T_decay=4.4e+06 GeV, rho32/rho_rad at decay=4.4e-03
+D261 m32=1e+12: Y=1.5e-07, T_decay=1.4e+08 GeV, rho32/rho_rad at decay=1.4e-03
+D261 m32=1e+13: Y=1.5e-07, T_decay=4.4e+09 GeV, rho32/rho_rad at decay=4.4e-04
+D261 m32=1e+14: Y=1.5e-07, T_decay=1.4e+11 GeV, rho32/rho_rad at decay=1.4e-04
+D262 local 1.84 sigma (p=0.066); N=6: global p=0.34 = 0.96 sigma
+D262 local 1.84 sigma (p=0.066); N=9: global p=0.46 = 0.74 sigma
+D262 local 1.84 sigma (p=0.066); N=12: global p=0.56 = 0.58 sigma
+D265 n without 1/(1+x): 126.9; with x=89, mu=1: 124.6
