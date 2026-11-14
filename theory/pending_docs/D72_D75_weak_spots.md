@@ -3147,3 +3147,22 @@ metrics do not depend on U? This needs a dedicated check against the exact (Arka
 also give the Twist's potential: the cliff and rung-3 W would have to come from bulk fluxes/instantons depending on U, not on the volume.
 (c) D327's s ≳ 1.04 applies if a GS shift is needed.
 Verdict: the first concrete string setting where the shield might hold beyond tree level, pending (a). Not a claim. Gap 2: HIGH.
+
+**D334 (pp, 06:32 CT, D333's decisive point (a)) — the loophole closes by the literature's own locality argument; a general one-loop no-go
+(literature + algebra; estimate level).**
+Conlon & Palti, "Gauge threshold corrections for local string models" (arXiv:0901.4350): K̂ = −2 ln𝒱 − ln∫iΩ∧Ω̄ − ln(S+S̄), and the physical
+coupling is g_a⁻² = Re f_a + β_a ln(M_P/μ)·(…) + [(Σn_rT_a(r) − T(G))/16π²]K̂ − Σ_r[T_a(r)/8π²] ln det Z^r. For local D3 models they fix Z by
+requiring local Yukawas to be bulk-independent, √(ZZZ) ∝ e^{K̂/2}, and the volume terms then combine into β_a ln(M_X²/μ²) with M_X = R M_s.
+They drop the complex-structure term (−ln∫Ω∧Ω̄) as "not relevant to our purposes".
+Applying the same locality logic to the bulk U (K̂ ⊃ −3 ln(U+Ū)): bulk-independent local Yukawas need Z ∝ e^{K̂_cs/3} = u⁻¹. The K̂ and Z terms
+then leave (−3c_a + 2ΣT_a(r))·ln u = −b_a ln u, i.e. d(1/α_a)/d ln u = −b_a/4π. That is the same drift as G₂ (D324) and the volume case. If instead
+Z is U-independent, the Yukawas pick up e^{K̂/2} ∝ u^{−3/2}, and masses drift. One of the two always moves.
+General statement (estimate, at one loop): for any rolling field with K ⊃ −3 ln(X+X̄), x-independent holomorphic f and y, and universal
+(local) matter metrics, physical Yukawas and gauge couplings cannot both be x-independent. Making Yukawas fixed forces
+d(1/α_a)/d ln x = −b_a/4π (α_em: d ln α/d ln x ≈ 7×10⁻³). The escapes are non-universal weights (D293: none with a holomorphic μ), plus
+GS: a dilaton GS spoils inflation (D325), and a twisted-moduli GS needs couplings s_a ∝ b_a that the known Z₃/Z₇ models lack (D326), passing
+inflation only for s ≳ 1.04 (D327).
+Verdict: D333's local D3 + bulk-U candidate fails condition (a), unless twisted moduli supply group-dependent GS terms ∝ (33/5, 1, −3), which
+is not shown in any model. Gap 2: HIGH; the no-go now covers volume, G₂ and complex-structure rolling fields alike. The weak point is the
+Twist's own e^K ∝ x^{−3}, which is what makes it rung 3.
+v6 suggestion: state this no-go explicitly in §5.1 as the precise form of the shield assumption.
