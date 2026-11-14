@@ -2631,3 +2631,11 @@ sleptons, H±, two charginos) give Δ(1/α) = (Δb/2π)Δln m = 0.394 between nu
 order-of-magnitude 10⁻³ confirmed, factor 3 larger). Today's rate, with d ln x/dt = √(2/3)·0.45H₀ = 2.5×10⁻¹¹/yr: d ln α/dt ≈ 3.7×10⁻¹³/yr,
 about 4×10⁵ times the atomic-clock bound (~10⁻¹⁸/yr). So the shield on the SUSY-breaking scale must hold to ≲ 3×10⁻⁶ in d ln m_soft/d ln x —
 quantified requirement added to gap 2. No status change.
+
+**D290 (pp loop, gap 5 dark-energy evidence) — theory priors shrink the DESI preference to the Twist's level.** arXiv:2509.13318 ("How
+theory-informed priors affect DESI evidence for evolving dark energy"): DESI DR2 BAO + Planck gives ~3.1σ with uniform w₀–w_a priors,
+~1.8σ with an exponential-potential prior (w₀ = −0.63, w_a = −1.12) and ~1.3σ with a hilltop prior; adding SNe with the physical prior:
+Pantheon+ ~1σ, Union3 ~2σ, DES Y5 ~3σ (possibly low-z systematics). No λ posterior (prior U(0, 2); λ ≲ √3 for an acceleration history).
+Reading: once dark energy is required to be a physical thawing field, the evidence for evolution is ~1–2σ except with DES Y5 — the same
+size as PURE-TWIST's 1.8σ local / 0.6–1.0σ trials-corrected (D262), and our DES Y5 swap also gave the Twist its strongest result. Gap 5
+unchanged (no evidence on current data; DES Y5 is the one dataset that prefers it, with a systematics caveat).
