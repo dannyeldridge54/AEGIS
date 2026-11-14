@@ -3594,3 +3594,17 @@ must be SHARP: canonical width ≲ 10⁻³ M_P (≈ 2×10¹⁵ GeV in field spac
 tilt, as in the D292 weight-3 trick. The weight route is natural in the Twist framework (D292 already uses it), so the symmetric stabiliser
 should be built with x-independent normalisation; then the tilt vanishes at tree level. Loop-level tilts (D323) would then set the residual.
 Status: TWIST-I's capture item is now "a sharp (≲ 10⁻³ M_P) or weight-neutral symmetric stabiliser at an ESP x ≳ 30". This is still model building.
+
+**D373 (pp, 08:55 CT, a weight-neutral symmetric stabiliser, as suggested in D372) — exists at tree level, and is exactly untilted, but a
+global one causes its own moduli problem; it must be localised (computed, sympy; theory/review/weight3_stabiliser_d373.py).**
+Construction: a stabiliser field Y at modular weight 3, K ⊃ |Y|²/(T + T̄)³, with W ⊃ k Y (T − T_E). Exact result at Y = 0:
+**V = k²|T − T_E|²**. The e^K factor cancels against K^{YȲ}, so there is no tilt, and the minimum is exactly at T = T_E (D372's problem is solved
+at tree level). The canonical mass is m_x² ≈ (4/3) k² x_E² (M_P = 1). Y must get its own mass, since it is flat at T = T_E; W ⊃ ½ m_Y Y² will do.
+Problem (aegis-check, cross-sector): a GLOBAL quadratic V is present along the whole roll. For m_x = 100 TeV it is ~10⁻²⁷ M_P⁴ at x ≈ 0,
+negligible during inflation (~10⁻¹¹), but larger than radiation for T ≲ 10¹¹ GeV. x would then be pulled in and oscillate with an O(1)
+energy share, which is the D359 moduli problem again. So g(T) must be LOCALISED: flat far from T_E and steep near it. For example
+g = k(T − T_E) times a factor that switches off for |T − T_E| ≫ w with w ≲ 10⁻³ M_P, or a ζ-type higher-order K term. Weight 3 removes the tilt
+whatever the shape.
+Status: TWIST-I capture now has a concrete tree-level skeleton: an ESP-trapping χ sector, plus a localised weight-3 stabiliser Y with
+W ⊃ Y g(T) and g(T_E) = 0. It is untilted, its minimum is exact at T_E, and it decays before BBN if m ≳ 100 TeV. Open: the origin of a localised
+g(T) and of T_E; loop-level tilts (D323-type) on the minimum.
