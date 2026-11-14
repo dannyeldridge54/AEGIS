@@ -3215,3 +3215,11 @@ For the Twist: the adopted eV-gravitino branch (D291–D292) makes the lightest 
 directly. They constrain the mediation sector's spectrum, not the Twist's x-independence (D292). Consequence for v6 §5.2: say that the
 branch implies prompt NLSP → gravitino decays at colliders, and cite GAMBIT for the surviving electroweakino regions.
 Gap 3: LOW–MEDIUM, unchanged.
+
+**D340 (pp, 07:03 CT, gap 12 initial conditions) — the Twist is in the robust class (literature).** "Robustness of inflation to kinetic
+inhomogeneities" (arXiv:2405.03490, numerical relativity): plateau models with a super-Planckian field-space scale (Starobinsky,
+μ = √(3/16π) M_Pl) inflate even after strong uniform kicks with the potential at only ~5% of the energy. Sub-Planckian models (μ = 5×10⁻⁴ M_Pl)
+fail even for small gradient and kinetic energy. Caveats: two models only, conformally flat periodic data.
+The Twist has α = 1 (x = e^{√(2/3)φ}), the same field-space scale as Starobinsky, so it is in the robust class. Its extra structure, the cliff
+at the far end, lies on the side the field rolls toward, not on the side kicks come from. D288 already showed light fields are safe.
+Gap 12: LOW, unchanged and better supported.
