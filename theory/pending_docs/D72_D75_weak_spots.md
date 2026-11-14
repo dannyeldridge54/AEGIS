@@ -2484,3 +2484,10 @@ Kolda–Lyth problem; it steepens the tail slightly, exactly the "tail slightly 
 factors in Δ, gravitational loops, the X field is a new ingredient, not the reheating field χ); the constant tilt over the CMB window
 assumes m_X² ≫ Δ throughout. Gap 15: G−'s naturalness concern (D230) is answered at estimate level — a perturbative coupling of one
 extra field gives the needed tilt. G− stays a post-data model, scored only on future CMB data.
+
+**D276 (pp loop 29, gaps 14 and 11).** Gap 14 (neutrino masses): the optional lead M_R ~ m_3/2 ~ 2×10¹⁴ GeV (D214, D244) assumed a high-scale
+gravitino; with D267–D272 the adopted reading is a 0.8–4.7 eV gravitino, so that lead is dropped. The seesaw itself is untouched: M_R is a
+free scale, and 6×10¹²–6×10¹⁴ GeV still sits inside the model's scales (Yukawa ~0.1–1 for m_ν ≈ 0.05 eV). Gap 14 stays LOW; neutrino
+masses are assumed. Gap 11 (Hubble): no new primary local-H₀ result found in this search — only secondary reports (a news summary of a
+~73 km/s/Mpc sub-1% distance-ladder result with no paper named, Apr 2026; a review noting CCHP values often fall between SH0ES and Planck).
+Not used. The Twist's H₀ ≈ 65.7 cost is unchanged; gap 11 stays LOW–MEDIUM.
