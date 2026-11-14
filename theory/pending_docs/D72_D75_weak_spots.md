@@ -2388,3 +2388,20 @@ construction of the inflaton sector is dropped. The kick sector of the matter me
 coupling is strong at Re T ≲ 1 where the kick acts — the same loss of control as the old cliff (stated in the exploratory note). TWIST-K's
 claims that worldsheet instantons "remove the conflict found at the string level" and give "a precise route to deriving n" are withdrawn
 (D189, D204–D211, D233 superseded them). Parameter values: one table (consolidated paper, Sec. 2), from MODEL_CARD_v5.
+
+**D267 (pp loop 24) — supersymmetry breaking in the Twist's no-scale sector: v5's gravitino assumption is not consistent as stated.**
+Algebra (exact for K = −3 ln(T + T̄)): m_3/2 = e^{K/2}|W| = |W|/(2x)^{3/2} on real T. Literature (read): Zwirner's no-scale review
+(arXiv:2504.06190): constant W₀ gives V = 0 with m_3/2² = |W₀|²/(8t³) — the gravitino mass slides with Re T. Ellis, Nagaraj, Nanopoulos &
+Olive, JHEP 11 (2018) 110, arXiv:1809.10114: Minkowski needs W = a T^{n±}, n± = (3/2)(α ± √α) → at α = 1, W = a or a T³; de Sitter needs
+a(T³ − 1)-type combinations. So for the Twist's α = 1: W ∝ T⁰ → m_3/2 ∝ x^{−3/2}; W ∝ T³ → m_3/2 ∝ x^{+3/2}; the only x-independent choice,
+W ∝ T^{3/2}, gives AdS (V = −3 m_3/2²), needing an extra T-independent uplift (a new tuning). Numbers for constant W₀ along the Twist's
+history: (2x)^{−3/2} = 2.4×10⁵ at the CMB point (x = 1.3×10⁻⁴), 0.35 at the cliff (x ≈ 1), 5.7×10⁻⁴ at freeze (x = 73), 4.2×10⁻⁴ today
+(x = 89) — a factor 5.7×10⁸ between the CMB point and today. (a) m_3/2 today ≥ 10¹¹ GeV (v5's range) → ≥ 6×10¹⁹ GeV during inflation
+(super-Planckian): excluded. (b) Requiring m_3/2(CMB) ≲ H_inf = 1.5×10¹³ GeV → m_3/2 ≲ 2.6×10⁴ GeV today (~3.5×10⁴ GeV at nucleosynthesis):
+thermally produced at T_RH ≈ 5.6×10¹⁴ GeV (Y ~ 10⁻⁷) and decaying near the MeV era, this violates nucleosynthesis bounds (estimate; standard
+heavy-gravitino BBN limits need Y ≲ 10⁻¹³–10⁻¹⁴ for TeV–10 TeV masses). Verdict: a constant SUSY-breaking W₀ is excluded for the Twist.
+What remains: (i) a near-massless gravitino (W = 0 at S = 0, superpartners not tied to m_3/2; helicity-3/2 production only, ΔN_eff ~ 3×10⁻⁸ —
+earlier estimate), which requires the low-energy theory not to be softly-broken SUSY with m_soft ~ m_3/2; or (ii) W ∝ T^{3/2} plus a
+sequestered T-independent uplift — an extra tuning, structurally the same problem as the fifth-force shield (soft scales tied to x).
+Status: v5 Section 5.2 / assumption 4 must be corrected in the next version: replace "m_3/2 = 10¹¹–10¹⁴ GeV from a separate sector" by
+options (i)/(ii) and state that the generic choice is excluded. The numerical check (w0_gravitino_d267.py: V with W₀ and S relaxed) is running.
