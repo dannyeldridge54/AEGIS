@@ -2938,3 +2938,18 @@ candidate would be excluded unless finely suppressed; the Twist's choice of a fe
 Verdict: the DM's existence and mass (~100 TeV end preferred by D317) stand as conditional; the decaying-DM signal is OPTIONAL, not a prediction.
 It appears only if DM stability rests on a global symmetry with gravity-strength breaking. Gap 13 stays LOW–MEDIUM; the wording "signal worth
 flagging" (D242) is narrowed to "possible signal if stability is not gauged".
+
+**D319 (deep loop 18, gap 8: does the G₂ picture (D311–D316) say anything about n beyond D283?) — a named origin, not a derivation
+(literature + argument).**
+Acharya, Bobkov, Kane, Kumar & Vaman (arXiv:hep-th/0701034, §2–3): hidden gauge kinetic functions f_k = Σᵢ N_iᵏ z_i, with integers N_iᵏ (the
+3-cycle), and condensate exponents b_k = 2π/c_k. At the SUSY two-condensate vacuum the prefactor ratio fixes a combination of the moduli:
+A₂/A₁ = (1/α) exp[−(b₁N¹ − b₂N²)·s], so the stabilised hidden volumes are set by the rank data (c₁, c₂, N's) times ln(A₁/A₂) (plus the O(1)
+constant α from their linear system).
+Applied to the Twist's G₂ lead: the cliff condensate sits on a cycle with N₂ = 1 and some N₁ ≥ 1 (D315), so its depth is
+e^{−2π N₁·Re T₁/c_cliff}, with Re T₁ fixed by the ABKKV pair on T₁-only cycles. Hence 2n ≈ 249 (D255: n = π/α_h, α_h⁻¹ ≈ 39.8) becomes
+"integers (ranks, wrapping numbers) × a logarithm of one-loop prefactor ratios". The prefactors are threshold corrections that are computable
+in principle on a given G₂ manifold (Friedmann–Witten type). Today's Λ ∝ e^{−2n} needs n to ±0.4 (a factor ~2 in Λ), i.e. α_h⁻¹ to ~0.3%,
+so the prefactor logarithm would need ~0.1 precision. No such computation exists for any explicit G₂ manifold.
+Verdict: one step beyond D283. In the G₂ setting n is no longer a free real coupling but a discrete-data-plus-threshold quantity, "derivable in
+principle". This is not a prediction: the integer choices are free, and the anthropic/landscape reading of D283 remains. Gap 8 unchanged
+(n chosen). Add to question 12 of the G₂ proposal: "Can the one-loop prefactors fix Re T₁ to the per-mille level needed for n?"

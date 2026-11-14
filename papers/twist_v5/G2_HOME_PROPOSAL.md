@@ -38,3 +38,6 @@ M-theory on a G₂ manifold. Gauge groups and chiral matter sit at singularities
 >
 > 1. Is that block a flat direction with K = −3 ln(T + T̄)?
 > 2. Are the Standard Model gauge couplings and Yukawas independent of it to the 10⁻⁸ level required by atomic clocks?
+
+
+**Addendum (D319, 14 Nov 05:40 CT).** In this picture the cliff depth n becomes integers (ranks, wrapping numbers) times a logarithm of one-loop condensate prefactors, via the ABKKV vacuum condition A₂/A₁ = α⁻¹exp[−(b₁N¹ − b₂N²)·s] (hep-th/0701034). Question 12 gains a sub-question: can these prefactors fix Re T₁ to the ~0.3% level that today's Λ ∝ e^{−2n} needs?
