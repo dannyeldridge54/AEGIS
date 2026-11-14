@@ -2168,3 +2168,12 @@ X = 3N*(1 + w)/(4F(Ω_DE)): w0 ≳ −0.98 would need too few e-folds, i.e. it C
 sets both slopes but not via this relation), which is why it can give w0 ≈ −0.9 with n_s ≈ 0.965. So the shield idea has a respected precedent
 (scale symmetry → Goldstone decoupling), and the Twist's distinctive risk is precisely its large late-time symmetry breaking. Gap 3 status:
 unchanged; the paper should cite Higgs-dilaton cosmology as the precedent and state this difference.
+
+**D242 (pp loop 9) — gap 12: the Twist's dark-matter window is inside the "gravity portal" stability bound, but near its edge (literature,
+arXiv:1611.00725).** For a singlet fermion that decays only through gravity-portal operators (lowest is dimension 6, rate ∝ M⁻⁴ with M the
+Planck/new-physics scale), requiring a lifetime ≳ 10²⁴ s (conservative) allows m_DM ≲ 10⁶ GeV for an O(1) non-minimal coupling ξ, rising to
+~10¹⁰ GeV for ξ ~ 10⁻¹⁶; specific channels (neutrinos, WW) are bounded at 10²⁶–10²⁷ s, which tightens the window by roughly a factor
+(10²–10³)^{1/5} ≈ 3–4 in mass for fixed couplings. The Twist's conditional candidate (100–500 TeV = 10⁵–5×10⁵ GeV, from χ̃ decays, D105 context)
+sits below the ~10⁶ GeV edge for ξ ~ O(1) — allowed, but within a factor 2–10 of it, so a gravity-portal Twist DM would be a DECAYING dark
+matter with a lifetime possibly near current neutrino/gamma-ray limits — a potential signal (IceCube/KM3NeT high-energy neutrinos, LHAASO
+gamma rays) worth flagging as a target, not a prediction (the candidate is still conditional and out of the predictions table).
