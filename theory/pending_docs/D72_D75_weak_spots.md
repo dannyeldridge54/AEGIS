@@ -4000,3 +4000,12 @@ D395's map value N* = 57.2 must read 56.7–56.0 with pinning (λ 0.033, v 10¹�
 and v close to the crossing temperature (condensate right after capture), i.e. the least dilution. Returned to rung 10 (right ladder) with
 the task: reduce D below ~4.5 without breaking trapping or T_d (options: v at T_x, a larger λ if D377's upper bound can move, or a decay
 channel for x that is faster than gravitational).
+
+**D407 (cycle 1; RIGHT ladder, scored, locked PREREG_D407_GAUGE_DECAY; results/gauge_decay_d407.txt) — the pinning dilution disappears if x
+decays through the gauge channel of the χ condensate: D = 1.000 (≤ 1.001) at every grid point, even with κ = 10⁻⁶.** Reason: at gauge strength
+Γ = κ g_X² m_x/8π, x decays at T_d ≈ 10⁹–10¹³ GeV, before its oscillation energy (ρ_x/ρ_r ≲ 4×10⁻⁴ at T_c, D396) can grow. CENTRE: BALANCED —
+ΔN* ≈ 0, so the left ladder keeps N* = 57.2, n_s 0.9651 (D391); F2 passes (T_d ≫ 5 MeV, D ≈ 1); F5: DM mass returns to 100–200 TeV (no D shift),
+leptogenesis needs only 0.87×10⁻¹⁰ (D394 room ×10³). This supersedes D397's PeV DM and resolves D406 (CONFIRMED, conditional).
+Conditions (to be checked in later cycles): (i) the light U(1)_X-charged decay products must not be dark radiation (F7: they should be
+SM-charged, e.g. U(1)_X mixing with hypercharge, or decay further); (ii) x's multiplet really contains the decaying scalar with κ ≳ 10⁻⁶
+(field theory of the Higgs branch); (iii) U(1)_X must be anomaly-free and its D-term must allow the D-flat condensate.
