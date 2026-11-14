@@ -2855,3 +2855,18 @@ excluded — the first non-excluded lead for gap 9. Caveats: twisted T⁷ is a t
 singularities; the 4d Planck mass scales with V, so a rolling block changes M_P/M_11 (must be checked for varying-G). Status: gap 9 MEDIUM,
 with an open lead (seven-disk sub-block with the SM on a complementary 3-cycle). Worth a follow-up by an M-theory expert (question 12 for the
 open-problem doc).
+
+**D312 (deep loop 11, gaps 2/9: does M-theory on G₂ give the shield structure?) — it supplies most of it naturally; first plausible string
+home for the shield.** Read: Acharya, Bobkov, Kane, Kumar & Shao (hep-th/0701034): each gauge group lives on a 3-cycle with
+f_k = Σ_i N^k_i z_i (integer homology coefficients; some N^k_i can be zero), K = −3 ln(4π^{1/3}V_X), V_X = Π s_i^{a_i}, Σa_i = 7/3,
+m_p = M₁₁V_X^{1/2}/√π. Acharya & Bobkov, "Kähler independence of the G₂-MSSM" (JHEP 09 (2010) 001): visible matter at conical
+singularities has K̃ = κ(s_i)/V_X (κ homogeneous of degree 0), forced by locality; soft terms are insensitive to κ's form.
+Consequences for the Twist (analysis): (1) GAUGE COUPLINGS: 1/g²_SM = Σ N^SM_i s_i — if the SM 3-cycle has N^SM_i = 0 on the rolling block
+(the Twist's α = 1 three-modulus block, D311), the SM gauge couplings are exactly independent of it, with no Green–Schwarz/universal-dilaton
+obstruction (unlike heterotic, D302/D309). (2) YUKAWAS: physical Y = e^{K/2}Y₀/(K̃K̃K̃)^{1/2} = Y₀ κ^{−3/2} — the overall V_X cancels exactly
+(locality); what remains is κ(s_i), a degree-0 function of moduli RATIOS; if locality makes κ depend only on moduli near the SM singularity (the
+fixed block), Yukawas are x-independent too. (3) Still sliding: m_3/2 = e^{K/2}|W| ∝ V_X^{−3/2} and hence gravity-mediated soft masses, and
+M₁₁/m_p ∝ V_X^{−1/2} — the SUSY-breaking scale needs the D292 mechanism (a W ∝ block^{3/2}-type term plus weight-3-type uplift) transplanted
+to G₂, not yet done; M₁₁ affects only heavy states. Status: gap 2 HIGH → HIGH with a concrete candidate; gap 9 MEDIUM with the G₂-MSSM-type
+"SM on a 3-cycle away from the rolling block" as the leading lead. Not shown: that the block has the plateau→cliff→tail potential; that the fixed
+block can be stabilised; chirality/singularity realism. Recorded as open-problem question 12 for M-theory experts.
