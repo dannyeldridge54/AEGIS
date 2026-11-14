@@ -3394,3 +3394,7 @@ D357's m_x, m_y ≳ 100 TeV therefore needs strong, SUSY-preserving stabilisatio
 switched on only for x ≳ 30 (e.g. condensates whose e^{−a T} turn on as the field arrives). This is the same tuning type as D315/M3, here as a
 model-building requirement. Not constructed. Open item (a) is restated as "a strong SUSY-preserving stabiliser of T at x_min ≳ 30 with
 m ≳ 100 TeV". D320 is still running; D355 has not started (waiting for Danny's launcher).
+
+**D355a (07:42 CT) — D355 started.** Danny was away from home, so the launcher was opened through computer use (File Explorer, click
+tier; double-click on Desktop\RUN_D355_MNUFREE.bat). The log reads "2026-11-14 07:40:21 D355 start". Both fits (PURE, LCDM) initialised their
+likelihoods (DESI DR2 BAO etc.) and entered the minimiser. Expected ~1.5 h, so the score is due ~09:15 CT. No other PC action was taken.
