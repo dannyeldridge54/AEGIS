@@ -3468,3 +3468,18 @@ is not relaxed before H ≈ m and gives the standard moduli problem. Linde's exp
 (D361).
 Verdict: TWIST-I costs a positional tuning of x_min to x_∞ at the 10⁻⁷–10⁻⁵ M_P level, unless a mechanism ties the minimum to x's own resting
 point (none known). This is a third tuning besides Λ and n, and it should be stated in v6 item 18. D359–D361's statements are folded into this one.
+
+**D363 (pp, 08:17 CT, TWIST-I: a mechanism that ties the minimum to where x stops?) — moduli trapping at enhanced symmetry points is the
+natural candidate (literature, abstract only; not yet checked quantitatively).** Kofman, Linde, Liu, Maloney, McAllister & Silverstein,
+"Beauty is attractive: moduli trapping at enhanced symmetry points" (hep-th/0403001; abstract read, the HTML did not render): particles that
+become light at special points of moduli space are produced as a modulus rolls through, and their back-reaction (a confining potential
+∝ g|φ − φ_ESP| n_χ) traps the modulus at that point. In an expanding universe, Hubble friction limits how far it rolls. The authors say trapping
+"ameliorates" the moduli problem. A follow-up with higher-dimensional couplings: arXiv:1310.4751.
+For TWIST-I this would replace the 10⁻⁶ M_P positional tuning (D362) with a dynamical one. x would be trapped at an enhanced symmetry point
+x_ESP ≥ 30 that it rolls through after matter genesis, and the oscillation energy would go into the produced χ particles, which decay to radiation.
+Conditions to check: (i) an ESP exists on the Twist's field range (the cliff region is a natural place: the cliff condensate/instanton sector
+changes there); (ii) trapping must happen after freeze-out, with residual oscillations damped by particle production rather than left as a
+coherent modulus; (iii) χ must decay before BBN; (iv) at the trapped point x must still get a mass, since trapping alone gives a linear,
+n_χ-dependent potential that dilutes. Possible caveat: as n_χ dilutes, the trap weakens and the modulus can drift again unless a true
+minimum exists at the ESP (the usual statement is that trapping holds the field long enough for other effects to stabilise it).
+Status: TWIST-I open item (a') becomes "an ESP at x ≳ 30 plus a stabilising minimum there". This is a mechanism to evaluate, not a solution.
