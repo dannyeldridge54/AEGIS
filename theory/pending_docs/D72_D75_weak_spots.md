@@ -3132,3 +3132,18 @@ Redone with an assumed ±0.5 on the fit value: Twist vs model-independent catego
 probes. D331's "~4σ" is withdrawn.
 Gap 11: MEDIUM → LOW–MEDIUM. Stated cost: "the Twist's full-fit H₀ = 66.8 is ~1.2 below ΛCDM on the same data, about +1σ worse against
 non-ladder probes; it does not address the ladder tension." The model card line is updated.
+
+**D333 (deep loop 22, gap 2 loophole follow-up to D326–D328) — a concrete candidate setting, not a solution (literature + argument).**
+Aldazabal, Ibáñez, Quevedo & Uranga, "D-branes at singularities: a bottom-up approach to the string embedding of the Standard Model"
+(hep-th/0005067): the SM sits on D3-branes at a local C³/Z₃ orbifold singularity of an arbitrary compact bulk. A Z₃ singularity has no N=2
+subsectors (no fixed planes), so the one-loop thresholds carry no b^{N=2} terms. The local gauge couplings are set by the dilaton plus local
+twisted (blow-up) moduli, which the anomalous U(1) D-terms hold at the orbifold point. The bulk complex-structure moduli U do not enter the
+local spectrum or the tree-level couplings, and M_s/M_P depends on the volume and dilaton, not on U.
+That meets D326/D328's conditions (i) D3 at an orbifold point and (ii) no SM-charged N=2 sector, if the rolling field is a bulk U modulus
+(diagonal, K ⊃ −3 ln(U+Ū)).
+Open, and decisive: (a) does the Kaplunovsky–Louis Kähler-anomaly term c_a K still carry the bulk −3 ln(U+Ū)? That would give
+d(1/α_a)/d ln u = −3c_a/16π², which is non-zero. Or is it cancelled by the local twisted-moduli GS (condition iii), given that local D3 matter
+metrics do not depend on U? This needs a dedicated check against the exact (Arkani-Hamed–Murayama) formula; not done here. (b) Bulk U must
+also give the Twist's potential: the cliff and rung-3 W would have to come from bulk fluxes/instantons depending on U, not on the volume.
+(c) D327's s ≳ 1.04 applies if a GS shift is needed.
+Verdict: the first concrete string setting where the shield might hold beyond tree level, pending (a). Not a claim. Gap 2: HIGH.
