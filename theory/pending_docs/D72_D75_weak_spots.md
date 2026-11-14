@@ -3332,3 +3332,16 @@ non-funded mission.
 Conclusion: there is no sourced forecast for the scale-invariant uncorrelated isocurvature bound the Twist's hidden axion faces. D278's "factor
 ~2 (SO class)" stays an unsourced expectation, and it should not be stated as a forecast in v6. Gap 7: LOW–MEDIUM, unchanged; the D320 locked
 run is still pending.
+
+**D353 (pp, 07:42 CT, gap 4: ACT DR6 birefringence paper read directly) — ACT gives β ≈ 0.22 ± 0.07° (2.9σ) and declines to draw
+conclusions (literature).** "Cosmic birefringence from the Atacama Cosmology Telescope DR6" (arXiv:2509.13654): the mean rotation is
+⟨ψ⟩ ≈ 0.20° ± 0.03° (stat), ± 0.08° with calibration uncertainty. The instrument angles come from a polarisation-sensitive optics ray-tracing
+model (σ 0.09° PA4/PA5, 0.11° PA6), independent of Galactic dust. A joint fit with the optics priors gives β = 0.215° ± 0.074° (2.9σ from zero),
+"consistent with WMAP and Planck". The authors say unresolved systematics (an unexplained PA5 f090/f150 discrepancy) "do not yet allow us to
+draw strong cosmological conclusions", and they ask for calibrator-based confirmation.
+Relation to D301: D301's ">3σ Planck–ACT difference" compares the total angles (Planck 0.29 ± 0.03 vs ACT 0.19 ± 0.03, statistical only).
+With ACT's 0.08° calibration error, the gap (0.10°) is only ~1.2σ, so D301's miscalibration hint was overstated, and the experiments are
+mutually consistent once systematics are included. Combined evidence: Planck MK 0.37 ± 0.11° (D330), ACT 0.215 ± 0.074°, both ~3σ, and neither is
+absolutely calibrated.
+Twist (BIREF-NULL, β = 0): ~3σ against it on each experiment taken at face value, unscored (the locked rule needs an absolutely calibrated
+measurement). Gap 4: HIGH, not rising. D301's favourable reading is withdrawn. The decider is still SO with drone calibration (D303).
