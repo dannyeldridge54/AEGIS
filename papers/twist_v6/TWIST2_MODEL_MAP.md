@@ -106,3 +106,4 @@ alone.
 | 1. Inflation (N* cancels) | B1 = r − 3(1−n_s)² = 0; B2 = α_s + ½(1−n_s)² = 0 | B1 = −0.9×10⁻⁴ (tol 1.2×10⁻⁴); B2 = +1.5×10⁻⁷ | awaits LiteBIRD/SO; imbalance kills the plateau class |
 | 2. Dark energy ↔ clocks | (α̇/α)/[H₀√(3Ω_DE(1+w₀))] = ζ ≈ 3–6×10⁻³ (rolling modulus) | measured (4.4 ± 6.2)×10⁻⁹ | out of balance by ~5×10⁵σ: no rolling modulus (why Twist-2 uses Λ or an axion) |
 | 3. Birefringence ↔ dark energy | β² = 2.5×10⁻³ (c_γ/f)² (1+w₀) deg² | balanced at c_γ/f ≈ 10–13 | measures c_γ/f today; a test once a second arm (reionization-era β) exists |
+| 4. Reionization ↔ recombination birefringence | ρ_β = β_reio/β_rec = 1 − ε, ε ≤ 3.5×10⁻³ (single DE axion) | computed (D404) | awaits LiteBIRD; ρ ≈ 1 also from miscalibration, so it separates late vs early fields, not signal vs systematic |

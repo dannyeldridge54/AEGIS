@@ -3969,3 +3969,13 @@ and K1 f² ≈ 2.1–2.5×10⁻³ deg² over f = 0.5–2, so β² ≈ 2.5×10⁻
 0.203 ± 0.034° (PantheonPlus) and 0.249 ± 0.028° (DESY5) vs 0.261 ± 0.061°: BALANCED (0.8σ, 0.2σ). Honest reading: with c_γ/f free this
 measures c_γ/f ≈ 10–13 rather than testing it; it becomes a test with a second, independent arm (e.g. the reionization-era rotation, whose
 ratio to the recombination value is also θ_i-free — a fourth bridge, not yet locked), or once c_γ/f is fixed by the model.
+
+**D404 (scored, locked PREREG_D404_BRIDGE4; results/bridge4_d404.txt) — bridge 4 computed: ρ_β = β_reio/β_rec = 0.9965–0.9989 for the
+single thawing axion (all grid points), i.e. ρ_β = 1 − ε with ε ≤ 3.5×10⁻³ (z_re = 7), 2.5×10⁻³ (z_re = 8), 1.3×10⁻³ (z_re = 10). No measurement
+yet: not scored (literature).** The ratio is c_γ- and θ_i-free as intended (spread across f and θ_i < 10⁻³). Data: no reionization-era β
+exists; the recombination-era combination is β ≈ 0.3° (4.6σ combined, Planck/WMAP/ACT; arXiv:2602.12019), and Planck ℓ > 42 shows no scale
+dependence (consistent). LiteBIRD (2030s) is the first experiment able to measure both bumps (arXiv:2203.08560, 2602.12019).
+Honest limit (aegis cross-check): a pure polarisation miscalibration ALSO gives ρ_β = 1. So bridge 4 separates "late field (dark-energy
+axion) or miscalibration" (ρ ≈ 1) from "field that moved before reionization" (early-dark-energy or dark-matter-like axion, ρ ≠ 1); it does
+not by itself separate the dark-energy axion from a systematic. That separation needs the calibration-independent methods (D330, D386)
+or a reionization-bump analysis that fits miscalibration jointly (2108.09287).
