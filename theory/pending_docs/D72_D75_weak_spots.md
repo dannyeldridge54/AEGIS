@@ -4039,3 +4039,14 @@ only"; the post-inflation roll is safe. Result → no wall.
 RUN_D410_CROWN.bat (both minimisers initialised; best of 4). Pre-run note (stated in the lock, from stored non-locked fits): with these
 likelihoods ΛCDM n_s = 0.9737, free w0–wa n_s = 0.9720, CMB-only 0.9711, so letting dark energy evolve lowers n_s only by ~0.002; C1 is at risk.
 Score with `python crown_d410.py score` (runs automatically at the end; log cmb-fit/results/d410_log.txt).
+
+**D411 (cycle 4; PART 4 leptogenesis, LEFT/RIGHT; estimate from existing numbers, no new locked computation).**
+(a) ALONE: thermal leptogenesis needs M₁ ≳ 10⁹ GeV (Davidson–Ibarra); with D407's D ≈ 1 it must only make the observed 0.87×10⁻¹⁰; the
+Davidson–Ibarra ε₁ ≤ 10⁻⁴ (M₁ 10¹²)–10⁻³ (10¹³) gives up to ~10⁻⁷ before washout (D394), i.e. a washout efficiency κ ≳ 10⁻³ suffices.
+Literature: leptogenesis in a quintessential-kination background was studied by Chun–Scopel (arXiv:0707.1544): a faster expansion keeps
+N₁ out of equilibrium and weakens washout.
+(b) CONNECTIONS: part 3 — from D367c, Ω_kin < 1% below T ≈ 2.5×10¹² GeV, so for M₁ ≲ 2×10¹² GeV leptogenesis is standard radiation-era;
+for M₁ ~ 10¹³ GeV it happens while Ω_kin ≈ 0.2–0.5 (washout mildly reduced, in the favourable direction). Inflaton decay into N₁ needs
+M₁ < m_inf/2 = 2.5×10¹³ GeV (D394). Part 9 — T_RH ~ 5×10¹⁴ GeV is only safe with the light (eV) gravitino branch (D292); flagged for part 9.
+Part 1 — no dilution (D407), so no extra demand.
+(c) CENTRE: F2 (D ≈ 1) and F3 unchanged; matter sector consistent for M₁ ∈ [10⁹, 2.5×10¹³] GeV. Verdict: consistent, nothing new scored → WALL 1.
