@@ -38,3 +38,12 @@ https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md).
   refit with its confirmation running on the PC; shield; TWIST-P and TWIST-L locked for future data).
 - Saved as draft; verified after reload. Publish is Danny's button. Note: the DOI question shows "Yes, I already have one" after
   reload with an empty DOI box — choose "No, I need one" (or press "Get a DOI now!") before publishing.
+
+## 18:50 CT — both drafts refreshed with the evening's results (not published)
+- Twist draft https://zenodo.org/uploads/24202422: PDF replaced by Twist_one_field_2026-11-13_v4.pdf (26 pages, 636,307 bytes,
+  md5 f05b69cc2b4b373951549fbc56cd6009; old 23-page file removed); description replaced by v3 (every part: model, inflation and n_s variants,
+  matter/DM, dark energy, fifth force + string survey, birefringence + ALP extension, other, tests). Saved; verified after reload.
+  DOI: the form shows "Yes, I already have one" after reload (no reserved DOI) — choose "No, I need one" when publishing.
+- FLAG-1 record https://zenodo.org/uploads/24140195: status notice updated (item 4 points to the Twist paper and its main results);
+  version-4 text kept. Saved as a draft edit; verified after reload. Public record unchanged until published.
+- Publish on both is Danny's button.
