@@ -3871,3 +3871,17 @@ pinning (D390, open) + Λ from the cliff (w = −1) + a separate light axion for
 fixed by one dataset. Single-axion dark-energy-plus-birefringence (D393) kept as the switch-on variant if DESI's evolution is confirmed
 by a non-DESY5 sample. Trade-offs recorded: the angle-driven matter genesis and its isocurvature signature are given up; β is fitted in
 the baseline.
+
+**D396 (scored, locked PREREG_D396_PINNING; results/pinning_d396.txt) — PASS (robust, estimate-grade): χ can pin x at x_E without a
+moduli problem, for a late capture point (x_E ≈ 29.6, crossing at T ≈ 1.5×10¹¹ GeV) and a condensate at v ≈ 10⁹ GeV, for all three λ
+in the D377 window.** Chain: as x crosses x_E, the light χ, χ̄ in the bath give a thermal trap (frequency gT/2, g = λ x_E √(2/3)); x is
+trapped in every scan point (kinetic/barrier 0.002–0.015). The trapped amplitude shrinks ∝ T, so at T_c it is 10⁻¹⁴–10⁻¹⁰ M_P (below the
+10⁻⁷–10⁻⁵ M_P that D360a requires). The condensate gives m_x = g v. At the robust point (x_E 29.60, v 10⁹ GeV): m_x ≈ 10⁸–8×10⁸ GeV,
+T_d ≈ 65 GeV–1.6 TeV, dilution D = 886 / 225 / 38 for λ = 0.004 / 0.01 / 0.033. Partial passes: x_E 29.45 (v 10⁹; λ ≥ 0.01) and x_E 29.21
+(v 10⁹; λ = 0.033). Lower v (10⁵–10⁷ GeV) gives D ≫ 10³ (moduli-dominated) or T_d < 5 MeV. Arithmetic check: ρ_x/ρ_r at T_c is
+independent of v (as the scaling requires) and D ∝ v^{−1/2}.
+What it means: the "tuning to 10⁻⁷" worry of D390 disappears, since the thermal trap centres x on x_E automatically; x_E needs only to sit
+below x's free-roll limit 29.83 and close to it (late crossing, small velocity). Costs: an entropy dilution D ~ 40–900, which leptogenesis
+can absorb (D394 room ~10³) but which also dilutes gravity-only DM, so the DM mass window must be recomputed with D. Assumptions:
+χ, χ̄ in thermal equilibrium (needs gauge charge, which the D-flat condensate needs anyway); O(1) factors in m_th, m_x and Γ not fixed.
+Status: open problem 1 → PASS at estimate level; a field-theory check (thermal potential and condensation transition) remains.

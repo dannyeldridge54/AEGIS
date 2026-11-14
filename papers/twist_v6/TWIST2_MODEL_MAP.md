@@ -36,7 +36,7 @@ The pinning of x after trapping is the open piece (D390: χ condensate, Higgs-br
 | Leptogenesis | thermal N₁ decays | n_B/s up to ~10⁻⁷ possible (need 0.87×10⁻¹⁰) | D394 estimate |
 | Matter freeze-out | x ≈ 3 | T ≈ 2×10¹³ GeV | D367b |
 | Capture | x crosses x_E; χ produced, traps x | T ≈ 10¹²–10¹¹ GeV; entropy cost Δ ≈ 1 + O(10⁻³) | D384, D367b |
-| Pinning | χ condenses, x gets mass λv | T_c ~ v ≳ 10⁷ GeV | D390, OPEN |
+| Pinning | thermal χ trap holds x at x_E; χ condenses, x gets mass gv | v ≈ 10⁹ GeV, x_E ≈ 29.6; dilution D ≈ 40–900 | D396 PASS (estimate) |
 | BBN → recombination | standard | — | — |
 | After recombination | axion a rolls, rotates CMB polarisation | β ≈ 0.42°(c_γ/2π)Δθ | D393 relation |
 | Today | dark energy = Λ = V_Twist(x_E) ∝ e^{−2n} | w = −1 exactly | D383 |
@@ -77,7 +77,7 @@ The pinning of x after trapping is the open piece (D390: χ condensate, Higgs-br
 
 ## 7. Open problems (priority order)
 
-1. Pinning of x after capture (D390; lock + compute first).
+1. Pinning of x after capture: D396 PASS at estimate level (x_E ≈ 29.6, v ≈ 10⁹ GeV, D ≈ 40–900). Remaining: field-theory check of the thermal trap and condensation; recompute the DM window with D.
 2. Derive the heat share from the inflaton's couplings (removes a dial; sharpens n_s).
 3. Tie m_ψ to a Twist scale (turns the DM window into a prediction).
 4. String origin of axion a (a second Kähler modulus axion is the natural candidate) and of (T − T_E) (D388).
