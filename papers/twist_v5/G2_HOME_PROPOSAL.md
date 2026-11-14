@@ -1,5 +1,7 @@
 # A candidate M-theory home for the Twist: the G₂ block split
 
+> **Status after review (D323–D324, 14 Nov 06:15 CT): works at tree level only. At one loop the SM couplings move as d(1/α_a)/d ln x = −b_a/4π (Kaplunovsky–Louis), giving d ln α_em/d ln x ≈ 7×10⁻³. Five fixes were tested and all fail. Kept as a record, not as a candidate home.**
+
 13–14 Nov 2026, built from D309–D315. This is an exploratory proposal, not a derivation.
 
 ## Why not heterotic

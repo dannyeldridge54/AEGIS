@@ -10,7 +10,7 @@ slides with x (d ln M₁₁/d ln x = −1/2). The SM is matched at the local sca
 D292 makes the SUSY-breaking (soft) scale x-independent in Planck units. The ratio M₁₁/m_soft therefore moves, and
 d(1/α_em)/d ln x = (b_em/2π)(1/2) ≈ 0.95 for MSSM b_em = 12, i.e. **d ln α_em/d ln x ≈ 7×10⁻³** (estimate). That is the same size as the
 soft-drift effect D289 found to be ~4×10⁵ times over the clock bound. Equivalently, in the Kaplunovsky–Louis formula the Kähler-anomaly and
-matter-metric terms do not cancel: with Z = κ/V_X and K ⊃ −3 ln V_X, the coefficient is (ΣT_r/3 − 3T_G)K, which is −7K for SU(3).
+matter-metric terms do not cancel: with Z = κ/V_X and K ⊃ −3 ln V_X, the coefficient is (ΣT_r/3 − 3T_G)K, which works out to −b_a ln t₂ per gauge factor (corrected in D324; an earlier draft said −7K).
 - D322's statement "the SM coupling gets no x-dependence from thresholds at one loop" is wrong. The Ray–Singer torsion is only the local part
   of the threshold.
 - The bullet "Varying M₁₁/M_P affects only heavy states" is wrong. Heavy thresholds feed into light couplings logarithmically.

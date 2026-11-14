@@ -3005,3 +3005,26 @@ thresholds at one loop" is withdrawn (Ray–Singer is the local part only). The 
 Also: the non-diagonal rolling-block moduli are unstabilised (M2), and W = 0 for the fixed block is a racetrack tuning (M3).
 Status: gap 2 back to HIGH with no candidate mechanism; gap 9 stays "proposal". The tree-level parts (N₂ = 0 coupling, Yukawa volume
 cancellation) stand.
+
+**D324 ("fix test", 06:15 CT): can the G₂ one-loop problem (D323) be fixed? Five fixes tested; none works (algebra + earlier results).**
+First, M1 is confirmed by the proper Kaplunovsky–Louis formula: 16π²/g_a² ⊃ c_a K − 2ΣT_a(r) ln Z_r, with c_a = ΣT − T_G. With K ⊃ −3 ln t₂
+and local Z = κ/V_X ⊃ −ln t₂, the ln t₂ coefficient is −3c_a + 2ΣT = **−b_a**. This is exactly the matching-scale shift M₁₁ ∝ t₂^{−1/2}.
+d(1/α_a)/d ln x = −b_a/4π = −0.53 (U(1)), −0.08 (SU(2)), +0.24 (SU(3)); α_em: −0.955, d ln α_em/d ln x ≈ 7.0×10⁻³. (The referee report's
+"−7K for SU(3)" was an arithmetic slip; the correct coefficient is −b_a ln t₂. The conclusion is unchanged.)
+Fixes tested:
+(a) T₂-dependent matter metrics (modular weights under T₂): this is D293's linear system. With an x-independent μ-term there is no solution.
+FAIL.
+(b) A Green–Schwarz-type mixing of the fixed block with ln t₂ (K ⊃ −4 ln(T₁+T̄₁ − δ ln(T₂+T̄₂))): one δ shifts all f_a in proportion to their
+N-vectors, but the cancellation needs shifts ∝ b_a = (33/5, 1, −3), which have mixed signs. Each SM factor would need its own tuned δ.
+FAIL (tuning, not a mechanism).
+(c) Extra matter so that b_em = 0 between m_soft and M₁₁: added matter only raises b, and b₁ > 0 already. FAIL.
+(d) Let every SM scale (soft masses, v, Λ_QCD) track M₁₁: dimensionless SM ratios are then fixed, but all masses ∝ M_P x^{−1/2}. That is a
+universal matter coupling β = (1/2)/√(3/2) = 0.41 against the Cassini bound ~3×10⁻³. FAIL (this is the type IIB β_m problem).
+(e) Roll along a direction at fixed V_X: then e^K is constant along it, and the Twist's x^{−3} plateau structure (rung 3) is lost. FAIL.
+M2 test (non-diagonal moduli of the rolling block): stabilising them without T₂ needs cycles with Σ N_i a_i = 0. Those have mixed-sign N
+and zero volume on the diagonal, which is uncontrolled. No clean fix. M3: kept as a stated tuning.
+Verdict: a no-go at the estimate level. If the rolling field's x^{−3} in e^K comes from the overall volume, then at one loop the SM couplings
+move as d(1/α_a)/d ln x = −b_a/4π, and no matter content, weight assignment or single counterterm removes it. The obstruction is generic
+to any compactification where the UV matching scale is set by the same volume (distance-conjecture form). The shield (gap 2) therefore needs
+either a tuned per-group cancellation to ~10⁻⁶ (unnatural), or a rolling field that is not a volume. Gap 2: HIGH, sharpened into a no-go
+statement. G₂ proposal: downgraded to "tree-level only; fails at one loop".
