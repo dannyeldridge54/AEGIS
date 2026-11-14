@@ -62,3 +62,11 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
   published with it), 24136806, 24125958, 23898709 (FLAG-1 v3–v1), 23918236 and 23867116, 23847152, 23790573, 23789830 (torsion EDE, all
   versions), 23839507 and 23838969 (pre-registrations). The records outside the Twist concept also got a related identifier
   "is continued by 10.5281/zenodo.24221993". Done through the Zenodo API in Danny's signed-in Chrome (no credentials handled).
+
+## 14 Nov 2026, ~09:55 CT: v5.2 published (Danny: "Publish")
+- **v5.2**: record 24223673, DOI 10.5281/zenodo.24223673, now the latest in concept 24202420. Files: the three v5 files (unchanged) plus
+  Twist_v5.2_errata_2026-11-14.pdf (md5 16e5b1104562f6081ebadea98b555cc2; supersedes the v5.1 errata, which is not carried over). The errata
+  reflects the repo at 09:55: item 18 rewritten (capture construction; Λ kept, n ≈ 124.1), items 19–20, and D360b. D355 and D367 were still running.
+- Every earlier record (v5.1, v5, v4, FLAG-1 v1–v4, torsion EDE v1–v5, both pre-registrations; 14 records) now opens with a pointer to v5.2
+  and to the concept DOI 10.5281/zenodo.24202420, which always resolves to the latest version. The v5.1 pointers were removed. The original
+  descriptions were checked as intact after the edit. The non-Twist records carry "is continued by 10.5281/zenodo.24223673".
