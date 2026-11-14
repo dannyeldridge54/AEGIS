@@ -2326,3 +2326,10 @@ the same numbers D134 used (≈10⁻⁵ at f = 0.1), giving S_B ≈ 6×10⁻⁶ 
 anthropic room" criterion (H/Λ ≲ 1.2×10⁻⁵) is met only for f ≳ 0.5 M_P (not for f = 0.05–0.3: H/Λ = 2.1×10⁻⁵ at f = 0.3) — but that criterion concerns anthropic tuning room, not the CMB bound itself. Gap 7 status: the analytic part is literature-consistent; the
 remaining unknown is exactly what the locked PC run D137 measures (the yield's true sensitivity |dlnY/dlnσ₀|, locked ≤ 5); a value above ~5
 would push the model to larger f or fail D134. The 21:01 check scores it.
+
+**D258 (pp loop 23) — gap 4 / PREREG_GROWTH against the current DESI growth data (literature, arXiv:2411.12022; 2512.03230).** DESI DR1
+full-shape + BAO: σ8 = 0.842 ± 0.034 (4%), "broadly consistent" with the CMB's 0.813 ± 0.005; with CMB, σ8 = 0.8121 ± 0.0053; modified-gravity μ0 =
+0.04 ± 0.22 (GR-consistent). DESI DR1 peculiar velocities: fσ8(z = 0.07) = 0.450 ± 0.055 (12%) vs Planck-ΛCDM 0.446. The Twist's −1.5% in σ8
+and ~−3% in fσ8 are 0.1–0.4 of today's 1σ errors — current growth data neither help nor hurt; a 3σ test of the Twist's growth suppression
+needs ~1% per-point fσ8 (DESI five-year + Euclid, 2027–28, D254). The Twist's GR-like growth index (≈ 0.557) is consistent with μ0 ≈ 0. Gap 4:
+no change; PREREG_GROWTH stays a future test.
