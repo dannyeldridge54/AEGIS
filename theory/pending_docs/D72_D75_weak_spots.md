@@ -2064,3 +2064,14 @@ need the attractor to be very efficient by today. Status: a hypothesis about str
 known mechanism under which the Twist's strong-coupling location (D204) HELPS rather than hurts the shield. Added to the open-problem questions:
 do the heterotic gauge and matter couplings extremise at infinite coupling along the Twist's direction? If so, the leak is falling and its
 redshift shape is the locked band (D216 distinguishes it from a growing leak).
+
+**D232 — if a DPV-type attractor holds, the Twist predicts the shield's falling exponent p = 3 and a leak near today's clock limit (estimate).**
+In the DPV picture the first correction to a coupling at strong coupling goes as the inverse string coupling squared, 1/g_s². Along the Twist's
+direction g_s ∝ x^{3/2} (D209), so the leak goes as x⁻³: p = 3 — inside the locked PREREG_SHIELD band (p = 3–4, derived earlier from what clocks
+allow), now with a physical origin. Size, with leak = c·x⁻³ and today's clock bound |d ln α/dφ| < 1.6×10⁻⁸ (D225):
+- degree-1 heterotic (x today ≈ 89): needs c < 4.6×10⁻³; a loop-sized c = 1/(16π²) = 6.3×10⁻³ gives 2.2×10⁻⁸ — just ABOVE today's 2σ clock bound
+  (and Δα/α ≈ 6×10⁻⁹ since z = 1, far below quasar sensitivity). So a DPV-type Twist with a one-loop coefficient would sit at the clock limit now
+  and be detected or excluded by thorium nuclear clocks (~3×10⁻¹², D225).
+- the M9 history (x today ≈ 2.4×10⁴ at the Twist's heat share): the leak is ~10⁻¹⁵ — invisible.
+Status: a conditional, falsifiable sharpening — IF strong-coupling couplings extremise (open question 11), the Twist's leak is p = 3 with a
+clock-scale amplitude for the degree-1 history. Recorded as a hypothesis-dependent forecast, not a locked prediction.
