@@ -2108,3 +2108,13 @@ develops: a non-minimal coupling ξR|Φ|² with small quartic makes the PQ field
 but for Starobinsky-type inflation they find f_a^(inf)/f_a ≲ 60–180 before parametric resonance restores PQ and makes strings, while the Twist
 would need an enhancement of ~1.5×10⁴ at f_a = 10¹⁶ GeV — outside the rescued range. So for the Twist: post-inflationary axion (m_a ≈ 40–180 μeV if
 it is all the dark matter) remains the only standard option. Gap 8 status: confirmed by literature; prediction sharpened, not changed.
+
+**D237 (pp loop 3) — the dark-energy evidence after the DES supernova recalibration (literature, arXiv:2511.07517).** With the DES-Dovekie
+recalibration plus CMB (Planck + ACT + SPT) and DESI DR2, flat w0wa gives w0 = −0.803 ± 0.054, wa = −0.72 ± 0.21, rejecting Λ at 3.2σ (down from
+4.2σ with the original DES-SN5YR) — the authors call it a weak preference. The Twist's (−0.899, −0.14) sits −1.8σ in w0 and +2.8σ in wa from that
+best fit (one-dimensional, ignoring their strong w0–wa correlation, so this overstates the distance along the degeneracy line); thawing
+exponential models cannot reach wa ≈ −0.7 with w0 ≈ −0.8, because the data's best fit crosses into the phantom regime at higher z, which a
+single canonical field cannot do. This is the known "phantom crossing" issue for all minimally coupled quintessence; our own full-likelihood
+fit (Δχ² −3.4 vs ΛCDM, D157 context) is the right comparison, not the w0wa point. Gap 4 status: the overall evidence for evolving dark energy
+softened (4.2 → 3.2σ with DES); the Twist's own Δχ² vs ΛCDM should be re-checked against DES-Dovekie when its likelihood is public (added to the
+future-data list; no lock change needed — WATCH-PURE-DR3 is scored on DESI DR3).
