@@ -2225,3 +2225,10 @@ on the first three years are expected during 2026; the survey is extended throug
 WATCH-PURE-DR3 (w0 −0.90, wa −0.14), PREREG_GROWTH and the BAO–CMB question behind the n_s verdict (D223/D240) will be scored on the 2027 full-
 survey release (cumulative with DR2, as already noted in D136(i)). Planning note: the gap review's "near-term decisive tests" order becomes:
 calibrated birefringence (any time) · DESI five-year (2027) · Simons Observatory n_s/r (2026–28) · nuclear clocks · LiteBIRD/CMB-S4 (2030s).
+
+**D248 (pp loop 15) — Simons Observatory r reach for the Twist family (literature forecast, arXiv:2512.15833).** No SO result yet. Updated
+forecast for the degree-scale survey (6 small-aperture telescopes by 2027, survey extended to 2035): σ(r) = 1.2×10⁻³ baseline, 7×10⁻⁴ optimistic
+(r = 0 fiducial). Detection significance: Twist r = 0.0036 → 3.0σ (baseline) / 5.1σ (optimistic); TWIST-C 0.005 → 4.2/7.1σ; TWIST-G− 0.0068 →
+5.7/9.7σ; TWIST-L (at n_s 0.974) 0.0073 → 6.1/10.4σ. TWIST-G− vs TWIST-C differ by 1.5σ (baseline). So SO alone can detect the Twist's r at
+~3–5σ before LiteBIRD — making the r test a 2030-ish event rather than 2035+, and r = 0 at that precision would put PREREG r-readings
+(r < 0.0030 at 95% kills TWIST-L/plain Twist variants) into play. Gap 1/variants: timeline sharpened.
