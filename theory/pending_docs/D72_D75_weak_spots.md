@@ -3647,3 +3647,13 @@ should hold.
 the DM itself is unaffected.
 Status: TWIST-I's capture skeleton (D375) is consistent with the matter and DM sectors after refits. Recorded consequences: m_σ moves down by
 up to ×2–3, and m_DM moves up by Δ.
+
+**D377 (pp, 09:15 CT, cross-sector check of D375: does the χ trapping sector disturb inflation or the EFT?) — only for a window of the
+coupling (estimate; aegis-checked in code).** Put χ, χ̄ at modular weight 3/2 each, so their physical mass is x-independent apart from
+the factor: m_χ = λ M_P |T − T_E|. During inflation (x ≈ 10⁻⁴, T_E ≈ 30) that is ≈ 30λ M_P, so staying below M_P needs λ ≲ 1/30 ≈ 0.033.
+Trapping efficiency near T_E needs a canonical coupling g = λ x_E √(2/3) ≳ 0.1, so λ ≳ 0.004. Window: **0.004 ≲ λ ≲ 0.033** (for x_E = 30).
+Inflation: χ is heavy (≫ H), and its Hubble-split one-loop term is ~2λ²(30)²H²M_P²/16π² relative to... i.e. CW/V_inf ~ 7×10⁻⁵–4×10⁻³
+across the window, with a slope ∝ x/x_E ~ 10⁻⁵ at the CMB point. That is negligible for n_s and r. The Y stabiliser contributes
+k²|T − T_E|² ~ 10⁻²⁷ M_P⁴ (k ~ 10⁻¹⁵), also negligible.
+Verdict: the D375 skeleton is consistent with inflation and the EFT for 0.004 ≲ λ ≲ 0.03. TWIST-I's capture sector is now a bounded, consistent
+proposal: T_E ≳ 30, λ in that window, k from m_x ≳ 10⁵ GeV, χ and Y at weights 3/2 and 3.
