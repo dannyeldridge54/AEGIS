@@ -35,4 +35,4 @@ W ⊃ (T − T_E) (λ M_P χχ̄ + k Y),  with χ, χ̄ at modular weight 3/2 an
 ## Open
 - The UV origin of the factor (T − T_E), of T_E ≳ 30 and of the weights.
 - D367 (x's kinetic share from the v5 run) and the matter yield at the refitted m_σ.
-- What the Twist then explains: inflation, reheating, matter and DM, but not dark energy (Λ is a free tuning, as in ΛCDM).
+- What the Twist then explains: inflation, reheating, matter, DM, and Λ through the cliff depth at x_E (n ≈ 124.1; D383). It does not produce evolving dark energy (w = −1).

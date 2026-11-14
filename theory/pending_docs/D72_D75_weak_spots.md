@@ -3703,3 +3703,13 @@ decays and leaves no relic. D356's bound is withdrawn for the D375 construction.
 T ~ 10¹¹–10¹²). Birefringence (β = 0, TWIST+ALP fallback) is also unaffected.
 Status changes under TWIST-I: gap 10 is unchanged in severity (LOW–MEDIUM) but loses its overproduction clause; the D298–D300 relic item is closed.
 To go into v6 item 18.
+
+**D383 (pp, 09:40 CT; locked PREREG_D383 + D1 bug fix; results/n_twisti_d383.txt) — CORRECTION: TWIST-I need not give up "Λ from the
+cliff".** The D373 stabiliser has V = 0 at its minimum, so the vacuum energy after capture is the Twist potential at x_E,
+Λ = V_Twist(x_E) ∝ e^{−2n}/(1 + x_E/μ). That is the same mechanism as v5, evaluated at x_E ≈ 30 instead of today's x ≈ 89. Then n shifts by
+Δn = ½ ln(90/31) = 0.533 (n ≈ 124.1 instead of 124.6). Effect on inflation: n_s 0.96497 and r 0.00359 for both n (computed); a sanity check gives
+n = 100 vs 125 → Δn_s = 3×10⁻⁶. The attractor makes n_s and r insensitive to n. (The first run printed identical numbers because of a runpy
+globals bug, fixed in deviation D1 before reading.)
+So TWIST-I explains Λ exactly as v5 does (cliff depth e^{−2n} at the captured value, with the same D292 constant tuned to ≪ Λ). What it gives
+up is the thawing tail (w = −1 exactly), not Λ itself. Statements in D355, D378, TWISTI_CAPTURE.md and v6 item 18 ("gives up Λ from the cliff",
+"Λ is a free tuning") are corrected.
