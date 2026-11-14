@@ -2052,3 +2052,15 @@ AGNT hep-th/9212045), not of a generic field-theory loop with T-independent cuto
 like string matter with a modular weight (its loops scale with u like the tree metric); in a plain field-theory completion the tilt is not
 generated. Status of TWIST-G−'s origin: plausible in a string-like completion with a cutoff tied to the modulus (Λ ∝ M_s-type scale with the
 right weight), not in a generic EFT. Recorded so the paper does not overclaim "naturally a loop".
+
+**D231 — a literature lead that could reopen the strong-coupling home: the runaway-dilaton "least coupling" attractor (Damour–Piazza–
+Veneziano, hep-th/0205111; constraints Vacher et al. arXiv:2301.13500).** D204/D209 concluded that the Twist's field sits at strong heterotic
+coupling today and that the shield "fails there". That conclusion assumed the matter couplings keep their weak-coupling field dependence. DPV
+posit the opposite for the string dilaton: the full coupling functions are EXTREMISED as the bare coupling → ∞, so a field running to strong
+coupling DECOUPLES from matter, with residual couplings falling off (they quote EP violation ~10⁻¹² for simple inflation, tied to the density
+amplitude) — exactly the "leaks must fall with x" behaviour the shield needs (D142), achieved by dynamics rather than symmetry. Vacher et al.
+(2023, incl. CMB data) rule out O(1) DPV coupling parameters; our requirement today is |d ln α/dφ| < 1.6×10⁻⁸ (D225), so a DPV-type home would
+need the attractor to be very efficient by today. Status: a hypothesis about strong-coupling string physics (not derivable here), but the only
+known mechanism under which the Twist's strong-coupling location (D204) HELPS rather than hurts the shield. Added to the open-problem questions:
+do the heterotic gauge and matter couplings extremise at infinite coupling along the Twist's direction? If so, the leak is falling and its
+redshift shape is the locked band (D216 distinguishes it from a growing leak).
