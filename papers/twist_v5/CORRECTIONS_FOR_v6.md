@@ -25,7 +25,7 @@ Replace it with:
 
 ## 2. Section 2.2 (coupling): result of the alternative reading
 
-D268 is running. Insert its result here: the matter yield when the Nieh–Yan current couples to ∂(y/x) instead of to the canonical angle.
+Add to §2.2: "Coupling instead to ∂(y/x) (the 1/γ_BI = y/x reading) lowers the matter yield by a factor 0.44 (D268/D297). The fitted hidden mass then moves from m_σ ≈ 7.5×10¹⁰ to ≈ 3.0×10¹⁰ GeV. The mechanism works under either reading."
 
 ## 3. Table of assumptions, item 4
 

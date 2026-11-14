@@ -2698,3 +2698,11 @@ an independent CMB-only σ ≈ 0.003 measurement will separate 0.965 from 0.974 
 the full run (step 0.02) is at 2.3 GB and climbing after 90 min. The matter chain leaks memory in this container. On Danny's PC the same
 code finished each locked run in ~5 min (D277). The coupling comparison is best run on the PC — that needs Danny's OK (no PC jobs
 unattended). Leaving the full run going in case it finishes under the limit.
+
+**D297 — D268 result: the matter yield under the alternative coupling reading (results/coupling_alt_d268.txt; cloud, 2 h).** Same run,
+both readings in one pass (m_σ 5.8×10¹⁰ GeV, heat 0.8%, TWIST-K-equivalent exp cliff, μ = 1): canonical √(3/2)y′/x → n_B/s = 1.090×10⁻¹⁰
+(1.253×, reproduces the locked PC result D277 exactly — validates the cloud run); alternative √(3/2)(y′ − c p′ y)/x, i.e. coupling to
+∂(1/γ_BI) = ∂(y/x) → 4.82×10⁻¹¹ (0.554×); ratio 0.442. The ambiguity changes the yield by a factor 2.3, which the one fitted input absorbs:
+with the yield ∝ m_σ^−0.89, exact 1× needs m_σ ≈ 7.5×10¹⁰ GeV (canonical) or ≈ 3.0×10¹⁰ GeV (alternative). So the referee's issue 10 is
+quantified: the matter mechanism works under either reading; the normalisation choice moves the fitted hidden mass by ×2.5 and is a stated
+choice, not a hidden one. c_A = √(3/8) remains "fixed given the normalisation". Gap 6: closed at this level (MEDIUM → LOW).
