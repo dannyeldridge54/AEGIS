@@ -3987,3 +3987,6 @@ x = 29.813 at 11.5.** The Radau continuation (D7) passed the LSODA stall in seco
 lines (also the missing 10.00 line). D367b's "provisional" label is removed. The free-roll limit 29.83 (D390) is consistent with the
 trajectory (29.81 at 11.5, still creeping). Consequence for TWIST-I/Twist-2: unchanged (crossing of x_E ≈ 27–29.6 happens at T ≈ 10¹²–10¹¹ GeV
 while x still moves; D396's late-capture point x_E ≈ 29.6 is crossed at T ≈ 1.5×10¹¹ GeV, as used).
+
+**D405 (15:58 CT, Danny: "Publish") — the α no-go paper is on Zenodo: record 24232382, DOI 10.5281/zenodo.24232382 (v1).** Content as D401 +
+D402 cross-check + D403 bridge 2. Linked to the Twist concept DOI (isDerivedFrom). Log in papers/ZENODO_UPDATE_2026-11-13.md.
