@@ -2405,3 +2405,16 @@ earlier estimate), which requires the low-energy theory not to be softly-broken 
 sequestered T-independent uplift — an extra tuning, structurally the same problem as the fifth-force shield (soft scales tied to x).
 Status: v5 Section 5.2 / assumption 4 must be corrected in the next version: replace "m_3/2 = 10¹¹–10¹⁴ GeV from a separate sector" by
 options (i)/(ii) and state that the generic choice is excluded. The numerical check (w0_gravitino_d267.py: V with W₀ and S relaxed) is running.
+
+**D269 (test of D267 option ii) — W = √3 m S T + w T^{3/2} plus a constant uplift 3m_3/2² (results/t32_gravitino_d269.txt).**
+Full two-field supergravity at the CMB point (x = 1.3×10⁻⁴), S relaxed: m_3/2 = 10¹¹ GeV → V changes by 10⁻⁶, angle +4.0H²; m_3/2 = 10¹³
+GeV → V −0.6%, angle +3.1H². Inflation survives. But the construction has an angle tachyon: analytically, for W = w T^{3/2} with
+K = −3 ln(T + T̄), V = (3w²/8)(1 − |T|/x) after uplift, i.e. m_θ² = −2 m_3/2² for the canonical angle — negligible while H ≫ m_3/2, dominant
+once H < m_3/2 (right after the cliff). (The run's numbers at x = 1 and 89 are dominated by finite-difference cancellation error, since V₀ there
+is 10⁻⁵⁹–10⁻¹¹⁰ of the SUSY-breaking scale; the analytic formula is used instead.) Fix on record: the quartic Kähler term b(T − T̄)⁴ of
+Ellis, Nagaraj, Nanopoulos & Olive (arXiv:1809.10114), which leaves the real-direction potential unchanged and stabilises Im T (stability for
+our case not computed). Further condition: the matter mechanism needs the angle light while matter forms, m_3/2 ≲ H(T ≈ 2×10¹³ GeV) ≈ 6×10⁸
+GeV (radiation value; kination raises it). Gravitino decay then (thermal Y ≈ 1.5×10⁻⁷): m_3/2 = 10⁸ → decays at T ≈ 140 GeV holding 14% of the
+energy (dilution ≈ 1.15); 10⁹ → 4.4 TeV, 4.6%; 10⁷ → 4 GeV, 46% (too much). Verdict: option (ii) is viable only in a narrow window
+m_3/2 ≈ 10⁸–10⁹ GeV, with two added ingredients (a tuned uplift and the quartic stabiliser) and R-parity violation — an estimate, not a
+derivation. Option (i), a near-massless gravitino, stays the simpler reading. Both go into the next version's §5.2.

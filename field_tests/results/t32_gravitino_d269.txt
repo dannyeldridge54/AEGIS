@@ -1,0 +1,6 @@
+x 1.3e-4  m32 9.9e+10 GeV: V(S=0)/V0 1, V(S relaxed)/V0 0.999999, S*sqrt(E) 7.10e-07, m_y^2/H^2 +4
+x 1.3e-4  m32 9.9e+12 GeV: V(S=0)/V0 1, V(S relaxed)/V0 0.994027, S*sqrt(E) 7.00e-05, m_y^2/H^2 +3.11
+x 1  m32 9.9e+10 GeV: V(S=0)/V0 1, V(S relaxed)/V0 1, S*sqrt(E) 0.00e+00, m_y^2/H^2 -2.14e+55
+x 1  m32 9.9e+12 GeV: V(S=0)/V0 1.00074, V(S relaxed)/V0 1.00074, S*sqrt(E) 0.00e+00, m_y^2/H^2 -2.13e+59
+x 89  m32 9.9e+10 GeV: V(S=0)/V0 1.06247e+44, V(S relaxed)/V0 1.06247e+44, S*sqrt(E) 0.00e+00, m_y^2/H^2 -2.88e+62
+x 89  m32 9.9e+12 GeV: V(S=0)/V0 1.06247e+48, V(S relaxed)/V0 1.06247e+48, S*sqrt(E) 0.00e+00, m_y^2/H^2 -2.88e+62
