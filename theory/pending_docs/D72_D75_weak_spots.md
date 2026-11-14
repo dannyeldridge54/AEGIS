@@ -3541,3 +3541,14 @@ capped at 2 h, so the pp loop launches it then), and is due ~2.5 h after start.
 (4) D366's sign question (is the ESP a minimum?) is settled by the standard radiative argument, so no compute is needed unless a model is chosen.
 (5) TWIST-I N* shift: none if capture is late and adiabatic (D362: dilution ≪ 1), so no compute is needed.
 No other open item needs compute now. The free-ν fit already covers TWIST-I's ΛCDM background (its LCDM half).
+
+**D368 (pp, 08:15 CT, TWIST-I distinctiveness check) — under TWIST-I, the inflationary predictions coincide with Starobinsky's at the same
+N* (arithmetic, aegis-checked in code).** Starobinsky/α = 1 attractor: n_s = 1 − 2/N*, r = 12/N*². For the Twist's N* = 55.7–57.6: n_s
+0.9641–0.9653, r 0.0039–0.0036. The Twist's computed values are n_s 0.9642–0.9654, r 0.0035–0.0038, the same within 10⁻⁴ in n_s and 0.0003 in r.
+So the TWIST-I rules on r and n_s (PREREG_TWISTI 1–2) test "α = 1 plateau with this N*", not the Twist specifically. A Starobinsky model with the
+same reheating would pass and fail identically.
+What still distinguishes TWIST-I: (i) the N* window itself, fixed by the Twist's reheating (f_heat 0.65–0.8%, T_RH 5.5–5.8×10¹⁴ GeV, and kination
+after inflation). Starobinsky's usual N* is 51–55 with gravitational reheating, so the Twist predicts the HIGH end, n_s ≈ 0.965 rather than
+0.961–0.964. (ii) Matter genesis through the angle, and its isocurvature (D278, D320b). (iii) The DM window (~100–200 TeV, D341). (iv) β = 0, w = −1.
+Consequence for v6 item 18: say plainly that TWIST-I's CMB predictions are Starobinsky-class at high N*. The distinguishing content is
+N* ≈ 56–58 (testable through n_s at the ±0.0015 level with SO, D351) and the matter/DM sector. This is an honest narrowing, not a failure.
