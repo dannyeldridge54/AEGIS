@@ -2787,3 +2787,13 @@ H²/M_P² argument does not remove it. (2) Their finding that loop effects are n
 inflaton matches ours (χ at weight 3/2: negligible, D287; a field inside the log: ∝ 1/x, TWIST-C form, D285). (3) Scheme dependence of the
 constant confirms D286's statement that b is a renormalised, scheme-dependent parameter. Verdict: D285–D286 are consistent with the published
 treatment and go beyond it on the splitting term; still estimate-level (no gravitational loops). Gap 1/15 unchanged.
+
+**D306 (deep loop 5, gap 2: Yukawas) — the shield also forbids worldsheet-instanton Yukawa hierarchies.** Read: Parameswaran, Ramos-Sánchez &
+Zavala, "On moduli stabilisation and de Sitter vacua in MSSM heterotic orbifolds" (arXiv:1009.3931). Rule (their Eq. 3.12, §3.3.1): twisted-
+field Yukawas are O(1) when all three fields sit at the same fixed point; otherwise they are exponentially suppressed in the Kähler moduli,
+∝ e^{−cT} (worldsheet instantons, e.g. e^{−2πT/3} in Z₆-II); bulk (untwisted) couplings are O(1); even constant holomorphic couplings get T-dependence
+from the Kähler normalisation (their Eq. 3.16 — our weight condition). Consequence for a ROLLING T (computed): a Yukawa ∝ e^{−2πT/3} at x = 89 has
+d ln y/d ln x ≈ −186, i.e. d ln y/dt ≈ 4.7×10⁻⁹/yr today — ~10⁸ above clock limits on mass ratios (~10⁻¹⁷/yr). So in any heterotic home for
+the Twist, every Standard Model Yukawa must be untwisted or same-fixed-point (no instanton-generated hierarchy), with the D293 weight condition
+on top. Fermion-mass hierarchies would then need another origin (e.g. Froggatt–Nielsen with x-independent flavon vevs). Gap 2: requirement
+sharpened; status HIGH unchanged.
