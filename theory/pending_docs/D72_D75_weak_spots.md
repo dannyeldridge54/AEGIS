@@ -4033,3 +4033,9 @@ reading fails — D408's control flag extends through the first ~2.5 e-folds of 
 To part 5 (capture): unchanged.
 (c) CENTRE: filters F2/F3 unchanged; bridges unchanged. Verdict: D408's "distance conjecture SEVERE" downgraded to "control issue at x ≲ 1
 only"; the post-inflation roll is safe. Result → no wall.
+
+**D410 (16:36 CT, Danny: "Set this up" — the CROWN) — five-sense joint fit locked (PREREG_D410_CROWN) and running on the PC.** THAW_FREE
+(n_s free) and THAW_TWIST (n_s = 0.9651) on CMB-SPA + DESI DR2 + Pantheon+, thawing line wa = −1.58(1+w0); launched 16:36 via
+RUN_D410_CROWN.bat (both minimisers initialised; best of 4). Pre-run note (stated in the lock, from stored non-locked fits): with these
+likelihoods ΛCDM n_s = 0.9737, free w0–wa n_s = 0.9720, CMB-only 0.9711, so letting dark energy evolve lowers n_s only by ~0.002; C1 is at risk.
+Score with `python crown_d410.py score` (runs automatically at the end; log cmb-fit/results/d410_log.txt).
