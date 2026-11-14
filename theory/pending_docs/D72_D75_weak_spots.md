@@ -4088,3 +4088,12 @@ stability by a gauged Z₂ (no signal) or global with ξ ≲ 0.6 at 200 TeV (D31
 D397's PeV shift is withdrawn; part 3 — production during the kination/reheating epoch (T ~ 5×10¹⁴ GeV), momentum redshifts normally after.
 (c) CENTRE: F5 passes (stable, or decay window), structure formation unaffected. Result → walls 0.
 Crown status: THAW_TWIST finished 17:06; THAW_FREE on its last runs.
+
+**D416 (cycle 9; PART 9 light gravitino, LEFT/RIGHT; scored, locked PREREG_D416_PART9; results/part9_d416.txt) — PASS for the preferred
+pairing: total extra radiation ΔN_eff = 0.047 (gravitino, g* = 106.75) + 0.034 (hidden pair, g* = 228.75) = 0.081 < 0.14; the most conservative
+pairing (both at SM-like g*) gives 0.141–0.153, just above the bound.** CROSS-SECTOR CATCH (centre): the gravitino and the D412 hidden decay
+products share the same ΔN_eff budget, which neither part saw alone. Requirement recorded: m_3/2 ≤ 4.7 eV (95%, arXiv:1601.07386), so the
+SUSY-breaking scale √F = (√3 m_3/2 M_P)^{1/2} ≲ 1.4×10⁵ GeV — consistent with D292's x-independent eV-gravitino branch and soft masses 10⁴–10⁵
+GeV; low-scale gauge mediation with m_h = 125 GeV also bounds m_3/2 from below (arXiv:1608.01610; not read — next cycle on part 9). (b) Part 4:
+the light gravitino is what allows T_RH ~ 5×10¹⁴ GeV (no gravitino overproduction for m_3/2 ≲ 16 eV), so leptogenesis stands. (c) CENTRE:
+F7 PASS (0.081) with a sharpened prediction: ΔN_eff ≈ 0.05–0.10 in total (SO/CMB-S4 testable). Result → walls 0.

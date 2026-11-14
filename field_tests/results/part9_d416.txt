@@ -1,0 +1,6 @@
+gravitino g*=90 (paper)                                    0.059 + hidden pair, MSSM g* (D412)  0.034 = 0.093  vs < 0.14: OK
+gravitino g*=90 (paper)                                    0.059 + hidden pair, SM g* (D412)    0.094 = 0.153  vs < 0.14: EXCEEDS
+gravitino g*=106.75 (SM, superpartners heavier than T_dec) 0.047 + hidden pair, MSSM g* (D412)  0.034 = 0.081  vs < 0.14: OK
+gravitino g*=106.75 (SM, superpartners heavier than T_dec) 0.047 + hidden pair, SM g* (D412)    0.094 = 0.141  vs < 0.14: EXCEEDS
+gravitino g*=228.75 (full MSSM)                            0.017 + hidden pair, MSSM g* (D412)  0.034 = 0.051  vs < 0.14: OK
+gravitino g*=228.75 (full MSSM)                            0.017 + hidden pair, SM g* (D412)    0.094 = 0.111  vs < 0.14: OK
