@@ -3801,3 +3801,10 @@ k²|T − T_E|², must be local. So the open problem narrows to: a LOCAL stabili
 (χ condensate / Coleman–Weinberg pinning near T_E) rather than a global tree-level W term.
 Status: UV origin of (T − T_E) stays OPEN (now narrowed to the stabiliser). No change to locked tests. Next look: whether D374's one-loop
 pinning from χ alone can give m_x ≳ 10⁵ GeV (needs a lock if computed).
+
+**D389 (pp, 11:55 CT, DM window: anything tighter than D341 at 100–200 TeV?) — no; the window is unchanged (literature + arithmetic in code).**
+LHAASO KM2A 570 days (PRL 129, 261103; arXiv:2210.15989) covers 10⁵–10⁹ GeV; the only number in the text is τ ≳ 6.3×10²⁸ s (bb̄) at 10 PeV, and
+the press summary gives ≳ 10²¹ yr = 3.2×10²⁸ s at PeV. Curves at 100–200 TeV are figures only (not read numerically); the search found no
+2025–26 update with numbers. Twist (D317 scaling τ ≈ 10²⁴ s (10⁶ GeV/m)⁵ ξ⁻², ξ = 1): 1.0×10²⁹ s at 100 TeV, 1.3×10²⁸ at 150, 3.1×10²⁷ at 200,
+1×10²⁴ at 1 PeV. Against ~10²⁷–10²⁸ s hadronic limits at a few hundred TeV (D341), 100–150 TeV is safe, 200 TeV marginal, PeV excluded
+for ξ ~ 1. Status: DM window ~100–200 TeV unchanged; a numerical read of LHAASO Fig. S6 / IceCube Fig. 5 at 100–200 TeV would sharpen it.
