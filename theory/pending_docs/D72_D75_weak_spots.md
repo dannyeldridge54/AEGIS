@@ -3315,3 +3315,11 @@ For TWIST-INFLATION (r = 0.0035–0.0038): ~3σ baseline (r/σ ≈ 2.9–3.2) an
 launch JFY 2032). The locked failure conditions (r < 0.002 or > 0.008 at 95%) become decisive with SO alone on the baseline forecast. The test
 calendar (D349) is revised: an r decision is likely ~2032–35 from SO and/or LiteBIRD, with SO hints growing through the late 2020s.
 The isocurvature question that started this search (an SO forecast for D278's margin) was not answered; the gap 7 status stands.
+
+**D351 (pp, 07:36 CT, gaps 7 and 1: SO enhanced-LAT forecasts) — n_s error halved; no isocurvature number (literature, first 100k chars).**
+"The Simons Observatory: science goals and forecasts for the enhanced Large Aperture Telescope" (arXiv:2503.00636): SO "will halve the current
+error bar on … n_s". Against the current CMB-SPA σ ≈ 0.003 (D223), that gives σ ≈ 0.0015. Isocurvature is listed as a target without a number.
+For the Twist: at σ(n_s) ≈ 0.0015, the gap between the Twist (0.9642–0.9654) and the CMB-SPA + DESI ΛCDM value (0.9737) would be ~6σ if the
+central value held. If the BAO–CMB tension resolves toward the CMB-only/w0wa value (0.964–0.969, D329), the Twist is fine. SO therefore sharpens
+gap 1 into a clean test, with its outcome tied to the BAO–CMB resolution. The gap 7 isocurvature margin (1.4–1.5×) has no SO forecast here; the
+general expectation of a factor ~2 (D278) is unchanged and unsourced.
