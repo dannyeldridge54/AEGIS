@@ -99,6 +99,11 @@ We use three bounds: the ESPRESSO measurement Δα/α = (1.3 ± 1.3_stat ± 0.4_
 ζ ≲ 3.6×10⁻⁶, a suppression of the one-loop coupling by ~10³. The clock bound requires ζ φ̇ ≲ 2.5×10⁻¹⁹ yr⁻¹, i.e. a suppression of ~10⁶ at
 the DESI-preferred field speed.
 
+**A one-line null test.** The two arms of the comparison can be combined into a ratio from which the field's history cancels:
+R ≡ (α̇/α) / [H₀ √(3 Ω_DE (1 + w₀))], which must equal ζ = 6.97×10⁻³ (k/3) √(2/k) for any rolling modulus of this kind. With the clock
+bound and the PantheonPlus w₀, R = (4.4 ± 6.2)×10⁻⁹, against ζ = (3.3–5.7)×10⁻³: out of balance by ~5×10⁵σ. Any future w₀ > −1 measurement can be
+checked against clocks in the same way, without modelling the field.
+
 ## 5. What survives
 
 - **Axionic dark energy.** A pseudoscalar couples to F F̃, not F², so it does not shift α at linear order, and a shift symmetry forbids a

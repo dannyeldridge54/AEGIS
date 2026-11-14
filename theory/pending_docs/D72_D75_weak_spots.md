@@ -3956,3 +3956,16 @@ volume of local D3 models (K̂ = −2 ln𝒱, Z ∝ 𝒱^{−2/3}) our rule give
 M_X ∝ 𝒱^{−1/3}. Added to the draft. (2) EP conversion η ≈ 10⁻³ζ² is the one used by Martins et al. (2204.02930), attributed. (3) References
 verified: Choi PRD 62, 043509 (2000); Filzinger et al. PRL 130, 253001 (2023); Murphy et al. A&A 658, A123 (2022); MICROSCOPE PRL 129, 121102
 (2022); DESI DR2 arXiv:2503.14738. Remaining before posting: Danny's "Publish". (A separate-reviewer pass was offered, not run.)
+
+**D403 (scored, locked PREREG_D403_BRIDGES; results/bridges_d403.txt) — three "Wheatstone bridge" null tests set up (Danny 14:17).**
+Bridge 1 (inflation; N* cancels): Twist B1 = r − 3(1−n_s)² = −9.2×10⁻⁵ (N* 57.2; −1.03 to −0.80×10⁻⁴ over N* 55–60), tolerance 1.2×10⁻⁴;
+B2 = α_s + ½(1−n_s)² = +1.5×10⁻⁷ (tolerance 2×10⁻⁴). So the Twist balances both to ~10⁻⁴, far below LiteBIRD's σ_r ~ 10⁻³: an imbalance
+would kill the whole α = 1 plateau class independent of reheating. Not scoreable yet (r is an upper limit). Implied r: 0.0029 ± 0.0006
+(CMB-SPA n_s) or 0.0021 ± 0.0004 (+DESI n_s); the Twist's own N* gives r = 0.0036.
+Bridge 2 (dark energy ↔ clocks): R = (α̇/α)/[H0√(3Ω_DE(1+w0))] measured (4.4 ± 6.2)×10⁻⁹ (PantheonPlus w0) vs modulus prediction ζ =
+3.3–5.7×10⁻³: OUT OF BALANCE by ~5×10⁵σ (same content as D400, now one line).
+Bridge 3 (birefringence ↔ dark energy; initial angle cancels): VALID — K1 = β(c_γ=1)²/(1+w0) is constant to ±4% across θ_i at f = 1 M_P,
+and K1 f² ≈ 2.1–2.5×10⁻³ deg² over f = 0.5–2, so β² ≈ 2.5×10⁻³ (c_γ/f)² (1 + w0) deg² (f in M_P). Scored at c_γ = 10, f = 1: predicted β =
+0.203 ± 0.034° (PantheonPlus) and 0.249 ± 0.028° (DESY5) vs 0.261 ± 0.061°: BALANCED (0.8σ, 0.2σ). Honest reading: with c_γ/f free this
+measures c_γ/f ≈ 10–13 rather than testing it; it becomes a test with a second, independent arm (e.g. the reionization-era rotation, whose
+ratio to the recombination value is also θ_i-free — a fourth bridge, not yet locked), or once c_γ/f is fixed by the model.

@@ -98,3 +98,11 @@ alone.
 - 2026–27: DESI DR3 / Euclid BAO (watch already scheduled); ACT/SPT birefringence calibration.
 - 2027–30: Simons Observatory n_s (±0.0015), r, calibrated β.
 - 2030s: LiteBIRD r ~ 10⁻³ and β; IceCube-Gen2 DM; 0νββ.
+
+## 10. Bridge (null) tests — locked D403
+
+| Bridge | Balance condition | Twist value | Status |
+|---|---|---|---|
+| 1. Inflation (N* cancels) | B1 = r − 3(1−n_s)² = 0; B2 = α_s + ½(1−n_s)² = 0 | B1 = −0.9×10⁻⁴ (tol 1.2×10⁻⁴); B2 = +1.5×10⁻⁷ | awaits LiteBIRD/SO; imbalance kills the plateau class |
+| 2. Dark energy ↔ clocks | (α̇/α)/[H₀√(3Ω_DE(1+w₀))] = ζ ≈ 3–6×10⁻³ (rolling modulus) | measured (4.4 ± 6.2)×10⁻⁹ | out of balance by ~5×10⁵σ: no rolling modulus (why Twist-2 uses Λ or an axion) |
+| 3. Birefringence ↔ dark energy | β² = 2.5×10⁻³ (c_γ/f)² (1+w₀) deg² | balanced at c_γ/f ≈ 10–13 | measures c_γ/f today; a test once a second arm (reionization-era β) exists |
