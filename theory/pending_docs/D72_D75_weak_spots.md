@@ -3098,3 +3098,14 @@ background, so this is not a rescoring. NS-SPA INCONSISTENT stands as scored.
 Consequence for the paper (v6 item): state that the n_s inconsistency is conditional on the background. Under a DESI-like w0wa it vanishes for
 Planck + DESI, but under the Twist's own milder tail it does not. Gap 1: HIGH, unchanged; the decider remains DESI DR3/SO resolving the
 BAO–CMB tension (D223, D296).
+
+**D330 (pp, 06:27 CT, gap 4 birefringence: anything new since D301/D303?) — Planck's relative calibration is internally consistent; the absolute
+zero point is still untested (literature).** "Differential polarization calibration: a consistency test for cosmic birefringence"
+(arXiv:2609.09149, Sept 2026): β cancels in map pairs, so a network of 28 Planck NPIPE detector-set pairs (100–353 GHz) measures only the
+differences between instrument angles. It agrees with the Minami–Komatsu reconstruction (χ² 8.18 / 7 dof, PTE 0.32; all pulls < 1.8σ). Their MK
+value is β = 0.37 ± 0.11° (anchored 0.37 ± 0.12°, or 0.40 ± 0.13° on f_sky 0.62). The authors stress this is not an independent confirmation
+(same sky) and "does not establish the absolute value of β".
+Reading: this removes one route to a Planck systematic (detector-to-detector inconsistency) but not the decisive one (a common absolute angle
+offset). The Planck–ACT disagreement (D301) and the need for absolute calibration (drones/SO, D303) stand.
+Twist status: the base model predicts β = 0. TWIST+ALP is the locked fallback if β is confirmed. Gap 4: HIGH, not rising (unchanged); the decider
+is still an absolutely calibrated measurement (SO with drone calibrators, ~2027+).
