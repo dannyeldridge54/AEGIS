@@ -4009,3 +4009,16 @@ leptogenesis needs only 0.87×10⁻¹⁰ (D394 room ×10³). This supersedes D39
 Conditions (to be checked in later cycles): (i) the light U(1)_X-charged decay products must not be dark radiation (F7: they should be
 SM-charged, e.g. U(1)_X mixing with hypercharge, or decay further); (ii) x's multiplet really contains the decaying scalar with κ ≳ 10⁻⁶
 (field theory of the Higgs branch); (iii) U(1)_X must be anomaly-free and its D-term must allow the D-flat condensate.
+
+**D408 (cycle 2; PART 2 inflation plateau, LEFT; scored, locked PREREG_D408_PART2; results/part2_d408.txt).**
+(a) ALONE: CMB exit at p* = −10.92 (x* ≈ 1.4×10⁻⁴), end of inflation p = −5.79, capture at x = 29.81 (p = 4.16). Field excursion: 5.13 M_P during
+the last 55.7 e-folds, 9.95 M_P from the end of inflation to capture, 15.1 M_P in total. ε* = 2.35×10⁻⁴ (r = 16ε = 0.0038 ✓), |V'|/V = 0.022,
+V*^{1/4} = 8.0×10¹⁵ GeV, H* = 1.5×10¹³ GeV. String flags (F6, report not veto): dS slope conjecture (s₁ ~ O(1)) VIOLATED (0.022); TCC
+(arXiv:1909.11106: V^{1/4} ≲ 6×10⁸ GeV, r ≲ 10⁻³⁰) VIOLATED by ×1.3×10⁷ in scale; distance conjecture SEVERE — a tower would drop by
+e^{−λΔφ} = 2×10⁻³ (λ = 1/√6) to 3×10⁻⁷ (λ = 1) over the full range. The first two are shared by every plateau model with detectable r (Starobinsky
+included); the third is Twist-specific because the same field also travels ~10 M_P after inflation. New flag: CMB exit happens at x ~ 10⁻⁴,
+far from a large-volume regime if x is read as a volume modulus (x ∝ V^{1/3}); control of the EFT there is not established.
+(b) IMMEDIATE CONNECTIONS: part 3 (kination) inherits the 9.95 M_P post-inflation roll — the distance-conjecture tower, if it is the KK tower
+of this modulus, gets lighter in Planck units as x grows; whether it stays above T and H along the roll is the check for part 3. Part 11
+(string embedding) inherits the control flag at x ~ 10⁻⁴.
+(c) WHOLE / CENTRE: B1 = −0.9×10⁻⁴, B2 ≈ 0 balanced (D403); F3 n_s 0.9651 (1.1σ / 2.9σ); F6 three flags as above. Result recorded (no model change).

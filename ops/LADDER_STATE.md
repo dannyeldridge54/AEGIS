@@ -2,8 +2,8 @@
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 5
 consecutive_walls: 0
-cycle: 1
-next_part: 2
+cycle: 2
+next_part: 3
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -32,3 +32,4 @@ After 11, start again at 1 with the open conditions.
 - 2 consecutive walls at 5 min → 30 min; 2 at 30 min → 60 min; 3 at 60 min → stop and report to Danny. A real result resets the wall count.
 ## Log
 - cycle 1 (16:20): PART 1 RIGHT — D407 gauge-channel decay removes dilution; CENTRE balanced (conditional). Result → walls 0.
+- cycle 2 (16:27): PART 2 LEFT — D408 field range 15.1 M_P total; TCC violated ×1.3e7; dS slope 0.022; distance tower factor 2e-3–3e-7; control flag at x~1e-4. CENTRE: bridges balanced. Result → walls 0.

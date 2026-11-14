@@ -1,0 +1,8 @@
+p* -10.918  p_end -5.791  p_final(x=29.81) 4.158  [canonical, M_P]
+Δφ CMB exit → end of inflation: 5.126 M_P;  end → capture: 9.949 M_P;  total: 15.076 M_P
+ε* = 2.346e-04,  |V'|/V at N* = 2.166e-02  (dS-conjecture s1 ~ O(1))
+V*^(1/4) = 8.00e+15 GeV,  H* = 1.52e+13 GeV
+TCC (Bedroya–Brandenberger–Loverde–Vafa): V^(1/4) ≲ 6e8 GeV, r ≲ 1e-30 → Twist exceeds by V^(1/4) ×1.3e+07
+distance conjecture: tower mass drop e^(-λΔφ) over total range, λ = 0.408: 2.12e-03
+distance conjecture: tower mass drop e^(-λΔφ) over total range, λ = 0.816: 4.51e-06
+distance conjecture: tower mass drop e^(-λΔφ) over total range, λ = 1.000: 2.84e-07
