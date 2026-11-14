@@ -3174,3 +3174,12 @@ and a full axion search in 2027–28; Phase II goes up to 200 μeV at DFSZ. MADM
 and set world-best dark-photon limits at 78.6–84.0 μeV. Installation in the Morpurgo magnet is planned for LHC LS3 (mid-2026–2029), with a
 4 T magnet ~2030. ADMX/CAPP/HAYSTAC lead below 25 μeV. The Twist's needed separate post-inflation axion (40–600 μeV) is not yet probed at QCD
 coupling; first coverage is ALPHA 2027–28 (lower end). Gap 10: LOW–MEDIUM, unchanged (D281 timelines confirmed).
+
+**D336 (pp, 06:47 CT, gap 5 dark-energy evidence) — newest compilation agrees with D237/D290/D307; nothing changes (literature).**
+"Study of dynamical dark energy using DESI DR2 BAO, CMB, and Type Ia supernovae data" (arXiv:2609.10567, Sept 2026): DESI DR2 + Planck (+ ACT DR6
+lensing) + one SN set, five parametrisations. Significance vs ΛCDM: Pantheon+ 2.1–2.9σ, Union3 3.2–3.7σ, DES-Dovekie 2.9–3.3σ (they note
+DES-Dovekie gives ~3σ, not the earlier 4σ). DES-Dovekie CPL: w₀ = −0.807 ± 0.056, w_a = −0.721 ± 0.221; wCDM w = −0.988 ± 0.021. Every
+parametrisation prefers quintom-B (w₀ > −1 today, phantom in the past).
+For the Twist: a thawing field cannot cross w = −1, so the data's preferred shape stays out of reach. The Twist captures only the w₀ > −1 part,
+which is why its Δχ² gain is modest (FULL −3.4 vs ΛCDM, pure_twist.json). Physical-prior analyses (D290) give 1–2σ, and the bispectrum weakens
+the evidence (D307). Gap 5: MEDIUM, unchanged. The decider is still DESI's full-survey results (2027).
