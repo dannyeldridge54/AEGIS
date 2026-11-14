@@ -3383,3 +3383,14 @@ the 10⁻⁴ level). Both are inside the TWIST-I record as open items. Status: T
 m_x, m_y ≳ 100 TeV or adiabatic settling, (b) the x-decay dilution of the matter yield, (c) the N* shift.
 Also checked in this pass: TWIST-I rule 3 ("any of the three SN samples" at > 5σ) is strict but well defined; rule 2 uses ΛCDM-background
 n_s, which is the right background for TWIST-I; D355's setup is unchanged.
+
+**D358 (pp loop, 07:28 CT, TWIST-I open item (a): how can x be stabilised after matter genesis?) — strong (supersymmetric) stabilisation is
+the only route compatible with the eV-gravitino branch (literature + argument).** Review "Inflation, the scale of supersymmetry breaking, and
+moduli stabilization" (arXiv:1511.03413): in KKLT/LVS, modulus masses and barriers scale with m_3/2 (stability needs m_3/2 ≳ H; KKLT with chaotic
+inflation needs m_3/2 > 2×10¹⁴ GeV). In "strong" stabilisation the modulus sits in a supersymmetric Minkowski vacuum (racetrack, or couplings to
+extra chiral fields), so its mass does not depend on m_3/2. The review does not discuss the moduli problem.
+For TWIST-I: the adopted eV gravitino (D291–D292) rules out m_3/2-scaled stabilisation (it would give an eV modulus, the D357 moduli problem).
+D357's m_x, m_y ≳ 100 TeV therefore needs strong, SUSY-preserving stabilisation of T at x_min: a racetrack-type W(T) with W = ∂W = 0 at x_min,
+switched on only for x ≳ 30 (e.g. condensates whose e^{−a T} turn on as the field arrives). This is the same tuning type as D315/M3, here as a
+model-building requirement. Not constructed. Open item (a) is restated as "a strong SUSY-preserving stabiliser of T at x_min ≳ 30 with
+m ≳ 100 TeV". D320 is still running; D355 has not started (waiting for Danny's launcher).
