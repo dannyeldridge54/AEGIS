@@ -40,3 +40,16 @@ After 11, start again at 1 with the open conditions.
 - cycle 7 (17:05): PART 7 — D414 separate axion natural: c_γ 1.6–3.9, f ≤ 0.1 M_P, Ω_a ≤ 3e-3; m ≳ 20 H0 gives β_reio/β_rec < 1 (distinguishable). Result → walls 0.
 - cycle 8 (17:11): PART 8 — D415 DM cold: T_NR ≥ 0.9–1.8 TeV (×1e6 margin); 100–200 TeV restored; D397 PeV shift withdrawn. Result → walls 0.
 - cycle 9 (17:19): PART 9 — D416 gravitino + hidden radiation ΔN_eff 0.081 (<0.14; conservative 0.14–0.15); m_3/2 ≤ 4.7 eV; centre caught shared ΔN_eff budget. Result → walls 0.
+
+## STANDING TASK (Danny 17:19 CT 14 Nov: "once the basis is made write paper and publish")
+Basis = (a) the crown fit D410 scored (d410_log.txt shows "D410 all done") AND recorded as a D-note, AND (b) the first full pass of the
+parts queue finished (part 11 done). When both hold, in the next tick instead of a new part:
+1. Write papers/twist_v6/TWIST2_PAPER.md: "Twist-2" — one no-scale field for inflation and Λ, thermal capture + χ-condensate pinning +
+   gauge-channel decay; leptogenesis; separate birefringence axion; gravity-only DM; the bridge null tests B1–B4; the crown result reported
+   honestly whatever it says (if the senses disagree, say so in the abstract); all D-numbers; prior art credited (D398/D399: 2008.09099,
+   Dimopoulos, Kofman et al., Choi, Danos–Frey–Brandenberger, Ellis–Nanopoulos–Olive, Higgs-dilaton); estimate-grade parts labelled;
+   string flags (TCC, dS, distance) stated; predictions table (N*, n_s, r, α_s, ΔN_eff 0.05–0.10, β ratio, DM 100–200 TeV, w).
+2. aegis-check every number against the D-notes; build PDF (pandoc → wkhtmltopdf, as the α paper); check page 1.
+3. Publish as a NEW Zenodo record (authorised by this instruction): preprint, CC-BY-4.0, creator as before, publisher Zenodo,
+   related: isDerivedFrom 10.5281/zenodo.24202420 and references 10.5281/zenodo.24232382; verify md5; log in ZENODO_UPDATE; commit; report DOI.
+4. Then resume the loop.
