@@ -47,3 +47,8 @@ https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md).
 - FLAG-1 record https://zenodo.org/uploads/24140195: status notice updated (item 4 points to the Twist paper and its main results);
   version-4 text kept. Saved as a draft edit; verified after reload. Public record unchanged until published.
 - Publish on both is Danny's button.
+
+## 19:25 CT — v5 published (replaces v4 as the latest version)
+Record 24210532, DOI 10.5281/zenodo.24210532 (concept 10.5281/zenodo.24202420 now resolves to v5). Files: Twist_v5_consolidated_2026-11-13.pdf
+(md5 f19faeaf22364bda8c425e16b1b3c4f5), Twist_v5_exploratory_note_2026-11-13.pdf, AEGIS_twist_v5_code_and_rules.zip. v4 (24202422) stays in the
+version history (Zenodo never deletes published versions). Claude Doc of v5: https://claude.ai/artifact/4Z9b5Yd5AoHxH2NrSCC2tg
