@@ -1,0 +1,3 @@
+m_DM 1.0e+05 GeV: p_birth ≤ 6.33e+16 GeV (p/T = 113), T_NR ≥ 8.85e+02 GeV  → margin over 1 MeV: 8.8e+05
+m_DM 1.5e+05 GeV: p_birth ≤ 6.33e+16 GeV (p/T = 113), T_NR ≥ 1.33e+03 GeV  → margin over 1 MeV: 1.3e+06
+m_DM 2.0e+05 GeV: p_birth ≤ 6.33e+16 GeV (p/T = 113), T_NR ≥ 1.77e+03 GeV  → margin over 1 MeV: 1.8e+06

@@ -2,8 +2,8 @@
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 5
 consecutive_walls: 0
-cycle: 7
-next_part: 8
+cycle: 8
+next_part: 9
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -38,3 +38,4 @@ After 11, start again at 1 with the open conditions.
 - cycle 5 (16:48): PART 5 — D412 hidden-decay dark radiation ΔN_eff 0.034 (MSSM g*) / 0.094 (SM g*) < 0.14: condition (i) passes; new prediction ΔN_eff ≈ 0.03–0.09. Result → walls 0.
 - cycle 6 (16:55): PART 6 — D413 Λ ∝ x_E^-0.97, pin 29.6→29.83 moves Λ −0.75%: robust, no x_E tuning; dS-conjecture flag. Result → walls 0.
 - cycle 7 (17:05): PART 7 — D414 separate axion natural: c_γ 1.6–3.9, f ≤ 0.1 M_P, Ω_a ≤ 3e-3; m ≳ 20 H0 gives β_reio/β_rec < 1 (distinguishable). Result → walls 0.
+- cycle 8 (17:11): PART 8 — D415 DM cold: T_NR ≥ 0.9–1.8 TeV (×1e6 margin); 100–200 TeV restored; D397 PeV shift withdrawn. Result → walls 0.

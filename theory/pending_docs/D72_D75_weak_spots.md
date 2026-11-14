@@ -4080,3 +4080,11 @@ another axion (e.g. a second modulus's). (c) CENTRE: B3 (β–w link) does not a
 m ≳ H(z ≈ 10) ≈ 20 H0 the field is already oscillating at reionization, so β_reio/β_rec < 1 — unlike both the dark-energy axion and a
 calibration error (ratio ≈ 1). LiteBIRD's two-bump measurement can therefore tell this baseline apart (to be quantified when computed).
 Result → walls 0.
+
+**D415 (cycle 8; PART 8 dark matter, RIGHT; scored, locked PREREG_D415_PART8; results/part8_d415.txt) — COLD: the gravity-only DM born in
+χ̃ decays (p ≤ m_χ̃/2 = 6.3×10¹⁶ GeV, p/T ≈ 113 at birth) becomes non-relativistic at T_NR ≥ 0.9–1.8 TeV for m_DM = 100–200 TeV, ~10⁶ above the
+1 MeV margin (Lyman-α warm-DM bounds act at ~keV).** (a) ALONE: mass 100–200 TeV restored by D407 (D ≈ 1); yield mass-independent (D112);
+stability by a gauged Z₂ (no signal) or global with ξ ≲ 0.6 at 200 TeV (D317/D389 decay window). (b) CONNECTIONS: part 1 — no dilution, so
+D397's PeV shift is withdrawn; part 3 — production during the kination/reheating epoch (T ~ 5×10¹⁴ GeV), momentum redshifts normally after.
+(c) CENTRE: F5 passes (stable, or decay window), structure formation unaffected. Result → walls 0.
+Crown status: THAW_TWIST finished 17:06; THAW_FREE on its last runs.
