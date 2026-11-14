@@ -41,6 +41,8 @@ After 11, start again at 1 with the open conditions.
 - cycle 8 (17:11): PART 8 — D415 DM cold: T_NR ≥ 0.9–1.8 TeV (×1e6 margin); 100–200 TeV restored; D397 PeV shift withdrawn. Result → walls 0.
 - cycle 9 (17:19): PART 9 — D416 gravitino + hidden radiation ΔN_eff 0.081 (<0.14; conservative 0.14–0.15); m_3/2 ≤ 4.7 eV; centre caught shared ΔN_eff budget. Result → walls 0.
 
+## STANDING TASK — IN PROGRESS (main session, 17:38 CT; crown scored). Ticks: do NOT start a second copy; check ZENODO_UPDATE first.
+## (original heading follows)
 ## STANDING TASK (Danny 17:19 CT 14 Nov: "once the basis is made write paper and publish")
 Basis = (a) the crown fit D410 scored (d410_log.txt shows "D410 all done") AND recorded as a D-note, AND (b) the first full pass of the
 parts queue finished (part 11 done). When both hold, in the next tick instead of a new part:

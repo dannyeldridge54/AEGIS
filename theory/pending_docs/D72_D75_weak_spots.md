@@ -4119,3 +4119,14 @@ natural home. Open, unchanged: (i) a local (T − T_E) coupling is not available
 x ≲ 1 during inflation and the first ~2.5 e-folds after it (D408, D409); (iii) string flags TCC/dS/distance (D408, D413).
 (b) CONNECTIONS: parts 2, 5, 6, 10 — consistent with their notes; the birefringence axion (part 7) wants a second modulus axion, generic in
 multi-moduli compactifications. (c) CENTRE: no filter or bridge changes. No scored result → WALL 2 → interval 5 → 30 min.
+
+**D410 scored (CROWN, locked PREREG_D410_CROWN; results/crown_d410.json; PC run 16:36–17:32 CT) — SENSES DISAGREE.**
+χ²: THAW_TWIST (n_s fixed 0.9651, thawing line) 2408.06; THAW_FREE (n_s free) 2400.11; ΛCDM 2402.26; free w0–wa 2392.30.
+C1 FAIL: fixing n_s at the Twist value costs Δχ² = 7.95 (~2.8σ for one parameter) even with thawing dark energy.
+C2 FAIL: against ΛCDM, the CMB block is worse by +5.80 and BAO by +4.22 (SN better by −2.25) — sight and hearing reject the Twist's n_s.
+C4 FAIL (marginally): at THAW_TWIST's w0 = −0.971, a single dark-energy axion would need c_γ/f = 30.4 (> 30) for β = 0.261°. (C4 concerns the
+single-axion variant; the baseline's separate axion, D414, is not tested by it.) C3 passes by construction.
+Key numbers: n_s in a thawing background = 0.9736 (ΛCDM 0.9737) — letting dark energy thaw does NOT lower n_s; the thawing line itself
+helps little (Δχ² −2.2 vs ΛCDM with one extra parameter) while free w0–wa gains −10.0, so the data prefer a steeper (phantom-crossing)
+shape than any single thawing field. Reading (outcome 3 of the 16:19 discussion): the Twist's inflation sector is ~2.8σ off on CMB-SPA+DESI
++Pantheon+ regardless of the dark-energy branch; all other sectors pass their checks. This goes into the Twist-2 paper's abstract.

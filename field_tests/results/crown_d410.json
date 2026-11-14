@@ -1,0 +1,24 @@
+{
+ "rule": "PREREG_D410_CROWN.md",
+ "chi2": {
+  "THAW_FREE": 2400.1067,
+  "THAW_TWIST": 2408.0562,
+  "LCDM": 2402.2584,
+  "W0WA_free": 2392.3013
+ },
+ "n_s_THAW_FREE": 0.97355959,
+ "w0_THAW_FREE": -0.9559514,
+ "w0_THAW_TWIST": -0.97057006,
+ "C1_dchi2_fix_ns": 7.95,
+ "C1_pass": false,
+ "C2_blocks_TWIST_minus_LCDM": {
+  "CMB": 5.803,
+  "BAO": 4.216,
+  "SN": -2.254
+ },
+ "C2_pass": false,
+ "C4_cgamma_over_f_needed": 30.43,
+ "C4_pass": false,
+ "C3_touch": "pass by construction (axion: CP-odd coupling, no alpha drift; D400 applies to moduli only)",
+ "verdict": "SENSES DISAGREE: CMB+BAO+SN with Twist n_s (C1); a single sense vs LCDM (C2); birefringence (C4)"
+}
