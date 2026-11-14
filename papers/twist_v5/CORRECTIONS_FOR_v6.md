@@ -98,3 +98,7 @@ Add to §7:
 Add to §7:
 
 > In the weakly coupled heterotic string, α_GUT = e^{2φ}α′³/(16πV) [Witten, hep-th/9602070]. Keeping the gauge couplings fixed while the volume grows (as the shield requires) therefore drives the string coupling strong. The Twist's x cannot be a heterotic volume modulus. The strong-coupling continuation, heterotic M-theory, moves the Standard Model coupling along its matter-neutral direction (D208).
+
+## 14. Exploratory note: a candidate string home (papers/twist_v5/G2_HOME_PROPOSAL.md, D309–D315)
+
+Add a short section summarising the G₂ block-split proposal, and list question 12 among the open questions for string theorists.

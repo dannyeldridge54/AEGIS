@@ -2910,3 +2910,7 @@ minimum is x-independent in position (the e^K prefactor factors out of the T₁ 
 W = 0) minimum or cancelled like D292, otherwise it adds an x^{−3} term to the tail. Verdict: the G₂ lead survives a third check, with one new
 condition: the fixed-block stabilisation must be supersymmetric with W = 0 there (or tuned as in D292). Gap 9 MEDIUM, lead intact; the
 open-problem list for an M-theory expert now has a concrete construction to check (D311–D315).
+
+**D316 (deep loop 15) — the G₂ lead written up.** papers/twist_v5/G2_HOME_PROPOSAL.md collects D309–D315 into one self-contained proposal
+(why not heterotic; the block split; SM on a block-free 3-cycle; ABKKV stabilisation of the fixed block with W = 0; D292 SUSY breaking; cliff
+condensate; what is not shown) and states question 12 for M-theory experts. v6 corrections item 14 adds it to the exploratory note.
