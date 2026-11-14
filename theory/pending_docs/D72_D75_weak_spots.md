@@ -2881,3 +2881,17 @@ bulk/fibre case V > 0 is never compatible with ε_V < 1 — only a "local modulu
 ~meV must have weaker than Planckian couplings to the Standard Model … sequestering could help, but no explicit construction exists" — the gap
 we are addressing. Verdict: no published G₂ quintessence; D312's "SM on a 3-cycle away from the rolling block" is, as far as found, a new
 proposal. Gap 9 unchanged (MEDIUM, with a novel lead).
+
+**D314 (deep loop 13, gap 2/9: do D292 and the cliff transplant to G₂?) — analysis.** With K = −3 ln V_X, V_X = Π s_i^{a_i}, Σa_i = 7/3
+(Acharya et al.), split the moduli into the rolling α = 1 block (Σa = 1, collective modulus T₂) and a fixed block (Σa = 4/3, T₁):
+K = −3 ln(T₂ + T̄₂) − 4 ln(T₁ + T̄₁) + const, as in the (4,3) seven-disk split (D311). (1) SUSY breaking: m_3/2 = e^{K/2}|W| ∝ (2x)^{−3/2} ×
+(fixed-block constant) — the same x-dependence as the single-field Twist, so the D292 construction transplants unchanged: W ⊃ w T₂^{3/2} + μ²X
+with K ⊃ |X|²(T₂ + T̄₂)^{−3}(1 + c(…)²) gives V = μ⁴ − 3w²/8 at every x, an x-independent m_3/2, F_X and angle mass (4c − 2)m_3/2² (the fixed
+block only rescales w and μ by constants). In G₂ the weight-3 metric for X must come from X living at a singularity whose local metric scales as
+T₂^{−3} — a model-building requirement, not derived. (2) Cliff: a hidden gaugino condensate on a 3-cycle with f = N₁z₁ + N₂z₂ gives
+W ∝ e^{−2π(N₁z₁ + N₂z₂)/N}; the Twist's cliff exponent e^{−πT/4} needs 2πN₂/N = π/4, i.e. N = 8N₂ — the SU(8)-type condensate of the
+alternative construction, now on a 3-cycle with N₂ = 1. Same drawback as before (D136): its gauge coupling 1/g² = Re f ∝ s₂ is strong on the
+plateau (small x), so the cliff formula is used outside control there; the TWIST-K Kähler-metric version of the cliff would need a G₂ origin
+for the e^{−πu/8} metric factor (membrane instanton corrections to K are the natural candidate, not computed). (3) The SM 3-cycle must have
+N₂^SM = 0 (D312) while the hidden cliff cycle has N₂ = 1 — compatible (different cycles). Verdict: the G₂ lead survives this check: SUSY breaking
+transplants exactly; the cliff has the same control problem it always had. Gap 9 MEDIUM, lead intact.
