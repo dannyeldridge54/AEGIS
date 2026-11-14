@@ -3242,3 +3242,14 @@ TWIST-P/L (Kähler deformations) and TWIST-G− (W ∝ T^{1+ε}), and they do no
 measured radiative corrections to tree-level Higgs-like inflation?"), a radiative route analogous to D285's TWIST-C origin.
 Reading: an ACT-sized n_s shift from one small deformation is generic in this model class. The Twist's variants are neither more nor less natural
 than published ones, and their agreement with ACT is not evidence (they are scored only on future data). Gap 15: LOW, unchanged.
+
+**D343 (pp, 07:12 CT, gap 2: is D334's one-loop drift an artefact that higher orders could remove?) — no; the structure is exact
+(literature, partly read).** Arkani-Hamed & Murayama, "Holomorphy, rescaling anomalies and exact β functions in supersymmetric gauge
+theories" (hep-th/9707133; first 100k characters read): going from holomorphic to canonical normalisation is a rescaling with an anomalous
+Jacobian. "The F terms given above are exact"; the canonical coupling's change is given by the NSVZ β function, and higher-dimension D-terms
+are 1/M-suppressed. The matter-field rescaling (the ln Z terms) is the same kind of anomaly; that part was not in the portion read and is the
+standard Shifman–Vainshtein/NSVZ statement.
+Consequence: the moduli dependence in D323/D334, which comes from the rescaling anomalies via K and ln Z, is fixed by holomorphy and anomalies.
+It is not a one-loop accident that higher orders could cancel. Beyond one loop, only the NSVZ-type ln g_c term adds, which multiplies the same
+drift by 1 + O(α). So D334's no-go holds to all orders in the gauge couplings (up to 1/M D-terms), with the same escapes (weights, GS).
+Gap 2: HIGH; the no-go is firmer.
