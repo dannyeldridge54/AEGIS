@@ -2139,3 +2139,13 @@ For the Twist: the two most obvious systematic explanations (inconsistent detect
 now disfavoured for the Planck part of the signal, which RAISES the chance the 0.28° signal is real. The locked rule still waits for a
 calibrator-based β (PREREG_BIREF_NULL), and the absolute-angle loophole remains open. Gap 2 status: risk raised from "high" to "high and
 growing"; it is now the single most likely way the Twist (in its anomaly-free form, β = 0) fails in the next ~2 years.
+
+**D240 (pp loop 6) — n_s: the literature now treats the CMB+BAO shift as possibly a statistical artefact (literature).** arXiv:2507.12459
+("The BAO–CMB tension and implications for inflation"): ACT alone 0.9666 ± 0.0076; ACT + DESI DR2 0.9770 ± 0.0070; P-ACT-LB 0.9739 ± 0.0034. Starobinsky
+-type models (0.960–0.967 for N* 50–60) remain viable with CMB alone and are disfavoured at ~2σ+ only in the CMB+BAO combination; the authors warn
+that CMB+BAO n_s should be read cautiously until the tension is resolved ("neither possibility makes a firm prediction"). A 2026 news report
+(Ferreira et al., Kavli IPMU; no arXiv number or numbers given in the report — not verified against the paper) says that modelling the
+covariance properly makes the n_s shift largely disappear. Our own reading (D223) agrees: the Twist is −0.3σ from ACT alone and −1.7σ from
+CMB-SPA alone. Gap 1 status: unchanged as a LOCKED verdict (NS-SPA used CMB+BAO and stays INCONSISTENT as scored), but its interpretation is
+now explicitly contested in the literature; the plain Twist and the post-data variants are effectively waiting on the BAO–CMB resolution. To do
+when the Ferreira paper is found: read it and record its numbers (no rescoring of the locked test).
