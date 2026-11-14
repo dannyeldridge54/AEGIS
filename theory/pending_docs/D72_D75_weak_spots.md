@@ -2557,3 +2557,10 @@ sector already makes soft masses slide as e^{K/2} with a rolling modulus (Brax�
 Δα/α ~ 10⁻³ unless the shield covers the SUSY-breaking scale. So the closest published string scenario does not supply the missing
 mechanism; it assumes it. (A 2026 item, arXiv:2603.25797, was not reachable.) Gap 9 unchanged; the Twist's string-level problem is shared
 with the runaway-quintessence literature, not specific to it.
+
+**D283 (pp loop 35, gap 8: the cliff depth n) — closest published mechanism is the same relabelling as D255.** Yokoyama, "A cosmological
+constant from degenerate vacua" (arXiv:hep-th/0110137): the residual vacuum energy of instanton-split degenerate vacua is
+ρ_v ≅ M⁴(8π/g²)⁴ e^{−8π²/g²}; requiring 10⁻¹²⁰ M_G⁴ gives α = 1/44.4–1/47 for M = 5×10¹⁶ GeV–M_G — "without small numbers", but α is fixed
+by the input, not predicted. The Twist's e^{−2n} with 2n ≈ 249 is the same structure (D255: n = π/α_h, α_h ≈ 1/39.8; the prefactors differ).
+Like Yokoyama's, it trades one tuning (Λ) for one gauge coupling known to ~0.3%. Gap 8 unchanged: n is chosen; a derivation would need a
+UV theory that fixes a hidden gauge coupling at the per-mille level. No further literature search planned for this gap.
