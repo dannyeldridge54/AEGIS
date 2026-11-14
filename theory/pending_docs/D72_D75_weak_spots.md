@@ -2577,3 +2577,20 @@ evades the exact-SUSY cancellation they note because the splitting comes from th
 G−, from the locked scan) is consistent with Gialamas et al.'s Δr ≈ 4δ/N scaling (δ ≈ 2γ-equivalent). Gap 1: unchanged as a verdict
 (INCONSISTENT for the plain Twist); the G− variant now has a computed (estimate-level) mechanism and a literature gap it would fill. Worth a
 proper one-loop supergravity calculation if Danny wants to develop G−.
+
+**D285 (pp loop 37, gap 1/15: full-supergravity one-loop check of D275) — D275's estimate is WRONG in its mechanism; the full calculation
+instead reproduces TWIST-C (gminus_sugra_loop_d285.py, gminus_ns_d285b.py).**
+Setup: TWIST-K plus a field X inside the no-scale log, K ⊃ −X X̄/3, W ⊃ (M/2)X² + (λ/2)S X². Full three-field F-term potential at S = X = 0,
+X's two real scalar masses by finite differences, fermion mass e^{K/2}|W_XX|/K_XX̄ = M²/(2x)… , Coleman–Weinberg with canonical masses.
+Findings: (1) Every scalar in the log gets a universal Hubble-induced shift: m_s² = m_F² + δ with δ ≈ +0.2 m² ≈ 2.4H² (both real directions),
+even at λ = 0; λ changes dV/V only at the 10⁻⁶ level. So STr M⁴ ≈ 4 m_F² δ, NOT 2Δ² as D275 assumed (D275 dropped the cross term) — the
+λ S X² mechanism is subdominant. Correction to D275 and D284: withdraw "γ = −Nλ²/64π²" and "fills the gap Ellis et al. leave open" as stated.
+(2) Because m_F² ∝ 1/x, the one-loop term is dV/V ≈ b x*/x (x* = 1.3×10⁻⁴), not a power law x^{2γ}. A heavy X (M = 1, m_F² ~ 10⁴ m²)
+gives dV/V ~ 10² — it destroys the plateau; a light one (M = 10⁻³) gives a tachyonic X (m² ≈ −1.4H²). A useful size needs m_F ~ m (the
+inflaton mass), which is a choice. (3) Slow roll with V_tree(1 + b x*/x), N* = 57: b = 0 → n_s 0.9650, r 0.0036 (the Twist); b = 0.003 →
+0.9703, 0.0042; b ≈ 0.0053 → n_s ≈ 0.974, r ≈ 0.0048; b = 0.01 → 0.984, 0.0061. (4) This is exactly TWIST-C's form: W ∝ S(T + c) gives
+V ∝ (1 + c/x)² ≈ 1 + 2c/x, and b x* = 2c gives c ≈ 3.4×10⁻⁷ — the locked TWIST-C value (3.5×10⁻⁷, r ≈ 0.005). So TWIST-C's "sharply tuned"
+c is what a one-loop correction from a field of roughly the inflaton's mass inside the no-scale log generates; the tuning moves into that
+field's mass and the renormalisation scale (the ln μ piece multiplies V/x, so b is scheme-dependent and effectively a renormalised
+parameter). TWIST-G−'s power-law tilt is NOT what this loop produces. Status: estimate-level, one field, one-loop, no gravitational loops.
+Gap 15 updated: C gains a loop origin (D285); G−'s naturalness reverts to "loop analogue only" (D246). Both stay post-data models.
