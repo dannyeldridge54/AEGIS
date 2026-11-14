@@ -156,7 +156,7 @@ The tests table splits accordingly: r, n_s and β apply to both; w = −1 applie
 
 ## 19. TWIST-I's CMB predictions are Starobinsky-class (D368)
 
-Add to the TWIST-I description: "At N* = 55.7–57.6, the Twist's n_s and r agree with the α = 1 attractor formulas (n_s = 1 − 2/N*, r = 12/N*²) to within 10⁻⁴ and 3×10⁻⁴. The inflationary test therefore probes the plateau class and, through N*, the Twist's reheating history (its built-in kination phase raises N* to 55.7–57.6, toward but not into the N* ≳ 58 that refined Starobinsky analyses need for ACT compatibility, arXiv:2504.20757; D370). The model-specific content is in N*, the matter mechanism and its isocurvature, and the dark-matter window."
+Add to the TWIST-I description: "At N* = 55.7–57.6, the Twist's n_s and r agree with the α = 1 attractor formulas (n_s = 1 − 2/N*, r = 12/N*²) to within 10⁻⁴ and 3×10⁻⁴. The inflationary test therefore probes the plateau class and, through N*, the Twist's reheating history (its built-in kination phase raises N* to 55.7–57.6, toward but not into the N* ≳ 58 that refined Starobinsky analyses need for ACT compatibility, arXiv:2504.20757; D370). The model-specific content is in N*, the matter mechanism and its isocurvature, and the dark-matter window." **Update (D387):** on the full TWIST-I trajectory use N* = 56.7, n_s = 0.9648, r = 0.0037 (57.6 withdrawn).
 
 
 ## 20. Under TWIST-I the Twist angle is heavy (D382)
