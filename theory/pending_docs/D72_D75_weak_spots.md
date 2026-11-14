@@ -2300,3 +2300,13 @@ Schrabback et al. 2026, A&A 708, 345 is a single-cluster lensing pilot, no S8/σ
 tests — DESI's five-year dark energy (D247) and Euclid's first growth/lensing cosmology — land in 2027. PREREG_GROWTH (σ8 −1.5%, f σ8 −3% at
 z ≈ 0.4, growth index ≈ 0.557) will first be scored then; at fixed Ω_m the σ8 shift is small compared with early Euclid errors, so the
 combined DESI + Euclid analysis (expected ~2027–28) is the realistic first decisive growth test. Gap 4 timeline sharpened; no status change.
+
+**D255 (pp loop 20) — gap 5: "n as an instanton action" is a re-labelling, not an explanation (check).** If the cliff depth came from one
+instanton of a hidden gauge group, e^{−2n} = e^{−2π/α_h}, i.e. n = π/α_h: n = 125 ↔ α_h = 1/39.8 — a perfectly ordinary weak gauge coupling (SM
+couplings run to ~1/40–1/50 near the Planck scale), which makes the 10⁻¹⁰⁸ suppression look "natural". But the sensitivity is exponential:
+α_h⁻¹ = 38/40/42/45 gives n = 119/126/132/141 and shifts ρ_DE by e^{+12}, e^{−1}, e^{−14}, e^{−33}; landing within a factor 2 of the observed ρ_DE
+needs α_h⁻¹ to ±0.11 (0.3%). So unless a theory PREDICTS α_h⁻¹ to three digits (e.g. tied to SM couplings by unification with known
+thresholds), this is the standard instanton re-labelling of the cosmological-constant problem, which the literature on Λ-from-instantons
+also faces (e.g. gr-qc/0204033, hep-th/0110137 consider such origins). It is no worse than "n chosen" and reads better ("the dark-energy
+scale is set by a hidden coupling α ≈ 1/40"), but it is not a derivation. Gap 5 status: unchanged; the paper may state the re-labelling
+honestly, with the 0.3% precision requirement. (Consistent with D153/D136: thresholds cannot supply n; a single exponent can, given α_h.)
