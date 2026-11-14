@@ -2546,3 +2546,14 @@ sensitivity.** CERN Courier, "In pursuit of the post-inflation axion": ADMX/CAPP
 beyond the post-inflation class), but it is the experimental window for the cost item "strong CP needs a separate axion": a KSVZ/DFSZ axion
 found at 40–400 μeV would be consistent with it; ALPHA/MADMAX covering 40–400 μeV with no signal would leave only 400–600 μeV. Gap 10
 unchanged (LOW–MEDIUM); decided by ALPHA (2027–28) and MADMAX (~2030+).
+
+**D282 (pp loop 34, gap 9 string home) — the published runaway-quintessence string scenario uses the same shield assumption, stated
+qualitatively.** Olguín-Trejo, Parameswaran, Tasinato & Zavala, "Runaway quintessence, out of the swampland" (arXiv:1810.08634): a
+supersymmetric modulus Φ = φ + iθ (volume, n = 3, or complex structure/dilaton, n = 1) rolls on e^{−2αφ} from a non-perturbative term
+A e^{−αΦ}; the axion stays frozen. On matter: they assume the modulus is "localised away from the Standard Model in the extra dimensions",
+coupling only gravitationally to the SUSY-breaking sector, and state there are then no observable fifth forces or varying constants — no
+estimate given. Our D272–D274 analysis is exactly the quantitative version of that assumption: a gravitational coupling to the SUSY-breaking
+sector already makes soft masses slide as e^{K/2} with a rolling modulus (Brax–Martin; sequestering does not remove it), giving
+Δα/α ~ 10⁻³ unless the shield covers the SUSY-breaking scale. So the closest published string scenario does not supply the missing
+mechanism; it assumes it. (A 2026 item, arXiv:2603.25797, was not reachable.) Gap 9 unchanged; the Twist's string-level problem is shared
+with the runaway-quintessence literature, not specific to it.
