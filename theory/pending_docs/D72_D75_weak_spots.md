@@ -3584,3 +3584,13 @@ from trapping down to T ~ m̃_χ (≈ 10⁴–10⁵ GeV), well before BBN. Below
 present. Consequence: the time the stabiliser has to act is late (T ≲ m̃_χ), so its mass only needs to exceed H at that time (trivially true
 for ≳ 100 TeV). The positional match still comes from the symmetry. No change to the TWIST-I open item; it is narrowed to "zero-temperature
 symmetric stabiliser at the ESP".
+
+**D372 (pp, 08:50 CT, can "minimum at the ESP by symmetry" be exact in a no-scale theory?) — no; the no-scale e^K tilts any reflection-
+symmetric stabiliser, but the shift is small if the stabiliser is sharp (estimate, aegis-checked in code).** The Twist's K = −3 ln(T + T̄)
+is not symmetric under a reflection about T_E, and in canonical units the factor e^K ∝ x⁻³ has slope 3√(2/3) ≈ 2.45. A stabiliser of depth
+~m_x² w² over a canonical width w therefore gets a linear tilt ~2.45 m_x² w², which moves its minimum off the ESP by Δφ ≈ 2.45 w² (M_P = 1):
+w = 0.1 M_P gives Δφ ≈ 2×10⁻², w = 10⁻² gives 2×10⁻⁴, and w = 10⁻³ gives 2.4×10⁻⁶ M_P. D360a/D362 need Δφ ≲ 10⁻⁷–10⁻⁵ M_P, so the stabiliser
+must be SHARP: canonical width ≲ 10⁻³ M_P (≈ 2×10¹⁵ GeV in field space), or its sector must sit at a modular weight that removes the e^K
+tilt, as in the D292 weight-3 trick. The weight route is natural in the Twist framework (D292 already uses it), so the symmetric stabiliser
+should be built with x-independent normalisation; then the tilt vanishes at tree level. Loop-level tilts (D323) would then set the residual.
+Status: TWIST-I's capture item is now "a sharp (≲ 10⁻³ M_P) or weight-neutral symmetric stabiliser at an ESP x ≳ 30". This is still model building.
