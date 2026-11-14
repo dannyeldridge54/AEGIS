@@ -2232,3 +2232,12 @@ forecast for the degree-scale survey (6 small-aperture telescopes by 2027, surve
 5.7/9.7σ; TWIST-L (at n_s 0.974) 0.0073 → 6.1/10.4σ. TWIST-G− vs TWIST-C differ by 1.5σ (baseline). So SO alone can detect the Twist's r at
 ~3–5σ before LiteBIRD — making the r test a 2030-ish event rather than 2035+, and r = 0 at that precision would put PREREG r-readings
 (r < 0.0030 at 95% kills TWIST-L/plain Twist variants) into play. Gap 1/variants: timeline sharpened.
+
+**D249 (pp loop 16) — gap 2: how a calibrated birefringence result could arrive, and why the Twist cannot produce β (literature,
+arXiv:2511.04459).** A DE–photon Chern–Simons coupling −(g/2)φFF̃ gives β ∝ g(φ₀ − φ_LSS) — the standard way a thawing field would make
+β ≈ 0.3°. Forecast for AliCPT-1 + Planck HFI: with a 0.1° calibration prior, a 5σ detection of β = 0.35° needs ~11–18 module-years; 20 module-
+years give σ(β) ≈ 0.08°; below ~0.02° calibration the error is data-limited — so calibrator-based detections at the 0.1° level are plausible
+within a few years (also SO's sparse-wire-grid system, 2309.02035). Why the Twist stays at β = 0 structurally: the field that rolls today is
+Re T, CP-even, which can only couple as φFF (α variation, forbidden by the shield), not φFF̃; the CP-odd angle Im T has mass ≈ 2H and sits at
+its minimum, so its Δφ since last scattering is ~0 (D14 context, PREREG_BIREF_NULL). If a calibrated β ≈ 0.3° is confirmed, the Twist as a single
+field is falsified on this observable; an extension would need an additional light pseudoscalar coupled to photons — a different model.
