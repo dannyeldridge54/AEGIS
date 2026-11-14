@@ -3516,3 +3516,19 @@ with x-dependent thresholds after trapping. It does not matter, because x no lon
 Verdict: TWIST-I's capture problem reduces to a specific, testable piece of model building (a χ sector with an ESP at x_E ≳ 30, λ ≳ 1, and
 a minimum there from SUSY-breaking loops). The remaining number to compute is the CW mass and its sign; it needs a lock before it is called a
 prediction. Status: the open item stays open but is now concrete.
+
+**D366 (pp, 08:32 CT, D365's open point: is the added ESP a minimum, and how heavy is x there?) — likely a MAXIMUM; the ESP route needs one
+more ingredient (argument from a standard result; not a locked computation).**
+With W ⊃ λ M_P (T − T_E) χχ̄, near the ESP the canonical displacement δ of x gives χ a supersymmetric mass ∝ λ δ. If χ feels SUSY breaking
+through soft masses m̃_χ² > 0 (needed for any one-loop potential; an SM- and messenger-neutral χ gets none in gauge mediation, and with an eV
+gravitino its gravity-mediated soft mass is ~eV, so the potential vanishes), then a Yukawa-coupled field gets a NEGATIVE one-loop mass², the same
+mechanism as radiative electroweak breaking from the top loop: δm_x² ≈ −(N λ²/8π²) m̃_χ² ln(Λ/m̃_χ). The ESP is then a local MAXIMUM of the
+loop potential, unless x has its own positive mass there of at least that size. x's own tree-level soft mass is ~m_3/2 ~ eV, via K ⊃ |X|²|ΔT|²,
+which is far too small.
+Consequences: (i) trapping at the ESP still happens (particle production), but once n_χ dilutes, x would roll off the maximum. (ii) A minimum at
+the ESP needs either χ with negative soft mass² (unusual; tachyonic χ), or a separate positive x mass ≳ (λ/2π)m̃_χ at the ESP from another
+sector, with its minimum at T_E. That reintroduces the positional coincidence of D362, unless that sector shares the symmetry fixing T_E.
+Verdict: the ESP route does not by itself give a stabilised TWIST-I. A Z₂ or larger symmetry that fixes T_E in all sectors (both χ and the
+stabiliser) would. Status: TWIST-I capture is still open, now sharply stated: "a symmetry point at x ≳ 30 respected by the stabilising sector,
+with net positive curvature there, ≳ 100 TeV". Correction to the optimism of D364–D365 (the trapping numbers stand; the minimum does not
+follow).
