@@ -2537,3 +2537,12 @@ detectable by CMB-S4/PICO even at the low end of β. A homogeneous rolling ALP (
 with its own tomographic ratio R = β_reion/β_rec (D250). So the two fallbacks are distinguishable: anisotropic spectrum (walls) vs R (rolling
 ALP). Neither is locked as a Twist prediction beyond PREREG_TWIST_ALP; if a calibrated β is confirmed, a wall-network lock should be written
 before the next anisotropic-birefringence release. Gap 4 status unchanged (HIGH, rising); fallback now specified with a literature number.
+
+**D281 (pp loop 33, gap 10 strong CP) — the Twist's required post-inflation QCD axion (40–600 μeV, D219/D236) is not yet probed at QCD
+sensitivity.** CERN Courier, "In pursuit of the post-inflation axion": ADMX/CAPP/HAYSTAC lead below ~25 μeV; MADMAX (dielectric, target
+40–400 μeV) prototype run 2024 near 19 GHz beat CAST/astrophysical bounds but not KSVZ/DFSZ; its next prototype installs mid-2026–2029, 4 T magnet
+~2030; ALPHA (plasma haloscope, 40–400 μeV) Phase I data 2026, axion search 40–80 μeV in 2027–28, Phase II to ~200 μeV at DFSZ. No part of
+40–600 μeV is excluded at QCD-axion couplings yet. This is not a Twist prediction (the Twist needs an extra axion; it does not fix its mass
+beyond the post-inflation class), but it is the experimental window for the cost item "strong CP needs a separate axion": a KSVZ/DFSZ axion
+found at 40–400 μeV would be consistent with it; ALPHA/MADMAX covering 40–400 μeV with no signal would leave only 400–600 μeV. Gap 10
+unchanged (LOW–MEDIUM); decided by ALPHA (2027–28) and MADMAX (~2030+).
