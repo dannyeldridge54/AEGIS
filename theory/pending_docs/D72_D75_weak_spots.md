@@ -3288,3 +3288,9 @@ lowers σ(r) by 27–37% depending on the foreground model (exact delensed value
 For TWIST-INFLATION (r = 0.0035–0.0038): ~1.2–1.9σ with SO. That is a hint, not a decision. The locked rule fails the model if r < 0.002 or
 r > 0.008 at 95%, so SO can fail it only on the r > 0.008 side or with a clear null. Decisive: LiteBIRD (σ(r) ≲ 0.001 design, early 2030s).
 D346 now rests on a source.
+
+**D348 (pp, 07:25 CT, LiteBIRD reach) — confirmed (literature).** "The LiteBIRD mission to explore cosmic inflation" (arXiv:2406.02724,
+SPIE 2024): target total δr = 0.001 "including systematic errors and margin"; launch aimed at Japan's fiscal year 2032. For TWIST-INFLATION
+(r = 0.0035–0.0038): a ~3.5σ detection is expected if the model is right. The locked failure conditions (r < 0.002 or > 0.008 at 95%) become
+decisive, so the r test date is ~2033–35, allowing for survey time. Recent status not re-checked (the 2024 paper is the latest found).
+Together with D346–D347: SO gives a ~1–2σ hint in the late 2020s, and LiteBIRD decides in the 2030s.
