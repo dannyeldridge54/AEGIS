@@ -2870,3 +2870,14 @@ M₁₁/m_p ∝ V_X^{−1/2} — the SUSY-breaking scale needs the D292 mechanis
 to G₂, not yet done; M₁₁ affects only heavy states. Status: gap 2 HIGH → HIGH with a concrete candidate; gap 9 MEDIUM with the G₂-MSSM-type
 "SM on a 3-cycle away from the rolling block" as the leading lead. Not shown: that the block has the plateau→cliff→tail potential; that the fixed
 block can be stabilised; chirality/singularity realism. Recorded as open-problem question 12 for M-theory experts.
+
+**D313 (deep loop 12, gap 9: is there published G₂/M-theory quintessence to build on?) — none found; the D312 route would be new.**
+Searched for M-theory/G₂ moduli quintessence; read Bento, Chakraborty, Parameswaran & Zavala, "Dark energy in string theory" (arXiv:2005.10168;
+IIA/IIB/heterotic 4d SUGRA, no G₂) and Agrawal & Obied (JHEP 06 (2019) 103; EFT only). Bento et al.: non-perturbative runaways give
+double-exponential tails too steep for slow roll; perturbative power-law runaways K = −n ln(T+T̄), W ∝ T^p give ε_V = (n − 2p)²/n, and in the
+bulk/fibre case V > 0 is never compatible with ε_V < 1 — only a "local modulus" case (p = n) works. Check against the Twist: n = 3 and the tail
+ε_V = 1/3 correspond to (3 − 2p)² = 1, i.e. p = 1 or 2; the Twist evades their no-go because V > 0 comes from the stabiliser's F_S
+(W = √3 m S T), not from a pure-T superpotential — a structural difference worth stating in v6. On matter: "any scalar with mass below
+~meV must have weaker than Planckian couplings to the Standard Model … sequestering could help, but no explicit construction exists" — the gap
+we are addressing. Verdict: no published G₂ quintessence; D312's "SM on a 3-cycle away from the rolling block" is, as far as found, a new
+proposal. Gap 9 unchanged (MEDIUM, with a novel lead).
