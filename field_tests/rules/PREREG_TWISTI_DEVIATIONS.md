@@ -18,3 +18,4 @@ need computing. The scored rules are unchanged.
 D4 (07:45 CT; a consequence, not a rule change): a decaying ≳ 100 TeV x (D3) still dilutes n_B/s and DM by Δ ≈ (Δφ²/6M_P²) T_osc/T_decay
 (10⁷–10¹³ for 10⁻³–1 M_P displacements, D359). TWIST-I therefore assumes ADIABATIC capture of x at x_min (residual displacement ≲ 10⁻⁷–10⁻³ M_P
 depending on m_x), not merely a heavy decaying modulus. The scored rules are unchanged.
+D5 (08:00 CT; correction to D4): the residual-displacement bound is ≲ 10⁻⁷–10⁻⁵ M_P for any m_x (D360a numerical check; D359 underestimated the heavy-x case).
