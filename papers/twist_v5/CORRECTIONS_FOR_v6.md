@@ -145,3 +145,7 @@ Add to the TWIST-I description: "At N* = 55.7–57.6, the Twist's n_s and r agre
 ## 20. Under TWIST-I the Twist angle is heavy (D382)
 
 The weight-3 stabiliser gives V = k²[(x − x_E)² + y²], so the angle y gets the same mass as x (≳ 10⁵ GeV) and decays before BBN. In the exploratory note §7, replace the strong-CP line's "the angle would overproduce axion dark matter by ~4×10⁵" with "the angle is heavy after capture and is not the QCD axion; a separate post-inflation axion (40–600 μeV) is still needed". The eV-branch angle relic (item 11) does not arise under TWIST-I.
+
+## 21. Neutrino mass with the tail (locked D355, scored 14 Nov 09:51)
+
+Add to the neutrino discussion: "Freeing Σm_ν on the NS-SPA data set, the thawing tail penalises the minimal normal-ordering value 0.06 eV by Δχ² = 5.2 (best fit at the 0.001 eV prior edge), against 1.9 for ΛCDM; the locked reading is TIGHTER (D = 3.35). TWIST-I, with w = −1, carries the ΛCDM value. The tail variant therefore has an extra neutrino-mass cost." This is a sensitivity on already-used data, not evidence.
