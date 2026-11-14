@@ -13,7 +13,7 @@ Every known gap, ranked by how badly it could hurt, with its status and what wou
 | 8 | Strong CP | LOW–MEDIUM | Not solved; shield forbids the angle as QCD axion; detectable r excludes pre-inflationary axions; only a post-inflation axion (≈40–600 μeV) fits (D219; confirmed vs literature incl. the ξR|Φ|² loophole, which falls short by ~10², D236) | Haloscopes (MADMAX, ALPHA) — a pre-inflationary-axion discovery would conflict |
 | 9 | Hubble tension | LOW–MEDIUM (cost) | Twist lowers CMB-inferred H₀ to ≈ 65.7 (D169) — inside the range of all DESI-preferred w0wa fits (63.6–67.5); a confirmed local H₀ ≈ 73 would weaken the DE evidence (D235) | Local H₀ resolution |
 | 10 | Initial conditions | LOW | ζ = 3×10⁵ removes the helper tachyon as limit; plateau inside EFT 2.5–3.8 M_P, tower-limited (D217–D218); fast starts outside the EFT | Numerical relativity runs of the Twist (not planned) |
-| 11 | Neutrino masses | LOW | Assumed; optional M_R ~ m_3/2 lead (D214) | — |
+| 11 | Neutrino masses | LOW | Assumed; optional M_R ~ m_3/2 lead (D214), mechanism established in the literature (Kähler T†NN/M_P, D244) | — |
 | 12 | Dark matter | LOW | Conditional gravity-only fermion 100–500 TeV; out of the predictions table | — |
 | 13 | Naturalness of the n_s variants | LOW (theory) | TWIST-G−'s γ needs a string-like multiplicative loop, not a generic loop (D230); TWIST-C's c is tuned | — |
 

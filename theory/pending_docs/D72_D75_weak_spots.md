@@ -2188,3 +2188,10 @@ Two consistent pictures thus exist in the literature: (a) steep tail + dark-matt
 problem pushed into the dark sector); (b) the Twist: shallower tail + exact shield. A clean discriminant: (a) predicts dark-matter–dark-energy
 interaction signatures (scale-dependent growth, DM mass drift) and phantom crossing; (b) predicts none. Gap 6 status: unchanged; recorded as
 the main competing string-inspired picture for the paper's discussion.
+
+**D244 (pp loop 11) — gap 11: D214's mechanism is established in the literature (arXiv:hep-ph/0408318).** Right-handed neutrino Majorana
+masses from a Giudice–Masiero-type Kähler operator T†NN/M_P with a hidden-sector F-term give M_R ~ F_T/M_P ~ m_3/2 (that paper uses TeV-scale
+SUSY, so M_R ~ TeV, with an SO(3) flavour symmetry making two N degenerate and enabling resonant leptogenesis). With the Twist's high-scale
+SUSY (m_3/2 ~ 2×10¹⁴ GeV in BGW's example, D202) the same operator puts M_R at the seesaw scale and gives m_ν ≈ 0.05 eV for Yukawa ≈ 0.6 (D214).
+Caveats unchanged: it relies on the BGW-type sector, and the Twist's matter comes from the angle (lepto-axiogenesis), so N's leptogenesis is
+not needed. Gap 11 status: the optional lead is now literature-backed; still optional and outside the predictions table.
