@@ -16,12 +16,12 @@ Replace it with:
 >
 > **(ii) W ⊃ w T^{3/2} plus a constant uplift.** This gives an x-independent m_3/2.
 > - It leaves the plateau intact: a full supergravity check finds V changes by ≤ 0.6% for m_3/2 ≤ 10¹³ GeV.
-> - It gives the angle a tachyonic mass −2 m_3/2², so it needs the quartic Kähler stabiliser b(T − T̄)⁴.
+> - It gives the angle a tachyonic mass −2 m_3/2². Kähler-only stabilisers do not cure this: m_θ² stays −2 m_3/2² for any b(T − T̄)⁴ or b(T − T̄)² term (D270). A cure needs the uplift sector to couple to the angle, which makes the angle heavy (~m_3/2).
 > - It needs m_3/2 ≲ 6×10⁸ GeV, so that the angle stays light while matter forms.
 > - It needs m_3/2 ≳ 10⁸ GeV, so that gravitino decay releases ≲ 15% of the energy.
 > - It therefore works only for m_3/2 ≈ 10⁸–10⁹ GeV (estimate), with R-parity violation.
 >
-> Neither option is derived. The simpler reading is (i).
+> Neither option is derived. Adopt (i).
 
 ## 2. Section 2.2 (coupling): result of the alternative reading
 

@@ -2418,3 +2418,21 @@ GeV (radiation value; kination raises it). Gravitino decay then (thermal Y ≈ 1
 energy (dilution ≈ 1.15); 10⁹ → 4.4 TeV, 4.6%; 10⁷ → 4 GeV, 46% (too much). Verdict: option (ii) is viable only in a narrow window
 m_3/2 ≈ 10⁸–10⁹ GeV, with two added ingredients (a tuned uplift and the quartic stabiliser) and R-parity violation — an estimate, not a
 derivation. Option (i), a near-massless gravitino, stays the simpler reading. Both go into the next version's §5.2.
+
+**D270 (pp sweep, gap 3) — Kähler-only stabilisers do NOT cure the D269 angle tachyon (stabiliser_d270.py, stabiliser2_d270.py; sympy, exact).**
+For W = w T^{3/2} + uplift 3m_3/2²: with K = −3 ln(T + T̄ + b(T − T̄)⁴), m_θ²/m_3/2² = −2 for every b (the quartic is O(y⁴), no mass at y = 0);
+with K = −3 ln(T + T̄ + b(T − T̄)²), still −2 for every b, and the angle's metric changes to 3(1 + 4bx)/(2x²), altering the α = 1 geometry.
+(Ellis et al.'s quartic stabilises their de Sitter/Minkowski solutions, not this AdS-plus-uplift case.) A cure needs the uplift sector to
+couple to the angle (e.g. K ⊃ c|Z|²(T − T̄)² for the uplifting field Z, giving m_θ² ~ c·3m_3/2² − 2m_3/2²) — which makes the angle heavy
+(~m_3/2) at all times; the matter mechanism then needs m_3/2 ≲ H at matter formation (~6×10⁸ GeV), the same narrow window as D269. Verdict:
+option (ii) is weaker than D269 said; option (i), a near-massless gravitino, is the reading the next version should adopt. v6 corrections
+file updated.
+
+**D271 (pp sweep, 13 Nov 20:50) — literature check of the other gaps; no status changes.**
+Gap 1 (n_s): arXiv:2510.18656 (α-attractors vs Planck + BK + ACT DR6 + SPT-3G): α = 1 with standard reheating gives n_s 0.958–0.963;
+P-ACT-LB 95% range at r ≈ 0.004 is 0.967–0.982, "∼2σ tension"; a stiffer post-inflation era (w > 1/3) lifts n_s to 0.965–0.968, still slightly
+below P-ACT-LB — consistent with the Twist's kination value 0.9654 and our verdict. Gap 4 (birefringence): no calibrated measurement since
+2609.09149; 2607.17500 is a methods paper. Gap 2 (shield): thorium proposals (2608.08133) but no new bound. Gap 5 (DE evidence):
+arXiv:2609.03062 finds plain thawing at Δχ² −3.93 (ΔAIC −1.93, "insufficient"), close to PURE-TWIST's −3.37; an interacting thawing model
+(Q = βHρ_de) improves to −10 — the same pattern as our fitted-β versions, which fit better but did not predict. Gaps 8–15: no new
+information expected from literature; unchanged. Gap 6 waits on D268; gap 7 on the 21:01 PC check.
