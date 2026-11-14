@@ -3345,3 +3345,11 @@ mutually consistent once systematics are included. Combined evidence: Planck MK 
 absolutely calibrated.
 Twist (BIREF-NULL, β = 0): ~3σ against it on each experiment taken at face value, unscored (the locked rule needs an absolutely calibrated
 measurement). Gap 4: HIGH, not rising. D301's favourable reading is withdrawn. The decider is still SO with drone calibration (D303).
+
+**D354 (pp, 07:45 CT, gap 4: when does an absolutely calibrated β arrive?) — the calibrator goal is 0.01°, with no date (literature).**
+POLOCALC overview (arXiv:2606.20171, Jun 2026): drone-borne calibrators aim at an absolute polarisation-angle accuracy of 0.01° for small-aperture
+CMB telescopes. No achieved accuracy, no named experiments and no date for a calibrated birefringence measurement are given. PROTOCALC
+(arXiv:2502.14473) is a W-band calibrator applied to SO and CLASS (D303 context: 0.045° statistical). SO's wire-grid system (2309.02035) is
+relative calibration.
+Reading: 0.01° would test β = 0.2–0.37° at ≫10σ, so the BIREF-NULL rule becomes decisive once a drone-calibrated SO/CLASS β is published.
+The date is open; likely late 2020s. Gap 4: HIGH, not rising, unchanged.
