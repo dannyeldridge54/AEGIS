@@ -2895,3 +2895,18 @@ plateau (small x), so the cliff formula is used outside control there; the TWIST
 for the e^{−πu/8} metric factor (membrane instanton corrections to K are the natural candidate, not computed). (3) The SM 3-cycle must have
 N₂^SM = 0 (D312) while the hidden cliff cycle has N₂ = 1 — compatible (different cycles). Verdict: the G₂ lead survives this check: SUSY breaking
 transplants exactly; the cliff has the same control problem it always had. Gap 9 MEDIUM, lead intact.
+
+**D315 (deep loop 14, gap 9: can one G₂ block be fixed while the other rolls?)** Read: Acharya, Bobkov, Kane, Kumar & Vaman, "An M theory
+solution to the hierarchy problem" (hep-th/0606262). Two hidden condensates W = A₁e^{ib₁f₁} + A₂e^{ib₂f₂}, f_k = Σ N^k_i z_i; with N¹ = N² the
+SUSY extremum has N_i s_i/a_i = ν for every i, ν = −3(α − 1)/(2(αb₁ − b₂)) — "fixes all moduli for a manifold with any number of moduli" (a
+saddle; the SUSY-breaking minima are in the companion paper). Moduli with N^k_i = 0 in every condensate are not discussed; from their equations
+such a modulus does not enter W and is not fixed by this mechanism. Reading for the Twist (analysis): this is the structure the G₂ lead needs —
+(a) stabilise the fixed block T₁ with two condensates on cycles built from T₁ only (N^k_2 = 0), via the ABKKV mechanism; (b) leave the
+rolling block T₂ out of those condensates, so it is flat at that level and gets its potential only from the Twist sector (stabiliser S,
+cliff condensate on an N₂ = 1 cycle, D314); (c) the SM on a T₁-only cycle (D312). Each of (a)–(c) uses only ingredients of the published
+G₂-MSSM framework; the novelty is the block split. Caveat: K mixes the blocks through V_X (K = −3 ln V_X), so the T₁ minimum's location and
+depth depend on T₂ through e^K — V_T₁-sector ∝ e^{K} ∝ (2x)^{−3}: the T₁-stabilising potential scales with x like the gravitino mass, so its
+minimum is x-independent in position (the e^K prefactor factors out of the T₁ F-terms) but its energy slides — it must be a SUSY (F = 0,
+W = 0) minimum or cancelled like D292, otherwise it adds an x^{−3} term to the tail. Verdict: the G₂ lead survives a third check, with one new
+condition: the fixed-block stabilisation must be supersymmetric with W = 0 there (or tuned as in D292). Gap 9 MEDIUM, lead intact; the
+open-problem list for an M-theory expert now has a concrete construction to check (D311–D315).
