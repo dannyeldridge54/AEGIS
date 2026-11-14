@@ -2996,3 +2996,12 @@ coupling through thresholds at this order. That supports D313's "SM coupling x-i
 (Caveat: the Friedmann–Witten setting expresses the threshold together with the volume V_Q, whose tree-level part is the N₂ = 0 statement.)
 Verdict: positive for the G₂ lead. Question 12 gains a computable sub-task: scan lens-space hidden cycles for n. Gap 8 remains "chosen" until
 that scan is done. Not a prediction.
+
+**D323 (referee review, 06:10 CT) — CORRECTION to D312/D322 and the G₂ proposal: the shield fails at one loop (estimate).** Details in
+papers/REFEREE_REPORT_2026-11-14_overnight.md (M1). M₁₁/M_P ∝ V_X^{−1/2} slides with x (exponent −1/2), while the soft scale is x-independent
+in Planck units (D292). Running from the matching scale gives d ln α_em/d ln x ≈ (12/2π)(1/2)/137 ≈ 7×10⁻³, the D289 order (~10⁵–10⁶ over the
+clock bound). Kaplunovsky–Louis: with Z = κ/V_X the volume terms leave (ΣT_r/3 − 3T_G)K = −7K for SU(3). D322's "no x-dependence from
+thresholds at one loop" is withdrawn (Ray–Singer is the local part only). The proposal's "M₁₁/M_P affects only heavy states" is withdrawn.
+Also: the non-diagonal rolling-block moduli are unstabilised (M2), and W = 0 for the fixed block is a racetrack tuning (M3).
+Status: gap 2 back to HIGH with no candidate mechanism; gap 9 stays "proposal". The tree-level parts (N₂ = 0 coupling, Yukawa volume
+cancellation) stand.

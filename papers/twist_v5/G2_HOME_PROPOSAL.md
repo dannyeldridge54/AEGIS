@@ -30,7 +30,7 @@ M-theory on a G₂ manifold. Gauge groups and chiral matter sit at singularities
 - The singularity structure that gives chiral matter and the required metrics (X at weight 3, χ at weight 3/2).
 - That κ depends only on local moduli.
 - Control of the cliff condensate on the plateau.
-- Varying M₁₁/M_P. This affects only heavy states.
+- ~~Varying M₁₁/M_P. This affects only heavy states.~~ Withdrawn (D323): M₁₁/M_P ∝ V_X^{−1/2} slides with x and feeds into the SM couplings logarithmically, giving d ln α_em/d ln x ≈ 7×10⁻³ (estimate), far beyond the clock bound.
 
 ## Question 12 for M-theory experts
 
@@ -44,4 +44,6 @@ M-theory on a G₂ manifold. Gauge groups and chiral matter sit at singularities
 
 **Addendum (D321, 14 Nov 06:00 CT).** Smooth twisted-connected-sum G₂ manifolds contain rigid associatives S¹×S² localised in one building block (Corti–Haskins–Nordström–Pacini, arXiv:1207.4470), and others glued across the neck (arXiv:2209.00156). These could give an M2-instanton cliff term in place of the condensate, with the same small-volume control caveat. The SM cycle (N₂ = 0) needs ADE singularities, which smooth TCS manifolds lack, so it requires a singular G₂. Sub-question for question 12: does a singular TCS-type G₂ realise the (4,3) Kähler split with the SM cycle in the fixed block?
 
-**Addendum (D322).** One-loop thresholds on a 3-cycle Q of ADE singularities are the Ray–Singer torsion of Q (Friedmann–Witten, hep-th/0211269), explicit for lens spaces S³/Z_q. So (a) the SM coupling gets no x-dependence from thresholds at one loop, and (b) n becomes a finite, computable set of values from discrete data, and a lens-space scan could test whether α_h⁻¹ ≈ 39.8 is reachable.
+**Addendum (D322).** One-loop thresholds on a 3-cycle Q of ADE singularities are the Ray–Singer torsion of Q (Friedmann–Witten, hep-th/0211269), explicit for lens spaces S³/Z_q. So (a) [withdrawn, D323: only the local part; the volume-dependent part remains] and (b) n becomes a finite, computable set of values from discrete data, and a lens-space scan could test whether α_h⁻¹ ≈ 39.8 is reachable.
+
+**Referee caveats (D323, 14 Nov 06:10 CT).** (1) The block split fixes the shield at tree level only. At one loop the sliding M₁₁/M_P gives the D289-sized α drift. Question 12 must ask how that is removed. (2) The two non-diagonal directions of the rolling block are unstabilised. (3) W = 0 for the fixed block is a racetrack tuning.
