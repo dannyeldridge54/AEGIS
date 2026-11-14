@@ -1,0 +1,23 @@
+N-Ne  0.50 T 2.660e+14 Omega_kin_x 7.453e-01 Omega_V 2.530e-01 Omega_sigma 1.341e-05 x 0.025 dp 2.115e+00 nBs 6.2681e-13
+N-Ne  1.00 T 1.613e+14 Omega_kin_x 9.945e-01 Omega_V 1.899e-03 Omega_sigma 2.049e-04 x 0.066 dp 2.443e+00 nBs 6.1760e-12
+N-Ne  1.50 T 9.786e+13 Omega_kin_x 9.867e-01 Omega_V 3.325e-03 Omega_sigma 3.542e-03 x 0.179 dp 2.433e+00 nBs 1.0417e-10
+N-Ne  2.00 T 5.936e+13 Omega_kin_x 9.537e-01 Omega_V 8.430e-04 Omega_sigma 2.062e-02 x 0.480 dp 2.392e+00 nBs 1.3613e-09
+N-Ne  2.50 T 3.601e+13 Omega_kin_x 8.765e-01 Omega_V 5.630e-03 Omega_sigma 6.006e-02 x 1.255 dp 2.293e+00 nBs 1.1322e-09
+N-Ne  3.00 T 2.186e+13 Omega_kin_x 7.409e-01 Omega_V 6.564e-02 Omega_sigma 1.211e-01 x 3.091 dp 2.107e+00 nBs 8.0695e-10
+N-Ne  3.50 T 1.330e+13 Omega_kin_x 5.219e-01 Omega_V 2.224e-01 Omega_sigma 2.353e-01 x 6.873 dp 1.770e+00 nBs 7.8141e-10
+N-Ne  4.00 T 8.170e+12 Omega_kin_x 2.409e-01 Omega_V 4.310e-01 Omega_sigma 4.452e-01 x 12.653 dp 1.202e+00 nBs 6.6684e-10
+N-Ne  4.50 T 5.195e+12 Omega_kin_x 7.925e-02 Omega_V 8.753e-02 Omega_sigma 5.821e-01 x 18.507 dp 6.896e-01 nBs 5.2873e-10
+N-Ne  5.00 T 3.524e+12 Omega_kin_x 2.273e-02 Omega_V 4.246e-02 Omega_sigma 5.640e-01 x 22.826 dp 3.693e-01 nBs 3.4229e-10
+N-Ne  5.50 T 2.504e+12 Omega_kin_x 6.654e-03 Omega_V 2.220e-01 Omega_sigma 3.743e-01 x 25.539 dp 1.998e-01 nBs 2.0460e-10
+N-Ne  6.00 T 1.714e+12 Omega_kin_x 2.186e-03 Omega_V 9.001e-03 Omega_sigma 1.002e-01 x 27.178 dp 1.145e-01 nBs 1.3009e-10
+N-Ne  6.50 T 1.071e+12 Omega_kin_x 7.925e-04 Omega_V 1.222e-03 Omega_sigma 1.743e-03 x 28.191 dp 6.895e-02 nBs 1.1502e-10
+N-Ne  7.00 T 6.501e+11 Omega_kin_x 2.916e-04 Omega_V 3.529e-09 Omega_sigma 1.414e-08 x 28.823 dp 4.183e-02 nBs 1.1261e-10
+N-Ne  7.50 T 3.943e+11 Omega_kin_x 1.073e-04 Omega_V 3.647e-10 Omega_sigma 3.647e-10 x 29.213 dp 2.537e-02 nBs 1.1123e-10
+N-Ne  8.00 T 2.391e+11 Omega_kin_x 3.949e-05 Omega_V 9.097e-10 Omega_sigma 9.097e-10 x 29.452 dp 1.539e-02 nBs 1.1040e-10
+N-Ne  8.50 T 1.451e+11 Omega_kin_x 1.453e-05 Omega_V 9.439e-09 Omega_sigma 9.439e-09 x 29.598 dp 9.335e-03 nBs 1.0990e-10
+N-Ne  9.00 T 8.798e+10 Omega_kin_x 5.361e-06 Omega_V 2.782e-11 Omega_sigma 2.782e-11 x 29.687 dp 5.662e-03 nBs 1.0960e-10
+N-Ne  9.50 T 5.336e+10 Omega_kin_x 1.993e-06 Omega_V 1.866e-09 Omega_sigma 1.866e-09 x 29.741 dp 3.435e-03 nBs 1.0942e-10
+# Source: PC VM segments seg1–seg28 ($HOME/d367), locked script omegakin_d367_ckpt.py (DEVIATIONS D1–D4).
+# Checkpoints after 9.5: 10.04 ... 10.36 (no half-e-fold line printed past 9.5; the 10.00 line was skipped by float drift in the print test).
+# The integration stalls at N − N_e = 10.36: VM segments 25–28 (4 × 175 s) and the cloud run (D5, ~116 min, killed rc 137) made no progress.
+# The validation point N − N_e = 11 was not reached (DEVIATIONS D6).
