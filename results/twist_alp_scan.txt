@@ -1,0 +1,8 @@
+m 1e-33 eV: a(0)/a_ini +0.936, R = beta_reion/beta_rec = +0.997, theta_ini (c=1) = 70.00 rad, energy fraction (f=1e16 GeV) = 8.8e-03
+m 1e-32 eV: a(0)/a_ini +0.022, R = beta_reion/beta_rec = +0.982, theta_ini (c=1) = 4.61 rad, energy fraction (f=1e16 GeV) = 5.6e-05
+m 3e-32 eV: a(0)/a_ini +0.030, R = beta_reion/beta_rec = +0.846, theta_ini (c=1) = 4.65 rad, energy fraction (f=1e16 GeV) = 5.7e-05
+m 1e-31 eV: a(0)/a_ini +0.003, R = beta_reion/beta_rec = -0.032, theta_ini (c=1) = 4.52 rad, energy fraction (f=1e16 GeV) = 5.9e-05
+m 3e-31 eV: a(0)/a_ini +0.003, R = beta_reion/beta_rec = -0.031, theta_ini (c=1) = 4.52 rad, energy fraction (f=1e16 GeV) = 5.9e-05
+m 1e-30 eV: a(0)/a_ini -0.001, R = beta_reion/beta_rec = +0.026, theta_ini (c=1) = 4.51 rad, energy fraction (f=1e16 GeV) = 5.9e-05
+m 1e-29 eV: a(0)/a_ini +0.000, R = beta_reion/beta_rec = +0.001, theta_ini (c=1) = 4.54 rad, energy fraction (f=1e16 GeV) = 6.7e-05
+m 1e-28 eV: a(0)/a_ini +0.000, R = beta_reion/beta_rec = +0.001, theta_ini (c=1) = 8.94 rad, energy fraction (f=1e16 GeV) = 3.6e-04

@@ -2255,3 +2255,18 @@ band), and a mass in 10⁻³²–10⁻³¹ eV gives the cleanest test (LiteBIRD 
 force, no α drift — so the Twist's other predictions are untouched. Status: a ready, literature-backed extension; not built or locked (Danny's
 call: it makes the Twist a two-field model). If built, its distinctive prediction would be an ℓ-dependent EB at ℓ ≤ 10 for the 10⁻³²–10⁻³¹ eV
 choice, or a pure constant angle for lighter masses.
+
+**D251 — TWIST+ALP computed (locked PREREG_TWIST_ALP 5cfafeb; theory/alp/twist_alp_scan.py; results/twist_alp_scan.txt).** Spectator axion in the
+Twist background, amplitude set to β_rec = 0.30°:
+| m (eV) | field left today | R = β_reion/β_rec | c·θ_ini needed | energy fraction (f = 10¹⁶ GeV) |
+| 10⁻³³ | 94% (barely moved) | 0.997 | ~70 (c ≳ 22 for θ ≤ π) | 0.9% |
+| 10⁻³² | 2% | 0.982 | 4.6 | 6×10⁻⁵ |
+| 3×10⁻³² | 3% | 0.846 | 4.7 | 6×10⁻⁵ |
+| 10⁻³¹ | 0.3% | −0.03 | 4.5 | 6×10⁻⁵ |
+| 3×10⁻³¹ – 10⁻²⁹ | ~0 | −0.03 … 0.00 | 4.5 | 6–7×10⁻⁵ |
+Reading: below ~2×10⁻³² eV the field starts rolling after reionisation, so both eras are rotated alike (R ≈ 1) — indistinguishable from a
+miscalibrated angle; from ~3×10⁻³² eV the reionisation-era rotation is reduced (R 0.85) and above ~10⁻³¹ eV it is essentially zero (the field
+has already decayed by z ≈ 8) — a sharp tomography signature: the low-ℓ reionisation bump in EB disappears while high-ℓ EB stays. The needed
+coupling × initial angle is c·θ ≈ 4.5 (e.g. anomaly coefficient c ≈ 2–5 with θ ≈ 1–2 rad) — natural; the energy is 6×10⁻⁵ of the dark energy, so
+the Twist's dark energy, growth and inflation are untouched. Status: the extension works cleanly for 10⁻³² ≲ m ≲ 10⁻²⁸ eV; it is a post-data
+two-field option, locked, scored only if a calibrated β is confirmed; its distinctive test is LiteBIRD's low-ℓ EB (R ≈ 0 vs R ≈ 1).
