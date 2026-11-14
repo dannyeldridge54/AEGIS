@@ -3808,3 +3808,19 @@ the press summary gives ≳ 10²¹ yr = 3.2×10²⁸ s at PeV. Curves at 100–2
 2025–26 update with numbers. Twist (D317 scaling τ ≈ 10²⁴ s (10⁶ GeV/m)⁵ ξ⁻², ξ = 1): 1.0×10²⁹ s at 100 TeV, 1.3×10²⁸ at 150, 3.1×10²⁷ at 200,
 1×10²⁴ at 1 PeV. Against ~10²⁷–10²⁸ s hadronic limits at a few hundred TeV (D341), 100–150 TeV is safe, 200 TeV marginal, PeV excluded
 for ξ ~ 1. Status: DM window ~100–200 TeV unchanged; a numerical read of LHAASO Fig. S6 / IceCube Fig. 5 at 100–200 TeV would sharpen it.
+
+**D390 (pp, 12:20 CT, D388's narrowed problem: can the χ sector itself give a LOCAL stabiliser?) — the one-loop route fails; a
+Higgs-branch route is a candidate but trades localisation for a timing/tuning condition (estimates; idea not computed or locked).**
+(1) One-loop (Coleman–Weinberg) pinning from χ: χ's boson–fermion splitting is set by m_3/2 ~ eV (D374), so m_x ~ λ m_3/2/4π ~ 10⁻³ eV.
+Fails m_x ≳ 10⁵ GeV by ~17 orders.
+(2) Higgs branch: if χ and χ̄ get equal vevs v (D-flat), F_χ = λ(T − T_E)χ̄ = 0 forces T = T_E and gives (T − T_E) a supersymmetric mass
+~ λv times O(1) Kähler factors, so m_x ≳ 10⁵ GeV needs v ≳ 10⁷ GeV for λ ~ 0.01. The potential λ²v²|T − T_E|² is still quadratic and global,
+but it exists only once χ condenses (below T_c ~ v, if thermal masses keep ⟨χ⟩ = 0 above). By then x has stopped by Hubble friction:
+from D367's line at N − N_e = 9.5 (x 29.741, dp 3.4×10⁻³) the free roll adds Δx ≈ 0.08 (radiation era, dp ∝ e^{−N}), so x_∞ ≈ 29.83
+(arithmetic in code). So D373's "global potential acting along the whole roll" problem is avoided.
+New condition: when the potential switches on, x sits at x_∞ while the minimum is at x_E. The oscillation energy is set by |x_∞ − x_E|,
+and D359/D360a require a residual ≲ 10⁻⁷–10⁻⁵ M_P. So either x_E = x_∞ to that precision (a tuning of ~10⁻⁷ relative), or the Kofman
+trapping (D363) holds x at x_E from crossing until T_c, which needs the trapped χ density (∝ a⁻³) to keep winning from T ~ 10¹¹ down to
+~10⁷ GeV. Neither is checked.
+Status: UV/IR origin of the stabiliser OPEN; best candidate now "Higgs-branch pinning switched on at T_c ~ v". Next step (needs a lock):
+compute whether trapping holds x at x_E down to T_c, using D367's trajectory and D377's λ window.
