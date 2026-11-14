@@ -3364,3 +3364,12 @@ the stabilisation must come later); and what stabilises x without reintroducing 
 cmb-fit/axiclass/run_mnufree_d355.sh (two fits in parallel, OMP 4 each, then score to field_tests/results/d355_mnufree.json); launcher
 Desktop\RUN_D355_MNUFREE.bat. These are new files only, with no git operation on the PC repo. The fits run in WSL, which this session cannot
 start, so Danny double-clicks the .bat (~1.5 h, by the NS-SPA timings of 5100 s/fit).
+
+**D356 (review of D355/TWIST-I, 07:30 CT) — two issues found and fixed in the record.** (1) The TWIST-I lock said x is stabilised "after
+reheating", but the v5 matter yield needs x to keep rolling until freeze-out (x_end ≈ 29.8, T ~ 2×10¹³ GeV). Fixed by deviation D1: x rolls as
+in v5 through matter genesis, then settles at x_min ≥ 30 before BBN. (2) The angle relic of D299–D300 scales as (73/x_min)². At x_min ≈ 30 the
+12–28% becomes ~70–170% of DM, a possible overclosure (estimate). TWIST-I needs x_min ≳ 50 in the eV-gravitino branch, or a stabilising sector
+that also fixes the angle. Recorded as deviation D2 (a consequence, not a rule change).
+Other checks in this review: the D355 wrapper reuses ns_spa_fit.setup() unchanged (the same likelihoods, including S8, the same builds and
+best_of 4); the hashes match on cloud and PC; the launcher path matches the connected repo; E.save's derived Ω_m keeps 0.06 hard-coded (a
+derived quantity only, it does not affect χ²; noted). D320 is still running (started 05:50).

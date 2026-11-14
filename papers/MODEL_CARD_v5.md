@@ -96,3 +96,10 @@ TWIST-K plus a logarithmic factor in S's metric (an IR-free running coupling at 
 | TWIST+ALP (PREREG_TWIST_ALP) | + spectator axion −(g/4)aFF̃, m 10⁻³²–10⁻²⁸ eV | (n_s unchanged) | (unchanged) | only if a calibrated β ≈ 0.3° is confirmed; R = β_reion/β_rec ≈ 1 (m < 2×10⁻³² eV) → ≈ 0 (m > 10⁻³¹ eV); c·θ ≈ 4.5; swampland-tense (D251–D252) |
 Context (D223): the high n_s is driven by combining CMB with DESI BAO (CMB-SPA alone 0.9693 ± 0.0029, the Twist −1.7σ; with DESI 0.9737 ± 0.0025,
 −3.7σ). How the BAO–CMB tension resolves (and the optical depth, D226) decides between the plain Twist and these variants as much as n_s does.
+
+
+## Update 14 Nov 2026, 07:30: adopted reading TWIST-I (PREREG_TWISTI + D1–D2)
+- The Twist is the inflaton; x rolls through matter genesis (to x ≈ 30) and then settles at x_min ≥ 30 (≳ 50 in the eV-gravitino branch) before BBN; dark energy is Λ.
+- Reason: the one-loop shield no-go (D323–D345): a rolling −3 ln field moves the SM couplings by d(1/α_a)/d ln x = −b_a/4π.
+- Future-data rules: r in [0.002, 0.008]; n_s 0.9642–0.9654 within 3σ of SO/SPT-3G; w = −1 (fails if excluded at > 5σ); β = 0.
+- Open: the stabilising sector (m_x ≥ 5 meV, no drift); the angle relic bound on x_min.

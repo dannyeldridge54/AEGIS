@@ -118,3 +118,7 @@ Replace the shield paragraph's "assumption" wording with a precise statement:
 ## 17. CMB-S4 cancelled (D346)
 
 DOE and NSF ended support for CMB-S4 in July 2025. In the paper's tests table, replace "Simons Observatory, LiteBIRD, CMB-S4 class" with "Simons Observatory (and upgrades), BICEP Array, LiteBIRD". In the exploratory note §5, replace "LiteBIRD and CMB-S4" with "LiteBIRD and Simons Observatory". Add: with r ≈ 0.0036, the expanded Simons Observatory (six SATs to 2035, σ_r ≈ 1.2×10⁻³ baseline, arXiv:2512.15833) reaches ~3σ, and LiteBIRD (δr = 0.001, launch JFY 2032, arXiv:2406.02724) is comparable; an r decision is expected ~2032–35.
+
+## 18. The split model TWIST-I (Danny's choice, 14 Nov 07:08; PREREG_TWISTI + D1–D2)
+
+Present v6 with two readings. (a) **TWIST-I (adopted):** the Twist is the inflaton; its field rolls through matter genesis as in v5 and then settles at x_min ≥ 30 (≳ 50 in the eV-gravitino branch, to keep the angle relic below the DM density) before BBN; dark energy is Λ. This removes the shield problem (item 16) and the H₀ cost, and gives up the tail predictions and "Λ from the cliff". (b) **The original tail** is kept as a conditional variant, valid only if the shield no-go (item 16) is evaded. The tests table splits accordingly: r, n_s and β apply to both; w = −1 applies to TWIST-I; the tail tests (WATCH-PURE-DR3, WA-CEILING, GROWTH, E_G) apply only to (b).

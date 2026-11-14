@@ -1,0 +1,10 @@
+# Deviations for PREREG_TWISTI
+
+D1 (07:30 CT, 14 Nov, review; before any scoring): "stabilised after reheating" is too early. The v5 matter yield is computed while x rolls
+from the end of inflation to x_end ≈ 29.8 (hidden_kick_decay_v2.py; D298), with the angle dynamics and the ×4.6 entropy dilution inside
+that window. TWIST-I therefore means: x rolls exactly as in v5 until matter freeze-out (T ~ 2×10¹³ GeV, x ≈ 30), then settles at a minimum
+x_min ≥ x_end, frozen before BBN. The scored rules (r, n_s, w = −1, β = 0) are unchanged.
+D2 (same review, consequence, not a rule change): the eV-branch angle relic (D299–D300: 12–28% of DM, computed with x ≈ 73) scales as
+φ_i² ∝ (y/x)², so it is ×(73/x_min)². At x_min ≈ 30 it would be ~0.7–1.7 of the observed DM, i.e. possible overclosure. TWIST-I therefore
+needs x_min ≳ 50 in the eV-gravitino branch, or an angle stabilised together with x (the stabilising sector then also fixes Im T). Order-of-
+magnitude estimate; to be checked.
