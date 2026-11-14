@@ -3305,3 +3305,13 @@ Test calendar for the Twist (D290, D307, D346–D348):
 - Late 2020s: SO r hint (~1–2σ), SO absolute birefringence calibration, ALPHA axion (2027–28), SPT-3G Ext-10k n_s.
 - 2030s: LiteBIRD r (decisive).
 So the dark-energy-side tests come first, in 2027.
+
+**D350 (pp, 07:33 CT, CORRECTION to D346–D348: SO's expanded array) — SO can nearly decide r before LiteBIRD (literature).** "The Simons
+Observatory: forecasted constraints on primordial gravitational waves with the expanded array of Small Aperture Telescopes"
+(arXiv:2512.15833, Dec 2025): the SAT array doubles from three to six telescopes by 2027, and the survey is extended to 2035. Forecasts at
+r = 0: σ_r = 1.2×10⁻³ baseline (moderate foregrounds, ℓ_knee 50, 70% delensing) and 7×10⁻⁴ optimistic, ~2.5× better than the original plan.
+D347's σ(r) ≈ 0.002–0.003 was the original nominal design and is superseded.
+For TWIST-INFLATION (r = 0.0035–0.0038): ~3σ baseline (r/σ ≈ 2.9–3.2) and ~5σ optimistic by ~2035, comparable to LiteBIRD (δr = 0.001,
+launch JFY 2032). The locked failure conditions (r < 0.002 or > 0.008 at 95%) become decisive with SO alone on the baseline forecast. The test
+calendar (D349) is revised: an r decision is likely ~2032–35 from SO and/or LiteBIRD, with SO hints growing through the late 2020s.
+The isocurvature question that started this search (an SO forecast for D278's margin) was not answered; the gap 7 status stands.

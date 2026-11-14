@@ -117,4 +117,4 @@ Replace the shield paragraph's "assumption" wording with a precise statement:
 
 ## 17. CMB-S4 cancelled (D346)
 
-DOE and NSF ended support for CMB-S4 in July 2025. In the paper's tests table, replace "Simons Observatory, LiteBIRD, CMB-S4 class" with "Simons Observatory (and upgrades), BICEP Array, LiteBIRD". In the exploratory note §5, replace "LiteBIRD and CMB-S4" with "LiteBIRD and Simons Observatory". Add: with r ≈ 0.0036, Simons Observatory (σ(r) ≈ 0.002–0.003, arXiv:2405.13201) gives a ~1–2σ hint; the decisive test is LiteBIRD (δr = 0.001, launch JFY 2032, arXiv:2406.02724).
+DOE and NSF ended support for CMB-S4 in July 2025. In the paper's tests table, replace "Simons Observatory, LiteBIRD, CMB-S4 class" with "Simons Observatory (and upgrades), BICEP Array, LiteBIRD". In the exploratory note §5, replace "LiteBIRD and CMB-S4" with "LiteBIRD and Simons Observatory". Add: with r ≈ 0.0036, the expanded Simons Observatory (six SATs to 2035, σ_r ≈ 1.2×10⁻³ baseline, arXiv:2512.15833) reaches ~3σ, and LiteBIRD (δr = 0.001, launch JFY 2032, arXiv:2406.02724) is comparable; an r decision is expected ~2032–35.
