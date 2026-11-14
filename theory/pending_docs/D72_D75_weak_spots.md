@@ -3834,3 +3834,15 @@ radiation-dominated (Ω_rad > 0.99) from 6.5 on (D387). x: 3.09 at 3.0 (freeze-o
 Consequences: D362's numbers are replaced by these. TWIST-I capture (D375/D376/D384) used D367a's trajectory, which these lines confirm,
 so its conclusions stand (crossing of x_E ≈ 27–29.5 at T ≈ 1.7×10¹²–1.5×10¹¹ GeV, per the 6.0–8.5 lines). The verdict is provisional until a
 stiff-integrator run (Radau/BDF; deviation first) reaches 11.
+
+**D391 (scored, locked PREREG_D391_NSTAR_NOSIGMA; results/nstar_nosigma_d391.txt) — without the hidden σ sector the kination shift is
++1.53 / +1.48 at heat share 0.65% / 0.8% (converged), so N* = 57.24 / 57.19, n_s 0.9651, r 0.0036.** vs D387 (with σ) N* 56.7: σ costs
+0.5 e-fold. Below 58 (ACT-2σ refined Starobinsky). Distances (code): ACT alone 0.2σ, CMB-SPA 1.1σ, CMB-SPA+DESI 2.85σ, P-ACT-LB 2.7σ.
+
+**D392 (13:20 CT, Danny: "research and create one that can modulate itself … keeping our end view same") — Twist-2 design note
+written (papers/twist_v6/TWIST2_DESIGN.md; design only, nothing scored).** Literature (2025–26): n_s with DESI in ΛCDM 0.973–0.977, CMB
+alone 0.967–0.968, T-model ceiling 0.9682 (2511.14673); dynamical DE 2.3–4.2σ depending on SNe (2511.22512); axion quintessence fits
+DESI+CMB+SNe and, with c_γ ~ 1–20, the birefringence angle (2504.17638). Design: every sector an attractor or symmetry-protected, one
+dial each, nested fallbacks. Key new finding (estimate, code): the Twist angle y cannot be quintessence: f = √(3/2)/(a x₀) ≈ 0.004 M_P
+for a potential of size ρ_Λ (a x₀ ≈ 277), so m/H₀ ~ 250 and a hilltop tuning ~10⁻¹¹⁶ would be needed; an aligned second axion
+(f_eff 0.1–1 M_P) is the candidate fix. Next computations listed in §5 of the note; each to be locked first.
