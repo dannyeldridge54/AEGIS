@@ -1,0 +1,6 @@
+x_E  27.00:  d ln V / d ln x = -0.9643   ln V = -254.718
+x_E  28.00:  d ln V / d ln x = -0.9655   ln V = -254.754
+x_E  29.00:  d ln V / d ln x = -0.9667   ln V = -254.787
+x_E  29.60:  d ln V / d ln x = -0.9673   ln V = -254.807
+x_E  29.83:  d ln V / d ln x = -0.9676   ln V = -254.815
+Λ change for x_E 29.6 → 29.83: -0.7460%

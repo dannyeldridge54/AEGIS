@@ -4060,3 +4060,12 @@ label: the "3 Weyl" row is illustrative; the minimal anomaly-free choice is the 
 D-term/anomaly structure remain. (b) CONNECTIONS: part 1/8 — decay products hidden, so DM and SM bath unaffected; part 6 — the capture point
 x_E ≈ 29.6 fixes Λ (unchanged). (c) CENTRE: F7 passes; NEW PREDICTION: ΔN_eff ≈ 0.03–0.09 if the decay is hidden (CMB-S4/SO σ ≈ 0.03–0.05 can
 test it); if instead U(1)_X mixes with hypercharge, ΔN_eff ≈ 0. Result → walls reset.
+
+**D413 (cycle 6; PART 6 Λ from the cliff, RIGHT; scored, locked PREREG_D413_PART6; results/part6_d413.txt) — ROBUST: Λ ∝ x_E^{−0.97}
+(d ln V/d ln x = −0.964 to −0.968 over x_E = 27–29.83), so moving the pin from 29.6 to the free-roll limit 29.83 changes Λ by only −0.75%.**
+(a) ALONE: past the cliff the potential is essentially the e^{−2n} plateau times a slowly falling prefactor (~1/x); Λ is set by n (one dial,
+n ≈ 124.1, D383) and is insensitive to exactly where x is pinned — no fine tuning of x_E is needed. String flag (F6): a pinned positive Λ is a
+de Sitter minimum, which the refined dS conjecture disfavours and which no controlled string construction yet provides (review
+arXiv:2603.25797). (b) CONNECTIONS: part 5 — the pin (D396, x_E ≈ 29.6) only needs ±1% accuracy for Λ at the ±1% level; part 7 — the
+birefringence axion is separate and does not shift Λ. (c) CENTRE: w = −1 exactly in the baseline; the crown fit (D410) tests the thawing
+variant. Result → walls 0. Crown status: THAW runs converging (runs 1–2 of 4 done at 16:52).
