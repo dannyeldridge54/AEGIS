@@ -2774,3 +2774,16 @@ is the published version of our D204/D209 dead end — the controlled heterotic 
 required, and it sits outside the controlled regime (g_s ≥ 3 today). (2) It reinforces gap 9: a controlled string home for any DESI-like thawing
 tail is an open problem in the field, not specific to the Twist. Gap 2/9 status unchanged; framing for v6 §7: "no controlled string regime is
 known for this tail (consistent with Cicoli et al. 2022)".
+
+**D305 (deep loop 4, gap 1/15: D285–D286 against the published supergravity one-loop treatment).** Read: Ellis, Gherghetta, Kaneta, Ke & Olive,
+"Radiative corrections in supergravity models of inflation" (arXiv:2603.02389, 2026). They use the Gaillard–Jain one-loop Kähler correction
+K⁽¹⁾ = −(1/32π²)Tr[M̄M(ln(M̄M/μ²) − 1)] (its ln μ² part in SUGRA), work in Minkowski space dropping curvature terms (suppressed by H²/M_P²), and
+note that mass-splitting terms are missed when SUSY breaking is large. Results: Cecotti / KYY Starobinsky — corrections negligible (n_s ≃ 0.965,
+r ≃ 0.0035 unchanged); no-scale Wess–Zumino — corrections large and coupling-dependent (n_s 0.934 or 0.964, r 0.004), viable only with tuned
+tree couplings; scheme: "an extra constant … due to the different regularization schemes"; SUGRA is non-renormalisable, so counterterms are
+needed; one loop is unreliable for φ ≳ 6. Comparison with D285–D286: (1) our dominant term, 4 m_F² δ with δ ≈ 2.4H², is an F-term (inflaton
+F_S-induced) mass splitting — the "mass-splitting terms" they flag as missed by the Kähler-only route; it is not a curvature term, so their
+H²/M_P² argument does not remove it. (2) Their finding that loop effects are negligible or large depending on which fields couple to the
+inflaton matches ours (χ at weight 3/2: negligible, D287; a field inside the log: ∝ 1/x, TWIST-C form, D285). (3) Scheme dependence of the
+constant confirms D286's statement that b is a renormalised, scheme-dependent parameter. Verdict: D285–D286 are consistent with the published
+treatment and go beyond it on the splitting term; still estimate-level (no gravitational loops). Gap 1/15 unchanged.
