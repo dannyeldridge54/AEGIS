@@ -3911,3 +3911,19 @@ thermally by χ and locked by a χ condensate (D396); the one-loop no-go for a r
 against literature before claiming novelty); the locked-test record. Observationally the inflation sector is Starobinsky-class (D368);
 distinctive handles are N* ≈ 57.2 from built-in kination, the kination blue GW tilt (D86), and the sector-split predictions.
 Added to v6: item 23 (prior-art citations).
+
+**D399 (14:00 CT, Danny: "continue search; if it's ours, write a Zenodo paper and post") — the two candidate novelties are NOT ours in
+substance; no paper posted (literature).**
+(1) The modulus-quintessence no-go (our D323) was argued by K. Choi, "String or M theory axion as a quintessence" (hep-ph/9902292, 1999):
+modulus components that set gauge couplings cannot be quintessence (δRe f_a/δQ ≲ 10⁻⁸¹ over a Planckian range; loop potentials too large),
+and an axion whose partner modulus sits at a large value (Re T ≈ 32) is proposed instead. Our D323 adds the specific route (rescaling
+anomalies, −b_a/4π, even when f_a is made T-independent by weights) and the number d ln α_em/d ln x ≈ 7×10⁻³; that is a refinement of a
+known result, not a new no-go. Related: Quintessence and varying α from shape moduli (hep-ph/0402075; KK-threshold route).
+(2) Trapping at enhanced symmetry points is established: particle-production trapping (Kofman et al., hep-th/0403001), thermal trapping
+of a modulus by light states with a second stabiliser acting together (Danos, Frey & Brandenberger, arXiv:0802.1557), and "trapped
+quintessential inflation" (Dimopoulos, hep-ph/0702018: ESP trapping + kination + frozen modulus as dark energy). Our D396 chain (late
+thermal trap, then a χ condensate lock, with Λ = the cliff value at the trap) is a new arrangement of known parts, at estimate grade only.
+(3) Choi's axion at Re T ≈ 32 is close to Twist-2's sector II idea and to our x_E ≈ 29.6; cite it.
+Verdict: no publishable novelty claim of a new mechanism. What is ours: the integrated, pre-registered model and its computed numbers
+(D367b, D387, D391, D393, D396). A Zenodo item could only honestly be a "model study with locked tests", not a discovery; per Danny's
+condition ("if it's ours") nothing was posted. Citations added to v6 item 23.

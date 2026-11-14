@@ -159,3 +159,5 @@ Replace D362's background estimate (Ω_kin,x ≈ 0.02–0.17 at T = 2×10¹³ Ge
 ## 23. Prior art must be cited (D398)
 
 Cite arXiv:2008.09099 (quintessential inflation in no-scale supergravity: kination, instant preheating, residual potential as dark energy), which is structurally close to v5 and was missing. Also cite Ellis–Nanopoulos–Olive no-scale Starobinsky (arXiv:1307.3537), Peebles–Vilenkin quintessential inflation, and Kofman et al. moduli trapping (hep-th/0403001). State plainly which parts are new (Λ fixed at a thermally trapped and condensate-locked point; the one-loop no-go, after a literature check) and which are standard.
+
+Also cite (D399): Choi, hep-ph/9902292 (modulus quintessence excluded via gauge couplings; axion quintessence with Re T ≈ 32) — our one-loop no-go (D323) is a refinement of it, not a new result; Dimopoulos, hep-ph/0702018 (trapped quintessential inflation); Danos, Frey & Brandenberger, arXiv:0802.1557 (thermal trapping at enhanced symmetry points); hep-ph/0402075 (moduli quintessence and varying α).
