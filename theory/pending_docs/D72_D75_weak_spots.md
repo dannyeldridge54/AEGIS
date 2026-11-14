@@ -3575,3 +3575,12 @@ has a stiff post-inflation phase of the kind that raises N*, but not enough of i
 D329 (the tension is background-conditional).
 Correction: v6 item 19's added clause is softened to "the Twist's built-in kination raises N* toward, but not into, the ACT-preferred range
 (N* ≳ 58)". The distinctive content is still N* through its reheating history; the direction of the n_s tension is unchanged.
+
+**D371 (pp, 08:45 CT, D366 follow-up: does finite temperature save the ESP?) — only until T ~ m̃_χ; a zero-temperature stabiliser is still
+needed (standard finite-T result; order-of-magnitude, aegis-checked in code).** In the thermal bath, χ gives x a positive thermal mass²
+~ λ²T²/6 around the ESP, so the ESP is a thermal minimum. That beats the negative radiative (CW) term ~ (λ²/8π²) m̃_χ² ln(Λ/m̃_χ) while
+T ≳ m̃_χ. For λ = 1 and m̃_χ = 10⁵ GeV: thermal wins at T = 10¹⁰ and 10⁶ GeV, and CW wins at T = 10⁴ GeV. So thermal effects hold x at the ESP
+from trapping down to T ~ m̃_χ (≈ 10⁴–10⁵ GeV), well before BBN. Below that, the ESP turns into a maximum unless the stabiliser of D366 is
+present. Consequence: the time the stabiliser has to act is late (T ≲ m̃_χ), so its mass only needs to exceed H at that time (trivially true
+for ≳ 100 TeV). The positional match still comes from the symmetry. No change to the TWIST-I open item; it is narrowed to "zero-temperature
+symmetric stabiliser at the ESP".
