@@ -28,8 +28,7 @@ W ⊃ (T − T_E) (λ M_P χχ̄ + k Y),  with χ, χ̄ at modular weight 3/2 an
 - m_x ≳ 10⁵ GeV; T_E inside x's remaining roll range (x_E ≳ 30).
 
 ## Consequences
-- Entropy release at capture: Δ ~ 1.5–3. This is absorbed by refitting m_σ (≈ 3.4×10¹⁰ GeV at Δ = 2), and it raises m_DM by Δ (200–400 TeV), which
-  favours a suppressed or zero gravity-portal coupling (D376).
+- Entropy release at capture: if x_E is crossed during the roll (x_E ≈ 27–29.5; x converges to ≈ 29.8, D367a), Δ ≈ 1 + O(10⁻³) and nothing needs refitting (D384). Only if x_E ≳ 29.8 does the well have to pull x in, giving Δ ~ 2 and the refits of D376.
 - The CMB predictions are Starobinsky-class at N* 55.7–57.6 (D368–D370). w = −1. β = 0.
 
 ## Open

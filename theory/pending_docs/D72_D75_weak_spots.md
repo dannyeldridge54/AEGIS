@@ -3713,3 +3713,16 @@ globals bug, fixed in deviation D1 before reading.)
 So TWIST-I explains Λ exactly as v5 does (cliff depth e^{−2n} at the captured value, with the same D292 constant tuned to ≪ Λ). What it gives
 up is the thawing tail (w = −1 exactly), not Λ itself. Statements in D355, D378, TWISTI_CAPTURE.md and v6 item 18 ("gives up Λ from the cliff",
 "Λ is a free tuning") are corrected.
+
+**D384 (pp, 09:45 CT, the capture energy budget using D367a's actual trajectory) — capture can be almost free (Δ ≈ 1 + O(10⁻³)) if x_E
+lies inside the range x actually crosses; this corrects D375/D376's Δ ~ 2 (estimate, aegis-checked in code).**
+With m_x = 10⁵ GeV and x_E = 30, k = 1.2×10⁻¹⁵, the global well's energy relative to radiation along the computed roll is:
+4×10⁻⁹ (T 2.2×10¹³, x 3.1), 1×10⁻⁶ (1.7×10¹², x 27.2), 5×10⁻⁴ (1.5×10¹¹, x 29.6), 1×10⁻² (5×10¹⁰, x 29.7).
+Key fact from D367a: x converges to x_∞ ≈ 29.8 (dp falls ~×0.6 per half e-fold). So:
+- If x_E ≳ x_∞ (e.g. 30), x never reaches T_E by itself. The well has to pull it in once V_stab ~ ρ_rad (T ~ 2×10¹⁰ GeV), giving an O(1) energy
+  release (Δ ~ 2, as D375 assumed).
+- If x_E is crossed during the roll (x_E ≲ 29.5, crossed at T ~ 10¹¹–10¹² GeV), trapping happens with Ω_kin,x ~ 10⁻⁵–10⁻³ and V_stab/ρ ≲ 5×10⁻⁴,
+  so Δ ≈ 1 + O(10⁻³).
+Revised recommendation: take x_E ≈ 27–29.5 (crossed at T ≈ 10¹¹–2×10¹² GeV, after the matter yield has settled, D367a). Then D376's refits are
+unnecessary: m_σ stays at the v5 fit and m_DM stays at 100–200 TeV. The D383 n shift is essentially unchanged (Δn = ½ ln(90/(1 + x_E)) ≈ 0.54–0.58).
+TWISTI_CAPTURE.md and v6 item 18 are updated accordingly. Final numbers wait for D367b (validation pending).
