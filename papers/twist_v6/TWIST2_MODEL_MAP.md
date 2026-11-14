@@ -15,7 +15,7 @@ falls back to a working model if its bet fails.
 | χ, χ̄ (weight 3/2) | Trap x at x_E as it rolls past; later condense, pinning x | coupling λ 0.004–0.033 (D377); condensate v ≳ 10⁷ GeV (D390) | trapping kept; pinning OPEN |
 | N₁,₂,₃ (right-handed ν) | Neutrino masses + thermal leptogenesis | M₁ ~ 10¹²–10¹³ GeV (D394) | NEW (replaces hidden σ) |
 | a (light axion-like particle) | Cosmic birefringence only | m_a < H(recombination) ≈ 3×10⁻²⁹ eV; f_a sub-Planckian | NEW (separate from dark energy) |
-| ψ (gravity-only fermion) | Dark matter | 100–200 TeV (D341, D389) | kept |
+| ψ (gravity-only fermion) | Dark matter | 4–45 PeV after D396's dilution (λ ≥ 0.01; D397); stable (gauged Z₂) | kept, mass shifted |
 | SUSY-breaking sector (D292) | Light gravitino branch | m_3/2 ~ eV | kept |
 | Removed | hidden σ sector; thawing x tail; Y-only global stabiliser | — | gone (D387, D323, D373) |
 
@@ -41,12 +41,12 @@ The pinning of x after trapping is the open piece (D390: χ condensate, Higgs-br
 | After recombination | axion a rolls, rotates CMB polarisation | β ≈ 0.42°(c_γ/2π)Δθ | D393 relation |
 | Today | dark energy = Λ = V_Twist(x_E) ∝ e^{−2n} | w = −1 exactly | D383 |
 
-## 4. Dials (6) and what fixes each
+## 4. Dials (5 free + 1 derived) and what fixes each
 
 | Dial | Fixed by | Then tested by |
 |---|---|---|
 | Cliff exponent n | Ω_Λ | — (scale only) |
-| Heat share (0.65–0.8%) | reheating (to be DERIVED from inflaton couplings) | n_s, r, α_s |
+| Heat share (0.65–0.8%) | derived from χ̃ decay after the cliff (D80–D82, D118); not free | n_s, r, α_s |
 | x_E, λ | capture window | no α drift, no moduli problem (structural) |
 | M₁, y_ν | n_B/s | Σm_ν, ordering, 0νββ |
 | c_γ Δθ (axion a) | β | frequency independence, anisotropic birefringence |
@@ -64,7 +64,7 @@ The pinning of x after trapping is the open piece (D390: χ condensate, Higgs-br
 | varying α, fifth force | none | tight bounds | passes by symmetry and by capture |
 | isocurvature | none (thermal leptogenesis) | Planck limits | passes (D320/D360 tests become moot) |
 | Σm_ν | normal ordering, ≈ 0.06 eV | < ~0.07 eV | OK |
-| dark matter | 100–200 TeV gravity-only fermion | lifetime limits 10²⁷–10²⁸ s | allowed |
+| dark matter | 4–45 PeV gravity-only fermion, stable (D397) | no signal expected | allowed; no decay signal |
 
 ## 6. Fallbacks (nested, so no single failure kills the model)
 
@@ -78,7 +78,7 @@ The pinning of x after trapping is the open piece (D390: χ condensate, Higgs-br
 ## 7. Open problems (priority order)
 
 1. Pinning of x after capture: D396 PASS at estimate level (x_E ≈ 29.6, v ≈ 10⁹ GeV, D ≈ 40–900). Remaining: field-theory check of the thermal trap and condensation; recompute the DM window with D.
-2. Derive the heat share from the inflaton's couplings (removes a dial; sharpens n_s).
+2. Heat share: already derived (D118); no action. DM window recomputed with dilution (D397): 4–45 PeV, stable.
 3. Tie m_ψ to a Twist scale (turns the DM window into a prediction).
 4. String origin of axion a (a second Kähler modulus axion is the natural candidate) and of (T − T_E) (D388).
 5. Decisive data check: n_s refit in an evolving-dark-energy background (PC cobaya).

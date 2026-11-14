@@ -3885,3 +3885,15 @@ below x's free-roll limit 29.83 and close to it (late crossing, small velocity).
 can absorb (D394 room ~10³) but which also dilutes gravity-only DM, so the DM mass window must be recomputed with D. Assumptions:
 χ, χ̄ in thermal equilibrium (needs gauge charge, which the D-flat condensate needs anyway); O(1) factors in m_th, m_x and Γ not fixed.
 Status: open problem 1 → PASS at estimate level; a field-theory check (thermal potential and condensation transition) remains.
+
+**D397 (13:45 CT, cross-sector consequences of D396's dilution D; arithmetic refit in code, same scalings as D376) — DM and matter survive
+the dilution, but the DM becomes PeV-scale and must be stable; λ ≈ 0.01–0.033 is preferred.** (1) DM: the gravity-only yield is
+mass-independent (D112), so Ω ∝ m_DM/D and the 100–200 TeV window moves to 3.8–7.6 PeV (λ 0.033, D 38), 22–45 PeV (λ 0.01, D 225),
+89–180 PeV (λ 0.004, D 886). Decay limit τ ≳ 10²⁸ s with D317's scaling then needs ξ ≲ 10⁻⁴ (λ 0.033) down to ≲ 10⁻⁷ (λ 0.004): the
+decaying-DM signal disappears unless stability is only global and very weakly broken; with a gauged Z₂ (ξ = 0, D318) the DM is simply
+stable. Masses stay ≪ T_RH and ≪ m_χ̃, so the production mechanism is unchanged. (2) Matter: leptogenesis must make 0.87×10⁻¹⁰ × D before
+dilution: 3.3×10⁻⁹ (λ 0.033), 2.0×10⁻⁸ (λ 0.01), 7.7×10⁻⁸ (λ 0.004), against D394's reach of ~10⁻⁷: comfortable for λ ≥ 0.01, at the
+edge for λ = 0.004. (3) Correction to the Twist-2 map: the heat share is not a free dial; it is already derived from χ̃ decay after the
+cliff (D118 and D80–D82: 0.65–0.8% over decay-rate conventions). The map's "derive the heat share" item is replaced by "re-derive it
+without σ (unchanged by construction, since σ never entered it)".
+Status: Twist-2 baseline after D396–D397: pinning OK (estimate), matter OK, DM shifts to 4–45 PeV for λ ≥ 0.01 and is stable (no signal).
