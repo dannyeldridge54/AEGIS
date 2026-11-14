@@ -53,3 +53,46 @@ seven-disk geometry), predicts n_s 0.965–0.979 with r 0.0036–0.014, also for
 DESI DR3, Euclid, LiteBIRD and Simons Observatory are listed. Scripts, locked rules and every number:
 https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md, papers/MODEL_CARD_v5.md).
 AI-assisted (Claude, Anthropic); the author takes full responsibility.
+
+---
+## Description v3 (13 Nov late evening) — covers every part; replaces v2
+Files: Twist_one_field_2026-11-13_v4.pdf (26 pages, md5 f05b69cc2b4b373951549fbc56cd6009).
+
+We study whether one field — the Barbero–Immirzi parameter promoted to an N = 1 supergravity superfield with the no-scale Kähler potential
+K = −3 ln(T + T̄) (Gates, Ketov & Yunes 2009) — can run inflation, make the matter–antimatter asymmetry and act as today's dark energy. Every
+data test was fixed and SHA-256 hashed before its fit; results against the model are reported at full size.
+
+MODEL. Main construction TWIST-K: W = √3 m S T with the cliff exp(2n(1 − e^{−πu/8})) in the helper field's Kähler metric (no hidden gauge
+sector); helper quartic ζ = 3×10⁵; the cliff depth n ≈ 125 is chosen (a tuning of today's dark energy, statistically no worse than a chosen Λ;
+writing n = π/α_h with α_h ≈ 1/40 relabels it and needs α_h to 0.3%).
+
+INFLATION. Plateau inflation: n_s ≈ 0.964–0.965, r ≈ 0.0036. Locked test against CMB-SPA + DESI BAO: INCONSISTENT (fixing n_s = 0.964 costs
+Δχ² = 11.7; ΛCDM at the same n_s 8.5). The shift is driven by the BAO–CMB tension: the model is −0.3σ from ACT alone and −1.7σ from CMB-SPA
+alone, as Ferreira et al. (PRD 2026) also argue. Five post-data variants are locked for future CMB data only: TWIST-P (n_s 0.965–0.971,
+r 0.0036–0.011), TWIST-L (0.965–0.979, r 0.0036–0.014), TWIST-M9 (0.957–0.965), TWIST-G− (W ∝ S T^{1+γ}, γ ≈ −0.0085: n_s 0.974, r ≈ 0.007)
+and TWIST-C (W ∝ S(T + c): n_s 0.974, r ≈ 0.005). Inflation from lumpy starts is robust by the published r_crit ~ 10⁻⁵ criterion.
+
+MATTER AND DARK MATTER. Instant preheating heats ~0.8% of the energy; a hidden axion kicks the twist angle and lepto-axiogenesis makes the
+baryon asymmetry (hidden mass ≈ 6×10¹⁰ GeV after a missed pre-registered prediction; confirmation runs pending); isocurvature is estimated
+safe. A conditional gravity-portal fermion dark matter (100–500 TeV) lies inside the stability bound.
+
+DARK ENERGY. The tail is thawing quintessence with slope √(2/3): w₀ ≈ −0.90, w_a ≈ −0.14. It fits DESI DR2 + supernovae + CMB better than ΛCDM
+(Δχ² −3.4; 0.7–1.7σ after look-elsewhere); the slope is +0.7σ from DR2's exponential fit. Locked growth: σ8 −1.5%, f σ8 −3%. Costs: H₀ ≈ 65.7
+(shared by all DESI-preferred dark energy), late ISW +5% (untestable near term).
+
+FIFTH FORCE. Matter is shielded by a symmetry (neutral under the field-space isometries, broken only by the cliff's instanton), with
+precedent in Higgs-dilaton cosmology; clocks require |d ln α/dφ| < 1.6×10⁻⁸ today and thorium clocks can reach ~5×10⁻¹². A survey of string
+settings (weakly coupled heterotic incl. Γ₀(9) duality and BGW dilaton stabilisation, heterotic M-theory, type IIB volume and complex
+structure) found none that keeps matter neutral at today's field value — in each, the long field excursion makes a tower light or a
+coupling strong — so the shield is an effective-theory assumption with a locked, falsifiable redshift signature.
+
+BIREFRINGENCE. The model predicts β = 0, against a pre-lock 0.277° ± 0.057°. If a calibrated measurement confirms it, the single-field model
+fails on this observable; a locked minimal extension adds a photon-coupled spectator axion (10⁻³²–10⁻²⁸ eV) with a LiteBIRD-testable signature.
+
+OTHER. Strong CP needs a post-inflationary axion (≈ 40–600 μeV); neutrino masses can come from M_R ~ m_3/2 at high-scale supersymmetry
+(optional). The dark-energy slope equals the TCC asymptotic bound in 4-d (the same conjecture would exclude the inflation scale, and its
+sharpened form every DESI-fitting exponential).
+
+TESTS. Calibrated birefringence (any year); DESI five-year and Euclid (2027); Simons Observatory r (3–5σ for r = 0.0036, 2028–35); nuclear
+clocks; LiteBIRD (2030s). Scripts, locked rules, a gap review and every number: https://github.com/dannyeldridge54/AEGIS (REVIEW_GUIDE.md,
+papers/MODEL_CARD_v5.md, papers/GAP_REVIEW_2026-11-13_late.md). AI-assisted (Claude, Anthropic); the author takes full responsibility.
