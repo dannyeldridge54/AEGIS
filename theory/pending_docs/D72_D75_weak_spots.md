@@ -3667,3 +3667,9 @@ two branes whose separation is tied to T, so m_χ ∝ |T − T_E| arises when th
 trapping paper (hep-th/0403001, D363). A Twist-specific realisation would need the brane separation to be a function of the same modulus
 whose −3 ln K drives inflation (e.g. a D3/D7 position combined with the volume, K = −3 ln(T + T̄ − |φ|²) type). This is listed as the first
 place to look for the UV origin; not pursued further here.
+
+**D380 (pp, 09:30 CT, quick check of D379's brane idea) — inconclusive, mild negative (search only).** The standard place where a D3 position
+sits inside the no-scale log, K = −3 ln(T + T̄ − |φ|²) (KKLMMT-type; e.g. the reviews arXiv:0708.2865 and 1108.2659), has the brane separation as a
+SEPARATE field φ, not the volume T. In the Twist, the rolling field is Re T, so m_χ ∝ |T − T_E| would need the separation to be locked to T,
+which is not automatic. A route where φ is the rolling field changes the Twist's construction (its −3 ln structure comes from T). Not
+pursued; the UV origin of (T − T_E) stays open.
