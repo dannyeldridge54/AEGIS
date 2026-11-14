@@ -2155,3 +2155,16 @@ above (ACT alone 0.9666 ± 0.0076; ACT + DESI DR2 0.9770 ± 0.0070); the press r
 significantly" is the paper's dataset-consistency argument, not a new fit. To-do closed; nothing to rescore. Notable for the paper: two of the
 authors (Kallosh, Linde) are the α-attractor authors, so the Twist's family has authoritative backing that the CMB+BAO n_s is not yet a
 clean test.
+
+**D241 (pp loop 8) — gap 3: the closest published relative of the shield is Higgs-dilaton cosmology, and it shows the difference sharply
+(literature, Shaposhnikov–Zenhäusern line; arXiv:1712.04956, 1107.2163).** There, exact (spontaneously broken) scale invariance makes the
+dilaton a Goldstone with only derivative couplings to matter — the same logic as the Twist's shield (SM neutral under the disk's scaling
+isometry, D140). Two contrasts: (i) in Higgs-dilaton the scale symmetry is broken ONLY by the unimodular-gravity term that makes dark energy,
+whose potential e^{−4γΦ} is tiny in slope (γ small), so w0 = −0.997 ± 0.003 — a near-cosmological constant; the Twist's tail slope √(2/3) is
+large, so its dark energy is far more dynamical (w0 −0.90) and its symmetry breaking (the tail potential) is much larger. The review notes the
+non-derivative potential is not covered by the derivative-coupling argument "at the present epoch" — the same loophole the Twist's shield has
+to close with the instanton-only breaking (D140–D142). (ii) Higgs-dilaton ties inflation to dark energy, n_s = 1 − (2/N*) X coth X with
+X = 3N*(1 + w)/(4F(Ω_DE)): w0 ≳ −0.98 would need too few e-folds, i.e. it CANNOT give DESI-like dynamics; the Twist decouples the two (rung 3
+sets both slopes but not via this relation), which is why it can give w0 ≈ −0.9 with n_s ≈ 0.965. So the shield idea has a respected precedent
+(scale symmetry → Goldstone decoupling), and the Twist's distinctive risk is precisely its large late-time symmetry breaking. Gap 3 status:
+unchanged; the paper should cite Higgs-dilaton cosmology as the precedent and state this difference.
