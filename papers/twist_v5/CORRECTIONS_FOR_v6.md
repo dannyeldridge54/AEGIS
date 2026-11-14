@@ -74,3 +74,9 @@ Replace the §5.2 options with:
 > - With messengers at modular weight 3/2, the gauge-mediated soft masses do not slide. This removes the α_em drift of D289.
 > - The eV gravitino window (D291) is realised in this sector.
 > - The modular weights are assumed, not derived.
+
+## 10. Condition on the SUSY-breaking sector (D294)
+
+Add to §5.2:
+
+> X = 0 is shifted by a Polonyi tadpole to X ≈ 2√6/(12q − 2) M_P. That shift is x-independent in canonical units. The sector must also give the sgoldstino a mass far above m_3/2 (q ≳ 10⁷); otherwise its late oscillations overclose the universe. This holds for dynamical SUSY breaking at √F ~ 10⁵ GeV, but not for a bare Polonyi field.

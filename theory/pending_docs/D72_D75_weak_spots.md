@@ -2672,3 +2672,13 @@ condition — no solution, with or without δ. Dropping the μ condition — a t
 from string values (smallest max|p| over the family = 6, e.g. p_Q −11/3, p_U = p_D = 2/3, p_L 3, p_E −6, p_Hu = p_Hd = 6); a universal GS term of that size is unavailable on Z₃-type
 orbifolds (D199). So the D292 weight trick fixes the SUSY-breaking scale but cannot make the MSSM's couplings and masses T-independent: the
 remaining shield (gap 2) is not a modular-weight assignment. Gap 2 unchanged; requirement restated precisely for v6.
+
+**D294 (pp loop, follow-up to D292: is X = 0 the vacuum?) — no, but the structure survives with a quartic stabiliser (polonyi_vac_d294.py).**
+With K ⊃ |X|²(T+T̄)⁻³ − q|X|⁴(T+T̄)⁻⁶ and μ⁴ = 3w²/8: along Re X there is the usual Polonyi tadpole, dV/ds|₀ = −√6 w²/(8x^{3/2}); in
+canonical units it is x-independent, −(√6/4)w². Im X has none. The sgoldstino mass is m_X² = (12q − 2) m_3/2² in both directions (needs
+q > 1/6). The vacuum shifts to X_c ≈ 2√6/(12q − 2) M_P, x-independent in canonical units, so the x-independence of D292 should survive the
+shift (not re-verified symbolically at the shifted point). Polonyi problem: with an eV gravitino, a weakly stabilised sgoldstino (q ~ 10²,
+m_X ~ 30 eV, shift ~4×10⁻³ M_P) would be displaced after inflation and overclose the universe by ~10⁸ (estimate); it is avoided if the
+sgoldstino is heavy, q ≳ 10⁷ (Λ ≲ 10¹⁵ GeV) — which is the generic case in low-scale gauge mediation, where the SUSY-breaking dynamics at
+√F ~ 10⁵ GeV gives the sgoldstino a mass far above m_3/2. Added condition for v6: the SUSY-breaking sector must be dynamical
+(heavy sgoldstino), not a bare Polonyi field. Gap 3 stays LOW–MEDIUM.
