@@ -3452,3 +3452,19 @@ So the realistic TWIST-I is a very heavy stabiliser (m_x ≳ 10¹⁴–10¹⁵ G
 Next check: x's kinetic share at T ≈ 2×10¹³ GeV in the v5 matter run (hidden_kick_decay_v2.py tracks x; its output gives the fraction).
 A heavier stabiliser also means m_x near the inflaton/heavy-scale range. Is the cliff itself the stabiliser? That is open.
 Status: TWIST-I open item (a') is restated: "a ≳ 10¹⁴ GeV stabiliser capturing a slow x at x ≈ 30".
+
+**D362 (pp, 08:12 CT, TWIST-I (a') follow-up: x's kinetic share at freeze-out, and what capture really needs) — kinetic energy is harmless if
+capture is late; the real cost is a ~10⁻⁶ M_P TUNING of the minimum's position (estimate; aegis-checked in code; corrects the emphasis of
+D361).**
+(1) The kinetic share (estimate from the v5 background: f_heat 0.65–0.8% at H_end = 5.2×10¹² GeV, then kination): radiation equals x's kinetic
+energy at a/a_end ≈ 11–12. At T = 2×10¹³ GeV, Ω_kin,x ≈ 0.13–0.17, or ≈ 0.02 after the ×4.6 entropy from σ decay (D277). It falls as T² after that.
+With D361's Δ ≈ Ω_kin(T_c)·T_c/T_d ∝ T_c³, capturing later always works for the kinetic part. For example, m = 100 TeV needs T_c ≲ 2×10⁸ GeV;
+m = 10¹³ GeV needs T_c ≲ 2×10¹² GeV. D361's "m ≳ 10¹⁴ GeV" was too strict for this part.
+(2) But a field captured by a minimum also carries the potential energy of its offset from that minimum, ½m²Δφ² (D360a). Falling into a
+well, or a well forming around the field away from x's resting point, gives oscillations of that size. In the radiation era a freely rolling
+x comes to rest at a definite x_∞ (Hubble friction), so the stabiliser's minimum must coincide with x_∞ to within the D360a bound:
+Δφ ≲ 2×10⁻⁷ M_P (m = 100 TeV) to ~10⁻⁶–10⁻⁵ M_P (10⁹–10¹³ GeV). The overdamped variant (well present while H ≫ m) does not help: the offset
+is not relaxed before H ≈ m and gives the standard moduli problem. Linde's exponential suppression needs the field in the minimum from the start
+(D361).
+Verdict: TWIST-I costs a positional tuning of x_min to x_∞ at the 10⁻⁷–10⁻⁵ M_P level, unless a mechanism ties the minimum to x's own resting
+point (none known). This is a third tuning besides Λ and n, and it should be stated in v6 item 18. D359–D361's statements are folded into this one.
