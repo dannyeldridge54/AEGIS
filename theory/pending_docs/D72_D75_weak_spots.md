@@ -3620,3 +3620,17 @@ through the D292 weights, up to the same −b_a/4π threshold effect, which shif
 That gives a tilt ~10¹¹–10¹⁵ GeV⁴/M_P (m_soft = 10⁴–10⁵ GeV) and a shift ≲ 10⁻³¹ M_P (recomputed). Also negligible.
 Verdict: at loop level the stabiliser minimum stays at T_E to far better than the 10⁻⁷ M_P needed. TWIST-I's capture skeleton (D373) is
 consistent at one loop. What is still open is model building only: where a localised g(T), T_E and the χ sector come from.
+
+**D375 (pp, 09:05 CT, tying the ESP and the stabiliser minimum together) — one shared factor (T − T_E) does it without any symmetry or
+localisation (argument + D373's exact result; aegis-checked).** Let the trapping sector and the weight-3 stabiliser come from the same
+factor: W ⊃ (T − T_E)(λ M_P χχ̄ + k Y). Then χ is massless exactly where the stabiliser minimum is (V = k²|T − T_E|², D373), so trapping (D364)
+puts x at the stabiliser minimum up to the trapping distance d ≲ 10⁻⁸–10⁻⁵ M_P. There is no positional coincidence to tune, and no reflection
+symmetry or sharp localisation is needed: the zero of a single holomorphic factor fixes both.
+Global-well energy: before trapping, a global k²|T − T_E|² can dominate radiation (T ≲ 10¹¹ GeV for m_x = 100 TeV, D373) and accelerate x.
+That kinetic energy goes into χ particles at the ESP, which decay to radiation at once rather than into a long-lived coherent modulus. The
+cost is an O(1) entropy release at T_c (dilution ≲ (1 + Ω)^{3/4} ~ 2), not 10³–10¹³. This assumes trapping is efficient (g ≳ 0.1) and χ decays
+promptly. To be checked if TWIST-I is built: whether the matter yield (1.25× observed) tolerates a factor ~2.
+Radiative stability (D366): the stabiliser's positive m_x² = (4/3)k²x_E² must exceed the χ-loop negative term (λ²/8π²) m̃_χ² ln(Λ/m̃_χ), i.e.
+m_x ≳ 6×10⁴ GeV for λ = 1, m̃_χ = 10⁵ GeV (computed). That is consistent with the ≳ 100 TeV BBN requirement.
+Status: TWIST-I's capture problem now has a consistent tree + one-loop skeleton with a single new parameter set (T_E, k, λ, and the χ, Y masses)
+and no fine-tuning. The open items are its origin (UV) and the factor-~2 dilution against the matter yield. This upgrades D362–D366.
