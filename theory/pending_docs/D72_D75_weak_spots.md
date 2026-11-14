@@ -3204,3 +3204,14 @@ What is not known is whether the data penalise Σ = 0.06 more in the Twist backg
 compares the two at the same Σm_ν, which is fair. Whether 0.06 itself is disfavoured is a statement about both models (DESI ΛCDM limit 0.056,
 D337). A free-Σm_ν Twist fit would tell whether thawing tightens it further; that is a new computation (lock + PC time), left for Danny to decide.
 Gap 14: LOW–MEDIUM (flagged; the Twist–ΛCDM comparison is unaffected).
+
+**D339 (pp, 07:00 CT, gap 3 SUSY breaking: any new constraint on the eV-gravitino branch?) — one collider result; the branch stands, with a
+consequence (literature).** GAMBIT, "Collider constraints on electroweakinos in the presence of a light gravitino" (arXiv:2303.09082): with
+m_3/2 = 1 eV fixed ("the exact choice … has very little impact" while it is small), 13 TeV ATLAS/CMS + LEP exclude most electroweakinos below
+1 TeV. Surviving regions: degenerate Higgsinos from ~140 GeV, a wino band near 400–500 GeV (2σ), winos above 700 GeV, and a light bino from
+~62 GeV. Cosmology is not included. The search otherwise returned only papers already used in D291 (Ibe–Yanagida 1608.01610;
+Hook–McGehee–Murayama 1801.10160; Lu–Shirai 1712.02359).
+For the Twist: the adopted eV-gravitino branch (D291–D292) makes the lightest neutralino decay promptly to a gravitino, so these limits apply
+directly. They constrain the mediation sector's spectrum, not the Twist's x-independence (D292). Consequence for v6 §5.2: say that the
+branch implies prompt NLSP → gravitino decays at colliders, and cite GAMBIT for the surviving electroweakino regions.
+Gap 3: LOW–MEDIUM, unchanged.
