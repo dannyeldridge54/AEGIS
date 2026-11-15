@@ -4482,3 +4482,12 @@ carrying 0.07–0.28% of the radiation energy, so the worst case (all into dark 
 budget (0.047) that is ≤ 0.07 < 0.14 for one species. The a ≈ 7.9e3 end becomes risky if several KK species are this light (e.g. ≳ 4 species → > 0.14).
 Conditions: no KK parity (generic for a Calabi–Yau, unlike orbifold/UED-type setups) and few light KK species, which favours the a ≈ 3.8e3 end of the band.
 CENTRE: balanced with conditions; F7 (ΔN_eff) margin narrows at the upper end.
+
+**D459 (cycle 44, "pp"; fourth pass PART 9, L/R; scored, locked PREREG_D459_SOFT_MASS; results/soft_mass_d459.txt) — locked reading: by
+N − N_e = 20 (T = 1.4e6 GeV) the field returns to the wall for m_s ≥ 1 GeV, not for an eV-scale (gravity-mediated) mass.** Return
+temperatures: 7.5e6 (1 GeV), 7.5e7 (100 GeV), 2.4e8 (1 TeV), 7.5e8 GeV (10 TeV) — T_ret ∝ √m_s (×10 per ×100 in m_s, computed). At
+m_s = 1e-9 GeV the field is still parked at x = 29.36 at N − N_e = 20. By the lock: either φ couples directly to the SUSY-breaking sector (m_s ≳ GeV)
+or the D396 thermal trap holds the field. Post-lock extrapolation (not scored): T_ret(1 eV) ≈ 2.4e2 GeV, still long before BBN, so even gravity-mediated
+masses would pin the field in time if the √m_s law holds outside the run. A longer integration (N − N_e to ~30) would settle this. While parked, x sits 0.24
+below x_E (Λ is irrelevant at those times; F1: no SM coupling, D417). CENTRE: balanced, with condition 'm_s ≳ GeV or extended run'; D447's lightest
+charged state could then be as light as m_s.

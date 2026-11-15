@@ -1,0 +1,7 @@
+m_s=1e-09 GeV: reflections 1, xmin 29.3606, return T=none, x at N-Ne=20 29.3606
+m_s=1e+00 GeV: reflections 121, xmin 29.3607, return T=7.48e+06, x at N-Ne=20 29.5974
+m_s=1e+02 GeV: reflections 5001, xmin 29.3615, return T=7.48e+07, x at N-Ne=20 29.6000
+m_s=1e+03 GeV: reflections 5001, xmin 29.3628, return T=2.37e+08, x at N-Ne=20 29.6000
+m_s=1e+04 GeV: reflections 5001, xmin 29.3663, return T=7.49e+08, x at N-Ne=20 29.6000
+fit T_ret ~ sqrt(m_s): 1->1e2: 10.00, 1e2->1e4: 10.01 (sqrt=10 per 1e2)
+extrapolated T_ret(1e-9 GeV) = 2.4e+02 GeV
