@@ -6096,3 +6096,18 @@ Verdict: SERAPIS-ρ passes the same consistency chain as two-term SERAPIS, with 
 ## D615 — FORWARD PREDICTIONS (Ddl 08:28 CT; locked PREREG_D615_FORWARD_RHO) — SERAPIS-ρ frozen alongside D605
 Bands: n_s 0.969–0.972; r 4.6–5.1e-4; Σm_ν ≈ 0.059 eV (NO); no low-scale SUSY; negligible isocurvature.
 These overlap D605 (two-term, τ = i: n_s 0.970–0.975, r 4.8–5.7e-4). Together they form the current SERAPIS forward package. The one weak discriminator: n_s ≳ 0.974 favours the τ = i version.
+
+## D616 — DEEP (Ddl 08:29 CT; reasoning + arithmetic, not locked) — for SERAPIS-ρ, ε may simply be (m₃/₂/H_inf)²: a threshold-dependent uplift ties the tilt to the SUSY-breaking scale
+Idea: in the KL nilpotent form, V = (F_X² − 3W₀²) + V_plateau, with F_X² ≈ 3W₀² ≈ 3m₃/₂²M_P² (Λ ≈ 0).
+- If the uplift term carries the threshold dependence, F_X² → F_X²e^{ξ′(L − L(ρ))} (e.g. a brane/hidden-sector tension depending on the N = 2 threshold), then δV ≈ 3m₃/₂²M_P²·ξ′(L − L(ρ)). That is exactly the ε·(L − L(ρ)) term, with ε = ξ′(m₃/₂/H)².
+- A correction on the −3|W|² side instead has the WRONG sign (it would make ρ a maximum). So the identification needs the L-dependence on the F-term side.
+Consequences (arithmetic):
+- From D610/D613, m_φ/H = κ√ε with κ = 1.73.
+- Gravitino closure (m₃/₂ ≥ m_φ/2, D584) becomes ξ′ ≤ (2/κ)² = 1.34, INDEPENDENT of ε. The O(1) coefficient expected from a threshold sits right where closure needs it.
+- ε = 6e-5 then means m₃/₂/H ≈ 7–11e-3 for ξ′ = 0.5–1.3, consistent with D614 (H/m₃/₂ ≈ 150).
+Reading: ε is no longer an arbitrary 1e-4. It is the squared ratio of the SUSY-breaking scale to the inflation scale, with an O(1) coefficient, and the gravitino-safety condition becomes an O(1) statement about ξ′.
+NOT derived:
+1. why F_X depends on L as e^{ξ′L};
+2. why m₃/₂/H ≈ 0.01 (it moves the question from ε to the SUSY scale);
+3. whether the same works at τ = i: no, the DKL L has a saddle at i (D608).
+So this is an argument for SERAPIS-ρ only.
