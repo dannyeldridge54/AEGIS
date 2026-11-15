@@ -5221,3 +5221,12 @@ At τ = i, level-1 modular forms of weight k ≢ 0 (mod 4) vanish (for example E
 - Z₈^R: 8 of 16 do.
 Physical note: the τ = i vacuum (residual Z₂ from S, a Z₄ acting on matter) adds a real constraint. Half of the anomaly-free parities survive it. This is specific to SERAPIS's i-vacuum; at ω the rule would be mod 6. Counts as the vacuum-dependent check suggested in D550.
 Status: the proton parity, its anomaly check, the m₃/₂ breaking (D542) and the vacuum selection rule are all consistent for 4 Z₄^R and 8 Z₈^R assignments.
+
+## D552 — LEFT/RIGHT (pp 22:46 CT; literature) — the string origin of the Kallosh–Linde metric form is not automatic
+- Kallosh, Linde, Roest, Yamada, "D̄3-induced geometric inflation" (arXiv:1705.09247): any V(T, T̄) can be encoded in the nilpotent metric, G_SS̄ = |m₃/₂|²/(V + 3|m₃/₂|²). As a supergravity statement this is the method D545 used. Their examples are α = 1/3 attractors for one disk/half-plane modulus.
+- Garcia del Moral, Parameswaran, Quiroz, Zavala (arXiv:1707.07059): for an actual anti-D3 on an O3 in a GKP background, the X-metric is NOT arbitrary. It is fixed by the brane action: power-law factors (T + T̄), (τ_dil + τ̄_dil)⁻¹ and the complex-structure-dependent warp factor e^{−4A₀(Z)}.
+Consequence for SERAPIS-KL:
+- the j-dependent X-metric we need (V ∝ I/(I+1), I from |j − 1728|) is not what a single anti-D3 naively gives;
+- the IIB axio-dilaton has exact SL(2,Z), but GKP fluxes stabilise it, so it cannot be the rolling τ (same logic as D532);
+- a string origin would need modular-invariant warping/threshold dependence on an UNFLUXED T² modulus, for example through one-loop (η-function) corrections to the brane action. That is not established.
+Status: SERAPIS-KL is consistent as supergravity but its V is put in by hand, exactly as in Kallosh–Linde's own models. The string-origin gap (D535) is restated, not closed. No change to predictions.
