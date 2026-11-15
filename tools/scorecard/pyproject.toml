@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "inflation-scorecard"
+version = "0.1.0"
+description = "Score an inflation model against every current dataset; Janus calculator for the running"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy", "pyyaml", "matplotlib"]
+license = {text = "LICENCE PENDING (author's choice; see README)"}
+authors = [{name = "Danny Lee Eldridge"}]
+
+[project.optional-dependencies]
+camb = ["camb>=1.5"]
+test = ["pytest"]
+
+[project.scripts]
+inflation-scorecard = "inflation_scorecard.cli:scorecard_main"
+janus = "inflation_scorecard.cli:janus_main"
+
+[tool.setuptools.packages.find]
+include = ["inflation_scorecard*"]
+
+[tool.setuptools.package-data]
+inflation_scorecard = ["data/*.yaml"]
