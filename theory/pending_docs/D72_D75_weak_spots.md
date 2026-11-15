@@ -5995,3 +5995,13 @@ This supersedes D567 as the CURRENT forward package. D567 stays locked as a hist
     2. whether it is compatible with the plateau sector's τ = i vacuum and SUSY structure.
 - (c) Gravitino-loop (species) term: wrong shape (D593/D577).
 Verdict: ε is still unexplained. The most plausible origin is a ratio of two loop sectors with a ~10× mass hierarchy, which would make ε ~ 1e-4 natural-looking. That would need a dedicated construction, which is a substantial project, not a single Dp.
+
+## D607 — DEEP (Ddl 08:21 CT; reasoning, not locked) — D606's two-sector CW idea FAILS at the level of shape: a CW loop cannot produce I₁'s linear-in-y growth
+- I₁ = (1/4π)ln(1 + |j − 1728|/1728) grows like y/2 at the cusp because it is the LOG of a holomorphic weight-0 function (j − 1728 ∝ E₆²/Δ).
+- A CW loop gives V ∝ Σ m⁴(τ)ln(m²/μ²), with physical m² a modular invariant built from forms and Kähler factors:
+  - (i) weight-0 ratios such as |E₆|²/|E₄|³ ∝ |j − 1728|/|j| → const at the cusp: no growth, no tilt;
+  - (ii) y^k|E_k|²-type invariants grow ∝ y^k, i.e. like e^{k√2φ}: far too steep (a power ≥ 4 in m⁴);
+  - (iii) Abe-type exponentially decaying forms (q^t) fall at the cusp: a plateau approached from below, the opposite sign of tilt.
+  None reproduces a term ∝ ln|j − 1728| ∝ y.
+- A log of a holomorphic function arises naturally in gauge kinetic functions or thresholds, f ⊃ b·ln(E₆²/η²⁴), entering V through gaugino-condensate or threshold corrections. That is the N = 2-threshold-type origin D576 identified, which the home conditions (D560–D562) forbid on the SERAPIS plane, and the E₆ zero at i would make any condensate ∝ e^{−f/b} singular.
+Verdict: D606's route (b) is WITHDRAWN as an origin of the ε·I₁ shape (only its magnitude estimate worked). ε·I₁ still has no consistent microscopic source. The tension is sharp: the shape needs a threshold-like log; the home forbids N = 2 thresholds. This is now the main theoretical weakness of two-term SERAPIS, alongside the unexplained size of ε.
