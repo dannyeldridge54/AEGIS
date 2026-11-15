@@ -1,0 +1,9 @@
+(a) M_V=1.70e+17 GeV; Gamma=2.16e-14 GeV vs H=3.16e+04 GeV -> ratio 6.8e-19 (no thermal contact)
+(b) worst-case rho_phi/s=1.13e+06 GeV vs DM 4.3e-10 -> overclosure x2.6e+15
+(c) m_s=1e+04, x_E-x=1e-03: m_eff=2.68e+14 GeV, A=1.43e-08
+(c) m_s=1e+04, x_E-x=1e-06: m_eff=8.47e+12 GeV, A=4.51e-04
+(c) m_s=1e+04, x_E-x=0e+00: m_eff=1.00e+04 GeV, A=2.74e+23
+(c) m_s=1e+05, x_E-x=1e-03: m_eff=2.68e+14 GeV, A=1.43e-08
+(c) m_s=1e+05, x_E-x=1e-06: m_eff=8.47e+12 GeV, A=4.51e-04
+(c) m_s=1e+05, x_E-x=0e+00: m_eff=1.00e+05 GeV, A=2.74e+20
+A=1 at m_eff=6.50e+11 GeV, x_E-x=5.9e-09; residual V=8.6e+31 GeV^4, frac of radiation 4.9e-15, rho/s=5.5e-04 GeV (DM 4.3e-10)

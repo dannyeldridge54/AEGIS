@@ -4341,3 +4341,14 @@ updated, nothing breaks.** Joint ACT DR6 + Planck (arXiv:2608.06480): β = 0.277
 30% Galactic-cut check; depends on the instrumental priors as reported). D414 used β = 0.261°: shift 0.28σ. Required photon coupling
 scales by 1.061 → c_γ ≈ 1.7–4.1 (was 1.6–3.9); f ≤ 0.1 M_P and Ω_a ≤ 3e-3 unchanged (Ω_a does not depend on β). The paper does not
 separate reionization from recombination, so B4 (β_reio/β_rec) remains untested; LiteBIRD remains the decider. No scored result → WALL.
+
+**D444 (cycle 31, "pp"; third pass PART 8, RIGHT; scored, locked PREREG_D444_PHI_RELIC; results/phi_relic_d444.txt) — locked verdict
+"NEEDS φ DECAY OR ADIABATIC": a NEW open condition for the FI picture.** The screening field φ is charged under the anomalous D7 U(1),
+whose Stückelberg mass M_V ≈ 1.7e17 GeV cuts φ off from the plasma (Γ/H = 7e-19 at 1.5e11 GeV). If the condensate energy at capture
+(≤ 1e-5 of radiation, D436) ended as φ quanta, ρ_φ/s = 1.1e6 GeV — 2.6e15 × the DM value. The condensate dissolves adiabatically
+(A = 1.4e-8 at 1e-3 below the wall, 4.5e-4 at 1e-6) except within ~6e-9 of x_E, where A → ∞ as m_eff → m_s. Post-lock estimate (NOT
+scored): the energy left there is ~5e-21 of radiation → ρ/s ~ 6e-10 GeV, the same order as all of dark matter, and D437's thousands of
+bounces off the wall could each add to it. So: φ needs a decay channel into lighter states (τ < 1 s for BBN), or it becomes a second
+DM component that must be counted (overclosure risk). The perturbative U(1) charge acts as a global symmetry broken only by D-instantons, so
+a superpotential coupling to lighter hidden states (e.g. W ⊃ λ φ X Y) is needed — added as an open condition. CENTRE: F5 (DM) flag on the FI
+picture; the pinning itself is unaffected.
