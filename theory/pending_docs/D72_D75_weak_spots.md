@@ -4708,3 +4708,10 @@ the longer kination (D496: ΔN* = +0.89). Next decisive computation: the full ca
 At N* = 58.09 (D496), ε = 1.494e-7 gives n_s = 0.9736 with **r = 0.00435, α_s = −7.6e-4** (was r = 0.00453, −8.0e-4 at N* = 57.2). The Λ condition moves n only to 234.017
 (held 234.054; a 0.02% change, negligible). Twist-M's r now sits slightly below non-symmetric Route A (0.0046) and just above the fibre line (0.0042): distinguishing them
 needs σ(r) ~ 1e-4, beyond planned experiments. Result → walls 0.
+
+**DEEP 1 (deep loop tick, topic 1 pinning/capture; literature; theory/deep/DEEP_topic1.md).** Prior art found and compared:
+(a) arXiv:1110.3333 (Cicoli et al.): magnetised-D7 FI terms fix a combination of Kähler moduli for non-diagonal divisors in K3-fibred CYs, and the U(1) eats an axion.
+This confirms D462/D465, and the static fixing is theirs.
+(b) hep-th/0403001 (Kofman et al., 'Beauty is attractive') and 1310.4751: moduli trapping at enhanced-symmetry points by non-adiabatic particle production. That is our D444/D446
+bounce production, which they show aids trapping. Twist-M's self-dual point is the classic T-duality enhanced-symmetry point.
+No contradictions. Credits are added to the v2 list. The novelty claim narrows to the cosmological chain (inflation → capture → Λ) and the stringy small-volume FI treatment.
