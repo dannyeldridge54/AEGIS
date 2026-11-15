@@ -207,3 +207,12 @@ alone.
 **SERAPIS-1 final predictions (D519–D520):** n_s 0.963–0.965, r 0.0012–0.0013, α_s ≈ −6.5e-4 (reheating-consistent); fits CMB-SPA, 2.8–3.7σ from SPA+DESI; no kination route.
 
 **Janus paths inside SERAPIS (D519, D525):** Kairos n_s 0.963–0.965, r 0.0012–0.0013 (no fit); Chronos δ = 0.0023 → n_s 0.9736, r 0.0020, α_s −5.9e-4 (one fit). n_s is the main discriminator.
+
+**CORRECTIONS AND CURRENT STATE (14 Nov 2026, 22:55 CT; D537–D557).** The SERAPIS and SERAPIS-1 entries above are superseded where they conflict:
+- **Withdrawn:** "vacuum with V = Λ", "Λ coefficient c = e^{−121.6}". With a holomorphic W the τ = i vacuum is SUSY Minkowski (D537, D538); Λ is a separate, tuned sector, consistently the gauge-mediation X sector (D548).
+- **The n_s/r numbers above were at the wrong N*.** Current values (own reheating, N* = 52–55.6): Kairos n_s 0.963–0.965, r 0.0012–0.0013; Chronos (δ = 0.0023) n_s 0.971–0.974, r 0.0020–0.0022 (D519, D526, D545, D546). Vacuum mass 4.2–4.5e13 GeV (D539).
+- **Reference model is now SERAPIS-KL** (D545/D546): V in the nilpotent-field metric, I = (1/4π)ln(1+|j−1728|²/1728²). It is single-valued, with its V = 0 minimum at i and regular at ρ. SERAPIS-1's holomorphic H is outside the string class and multi-valued around ρ (D535, D543).
+- **Prior art:** Kallosh–Linde 2408.05203, 2412.19324, 2512.02969, 2411.07552; Casas–Ibáñez 2407.12081; Abe et al. 2303.02947. The inflation model is assembled from published ingredients (D556).
+- **Home conditions:** factorised T² ⊕ T⁴, flux-free T², |b^{N=2}| ≲ 2, M_s ≳ 1e17 GeV (D530, D532, D553, D554). This is incompatible with Twist-2's low M_s, so SERAPIS and Twist-2 are separate realisations.
+- **Proton:** Z₄^R/Z₈^R modular-centre parity, anomaly-checked, safe for m₃/₂ ≲ 100 TeV and compatible with the τ = i vacuum (D528–D533, D542, D551).
+- **Twist-M case (i) FI trap:** NOT CAPTURED (D547).

@@ -69,3 +69,13 @@
 | Vacua | square torus τ = i: V = 0 (Λ term pending); triangle point ρ: wall | D515 |
 | SERAPIS-1 (D517) | k = 1, F = η⁻²H(j); n_s 0.9667, r 0.00108; vacuum mass 4.0e13 GeV; Λ coefficient c = e^{−121.6} | D517 |
 | SERAPIS-1 (reheating-consistent, D519) | n_s 0.963–0.965, r 0.0012–0.0013, α_s ≈ −6.5e-4; N* 52–55.6 | D518–D520 |
+
+## Corrections (14 Nov 2026, 22:55 CT) — supersede the SERAPIS rows above where they conflict
+| Item | Current value | Source |
+|---|---|---|
+| τ = i vacuum | SUSY Minkowski, V = 0; Λ added (tuned), not c = e^{−121.6} (withdrawn) | D537, D538 |
+| Vacuum mass | 4.2–4.5e13 GeV (N* = 55.6–52) | D539 |
+| Kairos (SERAPIS-KL) | n_s 0.963–0.965, r 0.0012–0.0013 | D545, D519, D526 |
+| Chronos (SERAPIS-KL, δ = 0.0023) | n_s 0.9715–0.9738, r 0.0020–0.0022 | D546, D525 |
+| Home | T² ⊕ T⁴, flux-free T², |b^{N=2}| ≲ 2, M_s ≳ 1e17 GeV | D530–D554 |
+| Twist-M case (i) | NOT CAPTURED | D547 |
