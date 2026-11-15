@@ -1,0 +1,4 @@
+Z_4^R: 0/0 anomaly-passing assignments admit a lift with all required couplings nonzero at tau=i [non-R centre, Sigma k = 0 mod 4]
+Z_8^R: 0/0 anomaly-passing assignments admit a lift with all required couplings nonzero at tau=i [non-R centre, Sigma k = 0 mod 4]
+Z_4^R: 0/0 anomaly-passing assignments admit a lift with all required couplings nonzero at rho [non-R centre, Sigma k = 0 mod 6]
+Z_8^R: 0/0 anomaly-passing assignments admit a lift with all required couplings nonzero at rho [non-R centre, Sigma k = 0 mod 6]

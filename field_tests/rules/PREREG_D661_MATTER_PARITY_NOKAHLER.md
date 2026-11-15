@@ -1,0 +1,5 @@
+# PREREG D661: modular-centre matter parity without the D551 Kähler conditions (new question, not a rerun of D660)
+Locked before computation, 2026-11-15 (after D660 returned 0 because no assignment passed its pre-filters). Script theory/modular/centre_mp_nok_d661.py; output results/centre_mp_nok_d661.txt.
+Justification for dropping K_no (QQŪĒ, QLŪD̄ Kähler terms): they are dimension-6, Planck-suppressed; amplitude 1/M_P² = 1.7e-37 GeV⁻² vs the proton bound ~6e-32 GeV⁻² (factor 3e-6), so they are harmless and need not be forbidden. This is a different physical question from D660, stated before seeing its answer.
+Scan = D660 with K_no removed (W_ok allowed: QH_uU, QH_dD, LH_dE, H_uH_d, LH_uLH_u; W_no: LH_u, UDD, LQD, LLE), non-R centre (t = 0, g = 0), η^{-2} rule Σk ≡ 0 mod 4 (i) / 6 (ρ). Report counts, an example, and whether the example coincides with standard matter parity.
+PASS = ≥ 1 at each vacuum → the covariant completion keeps a modular origin for ordinary matter parity; dim-5 QQQL then needs c ≲ 5e-3 (D657).
