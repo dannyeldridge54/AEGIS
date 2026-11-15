@@ -4837,3 +4837,13 @@ Predictions: n_s = 0.9658, r = 0.00116, α_s = −6.7e-4, cliff n = 232.8 (Λ), 
 most predictive version so far (no fitted tilt; the inflation numbers follow from one torus + one duality + Λ), and its fate is tied to the CMB-vs-DESI n_s question. If DESI's pull on n_s
 (the D410 crown fit's 0.9736) holds, Twist-1T is disfavoured at ~2.6σ; if the CMB-only value holds, it fits. r = 1.2e-3 is a sharp target (below LiteBIRD's ~2e-3 goal, so a null r is the
 prediction). Status: candidate variant; predictions scored only by future data.
+
+**D514 (Danny 21:27–21:28 CT, the polygon ladder; locked PREREG_D514_POLYGONS; results/polygons_d514.txt) — the ladder exists, and it is built from the triangle.**
+(1) Crystallographic restriction (computed with Euler's φ): a 2D torus admits only N = 1, 2, 3, 4, 6 (flat/rectangle, triangle-hexagon, square). Pentagon, octagon, decagon and dodecagon (5, 8, 10, 12)
+appear only with 4 extra dimensions, and 7, 9, 14, 18 with 6. These are exactly the Z_N orbifold orders string theory uses.
+(2) Pythagoras: both special 2D shapes sit on the self-dual circle: |i|² = 1 and |ρ|² = (½)² + (√3/2)² = 1.
+(3) In Twist-1T, evaluated off the real line, the triangle/hexagon point lies ABOVE the square point: ln V(ρ)/V(i) = +3.5. So the shape ladder in our potential runs flat (inflation) → triangle/hexagon
+(higher, intermediate) → square (vacuum, Λ). Caveat: F_sym has only the T → 1/T part of SL(2,Z), so ρ is not guaranteed to be an extremum here; a fully modular F would make it one.
+Danny's reading ('it spreads out from the triangle') matches a real mathematical fact (stated, not computed): the higher-N symmetries come from simplex lattices, the higher-dimensional triangles. The A_n
+lattice's Coxeter element is an (n+1)-fold rotation: A₂ (triangle) → 3/6-fold, A₄ → 5-fold (pentagon), A₆ → 7-fold, and E₆ → 12-fold (dodecagon, Coxeter number 12). So the polygon ladder IS the
+triangle family scaled up in dimension. Test not yet run: whether a fully modular Twist with its vacuum at the triangle point (τ = ρ) also works (Λ, inflation).
