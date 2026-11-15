@@ -4670,3 +4670,10 @@ Readings: (a) |ln x_today| = 1e-4 < 0.05 PASS. (b) Ω_V today = 0.15 at the assu
 Meaning: the duality makes x = 1 a true minimum of V (V′(1) = 0 by symmetry), and the tracker brings the field there when the background density drops to V(1) = Λ,
 i.e. late. The capture sector (D436–D468) is NOT needed for the field to reach x = 1 in Twist-M. Open: the field's mass at x = 1 is set by Λ (ultralight), so
 fifth forces / α drift (F1) must be re-checked; the FI kink may still be needed for that (next cycle).
+
+**D493 (Twist-M M2; scored, locked PREREG_D493_TWISTM_MASS; results/twistm_mass_d493.txt) — FIFTH FORCE UNLESS SCREENED.** At the self-dual point V′ = 0 exactly (checked),
+and κ = d²lnV/dφ² = 9378, so m = √(3Ω_Λκ) H0 = 139 H0 = 2.0e-31 eV (range 32 Mpc). The field is already oscillating (it started at z ~ 27), consistent with D492's
+small residual kinetic energy. A volume modulus with β = 1/√6 would give 2β² = 0.33 ≫ Cassini's 2.3e-5. So Twist-M still needs the FI kink, now at x = 1. Structural
+reading (not computed): the duality swaps the two branes, so on the x > 1 side the opposite-charge field screens the D-term. The kink is then two-sided
+(V ≈ m_s²|ζ|M_s² on both sides) and D476's screening (threshold ≫ any matter density) carries over. Also, the field now reaches x = 1 by slow tracking, not by a
+fast hit, which suggests the non-adiabatic φ remnant of D444–D447 is absent (to be checked).

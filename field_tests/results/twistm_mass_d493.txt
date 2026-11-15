@@ -1,0 +1,2 @@
+slope at x=1: 0.0e+00 (should be 0); kappa=9378.28; m=139.33 H0 = 2.0e-31 eV; range=9.77e+23 m = 31.6 Mpc
+2 beta^2 = 0.333 vs Cassini 2.3e-5 -> FIFTH FORCE UNLESS SCREENED
