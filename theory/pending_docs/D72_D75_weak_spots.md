@@ -4979,3 +4979,4 @@ Condition: Ibáñez–Ross with Green–Schwarz, A₃ ≡ A₂ (mod N/2), three 
 - Context: a Z₄^R that forbids proton decay is known in the literature (Lee, Raby, Ratz, Ross et al., arXiv:1102.3595). Their version forbids μ perturbatively; ours keeps μ by construction, so the two are related but not the same.
 Not checked: hypercharge and gravity anomalies (they need the heavy spectrum); non-perturbative breaking ~e^{−S}.
 Status: an anomaly-free, gauged (modular) parity protecting the proton to dimension 6 exists in both conventions. The remaining open point is to embed it in a concrete orbifold home.
+D528 addendum (run completed): supergravity convention, M=6 (Z_12): 240 solutions e.g. Q=0/6, U=0/6, D=6/6, L=3/6, E=3/6, Hu=6/6, Hd=0/6.
