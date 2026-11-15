@@ -5203,3 +5203,14 @@ D548a (correction): the computed ratio is V_inf/F_X² ≈ 3.4e42, not 3.4e41 as 
 Relation: our Chronos tilt (V ∝ [I/(I+1)]·I^{2δ}, a slowly rising plateau; D525/D546) is the same idea as their singular/lifted plateau, published before our D525 (14 Nov 2026). Kairos = SL(2,Z) attractor (2408.05203) and Chronos = singular SL(2,Z) attractor (2512.02969). Both branches of the Janus framing therefore correspond to existing Kallosh–Linde constructions.
 What remains ours: the τ = i-vacuum invariant (|j − 1728|), the two-branch data framing tied to the CMB-vs-BAO split, the proton-parity and string-home constraints, the Twist-line consistency (D548), and the audit trail.
 Action: add both citations to v2.2 and state that Chronos is a singular-attractor (S-model) lift. Novelty statement narrows again.
+
+## D550 — LEFT (pp 22:44 CT; literature, novelty check) — is the τ = i-minimum invariant ours?
+I checked the nearest work:
+- Kallosh & Linde, "Landscape of Modular Cosmology" (arXiv:2411.07552): V = V₀(1 − ln|j(i)|²/(ln|j|² + j(i)²)), plateau at the cusp, α = 2/3. τ = n + i are SADDLES; the V = 0 minima are at the ω-type points.
+- 2408.05203: minimum at ω, i a dS saddle.
+- Ding et al. 2411.18603 (modular inflation and reheating, A₄ lepton sector): r ~ 1e-7, a hilltop-type model, not a cusp plateau.
+- 2512.02969: an SL(2,Z) S-model built from j, with no vacuum at i.
+In this (limited, 2-search) check I found no prior cusp-plateau SL(2,Z) attractor whose V = 0 minimum is at τ = i. Our invariant I = (1/4π) ln(1 + |j − 1728|²/1728²) (D545) does that, using the zero of j − 1728 (E₆) at i.
+Label: a "variant not found in the checked literature", NOT a claim of priority. It is a small construction, and a referee may know of others.
+Physical difference from KL: at τ = i the residual symmetry is Z₂ (S), versus Z₃ (ST) at ω. That affects the modular-centre/flavour selection rules for matter at the vacuum (relevant to D528–D533) and the vacuum's mass spectrum. Worth a sentence in v2.2.
+Credit added: 2411.07552.
