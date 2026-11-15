@@ -6498,3 +6498,6 @@ DEEP (locked PREREG_D676; results/rho_cap_d676.txt) — exact ρ cap: N* = 46.09
 
 ## D678
 DEEP (locked PREREG_D678; results/janus_strip_d678.txt; figure papers/v3/figs/fig5_strip) — the exact allowed strip of home-safe SERAPIS (τ = i) in the (n_s, r) plane, 12 exact MS points along the two reheating-bracket edges from ε = 0 to the string-bound cap. Edges (x = n_s − 0.97): N* = 46.08: r = 5.336e-4 + 1.739e-2x + 0.261x²; N* = 49.21: r = 4.416e-4 + 1.535e-2x + 0.244x². At fixed n_s the allowed r spans ≤ 21% (n_s = 0.970 → r ∈ [4.42, 5.34]e-4; 0.975 → [5.24, 6.27]e-4). Along the strip α_s runs from −7.7e-4 to −1.17e-3. The strip passes through both the CMB and CMB+DESI 1σ bands. Frozen as D679 (2-D kill: a joint (n_s, r) measurement excluding the strip at ≥3σ). ρ strip not computed exactly (caps coincide within ~1%, D676).
+
+## D680
+DEEP (locked PREREG_D680; results/rho_strip_d680.txt) — exact ρ strip: edges N* = 46.09: r = 5.308e-4 + 1.709e-2x + 0.255x²; N* = 49.49: r = 4.328e-4 + 1.494e-2x + 0.237x² (x = n_s − 0.97); width ≤ 22% at fixed n_s; offset from the τ = i strip ≤ 2.2%. Untilted points coincide (n_s = 0.9587 / r = 3.69e-4 vs τ = i 0.9587 / 3.69e-4 at N* ≈ 46.1): the strip is a property of the modular plateau, not of which vacuum. Frozen as D681 (union, both vacua).
