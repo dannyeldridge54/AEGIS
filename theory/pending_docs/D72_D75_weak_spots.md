@@ -6125,3 +6125,11 @@ So this is an argument for SERAPIS-ρ only.
    - This is D616's identification with ξ′ fixed to 1. It requires the gravitino mass to come from a DIFFERENT sector than the uplift. That is plausible, since the dilaton racetrack already sits at W_Y = 0 and m₃/₂ is set by the nilpotent-sector W₀, but it is not shown here.
 Verdict: suggestive, not derived. The natural α = 1/3 condensate gives exactly ξ′ = 1 (satisfying the gravitino closure bound with ~15% margin, since m₃/₂/m_φ = 1/(κ√ξ′)·2 … ≥ 0.58 ⇒ OK). It works only if the uplift's modular dependence differs from W₀'s. A full SUGRA computation of V for this two-sector set-up needs a lock.
 D617a (clarity fix): with ξ′ = 1, m₃/₂/H = √ε and m_φ/H = 1.73√ε, so m₃/₂/m_φ = 1/1.73 = 0.578 ≥ 0.5. Gravitino-pair decay is closed with a ~16% margin.
+
+## D618 — CORRECTION to D616/D617 (Ddl 08:42 CT; arithmetic) — the e^{ξ′L} uplift is EXPONENTIAL at the cusp; the linearisation fails, and the "ξ′ = 1 is natural" argument is WITHDRAWN
+- D616 expanded F_X²e^{ξ′(L − L(ρ))} ≈ F_X²(1 + ξ′(L − L(ρ))). But L − L(ρ) ≈ (π/3)y − ln(2y) − 0.34 reaches ≈ 21 at y* ≈ 24.
+- With ξ′ = 1 the uplift grows by e^{21} ≈ 1.6e9 (arithmetic in code: ε·e^{L−L₀} ≈ 1e5 ≫ 1 at y = 24). It would swamp the plateau and destroy inflation.
+- So D617's natural α = 1/3 condensate (e^K|W|² ∝ e^{L}, ξ′ = 1) gives a double-exponential wall in φ, NOT a linear tilt. That route FAILS.
+- The linear tilt needs ξ′·(L − L₀) ≲ 0.3 across inflation, i.e. ξ′ ≲ 0.014. Then ε = ξ′(m₃/₂/H)² needs m₃/₂/H ≈ √(ε/ξ′) ≳ 0.065. Closure (ξ′ ≤ 1.34) is trivially satisfied, but the "O(1) coefficient" naturalness is lost: ξ′ ~ 1e-2 is itself a small, unexplained number.
+- The identification ε ↔ (m₃/₂/H)² therefore survives only as a reparametrisation with a small ξ′. It does not explain ε.
+Net: ε for SERAPIS-ρ (and ε·I₁ at i) remains UNEXPLAINED. D616/D617 are downgraded to "reparametrisation, not explanation". Recorded as a correction, not a silent edit.
