@@ -13,7 +13,7 @@ Labels: **computed** = from locked scripts (exact Mukhanov–Sasaki, D588); **es
 | m_ν1 (Affleck–Dine LH_u, computed D646) | 2×10⁻¹³–9×10⁻¹¹ eV (T_R 1e3–1e5; thermal effects negligible, D653) → Σm_ν ≈ 0.0588 eV IF normal ordering (ordering is input from data, not predicted; lock D605 states NO) | same | — | estimate (D646/D646a) |
 | β_s = d²n_s/dln k² (lock D667) | −(3.0–4.6)×10⁻⁵ | same | −4/N*³ | computed |
 | f_NL^local / isocurvature | ≈ 0.01 / ~10⁻⁸ of ζ (D587; lock D605 said ≲10⁻¹⁰) | ≈ 0.01 | — | estimate/computed |
-| Superpartners | covariant completion (adopted, D647–D650): m3/2 ~ (2.5–11)×10⁵ GeV, scalars ~ m3/2, wino LSP 0.66–2.9 TeV, gluino 4.7–21 TeV (estimates); constant-W0 chain (lock D605 P5): none below ~10⁸ GeV | same | — | estimate |
+| Superpartners | covariant completion (adopted, D647–D650): m3/2 ~ (2.5–11)×10⁵ GeV, scalars ~ m3/2, wino LSP 0.66–2.9 TeV, gluino 4.7–21 TeV (estimates; Fermi-LAT 2507.15934 excludes winos 1.85–2.86 TeV and thermal wino DM ⇒ surviving wino 0.66–1.85 TeV, m3/2 ≈ (2.5–7)×10⁵ GeV, extra DM component needed, D713); constant-W0 chain (lock D605 P5): none below ~10⁸ GeV | same | — | estimate |
 | SERAPIS-E (derived branch, lock D693, post-hoc) | n_s 0.970–0.975, r (4.55–5.12)e-4, α_s −(9.4–10.6)e-4; Janus κ=1 (p=2√2) ≤6%; N* 48.4–49.9 | — | — | computed |
 | Reheating | T_R 10³–10⁵ GeV, stiff phase w ≈ 0.55, N* 46–49 | w = 5/7 | — | computed/estimate |
 

@@ -1,0 +1,9 @@
+T14 wino window 0.66-2.9 TeV; Fermi excludes 1.85-2.86 TeV (any fraction) and thermal 100% DM
+  surviving wino window 0.66-1.85 TeV -> m3/2 2.50e+05-7.02e+05 GeV (ratio check 3.788e+05 vs 3.793e+05), gluino 4.8-13.4 TeV
+  fraction of window (log) removed: 0.30
+  wino below 2.8 TeV is thermally underabundant => SERAPIS needs a non-wino DM component
+T15 colliders: wino lower end 660 GeV vs CMS 650 / ATLAS 660 GeV: at the edge (window lower end set by ATLAS itself); gluino 4.8 TeV vs ~2.3 TeV: factor 2.1 margin
+T16 ordering: NO input favoured, Δχ²(IO-NO)=4.62 -> ~2.1σ
+T16 ordering: NO input favoured, Δχ²(IO-NO)=9.41 -> ~3.1σ
+T17 birefringence: predicted 0 from inflaton sector vs 0.277±0.057 deg: 4.9σ -> needs another light axion
+T18 isocurvature ~1e-8 of zeta vs Planck beta_iso < ~few e-2: consistent
