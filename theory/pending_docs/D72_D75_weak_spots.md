@@ -4530,3 +4530,11 @@ r/(1 − n_s)² = 6.6, i.e. α_eff = 2.2; the fibre line (α = 2) gives r = 0.00
 inflation; the undeformed Twist (α = 1, Starobinsky-like, B1) could, but it is disfavoured by the crown fit (D410). What still differs: the Twist ties
 the same field to Λ and to the capture/FI sector (D436–D463), and makes the ΔN_eff ≈ 0.06–0.08 and β_reio/β_rec predictions. Fibre inflation's
 reheating/dark-radiation predictions (1809.01159) were not compared here (not read). Must be credited in v2. No scored result → WALL.
+
+**D465 (cycle 50, fast loop; fifth pass PART 3, LEFT; structural reasoning, no computation) — the LVS dark-radiation problem (volume modulus →
+its own light axion; e.g. 1809.01159 for fibre inflation) does not arise in the FI picture, for a structural reason.** The same intersection
+number that D462 requires (D·D_b·F ≠ 0, so that the FI term tracks the Twist's cycle) also gives the Twist's axion y a Green–Schwarz shift charge
+under the hidden D7 U(1). So y takes part in the Stückelberg mass (M_V ≈ g M_s ~ 1e14 GeV in the D453 band) and is not a light axion. This replaces
+D382's mass argument (from the D373 stabiliser), which does not apply to the FI version. Also, after capture the Twist's residual motion drains into
+φ through the bounces (D444–D447), not into a modulus → axion decay. Caveat: if several axions mix, the light combination may lie mostly along other cycles; its couplings are not
+checked. No scored result → WALL.
