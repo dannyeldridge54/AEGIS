@@ -13,3 +13,4 @@
 - Exact allowed strip in the (n_s, r) plane (D678, frozen D679) and new Fig. 5.
 - ρ strip computed exactly (D680), identical within 2.2%; combined strip frozen (D681); Fig. 5 shows both.
 - The strip as a reheating thermometer (D682, estimate).
+- Candidate origin of ε (D684): the covariant F-term tilts the plateau with m3/2 ≈ (2–4)e4 GeV; not yet self-consistent (vacuum mass, gauginos); distinct α_s ≈ −3e-3. Not frozen.
