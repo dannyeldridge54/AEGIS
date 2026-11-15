@@ -191,3 +191,5 @@ alone.
 **Twist-M case (ii) condition (DEEP 2.2):** the field still oscillates today (δφ ≈ 1e-4 M_P), so SM masses must be blind to it (β ≲ 1e-2–1e-3); in modular-flavour homes the dual modulus sets Yukawas, so a separate sector is required.
 
 **Variant Twist-M-L (D505, split/lens):** dark duality field A + heavy SM-facing modulus B with lens μ²ΔAΔB → β_eff < β_B m_A/m_B ≤ 2e-28 (stability-guaranteed dilution); condition: A must not enter the SM Kähler metric or gauge kinetic functions directly.
+
+**Twist-M-L (D506–D509):** B ≳ 100 TeV (or never displaced); lens automatically too weak to drag B; candidate home: A = U₃ (shape of the torus the SM D7-branes do not wrap), SL(2,Z)_{U₃} exact, SM blind to U₃ at leading order; cliff from mirror-instanton corrections (n ≈ 2π×37).

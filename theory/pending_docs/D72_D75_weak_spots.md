@@ -4791,3 +4791,25 @@ For m_B = 1e-3 eV to 1e5 GeV, β_eff,max = 2e-28 down to 2e-45 and the oscillati
 dynamics are untouched to that order. B's own force is short-ranged for m_B > 4e-3 eV. Caveat (the real condition): this covers potential mixing only. If A also enters the matter Kähler metric
 or the gauge kinetic functions directly (as the volume does for D7/D3 matter), that coupling is not diluted. So the requirement becomes: A appears only in the dark sector's K and W, and talks
 to the SM solely through the heavy B. That is a sharper, checkable model-building condition than 'SM blind'. Status: candidate variant on top of Twist-M.
+
+**D500 status (note).** Cloud reruns D3 and D5 were both killed, the second with nothing else running, so the memory growth is in the script (LSODA over the fast late oscillation). A DOP853 test
+crashed, so it is not a fix. D500 now waits on the PC route (DEVIATIONS D6).
+
+**D506 (Twist-M-L cycle 1; scored, PREREG_D506_D507_LENS; results/lens_d506_d507.txt) — B must be ≳ 100 TeV.** If B (the SM-facing modulus) is displaced after inflation, it decays gravitationally
+at T_dec = 0.01 / 0.17 / 0.90 / 5.5 MeV for m_B = 1 / 10 / 30 / 100 TeV. So m_B ≳ 100 TeV for BBN safety (the standard cosmological-moduli bound). Alternatively, B must never be displaced (its
+minimum is the same during and after inflation). The sgoldstino/soft scales of D432 (1e4–3e5 GeV) are the same order: plausible. Result.
+
+**D507 (Twist-M-L cycle 2; scored) — the lens is bounded by inflation too, but stability (D505) is tighter.** A moves ΔA ≈ 11.8 M_P during and after inflation, shifting B's minimum by μ²ΔA/m_B².
+Keeping B's displacement ≤ 1e-7 M_P needs μ²/m_B² ≤ 8.5e-9, i.e. β_eff ≤ 8.5e-9 (4e5 × below Cassini). D505's stability bound (β_eff < m_A/m_B ≤ 2e-28) is far tighter still, so the binding
+constraint remains stability. The lens is automatically weak enough that B is not dragged by A's large excursion. (The verdict label 'INFLATION BOUND DOMINATES' printed by the script compares only
+with Cassini; against D505 it does not dominate.) Result.
+
+**D508 (Twist-M-L cycle 3; structural reasoning) — a concrete home for the split.** On T⁶ = T²₁×T²₂×T²₃ (IIB orientifold), put the SM on D7-branes wrapping T²₁×T²₂, point-like in T²₃,
+and take A = U₃, the complex structure (shape) of the third torus. (i) SL(2,Z)_{U₃} is an exact duality of the torus, giving Twist-M's symmetry. (ii) The SM gauge kinetic function f = T₃ involves
+the 4-cycle volume, not U₃, and the SM matter Kähler metrics and Yukawas on branes transverse to T²₃ depend on U₁, U₂ (flavour-type) but not on U₃ at leading order. So A is naturally 'dark': the
+D505 condition is met by geometry, not by assumption. (iii) B can be U₁ or U₂ (the flavour moduli, heavy), with A–B contact only through bulk/flux terms (the lens). Caveats: 3-form fluxes generically
+involve all U's (need a flux choice leaving U₃ for the Twist superpotential), and brane-position moduli in T²₃ may couple. Open, but a specific, checkable construction.
+
+**D509 (Twist-M-L cycle 4; reasoning) — where the cliff comes from if A = U₃.** IIB D-instantons depend on Kähler moduli, not U, so the exponential cliff e^{−n(...)} in U₃ must come from
+large-complex-structure (mirror world-sheet-instanton-type) corrections to the flux superpotential, ~e^{2πiU}, the mirror of the IIA worldsheet instantons. A cliff with n ≈ 234 ≈ 2π × 37 then
+needs a ~37-fold charge or winding. That is consistent in size with D502's τ_c ≈ 40 if the 'one cycle' is the mirror 3-cycle. Not computed; flagged.

@@ -1,0 +1,7 @@
+== D506
+m_B=1 TeV: T_dec=0.01 MeV -> FAIL
+m_B=10 TeV: T_dec=0.17 MeV -> FAIL
+m_B=30 TeV: T_dec=0.90 MeV -> FAIL
+m_B=100 TeV: T_dec=5.49 MeV -> PASS
+== D507
+mu^2/m_B^2 <= 8.5e-09 -> beta_eff <= 8.5e-09 (vs Cassini 3e-3: inflation bound tighter by 4e+05) -> INFLATION BOUND DOMINATES
