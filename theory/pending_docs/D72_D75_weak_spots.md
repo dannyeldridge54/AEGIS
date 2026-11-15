@@ -5345,3 +5345,22 @@ Reasoning for SERAPIS:
 - Exponentially small Λ in these models needs m₃/₂ ≪ M_s, i.e. a LARGE radius today. That is the opposite of SERAPIS's τ = i vacuum.
 Verdict: route (ii) is incompatible with a vacuum at τ = i. With D560 and D561, the only surviving home class is a Wilson-line-free N = 1 plane (no N = 2 threshold), flux-free, M_s ≳ 1e17 GeV, with the SERAPIS-KL potential coming from a non-perturbative or nilpotent sector whose string origin is unknown.
 Status: home class narrowed to one option. The decisive open question is a non-perturbative, SL(2,Z)-invariant source on an N = 1 plane that is flat at the cusp. That is exactly where string-derived modular potentials diverge (D554), so it may not exist. Flagged as the critical test for whether SERAPIS can have a string home at all.
+
+## D563 — DEEP (Dp now, 23:13 CT; scored, locked PREREG_D563_SERAPIS_NP; results/serapis_np_d563.txt) — SERAPIS-NP: an instanton-type plateau inflates near Im τ ≈ 2 and escapes every home problem, at the price of tiny r
+Model: K = −ln(2 Im τ), V = V₀|j − 1728|²/(|j − 1728|² + 1728²). The approach to the plateau is e^{−4π Im τ}, as from an instanton.
+Checks: V(i) = 0, a minimum in all directions; single-valued.
+Results:
+- N* = 52: n_s = 0.9600, r = 2.5e-6 (−2.8σ SPA, −4.7σ SPA+DESI).
+- N* = 55.6: n_s = 0.9626, r = 2.2e-6 (−1.9σ, −3.8σ).
+- The pre-stated analytic expectation (n_s ≈ 1 − 2/N, r ≪ 1e-3) is confirmed; n_s comes out ~0.0015 below 1 − 2/N.
+- Inflation happens at Im τ* ≈ 2.07, ending at 1.44. The horizon scales exit near the square torus, NOT at the cusp.
+Why this matters:
+- Im τ ≈ 2 is far inside every bound: perturbativity Im T ≲ 25 even on an N = 2 plane (D560); KK tower M_KK ~ M_s/1.4 (D554); |b| condition (D553).
+- The decompactification, threshold and Scherk–Schwarz problems (D553–D562) all disappear, and a non-perturbative (instanton-like) origin is natural.
+Price:
+- r ~ 2e-6, unobservable by LiteBIRD or CMB-S4. It is falsified by any r ≳ 1e-4 detection.
+- n_s 0.960–0.963 sits slightly BELOW Kairos: tension 1.9–2.8σ with CMB-SPA and ≥ 3.8σ with SPA+DESI.
+Prior art: very close to Abe, Higaki, Kaneko, Kobayashi, Otsuka (arXiv:2303.02947): vacuum at τ = i from a weight-6 form, inflation near Im τ ≈ 1–3, r ~ 1e-5, n_s 0.962–0.974 with their Kähler flattening. SERAPIS-NP is essentially in their class; not novel.
+Status: a third branch exists. It is string-friendly (low Im τ) but disfavoured by current n_s and has unobservable r.
+- Data split: r ≳ 1e-3 → SERAPIS-KL type (needs the unsolved cusp home); r unobserved and n_s ~ 0.96 → NP type.
+- The current n_s (≥ 0.968) disfavours NP. So the "home" problem and the "n_s" problem pull in opposite directions.

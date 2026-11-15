@@ -1,0 +1,3 @@
+V(i)=0.00e+00, neighbours min=2.03e-06, minimum at i: True
+N*=52: y_end=1.441 y*=2.069 n_s=0.9600 r=2.54e-06 (-2.8 sigma SPA, -4.7 SPA+DESI); 1-2/N=0.9615
+N*=55.6: y_end=1.441 y*=2.075 n_s=0.9626 r=2.21e-06 (-1.9 sigma SPA, -3.8 SPA+DESI); 1-2/N=0.9640
