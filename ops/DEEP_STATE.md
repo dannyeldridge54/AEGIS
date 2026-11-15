@@ -27,3 +27,4 @@ next_topic: 2
 - tick 13 (21:19, 'Research like this again'): Twist-M homes — heterotic T or IIB U (exact SL(2,Z)); FI link lost → case (ii), β decisive.
 - tick 14 (21:17 scheduled): satisfied by DEEP 2.1b done minutes earlier (no duplicate search, to save credits); next topic 2 at the following tick.
 - tick 15 (21:20, 'Again'): Twist-M case (ii) needs SM blind to the Twist field (β ≲ 1e-2–1e-3 from oscillating masses), opposite of modular-flavour setups.
+- tick 16 (21:48 scheduled): covered by DEEP 2.3 and D518–D521 in chat within 30 min; no duplicate search.
