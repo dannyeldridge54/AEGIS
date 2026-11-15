@@ -5134,3 +5134,23 @@ What this means:
 - Compare the CFILQ class, where n is an integer so j^(n/3) = (E₄/η⁸)^n is single-valued: D535's "outside the class" is not only about stringy origin but also about global consistency.
 Verdict: SERAPIS-1 is a LOCAL effective model, valid in a region that avoids the branch cuts (the cusp-to-i path is inside it), not a global modular supergravity. The predictions along the path are unchanged.
 Paper wording to fix in the next version: "j^(−7/12) makes τ = ρ a wall" should read "a branch point of W; the model is defined away from cuts from ρ". It does not affect the published numbers. Self-check run off-axis as D537's lesson requires; no other fractional factor is left unchecked.
+
+## D544 — LEFT (pp 22:37 CT; literature, important) — MAJOR PRIOR ART MISSED: Kallosh & Linde, "SL(2,Z) Cosmological Attractors" (arXiv:2408.05203), plus arXiv:2412.19324
+What they do:
+- One complex field τ, kinetic term (3α/4)|∂τ|²/(Im τ)², and an exactly SL(2,Z)-invariant potential built from L_j = (1/4π) ln(|j|² + 1728²), L_η ∝ −ln(Im τ|η|⁴) or the Casas–Ibáñez Ĝ₂ form, for example V₀((I−1)/(I+1))ⁿ.
+- Inflation runs on the CUSP plateau, with the axion double-exponentially flat (stable; 2412.19324).
+- Predictions are α-attractor: n_s = 1 − 2/N, r = 12α/N². For a T² (CY) compactification, 3α = 1, i.e. our K = −ln(2 Im τ).
+- Vacuum: τ = ω is the minimum (V = 0) and τ = i is a dS saddle. Λ is added as a constant.
+- Supergravity: a nilpotent X with a chosen metric G_XX̄ encodes V. There is no holomorphic W(τ), so they avoid the branch and single-valuedness issues (cf. our D537, D543).
+Relation to SERAPIS:
+- SERAPIS-1 is in substance an SL(2,Z) cosmological attractor with α = 1/3. The cusp plateau, the α-attractor numbers (our "Kairos = α = 1/3 attractor", D537 referee point 2) and "Λ added" are all already in Kallosh–Linde (Aug 2024).
+- What differs:
+  - our vacuum at τ = i, with ω as a singular point, versus their minimum at ω with i a saddle;
+  - our choice of a holomorphic W (which caused D537/D543);
+  - the Chronos tilt branch;
+  - the proton-parity and string-home constraints.
+- Their G_XX̄ route is the clean way to make SERAPIS globally consistent. Put V in the X metric, not in W. That fixes D543 and keeps τ = i as the minimum by the choice of invariant (for example a function of |j − 1728|).
+Consequences:
+1. The published Zenodo v2.1 (10.5281/zenodo.24238833) does NOT credit 2408.05203 or 2412.19324, and the referee did not find them either. That is a credit omission in a published record. Fix: a v2.2 with the citations and a sentence placing SERAPIS as a variant of SL(2,Z) attractors. It needs Danny's explicit "Publish" for the new version.
+2. The novelty claim narrows further: what remains is the two-branch data framing, the τ = i-vacuum variant, the parity/home constraints and the audit trail.
+Status: flag raised to Danny; v2.2 to be prepared.
