@@ -5187,3 +5187,11 @@ The published numbers stand, and the model behind them is now well-defined. Shou
 - m_s = 1e-9 GeV: 20,093 crossings of x = 1 (the 20,000 cap was hit), first at N = 3.0. At the stop (N = 33.8): |ln x| = 7e-7 but |dφ/dN| = 2.2, so the field is still moving fast through the self-dual point and is not settled. Ω_x = 1.0 ≫ 0.05, so BBN fails. The remnant is 3.6e3 × DM. Verdict: NOT CAPTURED.
 - m_s = 1e4 GeV: a math-domain error (runaway), counted as no capture by D7.
 Status: the two-sided FI trap at the self-dual point does not capture the Twist-M field, so Twist-M case (i) FAILS. This does not affect SERAPIS, whose minimum is a heavy symmetric point with no capture needed (D517/D539/D545). J2 (Twist-M grid) is running; its first 6 points all FAIL with numerical runaways, consistent with this.
+
+## D548 — RIGHT + CENTRE (pp 22:41 CT; arithmetic, not scored) — the Λ sector in SERAPIS-KL can be the gauge-mediation SUSY-breaking sector
+In the Kallosh–Linde form, the vacuum energy is Λ = F_X² − 3|W₀|²/M_P², i.e. the F-term of the nilpotent X minus the gravitino term. Λ ≈ 0 then requires F_X ≈ √3 m₃/₂ M_P.
+- With √F_X = 85–140 TeV (the D474 gauge-mediation window), m₃/₂ = F/(√3 M_P) = 1.7–4.6 eV: exactly the D474 gravitino window.
+- So the same X that carries the inflaton potential (through its metric) can be the SUSY-breaking sector seen by gauge mediation, and the Λ cancellation is the usual F_X² ≈ 3m₃/₂²M_P² tuning.
+- The inflation scale enters only through the τ-dependent metric amplitude: V_inf/F_X² ≈ 3.4e41 at √F = 140 TeV. That is a large but harmless ratio set by the metric function, not a new tuning.
+- Λ itself remains tuned at the 1e-120 level, as in every such model. What this note shows is internal consistency, not an explanation. It also fixes the proton-parity status: m₃/₂ ~ eV, so the D542 margin is about 1e21.
+Status: the Λ sector is consistently embedded (tuned). Nothing in SERAPIS-KL conflicts with the gauge-mediation and gravitino results of the Twist line (D474, D523).
