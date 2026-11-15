@@ -1,0 +1,5 @@
+# PREREG D570 — the SERAPIS equation and a scorecard against current data (locked 2026-11-14 23:18 CT before computing)
+Equation (attractor form of SERAPIS, α = 1/3, invariant power p, lift δ):
+  n_s ≈ 1 − 2/N* + Δ_δ,   r ≈ (1 − n_s,0)²/p²  with  n_s,0 = 1 − 2/N*,   α_s ≈ −(1 − n_s,0)²/2.
+Part A (validation): compare the equation with the computed values (D545, D546, D564, D567) for p ∈ {1, 2, 3}, N* ∈ {52, 55.6}; report the fractional error in r and the absolute error in n_s (δ = 0 only).
+Part B (scorecard, POST-DATA — descriptive, not a prediction test): σ-distance of each variant's n_s band to Planck 2018 (0.9649 ± 0.0042), SPT+Planck (0.9636 ± 0.0035), CMB-SPA (0.9684 ± 0.0030), CMB-SPA+DESI (0.9728 ± 0.0027), P-ACT-LB (0.9752 ± 0.0030); r against BK18+Planck r < 0.036. Variants: Kairos p1, Chronos p1, HS-Kairos, HS-Chronos, SERAPIS-NP, Eisenstein s = 2.5 (values from D545, D546, D567, D563, D569). Grade: A (within 1σ), B (1–2σ), C (2–3σ), F (> 3σ), using the worst N* end. Single run.
