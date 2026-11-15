@@ -5920,3 +5920,21 @@ Remaining caveats:
 - (ii) Thermal effects can trigger early oscillation. They are weaker here because φ_osc is large and the plasma is diluted (T_R ≪ m_soft).
 - (iii) Q-ball formation (gravity-mediated, m_soft ~ 1e9): Q-balls would decay well before BBN at these masses (estimate).
 Status: baryogenesis is now via AD leptogenesis along LH_u. It predicts m_ν1 ≲ 1e-7 eV for T_R ≲ 1e7 GeV, i.e. Σm_ν at its minimum. Needs: fixing T_R from the actual inflaton decay channels (D597 showed T_R ∝ the N splitting; channels to the hidden/racetrack sector are not yet counted).
+
+## D601 — DEEP (Ddl 08:13 CT; reasoning + arithmetic, not locked) — the inflaton at τ = i is nearly "sterile": every linear decay to an equal-mass pair vanishes; T_R is set by flavour splittings, ~1e3–1e5 GeV
+Reasoning, building on D574A/D589a:
+1. Physical masses (fermion, scalar, gauge-boson thresholds) are modular invariants, so they are stationary at i. The linear coupling δτ·m²(τ)χχ vanishes after canonical normalisation.
+2. Kinetic couplings from the matter metric (2y)^{−k} survive the field redefinition only as current couplings (∂φ)·(χ*∂χ − c.c.). For χχ* final states, the on-shell matrix element is ∝ (m₁² − m₂²) = 0.
+3. Gravitational and trace couplings (φ/M_P)·T^μ_μ ∝ m², and the conformal-anomaly φFF ∝ ∂(threshold), reduce to derivatives of invariants: zero at i.
+4. The CP-odd δx·FF̃ coupling (∂ Im f ≠ 0) exists, but the oscillating mode is radial; the axial amplitude is ~1e-5 (D582). Negligible.
+5. What survives: OFF-DIAGONAL couplings between states of the same multiplet with DIFFERENT masses, ∝ (m_i² − m_j²)/M_P (D597's λ₁₂ ∝ ΔM is one case).
+T_R estimates (arithmetic):
+- Heavy-N doublet with ΔM/M ~ 0.1 (generic, non-degenerate; D597): T_R ~ 1e5 GeV.
+- Sfermion multiplets (m_soft ~ 1e9, O(1) splittings, ~20 states): g ~ √2 m_soft²/M_P, so T_R ~ 2–4e2 GeV.
+- SM fermions: negligible (masses ≪ m_φ, coupling ∝ m²).
+So T_R ≈ 1e3–1e5 GeV, dominated by the heaviest split multiplet (the heavy neutrinos).
+Consequences:
+- Above sphaleron decoupling (~150 GeV): OK for AD leptogenesis. With D599's scaling, m_ν1 ~ 1e-11 – 1e-9 eV: a sharp "massless lightest neutrino" prediction.
+- N*: T_R lower than D578's c_Γ = 1–10 (T_R 6e6–2e7) means a longer matter phase. ΔN* ≈ (1/12)ln(T_R,old⁴/T_R,new⁴)·… ≈ −(1/3)ln(60–2e4) ≈ −1.4 to −3.3 e-folds. Then n_s drops by ≈ 2ΔN/N² ≈ 0.001–0.003, to about 0.968–0.972, and y* moves inward. The direction stays the same; the D581 window must be re-run with this T_R (needs a lock).
+- Gravitino (D584, closed kinematically) and LSP (D592–D596) conclusions are unchanged.
+Verdict: the "sterile inflaton at a fixed point" structure is the key physics of two-term SERAPIS reheating. It gives low T_R, which favours AD leptogenesis with a massless lightest neutrino, and it shifts the n_s band down by ~0.001–0.003 (estimate).
