@@ -7,7 +7,7 @@ The Twist is the shape of a hidden torus. Stretched → it inflates; relaxed to 
 2. Twist-M (T→1/T duality, D490–D504): Λ at the self-dual point; field self-relaxes (tracker); w₀ = −1; needs fifth-force protection → lens.
 3. Twist-M-L (split/lens, D505–D511): dark duality field + heavy SM-facing modulus; stability guarantees β_eff ≤ 1e-28.
 4. Twist-1T (single torus, no tilt, D513) → SERAPIS (full SL(2,Z), D515–D517) → SERAPIS-1 (single torus, stiff vacuum, Λ at the square torus).
-## What the data decide (D521)
+## What the data decide (D521) — SERAPIS–Kairos (untilted) vs SERAPIS–Chronos (tilted)
 Untilted (predictive) versions: n_s 0.963–0.967, r 0.001–0.003 → fit CMB alone, 2.3–3.3σ from CMB+DESI. Tilted (one fitted ε): n_s 0.9736, r ≈ 0.0045 → fit both.
 The single open data question — is DESI's pull on n_s real? — chooses the branch. Tests: n_s to ±0.002 (SO/CMB-S4), r to ±0.001 (LiteBIRD/CMB-S4), Δβ birefringence tomography (LiteBIRD), ΔN_eff 0.05–0.08 (CMB-S4).
 ## Credit / prior art found today

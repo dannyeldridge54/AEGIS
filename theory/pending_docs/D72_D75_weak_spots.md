@@ -4909,3 +4909,6 @@ Twist-1T, SERAPIS k = 3, SERAPIS-1. With CMB-SPA+DESI, only the tilted ones fit 
 pull on n_s is real, therefore picks between 'predictive but DESI-tense' (SERAPIS-1, Twist-1T) and 'fits all but tuned' (Route A, Twist-M). The decisive future tests are n_s to ±0.002 (Simons Observatory/CMB-S4)
 and r: ~0.001 (untilted single-torus) vs ~0.0045 (tilted). LiteBIRD/CMB-S4 reach σ(r) ~ 1e-3, which separates them at ~3σ.
 D521a (correction): the computed table gives untilted versions at −1.5σ to −0.6σ vs SPA and −3.3σ to −2.3σ vs SPA+DESI (SERAPIS-1 at its D519 midpoint 0.9640: −1.5σ / −3.3σ); tilted ones at +1.7σ vs SPA and +0.3σ vs SPA+DESI. The D521 prose ranges were slightly off.
+
+**Naming (Danny 21:51 CT):** the two data branches of SERAPIS are named **SERAPIS–Kairos** (the predictive branch, untilted: SERAPIS-1/Twist-1T; n_s 0.963–0.967, r ≈ 0.001; kairos = the
+decisive, unmeasured moment, with the shape alone setting the time) and **SERAPIS–Chronos** (the tuned branch, one fitted tilt: Route A/Twist-M; n_s 0.9736, r ≈ 0.0045; chronos = measured, calibrated time).
