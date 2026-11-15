@@ -1,0 +1,2 @@
+[J1] (10000.0, 7599): FAILS (error: ValueError: math domain error) - counted as no capture (DEVIATIONS D7)
+[J1] a=7599 m_s=1e-09 GeV: M_s=2.65e+15 GeV; crossings 20093 (CAP HIT) (first N=2.990850544622496); stop N=33.778; x range [4.716e-03, 1.230e+01]; |ln x|(stop)=6.99e-07, |dphi/dN|(stop)=2.20e+00, Omega_x(stop)=1.00e+00; remnant rho/s=1.56e-06 GeV (x3.6e+03 DM)

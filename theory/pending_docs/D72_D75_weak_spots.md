@@ -5182,3 +5182,8 @@ Status: SERAPIS-KL now has both branches.
 - Kairos (D545): n_s 0.963–0.965, r 0.0012–0.0013, no tilt.
 - Chronos (D546): n_s 0.971–0.974, r 0.0020–0.0022, one tilt.
 The published numbers stand, and the model behind them is now well-defined. Should go into v2.2+ (prepared v2.2 does not yet mention D545/D546).
+
+## D547 — RIGHT (PC job J1 = D500 Twist-M case (i), scored by PREREG_D500 + DEVIATIONS D1–D7; results/pcjobs_J1_D500.txt) — NOT CAPTURED (both points)
+- m_s = 1e-9 GeV: 20,093 crossings of x = 1 (the 20,000 cap was hit), first at N = 3.0. At the stop (N = 33.8): |ln x| = 7e-7 but |dφ/dN| = 2.2, so the field is still moving fast through the self-dual point and is not settled. Ω_x = 1.0 ≫ 0.05, so BBN fails. The remnant is 3.6e3 × DM. Verdict: NOT CAPTURED.
+- m_s = 1e4 GeV: a math-domain error (runaway), counted as no capture by D7.
+Status: the two-sided FI trap at the self-dual point does not capture the Twist-M field, so Twist-M case (i) FAILS. This does not affect SERAPIS, whose minimum is a heavy symmetric point with no capture needed (D517/D539/D545). J2 (Twist-M grid) is running; its first 6 points all FAIL with numerical runaways, consistent with this.
