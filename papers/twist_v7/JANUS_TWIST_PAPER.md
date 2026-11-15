@@ -88,7 +88,7 @@ Comparisons use CMB-SPA n_s = 0.9684 ± 0.0030 and CMB-SPA+DESI 0.9728 ± 0.0027
 
 - **Modular-invariant superpotentials from gaugino condensation:** Cvetič, Font, Ibáñez, Lüst, Quevedo (1991); Font, Ibáñez, Lüst, Quevedo (1990); Gonzalo, Ibáñez, Uranga, arXiv:1812.06520; Leedom, Righi, Westphal, arXiv:2212.03876 (no dS at fixed points); Knapp-Pérez et al., arXiv:2304.14437.
 - **Modular-invariant inflation:** arXiv:2405.06497, 2407.12081 (log-type plateau; also species-scale control), 2405.08924, 2411.18603, 1604.02995, 2403.02125, 2503.13682.
-- **α-attractors and SL(2,ℤ) attractors:** Kallosh, Linde and collaborators; Kallosh & Linde, SL(2,ℤ) cosmological attractors, arXiv:2408.05203, and axion stability in them, arXiv:2412.19324 (the closest prior work: cusp plateau with exact SL(2,ℤ), α-attractor predictions, Λ added; minimum at ω); arXiv:2510.18656 (n_s for attractors with reheating).
+- **α-attractors and SL(2,Z) attractors:** Kallosh, Linde and collaborators; Kallosh & Linde, SL(2,ℤ) cosmological attractors, arXiv:2408.05203, and axion stability in them, arXiv:2412.19324 (the closest prior work: cusp plateau with exact SL(2,ℤ), α-attractor predictions, Λ added; minimum at ω); arXiv:2510.18656 (n_s for attractors with reheating).
 - **Fixed points and trapping:** attraction of moduli to fixed points, arXiv:2211.00659; trapping at enhanced-symmetry points, hep-th/0403001.
 - **Moduli fixing and orbifold structure:** D-term moduli fixing, arXiv:1110.3333; threshold duality groups in orbifolds, hep-th/9303017; flux statistics, arXiv:2011.09154.
 - **Matter parities:** arXiv:2207.14014, 1812.11072, 1102.3595; Ibáñez–Ross (1991); Dreiner, Luhn, Thormeier, hep-ph/0512163.
