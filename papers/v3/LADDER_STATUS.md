@@ -5,6 +5,6 @@
 - [x] R4 figures 1–4 — papers/v3/figs/ (make_figs.py; PDF + PNG; checked visually)
 - [x] R5 LaTeX draft — serapis_v3.tex + PDF (6 pp; clean compile, exit 0; abstract filled in R7)
 - [x] R6 prediction sheet — prediction_sheet.md
-- [ ] R7 drafts (abstract, cover letter, endorsement request, experiment notes)
+- [x] R7 drafts — drafts/ (abstract in tex + abstract.txt 1437 chars; cover letter, endorsement request, experiment notes; NONE SENT)
 - [ ] R8 referee pass — NEEDS DANNY
 - [ ] R9 stage Zenodo package — NEEDS DANNY ("Publish")
