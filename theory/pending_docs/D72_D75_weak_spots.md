@@ -6050,3 +6050,4 @@ Open for SERAPIS-ρ:
 - (ii) reheating (sterile-inflaton logic applies, D601), gravitino/LSP/dilaton chains as for two-term (D584–D596);
 - (iii) a dedicated novelty audit. KL already put vacua at ρ (2408.05203), and Casas–Ibáñez use L; the combination plateau(j) + ε·L may exist.
 Decision is Danny's: keep SERAPIS at τ = i (consistent, ε·I₁ unexplained) or move to SERAPIS-ρ (string-natural ingredients, vacuum at ρ). Both give the same D605-type forward numbers.
+D610a (wording fix, same tick): the ε = 4e-5 line should read "FAILS the 2σ rule at N* = 47 (−2.4σ)". It is not allowed. The verdict (only ε = 6e-5 passes) is unchanged.
