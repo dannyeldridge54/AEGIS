@@ -6092,3 +6092,7 @@ Remaining, as for two-term: the gravitino/dilaton/LSP chain (D584–D596; vacuum
 - Baryogenesis: AD along LH_u (D599–D604) is vacuum-independent. T_R ≈ 1e3–1e5 GeV under the D601 sterile logic, which carries over because physical masses are stationary at ρ too (ρ is a fixed point of ST).
 - So the same Σm_ν ≈ 0.059 eV (NO) prediction holds.
 Verdict: SERAPIS-ρ passes the same consistency chain as two-term SERAPIS, with a lighter inflaton (~7e10 GeV), a lighter gravitino (≳ 3.5e10) and lighter soft masses (~2e8). Estimates; the AD and dilaton toys were not re-run at ρ.
+
+## D615 — FORWARD PREDICTIONS (Ddl 08:28 CT; locked PREREG_D615_FORWARD_RHO) — SERAPIS-ρ frozen alongside D605
+Bands: n_s 0.969–0.972; r 4.6–5.1e-4; Σm_ν ≈ 0.059 eV (NO); no low-scale SUSY; negligible isocurvature.
+These overlap D605 (two-term, τ = i: n_s 0.970–0.975, r 4.8–5.7e-4). Together they form the current SERAPIS forward package. The one weak discriminator: n_s ≳ 0.974 favours the τ = i version.
