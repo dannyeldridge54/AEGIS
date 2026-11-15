@@ -5392,3 +5392,15 @@ Conclusion: a string-home-compatible SERAPIS fits CMB-SPA (Kairos p ≥ 2, D564)
 The fork becomes:
 - DESI-n_s real → Chronos → weaker coupling (Im S ≳ 3) or no perturbative home;
 - CMB-only n_s → home-safe Kairos (p ≥ 2, r ~ 1–3e-4).
+
+## D566 — DEEP (Dp now, 23:22 CT; scored, locked PREREG_D566_BOUND_ALPHA; results/bound_alpha_d566.txt) — the home bound is Im T ≲ k·α⁻¹(M_s) ≈ 29: home-safe Kairos fits, and DESI-level Chronos is marginal
+Identity: Im T_max ≈ 4πk Im S = k·α⁻¹(M_s).
+One-loop running (SM to 1e5 GeV, then MSSM): α⁻¹(U1, SU2, SU3) = 25.4, 28.7, 29.5 at M_s = 1e17 GeV and 24.0, 28.5, 30.1 at 3.7e17. With k = 1 for SU(2)/SU(3), Im T_max ≈ 28.5–28.7. U(1)_Y with k = 5/3 gives about 40–42.
+Inside the bound:
+- Kairos p = 3 (y* = 12): inside.
+- Kairos p = 2 (23.5–24.2): inside.
+- Chronos at the DESI n_s with p = 2 (y* ≈ 27): inside, marginally. That y* is the D565 interpolation for δ ≈ 0.0013, a post-hoc value, not a locked fit.
+- Kairos p = 1 (112–119): outside.
+Caveats: Y ≈ 4π Im T is an asymptotic coefficient, and O(10%) margins are not decisive. The bound is ~29, not D560's 25 (which used Im S = 2, i.e. α⁻¹ = 25).
+Status: both branches can sit inside a perturbative heterotic home if p ≳ 2, but Chronos only with a retuned tilt (δ ≈ 0.0013 instead of 0.0023), just under the bound, and with r ~ 4–6e-4 (estimate).
+A clean falsifiable package (home-consistent SERAPIS): n_s 0.964–0.966 with r 1–3e-4 (Kairos p = 2–3), or n_s ≈ 0.973 with r ≈ 4–6e-4 (Chronos p = 2, retuned). Locking Chronos p = 2 with δ = 0.0013 as a new forward prediction needs its own PREREG and is scored only on future data.

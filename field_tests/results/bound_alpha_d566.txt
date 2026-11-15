@@ -1,0 +1,10 @@
+M_s=1.0e+17: alpha^-1 (U1,SU2,SU3) = 25.4, 28.7, 29.5 -> Im T_max (k=1) = 28.7
+   Kairos p=3: y*=12.0-12.2 -> INSIDE
+   Kairos p=2: y*=23.5-24.2 -> INSIDE
+   Chronos p=2 at DESI n_s (est.): y*=27-27 -> INSIDE
+   Kairos p=1: y*=112-119 -> OUTSIDE
+M_s=3.7e+17: alpha^-1 (U1,SU2,SU3) = 24.0, 28.5, 30.1 -> Im T_max (k=1) = 28.5
+   Kairos p=3: y*=12.0-12.2 -> INSIDE
+   Kairos p=2: y*=23.5-24.2 -> INSIDE
+   Chronos p=2 at DESI n_s (est.): y*=27-27 -> INSIDE
+   Kairos p=1: y*=112-119 -> OUTSIDE
