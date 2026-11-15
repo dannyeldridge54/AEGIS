@@ -6,5 +6,5 @@
 - [x] R5 LaTeX draft — serapis_v3.tex + PDF (6 pp; clean compile, exit 0; abstract filled in R7)
 - [x] R6 prediction sheet — prediction_sheet.md
 - [x] R7 drafts — drafts/ (abstract in tex + abstract.txt 1437 chars; cover letter, endorsement request, experiment notes; NONE SENT)
-- [ ] R8 referee pass — NEEDS DANNY
+- [x] R8 referee pass — referee/R8_REFEREE_REPORT.md (MAJOR REVISION; D636 + D585a). Fixes = R8b, pending Danny
 - [ ] R9 stage Zenodo package — NEEDS DANNY ("Publish")
