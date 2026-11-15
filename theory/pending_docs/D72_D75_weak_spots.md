@@ -6211,3 +6211,18 @@ Possible escapes (unverified):
 - (b) only the states that become light at T = U feel the relevant Hubble splitting. That isolates the 20·log|J − J| piece, which gives a well at i and the right-sign (+125.7y) tilt.
 - (c) a different U (not i) or a Wilson-line deformation changes the weights.
 Verdict: D620–D623's "HM explains |j − 1728| and ε" is DOWNGRADED to conditional. It requires the j-part to enter V without the universal η-part (escape b), or a cancellation via (a). D623's ε ≈ 3(M_s/M_P)²/16π² estimate implicitly assumed only the light states contribute. Not resolved; a full computation is needed.
+
+## D625 — DEEP (Ddl 08:53 CT; reasoning linking D577 and D624, not locked) — the tower part should enter V in the species form (Casas–Ibáñez), not as −264·L; that supports escape (b) of D624, conditionally
+- D624 assumed the one-loop potential is ∝ the full HM integral Ĩ₂,₂, which includes the universal η-part (264·log(2T₂U₂|ηη|⁴)) from the infinite KK/winding tower.
+- But the explicit one-loop vacuum energy of the TOWER under SUSY breaking was computed by Casas & Ibáñez ("Moduli self-fixing", arXiv:2507.05345, D577):
+  - V ≈ (m₃/₂²M_P²/(8π)²)(c − η/N), with N the species number, N ≈ −6 ln(2y|η|⁴) + Ñ₀;
+  - equivalently the species form δV ∝ y²|Ĝ₂|²/N² (D577).
+- That form tends to a CONSTANT at the cusp (the 1/N correction) rather than growing linearly. It has minima at the desert points (i and ρ, where Ĝ₂ = 0).
+- So, by CI's computation, the tower's universal part gives a benign, mass-without-tilt contribution: at i it is quadratic and positive (D577 slopes 2.0), with no wrong-sign linear slope.
+- The linear tilt can then come only from the extra states that become light at T = U = i, whose CW contribution ∝ ln|J(T) − 1728| has the right sign for a well at i AND an upward slope (+125.7y per HM's weight 20).
+- That is D624's escape (b), now motivated by CI's explicit tower result rather than assumed.
+Status: the HM route is conditionally viable. A careful one-loop computation must still confirm:
+1. CI's species form for the tower in our set-up (U = i, N = 2 plane);
+2. the sign and size of the light-state CW term;
+3. that the two add as described.
+The D623 estimate ε ≈ 3(M_s/M_P)²/16π² refers only to the light-state term, consistent with this split.
