@@ -5065,3 +5065,21 @@ Comparison (honest):
 - This is a sharper statement than "r is small" and is worth putting in the paper's predictions.
 Credits already listed for both papers (ZENODO_UPDATE); this note adds the comparison.
 Status: SERAPIS is positioned as the large-r, cusp-plateau alternative to in-class modular hilltops. A decisive near-term test is r ≥ 5e-4 vs < 5e-4.
+
+## D537 — CORRECTION (independent referee, 22:30 CT; verified by its script, ~10 s) — Λ at τ = i is WITHDRAWN; the vacuum is supersymmetric Minkowski
+Finding: serapis1_d517.py builds (j−1728)^{1/2} with the principal square root.
+- That root flips sign across the line through τ = i (sqrt(j−1728)/(τ−i) jumps from −157.57i to +157.57i), so F = η⁻²H is NOT holomorphic at the vacuum.
+- The holomorphic choice is E₆/η¹² ≈ −157.57i (τ−i). With it, H ≈ j^{−7/12}[157.6·(…)(τ−i) + c] has a zero at |τ − i| ~ 1e-55. That is a supersymmetric Minkowski point with V = 0, not Λ.
+- E₆/η¹² is odd under S, while c·j^{−7/12} is even. So the c-term breaks SL(2,Z) unless c = 0.
+- This agrees with the no-go of Leedom–Righi–Westphal (arXiv:2212.03876): no dS at τ = i from H ∝ (j−1728)^{1/2}.
+Withdrawn:
+- D517 (2) "V(i) on the Λ target" and (4) "c = e^{−121.6}, instanton-sized".
+- Everything built on them: D531's input S_Λ = 243.2 (the D531 verdict is void, not just FAIL), the synthesis line "Λ is the leftover energy at the square torus", and the paper's Λ claims.
+Survives: the plateau inflation numbers (n_s, r, N*; D518–D520, D525, D526) and a heavy, supersymmetric Minkowski minimum at τ = i (m ~ 4e13 GeV, to be recomputed at the model's own N*). Λ returns to an added constant (the standard tuning).
+Other referee points accepted:
+- Kairos is the α = 1/3 attractor (K = −ln 2Im τ), not a modular-specific prediction.
+- The D515 table row used N* = 58.09 (wrong history).
+- "Every computation pre-registered" should read "every scored test". The D525 DEVIATIONS file was committed together with its rerun result.
+- For D528/D529 only the supergravity convention applies (W weight −1); the rigid solutions are irrelevant. A non-zero ⟨W⟩ (gravitino mass) breaks the Z₄^R/Z₈^R.
+Zenodo: the referee verdict is NOT READY until these are fixed. Post as a SEPARATE record, a status/synthesis preprint.
+Process note: my own checks missed the branch issue, because the 200-digit runs looked only along the imaginary axis (Re τ = 0), where the sign flip is invisible. Lesson: holomorphy checks must go off-axis.
