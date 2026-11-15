@@ -1,9 +1,9 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 30
-consecutive_walls: 0
-cycle: 21
-next_part: 11
+consecutive_walls: 1
+cycle: 22
+next_part: 1
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -67,3 +67,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 19 (18:37, 'pp'): PART 8 second pass — D429 corrections don't touch DM (extra yield ≲4e-21). WALL 1.
 - cycle 20 (18:38, tick): PART 9 second pass — D430 gravitino window 1–4.7 eV (√F 65–140 TeV); ΔN_eff 0.047 (0.02–0.06). Result → walls 0.
 - cycle 21 (18:40, 'pp'): PART 10 second pass — D431 portal partner must be SM-singlet & U(1)_X-neutral (mirror pair for anomalies) and L-conserving, else m_ν 0.8 eV–0.6 MeV. Result → walls 0.
+- cycle 22 (18:42, 'pp'): PART 11 second pass — D432 other moduli SUSY-stabilised; sgoldstino 1.3e4–2.8e5 GeV via strong coupling (consistent with D430). WALL 1. SECOND PASS DONE.

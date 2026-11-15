@@ -4240,3 +4240,14 @@ seesaw: m_ν ≈ y'² v_EW²/m_ψ = 0.76 eV–0.6 MeV for y' = 5×10⁻³–0.1 
 case. So ψ, ψ̄' must form an L-conserving (Dirac, inverse-seesaw-like) pair; then light neutrino masses are untouched and only the tiny
 mixing angles y' v_EW/m_ψ ≈ 10⁻⁹–3×10⁻⁵ remain (negligible for flavour and unitarity). With these two choices F1 (α frozen, D417) and the
 neutrino sector (Σm_ν ≈ 0.06 eV, D355b) stand. (c) CENTRE: pass with recorded requirements. Result → walls 0.
+
+**D432 (cycle 22, "pp"; second pass PART 11 string embedding, WHOLE; literature + arithmetic) — second pass complete; the eV gravitino adds
+two embedding requirements, both consistent with the strongly coupled messenger sector D430 already needs.** (1) Every modulus other than the
+Twist must be stabilised supersymmetrically (fluxes, heavy), since anything fixed by SUSY breaking would get m ~ m_3/2 ~ eV and mediate a
+long-range force or a moduli problem; the Twist itself is pinned by the χ condensate (m ~ 10⁸–10¹¹ GeV), and the birefringence axion is light
+by design but CP-odd (no force on matter at linear order). (2) The SUSY-breaking field X (D292's Polonyi-type field) must not be an eV-mass
+scalar: with a strongly coupled hidden sector at Λ ~ √F, the sgoldstino mass ~ 2F/Λ ≈ 1.3×10⁴–2.8×10⁵ GeV (√F = 65–140 TeV, Λ = √F–10√F;
+computed), heavy enough — the same strong coupling (y ~ 4π) that 1608.01610 needs for m_h = 125 GeV with m_3/2 ≳ 1 eV. Open items unchanged:
+local (T − T_E) origin (D388), control at x ≲ 1 (now down to x ~ 10⁻⁸ with Route A, D423), TCC/dS (D408, D413, D427). Hidden U(1)_X content now
+specified (D417, D422, D431): vector-like χ, χ̄; ψ, ψ̃ with neutral partners coupled to L H_u (L-conserving). No new scored result → WALL 1.
+SECOND PASS DONE (cycles 12–22): corrections to the published paper are queued as v2 items.
