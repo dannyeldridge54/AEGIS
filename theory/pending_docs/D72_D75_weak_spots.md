@@ -4703,3 +4703,8 @@ Tension: the tracker 'self-relaxation' (D492) and fifth-force screening (D493) c
 kination (N ≈ 1–2), overshoots, and is pulled back by a two-sided V-shaped soft potential (duality-screened on both sides). That is the original capture story moved to x = 1, so
 the remnant conditions (D444–D468) apply again; an eV soft mass keeps them mild (D467-type). Not yet run. Case (ii), no FI: needs β ≲ 3e-3. Corrections pending: ε re-fit for
 the longer kination (D496: ΔN* = +0.89). Next decisive computation: the full case-(i) run (Twist-M + two-sided FI + radiation from the end of inflation).
+
+**D501 (cycle 76, "pp"; Twist-M PART 2; scored, locked PREREG_D501_TWISTM_REFIT; results/twistm_refit_d501.txt) — Twist-M predictions after the kination correction.**
+At N* = 58.09 (D496), ε = 1.494e-7 gives n_s = 0.9736 with **r = 0.00435, α_s = −7.6e-4** (was r = 0.00453, −8.0e-4 at N* = 57.2). The Λ condition moves n only to 234.017
+(held 234.054; a 0.02% change, negligible). Twist-M's r now sits slightly below non-symmetric Route A (0.0046) and just above the fibre line (0.0042): distinguishing them
+needs σ(r) ~ 1e-4, beyond planned experiments. Result → walls 0.
