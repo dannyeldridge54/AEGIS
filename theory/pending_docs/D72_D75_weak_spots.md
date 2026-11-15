@@ -6196,3 +6196,18 @@ Caveats (large):
 - During inflation the CW term's H-dependence varies along the trajectory; this estimate treats it as constant.
 - Not computed.
 Status: this is the best current candidate explanation of ε, for the τ = i branch via HM and the ρ branch via the analogous threshold. It suggests a testable relation, ε ↔ M_s, but only if the O(1) factors can be fixed. Needs a locked, explicit CW computation with the HM spectrum.
+
+## D624 — DEEP (Ddl 08:51 CT; HM coefficients + arithmetic, not locked) — CAUTION on D620–D623: with Harvey–Moore's actual weights, the universal η-part dominates the cusp slope with the OPPOSITE sign; the HM route works only if the j-part enters V separately
+Harvey–Moore eq. 6.7 (fetched): Ĩ₂,₂ ⊃ +20·log|J(T) − J(U)| + 264·[log(2T₂U₂|η(T)η(U)|⁴) − 𝒦] + … The gauge threshold is ∝ −(1/12)(1/16π²)(Ĩ₂,₂ − I₂,₂) (eq. 4.16).
+With U = i fixed: Ĩ ⊃ 20·ln|J(T) − 1728| − 264·L(T) + const.
+- Cusp slope per unit y: +20·2π = +125.7 versus −264·(π/3) = −276.5, a net of −150.8. The η-part dominates.
+- Near i: 20·ln|J − 1728| is log-singular (a well or a peak, depending on the overall sign). −264·L contributes Hessian (+78.7 in x, −342.7 in y), but the log term dominates close to i.
+Sign analysis, if V ∝ ±Ĩ via a Hubble-induced CW potential over the whole tower:
+- +Ĩ: a log WELL at i (a minimum, good), but the cusp slope is −151y: V DECREASES toward the cusp, which drives decompactification and gives the wrong-sign tilt. ✗
+- −Ĩ: the right-sign tilt, but a log PEAK at i. ✗
+So with the full Ĩ₂,₂ the HM route CANNOT give both a τ = i minimum and the upward tilt.
+Possible escapes (unverified):
+- (a) the gauge threshold is Ĩ − I₂,₂, and the subtraction can change the η coefficient (I₂,₂ is the DKL integral). The right object for a CW potential must be identified.
+- (b) only the states that become light at T = U feel the relevant Hubble splitting. That isolates the 20·log|J − J| piece, which gives a well at i and the right-sign (+125.7y) tilt.
+- (c) a different U (not i) or a Wilson-line deformation changes the weights.
+Verdict: D620–D623's "HM explains |j − 1728| and ε" is DOWNGRADED to conditional. It requires the j-part to enter V without the universal η-part (escape b), or a cancellation via (a). D623's ε ≈ 3(M_s/M_P)²/16π² estimate implicitly assumed only the light states contribute. Not resolved; a full computation is needed.
