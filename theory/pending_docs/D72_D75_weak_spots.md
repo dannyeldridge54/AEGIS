@@ -6591,3 +6591,8 @@ Compare/contrast:
 - vs itself (C = 0, untilted Epstein plateau): n_s ≈ 0.961, r ≈ 3.6e-4 — same as Kairos (0.959–0.961, 3.3–3.7e-4). The Epstein plateau and the j-plateau share the untilted attractor: both are e^{−2√2φ} plateaus.
 - Janus, κ = 1 (tilt ∝ Ê ∝ e^{+2√2φ}, plateau 1 − 1/Ê, so p = q = 2√2): general relation (D669) predicts α_s to 3.5–5% on all four points (D689's 18% offset came from using the wrong p). This is the κ = 1 member of the Janus family working without an offset term.
 VERDICT: SERAPIS-E is exact-spectrum viable and sits on the frozen strip. Target n_s 0.970–0.975 needs C = (1.0–1.3)e-6, i.e. Im S·Im ρ = 15N/(64π⁶C) ≈ 190–245 N. Still post-hoc; next: freeze a SERAPIS-E lock (bands above) and add as the derived branch in the paper.
+
+## D693 (CENTRE) — SERAPIS-E frozen and written into the paper
+Lock PREREG_D693_SERAPIS_E_FROZEN (+ sha256): n_s 0.970–0.975, r (4.55–5.12)e-4, α_s −(9.4–10.6)e-4, Janus κ=1 (p=2√2) ≤ 6%, N* 48.4–49.9, C = (1.0–1.3)e-6 ⇔ Im S·Im ρ = 188–244 N; post-hoc, scored on future data only.
+Paper: new Sec. "A derived branch: SERAPIS-E" (before Limitations), ref BHK2005 (hep-th/0508043, JHEP 11 (2005) 030); now 12 pages. Prediction sheet: SERAPIS-E row + ε-origin line updated.
+Not yet done: arXiv tarball/Zenodo v3.1 rebuild (needs Danny's "Publish" for Zenodo); outreach drafts not updated.

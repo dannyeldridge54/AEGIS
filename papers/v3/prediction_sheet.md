@@ -14,6 +14,7 @@ Labels: **computed** = from locked scripts (exact Mukhanov–Sasaki, D588); **es
 | β_s = d²n_s/dln k² (lock D667) | −(3.0–4.6)×10⁻⁵ | same | −4/N*³ | computed |
 | f_NL^local / isocurvature | ≈ 0.01 / ~10⁻⁸ of ζ (D587; lock D605 said ≲10⁻¹⁰) | ≈ 0.01 | — | estimate/computed |
 | Superpartners | covariant completion (adopted, D647–D650): m3/2 ~ (2.5–11)×10⁵ GeV, scalars ~ m3/2, wino LSP 0.66–2.9 TeV, gluino 4.7–21 TeV (estimates); constant-W0 chain (lock D605 P5): none below ~10⁸ GeV | same | — | estimate |
+| SERAPIS-E (derived branch, lock D693, post-hoc) | n_s 0.970–0.975, r (4.55–5.12)e-4, α_s −(9.4–10.6)e-4; Janus κ=1 (p=2√2) ≤6%; N* 48.4–49.9 | — | — | computed |
 | Reheating | T_R 10³–10⁵ GeV, stiff phase w ≈ 0.55, N* 46–49 | w = 5/7 | — | computed/estimate |
 
 ## Parameter-free consistency relation (Janus, D635)
@@ -45,7 +46,7 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 | 21-cm / SPHEREx | α_s, f_NL | σ(f_NL) ~ 1 | f_NL ≈ 0 |
 
 ## What is NOT predicted (stated limits)
-- The size of ε (the tilt strength) is fitted to the low-T_R window, not derived; its microscopic origin is open (D620–D631, D684–D687: not from the supergravity sector; tilt shape identified with the N = 2 threshold at ρ).
+- The size of ε (the tilt strength) is fitted to the low-T_R window, not derived; its microscopic origin is open (D620–D631, D684–D687: not from the supergravity sector; tilt shape identified with the N = 2 threshold at ρ). SERAPIS-E (D689–D693) derives a tilt of natural size from the Berg–Haack–Körs one-loop Kähler correction, Im S·Im ρ ≈ 190–245 N; plateau placement in the uplift is still by hand.
 - Superpartner window assumes the modular-covariant completion, X-independent gauge kinetic functions (anomaly-mediated gauginos) and initial conditions 6–12 e-folds before horizon exit, higgsino threshold (window ends ×2); dilaton–LSP bound relaxes to m_Y ≳ 35 H_end (winos re-thermalise, but gravitinos from Y decays do not; D652, D658); gravitinos decay before BBN (D651); AD thermal effects negligible (D653); Weinberg operator non-zero at i with k_L = k_Hu = 1 (D654a); covariant completion: centre gives ordinary matter parity at ρ (D661) and at τ = i with Γ2 doublets (D663–D664); dim-5 coefficients ≲ 5e-3 (D657).
 - Preheating inefficient (q ≲ 2e-4 for m0 ≲ m_φ) and φ → gravitino + inflatino closed (m_inflatino = 4/3 m3/2) — estimates, D641. If either were efficient, N* would rise 6–9 e-folds and Chronos would leave its band.
 - Collider signals: none expected at LHC/FCC energies.
