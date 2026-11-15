@@ -4514,3 +4514,11 @@ large cycle t_b, the triple intersection D·D_b·F must be non-zero. In swiss-ch
 'SM on D3/small cycle'), small and large divisors do not intersect (D_s·D_b = 0), so a small-cycle D7 has an FI term independent of the Twist. That would
 remove the capture mechanism. So the geometry must be of fibred/non-diagonal type (e.g. K3-fibred CY with a small divisor meeting the big one,
 as in fibre-inflation-type models), with the SM on D3s or a separate blow-up. This is a model-building condition, not a scored result → WALL.
+
+**D463 (cycle 48, "pp"; fifth pass PART 1/5/8 → F7; scored, locked PREREG_D463_HIDDEN_DR; results/hidden_dr_d463.txt) — SAFE: the hidden radiation
+that the φ remnant annihilates into adds ΔN_eff = 0.013, but this sets a new upper limit on the energy share, ε_h ≤ 5.5e-5.** With g_h = 10
+light hidden dof and the D446 ceiling ε_h = 1e-5, T_h/T = 0.102 at capture rises to 0.218 at BBN (SM entropy dumps), giving ΔN_eff = 0.013. Total budget
+0.047 (gravitino, D430) + 0.005–0.021 (KK, D458) + 0.013 = 0.065–0.081 < 0.14. ΔN_eff ∝ ε_h, so the limit is ε_h ≤ 5.5e-5 (worst KK case). The hotter
+D447 case ε_h = 1e-3 (T_h/T = 0.32) is excluded (ΔN_eff = 1.3), so only D447's colder column applies. Margin: ×5 above the D436/D446 estimate ≤ 1e-5.
+Prediction sharpened: total ΔN_eff ≈ 0.06–0.08 (CMB-S4 σ ≈ 0.03 → 2–3σ reach). The v2 list is updated (ΔN_eff 0.02–0.06 → 0.06–0.08 if the hidden sector is present).
+CENTRE: balanced.

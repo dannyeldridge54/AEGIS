@@ -163,3 +163,5 @@ alone.
 **Centre-confirmed (D460):** even a gravity-mediated eV soft mass pins the field before BBN (return at ≈ 240 GeV, as predicted by D459's √m_s law); no direct SUSY-breaking coupling for φ needed.
 
 **Condition (D461–D462):** SM on D3s/small blow-up; hidden FI D7 on a small divisor that intersects the Twist's large divisor → fibred (non-swiss-cheese) Calabi–Yau.
+
+**Centre-confirmed (D463):** hidden radiation adds ΔN_eff ≈ 0.013 → total ≈ 0.065–0.081 (< 0.14); requires condensate energy share ε_h ≤ 5.5e-5.

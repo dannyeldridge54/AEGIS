@@ -1,0 +1,5 @@
+eps_h=1e-05: xi0=0.102, xi_BBN=0.218, dN_eff(hidden)=0.0130; total with 0.047+0.005 = 0.065
+eps_h=1e-05: xi0=0.102, xi_BBN=0.218, dN_eff(hidden)=0.0130; total with 0.047+0.021 = 0.081
+eps_h=1e-03: xi0=0.321, xi_BBN=0.691, dN_eff(hidden)=1.3020; total with 0.047+0.005 = 1.354
+eps_h=1e-03: xi0=0.321, xi_BBN=0.691, dN_eff(hidden)=1.3020; total with 0.047+0.021 = 1.370
+largest eps_h (worst KK): 5.53e-05; VERDICT: SAFE
