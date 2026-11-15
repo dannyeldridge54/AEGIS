@@ -1,0 +1,4 @@
+# PREREG D551 — selection rule at the τ = i vacuum for the D529 parity assignments (locked 2026-11-14 22:44 CT before computing)
+At τ = i, S fixes τ; a level-1 modular form f of weight k obeys f(i) = i^k f(i), so f(i) = 0 unless k ≡ 0 (mod 4) (e.g. E₆(i) = 0). Hence a superpotential coupling Y(τ)Π Φ needs its coefficient form weight k_Y ≡ 0 (mod 4) to be non-zero at the vacuum (trivial-representation/level-1 couplings).
+Supergravity convention (W weight −1): k_Y = Σ k_i − 1, where k_i are the actual weights. D528/D529 fixed k_i only mod 2 (k_i = n_i/M); here each k_i may be lifted by +2 (k_i ∈ {n_i/M, n_i/M + 2}).
+For each D529-passing assignment (Z₄^R: 8, Z₈^R: 16), search the 2⁷ lifts for one where all required couplings (QHuU, QHdD, LHdE, HuHd, LHuLHu) have k_Y ≡ 0 (mod 4) [k_Y must also be ≥ 0 and an even integer; weight-0 coefficient = constant allowed]. Report how many assignments admit such a lift. PASS if ≥ 1.
