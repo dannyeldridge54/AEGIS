@@ -6241,3 +6241,16 @@ The D623 estimate ε ≈ 3(M_s/M_P)²/16π² refers only to the light-state term
    - D577 showed κ ≤ 1e-2 leaves n_s and r unchanged, so the tower supplies the vacuum mass, the light states supply the tilt, and they do not interfere.
 4. Revised consistent picture for SERAPIS at τ = i: plateau + κ·(species term, CI tower) + ε·(light-state CW, y·ln y at the cusp), with κ ≫ ε. ε ≈ 3(M_s/M_P)²/16π² (D623) applies to the light-state term.
 Status: conditionally consistent; every piece now has a literature-backed origin. Not computed as a whole, and the relative size κ/ε (both ∝ (SUSY-breaking scale)²/16π²) needs an actual one-loop calculation. If κ and ε have the same origin (m² = c²H²), the ratio a/b is set by the species count Ñ₀ versus the light-state count.
+
+## D627 — DEEP (Ddl 08:55 CT; arithmetic estimate, not locked) — if the species term and the light-state CW have the SAME SUSY-breaking origin, a/b is NOT automatically large: the vacuum stays at i only for a small species count Ñ₀ ≲ 1 and few light states
+Same-origin estimate (both ∝ m²/16π², m² = c²H²):
+- a (tower, CI) ~ M_P²π²|Ĝ₂′(i)|²/N(i)², with |Ĝ₂′(i)| = 0.285 (numerical) and N(i) = 6L(i) + Ñ₀ = 2.2 + Ñ₀.
+- b (light W-states) ~ n_W·M_s²/2.
+- a/b ~ (M_P/M_s)²π²|Ĝ₂′|²/(N(i)²n_W/2), at M_s = 1.7e17 (D623).
+Results:
+- Ñ₀ = 0: a/b = 35 (n_W = 2) or 8.7 (n_W = 8); vacuum offset |δ| = 2e-8 or 8e-3.
+- Ñ₀ = 5: a/b = 3.2 or 0.8; |δ| = 0.12–0.41.
+- Ñ₀ = 25 or 100: a/b ≤ 0.2; |δ| ≈ 0.5–0.6. The vacuum is NOT at i.
+Reading: D626's cure needs κ ≫ ε. If both come from the same Hubble-induced SUSY breaking, that requires a small species count at the desert point (Ñ₀ ≲ 1) and few light states. For realistic Ñ₀ (CI use Ñ₀ ≈ 25), the light-state CW term pushes the vacuum off τ = i by ~0.5, so τ = i is no longer the vacuum.
+Caveats: crude O(1) factors (the CI normalisation 4/(8π)² versus 1/(32π²), the c factors, and the n_W count). This could shift a/b by ×10 either way. Not a decisive verdict.
+Status: the HM/CW route to τ = i (D620–D626) is now CONDITIONAL on Ñ₀ ≲ 1 or on a separate, larger source of the species-type mass. Combined with D624, this route is fragile. The SERAPIS-ρ branch (D610–D616), where the natural threshold ALREADY prefers ρ, does not face this problem, which strengthens the case for ρ as the string-natural vacuum.
