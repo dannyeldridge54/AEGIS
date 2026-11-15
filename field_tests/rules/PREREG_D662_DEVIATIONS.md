@@ -1,0 +1,2 @@
+# D662 deviations (written before rerun)
+D1 (script construction bug, no computation performed): the slicing that kept only the τ = i block cut at the first "t=0" (inside the docstring), leaving a file with only the docstring; the first run printed nothing. Fix: keep D661 lines up to (not including) the second `t=0` line (the ρ block), and replace the lift set (0,2) by (0,2,4). Physics and question unchanged.
