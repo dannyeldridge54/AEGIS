@@ -1,1 +1,2 @@
 D715  2026-11-15T21:35Z  TorsionLambda audit (Job 7)
+D716  2026-11-15T23:09Z  Star Mapper discovery categories v1
