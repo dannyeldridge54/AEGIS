@@ -4207,3 +4207,12 @@ cosmological-constant problem; given the one cancellation every model needs, the
 (D383, D413), which is what n sets. Earlier wording ("residual potential sets the vacuum energy", Twist-2 paper v1 abstract and §2) should say
 this explicitly → added to the v2 correction list. (b) CONNECTIONS: part 5 (condensate), part 9 (SUSY-breaking scale). (c) CENTRE: no filter
 fails; the claim is narrowed. Result (correction) → walls 0.
+
+**D428 (cycle 18, "pp"; second pass PART 7, RIGHT; scored, locked PREREG_D428_PART7B; results/part7b_d428.txt) — bridge B4 for the
+baseline birefringence axion computed: ρ_β = β_reio/β_rec ≈ 1 for m ≲ 10 H0 (0.96–1.00), 0.85–0.94 at 20 H0, 0.24–0.66 at 50 H0, and ≈ 0
+(0.003–0.19) for m ≥ 100 H0 (z_re = 7–10).** Distinguishable from the dark-energy axion and from miscalibration (both ρ ≈ 1, D404) when
+|1 − ρ_β| ≥ 0.2, i.e. m ≳ 30 H0 (z_re = 7) to ≈ 40 H0 (z_re = 10) — CORRECTION to D414's "≳ 20 H0" (at 20 H0 the ratio is still 0.85–0.94).
+For m ≥ 100 H0 the field already oscillates around reionization, so the large-angle (reionization) rotation nearly vanishes while the
+recombination one stays ≈ θ_i — a sharp LiteBIRD signature. Δθ_rec ≈ 1 for m ≥ 10 H0 (θ_i = 1), consistent with D414's c_γ ≈ 3.9.
+(b) CONNECTIONS: part 6 (Ω_a ≤ 3×10⁻³, Λ untouched), part 10 (CP-odd, no α drift). (c) CENTRE: B4 now has a quantified baseline branch.
+Result → walls 0.

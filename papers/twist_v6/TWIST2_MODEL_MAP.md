@@ -125,3 +125,5 @@ alone.
 **Cycle 16 (D426, CONFIRMED estimate):** the χ trap needs the hidden sector warm at capture: the ψ–lepton portal with y' ≳ 5×10⁻³ keeps it in equilibrium (mixing ~2×10⁻⁶), or a separately reheated hidden bath with T_h ≥ 0.21 T suffices.
 
 **Cycle 17 (D427, CLARIFICATION):** Twist-2 does not solve the cosmological-constant problem: the χ condensate's soft vacuum energy (~10²⁶–10³² GeV⁴) must be cancelled by the same one-off tuning as the SUSY-breaking energy (D292); only the leftover x-dependent piece is the cliff value set by n.
+
+**Cycle 18 (D428, CONFIRMED):** baseline birefringence axion: β_reio/β_rec ≈ 1 for m ≲ 10 H₀, 0.24–0.66 at 50 H₀, ≈ 0 for m ≥ 100 H₀; distinguishable from a dark-energy axion or miscalibration for m ≳ 30–40 H₀.
