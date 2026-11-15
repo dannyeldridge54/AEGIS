@@ -6060,3 +6060,12 @@ Ingredients and credits:
 - A small rising term to tilt n_s: KL singular attractors 2512.02969 §5.3 (j-based).
 Not found in the checked literature: plateau(L_j) + ε·(L_η − L_η(ρ)) with the vacuum at ρ, where the SAME threshold term supplies the vacuum mass and the tilt and keeps y* ≤ 25 (inside the N = 2 home bound).
 Allowed wording: "a combination not found in the checked literature (D611 audit), built from known ingredients (credit KL, CI, Aoki–Otsuka)". This is the same status as two-term SERAPIS (D580): novelty lies only in the combination and its consistency chain.
+
+## D612 — RIGHT (Ddl 08:26 CT; locked PREREG_D612_VACUUM_RHO_SELECTION; results/vacuum_rho_selection_d612.txt) — PASS: the proton parity is compatible with a ρ vacuum
+Checks: |E₄(ρ)| = 1.5e-15 and |E₄²(ρ)| = 2e-30 (zero); |E₆(ρ)| = 2.88 and |E₆²(ρ)| = 8.30 (non-zero). This confirms the mod-6 rule.
+Results:
+- Z₄^R: 8/8 anomaly-passing assignments admit lifts with all five required couplings non-zero at ρ.
+- Z₈^R: 16/16.
+- Example: n = (0, 1, 1, 0, 1, 1, 1), no lift, all k_Y = 0 (constant couplings). That is the same assignment that works at τ = i (D551).
+Caveat: the comparison with τ = i (4/8, 8/16 in D551) is not like-for-like. Here the lifts were {0, 2, 4} (needed for mod 6); D551 used {0, 2}. The constant-coupling solution works at both vacua.
+Status: SERAPIS-ρ open item (i) from D610 is cleared at the selection-rule level. The anomaly check (D529) and the m₃/₂ argument (D542/D585) are vacuum-independent and carry over.
