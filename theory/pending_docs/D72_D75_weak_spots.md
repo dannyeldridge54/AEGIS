@@ -4932,3 +4932,11 @@ Raising the plateau factor's power from ½ to ½ + δ gives a slow power-law til
 gravitational-decay N* = 52 the same δ gives n_s = 0.9712, still within 1σ of SPA+DESI. The response is steep: δ = 0.01 already gives n_s = 0.990, so δ is a finely set fitted parameter (Chronos's price, like ε). Consequence: inside
 SERAPIS, the two Janus paths differ in r by less than in Twist-M: Kairos r ≈ 0.0012–0.0013 vs SERAPIS-Chronos r ≈ 0.0020–0.0022 (not 0.0045). σ(r) ≈ 1e-3 separates them at ~1σ only, so n_s is now the
 main discriminator. Result.
+
+**DEEP 2.4 (Danny "Pp", 21:58 CT; latest n_s data; literature, arXiv:2510.18656 and related).** The current n_s landscape (68%): SPT-3G D1 + Planck 0.9636 ± 0.0035; CMB-SPA 0.9684 ± 0.0030;
+CMB-SPA + DESI 0.9728 ± 0.0027; Planck + ACT DR6 + lensing + DESI BAO 0.9752 ± 0.0030 (0.9709 ± 0.0038 without BAO). The same paper finds standard α-attractors/Starobinsky with quadratic-minimum
+reheating give n_s ≈ 0.958–0.963 (N* ≈ 50–55), i.e. ~2σ tension with the DESI-including ACT combination. That is an independent confirmation of our Kairos numbers (D519: 0.963–0.965). Kairos vs each:
+SPT+Planck +0.1σ to +0.4σ (fits well); CMB-SPA −1.1σ to −1.8σ; SPA+DESI −2.8σ to −3.7σ; P-ACT-LB −3.6σ to −4.1σ. So the data-split is real and dataset-dependent, exactly the Kairos/Chronos fork.
+Design lead from the same paper: a STIFFER minimum (V ∝ φ^k, k ≥ 6) makes reheating kination-like, extends N* to ~56–58 and raises n_s to ~0.965–0.968. In SERAPIS that means a higher-order zero of H at τ = i, which is exactly what made
+the D516 vacuum too light (fifth force). Trade-off flagged: stiff reheating (higher n_s) vs heavy vacuum (no fifth force). A possible way through: a vacuum that is high-order near τ = i yet heavy through the c-term or the
+lens. Not computed; a candidate locked test. Credit: 2510.18656, 2511.06640, 2609.19296.
