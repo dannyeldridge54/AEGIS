@@ -25,7 +25,25 @@ In this paper we study a model, which we call SERAPIS, whose vacuum sits at the 
 
 We are explicit about what is not derived. The size of the tilt parameter, $\varepsilon \approx 10^{-4}$, was chosen after seeing current data, and we have not found its microscopic origin (Sec.~\ref{sec:limits}). Most ingredients are known: the tilt mechanism is that of singular attractors~\cite{arXiv_2512_02969}, and vacua at $\rho$ appear in Ref.~\cite{arXiv_2408_05203}. What is new is the combination, and the chain of checks around it. All predictions are frozen for future data (Sec.~\ref{sec:forward}), and every computation was pre-registered with a hash before it was run.
 
-%==SEC2==
+\section{Modular set-up and what symmetry fixes at $\tau = i$}\label{sec:setup}
+We take one complex modulus $\tau = x + i y$ in the upper half plane, with the $\alpha$-attractor K\"ahler potential
+\begin{equation}
+K = -3\alpha \ln(2\,\mathrm{Im}\,\tau), \qquad \alpha = \tfrac13,
+\end{equation}
+so the kinetic term is $(\partial x^2 + \partial y^2)/(4y^2)$. Along $x = 0$ the canonical field is $\phi = \ln y/\sqrt{2}$ (reduced Planck units). Following Kallosh and Linde~\cite{arXiv_2408_05203}, the potential is placed in the metric of a nilpotent sector, so any $SL(2,\mathbb{Z})$-invariant function of $\tau$ can serve as $V$.
+
+\paragraph{Stationarity.} The generator $S:\tau\to-1/\tau$ fixes $\tau = i$ and acts there as $\delta\tau \to -\delta\tau$. Hence any $S$-invariant potential that is smooth at $i$ has $\nabla V(i) = 0$. The point $\tau = i$ is therefore always a critical point. This is derived, not chosen. We checked it numerically for every potential used below (D574).
+
+\paragraph{Weight parity.} A modular form of weight $w$ satisfies $f(i) = i^{w} f(i)$, so it vanishes at $i$ unless $w \equiv 0 \pmod 4$. In particular $E_6(i) = 0$ (numerically $|E_6(i)| < 10^{-15}$, with a simple zero), while $E_4(i) = 1.456$. Since $j - 1728 \propto E_6^2/\Delta$, the function $j-1728$ has a \emph{double} zero at $i$ (fitted order $2.000$). A superpotential carrying one factor of $E_6$ therefore has a supersymmetric Minkowski point at $\tau = i$. This is consistent with the no-go result that a de Sitter vacuum cannot sit at $i$ in this minimal setting~\cite{arXiv_2212_03876}. What symmetry does \emph{not} fix is whether $i$ is a minimum or a saddle, nor the value of the vacuum energy.
+
+\paragraph{The plateau.} We build the plateau from the invariant
+\begin{equation}
+I(\tau) = \frac{1}{4\pi}\ln\!\left(1 + \frac{|j(\tau)-1728|^2}{1728^2}\right), \qquad V_{\rm pl} = V_0\,\frac{I^p}{I^p+1},
+\end{equation}
+which vanishes only at $i$ (and its images), is single-valued, and grows as $I \simeq y$ toward the cusp. We use $p = 2$. That is the smallest power for which horizon exit occurs at $y_* \lesssim 25$, inside the bound that perturbative heterotic thresholds place on $\mathrm{Im}\,\tau$ (about $k\,\alpha^{-1}(M_s) \approx 29$; D564, D566).
+
+\paragraph{A flaw: the vacuum is massless.} Because $|j - 1728|^2 \propto |\tau - i|^4$, the plateau rises as $V_{\rm pl} \propto |\tau - i|^{4p}$ near the vacuum: quartic for $p=1$ and octic for $p=2$ (fitted exponents $4.00$ and $8.00$). The vacuum has no quadratic term, so no mass. After inflation the field oscillates anharmonically, with equation of state $w = (n-2)/(n+2) = 3/5$ for $n = 8$, and this changes the inflationary e-fold count $N_*$. Earlier predictions that assumed matter-like reheating must be revised (D567a). Section~\ref{sec:twoterm} supplies the missing mass.
+
 %==SEC3==
 %==SEC4==
 %==SEC5==
