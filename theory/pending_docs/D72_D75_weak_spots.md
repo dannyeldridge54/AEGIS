@@ -4847,3 +4847,11 @@ appear only with 4 extra dimensions, and 7, 9, 14, 18 with 6. These are exactly 
 Danny's reading ('it spreads out from the triangle') matches a real mathematical fact (stated, not computed): the higher-N symmetries come from simplex lattices, the higher-dimensional triangles. The A_n
 lattice's Coxeter element is an (n+1)-fold rotation: A₂ (triangle) → 3/6-fold, A₄ → 5-fold (pentagon), A₆ → 7-fold, and E₆ → 12-fold (dodecagon, Coxeter number 12). So the polygon ladder IS the
 triangle family scaled up in dimension. Test not yet run: whether a fully modular Twist with its vacuum at the triangle point (τ = ρ) also works (Λ, inflation).
+
+**D515 (Danny 21:32 CT "Set this up", roadmap step A; toolkit theory/modular/ + selftest; scored, locked PREREG_D515_FULL_MODULAR + DEVIATIONS D1 [overflow crash, no first output];
+results/full_modular_d515.txt) — VIABLE vs CMB-SPA: a FULLY modular Twist inflates like Starobinsky.** Toolkit check: j(i) = 1728, j(ρ) = 0 (2e-43), SL(2,Z) invariance of ln V to 3.6e-14.
+Model: V = |H(j)|²/((2 Im τ)³|η|¹²) with H = (j−1728)^a j^{−¼−a} [ln(j/1728)]^{3/2}. Result, identical for a = ½, 1, 3/2 (a only shapes the region near τ = i): inflation on the cusp plateau at
+Im τ ≈ 146, ending at Im τ ≈ 3.2, gives n_s = 0.9665 and r = 0.00323 (−0.6σ vs CMB-SPA, −2.3σ vs SPA+DESI). Sanity: V ∝ (1 − c/Im τ)³, an α = 1 attractor; Starobinsky's 1 − 2/N* = 0.9656 and
+12/N*² = 0.0036 agree. Structure, by construction: the square torus τ = i is an exact Minkowski vacuum (V = 0), and the triangle/hexagon point ρ is a wall (V → ∞), so the field can never settle on the
+triangle. Λ is NOT yet included: it needs a small extra term, the next step. So the full SL(2,Z) version works for inflation and naturally has the polygon structure (square = vacuum, triangle = barrier),
+but its inflation numbers are the generic Starobinsky ones; any distinctiveness must come from the Λ term and the late universe.

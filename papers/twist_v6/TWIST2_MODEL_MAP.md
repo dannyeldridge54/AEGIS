@@ -197,3 +197,5 @@ alone.
 **D512 (doubt):** the single-torus home (k = 1) reaches n_s ≈ 0.970 (r ≈ 1.3e-3) before the inflation solution jumps branch; no clean fit at 0.9736 shown — D508 home in doubt; k = 3 needs all three tori (then the SM couples).
 
 **Variant Twist-1T (D513, single torus, no fitted tilt):** n_s 0.9658, r 0.00116, α_s −6.7e-4, n 232.8; fits CMB-SPA (−0.9σ), not SPA+DESI (−2.6σ). Most predictive version; LiteBIRD should see no r.
+
+**Fully modular Twist (D515, roadmap A):** exact SL(2,Z); inflation on the cusp gives n_s 0.9665, r 0.0032 (Starobinsky-like); square torus = Minkowski vacuum, triangle point = wall; Λ term still to add.
