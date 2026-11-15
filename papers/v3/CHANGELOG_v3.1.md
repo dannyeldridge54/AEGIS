@@ -19,3 +19,4 @@
 - D687: ρ's tilt L is the universal N=2 threshold (shape identified with the DKL threshold); size needs b ≈ 0.01 — still unexplained.
 - D688: τ = i vs ρ scorecard — ρ better motivated (threshold shape, matter parity), identical observables.
 - Referee 5 fixes: τ = i degenerate N doublet flagged as an open reheating condition; b at τ = i corrected to ~2e-3; claims narrowed; table fixed; same-day freezing disclosed.
+- D690: τ = i N-doublet degeneracy lifted by the 2⊕1 structure (ΔM/M ≈ 0.08–0.5) → T_R ~ 1e5 GeV restored (estimate).
