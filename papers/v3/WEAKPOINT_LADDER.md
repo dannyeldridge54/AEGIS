@@ -22,3 +22,9 @@ Open:
 - [x] W14 (D654: Weinberg op needs flavour multiplet / half-integral weights) Yukawas non-vanishing at τ = i: flavour representations (referee 3 item 2) — now only needed for the constant-W0 chain and for the A-term argument (ŷ(i) ≠ 0).
 - [x] W15 (D651: φ→2ψ absent at linear order; gravitinos decay before BBN) Inflaton → gravitino at next order in the covariant completion (F_τ = 0 at the minimum; ∂F_τ ≠ 0?) with m3/2 ≪ m_φ.
 - [x] W16 (D655: ρ bound identical) SERAPIS-ρ: repeat W9–W11 (G_τ(ρ) = 0 already shown).
+
+## Round 3 (referee 4)
+- [x] D654a weight rule with η^{-2} multiplier (Σk ≡ 0 mod 4); Weinberg op fine with k_L = k_Hu = 1.
+- [x] D656/D657 modular-centre matter parity LOST in the covariant completion (0 assignments); standard matter parity assumed; dim-5 c ≲ 5e-3.
+- [x] D658 e-fold range 6–12, higgsino threshold ×2, dilaton→gravitino bound m_Y ≳ 35 H_end, plateau-by-hand sentence; table marks unlocked row.
+Open: W7 ε origin; a modular origin for matter parity in the covariant completion (new).

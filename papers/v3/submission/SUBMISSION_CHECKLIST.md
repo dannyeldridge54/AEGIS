@@ -24,5 +24,6 @@ Status 2026-11-15 (updated after weak-point rounds 1–2): package rebuilt and t
 - Frozen bands assume inefficient preheating; estimates (D641) support this.
 - Superpartner window (covariant completion) rests on estimates: anomaly-mediated gauginos, initial conditions within ~12 e-folds of horizon exit.
 - Affleck–Dine is a numerical estimate (thermal effects shown negligible); M ≫ M_P needs a protecting symmetry; the Weinberg operator at τ = i needs a flavour multiplet.
+- In the covariant completion the modular-centre matter parity is lost; standard matter parity is assumed (D656–D657).
 - The frozen D605 superpartner prediction (constant-W0 chain) differs from the covariant completion's; disclosed in the paper.
 - r ≈ 5×10⁻⁴ can be excluded soon but confirmed only by a future σ(r) ~ 10⁻⁴ experiment.
