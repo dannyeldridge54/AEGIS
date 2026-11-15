@@ -1,0 +1,7 @@
+== D485
+sigma=0.03: 2.2-2.7 sigma
+sigma=0.05: 1.3-1.6 sigma
+sigma=0.17: 0.4-0.5 sigma
+== D486
+m_s=1e-09: dphi=8.8e-49 M_P, m_eff=3.73e+10 GeV, range=5.3e-27 m -> PASS
+m_s=1e+04: dphi=8.8e-23 M_P, m_eff=3.73e+10 GeV, range=5.3e-27 m -> PASS

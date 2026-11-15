@@ -26,3 +26,21 @@
 | Birefringence axion | c_γ ≈ 1.7–4.1 (β = 0.277°, D443; was 1.6–3.9), f ≤ 0.1 M_P, Ω_a ≤ 3×10⁻³; β_reio/β_rec ≈ 1 (m ≲ 10 H₀), 0.24–0.66 (50 H₀), ≈ 0 (≥ 100 H₀) | D414, D428 |
 | String flags | TCC violated (×1.3×10⁷ in scale); dS slope 0.022; distance range up to 24.8 M_P (towers safe after x ≳ 1); no local (T−T_E) origin; dS minimum | D408, D409, D388, D413, D423 |
 | Route A band (n_s 0.9706–0.9766) | ε 2.0–4.0×10⁻⁷; r 0.0042–0.0050 (rises with n_s; Starobinsky 0.0026–0.0016 falls); α_s −7.1 to −8.4×10⁻⁴ | D434 |
+
+## FI-picture block (D436–D486, 14 Nov evening) — toy-level unless stated
+| Quantity | Value | D-notes |
+|---|---|---|
+| Capture origin | stringy (Π-stability) FI term of a magnetised hidden D7; root at x_E = 29.6 | D436–D438 |
+| Capture | robust: M_s 3e-5–0.3 M_P, soft mass 1 eV–100 TeV, kinetic ×0.5–×2; T_cap ≈ 5e8–9e11 GeV | D441, D446, D452, D459–D460, D483 |
+| Normalisation | a ≈ 3.8e3–7.9e3 (𝒱 ≈ 1–2.9 at CMB point); M_s ≈ 0.7–3.5e14 GeV; m_KK/T ≥ 3–6 | D452–D453 |
+| Geometry | fibred CY, ≥ 3 Kähler moduli (big ~1e5, intermediate ~40, small ~0.16), D·D_b·F ≠ 0; SM on D3s | D461, D462, D471 |
+| Symmetries needed | baryon number protected; DM stable by gauged Z_N; no KK parity | D469, D473, D458 |
+| Hidden sector | lightest D7-charged ≲ 10 TeV (λ 0.006–2) or ~0.6% remnant (eV soft mass); portal y′ 1e-14–4e-6 | D444–D447, D455, D466–D468 |
+| ΔN_eff total | 0.065–0.081 (gravitino 0.047 + KK 0.005–0.021 + hidden 0.013) | D430, D458, D463, D485 |
+| Gravitino | 1.7–4.7 eV (messengers N 4–5) | D474 |
+| Fifth forces | none (kink; field mass 3.7e10 GeV) | D476, D486 |
+| Vacuum | lower-Λ neighbour at x ≈ 135, S ≥ 1e10 (stable) | D477 |
+| Λ | magnitude from the cliff; O(1) factor flux-selected (unit step 0.08%) | D456 |
+| Birefringence | c_γ 1.7–4.1, f 4–8e12 GeV; B4: 2–5.5σ at LiteBIRD for m ≳ 50–100 H0 | D443, D457, D484 |
+| B−L strings (if gauged) | Gμ ≈ 2e-17–8e-16 | D481 |
+| Flags | inflation at marginal control (𝒱 ≈ 1–3); Route A ≈ fibre-inflation line (credit); no GUT unification below M_s | D450–D453, D464, D470 |

@@ -4629,3 +4629,11 @@ external delensing) and β_rec = 0.277°: m ≲ 10 H0 → Δβ ≈ 0 (indistingu
 (1.0–2.3σ with foregrounds; 3.8–8.4σ delensed); m ≥ 100 H0 → Δβ = 0.28° → 5.5σ (3.1σ with foregrounds; 11σ delensed). The Twist does not fix m
 (D471's instanton S ≈ 240–270 spans 2–1e4 H0), so B4 is a conditional test: a measured Δβ ≈ 0.1–0.28° would point to m ≳ 50 H0 and a separate light axion.
 Result → walls 0.
+
+**D485 (cycle 70; F7 forecast; scored, PREREG_D485_D486; results/d485_d486.txt)** — total ΔN_eff = 0.065–0.081 is 2.2–2.7σ for σ = 0.03 (CMB-S4-class), 1.3–1.6σ
+for 0.05 (SO-class), 0.4–0.5σ today (σ ≈ 0.17); σ values are approximate forecasts. So CMB-S4 would give a first hint, not a discovery. Result.
+**D486 (cycle 71; PART 1, rigor for D476; scored) — PASS: rounding the kink by φ fluctuations leaves a field mass of 3.7e10 GeV (range 5e-27 m), independent of m_s**
+(k and the rounding width both scale as m_s²). So the pinned Twist has no light mode at all, and D476 (no fifth force) stands. Result.
+**D487 (cycle 72; CENTRE audit) — reproducibility:** four of tonight's scripts (D439, D445, D449, D456) were re-executed and reproduce their saved outputs byte for byte
+(determinism check, not a rerun to chase results). Result (audit).
+**D488 (cycle 73; CENTRE) — numbers table updated:** papers/twist_v6/TWIST2_NUMBERS.md gains a 'D436–D486 FI picture' block (below). Result (consolidation).
