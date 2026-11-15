@@ -38,3 +38,12 @@ def test_check_ok_late_nolock(tmp_path):
 def test_template_fields():
     t = core.template("PREREG", id="D9", title="X", script="s.py", output="o.txt", date="2026-01-01")
     assert "PREREG D9: X" in t and "2026-01-01" in t and "{" not in t.split("## Question")[0]
+
+def test_addendum_hash_accepted(tmp_path):
+    repo = make_repo(tmp_path)
+    p = core.new_prereg(repo / "field_tests/rules", "D20", "addendum case")
+    core.lock(p)
+    p.write_text(p.read_text() + "\n## Addendum (dated): extra prediction R7\n")
+    assert not core.verify_hash(p)
+    (repo / "field_tests/rules" / (p.name + ".addendum.sha256")).write_text(core.sha256_file(p) + "  " + p.name + "\n")
+    assert core.verify_hash(p)

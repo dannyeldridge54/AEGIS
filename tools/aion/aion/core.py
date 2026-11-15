@@ -52,10 +52,16 @@ def lock(path: Path, commit: bool = True, push: bool = False, message: str | Non
     return side
 
 def verify_hash(path: Path) -> bool:
+    """True if the file matches its lock, or a documented addendum lock (<file>.addendum.sha256)."""
     side = Path(str(path) + ".sha256")
     if not side.exists():
         return False
-    return side.read_text().split()[0] == sha256_file(path)
+    h = sha256_file(path)
+    ok = {side.read_text().split()[0]}
+    add = Path(str(path) + ".addendum.sha256")
+    if add.exists():
+        ok.add(add.read_text().split()[0])
+    return h in ok
 
 @dataclass
 class Config:

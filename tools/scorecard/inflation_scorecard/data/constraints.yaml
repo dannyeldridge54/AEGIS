@@ -16,6 +16,7 @@ running:
   - {name: "DESI DR1 Lya P1D + BAO + CMB", value: 0.0014, sigma: 0.0041, arxiv: "2601.21432", status: verified}
   - {name: "Planck + eBOSS Lya (Rogers & Poulin)", value: -0.0108, sigma: 0.0022, arxiv: "2511.01612", status: "verified (quoted)"}
 r_limits:
+  - {name: "BICEP/Keck 2018 + Planck", limit95: 0.036, arxiv: "2110.00483", status: std}
   - {name: "Planck+SPT+ACT+BK", limit95: 0.034, arxiv: "2512.10613", status: verified}
 neutrino_mass_sum_eV:
   - {name: "Planck 2018", limit95: 0.12, arxiv: "1807.06209", status: std}

@@ -2,7 +2,7 @@
  "title": "The Twist: one field from quantum gravity (UFE / Spiral Twist)",
  "author": "Danny Lee Eldridge",
  "updated": "2026-11-07",
- "status_scope": "Locked results as of 7 Nov 2026 (source of truth: CURRENT_MODEL.md). Every number comes from a rule locked before its data; failures are listed at the same size. Run status below is updated by hand, not live.",
+ "status_scope": "Locked results as of 7 Nov 2026 (source of truth: CURRENT_MODEL.md). Every number comes from a rule locked before its data; failures are listed at the same size. Run status below is a historical snapshot updated by hand, not live fit status.",
  "summary": "The Barbero–Immirzi (BI) field from loop quantum gravity, written in supergravity, is a pair: a dilaton (a size) and an angle (a direction), tied together by fixed geometry (λ = −2√(2/3)). It couples to gravity through the Nieh–Yan term, which fixes the angle's width F = 1.559 and a cosine shape. Early on, the angle gives a short energy boost near matter–radiation equality (the Locked Twist); today, the dilaton rolls slowly as dark energy (the Spiral). Whether ONE field does both is being tested now (UB-1).",
  "equation": "V(φ) = Λ⁴ [1 − cos(φ/F)]³ ,  F = (4/π)√(3/2) M_Pl ,  λ = −2√(2/3)",
  "data": "Planck 2018, ACT DR6, SPT-3G D1, DESI DR2 BAO; Pantheon+, DES-Dovekie, Union3, DES Y5 supernovae; DES Y6 / KiDS weak lensing",

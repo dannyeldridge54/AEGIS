@@ -39,6 +39,13 @@ Paths and the id pattern are configurable with an `aion.json` at the repository 
 {"rules_glob": "field_tests/rules/PREREG_*.md", "results_glob": "field_tests/results/*", "id_regex": "[dD](\\d{2,5})"}
 ```
 
+## Addenda
+If a locked rule must gain an addendum (a dated, append-only extra prediction), hash the new text into
+`<rule>.addendum.sha256` and commit it before any result that uses it; AION accepts either hash. The original
+`.sha256` stays untouched, so the original lock remains provable from git history.
+
+AION grew from the earlier AEGIS Method kit in `method/` (templates and `lock_rule.py`), adding the ordering audit.
+
 ## What it does not do
 It proves ordering, not honesty of content: a lock written vaguely enough can still be gamed. The templates
 push towards an explicit PASS/FAIL rule for that reason. Commit times come from git and can be forged by

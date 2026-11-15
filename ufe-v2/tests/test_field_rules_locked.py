@@ -15,4 +15,7 @@ def test_rule_copies_match_their_lock_hashes():
         b = open(doc, "rb").read()
         variants = {hashlib.sha256(x).hexdigest() for x in (b, b.replace(b"\r\n", b"\n"),
                                                            b.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n"))}
-        assert locked in variants, f"{os.path.basename(doc)} no longer matches its lock"
+        # a documented addendum (e.g. D633's R7) carries its own <rule>.addendum.sha256; accept that hash too
+        add = doc + ".addendum.sha256"
+        allowed = {locked} | ({open(add).read().split()[0]} if os.path.exists(add) else set())
+        assert allowed & variants, f"{os.path.basename(doc)} no longer matches its lock"

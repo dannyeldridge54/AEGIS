@@ -16,6 +16,8 @@ class Model:
     sum_mnu: Optional[float] = None     # eV
     neff: float = 3.044
     fnl: Optional[float] = None         # default: single-field (5/12)(1 - n_s)
+    janus_p: Optional[float] = None     # plateau exponent p, for the Janus self-consistency row
+    janus_kappa: Optional[float] = None # kappa = q/p
     @property
     def ns_mid(self): return 0.5 * (self.ns[0] + self.ns[1])
 
@@ -66,6 +68,12 @@ def score(m: Model, C: dict, use_camb: bool = False) -> list[Row]:
     for d in C["fnl_local"]:
         p = (fnl - d["value"]) / d["sigma"]
         rows.append(Row("f_NL local", d["name"], f"{fnl:.4f} vs {d['value']} ± {d['sigma']}", p, verdict(p), d["arxiv"]))
+    if m.janus_p is not None and m.janus_kappa is not None and m.r > 0:
+        from .janus import janus
+        J = janus(m.ns_mid, m.r, m.janus_p, m.janus_kappa)
+        dev = (m.alpha_s - J.alpha_s) / J.alpha_s if J.alpha_s else float("nan")
+        rows.append(Row("Janus relation", f"p = {m.janus_p:.4g}, κ = {m.janus_kappa:g}", f"model α_s {m.alpha_s:.3e} vs Janus {J.alpha_s:.3e} ({dev:+.1%})", None,
+                        "self-consistent" if abs(dev) < 0.15 else "check model", "AEGIS D669"))
     if use_camb:
         rows += camb_rows(m, C)
     return rows

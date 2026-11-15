@@ -27,6 +27,7 @@ Predictions frozen 2026-11-15 (locks in field_tests/rules). Data file version 20
 
 | Dataset | Comparison | Status | Counts as |
 |---|---|---|---|
+| BICEP/Keck 2018 + Planck | r < 0.036 (95%) vs band 4.6e-04–5.7e-04: not yet sensitive | consistent | pre-freeze (consistency) |
 | Planck+SPT+ACT+BK | r < 0.034 (95%) vs band 4.6e-04–5.7e-04: not yet sensitive | consistent | pre-freeze (consistency) |
 
 ## Running α_s (D633, D693)

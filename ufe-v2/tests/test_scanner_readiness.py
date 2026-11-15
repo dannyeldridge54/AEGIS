@@ -201,6 +201,9 @@ def test_science_view_discloses_historical_status_and_missing_exoplanet_rows():
     root = Path(__file__).resolve().parents[1]
     science = json.loads((root / "science.json").read_text(encoding="utf-8"))
     assert "not live fit status" in science["status_scope"]
-    exoplanets = next(thread for thread in science["threads"] if thread["name"] == "Sigil Model exam")
-    assert "cannot be reproduced" in exoplanets["status"]
+    # The "Sigil Model exam" (exoplanet) thread was dropped from the panel on 7 Nov and the study archived on 15 Nov;
+    # if it ever returns it must still disclose that its rows cannot be reproduced.
+    exoplanets = next((t for t in science["threads"] if t["name"] == "Sigil Model exam"), None)
+    if exoplanets is not None:
+        assert "cannot be reproduced" in exoplanets["status"]
     assert "historical snapshot" in (root / "live.html").read_text(encoding="utf-8")

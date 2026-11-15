@@ -17,6 +17,7 @@ pip install ./tools/scorecard            # add [camb] for the Lyman-alpha and S8
 inflation-scorecard --label SERAPIS --ns 0.970 0.975 --r 5e-4 --alpha-s=-1.0e-3 --beta-s=-3.8e-5 \
     --sum-mnu 0.0587 --camb --out scorecard.md --figure ns_history.png
 ```
+Add `--janus-p 2.8284 --janus-kappa 1` to check the model's own running against the Janus relation.
 (Write negative numbers with `=`, e.g. `--alpha-s=-1e-3`.) Verdicts per dataset: |pull| < 2 consistent, 2–3 tension, > 3 fail.
 The datasets are correlated, so the pulls are not to be combined.
 
