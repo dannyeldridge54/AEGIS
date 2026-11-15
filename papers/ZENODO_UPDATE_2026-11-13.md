@@ -93,3 +93,4 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - v2 correction pending: Twist-2 paper must state that Λ = cliff value holds only after the usual one-off CC cancellation, which also has to absorb the χ-condensate soft vacuum energy (10²⁶–10³² GeV⁴) (D427).
 - v2 correction pending: Twist-2 paper table 'β_reio/β_rec < 1 if m_a ≳ 20 H₀' → 'ρ_β ≲ 0.8 for m_a ≳ 30–40 H₀; ≈ 0 for m_a ≥ 100 H₀' (D428).
 - v2 addition: gravitino window 1 eV ≲ m_3/2 ≤ 4.7 eV (√F ≈ 65–140 TeV) from m_h = 125 GeV gauge mediation + cosmology (D430).
+- v2 addition: x decays to heavy hidden ψ (5e5–1e9 GeV) that must decay via an L-conserving, U(1)_X-neutral lepton portal (y' ≳ 5e-3 keeps the hidden sector thermal at capture); sgoldstino heavy via strong coupling (D422, D426, D431, D432).
