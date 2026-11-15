@@ -1,9 +1,9 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 5
-consecutive_walls: 1
-cycle: 74
-next_part: 10
+consecutive_walls: 2
+cycle: 75
+next_part: 11
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -113,3 +113,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycles 70–73 ('Pp x 10' #2): D485 ΔN_eff forecast 2.2–2.7σ (S4); D486 kink rounding → mass 3.7e10 GeV; D487 reproducibility ok; D488 numbers table FI block. Walls 0.
 - cycle 74 (20:28, tick): PART 9 — skipped, covered by D474/D480 within the last 15 notes. WALL 1.
 - 20:45: Twist-M series (Danny 'Pp x 20 on this design'): D492–D499 done (8 cycles); stopped before the full case-(i) run (needs approval for a longer cloud job).
+- cycle 75 (20:37, tick): PART 10 — nothing new (D461/D469/D470 cover it; Twist-M leaves SM-on-D3 unchanged). WALL 2.
