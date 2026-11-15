@@ -37,7 +37,10 @@ def verify(folders):
                     if len(parts) < 2 or len(parts[0]) != 64:
                         continue
                     n += 1
-                    target = os.path.join(root, parts[1])
+                    # names may be written relative to the .sha256's folder, as a bare file name, or relative to the
+                    # repository root / current directory (all three conventions occur in AEGIS); take the first that exists
+                    cands = [os.path.join(root, parts[1]), os.path.join(root, os.path.basename(parts[1])), parts[1]]
+                    target = next((c for c in cands if os.path.exists(c)), cands[0])
                     if not os.path.exists(target):
                         print("MISSING ", target)
                     elif sha(target) == parts[0]:
