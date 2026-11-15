@@ -54,3 +54,5 @@ Journal-only, not opened (standard references from knowledge; Danny to confirm i
 2410.05380 NuFit-6.0 Esteban et al. (search listing) — added R8c
 1710.06851 Lozanov & Amin, Self-resonance after inflation (ar5iv page read) — added W2
 2201.02472 ATLAS disappearing-track chargino search (pdf read; 660 GeV pure wino, 0.2 ns) — added D650
+1612.09559 Schimmrigk, j-inflation (pdf read: V = Λ⁴|j|², zero at ρ, slow roll near τ = i where E6 = 0) — added v3.1
+1512.09082 Schimmrigk, automorphic inflation framework (pdf read) — added v3.1
