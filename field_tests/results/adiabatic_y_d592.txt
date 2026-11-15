@@ -1,0 +1,4 @@
+end of inflation: N=115.29, H_end=4.572e-01; start at N_end-3
+m/H_end=10: f_Y=6.019e-02  f_track=2.460e-06  (N_final=116.79, steps=2991)
+m/H_end=30: f_Y=3.319e-05  f_track=2.733e-07  (N_final=116.79, steps=8719)
+m/H_end=100: f_Y=2.227e-09  f_track=2.460e-08  (N_final=116.79, steps=28876)

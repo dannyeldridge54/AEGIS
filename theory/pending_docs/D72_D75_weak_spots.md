@@ -5810,3 +5810,21 @@ Status: baryogenesis for two-term SERAPIS = resonant leptogenesis via off-diagon
    - (b) a tiny R-parity violation so the LSP decays, which must stay compatible with the D528 proton parity (dim-4 B-violation still forbidden); possible in principle with L-violating couplings only;
    - (c) a lighter, annihilating LSP, which would require breaking the no-scale soft-mass structure (D585).
 Verdict: the KL problem is solved, but a moduli-induced LSP problem appears and needs f_Y ≲ 4e-11. It is currently the most severe open problem for two-term SERAPIS. Next: a locked adiabatic-suppression computation for Y.
+
+## D592 — DEEP (Ddl 08:01 CT; locked PREREG_D592_ADIABATIC_Y; results/adiabatic_y_d592.txt) — adiabatic suppression works: a dilaton with m_Y ≳ 300 H_end evades the D591 LSP problem, inside the racetrack window
+Toy: the exact SERAPIS two-term background through the end of inflation and 1.5 e-folds of oscillation; a dilaton with a Hubble-induced shift d = c·V/m², c = 1; start in tracking 3 e-folds before the end.
+Free-oscillation energy fraction f_Y at 1.5 e-folds after the end:
+- m/H_end = 10: 6.0e-2
+- m/H_end = 30: 3.3e-5
+- m/H_end = 100: 2.2e-9
+This is a steep power law (local slopes −6.8 and −8.0), not a clean exponential. The forced (tracking) part, 2.5e-8 at 100, follows V and decays with it; it is not a relic.
+Requirement (D591, with the ~180× stiff-phase growth): f_Y ≲ 2e-13. Extrapolating with the last slope gives m/H_end ≳ 320 (extrapolation, flagged).
+- In physical units: H_end ≈ 3.2e12 GeV, so m_Y(y_end) ≳ 1.0e15 GeV and m_Y(vacuum) ≳ 1.7e15 GeV.
+- That is the racetrack amplitude A ≳ 8.7e-3. The window shrinks from [1.4e-3, 0.51] (D591) to [8.7e-3, 0.51], still ×58 wide.
+Caveats:
+- c = 1 is a toy normalisation (f ∝ c², so c = 3 needs ~1.3× larger m by the power law).
+- The extrapolation runs ~3× beyond the computed range.
+- The stiff-phase growth factor is an estimate.
+- Y decay timing is not followed.
+Verdict: the moduli-induced LSP problem (D591) is AVOIDABLE by adiabatic suppression with a heavy dilaton (m_Y ≳ 2e15 GeV). That is a mild constraint inside the stabilisation window. It is the leading resolution; it needs a locked follow-up with full Y decay and stiff-phase evolution.
+Chain status for two-term SERAPIS: n_s 0.970–0.974, r 4.2–4.9e-4, m₃/₂ ≈ 1.1e11, m_soft ~ 1e9, m_Y ≳ 2e15 GeV, baryogenesis via resonant off-diagonal decays (D590, model needed).
