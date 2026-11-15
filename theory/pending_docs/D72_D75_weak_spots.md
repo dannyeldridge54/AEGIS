@@ -5960,3 +5960,14 @@ Application to SERAPIS (m_soft ~ 1e9 GeV, T_R ~ 1e3–1e5 GeV; D601/D602):
 - The heavy AD mass makes oscillation start at H ~ m_soft, before the thermal-log term can matter (estimate). This is closer to the T_R-proportional regime. Both papers point to m_ν1 ~ 1e-11 – 1e-8 eV.
 - Robust qualitative prediction, whichever stopping mechanism applies: **the lightest neutrino is essentially massless (≲ 1e-8 eV)**. So Σm_ν sits at its oscillation minimum (≈ 0.059 eV NO / ≈ 0.10 eV IO), and 0νββ (if IO) is fixed by the mixing angles.
 Caveat: no dedicated computation for heavy-SUSY AD at low T_R; the coefficients are uncertain by ~×10, so m_ν1 is pinned only to within about two orders of magnitude.
+
+## D604 — DEEP (Ddl 08:17 CT; literature, no computation) — the "massless lightest neutrino" prediction lands right at the newest DESI bound
+DESI DR2 Results IV (arXiv:2607.27410, §VI.D.2; Lyα AP + full shape with BAO + CMB):
+- ΛCDM: Σm_ν < 0.0592 eV (95%). Without Lyα full shape: < 0.0565 eV.
+- w₀w_aCDM: < 0.166 eV (0.128 eV with DES-Dovekie SNe).
+- The ΛCDM limit is "nearly identical" to the normal-ordering oscillation minimum, Σm_ν > 0.059 eV. Inverted ordering is excluded at > 3σ in ΛCDM. The paper notes that much of the posterior volume is inconsistent with both orderings, and that NO is favoured only modestly (Δχ² = −5.2).
+Two-term SERAPIS plus AD leptogenesis (D599–D603) predicts m_ν1 ≲ 1e-8 eV, i.e. Σm_ν = 0.0588–0.059 eV (NO). That is EXACTLY at the minimum DESI allows in ΛCDM, so the prediction is maximally consistent with today's tightest bound. Inverted ordering would give Σ ≈ 0.10 eV, disfavoured by DESI in ΛCDM, so the model prefers NO.
+Testability:
+- Any future Σm_ν detection clearly above ~0.065 eV (with NO) would mean m_ν1 ≳ 0.01 eV. That is incompatible with AD-LH_u leptogenesis at our T_R and would push baryogenesis back to the failing inflaton-decay routes (D589–D598).
+- A cosmological preference below 0.059 eV is a problem for oscillation physics in ΛCDM generally, not for this model specifically.
+Note: SERAPIS's late universe has a separately tuned Λ (D538). If dark energy is dynamical, the bound relaxes and the test weakens.
