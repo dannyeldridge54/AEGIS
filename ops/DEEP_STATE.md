@@ -25,3 +25,4 @@ next_topic: 2
 - tick 11 (21:16): topic 11 embedding — exact duality ⇒ orbifold vs fibred CY tension (open). DEEP PASS 1 COMPLETE.
 - tick 12 (21:16, Danny 'Deep'): pass 2 topic 1 — embedding class identified (IIB T⁶/Z_N orientifolds w/ magnetised D7s); Kähler-modulus duality not established.
 - tick 13 (21:19, 'Research like this again'): Twist-M homes — heterotic T or IIB U (exact SL(2,Z)); FI link lost → case (ii), β decisive.
+- tick 14 (21:17 scheduled): satisfied by DEEP 2.1b done minutes earlier (no duplicate search, to save credits); next topic 2 at the following tick.
