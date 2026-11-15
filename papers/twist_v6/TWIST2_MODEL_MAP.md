@@ -205,3 +205,5 @@ alone.
 **SERAPIS status (D518, DEEP 2.3):** reheating gives N* ≈ 52 → n_s ≈ 0.962 (D517 'viable' withdrawn pending a faster decay channel); building block is prior art (2405.06497, 2407.12081) — no separate publication.
 
 **SERAPIS-1 final predictions (D519–D520):** n_s 0.963–0.965, r 0.0012–0.0013, α_s ≈ −6.5e-4 (reheating-consistent); fits CMB-SPA, 2.8–3.7σ from SPA+DESI; no kination route.
+
+**Janus paths inside SERAPIS (D519, D525):** Kairos n_s 0.963–0.965, r 0.0012–0.0013 (no fit); Chronos δ = 0.0023 → n_s 0.9736, r 0.0020, α_s −5.9e-4 (one fit). n_s is the main discriminator.

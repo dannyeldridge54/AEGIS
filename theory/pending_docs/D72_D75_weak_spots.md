@@ -4926,3 +4926,9 @@ failed (no number, not a physics statement). So Kairos stays Kairos: its n_s is 
 
 **D524 (axion direction during inflation; scored) — PASS, a harmless spectator.** Re τ is massless on the plateau (potential variation ∝ e^{−2π Im τ} = e^{−790}). Its random walk is 1.0e-4 per e-fold
 → ~7e-4 over 55 e-folds, ≪ the period 1. The trajectory stays on Re τ = 0 to good accuracy and the axion relaxes with the inflaton at the end (single decay channel, so no separate isocurvature component). Result.
+
+**D525 (Janus: a SERAPIS-native Chronos path; scored, locked PREREG_D525_SERAPIS_CHRONOS + DEVIATIONS D1 [bracket]; results/serapis_chronos_d525.txt) — CHRONOS-IN-SERAPIS.**
+Raising the plateau factor's power from ½ to ½ + δ gives a slow power-law tilt on the cusp. δ = 0.0023 yields n_s = 0.9736 at the instant-reheating N* = 55.7, with **r = 0.0020** and α_s = −5.9e-4. At the
+gravitational-decay N* = 52 the same δ gives n_s = 0.9712, still within 1σ of SPA+DESI. The response is steep: δ = 0.01 already gives n_s = 0.990, so δ is a finely set fitted parameter (Chronos's price, like ε). Consequence: inside
+SERAPIS, the two Janus paths differ in r by less than in Twist-M: Kairos r ≈ 0.0012–0.0013 vs SERAPIS-Chronos r ≈ 0.0020–0.0022 (not 0.0045). σ(r) ≈ 1e-3 separates them at ~1σ only, so n_s is now the
+main discriminator. Result.

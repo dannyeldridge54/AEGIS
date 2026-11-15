@@ -3,3 +3,6 @@ p=0.51: n_s=0.9902 r=0.00789 (N*=55.58)
 p=0.52: n_s=0.9951 r=0.02613 (N*=55.58)
 p=0.55: n_s=0.9809 r=0.16000 (N*=55.58)
 no fit: f(a) and f(b) must have different signs
+== D1 rerun (bracket [0,0.01])
+fit: delta=0.00230, N*=55.71, n_s=0.9736, r=0.00197, alpha_s=-5.90e-04 -> CHRONOS-IN-SERAPIS
+same delta at N*=52: n_s=0.9712, r=0.00218
