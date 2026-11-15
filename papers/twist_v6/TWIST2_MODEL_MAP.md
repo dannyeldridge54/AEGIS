@@ -119,3 +119,5 @@ alone.
 **Cycle 9 (D416, CONFIRMED):** total extra radiation (light gravitino + hidden decay products) ΔN_eff ≈ 0.08 (0.05–0.10) < 0.14; requires m_3/2 ≤ 4.7 eV. Prediction for SO/CMB-S4.
 
 **Crown + Route A (D410, D419, CONFIRMED with label):** the crown (CMB-SPA+DESI+Pantheon+) rejects the undeformed Twist n_s 0.9651 (Δχ² 7.95). One tiny holomorphic term (ε = 3.0×10⁻⁷, K unchanged) gives n_s 0.9736; then every sense fits better than ΛCDM. New locked inflation predictions: r = 0.0046, α_s = −7.7×10⁻⁴, B1 = +2.5×10⁻³ (n_s now fitted).
+
+**Cycle 12 (D422, CORRECTION):** on the Higgs branch x's decay products get mass m_ψ = y v ≈ 5×10⁵–10⁹ GeV and must decay to the SM (lepton mixing) or they would overclose. So the hidden-pair ΔN_eff vanishes: total ΔN_eff ≈ 0.02–0.06 (gravitino only), replacing 0.05–0.10. Twist-2 paper v1 table to be corrected in v2.

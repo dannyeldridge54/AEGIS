@@ -89,3 +89,4 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
   gauge-decay pinning and pre-registered null tests" (preprint v1, CC-BY-4.0). Related: isDerivedFrom 10.5281/zenodo.24202420; references
   10.5281/zenodo.24232382. File Eldridge_Twist2_v1_2026-11-14.pdf md5 d1a7289055a6a3b31811ba6bcf649aea (matches repo build).
 - Basis: crown D410 scored (senses disagree for undeformed n_s), Route A D419, first full ladder pass D407–D418.
+- v2 correction pending: Twist-2 paper ΔN_eff 0.05–0.10 → 0.02–0.06 (D422).

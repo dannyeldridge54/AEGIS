@@ -1,0 +1,12 @@
+λ 0.004 v 1e+09: m_S 1.37e+08 GeV, y 5.0e-04 (allowed 5.0e-04–6.84e-02), m_ψ 5.00e+05 GeV, stable-ψ Ωh² ≈ 4.2e+04
+λ 0.004 v 1e+09: m_S 1.37e+08 GeV, y 1.0e-02 (allowed 5.0e-04–6.84e-02), m_ψ 1.00e+07 GeV, stable-ψ Ωh² ≈ 1.7e+07
+λ 0.004 v 1e+11: m_S 1.37e+10 GeV, y 5.0e-04 (allowed 5.0e-04–6.84e-02), m_ψ 5.00e+07 GeV, stable-ψ Ωh² ≈ 4.2e+08
+λ 0.004 v 1e+11: m_S 1.37e+10 GeV, y 1.0e-02 (allowed 5.0e-04–6.84e-02), m_ψ 1.00e+09 GeV, stable-ψ Ωh² ≈ 1.7e+11
+λ 0.010 v 1e+09: m_S 3.42e+08 GeV, y 5.0e-04 (allowed 5.0e-04–1.71e-01), m_ψ 5.00e+05 GeV, stable-ψ Ωh² ≈ 4.2e+04
+λ 0.010 v 1e+09: m_S 3.42e+08 GeV, y 1.0e-02 (allowed 5.0e-04–1.71e-01), m_ψ 1.00e+07 GeV, stable-ψ Ωh² ≈ 1.7e+07
+λ 0.010 v 1e+11: m_S 3.42e+10 GeV, y 5.0e-04 (allowed 5.0e-04–1.71e-01), m_ψ 5.00e+07 GeV, stable-ψ Ωh² ≈ 4.2e+08
+λ 0.010 v 1e+11: m_S 3.42e+10 GeV, y 1.0e-02 (allowed 5.0e-04–1.71e-01), m_ψ 1.00e+09 GeV, stable-ψ Ωh² ≈ 1.7e+11
+λ 0.033 v 1e+09: m_S 1.13e+09 GeV, y 5.0e-04 (allowed 5.0e-04–5.64e-01), m_ψ 5.00e+05 GeV, stable-ψ Ωh² ≈ 4.2e+04
+λ 0.033 v 1e+09: m_S 1.13e+09 GeV, y 1.0e-02 (allowed 5.0e-04–5.64e-01), m_ψ 1.00e+07 GeV, stable-ψ Ωh² ≈ 1.7e+07
+λ 0.033 v 1e+11: m_S 1.13e+11 GeV, y 5.0e-04 (allowed 5.0e-04–5.64e-01), m_ψ 5.00e+07 GeV, stable-ψ Ωh² ≈ 4.2e+08
+λ 0.033 v 1e+11: m_S 1.13e+11 GeV, y 1.0e-02 (allowed 5.0e-04–5.64e-01), m_ψ 1.00e+09 GeV, stable-ψ Ωh² ≈ 1.7e+11

@@ -2,8 +2,8 @@
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 30
 consecutive_walls: 0
-cycle: 11
-next_part: 1
+cycle: 12
+next_part: 2
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -57,3 +57,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 4. Then resume the loop.
 - cycle 10 (17:24): PART 10 — D417 α frozen after pinning (Δln α ≲ 2e-14), 1.6% shift only before capture; U(1)_X vector-like, ε = 0. No scored result → WALL 1.
 - cycle 11 (17:31): PART 11 — D418 string embedding: capture chain ≈ 'string Higgs effect' (Watson 2004) + hidden D7 U(1)s; open (T−T_E) origin, x≲1 control, TCC/dS flags. WALL 2 → interval 30 min (walls reset at new interval). FIRST FULL PASS DONE; standing task waits for crown.
+- cycle 12 (18:10, 30-min pace): PART 1 second pass — D422 decay products heavy (5e5–1e9 GeV), must decay to SM; ΔN_eff prediction → 0.02–0.06 (correction to paper v1). Result → walls 0.

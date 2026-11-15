@@ -4155,3 +4155,13 @@ kinetic term to F²; arXiv:2604.12032 (DESI-era coupled DE) couples to dark matt
 derives ζ from a Kähler potential. So the α paper's specific contribution — ζ = 3.3–5.7×10⁻³ predicted at one loop for K ⊃ −k ln(X+X̄),
 hence ~10⁵ above the combined bound — was not found elsewhere (Choi 1999 is the qualitative precursor). For a v2 of the α paper: add the
 2105.09746 combined bound (strengthens the exclusion from ~10³ to ~10⁵ in ζ).
+
+**D422 (cycle 12, second pass; PART 1 condition (ii), RIGHT; scored, locked PREREG_D422_PART1B; results/part1b_d422.txt) — condition (ii)
+is SATISFIABLE but the decay products are heavy: CORRECTION to D412/D416's ΔN_eff.** On the Higgs branch, δT pairs with the neutral radial
+mode of χχ̄ into a multiplet of mass m_S = √2 λ' v ≈ 1.4×10⁸–1.1×10¹¹ GeV. A fast decay needs W ⊃ y χψψ̄', which gives Γ = y² m_S/8π (κ ≥ 10⁻⁶
+needs y ≥ 5×10⁻⁴) but also gives the products a mass m_ψ = y v; kinematics allow y up to 0.07–0.56 (window exists for every λ). So the products
+are NOT massless: m_ψ ≈ 5×10⁵–10⁹ GeV. If ψ-number were conserved they would overclose the universe (thermal-relic estimate Ωh² ≈ 4×10⁴–
+2×10¹¹). New requirement (recorded): ψ must decay to the SM, e.g. by mixing with SM leptons (W ⊃ y' ψ L H-type), which is allowed since U(1)_X
+is broken. Their energy share is ≲ 4×10⁻⁴ of radiation (D396), so no dilution (D ≈ 1 stands). Consequence: the hidden-pair dark radiation of
+D412 (0.034) disappears; total ΔN_eff = gravitino only ≈ 0.047 (range 0.017–0.059 over g*) — the published Twist-2 table's "0.05–0.10"
+should read "0.02–0.06" (to be corrected in a v2). CENTRE: F2, F5, F7 pass with the new requirement; bridges unchanged. Result → walls 0.
