@@ -6266,3 +6266,12 @@ Net status of the ε/tilt origin:
 - conditional on Ñ₀ ≲ 1 (or a non-same-origin hierarchy κ ≫ ε);
 - the O(1) factors are uncertain by ~×10;
 - observables (n_s, r) are robust to the details (D622).
+
+## D629 — DEEP (DpL tick 1, Danny 09:07 "Ddl loops"; literature recap + arithmetic, not locked) — with a realistic spectrum the species count is large (Ñ₀ ~ 200), so the same-origin HM/CW route places the vacuum OFF the symmetric point
+- Normalisations: CI's δV_t = (4m²M_P²/(8π)²)g^{ττ̄}|∂Λ/Λ|² with Λ ∝ N^{−1/2}, g^{ττ̄} = 4y², ∂_τN = −πiĜ₂, giving δV_t = m²M_P²y²|Ĝ₂|²/(16N²). The light-state CW is V_W = n_b(m²/32π²)M_W²ln(M_W²/Λ²).
+- Ratio: a/b = (M_P/M_s)²·1.6/(N(i)²n_b) ≈ 41/N(i)² for M_s = 1.7e17 and n_b = 8. This reproduces D627's normalisation; no new O(1) factor appears.
+- Casas–Ibáñez (2507.05345, read in D577): "each chiral multiplet adds 4 states to Ñ₀". An MSSM-like light spectrum (~49 chiral multiplets) gives Ñ₀ ~ 200 (60 chirals: 240; 100: 400).
+- Then N(i) ≈ 200–400 and a/b ≈ 1e-3 – 3e-4. The light-state CW dominates near the symmetric point, and the vacuum sits on a ring |δ| ≈ 0.6 away from i (or ρ).
+Verdict: for a realistic spectrum, the same-origin "species mass + light-state tilt" route (D626) does NOT keep the vacuum at the symmetric point. It works only if the light-state CW term has a SEPARATE, much smaller coefficient than the tower term (e.g. light states sequestered from Hubble-scale SUSY breaking). That undercuts D623's natural ε (which assumed c² = 3 for the light states).
+The HM route (D620–D628) is now DISFAVOURED: structurally plausible, but with the realistic species count the vacuum is displaced.
+Open: whether a displaced vacuum on the |δ| ≈ 0.6 ring (not at a fixed point) is acceptable phenomenologically. The axion and selection-rule results assumed a fixed point.
