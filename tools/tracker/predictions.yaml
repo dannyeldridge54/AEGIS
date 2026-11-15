@@ -1,0 +1,10 @@
+# Frozen SERAPIS predictions (locks D605, D615, D633, D667, D675, D677, D679, D681, D693; frozen 15 Nov 2026).
+# Scored only against data published after the freeze; earlier data are shown as "pre-freeze (consistency only)".
+freeze_date: 2026-11-15
+predictions:
+  - {id: ns, name: "Spectral index n_s", band: [0.969, 0.975], kill: "measured n_s more than 3σ outside the band", locks: "D605, D615, D693"}
+  - {id: r, name: "Tensor ratio r", band: [4.55e-4, 5.7e-4], kill: "r < 2.4e-4 at 95% CL, or r detected > 1.1e-3", locks: "D605, D615"}
+  - {id: alpha, name: "Running α_s", band: [-1.06e-3, -8.5e-4], kill: "α_s > -3e-4 at 3σ, or violates the Janus relation", locks: "D633, D693"}
+  - {id: caps, name: "Family caps (any ε)", band: [0, 0.985], kill: "n_s > 0.985 or r > 8.3e-4 at 3σ", locks: "D675, D677"}
+  - {id: mnu, name: "Σm_ν (normal ordering, m1≈0)", value: 0.0587, kill: "Σm_ν > 0.07 eV measured, or a robust bound below 0.0587 eV", locks: "D605"}
+  - {id: fnl, name: "f_NL local", value: 0.0115, kill: "abs(f_NL) > 5", locks: "D605"}
