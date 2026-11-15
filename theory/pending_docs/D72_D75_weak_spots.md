@@ -6155,3 +6155,4 @@ What is NOT shown (needs locks and careful work):
 - (c) whether the coefficient comes out ε ~ 1e-4 (e.g. a loop factor × b/16π² × (m₃/₂/H)²-type suppression);
 - (d) a dedicated novelty search (HM thresholds + τ = i inflation).
 Verdict: the most promising lead so far for the τ = i branch's missing ingredient (D607/D608). It turns "|j − 1728| has no string source" into "a known string threshold has exactly this structure, at the point where enhanced symmetry and moduli trapping single out τ = i". It is a lead, not a derivation.
+D620a (internal cross-reference): hep-th/0403001 (moduli trapping) was already used in the Twist context (D363, D444/D446). What is new in D620 is the Harvey–Moore ln|J(T) − J(U)| threshold as the source of SERAPIS's j − 1728 structure at T = U = i. That combination does not appear in the earlier notes.
