@@ -4324,3 +4324,14 @@ conservatively; it drops below D437's slope for M_s < 0.0675 M_P (not shown to f
 (clean plateau for M_s ≤ 0.1 M_P): **the FI-term origin works at toy level for 0.068 ≲ M_s/M_P ≲ 0.1 (clean), or for any M_s ≥ 0.068 M_P if the
 constant amplitude offset of D439 is accepted.** CENTRE: balanced; this narrows the string scale (new conditional prediction of the toy:
 M_s ≈ 1.6–2.4×10¹⁷ GeV). Caveat: toy fluxes (10, 400) fixed; a different flux pair moves the window.
+
+**D442 (cycle 29, tick; third pass PART 6, RIGHT; scored, locked PREREG_D442_FI_VACUUM; results/fi_vacuum_d442.txt) — locked verdict
+"KEEPS D427 PIECE", but only as a numerical limit; the tree-level answer is zero.** The bounded minimiser stopped at x = 29.6069 with
+ζ = −3.6e-10, giving V = 2.1e33 / 2.1e35 GeV⁴ (m_s = 1e4 / 1e5 GeV). Two facts to record honestly: (i) the exact root of the D438 toy is
+29.6069, not 29.600 (the constant c = −0.3728 was rounded in D438; immaterial for D438–D441, whose numbers move by < 0.03%); (ii) the
+potential is V = m_s²|ζ|M_s² (ζ < 0) or (g²/2)ζ²M_s⁴ (ζ > 0), both ≥ 0 and both zero at ζ = 0, so the true minimum is V = 0 (the screening
+condensate vanishes exactly on the wall). With M_s² ≈ 6e34 GeV² the double-precision floor on ζ (~1e-17) alone corresponds to ≳ 6e25 GeV⁴,
+so this test as locked could never reach the 1e23 threshold — a badly designed lock (my error), not a physical result. No rerun.
+Reading (analytic, not scored): in the FI picture the pinning sector leaves no condensate vacuum energy at tree level, so D427's
+1e26–1e32 GeV⁴ piece is absent; the SUSY-breaking CC cancellation (one tuning) remains. Loop corrections not computed. Verdict for the
+loop: no scored result → WALL.

@@ -1,0 +1,4 @@
+m_s=1e+04: x_min=29.606949228276 zeta=-3.61e-10 V_min=2.138e+33 GeV^4 (ratio to 1e26: 2.1e+07); V at x_E-1e-3: 1.16e+38
+m_s=1e+05: x_min=29.606949228276 zeta=-3.61e-10 V_min=2.138e+35 GeV^4 (ratio to 1e26: 2.1e+09); V at x_E-1e-3: 1.16e+40
+analytic: V>=0 everywhere and V=0 at zeta=0 (x_E) -> exact minimum 0; grid value limited by float precision
+VERDICT: KEEPS D427 PIECE
