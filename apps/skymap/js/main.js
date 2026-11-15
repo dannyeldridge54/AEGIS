@@ -74,17 +74,27 @@ function buildLayers() {
   L.planets = catalog("Sun, Moon and planets (now)", "#ffcf6b", { size: 14, label: true, shape: "circle", font: "bold 13px sans-serif" });
   updatePlanetLayer();
   if (D.flags && D.flags.stars && D.flags.stars.length) addFlagLayers(D.flags);
-  if (D.coverage && D.coverage.coverage_moc) {
-    try {
-      L.coverage = A.MOCFromJSON(D.coverage.coverage_moc, { name: "AEGIS survey coverage", color: "#6fd18b", opacity: 0.15, lineWidth: 1 });
-      al.addMOC(L.coverage);
-    } catch (e) { console.warn("moc", e); }
+  if (D.disc && D.disc.stars) addDiscoveryLayers(D.disc);
+  if (D.coverage && Array.isArray(D.coverage.tile_centres) && D.coverage.tile_centres.length) {
+    // one faint marker per finished survey tile (about 3.4 square degrees each)
+    L.coverage = catalog("AEGIS survey coverage", "rgba(111,209,139,0.55)", { size: 6, shape: "square" });
+    const n = D.coverage.tiles || [];
+    L.coverage.addSources(D.coverage.tile_centres.map((c, i) => A.source(c[0], c[1], { kind: "tile", label: "", ra: c[0], dec: c[1], tile: n[i]?.[0], stars: n[i]?.[1] })));
   }
   applyVisibility();
 }
 
 const FLAG_COLORS = { high_velocity: "#ff6b7a", distance_mismatch: "#f0b54a", astrometric_excess: "#c58bff" };
 const FLAG_LABELS = { high_velocity: "High velocity", distance_mismatch: "Distance mismatch", astrometric_excess: "Wobbly fit (RUWE > 1.4)" };
+function addDiscoveryLayers(disc) {
+  const L = state.layers; L.disc = L.disc || {};
+  for (const [k, meta] of Object.entries(disc.categories || {})) {
+    const list = disc.stars[k] || []; if (!list.length || L.disc[k]) continue;
+    const c = catalog("Discoveries: " + meta.label, meta.color, { size: 7, shape: "rhomb" });
+    c.addSources(list.map((st) => A.source(st.ra, st.dec, { kind: "aegis", label: "", ...st, cats: [k] })));
+    L.disc[k] = c;
+  }
+}
 function addFlagLayers(flags) {
   const L = state.layers; L.aegis = L.aegis || {};
   for (const [k, color] of Object.entries(FLAG_COLORS)) {
@@ -105,6 +115,7 @@ function applyVisibility() {
   setShown(L.stars, v.stars && !wide); setShown(L.starsBright, v.stars && wide);
   setShown(L.messier, v.messier && fov < 60); setShown(L.messierDots, v.messier && fov >= 60); setShown(L.planets, v.planets); setShown(L.coverage, v.coverage);
   if (L.aegis) for (const c of Object.values(L.aegis)) setShown(c, v.aegis);
+  if (L.disc) for (const [k, c] of Object.entries(L.disc)) setShown(c, v["disc_" + k] !== false);
   store.set("visible", v);
 }
 
@@ -142,6 +153,7 @@ function showInfo(d) {
     const up = state.location ? (d.alt > 0 ? `<span class="up">above the horizon</span> (altitude ${d.alt.toFixed(0)}°)` : `<span class="down">below the horizon</span>`) : `<span class="muted">set your location in Tonight to see if it is up</span>`;
     h = `<h3>${esc(d.name)}</h3><p class="muted">Position at ${esc(new Date(d.when).toLocaleString())}</p><p>Now ${up}.</p>${d.mag != null ? `<p>Magnitude ${d.mag.toFixed(1)}.</p>` : ""}<p class="muted">Planets move against the stars from night to night; that is why the Greeks called them "wanderers".</p>`;
   } else if (d.kind === "aegis") h = aegisInfo(d);
+  else if (d.kind === "tile") h = `<h3>AEGIS survey tile ${esc(d.tile)}</h3><p>${(d.stars ?? 0).toLocaleString()} Gaia stars in this patch of sky (about 3.4 square degrees), every one counted again against ESA's archive.</p>`;
   else h = `<h3>${esc(d.label || "Object")}</h3>`;
   h += `<p class="muted">${pos}</p><p><button class="btn ghost" id="zoomHere">Zoom here</button> <a class="btn ghost" target="_blank" rel="noopener" href="https://simbad.cds.unistra.fr/simbad/sim-coo?Coord=${d.ra}+${d.dec}&Radius=${d.kind === "aegis" ? 2 : 30}&Radius.unit=arcsec">Look up in SIMBAD</a></p>`;
   $("#infoBody").innerHTML = h; $("#info").hidden = false;
@@ -149,27 +161,37 @@ function showInfo(d) {
   if (d.kind === "aegis") wireVote(d);
 }
 function aegisInfo(s) {
-  const C = state.data.flags?.criteria || {};
-  const crit = s.flags.map((f) => `<li><b>${esc(C[f]?.label || f)}</b> (${esc(C[f]?.rule || "")}): ${esc(C[f]?.meaning || "")} <span class="muted">To confirm: ${esc(C[f]?.confirm || "")}</span></li>`).join("");
+  const C = state.data.flags?.criteria || {}, K = state.data.disc?.categories || {};
+  const cats = (s.cats || []).map((k) => `<li><b>${esc(K[k]?.label || k)}</b> (${esc(K[k]?.rule || "")}): ${esc(K[k]?.why || "")}</li>`).join("");
+  const t = state.data.reviewsAll?.stars?.[s.id];
+  const tally = t ? `<p>Reviews collected so far: <b>${t.real}</b> looks real · <b>${t.artefact}</b> artefact · ${t.unsure} not sure.</p>` : "";
+  const crit = (s.flags || []).map((f) => `<li><b>${esc(C[f]?.label || f)}</b> (${esc(C[f]?.rule || "")}): ${esc(C[f]?.meaning || "")} <span class="muted">To confirm: ${esc(C[f]?.confirm || "")}</span></li>`).join("");
   const v = state.reviews[s.id]?.vote;
-  return `<h3>Gaia DR3 ${esc(s.id)}</h3><p class="muted">AEGIS flagged star · candidate, not a discovery${s.confirmed ? " · passed AEGIS quality checks" : ""}</p>
+  return `<h3>Gaia DR3 ${esc(s.id)}</h3><p class="muted">${s.cats ? "AEGIS discovery category" : "AEGIS flagged star"} · candidate, not a discovery${s.confirmed ? " · passed AEGIS quality checks" : ""}</p>
   <table><tr><td>G magnitude</td><td>${s.g?.toFixed?.(2) ?? "–"}</td></tr><tr><td>Colour BP−RP</td><td>${s.bp_rp?.toFixed?.(2) ?? "–"}</td></tr>
   <tr><td>Distance</td><td>${s.dist_pc ? Math.round(s.dist_pc).toLocaleString() + " parsecs (" + Math.round(s.dist_pc * 3.2616).toLocaleString() + " light-years)" : "–"}</td></tr>
-  <tr><td>Speed across the sky</td><td>${s.vtan ? Math.round(s.vtan) + " km/s" : "–"}</td></tr><tr><td>RUWE</td><td>${s.ruwe?.toFixed?.(2) ?? "–"}</td></tr></table>
-  <ul>${crit}</ul>${s.note ? `<p class="muted">${esc(s.note)}</p>` : ""}
+  <tr><td>Speed across the sky</td><td>${s.vtan ? Math.round(s.vtan) + " km/s" : "–"}</td></tr>${s.rv != null ? `<tr><td>Speed towards/away from us</td><td>${Math.round(s.rv)} km/s</td></tr>` : ""}
+  ${s.pm_mas_yr ? `<tr><td>Motion across the sky</td><td>${(s.pm_mas_yr / 1000).toFixed(2)} arcsec per year</td></tr>` : ""}${s.abs_g != null ? `<tr><td>True brightness (abs. mag.)</td><td>${s.abs_g}</td></tr>` : ""}
+  <tr><td>RUWE</td><td>${s.ruwe?.toFixed?.(2) ?? "–"}</td></tr></table>
+  <ul>${cats}${crit}</ul>${s.note ? `<p class="muted">${esc(s.note)}</p>` : ""}${tally}
   <p><b>Your review</b> (saved only on this device):</p><div class="vote" id="vote">
   ${["looks real", "looks like an artefact", "not sure"].map((x) => `<button data-v="${x}" aria-pressed="${v === x}">${x}</button>`).join("")}</div>
   <p><a target="_blank" rel="noopener" href="https://gea.esac.esa.int/archive/">Gaia archive</a> · source_id ${esc(s.id)}</p>`;
 }
 function wireVote(s) {
   for (const b of document.querySelectorAll("#vote button")) b.onclick = () => {
-    state.reviews[s.id] = { vote: b.dataset.v, t: new Date().toISOString(), flags: s.flags.join(";"), ra: s.ra, dec: s.dec };
+    state.reviews[s.id] = { vote: b.dataset.v, t: new Date().toISOString(), flags: [...(s.cats || []), ...(s.flags || [])].join(";"), ra: s.ra, dec: s.dec };
     store.set("reviews", state.reviews);
     for (const o of document.querySelectorAll("#vote button")) o.setAttribute("aria-pressed", String(o === b));
   };
 }
 
 // ---------- panels ----------
+function discRows() {
+  const D = state.data.disc; if (!D || !D.categories || !Object.values(D.stars || {}).some((l) => l.length)) return "";
+  return `<h3>AEGIS discoveries (candidates)</h3>` + Object.entries(D.categories).map(([k, m]) =>
+    `<label class="row"><input type="checkbox" data-disc="${k}" ${state.visible["disc_" + k] !== false ? "checked" : ""}><span class="sw" style="background:${m.color}"></span>${esc(m.label)} <span class="muted">(${(D.counts?.[k] ?? 0).toLocaleString()})</span></label>`).join("");
+}
 const PANELS = {
   layers() {
     const v = state.visible, row = (k, label, color) => `<label class="row"><input type="checkbox" data-layer="${k}" ${v[k] ? "checked" : ""}>${color ? `<span class="sw" style="background:${color}"></span>` : ""}${label}</label>`;
@@ -178,6 +200,7 @@ const PANELS = {
       <h3>Drawn on top</h3>${row("constellations", "Constellation lines", "#5d7bd6")}${row("conNames", "Constellation names", "#8fa6ff")}${row("stars", "Bright star names", "#ffe9a8")}
       ${row("messier", "Messier galaxies, nebulae and clusters", "#7fd3ff")}${row("planets", "Sun, Moon and planets (now)", "#ffcf6b")}
       ${row("aegis", "AEGIS flagged stars", "#ff6b7a")}${row("coverage", "AEGIS survey coverage", "#6fd18b")}
+      ${discRows()}
       <h3>View</h3><p><button class="btn ghost" data-proj="AIT">Whole-sky map</button><button class="btn ghost" data-proj="SIN">Globe</button><button class="btn ghost" data-proj="TAN">Flat (zoomed)</button></p>
       <p class="muted">The buttons on the sky itself add a coordinate grid, a SIMBAD pointer and full screen.</p>`;
   },
@@ -212,8 +235,10 @@ const PANELS = {
     const body = F && F.stars && F.stars.length
       ? `<p><b>${F.shown.toLocaleString()}</b> flagged stars are shown (${esc(F.selection)}). They are <b>${esc(F.status)}</b>.</p>${legend}<p>Click a cross on the sky, read why it was flagged, decide what would convince you, then vote.</p>`
       : `<p>The flagged-star layer is empty in this copy. On the computer that runs the AEGIS Star Mapper, run <code>tools/export_from_sweep.py</code> (see INSTALL.md) to add it, or load an exported <code>aegis_flags.json</code> here:</p><p><input type="file" id="loadFlags" accept="application/json,.json"></p>${legend}`;
+    const DS = state.data.disc;
+    const disc = DS && DS.counts && DS.rows_read ? `<h3>Discovery categories</h3><p>From ${DS.rows_read.toLocaleString()} stars (rules fixed in advance, PREREG_D716). Up to ${DS.top_n.toLocaleString()} of each are on the map; open Layers to show or hide them.</p><table>${Object.entries(DS.categories).map(([k, m]) => `<tr><td><span class="sw" style="background:${m.color};display:inline-block;width:.8em;height:.8em;border-radius:50%"></span> ${esc(m.label)}</td><td>${(DS.counts[k] ?? 0).toLocaleString()}</td></tr>`).join("")}</table>` : "";
     return `<p>The AEGIS Star Mapper swept the ESA Gaia DR3 catalogue tile by tile and re-checked every one of its 12,288 sky tiles against ESA's own counts: <b>192,208,838 stars, 0 mismatches</b> (audit completed 29 Oct 2026). It flags stars that look unusual so people can check them.</p>
-      ${cov}${body}<h3>Your reviews</h3><p>${n} reviewed on this device. <button class="btn ghost" id="exportReviews" ${n ? "" : "disabled"}>Download CSV</button> <button class="btn ghost" id="clearReviews" ${n ? "" : "disabled"}>Clear</button></p>
+      ${cov}${body}${disc}<h3>Your reviews</h3><p>${n} reviewed on this device. <button class="btn ghost" id="exportReviews" ${n ? "" : "disabled"}>Download CSV</button> <button class="btn ghost" id="clearReviews" ${n ? "" : "disabled"}>Clear</button></p>
       <p class="muted">Reviews never leave this device unless you download and share the file. No accounts, no tracking.</p>`;
   },
   about() {
@@ -243,6 +268,7 @@ function wirePanel(name) {
   if (name === "layers") {
     $("#surveySel").onchange = (e) => { setSurvey(e.target.value); $("#surveyBand").textContent = SURVEYS.find((s) => s.id === e.target.value)?.band || ""; };
     for (const cb of B.querySelectorAll("[data-layer]")) cb.onchange = () => { state.visible[cb.dataset.layer] = cb.checked; applyVisibility(); };
+    for (const cb of B.querySelectorAll("[data-disc]")) cb.onchange = () => { state.visible["disc_" + cb.dataset.disc] = cb.checked; applyVisibility(); };
     for (const p of B.querySelectorAll("[data-proj]")) p.onclick = () => { try { state.aladin.setProjection(p.dataset.proj); if (p.dataset.proj !== "TAN") state.aladin.setFoV(p.dataset.proj === "AIT" ? 220 : 120); } catch (e) { console.warn(e); } };
   }
   if (name === "tonight") {
@@ -286,6 +312,13 @@ function buildSearch() {
     const hit = idx.find((i) => i.key.toLowerCase() === q || i.alt.some((a) => a && a.toLowerCase() === q)) || idx.find((i) => i.key.toLowerCase().startsWith(q));
     if (hit?.planet) { const p = bodyPositions(state.when || new Date()).find((x) => x.name === hit.planet); goto(p.ra, p.dec, 3); showInfo({ kind: "planet", label: p.name, ...p, when: (state.when || new Date()).toISOString() }); return; }
     if (hit) { goto(hit.ra, hit.dec, hit.fov); showInfo(hit.d); return; }
+    const gid = q.replace(/^gaia\s*dr3\s*/, "");
+    if (/^\d{6,}$/.test(gid)) {
+      let st = null;
+      for (const x of D.flags?.stars || []) if (x.id === gid) st = { ...x };
+      for (const [k, l] of Object.entries(D.disc?.stars || {})) for (const x of l) if (x.id === gid) st = { ...x, ...(st || {}), cats: [...(st?.cats || []), k] };
+      if (st) { goto(st.ra, st.dec, 0.05); showInfo({ kind: "aegis", ...st }); return; }
+    }
     try { state.aladin.gotoObject($("#search").value.trim(), { error: () => alertNote("Not found. Try a constellation, a bright star, a Messier number or a planet.") }); } catch { alertNote("Not found."); }
   };
 }
@@ -299,8 +332,8 @@ async function main() {
   $("#closePanel").onclick = () => openPanel(state.panel);
   $("#closeInfo").onclick = () => ($("#info").hidden = true);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { $("#info").hidden = true; if (state.panel) openPanel(state.panel); } });
-  const [cons, stars, messier, flags, coverage] = await Promise.all(["constellations", "stars", "messier", "aegis_flags", "aegis_coverage"].map((f) => loadJSON(`data/${f}.json`)));
-  Object.assign(state.data, { cons, stars, messier, flags, coverage });
+  const [cons, stars, messier, flags, coverage, disc, reviewsAll] = await Promise.all(["constellations", "stars", "messier", "aegis_flags", "aegis_coverage", "aegis_discoveries", "aegis_reviews"].map((f) => loadJSON(`data/${f}.json`)));
+  Object.assign(state.data, { cons, stars, messier, flags, coverage, disc, reviewsAll });
   buildSearch();
   window.__skymap = state;
   if (await initSky()) { try { buildLayers(); } catch (e) { console.error("layers", e); } setInterval(() => { if (!state.when) updatePlanetLayer(); }, 60000); }

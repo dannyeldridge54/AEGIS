@@ -5,13 +5,13 @@ The app is a folder of static files. Pick whichever fits your school.
 ## 1. One computer (teacher's laptop, projector PC)
 1. Download and unzip `aegis-skymap-1.0.0.zip` (or this folder).
 2. Windows: double-click **START_SKY_MAP.bat**. Mac/Linux: run `sh start_sky_map.sh`.
-3. The map opens in your browser at `http://localhost:8765`. Close the black window to stop it.
+3. The map opens in your browser at `http://localhost:8780`. Close the black window to stop it.
 
 Needs Python 3 (free from python.org; on Windows tick "Add Python to PATH"). Opening `index.html` directly from the
 file system will not work, because browsers block modules on `file://` pages.
 
 ## 2. A classroom on the same network
-Run `START_SKY_MAP.bat --lan` (or `sh start_sky_map.sh --lan`). It prints an address like `http://192.168.1.20:8765/index.html`
+Run `START_SKY_MAP.bat --lan` (or `sh start_sky_map.sh --lan`). It prints an address like `http://192.168.1.20:8780/index.html`
 that students' devices can open while the teacher's computer is on. Your network must allow devices to reach each other.
 
 ## 3. The whole school or district (recommended)
@@ -37,4 +37,6 @@ location access, used only to compute what is above the horizon), and review vot
 browser's site data removes them.
 
 ## Updating the AEGIS data
-Re-run `tools/export_from_sweep.py` on the Star Mapper computer and replace `data/aegis_flags.json` and `data/aegis_coverage.json`.
+On the Star Mapper computer run `ufe-v2/START_MAP_FEED.bat` (or `python -m aegis.map_feed` in `ufe-v2/`). It refreshes all four
+AEGIS files in `data/` (coverage, flags, discoveries, review tallies) and takes in any class review CSVs placed in
+`ufe-v2/cosmos_map/reviews_in/`. Then copy the `data/` folder to wherever the map is hosted.

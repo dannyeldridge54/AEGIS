@@ -13,6 +13,15 @@
 - **Be the reviewer** (25 min) — open flagged stars in **AEGIS stars**; *before* voting, agree what evidence would convince the
   class. Download the votes as a CSV for discussion. This teaches the idea of deciding your test before seeing the result.
 
+## Sending your class's reviews back
+In **AEGIS stars**, press **Download CSV** and send the file to the AEGIS project (or drop it in `ufe-v2/cosmos_map/reviews_in/` if you run
+the Star Mapper). Your votes are combined with other classes' and shown on the map, and stars that many reviewers think look real
+are checked first. Votes are opinions: they decide what gets checked first, never what is true.
+
+## Discovery categories to explore (Layers → AEGIS discoveries)
+The Sun's neighbours · white-dwarf candidates (what our Sun will become) · luminous giants · fast movers · hypervelocity
+candidates · strong wobblers (hidden companions?) · very red stars. Each star's card says why it is in the list and what would confirm it.
+
 ## Good questions to ask
 - The stars in Orion look close together. Are they? (No: hundreds of light-years apart, see the tour.)
 - Why does Andromeda look like it does "2.5 million years ago"?

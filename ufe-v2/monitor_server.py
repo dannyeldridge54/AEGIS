@@ -20,7 +20,10 @@ Runs the Gaia DR3 star scanner forever (aegis/star_scanner.py) and serves:
     http://localhost:8765/api/spotlight  JSON: recent distance-quality-pass rows and session records
     http://localhost:8765/api/tiles      JSON: galaxy-sweep tiles done / in progress (galactic l, b, stars)
     http://localhost:8765/tiles/L5/NNNNN.csv.gz   raw data of one swept tile (gzip CSV)
-    http://localhost:8765/api/science    JSON: torsion-field fit results shown on the stream
+    http://localhost:8765/api/science    JSON: torsion-field fit results shown on the stream (Twist era, historical)
+    http://localhost:8765/api/model      JSON: the current model (SERAPIS) and its frozen predictions
+    http://localhost:8765/api/discoveries JSON: counts of the Sky Map discovery categories (python -m aegis.map_feed)
+    http://localhost:8765/skymap         the AEGIS Sky Map, with this computer's survey layers
     http://localhost:8765/api/guardrails JSON: automatic checks on our own math (fits, pre-registration, theory, data, geometry, authorship)
 
 Anomaly scanner extras: put NAME.csv (header row, then one number per line in the first column) in ./cosmos_map/incoming/ to
@@ -220,6 +223,26 @@ class Handler(BaseHTTPRequestHandler):
             shells = S.shell_directions() if S is not None and hasattr(S, "shell_directions") else None
             res = run_all(status=SCANNER.get("status", {}), shells=shells)
             self._send(200, json.dumps(res, ensure_ascii=False), "application/json")
+        elif p == "/api/model":                                   # the current model (SERAPIS), for the stream and the Sky Map
+            self._send(200, _read(os.path.join(HERE, "model_current.json"), "{}"), "application/json")
+        elif p == "/api/discoveries":                             # counts of the Sky Map discovery categories (PREREG_D716)
+            f = os.path.join(os.path.dirname(HERE), "apps", "skymap", "data", "aegis_discoveries.json")
+            try:
+                d = json.load(open(f, encoding="utf-8")); body = {k: d.get(k) for k in ("generated", "status", "rows_read", "counts", "categories")}
+            except (OSError, ValueError):
+                body = {"status": "not generated yet: run python -m aegis.map_feed"}
+            self._send(200, json.dumps(body, ensure_ascii=False), "application/json")
+        elif p == "/skymap" or p.startswith("/skymap/"):         # the AEGIS Sky Map, served next to the monitor
+            root = os.path.realpath(os.path.join(os.path.dirname(HERE), "apps", "skymap"))
+            rel = p[len("/skymap"):].lstrip("/") or "index.html"
+            f = os.path.realpath(os.path.join(root, rel))
+            if not f.startswith(root + os.sep) or not os.path.isfile(f):
+                self._send(404, "not found", "text/plain")
+            else:
+                ext = os.path.splitext(f)[1].lower()
+                ctype = {".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json",
+                         ".svg": "image/svg+xml", ".png": "image/png", ".webmanifest": "application/manifest+json", ".md": "text/plain; charset=utf-8"}.get(ext, "application/octet-stream")
+                self._send(200, open(f, "rb").read(), ctype)
         elif p == "/api/science":
             self._send(200, _read(os.path.join(HERE, "science.json"), "{}"), "application/json")
         elif p == "/api/method":                                  # the claim store: every claim, its tier and its fate

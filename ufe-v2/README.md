@@ -327,3 +327,11 @@ Swept Gaia tiles are compared with earlier tiles, and `cosmos_map/incoming/NAME.
 - `/api/anomalies.json?wavelength=&object=&flag=&source=` filtered results with counts; `.ecsv` and `.vot` give Astropy, TOPCAT and Aladin files
 - `/api/compare` old-vs-new distances; `/api/licenses` licence and credit for each source
 - Flags are candidates, not discoveries. Tests: `python -m pytest tests/test_anomaly.py`
+
+
+## Feeding the AEGIS Sky Map (added 15 Nov 2026)
+`START_MAP_FEED.bat` (or `python -m aegis.map_feed`) exports coverage, flagged stars and seven discovery categories
+(`aegis/discoveries.py`, rules locked in `field_tests/rules/PREREG_D716_*`) to `apps/skymap/data/`, and tallies classroom review
+CSVs from `cosmos_map/reviews_in/` into `cosmos_map/community_reviews.json` and `cosmos_map/recheck_priority.json`.
+It only reads the sweep. The monitor serves the map at `/skymap`, the current model (SERAPIS) at `/api/model` and category counts at
+`/api/discoveries`. The Twist fit numbers on `/api/science` are kept as the historical record.

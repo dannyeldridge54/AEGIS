@@ -34,6 +34,21 @@ def fnum(x):
 def compress(tiles: list[int]) -> list[int]:
     return sorted(set(int(t) for t in tiles))
 
+MAPPER_ROOT = None
+
+def _tile_centres(level, tiles):
+    """Centres of finished tiles (RA, Dec) via ufe-v2/aegis/healpix_lite if it can be found; else empty."""
+    here = pathlib.Path(__file__).resolve()
+    for root in ([pathlib.Path(MAPPER_ROOT)] if MAPPER_ROOT else []) + [here.parents[3] / "ufe-v2", here.parent]:
+        if (root / "aegis" / "healpix_lite.py").exists():
+            sys.path.insert(0, str(root))
+            try:
+                from aegis.healpix_lite import tile_center_radec
+                return [[round(c, 4) for c in tile_center_radec(level, t)] for t in tiles]
+            except Exception:
+                return []
+    return []
+
 def build_coverage(state: dict) -> dict:
     done = {int(k): v for k, v in state.get("done", {}).items()}
     counts = {t: int(v.get("n", 0)) for t, v in done.items()}
@@ -47,6 +62,7 @@ def build_coverage(state: dict) -> dict:
     return {"level": int(state.get("level", 5)), "tiles_done": len(counts), "tiles_total": 12 * 4 ** int(state.get("level", 5)),
             "stars": sum(counts.values()), "band_edges": [q1, q2],
             "coverage_moc": {str(state.get("level", 5)): compress(counts)},
+            "tiles": [[t, counts[t]] for t in sorted(counts)], "tile_centres": _tile_centres(int(state.get("level", 5)), sorted(counts)),
             "density_moc": {k: {str(state.get("level", 5)): compress(v)} for k, v in bands.items()}}
 
 def scan_flags(tiledir: pathlib.Path, max_ruwe: int):
@@ -86,7 +102,9 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--cosmos-map", required=True, help="folder with sweep_state.json and tiles/L5")
     ap.add_argument("--out", required=True); ap.add_argument("--max-ruwe", type=int, default=4000)
+    ap.add_argument("--mapper-root", help="ufe-v2 folder (for tile centres); found automatically inside the AEGIS repo")
     a = ap.parse_args(argv)
+    global MAPPER_ROOT; MAPPER_ROOT = a.mapper_root
     cm, out = pathlib.Path(a.cosmos_map), pathlib.Path(a.out); out.mkdir(parents=True, exist_ok=True)
     state = json.load(open(cm / "sweep_state.json", encoding="utf-8"))
     cov = build_coverage(state)

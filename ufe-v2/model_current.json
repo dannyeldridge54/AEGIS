@@ -1,0 +1,20 @@
+{
+ "model": "SERAPIS (modular inflation; vacuum at a fixed point of the torus shape)",
+ "updated": "2026-11-15",
+ "status": "Frozen predictions, scored only on data published after 15 Nov 2026. A proposed model, not an established result.",
+ "paper": "papers/v3/serapis_v3.pdf; Zenodo doi:10.5281/zenodo.24250733",
+ "predictions": {
+  "n_s": "0.970-0.975",
+  "r": "(4.6-5.7)e-4",
+  "alpha_s": "-(8.5-10.6)e-4",
+  "beta_s": "-(3.0-4.6)e-5",
+  "sum_mnu_eV": "0.0587 (normal ordering, lightest ~0)",
+  "f_NL_local": "~0.01"
+ },
+ "tests": {
+  "~2030": "n_s from Simons Observatory + SPHEREx",
+  "~2035": "r from LiteBIRD"
+ },
+ "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
+ "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716)."
+}

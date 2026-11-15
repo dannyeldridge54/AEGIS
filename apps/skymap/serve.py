@@ -8,7 +8,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def log_message(self, *a): pass
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--port", type=int, default=8765); ap.add_argument("--lan", action="store_true")
+    ap = argparse.ArgumentParser(); ap.add_argument("--port", type=int, default=8780); ap.add_argument("--lan", action="store_true")
     ap.add_argument("--no-browser", action="store_true"); a = ap.parse_args()
     root = os.path.dirname(os.path.abspath(__file__))
     host = "0.0.0.0" if a.lan else "127.0.0.1"

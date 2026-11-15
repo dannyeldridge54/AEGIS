@@ -24,13 +24,19 @@ No accounts, no tracking, no ads. Works on Chromebooks, Windows, Mac, iPad and p
 The app itself works offline once loaded. The telescope pictures stream from the CDS archive in Strasbourg, so they need internet;
 without it, the drawn layers (constellations, stars, Messier objects, planets, AEGIS stars), Tonight, Tour and Learn still work.
 
-## Adding the AEGIS survey layers
-On the computer that runs the Star Mapper:
-```
-python apps/skymap/tools/export_from_sweep.py --cosmos-map ufe-v2/cosmos_map --out apps/skymap/data
-```
-This writes `data/aegis_coverage.json` (sky coverage and density) and `data/aegis_flags.json` (all high-velocity and
-distance-mismatch stars and the strongest RUWE stars, with the criteria). Flags are always shown as candidates, not discoveries.
+## The Star Mapper ↔ Sky Map loop
+The map and the AEGIS Star Mapper feed each other:
+
+1. **Mapper → map.** On the Star Mapper computer run `START_MAP_FEED.bat` in `ufe-v2/` (or `python -m aegis.map_feed`). It reads the
+   sweep (never changes it) and writes the map's data: survey coverage, flagged stars, and seven **discovery categories** —
+   the Sun's neighbours, white-dwarf candidates, luminous giants, fast movers, hypervelocity candidates, strong wobblers and very
+   red stars (rules fixed in advance in `field_tests/rules/PREREG_D716_*`; every entry is a candidate).
+2. **Map → people.** Students open those stars, read why each one is interesting, and vote.
+3. **People → mapper.** Teachers download the class's votes (AEGIS stars → Download CSV) and drop the file into
+   `ufe-v2/cosmos_map/reviews_in/`. The next map feed tallies them, writes `cosmos_map/recheck_priority.json` (the stars reviewers
+   think look real, most-supported first) for the mapper's follow-up, and shows every class the combined tallies on the map.
+
+The monitor also serves the map with this computer's data at `http://localhost:8765/skymap`.
 
 ## For developers
 Plain HTML, CSS and ES modules, no build step. `vendor/` holds Aladin Lite 3.8.2 (CDS, LGPL-3) and astronomy-engine 2.1.19 (MIT);
