@@ -27,7 +27,7 @@ print("2. scan:")
 rows={}
 for N in (46.08,49.21):
     rows[N]=[]
-    for lr in [-16,-15,-14,-13.5,-13,-12.5,-12,-11.5,-11]:
+    for lr in [-20,-19,-18,math.log10(3e-18),-17,math.log10(3e-17),-16]:   # D684 deviation D1
         R=mp.mpf(10)**lr
         try: y,ns,r,a=obs(R,N)
         except Exception as ex: print(f"   N*={N} R=1e{lr}: no solution"); continue
