@@ -6,7 +6,7 @@ Dear Dr. [NAME],
 
 I am an independent researcher preparing my first arXiv submission and need an endorsement for astro-ph.CO. I am writing to you because your work on [SPECIFIC PAPER — Danny to fill, must be genuine] is closely related.
 
-The paper studies a modular-invariant inflationary plateau ending at τ = i, gives frozen predictions (n_s ≈ 0.97, r ≈ 5×10⁻⁴, α_s ≈ −9×10⁻⁴) and a parameter-free n_s–r–α_s relation. The draft, the reproducibility code and the hashed prediction locks are here: [LINK].
+The paper studies a modular-invariant inflationary plateau ending at τ = i, gives frozen predictions (n_s ≈ 0.97, r ≈ 5×10⁻⁴, α_s ≈ −9×10⁻⁴) and a parameter-free n_s–r–α_s relation. The draft, the reproducibility code and the hashed prediction locks are here: https://doi.org/10.5281/zenodo.24250733.
 
 Per arXiv's policy I disclose that AI tools assisted with computation and drafting; I have checked every result and reference myself.
 

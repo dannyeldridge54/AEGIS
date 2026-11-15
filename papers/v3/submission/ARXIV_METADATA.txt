@@ -5,7 +5,7 @@ Title: SERAPIS: a modular plateau with a massive vacuum at the square torus, its
 Authors: Danny Eldridge
 Primary category: astro-ph.CO (Cosmology and Nongalactic Astrophysics)
 Cross-lists: hep-th, hep-ph
-Comments: 10 pages, 4 figures, 2 tables. Code, pre-registrations and results: doi:[DOI-TO-BE-ADDED]
+Comments: 10 pages, 4 figures, 2 tables. Code, pre-registrations and results: doi:10.5281/zenodo.24250733
 License: CC BY 4.0 (suggested; Danny's choice)
 Journal-ref: (leave empty until published)
 Abstract (1784 characters; limit 1920):
