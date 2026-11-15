@@ -159,3 +159,5 @@ alone.
 **Narrowed (D453):** KK tower after inflation limits the rescaling to a ≈ 3.8e3–7.9e3 (𝒱 ≈ 1–2.9 at the CMB point, m_KK/T ≈ 3–6): marginal on both ends.
 
 **Condition (D458):** no KK parity; few light KK species; the a ≈ 3.8e3 end of the D453 band is preferred (ΔN_eff +0.005 per species vs +0.021 at 7.9e3).
+
+**Centre-confirmed (D460):** even a gravity-mediated eV soft mass pins the field before BBN (return at ≈ 240 GeV, as predicted by D459's √m_s law); no direct SUSY-breaking coupling for φ needed.

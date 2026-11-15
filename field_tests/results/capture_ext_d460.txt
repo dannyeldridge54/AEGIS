@@ -1,0 +1,2 @@
+m_s=1e-09 GeV: reflections 5001, return T=2.37e+02 GeV (pred 2.4e+02), x end 29.6000; RETURNS BEFORE BBN; sqrt law holds
+m_s=1e-06 GeV: reflections 5001, return T=7.48e+03 GeV (pred 7.5e+03), x end 29.6000; RETURNS BEFORE BBN; sqrt law holds

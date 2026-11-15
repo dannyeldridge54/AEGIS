@@ -4491,3 +4491,10 @@ or the D396 thermal trap holds the field. Post-lock extrapolation (not scored): 
 masses would pin the field in time if the √m_s law holds outside the run. A longer integration (N − N_e to ~30) would settle this. While parked, x sits 0.24
 below x_E (Λ is irrelevant at those times; F1: no SM coupling, D417). CENTRE: balanced, with condition 'm_s ≳ GeV or extended run'; D447's lightest
 charged state could then be as light as m_s.
+
+**D460 (cycle 45, "pp"; PART 9/5; scored, locked PREREG_D460_EV_RETURN; results/capture_ext_d460.txt) — RETURNS BEFORE BBN, and the D459
+√m_s law holds as predicted.** Integrating on to N − N_e = 32 (T = 8.7 GeV): with an eV-scale (gravity-mediated) soft mass m_s = 1e-9 GeV
+the field returns to the wall at T = 2.37e2 GeV (predicted beforehand 2.4e2), and with 1e-6 GeV at 7.48e3 GeV (predicted 7.5e3). Both then
+settle on the wall. The g* = 106.75 approximation is valid down to these temperatures (above the electroweak scale). So the eV gravitino of D430 is
+enough by itself: φ needs no direct coupling to the SUSY-breaking sector, and the D396 thermal trap is not needed. CENTRE: balanced; the D459
+condition is removed. A pre-registered prediction confirmed (within this toy).
