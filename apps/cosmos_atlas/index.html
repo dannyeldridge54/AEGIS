@@ -63,10 +63,11 @@ footer{margin-top:14px;color:var(--muted);font-size:.78rem;max-width:90ch}
     <div class="views" role="tablist" aria-label="Map scale">
       <button data-view="local" aria-pressed="true">1 · Sun's neighbourhood</button>
       <button data-view="msky" aria-pressed="false">2 · Milky Way sky</button>
-      <button data-view="web" aria-pressed="false">3 · Cosmic web</button>
-      <button data-view="gsky" aria-pressed="false">4 · Galaxy &amp; quasar sky</button>
-      <button data-view="tonight" aria-pressed="false">5 · Tonight's sky</button>
-      <button data-view="first" aria-pressed="false">6 · The first moment</button>
+      <button data-view="lu" aria-pressed="false">3 · Local universe</button>
+      <button data-view="web" aria-pressed="false">4 · Cosmic web</button>
+      <button data-view="gsky" aria-pressed="false">5 · Galaxy &amp; quasar sky</button>
+      <button data-view="tonight" aria-pressed="false">6 · Tonight's sky</button>
+      <button data-view="first" aria-pressed="false">7 · The first moment</button>
     </div>
     <div class="stage" id="stage">
       <canvas id="cv" aria-label="Interactive map"></canvas>
@@ -113,6 +114,15 @@ footer{margin-top:14px;color:var(--muted);font-size:.78rem;max-width:90ch}
       <p class="small" style="margin:8px 0 0">Drag to pan, scroll or pinch to zoom. Double-click resets.</p>
     </div>
 
+    <div class="card" id="luCard" hidden>
+      <h2>Local universe</h2>
+      <label class="ck"><input type="checkbox" id="lM" checked> <span style="color:var(--gal)">2MASS Redshift Survey (43,507 galaxies; distance from redshift)</span></label>
+      <label class="ck"><input type="checkbox" id="lC"> <span>Cosmicflows-4 (55,877 galaxies; measured distances), coloured by motion</span></label>
+      <div class="row"><span>Slice width</span><input type="range" id="lSlab" min="5" max="200" step="5" value="20"><output id="oLSlab">±20 Mpc</output></div>
+      <div class="row"><span>Max distance</span><input type="range" id="lMax" min="50" max="400" step="10" value="200"><output id="oLMax">200 Mpc</output></div>
+      <p class="small">Supergalactic coordinates: the flat sheet our neighbourhood of galaxies lies in. Cosmicflows-4 colours: red = moving away faster than the expansion alone, blue = slower (rough, illustrative; uses H₀ = 75 calibration and large per-galaxy errors).</p>
+    </div>
+
     <div class="card" id="tonightCard" hidden>
       <h2>Tonight's sky</h2>
       <div class="row"><span>Latitude</span><input type="number" id="tLat" value="35.47" step="0.01" style="width:100%"><output>°N</output></div>
@@ -150,7 +160,7 @@ footer{margin-top:14px;color:var(--muted);font-size:.78rem;max-width:90ch}
   <p class="small">Grades: A within 1σ, B 1–2σ, C 2–3σ, F beyond 3σ (worst end of each band). Post-data comparison; the scored test is on future data (locked forward predictions, AEGIS D567). Current limit r &lt; 0.036.</p>
 </div>
 
-<footer>Data: ESA Gaia DR3 (AEGIS sweep, 1.99 M stars with distances; 3,068 flagged) and SDSS DR17 spectroscopic catalog (sample of 180,000 of 1.33 M galaxies and 120,000 of 753,000 quasars; two galaxy query ranges were capped at 500,000 rows). Distances for galaxies use flat ΛCDM with Planck 2018 parameters. Exoplanets: NASA Exoplanet Archive (6,470 planets). Fast-star cross-match: SIMBAD (Harvard mirror). Named galaxies: OpenNGC with Hubble-law distances (cz/H₀; unreliable below ~10 Mpc). Planner catalogs: HYG v4.1 stars and OpenNGC deep-sky objects (both CC BY-SA 4.0). Model: SERAPIS status preprint, doi 10.5281/zenodo.24238832. More layers (Local Group, galaxy distances, Gaia quasars, CMB) will be added as their downloads complete.</footer>
+<footer>Data: ESA Gaia DR3 (AEGIS sweep, 1.99 M stars with distances; 3,068 flagged) and SDSS DR17 spectroscopic catalog (sample of 180,000 of 1.33 M galaxies and 120,000 of 753,000 quasars; two galaxy query ranges were capped at 500,000 rows). Distances for galaxies use flat ΛCDM with Planck 2018 parameters. Local universe: 2MASS Redshift Survey and Cosmicflows-4; variable stars: AAVSO VSX (via VizieR, CfA mirror). Exoplanets: NASA Exoplanet Archive (6,470 planets). Fast-star cross-match: SIMBAD (Harvard mirror). Named galaxies: OpenNGC with Hubble-law distances (cz/H₀; unreliable below ~10 Mpc). Planner catalogs: HYG v4.1 stars and OpenNGC deep-sky objects (both CC BY-SA 4.0). Model: SERAPIS status preprint, doi 10.5281/zenodo.24238832. Still to add: Gaia quasars and the CMB map.</footer>
 
 <script>
 (function(){
@@ -162,6 +172,11 @@ const LY=3.26156;
 
 /* ---------- narration: 5 views x 4 levels ---------- */
 const N={
+lu:[
+ "<p>These are the galaxies closest to ours, like a map of our cosmic neighbourhood. Some live in big crowds called clusters.</p>",
+ "<p>A slice through the nearby universe, out to about 650 million light-years. Galaxies gather into clusters (Virgo, Coma) and long sheets, around empty voids. Some are being pulled towards a giant mass called the Great Attractor.</p>",
+ "<p>Supergalactic X–Y projection. 2MRS distances use cz/H₀ (redshift space); Cosmicflows-4 uses measured distances (Tully–Fisher, fundamental plane, supernovae, Cepheids, TRGB), so it shows peculiar velocities v_pec ≈ cz − H₀d.</p>",
+ "<p>CF4 per-galaxy distance errors are about 20%, so individual v_pec values are noisy, and the colour map is qualitative. Proper flow fields need Bayesian reconstruction (e.g. Laniakea-style analyses). 2MRS completeness is K_s ≤ 11.75.</p>"],
 local:[
  "<p>Every dot is a real star near our Sun. The Sun is in the middle. Red dots are stars running extra fast, like racers.</p>",
  "<p>This is a top-down view of about 8,000 light-years around the Sun, measured by the Gaia space telescope. Colour shows temperature: blue-white stars are hot, orange ones are cooler. Red rings mark stars moving unusually fast.</p>",
@@ -196,6 +211,8 @@ first:[
 /* ---------- data ---------- */
 function b64f32(s){const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return new Float32Array(u.buffer)}
 function b64u8(s){const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
+let LU=null; fetch('layers/local_universe.json').then(r=>r.json()).then(j=>{LU={m:b64f32(j.twomrs.f32),mn:j.twomrs.n,c:b64f32(j.cf4.f32),cn:j.cf4.n}; if(view==='lu')draw()}).catch(()=>{});
+let VSX=null; fetch('layers/vsx.json').then(r=>r.json()).then(j=>{VSX=j.variables; if(view==='tonight')draw()}).catch(()=>{});
 let XP=null; fetch('layers/exoplanets.json').then(r=>r.json()).then(j=>{XP=j.p; draw()}).catch(()=>{});
 let NG=null; fetch('layers/ngcgal.json').then(r=>r.json()).then(j=>{NG=j.g; draw()}).catch(()=>{});
 let P=null; fetch('layers/planner.json').then(r=>r.json()).then(j=>{P=j; if(view==='tonight') draw()}).catch(()=>{});
@@ -223,7 +240,7 @@ function filters(){return{ctx:$('#fCtx').checked,xp:$('#fX').checked,hv:$('#fHv'
 function draw(){
   const {w:W,h:H,d}=size(); ctx.clearRect(0,0,W,H); picks=[]; const f=filters(); const legend=[];
   $('#firstCard').hidden=view!=='first'; $('#fStars').hidden=!(view==='local'||view==='msky'); $('#fGal').hidden=!(view==='web'||view==='gsky');
-  $('#slabRow').hidden=view!=='web'; $('#filters').hidden=(view==='first'||view==='tonight'); $('#tonightCard').hidden=view!=='tonight'; $('#follow').hidden=!(view==='local'||view==='msky');
+  $('#slabRow').hidden=view!=='web'; $('#filters').hidden=(view==='first'||view==='tonight'); $('#tonightCard').hidden=view!=='tonight'; $('#luCard').hidden=view!=='lu'; if(view==='lu') $('#filters').hidden=true; $('#follow').hidden=!(view==='local'||view==='msky');
   $('#narr').innerHTML=N[view][level];
   if(!S||!G){return}
   const dot=(x,y,r,col,obj)=>{ if(x<-5||y<-5||x>W+5||y>H+5) return; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(x,y,r,0,6.2832); ctx.fill(); if(obj) picks.push([x,y,obj]) };
@@ -272,12 +289,29 @@ function draw(){
     const [cx,cy]=T(0,0,W,H,scale); ctx.fillStyle=C.star; ctx.beginPath(); ctx.arc(cx,cy,3*d,0,6.2832); ctx.fill(); ctx.fillStyle=C.fg; ctx.fillText('Milky Way',cx+6*d,cy+12*d);
     legend.push(['galaxy (SDSS)',C.gal],['quasar',C.qso],['named galaxy (NGC/IC)',C.star]);
     hud(`Slice |Dec| ≤ ${f.slab}° · ${n.toLocaleString()} objects · zoom ×${cam.k.toFixed(1)}`);
-  } else if(view==='tonight'){ drawTonight(W,H,d,dot,legend); } else if(view==='first'){ drawFirst(W,H,d); }
+  } else if(view==='lu'){ drawLU(W,H,d,dot,legend); } else if(view==='tonight'){ drawTonight(W,H,d,dot,legend); } else if(view==='first'){ drawFirst(W,H,d); }
   $('#legend').innerHTML=legend.map(([t,c])=>`<span style="--c:${c}">${t}</span>`).join('');
 }
 function hud(t){$('#hud').textContent=t}
 
-/* view 5: tonight's sky planner */
+/* local universe (supergalactic slice) */
+const LUN=[['Virgo Cluster',-3.7,15.6],['Coma Cluster',0.3,71],['Perseus–Pisces',50,-10],['Centaurus Cluster',-36,15],['Great Attractor (Norma)',-50,8],['Local Void',-5,-25]];
+function drawLU(W,H,d,dot,legend){
+  const slab=+$('#lSlab').value,mx=+$('#lMax').value; $('#oLSlab').textContent='±'+slab+' Mpc'; $('#oLMax').textContent=mx+' Mpc';
+  const scale=Math.min(W,H)/2/(mx*1.05); let n=0;
+  ctx.strokeStyle=C.line; ctx.lineWidth=d; ctx.font=`${11*d}px IBM Plex Mono, monospace`; ctx.fillStyle=C.muted;
+  for(const r of [25,50,100,200,400]){ if(r>mx*1.1) break; const [cx,cy]=T(0,0,W,H,scale); ctx.beginPath(); ctx.arc(cx,cy,r*scale*cam.k,0,6.2832); ctx.stroke(); ctx.fillText(`${r} Mpc (${Math.round(r*LY)} million ly)`,cx+4*d,cy-r*scale*cam.k-4*d) }
+  if(!LU){hud('loading local-universe catalogs…');return}
+  if($('#lM').checked){const a=LU.m; for(let i=0;i<LU.mn;i++){const X=a[i*7+3],Y=a[i*7+4],Z=a[i*7+5]; if(Math.abs(Z)>slab||Math.hypot(X,Y)>mx) continue; const [x,y]=T(X,Y,W,H,scale); dot(x,y,1.1*d,C.gal,{k:'lu2',i}); n++}}
+  if($('#lC').checked){const a=LU.c; for(let i=0;i<LU.cn;i++){const X=a[i*9+3],Y=a[i*9+4],Z=a[i*9+5]; if(Math.abs(Z)>slab||Math.hypot(X,Y)>mx) continue; const v=a[i*9+7], t=Math.max(-1,Math.min(1,v/1500));
+    const col=t>0?`rgb(255,${Math.round(200-150*t)},${Math.round(190-150*t)})`:`rgb(${Math.round(190+130*t)},${Math.round(210+80*t)},255)`; const [x,y]=T(X,Y,W,H,scale); dot(x,y,1.2*d,col,{k:'cf4',i}); n++}}
+  ctx.fillStyle=C.fg; ctx.font=`${11*d}px IBM Plex Sans, sans-serif`; for(const [nm,X,Y] of LUN){ if(Math.hypot(X,Y)>mx) continue; const [x,y]=T(X,Y,W,H,scale); ctx.fillText(nm,x+5*d,y-5*d) }
+  const [cx,cy]=T(0,0,W,H,scale); ctx.fillStyle=C.star; ctx.beginPath(); ctx.arc(cx,cy,3.5*d,0,6.2832); ctx.fill(); ctx.fillStyle=C.fg; ctx.fillText('Milky Way',cx+6*d,cy+12*d);
+  legend.push(['2MRS galaxy',C.gal],['CF4: faster than expansion','#ff7a6e'],['CF4: slower than expansion','#8fb6ff']);
+  hud(`Supergalactic X–Y, |SGZ| ≤ ${slab} Mpc · ${n.toLocaleString()} galaxies · zoom ×${cam.k.toFixed(1)} (cluster labels approximate)`);
+}
+
+/* view 6: tonight's sky planner */
 let selT=null;
 function jdNow(off){return (Date.now()+off*3600e3)/86400000+2440587.5}
 function lstDeg(jd,lon){const T=(jd-2451545)/36525;let g=280.46061837+360.98564736629*(jd-2451545)+T*T*0.000387933;return ((g+lon)%360+360)%360}
@@ -306,7 +340,7 @@ function drawTonight(W,H,d,dot,legend){
     const [x,y]=P2(al,az); dot(x,y,(o[4]?3.2:2.2)*d,C.gal,{k:'dso',o,al}); rows.push([o[4]||o[3],o[5],o[2],al,o[7]||(o[4]?o[3]:''),{k:'dso',o,al},o[4]?0:1]) }
   if($('#tDb').checked) for(const b of P.doubles){ if(b[6]<1.2*dawes||b[5]>mlim) continue; const [al,az]=altaz(b[0],b[1],lst,lat); if(al<amin) continue;
     const [x,y]=P2(al,az); dot(x,y,2.6*d,C.star,{k:'dbl',b,al}); rows.push([b[2]+' + '+b[3],'double',b[4],al,`${b[6]}″, ${b[4]}/${b[5]}`,{k:'dbl',b,al},2]) }
-  if($('#tV').checked) for(const v of P.variables){ if(v[5]==null||v[6]==null||v[6]-v[5]<0.5||v[5]>mlim) continue; const [al,az]=altaz(v[0],v[1],lst,lat); if(al<amin) continue;
+  if($('#tV').checked) for(const v of (VSX||P.variables)){ if(v[5]==null||v[6]==null||v[6]-v[5]<0.5||v[5]>mlim) continue; const [al,az]=altaz(v[0],v[1],lst,lat); if(al<amin) continue;
     const [x,y]=P2(al,az); dot(x,y,2.4*d,C.qso,{k:'var',v,al}); rows.push([v[3],'variable '+v[4],v[2],al,`${v[5]}–${v[6]}`,{k:'var',v,al},3]) }
   if($('#tX').checked&&XP){ const seen=new Set(); for(const p of XP){ if(p[14]==null||p[14]>Math.min(mlim,13)||seen.has(p[1])) continue; const [al,az]=altaz(p[2],p[3],lst,lat); if(al<amin) continue; seen.add(p[1]);
     const [x,y]=P2(al,az); dot(x,y,2.4*d,'#59d39a',{k:'xp',p,al}); rows.push([p[1],'planet host ('+(p[10]||'')+')',p[14],al,`${p[0]}${p[12]?', P='+p[12]+' d':''}`,{k:'xp',p,al},4]) } }
@@ -364,9 +398,11 @@ function showPick(o){
     const fmt=(ra,de)=>`RA ${(ra/15).toFixed(3)} h, Dec ${de.toFixed(2)}°`;
     if(o.k==='dso') $('#pick').innerHTML=`${o.o[4]?o.o[4]+' · ':''}${o.o[3]} ${o.o[7]?'('+o.o[7]+')':''}\ntype          ${o.o[5]}\nmagnitude     ${o.o[2]??'—'}   size ${o.o[6]??'—'}′\naltitude now  ${o.al.toFixed(1)}°\n${fmt(o.o[0],o.o[1])}\n<a href="https://simbad.harvard.edu/simbad/sim-id?Ident=${encodeURIComponent(o.o[3])}" target="_blank" rel="noopener">Look up in SIMBAD</a>`;
     if(o.k==='dbl') $('#pick').innerHTML=`Double: ${o.b[2]} + ${o.b[3]}\nseparation    ${o.b[6]}″ at PA ${o.b[7]}°\nmagnitudes    ${o.b[4]} / ${o.b[5]}\naltitude now  ${o.al.toFixed(1)}°\n${fmt(o.b[0],o.b[1])}`;
-    if(o.k==='var') $('#pick').innerHTML=`Variable star ${o.v[3]} (${o.v[4]})\nrange         mag ${o.v[5]} to ${o.v[6]}   spectral ${o.v[7]||'—'}\naltitude now  ${o.al.toFixed(1)}°\n${fmt(o.v[0],o.v[1])}\n<a href="https://www.aavso.org/vsx/index.php?view=results.get&ident=${encodeURIComponent(o.v[4])}" target="_blank" rel="noopener">AAVSO VSX page</a> · <a href="https://www.aavso.org/LCGv2/" target="_blank" rel="noopener">AAVSO light curves</a>`;
+    if(o.k==='var') $('#pick').innerHTML=`Variable star ${o.v[3]}${o.v[4]!==o.v[3]?' ('+o.v[4]+')':''}\nrange         mag ${o.v[5]} to ${o.v[6]}   ${VSX?'type':'spectral'} ${o.v[7]||'—'}\naltitude now  ${o.al.toFixed(1)}°\n${fmt(o.v[0],o.v[1])}\n<a href="https://www.aavso.org/vsx/index.php?view=results.get&ident=${encodeURIComponent(o.v[4])}" target="_blank" rel="noopener">AAVSO VSX page</a> · <a href="https://www.aavso.org/LCGv2/" target="_blank" rel="noopener">AAVSO light curves</a>`;
     if(o.k==='tstar') $('#pick').innerHTML=`${o.s[3]}\nmagnitude     ${o.s[2]}   spectral ${o.s[4]||'—'}${o.s[5]?'\nvariable      '+o.s[5]:''}\naltitude now  ${o.al.toFixed(1)}°\n${fmt(o.s[0],o.s[1])}`;
     if(view==='tonight') draw(); return }
+  if(o.k==='lu2'){const a=LU.m,i=o.i; $('#pick').innerHTML=`2MRS galaxy\nRA, Dec        ${a[i*7].toFixed(3)}°, ${a[i*7+1].toFixed(3)}°\nredshift z     ${a[i*7+2].toFixed(4)}\ndistance       ≈ ${Math.hypot(a[i*7+3],a[i*7+4],a[i*7+5]).toFixed(0)} Mpc (from redshift)\nK magnitude    ${a[i*7+6].toFixed(2)}`; return }
+  if(o.k==='cf4'){const a=LU.c,i=o.i; $('#pick').innerHTML=`Cosmicflows-4 galaxy\nRA, Dec        ${a[i*9].toFixed(3)}°, ${a[i*9+1].toFixed(3)}°\nmeasured distance ${a[i*9+2].toFixed(1)} Mpc (${(a[i*9+2]*LY).toFixed(0)} million ly), modulus error ±${a[i*9+8].toFixed(2)} mag\nvelocity (CMB) ${a[i*9+6].toFixed(0)} km/s\npeculiar motion ≈ ${a[i*9+7].toFixed(0)} km/s (rough)`; return }
   if(o.k==='xp'){const p=o.p; selT=[p[2],p[3]]; const all=XP.filter(q=>q[1]===p[1]); $('#pick').innerHTML=`Star ${p[1]} · ${all.length} known planet${all.length>1?'s':''}\ndistance       ${p[6]??'—'} pc (${p[6]?Math.round(p[6]*LY).toLocaleString():'—'} light-years)\nV magnitude    ${p[14]??'—'}${o.al!=null?'   altitude now '+o.al.toFixed(1)+'°':''}\n`+all.map(q=>`  ${q[0]}: ${q[11]?q[11]+' Earth radii, ':''}${q[12]?'year '+q[12]+' d, ':''}${q[13]?q[13]+' K, ':''}found ${q[9]} (${q[10]})`).join('\n')+`\n<a href="https://exoplanetarchive.ipac.caltech.edu/overview/${encodeURIComponent(p[1])}" target="_blank" rel="noopener">NASA Exoplanet Archive</a>`; if(view==='tonight')draw(); return }
   if(o.k==='ngc'){const g=o.g; $('#pick').innerHTML=`${g[1]?g[1]+' · ':''}${g[0]}${g[2]?' ('+g[2]+')':''}\nRA, Dec        ${g[3].toFixed(3)}°, ${g[4].toFixed(3)}°\nredshift z     ${g[5]}\ndistance       ≈ ${Math.hypot(g[6],g[7],g[8]).toFixed(0)} Mpc (${(Math.hypot(g[6],g[7],g[8])*LY).toFixed(0)} million light-years; Hubble-law estimate)\nmagnitude      ${g[9]??'—'}\n<a href="https://simbad.harvard.edu/simbad/sim-id?Ident=${encodeURIComponent(g[0])}" target="_blank" rel="noopener">Look up in SIMBAD</a>`; return }
   if(o.k==='star'){const s=o.s; $('#pick').innerHTML=
@@ -393,10 +429,10 @@ document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.datase
 document.querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=+b.dataset.level;document.querySelectorAll('[data-level]').forEach(x=>x.setAttribute('aria-pressed',x===b));try{localStorage.setItem('aegis-level',level)}catch(e){}draw()});
 try{const l=localStorage.getItem('aegis-level');if(l!=null){level=+l;document.querySelectorAll('[data-level]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.level===level))}}catch(e){}
 const outs={fV:['oV',v=>v+' km/s'],fD:['oD',v=>v+' pc'],fZ0:['oZ0',v=>(+v).toFixed(2)],fZ1:['oZ1',v=>(+v).toFixed(2)],fSlab:['oSlab',v=>'±'+v+'°']};
-document.querySelectorAll('#tonightCard input').forEach(el=>el.addEventListener('input',sched));
+document.querySelectorAll('#tonightCard input,#luCard input').forEach(el=>el.addEventListener('input',sched));
 $('#vetSel').addEventListener('input',()=>{if(S)fillFollow()});
 document.querySelectorAll('#filters input,#filters select').forEach(el=>el.addEventListener('input',()=>{const o=outs[el.id];if(o)$('#'+o[0]).textContent=o[1](el.value);sched()}));
-const h=(location.hash||'').slice(1); if(['local','msky','web','gsky','tonight','first'].includes(h)){view=h;document.querySelectorAll('[data-view]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.view===h))}
+const h=(location.hash||'').slice(1); if(['local','msky','lu','web','gsky','tonight','first'].includes(h)){view=h;document.querySelectorAll('[data-view]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.view===h))}
 window.addEventListener('resize',sched); calc(); draw();
 })();
 </script>
