@@ -16,3 +16,4 @@
 - Candidate origin of ε (D684): the covariant F-term tilts the plateau with m3/2 ≈ (2–4)e4 GeV; not yet self-consistent (vacuum mass, gauginos); distinct α_s ≈ −3e-3. Not frozen.
 - D685: the F-term branch fails self-consistency (tilt and mass tied; reheating < BBN); ε is located in the non-holomorphic uplift sector.
 - D686: the uplift-sector route to ε (anti-D3 warp factor) — requires a log/threshold correction; hypothesis, labelled.
+- D687: ρ's tilt L is the universal N=2 threshold (shape derived); size needs b ≈ 0.01 — still unexplained.
