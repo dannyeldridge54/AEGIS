@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{41}%
+\begin{thebibliography}{42}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -372,6 +372,17 @@
   Attractive: Moduli Trapping at Enhanced Symmetry Points}}} (\bibinfo {year}
   {2004}),\ \Eprint {https://arxiv.org/abs/hep-th/0403001}
   {arXiv:hep-th/0403001} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {del Moral}\ \emph {et~al.}(2017)\citenamefont {del
+  Moral}, \citenamefont {Parameswaran}, \citenamefont {Quiroz},\ and\
+  \citenamefont {Zavala}}]{arXiv_1707_07059}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~P.~G.}\
+  \bibnamefont {del Moral}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Parameswaran}}, \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Quiroz}},\ and\ \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Zavala}},\ }\href@noop {} {\bibinfo {title} {{Anti-D3 branes and moduli in
+  non-linear supergravity}}} (\bibinfo {year} {2017}),\ \Eprint
+  {https://arxiv.org/abs/1707.07059} {arXiv:1707.07059} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Abe}\ \emph {et~al.}(2026)\citenamefont {Abe} \emph
   {et~al.}}]{arXiv_2607_00528}%
   \BibitemOpen
