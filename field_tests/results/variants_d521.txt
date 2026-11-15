@@ -1,0 +1,7 @@
+variant                          n_s     r        fitted tilt  vs SPA   vs SPA+DESI
+Twist-2 undeformed (D410)        0.9651 0.00360  no          -1.1σ   -2.9σ
+Twist-2 Route A (D419/D434)      0.9736 0.00460  yes (eps)   +1.7σ   +0.3σ
+Twist-M (D501)                   0.9736 0.00435  yes (eps)   +1.7σ   +0.3σ
+Twist-1T (D513)                  0.9658 0.00116  no          -0.9σ   -2.6σ
+SERAPIS k=3 (D515)               0.9665 0.00323  no          -0.6σ   -2.3σ
+SERAPIS-1, own N* (D519)         0.9640 0.00125  no          -1.5σ   -3.3σ

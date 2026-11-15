@@ -4903,3 +4903,8 @@ r = 0.00134, α_s ≈ −6.4 to −6.8e-4. So SERAPIS-1's real prediction is n_s
 modulus cannot reach instant reheating anyway (it would need Γ ~ H_end ~ 1e13 GeV vs ~4e3 GeV). (ii) Reaching the SPA+DESI 2σ edge (0.9674) needs N* ≈ 59.3 (from n_s ≈ 1 − 1.934/N*), i.e. ~+3.7 e-folds beyond instant,
 so ~7.5 e-folds of kination. SERAPIS's potential is quadratic near τ = i, with no steep runaway, so it has no kination phase. Conclusion: SERAPIS-1 makes a sharp prediction, n_s ≈ 0.963–0.965, that stands or falls with the
 CMB-vs-DESI question. It is not 'fixable' within the model without adding structure.
+
+**D521 (CENTRE, variant comparison; arithmetic in code; results/variants_d521.txt).** The variants split cleanly by data. With CMB-SPA alone, every untilted version fits (−1.4σ to −0.6σ): Twist-2 undeformed,
+Twist-1T, SERAPIS k = 3, SERAPIS-1. With CMB-SPA+DESI, only the tilted ones fit (Route A, Twist-M: +0.3σ, each with one fitted ε), and every untilted version sits at −2.3σ to −3.2σ. One data question, whether DESI's
+pull on n_s is real, therefore picks between 'predictive but DESI-tense' (SERAPIS-1, Twist-1T) and 'fits all but tuned' (Route A, Twist-M). The decisive future tests are n_s to ±0.002 (Simons Observatory/CMB-S4)
+and r: ~0.001 (untilted single-torus) vs ~0.0045 (tilted). LiteBIRD/CMB-S4 reach σ(r) ~ 1e-3, which separates them at ~3σ.
