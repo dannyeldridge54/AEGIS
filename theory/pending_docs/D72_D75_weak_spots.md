@@ -5312,3 +5312,14 @@ Conclusion: with the exact species function, n_s swings from 0.958 to 1.04 as Ñ
 Same pathology as D541 (our SERAPIS-2 with −ln(2y|η|⁴) + κ′): plateaus built from the genus-one/threshold function are not predictive unless the constant is fixed from first principles.
 Label: our numerics against their analytic claim. A possible issue for their paper, worth a careful recheck before anyone says so publicly (could be a convention I have not matched). Not a verdict.
 Consequence for SERAPIS: the leading string-motivated plateau mechanism does not give a sharp n_s without knowing Ñ₀ (the number of species at the desert point). Kairos's sharpness (D545) holds for the attractor invariant, not for this route.
+
+## D560 — DEEP (DpL tick 1, 23:03 CT; literature + arithmetic estimate, not locked) — the UNIVERSAL N = 2 threshold rules out the N = 2-plane home: SERAPIS needs a torus with no N = 2 threshold (Z₃-like or N = 4)
+Literature:
+- Kiritsis, Kounnas, Petropoulos, Rizos (hep-th/9608034): N = 2 thresholds are Δ_i = b_i Δ − k_i Y. The universal part Y is gauge-independent and has the same coefficient in every N = 2 model (it is fixed by N_H − N_V = 242). It is minimal at the self-dual points (Y(i,i) ≈ 24.4) and grows like Y ≈ 4πR² ∝ Im T at large radius: the decompactification problem. The proposed remedy is N = 4 with spontaneously broken SUSY. The Z₃ orbifold, with no N = 2 sectors, has Δ^{N=2} = 0.
+- Parameswaran, Ramos-Sánchez, Zavala (arXiv:1009.3931): in MSSM Z₆-II heterotic orbifolds the N = 2 planes (T₂, T₃, U) enter through η-functions; T₁ (an N = 1 plane) does not enter the thresholds. No fully stable vacuum was found.
+Estimate (arithmetic, label: estimate): perturbativity 16π² k Im S > Y with Y ≈ 4π Im T gives Im T ≲ 4π Im S = 25 (Im S = 2), 38 (3) or 63 (5). That is far below SERAPIS's Im τ* = 112–158, and it holds EVEN WHEN b^{N=2} = 0. So D553's "|b| ≲ 2" escape is insufficient on an N = 2 plane.
+Consequence (revises D530): the SERAPIS torus must NOT be an N = 2 fixed plane. It must be a plane without N = 2 thresholds, such as an N = 1 plane like T₁ in Z₆-II, a Z₃-type plane, or an N = 4 sector with spontaneously broken SUSY.
+- For SERAPIS-KL this is fine: it needs no η-threshold in W (D545).
+- For holomorphic SERAPIS-1 it is fatal: its η⁻² factor needed an N = 2 threshold (D530), and that threshold makes large Im τ non-perturbative.
+So SERAPIS-KL on an N = 1/N = 4 plane is the only consistent home class. Its full SL(2,Z) on such a plane, and the source of its potential (no threshold, so not CI-type either), remain open.
+Status: home class revised: T² ⊕ T⁴ with the SERAPIS T² in an N = 1 or N = 4 sector (no N = 2 threshold), flux-free, M_s ≳ 1e17 GeV. Retires D530's "N = 2 fixed plane".
