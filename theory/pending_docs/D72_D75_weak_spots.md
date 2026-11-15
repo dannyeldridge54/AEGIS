@@ -5195,3 +5195,4 @@ In the Kallosh–Linde form, the vacuum energy is Λ = F_X² − 3|W₀|²/M_P²
 - The inflation scale enters only through the τ-dependent metric amplitude: V_inf/F_X² ≈ 3.4e41 at √F = 140 TeV. That is a large but harmless ratio set by the metric function, not a new tuning.
 - Λ itself remains tuned at the 1e-120 level, as in every such model. What this note shows is internal consistency, not an explanation. It also fixes the proton-parity status: m₃/₂ ~ eV, so the D542 margin is about 1e21.
 Status: the Λ sector is consistently embedded (tuned). Nothing in SERAPIS-KL conflicts with the gauge-mediation and gravitino results of the Twist line (D474, D523).
+D548a (correction): the computed ratio is V_inf/F_X² ≈ 3.4e42, not 3.4e41 as typed above. No conclusion changes.
