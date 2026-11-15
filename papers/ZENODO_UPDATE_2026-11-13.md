@@ -119,3 +119,8 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - New separate record 24238833, DOI 10.5281/zenodo.24238833, https://zenodo.org/records/24238833. Preprint, CC BY 4.0, version v2.1, creator Eldridge, Danny Lee.
 - Files: Eldridge_JanusTwist_status_v2_2026-11-14.pdf (md5 0a2527da31fe377d0841d3e261a1196f), AEGIS_JanusTwist_code_rules_results_2026-11-14.zip (md5 fc45e50595f3c7cc4ee36d825f12b40e); both match the repo (commit 888c936) and the PC copies in Desktop\AEGIS_zenodo.
 - Related: isDerivedFrom 10.5281/zenodo.24202420 (Twist concept), references 10.5281/zenodo.24235736 (Twist-2), isSupplementedBy the GitHub repo. Existing Twist records unchanged.
+
+## 14 Nov 2026, 22:57 CT — Janus Twist v2.2 PUBLISHED (Danny: "Publish")
+- New version of record 24238833: record 24239090, DOI 10.5281/zenodo.24239090; concept DOI 10.5281/zenodo.24238832 now resolves to v2.2. v2.1 (24238833) stays in the version history.
+- Adds the missed prior art (Kallosh–Linde 2408.05203, 2412.19324, 2512.02969, 2411.07552; Casas–Ibáñez 2407.12081; Abe et al. 2303.02947), states that the inflation model is assembled from published ingredients, and makes SERAPIS-KL the reference model. Adds the D542–D557 results (home conditions |b| ≲ 2 and M_s ≳ 1e17 GeV, tower corrections, parity checks, J1 failure).
+- Files: Eldridge_JanusTwist_status_v2.2_2026-11-14.pdf (md5 4eb235ee1e650166cbc2464f04fbb061) and AEGIS_JanusTwist_code_rules_results_v2.2_2026-11-14.zip (md5 540f6293ebdce493bc7bb04611b9db70); both match the repo and the PC copies in Desktop\AEGIS_zenodo. Licence CC BY 4.0; related identifiers carried over from v2.1.
