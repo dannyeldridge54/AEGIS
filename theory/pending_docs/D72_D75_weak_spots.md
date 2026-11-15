@@ -5452,3 +5452,31 @@ Scorecard (POST-DATA, descriptive; worst N* end; grades A < 1σ, B < 2σ, C < 3�
 - Eisenstein s = 2.5 (ρ vacuum): A, A, C, F, F.
 - All variants pass r < 0.036.
 Reading: no single variant scores well on every data set, because the data sets disagree with each other (the CMB-vs-DESI split). Kairos-type wins on CMB-only data; Chronos-type wins on DESI-including data. The real scored test is D567 (future data only).
+
+## D571 (ATLAS): four catalogue discovery hunts, H2–H4 results (H1 pending)
+Lock: field_tests/rules/PREREG_D571_DISCOVERY_HUNTS.md (sha256 committed in e434cc1, before any download). Scripts: apps/cosmos_atlas/hunts/. Results: field_tests/results/D571_H*.json. Data: Gaia DR3 through the AIP TAP mirror, NASA Exoplanet Archive TOI table, VizieR (CfA) VSX and Milliquas v8.
+
+**H2: fast-star origins** (190 vetted "solid" stars; galpy MWPotential2014 scaled to v_c = 236 km/s; 300 Myr backward integration).
+- Validation: S5-HVS1 traces back to r_min = 36 pc from the Galactic Centre (GC), 4.8 Myr ago, matching Koposov+2020.
+- 15 stars have a Gaia RV.
+  - The known HV* UCAC2 13256026 (Gaia 6675997285440115328) is recovered: 87% of draws pass within 1 kpc of the GC and 55% are unbound in this potential.
+  - Gaia DR3 6870578373607170432 (G = 13.4, ϖ/σ = 23, d = 2.5 kpc, RV = +164): v_GC = 471 vs v_esc = 426 km/s (76% of draws unbound), but r_min,GC = 6.1 kpc, so it does NOT come from the GC. It is not in SIMBAD, and a web search for the ID found nothing.
+  - Caveat: MWPotential2014's v_esc is low. Against the measured local v_esc ≈ 530 km/s this star is most likely a bound, fast halo star, not a hypervelocity star.
+- 175 stars without RV: 56 reach r_min,GC < 1 kpc for some RV within ±800 km/s. Each has a predicted RV window (median width 130 km/s), so a spectrum can test it.
+  - Honest reading: bound halo stars on radial orbits pass near the GC routinely. A GC passage at bound speed (only 4 of the 56 would be unbound at RV*) is NOT evidence of ejection.
+- Verdict: no new hypervelocity star. The method is validated. One candidate (6870578373607170432) is worth a follow-up spectrum.
+
+**H3: TESS planet candidates for amateurs.**
+- Selection: 8175 TOIs → 776 pass PC/APC, Tmag ≤ 12, depth ≥ 3 ppt.
+- 5294 transits fall between 15 Nov and 15 Dec 2026; 4142 are non-stale (timing 1σ ≤ 1 h), covering 579 targets. 163 targets have only stale ephemerides.
+- Top by score: TOI-6806.01 (48.6 ppt), TOI-890.01 (41.8 ppt; Rp = 34.6 R⊕, likely an eclipsing binary), TOI-3241.01, TOI-3491.01, TOI-3501.01.
+- Caveats: deep, large-radius candidates are often eclipsing binaries, which amateur photometry (TFOP SG1) is good at catching. Times are BJD_TDB shown as UTC (error < 2 min).
+
+**H4: bright Gaia variables vs VSX** (G < 11, score ≥ 0.7).
+- 50,943 Gaia variables; 46,479 match VSX (max < 13) within 10″; 4464 do not.
+- Of the unmatched, 227 have a VSX entry 10–60″ away (probably the same star at a poorer position), and 4237 have none within 60″.
+- The 4237 by class: 3799 LPV, 375 ACV/CP, 32 SPB, 13 δSct/γDor, 11 αCyg, 4 βCep, 2 ECL, 1 Be. G ranges from 5.2 to 11 (median 10.6).
+- Caveat: the VSX max < 13 cut drops entries that have no max magnitude, and Gaia's "LPV" class includes many low-amplitude red giants. A SIMBAD check by Gaia ID is queued on the PC (fetch_hunts2.py).
+- Verdict: these are follow-up candidates (VSX-submission material), not discoveries.
+
+**H1:** the AIP async result for the Gaia quasar join (job 00627678…) completed server-side; the download to the PC was still in progress when the PC went offline. Pending.
