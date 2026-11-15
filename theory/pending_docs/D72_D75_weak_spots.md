@@ -5704,3 +5704,21 @@ Escape: kinematic closure, m₃/₂ > m_φ/2 ≈ 1.0–1.15e11 GeV (high-scale S
 - Bonus: m_φ ≈ 2m₃/₂ is a typical modulus/gravitino relation, so this may be natural rather than tuned (not shown).
 - Constraint on the model: the SUSY breaking scale is fixed near F ~ m₃/₂M_P ~ (1e14.7 GeV)².
 Verdict: D583's "S-parity cure" is WITHDRAWN. The gravitino problem is solved only if m₃/₂ ≳ 1e11 GeV. This is a new, testable-in-principle requirement: high-scale SUSY, with no TeV superpartners from this sector. Still to check: the proton-parity results with m₃/₂ this large (D542 assumed a non-zero m₃/₂ but not this scale).
+
+## D585 — DEEP (Ddp 07:51 CT; literature + arithmetic, not locked) — with m₃/₂ ≈ 1e11 GeV: proton parity survives, and the Higgs mass needs sequestered soft masses, which the α = 1/3 no-scale structure naturally gives
+1. **Proton (re-check of D542 at the D584 scale).**
+   - Dim-5 operators reappear with M_eff ~ M_P²/m₃/₂ = 5–6e25 GeV, against the TeV-SUSY bound of 1e24. That passes by a factor ~50.
+   - The margin is larger in practice: with sfermions far above a TeV, the dim-5 dressing is suppressed further.
+   - Dim-4 operators are still forbidden by the residual Z₂. Dim-6 Kähler operators pick up an extra factor m₃/₂/M_P ~ 4e-8.
+   - D542's "safe for m₃/₂ ≲ 1e5 GeV" extends to 1e11 GeV. PASS.
+2. **Higgs mass** (Bagnaschi, Giudice et al., arXiv:1407.4081).
+   - High-scale SUSY with all sparticles at M_S needs M_S ≲ 2e10 GeV (degenerate) or ~1e11 (spread ×3). A top mass 1σ lower gives ~3e11.
+   - Split SUSY needs M_S ≲ 1e8.
+   - If soft masses ≈ m₃/₂ ≈ 1e11 (plain gravity mediation), we are AT THE EDGE.
+3. **The way out is built in.**
+   - K = −ln(2 Im τ) is the α = 1/3, i.e. 3α = 1, no-scale form. In no-scale/sequestered set-ups the tree-level soft scalar masses cancel.
+   - Soft terms then come at loop order, ~m₃/₂/16π² ≈ 6–7e8 GeV (anomaly-mediation-like; estimate). That is well inside the 2e10 bound.
+   - Caveat: sequestering of the visible sector is assumed, not derived. The nilpotent-metric choice (G_XX̄ with the 3|W₀|²(1 − α) term) must be checked to keep the cancellation.
+Verdict: CONSISTENT, conditionally. The two-term SERAPIS chain now reads: m_φ ≈ 2e11 GeV, m₃/₂ ≈ 1.0–1.15e11 GeV (closing gravitino decay), soft masses ~1e9 GeV (no-scale sequestering), proton safe, Higgs mass OK.
+- Prediction-level consequence: no superpartners at the LHC or any planned collider from this sector.
+- Dark matter is not from this sector (consistent with the Twist's separate DM, unchanged).
