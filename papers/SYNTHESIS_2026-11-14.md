@@ -16,3 +16,12 @@ fibre inflation (Route A sits on its line), modular quintessence (2506.02731, di
 ## How to combine (recommendation)
 Keep ONE spine: the torus-shape picture. Present Twist-2 as the first realisation (FI capture), SERAPIS-1 as its fully symmetric, most predictive form, and Twist-M-L's lens as the mechanism that keeps matter blind.
 State the two branches and the single data question up front. Open problems: a concrete orbifold home with exact duality and an unwrapped torus (DEEP 2.1/2.1b, D508–D510); D500 capture run (PC); proton protection; Λ's instanton (S ≈ 121).
+
+## Correction (14 Nov 2026, 22:30 CT, after independent referee review)
+The line "relaxed to its most symmetric shape → its leftover energy is Λ" and the item "SERAPIS-1 … Λ at the square torus" are WITHDRAWN (D537, D538). With a holomorphic superpotential, the square torus is a heavy, supersymmetric Minkowski minimum (V = 0, m ≈ 4.2–4.5e13 GeV, D539), and Λ needs a separate, tuned sector. "Λ's instanton (S ≈ 121)" is no longer an open problem; it is void, and D531 is void with it.
+Open problems now:
+- the string origin of the plateau factors (D535; partial lead for the log factor in D540);
+- the Λ sector;
+- a factorised, flux-free home (D530, D532);
+- embedding the Z₄^R/Z₈^R proton parity (D528–D533).
+Current paper: papers/twist_v7/JANUS_TWIST_PAPER.md v2.1.
