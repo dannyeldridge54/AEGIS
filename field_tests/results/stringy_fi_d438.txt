@@ -1,0 +1,12 @@
+c = -0.3728;  roots: x_E1 = 29.600 (capture), x_E2 = 135.1
+x   0.00013:  ζ = -3.7278e-01 M_s²   (supergravity-like large-x term (n1−m1)/(πx) = 9.549e+05)
+x    0.0088:  ζ = -3.7251e-01 M_s²   (supergravity-like large-x term (n1−m1)/(πx) = 1.411e+04)
+x         1:  ζ = -3.4185e-01 M_s²   (supergravity-like large-x term (n1−m1)/(πx) = 1.241e+02)
+x       3.1:  ζ = -2.7956e-01 M_s²   (supergravity-like large-x term (n1−m1)/(πx) = 4.005e+01)
+x        20:  ζ = -3.6269e-02 M_s²   (supergravity-like large-x term (n1−m1)/(πx) = 6.207e+00)
+x        29:  ζ = -1.5178e-03 M_s²   (supergravity-like large-x term (n1−m1)/(πx) = 4.281e+00)
+x      29.6:  ζ = +0.0000e+00 M_s²   (supergravity-like large-x term (n1−m1)/(πx) = 4.194e+00)
+x        30:  ζ = +9.7214e-04 M_s²   (supergravity-like large-x term (n1−m1)/(πx) = 4.138e+00)
+x        63:  ζ = +2.7384e-02 M_s²   (supergravity-like large-x term (n1−m1)/(πx) = 1.970e+00)
+x      1000:  ζ = -2.5485e-01 M_s²   (supergravity-like large-x term (n1−m1)/(πx) = 1.241e-01)
+max |ζ| for x < x_E: 0.373 M_s² → screening |φ|² ≤ that × M_s² (sub-Planckian if M_s ≲ M_P)

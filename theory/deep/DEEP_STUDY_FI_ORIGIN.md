@@ -46,3 +46,11 @@ lock): a two-modulus toy model with the D7 sector present only for x ≳ 1, chec
 Starting from the real Twist trajectory, the FI mechanism alone captures the field: it hits the D-term wall at x_E at T ≈ 1.5×10¹¹ GeV,
 bounces back by Δx ≈ 0.1–0.2, and the soft-mass slope returns it to the wall by T ≈ 2×10¹⁰–6×10¹⁰ GeV, where it settles. No separate condensate
 scale or thermal trap is needed. The open problem is now isolated to the small-x region (inflation and the first ~2.5 e-folds after it).
+
+## 6. Step 3 result (D438, locked toy): the small-volume obstacle disappears in the stringy treatment
+The supergravity FI formula ξ ∝ (1/𝒱)∫J∧F is only the large-volume limit of the grade difference of the brane bound state's constituents
+(Π-stability; Douglas–Fiol–Römelsberger, hep-th/0002037). Grades are phases, so the FI term stays bounded. In a T²×T² toy with fluxes
+(10, 400) and a capture root at x_E = 29.6, |ζ| ≤ 0.37 M_s² for every x below x_E (−0.373 at the CMB point), against −76 M_P² from the naive
+extrapolation; screening needs only a sub-string-scale condensate, nearly constant during inflation. The mechanism therefore survives from
+inflation to capture at toy level. Remaining: α′/instanton corrections at x ≲ 1, the brane gauge coupling at small volume, and a real
+Calabi–Yau embedding.

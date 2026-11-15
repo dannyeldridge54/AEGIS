@@ -4287,3 +4287,15 @@ to the free-roll limit 29.83. The thermal trap of D396 becomes a backup rather t
 no moduli problem, D ≈ 1. Conditional exactly as D436: valid only where the magnetised D7 sector is present and screened (x ≳ 1); the
 small-x (inflation) region still needs a different description. A first run had two reporting bugs (fixed via D1 before scoring; first
 output kept as toy_fi_d437_run1_bug.txt).
+
+**D438 (DEEP STUDY step 3; scored, locked PREREG_D438_STRINGY_FI; results/stringy_fi_d438.txt) — OBSTACLE RESOLVED IN THE TOY: with the
+stringy (Π-stability) FI term, ζ = difference of central-charge grades, the small-volume blow-up of D436 disappears.** Toy: magnetised D7
+on T²×T², fluxes (m₁, n₁) = (10, 400) on the rolling cycle, constant c = −0.373 from the fixed cycle; ζ(x) = (1/π)[atan(x/m₁) − atan(x/n₁)] + c.
+(i) Capture root at x_E = 29.6 approached from small x (second root at 135, irrelevant for a field arriving from below). (ii) |ζ| ≤ 0.373 M_s²
+for all x < x_E: ζ ≈ −0.373 at the CMB point and at the end of inflation, −0.28 at x = 3.1 — instead of the supergravity extrapolation's
+−76 M_P² (D436). Screening needs only |φ|² ≈ 0.37 M_s², sub-Planckian if M_s ≲ M_P; ζ is almost constant at small x, so the screened
+condensate adds essentially no slope to the inflaton (corrections ~(M_s/M_P)² × 0.37 to V, nearly x-independent). (iii) At large x the toy
+reproduces the supergravity 1/x form (at x = 1000: 0.118 vs (n₁ − m₁)/πx = 0.124, computed). Note: in this toy x_E lies on the stringy branch
+(x < √(m₁n₁) ≈ 63), not in the strict large-volume regime. Caveats: no α′ or worldsheet-instanton corrections to Z (relevant at x ≲ 1); the
+D7 gauge coupling at small volume not modelled; a toy torus, not a Calabi–Yau. Status of the capture-coupling origin: candidate mechanism
+with its main obstacle removed at toy level (D436–D438).
