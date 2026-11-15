@@ -1,0 +1,12 @@
+xi=0.102
+  m=1e+01: lambda_th=5.11e-04; need(100%)=0.026, need(1%)=0.088 -> THERMAL
+  m=1e+02: lambda_th=9.08e-04; need(100%)=0.085, need(1%)=0.288 -> THERMAL
+  m=1e+03: lambda_th=1.61e-03; need(100%)=0.279, need(1%)=0.937 -> THERMAL
+  m=1e+04: lambda_th=2.87e-03; need(100%)=0.91, need(1%)=3.04 -> THERMAL
+  m=1e+05: lambda_th=5.11e-03; need(100%)=2.962, need(1%)=9.84 -> THERMAL
+xi=0.321
+  m=1e+01: lambda_th=2.88e-04; need(100%)=0.036, need(1%)=0.123 -> THERMAL
+  m=1e+02: lambda_th=5.12e-04; need(100%)=0.119, need(1%)=0.4 -> THERMAL
+  m=1e+03: lambda_th=9.10e-04; need(100%)=0.39, need(1%)=1.298 -> THERMAL
+  m=1e+04: lambda_th=1.62e-03; need(100%)=1.266, need(1%)=4.197 -> THERMAL
+  m=1e+05: lambda_th=2.88e-03; need(100%)=4.104, need(1%)=13.548 -> THERMAL

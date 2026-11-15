@@ -4453,3 +4453,9 @@ trimmed at the top by the rescaled KK scale; nothing breaks.** In the D453 band 
 M₁ ≈ 7e8 (D440, κ ≈ 1) to ~1e13 GeV. D440's preferred values (2.9e10–2e11 GeV for m̃₁ = m_sol–m_atm) are untouched, and the temperature at
 capture (1.5e11 GeV) still exceeds them. Hidden-sector heating (ε_h ≤ 1e-5, D447) adds negligible entropy (no washout of Y_B). No scored
 result → WALL.
+
+**D455 (cycle 40, "pp"; fourth pass PART 5/8; scored, locked PREREG_D455_THERMALISE; results/thermalise_d455.txt) — THERMAL in all 10
+cases: the item D447 left out is now done, and D447 holds.** The hidden 2→2 rate λ⁴T_h/16π equals H at T_h = m for λ_th = 2.9e-4–5.1e-3
+(m = 10 GeV–100 TeV, T_h/T = 0.10–0.32). Every coupling D447 needs (≥ 0.026) is 5–1000 × larger, so the hidden sector reaches its own
+equilibrium before freeze-out, and the injected abundance (D446) is forgotten. Hand check at m = 1e4 GeV, ξ = 0.102: T = 9.8e4 GeV,
+H = 1.35e-8 GeV, λ_th = 2.9e-3 ✓. CENTRE: the F5 conditional pass (D447) is now complete: lightest D7-charged state ≲ 10 TeV (1%) / ≲ 100 TeV (all DM).
