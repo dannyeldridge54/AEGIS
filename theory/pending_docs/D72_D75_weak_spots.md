@@ -5686,3 +5686,21 @@ Cure (reasoning, consistent with EHT's "symmetry" route):
 - Caveat: z's modular weight must be chosen neutral, and the nilpotent-sector couplings (D545) must respect it. Not yet checked.
 Thermal production at T_R ~ 1e7 GeV: for an unstable TeV-scale gravitino with large B_h, the commonly quoted BBN limits are around 1e6–1e7 GeV (to verify against KKMY tables). It is safe for m₃/₂ ≳ O(10) TeV or for a light stable gravitino.
 Verdict: OPEN, with a concrete condition. Two-term SERAPIS needs (i) the S-parity of the τ = i vacuum to forbid inflaton–SUSY-breaking mixing, and (ii) m₃/₂ outside the TeV unstable window. Condition (i) ties back to the proton-parity result: a consistency requirement, not yet a derivation.
+
+## D584 — DEEP (Ddl 07:49 CT; literature + reasoning + arithmetic estimates, not locked) — CORRECTION to D583's cure: the S-parity does not help, because the inflaton carries an F-term; the viable escape is m₃/₂ > m_φ/2 ≈ 1e11 GeV
+Checked the KL supergravity embedding (2408.05203, eqs. 9.1–9.2):
+- G = −3α ln(T + T̄) + G_XX̄ XX̄ + ln|W₀ + F_X X|², with X² = 0 and Λ = F_X² − 3W₀².
+- The paper gives no F_τ, gravitino or goldstino analysis. Its full-supergravity SL(2,Z) invariance is asserted, not shown (W₀ is a constant without modular weight).
+Reasoning:
+1. With X nilpotent, EHT's sgoldstino coupling g_{φ̄zz}φ̄XX vanishes identically (X² = 0). And the linear δτ·XX̄ mixing ∝ ∂_τV(i) = 0 is killed by D574A's stationarity. So D583's S-parity argument is moot for those terms.
+2. But W₀ ≠ 0 (needed for m₃/₂ and Λ ≈ 0, which forces F_X ≈ √3 W₀) gives F_τ = K_τ W₀ ≠ 0 at τ = i.
+   - For α = 1/3, the inflaton's share of SUSY breaking is about 3α|W₀|²/(F_X² + 3α|W₀|²) ≈ 1/4. So the inflaton is partly the goldstino.
+   - The symmetry does not forbid this, so the moduli-induced gravitino problem applies with an O(1) F-term.
+3. Estimate: Br(φ → 2ψ₃/₂) ~ 0.01–0.1 gives Y₃/₂ ~ Br·(3/2)T_R/m_φ ≈ 7e-7 to 7e-6 (m_φ = 2.1e11, T_R = 1e7). That is fatal for any TeV-scale or light stable gravitino.
+Escape: kinematic closure, m₃/₂ > m_φ/2 ≈ 1.0–1.15e11 GeV (high-scale SUSY, below H_inf ≈ 4e12).
+- Then the inflaton cannot decay to gravitino pairs.
+- Thermal production at T_R ~ 1e7 GeV is negligible.
+- A gravitino this heavy decays long before BBN.
+- Bonus: m_φ ≈ 2m₃/₂ is a typical modulus/gravitino relation, so this may be natural rather than tuned (not shown).
+- Constraint on the model: the SUSY breaking scale is fixed near F ~ m₃/₂M_P ~ (1e14.7 GeV)².
+Verdict: D583's "S-parity cure" is WITHDRAWN. The gravitino problem is solved only if m₃/₂ ≳ 1e11 GeV. This is a new, testable-in-principle requirement: high-scale SUSY, with no TeV superpartners from this sector. Still to check: the proton-parity results with m₃/₂ this large (D542 assumed a non-zero m₃/₂ but not this scale).
