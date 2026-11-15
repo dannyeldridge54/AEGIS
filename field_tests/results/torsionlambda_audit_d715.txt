@@ -1,0 +1,7 @@
+Planck 2018 compressed: R = 1.7502 ± 0.0046, l_A = 301.471 ± 0.090
+(a) defaults beta=0, H0=67.4: E(0)=1.0000 z*=1091.9 R(Om_eff)=1.7495 (-0.1σ)  R(bare Om, as coded)=1.7495 (-0.1σ)  l_A=301.50 (+0.3σ)
+(a') LCDM check Om=0.3153 h=0.6736: E(0)=1.0000 z*=1091.9 R(Om_eff)=1.7497 (-0.1σ)  R(bare Om, as coded)=1.7497 (-0.1σ)  l_A=301.45 (-0.2σ)
+(b) beta=0.192, H0=72.95, lambda=0.685 (E(0)!=1): E(0)=1.0298 z*=1096.4 R(Om_eff)=1.7706 (+4.4σ)  R(bare Om, as coded)=1.6218 (-27.9σ)  l_A=293.11 (-92.9σ)
+(c) as (b), lambda renormalised: E(0)=1.0000 z*=1096.4 R(Om_eff)=1.7804 (+6.6σ)  R(bare Om, as coded)=1.6307 (-26.0σ)  l_A=294.73 (-74.9σ)
+Degeneracy: E depends on (beta, Om) only through Om*(1+beta):
+  (c') beta=0, Om'=0.315*1.192: E(0)=1.0000 z*=1096.4 R(Om_eff)=1.7804 (+6.6σ)  R(bare Om, as coded)=1.7804 (+6.6σ)  l_A=294.73 (-74.9σ)
