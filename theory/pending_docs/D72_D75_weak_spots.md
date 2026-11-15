@@ -4940,3 +4940,14 @@ SPT+Planck +0.1σ to +0.4σ (fits well); CMB-SPA −1.1σ to −1.8σ; SPA+DESI 
 Design lead from the same paper: a STIFFER minimum (V ∝ φ^k, k ≥ 6) makes reheating kination-like, extends N* to ~56–58 and raises n_s to ~0.965–0.968. In SERAPIS that means a higher-order zero of H at τ = i, which is exactly what made
 the D516 vacuum too light (fifth force). Trade-off flagged: stiff reheating (higher n_s) vs heavy vacuum (no fifth force). A possible way through: a vacuum that is high-order near τ = i yet heavy through the c-term or the
 lens. Not computed; a candidate locked test. Credit: 2510.18656, 2511.06640, 2609.19296.
+
+## D526 — PC job J4: Janus/SERAPIS prediction map (computed on Danny's PC, locked PREREG_PCJOBS_J4)
+500 points: κ ∈ {0.25…8}, δ ∈ {0…0.006}, N* ∈ {50, 52, 54, 55.6, 58}. Raw: field_tests/results/pcjobs_J4_janus_map.txt.
+- κ barely matters for κ ≲ 6 (n_s shifts < 0.003). κ = 7 shifts n_s up; κ = 8 breaks (n_s > 1 or nonsense: a feature enters the plateau). Validity range: κ ≲ 6. Recorded as a result, not fixed.
+- Over the reheating window N* = 52–55.6 (κ ≤ 2π):
+  - Kairos (δ = 0): n_s 0.963–0.967, r 0.0011–0.0013 → fits SPT+Planck and CMB-SPA; misses SPA+DESI and P-ACT-LB. Confirms D519/D520.
+  - Chronos δ = 0.002: n_s 0.970–0.974, r 0.0017–0.0021 → fits all four sets at N* = 52; three at 55.6.
+  - Chronos δ = 0.0023 (D525 value): n_s 0.971–0.975, r 0.0018–0.0022 → fits CMB-SPA, SPA+DESI, P-ACT-LB. Confirms D525.
+  - δ ≥ 0.004: only P-ACT-LB (and SPA+DESI at low N*); δ = 0.006 fits none.
+- Sharp, falsifiable pair: Kairos says r ≈ 0.0012, Chronos r ≈ 0.002 (both far below r < 0.036; both inside reach of LiteBIRD/CMB-S4 σ(r) ~ 0.001 only marginally — honest: a 1–2σ distinction at best).
+Status: COMPUTED. Kairos/Chronos fork confirmed on a full grid; Chronos window δ ≈ 0.0015–0.003.
