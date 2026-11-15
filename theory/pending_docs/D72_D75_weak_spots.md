@@ -4908,3 +4908,4 @@ CMB-vs-DESI question. It is not 'fixable' within the model without adding struct
 Twist-1T, SERAPIS k = 3, SERAPIS-1. With CMB-SPA+DESI, only the tilted ones fit (Route A, Twist-M: +0.3σ, each with one fitted ε), and every untilted version sits at −2.3σ to −3.2σ. One data question, whether DESI's
 pull on n_s is real, therefore picks between 'predictive but DESI-tense' (SERAPIS-1, Twist-1T) and 'fits all but tuned' (Route A, Twist-M). The decisive future tests are n_s to ±0.002 (Simons Observatory/CMB-S4)
 and r: ~0.001 (untilted single-torus) vs ~0.0045 (tilted). LiteBIRD/CMB-S4 reach σ(r) ~ 1e-3, which separates them at ~3σ.
+D521a (correction): the computed table gives untilted versions at −1.5σ to −0.6σ vs SPA and −3.3σ to −2.3σ vs SPA+DESI (SERAPIS-1 at its D519 midpoint 0.9640: −1.5σ / −3.3σ); tilted ones at +1.7σ vs SPA and +0.3σ vs SPA+DESI. The D521 prose ranges were slightly off.
