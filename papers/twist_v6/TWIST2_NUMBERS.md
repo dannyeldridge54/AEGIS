@@ -44,3 +44,18 @@
 | Birefringence | c_γ 1.7–4.1, f 4–8e12 GeV; B4: 2–5.5σ at LiteBIRD for m ≳ 50–100 H0 | D443, D457, D484 |
 | B−L strings (if gauged) | Gμ ≈ 2e-17–8e-16 | D481 |
 | Flags | inflation at marginal control (𝒱 ≈ 1–3); Route A ≈ fibre-inflation line (credit); no GUT unification below M_s | D450–D453, D464, D470 |
+
+## Twist-M block (duality-symmetric variant, D490–D504, DEEP 1–11) — candidate, not baseline
+| Quantity | Value | D-notes |
+|---|---|---|
+| Design | F_sym = G(x) + x²G(1/x); V(1/x) = V(x) exactly; Λ and capture at self-dual x = 1 | D490 |
+| Cliff depth | n = 234.02 (Λ/V_* = 5.05e-111) | D494, D501 |
+| Inflation (fit ε = 1.49e-7) | n_s 0.9736 (fit), r = 0.00435, α_s = −7.6e-4, N* = 58.09 | D501 |
+| Kination | 3.28 e-folds (ΔN* +0.89) | D496 |
+| Late universe | w₀ = −1.0000, w_a ≈ 0; EDE at recombination ~2e-4 | D495 |
+| Field at minimum | m = 139 H0 (κ = 9378); needs screening/FI kink or β ≲ 3e-3 | D493, D498 |
+| Geometry (a = 7599) | 𝒱(x*) = 1; m_KK/T ≥ 3.4; M_s = 2.65e15 GeV ≈ gauge meeting point 2.4e15 | D497, D504 |
+| One-cycle link (mild) | τ_c ≈ 40 sets Λ (n/2π = 37) and axion mass (S = 252–269); → β_reio ≈ 0, Δβ ≈ 0.28° (LiteBIRD) | D502 |
+| DM | 100–200 TeV carries over (bremsstrahlung-dominated) | D503r |
+| Open | case-(i) capture run (D500, running); orbifold embedding with exact duality (DEEP 11); proton protection | D500, DEEP 11, D504 |
+| Prior art to credit | modular inflation; quintessential inflation; fixed-point trapping; modular quintessence (hilltop, w₀≈−0.8); exponentially small Λ; PIDM | DEEP 1–9 |
