@@ -33,9 +33,10 @@ def spectra(B,Nstar,kfac):
         Rpp=-(3-e1+e2)*Rp-q*R; hpp=-(3-e1)*hp-q*h
         return [Rp.real,Rp.imag,Rpp.real,Rpp.imag,hp.real,hp.imag,hpp.real,hpp.imag]
     sc=1/abs(R0); st=1/abs(h0)
-    y0=[R0.real,R0.imag,Rp0.real,Rp0.imag,h0.real,h0.imag,hp0.real,hp0.imag]
-    sol=solve_ivp(rhs,[Ni,Nf],y0,rtol=1e-9,atol=1e-30,method='DOP853')
-    R=sol.y[0,-1]+1j*sol.y[1,-1]; h=sol.y[4,-1]+1j*sol.y[5,-1]
+    R0n,Rp0n,h0n,hp0n=R0*sc,Rp0*sc,h0*st,hp0*st
+    y0=[R0n.real,R0n.imag,Rp0n.real,Rp0n.imag,h0n.real,h0n.imag,hp0n.real,hp0n.imag]
+    sol=solve_ivp(rhs,[Ni,Nf],y0,rtol=1e-10,atol=1e-12,method='DOP853')
+    R=(sol.y[0,-1]+1j*sol.y[1,-1])/sc; h=(sol.y[4,-1]+1j*sol.y[5,-1])/st
     PR=k**3*abs(R)**2/(2*math.pi**2); Pt=2*k**3*abs(h)**2/(2*math.pi**2)
     return PR,Pt,math.exp(s2*B['phiS'](Np))
 # old slow-roll count (D575/D581 code)
