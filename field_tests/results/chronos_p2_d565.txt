@@ -1,0 +1,8 @@
+p=2 delta=0.002 N*=52: y*=30.1 outside n_s=0.9781 r=7.09e-04 (+3.2 SPA, +2.0 SPA+DESI)
+p=2 delta=0.002 N*=55.6: y*=31.5 outside n_s=0.9802 r=6.58e-04 (+3.9 SPA, +2.7 SPA+DESI)
+p=2 delta=0.0023 N*=52: y*=31.3 outside n_s=0.9797 r=8.01e-04 (+3.8 SPA, +2.6 SPA+DESI)
+p=2 delta=0.0023 N*=55.6: y*=32.9 outside n_s=0.9818 r=7.48e-04 (+4.5 SPA, +3.3 SPA+DESI)
+p=2 delta=0.003 N*=52: y*=34.4 outside n_s=0.9832 r=1.05e-03 (+4.9 SPA, +3.8 SPA+DESI)
+p=2 delta=0.003 N*=55.6: y*=36.4 outside n_s=0.9851 r=9.90e-04 (+5.6 SPA, +4.5 SPA+DESI)
+p=2 delta=0.005 N*=52: y*=46.1 outside n_s=0.9902 r=2.04e-03 (+7.3 SPA, +6.4 SPA+DESI)
+p=2 delta=0.005 N*=55.6: y*=49.9 outside n_s=0.9916 r=1.97e-03 (+7.7 SPA, +7.0 SPA+DESI)

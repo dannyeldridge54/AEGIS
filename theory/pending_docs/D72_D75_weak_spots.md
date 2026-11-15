@@ -5383,3 +5383,12 @@ Sharp, falsifiable relation (our application of known attractor scaling to the m
 CMB-S4-class σ(r) ~ 4e-4 would partly test the boundary; LiteBIRD σ(r) ~ 1e-3 only the p = 1 case.
 Novelty caution (per D555 lesson): this is the standard α-attractor r–α relation (r = 12α/N²; small α ↔ small field range is known in the swampland literature). Only its mapping onto the modular perturbativity bound is ours. Not claimed as new physics.
 Status: SERAPIS now has a home-compatible Kairos variant (p = 2–3: n_s 0.964–0.966, r 1–3e-4) and a home-incompatible original (p = 1: r 1.2e-3). Chronos with p = 2 is not computed (expected: n_s ~0.972, r ~ 5e-4). Revises the v2.2 r-prediction range: "r = 1e-4 to 2e-3 depending on p, with string-home consistency requiring r ≲ 3e-4."
+
+## D565 — DEEP (DpL tick 2, 23:19 CT; scored, locked PREREG_D565_CHRONOS_P2; results/chronos_p2_d565.txt) — home-safe Chronos FAILS with the D525 tilt
+p = 2 with δ = 0.0023: n_s = 0.980–0.982 (+2.6σ to +3.3σ vs SPA+DESI), r = 7.5–8e-4, y* = 31–33, outside Im τ ≤ 25. Verdict by the lock: NOT HOME-SAFE (it fails both conditions). The tilt bites harder at p = 2 and also pushes horizon exit outward.
+Grid: δ = 0.002 → n_s 0.978–0.980, y* 30–32; δ = 0.003 → 0.983–0.985; δ = 0.005 → 0.990.
+Interpolating between δ = 0 (D564: 0.9635, y* 23.5) and δ = 0.002 (labelled an estimate, NOT a fit to be adopted): n_s = 0.9728 would need δ ≈ 0.0013 and gives y* ≈ 27, just outside the bound.
+Conclusion: a string-home-compatible SERAPIS fits CMB-SPA (Kairos p ≥ 2, D564) but NOT the DESI-including n_s. Chronos-type n_s ~ 0.973 pushes inflation to Im τ ≳ 27, where the perturbativity bound fails (marginally at Im S = 2; it passes for Im S ≥ 3, where the bound is 38).
+The fork becomes:
+- DESI-n_s real → Chronos → weaker coupling (Im S ≳ 3) or no perturbative home;
+- CMB-only n_s → home-safe Kairos (p ≥ 2, r ~ 1–3e-4).
