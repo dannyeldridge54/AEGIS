@@ -4407,3 +4407,12 @@ D446+D439 window 0.03–0.1. Without the √π convention factor the band is 0.0
 volume are not one geometry; and D439 held M_s fixed, whereas in string units M_s varies with volume during inflation (x ~ 1e-4). The
 consistency is for the late-time scale only, and the plateau test should be redone with M_s(x) (next deep item, needs its own lock). CENTRE:
 balanced. THIRD PASS DONE.
+
+**D450 (cycle 35, "pp"; fourth pass PART 2, LEFT; scored, locked PREREG_D450_PLATEAU_MSX; results/plateau_msx_d450.txt) — OUTSIDE CONTROL:
+in string units, the inflationary point sits at a sub-string volume.** At x* = 1.3e-4 the volume is 𝒱 = (2x*)^{3/2} = 4.2e-6, so
+M_s/M_P = 490–730 (g_s 0.1–0.5) — string scale far above Planck. Taken literally, the screening energy would be 3e4–2e5 × the inflaton
+energy (the δn_s, δr values printed are meaningless there and are not quoted). By the locked rule the string-unit formula does not apply, so
+D439's fixed-M_s result stands only as an assumption. This confirms and sharpens the control flag already noted in D408/D409 (x ≲ 1): the whole
+inflationary phase of Twist-2 lies outside the geometric (large-volume) regime. Possible ways out (not computed): a T-dual description
+(x → 1/x-type duality maps small to large volume), or reading x during inflation as a different modulus/regime. Until one is shown, the
+'inflation and Λ from one string modulus' claim carries this flag. CENTRE: no balance change, flag recorded; v2 paper must state it plainly.

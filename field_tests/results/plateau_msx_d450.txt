@@ -1,0 +1,7 @@
+g_s=0.1: Vol(x*)=4.19e-06, M_s/M_P(x*)=4.87e+02
+  c_H=1: dV/V=2.94e+04 dn_s=-3.90e+09 dr=1.04e+10
+  c_H=3: dV/V=8.83e+04 dn_s=-3.51e+10 dr=9.36e+10
+g_s=0.5: Vol(x*)=4.19e-06, M_s/M_P(x*)=7.28e+02
+  c_H=1: dV/V=6.58e+04 dn_s=-1.95e+10 dr=5.20e+10
+  c_H=3: dV/V=1.98e+05 dn_s=-1.76e+11 dr=4.68e+11
+VERDICT: OUTSIDE CONTROL

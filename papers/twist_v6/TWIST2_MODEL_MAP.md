@@ -149,3 +149,5 @@ alone.
 **Centre-confirmed (D447, cloud run 2):** the φ-sector remnant is removed by hidden annihilation if the lightest D7-charged state is ≲ 10 TeV (to 1%) or ≲ 100 TeV (as all of DM), λ ≲ 3, hidden bath T_h/T ≈ 0.1.
 
 **Centre-confirmed (D449):** geometry check: the volume at capture gives M_s ≈ 1.1–1.7e17 GeV (g_s 0.1–0.5), inside the dynamical window 0.03–0.1 M_P. Open: redo the plateau test with volume-dependent M_s.
+
+**Flag (D450):** the inflationary point sits at volume 𝒱 ≈ 4e-6 in string units (M_s ≫ M_P there); inflation is outside geometric control unless a T-dual/other description is shown.
