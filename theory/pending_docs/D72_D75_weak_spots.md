@@ -5828,3 +5828,13 @@ Caveats:
 - Y decay timing is not followed.
 Verdict: the moduli-induced LSP problem (D591) is AVOIDABLE by adiabatic suppression with a heavy dilaton (m_Y ≳ 2e15 GeV). That is a mild constraint inside the stabilisation window. It is the leading resolution; it needs a locked follow-up with full Y decay and stiff-phase evolution.
 Chain status for two-term SERAPIS: n_s 0.970–0.974, r 4.2–4.9e-4, m₃/₂ ≈ 1.1e11, m_soft ~ 1e9, m_Y ≳ 2e15 GeV, baryogenesis via resonant off-diagonal decays (D590, model needed).
+
+## D593 — DpL tick 5 (08:03 CT; 1 search + arithmetic) — NULL: no natural origin for ε ≈ 1.0–1.3e-4 found; loop ends
+- Candidates (1) and (2) of this tick were already done manually as D590–D592.
+- (3) ε origin. The search returned only 2512.02969 (already in D580); KL also leave their δ unexplained.
+- One idea checked by arithmetic: a gravitino-mass-driven one-loop term, δV ~ m₃/₂²M_P²/(64π²) relative to V₀ = 3H²M_P², gives ε ~ (m₃/₂/H)²/(192π²) ≈ 4e-7 at m₃/₂/H ≈ 0.027. To reach 1e-4 it would need m₃/₂ ≈ 0.45H.
+- But that loop term has the species (Ĝ₂) form, which gives mass without tilt (D577). It cannot supply ε·I₁. Rejected.
+Verdict: NULL (no new literature, no new locked computation). The DpL loop ends here. Open items for future locks:
+  (i) an explicit Γ_N flavour model at τ = i for off-diagonal φ → N₁N₂ and resonant leptogenesis (D590);
+  (ii) the full Y-decay + stiff-phase follow-up of D592;
+  (iii) the origin of ε.
