@@ -5242,3 +5242,18 @@ Consequences:
 - SERAPIS-KL needs no condensate, so b = 0 is allowed: another reason to prefer the KL form.
 - Their "Swampland" claim for τ → i∞ applies to models with b ~ O(10). Our inflation range is compatible only in the small-b corner. This is a real, checkable condition on any future home.
 Status: the home requirement is now: factorised T² ⊕ T⁴, flux-free T², and gauge sectors with |b^{N=2}| ≲ 2 on that T² (ideally 0).
+
+## D554 — DEEP (Dp 1, 22:52 CT; literature + scored estimate, locked PREREG_D554_KK_CUTOFF; results/kk_cutoff_d554.txt) — the cusp is a decompactification limit; the SERAPIS path stays inside the EFT for a high string scale
+Literature:
+- Leedom, Righi, Westphal (arXiv:2605.05322, May 2026): heterotic orbifolds with a Wilson line have an Sp(4,Z) duality group, W = Ω(S)H/χ_γ (Siegel cusp forms), and no dS at the elliptic fixed points (metastable dS only for A(S,S̄) > 3). At large Im T/U the string-derived potential DIVERGES, because a KK tower becomes light and the EFT breaks down. String-derived modular potentials therefore have no cusp plateau, consistent with D535 and D553.
+- Kobayashi, Nitta, Urakawa (arXiv:1604.02995): in-class modular inflation is small-field, a hilltop near |T| = 1 driven by the axion, with r ~ 1e-8 (adds to D536).
+Estimate: M_KK = M_s/√(A·y) at y* = 158.
+- M_s = 1e17 GeV, A = 1: M_KK = 8e15 GeV, M_KK/H = 870, M_KK/V^{1/4} = 1.3.
+- M_s = 3.7e17 GeV (weak-coupling heterotic): M_KK = 9e15–3e16 GeV (A = 10–1), i.e. 1.5–4.9 × V^{1/4}.
+- M_s = 1e16 GeV: M_KK/V^{1/4} = 0.04–0.13, so the inflation energy would be above the KK scale.
+Verdict: EFT CONTROLLED for M_s ≳ 1e17 GeV with A ≲ 10 (H ≪ M_KK everywhere; V^{1/4} < M_KK). Not controlled for a low string scale.
+Consequences:
+- SERAPIS needs a high string scale (M_s ≳ 1e17 GeV). That is natural for the weakly coupled heterotic string and fits D530's heterotic preference.
+- It is in tension with the Twist-2 IIB branch's low M_s (7e13–3.5e14 GeV, D453): SERAPIS and the Twist-2 FI realisation cannot share a string scale. Recorded as a CENTRE incompatibility. SERAPIS is the inflation-side model; the Twist-2 numbers do not carry over.
+- The light KK tower near the cusp is exactly why string-derived potentials blow up there. SERAPIS-KL's plateau must therefore come from physics that dominates the KK-tower effects at y ≲ 160. An open, sharp question for the string-origin gap.
+Status: the home requirement now includes M_s ≳ 1e17 GeV.

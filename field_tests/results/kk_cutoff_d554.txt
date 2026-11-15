@@ -1,0 +1,7 @@
+M_s=1.0e+16 A=1: M_KK(y*)=7.96e+14 GeV, M_KK/H=87, M_KK/V^1/4=0.13
+M_s=1.0e+16 A=10: M_KK(y*)=2.52e+14 GeV, M_KK/H=28, M_KK/V^1/4=0.04
+M_s=1.0e+17 A=1: M_KK(y*)=7.96e+15 GeV, M_KK/H=874, M_KK/V^1/4=1.33
+M_s=1.0e+17 A=10: M_KK(y*)=2.52e+15 GeV, M_KK/H=276, M_KK/V^1/4=0.42
+M_s=3.7e+17 A=1: M_KK(y*)=2.94e+16 GeV, M_KK/H=3235, M_KK/V^1/4=4.91
+M_s=3.7e+17 A=10: M_KK(y*)=9.31e+15 GeV, M_KK/H=1023, M_KK/V^1/4=1.55
+VERDICT: CONTROLLED
