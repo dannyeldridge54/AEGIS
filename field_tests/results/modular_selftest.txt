@@ -1,0 +1,2 @@
+j(i) = 1728.0000 (expect 1728); j(rho) = 2.03e-43 (expect 0)
+max |ln V(g tau) - ln V(tau)| over SL(2,Z) moves = 3.55e-14  (invariance check)
