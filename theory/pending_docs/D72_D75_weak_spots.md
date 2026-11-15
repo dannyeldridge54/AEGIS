@@ -6321,3 +6321,23 @@ Exact MS along Re τ = 1/2, ε = 6e-5:
 Verdict by the lock: ratio > 2, so SERAPIS-ρ SHARES the D632 signature. α_s does NOT distinguish the i and ρ vacua; it distinguishes "exponential-tilt SERAPIS" (either vacuum) from plain attractors at the same n_s.
 Extends forward line P7 to SERAPIS-ρ as R7: α_s = −(8.5–9.5)e-4, with the same scoring as PREREG_D633.
 Note: candidates (1)/(2) of this tick's prompt were already done manually (D630, D631), and (3) was skipped (< 1 day since D619).
+
+## D635 — DERIVATION (Danny 09:11 "continue derivation on them"; counts as DpL tick 3; locked PREREG_D635_JANUS_ANALYTIC; results/janus_analytic_d635.txt) — the Janus pair in closed form, and a three-observable CONSISTENCY RELATION; PASS against the exact numerics
+Derivation (cusp form V ≈ 1 − y⁻² + (ε/2)y; p = 2, α = 1/3; φ = ln y/√2):
+- V′ = √2(2y⁻² + εy/2) and V″ = −8y⁻² + εy, giving N = ∫ y dy/(4 + εy³).
+- Kairos (ε = 0): y*² = 8N, so 1 − n_s = 2/N, r = 1/N², α_s = −2/N².
+- With the tilt fraction x ≡ εy*³/4:
+  - 1 − n_s = (16/y²)(1 − x/2)  (the tilt LOWERS 1 − n_s);
+  - r = (64/y⁴)(1 + x)²  (the tilt RAISES r);
+  - α_s = −(128/y⁴)(1 + x/4)(1 + x)  (the tilt makes the running MORE negative).
+- Janus faces: Kairos is x = 0. Chronos is x ≈ 0.2–0.5. One parameter, x, moves the model from one face to the other.
+- Running enhancement versus an attractor at the same n_s: R(x) = (1 + x/4)(1 + x)/(1 − x/2)². It equals 1 at x = 0 and rises steeply, ≈ 2.8 at x = 0.47. This EXPLAINS D632's signature analytically.
+- **Janus consistency relation** (three observables, two parameters):
+  - ρ = 2√r/(1 − n_s), x = (ρ − 1)/(1 + ρ/2), A = (1 − n_s)/(1 − x/2);
+  - α_s = −(A²/2)(1 + x/4)(1 + x).
+  - Kairos limit: r = (1 − n_s)²/4 and α_s = −(1 − n_s)²/2.
+Check against exact MS (8 rows):
+- The relation predicts α_s within −10.6% to −12.8% in EVERY row. The offset is a uniform, subleading-order bias (I ≈ y − 0.6 and the end-point corrections).
+- The exact Kairos rows come out at x ≈ −0.05 instead of 0, the same subleading offset.
+- Verdict by the lock: PASS (≤ 20%).
+Use: a measured (n_s, r) gives x (how "Chronos" the universe is) and a predicted α_s; measuring α_s then TESTS the whole SERAPIS family with no free parameter. The relation holds for either vacuum (i or ρ), since it depends only on the cusp form. Multiplying the leading-order α_s by 1.12 removes the bias (empirical, from this check; not a new fit to data).

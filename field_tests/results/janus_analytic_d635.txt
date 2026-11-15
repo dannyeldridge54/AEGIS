@@ -1,0 +1,9 @@
+HS-Kairos N*=47: n_s=0.9594 r=3.55e-04 alpha_exact=-8.46e-04 | x=-0.048 alpha_Janus=-7.38e-04 err=-12.8% R(x)=0.90
+HS-Kairos N*=50: n_s=0.9618 r=3.16e-04 alpha_exact=-7.49e-04 | x=-0.047 alpha_Janus=-6.55e-04 err=-12.5% R(x)=0.90
+two-term 1.0e-4 N*=47: n_s=0.9680 r=4.72e-04 alpha_exact=-9.29e-04 | x=0.213 alpha_Janus=-8.20e-04 err=-11.7% R(x)=1.60
+two-term 1.0e-4 N*=50: n_s=0.9706 r=4.31e-04 alpha_exact=-8.30e-04 | x=0.242 alpha_Janus=-7.36e-04 err=-11.3% R(x)=1.70
+two-term 1.3e-4 N*=47: n_s=0.9706 r=5.15e-04 alpha_exact=-9.57e-04 | x=0.307 alpha_Janus=-8.48e-04 err=-11.3% R(x)=1.96
+two-term 1.3e-4 N*=50: n_s=0.9733 r=4.73e-04 alpha_exact=-8.58e-04 | x=0.348 alpha_Janus=-7.64e-04 err=-11.0% R(x)=2.15
+two-term 1.6e-4 N*=47: n_s=0.9733 r=5.62e-04 alpha_exact=-9.86e-04 | x=0.410 alpha_Janus=-8.78e-04 err=-10.9% R(x)=2.46
+two-term 1.6e-4 N*=50: n_s=0.9761 r=5.21e-04 alpha_exact=-8.87e-04 | x=0.465 alpha_Janus=-7.93e-04 err=-10.6% R(x)=2.77
+VERDICT: PASS
