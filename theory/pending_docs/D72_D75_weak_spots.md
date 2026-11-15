@@ -4607,3 +4607,7 @@ safely separated. Result → walls 0.
 
 **D478 (cycle 63; F4; scored) — NO ISOCURVATURE from φ.** During inflation (𝒱(x*) = 1) the screening field's D-term mass is m_φ ≈ g|ζ|^{1/2}M_s(x*) = 1.0–1.6e18 GeV
 = 6e4–9e4 H_inf, so it is frozen and heavy, with no isocurvature or extra fluctuations. Result → walls 0.
+
+**D479 (cycle 64, tick; PART 8, RIGHT; review only) — nothing new on DM beyond D467/D468/D473 from minutes ago.** Summary of DM status: gravity-only 100–200 TeV
+fermion, stable by a gauged discrete symmetry (D473); optional second component from the lightest D7-charged state (≲ 10 TeV, λ ≈ 0.006–2, D468), or a ≈ 0.6%
+remnant for an eV soft mass (D467). WALL.
