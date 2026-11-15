@@ -1,0 +1,3 @@
+m_s=1e-09 GeV: hits 5001, rem rho/s=2.50e-12 GeV, eps_h=2.23e-23 -> ok
+m_s=1e+00 GeV: hits 5001, rem rho/s=7.92e-02 GeV, eps_h=7.04e-13 -> ok
+m_s=1e+04 GeV: hits 5001, rem rho/s=3.65e+03 GeV, eps_h=3.24e-08 -> ok

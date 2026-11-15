@@ -4544,3 +4544,11 @@ checked. No scored result → WALL.
 would give ΔN_eff = 0.268 > 0.14. So the portal must stay out of equilibrium: y′ ≤ 4.2e-6 (m_ψ = 5e5 GeV) to 1.9e-4 (1e9 GeV), from Γ = H at T = m_ψ.
 It still has to let ψ decay before BBN (y′ ≳ 1e-14–2e-16, D425), which leaves a window 4e8–9e11 wide. Correction to D426: only its 'colder hidden bath' branch survives,
 and that branch is what D447/D463 use. CENTRE: balanced; leptogenesis (L-conserving ψ decays, D425) unaffected.
+
+**D467 (cycle 52, "pppp"; fifth pass PART 5; scored, locked PREREG_D467_EPS_H; results/eps_h_d467.txt) — WITHIN D463 for all m_s, with a
+large margin in the rescaled geometry.** At r = 1.43e-4 the summed bounce injection is ρ/s = 2.5e-12 / 7.9e-2 / 3.7e3 GeV for m_s = 1e-9 / 1 /
+1e4 GeV, i.e. ε_h = 2e-23 / 7e-13 / 3e-8, all ≪ 5.5e-5. So the hidden dark radiation of D463 is far below 0.013 here, because the injection scales
+roughly as m_s² r^{4/3}. Post-lock reading (not scored): (i) for a gravity-mediated eV soft mass the remnant is 2.5e-12 GeV ≈ 0.6% of DM even with no
+annihilation at all, so D445–D447's removal conditions are not needed in that case; (ii) for m_s ≳ GeV the remnant exceeds DM and must annihilate, but with
+ε_h this small the hidden bath is very cold (ξ ~ 0.02 or less) and D455's thermalisation threshold rises as ξ^{-1/2}. That case needs re-checking with the actual ξ.
+CENTRE: balanced; F7 margin improves; F5 for m_s ≳ GeV flagged for a re-check.
