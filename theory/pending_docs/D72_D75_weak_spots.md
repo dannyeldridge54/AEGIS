@@ -4173,3 +4173,10 @@ rolls in the same direction as before. Flags (F6, report): the field range from 
 during inflation), worse for the distance conjecture than D408's 15.1 M_P from the CMB point; only the last ~5 M_P before the end of inflation
 are observable. (b) CONNECTIONS: part 3 (kination) unchanged (end-of-inflation factor 1.00007, D419); part 11 — the control flag at x ≲ 1 now
 covers x down to ~10⁻⁸. (c) CENTRE: bridges as in D419 (B1 = +2.5×10⁻³); no filter changes. Result → walls 0.
+
+**D424 (cycle 14, "pp"; second pass PART 3, LEFT; scored, locked PREREG_D424_PART3B; results/part3b_d424.txt) — SAFE and undetectable:
+with r = 0.0046 the radiation-era GW plateau is Ω_GW h² ≈ 1.7×10⁻¹⁷; the Twist's ~3.5 e-folds of kination boost modes above ~3×10⁵ Hz by up to
+×33, to a peak ≈ 5.6×10⁻¹⁶ at ≈ 10⁷ Hz.** ΔN_eff(GW) ≈ 10⁻¹⁰ (estimate), negligible. The boosted band lies at 0.3–12 MHz, far above LISA/ET
+and orders of magnitude below proposed high-frequency GW searches; the blue tilt is a real feature (D86) but not a near-term test.
+(b) CONNECTIONS: part 2 (r from Route A); part 9 (ΔN_eff budget: gravitino 0.02–0.06 dominates, D422). (c) CENTRE: F7 pass; no bridge change.
+Result → walls 0.
