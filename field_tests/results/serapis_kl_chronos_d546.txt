@@ -1,0 +1,9 @@
+delta=0.0023: V(i)=0.00e+00, neighbours min=1.50e-07 -> minimum at i: True
+delta=0.0015 N*=52: y*=132.2 n_s=0.9688 r=0.00182 (+0.1 sigma SPA, -1.5 SPA+DESI)
+delta=0.0015 N*=55.6: y*=142.5 n_s=0.9711 r=0.00164 (+0.9 sigma SPA, -0.6 SPA+DESI)
+delta=0.002 N*=52: y*=140.1 n_s=0.9705 r=0.00202 (+0.7 sigma SPA, -0.9 SPA+DESI)
+delta=0.002 N*=55.6: y*=151.6 n_s=0.9728 r=0.00183 (+1.5 sigma SPA, -0.0 SPA+DESI)
+delta=0.0023 N*=52: y*=145.2 n_s=0.9715 r=0.00215 (+1.0 sigma SPA, -0.5 SPA+DESI)
+delta=0.0023 N*=55.6: y*=157.6 n_s=0.9738 r=0.00195 (+1.8 sigma SPA, +0.4 SPA+DESI)
+delta=0.003 N*=52: y*=158.0 n_s=0.9737 r=0.00247 (+1.8 sigma SPA, +0.3 SPA+DESI)
+delta=0.003 N*=55.6: y*=172.3 n_s=0.9760 r=0.00226 (+2.5 sigma SPA, +1.2 SPA+DESI)

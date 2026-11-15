@@ -5171,3 +5171,14 @@ Verdict: CONSISTENT. This is SERAPIS–Kairos rebuilt as a well-defined SL(2,Z) 
 - Chronos: the same tilt route (plateau power ½ + δ, i.e. I-power) would carry over; not computed here.
 - Credit: Kallosh & Linde 2408.05203. What this note adds is the τ = i-minimum invariant built on |j − 1728|.
 Status: SERAPIS is now well-defined globally in this form. Use SERAPIS-KL as the reference model in v2.2+.
+
+## D546 — LEFT (pp 22:39 CT; scored, locked PREREG_D546_SERAPIS_KL_CHRONOS; results/serapis_kl_chronos_d546.txt) — CHRONOS CARRIES OVER to SERAPIS-KL
+V = V₀[I/(I+1)]·I^{2δ}, with the D525 value δ = 0.0023 (not refitted).
+- n_s = 0.9715 (N* = 52) and 0.9738 (55.6), i.e. −0.5σ and +0.4σ vs SPA+DESI. r = 0.0020–0.0022.
+- τ = i stays the V = 0 minimum (neighbours at 1.5e-7 V₀).
+- Grid: δ = 0.0015–0.003 spans n_s 0.969–0.976; δ ≈ 0.002 at N* = 55.6 lands exactly on 0.9728.
+These match D525/D526 (0.971–0.974, r ≈ 0.002), so both branches carry over unchanged to the globally consistent form.
+Status: SERAPIS-KL now has both branches.
+- Kairos (D545): n_s 0.963–0.965, r 0.0012–0.0013, no tilt.
+- Chronos (D546): n_s 0.971–0.974, r 0.0020–0.0022, one tilt.
+The published numbers stand, and the model behind them is now well-defined. Should go into v2.2+ (prepared v2.2 does not yet mention D545/D546).
