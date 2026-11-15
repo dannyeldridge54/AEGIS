@@ -4474,3 +4474,11 @@ in the rescaled geometry: consistent, nothing new scored.** If it is a closed-st
 β depends only on c_γΔθ, so β = 0.277° still needs c_γ = 1.7–4.1. The photon coupling is then g_aγγ = c_γα/(2πf) = 2.6e-16–1.3e-15 GeV⁻¹, about 500×
 below the ~6e-13 GeV⁻¹ X-ray bounds on ultralight axions (bound value quoted approximately). Its energy share is Ω_a ≈ 1e-12 (negligible). The mass m ~ 2–1e4
 H0 must come from an instanton with e^{−S} tuned; not computed. No scored result → WALL.
+
+**D458 (cycle 43, "pp"; fourth pass PART 8, RIGHT; scored, locked PREREG_D458_KK_RELIC; results/kk_relic_d458.txt) — "NEEDS NO KK PARITY".**
+At the D453 pinch point (T = 8.2e12 GeV) the lightest KK modes (m = 5.0e13 / 2.5e13 GeV for a = 3846 / 7852) are partly thermal:
+Y = 9e-5 / 7e-4 per species. If they were stable (KK parity) they would overclose by 1e19–4e19. They decay gravitationally in 3e-29–3e-28 s,
+carrying 0.07–0.28% of the radiation energy, so the worst case (all into dark radiation) gives ΔN_eff = 0.005–0.021 per species. Added to the D430
+budget (0.047) that is ≤ 0.07 < 0.14 for one species. The a ≈ 7.9e3 end becomes risky if several KK species are this light (e.g. ≳ 4 species → > 0.14).
+Conditions: no KK parity (generic for a Calabi–Yau, unlike orbifold/UED-type setups) and few light KK species, which favours the a ≈ 3.8e3 end of the band.
+CENTRE: balanced with conditions; F7 (ΔN_eff) margin narrows at the upper end.

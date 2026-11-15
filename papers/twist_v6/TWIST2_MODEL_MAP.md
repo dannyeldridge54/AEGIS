@@ -157,3 +157,5 @@ alone.
 **Centre-confirmed (D452):** with the modulus normalised so 𝒱 = 1–10 at the CMB point (allowed Kähler rescaling), capture still holds (M_s ≈ 7e13–3.5e14 GeV); D450 flag downgraded to marginal control (α′ corrections at 𝒱 ~ 1–10 unchecked).
 
 **Narrowed (D453):** KK tower after inflation limits the rescaling to a ≈ 3.8e3–7.9e3 (𝒱 ≈ 1–2.9 at the CMB point, m_KK/T ≈ 3–6): marginal on both ends.
+
+**Condition (D458):** no KK parity; few light KK species; the a ≈ 3.8e3 end of the D453 band is preferred (ΔN_eff +0.005 per species vs +0.021 at 7.9e3).
