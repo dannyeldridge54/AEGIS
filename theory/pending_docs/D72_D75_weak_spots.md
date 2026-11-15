@@ -4677,3 +4677,11 @@ small residual kinetic energy. A volume modulus with β = 1/√6 would give 2β�
 reading (not computed): the duality swaps the two branes, so on the x > 1 side the opposite-charge field screens the D-term. The kink is then two-sided
 (V ≈ m_s²|ζ|M_s² on both sides) and D476's screening (threshold ≫ any matter density) carries over. Also, the field now reaches x = 1 by slow tracking, not by a
 fast hit, which suggests the non-adiabatic φ remnant of D444–D447 is absent (to be checked).
+
+**D494–D496 (Twist-M M3–M5; scored, locked PREREG_D494_D496_TWISTM; results/twistm_late_d494.txt)**
+**D494:** exact calibration V_* = (3π²/2)A_s r M_P⁴ = 4.95e63 GeV⁴ → Λ/V_* = 5.05e-111 → n = 234.05 (was 233.90; ε held).
+**D495 — Λ-LIKE:** defining today as Ω_x = 0.69, the field sits at x = 1.00004 with w₀ = −1.0000 and w_a = +0.0001. The early-dark-energy share at recombination is
+Ω_x = 1.7e-4. So Twist-M looks exactly like ΛCDM at late times (it does NOT explain a DESI-type w₀ > −1). Caveat (my setup): matter–radiation equality was held at
+63.5 − ln 3400 while 'today' came out at N = 64.40, so z_eq in this run is ~8000, not 3400. The late-time w is insensitive to that, but Ω_x(rec) carries a factor-~2 uncertainty.
+**D496:** kination lasts 3.28 e-folds (D391 assumed 1.5), so N* rises by ≈ +0.89 and n_s by ≈ +5.4e-4. The fitted ε of D491 must be lowered slightly (re-fit pending), and
+r stays ≈ 0.0045.

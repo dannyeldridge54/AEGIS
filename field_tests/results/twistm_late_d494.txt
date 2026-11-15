@@ -1,0 +1,3 @@
+D494: V_*=4.95e+63 GeV^4, Lambda/V_*=5.05e-111, n=234.054 (was 233.90)
+D495: today N=64.40 (assumed 63.5 before), x=1.00004, w0=-1.0000, wa=+0.0001, Omega_x(rec)=1.68e-04 -> LAMBDA-LIKE
+D496: kination length 3.28 e-folds (D391 assumed 1.5) -> dN* = +0.89, n_s shift ~ +5.4e-04
