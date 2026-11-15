@@ -4715,3 +4715,8 @@ This confirms D462/D465, and the static fixing is theirs.
 (b) hep-th/0403001 (Kofman et al., 'Beauty is attractive') and 1310.4751: moduli trapping at enhanced-symmetry points by non-adiabatic particle production. That is our D444/D446
 bounce production, which they show aids trapping. Twist-M's self-dual point is the classic T-duality enhanced-symmetry point.
 No contradictions. Credits are added to the v2 list. The novelty claim narrows to the cosmological chain (inflation → capture → Λ) and the stringy small-volume FI treatment.
+
+**DEEP 2 (Danny "Deep", 21:03 CT; topic 2 inflation / Twist-M; literature; theory/deep/DEEP_topic2.md).** Duality-symmetric (modular) inflation is established prior art
+(1604.02995, 2403.02125, 2503.13682, 2411.18603); moduli attraction to fixed points (2211.00659); dark energy near the S-dual point (2506.02731, but there on a hilltop with w₀ ≈ −0.8).
+Twist-M's distinct content: one duality-symmetric modulus giving inflation on the small-x plateau and Λ at the self-dual MINIMUM (w₀ = −1). That is distinguishable from 2506.02731
+by w₀. Credits go to the v2 / any Twist-M write-up. No contradiction with D490–D501.
