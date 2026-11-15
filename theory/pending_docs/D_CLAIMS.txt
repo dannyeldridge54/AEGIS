@@ -3,3 +3,4 @@ D716  2026-11-15T23:09Z  Star Mapper discovery categories v1
 D717  2026-11-15T23:36Z  sugra rung: modular-invariant K with constant W0
 D718  2026-11-15T23:42Z  escape 0<s<1 Epstein Kahler
 D719  2026-11-15T23:44Z  SERAPIS-E N* bracket check (Liddle-Leach)
+D720  2026-11-15T23:55Z  SERAPIS-E T_R from sterile off-diagonal decays at rho
