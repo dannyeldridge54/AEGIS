@@ -3,3 +3,4 @@
 - No numbers or predictions changed.
 - Proton parity in the covariant completion refined (D660–D663): the modular centre yields ordinary matter parity at ρ (all anomaly-free assignments) but not at τ = i with singlet fields (Weinberg operator weight ≡ 2 mod 4). Abstract and Sec. VII updated.
 - τ = i: the Γ2 ≅ S3 flavour doublets restore coexistence of centre matter parity and neutrino masses (D664).
+- Janus extended (D665–D667): one consistency relation serves both vacua to ~1%; new closed form and frozen prediction for the running of the running, β_s = −(3.0–4.6)e-5.

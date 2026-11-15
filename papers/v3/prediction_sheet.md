@@ -11,6 +11,7 @@ Labels: **computed** = from locked scripts (exact Mukhanov–Sasaki, D588); **es
 | r | (4.8–5.7)×10⁻⁴ | (4.6–5.1)×10⁻⁴ | (3.3–3.7)×10⁻⁴ (D637) | computed |
 | α_s = dn_s/dln k (lock D633, N* 47–50; −(8.8–10.2)×10⁻⁴ at N* 46–49, D642) | −(8.6–9.9)×10⁻⁴ (lock D633; D605's −(3–5)×10⁻⁴ was an attractor estimate, superseded) | −(8.5–9.5)×10⁻⁴ | ≈ −2/N*² | computed |
 | m_ν1 (Affleck–Dine LH_u, computed D646) | 2×10⁻¹³–9×10⁻¹¹ eV (T_R 1e3–1e5; thermal effects negligible, D653) → Σm_ν ≈ 0.0588 eV IF normal ordering (ordering is input from data, not predicted; lock D605 states NO) | same | — | estimate (D646/D646a) |
+| β_s = d²n_s/dln k² (lock D667) | −(3.0–4.6)×10⁻⁵ | same | −4/N*³ | computed |
 | f_NL^local / isocurvature | ≈ 0.01 / ~10⁻⁸ of ζ (D587; lock D605 said ≲10⁻¹⁰) | ≈ 0.01 | — | estimate/computed |
 | Superpartners | covariant completion (adopted, D647–D650): m3/2 ~ (2.5–11)×10⁵ GeV, scalars ~ m3/2, wino LSP 0.66–2.9 TeV, gluino 4.7–21 TeV (estimates); constant-W0 chain (lock D605 P5): none below ~10⁸ GeV | same | — | estimate |
 | Reheating | T_R 10³–10⁵ GeV, stiff phase w ≈ 0.55, N* 46–49 | w = 5/7 | — | computed/estimate |
@@ -18,7 +19,7 @@ Labels: **computed** = from locked scripts (exact Mukhanov–Sasaki, D588); **es
 ## Parameter-free consistency relation (Janus, D635)
 From n_s and r alone: ρ = 2√r/(1−n_s), x = (ρ−1)/(1+ρ/2), A = (1−n_s)/(1−x/2),
 **α_s = −(A²/2)(1+x/4)(1+x)**. Accurate to 11–13 % against the exact numerics.
-Offset-corrected (D640, c = ln1728/2π, u = 1/I*): 1−n_s = 8u²[(2−x)+cu(5−x)], r = 64u⁴(1+x)²(1+2cu), α_s = −32u⁴(1+x)[(4+x)+cu(23+2x)] — invert (n_s, r) → (u, x), predict α_s to ~2 % (0.2–0.4 % on the 8 test points).
+Offset-corrected (D640, c = ln1728/2π, u = 1/I*): 1−n_s = 8u²[(2−x)+cu(5−x)], r = 64u⁴(1+x)²(1+2cu), α_s = −32u⁴(1+x)[(4+x)+cu(23+2x)] — invert (n_s, r) → (u, x), predict α_s to ~2 % (0.2–0.4 % on the 8 test points); the same relation fits ρ to 1 % (D666). β_s ≈ 128u⁶(1+x)(2x² − 5x − 16) (D666, lock D667).
 A measured α_s outside this band (given measured n_s, r) rejects the whole family.
 
 ## Kill conditions (as in the locks; ≥3σ unless a CL is stated)
