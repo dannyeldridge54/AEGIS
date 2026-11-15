@@ -1,0 +1,4 @@
+HS-Kairos N*=52: y*=23.5 n_s=0.9635 r=2.86e-04
+HS-Kairos N*=55.6: y*=24.2 n_s=0.9658 r=2.52e-04
+HS-Chronos N*=52: y*=27.5 n_s=0.9736 r=5.28e-04
+HS-Chronos N*=55.6: y*=28.6 n_s=0.9759 r=4.81e-04

@@ -5404,3 +5404,13 @@ Inside the bound:
 Caveats: Y ≈ 4π Im T is an asymptotic coefficient, and O(10%) margins are not decisive. The bound is ~29, not D560's 25 (which used Im S = 2, i.e. α⁻¹ = 25).
 Status: both branches can sit inside a perturbative heterotic home if p ≳ 2, but Chronos only with a retuned tilt (δ ≈ 0.0013 instead of 0.0023), just under the bound, and with r ~ 4–6e-4 (estimate).
 A clean falsifiable package (home-consistent SERAPIS): n_s 0.964–0.966 with r 1–3e-4 (Kairos p = 2–3), or n_s ≈ 0.973 with r ≈ 4–6e-4 (Chronos p = 2, retuned). Locking Chronos p = 2 with δ = 0.0013 as a new forward prediction needs its own PREREG and is scored only on future data.
+
+## D567 — FORWARD PREDICTIONS (Dp now, 23:25 CT; locked PREREG_D567_FORWARD_HOMESAFE; results/forward_homesafe_d567.txt) — frozen bands for home-consistent SERAPIS, scored only on future data
+- HS-Kairos (p = 2, δ = 0): n_s = 0.9635–0.9658, r = 2.5–2.9e-4, y* = 23.5–24.2 (inside the bound of ≈ 28.5).
+- HS-Chronos (p = 2, δ = 0.0013; post-hoc δ declared in the lock): n_s = 0.9736–0.9759, r = 4.8–5.3e-4, y* = 27.5–28.6. This is ON the home bound (≈ 28.5), i.e. marginal at N* = 55.6.
+Scoring rule (from the lock): DISFAVOURED if a future n_s lies > 3σ outside the band; or if r is detected at > 3σ outside [0.5 r_min, 2 r_max]; or if r < 0.5 r_min at 95% CL.
+Concretely:
+- HS-Kairos is excluded by r < 1.3e-4 (95%) or by a detection of r > 5.8e-4.
+- HS-Chronos is excluded by r < 2.4e-4 (95%) or by a detection of r > 1.06e-3.
+Who can test it: CMB-S4-class σ(r) ~ 4e-4 (delensed) reaches the HS-Chronos level only at about 1σ. A full test needs σ(r) ≲ 1e-4 (next-generation, post-LiteBIRD).
+Note: the original Kairos/Chronos (p = 1; r ≈ 1.2e-3 / 2e-3) remain the published v2.2 predictions. D567 adds the home-consistent pair.
