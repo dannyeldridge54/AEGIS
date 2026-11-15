@@ -5938,3 +5938,4 @@ Consequences:
 - N*: T_R lower than D578's c_Γ = 1–10 (T_R 6e6–2e7) means a longer matter phase. ΔN* ≈ (1/12)ln(T_R,old⁴/T_R,new⁴)·… ≈ −(1/3)ln(60–2e4) ≈ −1.4 to −3.3 e-folds. Then n_s drops by ≈ 2ΔN/N² ≈ 0.001–0.003, to about 0.968–0.972, and y* moves inward. The direction stays the same; the D581 window must be re-run with this T_R (needs a lock).
 - Gravitino (D584, closed kinematically) and LSP (D592–D596) conclusions are unchanged.
 Verdict: the "sterile inflaton at a fixed point" structure is the key physics of two-term SERAPIS reheating. It gives low T_R, which favours AD leptogenesis with a massless lightest neutrino, and it shifts the n_s band down by ~0.001–0.003 (estimate).
+D601a (typo correction, same tick): the sfermion-channel arithmetic printed T_R ≈ 350–710 GeV, not "2–4e2". The range conclusion (T_R ≈ 1e3–1e5 GeV, N-dominated) is unchanged.
