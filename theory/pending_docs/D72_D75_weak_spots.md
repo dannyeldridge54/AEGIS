@@ -6156,3 +6156,16 @@ What is NOT shown (needs locks and careful work):
 - (d) a dedicated novelty search (HM thresholds + τ = i inflation).
 Verdict: the most promising lead so far for the τ = i branch's missing ingredient (D607/D608). It turns "|j − 1728| has no string source" into "a known string threshold has exactly this structure, at the point where enhanced symmetry and moduli trapping single out τ = i". It is a lead, not a derivation.
 D620a (internal cross-reference): hep-th/0403001 (moduli trapping) was already used in the Twist context (D363, D444/D446). What is new in D620 is the Harvey–Moore ln|J(T) − J(U)| threshold as the source of SERAPIS's j − 1728 structure at T = U = i. That combination does not appear in the earlier notes.
+
+## D621 — DEEP (Ddl 08:46 CT; dedicated novelty search for D620 + reasoning) — no prior use of the Harvey–Moore T = U threshold as the source of a τ = i inflationary vacuum found; the likely potential shape near i is |δ|²ln|δ|², not I₁'s pure quadratic
+Novelty search (1 extended search; one fetch):
+- Kadota & Stewart, hep-ph/0409330 (PASCOS04): inflation near enhanced-symmetry points, with light fields renormalising the modulus mass. It has no heterotic T–U structure, no ln|j(T) − j(U)|, and no τ = i vacuum.
+- Abe et al. 2607.00528 (CW modular, vacuum at Im τ ~ 2) is already in D572.
+- Nothing found that combines the HM threshold with a τ = i inflationary vacuum. Allowed wording: "not found in the checked literature (D621)".
+Reasoning on the potential's form (not computed):
+- The HM log|J(T) − J(U)| comes from integrating out the states that become massless at T = U. Their masses near the point behave as m_W² ∝ |T − U|²·M_s²/(T₂U₂).
+- After SUSY breaking (soft scale m), a CW-type contribution goes like V ∝ (m²/16π²)·m_W²·ln(m_W²/μ²).
+  - Near i (U = i), V ∝ |δ|²ln|δ|². The vacuum curvature is LOG-ENHANCED, so the vacuum is massive (more strongly than I₁'s pure |δ|²), consistent with trapping.
+  - At the cusp, m_W² ∝ y·M_s²/U₂ grows, so V ∝ y·ln y: nearly linear, a Chronos-type tilt with a log correction.
+- Size estimate: ε ~ (m²M_s²/16π²)/V₀ ~ (1/16π²)(m/H)²(M_s/M_P)², with M_s/M_P ≈ 0.04 and m/H ~ 0.01–0.1, gives ε ~ 1e-9 to 1e-7 (estimate). That is TOO SMALL compared with 1.3e-4, unless m ~ H (SUSY breaking during inflation is Hubble-scale, which is plausible via Hubble-induced soft terms: m ≈ cH gives ε ~ c²(M_s/M_P)²/16π² ~ 1e-5·c²; c ~ 3–4 reaches 1e-4).
+Verdict: the HM/enhanced-symmetry route gives the right STRUCTURE (centred on τ = i, linear-ish tilt, massive vacuum) and a magnitude that reaches ε ~ 1e-4 only if the light states feel Hubble-scale SUSY breaking during inflation (c ≈ 3–4). That is plausible but unshown. A locked computation of V_CW from these states (using HM's mass formula) would be the next real step.
