@@ -44,5 +44,5 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 ## What is NOT predicted (stated limits)
 - The size of ε (the tilt strength) is fitted to the low-T_R window, not derived; its microscopic origin is open (D620–D629).
 - Visible matter of modular weight 1 (or sequestered) is assumed for loop-size soft masses (D585a, D639); one α=1/3 modulus is not no-scale.
-- Preheating and φ → gravitino + inflatino not analysed; if efficient they raise N* by up to 6–9 e-folds and push Chronos outside its band — the bands assume they are inefficient (T_R ≲ 1e5 GeV).
+- Preheating inefficient (q ≲ 2e-4 for m0 ≲ m_φ) and φ → gravitino + inflatino closed (m_inflatino = 4/3 m3/2) — estimates, D641. If either were efficient, N* would rise 6–9 e-folds and Chronos would leave its band.
 - Collider signals: none expected at LHC/FCC energies.

@@ -1,0 +1,8 @@
+1. Quadratic-coupling preheating (estimates, a = 1):
+  m0=1e+09 GeV: q(end)=4.57e-09  q(switch)=2.11e-08  rho_chi/rho bound (switch)=2.1e-21
+  m0=1e+11 GeV: q(end)=4.57e-05  q(switch)=2.11e-04  rho_chi/rho bound (switch)=2.1e-13
+  m0=1e+13 GeV: q(end)=4.57e-01  q(switch)=2.11e+00  rho_chi/rho bound (switch)=2.1e-05
+2. Self-resonance: literature only (see PREREG).
+3. m3/2 = sqrt(2)/2; goldstino G^i = [-2*I, sqrt(2)]
+   inflatino (non-goldstino) mass |m_chi|/m3/2 = 4/3 = 1.3333
+   channel phi -> gravitino + inflatino open iff m3/2 (1 + 1.333) < m_phi, i.e. m3/2 < 9.00e+10 GeV

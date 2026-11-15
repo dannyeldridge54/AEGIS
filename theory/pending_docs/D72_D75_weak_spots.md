@@ -6370,3 +6370,10 @@ Verdict (per lock): the soft-mass sector closes at TREE level without no-scale, 
 CENTRE (W1; locked PREREG_D640; results/janus_offset_d640.txt) — the Janus bias is REMOVED. Asymptotically I = y − c with c = ln1728/2π = 1.1868 and I1 = I/2 exactly, so the offset enters only through the field map φ = ln(I + c)/√2. To first order in c/I* (u = 1/I*, x = εI*³/4):
   1 − n_s = 8u²[(2 − x) + cu(5 − x)],  r = 64u⁴(1 + x)²(1 + 2cu),  α_s = −32u⁴(1 + x)[(4 + x) + cu(23 + 2x)].
 Inverting measured (n_s, r) numerically and predicting α_s: error vs exact Mukhanov–Sasaki −0.2 … −0.4% on all 8 points (was −10.6 … −12.8% in D635). Full slow-roll map (method B): +1.1 … +1.6%, and it recovers the true ε (1.01/1.31/1.61e-4 for 1.0/1.3/1.6e-4). PASS. The relation stays parameter-free (c is fixed by j). Kairos inversion gives ε ≈ 1.5e-6, i.e. consistent with 0.
+
+## D641
+CENTRE (W2; locked PREREG_D641; results/preheating_d641.txt) — preheating and the gravitino–inflatino channel are INEFFICIENT/CLOSED (estimates + one exact mass):
+- Quadratic couplings (allowed by stationarity, g² = a m0²/M_P², a = 1): q = 5e-9 / 5e-5 / 0.46 at the end of inflation and 2e-8 / 2e-4 / 2.1 at the octic→quadratic switch for m0 = 1e9 / 1e11 / 1e13 GeV. Fields with m0 ≲ m_φ have q ≪ 1 (no broad resonance); fields with q ~ 1 have m0 ≫ ω (Mathieu A ≈ (m0/ω)² ~ 2000 ≫ 2q → adiabatic, no production). Non-resonant energy transfer ≲ 1e-13 of ρ_φ for m0 ≤ 1e11 GeV.
+- Self-resonance: plateau scale ~M_P → slow (Lozanov–Amin 1710.06851); w drifts toward 1/3 at most, inside the D602 bracket w ∈ [0, 3/5]. N* unaffected beyond the bracket.
+- Inflatino mass (exact sympy, W = W0 + fS, Λ = 0, goldstino projected out): m_χ̃ = (4/3) m3/2. φ → ψ3/2 + χ̃ is open only if m3/2 < m_φ/(1 + 4/3) = 9.0e10 GeV; the chain already requires m3/2 > m_φ/2 = 1.05e11 GeV, so the channel is CLOSED.
+Verdict: the frozen bands' assumption (inefficient preheating, T_R ≲ 1e5 GeV) is justified at estimate level; caveat a = O(1) and the standard fermion-mass formula in the nilpotent embedding.
