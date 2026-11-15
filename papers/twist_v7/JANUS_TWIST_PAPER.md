@@ -10,7 +10,7 @@ date: "Draft, 14 November 2026 — not yet published"
 
 We collect a day of pre-registered tests (AEGIS D-notes D436–D521) into one picture: the inflaton and the dark-energy field are the same object, the **shape of a hidden two-torus**. While the torus is highly stretched its potential is a nearly flat plateau and drives inflation; it then relaxes to the most symmetric (square) shape, where the leftover vacuum energy is the cosmological constant Λ. The construction is built from modular (SL(2,ℤ)) functions of the torus shape, so the square torus τ = i and the hexagonal torus τ = ρ are automatic special points; in the fully modular form (**SERAPIS**) the square torus is a heavy vacuum (mass ≈ 4×10¹³ GeV, no fifth force) and the hexagonal point is a wall. The Standard Model is assumed to live on branes that do not wrap this torus and to feel it only through a heavy intermediate modulus ("lens"), which suppresses its matter coupling below 10⁻²⁸.
 
-The data split the family into two branches. **SERAPIS–Kairos** (no fitted tilt; one torus) predicts n_s ≈ 0.963–0.965 and r ≈ 0.0012–0.0013 once its own reheating is included: consistent with CMB-SPA alone (−1.1σ to −1.8σ) but 2.8–3.7σ from CMB-SPA+DESI. **SERAPIS–Chronos** (one fitted holomorphic tilt) gives n_s = 0.9736 and r ≈ 0.0044–0.0046, consistent with both. Whether DESI's pull on n_s is real therefore selects the branch; r measured to ±0.001 separates them at ≈3σ. The inflationary building blocks have clear prior art in modular-invariant inflation, which we credit; the contribution here is the single chain from inflation to Λ through one torus shape, its two-branch prediction, and the audit trail.
+The data split the family into two branches. **SERAPIS–Kairos** (no fitted tilt; one torus) predicts n_s ≈ 0.963–0.965 and r ≈ 0.0012–0.0013 once its own reheating is included: consistent with CMB-SPA alone (−1.1σ to −1.8σ) but 2.8–3.7σ from CMB-SPA+DESI. **SERAPIS–Chronos** (one fitted tilt) gives n_s = 0.9736 with r ≈ 0.0020 in its native SERAPIS form (0.0044–0.0046 in the earlier Twist-M/Route-A forms), consistent with both. Whether DESI's pull on n_s is real therefore selects the branch; n_s measured to ±0.002 is the main discriminator; r separates the native forms only at ≈1σ. The inflationary building blocks have clear prior art in modular-invariant inflation, which we credit; the contribution here is the single chain from inflation to Λ through one torus shape, its two-branch prediction, and the audit trail.
 
 # 1. The picture
 
@@ -41,7 +41,8 @@ The factor j^(−1/12) cancels |η|^(−4) on the cusp and [ln j]^(1/2) cancels 
 |---|---|---|---|---|---|---|
 | **SERAPIS–Kairos** (single torus, own reheating, D519) | 0.963–0.965 | 0.0012–0.0013 | ≈ −6.5×10⁻⁴ | none | −1.1σ … −1.8σ | −2.8σ … −3.7σ |
 | SERAPIS (three-torus weight, D515) | 0.9665 | 0.0032 | — | none | −0.6σ | −2.3σ |
-| **SERAPIS–Chronos** (Twist-M with ε = 1.49×10⁻⁷, D501; Route A, D434) | 0.9736 | 0.0044–0.0046 | ≈ −7.6×10⁻⁴ | one | +1.7σ | +0.3σ |
+| **SERAPIS–Chronos**, native (plateau power ½ + δ, δ = 0.0023, D525) | 0.9736 | 0.0020 | ≈ −5.9×10⁻⁴ | one | +1.7σ | +0.3σ |
+| Chronos in earlier forms (Twist-M ε = 1.49×10⁻⁷, D501; Route A, D434) | 0.9736 | 0.0044–0.0046 | ≈ −7.6×10⁻⁴ | one | +1.7σ | +0.3σ |
 
 Comparisons use CMB-SPA n_s = 0.9684 ± 0.0030 and CMB-SPA+DESI 0.9728 ± 0.0027. Reheating (D518): the heavy shape decays with Γ ∼ m³/(8πM_P²), T_RH ≈ 2–6×10¹⁰ GeV, a matter-dominated phase and N* ≈ 52; instant reheating would give N* = 55.6 and n_s = 0.9652 at most, and Kairos has no kination phase to raise N* further (D520). Kairos's prediction is therefore sharp and cannot be tuned upward within the model.
 
@@ -56,7 +57,7 @@ Comparisons use CMB-SPA n_s = 0.9684 ± 0.0030 and CMB-SPA+DESI 0.9728 ± 0.0027
 # 5. Predictions and tests
 
 1. **n_s** to ±0.002 (Simons Observatory, CMB-S4): Kairos 0.963–0.965 vs Chronos 0.9736.
-2. **r** to ±0.001 (LiteBIRD, CMB-S4): Kairos ≈ 0.0012 (a null at LiteBIRD) vs Chronos ≈ 0.0045.
+2. **r** to ±0.001 (LiteBIRD, CMB-S4): Kairos ≈ 0.0012 vs native Chronos ≈ 0.0020 (≈1σ apart); the earlier Chronos forms (≈ 0.0045) would be separated at ≈3σ.
 3. **w₀ = −1**, w_a = 0 (DESI DR3+, Euclid); a confirmed w₀ > −1 disfavours both branches.
 4. **ΔN_eff ≈ 0.05–0.08** in the realisations with a light gravitino (D463, D511): a 2σ-level hint at CMB-S4.
 5. **Cosmic birefringence tomography** for a separate axion (D484): Δβ = β_rec − β_reio up to 0.28° (≈5.5σ at LiteBIRD's headline noise) if the axion is at the heavy end of its range.
