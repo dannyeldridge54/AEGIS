@@ -5545,3 +5545,19 @@ Status: τ = i as a critical point and as a SUSY-Minkowski zero is DERIVED (symm
 
 ## D567a — CORRECTION to D567 (from D574): the forward bands are conditional
 The HS-Kairos and HS-Chronos bands assume matter-like reheating, N* ∈ [52, 55.6]. D574 shows the SERAPIS-KL vacuum at p = 2 is octic, giving a stiff oscillation phase (w = 3/5), which raises N*. The bands stand as locked, but are now labelled "conditional on an added vacuum-mass source". Any rescoring needs its own lock; nothing is refitted here.
+
+## D575 — pp (07:40 CT; locked PREREG_D575_TWO_TERM; results/two_term_d575.txt) — the two-term SERAPIS breaks the D574 trade-off only in a narrow ε window, and the mass term IS a Chronos-type tilt
+Literature (1 search): Ding et al. arXiv:2411.18603 uses H = (j − j(τ₀))²[…] with its Minkowski vacuum near ω and τ = i as a saddle; it quotes no quadratic vacuum mass. That is consistent with D574: squared j-differences give flat-bottomed vacua. No prior art was found for the plateau + ε·I₁ combination; no novelty is claimed.
+Results (p = 2; all four ε values reported):
+- **ε = 1e-4**
+  - Quadratic vacuum (slope 2.00), m/H_inf = 0.037.
+  - N* = 52: y* = 24.8, HOME-SAFE; n_s = 0.9726 (+1.4σ SPA, −0.1σ SPA+DESI); r = 4.0e-4.
+  - N* = 55.6: y* = 25.7, just outside; n_s = 0.9751; r = 3.7e-4.
+- **ε = 3e-4:** y* = 28–30 (outside); n_s = 0.992–0.996 (+7σ to +9σ). Fails.
+- **ε = 1e-3 and 3e-3:** the linear rise destroys slow roll (no viable inflation).
+Verdict by the lock: the trade-off is BROKEN at ε = 1e-4, N* = 52. It has a quadratic vacuum, is home-safe, and is within 3σ of both data sets.
+Caveats:
+1. The window is narrow: ε ≈ 1e-4 works, 3e-4 fails. ε is a post-hoc scan value, so this is tuning-sensitive, and the result is scored only on future data.
+2. The vacuum is light (m ≈ 0.04 H_inf). Early oscillations with large amplitude still feel the octic part, so the stiff phase from D574 is shortened, not removed.
+Physics link (the main finding): the term that gives τ = i its mass grows like y/2 at the cusp, so it automatically tilts the plateau upward and raises n_s. So **Chronos's tilt can come from the same source as the vacuum mass.** At ε = 1e-4 it lands n_s on the SPA+DESI centre (0.9726 vs 0.9728). Before this, δ was an unexplained post-hoc number (D565/D568).
+Next: derive the ε ↔ δ map (ε·I₁ vs I^{2δ}), and check whether ε ~ 1e-4 has a natural size (e.g. a loop factor or e^{−2π·…}). Each needs its own lock.

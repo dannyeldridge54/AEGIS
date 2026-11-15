@@ -1,0 +1,8 @@
+eps=0.0001 N*=52: slope=1.998 m/H=0.037 y_end=2.77 y*=24.8 HOME-SAFE n_s=0.9726 r=4.00e-04 (+1.4 SPA, -0.1 SPA+DESI)
+eps=0.0001 N*=55.6: slope=1.998 m/H=0.037 y_end=2.77 y*=25.7 outside n_s=0.9751 r=3.65e-04 (+2.2 SPA, +0.9 SPA+DESI)
+eps=0.0003 N*=52: slope=1.998 m/H=0.064 y_end=2.77 y*=28.1 outside n_s=0.9921 r=8.00e-04 (+7.9 SPA, +7.1 SPA+DESI)
+eps=0.0003 N*=55.6: slope=1.998 m/H=0.064 y_end=2.77 y*=29.5 outside n_s=0.9955 r=7.83e-04 (+9.0 SPA, +8.4 SPA+DESI)
+eps=0.001 N*=52: ('inflation broken at y=2.8',)
+eps=0.001 N*=55.6: ('inflation broken at y=2.8',)
+eps=0.003 N*=52: slope=1.998 m/H=0.005 y_end=2.77 y*=1203593.8 outside n_s=-0.9956 r=1.60e+01 (-654.7 SPA, -729.0 SPA+DESI)
+eps=0.003 N*=55.6: slope=1.998 m/H=0.005 y_end=2.77 y*=1203593.8 outside n_s=-0.9956 r=1.60e+01 (-654.7 SPA, -729.0 SPA+DESI)
