@@ -112,3 +112,4 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - v2 (DEEP 6): credit 2107.09064 / 2107.09065 (exponentially small Λ from flux vacua) for the 'Λ from the cliff' idea.
 - v2 (DEEP 8): credit Planckian interacting dark matter (Garny–Sandora–Sloth; 1709.09688) for the gravity-only DM.
 - v2 (DEEP 9): eV gravitino requires a strongly coupled messenger sector (m_H = 125 GeV; 1608.01610); credit 1601.07386 for the 4.7 eV bound; 21 cm test (1605.09191).
+- SERAPIS (DEEP 2.3): NOT a separate Zenodo record — prior art 2405.06497 (same η⁻⁶H(j) building block), 2407.12081 (log-type Starobinsky plateau), 2405.08924, 2411.18603; credit them in any write-up.

@@ -201,3 +201,5 @@ alone.
 **SERAPIS — the fully modular Twist (named by Danny 21:34 CT; D515, roadmap A):** exact SL(2,Z); inflation on the cusp gives n_s 0.9665, r 0.0032 (Starobinsky-like); square torus = Minkowski vacuum, triangle point = wall; Λ term still to add.
 
 **SERAPIS-1 (D517, single torus, fully modular):** n_s 0.9667, r 0.0011 (no tilt); vacuum at square torus with V = Λ and mass 4e13 GeV (stiff: no fifth force, no moduli problem); Λ coefficient e^{−121.6} (instanton-sized); triangle point = wall. Cleanest version so far; decided by the CMB-vs-DESI n_s question.
+
+**SERAPIS status (D518, DEEP 2.3):** reheating gives N* ≈ 52 → n_s ≈ 0.962 (D517 'viable' withdrawn pending a faster decay channel); building block is prior art (2405.06497, 2407.12081) — no separate publication.

@@ -4885,3 +4885,13 @@ ln(k*/a₀H₀) = 5.4 give instant-reheating N* ≈ 55.5. A long matter-dominate
 Leptogenesis: T_RH reaches the lower part of the M₁ window (≥ 3e10 GeV only for c_Γ ≈ 10). Fix paths (new locks needed): a faster decay channel (c_Γ ≫ 10, e.g. direct coupling to the hidden/SM sector, which raises
 T_RH and N*); or a kination phase like Twist-2's (needs a steep post-inflation direction, which SERAPIS's potential does not have near τ = i). Status: SERAPIS-1 is NOT yet self-consistent; the D517 'VIABLE' is
 withdrawn pending this.
+
+**DEEP 2.3 (Danny 21:43 CT "deep dive online … if this exists anywhere else, if not Zenodo"; literature) — SERAPIS largely EXISTS already; no Zenodo record (not novel enough).**
+(a) arXiv:2405.06497 ('Modular invariant slow-roll inflation'): W = Λ³Ω(S)H(τ)/η⁶ with H = (j−1728)^{m/2} j^{n/3} P(j), K with modular weight 3. This is the same building block as SERAPIS (D515/D516),
+with vacua at τ = i or ω and Starobinsky-like inflation. They note that a dS minimum needs a ~1e90 fine-tuning, the analogue of our c ≈ 1e-53 term for Λ.
+(b) arXiv:2407.12081 ('Modular invariant Starobinsky inflation and the species scale'): V ∝ (Im τ)²|G̃₂|²/N² with N ≃ −log(Im τ|η|⁴), a log-type factor giving a Starobinsky plateau at the cusp, as our
+[ln(j/1728)]^{1/2 or 3/2} does.
+(c) arXiv:2405.08924 (King–Wang, modular hilltop inflation) and 2411.18603 (modular inflation with reheating) complete the family.
+Distinct in SERAPIS-1: the single-torus weight −1 version (K = −ln, F = η⁻²H) with the specific (j−1728)^{1/2} j^{−7/12}[ln(j/1728)+κ]^{1/2} combination and Λ placed at τ = i with a stiff vacuum. These are
+variations inside a known family, not a new mechanism, and D518 found its reheating gives N* ≈ 52 (n_s ≈ 0.962), a tension the literature cases share or avoid by other choices. Decision: credit these papers; do NOT publish
+SERAPIS to Zenodo as a novel result. Its value is as the duality-complete end point of the Twist line, inside the AEGIS write-ups.
