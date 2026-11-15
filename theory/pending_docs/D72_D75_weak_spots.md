@@ -6138,3 +6138,20 @@ Net: ε for SERAPIS-ρ (and ε·I₁ at i) remains UNEXPLAINED. D616/D617 are do
 - Simons Observatory: only SAT commissioning papers (e.g. 2609.26938, mid-frequency SATs); no r result.
 - BICEP/Keck: nothing newer than the BK18-based analyses (2512.10613 is the latest combination, D573).
 - The D605/D615 forward packages stay unscored. The next decisive inputs are the first SO SAT r constraint and DESI DR3.
+
+## D620 — DEEP (Ddl 08:44 CT; literature, no computation) — a STRING SOURCE for the |j − 1728| structure at τ = i: the Harvey–Moore threshold ln|J(T) − J(U)| at the enhanced-symmetry point T = U = i
+Literature:
+- Harvey & Moore, hep-th/9510182 (heterotic N = 2 one-loop thresholds/prepotential):
+  - Eq. 4.26 has ½ log[J(iT) − J(iU)] in the holomorphic factor; eqs. 4.33 and 6.7 have log|J(T) − J(U)|.
+  - §5.4: the divisor T = U and its modular images carry ENHANCED gauge symmetry (extra massless states), with "a double intersection at T = U = i and a triple intersection at T = U = ρ".
+- Kofman, Linde, Liu, Maloney, McAllister, Silverstein, "Beauty is attractive", hep-th/0403001: moduli are dynamically TRAPPED at enhanced-symmetry points by particle production of the states that become light there.
+Why this matters for SERAPIS at τ = i:
+1. If the second torus modulus is frozen at U = i, the threshold becomes ln|J(T) − 1728|. U = i is natural, since a Z₄-type orbifold action on that T² FIXES U = i. That is exactly the "j − 1728" structure SERAPIS uses (I₁ ∝ ln(1 + |j − 1728|/1728)). It grows ∝ 2πy at the cusp: the linear tilt (D576). And it is centred on τ = i.
+2. T = U = i is a DOUBLE enhanced-symmetry point. So τ = i is singled out physically, not only by modular symmetry: extra states become massless there, and the KLLMMS trapping mechanism attracts the modulus to it.
+3. This sits on an N = 2 plane. That is ALLOWED for the home-safe models (y* < 29; D608 correction).
+What is NOT shown (needs locks and careful work):
+- (a) how ln|J(T) − J(U)| enters the scalar potential (via gauge-coupling-dependent condensates, Kähler corrections, or a CW potential of the states becoming massless), and with which sign;
+- (b) the regularisation: the log diverges at T = U (massless states). Our I₁ = ln(1 + |·|/1728) is a regular stand-in, plausibly cut off by SUSY-breaking masses ~m₃/₂, but this is not derived;
+- (c) whether the coefficient comes out ε ~ 1e-4 (e.g. a loop factor × b/16π² × (m₃/₂/H)²-type suppression);
+- (d) a dedicated novelty search (HM thresholds + τ = i inflation).
+Verdict: the most promising lead so far for the τ = i branch's missing ingredient (D607/D608). It turns "|j − 1728| has no string source" into "a known string threshold has exactly this structure, at the point where enhanced symmetry and moduli trapping single out τ = i". It is a lead, not a derivation.
