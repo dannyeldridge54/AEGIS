@@ -6287,3 +6287,15 @@ Open: whether a displaced vacuum on the |δ| ≈ 0.6 ring (not at a fixed point)
 4. Axion (D582/D587): at the displaced vacuum the Hessian is generically anisotropic and both directions are massive (from the CW + species terms). The isocurvature argument (CP symmetry along the inflationary path) still holds during inflation. After inflation both modes decay; no relic.
 5. Vacuum degeneracy: an exactly isotropic a|δ|² + b|δ|²ln|δ|² would give a RING of vacua (a flat axion-like direction). Modular-invariant anisotropies (the S-symmetry acts as δ → −δ) break it to discrete minima. If the ring were nearly flat, a light axion-like mode could appear; its mass depends on higher-order terms. Flagged.
 Verdict: a displaced vacuum is not fatal (proton safe, gravitino closed, no isocurvature). But it loses the special "fixed-point" physics: sterile inflaton, selection rules, the elegant τ = i story. It also needs the near-flat ring direction checked. On balance, D629's displacement turns SERAPIS into a generic modular inflation model with its vacuum near, not at, the symmetric point. The forward n_s and r (D605/D615) depend only on the plateau and tilt, so they are unchanged up to the N* shift (T_R higher → N* ≈ 49–51, Δn_s ≈ +0.001 relative to the D602 rows).
+
+## D631 — DEEP (Ddl 09:08 CT; 1 search + reasoning, not locked) — sequestering cannot rescue the HM/CW route: it suppresses the tilt together with the light-state term; the ε-origin question returns to "unexplained"
+- Literature (search): the standard no-scale/sequestered Kähler structure (e.g. K = −3ln(T + T̄ − |Φ|²/3)) cancels Hubble-induced masses for sequestered matter, e.g. no-scale D-term inflation 1309.3122. That can set c² ≈ 0 for the light W-states.
+- But in D626 the light-state CW term IS the tilt source: b ∝ c²m²M_s² ∝ ε. Sequestering them (c → 0) removes the tilt along with the vacuum-displacing log term, which takes SERAPIS back to Kairos-like n_s (−3σ to −4σ vs SPA+DESI, D578/D588).
+- Partial sequestering (c² ≪ 3) that keeps b ~ ε ~ 1e-4 while the tower's a stays large needs a ≫ b, i.e. the tower must feel MORE SUSY breaking than the light states by a factor ≳ 100·(N(i)/√41)², about 1e5 for N ~ 200. That is a tuning at least as severe as the original unexplained ε.
+Verdict: the HM/CW route (D620–D629) does NOT provide a natural origin for ε in a realistic spectrum. Within this project, the ε (tilt + mass) term of both two-term SERAPIS and SERAPIS-ρ remains UNEXPLAINED. The observables are unaffected (D622 robustness), but the theoretical status is: "an effective model with a ~1e-4 parameter of unknown origin".
+Arc summary D574–D631:
+- τ = i derived as a critical point.
+- The massless-vacuum flaw found and fixed by the ε term.
+- The full consistency chain passes (with high-scale SUSY, a heavy dilaton and AD baryogenesis).
+- Forward predictions locked (D605/D615).
+- Every attempted microscopic origin of ε failed or is conditional. That last item is the honest bottom line.
