@@ -1,0 +1,5 @@
+# PREREG D649: the weaker, fundamental m3/2 bound in the covariant completion (nilpotent freedom)
+Locked before computation, 2026-11-15. Script theory/modular/m32_positivity_d649.py; output results/m32_positivity_d649.txt.
+In the Kallosh–Linde construction the X-metric g_XX̄(τ) can absorb any extra τ-dependence, so the total V can still be the SERAPIS plateau, provided the X F-term contribution stays positive: e^G G^{XX̄}|G_X|² = V_target + 3e^G − e^G G^{ττ̄}|G_τ|² ≥ 0.
+With e^G = m3/2(i)² e^{L−L(i)} this is m3/2/H ≤ sqrt(3 V_pl(y) / [e^{L−L(i)}(4y²|∂_τL|² − 3)]) wherever the bracket is positive. Evaluate along τ = iy for y ∈ {23, 24.5, 26, 28, 30} (horizon exit to well before it), ε = 1.3e-4; H_inf = 3.7e12 GeV (estimate). Report the bound at each y; the operative bound is the one at the largest y the inflaton must traverse (state the choice: y = 30, about 10 e-folds before horizon exit — label as an assumption about initial conditions).
+Also report D648's "unchanged plateau" bound alongside. No tuning.
