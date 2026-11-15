@@ -4498,3 +4498,11 @@ the field returns to the wall at T = 2.37e2 GeV (predicted beforehand 2.4e2), an
 settle on the wall. The g* = 106.75 approximation is valid down to these temperatures (above the electroweak scale). So the eV gravitino of D430 is
 enough by itself: φ needs no direct coupling to the SUSY-breaking sector, and the D396 thermal trap is not needed. CENTRE: balanced; the D459
 condition is removed. A pre-registered prediction confirmed (within this toy).
+
+**D461 (cycle 46, tick; fourth pass PART 10, RIGHT; arithmetic in code, standard formula; results/part10d_gauge_d461.txt) — the SM cannot live on
+D7-branes wrapping the Twist's cycle in the rescaled geometry; it must sit on D3-branes or a small cycle.** With f = T for D7 on the rolling 4-cycle,
+1/g² = Re T_phys = a x_E = 1.1e5–2.3e5 in the D453 band → α = 1/(4π Re T) ≈ 7e-7–3e-7, ~6e4–1e5 × weaker than α_GUT ≈ 0.04. So the SM sits on D3-branes
+or a small blow-up cycle (the standard LVS arrangement), consistent with F1/D417 (no SM coupling to the rolling modulus through f), and the
+D7 that carries the FI term is a hidden brane (g = 0.7 was assumed in D437–D446 for it, which then requires that hidden D7 to wrap a different, small
+cycle whose volume is ~1/(4π·0.49) ≈ 0.16 in units where the gauge coupling is 1/Re T). Open: the FI term of D438 used fluxes on the large cycle; consistency of
+'small-cycle hidden D7 with g = 0.7' and 'FI depending on the large cycle' needs a magnetised D7 wrapping a combination; not checked. No scored result → WALL.

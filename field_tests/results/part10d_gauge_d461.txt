@@ -1,0 +1,2 @@
+a=3846: Re T_phys=1.14e+05 -> alpha(SM on this D7)=1/(4 pi Re T)=7.0e-07 vs alpha_GUT~0.04: factor 6e+04 too weak
+a=7852: Re T_phys=2.32e+05 -> alpha(SM on this D7)=1/(4 pi Re T)=3.4e-07 vs alpha_GUT~0.04: factor 1e+05 too weak
