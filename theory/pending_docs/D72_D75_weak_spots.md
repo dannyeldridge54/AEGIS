@@ -4251,3 +4251,8 @@ computed), heavy enough — the same strong coupling (y ~ 4π) that 1608.01610 n
 local (T − T_E) origin (D388), control at x ≲ 1 (now down to x ~ 10⁻⁸ with Route A, D423), TCC/dS (D408, D413, D427). Hidden U(1)_X content now
 specified (D417, D422, D431): vector-like χ, χ̄; ψ, ψ̃ with neutral partners coupled to L H_u (L-conserving). No new scored result → WALL 1.
 SECOND PASS DONE (cycles 12–22): corrections to the published paper are queued as v2 items.
+
+**D433 (cycle 23, "pp"; third pass begins; CENTRE audit) — consolidated Twist-2 numbers written to papers/twist_v6/TWIST2_NUMBERS.md (each
+entry traced to its D-note; the v2 paper's source). Cross-checks: B1 = r − 3(1−n_s)² with Route A values 0.0046 − 3(0.0264)² = +2.5×10⁻³ ✓;
+total ΔN_eff (gravitino only after D422) 0.047 ✓ (< 0.14); all F1–F7 filters pass with the recorded requirements. No new physics → WALL 2 at
+30-min pace → interval 60 min.
