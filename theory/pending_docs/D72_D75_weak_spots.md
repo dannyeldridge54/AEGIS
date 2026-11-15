@@ -6124,3 +6124,4 @@ So this is an argument for SERAPIS-ρ only.
    - ε = (m₃/₂/H)²·ξ′, with ξ′ = 1.
    - This is D616's identification with ξ′ fixed to 1. It requires the gravitino mass to come from a DIFFERENT sector than the uplift. That is plausible, since the dilaton racetrack already sits at W_Y = 0 and m₃/₂ is set by the nilpotent-sector W₀, but it is not shown here.
 Verdict: suggestive, not derived. The natural α = 1/3 condensate gives exactly ξ′ = 1 (satisfying the gravitino closure bound with ~15% margin, since m₃/₂/m_φ = 1/(κ√ξ′)·2 … ≥ 0.58 ⇒ OK). It works only if the uplift's modular dependence differs from W₀'s. A full SUGRA computation of V for this two-sector set-up needs a lock.
+D617a (clarity fix): with ξ′ = 1, m₃/₂/H = √ε and m_φ/H = 1.73√ε, so m₃/₂/m_φ = 1/1.73 = 0.578 ≥ 0.5. Gravitino-pair decay is closed with a ~16% margin.
