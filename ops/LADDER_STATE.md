@@ -1,8 +1,8 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 5
-consecutive_walls: 1
-cycle: 77
+consecutive_walls: 2
+cycle: 78
 next_part: 1
 
 ## Cycle method (every cycle, twin-ladder skill)
@@ -116,3 +116,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 75 (20:37, tick): PART 10 — nothing new (D461/D469/D470 cover it; Twist-M leaves SM-on-D3 unchanged). WALL 2.
 - cycle 76 (20:46, 'pp'): Twist-M PART 2 — D501 ε re-fit 1.49e-7 at N* 58.09: r 0.00435, α_s −7.6e-4. Result → walls 0. (D500 case-(i) run still going.)
 - cycle 77 (20:46, tick): PART 11 — covered (D462/D471); D500 still running. WALL 1.
+- cycle 78 (20:53, tick): waiting on D500 (Twist-M case-(i) run); no part run to save credits. WALL 2.
