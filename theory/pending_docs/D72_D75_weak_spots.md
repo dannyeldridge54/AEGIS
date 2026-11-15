@@ -6133,3 +6133,8 @@ D617a (clarity fix): with ξ′ = 1, m₃/₂/H = √ε and m_φ/H = 1.73√ε, 
 - The linear tilt needs ξ′·(L − L₀) ≲ 0.3 across inflation, i.e. ξ′ ≲ 0.014. Then ε = ξ′(m₃/₂/H)² needs m₃/₂/H ≈ √(ε/ξ′) ≳ 0.065. Closure (ξ′ ≤ 1.34) is trivially satisfied, but the "O(1) coefficient" naturalness is lost: ξ′ ~ 1e-2 is itself a small, unexplained number.
 - The identification ε ↔ (m₃/₂/H)² therefore survives only as a reparametrisation with a small ξ′. It does not explain ε.
 Net: ε for SERAPIS-ρ (and ε·I₁ at i) remains UNEXPLAINED. D616/D617 are downgraded to "reparametrisation, not explanation". Recorded as a correction, not a silent edit.
+
+## D619 — Ddl (08:44 CT; 2 searches) — NULL: no new r or n_s data that could score D605/D615
+- Simons Observatory: only SAT commissioning papers (e.g. 2609.26938, mid-frequency SATs); no r result.
+- BICEP/Keck: nothing newer than the BK18-based analyses (2512.10613 is the latest combination, D573).
+- The D605/D615 forward packages stay unscored. The next decisive inputs are the first SO SAT r constraint and DESI DR3.
