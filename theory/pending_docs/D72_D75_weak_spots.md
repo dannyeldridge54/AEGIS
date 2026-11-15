@@ -4830,3 +4830,10 @@ root: the end-of-inflation point switches branch (x* jumps to 1.0e-5) between ε
 (1.3σ below CMB-SPA+DESI's 0.9728 ± 0.0027) with r ≈ 1.3e-3 (≈ ⅓ of k = 3, as α-attractor scaling expects) before the solution becomes unstable. A clean fit at 0.9736 was not demonstrated. So the
 single-torus home does not cleanly stick. Options: an isotropic three-torus Twist (k = 3, U₁ = U₂ = U₃) but then the SM couples to it (conflicts with D508), or a finer ε scan / different deformation
 (new lock). Status: D508's home is in doubt for inflation.
+
+**D513 (Danny 21:25 CT "do a single torus and build it like it's meant to be in our model"; scored, locked PREREG_D513_TWIST1T; results/twist1t_d513.txt) — Twist-1T FITS CMB-SPA,
+not SPA+DESI.** Twist-1T: the Twist field is the shape U of one torus that the SM branes do not wrap; K = −ln(U+Ū); exact duality; Λ at the self-dual square shape; NO ad-hoc tilt (ε = 0).
+Predictions: n_s = 0.9658, r = 0.00116, α_s = −6.7e-4, cliff n = 232.8 (Λ), x* = 2.3e-5. Against CMB-SPA alone (0.9684 ± 0.0030): −0.9σ. Against CMB-SPA+DESI (0.9728 ± 0.0027): −2.6σ. So this is the
+most predictive version so far (no fitted tilt; the inflation numbers follow from one torus + one duality + Λ), and its fate is tied to the CMB-vs-DESI n_s question. If DESI's pull on n_s
+(the D410 crown fit's 0.9736) holds, Twist-1T is disfavoured at ~2.6σ; if the CMB-only value holds, it fits. r = 1.2e-3 is a sharp target (below LiteBIRD's ~2e-3 goal, so a null r is the
+prediction). Status: candidate variant; predictions scored only by future data.

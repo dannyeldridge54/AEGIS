@@ -195,3 +195,5 @@ alone.
 **Twist-M-L (D506–D509):** B ≳ 100 TeV (or never displaced); lens automatically too weak to drag B; candidate home: A = U₃ (shape of the torus the SM D7-branes do not wrap), SL(2,Z)_{U₃} exact, SM blind to U₃ at leading order; cliff from mirror-instanton corrections (n ≈ 2π×37).
 
 **D512 (doubt):** the single-torus home (k = 1) reaches n_s ≈ 0.970 (r ≈ 1.3e-3) before the inflation solution jumps branch; no clean fit at 0.9736 shown — D508 home in doubt; k = 3 needs all three tori (then the SM couples).
+
+**Variant Twist-1T (D513, single torus, no fitted tilt):** n_s 0.9658, r 0.00116, α_s −6.7e-4, n 232.8; fits CMB-SPA (−0.9σ), not SPA+DESI (−2.6σ). Most predictive version; LiteBIRD should see no r.
