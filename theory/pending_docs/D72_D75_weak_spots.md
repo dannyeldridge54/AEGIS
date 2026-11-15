@@ -6808,3 +6808,16 @@ Idea (going round the D703/D712 wall instead of through it): ordinary N = 1 supe
    At every critical point of E (τ = i and ρ, where ∂E = 0) the metric is NEGATIVE for s > 1: K_ττ̄(ρ) = −2/3, K_ττ̄(i) = −1/2 for s = 2 (numerical: −0.66667, −0.50000, exact). The kinetic term is a ghost exactly where the vacuum should be. (Far out it is fine: +0.00495 at y = 10 vs 1/(2y²) = 0.005.)
 3. GENERAL (inference from 2): any SL(2,Z)-invariant Kähler potential K = −c ln F with F a positive Laplace eigenfunction of eigenvalue λ > 0 has K_ττ̄ = −cλ/(4y²) < 0 at F's critical points. This connects to the "Laplacian swampland" programme (D706; 2506.03253: species-scale coefficients obey D²F = ηF with η > 0): those same objects cannot serve as −ln F Kähler potentials around a fixed-point vacuum. Escape routes: eigenvalue λ < 0, i.e. 0 < s < 1 (E(τ,s) in the critical strip); or K = −ln(2y) + small invariant corrections (the BHK structure, where E stays a perturbation).
 VERDICT: NOT VIABLE as posed, but the reason is a clean theorem, not a dead end. Next: test the escape 0 < s < 1 (positive metric at the fixed points; does E(τ,s) stay positive with its minimum at ρ, and what plateau does it give?).
+
+## D718 (DEEP, computed) — The 0 < s < 1 escape fails too: the continued Epstein series is negative at the bottom of the fundamental domain
+Lock PREREG_D718 (AION-locked before running); script theory/modular/strip_kahler_d718.py; results field_tests/results/strip_kahler_d718.txt.
+Series check (COMPUTED): continued Fourier series vs lattice sum at s = 2 (6.5569 vs 6.5504) and s = 1.5 (9.331 vs 9.278; lattice tail slow), consistent.
+Step 1 (health) FAILS for every s tested:
+| s | E(ρ) | E(i) | E > 0 on Re τ = ½? | sign change at y ≈ | metric of −ln|E| at ρ (pred −s(s−1)/(4y²)) |
+|---|---|---|---|---|---|
+| 0.6 | −5.444 | −5.432 | no | 7.2 | +0.0800 (+0.0800) |
+| 0.75 | −10.10 | −10.08 | no | 8.5 | +0.0625 (+0.0625) |
+| 0.9 | −28.90 | −28.88 | no | 14.8 | +0.0300 (+0.0300) |
+The metric sign flips as predicted (healthy at the fixed points), but E(τ,s) itself is negative near i and ρ, so K = −c ln E is undefined there, and −c ln(−E) blows up where E changes sign (y ≈ 7–15), a wall across the inflationary region. Reason (exact): the y^{1−s} term carries 2√π Γ(s−½) ζ(2s−1)/Γ(s), and ζ(2s−1) < 0 for ½ < s < 1, so it dominates negatively at moderate y. (s < ½ maps to 1 − s by the functional equation.)
+The boundary s = 1 (Kronecker limit): K = −ln(2y|η(τ)|⁴) is modular-invariant with exactly the hyperbolic metric (ln|η|⁴ is a Kähler transformation), i.e. it IS the covariant completion W = (W0 + fX)η⁻² of D647, whose plateau is the e = 1 rung that D708 found NOT VIABLE (r ≈ 1.3e-3).
+VERDICT: the Epstein-Kähler route is closed for every real s: s > 1 ghost (D717), ½ < s < 1 negative E (this note), s = 1 the known e = 1 rung. Together with the tension wall (D703, D712) and the species route (D707–D709), every mechanism tried for an exact 1/E(τ,2) plateau is excluded or sits on the e = 1 rung. Status: SERAPIS-E's plateau remains an assumed effective term; what is derived is the tilt (BHK), the vacuum at ρ, and the stuck-brane setup. Loop stopped: the next step is a model-building choice (a non-string 6D supergravity bulk with a free tension sign, or accepting the plateau as effective), not another lookup.

@@ -1,0 +1,4 @@
+check vs lattice: [(2.0, np.float64(6.556877), 6.550398), (1.5, np.float64(9.330536), 9.277647)]
+s=0.6: E(rho)=-5.44399 E(i)=-5.43243 min on line -5.44590 at y=0.923; max 4.497e+01; positive everywhere: False; sign changes at y~[7.236]; metric(-lnE) at rho +0.0800 (pred -s(s-1)/(4y^2)=+0.0800)
+s=0.75: E(rho)=-10.10142 E(i)=-10.08467 min on line -10.10420 at y=0.923; max 7.001e+01; positive everywhere: False; sign changes at y~[8.492]; metric(-lnE) at rho +0.0625 (pred -s(s-1)/(4y^2)=+0.0625)
+s=0.9: E(rho)=-28.90099 E(i)=-28.87803 min on line -28.90481 at y=0.923; max 1.008e+02; positive everywhere: False; sign changes at y~[14.773]; metric(-lnE) at rho +0.0300 (pred -s(s-1)/(4y^2)=+0.0300)
