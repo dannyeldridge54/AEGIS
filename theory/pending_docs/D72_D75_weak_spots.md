@@ -5006,3 +5006,13 @@ Learned (robust):
 - Λ's V-level suppression, 243.2, lands inside the axion-instanton band. Both point to cycles of 2π-volume ≈ 19–24 (W-level).
 - The interference picture predicts the axion is the heavier kind (m ≳ 10² H0) if the same cycles do both jobs.
 Status: Λ-instanton origin stays OPEN. There is one consistent sub-window (heavy axion), not adopted. Shared quantities unchanged.
+
+## D532 — RIGHT (pp, 22:18 CT; literature, nothing computed) — in type IIB, the SERAPIS torus must carry no flux
+Follow-up to D530's heterotic-vs-IIB tension.
+- Ishiguro, Kobayashi, Otsuka, arXiv:2011.09154. Setup: IIB on T⁶/(Z₂×Z₂′) with three-form fluxes and isotropic τ. SL(2,Z) is a symmetry only together with a transformation of the flux quanta; any fixed flux choice breaks it. Flux vacua cluster at τ = ω, about 40–62% depending on the flux bound. τ = i holds only about 4–6%.
+Consequences for SERAPIS:
+1. If τ were a flux-stabilised complex-structure modulus, three things would break. V(τ) would not be exactly modular at fixed flux. τ would be pinned near its flux minimum, so there would be no roll from Im τ ≈ 126. And the vacuum would favour ω, which SERAPIS makes a wall. So the IIB SERAPIS torus cannot be flux-stabilised.
+2. A consistent IIB option: a T² with no flux through it (for example T² × K3 with flux on the K3 part only). There its U stays a modulus with the full SL(2,Z), and its potential comes from non-perturbative, modular-covariant terms, as in the heterotic case.
+3. This is a real constraint, not a fit. Together with D530: the SERAPIS torus is an N = 2 plane with no flux, and the full SL(2,Z) comes from the factorised T² lattice.
+4. Mild statistical note: landscapes that stabilise by flux prefer ω over i. SERAPIS's vacuum at i is therefore NOT a typical flux vacuum. That is fine, because τ is not flux-stabilised in our set-up, but it should be stated in the paper.
+Shared quantities unchanged; centre balanced. Status: the home is narrowed further. The IIB route needs an unfluxed T²; heterotic stays the most natural.
