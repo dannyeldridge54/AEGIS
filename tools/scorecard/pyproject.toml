@@ -9,7 +9,8 @@ description = "Score an inflation model against every current dataset; Janus cal
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = ["numpy", "scipy", "pyyaml", "matplotlib"]
-license = {text = "LICENCE PENDING (author's choice; see README)"}
+license = {text = "AGPL-3.0-or-later OR LicenseRef-Commercial"}
+classifiers = ["License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)", "Programming Language :: Python :: 3", "Topic :: Scientific/Engineering"]
 authors = [{name = "Danny Lee Eldridge"}]
 
 [project.optional-dependencies]

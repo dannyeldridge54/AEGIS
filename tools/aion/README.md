@@ -46,4 +46,4 @@ someone with write access; for stronger proof, timestamp the lock commits extern
 Zenodo deposit).
 
 ## Licence
-Pending the author's choice (MIT or BSD-3 suggested). Until then: © 2026 Danny Lee Eldridge, all rights reserved.
+Dual-licensed: **AGPL-3.0-or-later** (free for everyone; see [LICENSE](LICENSE)) or a **commercial licence** for organisations that do not want the AGPL's obligations — tiers and contact in [COMMERCIAL.md](COMMERCIAL.md). © 2026 Danny Lee Eldridge.

@@ -34,4 +34,4 @@ offset-corrected SERAPIS τ = i form 0.2–0.4% (AEGIS D640).
 `pytest tools/scorecard/tests` reproduces the published SERAPIS scorecard (AEGIS notes D710, D711) and the Janus checks.
 
 ## Licence
-Pending the author's choice. © 2026 Danny Lee Eldridge.
+Dual-licensed: **AGPL-3.0-or-later** (free for everyone; see [LICENSE](LICENSE)) or a **commercial licence** for organisations that do not want the AGPL's obligations — tiers and contact in [COMMERCIAL.md](COMMERCIAL.md). © 2026 Danny Lee Eldridge.

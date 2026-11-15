@@ -7,5 +7,5 @@ authors:
   - family-names: Eldridge
     given-names: Danny Lee
 repository-code: https://github.com/dannyeldridge54/AEGIS/tree/unify-bg/tools/scorecard
-license-url: https://github.com/dannyeldridge54/AEGIS/blob/unify-bg/tools/scorecard/README.md#licence
-notes: "Licence pending the author's choice. Developed with AI assistance (Claude, Anthropic)."
+license: AGPL-3.0-or-later
+notes: "Dual-licensed: AGPL-3.0-or-later or commercial (COMMERCIAL.md). Developed with AI assistance (Claude, Anthropic)."

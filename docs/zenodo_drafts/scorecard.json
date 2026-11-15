@@ -9,13 +9,13 @@
    }
   ],
   "version": "0.1.0",
-  "license": "PENDING",
+  "license": "AGPL-3.0-or-later",
   "keywords": [
    "pre-registration",
    "reproducibility",
    "inflation",
    "cosmology"
   ],
-  "notes": "DRAFT - not uploaded. Needs Danny's licence choice and explicit 'Publish'."
+  "notes": "DRAFT - not uploaded. Needs Danny's explicit 'Publish'. Dual-licensed: AGPL-3.0-or-later or commercial (COMMERCIAL.md)."
  }
 }

@@ -4,8 +4,8 @@ Each is usable outside the Twist. Status says how ready it is for someone else.
 
 | Tool | What it does | For whom | Where | Status |
 |---|---|---|---|---|
-| **AION** (new, 0.1.0) | Pre-registration kit: `aion new / lock / deviate / check`; audits that every result followed its lock | Any researcher using git | `tools/aion/` | Ready; tests + CI green; licence pending |
-| **Inflation Scorecard + Janus calculator** (new, 0.1.0) | Scores n_s, r, α_s, Σm_ν, N_eff, f_NL (and Lyman-α, S8 with CAMB) against 25 sourced datasets; closed-form running | Inflation model builders | `tools/scorecard/` | Ready; tests + CI green; licence pending |
+| **AION** (new, 0.1.0) | Pre-registration kit: `aion new / lock / deviate / check`; audits that every result followed its lock | Any researcher using git | `tools/aion/` | Ready; tests + CI green; AGPL-3.0 or commercial |
+| **Inflation Scorecard + Janus calculator** (new, 0.1.0) | Scores n_s, r, α_s, Σm_ν, N_eff, f_NL (and Lyman-α, S8 with CAMB) against 25 sourced datasets; closed-form running | Inflation model builders | `tools/scorecard/` | Ready; tests + CI green; AGPL-3.0 or commercial |
 | **SERAPIS tracker** (new) | Re-scores frozen predictions, writes a dated status page (md + html) | Livestream / website | `tools/tracker/` | Ready |
 | D-note index + claim | `docs/D_INDEX.md` generator; claim script for the next D-number | This project | `tools/dnotes/` | Ready |
 | AEGIS Method kit | Rule template, deviation template, SHA-256 lock + ledger verifier (stdlib); superseded by AION | Any researcher | `method/` | Ready (verify path bug fixed 15 Nov) |
