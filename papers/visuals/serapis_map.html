@@ -1,0 +1,105 @@
+<title>Serapis Shape Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one centred disk (the space of torus shapes), legend and notes stacked beside/below */
+:root{
+  --bg:#f3f1ec; --ink:#1d2330; --muted:#5b6474; --tileA:#e4e0d6; --tileB:#cfd6e0;
+  --edge:#8c95a6; --vac:#1f7a5a; --wall:#b8452f; --path:#2f5fb8; --gold:#a07a1f;
+  --display:"Cormorant Garamond", Georgia, serif; --body:"IBM Plex Sans", system-ui, sans-serif; --mono:"IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#12151c;--ink:#e6e8ee;--muted:#9aa3b5;--tileA:#1d2230;--tileB:#252c3d;--edge:#4c5670;--vac:#4fc79a;--wall:#e07a62;--path:#7fa3ef;--gold:#d8b45a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12151c;--ink:#e6e8ee;--muted:#9aa3b5;--tileA:#1d2230;--tileB:#252c3d;--edge:#4c5670;--vac:#4fc79a;--wall:#e07a62;--path:#7fa3ef;--gold:#d8b45a;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.55;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px}
+main{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:start}
+@media (max-width:820px){main{grid-template-columns:1fr}}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(2rem,4vw,2.8rem);margin:0 0 4px;text-wrap:balance;letter-spacing:.01em}
+.sub{color:var(--muted);margin:0 0 18px;max-width:60ch}
+.disk{position:relative;width:100%;max-width:560px;aspect-ratio:1}
+canvas{width:100%;height:100%;display:block}
+.legend{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.legend li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
+.sw{width:16px;height:16px;border-radius:50%;margin-top:4px}
+.k{font-weight:500}
+.stage{margin-top:22px;border-top:1px solid var(--edge);padding-top:16px}
+.stage h2{font-family:var(--display);font-weight:600;font-size:1.45rem;margin:0 0 8px}
+ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.num{font-family:var(--mono);font-size:.86rem;color:var(--muted)}
+.note{font-size:.88rem;color:var(--muted);margin-top:14px;max-width:62ch}
+</style>
+<main>
+  <section>
+    <h1>Serapis</h1>
+    <p class="sub">The space of all shapes one torus can take, drawn as a disk. Every tile is the same shape seen through the duality; the triangles fan out from the walls, and the field rests at the centre.</p>
+    <div class="disk"><canvas id="c" aria-label="Modular tiling of torus shapes with the Serapis path"></canvas></div>
+  </section>
+  <section>
+    <ul class="legend">
+      <li><span class="sw" style="background:var(--vac)"></span><span><span class="k">Square torus (centre).</span> The resting point. Its leftover energy is Λ; the field here is heavy (4×10¹³ GeV), so it exerts no fifth force.</span></li>
+      <li><span class="sw" style="background:var(--wall)"></span><span><span class="k">Triangle points.</span> Where the torus is hexagonal. In Serapis each one is a wall the shape cannot sit on; every tile's sharp corner touches one.</span></li>
+      <li><span class="sw" style="background:var(--path)"></span><span><span class="k">Inflation path.</span> The torus starts almost flat near the rim (stretched), rolls inward, inflation ends, and it settles at the centre.</span></li>
+      <li><span class="sw" style="background:var(--gold)"></span><span><span class="k">Rim.</span> Infinitely stretched shapes. Near it the energy is an almost constant plateau, which is what drives inflation.</span></li>
+    </ul>
+    <div class="stage">
+      <h2>The order of things</h2>
+      <ol>
+        <li>Void: stretched torus near the rim, inflation. <span class="num">Im τ ≈ 126 → 2.1</span></li>
+        <li>Plasma: the shape falls toward the square and its energy becomes heat.</li>
+        <li>Hydrogen and helium form; sound rings through the plasma.</li>
+        <li>Light is released (the CMB); stars and galaxies grow.</li>
+        <li>Rest: square torus at the centre, Λ. <span class="num">n_s 0.9667 · r 0.0011</span></li>
+      </ol>
+    </div>
+    <p class="note">Drawn exactly: each pixel is a torus shape τ, mapped to the disk by (τ − i)/(τ + i) and reduced to the basic tile by the modular group; tile colour alternates with the number of reflections. Numbers from AEGIS D517 (SERAPIS-1). The other two tori of the six extra dimensions are heavy and not drawn.</p>
+  </section>
+</main>
+<script>
+(function(){
+  const cv=document.getElementById('c'), ctx=cv.getContext('2d');
+  const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  function hex(c){c=c.replace('#','');return [parseInt(c.slice(0,2),16),parseInt(c.slice(2,4),16),parseInt(c.slice(4,6),16)]}
+  function draw(){
+    const W=Math.min(1120,Math.round(cv.clientWidth*(window.devicePixelRatio||1)))||600; cv.width=cv.height=W;
+    const A=hex(css('--tileA')),B=hex(css('--tileB')),E=hex(css('--edge')),BG=hex(css('--bg'));
+    const img=ctx.createImageData(W,W), d=img.data, R=W/2-2;
+    for(let py=0;py<W;py++)for(let px=0;px<W;px++){
+      const zx=(px-W/2)/R, zy=(W/2-py)/R, r2=zx*zx+zy*zy, o=4*(py*W+px);
+      if(r2>=1){d[o]=BG[0];d[o+1]=BG[1];d[o+2]=BG[2];d[o+3]=255;continue}
+      // disk -> upper half plane: tau = i(1+z)/(1-z)
+      const den=(1-zx)*(1-zx)+zy*zy; let tx=(-2*zy)/den, ty=(1-r2)/den; let par=0, edge=1e9;
+      for(let k=0;k<60;k++){
+        const n=Math.round(tx); if(n!==0){tx-=n;}
+        const m=tx*tx+ty*ty; if(m<1-1e-12){tx=-tx/m;ty=ty/m;par^=1;} else break;
+      }
+      edge=Math.min(Math.abs(Math.abs(tx)-0.5),Math.abs(Math.sqrt(tx*tx+ty*ty)-1))/ty*1.0;
+      const c=par?B:A, w=Math.max(0,1-edge*W*0.35*(1-r2)*0.6);
+      d[o]=c[0]+(E[0]-c[0])*w; d[o+1]=c[1]+(E[1]-c[1])*w; d[o+2]=c[2]+(E[2]-c[2])*w; d[o+3]=255;
+    }
+    ctx.putImageData(img,0,0);
+    const toPx=(x,y)=>[W/2+x*R,W/2-y*R];
+    // rim
+    ctx.strokeStyle=css('--gold');ctx.lineWidth=W/200;ctx.beginPath();ctx.arc(W/2,W/2,R,0,2*Math.PI);ctx.stroke();
+    // inflation path: tau = i y maps to real z=(y-1)/(y+1)
+    const zOf=y=>(y-1)/(y+1);
+    ctx.strokeStyle=css('--path');ctx.lineWidth=W/140;ctx.lineCap='round';
+    ctx.beginPath();let [a,b]=toPx(zOf(126),0);ctx.moveTo(a,b);[a,b]=toPx(zOf(2.1),0);ctx.lineTo(a,b);ctx.stroke();
+    ctx.setLineDash([W/90,W/120]);ctx.lineWidth=W/220;ctx.beginPath();ctx.moveTo(a,b);[a,b]=toPx(0,0);ctx.lineTo(a,b);ctx.stroke();ctx.setLineDash([]);
+    // triangle points: images of rho = 1/2 + i sqrt3/2 under a few group elements
+    const pts=[];const rho=[0.5,Math.sqrt(3)/2];
+    function mob(a,b,c,dd,x,y){const nr=a*x+b, ni=a*y, dr=c*x+dd, di=c*y, q=dr*dr+di*di;return [(nr*dr+ni*di)/q,(ni*dr-nr*di)/q]}
+    const mats=[];for(let a2=-4;a2<=4;a2++)for(let b2=-4;b2<=4;b2++)for(let c2=-4;c2<=4;c2++)for(let d2=-4;d2<=4;d2++){if(a2*d2-b2*c2===1)mats.push([a2,b2,c2,d2])}
+    const seen=new Set();
+    for(const [a2,b2,c2,d2] of mats){const [x,y]=mob(a2,b2,c2,d2,rho[0],rho[1]);
+      const zr=((x*x+(y*y-1)))/(x*x+(y+1)*(y+1)), zi=(-2*x)/(x*x+(y+1)*(y+1));
+      // z=(tau-i)/(tau+i)
+      const key=Math.round(zr*500)+','+Math.round(zi*500); if(seen.has(key))continue; seen.add(key);
+      if(zr*zr+zi*zi<0.985)pts.push([zr,-zi]);}
+    ctx.fillStyle=css('--wall');
+    for(const [x,y] of pts){const [qx,qy]=toPx(x,y);const s=Math.max(2,W/120*(1-(x*x+y*y)));ctx.beginPath();ctx.arc(qx,qy,s,0,2*Math.PI);ctx.fill()}
+    // centre: square torus
+    ctx.fillStyle=css('--vac');[a,b]=toPx(0,0);ctx.beginPath();ctx.arc(a,b,W/55,0,2*Math.PI);ctx.fill();
+  }
+  draw(); let t; window.addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(draw,150)});
+  if(window.matchMedia)window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',draw);
+})();
+</script>
