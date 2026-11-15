@@ -1,0 +1,4 @@
+# PREREG D672: κ = 1/n for modular log-tilts, and measuring the plateau power n from (n_s, r, α_s) (DpL tick 5, Danny "Ddl" 11:38 CT)
+Locked before computation, 2026-11-15. Script theory/modular/kappa_modular_d672.py; output results/kappa_modular_d672.txt.
+Claim (analytic): with K = −ln(2 Im τ) (φ = ln y/√2), any logarithm of a modular form/invariant grows linearly in y at the cusp, so a log-type tilt ∝ y = e^{√2φ} has q = √2; a plateau I^n/(I^n+1) with I ≈ y approaches 1 as y^{−n} = e^{−n√2φ}, so p = n√2. Hence κ = 1/n for every modular log-tilt (τ = i: I1; ρ: L), independent of which invariant is used.
+Test: treat n as unknown; using the general relations (D669 for α_s) with p = n√2, κ = 1/n, solve (u-equivalent A′, x, n) from the exact (n_s, r, α_s) of the six D665 points (τ = i and ρ). Report inferred n. PASS if all six give n within 2 ± 0.2 (leading-order relation; offsets neglected).
