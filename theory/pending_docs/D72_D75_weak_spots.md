@@ -4256,3 +4256,9 @@ SECOND PASS DONE (cycles 12–22): corrections to the published paper are queued
 entry traced to its D-note; the v2 paper's source). Cross-checks: B1 = r − 3(1−n_s)² with Route A values 0.0046 − 3(0.0264)² = +2.5×10⁻³ ✓;
 total ΔN_eff (gravitino only after D422) 0.047 ✓ (< 0.14); all F1–F7 filters pass with the recorded requirements. No new physics → WALL 2 at
 30-min pace → interval 60 min.
+
+**D434 (cycle 24, "pp"; third pass PART 2, LEFT; scored, locked PREREG_D434_PART2C; results/part2c_d434.txt) — Route A's locked prediction
+band: over n_s = 0.9706–0.9766 (ε = 2.0–4.0×10⁻⁷), r = 0.0042–0.0050 and α_s = −7.1 to −8.4×10⁻⁴, with B1 = +1.6 to +3.3×10⁻³.** The key
+signature: r RISES with n_s (0.0042 → 0.0050), opposite to plain Starobinsky, where r = 3(1−n_s)² FALLS (0.0026 → 0.0016) across the same n_s
+range. So the two separate more as n_s grows (ratio 1.6× at 0.9706, 3.0× at 0.9766). A measurement in the (n_s, r) plane outside this band
+(2σ) falsifies Route A. Correction to D419's ε window (linear estimate 1.8–3.7×10⁻⁷ for ±0.003): computed 2.0–4.0×10⁻⁷. Result → walls 0.

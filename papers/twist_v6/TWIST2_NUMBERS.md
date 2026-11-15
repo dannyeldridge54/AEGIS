@@ -25,3 +25,4 @@
 | Kination GWs | peak Ω_GW h² ≈ 5.6×10⁻¹⁶ at ~10⁷ Hz; ΔN_eff ~10⁻¹⁰ | D424 |
 | Birefringence axion | c_γ ≈ 1.6–3.9, f ≤ 0.1 M_P, Ω_a ≤ 3×10⁻³; β_reio/β_rec ≈ 1 (m ≲ 10 H₀), 0.24–0.66 (50 H₀), ≈ 0 (≥ 100 H₀) | D414, D428 |
 | String flags | TCC violated (×1.3×10⁷ in scale); dS slope 0.022; distance range up to 24.8 M_P (towers safe after x ≳ 1); no local (T−T_E) origin; dS minimum | D408, D409, D388, D413, D423 |
+| Route A band (n_s 0.9706–0.9766) | ε 2.0–4.0×10⁻⁷; r 0.0042–0.0050 (rises with n_s; Starobinsky 0.0026–0.0016 falls); α_s −7.1 to −8.4×10⁻⁴ | D434 |
