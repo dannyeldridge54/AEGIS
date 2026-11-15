@@ -1,6 +1,6 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
-interval_min: 60
+interval_min: 5
 consecutive_walls: 0
 cycle: 37
 next_part: 3
@@ -85,3 +85,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 35 (19:35, 'pp'): fourth pass PART 2 — D450 plateau with M_s(x): 𝒱(x*) = 4e-6, M_s ≈ 500–700 M_P → OUTSIDE CONTROL (inflation outside large-volume regime; sharpens D408/D409 flag). Result → walls 0.
 - cycle 36 (19:37, 'pp'): PART 2/11 — D451 T-dual frame at 𝒱' = 1.9e6 is controlled, but F is not modular (log10 asymmetry −119 at x*); a modular F would mirror the cliff to x ≈ 0.034. D450 flag stands. Result → walls 0.
 - cycle 37 (19:55, 'pp'): D452 rescaled normalisation (a ≈ 4e3–2e4): 𝒱 = 1–10 at CMB point AND capture holds (8/8); M_s ≈ 1e14 GeV; D450 flag → marginal control. Result → walls 0.
+- 19:55 CT: Danny '5 min loops' → interval reset to 5 min (walls 0); pacing rule as before (2 walls at 5 → 30; 2 at 30 → 60; 3 at 60 → stop).
