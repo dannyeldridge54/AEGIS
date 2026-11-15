@@ -4307,3 +4307,11 @@ tiny even at M_s = M_P: δn_s = −2.0e-6 (c_H = 1) to −5.9e-6 (c_H = 3), δr 
 1% amplitude criterion fails at M_s = M_P (δV/V = 12–37%, a nearly constant offset that renormalises the amplitude A_s and is absorbed by
 it); at M_s = 0.1 M_P, δV/V = 0.12–0.37%, so every criterion passes. Bridges B1/B2 unchanged within 1e-5. CENTRE: balanced (left:
 plateau untouched; right: capture unchanged). Status: the FI-term origin survives inflation at toy level; requires M_s ≲ 0.1 M_P for a clean pass.
+
+**D440 (cycle 27, "pp"; third pass PART 4, LEFT/RIGHT; arithmetic in code, standard formulas, no new model; results/part4c_numass_d440.txt)
+— leptogenesis survives the DESI DR2 neutrino-mass bound; no new restriction.** DESI DR2 + CMB give Σm_ν < 0.0642 eV (95%, ΛCDM;
+arXiv:2503.14744). Normal ordering then needs m₁ < 0.0043 eV (minimum sum 0.0587); inverted (min 0.100) is disfavoured — the Twist
+takes no side on ordering, so nothing breaks. Thermal leptogenesis (Davidson–Ibarra ε_max = 3M₁m_atm/16πv², Y_B ≈ 1.3e-3 εκ, strong-washout
+κ fit) with D ≈ 1 needs M₁ ≥ 6.8e8 GeV (κ ≈ 1), 2.9e10 (m̃₁ = m_sol), 7.3e10 (0.02 eV), 2.0e11 GeV (m̃₁ = m_atm). Because m̃₁ ≥ m₁ only, m̃₁
+remains free, and all of these lie inside D411's window 1e9–2.5e13 GeV (lower edge consistent with 6.8e8). Labels: estimate (κ fit ±30%).
+No scored result → WALL.

@@ -1,0 +1,4 @@
+NO min sum 0.0587 eV; sum<0.0642 -> m1 < 0.0043 eV; IO min sum 0.1002 (excluded at 95%)
+m~1=0.0086 eV: kappa=2.36e-02 eps_need=2.84e-06 M1_min=2.88e+10 GeV  T_RH>M1 needs <= capture T 1.5e11? True
+m~1=0.0200 eV: kappa=9.33e-03 eps_need=7.17e-06 M1_min=7.26e+10 GeV  T_RH>M1 needs <= capture T 1.5e11? True
+m~1=0.0501 eV: kappa=3.40e-03 eps_need=1.97e-05 M1_min=1.99e+11 GeV  T_RH>M1 needs <= capture T 1.5e11? False
