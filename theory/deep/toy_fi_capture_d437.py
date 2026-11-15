@@ -1,4 +1,4 @@
-"""D437 (locked PREREG_D437_FI_TOY): two-modulus toy for the D-term capture of D436. AI-assisted.
+"""D437 (locked PREREG_D437_FI_TOY; DEVIATIONS D1: min-tracking only after the first reflection; stop bouncing when the reflection speed < 1e-9 and treat x as resting on the wall): two-modulus toy for the D-term capture of D436. AI-assisted.
 Background: radiation era (g* 106.75), T = T0 e^{−(N−N0)}; start at D367c's N − N_e = 6 line (x = 27.178, dp = dφ/dN = 0.1145,
 T0 = 1.714e12 GeV); canonical φ with x = e^{cφ}, c = √(2/3); x's own energy neglected in H (Ω_kin ≤ 2×10⁻³ there, D367c).
 D7 sector (switched on for x ≥ 1, i.e. throughout this window): ξ(x) = δ₁/(2x) + δ₂/x₂, δ₂ = 0.01, x₂ = 30, δ₁ = −2δ₂ x_E/x₂ with x_E = 29.6.
@@ -24,13 +24,14 @@ def run(ms):
         s = solve_ivp(rhs, [N, 20.0], y, events=hit, rtol=1e-9, atol=1e-13, max_step=0.05, dense_output=True)
         if s.t_events[0].size:
             N = s.t_events[0][0]; p, dp = s.y_events[0][0]; refl.append(N); y = [p - 1e-12, -abs(dp)]
-            if len(refl) > 60: break
+            if abs(dp) < 1e-9 or len(refl) > 5000:
+                N = 20.0; y = [pE, 0.0]; break
         else:
             N = 20.0; y = list(s.y[:, -1])
         # record minimum after first reflection and first return
-        if refl:
+        if refl and (len(refl) > 1 or s.t_events[0].size == 0 or s.t[0] >= refl[0] - 1e-12):
             import numpy as np
-            ts = np.linspace(s.t[0], s.t[-1], 400); ps = s.sol(ts)[0]
+            t0 = max(s.t[0], refl[0]); ts = np.linspace(t0, s.t[-1], 400) if s.t[-1] > t0 else [t0]; ps = s.sol(ts)[0]
             m = ps.min(); minp_after = m if minp_after is None else min(minp_after, m)
             if returned is None and len(refl) >= 2: returned = refl[1]
     xf = math.exp(c * y[0]); xmin = math.exp(c * minp_after) if minp_after else None

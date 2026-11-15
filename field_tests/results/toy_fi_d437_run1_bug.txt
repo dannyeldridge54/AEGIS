@@ -1,0 +1,2 @@
+m_s 1e+04 GeV: first hit of x_E at N−N_e = 8.443 (T = 1.49e+11 GeV); reflections up to N−N_e 20: 61; min x after first reflection 27.1780; first return to the wall at N−N_e = 10.63 (T = 1.67e+10 GeV); x at N−N_e 20 = 29.60000 (offset 2.42e-11)
+m_s 1e+05 GeV: first hit of x_E at N−N_e = 8.430 (T = 1.51e+11 GeV); reflections up to N−N_e 20: 61; min x after first reflection 27.1780; first return to the wall at N−N_e = 9.426 (T = 5.57e+10 GeV); x at N−N_e 20 = 29.60000 (offset 2.42e-11)
