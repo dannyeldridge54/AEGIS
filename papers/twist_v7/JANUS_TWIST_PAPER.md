@@ -1,12 +1,12 @@
 ---
 title: "The Janus Twist: a status report on single-torus modular inflation, its Kairos and Chronos branches, and what it does not explain"
 author: "Danny Eldridge (independent researcher), with AI assistance (Claude, Anthropic)"
-date: "Draft v2.1, 14 November 2026 — revised after two rounds of independent referee review; not yet published"
+date: "Version v2.2, 14 November 2026 — adds missed prior art (Kallosh–Linde SL(2,ℤ) attractors) and two clarifications"
 ---
 
 # Abstract
 
-This is a status and synthesis preprint, not a claim of a new mechanism. "Janus Twist", "SERAPIS", "Kairos" and "Chronos" are naming metaphors for the framework, the model and its two branches.
+This is a status and synthesis preprint, not a claim of a new mechanism. In substance SERAPIS is a variant of the SL(2,ℤ) cosmological attractors of Kallosh and Linde (arXiv:2408.05203) with α = 1/3, differing mainly in placing the vacuum at τ = i and in using a holomorphic superpotential. "Janus Twist", "SERAPIS", "Kairos" and "Chronos" are naming metaphors for the framework, the model and its two branches.
 
 We collect a series of pre-registered tests (AEGIS D-notes D436–D539) on one idea: the inflaton is the **shape τ of a hidden two-torus**, with a potential built from modular (SL(2,ℤ)) functions. In the model **SERAPIS** (K = −ln 2 Im τ, nilpotent stabiliser), the stretched torus gives a cusp plateau that drives inflation. The torus then relaxes to the square shape τ = i, which is a heavy (m ≈ 4.2–4.5×10¹³ GeV), supersymmetric **Minkowski** minimum; the hexagonal point is a wall. **The cosmological constant is not explained**: an earlier version of this work placed Λ at τ = i, but that relied on a non-holomorphic branch choice and is withdrawn (D537). With a holomorphic superpotential, a heavy de Sitter vacuum at τ = i is excluded in this minimal set-up (D538; cf. Leedom–Righi–Westphal), so Λ is an added, tuned sector, as in other modular-inflation models.
 
@@ -39,7 +39,7 @@ where E₆/η¹² ∝ (τ − i) is the holomorphic square root of j − 1728 (D
 What each factor does:
 - j^(−1/12) cancels |η|⁻⁴ on the cusp, and [ln j]^(1/2) cancels 1/(2 Im τ); together they give the plateau.
 - E₆/η¹² makes τ = i a quadratic (stiff) supersymmetric minimum.
-- j^(−7/12) makes τ = ρ a wall.
+- j^(−7/12) makes τ = ρ a branch point of W: j^(−7/12) ∝ (τ − ρ)^(−7/4), so F is not single-valued around ρ. The model is therefore a local effective model, defined away from branch cuts from ρ; the inflationary path and the vacuum lie inside that region, and V (which depends only on |j|) is single-valued (D543). A globally consistent version can put V in the metric of the nilpotent field instead of W, as Kallosh and Linde do.
 
 **Status of H.** The plateau factors j^(−7/12) and [ln(j/1728)+κ]^(1/2) lie outside the string-derived Cvetič–Font–Ibáñez–Lüst–Quevedo class, H = (j−1728)^{m/2} j^{n/3} P(j) with integer m, n and polynomial P (D535). In that class no potential has an exactly flat cusp plateau. SERAPIS's plateau is therefore an effective, modular-invariant choice, not a string derivation. The exponents and κ were chosen by hand after earlier variants (D513–D516).
 
@@ -68,7 +68,7 @@ Comparisons use CMB-SPA n_s = 0.9684 ± 0.0030 and CMB-SPA+DESI 0.9728 ± 0.0027
 * **Proton protection (D527–D529, D533).** The centre of SL(2,ℤ) leaves τ fixed, so matter fields of weight n/M carry a Z₂M that survives at every τ (Kobayashi et al., arXiv:2207.14014).
   - In the supergravity convention required here (W of weight −1), family-independent Z₄^R and Z₈^R assignments allow the Yukawa, μ and Weinberg terms. They forbid all dimension-4 and dimension-5 proton-decay operators and the dimension-6 Kähler operators QQU†E† and QLU†D†.
   - Some of these pass the Ibáñez–Ross condition A₃ ≡ A₂ (mod N/2): 8 of 16 for Z₄^R and 16 of 96 for Z₈^R. Green–Schwarz-induced breaking is safe for δ_GS ≲ 6 (D533; order-of-magnitude bounds).
-  - Caveats: a non-zero ⟨W⟩ (gravitino mass) breaks this R-symmetry. Hypercharge and gravitational anomalies were not checked. Compare the known Z₄^R of Lee–Raby–Ratz–Ross et al. (arXiv:1102.3595), which forbids μ perturbatively.
+  - Caveats: a non-zero ⟨W⟩ breaks Z₄^R → Z₂ matter parity; dimension-5 operators then return only with M_eff ~ M_P²/m₃/₂ ≳ 10³¹ GeV for m₃/₂ ≲ 100 TeV, far above the ~10²⁴ GeV bound (D542). Hypercharge and gravitational anomalies were not checked. Compare the known Z₄^R of Lee–Raby–Ratz–Ross et al. (arXiv:1102.3595), which forbids μ perturbatively.
 * **Earlier realisation (Twist-2, D436–D489).** A rolling Kähler modulus captured by a stringy Fayet–Iliopoulos term on a magnetised D7-brane. Capture works for string scales 3×10⁻⁵–0.3 M_P and soft masses 1 eV–100 TeV (D446, D452, D460, D483). It requires:
   - hidden-sector annihilation of the remnant (D447, D455, D468);
   - baryon-number protection (D469);
@@ -88,7 +88,7 @@ Comparisons use CMB-SPA n_s = 0.9684 ± 0.0030 and CMB-SPA+DESI 0.9728 ± 0.0027
 
 - **Modular-invariant superpotentials from gaugino condensation:** Cvetič, Font, Ibáñez, Lüst, Quevedo (1991); Font, Ibáñez, Lüst, Quevedo (1990); Gonzalo, Ibáñez, Uranga, arXiv:1812.06520; Leedom, Righi, Westphal, arXiv:2212.03876 (no dS at fixed points); Knapp-Pérez et al., arXiv:2304.14437.
 - **Modular-invariant inflation:** arXiv:2405.06497, 2407.12081 (log-type plateau; also species-scale control), 2405.08924, 2411.18603, 1604.02995, 2403.02125, 2503.13682.
-- **α-attractors:** Kallosh, Linde and collaborators; arXiv:2510.18656 (n_s for attractors with reheating).
+- **α-attractors and SL(2,ℤ) attractors:** Kallosh, Linde and collaborators; Kallosh & Linde, SL(2,ℤ) cosmological attractors, arXiv:2408.05203, and axion stability in them, arXiv:2412.19324 (the closest prior work: cusp plateau with exact SL(2,ℤ), α-attractor predictions, Λ added; minimum at ω); arXiv:2510.18656 (n_s for attractors with reheating).
 - **Fixed points and trapping:** attraction of moduli to fixed points, arXiv:2211.00659; trapping at enhanced-symmetry points, hep-th/0403001.
 - **Moduli fixing and orbifold structure:** D-term moduli fixing, arXiv:1110.3333; threshold duality groups in orbifolds, hep-th/9303017; flux statistics, arXiv:2011.09154.
 - **Matter parities:** arXiv:2207.14014, 1812.11072, 1102.3595; Ibáñez–Ross (1991); Dreiner, Luhn, Thormeier, hep-ph/0512163.
