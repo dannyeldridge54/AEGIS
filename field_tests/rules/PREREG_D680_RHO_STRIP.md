@@ -1,0 +1,3 @@
+# PREREG D680: exact allowed strip for SERAPIS-ρ (Danny "Deeper" 11:45 CT)
+Locked before computation, 2026-11-15. Script theory/modular/rho_strip_d680.py; output results/rho_strip_d680.txt.
+As D678 but with the ρ-path code (rho_running_d634.py up to its spectra function, verbatim) and ρ's bracket edges: N* = 46.09 with ε ∈ {0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.4249}e-4 and N* = 49.49 with ε ∈ {0, 0.25, 0.5, 0.75, 0.9974}e-4 (last values = D676 caps). Fit both edges as in D678 and report the max fractional r-width at fixed n_s, and the maximum offset between the ρ and τ = i strips at fixed n_s (using D678's fits). If the strips agree within their widths, a combined strip lock (D681) will cover both vacua.
