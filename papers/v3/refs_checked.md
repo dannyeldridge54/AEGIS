@@ -56,3 +56,4 @@ Journal-only, not opened (standard references from knowledge; Danny to confirm i
 2201.02472 ATLAS disappearing-track chargino search (pdf read; 660 GeV pure wino, 0.2 ns) — added D650
 1612.09559 Schimmrigk, j-inflation (pdf read: V = Λ⁴|j|², zero at ρ, slow roll near τ = i where E6 = 0) — added v3.1
 1512.09082 Schimmrigk, automorphic inflation framework (pdf read) — added v3.1
+2212.04115 Bahr-Kalus, Parkinson, Easther, Constraining Cosmic Inflation with Observations: Prospects for 2030 (abs page checked) — added D670

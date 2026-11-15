@@ -5,3 +5,4 @@
 - τ = i: the Γ2 ≅ S3 flavour doublets restore coexistence of centre matter parity and neutrino masses (D664).
 - Janus extended (D665–D667): one consistency relation serves both vacua to ~1%; new closed form and frozen prediction for the running of the running, β_s = −(3.0–4.6)e-5.
 - General Janus relation for any plateau + exponential ramp (D669); tested to <1% on Kallosh–Linde singular T-models.
+- Janus signature vs 2030 forecasts quantified (D670): ≲0.5σ; α_s test is long-term.
