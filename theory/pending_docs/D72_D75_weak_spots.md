@@ -5794,3 +5794,19 @@ Reasoning:
 - The SM gets the same structural suppression: its diagonal masses are also stationary. With D551's S-even SM couplings, the SM's linear decay channels are suppressed too, which supports Br(N-sector) ~ O(1).
 Literature: modular-flavour work at fixed points (e.g. 2604.04585, 2026) studies leptogenesis near other fixed points with hierarchical N and gives no τ = i results. A dedicated search found nothing that treats inflaton decay at τ = i (search-only claim).
 Status: baryogenesis for two-term SERAPIS = resonant leptogenesis via off-diagonal φ → N₁N₂ in a near-degenerate pair. This is the leading candidate, but it needs an explicit flavour model (Γ₂/Γ₃ weights at τ = i) to compute Γ(φ → N₁N₂), the splitting, and Y_B. That needs a lock.
+
+## D591 — DEEP (Ddl 08:00 CT; arithmetic estimates reusing the D193 racetrack, not locked) — the dilaton racetrack window is WIDE at SERAPIS's scale, but heavy-dilaton decays create a serious LSP over-abundance problem
+1. **Racetrack window** (SU(8) × SU(9), Re Y₀ = 2, D193 conditions W = W′ = 0). With K = −ln(Y + Ȳ) − ln(2y), m_Y ∝ A(2y)^{−1/2}, so it varies only ×5 between y* ≈ 24.5 and the vacuum. That is far milder than the Twist's x^{−3/2}.
+   - Requiring m_Y(y*) ≥ 10H_inf (H = 2.2e-6 M_P) and m_Y(vacuum) ≤ M_s (1e17 GeV) gives A ∈ [1.4e-3, 0.51], a window of ×377. Compare the D193 Twist window of ×4.
+   - m_Y = 5e13 – 3e14 GeV at the bottom of the window, up to ~5e15 GeV at its geometric mean. **KL problem (D586): solved comfortably.**
+2. **New problem: the moduli-induced LSP problem.**
+   - The heavy dilaton decays to sparticle pairs (m_soft ~ 6e8 GeV < m_Y) and to gravitinos, Br ~ O(1) in total. Every sparticle cascades to the LSP.
+   - The residual Z₂ (matter/R-parity, D542) makes the LSP STABLE. An LSP at ~6e8 GeV cannot annihilate efficiently.
+   - The Y decay products are diluted by the later inflaton decay (T_RH ~ 1e6 GeV), giving Y_LSP ≈ (3/4)(T_RH/m_Y)·f_Y ≈ 1.9e-8·f_Y, where f_Y = ρ_Y/ρ_φ when Y decays.
+   - Overclosure needs Y_LSP·m_LSP ≲ 4e-10 GeV, i.e. **f_Y ≲ 4e-11**.
+   - Worse, during the octic (stiff, w = 3/5) phase ρ_φ ∝ a^{−4.8} redshifts faster than an oscillating Y (a^{−3}). So any Y displacement GROWS relative to φ, by about 180× over the stiff phase (estimate).
+3. **Ways out** (none shown yet):
+   - (a) strong adiabatic suppression of Y oscillations for m_Y/H_inf ≫ 1 (top of the A window, m_Y/H ~ 1e3; Linde / Nakayama–Takahashi–Yanagida-type); this needs computing;
+   - (b) a tiny R-parity violation so the LSP decays, which must stay compatible with the D528 proton parity (dim-4 B-violation still forbidden); possible in principle with L-violating couplings only;
+   - (c) a lighter, annihilating LSP, which would require breaking the no-scale soft-mass structure (D585).
+Verdict: the KL problem is solved, but a moduli-induced LSP problem appears and needs f_Y ≲ 4e-11. It is currently the most severe open problem for two-term SERAPIS. Next: a locked adiabatic-suppression computation for Y.
