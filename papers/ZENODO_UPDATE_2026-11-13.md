@@ -107,3 +107,4 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - v2 (D484): B4 forecast: LiteBIRD σ(Δβ) ≈ 0.05° gives 2–5.5σ for axion m ≳ 50–100 H0 (cite 2108.09287); null for m ≲ 10 H0.
 - v2 (DEEP 1): credit 1110.3333 (D-term fixing of Kähler-moduli combinations by magnetised D7 FI terms, K3-fibred CY) and hep-th/0403001 + 1310.4751 (moduli trapping at enhanced symmetry points by particle production) for the capture mechanism.
 - Twist-M write-up (DEEP 2): credit modular-invariant inflation (1604.02995, 2403.02125, 2503.13682, 2411.18603), fixed-point attraction (2211.00659), modular quintessence at the self-dual point (2506.02731; hilltop, w₀≈−0.8, vs Twist-M minimum, w₀=−1).
+- Twist-M write-up (DEEP 3): credit quintessential inflation (Peebles–Vilenkin; 2311.02730) and kination-GW work (2111.01150, 2307.12913).

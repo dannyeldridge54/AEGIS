@@ -1,0 +1,1 @@
+GW peak boost e^{2(3.28-1.5)} = 35.2 -> Omega_GW peak ~ 2.0e-14 (D424 5.6e-16)

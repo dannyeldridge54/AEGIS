@@ -4720,3 +4720,8 @@ No contradictions. Credits are added to the v2 list. The novelty claim narrows t
 (1604.02995, 2403.02125, 2503.13682, 2411.18603); moduli attraction to fixed points (2211.00659); dark energy near the S-dual point (2506.02731, but there on a hilltop with w₀ ≈ −0.8).
 Twist-M's distinct content: one duality-symmetric modulus giving inflation on the small-x plateau and Λ at the self-dual MINIMUM (w₀ = −1). That is distinguishable from 2506.02731
 by w₀. Credits go to the v2 / any Twist-M write-up. No contradiction with D490–D501.
+
+**DEEP 3 (Danny "Continue", 21:05 CT; topic 3 kination/reheating; literature + scaling estimate; theory/deep/DEEP_topic3.md).** Twist-M's history (D492: inflation → kination →
+tracking → dark energy) is the quintessential-inflation scenario (Peebles–Vilenkin; Dimopoulos; quintessential α-attractors 2311.02730). It differs only in the end point, a
+duality-fixed minimum (w₀ = −1), not a runaway. Credit the class. The kination GW peak rises ~35× for Twist-M's 3.3 e-folds (estimate) to ~2e-14 at high frequency, still undetectable
+(2111.01150, 2307.12913).
