@@ -1,0 +1,6 @@
+Y(i) = [0.130613+0.j 0.075409-0.j]
+(a) Weinberg 2x2 singular values: [0.150819 0.150819]
+(b) 2+1, b=0.3: singular values [0.163351 0.150819 0.012532]; min/max = 7.672e-02
+(b) 2+1, b=1.0: singular values [0.24403  0.150819 0.093211]; min/max = 3.820e-01
+(b) 2+1, b=3.0: singular values [0.534107 0.383288 0.150819]; min/max = 2.824e-01
+(c) Majorana N doublet singular values: [0.150819 0.150819]

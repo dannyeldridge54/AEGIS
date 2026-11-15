@@ -2,3 +2,4 @@
 - Added missed prior art: Schimmrigk, automorphic inflation (1512.09082) and j-inflation (1612.09559) — V ∝ |j|², zero at ρ, slow roll near τ = i (E6 = 0). Cited in the introduction, prior-art paragraph and ρ section (D659).
 - No numbers or predictions changed.
 - Proton parity in the covariant completion refined (D660–D663): the modular centre yields ordinary matter parity at ρ (all anomaly-free assignments) but not at τ = i with singlet fields (Weinberg operator weight ≡ 2 mod 4). Abstract and Sec. VII updated.
+- τ = i: the Γ2 ≅ S3 flavour doublets restore coexistence of centre matter parity and neutrino masses (D664).
