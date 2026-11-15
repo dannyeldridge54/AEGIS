@@ -5616,3 +5616,16 @@ Resulting predictions (post-hoc bands; scored only on future data):
 - Two-term C1 (ε = 1e-4): n_s = 0.9701–0.9717, r = 4.1–4.4e-4, y* = 24.0–24.5 (home-safe; lower N* moves y* inward). That is +0.6σ to +1.1σ vs SPA and −1.0σ to −0.4σ vs SPA+DESI. Consistent with both.
 New problem flagged: T_RH ≤ 2e7 GeV is far below thermal leptogenesis (M₁ ≳ 3e10 GeV, D440). Baryogenesis would need a non-thermal or low-scale mechanism (e.g. inflaton-decay leptogenesis or resonant leptogenesis). Open.
 Status: the self-consistent home-safe SERAPIS is now the Chronos-like two-term model: plateau p = 2, with ε·I₁ giving τ = i its mass AND the tilt. N* ≈ 49–51, n_s ≈ 0.970–0.972, r ≈ 4.1–4.4e-4. Its remaining weak points are ε's size (D576) and baryogenesis.
+
+## D579 — DEEP (DpL tick 1, 08:05 CT; locked PREREG_D579_NONTHERMAL_LEPTO; results/lepto_d579.txt) — non-thermal leptogenesis from inflaton decay rescues baryogenesis for the Chronos-like model only
+Method: Ding et al. (arXiv:2411.18603, eq. 4.29), Y_B = (8/23)(3/4)(T_RH/m)·ε₁·2Br, with the Davidson–Ibarra bound ε₁ ≤ 3M₁m₃/(16πv²) and Br = 1. That paper is the in-family prior art: modular inflation with inflaton → N decays, needing m_φ ≳ 1e11 GeV.
+Clean bound (derived; independent of m): T_RH ≥ 5.1e6 GeV (M₁ = m/3) or ≥ 3.4e6 GeV (M₁ = m/2, the kinematic edge).
+Results (all 12 D578 rows):
+- C1 (two-term, ε = 1e-4; m ≈ 1.9e11 GeV, T_RH = 5.6e6–1.8e7 GeV): PASSES in every row. Y_B,max = 0.96–4.7e-10, versus the 8.75e-11 needed. The c_Γ = 1 rows pass only by ~10% at M₁ = m/3.
+- K2 (Kairos + species, κ = 1e-2): passes only at c_Γ = 10 AND M₁ = m/2 (the phase-space edge). Fails otherwise.
+- K1 (κ = 1e-3): FAILS everywhere (Y_B ≤ 1.9e-11).
+Caveats: Br = 1 and the M₁ choice are optimistic, and the T_RH convention carries a ~20% uncertainty. Resonant leptogenesis could lift the bound (not used).
+Verdict: baryogenesis is possible for the Chronos-like two-term SERAPIS, near the edge if decays are gravitational-strength (c_Γ ~ 1), comfortably at c_Γ ~ 10. Kairos + species mass is disfavoured on a second, independent front (D578 n_s, plus baryogenesis).
+Status: the surviving model is two-term SERAPIS (p = 2, ε ≈ 1e-4).
+- n_s 0.970–0.972, r 4.1–4.4e-4, N* 49–51, T_RH 6e6–2e7 GeV, M₁ ≈ 6e10–9e10 GeV, non-thermal leptogenesis.
+- Open: ε's size (D576), and a microscopic inflaton → N₁N₁ coupling (Br ≈ 1).
