@@ -1,0 +1,5 @@
+i: covariant W=W0 eta^-2: G_tau = (0.0 + 3.2456e-25j) ; constant W0: G_tau = (0.0 + 0.5j)
+rho: covariant W=W0 eta^-2: G_tau = (0.0 - 8.3306e-26j) ; constant W0: G_tau = (0.0 + 0.57735j)
+m3/2 (W0=1, covariant) at i = e^(G/2) = 1.1981402; at rho = 1.1855254
+k=0: V0/m3/2^2 = 5.4e-9, m_Q^2/m3/2^2 = 1.0
+k=1: V0/m3/2^2 = 5.4e-9, m_Q^2/m3/2^2 = 1.0
