@@ -5267,3 +5267,19 @@ Status: the home requirement now includes M_s ≳ 1e17 GeV.
   This may be my reading of their normalisation (their paper relates N_e to the number of species and works in a regime I may not reproduce). Labelled: "our implementation of the quoted form", not a verdict on their paper.
 Action: v2.2 must drop the "not found in the checked literature" sentence and credit Casas–Ibáñez for a τ = i zero with a cusp plateau. The novelty of SERAPIS-KL shrinks to "an α = 1/3 attractor invariant with its single zero at i, regular at ρ".
 Process lesson: two of tonight's novelty checks (D544, D550) were reversed by the next search. Novelty statements need a dedicated search before they go into a paper.
+
+## D556 — DEEP (Dp 3, 22:56 CT; literature, dedicated novelty audit as D555 required) — the SERAPIS inflation model has no novel element left
+Searches: one extended and one standard. Checked: Kallosh–Linde 2412.19324 (potentials vanish at ω; i is a dS saddle; no E₆/|j−1728| forms) and Abe, Higaki, Kaneko, Kobayashi, Otsuka, arXiv:2303.02947, "Moduli inflation from modular flavor symmetries".
+Finding: 2303.02947 uses W = Λ²Y(τ)X with a weight-6 modular form (E₆-type, zero at i) and a Kähler flattening V = Λ⁴Ṽ/(1+αṼ). The vacuum is at τ = i. Inflation runs near Im τ ≈ 1–3 (pole/attractor-like), with n_s 0.962–0.974 and r ~ 1e-5. So "vacuum at τ = i through the E₆ / j − 1728 zero" is prior art (2023), and Casas–Ibáñez (2024) also vanish at i (D555).
+Audit result (honest):
+- cusp plateau with exact SL(2,Z): Kallosh–Linde 2408.05203, Casas–Ibáñez 2407.12081;
+- vacuum at τ = i from the E₆/j − 1728 zero: Abe et al. 2303.02947, Casas–Ibáñez;
+- lifted plateau raising n_s (Chronos): Kallosh–Linde 2512.02969;
+- α = 1/3 attractor numbers (Kairos): standard.
+SERAPIS-KL is a combination of published ingredients, with no new mechanism.
+What remains as the work's own contribution:
+(1) the specific combination tested end to end, with reheating at the model's own N* and the stiff-reheating no-go (D534);
+(2) the D553/D554 home conditions applied to a cusp-plateau model (|b| ≲ 2, M_s ≳ 1e17 GeV);
+(3) the parity scan with anomaly and τ = i selection checks (D528–D533, D542, D551), applying 2207.14014's mechanism;
+(4) the data framing and the public audit trail, including withdrawals.
+v2.2 must credit 2303.02947 and state plainly that the inflation model is assembled from published ingredients.
