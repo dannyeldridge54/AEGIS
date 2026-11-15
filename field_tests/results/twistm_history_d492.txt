@@ -1,0 +1,11 @@
+x_end(inflation)=4.719e-03; status 0 The solver successfully reached the end of the integration interval.
+N=  0.00: x=4.7187e-03 Omega_kin=3.31e-01 Omega_V=6.62e-01 Omega_r=7.50e-03 Omega_m=0.00e+00 (sum 1.000) w_x=-0.333
+N=  2.00: x=1.5006e-01 Omega_kin=9.71e-01 Omega_V=9.57e-19 Omega_r=2.85e-02 Omega_m=0.00e+00 (sum 1.000) w_x=+1.000
+N=  5.00: x=1.1679e+01 Omega_kin=6.84e-02 Omega_V=1.26e-02 Omega_r=9.19e-01 Omega_m=0.00e+00 (sum 1.000) w_x=+0.689
+N= 10.00: x=5.2937e+00 Omega_kin=1.43e-05 Omega_V=9.62e-09 Omega_r=1.00e+00 Omega_m=0.00e+00 (sum 1.000) w_x=+0.999
+N= 20.00: x=3.4973e+00 Omega_kin=5.81e-04 Omega_V=2.94e-04 Omega_r=9.99e-01 Omega_m=4.44e-16 (sum 1.000) w_x=+0.328
+N= 40.00: x=1.6773e+00 Omega_kin=2.15e-04 Omega_V=1.05e-04 Omega_r=1.00e+00 Omega_m=2.12e-07 (sum 1.000) w_x=+0.344
+N= 42.50: x=1.5610e+00 Omega_kin=1.99e-04 Omega_V=9.75e-05 Omega_r=1.00e+00 Omega_m=2.58e-06 (sum 1.000) w_x=+0.343
+N= 55.37: x=1.1197e+00 Omega_kin=1.14e-04 Omega_V=7.63e-05 Omega_r=5.00e-01 Omega_m=5.00e-01 (sum 1.000) w_x=+0.199
+N= 62.50: x=9.9924e-01 Omega_kin=1.77e-05 Omega_V=8.73e-03 Omega_r=7.92e-04 Omega_m=9.90e-01 (sum 1.000) w_x=-0.996
+N= 63.50: x=1.0001e+00 Omega_kin=3.75e-05 Omega_V=1.50e-01 Omega_r=2.50e-04 Omega_m=8.50e-01 (sum 1.000) w_x=-0.999

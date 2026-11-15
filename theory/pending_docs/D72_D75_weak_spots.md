@@ -4657,3 +4657,16 @@ fits the data as well as Route A, with the same number of fitted parameters, and
 Consequences, NOT yet recomputed: capture moves from x_E = 29.6 to x = 1, so every capture-side number of D436–D489 (volume at capture, M_s, KK band, ε_h,
 T_cap) must be redone for Twist-M. Also, the mirror plateau at large x means a region that starts at large volume would also inflate and roll down to x = 1. Status: candidate
 variant, not the baseline.
+
+**D492 (Twist-M cycle M1, Danny "Pp x 20 on this design"; scored, locked PREREG_D492_TWISTM_HISTORY + DEVIATIONS D1 [closure bug, first run kept];
+results/twistm_history_d492.txt) — SELF-RELAXES TO x = 1: with no FI capture at all, the Twist-M field tracks the background and arrives at the self-dual point
+just as dark energy takes over.** History (single field + radiation + matter, from the end of inflation at x = 4.7e-3, Ω_r0 = 0.0075):
+ - kination (N ≈ 0–5, w = +1); overshoot to x ≈ 11.7, then pushed back by the mirror wall;
+ - tracking through the radiation era (Ω_x ≈ 3e-4, w ≈ +0.33) while x slides from 5.3 (N = 10) through 3.5 (N = 20) and 1.68 (N = 40) to 1.12 at equality;
+ - near today x = 0.9992 (z ≈ 1.7, w = −0.996) and x = 1.0001 at N_tot (w = −0.999).
+Readings: (a) |ln x_today| = 1e-4 < 0.05 PASS. (b) Ω_V today = 0.15 at the assumed N_tot = 63.5 (vs 0.69). Λ is set by n through an approximate calibration
+(V_inf ≈ 4e63 GeV⁴, N_tot ± 1). Ω_V reaches 0.69 about 0.84 e-folds later, inside that uncertainty, so this is not a failure but needs an exact calibration. w ≈ −1 today.
+(c) BBN: Ω_x = 3e-4 at T ~ MeV ≤ 0.05 PASS (≈ +0.002 to ΔN_eff, estimate).
+Meaning: the duality makes x = 1 a true minimum of V (V′(1) = 0 by symmetry), and the tracker brings the field there when the background density drops to V(1) = Λ,
+i.e. late. The capture sector (D436–D468) is NOT needed for the field to reach x = 1 in Twist-M. Open: the field's mass at x = 1 is set by Λ (ultralight), so
+fifth forces / α drift (F1) must be re-checked; the FI kink may still be needed for that (next cycle).
