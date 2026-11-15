@@ -10,9 +10,9 @@ Labels: **computed** = from locked scripts (exact Mukhanov–Sasaki, D588); **es
 | n_s | 0.970–0.975 | 0.969–0.972 | 0.959–0.961 (D637, N* 46–49) | computed |
 | r | (4.8–5.7)×10⁻⁴ | (4.6–5.1)×10⁻⁴ | (3.3–3.7)×10⁻⁴ (D637) | computed |
 | α_s = dn_s/dln k (N* 47–50; to ≈ −1.0×10⁻³ at N* 46) | −(8.6–9.9)×10⁻⁴ (lock D633; D605's −(3–5)×10⁻⁴ was an attractor estimate, superseded) | −(8.5–9.5)×10⁻⁴ | ≈ −2/N*² | computed |
-| m_ν1 (Affleck–Dine LH_u) | ≲ 10⁻⁸ eV → Σm_ν ≈ 0.0588 eV IF normal ordering (ordering is input from data, not predicted; lock D605 states NO) | same | — | estimate; depends on open soft-mass sector |
+| m_ν1 (Affleck–Dine LH_u) | ≲ 10⁻⁸ eV → Σm_ν ≈ 0.0588 eV IF normal ordering (ordering is input from data, not predicted; lock D605 states NO) | same | — | estimate; assumes weight-1 matter (D639) |
 | f_NL^local / isocurvature | ≈ 0.01 / ~10⁻⁸ of ζ (D587; lock D605 said ≲10⁻¹⁰) | ≈ 0.01 | — | estimate/computed |
-| Superpartners | OPEN — minimal one-modulus K is not no-scale (D585a); with three α=1/3 moduli, soft masses ~6×10⁸ GeV | same | — | open |
+| Superpartners | none below ~10⁸ GeV IF visible matter has modular weight 1 (or is sequestered): tree soft masses vanish (D639), loop ~6×10⁸ GeV; canonical matter would give ~10¹¹ GeV | same | — | conditional |
 | Reheating | T_R 10³–10⁵ GeV, stiff phase w ≈ 0.55, N* 46–49 | w = 5/7 | — | computed/estimate |
 
 ## Parameter-free consistency relation (Janus, D635)
@@ -26,7 +26,7 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 - α_s > −3×10⁻⁴, or α_s violating the Janus relation (long term: needs σ(α_s) ~ 2×10⁻⁴).
 - Σm_ν > 0.07 eV. (Lock D605 also lists inverted ordering; that tests the NO input, and with m_ν1 ≈ 0 IO already implies Σm_ν ≈ 0.10 eV.)
 - |f_NL^local| > 5.
-- Superpartners found below 10⁸ GeV (conditional on the open soft-mass sector).
+- Superpartners found below 10⁸ GeV (conditional on weight-1 visible matter, D639).
 
 ## Who tests what (rough reach figures; quote published forecasts in any external text)
 | Experiment | Observable | Expected reach | What SERAPIS needs |
@@ -42,6 +42,6 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 
 ## What is NOT predicted (stated limits)
 - The size of ε (the tilt strength) is fitted to the low-T_R window, not derived; its microscopic origin is open (D620–D629).
-- Sequestering of the visible sector is assumed, and extra moduli are needed for no-scale soft masses (D585a, D636).
+- Visible matter of modular weight 1 (or sequestered) is assumed for loop-size soft masses (D585a, D639); one α=1/3 modulus is not no-scale.
 - Preheating and φ → gravitino + inflatino not analysed; if efficient they raise N* by up to 6–9 e-folds and push Chronos outside its band — the bands assume they are inefficient (T_R ≲ 1e5 GeV).
 - Collider signals: none expected at LHC/FCC energies.

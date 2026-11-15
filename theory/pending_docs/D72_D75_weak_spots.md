@@ -6358,3 +6358,10 @@ CENTRE — second independent referee pass on the R8b revision (papers/v3/refere
 - Lock D605 differs from the paper in four places, now disclosed in the paper (locks untouched): P3 α_s attractor estimate −(3–5)e-4, superseded by D632/D633 computed −(8.6–9.9)e-4; P5 no-scale soft masses (retracted, D585a); P6 isocurvature ≲1e-10 vs computed ~1e-8 (D587); r kill 2.4e-4 (D605) vs 2.3e-4 (D615).
 - Citation fix: the normal-ordering preference is cited to NuFit-6.0 (arXiv:2410.05380), not to DESI 2607.27410; the 0.0592 eV limit is cited to 2607.27410 §VI.D.2.
 Paper compiles clean (7 pp). Open: D-label appendix; placeholders (Danny); three-moduli no-scale.
+
+## D639
+CENTRE — tree-level visible soft masses (locked PREREG_D639 + DEVIATIONS D1 performance only; results/soft_masses_d639.txt). Exact sympy at τ = i, S = 0, W = W0 + fS, f² = 2W0² (V0 = 0):
+- A canonical matter (K ⊃ |Q|²): m_Q² = 1·m3/2² → soft masses ~1e11 GeV (the problem found in D585a).
+- B conformal-frame sequestering (K = −3 ln(e^{−K_h/3} − |Q|²/3)): m_Q² = 0 exactly.
+- C one modulus, matter of modular weight 1 (K ⊃ |Q|²/(2 Im τ)): m_Q² = 0 exactly. Reason: F_τ carries exactly m3/2²'s share (K^{ττ̄}|K_τ W0|² = |W0|²), and the curvature term −|F^τ|²∂_τ∂_τ̄ ln K_QQ̄ cancels it.
+Verdict (per lock): the soft-mass sector closes at TREE level without no-scale, provided the visible matter has modular weight 1 (standard for modular-flavour multiplets) or is sequestered; loop-level masses then ~ m3/2/16π² ≈ 6e8 GeV (estimate; pure anomaly mediation's slepton-tachyon issue not addressed). Canonical (weight-0) matter fails. This supersedes the "three moduli needed" suggestion in D585a/D636. Status: CONDITIONAL (assumption on matter weights), not open.

@@ -1,0 +1,3 @@
+A canonical: V0/m3/2^2 = 0, m_Q^2/m3/2^2 = 1 = 1
+B sequestered: V0/m3/2^2 = 0, m_Q^2/m3/2^2 = 0 = 0
+C modular weight n=1: V0/m3/2^2 = 0, m_Q^2/m3/2^2 = 0 = 0
