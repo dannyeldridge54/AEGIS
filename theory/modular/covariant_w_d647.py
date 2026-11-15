@@ -21,7 +21,7 @@ def V(t,S,Q,k):
 # finite-difference evaluation using real coordinates
 def Gfun(x,k):  # x = [tr,ti,Sr,Si,Qr,Qi]
     t=mp.mpc(x[0],x[1]); S=mp.mpc(x[2],x[3]); Q=mp.mpc(x[4],x[5]); y=x[1]
-    W=(1+mp.sqrt(2)*S)*mp.eta(t)**(-2)
+    W=(1+mp.sqrt(3)*S)*mp.eta(t)**(-2)   # D647 deviation D1: f = sqrt3
     K=-mp.log(2*y)+abs(S)**2+abs(Q)**2/(2*y)**k
     return K+mp.log(abs(W)**2)
 def Vfun(x,k,h=mp.mpf('1e-7')):

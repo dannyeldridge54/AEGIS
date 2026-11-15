@@ -1,0 +1,2 @@
+# D647 deviations (written before rerun)
+D1: the lock requires V0 = 0. With G_τ(i) = 0 (part 1 result), Λ = 0 needs |G_S|² = 3, i.e. f² = 3|W0|² (not 2 as in the constant-W0 case); the first run used f = √2 and gave V0 = −m3/2², m_Q² ≈ 0 = m3/2² + V0 — consistent with the general formula but not the locked V0 = 0 point. Fix: f = √3. Part 1 and 3 outputs unchanged (already recorded in results/covariant_w_d647_run1.txt).
