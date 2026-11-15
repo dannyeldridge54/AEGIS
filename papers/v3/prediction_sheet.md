@@ -27,7 +27,7 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 - n_s measured > 3σ outside the predicted band 0.969–0.975 (paper table wording).
 - Strip (lock D679, exact D678): joint (n_s, r) off the band r ≈ (4.4–5.3)×10⁻⁴ at n_s = 0.970 (width ≤ 21% at fixed n_s; edge formulas in the lock) excludes the τ = i family; ρ strip identical within 2.2% (D680, lock D681 for both vacua).
 - Family-wide, any ε, both vacua (locks D675, D677; exact D674, D676): n_s > 0.985 or r > 8.3×10⁻⁴ at ≥3σ excludes home-safe SERAPIS (caps: τ = i 0.9836 / 8.2e-4, ρ 0.9844 / 8.3e-4).
-- α_s > −3×10⁻⁴, or α_s violating the Janus relation (long term: needs σ(α_s) ~ 2×10⁻⁴).
+- α_s > −3×10⁻⁴, or α_s violating the Janus relation (long term: needs σ(α_s) ~ 1×10⁻⁴, D670).
 - Σm_ν > 0.07 eV. (Lock D605 also lists inverted ordering; that tests the NO input, and with m_ν1 ≈ 0 IO already implies Σm_ν ≈ 0.10 eV.)
 - |f_NL^local| > 5.
 - Covariant completion: no wino up to 2.9 TeV and no gluino up to 21 TeV (FCC-hh reach), or a wino above 2.9 TeV overclosing; lock D605 P5 (constant W0): superpartners below 10⁸ GeV.
@@ -45,7 +45,7 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 | 21-cm / SPHEREx | α_s, f_NL | σ(f_NL) ~ 1 | f_NL ≈ 0 |
 
 ## What is NOT predicted (stated limits)
-- The size of ε (the tilt strength) is fitted to the low-T_R window, not derived; its microscopic origin is open (D620–D629).
-- Superpartner window assumes the modular-covariant completion, X-independent gauge kinetic functions (anomaly-mediated gauginos) and initial conditions 6–12 e-folds before horizon exit, higgsino threshold (window ends ×2); dilaton–LSP bound disappears (winos re-thermalise, D652); gravitinos decay before BBN (D651); AD thermal effects negligible (D653); Weinberg operator non-zero at i with k_L = k_Hu = 1 (D654a); covariant completion: centre gives ordinary matter parity at ρ (D661) and at τ = i with Γ2 doublets (D663–D664); dim-5 coefficients ≲ 5e-3 (D657).
+- The size of ε (the tilt strength) is fitted to the low-T_R window, not derived; its microscopic origin is open (D620–D631, D684–D687: not from the supergravity sector; tilt shape identified with the N = 2 threshold at ρ).
+- Superpartner window assumes the modular-covariant completion, X-independent gauge kinetic functions (anomaly-mediated gauginos) and initial conditions 6–12 e-folds before horizon exit, higgsino threshold (window ends ×2); dilaton–LSP bound relaxes to m_Y ≳ 35 H_end (winos re-thermalise, but gravitinos from Y decays do not; D652, D658); gravitinos decay before BBN (D651); AD thermal effects negligible (D653); Weinberg operator non-zero at i with k_L = k_Hu = 1 (D654a); covariant completion: centre gives ordinary matter parity at ρ (D661) and at τ = i with Γ2 doublets (D663–D664); dim-5 coefficients ≲ 5e-3 (D657).
 - Preheating inefficient (q ≲ 2e-4 for m0 ≲ m_φ) and φ → gravitino + inflatino closed (m_inflatino = 4/3 m3/2) — estimates, D641. If either were efficient, N* would rise 6–9 e-folds and Chronos would leave its band.
 - Collider signals: none expected at LHC/FCC energies.

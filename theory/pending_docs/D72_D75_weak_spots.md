@@ -6546,3 +6546,11 @@ CENTRE (synthesis, no computation) — τ = i versus ρ after today's results:
 | ε size | 1.45e-4 (b ≈ 0.02) | 6e-5 (b ≈ 0.009) | D687 |
 | paper's frozen τ = i chain (gravitino, reheating) | worked out | carried over (D614) | — |
 Verdict: on the evidence, SERAPIS-ρ is the better-motivated vacuum (derived tilt shape; matter parity without extra flavour structure), with identical observables. The τ = i model has more detailed reheating/baryogenesis work behind it. Reframing the paper around ρ (title currently "...at the square torus...") is a framing decision for Danny; not done.
+
+## D689a (referee-5 corrections, recorded)
+- D686/D687a: at τ = i, I1 = (1/4π)ln(…), so ε enters the logarithm as ε/4π: b = 4πε ≈ 1.8e-3 (not 0.023). ρ's b ≈ 0.009 stands.
+- D685a: the "no second mass source" claim holds for the minimal single-modulus covariant completion only; E6/η¹² has a SIMPLE zero at i — the correct double-zero example is j − 1728 = E6²/Δ.
+- D673a addendum: the closed-form cap at N* = 47.6 (0.978) is conservative by ~0.003 (y* overestimated by ~0.4); exact interpolation ≈ 0.981.
+- D664a: the Γ2 fix at τ = i makes the heavy-N doublet degenerate at the vacuum, which shuts the splitting-driven off-diagonal decays behind T_R (D601) unless a 2⊕1 or other split multiplet supplies the splitting — OPEN condition of the τ = i model (not of ρ).
+- D663a: assumes trivial-character singlet couplings from level-1 forms; other characters (e.g. η⁴, weight 2, non-zero at i) are not excluded.
+- D687a: "shape derived" → "identified with" the DKL threshold (the numerical match at the cusp is trivially exact up to e^{−2πy}).

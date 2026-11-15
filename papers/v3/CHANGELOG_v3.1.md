@@ -8,7 +8,7 @@
 - Janus signature vs 2030 forecasts quantified (D670): ≲0.5σ; α_s test is long-term.
 - General closed form for β_s (D671), <1% on singular T-models.
 - κ = 1/n for modular log-tilts; (n_s, r, α_s) measures the plateau power n (D672).
-- Janus curve in closed form from (N*, ε); string bound caps n_s ≤ 0.984, r ≤ 8.2e-4 for any ε (exact D674, frozen D675; D673's 0.978 was the N* = 47.6 value only).
+- Janus curve in closed form from (N*, ε); string bound caps n_s ≤ 0.984, r ≤ 8.2e-4 for any ε (exact D674, frozen D675; D673's closed-form 0.978 at N* = 47.6 is conservative by ~0.003 — the exact interpolation is ≈ 0.981).
 - ρ cap computed (D676) — same as τ = i; combined family-wide cap frozen (D677): n_s ≤ 0.985, r ≤ 8.3e-4.
 - Exact allowed strip in the (n_s, r) plane (D678, frozen D679) and new Fig. 5.
 - ρ strip computed exactly (D680), identical within 2.2%; combined strip frozen (D681); Fig. 5 shows both.
@@ -16,5 +16,6 @@
 - Candidate origin of ε (D684): the covariant F-term tilts the plateau with m3/2 ≈ (2–4)e4 GeV; not yet self-consistent (vacuum mass, gauginos); distinct α_s ≈ −3e-3. Not frozen.
 - D685: the F-term branch fails self-consistency (tilt and mass tied; reheating < BBN); ε is located in the non-holomorphic uplift sector.
 - D686: the uplift-sector route to ε (anti-D3 warp factor) — requires a log/threshold correction; hypothesis, labelled.
-- D687: ρ's tilt L is the universal N=2 threshold (shape derived); size needs b ≈ 0.01 — still unexplained.
+- D687: ρ's tilt L is the universal N=2 threshold (shape identified with the DKL threshold); size needs b ≈ 0.01 — still unexplained.
 - D688: τ = i vs ρ scorecard — ρ better motivated (threshold shape, matter parity), identical observables.
+- Referee 5 fixes: τ = i degenerate N doublet flagged as an open reheating condition; b at τ = i corrected to ~2e-3; claims narrowed; table fixed; same-day freezing disclosed.
