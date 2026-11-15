@@ -4188,3 +4188,11 @@ H = 2.2×10⁻²⁴ GeV) needs only y' ≳ 2×10⁻¹⁶ (m_ψ = 10⁹ GeV) to 1
 (D396) means no entropy dilution (D ≈ 1, leptogenesis still needs only 0.87×10⁻¹⁰). Mixing with SM leptons is ~y' v_EW/m_ψ ≪ 10⁻³, so
 lepton-flavour and neutrino-mass effects are negligible. (b) CONNECTIONS: part 1 (D422), part 3 (T_RH), part 9 (gravitino-safe T_RH).
 (c) CENTRE: F2/F3 unchanged. No scored result → WALL 1 (at 30-min pace).
+
+**D426 (cycle 16, "pp"; second pass PART 5, RIGHT; scored, locked PREREG_D426_PART5B; results/part5b_d426.txt) — CONSISTENT, with a new
+explicit requirement: the hidden χ sector must share the SM temperature at capture, which the D422 lepton portal provides if y' ≳ 5×10⁻³
+(x_E = 29.6; 6.5×10⁻³ and 8.4×10⁻³ for earlier capture points).** Then the ψ–lepton mixing is only y' v_EW/m_ψ ≈ 2×10⁻⁶ (m_ψ = 5×10⁵ GeV),
+far below 10⁻³, so no flavour or neutrino-mass trouble. If the hidden sector were instead colder (T_h = ξT, no portal), trapping still works
+for ξ ≥ 0.21 (x_E = 29.6), 0.28 or 0.35 — so a hidden sector reheated separately (e.g. by χ̃ decays) at a fifth of the SM temperature or more
+is also enough. Cross-effect closed: D417's ε = 0 (no photon mixing) is compatible, because the thermal link runs through leptons, not
+photons. This lower bound on y' joins D425's (y' ≳ 10⁻¹⁶–10⁻¹⁴ for decays before BBN): y' ∈ [5×10⁻³, ~1]. Result → walls 0.

@@ -121,3 +121,5 @@ alone.
 **Crown + Route A (D410, D419, CONFIRMED with label):** the crown (CMB-SPA+DESI+Pantheon+) rejects the undeformed Twist n_s 0.9651 (Δχ² 7.95). One tiny holomorphic term (ε = 3.0×10⁻⁷, K unchanged) gives n_s 0.9736; then every sense fits better than ΛCDM. New locked inflation predictions: r = 0.0046, α_s = −7.7×10⁻⁴, B1 = +2.5×10⁻³ (n_s now fitted).
 
 **Cycle 12 (D422, CORRECTION):** on the Higgs branch x's decay products get mass m_ψ = y v ≈ 5×10⁵–10⁹ GeV and must decay to the SM (lepton mixing) or they would overclose. So the hidden-pair ΔN_eff vanishes: total ΔN_eff ≈ 0.02–0.06 (gravitino only), replacing 0.05–0.10. Twist-2 paper v1 table to be corrected in v2.
+
+**Cycle 16 (D426, CONFIRMED estimate):** the χ trap needs the hidden sector warm at capture: the ψ–lepton portal with y' ≳ 5×10⁻³ keeps it in equilibrium (mixing ~2×10⁻⁶), or a separately reheated hidden bath with T_h ≥ 0.21 T suffices.
