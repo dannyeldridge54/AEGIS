@@ -27,8 +27,10 @@ def run(ms):
     p0=ue/c; dp0=math.sqrt(2*(1-Or0))
     # D2: chunked integration, running tallies only
     y=[p0,dp0]; N=0.0; nc=0; firstN=None; rem=0.0; xmin=xmax=math.exp(c*p0); capped=False
+    dN=0.05
     while N<42 and nc<20000:
-        s=solve_ivp(rhs,[N,min(N+0.05,42)],y,method='LSODA',rtol=1e-9,atol=1e-12,max_step=0.01)
+        nc0=nc
+        s=solve_ivp(rhs,[N,min(N+dN,42)],y,method='LSODA',rtol=1e-9,atol=1e-12,max_step=min(0.01,dN))
         for i in range(len(s.t)-1):
             a_,b_=s.y[0,i],s.y[0,i+1]
             xx=math.exp(c*b_); xmin=min(xmin,xx); xmax=max(xmax,xx)
@@ -40,6 +42,7 @@ def run(ms):
                 R=g*g*zMp(1.0)*Ms**2*xdot; m2=(R/2)**(2/3); Vres=min(ms**2*m2/g**2,0.5*(H*abs(dp))**2*MP**2)
                 rem+=Vres/(2*math.pi**2/45*gs*T**3)
         y=list(s.y[:,-1]); N=s.t[-1]
+        if nc-nc0>200: dN=max(dN/2,1e-9)   # D3
     capped=nc>=20000
     pf,dpf=y; rrf=rho_r0*math.exp(-4*N); H2f=(rrf+V(pf))/(3-0.5*dpf*dpf); Ox=(0.5*dpf*dpf*H2f+V(pf))/(3*H2f)
     print(f"m_s={ms:.0e} GeV: M_s={Ms:.2e} GeV; crossings {nc}{' (CAP HIT)' if capped else ''} (first N={firstN}); stop N={N:.3f}; x range [{xmin:.3e}, {xmax:.3e}]; "
