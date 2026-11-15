@@ -6033,3 +6033,20 @@ Verdict by the lock: NOT VIABLE (no ε passes for all N*).
 Reason: at the cusp L ≈ (π/3)y ≈ 1.05y, about TWICE the slope of I₁ ≈ y/2, so for the same ε it tilts twice as hard. The locked grid started at 1e-4, already too large.
 Post-hoc observation (stated AFTER seeing results; not a verdict): by this scaling, ε_ρ ≈ ε_i/2 ≈ 6–8e-5 should reproduce the two-term SERAPIS numbers. Testing that needs a NEW lock declared as post-hoc.
 Physics note: the vacuum mass is light (m/H ≈ 0.017 at ε = 1e-4), and the plateau near ρ is very flat (j has a triple zero, so the plateau term ∝ |δ|¹²). Reheating would again be a sterile, splitting-dominated history (D601 logic applies at ρ too).
+
+## D610 — DEEP (Ddl 08:24 CT; locked PREREG_D610_SERAPIS_RHO_LOWEPS, DECLARED POST-HOC; results/serapis_rho_d610.txt) — SERAPIS-ρ is VIABLE at ε ≈ 4–6e-5 (post-hoc-tuned)
+Results (D588 offsets applied):
+- ε = 4e-5: n_s = 0.9664–0.9713 (−2.4σ to −0.6σ SPA+DESI), r = 3.7–4.4e-4, y* = 22.9–24.3. All home-safe. Passes the 2σ rule (worst row −2.4σ ⇒ |Δ| = 0.0064 > 0.0054: FAILS at N* = 47).
+- ε = 6e-5: n_s = 0.9701–0.9752 (−1.0σ to +0.9σ), r = 4.2–4.9e-4, y* = 23.4–24.9. **ALL PASS.**
+- ε = 8e-5: N* = 53 has y* = 25.5 (OUT). Fails.
+Verdict by the lock: VIABLE at ε = 6e-5 (post-hoc-tuned; scored only on future data; not citable as an a-priori success).
+Why it matters: SERAPIS-ρ uses only string-motivated ingredients.
+- The KL j-plateau and the DKL/species threshold function L = −ln(2y|η|⁴) supply the vacuum mass AND the tilt in one term. The vacuum is at ρ, where L has an isotropic minimum (D608).
+- The threshold is allowed on an N = 2 plane, since y* ≤ 25 < 29 (D608 correction).
+- It reproduces essentially the SAME observables as two-term SERAPIS: n_s ≈ 0.970–0.975, r ≈ 4–5e-4.
+- The price: the vacuum moves from the square torus (i) to the hexagonal torus (ρ). The "τ = i" identity of SERAPIS would be dropped in favour of naturalness.
+Open for SERAPIS-ρ:
+- (i) the residual symmetry at ρ (Z₃ rather than Z₂/Z₄): the proton-parity and selection-rule analysis (D528–D551) must be redone mod 6;
+- (ii) reheating (sterile-inflaton logic applies, D601), gravitino/LSP/dilaton chains as for two-term (D584–D596);
+- (iii) a dedicated novelty audit. KL already put vacua at ρ (2408.05203), and Casas–Ibáñez use L; the combination plateau(j) + ε·L may exist.
+Decision is Danny's: keep SERAPIS at τ = i (consistent, ε·I₁ unexplained) or move to SERAPIS-ρ (string-natural ingredients, vacuum at ρ). Both give the same D605-type forward numbers.

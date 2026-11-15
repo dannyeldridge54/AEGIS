@@ -1,0 +1,13 @@
+check Ly(rho)=0.340372 vs Lc(rho)=0.340372; Iy at y=2: 0.813134 vs Ic: 0.813134
+eps=4e-05: V(rho)=0.00e+00 Hess(xx,yy)=(2.667e-05,2.667e-05) V(i)=3.034e-03
+eps=6e-05: V(rho)=0.00e+00 Hess(xx,yy)=(4.000e-05,4.000e-05) V(i)=3.035e-03
+eps=8e-05: V(rho)=0.00e+00 Hess(xx,yy)=(5.333e-05,5.333e-05) V(i)=3.035e-03
+eps=4e-05 N*=47: y_end=2.77 y*=22.9 HS n_s=0.9664 (-0.7 SPA, -2.4 S+D) r=4.39e-04 m_vac/H=0.011
+eps=4e-05 N*=50: y_end=2.77 y*=23.6 HS n_s=0.9690 (+0.2 SPA, -1.4 S+D) r=3.98e-04 m_vac/H=0.011
+eps=4e-05 N*=53: y_end=2.77 y*=24.3 HS n_s=0.9713 (+1.0 SPA, -0.6 S+D) r=3.65e-04 m_vac/H=0.011
+eps=6e-05 N*=47: y_end=2.77 y*=23.4 HS n_s=0.9701 (+0.6 SPA, -1.0 S+D) r=4.93e-04 m_vac/H=0.013
+eps=6e-05 N*=50: y_end=2.77 y*=24.1 HS n_s=0.9727 (+1.4 SPA, -0.0 S+D) r=4.54e-04 m_vac/H=0.013
+eps=6e-05 N*=53: y_end=2.77 y*=24.9 HS n_s=0.9752 (+2.3 SPA, +0.9 S+D) r=4.19e-04 m_vac/H=0.013
+eps=8e-05 N*=47: y_end=2.77 y*=23.8 HS n_s=0.9737 (+1.8 SPA, +0.3 S+D) r=5.57e-04 m_vac/H=0.015
+eps=8e-05 N*=50: y_end=2.77 y*=24.7 HS n_s=0.9765 (+2.7 SPA, +1.4 S+D) r=5.17e-04 m_vac/H=0.015
+eps=8e-05 N*=53: y_end=2.77 y*=25.5 OUT n_s=0.9791 (+3.6 SPA, +2.3 S+D) r=4.84e-04 m_vac/H=0.015
