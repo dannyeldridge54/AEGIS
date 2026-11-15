@@ -6459,3 +6459,10 @@ CENTRE (locked PREREG_D664; results/i_flavour_d664.txt) — τ = i covariant com
 CENTRE (locked PREREG_D665; results/janus_ext_d665.txt) — Janus extended.
 (A) Exact MS at the paper's N* brackets: τ = i (ε = 1.3/1.6e-4, N* = 46.08/49.21) and ρ (ε = 6e-5, N* = 46.09/49.49): n_s = 0.9691–0.9754, r = 4.67–5.76e-4, α_s = −(8.69–10.21)e-4. Full slow-roll map (method B) predicts α_s within +1.1–1.4% for ALL points, ρ included, and recovers ε (1.31/1.61e-4 and 6.04/6.03e-5). The τ = i offset-corrected closed form (D640) applied to the ρ points gives −1.0%: ONE relation serves both vacua to ~1%. PASS.
 (B) Running of the running: exact β_s = −(2.95–4.60)e-5; method B within −17 … +15%. Leading closed form β_s = 128u⁶(1+x)(2x² − 5x − 16) (u = 1/I*, x = εI*³/4); x = 0 gives −2048u⁶ = −4/N*³, the standard attractor value. PASS (25% tolerance, fixed in advance). Forward prediction frozen as D667 (P8, P9).
+
+## D668
+DEEP (DpL tick 1 on Janus; literature, no computation) — novelty of the Janus closed form and consistency relation.
+- Kallosh & Linde, singular α-attractors (2512.02969): report n_s and r only (N = 55); NO running, no n_s–r–α_s relation, no tilt-fraction parameter. Their power-law singular T-model V₀tanh^{2γ}[1 + δcosh^{2β}] has the large-field form V ≈ V₀(δ/2^{2β})e^{β√(2/3α)φ}; with α = 1/3, β = 1 this is exactly our εI1 ≈ (ε/2)e^{√2φ} ramp. So Chronos is the "power-law singular" ramp on a plateau whose own approach is e^{−2√2φ} (α_eff = 1/12) — prior art for the ingredient, already cited.
+- Generalised exponential plateau (2507.17721): α_s formula only, no values, no uplift, no relation.
+- One extended search (consistency relations with uplift/enhanced running, 2025–26) found nothing equivalent.
+Verdict: the closed forms (D635/D640), the consistency relation and β_s (D666) appear NEW (labelled: literature check of 3 sources + 1 extended search, not exhaustive). Next: derive the Janus relation for a general plateau 1 − e^{−pφ} + δe^{qφ} (covers KL's singular T-models) — D669.
