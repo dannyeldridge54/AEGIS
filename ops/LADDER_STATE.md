@@ -119,3 +119,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 78 (20:53, tick): waiting on D500 (Twist-M case-(i) run); no part run to save credits. WALL 2.
 - 21:02: PC job package written to Desktop\AEGIS_PCJOBS (J1 = D500 Twist-M case (i); J2 = Twist-M grid 18 cases; J3 = Twist-2 FI capture map 49 cases); locks PREREG_D500 (+D1–D4), PREREG_PCJOBS_J2_J3. Waiting for Danny to start RUN_AEGIS_PCJOBS.bat.
 - cycle 79 (21:01, tick): D500 moved to PC jobs (not finished); no part run. WALL 3 → fast loop STOPPED (not rescheduled). Deep loop (30 min) continues; PC jobs J1–J3 pending Danny's start.
+- 21:56 Janus series (Danny 'Develop pp x 20'): D522 κ insensitive (Kairos fixed ~0.963–0.967); D523 Br(→gravitinos) ≲ 0.7; D524 axion spectator harmless.

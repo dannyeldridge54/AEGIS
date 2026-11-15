@@ -1,0 +1,14 @@
+== D522 kappa scan (n_s, r)
+kappa=0.500: N*=52.0: n_s=0.9629 r=0.00134 | N*=55.58: n_s=0.9652 r=0.00118
+kappa=1.000: N*=52.0: n_s=0.9629 r=0.00134 | N*=55.58: n_s=0.9652 r=0.00118
+kappa=2.000: N*=52.0: n_s=0.9629 r=0.00134 | N*=55.58: n_s=0.9652 r=0.00118
+kappa=3.142: N*=52.0: n_s=0.9630 r=0.00134 | N*=55.58: n_s=0.9653 r=0.00117
+kappa=6.283: N*=52.0: n_s=0.9651 r=0.00119 | N*=55.58: n_s=0.9672 r=0.00105
+kappa=10.000: N*=52.0: fail | N*=55.58: fail
+kappa=20.000: N*=52.0: fail | N*=55.58: fail
+kappa reaching 0.9674 at instant reheating: None
+== D523 gravitinos
+Br=0.01: Y=1.0e-05, Omega h2=1.3e-05 -> PASS
+Br=1: Y=1.0e-03, Omega h2=1.3e-03 -> FAIL
+== D524 axion spectator
+H=8.59e+12 GeV, dx/efold=1.00e-04, total ~7.42e-04 (period 1) -> PASS

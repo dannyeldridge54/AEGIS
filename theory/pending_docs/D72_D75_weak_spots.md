@@ -4916,3 +4916,13 @@ decisive, unmeasured moment, with the shape alone setting the time) and **SERAPI
 **Naming (Danny 21:53 CT):** the overall framework is **Janus Twist theory** (Janus, the two-faced god of beginnings and passages: one shape facing both the beginning, inflation, and the end
 state, Λ). Its two paths, left and right, are **Kairos** (predictive, untilted) and **Chronos** (one fitted tilt). **SERAPIS** remains the name of the fully modular model within it. Paper draft renamed
 papers/twist_v7/JANUS_TWIST_PAPER.md (PDF Eldridge_JanusTwist_draft_2026-11-14.pdf; earlier PDF kept in _old/).
+
+**D522 (Janus/Kairos κ scan; scored, PREREG_D522_D524_JANUS; results/janus_d522_d524.txt) — κ barely matters, and cannot carry Kairos to DESI.** For κ = 0.5–π, n_s is fixed to ±0.0001 (0.9629 at
+N* = 52; 0.9652 at instant reheating). κ = 2π raises it by ~0.002 (0.9651 / 0.9672, r ≈ 0.0011–0.0012), still just short of the SPA+DESI 2σ edge (0.9674). For κ = 10 and 20 my end-of-inflation search window
+failed (no number, not a physics statement). So Kairos stays Kairos: its n_s is essentially set by the shape and the reheating, not by κ. Result.
+
+**D523 (gravitinos from the inflaton decay; scored) — a mild condition.** With T_RH = 5.5e10 GeV and m₃/₂ = 4.7 eV (worst case), Y₃/₂ = 1e-3 × Br gives Ω₃/₂h² = 1.3e-3 × Br. Br = 1 slightly exceeds the
+~1e-3 hot-relic bound (approximate); Br = 0.01 is safe (1.3e-5). Condition: the torus shape must not decay mainly into gravitinos (Br ≲ 0.7), or m₃/₂ must sit at the low end of 1.7–4.7 eV. Result.
+
+**D524 (axion direction during inflation; scored) — PASS, a harmless spectator.** Re τ is massless on the plateau (potential variation ∝ e^{−2π Im τ} = e^{−790}). Its random walk is 1.0e-4 per e-fold
+→ ~7e-4 over 55 e-folds, ≪ the period 1. The trajectory stays on Re τ = 0 to good accuracy and the axion relaxes with the inflaton at the end (single decay channel, so no separate isocurvature component). Result.
