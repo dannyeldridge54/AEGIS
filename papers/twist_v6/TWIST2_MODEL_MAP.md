@@ -199,3 +199,5 @@ alone.
 **Variant Twist-1T (D513, single torus, no fitted tilt):** n_s 0.9658, r 0.00116, α_s −6.7e-4, n 232.8; fits CMB-SPA (−0.9σ), not SPA+DESI (−2.6σ). Most predictive version; LiteBIRD should see no r.
 
 **SERAPIS — the fully modular Twist (named by Danny 21:34 CT; D515, roadmap A):** exact SL(2,Z); inflation on the cusp gives n_s 0.9665, r 0.0032 (Starobinsky-like); square torus = Minkowski vacuum, triangle point = wall; Λ term still to add.
+
+**SERAPIS-1 (D517, single torus, fully modular):** n_s 0.9667, r 0.0011 (no tilt); vacuum at square torus with V = Λ and mass 4e13 GeV (stiff: no fifth force, no moduli problem); Λ coefficient e^{−121.6} (instanton-sized); triangle point = wall. Cleanest version so far; decided by the CMB-vs-DESI n_s question.

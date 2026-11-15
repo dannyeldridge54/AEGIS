@@ -1,0 +1,6 @@
+kappa=1.000: y_end=2.100, y*=125.83, n_s=0.9667, r=0.00108 (-0.6/-2.3 sigma) -> VIABLE
+kappa=6.283 [sensitivity only]: y_end=1.579, y*=24.13, n_s=0.9685, r=0.00097 (+0.0/-1.6 sigma) -> VIABLE
+vacuum: V(i)/V_pl=2.11e-110 (target 2.11e-110); c=1.62e-53, S=-ln c=121.56 (=2pi x 19.35)
+   y: curvature >0; m = 4.0e+13 GeV -> STIFF
+   x: curvature >0; m = 4.0e+13 GeV -> STIFF
+   ratio m/H_inf: H_inf ~ 8.16e+12 GeV

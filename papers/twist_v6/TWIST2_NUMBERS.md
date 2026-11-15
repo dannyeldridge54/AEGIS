@@ -67,3 +67,4 @@
 | Symmetry | full SL(2,Z) on the torus shape τ (T = −iτ); V = |H(j)|²/((2Im τ)³|η|¹²) | D515 |
 | Inflation (cusp plateau) | n_s 0.9665, r 0.0032 (Starobinsky-like) | D515 |
 | Vacua | square torus τ = i: V = 0 (Λ term pending); triangle point ρ: wall | D515 |
+| SERAPIS-1 (D517) | k = 1, F = η⁻²H(j); n_s 0.9667, r 0.00108; vacuum mass 4.0e13 GeV; Λ coefficient c = e^{−121.6} | D517 |

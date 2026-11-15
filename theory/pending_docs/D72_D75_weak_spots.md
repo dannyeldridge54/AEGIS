@@ -4866,3 +4866,14 @@ untouched; but the vacuum is too FLAT (a light field): a design flaw to fix.** A
 and 5e-10 GeV (a = 1). The 1.7e5 GeV of run 1 was double-precision noise. Reason (analytic): near τ = i, j − 1728 ∝ (τ−i)², and ln(j/1728) ∝ (τ−i)², so |H|² of the main term vanishes like |τ−i|^{4a+6}. That is far
 flatter than quadratic, so the vacuum curvature comes only from the tiny c-term. A light modulus brings back the fifth-force problem (D493). Fix for the next step: replace [ln(j/1728)]^{3/2} by a factor that
 does not vanish at τ = i but still gives the cusp plateau (e.g. [ln(j/1728) + κ]^{3/2} or ln j), so the vacuum gets an inflation-scale curvature. New lock needed.
+
+**D517 (SERAPIS-1, Danny 21:37–21:39 CT; scored, locked PREREG_D517_SERAPIS1 + DEVIATIONS D1 [50-digit floor; run1 kept]; results/serapis1_d517.txt at 200 digits) — VIABLE and STIFF:
+the single-torus, fully modular Twist works end to end at this level.** K = −ln(2 Im τ), F = η^{−2}H(j), H = (j−1728)^{1/2} j^{−7/12}[ln(j/1728) + 1]^{1/2} + c·j^{−7/12}.
+(1) Inflation on the cusp: n_s = 0.9667, r = 0.00108 (−0.6σ CMB-SPA, −2.3σ SPA+DESI), from Im τ ≈ 126 to the end at Im τ ≈ 2.1, with no fitted tilt. The κ = 2π sensitivity check gives n_s = 0.9685,
+r = 0.00097: the constant κ moves n_s by ~0.002, a mild model dependence.
+(2) Vacuum: τ = i (square torus) is a minimum in both directions, with V(i) exactly on the Λ target (2.11e-110 of the plateau).
+(3) Vacuum mass m = 4.0e13 GeV, about 5 H_inf: STIFF, so no fifth force, no moduli problem and no need for the FI kink or the lens. The (j−1728)^{1/2} factor fixed D516's flatness.
+(4) Λ's coefficient c = 1.6e-53, S = −ln c = 121.6 = 2π × 19.35, instanton-sized.
+The triangle point ρ is a wall by construction (j^{−7/12}). Status: SERAPIS-1 is now the cleanest version. It is exactly modular, has one torus, inflation fits CMB-SPA with no tilt, Λ sits at the square torus
+and the vacuum is heavy. Remaining: the CMB-vs-DESI n_s question decides it (−2.3σ with DESI); κ and the 'two secondary tori' are assumptions; Λ's c is one number fixed by data (an e^{−121.6} instanton
+would explain it, untested).
