@@ -5048,3 +5048,20 @@ Verdict: SERAPIS-1's inflationary plateau uses an H outside the string-derived C
 Required paper change: say this explicitly (do not imply a string derivation of the plateau).
 Open task: either (a) find a string source for fractional j-powers (multiplier systems or several moduli, e.g. η-quotients of congruence subgroups, though D530 excludes those homes for exact SL(2,Z)), or (b) take the plateau from the Kähler side (corrections in ln(2 Im τ), as in some modular-inflation papers), or (c) accept it as an effective model.
 Status: a new honest gap, "string origin of the plateau", rated HIGH. Predictions unchanged.
+
+## D536 — LEFT (pp 22:25 CT; literature, nothing computed) — what string-class modular inflation looks like, and how SERAPIS differs
+Follow-up to D535: how do papers that stay inside the CFILQ class (integer m, n; polynomial P(j)) get inflation?
+- Ding, Jiang, Zhao, arXiv:2405.06497: W = Ω(S)H(τ)/η⁶, K = −3 ln(2 Im τ), H in the class with P(j) quadratic in (1 − j/1728).
+  - Inflation runs along the unit arc from τ = i toward ω; ω is the Minkowski minimum.
+  - n_s ≈ 0.965 needs the P(j) coefficients; P = 1 gives 0.942–0.955.
+  - r ≲ 1e-6, running ~ −1e-4.
+- King & Wang, arXiv:2405.08924: H = 1 + α(j/1728 − 1)². Hilltop inflation near τ = i, ending toward the dS vacuum at ω; p = 4 hilltop is in tension with the data, p = 6 is better. Also tiny r.
+Comparison (honest):
+- String-class modular inflation is a hilltop near i or the arc, with the vacuum at ω and r ≲ 1e-6.
+- SERAPIS-1 is the reverse: a cusp plateau, the vacuum at i, ω a wall, and r ≈ 1e-3 (Kairos 0.0011–0.0013; Chronos ≈ 0.002). Its plateau factors are outside the class (D535).
+- That gives a clean observational split. LiteBIRD/CMB-S4 (σ(r) ~ 1e-3) can separate r ~ 1e-3 from r ≲ 1e-6.
+  - A detection of r ≈ 0.001–0.002 would favour the SERAPIS-type plateau over the in-class string models.
+  - A firm upper limit r < 5e-4 would exclude SERAPIS (both paths).
+- This is a sharper statement than "r is small" and is worth putting in the paper's predictions.
+Credits already listed for both papers (ZENODO_UPDATE); this note adds the comparison.
+Status: SERAPIS is positioned as the large-r, cusp-plateau alternative to in-class modular hilltops. A decisive near-term test is r ≥ 5e-4 vs < 5e-4.
