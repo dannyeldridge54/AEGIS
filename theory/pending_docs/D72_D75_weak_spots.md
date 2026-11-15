@@ -6299,3 +6299,17 @@ Arc summary D574–D631:
 - The full consistency chain passes (with high-scale SUSY, a heavy dilaton and AD baryogenesis).
 - Forward predictions locked (D605/D615).
 - Every attempted microscopic origin of ε failed or is conditional. That last item is the honest bottom line.
+
+## D632 — DEEP (Ddl 09:09 CT; locked PREREG_D632_RUNNING; results/running_d632.txt) — a DISTINGUISHING SIGNATURE: two-term SERAPIS has 2–3× more negative running than an attractor with the same n_s
+Exact MS (D588 code): α_s from n_s at k*e^{±0.05, ±0.1}.
+- HS-Kairos (validation): α_s = −8.5e-4 / −7.5e-4 (N* = 47 / 50). The attractor relation −(1 − n_s)²/2 gives −8.2e-4 / −7.3e-4, ratio 1.03. VALIDATES the code.
+- Two-term ε = 1.0e-4: α_s = −9.3e-4 / −8.3e-4 versus attractor −5.1e-4 / −4.3e-4, ratio 1.8–1.9.
+- Two-term ε = 1.3e-4: α_s = −9.6e-4 / −8.6e-4, ratio 2.2–2.4.
+- Two-term ε = 1.6e-4: α_s = −9.9e-4 / −8.9e-4, ratio 2.8–3.1.
+Physics: the exponential tilt (D576) raises n_s, but its curvature (V_φφ ∝ εy) also adds running, so α_s stays near the UNTILTED (Kairos) value ≈ −9e-4 even though n_s ≈ 0.973. A plain attractor at n_s = 0.973 would have α_s ≈ −3.6e-4.
+Verdict by the lock: a distinguishing signature for the allowed ε (1.3–1.6e-4: ratio 2.2–3.1 > 2).
+Detectability: Δα_s ≈ 5e-4 between two-term SERAPIS and an attractor with the same n_s.
+- CMB-S4 (σ ~ 2e-3): no.
+- Optimistic 21 cm / spectral-distortion combinations (σ ~ 5e-4): ~1σ.
+- A ~3σ separation needs σ(α_s) ≈ 1.5e-4. A real but long-term discriminator.
+Locked as a forward prediction in PREREG_D633.
