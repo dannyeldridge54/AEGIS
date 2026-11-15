@@ -4267,3 +4267,13 @@ range. So the two separate more as n_s grows (ratio 1.6× at 0.9706, 3.0× at 0.
 (1 + ε/x*)² ≈ 1.0046 and at the end of inflation by 1.00007, so the matching term ¼ ln(V*²/V_end) moves N* by ≈ +0.002 e-fold (Δn_s ~ 10⁻⁶);
 the kination gain (+1.5) and heat share are untouched (D419, D424). N* = 57.2 stands for Twist-2 with Route A. Nothing new scored → WALL 1
 (60-min pace).
+
+**D436 (DEEP STUDY, Danny "Deep", 19:00 CT; theory/deep/DEEP_STUDY_FI_ORIGIN.md + fi_origin_check.py) — a candidate origin for the
+capture coupling: a moduli-dependent Fayet–Iliopoulos term on a magnetised D7-brane.** ξ = (1/𝒱)Σ M_i t^i (flux integers; arXiv:0711.3389)
+depends on Re T, so D388's holomorphy no-go does not apply. Sympy (two moduli, GS shifts δ₁, δ₂): ξ = δ₁/(2x₁) + δ₂/x₂ vanishes at
+x_E = −(δ₁/2δ₂)x₂ (quantised by flux charges), and charged states have m_φ² ≈ −g²Q (dξ/dx)(x − x_E) — linear in (x − x_E), the D-term analogue
+of λ(T − T_E). Near capture it gives the light states, a steep D-term wall past x_E, and (with soft masses) a gentle slope that pins x at x_E;
+energy released ~10⁻⁷–10⁻⁵ of radiation (computed, δ₂ = 0.01, x₂ = 30). OBSTACLE: at small x the same FI term is huge (ξ ≈ −76 M_P² at the CMB
+point, −1.1 M_P² at the end of inflation; unscreened V_D ≈ 10³ M_P⁴ vs V_inf ~ 10⁻¹⁰), and screening needs trans-Planckian condensates — the
+D7 sector must be absent or differently described at x ≪ 1 (the region already flagged as uncontrolled, D408/D423). Status of the (T − T_E)
+origin: OPEN → candidate found, conditional. Next (locked first): a two-modulus toy with the D7 sector present only for x ≳ 1.
