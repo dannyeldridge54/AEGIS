@@ -6424,3 +6424,15 @@ CENTRE (W14; analytic) — non-vanishing couplings at τ = i. With trivial multi
 
 ## D655
 CENTRE (W16; locked PREREG_D655; results/rho_covariant_d655.txt) — SERAPIS-ρ covariant completion: X-positivity bound m3/2 < 1.3e7 (y = 23), 7.6e6 (24), 2.6e6 (26), 8.6e5 (28), 2.9e5 GeV (30) — the same as at τ = i (D649). G_τ(ρ) = 0 (D647). The τ = i spectrum window (D650) carries over to ρ.
+
+## D654a
+CORRECTION to D654 (referee 4, verified): with W ∝ η^{-2} each coupling is Y = η^{-2}h, h of weight Σk_i, and η(i) ≠ 0, so Y(i) ≠ 0 iff Σk_i ≡ 0 mod 4 (at ρ: mod 6). D654's rule (k_Y = Σk − 1 ≡ 0 mod 4) assumed a trivial multiplier. Consequences: a SINGLET Weinberg operator with k_L = k_Hu = 1 (Σk = 4, h = E4, |E4(i)| = 1.456) is non-zero at i — no flavour multiplet needed; cubic Yukawas need Σk ≡ 0 mod 4 (e.g. 1, 1, 2). D654's example (1, 1, 3) is wrong.
+
+## D656
+CENTRE (locked PREREG_D656; results/selection_eta_d656.txt) — the D551/D612 proton-parity scans redone with the η^{-2} rule (Σk ≡ 0 mod 4 at i, mod 6 at ρ), everything else verbatim: Z4^R 0/8, Z8^R 0/16 at BOTH i and ρ. No anomaly-passing assignment keeps all required couplings non-zero.
+
+## D657
+CENTRE (locked PREREG_D657; results/centre_nonr_d657.txt) — the reason, and the consistent rescan: under the centre −I, η^{-2} is invariant, so W is centre-NEUTRAL and the centre symmetry is NON-R (D528 assumed an R-symmetry, t = 1). Rescan with t = 0, gaugino charge 0: 0 anomaly-passing assignments for N = 4 and 8 (before any vacuum condition) — consistent with the known result that anomaly-free non-R discrete symmetries cannot forbid the dangerous operators while allowing the MSSM couplings (Lee, Raby, Ratz et al.; from memory, to cite only after checking). VERDICT: in the covariant completion the modular-centre origin of matter parity is LOST. Proton stability then needs a separate symmetry: standard (non-R) matter parity forbids dimension-4 operators; Planck-suppressed dimension-5 QQQL/M_P, dressed by a wino with scalars at 2.5e5–1.1e6 GeV, requires coefficients c ≲ 5e-3 – 2e-2 (estimate; natural if Yukawa-suppressed). The constant-W0 chain keeps the D528–D551 mechanism.
+
+## D658
+CENTRE (arithmetic; referee 4 items 3–6) — (a) e-folds between y = 26 and horizon exit: ≈ 6 (y* = 24.5) to ≈ 12 (y* = 23); the positivity bound at y* is (0.6–1.3)e7 GeV. (b) Higgsino threshold: with μ ~ m3/2 the threshold contribution to M2 is comparable to anomaly mediation (pure-gravity-mediation lore) → window ends uncertain by ~×2. (c) Dilaton → 2ψ3/2 (G_Y ~ m3/2/m_Y): those gravitinos decay after wino freeze-out, so Y_3/2·M2 < 4.4e-10 GeV is needed: f_Y(1.5 e-folds) ≤ 1.2e-5 (T_R = 1e5, M2 = 2.9 TeV, worst case) → m_Y ≳ 35 H_end ≈ 1e14 GeV (vacuum ≈ 2e14) by the D592 table — inside the racetrack window; D652's "bound disappears" corrected to "relaxes from 140 to ~35 H_end". (d) The X-metric construction puts the plateau in by hand (as in Kallosh–Linde); beyond y ≈ 26 the potential simply steepens.

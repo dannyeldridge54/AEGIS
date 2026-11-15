@@ -1,0 +1,5 @@
+Z_4^R: 0/8 anomaly-passing assignments admit a lift with all required couplings nonzero at tau=i [eta^-2 rule: Sigma k = 0 mod 4]
+Z_8^R: 0/16 anomaly-passing assignments admit a lift with all required couplings nonzero at tau=i [eta^-2 rule: Sigma k = 0 mod 4]
+Z_4^R: 0/8 anomaly-passing assignments admit a lift with all required couplings nonzero at rho [eta^-2 rule: Sigma k = 0 mod 6]
+Z_8^R: 0/16 anomaly-passing assignments admit a lift with all required couplings nonzero at rho [eta^-2 rule: Sigma k = 0 mod 6]
+Weinberg operator k_L=k_Hu=1: Sigma k=4, h=E4; |E4(i)| = 1.45576 ; |eta(i)| = 0.768225
