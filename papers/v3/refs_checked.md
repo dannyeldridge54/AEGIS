@@ -58,3 +58,4 @@ Journal-only, not opened (standard references from knowledge; Danny to confirm i
 1512.09082 Schimmrigk, automorphic inflation framework (pdf read) — added v3.1
 2212.04115 Bahr-Kalus, Parkinson, Easther, Constraining Cosmic Inflation with Observations: Prospects for 2030 (abs page checked) — added D670
 1707.07059 Garcia del Moral, Parameswaran, Quiroz, Zavala, Anti-D3 branes and moduli in non-linear supergravity (abs + text read; authors per D552) — added D686
+DKL1991 Dixon, Kaplunovsky, Louis, NPB 355, 649 (1991) — journal-only, from knowledge (Danny to confirm) — added D687
