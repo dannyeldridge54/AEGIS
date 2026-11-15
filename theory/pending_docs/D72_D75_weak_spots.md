@@ -5892,3 +5892,21 @@ Caveats:
 - At weight ≥ 6, Γ₂ has more than one doublet; κ depends on which combination is used. Only the product chain was tested.
 - Three generations or several pairs could add a factor ~2–3. Combined with k = 8 (×1.75 short), leptogenesis becomes MARGINALLY possible. That combination is not computed.
 Verdict: route (b) narrows the gap from ×7 to ×1.75 but does not close it. Baryogenesis stays the weakest link: possible only in a fairly specific flavour set-up (high-weight N doublet plus several pairs), or via Affleck–Dine.
+
+## D599 — DEEP (Ddl 08:09 CT; literature + scaling arithmetic, not locked) — Affleck–Dine leptogenesis along LH_u can supply the asymmetry at SERAPIS's low T_R, at the price of an essentially massless lightest neutrino
+Literature: Fujii, Hamaguchi, Yanagida, hep-ph/0109154 (the U(1)_{B−L} D-term-stopping variant; read in part, the final formula is beyond the excerpt):
+- n_B/s ∝ T_R, independent of m₃/₂, and "almost determined by" the lightest neutrino mass. Anchor: m_ν1 ~ 1e-4 eV for T_R ~ 1e10 GeV.
+- In the low-T_R (gauge-mediation) case, T_R ≲ 1e5 needs m_ν1 ≲ 1e-10 eV.
+Scaling (n_B ∝ T_R/m_ν1, from the anchor):
+- T_R = 1e7: m_ν1 ~ 1e-7 eV. T_R = 1e6: 1e-8 eV. T_R = 1e5: 1e-9 eV. T_R = 1e3: 1e-11 eV.
+- SERAPIS's T_R is now set by the symmetry-suppressed inflaton decay (D589a/D597, roughly 1e2–1e7 GeV), so the LIGHTEST NEUTRINO MUST BE ~MASSLESS (≲ 1e-7 eV).
+Why it fits:
+- High-scale SUSY (m_soft ~ 1e9, D585) still has flat directions.
+- The low T_R that hurts thermal and inflaton-decay leptogenesis is what this mechanism wants.
+- The lepton asymmetry is converted by sphalerons, which needs T_R ≳ 150 GeV. That is satisfied in most of the range.
+Testable consequence: the lightest neutrino mass ≈ 0, so Σm_ν takes its minimum (≈ 0.059 eV normal ordering or ≈ 0.10 eV inverted). 0νββ is then fixed by the oscillation parameters alone. DESI/Euclid-era Σm_ν measurements test this directly.
+Caveats:
+- The FHY set-up uses a U(1)_{B−L} D-term to stop the flat direction. Our model has not specified the B − L sector; that needs adding, or a different stopping mechanism (higher-dimensional W term), which changes the coefficient.
+- Thermal effects and our stiff (w ≈ 0.55) post-inflation phase (FHY assume matter domination) can change the scaling.
+- Not locked; an order-of-magnitude scaling only.
+Verdict: the most promising baryogenesis route for two-term SERAPIS is Affleck–Dine leptogenesis, which predicts m_ν1 ≲ 1e-7 eV (estimate). It replaces the ×1.75–7 shortfalls of the inflaton-decay routes (D589a–D598). Needs: a locked AD computation adapted to the stiff phase and SERAPIS's T_R.
