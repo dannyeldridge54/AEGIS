@@ -6612,3 +6612,18 @@ Source: Maiden, Shiu, Stefański, "D-brane spectrum and K-theory constraints of 
 Consequences for SERAPIS-E: the half-periods 0, ½, ½U, ½+½U of the inflaton T² are fixed points of the Z2 reflections, so stuck D3s can sit at the three non-origin ones. With no twisted charge, the twisted-sector annulus between them and the O-planes vanishes at the charge level, so the U-dependence is the untwisted E2 piece used in D689 (the counting N → per-stuck-brane normalisation changes C by O(1), absorbed into Im S·Im ρ ≈ 190–245 N → O(1) shift, still natural). The D694 instability is removed: no modulus, nothing to roll.
 Remaining to check (stated): (a) that a stuck-brane configuration at the three half-periods (and not the origin) satisfies the untwisted D3 tadpole plus the K-theory parity conditions for one of the two torsion models; (b) the exact coefficient of the untwisted annulus for stuck branes (vs BHK's 128N/−8N for bulk D3s); (c) twisted NS-NS exchange (charge-neutral ≠ zero tension coupling) — may add a small U-dependent term.
 VERDICT: route 1 is supported by the literature; SERAPIS-E's microscopic claim now rests on a definite, checkable configuration (stuck D3s at the three half-periods) instead of an unstable one.
+
+## D696 (DEEP) — Tadpole budget for SERAPIS-E's stuck D3s: works, and the tilt measures brane asymmetry
+Source: Maiden–Shiu–Stefański hep-th/0602038: 64 O3-planes of charge −½ each; D3 tadpole Σ N_α n¹n²n³ = 16κ_ΩR (eq. 4.10; κ = 1 for the standard O3 sign); stuck D3 = (3;0,0,0), BPS, no position moduli; K-theory probe constraints (eqs. 4.14–4.17, e.g. Σ N m¹m²m³ ∈ 4Z) involve only the magnetic numbers m, so are trivially satisfied by D3s (m = 0). Not stated there: whether one stuck brane counts as one D3 unit — ASSUMED here (to verify).
+Derived (D689 conventions, arithmetic in code): three equal stacks N at the half-periods and N0 at the origin give Σℰ = −240(N − N0)N-normalised·E, so the tilt coefficient is C = (15/64π⁶)·N_eff/(Im S Im ρ), N_eff = N − N0. Placing EQUAL numbers at all four fixed points gives Σ_{4 pts} E2(A,U) = E/4 and Σℰ = 256·E/4 − 64E = 0: NO tilt. So the SERAPIS-E tilt is a direct measure of how unevenly the D3 charge sits among the four O3 fixed points of the inflaton torus.
+Tadpole 3N + N0 + N_flux = 16:
+| N | N0 | flux | N_eff | Im S·Im ρ for n_s 0.970–0.975 |
+|---|---|---|---|---|
+| 5 | 1 | 0 | 4 | 750–975 |
+| 5 | 0 | 1 | 5 | 938–1219 |
+| 4 | 4 | 0 | 0 | no tilt |
+| 4 | 0 | 4 | 4 | 750–975 |
+| 3 | 0 | 7 | 3 | 563–731 |
+(This replaces the generic "≈ 190–245 N", which absorbed N; with the tadpole fixed, Im S·Im ρ ≈ 560–1220, natural: weak coupling, moderate volume.)
+Mobile (non-stuck) D3s are not allowed to carry the remainder: by D694 they roll to the origin and count in N0. The flux-free choice is unique up to images: (N, N0) = (5, 1).
+VERDICT: a concrete, tadpole-consistent configuration exists — 5 stuck D3s at each of the three half-periods, 1 at the origin (or 1 unit of ISD flux instead). Open: stuck-brane D3 unit (×½ would halve N_eff, Im S·Im ρ ≈ 375–610: still natural); twisted NS–NS exchange; whether κ_ΩR = +1 in the BHK model.
