@@ -1,0 +1,4 @@
+# PREREG D531 — is Λ's instanton the same family as the D471 axion instanton? (locked 2026-11-14 22:16 CT before computing)
+Inputs (fixed): SERAPIS-1 vacuum V(i) ∝ |c|² with c = e^{−121.6} (D517; main term vanishes at τ = i), so the V-level Λ suppression is e^{−S_Λ}, S_Λ = 243.2. D471: axion m = 2–1e4 H0, f = 3.7–7.6e12 GeV, V-level action S_a = 242–267.
+Test: model the axion potential as the interference term of two W-level instantons, V_a ≈ 2|c c′| cos θ, so V_a / Λ = |c′/c|. Compute V_a = m² f² for the D471 corners and Λ = 3 H0² M_P² Ω_Λ (H0 = 67.7, Ω_Λ = 0.69, M_P = 2.435e18 GeV). Get ΔS = −ln(V_a/Λ) = S′ − S_W and the implied second action S′ = 121.6 + ΔS.
+PASS if (i) 0 < ΔS (the axion term is subdominant, Λ dominates) and (ii) the implied V-level axion action 121.6 + S′ lies within D471's 242–267 for all four corners. FAIL otherwise. Single run, no refit.
