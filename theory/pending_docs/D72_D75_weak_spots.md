@@ -6633,3 +6633,13 @@ Source: Blumenhagen–Schmidt, "Gauge thresholds and Kähler metrics for rigid i
 Applied: stuck D3s carry zero twisted charge (D695, hep-th/0602038) ⇒ ε = 0 ⇒ σ_ab = 0 for every pair involving them ⇒ their twisted annulus contributions vanish identically (inference from the σ-proportionality; not stated explicitly for stuck branes in either paper). The SERAPIS-E tilt is therefore purely the untwisted E(U,2) piece: no extra U-dependence, κ = 1 structure (D692 Janus check) preserved.
 Normalisation of a stuck brane in D3 units: NOT found (NULL in both sources; 0711.0866 fixes normalisation by matching β-function coefficients only). Bracket kept from D696: Im S·Im ρ ≈ 375–1220.
 VERDICT: open item (c) of D695 closed (no twisted contamination); item (b) normalisation remains a factor-2 bracket, not a viability issue. Remaining SERAPIS-E caveat of substance: the plateau P_E placed in the uplift sector by hand.
+
+## D698 (DEEP) — The hand-placed plateau form does not matter: SERAPIS-E is fixed by its asymptotics
+Lock PREREG_D698; results/plateau_robust_d698.txt (first-order slow roll, D691 code, N* = 49.15).
+| form | m²/H² at ρ | C = 1.0e-6: n_s, r, α_s | C = 1.3e-6: n_s, r, α_s |
+|---|---|---|---|
+| (a) Ê/(1+Ê) | 34.7 | 0.9711, 4.59e-4, −9.67e-4 | 0.9742, 4.96e-4, −1.041e-3 |
+| (b) 1 − (1−e^{−Ê})/Ê | 17.4 | 0.9716, 4.51e-4, −9.58e-4 | 0.9749, 4.88e-4, −1.033e-3 |
+Δn_s ≤ 0.0007, Δr/r ≤ 1.9%, Δα_s ≤ 1% ⇒ PASS (rule: < 0.002, < 5%). Only the vacuum mass changes (×½; T_R ∝ m^{3/2} ⇒ ΔN* ≈ −0.1, negligible).
+Analytic completion: any plateau P(Ê) → 1 − a/Ê + O(Ê⁻²) gives the same CMB observables up to O(Ê*⁻²) ~ 1e-5 corrections (Ê* ≈ 2ζ(4)y*² ≈ 460); a rescales y by √a (a shift of φ) and is absorbed into C → C·a, which is fitted. So the hand-placed caveat reduces from "a specific function" to "an uplift that vanishes at ρ and saturates as 1 − O(1/E(τ,2))" — a much weaker requirement: e.g. a nilpotent-X metric K_XX̄ ∝ 1 + a/Ê (Ferrara–Kallosh–Linde-type construction) or any one-loop-corrected uplift whose leading moduli dependence is through E(τ,2).
+VERDICT: SERAPIS-E's predictions are insensitive to the interior plateau form; the remaining input is the qualitative structure (zero at ρ, saturation through E(τ,2)). Paper caveat can be softened accordingly.
