@@ -1,0 +1,2 @@
+c_G=1: Gamma=4.29e+02 GeV, T_RH=1.75e+10 GeV, N*=51.61 (vs 58.09: -6.48), dn_s=-4.9e-03 -> INCONSISTENT; leptogenesis M1 3e10-2e11: only lower M1
+c_G=10: Gamma=4.29e+03 GeV, T_RH=5.53e+10 GeV, N*=52.00 (vs 58.09: -6.09), dn_s=-4.5e-03 -> INCONSISTENT; leptogenesis M1 3e10-2e11: ok

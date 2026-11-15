@@ -4877,3 +4877,11 @@ r = 0.00097: the constant κ moves n_s by ~0.002, a mild model dependence.
 The triangle point ρ is a wall by construction (j^{−7/12}). Status: SERAPIS-1 is now the cleanest version. It is exactly modular, has one torus, inflation fits CMB-SPA with no tilt, Λ sits at the square torus
 and the vacuum is heavy. Remaining: the CMB-vs-DESI n_s question decides it (−2.3σ with DESI); κ and the 'two secondary tori' are assumptions; Λ's c is one number fixed by data (an e^{−121.6} instanton
 would explain it, untested).
+
+**D518 (SERAPIS-1 reheating; scored, locked PREREG_D518_SERAPIS_REHEAT; results/serapis_reheat_d518.txt) — INCONSISTENT: SERAPIS-1's own reheating gives N* ≈ 52, not 58.09, so its n_s
+drops by ≈ 0.005.** The heavy inflaton (m = 4e13 GeV) decays with Γ = (c_Γ/8π)m³/M_P² = 4.3e2–4.3e3 GeV → T_RH = 1.8e10–5.5e10 GeV. Hand check: ¼ln(V_*/M_P⁴) = −6.1 and
+ln(k*/a₀H₀) = 5.4 give instant-reheating N* ≈ 55.5. A long matter-dominated reheating phase (w = 0) then subtracts (1/12)ln(ρ_end/ρ_RH) ≈ 4, giving N* = 51.6–52.0. With attractor scaling,
+Δn_s ≈ 2ΔN*/N*² ≈ −0.0045 to −0.0049, i.e. n_s ≈ 0.962. That is −2.2σ vs CMB-SPA and −3.9σ vs SPA+DESI, so SERAPIS-1's D517 'fit' used the wrong N* (58.09 belonged to Twist-M's kination history).
+Leptogenesis: T_RH reaches the lower part of the M₁ window (≥ 3e10 GeV only for c_Γ ≈ 10). Fix paths (new locks needed): a faster decay channel (c_Γ ≫ 10, e.g. direct coupling to the hidden/SM sector, which raises
+T_RH and N*); or a kination phase like Twist-2's (needs a steep post-inflation direction, which SERAPIS's potential does not have near τ = i). Status: SERAPIS-1 is NOT yet self-consistent; the D517 'VIABLE' is
+withdrawn pending this.
