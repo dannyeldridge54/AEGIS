@@ -1,0 +1,14 @@
+algebra check (general - D666): 0
+beta=1 delta=3e-06 N=50: n_s=0.96187 r=0.00163 beta_s=-3.138e-5 pred=-3.109e-5 err=-0.945% | -4/N^3=-3.2e-5
+beta=1 delta=3e-06 N=55: n_s=0.96563 r=0.001362 beta_s=-2.361e-5 pred=-2.34e-5 err=-0.854% | -4/N^3=-2.4e-5
+beta=1 delta=1e-05 N=50: n_s=0.96575 r=0.001797 beta_s=-3.103e-5 pred=-3.076e-5 err=-0.87% | -4/N^3=-3.2e-5
+beta=1 delta=1e-05 N=55: n_s=0.96993 r=0.001532 beta_s=-2.321e-5 pred=-2.303e-5 err=-0.777% | -4/N^3=-2.4e-5
+beta=1 delta=3e-05 N=50: not converged
+beta=1 delta=3e-05 N=55: not converged
+beta=0.5 delta=3e-06 N=50: n_s=0.9603 r=0.001568 beta_s=-3.142e-5 pred=-3.113e-5 err=-0.921% | -4/N^3=-3.2e-5
+beta=0.5 delta=3e-06 N=55: n_s=0.9639 r=0.001299 beta_s=-2.365e-5 pred=-2.345e-5 err=-0.839% | -4/N^3=-2.4e-5
+beta=0.5 delta=1e-05 N=50: n_s=0.96043 r=0.001574 beta_s=-3.143e-5 pred=-3.114e-5 err=-0.919% | -4/N^3=-3.2e-5
+beta=0.5 delta=1e-05 N=55: n_s=0.96403 r=0.001305 beta_s=-2.366e-5 pred=-2.346e-5 err=-0.836% | -4/N^3=-2.4e-5
+beta=0.5 delta=3e-05 N=50: n_s=0.96079 r=0.001594 beta_s=-3.147e-5 pred=-3.118e-5 err=-0.911% | -4/N^3=-3.2e-5
+beta=0.5 delta=3e-05 N=55: n_s=0.96441 r=0.001323 beta_s=-2.369e-5 pred=-2.349e-5 err=-0.828% | -4/N^3=-2.4e-5
+max |err| = 0.945%  VERDICT: PASS

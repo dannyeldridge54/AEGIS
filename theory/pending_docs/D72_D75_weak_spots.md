@@ -6475,3 +6475,8 @@ Meaning: the relation is a property of the whole "plateau + exponential ramp" fa
 ## D670
 DEEP (DpL tick 3; 2 searches, 2 fetches + arithmetic, not locked) — can the Janus signature be measured soon? At fixed (n_s, r) the general relation gives (n_s = 0.972, r = 5e-4): attractor α_s = −3.9e-4, SERAPIS (κ = ½) −8.1e-4, KL β = 1 (κ = 1, p = √2) −2.5e-4; at r = 1.5e-3 SERAPIS −2.0e-3. Signature size Δα_s ≈ 2–4e-4 at SERAPIS's own r.
 Forecasts (95% CL): SO alone 0.0066; S4 + SPHEREx 0.0024; S4 + CHIME + DESI + SPHEREx 0.0018; LiteBIRD + S4 + CHIME + SPHEREx 0.0017 (Constraining Inflation 2030, 2212.04115); SKAO-AA4 + SO ±0.003 (2607.08593). Best 1σ ≈ 9e-4 ⇒ the Janus/attractor difference is ≲ 0.5σ for 2030-era data. Measuring it needs σ(α_s) ~ 1e-4 (futuristic 21-cm / dark-ages class); β_s (~4e-5) further still. Paper's "long-term goal" wording is correct; now quantified. Near-term tests remain r (exclusion) and n_s.
+
+## D671
+DEEP (DpL tick 4, manual "Ddl"; locked PREREG_D671; results/beta_general_d671.txt) — general running of the running. Leading order β_s ≈ 2ηξ² + 2ϖ³ gives, for V ≈ 1 − Ae^{−pφ} + δe^{qφ},
+  β_s = −¼(1 − n_s)³(1+x)[(1 − κx)(1 + κ²x) + (1+x)(1 − κ³x)]/(1 − κx)³, x from (n_s, r) as in D669.
+Sympy: identical to D666's SERAPIS form (difference 0); x = 0 → −(1 − n_s)³/2 = −4/N³. Test on KL singular T-models (10 converged points): errors −0.78 … −0.95%. PASS. So the Janus family has a closed, parameter-free (given p, κ) chain n_s, r → α_s → β_s.
