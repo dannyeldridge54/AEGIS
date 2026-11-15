@@ -1,4 +1,9 @@
 DEVELOPMENTS 72–75: the four weak spots (13 Nov 2026). AI-assisted. Insert into the matter doc after D71.
+
+> **Numbering rule (from 15 Nov 2026).** Before writing a note, claim its number: `sh tools/dnotes/claim_d.sh "short title"`
+> (pulls, takes the number in `NEXT_D.txt`, increments it, commits and pushes the claim; retries if another session got there first).
+> Write the note under the number it prints. Index: `python tools/dnotes/build_index.py` → `docs/D_INDEX.md`.
+
 Scripts: theory/inflation/s_stability.py; numbers in field_tests/results/s_stability.txt and weak_spots_D72.txt.
 
 ## Development 72 — the helper field S is unstable as written; a standard term fixes it
