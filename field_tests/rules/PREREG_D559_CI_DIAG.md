@@ -1,0 +1,2 @@
+# PREREG D559 — diagnostic for the D558 discrepancy (locked 2026-11-14 23:04 CT before computing)
+Same code as D558, a = √(2/3), N* = 60, four variants of N: (A) N = 2πτ₂ (their analytic limit), (B) full −6 ln[2τ₂|η|⁴] with Ñ₀ = 0, (C) full with Ñ₀ = 25 (= D558), (D) full with Ñ₀ = 100. Prediction: (A) reproduces their n_s ≈ 0.965 (validating my code); if (B)–(D) differ by > 0.003, the log/Ñ₀ terms matter and their footnote 3 ("numerical calculation without any approximation yields the same results") is not reproduced. Single run.
