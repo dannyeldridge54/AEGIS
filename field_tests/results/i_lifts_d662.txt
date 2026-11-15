@@ -1,0 +1,4 @@
+  File "/home/claude/aegis/theory/modular/i_lifts_d662.py", line 20
+    for lift in itertools.product((0,2,4),repeat=7)   # D662: like-for-like lifts:
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: expected ':'

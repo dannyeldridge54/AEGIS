@@ -17,7 +17,7 @@ for M in (2,4):
         if (A3-A2)%Fr(N,2)==0: passing.append(n)
     ok=0; ex=None
     for n in passing:
-        for lift in itertools.product((0,2,4),repeat=7)   # D662: like-for-like lifts:
+        for lift in itertools.product((0,2,4),repeat=7):   # D662: like-for-like lifts
             kw={f:Fr(x,M)+l for f,x,l in zip(F,n,lift)}
             kys=[sum(kw[x] for x in o) for o in W_ok]   # D656: Sigma k (weight of h), Y = eta^-2 h
             if all(ky.denominator==1 and ky>=0 and ky%4==0 for ky in kys):
