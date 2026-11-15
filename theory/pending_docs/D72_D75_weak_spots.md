@@ -4746,3 +4746,8 @@ an O(1)-uncertain step, and the 15% tolerance was generous. If it holds, it give
 **DEEP 8 (Danny "Pp", 21:11 CT; topic 8 DM; literature).** The Twist's gravity-only DM is a Planckian-interacting-DM instance (Garny–Sandora–Sloth; 1709.09688, 1810.01428,
 2003.07366), so it gets credit. Because the gravitational freeze-in yield scales as T_max³, the 100–200 TeV window is model-history dependent. It must be recomputed for Twist-M
 (longer kination, different T_max) before being quoted. Open item, not computed.
+
+**D503r (Danny "Pp", 21:12 CT; follow-up of DEEP 8; reasoning from D112, no new computation) — Twist-M's DM window mostly carries over.** D112: ≥ 99% of the gravity-only DM
+comes from bremsstrahlung in the χ̃ (heat-sector) decays, a yield that does not depend on the DM mass or on T_max. The T_max³-sensitive freeze-in part supplies ≤ 1%. With the same
+heat sector (heat share 0.75%, as D492 assumed), Twist-M keeps m_DM ≈ 100–500 TeV (100–200 TeV after D415). What changes: any dilution (Twist-M has no separate dilution step;
+D397's D factor does not apply) and the freeze-in sliver. The DEEP 8 flag is downgraded to 'freeze-in sliver only'. Label: estimate, not recomputed.
