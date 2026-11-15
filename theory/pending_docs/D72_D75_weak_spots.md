@@ -4459,3 +4459,11 @@ cases: the item D447 left out is now done, and D447 holds.** The hidden 2→2 ra
 (m = 10 GeV–100 TeV, T_h/T = 0.10–0.32). Every coupling D447 needs (≥ 0.026) is 5–1000 × larger, so the hidden sector reaches its own
 equilibrium before freeze-out, and the injected abundance (D446) is forgotten. Hand check at m = 1e4 GeV, ξ = 0.102: T = 9.8e4 GeV,
 H = 1.35e-8 GeV, λ_th = 2.9e-3 ✓. CENTRE: the F5 conditional pass (D447) is now complete: lightest D7-charged state ≲ 10 TeV (1%) / ≲ 100 TeV (all DM).
+
+**D456 (cycle 41, tick; fourth pass PART 6, RIGHT; scored, locked PREREG_D456_FLUX_LAMBDA; results/flux_lambda_d456.txt) — FINE: one unit of
+D7 flux moves Λ by as little as 0.08%.** In the D438 toy with the fixed-cycle constant held: n₁ = 399/401 → x_E = 29.624/29.576, ΔΛ/Λ =
+∓0.078%; m₁ = 9/11 → x_E = 25.84/33.68, ΔΛ/Λ = +14%/−12% (the D413 power law is only approximate for steps this large). Honest reading: within this
+toy, the flux integers choose x_E, and hence the O(1) factor in Λ, from a fine set of options (steps ≪ the ~1–2% observational precision). So the Twist does NOT
+predict Λ's O(1) value. It accounts for Λ's magnitude (the e^{−n} cliff, n = 124.1) and leaves an O(1) value picked by flux choice, as in a landscape.
+Unknown: whether n itself is flux-fixed, and whether unit steps survive tadpole cancellation. CENTRE: no balance change; the paper-v2 wording 'Λ from the
+cliff' should say 'magnitude from the cliff, O(1) factor flux-selected'.

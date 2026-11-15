@@ -99,3 +99,4 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - v2 correction pending (D450): state plainly that the inflationary point lies at sub-string volume (𝒱 ≈ 4e-6), outside geometric control.
 - v2 (D452): with normalisation 𝒱 = 1–10 at the CMB point, control is marginal rather than lost; string scale ~1e14 GeV; capture unaffected.
 - v2 (D453): rescaling band a ≈ 3.8e3–7.9e3 only (𝒱 = 10 at CMB excluded by KK tower); control marginal.
+- v2 (D456): 'Λ from the cliff' → magnitude from the cliff (e^{-n}); O(1) factor selected by D7 flux integers (unit step 0.08%), not predicted.

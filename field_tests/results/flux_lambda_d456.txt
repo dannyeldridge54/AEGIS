@@ -1,0 +1,6 @@
+(10,400): x_E=29.6000, dLambda/Lambda=-0.000%
+(9,400): x_E=25.8403, dLambda/Lambda=+14.084%
+(11,400): x_E=33.6830, dLambda/Lambda=-11.780%
+(10,399): x_E=29.6238, dLambda/Lambda=-0.078%
+(10,401): x_E=29.5764, dLambda/Lambda=+0.077%
+smallest step 0.077% VERDICT: FINE
