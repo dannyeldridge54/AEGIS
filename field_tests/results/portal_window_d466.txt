@@ -1,0 +1,4 @@
+if thermalised with SM: dN_eff = 0.268 (vs 0.14)
+m_psi=5e+05 GeV: y'_max=4.2e-06; decay lower limit ~1e-14 -> window 4e+08 wide
+m_psi=1e+09 GeV: y'_max=1.9e-04; decay lower limit ~2e-16 -> window 9e+11 wide
+VERDICT: WINDOW OPEN

@@ -1,9 +1,9 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 5
-consecutive_walls: 2
-cycle: 50
-next_part: 4
+consecutive_walls: 0
+cycle: 51
+next_part: 5
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -100,3 +100,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 48 (20:14, 'pp'): PART 1 fifth pass — D463 hidden radiation ΔN_eff 0.013 → total 0.065–0.081; ε_h ≤ 5.5e-5; D447 hot column excluded. Result → walls 0.
 - cycle 49 (20:16, 'pp'): PART 2 fifth pass — D464 Route A α_eff = 2.2 ≈ fibre inflation line (α=2): not distinguishable in (n_s,r); credit in v2. WALL 1.
 - cycle 50 (20:18, fast loop, Danny 20:12 'fast as u can'): PART 3 fifth pass — D465 Twist axion is GS-gauged by the same intersection D462 needs → eaten, no LVS dark radiation. WALL 2 → null. Danny wants max speed: interval kept at 5 min (overrides slowdown until he says otherwise).
+- cycle 51 (20:16, 'pp'): PART 4 fifth pass — D466 portal must not thermalise (else ΔN_eff 0.27): y' 1e-14..4e-6 window open; D426 thermal branch excluded. Result → walls 0.

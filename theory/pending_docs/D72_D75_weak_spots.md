@@ -4538,3 +4538,9 @@ under the hidden D7 U(1). So y takes part in the Stückelberg mass (M_V ≈ g M_
 D382's mass argument (from the D373 stabiliser), which does not apply to the FI version. Also, after capture the Twist's residual motion drains into
 φ through the bounces (D444–D447), not into a modulus → axion decay. Caveat: if several axions mix, the light combination may lie mostly along other cycles; its couplings are not
 checked. No scored result → WALL.
+
+**D466 (cycle 51, "pp"; fifth pass PART 4, L/R; scored, locked PREREG_D466_PORTAL_WINDOW; results/portal_window_d466.txt) — WINDOW OPEN; D426's
+'thermal hidden sector via the lepton portal' option is now EXCLUDED.** If the portal equilibrated the hidden sector with the SM, its 10 light dof
+would give ΔN_eff = 0.268 > 0.14. So the portal must stay out of equilibrium: y′ ≤ 4.2e-6 (m_ψ = 5e5 GeV) to 1.9e-4 (1e9 GeV), from Γ = H at T = m_ψ.
+It still has to let ψ decay before BBN (y′ ≳ 1e-14–2e-16, D425), which leaves a window 4e8–9e11 wide. Correction to D426: only its 'colder hidden bath' branch survives,
+and that branch is what D447/D463 use. CENTRE: balanced; leptogenesis (L-conserving ψ decays, D425) unaffected.
