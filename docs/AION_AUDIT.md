@@ -77,5 +77,4 @@ summary: NO_ID 133, NO_LOCK 66, OK 184
 72  field_tests/results/weak_spots_D72.txt
 373  field_tests/results/weight3_stabiliser_d373.txt
 298  field_tests/results/yend_precise_d298.txt
-NO_ID  133,
 ```
