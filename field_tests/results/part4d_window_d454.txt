@@ -1,0 +1,2 @@
+a=3846: late m_KK=2.14e+13 GeV, M_s(D409 conv)=3.93e+14 GeV; D411 top 2.5e13 below m_KK? False
+a=7852: late m_KK=1.05e+13 GeV, M_s(D409 conv)=2.30e+14 GeV; D411 top 2.5e13 below m_KK? False

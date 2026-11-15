@@ -1,9 +1,9 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 5
-consecutive_walls: 0
-cycle: 38
-next_part: 4
+consecutive_walls: 1
+cycle: 39
+next_part: 5
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -87,3 +87,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 37 (19:55, 'pp'): D452 rescaled normalisation (a ≈ 4e3–2e4): 𝒱 = 1–10 at CMB point AND capture holds (8/8); M_s ≈ 1e14 GeV; D450 flag → marginal control. Result → walls 0.
 - 19:55 CT: Danny '5 min loops' → interval reset to 5 min (walls 0); pacing rule as before (2 walls at 5 → 30; 2 at 30 → 60; 3 at 60 → stop).
 - cycle 38 (19:58, 'pp'): PART 3 fourth pass — D453 rescaling squeezes KK tower: m_KK/T ≥ 10 needs 𝒱(x*) ≤ 0.48; band a 3.8e3–7.9e3 (𝒱 1–2.9, m_KK/T 3–6) only; 𝒱=10 excluded. MARGINAL. Result → walls 0.
+- cycle 39 (20:00, 'pp'): PART 4 fourth pass — D454 rescaled m_KK 1–2e13 GeV trims leptogenesis window top to ~1e13; preferred 3e10–2e11 untouched. WALL 1.

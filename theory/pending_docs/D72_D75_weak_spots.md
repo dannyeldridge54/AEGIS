@@ -4446,3 +4446,10 @@ A margin m_KK/T ≥ 10 needs a ≤ 2356, which leaves 𝒱(x*) = 0.48 < 1. With 
 (𝒱 ≳ 1) and a cold KK tower after inflation pull in opposite directions. Only a narrow band, a ≈ 3.8e3–7.9e3 (𝒱(x*) ≈ 1–2.9, m_KK/T ≈ 3–6), satisfies both, and only
 loosely. The D452 choice 𝒱 = 10 is excluded by this test (KK modes would be thermally produced, relic risk). O(1) conventions are as in D409 (factor-2 spread).
 CENTRE: D452 is narrowed to a = 3.8e3–7.9e3; the control flag stays 'marginal'; the v2 list is updated.
+
+**D454 (cycle 39, "pp"; fourth pass PART 4, L/R; arithmetic in code, no new model; results/part4d_window_d454.txt) — leptogenesis window
+trimmed at the top by the rescaled KK scale; nothing breaks.** In the D453 band (a = 3.8e3–7.9e3) the late-time m_KK = M_P/(a x_E) = 2.1e13 /
+1.05e13 GeV (D409 conventions), below D411's upper edge 2.5e13 GeV. A 4D right-handed neutrino needs M₁ < m_KK, so the window becomes
+M₁ ≈ 7e8 (D440, κ ≈ 1) to ~1e13 GeV. D440's preferred values (2.9e10–2e11 GeV for m̃₁ = m_sol–m_atm) are untouched, and the temperature at
+capture (1.5e11 GeV) still exceeds them. Hidden-sector heating (ε_h ≤ 1e-5, D447) adds negligible entropy (no washout of Y_B). No scored
+result → WALL.
