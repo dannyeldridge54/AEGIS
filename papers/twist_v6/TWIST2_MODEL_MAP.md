@@ -185,3 +185,5 @@ alone.
 **Twist-M (D504):** string scale 2.65e15 GeV ≈ gauge meeting point 2.4e15 GeV (couplings within ~5% at M_s); requires D-brane unification without light X-bosons (proton).
 
 **Twist-M open (DEEP 11):** exact T-duality needs a toroidal-orbifold-type geometry; reconcile with D462's intersecting-divisor requirement (candidate: IIB orientifold of T⁶/Z_N' with blow-ups).
+
+**Twist-M homes (DEEP 2.1b):** exact duality available for a heterotic orbifold T or an isotropic IIB complex-structure U (both K = −3 ln); FI term then independent of the Twist field → case (ii); the matter coupling β is the decisive open question.

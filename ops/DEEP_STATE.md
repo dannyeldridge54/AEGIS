@@ -1,6 +1,6 @@
 # Deep-research loop (Danny 20:13 CT 14 Nov: "another every 30 that's deep research on each topic")
 interval_min: 30
-cycle: 12
+cycle: 13
 next_topic: 2
 ## Topics (same 11 parts as the twin ladder; one topic per tick, in order, wrap 11→1)
 1 pinning decay · 2 inflation plateau · 3 kination/reheating · 4 leptogenesis · 5 capture · 6 Λ · 7 birefringence axion · 8 dark matter ·
@@ -24,3 +24,4 @@ next_topic: 2
 - tick 10 (21:15, 'Pp'): topic 10 — D504 Twist-M M_s ≈ unification scale (M_12/M_s = 0.91); no X-bosons allowed (τ_p).
 - tick 11 (21:16): topic 11 embedding — exact duality ⇒ orbifold vs fibred CY tension (open). DEEP PASS 1 COMPLETE.
 - tick 12 (21:16, Danny 'Deep'): pass 2 topic 1 — embedding class identified (IIB T⁶/Z_N orientifolds w/ magnetised D7s); Kähler-modulus duality not established.
+- tick 13 (21:19, 'Research like this again'): Twist-M homes — heterotic T or IIB U (exact SL(2,Z)); FI link lost → case (ii), β decisive.

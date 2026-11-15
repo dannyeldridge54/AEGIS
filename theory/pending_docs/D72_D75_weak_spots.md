@@ -4770,3 +4770,8 @@ This is now the main open string-side question for Twist-M. DEEP PASS 1 COMPLETE
 (arXiv:2404.18995; hep-th/0512287). They have the ingredients: magnetised D7s, blow-up cycles, and untwisted Kähler moduli as the natural carriers of a duality. But the dualities used there
 act on the axio-dilaton (S) and complex structure (U), not on a Kähler modulus with fluxes and branes. Whether a Kähler-modulus SL(2,Z) survives in that setting is not established. DEEP 11's open question
 stands, now with a concrete class to examine.
+
+**DEEP 2.1b (Danny "Research like this again", 21:19 CT; Twist-M embedding; literature).** An exact SL(2,Z) is available in two places. (a) The heterotic orbifold volume modulus:
+exact perturbatively, weight −3 matching K = −3 ln(T+T̄), and fixed points always extrema (2411.06516). (b) An isotropic IIB complex-structure modulus U: exact SL(2,Z)_U with the same
+K = −3 ln(U+Ū) (1608.06129, 1804.06644, 2404.18995). On IIB Kähler moduli no exact T-duality is established (0705.3253). In both homes the FI term does not depend on the
+Twist field, so the FI-capture link does not carry over naturally. That favours Twist-M case (ii) and makes the matter coupling β (D498) the decisive question for that variant.
