@@ -3,8 +3,9 @@
 \begin{document}
 \title{SERAPIS: a modular plateau with a massive vacuum at the square torus, its Janus pair of predictions, and a three-observable consistency relation}
 \author{Danny Eldridge}
-\affiliation{Independent researcher, {[AFFILIATION / CORRESPONDENCE EMAIL: Danny to confirm]}}
-\date{Draft of 15 November 2026}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{\today}
 \begin{abstract}
 We study inflation on the modular plane with K\"ahler potential $K=-\ln(2\,\mathrm{Im}\,\tau)$ and $\alpha=1/3$, driven by a plateau built from the modular invariant $|j-1728|$. The inflaton settles at the square torus, $\tau=i$, a critical point required by the $S$ generator of the modular group, where $j-1728$ has a double zero. The minimal plateau leaves this vacuum massless; adding a single term linear in $|j-1728|$, of relative strength $\varepsilon\simeq(1.3$--$1.6)\times10^{-4}$, makes it massive and tilts the spectrum. The model then has two faces sharing one closed form, a Janus pair: the untilted limit gives $n_s=0.959$--$0.961$ and $r=(3.3$--$3.7)\times10^{-4}$, while the tilted model gives $n_s=0.970$--$0.975$, $r=(4.8$--$5.7)\times10^{-4}$ and $\alpha_s=-(8.6$--$9.9)\times10^{-4}$. Eliminating $\varepsilon$ yields a parameter-free relation fixing $\alpha_s$ from $n_s$ and $r$ to about 12\%. A variant at $\tau=\rho$ gives $n_s=0.969$--$0.972$ and $r=(4.6$--$5.1)\times10^{-4}$. We check reheating through a stiff phase ($w\simeq0.55$, $T_R=10^3$--$10^5$~GeV), gravitino closure ($m_{3/2}>10^{11}$~GeV), proton stability from the modular centre, and baryogenesis; an order-of-magnitude Affleck--Dine estimate points to a nearly massless lightest neutrino, $m_{\nu_1}\lesssim10^{-8}$~eV. The K\"ahler potential is not of no-scale type, but tree-level soft masses vanish for visible matter of modular weight one. The size of $\varepsilon$ is fitted, not derived. All predictions were frozen with public hashes before submission and will be tested by future CMB polarisation and large-scale-structure surveys.
 \end{abstract}
@@ -221,8 +222,52 @@ Table~\ref{tab:forward} lists the predictions. The model is easy to exclude and 
 \item every correction was logged in a deviations file before any rerun;
 \item key outputs were reproduced from a clean state, and every reference was checked against its arXiv record.
 \end{itemize}
-The author takes full responsibility for the content. Code, locks and results are available at [REPOSITORY / ZENODO DOI].
+The author takes full responsibility for the content. Code, pre-registrations and results are archived at Zenodo, \textbf{doi:[DOI-TO-BE-ADDED]} (Appendix~\ref{app:repro}).
 \end{acknowledgments}
+
+\appendix
+\section{Reproducibility map}\label{app:repro}
+Labels of the form D$nnn$ in the text refer to dated research notes in the public repository (file \texttt{theory/pending\_docs/D72\_D75\_weak\_spots.md}), where each note records the question, the numbers, the sources and the verdict, with corrections added as separate notes (e.g.\ D585a). Notes that involve a computation have a pre-registration file \texttt{field\_tests/rules/PREREG\_D$nnn$\_*.md}, whose SHA-256 hash was committed before the computation was run, a script in \texttt{theory/modular/}, and an output in \texttt{field\_tests/results/} with the same stem. Table~\ref{tab:repro} lists them. The remaining notes cited (D542, D576, D582, D584, D585, D586, D591, D596, D599, D600, D601, D603, D604, D606, D607, D608, D611, D614, D616, D618, D620, D631) are analytic estimates, reasoning or literature notes that were not pre-registered; D608 includes an unregistered numerical diagnostic, disclosed as such in the note. The scripts that produce the headline numbers and figures can be rerun from \texttt{papers/v3/repro/}.
+
+\begin{table*}[tbp]
+\caption{Computations cited in the text: pre-registration (\texttt{PREREG\_}\dots\texttt{.md}) and script (\texttt{.py}; output \texttt{.txt} with the same stem).}\label{tab:repro}
+\begin{ruledtabular}
+\footnotesize
+\begin{tabular}{lll}
+Note & Pre-registration & Script \\
+\hline
+D528 & \texttt{D528\_MODULAR\_PARITY} & \texttt{parity\_d528} \\
+D533 & \texttt{D533\_PARITY\_NP} & \texttt{parity\_np\_d533} \\
+D551 & \texttt{D551\_VACUUM\_I\_SELECTION} & \texttt{vacuum\_i\_selection\_d551} \\
+D564 & \texttt{D564\_SERAPIS\_P} & \texttt{serapis\_p\_d564} \\
+D566 & \texttt{D566\_BOUND\_ALPHA} & \texttt{---} \\
+D567 & \texttt{D567\_FORWARD\_HOMESAFE} & \texttt{---} \\
+D574 & \texttt{D574\_TAU\_I\_DERIVATION} & \texttt{tau\_i\_d574} \\
+D575 & \texttt{D575\_TWO\_TERM} & \texttt{two\_term\_d575} \\
+D577 & \texttt{D577\_SPECIES\_MASS} & \texttt{species\_mass\_d577} \\
+D578 & \texttt{D578\_OSC\_NSTAR} & \texttt{osc\_nstar\_d578} \\
+D587 & \texttt{D587\_TWO\_FIELD\_DN} & \texttt{two\_field\_dn\_d587} \\
+D588 & \texttt{D588\_EXACT\_NS} & \texttt{exact\_ns\_d588} \\
+D589 & \texttt{D589\_N\_COUPLING} & \texttt{n\_coupling\_d589} \\
+D592 & \texttt{D592\_ADIABATIC\_Y} & \texttt{adiabatic\_y\_d592} \\
+D595 & \texttt{D595\_STIFF\_GROWTH} & \texttt{stiff\_growth\_d595} \\
+D597 & \texttt{D597\_S3\_FLAVOUR} & \texttt{s3\_flavour\_d597} \\
+D598 & \texttt{D598\_HIGHER\_WEIGHT} & \texttt{higher\_weight\_d598} \\
+D602 & \texttt{D602\_EPS\_WINDOW\_LOWTR} & \texttt{eps\_window\_lowtr\_d602} \\
+D605 & \texttt{D605\_FORWARD\_TWOTERM} & \texttt{---} \\
+D610 & \texttt{D610\_SERAPIS\_RHO\_LOWEPS} & \texttt{serapis\_rho\_d610} \\
+D612 & \texttt{D612\_VACUUM\_RHO\_SELECTION} & \texttt{vacuum\_rho\_selection\_d612} \\
+D613 & \texttt{D613\_RHO\_NSTAR} & \texttt{rho\_nstar\_d613} \\
+D615 & \texttt{D615\_FORWARD\_RHO} & \texttt{---} \\
+D632 & \texttt{D632\_RUNNING} & \texttt{running\_d632} \\
+D633 & \texttt{D633\_FORWARD\_RUNNING} & \texttt{---} \\
+D634 & \texttt{D634\_RHO\_RUNNING} & \texttt{rho\_running\_d634} \\
+D635 & \texttt{D635\_JANUS\_ANALYTIC} & \texttt{janus\_analytic\_d635} \\
+D637 & \texttt{D637\_KAIROS\_NSTAR} & \texttt{kairos\_nstar\_d637} \\
+D639 & \texttt{D639\_SOFT\_MASSES} & \texttt{soft\_masses\_d639} \\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
 
 \bibliography{refs}
 \end{document}

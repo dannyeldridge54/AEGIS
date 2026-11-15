@@ -7,5 +7,6 @@
 - [x] R6 prediction sheet — prediction_sheet.md
 - [x] R7 drafts — drafts/ (abstract in tex + abstract.txt 1437 chars; cover letter, endorsement request, experiment notes; NONE SENT)
 - [x] R8 referee pass — referee/R8_REFEREE_REPORT.md (MAJOR REVISION; D636 + D585a)
-- [~] R8b/R8c fixes — second referee: MINOR REVISION; all its new issues fixed (D638). Open: three-moduli no-scale construction, D-label appendix, placeholders (Danny)
+- [x] R8b/R8c fixes — two referee passes; all issues fixed or disclosed (D636–D639); soft masses closed conditionally (weight-1 matter, D639)
+- [x] R8d submission package — submission/ (arXiv tarball tested standalone, metadata, PRD cover letter, checklist); author line set; reproducibility appendix
 - [ ] R9 stage Zenodo package — NEEDS DANNY ("Publish")
