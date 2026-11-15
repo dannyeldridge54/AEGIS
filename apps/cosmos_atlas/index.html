@@ -2,6 +2,7 @@
 <title>AEGIS Cosmos Atlas</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
 <style>
 /* Layout: an observatory console. Left = the map (canvas), right = controls, narration and catalog. Single deliberate dark "night sky" look. */
 :root{
@@ -49,6 +50,7 @@ th:first-child,td:first-child{text-align:left}
 .eq{font:500 .95rem var(--mono);background:var(--panel2);border-radius:6px;padding:8px 10px;margin:6px 0}
 .small{font-size:.78rem;color:var(--muted)}
 .copy{font:500 .78rem var(--body);background:var(--panel2);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:4px 8px;cursor:pointer}
+body.night{filter:grayscale(1) sepia(1) hue-rotate(-50deg) saturate(5) brightness(.75)}
 footer{margin-top:14px;color:var(--muted);font-size:.78rem;max-width:90ch}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -67,7 +69,9 @@ footer{margin-top:14px;color:var(--muted);font-size:.78rem;max-width:90ch}
       <button data-view="web" aria-pressed="false">4 · Cosmic web</button>
       <button data-view="gsky" aria-pressed="false">5 · Galaxy &amp; quasar sky</button>
       <button data-view="tonight" aria-pressed="false">6 · Tonight's sky</button>
-      <button data-view="first" aria-pressed="false">7 · The first moment</button>
+      <button data-view="point" aria-pressed="false">7 · Pointing &amp; calibration</button>
+      <button data-view="first" aria-pressed="false">8 · The first moment</button>
+      <button id="nightBtn" aria-pressed="false" title="Red light mode protects your night vision">Night mode</button>
     </div>
     <div class="stage" id="stage">
       <canvas id="cv" aria-label="Interactive map"></canvas>
@@ -125,6 +129,35 @@ footer{margin-top:14px;color:var(--muted);font-size:.78rem;max-width:90ch}
       <p class="small">Supergalactic coordinates: the flat sheet our neighbourhood of galaxies lies in. Cosmicflows-4 colours: red = moving away faster than the expansion alone, blue = slower (rough, illustrative; uses H₀ = 75 calibration and large per-galaxy errors).</p>
     </div>
 
+    <div class="card" id="pointCard" hidden>
+      <h2>Pointing &amp; calibration</h2>
+      <div class="row" style="grid-template-columns:1fr"><input id="pLoc" value="35.4676, -97.5164" aria-label="Location" placeholder="lat, lon  (decimal or 35°28'03&quot;N 97°30'59&quot;W)"></div>
+      <div class="row"><span>Elevation</span><input type="number" id="pEl" value="365" step="1" style="width:100%"><output>m</output></div>
+      <div class="row"><span>Time offset</span><input type="range" id="pHour" min="-12" max="12" step="0.25" value="0"><output id="oPHour">now</output></div>
+      <p class="small" style="margin:4px 0">Paste coordinates from your phone's map app (long-press a spot, copy). Live GPS and compass are not available inside this page.</p>
+      <div class="row" style="grid-template-columns:1fr auto"><input id="pFind" list="pNames" placeholder="Find: M42, Vega, Jupiter, NGC 7000…" aria-label="Find object"><button class="copy" id="pGo">Find</button></div>
+      <datalist id="pNames"></datalist>
+      <p class="small" style="margin:6px 0 2px">Overlays</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 8px">
+        <label class="ck"><input type="checkbox" id="oAz" checked> Alt-az grid</label>
+        <label class="ck"><input type="checkbox" id="oEq"> RA/Dec grid</label>
+        <label class="ck"><input type="checkbox" id="oCon" checked> Constellations</label>
+        <label class="ck"><input type="checkbox" id="oCn" checked> Names</label>
+        <label class="ck"><input type="checkbox" id="oEcl" checked> Ecliptic</label>
+        <label class="ck"><input type="checkbox" id="oGal"> Galactic plane</label>
+        <label class="ck"><input type="checkbox" id="oMw" checked> Milky Way</label>
+        <label class="ck"><input type="checkbox" id="oPl" checked> Sun, Moon, planets</label>
+        <label class="ck"><input type="checkbox" id="oDso"> Messier objects</label>
+        <label class="ck"><input type="checkbox" id="oTel" checked> Telrad rings</label>
+      </div>
+      <p class="small" style="margin:6px 0 2px">Your optics (draws the true field on the selected object)</p>
+      <div class="row"><span>Scope focal length</span><input type="number" id="pFL" value="700" style="width:100%"><output>mm</output></div>
+      <div class="row"><span>Eyepiece / AFOV</span><input id="pEP" value="25, 52" style="width:100%" aria-label="Eyepiece focal length and apparent field"><output>mm, °</output></div>
+      <div class="row"><span>Camera sensor</span><input id="pCam" value="23.5, 15.6" style="width:100%" aria-label="Sensor width and height"><output>mm</output></div>
+      <div class="row"><span>Frame rotation</span><input type="range" id="pRot" min="0" max="180" step="1" value="0"><output id="oPRot">0°</output></div>
+      <p class="small" id="pOptics"></p>
+    </div>
+
     <div class="card" id="tonightCard" hidden>
       <h2>Tonight's sky</h2>
       <div class="row"><span>Latitude</span><input type="number" id="tLat" value="35.47" step="0.01" style="width:100%"><output>°N</output></div>
@@ -151,6 +184,25 @@ footer{margin-top:14px;color:var(--muted);font-size:.78rem;max-width:90ch}
       <button class="copy" id="copyIds" style="margin-top:8px">Copy ids</button> <span class="small" id="copyMsg"></span>
     </div>
   </aside>
+</div>
+
+<div class="card" id="calCard" style="margin-top:16px" hidden>
+  <h2>Selected object, alignment stars and mount calibration</h2>
+  <div class="pick" id="pSel">Click an object on the chart or use Find.</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:10px">
+    <div style="min-width:0"><h2 style="margin-top:6px">Alignment stars now</h2>
+      <div class="small">Bright named stars between 25° and 70° altitude, well spread in azimuth, for 2- or 3-star alignment.</div>
+      <div class="scroll"><table id="alignTab"><thead><tr><th>Star</th><th>mag</th><th>alt</th><th>az</th><th>RA / Dec (J2000)</th></tr></thead><tbody></tbody></table></div></div>
+    <div style="min-width:0"><h2 style="margin-top:6px">Calibrate your mount</h2>
+      <div class="small">Centre a star from the list in your eyepiece, read the altitude and azimuth your mount, setting circles or phone inclinometer/compass show, and add it. Two or more stars give the index offsets to apply to every target.</div>
+      <div class="row" style="grid-template-columns:1fr 1fr 1fr auto"><select id="cStar" aria-label="Star"></select><input id="cAlt" type="number" step="0.1" placeholder="read alt °"><input id="cAz" type="number" step="0.1" placeholder="read az °"><button class="copy" id="cAdd">Add</button></div>
+      <div class="scroll"><table id="calTab"><thead><tr><th>Star</th><th>true alt</th><th>read alt</th><th>true az</th><th>read az</th><th>Δalt</th><th>Δaz</th></tr></thead><tbody></tbody></table></div>
+      <p class="narr" id="calOut"></p>
+      <button class="copy" id="cClear">Clear calibration</button></div>
+  </div>
+  <div style="margin-top:10px"><h2 style="margin-top:6px">Coordinate converter</h2>
+    <div class="row" style="grid-template-columns:auto 1fr auto 1fr auto"><span>RA (h)</span><input id="xRA" type="number" step="0.001" value="5.588"><span>Dec (°)</span><input id="xDe" type="number" step="0.01" value="-5.39"><button class="copy" id="xGo">→ Alt/Az</button></div>
+    <p class="pick" id="xOut"></p></div>
 </div>
 
 <div class="card" id="firstCard" style="margin-top:16px" hidden>
@@ -205,6 +257,11 @@ tonight:[
  "<p>This is your sky from Oklahoma City (change it to anywhere). It lists clusters, galaxies and nebulae bright enough for your telescope, double stars it can split, and stars that change brightness.</p>",
  "<p>Alt-az projection (zenith centre, horizon rim, north up, east left as seen looking up). Targets are filtered by limiting magnitude and resolution for the chosen aperture, by altitude, and by darkness (Sun below −12°).</p>",
  "<p>Positions are J2000 without precession or refraction (errors under about 0.3° for planning). Click a target to draw the eyepiece field. For transit timing or photometry use dedicated tools; this is a planner.</p>"],
+point:[
+ "<p>This is your own sky chart for right where you stand. Type where you are and the chart shows which stars are up, with lines joining the star pictures.</p>",
+ "<p>A live planisphere for your exact location: constellations, the Milky Way, the Moon and planets. Find any object to see how high it is and which compass direction to face. The circles show what your telescope will actually see.</p>",
+ "<p>Alt-az chart computed with astronomy-engine (precession, nutation, aberration and refraction). Use the alignment list for 2- or 3-star mount alignment, and the calibration table to measure your setting-circle or encoder index errors.</p>",
+ "<p>Positions are apparent topocentric with standard refraction; planets and Moon from VSOP87/ELP-based models in astronomy-engine (arcsecond-level). Index-offset calibration assumes a level mount; residual scatter after correction indicates cone or tilt error, which needs a full pointing model (e.g. TPoint-style terms).</p>"],
 first:[
  "<p>Before stars and galaxies, the whole universe grew super fast for a tiny moment. Our idea is that the shape of a tiny hidden donut made that happen.</p>",
  "<p>Inflation is a split-second of rapid expansion at the very start. The SERAPIS model says it was driven by the shape of a tiny hidden torus. Its fingerprints are two numbers astronomers measure: n_s (how the ripples change with size) and r (gravitational waves).</p>",
@@ -219,7 +276,7 @@ let LU=null; fetch('layers/local_universe.json').then(r=>r.json()).then(j=>{LU={
 let VSX=null; fetch('layers/vsx.json').then(r=>r.json()).then(j=>{VSX=j.variables; if(view==='tonight')draw()}).catch(()=>{});
 let XP=null; fetch('layers/exoplanets.json').then(r=>r.json()).then(j=>{XP=j.p; draw()}).catch(()=>{});
 let NG=null; fetch('layers/ngcgal.json').then(r=>r.json()).then(j=>{NG=j.g; draw()}).catch(()=>{});
-let P=null; fetch('layers/planner.json').then(r=>r.json()).then(j=>{P=j; if(view==='tonight') draw()}).catch(()=>{});
+let P=null; fetch('layers/planner.json').then(r=>r.json()).then(j=>{P=j; fillNames(); if(view==='tonight'||view==='point') draw()}).catch(()=>{});
 Promise.all([fetch('layers/stars.json').then(r=>r.json()),fetch('layers/sdss.json').then(r=>r.json())]).then(([st,sd])=>{
   S=st; const dec=o=>({n:o.n,parent:o.n_parent,a:b64f32(o.f32),sub:b64u8(o.sub),cats:o.subcats});
   G={gal:dec(sd.galaxies),qso:dec(sd.quasars)};
@@ -244,7 +301,7 @@ function filters(){return{ctx:$('#fCtx').checked,xp:$('#fX').checked,hv:$('#fHv'
 function draw(){
   const {w:W,h:H,d}=size(); ctx.clearRect(0,0,W,H); picks=[]; const f=filters(); const legend=[];
   $('#firstCard').hidden=view!=='first'; $('#fStars').hidden=!(view==='local'||view==='msky'); $('#fGal').hidden=!(view==='web'||view==='gsky');
-  $('#slabRow').hidden=view!=='web'; $('#ageRow').hidden=view!=='gsky'; if($('#fT'))$('#fT').parentElement.hidden=view!=='gsky'; $('#filters').hidden=(view==='first'||view==='tonight'); $('#tonightCard').hidden=view!=='tonight'; $('#luCard').hidden=view!=='lu'; if(view==='lu') $('#filters').hidden=true; $('#follow').hidden=!(view==='local'||view==='msky');
+  $('#slabRow').hidden=view!=='web'; $('#ageRow').hidden=view!=='gsky'; if($('#fT'))$('#fT').parentElement.hidden=view!=='gsky'; $('#filters').hidden=(view==='first'||view==='tonight'); $('#tonightCard').hidden=view!=='tonight'; $('#pointCard').hidden=view!=='point'; $('#calCard').hidden=view!=='point'; if(view==='point'){$('#filters').hidden=true;$('#follow').hidden=true} $('#pick').parentElement.hidden=view==='point'; $('#luCard').hidden=view!=='lu'; if(view==='lu') $('#filters').hidden=true; $('#follow').hidden=!(view==='local'||view==='msky');
   $('#narr').innerHTML=N[view][level];
   if(!S||!G){return}
   const dot=(x,y,r,col,obj)=>{ if(x<-5||y<-5||x>W+5||y>H+5) return; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(x,y,r,0,6.2832); ctx.fill(); if(obj) picks.push([x,y,obj]) };
@@ -294,11 +351,96 @@ function draw(){
     const [cx,cy]=T(0,0,W,H,scale); ctx.fillStyle=C.star; ctx.beginPath(); ctx.arc(cx,cy,3*d,0,6.2832); ctx.fill(); ctx.fillStyle=C.fg; ctx.fillText('Milky Way',cx+6*d,cy+12*d);
     legend.push(['galaxy (SDSS)',C.gal],['quasar',C.qso],['named galaxy (NGC/IC)',C.star]);
     hud(`Slice |Dec| ≤ ${f.slab}° · ${n.toLocaleString()} objects · zoom ×${cam.k.toFixed(1)}`);
-  } else if(view==='lu'){ drawLU(W,H,d,dot,legend); } else if(view==='tonight'){ drawTonight(W,H,d,dot,legend); } else if(view==='first'){ drawFirst(W,H,d); }
+  } else if(view==='point'){ drawPoint(W,H,d,dot,legend); } else if(view==='lu'){ drawLU(W,H,d,dot,legend); } else if(view==='tonight'){ drawTonight(W,H,d,dot,legend); } else if(view==='first'){ drawFirst(W,H,d); }
   $('#legend').innerHTML=legend.map(([t,c])=>`<span style="--c:${c}">${t}</span>`).join('');
 }
 function trCol(c){return /^SN|SLSN/.test(c)?'#ff9f5a':c==='CV/Nova'?'#ff6fb5':'#e3d36b'}
 function hud(t){$('#hud').textContent=t}
+
+/* ---------- pointing & calibration ---------- */
+let SA=null; fetch('layers/skyart.json').then(r=>r.json()).then(j=>{SA=j; if(view==='point')draw()}).catch(()=>{});
+function ensureAE(){ if(window.Astronomy) return Promise.resolve(true); return new Promise(res=>{const s=document.createElement('script'); s.src='layers/astronomy.min.js'; s.onload=()=>res(!!window.Astronomy); s.onerror=()=>res(false); document.head.appendChild(s)}) }
+let AE=false; ensureAE().then(ok=>{AE=ok; if(view==='point')draw()});
+let pSelObj=null, CAL=[];
+try{CAL=JSON.parse(localStorage.getItem('aegis-cal')||'[]')}catch(e){}
+function parseLoc(t){ t=t.trim(); const dm=t.match(/(\d+(?:\.\d+)?)[°\s]+(\d+(?:\.\d+)?)?['′\s]*(\d+(?:\.\d+)?)?["″\s]*([NS])[,\s]+(\d+(?:\.\d+)?)[°\s]+(\d+(?:\.\d+)?)?['′\s]*(\d+(?:\.\d+)?)?["″\s]*([EW])/i);
+  if(dm){const f=(a,b,c)=>(+a)+(+(b||0))/60+(+(c||0))/3600; let la=f(dm[1],dm[2],dm[3]),lo=f(dm[5],dm[6],dm[7]); if(/S/i.test(dm[4]))la=-la; if(/W/i.test(dm[8]))lo=-lo; return [la,lo]}
+  const m=t.match(/(-?\d+(?:\.\d+)?)\s*[, ]\s*(-?\d+(?:\.\d+)?)/); return m?[+m[1],+m[2]]:[35.4676,-97.5164] }
+const PLANETS=['Sun','Moon','Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune'];
+function pctx(){ const [lat,lon]=parseLoc($('#pLoc').value), el=+$('#pEl').value||0, off=+$('#pHour').value, date=new Date(Date.now()+off*3600e3);
+  $('#oPHour').textContent=off===0?'now':(off>0?'+':'')+off+' h'; $('#oPRot').textContent=$('#pRot').value+'°';
+  const obs=AE?new Astronomy.Observer(lat,lon,el):null, rot=AE?Astronomy.Rotation_EQJ_HOR(date,obs):null; return {lat,lon,el,date,obs,rot} }
+function hor(c,raDeg,dec){ // J2000 -> apparent alt/az (deg)
+  if(AE){ const v=Astronomy.VectorFromSphere(new Astronomy.Spherical(dec,raDeg,1),c.date), h=Astronomy.HorizonFromVector(Astronomy.RotateVector(c.rot,v),'normal'); return [h.lat,h.lon] }
+  const jd=c.date.getTime()/86400000+2440587.5; return altaz(raDeg,dec,lstDeg(jd,c.lon),c.lat) }
+function body(c,name){ const b=Astronomy.Body[name], eq=Astronomy.Equator(b,c.date,c.obs,true,true), h=Astronomy.Horizon(c.date,c.obs,eq.ra,eq.dec,'normal'); return {alt:h.altitude,az:h.azimuth,ra:eq.ra,dec:eq.dec} }
+function catalogAll(){ const L=[]; if(P){ for(const s of P.stars) if(s[2]<=3.5&&!/^HIP|^HYG/.test(s[3])) L.push({n:s[3],ra:s[0],dec:s[1],mag:s[2],k:'star'}); for(const o of P.dso){ if(o[4]) L.push({n:o[4]+(o[7]?' '+o[7]:''),ra:o[0],dec:o[1],mag:o[2],k:'dso',id:o[3]}); else if(o[2]!=null&&o[2]<=9) L.push({n:o[3]+(o[7]?' '+o[7]:''),ra:o[0],dec:o[1],mag:o[2],k:'dso',id:o[3]}) } } return L }
+function drawPoint(W,H,d,dot,legend){
+  const c=pctx(), R=Math.min(W,H)/2-22*d, k=cam.k, cx=W/2+cam.x*k, cy=H/2+cam.y*k;
+  const P2=(alt,az)=>{const r=(90-alt)/90*R*k,t=az*Math.PI/180;return[cx-r*Math.sin(t),cy-r*Math.cos(t)]};
+  const sun=AE?body(c,'Sun'):null, salt=sun?sun.alt:-30;
+  ctx.fillStyle=salt<-12?'#050914':salt<-6?'#0b1330':salt<0?'#1a2650':'#2a4078'; ctx.beginPath(); ctx.arc(cx,cy,R*k,0,6.2832); ctx.fill();
+  ctx.save(); ctx.beginPath(); ctx.arc(cx,cy,R*k,0,6.2832); ctx.clip();
+  const line=(pts,col,w,dash)=>{ctx.strokeStyle=col;ctx.lineWidth=w*d;ctx.setLineDash(dash||[]);ctx.beginPath();let pen=false;for(const [a,z] of pts){if(a<-2){pen=false;continue}const [x,y]=P2(a,z);pen?ctx.lineTo(x,y):ctx.moveTo(x,y);pen=true}ctx.stroke();ctx.setLineDash([])};
+  if($('#oMw').checked&&SA) for(const ring of SA.mw){ line(ring.map(p=>hor(c,p[0],p[1])),'rgba(150,170,220,.18)',1.2) }
+  if($('#oAz').checked){ for(const a of [0,30,60]) line(Array.from({length:73},(_,i)=>[a,i*5]),'rgba(120,140,190,.35)',.8); for(let z=0;z<360;z+=30) line(Array.from({length:19},(_,i)=>[i*5,z]),'rgba(120,140,190,.25)',.6) }
+  if($('#oEq').checked){ for(let dd=-60;dd<=60;dd+=30) line(Array.from({length:73},(_,i)=>hor(c,i*5,dd)),'rgba(111,208,255,.35)',.7,[3*d,3*d]); for(let r=0;r<360;r+=30) line(Array.from({length:37},(_,i)=>hor(c,r,-90+i*5)),'rgba(111,208,255,.25)',.6,[3*d,3*d]) }
+  if($('#oEcl').checked){ const e=23.4393*Math.PI/180; line(Array.from({length:73},(_,i)=>{const l=i*5*Math.PI/180;return hor(c,(Math.atan2(Math.sin(l)*Math.cos(e),Math.cos(l))*180/Math.PI+360)%360,Math.asin(Math.sin(e)*Math.sin(l))*180/Math.PI)}),'rgba(242,198,109,.6)',1,[6*d,4*d]) }
+  if($('#oGal').checked){ const T=[[-0.0548755604,0.4941094279,-0.8676661490],[-0.8734370902,-0.4448296300,-0.1980763734],[-0.4838350155,0.7469822445,0.4559837762]];
+    line(Array.from({length:73},(_,i)=>{const l=i*5*Math.PI/180,g=[Math.cos(l),Math.sin(l),0],q=[0,1,2].map(r=>T[r][0]*g[0]+T[r][1]*g[1]+T[r][2]*g[2]);return hor(c,(Math.atan2(q[1],q[0])*180/Math.PI+360)%360,Math.asin(q[2])*180/Math.PI)}),'rgba(184,147,255,.55)',1,[2*d,4*d]) }
+  if($('#oCon').checked&&SA) for(const seg of SA.lines) line(seg.map(p=>hor(c,p[0],p[1])),'rgba(170,190,235,.55)',.9);
+  if($('#oCn').checked&&SA){ ctx.font=`${10*d}px IBM Plex Sans, sans-serif`; ctx.fillStyle='rgba(200,215,245,.8)'; for(const nm of SA.names){ const [a,z]=hor(c,nm[2],nm[3]); if(a<3) continue; const [x,y]=P2(a,z); ctx.fillText(nm[0],x-ctx.measureText(nm[0]).width/2,y) } }
+  if(P) for(const s of P.stars){ if(s[2]>5.5) continue; const [a,z]=hor(c,s[0],s[1]); if(a<0) continue; const [x,y]=P2(a,z); dot(x,y,Math.max(.6,3-s[2]*.5)*d,'#eef3ff',{k:'pt',o:{n:s[3],ra:s[0],dec:s[1],mag:s[2],k:'star'}}) }
+  if($('#oDso').checked&&P) for(const o of P.dso){ if(!o[4]) continue; const [a,z]=hor(c,o[0],o[1]); if(a<0) continue; const [x,y]=P2(a,z); ctx.strokeStyle=C.gal; ctx.lineWidth=d; ctx.beginPath(); ctx.arc(x,y,3*d,0,6.2832); ctx.stroke(); picks.push([x,y,{k:'pt',o:{n:o[4]+(o[7]?' '+o[7]:''),ra:o[0],dec:o[1],mag:o[2],k:'dso',id:o[3]}}]) }
+  if($('#oPl').checked&&AE){ ctx.font=`${11*d}px IBM Plex Sans, sans-serif`; for(const nm of PLANETS){ const b=body(c,nm); if(b.alt<-1) continue; const [x,y]=P2(b.alt,b.az); const col=nm==='Sun'?'#ffd166':nm==='Moon'?'#e9eefc':'#ffb36b';
+      dot(x,y,(nm==='Sun'||nm==='Moon'?6:3.6)*d,col,{k:'pt',o:{n:nm,ra:b.ra*15,dec:b.dec,k:'body',body:nm}}); ctx.fillStyle=col; ctx.fillText(nm,x+7*d,y-5*d) } }
+  // selected object: Telrad rings + true field
+  if(pSelObj){ const o=pSelObj, pos=o.k==='body'&&AE?body(c,o.body):null, [a,z]=pos?[pos.alt,pos.az]:hor(c,o.ra,o.dec);
+    if(a>-1){ const [x,y]=P2(a,z), px=deg=>deg/90*R*k;
+      if($('#oTel').checked){ ctx.strokeStyle='rgba(255,111,111,.9)'; ctx.lineWidth=1.2*d; for(const r of [0.25,1,2]){ctx.beginPath();ctx.arc(x,y,Math.max(2*d,px(r)),0,6.2832);ctx.stroke()} }
+      const fl=+$('#pFL').value||700, ep=$('#pEP').value.split(',').map(Number), cam=$('#pCam').value.split(',').map(Number), rot=(+$('#pRot').value)*Math.PI/180;
+      if(ep[0]>0&&ep[1]>0){ const tf=ep[1]/(fl/ep[0]); ctx.strokeStyle='#59d39a'; ctx.lineWidth=1.5*d; ctx.beginPath(); ctx.arc(x,y,Math.max(2*d,px(tf/2)),0,6.2832); ctx.stroke() }
+      if(cam[0]>0&&cam[1]>0){ const fw=2*Math.atan(cam[0]/2/fl)*180/Math.PI, fh=2*Math.atan(cam[1]/2/fl)*180/Math.PI; ctx.save(); ctx.translate(x,y); ctx.rotate(rot); ctx.strokeStyle='#6fd0ff'; ctx.lineWidth=1.2*d; ctx.strokeRect(-px(fw/2),-px(fh/2),px(fw),px(fh)); ctx.restore() } } }
+  ctx.restore();
+  ctx.font=`${12*d}px IBM Plex Mono, monospace`; ctx.fillStyle=C.fg; for(const [t,az] of [['N',0],['NE',45],['E',90],['SE',135],['S',180],['SW',225],['W',270],['NW',315]]){const [x,y]=P2(-5,az);ctx.fillText(t,x-ctx.measureText(t).width/2,y+4*d)}
+  legend.push(['star (size = brightness)','#eef3ff'],['planet / Sun / Moon','#ffb36b'],['Telrad rings 0.5°/2°/4°','#ff6f6f'],['eyepiece true field','#59d39a'],['camera frame','#6fd0ff']);
+  const moon=AE?(()=>{const ph=Astronomy.MoonPhase(c.date),il=Astronomy.Illumination(Astronomy.Body.Moon,c.date).phase_fraction;return ` · Moon ${Math.round(il*100)}% lit (${ph<180?'waxing':'waning'})`})():'';
+  hud(`${c.lat.toFixed(4)}°, ${c.lon.toFixed(4)}° · ${c.date.toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})} · Sun ${salt.toFixed(0)}°${moon}${AE?'':' · loading ephemeris'}`);
+  optics(); pointTables(c);
+}
+function optics(){ const fl=+$('#pFL').value||700, ep=$('#pEP').value.split(',').map(Number), cam=$('#pCam').value.split(',').map(Number);
+  const mag=ep[0]>0?fl/ep[0]:0, tf=ep[1]>0&&mag?ep[1]/mag:0, fw=cam[0]>0?2*Math.atan(cam[0]/2/fl)*180/Math.PI:0, fh=cam[1]>0?2*Math.atan(cam[1]/2/fl)*180/Math.PI:0;
+  $('#pOptics').textContent=`Eyepiece: ${mag.toFixed(0)}× magnification, true field ${(tf*60).toFixed(0)}′ (${tf.toFixed(2)}°). Camera: ${(fw).toFixed(2)}° × ${(fh).toFixed(2)}° field.` }
+function fmtT(t){return t?t.date.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}):'—'}
+function selInfo(c){ const o=pSelObj; if(!o){$('#pSel').textContent='Click an object on the chart or use Find.';return}
+  let alt,az,ra=o.ra/15,dec=o.dec,extra='';
+  if(o.k==='body'&&AE){const b=body(c,o.body);alt=b.alt;az=b.az;ra=b.ra;dec=b.dec;
+    const B=Astronomy.Body[o.body],rs=Astronomy.SearchRiseSet(B,c.obs,+1,c.date,1),st=Astronomy.SearchRiseSet(B,c.obs,-1,c.date,1),tr=Astronomy.SearchHourAngle(B,c.obs,0,c.date);
+    extra=`\nrises ${fmtT(rs)} · transits ${fmtT(tr.time)} (alt ${tr.hor.altitude.toFixed(0)}°) · sets ${fmtT(st)}`}
+  else { [alt,az]=hor(c,o.ra,o.dec); if(AE){ try{ Astronomy.DefineStar(Astronomy.Body.Star1,o.ra/15,o.dec,1000); const B=Astronomy.Body.Star1,rs=Astronomy.SearchRiseSet(B,c.obs,+1,c.date,1),st=Astronomy.SearchRiseSet(B,c.obs,-1,c.date,1),tr=Astronomy.SearchHourAngle(B,c.obs,0,c.date); extra=`\nrises ${fmtT(rs)} · transits ${fmtT(tr.time)} (alt ${tr.hor.altitude.toFixed(0)}°) · sets ${fmtT(st)}${!rs&&!st?' (circumpolar or never rises)':''}` }catch(e){} } }
+  const off=calOffsets(), corr=off?`\nyour mount should read  alt ${(alt+off.dalt).toFixed(2)}°, az ${((az+off.daz+360)%360).toFixed(2)}° (calibrated)`:'';
+  const dir=['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'][Math.round(az/22.5)%16];
+  $('#pSel').textContent=`${o.n}${o.mag!=null?'  ·  mag '+o.mag:''}\naltitude ${alt.toFixed(2)}°   azimuth ${az.toFixed(2)}° (face ${dir})   ${alt<0?'below the horizon':alt<15?'low: through thick air':'well placed'}\nRA ${ra.toFixed(4)} h   Dec ${dec.toFixed(3)}°${extra}${corr}` }
+function pointTables(c){ selInfo(c); if(!P) return;
+  const bright=P.stars.filter(s=>s[2]<=2.2&&!/^HIP|^HYG/.test(s[3])).map(s=>{const [a,z]=hor(c,s[0],s[1]);return{s,a,z}}).filter(o=>o.a>=25&&o.a<=70).sort((x,y)=>x.s[2]-y.s[2]);
+  const chosen=[]; for(const o of bright){ if(chosen.every(q=>{const dz=Math.abs(((o.z-q.z+540)%360)-180);return dz>=50})) chosen.push(o); if(chosen.length>=5) break }
+  $('#alignTab tbody').innerHTML=chosen.map(o=>`<tr><td>${o.s[3]}</td><td>${o.s[2]}</td><td>${o.a.toFixed(1)}°</td><td>${o.z.toFixed(1)}°</td><td>${(o.s[0]/15).toFixed(3)} h / ${o.s[1].toFixed(2)}°</td></tr>`).join('')||'<tr><td colspan="5">No bright stars in the 25°–70° band right now.</td></tr>';
+  const sel=$('#cStar'), cur=sel.value; sel.innerHTML=bright.slice(0,30).map(o=>`<option>${o.s[3]}</option>`).join(''); if(cur) sel.value=cur;
+  $('#calTab tbody').innerHTML=CAL.map(r=>`<tr><td>${r.n}</td><td>${r.ta.toFixed(2)}</td><td>${r.ra.toFixed(2)}</td><td>${r.tz.toFixed(2)}</td><td>${r.rz.toFixed(2)}</td><td>${(r.ra-r.ta).toFixed(2)}</td><td>${(((r.rz-r.tz)+540)%360-180).toFixed(2)}</td></tr>`).join('');
+  const off=calOffsets(); $('#calOut').textContent=off?`Index offsets from ${CAL.length} star${CAL.length>1?'s':''}: altitude ${off.dalt>=0?'+':''}${off.dalt.toFixed(2)}°, azimuth ${off.daz>=0?'+':''}${off.daz.toFixed(2)}°. Scatter after correction ${off.rms.toFixed(2)}°${off.rms>0.5?' — larger than 0.5°: check that the mount is level, or add more stars.':' — good.'}`:'Add at least one star to measure your offsets.' }
+function calOffsets(){ if(!CAL.length) return null; const da=CAL.map(r=>r.ra-r.ta), dz=CAL.map(r=>((r.rz-r.tz)+540)%360-180), m=a=>a.reduce((x,y)=>x+y,0)/a.length, A=m(da),Z=m(dz);
+  const rms=Math.sqrt(m(CAL.map((r,i)=>(da[i]-A)**2+((dz[i]-Z)*Math.cos(r.ta*Math.PI/180))**2))); return {dalt:A,daz:Z,rms} }
+$('#cAdd').onclick=()=>{ const n=$('#cStar').value, s=P&&P.stars.find(x=>x[3]===n), ra=parseFloat($('#cAlt').value), rz=parseFloat($('#cAz').value); if(!s||isNaN(ra)||isNaN(rz)) return;
+  const c=pctx(), [ta,tz]=hor(c,s[0],s[1]); CAL.push({n,ta,tz,ra,rz,t:Date.now()}); try{localStorage.setItem('aegis-cal',JSON.stringify(CAL))}catch(e){} $('#cAlt').value='';$('#cAz').value=''; draw() };
+$('#cClear').onclick=()=>{CAL=[];try{localStorage.removeItem('aegis-cal')}catch(e){};draw()};
+$('#xGo').onclick=()=>{ const c=pctx(),ra=+$('#xRA').value*15,de=+$('#xDe').value,[a,z]=hor(c,ra,de); $('#xOut').textContent=`altitude ${a.toFixed(3)}°   azimuth ${z.toFixed(3)}°   (J2000 input, apparent output with refraction, at ${c.date.toLocaleTimeString()})` };
+function doFind(){ const q=$('#pFind').value.trim().toLowerCase(); if(!q) return; const pl=PLANETS.find(n=>n.toLowerCase()===q);
+  if(pl){pSelObj={n:pl,k:'body',body:pl,ra:0,dec:0};draw();return}
+  const L=catalogAll(); const hit=L.find(o=>o.n.toLowerCase()===q)||L.find(o=>o.n.toLowerCase().startsWith(q))||L.find(o=>(o.id||'').toLowerCase().replace(/^ngc0*/,'ngc ').replace(/^ic0*/,'ic ')===q.replace(/\s+/,' '))||L.find(o=>o.n.toLowerCase().includes(q));
+  if(hit){pSelObj=hit;draw()} else $('#pSel').textContent='Not found in this catalog (bright stars, Messier, NGC/IC brighter than mag 9, planets).' }
+$('#pGo').onclick=doFind; $('#pFind').addEventListener('keydown',e=>{if(e.key==='Enter')doFind()});
+$('#nightBtn').onclick=()=>{const on=!document.body.classList.contains('night');document.body.classList.toggle('night',on);$('#nightBtn').setAttribute('aria-pressed',on)};
+function fillNames(){ if(!P) return; $('#pNames').innerHTML=[...PLANETS,...catalogAll().map(o=>o.n)].slice(0,1500).map(n=>`<option value="${n.replace(/"/g,'&quot;')}">`).join('') }
 
 /* local universe (supergalactic slice) */
 const LUN=[['Virgo Cluster',-3.7,15.6],['Coma Cluster',0.3,71],['Perseus–Pisces',50,-10],['Centaurus Cluster',-36,15],['Great Attractor (Norma)',-50,8],['Local Void',-5,-25]];
@@ -400,6 +542,7 @@ function fillFollow(){const V=S.vet||{},m=$('#vetSel').value;const top=[...S.fla
 cv.addEventListener('click',e=>{ if(drag&&drag.moved) return; const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1,x=(e.clientX-r.left)*d,y=(e.clientY-r.top)*d;
   let best=null,bd=1e9; for(const [px,py,o] of picks){const dd=(px-x)**2+(py-y)**2;if(dd<bd){bd=dd;best=o}} if(!best||bd>(14*d)**2) return; showPick(best)});
 function showPick(o){
+  if(o.k==='pt'){pSelObj=o.o; draw(); return}
   if(o.k==='dso'||o.k==='dbl'||o.k==='var'||o.k==='tstar'){
     const z=o.k==='dso'?o.o:o.k==='dbl'?o.b:o.k==='var'?o.v:o.s; selT=[z[0],z[1]];
     const fmt=(ra,de)=>`RA ${(ra/15).toFixed(3)} h, Dec ${de.toFixed(2)}°`;
@@ -437,10 +580,10 @@ document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.datase
 document.querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=+b.dataset.level;document.querySelectorAll('[data-level]').forEach(x=>x.setAttribute('aria-pressed',x===b));try{localStorage.setItem('aegis-level',level)}catch(e){}draw()});
 try{const l=localStorage.getItem('aegis-level');if(l!=null){level=+l;document.querySelectorAll('[data-level]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.level===level))}}catch(e){}
 const outs={fAge:['oAge',v=>v+' days'],fV:['oV',v=>v+' km/s'],fD:['oD',v=>v+' pc'],fZ0:['oZ0',v=>(+v).toFixed(2)],fZ1:['oZ1',v=>(+v).toFixed(2)],fSlab:['oSlab',v=>'±'+v+'°']};
-document.querySelectorAll('#tonightCard input,#luCard input').forEach(el=>el.addEventListener('input',sched));
+document.querySelectorAll('#tonightCard input,#luCard input,#pointCard input').forEach(el=>el.addEventListener('input',sched));
 $('#vetSel').addEventListener('input',()=>{if(S)fillFollow()});
 document.querySelectorAll('#filters input,#filters select').forEach(el=>el.addEventListener('input',()=>{const o=outs[el.id];if(o)$('#'+o[0]).textContent=o[1](el.value);sched()}));
-const h=(location.hash||'').slice(1); if(['local','msky','lu','web','gsky','tonight','first'].includes(h)){view=h;document.querySelectorAll('[data-view]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.view===h))}
+const h=(location.hash||'').slice(1); if(['local','msky','lu','web','gsky','tonight','point','first'].includes(h)){view=h;document.querySelectorAll('[data-view]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.view===h))}
 window.addEventListener('resize',sched); calc(); draw();
 })();
 </script>
