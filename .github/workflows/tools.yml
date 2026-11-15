@@ -20,6 +20,6 @@ jobs:
       - run: pip install ./tools/aion ./tools/scorecard pytest
       - run: git config --global user.email ci@example.com && git config --global user.name ci
       - run: pytest -q tools/aion/tests tools/scorecard/tests tools/tracker/tests apps/skymap/tests/test_export.py
-      - run: cd ufe-v2 && pytest -q tests/test_discoveries.py
+      - run: cd ufe-v2 && python -m pytest -q tests/test_discoveries.py
       - run: aion check --repo .
       - run: python tools/tracker/track.py --out /tmp/tracker
