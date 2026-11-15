@@ -110,3 +110,4 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - Twist-M write-up (DEEP 3): credit quintessential inflation (Peebles–Vilenkin; 2311.02730) and kination-GW work (2111.01150, 2307.12913).
 - (DEEP 4): credit 0707.1544 (quintessential kination & leptogenesis) where kination-assisted leptogenesis is mentioned.
 - v2 (DEEP 6): credit 2107.09064 / 2107.09065 (exponentially small Λ from flux vacua) for the 'Λ from the cliff' idea.
+- v2 (DEEP 8): credit Planckian interacting dark matter (Garny–Sandora–Sloth; 1709.09688) for the gravity-only DM.

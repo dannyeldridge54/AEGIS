@@ -4742,3 +4742,7 @@ INCONSISTENT for Twist-2.** One intermediate cycle τ_c ≈ 40 can set both Λ's
 m ≈ 1e4 H0 is 7% from 1. Twist-2's n = 125 gives n/S ≈ 0.5, which is not an integer within tolerance. Mild support only: identifying the cliff exponent with a unit-charge instanton action is
 an O(1)-uncertain step, and the 15% tolerance was generous. If it holds, it gives a falsifiable prediction. The axion is then at the heavy end, so β at reionization ≈ 0, while β at recombination =
 0.28° (Δβ ≈ 5.5σ at LiteBIRD's headline noise, D484). Result.
+
+**DEEP 8 (Danny "Pp", 21:11 CT; topic 8 DM; literature).** The Twist's gravity-only DM is a Planckian-interacting-DM instance (Garny–Sandora–Sloth; 1709.09688, 1810.01428,
+2003.07366), so it gets credit. Because the gravitational freeze-in yield scales as T_max³, the 100–200 TeV window is model-history dependent. It must be recomputed for Twist-M
+(longer kination, different T_max) before being quoted. Open item, not computed.
