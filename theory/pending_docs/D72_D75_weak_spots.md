@@ -5283,3 +5283,9 @@ What remains as the work's own contribution:
 (3) the parity scan with anomaly and τ = i selection checks (D528–D533, D542, D551), applying 2207.14014's mechanism;
 (4) the data framing and the public audit trail, including withdrawals.
 v2.2 must credit 2303.02947 and state plainly that the inflation model is assembled from published ingredients.
+
+## D557 — DEEP (Dp tick, 22:53 CT; literature + arithmetic) — light-tower corrections to SERAPIS's predictions are negligible
+Lüst, Masias, Pieroni, Scalisi (arXiv:2512.07930): a tower whose masses fall with the inflaton corrects n_s, r and f_NL by ~ (H/Λ_sp)^{2+p} (p = 1 for an equispaced KK tower). Consistency needs H ≪ Λ_sp.
+SERAPIS: H = 9.1e12 GeV and Λ_sp ≈ 2.2e17 GeV at Im τ* (D540), so H/Λ_sp = 4e-5 and the corrections are ~ (4e-5)³ ≈ 7e-14. Negligible.
+PC: J2 at 11 of 16 points (all FAIL so far); J3 not started.
+Status: the tower is no threat to the predictions in the controlled regime (M_s ≳ 1e17 GeV, D554). The open string-origin question is about the plateau's existence, not about corrections to it.
