@@ -6080,3 +6080,15 @@ Comparison with two-term SERAPIS at i (D602, ε = 1.3–1.6e-4): the same observ
 So current and near-future data CANNOT distinguish the i and ρ vacua through n_s and r; the vacuum location shows up only in reheating details and the flavour/selection structure.
 Status of SERAPIS-ρ: vacuum, inflation, home bound, proton parity (D612) and N* history all pass. String-natural ingredients; novelty only in the combination (D611).
 Remaining, as for two-term: the gravitino/dilaton/LSP chain (D584–D596; vacuum-independent in form, re-check the numbers), and baryogenesis (AD route, D599–D604; vacuum-independent).
+
+## D614 — DEEP (Ddl 08:28 CT; arithmetic re-check of D584–D596 for SERAPIS-ρ; estimates, not locked) — the SUSY/dilaton/LSP chain carries over to ρ with shifted numbers
+(H from r = 4.6–5.1e-4: H ≈ 5.2–5.5e12 GeV; m_vac/H ≈ 0.0134, D610/D613.)
+- Inflaton mass m_φ ≈ 7.0–7.4e10 GeV (versus 1.9e11 at i).
+- Gravitino closure (D584): m₃/₂ > m_φ/2 ≈ 3.5–3.7e10 GeV. No-scale soft masses ~m₃/₂/16π² ≈ 2.3e8 GeV (D585). The Higgs-mass bound (≲ 2e10) is satisfied with more margin than at i. Proton dim-5: M_eff ~ M_P²/m₃/₂ ≈ 1.6e26 GeV, safe.
+- Kallosh–Linde problem (D586): H/m₃/₂ ≈ 150 (versus 37 at i). It still needs the SUSY racetrack with m_Y ≫ H.
+- LSP via the dilaton (D591–D596):
+  - The stiff phase is stiffer here (w = 5/7, ρ_x/ρ_end = 1.3e-6), so the growth from N_end + 1.5 to the crossover is G ≈ 11 (versus 8.6 at i).
+  - Requirement: f_Y(N_end + 1.5) ≲ 3.5e-12. By the D592/D594 power law this is R = m_Y/H_end ≳ 140–150, i.e. m_Y ≳ 1e15 GeV. It fits in the racetrack window (×100+).
+- Baryogenesis: AD along LH_u (D599–D604) is vacuum-independent. T_R ≈ 1e3–1e5 GeV under the D601 sterile logic, which carries over because physical masses are stationary at ρ too (ρ is a fixed point of ST).
+- So the same Σm_ν ≈ 0.059 eV (NO) prediction holds.
+Verdict: SERAPIS-ρ passes the same consistency chain as two-term SERAPIS, with a lighter inflaton (~7e10 GeV), a lighter gravitino (≳ 3.5e10) and lighter soft masses (~2e8). Estimates; the AD and dilaton toys were not re-run at ρ.
