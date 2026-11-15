@@ -6501,3 +6501,6 @@ DEEP (locked PREREG_D678; results/janus_strip_d678.txt; figure papers/v3/figs/fi
 
 ## D680
 DEEP (locked PREREG_D680; results/rho_strip_d680.txt) — exact ρ strip: edges N* = 46.09: r = 5.308e-4 + 1.709e-2x + 0.255x²; N* = 49.49: r = 4.328e-4 + 1.494e-2x + 0.237x² (x = n_s − 0.97); width ≤ 22% at fixed n_s; offset from the τ = i strip ≤ 2.2%. Untilted points coincide (n_s = 0.9587 / r = 3.69e-4 vs τ = i 0.9587 / 3.69e-4 at N* ≈ 46.1): the strip is a property of the modular plateau, not of which vacuum. Frozen as D681 (union, both vacua).
+
+## D682
+CENTRE (arithmetic on locked outputs D602/D678; estimate, not locked) — the strip is a reheating thermometer. Its height at fixed n_s comes only from the N* bracket, so a joint (n_s, r) measurement fixes N* within the family: dr/dN* = 2.6e-5 (n_s = 0.965), 2.9e-5 (0.970), 3.3e-5 (0.975) per e-fold. From D602, N* moves 0.76 e-folds per decade of T_R at fixed post-inflation history, and by ~1.57 between a matter-like (w = 0) and an octic (w = 3/5) stiff phase. So σ(r) ≈ 2–2.5e-5 at r ≈ 5e-4 would read T_R to about one decade, given w (T_R and w are degenerate along N*). Far beyond planned experiments (σ(r) ~ 1e-4 is already futuristic); recorded as a conceptual payoff of the closed relation, not a near-term test.

@@ -12,3 +12,4 @@
 - ρ cap computed (D676) — same as τ = i; combined family-wide cap frozen (D677): n_s ≤ 0.985, r ≤ 8.3e-4.
 - Exact allowed strip in the (n_s, r) plane (D678, frozen D679) and new Fig. 5.
 - ρ strip computed exactly (D680), identical within 2.2%; combined strip frozen (D681); Fig. 5 shows both.
+- The strip as a reheating thermometer (D682, estimate).
