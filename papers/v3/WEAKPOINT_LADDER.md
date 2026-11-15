@@ -10,3 +10,15 @@ Order = cheapest high-value first.
 - [x] W6 (D643: m² = (1−k)m3/2²; gauginos loop; scale 3e8–1e10) Soft-mass sector: (a) which modular weights the D597 S3/Γ2 flavour assignment gives the MSSM fields; (b) gaugino masses from f(τ) with F_τ ≠ 0 vs anomaly mediation; (c) slepton tachyon check with the actual F-terms (gauge kinetic function + weight-1 corrections).
 - [x] W7 (D645: no derivation found; natural size ε = 3ξ(m3/2/H)², ξ ≈ 0.06, marginal) ε origin: one more dedicated search (2025–26) for a modular/threshold source of a term linear in |j − 1728| (or |E6|²/|Δ|^{1/2}) with natural size 1e-4; if none, compute the natural size of ε from (m3/2/H_inf)^k or one-loop threshold ratios and report the closest match honestly.
 - [ ] W8 Fold results into paper v3, re-run a referee pass, rebuild package.
+
+## Round 2 (Danny 10:25 CT "Continue derivation")
+- [x] W9 Modular-covariant completion (D647): W = (W0 + fX)η^{-2} → F_τ = 0 at i and ρ; inflaton carries no SUSY breaking; soft masses = m3/2 for any weight. Confirmed independently by referee 3.
+- [x] W10 m3/2 bounds (D648: ≲ 3–8 TeV with plateau sector fixed; D649: ≲ 2.6e6 GeV by X-positivity at y ≈ 26).
+- [x] W11 Spectrum window (D650, estimates): m3/2 ≈ 2.5e5–1.1e6 GeV, wino LSP 0.66–2.9 TeV, gluino 4.7–21 TeV; paper adopts the covariant completion.
+- [x] W8 referee pass 3 → fixes (ε hint corrected and dropped as a hint; AD factor 2; c = 1.1865; accuracy quoted as ~2%).
+Open:
+- [ ] W12 Dilaton–LSP bound (D592–D596) redone for a TeV wino LSP and m3/2 ~ 1e5–1e6 GeV.
+- [ ] W13 Thermal effects on the AD flat direction (thermal mass/log) at T_R 1e3–1e5 GeV.
+- [ ] W14 Yukawas non-vanishing at τ = i: flavour representations (referee 3 item 2) — now only needed for the constant-W0 chain and for the A-term argument (ŷ(i) ≠ 0).
+- [ ] W15 Inflaton → gravitino at next order in the covariant completion (F_τ = 0 at the minimum; ∂F_τ ≠ 0?) with m3/2 ≪ m_φ.
+- [ ] W16 SERAPIS-ρ: repeat W9–W11 (G_τ(ρ) = 0 already shown).
