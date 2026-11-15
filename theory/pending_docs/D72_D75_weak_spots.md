@@ -5971,3 +5971,16 @@ Testability:
 - Any future Σm_ν detection clearly above ~0.065 eV (with NO) would mean m_ν1 ≳ 0.01 eV. That is incompatible with AD-LH_u leptogenesis at our T_R and would push baryogenesis back to the failing inflaton-decay routes (D589–D598).
 - A cosmological preference below 0.059 eV is a problem for oscillation physics in ΛCDM generally, not for this model specifically.
 Note: SERAPIS's late universe has a separately tuned Λ (D538). If dark energy is dynamical, the bound relaxes and the test weakens.
+
+## D605 — FORWARD PREDICTIONS (Ddl 08:18 CT; locked PREREG_D605_FORWARD_TWOTERM) — the two-term SERAPIS package is frozen for future data
+Bands:
+- n_s 0.970–0.975; r 4.8–5.7e-4; n_t = −r/8.
+- Σm_ν ≈ 0.059–0.060 eV, normal ordering.
+- No superpartners below ~1e8 GeV; m₃/₂ ≈ 1e11 GeV.
+- Negligible isocurvature; f_NL ≈ 0.01.
+Scoring rules are in the lock. ε is post-hoc, declared.
+Main tests and their order:
+- Simons Observatory / CMB-S4 / LiteBIRD: r at ~5σ if σ(r) ≈ 1e-4.
+- DESI DR3 / Euclid: Σm_ν.
+- JUNO / DUNE / Hyper-K: mass ordering.
+This supersedes D567 as the CURRENT forward package. D567 stays locked as a historical record (D567a: its reheating premise failed).
