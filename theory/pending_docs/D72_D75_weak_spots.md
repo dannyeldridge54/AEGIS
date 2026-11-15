@@ -5939,3 +5939,13 @@ Consequences:
 - Gravitino (D584, closed kinematically) and LSP (D592–D596) conclusions are unchanged.
 Verdict: the "sterile inflaton at a fixed point" structure is the key physics of two-term SERAPIS reheating. It gives low T_R, which favours AD leptogenesis with a massless lightest neutrino, and it shifts the n_s band down by ~0.001–0.003 (estimate).
 D601a (typo correction, same tick): the sfermion-channel arithmetic printed T_R ≈ 350–710 GeV, not "2–4e2". The range conclusion (T_R ≈ 1e3–1e5 GeV, N-dominated) is unchanged.
+
+## D602 — DEEP (Ddl 08:15 CT; locked PREREG_D602_EPS_WINDOW_LOWTR; results/eps_window_lowtr_d602.txt) — at the D601 reheating temperature the ε window shifts UP to 1.3–1.6e-4; the prediction band is n_s ≈ 0.970–0.975, r ≈ 4.8–5.7e-4
+With T_R = 1e3–1e5 GeV: N* = 46.1–49.2 (versus 49–51 in D581). n_s includes the D588 offset (−0.0003); y* includes the D588 shift (−0.4).
+- ε = 1.0e-4: n_s 0.9672–0.9700. The T_R = 1e3, w = 0 row is −2.1σ vs SPA+DESI, so it fails the 2σ rule. Excluded.
+- ε = 1.3e-4: n_s 0.9698–0.9727, r 4.8–5.2e-4, y* 23.2–24.1. All pass.
+- ε = 1.6e-4: n_s 0.9725–0.9754, r 5.2–5.7e-4, y* 23.6–24.5. All pass (+0.4σ to +1.0σ SPA+DESI; up to +2.3σ SPA).
+- ε = 2.0e-4: one row leaves home (y* = 25.0). ε = 2.5e-4: out.
+ALLOWED: {1.3e-4, 1.6e-4}. The window moved up and stays about 25–30% wide.
+Updated post-hoc band for two-term SERAPIS (scored only on future data): n_s = 0.970–0.975, r = 4.8–5.7e-4, N* = 46–49, T_R = 1e3–1e5 GeV.
+The r prediction strengthens slightly: r ≈ 5e-4 is a ~5σ target for σ(r) = 1e-4 experiments.
