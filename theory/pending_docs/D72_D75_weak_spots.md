@@ -5734,3 +5734,17 @@ Price and open item:
 - The D193 window was narrow (A ≈ 5e-7 – 2e-6, ×4); it needs re-evaluating for SERAPIS's H_inf (lower than the Twist's 1.5e13, so the window should widen; not computed).
 - With m_Y ≈ 4e13 > 2m₃/₂, the decay Y → 2ψ₃/₂ is open. With F_Y ≈ 0 at the SUSY racetrack point, G_eff ~ m₃/₂/m_Y ~ 3e-3 gives Br ~ O(1e-2) (estimate). Y's abundance is suppressed by its small displacement. Whether the resulting gravitino yield is safe is NOT computed. Flagged.
 Verdict: the KL problem is real but evadable by a known mechanism already used in this project. Open: the racetrack window at SERAPIS's H, and dilaton-induced gravitinos (both need locks).
+
+## D587 — DEEP (DpL tick 3, 07:58 CT; locked PREREG_D587_TWO_FIELD_DN; results/two_field_dn_d587.txt) — two-field δN CONFIRMS D582 (axion harmless), but the self-check FAILED: exact e-fold counting differs from our slow-roll counting by 1.7 e-folds
+Two-field integration: hyperbolic metric, exact Christoffels, mpmath gradients (dps 150) to avoid cancellation; ε = 1e-4, starting from y* = 24.29.
+- The axion stays frozen: x_end/x₀ = 0.99949 for every offset.
+- ΔN(x₀) = 3.6e-11, 3.6e-9, 3.6e-7, 3.2e-6 for x₀ = 1e-4 … 3e-2. This is cleanly quadratic, N_xx ≈ 7.2e-3.
+- δN_iso = ½N_xx δx² = 5e-13 (δx = 1.2e-5). Ratio to ζ: 1.1e-8, below the 1e-3 threshold. **D582 CONFIRMED.**
+Self-check FAILED (as locked: |N(0) − 50| ≤ 0.5):
+- The exact two-field background from the single-field y*(N = 50) gives N = 51.70. So the slow-roll ∫V/V′dφ count used in D564–D581 undercounts by about 1.7 e-folds at this y*.
+- Implication: in our scripts, the y* labelled "N*" actually corresponds to N_exact ≈ N* + 1.7. Rough attractor scaling, Δn_s ≈ −2ΔN/N², means our quoted n_s may be HIGH by ~0.001–0.0014 relative to a correct N* assignment, and y* slightly too large (which helps home-safety).
+- This is NOT corrected here (no rerun to chase results). A locked follow-up must:
+  1. confirm the offset with an exact single-field integration;
+  2. recompute n_s, r and y* from the exact background (ideally with the Mukhanov–Sasaki or second-order slow-roll n_s);
+  3. propagate to D575/D577/D578/D581 and the D567 bands.
+- Caution flag on every n_s quoted since D564: systematic ≈ −0.001 pending verification.
