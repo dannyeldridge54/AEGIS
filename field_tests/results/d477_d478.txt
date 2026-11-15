@@ -1,0 +1,8 @@
+== D477: x_E2=135.14, zeta_max=0.0274 at x=63.2, dphi=1.860 M_P, Lambda2/Lambda~0.23
+  r=3.0e-05: V_b=1.49e-22 M_P^4, S~1.6e+24
+  r=1.4e-04: V_b=7.68e-20 M_P^4, S~3.1e+21
+  r=1.0e-01: V_b=1.84e-08 M_P^4, S~1.3e+10
+  VERDICT: STABLE
+== D478
+  M_s(x*)=1.0 M_P: m_phi=1.04e+18 GeV = 6.1e+04 H -> NO ISOCURVATURE
+  M_s(x*)=1.5 M_P: m_phi=1.56e+18 GeV = 9.2e+04 H -> NO ISOCURVATURE

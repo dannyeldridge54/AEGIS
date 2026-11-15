@@ -4598,3 +4598,12 @@ k = m_s² r² M_P² ζ′ c x_E = 3e8–7e9 GeV⁴ for an eV soft mass and 3e34�
 (water 1, Earth's core 13, neutron star 1e15 g/cm³) pushes with βρ ≪ k, so the field does not move at all (the hard wall blocks pushes the other way). The response is
 linear-threshold, not Yukawa, so there is no long-range force to bound. This removes the usual volume-modulus fifth-force/EP problem (MICROSCOPE, Cassini) for
 the Twist without tuning β. It complements F1 (no α drift, D400/D417). Result → walls 0.
+
+**D477 (cycle 62; PART 6; scored, PREREG_D477_D478; results/d477_d478.txt) — STABLE: our vacuum at x_E is metastable in principle but lives
+forever in practice.** The stringy FI term has a second zero at x_E2 = 135.1, where the cliff energy is lower (Λ₂ ≈ 0.23 Λ, approximate). The barrier is
+the D-term bump (ζ_max = 0.0274 at x = 63.2, V_b = 1.5e-22–1.8e-8 M_P⁴ for r = 3e-5–0.1) across Δφ = 1.86 M_P. Thick-wall estimate S ≈ 1e10–1.6e24, so decay
+∝ e^{−S}, which is negligible (O(10) uncertainty in S is irrelevant). This is a new structural feature: the Twist's landscape has (at least) a lower-Λ neighbour,
+safely separated. Result → walls 0.
+
+**D478 (cycle 63; F4; scored) — NO ISOCURVATURE from φ.** During inflation (𝒱(x*) = 1) the screening field's D-term mass is m_φ ≈ g|ζ|^{1/2}M_s(x*) = 1.0–1.6e18 GeV
+= 6e4–9e4 H_inf, so it is frozen and heavy, with no isocurvature or extra fluctuations. Result → walls 0.
