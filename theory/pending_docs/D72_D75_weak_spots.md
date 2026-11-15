@@ -5984,3 +5984,14 @@ Main tests and their order:
 - DESI DR3 / Euclid: Σm_ν.
 - JUNO / DUNE / Hyper-K: mass ordering.
 This supersedes D567 as the CURRENT forward package. D567 stays locked as a historical record (D567a: its reheating premise failed).
+
+## D606 — DEEP (Ddl 08:19 CT; arithmetic + reasoning, not locked) — origin of ε: loops of our own heavy states are far too small; a two-sector Coleman–Weinberg ratio gives ε ~ 1e-4 for a mass ratio ≈ 0.1 (an idea, not derived)
+- (a) A Coleman–Weinberg term from the heavy-N sector, δV ~ m_soft²M_N²/16π², relative to V₀ = 3H²M_P²: ε ~ 1e-25. Hopeless.
+- (b) Abe et al. (2607.00528, D572) generate a whole modular plateau from one loop of vector-like quarks with M_Q·Y(τ) masses, V_CW ∝ M_Q⁴-type.
+  - If the plateau comes from such a sector (Y_a), and a second sector couples through E₆-type forms (giving the |j − 1728|¹-like I₁), then ε ~ (λ₂/λ₁)²(M₂/M₁)⁴.
+  - ε ≈ 1.3–1.6e-4 needs M₂/M₁ ≈ 0.11 for equal couplings: a mild hierarchy, (0.1)⁴ = 1e-4.
+  - Not shown:
+    1. whether a CW loop with E₆-weighted masses actually produces the I₁ = ln(1 + |j − 1728|/1728) shape;
+    2. whether it is compatible with the plateau sector's τ = i vacuum and SUSY structure.
+- (c) Gravitino-loop (species) term: wrong shape (D593/D577).
+Verdict: ε is still unexplained. The most plausible origin is a ratio of two loop sectors with a ~10× mass hierarchy, which would make ε ~ 1e-4 natural-looking. That would need a dedicated construction, which is a substantial project, not a single Dp.
