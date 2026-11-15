@@ -216,3 +216,25 @@ alone.
 - **Home conditions:** factorised T² ⊕ T⁴, flux-free T², |b^{N=2}| ≲ 2, M_s ≳ 1e17 GeV (D530, D532, D553, D554). This is incompatible with Twist-2's low M_s, so SERAPIS and Twist-2 are separate realisations.
 - **Proton:** Z₄^R/Z₈^R modular-centre parity, anomaly-checked, safe for m₃/₂ ≲ 100 TeV and compatible with the τ = i vacuum (D528–D533, D542, D551).
 - **Twist-M case (i) FI trap:** NOT CAPTURED (D547).
+
+**UPDATE (15 Nov 2026, 08:45 CT; D574–D618). These entries supersede the 14 Nov block where they conflict.**
+- **τ = i derived (D574).** S-symmetry makes τ = i a critical point of any invariant V. Weight parity makes E₆(i) = 0, so j − 1728 has a double zero there. NOT derived: that i is a minimum, or that Λ ≠ 0.
+- **SERAPIS-KL flaw (D574).** The vacuum is massless (quartic at p = 1, octic at p = 2). The D567 bands are conditional (D567a); their reheating premise fails (D578).
+- **Current reference models.** Both are post-hoc in ε and scored only on future data.
+  - **Two-term SERAPIS (τ = i):** plateau + ε·I₁ (I₁ ∝ ln(1 + |j − 1728|/1728)), ε = 1.3–1.6e-4. The single term gives both the vacuum mass and the tilt. Forward package locked as D605: n_s 0.970–0.975, r 4.8–5.7e-4.
+  - **SERAPIS-ρ:** L_j plateau + ε·(L_η − L_η(ρ)), ε = 6e-5. String-natural ingredients; vacuum at the hexagonal torus. Forward package locked as D615: n_s 0.969–0.972, r 4.6–5.1e-4.
+  - n_s and r cannot separate the two vacua.
+- **Consistency chain (both models):**
+  - exact Mukhanov–Sasaki n_s (D588);
+  - axion harmless (D582/D587);
+  - inflaton "sterile" at the fixed point, so T_R ≈ 1e3–1e5 GeV (D601);
+  - gravitino closed kinematically, m₃/₂ ≳ m_φ/2 (D584);
+  - no-scale soft masses ~1e8–1e9 GeV, Higgs OK (D585);
+  - KL problem solved by a SUSY racetrack with a ×100+ window (D586/D591);
+  - LSP problem avoided by an adiabatic dilaton, m_Y ≳ 1e15 GeV (D592–D596);
+  - proton parity OK at both i and ρ (D551, D612).
+- **Baryogenesis.** Inflaton-decay leptogenesis falls ×1.75–7 short (D589a–D598). Affleck–Dine along LH_u works (D599–D604) and predicts Σm_ν ≈ 0.059 eV with normal ordering. That sits exactly at DESI DR2's ΛCDM bound of 0.0592 eV (D604).
+- **Open problems:**
+  - the size and microscopic origin of ε (D576, D606–D608, D616–D618: every attempted explanation failed or is only a reparametrisation);
+  - at τ = i, the |j − 1728| structure has no string source (DKL-type thresholds prefer ρ, D608).
+- **Prior art (credit):** KL 2408.05203 and 2512.02969 (tilt mechanism); Casas–Ibáñez 2407.12081 and 2507.05345; Abe et al. 2607.00528 (= SERAPIS-NP); Ding et al. 2411.18603 (inflaton → N leptogenesis); Carrasco–Kallosh–Linde–Roest 2503.14904 (axion); FHY hep-ph/0102187 and hep-ph/0109154 (AD).
