@@ -4695,3 +4695,11 @@ left it out) is wrong: the FI soft slope would grab the field and pin it at x = 
 re-check. If the FI sector does not exist, D493's fifth force is unscreened. Twist-M therefore needs ONE of: (i) FI present → recompute the capture with x_E = 1 (the D446 machinery
 applies; the remnant conditions return); (ii) no FI, with another fifth-force suppression (β ≲ 3e-3 for the volume modulus, i.e. matter not coupling through the volume, or a
 different screening). D492's self-relaxation result stands only for case (ii).
+
+**D499 (Twist-M M8; CENTRE consolidation) — Twist-M status after D490–D498.**
+Works: an exact duality V(1/x) = V(x) (D490); fits n_s/r/α_s with one fitted ε like Route A (D491: r = 0.0045, α_s = −8e-4); Λ at the symmetry-fixed point x = 1 with n = 234.05 (D494);
+late-time w₀ = −1.0000, w_a ≈ 0 (D495); EDE at recombination ~2e-4; KK tower marginal-OK (D497); vacuum = global minimum (V′(1) = 0, mirror plateaus).
+Tension: the tracker 'self-relaxation' (D492) and fifth-force screening (D493) cannot both hold with the same FI sector (D498). Case (i), FI present: the field crosses x = 1 during
+kination (N ≈ 1–2), overshoots, and is pulled back by a two-sided V-shaped soft potential (duality-screened on both sides). That is the original capture story moved to x = 1, so
+the remnant conditions (D444–D468) apply again; an eV soft mass keeps them mild (D467-type). Not yet run. Case (ii), no FI: needs β ≲ 3e-3. Corrections pending: ε re-fit for
+the longer kination (D496: ΔN* = +0.89). Next decisive computation: the full case-(i) run (Twist-M + two-sided FI + radiation from the end of inflation).

@@ -112,3 +112,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 69: D484 B4 quantified: LiteBIRD Δβ test 2–5.5σ for m ≳ 50–100 H0 (σ 0.05°), ~0 for m ≲ 10 H0. Result → walls 0.
 - cycles 70–73 ('Pp x 10' #2): D485 ΔN_eff forecast 2.2–2.7σ (S4); D486 kink rounding → mass 3.7e10 GeV; D487 reproducibility ok; D488 numbers table FI block. Walls 0.
 - cycle 74 (20:28, tick): PART 9 — skipped, covered by D474/D480 within the last 15 notes. WALL 1.
+- 20:45: Twist-M series (Danny 'Pp x 20 on this design'): D492–D499 done (8 cycles); stopped before the full case-(i) run (needs approval for a longer cloud job).

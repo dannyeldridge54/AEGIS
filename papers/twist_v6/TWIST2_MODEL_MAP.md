@@ -175,3 +175,5 @@ alone.
 **Centre-confirmed (D480, D481, D483):** sgoldstino decays before BBN; gauged B−L strings (if present) Gμ ≈ 2e-17–8e-16 (possible future GW signal); capture robust to ×0.5–×2 kinetic energy (T_cap ≈ 5e8–9e11 GeV).
 
 **Variant Twist-M (D490–D491, duality-symmetric):** F_sym = G(x) + x²G(1/x), V(1/x) = V(x); Λ and the capture at the self-dual point x = 1 (n = 233.9); with ε = 1.6e-7 fitted: n_s 0.9736, r 0.0045, α_s −8.0e-4 (same as Route A). Capture-side numbers not yet redone.
+
+**Twist-M update (D492–D499):** w₀ = −1.0000, w_a ≈ 0; n = 234.05; kination 3.3 e-folds (ΔN* +0.89, ε re-fit pending); fifth force needs the FI kink, but then the FI soft energy controls the history (case (i), capture at x = 1, run pending) — the tracker self-relaxation holds only without FI.
