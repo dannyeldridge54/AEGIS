@@ -17,7 +17,7 @@ A two-torus has a shape τ in the upper half plane; tori related by SL(2,ℤ) ar
 * **Stretched torus (Im τ ≫ 1): inflation.** The potential approaches a constant plateau (an α-attractor-type cusp plateau).
 * **Relaxation: reheating.** The shape rolls toward the square and its oscillations reheat the universe; nucleosynthesis, acoustic oscillations, recombination and structure formation follow as in ΛCDM.
 * **Square torus (τ = i): today.** The fixed point of τ → −1/τ; the vacuum energy there is Λ.
-* **Hexagonal torus (τ = ρ = e^{iπ/3}):** the other fixed point; in SERAPIS a wall the shape cannot occupy.
+* **Hexagonal torus (τ = ρ = e^(iπ/3)):** the other fixed point; in SERAPIS a wall the shape cannot occupy.
 
 Lattice symmetry explains why only these shapes are special: a 2D lattice admits only 1-, 2-, 3-, 4- and 6-fold rotations (crystallographic restriction; computed, D514), and both special shapes lie on the self-dual circle |τ|² = 1.
 
@@ -25,9 +25,9 @@ Lattice symmetry explains why only these shapes are special: a 2D lattice admits
 
 **Kähler potential and superpotential.** One torus: K = −ln(2 Im τ); with a nilpotent stabiliser S, W = S·F(τ) and V = e^K|F|². Modular invariance requires F of weight −1, F = η(τ)^−2 H(j). We take (D517)
 
-H(j) = (j − 1728)^{1/2} j^{−7/12} [ln(j/1728) + κ]^{1/2} + c·j^{−7/12},  κ = 1.
+H(j) = (j − 1728)^(1/2) j^(−7/12) [ln(j/1728) + κ]^(1/2) + c·j^(−7/12),  κ = 1.
 
-The factor j^{−1/12} cancels |η|^{−4} on the cusp and [ln j]^{1/2} cancels 1/(2 Im τ), giving the plateau; (j − 1728)^{1/2} ∝ (τ − i) makes the square torus a quadratic (stiff) minimum; j^{−7/12} makes τ = ρ a wall; c sets V(i) = Λ. A toolkit check gives j(i) = 1728, j(ρ) = 0 and SL(2,ℤ) invariance of ln V to 4×10⁻¹⁴ (D515).
+The factor j^(−1/12) cancels |η|^(−4) on the cusp and [ln j]^(1/2) cancels 1/(2 Im τ), giving the plateau; (j − 1728)^(1/2) ∝ (τ − i) makes the square torus a quadratic (stiff) minimum; j^(−7/12) makes τ = ρ a wall; c sets V(i) = Λ. A toolkit check gives j(i) = 1728, j(ρ) = 0 and SL(2,ℤ) invariance of ln V to 4×10⁻¹⁴ (D515).
 
 **Λ.** Fixing V(i)/V_* = Λ/V_* requires c = 1.6×10⁻⁵³, i.e. an action S = −ln c ≈ 121.6 = 2π × 19.4: instanton-sized, though its geometric origin is not derived here (D517).
 
