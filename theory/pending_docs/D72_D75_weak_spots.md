@@ -4165,3 +4165,11 @@ are NOT massless: m_ψ ≈ 5×10⁵–10⁹ GeV. If ψ-number were conserved the
 is broken. Their energy share is ≲ 4×10⁻⁴ of radiation (D396), so no dilution (D ≈ 1 stands). Consequence: the hidden-pair dark radiation of
 D412 (0.034) disappears; total ΔN_eff = gravitino only ≈ 0.047 (range 0.017–0.059 over g*) — the published Twist-2 table's "0.05–0.10"
 should read "0.02–0.06" (to be corrected in a v2). CENTRE: F2, F5, F7 pass with the new requirement; bridges unchanged. Result → walls 0.
+
+**D423 (cycle 13, "pp"; second pass PART 2, LEFT; scored, locked PREREG_D423_PART2B; results/part2b_d423.txt) — SAFE: with Route A the
+plateau still gives 219 e-folds of slow roll (start at x ≈ 4.7×10⁻⁸ where (1 + ε/x)² makes it steep; end at x = 8.8×10⁻³), 162 more than
+N* = 57.2 needs, so no tuning of initial conditions.** The deformation makes V rise toward small x (dlnV/dφ < 0 there), so the field
+rolls in the same direction as before. Flags (F6, report): the field range from the start of slow roll to capture is 24.8 M_P (14.9 M_P of it
+during inflation), worse for the distance conjecture than D408's 15.1 M_P from the CMB point; only the last ~5 M_P before the end of inflation
+are observable. (b) CONNECTIONS: part 3 (kination) unchanged (end-of-inflation factor 1.00007, D419); part 11 — the control flag at x ≲ 1 now
+covers x down to ~10⁻⁸. (c) CENTRE: bridges as in D419 (B1 = +2.5×10⁻³); no filter changes. Result → walls 0.

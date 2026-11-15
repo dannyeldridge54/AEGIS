@@ -1,0 +1,4 @@
+sign of dlnV/dφ on the small-x side: negative (V rises toward small x; field rolls to larger x)
+slow roll starts at p = -20.666 (x = 4.70e-08); end p = -5.792 (x = 8.84e-03)
+total e-folds available = 219.2  (need N* = 57.2 → margin +162.0)
+Δφ start → end = 14.87 M_P; start → capture (x = 29.81) = 24.82 M_P
