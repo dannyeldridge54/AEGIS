@@ -5301,3 +5301,14 @@ I cannot tell from here whether they justify dropping it or whether I mis-normal
 - D555's vacuum finding (V = 0 at τ = i, G̃₂(i) = 0) stands.
 Also: Aoki & Otsuka (arXiv:2411.08467) tie n_s to the species scale in this class (N_e ≈ (M_P/Λ_sp)²/(2πa²c_n)); for the Planck n_s, Λ_sp ≈ 9e16 GeV (a = 1). Our D540 estimate, Λ_sp ≈ 2.2e17 GeV at Im τ* ≈ 126, is in the same range.
 Relevance to SERAPIS: the species-scale route is the leading candidate string mechanism for a cusp plateau. If the log correction in N is physical, it lowers n_s for that route (worse for both branches), so the string-origin question and the n_s prediction are coupled.
+
+## D559 — DEEP (Dp, 23:06 CT; scored, locked PREREG_D559_CI_DIAG; results/ci_diag_d559.txt) — D558 discrepancy explained: the species-scale plateau is strongly Ñ₀-dependent once the log term is kept
+Setup: a = √(2/3), N* = 60.
+- (A) N = 2πτ₂ (their analytic limit): n_s = 0.9679, r = 0.0030. Close to their 0.9654 / 0.0033 (eq. 5.29/5.30), which validates my code and normalisation.
+- (B) Full N, Ñ₀ = 0: n_s = 1.041, r = 0.009.
+- (C) Full N, Ñ₀ = 25: n_s = 0.958, r = 0.0010 (= D558).
+- (D) Full N, Ñ₀ = 100: n_s = 0.965, r = 0.0030, but the horizon-exit point moves to y* ≈ 890.
+Conclusion: with the exact species function, n_s swings from 0.958 to 1.04 as Ñ₀ goes from 0 to 100. That contradicts the paper's statement that the parameters are "practically independent" of Ñ₀ ≲ 100 and its footnote that a full numerical calculation gives the same results (arXiv:2407.12081v2, §4, §5.1, fn. 3). The reason: at τ₂ ~ 100, the −6 ln(2τ₂) and Ñ₀ pieces of N give 1/τ₂ corrections that are LARGER than the −3/(πτ₂) term kept in their analytic limit.
+Same pathology as D541 (our SERAPIS-2 with −ln(2y|η|⁴) + κ′): plateaus built from the genus-one/threshold function are not predictive unless the constant is fixed from first principles.
+Label: our numerics against their analytic claim. A possible issue for their paper, worth a careful recheck before anyone says so publicly (could be a convention I have not matched). Not a verdict.
+Consequence for SERAPIS: the leading string-motivated plateau mechanism does not give a sharp n_s without knowing Ñ₀ (the number of species at the desert point). Kairos's sharpness (D545) holds for the attractor invariant, not for this route.
