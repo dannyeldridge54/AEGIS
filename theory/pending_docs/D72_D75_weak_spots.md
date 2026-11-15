@@ -5576,3 +5576,30 @@ Natural size of ε (estimate):
 - The natural string source of a term linear in y is the threshold/species function −ln(2y|η|⁴) ≈ (π/3)y (D540). Writing ε·y/2 ≈ (b/16π²)(π/3)·y·(normalisation to V₀) gives b ≈ 24π·ε ≈ 0.0075.
 - But D560–D562 require NO N = 2 threshold on the home plane. So the most natural source of ε is the one the home rules out. Holomorphic |E₆|² (I₁) itself has no known string derivation.
 Verdict: ε is a cleaner way to write the tilt than I^{2δ} (it ties the tilt to the vacuum mass), but its size is unexplained: either it needs an N = 2 sector with tiny |b| ~ 1e-2, or a separate source. Status: OPEN, sharpened. Next: test whether a small-|b| N = 2 sector is compatible with the home bound (D560/D566 used |b| ≲ 2, and the bound weakens as |b| shrinks). That needs a lock.
+
+## D577 — DEEP (Ddl, 07:50 CT; locked PREREG_D577_SPECIES_MASS + DEVIATIONS D575/D577; results/species_mass_d577_rerun.txt) — a string-motivated mass term for τ = i that leaves Kairos untouched
+Literature (3 searches):
+- Casas & Ibáñez, "Moduli self-fixing", arXiv:2507.05345 (new to our notes).
+  - Their one-loop, gravitino-mass-driven term is δV ∝ g^{ττ̄}|∂Λ_sp/Λ_sp|². It is positive-definite with minima at the "desert points".
+  - Derived and checked numerically: ∂_τ ln(2y|η|⁴) = (πi/6)Ĝ₂ (matches to 8 digits). So δV = y²|Ĝ₂|²/N², which is the 2407.12081 form.
+  - Ĝ₂ has a simple zero at i, so this term is QUADRATIC there: slopes 2.000/1.998.
+- Gravitational-threshold paper 1611.10323: the R² thresholds grow linearly in T₂ from N = 2 sectors (supports D576's identification of the linear-in-y source). Gives no potential.
+Model: V = I²/(I² + 1) + κ·y²|Ĝ₂|²/N², with N = −6 ln(2y|η|⁴) + Ñ₀; p = 2.
+Process note: the first run had an artifact in the "broken inflation" check (first step at eps = 1). DEVIATIONS were written first, then one rerun.
+- All unaffected rows reproduced unchanged.
+- D575's affected rows are corrected: ε = 1e-3 now gives n_s = 1.11–1.14 (fails anyway); ε = 3e-3 gives "N* not reached". The D575 verdict is unchanged.
+Results (rerun; reference κ = 0, HS-Kairos: n_s = 0.9635/0.9658, r = 2.9/2.5e-4):
+- κ = 1e-3: m/H = 0.005 (Ñ₀ = 25) and 0.001 (Ñ₀ = 100); |Δn_s| ≤ 1e-4; home-safe.
+- κ = 1e-2: m/H = 0.016 and 0.004; |Δn_s| ≤ 4e-4; home-safe.
+- κ = 0.1:
+  - Ñ₀ = 25: m/H = 0.050, Δn_s = +3e-4, home-safe.
+  - Ñ₀ = 100: Δn_s = +3.5e-3 and y* = 25.3 at N* = 55.6. FAILS the decoupling rule.
+Verdict by the lock: mass and tilt ARE DECOUPLED for κ ≤ 1e-2 (both Ñ₀). A species-scale (one-loop, string-motivated) term gives the τ = i vacuum a quadratic mass while leaving the HS-Kairos predictions intact to < 0.0004 in n_s. The D559 Ñ₀ pathology is suppressed because this term is small.
+Caveats:
+- The masses are small (m ≈ 0.005–0.05 H_inf, i.e. ~1e10–1e11 GeV with H_inf ~ 4e12). Large-amplitude oscillations right after inflation still feel the octic part, so a short stiff phase remains (D574/D567a).
+- κ ∝ m₃/₂²/(8π)² sets SUSY breaking during inflation; its size is not derived here.
+- The HS-Kairos n_s is still −2.5σ to −3.4σ from SPA+DESI. The mass term does not change that.
+Status:
+- The τ = i vacuum now has two candidate mass sources: (a) ε·I₁, which tilts the plateau (n_s → 0.9726, D575); (b) the species term, which does not (D577).
+- So "Kairos vs Chronos" is now a question about WHICH one-loop sector gives τ = i its mass.
+- D567a stays: the bands remain conditional until the oscillation history (octic → quadratic crossover) is computed. That needs its own lock.

@@ -23,10 +23,11 @@ def infl(e,N):
     for A,B in zip(us[::-1][1:],us[::-1][:-1]):
         if eps(A)>=1>eps(B): ue=brentq(lambda u:eps(u)-1,A,B); break
     if ue is None: return None
-    u=ue; Na=0; du=1e-3
+    u=ue; Na=0; du=1e-3; first=True
     while Na<N and u<14:
-        if eps(u)>=1: return ('inflation broken at y=%.1f'%math.exp(u),)
-        Na+=qn*du/abs(d1(u)); u+=du
+        if not first and eps(u)>1+1e-6: return ('inflation broken at y=%.1f'%math.exp(u),)
+        Na+=qn*du/abs(d1(u)); u+=du; first=False
+    if Na<N: return ('N* not reached (no viable inflation)',) if 'two_term' in __file__ else None
     g=d1(u); hh=d2(u); ev=0.5*g*g
     return math.exp(ue),math.exp(u),1-6*ev+2*(hh+g*g),16*ev,Vy(math.exp(u),e)
 ds=np.array([1e-2,3e-3,1e-3,3e-4,1e-4])

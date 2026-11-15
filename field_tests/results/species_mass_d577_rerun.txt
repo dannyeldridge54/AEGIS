@@ -1,0 +1,16 @@
+check |G2hat(i)| = 0.00e+00
+check d_tau ln(2y|eta|^4) = 0.00634577+0.10900462j vs (pi i/6)G2hat = 0.00634577+0.10900462j
+kappa=0 (HS-Kairos) N*=52: y*=23.5 n_s=0.9635 r=2.86e-04
+kappa=0 (HS-Kairos) N*=55.6: y*=24.2 n_s=0.9658 r=2.52e-04
+kappa=0.001 N0=25 N*=52: slopes=[np.float64(2.0), np.float64(1.998)] m/H=0.005 y_end=2.77 y*=23.5 HOME-SAFE n_s=0.9635 (dn_s=+0.0001) r=2.86e-04 (-1.6 SPA, -3.4 SPA+DESI)
+kappa=0.001 N0=25 N*=55.6: slopes=[np.float64(2.0), np.float64(1.998)] m/H=0.005 y_end=2.77 y*=24.2 HOME-SAFE n_s=0.9658 (dn_s=-0.0000) r=2.52e-04 (-0.9 SPA, -2.6 SPA+DESI)
+kappa=0.001 N0=100 N*=52: slopes=[np.float64(2.006), np.float64(1.998)] m/H=0.001 y_end=2.77 y*=23.5 HOME-SAFE n_s=0.9636 (dn_s=+0.0001) r=2.86e-04 (-1.6 SPA, -3.4 SPA+DESI)
+kappa=0.001 N0=100 N*=55.6: slopes=[np.float64(2.006), np.float64(1.998)] m/H=0.001 y_end=2.77 y*=24.2 HOME-SAFE n_s=0.9659 (dn_s=+0.0000) r=2.53e-04 (-0.8 SPA, -2.6 SPA+DESI)
+kappa=0.01 N0=25 N*=52: slopes=[np.float64(2.0), np.float64(1.998)] m/H=0.016 y_end=2.77 y*=23.5 HOME-SAFE n_s=0.9635 (dn_s=+0.0000) r=2.88e-04 (-1.6 SPA, -3.4 SPA+DESI)
+kappa=0.01 N0=25 N*=55.6: slopes=[np.float64(2.0), np.float64(1.998)] m/H=0.016 y_end=2.77 y*=24.3 HOME-SAFE n_s=0.9659 (dn_s=+0.0000) r=2.54e-04 (-0.8 SPA, -2.6 SPA+DESI)
+kappa=0.01 N0=100 N*=52: slopes=[np.float64(2.001), np.float64(1.998)] m/H=0.004 y_end=2.77 y*=23.6 HOME-SAFE n_s=0.9639 (dn_s=+0.0004) r=2.91e-04 (-1.5 SPA, -3.3 SPA+DESI)
+kappa=0.01 N0=100 N*=55.6: slopes=[np.float64(2.001), np.float64(1.998)] m/H=0.004 y_end=2.77 y*=24.3 HOME-SAFE n_s=0.9662 (dn_s=+0.0003) r=2.58e-04 (-0.7 SPA, -2.5 SPA+DESI)
+kappa=0.1 N0=25 N*=52: slopes=[np.float64(2.0), np.float64(1.998)] m/H=0.050 y_end=2.77 y*=24.2 HOME-SAFE n_s=0.9638 (dn_s=+0.0003) r=3.07e-04 (-1.5 SPA, -3.3 SPA+DESI)
+kappa=0.1 N0=25 N*=55.6: slopes=[np.float64(2.0), np.float64(1.998)] m/H=0.050 y_end=2.77 y*=24.9 HOME-SAFE n_s=0.9661 (dn_s=+0.0003) r=2.70e-04 (-0.8 SPA, -2.5 SPA+DESI)
+kappa=0.1 N0=100 N*=52: slopes=[np.float64(2.0), np.float64(1.998)] m/H=0.013 y_end=2.77 y*=24.5 HOME-SAFE n_s=0.9670 (dn_s=+0.0035) r=3.51e-04 (-0.5 SPA, -2.2 SPA+DESI)
+kappa=0.1 N0=100 N*=55.6: slopes=[np.float64(2.0), np.float64(1.998)] m/H=0.013 y_end=2.77 y*=25.3 outside n_s=0.9692 (dn_s=+0.0034) r=3.13e-04 (+0.3 SPA, -1.3 SPA+DESI)

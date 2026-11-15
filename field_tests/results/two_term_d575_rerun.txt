@@ -1,0 +1,8 @@
+eps=0.0001 N*=52: slope=1.998 m/H=0.037 y_end=2.77 y*=24.8 HOME-SAFE n_s=0.9726 r=4.00e-04 (+1.4 SPA, -0.1 SPA+DESI)
+eps=0.0001 N*=55.6: slope=1.998 m/H=0.037 y_end=2.77 y*=25.7 outside n_s=0.9751 r=3.65e-04 (+2.2 SPA, +0.9 SPA+DESI)
+eps=0.0003 N*=52: slope=1.998 m/H=0.064 y_end=2.77 y*=28.1 outside n_s=0.9921 r=8.00e-04 (+7.9 SPA, +7.1 SPA+DESI)
+eps=0.0003 N*=55.6: slope=1.998 m/H=0.064 y_end=2.77 y*=29.5 outside n_s=0.9955 r=7.83e-04 (+9.0 SPA, +8.4 SPA+DESI)
+eps=0.001 N*=52: slope=1.998 m/H=0.115 y_end=2.77 y*=62.0 outside n_s=1.1104 r=1.50e-02 (+47.3 SPA, +50.9 SPA+DESI)
+eps=0.001 N*=55.6: slope=1.998 m/H=0.115 y_end=2.77 y*=79.4 outside n_s=1.1413 r=2.37e-02 (+57.6 SPA, +62.4 SPA+DESI)
+eps=0.003 N*=52: ('N* not reached (no viable inflation)',)
+eps=0.003 N*=55.6: ('N* not reached (no viable inflation)',)
