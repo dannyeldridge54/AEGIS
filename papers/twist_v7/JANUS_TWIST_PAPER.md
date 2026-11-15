@@ -43,6 +43,8 @@ What each factor does:
 
 **Status of H.** The plateau factors j^(−7/12) and [ln(j/1728)+κ]^(1/2) lie outside the string-derived Cvetič–Font–Ibáñez–Lüst–Quevedo class, H = (j−1728)^{m/2} j^{n/3} P(j) with integer m, n and polynomial P (D535). In that class no potential has an exactly flat cusp plateau. SERAPIS's plateau is therefore an effective, modular-invariant choice, not a string derivation. The exponents and κ were chosen by hand after earlier variants (D513–D516).
 
+**Globally consistent form (SERAPIS-KL, D545–D546).** Following Kallosh and Linde, the potential can instead be placed in the metric of the nilpotent field, with I = (1/4π) ln(1 + |j − 1728|²/1728²) and V = V₀[I/(I+1)]·I^{2δ}. This V is single-valued everywhere, has its V = 0 minimum at τ = i in all directions, and is regular at ω. It reproduces both branches: Kairos (δ = 0) n_s = 0.963–0.965, r = 0.0012–0.0013; Chronos (δ = 0.0023, not refitted) n_s = 0.9715–0.9738, r = 0.0020–0.0022, at N* = 52–55.6. The predictions of §3 therefore do not depend on the problematic holomorphic factors.
+
 **Vacuum.** At the model's own N*, m = 4.2–4.5×10¹³ GeV ≈ 4.9 H_inf (D539). So there is no fifth force and no cosmological-moduli problem.
 
 **Λ (withdrawn claim).** The earlier statement that "a constant c sets V(i) = Λ, with c ≈ e^{−121.6} instanton-sized" is withdrawn. A constant term has the opposite S-character to E₆/η¹² and breaks modular invariance. In the holomorphic model the vacuum at i has V = 0. An S-even, non-vanishing H makes τ = i a saddle unless the vacuum is light (D538). A positive Λ therefore needs a separate uplift, for example hidden matter as in Knapp-Pérez et al. (arXiv:2304.14437). It is tuned exactly as in arXiv:2405.06497.
