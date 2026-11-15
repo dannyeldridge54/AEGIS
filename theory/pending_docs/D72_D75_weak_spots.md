@@ -5642,3 +5642,16 @@ Searches: 3 (one extended). Fetched: 2512.02969 (KL), 2507.15076, 2602.06027.
   - The resulting consistency chain (N* ≈ 49–51, T_RH 6e6–2e7 GeV, non-thermal leptogenesis; D578/D579) was not found anywhere.
 - Other checks (no match): 2507.15076 (hilltop vs ACT), 2602.06027 (Witten–O'Raifeartaigh, n_s 0.9785), 2411.18603 (j-based, vacuum near ω), 2607.00528 (CW, vacuum at Im τ ~ 2).
 Verdict: novelty is limited to "one modular term (∝ |j − 1728|) gives the τ = i vacuum its mass AND supplies the KL-type tilt, with a self-consistent reheating/leptogenesis history". Allowed wording: "not found in the checked literature (D580 audit)". Must credit: KL 2512.02969 for the tilt mechanism, and Ding et al. 2411.18603 for inflaton-decay leptogenesis in modular inflation.
+
+## D581 — DEEP (Ddl 07:45 CT; locked PREREG_D581_EPS_WINDOW; results/eps_window_d581.txt) — the allowed ε window is narrow, ε ≈ 1.0–1.3e-4, and no reference "natural" value falls in it
+Full chain per ε (D578 N* history, both reheating bounds, c_Γ = 1 and 10; D579 leptogenesis at M₁ = m/3):
+- ε = 5e-5 and 7e-5: fail leptogenesis at c_Γ = 1 (Y_B ≤ 5–7e-11). n_s = 0.965–0.969 (−2.7σ to −1.4σ vs SPA+DESI).
+- ε = 1.0e-4: all pass. n_s 0.9701–0.9717, r 4.1–4.4e-4, y* 24.0–24.5.
+- ε = 1.3e-4: all pass. n_s 0.9729–0.9745 (+0.0σ to +0.6σ SPA+DESI; +1.5σ to +2.0σ SPA), r 4.6–4.8e-4, y* 24.4–24.9.
+- ε = 1.6e-4: two rows leave home (y* = 25.3–25.4). ε = 2e-4: all rows leave home, n_s ≈ 0.98.
+Verdict by the lock: ALLOWED = {1.0e-4, 1.3e-4} on this grid, width 1.30 (about a 30% tuning window). Combined post-hoc band: n_s = 0.970–0.975, r = 4.1–4.8e-4, N* = 49–51, m = 1.9–2.3e11 GeV, T_RH = 6e6–2.4e7 GeV.
+Naturalness (reference values fixed before computing): e^{−3π} = q(i)^{3/2} = 8.1e-5, (1/16π²)² = 4.0e-5 and 1/(64π³) = 5.0e-4 are all OUTSIDE the window. The nearest, e^{−3π}, sits about 20% below its lower edge, where leptogenesis fails at c_Γ = 1. Numerology aside, ε is unexplained.
+Reading:
+- The window is fixed from three sides: below by leptogenesis (and n_s), above by home-safety. The surviving model is therefore sharp: r ≈ 4–5e-4 is a firm target.
+- But it needs a ~30%-tuned small parameter with no known origin.
+- Future test: CMB-S4/LiteBIRD-class σ(r) ≈ 1e-4 would detect r ≈ 4.5e-4 at about 4σ. Excluding r > 2e-4 would kill two-term SERAPIS.

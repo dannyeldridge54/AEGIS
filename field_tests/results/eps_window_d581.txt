@@ -1,0 +1,29 @@
+octic coefficient: V ~ c8 delta^8, c8 = 2.6879e+02
+eps=5e-05 c_G=1 w=3/5: N*=50.43 y*=23.8 HS n_s=0.9668 (-0.5 SPA, -2.2 S+D) r=3.56e-04 m=1.23e+11 T_RH=2.97e+06 Y_B<=5.09e-11 LEPTO-FAIL
+eps=5e-05 c_G=1 w=0: N*=48.72 y*=23.4 HS n_s=0.9654 (-1.0 SPA, -2.7 S+D) r=3.78e-04 m=1.26e+11 T_RH=3.10e+06 Y_B<=5.32e-11 LEPTO-FAIL
+eps=5e-05 c_G=10 w=3/5: N*=50.80 y*=23.8 HS n_s=0.9671 (-0.4 SPA, -2.1 S+D) r=3.52e-04 m=1.22e+11 T_RH=9.30e+06 Y_B<=1.59e-10 LEPTO-OK
+eps=5e-05 c_G=10 w=0: N*=49.10 y*=23.5 HS n_s=0.9657 (-0.9 SPA, -2.6 S+D) r=3.72e-04 m=1.25e+11 T_RH=9.70e+06 Y_B<=1.66e-10 LEPTO-OK
+eps=7e-05 c_G=1 w=3/5: N*=50.48 y*=24.0 HS n_s=0.9687 (+0.1 SPA, -1.5 S+D) r=3.79e-04 m=1.50e+11 T_RH=4.01e+06 Y_B<=6.87e-11 LEPTO-FAIL
+eps=7e-05 c_G=1 w=0: N*=48.83 y*=23.6 HS n_s=0.9673 (-0.4 SPA, -2.0 S+D) r=4.00e-04 m=1.54e+11 T_RH=4.17e+06 Y_B<=7.14e-11 LEPTO-FAIL
+eps=7e-05 c_G=10 w=3/5: N*=50.86 y*=24.1 HS n_s=0.9689 (+0.2 SPA, -1.4 S+D) r=3.75e-04 m=1.49e+11 T_RH=1.25e+07 Y_B<=2.15e-10 LEPTO-OK
+eps=7e-05 c_G=10 w=0: N*=49.20 y*=23.7 HS n_s=0.9676 (-0.3 SPA, -1.9 S+D) r=3.95e-04 m=1.53e+11 T_RH=1.30e+07 Y_B<=2.24e-10 LEPTO-OK
+eps=0.0001 c_G=1 w=3/5: N*=50.55 y*=24.4 HS n_s=0.9714 (+1.0 SPA, -0.5 S+D) r=4.17e-04 m=1.88e+11 T_RH=5.62e+06 Y_B<=9.63e-11 LEPTO-OK
+eps=0.0001 c_G=1 w=0: N*=48.95 y*=24.0 HS n_s=0.9701 (+0.6 SPA, -1.0 S+D) r=4.37e-04 m=1.92e+11 T_RH=5.82e+06 Y_B<=9.98e-11 LEPTO-OK
+eps=0.0001 c_G=10 w=3/5: N*=50.93 y*=24.5 HS n_s=0.9717 (+1.1 SPA, -0.4 S+D) r=4.13e-04 m=1.87e+11 T_RH=1.76e+07 Y_B<=3.02e-10 LEPTO-OK
+eps=0.0001 c_G=10 w=0: N*=49.33 y*=24.1 HS n_s=0.9704 (+0.7 SPA, -0.9 S+D) r=4.32e-04 m=1.91e+11 T_RH=1.83e+07 Y_B<=3.13e-10 LEPTO-OK
+eps=0.00013 c_G=1 w=3/5: N*=50.61 y*=24.8 HS n_s=0.9742 (+1.9 SPA, +0.5 S+D) r=4.59e-04 m=2.24e+11 T_RH=7.35e+06 Y_B<=1.26e-10 LEPTO-OK
+eps=0.00013 c_G=1 w=0: N*=49.06 y*=24.4 HS n_s=0.9729 (+1.5 SPA, +0.0 S+D) r=4.78e-04 m=2.29e+11 T_RH=7.58e+06 Y_B<=1.30e-10 LEPTO-OK
+eps=0.00013 c_G=10 w=3/5: N*=50.99 y*=24.9 HS n_s=0.9745 (+2.0 SPA, +0.6 S+D) r=4.55e-04 m=2.23e+11 T_RH=2.31e+07 Y_B<=3.95e-10 LEPTO-OK
+eps=0.00013 c_G=10 w=0: N*=49.43 y*=24.5 HS n_s=0.9732 (+1.6 SPA, +0.2 S+D) r=4.73e-04 m=2.28e+11 T_RH=2.38e+07 Y_B<=4.08e-10 LEPTO-OK
+eps=0.00016 c_G=1 w=3/5: N*=50.67 y*=25.3 OUT n_s=0.9771 (+2.9 SPA, +1.6 S+D) r=5.06e-04 m=2.61e+11 T_RH=9.23e+06 Y_B<=1.58e-10 LEPTO-OK
+eps=0.00016 c_G=1 w=0: N*=49.15 y*=24.9 HS n_s=0.9757 (+2.4 SPA, +1.1 S+D) r=5.24e-04 m=2.66e+11 T_RH=9.49e+06 Y_B<=1.63e-10 LEPTO-OK
+eps=0.00016 c_G=10 w=3/5: N*=51.05 y*=25.4 OUT n_s=0.9774 (+3.0 SPA, +1.7 S+D) r=5.02e-04 m=2.60e+11 T_RH=2.90e+07 Y_B<=4.97e-10 LEPTO-OK
+eps=0.00016 c_G=10 w=0: N*=49.52 y*=25.0 HS n_s=0.9761 (+2.6 SPA, +1.2 S+D) r=5.20e-04 m=2.65e+11 T_RH=2.98e+07 Y_B<=5.10e-10 LEPTO-OK
+eps=0.0002 c_G=1 w=3/5: N*=50.74 y*=25.9 OUT n_s=0.9809 (+4.2 SPA, +3.0 S+D) r=5.77e-04 m=3.12e+11 T_RH=1.20e+07 Y_B<=2.06e-10 LEPTO-OK
+eps=0.0002 c_G=1 w=0: N*=49.25 y*=25.4 OUT n_s=0.9795 (+3.7 SPA, +2.5 S+D) r=5.94e-04 m=3.16e+11 T_RH=1.23e+07 Y_B<=2.11e-10 LEPTO-OK
+eps=0.0002 c_G=10 w=3/5: N*=51.12 y*=26.0 OUT n_s=0.9813 (+4.3 SPA, +3.1 S+D) r=5.73e-04 m=3.11e+11 T_RH=3.79e+07 Y_B<=6.49e-10 LEPTO-OK
+eps=0.0002 c_G=10 w=0: N*=49.63 y*=25.6 OUT n_s=0.9799 (+3.8 SPA, +2.6 S+D) r=5.89e-04 m=3.15e+11 T_RH=3.87e+07 Y_B<=6.63e-10 LEPTO-OK
+ALLOWED: [0.0001, 0.00013] width eps_max/eps_min = 1.30
+reference q(i)^1.5=e^-3pi = 8.07e-05  inside window: False
+reference (1/16pi^2)^2 = 4.01e-05  inside window: False
+reference 1/(16pi^2*4pi) = 5.04e-04  inside window: False
