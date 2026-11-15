@@ -10,7 +10,7 @@ Labels: **computed** = from locked scripts (exact Mukhanov–Sasaki, D588); **es
 | n_s | 0.970–0.975 | 0.969–0.972 | 0.959–0.961 (D637, N* 46–49) | computed |
 | r | (4.8–5.7)×10⁻⁴ | (4.6–5.1)×10⁻⁴ | (3.3–3.7)×10⁻⁴ (D637) | computed |
 | α_s = dn_s/dln k (N* 47–50; to ≈ −1.0×10⁻³ at N* 46) | −(8.6–9.9)×10⁻⁴ (lock D633; D605's −(3–5)×10⁻⁴ was an attractor estimate, superseded) | −(8.5–9.5)×10⁻⁴ | ≈ −2/N*² | computed |
-| m_ν1 (Affleck–Dine LH_u) | ≲ 10⁻⁸ eV → Σm_ν ≈ 0.0588 eV IF normal ordering (ordering is input from data, not predicted; lock D605 states NO) | same | — | estimate; assumes weight-1 matter (D639) |
+| m_ν1 (Affleck–Dine LH_u, computed D646) | 10⁻¹³–4×10⁻¹¹ eV (T_R 1e3–1e5) → Σm_ν ≈ 0.0588 eV IF normal ordering (ordering is input from data, not predicted; lock D605 states NO) | same | — | estimate; assumes weight-1 matter (D639) |
 | f_NL^local / isocurvature | ≈ 0.01 / ~10⁻⁸ of ζ (D587; lock D605 said ≲10⁻¹⁰) | ≈ 0.01 | — | estimate/computed |
 | Superpartners | none below ~10⁸ GeV IF visible matter has modular weight 1 (or is sequestered): tree soft masses vanish (D639), loop ~6×10⁸ GeV; canonical matter would give ~10¹¹ GeV | same | — | conditional |
 | Reheating | T_R 10³–10⁵ GeV, stiff phase w ≈ 0.55, N* 46–49 | w = 5/7 | — | computed/estimate |
