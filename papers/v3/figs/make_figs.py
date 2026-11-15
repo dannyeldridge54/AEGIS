@@ -26,9 +26,9 @@ fig,ax=plt.subplots(figsize=(6,3.8))
 for mu,s,lab,c in ((0.9682,0.0032,'CMB (SPA+BK)','tab:blue'),(0.9728,0.0029,'CMB+DESI','tab:orange')):
     for k,a in ((1,0.18),(2,0.08)): ax.axvspan(mu-k*s,mu+k*s,color=c,alpha=a,lw=0)
     ax.plot([],[],c=c,lw=6,alpha=0.3,label=f'{lab}: 1σ, 2σ')
-ka=[l for l in open(R+'janus_analytic_d635.txt') if l.startswith('HS-Kairos')]
+ka=[l for l in open(R+'kairos_nstar_d637.txt') if l.startswith('Kairos')]
 kp=[(float(re.search(r'n_s=([\d.]+)',l).group(1)),float(re.search(r' r=([\d.e-]+)',l).group(1))) for l in ka]
-ax.scatter(*zip(*kp),marker='s',c='k',label='Kairos (ε = 0), N* = 47, 50')
+ax.scatter(*zip(*kp),marker='s',c='k',label='Kairos (ε = 0), N* = 46–49')
 for eps,mk,cc in ((1.3e-4,'o','tab:red'),(1.6e-4,'^','tab:purple')):
     ax.scatter(*zip(*pts[eps]),marker=mk,c=cc,label=f'Chronos, ε = {eps*1e4:.1f}×10⁻⁴ (allowed)')
 ax.set_xlabel('n_s'); ax.set_ylabel('r'); ax.set_ylim(2e-4,7e-4); ax.set_xlim(0.955,0.985); ax.legend(fontsize=7,loc='upper left'); ax.set_title('Janus pair against current data (r < 0.034 everywhere here)')

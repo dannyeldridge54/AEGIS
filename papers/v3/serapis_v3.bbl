@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{23}%
+\begin{thebibliography}{35}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,6 +50,56 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{\citenamefont {Kallosh}\ and\ \citenamefont
+  {Linde}(2013)}]{arXiv_1306_5220}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Kallosh}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Linde}},\ }\href@noop {} {\bibinfo {title} {{Universality Class in Conformal
+  Inflation}}} (\bibinfo {year} {2013}),\ \Eprint
+  {https://arxiv.org/abs/1306.5220} {arXiv:1306.5220} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{Planck Collaboration}}\ \emph
+  {et~al.}(2018)\citenamefont {{Planck Collaboration}}, \citenamefont {Akrami}
+  \emph {et~al.}}]{Planck2018X}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{Planck
+  Collaboration}}}, \bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Akrami}}, \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {{Planck 2018
+  results. X. Constraints on inflation}}} (\bibinfo {year} {2018}),\ \Eprint
+  {https://arxiv.org/abs/1807.06211} {arXiv:1807.06211} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Louis}\ \emph {et~al.}(2025)\citenamefont {Louis}
+  \emph {et~al.}}]{arXiv_2503_14452}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Louis}} \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {{The Atacama
+  Cosmology Telescope: DR6 Power Spectra, Likelihoods and $\Lambda$CDM
+  Parameters}}} (\bibinfo {year} {2025}),\ \Eprint
+  {https://arxiv.org/abs/2503.14452} {arXiv:2503.14452} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{SPT-3G Collaboration}}(2025)}]{arXiv_2506_20707}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{SPT-3G
+  Collaboration}}},\ }\href@noop {} {\bibinfo {title} {{SPT-3G D1: CMB
+  temperature and polarization power spectra and cosmology from 2019 and 2020
+  observations of the SPT-3G Main field}}} (\bibinfo {year} {2025}),\ \Eprint
+  {https://arxiv.org/abs/2506.20707} {arXiv:2506.20707} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{BICEP/Keck Collaboration}}\ \emph
+  {et~al.}(2021)\citenamefont {{BICEP/Keck Collaboration}}, \citenamefont {Ade}
+  \emph {et~al.}}]{arXiv_2110_00483}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{BICEP/Keck
+  Collaboration}}}, \bibinfo {author} {\bibfnamefont {P.~A.~R.}\ \bibnamefont
+  {Ade}}, \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {{Improved
+  Constraints on Primordial Gravitational Waves using Planck, WMAP, and
+  BICEP/Keck Observations through the 2018 Observing Season}}} (\bibinfo {year}
+  {2021}),\ \Eprint {https://arxiv.org/abs/2110.00483} {arXiv:2110.00483}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{DESI Collaboration}}(2025)}]{arXiv_2503_14738}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{DESI
+  Collaboration}}},\ }\href@noop {} {\bibinfo {title} {{DESI DR2 Results II:
+  Measurements of Baryon Acoustic Oscillations and Cosmological Constraints}}}
+  (\bibinfo {year} {2025}),\ \Eprint {https://arxiv.org/abs/2503.14738}
+  {arXiv:2503.14738} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Balkenhol}\ \emph {et~al.}(2025)\citenamefont
   {Balkenhol} \emph {et~al.}}]{arXiv_2512_10613}%
   \BibitemOpen
@@ -118,6 +168,14 @@
   {} {\bibinfo {title} {{Heterotic de Sitter Beyond Modular Symmetry}}}
   (\bibinfo {year} {2022}),\ \Eprint {https://arxiv.org/abs/2212.03876}
   {arXiv:2212.03876} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Turner}(1983)}]{Turner1983}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~S.}\ \bibnamefont
+  {Turner}},\ }\bibfield  {title} {\bibinfo {title} {{Coherent scalar-field
+  oscillations in an expanding universe}},\ }\href@noop {} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo {volume}
+  {28}},\ \bibinfo {pages} {1243} (\bibinfo {year} {1983})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Casas}\ and\ \citenamefont
   {Ib{\'a}{\~n}ez}(2025)}]{arXiv_2507_05345}%
   \BibitemOpen
@@ -126,6 +184,15 @@
   {Ib{\'a}{\~n}ez}},\ }\href@noop {} {\bibinfo {title} {{Moduli Self-Fixing}}}
   (\bibinfo {year} {2025}),\ \Eprint {https://arxiv.org/abs/2507.05345}
   {arXiv:2507.05345} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Liddle}\ and\ \citenamefont
+  {Leach}(2003)}]{arXiv_astro-ph_0305263}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.~R.}\ \bibnamefont
+  {Liddle}}\ and\ \bibinfo {author} {\bibfnamefont {S.~M.}\ \bibnamefont
+  {Leach}},\ }\href@noop {} {\bibinfo {title} {{How long before the end of
+  inflation were observable perturbations produced?}}} (\bibinfo {year}
+  {2003}),\ \Eprint {https://arxiv.org/abs/astro-ph/0305263}
+  {arXiv:astro-ph/0305263} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Kawasaki}\ \emph {et~al.}(2006)\citenamefont
   {Kawasaki}, \citenamefont {Takahashi},\ and\ \citenamefont
   {Yanagida}}]{arXiv_hep-ph_0611166}%
@@ -144,6 +211,16 @@
   {Bagnaschi}} \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {{Higgs Mass
   and Unnatural Supersymmetry}}} (\bibinfo {year} {2014}),\ \Eprint
   {https://arxiv.org/abs/1407.4081} {arXiv:1407.4081} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ellis}\ \emph {et~al.}(2013)\citenamefont {Ellis},
+  \citenamefont {Nanopoulos},\ and\ \citenamefont {Olive}}]{arXiv_1305_1247}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Ellis}}, \bibinfo {author} {\bibfnamefont {D.~V.}\ \bibnamefont
+  {Nanopoulos}},\ and\ \bibinfo {author} {\bibfnamefont {K.~A.}\ \bibnamefont
+  {Olive}},\ }\href@noop {} {\bibinfo {title} {{No-Scale Supergravity
+  Realization of the Starobinsky Model of Inflation}}} (\bibinfo {year}
+  {2013}),\ \Eprint {https://arxiv.org/abs/1305.1247} {arXiv:1305.1247}
+  \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Kallosh}\ and\ \citenamefont
   {Linde}(2004)}]{arXiv_hep-th_0411011}%
   \BibitemOpen
@@ -168,6 +245,35 @@
   Fixed Points on Neutrino Masses, Mixing, and Leptogenesis}}} (\bibinfo {year}
   {2026}),\ \Eprint {https://arxiv.org/abs/2604.04585} {arXiv:2604.04585}
   \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Affleck}\ and\ \citenamefont
+  {Dine}(1985)}]{AffleckDine1985}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Affleck}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Dine}},\
+  }\bibfield  {title} {\bibinfo {title} {{A New Mechanism for Baryogenesis}},\
+  }\href@noop {} {\bibfield  {journal} {\bibinfo  {journal} {Nucl. Phys. B}\
+  }\textbf {\bibinfo {volume} {249}},\ \bibinfo {pages} {361} (\bibinfo {year}
+  {1985})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Dine}\ \emph {et~al.}(1995)\citenamefont {Dine},
+  \citenamefont {Randall},\ and\ \citenamefont
+  {Thomas}}]{arXiv_hep-ph_9507453}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Dine}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Randall}},\ and\
+  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Thomas}},\ }\href@noop {}
+  {\bibinfo {title} {{Baryogenesis from Flat Directions of the Supersymmetric
+  Standard Model}}} (\bibinfo {year} {1995}),\ \Eprint
+  {https://arxiv.org/abs/hep-ph/9507453} {arXiv:hep-ph/9507453} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Murayama}\ and\ \citenamefont
+  {Yanagida}(1993)}]{arXiv_hep-ph_9310297}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Murayama}}\ and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Yanagida}},\ }\href@noop {} {\bibinfo {title} {{Leptogenesis in
+  Supersymmetric Standard Model with Right-handed Neutrino}}} (\bibinfo {year}
+  {1993}),\ \Eprint {https://arxiv.org/abs/hep-ph/9310297}
+  {arXiv:hep-ph/9310297} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Fujii}\ \emph
   {et~al.}(2001{\natexlab{a}})\citenamefont {Fujii}, \citenamefont
   {Hamaguchi},\ and\ \citenamefont {Yanagida}}]{arXiv_hep-ph_0102187}%
@@ -224,16 +330,6 @@
   Attractive: Moduli Trapping at Enhanced Symmetry Points}}} (\bibinfo {year}
   {2004}),\ \Eprint {https://arxiv.org/abs/hep-th/0403001}
   {arXiv:hep-th/0403001} \BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Buchm{\"u}ller}\ \emph {et~al.}(2013)\citenamefont
-  {Buchm{\"u}ller}, \citenamefont {Domcke},\ and\ \citenamefont
-  {Wieck}}]{arXiv_1309_3122}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
-  {Buchm{\"u}ller}}, \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
-  {Domcke}},\ and\ \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
-  {Wieck}},\ }\href@noop {} {\bibinfo {title} {{No-scale D-term inflation with
-  stabilized moduli}}} (\bibinfo {year} {2013}),\ \Eprint
-  {https://arxiv.org/abs/1309.3122} {arXiv:1309.3122} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Abe}\ \emph {et~al.}(2026)\citenamefont {Abe} \emph
   {et~al.}}]{arXiv_2607_00528}%
   \BibitemOpen
@@ -249,4 +345,14 @@
   Commissioning of the Mid-Frequency Small Aperture Telescopes}}} (\bibinfo
   {year} {2026}),\ \Eprint {https://arxiv.org/abs/2609.26938}
   {arXiv:2609.26938} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{LiteBIRD Collaboration}}\ \emph
+  {et~al.}(2022)\citenamefont {{LiteBIRD Collaboration}}, \citenamefont {Allys}
+  \emph {et~al.}}]{arXiv_2202_02773}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{LiteBIRD
+  Collaboration}}}, \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Allys}}, \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {{Probing Cosmic
+  Inflation with the LiteBIRD Cosmic Microwave Background Polarization
+  Survey}}} (\bibinfo {year} {2022}),\ \Eprint
+  {https://arxiv.org/abs/2202.02773} {arXiv:2202.02773} \BibitemShut {NoStop}%
 \end{thebibliography}%

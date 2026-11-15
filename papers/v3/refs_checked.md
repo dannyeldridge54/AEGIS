@@ -46,3 +46,8 @@ Excluded:
 Correction found: hep-ph/0611166 is Kawasaki, Takahashi, Yanagida (2006). D583 called it "Endo, Hamaguchi, Takahashi / Kawasaki et al."; corrected in D583a. The formula used is the paper's own; only the attribution changes.
 
 Still to add before submission (outside D574–D635, used in the paper's background): Planck 2018, ACT DR6, SPT-3G, BICEP/Keck 2018, DESI DR2 BAO. Verify these the same way during R5.
+
+## Added in R8b (2026-11-15)
+Checked via arxiv.org abs page, ar5iv, or a search-result listing showing the arXiv title:
+1807.06211 Planck 2018 X (abs page) · 2503.14452 ACT DR6 Louis et al. (abs) · 2110.00483 BK18 (abs) · 2202.02773 LiteBIRD/Allys et al. (abs) · 1305.1247 Ellis–Nanopoulos–Olive (abs) · hep-ph/9310297 Murayama–Yanagida (ar5iv) · 2506.20707 SPT-3G D1 (search listing) · 2503.14738 DESI DR2 BAO (search listing) · 1306.5220 Kallosh–Linde (search listing) · hep-ph/9507453 Dine–Randall–Thomas (search listing) · astro-ph/0305263 Liddle–Leach (search listing).
+Journal-only, not opened (standard references from knowledge; Danny to confirm in a library/INSPIRE): Turner, PRD 28, 1243 (1983); Affleck & Dine, NPB 249, 361 (1985).

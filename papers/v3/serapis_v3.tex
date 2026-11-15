@@ -1,4 +1,3 @@
-% SERAPIS v3 — draft. Generated section by section by the readiness ladder (R5). AI-assisted; see Acknowledgements.
 \documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,floatfix]{revtex4-2}
 \usepackage{amsmath,amssymb,graphicx,hyperref}
 \begin{document}
@@ -7,12 +6,12 @@
 \affiliation{Independent researcher, {[AFFILIATION / CORRESPONDENCE EMAIL: Danny to confirm]}}
 \date{Draft of 15 November 2026}
 \begin{abstract}
-We study inflation on the modular plane with K\"ahler potential $K=-\ln(2\,\mathrm{Im}\,\tau)$ and $\alpha=1/3$, driven by a plateau built from the modular invariant $|j-1728|$. The inflaton settles at the square torus, $\tau=i$, which we show is both a critical point required by $S$-duality and a supersymmetric Minkowski vacuum ($E_6(i)=0$). The minimal plateau leaves this vacuum massless; adding a single term linear in $|j-1728|$ (the holomorphic-$E_6$ route), of relative strength $\varepsilon\sim1.5\times10^{-4}$, makes it massive and tilts the spectrum. The model then has two faces sharing one closed form, a Janus pair: the untilted limit gives $n_s=0.961$--$0.963$ and $r=(3.0$--$3.3)\times10^{-4}$, while the tilted model gives $n_s=0.970$--$0.975$, $r=(4.8$--$5.7)\times10^{-4}$ and $\alpha_s=-(8.6$--$9.9)\times10^{-4}$. Eliminating $\varepsilon$ yields a parameter-free relation fixing $\alpha_s$ from $n_s$ and $r$ to about 12\%. A variant at $\tau=\rho$ gives $n_s=0.969$--$0.972$ and $r=(4.6$--$5.1)\times10^{-4}$. We check reheating through a stiff phase ($w\simeq0.55$, $T_R=10^3$--$10^5$~GeV), gravitino closure ($m_{3/2}>10^{11}$~GeV), no-scale soft masses, proton stability from the modular centre, and Affleck--Dine leptogenesis, which implies a nearly massless lightest neutrino and $\sum m_\nu\simeq0.059$~eV with normal ordering. The size of $\varepsilon$ is fitted, not derived. All predictions were frozen with public hashes before submission and will be decided by LiteBIRD, CMB-S4-class surveys, DESI/Euclid and JUNO/DUNE.
+We study inflation on the modular plane with K\"ahler potential $K=-\ln(2\,\mathrm{Im}\,\tau)$ and $\alpha=1/3$, driven by a plateau built from the modular invariant $|j-1728|$. The inflaton settles at the square torus, $\tau=i$, a critical point required by the $S$ generator of the modular group, where $j-1728$ has a double zero. The minimal plateau leaves this vacuum massless; adding a single term linear in $|j-1728|$, of relative strength $\varepsilon\simeq(1.3$--$1.6)\times10^{-4}$, makes it massive and tilts the spectrum. The model then has two faces sharing one closed form, a Janus pair: the untilted limit gives $n_s=0.959$--$0.961$ and $r=(3.3$--$3.7)\times10^{-4}$, while the tilted model gives $n_s=0.970$--$0.975$, $r=(4.8$--$5.7)\times10^{-4}$ and $\alpha_s=-(8.6$--$9.9)\times10^{-4}$. Eliminating $\varepsilon$ yields a parameter-free relation fixing $\alpha_s$ from $n_s$ and $r$ to about 12\%. A variant at $\tau=\rho$ gives $n_s=0.969$--$0.972$ and $r=(4.6$--$5.1)\times10^{-4}$. We check reheating through a stiff phase ($w\simeq0.55$, $T_R=10^3$--$10^5$~GeV), gravitino closure ($m_{3/2}>10^{11}$~GeV), proton stability from the modular centre, and baryogenesis; an order-of-magnitude Affleck--Dine estimate points to a nearly massless lightest neutrino, $m_{\nu_1}\lesssim10^{-8}$~eV. The soft-mass sector is left open: with a single $\alpha=1/3$ modulus the K\"ahler potential is not of no-scale type. The size of $\varepsilon$ is fitted, not derived. All predictions were frozen with public hashes before submission and will be tested by future CMB polarisation and large-scale-structure surveys.
 \end{abstract}
 \maketitle
 
 \section{Introduction}
-Plateau models of inflation, and in particular $\alpha$-attractors, predict a scalar tilt close to $n_s \simeq 1-2/N_*$ and a small tensor-to-scalar ratio $r$. The latest combined analyses move the preferred tilt upward: CMB data (Planck, ACT DR6, SPT-3G with BICEP/Keck) give $n_s = 0.9682 \pm 0.0032$, and adding DESI DR2 baryon acoustic oscillations gives $n_s = 0.9728 \pm 0.0029$, with $r < 0.035$ at 95\% confidence~\cite{arXiv_2512_10613}. A plain plateau at $N_* \approx 50$ sits about $3$--$4\sigma$ below the second value.
+Plateau models of inflation, and in particular $\alpha$-attractors~\cite{arXiv_1306_5220}, predict a scalar tilt close to $n_s \simeq 1-2/N_*$ and a small tensor-to-scalar ratio $r$. The latest combined analyses move the preferred tilt upward: CMB data (Planck~\cite{Planck2018X}, ACT DR6~\cite{arXiv_2503_14452}, SPT-3G~\cite{arXiv_2506_20707} with BICEP/Keck~\cite{arXiv_2110_00483}) give $n_s = 0.9682 \pm 0.0032$, and adding DESI DR2 baryon acoustic oscillations~\cite{arXiv_2503_14738} gives $n_s = 0.9728 \pm 0.0029$, with $r < 0.035$ at 95\% confidence~\cite{arXiv_2512_10613}. A plain plateau at $N_* \approx 50$ sits about $3$--$4\sigma$ below the second value.
 
 Modular-invariant versions of these models, in which the inflaton is the shape modulus $\tau$ of a two-torus and the potential is invariant under $SL(2,\mathbb{Z})$, have been developed in detail~\cite{arXiv_2408_05203,arXiv_2412_19324,arXiv_2405_06497,arXiv_2407_12081,arXiv_2411_18603}. They tie inflation to a geometric question: at which shape does the torus come to rest after inflation?
 
@@ -20,9 +19,9 @@ In this paper we study a model, which we call SERAPIS, whose vacuum sits at the 
 (i) Symmetry alone forces $\tau = i$ to be a critical point and a natural zero of the potential, but a plateau built from $|j-1728|^2$ leaves that vacuum \emph{massless} (Sec.~\ref{sec:setup}).
 (ii) A single extra term, $\propto \ln(1+|j-1728|/1728)$, gives the vacuum a mass \emph{and} tilts the plateau. The tilt raises $n_s$ into the range preferred by CMB+DESI while keeping inflation inside a perturbative string-theory bound, $\mathrm{Im}\,\tau \lesssim 25$ (Secs.~\ref{sec:twoterm}--\ref{sec:predictions}).
 (iii) With and without this tilt, the model has two ``faces'': an untilted one (Kairos) and a tilted one (Chronos). We derive both in closed form and find a consistency relation that predicts the running $\alpha_s$ from $(n_s, r)$ with no free parameter (Sec.~\ref{sec:janus}).
-(iv) A full consistency chain, covering reheating, supersymmetry breaking, moduli and baryogenesis, passes, and leads to a neutrino-mass prediction, $\sum m_\nu \simeq 0.059$~eV with normal ordering (Secs.~\ref{sec:reheating}--\ref{sec:baryo}).
+(iv) We work through a consistency chain covering reheating, supersymmetry breaking, moduli and baryogenesis. Most links pass; the soft-mass sector does not yet close in the minimal one-modulus setting, and baryogenesis rests on an estimate that points to a nearly massless lightest neutrino (Secs.~\ref{sec:reheating}--\ref{sec:baryo}).
 
-We are explicit about what is not derived. The size of the tilt parameter, $\varepsilon \approx 10^{-4}$, was chosen after seeing current data, and we have not found its microscopic origin (Sec.~\ref{sec:limits}). Most ingredients are known: the tilt mechanism is that of singular attractors~\cite{arXiv_2512_02969}, and vacua at $\rho$ appear in Ref.~\cite{arXiv_2408_05203}. What is new is the combination, and the chain of checks around it. All predictions are frozen for future data (Sec.~\ref{sec:forward}), and every computation was pre-registered with a hash before it was run.
+We are explicit about what is not derived. The size of the tilt parameter, $\varepsilon \simeq (1.3$--$1.6)\times10^{-4}$, was chosen after seeing current data, and we have not found its microscopic origin (Sec.~\ref{sec:limits}). Most ingredients are known: the tilt mechanism is that of singular attractors~\cite{arXiv_2512_02969}, and vacua at $\rho$ appear in Ref.~\cite{arXiv_2408_05203}. What is new is the combination, and the chain of checks around it. All predictions are frozen for future data (Sec.~\ref{sec:forward}), and every computation was pre-registered with a hash before it was run.
 
 \section{Modular set-up and what symmetry fixes at $\tau = i$}\label{sec:setup}
 We take one complex modulus $\tau = x + i y$ in the upper half plane, with the $\alpha$-attractor K\"ahler potential
@@ -33,23 +32,23 @@ so the kinetic term is $(\partial x^2 + \partial y^2)/(4y^2)$. Along $x = 0$ the
 
 \paragraph{Stationarity.} The generator $S:\tau\to-1/\tau$ fixes $\tau = i$ and acts there as $\delta\tau \to -\delta\tau$. Hence any $S$-invariant potential that is smooth at $i$ has $\nabla V(i) = 0$. The point $\tau = i$ is therefore always a critical point. This is derived, not chosen. We checked it numerically for every potential used below (D574).
 
-\paragraph{Weight parity.} A modular form of weight $w$ satisfies $f(i) = i^{w} f(i)$, so it vanishes at $i$ unless $w \equiv 0 \pmod 4$. In particular $E_6(i) = 0$ (numerically $|E_6(i)| < 10^{-15}$, with a simple zero), while $E_4(i) = 1.456$. Since $j - 1728 \propto E_6^2/\Delta$, the function $j-1728$ has a \emph{double} zero at $i$ (fitted order $2.000$). A superpotential carrying one factor of $E_6$ therefore has a supersymmetric Minkowski point at $\tau = i$. This is consistent with the no-go result that a de Sitter vacuum cannot sit at $i$ in this minimal setting~\cite{arXiv_2212_03876}. What symmetry does \emph{not} fix is whether $i$ is a minimum or a saddle, nor the value of the vacuum energy.
+\paragraph{Weight parity.} A modular form of weight $w$ satisfies $f(i) = i^{w} f(i)$, so it vanishes at $i$ unless $w \equiv 0 \pmod 4$. In particular $E_6(i) = 0$ (numerically $|E_6(i)| < 10^{-15}$, with a simple zero), while $E_4(i) = 1.456$. Since $j - 1728 \propto E_6^2/\Delta$, the function $j-1728$ has a \emph{double} zero at $i$ (fitted order $2.000$). In the nilpotent embedding used here $V$ is not derived from a superpotential, so this does not make $\tau=i$ a supersymmetric vacuum of our model; indeed Sec.~\ref{sec:chain} requires $W_0\neq0$ and $F_\tau\neq0$ there. We use only the symmetry statements: $\tau=i$ is a critical point and a double zero of $j-1728$. A de Sitter vacuum cannot sit at $i$ in the minimal heterotic setting~\cite{arXiv_2212_03876}. What symmetry does \emph{not} fix is whether $i$ is a minimum or a saddle, nor the value of the vacuum energy.
 
 \paragraph{The plateau.} We build the plateau from the invariant
 \begin{equation}
 I(\tau) = \frac{1}{4\pi}\ln\!\left(1 + \frac{|j(\tau)-1728|^2}{1728^2}\right), \qquad V_{\rm pl} = V_0\,\frac{I^p}{I^p+1},
 \end{equation}
-which vanishes only at $i$ (and its images), is single-valued, and grows as $I \simeq y$ toward the cusp. We use $p = 2$. That is the smallest power for which horizon exit occurs at $y_* \lesssim 25$, inside the bound that perturbative heterotic thresholds place on $\mathrm{Im}\,\tau$ (about $k\,\alpha^{-1}(M_s) \approx 29$; D564, D566).
+which vanishes only at $i$ (and its images), is single-valued, and grows as $I \simeq y$ toward the cusp. We use $p = 2$. That is the smallest power for which horizon exit occurs at $y_* \lesssim 25$, inside the bound $\mathrm{Im}\,\tau\lesssim k\,\alpha^{-1}(M_s)\approx29$ that perturbative heterotic thresholds place on a modulus whose threshold grows linearly at the cusp. We impose the stricter cut $y_*\le25$, and we assume the bound applies to $\tau$ when $\tau$ enters the gauge threshold as a $T$-type modulus does (D564, D566).
 
-\paragraph{A flaw: the vacuum is massless.} Because $|j - 1728|^2 \propto |\tau - i|^4$, the plateau rises as $V_{\rm pl} \propto |\tau - i|^{4p}$ near the vacuum: quartic for $p=1$ and octic for $p=2$ (fitted exponents $4.00$ and $8.00$). The vacuum has no quadratic term, so no mass. After inflation the field oscillates anharmonically, with equation of state $w = (n-2)/(n+2) = 3/5$ for $n = 8$, and this changes the inflationary e-fold count $N_*$. Earlier predictions that assumed matter-like reheating must be revised (D567a). Section~\ref{sec:twoterm} supplies the missing mass.
+\paragraph{A flaw: the vacuum is massless.} Because $|j - 1728|^2 \propto |\tau - i|^4$, the plateau rises as $V_{\rm pl} \propto |\tau - i|^{4p}$ near the vacuum: quartic for $p=1$ and octic for $p=2$ (fitted exponents $4.00$ and $8.00$). The vacuum has no quadratic term, so no mass. After inflation the field oscillates anharmonically, with equation of state $w = (n-2)/(n+2) = 3/5$~\cite{Turner1983} for $n = 8$, and this changes the inflationary e-fold count $N_*$. Earlier predictions that assumed matter-like reheating must be revised (D567a). Section~\ref{sec:twoterm} supplies the missing mass.
 
 \section{The two-term model: one term for the vacuum mass and the tilt}\label{sec:twoterm}
 A quadratic vacuum needs a term $\propto |\tau - i|^2$. Taking the \emph{first} power of $|j-1728|$ instead of the square gives one:
-\begin{equation}
-I_1(\tau) = \frac{1}{4\pi}\ln\!\left(1 + \frac{|j(\tau)-1728|}{1728}\right), \qquad
+\begin{gather}
+I_1(\tau) = \frac{1}{4\pi}\ln\!\left(1 + \frac{|j(\tau)-1728|}{1728}\right), \nonumber\\
 V = V_0\left[\frac{I^2}{I^2+1} + \varepsilon\, I_1\right].
 \label{eq:twoterm}
-\end{equation}
+\end{gather}
 Near $i$ the new term is quadratic and isotropic (fitted exponent $2.00$ in both directions), so it gives the vacuum a mass. Toward the cusp it grows as $I_1 \simeq y/2$, which tilts the plateau upward (D575).
 
 Using $I_1$ alone with $p=1$ would also give a massive vacuum, but inflation would then start at $y_* \approx 213$--$227$, far outside the string bound. In the family $V = f(I^p)$ a massive vacuum needs $p\cdot(\text{power of }|j-1728|) = 1$, while staying inside the bound needs $p \geq 2$. No member has both. The two-term form~(\ref{eq:twoterm}) breaks this trade-off (D574, D575).
@@ -74,9 +73,9 @@ We solve the background exactly and integrate the Mukhanov--Sasaki equations for
 \paragraph{Results.} With the reheating history of Sec.~\ref{sec:reheating} ($N_* \approx 46$--$49$):
 \begin{itemize}
 \item \textbf{Chronos} (two-term, $\varepsilon = 1.3$--$1.6\times10^{-4}$): $n_s = 0.970$--$0.975$ and $r = 4.8$--$5.7\times10^{-4}$, with horizon exit at $y_* = 23$--$24.5$.
-\item \textbf{Kairos} (untilted): $n_s = 0.961$--$0.963$ and $r = 3.0$--$3.3\times10^{-4}$.
+\item \textbf{Kairos} (untilted): $n_s = 0.959$--$0.961$ and $r = 3.3$--$3.7\times10^{-4}$, with $y_* = 21.9$--$22.6$ (D637).
 \end{itemize}
-Against current data (Fig.~\ref{fig:nsr}), Chronos lies within about $1\sigma$ of CMB+DESI and within $2\sigma$ of CMB alone. Kairos lies $1.4$--$2.4\sigma$ below the CMB value and $3.8$--$4.6\sigma$ below CMB+DESI (D578, D588, D602).
+Against current data (Fig.~\ref{fig:nsr}), Chronos lies within about $1\sigma$ of CMB+DESI and within $2.3\sigma$ of CMB alone. Kairos lies $2.2$--$3.0\sigma$ below the CMB value and $4.0$--$4.9\sigma$ below CMB+DESI (D602, D637). Whether the upward shift of $n_s$ with BAO data is physical or reflects the mild tension between DESI BAO and the CMB in $\Lambda$CDM is debated~\cite{arXiv_2503_14738}; since $\varepsilon$ was chosen with this shift in view, Chronos stands or falls with it.
 
 \begin{figure}[tbp]
 \includegraphics[width=\columnwidth]{figs/fig2_ns_r.pdf}
@@ -101,7 +100,7 @@ Define the tilt fraction $x \equiv \varepsilon y_*^3/4$. To leading order,
 r &= \frac{64}{y_*^4}(1+x)^2, \nonumber\\
 \alpha_s &= -\frac{128}{y_*^4}\left(1+\frac{x}{4}\right)(1+x).
 \end{align}
-Kairos is $x = 0$, with $y_*^2 = 8N_*$: $1-n_s = 2/N_*$, $r = 1/N_*^2$ and $\alpha_s = -2/N_*^2$. Chronos is $x \approx 0.2$--$0.5$. A single parameter carries the model from one face to the other: the tilt raises $n_s$, raises $r$, and makes the running more negative.
+Kairos is $x = 0$, with $y_*^2 = 8N_*$: $1-n_s = 2/N_*$, $r = 1/N_*^2$ and $\alpha_s = -2/N_*^2$. Since $V\propto I^2/(I^2+1)$ with $I\simeq y$ behaves as $1-y^{-2}=1-e^{-2\sqrt2\phi}$, the effective attractor parameter is $\alpha_{\rm eff}=1/12$ (so $r=12\alpha_{\rm eff}/N_*^2$), not the $\alpha=1/3$ of the K\"ahler potential. Chronos is $x \approx 0.2$--$0.5$. A single parameter carries the model from one face to the other: the tilt raises $n_s$, raises $r$, and makes the running more negative.
 
 \paragraph{Running signature.} Compared with an attractor with the \emph{same} $n_s$, the running is enhanced by
 \begin{equation}
@@ -110,11 +109,11 @@ Kairos is $x = 0$, with $y_*^2 = 8N_*$: $1-n_s = 2/N_*$, $r = 1/N_*^2$ and $\alp
 which equals $1$ for Kairos and about $2.8$ at $x = 0.47$. The exact numerics give $\alpha_s = -(8.6$--$9.9)\times10^{-4}$ for Chronos. That is $2.2$--$3.1$ times the attractor value $-(1-n_s)^2/2$ (Fig.~\ref{fig:run}; D632). The $\rho$ variant gives the same signature (ratio $2.1$--$2.3$; D634).
 
 \paragraph{Consistency relation.} With three observables and two parameters, one combination is fixed:
-\begin{equation}
-\varrho = \frac{2\sqrt r}{1-n_s},\quad x = \frac{\varrho-1}{1+\varrho/2},\quad A = \frac{1-n_s}{1-x/2},\quad
+\begin{gather}
+\varrho = \frac{2\sqrt r}{1-n_s},\quad x = \frac{\varrho-1}{1+\varrho/2},\quad A = \frac{1-n_s}{1-x/2}, \nonumber\\
 \alpha_s = -\frac{A^2}{2}\left(1+\frac{x}{4}\right)(1+x).
 \label{eq:consistency}
-\end{equation}
+\end{gather}
 Measured $(n_s, r)$ thus predict $\alpha_s$ with no free parameter, for either vacuum. Against the exact Mukhanov--Sasaki results, Eq.~(\ref{eq:consistency}) is accurate to $11$--$13\%$ in every case. The offset is a uniform subleading bias (D635).
 
 \begin{figure}[tbp]
@@ -133,9 +132,9 @@ Measured $(n_s, r)$ thus predict $\alpha_s$ with no free parameter, for either v
 \item the trace of the stress tensor;
 \item the conformal anomaly.
 \end{itemize}
-Linear decays survive only through off-diagonal couplings between states of the same flavour multiplet with \emph{different} masses, and these scale with the mass splitting. The heaviest split multiplet dominates the decay. For heavy neutrinos with generic splittings this gives $T_R \sim 10^3$--$10^5$~GeV. That is above the sphaleron scale but far below the usual gravitational-decay estimate.
+Linear decays survive only through off-diagonal couplings between states of the same flavour multiplet with \emph{different} masses, and these scale with the mass splitting. The heaviest split multiplet dominates the decay. For heavy neutrinos with generic splittings this gives $T_R \sim 10^3$--$10^5$~GeV. That is above the sphaleron scale but far below the usual gravitational-decay estimate. We have not analysed preheating through quadratic couplings, which are not forbidden by stationarity, nor the decay to a gravitino and an inflatino; either could raise $T_R$ and shift $N_*$ upward by up to about one e-fold, which would move both faces toward larger $n_s$.
 
-\paragraph{The e-fold count.} We bracket the history in two ways. The stiff phase is taken either at its octic value ($w = 3/5$) or conservatively as matter-like ($w = 0$), followed by a matter phase down to $T_R$. This gives $N_* = 46$--$49$ (D602), which is the range used in Sec.~\ref{sec:predictions}.
+\paragraph{The e-fold count.} We bracket the history in two ways. The stiff phase is taken either at its octic value ($w = 3/5$) or conservatively as matter-like ($w = 0$), followed by a matter phase down to $T_R$. Using the standard matching~\cite{arXiv_astro-ph_0305263} this gives $N_* = 46$--$49$ (D602), which is the range used in Sec.~\ref{sec:predictions}.
 
 \begin{figure}[tbp]
 \includegraphics[width=\columnwidth]{figs/fig4_w.pdf}
@@ -148,7 +147,7 @@ We list the checks a complete model must pass, with their status. Numbers refer 
 
 \paragraph{Gravitino.} In the nilpotent supergravity embedding~\cite{arXiv_2408_05203}, a non-zero $W_0$ (needed for $m_{3/2}$ and $\Lambda \simeq 0$) gives the inflaton an F-term, $F_\tau = K_\tau W_0 \neq 0$. The inflaton therefore carries about a quarter of the supersymmetry breaking, and no residual symmetry forbids its decay to gravitinos. With the standard rate~\cite{arXiv_hep-ph_0611166} this would overproduce gravitinos. The decay is closed kinematically if $m_{3/2} > m_\phi/2 \approx 10^{11}$~GeV (D584).
 
-\paragraph{Soft masses and the Higgs.} At $m_{3/2} \sim 10^{11}$~GeV, soft masses of order $m_{3/2}$ would sit at the edge of the Higgs-mass bound on high-scale supersymmetry ($M_S \lesssim 2\times10^{10}$~GeV for degenerate spectra~\cite{arXiv_1407_4081}). The $\alpha = 1/3$ K\"ahler potential has no-scale form. In no-scale models the tree-level soft masses cancel, which gives loop-level soft masses $\sim m_{3/2}/16\pi^2 \approx 10^9$~GeV, comfortably allowed. Sequestering of the visible sector is assumed, not derived (D585).
+\paragraph{Soft masses and the Higgs.} At $m_{3/2} \sim 10^{11}$~GeV, soft masses of order $m_{3/2}$ would sit at the edge of the Higgs-mass bound on high-scale supersymmetry ($M_S \lesssim 2\times10^{10}$~GeV for degenerate spectra~\cite{arXiv_1407_4081}). A single modulus with $K=-\ln(2\,\mathrm{Im}\,\tau)$ is \emph{not} of no-scale type: $K^{\tau\bar\tau}K_\tau K_{\bar\tau}=1$, whereas the no-scale cancellation requires $3$~\cite{arXiv_1305_1247}. In the minimal setting tree-level soft masses are therefore of order $m_{3/2}\sim10^{11}$~GeV, above the Higgs-mass bound. A no-scale structure needs additional moduli, for instance three $\alpha=1/3$ moduli of a factorised six-torus with $\tau$ one of them, which would give loop-level soft masses $\sim m_{3/2}/16\pi^2\approx6\times10^8$~GeV; together with sequestering of the visible sector this is assumed, not derived, and we list it as open (D585a, D636).
 
 \paragraph{Other moduli.} The inflation scale exceeds the gravitino mass, $H_{\rm inf}/m_{3/2} \approx 37$. Stabilising the dilaton the way KKLT does would therefore fail~\cite{arXiv_hep-th_0411011}. A supersymmetric racetrack with $W_Y = W_Y' = 0$ avoids this, with a parameter window spanning a factor of about 100 (D586, D591). A heavy dilaton decays to superpartners, and the lightest superpartner (LSP), stable under the matter parity below, could overclose the universe. Adiabatic tracking suppresses the dilaton's leftover oscillation energy as $f_Y \propto (m_Y/H)^{-8}$ to $(m_Y/H)^{-20}$. We compute the stiff-phase growth directly ($\times 8.6$) and fix the Hubble-induced coefficient by supergravity ($c = \sqrt2$). The LSP bound is then met for $m_Y \gtrsim 140\,H_{\rm end}$, about $7\times10^{14}$~GeV (D592--D596).
 
@@ -159,9 +158,9 @@ We list the checks a complete model must pass, with their status. Numbers refer 
 \section{Baryogenesis and a neutrino-mass prediction}\label{sec:baryo}
 \paragraph{Leptogenesis from inflaton decay fails.} Section~\ref{sec:reheating} shows that diagonal decays to heavy-neutrino pairs vanish at $\tau = i$. Off-diagonal decays to $N_1N_2$ exist. In a minimal $\Gamma_2 \simeq S_3$ flavour model the coupling is $\kappa = 1.26$ (D597). But the coupling scales with the mass splitting, while the resonant CP asymmetry needs a small splitting. The asymmetry therefore saturates at $Y_B \approx 1.25\times10^{-11}$, a factor of 7 short of the observed $8.75\times10^{-11}$. Higher-weight doublets reduce the shortfall to a factor of $1.75$ but do not close it (D598). Related modular constructions use other fixed points or vacua~\cite{arXiv_2411_18603,arXiv_2604_04585}.
 
-\paragraph{Affleck--Dine along $LH_u$.} Our low reheating temperature is exactly the regime where Affleck--Dine leptogenesis along the $LH_u$ flat direction works. There the asymmetry is set mainly by the lightest neutrino mass~\cite{arXiv_hep-ph_0102187,arXiv_hep-ph_0109154}. The flat direction starts to oscillate at $H \sim m_{\rm soft} \sim 10^9$~GeV, after the stiff phase has ended ($H_x \approx 5\times10^9$~GeV). The matter-dominated analysis therefore applies (D600). For $T_R \lesssim 10^7$~GeV this requires $m_{\nu_1} \lesssim 10^{-8}$~eV (D599, D603). This is an order-of-magnitude estimate, not a computation.
+\paragraph{Affleck--Dine along $LH_u$.} Our low reheating temperature is exactly the regime where Affleck--Dine leptogenesis~\cite{AffleckDine1985,arXiv_hep-ph_9507453} along the $LH_u$ flat direction~\cite{arXiv_hep-ph_9310297} is usually effective. There the asymmetry is set mainly by the lightest neutrino mass~\cite{arXiv_hep-ph_0102187,arXiv_hep-ph_0109154}. The flat direction starts to oscillate at $H \sim m_{\rm soft} \sim 10^9$~GeV, after the stiff phase has ended ($H_x \approx 5\times10^9$~GeV). The matter-dominated analysis therefore applies (D600). For $T_R \lesssim 10^7$~GeV this requires $m_{\nu_1} \lesssim 10^{-8}$~eV (D599, D603). This is an order-of-magnitude estimate, not a computation. It depends on the open soft-mass sector, and with $A$-terms of order $m_{3/2}\gg m_{\rm soft}$ the flat-direction dynamics may differ from the cited analyses; a dedicated calculation is needed.
 
-\paragraph{Prediction.} A nearly massless lightest neutrino gives $\sum m_\nu = 0.059$--$0.060$~eV with normal ordering. This sits at the 95\% upper limit from DESI DR2 with the Lyman-$\alpha$ forest in $\Lambda$CDM, $\sum m_\nu < 0.0592$~eV, which also excludes inverted ordering at more than $3\sigma$~\cite{arXiv_2607_27410}. A future measurement of $\sum m_\nu \gtrsim 0.07$~eV would remove this route to baryogenesis (D604).
+\paragraph{Consequence.} The estimate requires a nearly massless lightest neutrino, $m_{\nu_1}\lesssim10^{-8}$~eV. The mass ordering is not predicted. With normal ordering, which current data favour~\cite{arXiv_2607_27410}, this gives $\sum m_\nu\simeq0.0588$~eV, at the 95\% upper limit $\sum m_\nu < 0.0592$~eV from DESI DR2 with the Lyman-$\alpha$ forest in $\Lambda$CDM~\cite{arXiv_2607_27410}; with inverted ordering it would give $\simeq0.10$~eV. A measurement of $\sum m_\nu \gtrsim 0.07$~eV would remove this route to baryogenesis (D604).
 
 \section{The hexagonal variant: SERAPIS-$\rho$}\label{sec:rho}
 The same structure can be built with the vacuum at $\rho = e^{2\pi i/3}$ from ingredients with a more direct string pedigree. The plateau uses $I_\rho = (1/4\pi)\ln(1+|j|^2/1728^2)$, which vanishes at $\rho$~\cite{arXiv_2408_05203}. The mass and tilt come from the threshold/species function $L = -\ln(2y|\eta|^4)$~\cite{arXiv_2407_12081,arXiv_2411_08467}:
@@ -173,12 +172,12 @@ $L$ has an isotropic minimum at $\rho$ (Hessian $0.667$ in both directions), whi
 With its own reheating history (a plateau term $\propto\delta^{12}$, hence $w = 5/7$) the predictions are $n_s = 0.969$--$0.972$, $r = 4.6$--$5.1\times10^{-4}$ and $\alpha_s = -(8.5$--$9.5)\times10^{-4}$ (D613, D634). These are essentially indistinguishable from the $\tau = i$ model. The proton parity survives at $\rho$ under its selection rule, couplings non-zero only for weight $k\equiv0\pmod 6$ (D612). The rest of the chain carries over with $m_\phi \approx 7\times10^{10}$~GeV, $m_{3/2} \gtrsim 3.6\times10^{10}$~GeV and soft masses of about $2\times10^8$~GeV (D614). We found the combination nowhere in the literature we checked; each ingredient is prior art (D611). As discussed in Sec.~\ref{sec:limits}, the linear-in-$L$ term is not itself derived.
 
 \section{Limitations and open problems}\label{sec:limits}
-\paragraph{The origin of $\varepsilon$.} The tilt-and-mass parameter ($\varepsilon \approx 10^{-4}$ at $i$, $6\times10^{-5}$ at $\rho$) was fixed after seeing current data, and we have not derived it. Every route we tried failed or is only conditional:
+\paragraph{The origin of $\varepsilon$.} The tilt-and-mass parameter ($\varepsilon \simeq (1.3$--$1.6)\times10^{-4}$ at $i$, $6\times10^{-5}$ at $\rho$) was fixed after seeing current data, and we have not derived it. Every route we tried failed or is only conditional:
 \begin{itemize}
 \item $N=2$ thresholds give the right linear growth, but the natural threshold function has a saddle at $i$ (D576, D608).
 \item Coleman--Weinberg loops cannot produce a term $\propto\ln|j-1728|$ (D606, D607).
 \item A threshold-dependent uplift either becomes exponentially steep or only relabels the problem (D616--D618).
-\item A route through the Harvey--Moore threshold $\ln|J(T)-J(U)|$~\cite{arXiv_hep-th_9510182} at the enhanced-symmetry point $T = U = i$, where moduli trapping operates~\cite{arXiv_hep-th_0403001}, has the right structure. With a realistic spectrum, however, the species-scale term~\cite{arXiv_2507_05345} is too weak to keep the vacuum at the fixed point, and sequestering~\cite{arXiv_1309_3122} removes the tilt with it (D620--D631).
+\item A route through the Harvey--Moore threshold $\ln|J(T)-J(U)|$~\cite{arXiv_hep-th_9510182} at the enhanced-symmetry point $T = U = i$, where moduli trapping operates~\cite{arXiv_hep-th_0403001}, has the right structure. With a realistic spectrum, however, the species-scale term~\cite{arXiv_2507_05345} is too weak to keep the vacuum at the fixed point, and sequestering the visible sector would remove the tilt with it (D620--D631).
 \end{itemize}
 
 \paragraph{Prior art.} The tilt mechanism is that of singular attractors~\cite{arXiv_2512_02969}. Vacua at $\rho$ and the $SL(2,\mathbb{Z})$ attractor framework are in Refs.~\cite{arXiv_2408_05203,arXiv_2412_19324}. A variant with its vacuum near $\mathrm{Im}\,\tau \approx 2$ and tiny $r$ coincides with the Coleman--Weinberg model of Ref.~\cite{arXiv_2607_00528}. What we add is the combination at $\tau = i$, the closed-form Janus relations, and the consistency chain.
@@ -186,31 +185,32 @@ With its own reheating history (a plateau term $\propto\delta^{12}$, hence $w = 
 \paragraph{Other caveats.}
 \begin{itemize}
 \item The cosmological constant is tuned separately, as in the no-go of Ref.~\cite{arXiv_2212_03876}.
-\item No-scale sequestering of the visible sector is assumed.
+\item The soft-mass sector is open: a single $\alpha=1/3$ modulus is not no-scale, so extra moduli and visible-sector sequestering are assumed (Sec.~\ref{sec:chain}).
+\item Preheating and the gravitino--inflatino channel are not analysed.
 \item Baryogenesis rests on an order-of-magnitude Affleck--Dine estimate.
-\item The leading-order consistency relation carries a uniform 11--13\% bias.
+\item The leading-order consistency relation carries a uniform 11--13\% bias, probably from the constant offsets in $I\simeq y-1.19$ and $I_1\simeq y/2-0.59$ that the closed form neglects.
 \end{itemize}
 
 \section{Forward predictions}\label{sec:forward}
-The following were frozen, with SHA-256 hashes committed to the public repository, on 15 November 2026. They will be scored only on data published after that date (D605, D615, D633). We will not retune $\varepsilon$ in response to future data; any revision counts as a new model.
+The following were frozen, with SHA-256 hashes committed to the public repository, on 15 November 2026. They will be scored only on data published after that date (locks D605, D615, D633 in the repository). The table restates them. The lock for the $\tau=i$ model lists normal ordering as part of the neutrino prediction and inverted ordering as a disfavouring condition; as explained in Sec.~\ref{sec:baryo}, the ordering is an input taken from data, not an output of the model, so an inverted ordering would falsify that input rather than the model (and with $m_{\nu_1}\simeq0$ it would also violate the $\sum m_\nu$ condition). We will not retune $\varepsilon$ in response to future data; any revision counts as a new model.
 
-\begin{table}[tbp]
-\caption{Frozen predictions and the conditions under which each is disfavoured at $3\sigma$.}
+\begin{table*}[tbp]
+\caption{Frozen predictions and the conditions under which each is disfavoured.}\label{tab:forward}
 \begin{ruledtabular}
 \begin{tabular}{lll}
 Quantity & SERAPIS ($\tau=i$; $\rho$) & Disfavoured if \\
 \hline
-$n_s$ & $0.970$--$0.975$; $0.969$--$0.972$ & $>3\sigma$ outside band \\
+$n_s$ & $0.970$--$0.975$; $0.969$--$0.972$ & $>3\sigma$ outside the band \\
 $r$ & $(4.8$--$5.7)$; $(4.6$--$5.1)\times10^{-4}$ & $r<2.3\times10^{-4}$ (95\%) \\
-$\alpha_s$ & $-(8.6$--$9.9)$; $-(8.5$--$9.5)\times10^{-4}$ & $\alpha_s>-3\times10^{-4}$ \\
-$\sum m_\nu$ & $0.059$--$0.060$~eV, NO & $>0.07$~eV, or IO \\
+$\alpha_s$ & $-(8.6$--$9.9)$; $-(8.5$--$9.5)\times10^{-4}$ & $\alpha_s>-3\times10^{-4}$ (long term) \\
+$\sum m_\nu$ & $\simeq0.059$~eV (if NO) & $>0.07$~eV \\
 $f_{\rm NL}^{\rm local}$ & $\approx 0.01$ & $|f_{\rm NL}|>5$ \\
 Superpartners & none below $\sim10^8$~GeV & found below $10^8$~GeV \\
 \end{tabular}
 \end{ruledtabular}
-\end{table}
+\end{table*}
 
-The decisive tests in the near term are the first tensor constraints from the Simons Observatory small-aperture telescopes, now being commissioned~\cite{arXiv_2609_26938}; LiteBIRD and CMB-S4 at $\sigma(r)\approx10^{-4}$, where $r\approx5\times10^{-4}$ would appear at about $5\sigma$; $\sum m_\nu$ from DESI and Euclid; and the mass ordering from JUNO and DUNE. Measuring $\alpha_s$ at the $10^{-4}$ level would test the consistency relation~(\ref{eq:consistency}) with no free parameter.
+Table~\ref{tab:forward} lists the predictions. The model is easy to exclude and hard to confirm. Any detection of $r\gtrsim10^{-3}$, for example by the Simons Observatory small-aperture telescopes now being commissioned~\cite{arXiv_2609_26938} or by LiteBIRD~\cite{arXiv_2202_02773}, would rule it out. Detecting $r\approx5\times10^{-4}$ itself requires $\sigma(r)\sim10^{-4}$, beyond the currently planned experiments. In the nearer term the sharpest tests are $n_s$ from ground-based CMB experiments combined with BAO, and $\sum m_\nu$ from DESI and Euclid. Measuring $\alpha_s$ at the $10^{-4}$ level, a long-term goal, would test the consistency relation~(\ref{eq:consistency}) with no free parameter.
 
 \begin{acknowledgments}
 \textit{AI assistance.} This work was carried out with substantial help from Claude (Anthropic), a large language model. Claude wrote the analysis code, ran the numerical computations, searched and summarised the literature, and drafted this manuscript and its figures under the author's direction. Results were checked in three ways:
