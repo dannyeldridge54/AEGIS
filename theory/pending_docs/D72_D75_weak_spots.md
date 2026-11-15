@@ -5838,3 +5838,11 @@ Verdict: NULL (no new literature, no new locked computation). The DpL loop ends 
   (i) an explicit Γ_N flavour model at τ = i for off-diagonal φ → N₁N₂ and resonant leptogenesis (D590);
   (ii) the full Y-decay + stiff-phase follow-up of D592;
   (iii) the origin of ε.
+
+## D594 — DEEP (Ddl 08:04 CT; locked PREREG_D594_ADIABATIC_Y_EXT; results/adiabatic_y_d594.txt) — D592 extrapolation checked directly: the suppression is even steeper; m_Y ≳ 160 H_end suffices
+Same toy and code (only R changed):
+- f_Y(200) = 2.4e-15 and f_Y(320) = 3.2e-17, both above the 1e-18 numerical floor. The forced parts are 6e-9 and 2e-9, and they decay with V.
+- Local slopes: 100→200: −19.8; 200→320: −9.2. The suppression steepens past R ~ 100 (approaching exponential), so D592's power-law extrapolation was conservative.
+- The requirement f_Y ≤ 2e-13 is met already at R ≈ 160 (log interpolation between 100 and 200). **CONFIRMED directly at R = 200 and 320.**
+Updated bound: m_Y(y_end) ≳ 5e14 GeV, m_Y(vacuum) ≳ 8.5e14 GeV, racetrack A ≳ 4.3e-3. The window widens back to ×119 (versus ×58 in D592).
+Caveats unchanged: c = 1 toy normalisation (f ∝ c²); the stiff-phase growth factor (~180×) is an estimate; Y decay is not followed.
