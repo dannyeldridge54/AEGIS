@@ -5436,3 +5436,19 @@ Consequences:
 - A ρ-vacuum variant would change the matter selection rule from mod 4 to mod 6 (D551 would need redoing) and loses the "square torus today" picture.
 - n_s is slightly below HS-Kairos (−1.3σ to −2.2σ SPA; ≥ 3.1σ off SPA+DESI).
 Honest summary: the most natural string-motivated modular plateau (Eisenstein s ≥ 2, ρ-vacuum, r ~ 1–2e-4) is not SERAPIS. SERAPIS's distinctive τ = i vacuum costs naturalness. Prior art: Eisenstein invariants are standard (Kallosh–Linde list L_G₂ / E-type invariants; Green–Gutperle for the string couplings); the r-values here are our computation.
+
+## D570 — the SERAPIS equation and scorecard (Danny 23:15 "make an equation for mine and test the scores"; locked PREREG_D570; results/serapis_equation_d570.txt)
+Equation: n_s ≈ 1 − 2/N* + Δ_δ; r ≈ (1 − n_s,0)²/p²; α_s ≈ −(1 − n_s,0)²/2. α = 1/3 geometry, p = invariant power, N* = 52–55.6.
+Validation against the full computations:
+- n_s: the equation is low by 0.0014–0.0021 (computed n_s is slightly higher).
+- r: computed/equation = 0.89–0.90 (p = 1), 0.77–0.78 (p = 2), 0.68–0.69 (p = 3).
+- Usable form: n_s ≈ 1 − 2/N* + 0.0018, and r ≈ (1 − n_s)²/p² to within 10–30%.
+Scorecard (POST-DATA, descriptive; worst N* end; grades A < 1σ, B < 2σ, C < 3σ, F > 3σ):
+- Kairos p = 1: A Planck, A SPT+Planck, B CMB-SPA, F SPA+DESI, F P-ACT-LB.
+- Chronos p = 1: C, C, B, A, B.
+- HS-Kairos p = 2: A, A, B, F, F.
+- HS-Chronos p = 2: C, F (SPT+Planck), C, B, A.
+- SERAPIS-NP: B, B, C, F, F.
+- Eisenstein s = 2.5 (ρ vacuum): A, A, C, F, F.
+- All variants pass r < 0.036.
+Reading: no single variant scores well on every data set, because the data sets disagree with each other (the CMB-vs-DESI split). Kairos-type wins on CMB-only data; Chronos-type wins on DESI-including data. The real scored test is D567 (future data only).

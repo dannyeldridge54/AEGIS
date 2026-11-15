@@ -1,0 +1,15 @@
+PART A: equation vs computed (delta=0)
+  p=1 N*=52: eq n_s=0.9615 (computed 0.9631, diff +0.0016); eq r=1.48e-03 (computed 1.31e-03, ratio 0.89)
+  p=1 N*=55.6: eq n_s=0.9640 (computed 0.9654, diff +0.0014); eq r=1.29e-03 (computed 1.16e-03, ratio 0.90)
+  p=2 N*=52: eq n_s=0.9615 (computed 0.9635, diff +0.0020); eq r=3.70e-04 (computed 2.86e-04, ratio 0.77)
+  p=2 N*=55.6: eq n_s=0.9640 (computed 0.9658, diff +0.0018); eq r=3.23e-04 (computed 2.52e-04, ratio 0.78)
+  p=3 N*=52: eq n_s=0.9615 (computed 0.9636, diff +0.0021); eq r=1.64e-04 (computed 1.12e-04, ratio 0.68)
+  p=3 N*=55.6: eq n_s=0.9640 (computed 0.9659, diff +0.0019); eq r=1.44e-04 (computed 9.86e-05, ratio 0.69)
+PART B: scorecard (post-data, descriptive); worst-end sigma and grade; r vs <0.036
+  variant                          Planck18   SPT+Planck      CMB-SPA     SPA+DESI     P-ACT-LB   r-limit
+  Kairos p=1                         0.4σ A       0.5σ A       1.8σ B       3.6σ F       4.0σ F   pass
+  Chronos p=1                        2.1σ C       2.9σ C       1.8σ B       0.5σ A       1.2σ B   pass
+  HS-Kairos p=2                      0.3σ A       0.6σ A       1.6σ B       3.4σ F       3.9σ F   pass
+  HS-Chronos p=2                     2.6σ C       3.5σ F       2.5σ C       1.1σ B       0.5σ A   pass
+  SERAPIS-NP                         1.2σ B       1.0σ B       2.8σ C       4.7σ F       5.1σ F   pass
+  Eisenstein s=2.5 (rho vac)         0.7σ A       0.5σ A       2.2σ C       4.0σ F       4.4σ F   pass
