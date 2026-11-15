@@ -5880,3 +5880,15 @@ Remaining routes (none computed):
 - (c) a non-leptogenesis mechanism (Affleck–Dine along a flat direction, natural with high-scale SUSY);
 - (d) a larger inflaton mass. Y_B,plateau grows with m, but m is fixed by ε (D581).
 Status: baryogenesis is the WEAKEST link of two-term SERAPIS. Leptogenesis from inflaton decay at τ = i is suppressed by symmetry (diagonal couplings vanish, off-diagonal ones ∝ ΔM) and falls ~×7 short in the minimal realisation.
+
+## D598 — DEEP (Ddl 08:08 CT; locked PREREG_D598_HIGHER_WEIGHT; results/higher_weight_d598.txt) — higher-weight doublets raise κ, but none passes; the best (k = 8) is ×1.75 short
+κ at τ = i for the Γ₂ doublets (built by 2⊗2 → 2 products):
+- k = 2: κ = 1.26 (D597).
+- k = 4: κ = 2.53, Y_B,plateau = 2.5e-11.
+- k = 6: κ = 1.26, Y_B,plateau = 1.25e-11.
+- k = 8 (Y⁽⁴⁾⊗Y⁽⁴⁾): κ = 5.05, Y_B,plateau = 5.0e-11.
+All FAIL against 8.75e-11 (needs κ ≥ 8.85). The pattern (κ doubles along the Y⁽⁴⁾-power chain) suggests a k = 16 doublet might pass, but that was NOT in this lock. Picking ever-higher weights until something passes would be chasing a result, so it is not done here.
+Caveats:
+- At weight ≥ 6, Γ₂ has more than one doublet; κ depends on which combination is used. Only the product chain was tested.
+- Three generations or several pairs could add a factor ~2–3. Combined with k = 8 (×1.75 short), leptogenesis becomes MARGINALLY possible. That combination is not computed.
+Verdict: route (b) narrows the gap from ×7 to ×1.75 but does not close it. Baryogenesis stays the weakest link: possible only in a fairly specific flavour set-up (high-weight N doublet plus several pairs), or via Affleck–Dine.
