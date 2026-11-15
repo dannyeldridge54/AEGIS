@@ -1,0 +1,7 @@
+volume = 455.5
+g_s=0.05: M_s/M_P = 0.0393 (sqrt(pi) conv) / 0.0222 (no sqrt(pi)); M_s = 9.56e+16 GeV
+g_s=0.1: M_s/M_P = 0.0467 (sqrt(pi) conv) / 0.0263 (no sqrt(pi)); M_s = 1.14e+17 GeV
+g_s=0.2: M_s/M_P = 0.0555 (sqrt(pi) conv) / 0.0313 (no sqrt(pi)); M_s = 1.35e+17 GeV
+g_s=0.5: M_s/M_P = 0.0698 (sqrt(pi) conv) / 0.0394 (no sqrt(pi)); M_s = 1.70e+17 GeV
+g_s=1.0: M_s/M_P = 0.0830 (sqrt(pi) conv) / 0.0469 (no sqrt(pi)); M_s = 2.02e+17 GeV
+band g_s 0.1-0.5: 0.0467-0.0698 vs window 0.03-0.1 -> VERDICT: CONSISTENT

@@ -4398,3 +4398,12 @@ massless photon. Its effects on SM currents are suppressed by (E/M_V)², i.e. in
 constrains very tightly for a TeV-scale DM component (LZ/XENONnT; size of the bound not extracted here). Condition added: the axion eaten by the D7 U(1)
 must not couple to hypercharge (δ = 0, the usual D-brane requirement for a massless Y), or δ must lie below the direct-detection bound. F1 (α drift)
 is unaffected: x is pinned (D417). No scored result → WALL.
+
+**D449 (cycle 34, "pp"; third pass PART 11, WHOLE; scored, locked PREREG_D449_MS_FROM_XE; results/ms_from_xe_d449.txt) — CONSISTENT: the
+volume at capture predicts a string scale inside the window the capture and plateau tests needed.** At x_E = 29.6 the volume is
+𝒱 = (2x_E)^{3/2} = 455.5 (string units), so M_s/M_P = g_s^{1/4}√(π/𝒱) = 0.047–0.070 for g_s = 0.1–0.5 (M_s ≈ 1.1–1.7×10¹⁷ GeV), inside the
+D446+D439 window 0.03–0.1. Without the √π convention factor the band is 0.026–0.039, which still overlaps (the g_s = 0.1 end falls just below
+0.03). Not fitted: the window came from dynamics (capture and plateau), the band from geometry. Caveats: the toy torus fluxes and the single-modulus
+volume are not one geometry; and D439 held M_s fixed, whereas in string units M_s varies with volume during inflation (x ~ 1e-4). The
+consistency is for the late-time scale only, and the plateau test should be redone with M_s(x) (next deep item, needs its own lock). CENTRE:
+balanced. THIRD PASS DONE.
