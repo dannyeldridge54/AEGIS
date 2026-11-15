@@ -5949,3 +5949,14 @@ With T_R = 1e3–1e5 GeV: N* = 46.1–49.2 (versus 49–51 in D581). n_s include
 ALLOWED: {1.3e-4, 1.6e-4}. The window moved up and stays about 25–30% wide.
 Updated post-hoc band for two-term SERAPIS (scored only on future data): n_s = 0.970–0.975, r = 4.8–5.7e-4, N* = 46–49, T_R = 1e3–1e5 GeV.
 The r prediction strengthens slightly: r ≈ 5e-4 is a ~5σ target for σ(r) = 1e-4 experiments.
+
+## D603 — DEEP (Ddl 08:16 CT; literature, no computation) — the LH_u Affleck–Dine "massless lightest neutrino" prediction is robust across stopping mechanisms
+- Fujii, Hamaguchi, Yanagida, hep-ph/0102187 (flat direction lifted by the neutrino-mass operator itself, W = (m_ν1/2⟨H_u⟩²)(LH_u)², with thermal effects included):
+  - The asymmetry is almost independent of T_R over 1e5–1e12 GeV, because the thermal-log term triggers early oscillation. It is set by m_ν1 ≈ 1e-10 – 3e-9 eV for n_B/s ≈ (0.4–1)e-10.
+  - The abstract and introduction quote slightly different ranges (0.3–1 vs 0.1–3 × 1e-9 eV); read in part only.
+  - Their set-up has TeV-scale m₃/₂ and m_φ.
+- FHY hep-ph/0109154 (B − L D-term stopping): n_B ∝ T_R/m_ν1, with m_ν1 ~ 1e-4 eV at T_R = 1e10 (D599).
+Application to SERAPIS (m_soft ~ 1e9 GeV, T_R ~ 1e3–1e5 GeV; D601/D602):
+- The heavy AD mass makes oscillation start at H ~ m_soft, before the thermal-log term can matter (estimate). This is closer to the T_R-proportional regime. Both papers point to m_ν1 ~ 1e-11 – 1e-8 eV.
+- Robust qualitative prediction, whichever stopping mechanism applies: **the lightest neutrino is essentially massless (≲ 1e-8 eV)**. So Σm_ν sits at its oscillation minimum (≈ 0.059 eV NO / ≈ 0.10 eV IO), and 0νββ (if IO) is fixed by the mixing angles.
+Caveat: no dedicated computation for heavy-SUSY AD at low T_R; the coefficients are uncertain by ~×10, so m_ν1 is pinned only to within about two orders of magnitude.
