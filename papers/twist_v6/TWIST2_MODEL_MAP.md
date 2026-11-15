@@ -153,3 +153,5 @@ alone.
 **Flag (D450):** the inflationary point sits at volume 𝒱 ≈ 4e-6 in string units (M_s ≫ M_P there); inflation is outside geometric control unless a T-dual/other description is shown.
 
 **Flag detail (D451):** T-duality would restore control (dual volume 1.9e6) only with a modular F; the Twist's cliff breaks modularity by ~1e120, and a modular completion would mirror the cliff to x ≈ 0.034.
+
+**Centre-confirmed (D452):** with the modulus normalised so 𝒱 = 1–10 at the CMB point (allowed Kähler rescaling), capture still holds (M_s ≈ 7e13–3.5e14 GeV); D450 flag downgraded to marginal control (α′ corrections at 𝒱 ~ 1–10 unchecked).

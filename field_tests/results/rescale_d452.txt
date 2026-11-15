@@ -1,0 +1,11 @@
+V(x*)=1 a=3846 V(x_E)=1.09e+08 g_s=0.1 M_s/M_P=9.56e-05 m_s=1e+04: reflections 5001, xmin 29.3654, return yes, offset 3.55e-15 -> CAPTURES
+V(x*)=1 a=3846 V(x_E)=1.09e+08 g_s=0.1 M_s/M_P=9.56e-05 m_s=1e+05: reflections 5001, xmin 29.3727, return yes, offset 3.55e-15 -> CAPTURES
+V(x*)=1 a=3846 V(x_E)=1.09e+08 g_s=0.5 M_s/M_P=1.43e-04 m_s=1e+04: reflections 5001, xmin 29.3663, return yes, offset 3.55e-15 -> CAPTURES
+V(x*)=1 a=3846 V(x_E)=1.09e+08 g_s=0.5 M_s/M_P=1.43e-04 m_s=1e+05: reflections 5001, xmin 29.3749, return yes, offset 3.55e-15 -> CAPTURES
+V(x*)=10 a=17852 V(x_E)=1.09e+09 g_s=0.1 M_s/M_P=3.02e-05 m_s=1e+04: reflections 5001, xmin 29.3636, return yes, offset 3.55e-15 -> CAPTURES
+V(x*)=10 a=17852 V(x_E)=1.09e+09 g_s=0.1 M_s/M_P=3.02e-05 m_s=1e+05: reflections 5001, xmin 29.3682, return yes, offset 3.55e-15 -> CAPTURES
+V(x*)=10 a=17852 V(x_E)=1.09e+09 g_s=0.5 M_s/M_P=4.52e-05 m_s=1e+04: reflections 5001, xmin 29.3641, return yes, offset 3.55e-15 -> CAPTURES
+V(x*)=10 a=17852 V(x_E)=1.09e+09 g_s=0.5 M_s/M_P=4.52e-05 m_s=1e+05: reflections 5001, xmin 29.3696, return yes, offset 3.55e-15 -> CAPTURES
+plateau with V(x*)=1: M_s(x*)/M_P = 1.00 (g_s 0.1) -> D439 at M_s~M_P: dn_s ~ -2e-6..-6e-6 (amplitude offset only)
+plateau with V(x*)=1: M_s(x*)/M_P = 1.49 (g_s 0.5) -> D439 at M_s~M_P: dn_s ~ -2e-6..-6e-6 (amplitude offset only)
+VERDICT: CONTROL + CAPTURE COMPATIBLE

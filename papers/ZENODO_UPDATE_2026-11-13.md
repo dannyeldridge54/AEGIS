@@ -97,3 +97,4 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - v2 addition: Route A prediction band r 0.0042–0.0050 rising with n_s (opposite to Starobinsky), α_s −7.1 to −8.4×10⁻⁴ (D434); ε window 2.0–4.0×10⁻⁷.
 - v2 addition (optional, conditional): candidate string origin of the capture coupling — moduli-dependent FI term on magnetised D7-branes; toy model captures and pins x at x_E (D436, D437); small-x obstacle stated.
 - v2 correction pending (D450): state plainly that the inflationary point lies at sub-string volume (𝒱 ≈ 4e-6), outside geometric control.
+- v2 (D452): with normalisation 𝒱 = 1–10 at the CMB point, control is marginal rather than lost; string scale ~1e14 GeV; capture unaffected.

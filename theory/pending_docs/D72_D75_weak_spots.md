@@ -4426,3 +4426,15 @@ Reading (not scored): a modular completion of F would make V symmetric about x =
 x = 1/29.6 ≈ 0.034, on the field's path between inflation and capture. So the T-dual escape is not free: it would reshape the model. The
 D450 control flag therefore stands. Remaining escapes: a non-geometric/Landau-Ginzburg description of the small-volume phase, or a
 different modulus driving inflation. CENTRE: no change; flag stands (v2 list already updated by D450).
+
+**D452 (cycle 37, "pp"; PART 2/5/11 link; scored, locked PREREG_D452_RESCALE; results/rescale_d452.txt) — CONTROL + CAPTURE COMPATIBLE:
+a different (allowed) normalisation of the modulus removes the D450 flag at the level of 𝒱 ≥ 1–10.** K = −3 ln(T+T̄) is unchanged under
+T → aT, so the roll is identical if F's scales move with it; only the map to the physical volume changes. With a = 3846 (𝒱 = 1 at the CMB
+point) or a = 17852 (𝒱 = 10), the volume at capture is 1.1e8 / 1.1e9, so M_s at capture is 3e-5–1.4e-4 M_P (7e13–3.5e14 GeV), and the
+D446 integrator still CAPTURES in all 8 cases (bounce to x = 29.36–29.37; the weaker soft slope returns the field later, once m_eff > H; final offset at
+the float floor). The D446 "window" 0.03–0.1 M_P was therefore only the tested range, not a lower limit (D441's 0.068 bound was already
+conservative). Plateau: with 𝒱(x*) = 1, M_s(x*) ≈ 1.0–1.5 M_P → D439's constant amplitude offset (absorbed by A_s) and δn_s ~ 1e-6. Checks: M_s at
+capture (≥ 7e13 GeV) > H_inf ≈ 1.7e13 GeV; M_KK ≈ M_s/𝒱^{1/6} ≈ 1e13 GeV ≫ T_capture = 1.5e11 GeV. Not checked: how 𝒱 ≈ 1–10 at the CMB point
+fares against α′ corrections (O(1) at 𝒱 ~ 1, so 𝒱 = 10 is the safer choice), and how the new M_s scale affects D447's hidden sector (masses ≲ 10 TeV
+unchanged in form). D449's 'consistency' held for a = 1 only; with a ≈ 4e3–2e4 the string scale is ~1e14 GeV instead. CENTRE: balanced; the
+D450 flag is downgraded from 'outside control' to 'marginal control (𝒱 ≈ 1–10) at the CMB point'.
