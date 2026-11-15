@@ -1,0 +1,21 @@
+{
+ "metadata": {
+  "upload_type": "software",
+  "title": "Inflation Scorecard 0.1.0 and Janus calculator",
+  "description": "Scores an inflation model's n_s, r, running, neutrino mass, N_eff, f_NL (and with CAMB, Lyman-alpha and S8) against current datasets from one sourced data file; closed-form running prediction for plateau-plus-tilt models.",
+  "creators": [
+   {
+    "name": "Eldridge, Danny Lee"
+   }
+  ],
+  "version": "0.1.0",
+  "license": "PENDING",
+  "keywords": [
+   "pre-registration",
+   "reproducibility",
+   "inflation",
+   "cosmology"
+  ],
+  "notes": "DRAFT - not uploaded. Needs Danny's licence choice and explicit 'Publish'."
+ }
+}

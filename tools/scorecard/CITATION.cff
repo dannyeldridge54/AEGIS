@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below.
+title: "Inflation Scorecard and Janus calculator"
+version: 0.1.0
+date-released: 2026-11-15
+authors:
+  - family-names: Eldridge
+    given-names: Danny Lee
+repository-code: https://github.com/dannyeldridge54/AEGIS/tree/unify-bg/tools/scorecard
+license-url: https://github.com/dannyeldridge54/AEGIS/blob/unify-bg/tools/scorecard/README.md#licence
+notes: "Licence pending the author's choice. Developed with AI assistance (Claude, Anthropic)."

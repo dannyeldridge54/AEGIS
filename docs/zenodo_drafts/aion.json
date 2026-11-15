@@ -1,0 +1,21 @@
+{
+ "metadata": {
+  "upload_type": "software",
+  "title": "AION 0.1.0: lock before you look (pre-registration kit)",
+  "description": "Dependency-free kit to pre-register computations in git: templates, SHA-256 locks, deviation logs, and an audit that every result file followed its lock.",
+  "creators": [
+   {
+    "name": "Eldridge, Danny Lee"
+   }
+  ],
+  "version": "0.1.0",
+  "license": "PENDING",
+  "keywords": [
+   "pre-registration",
+   "reproducibility",
+   "inflation",
+   "cosmology"
+  ],
+  "notes": "DRAFT - not uploaded. Needs Danny's licence choice and explicit 'Publish'."
+ }
+}

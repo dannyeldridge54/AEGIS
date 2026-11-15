@@ -1,11 +1,12 @@
 cff-version: 1.2.0
 message: If you use or discuss this work, please cite it as below.
-title: 'Torsion-Born Early Dark Energy with an Onset Locked to Matter-Radiation Equality: Derivation and Pre-Registered Likelihood Tests'
+title: 'SERAPIS: modular inflation with a vacuum at a fixed point, frozen predictions and the Janus consistency relation'
 authors:
   - family-names: Eldridge
     given-names: Danny Lee
-version: "2"
-doi: 10.5281/zenodo.23867116
-date-released: 2026-10-31
+version: "3"
+doi: 10.5281/zenodo.24250733
+date-released: 2026-11-15
 url: https://github.com/dannyeldridge54/AEGIS
-license-url: https://github.com/dannyeldridge54/AEGIS/blob/master/LICENSE
+license-url: https://github.com/dannyeldridge54/AEGIS/blob/unify-bg/LICENSE
+notes: "Earlier Twist / torsion-born EDE work: doi:10.5281/zenodo.23867116 (see archive/)."
