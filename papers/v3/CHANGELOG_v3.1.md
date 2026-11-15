@@ -14,3 +14,4 @@
 - ρ strip computed exactly (D680), identical within 2.2%; combined strip frozen (D681); Fig. 5 shows both.
 - The strip as a reheating thermometer (D682, estimate).
 - Candidate origin of ε (D684): the covariant F-term tilts the plateau with m3/2 ≈ (2–4)e4 GeV; not yet self-consistent (vacuum mass, gauginos); distinct α_s ≈ −3e-3. Not frozen.
+- D685: the F-term branch fails self-consistency (tilt and mass tied; reheating < BBN); ε is located in the non-holomorphic uplift sector.
