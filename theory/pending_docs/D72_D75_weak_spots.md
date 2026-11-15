@@ -6180,3 +6180,19 @@ Verdict by the lock: ROBUST.
 - The band overlaps D605's (n_s 0.970–0.975, r 4.8–5.7e-4) within 0.0012 in n_s and 10% in r.
 - The steeper (y ln y) tilt simply moves the allowed ε down by about 30%.
 - Whether the tilt is I₁-like or HM-like (y ln y), the observable predictions (n_s ≈ 0.97, r ≈ 5e-4) stand. The D605 lock does not need revising for this change of microscopic source.
+
+## D623 — DEEP (Ddl 08:50 CT; arithmetic estimate, not locked) — with the minimal-Kähler Hubble-induced mass (c² = 3) and the home string scale, the HM route gives ε ≈ 1e-4 without tuning
+Estimate from D621: ε ≈ c²·(M_s/M_P)²/16π², where c²H² is the Hubble-induced SUSY-breaking mass² of the states that become light at T = U.
+- Minimal Kähler (K ⊃ |Φ|², V = e^K V_inf) gives the standard m² ≈ 3H², i.e. c² = 3, with no free choice.
+- With c² = 3:
+  - M_s = 1e17 GeV gives ε ≈ 3.0e-5;
+  - M_s = 1.7e17 gives ε ≈ 9e-5;
+  - M_s = 2.5e17 gives ε ≈ 2.0e-4;
+  - M_s = 3.7e17 gives ε ≈ 4.4e-4.
+- The D622 window (ε = 0.8–1.0e-4 for the y·ln y tilt) corresponds to M_s ≈ 1.6–1.8e17 GeV. That lies inside the home range (M_s ≳ 1e17, D554; heterotic M_s ≈ g·M_P/√8 ~ 1e17–4e17).
+Reading: if the tilt/mass term is the Hubble-induced CW potential of the Harvey–Moore states at T = U = i, then ε is the loop factor 1/16π² times 3 times (M_s/M_P)². It comes out at ~1e-4 for a string scale in the expected range. That would turn "ε ≈ 1e-4 unexplained" into "ε fixed by the string scale".
+Caveats (large):
+- O(1) factors are unknown: the number of states, the CW log factor, and the sign of the SUSY-broken supertrace. The Hubble mass coefficient is model-dependent beyond minimal Kähler.
+- During inflation the CW term's H-dependence varies along the trajectory; this estimate treats it as constant.
+- Not computed.
+Status: this is the best current candidate explanation of ε, for the τ = i branch via HM and the ρ branch via the analogous threshold. It suggests a testable relation, ε ↔ M_s, but only if the O(1) factors can be fixed. Needs a locked, explicit CW computation with the HM spectrum.
