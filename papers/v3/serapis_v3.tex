@@ -164,9 +164,64 @@ We list the checks a complete model must pass, with their status. Numbers refer 
 
 \paragraph{Prediction.} A nearly massless lightest neutrino gives $\sum m_\nu = 0.059$--$0.060$~eV with normal ordering. This sits at the 95\% upper limit from DESI DR2 with the Lyman-$\alpha$ forest in $\Lambda$CDM, $\sum m_\nu < 0.0592$~eV, which also excludes inverted ordering at more than $3\sigma$~\cite{arXiv_2607_27410}. A future measurement of $\sum m_\nu \gtrsim 0.07$~eV would remove this route to baryogenesis (D604).
 
-%==SEC9==
-%==SEC10==
-%==SEC11==
-%==ACK==
+\section{The hexagonal variant: SERAPIS-$\rho$}\label{sec:rho}
+The same structure can be built with the vacuum at $\rho = e^{2\pi i/3}$ from ingredients with a more direct string pedigree. The plateau uses $I_\rho = (1/4\pi)\ln(1+|j|^2/1728^2)$, which vanishes at $\rho$~\cite{arXiv_2408_05203}. The mass and tilt come from the threshold/species function $L = -\ln(2y|\eta|^4)$~\cite{arXiv_2407_12081,arXiv_2411_08467}:
+\begin{equation}
+V = V_0\left[\frac{I_\rho^2}{I_\rho^2+1} + \varepsilon\,(L - L(\rho))\right].
+\end{equation}
+$L$ has an isotropic minimum at $\rho$ (Hessian $0.667$ in both directions), while at $i$ it has a saddle (D608). Inflation runs along $\mathrm{Re}\,\tau = 1/2$. Because $L$ rises toward the cusp about twice as steeply as $I_1$, the allowed value is $\varepsilon = 6\times10^{-5}$. Like $\varepsilon$ in the $\tau = i$ model, this value was chosen after seeing the data (D610).
+
+With its own reheating history (a plateau term $\propto\delta^{12}$, hence $w = 5/7$) the predictions are $n_s = 0.969$--$0.972$, $r = 4.6$--$5.1\times10^{-4}$ and $\alpha_s = -(8.5$--$9.5)\times10^{-4}$ (D613, D634). These are essentially indistinguishable from the $\tau = i$ model. The proton parity survives at $\rho$ under its selection rule, couplings non-zero only for weight $k\equiv0\pmod 6$ (D612). The rest of the chain carries over with $m_\phi \approx 7\times10^{10}$~GeV, $m_{3/2} \gtrsim 3.6\times10^{10}$~GeV and soft masses of about $2\times10^8$~GeV (D614). We found the combination nowhere in the literature we checked; each ingredient is prior art (D611). As discussed in Sec.~\ref{sec:limits}, the linear-in-$L$ term is not itself derived.
+
+\section{Limitations and open problems}\label{sec:limits}
+\paragraph{The origin of $\varepsilon$.} The tilt-and-mass parameter ($\varepsilon \approx 10^{-4}$ at $i$, $6\times10^{-5}$ at $\rho$) was fixed after seeing current data, and we have not derived it. Every route we tried failed or is only conditional:
+\begin{itemize}
+\item $N=2$ thresholds give the right linear growth, but the natural threshold function has a saddle at $i$ (D576, D608).
+\item Coleman--Weinberg loops cannot produce a term $\propto\ln|j-1728|$ (D606, D607).
+\item A threshold-dependent uplift either becomes exponentially steep or only relabels the problem (D616--D618).
+\item A route through the Harvey--Moore threshold $\ln|J(T)-J(U)|$~\cite{arXiv_hep-th_9510182} at the enhanced-symmetry point $T = U = i$, where moduli trapping operates~\cite{arXiv_hep-th_0403001}, has the right structure. With a realistic spectrum, however, the species-scale term~\cite{arXiv_2507_05345} is too weak to keep the vacuum at the fixed point, and sequestering~\cite{arXiv_1309_3122} removes the tilt with it (D620--D631).
+\end{itemize}
+
+\paragraph{Prior art.} The tilt mechanism is that of singular attractors~\cite{arXiv_2512_02969}. Vacua at $\rho$ and the $SL(2,\mathbb{Z})$ attractor framework are in Refs.~\cite{arXiv_2408_05203,arXiv_2412_19324}. A variant with its vacuum near $\mathrm{Im}\,\tau \approx 2$ and tiny $r$ coincides with the Coleman--Weinberg model of Ref.~\cite{arXiv_2607_00528}. What we add is the combination at $\tau = i$, the closed-form Janus relations, and the consistency chain.
+
+\paragraph{Other caveats.}
+\begin{itemize}
+\item The cosmological constant is tuned separately, as in the no-go of Ref.~\cite{arXiv_2212_03876}.
+\item No-scale sequestering of the visible sector is assumed.
+\item Baryogenesis rests on an order-of-magnitude Affleck--Dine estimate.
+\item The leading-order consistency relation carries a uniform 11--13\% bias.
+\end{itemize}
+
+\section{Forward predictions}\label{sec:forward}
+The following were frozen, with SHA-256 hashes committed to the public repository, on 15 November 2026. They will be scored only on data published after that date (D605, D615, D633). We will not retune $\varepsilon$ in response to future data; any revision counts as a new model.
+
+\begin{table}[h]
+\caption{Frozen predictions and the conditions under which each is disfavoured at $3\sigma$.}
+\begin{ruledtabular}
+\begin{tabular}{lll}
+Quantity & SERAPIS ($\tau=i$; $\rho$) & Disfavoured if \\
+\hline
+$n_s$ & $0.970$--$0.975$; $0.969$--$0.972$ & $>3\sigma$ outside band \\
+$r$ & $(4.8$--$5.7)$; $(4.6$--$5.1)\times10^{-4}$ & $r<2.3\times10^{-4}$ (95\%) \\
+$\alpha_s$ & $-(8.6$--$9.9)$; $-(8.5$--$9.5)\times10^{-4}$ & $\alpha_s>-3\times10^{-4}$ \\
+$\sum m_\nu$ & $0.059$--$0.060$~eV, NO & $>0.07$~eV, or IO \\
+$f_{\rm NL}^{\rm local}$ & $\approx 0.01$ & $|f_{\rm NL}|>5$ \\
+Superpartners & none below $\sim10^8$~GeV & found below $10^8$~GeV \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+The decisive tests in the near term are the first tensor constraints from the Simons Observatory small-aperture telescopes, now being commissioned~\cite{arXiv_2609_26938}; LiteBIRD and CMB-S4 at $\sigma(r)\approx10^{-4}$, where $r\approx5\times10^{-4}$ would appear at about $5\sigma$; $\sum m_\nu$ from DESI and Euclid; and the mass ordering from JUNO and DUNE. Measuring $\alpha_s$ at the $10^{-4}$ level would test the consistency relation~(\ref{eq:consistency}) with no free parameter.
+
+\begin{acknowledgments}
+\textit{AI assistance.} This work was carried out with substantial help from Claude (Anthropic), a large language model. Claude wrote the analysis code, ran the numerical computations, searched and summarised the literature, and drafted this manuscript and its figures under the author's direction. Results were checked in three ways:
+\begin{itemize}
+\item every computation was pre-registered in a locked file with a SHA-256 hash committed before it was run;
+\item every correction was logged in a deviations file before any rerun;
+\item key outputs were reproduced from a clean state, and every reference was checked against its arXiv record.
+\end{itemize}
+The author takes full responsibility for the content. Code, locks and results are available at [REPOSITORY / ZENODO DOI].
+\end{acknowledgments}
+
 \bibliography{refs}
 \end{document}
