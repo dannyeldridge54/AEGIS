@@ -4751,3 +4751,7 @@ an O(1)-uncertain step, and the 15% tolerance was generous. If it holds, it give
 comes from bremsstrahlung in the χ̃ (heat-sector) decays, a yield that does not depend on the DM mass or on T_max. The T_max³-sensitive freeze-in part supplies ≤ 1%. With the same
 heat sector (heat share 0.75%, as D492 assumed), Twist-M keeps m_DM ≈ 100–500 TeV (100–200 TeV after D415). What changes: any dilution (Twist-M has no separate dilution step;
 D397's D factor does not apply) and the freeze-in sliver. The DEEP 8 flag is downgraded to 'freeze-in sliver only'. Label: estimate, not recomputed.
+
+**DEEP 9 (Danny "Pp", 21:13 CT; topic 9 SUSY/gravitino; literature).** The Higgs mass bounds an eV gravitino from below: with perturbative messengers m₃/₂ ≳ 10 eV, which the 4.7 eV
+cosmology bound excludes. Only a strongly coupled messenger sector leaves ~0.8–4.7 eV (arXiv:1608.01610). The Twist's window 1.7–4.7 eV (D474) fits, and D432 already assumed strong coupling.
+That makes it an explicit condition: strongly coupled SUSY-breaking/messenger sector. Future 21 cm data (1605.09191) can test m₃/₂ ~ 1 eV. Credits: 1601.07386, 1608.01610.
