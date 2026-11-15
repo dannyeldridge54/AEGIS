@@ -167,3 +167,5 @@ alone.
 **Centre-confirmed (D463):** hidden radiation adds ΔN_eff ≈ 0.013 → total ≈ 0.065–0.081 (< 0.14); requires condensate energy share ε_h ≤ 5.5e-5.
 
 **Centre-confirmed (D467):** in the rescaled geometry the bounce injection is tiny (ε_h ≤ 3e-8); with a gravity-mediated eV soft mass the φ remnant is ~0.6% of DM without any annihilation.
+
+**Centre-confirmed (D476):** the kink at the D-term wall pins the Twist against any matter source (threshold ≥ 7e25 g/cm³): no fifth force or EP violation even with universal coupling.

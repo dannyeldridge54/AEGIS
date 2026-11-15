@@ -1,8 +1,8 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 5
-consecutive_walls: 1
-cycle: 60
+consecutive_walls: 0
+cycle: 61
 next_part: 8
 
 ## Cycle method (every cycle, twin-ladder skill)
@@ -105,3 +105,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 53 (20:23, 'pppp'): PART 8/5 — D468 cold-bath re-check OK (λ 0.006 at 1 GeV, 0.6–2 at 10 TeV); F5 passes for all m_s. Result → walls 0.
 - cycles 54–57 (20:25, 'Pp x 20'): D472 DESI status (wall); D469 proton decay needs B protected (M_X≥6e15 otherwise); D470 no unification below M_s (thresholds ~3–7); D471 axion instanton needs a τ≈40 cycle (≥3 moduli). Walls 0.
 - cycles 58–60: D473 DM needs gauged stability (generic decay τ ≤ 1e10 s); D474 messengers N 4–5 → m_3/2 1.7–4.7 eV; D475 α_s doesn't separate Route A from fibre (0.2σ) WALL 1.
+- cycle 61: D476 kink at the wall screens fifth forces completely (threshold ≥ 7e25 g/cm³). Result → walls 0.

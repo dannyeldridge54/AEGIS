@@ -4591,3 +4591,10 @@ and narrows the gravitino window to **m₃/₂ ≈ 1.7–4.7 eV** (was 1–4.7).
 
 **D475 (cycle 60; PART 2; scored) — NOT DISTINGUISHABLE by running.** Route A α_s = −7.1 to −8.4e-4 vs the fibre/α-attractor line −3.5e-4 at n_s = 0.9736: the
 difference is 3.6–4.9e-4, i.e. 0.2σ for σ(α_s) ≈ 2e-3 (approximate forecast). So the D464 overlap with fibre inflation is not broken by α_s either. WALL.
+
+**D476 (cycle 61; PART 1/10, RIGHT; scored, locked PREREG_D476_KINK_FIFTH; results/kink_fifth_d476.txt) — SCREENED: the pinned Twist exerts no fifth
+force anywhere, even with a universal (volume-modulus) matter coupling.** At the wall the potential has a kink with one-sided slope
+k = m_s² r² M_P² ζ′ c x_E = 3e8–7e9 GeV⁴ for an eV soft mass and 3e34–7e35 GeV⁴ for 10 TeV, equal to matter densities of 7e25–2e53 g/cm³. Real matter
+(water 1, Earth's core 13, neutron star 1e15 g/cm³) pushes with βρ ≪ k, so the field does not move at all (the hard wall blocks pushes the other way). The response is
+linear-threshold, not Yukawa, so there is no long-range force to bound. This removes the usual volume-modulus fifth-force/EP problem (MICROSCOPE, Cassini) for
+the Twist without tuning β. It complements F1 (no α drift, D400/D417). Result → walls 0.
