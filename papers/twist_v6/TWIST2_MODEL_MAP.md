@@ -135,3 +135,5 @@ alone.
 **Deep study (D436–D437, conditional):** candidate origin of the capture coupling = moduli-dependent FI term on a magnetised D7-brane (x_E quantised by flux integers). In a locked toy it captures and pins the Twist by itself (D-term wall + soft-mass slope; settles by T ≈ 2–6×10¹⁰ GeV). Valid only where the D7 sector exists (x ≳ 1); the inflation region needs another description.
 
 **Deep study step 3 (D438, toy):** with the stringy (Π-stability) FI term the small-volume blow-up disappears (|ζ| ≤ 0.37 M_s² for all x < x_E vs −76 M_P² naively); the FI-term origin of the capture coupling now survives from inflation to capture at toy level.
+
+**Centre-confirmed (D439):** the condensate that screens the stringy FI term shifts n_s by ≤ 6e-6 and r by ≤ 1.3e-6; clean pass needs M_s ≲ 0.1 M_P (otherwise only a constant amplitude offset).

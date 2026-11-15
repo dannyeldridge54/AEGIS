@@ -1,0 +1,5 @@
+Ms/MP=0.1 cH=1: dV/V*=1.243e-03 dns=-1.95e-08 dr=4.21e-09 max dV/V(x<=1)=1.243e-03
+Ms/MP=0.1 cH=3: dV/V*=3.728e-03 dns=-5.85e-08 dr=1.26e-08 max dV/V(x<=1)=3.728e-03
+Ms/MP=1.0 cH=1: dV/V*=1.243e-01 dns=-1.95e-06 dr=4.21e-07 max dV/V(x<=1)=1.243e-01
+Ms/MP=1.0 cH=3: dV/V*=3.728e-01 dns=-5.85e-06 dr=1.26e-06 max dV/V(x<=1)=3.728e-01
+VERDICT: SAFE IF M_s <= 0.1 M_P

@@ -1,8 +1,8 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 60
-consecutive_walls: 1
-cycle: 25
+consecutive_walls: 0
+cycle: 26
 next_part: 4
 
 ## Cycle method (every cycle, twin-ladder skill)
@@ -71,3 +71,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 23 (18:45, 'pp'): third pass start — D433 consolidated numbers table (TWIST2_NUMBERS.md); WALL 2 → interval 60 min (walls reset at new interval).
 - cycle 24 (18:49, 'pp'): PART 2 third pass — D434 Route A band: r 0.0042–0.0050 rising with n_s (Starobinsky falls); α_s −7.1 to −8.4e-4. Result → walls 0.
 - cycle 25 (18:51, 'pp'): PART 3 third pass — D435 Route A shifts N* by +0.002 only. WALL 1 (60-min pace).
+- cycle 26 (18:58, 'pp'): PARTS 2+5 link — D439 screening condensate: δn_s ≤ 6e-6, δr ≤ 1.3e-6 for any M_s; locked verdict SAFE IF M_s ≤ 0.1 M_P (amplitude offset). Result → walls 0.

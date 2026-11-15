@@ -4299,3 +4299,11 @@ reproduces the supergravity 1/x form (at x = 1000: 0.118 vs (n₁ − m₁)/πx 
 (x < √(m₁n₁) ≈ 63), not in the strict large-volume regime. Caveats: no α′ or worldsheet-instanton corrections to Z (relevant at x ≲ 1); the
 D7 gauge coupling at small volume not modelled; a toy torus, not a Calabi–Yau. Status of the capture-coupling origin: candidate mechanism
 with its main obstacle removed at toy level (D436–D438).
+
+**D439 (cycle 26, "pp"; PARTS 2+5 link, CENTRE; scored, locked PREREG_D439_SCREEN_INFL; results/screen_infl_d439.txt) — locked verdict
+"SAFE IF M_s ≤ 0.1 M_P"; the tilt is safe for any M_s.** The φ condensate that screens the stringy FI term (D438) leaves, through its
+Hubble-induced mass, δV/V = (c_H/3)|ζ|(M_s/M_P)². Because ζ is almost flat at small x (x·dζ/dx ≈ 4e-6 at x* = 1.3e-4), the shifts are
+tiny even at M_s = M_P: δn_s = −2.0e-6 (c_H = 1) to −5.9e-6 (c_H = 3), δr ≤ 1.3e-6 (both ≪ 1e-4; hand check of 2δη agrees). Only the
+1% amplitude criterion fails at M_s = M_P (δV/V = 12–37%, a nearly constant offset that renormalises the amplitude A_s and is absorbed by
+it); at M_s = 0.1 M_P, δV/V = 0.12–0.37%, so every criterion passes. Bridges B1/B2 unchanged within 1e-5. CENTRE: balanced (left:
+plateau untouched; right: capture unchanged). Status: the FI-term origin survives inflation at toy level; requires M_s ≲ 0.1 M_P for a clean pass.
