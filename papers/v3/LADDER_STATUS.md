@@ -7,5 +7,5 @@
 - [x] R6 prediction sheet — prediction_sheet.md
 - [x] R7 drafts — drafts/ (abstract in tex + abstract.txt 1437 chars; cover letter, endorsement request, experiment notes; NONE SENT)
 - [x] R8 referee pass — referee/R8_REFEREE_REPORT.md (MAJOR REVISION; D636 + D585a)
-- [~] R8b fixes — text, citations, Kairos recompute (D637) DONE; open: three-moduli no-scale construction, D-label appendix
+- [~] R8b/R8c fixes — second referee: MINOR REVISION; all its new issues fixed (D638). Open: three-moduli no-scale construction, D-label appendix, placeholders (Danny)
 - [ ] R9 stage Zenodo package — NEEDS DANNY ("Publish")
