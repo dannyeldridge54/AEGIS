@@ -4622,3 +4622,10 @@ with no reionization/recombination split, so B4's distinguishability (D428) is n
 **D483 (PART 5) ROBUST:** halving or doubling the kinetic energy at N − N_e = 6 still captures. With 0.5× the field first hits at N − N_e = 14.1 (T ≈ 5e8 GeV);
 with 2× it hits at 6.6 (T ≈ 9e11 GeV) and bounces to x = 26.75. Note: the capture temperature then spans ~5e8–9e11 GeV, so numbers quoted 'at T_cap = 1.5e11'
 (ε_h, the D441 arrival speed) carry this spread. Leptogenesis is independent of capture. Result.
+
+**D484 (cycle 69; PART 7; scored, locked PREREG_D484_B4_FORECAST; results/b4_forecast_d484.txt) — B4 quantified: for axion masses ≳ 50–100 H0 LiteBIRD can
+test the Twist's tomography at 2–5σ (headline noise).** Using σ(Δβ) from arXiv:2108.09287 (0.05° headline; 0.09° with foreground residuals; 0.025° with
+external delensing) and β_rec = 0.277°: m ≲ 10 H0 → Δβ ≈ 0 (indistinguishable from a constant angle or a calibration error); m = 50 H0 → Δβ = 0.09–0.21° → 1.9–4.2σ
+(1.0–2.3σ with foregrounds; 3.8–8.4σ delensed); m ≥ 100 H0 → Δβ = 0.28° → 5.5σ (3.1σ with foregrounds; 11σ delensed). The Twist does not fix m
+(D471's instanton S ≈ 240–270 spans 2–1e4 H0), so B4 is a conditional test: a measured Δβ ≈ 0.1–0.28° would point to m ≳ 50 H0 and a separate light axion.
+Result → walls 0.
