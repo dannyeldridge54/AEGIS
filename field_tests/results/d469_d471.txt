@@ -1,0 +1,22 @@
+== D469 proton
+M_X=7.0e+13: tau_p=4.3e+26 yr vs 2.4e34 -> EXCLUDED
+M_X=1.4e+14: tau_p=6.9e+27 yr vs 2.4e34 -> EXCLUDED
+M_X=3.5e+14: tau_p=2.7e+29 yr vs 2.4e34 -> EXCLUDED
+M_X needed >= 6.0e+15 GeV
+== D470 unification
+M_12=2.41e+15 GeV, alpha^-1 = 29.32,29.32,27.68 (mismatch a2-a3 = 1.64)
+at M_s=7.0e+13: alpha^-1 = 33.04, 29.89, 25.99
+at M_s=3.5e+14: alpha^-1 = 31.35, 29.63, 26.76
+== D471 axion instanton
+f=3.7e+12 M_s=7.0e+13 m=2H0: S=261, tau=S/2pi=41.5
+f=3.7e+12 M_s=7.0e+13 m=10H0: S=258, tau=S/2pi=41.0
+f=3.7e+12 M_s=7.0e+13 m=10000H0: S=244, tau=S/2pi=38.8
+f=3.7e+12 M_s=3.5e+14 m=2H0: S=267, tau=S/2pi=42.6
+f=3.7e+12 M_s=3.5e+14 m=10H0: S=264, tau=S/2pi=42.0
+f=3.7e+12 M_s=3.5e+14 m=10000H0: S=250, tau=S/2pi=39.8
+f=7.6e+12 M_s=7.0e+13 m=2H0: S=259, tau=S/2pi=41.3
+f=7.6e+12 M_s=7.0e+13 m=10H0: S=256, tau=S/2pi=40.8
+f=7.6e+12 M_s=7.0e+13 m=10000H0: S=242, tau=S/2pi=38.6
+f=7.6e+12 M_s=3.5e+14 m=2H0: S=266, tau=S/2pi=42.3
+f=7.6e+12 M_s=3.5e+14 m=10H0: S=263, tau=S/2pi=41.8
+f=7.6e+12 M_s=3.5e+14 m=10000H0: S=249, tau=S/2pi=39.6

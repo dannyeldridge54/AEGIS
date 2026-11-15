@@ -4559,3 +4559,24 @@ cleared.** m = 1 GeV (ξ = 1.7e-3): λ_th = 0.002; holding the relic to ≤ 1% o
 perturbative. The colder bath lowers the λ needed (0.60 vs D447's 0.91 at ξ = 0.10), which more than offsets the higher thermalisation threshold. Note on the
 verdict logic: the NaN in the 1 GeV case fell through to 'OK', which is correct here (the 1% condition is the binding one). CENTRE: F5 passes for every m_s
 tested (eV: no annihilation needed, D467; GeV–10 TeV: λ ≈ 0.006–2).
+
+**D469–D471 + D472 (cycles 54–57, Danny "Pp x 20"; locked PREREG_D469_PROTON, _D470_UNIF, _D471_AXION_S; results/d469_d471.txt)**
+
+**D472 (cycle 54; PART 6, RIGHT; literature) — DESI evidence status.** A 2026 review (arXiv:2602.05368) finds the evolving-DE preference is dataset-dependent and
+sensitive to redshift-dependent SN calibration/selection residuals at the few×10⁻² mag level (its significance figures were not extracted). The Twist after capture
+predicts w = −1 to high accuracy (frozen x; axion Ω_a ~ 1e-12, D457). So it stands or falls with ΛCDM on this point: if recalibrated SNe remove the preference,
+it is fine; if DESI DR3 confirms w₀ > −1, the baseline is disfavoured (the thawing variant was already shown not to help, D410). No scored result → WALL.
+
+**D469 (cycle 55; PART 10, RIGHT; scored) — EXCLUDED UNLESS FORBIDDEN: generic string-scale proton decay.** With M_X = M_s = 0.7–3.5e14 GeV (the D453 band),
+τ_p ≈ M_X⁴/(α_U² m_p⁵) = 4e26–3e29 yr, against Super-K's > 2.4e34 yr; M_X ≳ 6e15 GeV would be needed. So baryon number must be protected. In D-brane
+models it typically is: B is a perturbative global symmetry left over from an anomalous U(1), broken only by D-instantons with tiny e^{−S}. That becomes an
+explicit condition on the SM D3 sector (no string-scale B-violating couplings; dimension-5 SUSY operators also forbidden). Result → walls 0.
+
+**D470 (cycle 56; PART 11/10; scored) — NO STANDARD UNIFICATION BELOW M_s.** One-loop MSSM running (SUSY threshold 1e5 GeV) meets α₁ = α₂ at 2.4e15 GeV
+(α₂⁻¹ − α₃⁻¹ = 1.6 there), above M_s. At M_s = 7e13 / 3.5e14 GeV the inverse couplings are (33.0, 29.9, 26.0) / (31.4, 29.6, 26.8), so a D3 (non-GUT)
+SM must match these at M_s through local string thresholds of size ~3–7. That is common in D3-at-singularity models, but it gives up GUT-style
+unification as a prediction. Credit: low-string-scale non-unification is a known feature of LVS-type models. Result → walls 0.
+
+**D471 (cycle 57; PART 7; scored) — NEEDS AN INTERMEDIATE CYCLE.** For m = 2–1e4 H0, f = 3.7–7.6e12 GeV and M_s = 0.7–3.5e14 GeV, the instanton action is
+S = 242–267, i.e. a cycle of volume τ = S/2π ≈ 39–43. That lies between the small FI cycle (~0.16, D461) and the large Twist cycle (~1e5). So the geometry needs at least three
+Kähler moduli (big, ~40, small), which fits a fibred CY with blow-ups (D462). It is a mild new prediction of the structure, not of a number. Result → walls 0.
