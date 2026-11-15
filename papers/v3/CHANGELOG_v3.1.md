@@ -8,3 +8,4 @@
 - Janus signature vs 2030 forecasts quantified (D670): ≲0.5σ; α_s test is long-term.
 - General closed form for β_s (D671), <1% on singular T-models.
 - κ = 1/n for modular log-tilts; (n_s, r, α_s) measures the plateau power n (D672).
+- Janus curve in closed form from (N*, ε); string bound caps n_s ≲ 0.978 for any ε (D673).
