@@ -4216,3 +4216,10 @@ For m ≥ 100 H0 the field already oscillates around reionization, so the large-
 recombination one stays ≈ θ_i — a sharp LiteBIRD signature. Δθ_rec ≈ 1 for m ≥ 10 H0 (θ_i = 1), consistent with D414's c_γ ≈ 3.9.
 (b) CONNECTIONS: part 6 (Ω_a ≤ 3×10⁻³, Λ untouched), part 10 (CP-odd, no α drift). (c) CENTRE: B4 now has a quantified baseline branch.
 Result → walls 0.
+
+**D429 (cycle 19, "pp"; second pass PART 8 dark matter, RIGHT; estimate in code, no new locked computation) — the newest corrections do not
+touch the dark matter.** (1) The x-multiplet decays (D407/D422) could make gravity-only DM by graviton bremsstrahlung: with n_S/s ≲ 10⁻³ and a
+branching ~(m_S/M_P)²/16π² ≈ 10⁻²⁷–10⁻²¹ the extra yield is ≲ 10⁻²⁴, against the 4.4×10⁻¹⁵ needed for 100 TeV: negligible. (2) The heavy ψ
+(D422) decay to SM leptons and do not mix with the DM fermion (gravity-only by construction). (3) Route A changes nothing after inflation
+(D419), so T_RH, the χ̃-decay yield (D112) and coldness (D415) stand. DM remains 100–200 TeV, cold, stable under a gauged Z₂ (no signal) or
+decaying with ξ ≲ 0.6. (c) CENTRE: F5 pass, unchanged. No scored result → WALL 1.
