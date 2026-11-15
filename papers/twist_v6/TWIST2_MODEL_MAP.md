@@ -131,3 +131,5 @@ alone.
 **Cycle 20 (D430, CONFIRMED):** gravitino window 1 eV ≲ m_3/2 ≤ 4.7 eV (SUSY breaking √F ≈ 65–140 TeV); total ΔN_eff ≈ 0.02–0.06 (gravitino only, after D422).
 
 **Cycle 21 (D431, requirement):** the ψ–lepton portal must be L-conserving (Dirac pair) and its lepton-coupled partner U(1)_X-neutral (mirror pair for anomaly freedom); otherwise the heavy ψ would give neutrino masses 0.8 eV–0.6 MeV.
+
+**Deep study (D436–D437, conditional):** candidate origin of the capture coupling = moduli-dependent FI term on a magnetised D7-brane (x_E quantised by flux integers). In a locked toy it captures and pins the Twist by itself (D-term wall + soft-mass slope; settles by T ≈ 2–6×10¹⁰ GeV). Valid only where the D7 sector exists (x ≳ 1); the inflation region needs another description.

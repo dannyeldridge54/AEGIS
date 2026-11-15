@@ -4277,3 +4277,13 @@ energy released ~10⁻⁷–10⁻⁵ of radiation (computed, δ₂ = 0.01, x₂ 
 point, −1.1 M_P² at the end of inflation; unscreened V_D ≈ 10³ M_P⁴ vs V_inf ~ 10⁻¹⁰), and screening needs trans-Planckian condensates — the
 D7 sector must be absent or differently described at x ≪ 1 (the region already flagged as uncontrolled, D408/D423). Status of the (T − T_E)
 origin: OPEN → candidate found, conditional. Next (locked first): a two-modulus toy with the D7 sector present only for x ≳ 1.
+
+**D437 (DEEP STUDY step 2; scored, locked PREREG_D437_FI_TOY + D1; results/toy_fi_d437.txt) — CAPTURES: in the two-modulus toy the
+D-term (FI) mechanism alone, without the thermal trap, catches and pins the Twist at x_E.** From D367c's trajectory (N − N_e = 6), x hits the
+D-term wall at x_E = 29.6 at T ≈ 1.5×10¹¹ GeV, reflects to x_min = 29.43 (m_s = 10⁴ GeV) or 29.51 (10⁵ GeV), is pulled back by the soft-mass
+slope and returns to the wall at T ≈ 1.7×10¹⁰ / 5.6×10¹⁰ GeV, then settles on it (bounces damped by Hubble friction; final offset ~10⁻¹⁵).
+So the soft term (x-independent, D292) supplies the pinning that D390/D396 needed a condensate scale for, and the wall stops the overshoot
+to the free-roll limit 29.83. The thermal trap of D396 becomes a backup rather than a requirement. Energy involved ≲ 10⁻⁵ of radiation (D436):
+no moduli problem, D ≈ 1. Conditional exactly as D436: valid only where the magnetised D7 sector is present and screened (x ≳ 1); the
+small-x (inflation) region still needs a different description. A first run had two reporting bugs (fixed via D1 before scoring; first
+output kept as toy_fi_d437_run1_bug.txt).

@@ -41,3 +41,8 @@ magnetised D7-brane. It explains why the capture point exists and is quantised, 
 terms + D-term wall), and why the decay is at gauge strength. It does NOT yet fit the inflationary phase: the same FI term is enormous at
 small volume. Status: OPEN → "candidate origin found, conditional on the small-x region being described differently". Next step (needs a
 lock): a two-modulus toy model with the D7 sector present only for x ≳ 1, checking the roll from the end of inflation to capture.
+
+## 5. Step 2 result (D437, locked toy)
+Starting from the real Twist trajectory, the FI mechanism alone captures the field: it hits the D-term wall at x_E at T ≈ 1.5×10¹¹ GeV,
+bounces back by Δx ≈ 0.1–0.2, and the soft-mass slope returns it to the wall by T ≈ 2×10¹⁰–6×10¹⁰ GeV, where it settles. No separate condensate
+scale or thermal trap is needed. The open problem is now isolated to the small-x region (inflation and the first ~2.5 e-folds after it).
