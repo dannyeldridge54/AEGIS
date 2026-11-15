@@ -5629,3 +5629,16 @@ Verdict: baryogenesis is possible for the Chronos-like two-term SERAPIS, near th
 Status: the surviving model is two-term SERAPIS (p = 2, ε ≈ 1e-4).
 - n_s 0.970–0.972, r 4.1–4.4e-4, N* 49–51, T_RH 6e6–2e7 GeV, M₁ ≈ 6e10–9e10 GeV, non-thermal leptogenesis.
 - Open: ε's size (D576), and a microscopic inflaton → N₁N₁ coupling (Br ≈ 1).
+
+## D580 — DEEP (Ddl 07:43 CT; dedicated novelty audit of the two-term model, as the D555 rule requires; literature, no computation) — the rising-term tilt is Kallosh–Linde prior art; only the "mass at i = tilt" pairing remains unfound
+Searches: 3 (one extended). Fetched: 2512.02969 (KL), 2507.15076, 2602.06027.
+- **Kallosh & Linde, "Singular α-attractors", arXiv:2512.02969, §5.3**
+  - Adds δ·ln^β(|j(τ)|² + j(i)²) to an SL(2,Z) α-attractor. At the cusp it grows ∝ e^{β√(2/3α)φ}, the same exponential-in-φ (linear-in-y for β = 1) scaling as our ε·I₁ (D576).
+  - The deviation of n_s from 1 − 2/N is ∝ δ, and n_s can be raised to the ACT/DESI range with r ~ 1e-3.
+  - → The TILT MECHANISM of the two-term model is prior art (consistent with D546, where Chronos ≈ KL lifted attractors).
+- What differs:
+  - KL's term is built from |j|², with its minimum at ρ (j = 0), and they say nothing about the vacuum mass.
+  - Our ε·I₁ uses |j − 1728|¹, so the same term vanishes QUADRATICALLY at i and supplies the vacuum mass that the plateau lacks (D574/D575).
+  - The resulting consistency chain (N* ≈ 49–51, T_RH 6e6–2e7 GeV, non-thermal leptogenesis; D578/D579) was not found anywhere.
+- Other checks (no match): 2507.15076 (hilltop vs ACT), 2602.06027 (Witten–O'Raifeartaigh, n_s 0.9785), 2411.18603 (j-based, vacuum near ω), 2607.00528 (CW, vacuum at Im τ ~ 2).
+Verdict: novelty is limited to "one modular term (∝ |j − 1728|) gives the τ = i vacuum its mass AND supplies the KL-type tilt, with a self-consistent reheating/leptogenesis history". Allowed wording: "not found in the checked literature (D580 audit)". Must credit: KL 2512.02969 for the tilt mechanism, and Ding et al. 2411.18603 for inflaton-decay leptogenesis in modular inflation.
