@@ -1,0 +1,5 @@
+# PREREG D694: are the D3 stacks of SERAPIS-E stable at the half-periods?
+Locked 2026-11-15 before computing. Script theory/modular/d3_stability_d694.py.
+Set-up (D689 conventions): per stack, ℰ = 256N E2(A,U) − 16N E2(2A,U); K⁽¹⁾ = ℰ/(256π⁶(S−S̄)(ρ−ρ̄)) = −ℰ/(1024π⁶ ImS Imρ). Plateau V ∝ e^{K} (multiplicative, as in D689) ⇒ for each stack V is minimised in A where g(A) = 256E2(A,U) − 16E2(2A,U) is MAXIMAL.
+Test: g(A0 + δ·d) − g(A0) for A0 = each fixed point (a4,a5) ∈ {(0,0),(½,0),(0,½),(½,½)}, d = a4 and a5 directions, δ = 0.01, 0.03, 0.1; U = ρ and U = ½ + 14i (horizon exit). Lattice sum M = 60 (D689 E2lat, double precision via numpy).
+Verdict rule: stack at A0 stable under the one-loop potential alone iff g decreases in every direction. Expected (stated): the image term −16E2(2A) has a |δ|²ln(1/δ) piece that makes every fixed point unstable at small δ. If so: record which pinning mechanism is required (fractional D3 at fixed points / tree-level Hubble mass) — no model change in this note.
