@@ -1,0 +1,10 @@
+a=0.5: c=6.66e-53, S=-ln c=120.14; V(i)/V_pl=7.08e-111 (target 7.08e-111)
+   y: curvature >0; m = 0.000166 GeV
+   x: curvature >0; m = 0.000166 GeV
+   plateau check y=3.242: dV/V from c-term = 0.0
+   plateau check y=20: dV/V from c-term = 0.0
+a=1.0: c=2.77e-51, S=-ln c=116.41; V(i)/V_pl=7.08e-111 (target 7.08e-111)
+   y: curvature >0; m = 5.15e-10 GeV
+   x: curvature >0; m = 5.15e-10 GeV
+   plateau check y=3.242: dV/V from c-term = 0.0
+   plateau check y=20: dV/V from c-term = 0.0

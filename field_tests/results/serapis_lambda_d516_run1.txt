@@ -1,0 +1,8 @@
+a=0.5: V_plateau(model)=25.809 (pi^3=31.006); c=6.66e-53, S=-ln c=120.1 (=2pi x 19.1)
+   direction y: curvature >0; m = 1.66e+05 GeV -> HEAVY and MODULI-SAFE
+   direction x: curvature >0; m = 1.66e+05 GeV -> HEAVY and MODULI-SAFE
+   V(i)/V_plateau = 1.37e-61 (target 7.08e-111) -> VACUUM OK
+a=1.0: V_plateau(model)=25.809 (pi^3=31.006); c=2.77e-51, S=-ln c=116.4 (=2pi x 18.5)
+   direction y: curvature >0; m = 5.15e+02 GeV -> HEAVY and moduli-risk
+   direction x: curvature >0; m = 5.15e+02 GeV -> HEAVY and moduli-risk
+   V(i)/V_plateau = 3.61e-76 (target 7.08e-111) -> VACUUM OK

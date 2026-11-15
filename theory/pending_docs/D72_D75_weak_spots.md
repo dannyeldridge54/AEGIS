@@ -4858,3 +4858,11 @@ but its inflation numbers are the generic Starobinsky ones; any distinctiveness 
 
 **Naming (Danny 21:34 CT):** the fully modular Twist of D515 (exact SL(2,Z), V = |H(j)|²/((2 Im τ)³|η|¹²)) is called **SERAPIS**. Variant names in use: Twist-2 (baseline), Twist-M (T → 1/T
 duality, D490), Twist-M-L (split/lens, D505), Twist-1T (single torus, D513), SERAPIS (full modular group, D515).
+
+**D516 (SERAPIS step 2; locked PREREG_D516_SERAPIS_LAMBDA + DEVIATIONS D1 [double-precision floor; run1 kept]; results/serapis_lambda_d516.txt at 50 digits) — Λ added cleanly; inflation
+untouched; but the vacuum is too FLAT (a light field): a design flaw to fix.** At 50-digit precision the c-term puts V(i)/V_plateau exactly on target (7.08e-111) with c = 6.7e-53 (a = ½) or
+2.8e-51 (a = 1), i.e. an action S = −ln c ≈ 120 / 116 = 2π × 19.1 / 18.5. That is instanton-sized, so Λ could be an e^{−S} effect (a link to check against D502's τ ≈ 40: 19 ≈ half of 40). Inflation is unchanged
+(the c-term changes V on the plateau by 0.0 at 50 digits). τ = i is a minimum in both directions. BUT the field mass there is tiny and set by numerics/c, not by the inflation scale: m ≈ 1.7e-4 GeV (a = ½)
+and 5e-10 GeV (a = 1). The 1.7e5 GeV of run 1 was double-precision noise. Reason (analytic): near τ = i, j − 1728 ∝ (τ−i)², and ln(j/1728) ∝ (τ−i)², so |H|² of the main term vanishes like |τ−i|^{4a+6}. That is far
+flatter than quadratic, so the vacuum curvature comes only from the tiny c-term. A light modulus brings back the fifth-force problem (D493). Fix for the next step: replace [ln(j/1728)]^{3/2} by a factor that
+does not vanish at τ = i but still gives the cusp plateau (e.g. [ln(j/1728) + κ]^{3/2} or ln j), so the vacuum gets an inflation-scale curvature. New lock needed.
