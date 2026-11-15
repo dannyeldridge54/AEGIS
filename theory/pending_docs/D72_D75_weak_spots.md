@@ -6439,3 +6439,15 @@ CENTRE (arithmetic; referee 4 items 3–6) — (a) e-folds between y = 26 and ho
 
 ## D659
 CENTRE (novelty audit addendum, literature; found while preparing outreach) — MISSED PRIOR ART: Schimmrigk, "A General Framework of Automorphic Inflation" (1512.09082) and "Modular Inflation Observables and j-Inflation Phenomenology" (1612.09559): V = Λ⁴|j(τ)|² on the Poincaré upper half-plane; zero at ρ (triple zero of j); slow-roll point at τ = i because ε_V ∝ |E6/E4|² vanishes there; n_s ≈ 0.96, r ∈ [1e-8, 0.08]. Overlap with SERAPIS: the invariant |j|² (our ρ plateau I_ρ) and E6(i) = 0 singling out τ = i. Difference: SERAPIS puts these invariants inside a bounded log plateau (Kallosh–Linde form) with inflation from the cusp, a massive vacuum from a second term, the Janus relation, and the reheating/SUSY chain. D611's "combination not found" stands, but these papers must be cited; added in v3.1 (intro, prior art, ρ section). Not in Zenodo v3 (10.5281/zenodo.24250733) — a v3.1 new version is needed.
+
+## D660
+(locked; results/centre_mp_d660.txt) — non-R centre as ORDINARY matter parity (dim-4 forbidden, dim-5 allowed), with D551's Kähler conditions: 0/0 (no assignment passes the pre-filters; the Kähler conditions reject even textbook matter parity).
+
+## D661
+(locked; results/centre_mp_nok_d661.txt) — same without the Kähler conditions (dimension-6, Planck-suppressed: amplitude 1/M_P² = 1.7e-37 GeV⁻², 3e-6 of the proton bound — harmless; justification written before running): ρ PASSES 4/4 (Z4) and 8/8 (Z8), e.g. n = (0,2,2,0,2,2,2), all couplings non-zero at ρ (Σk ≡ 0 mod 6). τ = i: 0/4, 0/8 (lifts {0,2}).
+
+## D662
+(locked + DEVIATIONS D1, D2 — script construction/syntax only, no computation had run) — like-for-like lifts {0,2,4} at τ = i: still 0/4, 0/8.
+
+## D663
+CENTRE (analytic, explains D661/D662) — at τ = i a centre-derived matter parity and a singlet Weinberg operator are incompatible. Non-R centre phase e^{−iπk}: matter parity needs k odd for Q, U, D, L, E and k even for H_u, H_d. Then Σk(LLH_uH_u) = 2k_L + 2k_Hu ≡ 2 (mod 4), so its η^{-2} coupling vanishes at i (weight parity). Likewise a singlet Majorana mass N N (k_N odd) has 2k_N ≡ 2 (mod 4) and vanishes at i. At ρ the condition is mod 6 and is satisfiable (D661). VERDICT: SERAPIS-ρ (covariant) keeps a modular origin for ordinary matter parity; SERAPIS at τ = i (covariant) needs flavour multiplets with non-trivial ρ(S) (or matter parity from outside the modular group) to have both matter parity and neutrino masses. Dimension-5 QQQL then needs c ≲ 5e-3 (D657) in both.

@@ -1,4 +1,2 @@
-  File "/home/claude/aegis/theory/modular/i_lifts_d662.py", line 20
-    for lift in itertools.product((0,2,4),repeat=7)   # D662: like-for-like lifts:
-                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: expected ':'
+Z_4^R: 0/4 anomaly-passing assignments admit a lift with all required couplings nonzero at tau=i [non-R centre, Sigma k = 0 mod 4]
+Z_8^R: 0/8 anomaly-passing assignments admit a lift with all required couplings nonzero at tau=i [non-R centre, Sigma k = 0 mod 4]
