@@ -24,10 +24,13 @@ def run(ms):
         p,dp=y; rr=rho_r0*math.exp(-4*N); H2=(rr+V(p))/(3-0.5*dp*dp)
         epsH=0.5*dp*dp+(2/3)*rr/H2
         return [dp,-(3-epsH)*dp-dV(p)/H2]
-    cross=lambda N,y:y[0]; cross.terminal=False
     p0=ue/c; dp0=math.sqrt(2*(1-Or0))
-    s=solve_ivp(rhs,[0,42],[p0,dp0],method='LSODA',rtol=1e-9,atol=1e-12,events=cross,max_step=0.01,dense_output=True)
-    Nc=s.t_events[0]; yc=s.y_events[0]
+    s=solve_ivp(rhs,[0,42],[p0,dp0],method='LSODA',rtol=1e-9,atol=1e-12,max_step=0.01)   # D1: no events
+    Nc=[]; yc=[]
+    for i in range(len(s.t)-1):
+        a_,b_=s.y[0,i],s.y[0,i+1]
+        if a_==0 or a_*b_<0:
+            f=a_/(a_-b_) if a_!=b_ else 0.0; Nc.append(s.t[i]+f*(s.t[i+1]-s.t[i])); yc.append((0.0,s.y[1,i]+f*(s.y[1,i+1]-s.y[1,i])))
     rem=0.0
     for N,(p,dp) in zip(Nc,yc):
         rr=rho_r0*math.exp(-4*N); H2=(rr+V(p))/(3-0.5*dp*dp); H=math.sqrt(H2)*MP

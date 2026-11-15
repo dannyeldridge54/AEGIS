@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/home/claude/aegis/theory/deep/twistm_case1_d500.py", line 44, in <module>
+    for ms in (1e-9,1e4): run(ms)
+                          ~~~^^^^
+  File "/home/claude/aegis/theory/deep/twistm_case1_d500.py", line 29, in run
+    s=solve_ivp(rhs,[0,42],[p0,dp0],method='LSODA',rtol=1e-9,atol=1e-12,events=cross,max_step=0.01,dense_output=True)
+  File "/usr/local/lib/python3.13/site-packages/scipy/integrate/_ivp/ivp.py", line 686, in solve_ivp
+    root_indices, roots, terminate = handle_events(
+                                     ~~~~~~~~~~~~~^
+        sol, events, active_events, event_count, max_events,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        t_old, t)
+        ^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/scipy/integrate/_ivp/ivp.py", line 111, in handle_events
+    roots = [solve_event_equation(events[event_index], sol, t_old, t)
+             ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/scipy/integrate/_ivp/ivp.py", line 76, in solve_event_equation
+    return brentq(lambda t: event(t, sol(t)), t_old, t,
+                  xtol=4 * EPS, rtol=4 * EPS)
+  File "/usr/local/lib/python3.13/site-packages/scipy/optimize/_zeros_py.py", line 858, in brentq
+    r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)
+ValueError: f(a) and f(b) must have different signs
