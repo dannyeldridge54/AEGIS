@@ -1,6 +1,6 @@
 # Deep-research loop (Danny 20:13 CT 14 Nov: "another every 30 that's deep research on each topic")
 interval_min: 30
-cycle: 13
+cycle: 15
 next_topic: 2
 ## Topics (same 11 parts as the twin ladder; one topic per tick, in order, wrap 11→1)
 1 pinning decay · 2 inflation plateau · 3 kination/reheating · 4 leptogenesis · 5 capture · 6 Λ · 7 birefringence axion · 8 dark matter ·
@@ -26,3 +26,4 @@ next_topic: 2
 - tick 12 (21:16, Danny 'Deep'): pass 2 topic 1 — embedding class identified (IIB T⁶/Z_N orientifolds w/ magnetised D7s); Kähler-modulus duality not established.
 - tick 13 (21:19, 'Research like this again'): Twist-M homes — heterotic T or IIB U (exact SL(2,Z)); FI link lost → case (ii), β decisive.
 - tick 14 (21:17 scheduled): satisfied by DEEP 2.1b done minutes earlier (no duplicate search, to save credits); next topic 2 at the following tick.
+- tick 15 (21:20, 'Again'): Twist-M case (ii) needs SM blind to the Twist field (β ≲ 1e-2–1e-3 from oscillating masses), opposite of modular-flavour setups.

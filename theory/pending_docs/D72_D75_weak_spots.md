@@ -4775,3 +4775,11 @@ stands, now with a concrete class to examine.
 exact perturbatively, weight −3 matching K = −3 ln(T+T̄), and fixed points always extrema (2411.06516). (b) An isotropic IIB complex-structure modulus U: exact SL(2,Z)_U with the same
 K = −3 ln(U+Ū) (1608.06129, 1804.06644, 2404.18995). On IIB Kähler moduli no exact T-duality is established (0705.3253). In both homes the FI term does not depend on the
 Twist field, so the FI-capture link does not carry over naturally. That favours Twist-M case (ii) and makes the matter coupling β (D498) the decisive question for that variant.
+
+**DEEP 2.2 (Danny "Again", 21:20 CT; Twist-M case (ii) and matter coupling; literature + estimate in code; results/deep2_beta_estimate.txt).** In the natural homes for an exact
+duality (DEEP 2.1b), the dual modulus usually sets the matter Yukawas: modular-flavour models make fermion masses functions of τ and therefore need the modulus heavy and stabilised
+(2201.02020, 2506.23343, 2601.09542; 2211.00659). Twist-M's field is light at its minimum (m = 139 H0, D493). It is still oscillating today, with amplitude δφ ≈ 1.1e-4 M_P (from D492's residual kinetic
+energy) and a period ≈ 0.045 Hubble times. A matter coupling β then makes masses oscillate by ~β × 1e-4. Quasar/Oklo-type bounds (~1e-6–1e-7, approximate) need β ≲ 1e-2 to 1e-3, as tight as or
+tighter than Cassini (β ≲ 3e-3, D498). Conclusion (estimate): Twist-M case (ii) works only if the Standard Model is blind to the Twist field (no Yukawa or mass dependence). That is the opposite of
+modular-flavour constructions, where the dual modulus IS the flavour modulus. So case (ii) needs a sector separation the literature does not supply by default. Case (i) (FI kink, heavy field) avoids
+this but needs the embedding question solved. Both open; neither is closed by this tick.

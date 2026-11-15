@@ -187,3 +187,5 @@ alone.
 **Twist-M open (DEEP 11):** exact T-duality needs a toroidal-orbifold-type geometry; reconcile with D462's intersecting-divisor requirement (candidate: IIB orientifold of T⁶/Z_N' with blow-ups).
 
 **Twist-M homes (DEEP 2.1b):** exact duality available for a heterotic orbifold T or an isotropic IIB complex-structure U (both K = −3 ln); FI term then independent of the Twist field → case (ii); the matter coupling β is the decisive open question.
+
+**Twist-M case (ii) condition (DEEP 2.2):** the field still oscillates today (δφ ≈ 1e-4 M_P), so SM masses must be blind to it (β ≲ 1e-2–1e-3); in modular-flavour homes the dual modulus sets Yukawas, so a separate sector is required.

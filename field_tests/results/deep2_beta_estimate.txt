@@ -1,0 +1,5 @@
+oscillation amplitude today ~ 1.1e-04 M_P (from D492 Omega_kin=3.75e-05); period ~ 2pi/m = 0.045 Hubble times
+beta=1.0e+00: fractional mass variation ~ 1.1e-04 (vs ~1e-6-1e-7 from quasar/Oklo-type bounds, approximate)
+beta=4.1e-01: fractional mass variation ~ 4.4e-05 (vs ~1e-6-1e-7 from quasar/Oklo-type bounds, approximate)
+beta=1.0e-02: fractional mass variation ~ 1.1e-06 (vs ~1e-6-1e-7 from quasar/Oklo-type bounds, approximate)
+beta=1.0e-03: fractional mass variation ~ 1.1e-07 (vs ~1e-6-1e-7 from quasar/Oklo-type bounds, approximate)
