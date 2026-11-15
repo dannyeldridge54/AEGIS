@@ -5083,3 +5083,12 @@ Other referee points accepted:
 - For D528/D529 only the supergravity convention applies (W weight −1); the rigid solutions are irrelevant. A non-zero ⟨W⟩ (gravitino mass) breaks the Z₄^R/Z₈^R.
 Zenodo: the referee verdict is NOT READY until these are fixed. Post as a SEPARATE record, a status/synthesis preprint.
 Process note: my own checks missed the branch issue, because the 200-digit runs looked only along the imaginary axis (Re τ = 0), where the sign flip is invisible. Lesson: holomorphy checks must go off-axis.
+
+## D538 — RIGHT (pp 22:26 CT; analytic reasoning, not a scored test) — can a corrected SERAPIS put Λ back at τ = i? No: you get a saddle or Minkowski
+After D537, three options with a nilpotent S (V = e^K|F|², F = η⁻²H holomorphic of weight −1, H invariant):
+(a) H odd at i, e.g. ∝ E₆/η¹² ∝ (τ − i). Then F(i) = 0 and the vacuum is SUSY Minkowski (V = 0), the D537 result. Any constant added to H has the opposite S-character and breaks invariance.
+(b) H even and non-zero at i: H ≈ c + A(τ − i)² + …. Then V ∝ |c|² + 2 Re[c̄A(τ − i)²] + …. The term Re[c̄A δ²] changes sign with the direction of δ (Re δ² = δ_x² − δ_y²). So τ = i is a SADDLE at order |c|. The positive curvature from e^K and |η|⁻⁴ is itself ∝ |c|², far smaller, so it cannot lift the saddle unless |A| ≲ |c|. That would make the "stiff" mass ~ c·(scale), i.e. tiny: a light field and the fifth-force problem again (D493).
+(c) H even and vanishing at i: back to (a)-type Minkowski.
+Conclusion: within this minimal set-up (one modulus, nilpotent S, exact SL(2,Z)), "heavy vacuum at τ = i" and "Λ ≠ 0 at τ = i" cannot both hold. This is the Leedom–Righi–Westphal no-go (arXiv:2212.03876) in our language.
+Known ways out (literature): matter/ISS uplift with a limited coupling range gives near-zero or slightly dS vacua near i (Knapp-Pérez et al., arXiv:2304.14437, D535), or a separate uplift sector. In both, Λ is an added and tuned sector, not a property of the torus.
+Status: SERAPIS now = plateau inflation + heavy SUSY-Minkowski vacuum at i + separately tuned Λ (as in 2405.06497). The "one torus explains Λ" claim is closed as NOT supported. The synthesis and paper must change accordingly (in progress).
