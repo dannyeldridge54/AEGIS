@@ -1,0 +1,10 @@
+s=1.5: E(i)=8.94012  E(rho)=8.79570  -> min at rho
+s=2: E(i)=6.02611  E(rho)=5.78259  -> min at rho
+s=2.5: E(i)=5.09025  E(rho)=4.71948  -> min at rho
+s=3: E(i)=4.65891  E(rho)=4.14126  -> min at rho
+s=2.5: minimum at rho, not i -> conflicts with SERAPIS tau=i vacuum; inflation computed anyway along i*y toward the axis minimum
+s=2.5 N*=52: y_end=2.18 y*=18.6 n_s=0.9619 r=2.31e-04 (-2.2 SPA, -4.0 SPA+DESI)
+s=2.5 N*=55.6: y_end=2.18 y*=19.1 n_s=0.9644 r=2.02e-04 (-1.3 SPA, -3.1 SPA+DESI)
+s=3: minimum at rho, not i -> conflicts with SERAPIS tau=i vacuum; inflation computed anyway along i*y toward the axis minimum
+s=3 N*=52: y_end=1.95 y*=12.4 n_s=0.9619 r=1.61e-04 (-2.2 SPA, -4.0 SPA+DESI)
+s=3 N*=55.6: y_end=1.95 y*=12.7 n_s=0.9643 r=1.41e-04 (-1.4 SPA, -3.1 SPA+DESI)

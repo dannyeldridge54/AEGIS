@@ -5424,3 +5424,15 @@ Synthesis of D560–D568:
 - p ≥ 2 (home-safe) needs a missing 1/Im τ term: a mild tuning, and r below the standard targets.
 So SERAPIS faces a "home vs naturalness" trade-off, quantified by r: detecting r ≈ 1e-3 would favour the natural-but-homeless version.
 Status: recorded as the main theoretical tension of the home-consistent variants.
+
+## D569 — DEEP (Dp now, 23:33 CT; scored, locked PREREG_D569_EISENSTEIN; results/eisenstein_d569.txt) — Eisenstein-series plateaus are natural and home-safe, but their vacuum is at ρ, not i
+Idea: the non-holomorphic Eisenstein series E(τ, s) (the coefficients of higher-derivative string couplings, s = 3/2, 5/2, 3, …) are SL(2,Z)-invariant and grow as y^s with NO 1/y term. A plateau V = V₀[1 − E_min/E(τ, s)] therefore has p = s naturally, answering the D568 naturalness cost.
+Computed (lattice sum):
+- For every s tested (1.5, 2, 2.5, 3), E(ρ) < E(i), so the minimum (V = 0) is at ρ.
+- s = 2.5: n_s 0.962–0.964, r = 2.0–2.3e-4, y* = 18.6–19.1 (home-safe, below the bound of ≈ 28.5).
+- s = 3: n_s 0.962–0.964, r = 1.4–1.6e-4, y* ≈ 12.5.
+Verdict: a natural, string-motivated, home-safe Kairos-like plateau EXISTS, but it puts the vacuum at ρ (the hexagonal torus), as in Kallosh–Linde. SERAPIS's τ = i vacuum is the unnatural element here; it needs the |j − 1728| construction (D545/D564), which has no Eisenstein-type motivation.
+Consequences:
+- A ρ-vacuum variant would change the matter selection rule from mod 4 to mod 6 (D551 would need redoing) and loses the "square torus today" picture.
+- n_s is slightly below HS-Kairos (−1.3σ to −2.2σ SPA; ≥ 3.1σ off SPA+DESI).
+Honest summary: the most natural string-motivated modular plateau (Eisenstein s ≥ 2, ρ-vacuum, r ~ 1–2e-4) is not SERAPIS. SERAPIS's distinctive τ = i vacuum costs naturalness. Prior art: Eisenstein invariants are standard (Kallosh–Linde list L_G₂ / E-type invariants; Green–Gutperle for the string couplings); the r-values here are our computation.
