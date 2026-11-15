@@ -1,0 +1,10 @@
+# PREREG D689: the tilt from Berg–Haack–Körs one-loop Kähler corrections — natural size of ε (Danny: "look up how they do it and calculate it")
+Locked before computation, 2026-11-15. Script theory/modular/bhk_tilt_d689.py; output results/bhk_tilt_d689.txt.
+Input (literature): BHK one-loop Kähler correction for T⁶/(Z2×Z2) orientifolds (hep-th/0508171 eq. 12, quoting hep-th/0508043 eq. 3.30): K⁽¹⁾ = (1/256π⁶) Σ_I [ℰ₂^{D3}(A_I,U_I)/((S−S̄)(ρ_I−ρ̄_I)) + …], ℰ₂^{D3}(A,U) = 128N[E₂(A,U) + E₂(−A,U)] − 8N[E₂(2A,U) + E₂(−2A,U)], with E₂(A,U) = Σ'_{(n,m)} U₂²cos(phase)/|n + mU|⁴ (leading term 2U₂²π⁴/90 = 2ζ(4)U₂², hep-th/0508043 eq. B.6).
+Derived configuration (by hand, checked numerically here): D3 stacks of N at the three half-periods A ∈ {1/2, U/2, (1+U)/2} of the inflaton torus: Σ_A E₂(A,U) = −(3/4)E(U,2) [weights 3 for (n,m) both even, −1 otherwise], E₂(2A) = E(U,2) ⇒ ℰ_total = −240N·E(U,2), and since (S−S̄)(ρ−ρ̄) = −4 Im S Im ρ: K⁽¹⁾ = (15N/64π⁶)·E(U,2)/(Im S Im ρ) > 0, SL(2,Z)-invariant, minimum at ρ (Epstein zeta), growth 2ζ(4)U₂² at the cusp.
+Model (multiplicative, as e^{K} multiplies the uplift/plateau energy): V/V0 = P_ρ(τ)·[1 + C(E(τ,2) − E(ρ,2))], P_ρ = I_ρ²/(I_ρ² + 1), along Re τ = 1/2, φ = ln y/√2; C = 15N/(64π⁶ Im S Im ρ).
+Compute:
+1. Check Σ_A E₂(A,U) = −(3/4)E(U,2) by direct lattice sums at U = i and U = 1/2 + 2i; check E(τ,2) Fourier formula vs lattice sum; confirm E(·,2) minimum at ρ vs i along a short scan.
+2. Exact first-order slow roll (∫V/V′ from ε_V = 1): scan C, N* ∈ {46.09, 49.49}; find C giving n_s = 0.9682 and 0.9728; report y*, r, α_s. Also compare α_s with the D669 general relation at κ = 1 (tilt ∝ y² = e^{2√2φ}, plateau p = 2√2).
+3. Natural size: Im S·Im ρ = 15N/(64π⁶ C) for N = 1, 4; translate with Im S = 1/(2√2π g_s) for g_s = 0.1, 0.3 into Im ρ.
+Verdict rule: NATURAL if the required Im S·Im ρ lies in the perturbative, moderately-large-volume range Im S ≳ 1, Im ρ ~ 10–10⁴ for N = 1–4; otherwise not. Note (stated in advance): this correction is multiplicative, so it tilts the plateau but adds no vacuum mass; the vacuum mass must come from elsewhere — reported, not solved here.
