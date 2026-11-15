@@ -1,0 +1,252 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{23}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Balkenhol}\ \emph {et~al.}(2025)\citenamefont
+  {Balkenhol} \emph {et~al.}}]{arXiv_2512_10613}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {Balkenhol}} \emph
+  {et~al.},\ }\href@noop {} {\bibinfo {title} {{Inflation at the End of 2025:
+  Constraints on r and ns Using the Latest CMB and BAO Data}}} (\bibinfo {year}
+  {2025}),\ \Eprint {https://arxiv.org/abs/2512.10613} {arXiv:2512.10613}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kallosh}\ and\ \citenamefont
+  {Linde}(2024{\natexlab{a}})}]{arXiv_2408_05203}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Kallosh}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Linde}},\ }\href@noop {} {\bibinfo {title} {{SL(2,Z) Cosmological
+  Attractors}}} (\bibinfo {year} {2024}{\natexlab{a}}),\ \Eprint
+  {https://arxiv.org/abs/2408.05203} {arXiv:2408.05203} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kallosh}\ and\ \citenamefont
+  {Linde}(2024{\natexlab{b}})}]{arXiv_2412_19324}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Kallosh}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Linde}},\ }\href@noop {} {\bibinfo {title} {{Double Exponents in SL(2,Z)
+  Cosmology}}} (\bibinfo {year} {2024}{\natexlab{b}}),\ \Eprint
+  {https://arxiv.org/abs/2412.19324} {arXiv:2412.19324} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ding}\ \emph
+  {et~al.}(2024{\natexlab{a}})\citenamefont {Ding}, \citenamefont {Jiang},\
+  and\ \citenamefont {Zhao}}]{arXiv_2405_06497}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.-J.}\ \bibnamefont
+  {Ding}}, \bibinfo {author} {\bibfnamefont {S.-Y.}\ \bibnamefont {Jiang}},\
+  and\ \bibinfo {author} {\bibfnamefont {W.}~\bibnamefont {Zhao}},\ }\href@noop
+  {} {\bibinfo {title} {{Modular Invariant Slow Roll Inflation}}} (\bibinfo
+  {year} {2024}{\natexlab{a}}),\ \Eprint {https://arxiv.org/abs/2405.06497}
+  {arXiv:2405.06497} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Casas}\ and\ \citenamefont
+  {Ib{\'a}{\~n}ez}(2024)}]{arXiv_2407_12081}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.~F.}\ \bibnamefont
+  {Casas}}\ and\ \bibinfo {author} {\bibfnamefont {L.~E.}\ \bibnamefont
+  {Ib{\'a}{\~n}ez}},\ }\href@noop {} {\bibinfo {title} {{Modular Invariant
+  Starobinsky Inflation and the Species Scale}}} (\bibinfo {year} {2024}),\
+  \Eprint {https://arxiv.org/abs/2407.12081} {arXiv:2407.12081} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Ding}\ \emph
+  {et~al.}(2024{\natexlab{b}})\citenamefont {Ding} \emph
+  {et~al.}}]{arXiv_2411_18603}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {Ding}} \emph {et~al.},\
+  }\href@noop {} {\bibinfo {title} {{Modular invariant inflation and
+  reheating}}} (\bibinfo {year} {2024}{\natexlab{b}}),\ \Eprint
+  {https://arxiv.org/abs/2411.18603} {arXiv:2411.18603} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kallosh}\ and\ \citenamefont
+  {Linde}(2025)}]{arXiv_2512_02969}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Kallosh}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Linde}},\ }\href@noop {} {\bibinfo {title} {{Singular alpha-attractors}}}
+  (\bibinfo {year} {2025}),\ \Eprint {https://arxiv.org/abs/2512.02969}
+  {arXiv:2512.02969} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Leedom}\ \emph {et~al.}(2022)\citenamefont {Leedom},
+  \citenamefont {Righi},\ and\ \citenamefont {Westphal}}]{arXiv_2212_03876}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont
+  {Leedom}}, \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Righi}},\ and\
+  \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Westphal}},\ }\href@noop
+  {} {\bibinfo {title} {{Heterotic de Sitter Beyond Modular Symmetry}}}
+  (\bibinfo {year} {2022}),\ \Eprint {https://arxiv.org/abs/2212.03876}
+  {arXiv:2212.03876} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Casas}\ and\ \citenamefont
+  {Ib{\'a}{\~n}ez}(2025)}]{arXiv_2507_05345}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.~F.}\ \bibnamefont
+  {Casas}}\ and\ \bibinfo {author} {\bibfnamefont {L.~E.}\ \bibnamefont
+  {Ib{\'a}{\~n}ez}},\ }\href@noop {} {\bibinfo {title} {{Moduli Self-Fixing}}}
+  (\bibinfo {year} {2025}),\ \Eprint {https://arxiv.org/abs/2507.05345}
+  {arXiv:2507.05345} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kawasaki}\ \emph {et~al.}(2006)\citenamefont
+  {Kawasaki}, \citenamefont {Takahashi},\ and\ \citenamefont
+  {Yanagida}}]{arXiv_hep-ph_0611166}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Kawasaki}}, \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont
+  {Takahashi}},\ and\ \bibinfo {author} {\bibfnamefont {T.~T.}\ \bibnamefont
+  {Yanagida}},\ }\href@noop {} {\bibinfo {title} {{The Gravitino-Overproduction
+  Problem in Inflaton Decay}}} (\bibinfo {year} {2006}),\ \Eprint
+  {https://arxiv.org/abs/hep-ph/0611166} {arXiv:hep-ph/0611166} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Bagnaschi}\ \emph {et~al.}(2014)\citenamefont
+  {Bagnaschi} \emph {et~al.}}]{arXiv_1407_4081}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Bagnaschi}} \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {{Higgs Mass
+  and Unnatural Supersymmetry}}} (\bibinfo {year} {2014}),\ \Eprint
+  {https://arxiv.org/abs/1407.4081} {arXiv:1407.4081} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kallosh}\ and\ \citenamefont
+  {Linde}(2004)}]{arXiv_hep-th_0411011}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Kallosh}}\ and\ \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Linde}},\ }\href@noop {} {\bibinfo {title} {{Landscape, the Scale of SUSY
+  Breaking, and Inflation}}} (\bibinfo {year} {2004}),\ \Eprint
+  {https://arxiv.org/abs/hep-th/0411011} {arXiv:hep-th/0411011} \BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Carrasco}\ \emph {et~al.}(2025)\citenamefont
+  {Carrasco} \emph {et~al.}}]{arXiv_2503_14904}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {Carrasco}} \emph
+  {et~al.},\ }\href@noop {} {\bibinfo {title} {{Axion Stabilization in Modular
+  Cosmology}}} (\bibinfo {year} {2025}),\ \Eprint
+  {https://arxiv.org/abs/2503.14904} {arXiv:2503.14904} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Priya}\ \emph {et~al.}(2026)\citenamefont {Priya}
+  \emph {et~al.}}]{arXiv_2604_04585}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {Priya}} \emph
+  {et~al.},\ }\href@noop {} {\bibinfo {title} {{Predictions of Modular Symmetry
+  Fixed Points on Neutrino Masses, Mixing, and Leptogenesis}}} (\bibinfo {year}
+  {2026}),\ \Eprint {https://arxiv.org/abs/2604.04585} {arXiv:2604.04585}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Fujii}\ \emph
+  {et~al.}(2001{\natexlab{a}})\citenamefont {Fujii}, \citenamefont
+  {Hamaguchi},\ and\ \citenamefont {Yanagida}}]{arXiv_hep-ph_0102187}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Fujii}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Hamaguchi}},\
+  and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Yanagida}},\
+  }\href@noop {} {\bibinfo {title} {{Reheating-temperature independence of
+  cosmological baryon asymmetry in Affleck-Dine leptogenesis}}} (\bibinfo
+  {year} {2001}{\natexlab{a}}),\ \Eprint {https://arxiv.org/abs/hep-ph/0102187}
+  {arXiv:hep-ph/0102187} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Fujii}\ \emph
+  {et~al.}(2001{\natexlab{b}})\citenamefont {Fujii}, \citenamefont
+  {Hamaguchi},\ and\ \citenamefont {Yanagida}}]{arXiv_hep-ph_0109154}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Fujii}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Hamaguchi}},\
+  and\ \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Yanagida}},\
+  }\href@noop {} {\bibinfo {title} {{Leptogenesis via $LH_u$ flat direction
+  with a gauged $U(1)_{B-L}$}}} (\bibinfo {year} {2001}{\natexlab{b}}),\
+  \Eprint {https://arxiv.org/abs/hep-ph/0109154} {arXiv:hep-ph/0109154}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{DESI Collaboration}}\ \emph
+  {et~al.}(2026)\citenamefont {{DESI Collaboration}} \emph
+  {et~al.}}]{arXiv_2607_27410}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{DESI Collaboration}}}
+  \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {{DESI DR2 Results IV:
+  Alcock-Paczynski Measurements from the Lyman Alpha Forest and Cosmological
+  Constraints}}} (\bibinfo {year} {2026}),\ \Eprint
+  {https://arxiv.org/abs/2607.27410} {arXiv:2607.27410} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Aoki}\ and\ \citenamefont
+  {Otsuka}(2024)}]{arXiv_2411_08467}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Aoki}}\ and\ \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Otsuka}},\
+  }\href@noop {} {\bibinfo {title} {{Inflationary constraints on the
+  moduli-dependent species scale in modular invariant theories}}} (\bibinfo
+  {year} {2024}),\ \Eprint {https://arxiv.org/abs/2411.08467}
+  {arXiv:2411.08467} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Harvey}\ and\ \citenamefont
+  {Moore}(1995)}]{arXiv_hep-th_9510182}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.~A.}\ \bibnamefont
+  {Harvey}}\ and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Moore}},\
+  }\href@noop {} {\bibinfo {title} {{Algebras, BPS States, and Strings}}}
+  (\bibinfo {year} {1995}),\ \Eprint {https://arxiv.org/abs/hep-th/9510182}
+  {arXiv:hep-th/9510182} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kofman}\ \emph {et~al.}(2004)\citenamefont {Kofman}
+  \emph {et~al.}}]{arXiv_hep-th_0403001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Kofman}} \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {{Beauty is
+  Attractive: Moduli Trapping at Enhanced Symmetry Points}}} (\bibinfo {year}
+  {2004}),\ \Eprint {https://arxiv.org/abs/hep-th/0403001}
+  {arXiv:hep-th/0403001} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Buchm{\"u}ller}\ \emph {et~al.}(2013)\citenamefont
+  {Buchm{\"u}ller}, \citenamefont {Domcke},\ and\ \citenamefont
+  {Wieck}}]{arXiv_1309_3122}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Buchm{\"u}ller}}, \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Domcke}},\ and\ \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Wieck}},\ }\href@noop {} {\bibinfo {title} {{No-scale D-term inflation with
+  stabilized moduli}}} (\bibinfo {year} {2013}),\ \Eprint
+  {https://arxiv.org/abs/1309.3122} {arXiv:1309.3122} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Abe}\ \emph {et~al.}(2026)\citenamefont {Abe} \emph
+  {et~al.}}]{arXiv_2607_00528}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {Abe}} \emph {et~al.},\
+  }\href@noop {} {\bibinfo {title} {{Finite modular Coleman-Weinberg
+  inflation}}} (\bibinfo {year} {2026}),\ \Eprint
+  {https://arxiv.org/abs/2607.00528} {arXiv:2607.00528} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Harrington}\ \emph {et~al.}(2026)\citenamefont
+  {Harrington} \emph {et~al.}}]{arXiv_2609_26938}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {Harrington}} \emph
+  {et~al.},\ }\href@noop {} {\bibinfo {title} {{The Simons Observatory:
+  Commissioning of the Mid-Frequency Small Aperture Telescopes}}} (\bibinfo
+  {year} {2026}),\ \Eprint {https://arxiv.org/abs/2609.26938}
+  {arXiv:2609.26938} \BibitemShut {NoStop}%
+\end{thebibliography}%

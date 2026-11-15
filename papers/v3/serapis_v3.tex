@@ -1,10 +1,10 @@
 % SERAPIS v3 — draft. Generated section by section by the readiness ladder (R5). AI-assisted; see Acknowledgements.
-\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib]{revtex4-2}
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,floatfix]{revtex4-2}
 \usepackage{amsmath,amssymb,graphicx,hyperref}
 \begin{document}
 \title{SERAPIS: a modular plateau with a massive vacuum at the square torus, its Janus pair of predictions, and a three-observable consistency relation}
 \author{Danny Eldridge}
-\affiliation{Independent researcher\\ [AFFILIATION / CORRESPONDENCE EMAIL: Danny to confirm]}
+\affiliation{Independent researcher, {[AFFILIATION / CORRESPONDENCE EMAIL: Danny to confirm]}}
 \date{Draft of 15 November 2026}
 \begin{abstract}
 [ABSTRACT: written in R7.]
@@ -79,13 +79,13 @@ We solve the background exactly and integrate the Mukhanov--Sasaki equations for
 \end{itemize}
 Against current data (Fig.~\ref{fig:nsr}), Chronos lies within about $1\sigma$ of CMB+DESI and within $2\sigma$ of CMB alone. Kairos lies $1.4$--$2.4\sigma$ below the CMB value and $3.8$--$4.6\sigma$ below CMB+DESI (D578, D588, D602).
 
-\begin{figure}
+\begin{figure}[tbp]
 \includegraphics[width=\columnwidth]{figs/fig2_ns_r.pdf}
 \caption{Kairos (squares) and Chronos (circles, triangles) against the CMB and CMB+DESI $n_s$ bands~\cite{arXiv_2512_10613}. Each Chronos point is one reheating bracket ($T_R = 10^3$ or $10^5$~GeV, stiff or matter bound); all satisfy $y_* \le 25$.}
 \label{fig:nsr}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[tbp]
 \includegraphics[width=\columnwidth]{figs/fig1_potential.pdf}
 \caption{The two-term potential along $\mathrm{Im}\,\tau$. Inset: the tilt on the plateau. Shaded: horizon exit of CMB scales. Dashed: the perturbative bound $\mathrm{Im}\,\tau \approx 25$.}
 \label{fig:pot}
@@ -118,7 +118,7 @@ which equals $1$ for Kairos and about $2.8$ at $x = 0.47$. The exact numerics gi
 \end{equation}
 Measured $(n_s, r)$ thus predict $\alpha_s$ with no free parameter, for either vacuum. Against the exact Mukhanov--Sasaki results, Eq.~(\ref{eq:consistency}) is accurate to $11$--$13\%$ in every case. The offset is a uniform subleading bias (D635).
 
-\begin{figure}
+\begin{figure}[tbp]
 \includegraphics[width=\columnwidth]{figs/fig3_running.pdf}
 \caption{Running versus $n_s$. Dashed: the plain attractor relation. SERAPIS with the exponential tilt lies a factor $2$--$3$ below it at fixed $n_s$.}
 \label{fig:run}
@@ -138,7 +138,7 @@ Linear decays survive only through off-diagonal couplings between states of the 
 
 \paragraph{The e-fold count.} We bracket the history in two ways. The stiff phase is taken either at its octic value ($w = 3/5$) or conservatively as matter-like ($w = 0$), followed by a matter phase down to $T_R$. This gives $N_* = 46$--$49$ (D602), which is the range used in Sec.~\ref{sec:predictions}.
 
-\begin{figure}
+\begin{figure}[tbp]
 \includegraphics[width=\columnwidth]{figs/fig4_w.pdf}
 \caption{Effective equation of state (fit over a $0.5$ e-fold window) through the end of inflation. It settles near the octic value $w = 3/5$ before the quadratic term takes over.}
 \label{fig:w}
@@ -195,7 +195,7 @@ With its own reheating history (a plateau term $\propto\delta^{12}$, hence $w = 
 \section{Forward predictions}\label{sec:forward}
 The following were frozen, with SHA-256 hashes committed to the public repository, on 15 November 2026. They will be scored only on data published after that date (D605, D615, D633). We will not retune $\varepsilon$ in response to future data; any revision counts as a new model.
 
-\begin{table}[h]
+\begin{table}[tbp]
 \caption{Frozen predictions and the conditions under which each is disfavoured at $3\sigma$.}
 \begin{ruledtabular}
 \begin{tabular}{lll}
