@@ -6111,3 +6111,16 @@ NOT derived:
 2. why m₃/₂/H ≈ 0.01 (it moves the question from ε to the SUSY scale);
 3. whether the same works at τ = i: no, the DKL L has a saddle at i (D608).
 So this is an argument for SERAPIS-ρ only.
+
+## D617 — DEEP (Ddl 08:31 CT; reasoning, not locked) — can modular-invariant gaugino condensation supply D616's e^{ξ′L} uplift? It gives ξ′ = 1 naturally, but the full SUGRA potential cancels the linear term unless the F-term and W₀ carry DIFFERENT modular dependence
+1. With K = −ln(2y) (α = 1/3), modular invariance needs W of weight −1. A hidden condensate gives W ∝ Ω(S)·η(τ)⁻² (the FILQ structure at α = 1/3; SERAPIS-1's original η⁻², D530; allowed on an N = 2 plane since y* < 29, D608).
+   Then e^K|W|² ∝ (2y|η|⁴)⁻¹ = e^{L} exactly. So a SUSY-breaking scale set by such a condensate scales as e^{ξ′L} with **ξ′ = 1**, inside D616's closure bound ξ′ ≤ 1.34.
+2. But if BOTH F_X and W₀ come from the same condensate (W = η⁻²(W₀ + F_X X)), then:
+   - V ⊃ e^{L}(F_X² − 3W₀²) + (terms ∝ |D_τW|² ∝ |Ĝ₂|²);
+   - tuning Λ ≈ 0 at the vacuum (F_X² = 3W₀²) cancels the linear-in-e^{L} term everywhere;
+   - what is left is the species-type |Ĝ₂|² piece. That is D577's shape (mass, no tilt), not the tilt.
+3. The tilt survives only if F_X and W₀ have different modular dependence, e.g. W₀ from a modular-neutral sector (racetrack/flux, D586) and F_X from the τ-dependent condensate:
+   - V ⊃ 3W₀²(e^{L − L(ρ)} − 1) ≈ 3W₀²(L − L(ρ)), with the right sign;
+   - ε = (m₃/₂/H)²·ξ′, with ξ′ = 1.
+   - This is D616's identification with ξ′ fixed to 1. It requires the gravitino mass to come from a DIFFERENT sector than the uplift. That is plausible, since the dilaton racetrack already sits at W_Y = 0 and m₃/₂ is set by the nilpotent-sector W₀, but it is not shown here.
+Verdict: suggestive, not derived. The natural α = 1/3 condensate gives exactly ξ′ = 1 (satisfying the gravitino closure bound with ~15% margin, since m₃/₂/m_φ = 1/(κ√ξ′)·2 … ≥ 0.58 ⇒ OK). It works only if the uplift's modular dependence differs from W₀'s. A full SUGRA computation of V for this two-sector set-up needs a lock.
