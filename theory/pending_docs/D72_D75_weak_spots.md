@@ -4352,3 +4352,8 @@ bounces off the wall could each add to it. So: φ needs a decay channel into lig
 DM component that must be counted (overclosure risk). The perturbative U(1) charge acts as a global symmetry broken only by D-instantons, so
 a superpotential coupling to lighter hidden states (e.g. W ⊃ λ φ X Y) is needed — added as an open condition. CENTRE: F5 (DM) flag on the FI
 picture; the pinning itself is unaffected.
+
+**D444a (correction to D444, same cycle; arithmetic in code, appended to results/phi_relic_d444.txt)** — my hand estimate of the
+non-adiabatic remnant was wrong by 1e6. Computed: the residual energy where A = 1 (m_eff = 6.5e11 GeV, 5.9e-9 below x_E) is 8.6e31 GeV⁴ =
+4.9e-15 of radiation, so ρ_φ/s ≈ 5.5e-4 GeV — **1.3e6 × the DM density, not "the same order"**. So the condition is firm, not marginal:
+in the FI picture φ MUST decay (τ < 1 s) or the model overcloses. Estimate (single crossing; bounces only add).

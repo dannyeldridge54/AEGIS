@@ -76,4 +76,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 28 (19:08, 'pp'): PART 5 third pass — D441 stringy-FI capture works at M_s=0.1 M_P (penetration 7.5e-12; slope 2.2× D437); with D439 → toy window M_s ≈ 0.068–0.1 M_P. Result → walls 0.
 - cycle 29 (19:09, tick): PART 6 third pass — D442 FI vacuum test: lock badly designed (float floor > threshold), locked verdict KEEPS; analytic tree-level V_min = 0 (removes D427 piece, not scored); D438 root really 29.6069. WALL 1.
 - cycle 30 (19:13, 'pp'): PART 7 third pass — D443 ACT+Planck β = 0.277±0.057° (4.8σ): 0.28σ from D414 input, c_γ 1.7–4.1; B4 untested. WALL 2.
-- cycle 31 (19:17, 'pp'): PART 8 third pass — D444 screening field φ isolated by heavy U(1); non-adiabatic remnant ~DM-sized (estimate) → φ needs a decay channel (new open condition, F5 flag). Result → walls 0.
+- cycle 31 (19:17, 'pp'): PART 8 third pass — D444 screening field φ isolated by heavy U(1); non-adiabatic remnant 1.3e6× DM (D444a, estimate) → φ needs a decay channel (new open condition, F5 flag). Result → walls 0.
