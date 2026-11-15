@@ -5510,3 +5510,38 @@ Verdict: NULL. There is no new measurement, so the D567 forward bands stay unsco
 - HS-Kairos: −0.8 to −1.5σ vs SPA+BK; −2.4 to −3.2σ vs SPA+BK+DESI.
 - HS-Chronos: +1.7 to +2.4σ vs SPA+BK; +0.3 to +1.1σ vs SPA+BK+DESI.
 The next decisive inputs are Simons Observatory SAT r and DESI DR3. The monthly DESI watch is already scheduled.
+
+## D574 — DERIVATION (Danny 07:28 CT "Derive τ = i"; locked PREREG_D574_TAU_I_DERIVATION; results/tau_i_d574.txt) — what symmetry forces at τ = i, and a flaw it exposes in SERAPIS-KL
+What can be derived, with no model input (all three checks passed):
+- **A. Stationarity.** S: τ → −1/τ fixes i and acts there as δτ → −δτ. So any S-invariant V that is smooth at i has ∇V(i) = 0.
+  - τ = i is ALWAYS a critical point; the symmetry derives this, nothing is chosen. Numerically |∇V(i)| = 0 for p = 1, 2.
+- **B. Weight parity.** f(i) = iʷ f(i), so any modular form with w ≢ 0 (mod 4) vanishes at i.
+  - E₆(i) = 0 with a simple zero: |E₆(i)| = 7e-16, |E₆′(i)| = 6.66. By contrast |E₄(i)| = 1.456.
+  - So j − 1728 ∝ E₆²/Δ has a DOUBLE zero at i (slopes 2.000/1.998/1.999).
+  - This is why a superpotential carrying one E₆ factor gives the SUSY Minkowski vacuum at i (D537/D538). It is derived, not tuned.
+- What is NOT derived: that i is a MINIMUM rather than a saddle, and that the vacuum has V = 0 rather than Λ (the Leedom–Righi–Westphal no-go, D538). Those depend on the model.
+
+Flaw exposed (C, verified):
+- SERAPIS-KL builds I from |j − 1728|². That gives V − V(i) ∝ |τ − i|^{4p}: measured slope 4.00 at p = 1 and 8.00 at p = 2.
+- So the reference vacuum is **massless**: quartic at p = 1, octic at p = 2.
+- The D539 mass (4.2–4.5e13 GeV) belongs to SERAPIS-1, not SERAPIS-KL. No KL mass was ever computed, and none exists at quadratic order.
+- Consequence: after inflation the field oscillates anharmonically, with w = (n − 2)/(n + 2):
+  - p = 1 (n = 4): w = 1/3, radiation-like;
+  - p = 2 (n = 8, the home-safe versions): w = 3/5, STIFF.
+- The D567 N* window [52, 55.6] assumed matter-like reheating, so the D567 bands are conditional (see D567a).
+
+Derived fix tested (C′): build I₁ from |j − 1728|¹ ∝ |E₆|²/|Δ|, the holomorphic-E₆ route.
+- p = 1: quadratic, massive vacuum with m/H_inf = 3.70 (slope 2.00).
+- p = 2: still quartic (slope 4.00).
+- The cusp growth halves (I₁ ≈ y/2), so inflation moves outward:
+  - p = 1: y* = 213–227, NOT home-safe; n_s = 0.9621–0.9645 (−4.0 to −3.1σ vs SPA+DESI); r = 1.2–1.4e-3.
+  - p = 2: y* = 44–45, NOT home-safe; n_s = 0.9627–0.9650; r = 2.8–3.2e-4.
+- Within the one-function family V = f(I^p) there is a trade-off:
+  - a massive τ = i vacuum needs V ∝ |τ − i|² near i, which means p·(power of |j − 1728|) = 1;
+  - being home-safe needs p ≥ 2 (D564).
+  - **No member has both.**
+
+Status: τ = i as a critical point and as a SUSY-Minkowski zero is DERIVED (symmetry plus weight parity). τ = i as a massive, home-safe vacuum is NOT available in SERAPIS-KL as built. One possible way out, not computed and needing its own lock: a two-term V, a plateau plus a separate ε·I₁ mass term. That term grows ∝ y at the cusp, i.e. it acts like a Chronos-type tilt.
+
+## D567a — CORRECTION to D567 (from D574): the forward bands are conditional
+The HS-Kairos and HS-Chronos bands assume matter-like reheating, N* ∈ [52, 55.6]. D574 shows the SERAPIS-KL vacuum at p = 2 is octic, giving a stiff oscillation phase (w = 3/5), which raises N*. The bands stand as locked, but are now labelled "conditional on an added vacuum-mass source". Any rescoring needs its own lock; nothing is refitted here.

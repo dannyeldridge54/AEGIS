@@ -1,0 +1,14 @@
+B: |E4(i)| = 1.455763 |E6(i)| = 6.66e-16 |E6'(i)| = 6.6578 |j(i)-1728| = 0.00e+00
+B: order of zero of j-1728 at i, slopes per direction: ['2.000', '1.998', '1.999']
+A: p=1 |grad V(i)| = 0.00e+00, V(i+0.01) = 1.64e-07, ratio = 0.00e+00
+C : SERAPIS-KL  p=1: slope of V vs |d| = ['4.000', '3.996', '3.997'] (expect 4)
+C': SERAPIS-KL1 p=1: slope of V vs |d| = ['2.000', '1.998', '1.998'] (expect 2)
+A: p=2 |grad V(i)| = 0.00e+00, V(i+0.01) = 2.69e-14, ratio = 0.00e+00
+C : SERAPIS-KL  p=2: slope of V vs |d| = ['7.999', '7.992', '7.994'] (expect 8)
+C': SERAPIS-KL1 p=2: slope of V vs |d| = ['4.000', '3.996', '3.997'] (expect 4)
+C': p=1 vacuum m^2/H^2 = 13.719, m/H = 3.704  (radial dir); check Re dir: 3.704
+check I1y(2) vs I1(2i): 0.406979 0.406979
+KL1 p=1 N*=52: y_end=2.73 y*=213.0 outside n_s=0.9621 r=1.42e-03 (-2.1 SPA, -4.0 SPA+DESI)
+KL1 p=1 N*=55.6: y_end=2.73 y*=227.3 outside n_s=0.9645 r=1.24e-03 (-1.3 SPA, -3.1 SPA+DESI)
+KL1 p=2 N*=52: y_end=3.92 y*=44.0 outside n_s=0.9627 r=3.22e-04 (-1.9 SPA, -3.8 SPA+DESI)
+KL1 p=2 N*=55.6: y_end=3.92 y*=45.3 outside n_s=0.9650 r=2.83e-04 (-1.1 SPA, -2.9 SPA+DESI)
