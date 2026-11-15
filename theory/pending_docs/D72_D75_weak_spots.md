@@ -6051,3 +6051,12 @@ Open for SERAPIS-ρ:
 - (iii) a dedicated novelty audit. KL already put vacua at ρ (2408.05203), and Casas–Ibáñez use L; the combination plateau(j) + ε·L may exist.
 Decision is Danny's: keep SERAPIS at τ = i (consistent, ε·I₁ unexplained) or move to SERAPIS-ρ (string-natural ingredients, vacuum at ρ). Both give the same D605-type forward numbers.
 D610a (wording fix, same tick): the ε = 4e-5 line should read "FAILS the 2σ rule at N* = 47 (−2.4σ)". It is not allowed. The verdict (only ε = 6e-5 passes) is unchanged.
+
+## D611 — DEEP (Ddl 08:25 CT; dedicated novelty audit for SERAPIS-ρ, literature only) — the combination is not found; every ingredient is prior art
+Searches: 2 (one extended). Fetched: 2503.21030 and 2605.04415 (Kallosh & Linde, "New exponential and polynomial ξ-attractors", 2026: reaches n_s ≈ 0.973 by lowering the polynomial power, not by a modular rising term). Listing-level checks: 2411.08467, 2407.12081, 2507.03610, 2411.18603, 2504.01622.
+Ingredients and credits:
+- L_j = (1/4π)ln(|j|²/1728² + …) plateaus with the vacuum at ρ: Kallosh–Linde 2408.05203 (D544).
+- L_η = −ln(2y|η|⁴) as a modular plateau or species function: Casas–Ibáñez 2407.12081, Aoki–Otsuka 2411.08467; also used by KL as an alternative plateau function (D544).
+- A small rising term to tilt n_s: KL singular attractors 2512.02969 §5.3 (j-based).
+Not found in the checked literature: plateau(L_j) + ε·(L_η − L_η(ρ)) with the vacuum at ρ, where the SAME threshold term supplies the vacuum mass and the tilt and keeps y* ≤ 25 (inside the N = 2 home bound).
+Allowed wording: "a combination not found in the checked literature (D611 audit), built from known ingredients (credit KL, CI, Aoki–Otsuka)". This is the same status as two-term SERAPIS (D580): novelty lies only in the combination and its consistency chain.
