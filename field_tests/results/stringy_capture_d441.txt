@@ -1,0 +1,5 @@
+zeta'(x_E)=2.4694e-03 M_s^2; arrival dphi/dN=0.0100; H=1.298e-14 M_P; KE=8.395e-33 M_P^4; D437 slope 1.1261e-05
+M_s/M_P=0.01: penetration dx=7.496e-10 (PASS); slope ratio R=0.022 (FAIL)
+M_s/M_P=0.1: penetration dx=7.496e-12 (PASS); slope ratio R=2.193 (PASS)
+M_s for R=1: 0.0675 M_P
+VERDICT: CAPTURES

@@ -4315,3 +4315,12 @@ takes no side on ordering, so nothing breaks. Thermal leptogenesis (Davidson–I
 κ fit) with D ≈ 1 needs M₁ ≥ 6.8e8 GeV (κ ≈ 1), 2.9e10 (m̃₁ = m_sol), 7.3e10 (0.02 eV), 2.0e11 GeV (m̃₁ = m_atm). Because m̃₁ ≥ m₁ only, m̃₁
 remains free, and all of these lie inside D411's window 1e9–2.5e13 GeV (lower edge consistent with 6.8e8). Labels: estimate (κ fit ±30%).
 No scored result → WALL.
+
+**D441 (cycle 28, "pp"; third pass PART 5, RIGHT; scored, locked PREREG_D441_STRINGY_CAPTURE; results/stringy_capture_d441.txt) — CAPTURES
+with the stringy FI term at M_s = 0.1 M_P.** (a) The wall is hard: arrival speed dφ/dN = 0.010 at T = 1.5e11 GeV (H = 1.3e-14 M_P, kinetic
+energy 8.4e-33 M_P⁴) penetrates past x_E by only 7.5e-12 (M_s = 0.1 M_P) or 7.5e-10 (0.01 M_P) — far below 1e-2. (b) The soft slope near
+x_E is ζ′ = 2.47e-3 M_s² per unit x, i.e. 2.19× D437's slope at M_s = 0.1 M_P, so D437's return-to-the-wall result carries over
+conservatively; it drops below D437's slope for M_s < 0.0675 M_P (not shown to fail there, just not covered). Combined with D439
+(clean plateau for M_s ≤ 0.1 M_P): **the FI-term origin works at toy level for 0.068 ≲ M_s/M_P ≲ 0.1 (clean), or for any M_s ≥ 0.068 M_P if the
+constant amplitude offset of D439 is accepted.** CENTRE: balanced; this narrows the string scale (new conditional prediction of the toy:
+M_s ≈ 1.6–2.4×10¹⁷ GeV). Caveat: toy fluxes (10, 400) fixed; a different flux pair moves the window.

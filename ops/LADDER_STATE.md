@@ -1,9 +1,9 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 60
-consecutive_walls: 1
-cycle: 27
-next_part: 5
+consecutive_walls: 0
+cycle: 28
+next_part: 6
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -73,3 +73,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 25 (18:51, 'pp'): PART 3 third pass — D435 Route A shifts N* by +0.002 only. WALL 1 (60-min pace).
 - cycle 26 (18:58, 'pp'): PARTS 2+5 link — D439 screening condensate: δn_s ≤ 6e-6, δr ≤ 1.3e-6 for any M_s; locked verdict SAFE IF M_s ≤ 0.1 M_P (amplitude offset). Result → walls 0.
 - cycle 27 (19:00, 'pp'): PART 4 third pass — D440 DESI DR2 Σm_ν<0.064 eV: m1<0.0043 eV (NO), leptogenesis M1 ≥ 7e8–2e11 GeV, inside window. WALL 1.
+- cycle 28 (19:08, 'pp'): PART 5 third pass — D441 stringy-FI capture works at M_s=0.1 M_P (penetration 7.5e-12; slope 2.2× D437); with D439 → toy window M_s ≈ 0.068–0.1 M_P. Result → walls 0.

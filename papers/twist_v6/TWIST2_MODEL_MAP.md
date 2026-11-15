@@ -137,3 +137,5 @@ alone.
 **Deep study step 3 (D438, toy):** with the stringy (Π-stability) FI term the small-volume blow-up disappears (|ζ| ≤ 0.37 M_s² for all x < x_E vs −76 M_P² naively); the FI-term origin of the capture coupling now survives from inflation to capture at toy level.
 
 **Centre-confirmed (D439):** the condensate that screens the stringy FI term shifts n_s by ≤ 6e-6 and r by ≤ 1.3e-6; clean pass needs M_s ≲ 0.1 M_P (otherwise only a constant amplitude offset).
+
+**Centre-confirmed (D441, toy):** stringy-FI capture holds (hard wall, soft slope 2.2× D437 at M_s = 0.1 M_P); with D439 the toy prefers M_s ≈ 0.068–0.1 M_P (≈ 1.6–2.4e17 GeV) for flux pair (10, 400).
