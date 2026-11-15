@@ -5748,3 +5748,15 @@ Self-check FAILED (as locked: |N(0) − 50| ≤ 0.5):
   2. recompute n_s, r and y* from the exact background (ideally with the Mukhanov–Sasaki or second-order slow-roll n_s);
   3. propagate to D575/D577/D578/D581 and the D567 bands.
 - Caution flag on every n_s quoted since D564: systematic ≈ −0.001 pending verification.
+
+## D588 — CORRECTION/CHECK (Ddl 07:54 CT; locked PREREG_D588_EXACT_NS + DEVIATIONS D1 [crash, no results seen] and D2 [atol bug; results seen and declared invalid]; results/exact_ns_d588.txt) — exact background + Mukhanov–Sasaki: the D587 alarm is mostly a cancellation; the true n_s shift is only −0.0002 to −0.0004
+Validation (locked): HS-Kairos MS n_s = 0.9611/0.9626 against the attractor 1 − 2/N* = 0.9592/0.9608. The difference is 0.0019, inside the 0.002 limit (PASS, narrowly).
+Exact results (N* counted exactly from the end):
+- HS-Kairos: N* = 49: y* = 22.52, n_s = 0.9611, r = 3.28e-4. N* = 51: y* = 22.93, n_s = 0.9626, r = 3.04e-4. (−1.9σ to −2.4σ SPA; −3.8σ to −4.3σ SPA+DESI.)
+- Two-term ε = 1.0e-4: n_s = 0.9698–0.9714, r = 4.2–4.4e-4, y* = 23.6–24.1.
+- Two-term ε = 1.3e-4: n_s = 0.9725–0.9742, r = 4.6–4.9e-4, y* = 24.0–24.5. (+1.4σ to +1.9σ SPA; −0.1σ to +0.5σ SPA+DESI.)
+Compared with the old slow-roll scripts at the same nominal N*:
+- Δn_s = −0.0002 to −0.0004; r is +2–3%; y* is 0.36–0.45 lower.
+- The y* shift does equal the D587 offset (dN/dy ≈ 4.9, so Δy = 0.36 ↔ ΔN ≈ 1.75). But in n_s it is largely cancelled by the first-order slow-roll error in the n_s formula itself.
+Verdict: D587's flag of a "systematic ≈ −0.001" is REVISED to −0.0002 to −0.0004 in n_s. All conclusions since D564 stand. Every y* is ~0.4 smaller (slightly MORE home-safe).
+Reference numbers for two-term SERAPIS going forward: n_s = 0.970–0.974, r = 4.2–4.9e-4 (ε = 1.0–1.3e-4, N* = 49–51). Post-hoc; scored only on future data.
