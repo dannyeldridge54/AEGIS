@@ -1,0 +1,3 @@
+eps_h=1e-05: xi=T_h/T=0.102
+  m=1e+01 GeV: Omega h2(lam=1)=1.13e-07; lam(100% DM)=0.026; lam(1% DM)=0.088; perturbative: 100% yes, 1% yes
+  m=1e+02 GeV: Omega h2(lam=1)=1.03e-05; lam(100% DM)=0.085; lam(1% DM)=0.288; perturbative: 100% yes, 1% yes
