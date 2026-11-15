@@ -1,7 +1,7 @@
 # Deep-research loop (Danny 20:13 CT 14 Nov: "another every 30 that's deep research on each topic")
 interval_min: 30
-cycle: 10
-next_topic: 11
+cycle: 11
+next_topic: 1
 ## Topics (same 11 parts as the twin ladder; one topic per tick, in order, wrap 11→1)
 1 pinning decay · 2 inflation plateau · 3 kination/reheating · 4 leptogenesis · 5 capture · 6 Λ · 7 birefringence axion · 8 dark matter ·
 9 SUSY breaking/gravitino · 10 gauge couplings/α no-go · 11 string embedding
@@ -22,3 +22,4 @@ next_topic: 11
 - tick 8 (21:11, 'Pp'): topic 8 DM — PIDM prior art; Twist-M DM mass needs recompute (open).
 - tick 9 (21:13, 'Pp'): topic 9 gravitino — Higgs mass requires strongly coupled messengers (1608.01610); window consistent.
 - tick 10 (21:15, 'Pp'): topic 10 — D504 Twist-M M_s ≈ unification scale (M_12/M_s = 0.91); no X-bosons allowed (τ_p).
+- tick 11 (21:16): topic 11 embedding — exact duality ⇒ orbifold vs fibred CY tension (open). DEEP PASS 1 COMPLETE.

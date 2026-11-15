@@ -4760,3 +4760,8 @@ That makes it an explicit condition: strongly coupled SUSY-breaking/messenger se
 Twist-M's string scale (2.65e15 GeV) sits just above the MSSM-like meeting point (M_12 = 2.41e15 GeV, ratio 0.91). The couplings at M_s agree to 1.6 in α⁻¹ (~5%). Twist-2 had no
 such match (D470). Proton decay: X-bosons at 2.4e15 GeV would give τ_p ≈ 6e32 yr, below Super-K's 2.4e34. So the match must be string-scale (D-brane) unification without light X-bosons,
 with baryon number protected (D469). It is a mild point in Twist-M's favour, and it comes from geometry, not a fit.
+
+**DEEP 11 (Danny "Pp x 10", 21:16 CT; topic 11 string embedding; literature).** Exact T-duality on a Kähler modulus is a property of toroidal compactifications and orbifolds
+(hep-th/9401139; modular-invariant condensates in Z_N orbifolds, hep-th/9510022, hep-ph/9210219), not of generic Calabi–Yaus. TENSION: Twist-M's exact duality points to an orbifold,
+while the FI capture wanted a fibred CY with intersecting divisors (D462). A possible reconciliation, not checked, is a IIB orientifold of a toroidal orbifold with blow-up cycles.
+This is now the main open string-side question for Twist-M. DEEP PASS 1 COMPLETE (topics 1–11).
