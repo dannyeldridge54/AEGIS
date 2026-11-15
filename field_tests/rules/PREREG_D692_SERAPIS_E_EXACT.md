@@ -1,0 +1,5 @@
+# PREREG D692: exact Mukhanov–Sasaki spectra for SERAPIS-E (D691)
+Locked before computation, 2026-11-15. Script theory/modular/serapis_e_exact_d692.py; output results/serapis_e_exact_d692.txt.
+Reheating bracket (estimate, stated before running): the heavy vacuum (m_φ ≈ 2.2e13 GeV > H) oscillates quadratically at once (w = 0). Sterile-inflaton decays (D601) scale as T_R ∝ m_φ^{3/2}: relative to the τ = i model (m_φ ≈ 2e11, T_R 1e3–1e5) this gives T_R ≈ 1e6–1e8 GeV (×~1000, estimate). With D602's w = 0 count (N* = 47.60 at T_R = 1e5, +0.76 per decade): N* ∈ [48.4, 49.9].
+Code: the D588/D632 MS solver (running_d632.py lines 13–41 verbatim: background, spectra) with V replaced by V(φ,C) = P_E(1 + CÊ) (D691), Ê via the E(τ,2) Fourier series in double precision (scipy.special.kv), along Re τ = 1/2, φ = ln y/√2; starting point y = 25 (well above y* ≈ 14).
+Grid: C ∈ {6e-7, 1.0e-6, 1.3e-6}, N* ∈ {48.4, 49.9}; D632 five-point stencil → n_s, r, α_s, y*. Also C = 0 (untilted reference). Report; these will be frozen in a separate lock only after this run. No tuning.
