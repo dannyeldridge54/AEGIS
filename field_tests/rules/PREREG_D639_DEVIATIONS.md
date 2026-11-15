@@ -1,0 +1,2 @@
+# D639 deviations (written before rerun)
+D1 (performance only): the fully symbolic inverse + simplify for case B exceeded the 600 s timeout (case A had printed: V0 = 0, m_Q² = 1·m3/2², matching expectation). Fix: build the Kähler metric, K_i and D_iW symbolically, substitute the point (τ = i, S = 0) BEFORE inverting while keeping Q, Q̄ symbolic, then differentiate in Q, Q̄ at Q = 0. Exact arithmetic unchanged; physics, cases, point and verdict rule unchanged.

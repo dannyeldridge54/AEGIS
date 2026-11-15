@@ -13,10 +13,12 @@ def V(K):
     return K,M,DW,DWb,pt
 def soft(K,label):
     K,M,DW,DWb,pt=V(K)
+    # D639 deviation D1: substitute the point before inverting (Q kept symbolic)
+    M=M.subs(pt); DW=[d.subs(pt) for d in DW]; DWb=[d.subs(pt) for d in DWb]
     Minv=M.inv()
-    Vf=sp.exp(K)*(sum(Minv[j,i]*DW[i]*DWb[j] for i in range(3) for j in range(3))-3*W*Wb)
-    VQQ=sp.diff(Vf,Q,Qb).subs({Q:0,Qb:0}).subs(pt)
-    V0=Vf.subs({Q:0,Qb:0}).subs(pt)
+    Vf=sp.exp(K.subs(pt))*(sum(Minv[j,i]*DW[i]*DWb[j] for i in range(3) for j in range(3))-3*W.subs(pt)*Wb.subs(pt))
+    VQQ=sp.diff(Vf,Q,Qb).subs({Q:0,Qb:0})
+    V0=Vf.subs({Q:0,Qb:0})
     KQQ=sp.diff(K,Q,Qb).subs({Q:0,Qb:0}).subs(pt)
     m32sq=sp.exp(K.subs({Q:0,Qb:0}).subs(pt))*W0**2
     r=sp.nsimplify(sp.simplify(VQQ/KQQ/m32sq))
