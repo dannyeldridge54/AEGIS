@@ -7,3 +7,4 @@
 - General Janus relation for any plateau + exponential ramp (D669); tested to <1% on Kallosh–Linde singular T-models.
 - Janus signature vs 2030 forecasts quantified (D670): ≲0.5σ; α_s test is long-term.
 - General closed form for β_s (D671), <1% on singular T-models.
+- κ = 1/n for modular log-tilts; (n_s, r, α_s) measures the plateau power n (D672).

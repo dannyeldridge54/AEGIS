@@ -1,0 +1,7 @@
+tau=i eps=0.00013 N*=46.08: inferred plateau power n = 2.185  (alpha at n=2: -0.0008774 vs exact -0.000991)
+tau=i eps=0.00013 N*=49.21: inferred plateau power n = 2.18  (alpha at n=2: -0.0007843 vs exact -0.000882)
+tau=i eps=0.00016 N*=46.08: inferred plateau power n = 2.184  (alpha at n=2: -0.0009073 vs exact -0.001021)
+tau=i eps=0.00016 N*=49.21: inferred plateau power n = 2.177  (alpha at n=2: -0.0008143 vs exact -0.0009117)
+rho eps=6e-5 N*=46.09: inferred plateau power n = 2.196  (alpha at n=2: -0.0008671 vs exact -0.0009864)
+rho eps=6e-5 N*=49.49: inferred plateau power n = 2.191  (alpha at n=2: -0.0007672 vs exact -0.0008689)
+VERDICT: PASS
