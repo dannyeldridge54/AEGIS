@@ -1,0 +1,2 @@
+E(rho,2)=5.7833593 (D689: 5.7833593)
+alpha=0.333: p_pred=sqrt(6a)=1.414; V>=0 on line: False; argmin y=1.9282 (rho y=0.8660); K^tt|K_t|^2 at y=60: 1.000 (asympt 3a=1.00); V(60)=0.98184
