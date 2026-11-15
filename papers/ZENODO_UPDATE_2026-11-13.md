@@ -113,3 +113,9 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - v2 (DEEP 8): credit Planckian interacting dark matter (Garny–Sandora–Sloth; 1709.09688) for the gravity-only DM.
 - v2 (DEEP 9): eV gravitino requires a strongly coupled messenger sector (m_H = 125 GeV; 1608.01610); credit 1601.07386 for the 4.7 eV bound; 21 cm test (1605.09191).
 - SERAPIS (DEEP 2.3): NOT a separate Zenodo record — prior art 2405.06497 (same η⁻⁶H(j) building block), 2407.12081 (log-type Starobinsky plateau), 2405.08924, 2411.18603; credit them in any write-up.
+
+## 14 Nov 2026, 22:33 CT — Janus Twist status preprint PUBLISHED (Danny: "Consult a referee then do that", "Publish when ready")
+- Two rounds of independent referee review (round 1: NOT READY — Λ-at-τ=i branch error → D537; round 2: READY AFTER MINOR FIXES, applied → v2.1).
+- New separate record 24238833, DOI 10.5281/zenodo.24238833, https://zenodo.org/records/24238833. Preprint, CC BY 4.0, version v2.1, creator Eldridge, Danny Lee.
+- Files: Eldridge_JanusTwist_status_v2_2026-11-14.pdf (md5 0a2527da31fe377d0841d3e261a1196f), AEGIS_JanusTwist_code_rules_results_2026-11-14.zip (md5 fc45e50595f3c7cc4ee36d825f12b40e); both match the repo (commit 888c936) and the PC copies in Desktop\AEGIS_zenodo.
+- Related: isDerivedFrom 10.5281/zenodo.24202420 (Twist concept), references 10.5281/zenodo.24235736 (Twist-2), isSupplementedBy the GitHub repo. Existing Twist records unchanged.
