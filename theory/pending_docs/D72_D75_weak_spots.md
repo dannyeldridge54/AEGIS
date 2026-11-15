@@ -5777,3 +5777,20 @@ Consequences:
 3. The lower T_RH (≈1e6 GeV) also lengthens the matter phase: N* drops by about ¼·(1/3)·ln(5–6) ≈ 0.15, a negligible n_s change (< 1e-4; estimate).
 4. Open (flagged in the lock): the linear δτ·NN coupling must be allowed by the residual S-symmetry at i, which constrains N's modular weight. SM couplings with k_Y ≡ 0 (mod 4) (D551) are S-even, so their linear inflaton couplings are S-forbidden. That FAVOURS Br(NN) ≈ 1 if the N channel is allowed.
 Verdict: two-term SERAPIS needs resonant leptogenesis (or an un-natural λ). The baryogenesis status is downgraded from "PASS" (D579) to "PASS only with resonant enhancement".
+
+## D589a — CORRECTION to D589 (Ddl 07:59 CT; identity check run in code) — the "natural λ = √2" used the holomorphic form alone; the PHYSICAL coupling of the inflaton to any diagonal mass vanishes at τ = i
+- The physical mass of a field pair with Yukawa Y of weight k includes the Kähler normalisation, M_phys ∝ (2y)^{k/2}|Y|, which is modular INVARIANT.
+- By D574A, any invariant is stationary at i, so d M_phys/dφ = 0 there.
+- Checked: |∇(y²|E₄|)| at i = 1e-10 (zero), while the holomorphic-only |∇|E₄||/|E₄| = 2.000 (the D589 input).
+- Analytic: Y′(i) = DY(i) + (ik/2)Y(i). The Serre derivative DY has weight k + 2 ≡ 2 (mod 4), so it vanishes at i. The remaining (ik/2)Y is cancelled exactly by the Kähler factor.
+- So the diagonal decay φ → N₁N₁ has NO two-body width at leading order. D589's numbers (λ = 1–√2 failing by 4–6×) are void as stated. The true diagonal width is zero, which is worse for the N₁N₁ channel.
+
+## D590 — DEEP (Ddl 07:59 CT; literature + reasoning + identity check, not locked) — at τ = i the inflaton can only decay through OFF-DIAGONAL (flavour-changing) couplings; that points naturally to quasi-degenerate N pairs and resonant leptogenesis
+Reasoning:
+- The eigenvalues of M_N†M_N (and of the SM mass matrices) are modular invariants, so all are stationary at i. Linear inflaton couplings to diagonal mass eigenstates vanish, for N AND for SM fermions.
+- What survives at linear order are off-diagonal couplings δτ·N_iN_j (i ≠ j): the eigenvectors rotate with τ even where the eigenvalues are stationary.
+- These require N_i, N_j that are related by the flavour structure: the same residual-symmetry multiplet, or states that the residual S-symmetry (Z₂ for A₄ at i, per 2604.04585's introduction) relates. Such states are naturally quasi-degenerate at the fixed point, split only by small deviations from i or by symmetry breaking.
+- So the decay channel the symmetry permits (φ → N₁N₂) and the condition for resonant enhancement (M₁ ≈ M₂) come from the same structure. That turns D589's "needs resonant leptogenesis" from an added tuning into a plausible consequence. NOT shown: it needs an explicit Γ_N-flavour model.
+- The SM gets the same structural suppression: its diagonal masses are also stationary. With D551's S-even SM couplings, the SM's linear decay channels are suppressed too, which supports Br(N-sector) ~ O(1).
+Literature: modular-flavour work at fixed points (e.g. 2604.04585, 2026) studies leptogenesis near other fixed points with hierarchical N and gives no τ = i results. A dedicated search found nothing that treats inflaton decay at τ = i (search-only claim).
+Status: baryogenesis for two-term SERAPIS = resonant leptogenesis via off-diagonal φ → N₁N₂ in a near-degenerate pair. This is the leading candidate, but it needs an explicit flavour model (Γ₂/Γ₃ weights at τ = i) to compute Γ(φ → N₁N₂), the splitting, and Y_B. That needs a lock.
