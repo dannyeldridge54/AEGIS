@@ -4506,3 +4506,11 @@ or a small blow-up cycle (the standard LVS arrangement), consistent with F1/D417
 D7 that carries the FI term is a hidden brane (g = 0.7 was assumed in D437–D446 for it, which then requires that hidden D7 to wrap a different, small
 cycle whose volume is ~1/(4π·0.49) ≈ 0.16 in units where the gauge coupling is 1/Re T). Open: the FI term of D438 used fluxes on the large cycle; consistency of
 'small-cycle hidden D7 with g = 0.7' and 'FI depending on the large cycle' needs a magnetised D7 wrapping a combination; not checked. No scored result → WALL.
+
+**D462 (cycle 47, back-to-back run "till null"; fourth pass PART 11, WHOLE; structural reasoning, no computation) — the hidden FI brane needs a
+Calabi–Yau with NON-diagonal intersections; swiss-cheese geometries are excluded.** For a magnetised D7 on divisor D with J = Σ tᵢDᵢ, the FI term is
+ξ ∝ (1/𝒱)Σᵢ tᵢ (D·Dᵢ·F) and its coupling is 1/g² ≈ Re T_D (D461 needs a small cycle, Re T_D ≈ 0.16 for g = 0.7). For the FI term to track the Twist's
+large cycle t_b, the triple intersection D·D_b·F must be non-zero. In swiss-cheese LVS models (𝒱 = τ_b^{3/2} − τ_s^{3/2}, the standard home of
+'SM on D3/small cycle'), small and large divisors do not intersect (D_s·D_b = 0), so a small-cycle D7 has an FI term independent of the Twist. That would
+remove the capture mechanism. So the geometry must be of fibred/non-diagonal type (e.g. K3-fibred CY with a small divisor meeting the big one,
+as in fibre-inflation-type models), with the SM on D3s or a separate blow-up. This is a model-building condition, not a scored result → WALL.

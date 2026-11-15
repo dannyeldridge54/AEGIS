@@ -161,3 +161,5 @@ alone.
 **Condition (D458):** no KK parity; few light KK species; the a ≈ 3.8e3 end of the D453 band is preferred (ΔN_eff +0.005 per species vs +0.021 at 7.9e3).
 
 **Centre-confirmed (D460):** even a gravity-mediated eV soft mass pins the field before BBN (return at ≈ 240 GeV, as predicted by D459's √m_s law); no direct SUSY-breaking coupling for φ needed.
+
+**Condition (D461–D462):** SM on D3s/small blow-up; hidden FI D7 on a small divisor that intersects the Twist's large divisor → fibred (non-swiss-cheese) Calabi–Yau.
