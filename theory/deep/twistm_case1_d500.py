@@ -25,23 +25,23 @@ def run(ms):
         epsH=0.5*dp*dp+(2/3)*rr/H2
         return [dp,-(3-epsH)*dp-dV(p)/H2]
     p0=ue/c; dp0=math.sqrt(2*(1-Or0))
-    s=solve_ivp(rhs,[0,42],[p0,dp0],method='LSODA',rtol=1e-9,atol=1e-12,max_step=0.01)   # D1: no events
-    Nc=[]; yc=[]
-    for i in range(len(s.t)-1):
-        a_,b_=s.y[0,i],s.y[0,i+1]
-        if a_==0 or a_*b_<0:
-            f=a_/(a_-b_) if a_!=b_ else 0.0; Nc.append(s.t[i]+f*(s.t[i+1]-s.t[i])); yc.append((0.0,s.y[1,i]+f*(s.y[1,i+1]-s.y[1,i])))
-    rem=0.0
-    for N,(p,dp) in zip(Nc,yc):
-        rr=rho_r0*math.exp(-4*N); H2=(rr+V(p))/(3-0.5*dp*dp); H=math.sqrt(H2)*MP
-        T=(30*rr*MP**4/(math.pi**2*gs))**0.25; xdot=c*1.0*H*abs(dp)
-        R=g*g*zMp(1.0)*Ms**2*xdot; m2=(R/2)**(2/3); Vres=ms**2*m2/g**2
-        # cap: available V_FI energy at the turning amplitude ~ k*|zeta| with amplitude from kinetic energy
-        Ekin=0.5*(H*abs(dp))**2*MP**2; Vres=min(Vres,Ekin)
-        rem+=Vres/(2*math.pi**2/45*gs*T**3)
-    pf,dpf=s.y[:,-1]; rrf=rho_r0*math.exp(-4*42); H2f=(rrf+V(pf))/(3-0.5*dpf*dpf); Ox=(0.5*dpf*dpf*H2f+V(pf))/(3*H2f)
-    xs_=[math.exp(c*q) for q in s.y[0]]
-    print(f"m_s={ms:.0e} GeV: M_s={Ms:.2e} GeV; crossings {len(Nc)} (first N={Nc[0] if len(Nc) else None}); x range [{min(xs_):.3e}, {max(xs_):.3e}]; "
-          f"|ln x|(N=42)={abs(c*pf):.2e}, Omega_x(N=42)={Ox:.2e}; remnant rho/s={rem:.2e} GeV (x{rem/4.3e-10:.1e} DM); status {s.status}",flush=True)
-    last=Nc[-1] if len(Nc) else None; print(f"   last crossing N={last}",flush=True)
+    # D2: chunked integration, running tallies only
+    y=[p0,dp0]; N=0.0; nc=0; firstN=None; rem=0.0; xmin=xmax=math.exp(c*p0); capped=False
+    while N<42 and nc<20000:
+        s=solve_ivp(rhs,[N,min(N+0.05,42)],y,method='LSODA',rtol=1e-9,atol=1e-12,max_step=0.01)
+        for i in range(len(s.t)-1):
+            a_,b_=s.y[0,i],s.y[0,i+1]
+            xx=math.exp(c*b_); xmin=min(xmin,xx); xmax=max(xmax,xx)
+            if a_*b_<0:
+                f=a_/(a_-b_); Nn=s.t[i]+f*(s.t[i+1]-s.t[i]); dp=s.y[1,i]+f*(s.y[1,i+1]-s.y[1,i]); nc+=1
+                if firstN is None: firstN=Nn
+                rr=rho_r0*math.exp(-4*Nn); H2=(rr+V(0.0))/(3-0.5*dp*dp); H=math.sqrt(H2)*MP
+                T=(30*rr*MP**4/(math.pi**2*gs))**0.25; xdot=c*H*abs(dp)
+                R=g*g*zMp(1.0)*Ms**2*xdot; m2=(R/2)**(2/3); Vres=min(ms**2*m2/g**2,0.5*(H*abs(dp))**2*MP**2)
+                rem+=Vres/(2*math.pi**2/45*gs*T**3)
+        y=list(s.y[:,-1]); N=s.t[-1]
+    capped=nc>=20000
+    pf,dpf=y; rrf=rho_r0*math.exp(-4*N); H2f=(rrf+V(pf))/(3-0.5*dpf*dpf); Ox=(0.5*dpf*dpf*H2f+V(pf))/(3*H2f)
+    print(f"m_s={ms:.0e} GeV: M_s={Ms:.2e} GeV; crossings {nc}{' (CAP HIT)' if capped else ''} (first N={firstN}); stop N={N:.3f}; x range [{xmin:.3e}, {xmax:.3e}]; "
+          f"|ln x|(stop)={abs(c*pf):.2e}, |dphi/dN|(stop)={abs(dpf):.2e}, Omega_x(stop)={Ox:.2e}; remnant rho/s={rem:.2e} GeV (x{rem/4.3e-10:.1e} DM)",flush=True)
 for ms in (1e-9,1e4): run(ms)
