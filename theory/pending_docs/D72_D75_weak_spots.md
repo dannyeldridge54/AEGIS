@@ -6254,3 +6254,15 @@ Results:
 Reading: D626's cure needs κ ≫ ε. If both come from the same Hubble-induced SUSY breaking, that requires a small species count at the desert point (Ñ₀ ≲ 1) and few light states. For realistic Ñ₀ (CI use Ñ₀ ≈ 25), the light-state CW term pushes the vacuum off τ = i by ~0.5, so τ = i is no longer the vacuum.
 Caveats: crude O(1) factors (the CI normalisation 4/(8π)² versus 1/(32π²), the c factors, and the n_W count). This could shift a/b by ×10 either way. Not a decisive verdict.
 Status: the HM/CW route to τ = i (D620–D626) is now CONDITIONAL on Ñ₀ ≲ 1 or on a separate, larger source of the species-type mass. Combined with D624, this route is fragile. The SERAPIS-ρ branch (D610–D616), where the natural threshold ALREADY prefers ρ, does not face this problem, which strengthens the case for ρ as the string-natural vacuum.
+
+## D628 — CORRECTION to D627's last paragraph (Ddl 08:56 CT; reasoning) — the same obstruction applies to SERAPIS-ρ; neither vacuum is favoured by this argument
+- D625 argued that the string TOWER enters V in the Casas–Ibáñez species form, which tends to a constant at the cusp: a mass, NO linear tilt.
+- SERAPIS-ρ (D609–D615) used ε·(L − L(ρ)) with L = −ln(2y|η|⁴) growing LINEARLY at the cusp as its tilt. By D625's own logic, that linear-L term is not what the tower produces either. So SERAPIS-ρ's tilt is just as unexplained as the τ = i branch's.
+- Applying the D626 picture to ρ: with a Z₃-type orbifold fixing U = ρ, the point T = U = ρ is a TRIPLE enhanced-symmetry point (SU(3)), and its light states give the same CW |δ|²ln|δ|² term, with the same local-maximum problem near ρ. The species term also has a minimum at ρ (a desert point). So the a/b ~ (M_P/M_s)²π²|∇ species|²/(N²n_W) condition applies equally. At ρ, Ĝ₂ also vanishes, and n_W is larger (SU(3): more light states), so the condition is if anything HARDER.
+- So D627's "this strengthens the case for SERAPIS-ρ" is WITHDRAWN. Both branches share the structure "species term holds the vacuum, light-state CW supplies the tilt", and both need κ ≫ ε, i.e. small Ñ₀.
+- D608's point stands but is narrower: the DKL function (as a pure function) has its minimum at ρ, not i. That matters only if V contains L linearly, which D625 argues it does not.
+Net status of the ε/tilt origin:
+- one candidate structure, (species mass) + (light-state CW tilt, ε ≈ 3(M_s/M_P)²/16π²), for EITHER vacuum;
+- conditional on Ñ₀ ≲ 1 (or a non-same-origin hierarchy κ ≫ ε);
+- the O(1) factors are uncertain by ~×10;
+- observables (n_s, r) are robust to the details (D622).
