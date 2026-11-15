@@ -5561,3 +5561,18 @@ Caveats:
 2. The vacuum is light (m ≈ 0.04 H_inf). Early oscillations with large amplitude still feel the octic part, so the stiff phase from D574 is shortened, not removed.
 Physics link (the main finding): the term that gives τ = i its mass grows like y/2 at the cusp, so it automatically tilts the plateau upward and raises n_s. So **Chronos's tilt can come from the same source as the vacuum mass.** At ε = 1e-4 it lands n_s on the SPA+DESI centre (0.9726 vs 0.9728). Before this, δ was an unexplained post-hoc number (D565/D568).
 Next: derive the ε ↔ δ map (ε·I₁ vs I^{2δ}), and check whether ε ~ 1e-4 has a natural size (e.g. a loop factor or e^{−2π·…}). Each needs its own lock.
+
+## D576 — pp (07:45 CT; analytic map plus arithmetic, not locked, labelled as estimates) — the ε ↔ δ map, and why the ε window is narrow
+Map (cusp forms: I ≈ y, I₁ ≈ y/2; canonical φ with y = e^{√2 φ}, α = 1/3):
+- Chronos adds V₀·2δ ln I ≈ 2√2 δ·φ, a LINEAR ramp in φ. It is pure slope with no curvature.
+- The two-term model adds V₀·ε I₁ ≈ (ε/2)·e^{√2 φ}, an EXPONENTIAL ramp. Its slope is (ε/√2)·y and its curvature V_φφ = ε·y.
+- Matching the slopes at horizon exit gives ε = 4δ/y*. For HS-Chronos (δ = 0.0013, y* ≈ 28) that means ε ≈ 1.9e-4; for the D525 δ = 0.0023 it means ε ≈ 3e-4.
+- Conversely, ε = 1e-4 at y* = 24.8 acts like δ_eff ≈ 6e-4.
+Why ε = 1e-4 raises n_s as much as a δ twice as large:
+- The exponential ramp also adds positive curvature, η ∋ ε y* ≈ 2.5e-3, which pushes n_s up.
+- That same exponential growth is why the window is narrow: ε = 3e-4 already overshoots to n_s ≈ 0.99 (D575).
+- So the two-term model is NOT a re-parametrisation of Chronos. It is a steeper, curvature-carrying tilt, closer to the rising loop term of fibre-type inflation (Cicoli et al., 0907.0665, as an analogy only).
+Natural size of ε (estimate):
+- The natural string source of a term linear in y is the threshold/species function −ln(2y|η|⁴) ≈ (π/3)y (D540). Writing ε·y/2 ≈ (b/16π²)(π/3)·y·(normalisation to V₀) gives b ≈ 24π·ε ≈ 0.0075.
+- But D560–D562 require NO N = 2 threshold on the home plane. So the most natural source of ε is the one the home rules out. Holomorphic |E₆|² (I₁) itself has no known string derivation.
+Verdict: ε is a cleaner way to write the tilt than I^{2δ} (it ties the tilt to the vacuum mass), but its size is unexplained: either it needs an N = 2 sector with tiny |b| ~ 1e-2, or a separate source. Status: OPEN, sharpened. Next: test whether a small-|b| N = 2 sector is compatible with the home bound (D560/D566 used |b| ≲ 2, and the bound weakens as |b| shrinks). That needs a lock.
