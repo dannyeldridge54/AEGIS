@@ -4995,3 +4995,14 @@ Consequences:
 3. Tension flagged: this lineage is heterotic, while the Twist-2 FI capture and the D3 sector are type IIB. The IIB analogue is the shape modulus U of a T² factor in T²×K3 / T⁶/Z_N orientifolds (SL(2,Z)_U). Whether IIB fluxes and the FI term keep the full group is not settled.
 Shared quantities: unchanged. Centre: balanced.
 Status: home narrowed. Factorisable T² ⊕ T⁴ with the SERAPIS torus as the N = 2 plane is required; heterotic vs IIB is still open.
+
+## D531 — CENTRE (3-min loop tick 1; scored, locked PREREG_D531_LAMBDA_AXION; results/lambda_axion_d531.txt) — FAIL (narrowly)
+Question: could Λ's instanton (SERAPIS-1: V(i) ∝ |c|², so the V-level suppression is e^{−243.2}) and the D471 ultralight axion's instanton (V-level action 242–267) be one family? The model tested: the axion potential is the interference term of Λ's W-instanton (S_W = 121.6) and a second one with action S′.
+Computed: Λ = 2.56e-47 GeV⁴ and V_a/Λ = 4e-12 to 5e-4, giving S′ = 129–148.
+- Heavy-axion end (m = 1e4 H0): implied axion action 251–252, inside 242–267.
+- Light end (m = 2 H0): 268–269, outside by 1–2 units.
+Locked verdict: FAIL. Comment, not a rescue: the D471 band itself used an order-one prefactor convention. A 1–2 unit shift in an action is within prefactor uncertainty, so this does not show the picture is wrong either.
+Learned (robust):
+- Λ's V-level suppression, 243.2, lands inside the axion-instanton band. Both point to cycles of 2π-volume ≈ 19–24 (W-level).
+- The interference picture predicts the axion is the heavier kind (m ≳ 10² H0) if the same cycles do both jobs.
+Status: Λ-instanton origin stays OPEN. There is one consistent sub-window (heavy axion), not adopted. Shared quantities unchanged.
