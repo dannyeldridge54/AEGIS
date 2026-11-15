@@ -5214,3 +5214,10 @@ In this (limited, 2-search) check I found no prior cusp-plateau SL(2,Z) attracto
 Label: a "variant not found in the checked literature", NOT a claim of priority. It is a small construction, and a referee may know of others.
 Physical difference from KL: at τ = i the residual symmetry is Z₂ (S), versus Z₃ (ST) at ω. That affects the modular-centre/flavour selection rules for matter at the vacuum (relevant to D528–D533) and the vacuum's mass spectrum. Worth a sentence in v2.2.
 Credit added: 2411.07552.
+
+## D551 — RIGHT + CENTRE (loop tick 6; scored, locked PREREG_D551_VACUUM_I_SELECTION; results/vacuum_i_selection_d551.txt) — PASS: the τ = i vacuum's selection rule is compatible with the proton parity
+At τ = i, level-1 modular forms of weight k ≢ 0 (mod 4) vanish (for example E₆(i) = 0). So each required coupling needs a coefficient weight k_Y = Σk_i − 1 ≡ 0 (mod 4).
+- Z₄^R: 4 of the 8 anomaly-passing assignments admit weights giving all five required couplings (QHuU, QHdD, LHdE, HuHd, LHuLHu) with k_Y ≡ 0 (mod 4), i.e. non-zero at the vacuum. Example: Q = 0, U = D = E = Hu = Hd = 1/2, L = 0, all k_Y = 0 (constant couplings).
+- Z₈^R: 8 of 16 do.
+Physical note: the τ = i vacuum (residual Z₂ from S, a Z₄ acting on matter) adds a real constraint. Half of the anomaly-free parities survive it. This is specific to SERAPIS's i-vacuum; at ω the rule would be mod 6. Counts as the vacuum-dependent check suggested in D550.
+Status: the proton parity, its anomaly check, the m₃/₂ breaking (D542) and the vacuum selection rule are all consistent for 4 Z₄^R and 8 Z₈^R assignments.
