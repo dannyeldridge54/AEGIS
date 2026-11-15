@@ -1,0 +1,13 @@
+octic coefficient: V ~ c8 delta^8, c8 = 2.6879e+02
+K1 kappa=1e-3 c_G=1 [stiff bound w=3/5]: m=2.17e+10 GeV (m/H=0.0050) T_RH=2.22e+05 GeV rho_x/rho_end=1.2e-08 N*=50.09 -> y*=23.1 HOME-SAFE n_s=0.9621 r=3.07e-04 (-2.1 SPA, -3.9 SPA+DESI) inWindow=False
+K1 kappa=1e-3 c_G=1 [matter bound w=0]: m=2.28e+10 GeV (m/H=0.0050) T_RH=2.37e+05 GeV rho_x/rho_end=1.2e-08 N*=47.84 -> y*=22.6 HOME-SAFE n_s=0.9604 r=3.35e-04 (-2.7 SPA, -4.6 SPA+DESI) inWindow=False
+K1 kappa=1e-3 c_G=10 [stiff bound w=3/5]: m=2.16e+10 GeV (m/H=0.0050) T_RH=6.94e+05 GeV rho_x/rho_end=1.2e-08 N*=50.47 -> y*=23.2 HOME-SAFE n_s=0.9624 r=3.03e-04 (-2.0 SPA, -3.9 SPA+DESI) inWindow=False
+K1 kappa=1e-3 c_G=10 [matter bound w=0]: m=2.26e+10 GeV (m/H=0.0050) T_RH=7.40e+05 GeV rho_x/rho_end=1.2e-08 N*=48.22 -> y*=22.7 HOME-SAFE n_s=0.9607 r=3.31e-04 (-2.6 SPA, -4.5 SPA+DESI) inWindow=False
+K2 kappa=1e-2 c_G=1 [stiff bound w=3/5]: m=6.88e+10 GeV (m/H=0.0158) T_RH=1.25e+06 GeV rho_x/rho_end=2.5e-07 N*=50.28 -> y*=23.2 HOME-SAFE n_s=0.9623 r=3.08e-04 (-2.0 SPA, -3.9 SPA+DESI) inWindow=False
+K2 kappa=1e-2 c_G=1 [matter bound w=0]: m=7.13e+10 GeV (m/H=0.0158) T_RH=1.32e+06 GeV rho_x/rho_end=2.5e-07 N*=48.41 -> y*=22.8 HOME-SAFE n_s=0.9609 r=3.29e-04 (-2.5 SPA, -4.4 SPA+DESI) inWindow=False
+K2 kappa=1e-2 c_G=10 [stiff bound w=3/5]: m=6.83e+10 GeV (m/H=0.0158) T_RH=3.90e+06 GeV rho_x/rho_end=2.5e-07 N*=50.66 -> y*=23.3 HOME-SAFE n_s=0.9626 r=3.02e-04 (-1.9 SPA, -3.8 SPA+DESI) inWindow=False
+K2 kappa=1e-2 c_G=10 [matter bound w=0]: m=7.09e+10 GeV (m/H=0.0158) T_RH=4.12e+06 GeV rho_x/rho_end=2.5e-07 N*=48.79 -> y*=22.9 HOME-SAFE n_s=0.9612 r=3.25e-04 (-2.4 SPA, -4.3 SPA+DESI) inWindow=False
+C1 eps=1e-4 c_G=1 [stiff bound w=3/5]: m=1.88e+11 GeV (m/H=0.0371) T_RH=5.62e+06 GeV rho_x/rho_end=2.4e-06 N*=50.55 -> y*=24.4 HOME-SAFE n_s=0.9714 r=4.17e-04 (+1.0 SPA, -0.5 SPA+DESI) inWindow=False
+C1 eps=1e-4 c_G=1 [matter bound w=0]: m=1.92e+11 GeV (m/H=0.0371) T_RH=5.82e+06 GeV rho_x/rho_end=2.4e-06 N*=48.95 -> y*=24.0 HOME-SAFE n_s=0.9701 r=4.37e-04 (+0.6 SPA, -1.0 SPA+DESI) inWindow=False
+C1 eps=1e-4 c_G=10 [stiff bound w=3/5]: m=1.87e+11 GeV (m/H=0.0371) T_RH=1.76e+07 GeV rho_x/rho_end=2.4e-06 N*=50.93 -> y*=24.5 HOME-SAFE n_s=0.9717 r=4.13e-04 (+1.1 SPA, -0.4 SPA+DESI) inWindow=False
+C1 eps=1e-4 c_G=10 [matter bound w=0]: m=1.91e+11 GeV (m/H=0.0371) T_RH=1.83e+07 GeV rho_x/rho_end=2.4e-06 N*=49.33 -> y*=24.1 HOME-SAFE n_s=0.9704 r=4.32e-04 (+0.7 SPA, -0.9 SPA+DESI) inWindow=False

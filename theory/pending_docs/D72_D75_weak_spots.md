@@ -5603,3 +5603,16 @@ Status:
 - The τ = i vacuum now has two candidate mass sources: (a) ε·I₁, which tilts the plateau (n_s → 0.9726, D575); (b) the species term, which does not (D577).
 - So "Kairos vs Chronos" is now a question about WHICH one-loop sector gives τ = i its mass.
 - D567a stays: the bands remain conditional until the oscillation history (octic → quadratic crossover) is computed. That needs its own lock.
+
+## D578 — DEEP (Ddl, 07:58 CT; locked PREREG_D578_OSC_NSTAR; results/osc_nstar_d578.txt) — the light vacuum mass gives LOW reheating and N* ≈ 48–51, outside the D567 window; the Chronos-like two-term model survives, the mass-completed Kairos does not
+Near the vacuum: V ≈ c₈δ⁸ with c₈ = 269, plus the mass term. The octic part dominates for 6–8 decades in energy density after inflation ends (ρ_x/ρ_end = 1e-8 (K1), 2.5e-7 (K2), 2.4e-6 (C1)).
+Masses: m = 2.2e10 (K1), 7e10 (K2), 1.9e11 GeV (C1). Gravitational-strength decay gives T_RH = 2e5 to 2e7 GeV, so there is a long matter phase after the stiff one.
+N* (stiff bound to matter bound, c_Γ = 1–10):
+- K1: 47.8–50.5. K2: 48.4–50.7. C1: 48.9–50.9.
+- ALL are below the D567 window [52, 55.6]. The stiff phase adds about +2 e-folds; the long matter phase removes more.
+- So D567a resolves AGAINST the window. The D567 bands assumed the wrong N* for every mass-completed version. They stay locked as written; this note records that their reheating premise fails.
+Resulting predictions (post-hoc bands; scored only on future data):
+- Kairos + species mass (K1/K2): n_s = 0.9604–0.9626, r = 3.0–3.4e-4, y* = 22.6–23.3 (home-safe). That is −1.9σ to −2.7σ vs SPA and −3.8σ to −4.6σ vs SPA+DESI. On today's data, mass-completed Kairos is in serious tension with the DESI-including combination.
+- Two-term C1 (ε = 1e-4): n_s = 0.9701–0.9717, r = 4.1–4.4e-4, y* = 24.0–24.5 (home-safe; lower N* moves y* inward). That is +0.6σ to +1.1σ vs SPA and −1.0σ to −0.4σ vs SPA+DESI. Consistent with both.
+New problem flagged: T_RH ≤ 2e7 GeV is far below thermal leptogenesis (M₁ ≳ 3e10 GeV, D440). Baryogenesis would need a non-thermal or low-scale mechanism (e.g. inflaton-decay leptogenesis or resonant leptogenesis). Open.
+Status: the self-consistent home-safe SERAPIS is now the Chronos-like two-term model: plateau p = 2, with ε·I₁ giving τ = i its mass AND the tilt. N* ≈ 49–51, n_s ≈ 0.970–0.972, r ≈ 4.1–4.4e-4. Its remaining weak points are ε's size (D576) and baryogenesis.
