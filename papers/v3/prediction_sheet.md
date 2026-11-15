@@ -9,16 +9,16 @@ Labels: **computed** = from locked scripts (exact Mukhanov–Sasaki, D588); **es
 |---|---|---|---|---|
 | n_s | 0.970–0.975 | 0.969–0.972 | 0.959–0.961 (D637, N* 46–49) | computed |
 | r | (4.8–5.7)×10⁻⁴ | (4.6–5.1)×10⁻⁴ | (3.3–3.7)×10⁻⁴ (D637) | computed |
-| α_s = dn_s/dln k (N* 47–50; to ≈ −1.0×10⁻³ at N* 46) | −(8.6–9.9)×10⁻⁴ (lock D633; D605's −(3–5)×10⁻⁴ was an attractor estimate, superseded) | −(8.5–9.5)×10⁻⁴ | ≈ −2/N*² | computed |
-| m_ν1 (Affleck–Dine LH_u, computed D646) | 10⁻¹³–4×10⁻¹¹ eV (T_R 1e3–1e5) → Σm_ν ≈ 0.0588 eV IF normal ordering (ordering is input from data, not predicted; lock D605 states NO) | same | — | estimate; assumes weight-1 matter (D639) |
+| α_s = dn_s/dln k (lock D633, N* 47–50; −(8.8–10.2)×10⁻⁴ at N* 46–49, D642) | −(8.6–9.9)×10⁻⁴ (lock D633; D605's −(3–5)×10⁻⁴ was an attractor estimate, superseded) | −(8.5–9.5)×10⁻⁴ | ≈ −2/N*² | computed |
+| m_ν1 (Affleck–Dine LH_u, computed D646) | 2×10⁻¹³–9×10⁻¹¹ eV (T_R 1e3–1e5; no thermal effects) → Σm_ν ≈ 0.0588 eV IF normal ordering (ordering is input from data, not predicted; lock D605 states NO) | same | — | estimate (D646/D646a) |
 | f_NL^local / isocurvature | ≈ 0.01 / ~10⁻⁸ of ζ (D587; lock D605 said ≲10⁻¹⁰) | ≈ 0.01 | — | estimate/computed |
-| Superpartners | none below ~10⁸ GeV IF visible matter has modular weight 1 (or is sequestered): tree soft masses vanish (D639), loop ~6×10⁸ GeV; canonical matter would give ~10¹¹ GeV | same | — | conditional |
+| Superpartners | covariant completion (adopted, D647–D650): m3/2 ~ (2.5–11)×10⁵ GeV, scalars ~ m3/2, wino LSP 0.66–2.9 TeV, gluino 4.7–21 TeV (estimates); constant-W0 chain (lock D605 P5): none below ~10⁸ GeV | same | — | estimate |
 | Reheating | T_R 10³–10⁵ GeV, stiff phase w ≈ 0.55, N* 46–49 | w = 5/7 | — | computed/estimate |
 
 ## Parameter-free consistency relation (Janus, D635)
 From n_s and r alone: ρ = 2√r/(1−n_s), x = (ρ−1)/(1+ρ/2), A = (1−n_s)/(1−x/2),
 **α_s = −(A²/2)(1+x/4)(1+x)**. Accurate to 11–13 % against the exact numerics.
-Offset-corrected (D640, c = ln1728/2π, u = 1/I*): 1−n_s = 8u²[(2−x)+cu(5−x)], r = 64u⁴(1+x)²(1+2cu), α_s = −32u⁴(1+x)[(4+x)+cu(23+2x)] — invert (n_s, r) → (u, x), predict α_s to 0.4 %.
+Offset-corrected (D640, c = ln1728/2π, u = 1/I*): 1−n_s = 8u²[(2−x)+cu(5−x)], r = 64u⁴(1+x)²(1+2cu), α_s = −32u⁴(1+x)[(4+x)+cu(23+2x)] — invert (n_s, r) → (u, x), predict α_s to ~2 % (0.2–0.4 % on the 8 test points).
 A measured α_s outside this band (given measured n_s, r) rejects the whole family.
 
 ## Kill conditions (as in the locks; ≥3σ unless a CL is stated)
@@ -27,7 +27,7 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 - α_s > −3×10⁻⁴, or α_s violating the Janus relation (long term: needs σ(α_s) ~ 2×10⁻⁴).
 - Σm_ν > 0.07 eV. (Lock D605 also lists inverted ordering; that tests the NO input, and with m_ν1 ≈ 0 IO already implies Σm_ν ≈ 0.10 eV.)
 - |f_NL^local| > 5.
-- Superpartners found below 10⁸ GeV (conditional on weight-1 visible matter, D639).
+- Covariant completion: no wino up to 2.9 TeV and no gluino up to 21 TeV (FCC-hh reach), or a wino above 2.9 TeV overclosing; lock D605 P5 (constant W0): superpartners below 10⁸ GeV.
 
 ## Who tests what (rough reach figures; quote published forecasts in any external text)
 | Experiment | Observable | Expected reach | What SERAPIS needs |
@@ -43,6 +43,6 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 
 ## What is NOT predicted (stated limits)
 - The size of ε (the tilt strength) is fitted to the low-T_R window, not derived; its microscopic origin is open (D620–D629).
-- Visible matter of modular weight 1 (or sequestered) is assumed for loop-size soft masses (D585a, D639); one α=1/3 modulus is not no-scale.
+- Superpartner window assumes the modular-covariant completion, X-independent gauge kinetic functions (anomaly-mediated gauginos) and initial conditions within ~12 e-folds of horizon exit; dilaton–LSP bound not redone for it.
 - Preheating inefficient (q ≲ 2e-4 for m0 ≲ m_φ) and φ → gravitino + inflatino closed (m_inflatino = 4/3 m3/2) — estimates, D641. If either were efficient, N* would rise 6–9 e-folds and Chronos would leave its band.
 - Collider signals: none expected at LHC/FCC energies.

@@ -53,3 +53,4 @@ Checked via arxiv.org abs page, ar5iv, or a search-result listing showing the ar
 Journal-only, not opened (standard references from knowledge; Danny to confirm in a library/INSPIRE): Turner, PRD 28, 1243 (1983); Affleck & Dine, NPB 249, 361 (1985).
 2410.05380 NuFit-6.0 Esteban et al. (search listing) — added R8c
 1710.06851 Lozanov & Amin, Self-resonance after inflation (ar5iv page read) — added W2
+2201.02472 ATLAS disappearing-track chargino search (pdf read; 660 GeV pure wino, 0.2 ns) — added D650

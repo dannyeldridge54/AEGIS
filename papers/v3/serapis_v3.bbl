@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{37}%
+\begin{thebibliography}{38}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -202,6 +202,21 @@
   inflation were observable perturbations produced?}}} (\bibinfo {year}
   {2003}),\ \Eprint {https://arxiv.org/abs/astro-ph/0305263}
   {arXiv:astro-ph/0305263} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{ATLAS Collaboration}}(2022)}]{arXiv_2201_02472}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{ATLAS
+  Collaboration}}},\ }\href@noop {} {\bibinfo {title} {{Search for long-lived
+  charginos based on a disappearing-track signature using 136 fb$^{-1}$ of pp
+  collisions at $\sqrt{s}$ = 13 TeV with the ATLAS detector}}} (\bibinfo {year}
+  {2022}),\ \Eprint {https://arxiv.org/abs/2201.02472} {arXiv:2201.02472}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bagnaschi}\ \emph {et~al.}(2014)\citenamefont
+  {Bagnaschi} \emph {et~al.}}]{arXiv_1407_4081}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Bagnaschi}} \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {{Higgs Mass
+  and Unnatural Supersymmetry}}} (\bibinfo {year} {2014}),\ \Eprint
+  {https://arxiv.org/abs/1407.4081} {arXiv:1407.4081} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Kawasaki}\ \emph {et~al.}(2006)\citenamefont
   {Kawasaki}, \citenamefont {Takahashi},\ and\ \citenamefont
   {Yanagida}}]{arXiv_hep-ph_0611166}%
@@ -213,13 +228,6 @@
   Problem in Inflaton Decay}}} (\bibinfo {year} {2006}),\ \Eprint
   {https://arxiv.org/abs/hep-ph/0611166} {arXiv:hep-ph/0611166} \BibitemShut
   {NoStop}%
-\bibitem [{\citenamefont {Bagnaschi}\ \emph {et~al.}(2014)\citenamefont
-  {Bagnaschi} \emph {et~al.}}]{arXiv_1407_4081}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
-  {Bagnaschi}} \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {{Higgs Mass
-  and Unnatural Supersymmetry}}} (\bibinfo {year} {2014}),\ \Eprint
-  {https://arxiv.org/abs/1407.4081} {arXiv:1407.4081} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Ellis}\ \emph {et~al.}(2013)\citenamefont {Ellis},
   \citenamefont {Nanopoulos},\ and\ \citenamefont {Olive}}]{arXiv_1305_1247}%
   \BibitemOpen
