@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aion-prereg"
+version = "0.1.0"
+description = "AION - lock before you look: a pre-registration kit for computational research in git"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "LICENCE PENDING (author's choice; see README)"}
+authors = [{name = "Danny Lee Eldridge"}]
+
+[project.scripts]
+aion = "aion.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["aion*"]
+
+[tool.setuptools.package-data]
+aion = ["templates/*.md"]
