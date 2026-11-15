@@ -1,0 +1,4 @@
+Z_4^R: 0/4 anomaly-passing assignments admit a lift with all required couplings nonzero at tau=i [non-R centre, Sigma k = 0 mod 4]
+Z_8^R: 0/8 anomaly-passing assignments admit a lift with all required couplings nonzero at tau=i [non-R centre, Sigma k = 0 mod 4]
+Z_4^R: 4/4 anomaly-passing assignments admit a lift with all required couplings nonzero at rho [non-R centre, Sigma k = 0 mod 6]; e.g. n=(0, 2, 2, 0, 2, 2, 2) lift=(0, 0, 4, 4, 0, 4, 0) k_Y=[6, 6, 6, 6, 18]
+Z_8^R: 8/8 anomaly-passing assignments admit a lift with all required couplings nonzero at rho [non-R centre, Sigma k = 0 mod 6]; e.g. n=(0, 4, 4, 0, 4, 4, 4) lift=(0, 0, 4, 4, 0, 4, 0) k_Y=[6, 6, 6, 6, 18]

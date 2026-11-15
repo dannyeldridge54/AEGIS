@@ -1,0 +1,3 @@
+# PREREG D662: like-for-like lifts at τ = i for the D661 question
+Locked before computation, 2026-11-15, after D661 (ρ: 4/4, 8/8; i: 0/4, 0/8 with lifts {0,2}). D612 had already flagged that i-scans used lifts {0,2} and ρ-scans {0,2,4} ("not like-for-like"). This lock asks the like-for-like question: D661's τ = i scan with lifts {0,2,4} (weight shifts up to 4 — still small, physical modular weights). Everything else identical. Script theory/modular/i_lifts_d662.py; output results/i_lifts_d662.txt.
+Interpretation fixed in advance: if still 0 → the τ = i covariant completion has no modular-centre matter parity (with weights ≤ 4 shifts); if > 0 → it does, with the reported weights. Either result is recorded; no further variations.
