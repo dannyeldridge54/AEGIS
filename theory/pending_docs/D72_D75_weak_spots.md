@@ -4223,3 +4223,11 @@ branching ~(m_S/M_P)²/16π² ≈ 2×10⁻²³–10⁻¹⁷ the extra yield is �
 (D422) decay to SM leptons and do not mix with the DM fermion (gravity-only by construction). (3) Route A changes nothing after inflation
 (D419), so T_RH, the χ̃-decay yield (D112) and coldness (D415) stand. DM remains 100–200 TeV, cold, stable under a gauged Z₂ (no signal) or
 decaying with ξ ≲ 0.6. (c) CENTRE: F5 pass, unchanged. No scored result → WALL 1.
+
+**D430 (cycle 20, scheduled tick; second pass PART 9 gravitino, LEFT/RIGHT; literature + arithmetic) — the gravitino is squeezed into a
+narrow window, 1 eV ≲ m_3/2 ≤ 4.7 eV, which makes Twist-2's SUSY sector sharply testable.** Low-scale gauge mediation that gives m_h = 125 GeV
+needs m_3/2 ≳ 0.8 eV (4π/y), i.e. ≳ 1 eV for a strongly coupled messenger sector (arXiv:1608.01610, N_m = 4); cosmology gives ≤ 4.7 eV
+(arXiv:1601.07386). Hence √F ≈ 65–140 TeV (computed). After D422 the only extra radiation is the gravitino's: ΔN_eff = 0.047 (g* = 106.75,
+preferred) within 0.017–0.059 — the v2 prediction "0.02–0.06". The window is testable by 21 cm observations (per 1608.01610) and by CMB-S4's
+ΔN_eff. (b) CONNECTIONS: part 4 (T_RH ~ 5×10¹⁴ GeV allowed only for this light gravitino), part 5/6 (soft vacuum energy of the condensate uses
+m_soft from this sector, D427), part 10 (x-independent soft masses, D292). (c) CENTRE: F7 pass; window recorded. Result → walls 0.

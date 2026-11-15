@@ -127,3 +127,5 @@ alone.
 **Cycle 17 (D427, CLARIFICATION):** Twist-2 does not solve the cosmological-constant problem: the χ condensate's soft vacuum energy (~10²⁶–10³² GeV⁴) must be cancelled by the same one-off tuning as the SUSY-breaking energy (D292); only the leftover x-dependent piece is the cliff value set by n.
 
 **Cycle 18 (D428, CONFIRMED):** baseline birefringence axion: β_reio/β_rec ≈ 1 for m ≲ 10 H₀, 0.24–0.66 at 50 H₀, ≈ 0 for m ≥ 100 H₀; distinguishable from a dark-energy axion or miscalibration for m ≳ 30–40 H₀.
+
+**Cycle 20 (D430, CONFIRMED):** gravitino window 1 eV ≲ m_3/2 ≤ 4.7 eV (SUSY breaking √F ≈ 65–140 TeV); total ΔN_eff ≈ 0.02–0.06 (gravitino only, after D422).
