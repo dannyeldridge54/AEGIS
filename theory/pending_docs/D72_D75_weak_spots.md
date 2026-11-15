@@ -4467,3 +4467,10 @@ toy, the flux integers choose x_E, and hence the O(1) factor in Λ, from a fine 
 predict Λ's O(1) value. It accounts for Λ's magnitude (the e^{−n} cliff, n = 124.1) and leaves an O(1) value picked by flux choice, as in a landscape.
 Unknown: whether n itself is flux-fixed, and whether unit steps survive tadpole cancellation. CENTRE: no balance change; the paper-v2 wording 'Λ from the
 cliff' should say 'magnitude from the cliff, O(1) factor flux-selected'.
+
+**D457 (cycle 42, "pp"; fourth pass PART 7, RIGHT; arithmetic in code, estimate; results/part7d_axion_f_d457.txt) — the birefringence axion
+in the rescaled geometry: consistent, nothing new scored.** If it is a closed-string axion of the large 4-cycle at capture (τ = 2ax_E =
+2.3e5–4.7e5 in the D453 band), then f ≈ M_P/(√2 τ) = 3.7–7.6e12 GeV (1.5–3.1e-6 M_P), far below the D414 limit 0.1 M_P (WGC-friendly).
+β depends only on c_γΔθ, so β = 0.277° still needs c_γ = 1.7–4.1. The photon coupling is then g_aγγ = c_γα/(2πf) = 2.6e-16–1.3e-15 GeV⁻¹, about 500×
+below the ~6e-13 GeV⁻¹ X-ray bounds on ultralight axions (bound value quoted approximately). Its energy share is Ω_a ≈ 1e-12 (negligible). The mass m ~ 2–1e4
+H0 must come from an instanton with e^{−S} tuned; not computed. No scored result → WALL.
