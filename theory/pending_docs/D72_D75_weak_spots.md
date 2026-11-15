@@ -6020,3 +6020,16 @@ Verdict: D606's route (b) is WITHDRAWN as an origin of the ε·I₁ shape (only 
    - A natural route is threshold-type (allowed, gives the right linear growth) but puts the vacuum at ρ: the Kallosh–Linde choice (D569 found Eisenstein plateaus also prefer ρ).
    - SERAPIS's τ = i is a consistent but NON-natural choice that needs the |j − 1728| structure, which has no known string source.
 Verdict: the core tension, sharpened. String-natural ingredients point to ρ; τ = i needs an extra, unexplained |j − 1728|-type ingredient. Open option (needs a lock): a "SERAPIS-ρ" variant with the vacuum at the hexagonal torus, using the DKL threshold for both mass and tilt. It might be natural and string-sourced; check its n_s, r and home-safety.
+
+## D609 — DEEP (Ddl 08:22 CT; locked PREREG_D609_SERAPIS_RHO + DEVIATIONS D1 [crash; no inflation results seen]; results/serapis_rho_d609.txt) — SERAPIS-ρ: the vacuum works (isotropic, at ρ), but on the locked ε grid it is NOT VIABLE; the DKL term is about twice as steep as I₁
+Vacuum checks PASS: V(ρ) = 0; Hessian isotropic (0.667ε in both directions); V(i) ≈ 3.0e-3 > 0, so i is not the vacuum.
+Inflation along Re τ = 1/2 (D588 offsets applied):
+- ε = 1e-4:
+  - N* = 47: y* = 24.3 (home-safe), n_s = 0.9775 (+1.7σ SPA+DESI, +3.0σ SPA), r = 6.3e-4.
+  - N* = 50 and 53: y* = 25.3–26.2 (OUT), n_s 0.980–0.983.
+- ε = 3e-4: n_s ≈ 1.02–1.03, y* 31–37. Fails.
+- ε = 1e-3: no viable inflation.
+Verdict by the lock: NOT VIABLE (no ε passes for all N*).
+Reason: at the cusp L ≈ (π/3)y ≈ 1.05y, about TWICE the slope of I₁ ≈ y/2, so for the same ε it tilts twice as hard. The locked grid started at 1e-4, already too large.
+Post-hoc observation (stated AFTER seeing results; not a verdict): by this scaling, ε_ρ ≈ ε_i/2 ≈ 6–8e-5 should reproduce the two-term SERAPIS numbers. Testing that needs a NEW lock declared as post-hoc.
+Physics note: the vacuum mass is light (m/H ≈ 0.017 at ε = 1e-4), and the plateau near ρ is very flat (j has a triple zero, so the plateau term ∝ |δ|¹²). Reheating would again be a sterile, splitting-dominated history (D601 logic applies at ρ too).

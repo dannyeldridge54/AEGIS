@@ -1,0 +1,13 @@
+check Ly(rho)=0.340372 vs Lc(rho)=0.340372; Iy at y=2: 0.813134 vs Ic: 0.813134
+eps=0.0001: V(rho)=0.00e+00 Hess(xx,yy)=(6.667e-05,6.667e-05) V(i)=3.035e-03
+eps=0.0003: V(rho)=0.00e+00 Hess(xx,yy)=(2.000e-04,2.000e-04) V(i)=3.040e-03
+eps=0.001: V(rho)=0.00e+00 Hess(xx,yy)=(6.667e-04,6.667e-04) V(i)=3.054e-03
+eps=0.0001 N*=47: y_end=2.77 y*=24.3 HS n_s=0.9775 (+3.0 SPA, +1.7 S+D) r=6.28e-04 m_vac/H=0.017
+eps=0.0001 N*=50: y_end=2.77 y*=25.3 OUT n_s=0.9804 (+4.0 SPA, +2.8 S+D) r=5.90e-04 m_vac/H=0.017
+eps=0.0001 N*=53: y_end=2.77 y*=26.2 OUT n_s=0.9831 (+4.9 SPA, +3.8 S+D) r=5.59e-04 m_vac/H=0.017
+eps=0.0003 N*=47: y_end=2.77 y*=31.5 OUT n_s=1.0202 (+17.3 SPA, +17.6 S+D) r=2.24e-03 m_vac/H=0.030
+eps=0.0003 N*=50: y_end=2.77 y*=33.9 OUT n_s=1.0258 (+19.1 SPA, +19.6 S+D) r=2.40e-03 m_vac/H=0.030
+eps=0.0003 N*=53: y_end=2.77 y*=36.6 OUT n_s=1.0314 (+21.0 SPA, +21.7 S+D) r=2.62e-03 m_vac/H=0.030
+eps=0.001 N*=47: no viable inflation
+eps=0.001 N*=50: no viable inflation
+eps=0.001 N*=53: no viable inflation
