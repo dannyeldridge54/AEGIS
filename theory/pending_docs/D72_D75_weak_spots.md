@@ -6669,3 +6669,16 @@ Literature: Ghilencea–Hoover–Burgess–Quevedo, "Casimir energies for 6D sup
 3. Twisted boundary conditions keep the vacuum at ρ if the twist is democratic: identity Σ over the three half-period characteristics of E_s(A,U) = (4^{1−s} − 1)E(U,s) (checked numerically at U = ½+1.3i: s = 2: −0.75005 vs −0.75; s = 3: −0.937500006 vs −0.9375; s = 5: −0.99609375 exact). A Z2×Z2-symmetric sum over spin structures is therefore again ∝ E(U,s): full SL(2,Z), minimum at ρ. A single twist would break to Γ(2) and move the minimum.
 Estimate: s = 5 (e = 2.5) variant r ≈ 3.3e-4 at n_s = 0.970 (scaling r ∝ 1/e² between D692 and D700; to compute).
 VERDICT: the Casimir route predicts a discrete ladder of plateaus e ∈ {3, 2.5} with r ≈ 2.5e-4 and ≈ 3.3e-4, both below SERAPIS-E (4.7e-4); which rung is realised is set by the dimension of the light Casimir field. Sign requirement stated. Not frozen.
+
+## D702 (DEEP) — The s = 5 rung computed: the Epstein-plateau ladder is a clean r-ladder
+Lock PREREG_D702; results/casimir_s5_d702.txt. Checks: E(τ,5) series = lattice to 8 digits (4.1317748 at i; 64.170867 at ½+2i); minimum at ρ (2.9382 vs 2.9869/2.9891 at ρ+0.05, ρ+0.05i; 4.1318 at i). Vacuum m²/H² = 30.0, m_φ ≈ 2.0e13 GeV.
+Plateau 1 − (E(ρ,5)/E(τ,5))^{1/2} (e = 2.5) × BHK tilt: n_s = 0.970 at C ≈ (0.86–1.02)e-6: r ≈ (3.28–3.57)e-4, α_s ≈ −(0.96–1.04)e-3, y* ≈ 14.6 (N* 49.9–48.4). D701 estimate 3.3e-4 confirmed.
+Ladder at n_s = 0.970 (N* 48.4–49.9, same BHK tilt, C ≈ 1e-6 in all cases):
+| plateau | e | origin | r | α_s |
+|---|---|---|---|---|
+| 1 − E(ρ,2)/E(τ,2) | 2 | SERAPIS-E (D692, exact MS) | (4.55–4.75)e-4 | −(0.94–0.99)e-3 |
+| 1 − (E(ρ,5)/E(τ,5))^{1/2} | 2.5 | 10D Casimir, large T⁴ | (3.28–3.57)e-4 | −(0.96–1.04)e-3 |
+| 1 − E(ρ,3)/E(τ,3) | 3 | 6D Casimir (D700) | (2.37–2.60)e-4 | −(0.94–1.02)e-3 |
+(rungs 2.5 and 3: first-order slow roll; D692 showed slow roll agrees with exact MS to ≤ 0.001 in n_s.)
+Pattern: n_s and α_s are set by the tilt (all ≈ equal); r is set by the plateau index alone, r ≈ 4.65e-4·(2/e)^{1.6} (fit to three points, descriptive). An r measurement at σ(r) ~ 5e-5 reads off which Epstein index — i.e. the dimension of the light field generating the plateau — nature uses. Only the e = 2 rung lies on the frozen SERAPIS strip (D679); e = 2.5, 3 lie below it.
+VERDICT: all three rungs viable; the family makes a discrete r-prediction ladder. Not frozen (post-hoc); worth a lock once the sign condition (D701) is shown realisable for one rung.
