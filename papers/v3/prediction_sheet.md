@@ -18,6 +18,7 @@ Labels: **computed** = from locked scripts (exact Mukhanov–Sasaki, D588); **es
 ## Parameter-free consistency relation (Janus, D635)
 From n_s and r alone: ρ = 2√r/(1−n_s), x = (ρ−1)/(1+ρ/2), A = (1−n_s)/(1−x/2),
 **α_s = −(A²/2)(1+x/4)(1+x)**. Accurate to 11–13 % against the exact numerics.
+Offset-corrected (D640, c = ln1728/2π, u = 1/I*): 1−n_s = 8u²[(2−x)+cu(5−x)], r = 64u⁴(1+x)²(1+2cu), α_s = −32u⁴(1+x)[(4+x)+cu(23+2x)] — invert (n_s, r) → (u, x), predict α_s to 0.4 %.
 A measured α_s outside this band (given measured n_s, r) rejects the whole family.
 
 ## Kill conditions (as in the locks; ≥3σ unless a CL is stated)

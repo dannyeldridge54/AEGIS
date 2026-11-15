@@ -6365,3 +6365,8 @@ CENTRE — tree-level visible soft masses (locked PREREG_D639 + DEVIATIONS D1 pe
 - B conformal-frame sequestering (K = −3 ln(e^{−K_h/3} − |Q|²/3)): m_Q² = 0 exactly.
 - C one modulus, matter of modular weight 1 (K ⊃ |Q|²/(2 Im τ)): m_Q² = 0 exactly. Reason: F_τ carries exactly m3/2²'s share (K^{ττ̄}|K_τ W0|² = |W0|²), and the curvature term −|F^τ|²∂_τ∂_τ̄ ln K_QQ̄ cancels it.
 Verdict (per lock): the soft-mass sector closes at TREE level without no-scale, provided the visible matter has modular weight 1 (standard for modular-flavour multiplets) or is sequestered; loop-level masses then ~ m3/2/16π² ≈ 6e8 GeV (estimate; pure anomaly mediation's slepton-tachyon issue not addressed). Canonical (weight-0) matter fails. This supersedes the "three moduli needed" suggestion in D585a/D636. Status: CONDITIONAL (assumption on matter weights), not open.
+
+## D640
+CENTRE (W1; locked PREREG_D640; results/janus_offset_d640.txt) — the Janus bias is REMOVED. Asymptotically I = y − c with c = ln1728/2π = 1.1868 and I1 = I/2 exactly, so the offset enters only through the field map φ = ln(I + c)/√2. To first order in c/I* (u = 1/I*, x = εI*³/4):
+  1 − n_s = 8u²[(2 − x) + cu(5 − x)],  r = 64u⁴(1 + x)²(1 + 2cu),  α_s = −32u⁴(1 + x)[(4 + x) + cu(23 + 2x)].
+Inverting measured (n_s, r) numerically and predicting α_s: error vs exact Mukhanov–Sasaki −0.2 … −0.4% on all 8 points (was −10.6 … −12.8% in D635). Full slow-roll map (method B): +1.1 … +1.6%, and it recovers the true ε (1.01/1.31/1.61e-4 for 1.0/1.3/1.6e-4). PASS. The relation stays parameter-free (c is fixed by j). Kairos inversion gives ε ≈ 1.5e-6, i.e. consistent with 0.

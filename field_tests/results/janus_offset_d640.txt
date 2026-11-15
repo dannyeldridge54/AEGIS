@@ -1,0 +1,13 @@
+A closed form (u=1/I*, first order in c):
+  1-n_s = -8*u**2*(c*u*x - 5*c*u + x - 2)
+  r     = 64*u**4*(x + 1)**2*(2*c*u + 1)
+  alpha = -32*u**4*(x + 1)*(2*c*u*x + 23*c*u + x + 4)
+HS-Kairos N*=47:: alpha_exact=-8.460e-04 | D635 err=-12.8% | A: -8.426e-04 err=-0.4% | B: -8.598e-04 err=+1.6% (I*=21.19, eps=1.44e-06)
+HS-Kairos N*=50:: alpha_exact=-7.490e-04 | D635 err=-12.5% | A: -7.467e-04 err=-0.3% | B: -7.612e-04 err=+1.6% (I*=21.80, eps=1.49e-06)
+two-term 1.0e-4 N*=47:: alpha_exact=-9.290e-04 | D635 err=-11.7% | A: -9.249e-04 err=-0.4% | B: -9.411e-04 err=+1.3% (I*=22.24, eps=1.01e-04)
+two-term 1.0e-4 N*=50:: alpha_exact=-8.300e-04 | D635 err=-11.3% | A: -8.275e-04 err=-0.3% | B: -8.411e-04 err=+1.3% (I*=22.98, eps=1.01e-04)
+two-term 1.3e-4 N*=47:: alpha_exact=-9.570e-04 | D635 err=-11.3% | A: -9.539e-04 err=-0.3% | B: -9.697e-04 err=+1.3% (I*=22.57, eps=1.31e-04)
+two-term 1.3e-4 N*=50:: alpha_exact=-8.580e-04 | D635 err=-11.0% | A: -8.545e-04 err=-0.4% | B: -8.676e-04 err=+1.1% (I*=23.36, eps=1.30e-04)
+two-term 1.6e-4 N*=47:: alpha_exact=-9.860e-04 | D635 err=-10.9% | A: -9.836e-04 err=-0.2% | B: -9.987e-04 err=+1.3% (I*=22.93, eps=1.61e-04)
+two-term 1.6e-4 N*=50:: alpha_exact=-8.870e-04 | D635 err=-10.6% | A: -8.847e-04 err=-0.3% | B: -8.972e-04 err=+1.1% (I*=23.77, eps=1.61e-04)
+max|err| A=0.4%  B=1.6%  VERDICT(B<=3%): PASS

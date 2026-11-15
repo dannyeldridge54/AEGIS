@@ -2,7 +2,7 @@
 Rules: lock (PREREG + sha256, pushed) before any computation; no reruns to chase results (DEVIATIONS first); honest labels; every outcome — good or bad — goes into the paper as written. Never publish/submit/send.
 Order = cheapest high-value first.
 
-- [ ] W1 Janus bias: derive the O(c/y) correction from the offsets I ≈ y − 1.19, I1 ≈ y/2 − 0.59; test against exact MS (D588/D632/D634/D635 outputs). Goal: consistency relation good to ≲3%.
+- [x] W1 (D640: bias 11–13% → 0.4%) Janus bias: derive the O(c/y) correction from the offsets I ≈ y − 1.19, I1 ≈ y/2 − 0.59; test against exact MS (D588/D632/D634/D635 outputs). Goal: consistency relation good to ≲3%.
 - [ ] W2 Preheating: (a) is the inflaton's quadratic coupling to visible/heavy fields forced non-zero at τ = i (modular invariance: ∂²m² ≠ 0)? (b) Floquet/broad-resonance estimate for the octic + small quadratic oscillation (q-parameter, resonance band width) for a heavy field with mass-squared ∝ δ²; (c) φ → gravitino + inflatino rate vs H. Verdict: efficient or not; if efficient, the frozen bands fail and the paper must say so.
 - [ ] W3 Kairos own reheating history: octic phase duration with species-term mass only (κ ≤ 1e-2) → its N* bracket and n_s, r.
 - [ ] W4 α_s band at N* 46–49 exactly (fill the 46 gap with exact MS).
