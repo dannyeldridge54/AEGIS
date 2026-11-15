@@ -6495,3 +6495,6 @@ D673a CORRECTION: D673 quoted the cap at N* = 47.6 only (n_s ≲ 0.978) and esti
 
 ## D676
 DEEP (locked PREREG_D676; results/rho_cap_d676.txt) — exact ρ cap: N* = 46.09 → ε_max = 1.42e-4, n_s = 0.9844, r = 8.30e-4, α_s = −1.18e-3; N* = 49.49 → ε_max = 9.97e-5, n_s = 0.9797, r = 6.01e-4, α_s = −9.6e-4. Essentially identical to τ = i (D674). Combined frozen cap D677: n_s ≤ 0.985, r ≤ 8.3e-4 for the whole home-safe family, both vacua, any ε. (Note: ρ's ε window 6e-5 sits well below its ε_max ≈ 1.0–1.4e-4, like τ = i.)
+
+## D678
+DEEP (locked PREREG_D678; results/janus_strip_d678.txt; figure papers/v3/figs/fig5_strip) — the exact allowed strip of home-safe SERAPIS (τ = i) in the (n_s, r) plane, 12 exact MS points along the two reheating-bracket edges from ε = 0 to the string-bound cap. Edges (x = n_s − 0.97): N* = 46.08: r = 5.336e-4 + 1.739e-2x + 0.261x²; N* = 49.21: r = 4.416e-4 + 1.535e-2x + 0.244x². At fixed n_s the allowed r spans ≤ 21% (n_s = 0.970 → r ∈ [4.42, 5.34]e-4; 0.975 → [5.24, 6.27]e-4). Along the strip α_s runs from −7.7e-4 to −1.17e-3. The strip passes through both the CMB and CMB+DESI 1σ bands. Frozen as D679 (2-D kill: a joint (n_s, r) measurement excluding the strip at ≥3σ). ρ strip not computed exactly (caps coincide within ~1%, D676).

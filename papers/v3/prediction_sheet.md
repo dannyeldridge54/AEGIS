@@ -25,6 +25,7 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 ## Kill conditions (as in the locks; ≥3σ unless a CL is stated)
 - r < 2.4×10⁻⁴ (τ = i, D605) / 2.3×10⁻⁴ (ρ, D615) at 95 % CL, or r detected > 1.1×10⁻³.
 - n_s measured > 3σ outside the predicted band 0.969–0.975 (paper table wording).
+- Strip (lock D679, exact D678): joint (n_s, r) off the band r ≈ (4.4–5.3)×10⁻⁴ at n_s = 0.970 (width ≤ 21% at fixed n_s; edge formulas in the lock) excludes the τ = i family.
 - Family-wide, any ε, both vacua (locks D675, D677; exact D674, D676): n_s > 0.985 or r > 8.3×10⁻⁴ at ≥3σ excludes home-safe SERAPIS (caps: τ = i 0.9836 / 8.2e-4, ρ 0.9844 / 8.3e-4).
 - α_s > −3×10⁻⁴, or α_s violating the Janus relation (long term: needs σ(α_s) ~ 2×10⁻⁴).
 - Σm_ν > 0.07 eV. (Lock D605 also lists inverted ordering; that tests the NO input, and with m_ν1 ≈ 0 IO already implies Σm_ν ≈ 0.10 eV.)
