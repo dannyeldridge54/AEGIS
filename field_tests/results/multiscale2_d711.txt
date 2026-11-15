@@ -1,0 +1,7 @@
+T11 DESI DR1 P1D: D2*=0.379±0.032, n*=-2.309±0.019 | T12 S8
+  LCDM P18: D2*=0.3492 (pull -0.93) n*=-2.3049 (pull +0.22) | sigma8=0.8110 S8=0.8309 (vs HSC+BOSS +0.13σ, vs CMB -0.41σ)
+  SERAPIS low: D2*=0.3527 (pull -0.82) n*=-2.3024 (pull +0.35) | sigma8=0.8124 S8=0.8323 (vs HSC+BOSS +0.26σ, vs CMB -0.30σ)
+  SERAPIS mid: D2*=0.3549 (pull -0.75) n*=-2.3001 (pull +0.47) | sigma8=0.8131 S8=0.8331 (vs HSC+BOSS +0.33σ, vs CMB -0.24σ)
+  SERAPIS high: D2*=0.3572 (pull -0.68) n*=-2.2977 (pull +0.59) | sigma8=0.8139 S8=0.8338 (vs HSC+BOSS +0.40σ, vs CMB -0.17σ)
+  running: pred -1.0e-3 vs P1D joint 0.0014±0.0041: pull -0.59σ
+T13 N_eff 3.044 vs ACT DR6 2.86±0.13: pull +1.42σ
