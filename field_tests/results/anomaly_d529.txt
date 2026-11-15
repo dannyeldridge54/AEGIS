@@ -1,0 +1,6 @@
+t=0 M=2 (Z_4): 0/8 pass
+t=0 M=3 (Z_6): 12/24 pass e.g. {'Q': 0, 'U': 1, 'D': 5, 'L': 4, 'E': 1, 'Hu': 5, 'Hd': 1} A3=9 A2=9
+t=0 M=4 (Z_8): 0/48 pass
+t=1 M=2 (Z_4): 8/16 pass e.g. {'Q': 0, 'U': 1, 'D': 1, 'L': 0, 'E': 1, 'Hu': 1, 'Hd': 1} A3=0 A2=-4
+t=1 M=3: not an R-symmetry assignment
+t=1 M=4 (Z_8): 16/96 pass e.g. {'Q': 0, 'U': 2, 'D': 2, 'L': 0, 'E': 2, 'Hu': 2, 'Hd': 2} A3=0 A2=-8

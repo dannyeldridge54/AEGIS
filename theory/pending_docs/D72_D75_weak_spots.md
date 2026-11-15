@@ -4965,3 +4965,17 @@ Link to SERAPIS (my reasoning, to be checked):
 Not yet shown: an explicit weight assignment for the SERAPIS matter (D3 sector) that gives hexality while allowing the Yukawas, μ and Weinberg terms; the discrete anomaly (GS) condition; and the size of non-perturbative breaking at our S values. Next: a locked weight-assignment search (PREREG first).
 Shared quantities: unchanged (no effect on N*, n_s, r, D, DM mass). Centre: balanced.
 Status: proton protection moves from "assumed (D-brane anomalous U(1))" to "candidate mechanism inside SERAPIS's own symmetry", pending the locked search.
+
+## D528 — modular-centre matter parity: weight search (locked PREREG_D528 + DEVIATIONS D1 [interrupted run, identical rerun]; results/parity_d528.txt) — PASS
+Searched family-independent weights k = n/M for (Q, U, D, L, E, Hu, Hd). Each assignment must allow the Yukawas, μ and Weinberg terms and forbid LHu, UDD, LQD, LLE, QQQL, UUDE, QQQHd (W) and QQU†E†, QLU†D† (Kähler, dim 6).
+- Rigid convention (W weight 0): no solution for Z₂; solutions for every M ≥ 2: 8 (Z₄), 24 (Z₆), 48 (Z₈), 80 (Z₁₀), 120 (Z₁₂).
+- Supergravity convention (W weight −1): solutions only for even M: 16 (Z₄), 96 (Z₈). None for M = 1, 3, 5. M = 6 was still running when written; it will be appended.
+Verdict: proton protection to dimension 6 is achievable with SERAPIS's own modular-centre parity. Status of D527 rises from "candidate" to "exists (perturbative)".
+
+## D529 — discrete anomaly check (locked PREREG_D529; results/anomaly_d529.txt) — PASS for a subset
+Condition: Ibáñez–Ross with Green–Schwarz, A₃ ≡ A₂ (mod N/2), three generations.
+- Rigid convention: Z₄ 0/8 pass; **Z₆ 12/24 pass**; Z₈ 0/48 pass. Example: Q = 0, U = 1/3, D = 5/3, L = 4/3, E = 1/3, Hu = 5/3, Hd = 1/3, with A₃ = A₂ = 9. This is the hexality-type Z₆, the same example D528 printed.
+- Supergravity (R-symmetry) convention: **Z₄^R 8/16 pass**; Z₈^R 16/96 pass. Example: Q = 0, U = D = E = 1/2, L = 0, Hu = Hd = 1/2 (weights n/2).
+- Context: a Z₄^R that forbids proton decay is known in the literature (Lee, Raby, Ratz, Ross et al., arXiv:1102.3595). Their version forbids μ perturbatively; ours keeps μ by construction, so the two are related but not the same.
+Not checked: hypercharge and gravity anomalies (they need the heavy spectrum); non-perturbative breaking ~e^{−S}.
+Status: an anomaly-free, gauged (modular) parity protecting the proton to dimension 6 exists in both conventions. The remaining open point is to embed it in a concrete orbifold home.

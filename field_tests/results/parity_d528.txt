@@ -4,3 +4,11 @@ convention t=0 (rigid)
   M=3 (Z_6): 24 solutions e.g. Q=0/3, U=1/3, D=5/3, L=4/3, E=1/3, Hu=5/3, Hd=1/3
   M=4 (Z_8): 48 solutions e.g. Q=0/4, U=1/4, D=7/4, L=5/4, E=2/4, Hu=7/4, Hd=1/4
   M=5 (Z_10): 80 solutions e.g. Q=0/5, U=1/5, D=9/5, L=6/5, E=3/5, Hu=9/5, Hd=1/5
+  M=6 (Z_12): 120 solutions e.g. Q=0/6, U=1/6, D=11/6, L=7/6, E=4/6, Hu=11/6, Hd=1/6
+convention t=1 (supergravity)
+  M=1 (Z_2): 0 solutions
+  M=2 (Z_4): 16 solutions e.g. Q=0/2, U=0/2, D=2/2, L=1/2, E=1/2, Hu=2/2, Hd=0/2
+  M=3 (Z_6): 0 solutions
+  M=4 (Z_8): 96 solutions e.g. Q=0/4, U=0/4, D=4/4, L=2/4, E=2/4, Hu=4/4, Hd=0/4
+  M=5 (Z_10): 0 solutions
+  M=6 (Z_12): 240 solutions e.g. Q=0/6, U=0/6, D=6/6, L=3/6, E=3/6, Hu=6/6, Hd=0/6
