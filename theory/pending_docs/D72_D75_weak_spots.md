@@ -5498,3 +5498,15 @@ New papers (none previously cited in our notes):
   - Uses the known SL(2,Z) forms (η, j) with V ≃ V₀(1 − c/Im τ)², vacuum near τ = i; no UV derivation.
   - → Same bottom-up status as SERAPIS-KL.
 Verdict: no string-derived τ = i plateau source found (the gap stays open). Prior-art list extended: D563 ≈ 2607.00528, and τ = i Minkowski vacua ≈ 2512.21597 and 2504.01622. No computation was needed.
+
+## D573 — DEEP (DpL tick 2, 01:27 CT 15 Nov; literature check) — NULL: no new CMB data since our filter inputs; the D567 bands are unscored
+Checked whether any 2026 measurement scores the locked D567 bands.
+- Balkenhol et al., arXiv:2512.10613 ("Inflation at the end of 2025") uses SPA (Planck PR3/PR4 + ACT DR6 + SPT-3G D1) + BK18 (+ DESI DR2).
+  - SPA+BK: n_s = 0.9682 ± 0.0032, r < 0.034. SPA+BK+DESI: n_s = 0.9728 ± 0.0029, r < 0.035.
+  - These are the same data as our F3 inputs (0.9684 ± 0.0030 and 0.9728 ± 0.0027) with r freed. The differences are below 0.1σ.
+- No BICEP/Keck or SPT B-mode result newer than BK18 or SPT-3G 2-yr (2505.02827) was found. Also seen: 2601.20958 (causal-source GW constraints) and 2608.20236 (the SPT-3G+ proposal); neither is a primordial-r measurement.
+- Ijaz et al. (arXiv:2607.04504) quote the same combinations.
+Verdict: NULL. There is no new measurement, so the D567 forward bands stay unscored (their scoring rule needs future data). Distances for information only, not a score:
+- HS-Kairos: −0.8 to −1.5σ vs SPA+BK; −2.4 to −3.2σ vs SPA+BK+DESI.
+- HS-Chronos: +1.7 to +2.4σ vs SPA+BK; +0.3 to +1.1σ vs SPA+BK+DESI.
+The next decisive inputs are Simons Observatory SAT r and DESI DR3. The monthly DESI watch is already scheduled.
