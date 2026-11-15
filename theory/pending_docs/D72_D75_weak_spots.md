@@ -4725,3 +4725,6 @@ by w₀. Credits go to the v2 / any Twist-M write-up. No contradiction with D490
 tracking → dark energy) is the quintessential-inflation scenario (Peebles–Vilenkin; Dimopoulos; quintessential α-attractors 2311.02730). It differs only in the end point, a
 duality-fixed minimum (w₀ = −1), not a runaway. Credit the class. The kination GW peak rises ~35× for Twist-M's 3.3 e-folds (estimate) to ~2e-14 at high frequency, still undetectable
 (2111.01150, 2307.12913).
+
+**DEEP 4 (Danny "Again", 21:06 CT; topic 4 leptogenesis; literature + reasoning; theory/deep/DEEP_topic4.md).** The kination–leptogenesis link is known (0707.1544, 1911.02657);
+credit it. In Twist-M, kination ends (T ~ 1e13 GeV) before M₁ ≈ 3e10–2e11 GeV, and the tracking field shifts H by ~1.5e-4 only. Leptogenesis is unchanged.
