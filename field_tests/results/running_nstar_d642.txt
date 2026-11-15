@@ -1,0 +1,6 @@
+Kairos N*=46.08: n_s=0.9587 alpha_s=-8.79e-04 attractor=-8.55e-04 ratio=1.03
+Kairos N*=49.21: n_s=0.9612 alpha_s=-7.73e-04 attractor=-7.51e-04 ratio=1.03
+two-term 1.3e-4 N*=46.08: n_s=0.9697 alpha_s=-9.91e-04 attractor=-4.58e-04 ratio=2.16
+two-term 1.3e-4 N*=49.21: n_s=0.9726 alpha_s=-8.82e-04 attractor=-3.74e-04 ratio=2.36
+two-term 1.6e-4 N*=46.08: n_s=0.9724 alpha_s=-1.02e-03 attractor=-3.82e-04 ratio=2.67
+two-term 1.6e-4 N*=49.21: n_s=0.9754 alpha_s=-9.12e-04 attractor=-3.03e-04 ratio=3.01

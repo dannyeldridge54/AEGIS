@@ -1,0 +1,11 @@
+1. m_Q^2/m3/2^2 vs matter weight k:
+   k=0: 1  (1-k = 1)
+   k=1/3: 2/3  (1-k = 2/3)
+   k=2/3: 1/3  (1-k = 1/3)
+   k=1: 0  (1-k = 0)
+   k=4/3: -1/3  (1-k = -1/3)
+   k=2: -1  (1-k = -1)
+2. dL/dx at i = 0.0, dL/dy at i = -6.4911e-17  -> d_tau L = (0.0 + 3.2455e-17j)
+3. Loop-scale estimates (m3/2 = 1.05e11-1.2e11 GeV):
+   m3/2=1.05e+11: one-loop scalar m3/2/4pi=8.4e+09; AMSB gaugino b g^2 m3/2/16pi^2 (b g^2=0.5..3.3)=3.3e+08..2.2e+09; two-loop AMSB scalar g^2 m3/2/16pi^2=3.3e+08; Higgs bound 2e10
+   m3/2=1.20e+11: one-loop scalar m3/2/4pi=9.5e+09; AMSB gaugino b g^2 m3/2/16pi^2 (b g^2=0.5..3.3)=3.8e+08..2.5e+09; two-loop AMSB scalar g^2 m3/2/16pi^2=3.8e+08; Higgs bound 2e10
