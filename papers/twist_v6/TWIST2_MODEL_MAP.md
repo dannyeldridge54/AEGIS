@@ -203,3 +203,5 @@ alone.
 **SERAPIS-1 (D517, single torus, fully modular):** n_s 0.9667, r 0.0011 (no tilt); vacuum at square torus with V = Λ and mass 4e13 GeV (stiff: no fifth force, no moduli problem); Λ coefficient e^{−121.6} (instanton-sized); triangle point = wall. Cleanest version so far; decided by the CMB-vs-DESI n_s question.
 
 **SERAPIS status (D518, DEEP 2.3):** reheating gives N* ≈ 52 → n_s ≈ 0.962 (D517 'viable' withdrawn pending a faster decay channel); building block is prior art (2405.06497, 2407.12081) — no separate publication.
+
+**SERAPIS-1 final predictions (D519–D520):** n_s 0.963–0.965, r 0.0012–0.0013, α_s ≈ −6.5e-4 (reheating-consistent); fits CMB-SPA, 2.8–3.7σ from SPA+DESI; no kination route.

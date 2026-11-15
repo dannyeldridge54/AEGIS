@@ -4895,3 +4895,11 @@ with vacua at τ = i or ω and Starobinsky-like inflation. They note that a dS m
 Distinct in SERAPIS-1: the single-torus weight −1 version (K = −ln, F = η⁻²H) with the specific (j−1728)^{1/2} j^{−7/12}[ln(j/1728)+κ]^{1/2} combination and Λ placed at τ = i with a stiff vacuum. These are
 variations inside a known family, not a new mechanism, and D518 found its reheating gives N* ≈ 52 (n_s ≈ 0.962), a tension the literature cases share or avoid by other choices. Decision: credit these papers; do NOT publish
 SERAPIS to Zenodo as a novel result. Its value is as the duality-complete end point of the Twist line, inside the AEGIS write-ups.
+
+**D519 (SERAPIS-1 at its own N*; scored, locked PREREG_D519_SERAPIS_NSTAR; results/serapis_nstar_d519.txt) — CANNOT REACH THE DESI VALUE; FITS CMB-SPA for every reheating history.**
+Instant reheating gives N* = 55.58, n_s = 0.9652 (−1.1σ SPA, −2.8σ SPA+DESI), r = 0.00118. At N* = 54: 0.9642 / r = 0.00125. At N* = 52 (D518's gravitational decay): 0.9629 (−1.8σ SPA, −3.7σ SPA+DESI),
+r = 0.00134, α_s ≈ −6.4 to −6.8e-4. So SERAPIS-1's real prediction is n_s ≈ 0.963–0.965, r ≈ 0.0012–0.0013. It is consistent with CMB-SPA alone at < 2σ throughout and in 2.8–3.7σ tension with CMB-SPA+DESI.
+**D520 (reasoning + arithmetic from D519) — the two fix routes do not work.** (i) A faster decay cannot exceed instant reheating, so it buys at most +3.6 e-folds (n_s ≤ 0.9652). A Planck-suppressed decay of a
+modulus cannot reach instant reheating anyway (it would need Γ ~ H_end ~ 1e13 GeV vs ~4e3 GeV). (ii) Reaching the SPA+DESI 2σ edge (0.9674) needs N* ≈ 59.3 (from n_s ≈ 1 − 1.934/N*), i.e. ~+3.7 e-folds beyond instant,
+so ~7.5 e-folds of kination. SERAPIS's potential is quadratic near τ = i, with no steep runaway, so it has no kination phase. Conclusion: SERAPIS-1 makes a sharp prediction, n_s ≈ 0.963–0.965, that stands or falls with the
+CMB-vs-DESI question. It is not 'fixable' within the model without adding structure.

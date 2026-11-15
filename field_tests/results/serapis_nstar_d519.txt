@@ -1,0 +1,5 @@
+instant-reheating N* = 55.58
+N*=55.58: n_s=0.9652 (-1.1 sigma SPA, -2.8 sigma SPA+DESI), r=0.00118, alpha_s=-6.40e-04
+N*=54.00: n_s=0.9642 (-1.4 sigma SPA, -3.2 sigma SPA+DESI), r=0.00125, alpha_s=-6.57e-04
+N*=52.00: n_s=0.9629 (-1.8 sigma SPA, -3.7 sigma SPA+DESI), r=0.00134, alpha_s=-6.84e-04
+VERDICT: CANNOT REACH DESI VALUE | FITS CMB-SPA for N*>=54

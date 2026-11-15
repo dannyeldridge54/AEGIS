@@ -68,3 +68,4 @@
 | Inflation (cusp plateau) | n_s 0.9665, r 0.0032 (Starobinsky-like) | D515 |
 | Vacua | square torus τ = i: V = 0 (Λ term pending); triangle point ρ: wall | D515 |
 | SERAPIS-1 (D517) | k = 1, F = η⁻²H(j); n_s 0.9667, r 0.00108; vacuum mass 4.0e13 GeV; Λ coefficient c = e^{−121.6} | D517 |
+| SERAPIS-1 (reheating-consistent, D519) | n_s 0.963–0.965, r 0.0012–0.0013, α_s ≈ −6.5e-4; N* 52–55.6 | D518–D520 |
