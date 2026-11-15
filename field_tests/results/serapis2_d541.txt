@@ -1,0 +1,6 @@
+kappa'=0.000 N*=52: y_end=1.64 y*=490.0 n_s=0.9606 r=0.00216 (-2.6 sigma SPA, -4.5 sigma SPA+DESI)
+kappa'=0.000 N*=55.6: y_end=1.64 y*=531.3 n_s=0.9631 r=0.00189 (-1.8 sigma SPA, -3.6 sigma SPA+DESI)
+kappa'=1.000 N*=52: y_end=1.48 y*=140.8 n_s=0.9221 r=0.01040 (-15.4 sigma SPA, -18.8 sigma SPA+DESI)
+kappa'=1.000 N*=55.6: y_end=1.48 y*=167.2 n_s=0.9309 r=0.00802 (-12.5 sigma SPA, -15.5 sigma SPA+DESI)
+kappa'=6.283 N*=52: y_end=1.45 y*=186.9 n_s=1.0478 r=0.00077 (+26.5 sigma SPA, +27.8 sigma SPA+DESI)
+kappa'=6.283 N*=55.6: y_end=1.45 y*=196.1 n_s=1.0447 r=0.00065 (+25.4 sigma SPA, +26.6 sigma SPA+DESI)

@@ -5110,3 +5110,9 @@ Species-scale check (arithmetic):
 - Λ_sp ≈ M_P/√N ≈ 2.2e17 GeV, compared with H_inf ≈ 9e12 GeV, so the EFT is under control by ~4 orders.
 - In the Casas–Ibáñez relation N_e ≃ N, about 126 species is of the same order as the 52–56 e-folds needed. That is consistent, not a tension.
 Status: the log factor now has a plausible string-side origin (threshold/species function); j^{−7/12} does not. Next: lock and test SERAPIS-2.
+
+## D541 — LEFT (loop tick 4; scored, locked PREREG_D541_SERAPIS2; results/serapis2_d541.txt) — SERAPIS-2 (threshold-log plateau): NOT VIABLE
+I replaced SERAPIS's non-polynomial factor [ln(j/1728)+κ] by the string-derived threshold function −ln(2y|η|⁴) + κ′ (D540), using the same method as J4.
+- Primary κ′ = 0: n_s = 0.9606 (N* = 52; −2.6σ SPA) and 0.9631 (55.6; −1.8σ); r = 0.0019–0.0022. It fails the 2σ condition at N* = 52, so it is NOT VIABLE by the lock.
+- Sensitivity is severe: κ′ = 1 gives n_s 0.92–0.93 (r ≈ 0.01), and κ′ = 2π gives n_s ≈ 1.045. The slower (πy/3) growth of the threshold function makes the plateau's approach depend strongly on the constant. So the string-side version is not predictive without fixing κ′ from first principles.
+Lesson: the threshold function can make a plateau, but not a stable, predictive one at this level. D535's gap (string origin of the plateau) stays open; SERAPIS-1 remains an effective model.
