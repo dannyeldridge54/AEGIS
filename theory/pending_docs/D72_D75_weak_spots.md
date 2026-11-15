@@ -4378,3 +4378,14 @@ all 5001 recorded hits (cap reached): ρ/s = 4.8e4–1.5e6 GeV = 1e14–3e15 × 
 reaches the energy-conservation ceiling (1.1e6 GeV, D444) in the 0.3/1e5 case, so the per-hit estimate overcounts there and the true remnant
 lies near the ceiling. Consequence: the φ sector is effectively heated to the condensate energy, so the initial abundance is erased if φ
 thermalises, and D445's annihilation/charge-breaking conditions govern the outcome. They become mandatory, not optional.
+
+**D447 (cloud run 2, Danny 19:20 CT; scored, locked PREREG_D447_HIDDEN_RELIC; results/hidden_relic_d447.txt) — the leftover particles can be
+removed perturbatively if the lightest D7-charged state is ≲ 10 TeV (1%), or ≲ 100 TeV as a full DM component.** Hidden-bath freeze-out
+(complex scalar, σv = λ⁴/16πm²). With the D446 energy ceiling (ε_h = 1e-5 → T_h/T = 0.102): λ for Ω = Ω_DM / 1% Ω_DM = 0.026/0.088 (10 GeV),
+0.085/0.29 (100 GeV), 0.28/0.94 (1 TeV), 0.91/3.04 (10 TeV), 2.96/9.8 (100 TeV); for a hotter bath (ε_h = 1e-3, T_h/T = 0.32) the 1% case
+fails at 10 TeV (λ = 4.2) and both fail at 100 TeV. Check: scaling the standard ξ = 1 value (λ = 1.75 at 10 TeV, D445) by ξ^{1/4} gives 0.99
+vs 0.91 computed. This sharpens D445 (whose ξ = 1 limit was ~3 TeV): the colder bath helps. **Interesting by-product (not a claim): at
+m ≈ 10–100 TeV with λ ≈ 1–3 the charged state is a natural second DM candidate in the same mass range as the Twist's gravity-only DM.**
+Lock items not done: the rough thermalisation check (Γ_th vs H) was specified but not coded. Process note: the script was executed once,
+unviewed, about a minute before the lock commit (import test); the scored run was started after the lock was pushed.
+CENTRE: F5 now passes conditionally (light charged state + λ ≲ 3); open condition narrowed.

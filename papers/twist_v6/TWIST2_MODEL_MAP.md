@@ -145,3 +145,5 @@ alone.
 **Sharpened (D445):** the decay must break the D7 charge (goldstino channel only moves it): lightest charged state ≲ TeV and annihilating, or D-instanton breaking.
 
 **Centre-confirmed (D446, cloud run):** stringy-FI capture holds for M_s = 0.03–0.3 M_P (toy window with clean plateau 0.03–0.1 M_P); bounce-generated φ remnant makes the D445 removal conditions mandatory.
+
+**Centre-confirmed (D447, cloud run 2):** the φ-sector remnant is removed by hidden annihilation if the lightest D7-charged state is ≲ 10 TeV (to 1%) or ≲ 100 TeV (as all of DM), λ ≲ 3, hidden bath T_h/T ≈ 0.1.
