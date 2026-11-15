@@ -181,3 +181,5 @@ alone.
 **Twist-M predictions (D501):** n_s 0.9736 (fit), r = 0.00435, α_s = −7.6e-4, w₀ = −1, w_a ≈ 0.
 
 **Twist-M link (D502):** one τ≈40 cycle may set both Λ (n = 234) and the axion mass (n/S = 0.93, k = 1) → axion at heavy end → LiteBIRD: β_reio ≈ 0, β_rec = 0.28° (mild support).
+
+**Twist-M (D504):** string scale 2.65e15 GeV ≈ gauge meeting point 2.4e15 GeV (couplings within ~5% at M_s); requires D-brane unification without light X-bosons (proton).

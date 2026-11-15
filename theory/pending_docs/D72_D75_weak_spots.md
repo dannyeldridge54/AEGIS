@@ -4755,3 +4755,8 @@ D397's D factor does not apply) and the freeze-in sliver. The DEEP 8 flag is dow
 **DEEP 9 (Danny "Pp", 21:13 CT; topic 9 SUSY/gravitino; literature).** The Higgs mass bounds an eV gravitino from below: with perturbative messengers m₃/₂ ≳ 10 eV, which the 4.7 eV
 cosmology bound excludes. Only a strongly coupled messenger sector leaves ~0.8–4.7 eV (arXiv:1608.01610). The Twist's window 1.7–4.7 eV (D474) fits, and D432 already assumed strong coupling.
 That makes it an explicit condition: strongly coupled SUSY-breaking/messenger sector. Future 21 cm data (1605.09191) can test m₃/₂ ~ 1 eV. Credits: 1601.07386, 1608.01610.
+
+**D504 / DEEP 10 (Danny "Pp", 21:15 CT; topic 10 gauge couplings; scored, locked PREREG_D504_TWISTM_UNIF; results/twistm_unif_d504.txt) — UNIFICATION BELOW M_s in Twist-M.**
+Twist-M's string scale (2.65e15 GeV) sits just above the MSSM-like meeting point (M_12 = 2.41e15 GeV, ratio 0.91). The couplings at M_s agree to 1.6 in α⁻¹ (~5%). Twist-2 had no
+such match (D470). Proton decay: X-bosons at 2.4e15 GeV would give τ_p ≈ 6e32 yr, below Super-K's 2.4e34. So the match must be string-scale (D-brane) unification without light X-bosons,
+with baryon number protected (D469). It is a mild point in Twist-M's favour, and it comes from geometry, not a fit.
