@@ -17,8 +17,8 @@ Order = cheapest high-value first.
 - [x] W11 Spectrum window (D650, estimates): m3/2 ≈ 2.5e5–1.1e6 GeV, wino LSP 0.66–2.9 TeV, gluino 4.7–21 TeV; paper adopts the covariant completion.
 - [x] W8 referee pass 3 → fixes (ε hint corrected and dropped as a hint; AD factor 2; c = 1.1865; accuracy quoted as ~2%).
 Open:
-- [ ] W12 Dilaton–LSP bound (D592–D596) redone for a TeV wino LSP and m3/2 ~ 1e5–1e6 GeV.
-- [ ] W13 Thermal effects on the AD flat direction (thermal mass/log) at T_R 1e3–1e5 GeV.
-- [ ] W14 Yukawas non-vanishing at τ = i: flavour representations (referee 3 item 2) — now only needed for the constant-W0 chain and for the A-term argument (ŷ(i) ≠ 0).
-- [ ] W15 Inflaton → gravitino at next order in the covariant completion (F_τ = 0 at the minimum; ∂F_τ ≠ 0?) with m3/2 ≪ m_φ.
-- [ ] W16 SERAPIS-ρ: repeat W9–W11 (G_τ(ρ) = 0 already shown).
+- [x] W12 (D652: LSP bound disappears — winos re-thermalise) Dilaton–LSP bound (D592–D596) redone for a TeV wino LSP and m3/2 ~ 1e5–1e6 GeV.
+- [x] W13 (D653: thermal effects negligible) Thermal effects on the AD flat direction (thermal mass/log) at T_R 1e3–1e5 GeV.
+- [x] W14 (D654: Weinberg op needs flavour multiplet / half-integral weights) Yukawas non-vanishing at τ = i: flavour representations (referee 3 item 2) — now only needed for the constant-W0 chain and for the A-term argument (ŷ(i) ≠ 0).
+- [x] W15 (D651: φ→2ψ absent at linear order; gravitinos decay before BBN) Inflaton → gravitino at next order in the covariant completion (F_τ = 0 at the minimum; ∂F_τ ≠ 0?) with m3/2 ≪ m_φ.
+- [x] W16 (D655: ρ bound identical) SERAPIS-ρ: repeat W9–W11 (G_τ(ρ) = 0 already shown).

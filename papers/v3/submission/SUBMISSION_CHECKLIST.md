@@ -22,7 +22,7 @@ Status 2026-11-15 (updated after weak-point rounds 1–2): package rebuilt and t
 ## Known weak points a referee may still press (disclosed in the paper)
 - ε is fitted, not derived; its string origin is open.
 - Frozen bands assume inefficient preheating; estimates (D641) support this.
-- Superpartner window (covariant completion) rests on estimates: anomaly-mediated gauginos, initial conditions, dilaton–LSP bound not redone (W12).
-- Affleck–Dine is a numerical estimate without thermal effects (W13); M ≫ M_P needs a protecting symmetry.
+- Superpartner window (covariant completion) rests on estimates: anomaly-mediated gauginos, initial conditions within ~12 e-folds of horizon exit.
+- Affleck–Dine is a numerical estimate (thermal effects shown negligible); M ≫ M_P needs a protecting symmetry; the Weinberg operator at τ = i needs a flavour multiplet.
 - The frozen D605 superpartner prediction (constant-W0 chain) differs from the covariant completion's; disclosed in the paper.
 - r ≈ 5×10⁻⁴ can be excluded soon but confirmed only by a future σ(r) ~ 10⁻⁴ experiment.
