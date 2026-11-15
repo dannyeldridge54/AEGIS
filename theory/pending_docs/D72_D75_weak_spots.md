@@ -4912,3 +4912,7 @@ D521a (correction): the computed table gives untilted versions at −1.5σ to �
 
 **Naming (Danny 21:51 CT):** the two data branches of SERAPIS are named **SERAPIS–Kairos** (the predictive branch, untilted: SERAPIS-1/Twist-1T; n_s 0.963–0.967, r ≈ 0.001; kairos = the
 decisive, unmeasured moment, with the shape alone setting the time) and **SERAPIS–Chronos** (the tuned branch, one fitted tilt: Route A/Twist-M; n_s 0.9736, r ≈ 0.0045; chronos = measured, calibrated time).
+
+**Naming (Danny 21:53 CT):** the overall framework is **Janus Twist theory** (Janus, the two-faced god of beginnings and passages: one shape facing both the beginning, inflation, and the end
+state, Λ). Its two paths, left and right, are **Kairos** (predictive, untilted) and **Chronos** (one fitted tilt). **SERAPIS** remains the name of the fully modular model within it. Paper draft renamed
+papers/twist_v7/JANUS_TWIST_PAPER.md (PDF Eldridge_JanusTwist_draft_2026-11-14.pdf; earlier PDF kept in _old/).

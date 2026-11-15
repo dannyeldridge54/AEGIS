@@ -1,10 +1,12 @@
 ---
-title: "SERAPIS: one torus shape for inflation and dark energy — the Kairos and Chronos branches"
+title: "The Janus Twist: one torus shape for inflation and dark energy, and its Kairos and Chronos paths"
 author: "Danny Eldridge (independent researcher), with AI assistance (Claude, Anthropic)"
 date: "Draft, 14 November 2026 — not yet published"
 ---
 
 # Abstract
+
+**Janus Twist theory** is the overall framework: one hidden shape faces both ways in time — toward the beginning (inflation) and toward the end state (Λ) — and the data choose between two paths, **Kairos** and **Chronos**. Its fully symmetric realisation is the model **SERAPIS**.
 
 We collect a day of pre-registered tests (AEGIS D-notes D436–D521) into one picture: the inflaton and the dark-energy field are the same object, the **shape of a hidden two-torus**. While the torus is highly stretched its potential is a nearly flat plateau and drives inflation; it then relaxes to the most symmetric (square) shape, where the leftover vacuum energy is the cosmological constant Λ. The construction is built from modular (SL(2,ℤ)) functions of the torus shape, so the square torus τ = i and the hexagonal torus τ = ρ are automatic special points; in the fully modular form (**SERAPIS**) the square torus is a heavy vacuum (mass ≈ 4×10¹³ GeV, no fifth force) and the hexagonal point is a wall. The Standard Model is assumed to live on branes that do not wrap this torus and to feel it only through a heavy intermediate modulus ("lens"), which suppresses its matter coupling below 10⁻²⁸.
 
