@@ -25,3 +25,9 @@ Open problems now:
 - a factorised, flux-free home (D530, D532);
 - embedding the Z₄^R/Z₈^R proton parity (D528–D533).
 Current paper: papers/twist_v7/JANUS_TWIST_PAPER.md v2.1.
+
+## Update (14 Nov 2026, 22:56 CT; D539–D557)
+- Reference model: SERAPIS-KL (single-valued, V = 0 minimum at i). Kairos and Chronos are unchanged (D545, D546).
+- The inflation model is assembled from published ingredients (Kallosh–Linde, Casas–Ibáñez, Abe et al.; D544, D549, D555, D556).
+- Home: T² ⊕ T⁴, flux-free T², |b^{N=2}| ≲ 2, M_s ≳ 1e17 GeV (D553, D554), so SERAPIS and Twist-2 are separate realisations. Tower corrections are negligible (D557).
+- Proton parity is complete at the model level (D542, D551). Twist-M case (i) is NOT CAPTURED (D547).

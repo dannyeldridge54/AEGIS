@@ -66,6 +66,7 @@ Comparisons use CMB-SPA n_s = 0.9684 ± 0.0030 and CMB-SPA+DESI 0.9728 ± 0.0027
 
 # 4. Matter and the extra dimensions
 
+* **String-scale and gauge conditions (D553, D554, D557).** One-loop thresholds grow with Im τ on an N = 2 plane. Perturbativity (Ishiguro–Kai–Kobayashi–Otsuka, arXiv:2508.12392) then requires |b^{N=2}| ≲ 2 for every gauge group that feels the SERAPIS T², since Im τ* reaches 112–158. Near the cusp a KK tower becomes light (Leedom–Righi–Westphal, arXiv:2605.05322). The EFT stays controlled only for M_s ≳ 10¹⁷ GeV (M_KK ≳ V^{1/4}, M_KK/H ~ 10³), where tower corrections to n_s and r are ~(H/Λ_sp)³ ~ 10⁻¹³ (arXiv:2512.07930). This high string scale is incompatible with the low M_s of the Twist-2 realisation, so the two are separate models.
 * **Where the torus lives (D530, D532).** Exact SL(2,ℤ) on one torus needs a factorised lattice T² ⊕ T⁴, with the SERAPIS torus as the N = 2 fixed plane. Non-factorisable orbifolds reduce the symmetry to congruence subgroups (Mayr–Stieberger, hep-th/9303017). In type IIB, flux on that T² breaks SL(2,ℤ) unless the fluxes also transform, and it favours τ = ω (Ishiguro–Kobayashi–Otsuka, arXiv:2011.09154). So the SERAPIS T² must carry no flux. A concrete compactification is not constructed here.
 * **Proton protection (D527–D529, D533).** The centre of SL(2,ℤ) leaves τ fixed, so matter fields of weight n/M carry a Z₂M that survives at every τ (Kobayashi et al., arXiv:2207.14014).
   - In the supergravity convention required here (W of weight −1), family-independent Z₄^R and Z₈^R assignments allow the Yukawa, μ and Weinberg terms. They forbid all dimension-4 and dimension-5 proton-decay operators and the dimension-6 Kähler operators QQU†E† and QLU†D†.
@@ -100,9 +101,9 @@ Comparisons use CMB-SPA n_s = 0.9684 ± 0.0030 and CMB-SPA+DESI 0.9728 ± 0.0027
 
 - A string origin of the plateau factors (outside the CFILQ class, D535).
 - The Λ sector (separate uplift, tuned; D537, D538).
-- A concrete factorised, flux-free compactification with the SERAPIS T² as N = 2 plane, and the Standard Model on branes that do not wrap it.
+- A concrete factorised, flux-free compactification with the SERAPIS T² (|b^{N=2}| ≲ 2, M_s ≳ 10¹⁷ GeV), and the Standard Model on branes that do not wrap it. A string mechanism for the plateau itself: string-derived modular potentials diverge at the cusp (D552, D554).
 - The embedding of the Z₄^R/Z₈^R parity in that compactification, with its full anomaly check, and its fate once the gravitino mass is non-zero.
-- The full Twist-2 capture runs J1–J3 (D500 etc., running).
+- The remaining Twist capture runs J2–J3 (running). J1, the Twist-M two-sided FI trap, did NOT capture (D547).
 
 # Method and data
 
