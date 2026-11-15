@@ -4335,3 +4335,9 @@ so this test as locked could never reach the 1e23 threshold — a badly designed
 Reading (analytic, not scored): in the FI picture the pinning sector leaves no condensate vacuum energy at tree level, so D427's
 1e26–1e32 GeV⁴ piece is absent; the SUSY-breaking CC cancellation (one tuning) remains. Loop corrections not computed. Verdict for the
 loop: no scored result → WALL.
+
+**D443 (cycle 30, "pp"; third pass PART 7, RIGHT; data update, arithmetic in code; results/part7c_beta_d443.txt) — birefringence input
+updated, nothing breaks.** Joint ACT DR6 + Planck (arXiv:2608.06480): β = 0.277° ± 0.057° (4.8σ from zero; 0.236° ± 0.067° in the high-ℓ,
+30% Galactic-cut check; depends on the instrumental priors as reported). D414 used β = 0.261°: shift 0.28σ. Required photon coupling
+scales by 1.061 → c_γ ≈ 1.7–4.1 (was 1.6–3.9); f ≤ 0.1 M_P and Ω_a ≤ 3e-3 unchanged (Ω_a does not depend on β). The paper does not
+separate reionization from recombination, so B4 (β_reio/β_rec) remains untested; LiteBIRD remains the decider. No scored result → WALL.

@@ -1,9 +1,9 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 60
-consecutive_walls: 1
-cycle: 29
-next_part: 7
+consecutive_walls: 2
+cycle: 30
+next_part: 8
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -75,3 +75,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 27 (19:00, 'pp'): PART 4 third pass — D440 DESI DR2 Σm_ν<0.064 eV: m1<0.0043 eV (NO), leptogenesis M1 ≥ 7e8–2e11 GeV, inside window. WALL 1.
 - cycle 28 (19:08, 'pp'): PART 5 third pass — D441 stringy-FI capture works at M_s=0.1 M_P (penetration 7.5e-12; slope 2.2× D437); with D439 → toy window M_s ≈ 0.068–0.1 M_P. Result → walls 0.
 - cycle 29 (19:09, tick): PART 6 third pass — D442 FI vacuum test: lock badly designed (float floor > threshold), locked verdict KEEPS; analytic tree-level V_min = 0 (removes D427 piece, not scored); D438 root really 29.6069. WALL 1.
+- cycle 30 (19:13, 'pp'): PART 7 third pass — D443 ACT+Planck β = 0.277±0.057° (4.8σ): 0.28σ from D414 input, c_γ 1.7–4.1; B4 untested. WALL 2.
