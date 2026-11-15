@@ -6573,3 +6573,21 @@ DEEP (locked PREREG_D691; results/epstein_plateau_d691.txt) — SERAPIS-E: plate
 3. Tilted, exact first-order slow roll: n_s = 0.9682 at C = 1.0e-6 / 5.8e-7, n_s = 0.9728 at C = 1.3e-6 / 1.1e-6 (N* = 46.09/49.49); y* = 14.1–14.7; r = (4.2–5.7)e-4; α_s = −(0.89–1.21)e-3. Natural size Im S·Im ρ = 190–420 N.
 VERDICT (locked: n_s 0.965–0.975, y* ≤ 25, |α_s| ≤ 0.009, m_φ ≳ 1e10 GeV, natural moduli): VIABLE on every criterion. For the first time the whole SERAPIS structure — plateau, massive vacuum at a fixed point (ρ, selected by the Epstein minimum), and tilt — follows from string one-loop objects (the Epstein/Eisenstein series of the torus complex structure and the Berg–Haack–Körs Kähler correction with D3s at the half-periods), with no ad-hoc ε: the tilt size is set by Im S·Im ρ ≈ 200–400 N (weak coupling, moderate volume). Horizon exit y* ≈ 14 is far inside the string bound.
 Caveats (stated): the plateau P_E = Ê/(Ê + 1) is still placed in the uplift (X-metric) sector by hand (as all KL constructions); the BHK formula is for T⁶/(Z2×Z2); the N* bracket must be recomputed for the heavy vacuum (matter-like reheating from the start); exact MS spectra and frozen predictions still to do. Post-hoc model, NOT yet frozen.
+
+## D692 (DEEP) — SERAPIS-E: exact Mukhanov–Sasaki spectra and heavy-vacuum N* bracket
+Lock PREREG_D692 (+ DEVIATIONS: line-range typo only). Script theory/modular/serapis_e_exact_d692.py; results field_tests/results/serapis_e_exact_d692.txt.
+N* bracket (estimate): the vacuum at ρ is heavy (m_φ ≈ 2.2e13 GeV, m²/H² ≈ 35), so oscillation is quadratic from the start (w = 0). T_R ∝ m_φ^{3/2} for sterile decays → T_R ≈ 1e6–1e8 GeV → N* ∈ [48.4, 49.9] (the D691 bracket 46.1–49.5 was the light-vacuum/stiff one; superseded for SERAPIS-E).
+Exact results (double-precision E(τ,2), checked: E(ρ,2) = 5.7833593 = D689):
+| C | N* | y* | n_s | r | α_s |
+|---|---|---|---|---|---|
+| 0 | 48.4 / 49.9 | 13.8 / 14.0 | 0.9606 / 0.9617 | 3.75 / 3.54e-4 | −7.9 / −7.4e-4 |
+| 6e-7 | 48.4 / 49.9 | 14.1 / 14.3 | 0.9662 / 0.9675 | 4.32 / 4.11e-4 | −9.0 / −8.6e-4 |
+| 1.0e-6 | 48.4 / 49.9 | 14.2 / 14.5 | 0.9701 / 0.9715 | 4.75 / 4.55e-4 | −9.9 / −9.4e-4 |
+| 1.3e-6 | 48.4 / 49.9 | 14.4 / 14.6 | 0.9731 / 0.9746 | 5.12 / 4.92e-4 | −10.6 / −10.2e-4 |
+Slow roll (D691) agrees with exact to ≤ 0.001 in n_s at matched N*.
+Compare/contrast:
+- vs frozen strip (lock D679): at n_s = 0.970, SERAPIS-E gives r = 4.75e-4, inside the band (4.4–5.3)e-4. SERAPIS-E lies ON the frozen SERAPIS strip — the derived tilt lands where the fitted ε did. Inside caps (D675/D677).
+- vs SERAPIS τ = i (n_s 0.970–0.975, r 4.8–5.7e-4) and ρ (0.969–0.972, r 4.6–5.1e-4): same n_s range for C = (1.0–1.3)e-6, r ~5% lower at equal n_s; α_s the same band (−(9.4–10.6)e-4).
+- vs itself (C = 0, untilted Epstein plateau): n_s ≈ 0.961, r ≈ 3.6e-4 — same as Kairos (0.959–0.961, 3.3–3.7e-4). The Epstein plateau and the j-plateau share the untilted attractor: both are e^{−2√2φ} plateaus.
+- Janus, κ = 1 (tilt ∝ Ê ∝ e^{+2√2φ}, plateau 1 − 1/Ê, so p = q = 2√2): general relation (D669) predicts α_s to 3.5–5% on all four points (D689's 18% offset came from using the wrong p). This is the κ = 1 member of the Janus family working without an offset term.
+VERDICT: SERAPIS-E is exact-spectrum viable and sits on the frozen strip. Target n_s 0.970–0.975 needs C = (1.0–1.3)e-6, i.e. Im S·Im ρ = 15N/(64π⁶C) ≈ 190–245 N. Still post-hoc; next: freeze a SERAPIS-E lock (bands above) and add as the derived branch in the paper.
