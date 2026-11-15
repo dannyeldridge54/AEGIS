@@ -6821,3 +6821,15 @@ Step 1 (health) FAILS for every s tested:
 The metric sign flips as predicted (healthy at the fixed points), but E(τ,s) itself is negative near i and ρ, so K = −c ln E is undefined there, and −c ln(−E) blows up where E changes sign (y ≈ 7–15), a wall across the inflationary region. Reason (exact): the y^{1−s} term carries 2√π Γ(s−½) ζ(2s−1)/Γ(s), and ζ(2s−1) < 0 for ½ < s < 1, so it dominates negatively at moderate y. (s < ½ maps to 1 − s by the functional equation.)
 The boundary s = 1 (Kronecker limit): K = −ln(2y|η(τ)|⁴) is modular-invariant with exactly the hyperbolic metric (ln|η|⁴ is a Kähler transformation), i.e. it IS the covariant completion W = (W0 + fX)η⁻² of D647, whose plateau is the e = 1 rung that D708 found NOT VIABLE (r ≈ 1.3e-3).
 VERDICT: the Epstein-Kähler route is closed for every real s: s > 1 ghost (D717), ½ < s < 1 negative E (this note), s = 1 the known e = 1 rung. Together with the tension wall (D703, D712) and the species route (D707–D709), every mechanism tried for an exact 1/E(τ,2) plateau is excluded or sits on the e = 1 rung. Status: SERAPIS-E's plateau remains an assumed effective term; what is derived is the tilt (BHK), the vacuum at ρ, and the stuck-brane setup. Loop stopped: the next step is a model-building choice (a non-string 6D supergravity bulk with a free tension sign, or accepting the plateau as effective), not another lookup.
+
+## D719 (CHECK, computed) — SERAPIS-E's N* bracket from the matching equation: 0.6 e-folds lower than locked
+Lock PREREG_D719 (AION-locked before running); script theory/modular/nstar_check_d719.py; results field_tests/results/nstar_check_d719.txt.
+Method: Planck 2018 X matching equation, N* = 67 − ln(k/a0H0) + ¼ ln(V*²/(M_P⁴ρ_end)) + (1−3w)/(12(1+w)) ln(ρ_th/ρ_end) − (1/12) ln g*, with w = 0 (heavy vacuum), k = 0.05/Mpc (ln k/a0H0 = 5.404), V* from A_s = 2.1e-9 and the model's r*, ρ_end = 1.5 V_end (V*/V_end = 1.357, y_end = 1.715), C = 1.15e-6, iterated to |ΔN| < 0.01.
+| T_R (GeV) | N* | n_s | r | V*^{1/4} (GeV) |
+|---|---|---|---|---|
+| 1e4 | 46.29 | 0.9696 | 5.18e-4 | 4.88e15 |
+| 1e6 | 47.81 | 0.9713 | 4.95e-4 | 4.82e15 |
+| 1e7 | 48.58 | 0.9720 | 4.85e-4 | 4.80e15 |
+| 1e8 | 49.34 | 0.9728 | 4.75e-4 | 4.77e15 |
+| 1e10 | 50.87 | 0.9743 | 4.56e-4 | 4.72e15 |
+VERDICT (locked rule ±0.5): INCONSISTENT at the low end — the D692 estimate (48.4–49.9 for T_R 1e6–1e8) is 0.6 e-folds too high; the computed bracket is N* = 47.8–49.3. Implied shift at fixed C: Δn_s ≈ −0.0005, Δr ≈ +1.5%. Both stay inside the frozen SERAPIS-E bands (n_s 0.970–0.975, r 4.55–5.12e-4), so lock D693 is NOT retuned; this note is the correction record (D692/D693 N* inputs should read 47.8–49.3). The T_R bracket itself is still an estimate (×m_φ^{3/2} scaling, D692) — next: compute T_R from the sterile decay widths for m_φ ≈ 2.2e13 GeV.
