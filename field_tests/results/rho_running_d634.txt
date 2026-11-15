@@ -1,0 +1,2 @@
+SERAPIS-rho eps=6e-5 N*=47: y*=23.32 n_s=0.9700 alpha_s=-9.53e-04 attractor=-4.51e-04 ratio=2.11
+SERAPIS-rho eps=6e-5 N*=50: y*=24.11 n_s=0.9727 alpha_s=-8.53e-04 attractor=-3.73e-04 ratio=2.29

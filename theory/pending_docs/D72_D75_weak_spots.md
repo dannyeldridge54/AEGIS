@@ -6313,3 +6313,11 @@ Detectability: Δα_s ≈ 5e-4 between two-term SERAPIS and an attractor with th
 - Optimistic 21 cm / spectral-distortion combinations (σ ~ 5e-4): ~1σ.
 - A ~3σ separation needs σ(α_s) ≈ 1.5e-4. A real but long-term discriminator.
 Locked as a forward prediction in PREREG_D633.
+
+## D634 — DEEP (DpL tick 2, 09:11 CT; locked PREREG_D634_RHO_RUNNING; results/rho_running_d634.txt) — SERAPIS-ρ shares the running signature
+Exact MS along Re τ = 1/2, ε = 6e-5:
+- N* = 47: n_s = 0.9700, α_s = −9.5e-4 (attractor −4.5e-4, ratio 2.11), y* = 23.3.
+- N* = 50: n_s = 0.9727, α_s = −8.5e-4 (attractor −3.7e-4, ratio 2.29), y* = 24.1.
+Verdict by the lock: ratio > 2, so SERAPIS-ρ SHARES the D632 signature. α_s does NOT distinguish the i and ρ vacua; it distinguishes "exponential-tilt SERAPIS" (either vacuum) from plain attractors at the same n_s.
+Extends forward line P7 to SERAPIS-ρ as R7: α_s = −(8.5–9.5)e-4, with the same scoring as PREREG_D633.
+Note: candidates (1)/(2) of this tick's prompt were already done manually (D630, D631), and (3) was skipped (< 1 day since D619).
