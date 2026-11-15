@@ -4728,3 +4728,7 @@ duality-fixed minimum (w₀ = −1), not a runaway. Credit the class. The kinati
 
 **DEEP 4 (Danny "Again", 21:06 CT; topic 4 leptogenesis; literature + reasoning; theory/deep/DEEP_topic4.md).** The kination–leptogenesis link is known (0707.1544, 1911.02657);
 credit it. In Twist-M, kination ends (T ~ 1e13 GeV) before M₁ ≈ 3e10–2e11 GeV, and the tracking field shifts H by ~1.5e-4 only. Leptogenesis is unchanged.
+
+**DEEP 5 (Danny "Again", 21:07 CT; topic 5 capture/screening; literature).** No direct prior art for a V-shaped minimum turned up in the screening literature (1011.5909), but on
+reflection D476/D486 amount to 'the field is heavy (3.7e10 GeV) at its minimum'. That is the ordinary heavy-modulus result, not a new screening mechanism, and no novelty is claimed.
+It does mean the conclusion (no fifth force) is robust.
