@@ -17,3 +17,4 @@
 - D685: the F-term branch fails self-consistency (tilt and mass tied; reheating < BBN); ε is located in the non-holomorphic uplift sector.
 - D686: the uplift-sector route to ε (anti-D3 warp factor) — requires a log/threshold correction; hypothesis, labelled.
 - D687: ρ's tilt L is the universal N=2 threshold (shape derived); size needs b ≈ 0.01 — still unexplained.
+- D688: τ = i vs ρ scorecard — ρ better motivated (threshold shape, matter parity), identical observables.

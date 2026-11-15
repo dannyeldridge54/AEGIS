@@ -6530,3 +6530,19 @@ Status of the ε problem after D684–D686: the tilt-and-mass term must come fro
 
 ## D687
 DEEP (analysis + arithmetic; not locked) — shape vs size of the ε term. ρ variant: the tilt L = −ln(2y|η|⁴) is the universal N = 2 one-loop threshold (Dixon–Kaplunovsky–Louis), i.e. the regularised non-holomorphic Eisenstein series E(τ,1) (Kronecker limit formula); numerically L = πy/3 − ln 2y to 6 digits at y = 10–25. So the SHAPE of SERAPIS-ρ's tilt is derived from string one-loop physics; τ = i's I1 = (1/4π)ln(1 + |j − 1728|/1728) is not a standard threshold (closest: Harvey–Moore ln|J(T) − J(U)| at T = U = i, D620–D631). If the threshold enters the uplift energy with a one-loop factor, ε = b/(16π²) × (uplift share of V0 ≈ 1): ε_ρ = 6e-5 needs b ≈ 0.009; ε_i = 1.45e-4 needs b ≈ 0.023 — both ~100× smaller than typical O(1) β-function-type coefficients. So: shape derivable (ρ), SIZE still ~1e-2 unnatural relative to a naive one-loop estimate unless the coefficient is suppressed (e.g. by a small number of contributing N = 2 sectors weighted by a brane-localisation factor). Net: SERAPIS-ρ is the better-motivated vacuum on this criterion. ε thread at a genuine wall: needs an explicit compactification.
+
+## D688
+CENTRE (synthesis, no computation) — τ = i versus ρ after today's results:
+| criterion | τ = i | ρ | source |
+|---|---|---|---|
+| critical point by symmetry, massless plateau vacuum | yes (S) | yes (ST) | D574, D609 |
+| inflationary predictions (n_s, r, α_s, β_s, cap, strip) | identical within ~1–2% | identical | D666, D676, D680 |
+| covariant completion F_τ = 0 | yes | yes | D647 |
+| m3/2 positivity bound | ≲ 2.6e6 GeV | same | D649, D655 |
+| tree A-terms vanish | yes | yes (same stationarity) | D646 |
+| tilt function = standard string threshold | NO (I1; HM-type only at T = U = i) | YES (L = DKL N = 2 threshold) | D687 |
+| matter parity from the centre (covariant) with singlets | NO (needs Γ2 doublets) | YES (all anomaly-free assignments) | D661–D664 |
+| Γ2 flavour structure needed | yes | no | D664 |
+| ε size | 1.45e-4 (b ≈ 0.02) | 6e-5 (b ≈ 0.009) | D687 |
+| paper's frozen τ = i chain (gravitino, reheating) | worked out | carried over (D614) | — |
+Verdict: on the evidence, SERAPIS-ρ is the better-motivated vacuum (derived tilt shape; matter parity without extra flavour structure), with identical observables. The τ = i model has more detailed reheating/baryogenesis work behind it. Reframing the paper around ρ (title currently "...at the square torus...") is a framing decision for Danny; not done.
