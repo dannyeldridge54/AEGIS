@@ -1,0 +1,4 @@
+V*^(1/4)=6.02e+15 GeV, V_end^(1/4)=3.38e+15 GeV, m_min=1.95e+13 GeV
+SERAPIS-1: m=4.00e+13: quadratic term at phi_end = 4.74e+63 vs V_end = 1.31e+62 -> ratio 36.2
+m_min: m=1.95e+13: quadratic term at phi_end = 1.12e+63 vs V_end = 1.31e+62 -> ratio 8.6
+FAIL: quadratic term already exceeds V_end at m_min -> no stiff phase; trade-off is sharp

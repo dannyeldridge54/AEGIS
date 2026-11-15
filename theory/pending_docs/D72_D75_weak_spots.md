@@ -5026,3 +5026,12 @@ Bounds:
 Combined: δ_GS ≤ 6.2; natural values δ_GS = 1–3 give λ_np = 1e-71 to 2e-24. PASS.
 Caveats: the bounds are standard order-of-magnitude ones, and δ_GS depends on the home. A concrete orbifold has to give δ_GS ≲ 6.
 Status: proton protection is now perturbative (D528), anomaly-free (D529) and safe against instantons for δ_GS ≲ 6 (D533). It stays model-level until the orbifold home exists.
+
+## D534 — LEFT + CENTRE (pp 22:22 CT; scored, locked PREREG_D534_STIFF_ROOM; results/stiff_room_d534.txt) — FAIL: no room for stiff reheating
+Question (DEEP 2.4): can SERAPIS get a stiff, kination-like reheating phase, which would raise N* to 56–58 and n_s toward the DESI-including data, while keeping a heavy vacuum?
+Computed: V*^{1/4} = 6.0e15 GeV and V_end^{1/4} = 3.4e15 GeV. Reheating gravitationally to T_RH = 5.5e10 GeV needs m ≥ (T_RH² M_P)^{1/3} = 2.0e13 GeV. Even at that minimum, the quadratic term ½m²φ² at 1 M_P already exceeds V_end, by 8.6×; at SERAPIS-1's own mass, 4e13 GeV, by 36×. So the oscillations after inflation never leave the quadratic region, and there is no stiff phase.
+Verdict: FAIL. The stiff-vs-heavy trade-off is sharp for a self-reheating SERAPIS. Kairos keeps N* = 52–55.6 and n_s = 0.963–0.967 (D518–D520, D526).
+The only escapes (not adopted):
+- a lighter vacuum that reheats through a stronger, non-gravitational coupling (needs a new coupling, and a light modulus brings back fifth-force and moduli issues);
+- an order-one φ_end ≪ M_P geometry (not the SERAPIS-1 shape).
+Consequence: the SERAPIS–Kairos/Chronos fork cannot be closed by reheating. It rests on the CMB-vs-BAO question (D223, McDonough & Ferreira 2512.05108).
