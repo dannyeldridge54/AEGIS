@@ -5855,3 +5855,10 @@ Computed from the exact background:
 Requirement: f_Y(N_end + 1.5) ≤ 4.6e-12, giving R = m_Y/H_end ≳ 137 (interpolated from D592/D594).
 Final bound: m_Y(y_end) ≳ 4.4e14 GeV, m_Y(vacuum) ≳ 7e14 GeV, racetrack A ≳ 3.6e-3, window ≈ ×140.
 The LSP problem (D591) is resolved within the toy, with comfortable margin.
+
+## D596 — DEEP (Ddl 08:06 CT; reasoning + arithmetic, not locked) — the toy coefficient c is fixed by supergravity: c = √2, a negligible change
+- With K ⊃ −ln(Y + Ȳ), the inflaton potential carries the overall factor e^{K_Y} = 1/(2 Re Y). The canonical dilaton is σ, with dY/dσ = √2·Y₀ (K_YȲ = 1/(4Y₀²)).
+- So ∂_σV_inf = −√2·V_inf. The Hubble-induced shift is d = √2·V/m², i.e. c = √2 (D592 assumed c = 1).
+- Since f_Y ∝ c² = 2 and f ∝ R^{−20} near R ~ 140 (D594 slope), the requirement moves R by a factor 2^{1/20} = 1.035: R ≳ 142. Negligible.
+- Hubble-induced MASS terms (c_H H²σ²) would add to m_Y during inflation; they help adiabaticity. They are not included.
+Final: m_Y(vacuum) ≳ 7e14 GeV; racetrack A ≳ 3.7e-3; window ≈ ×140. The c caveat on D592/D594/D595 is CLOSED.
