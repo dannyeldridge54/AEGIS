@@ -5655,3 +5655,21 @@ Reading:
 - The window is fixed from three sides: below by leptogenesis (and n_s), above by home-safety. The surviving model is therefore sharp: r ≈ 4–5e-4 is a firm target.
 - But it needs a ~30%-tuned small parameter with no known origin.
 - Future test: CMB-S4/LiteBIRD-class σ(r) ≈ 1e-4 would detect r ≈ 4.5e-4 at about 4σ. Excluding r > 2e-4 would kill two-term SERAPIS.
+
+## D582 — DEEP (Ddl 07:46 CT; literature + arithmetic estimates, not locked) — the axion partner Re τ is massless during inflation (as KL warn), but in two-term SERAPIS it leaves no observable isocurvature
+Literature:
+- Carrasco, Kallosh, Linde, Roest, "Axion stabilization in modular cosmology", arXiv:2503.14904 (9 Jun 2025; new to our notes).
+  - In unstabilized SL(2,Z) attractors the θ = Re τ potential is "almost exactly flat" during inflation, which they say produces large axion isocurvature perturbations.
+  - Their fix adds A‖j − j̄‖² inside the log, giving valleys at θ = k/2.
+- KL 2408.05203 §7: V_θ and V_θθ are double-exponentially suppressed at large φ.
+Our case (estimates; arithmetic in code):
+- The x-dependence of |j − 1728| at y* = 24.5 is ~1488·e^{−2πy} = 2e-64. θ is massless during inflation, as warned.
+- Geometric destabilisation (α = 1/3, field-space curvature R = −8): εR ≈ −2.3e-4. Its growth over ~50 e-folds is ≤ e^{0.004}, which is negligible.
+- Fluctuation: δx_rms ≈ √2·y*·H/(2π) = 1.2e-5 (H/M_P = 2.2e-6). It stays frozen to the end of inflation; even at y_end = 2.8, the x-dependence is only 3e-5.
+- Conversion to curvature: V is symmetric under x → −x (the CP map τ → −τ̄), so δN starts at second order in δx. That gives δN ~ δx² ~ 1e-10, against ζ ≈ 5e-5, so it is negligible.
+- After inflation:
+  - The Hessian at τ = i is isotropic (D574: the Re and Im directions have equal mass), so θ joins the vacuum oscillation.
+  - The energy fraction in the axial mode is ~(δx/Δy)² ≈ 4e-11. Even with different CP-odd decay channels, the modulated-reheating isocurvature is ~1e-11, far below Planck's limits.
+  - No separate axion relic survives, since it decays with the inflaton.
+Verdict: KL's isocurvature warning applies when the axion survives as a separate component or the potential lacks the CP symmetry. For two-term SERAPIS, which has a CP-symmetric path and an isotropic massive vacuum at i, the isocurvature is ≲ 1e-10 (estimate). No stabilisation term is needed.
+Caveat: estimates, not a two-field numerical run. A locked two-field δN computation would confirm this.
