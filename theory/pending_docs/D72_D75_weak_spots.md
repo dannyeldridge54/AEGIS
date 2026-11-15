@@ -4813,3 +4813,11 @@ involve all U's (need a flux choice leaving U₃ for the Twist superpotential), 
 **D509 (Twist-M-L cycle 4; reasoning) — where the cliff comes from if A = U₃.** IIB D-instantons depend on Kähler moduli, not U, so the exponential cliff e^{−n(...)} in U₃ must come from
 large-complex-structure (mirror world-sheet-instanton-type) corrections to the flux superpotential, ~e^{2πiU}, the mirror of the IIA worldsheet instantons. A cliff with n ≈ 234 ≈ 2π × 37 then
 needs a ~37-fold charge or winding. That is consistent in size with D502's τ_c ≈ 40 if the 'one cycle' is the mirror 3-cycle. Not computed; flagged.
+
+**D510 (Twist-M-L cycle 5; literature anchor).** Toroidal IIB orientifolds with partial flux stabilisation leaving some complex-structure moduli flat are discussed in the classic
+programme (hep-th/0506090 'Moduli stabilization in type IIB orientifolds (I)'; also 2004.04518, 2212.02533). This makes D508's requirement (fluxes leave U₃ for the Twist superpotential)
+plausible, but it was not verified in a specific model this tick. Open.
+
+**D511 (Twist-M-L cycle 6; arithmetic in code; results/lens_d511_neff.txt) — ΔN_eff for Twist-M-L.** With no FI hidden sector (case ii), the hidden-bath term of D463 is absent: ΔN_eff = 0.047
+(gravitino) + 0.005–0.021 (KK) = 0.052–0.068, a 1.7–2.3σ hint at CMB-S4 (σ ≈ 0.03, approximate). Slightly lower than Twist-2's 0.065–0.081 (D485), so ΔN_eff could in principle separate
+the variants. Result (estimate).

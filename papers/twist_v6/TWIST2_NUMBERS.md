@@ -59,3 +59,4 @@
 | DM | 100–200 TeV carries over (bremsstrahlung-dominated) | D503r |
 | Open | case-(i) capture run (D500, running); orbifold embedding with exact duality (DEEP 11); proton protection | D500, DEEP 11, D504 |
 | Prior art to credit | modular inflation; quintessential inflation; fixed-point trapping; modular quintessence (hilltop, w₀≈−0.8); exponentially small Λ; PIDM | DEEP 1–9 |
+| Twist-M-L (split/lens, D505–D511) | A dark duality field + heavy SM modulus B ≳ 100 TeV; β_eff < m_A/m_B ≤ 2e-28; home A = U₃ (unwrapped torus shape); ΔN_eff 0.052–0.068 | D505–D511 |
