@@ -4552,3 +4552,10 @@ roughly as m_s² r^{4/3}. Post-lock reading (not scored): (i) for a gravity-medi
 annihilation at all, so D445–D447's removal conditions are not needed in that case; (ii) for m_s ≳ GeV the remnant exceeds DM and must annihilate, but with
 ε_h this small the hidden bath is very cold (ξ ~ 0.02 or less) and D455's thermalisation threshold rises as ξ^{-1/2}. That case needs re-checking with the actual ξ.
 CENTRE: balanced; F7 margin improves; F5 for m_s ≳ GeV flagged for a re-check.
+
+**D468 (cycle 53, "pppp"; PART 8/5; scored, locked PREREG_D468_COLD_BATH; results/cold_bath_d468.txt) — OK in both cold-bath cases: the D467 flag is
+cleared.** m = 1 GeV (ξ = 1.7e-3): λ_th = 0.002; holding the relic to ≤ 1% of DM needs λ ≥ 0.006 (thermal, perturbative). The 100% value lies below the scanned
+λ = 1e-4 (no root), i.e. any λ ≥ 1e-4 gives less than all of DM. m = 1e4 GeV (ξ = 0.024): λ_th = 0.006, λ(100%) = 0.60, λ(1%) = 2.0, so it is thermal and
+perturbative. The colder bath lowers the λ needed (0.60 vs D447's 0.91 at ξ = 0.10), which more than offsets the higher thermalisation threshold. Note on the
+verdict logic: the NaN in the 1 GeV case fell through to 'OK', which is correct here (the 1% condition is the binding one). CENTRE: F5 passes for every m_s
+tested (eV: no annihilation needed, D467; GeV–10 TeV: λ ≈ 0.006–2).

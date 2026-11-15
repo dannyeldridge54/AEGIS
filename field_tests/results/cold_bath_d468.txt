@@ -1,0 +1,2 @@
+m=1e+00: xi=1.66e-03, lambda_th=0.002, lambda(100%)=nan, lambda(1%)=0.006 -> OK; injected rho/s=7.9e-02 vs DM 4.3e-10
+m=1e+04: xi=2.43e-02, lambda_th=0.006, lambda(100%)=0.596, lambda(1%)=2.018 -> OK; injected rho/s=3.6e+03 vs DM 4.3e-10
