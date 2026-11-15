@@ -1,4 +1,4 @@
-# AEGIS: current state (15 Nov 2026, 15:45 CT). Read before working.
+# AEGIS: current state (15 Nov 2026, 16:25 CT). Read before working.
 
 ## Active line: SERAPIS v3 / v3.1 (modular inflation)
 - Paper: repo `papers/v3/serapis_v3.tex` (12 pp; v3.1 draft adds Sec. X SERAPIS-E). Zenodo v3 published, DOI 10.5281/zenodo.24250733; v3.1 NOT yet uploaded (needs Danny's "Publish").
@@ -13,9 +13,9 @@
 - Pending Danny actions: Zenodo v3.1 "Publish"; outreach emails (4 drafts in papers/v3/drafts/outreach/, not sent); arXiv endorsement/submission.
 
 ## Tools (work order, 15 Nov)
-- Done: AION pre-registration kit (tools/aion), Inflation Scorecard + Janus (tools/scorecard), SERAPIS tracker (tools/tracker → docs/tracker), D-note index + claim script (tools/dnotes; next D in theory/pending_docs/NEXT_D.txt), docs/INVENTORY.md, CI (.github/workflows/tools.yml, green), TorsionΛ audit D715 (β ≡ Ω_m rescaling; H0=73 case fails Planck priors; README limits text in docs/torsionlambda/), sky-map plan docs/SKY_MAP_PLAN.md (awaiting approval).
+- Done: AION pre-registration kit (tools/aion), Inflation Scorecard + Janus (tools/scorecard), SERAPIS tracker (tools/tracker → docs/tracker), D-note index + claim script (tools/dnotes; next D in theory/pending_docs/NEXT_D.txt), docs/INVENTORY.md, CI (.github/workflows/tools.yml, green), TorsionΛ audit D715 (β ≡ Ω_m rescaling; H0=73 case fails Planck priors; README limits text in docs/torsionlambda/), sky-map plan approved; AEGIS Sky Map 1.0.0 built in apps/skymap (release zip via tools/package_release.py; AEGIS layers need export_from_sweep.py run on Danny's PC; public hosting needs his OK). Tools dual-licensed AGPL-3.0 or commercial ($500/$2,500/$10k+).
 - Pre-SERAPIS material moved to archive/ (15 Nov).
-- Pending Danny: licence for tools; approve sky-map plan; push access/consent to update torsion-lambda-toolkit README.
+- Pending Danny: run skymap export on PC; OK for public hosting (GitHub Pages); push access/consent to update torsion-lambda-toolkit README.
 
 ## Older line (Twist v5, 14 Nov) — kept for reference
 Source of truth v5.3 on Zenodo (DOI 10.5281/zenodo.24226521). TWIST-I: N* 56.7, n_s 0.9648, r 0.0037 (D387); gaps n_s HIGH (3.0σ SPA+DESI), birefringence HIGH; next: D367 stiff integrator, D390 χ trapping.
