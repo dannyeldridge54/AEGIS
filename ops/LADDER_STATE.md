@@ -60,4 +60,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 12 (18:10, 30-min pace): PART 1 second pass — D422 decay products heavy (5e5–1e9 GeV), must decay to SM; ΔN_eff prediction → 0.02–0.06 (correction to paper v1). Result → walls 0.
 - cycle 13 (18:13, 'pp'): PART 2 second pass — D423 Route A leaves 219 e-folds (need 57.2): safe; field range from slow-roll start to capture 24.8 M_P (flag). Result → walls 0.
 - cycle 14 (18:16, 'pp'): PART 3 second pass — D424 kination GW peak 5.6e-16 at ~1e7 Hz, ΔN_eff ~1e-10: safe, undetectable. Result → walls 0.
-- cycle 15 (18:18, 'pp'): PART 4 second pass — D425 ψ→L H decays conserve L, need only y' ≳ 1e-14–5e-13; leptogenesis unaffected. WALL 1.
+- cycle 15 (18:18, 'pp'): PART 4 second pass — D425 ψ→L H decays conserve L, need only y' ≳ 2e-16–1e-14; leptogenesis unaffected. WALL 1.

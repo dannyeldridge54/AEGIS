@@ -4184,7 +4184,7 @@ Result → walls 0.
 **D425 (cycle 15, "pp"; second pass PART 4 leptogenesis, LEFT/RIGHT; consistency estimate in code, no new locked computation) — D422's new
 requirement does not disturb leptogenesis.** If the heavy decay products ψ (m_ψ ≈ 5×10⁵–10⁹ GeV) decay through W ⊃ y' ψ L H with ψ carrying
 lepton number +1 (vector-like lepton partner), the decays conserve L and cannot wash out the N₁ asymmetry. Decaying before BBN (T = 1 MeV,
-H = 2.2×10⁻²⁴ GeV) needs only y' ≳ 1×10⁻¹⁴ (m_ψ = 10⁹ GeV) to 5×10⁻¹³ (5×10⁵ GeV), so any natural y' works; their energy share ≲ 4×10⁻⁴ of radiation
+H = 2.2×10⁻²⁴ GeV) needs only y' ≳ 2×10⁻¹⁶ (m_ψ = 10⁹ GeV) to 1×10⁻¹⁴ (5×10⁵ GeV) (computed), so any natural y' works; their energy share ≲ 4×10⁻⁴ of radiation
 (D396) means no entropy dilution (D ≈ 1, leptogenesis still needs only 0.87×10⁻¹⁰). Mixing with SM leptons is ~y' v_EW/m_ψ ≪ 10⁻³, so
 lepton-flavour and neutrino-mass effects are negligible. (b) CONNECTIONS: part 1 (D422), part 3 (T_RH), part 9 (gravitino-safe T_RH).
 (c) CENTRE: F2/F3 unchanged. No scored result → WALL 1 (at 30-min pace).
