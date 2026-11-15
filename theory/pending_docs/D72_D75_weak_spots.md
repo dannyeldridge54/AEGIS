@@ -5124,3 +5124,13 @@ Referee caveat (D537/v2.1 §4): a non-zero ⟨W⟩ breaks the R-symmetry. What i
 - dim-5 (QQQL, UUDE): reappear with M_eff ~ M_P²/m₃/₂. For gauge-mediated m₃/₂ = 1.7–4.7 eV (D474) this gives M_eff ≈ 1.3–3.5e45 GeV; even m₃/₂ = 100 TeV gives 5.9e31 GeV. The bound M_eff ≳ 1e24 GeV is met by more than 7 orders of magnitude.
 - dim-6 Kähler (QQU†E†, QLU†D†): an R-charge mismatch of 2 can be filled by one ⟨W⟩ insertion, giving an extra suppression ~ m₃/₂/M_P, which is negligible. A mismatch of 1 or 3 (mod 4) cannot be filled at all, so the operator stays forbidden.
 Verdict: proton protection survives SUSY breaking and the Λ uplift as long as m₃/₂ ≲ 1e5 GeV, which covers every Twist realisation. The referee's caveat is resolved at the order-of-magnitude level. Not yet written into the published v2.1; it goes into a future version.
+
+## D543 — LEFT (pp 22:36 CT; reasoning, not scored) — j^(−7/12) is multi-valued around ρ: the "wall" is a branch point of W (a D537-type check, done off-axis)
+Lesson from D537 applied to the other fractional factor. Near ρ, j ∝ (τ − ρ)³, so j^(−7/12) ∝ (τ − ρ)^(−7/4). Equivalently j^(−7/12) = (E₄/η⁸)^(−7/4), and E₄ has a simple zero at ρ.
+So F = η⁻²H is not single-valued around ρ: going once around ρ multiplies it by e^(−7πi/2) = i. The factor ln(j/1728)+κ adds more branch points, where j = 0 (at ρ) and where ln(j/1728) = −κ.
+What this means:
+- V = e^K|F|² contains |j|^(−7/6), which IS single-valued. The plateau and vacuum numbers along the imaginary axis are unaffected, since the path never circles ρ.
+- But W must be holomorphic and single-valued on field space for a consistent supergravity. SERAPIS-1 is only well-defined on the upper half plane with branch cuts from ρ and its images. The "wall at ρ" is really a singularity of W, not a smooth repulsive feature.
+- Compare the CFILQ class, where n is an integer so j^(n/3) = (E₄/η⁸)^n is single-valued: D535's "outside the class" is not only about stringy origin but also about global consistency.
+Verdict: SERAPIS-1 is a LOCAL effective model, valid in a region that avoids the branch cuts (the cusp-to-i path is inside it), not a global modular supergravity. The predictions along the path are unchanged.
+Paper wording to fix in the next version: "j^(−7/12) makes τ = ρ a wall" should read "a branch point of W; the model is defined away from cuts from ρ". It does not affect the published numbers. Self-check run off-axis as D537's lesson requires; no other fractional factor is left unchecked.
