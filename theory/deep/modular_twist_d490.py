@@ -1,12 +1,12 @@
 import math
 from scipy.optimize import brentq
 m2=4/math.pi; k=math.sqrt(1.5)   # phi = k ln x
-def lnG(x,n,e): return math.log(x+e)-0.5*math.log(1+x)-n*(1-math.exp(-x/m2))
+def lnG(x,n,e): return math.log(x+e)-0.5*math.log(1+x)-n*(1-math.exp(-x/m2))   # D1: G = (x+eps)/sqrt(1+x) cliff
 def lnF(x,n,e,sym):
     a=lnG(x,n,e)
     if not sym: return a
-    b=3*math.log(x)+lnG(1/x,n,e); M=max(a,b); return M+math.log(math.exp(a-M)+math.exp(b-M))
-def lnV(u,n,e,sym): x=math.exp(u); return 2*lnF(x,n,e,sym)-3*math.log(2*x)
+    b=2*math.log(x)+lnG(1/x,n,e); M=max(a,b); return M+math.log(math.exp(a-M)+math.exp(b-M))   # D1: F(1/x)=F(x)/x^2
+def lnV(u,n,e,sym): x=math.exp(u); return 2*lnF(x,n,e,sym)-math.log(4*x*x)   # D1: V=|F|^2/(4x^2)
 def d1(u,*p,h=1e-5): return (lnV(u+h,*p)-lnV(u-h,*p))/(2*h)/k          # (V'/V) in phi
 def d2(u,*p,h=1e-4): return ((lnV(u+h,*p)-2*lnV(u,*p)+lnV(u-h,*p))/h**2)/k**2   # (lnV)''
 def obs(n,e,sym,N=57.2):
@@ -24,9 +24,9 @@ def obs(n,e,sym,N=57.2):
     g=d1(u,n,e,sym); h=d2(u,n,e,sym)
     epsv=0.5*g*g; eta=h+g*g          # V''/V = (lnV)'' + (lnV')^2
     return math.exp(u), 1-6*epsv+2*eta, 16*epsv
-print("(0) control, original Twist n=124.1:")
+print("(0) control, original Twist n=125.0:")
 for e in (0.0,3.04e-7):
-    print(f"   eps={e}: x*, n_s, r =", obs(124.1,e,False))
+    print(f"   eps={e}: x*, n_s, r =", obs(125.0,e,False))
 print("(i) symmetry check:", max(abs(lnV(u,200,0,True)-lnV(-u,200,0,True)) for u in (0.3,1.7,3.4,6.0,9.0)))
 for e in (0.0,3.04e-7):
     def gap(n):
