@@ -9,3 +9,4 @@
 - General closed form for β_s (D671), <1% on singular T-models.
 - κ = 1/n for modular log-tilts; (n_s, r, α_s) measures the plateau power n (D672).
 - Janus curve in closed form from (N*, ε); string bound caps n_s ≤ 0.984, r ≤ 8.2e-4 for any ε (exact D674, frozen D675; D673's 0.978 was the N* = 47.6 value only).
+- ρ cap computed (D676) — same as τ = i; combined family-wide cap frozen (D677): n_s ≤ 0.985, r ≤ 8.3e-4.

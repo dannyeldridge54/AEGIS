@@ -6492,3 +6492,6 @@ NEW BOUND: horizon exit inside the string bound (y* ≤ 25) caps x ≤ 0.67 at N
 ## D674
 DEEP (locked PREREG_D674; results/exact_cap_d674.txt) — exact cap from the string bound. Secant on ε for exact y* = 25: N* = 46.08 → ε_max = 2.84e-4, n_s = 0.9836, r = 8.20e-4, α_s = −1.17e-3; N* = 49.21 → ε_max = 2.04e-4, n_s = 0.9795, r = 6.10e-4, α_s = −9.6e-4. ε_max lies above the D602 window (1.3–1.6e-4): the window is set by the n_s data cut, the cap by the string bound. Frozen as D675 (n_s ≤ 0.984, r ≤ 8.2e-4 for any ε).
 D673a CORRECTION: D673 quoted the cap at N* = 47.6 only (n_s ≲ 0.978) and estimated "±0.002 across N* 46–49"; the exact cap varies 0.9795–0.9836, i.e. smaller N* allows a larger ε at y* = 25 and a higher n_s. The family-wide statement is n_s ≲ 0.984, not ≲ 0.978/0.980.
+
+## D676
+DEEP (locked PREREG_D676; results/rho_cap_d676.txt) — exact ρ cap: N* = 46.09 → ε_max = 1.42e-4, n_s = 0.9844, r = 8.30e-4, α_s = −1.18e-3; N* = 49.49 → ε_max = 9.97e-5, n_s = 0.9797, r = 6.01e-4, α_s = −9.6e-4. Essentially identical to τ = i (D674). Combined frozen cap D677: n_s ≤ 0.985, r ≤ 8.3e-4 for the whole home-safe family, both vacua, any ε. (Note: ρ's ε window 6e-5 sits well below its ε_max ≈ 1.0–1.4e-4, like τ = i.)
