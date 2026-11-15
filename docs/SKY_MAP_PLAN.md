@@ -1,4 +1,6 @@
-# Plan: one interactive AEGIS sky map (Job 9 — for Danny's approval)
+# Plan: one interactive AEGIS sky map (Job 9 — approved 15 Nov 2026)
+
+**Status (15 Nov, 16:20 CT): v1.0.0 built** in `apps/skymap/` — Aladin Lite sky with 8 surveys, constellations, 378 named stars, 110 Messier objects, Sun/Moon/planets for any date and place, 10-stop tour, 6 lessons + 3 activities, AEGIS flags layer with local reviews and CSV export, installable (PWA), launchers for Windows/Mac/Linux, release zip, browser + export tests. Phase A's export script is written and tested on synthetic tiles; it must be run on Danny's PC to fill the AEGIS layers. Not yet: merging Cosmos Atlas hunts and Sky Pointer (phase C), public hosting (needs Danny's OK).
 
 **Goal:** a free web map that anyone (students, people at home) can open in a browser to explore the sky that
 AEGIS has surveyed, see what the Star Mapper flagged, and help check it. Plan only; nothing gets built until you approve.

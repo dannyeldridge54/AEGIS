@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AEGIS Sky Map</title>
+<meta name="description" content="A free interactive map of the whole sky for classrooms and curious people: real telescope surveys, constellations, planets tonight, guided tours and the AEGIS Gaia star survey.">
+<meta name="theme-color" content="#0b1020">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<a class="skip" href="#panel">Skip to controls</a>
+<header class="bar" role="banner">
+  <div class="brand"><img src="icons/icon.svg" alt="" width="28" height="28"><span>AEGIS Sky Map</span></div>
+  <form class="search" id="searchForm" role="search" autocomplete="off">
+    <label for="search" class="sr">Find a star, planet, constellation or object</label>
+    <input id="search" type="search" placeholder="Find: Orion, M31, Mars, Betelgeuse…" list="searchList" enterkeyhint="go">
+    <datalist id="searchList"></datalist>
+    <button type="submit" aria-label="Go">Go</button>
+  </form>
+  <nav class="tabs" aria-label="Panels">
+    <button data-tab="layers" aria-controls="panel">Layers</button>
+    <button data-tab="tonight" aria-controls="panel">Tonight</button>
+    <button data-tab="tour" aria-controls="panel">Tour</button>
+    <button data-tab="learn" aria-controls="panel">Learn</button>
+    <button data-tab="aegis" aria-controls="panel">AEGIS stars</button>
+    <button data-tab="about" aria-controls="panel">About</button>
+  </nav>
+  <button id="bigText" class="toggle" aria-pressed="false" title="Larger text for classrooms">A+</button>
+</header>
+
+<main id="main">
+  <div id="sky" aria-label="Interactive sky view. Drag to move, scroll or pinch to zoom."></div>
+  <div id="fallback" class="fallback" hidden>
+    <h2>The sky view needs WebGL 2</h2>
+    <p>This browser or computer cannot draw the sky. Try an up-to-date Chrome, Edge, Firefox or Safari, or turn on hardware acceleration. The Tonight, Tour and Learn panels still work.</p>
+  </div>
+  <div id="netNote" class="note" hidden>Telescope images load from the internet (CDS Strasbourg). You are offline or the image server is blocked, so only the drawn layers are shown.</div>
+
+  <aside id="panel" class="panel" aria-live="polite" hidden>
+    <div class="panel-head"><h2 id="panelTitle">Layers</h2><button id="closePanel" aria-label="Close panel">×</button></div>
+    <div id="panelBody"></div>
+  </aside>
+
+  <section id="info" class="info" hidden aria-live="polite">
+    <button id="closeInfo" class="x" aria-label="Close details">×</button>
+    <div id="infoBody"></div>
+  </section>
+</main>
+
+<footer class="status" id="status">Drag to look around · scroll or pinch to zoom · click anything for details</footer>
+
+<script src="vendor/astronomy.browser.min.js"></script>
+<script type="module" src="js/main.js"></script>
+<noscript><p class="fallback">The AEGIS Sky Map needs JavaScript.</p></noscript>
+</body>
+</html>

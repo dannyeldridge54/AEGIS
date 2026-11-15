@@ -1,9 +1,9 @@
 name: tools
 on:
   push:
-    paths: ["tools/**", ".github/workflows/tools.yml"]
+    paths: ["tools/**", "apps/skymap/**", ".github/workflows/tools.yml"]
   pull_request:
-    paths: ["tools/**"]
+    paths: ["tools/**", "apps/skymap/**"]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -19,6 +19,6 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: pip install ./tools/aion ./tools/scorecard pytest
       - run: git config --global user.email ci@example.com && git config --global user.name ci
-      - run: pytest -q tools/aion/tests tools/scorecard/tests tools/tracker/tests
+      - run: pytest -q tools/aion/tests tools/scorecard/tests tools/tracker/tests apps/skymap/tests/test_export.py
       - run: aion check --repo .
       - run: python tools/tracker/track.py --out /tmp/tracker
