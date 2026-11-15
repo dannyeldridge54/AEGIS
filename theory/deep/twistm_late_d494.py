@@ -24,3 +24,21 @@ w0=w(Nt); wa=(w(Nt-math.log(2))-w0)/0.5
 print(f"D495: today N={Nt:.2f} (assumed 63.5 before), x={math.exp(s.sol(Nt)[0]/k):.5f}, w0={w0:+.4f}, wa={wa:+.4f}, Omega_x(rec)={Ox(Nt-math.log(1100)):.2e} ->", "LAMBDA-LIKE" if abs(1+w0)<0.01 and abs(wa)<0.05 else "NOT LAMBDA-LIKE")
 Ns=[0.01*i for i in range(1001)]; kin=[s.sol(N)[1]**2 for N in Ns]; dk=sum(0.01 for v in kin if v>0.5)
 dN=0.5*(dk-1.5); print(f"D496: kination length {dk:.2f} e-folds (D391 assumed 1.5) -> dN* = {dN:+.2f}, n_s shift ~ {2*dN/57.2**2:+.1e}")
+# --- D497/D498 (appended after lock PREREG_D497_D498_TWISTM) ---
+gs=106.75; T_end=(30*0.0075*Vs/(math.pi**2*gs))**0.25; xs=6.58e-5; a=1/(2*xs)
+best=(1e99,None)
+for N in [0.01*i for i in range(2001)]:
+    x=math.exp(s.sol(N)[0]/k); T=T_end*math.exp(-N); r_=MP/(a*x)/T
+    if r_<best[0]: best=(r_,N,x,T)
+print(f"D497: a={a:.0f}, T_end={T_end:.2e} GeV, min m_KK/T={best[0]:.2f} at N={best[1]:.2f} (x={best[2]:.2f}, T={best[3]:.2e}) ->", "PASS" if best[0]>=3 else "FAIL")
+Na=next(N for N in [Nt-0.001*i for i in range(60000)] if abs(math.exp(s.sol(N)[0]/k)-1)>0.01)   # last time outside 1%, scanning back from today
+phi,x1,ly=s.sol(Na); dp=math.sqrt(6)*abs(x1)
+y2=math.exp(2*ly); Hrel=None
+# H from Omega_V: V/(3H^2 M_P^2)=y2 -> H^2 = V/(3 y2 M_P^2); V(x) = V_* * exp(lnV(x)-lnV(x*))
+Vx=Vs*math.exp(M.lnV(phi/k,n,e,True)-M.lnV(math.log(xs),n,e,True)); H=math.sqrt(Vx/(3*y2))/MP
+c=math.sqrt(2/3); xdot=c*1.0*H*dp; zp=2.4694e-3; g=0.7; Vol=(2*a*1.0)**1.5; Ms=0.5**0.25*math.sqrt(math.pi/Vol)*MP
+R=g*g*zp*Ms**2*xdot; m2=(R/2)**(2/3); Vres=m2*m2/g**2*0+ (1.0)  # placeholder removed below
+ms=1e-9
+Vres=ms**2*m2/g**2; T=(30*(3*H*H*MP*MP)/(math.pi**2*gs))**0.25
+share=Vres/(3*H*H*MP*MP)
+print(f"D498: arrival N={Na:.2f}, |dphi/dN|={dp:.2e}, H={H:.2e} GeV, M_s={Ms:.2e} GeV, residual share (m_s=1 eV)={share:.1e}; (m_s=1e4 GeV: {share*1e26:.1e}) ->", "NO REMNANT PROBLEM" if share*1e26<1e-20 else "CHECK")

@@ -1,3 +1,5 @@
 D494: V_*=4.95e+63 GeV^4, Lambda/V_*=5.05e-111, n=234.054 (was 233.90)
 D495: today N=64.40 (assumed 63.5 before), x=1.00004, w0=-1.0000, wa=+0.0001, Omega_x(rec)=1.68e-04 -> LAMBDA-LIKE
 D496: kination length 3.28 e-folds (D391 assumed 1.5) -> dN* = +0.89, n_s shift ~ +5.4e-04
+D497: a=7599, T_end=1.01e+15 GeV, min m_KK/T=3.41 at N=4.31 (x=6.89, T=1.36e+13) -> PASS
+D498: arrival N=60.90, |dphi/dN|=2.18e-02, H=1.53e-40 GeV, M_s=2.65e+15 GeV, residual share (m_s=1 eV)=2.5e+15; (m_s=1e4 GeV: 2.5e+41) -> CHECK

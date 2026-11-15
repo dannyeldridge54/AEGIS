@@ -4685,3 +4685,13 @@ fast hit, which suggests the non-adiabatic φ remnant of D444–D447 is absent (
 63.5 − ln 3400 while 'today' came out at N = 64.40, so z_eq in this run is ~8000, not 3400. The late-time w is insensitive to that, but Ω_x(rec) carries a factor-~2 uncertainty.
 **D496:** kination lasts 3.28 e-folds (D391 assumed 1.5), so N* rises by ≈ +0.89 and n_s by ≈ +5.4e-4. The fitted ε of D491 must be lowered slightly (re-fit pending), and
 r stays ≈ 0.0045.
+
+**D497 (Twist-M M6; scored) — PASS:** with a = 7599 (𝒱 = 1 at x* = 6.6e-5), the KK tower stays above the plasma: min m_KK/T = 3.4 at N = 4.3 (x = 6.9, T = 1.4e13 GeV),
+during the overshoot. Marginal, like D453 (the same ~3–6 band).
+**D498 (Twist-M M7; scored; locked verdict 'CHECK') — the FI sector and the tracker picture are INCOMPATIBLE as they stand; this is a real tension.** The remnant formula
+gave a residual 'share' of 2.5e15, which is impossible, and the reason matters. With M_s = 2.7e15 GeV (𝒱(1) = 1.2e5), the FI condensate's soft energy away from the root,
+m_s²|ζ|M_s² ~ 7e12·|ζ| GeV⁴ even for an eV soft mass, dwarfs the tracker's energy (ρ ~ 1e-43 GeV⁴ near arrival). So if the FI sector exists, D492's history (which
+left it out) is wrong: the FI soft slope would grab the field and pin it at x = 1 early, as in the original capture, bringing back the bounce/remnant issues (D444–D468) for
+re-check. If the FI sector does not exist, D493's fifth force is unscreened. Twist-M therefore needs ONE of: (i) FI present → recompute the capture with x_E = 1 (the D446 machinery
+applies; the remnant conditions return); (ii) no FI, with another fifth-force suppression (β ≲ 3e-3 for the volume modulus, i.e. matter not coupling through the volume, or a
+different screening). D492's self-relaxation result stands only for case (ii).
