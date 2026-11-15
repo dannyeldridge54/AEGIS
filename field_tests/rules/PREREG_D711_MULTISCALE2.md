@@ -1,0 +1,5 @@
+# PREREG D711: multi-scale tests, round 2 (Tests 11–13), 15 Nov 2026
+Locked before computing. Script theory/modular/multiscale2_d711.py. Same model inputs and scoring as PREREG_D707_MULTISCALE (D710).
+T11 Lyα, DESI DR1 P1D (2601.21432, verified): Δ²* = 0.379 ± 0.032, n* = −2.309 ± 0.019 at k* = 0.009 s/km, z = 3; joint α_s = 0.0014 ± 0.0041 (P1D + DESI BAO + Planck/ACT/SPT). Same CAMB set-up as D710 T4; pulls for ΛCDM-P18 and SERAPIS low/mid/high. Question: does the eBOSS tension (D710 T2b/T4) survive in DESI?
+T12 S8 = σ8 (Ω_m/0.3)^0.5 from CAMB (same set-up, A_s fixed at 2.1e-9 at 0.05/Mpc) for ΛCDM-P18 and SERAPIS; compare with HSC+BOSS 0.8294 ± 0.0110 (Luo et al. 2025, quoted in 2602.12238, verified) and CMB 0.836 ± 0.0125 (same source); report ΔS8(SERAPIS − ΛCDM). Note: A_s fixed, so this isolates the primordial-tilt effect.
+T13 N_eff: prediction 3.044 (no dark radiation: T_R 1e6–1e8 GeV, gravitinos decay before BBN, D651) vs ACT DR6 2.86 ± 0.13 (2503.14454 abstract; combination not stated in the excerpt).
