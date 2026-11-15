@@ -5673,3 +5673,16 @@ Our case (estimates; arithmetic in code):
   - No separate axion relic survives, since it decays with the inflaton.
 Verdict: KL's isocurvature warning applies when the axion survives as a separate component or the potential lacks the CP symmetry. For two-term SERAPIS, which has a CP-symmetric path and an isotropic massive vacuum at i, the isocurvature is ≲ 1e-10 (estimate). No stabilisation term is needed.
 Caveat: estimates, not a two-field numerical run. A locked two-field δN computation would confirm this.
+
+## D583 — DEEP (DpL tick 2, 07:48 CT; literature + arithmetic estimates, not locked) — the gravitino problem: generic modulus decay overproduces gravitinos; the residual symmetry at τ = i is the natural cure
+Literature: Endo, Hamaguchi, Takahashi / Kawasaki et al., hep-ph/0611166 (eqs. 2–7): Γ(φ → 2ψ₃/₂) ≃ |G_eff|² m_φ⁵/(288π m₃/₂² M_P²), with G_eff = √3·g_{φ̄zz}·m₃/₂/m_φ, and Y₃/₂ ≃ 4.5e5|G_eff|²(m₃/₂/TeV)⁻²(m_φ/1e10 GeV)⁴(T_R/1e6 GeV)⁻¹. Bound for m₃/₂ ~ 1 TeV, B_h ~ 1: |G_eff| ≲ 1e-11·(m_φ/1e10)⁻². Also KKMY 0804.3745 for thermal production; its numerical T_R bounds were not reached in the fetched text.
+Two-term SERAPIS (m_φ ≈ 2e11 GeV, T_R ≈ 1e7 GeV; arithmetic in code):
+- Required: |G_eff| ≲ 2.5e-14.
+- A generic modulus (g_{φ̄zz} ~ O(1), vev ~ M_P) has G_eff ~ m₃/₂/m_φ = 5e-9 (TeV gravitino), giving Y₃/₂ ~ 2e-7. That is many orders above any BBN bound, so overproduction is FATAL unless the coupling is suppressed by about 2e5.
+Cure (reasoning, consistent with EHT's "symmetry" route):
+- At τ = i the residual S-symmetry acts on the fluctuation as δτ → −δτ (D574A).
+- If the SUSY-breaking field z (the nilpotent sector) is S-neutral, the linear mixing g_{φ̄zz} ∝ ⟨∂_φ K⟩ is FORBIDDEN, so φ → 2ψ₃/₂ starts only at higher order.
+- This is the same residual Z₄^R/Z₈^R that already protects the proton (D528–D533, D551). One symmetry would then do two jobs.
+- Caveat: z's modular weight must be chosen neutral, and the nilpotent-sector couplings (D545) must respect it. Not yet checked.
+Thermal production at T_R ~ 1e7 GeV: for an unstable TeV-scale gravitino with large B_h, the commonly quoted BBN limits are around 1e6–1e7 GeV (to verify against KKMY tables). It is safe for m₃/₂ ≳ O(10) TeV or for a light stable gravitino.
+Verdict: OPEN, with a concrete condition. Two-term SERAPIS needs (i) the S-parity of the τ = i vacuum to forbid inflaton–SUSY-breaking mixing, and (ii) m₃/₂ outside the TeV unstable window. Condition (i) ties back to the proton-parity result: a consistency requirement, not yet a derivation.
