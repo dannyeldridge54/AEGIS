@@ -4389,3 +4389,12 @@ m ≈ 10–100 TeV with λ ≈ 1–3 the charged state is a natural second DM ca
 Lock items not done: the rough thermalisation check (Γ_th vs H) was specified but not coded. Process note: the script was executed once,
 unviewed, about a minute before the lock commit (import test); the scored run was started after the lock was pushed.
 CENTRE: F5 now passes conditionally (light charged state + λ ≲ 3); open condition narrowed.
+
+**D448 (cycle 33, "pp"; third pass PART 10, RIGHT; literature reasoning, no computation) — the D7 U(1) and hypercharge: condition stated,
+nothing scored.** With the lightest D7-charged state now at ≲ 10–100 TeV (D447) and possibly a DM component, mixing with hypercharge matters.
+(i) Kinetic mixing χ alone with the Stückelberg-massive D7 boson (M_V ≈ 1.7e17 GeV) gives the hidden state NO millicharge under the
+massless photon. Its effects on SM currents are suppressed by (E/M_V)², i.e. invisible. (ii) Stückelberg MASS mixing (Kors–Nath, hep-ph/0402047;
+1401.5880) would make the massless photon a mixture and give the hidden state a millicharge ε ~ δ, which direct detection
+constrains very tightly for a TeV-scale DM component (LZ/XENONnT; size of the bound not extracted here). Condition added: the axion eaten by the D7 U(1)
+must not couple to hypercharge (δ = 0, the usual D-brane requirement for a massless Y), or δ must lie below the direct-detection bound. F1 (α drift)
+is unaffected: x is pinned (D417). No scored result → WALL.
