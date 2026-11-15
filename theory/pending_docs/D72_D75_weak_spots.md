@@ -5095,3 +5095,18 @@ Status: SERAPIS now = plateau inflation + heavy SUSY-Minkowski vacuum at i + sep
 
 ## D539 — LEFT (loop tick 3; scored, locked PREREG_D539_VACUUM_MASS; results/vacuum_mass_d539.txt) — vacuum mass at the model's own N* (referee fix 4)
 m = 4.5e13 (N* = 52), 4.3e13 (54), 4.2e13 (55.6) GeV; m/H_inf = 4.9 throughout. The D517 value of 4.0e13 was at the wrong N* (58.09) and is replaced by 4.2–4.5e13 GeV. The holomorphic correction (D537, E₆/η¹², c = 0) does not change this curvature. The vacuum is a heavy SUSY Minkowski point (D537/D538). Gravitational reheating (D518) is unchanged at this level (T_RH ∝ m^{3/2}: +6–10%).
+
+## D540 — LEFT (pp 22:28 CT; literature + arithmetic, not scored) — a string-side source for the log factor, and species-scale control
+Literature: Casas & Ibáñez, arXiv:2407.12081.
+- For one elliptic modulus with SL(2,Z), V ≃ (Im τ)²|Ĝ₂|²/N², with N ≃ −log(Im τ|η|⁴). That is the genus-one/threshold function, i.e. the number of species.
+- The potential tends to a constant at large Im τ (a Starobinsky-like plateau), and N_e ≃ N.
+Link to SERAPIS (D535 gap):
+- Our non-polynomial factor [ln(j/1728) + κ] grows like 2π Im τ at the cusp.
+- The string-derived, modular-invariant −log(2 Im τ|η|⁴) grows like (π/3) Im τ − ln(2 Im τ). Same linear growth, string origin, but NON-holomorphic.
+- So the log factor has a natural string counterpart, but it belongs in V through the Kähler/threshold sector (one-loop gauge kinetic function f = S + b ln η-type terms, or species-scale corrections), not in a holomorphic W. This is option (b) of D535.
+- Proposed SERAPIS-2: replace [ln(j/1728)+κ]^{1/2} in H by the factor from the threshold, (−log(2 Im τ|η|⁴) + κ′)^{1/2}, entering V directly. Not computed; it needs its own lock. The j^{−7/12} factor still has no string source.
+Species-scale check (arithmetic):
+- At the start of inflation in SERAPIS-1, Im τ* ≈ 126, so N ≈ (π/3)(126) − ln(252) ≈ 126.4.
+- Λ_sp ≈ M_P/√N ≈ 2.2e17 GeV, compared with H_inf ≈ 9e12 GeV, so the EFT is under control by ~4 orders.
+- In the Casas–Ibáñez relation N_e ≃ N, about 126 species is of the same order as the 52–56 e-folds needed. That is consistent, not a tension.
+Status: the log factor now has a plausible string-side origin (threshold/species function); j^{−7/12} does not. Next: lock and test SERAPIS-2.
