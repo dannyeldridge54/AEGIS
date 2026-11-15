@@ -141,3 +141,5 @@ alone.
 **Centre-confirmed (D441, toy):** stringy-FI capture holds (hard wall, soft slope 2.2× D437 at M_s = 0.1 M_P); with D439 the toy prefers M_s ≈ 0.068–0.1 M_P (≈ 1.6–2.4e17 GeV) for flux pair (10, 400).
 
 **Open condition (D444):** in the FI picture the screening field φ must decay to lighter hidden states (τ < 1 s), or its non-adiabatic remnant at capture would overclose by ~1e6 (D444a) — decay is required.
+
+**Sharpened (D445):** the decay must break the D7 charge (goldstino channel only moves it): lightest charged state ≲ TeV and annihilating, or D-instanton breaking.

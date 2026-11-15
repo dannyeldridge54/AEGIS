@@ -1,0 +1,9 @@
+m=1e+04 GeV, Omega<= 100% DM: sigma v >= 1.88e-09 GeV^-2 -> lambda >= 1.75
+m=1e+04 GeV, Omega<= 1% DM: sigma v >= 1.88e-07 GeV^-2 -> lambda >= 5.54
+m=1e+05 GeV, Omega<= 100% DM: sigma v >= 1.88e-09 GeV^-2 -> lambda >= 5.54
+m=1e+05 GeV, Omega<= 1% DM: sigma v >= 1.88e-07 GeV^-2 -> lambda >= 17.53
+goldstino channel sqrtF=6e+04, m=1e+04: tau=5.9e-24 s (moves charge, does not remove it)
+goldstino channel sqrtF=6e+04, m=1e+05: tau=5.9e-29 s (moves charge, does not remove it)
+goldstino channel sqrtF=1e+05, m=1e+04: tau=1.3e-22 s (moves charge, does not remove it)
+goldstino channel sqrtF=1e+05, m=1e+05: tau=1.3e-27 s (moves charge, does not remove it)
+VERDICT: NEEDS NON-PERTURBATIVE CHARGE BREAKING

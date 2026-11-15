@@ -4357,3 +4357,13 @@ picture; the pinning itself is unaffected.
 non-adiabatic remnant was wrong by 1e6. Computed: the residual energy where A = 1 (m_eff = 6.5e11 GeV, 5.9e-9 below x_E) is 8.6e31 GeV⁴ =
 4.9e-15 of radiation, so ρ_φ/s ≈ 5.5e-4 GeV — **1.3e6 × the DM density, not "the same order"**. So the condition is firm, not marginal:
 in the FI picture φ MUST decay (τ < 1 s) or the model overcloses. Estimate (single crossing; bounces only add).
+
+**D445 (cycle 32, "pp"; third pass PART 9, L/R; scored, locked PREREG_D445_PHI_FATE; results/phi_fate_d445.txt) — locked verdict "NEEDS
+NON-PERTURBATIVE CHARGE BREAKING" for a charged state at the soft mass.** The goldstino channel is fast (τ = 6e-29 to 1.3e-22 s for
+√F = 65–140 TeV, m = 1e4–1e5 GeV) but only moves the U(1) charge to ψ_φ; the lightest charged state stays stable. Hidden annihilation through
+W ⊃ λφXY as a thermal relic needs σv ≥ 1.9e-9 GeV⁻² (Ω ≤ Ω_DM) or 1.9e-7 GeV⁻² (≤ 1%): λ ≥ 1.75 / 5.54 at m = 1e4 GeV and 5.54 / 17.5 at
+1e5 GeV — the 1% case exceeds the perturbative limit √(4π) ≈ 3.5. Post-lock reading (not scored): since λ_needed ∝ √m, a lightest charged
+state below ~3 TeV (1% case) or a charged relic counted as a DM component would avoid this; otherwise the global charge must be broken by
+D-instantons (e^{−S} small but only τ < 1 s is needed) or by a second brane U(1) mixing. CENTRE: F5 flag stands; the FI picture now carries
+the explicit condition "lightest D7-charged state light (≲ TeV) and annihilating, or charge broken non-perturbatively". Pinning, Λ and
+inflation are unaffected.
