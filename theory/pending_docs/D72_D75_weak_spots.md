@@ -5154,3 +5154,20 @@ Consequences:
 1. The published Zenodo v2.1 (10.5281/zenodo.24238833) does NOT credit 2408.05203 or 2412.19324, and the referee did not find them either. That is a credit omission in a published record. Fix: a v2.2 with the citations and a sentence placing SERAPIS as a variant of SL(2,Z) attractors. It needs Danny's explicit "Publish" for the new version.
 2. The novelty claim narrows further: what remains is the two-branch data framing, the τ = i-vacuum variant, the parity/home constraints and the audit trail.
 Status: flag raised to Danny; v2.2 to be prepared.
+
+## D545 — LEFT + CENTRE (loop tick 5; scored, locked PREREG_D545_SERAPIS_KL; results/serapis_kl_d545.txt) — SERAPIS-KL: CONSISTENT (a globally well-defined SERAPIS)
+Model: K = −ln(2 Im τ) (α = 1/3). The potential sits in the nilpotent-field metric, in the Kallosh–Linde way:
+I = (1/4π) ln(1 + |j − 1728|²/1728²), V = V₀[I/(I+1)]ⁿ.
+Checks:
+(a) V(i) = 0, and τ = i is a minimum in every direction tested (n = 1: V ≈ 1.6e-7 at |δ| = 0.01, nearly isotropic).
+(b) V depends only on |j − 1728|, so it is single-valued. There are no branch points: D537 and D543 are both cured.
+(c) V(ω) = 0.052 V₀ > 0, so ω is not a singularity, just a higher point.
+Inflation (primary n = 1):
+- N* = 52: n_s = 0.9631, r = 0.00131 (−1.8σ SPA, −3.6σ SPA+DESI).
+- N* = 55.6: n_s = 0.9654, r = 0.00116 (−1.0σ, −2.7σ).
+- n = 2 gives 0.9625–0.9649. Both are close to the α = 1/3 attractor formula (0.9615–0.9640, r = 4/N²).
+Verdict: CONSISTENT. This is SERAPIS–Kairos rebuilt as a well-defined SL(2,Z) attractor with its minimum at τ = i (KL put theirs at ω). The numbers are essentially those of D519/D526, confirming that Kairos's predictions do not depend on the problematic holomorphic factors.
+- Λ: added as F_X² − 3W₀² (KL form).
+- Chronos: the same tilt route (plateau power ½ + δ, i.e. I-power) would carry over; not computed here.
+- Credit: Kallosh & Linde 2408.05203. What this note adds is the τ = i-minimum invariant built on |j − 1728|.
+Status: SERAPIS is now well-defined globally in this form. Use SERAPIS-KL as the reference model in v2.2+.

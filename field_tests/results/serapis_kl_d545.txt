@@ -1,0 +1,8 @@
+n=1: V(i)=0.000e+00, V(i+0.01)=1.641e-07, V(i+0.01i)=1.612e-07, V(i-0.01i)=1.678e-07, V(i+0.01e^(ipi/4))=1.620e-07, V(omega)=5.228e-02
+  minimum at i in all directions: True; V(i)=0: True
+n=2: V(i)=0.000e+00, V(i+0.01)=2.692e-14, V(i+0.01i)=2.599e-14, V(i-0.01i)=2.816e-14, V(i+0.01e^(ipi/4))=2.623e-14, V(omega)=2.733e-03
+  minimum at i in all directions: True; V(i)=0: True
+n=1 N*=52: y_end=2.28 y*=111.7 n_s=0.9631 r=0.00131 (-1.8 sigma SPA, -3.6 SPA+DESI); attractor formula n_s=0.9615 r=0.00148
+n=1 N*=55.6: y_end=2.28 y*=118.9 n_s=0.9654 r=0.00116 (-1.0 sigma SPA, -2.7 SPA+DESI); attractor formula n_s=0.9640 r=0.00129
+n=2 N*=52: y_end=3.31 y*=217.2 n_s=0.9625 r=0.00137 (-2.0 sigma SPA, -3.8 SPA+DESI); attractor formula n_s=0.9615 r=0.00148
+n=2 N*=55.6: y_end=3.31 y*=231.8 n_s=0.9649 r=0.00121 (-1.2 sigma SPA, -2.9 SPA+DESI); attractor formula n_s=0.9640 r=0.00129
