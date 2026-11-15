@@ -5196,3 +5196,10 @@ In the Kallosh–Linde form, the vacuum energy is Λ = F_X² − 3|W₀|²/M_P²
 - Λ itself remains tuned at the 1e-120 level, as in every such model. What this note shows is internal consistency, not an explanation. It also fixes the proton-parity status: m₃/₂ ~ eV, so the D542 margin is about 1e21.
 Status: the Λ sector is consistently embedded (tuned). Nothing in SERAPIS-KL conflicts with the gauge-mediation and gravitino results of the Twist line (D474, D523).
 D548a (correction): the computed ratio is V_inf/F_X² ≈ 3.4e42, not 3.4e41 as typed above. No conclusion changes.
+
+## D549 — LEFT (pp 22:42 CT; literature) — Chronos is also prior art: Kallosh & Linde, "Singular α-attractors" (arXiv:2512.02969), and arXiv:2607.07684
+- 2512.02969 (Dec 2025): "S-models". A small singular term with coefficient δ lifts the α-attractor plateau polynomially or exponentially at large field, which raises n_s toward the ACT/SPT/DESI values. Their §5.3 builds an SL(2,Z)-invariant version from j(τ). Example: a T-model with δ = 1e-2 gives n_s ≈ 0.978, r ≈ 0.0035 (N = 55, α = 1/3).
+- 2607.07684 (Jul 2026): attractors interpolating between exponential and polynomial, scanning n_s to fit any CMB+DESI combination.
+Relation: our Chronos tilt (V ∝ [I/(I+1)]·I^{2δ}, a slowly rising plateau; D525/D546) is the same idea as their singular/lifted plateau, published before our D525 (14 Nov 2026). Kairos = SL(2,Z) attractor (2408.05203) and Chronos = singular SL(2,Z) attractor (2512.02969). Both branches of the Janus framing therefore correspond to existing Kallosh–Linde constructions.
+What remains ours: the τ = i-vacuum invariant (|j − 1728|), the two-branch data framing tied to the CMB-vs-BAO split, the proton-parity and string-home constraints, the Twist-line consistency (D548), and the audit trail.
+Action: add both citations to v2.2 and state that Chronos is a singular-attractor (S-model) lift. Novelty statement narrows again.
