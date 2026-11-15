@@ -4855,3 +4855,6 @@ Im τ ≈ 146, ending at Im τ ≈ 3.2, gives n_s = 0.9665 and r = 0.00323 (−0
 12/N*² = 0.0036 agree. Structure, by construction: the square torus τ = i is an exact Minkowski vacuum (V = 0), and the triangle/hexagon point ρ is a wall (V → ∞), so the field can never settle on the
 triangle. Λ is NOT yet included: it needs a small extra term, the next step. So the full SL(2,Z) version works for inflation and naturally has the polygon structure (square = vacuum, triangle = barrier),
 but its inflation numbers are the generic Starobinsky ones; any distinctiveness must come from the Λ term and the late universe.
+
+**Naming (Danny 21:34 CT):** the fully modular Twist of D515 (exact SL(2,Z), V = |H(j)|²/((2 Im τ)³|η|¹²)) is called **SERAPIS**. Variant names in use: Twist-2 (baseline), Twist-M (T → 1/T
+duality, D490), Twist-M-L (split/lens, D505), Twist-1T (single torus, D513), SERAPIS (full modular group, D515).

@@ -60,3 +60,10 @@
 | Open | case-(i) capture run (D500, running); orbifold embedding with exact duality (DEEP 11); proton protection | D500, DEEP 11, D504 |
 | Prior art to credit | modular inflation; quintessential inflation; fixed-point trapping; modular quintessence (hilltop, w₀≈−0.8); exponentially small Λ; PIDM | DEEP 1–9 |
 | Twist-M-L (split/lens, D505–D511) | A dark duality field + heavy SM modulus B ≳ 100 TeV; β_eff < m_A/m_B ≤ 2e-28; home A = U₃ (unwrapped torus shape); ΔN_eff 0.052–0.068 | D505–D511 |
+
+## SERAPIS (fully modular Twist, D515; name given by Danny 21:34 CT)
+| Quantity | Value | D-notes |
+|---|---|---|
+| Symmetry | full SL(2,Z) on the torus shape τ (T = −iτ); V = |H(j)|²/((2Im τ)³|η|¹²) | D515 |
+| Inflation (cusp plateau) | n_s 0.9665, r 0.0032 (Starobinsky-like) | D515 |
+| Vacua | square torus τ = i: V = 0 (Λ term pending); triangle point ρ: wall | D515 |
