@@ -5257,3 +5257,13 @@ Consequences:
 - It is in tension with the Twist-2 IIB branch's low M_s (7e13–3.5e14 GeV, D453): SERAPIS and the Twist-2 FI realisation cannot share a string scale. Recorded as a CENTRE incompatibility. SERAPIS is the inflation-side model; the Twist-2 numbers do not carry over.
 - The light KK tower near the cusp is exactly why string-derived potentials blow up there. SERAPIS-KL's plateau must therefore come from physics that dominates the KK-tower effects at y ≲ 160. An open, sharp question for the string-origin gap.
 Status: the home requirement now includes M_s ≳ 1e17 GeV.
+
+## D555 — DEEP (loop tick 7 / Dp 2; scored, locked PREREG_D555_CASAS_IBANEZ; results/casas_ibanez_d555.txt) — CORRECTION to D550: a modular cusp-plateau potential with V = 0 at τ = i already exists (Casas–Ibáñez)
+- Casas & Ibáñez (arXiv:2407.12081): V ∝ y²|Ĝ₂|²/N², with Ĝ₂ = E₂ − 3/(π Im τ). Computed: Ĝ₂(i) = 0 and Ĝ₂(ρ) = 0 (to 1e-16). So V = 0 at τ = i AND at ρ, and τ = i is a minimum in all four tested directions.
+- Their potential therefore already has a species-scale (string-motivated) cusp plateau with its zero at τ = i. D550's "τ = i minimum not found in the checked literature" is WITHDRAWN. Our |j − 1728| invariant differs only in making ρ a non-zero point (V(ω) = 0.052 V₀, D545), versus Casas–Ibáñez's double zero at i and ρ.
+- Inflation as I implemented their formula (canonical φ = √(3α/2) ln y; N = −ln(y|η|⁴)) is NOT viable:
+  - α = 1/3: n_s ≈ 1.06, r ≈ 0.006–0.007;
+  - α = 1: n_s ≈ 0.5.
+  This may be my reading of their normalisation (their paper relates N_e to the number of species and works in a regime I may not reproduce). Labelled: "our implementation of the quoted form", not a verdict on their paper.
+Action: v2.2 must drop the "not found in the checked literature" sentence and credit Casas–Ibáñez for a τ = i zero with a cusp plateau. The novelty of SERAPIS-KL shrinks to "an α = 1/3 attractor invariant with its single zero at i, regular at ρ".
+Process lesson: two of tonight's novelty checks (D544, D550) were reversed by the next search. Novelty statements need a dedicated search before they go into a paper.
