@@ -6727,3 +6727,14 @@ Follows D706 item 1. Searches 3 (one extended) + 2 fetches. Labels: LITERATURE u
 VERDICT: PARTIAL / WEAKENED. D706's hope that the species scale supplies 1/E(τ,2) does not hold in its simple form: the species scale naturally gives s = 1, and the only s = 2 coupling found (D⁴R⁴) enters affinely with an extra free ratio. Keep 1/E(τ,2) labelled ASSUMED (unchanged status). Useful by-product: Basu's E_2(U) coupling is a citable precedent that s = 2 Eisenstein dependence on the torus shape does occur in string effective actions.
 Next (open): does the s = 1 species route, combined with the ρ-vacuum, give a viable plateau of its own? (i.e. the e→1 end of the D702 ladder — is it log-type and what r does it give?)
 Sources: arXiv 0708.2950; 2411.08467; 2407.12081; Cribiori et al., Fortsch. Phys. 2023 (prop.202300150); Ibáñez 2604.27835 (review).
+
+## D708 (DEEP) — The s = 1 (Kronecker / species-scale) rung: NOT VIABLE for SERAPIS
+Lock PREREG_D708 (pushed before running, 0b7f8ee); results/kronecker_s1_d708.txt. Follows D707.
+Model: V/V0 = [1 − F(ρ)/F(τ)](1 + CÊ2), F = −log(y|η|⁴) + κ, κ ∈ {0, 2} pre-registered.
+Checks (COMPUTED): |η(i)| = 0.768225422326 = Γ(¼)/(2π^¾) to 12 digits. F minimal at ρ (κ = 0: 1.03352 vs 1.03435, 1.03437 at ρ+0.05, ρ+0.05i; 1.05469 at i) — the vacuum is again at ρ, as for every rung.
+Result (COMPUTED, κ = 0, N* = 48.4, C = 0): y* = 118, n_s = 0.9615, r = 1.30e-3, α_s = −7.8e-4. Vacuum m²/H² = 2.9 (κ = 0), 0.99 (κ = 2) — the modulus is LIGHT during inflation, unlike rungs e ≥ 2 (m²/H² 18–30).
+Run note (honest): both runs hit the 280 s time limit; the rest of the C-grid and κ = 2 (root-finder found no solution at C = 0; start point too low for the larger y*) did not finish. No rerun: the completed point already fails the locked rule twice.
+Verdict against the locked rule: r = 1.3e-3 > cap 8.3e-4 and y* = 118 > 25 → NOT VIABLE. INFERENCE (from D700/D702, where turning on the tilt to reach n_s = 0.970 raised r by ~40%): adding C only makes r larger.
+Cross-check (LITERATURE): this is exactly the species-scale inflation class of 2411.08467 (V ≃ V0(1 − c/τ₂), r ≃ 8/(a²N²)); with a² = 2 and N = 48.4, r ≈ 1.7e-3 — same order as our 1.3e-3. The D701 index-rule estimate (e = 1 → r ~ 1e-3+) is confirmed.
+Ladder now complete at four rungs: e = 1 (species/Kronecker) r ≈ 1.3e-3 EXCLUDED by our caps; e = 2 (SERAPIS-E) 4.7e-4; e = 2.5 3.4e-4; e = 3 2.5e-4.
+CONSEQUENCE: the species scale cannot be the plateau source for SERAPIS — it gives the wrong rung, too large an r, a horizon exit far out at y ~ 120 and a light modulus. The SERAPIS r-strip (4.6–5.7e-4) remains tied to an s = 2 object whose microscopic origin is still ASSUMED. Combined with D703 (Casimir rungs lose their string anchor) and D707, the open problem is now sharply posed: find a string mechanism giving a plateau ∝ 1/E(τ,2) (not affine in E, not s = 1).
