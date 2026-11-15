@@ -1,0 +1,7 @@
+observed hits: 4
+  phi^2: 0.9736 / 0.3728 = 2.6116
+  phi: 0.23 / 0.3728 = 1.6209
+  silver: 1.7 / 4.1 = 2.4118
+  silver: 4.1 / 1.7 = 2.4118
+random sets: mean hits 1.82; p(>= observed) = 0.102
+VERDICT: NO MORE THAN CHANCE

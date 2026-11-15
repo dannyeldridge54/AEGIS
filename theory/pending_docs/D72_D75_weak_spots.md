@@ -4637,3 +4637,10 @@ for 0.05 (SO-class), 0.4–0.5σ today (σ ≈ 0.17); σ values are approximate 
 **D487 (cycle 72; CENTRE audit) — reproducibility:** four of tonight's scripts (D439, D445, D449, D456) were re-executed and reproduce their saved outputs byte for byte
 (determinism check, not a rerun to chase results). Result (audit).
 **D488 (cycle 73; CENTRE) — numbers table updated:** papers/twist_v6/TWIST2_NUMBERS.md gains a 'D436–D486 FI picture' block (below). Result (consolidation).
+
+**D489 (Danny 20:26 CT "look for golden ratio silver ratio overlaps"; scored, locked PREREG_D489_RATIOS; results/ratios_d489.txt) — NO MORE THAN CHANCE.**
+Over 25 model outputs (all pairwise ratios), 4 ratios fall within 1% of φ, φ², or the silver ratio 1 + √2: 0.9736/0.3728 = 2.612 (φ²), 0.23/0.3728 = 1.621 (φ), and 4.1/1.7
+= 2.412 (silver; counted twice because 1.7 appears twice in the set, a duplicate I did not catch before locking, which inflates the observed count). Random log-uniform sets of
+the same size give 1.8 hits on average, and 10% of them give ≥ 4 (p = 0.10). So the overlaps are what chance gives. No golden/silver structure is supported.
+Sefirot mapping recorded as an organisational aid (theory/deep/SEFIROT_MAP.md): the twin ladder already has the three-pillar form; the centre (Tiferet) is where
+balance is checked. Not physics evidence.
