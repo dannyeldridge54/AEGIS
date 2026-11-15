@@ -1,3 +1,4 @@
+exit 0
 root check: zeta(29.6) = 0.0e+00
 Ms/MP=0.03 m_s=1e+04: hit N=8.443 T=1.49e+11; reflections 5001; xmin 29.4089; return T=1.10e+10; offset 3.55e-15; remnant rho/s=4.76e+04 GeV (x1.1e+14 DM) -> CAPTURES
 Ms/MP=0.03 m_s=1e+05: hit N=8.440 T=1.49e+11; reflections 5001; xmin 29.4777; return T=3.65e+10; offset 3.55e-15; remnant rho/s=5.28e+05 GeV (x1.2e+15 DM) -> CAPTURES
@@ -7,3 +8,5 @@ Ms/MP=0.1 m_s=1e+04: hit N=8.443 T=1.49e+11; reflections 5001; xmin 29.4383; ret
 Ms/MP=0.1 m_s=1e+05: hit N=8.416 T=1.53e+11; reflections 5001; xmin 29.5244; return T=6.77e+10; offset 3.55e-15; remnant rho/s=7.45e+05 GeV (x1.7e+15 DM) -> CAPTURES
 Ms/MP=0.3 m_s=1e+04: hit N=8.440 T=1.49e+11; reflections 5001; xmin 29.4777; return T=3.65e+10; offset 3.55e-15; remnant rho/s=1.14e+05 GeV (x2.6e+14 DM) -> CAPTURES
 Ms/MP=0.3 m_s=1e+05: hit N=8.298 T=1.72e+11; reflections 5001; xmin 29.5361; return T=1.06e+11; offset 3.55e-15; remnant rho/s=1.47e+06 GeV (x3.4e+15 DM) -> CAPTURES
+
+[exited with code 0]

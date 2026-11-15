@@ -143,3 +143,5 @@ alone.
 **Open condition (D444):** in the FI picture the screening field φ must decay to lighter hidden states (τ < 1 s), or its non-adiabatic remnant at capture would overclose by ~1e6 (D444a) — decay is required.
 
 **Sharpened (D445):** the decay must break the D7 charge (goldstino channel only moves it): lightest charged state ≲ TeV and annihilating, or D-instanton breaking.
+
+**Centre-confirmed (D446, cloud run):** stringy-FI capture holds for M_s = 0.03–0.3 M_P (toy window with clean plateau 0.03–0.1 M_P); bounce-generated φ remnant makes the D445 removal conditions mandatory.

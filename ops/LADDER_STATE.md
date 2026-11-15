@@ -78,3 +78,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 30 (19:13, 'pp'): PART 7 third pass — D443 ACT+Planck β = 0.277±0.057° (4.8σ): 0.28σ from D414 input, c_γ 1.7–4.1; B4 untested. WALL 2.
 - cycle 31 (19:17, 'pp'): PART 8 third pass — D444 screening field φ isolated by heavy U(1); non-adiabatic remnant 1.3e6× DM (D444a, estimate) → φ needs a decay channel (new open condition, F5 flag). Result → walls 0.
 - cycle 32 (19:20, 'pp'): PART 9 third pass — D445 goldstino decay moves the charge only; thermal annihilation needs λ ≥ 1.75–17.5 (non-perturbative for 1% at m_s); FI picture needs a light (≲TeV) charged state or instanton charge breaking. Result → walls 0.
+- cloud run (19:25, Danny 'Start a cloud run'): D446 stringy-FI capture works for M_s 0.03–0.3 M_P (lower edge lifted); bounce remnant 1e14–3e15× DM → D445 conditions mandatory. Part 10 cycle (interrupted) still next.

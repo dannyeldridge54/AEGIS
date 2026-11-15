@@ -4367,3 +4367,14 @@ state below ~3 TeV (1% case) or a charged relic counted as a DM component would 
 D-instantons (e^{−S} small but only τ < 1 s is needed) or by a second brane U(1) mixing. CENTRE: F5 flag stands; the FI picture now carries
 the explicit condition "lightest D7-charged state light (≲ TeV) and annihilating, or charge broken non-perturbatively". Pinning, Λ and
 inflation are unaffected.
+
+**D446 (cloud run, Danny 19:16 CT; scored, locked PREREG_D446_CLOUD_CAPTURE; results/cloud_capture_d446.txt) — CAPTURES in all 8 cases;
+the lower string-scale edge of D441 goes away; the remnant is dominated by bounces.** Full D437 integration with the stringy FI term
+(exact root 29.6000): for M_s/M_P = 0.03, 0.0675, 0.1, 0.3 and m_s = 1e4, 1e5 GeV the field hits the wall at T = 1.5–1.7e11 GeV, bounces
+down to x = 29.41–29.54, returns at T = 1.1e10–1.1e11 GeV and settles (offset at the float floor). Check: at M_s = 0.0675 M_P, where the slope
+equals D437's, x_min = 29.4272 and return T = 1.67e10 GeV reproduce D437 exactly. So D441's conservative bound M_s ≥ 0.068 M_P is lifted; with
+D439, capture + clean plateau hold for 0.03 ≲ M_s/M_P ≲ 0.1 (0.3 also captures; plateau then carries the amplitude offset). Remnant summed over
+all 5001 recorded hits (cap reached): ρ/s = 4.8e4–1.5e6 GeV = 1e14–3e15 × DM. That is far above the first hit alone (5.5e-4 GeV, D444a) and
+reaches the energy-conservation ceiling (1.1e6 GeV, D444) in the 0.3/1e5 case, so the per-hit estimate overcounts there and the true remnant
+lies near the ceiling. Consequence: the φ sector is effectively heated to the condensate energy, so the initial abundance is erased if φ
+thermalises, and D445's annihilation/charge-breaking conditions govern the outcome. They become mandatory, not optional.
