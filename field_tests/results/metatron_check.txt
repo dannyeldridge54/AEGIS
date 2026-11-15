@@ -1,0 +1,4 @@
+points: 13 lines (all pairs): 78
+shell radii: [0.0, 1.0, 2.0]
+cube vertices seen down the diagonal: [(-0.707, -0.408), (-0.707, 0.408), (0.0, -0.816), (0.0, 0.0), (0.0, 0.816), (0.707, -0.408), (0.707, 0.408)] -> distinct: 7 (hexagon + centre counted twice)
+hexagon angles: [30, 90, 150, 210, 270, 330]
