@@ -6005,3 +6005,18 @@ Verdict: ε is still unexplained. The most plausible origin is a ratio of two lo
   None reproduces a term ∝ ln|j − 1728| ∝ y.
 - A log of a holomorphic function arises naturally in gauge kinetic functions or thresholds, f ⊃ b·ln(E₆²/η²⁴), entering V through gaugino-condensate or threshold corrections. That is the N = 2-threshold-type origin D576 identified, which the home conditions (D560–D562) forbid on the SERAPIS plane, and the E₆ zero at i would make any condensate ∝ e^{−f/b} singular.
 Verdict: D606's route (b) is WITHDRAWN as an origin of the ε·I₁ shape (only its magnitude estimate worked). ε·I₁ still has no consistent microscopic source. The tension is sharp: the shape needs a threshold-like log; the home forbids N = 2 thresholds. This is now the main theoretical weakness of two-term SERAPIS, alongside the unexplained size of ε.
+
+## D608 — DEEP (Ddl 08:21 CT; reasoning + an UNLOCKED diagnostic, not a scored test; disclosed) — CORRECTION to D607's "forbidden", and a new obstruction: the natural threshold-type tilt term has a SADDLE at τ = i
+1. Correction to D607:
+   - D560–D562 excluded N = 2 planes only because SERAPIS then needed y* = 112–158. The home bound itself (D566: Im T ≲ k·α⁻¹ ≈ 29) IS the universal N = 2 threshold bound.
+   - The home-safe two-term model has y* ≈ 23–25 < 29 (D602), so an N = 2 plane is ALLOWED for it. D553's |b| ≲ 2 bound also relaxes (U₂,max ≥ 35 even at b = 10).
+   - So a threshold-type log term is not forbidden. D607's "forbidden on the home plane" is WITHDRAWN.
+2. New obstruction (diagnostic; computed before writing a lock, so disclosed as unlocked and NOT used for any score):
+   - The standard threshold function L = −ln(2y|η|⁴) has L(i) = 0.3615 with Hessian (L_xx, L_yy) = (−0.298, +1.298): a SADDLE at i.
+   - At ρ: L(ρ) = 0.3404 with (0.667, 0.667), a MINIMUM.
+   - Adding ε_th·L to the plateau (which is octic and flat at quadratic order at i) makes the axial direction TACHYONIC at τ = i, so the vacuum would slide toward ρ.
+   - Our E₆-based I₁ is S-invariant with an isotropic positive Hessian at i (D574 C′); the DKL-type threshold is not.
+3. Consequence: the tilt-plus-mass term must be "j − 1728-like" (zero at i, isotropic) for τ = i to stay the vacuum. The natural string threshold is "η-like" and prefers ρ.
+   - A natural route is threshold-type (allowed, gives the right linear growth) but puts the vacuum at ρ: the Kallosh–Linde choice (D569 found Eisenstein plateaus also prefer ρ).
+   - SERAPIS's τ = i is a consistent but NON-natural choice that needs the |j − 1728| structure, which has no known string source.
+Verdict: the core tension, sharpened. String-natural ingredients point to ρ; τ = i needs an extra, unexplained |j − 1728|-type ingredient. Open option (needs a lock): a "SERAPIS-ρ" variant with the vacuum at the hexagonal torus, using the DKL threshold for both mass and tilt. It might be natural and string-sourced; check its n_s, r and home-safety.
