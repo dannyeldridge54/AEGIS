@@ -4262,3 +4262,8 @@ band: over n_s = 0.9706–0.9766 (ε = 2.0–4.0×10⁻⁷), r = 0.0042–0.0050
 signature: r RISES with n_s (0.0042 → 0.0050), opposite to plain Starobinsky, where r = 3(1−n_s)² FALLS (0.0026 → 0.0016) across the same n_s
 range. So the two separate more as n_s grows (ratio 1.6× at 0.9706, 3.0× at 0.9766). A measurement in the (n_s, r) plane outside this band
 (2σ) falsifies Route A. Correction to D419's ε window (linear estimate 1.8–3.7×10⁻⁷ for ±0.003): computed 2.0–4.0×10⁻⁷. Result → walls 0.
+
+**D435 (cycle 25, "pp"; third pass PART 3, LEFT; arithmetic in code) — Route A does not shift N*: the deformation raises V at the CMB point by
+(1 + ε/x*)² ≈ 1.0046 and at the end of inflation by 1.00007, so the matching term ¼ ln(V*²/V_end) moves N* by ≈ +0.002 e-fold (Δn_s ~ 10⁻⁶);
+the kination gain (+1.5) and heat share are untouched (D419, D424). N* = 57.2 stands for Twist-2 with Route A. Nothing new scored → WALL 1
+(60-min pace).
