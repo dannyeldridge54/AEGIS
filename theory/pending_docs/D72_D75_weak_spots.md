@@ -6693,3 +6693,18 @@ VERDICT: the Casimir rungs e = 2.5, 3 (D700–D702) remain viable as effective-f
 ## D704 (OBSERVE) — Data watch, 15 Nov 2026: nothing new that scores the frozen predictions
 Searched (3): new r / n_s results in 2026. Latest combined inflation constraints remain Balkenhol et al. (2512.10613, Dec 2025): r < 0.034 (95%, Planck+SPT+ACT+BK), n_s = 0.9682 ± 0.0032 (CMB), 0.9728 ± 0.0029 (CMB+DESI BAO) — the targets already used. New in 2026: BK+SPT B-mode constraint on CAUSAL (non-inflationary) tensor sources r_ect < 0.0077 (2601.20958) — not the inflationary r, does not test SERAPIS. Simons Observatory: LAT first light / commissioning and early maps (APS April 2026); no cosmology parameter release found.
 Status of the family vs current data: SERAPIS τ = i / ρ / SERAPIS-E (n_s 0.970–0.975) sit +0.6…+2.1σ from the CMB-only n_s and −0.9…+0.8σ from CMB+BAO; r ≈ 5e-4 is ~70× below the bound. Casimir rungs (D702) identical in n_s. No kill condition triggered; next decisive data: SO SAT r (σ ~ 2–3e-3, cannot reach 5e-4) and SO LAT n_s (σ ~ 0.002).
+
+## D705 (FORWARD) — When and how the SERAPIS family gets tested (forecast map)
+Sources: Bahr-Kalus et al./"Prospects for 2030" (2212.04115) Table 5 (95% CL forecasts); SO enhanced LAT (2503.00636: halves current σ(n_s); survey 2025–2034, upgrades done by 2028; SAT r forecasts in a separate paper); LiteBIRD (JAXA, launch planned 2032 on H3, ~3 yr at L2; goal δr < 0.001 total, forecast r < ~1e-4 at 95% for r = 0 fiducial); CMB-S4 ended 2025 (combinations with S4 are now hypothetical).
+1σ ≈ ½ of the 95% numbers (Gaussian). Computed:
+| combination (era) | σ(n_s) | σ(α_s) | σ(r) | SERAPIS-E r/σ | |α_s|/σ |
+|---|---|---|---|---|---|
+| SO + SPHEREx (~2030) | 8e-4 | 1.2e-3 | 4.9e-3 | 0.1 | 0.8 |
+| LiteBIRD (+LSS) (~2035–36) | 6e-4* | 8.5e-4* | 4.9e-5 | 9.6 | 1.1 |
+| LiteBIRD, official requirement | — | — | 1e-3 | 0.5 | — |
+(*with S4-like small scales; without S4 use SO.)
+Reading:
+1. n_s decides first (~2030, SO LAT + SPHEREx): the SERAPIS band 0.970–0.975 is 2.3–8.5σ from today's CMB-only central 0.9682 at σ = 8e-4 — if the CMB-only value holds, the family is under pressure by ~2030; if CMB+BAO (0.9728) holds, it is confirmed in n_s.
+2. r decides second (LiteBIRD, results ≳ 2035): at the forecast reach SERAPIS-E is a ~10σ detection; the Casimir rungs 7σ / 5σ; rung separations 2.6σ (e = 2 vs 2.5) and 1.9σ (2.5 vs 3). At the official δr = 1e-3 nothing is seen, which tests only the r ≲ 1e-3 cap. The kill condition "r < 2.3–2.4e-4 at 95%" becomes decisive only at the optimistic reach.
+3. α_s stays below 3σ through the 2030s (1.1–1.2σ); the Janus relation test (needs σ(α_s) ~ 1e-4, D670) is beyond all funded experiments (21-cm intensity mapping beyond CHIME would be needed).
+VERDICT: the family's decisive tests are n_s ≈ 2030 and r ≈ 2035–36 (LiteBIRD, at its optimistic reach). The plateau-index ladder (r 4.7 / 3.4 / 2.5e-4) is LiteBIRD-resolvable at ~2σ per step only in the optimistic case.

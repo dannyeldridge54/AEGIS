@@ -33,17 +33,16 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 - |f_NL^local| > 5.
 - Covariant completion: no wino up to 2.9 TeV and no gluino up to 21 TeV (FCC-hh reach), or a wino above 2.9 TeV overclosing; lock D605 P5 (constant W0): superpartners below 10⁸ GeV.
 
-## Who tests what (rough reach figures; quote published forecasts in any external text)
-| Experiment | Observable | Expected reach | What SERAPIS needs |
+## Who tests what (forecasts: 2212.04115 Table 5 halved to 1σ; SO 2503.00636; LiteBIRD/JAXA; D705)
+| Experiment (era) | Observable | 1σ reach | What SERAPIS needs / outcome |
 |---|---|---|---|
-| Simons Observatory SATs | r | σ(r) ~ 2–3×10⁻³ | no detection (consistent) |
-| BICEP/Keck + SPT-3G | r | σ(r) ~ 3×10⁻³ | no detection |
-| LiteBIRD | r | σ(r) ≲ 10⁻³ (check current forecast) | no detection; r ≳ 10⁻³ detected rules it out |
-| (CMB-S4 — DOE/NSF support ended 2025) / future σ(r) ~ 10⁻⁴ mission | r, α_s | not currently planned | r ≈ 5×10⁻⁴ at ~5σ |
-| ACT/SPT/SO LAT + Planck | n_s, α_s | σ(n_s) ~ 0.002 | n_s ≈ 0.97 |
+| SO LAT + SPHEREx (~2030) | n_s, α_s | σ(n_s) ≈ 8e-4, σ(α_s) ≈ 1.2e-3 | n_s 0.970–0.975: 2.3–8.5σ from today's CMB-only 0.9682 — first decisive test |
+| SO SATs, BICEP/Keck + SPT-3G (2020s) | r | σ(r) ~ 2–5e-3 | no detection (consistent) |
+| LiteBIRD (launch 2032, results ≳ 2035) | r | forecast σ(r) ≈ 5e-5 (r = 0 fiducial); requirement δr < 1e-3 | SERAPIS-E r ≈ 4.7e-4 at ~10σ (optimistic); r ladder 4.7/3.4/2.5e-4 resolvable at ~2σ per step; nothing seen at the requirement level |
+| CMB-S4 | — | DOE/NSF support ended 2025 | — |
 | DESI, Euclid | Σm_ν | σ ~ 0.02 eV | ≈ 0.059 eV |
 | JUNO, DUNE, Hyper-K | ordering | NO vs IO at > 3σ | tests the NO input (not a model output) |
-| 21-cm / SPHEREx | α_s, f_NL | σ(f_NL) ~ 1 | f_NL ≈ 0 |
+| Janus α_s test | α_s | needs σ ~ 1e-4 (D670) | beyond funded experiments |
 
 ## What is NOT predicted (stated limits)
 - The size of ε (the tilt strength) is fitted to the low-T_R window, not derived; its microscopic origin is open (D620–D631, D684–D687: not from the supergravity sector; tilt shape identified with the N = 2 threshold at ρ). SERAPIS-E (D689–D693) derives a tilt of natural size from the Berg–Haack–Körs one-loop Kähler correction, Im S·Im ρ ≈ 190–245 N; plateau placement in the uplift is still by hand.
