@@ -4821,3 +4821,12 @@ plausible, but it was not verified in a specific model this tick. Open.
 **D511 (Twist-M-L cycle 6; arithmetic in code; results/lens_d511_neff.txt) — ΔN_eff for Twist-M-L.** With no FI hidden sector (case ii), the hidden-bath term of D463 is absent: ΔN_eff = 0.047
 (gravitino) + 0.005–0.021 (KK) = 0.052–0.068, a 1.7–2.3σ hint at CMB-S4 (σ ≈ 0.03, approximate). Slightly lower than Twist-2's 0.065–0.081 (D485), so ΔN_eff could in principle separate
 the variants. Result (estimate).
+
+**D512 (Danny 21:23 CT "build on next, see if it sticks"; locked PREREG_D512_U3_K1 + DEVIATIONS D1; results/u3_k1_d512.txt, first run kept as _run1_superseded) — INCONCLUSIVE;
+the printed verdict 'STICKS WITH CHANGED PREDICTIONS' is NOT valid.** Test: in the D508 home the Twist field is a single torus shape, so its Kähler potential is K = −ln(U₃+Ū₃) (k = 1), not k = 3.
+V(x) can be kept, but the field's canonical length shrinks (φ = ln x/√2 instead of √(3/2) ln x). The control (k = 3) reproduces D501 exactly. With k = 1: at ε = 0, n_s = 0.9658, r = 0.0012; at
+ε = 1e-8, n_s = 0.9705, r = 0.0013; at ε = 1.494e-7, n_s = 1.097, r = 0.017. The refit's 'root' ε = 1.64e-8 returned n_s = 1.097, identical to the ε = 1.494e-7 point. So brentq found a JUMP, not a
+root: the end-of-inflation point switches branch (x* jumps to 1.0e-5) between ε = 1e-8 and 1.6e-8. No reruns (locked). Honest reading: with k = 1 the Twist-M plateau gives n_s up to ≈ 0.970
+(1.3σ below CMB-SPA+DESI's 0.9728 ± 0.0027) with r ≈ 1.3e-3 (≈ ⅓ of k = 3, as α-attractor scaling expects) before the solution becomes unstable. A clean fit at 0.9736 was not demonstrated. So the
+single-torus home does not cleanly stick. Options: an isotropic three-torus Twist (k = 3, U₁ = U₂ = U₃) but then the SM couples to it (conflicts with D508), or a finer ε scan / different deformation
+(new lock). Status: D508's home is in doubt for inflation.
