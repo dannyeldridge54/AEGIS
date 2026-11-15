@@ -1,0 +1,15 @@
+beta=1 delta=3e-06 N=50: n_s=0.96187 r=0.00163 alpha=-0.000823 | x=0.0286 pred=-0.0008152 err=-0.941% | attractor -0.000727
+beta=1 delta=3e-06 N=55: n_s=0.96563 r=0.001362 alpha=-0.0006867 | x=0.0355 pred=-0.0006809 err=-0.848% | attractor -0.0005908
+beta=1 delta=1e-05 N=50: n_s=0.96575 r=0.001797 alpha=-0.0009057 | x=0.106 pred=-0.0008983 err=-0.817% | attractor -0.0005864
+beta=1 delta=1e-05 N=55: n_s=0.96993 r=0.001532 alpha=-0.0007713 | x=0.131 pred=-0.0007659 err=-0.704% | attractor -0.0004521
+beta=1 delta=3e-05 N=50: failed (Could not find root within given tolerance. (31889.15626926878521388188938942395548554225404 > 2.242077542919707313477967333263865810048419107e-44)
+Try another starting point or tweak arguments.)
+beta=1 delta=3e-05 N=55: failed (Could not find root within given tolerance. (28417.64923333738247625782018524279123300069581 > 2.242077542919707313477967333263865810048419107e-44)
+Try another starting point or tweak arguments.)
+beta=0.5 delta=3e-06 N=50: n_s=0.9603 r=0.001568 alpha=-0.0007907 | x=-0.00178 pred=-0.0007849 err=-0.738% | attractor -0.0007881
+beta=0.5 delta=3e-06 N=55: n_s=0.9639 r=0.001299 alpha=-0.0006543 | x=-0.00125 pred=-0.0006499 err=-0.672% | attractor -0.0006517
+beta=0.5 delta=1e-05 N=50: n_s=0.96043 r=0.001574 alpha=-0.000792 | x=0.00176 pred=-0.0007862 err=-0.737% | attractor -0.0007831
+beta=0.5 delta=1e-05 N=55: n_s=0.96403 r=0.001305 alpha=-0.0006555 | x=0.00283 pred=-0.0006511 err=-0.67% | attractor -0.000647
+beta=0.5 delta=3e-05 N=50: n_s=0.96079 r=0.001594 alpha=-0.0007956 | x=0.0119 pred=-0.0007898 err=-0.733% | attractor -0.0007689
+beta=0.5 delta=3e-05 N=55: n_s=0.96441 r=0.001323 alpha=-0.000659 | x=0.0146 pred=-0.0006546 err=-0.666% | attractor -0.0006335
+max |err| = 0.941%  VERDICT: PASS

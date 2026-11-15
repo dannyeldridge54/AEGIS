@@ -6466,3 +6466,8 @@ DEEP (DpL tick 1 on Janus; literature, no computation) — novelty of the Janus 
 - Generalised exponential plateau (2507.17721): α_s formula only, no values, no uplift, no relation.
 - One extended search (consistency relations with uplift/enhanced running, 2025–26) found nothing equivalent.
 Verdict: the closed forms (D635/D640), the consistency relation and β_s (D666) appear NEW (labelled: literature check of 3 sources + 1 extended search, not exhaustive). Next: derive the Janus relation for a general plateau 1 − e^{−pφ} + δe^{qφ} (covers KL's singular T-models) — D669.
+
+## D669
+DEEP (DpL tick 2, manual "Ddl"; locked PREREG_D669; results/janus_general_d669.txt) — the Janus relation is GENERAL. For V ≈ 1 − Ae^{−pφ} + δe^{qφ} (κ = q/p, x = tilt slope / plateau slope at φ*): 1 − n_s = 2pA′(1 − κx), r = 8A′²(1+x)², α_s = −2p²A′²(1+x)(1+κ²x) ⇒ with ϱ = p√(r/2)/(1 − n_s), x = (ϱ − 1)/(1 + κϱ): α_s = −½(1 − n_s)²(1+x)(1+κ²x)/(1 − κx)². Only (p, κ) enter — fixed by the model class (p = √(2/3α_eff), κ = ramp/plateau exponent ratio); SERAPIS is (2√2, 1/2).
+Test on Kallosh–Linde's power-law singular T-model (2512.02969), exact first-order slow roll: β = 1 (κ = 1) and β = 1/2, α = 1/3, δ = 3e-6…3e-5, N* = 50, 55: errors −0.67 … −0.94% at all 10 computed points (δ = 3e-5, β = 1 did not converge — no slow-roll solution found; not counted). Cross-check: δ = 1e-5, N = 55 gives n_s = 0.970, r = 0.0015, matching KL's quoted 0.969, 0.0016. PASS.
+Meaning: the relation is a property of the whole "plateau + exponential ramp" family (singular attractors included); measuring (n_s, r, α_s) tests the family and, through κ, distinguishes members (SERAPIS κ = 1/2 vs KL β = 1 κ = 1). Novel per D668 (not exhaustive).
