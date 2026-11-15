@@ -5323,3 +5323,14 @@ Consequence (revises D530): the SERAPIS torus must NOT be an N = 2 fixed plane. 
 - For holomorphic SERAPIS-1 it is fatal: its η⁻² factor needed an N = 2 threshold (D530), and that threshold makes large Im τ non-perturbative.
 So SERAPIS-KL on an N = 1/N = 4 plane is the only consistent home class. Its full SL(2,Z) on such a plane, and the source of its potential (no threshold, so not CI-type either), remain open.
 Status: home class revised: T² ⊕ T⁴ with the SERAPIS T² in an N = 1 or N = 4 sector (no N = 2 threshold), flux-free, M_s ≳ 1e17 GeV. Retires D530's "N = 2 fixed plane".
+
+## D561 — DEEP (Dp now, 23:05 CT; literature + arithmetic estimate, not locked) — the two escape routes from D560 each carry a price
+(i) The N = 1-plane route (no N = 2 threshold on the SERAPIS T²).
+- Kähler moduli carry a [SL(2,Z)]_T per modulus, but Wilson lines in semi-realistic heterotic models break it to congruence subgroups (Nilles, Ramos-Sánchez, Vaudrevange et al., arXiv:1707.09966). So the SERAPIS plane must carry NO Wilson line, consistent with D530's full-SL(2,Z) need.
+- Price: with no threshold there, nothing perturbative generates a potential for that T. The SERAPIS-KL V must come from elsewhere (non-perturbative, or the nilpotent sector), which is the open D552 gap again.
+(ii) The N = 4 → N = 2 Scherk–Schwarz route.
+- Kiritsis, Kounnas, Petropoulos, Rizos, "Solving the decompactification problem" (hep-th/9606087): with N = 4 spontaneously broken by a Z₂ translation on the T², the universal threshold VANISHES at large radius and non-universal ones grow only like log R². That cures D560.
+- Price: SUSY breaking is tied to the radius, m₃/₂ ~ M_s/R ~ M_s/√(Im τ). At M_s = 1e17 GeV this gives m₃/₂ ~ 8e15 GeV at Im τ* = 158 (6.6e16 GeV at the end). That is incompatible with the eV gravitino of the gauge-mediation sector (D474, D548), which would have to be replaced.
+- A one-loop Casimir energy ~ (n_F − n_B) m₃/₂⁴/16π² has V^{1/4} ~ 2.2e15 GeV per net degree of freedom at Im τ*, the same order as V_inf^{1/4} = 6e15 GeV. It would distort or destroy the plateau unless the spectrum is Bose–Fermi degenerate (n_F = n_B, "super no-scale" models).
+Verdict: neither route is free. Route (i) leaves the potential's origin open. Route (ii) needs Bose–Fermi degeneracy and gives up the eV-gravitino phenomenology.
+Status: the home question is now sharp. SERAPIS-KL on a Wilson-line-free N = 1 plane with a non-perturbative/nilpotent origin of V, or on a Scherk–Schwarz T² with a Bose–Fermi-degenerate spectrum. Either is a substantial model-building project; neither is resolved here.
