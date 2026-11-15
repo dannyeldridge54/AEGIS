@@ -5334,3 +5334,14 @@ Status: home class revised: T² ⊕ T⁴ with the SERAPIS T² in an N = 1 or N =
 - A one-loop Casimir energy ~ (n_F − n_B) m₃/₂⁴/16π² has V^{1/4} ~ 2.2e15 GeV per net degree of freedom at Im τ*, the same order as V_inf^{1/4} = 6e15 GeV. It would distort or destroy the plateau unless the spectrum is Bose–Fermi degenerate (n_F = n_B, "super no-scale" models).
 Verdict: neither route is free. Route (i) leaves the potential's origin open. Route (ii) needs Bose–Fermi degeneracy and gives up the eV-gravitino phenomenology.
 Status: the home question is now sharp. SERAPIS-KL on a Wilson-line-free N = 1 plane with a non-perturbative/nilpotent origin of V, or on a Scherk–Schwarz T² with a Bose–Fermi-degenerate spectrum. Either is a substantial model-building project; neither is resolved here.
+
+## D562 — DEEP (Dp now, 23:08 CT; literature + reasoning, not locked) — the Scherk–Schwarz route fails AT THE VACUUM: only the N = 1-plane route survives
+Literature:
+- Kounnas & Partouche (arXiv:1701.00545): in heterotic N = 2 → 0 models (T²×T⁴/Z₂) the one-loop potential is ≈ ξ(n_F − n_B)m₃/₂⁴ + O(e^{−cM_s/m₃/₂}), with m₃/₂ ∝ 1/(SS-circle volume). Under the super no-scale condition n_F = n_B the potential and tadpoles are exponentially small. Λ can come out near the observed value when m₃/₂ ≈ 1e-2 cM_s. m₃/₂ is a tree-level flat direction.
+- Florakis, Rizos, Violaris-Gountonis (arXiv:2110.06752): super no-scale Pati–Salam models; the potential is exponentially suppressed only for a compactification scale well below M_s.
+Reasoning for SERAPIS:
+- On the plateau (Im τ ~ 100–160), n_F = n_B would suppress the Casimir term to ~e^{−c√Im τ}. The D561 competition could be cured during inflation.
+- But the SERAPIS vacuum is at τ = i, the self-dual point. The SS circle is at string size there, so m₃/₂ ~ M_s, the exponential suppression is gone (e^{−c} ~ O(1)), and the vacuum energy would be ~ M_s⁴ ~ 1e68 GeV⁴. Self-dual points also bring extra massless states (enhanced symmetry), which spoils n_F = n_B.
+- Exponentially small Λ in these models needs m₃/₂ ≪ M_s, i.e. a LARGE radius today. That is the opposite of SERAPIS's τ = i vacuum.
+Verdict: route (ii) is incompatible with a vacuum at τ = i. With D560 and D561, the only surviving home class is a Wilson-line-free N = 1 plane (no N = 2 threshold), flux-free, M_s ≳ 1e17 GeV, with the SERAPIS-KL potential coming from a non-perturbative or nilpotent sector whose string origin is unknown.
+Status: home class narrowed to one option. The decisive open question is a non-perturbative, SL(2,Z)-invariant source on an N = 1 plane that is flat at the cusp. That is exactly where string-derived modular potentials diverge (D554), so it may not exist. Flagged as the critical test for whether SERAPIS can have a string home at all.
