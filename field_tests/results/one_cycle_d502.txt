@@ -1,0 +1,6 @@
+Twist-M: M_s=2.65e+15 GeV, f=1.13e+14 GeV
+  m=2 H0: S=268.6, tau_c=S/2pi=42.8, n/S=0.871
+  m=10 H0: S=265.4, tau_c=S/2pi=42.2, n/S=0.882
+  m=10000 H0: S=251.6, tau_c=S/2pi=40.0, n/S=0.930
+Twist-M: closest n/S=0.930 to k=1 (7.0%) -> CONSISTENT (k=1)
+Twist-2: n/S=0.517-0.468, closest to k=1 (48.3%) -> INCONSISTENT

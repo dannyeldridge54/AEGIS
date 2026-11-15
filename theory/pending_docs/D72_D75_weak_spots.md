@@ -4736,3 +4736,9 @@ It does mean the conclusion (no fifth force) is robust.
 **DEEP 6 (Danny "Again", 21:08 CT; topic 6 Λ; literature).** Prior art for 'Λ from an exponential': Demirtas–Kim–McAllister–Moritz–Rios-Tascon (2107.09064, 2107.09065) build explicit
 flux vacua with exponentially small W₀ and vacuum energy (even 1e-144). The Twist's cliff is the phenomenological version, and they get credit. A new connection to test (not a claim):
 n ≈ 234 ≈ 2π × 37, close to the τ ≈ 39–43 cycle that D471 needs for the birefringence axion's mass. One intermediate cycle might set both Λ and the axion mass. It needs a lock.
+
+**D502 / DEEP 7 (Danny "Again", 21:10 CT; topic 7 birefringence axion; scored, locked PREREG_D502_ONE_CYCLE; results/one_cycle_d502.txt) — CONSISTENT (k = 1) for Twist-M,
+INCONSISTENT for Twist-2.** One intermediate cycle τ_c ≈ 40 can set both Λ's cliff (n = 234 = 2π × 37.2) and the birefringence axion's mass (S = 252–269, τ_c = 40–43). n/S = 0.93 at
+m ≈ 1e4 H0 is 7% from 1. Twist-2's n = 125 gives n/S ≈ 0.5, which is not an integer within tolerance. Mild support only: identifying the cliff exponent with a unit-charge instanton action is
+an O(1)-uncertain step, and the 15% tolerance was generous. If it holds, it gives a falsifiable prediction. The axion is then at the heavy end, so β at reionization ≈ 0, while β at recombination =
+0.28° (Δβ ≈ 5.5σ at LiteBIRD's headline noise, D484). Result.

@@ -179,3 +179,5 @@ alone.
 **Twist-M update (D492–D499):** w₀ = −1.0000, w_a ≈ 0; n = 234.05; kination 3.3 e-folds (ΔN* +0.89, ε re-fit pending); fifth force needs the FI kink, but then the FI soft energy controls the history (case (i), capture at x = 1, run pending) — the tracker self-relaxation holds only without FI.
 
 **Twist-M predictions (D501):** n_s 0.9736 (fit), r = 0.00435, α_s = −7.6e-4, w₀ = −1, w_a ≈ 0.
+
+**Twist-M link (D502):** one τ≈40 cycle may set both Λ (n = 234) and the axion mass (n/S = 0.93, k = 1) → axion at heavy end → LiteBIRD: β_reio ≈ 0, β_rec = 0.28° (mild support).
