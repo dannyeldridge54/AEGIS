@@ -6833,3 +6833,11 @@ Method: Planck 2018 X matching equation, N* = 67 − ln(k/a0H0) + ¼ ln(V*²/(M_
 | 1e8 | 49.34 | 0.9728 | 4.75e-4 | 4.77e15 |
 | 1e10 | 50.87 | 0.9743 | 4.56e-4 | 4.72e15 |
 VERDICT (locked rule ±0.5): INCONSISTENT at the low end — the D692 estimate (48.4–49.9 for T_R 1e6–1e8) is 0.6 e-folds too high; the computed bracket is N* = 47.8–49.3. Implied shift at fixed C: Δn_s ≈ −0.0005, Δr ≈ +1.5%. Both stay inside the frozen SERAPIS-E bands (n_s 0.970–0.975, r 4.55–5.12e-4), so lock D693 is NOT retuned; this note is the correction record (D692/D693 N* inputs should read 47.8–49.3). The T_R bracket itself is still an estimate (×m_φ^{3/2} scaling, D692) — next: compute T_R from the sterile decay widths for m_φ ≈ 2.2e13 GeV.
+
+## D720 (DEEP; locked PREREG_D720; results/tr_rho_d720.txt + tr_rho_d720_structure.txt) — T_R at ρ: NULL by the locked method, because the Γ2 doublet's Majorana matrix is rank 1 at ρ
+Computed:
+- Sterility carries over to ρ: |∇(invariant mass²)|/mass² = 9e-11 at ρ (7.6e-11 at i). Diagonal inflaton → N N widths vanish at ρ, as at i (D589a). Sfermion channel ~30–70 GeV (estimate, D601 scaling), subdominant.
+- The weight-2 Γ2 doublet at ρ satisfies Y₂ = i·Y₁ exactly (to 1e-16), so A(Y) is NILPOTENT (A² = 0): singular values (0.2241, 5e-17). At ρ the doublet gives ONE massive and ONE MASSLESS Majorana state, not the degenerate pair found at i (0.1508, 0.1508; D664).
+- The D597 construction (eigen-decomposition, κ = |…|/s with s = √(Y₁²+Y₂²)) divides by s = 0 at ρ: κ came out 3.7e15 and the T_R grid (1e21–1e24 GeV) is meaningless. By the lock's NULL rule ("κ(ρ) cannot be computed") the T_R result is NULL; the N* run on those numbers was stopped and is not reported.
+What this means (reasoning, not computed): at ρ the N splitting is maximal (ΔM/M = 1), so the D597 "λ ∝ ΔM" suppression does not apply. The off-diagonal coupling must be computed with a Takagi (SVD) decomposition, and the channel φ → N_heavy + N_massless is open whenever M < m_φ. A massless N in the doublet also means a second massless or very light neutrino state, which needs checking against oscillation data (two mass splittings need at least two massive ν). This changes D601/D602's "heavy-N doublet, ΔM/M ~ 0.1" picture for SERAPIS-E's vacuum.
+Next: D721 = new lock, Takagi/SVD κ at ρ, Γ(φ → N₁N₂) with M₂ = 0, then T_R and N*.

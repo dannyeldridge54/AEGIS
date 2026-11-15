@@ -1,0 +1,16 @@
+1. sterility check (invariant mass^2 = y^2 * |Y|^2 summed over doublet, k=2)
+  at i: inv=2.274630e-02, |grad|/inv=7.63e-11
+  at rho: inv=1.883452e-02, |grad|/inv=9.21e-11
+2. off-diagonal coupling at rho
+  Y(rho)=[1.12055099e-01+1.83997295e-20j 8.01234453e-18+1.12055099e-01j], s=0.000000+0.000000j, eigenvalues [ 1.96973344e-10+3.67727016e-09j -1.96973366e-10-3.67727014e-09j], |w1|-|w2|=1.45e-17
+  (U^T A(Y') U)_12 = 684834.41632-12785085.14179j; kappa(rho) = 3654284614925890.0000 (D597 at i: 1.26)
+3. T_R grid, m = 2.2e13 GeV
+  M/m=0.1: dM/M=0.001:1.79e+21  dM/M=0.01:1.79e+22  dM/M=0.1:1.79e+23  dM/M=0.3:5.36e+23
+  M/m=0.2: dM/M=0.001:3.23e+21  dM/M=0.01:3.23e+22  dM/M=0.1:3.23e+23  dM/M=0.3:9.70e+23
+  M/m=0.33: dM/M=0.001:3.96e+21  dM/M=0.01:3.96e+22  dM/M=0.1:3.96e+23  dM/M=0.3:1.19e+24
+  M/m=0.45: dM/M=0.001:2.39e+21  dM/M=0.01:2.39e+22  dM/M=0.1:2.39e+23  dM/M=0.3:7.16e+23
+  g*=228.75 factor: 0.827
+  PRIMARY band: T_R = 2.39e+22 - 1.19e+24 GeV
+4. sfermion channel (D601 scaling ~ m_soft^4/(M_P^2 m)): at i, m=1.9e11 gave 350-710 GeV; at m=2.2e13 it falls by sqrt(1.9e11/2.2e13)=0.093 -> 33-66 GeV (estimate), subdominant
+5. N* (D719 code)
+  T_R=2.39e+22: N*=60.34, n_s=0.9824, r=3.721e-04
