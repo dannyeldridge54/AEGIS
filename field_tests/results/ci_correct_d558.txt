@@ -1,0 +1,6 @@
+a=sqrt2 (alpha=1/3) N*=52: y*=172 n_s=0.9406 r=0.00021 (-9.3 sigma SPA, -11.9 SPA+DESI)
+a=sqrt2 (alpha=1/3) N*=55.6: y*=176 n_s=0.9432 r=0.00017 (-8.4 sigma SPA, -11.0 SPA+DESI)
+a=sqrt2 (alpha=1/3) N*=60: y*=181 n_s=0.9459 r=0.00013 (-7.5 sigma SPA, -10.0 SPA+DESI)
+a=sqrt(2/3) N*=52: y*=102 n_s=0.9528 r=0.00138 (-5.2 sigma SPA, -7.4 SPA+DESI)
+a=sqrt(2/3) N*=55.6: y*=106 n_s=0.9555 r=0.00117 (-4.3 sigma SPA, -6.4 SPA+DESI)
+a=sqrt(2/3) N*=60: y*=110 n_s=0.9583 r=0.00097 (-3.4 sigma SPA, -5.4 SPA+DESI)

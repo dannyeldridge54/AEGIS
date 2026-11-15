@@ -5289,3 +5289,15 @@ Lüst, Masias, Pieroni, Scalisi (arXiv:2512.07930): a tower whose masses fall wi
 SERAPIS: H = 9.1e12 GeV and Λ_sp ≈ 2.2e17 GeV at Im τ* (D540), so H/Λ_sp = 4e-5 and the corrections are ~ (4e-5)³ ≈ 7e-14. Negligible.
 PC: J2 at 11 of 16 points (all FAIL so far); J3 not started.
 Status: the tower is no threat to the predictions in the controlled regime (M_s ≳ 1e17 GeV, D554). The open string-origin question is about the plateau's existence, not about corrections to it.
+
+## D558 — DEEP (Dp, 23:01 CT; scored, locked PREREG_D558_CI_CORRECT; results/ci_correct_d558.txt) — Casas–Ibáñez with their exact N: my numerics do NOT reproduce their quoted n_s; discrepancy unresolved
+Their v2 (read 22:59 CT): V ∝ (τ₂G̃₂/N)², G̃₂ = G₂ − π/τ₂, N = −6 ln[2τ₂|η|⁴] + Ñ₀ with Ñ₀ = 25, τ₂ = e^{aφ}. Quoted: n_s ≈ 0.966, r ≈ 0.0033 (a = √(2/3)) and r ≈ 0.0011 (a = √2) at N_e = 60, from the large-τ₂ form V ∝ |π/3 − e^{−aφ}|².
+My full numerics, with the −6 ln(2τ₂) and Ñ₀ terms kept:
+- a = √(2/3): n_s 0.953–0.958, r 0.0010–0.0014;
+- a = √2: n_s 0.941–0.946, r ~ 2e-4 (N* = 52–60).
+The log term in N slows the approach to the plateau and lowers n_s. Their quoted numbers match the leading large-τ₂ form, which drops it.
+I cannot tell from here whether they justify dropping it or whether I mis-normalised something else. Labelled: an unresolved discrepancy, not a verdict on their paper.
+- D555's inflation numbers used a wrong N (missing the factor 6 and Ñ₀) and are superseded by this note.
+- D555's vacuum finding (V = 0 at τ = i, G̃₂(i) = 0) stands.
+Also: Aoki & Otsuka (arXiv:2411.08467) tie n_s to the species scale in this class (N_e ≈ (M_P/Λ_sp)²/(2πa²c_n)); for the Planck n_s, Λ_sp ≈ 9e16 GeV (a = 1). Our D540 estimate, Λ_sp ≈ 2.2e17 GeV at Im τ* ≈ 126, is in the same range.
+Relevance to SERAPIS: the species-scale route is the leading candidate string mechanism for a cusp plateau. If the log correction in N is physical, it lowers n_s for that route (worse for both branches), so the string-origin question and the n_s prediction are coupled.
