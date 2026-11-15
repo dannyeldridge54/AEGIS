@@ -5116,3 +5116,11 @@ I replaced SERAPIS's non-polynomial factor [ln(j/1728)+κ] by the string-derived
 - Primary κ′ = 0: n_s = 0.9606 (N* = 52; −2.6σ SPA) and 0.9631 (55.6; −1.8σ); r = 0.0019–0.0022. It fails the 2σ condition at N* = 52, so it is NOT VIABLE by the lock.
 - Sensitivity is severe: κ′ = 1 gives n_s 0.92–0.93 (r ≈ 0.01), and κ′ = 2π gives n_s ≈ 1.045. The slower (πy/3) growth of the threshold function makes the plateau's approach depend strongly on the constant. So the string-side version is not predictive without fixing κ′ from first principles.
 Lesson: the threshold function can make a plateau, but not a stable, predictive one at this level. D535's gap (string origin of the plateau) stays open; SERAPIS-1 remains an effective model.
+
+## D542 — RIGHT (pp 22:34 CT; reasoning + arithmetic, not scored) — the Z₄^R/Z₈^R parity with a non-zero gravitino mass: still safe
+Referee caveat (D537/v2.1 §4): a non-zero ⟨W⟩ breaks the R-symmetry. What is left?
+- ⟨W⟩ has R-charge 2 (mod N). A non-zero ⟨W⟩ = m₃/₂ M_P² breaks Z₄^R → Z₂ (matter/R-parity) and Z₈^R → Z₄. Operators forbidden only by the broken part can reappear, but only with explicit powers of ⟨W⟩/M_P³ = m₃/₂/M_P². This is the standard Z₄^R argument (Lee, Raby, Ratz, Ross et al., arXiv:1102.3595); there μ ~ m₃/₂ appears the same way.
+- dim-4 (UDD, LQD, LLE, LHu): still forbidden by the residual Z₂ matter parity.
+- dim-5 (QQQL, UUDE): reappear with M_eff ~ M_P²/m₃/₂. For gauge-mediated m₃/₂ = 1.7–4.7 eV (D474) this gives M_eff ≈ 1.3–3.5e45 GeV; even m₃/₂ = 100 TeV gives 5.9e31 GeV. The bound M_eff ≳ 1e24 GeV is met by more than 7 orders of magnitude.
+- dim-6 Kähler (QQU†E†, QLU†D†): an R-charge mismatch of 2 can be filled by one ⟨W⟩ insertion, giving an extra suppression ~ m₃/₂/M_P, which is negligible. A mismatch of 1 or 3 (mod 4) cannot be filled at all, so the operator stays forbidden.
+Verdict: proton protection survives SUSY breaking and the Λ uplift as long as m₃/₂ ≲ 1e5 GeV, which covers every Twist realisation. The referee's caveat is resolved at the order-of-magnitude level. Not yet written into the published v2.1; it goes into a future version.
