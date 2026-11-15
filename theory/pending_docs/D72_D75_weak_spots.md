@@ -6169,3 +6169,14 @@ Reasoning on the potential's form (not computed):
   - At the cusp, m_W² ∝ y·M_s²/U₂ grows, so V ∝ y·ln y: nearly linear, a Chronos-type tilt with a log correction.
 - Size estimate: ε ~ (m²M_s²/16π²)/V₀ ~ (1/16π²)(m/H)²(M_s/M_P)², with M_s/M_P ≈ 0.04 and m/H ~ 0.01–0.1, gives ε ~ 1e-9 to 1e-7 (estimate). That is TOO SMALL compared with 1.3e-4, unless m ~ H (SUSY breaking during inflation is Hubble-scale, which is plausible via Hubble-induced soft terms: m ≈ cH gives ε ~ c²(M_s/M_P)²/16π² ~ 1e-5·c²; c ~ 3–4 reaches 1e-4).
 Verdict: the HM/enhanced-symmetry route gives the right STRUCTURE (centred on τ = i, linear-ish tilt, massive vacuum) and a magnitude that reaches ε ~ 1e-4 only if the light states feel Hubble-scale SUSY breaking during inflation (c ≈ 3–4). That is plausible but unshown. A locked computation of V_CW from these states (using HM's mass formula) would be the next real step.
+
+## D622 — DEEP (Ddl 08:48 CT; locked PREREG_D622_YLNY_TILT; results/ylny_tilt_d622.txt) — the predictions are ROBUST to an HM-like y·ln y tilt; only ε shifts
+Tilt T = I₁·ln(e + I₁), normalised to I₁ at y = 24 (grows ∝ y·ln y at the cusp, D621). D588 offsets applied; N* = 46–50.
+- ε = 0.8e-4: n_s 0.9686–0.9723, r 4.3–4.9e-4, y* 22.8–23.9. All pass.
+- ε = 1.0e-4: n_s 0.9712–0.9750, r 4.7–5.3e-4, y* 23.1–24.2. All pass.
+- ε = 1.3e-4: fails at N* = 50 (+2.4σ). ε = 1.6e-4: fails.
+ALLOWED: {0.8e-4, 1.0e-4}. Band: n_s 0.9686–0.9750, r 4.3–5.3e-4.
+Verdict by the lock: ROBUST.
+- The band overlaps D605's (n_s 0.970–0.975, r 4.8–5.7e-4) within 0.0012 in n_s and 10% in r.
+- The steeper (y ln y) tilt simply moves the allowed ε down by about 30%.
+- Whether the tilt is I₁-like or HM-like (y ln y), the observable predictions (n_s ≈ 0.97, r ≈ 5e-4) stand. The D605 lock does not need revising for this change of microscopic source.
