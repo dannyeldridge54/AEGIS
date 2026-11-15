@@ -5414,3 +5414,13 @@ Concretely:
 - HS-Chronos is excluded by r < 2.4e-4 (95%) or by a detection of r > 1.06e-3.
 Who can test it: CMB-S4-class σ(r) ~ 4e-4 (delensed) reaches the HS-Chronos level only at about 1σ. A full test needs σ(r) ≲ 1e-4 (next-generation, post-LiteBIRD).
 Note: the original Kairos/Chronos (p = 1; r ≈ 1.2e-3 / 2e-3) remain the published v2.2 predictions. D567 adds the home-consistent pair.
+
+## D568 — DEEP (Dp now, 23:28 CT; literature + reasoning) — the home-safe versions need an effective α below the "maximal-SUSY" lower end: a tension with B-mode-target lore
+- Kallosh, Linde, Wrase, Yamada (arXiv:1704.04829; from Ferrara–Kallosh): maximal-supersymmetry (seven-disk) constructions give 3α = 1…7, i.e. B-mode targets r ≈ 1e-3 to 1e-2. The LOWEST value, 3α = 1, gives r ≈ 1e-3. Values below 1 are possible in generic N = 1 supergravity but do not come from that construction.
+- SERAPIS's field-space geometry stays α = 1/3 (K = −ln 2 Im τ, the unit disk, 3α = 1). HS-Kairos/HS-Chronos (p = 2) instead act like α_eff = α/p² = 1/12 (3α_eff = 1/4) because the potential's leading 1/Im τ term is absent (V ≈ 1 − c/Im τ²). So the home-safe models sit BELOW the maximal-SUSY B-mode targets (r ~ 2.5–5e-4 versus ≥ 1e-3).
+- Naturalness: a cusp potential with no 1/Im τ term needs that coefficient to vanish. String corrections (α′, loop) generically produce 1/Vol ∝ 1/Im τ terms. HS models therefore need either a symmetry that forbids the 1/Im τ term, or a tuning of order (1/Im τ*) ~ 4% between the induced 1/Im τ coefficient and the 1/Im τ² one. That is a real cost, to be stated alongside D567.
+Synthesis of D560–D568:
+- p = 1 (natural attractor, r ~ 1e-3, the B-mode target) needs Im τ* ~ 115: no perturbative home.
+- p ≥ 2 (home-safe) needs a missing 1/Im τ term: a mild tuning, and r below the standard targets.
+So SERAPIS faces a "home vs naturalness" trade-off, quantified by r: detecting r ≈ 1e-3 would favour the natural-but-homeless version.
+Status: recorded as the main theoretical tension of the home-consistent variants.
