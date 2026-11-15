@@ -1,0 +1,4 @@
+@echo off
+REM AEGIS cosmos catalog downloads (approved by Danny). Output: Desktop\AEGIS_cosmos\raw and fetch_log.txt
+wsl -e bash -lc "PY=/home/syndyr/micromamba/envs/aegis/bin/python; [ -x $PY ] || PY=python3; cd /mnt/c/Users/Danny/Desktop/AEGIS_cosmos && $PY -u fetch_cosmos.py; $PY -u fetch_vizier.py"
+pause

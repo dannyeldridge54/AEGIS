@@ -1,0 +1,317 @@
+<meta charset="utf-8">
+<title>AEGIS Cosmos Atlas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an observatory console. Left = the map (canvas), right = controls, narration and catalog. Single deliberate dark "night sky" look. */
+:root{
+  --bg:#080c18; --panel:#0f1628; --panel2:#151e36; --line:#24304f; --fg:#dde5f4; --muted:#8e9ab8;
+  --star:#f2c66d; --gal:#6fd0ff; --qso:#b893ff; --flag:#ff6f6f; --ok:#59d39a; --warn:#f2b34d;
+  --display:"Chakra Petch","Segoe UI",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px;box-sizing:border-box}
+*{box-sizing:border-box}
+header{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;margin-bottom:12px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,3.2vw,2.2rem);margin:0;letter-spacing:.02em}
+.tag{color:var(--muted);font-size:.9rem;max-width:70ch}
+.app{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:16px;align-items:start}
+@media (max-width:900px){.app{grid-template-columns:1fr}}
+.views{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.views button,.levels button{font:500 .85rem var(--body);color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer}
+.views button[aria-pressed="true"],.levels button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--star);outline-offset:2px}
+.stage{position:relative;background:radial-gradient(ellipse at 50% 40%,#101a33 0%,var(--bg) 70%);border:1px solid var(--line);border-radius:10px;overflow:hidden;aspect-ratio:16/10;max-width:100%;touch-action:none}
+@media (max-width:600px){.stage{aspect-ratio:1}}
+canvas{display:block;width:100%;height:100%;cursor:crosshair}
+.hud{position:absolute;left:10px;bottom:8px;font:400 .72rem var(--mono);color:var(--muted);pointer-events:none}
+.legend{position:absolute;right:10px;top:8px;display:grid;gap:3px;font:400 .72rem var(--mono);color:var(--muted);background:rgba(8,12,24,.7);padding:6px 8px;border-radius:6px;pointer-events:none}
+.legend span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;background:var(--c)}
+.side{display:grid;gap:12px;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.card h2{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.04em;text-transform:uppercase;margin:0 0 8px;color:var(--muted)}
+.levels{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.narr{font-size:.92rem;max-width:62ch}
+.narr p{margin:.3em 0}
+label.ck{display:flex;align-items:center;gap:8px;font-size:.88rem;padding:2px 0}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;font-size:.85rem;margin-top:6px}
+.row output{font:400 .8rem var(--mono);color:var(--muted);min-width:7ch;text-align:right}
+input[type=range]{width:100%;accent-color:var(--star)}
+.pick{font:400 .82rem var(--mono);white-space:pre-wrap;color:var(--fg)}
+.pick a{color:var(--gal)}
+table{border-collapse:collapse;width:100%;font:400 .76rem var(--mono)}
+th,td{padding:4px 6px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+th:first-child,td:first-child{text-align:left}
+.scroll{overflow-x:auto;max-height:260px;overflow-y:auto}
+.g{display:inline-block;min-width:1.6em;text-align:center;border-radius:4px;font-weight:500}
+.gA{background:rgba(89,211,154,.18);color:var(--ok)} .gB{background:rgba(111,208,255,.15);color:var(--gal)} .gC{background:rgba(242,179,77,.16);color:var(--warn)} .gF{background:rgba(255,111,111,.16);color:var(--flag)}
+.eq{font:500 .95rem var(--mono);background:var(--panel2);border-radius:6px;padding:8px 10px;margin:6px 0}
+.small{font-size:.78rem;color:var(--muted)}
+.copy{font:500 .78rem var(--body);background:var(--panel2);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:4px 8px;cursor:pointer}
+footer{margin-top:14px;color:var(--muted);font-size:.78rem;max-width:90ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header>
+  <h1>AEGIS Cosmos Atlas</h1>
+  <div class="tag">From the stars around the Sun to the cosmic web, and back to the first moment. Real catalog data: ESA Gaia DR3 and SDSS DR17.</div>
+</header>
+
+<div class="app">
+  <section>
+    <div class="views" role="tablist" aria-label="Map scale">
+      <button data-view="local" aria-pressed="true">1 · Sun's neighbourhood</button>
+      <button data-view="msky" aria-pressed="false">2 · Milky Way sky</button>
+      <button data-view="web" aria-pressed="false">3 · Cosmic web</button>
+      <button data-view="gsky" aria-pressed="false">4 · Galaxy &amp; quasar sky</button>
+      <button data-view="first" aria-pressed="false">5 · The first moment</button>
+    </div>
+    <div class="stage" id="stage">
+      <canvas id="cv" aria-label="Interactive map"></canvas>
+      <div class="legend" id="legend"></div>
+      <div class="hud" id="hud">loading data…</div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h2>Selected object</h2>
+      <div class="pick" id="pick">Click any point on the map.</div>
+    </div>
+  </section>
+
+  <aside class="side">
+    <div class="card">
+      <h2>Explain it for</h2>
+      <div class="levels" role="group" aria-label="Explanation level">
+        <button data-level="0" aria-pressed="true">Kids</button>
+        <button data-level="1" aria-pressed="false">School</button>
+        <button data-level="2" aria-pressed="false">College</button>
+        <button data-level="3" aria-pressed="false">Research</button>
+      </div>
+      <div class="narr" id="narr"></div>
+    </div>
+
+    <div class="card" id="filters">
+      <h2>Filters</h2>
+      <div id="fStars">
+        <label class="ck"><input type="checkbox" id="fCtx" checked> Ordinary stars (sample)</label>
+        <label class="ck"><input type="checkbox" id="fHv" checked> <span style="color:var(--flag)">Fast-moving stars (flagged)</span></label>
+        <label class="ck"><input type="checkbox" id="fDm" checked> Distance mismatch (flagged)</label>
+        <div class="row"><span>Min speed</span><input type="range" id="fV" min="0" max="900" step="10" value="0"><output id="oV">0 km/s</output></div>
+        <div class="row"><span>Max distance</span><input type="range" id="fD" min="200" max="8000" step="100" value="4000"><output id="oD">4000 pc</output></div>
+      </div>
+      <div id="fGal" hidden>
+        <label class="ck"><input type="checkbox" id="fG" checked> <span style="color:var(--gal)">Galaxies</span></label>
+        <label class="ck"><input type="checkbox" id="fQ" checked> <span style="color:var(--qso)">Quasars</span></label>
+        <label class="ck">Type <select id="fSub"><option value="">all types</option></select></label>
+        <div class="row"><span>Redshift ≥</span><input type="range" id="fZ0" min="0" max="7" step="0.01" value="0"><output id="oZ0">0.00</output></div>
+        <div class="row"><span>Redshift ≤</span><input type="range" id="fZ1" min="0" max="7" step="0.01" value="7"><output id="oZ1">7.00</output></div>
+        <div class="row" id="slabRow"><span>Slice width</span><input type="range" id="fSlab" min="1" max="30" step="1" value="6"><output id="oSlab">±6°</output></div>
+      </div>
+      <p class="small" style="margin:8px 0 0">Drag to pan, scroll or pinch to zoom. Double-click resets.</p>
+    </div>
+
+    <div class="card" id="follow">
+      <h2>Follow-up list</h2>
+      <div class="small" style="margin-bottom:6px">Fastest flagged stars in the AEGIS Gaia sweep (tangential speed from proper motion and distance). Candidates only: a radial velocity and orbit are needed to confirm any as halo or hypervelocity stars.</div>
+      <div class="scroll"><table id="ftab"><thead><tr><th>Gaia DR3 id</th><th>v_tan km/s</th><th>dist pc</th><th>G</th></tr></thead><tbody></tbody></table></div>
+      <button class="copy" id="copyIds" style="margin-top:8px">Copy ids</button> <span class="small" id="copyMsg"></span>
+    </div>
+  </aside>
+</div>
+
+<div class="card" id="firstCard" style="margin-top:16px" hidden>
+  <h2>The first moment · SERAPIS</h2>
+  <div class="eq">r ≈ (1 − n<sub>s</sub>)² / p²  ·  n<sub>s</sub> ≈ 1 − 2/N* + 0.0018</div>
+  <div class="row"><span>n<sub>s</sub></span><input type="range" id="cNs" min="0.955" max="0.985" step="0.0005" value="0.965"><output id="oNs">0.9650</output></div>
+  <div class="row"><span>power p</span><input type="range" id="cP" min="1" max="3" step="0.5" value="1"><output id="oP">1</output></div>
+  <p class="narr" id="cOut"></p>
+  <div class="scroll" style="max-height:none"><table id="score"><thead><tr><th>Variant</th><th>n_s</th><th>r</th><th>Planck</th><th>SPT+Pl</th><th>CMB-SPA</th><th>+DESI</th><th>P-ACT-LB</th></tr></thead><tbody></tbody></table></div>
+  <p class="small">Grades: A within 1σ, B 1–2σ, C 2–3σ, F beyond 3σ (worst end of each band). Post-data comparison; the scored test is on future data (locked forward predictions, AEGIS D567). Current limit r &lt; 0.036.</p>
+</div>
+
+<footer>Data: ESA Gaia DR3 (AEGIS sweep, 1.99 M stars with distances; 3,068 flagged) and SDSS DR17 spectroscopic catalog (sample of 180,000 of 1.33 M galaxies and 120,000 of 753,000 quasars; two galaxy query ranges were capped at 500,000 rows). Distances for galaxies use flat ΛCDM with Planck 2018 parameters. Model: SERAPIS status preprint, doi 10.5281/zenodo.24238832. More layers (Local Group, galaxy distances, Gaia quasars, CMB) will be added as their downloads complete.</footer>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), cv=$('#cv'), ctx=cv.getContext('2d');
+let view='local', level=0, S=null, G=null, picks=[], cam={x:0,y:0,k:1}, drag=null;
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const C={star:css('--star'),gal:css('--gal'),qso:css('--qso'),flag:css('--flag'),muted:css('--muted'),line:css('--line'),fg:css('--fg')};
+const LY=3.26156;
+
+/* ---------- narration: 5 views x 4 levels ---------- */
+const N={
+local:[
+ "<p>Every dot is a real star near our Sun. The Sun is in the middle. Red dots are stars running extra fast, like racers.</p>",
+ "<p>This is a top-down view of about 8,000 light-years around the Sun, measured by the Gaia space telescope. Colour shows temperature: blue-white stars are hot, orange ones are cooler. Red rings mark stars moving unusually fast.</p>",
+ "<p>Positions are Gaia DR3 parallax/Bailer-Jones distances projected onto the Galactic plane (x toward the Galactic centre, y toward rotation). Flagged stars have tangential speeds above the AEGIS threshold or two distance estimates that disagree.</p>",
+ "<p>Sample: 7,885 confirmed context stars plus all 3,063 kinematic flags from 1,994,293 sources. v_tan = 4.74 μ d. Flags are candidates: high RUWE, parallax zero-point and binarity can inflate v_tan; confirm with RV and orbit integration before calling a star hypervelocity.</p>"],
+msky:[
+ "<p>This is the whole sky, unrolled like a map of the Earth. The band across the middle is the Milky Way, our home galaxy.</p>",
+ "<p>An Aitoff map in Galactic coordinates: the Milky Way's disk runs along the centre line. Gaia sees stars everywhere, but the AEGIS sweep sampled patches all over the sky.</p>",
+ "<p>Galactic (l, b) Aitoff projection, l = 0 at centre and increasing to the left. Patch structure reflects the sweep's HEALPix tiling and parallax/error > 5 cut.</p>",
+ "<p>Use the speed filter to isolate kinematic outliers; halo candidates concentrate at high |b| as expected for a pressure-supported population. Distance-mismatch flags (5) are listed in the follow-up table.</p>"],
+web:[
+ "<p>Each dot is a whole galaxy with billions of stars! They make a giant web with strings and empty bubbles.</p>",
+ "<p>This slice cuts through the universe near Earth's equator line in the sky. Galaxies cluster into walls and filaments around huge empty voids. The farther ones (purple) are quasars: galaxies with bright, feeding black holes.</p>",
+ "<p>Comoving x–y positions (Mpc) of SDSS DR17 spectroscopic objects in a declination slab, distances from redshift with flat ΛCDM (Planck 2018). The fan shape is the survey's footprint; the radial thinning is magnitude selection.</p>",
+ "<p>Redshift-space positions (no peculiar-velocity correction), so clusters show 'fingers of God' along the line of sight. The ~150 Mpc BAO scale is the same feature the DESI/BAO n_s debate depends on.</p>"],
+gsky:[
+ "<p>All the galaxies and quasars in our list, shown across the whole sky. Colours tell how far away they are.</p>",
+ "<p>Sky positions of galaxies and quasars from SDSS. The big blank band is where our own Milky Way blocks the view. Colour shows redshift: how much the light has stretched on its long trip.</p>",
+ "<p>Equatorial (RA, Dec) Aitoff projection; colour scale encodes redshift. Footprint gaps are SDSS coverage plus the Galactic-plane avoidance zone.</p>",
+ "<p>Redshift filters isolate shells; quasars extend to z ≈ 7. Use the type selector for AGN / starburst / broad-line subclasses (SDSS pipeline labels).</p>"],
+first:[
+ "<p>Before stars and galaxies, the whole universe grew super fast for a tiny moment. Our idea is that the shape of a tiny hidden donut made that happen.</p>",
+ "<p>Inflation is a split-second of rapid expansion at the very start. The SERAPIS model says it was driven by the shape of a tiny hidden torus. Its fingerprints are two numbers astronomers measure: n_s (how the ripples change with size) and r (gravitational waves).</p>",
+ "<p>SERAPIS is an SL(2,ℤ)-invariant α-attractor in the torus modulus τ. With K = −ln(2 Im τ), n_s ≈ 1 − 2/N* and r ≈ (1 − n_s)²/p². Two branches: Kairos (no tilt) and Chronos (lifted plateau). Use the calculator to read r from a measured n_s.</p>",
+ "<p>A string home needs Im τ* ≲ α⁻¹(M_s) ≈ 29, which requires p ≳ 2 and r ≲ 3×10⁻⁴; p = 1 (r ≈ 10⁻³) has no known perturbative heterotic home. Locked forward bands: HS-Kairos n_s 0.9635–0.9658, r 2.5–2.9×10⁻⁴; HS-Chronos n_s 0.9736–0.9759, r 4.8–5.3×10⁻⁴.</p>"]};
+
+/* ---------- data ---------- */
+function b64f32(s){const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return new Float32Array(u.buffer)}
+function b64u8(s){const b=atob(s),u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
+Promise.all([fetch('layers/stars.json').then(r=>r.json()),fetch('layers/sdss.json').then(r=>r.json())]).then(([st,sd])=>{
+  S=st; const dec=o=>({n:o.n,parent:o.n_parent,a:b64f32(o.f32),sub:b64u8(o.sub),cats:o.subcats});
+  G={gal:dec(sd.galaxies),qso:dec(sd.quasars)};
+  const cats=new Set([...G.gal.cats,...G.qso.cats]); cats.delete('');
+  [...cats].sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c.toLowerCase();$('#fSub').appendChild(o)});
+  fillFollow(); draw();
+}).catch(e=>{$('#hud').textContent='Could not load data: '+e.message});
+
+/* ---------- helpers ---------- */
+function size(){const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;cv.width=Math.round(r.width*d);cv.height=Math.round(r.height*d);return{w:cv.width,h:cv.height,d}}
+function aitoff(lon,lat){ // degrees, lon centred on 0, east to the left
+  let l=((lon+180)%360+360)%360-180; l=-l*Math.PI/180; const b=lat*Math.PI/180, a=Math.acos(Math.cos(b)*Math.cos(l/2)), s=a?Math.sin(a)/a:1;
+  return [2*Math.cos(b)*Math.sin(l/2)/s, Math.sin(b)/s]; } // x in [-pi,pi], y in [-pi/2,pi/2]
+function bprpColor(c){ if(c==null) return '#cfd8ea'; const t=Math.max(0,Math.min(1,(c+0.2)/2.6));
+  const r=Math.round(150+105*t), g=Math.round(190+20*t-90*t*t), b=Math.round(255-200*t); return `rgb(${r},${g},${b})`}
+function zColor(z,zmax){const t=Math.max(0,Math.min(1,Math.log1p(z*4)/Math.log1p(zmax*4)));const h=200+80*t;return `hsl(${h} 90% ${68-18*t}%)`}
+function T(x,y,W,H,scale){return[W/2+(x*scale+cam.x)*cam.k, H/2+(-y*scale+cam.y)*cam.k]}
+function filters(){return{ctx:$('#fCtx').checked,hv:$('#fHv').checked,dm:$('#fDm').checked,vmin:+$('#fV').value,dmax:+$('#fD').value,
+  g:$('#fG').checked,q:$('#fQ').checked,sub:$('#fSub').value,z0:+$('#fZ0').value,z1:+$('#fZ1').value,slab:+$('#fSlab').value}}
+
+/* ---------- drawing ---------- */
+function draw(){
+  const {w:W,h:H,d}=size(); ctx.clearRect(0,0,W,H); picks=[]; const f=filters(); const legend=[];
+  $('#firstCard').hidden=view!=='first'; $('#fStars').hidden=!(view==='local'||view==='msky'); $('#fGal').hidden=!(view==='web'||view==='gsky');
+  $('#slabRow').hidden=view!=='web'; $('#filters').hidden=view==='first'; $('#follow').hidden=!(view==='local'||view==='msky');
+  $('#narr').innerHTML=N[view][level];
+  if(!S||!G){return}
+  const dot=(x,y,r,col,obj)=>{ if(x<-5||y<-5||x>W+5||y>H+5) return; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(x,y,r,0,6.2832); ctx.fill(); if(obj) picks.push([x,y,obj]) };
+  if(view==='local'){
+    const scale=Math.min(W,H)/2/(f.dmax*1.05);
+    ctx.strokeStyle=C.line; ctx.lineWidth=d; ctx.font=`${11*d}px IBM Plex Mono, monospace`; ctx.fillStyle=C.muted;
+    for(const r of [500,1000,2000,4000,8000]){ if(r>f.dmax*1.2) break; const [cx,cy]=T(0,0,W,H,scale); ctx.beginPath(); ctx.arc(cx,cy,r*scale*cam.k,0,6.2832); ctx.stroke(); ctx.fillText(`${r} pc (${Math.round(r*LY).toLocaleString()} ly)`,cx+4*d,cy-r*scale*cam.k-4*d) }
+    let n=0;
+    if(f.ctx) for(const s of S.context){ if(s[3]>f.dmax) continue; const [x,y]=T(s[4],s[5],W,H,scale); dot(x,y,1.3*d,bprpColor(s[8]),{k:'star',s}); n++ }
+    for(const s of S.flagged){ const hv=s[10].includes('high_velocity'), dm=s[10].includes('distance'); if((hv&&!f.hv)||(dm&&!hv&&!f.dm)) continue; if(s[3]>f.dmax||(s[9]||0)<f.vmin) continue;
+      const [x,y]=T(s[4],s[5],W,H,scale); dot(x,y,(dm?3:2.2)*d,dm?C.star:C.flag,{k:'star',s}); n++ }
+    const [cx,cy]=T(0,0,W,H,scale); ctx.fillStyle=C.star; ctx.beginPath(); ctx.arc(cx,cy,4*d,0,6.2832); ctx.fill(); ctx.fillStyle=C.fg; ctx.fillText('Sun',cx+6*d,cy+12*d);
+    ctx.fillStyle=C.muted; ctx.fillText('→ Galactic centre',W-150*d,H/2-8*d);
+    legend.push(['ordinary star (colour = temperature)','#cfd8ea'],['fast-moving (flagged)',C.flag],['distance mismatch',C.star]);
+    hud(`${n.toLocaleString()} stars shown · zoom ×${cam.k.toFixed(1)}`);
+  } else if(view==='msky'||view==='gsky'){
+    const scale=Math.min(W/(2*Math.PI),H/Math.PI)*0.95;
+    ctx.strokeStyle=C.line; ctx.lineWidth=d; ctx.beginPath();
+    for(let lat=-90;lat<=90;lat+=2){const [a,b]=aitoff(180,lat),[x,y]=T(a,b,W,H,scale); lat===-90?ctx.moveTo(x,y):ctx.lineTo(x,y)}
+    for(let lat=90;lat>=-90;lat-=2){const [a,b]=aitoff(-179.999,lat),[x,y]=T(a,b,W,H,scale); ctx.lineTo(x,y)} ctx.stroke();
+    for(const lat of [-60,-30,0,30,60]){ctx.beginPath();for(let lon=-180;lon<=180;lon+=4){const [a,b]=aitoff(lon,lat),[x,y]=T(a,b,W,H,scale);lon===-180?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.stroke()}
+    let n=0;
+    if(view==='msky'){
+      if(f.ctx) for(const s of S.context){ if(s[3]>f.dmax) continue; const [a,b]=aitoff(s[1],s[2]),[x,y]=T(a,b,W,H,scale); dot(x,y,1.2*d,bprpColor(s[8]),{k:'star',s}); n++ }
+      for(const s of S.flagged){ const hv=s[10].includes('high_velocity'), dm=s[10].includes('distance'); if((hv&&!f.hv)||(dm&&!hv&&!f.dm)) continue; if(s[3]>f.dmax||(s[9]||0)<f.vmin) continue;
+        const [a,b]=aitoff(s[1],s[2]),[x,y]=T(a,b,W,H,scale); dot(x,y,(dm?3:2)*d,dm?C.star:C.flag,{k:'star',s}); n++ }
+      legend.push(['ordinary star','#cfd8ea'],['fast-moving (flagged)',C.flag],['distance mismatch',C.star]);
+      hud(`Galactic coordinates · ${n.toLocaleString()} stars · zoom ×${cam.k.toFixed(1)}`);
+    } else {
+      for(const [key,on,col] of [['gal',f.g,C.gal],['qso',f.q,C.qso]]){ if(!on) continue; const L=G[key],a=L.a;
+        for(let i=0;i<L.n;i++){ const z=a[i*6+2]; if(z<f.z0||z>f.z1) continue; if(f.sub&&L.cats[L.sub[i]]!==f.sub) continue;
+          const [p,q]=aitoff(a[i*6],a[i*6+1]),[x,y]=T(p,q,W,H,scale); dot(x,y,0.9*d,zColor(z,key==='qso'?4:0.8),{k:key,i}); n++ } }
+      legend.push(['galaxy (near → far)',C.gal],['quasar',C.qso]);
+      hud(`Equatorial coordinates (RA, Dec) · ${n.toLocaleString()} objects · zoom ×${cam.k.toFixed(1)}`);
+    }
+  } else if(view==='web'){
+    const maxR=Math.max(100, comoving(Math.min(f.z1, f.q?7:1.2)));
+    const scale=Math.min(W,H)/2/maxR; let n=0;
+    ctx.strokeStyle=C.line; ctx.lineWidth=d; ctx.font=`${11*d}px IBM Plex Mono, monospace`; ctx.fillStyle=C.muted;
+    for(const r of [250,500,1000,2000,4000,8000]){ if(r>maxR*1.1) break; const [cx,cy]=T(0,0,W,H,scale); ctx.beginPath(); ctx.arc(cx,cy,r*scale*cam.k,0,6.2832); ctx.stroke(); ctx.fillText(`${r} Mpc (${(r*LY/1000).toFixed(1)} bn ly)`,cx+4*d,cy-r*scale*cam.k-4*d) }
+    for(const [key,on,col,rad] of [['gal',f.g,C.gal,0.9],['qso',f.q,C.qso,1.1]]){ if(!on) continue; const L=G[key],a=L.a;
+      for(let i=0;i<L.n;i++){ const de=a[i*6+1], z=a[i*6+2]; if(Math.abs(de)>f.slab||z<f.z0||z>f.z1) continue; if(f.sub&&L.cats[L.sub[i]]!==f.sub) continue;
+        const [x,y]=T(a[i*6+3],a[i*6+4],W,H,scale); dot(x,y,rad*d,col,{k:key,i}); n++ } }
+    const [cx,cy]=T(0,0,W,H,scale); ctx.fillStyle=C.star; ctx.beginPath(); ctx.arc(cx,cy,3*d,0,6.2832); ctx.fill(); ctx.fillStyle=C.fg; ctx.fillText('Milky Way',cx+6*d,cy+12*d);
+    legend.push(['galaxy',C.gal],['quasar',C.qso]);
+    hud(`Slice |Dec| ≤ ${f.slab}° · ${n.toLocaleString()} objects · zoom ×${cam.k.toFixed(1)}`);
+  } else if(view==='first'){ drawFirst(W,H,d); }
+  $('#legend').innerHTML=legend.map(([t,c])=>`<span style="--c:${c}">${t}</span>`).join('');
+}
+function hud(t){$('#hud').textContent=t}
+
+/* view 5: a torus-shape disk (modular tiling) with the inflation path */
+function drawFirst(W,H,d){
+  const R=Math.min(W,H)/2-14*d, img=ctx.createImageData(W,H), D=img.data;
+  for(let py=0;py<H;py+=1)for(let px=0;px<W;px+=1){const zx=(px-W/2)/R,zy=(H/2-py)/R,r2=zx*zx+zy*zy;if(r2>=1)continue;
+    const den=(1-zx)*(1-zx)+zy*zy;let tx=(-2*zy)/den,ty=(1-r2)/den,par=0;for(let k=0;k<40;k++){tx-=Math.round(tx);const m=tx*tx+ty*ty;if(m<1){tx=-tx/m;ty=ty/m;par^=1}else break}
+    const e=Math.min(Math.abs(Math.abs(tx)-.5),Math.abs(Math.sqrt(tx*tx+ty*ty)-1))/ty, w=Math.max(0,1-e*W*.12*(1-r2)), o=4*(py*W+px), base=par?[21,30,54]:[15,22,40];
+    D[o]=base[0]+(60-base[0])*w;D[o+1]=base[1]+(80-base[1])*w;D[o+2]=base[2]+(120-base[2])*w;D[o+3]=255}
+  ctx.putImageData(img,0,0);
+  const p=+$('#cP').value, ystar=p>=2?24:(p>=1.5?43:115), zOf=y=>(y-1)/(y+1), X=v=>W/2+v*R;
+  ctx.strokeStyle=C.gal; ctx.lineWidth=3*d; ctx.beginPath(); ctx.moveTo(X(zOf(ystar)),H/2); ctx.lineTo(X(zOf(2.3)),H/2); ctx.stroke();
+  ctx.setLineDash([6*d,5*d]); ctx.lineWidth=2*d; ctx.beginPath(); ctx.moveTo(X(zOf(2.3)),H/2); ctx.lineTo(W/2,H/2); ctx.stroke(); ctx.setLineDash([]);
+  ctx.strokeStyle=C.flag; ctx.beginPath(); ctx.arc(X(zOf(28.5)),H/2,7*d,0,6.2832); ctx.stroke();
+  ctx.fillStyle=C.ok||'#59d39a'; ctx.fillStyle='#59d39a'; ctx.beginPath(); ctx.arc(W/2,H/2,6*d,0,6.2832); ctx.fill();
+  ctx.font=`${11*d}px IBM Plex Mono, monospace`; ctx.fillStyle=C.fg;
+  ctx.fillText('square torus (vacuum)',W/2+8*d,H/2+18*d); ctx.fillText(`inflation starts here (Im τ ≈ ${ystar})`,X(zOf(ystar))-160*d,H/2-12*d);
+  ctx.fillStyle=C.flag; ctx.fillText('string-home limit Im τ ≈ 29',X(zOf(28.5))-80*d,H/2+26*d);
+  hud('Space of torus shapes (Poincaré disk). Rim = infinitely stretched torus.');
+  $('#legend').innerHTML='';
+}
+
+/* ---------- SERAPIS calculator + scorecard ---------- */
+const DATA=[['Planck',0.9649,0.0042],['SPT+Pl',0.9636,0.0035],['CMB-SPA',0.9684,0.0030],['+DESI',0.9728,0.0027],['P-ACT-LB',0.9752,0.0030]];
+const VAR=[['Kairos p=1',0.9631,0.9654,'1.2–1.3e-3'],['Chronos p=1',0.9715,0.9738,'2.0–2.2e-3'],['HS-Kairos p=2',0.9635,0.9658,'2.5–2.9e-4'],['HS-Chronos p=2',0.9736,0.9759,'4.8–5.3e-4'],['SERAPIS-NP',0.9600,0.9626,'2e-6'],['Eisenstein (ρ vac.)',0.9619,0.9644,'1.4–2.3e-4']];
+function grade(z){return z<=1?'A':z<=2?'B':z<=3?'C':'F'}
+$('#score tbody').innerHTML=VAR.map(([n,lo,hi,r])=>`<tr><td>${n}</td><td>${lo.toFixed(4)}–${hi.toFixed(4)}</td><td>${r}</td>`+DATA.map(([_,m,s])=>{const z=Math.max(Math.abs(lo-m),Math.abs(hi-m))/s,g=grade(z);return `<td><span class="g g${g}" title="${z.toFixed(1)}σ">${g}</span></td>`}).join('')+'</tr>').join('');
+function calc(){const ns=+$('#cNs').value,p=+$('#cP').value,r=(1-ns)**2/(p*p),N=2/(1-ns+0.0018);
+  $('#oNs').textContent=ns.toFixed(4); $('#oP').textContent=p;
+  const home=p>=2?'inside the string-home limit (Im τ* ≲ 29)':'outside the string-home limit: no known perturbative heterotic home';
+  $('#cOut').innerHTML=`Predicted r ≈ <b>${r.toExponential(1)}</b> (±10–30%) · implied N* ≈ ${N.toFixed(0)} e-folds · ${home}. Detectable by LiteBIRD (σ ≈ 10⁻³): ${r>=3e-3?'yes, clearly':r>=1e-3?'at about 1σ':'no'}.`;
+  if(view==='first') draw()}
+$('#cNs').oninput=calc; $('#cP').oninput=calc;
+
+/* ---------- follow-up list ---------- */
+function fillFollow(){const top=[...S.flagged].filter(s=>s[9]).sort((a,b)=>b[9]-a[9]).slice(0,40);
+  $('#ftab tbody').innerHTML=top.map(s=>`<tr><td><a href="https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Gaia+DR3+${s[0]}" target="_blank" rel="noopener">${s[0]}</a></td><td>${s[9].toFixed(0)}</td><td>${s[3].toFixed(0)}</td><td>${s[7]??''}</td></tr>`).join('');
+  $('#copyIds').onclick=()=>{const t=top.map(s=>'Gaia DR3 '+s[0]).join('\n');navigator.clipboard.writeText(t).then(()=>$('#copyMsg').textContent='Copied 40 ids').catch(()=>$('#copyMsg').textContent='Copy blocked here; select the table instead')}}
+
+/* ---------- picking ---------- */
+cv.addEventListener('click',e=>{ if(drag&&drag.moved) return; const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1,x=(e.clientX-r.left)*d,y=(e.clientY-r.top)*d;
+  let best=null,bd=1e9; for(const [px,py,o] of picks){const dd=(px-x)**2+(py-y)**2;if(dd<bd){bd=dd;best=o}} if(!best||bd>(14*d)**2) return; showPick(best)});
+function showPick(o){ if(o.k==='star'){const s=o.s; $('#pick').innerHTML=
+  `Gaia DR3 ${s[0]}\nGalactic l, b   ${s[1].toFixed(3)}°, ${s[2].toFixed(3)}°\ndistance       ${s[3].toFixed(0)} pc (${Math.round(s[3]*LY).toLocaleString()} light-years)\nG magnitude    ${s[7]??'—'}   colour BP−RP ${s[8]??'—'}\nv_tan          ${s[9]??'—'} km/s\nflags          ${s[10]||'none'}\n<a href="https://simbad.cds.unistra.fr/simbad/sim-id?Ident=Gaia+DR3+${s[0]}" target="_blank" rel="noopener">Look up in SIMBAD</a>`;}
+  else {const L=G[o.k],a=L.a,i=o.i,ra=a[i*6],de=a[i*6+1],z=a[i*6+2],Dc=Math.hypot(a[i*6+3],a[i*6+4],a[i*6+5]);
+  $('#pick').innerHTML=`${o.k==='gal'?'Galaxy':'Quasar'} ${L.cats[L.sub[i]]?'('+L.cats[L.sub[i]].toLowerCase()+')':''}\nRA, Dec        ${ra.toFixed(4)}°, ${de.toFixed(4)}°\nredshift z     ${z.toFixed(4)}\ndistance       ${Dc.toFixed(0)} Mpc comoving (${(Dc*LY/1000).toFixed(2)} billion light-years)\nlight left it  about ${(lookback(z)).toFixed(2)} billion years ago\n<a href="https://skyserver.sdss.org/dr17/VisualTools/explore/summary?ra=${ra.toFixed(5)}&dec=${de.toFixed(5)}" target="_blank" rel="noopener">Open in SDSS SkyServer</a>`;}}
+function comoving(z){const H0=67.66,Om=.3111;let s=0,n=400;for(let k=0;k<n;k++){const zz=(k+.5)*z/n;s+=1/Math.sqrt(Om*(1+zz)**3+1-Om)}return s*z/n*299792.458/H0}
+function lookback(z){const H0=67.66,Om=.3111;let t=0,n=400;for(let k=0;k<n;k++){const zz=(k+.5)*z/n;t+=1/((1+zz)*Math.sqrt(Om*(1+zz)**3+1-Om))}return t*z/n*977.8/H0}
+
+/* ---------- pan / zoom ---------- */
+cv.addEventListener('pointerdown',e=>{cv.setPointerCapture(e.pointerId);drag={x:e.clientX,y:e.clientY,cx:cam.x,cy:cam.y,moved:false}});
+cv.addEventListener('pointermove',e=>{if(!drag||view==='first')return;const d=window.devicePixelRatio||1,dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(Math.abs(dx)+Math.abs(dy)>3)drag.moved=true;cam.x=drag.cx+dx*d/cam.k;cam.y=drag.cy+dy*d/cam.k;sched()});
+cv.addEventListener('pointerup',()=>{setTimeout(()=>drag=null,0)});
+cv.addEventListener('wheel',e=>{if(view==='first')return;e.preventDefault();cam.k=Math.max(.5,Math.min(60,cam.k*Math.exp(-e.deltaY*0.0015)));sched()},{passive:false});
+cv.addEventListener('dblclick',()=>{cam={x:0,y:0,k:1};draw()});
+let pinch=null; cv.addEventListener('touchmove',e=>{if(e.touches.length===2){const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);if(pinch){cam.k=Math.max(.5,Math.min(60,cam.k*d/pinch));sched()}pinch=d}},{passive:true});
+cv.addEventListener('touchend',()=>pinch=null);
+let raf=0; function sched(){if(!raf)raf=requestAnimationFrame(()=>{raf=0;draw()})}
+
+/* ---------- controls ---------- */
+function presetZ(v){const z1=v==='web'?0.25:7;$('#fZ1').value=z1;$('#oZ1').textContent=z1.toFixed(2);$('#fZ0').value=0;$('#oZ0').textContent='0.00'}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{view=b.dataset.view;cam={x:0,y:0,k:1};presetZ(view);document.querySelectorAll('[data-view]').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  try{location.hash=view}catch(e){} draw(); if(view==='first')calc()});
+document.querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{level=+b.dataset.level;document.querySelectorAll('[data-level]').forEach(x=>x.setAttribute('aria-pressed',x===b));try{localStorage.setItem('aegis-level',level)}catch(e){}draw()});
+try{const l=localStorage.getItem('aegis-level');if(l!=null){level=+l;document.querySelectorAll('[data-level]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.level===level))}}catch(e){}
+const outs={fV:['oV',v=>v+' km/s'],fD:['oD',v=>v+' pc'],fZ0:['oZ0',v=>(+v).toFixed(2)],fZ1:['oZ1',v=>(+v).toFixed(2)],fSlab:['oSlab',v=>'±'+v+'°']};
+document.querySelectorAll('#filters input,#filters select').forEach(el=>el.addEventListener('input',()=>{const o=outs[el.id];if(o)$('#'+o[0]).textContent=o[1](el.value);sched()}));
+const h=(location.hash||'').slice(1); if(['local','msky','web','gsky','first'].includes(h)){view=h;document.querySelectorAll('[data-view]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.view===h))}
+window.addEventListener('resize',sched); calc(); draw();
+})();
+</script>
