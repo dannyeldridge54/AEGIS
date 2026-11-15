@@ -4783,3 +4783,11 @@ energy) and a period ≈ 0.045 Hubble times. A matter coupling β then makes mas
 tighter than Cassini (β ≲ 3e-3, D498). Conclusion (estimate): Twist-M case (ii) works only if the Standard Model is blind to the Twist field (no Yukawa or mass dependence). That is the opposite of
 modular-flavour constructions, where the dual modulus IS the flavour modulus. So case (ii) needs a sector separation the literature does not supply by default. Case (i) (FI kink, heavy field) avoids
 this but needs the embedding question solved. Both open; neither is closed by this tick.
+
+**D505 (Danny 21:19 CT "add the split/lens as a variation"; scored, locked PREREG_D505_SPLIT_LENS; results/split_lens_d505.txt) — LENS SOLVES CASE (ii), with one caveat.**
+Variant Twist-M-L: the mapped Twist-M scalar A (dark, duality-symmetric, light) and a 'quantum-side' modulus B that the SM actually feels (e.g. the flavour modulus, heavy, β_B ~ 1)
+communicate only through a lens term μ²ΔAΔB. Integrating out B gives β_eff = β_B μ²/m_B², and stability of the pair forces μ⁴ < m_A²m_B², so β_eff < β_B m_A/m_B: the lens can only dilute.
+For m_B = 1e-3 eV to 1e5 GeV, β_eff,max = 2e-28 down to 2e-45 and the oscillating-mass effect is ≤ 2e-32, far below Cassini (3e-3) and the varying-constant bounds (~1e-7). A's mapped
+dynamics are untouched to that order. B's own force is short-ranged for m_B > 4e-3 eV. Caveat (the real condition): this covers potential mixing only. If A also enters the matter Kähler metric
+or the gauge kinetic functions directly (as the volume does for D7/D3 matter), that coupling is not diluted. So the requirement becomes: A appears only in the dark sector's K and W, and talks
+to the SM solely through the heavy B. That is a sharper, checkable model-building condition than 'SM blind'. Status: candidate variant on top of Twist-M.
