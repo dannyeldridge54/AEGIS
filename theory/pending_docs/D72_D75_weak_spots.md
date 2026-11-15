@@ -5035,3 +5035,16 @@ The only escapes (not adopted):
 - a lighter vacuum that reheats through a stronger, non-gravitational coupling (needs a new coupling, and a light modulus brings back fifth-force and moduli issues);
 - an order-one φ_end ≪ M_P geometry (not the SERAPIS-1 shape).
 Consequence: the SERAPIS–Kairos/Chronos fork cannot be closed by reheating. It rests on the CMB-vs-BAO question (D223, McDonough & Ferreira 2512.05108).
+
+## D535 — LEFT (pp 22:23 CT; literature + exponent arithmetic, no lock needed) — SERAPIS-1's H(j) lies OUTSIDE the string-derived class (honest flag)
+Literature:
+- Knapp-Pérez, Liu, Nilles, Ramos-Sánchez, Ratz, arXiv:2304.14437. Gaugino condensation gives W = Ω(S)H(τ)/η⁶ with H = (j−1728)^{m/2} j^{n/3} P(j). In the Cvetič–Font–Ibáñez–Lüst–Quevedo class m, n are integers and P is a polynomial, required for no singularities in the fundamental domain. Matter (ISS-type) uplift gives dS vacua at or near τ = i. That supports our vacuum location.
+- Baur, Nilles, Ramos-Sánchez, Trautner, Vaudrevange, arXiv:2207.10677: a realistic heterotic T⁶/(Z₃×Z₃) model whose T modulus sits near 3.2i (not at i), with a finite T′ = Γ′₃ flavour group.
+Check of SERAPIS-1 (H = (j−1728)^{1/2} j^{−7/12}[ln(j/1728)+κ]^{1/2} + c j^{−7/12}) against that class:
+- m = 1: (j−1728)^{1/2} is allowed.
+- j^{−7/12} would need n = −7/4, which is NOT an integer, so it is outside the class. The exponent is forced: a flat cusp plateau with η⁻² needs |j|^{2a}·e^{πy/3} constant, so a = −1/12, so n/3 = −7/12. With η⁻⁶ (three equal moduli) the same logic needs n/3 = −3/4, also non-integer. Conclusion: no integer-n CFILQ potential has an exactly flat cusp plateau. They run away or grow at the cusp, the known decompactification problem.
+- [ln(j/1728)+κ]^{1/2} is not a polynomial P(j). It is a branch-type factor that is singular where ln(j/1728) = −κ.
+Verdict: SERAPIS-1's inflationary plateau uses an H outside the string-derived CFILQ class. It is a modular-invariant phenomenological H, not yet a string-derived one. The vacuum and Λ structure (τ = i, (j−1728)^{1/2}) is in the class; the plateau factors are not.
+Required paper change: say this explicitly (do not imply a string derivation of the plateau).
+Open task: either (a) find a string source for fractional j-powers (multiplier systems or several moduli, e.g. η-quotients of congruence subgroups, though D530 excludes those homes for exact SL(2,Z)), or (b) take the plateau from the Kähler side (corrections in ln(2 Im τ), as in some modular-inflation papers), or (c) accept it as an effective model.
+Status: a new honest gap, "string origin of the plateau", rated HIGH. Predictions unchanged.
