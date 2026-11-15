@@ -5760,3 +5760,20 @@ Compared with the old slow-roll scripts at the same nominal N*:
 - The y* shift does equal the D587 offset (dN/dy ≈ 4.9, so Δy = 0.36 ↔ ΔN ≈ 1.75). But in n_s it is largely cancelled by the first-order slow-roll error in the n_s formula itself.
 Verdict: D587's flag of a "systematic ≈ −0.001" is REVISED to −0.0002 to −0.0004 in n_s. All conclusions since D564 stand. Every y* is ~0.4 smaller (slightly MORE home-safe).
 Reference numbers for two-term SERAPIS going forward: n_s = 0.970–0.974, r = 4.2–4.9e-4 (ε = 1.0–1.3e-4, N* = 49–51). Post-hoc; scored only on future data.
+
+## D589 — DEEP (Ddl 07:57 CT; locked PREREG_D589_N_COUPLING; results/n_coupling_d589.txt) — a natural inflaton → N₁N₁ coupling is ~4× too weak for hierarchical non-thermal leptogenesis; resonant leptogenesis (or λ ≳ 6) is required
+Coupling: M(φ) = M₁f(τ), with λ = d ln M/dφ. For a modular form like E₄: d ln E₄/dτ|_i = (πi/3)E₂(i) = i (E₂(i) = 3/π, verified to 1e-12), so |λ| = √2.
+Width: Γ = (M₁λ/M_P)²·m/16π·(1 − 4M₁²/m²)^{3/2}, i.e. c_eff = ½(M₁/m)²(1 − 4M₁²/m²)^{3/2}λ² ≈ 0.023λ².
+Results (C1, m = 1.9e11 GeV, Br = 1, Davidson–Ibarra bound):
+- λ = 1 or √2: c_eff = 0.02–0.05, T_RH = 0.9–1.2e6 GeV, Y_B ≤ 1.5–2.1e-11. FAIL, by about 4–6×.
+- λ = 3: Y_B ≤ 4.5e-11. FAIL.
+- λ needed: 5.9 (M₁ = m/3) to 6.2 (M₁ = 0.316m).
+Consequences:
+1. D579's PASS assumed a decay width with c_Γ ≥ 1. A modular-form coupling of natural size gives c_eff ≈ 0.05, so the D579 PASS does not survive a microscopic coupling.
+2. Ways out:
+   - (a) Resonant leptogenesis: quasi-degenerate N₁, N₂ evade the Davidson–Ibarra bound; Ding et al. 2411.18603 use exactly this. It needs a mass splitting ~Γ_N (a tuning, but a standard one).
+   - (b) A steeper modular dependence of M (|λ| ≳ 6, e.g. higher weight or several forms). Not natural from E₄.
+   - (c) A different baryogenesis mechanism (e.g. Affleck–Dine).
+3. The lower T_RH (≈1e6 GeV) also lengthens the matter phase: N* drops by about ¼·(1/3)·ln(5–6) ≈ 0.15, a negligible n_s change (< 1e-4; estimate).
+4. Open (flagged in the lock): the linear δτ·NN coupling must be allowed by the residual S-symmetry at i, which constrains N's modular weight. SM couplings with k_Y ≡ 0 (mod 4) (D551) are S-even, so their linear inflaton couplings are S-forbidden. That FAVOURS Br(NN) ≈ 1 if the N channel is allowed.
+Verdict: two-term SERAPIS needs resonant leptogenesis (or an un-natural λ). The baryogenesis status is downgraded from "PASS" (D579) to "PASS only with resonant enhancement".
