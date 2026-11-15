@@ -4765,3 +4765,8 @@ with baryon number protected (D469). It is a mild point in Twist-M's favour, and
 (hep-th/9401139; modular-invariant condensates in Z_N orbifolds, hep-th/9510022, hep-ph/9210219), not of generic Calabi–Yaus. TENSION: Twist-M's exact duality points to an orbifold,
 while the FI capture wanted a fibred CY with intersecting divisors (D462). A possible reconciliation, not checked, is a IIB orientifold of a toroidal orbifold with blow-up cycles.
 This is now the main open string-side question for Twist-M. DEEP PASS 1 COMPLETE (topics 1–11).
+
+**DEEP 2.1 (Danny "Deep", 21:16 CT; pass 2 topic 1: Twist-M embedding; literature).** The concrete class to look in is IIB orientifolds of T⁶/Z_N with fluxes and magnetised D7-branes
+(arXiv:2404.18995; hep-th/0512287). They have the ingredients: magnetised D7s, blow-up cycles, and untwisted Kähler moduli as the natural carriers of a duality. But the dualities used there
+act on the axio-dilaton (S) and complex structure (U), not on a Kähler modulus with fluxes and branes. Whether a Kähler-modulus SL(2,Z) survives in that setting is not established. DEEP 11's open question
+stands, now with a concrete class to examine.
