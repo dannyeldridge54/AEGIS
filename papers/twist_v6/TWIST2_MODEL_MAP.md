@@ -171,3 +171,5 @@ alone.
 **Centre-confirmed (D476):** the kink at the D-term wall pins the Twist against any matter source (threshold ≥ 7e25 g/cm³): no fifth force or EP violation even with universal coupling.
 
 **Centre-confirmed (D477–D478):** our vacuum has a lower-Λ neighbour (x ≈ 135, Λ₂ ≈ 0.23Λ) but tunnelling action S ≥ 1e10 (stable); φ is heavy during inflation (no isocurvature).
+
+**Centre-confirmed (D480, D481, D483):** sgoldstino decays before BBN; gauged B−L strings (if present) Gμ ≈ 2e-17–8e-16 (possible future GW signal); capture robust to ×0.5–×2 kinetic energy (T_cap ≈ 5e8–9e11 GeV).

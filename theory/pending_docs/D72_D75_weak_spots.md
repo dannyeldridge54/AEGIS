@@ -4611,3 +4611,14 @@ safely separated. Result → walls 0.
 **D479 (cycle 64, tick; PART 8, RIGHT; review only) — nothing new on DM beyond D467/D468/D473 from minutes ago.** Summary of DM status: gravity-only 100–200 TeV
 fermion, stable by a gauged discrete symmetry (D473); optional second component from the lightest D7-charged state (≲ 10 TeV, λ ≈ 0.006–2, D468), or a ≈ 0.6%
 remnant for an eV soft mass (D467). WALL.
+
+**D480–D483 (cycles 65–68, Danny "Pp x 10"; locked PREREG_D480_D483; results/d480_d483.txt)**
+**D480 (PART 9) PASS:** the sgoldstino (1.3e4–2.8e5 GeV) decays to γγ in τ = 1.6e-25–1.2e-20 s (bino 1 TeV, √F = 85–140 TeV), long before BBN. Result.
+**D481 (PART 4) PASS:** if B − L is gauged and broken after inflation at v ≥ M₁, the strings have Gμ = 1.9e-17–8.4e-16 for v = 3e10–2e11 GeV. That is below
+LVK O3's Gμ ≲ 4e-15 (PRL 126, 241102; model-dependent: 2.1–7.0e-15 for models B/C), with v_max = 4.4e11 GeV. Upgraded LVK/ET/CE could reach 1e-16–1e-18, so
+this is a potential future signal if B − L is gauged. Result.
+**D482 (PART 7) — B4 forecast missing:** LiteBIRD's isotropic-β paper (arXiv:2503.22322) forecasts σ(β) ≈ 0.02–0.045° for a single constant angle (5–13σ on 0.3°),
+with no reionization/recombination split, so B4's distinguishability (D428) is not yet quantified in the literature we read (2108.09287 on tomography not read). WALL.
+**D483 (PART 5) ROBUST:** halving or doubling the kinetic energy at N − N_e = 6 still captures. With 0.5× the field first hits at N − N_e = 14.1 (T ≈ 5e8 GeV);
+with 2× it hits at 6.6 (T ≈ 9e11 GeV) and bounces to x = 26.75. Note: the capture temperature then spans ~5e8–9e11 GeV, so numbers quoted 'at T_cap = 1.5e11'
+(ε_h, the D441 arrival speed) carry this spread. Leptogenesis is independent of capture. Result.
