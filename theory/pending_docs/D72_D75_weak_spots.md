@@ -6069,3 +6069,14 @@ Results:
 - Example: n = (0, 1, 1, 0, 1, 1, 1), no lift, all k_Y = 0 (constant couplings). That is the same assignment that works at τ = i (D551).
 Caveat: the comparison with τ = i (4/8, 8/16 in D551) is not like-for-like. Here the lifts were {0, 2, 4} (needed for mod 6); D551 used {0, 2}. The constant-coupling solution works at both vacua.
 Status: SERAPIS-ρ open item (i) from D610 is cleared at the selection-rule level. The anomaly check (D529) and the m₃/₂ argument (D542/D585) are vacuum-independent and carry over.
+
+## D613 — DEEP (Ddl 08:27 CT; locked PREREG_D613_RHO_NSTAR; results/rho_nstar_d613.txt) — SERAPIS-ρ at ε = 6e-5 stays VIABLE with its own post-inflation history
+Near ρ: the plateau term is ∝ δ¹² (fitted exponent 12.008; c = 3.1e3), plus the ε·L mass term (m̂² = 6.0e-5). The crossover is at ρ_x/ρ_end = 1.3e-6.
+The stiff phase is stiffer than at i: w = 5/7 = 0.714, versus 3/5 for the octic case.
+N* = 46.1–49.5 (T_R = 1e3–1e5 GeV, both w bounds).
+Results: n_s = 0.9691–0.9723 (−1.4σ to −0.2σ SPA+DESI; +0.2σ to +1.3σ SPA), r = 4.6–5.1e-4, y* = 23.1–24.0. All rows pass.
+Verdict: VIABLE (post-hoc ε, as in D610).
+Comparison with two-term SERAPIS at i (D602, ε = 1.3–1.6e-4): the same observable band (n_s ≈ 0.969–0.975, r ≈ 4.6–5.7e-4).
+So current and near-future data CANNOT distinguish the i and ρ vacua through n_s and r; the vacuum location shows up only in reheating details and the flavour/selection structure.
+Status of SERAPIS-ρ: vacuum, inflation, home bound, proton parity (D612) and N* history all pass. String-natural ingredients; novelty only in the combination (D611).
+Remaining, as for two-term: the gravitino/dilaton/LSP chain (D584–D596; vacuum-independent in form, re-check the numbers), and baryogenesis (AD route, D599–D604; vacuum-independent).
