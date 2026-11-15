@@ -1,0 +1,4 @@
+N*=52: r=0.00134, m=4.46e+13 GeV, H_inf=9.07e+12 GeV, m/H_inf=4.9
+N*=54: r=0.00125, m=4.30e+13 GeV, H_inf=8.76e+12 GeV, m/H_inf=4.9
+N*=55.58: r=0.00118, m=4.18e+13 GeV, H_inf=8.51e+12 GeV, m/H_inf=4.9
+N*=58.09: r=0.00108, m=4.00e+13 GeV, H_inf=8.15e+12 GeV, m/H_inf=4.9

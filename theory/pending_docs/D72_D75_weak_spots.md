@@ -5092,3 +5092,6 @@ After D537, three options with a nilpotent S (V = e^K|F|², F = η⁻²H holomor
 Conclusion: within this minimal set-up (one modulus, nilpotent S, exact SL(2,Z)), "heavy vacuum at τ = i" and "Λ ≠ 0 at τ = i" cannot both hold. This is the Leedom–Righi–Westphal no-go (arXiv:2212.03876) in our language.
 Known ways out (literature): matter/ISS uplift with a limited coupling range gives near-zero or slightly dS vacua near i (Knapp-Pérez et al., arXiv:2304.14437, D535), or a separate uplift sector. In both, Λ is an added and tuned sector, not a property of the torus.
 Status: SERAPIS now = plateau inflation + heavy SUSY-Minkowski vacuum at i + separately tuned Λ (as in 2405.06497). The "one torus explains Λ" claim is closed as NOT supported. The synthesis and paper must change accordingly (in progress).
+
+## D539 — LEFT (loop tick 3; scored, locked PREREG_D539_VACUUM_MASS; results/vacuum_mass_d539.txt) — vacuum mass at the model's own N* (referee fix 4)
+m = 4.5e13 (N* = 52), 4.3e13 (54), 4.2e13 (55.6) GeV; m/H_inf = 4.9 throughout. The D517 value of 4.0e13 was at the wrong N* (58.09) and is replaced by 4.2–4.5e13 GeV. The holomorphic correction (D537, E₆/η¹², c = 0) does not change this curvature. The vacuum is a heavy SUSY Minkowski point (D537/D538). Gravitational reheating (D518) is unchanged at this level (T_RH ∝ m^{3/2}: +6–10%).
