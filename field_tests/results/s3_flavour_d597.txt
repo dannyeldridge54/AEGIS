@@ -1,0 +1,19 @@
+check at tau=4i: y1=0.125000+0.000000j vs 1/8+3q=0.125000+0.000000j; y2=6.040e-06-3.699e-22j vs sqrt3 q^1/2=6.040e-06+0.000e+00j
+Y(i) = [0.13061287+2.01356898e-18j 0.07540937-3.48760378e-18j], s = 0.150819+0.000000j, Y'(i) = [0.+0.03533341j 0.+0.24043824j]
+eigenvalues [ 0.15081875+0.0000000e+00j -0.15081875-5.0555661e-34j]; off-diagonal (U^T A(Y') U)_12 = 0.00000-0.19056j; kappa = 1.2635
+dM/M=1.0e-08: lambda12=8.93e-09 T_RH=1.10e-02 GeV x=dM/Gamma_N=2.40e-03 eps=2.40e-03 Y_B=7.24e-17 fail
+dM/M=3.2e-08: lambda12=2.83e-08 T_RH=3.47e-02 GeV x=dM/Gamma_N=7.60e-03 eps=7.60e-03 Y_B=7.24e-16 fail
+dM/M=1.0e-07: lambda12=8.93e-08 T_RH=1.10e-01 GeV x=dM/Gamma_N=2.40e-02 eps=2.40e-02 Y_B=7.23e-15 fail
+dM/M=3.2e-07: lambda12=2.83e-07 T_RH=3.47e-01 GeV x=dM/Gamma_N=7.60e-02 eps=7.56e-02 Y_B=7.20e-14 fail
+dM/M=1.0e-06: lambda12=8.93e-07 T_RH=1.10e+00 GeV x=dM/Gamma_N=2.40e-01 eps=2.27e-01 Y_B=6.84e-13 fail
+dM/M=3.2e-06: lambda12=2.83e-06 T_RH=3.47e+00 GeV x=dM/Gamma_N=7.60e-01 eps=4.82e-01 Y_B=4.59e-12 fail
+dM/M=1.0e-05: lambda12=8.93e-06 T_RH=1.10e+01 GeV x=dM/Gamma_N=2.40e+00 eps=3.55e-01 Y_B=1.07e-11 fail
+dM/M=3.2e-05: lambda12=2.83e-05 T_RH=3.47e+01 GeV x=dM/Gamma_N=7.60e+00 eps=1.29e-01 Y_B=1.23e-11 fail
+dM/M=1.0e-04: lambda12=8.93e-05 T_RH=1.10e+02 GeV x=dM/Gamma_N=2.40e+01 eps=4.15e-02 Y_B=1.25e-11 fail
+dM/M=3.2e-04: lambda12=2.83e-04 T_RH=3.47e+02 GeV x=dM/Gamma_N=7.60e+01 eps=1.32e-02 Y_B=1.25e-11 fail
+dM/M=1.0e-03: lambda12=8.93e-04 T_RH=1.10e+03 GeV x=dM/Gamma_N=2.40e+02 eps=4.16e-03 Y_B=1.25e-11 fail
+dM/M=3.2e-03: lambda12=2.83e-03 T_RH=3.47e+03 GeV x=dM/Gamma_N=7.60e+02 eps=1.32e-03 Y_B=1.25e-11 fail
+dM/M=1.0e-02: lambda12=8.93e-03 T_RH=1.10e+04 GeV x=dM/Gamma_N=2.40e+03 eps=4.16e-04 Y_B=1.25e-11 fail
+dM/M=3.2e-02: lambda12=2.83e-02 T_RH=3.47e+04 GeV x=dM/Gamma_N=7.60e+03 eps=1.32e-04 Y_B=1.25e-11 fail
+dM/M=1.0e-01: lambda12=8.93e-02 T_RH=1.10e+05 GeV x=dM/Gamma_N=2.40e+04 eps=4.16e-05 Y_B=1.25e-11 fail
+Gamma_N/M = 4.16e-06; max Y_B = 1.25e-11 at dM/M=1.0e-01

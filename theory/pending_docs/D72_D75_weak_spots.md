@@ -5862,3 +5862,21 @@ The LSP problem (D591) is resolved within the toy, with comfortable margin.
 - Since f_Y ∝ c² = 2 and f ∝ R^{−20} near R ~ 140 (D594 slope), the requirement moves R by a factor 2^{1/20} = 1.035: R ≳ 142. Negligible.
 - Hubble-induced MASS terms (c_H H²σ²) would add to m_Y during inflation; they help adiabaticity. They are not included.
 Final: m_Y(vacuum) ≳ 7e14 GeV; racetrack A ≳ 3.7e-3; window ≈ ×140. The c caveat on D592/D594/D595 is CLOSED.
+
+## D597 — DEEP (Ddl 08:07 CT; locked PREREG_D597_S3_FLAVOUR; results/s3_flavour_d597.txt) — minimal S₃ flavour toy at τ = i: off-diagonal decay + resonance falls short by ~7×; NOT VIABLE as is
+Checks: the Γ₂ weight-2 doublet expansions are verified at τ = 4i (y₁ = 1/8 + 3q exactly, y₂ = √3q^{1/2}).
+- At i: Y = (0.1306, 0.0754), s = 0.1508, Y′ = (0.0353i, 0.2404i).
+- Off-diagonal (UᵀA(Y′)U)₁₂ = −0.1906i, so κ = 1.26. The off-diagonal channel EXISTS, confirming D590's structural claim.
+The tension D590 did not resolve:
+- The off-diagonal coupling scales with the splitting, λ₁₂ = √2κ(ΔM/2M), so T_RH ∝ ΔM. The resonant asymmetry falls as ε ∝ 1/ΔM above resonance.
+- Below resonance (ΔM ≲ Γ_N ≈ 4e-6 M), T_RH is only 0.01–4 GeV: too cold for sphalerons and too little asymmetry.
+- Above it, Y_B reaches a PLATEAU independent of ΔM: Y_B ≈ 1.25e-11 for all ΔM/M ≳ 1e-4 (T_RH from 110 GeV up to 1e5 GeV).
+- Required: 8.75e-11. Short by ×7. No scan point passes.
+- Scaling: Y_B,plateau ∝ κ·m_ν (via Γ_N). Passing needs κ ≈ 9, the same "needs ~5–7× stronger coupling" wall as D589.
+Verdict (by the lock): NOT VIABLE in the minimal S₃ toy.
+Remaining routes (none computed):
+- (a) several N pairs or larger Γ_N structures (three generations add at most ~×2–3);
+- (b) higher-weight doublets with larger κ at i;
+- (c) a non-leptogenesis mechanism (Affleck–Dine along a flat direction, natural with high-scale SUSY);
+- (d) a larger inflaton mass. Y_B,plateau grows with m, but m is fixed by ε (D581).
+Status: baryogenesis is the WEAKEST link of two-term SERAPIS. Leptogenesis from inflaton decay at τ = i is suppressed by symmetry (diagonal couplings vanish, off-diagonal ones ∝ ΔM) and falls ~×7 short in the minimal realisation.
