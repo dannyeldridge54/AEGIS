@@ -109,3 +109,4 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - Twist-M write-up (DEEP 2): credit modular-invariant inflation (1604.02995, 2403.02125, 2503.13682, 2411.18603), fixed-point attraction (2211.00659), modular quintessence at the self-dual point (2506.02731; hilltop, w₀≈−0.8, vs Twist-M minimum, w₀=−1).
 - Twist-M write-up (DEEP 3): credit quintessential inflation (Peebles–Vilenkin; 2311.02730) and kination-GW work (2111.01150, 2307.12913).
 - (DEEP 4): credit 0707.1544 (quintessential kination & leptogenesis) where kination-assisted leptogenesis is mentioned.
+- v2 (DEEP 6): credit 2107.09064 / 2107.09065 (exponentially small Λ from flux vacua) for the 'Λ from the cliff' idea.

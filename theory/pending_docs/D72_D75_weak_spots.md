@@ -4732,3 +4732,7 @@ credit it. In Twist-M, kination ends (T ~ 1e13 GeV) before M₁ ≈ 3e10–2e11 
 **DEEP 5 (Danny "Again", 21:07 CT; topic 5 capture/screening; literature).** No direct prior art for a V-shaped minimum turned up in the screening literature (1011.5909), but on
 reflection D476/D486 amount to 'the field is heavy (3.7e10 GeV) at its minimum'. That is the ordinary heavy-modulus result, not a new screening mechanism, and no novelty is claimed.
 It does mean the conclusion (no fifth force) is robust.
+
+**DEEP 6 (Danny "Again", 21:08 CT; topic 6 Λ; literature).** Prior art for 'Λ from an exponential': Demirtas–Kim–McAllister–Moritz–Rios-Tascon (2107.09064, 2107.09065) build explicit
+flux vacua with exponentially small W₀ and vacuum energy (even 1e-144). The Twist's cliff is the phenomenological version, and they get credit. A new connection to test (not a claim):
+n ≈ 234 ≈ 2π × 37, close to the τ ≈ 39–43 cycle that D471 needs for the birefringence axion's mass. One intermediate cycle might set both Λ and the axion mass. It needs a lock.

@@ -1,7 +1,7 @@
 # Deep-research loop (Danny 20:13 CT 14 Nov: "another every 30 that's deep research on each topic")
 interval_min: 30
-cycle: 5
-next_topic: 6
+cycle: 6
+next_topic: 7
 ## Topics (same 11 parts as the twin ladder; one topic per tick, in order, wrap 11→1)
 1 pinning decay · 2 inflation plateau · 3 kination/reheating · 4 leptogenesis · 5 capture · 6 Λ · 7 birefringence axion · 8 dark matter ·
 9 SUSY breaking/gravitino · 10 gauge couplings/α no-go · 11 string embedding
@@ -17,3 +17,4 @@ next_topic: 6
 - tick 3 (21:05, Danny 'Continue'): topic 3 kination — Twist-M = quintessential inflation with duality-fixed endpoint; GW ×35 still undetectable.
 - tick 4 (21:06, 'Again'): topic 4 leptogenesis — unchanged in Twist-M; credit 0707.1544.
 - tick 5 (21:07, 'Again'): topic 5 capture/screening — kink screening = ordinary heavy modulus (no novelty claim).
+- tick 6 (21:08, 'Again'): topic 6 Λ — credit 2107.09064/09065; n≈2π×37 ≈ D471's τ≈40 cycle (test later).
