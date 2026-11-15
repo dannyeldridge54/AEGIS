@@ -1,0 +1,2 @@
+eps=1.614e-07, n=233.90, x*=6.58e-05, n_s=0.9736, r=0.00453, alpha_s=-7.99e-04; r/(1-ns)^2=6.50; vs Route A r=0.0046
+VERDICT: VIABLE WITH ONE FIT

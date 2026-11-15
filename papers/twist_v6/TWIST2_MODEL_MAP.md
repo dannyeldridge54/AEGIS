@@ -173,3 +173,5 @@ alone.
 **Centre-confirmed (D477–D478):** our vacuum has a lower-Λ neighbour (x ≈ 135, Λ₂ ≈ 0.23Λ) but tunnelling action S ≥ 1e10 (stable); φ is heavy during inflation (no isocurvature).
 
 **Centre-confirmed (D480, D481, D483):** sgoldstino decays before BBN; gauged B−L strings (if present) Gμ ≈ 2e-17–8e-16 (possible future GW signal); capture robust to ×0.5–×2 kinetic energy (T_cap ≈ 5e8–9e11 GeV).
+
+**Variant Twist-M (D490–D491, duality-symmetric):** F_sym = G(x) + x²G(1/x), V(1/x) = V(x); Λ and the capture at the self-dual point x = 1 (n = 233.9); with ε = 1.6e-7 fitted: n_s 0.9736, r 0.0045, α_s −8.0e-4 (same as Route A). Capture-side numbers not yet redone.

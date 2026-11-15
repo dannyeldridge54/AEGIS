@@ -4644,3 +4644,16 @@ Over 25 model outputs (all pairwise ratios), 4 ratios fall within 1% of φ, φ²
 the same size give 1.8 hits on average, and 10% of them give ≥ 4 (p = 0.10). So the overlaps are what chance gives. No golden/silver structure is supported.
 Sefirot mapping recorded as an organisational aid (theory/deep/SEFIROT_MAP.md): the twin ladder already has the three-pillar form; the centre (Tiferet) is where
 balance is checked. Not physics evidence.
+
+**D490 (Danny 20:29 CT "Design one that does" [a Twist with an 'as above, so below' symmetry]; scored, locked PREREG_D490_MODULAR_TWIST + DEVIATIONS D1, D2;
+results/modular_twist_d490.txt, first buggy run kept as _run1_bug.txt) — locked verdict "SYMMETRY KILLS INFLATION FIT" for the two pre-set ε values; the design
+itself works.** Design: F_sym(x) = G(x) + x² G(1/x) with G the Twist's F. Then V_sym(1/x) = V_sym(x) exactly (checked to 1.4e-14). Inflation sits on the small-x
+plateau, its mirror at large x, and Λ at the self-dual point x = 1, where the FI root is symmetry-enforced. Control: the code reproduces the original Twist
+(n_s = 0.9651 / 0.9736 for ε = 0 / 3.04e-7). Fixing Λ at x = 1 needs n = 233.9 (vs 125). Then n_s = 0.9651 (ε = 0, 2.9σ low) or 0.9817 (ε = 3.04e-7, too high),
+both outside the 2σ window. Fixes before rerun: D1 (wrong V formula: |F|²/(4x²), not /(T+T̄)³) and D2 (an edit typo).
+**D491 (scored, locked PREREG_D491_MODULAR_ROUTEA; results/modular_routeA_d491.txt) — VIABLE WITH ONE FIT.** With ε fitted to n_s = 0.9736 (as Route A),
+ε = 1.61e-7, n = 233.9, x* = 6.6e-5. Predictions: r = 0.00453, α_s = −8.0e-4 (r/(1 − n_s)² = 6.5, i.e. the same fibre-like line as Route A). So the symmetric 'Twist-M'
+fits the data as well as Route A, with the same number of fitted parameters, and adds a structural reason for the capture point: the self-dual point of the duality.
+Consequences, NOT yet recomputed: capture moves from x_E = 29.6 to x = 1, so every capture-side number of D436–D489 (volume at capture, M_s, KK band, ε_h,
+T_cap) must be redone for Twist-M. Also, the mirror plateau at large x means a region that starts at large volume would also inflate and roll down to x = 1. Status: candidate
+variant, not the baseline.
