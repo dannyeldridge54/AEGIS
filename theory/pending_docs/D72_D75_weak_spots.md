@@ -5846,3 +5846,12 @@ Same toy and code (only R changed):
 - The requirement f_Y ≤ 2e-13 is met already at R ≈ 160 (log interpolation between 100 and 200). **CONFIRMED directly at R = 200 and 320.**
 Updated bound: m_Y(y_end) ≳ 5e14 GeV, m_Y(vacuum) ≳ 8.5e14 GeV, racetrack A ≳ 4.3e-3. The window widens back to ×119 (versus ×58 in D592).
 Caveats unchanged: c = 1 toy normalisation (f ∝ c²); the stiff-phase growth factor (~180×) is an estimate; Y decay is not followed.
+
+## D595 — DEEP (Ddl 08:05 CT; locked PREREG_D595_STIFF_GROWTH; results/stiff_growth_d595.txt) — the stiff-phase growth is ×8.6, not ×180; the dilaton needs only m_Y ≳ 140 H_end
+Computed from the exact background:
+- Effective w = 0.556 over [N_end + 0.5, +1.5] and 0.537 over [+1.5, +3]. This is close to the octic 0.6, which confirms the stiff phase (D574/D578).
+- ρ(N_end + 1.5)/ρ_end = 1.15e-3. Reaching the octic → quadratic crossover (ρ_x/ρ_end = 2.4e-6) takes another 1.34 e-folds, over which a free Y gains G = 8.6 relative to φ.
+- D591's ~180× counted the whole stiff phase from the end of inflation, but the Y oscillation only becomes free after ~1.5 e-folds. CORRECTED.
+Requirement: f_Y(N_end + 1.5) ≤ 4.6e-12, giving R = m_Y/H_end ≳ 137 (interpolated from D592/D594).
+Final bound: m_Y(y_end) ≳ 4.4e14 GeV, m_Y(vacuum) ≳ 7e14 GeV, racetrack A ≳ 3.6e-3, window ≈ ×140.
+The LSP problem (D591) is resolved within the toy, with comfortable margin.
