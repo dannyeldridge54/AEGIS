@@ -5910,3 +5910,13 @@ Caveats:
 - Thermal effects and our stiff (w ≈ 0.55) post-inflation phase (FHY assume matter domination) can change the scaling.
 - Not locked; an order-of-magnitude scaling only.
 Verdict: the most promising baryogenesis route for two-term SERAPIS is Affleck–Dine leptogenesis, which predicts m_ν1 ≲ 1e-7 eV (estimate). It replaces the ×1.75–7 shortfalls of the inflaton-decay routes (D589a–D598). Needs: a locked AD computation adapted to the stiff phase and SERAPIS's T_R.
+
+## D600 — DEEP (Ddl 08:13 CT; arithmetic + reasoning, not locked) — timing check: the Affleck–Dine field starts oscillating AFTER the stiff phase, so the standard matter-dominated AD scaling (D599) applies
+- The crossover from octic (w ≈ 0.55, D595) to quadratic (matter-like) inflaton oscillation happens at H_x = H_end·(ρ_x/ρ_end)^{1/2} = 3.2e12 × (2.4e-6)^{1/2} ≈ 5.0e9 GeV (C1).
+- The AD flat direction starts oscillating at H_osc ≈ m_soft ≈ 6–10e8 GeV (D585 no-scale soft masses). That gives H_osc/H_x ≈ 0.13–0.2, so AD dynamics begin in the inflaton-MATTER era. This is exactly FHY's assumption, so n_L/ρ_φ is conserved until reheating and n_B/s ∝ T_R holds. D599's main caveat about the stiff phase is RESOLVED.
+- The stiff phase only affects the Hubble-induced evolution BEFORE H_osc, which sets the initial phase and amplitude. It enters through an O(1) factor, not the scaling (estimate).
+Remaining caveats:
+- (i) The flat direction must be lifted by a B − L D-term (FHY) or by the neutrino-mass operator (LH_u)²/M with M = v²/m_ν1 (Murayama–Yanagida type). Both give n_B ∝ T_R/m_ν1, with coefficients differing by ~O(10).
+- (ii) Thermal effects can trigger early oscillation. They are weaker here because φ_osc is large and the plasma is diluted (T_R ≪ m_soft).
+- (iii) Q-ball formation (gravity-mediated, m_soft ~ 1e9): Q-balls would decay well before BBN at these masses (estimate).
+Status: baryogenesis is now via AD leptogenesis along LH_u. It predicts m_ν1 ≲ 1e-7 eV for T_R ≲ 1e7 GeV, i.e. Σm_ν at its minimum. Needs: fixing T_R from the actual inflaton decay channels (D597 showed T_R ∝ the N splitting; channels to the hidden/racetrack sector are not yet counted).
