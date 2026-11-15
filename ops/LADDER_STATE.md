@@ -2,8 +2,8 @@
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 30
 consecutive_walls: 0
-cycle: 16
-next_part: 6
+cycle: 17
+next_part: 7
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -62,3 +62,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 14 (18:16, 'pp'): PART 3 second pass — D424 kination GW peak 5.6e-16 at ~1e7 Hz, ΔN_eff ~1e-10: safe, undetectable. Result → walls 0.
 - cycle 15 (18:18, 'pp'): PART 4 second pass — D425 ψ→L H decays conserve L, need only y' ≳ 2e-16–1e-14; leptogenesis unaffected. WALL 1.
 - cycle 16 (18:24, 'pp'): PART 5 second pass — D426 hidden sector thermal via lepton portal y' ≳ 5e-3 (mixing 2e-6), or colder hidden bath with T_h/T ≥ 0.21. Result → walls 0.
+- cycle 17 (18:28, 'pp'): PART 6 second pass — D427 condensate soft vacuum energy 1e26–1e32 GeV^4 must be cancelled by the one CC tuning; 'Λ from the cliff' narrowed (v2 correction). Result → walls 0.

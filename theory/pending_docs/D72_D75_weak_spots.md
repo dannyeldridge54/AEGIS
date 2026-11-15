@@ -4196,3 +4196,14 @@ far below 10⁻³, so no flavour or neutrino-mass trouble. If the hidden sector 
 for ξ ≥ 0.21 (x_E = 29.6), 0.28 or 0.35 — so a hidden sector reheated separately (e.g. by χ̃ decays) at a fifth of the SM temperature or more
 is also enough. Cross-effect closed: D417's ε = 0 (no photon mixing) is compatible, because the thermal link runs through leptons, not
 photons. This lower bound on y' joins D425's (y' ≳ 10⁻¹⁶–10⁻¹⁴ for decays before BBN): y' ∈ [5×10⁻³, ~1]. Result → walls 0.
+
+**D427 (cycle 17, "pp"; second pass PART 6 Λ, RIGHT; estimate in code) — CORRECTION/CLARIFICATION of "Λ from the cliff": the χ condensate
+adds a vacuum energy that the cliff cannot absorb; Twist-2's Λ is the cliff value only AFTER the standard one-off cosmological-constant
+cancellation, which must now also cancel the condensate sector.** The Higgs branch is supersymmetric (D- and F-flat, zero energy) only before
+SUSY breaking; with soft masses 10⁴–10⁵ GeV (D292) and v = 10⁹–10¹¹ GeV the condensate's soft vacuum energy is ~m_soft² v² ≈ 10²⁶–10³² GeV⁴,
+i.e. 10⁷²–10⁷⁹ times ρ_Λ (2.5×10⁻⁴⁷ GeV⁴), x-independent after pinning. D292 already needed one tuning (μ⁴ = 3w²/8) to cancel the SUSY-breaking
+energy; that same constant now has to absorb this term too, to ~1 part in 10⁷²–10⁷⁹. So the honest statement is: Twist-2 does not solve the
+cosmological-constant problem; given the one cancellation every model needs, the leftover x-dependent piece is the cliff value e^(−2n) at x_E
+(D383, D413), which is what n sets. Earlier wording ("residual potential sets the vacuum energy", Twist-2 paper v1 abstract and §2) should say
+this explicitly → added to the v2 correction list. (b) CONNECTIONS: part 5 (condensate), part 9 (SUSY-breaking scale). (c) CENTRE: no filter
+fails; the claim is narrowed. Result (correction) → walls 0.
