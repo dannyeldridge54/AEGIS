@@ -1,0 +1,22 @@
+octic coefficient: V ~ c8 delta^8, c8 = 2.6879e+02
+eps=0.0001 T_R=1e+03 w=3/5: N*=47.69 y*(MS-shifted)=23.3 HS n_s=0.9686 (+0.1 SPA, -1.5 S+D) r=4.55e-04
+eps=0.0001 T_R=1e+03 w=0: N*=46.08 y*(MS-shifted)=22.9 HS n_s=0.9672 (-0.4 SPA, -2.1 S+D) r=4.78e-04
+eps=0.0001 T_R=1e+05 w=3/5: N*=49.21 y*(MS-shifted)=23.7 HS n_s=0.9700 (+0.5 SPA, -1.0 S+D) r=4.33e-04
+eps=0.0001 T_R=1e+05 w=0: N*=47.60 y*(MS-shifted)=23.3 HS n_s=0.9686 (+0.1 SPA, -1.5 S+D) r=4.55e-04
+eps=0.00013 T_R=1e+03 w=3/5: N*=47.66 y*(MS-shifted)=23.6 HS n_s=0.9713 (+1.0 SPA, -0.6 S+D) r=4.97e-04
+eps=0.00013 T_R=1e+03 w=0: N*=46.09 y*(MS-shifted)=23.2 HS n_s=0.9698 (+0.5 SPA, -1.1 S+D) r=5.21e-04
+eps=0.00013 T_R=1e+05 w=3/5: N*=49.18 y*(MS-shifted)=24.1 HS n_s=0.9727 (+1.4 SPA, -0.0 S+D) r=4.77e-04
+eps=0.00013 T_R=1e+05 w=0: N*=47.62 y*(MS-shifted)=23.6 HS n_s=0.9713 (+1.0 SPA, -0.6 S+D) r=4.97e-04
+eps=0.00016 T_R=1e+03 w=3/5: N*=47.64 y*(MS-shifted)=24.0 HS n_s=0.9740 (+1.9 SPA, +0.4 S+D) r=5.45e-04
+eps=0.00016 T_R=1e+03 w=0: N*=46.11 y*(MS-shifted)=23.6 HS n_s=0.9725 (+1.4 SPA, -0.1 S+D) r=5.67e-04
+eps=0.00016 T_R=1e+05 w=3/5: N*=49.17 y*(MS-shifted)=24.5 HS n_s=0.9754 (+2.3 SPA, +1.0 S+D) r=5.24e-04
+eps=0.00016 T_R=1e+05 w=0: N*=47.63 y*(MS-shifted)=24.0 HS n_s=0.9740 (+1.9 SPA, +0.4 S+D) r=5.45e-04
+eps=0.0002 T_R=1e+03 w=3/5: N*=47.62 y*(MS-shifted)=24.5 HS n_s=0.9776 (+3.1 SPA, +1.8 S+D) r=6.15e-04
+eps=0.0002 T_R=1e+03 w=0: N*=46.13 y*(MS-shifted)=24.1 HS n_s=0.9761 (+2.6 SPA, +1.2 S+D) r=6.37e-04
+eps=0.0002 T_R=1e+05 w=3/5: N*=49.15 y*(MS-shifted)=25.0 OUT n_s=0.9792 (+3.6 SPA, +2.4 S+D) r=5.95e-04
+eps=0.0002 T_R=1e+05 w=0: N*=47.65 y*(MS-shifted)=24.5 HS n_s=0.9776 (+3.1 SPA, +1.8 S+D) r=6.15e-04
+eps=0.00025 T_R=1e+03 w=3/5: N*=47.61 y*(MS-shifted)=25.2 OUT n_s=0.9823 (+4.6 SPA, +3.5 S+D) r=7.17e-04
+eps=0.00025 T_R=1e+03 w=0: N*=46.15 y*(MS-shifted)=24.7 HS n_s=0.9808 (+4.1 SPA, +2.9 S+D) r=7.36e-04
+eps=0.00025 T_R=1e+05 w=3/5: N*=49.14 y*(MS-shifted)=25.8 OUT n_s=0.9839 (+5.2 SPA, +4.1 S+D) r=6.99e-04
+eps=0.00025 T_R=1e+05 w=0: N*=47.68 y*(MS-shifted)=25.2 OUT n_s=0.9824 (+4.7 SPA, +3.5 S+D) r=7.16e-04
+ALLOWED: [0.00013, 0.00016]

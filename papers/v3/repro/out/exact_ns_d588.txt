@@ -1,0 +1,6 @@
+HS-Kairos N*=49: y*=22.52 HS MS n_s=0.9611 r=3.28e-04 (-2.4 SPA, -4.3 S+D) | old SR: n_s=0.9613 r=3.20e-04 y*=22.88 | shift dn_s=-0.0002 [attractor 1-2/N = 0.9592]
+HS-Kairos N*=51: y*=22.93 HS MS n_s=0.9626 r=3.04e-04 (-1.9 SPA, -3.8 S+D) | old SR: n_s=0.9628 r=2.96e-04 y*=23.29 | shift dn_s=-0.0003 [attractor 1-2/N = 0.9608]
+two-term 1.0e-4 N*=49: y*=23.62 HS MS n_s=0.9698 r=4.44e-04 (+0.5 SPA, -1.1 S+D) | old SR: n_s=0.9701 r=4.37e-04 y*=24.02 | shift dn_s=-0.0003
+two-term 1.0e-4 N*=51: y*=24.12 HS MS n_s=0.9714 r=4.19e-04 (+1.0 SPA, -0.5 S+D) | old SR: n_s=0.9718 r=4.11e-04 y*=24.53 | shift dn_s=-0.0003
+two-term 1.3e-4 N*=49: y*=23.97 HS MS n_s=0.9725 r=4.86e-04 (+1.4 SPA, -0.1 S+D) | old SR: n_s=0.9728 r=4.79e-04 y*=24.41 | shift dn_s=-0.0004
+two-term 1.3e-4 N*=51: y*=24.51 HS MS n_s=0.9742 r=4.61e-04 (+1.9 SPA, +0.5 S+D) | old SR: n_s=0.9746 r=4.54e-04 y*=24.96 | shift dn_s=-0.0004

@@ -1,6 +1,6 @@
 # Readiness ladder status
 - [x] R1 freeze manifest — papers/v3/MANIFEST.md (2026-11-15 09:18 CT; 28 locks, 0 missing hashes)
-- [ ] R2 reproducibility package
+- [x] R2 reproducibility package — papers/v3/repro/ (3 key scripts re-run: byte-identical)
 - [ ] R3 references verified
 - [ ] R4 figures 1–4
 - [ ] R5 LaTeX draft (sections 1–11)
