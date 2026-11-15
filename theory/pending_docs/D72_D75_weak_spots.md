@@ -6341,3 +6341,4 @@ Check against exact MS (8 rows):
 - The exact Kairos rows come out at x ≈ −0.05 instead of 0, the same subleading offset.
 - Verdict by the lock: PASS (≤ 20%).
 Use: a measured (n_s, r) gives x (how "Chronos" the universe is) and a predicted α_s; measuring α_s then TESTS the whole SERAPIS family with no free parameter. The relation holds for either vacuum (i or ρ), since it depends only on the cusp form. Multiplying the leading-order α_s by 1.12 removes the bias (empirical, from this check; not a new fit to data).
+D583a (citation correction, found in readiness R3): hep-ph/0611166 is "The Gravitino-Overproduction Problem in Inflaton Decay" by M. Kawasaki, F. Takahashi, T. T. Yanagida (2006). D583 attributed it to "Endo, Hamaguchi, Takahashi / Kawasaki et al." The formulas quoted were fetched from that paper and stand; only the author attribution is corrected.
