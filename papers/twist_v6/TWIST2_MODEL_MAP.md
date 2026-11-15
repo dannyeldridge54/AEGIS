@@ -151,3 +151,5 @@ alone.
 **Centre-confirmed (D449):** geometry check: the volume at capture gives M_s ≈ 1.1–1.7e17 GeV (g_s 0.1–0.5), inside the dynamical window 0.03–0.1 M_P. Open: redo the plateau test with volume-dependent M_s.
 
 **Flag (D450):** the inflationary point sits at volume 𝒱 ≈ 4e-6 in string units (M_s ≫ M_P there); inflation is outside geometric control unless a T-dual/other description is shown.
+
+**Flag detail (D451):** T-duality would restore control (dual volume 1.9e6) only with a modular F; the Twist's cliff breaks modularity by ~1e120, and a modular completion would mirror the cliff to x ≈ 0.034.

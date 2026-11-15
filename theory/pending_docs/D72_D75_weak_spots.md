@@ -4416,3 +4416,13 @@ D439's fixed-M_s result stands only as an assumption. This confirms and sharpens
 inflationary phase of Twist-2 lies outside the geometric (large-volume) regime. Possible ways out (not computed): a T-dual description
 (x → 1/x-type duality maps small to large volume), or reading x during inflation as a different modulus/regime. Until one is shown, the
 'inflation and Λ from one string modulus' claim carries this flag. CENTRE: no balance change, flag recorded; v2 paper must state it plainly.
+
+**D451 (cycle 36, "pp"; fourth pass PART 2/11; scored, locked PREREG_D451_TDUAL; results/tdual_d451.txt) — "DUAL FRAME CONTROLLED, F NOT
+MODULAR": T-duality would give control, but the Twist's F breaks it by ~120 orders of magnitude.** Under T → 1/T the inflationary point
+maps to 𝒱′ = 1.9e6 (M_s′/M_P = 7e-4–1e-3): well inside the large-volume regime. Because K = −3 ln(T+T̄) changes only by a Kähler transformation,
+the escape works only if V(1/x) = V(x), i.e. F(1/x) = ±F(x)/x³. The Twist's F is far from that: log₁₀[V(1/x)/V(x)] = −119.4 at x* (and +109.4
+at x_E; 0 at the self-dual point x = 1, as it must be; ε makes no difference). The cliff factor exp[−n(1 − e^{−x/m₂})] is what breaks it.
+Reading (not scored): a modular completion of F would make V symmetric about x = 1, which would put a mirror image of the Λ cliff at
+x = 1/29.6 ≈ 0.034, on the field's path between inflation and capture. So the T-dual escape is not free: it would reshape the model. The
+D450 control flag therefore stands. Remaining escapes: a non-geometric/Landau-Ginzburg description of the small-volume phase, or a
+different modulus driving inflation. CENTRE: no change; flag stands (v2 list already updated by D450).

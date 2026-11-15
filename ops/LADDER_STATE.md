@@ -2,7 +2,7 @@
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 60
 consecutive_walls: 0
-cycle: 35
+cycle: 36
 next_part: 3
 
 ## Cycle method (every cycle, twin-ladder skill)
@@ -83,3 +83,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 33 (19:27, 'pp'): PART 10 third pass — D448 kinetic mixing harmless (heavy Stückelberg boson); Stückelberg mass mixing with Y must vanish or lie below direct-detection millicharge bound. WALL 1.
 - cycle 34 (19:30, 'pp'): PART 11 third pass — D449 volume at x_E (455) gives M_s/M_P 0.047–0.070 (g_s 0.1–0.5), inside the dynamical window 0.03–0.1: CONSISTENT. Result → walls 0. THIRD PASS DONE.
 - cycle 35 (19:35, 'pp'): fourth pass PART 2 — D450 plateau with M_s(x): 𝒱(x*) = 4e-6, M_s ≈ 500–700 M_P → OUTSIDE CONTROL (inflation outside large-volume regime; sharpens D408/D409 flag). Result → walls 0.
+- cycle 36 (19:37, 'pp'): PART 2/11 — D451 T-dual frame at 𝒱' = 1.9e6 is controlled, but F is not modular (log10 asymmetry −119 at x*); a modular F would mirror the cliff to x ≈ 0.034. D450 flag stands. Result → walls 0.

@@ -1,0 +1,8 @@
+dual volume 1.91e+06; M_s'/M_P = 7.22e-04 (g_s 0.1), 1.08e-03 (0.5)
+eps=0.00e+00 x=0.00013: log10 A = -119.44
+eps=0.00e+00 x=1.0: log10 A = 0.00
+eps=0.00e+00 x=29.6: log10 A = 109.38
+eps=3.04e-07 x=0.00013: log10 A = -119.44
+eps=3.04e-07 x=1.0: log10 A = 0.00
+eps=3.04e-07 x=29.6: log10 A = 109.38
+VERDICT: DUAL FRAME CONTROLLED, F NOT MODULAR
