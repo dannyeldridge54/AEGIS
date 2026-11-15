@@ -1,0 +1,7 @@
+a=1: min m_KK/T=23555.02, min M_s/T=44425.4, V(x*)=0.00
+a=1000: min m_KK/T=23.56, min M_s/T=249.8, V(x*)=0.13
+a=3846: min m_KK/T=6.12, min M_s/T=91.0, V(x*)=1.00
+a=17852: min m_KK/T=1.32, min M_s/T=28.8, V(x*)=10.00
+k=3: a_max=7852, V(x*) at a_max=2.92
+k=10: a_max=2356, V(x*) at a_max=0.48
+VERDICT: MARGINAL

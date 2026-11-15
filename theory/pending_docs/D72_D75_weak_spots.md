@@ -4438,3 +4438,11 @@ capture (≥ 7e13 GeV) > H_inf ≈ 1.7e13 GeV; M_KK ≈ M_s/𝒱^{1/6} ≈ 1e13 
 fares against α′ corrections (O(1) at 𝒱 ~ 1, so 𝒱 = 10 is the safer choice), and how the new M_s scale affects D447's hidden sector (masses ≲ 10 TeV
 unchanged in form). D449's 'consistency' held for a = 1 only; with a ≈ 4e3–2e4 the string scale is ~1e14 GeV instead. CENTRE: balanced; the
 D450 flag is downgraded from 'outside control' to 'marginal control (𝒱 ≈ 1–10) at the CMB point'.
+
+**D453 (cycle 38, "pp"; fourth pass PART 3, LEFT; scored, locked PREREG_D453_TOWER_RESCALE; results/tower_rescale_d453.txt) — MARGINAL: the
+D452 rescaling squeezes the KK tower toward the plasma temperature.** On D409's trajectory points, the minimum m_KK/T falls from 2.4e4 (a = 1) to
+23.6 (a = 1000), 6.1 (a = 3846, 𝒱(x*) = 1) and 1.3 (a = 17852, 𝒱(x*) = 10). The minimum sits at N − N_e ≈ 4, x ≈ 12.7, T ≈ 8e12 GeV; M_s/T stays ≥ 29.
+A margin m_KK/T ≥ 10 needs a ≤ 2356, which leaves 𝒱(x*) = 0.48 < 1. With the looser m_KK/T ≥ 3, a ≤ 7852 and 𝒱(x*) ≤ 2.9. So control at the CMB point
+(𝒱 ≳ 1) and a cold KK tower after inflation pull in opposite directions. Only a narrow band, a ≈ 3.8e3–7.9e3 (𝒱(x*) ≈ 1–2.9, m_KK/T ≈ 3–6), satisfies both, and only
+loosely. The D452 choice 𝒱 = 10 is excluded by this test (KK modes would be thermally produced, relic risk). O(1) conventions are as in D409 (factor-2 spread).
+CENTRE: D452 is narrowed to a = 3.8e3–7.9e3; the control flag stays 'marginal'; the v2 list is updated.
