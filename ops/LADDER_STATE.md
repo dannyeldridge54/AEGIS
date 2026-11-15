@@ -1,8 +1,8 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 5
-consecutive_walls: 2
-cycle: 78
+consecutive_walls: 3
+cycle: 79
 next_part: 1
 
 ## Cycle method (every cycle, twin-ladder skill)
@@ -118,3 +118,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 77 (20:46, tick): PART 11 — covered (D462/D471); D500 still running. WALL 1.
 - cycle 78 (20:53, tick): waiting on D500 (Twist-M case-(i) run); no part run to save credits. WALL 2.
 - 21:02: PC job package written to Desktop\AEGIS_PCJOBS (J1 = D500 Twist-M case (i); J2 = Twist-M grid 18 cases; J3 = Twist-2 FI capture map 49 cases); locks PREREG_D500 (+D1–D4), PREREG_PCJOBS_J2_J3. Waiting for Danny to start RUN_AEGIS_PCJOBS.bat.
+- cycle 79 (21:01, tick): D500 moved to PC jobs (not finished); no part run. WALL 3 → fast loop STOPPED (not rescheduled). Deep loop (30 min) continues; PC jobs J1–J3 pending Danny's start.
