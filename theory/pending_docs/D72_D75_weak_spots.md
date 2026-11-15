@@ -4580,3 +4580,14 @@ unification as a prediction. Credit: low-string-scale non-unification is a known
 **D471 (cycle 57; PART 7; scored) — NEEDS AN INTERMEDIATE CYCLE.** For m = 2–1e4 H0, f = 3.7–7.6e12 GeV and M_s = 0.7–3.5e14 GeV, the instanton action is
 S = 242–267, i.e. a cycle of volume τ = S/2π ≈ 39–43. That lies between the small FI cycle (~0.16, D461) and the large Twist cycle (~1e5). So the geometry needs at least three
 Kähler moduli (big, ~40, small), which fits a fibred CY with blow-ups (D462). It is a mild new prediction of the structure, not of a number. Result → walls 0.
+
+**D473 (cycle 58; PART 8; scored, PREREG_D473_D475; results/d473_d475.txt) — NEEDS GAUGED STABILITY.** With M_s = 0.7–3.5e14 GeV, a 100–200 TeV gravity-only DM fermion
+decays through generic M_s-suppressed operators in τ₅ = 1e-11–2e-9 s (dim-5) or τ₆ = 1e6–2.5e10 s (dim-6), far short of 1e28 s. It must be stable through a
+gauged (discrete Z_N from a D-brane U(1)) symmetry, the F5 option 'stable by gauged symmetry', which is now mandatory. Result → walls 0.
+
+**D474 (cycle 59; PART 9; scored) — minimal gauge mediation needs N ≥ 4 (√F = 140 TeV) to N ≥ 7 (65 TeV) messengers for a gluino > 2.3 TeV.** With no GUT
+(D470), the bound is Landau-pole safety of α₃ up to M_s: α₃⁻¹(1e14) = 10.0 / 6.7 / 3.4 / 0.1 for N = 4/5/6/7 (computed). So N ≤ 5–6, which needs √F ≳ 85–106 TeV
+and narrows the gravitino window to **m₃/₂ ≈ 1.7–4.7 eV** (was 1–4.7). This refines D430's prediction and gives a v2 entry. Result → walls 0.
+
+**D475 (cycle 60; PART 2; scored) — NOT DISTINGUISHABLE by running.** Route A α_s = −7.1 to −8.4e-4 vs the fibre/α-attractor line −3.5e-4 at n_s = 0.9736: the
+difference is 3.6–4.9e-4, i.e. 0.2σ for σ(α_s) ≈ 2e-3 (approximate forecast). So the D464 overlap with fibre inflation is not broken by α_s either. WALL.

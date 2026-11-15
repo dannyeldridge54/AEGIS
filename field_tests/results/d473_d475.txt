@@ -1,0 +1,18 @@
+== D473 DM decay
+m=1e+05 M_s=7.0e+13: tau5=8.1e-11 s, tau6=4.0e+07 s vs 1e28 -> FAIL
+m=1e+05 M_s=3.5e+14: tau5=2.0e-09 s, tau6=2.5e+10 s vs 1e28 -> FAIL
+m=2e+05 M_s=7.0e+13: tau5=1.0e-11 s, tau6=1.2e+06 s vs 1e28 -> FAIL
+m=2e+05 M_s=3.5e+14: tau5=2.5e-10 s, tau6=7.8e+08 s vs 1e28 -> FAIL
+== D474 gauge mediation
+sqrtF=6e+04: gluino per messenger=353 GeV -> N >= 7
+sqrtF=1e+05: gluino per messenger=760 GeV -> N >= 4
+== D475 running
+alpha_s Twist=-7.1e-04 vs fibre=-3.48e-04: diff=-3.6e-04 = 0.18 sigma
+alpha_s Twist=-7.7e-04 vs fibre=-3.48e-04: diff=-4.2e-04 = 0.21 sigma
+alpha_s Twist=-8.4e-04 vs fibre=-3.48e-04: diff=-4.9e-04 = 0.25 sigma
+N=4: alpha3^-1(1e14) = 10.04
+N=5: alpha3^-1(1e14) = 6.74
+N=6: alpha3^-1(1e14) = 3.44
+N=7: alpha3^-1(1e14) = 0.14
+N=4: sqrtF >= 1.06e+05 GeV -> m_3/2 >= 2.66 eV
+N=5: sqrtF >= 8.48e+04 GeV -> m_3/2 >= 1.70 eV

@@ -103,3 +103,4 @@ version history (Zenodo never deletes published versions). Claude Doc of v5: htt
 - v2 (D463): with the hidden FI sector, total ΔN_eff ≈ 0.06–0.08 (gravitino 0.047 + KK 0.005–0.021 + hidden 0.013).
 - v2 (D464): credit fibre inflation (0808.0691, 1603.06789): Route A's (n_s, r) lies on its α≈2 line; the Twist differs by the Λ/capture link and ΔN_eff/β predictions.
 - v2 (D469–D471): with M_s ~1e14 GeV, baryon number must be protected (proton decay); no GUT unification below M_s; axion mass needs a τ≈40 cycle (≥3 Kähler moduli).
+- v2 (D473–D474): DM must be stable by a gauged discrete symmetry; gravitino window narrows to 1.7–4.7 eV (messengers N ≤ 5–6 for α₃ perturbative to M_s).
