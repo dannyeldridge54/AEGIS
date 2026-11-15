@@ -4980,3 +4980,18 @@ Condition: Ibáñez–Ross with Green–Schwarz, A₃ ≡ A₂ (mod N/2), three 
 Not checked: hypercharge and gravity anomalies (they need the heavy spectrum); non-perturbative breaking ~e^{−S}.
 Status: an anomaly-free, gauged (modular) parity protecting the proton to dimension 6 exists in both conventions. The remaining open point is to embed it in a concrete orbifold home.
 D528 addendum (run completed): supergravity convention, M=6 (Z_12): 240 solutions e.g. Q=0/6, U=0/6, D=6/6, L=3/6, E=3/6, Hu=6/6, Hd=0/6.
+
+## D530 — RIGHT (pp, 22:14 CT; literature, nothing computed) — the orbifold home has to be factorisable
+Question: which string orbifolds keep the FULL SL(2,Z) on one torus, as SERAPIS needs (V built from j and η, vacuum at τ = i, walls at ρ)?
+- Mayr & Stieberger, hep-th/9303017: in toroidal heterotic orbifolds the moduli-dependent threshold (the source of the η-function factors) keeps the full SL(2,Z) only when the six-torus lattice splits as T² ⊕ T⁴, with the N = 2 fixed plane's lattice even and self-dual.
+- Non-factorisable lattices reduce the group:
+  - Z₄ on SU(4)² gives Γ⁰(2) in T;
+  - Z₆ on SU(3)×SO(8) gives Γ₀(3) / Γ⁰(3);
+  - Z₈ on SU(2)×SO(10) gives Γ⁰(2) in T and Γ₀(2) in U.
+- Per-plane form (standard: Dixon–Kaplunovsky–Louis; Cvetič–Font–Ibáñez–Lüst–Quevedo): K = −ln(T + T̄) per plane, so W must have weight −1 in that plane's modulus, which forces η(T)⁻² there. That is exactly SERAPIS-1's F = η⁻² H(j).
+Consequences:
+1. SERAPIS's home must be a factorisable orbifold, with the SERAPIS torus as the N = 2 fixed plane T²; the other two tori form the T⁴ and are heavy, as assumed. Its modulus can be that plane's T (Kähler) or U (shape); both have full SL(2,Z) there.
+2. Non-factorisable homes would turn SERAPIS into a congruence-subgroup model. That means more cusps and fixed points and a different vacuum structure, so not the tested model. Excluded as SERAPIS homes; they could be a later variant.
+3. Tension flagged: this lineage is heterotic, while the Twist-2 FI capture and the D3 sector are type IIB. The IIB analogue is the shape modulus U of a T² factor in T²×K3 / T⁶/Z_N orientifolds (SL(2,Z)_U). Whether IIB fluxes and the FI term keep the full group is not settled.
+Shared quantities: unchanged. Centre: balanced.
+Status: home narrowed. Factorisable T² ⊕ T⁴ with the SERAPIS torus as the N = 2 plane is required; heterotic vs IIB is still open.
