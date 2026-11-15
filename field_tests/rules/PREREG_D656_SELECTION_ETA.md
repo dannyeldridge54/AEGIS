@@ -1,0 +1,4 @@
+# PREREG D656: proton-parity selection rules redone with the η^{-2} multiplier (referee 4, item 1)
+Locked before computation, 2026-11-15. Script theory/modular/selection_eta_d656.py; output results/selection_eta_d656.txt.
+In the covariant completion W ∝ η^{-2}, so each coupling is Y = η^{-2}h with h a level-1 form of weight Σk_i (matter weights), and η(i), η(ρ) ≠ 0. Hence Y(i) ≠ 0 iff Σk_i ≡ 0 (mod 4) and Y(ρ) ≠ 0 iff Σk_i ≡ 0 (mod 6), with Σk_i a non-negative integer. (D551/D612 used k_Y = Σk − 1 ≡ 0 mod 4/6, valid for a trivial multiplier.)
+Rerun the D551 (τ = i, lifts {0,2}) and D612 (ρ, lifts {0,2,4}) scans verbatim except for this condition, for Z4^R and Z8^R. Report counts and an example. Also report the D646 premise: the Weinberg operator with k_L = k_Hu = 1 (Σk = 4) is non-zero at i (h = E4) — check |E4(i)| ≠ 0 numerically. No other change; DEVIATIONS first.
