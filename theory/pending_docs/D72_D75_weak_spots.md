@@ -4522,3 +4522,11 @@ light hidden dof and the D446 ceiling ε_h = 1e-5, T_h/T = 0.102 at capture rise
 D447 case ε_h = 1e-3 (T_h/T = 0.32) is excluded (ΔN_eff = 1.3), so only D447's colder column applies. Margin: ×5 above the D436/D446 estimate ≤ 1e-5.
 Prediction sharpened: total ΔN_eff ≈ 0.06–0.08 (CMB-S4 σ ≈ 0.03 → 2–3σ reach). The v2 list is updated (ΔN_eff 0.02–0.06 → 0.06–0.08 if the hidden sector is present).
 CENTRE: balanced.
+
+**D464 (cycle 49, "pp"; fifth pass PART 2, LEFT; literature + arithmetic in code; results/part2e_fibre_d464.txt) — prior-art overlap: Route A's
+(n_s, r) sits on the fibre-inflation line.** D462 requires a fibred Calabi–Yau, which is the home of fibre inflation (Cicoli–Burgess–Quevedo,
+0808.0691; 1603.06789), an α-attractor-like class with r ≈ 3α(1 − n_s)², α ≈ 2. The Twist's Route A point (n_s = 0.9736, r = 0.0046) gives
+r/(1 − n_s)² = 6.6, i.e. α_eff = 2.2; the fibre line (α = 2) gives r = 0.0042 at the same n_s. So, in (n_s, r), Route A cannot be told apart from fibre
+inflation; the undeformed Twist (α = 1, Starobinsky-like, B1) could, but it is disfavoured by the crown fit (D410). What still differs: the Twist ties
+the same field to Λ and to the capture/FI sector (D436–D463), and makes the ΔN_eff ≈ 0.06–0.08 and β_reio/β_rec predictions. Fibre inflation's
+reheating/dark-radiation predictions (1809.01159) were not compared here (not read). Must be credited in v2. No scored result → WALL.

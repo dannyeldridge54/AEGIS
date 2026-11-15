@@ -1,9 +1,9 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
 interval_min: 30
-consecutive_walls: 0
-cycle: 48
-next_part: 2
+consecutive_walls: 1
+cycle: 49
+next_part: 3
 
 ## Cycle method (every cycle, twin-ladder skill)
 Take the next PART from the queue. Three depths, in order:
@@ -98,3 +98,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 47 (20:11, back-to-back 'till null'): PART 11 fourth pass — D462 hidden FI D7 must be small yet intersect the big divisor → non-swiss-cheese (fibred) CY required. WALL 2 → null reached (back-to-back run stops; scheduled pacing would now go to 30 min).
 - 20:12: after null, pacing → 30 min (walls reset at new interval).
 - cycle 48 (20:14, 'pp'): PART 1 fifth pass — D463 hidden radiation ΔN_eff 0.013 → total 0.065–0.081; ε_h ≤ 5.5e-5; D447 hot column excluded. Result → walls 0.
+- cycle 49 (20:16, 'pp'): PART 2 fifth pass — D464 Route A α_eff = 2.2 ≈ fibre inflation line (α=2): not distinguishable in (n_s,r); credit in v2. WALL 1.
