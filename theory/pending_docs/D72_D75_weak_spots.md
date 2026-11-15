@@ -5016,3 +5016,13 @@ Consequences for SERAPIS:
 3. This is a real constraint, not a fit. Together with D530: the SERAPIS torus is an N = 2 plane with no flux, and the full SL(2,Z) comes from the factorised T² lattice.
 4. Mild statistical note: landscapes that stabilise by flux prefer ω over i. SERAPIS's vacuum at i is therefore NOT a typical flux vacuum. That is fine, because τ is not flux-stabilised in our set-up, but it should be stated in the paper.
 Shared quantities unchanged; centre balanced. Status: the home is narrowed further. The IIB route needs an unfluxed T²; heterotic stays the most natural.
+
+## D533 — RIGHT (loop tick 2; scored, locked PREREG_D533_PARITY_NP; results/parity_np_d533.txt) — PASS
+Question: does non-perturbative (Green–Schwarz) breaking of the D528/D529 modular parity bring proton decay back?
+Model: λ_np ≈ e^{−2π α_U⁻¹/δ_GS} (from 1812.11072), taken in the worst case of our numbers: α⁻¹ = 26 at M_s = 3.5e14 GeV, squarks 10 TeV.
+Bounds:
+- dim-4 (λ′λ″): needs λ_np < 3e-12, so δ_GS ≤ 6.2.
+- dim-5 (QQQL/M_eff ≳ 1e24 GeV): needs λ_np < 3.5e-10, so δ_GS ≤ 7.5.
+Combined: δ_GS ≤ 6.2; natural values δ_GS = 1–3 give λ_np = 1e-71 to 2e-24. PASS.
+Caveats: the bounds are standard order-of-magnitude ones, and δ_GS depends on the home. A concrete orbifold has to give δ_GS ≲ 6.
+Status: proton protection is now perturbative (D528), anomaly-free (D529) and safe against instantons for δ_GS ≲ 6 (D533). It stays model-level until the orbifold home exists.

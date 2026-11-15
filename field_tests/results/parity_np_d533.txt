@@ -1,0 +1,7 @@
+dim-4: lambda_np < 3.16e-12 -> delta_GS <= 6.17
+dim-5: lambda_np < 3.50e-10 -> delta_GS <= 7.50
+combined delta_GS,max = 6.17  ->  PASS
+  delta_GS=1: lambda_np = 1.1e-71
+  delta_GS=2: lambda_np = 3.4e-36
+  delta_GS=3: lambda_np = 2.2e-24
+  delta_GS=5: lambda_np = 6.5e-15
