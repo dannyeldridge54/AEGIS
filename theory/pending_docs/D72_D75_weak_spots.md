@@ -5480,3 +5480,21 @@ Lock: field_tests/rules/PREREG_D571_DISCOVERY_HUNTS.md (sha256 committed in e434
 - Verdict: these are follow-up candidates (VSX-submission material), not discoveries.
 
 **H1:** the AIP async result for the Gaia quasar join (job 00627678…) completed server-side; the download to the PC was still in progress when the PC went offline. Pending.
+
+## D572 — DEEP (DpL tick 1, 01:35 CT 15 Nov; literature, not locked) — prior art for SERAPIS-NP, and still no τ = i source on an N = 1 plane
+Gap (D562): is there a non-perturbative or loop-generated SL(2,Z) potential, flat at the cusp, with its vacuum at τ = i?
+New papers (none previously cited in our notes):
+- **Abe et al., "Finite modular Coleman–Weinberg inflation", arXiv:2607.00528.**
+  - Mechanism: a one-loop CW potential from vector-like quarks whose mass is a Γ₃ modular form, W = M_Q Y^(k)(τ) Q̄Q.
+  - Inflation: double-exponential plateau toward the cusp; vacuum at Im τ₀ ≈ 1.7–4.2 (typically ~2), not at i or ω.
+  - Numbers (N = 55): n_s ≈ 0.960–0.962, r ≈ 3e-6 to 2e-5, α_s ≈ −7e-4, T_R ~ 1e9 GeV.
+  - Needs a constant F-term uplift; the authors call it bottom-up.
+  - → **Our SERAPIS-NP (D563: Im τ ≈ 2, n_s 0.960–0.963, r ~ 2e-6) is the same regime, already published.** D563 is not novel. It also gains a concrete origin (matter loops), so it is no longer an orphan.
+- **Jiang, Zhao, Ding, "Sp(4,Z) modular inflation", arXiv:2512.21597.**
+  - α = 1/3 attractors in genus 2, with Minkowski vacua on τ_i = i.
+  - Numbers: n_s 0.967, r ≈ 2e-3 at N = 60 (diagonal case).
+  - → A τ = i vacuum with plateau inflation exists in a higher-genus setting, but not on a single SL(2,Z) torus. The N = 1-plane question stays open.
+- **Aoki, Otsuka, Yanagita, "Higgs-modular inflation", arXiv:2504.01622.**
+  - Uses the known SL(2,Z) forms (η, j) with V ≃ V₀(1 − c/Im τ)², vacuum near τ = i; no UV derivation.
+  - → Same bottom-up status as SERAPIS-KL.
+Verdict: no string-derived τ = i plateau source found (the gap stays open). Prior-art list extended: D563 ≈ 2607.00528, and τ = i Minkowski vacua ≈ 2512.21597 and 2504.01622. No computation was needed.
