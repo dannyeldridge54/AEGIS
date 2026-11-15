@@ -1,0 +1,7 @@
+|eta(omega)|^4=0.4108
+b=1: U2_max=308.0
+b=2: U2_max=156.5
+b=3: U2_max=105.9
+b=5: U2_max=65.2
+b=10: U2_max=34.5
+b_max for U2_max=158: 1.98

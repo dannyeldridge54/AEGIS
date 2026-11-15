@@ -5230,3 +5230,15 @@ Consequence for SERAPIS-KL:
 - the IIB axio-dilaton has exact SL(2,Z), but GKP fluxes stabilise it, so it cannot be the rolling τ (same logic as D532);
 - a string origin would need modular-invariant warping/threshold dependence on an UNFLUXED T² modulus, for example through one-loop (η-function) corrections to the brane action. That is not established.
 Status: SERAPIS-KL is consistent as supergravity but its V is put in by hand, exactly as in Kallosh–Linde's own models. The string-origin gap (D535) is restated, not closed. No change to predictions.
+
+## D553 — LEFT + RIGHT (pp 22:48 CT; scored, locked PREREG_D553_SWAMP_PERT; results/swamp_pert_d553.txt) — perturbativity caps the N = 2 beta coefficient: |b^{N=2}| ≲ 2
+Ishiguro, Kai, Kobayashi, Otsuka (arXiv:2508.12392): one-loop thresholds grow ∝ Im U on the N = 2 plane, and gauge couplings stay perturbative only for U₂ < −(3/π)W₋₁(…exp(−16π² Im S/b)). With b = 10 and Im S = 2 they get Im U ≲ 34.3, and they argue large Im τ is "in the Swampland".
+Computed (reproduces their 34.3 as 34.5 at b = 10):
+- U₂,max = 308 (b = 1), 157 (b = 2), 106 (b = 3), 65 (b = 5), 35 (b = 10).
+- SERAPIS needs Im τ at horizon exit = 112–158 (D545/D546), so |b^{N=2}| ≲ 2.0 for every gauge group whose coupling feels the SERAPIS plane.
+Consequences:
+- This sharpens D530/D532 into a number. The SERAPIS T² must be (almost) invisible to the gauge sectors: b^{N=2} = 0 for the SM (consistent with "SM on branes not wrapping it"), and ≤ 2 for any hidden group.
+- The holomorphic SERAPIS-1 route needs a hidden gaugino condensate with a non-zero threshold on that plane (the η⁻² factor). It therefore lives at b ≲ 2, a narrow corner.
+- SERAPIS-KL needs no condensate, so b = 0 is allowed: another reason to prefer the KL form.
+- Their "Swampland" claim for τ → i∞ applies to models with b ~ O(10). Our inflation range is compatible only in the small-b corner. This is a real, checkable condition on any future home.
+Status: the home requirement is now: factorised T² ⊕ T⁴, flux-free T², and gauge sectors with |b^{N=2}| ≲ 2 on that T² (ideally 0).
