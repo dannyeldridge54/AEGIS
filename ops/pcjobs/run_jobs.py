@@ -17,7 +17,7 @@ def job_fi(args):
     Tr=C.T0G*math.exp(-(ret-C.N0)) if ret else None; ok=ret is not None and abs(29.6-xf)<1e-2
     return f"[{tag}] r={r:.0e} m_s={ms:.0e}: hits {len(refl)}, return T={Tr if Tr is None else f'{Tr:.2e}'}, offset {29.6-xf:.1e}, remnant rho/s={rem:.2e} -> {'CAPTURES' if ok else 'FAILS'}"
 if __name__=='__main__':
-    ncpu=max(1,(os.cpu_count() or 4)-2); print(f"cores used: {ncpu}",flush=True)
+    ncpu=max(1,min(8,(os.cpu_count() or 4)-2)); print(f"cores used: {ncpu}",flush=True)
     J1=[('J1',ms,7599) for ms in (1e-9,1e4)]
     J2=[('J2',ms,a) for a in (3846,7599,15000) for ms in (1e-9,1e-6,1e-3,1.0,1e2,1e4)]
     J3=[('J3',ms,r) for r in (1e-5,3e-5,1e-4,3e-4,1e-3,1e-2,0.1) for ms in (1e-9,1e-6,1e-3,1.0,1e2,1e4,1e5)]

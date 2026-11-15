@@ -117,3 +117,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 76 (20:46, 'pp'): Twist-M PART 2 — D501 ε re-fit 1.49e-7 at N* 58.09: r 0.00435, α_s −7.6e-4. Result → walls 0. (D500 case-(i) run still going.)
 - cycle 77 (20:46, tick): PART 11 — covered (D462/D471); D500 still running. WALL 1.
 - cycle 78 (20:53, tick): waiting on D500 (Twist-M case-(i) run); no part run to save credits. WALL 2.
+- 21:02: PC job package written to Desktop\AEGIS_PCJOBS (J1 = D500 Twist-M case (i); J2 = Twist-M grid 18 cases; J3 = Twist-2 FI capture map 49 cases); locks PREREG_D500 (+D1–D4), PREREG_PCJOBS_J2_J3. Waiting for Danny to start RUN_AEGIS_PCJOBS.bat.
