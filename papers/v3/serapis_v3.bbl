@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{47}%
+\begin{thebibliography}{50}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -396,13 +396,18 @@
   (\bibinfo {year} {2005}{\natexlab{b}})},\ \Eprint
   {https://arxiv.org/abs/hep-th/0404087} {arXiv:hep-th/0404087} \BibitemShut
   {NoStop}%
-\bibitem [{\citenamefont {Abe}\ \emph {et~al.}(2026)\citenamefont {Abe} \emph
-  {et~al.}}]{arXiv_2607_00528}%
+\bibitem [{\citenamefont {Abe}\ \emph {et~al.}(2026)\citenamefont {Abe},
+  \citenamefont {Goto}, \citenamefont {Higaki}, \citenamefont {Kawamura},\ and\
+  \citenamefont {Kobayashi}}]{arXiv_2607_00528}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibnamefont {Abe}} \emph {et~al.},\
-  }\href@noop {} {\bibinfo {title} {{Finite modular Coleman-Weinberg
-  inflation}}} (\bibinfo {year} {2026}),\ \Eprint
-  {https://arxiv.org/abs/2607.00528} {arXiv:2607.00528} \BibitemShut {NoStop}%
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Y.}~\bibnamefont
+  {Abe}}, \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Goto}}, \bibinfo
+  {author} {\bibfnamefont {T.}~\bibnamefont {Higaki}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {Kawamura}},\ and\ \bibinfo {author}
+  {\bibfnamefont {T.}~\bibnamefont {Kobayashi}},\ }\href@noop {} {\bibinfo
+  {title} {Finite modular {C}oleman--{W}einberg inflation}} (\bibinfo {year}
+  {2026}),\ \Eprint {https://arxiv.org/abs/2607.00528} {arXiv:2607.00528}
+  \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Masias}(2025)}]{arXiv_2510_23715}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
@@ -475,4 +480,37 @@
   {Easther}},\ }\href@noop {} {\bibinfo {title} {{Constraining Cosmic Inflation
   with Observations: Prospects for 2030}}} (\bibinfo {year} {2022}),\ \Eprint
   {https://arxiv.org/abs/2212.04115} {arXiv:2212.04115} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hinshaw}\ \emph {et~al.}(2013)\citenamefont {Hinshaw}
+  \emph {et~al.}}]{WMAP9}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Hinshaw}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {Nine-year
+  {W}ilkinson {M}icrowave {A}nisotropy {P}robe ({WMAP}) observations:
+  cosmological parameter results},\ }\href@noop {} {\bibfield  {journal}
+  {\bibinfo  {journal} {Astrophys. J. Suppl.}\ }\textbf {\bibinfo {volume}
+  {208}},\ \bibinfo {pages} {19} (\bibinfo {year} {2013})},\ \Eprint
+  {https://arxiv.org/abs/1212.5226} {arXiv:1212.5226} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Elbers}\ \emph {et~al.}(2025)\citenamefont {Elbers},
+  \citenamefont {Aviles}, \citenamefont {Noriega}, \citenamefont {Chebat},
+  \citenamefont {Menegas} \emph {et~al.}}]{arXiv_2503_14744}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Elbers}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Aviles}},
+  \bibinfo {author} {\bibfnamefont {H.~E.}\ \bibnamefont {Noriega}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Chebat}}, \bibinfo {author}
+  {\bibfnamefont {A.}~\bibnamefont {Menegas}}, \emph {et~al.},\ }\href@noop {}
+  {\bibinfo {title} {Constraints on neutrino physics from {DESI DR2 BAO} and
+  {DR1} full shape}} (\bibinfo {year} {2025}),\ \Eprint
+  {https://arxiv.org/abs/2503.14744} {arXiv:2503.14744} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Fairbairn}\ \emph {et~al.}(2025)\citenamefont
+  {Fairbairn}, \citenamefont {Heurtier},\ and\ \citenamefont
+  {Olea-Romacho}}]{arXiv_2511_01612}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Fairbairn}}, \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Heurtier}},\ and\ \bibinfo {author} {\bibfnamefont {M.~O.}\ \bibnamefont
+  {Olea-Romacho}},\ }\href@noop {} {\bibinfo {title} {Is {$\Lambda$CDM} on the
+  run? {R}econciling the {CMB} with the {L}yman-$\alpha$ forest}} (\bibinfo
+  {year} {2025}),\ \Eprint {https://arxiv.org/abs/2511.01612}
+  {arXiv:2511.01612} \BibitemShut {NoStop}%
 \end{thebibliography}%

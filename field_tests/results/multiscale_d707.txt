@@ -1,0 +1,44 @@
+T1 n_s by release (band 0.970-0.975)
+  WMAP9 2012: 0.972±0.013  nearest-edge 0.00σ, far-edge 0.23σ, centre +0.04σ
+  Planck 2013: 0.9603±0.0073  nearest-edge 1.33σ, far-edge 2.01σ, centre +1.67σ
+  Planck 2015: 0.9655±0.0062  nearest-edge 0.73σ, far-edge 1.53σ, centre +1.13σ
+  Planck 2018: 0.9649±0.0042  nearest-edge 1.21σ, far-edge 2.40σ, centre +1.81σ
+  P-ACT-LB 2025: 0.974±0.003  nearest-edge 0.00σ, far-edge 1.33σ, centre -0.50σ
+  SPA Dec2025: 0.9682±0.0032  nearest-edge 0.56σ, far-edge 2.13σ, centre +1.34σ
+  SPA+DESI Dec2025: 0.9728±0.0029  nearest-edge 0.00σ, far-edge 0.97σ, centre -0.10σ
+T2 running (pred -1.0e-3, band -0.85..-1.06e-3)
+  Planck 2018: -0.0045±0.0067  pull +0.52σ
+  ACT DR6: 0.0062±0.0052  pull -1.38σ
+  ACT+P+SPT: 0.008±0.0057  pull -1.58σ
+  Planck+eBOSS Lya: -0.0108±0.0022  pull +4.45σ
+T3 neutrino mass sum (NO, m1=0)
+  m2=0.0086 m3=0.0501 sum=0.0587 eV
+  Planck 2018 < 0.12: PASS (margin +0.0613 eV)
+  DESI DR1+CMB < 0.072: PASS (margin +0.0133 eV)
+  DESI DR2+CMB < 0.0642: PASS (margin +0.0055 eV)
+  DESI DR2 FC < 0.053: EXCLUDED (margin -0.0057 eV)
+T4 Lyman-alpha (z=3, k_p=0.009 s/km): data D2=0.310±0.020, n=-2.340±0.006
+  LCDM P18: k_p=0.693/Mpc Delta2_L=0.3492 (pull +1.96) n_L=-2.3049 (pull +5.84)
+  SERAPIS low: k_p=0.693/Mpc Delta2_L=0.3527 (pull +2.13) n_L=-2.3025 (pull +6.26)
+  SERAPIS mid: k_p=0.693/Mpc Delta2_L=0.3549 (pull +2.25) n_L=-2.3001 (pull +6.65)
+  SERAPIS high: k_p=0.693/Mpc Delta2_L=0.3572 (pull +2.36) n_L=-2.2978 (pull +7.04)
+  SERAPIS mid no-run: k_p=0.693/Mpc Delta2_L=0.3562 (pull +2.31) n_L=-2.2973 (pull +7.11)
+T5 early halos z=10, Press-Schechter n(>M) ratio vs LCDM P18
+  LCDM P18: M=1e+09: sigma=0.5267 ratio=1.000; M=1e+10: sigma=0.4182 ratio=1.000; M=1e+11: sigma=0.3197 ratio=1.000
+  SERAPIS low: M=1e+09: sigma=0.5297 ratio=1.065; M=1e+10: sigma=0.4205 ratio=1.095; M=1e+11: sigma=0.3212 ratio=1.145
+  SERAPIS mid: M=1e+09: sigma=0.5321 ratio=1.118; M=1e+10: sigma=0.4221 ratio=1.167; M=1e+11: sigma=0.3222 ratio=1.251
+  SERAPIS high: M=1e+09: sigma=0.5344 ratio=1.173; M=1e+10: sigma=0.4237 ratio=1.244; M=1e+11: sigma=0.3232 ratio=1.365
+  SERAPIS mid no-run: M=1e+09: sigma=0.5342 ratio=1.168; M=1e+10: sigma=0.4233 ratio=1.225; M=1e+11: sigma=0.3228 ratio=1.321
+T6 mu-distortion (estimate, Taylor spectrum, Chluba-type window)
+  LCDM: mu=1.805e-08 ratio=1.000
+  SERAPIS low: mu=1.810e-08 ratio=1.003
+  SERAPIS mid: mu=1.846e-08 ratio=1.022
+  SERAPIS high: mu=1.882e-08 ratio=1.042
+T7 f_NL local = [0.0125, 0.0104] vs Planck -0.9±5.1: pull [0.18, 0.18]
+T8 GW energy density today
+  PTA 1e-8 Hz: Omega_GW h^2 = 7.14e-19  (f*=7.73e-17 Hz)
+  LISA 3e-3 Hz: Omega_GW h^2 = 7.13e-19  (f*=7.73e-17 Hz)
+  DECIGO/BBO 0.1 Hz: Omega_GW h^2 = 7.13e-19  (f*=7.73e-17 Hz)
+T9 PBH: P_R(end)/P_R* ~ eps*/eps_end = 3.125e-05 -> P_R(end) ~ 6.562500000000001e-14 vs ~1e-2 needed
+T10 m_bb (NO, m1=0)
+  |m2 s12^2 c13^2 ± m3 s13^2| in [1.44, 3.66] meV
