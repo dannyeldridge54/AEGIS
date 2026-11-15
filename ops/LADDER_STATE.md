@@ -1,7 +1,7 @@
 # Twin-ladder loop state (Danny 16:12 CT 14 Nov: loops every 5 min until walls, then 30 min, then 60 min;
 # 16:14: "deep research loops that focus on each part of the whole … as its single part, … its immediate connections, and then the whole")
-interval_min: 5
-consecutive_walls: 2
+interval_min: 30
+consecutive_walls: 0
 cycle: 47
 next_part: 1
 
@@ -96,3 +96,4 @@ parts queue finished (part 11 done). When both hold, in the next tick instead of
 - cycle 45 (20:12, 'pp'): PART 9/5 — D460 extended run: eV soft mass returns field at 237 GeV (predicted 240), before BBN; √m_s law confirmed; D459 condition removed. Result → walls 0.
 - cycle 46 (20:09, tick): PART 10 fourth pass — D461 SM must be on D3/small cycle (α on Twist D7 would be ~7e-7); hidden FI D7 with g=0.7 must wrap a small cycle — open consistency with large-cycle FI. WALL 1.
 - cycle 47 (20:11, back-to-back 'till null'): PART 11 fourth pass — D462 hidden FI D7 must be small yet intersect the big divisor → non-swiss-cheese (fibred) CY required. WALL 2 → null reached (back-to-back run stops; scheduled pacing would now go to 30 min).
+- 20:12: after null, pacing → 30 min (walls reset at new interval).
