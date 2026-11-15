@@ -1,0 +1,4 @@
+# PREREG D678: the exact allowed strip of home-safe SERAPIS (τ = i) in the (n_s, r) plane (Danny "Deeper" 11:44 CT)
+Locked before computation, 2026-11-15. Script theory/modular/janus_strip_d678.py; output results/janus_strip_d678.txt.
+Exact MS (running_d632.py lines 1–41 verbatim; D632 five-point stencil) along the two edge curves of the reheating bracket: N* = 46.08 with ε ∈ {0, 0.5, 1.0, 1.5, 2.0, 2.5, 2.836}e-4 and N* = 49.21 with ε ∈ {0, 0.5, 1.0, 1.5, 2.045}e-4 (last values = the D674 caps). Report (ε, y*, n_s, r, α_s) per point. The strip is the region between the two curves for x from 0 to the cap; fit r = a + b(n_s − 0.97) + c(n_s − 0.97)² to each edge and report max fractional width in r at fixed n_s.
+Then (separately) the strip will be frozen as a forward prediction and plotted with current CMB/CMB+DESI bands. No tuning.
