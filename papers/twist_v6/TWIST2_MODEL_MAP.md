@@ -129,3 +129,5 @@ alone.
 **Cycle 18 (D428, CONFIRMED):** baseline birefringence axion: β_reio/β_rec ≈ 1 for m ≲ 10 H₀, 0.24–0.66 at 50 H₀, ≈ 0 for m ≥ 100 H₀; distinguishable from a dark-energy axion or miscalibration for m ≳ 30–40 H₀.
 
 **Cycle 20 (D430, CONFIRMED):** gravitino window 1 eV ≲ m_3/2 ≤ 4.7 eV (SUSY breaking √F ≈ 65–140 TeV); total ΔN_eff ≈ 0.02–0.06 (gravitino only, after D422).
+
+**Cycle 21 (D431, requirement):** the ψ–lepton portal must be L-conserving (Dirac pair) and its lepton-coupled partner U(1)_X-neutral (mirror pair for anomaly freedom); otherwise the heavy ψ would give neutrino masses 0.8 eV–0.6 MeV.

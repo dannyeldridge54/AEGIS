@@ -4231,3 +4231,12 @@ needs m_3/2 ≳ 0.8 eV (4π/y), i.e. ≳ 1 eV for a strongly coupled messenger s
 preferred) within 0.017–0.059 — the v2 prediction "0.02–0.06". The window is testable by 21 cm observations (per 1608.01610) and by CMB-S4's
 ΔN_eff. (b) CONNECTIONS: part 4 (T_RH ~ 5×10¹⁴ GeV allowed only for this light gravitino), part 5/6 (soft vacuum energy of the condensate uses
 m_soft from this sector, D427), part 10 (x-independent soft masses, D292). (c) CENTRE: F7 pass; window recorded. Result → walls 0.
+
+**D431 (cycle 21, "pp"; second pass PART 10 SM couplings, RIGHT; arithmetic in code) — the lepton portal (D422/D426) forces two structural
+choices, or neutrino masses come out far too large.** (1) Gauge invariance: ψLH_u is renormalizable only if the lepton-coupled partner is a
+SM singlet AND U(1)_X-neutral; so in W ⊃ y χ ψ ψ̄' the partner ψ̄' must be neutral and ψ carries −q_χ; anomaly freedom of U(1)_X then needs a
+mirror pair (ψ̃ with +q_χ and its own neutral partner, coupled to χ̄). (2) Lepton number: if the portal violated L, the heavy ψ would act as a
+seesaw: m_ν ≈ y'² v_EW²/m_ψ = 0.76 eV–0.6 MeV for y' = 5×10⁻³–0.1 and m_ψ = 10⁹–5×10⁵ GeV (computed), above the Σm_ν ≲ 0.07 eV bound in every
+case. So ψ, ψ̄' must form an L-conserving (Dirac, inverse-seesaw-like) pair; then light neutrino masses are untouched and only the tiny
+mixing angles y' v_EW/m_ψ ≈ 10⁻⁹–3×10⁻⁵ remain (negligible for flavour and unitarity). With these two choices F1 (α frozen, D417) and the
+neutrino sector (Σm_ν ≈ 0.06 eV, D355b) stand. (c) CENTRE: pass with recorded requirements. Result → walls 0.
