@@ -1,0 +1,9 @@
+p=2: V(i)=0.00e+00, neighbours min=2.60e-14, minimum at i: True
+p=1 N*=52: y_end=2.28 y*=111.7 outside n_s=0.9631 r=1.31e-03 (-1.8 SPA, -3.6 SPA+DESI) [analytic r=1.5e-03]
+p=1 N*=55.6: y_end=2.28 y*=118.9 outside n_s=0.9654 r=1.16e-03 (-1.0 SPA, -2.7 SPA+DESI) [analytic r=1.3e-03]
+p=1.5 N*=52: y_end=2.63 y*=42.3 outside n_s=0.9634 r=5.44e-04 (-1.7 SPA, -3.5 SPA+DESI) [analytic r=6.6e-04]
+p=1.5 N*=55.6: y_end=2.63 y*=44.0 outside n_s=0.9657 r=4.80e-04 (-0.9 SPA, -2.6 SPA+DESI) [analytic r=5.8e-04]
+p=2 N*=52: y_end=2.77 y*=23.5 HOME-SAFE n_s=0.9635 r=2.86e-04 (-1.6 SPA, -3.4 SPA+DESI) [analytic r=3.7e-04]
+p=2 N*=55.6: y_end=2.77 y*=24.2 HOME-SAFE n_s=0.9658 r=2.52e-04 (-0.9 SPA, -2.6 SPA+DESI) [analytic r=3.2e-04]
+p=3 N*=52: y_end=2.80 y*=12.0 HOME-SAFE n_s=0.9636 r=1.12e-04 (-1.6 SPA, -3.4 SPA+DESI) [analytic r=1.6e-04]
+p=3 N*=55.6: y_end=2.80 y*=12.2 HOME-SAFE n_s=0.9659 r=9.86e-05 (-0.8 SPA, -2.5 SPA+DESI) [analytic r=1.4e-04]

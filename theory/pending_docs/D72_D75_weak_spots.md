@@ -5364,3 +5364,22 @@ Prior art: very close to Abe, Higaki, Kaneko, Kobayashi, Otsuka (arXiv:2303.0294
 Status: a third branch exists. It is string-friendly (low Im τ) but disfavoured by current n_s and has unobservable r.
 - Data split: r ≳ 1e-3 → SERAPIS-KL type (needs the unsolved cusp home); r unobserved and n_s ~ 0.96 → NP type.
 - The current n_s (≥ 0.968) disfavours NP. So the "home" problem and the "n_s" problem pull in opposite directions.
+
+## D564 — DEEP (Dp now, 23:16 CT; scored, locked PREREG_D564_SERAPIS_P; results/serapis_p_d564.txt) — HOME-SAFE KAIROS EXISTS: raising the invariant's power moves inflation inside Im τ ≲ 25 with n_s unchanged
+Model: V = V₀ Iᵖ/(Iᵖ + 1), with the D545 invariant I; minimum at i checked for p = 2.
+| p | y* (N* = 52–55.6) | n_s | r | home (y* ≤ 25) |
+|---|---|---|---|---|
+| 1 | 112–119 | 0.9631–0.9654 | 1.3e-3 | no |
+| 1.5 | 42–44 | 0.9634–0.9657 | 4.8–5.4e-4 | no |
+| 2 | 23.5–24.2 | 0.9635–0.9658 | 2.5–2.9e-4 | YES |
+| 3 | 12.0–12.2 | 0.9636–0.9659 | 1.0–1.1e-4 | YES |
+These confirm the pre-stated expectation (y* ∝ N^{1/p}; r ≈ 4/(p²N²), somewhat below the analytic value). p acts as an effective attractor parameter, α_eff = α/p².
+Result:
+- Kairos's n_s (0.963–0.966) is independent of p, but r and the location of inflation trade off one-to-one.
+- A perturbatively safe home (Im τ* ≲ 25, D560; even on an N = 2 plane; also inside the D553 b-bound for |b| ≲ 10, since 25 < 34) requires p ≳ 2, i.e. r ≲ 3e-4.
+Sharp, falsifiable relation (our application of known attractor scaling to the modular home bounds):
+- r ≳ 5e-4 → horizon exit at Im τ ≳ 40 → no perturbative heterotic home known (D553–D562);
+- r ≲ 3e-4 → home-safe.
+CMB-S4-class σ(r) ~ 4e-4 would partly test the boundary; LiteBIRD σ(r) ~ 1e-3 only the p = 1 case.
+Novelty caution (per D555 lesson): this is the standard α-attractor r–α relation (r = 12α/N²; small α ↔ small field range is known in the swampland literature). Only its mapping onto the modular perturbativity bound is ours. Not claimed as new physics.
+Status: SERAPIS now has a home-compatible Kairos variant (p = 2–3: n_s 0.964–0.966, r 1–3e-4) and a home-incompatible original (p = 1: r 1.2e-3). Chronos with p = 2 is not computed (expected: n_s ~0.972, r ~ 5e-4). Revises the v2.2 r-prediction range: "r = 1e-4 to 2e-3 depending on p, with string-home consistency requiring r ≲ 3e-4."
