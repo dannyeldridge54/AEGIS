@@ -5722,3 +5722,15 @@ Verdict: D583's "S-parity cure" is WITHDRAWN. The gravitino problem is solved on
 Verdict: CONSISTENT, conditionally. The two-term SERAPIS chain now reads: m_φ ≈ 2e11 GeV, m₃/₂ ≈ 1.0–1.15e11 GeV (closing gravitino decay), soft masses ~1e9 GeV (no-scale sequestering), proton safe, Higgs mass OK.
 - Prediction-level consequence: no superpartners at the LHC or any planned collider from this sector.
 - Dark matter is not from this sector (consistent with the Twist's separate DM, unchanged).
+
+## D586 — DEEP (Ddl 07:52 CT; literature + reasoning + arithmetic, not locked) — the Kallosh–Linde problem: H_inf/m₃/₂ ≈ 37, so KKLT-type stabilisation of the other moduli would fail; a SUSY racetrack (as in D178/D193) evades it
+Issue: in KKLT-type stabilisation the barrier protecting the volume/dilaton is ~m₃/₂, which requires H ≲ m₃/₂ (Kallosh & Linde 2004, hep-th/0411011; the standard lore searched today, e.g. 1510.00376). Two-term SERAPIS has H_inf ≈ 4.1e12 GeV against m₃/₂ ≈ 1.1e11 GeV (D584/D585), so H/m₃/₂ ≈ 37. The KL problem applies to the dilaton Y and to any other T-moduli.
+Evasion (already in our toolkit):
+- Stabilise Y (and the companion T's) with a KL racetrack at a SUSY Minkowski point, W_Y = W_Y′ = 0 (D178, D193). The heavy-modulus mass is then set by the racetrack, not by m₃/₂.
+- Requirement: m_Y ≳ 10 H_inf ≈ 4e13 GeV.
+- The nilpotent-sector W₀ ~ m₃/₂M_P² then perturbs the racetrack minimum by ~m₃/₂/m_Y ≈ 3e-3 (small).
+- Residual displacement of Y during inflation ~(H/m_Y)² ≈ 1e-2 in units of the curvature scale. It tracks adiabatically, so the misalignment energy is small (estimate).
+Price and open item:
+- The D193 window was narrow (A ≈ 5e-7 – 2e-6, ×4); it needs re-evaluating for SERAPIS's H_inf (lower than the Twist's 1.5e13, so the window should widen; not computed).
+- With m_Y ≈ 4e13 > 2m₃/₂, the decay Y → 2ψ₃/₂ is open. With F_Y ≈ 0 at the SUSY racetrack point, G_eff ~ m₃/₂/m_Y ~ 3e-3 gives Br ~ O(1e-2) (estimate). Y's abundance is suppressed by its small displacement. Whether the resulting gravitino yield is safe is NOT computed. Flagged.
+Verdict: the KL problem is real but evadable by a known mechanism already used in this project. Open: the racetrack window at SERAPIS's H, and dilaton-induced gravitinos (both need locks).
