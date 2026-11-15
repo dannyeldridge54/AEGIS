@@ -25,10 +25,11 @@ Verdict per dataset: |pull| < 2 consistent, 2–3 tension, > 3 fail (datasets ar
 | Σm_ν | DESI DR2 + CMB (Feldman-Cousins) | 0.0587 vs < 0.053 eV (margin -0.0057) |  | excluded | 2503.14744 |
 | N_eff | ACT DR6 | 3.044 vs 2.86 ± 0.13 | +1.42 | consistent | 2503.14454 |
 | f_NL local | Planck 2018 | 0.0115 vs -0.9 ± 5.1 | +0.18 | consistent | 1905.05697 |
-| Janus relation | p = 2.828, κ = 0.5 | model α_s -1.000e-03 vs Janus -8.074e-04 (+23.8%) |  | check model | AEGIS D669 |
 | Lyman-α (z=3) | eBOSS (via Fairbairn et al.) amplitude | Δ²_L 0.3549 vs 0.31 ± 0.02 | +2.25 | tension | 2511.01612 |
 | Lyman-α (z=3) | eBOSS (via Fairbairn et al.) slope | n_L -2.3001 vs -2.34 ± 0.006 | +6.66 | fail | 2511.01612 |
 | Lyman-α (z=3) | DESI DR1 P1D amplitude | Δ²_L 0.3549 vs 0.379 ± 0.032 | -0.75 | consistent | 2601.21432 |
 | Lyman-α (z=3) | DESI DR1 P1D slope | n_L -2.3001 vs -2.309 ± 0.019 | +0.47 | consistent | 2601.21432 |
 | S8 | HSC + BOSS (Luo et al. 2025) | 0.8331 vs 0.8294 ± 0.011 (A_s fixed) | +0.33 | consistent | 2602.12238 |
 | S8 | CMB (Planck+ACT+SPT) | 0.8331 vs 0.836 ± 0.0125 (A_s fixed) | -0.24 | consistent | 2602.12238 |
+
+Janus self-consistency (separately, with a consistent model point): SERAPIS-E exact point n_s 0.9701, r 4.754e-4, α_s −9.88e-4 vs Janus (p = 2√2, κ = 1) −9.51e-4: 3.9%. Mid-band pairs such as (0.9725, 5e-4) are not a single model point, so the Janus row is omitted above.
