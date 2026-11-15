@@ -6226,3 +6226,18 @@ Status: the HM route is conditionally viable. A careful one-loop computation mus
 2. the sign and size of the light-state CW term;
 3. that the two add as described.
 The D623 estimate ε ≈ 3(M_s/M_P)²/16π² refers only to the light-state term, consistent with this split.
+
+## D626 — DEEP (Ddl 08:54 CT; reasoning + arithmetic, not locked) — CORRECTION/REFINEMENT of D620–D625: the light states enter the VACUUM ENERGY as CW ∝ M²ln(M²/Λ²), not as ln|J − J|; this has a sign obstruction near i, which the species term (D577) cures if κ ≫ ε
+1. The HM log|J(T) − J(U)| is a GAUGE-COUPLING threshold. The light W-states' contribution to the VACUUM ENERGY under SUSY breaking (scalars split by m² = c²H²) is CW-like, V_W ∝ +(m²/16π²)·M_W²·ln(M_W²/Λ²), with M_W² ∝ |T − U|²M_s²/(T₂U₂). D620–D623 conflated the two objects.
+2. Shape of V_W:
+   - At the cusp, M_W² ∝ y, so V_W ∝ y·ln y: an upward tilt, the right sign (D622 showed n_s and r are robust to this shape).
+   - Near i, M_W² ∝ |δ|², so V_W ∝ |δ|²ln|δ|² < 0 for small δ. τ = i is a LOCAL MAXIMUM of V_W (f(x) = x ln x falls below 0 immediately).
+   - With the opposite sign (fermions heavier), i becomes a minimum, but the cusp tilt is wrong.
+   - So V_W alone cannot give both properties.
+3. Cure: add the species term κ·y²|Ĝ₂|²/N² (Casas–Ibáñez tower, D577/D625). It is quadratic at i with positive curvature a ∝ κ.
+   - Near i, V ≈ a|δ|² + b|δ|²ln|δ|² (b ∝ ε > 0). Its minimum sits on a tiny ring, |δ_vac| = exp(−(a/b + 1)/2).
+   - a/b = 10 gives 4e-3; 30 gives 2e-7; 100 gives 1e-22 (arithmetic in code).
+   - With κ ~ 1e-2 and ε ~ 1e-4 (a/b ~ 100 × O(1)), the vacuum sits at i to exponential accuracy. The log-enhanced curvature only makes the vacuum heavier.
+   - D577 showed κ ≤ 1e-2 leaves n_s and r unchanged, so the tower supplies the vacuum mass, the light states supply the tilt, and they do not interfere.
+4. Revised consistent picture for SERAPIS at τ = i: plateau + κ·(species term, CI tower) + ε·(light-state CW, y·ln y at the cusp), with κ ≫ ε. ε ≈ 3(M_s/M_P)²/16π² (D623) applies to the light-state term.
+Status: conditionally consistent; every piece now has a literature-backed origin. Not computed as a whole, and the relative size κ/ε (both ∝ (SUSY-breaking scale)²/16π²) needs an actual one-loop calculation. If κ and ε have the same origin (m² = c²H²), the ratio a/b is set by the species count Ñ₀ versus the light-state count.
