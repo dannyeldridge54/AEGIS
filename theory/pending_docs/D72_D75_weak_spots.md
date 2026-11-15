@@ -4951,3 +4951,17 @@ lens. Not computed; a candidate locked test. Credit: 2510.18656, 2511.06640, 260
   - δ ≥ 0.004: only P-ACT-LB (and SPA+DESI at low N*); δ = 0.006 fits none.
 - Sharp, falsifiable pair: Kairos says r ≈ 0.0012, Chronos r ≈ 0.002 (both far below r < 0.036; both inside reach of LiteBIRD/CMB-S4 σ(r) ~ 0.001 only marginally — honest: a 1–2σ distinction at best).
 Status: COMPUTED. Kairos/Chronos fork confirmed on a full grid; Chronos window δ ≈ 0.0015–0.003.
+
+## D527 — RIGHT + CENTRE (pp, 14 Nov 22:10 CT; literature + algebra, nothing computed) — proton protection from SERAPIS's own symmetry (candidate)
+Open problem: D469 showed string-scale proton decay is excluded unless baryon number is protected (τ_p 4e26–3e29 yr vs > 2.4e34 yr); D473 needs DM stable by a gauged symmetry.
+Literature:
+- Kobayashi, Nishimura, Otsuka, Tanimoto, Yamamoto, arXiv:2207.14014: with couplings that are modular forms, matter fields of modular weight 1/M carry a Z_{2M}. Suitable weights realise R-parity, Z_3 baryon triality and Z_6 proton hexality. Their tables show that hexality forbids the dimension-4 and dimension-5 proton-decay operators (QQQL, ŪŪD̄Ē).
+- Kobayashi et al., arXiv:1812.11072: parity of modular weight enforces a Z_2 (lepton number) perturbatively. It is broken only through Green–Schwarz e^{−aS} terms, giving λ′ ~ 1e-68–1e-14.
+Link to SERAPIS (my reasoning, to be checked):
+1. This Z_{2M} comes from the centre (−1) of SL(2,Z), which leaves τ fixed. So it survives at every τ, including the SERAPIS vacuum τ = i and the whole inflation path. The vacuum choice does not break it.
+2. SERAPIS already uses η⁻² (weight with a multiplier system), so fractional weights like 1/3 are natural there, not an add-on.
+3. Baryon triality / hexality are discrete baryon number (mod hypercharge). They forbid ΔB = 1 at every operator dimension in perturbation theory, Kähler terms included. That would cover D469's dimension-6 problem, not just dimensions 4–5. (The dimension-6 statement is the standard Ibáñez–Ross result for B3; it has not yet been checked inside this modular set-up.)
+4. In string theory modular invariance is a gauge symmetry. So this is a gauged discrete symmetry, as F5/D473 requires for DM stability. One centre parity could do both jobs (CENTRE link: D469 + D473).
+Not yet shown: an explicit weight assignment for the SERAPIS matter (D3 sector) that gives hexality while allowing the Yukawas, μ and Weinberg terms; the discrete anomaly (GS) condition; and the size of non-perturbative breaking at our S values. Next: a locked weight-assignment search (PREREG first).
+Shared quantities: unchanged (no effect on N*, n_s, r, D, DM mass). Centre: balanced.
+Status: proton protection moves from "assumed (D-brane anomalous U(1))" to "candidate mechanism inside SERAPIS's own symmetry", pending the locked search.
