@@ -111,3 +111,4 @@ D824  2026-11-16T14:07Z  sum m_nu vs newest bounds
 D825  2026-11-16T14:09Z  flags + consistency sweep
 D826  2026-11-16T14:10Z  tau=i vacuum mass sources
 D827  2026-11-16T14:11Z  manifest per-lock table
+D828  2026-11-16T14:16Z  P3.1 literature anti-D3 one-loop on orientifolds
