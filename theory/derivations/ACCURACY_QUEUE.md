@@ -167,3 +167,14 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - M.2 [done D916 + D657a: D657 corrected (proton hexality exists, Z₆); CMB-S4 cancellation confirmed; v3.3 draft opened with the fix]
 - M.3 [done D917: GS term is log(T+T̄) in K, η only in f; D754 lead weakened; no published text affected]
 - M.4 [done D918: D771 confirmed; D752 unused, estimate; audit M closed]
+
+## Project F: a flux-and-loop origin for SERAPIS (queued 16 Nov 2026, after D925–D934)
+Goal: replace postulate P3 (the Ê/(Ê+1) plateau) and the bare "U rolls" assumption with a chain computed from a T⁶/(Z₂×Z₂) flux vacuum: fluxes fix S, U₁, U₂ and leave U₃ flat (D933–D934); one-loop (BHK) and α′/instanton terms lift U₃; the lift's shape is computed, not postulated.
+Stages (each locked before computing; one D-note each):
+- F1 flux vacuum: D934 result. If PASS, take the smallest-|N_flux| solution; if FAIL on grid, extend the grid once (ρ points, Q(√3)) via a new lock. Kill: no solution with ρ points either → record "no flat single U in T⁶/(Z₂×Z₂) at small flux", project stops at F1.
+- F2 masses: compute the U₁, U₂, S masses and the Kähler-moduli stabilisation scale at that vacuum; check H_inf < every fixed mass (else they roll too). Kill: any fixed modulus lighter than H_inf.
+- F3 the lift: write the full one-loop V(U₃) for that vacuum (BHK KK + winding terms, E(U₃,2) and E(U₃·…) pieces with their actual coefficients from the D-brane/O-plane content), plus the leading α′ term. Compare its shape with Ê/(Ê+1)(1+CÊ). Pass: same plateau index p = 2√2 and an approach within 10% of P3 over the observable e-folds. Kill: a different p (then SERAPIS becomes a sibling, D928/D932).
+- F4 predictions: if F3 passes, n_s, r, α_s from the computed V (exact Mukhanov–Sasaki), scored only against FUTURE data; compare with the frozen SERAPIS numbers (frozen predictions never change).
+- F5 write-up: a standalone paper ("a flux vacuum with one flat torus modulus and its loop-lifted plateau"), posted on Zenodo when Danny says so.
+Side product (any outcome): a sibling catalogue (α = 1, 1/3, 1/6, 1/24 from D928/D932) with consistency-relation predictions (D669 with each p).
+Cost: about 6–10 ticks; one locked script per stage; no subagents.
