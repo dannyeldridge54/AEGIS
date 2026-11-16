@@ -8019,3 +8019,22 @@ MAP: none
 ## D803a (CORRECTION, review 16 Nov 06:15 CT): the group label in the paper sentence
 The paper said "reduced to Γ₁(2) … minimum at 1 + i". Γ₁(2) (c even) has its order-2 point at (1+i)/2. The element fixing 1 + i is TST⁻¹ = [[1,−2],[1,−1]] (b even, c odd), which lies in Γ⁰(2), not Γ₁(2). The source's eq. 2.31 is garbled ("mod 1"), and its minimum at 1 + i implies the Γ⁰(2)-type group. The sentence now reads "an index-three congruence subgroup (of Γ⁰(2) type, the stabiliser group of 1 + i)". Physics unchanged: both subgroups have ε₃ = 0.
 MAP: none
+
+## D806 (REVERSE, ρ-side; Jl tick 45; literature + arithmetic in this note, no results file): the running is NOT testable by the 2030s; the best forecast combination sees α_s ≈ −1e-3 at only ~1σ, and the Janus enhancement needs σ(α_s) ≈ 1.8e-4, about 5× beyond reach
+Research (1 search, 1 fetch): "Constraining cosmic inflation with observations: prospects for 2030" (2212.04115), Table 5. Values are 95% CL:
+- SO 6.6e-3; CMB-S4 6.9e-3; SPHEREx 4.6e-3; CHIME 5.1e-3;
+- SO+SPHEREx 2.4e-3; CMB-S4+CHIME+DESI+SPHEREx 1.8e-3;
+- best: LiteBIRD + CMB-S4(ℓ > 200) + CHIME + SPHEREx 1.7e-3, i.e. σ ≈ 8.7e-4 at 1σ.
+- No spectral-distortion forecast in that paper. CMB-S4's current programme status was not checked this tick.
+Arithmetic (python one-liner, numbers here):
+- Detection of α_s ≠ 0: 0.88–1.02e-3 / 8.7e-4 = 1.0–1.2σ.
+- Janus enhancement versus a same-n_s attractor (−(1−n_s)²/2 ≈ −4e-4): difference ≈ 5.5e-4. A 3σ separation needs σ(α_s) ≈ 1.8e-4, i.e. 4.7× better than the best 2030 combination.
+- Consistency-relation biases: 11–13% (D635) and 25% (D800) of 9.5e-4 = 1.0–2.4e-4. That is below every forecast σ until σ ~ 1e-4, so the bias is irrelevant for the coming decade.
+Derivation:
+1. The forecast σ values are [literature] (2212.04115, Table 5, 95% CL → ÷1.96).
+2. SERAPIS α_s = −(8.8–10.2)e-4 (frozen) gives a ≤1.2σ signal [derived].
+3. The enhancement needs σ ≈ 1.8e-4 [derived], i.e. a factor ~5 improvement: likely 21-cm intensity mapping at high z or spectral distortions (μ-type sensitivity to small-scale power) [estimate; not sourced here].
+4. So the paper's "parameter-free running test" is a 2030s+ test only in the sense of r and n_s. The α_s leg is a 2040s-class test [derived].
+5. Check the paper's framing: if the abstract/title imply a near-term α_s test, a qualifier is needed. FLAGGED for the referee merge (the independent referee is running now; no paper edit this tick to avoid collision).
+Mirror question for the next forward tick: which near-term observable separates SERAPIS-E from a same-(n_s, r) α-attractor? r itself (LiteBIRD σ(r) ~ 5e-5 sees r ≈ 5e-4 at ~10σ) is common to both. Only the (n_s, r) strip position and α_s distinguish them, so check whether the strip alone discriminates at LiteBIRD + SO precision.
+MAP: node=serapis_e status=literature touches=[] ripple=no

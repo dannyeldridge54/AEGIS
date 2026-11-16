@@ -462,3 +462,10 @@ Touches: serapis_e, n_sector_rho, lepto_i.
 3. Shifts are 0.30–0.33σ, below the flag threshold [derived].
 4. With DESI, the frozen band is centred and the post-hoc ρ alternative is at −1.5 … −2.7σ [derived].
 Touches: serapis_e.
+
+## D806: α_s reach (reverse side)
+1. Best 2030 combination σ(α_s) ≈ 8.7e-4 at 1σ [literature] (2212.04115).
+2. SERAPIS signal 1.0–1.2σ [derived].
+3. 3σ enhancement needs σ ≈ 1.8e-4 [derived].
+4. The α_s leg is post-2030s [derived]; candidate probes (21-cm, distortions) are [estimate].
+Touches: serapis_e.

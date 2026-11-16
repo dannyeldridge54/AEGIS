@@ -146,7 +146,7 @@ nodes:
   branch:
   - E
   title: SERAPIS-E potential (Epstein + BHK tilt)
-  status: computed
+  status: literature
   d:
   - D692
   - D693
@@ -160,13 +160,14 @@ nodes:
   - D802
   - D804
   - D805
+  - D806
   depends:
   - plateau_origin
   - bhk_tilt
   history:
-  - 'D802: computed'
   - 'D804: computed'
   - 'D805: computed'
+  - 'D806: literature'
 - id: janus
   layer: 2
   branch:
