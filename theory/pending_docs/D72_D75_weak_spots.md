@@ -8752,4 +8752,4 @@ Arithmetic on locked outputs only (no model run): D762's per-case s_min (field_t
 Summary [derived]: under P1′, given a CP-odd vacuum, min 0.48, median 0.84, 4/9 cases ≥ 0.9 (P1: min 0.62, median 0.95, 8/9). If the universe sits in the DEEPEST racetrack minimum, which is CP-odd in 40.7% of racetracks (D851), the unconditional median is ≈ 0.34 [estimate: treats racetrack parameters as equally likely].
 Verdict: P1′ keeps ρ-leptogenesis likely once a CP-odd vacuum is selected (median 84%), about 10 points below P1's uniform prior. Unconditionally (deepest-vacuum selection over the scanned racetracks) it is roughly one in three. The τ = i pass fraction of D763 (68–71% under complex R) would scale similarly but needs its own phase map; not done.
 P1′ final form (for POSTULATES): CP broken spontaneously by a Kähler axion in a CP-odd racetrack minimum; heavy-ν Majorana masses from at least two D-instanton sectors with different charges on that cycle; physical phase Δ = 2πΔn⟨Re T⟩.
-MAP: none
+MAP: node=lepto_rho status=assumed touches=[lepto_i] ripple=no
