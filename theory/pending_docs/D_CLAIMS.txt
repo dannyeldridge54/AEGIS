@@ -50,3 +50,4 @@ D763  2026-11-16T04:35Z  forward i-side: does D745 need P1? delta_CP dependence 
 D764  2026-11-16T04:38Z  reverse: CP phase from a second modulus via flux relation U1 U2 = b3/a0 (2405.18813)
 D765  2026-11-16T04:47Z  forward: SERAPIS-E with the flux relation U2=c/U1 during inflation (doubled Kahler metric)
 D766  2026-11-16T04:52Z  reverse: P2 on non-inflaton moduli; U2=i always CP-even; tadpole budget forces 3/3/3+1
+D767  2026-11-16T04:57Z  forward: volume-dependence of the downstream chain with 3/3/3+1; corrects D766 Im S Im rho
