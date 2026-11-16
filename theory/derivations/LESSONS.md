@@ -35,3 +35,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D783: include phase-space factors (192π³ for 3-body) in decay-scale estimates. They moved D782's Λ bound by a factor ~3, enough to change "comfortable" into "tight".
 - 2026-11-16 D785: run every structural finding on one vacuum as a mirror test on the other (the plan's β2). The ρ Z₃ obstruction does NOT carry to i, and saying so with a computation keeps the τ = i branch's claims clean.
 - 2026-11-16 D787: a residual discrete symmetry restricted to the SM often reduces to a familiar one (here baryon triality). Identify it; it imports known results (anomaly freedom, proton stability) for free.
+- 2026-11-16 D788: check the Nanopoulos–Weinberg order counting BEFORE proposing any decay-baryogenesis route. A particle that is stable without the B-violating coupling needs two insertions, which kills higher-dimension routes at once.

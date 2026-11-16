@@ -296,3 +296,14 @@ Touches: mnu (frozen; flag cleared), plus flag clears for plateau_origin, lepto_
 7. B₃ is anomaly-free with MSSM content [estimate] (Ibáñez–Ross, from memory).
 8. [derived] Consistency: D782's R-Z₃ is satisfied. D783's κ = 1 case applies. The proton is stable. The frozen bands remain conditional on Λ (D781–D783).
 Touches: n_sector_rho (corrected → computed), lepto_rho.
+
+## D788 — the late-decay CP asymmetry (reverse side)
+1. N_pair is stable without B-violating operators, so ε = O((B-violating coupling)²) [literature] (Nanopoulos–Weinberg via 1310.0840).
+2. With dim-6 c/Λ²: ε ≲ (1/8π)(M/Λ)² [estimate].
+3. Over the D783 window: ε ≤ 1.7e-8 < ε_req,min = 1.7e-5 [derived] (computed), so it is a WALL.
+4. Heavy mediator M_X > M: ε ~ (y²/8π)(M/M_X)², still small [estimate].
+5. Light mediator M_X < M: N → uX* on shell, ε ~ y²/8π, y ≳ 0.02–0.17 [estimate].
+6. A renormalisable N decay means the pair does not dominate: T_R back to D725's 3e8–3e9 [derived] (D725 rates apply if the N → uX* rate exceeds H at production, Γ ~ y²M/16π ≫ H(T_R)).
+7. Postulate P5 (X with M_X < M) [postulate P5].
+8. [derived] Consistency: D782/D783's late-decay route is closed (ε). D781's frozen-band condition becomes moot under P5. D787 baryon triality is kept.
+Touches: lepto_rho (assumed), n_sector_rho, serapis_e.

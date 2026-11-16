@@ -1,0 +1,19 @@
+(a) M=4.3e+11 T2=1e+05: Lambda=3.64e+15, eps_max(dim6)=5.5e-10, eps_req=5.0e-04 -> FAIL
+(a) M=4.3e+11 T2=3e+06: Lambda=6.65e+14, eps_max(dim6)=1.7e-08, eps_req=1.7e-05 -> FAIL
+(a) M=1.0e+12 T2=1e+05: Lambda=1.05e+16, eps_max(dim6)=3.6e-10, eps_req=1.2e-03 -> FAIL
+(a) M=1.0e+12 T2=3e+06: Lambda=1.91e+15, eps_max(dim6)=1.1e-08, eps_req=3.9e-05 -> FAIL
+(b) P5 mediator: y needed for eps_req range:
+   eps_req=2e-05: y >= 0.022
+   eps_req=1e-03: y >= 0.174
+   M=4.3e+11 T2>=1e+05: Lambda_eff<=3.64e+15 -> M_X <= 1.82e+14 for y1=y2=0.05
+   M=4.3e+11 T2>=1e+05: Lambda_eff<=3.64e+15 -> M_X <= 7.28e+14 for y1=y2=0.2
+   M=4.3e+11 T2>=1e+05: Lambda_eff<=3.64e+15 -> M_X <= 3.64e+15 for y1=y2=1.0
+   M=4.3e+11 T2>=3e+06: Lambda_eff<=6.65e+14 -> M_X <= 3.32e+13 for y1=y2=0.05
+   M=4.3e+11 T2>=3e+06: Lambda_eff<=6.65e+14 -> M_X <= 1.33e+14 for y1=y2=0.2
+   M=4.3e+11 T2>=3e+06: Lambda_eff<=6.65e+14 -> M_X <= 6.65e+14 for y1=y2=1.0
+   M=1.0e+12 T2>=1e+05: Lambda_eff<=1.05e+16 -> M_X <= 5.23e+14 for y1=y2=0.05
+   M=1.0e+12 T2>=1e+05: Lambda_eff<=1.05e+16 -> M_X <= 2.09e+15 for y1=y2=0.2
+   M=1.0e+12 T2>=1e+05: Lambda_eff<=1.05e+16 -> M_X <= 1.05e+16 for y1=y2=1.0
+   M=1.0e+12 T2>=3e+06: Lambda_eff<=1.91e+15 -> M_X <= 9.55e+13 for y1=y2=0.05
+   M=1.0e+12 T2>=3e+06: Lambda_eff<=1.91e+15 -> M_X <= 3.82e+14 for y1=y2=0.2
+   M=1.0e+12 T2>=3e+06: Lambda_eff<=1.91e+15 -> M_X <= 1.91e+15 for y1=y2=1.0

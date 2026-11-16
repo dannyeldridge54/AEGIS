@@ -102,7 +102,8 @@
     "D780: corrected",
     "D786: corrected",
     "D787: computed"
-   ]
+   ],
+   "flag": "recheck (D788, lepto_rho)"
   },
   {
    "id": "n_sector_i",
@@ -213,7 +214,8 @@
     "D770: computed",
     "D781: computed",
     "D783: computed"
-   ]
+   ],
+   "flag": "recheck (D788, lepto_rho)"
   },
   {
    "id": "janus",
@@ -451,7 +453,7 @@
     "E"
    ],
    "title": "Leptogenesis at ρ (non-thermal, DI estimate)",
-   "status": "corrected",
+   "status": "assumed",
    "d": [
     "D731",
     "D762",
@@ -464,18 +466,18 @@
     "D775",
     "D776",
     "D782",
-    "D786"
+    "D786",
+    "D788"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D776: corrected",
     "D782: corrected",
-    "D786: corrected"
-   ],
-   "flag": "recheck (D787, n_sector_rho)"
+    "D786: corrected",
+    "D788: assumed"
+   ]
   },
   {
    "id": "gravitino_wino",

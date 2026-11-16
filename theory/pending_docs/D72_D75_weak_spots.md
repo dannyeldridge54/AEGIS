@@ -7709,3 +7709,15 @@ Consequences [derived]:
 - Anomaly: baryon triality B₃ is anomaly-free with MSSM content (Ibáñez–Ross; from memory, estimate). The heavy N pair is vector-like under Z₃ (q, −q), adding no anomaly [derived].
 ρ-branch status: the Z₃ chain closes consistently. ρ requires (i) q_Hu ≠ 0 (Z₃ = B₃ on the SM), (ii) Λ ≲ 0.4–1e16 GeV for N·udd (D783), and (iii) late B-violating baryogenesis, which also makes the proton exactly stable as a bonus.
 MAP: node=n_sector_rho status=computed touches=[lepto_rho] ripple=no
+
+## D788 (REVERSE, ρ-side; Jl tick 27; locked PREREG_D788; results/late_eps_d788.txt) — WALL: late N → udd decays through dim-6 operators give ε ≤ 2e-8 (Nanopoulos–Weinberg), far below ε_req ≥ 2e-5; create P5, a light Z₃-charged colour-triplet diquark mediator, which also removes the late phase
+Literature (1310.0840, fetched): for a particle stable without the B-violating interaction, the CP asymmetry needs at least TWO powers of the B-violating coupling (Nanopoulos–Weinberg).
+Computed:
+- (a) dim-6 only: ε_max ≈ (M/Λ)²/(8π) = 3.6e-10 – 1.7e-8 across the D783 window, against ε_req = 1.7e-5 – 1.2e-3. FAIL in every case, by 3–6 orders of magnitude. Late-decay baryogenesis via string-scale operators is IMPOSSIBLE.
+- (b) the mediator arithmetic (coupling y ≥ 0.02–0.17 for ε_req; M_X ≤ y·Λ_eff) was computed. CORRECTION to the lock's (b) formula: for M_X > M the loop needs a second off-shell X, so ε ~ (y²/8π)(M/M_X)² [estimate], which is again too small for M_X ≫ M. The mechanism works only with M_X < M (an on-shell N → u X*, with an unsuppressed ε ~ y²/8π).
+WALL → CREATE (no-stop rule): POSTULATE P5 (theory/derivations/POSTULATES.md), a Z₃-charged colour-triplet diquark X with M_X < M_pair and renormalisable couplings N·u·X*, X·d·d. Consequences:
+- the pair decays promptly (renormalisable), so there is NO late matter phase and T_R returns to D725 (3e8–3e9). The frozen ρ band holds WITHOUT the Λ condition of D781–D783.
+- baryogenesis: B-violating, from N decays, with ε ~ y²/8π. y ~ 0.05–0.2 suffices (estimate; the dilution factor is now O(1) and needs recomputation).
+- the proton is still protected (baryon triality, D787).
+β3 FLAG: three open postulates (P1, P3, P5). The next tick must test or retire one. P5 also needs a Z₃-charge check for X (proton safety) and a reason for a coloured state at ~1e11 GeV.
+MAP: node=lepto_rho status=assumed touches=[n_sector_rho, serapis_e] ripple=no
