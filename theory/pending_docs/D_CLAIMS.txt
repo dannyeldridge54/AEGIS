@@ -38,3 +38,4 @@ D751  2026-11-16T03:57Z  what distinguishes SERAPIS from attractors by 2030
 D752  2026-11-16T04:00Z  can an attractor reach n_s 0.970 via kination? GW/Neff bound
 D753  2026-11-16T04:02Z  reverse ladder: origin of epsilon from in-model small numbers
 D754  2026-11-16T04:03Z  deeper: rho tilt as one-loop Kaehler correction, same volume scale as SERAPIS-E
+D755  2026-11-16T04:05Z  joint tilt: rho-variant with epsilon tied to SERAPIS-E volume
