@@ -85,15 +85,17 @@
     "E"
    ],
    "title": "Heavy-ν sector at ρ: 2⊕1, weight-2 mixing",
-   "status": "computed",
+   "status": "corrected",
    "d": [
     "D723",
     "D724",
-    "D739"
+    "D739",
+    "D777"
    ],
    "depends": [],
    "history": [
-    "D739: computed"
+    "D739: computed",
+    "D777: corrected"
    ]
   },
   {
@@ -459,7 +461,8 @@
     "D773: assumed",
     "D775: corrected",
     "D776: corrected"
-   ]
+   ],
+   "flag": "recheck (D777, n_sector_rho)"
   },
   {
    "id": "gravitino_wino",
@@ -551,7 +554,8 @@
    "history": [
     "D740: frozen",
     "D750: frozen"
-   ]
+   ],
+   "flag": "recheck (D777, n_sector_rho)"
   },
   {
    "id": "wino_window",

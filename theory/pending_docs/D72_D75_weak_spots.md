@@ -7550,3 +7550,18 @@ Computed (D775 code path, M_H = 1e12, m₁ = 1e-3 eV, T_R(c) interpolated from D
 VERDICT: c ≳ 0.6 is a MODEL REQUIREMENT for ρ-leptogenesis at M_H ≈ 1e12 (natural in ~60% of a broad prior). It is not load-bearing for the frozen predictions, so no new postulate is made (β3 kept). For the paper, the D775 sentence's "c ≳ 1" is refined to "c ≳ 0.6".
 Mirror question (forward, next tick): the ρ-branch's neutrino predictions. With the 2⊕1 sector and c ≳ 0.6, does the light-neutrino texture at ρ give normal ordering and Σm_ν ≈ 0.059 eV (the frozen value)? D741 found a TENSION at ρ with the minimal Weinberg texture (no NO points). Recheck with the seesaw from this heavy sector (Casas–Ibarra is agnostic). Is there a modular-form Dirac Yukawa at ρ that, through the seesaw, gives NO with m₁ ≪ m₃?
 MAP: node=lepto_rho status=corrected touches=[] ripple=no
+
+## D777 (FORWARD, i-side; Jl tick 16; locked PREREG_D777; results/rho_seesaw_d777.txt) — FAIL: at ρ the weight-2 seesaw ALWAYS gives an exactly degenerate light pair, so no ordering matches oscillation data
+Computed (M_R = [[A(Y), cY], [cYᵀ, 0]], M_D = [[A(Y), βY], [γYᵀ, 0]], Y ∝ (1, i) at ρ, L₃N₃ = 0 as no weight-2 singlet exists; 1764 complex (β, γ) per c ∈ {0.6, 1, 3}). K4: M_R's singular values are (c, c, √2), matching D725's pair/single ratio 0.7072c.
+- NO = 0 and IO = 0 points for every c.
+- A diagnostic after the locked run (labelled as such): the light singular values always contain an exactly degenerate pair, e.g. (1, 1, √2), (0.6, 0.6, √2), (√2, 7.07, 7.07). That holds in 243/243 sampled points.
+- Reason [derived]: the residual Z₃ (ST) symmetry at ρ acts on the 2⊕1 sector, and with only weight-2 Y couplings both M_D and M_R are built from the same aligned objects, so the seesaw inherits the degeneracy. Charged-lepton mixing cannot help, because it does not change the eigenvalues of m_ν.
+VERDICT (locked rule): FAIL. The ρ-branch's minimal (weight-2) lepton sector gives Δm²₂₁ = 0 or Δm²₃₂ = 0 exactly. This extends D741's tension (no NO with the Weinberg texture at ρ) to the full seesaw.
+- The frozen Σm_ν (0.0587 eV, normal-ordering floor) stays as locked, but the ρ-branch has NO derived light-neutrino spectrum: it needs symmetry breaking beyond weight 2.
+- Candidates:
+  - (a) higher-weight forms that are non-zero and non-aligned at ρ: E6·Y (weight 8) lifts the null direction (D739), and E6(ρ) ≠ 0;
+  - (b) an L₃N₃ singlet of weight 6 ∝ E6 (non-zero at ρ);
+  - (c) τ displaced slightly from ρ (it sits exactly there, so no).
+- The leptogenesis results (D775–D776) used Casas–Ibarra, which is agnostic about the texture, so they are unaffected only if a texture with the observed spectrum exists. That is now an open condition.
+Mirror question (reverse, next tick): find the MINIMAL addition that splits the degenerate light pair at ρ. Test (b), a weight-6 singlet δ·E6 for L₃N₃ (and/or N₃N₃), and (a), a weight-8 doublet term. Lock a scan; report the NO fraction and Σm_ν. If a minimal addition works, ρ's neutrino sector is restored at that cost.
+MAP: node=n_sector_rho status=corrected touches=[mnu, lepto_rho] ripple=no

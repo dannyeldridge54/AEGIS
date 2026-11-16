@@ -181,3 +181,13 @@ Touches: lepto_rho (corrected), gravitino_wino.
 7. Log-uniform prior on [0.1, 10] ⇒ P(c ≥ c*) = log(10/c*)/log 100 = 0.61 [derived].
 8. [derived] Consistency: D775 is reproduced at c = 0.3 and 1. The frozen bands are untouched (T_R(c) stays inside D725's range).
 Touches: lepto_rho.
+
+## D777 — the ρ seesaw degeneracy (forward side)
+1. At ρ the weight-2 doublet is Y ∝ (1, i), and A(Y) is nilpotent [derived] (D720, D739).
+2. M_R = [[A, cY], [cYᵀ, 0]] has singular values (c, c, √2) [derived] (computed; matches D725).
+3. With weight-2-only Dirac couplings, M_D = [[A, βY], [γYᵀ, 0]] [estimate] (the weight assignment is assumed to allow all three terms).
+4. m_ν = −M_D M_R⁻¹ M_Dᵀ has an exactly degenerate pair for all β, γ, c [derived] (computed: 243/243 and the full grid).
+5. The eigenvalues of m_ν are basis-independent, so the charged-lepton sector cannot lift the pair [derived].
+6. So the minimal ρ lepton sector gives Δm²₂₁ = 0 or Δm²₃₂ = 0, i.e. FAIL [derived].
+7. [derived] Consistency: this extends D741 (Weinberg texture at ρ, no NO). The frozen Σm_ν is unchanged (locked), but now lacks a derived spectrum at ρ. Leptogenesis (D775) assumed only a Casas–Ibarra-compatible texture exists, which is now conditional.
+Touches: n_sector_rho (computed → corrected), mnu, lepto_rho.
