@@ -1293,3 +1293,8 @@ Touches: none.
 1. Letter compiled from locked notes only [derived] (D640, D666, D669, D670, D671, D919).
 2. Published with full metadata; md5 verified [derived].
 Touches: none.
+
+## D921: paper 2 published
+1. Three no-go results compiled from locked notes only [derived] (D867, D912, D886, D914).
+2. Published with full metadata; md5 verified [derived].
+Touches: none.
