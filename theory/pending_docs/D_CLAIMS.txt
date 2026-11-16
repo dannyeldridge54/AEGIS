@@ -54,3 +54,4 @@ D767  2026-11-16T04:57Z  forward: volume-dependence of the downstream chain with
 D768  2026-11-16T05:06Z  reverse: plateau origin wall -> P3 via nilpotent (anti-D3) geometric-inflation metric; SL(2,Z) attractors 2408.05203
 D769  2026-11-16T05:10Z  forward: P3 axion test - two-field trajectories from x0 != 1/2, dN/dx0, zeta_axion
 D770  2026-11-16T05:45Z  reverse: post-inflation relaxation of the axion - do all x0 settle at rho images?
+D771  2026-11-16T06:14Z  forward: P2 with exotic O3' planes - tadpole room and tilt asymmetry
