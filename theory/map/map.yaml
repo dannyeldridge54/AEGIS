@@ -68,11 +68,12 @@ nodes:
   - D777
   - D778
   - D779
+  - D780
   depends: []
   history:
-  - 'D777: corrected'
   - 'D778: corrected'
   - 'D779: corrected'
+  - 'D780: corrected'
 - id: n_sector_i
   layer: 1
   branch:
@@ -150,6 +151,7 @@ nodes:
   - 'D765a: computed'
   - 'D769: computed'
   - 'D770: computed'
+  flag: recheck (D780, n_sector_rho)
 - id: janus
   layer: 2
   branch:
@@ -338,7 +340,7 @@ nodes:
   - 'D773: assumed'
   - 'D775: corrected'
   - 'D776: corrected'
-  flag: recheck (D779, n_sector_rho)
+  flag: recheck (D780, n_sector_rho)
 - id: gravitino_wino
   layer: 4
   branch:
@@ -352,7 +354,7 @@ nodes:
   depends:
   - reheat_rho
   - covariant
-  flag: recheck (D775, lepto_rho)
+  flag: recheck (D780, n_sector_rho)
 - id: band_i
   layer: 5
   branch:

@@ -7594,3 +7594,21 @@ VERDICT (locked rule): the D778 remedy FAILS as stated. MINIMAL working extensio
 - Consequence: D775's leptogenesis assumed 3 heavy states with Casas–Ibarra Yukawas. With 5 heavy states and Z₃-restricted Yukawas (the N_n, N₃ pair has NO Dirac coupling to q = 0 leptons at ρ), the decaying Dirac-pair states cannot produce a lepton asymmetry at tree level, because they do not couple to leptons. Only N_Y and the new singlets can.
 - This affects D775 (computed with the full Casas–Ibarra structure) and is a CORRECTION to check next.
 MAP: node=n_sector_rho status=corrected touches=[lepto_rho, mnu] ripple=no
+
+## D780 (REVERSE, ρ-side; Jl tick 19; derivation, no computation) — exact Z₃ at ρ: the inflaton is Z₃-charged, so its decay products carry Z₃ charge, and the charged heavy-ν pair cannot decay through renormalisable couplings; ρ reheating must be redone
+Charge bookkeeping (lesson D778):
+1. δτ at ρ transforms under the residual ST ≅ Z₃ with a non-trivial phase (weight −2 at a fixed point), so inflaton quanta carry Z₃ charge q_φ ≠ 0 [derived].
+2. Heavy states (D779): N_Y (charge 0), Dirac pair N_n (q) / N₃ (−q), q ≠ 0, plus the neutral singlets S₁, S₂.
+3. Inflaton decays φ → N_a N_b need q_a + q_b ≡ −q_φ ≠ 0, so EVERY channel contains at least one charged N_n or N₃ [derived]. This matches D725's open channels (LL pair and HL), all of which involve the pair.
+4. Realistic light masses force a common lepton charge q_L = −q_H (D778). The renormalisable Dirac coupling L·N·H then needs q_N = 0, so N_n and N₃ cannot decay to L + H [derived]. D725's statement "light states decay via seesaw y_D 0.02–0.13" is WRONG at ρ.
+5. Gauge-invariant SM bilinears (H_uH_d, constrained by the μ-term, and L H_u) are Z₃-neutral, so electroweak vevs do not break Z₃ in renormalisable couplings [derived].
+6. Modular symmetry is a gauge symmetry in string theory, so Z₃ is exact: no gravitational breaking [literature-level statement, from memory].
+Consequences:
+- If no operator of any dimension carries the pair's charge, the lightest Z₃-charged state is STABLE. Produced with Y ~ (3/4)T_R/m_φ ~ 1e-5 at M ~ 1e11–1e12 GeV, it overcloses by ~1e14. FATAL.
+- If a higher-dimension operator with charge q exists (SM fermion charges are partly free, fixed only by the Yukawas and anomalies), the pair decays through it: Γ ~ M⁵/Λ⁴. With Λ = M_P and M = 1e12, Γ ≈ 3e-14 GeV; the pair (which carries ALL the inflaton energy) then reheats a second time at T₂ ~ √(Γ M_P) ~ 300 GeV. With Λ = M_s ~ 1e16–1e17 GeV, T₂ ~ 3e4–3e6 GeV.
+- Either way, D725's T_R = 3e8–3e9 GeV is NOT the final reheating temperature at ρ. The effective T_R is much lower, N* shifts, and the leptogenesis of D731/D775/D776 (produced before the second reheating) is diluted or reset.
+VERDICT: CORRECTION. ρ-branch reheating (D725), and everything built on its T_R (leptogenesis D731/D775/D776, the gravitino/wino chain D732–D736), must be recomputed with Z₃ charge conservation. The frozen SERAPIS-E bands are locked and stay as frozen.
+- Sign of the shift: a lower T_R lowers N* and n_s (D725: N* 49.7–50.5 at T_R 3e8–3e9). With T₂ ~ 300 GeV–3e6 GeV, N* is ~1.5–4 e-folds lower, and n_s may drop out of the band. That must be computed.
+- The τ = i branch is NOT affected the same way: its residual Z₂ allows odd leptons with Majorana masses (2q ≡ 0 mod 2), so odd heavy states can decay to odd leptons.
+Next (forward, locked): (a) the N* and n_s, r shift for T₂ ∈ {3e2, 3e4, 3e6} GeV, with an intermediate matter phase of the pair, using the D719/D725 N* code; (b) whether n_s stays in 0.970–0.975.
+MAP: node=n_sector_rho status=corrected touches=[lepto_rho, gravitino_wino, serapis_e] ripple=no

@@ -92,13 +92,14 @@
     "D739",
     "D777",
     "D778",
-    "D779"
+    "D779",
+    "D780"
    ],
    "depends": [],
    "history": [
-    "D777: corrected",
     "D778: corrected",
-    "D779: corrected"
+    "D779: corrected",
+    "D780: corrected"
    ]
   },
   {
@@ -206,7 +207,8 @@
     "D765a: computed",
     "D769: computed",
     "D770: computed"
-   ]
+   ],
+   "flag": "recheck (D780, n_sector_rho)"
   },
   {
    "id": "janus",
@@ -465,7 +467,7 @@
     "D775: corrected",
     "D776: corrected"
    ],
-   "flag": "recheck (D779, n_sector_rho)"
+   "flag": "recheck (D780, n_sector_rho)"
   },
   {
    "id": "gravitino_wino",
@@ -484,7 +486,7 @@
     "reheat_rho",
     "covariant"
    ],
-   "flag": "recheck (D775, lepto_rho)"
+   "flag": "recheck (D780, n_sector_rho)"
   },
   {
    "id": "band_i",

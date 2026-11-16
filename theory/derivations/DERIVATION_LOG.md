@@ -212,3 +212,15 @@ Touches: n_sector_rho (corrected), mnu.
 7. The N_n–N₃ pair has no tree-level coupling to q = 0 leptons, so its decays cannot make a lepton asymmetry [derived].
 8. [derived] Consistency: D775's Casas–Ibarra assumption (all N couple to all L) is violated at ρ, so D775 must be re-examined (correction pending). The reheating result D725 (inflaton → N pairs) is unaffected.
 Touches: n_sector_rho, lepto_rho, mnu.
+
+## D780 — Z₃ charge conservation in ρ reheating (reverse side)
+1. Under ST, δτ → (cρ + d)^{−2}δτ, a non-trivial cube root of unity at ρ, so q_φ ≠ 0 [derived].
+2. Decay amplitudes are Z₃-invariant, so φ's products have total charge q_φ [derived].
+3. Heavy-ν charges: N_Y 0, N_n q, N₃ −q (D779) [derived].
+4. So every φ → NN channel contains a charged N [derived].
+5. L·N·H needs q_N = 0 when q_L = −q_H (D778) [derived].
+6. Charged N have no renormalisable decay to SM [derived].
+7. Higher-dimension decay Γ ~ M⁵/Λ⁴ ⇒ T₂ ~ √(ΓM_P) ≈ 300 GeV (Λ = M_P, M = 1e12) [estimate].
+8. A stable relic, if no charged operator exists: Ωh² ~ 2.7e8·M·Y ~ 1e14·0.12 [estimate].
+9. [derived] Consistency: this contradicts D725's statement that light states decay via the seesaw y_D (it ignored Z₃), so D725 and everything downstream is corrected. The frozen bands are locked and unchanged. τ = i is unaffected (Z₂ allows Majorana odd leptons).
+Touches: n_sector_rho, lepto_rho, gravitino_wino, serapis_e.
