@@ -143,3 +143,6 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 
 ## Weinberg at τ = i project W3 (picked 2026-11-16 under the autonomy rule)
 - W3.1 [done D903: AD at τ = i conditional (instanton-only Weinberg; light seesaw direction missing in minimal texture); draft sentence added]
+
+## Lepton-number origin project W4 (picked 2026-11-16 under the autonomy rule)
+- W4.1 [open] Literature: in T⁶/(Z₂×Z₂) IIB orientifolds with D3 branes at fixed points (and D7s), do the Standard-Model-like D3-brane quivers carry an anomalous/Stückelberg U(1) under which L (and N) are charged, making lepton number perturbative? Instanton (E(-1)/E3) actions vs our moduli (Im S·Im ρ ≈ 560–975; g_s ≈ 0.23–0.5): can S ≈ 13–19 arise for the Weinberg-generating instanton while heavy-ν instantons sit at 6–13? (D-brane-at-singularity models: Aldazabal–Ibáñez–Quevedo–Uranga hep-th/0005067; Cvetič–Richter–Weigand; Blumenhagen et al. review 0902.3251.)
