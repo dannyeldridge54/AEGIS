@@ -421,3 +421,11 @@ Touches: plateau_origin, serapis_e.
 5. y* exceeds the 25 cut [derived]; disfavoured.
 6. m²/H² ~ 1e-4 → quartic start [derived] (computed).
 Touches: plateau_origin, serapis_e.
+
+## D801: lattice sums select ρ (forward side)
+1. E(τ,s) is uniquely minimised at ρ for all s > 0 [literature] (Rankin, Cassels, Ennola, Diananda; 1504.01153).
+2. The theta function behaves the same [literature] (Montgomery 1988).
+3. Positive combinations (one-loop integrals) are minimised at ρ [derived].
+4. i is a saddle: minimum along the axis, maximum along the arc [derived] (computed for E(τ,2) and Δ).
+5. A vacuum at i requires a non-lattice function [derived]; the caveat on mixed-sign sums is [estimate].
+Touches: plateau_origin, serapis_e.

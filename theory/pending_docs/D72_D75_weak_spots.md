@@ -7926,3 +7926,19 @@ Derivation:
 6. The vacuum mass at ρ is ε-small (m²/H² ~ 1e-4), so oscillations start quartic, as for Chronos [derived].
 VERDICT: SERAPIS-Δ is a genuinely one-loop plateau with a vacuum at ρ, but it is DISFAVOURED by the y* cut. Its r ≈ 2–3e-4 would separate it from SERAPIS(-E) at LiteBIRD precision. Post hoc; recorded, not added to the paper.
 MAP: node=plateau_origin status=computed touches=[serapis_e] ripple=no
+
+## D801 (FORWARD, i-side; Jl tick 40; locked PREREG_D801; results/saddle_i_d801.txt): every one-loop lattice sum puts its vacuum at ρ; i is a saddle. Added to the paper as the reason the ρ branch is better motivated
+Literature (1 search, 1 fetch):
+- Blanc & Lewin, "The crystallization conjecture: a review" (1504.01153): Rankin, Cassels, Ennola and Diananda proved that "the hexagonal lattice is the unique minimizer of the zeta function, for any s > 0, when the density is fixed".
+- Montgomery (1988) proved the same for the lattice theta function θ(α), for every α > 0.
+Computed (signs locked):
+- E(τ,2) at i: f_xx = −3.43, f_yy = +15.5 → SADDLE; E(i) − E(ρ) = 0.243 > 0 ✓.
+- Δ = −ln(y|η|⁴) at i: f_xx = −0.298, f_yy = +1.298 → SADDLE; Δ(i) − Δ(ρ) = 0.0212 ✓.
+Derivation:
+1. In the unit-area normalisation, E(τ,s) is the Epstein zeta of the lattice ⟨1, τ⟩ [literature]. Its unique minimum over the fundamental domain is at ρ for all s > 0 [literature] (Rankin 1953 et al.). The theta function behaves the same [literature] (Montgomery 1988), and so does the s → 1 Kronecker limit Δ [derived] (limit of the s-family; computed).
+2. String one-loop amplitudes on T² are integrals of theta/lattice sums with positive weights [literature] (BHK; DKL). A positive combination of functions minimised at ρ is minimised at ρ [derived].
+3. i is a critical point of every modular-invariant function [literature], and not a minimum of these [derived]. It is a minimum along the imaginary axis (y → 1/y symmetry plus cusp growth) and a maximum along the arc toward ρ [derived] (computed).
+4. So the τ = i branch's vacuum needs a hand-built non-lattice function (|j − 1728|), while ρ is the generic one-loop vacuum [derived].
+Paper: one sentence added at the start of the SERAPIS-E section, citing Rankin 1953 and Montgomery 1988 (refs.bib).
+Caveat [estimate]: "positive weights" holds for the BHK Kähler sum and the DKL threshold; a mixed-sign sum (e.g. supersymmetry-breaking annuli with opposite-sign sectors) could in principle move the minimum. Not checked.
+MAP: node=plateau_origin status=literature touches=[serapis_e] ripple=no
