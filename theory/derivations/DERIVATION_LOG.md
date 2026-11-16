@@ -655,3 +655,12 @@ Touches: plateau_origin, serapis_e, eps_tilt.
 5. Remaining routes: warped throat, non-perturbative, other origin [estimate].
 6. Side: anti-D3 term as decompactification wall and τ = i mass candidate, pending κ [estimate].
 Touches: plateau_origin, serapis_e.
+
+## D833: K.1 κ normalisation (κ deep project)
+1. Per-sector D3–D3 exchange |V| = 2κ₁₀²T₃²G₆ [literature] (Polchinski §13.3).
+2. 2κ₁₀²T₃² = 2π [derived] (checked in code, PREREG_D833).
+3. T⁴ zero mode gives κ = 1/(2Vol₄) [derived] (D829, D831).
+4. κ/V0 = g_s/(8πv₄) with V0 = 2T₃ [derived].
+5. Slope bound needs v₄ ≳ 190–200 g_s [derived] (computed, PREREG_D833).
+6. O(1) sector factors, warping and twisted sectors not included [estimate].
+Touches: plateau_origin, serapis_e, eps_tilt.

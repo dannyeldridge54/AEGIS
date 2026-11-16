@@ -8490,3 +8490,16 @@ Verdict: KEEP P3 as a postulate, DOWNGRADED. It has no one-loop origin in our co
 Side results to keep [derived]: the anti-D3 wall is bounded at large y, so it is a candidate stabiliser of the decompactification direction, and it has an extremum at τ = i (Δ and the half-period sums are modular-symmetric there), so it is a candidate source for the τ = i vacuum mass (D826). Whether it is big enough needs κ's normalisation (open, D831 point 4).
 Falsifier (for P3 as stated): an explicit warped-throat computation in which the anti-D3 uplift depends on U only additively would remove route (a).
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D833 (DEEP, K.1): normalisation of the anti-D3 term
+Lock: PREREG_D833_kappa.md (committed before the run). Script theory/modular/kappa_d833.py, output field_tests/results/kappa_d833.txt.
+Derivation [derived, with literature inputs]:
+1. Per closed-string sector two parallel D3s have |V| = 2κ₁₀²T₃²G₆(r), ∇²G₆ = −δ⁶ [literature] (Polchinski Vol. 2 §13.3). For D3–anti-D3 both sectors attract: −2·2κ₁₀²T₃²G₆.
+2. T₃ = 1/((2π)³α'²g_s), 2κ₁₀² = (2π)⁷α'⁴g_s² give 2κ₁₀²T₃² = 2π exactly (checked in code) [derived].
+3. T⁴ zero mode: G₆ ⊃ G(z,U)/(4π Vol₄), with D829's G (∇²G = −4πδ). Matching D831's V = −2κB: κ = 2π/(4π Vol₄) = 1/(2Vol₄) [derived].
+4. The unwarped anti-D3 uplift is V0 = 2T₃. Both energies sit at the anti-D3, so frame factors cancel in the ratio. With Vol₄ = (2π)⁴α'²v₄: κ/V0 = g_s/(8π v₄) [derived].
+Numbers [derived]: D831's slope bound κ/V0 ≲ 2.9e-3/y* is 2.0–2.1e-4 for y* = 13.8–14.7. Hence v₄ ≳ (189–202)·g_s: v₄,min ≈ 10 (g_s = 0.05), 19–20 (0.1), 38–40 (0.2), 57–60 (0.3). Pre-stated prediction (100–200 g_s, 10–60) CONFIRMED.
+Interpretation: the anti-D3 wall is harmless for the band if the four small directions have volume ≳ 20 string units at g_s = 0.1 (each small torus area ≳ 4.4 in (2π√α')² units). Mild and natural; it is also what the T⁴-zero-mode reduction already assumes (T⁴ not sub-stringy).
+Caveats [estimate]: (a) O(1) factors in the per-sector amplitude (a factor 2 shifts v₄,min by 2); (b) V0 = 2T₃ identifies the plateau height with the unwarped anti-D3 uplift, i.e. the P3 picture; with warping the interaction and the tension warp differently, not computed; (c) twisted-sector exchange at the fixed points is not included.
+Next: K.2 is largely answered here (bound vs natural size). K.3: does the same κ give the τ = i vacuum mass m²/H² ≈ 2e-3 (D826)? The upper end of κ (v₄ near its minimum) is the most favourable case.
+MAP: node=plateau_origin status=assumed touches=[serapis_e,eps_tilt] ripple=no
