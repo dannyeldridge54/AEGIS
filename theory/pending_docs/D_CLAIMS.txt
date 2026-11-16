@@ -249,3 +249,4 @@ D962  2026-11-16T22:52Z  D: link reproductions into the map
 D963  2026-11-16T22:53Z  correction: BSB scalar mass sign
 D964  2026-11-16T22:56Z  Project H: negative-mass branch
 D965  2026-11-16T22:58Z  Project H: gauge-loop sign positive
+D966  2026-11-16T22:59Z  Project H: T2 gauge-loop mass form
