@@ -1571,3 +1571,6 @@ Touches: none.
 ## D975: Project H implies a smaller physical tilt coefficient
 - [derived] C = λ′C₀ ≤ 2.0e-7; Im S Im T ≥ 4904 (vs 750–975).
 - Result: Project H version of SERAPIS-E needs ~6× larger Im S Im T; D961's fixed-C rows test the stronger-ramp regime; refit-C version needs a new lock.
+
+## D976: correction to D956
+- [derived] Γ ∝ m (D722 channel) ⇒ ΔN* = (1/12) ln λ′ = −0.146 at λ′ = 0.173; Δn_s ≈ −1.2e-4 (D956 overstated by 3×).

@@ -9825,3 +9825,12 @@ MAP: none
 Consequence: Project H is consistent with SERAPIS-E's observables only with moduli about six times larger in Im S Im T (weaker coupling and/or larger four-cycle) than the v3.2 tadpole placement; this is a parameter shift, not a contradiction, but it changes the D696 "natural size" statement for Project H's version, and the vacuum-mass shift of N* (D956, D961) must be evaluated with C = λ′C₀, not fixed C. The queued D961 rerun uses fixed C (as locked); its λ′ < 1 rows will therefore show the stronger-ramp regime, and a refit-C version needs its own lock.
 LESSONS: when a mechanism rescales an invariant, recompute what the fitted coefficients mean physically before comparing scenarios at fixed coefficients.
 MAP: none
+
+## D976 (correction to D956): the SERAPIS-E reheating channel has Γ ∝ m, not m³, so the vacuum-rescaling shift is ΔN* = (1/12) ln λ′ (one third of D956's estimate): −0.146 e-folds and Δn_s ≈ −1.2e-4 at λ′ = 0.173; D956 overstated it by 3×
+(Lock PREREG_D976 belongs to the queued refit-C Project H run; numbering differs, as in D710.)
+[literature/notes] D722: Γ = g₂₂² m/16π with g₂₂ = 1.33 M₁/M_P fixed by the heavy-neutrino mass, so Γ ∝ m at fixed M₁ (D956 assumed a dimension-5 channel, Γ ∝ m³).
+[derived] m ∝ √λ′ (D956) ⇒ Γ ∝ λ′^{1/2} ⇒ T_R ∝ λ′^{1/4} ⇒ ΔN* = (1/3) Δln T_R = (1/12) ln λ′.
+[derived] (arithmetic, dn_s/dN* ≈ 2/N*² at N* ≈ 50) λ′ = 0.1729: ΔN* = −0.146, Δn_s ≈ −1.2e-4; λ′ = 0.05: −0.250, −2.0e-4 (D956: −0.44 / −3.5e-4 and −0.75 / −6.0e-4).
+Status: estimate superseded; D975 adds that the plateau-level comparison must use C = λ′C₀; the exact numbers come from the locked runs PREREG_D961 (fixed C) and PREREG_D976 (refit C), both queued.
+LESSONS: check the decay channel in the notes before scaling a reheating temperature with a mass.
+MAP: none
