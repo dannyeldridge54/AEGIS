@@ -445,11 +445,15 @@
    "status": "frozen",
    "d": [
     "D693",
-    "D725"
+    "D725",
+    "D748"
    ],
    "depends": [
     "nstar_e",
     "janus"
+   ],
+   "history": [
+    "D748: frozen"
    ]
   },
   {

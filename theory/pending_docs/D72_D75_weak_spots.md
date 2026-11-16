@@ -7149,3 +7149,21 @@ Computed (U = ½ + iy, y = 2–20):
 Source of the threshold form: Berg–Haack–Körs hep-th/0404087 eqs. 40/44, where a stack at Wilson line A gives −ln|ϑ₁(A,U)/η|² plus a non-holomorphic πU₂a₄², which is also linear in U₂.
 VERDICT (locked rule): route (i) of D746, a gauge-threshold condensate from this brane setup, is EXCLUDED. A power law in U₂ comes naturally only from Kähler/volume factors, and the Epstein-Kähler route is closed (D717/D718). The plateau term remains an assumed effective term. Reverse-ladder status: requirement known (D746); two candidate sources ruled out, Kähler (D717/D718) and gauge thresholds (D747); no third in-model source in sight. The loop stops here: a natural pause.
 MAP: node=plateau_origin status=open touches=[] ripple=no
+
+## D748 (LEFT; literature + arithmetic; outward check) — if the DESI-driven n_s shift is an artefact, the frozen n_s band still holds within ~1.8σ of every CMB-only fit
+New literature:
+- arXiv:2512.05108 ("The spectrum of n_s constraints from DESI and CMB data"): the upward n_s shift when DESI BAO is added is driven by the BAO–CMB tension, through the n_s–ω_m/r_d·h degeneracy. DESI acts much like a prior on τ.
+- Ferreira et al., PRD Feb 2026 (Kavli IPMU press release, 23 Mar 2026): the shift "may be a statistical artefact". The evidence against standard inflation models "weakens significantly" once the tension is accounted for, and which n_s is most reliable is unclear.
+Computed (distance from the frozen band 0.970–0.975):
+| Data | n_s | distance |
+|---|---|---|
+| Planck | 0.9638 ± 0.0040 | 1.55σ |
+| ACT | 0.9666 ± 0.0076 | 0.45σ |
+| SPT | 0.948 ± 0.012 | 1.83σ |
+| CMB-SPA | 0.9693 ± 0.0029 | 0.24σ |
+| P-ACT | 0.9709 ± 0.0038 | inside |
+| Planck+DESI | 0.9690 ± 0.0035 | 0.29σ |
+| ACT+DESI | 0.9767 ± 0.0068 | 0.25σ |
+| SPA+DESI | 0.9737 ± 0.0025 | inside |
+VERDICT: the frozen bands (τ = i, ρ, SERAPIS-E: n_s 0.970–0.975) are within 1.83σ of every combination, with or without DESI. If DESI's pull is an artefact, the CMB-only centre (~0.964–0.969) sits just below the band, a mild pressure (≤ 1.6σ for Planck), not a fail. The untilted Kairos (0.959–0.961) would then be competitive again. These data are pre-freeze: consistency only, not scored. Decisive tests stay SO + SPHEREx (~2030) and LiteBIRD r.
+MAP: node=band_e status=frozen touches=[band_i] ripple=no

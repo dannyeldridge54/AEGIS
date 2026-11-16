@@ -315,9 +315,12 @@ nodes:
   d:
   - D693
   - D725
+  - D748
   depends:
   - nstar_e
   - janus
+  history:
+  - 'D748: frozen'
 - id: caps
   layer: 5
   branch:
