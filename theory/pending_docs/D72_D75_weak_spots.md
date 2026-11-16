@@ -9613,3 +9613,8 @@ NEW conditions [estimate, from this check]: (1) Hierarchy: the loop mass² A ≫
 Verdict: Project H's positive close (D947) stands, now explicitly checked against D703/D709/D712, with conditions (1)–(2) added to its assumption list.
 LESSONS: grep the old no-gos for the same object (here 1/E(τ,2)) before writing up a new route; this one survived but could have been caught twice.
 MAP: none
+
+## D949: v3.3 draft: plateau-origin caveat extended with Project H (D941–D948); builds clean, 18 pages
+[derived] (summary, no new numbers) Appended to the "plateau has no identified string origin" caveat: the series-combination identity, the 6D image-sum origin of a mass ∝ E(τ,2) (s = (D−2)/2), the locked two-field numbers (|Δn_s| ≤ 2e-5, |Δr/r| ≤ 0.05% for M ≤ 0.2, m²/H² ≳ 7e4), why it evades the modulus-stabilisation obstructions, and its three assumptions; worded as "a candidate origin", "none of these has been built in a string compactification". Clean build (0 undefined, 0 overfull). CHANGELOG_v3.3 updated. Posting waits for Danny's "Publish".
+LESSONS: none new.
+MAP: none

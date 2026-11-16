@@ -1440,3 +1440,7 @@ Touches: none.
 - [derived] no tension competition, so D712/D703's sign wall does not apply.
 - [estimate] new assumptions: tree mass of χ accidentally small (loop ≫ tree); area stabilised with m_A ≫ H.
 - Result: Project H's close stands with two added conditions.
+
+## D949: v3.3 draft Project H caveat
+- [derived] summary of D941–D948; no new numbers.
+- Result: draft builds clean, 18 pp.
