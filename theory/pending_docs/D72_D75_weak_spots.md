@@ -8765,3 +8765,16 @@ Escape [derived]: instantons on at least TWO cycle classes with independent CP-o
 Consequence: a fourth condition for the τ = i conditional variant (D841): under P1′ its leptogenesis needs two CP-odd Kähler axions on different cycle classes. Not a failed prediction; a further structural requirement.
 Caveat [estimate]: assumes Dirac Yukawas are perturbative and real and that the doublet shares one brane intersection; a doublet formed from two different intersections would change point 2.
 MAP: node=lepto_i status=assumed touches=[band_i] ripple=no
+
+## D853a (correction to D853 and to D854's ρ remark, found in D855)
+1. D853 re-weighted D762's per-case thresholds, which belong to D731's ρ inflaton-decay leptogenesis. That route was already SUPERSEDED: at ρ the exact Z₃ forbids the renormalisable L·N·H decay of the charged pair N_n/N₃ (D780), the P5 route conserves B (D789), and the frozen ρ band has no baryogenesis mechanism; the only consistent ρ history is the post-hoc inflaton-AD one, which needs no CP phase (D792). So D853's ρ numbers (median 0.84, unconditional ≈ 0.34) describe a mechanism the model no longer uses. They are withdrawn as statements about SERAPIS; they remain correct as arithmetic on D762.
+2. D854 asserted that at ρ "the relevant N carry different charges, so D852's Δ is physical". That was not checked. The ρ heavy states differ in Z₃ charge (N_Y: 0, N_n: q, N₃: −q; D780), but Z₃ is a modular charge, not a brane U(1) charge; whether they sit at different brane intersections is not determined by the model. The assertion is withdrawn as unsupported.
+3. The V32_TODO optional clause [D853] (median 0.84) is withdrawn.
+
+## D855 (R.2): P1′'s quantitative leptogenesis consequences live only at τ = i
+Derivation only (bookkeeping against D731, D780, D789, D792).
+1. ρ: the frozen band has no baryogenesis mechanism; the post-hoc AD history needs no phase. P1′ is therefore NOT needed at ρ for the current model, and D853's ρ re-weighting is moot (D853a) [derived].
+2. τ = i: resonant leptogenesis (D745) needs the doublet phase; under single-modulus P1′ it is zero (D854), so τ = i needs CP-odd axions on two cycle classes [derived].
+3. Net status of P1′: it is the model's CP source only for the τ = i (conditional) branch, and there it requires two CP-odd Kähler axions. The ρ branch does not use it [derived].
+4. Whether ρ's heavy states sit at different brane intersections is undetermined; it would matter only if a ρ inflaton-decay leptogenesis route is revived [estimate].
+MAP: node=lepto_i status=assumed touches=[lepto_rho] ripple=no

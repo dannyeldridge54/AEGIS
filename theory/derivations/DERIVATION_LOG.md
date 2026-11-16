@@ -829,3 +829,10 @@ Touches: none.
 4. τ = i resonant ε = 0 under single-modulus P1′; D763's 68–71% becomes 0% [derived] (D763).
 5. Escape: two cycle classes with CP-odd axions [derived].
 Touches: lepto_i, band_i.
+
+## D855: R.2 ρ charge check (P1′ at ρ)
+1. ρ's frozen band has no baryogenesis mechanism; the AD history needs no phase [derived] (D780, D789, D792).
+2. D853's ρ re-weighting is moot; D854's ρ charge claim unsupported (D853a) [derived].
+3. P1′ matters only for τ = i, which needs two CP-odd axions [derived] (D854).
+4. Brane placement of ρ's heavy states undetermined [estimate].
+Touches: lepto_i, lepto_rho.

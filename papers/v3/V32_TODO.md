@@ -11,5 +11,5 @@
 - [D846] Baryogenesis / postulates: replace P1's 'independent uniform coupling phases' with P1′: CP broken spontaneously by a Kähler-axion racetrack vev (D843–D845); note that CP is a symmetry of the string effective theory and the toroidal configuration alone has no CP source.
 - [D851] Draft wording fix: 'often metastable' (CP paragraph) → 'in about 40% of cases the deepest minimum, otherwise within ~5% of it' (D851).
 - [D852] Applied in draft: CP paragraph now states the two-instanton-sector condition and the 80% figure; D851 metastability wording fixed.
-- [D853] Optional: one clause in the CP paragraph: given a CP-odd vacuum, ρ-leptogenesis passes with median probability ≈ 0.84 (D853).
+- [D853] WITHDRAWN (D853a): the ρ re-weighting applies to a superseded mechanism.
 - [D854] τ = i conditional-variant bullet: add that under P1′ its leptogenesis needs CP-odd axions on two cycle classes (single-modulus P1′ gives the resonant doublet no phase).
