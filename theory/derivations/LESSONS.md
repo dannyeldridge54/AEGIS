@@ -154,3 +154,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D903: when a mechanism is reused on a second branch, check the second branch actually supplies the input it needs (here a near-massless direction); at ρ a symmetry zero did, at τ = i nothing does.
 - 2026-11-16 D904: check the direction of a bound before calling a mechanism tuned; here the action bound is one-sided, so a larger action (smaller g_s) is safe.
 - 2026-11-16 D904a: before quoting a modulus benchmark, check which branch and which scan it came from, and whether that scan was later withdrawn.
+- 2026-11-16 D905: a summary table makes a branch's accumulated conditions visible at a glance; build it when the caveat paragraphs grow past what a reader can hold.

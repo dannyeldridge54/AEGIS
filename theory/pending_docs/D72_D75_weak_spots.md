@@ -9283,3 +9283,7 @@ MAP: node=lepto_rho status=estimate touches=[lepto_i,mnu] ripple=no
 ## D904a (correction to D904's assessment): g_s is not 0.23–0.5 on both branches
 D904 quoted "our moduli benchmarks g_s = 0.23–0.5 (D861, D867)" and called the bound comfortably met at g_s = 0.232. But D861's benchmark came from a scan that mixed the two branches (D861a), and D867's passing points (g_s ≈ 0.40–0.50) belong to the τ = i racetrack (P1′), which ρ does not use. Corrected [derived]: at ρ, SERAPIS-E's tilt fixes only A₂A₃/g_s² (D867), so g_s is free and the E(-1) bound (g_s ≲ 0.33–0.48) is a condition, not a check. At τ = i the racetrack points give S = 2π/g_s = 12.6–15.7 against the needed 13–17 (D903): at the edge. W4's verdict weakens from "met" to "possible at ρ, marginal at τ = i". Draft clause rewritten accordingly.
 MAP: node=lepto_i status=estimate touches=[lepto_rho,mnu] ripple=no
+
+## D905: per-branch conditions table added to the v3.2 draft
+A compact table (Table I, limitations section) lists for τ = i and ρ: fitted small numbers (D815, D885–D887; D888a–D890, D896), postulates (P3 both; P1′ at i only, D846, D854, D855), reheating (D727, D815; D781), baryogenesis route (D745, D903; D880a, D895), lepton sector (D742, D786; D779, D883, D896), required m_ν₁ (D900; D895) and the Weinberg condition (D903, D904a; D897, D904a). No new claims; every cell cites its note (all 13 cited D-notes checked to exist). The draft is now 18 pages and builds clean (the first build had a 2.9 pt overfull float, fixed with \footnotesize).
+MAP: none

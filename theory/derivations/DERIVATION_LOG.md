@@ -1191,3 +1191,8 @@ Touches: lepto_i, mnu.
 3. g_s = 0.23–0.5 gives S = 12.6–27.1 [derived] (arithmetic).
 4. Meets S ≳ 13–19 for g_s ≲ 0.33–0.48 [derived] (D897, D903).
 Touches: lepto_rho, lepto_i, mnu.
+
+## D905: per-branch conditions table
+1. Table assembled from existing D-notes only [derived].
+2. No new physics; frozen predictions unchanged [derived].
+Touches: none.
