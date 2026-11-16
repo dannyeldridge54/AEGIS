@@ -329,3 +329,12 @@ Touches: lepto_rho.
 7. Requirement η ≈ 4.3e-6 ⇒ |Δx| ≈ 2e-6; isocurvature safety needs |Δx| ≥ 7e-5, hence ~35× over-production [derived] (computed arithmetic).
 8. [derived] Consistency: the CP violation here is spontaneous (the initial x₀), so P1 is not needed at ρ in this route. The D788/D789 picture (P5 for prompt N decay) is kept. The 0.499/0.49 read-outs are flagged unreliable.
 Touches: lepto_rho.
+
+## D791 — the Planck bound on the inflaton-AD offset (forward side)
+1. Uncorrelated axion-type CDI: β_iso < 0.038 (95%, k = 0.05) [literature] (Planck 2018 X, Table 14).
+2. A baryon isocurvature mode is equivalent to CDI with S_c = (Ω_b/Ω_c)S_b [literature] (standard; Ω_b/Ω_c ≈ 0.186 as an estimate).
+3. S_b = δη/η = δx/|Δx| for η ∝ Δx [derived] (D790 linear read-outs).
+4. β < 0.038 ⇒ |Δx| ≥ 0.15 [derived] (computed).
+5. Y_B(Δx = 0.15) = 2.3e-6 ⇒ dilution ~2.7e4 needed [derived] (computed).
+6. [derived] Consistency: D790's verdict is corrected (loose allowance). D769's δx is reused. The τ = i branch is unaffected.
+Touches: lepto_rho.

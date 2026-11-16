@@ -1,0 +1,2 @@
+P_S max=8.30e-11; |dx|_min=0.151; eta=0.302; Y_B=2.34e-06; over-production (dilution needed) = 2.7e+04
+VERDICT: WALL

@@ -1,4 +1,4 @@
-# AEGIS: current state (16 Nov 2026, 02:45 CT). Read before working.
+# AEGIS: current state (16 Nov 2026, 04:05 CT). Read before working.
 
 ## Active line: SERAPIS v3 / v3.1 (modular inflation)
 - Paper: repo `papers/v3/serapis_v3.tex` (13 pp; v3.1 draft adds SERAPIS-E + D719–D736 corrections). Zenodo v3 published, DOI 10.5281/zenodo.24250733; v3.1 NOT yet uploaded (needs Danny's "Publish").
@@ -31,6 +31,13 @@
   - D780–D783: the inflaton is Z₃-charged, so its decay products (the heavy Dirac pair) have no renormalisable SM decay. The frozen band holds only if they decay via string-scale operators (Λ ≲ 0.4–1e16 vs M_s ~ 0.6–3e16), giving T₂ ≳ 1e5 GeV. Baryogenesis comes from the late decays (ε ~ 1e-5–1e-3).
   - D784: the SERAPIS-E wino is thermal, 0.67–1.85 TeV (5–41% of DM).
   - D785: τ = i is unaffected (computed mirror check).
+- Jl ticks 25–30 (D786–D791):
+  - Σm_ν frozen value = NO floor; m₁ free (τ = i: 0.059–0.064).
+  - R-Z₃ satisfiable (Z₃ = baryon triality on the SM, D787).
+  - Late dim-6 decays can't make the asymmetry (Nanopoulos–Weinberg, D788).
+  - P5 (light colour-triplet mediator) is consistent, but with it the N decays conserve B (D789).
+  - The inflaton-AD orbit charge works, but Planck isocurvature forces ~3e4 over-production (D790–D791). ρ baryogenesis = OPEN PROBLEM.
+  - Open postulates: P1 (explicit CP), P3 (plateau via the anti-D3 metric), P5 (mediator).
 - Paper v3.1 (15 pp, new title "The Shape of the Torus Sets the Sky…") is staged; Zenodo package in /mnt/user-data/outputs/zenodo_v3.1 (session) and papers/v3/zenodo. Danny said "Publish"; it needs his Zenodo login in Chrome plus "go".
 - Tests (D705): n_s at SO LAT + SPHEREx (~2030); r at LiteBIRD (launch 2032, results ≳ 2035, optimistic reach).
 - Pending Danny actions: Zenodo v3.1 "Publish"; outreach emails (4 drafts in papers/v3/drafts/outreach/, not sent); arXiv endorsement/submission.

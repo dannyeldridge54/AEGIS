@@ -7753,3 +7753,17 @@ VERDICT (locked rule): VIABLE by the lock's criterion (η ≥ 4.3e-6 with δη/�
 - P5 (the mediator) is still needed for prompt N decay.
 Next (forward): the branching ⟨ΔB⟩ (inflaton channels B-charged vs neutral), the dilution needed, and the Planck baryon-isocurvature bound.
 MAP: node=lepto_rho status=assumed touches=[] ripple=no
+
+## D791 (FORWARD, i-side; Jl tick 30; locked PREREG_D791; results/ad_isocurv_d791.txt) — WALL: Planck's isocurvature bound forces the AD offset to |Δx| ≥ 0.15, which over-produces baryons by ~3e4; this corrects D790's "VIABLE" (its 0.1 allowance was far too loose)
+Inputs: Planck 2018 X Table 14, uncorrelated axion-type CDI, 100β_iso < 3.8 (k = 0.05). Baryon isocurvature counts as CDI with Ω_b/Ω_c = 0.186 (estimate).
+Computed:
+- P_S < 8.3e-11, with S_b = δx/|Δx| (δx = 7.4e-6), gives |Δx| ≥ 0.151.
+- Then η = 0.30 and Y_B = (28/79)(3/4)(T_R/m_φ)·2η = 2.3e-6, i.e. 2.7e4 × too much.
+VERDICT (locked rule): WALL.
+- The inflaton-AD route at ρ needs an entropy dilution ~3e4 that the P5 history (prompt N decays) does not provide.
+- CORRECTION to D790: its viability rested on δη/η ≤ 0.1. The real bound is δη/η ≲ 1e-5·(Ω_c/Ω_b), i.e. |Δx| ≳ 0.15.
+Next idea (create, for the reverse tick): drop P5. Without the mediator the Z₃-charged pair decays LATE (dim-6, D782–D783), which supplies exactly such a dilution, and the AD asymmetry rides on the pair's B-number (B(N) = 1) until those decays.
+- Rough estimate: Y_B ≈ (28/79)(3/4)(T₂/M)·η ≈ 8e-9 at T₂ = 1e5, M = 1e12 (~90× over). That needs T₂ ~ 1e3, which D781 puts outside the frozen r band (r ≈ 5.3e-4).
+- A self-consistent but DIFFERENT post-hoc ρ history with distinct r and n_s. To compute.
+Also: the 30-tick milestone; CURRENT_STATE updated.
+MAP: node=lepto_rho status=assumed touches=[] ripple=no
