@@ -1,0 +1,4 @@
+# DEVIATIONS for PREREG D955 (written before any rerun; run 1 kept as repro_chronos_d955_run1.txt)
+Run 1: backgrounds correct (y* = 23.17-24.34 Chronos, 21.89/22.52 Kairos, inside the published 23-24.5 / 21.9-22.6), spectra garbage (n_s = -57 ... +48). Cause (toolkit bug, not physics): ms.py uses a = e^N from the start of the background; runs starting deep on the plateau (112-220 e-folds) make |R| ~ e^{-200}, where the fixed atol = 1e-30 dominates. The selftest pivots (30, ~60 e-folds in) never exercised this.
+D1 (code fix): normalise the scale factor at the pivot, a(N) = e^{N - Np}, so mode amplitudes are O(1/sqrt k) with k = H_p; observables are invariant under this rescaling. Add a selftest: power-law pivot at N = 150 must give the same n_s, r as at N = 30 (to 1e-5, 0.1%).
+Model, runs, tolerances and PASS rule unchanged. One rerun.
