@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{52}%
+\begin{thebibliography}{55}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -215,6 +215,14 @@
   inflation were observable perturbations produced?}}} (\bibinfo {year}
   {2003}),\ \Eprint {https://arxiv.org/abs/astro-ph/0305263}
   {arXiv:astro-ph/0305263} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {{ATLAS Collaboration}}(2026)}]{arXiv_2603_08315}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibnamefont {{ATLAS
+  Collaboration}}},\ }\href@noop {} {\bibinfo {title} {{Search for long-lived
+  charginos and $\tau$-sleptons using final states with a disappearing track in
+  $pp$ collisions at $\sqrt{s}=13$ TeV with the ATLAS detector}}} (\bibinfo
+  {year} {2026}),\ \Eprint {https://arxiv.org/abs/2603.08315}
+  {arXiv:2603.08315} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {{ATLAS Collaboration}}(2022)}]{arXiv_2201_02472}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibnamefont {{ATLAS
@@ -288,6 +296,28 @@
   Fixed Points on Neutrino Masses, Mixing, and Leptogenesis}}} (\bibinfo {year}
   {2026}),\ \Eprint {https://arxiv.org/abs/2604.04585} {arXiv:2604.04585}
   \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Novichkov}\ \emph {et~al.}(2019)\citenamefont
+  {Novichkov}, \citenamefont {Penedo}, \citenamefont {Petcov},\ and\
+  \citenamefont {Titov}}]{arXiv_1905_11970}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~P.}\ \bibnamefont
+  {Novichkov}}, \bibinfo {author} {\bibfnamefont {J.~T.}\ \bibnamefont
+  {Penedo}}, \bibinfo {author} {\bibfnamefont {S.~T.}\ \bibnamefont {Petcov}},\
+  and\ \bibinfo {author} {\bibfnamefont {A.~V.}\ \bibnamefont {Titov}},\
+  }\href@noop {} {\bibinfo {title} {{Generalised CP Symmetry in
+  Modular-Invariant Models of Flavour}}} (\bibinfo {year} {2019}),\ \Eprint
+  {https://arxiv.org/abs/1905.11970} {arXiv:1905.11970} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Higaki}\ \emph {et~al.}(2024)\citenamefont {Higaki},
+  \citenamefont {Kobayashi}, \citenamefont {Nasu},\ and\ \citenamefont
+  {Otsuka}}]{arXiv_2405_18813}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {Higaki}}, \bibinfo {author} {\bibfnamefont {T.}~\bibnamefont {Kobayashi}},
+  \bibinfo {author} {\bibfnamefont {K.}~\bibnamefont {Nasu}},\ and\ \bibinfo
+  {author} {\bibfnamefont {H.}~\bibnamefont {Otsuka}},\ }\href@noop {}
+  {\bibinfo {title} {{Spontaneous CP violation and partially broken modular
+  flavor symmetries}}} (\bibinfo {year} {2024}),\ \Eprint
+  {https://arxiv.org/abs/2405.18813} {arXiv:2405.18813} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Affleck}\ and\ \citenamefont
   {Dine}(1985)}]{AffleckDine1985}%
   \BibitemOpen
