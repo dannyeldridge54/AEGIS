@@ -40,3 +40,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D790: a charge read-out in modular field space must use the local coordinate of the image the field actually settled at. Reduce first, then compute the charge (the D770 lesson applied to velocities too).
 - 2026-11-16 D791: isocurvature allowances must be taken from the data (β_iso ~ 0.04 of a 4.6e-5 amplitude), not set by hand as O(0.1). D790's hand allowance was off by ~4 orders of magnitude.
 - 2026-11-16 D792: when two problems fail separately (too little dilution, too much asymmetry), try combining them. The late decay that "ruined" the frozen band is exactly the dilution the over-producing AD needed.
+- 2026-11-16 D794: when mirroring a mechanism between vacua, check what the residual symmetry forces at QUADRATIC order (isotropy) and whether its charge is additive. Z₃ protects an orbit charge; Z₂ does neither.

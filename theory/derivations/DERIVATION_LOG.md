@@ -358,3 +358,12 @@ Touches: lepto_rho (assumed → computed), serapis_e.
 5. Wino T_f = M₂/20 ≤ 92.5 GeV < T₂, so the thermal relic is unchanged [derived].
 6. [derived] Consistency: D784's wino window holds. The frozen band is unchanged (this is an alternative). The family strip and cap (D678–D681) contain these points.
 Touches: serapis_e, lepto_rho.
+
+## D794: τ = i mirror of the inflaton-AD mechanism (reverse side)
+1. Stabiliser of i in PSL(2,Z) is ⟨S⟩ ≅ Z₂; on z = (τ−i)/(τ+i), S: z → −z [derived] (dτ'/dτ = τ⁻² = −1 at i).
+2. Stabiliser of ρ is ⟨ST⟩ ≅ Z₃, acting as z → ωz [literature] (standard; used in D777).
+3. A real quadratic form invariant under a rotation by 2π/3 is ∝|z|² [derived]. Under z → −z, every quadratic form is invariant [derived].
+4. Hence at ρ the U(1) charge Q = i(z̄ż − zż̄) is conserved to quadratic order. At i it is not, unless the masses are accidentally equal [derived]; Δm ≠ 0 in our potential [estimate].
+5. An asymmetry needs an additive charge carried by the decay products. At ρ that is Z₃ (baryon triality, D787) [derived, D787–D792]. At i the only residual is a parity, Z₂ (or Z₄, whose charge −1 states are Z₂-like) [derived].
+6. So there is no inflaton-AD asymmetry at i, and D745 stands as the only τ = i baryogenesis route, needing explicit CP in the heavy-ν couplings [derived].
+Touches: lepto_i, lepto_rho.

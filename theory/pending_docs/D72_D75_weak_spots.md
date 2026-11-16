@@ -7793,3 +7793,14 @@ VERDICT: the post-hoc ρ-branch alternative ("SERAPIS-E/ρ, self-diluted") predi
 - Every point lies OUTSIDE the frozen D693 band (r above 5.12e-4, n_s at or below 0.970) but inside the family strip and cap.
 - Added to the prediction sheet and the paper table (post hoc).
 MAP: node=serapis_e status=computed touches=[lepto_rho] ripple=no
+
+## D794 (REVERSE, ρ-side mirror onto τ = i; Jl tick 33; pure derivation, no lock): no Affleck–Dine asymmetry at τ = i; D745 is unaffected; paper sweep done
+Mirror question (β2): does the ρ-chain's inflaton-AD mechanism (D790–D792) have a twin at τ = i?
+- Residual symmetry: at i, S acts in the local coordinate z = (τ−i)/(τ+i) as z → −z, so the inflaton is odd (Z₂ on the modulus; Z₄ on weight-k matter via i^k). At ρ, ST acts as z → ωz (Z₃).
+- Quadratic forms: Z₃ forces an isotropic Hessian (any quadratic form invariant under a 120° rotation is ∝|z|²), so at ρ the orbit's angular momentum Q = i(z̄ż − zż̄) is conserved at quadratic order. Z₂ leaves every quadratic form invariant, so at i, m_Re ≠ m_Im is allowed generically; Q then oscillates in sign at frequency ~Δm and averages away.
+- Carrier: the ρ asymmetry survived because the decay products (heavy N) carry the additive Z₃ charge, which acts on the SM as baryon triality. At i the products carry only a Z₂ parity. That is multiplicative and has no sign, so it cannot store an asymmetry.
+- With D785 (prompt decays to leptons at i), no inflaton-AD lepton asymmetry competes with or adds to D745's radiative leptogenesis.
+- Corollary: spontaneous CP from an off-axis start is a ρ-only option. At i, CP violation must sit in the heavy-ν couplings (D762–D764).
+- Open: whether the D7xx τ = i potential actually has Δm ≠ 0 [estimate: generic; not computed]. Even with Δm = 0, the Z₂ carrier argument alone closes the route.
+- Paper sweep: the ρ paragraph's "can generate the baryon asymmetry" now points to the Z₃ caveats and D792–D793. One sentence added to the CP paragraph. No other stale ρ statements found: 3e8 appears only in the constant-W₀ τ = i superpartner row; D731 is cited as superseded; 0.67–0.80 is absent.
+MAP: node=lepto_i status=computed touches=[lepto_rho] ripple=no
