@@ -429,7 +429,8 @@
     "D899",
     "D900",
     "D903",
-    "D904a"
+    "D904a",
+    "D909"
    ],
    "depends": [
     "reheat_i",
@@ -437,9 +438,9 @@
     "eta_n"
    ],
    "history": [
-    "D900: computed",
     "D903: estimate",
-    "D904a: estimate"
+    "D904a: estimate",
+    "D909: estimate"
    ]
   },
   {
@@ -698,7 +699,8 @@
     "D824: frozen",
     "D902: literature",
     "D906: frozen"
-   ]
+   ],
+   "flag": "recheck (D909, lepto_i)"
   },
   {
    "id": "wino_window",

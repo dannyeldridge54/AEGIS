@@ -331,14 +331,15 @@ nodes:
   - D900
   - D903
   - D904a
+  - D909
   depends:
   - reheat_i
   - n_sector_i
   - eta_n
   history:
-  - 'D900: computed'
   - 'D903: estimate'
   - 'D904a: estimate'
+  - 'D909: estimate'
 - id: sterile_rho
   layer: 4
   branch:
@@ -540,6 +541,7 @@ nodes:
   - 'D824: frozen'
   - 'D902: literature'
   - 'D906: frozen'
+  flag: recheck (D909, lepto_i)
 - id: wino_window
   layer: 5
   branch:
