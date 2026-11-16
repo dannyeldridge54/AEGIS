@@ -82,3 +82,4 @@ D795  2026-11-16T10:42Z  tau=i Hessian isotropy
 D796  2026-11-16T10:49Z  rho Hessian isotropy + cubic Z3 breaking
 D797  2026-11-16T10:56Z  P3 anti-D3 metric origin
 D798  2026-11-16T11:07Z  DKL threshold plateau at rho
+D799  2026-11-16T11:15Z  condensate placement for P3
