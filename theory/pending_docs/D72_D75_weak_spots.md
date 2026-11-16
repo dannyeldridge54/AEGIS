@@ -9732,3 +9732,9 @@ Corrections: D955/D957/D961 stand as counts (+32, +128 bosonic excess; the (−1
 Open (new, concrete): for a χ coupled by a positive quartic (a brane-position or charged scalar whose mass is NOT a Wilson-line/shift), compute the sign in the ADS model; and note the opposite possibility: a negative E(U,2) mass² would turn P3's series combination into a different shape (A < 0), to be checked.
 LESSONS: a sign argument from state counting must be checked against a worked example of the same kind of coupling before it is recorded as a verdict.
 MAP: node=plateau_origin status=estimate touches=[] ripple=no
+
+## D964 (Project H, follows D963): a NEGATIVE one-loop mass gives no plateau at all: χ is stable only while aE < B, and V_min = −B·X/(1 − X) (X = aE/B) runs to −∞ as X → 1; so Project H needs the positive sign strictly, and the D963 question is decisive, not a detail
+[derived] (sympy) With A = −aE (a > 0): V″(χ) = 2(B − aE), so the χ* = B/(A+B) extremum is a minimum only for aE < B; there V_min/B = X/(X − 1) = −X/(1 − X) < 0, decreasing without bound as X → 1⁻; for aE > B the χ direction is tachyonic and the quadratic model has no minimum (a quartic in χ would be needed, and its shape is not P3's). Since E(U,2) grows toward the cusp, the cusp region is the unstable one: the opposite of a plateau.
+Consequence: Project H survives only if χ's one-loop mass² is positive. The one worked brane-SUSY-breaking example (Wilson-line scalars, D963) has the wrong sign; a χ coupled through a positive quartic (a position or charged scalar whose mass is not a shift of the tower) is the remaining candidate and must be computed. Status: Project H = candidate with one decisive open sign condition.
+LESSONS: when an open condition's failure branch is cheap to compute, compute it at once to see whether the condition is decisive.
+MAP: none

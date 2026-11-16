@@ -1514,3 +1514,7 @@ Touches: none.
 - [literature] hep-ph/0004091: Wilson-line scalar one-loop mass² negative in the anti-D5 sector.
 - [derived] sign depends on the coupling (quartic tadpole vs mass shift), not only on n_B − n_F.
 - Result: D955/D957/D961 sign verdicts withdrawn; Project H sign condition open.
+
+## D964: negative-mass branch of Project H
+- [derived] (sympy) A = −aE: stable only for aE < B; V_min/B = X/(X−1) → −∞ as X → 1.
+- Result: Project H needs the positive sign strictly; D963's question is decisive.
