@@ -204,3 +204,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D954: α_s at tiny ε needs a wide stencil or dn_s/dN directly.
 - D955: verify recalled spectra against a source before use (495 + 1, not 496).
 - D956: plateau-absorbed parameters still act at the vacuum through reheating.
+- D957: partition-function characters give the level-by-level B−F count; verify phase conventions from a source.

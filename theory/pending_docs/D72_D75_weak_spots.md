@@ -9676,3 +9676,13 @@ MAP: none
 Verdict: under the locked-in-plan criterion (|Δn_s| < 1e-3) the shift is tolerable for λ′ ≳ 0.01, but it is NOT zero: the Project H realisation predicts n_s lower than the frozen SERAPIS-E band by 3.5e-4 at best. Frozen predictions unchanged (they assume P3 as postulated); if Project H is adopted as the origin, its n_s band moves down by ≥ 3.5e-4 — to be stated in v3.3 and checked by a locked exact computation (reheating channel explicit) before any claim. Label: estimate (Γ ∝ m³ assumed).
 LESSONS: absorbing a parameter on the plateau does not absorb it at the vacuum; reheating sees it.
 MAP: none
+
+## D957 (loop B, massive levels): the Sugimoto open-string tower's boson excess is +N d_l (−1)^l level by level: positive at the massless level, alternating at massive levels; for a T² larger than the string length the massless level dominates the image sum, so D955's sign holds where Project H needs it
+(Lock files PREREG_D957/D958 belong to the queued ρ and N* reproductions; D-numbers and lock names differ, as in D710.)
+[literature] Mourad & Sagnotti (arXiv:1711.11494, eq. 2.22 and text): the Sugimoto model differs from the supersymmetric SO(32) string only in the sign of the V₈ term in the Möbius amplitude, M = −½𝒩 ∫(dτ₂/τ₂²)(−V̂₈ − Ŝ₈)/(τ₂⁴η̂⁸); the annulus is the SO(32) one, A ∝ ½𝒩²(V₈ − S₈). The fetched text does not discuss massive levels.
+[derived] (from the quoted amplitudes) Open-string count per level l: bosons ½(𝒩² + ε_l 𝒩) d_l, fermions ½(𝒩² − ε_l 𝒩) d_l, where d_l is the common level degeneracy (V₈ and S₈ have equal coefficients at every level, Jacobi's identity) and ε_l is the sign of the Möbius term at level l. So n_B − n_F = ε_l 𝒩 d_l. At l = 0, ε = +1: +32 states (matches D955: 528 − 496).
+[literature, standard but NOT verified in this fetch] The hatted characters of the Möbius strip carry the phase e^{−iπ(h − c/24)}, which alternates the sign from one mass level to the next, ε_l = (−1)^l. Flagged: per the D657a rule this must be checked against a source before it is used in a paper.
+[estimate] For the image sum of D945 the level-l states contribute ∝ e^{−m_l|w|} with m_l ~ √l M_s; for |w| ~ √A₁ l_s with A₁ ≳ 20 (D952) the massive levels are suppressed by ≳ e^{−4.5} per level, so the massless +32 excess dominates and δm_χ² > 0. If the T² approached the string length the alternating massive levels would matter and the sign is not guaranteed.
+Verdict: Project H's sign condition holds in the Sugimoto model in the regime D952 already requires (A₁ ≫ 1); open: verify the (−1)^l phase from a source; massive-level effects for A₁ ~ 1.
+LESSONS: a partition function's character structure gives the level-by-level boson–fermion count in one line once the amplitudes are quoted.
+MAP: none

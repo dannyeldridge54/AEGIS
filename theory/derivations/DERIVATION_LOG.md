@@ -1481,3 +1481,9 @@ Touches: none.
 - [derived] λ′ < 1/E_ρ = 0.173; m_φ² ∝ λ′.
 - [estimate] Γ ∝ m³ ⇒ ΔN* = ¼ ln λ′ = −0.44 to −1.15; Δn_s ≈ −(3.5–9.2)e-4.
 - Result: tolerable (<1e-3) for λ′ ≳ 0.01, but a real downward shift; locked exact check needed before any claim.
+
+## D957: Sugimoto massive levels
+- [literature] 1711.11494: only the V₈ sign in the Möbius amplitude differs from SO(32).
+- [derived] n_B − n_F = ε_l 𝒩 d_l per level; +32 at the massless level.
+- [literature, unverified here] ε_l = (−1)^l from hatted characters.
+- [estimate] massive levels suppressed for A₁ ≳ 20; sign condition holds there.
