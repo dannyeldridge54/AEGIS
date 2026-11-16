@@ -476,3 +476,10 @@ Touches: serapis_e.
 3. Half-period character sums are invariant only under index-3 subgroups; the equal-brane total restores SL(2,Z) [derived] (referee's identity Σ_k E₂(φ_k) = −¾E).
 4. No frozen prediction changed [derived].
 Touches: serapis_e, band_e, wino_window.
+
+## D808: referee deferrals (accuracy track)
+1. Wino window 0.67–1.85 TeV [derived] (D784).
+2. m₃/₂ ∝ M₂ and m_gluino ∝ M₂ under anomaly mediation [literature] (D650).
+3. So m₃/₂ ≤ 1.1e6 × 1.85/2.9 = 7.0e5 GeV and gluino ≤ 21 × 1.85/2.9 = 13.4 TeV [derived].
+4. τ = i Σm_ν = 0.059–0.064 eV with m₁ free [derived] (D786).
+Touches: wino_window.
