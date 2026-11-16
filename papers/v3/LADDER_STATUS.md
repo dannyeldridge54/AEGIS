@@ -9,4 +9,5 @@
 - [x] R8 referee pass — referee/R8_REFEREE_REPORT.md (MAJOR REVISION; D636 + D585a)
 - [x] R8b/R8c fixes — two referee passes; all issues fixed or disclosed (D636–D639); soft masses closed conditionally (weight-1 matter, D639)
 - [x] R8d submission package — submission/ (arXiv tarball tested standalone, metadata, PRD cover letter, checklist); author line set; reproducibility appendix
+- [x] v3.1 PUBLISHED on Zenodo 2026-11-16 07:33 CT (Danny: "Publish"; logged in 07:26): https://doi.org/10.5281/zenodo.24281771 (record 24281771, new version of 24250733; 4 files, md5 verified: pdf 0b1ae532…, sheet cb1cd2e2…, repro 4f2a340c…, source ee10849b…)
 - [x] R9 PUBLISHED on Zenodo 2026-11-15 10:49 CT (Danny: "Publish"): https://doi.org/10.5281/zenodo.24250733 (record 24250733, 4 files)

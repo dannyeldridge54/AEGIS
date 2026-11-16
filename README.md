@@ -8,7 +8,7 @@ A modular-invariant inflation model in which the inflaton is the shape modulus �
 vacuum at a symmetric point (τ = i or the hexagonal point ρ). Frozen predictions: n_s = 0.970–0.975,
 r ≈ (4.6–5.7)×10⁻⁴, α_s ≈ −(8.5–10.6)×10⁻⁴, plus a parameter-free consistency relation (the Janus relation).
 
-- Paper: [papers/v3/serapis_v3.pdf](papers/v3/serapis_v3.pdf) · Zenodo v3: doi:10.5281/zenodo.24250733
+- Paper: [papers/v3/serapis_v3.pdf](papers/v3/serapis_v3.pdf) · Zenodo v3.1: doi:10.5281/zenodo.24281771 (v3: 10.5281/zenodo.24250733)
 - One-page prediction sheet: [papers/v3/prediction_sheet.md](papers/v3/prediction_sheet.md)
 - Research notes (D-notes): [theory/pending_docs/D72_D75_weak_spots.md](theory/pending_docs/D72_D75_weak_spots.md); index: docs/D_INDEX.md
 - Locked rules: [field_tests/rules/](field_tests/rules/) · results: [field_tests/results/](field_tests/results/)
