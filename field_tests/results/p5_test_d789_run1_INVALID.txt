@@ -1,0 +1,19 @@
+(qQ,qHu)=(0,1) N-charge q=1: X=0 Xb=1 mass XXb allowed=False; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(0,1) N-charge q=2: X=2 Xb=1 mass XXb allowed=True; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(0,2) N-charge q=1: X=1 Xb=2 mass XXb allowed=True; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(0,2) N-charge q=2: X=0 Xb=2 mass XXb allowed=False; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(1,1) N-charge q=1: X=1 Xb=0 mass XXb allowed=False; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(1,1) N-charge q=2: X=0 Xb=0 mass XXb allowed=True; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(1,2) N-charge q=1: X=2 Xb=1 mass XXb allowed=True; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(1,2) N-charge q=2: X=1 Xb=1 mass XXb allowed=False; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(2,1) N-charge q=1: X=2 Xb=2 mass XXb allowed=False; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(2,1) N-charge q=2: X=1 Xb=2 mass XXb allowed=True; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(2,2) N-charge q=1: X=0 Xb=0 mass XXb allowed=True; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+(qQ,qHu)=(2,2) N-charge q=2: X=2 Xb=0 mass XXb allowed=False; gauge-allowed X-terms=['X·U', 'Xb·Q·Hu', 'Xb·D·D']; Z3-allowed besides P5 terms=['Xb·D·D']
+consistent & no extra X couplings: []
+(3) matter parity: N odd, U odd, D odd -> N·U·X even needs X even; Xb·D·D even needs Xb even: X,Xb even (Higgs-like) -> consistent
+(4) y=0.02 M=4.3e+11: Gamma=3.42e+06 GeV vs H(T_R=3e8)=6.34e-01 GeV
+(4) y=0.02 M=1.0e+12: Gamma=7.96e+06 GeV vs H(T_R=3e8)=6.34e-01 GeV
+(4) y=0.2 M=4.3e+11: Gamma=3.42e+08 GeV vs H(T_R=3e8)=6.34e-01 GeV
+(4) y=0.2 M=1.0e+12: Gamma=7.96e+08 GeV vs H(T_R=3e8)=6.34e-01 GeV
+VERDICT: P5 FAILS

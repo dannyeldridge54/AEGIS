@@ -1,0 +1,2 @@
+# DEVIATIONS for PREREG_D789
+D1 (run 1's verdict line was wrong): the "Z₃-allowed besides P5 terms" list did not exclude the P5 coupling X̄·D·D itself, so every case looked as if it had an "extra" coupling and the decision returned FAIL. The per-case data in run 1 already show that X̄·D·D is the ONLY Z₃-allowed X-term (X·U and X̄·Q·H_u are always Z₃-forbidden). Fix: exclude 'Xb·D·D' from the extras list. No other change. Run 1 is kept as INVALID.
