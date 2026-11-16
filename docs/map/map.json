@@ -128,7 +128,8 @@
     "D787: computed",
     "D814: computed",
     "D817: computed"
-   ]
+   ],
+   "flag": "recheck (D875, lepto_rho)"
   },
   {
    "id": "n_sector_i",
@@ -504,7 +505,7 @@
     "E"
    ],
    "title": "Leptogenesis at ρ (non-thermal, DI estimate)",
-   "status": "computed",
+   "status": "assumed",
    "d": [
     "D731",
     "D762",
@@ -525,18 +526,18 @@
     "D792",
     "D796",
     "D810",
-    "D813"
+    "D813",
+    "D875"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D796: computed",
     "D810: computed",
-    "D813: computed"
-   ],
-   "flag": "recheck (D855, lepto_i)"
+    "D813: computed",
+    "D875: assumed"
+   ]
   },
   {
    "id": "gravitino_wino",
@@ -612,7 +613,8 @@
    "history": [
     "D748: frozen",
     "D821: frozen"
-   ]
+   ],
+   "flag": "recheck (D875, lepto_rho)"
   },
   {
    "id": "caps",

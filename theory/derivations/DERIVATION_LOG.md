@@ -981,4 +981,4 @@ Touches: none.
 2. Seven routes tabulated with outcomes [derived] (D725–D793).
 3. Tension: frozen band needs fast late decay (T₂ ≳ 1e5 GeV), the working AD route needs slow decay (T₂ ~ 1e2–1e3 GeV) [derived] (D781, D792).
 4. Targets for B.2: asymmetry produced at or after T₂ ≳ 1e5 GeV, or a smaller early asymmetry [derived].
-Touches: lepto_rho, band_rho.
+Touches: lepto_rho, band_e, n_sector_rho.
