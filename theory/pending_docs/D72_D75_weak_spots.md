@@ -7025,3 +7025,13 @@ Verdict:
 - The expected Run-2 sensitivity (770 GeV) already sits inside the window. A Run-2 + Run-3 combination (~3× luminosity) should cover most or all of it, and the HL-LHC reach exceeds it.
 - So SERAPIS-E (ρ, standard cuspy halo) is decisively testable by ~2030: a disappearing-track signal at 0.67–0.8 TeV, or exclusion of this corner. With a kpc-cored halo the gamma-ray side relaxes and the wino can sit up to 1.85 TeV, beyond the HL-LHC reach.
 Status: post-hoc; scored on future data only. prediction_sheet "falsify" line updated.
+
+## D737 — consolidation only (docs, index, tracker; no physics). Number claimed under the wrong title; no locked computation.
+
+## D738 (CENTRE; locked PREREG_D738; results/two_plus_one_i_d738.txt) — correction to D728: the consistent 2 ⊕ 1 sector at τ = i splits the light pair far more than D690 said; leptogenesis becomes marginal
+Computed (D725 method at i):
+- No degenerate states: singular values (0.025, 0.302, 0.327) / (0.186, 0.302, 0.488) / (0.302, 0.767, 1.068) for c = 0.3 / 1 / 3. Lightest-pair ΔM/M = 11.0 / 0.62 / 1.54, not D690's 0.08–0.5.
+- Shifts are quadratic: no cone. Diagonal couplings are 0 (sterile). Off-diagonal |P| = 0.12–1.12, not ∝ ΔM.
+- T_R ≈ 4–5e6 GeV when an off-diagonal channel is open (M_a + M_b < m). When only the diagonal lightest pair is open, the linear decay vanishes and T_R falls back to the D601 sfermion estimate (~1e2–1e3 GeV; not recomputed; the printed 1e-4 GeV is just the residual).
+- Y_B (D728 formula): PASS only for c = 1, M1/m = 0.33 (9.7e-11, just above 8.75e-11). All other cases fail by ×2 up to ~1e11.
+VERDICT (locked rule): INCONSISTENT with D728's "natural pass". With the doublet alone, ΔM = 0 exactly at i, so ε = 0. With the consistent 2⊕1, ΔM/M ≳ 0.6, so ε is hierarchical-size and Y_B is marginal. Leptogenesis from inflaton decay at τ = i is MARGINAL (one corner passes); AD (D646) stays the robust route at i. The ρ branch (D731) is unaffected. Paper's D728 sentence needs revision.

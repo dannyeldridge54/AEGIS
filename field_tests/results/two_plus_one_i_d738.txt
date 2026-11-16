@@ -1,0 +1,27 @@
+c=0.3: SV=[0.025065 0.301637 0.326702] residual 1.0e-15; lightest pair dM/M=11.0344; |P|=
+[[0.      0.21192 0.     ]
+ [0.21192 0.      0.33677]
+ [0.      0.33677 0.     ]]
+   delta=0.0001: shifts/delta=[-1.e-05  6.e-05  5.e-05]
+   delta=1e-05: shifts/delta=[-0.e+00  1.e-05  0.e+00]
+   M1/m=0.2: masses/m=[0.2   2.407 2.607], channels ['00'], T_R=1.76e-04 GeV, x=dM/Gamma_N=4.4e+06, eps=2.3e-07, Y_B=1.09e-22 fail
+   M1/m=0.33: masses/m=[0.33  3.971 4.301], channels ['00'], T_R=2.63e-04 GeV, x=dM/Gamma_N=2.7e+06, eps=3.7e-07, Y_B=2.70e-22 fail
+   M1/m=0.45: masses/m=[0.45  5.415 5.865], channels ['00'], T_R=2.73e-04 GeV, x=dM/Gamma_N=2.0e+06, eps=5.1e-07, Y_B=3.82e-22 fail
+c=1: SV=[0.186422 0.301637 0.48806 ] residual 1.2e-15; lightest pair dM/M=0.6180; |P|=
+[[0.      0.52456 0.     ]
+ [0.52456 0.      0.12383]
+ [0.      0.12383 0.     ]]
+   delta=0.0001: shifts/delta=[-2.2e-04  2.7e-04  5.0e-05]
+   delta=1e-05: shifts/delta=[-2.e-05  3.e-05  0.e+00]
+   M1/m=0.2: masses/m=[0.2   0.324 0.524], channels ['00', '01', '02', '11', '12'], T_R=4.26e+06 GeV, x=dM/Gamma_N=2.5e+05, eps=4.0e-06, Y_B=4.73e-11 fail
+   M1/m=0.33: masses/m=[0.33  0.534 0.864], channels ['00', '01'], T_R=5.28e+06 GeV, x=dM/Gamma_N=1.5e+05, eps=6.7e-06, Y_B=9.66e-11 PASS
+   M1/m=0.45: masses/m=[0.45  0.728 1.178], channels ['00'], T_R=5.15e-05 GeV, x=dM/Gamma_N=1.1e+05, eps=9.1e-06, Y_B=1.29e-21 fail
+c=3: SV=[0.301637 0.766576 1.068213] residual 4.0e-15; lightest pair dM/M=1.5414; |P|=
+[[0.      1.11875 0.44823]
+ [1.11875 0.      0.     ]
+ [0.44823 0.      0.     ]]
+   delta=0.0001: shifts/delta=[-0.00023  0.00034  0.00012]
+   delta=1e-05: shifts/delta=[-2.e-05  3.e-05  1.e-05]
+   M1/m=0.2: masses/m=[0.2   0.508 0.708], channels ['00', '01', '02'], T_R=5.13e+06 GeV, x=dM/Gamma_N=6.2e+05, eps=1.6e-06, Y_B=2.28e-11 fail
+   M1/m=0.33: masses/m=[0.33  0.839 1.169], channels ['00'], T_R=4.96e-05 GeV, x=dM/Gamma_N=3.7e+05, eps=2.7e-06, Y_B=3.64e-22 fail
+   M1/m=0.45: masses/m=[0.45  1.144 1.594], channels ['00'], T_R=5.15e-05 GeV, x=dM/Gamma_N=2.7e+05, eps=3.6e-06, Y_B=5.16e-22 fail
