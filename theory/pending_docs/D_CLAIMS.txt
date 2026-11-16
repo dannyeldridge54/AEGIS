@@ -144,3 +144,4 @@ D857  2026-11-16T16:27Z  M.1 moduli requirements table
 D858  2026-11-16T16:29Z  V.6 full referee fixes
 D859  2026-11-16T16:31Z  M.2 moduli map and escapes
 D860  2026-11-16T16:31Z  M.3 moduli feasibility scan
+D861  2026-11-16T16:33Z  M.4 M.5 benchmark and verdict
