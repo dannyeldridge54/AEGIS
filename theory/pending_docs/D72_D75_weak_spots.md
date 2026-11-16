@@ -7455,3 +7455,22 @@ VERDICT (locked rule): PASS. Together with D769's ζ_axion ≤ 1.0e-7, P3's axio
 This closes the question D769 left open. The paper's axion paragraph can now cover SERAPIS-E as well as τ = i (one sentence).
 Mirror question (forward, next tick): P3 at the β3 limit. Test or retire P2 or P3 next. Candidate: P2's falsifier "exotic O3′ planes needed for odd b₃ are inconsistent with the stuck-brane torsion model". Literature check on O3′ (exotic O3-plane) charges in T⁶/(Z₂×Z₂) with discrete torsion (hep-th/0602038, 2405.18813 App. A), plus the tadpole arithmetic with n_O3′ > 0.
 MAP: node=serapis_e status=computed touches=[plateau_origin] ripple=no
+
+## D766b (correction to D766's brane configuration)
+D766 placed 3/3/3 + 1 stuck D3s with n_flux = 12 and no exotic planes. But odd flux quanta (b₃ = −3) need exotic O3′ planes (2405.18813 App. A), so that configuration is not allowed as stated. The allowed configuration is in D771: 2/2/2 + 0 with 8 O3′. N_eff = 2 in both, so D766a's Im S·Im ρ = 375–488 is unchanged.
+MAP: none
+
+## D771 (FORWARD, i-side; Jl tick 10; locked PREREG_D771; results/o3prime_d771.txt) — P2 survives in one configuration: odd flux n_flux = 12, 8 exotic O3′ planes spread evenly, stuck D3s 2/2/2 + 0
+Literature (2405.18813 App. A, fetched): odd flux quanta need exotic O3′ planes, which enter as n_flux + 2n_D3 + n_O3′ = 32. The paper gives no O3′ charges, counts or compatibility with D3 branes. With only even quanta the non-divisibility condition is hard to meet under the bound.
+Computed (enumeration; O3′ placed evenly over the inflaton torus's 4 fixed points, n_O3′ ≡ 0 mod 4, so they add no U-asymmetry; mobile D3s count in N0):
+- n_flux = 12 with n_O3′ = 8: n_D3 = 6, the unique (N, N0) = (2, 0), N_eff = 2, Im S·Im ρ = 375–488 (half-unit 188–244). The ONLY allowed configuration.
+- n_flux = 12 with n_O3′ = 4, 12, 16 or 20: no placement with N_eff ≥ 1.
+- n_flux = 24 (all-even fluxes): no placement with N_eff ≥ 1 for any n_O3′. Even fluxes leave too little D3 room for a tilt.
+VERDICT (locked rule): P2 SURVIVES, restricted to a single configuration: a⁰ = 2, b₃ = −3 (n_flux = 12), 8 exotic O3′ planes (two per fixed point of the inflaton torus), stuck D3s 2/2/2 at the half-periods with none at the origin, N_eff = 2.
+Caveats (not checked):
+- whether exotic-plane consistency (Frey–Polchinski-type: the exotic types are set by the flux's parity through each fixed point, from memory) allows exactly this even 8-plane placement for these fluxes;
+- whether stuck D3s (hep-th/0602038) can sit at fixed points that carry an O3′;
+- uneven O3′ placements would add their own U-asymmetry to the tilt (not computed).
+These are P2's sharpest remaining falsifiers, recorded in POSTULATES.md.
+Mirror question (reverse, next tick): source the exotic-plane rules. Deep research on O3-plane types (O3⁻, Õ3⁻, O3⁺, Õ3⁺), their D3 charges, and how odd H₃/F₃ quanta fix which fixed points carry exotic planes (Frey–Polchinski hep-th/0201029; Hanany–Kol; Witten "baryons and branes"). Then test whether "two exotic planes per inflaton fixed point" is consistent with a⁰ = 2, b₃ = −3. If yes, P2 stays; if no, P2 is retired (freeing β3), and ρ-leptogenesis falls back to P1-type explicit CP.
+MAP: node=lepto_rho status=assumed touches=[] ripple=no

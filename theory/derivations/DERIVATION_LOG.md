@@ -113,3 +113,13 @@ Touches: serapis_e (axion OK during inflation), plateau_origin (P3's axion falsi
 6. ½ + iy and ½ + i/(4y) are equivalent under ST (on the line x = ½), so y = 0.288 ≅ 0.869 [derived].
 7. [derived] Consistency: D769's ζ bound and D770's basin result together clear P3's axion falsifier. No earlier result is contradicted.
 Touches: serapis_e (axion fully OK), plateau_origin (P3 falsifier 3 cleared).
+
+## D771 — P2 with exotic O3′ planes (forward side)
+1. n_flux + 2n_D3 + n_O3′ = 32 [literature] (2405.18813 eq 3.8).
+2. A CP-violating (non-divisible) flux needs n_flux ≥ 12, and odd quanta need n_O3′ > 0 [literature] (2405.18813 eq 4.31 and App. A).
+3. Tilt C ∝ N_eff = N − N0, with n_D3 = 3N + N0 (stuck stacks; mobile D3s roll to the origin) [literature] (D696, D694).
+4. Exotic planes spread evenly over the inflaton torus's fixed points add no U-asymmetry, so n_O3′ ≡ 0 (mod 4) [estimate] (assumption stated in the lock).
+5. Enumeration: the only solution with N_eff ≥ 1 is n_flux = 12, n_O3′ = 8, (N, N0) = (2, 0) [derived] (computed).
+6. Im S·Im ρ = (750–975)·N_eff/4 = 375–488 [derived] (D696 scaling).
+7. [derived] Consistency: D766's (3, 1) with no O3′ is not allowed with odd flux (D766b correction). D766a's Im S·Im ρ is unchanged because N_eff = 2 in both. The frozen bands are untouched.
+Touches: lepto_rho (P2 restricted).

@@ -26,3 +26,4 @@ Falsifiers:
 - isocurvature or f_NL from the light axion Re τ (forward check D769);
 - a warped-throat computation showing anti-D3 metrics depend on U only through e^{4A} warp factors with ln-type, not 1/E-type, dependence.
 - P3 update (D769–D770): falsifier 3 (the light axion) CLEARED. ζ_axion ≤ 1e-7, and every start settles at a ρ image. P3 stays open (its origin is still postulated).
+- P2 update (D771): one allowed configuration only: n_flux = 12 (a⁰ = 2, b₃ = −3), 8 exotic O3′ spread evenly (two per inflaton fixed point), stuck D3s 2/2/2 + 0, N_eff = 2. New falsifiers: exotic-plane placement rules for this flux; stuck D3s at O3′-carrying fixed points.

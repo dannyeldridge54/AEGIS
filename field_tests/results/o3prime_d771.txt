@@ -1,0 +1,10 @@
+n_flux=12 n_O3'=0 n_D3=10: (N,N0)=(3,1) N_eff=2 ImS*Imrho=375-488 (half-unit 188-244) <- odd flux, no O3' (not allowed per 2405.18813 App A)
+n_flux=12 n_O3'=4 n_D3=8: no N_eff>=1 placement
+n_flux=12 n_O3'=8 n_D3=6: (N,N0)=(2,0) N_eff=2 ImS*Imrho=375-488 (half-unit 188-244) <- odd flux, O3' present
+n_flux=12 n_O3'=12 n_D3=4: no N_eff>=1 placement
+n_flux=12 n_O3'=16 n_D3=2: no N_eff>=1 placement
+n_flux=12 n_O3'=20 n_D3=0: no N_eff>=1 placement
+n_flux=24 n_O3'=0 n_D3=4: no N_eff>=1 placement
+n_flux=24 n_O3'=4 n_D3=2: no N_eff>=1 placement
+n_flux=24 n_O3'=8 n_D3=0: no N_eff>=1 placement
+VERDICT: P2 SURVIVES (restricted)

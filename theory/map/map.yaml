@@ -321,13 +321,14 @@ nodes:
   - D764
   - D766
   - D767
+  - D771
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D764: assumed'
   - 'D766: assumed'
   - 'D767: assumed'
+  - 'D771: assumed'
 - id: gravitino_wino
   layer: 4
   branch:
