@@ -1550,3 +1550,8 @@ Touches: none.
 - [derived] (mpmath) 5D calibration against ADPQ: κ = 4C = (D−1)C exactly.
 - [estimate] 6D, κ = 5C: m_χ² = (5ζ(4)/2π³) g²C E(U,2)/A = 0.0873 g²C E(U,2)/A.
 - Result: explicit coefficient; open items unchanged.
+
+## D971: correction to D970's coefficient
+- [literature] hep-th/0502093: 6D brane-scalar mass from bulk gauge KK modes, positive, finite.
+- [derived] (Poisson resummation, numeric check) Lee = (2ζ(4)/π³) g²Q² E/A exactly (ratio 1.0000); D970's 5ζ(4)/2π³ was 1.25× too large.
+- Result: c₆ = 0.0698; κ = 4C in 5D and 6D; finiteness needs bulk-like breaking on the T².

@@ -9786,3 +9786,11 @@ Use: in D941's language A = m_χ² M² × (field normalisation) and the plateau 
 Verdict: Project H's mass term now has an explicit coefficient (calibrated in 5D, extended to 6D by a stated rule). Remaining open items unchanged (doublet mixing, string-level ND mass, stabilisation).
 LESSONS: calibrate an image-sum normalisation on a published lower-dimensional result before using it in a new dimension.
 MAP: none
+
+## D971 (correction to D970): the 6D coefficient is 2ζ(4)/π³ = 0.0698, not 5ζ(4)/2π³: a published 6D computation (Lee, T²/Z₂) fixes κ = 4C in six dimensions too; D970's (D−1) rule was wrong by 5/4
+[literature] H. M. Lee, "Softness of supersymmetry breaking on the orbifold T²/Z₂" (hep-th/0502093, 2005): brane-scalar one-loop mass from 6D bulk gauge KK modes, m_φ²(0) = [g₄²Q²/(2π³R₅²)] ∫₀¹ dx (J₂[0,0,0] − J₂[ω₅,ω₆,0]), J_j = Σ_{n₅,n₆} ∫dt t^{−(j−ε/2)} exp(−πt[a₅(n₅+ω₅)² + a₆(n₆+ω₆)²]), a₅ = x, a₆ = x(R₅/R₆)²; positive; finite ("both divergences … are cancelled"); its one-circle limit is g₄²Q²/(4π⁴R₆²)Σ_k(1 − cos 2πkΔω₆)/k³, the ADPQ form. Lee also notes that codimension-two (point-localised) SUSY-breaking masses give a log-divergent brane-scalar mass, while line/bulk (Scherk–Schwarz-equivalent) breaking gives a finite one.
+[derived] (Poisson resummation of J₂[0,0,0], checked numerically on a rectangular torus R₆/R₅ = 1.7) Lee's bosonic winding part = g²Q² A Σ′|w|⁻⁴/π³ = (2ζ(4)/π³) g²Q² E(U,2)/A: per g²Q², 0.004074236141 (Lee) vs 0.004074236141 (κ = 4 form), ratio 1.0000; D970's (κ = 5) value 0.005092795 is 1.25× too large.
+Correction: m_χ² = (2ζ(4)/π³) g²C E(U,2)/A = 0.06981 g²C E(U,2)/A (Q² ↔ C(R)). The calibrated κ = 4C holds in both 5D and 6D; the "(D−1)" interpretation in D970 is withdrawn. No conclusion of D970 changes except the number.
+Finiteness condition added to Project H's list: the SUSY breaking felt by the gauge tower must be bulk/line-like on the T² (finite), not localised at points of the T² (log divergent). In the ADS model the breaking lives on the whole anti-D5 worldvolume, which contains the T²: bulk-like [estimate].
+LESSONS: an extrapolation rule fitted on one dimension (here D−1) must be checked against a published result in the target dimension; the factor was off by 25%.
+MAP: none
