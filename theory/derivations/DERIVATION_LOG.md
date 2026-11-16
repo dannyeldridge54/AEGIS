@@ -1276,3 +1276,9 @@ Touches: none.
 3. D760's pattern consistent [literature] (1009.3931, hep-th/0508043).
 4. No published sentence affected [derived].
 Touches: none.
+
+## D918: audit M.4, audit closed
+1. O3 types and flux parity [literature] (hep-th/0201029).
+2. D752 conversion unused in the paper; stays an estimate [derived].
+3. Audit summary: 1 published error (D657a), 1 lead weakened, 5 supported, 1 estimate [derived].
+Touches: none.

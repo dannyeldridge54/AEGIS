@@ -9396,3 +9396,9 @@ MAP: none
 3. D760's inference (Eisenstein-type functions in K, log η in holomorphic couplings) is CONSISTENT with this pattern: one-loop K has E₂-type (BHK, IIB) or log(T + T̄) (GS, heterotic) dependence; η appears in f/thresholds [literature: 1009.3931; hep-th/0508043].
 4. Published text: the v3.2/v3.3 drafts call L "the universal N = 2 one-loop threshold" (correct, DKL) and treat its entry into the uplift as a hypothesis; no sentence relies on D754's K-form. No fix needed.
 MAP: none
+
+## D918 (audit M.4): last memory claims checked; audit M closed
+1. D771 (exotic O3 types set by flux parity at the fixed points): CONFIRMED [literature] (Frey–Polchinski, hep-th/0201029): four O3 kinds distinguished by discrete NS-NS and R-R flux; "if the NS-NS flux through the cycle is even (odd) then an even (odd) number of the fixed points must have discrete NS-NS flux" (likewise R-R); D3 charge −1/4 without discrete flux, +1/4 with. The draft's footnote ("or with exotic O3 planes") is consistent.
+2. D752 (Ω_GW,flat and the ΔN_eff → Ω_GW conversion): not checked against a source this tick; the claim appears nowhere in the v3.2/v3.3 text (grep: no ΔN_eff or kination sentence) and D752 already tested it against a ×3 change. Relabelled [estimate]; no action.
+Audit M summary (D915–D918): eight "from memory" claims reviewed. One was wrong and had reached the published v3.2 text: D657 (non-R symmetries; corrected as D657a, fixed in the v3.3 draft). One structural lead was weakened (D754, via D917). Five were confirmed or supported (D780 gauge-symmetry premise; D914 flux-norm structure; D749 CMB-S4 cancellation; D760 pattern; D771 O-plane types). One stays an estimate, unused in the paper (D752).
+MAP: none
