@@ -1,7 +1,7 @@
 #!/bin/bash
 # usage: bash tools/calcq/runner.sh   (from repo root; exits after IDLE_MAX seconds with nothing pending)
 cd "$(git rev-parse --show-toplevel)"
-Q=tools/calcq/queue.txt; S=tools/calcq/status.txt; mkdir -p tools/calcq/logs; touch $Q $S
+Q=${QUEUE:-tools/calcq/queue.txt}; S=${STATUS:-tools/calcq/status.txt}; mkdir -p tools/calcq/logs; touch $Q $S
 MAXJOBS=${MAXJOBS:-2}; IDLE_MAX=${IDLE_MAX:-5400}; idle=0
 while true; do
   next=""
