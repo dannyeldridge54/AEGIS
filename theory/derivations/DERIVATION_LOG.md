@@ -1429,3 +1429,8 @@ Touches: none.
 - [derived] (sympy) general A = aÊ, B = b gives b·P3(λÊ; C/λ), λ = a/b exactly.
 - [derived] λ ↔ field shift on the plateau; enters only via the vacuum mass.
 - Result: H4 passes; P3 derived up to one tuned offset (H3) and model-building assumptions.
+
+## D947: H3 offset = CC subtraction
+- [derived] (sympy) V_min(E) − V_min(E_ρ) = N·P3(λ′Ê), λ′ = λ/(λE_ρ+1), exact.
+- [derived] ramp leftover absorbed into C; residual O(1e-6).
+- Result: Project H closes positive analytically; P3 derived up to model-building assumptions.
