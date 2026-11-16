@@ -1046,3 +1046,11 @@ Touches: n_sector_rho, lepto_rho, mnu.
 2. Theory Map ρ heavy-ν box updated [derived].
 3. Next deep project: origin of τ = i's ε [derived] (D826).
 Touches: none.
+
+## D885: E.1 ε reverse path
+1. Required term: V_up·(1 + εI₁), weight 0, log of |j − 1728|, double zero at i [derived] (D689a, D826).
+2. Nine routes tabulated with their failures [derived] (D576–D834).
+3. |j − 1728|^{2q} ≈ 1 + 2q ln|j − 1728| reproduces εI₁ with q ~ 1e-5, linear at y* [derived].
+4. A throat cutoff Λ₀(U) ∝ (j − 1728)^{q′} gives it via V_up ∝ |Λ₀|⁴ [estimate] (D837).
+5. Small q′ fits a one-loop U-dependence of the throat's UV data [estimate].
+Touches: eps_tilt, band_i.

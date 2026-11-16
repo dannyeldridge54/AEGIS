@@ -23,14 +23,14 @@
     "D754",
     "D755",
     "D823",
-    "D826"
+    "D826",
+    "D885"
    ],
    "history": [
-    "D755: estimate",
     "D823: estimate",
-    "D826: estimate"
-   ],
-   "flag": "recheck (D873, serapis_e)"
+    "D826: estimate",
+    "D885: estimate"
+   ]
   },
   {
    "id": "plateau_origin",
@@ -597,7 +597,7 @@
     "D841: computed",
     "D861: computed"
    ],
-   "flag": "recheck (D867, plateau_origin)"
+   "flag": "recheck (D885, eps_tilt)"
   },
   {
    "id": "band_e",

@@ -9087,3 +9087,26 @@ MAP: node=n_sector_rho status=computed touches=[lepto_rho,mnu] ripple=no
 Draft: the ρ lepton-sector caveat now adds the E₄-protected fit (3.5% of random draws, m_ν₁ ≈ 1.7e-8 eV, ε ≈ 2e-3; post hoc). Rebuilt: 17 pages, clean. Theory Map board: the ρ heavy-ν box turned green with refs D882, D883. Model card copied to Danny's PC after the ladder update.
 Next deep project (autonomy rule, top open item): the origin of τ = i's tilt ε (oldest open item; D826 found every derived source 1e11–1e12 short). Plan E.1–E.4 in ACCURACY_QUEUE.
 MAP: none
+
+## D885 (DEEP, E.1): reverse path for τ = i's ε; the needed term is a tiny POWER of |j − 1728| in the uplift, which a warped-throat cutoff can carry
+Derivation from the notes.
+Required [derived] (D795, D815, D826, D689a): a term εI₁ in V/V0 with ε ≈ 1.40–1.45e-4 under the corrected reheating, where I₁ = (1/4π)ln(…|j − 1728|…) up to the normalisation of D689a (so ε enters a logarithm as b = 4πε ≈ 1.8e-3); it gives the vacuum mass m²/H² ≈ 2.0e-3 at i and the tilt. In K/W language it is an uplift factor V_up → V_up·(1 + ε I₁), i.e. weight-0, modular-invariant, logarithmic in |j − 1728|, vanishing quadratically at i (j − 1728 has a double zero there, D685/D689a).
+Routes tried (factor missed by):
+| Route | Note | Outcome |
+|---|---|---|
+| N = 2 thresholds | D576, D608 | right growth, but a saddle at i |
+| Coleman–Weinberg loops of our own states | D606, D607 | cannot produce ln|j − 1728|; heavy-state loops far too small |
+| Threshold-dependent uplift e^{ξ′L} | D616–D618 | exponential at the cusp; linearisation fails |
+| Harvey–Moore ln|J(T) − J(U)| at T = U = i | paper | species term too weak to keep the vacuum |
+| Covariant F-term | D684, D685, D826 | 1e11–1e12 too small |
+| BHK remnant / multiplicative factor | D802, D811, D823 | stabilising but no mass for a zero of V; BHK tilt variant post hoc |
+| Holomorphic h(τ) with a double zero | D685 | e^{2πy} growth destroys the plateau |
+| Species-scale one-loop | D685 | ∝ (m₃/₂/H)², as small as the F-term |
+| Anti-D3 one-loop term | D834, D834a | saddle at i; not the mass source |
+New reverse-path observation [derived + estimate]:
+1. A factor |j(U) − 1728|^{2q} in the uplift equals exp(2q ln|j − 1728|) ≈ 1 + 2q ln|j − 1728| while 2q·ln|j − 1728| ≪ 1, which is exactly the εI₁ form with q ≈ ε/(2·normalisation) ~ 1e-5 [derived from the expansion]. It is modular-invariant (weight 0), has the needed double zero at i, and at horizon exit (y* ≈ 23, ln|j| ≈ 2πy* ≈ 145) 2q ln|j| ≈ 3e-3: still in the linear regime, so the plateau survives [estimate].
+2. Such a factor arises naturally if the warped-throat cutoff depends on U as Λ₀(U) ∝ (j(U) − 1728)^{q′}: V_up ∝ |Λ₀|⁴ (D837), so 2q = 4q′. A small exponent q′ ~ 1e-5 is what a one-loop (threshold) dependence of the throat's UV data on U would give, since a one-loop log in the exponent of the warp factor exponentiates to a small power [estimate; this is D686's "logarithmic correction to the warp factor", now with a mechanism].
+3. This is compatible with D838 (no exponential approach needed here: the τ = i plateau's own shape is set elsewhere; the factor only supplies the small tilt and mass).
+Verdict: the reverse path points to one concrete target: a one-loop U-dependence of the warped throat's UV cutoff, giving V_up ∝ |j − 1728|^{~1e-5}. It needs the throat (CY resolution) and is not computed. All in-torus routes stay closed.
+Next (E.2): literature on one-loop/threshold dependence of warped-throat data (the conifold period's normalisation, or the warp factor) on bulk complex-structure moduli.
+MAP: node=eps_tilt status=estimate touches=[band_i] ripple=no
