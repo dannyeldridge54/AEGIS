@@ -236,3 +236,4 @@ D949  2026-11-16T21:22Z  v3.3 draft: Project H
 D950  2026-11-16T21:30Z  Project H needs non-SUSY tower
 D951  2026-11-16T21:31Z  Project H: brane SUSY breaking class
 D952  2026-11-16T21:34Z  Project H scale window
+D953  2026-11-16T21:47Z  independent reproduction of SERAPIS-E
