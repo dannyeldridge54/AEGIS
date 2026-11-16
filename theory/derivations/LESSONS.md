@@ -193,3 +193,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D943: check the sign of dV/dφ before designing initial conditions.
 - D944: corrected locked design passed; the D943 failure was setup.
 - D945: image-sum weight = (D−2)/2 maps the plateau exponent to a dimension.
+- D946: check degeneracy with fitted parameters before calling a constant tuned.

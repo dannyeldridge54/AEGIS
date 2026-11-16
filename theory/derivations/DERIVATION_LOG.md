@@ -1424,3 +1424,8 @@ Touches: none.
 - [derived] D = 6 ⇒ s = 2 ⇒ p = 2√2; positive for boson loops.
 - [estimate] offset at ρ is a one-number tuning.
 - Result: H2 analytic pass; H3 tuning recorded; H4 open.
+
+## D946: H4 ratio is free
+- [derived] (sympy) general A = aÊ, B = b gives b·P3(λÊ; C/λ), λ = a/b exactly.
+- [derived] λ ↔ field shift on the plateau; enters only via the vacuum mass.
+- Result: H4 passes; P3 derived up to one tuned offset (H3) and model-building assumptions.
