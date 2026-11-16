@@ -492,3 +492,12 @@ Touches: wino_window.
 5. Dilution by T₂/T_R [estimate]; the margin of ≥40× covers it [derived].
 6. Wino window unchanged; D732's 1e13 restriction is moot after D780–D783 [derived].
 Touches: gravitino_wino, wino_window.
+
+## D810: orbit-charge coefficient (accuracy track)
+1. The charge read-out must be centred on the settling image [derived] (lesson D790).
+2. The Möbius-invariant normalisation χ = √2|w| holds for any centre [derived].
+3. |η|/Δx = 1.74–2.05 [derived] (computed).
+4. CP mirror: η(1 − x₀) = −η(x₀) [derived] (computed exactly).
+5. The sign alternates with the offset (winding), so the sign of Y_B is an initial-condition choice [derived].
+6. D796's 9Δx estimate is corrected to ≈2Δx [derived].
+Touches: lepto_rho, serapis_e.

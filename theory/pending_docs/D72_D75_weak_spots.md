@@ -8106,3 +8106,29 @@ Label caveats [estimate]:
 - one wino per gravitino.
 None can move Ω_nth by the ~40× needed to matter.
 MAP: node=gravitino_wino status=computed touches=[wino_window] ripple=no
+
+## D810 (ACCURACY TRACK, queue item 4; Jl tick 49, manual "Jl"; locked PREREG_D810; results/orbit_charge_d810.txt): the orbit-charge coefficient is |η|/Δx = 1.7–2.1. D790's ~2 is confirmed; D796's ~9 estimate was 4.5× too high
+Computed (D790 physics imported unchanged; read-out centred on the image of ρ that the field actually settles at; 14.8 min wall time on 2 cores):
+
+| x₀ (Δx) | centre | η | |η|/Δx |
+|---|---|---|---|
+| 0.48 (0.02) | (½, 0.2887) | −0.0348 | 1.74 |
+| 0.45 (0.05) | (½, 0.8660) | −0.1026 | 2.05 |
+| 0.40 (0.10) | (½, 0.8660) | +0.1989 | 1.99 |
+| 0.55 (mirror of 0.45) | (½, 0.8660) | +0.1026 | 2.05 |
+
+Locked expectations:
+- (i) the mirror check holds exactly: η(0.55) = −η(0.45) to 4 digits (CP: x → 1 − x flips the charge) ✓;
+- (ii) |η|/Δx between 1 and 10 ✓ (1.74–2.05);
+- (iii) the sign is non-monotonic ✓ (0.45 → −, 0.40 → +).
+k = median |η|/Δx = 2.0 (range 1.7–2.1).
+D790's two valid read-outs are reproduced exactly (−0.1026, +0.1989). The x₀ = 0.48 run settles at the image (½, 0.2887); with the correct centre it gives 1.74, replacing D790's invalid 0.49 value.
+Correction (D796a, below): D796 step 6's estimate "η ~ 9Δx × O(1)" overstated the coefficient by about 4.5×. The O(1) factor it left open is ≈ 0.22. D796's qualitative conclusions (cubic-torque charge, η ∝ Δx) stand.
+Consequence: D791/D792 used |η| = 2Δx with Δx ≥ 0.15, so η ≥ 0.3, unchanged. The sign alternates with the offset, so the asymmetry's sign is set by the initial condition. Either sign gives the same |Y_B| after dilution; the sign of Y_B must be chosen (part of the initial-condition choice already stated).
+Paper: the self-diluted sentence now says "|η| = (1.7–2.1)|Δx| for offsets 0.02–0.10, with a sign that alternates as the orbit winds (D810)", replacing "extrapolated from two read-outs".
+REF: cold re-read of the changed sentence against this table. It matches. The build is clean.
+MAP: node=lepto_rho status=computed touches=[serapis_e] ripple=no
+
+## D796a (CORRECTION to D796 step 6)
+"η ~ 9Δx × O(1)" → computed |η| = (1.7–2.1)Δx (D810). The estimate's prefactor 2.9·3|z₀| assumed |z₀| ~ 1 at the start of oscillations. The actual coefficient folds in the orbit geometry. The D796 Fourier results (c₃ = 1.47r, isotropy) are unaffected.
+MAP: none

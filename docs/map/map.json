@@ -225,7 +225,8 @@
     "D805: computed",
     "D806: literature",
     "D807: corrected"
-   ]
+   ],
+   "flag": "recheck (D810, lepto_rho)"
   },
   {
    "id": "janus",
@@ -484,16 +485,17 @@
     "D790",
     "D791",
     "D792",
-    "D796"
+    "D796",
+    "D810"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D791: assumed",
     "D792: computed",
-    "D796: computed"
+    "D796: computed",
+    "D810: computed"
    ]
   },
   {

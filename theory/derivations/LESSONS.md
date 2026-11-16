@@ -57,3 +57,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D807: an independent cold read found 7 major issues in text I had self-checked, including one claim (abstract baryogenesis) that contradicted the paper's own Limitations. Self-review misses what one wrote; keep the A0 referee gate.
 - 2026-11-16 D808: when one window moves (wino), propagate the linear scalings to every window tied to it (m₃/₂, gluino, table falsifiers) in the same edit. The referee caught the stale m₃/₂ only because it was in the same sentence.
 - 2026-11-16 D809: a fitted formula calibrated at one point can look exact there (K4 ratio 1.00) and drift elsewhere (10% at 1e6). Run K4 at the operating point, not just at the calibration point.
+- 2026-11-16 D810: an order-of-magnitude estimate that 'agrees within 5×' does not agree. Compute it when a short locked run can. Here 15 min settled a 4.5× discrepancy and fixed a paper sentence.

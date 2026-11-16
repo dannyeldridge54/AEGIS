@@ -169,6 +169,7 @@ nodes:
   - 'D805: computed'
   - 'D806: literature'
   - 'D807: corrected'
+  flag: recheck (D810, lepto_rho)
 - id: janus
   layer: 2
   branch:
@@ -361,13 +362,14 @@ nodes:
   - D791
   - D792
   - D796
+  - D810
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D791: assumed'
   - 'D792: computed'
   - 'D796: computed'
+  - 'D810: computed'
 - id: gravitino_wino
   layer: 4
   branch:
