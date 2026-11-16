@@ -73,3 +73,22 @@ SERAPIS works because every part has one job, hard checks it must pass, and bala
 ### Tick order
 L1 → L2 → (L3 → L4 if a wall) → L5 → L6 → L7 → checks K1–K8 → balances β1–β5 → L8 → L9 → L10.
 The mechanical checks run with `python tools/loop/jl_check.py` (K1, K2, K7, β3, β4).
+
+## Accuracy track (Danny, 16 Nov 2026, 06:22 CT: "get our theory as accurate as possible")
+Goal: every number correct, every estimate upgraded to a computation or retired, every frozen prediction with an error budget. The frozen predictions themselves NEVER change. Accuracy means testing them as they are.
+The Jl functions L1–L10 and checks K1–K8 still apply. Each tick now takes its target from the queue theory/derivations/ACCURACY_QUEUE.md (top open item; forward/reverse alternation kept by taking the mirror question from the item). New research topics come in only when the queue is empty.
+
+### New steps (inserted into the tick order)
+- A0 Referee gate (before L9 "confirmed" for any PAPER text): every batch of paper edits gets an independent read. Either a background referee agent (only when Danny approves the cost), or a cold re-read of the changed paragraphs next tick against their source D-notes, with a "REF:" line in the D-note. No Zenodo upload without a referee pass on the current text.
+- A1 Estimate → computation: an [estimate] label on a quantity that a short locked script could compute is an open queue item. It is closed only by a computation (lock first) or an explicit "not computable because …" line.
+- A2 Exactness: any n_s/r/α_s quoted in the paper must come from exact Mukhanov–Sasaki or the frozen pipeline, not slow-roll. Slow-roll is allowed only for scans, labelled as such.
+- A3 Error budget: each frozen band gets a theory-uncertainty breakdown (N* from reheating, slow-roll vs exact, parameter window, convention). Written as a table in the prediction sheet; the bands themselves are unchanged.
+- A4 Prune: a candidate or post-hoc model with no source and no unique prediction is RETIRED (status note, removed from the paper's main text if present), not carried.
+- A5 Convention guard: every computation states the Kähler convention (family: K = −ln, φ = ln y/√2) and imports the potential from the family code, never retyped from a prompt (lessons D798a, D800).
+
+### New checks
+- K9 Referee: a tick that edits the paper must name the referee pass (agent report or "REF:" line), or the edit is marked "unreviewed" in the CHANGELOG.
+- K10 Queue: the tick names the ACCURACY_QUEUE item it worked on and its new status.
+
+### Deep project (separate approval; not run by the loop)
+- P3 derivation: a one-loop anti-D3 annulus on T⁶/(Z₂×Z₂) to get the goldstino metric's τ-dependence. Long and expensive. Run only when Danny says so.
