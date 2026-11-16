@@ -169,3 +169,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D917: η (holomorphic thresholds) lives in the gauge kinetic function; log(T + T̄) or Eisenstein-type terms live in K; keep the two apart when importing loop corrections.
 - 2026-11-16 D918: one in eight memory claims was wrong and had reached print; run this audit before every paper version.
 - 2026-11-16 D919: novelty claims expire; re-check them right before writing a paper that rests on them.
+- 2026-11-16 D920: on Zenodo set keywords through the form, not the API (the API drops free-text subjects); verify every field with an API read before publishing.

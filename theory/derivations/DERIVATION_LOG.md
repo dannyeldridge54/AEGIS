@@ -1288,3 +1288,8 @@ Touches: none.
 2. α_s given in model parameters, not eliminated [literature] (2602.01327).
 3. Relation still not found; cite 2608.12819 as closest [derived].
 Touches: none.
+
+## D920: paper 1 published
+1. Letter compiled from locked notes only [derived] (D640, D666, D669, D670, D671, D919).
+2. Published with full metadata; md5 verified [derived].
+Touches: none.

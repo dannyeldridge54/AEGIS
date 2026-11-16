@@ -9410,3 +9410,8 @@ Findings [literature]:
 - 2602.01327: separate expressions for r, n_s, α_s in terms of (α, φ*), not eliminated; running reported negligible.
 Verdict: the parameter-free n_s–r–α_s relation for a plateau plus ramp (D635/D640/D669) and its β_s companion (D666) are still not found [literature, 2 new sources + earlier D668 check; not exhaustive]. Cite 2608.12819 as the closest current work.
 MAP: none
+
+## D920: paper 1 published: "A Parameter-Free Consistency Relation for Plateau Inflation with an Uplift Ramp" (Danny: "make them and post them", 13:53 CT)
+Zenodo DOI 10.5281/zenodo.24290583 (new concept record 24290582), published 16 Nov 2026 ~14:00 CT. Files (md5 verified on Zenodo): Eldridge_consistency_relation_2026.pdf (3 pp, d9c01a7f…), Eldridge_consistency_relation_2026.tex (4599acf4…). Source papers/letter_janus/letter.tex. Record fully filled per Danny's standing request: preprint, CC BY 4.0, English, version v1, 12 keywords, abstract + status paragraph, methods and notes descriptions, 8 references, related work → SERAPIS v3.2 (references), copyright line, code repository (github.com/dannyeldridge54/aegis, Python), Zenodo-assigned DOI. Email on the author line (Danny, 13:53). Content: D669 relation (algebra checked symbolically in this session), D640/D666/D669/D671 accuracy, D670/D705 test reach, D919 novelty; status labels derived / verified numerically / not yet tested.
+Lesson for the next records: Zenodo drops free-text keywords sent through the API; add them in the form (type + Enter), and re-find the Save button reference after the page re-renders.
+MAP: none
