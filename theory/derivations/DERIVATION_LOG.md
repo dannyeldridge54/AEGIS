@@ -1184,3 +1184,10 @@ Touches: mnu.
 3. Minimal texture m₁ ≈ 5e-5–4e-3 eV, far above the window [derived] (D786, D742).
 4. AD at i conditional; inflaton-decay leptogenesis remains τ = i's route [derived] (D745).
 Touches: lepto_i, mnu.
+
+## D904: W4.1 lepton number and instanton actions
+1. Anomalous U(1) may survive as an exact perturbative global symmetry [literature] (hep-ph/9908305).
+2. E(-1) action S = 2π/g_s [literature] (standard D-instanton action).
+3. g_s = 0.23–0.5 gives S = 12.6–27.1 [derived] (arithmetic).
+4. Meets S ≳ 13–19 for g_s ≲ 0.33–0.48 [derived] (D897, D903).
+Touches: lepto_rho, lepto_i, mnu.

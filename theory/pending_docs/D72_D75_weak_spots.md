@@ -9270,3 +9270,12 @@ Derivation from the notes plus arithmetic: theory/modular/weinberg_i_d903.py →
 3. [derived] (D786, D742): the minimal 2⊕1 τ = i texture gives m₁ ≈ 5e-5–4e-3 eV, five orders above the AD window; AD at i would need an extra structure making the lightest seesaw direction ≲ 3e-9 eV (at ρ that role is played by the E₄ zero).
 Verdict: AD at τ = i is a CONDITIONAL alternative (two conditions: instanton-only Weinberg term; a near-massless seesaw direction not in the minimal texture). τ = i's baryogenesis remains inflaton-decay leptogenesis (D745; conditional on P1′ two-cycle CP, D854). The draft's "requires a symmetry that forbids (LH_u)²/M_P" is correct; one sentence added stating the two conditions (D903). Frozen predictions unchanged: Σm_ν NO floor is reached for m₁ ≲ 1e-4 eV either way (D786).
 MAP: node=lepto_i status=estimate touches=[mnu] ripple=no
+
+## D904 (DEEP, W4.1): a D-instanton with our string coupling has action 2π/g_s ≈ 13–27, enough to meet the Weinberg bound on both branches; whether it violates lepton number is construction-dependent
+Searches 2; fetched hep-ph/9908305 (abstract) and 2009.11813.
+Findings [literature]:
+1. hep-ph/9908305: in Type I/IIB orientifold models an anomalous generation-independent U(1), once broken by the Green–Schwarz mechanism, "may remain as an exact perturbative global symmetry", forbidding B- and L-violating operators up to dimension 6 perturbatively. (The abstract does not say whether that U(1) is lepton number in our quiver.)
+2. 2009.11813: D-instanton neutrino-mass studies treat the action as a free O(0.1–10) parameter per instanton; a footnote notes the instanton Weinberg operator is model-dependent and is not quantified.
+Assessment [derived] (arithmetic: theory/derivations/einst_d904.txt): an E(-1) instanton has S = 2π/g_s [literature-standard formula]. With our moduli benchmarks g_s = 0.23–0.5 (D861, D867): S = 12.6–27.1. The Weinberg bound is a LOWER bound on S (S ≳ 13–19 at ρ, 13–17 at i; D897, D903), met for g_s ≲ 0.33–0.48 and comfortably at the D861 benchmark g_s = 0.232 (S = 27).
+Verdict: W4 CLOSED at the estimate level: if lepton number is a perturbative anomalous-U(1) symmetry of the D3-brane quiver and the Weinberg term arises only from E(-1) instantons, our g_s range meets the bound. Not derived: the quiver's U(1) charges and the instanton zero-mode structure. The ρ and τ = i AD chains keep this as a stated condition. Draft: one clause added to the Weinberg sentence.
+MAP: node=lepto_rho status=estimate touches=[lepto_i,mnu] ripple=no
