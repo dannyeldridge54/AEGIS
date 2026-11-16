@@ -79,3 +79,4 @@ Why: today's results each demand values of the same moduli (g_s, Im ρ₁, Im ρ
 - M.4 [done D861] If allowed: one benchmark point (all moduli values) with every derived quantity recomputed from it; if not: which constraint must give, and what that does to the frozen predictions (they never change; the variant would).
 - M.5 [done D861: τ = i conditional, R2 not met] Verdict, status/postulate updates, v3.2 note.
 - V.6 [done D858] Full independent referee; ten majors fixed, twelve minors deferred.
+- V.7 [done] D861 folded into the draft τ = i bullet; rebuilt clean.
