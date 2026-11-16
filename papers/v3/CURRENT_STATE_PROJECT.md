@@ -1,4 +1,4 @@
-# AEGIS: current state (16 Nov 2026, 04:05 CT). Read before working.
+# AEGIS: current state (16 Nov 2026, 12:40 CT). Read before working.
 
 ## Active line: SERAPIS v3 / v3.1 (modular inflation)
 - Paper: v3.1 PUBLISHED 16 Nov 2026, DOI 10.5281/zenodo.24281771 (v3: 24250733). Source papers/v3/serapis_v3.tex.
@@ -58,3 +58,4 @@ Source of truth v5.3 on Zenodo (DOI 10.5281/zenodo.24226521). TWIST-I: N* 56.7, 
 - 16 Nov late morning (D843–D861): CP is a string symmetry, so P1 became P1′ (Kähler-axion racetrack); P1′ is needed only at τ = i (two cycle classes). Moduli scan: P1′ and an anti-D3 uplift cannot coexist with the BHK tilt; without the anti-D3 only string-size small tori work. τ = i stays conditional. v3.2 draft refereed in full (10 major fixes), still held; frozen predictions unchanged.
 - 16 Nov late (D862–D874): BHK modulus mapping corrected (D866); on-torus anti-D3 incompatible with SERAPIS-E's tilt (D867), P3 restated as uplift-sector postulate (throat or T-brane, D868–D870); all v3.2 referee items handled (D871–D872). Day summary: papers/v3/DAY_SUMMARY_2026-11-16.md. Next deep project: ρ baryogenesis inside the frozen band.
 - 16 Nov midday (D875–D881): ρ baryogenesis: inflaton-based routes fail or need tuning (D877–D878), but LH_u Affleck–Dine is Z₃-allowed at ρ and gives the asymmetry inside the frozen band for m_ν₁ ≈ 4e-9–7e-8 eV (D880, post hoc); v3.2 draft updated (D881). Open: a realistic ρ lepton sector with that m_ν₁.
+- 16 Nov afternoon (D882–D902): ρ lepton sector built (D882–D883); ρ AD window corrected to m_ν₁ 2e-11–9e-10 eV (D880a/D895), lift ε ≈ 1.6e-4 (D896, post hoc residual-Z₃ breaking, D888a–D890); τ = i ε-origin project closed negative (D885–D887); Weinberg suppression needed on both branches (D891–D897); referee R2/R3 closed, τ = i AD window 1.6e-10–2.7e-9 eV at corrected T_R (D900); data check D902 (Σm_ν zero-prior bound 0.052 eV below the NO floor; physical prior 0.092). v3.2 draft 17 pp, held. Frozen predictions unchanged.
