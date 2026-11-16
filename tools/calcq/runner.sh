@@ -11,7 +11,7 @@ while true; do
   done < $Q
   if [ -z "$next" ]; then sleep 30; idle=$((idle+30)); [ $idle -ge $IDLE_MAX ] && exit 0; continue; fi
   idle=0
-  running=$(pgrep -c -f "python3 .*(theory|tools)/" || true)
+  running=$(pgrep -c -f "^python3 (theory|tools)/" || true)
   if [ "${running:-0}" -ge "$MAXJOBS" ]; then sleep 20; continue; fi
   id=${next%%|*}; cmd=${next#*|}
   echo "$id|running|$(date -u +%H:%MZ)||" >> $S
