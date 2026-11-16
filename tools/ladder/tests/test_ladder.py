@@ -29,3 +29,9 @@ def test_old_notes_ignored_and_unknown_node_rejected():
 
 def test_downstream_transitive():
     assert L.downstream(fresh(), ["a"]) == {"b", "c"}
+
+def test_ripple_no_flags_only_touches():
+    m = fresh()
+    L.update(m, "## D742\nMAP: node=a status=computed touches=[x] ripple=no\n", 739)
+    by = {n["id"]: n for n in m["nodes"]}
+    assert "flag" in by["x"] and "flag" not in by["b"]

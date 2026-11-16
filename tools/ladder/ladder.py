@@ -5,7 +5,8 @@
     python tools/ladder/ladder.py clear ID   # mark a node rechecked (after the D-note that resolves it)
     python tools/ladder/ladder.py check      # CI: every D-note from MAP_FROM on has a MAP line; flags not stale
 
-MAP line (inside a D-note):  MAP: node=<id> status=<status> touches=[id1, id2]
+MAP line (inside a D-note):  MAP: node=<id> status=<status> touches=[id1, id2] [ripple=no]
+(ripple=no: the change confirms rather than alters the node, so only the touched nodes are flagged)
 Statuses: computed estimate literature assumed corrected killed open frozen.
 A frozen node keeps its status; it only gets a recheck flag. AI-assisted.
 """
@@ -22,7 +23,7 @@ CARD = ROOT / "ufe-v2/model_current.json"
 MAP_FROM = 739            # MAP lines are required from this D-number on
 STALE_AFTER = 5           # a flag older than this many D-notes fails `check`
 STATUSES = {"computed", "estimate", "literature", "assumed", "corrected", "killed", "open", "frozen"}
-LINE = re.compile(r"MAP:\s*node=(\S+)\s+status=(\S+)(?:\s+touches=\[([^\]]*)\])?")
+LINE = re.compile(r"MAP:\s*node=(\S+)\s+status=(\S+)(?:\s+touches=\[([^\]]*)\])?(\s+ripple=no)?")
 HEAD = re.compile(r"^## D(\d+)", re.M)
 
 def load(p=MAP): return yaml.safe_load(open(p, encoding="utf-8"))
@@ -53,7 +54,7 @@ def update(m, text, last):
     for dn, body in notes(text):
         if dn <= last:
             continue
-        for node, status, touches in LINE.findall(body):
+        for node, status, touches, noripple in LINE.findall(body):
             if node not in byid:
                 raise SystemExit(f"D{dn}: MAP line names unknown node '{node}' (add it to map.yaml first)")
             if status not in STATUSES:
@@ -67,7 +68,7 @@ def update(m, text, last):
             n.pop("flag", None)
             hist = n.setdefault("history", []); hist.append(f"D{dn}: {status}"); n["history"] = hist[-3:]
             t = [x.strip() for x in touches.split(",") if x.strip()]
-            for k in downstream(m, [node] + t) | set(t):
+            for k in (set(t) if noripple else downstream(m, [node] + t) | set(t)):
                 if k != node:
                     byid[k]["flag"] = f"recheck (D{dn}, {node})"
             applied.append((dn, node, status))
