@@ -97,3 +97,4 @@ The Jl functions L1–L10 and checks K1–K8 still apply. Each tick now takes it
 - Each Jl tick schedules the next one automatically (send_later, 5 min) without asking.
 - At every branch point, take the top recommended option instead of asking Danny; state the choice in one line in the tick report.
 - Unchanged hard limits: no Zenodo upload/publish, no sending emails, no password entry, no changes to the PC repo's git, without Danny's explicit word. Lock-before-compute and DEVIATIONS rules unchanged.
+- (11:14 CT) Manual "Jl" while a tick is pending: do the tick at once and do NOT call update_trigger to disable the pending one (that call raises an approval prompt). When the stale scheduled tick fires later, skip it in one line if its work is already done.
