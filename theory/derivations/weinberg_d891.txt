@@ -1,0 +1,6 @@
+reduced M_P  Lambda=2.44e+18 GeV: m_W=1.19e-05 eV; c needed for m_nu1=4e-9/1.7e-8/7e-8 eV: 3.4e-04 / 1.4e-03 / 5.9e-03
+M_P          Lambda=1.22e+19 GeV: m_W=2.37e-06 eV; c needed for m_nu1=4e-9/1.7e-8/7e-8 eV: 1.7e-03 / 7.2e-03 / 3.0e-02
+M_s low      Lambda=6.00e+15 GeV: m_W=4.82e-03 eV; c needed for m_nu1=4e-9/1.7e-8/7e-8 eV: 8.3e-07 / 3.5e-06 / 1.5e-05
+M_s high     Lambda=3.00e+16 GeV: m_W=9.63e-04 eV; c needed for m_nu1=4e-9/1.7e-8/7e-8 eV: 4.2e-06 / 1.8e-05 / 7.3e-05
+c=1, M_P: n_B/s = 6.1e-14 * delta_eff (m32=2.5e+05 GeV); needed 8.7e-11
+c=1, M_P: n_B/s = 1.7e-13 * delta_eff (m32=7.0e+05 GeV); needed 8.7e-11

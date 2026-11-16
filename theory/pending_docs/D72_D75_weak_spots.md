@@ -9167,3 +9167,12 @@ Verdict [derived]: project L closes NEGATIVE for an in-model origin. At ρ the r
 v3.2 draft: ρ caveat gains one sentence (the lift is a small residual-Z₃ breaking, D888a–D889), and the stale clause "a realistic ρ lepton sector … is still to be built" now says the D883 sector supplies m_ν₁ with ε as an input; cites 2102.07488; rebuilt clean, 17 pages.
 Next project (W): the Planck-suppressed Weinberg bound (D882 point 4): LH_u AD needs the lightest-direction Weinberg coefficient ≲ 1e-3; check whether the residual Z₃ already forbids it at ρ (the same selection rule as D888a).
 MAP: node=n_sector_rho status=assumed touches=[lepto_rho,mnu] ripple=no
+
+## D891 (DEEP, W2.1): the residual Z₃ does NOT protect the lightest direction from a Weinberg term; with Λ = M_P its coefficient must be ≲ 1e-3, with Λ = M_s ≲ 1e-5
+Derivation from the notes plus arithmetic: theory/modular/weinberg_d891.py → theory/derivations/weinberg_d891.txt (no prediction, no lock).
+1. Charges [derived] (D778, D779, D787): all three light leptons are Γ₂ singlets with common charge q_L = −q_{H_u}, so LH_u is Z₃-neutral (which is what makes the LH_u AD direction exist, D880).
+2. Selection rule [derived]: every Weinberg entry (L_iH_u)(L_jH_u) then has charge 2(q_L + q_{H_u}) = 0. At a fixed point a coupling of total charge zero has a non-vanishing coefficient generically (D888a's rule run in reverse), so the Z₃ allows all entries, including the lightest seesaw direction. The E₄(ρ) = 0 protection of D882–D883 acts on S₂'s Dirac coupling only, not on the effective Weinberg operator.
+3. Size [derived] (arithmetic, v_u = 170 GeV): m_W = v_u²/Λ = 1.2e-5 eV for Λ = reduced M_P; 2.4e-6 eV for Λ = M_P; 1e-3–5e-3 eV for Λ = M_s = (0.6–3)e16 GeV. A generic rank-3 perturbation of that size sets m_ν₁ ~ c·m_W.
+4. Requirement [derived] (arithmetic): m_ν₁ = 4e-9–7e-8 eV (D880) needs c ≲ 3e-4–6e-3 (reduced M_P), 2e-3–3e-2 (M_P), or 1e-6–7e-5 (M_s). With c = 1 at the reduced M_P the AD yield is only (0.6–1.7)e-13·δ_eff, about 500–1400 times short.
+Verdict: W2.1 NEGATIVE for protection. The ρ baryogenesis chain (D880–D883) requires the Weinberg coefficient along the lightest direction to be small: a mild 1e-3 if the operator is Planck-suppressed, a severe 1e-5 if it is string-scale suppressed. Which applies depends on how the operator arises in the string completion: tree-level exchange of string/KK states (Λ ~ M_s, dangerous) or only gravitationally (Λ ~ M_P). This is W2.2.
+MAP: node=lepto_rho status=estimate touches=[n_sector_rho,mnu] ripple=no

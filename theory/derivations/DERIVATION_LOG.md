@@ -1096,3 +1096,10 @@ Touches: n_sector_rho, lepto_rho, mnu.
 2. ε ≈ 1.8e-3 ⇔ |u| ≈ 2e-3 residual-Z₃ breaking [literature] (2102.07488, via D889).
 3. Project closes negative; ε at ρ is post hoc, like ε at τ = i [derived].
 Touches: n_sector_rho, lepto_rho, mnu.
+
+## D891: W2.1 Weinberg selection rule at ρ
+1. Light leptons share q_L = −q_{H_u}, so LH_u is Z₃-neutral [derived] (D778, D787).
+2. Every Weinberg entry is then Z₃-neutral and generically non-zero at ρ [derived].
+3. m_W = v_u²/Λ = 1.2e-5 eV (reduced M_P), 1e-3–5e-3 eV (M_s) [derived] (arithmetic).
+4. Needed c ≲ 1e-3 (M_P) or ≲ 1e-5 (M_s); c = 1 at M_P gives AD yield ~1e-13 [derived] (arithmetic).
+Touches: lepto_rho, n_sector_rho, mnu.

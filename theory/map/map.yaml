@@ -110,6 +110,7 @@ nodes:
   - 'D888a: estimate'
   - 'D889: assumed'
   - 'D890: assumed'
+  flag: recheck (D891, lepto_rho)
 - id: n_sector_i
   layer: 1
   branch:
@@ -388,7 +389,7 @@ nodes:
   - rho
   - E
   title: Leptogenesis at ρ (non-thermal, DI estimate)
-  status: computed
+  status: estimate
   d:
   - D731
   - D762
@@ -416,14 +417,14 @@ nodes:
   - D878
   - D879
   - D880
+  - D891
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D878: assumed'
   - 'D879: assumed'
   - 'D880: computed'
-  flag: recheck (D890, n_sector_rho)
+  - 'D891: estimate'
 - id: gravitino_wino
   layer: 4
   branch:
@@ -511,7 +512,7 @@ nodes:
   - 'D750: frozen'
   - 'D786: frozen'
   - 'D824: frozen'
-  flag: recheck (D890, n_sector_rho)
+  flag: recheck (D891, lepto_rho)
 - id: wino_window
   layer: 5
   branch:
