@@ -66,5 +66,11 @@ check('L3b multifield = single field (decoupled)', abs(Ne2-bgq.Nend) < 2e-3, f'{
 # L6: N* matching reproduces D719 (T_R = 1e6: r 4.954e-4, V*/V_end 1.357 -> N* 47.81)
 from .nstar import Nstar
 check('L6 N* reproduces D719', abs(Nstar(4.954e-4, 1.357, 1e6)-47.81) < 0.02, f'{Nstar(4.954e-4,1.357,1e6):.3f}')
+# L1b: Klein j
+from .modular import j as jj, I_inv
+check('j(i) = 1728', abs(jj(1j)-1728) < 1e-8, f'{complex(jj(1j)).real:.6f}')
+check('j(2i) = 66^3', abs(jj(2j)-287496) < 1e-6, f'{complex(jj(2j)).real:.4f}')
+check('j(rho) = 0', abs(jj(complex(0.5, 3**0.5/2))) < 1e-8, f'{float(abs(jj(complex(0.5,3**0.5/2)))):.1e}')
+check('I = y - ln1728/2pi at the cusp (y=30)', abs(I_inv(30j)-(30-math.log(1728)/(2*math.pi))) < 1e-6, f'{I_inv(30j):.6f}')
 print(f'{len(fails)} failure(s)')
 sys.exit(1 if fails else 0)
