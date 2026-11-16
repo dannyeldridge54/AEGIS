@@ -40,3 +40,4 @@ D753  2026-11-16T04:02Z  reverse ladder: origin of epsilon from in-model small n
 D754  2026-11-16T04:03Z  deeper: rho tilt as one-loop Kaehler correction, same volume scale as SERAPIS-E
 D755  2026-11-16T04:05Z  joint tilt: rho-variant with epsilon tied to SERAPIS-E volume
 D756  2026-11-16T04:06Z  deeper: BHK N=1 one-loop K has only E2 functions; DKL tilt has no IIB loop origin
+D757  2026-11-16T04:08Z  deeper: can the loop-corrected inverse Kaehler metric make the plateau?
