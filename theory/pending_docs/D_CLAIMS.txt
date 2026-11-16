@@ -45,3 +45,4 @@ D758  2026-11-16T04:10Z  outward: log-derivative (species-type) Epstein plateau 
 D759  2026-11-16T04:18Z  log-derivative Epstein plateau + BHK tilt: n_s, r
 D760  2026-11-16T04:20Z  reverse: what makes the species scale track E(tau,2)? literature check
 D761  2026-11-16T04:22Z  wino sub-fraction limits: 2507.15934 Fig 6 method check
+D762  2026-11-16T04:31Z  reverse: CP phase for rho leptogenesis; gCP makes Re tau=1/2 CP-conserving
