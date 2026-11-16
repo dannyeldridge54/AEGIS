@@ -1,0 +1,5 @@
+m1=0 eV: Sigma=0.0586 eV, m_bb=1.43-3.67 meV, m_beta=8.83 meV
+m1=0.0001 eV: Sigma=0.0587 eV, m_bb=1.37-3.74 meV, m_beta=8.83 meV
+m1=0.001 eV: Sigma=0.0597 eV, m_bb=0.77-4.37 meV, m_beta=8.88 meV
+m1=0.005 eV: Sigma=0.0652 eV, m_bb=0.08-7.48 meV, m_beta=10.14 meV
+m1 max for Sigma<0.0642: 0.004357238631341501

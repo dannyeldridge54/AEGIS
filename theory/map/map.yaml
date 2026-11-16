@@ -344,8 +344,10 @@ nodes:
   d:
   - D605
   - D740
+  - D750
   history:
   - 'D740: frozen'
+  - 'D750: frozen'
 - id: wino_window
   layer: 5
   branch:

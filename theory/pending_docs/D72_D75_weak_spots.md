@@ -7177,3 +7177,20 @@ Arithmetic:
 - The frozen kill condition "r < 2.4e-4 at 95% CL" needs σ(r) ≈ 1.2e-4, ~10–20× better than SO. LiteBIRD's target total uncertainty is ~1e-3 (from memory), also short.
 VERDICT: the r prediction is a long-horizon test (post-2035, needs a successor to SO+LiteBIRD; CMB-S4 is no longer planned, from memory). Near-term decisive tests are n_s with SO+SPHEREx (~2030, D705), the Janus α_s relation, and the post-hoc wino window at Run 3 / HL-LHC (D736). D705's "r at LiteBIRD, optimistic" wording should read "r beyond LiteBIRD's reach at 2σ". Paper and prediction-sheet wording to check next session.
 MAP: node=tests_cmb status=literature touches=[band_e, band_i] ripple=no
+
+## D750 (CENTRE; reverse ladder; locked PREREG_D750; results/falsifiers_d750.txt) — the near-term falsifiers are in the neutrino sector, not r
+Reverse path: target "a test before 2035". r fails (D749). What tonight's results fix instead is the neutrino spectrum: NO, with m₁ bounded below by the radiative-leptogenesis grid (D745, ≥ 1e-4 eV) and above by cosmology.
+Computed (PMNS from memory; Majorana phases scanned 72×72):
+| m₁ (eV) | Σm_ν (eV) | m_ββ (meV) | m_β (meV) |
+|---|---|---|---|
+| 0 | 0.0586 | 1.4–3.7 | 8.8 |
+| 1e-4 | 0.0587 | 1.4–3.7 | 8.8 |
+| 1e-3 | 0.0597 | 0.8–4.4 | 8.9 |
+| 5e-3 | 0.0652 | 0.1–7.5 | 10.1 |
+- DESI DR2+CMB (Σ < 0.0642 eV) caps m₁ < 4.36e-3 eV (computed). D745's top grid value (5e-3) is therefore just excluded, and the viable τ = i window is m₁ ≈ 1e-4 – 4.4e-3 eV.
+New falsifiers (sensitivities from memory, labelled):
+1. Neutrinoless double beta decay: predicted m_ββ ≤ 7.5 meV, below the next-generation reach (~10–20 meV for LEGEND-1000 / nEXO / CUPID). Prediction: NO signal in those experiments. A confirmed signal with m_ββ ≳ 10 meV would falsify the normal-ordering/small-m₁ branch, unless a non-standard mechanism contributes.
+2. β-decay mass: m_β ≈ 9–10 meV, below KATRIN (~0.3 eV) and the Project 8 goal (~40 meV). Prediction: null.
+3. Cosmological Σm_ν: 0.0586–0.064 eV. With σ ≈ 0.015–0.02 eV around 2030 (DESI final + Euclid + CMB), this predicts a 3–4σ DETECTION of nonzero neutrino mass. A robust bound Σ < 0.058 eV kills NO with any m₁ ≥ 0, and the model with it. Of the three, this is the sharpest near-term test, and current DESI trends (preference for low Σ) make it live.
+Status: consistent with the frozen Σm_ν = 0.0587 (lock D605), which sits at the low end of the computed range. The m_ββ and m_β ranges are post-hoc derived statements and enter the prediction sheet as "derived, not frozen".
+MAP: node=mnu status=frozen touches=[lepto_i] ripple=no

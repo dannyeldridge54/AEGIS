@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D739: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed",
   "D740: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen",
   "D741: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → open",
   "D742: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → computed",
@@ -29,9 +28,11 @@
   "D746: Origin of the plateau → open",
   "D747: Origin of the plateau → open",
   "D748: Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4) → frozen",
-  "D749: Tests: SO+SPHEREx (~2030), LiteBIRD (~2035) → literature"
+  "D749: Tests: SO+SPHEREx (~2030), LiteBIRD (~2035) → literature",
+  "D750: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen"
  ],
  "open_rechecks": [
+  "Leptogenesis at τ=i: inflaton decay marginal, AD robust",
   "Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4)",
   "Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4)"
  ],
