@@ -5,3 +5,4 @@ D961-projH|timeout 6000 python3 theory/flux/projH_vacuum_d961.py
 D958b-nstar|timeout 5000 python3 theory/flux/repro_nstar_d958.py
 D975-alphads|timeout 7000 python3 theory/flux/alpha_ds_d975.py
 D961b-projH|timeout 7000 python3 theory/flux/projH_vacuum_d961.py
+D976-projHrefit|timeout 7000 python3 theory/flux/projH_refitC_d976.py
