@@ -283,6 +283,26 @@ def _adapt_exoplanets(rows):
 GCN_WORDS = ("GRB", "GW", "S2", "FRB", "neutrino", "IceCube", "SGR", "magnetar", "kilonova", "supernova")
 
 
+def _gcn_archive_latest(url, keep=200, timeout=120):
+    """NASA GCN retired archive.json; the daily JSON bundle (archive.json.tar.gz, ~32 MB, refreshed once a day) is the
+    account-free source. Stream it and keep the newest `keep` circulars (highest circularId)."""
+    import heapq, tarfile
+    req = urllib.request.Request(url, headers={"User-Agent": "AEGIS-anomaly-scanner"})
+    best = []
+    with urllib.request.urlopen(req, timeout=timeout) as r, tarfile.open(fileobj=r, mode="r|gz") as tar:
+        for m in tar:
+            if not (m.isfile() and m.name.endswith(".json")):
+                continue
+            try:
+                c = json.loads(tar.extractfile(m).read().decode("utf-8"))
+                cid = int(c.get("circularId"))
+            except Exception:
+                continue
+            item = (cid, {"circularId": cid, "subject": c.get("subject", "")})
+            (heapq.heappush if len(best) < keep else heapq.heappushpop)(best, item)
+    return [it[1] for it in sorted(best, reverse=True)]
+
+
 def _adapt_gcn(doc):
     rows = doc if isinstance(doc, list) else doc.get("items", [])
     return [dict(time_tag=f"{c.get('circularId')}", score=1.0 if any(w in str(c.get("subject", "")) for w in GCN_WORDS) else 0.0) for c in rows]
@@ -320,9 +340,9 @@ TELEMETRY += [
     ("exoplanet", "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper+from+ps+where+default_flag=1+and+pl_orbper+is+not+null&format=json",
      None, "per", ("ultra_short_period", lambda v, r: v < 0.5, "planet with an orbital period under 12 hours (NASA Exoplanet Archive). Confirm in the discovery paper"),
      {"adapt": _adapt_exoplanets, "period": 21600}),
-    ("gamma_transient", "https://gcn.nasa.gov/circulars/archive.json?limit=100", None, "score",
+    ("gamma_transient", "https://gcn.nasa.gov/circulars/archive.json.tar.gz", None, "score",
      ("gcn_transient", lambda v, r: v >= 1.0, "NASA GCN circular about a gamma-ray burst, gravitational wave, neutrino, FRB or similar transient. Read the circular on gcn.nasa.gov"),
-     {"adapt": _adapt_gcn, "period": 900}),
+     {"adapt": _adapt_gcn, "period": 86400, "getter": _gcn_archive_latest}),
 ]
 
 TELEMETRY_MEANING = {
@@ -590,7 +610,7 @@ class AnomalyScanner:
             try:
                 if opt.get("donki"):
                     url = url + _donki_window()
-                rows = self.fetch(url)
+                rows = opt["getter"](url) if opt.get("getter") else self.fetch(url)
                 if opt.get("adapt"):
                     rows = opt["adapt"](rows)
                 new, flagged = self.ingest(assess_telemetry(band, rows, key, vkey, rule))
