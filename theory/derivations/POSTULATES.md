@@ -6,7 +6,7 @@ Form: the effective leptogenesis phase δ is uniform on [0, 2π); the asymmetry 
 Falsifier: (i) a UV completion that imposes gCP (then ε = 0 at ρ and the branch needs another baryogenesis); (ii) a measured low-energy Dirac phase δ_CP pointing at CP conservation (δ_CP ≈ 0 or π at > 3σ, DUNE/Hyper-K), which would disfavour (but not exclude) P1.
 - P1 update (D763): P1 is needed on BOTH branches (τ = i also sits on a CP-conserving locus). Falsifier (ii) is refined: δ_CP ≈ 0/π only weakly disfavours P1 (≈6% prior mass at |sin δ| < 0.1), while discovered leptonic CP violation excludes the gCP alternative.
 
-## P2 — the heavy-ν couplings depend on a second complex-structure modulus U₂, tied to U₁ by the flux relation U₁U₂ = b₃/a⁰ (status: open)
+## P2 — the heavy-ν couplings depend on a second complex-structure modulus U₂, tied to U₁ by the flux relation U₁U₂ = b₃/a⁰ (status: retired D772 — the published flux model also fixes τ₃ = S, leaving no free inflaton)
 Source of the mechanism: literature (2405.18813). Postulated part: SERAPIS's heavy-ν sector (the Dirac Yukawas or N₃) lives on, or couples to, the second torus, so its couplings are modular forms of U₂.
 Form: U₂ = −(b₃/a⁰)/ρ. CP is violated unless b₃/a⁰ or a⁰/b₃ is an integer (D764). The CP-odd size is s_CP = |sin arg j(U₂)|, with median 0.77 over small fluxes.
 Falsifiers:
