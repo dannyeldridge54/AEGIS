@@ -51,3 +51,4 @@ D764  2026-11-16T04:38Z  reverse: CP phase from a second modulus via flux relati
 D765  2026-11-16T04:47Z  forward: SERAPIS-E with the flux relation U2=c/U1 during inflation (doubled Kahler metric)
 D766  2026-11-16T04:52Z  reverse: P2 on non-inflaton moduli; U2=i always CP-even; tadpole budget forces 3/3/3+1
 D767  2026-11-16T04:57Z  forward: volume-dependence of the downstream chain with 3/3/3+1; corrects D766 Im S Im rho
+D768  2026-11-16T05:06Z  reverse: plateau origin wall -> P3 via nilpotent (anti-D3) geometric-inflation metric; SL(2,Z) attractors 2408.05203
