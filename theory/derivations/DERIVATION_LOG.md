@@ -1563,3 +1563,7 @@ Touches: none.
 ## D973: Project H selects ρ
 - [computed] E(U,2) Hessian: saddle at i (−6.85, +30.96), isotropic minimum at ρ (11.57, 11.57).
 - Result: Project H applies to the ρ/E branch only; τ = i plateau stays postulated.
+
+## D974: α_s convergence (locked) NOT CONVERGED
+- [computed] bd 200/1000/5000: SERAPIS-E α_s −10.35/−9.02/−9.34 e-4; Chronos −8.69/−9.35/−9.75 e-4; n_s, r converged.
+- Result: published α_s consistent at ~5%; new method (exact dS start) needs a new lock.

@@ -9807,3 +9807,12 @@ MAP: none
 Consequence: Chronos/Kairos (τ = i, I-invariant plateau built from |j − 1728|) keep P3 as a postulate; Project H is specific to the ρ/E branch. Recorded on the plateau_origin node scope.
 LESSONS: check the vacuum's stability in the transverse direction before extending a mechanism to another fixed point.
 MAP: none
+
+## D974 (locked PREREG_D960): α_s NOT CONVERGED in the Bunch–Davies start up to k/aH = 5000 on either branch; the bd = 5000 values sit at (SERAPIS-E) or inside (Chronos) the published bands, so nothing contradicts v3.2's α_s, but its precision is ~5%, not better; n_s and r are converged to 1e-6
+[computed] (field_tests/results/alpha_conv_d960.txt) SERAPIS-E C = 1e-6, N* = 48.4: α_s = −1.0348e-3 (bd 200), −9.0167e-4 (1000), −9.3393e-4 (5000); n_s 0.970055/0.970055/0.970056, r 4.7544e-4 constant. Chronos ε = 1.3e-4, N* = 46: α_s = −8.6947e-4, −9.3503e-4, −9.7486e-4; n_s 0.969643/0.969640/0.969641, r 5.3041e-4 constant.
+Locked verdict: |α(5000)/α(1000) − 1| = 3.6% (SERAPIS-E), 4.3% (Chronos) > 2% → NOT CONVERGED on both; per the lock, report and no rerun; a different method needs a new lock.
+[derived] Comparison (informational, since not converged): bd = 5000 values vs published bands: SERAPIS-E −9.34e-4 vs −(9.4–10.6)e-4 (0.6% outside the edge); Chronos −9.75e-4 inside −(8.8–10.2)e-4. The SERAPIS-E sequence is non-monotone (−10.35, −9.02, −9.34): a decaying oscillation in bd, the D958 mechanism.
+[estimate] The finite-start oscillation must be removed rather than pushed down: the next method is the exact de Sitter start (implemented in spectra_fast, D-toolkit) used mode by mode in the 5-point solver, or α_s from dn_s/dlnk on a wider ln k range; both need their own lock and a selftest showing bd-independence < 1%.
+Status: published α_s values stand as "consistent at the ~5% level"; frozen predictions unchanged; n_s and r converged.
+LESSONS: a convergence test can fail without contradicting the result it tests; report the precision it does establish.
+MAP: none

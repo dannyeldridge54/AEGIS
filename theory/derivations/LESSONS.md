@@ -221,3 +221,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D971: check extrapolation rules against a published result in the target dimension.
 - D972: state a mechanism's null predictions explicitly.
 - D973: check transverse stability before moving a mechanism to another fixed point.
+- D974: a failed convergence test can still bound the precision; report it.
