@@ -9483,3 +9483,11 @@ Fit to SERAPIS [estimate]: the BHK one-loop term that gives SERAPIS's tilt is ex
 Open checks (next tick): (1) is the flat direction a single U_i or a combination with S (homogeneity suggests a ray mixing S and U, which would change n in D929); (2) do the N = 1 solutions keep Re U free (needed for the fixed points). Not claimed as a completion yet; still toroidal, so "non-toroidal" stays open, but the toroidal setup itself gains a flux-level justification.
 LESSONS: the right literature for a rolling modulus is "flat directions in flux vacua", not inflation papers (D930's advice worked in one search).
 MAP: none
+
+## D932 (completion tick 8): D931's checks: every flat direction in 2209.02720 is DIAGONAL (a free U drags a partner U or the dilaton); along it n = 2 or 4, not SERAPIS's n = 1
+[literature] (second read, toroidal section, notation U₄ = axio-dilaton) One-flat family: (U₁,U₂,U₃,U₄) = (U₄+2p, U₄+p, U₄+p, U₄), the dilaton is the flat modulus and all three τ's track it; Re U₄ is not fixed by F-flatness. Two-flat families A1–A3, B1–B2, C1–C3: each free U is locked to a partner (U₁ = U₃+q, U₁ = (U₂+q)/2, U₁ = −(U₂+1)/(3U₂), U₃ = 1/(U₄−q), …). The paper's printed N = 2 example (2.110)/(2.111) is internally inconsistent (noted by the fetch; not checked further).
+[derived] A partner locked by a real-Möbius map U₁ = γ(U₂) carries the same metric (−log Im U is SL(2,R)-invariant), so the rolling direction has K ≈ −n log y with n = 2 (two-flat families) or n = 4 (one-flat ray: three U's + S).
+[derived] (arithmetic, p = k√(2/n), D929) n = 2: k = 2 → p = 2, α = 1/6; k = 4 → p = 4, α = 1/24; neither is 2√2. n = 4: k = 2 → p = √2, α = 1/3; k = 4 → p = 2√2, α = 1/12 = SERAPIS.
+Verdict: these flux vacua do NOT give SERAPIS's single-U plateau. The one numerical coincidence is the one-flat ray with a y⁻⁴ approach (e.g. a weight-4 lift); but that ray rolls the dilaton to weak coupling (Im U₄ = 1/g_s → ∞), which shrinks the BHK tilt term ∝ 1/(Im S Im T) along the plateau [estimate], so it is not SERAPIS either. Toroidal flux justification: NOT established. D931 lead closed as a "sibling generator": diagonal directions give α = 1/6, 1/24, 1/3 or 1/12 variants.
+LESSONS: a locked partner modulus doubles n; check whether a flat direction is single or diagonal before matching exponents.
+MAP: none

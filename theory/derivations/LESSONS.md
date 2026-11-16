@@ -179,3 +179,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D929: p = k√(2/n) constrains which modulus can roll.
 - D930: next search flux vacua with unfixed U directions, not inflation papers.
 - D931: search flat directions in flux vacua for rolling-modulus origins.
+- D932: a locked partner modulus doubles n; check single vs diagonal flat directions.

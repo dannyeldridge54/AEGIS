@@ -1348,3 +1348,10 @@ Touches: none.
 - [literature] arXiv:2209.02720: tree-level flat directions in T⁶/Z₂ flux vacua, include S and U_i, lifted by loops/α′/instantons.
 - [estimate] Could supply SERAPIS's unfixed U; checks pending (single U vs S–U ray; Re U free).
 - Result: lead recorded.
+
+## D932: flat directions are diagonal
+- [literature] arXiv:2209.02720 toroidal section: all flat directions lock partners (one-flat ray includes the dilaton).
+- [derived] SL(2,R)-invariant metric → n = 2 or 4 along the flat direction.
+- [derived] (arithmetic) p = k√(2/n): only n = 4, k = 4 matches 2√2.
+- [estimate] that ray sends g_s → 0, shrinking the BHK tilt.
+- Result: D931 lead closed; no flux justification for single-U SERAPIS.
