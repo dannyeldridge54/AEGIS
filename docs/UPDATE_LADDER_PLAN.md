@@ -17,10 +17,10 @@
 
 ## Build order
 1. map.yaml seed: done (30 nodes, 5 layers + observing side).
-2. tools/ladder/ladder.py + tests.
-3. Whiteboard view (from docs/map/map.json).
+2. tools/ladder/ladder.py + tests: done (CI runs `ladder.py check`).
+3. Whiteboard view: done (claude.ai artifact "AEGIS Theory Map", https://claude.ai/artifact/Hwhxvt5avauRxFnPA5n9BT; redraw from docs/map/map.json after big changes).
 4. "Ddl" loop starts from flagged nodes.
-5. Star Mapper model card shows the "changed since freeze" list (copy to Danny's AEGIS_latest).
+5. Star Mapper model card shows the "changed since freeze" list: done (ufe-v2/model_current.json, copied to Danny's AEGIS_latest).
 
 ## Data streams (from memory; check terms and endpoints before wiring)
 | # | Stream | Feeds | Access |

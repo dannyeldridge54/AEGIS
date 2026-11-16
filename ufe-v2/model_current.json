@@ -17,6 +17,13 @@
  },
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
- "changed_since_freeze": [],
- "open_rechecks": []
+ "changed_since_freeze": [
+  "D719–D725: SERAPIS-E at ρ needs a 2⊕1 heavy-neutrino sector; reheating 3e8–3e9 GeV; frozen n_s, r bands still hold",
+  "D723: the simplest (doublet-only) neutrino sector at ρ is ruled out (dark radiation)",
+  "D727–D730: at τ = i the inflaton is not sterile; reheating ~1–3e6 GeV; the τ = i frozen band is met only for a narrow ε",
+  "D728/D738: leptogenesis from inflaton decay works at ρ, marginal at τ = i (Affleck–Dine remains the route there)",
+  "D732–D736: post-hoc wino prediction 0.67–0.80 TeV (~15% of dark matter), testable by LHC Run 3 / HL-LHC"
+ ],
+ "open_rechecks": [],
+ "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
 }
