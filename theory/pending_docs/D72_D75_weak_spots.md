@@ -6979,3 +6979,12 @@ Caveats:
 - ρ-branch status after D719–D731: viable with the 2⊕1 (W2) heavy-neutrino sector. T_R 3e8–3e9 GeV, frozen bands hold, no dark radiation, leptogenesis possible.
 Next risk: gravitinos thermally produced at T_R ~ 3e9 GeV decay to winos (covariant completion: m3/2 ~ 1e5–1e6 GeV, TeV wino LSP). Non-thermal wino DM from them may overclose; to check (D732).
 Paper: SERAPIS-E caveat extended (D725, D731); builds.
+
+## D732 (CENTRE; locked PREREG_D732; results/gravitino_wino_d732.txt) — gravitino → wino: fine at the lower ρ T_R, squeezes the wino to 0.66–0.75 TeV at the upper
+Computed (literature formulas as locked; Y_3/2 = 1.9e-12 T_R/1e10):
+- τ_3/2 = 1.6e-3 s / 1.8e-5 s and T_dec = 14 / 127 MeV for m3/2 = 2.5e5 / 1.1e6 GeV. Both are far below wino freeze-out, and the re-annihilation cap (Y_ann 6e-12 – 5e-10) is far above Y_3/2, so every gravitino leaves one wino.
+- T_R = 3.2e8 (M_H ~ 1e12 cases): Ω_total = 0.017 / 0.031 / 0.080 for M2 = 0.66 / 1.0 / 1.85 TeV. PASS over the whole window; non-thermal winos are a 10–40% DM component.
+- T_R = 3.0e9 (M_H ~ 1e13 cases): Ω_total = 0.109 / 0.170 / 0.338. PASS only for M2 ≲ 0.745 TeV (arithmetic on the same formulas). In that corner non-thermal winos are ~90% of the dark matter.
+VERDICT (locked): PASS with a restriction. The fast ρ reheating links the heavy-neutrino scale to the wino. M_H ~ 1e12 GeV leaves the D713 window intact, while M_H ~ 1e13 forces M2 = 0.66–0.75 TeV with winos as nearly all the DM.
+Flag (from memory, NOT checked): wino DM at ~0.7 TeV making all the DM is strongly constrained by gamma-ray searches (Fermi dwarfs, H.E.S.S. Galactic Centre lines; profile-dependent). If so, the M_H ~ 1e13 corner is excluded and SERAPIS-E prefers M_H ~ 1e12 (T_R ~ 3e8). Next: search the current limits (D733).
+Comparison: D651's Y_3/2 ≲ 2e-17 (old T_R 1e3–1e5) is superseded by 6e-14 – 6e-13.

@@ -1,0 +1,16 @@
+T_R=3.2e+08: Y_3/2=6.08e-14; m3/2=2.5e+05: tau=1.6e-03 s, T_dec=14 MeV
+   M2=660 GeV: Y_ann=5.8e-11, Y_w=6.1e-14, Omega_nonth=0.011, Omega_th=0.006, total=0.017 PASS
+   M2=1000 GeV: Y_ann=1.3e-10, Y_w=6.1e-14, Omega_nonth=0.017, Omega_th=0.014, total=0.031 PASS
+   M2=1850 GeV: Y_ann=4.6e-10, Y_w=6.1e-14, Omega_nonth=0.031, Omega_th=0.049, total=0.080 PASS
+T_R=3.2e+08: Y_3/2=6.08e-14; m3/2=1.1e+06: tau=1.8e-05 s, T_dec=127 MeV
+   M2=660 GeV: Y_ann=6.3e-12, Y_w=6.1e-14, Omega_nonth=0.011, Omega_th=0.006, total=0.017 PASS
+   M2=1000 GeV: Y_ann=1.5e-11, Y_w=6.1e-14, Omega_nonth=0.017, Omega_th=0.014, total=0.031 PASS
+   M2=1850 GeV: Y_ann=5.0e-11, Y_w=6.1e-14, Omega_nonth=0.031, Omega_th=0.049, total=0.080 PASS
+T_R=3.0e+09: Y_3/2=5.70e-13; m3/2=2.5e+05: tau=1.6e-03 s, T_dec=14 MeV
+   M2=660 GeV: Y_ann=5.8e-11, Y_w=5.7e-13, Omega_nonth=0.103, Omega_th=0.006, total=0.109 PASS
+   M2=1000 GeV: Y_ann=1.3e-10, Y_w=5.7e-13, Omega_nonth=0.156, Omega_th=0.014, total=0.170 FAIL
+   M2=1850 GeV: Y_ann=4.6e-10, Y_w=5.7e-13, Omega_nonth=0.289, Omega_th=0.049, total=0.338 FAIL
+T_R=3.0e+09: Y_3/2=5.70e-13; m3/2=1.1e+06: tau=1.8e-05 s, T_dec=127 MeV
+   M2=660 GeV: Y_ann=6.3e-12, Y_w=5.7e-13, Omega_nonth=0.103, Omega_th=0.006, total=0.109 PASS
+   M2=1000 GeV: Y_ann=1.5e-11, Y_w=5.7e-13, Omega_nonth=0.156, Omega_th=0.014, total=0.170 FAIL
+   M2=1850 GeV: Y_ann=5.0e-11, Y_w=5.7e-13, Omega_nonth=0.289, Omega_th=0.049, total=0.338 FAIL
