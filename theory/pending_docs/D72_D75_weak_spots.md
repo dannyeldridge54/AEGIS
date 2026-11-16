@@ -6999,3 +6999,11 @@ VERDICT:
 - So SERAPIS-E prefers M_H ~ 1e12 GeV (T_R ≈ 3e8). There the non-thermal winos are 10–40% of the DM and the full 0.66–1.85 TeV window passes the relic bound.
 - Open: whether a 10–40% wino sub-fraction at 0.66–1.85 TeV survives the gamma-ray limits (flux ∝ f²). Needs the cross-section and limit curves (D734).
 Consequence: in SERAPIS-E the heavy-neutrino scale is now tied to M_H ~ 1e12 GeV (M_light ~ 2e11–7e11), and leptogenesis then needs sin δ ≳ 0.1–0.6 (D731).
+
+## D734 (RIGHT; literature; NULL by the tick rule) — the wino sub-fraction limits below 1.85 TeV are given only in a figure
+Source: arXiv:2507.15934, text after offset 100k:
+- Below 2 TeV the strongest limit is a gamma-ray LINE search at the wino endpoint (reinterpreted, Thelma profile).
+- Its Fig. 6 shows two excluded regions: wino as 100% of DM (light shading) and wino as a standard thermal sub-fraction f_χ (dark shading). The text gives no numbers below 2 TeV.
+- The robust statement remains: winos are excluded from 1.85 TeV to the thermal mass even as a thermal sub-fraction. Below 1.85 TeV the thermal sub-fraction is therefore not excluded.
+SERAPIS-E's case sits between those two (D732, T_R 3.2e8): f_total = 0.14 / 0.26 / 0.67 at 0.66 / 1.0 / 1.85 TeV, against f_thermal = 0.05 / 0.12 / 0.41. Whether these survive needs Fig. 6's numbers, which the text does not give. Verdict: NULL (needed numbers not found in text). The DpL loop stops here.
+To resume: digitise Fig. 6 of 2507.15934 (or find a table / the Ref. [91] line-search limits), then lock a f²⟨σv⟩ rescale.
