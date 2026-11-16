@@ -36,25 +36,40 @@
 | — | GCN Kafka (live gamma-ray alerts) | mapper | optional; needs a GCN account. The per-circular JSON feed works now |
 Rule: every stream lands as candidates or measurements with its source and time. Nothing is promoted to a "discovery" or "confirmation" automatically.
 
-## Jl learning loop: a mirror of SERAPIS (added 15 Nov 2026, 22:27)
-SERAPIS has two mirrored vacua: τ = i (the S-fixed point) and ρ (the ST-fixed point), joined by one modular potential and checked by the same frozen bands. The learning loop copies that shape: two mirrored ladders, one shared potential (the theory map and the lessons file) and one set of frozen checks.
+## Jl learning loop: functions, checks and balances, built like SERAPIS (15 Nov 2026, 22:29)
+SERAPIS works because every part has one job, hard checks it must pass, and balances that tie its parts together. The loop is built the same way.
 
-| SERAPIS | Jl loop |
-|---|---|
-| Vacuum τ = i | **Forward ladder (i-side)**: model assumptions → derive → predictions. Asks "what does SERAPIS say?" |
-| Vacuum ρ | **Reverse ladder (ρ-side)**: target or observation → requirement → new term or postulate → source. Asks "what must SERAPIS contain?" |
-| Modular potential V(τ) linking the vacua | **Centre / DERIVE**: the full labelled chain must run both ways. Forward output must equal the reverse requirement. |
-| Frozen bands (n_s, r, α_s) | **Frozen checks**: locked PREREGs, honest labels, post-hoc models scored only on future data. |
-| Modular symmetry Γ2 ≅ S3 (relates the sides) | **Mirror rule**: every forward result spawns a reverse question ("what else could give this?"), and every reverse term spawns a forward prediction ("what else does this predict?"). |
-| BHK tilt (small loop correction, C ~ 1e-6) | **Lessons file**: small, accumulated corrections that tilt the next choice of target (theory/derivations/LESSONS.md). |
-| Reheating / N* (where one history meets data) | **Report + map update**: the tick's result meets the theory map, the prediction sheet and the Star Mapper. |
+### Functions (each with one job, like V0, E(τ,2), the tilt C, N*)
+| ID | Function | SERAPIS analogue | Job |
+|---|---|---|---|
+| L1 | Observe | data in (Planck, ACT, DESI) | Read LESSONS.md, the map flags, the last 8 D-notes and new data |
+| L2 | Select | the vacuum choice (i or ρ) | Pick the side (forward/reverse, alternating) and ONE target |
+| L3 | Research | literature inputs (BHK, DKL) | 1–5 searches. Record sources |
+| L4 | Create | a new term (SERAPIS-E's 1/E) | Name a new term, or POSTULATE Pn (assumptions, form, falsifier) |
+| L5 | Lock | PREREG + sha256 | Commit the rule before computing |
+| L6 | Compute | the slow-roll / N* integrator | Short script; results to field_tests/results |
+| L7 | Derive | the analytic chain | Full labelled chain to theory/derivations/DERIVATION_LOG.md |
+| L8 | Learn | the BHK tilt (a small correction) | 1–2 lessons in LESSONS.md that steer L2 next time |
+| L9 | Record | the paper + prediction sheet | D-note + MAP line, ladder update, commit and push, report |
+| L10 | Restart | reheating → next epoch | send_later 5 min with the next side, target and queued mirror question |
 
-Tick order:
-1. Read the lessons.
-2. Run the side the last tick did NOT run (alternate i → ρ → i …).
-3. At a wall: deep research, then create a term, or a postulate Pn if there is no source; lock it and compute it.
-4. DERIVE at the centre: write the chain both ways. A mismatch is a correction note, and the side that caused it reruns next tick (through DEVIATIONS, not a chase).
-5. Mirror rule: queue the spawned question for the other side.
-6. D-note + MAP line, ladder update, commit and push, report.
-7. Restart in 5 min.
-A result counts as CONFIRMED only when both sides agree at the centre, the way a SERAPIS branch counts only when both vacua pass the same bands.
+### Checks (hard gates, like the frozen bands; a failed check blocks L9's "confirmed")
+- **K1 Lock-before-compute:** the PREREG commit is older than the results file.
+- **K2 Labels:** every derivation step carries [derived]/[literature]/[postulate Pn]/[estimate].
+- **K3 Units and arithmetic:** done in code, not prose (aegis-check).
+- **K4 Regression:** a new computation reproduces a known earlier point (e.g. D759 C = 0 = D758).
+- **K5 Source match:** a fetched source really uses the function we build on (lesson D760).
+- **K6 No chase:** fixes only via DEVIATIONS written before a rerun.
+- **K7 Map line:** present and valid; postulates get status=assumed.
+- **K8 Frozen bands untouched:** post-hoc results never change the frozen predictions.
+
+### Balances (cross-ties, like the bridges B1–B5 and both vacua passing the same bands)
+- **β1 Two-way chain:** the forward derivation's output equals the reverse ladder's requirement. CONFIRMED needs both.
+- **β2 Mirror rule:** every forward result queues a reverse question, and every reverse term queues a forward prediction.
+- **β3 Postulate budget:** at most 2 open postulates. A third forces the next tick to test or retire one (keeps the theory honest, like N* ≤ the bound).
+- **β4 Derived vs assumed ratio:** report the map's derived:assumed count each tick, and flag it if assumed rises two ticks running.
+- **β5 Cost:** ≤ 5 searches and ≤ 1 locked computation per tick (credits).
+
+### Tick order
+L1 → L2 → (L3 → L4 if a wall) → L5 → L6 → L7 → checks K1–K8 → balances β1–β5 → L8 → L9 → L10.
+The mechanical checks run with `python tools/loop/jl_check.py` (K1, K2, K7, β3, β4).
