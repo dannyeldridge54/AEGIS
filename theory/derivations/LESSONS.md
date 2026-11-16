@@ -208,3 +208,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D958: convergence-test second derivatives in every numerical parameter.
 - D959: (no new lesson)
 - D960: clear flagged memory steps quickly against a source.
+- D961: for 'non-SUSY sector in D dims', check the BSB orientifold catalogue first.

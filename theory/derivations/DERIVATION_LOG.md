@@ -1500,3 +1500,8 @@ Touches: none.
 ## D960: Möbius phase verified
 - [literature] hep-th/0503204 eq. 1.83: hatted characters carry (−1)^k per level.
 - Result: D957's flagged step sourced; Project H sign condition sourced.
+
+## D961: ADS anti-D5 embedding for Project H
+- [literature] hep-th/9908023: T⁴/Z₂, 32 anti-D5, SUSY broken only on them, tachyon-free.
+- [derived] (arithmetic) 5̄5̄ massless: 2112 boson vs 1984 fermion d.o.f., excess +128.
+- [estimate] 6D anti-D5 worldvolume on R⁴ × T² matches D945a; χ coupling and stabilisation open.
