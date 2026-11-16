@@ -71,3 +71,4 @@ D784  2026-11-16T08:34Z  reverse: wino window at rho after Z3 late reheating (th
 D785  2026-11-16T08:43Z  forward mirror: residual Z4 at tau=i - do the heavy pair states decay to leptons, and is the light spectrum degenerate?
 D786  2026-11-16T08:50Z  reverse: what the frozen Sigma m_nu now means on each branch (m1 no longer forced to 0)
 D787  2026-11-16T08:58Z  forward: R-Z3 test - MSSM Z3 charges at rho; pair decays via N.u.d.d iff Z3 acts as baryon triality
+D788  2026-11-16T09:07Z  reverse: late-decay CP asymmetry via dim-6 udd is Nanopoulos-Weinberg suppressed (wall); P5 colour-triplet mediator
