@@ -138,3 +138,4 @@ D851  2026-11-16T16:01Z  Q.1 P1prime phase distribution (deep)
 D852  2026-11-16T16:07Z  Q.2 heavy-nu coupling to T
 D853  2026-11-16T16:11Z  Q.3 P1prime verdict
 D854  2026-11-16T16:15Z  R.1 tau=i phase map
+D855  2026-11-16T16:18Z  R.2 rho charge check
