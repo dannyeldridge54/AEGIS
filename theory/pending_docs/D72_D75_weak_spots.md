@@ -8971,3 +8971,7 @@ Derivation + arithmetic (no model run, no lock).
 3. So D7/D3 ≈ q/(8.89 A₁²): ≤ 0.11q at A₁ = 1, 0.028q at A₁ = 2, 0.013q at A₁ = 3, 0.0011q at A₁ = 10 [derived]. In D867's racetrack examples (A₁ = 1.2–1.8) it is 0.035q–0.078q.
 Verdict: the D7-type piece changes the fitted Im S·Im T₁ by less than 10% unless both A₁ ≈ 1 and q ≳ 1; for the generic SERAPIS-E point (no racetrack constraint, A₁ free) it is negligible. The paper's footnote ("C collects both channels") is adequate.
 MAP: node=serapis_e status=computed touches=[eps_tilt] ripple=no
+
+## D874: checkpoint; day summary written; next deep project chosen (ρ baryogenesis)
+papers/v3/DAY_SUMMARY_2026-11-16.md written (plain-language summary of D828–D873, corrections, ranked open items) and synced to the project; CURRENT_STATE updated and synced. Top open item chosen under the autonomy rule: ρ baryogenesis inside the frozen band (plan B.1–B.4 in ACCURACY_QUEUE).
+MAP: none

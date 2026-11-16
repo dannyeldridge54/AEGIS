@@ -970,3 +970,8 @@ Touches: none.
 3. D7/D3 ≈ q/(8.89 A₁²), < 10% unless A₁ ≈ 1 and q ≳ 1 [derived] (arithmetic).
 4. Lattice-coefficient ratio q not computed [estimate].
 Touches: serapis_e, eps_tilt.
+
+## D874: checkpoint
+1. Day summary of D828–D873 written and synced [derived].
+2. Open items ranked; ρ baryogenesis inside the frozen band chosen next [derived] (D780, D789, D792).
+Touches: none.
