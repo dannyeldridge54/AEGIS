@@ -9794,3 +9794,9 @@ Correction: m_χ² = (2ζ(4)/π³) g²C E(U,2)/A = 0.06981 g²C E(U,2)/A (Q² �
 Finiteness condition added to Project H's list: the SUSY breaking felt by the gauge tower must be bulk/line-like on the T² (finite), not localised at points of the T² (log divergent). In the ADS model the breaking lives on the whole anti-D5 worldvolume, which contains the T²: bulk-like [estimate].
 LESSONS: an extrapolation rule fitted on one dimension (here D−1) must be checked against a published result in the target dimension; the factor was off by 25%.
 MAP: none
+
+## D972 (Project H, observables): Project H's heavy field leaves no cosmological-collider or sound-speed signature: m_χ/H = 108–539 suppresses oscillatory non-Gaussianity by e^{−πm/H} = 10^{−147} to 10^{−735}, and the turn gives 1 − c_s² ≲ 1e-12 (D944); Project H is observationally identical to single-field SERAPIS, so its tests are the single-field ones (n_s, r, α_s) plus the n_s shift of D956/D961
+[derived] (arithmetic, D944 values m²/H² = 2.9e5, 7.3e4, 1.16e4 for M = 0.1, 0.2, 0.5) m/H = 539, 270, 108; the standard Boltzmann suppression of massive-field (cosmological-collider) signals, ∝ e^{−πm/H} [literature, standard; not re-sourced this tick], gives 10^{−735}, 10^{−369}, 10^{−147}. Sound speed: 1 − c_s² = 4e-15 to 1.3e-12 (D944, computed).
+Consequence: no non-Gaussian or isocurvature handle distinguishes Project H from postulated P3; the only observable difference is the vacuum-mass shift of N* (D956 estimate; locked exact D961 queued). Recorded as a null prediction: if a cosmological-collider signal with m/H ≲ 10 is ever seen, it is not Project H's χ.
+LESSONS: state the null predictions of a mechanism explicitly; they define what it cannot explain.
+MAP: none

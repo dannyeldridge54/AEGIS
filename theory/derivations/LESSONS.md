@@ -219,3 +219,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D969: record an unnamed symmetry ('doublet') as ambiguous rather than guessing.
 - D970: calibrate image-sum normalisations on a published lower-D result.
 - D971: check extrapolation rules against a published result in the target dimension.
+- D972: state a mechanism's null predictions explicitly.

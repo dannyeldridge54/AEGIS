@@ -1555,3 +1555,7 @@ Touches: none.
 - [literature] hep-th/0502093: 6D brane-scalar mass from bulk gauge KK modes, positive, finite.
 - [derived] (Poisson resummation, numeric check) Lee = (2ζ(4)/π³) g²Q² E/A exactly (ratio 1.0000); D970's 5ζ(4)/2π³ was 1.25× too large.
 - Result: c₆ = 0.0698; κ = 4C in 5D and 6D; finiteness needs bulk-like breaking on the T².
+
+## D972: Project H null observables
+- [derived] (arithmetic) m/H = 108–539 → e^{−πm/H} = 10^{−147}–10^{−735}; 1 − c_s² ≲ 1e-12 (D944).
+- Result: no collider/sound-speed signature; only the N* shift distinguishes Project H.
