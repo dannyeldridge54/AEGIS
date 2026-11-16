@@ -154,4 +154,5 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - N1.1 [done D909: possible with a heavy Dirac pair (S, S′) plus a post hoc lift; no fit run (would repeat D883/D896); N1 closed]
 
 ## P3 lead (queued 2026-11-16, D910)
-- P3.L1 [open] Read 2510.19927 (symmetry points of N = 1 modular geometry): does its fixed-point vacuum structure give a power-law approach to a plateau, or an origin for E(τ,2) in the uplift/nilpotent metric? One fetch; record the verdict.
+- P3.L1 [done D911: LEAD: Eisenstein term in K gives 1/E approach; pure −log E(τ,2) ghost at fixed points; mixture k > 2c, k + 2c = 2 untested]
+- P3.K1 [open] Locked computation (PREREG first): K = −k log(2y) − c log E(τ,2) with W of the weight that makes V modular invariant (η-multiplier as in the covariant completion) plus a constant uplift V₀; scan k + 2c = 2, k > 2c (and a small grid off that line); require K_{ττ̄} > 0 on the whole fundamental domain, a minimum at ρ with V(ρ) = 0 (V₀ tuned) and m² > 0; compute exact n_s, r for the tilted SERAPIS-E variant (BHK tilt C as in D693) and compare with the frozen band. Pre-state the prediction.

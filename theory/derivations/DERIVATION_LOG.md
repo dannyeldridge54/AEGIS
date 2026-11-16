@@ -1227,3 +1227,11 @@ Touches: lepto_i, mnu.
 2. No modular power-law plateau source in 2026 literature found [literature] (2604.16281).
 3. P3 unchanged [derived].
 Touches: plateau_origin.
+
+## D911: P3.L1 Eisenstein Kähler potentials
+1. E_s in K with positivity windows [literature] (2510.19927).
+2. e^K ∝ E^{−c} gives a 1/E plateau approach for c = 1 with an uplift [derived].
+3. K = −log E(τ,2): 4y²g = −2 at ρ and i (ghost) [derived] (computed).
+4. K = −k log 2y − c log E: ghost-free at ρ if k > 2c; plateau approach needs k + 2c = 2 [estimate].
+5. No known string term −c log E(U,2) [literature] (BHK is additive).
+Touches: plateau_origin, serapis_e.
