@@ -55,3 +55,4 @@ D768  2026-11-16T05:06Z  reverse: plateau origin wall -> P3 via nilpotent (anti-
 D769  2026-11-16T05:10Z  forward: P3 axion test - two-field trajectories from x0 != 1/2, dN/dx0, zeta_axion
 D770  2026-11-16T05:45Z  reverse: post-inflation relaxation of the axion - do all x0 settle at rho images?
 D771  2026-11-16T06:14Z  forward: P2 with exotic O3' planes - tadpole room and tilt asymmetry
+D772  2026-11-16T06:23Z  reverse: 2405.18813 Model I fixes tau3=S - no inflaton-safe modulus; P2 retired; P4 pure-NS-flux variant
