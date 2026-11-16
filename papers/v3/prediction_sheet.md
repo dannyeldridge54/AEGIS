@@ -62,3 +62,29 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 
 ## Data check D805 (16 Nov 2026; comparison only, frozen predictions unchanged)
 2512.05108: CMB-SPA 0.9693 ± 0.0029, CMB-SPA+DESI 0.9737 ± 0.0025 (shifts +0.3σ from the references). Frozen band 0.970–0.975: −1.48 … +0.52σ vs CMB-SPA+DESI (centred). Post-hoc ρ self-diluted 0.966–0.970 (MS, D813): −3.1 … −1.5σ vs CMB-SPA+DESI.
+
+
+## Error budgets of the frozen bands (D821, 16 Nov 2026; frozen numbers unchanged)
+Theory uncertainty on the band EDGES (not on the parameter, which spans the band). Each entry: size, source, label.
+
+### τ = i band (lock D605: n_s 0.970–0.975, r 4.8–5.7e-4)
+| Source | δn_s | δr/r | Basis |
+|---|---|---|---|
+| Reheating (N* bracket 46.1–49.2) | spans 0.0029 (inside the band) | spans −8% | MS slopes dn_s/dN* = 9.3–9.6e-4, d ln r/dN* = −2.6% (D642, D815) [derived] |
+| Corrected T_R (stiff phase, N* ≈ 50.3) | +0.0013 to +0.0018 shift | −4 to −5% | D729/D815: only ε 1.40–1.45e-4 stays in band [derived] |
+| Slow roll (lock) vs exact MS | ≤ 0.0004 beyond edges | ≈ +1.5% | D642/D815/D817 [derived] |
+| Pivot / N* matching convention (±0.5 e-fold) | ±0.0005 | ±1.3% | [estimate] |
+| Parameter ε (1.3–1.6e-4) | spans 0.0028 | spans +10% | defines the band [derived] |
+| Plateau functional form | not quantifiable | — | the plateau is chosen by hand (paper: by choice) |
+Edge uncertainty (convention ⊕ SR): ±0.0006 in n_s, ±2% in r.
+
+### SERAPIS-E band (lock D693: n_s 0.970–0.975, r 4.55–5.12e-4, α_s −(9.4–10.6)e-4)
+| Source | δn_s | δr/r | Basis |
+|---|---|---|---|
+| Reheating (N* 48.4–49.9) | spans 0.0014–0.0015 | spans −4% | MS (D692) [derived] |
+| Late Z₃ decay (T₂) | frozen band holds for T₂ ≳ 1e5 GeV; below that, the band shifts to the self-diluted 0.966–0.970 | +10% | D781, D813 [derived] |
+| Exactness | none (band computed with MS) | — | D692 [derived] |
+| Pivot / N* matching convention (±0.5 e-fold) | ±0.0005 | ±1.4% | [estimate] |
+| Parameter C (1.0–1.3e-6) | spans 0.0030 | spans +8% | defines the band [derived] |
+| Two-loop Kähler terms (~C²E²) | ≲ 1e-4 | ≲ 0.1% | [estimate] |
+Edge uncertainty: ±0.0005 in n_s, ±1.5% in r. Largest conditional risk: the T₂ condition, not a numerical error.

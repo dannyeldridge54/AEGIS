@@ -550,7 +550,8 @@
    "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)",
    "history": [
     "D816: frozen"
-   ]
+   ],
+   "flag": "recheck (D821, band_e)"
   },
   {
    "id": "band_e",
@@ -563,14 +564,16 @@
    "d": [
     "D693",
     "D725",
-    "D748"
+    "D748",
+    "D821"
    ],
    "depends": [
     "nstar_e",
     "janus"
    ],
    "history": [
-    "D748: frozen"
+    "D748: frozen",
+    "D821: frozen"
    ]
   },
   {

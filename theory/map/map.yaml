@@ -411,6 +411,7 @@ nodes:
   note: corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)
   history:
   - 'D816: frozen'
+  flag: recheck (D821, band_e)
 - id: band_e
   layer: 5
   branch:
@@ -421,11 +422,13 @@ nodes:
   - D693
   - D725
   - D748
+  - D821
   depends:
   - nstar_e
   - janus
   history:
   - 'D748: frozen'
+  - 'D821: frozen'
 - id: caps
   layer: 5
   branch:

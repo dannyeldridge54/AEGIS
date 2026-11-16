@@ -565,3 +565,11 @@ Touches: none.
 2. SERAPIS r = (4.6–5.7)e-4 is < 1σ [derived].
 3. The live r test is exclusion at r ≳ 1e-3 [derived].
 Touches: none.
+
+## D821: error budgets (accuracy track)
+1. MS slopes in N* [derived] (from D642, D692, D815).
+2. Convention ±0.5 e-fold [estimate].
+3. SR bias [derived] (D817).
+4. Two-loop Kähler ≲ 1e-4 [estimate].
+5. Edge uncertainty ±0.0005–0.0006 in n_s, well below the data σ; the dominant risks are conditional [derived].
+Touches: band_e, band_i.

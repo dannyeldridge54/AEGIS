@@ -8298,3 +8298,20 @@ Derivation:
 4. D806's conclusion (the α_s leg is post-2030s) now applies to r detection too. The near-term discriminators are n_s (SO + DESI) and Σm_ν [derived].
 Paper: no change needed. The sheet is fixed. REF: n/a (no paper edit).
 MAP: none
+
+## D821 (ACCURACY TRACK, queue 7; Jl tick 59, manual "Jl"; arithmetic on existing MS results, no lock): error budgets of the two frozen bands, written to the prediction sheet. Edge uncertainty is about ±0.0005–0.0006 in n_s and ±1.5–2% in r; the dominant risk is conditional, not numerical
+Slopes (MS):
+- τ = i: dn_s/dN* = 9.3–9.6e-4 (D642: 0.9697→0.9726, 0.9724→0.9754 over N* 46.08→49.21); d ln r/dN* = −2.6% (D815: 4.949→4.696e-4 over 48.38→50.31).
+- SERAPIS-E: dn_s/dN* = 9.3e-4 to 1.0e-3, d ln r/dN* = −2.8% (D692).
+Budget items (tables in prediction_sheet.md):
+- reheating span [derived];
+- corrected-T_R shift at τ = i (+0.0013 to +0.0018; D729/D815) [derived];
+- SR-vs-MS for the τ = i lock (≤ 0.0004, +1.5%; D817) [derived];
+- pivot/N* convention ±0.5 e-fold → ±0.0005, ±1.3–1.4% [estimate];
+- parameter window (defines the band) [derived];
+- SERAPIS-E two-loop Kähler ≲ 1e-4 [estimate: C²E² ~ 1.6e-7 versus CE ~ 4e-4 at y* ≈ 14];
+- the τ = i plateau form is unquantifiable (chosen by hand).
+Conclusion:
+- Numerically, both frozen bands are good to about ±0.0006 in n_s at their edges, well below the current data error (0.0025).
+- The real uncertainties are conditional: for τ = i, the corrected reheating (only a narrow ε window survives); for SERAPIS-E, the late-decay condition T₂ ≳ 1e5 GeV.
+MAP: node=band_e status=frozen touches=[band_i] ripple=no
