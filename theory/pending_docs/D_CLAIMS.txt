@@ -208,3 +208,4 @@ D921  2026-11-16T20:03Z  Paper 2 published (no-go results)
 D922  2026-11-16T20:07Z  Paper 3 published (SERAPIS-E)
 D923  2026-11-16T20:12Z  Paper 4 published (methods note)
 D924  2026-11-16T20:16Z  Zenodo record audit: v3.2 page filled, all 5 records md5-verified
+D925  2026-11-16T20:18Z  completion literature tick
