@@ -44,6 +44,7 @@ nodes:
   - 'D799: assumed'
   - 'D800: computed'
   - 'D801: literature'
+  flag: recheck (D802, serapis_e)
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -156,14 +157,14 @@ nodes:
   - D781
   - D783
   - D793
+  - D802
   depends:
   - plateau_origin
   - bhk_tilt
   history:
-  - 'D781: computed'
   - 'D783: computed'
   - 'D793: computed'
-  flag: recheck (D801, plateau_origin)
+  - 'D802: computed'
 - id: janus
   layer: 2
   branch:

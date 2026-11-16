@@ -48,3 +48,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D799: before computing a hypothetical potential, check that the framework allows it at all (here, the modular-weight rule fixes the cusp growth). Skipping the computation saved a lock and a run.
 - 2026-11-16 D800/D798a: take the kinetic normalisation from the CODE of the family (here K = −ln, φ = ln y/√2), not from the tick prompt. D798 locked −3 ln from a prompt and needed a correction note.
 - 2026-11-16 D801: before arguing that a vacuum is 'natural', check the classical extremal results for the function class (here the lattice-sum minimisation theorems). One citation settled what had been a stated preference (D688).
+- 2026-11-16 D802: check HOW a correction enters (multiplicative e^{K⁽¹⁾} vs additive) before computing its effect on a vacuum. A multiplicative factor cannot move a zero of V. D689's note already said so; read the note of the code you are about to reuse.

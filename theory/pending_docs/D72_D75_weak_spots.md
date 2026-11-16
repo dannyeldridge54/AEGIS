@@ -7942,3 +7942,17 @@ Derivation:
 Paper: one sentence added at the start of the SERAPIS-E section, citing Rankin 1953 and Montgomery 1988 (refs.bib).
 Caveat [estimate]: "positive weights" holds for the BHK Kähler sum and the DKL threshold; a mixed-sign sum (e.g. supersymmetry-breaking annuli with opposite-sign sectors) could in principle move the minimum. Not checked.
 MAP: node=plateau_origin status=literature touches=[serapis_e] ripple=no
+
+## D802 (REVERSE, ρ-side mirror onto τ = i; Jl tick 41; arithmetic on the locked D795/D801 outputs, no new lock, precedent D690): the τ = i vacuum survives a BHK term. The term is MULTIPLICATIVE (D689), so E's saddle at i adds no curvature at leading order; the additive remnant is ~100× too small
+Arithmetic (D795: V_xx(i) = 3.3157e-4 V0 at ε = 1.45e-4, exactly linear in ε since I²/(I²+1) is octic at i; D801: E_xx(i) = −3.427):
+- V_xx(i) = 2.287 ε V0 = (2.97–3.66)e-4 V0 for ε = 1.3–1.6e-4.
+- IF the term were additive (V0·C·E), the threshold would be C_crit = V_xx/|E_xx| = (0.87–1.07)e-4.
+Derivation:
+1. The BHK correction enters as e^{K⁽¹⁾}, with K⁽¹⁾ = C·E(τ,2) (D689), and multiplies the whole F-term potential: V = P(τ)[1 + C(E − E_ref)] [literature] (BHK; derived in D689).
+2. On the i branch P(i) = 0 and ∇P(i) = 0, so Hess V(i) = [1 + C(E(i) − E_ref)]·Hess P(i) [derived]. E's negative arc curvature drops out, and i stays a minimum for any C with 1 + CẼ(i) > 0 [derived].
+3. The leading NON-multiplicative piece comes from K⁽¹⁾ breaking no-scale in K^{ττ̄}|D_τW₀|²: the cross term 2Re(K^{ττ̄}K_τ̄ ∂_τK⁽¹⁾)|W₀|² is linear in C [derived]. At i, ∂E = 0, but its second derivative ∝ C·E_xx·|W₀|²·O(1) [estimate].
+4. With the covariant completion's |W₀|² ~ V0/3 (f² = 3|W₀|²), that additive curvature is ~C·V0·O(1), so it matters only for C ≳ 1e-4 [estimate]. The natural BHK size C ~ 1e-6 (D691/D696) is ~100× below [derived].
+5. Hence the τ = i branch is NOT destabilised toward ρ inside a BHK orientifold. The D801 lattice argument concerns where a one-loop function puts the vacuum by itself, not whether a hand-built vacuum at i survives a small one-loop correction [derived].
+D689 already noted "this correction is multiplicative, so it gives NO vacuum mass". This tick confirms the mirror statement: it gives no destabilisation either.
+Paper: the D801 sentence ("a vacuum at i needs a hand-built function") is consistent with this; no change.
+MAP: node=serapis_e status=computed touches=[plateau_origin] ripple=no

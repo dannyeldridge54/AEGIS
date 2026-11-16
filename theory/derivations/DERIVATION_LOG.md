@@ -429,3 +429,11 @@ Touches: plateau_origin, serapis_e.
 4. i is a saddle: minimum along the axis, maximum along the arc [derived] (computed for E(τ,2) and Δ).
 5. A vacuum at i requires a non-lattice function [derived]; the caveat on mixed-sign sums is [estimate].
 Touches: plateau_origin, serapis_e.
+
+## D802: BHK term at the τ = i vacuum (reverse side)
+1. V = P(τ)[1 + C(E − E_ref)] [literature] (BHK; D689).
+2. At a vacuum with P = ∇P = 0, Hess V = (1 + CẼ)·Hess P [derived].
+3. Additive remnant from no-scale breaking, ∝ C·E_xx·|W₀|² [estimate].
+4. C_crit ~ 1e-4 versus a natural C ~ 1e-6 [derived] (arithmetic on locked outputs).
+5. The τ = i vacuum is stable [derived].
+Touches: serapis_e, plateau_origin.
