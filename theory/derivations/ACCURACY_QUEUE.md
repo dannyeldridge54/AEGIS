@@ -16,7 +16,7 @@
 Not derivable (tests only): P1 CP phases (DUNE/Hyper-K), halo_profile (astrophysics).
 
 ## Round 2 (added 16 Nov 2026 after D823; the round-1 queue is done except item 10)
-11. [open] Σm_ν: check the frozen 0.0587 eV and the τ = i range 0.059–0.064 eV against the newest DESI/Euclid bounds (2026). If the bound has tightened below 0.059, record the falsification status honestly. (A1/L1)
+11. [done D824] Σm_ν: check the frozen 0.0587 eV and the τ = i range 0.059–0.064 eV against the newest DESI/Euclid bounds (2026). If the bound has tightened below 0.059, record the falsification status honestly. (A1/L1)
 12. [open] Ladder flags: clear any open rechecks with a one-line justification each.
 13. [open] Cross-document consistency sweep: README, prediction_sheet, CURRENT_STATE, MANIFEST and the v3.1 paper must quote the same frozen numbers, DOIs and windows. List and fix mismatches outside the published paper; paper fixes go to V32_TODO. (A0)
 14. [open] The τ = i vacuum-mass source: the ε I₁ term is the only mass term. List the candidate loop sources (D685–D687, D802) and state in one D-note which remain open. Derivation only.

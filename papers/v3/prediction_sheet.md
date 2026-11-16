@@ -88,3 +88,7 @@ Edge uncertainty (convention ⊕ SR): ±0.0006 in n_s, ±2% in r.
 | Parameter C (1.0–1.3e-6) | spans 0.0030 | spans +8% | defines the band [derived] |
 | Two-loop Kähler terms (~C²E²) | ≲ 1e-4 | ≲ 0.1% | [estimate] |
 Edge uncertainty: ±0.0005 in n_s, ±1.5% in r. Largest conditional risk: the T₂ condition, not a numerical error.
+
+
+## Σm_ν status (D824, 16 Nov 2026)
+Frozen 0.0587 eV (NO floor) vs the strongest 95% bound < 0.0592 eV (DESI DR2 + Lyα AP, ΛCDM; 2607.27410): alive by 0.0005 eV. The data prefer an effective Σm_ν < 0 (2610.20977); if that persists, Advanced SO + DESI DR3 would reject 0.058 eV at ~3σ (forecast). That would test NO + ΛCDM generally, not SERAPIS specifically. τ = i with m₁ free: only m₁ ≲ 5.6e-4 eV survives (D786).

@@ -587,3 +587,10 @@ Touches: logderiv_plateau, serapis_e.
 4. Different r(n_s) and α_s (−1.0 to −1.2e-3) from the frozen ε-model [derived] (computed).
 5. The vacuum stays massless, so ε is not derived [derived].
 Touches: eps_tilt, band_i.
+
+## D824: Σm_ν status (accuracy track)
+1. Bounds < 0.064 / < 0.0592 eV [literature] (2503.14744; 2607.27410).
+2. Frozen 0.0587 survives by 0.0005 eV [derived].
+3. Below 0.0586, NO + ΛCDM fails generally [derived]; a forecast 3σ rejection is possible with SO + DR3 [literature] (2610.20977).
+4. The Σm_ν entry is not SERAPIS-specific [derived].
+Touches: mnu.

@@ -607,12 +607,13 @@
     "D605",
     "D740",
     "D750",
-    "D786"
+    "D786",
+    "D824"
    ],
    "history": [
-    "D740: frozen",
     "D750: frozen",
-    "D786: frozen"
+    "D786: frozen",
+    "D824: frozen"
    ]
   },
   {

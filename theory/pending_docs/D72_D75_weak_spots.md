@@ -8352,3 +8352,21 @@ Derivation:
 4. Hence ε at τ = i is NOT derived by this route. The loop tilt gives a different, post-hoc variant whose α_s and r differences are beyond 2030s reach (D806, D820) [derived].
 Status: eps_tilt stays "estimate/fitted"; the τ = i BHK variant is recorded and not added (keep rule A4: no unique test within reach). For v3.2, one clause in the Limitations is added to V32_TODO: "a loop-sized BHK factor can supply the τ = i tilt (C ≈ 3–7e-7) but then predicts α_s ≈ −(1.0–1.2)e-3 and a massless vacuum (D823)".
 MAP: node=eps_tilt status=estimate touches=[band_i] ripple=no
+
+## D824 (ACCURACY TRACK, queue 11; Jl tick 62, manual "Jl"; literature, 2 searches + 2 fetches): Σm_ν. The frozen 0.0587 eV survives the strongest bound (< 0.0592 eV) by 0.0005 eV, but the data prefer "negative" masses. If that persists, the normal-ordering floor itself would be rejected at ~3σ by Advanced SO + DESI DR3 (forecast). This would be a test of standard cosmology plus normal ordering, not of SERAPIS alone
+Literature:
+- DESI DR2 BAO + CMB (ΛCDM): Σm_ν < 0.064 eV, 95% (2503.14744).
+- With the DR2 Lyα AP measurement: < 0.0592 eV, 95% (2607.27410, Sec. VI.D.2; already cited in the paper).
+- "Disentangling geometry & growth in cosmic neutrino mass constraints" (2610.20977): Σm_ν^geo = −0.07 ± 0.10 and Σm_ν^growth = −0.13 (+0.10/−0.12) eV (68%), Planck + ACT + SPT lensing + DESI. Forecast: if the negative geometry mean persists, 0.058 eV "would be rejected at 3.0σ" by Advanced SO + DESI DR3.
+- No newer 95% bound below 0.0592 eV was found.
+Comparison:
+- Frozen 0.0587 eV (the NO floor; m₁ ≲ 1e-4 eV; lock D605): inside < 0.0592 by 0.0005 eV ✓ (alive).
+- τ = i range 0.059–0.064 eV (D786, m₁ free): only Σ ≤ 0.0592 is allowed at 95%, so m₁ ≲ 5.6e-4 eV, as D786 already noted. The upper part is excluded post hoc.
+- ρ / SERAPIS-E: no m₁ prediction (generic Σ ≥ 0.0586 for NO).
+Derivation:
+1. The bounds are [literature].
+2. 0.0587 < 0.0592 [derived].
+3. Σ_min(NO) = 0.0586 eV from the oscillation splittings [literature] (D786). Any cosmological bound below it excludes NO with standard ΛCDM neutrinos, independent of SERAPIS [derived].
+4. So the frozen Σm_ν entry cannot discriminate SERAPIS from other NO models. A future rejection would falsify the NO + ΛCDM combination (or point to new physics in the neutrino or dark sector), which the prediction sheet must say [derived].
+Prediction sheet: a note is added to the Σm_ν line (frozen value unchanged).
+MAP: node=mnu status=frozen touches=[] ripple=no
