@@ -84,12 +84,14 @@
     "i"
    ],
    "title": "Degeneracy breaker η_N = ΔM/M of the N doublet (radiative?)",
-   "status": "estimate",
+   "status": "computed",
    "d": [
-    "D744"
+    "D744",
+    "D745"
    ],
    "history": [
-    "D744: estimate"
+    "D744: estimate",
+    "D745: computed"
    ]
   },
   {
@@ -288,12 +290,13 @@
     "i"
    ],
    "title": "Leptogenesis at τ=i: inflaton decay marginal, AD robust",
-   "status": "estimate",
+   "status": "computed",
    "d": [
     "D728",
     "D738",
     "D646",
-    "D743"
+    "D743",
+    "D745"
    ],
    "depends": [
     "reheat_i",
@@ -301,9 +304,9 @@
     "eta_n"
    ],
    "history": [
-    "D743: estimate"
-   ],
-   "flag": "recheck (D744, eta_n)"
+    "D743: estimate",
+    "D745: computed"
+   ]
   },
   {
    "id": "sterile_rho",

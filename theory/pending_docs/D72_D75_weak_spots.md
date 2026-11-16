@@ -7111,3 +7111,19 @@ Fit to our τ = i setup (reasoning):
 - Rough size (estimate): ε ~ (3y_τ²/32π)·t, t = ln(Λ/M)/16π² ≈ 0.16, y_τ ≈ 0.01·tanβ, gives ε ~ 5e-7·tan²β, i.e. ~1e-5 – 5e-5 for tanβ ≈ 5–10. The right range for the non-thermal requirement (~3e-5).
 VERDICT: a promising, in-model route. It needs no added symmetry breaking, only the model's own running plus a third heavy neutrino it already has. To compute next (D745, locked).
 MAP: node=eta_n status=estimate touches=[lepto_i] ripple=no
+
+## D745 (CENTRE; locked PREREG_D745; results/radlepto_d745.txt) — PASS: radiative resonant leptogenesis rescues baryogenesis at τ = i
+Computed (Casas–Ibarra grid of 729 complex R; NO; alignment Re H₁₂ = 0 at Λ = 1e16 GeV; literature ε formula of hep-ph/0507092; non-thermal yield at T_R = 2.9e6 GeV, M = 6.3e10, N₃ = 10M):
+| m₁ (eV) | tanβ = 5 | tanβ = 10 | tanβ = 20 |
+|---|---|---|---|
+| 1e-4 | 34% pass (max Y_B 9e-10) | 70% (3.5e-9) | 86% (1.4e-8) |
+| 1e-3 | 36% (1.2e-9) | 68% (4.6e-9) | 84% (1.8e-8) |
+| 5e-3 | 38% (1.4e-9) | 65% (5.4e-9) | 83% (2.2e-8) |
+δ_N < Γ_N/M (where D_j = 1 fails) in only 1–3% of points.
+VERDICT (locked rule): PASS. ≥ 10% of the grid passes already at tanβ = 5, the moderate tanβ the superpartner chain prefers.
+- The exact degeneracy the residual symmetry imposes at τ = i, which made ε = 0 in D728/D738, is broken by the model's own running (η_N ~ δ_N = 2(H₂₂ − H₁₁)t). The τ-Yukawa running supplies the phase.
+- No tuned m₁ ≈ 1e-9 eV is needed, so Affleck–Dine is no longer required at τ = i. m₁ = 1e-4 – 5e-3 eV keeps Σm_ν ≈ 0.059–0.064 eV, still consistent with D742 and the frozen value.
+Caveats: leading-order analytic ε (not a full RGE integration); upper estimate with signs aligned; MSSM y_τ = m_τ/(v cosβ); a third heavy N₃ with no tree mass mixing to the doublet is required (consistent with weight choices, not derived here).
+Reverse-ladder record: target Y_B → requirement η_N ∈ [1e-8, 0.1] → new term η_N → in-model source (RG running) → PASS. The same path as ρ's "hidden effect" rescues (D722, D725, D727).
+MAP: node=eta_n status=computed touches=[lepto_i] ripple=no
+MAP: node=lepto_i status=computed touches=[] ripple=no

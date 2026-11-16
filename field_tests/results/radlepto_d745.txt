@@ -1,0 +1,9 @@
+m1=0.0001 eV tanb=5: pass 247/729 (33.9%), max Y_B=9.12e-10, delta_N<Gamma in 1.2%
+m1=0.0001 eV tanb=10: pass 507/729 (69.5%), max Y_B=3.54e-09, delta_N<Gamma in 1.2%
+m1=0.0001 eV tanb=20: pass 623/729 (85.5%), max Y_B=1.41e-08, delta_N<Gamma in 1.2%
+m1=0.001 eV tanb=5: pass 259/729 (35.5%), max Y_B=1.19e-09, delta_N<Gamma in 1.2%
+m1=0.001 eV tanb=10: pass 497/729 (68.2%), max Y_B=4.64e-09, delta_N<Gamma in 1.2%
+m1=0.001 eV tanb=20: pass 611/729 (83.8%), max Y_B=1.84e-08, delta_N<Gamma in 1.2%
+m1=0.005 eV tanb=5: pass 278/729 (38.1%), max Y_B=1.39e-09, delta_N<Gamma in 2.9%
+m1=0.005 eV tanb=10: pass 475/729 (65.2%), max Y_B=5.42e-09, delta_N<Gamma in 2.9%
+m1=0.005 eV tanb=20: pass 606/729 (83.1%), max Y_B=2.15e-08, delta_N<Gamma in 2.9%
