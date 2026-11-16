@@ -1505,3 +1505,7 @@ Touches: none.
 - [literature] hep-th/9908023: T⁴/Z₂, 32 anti-D5, SUSY broken only on them, tachyon-free.
 - [derived] (arithmetic) 5̄5̄ massless: 2112 boson vs 1984 fermion d.o.f., excess +128.
 - [estimate] 6D anti-D5 worldvolume on R⁴ × T² matches D945a; χ coupling and stabilisation open.
+
+## D962: SERAPIS-ρ reproduction; map links
+- [computed] ρ n_s 0.96909/0.97224, r 5.160/4.672e-4 match D816 exactly; α_s −13.6%/+8% (locked FAIL, D958 artifact).
+- Result: n_s, r independently reproduced on all three branches; α_s pending D960.

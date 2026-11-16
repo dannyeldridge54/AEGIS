@@ -9717,3 +9717,10 @@ MAP: none
 Verdict: Project H now has a named, published, tachyon-free string model with the right geometry and the right sign; the remaining gap is the χ coupling and moduli stabilisation, not the existence of the sector.
 LESSONS: when a mechanism needs "a non-SUSY sector in D dimensions", search the brane-SUSY-breaking orientifold catalogue first.
 MAP: none
+
+## D962 (loops A + D): SERAPIS-ρ reproduction (lock PREREG_D957): n_s and r REPRODUCED to all quoted digits, α_s locked FAIL at one point (the D958 start artifact); all independently reproduced nodes linked into the map
+[computed] (field_tests/results/repro_rho_d957.txt; toolkit j from E₄³/Δ, independent of the old 4-term q-expansion) L(ρ) = 0.340372095 vs the old constant 0.340372354 (Δ = −2.6e-7, negligible); L's Hessian at ρ is isotropic (canonical eigenvalues ratio 1.000000). N* = 46.09: n_s 0.96909 (ref 0.9691), r 5.1603e-4 (ref 5.160e-4), α_s −1.121e-3 (ref −0.987e-3, −13.6%: OFF); N* = 49.49: n_s 0.97224 (ref 0.9722), r 4.6720e-4 (ref 4.672e-4), α_s −7.99e-4 (ref −8.69e-4, −8%). Locked verdict: FAIL (α_s at N* = 46.09 outside ±10%).
+[estimate] The α_s misses go both ways (−13.6%, +8%) while n_s and r agree to 4 digits, the signature of D958's Bunch–Davies start artifact (both codes start modes at k/aH = 200); the D960 convergence test (queued) decides the converged values.
+Reproduction status (independent code, tools/serapis_calc): SERAPIS-E n_s, r (D953), α_s to ~10% (D954); Chronos and Kairos n_s, r, y* (D959); SERAPIS-ρ n_s, r (this note). α_s on all three branches is pending D960.
+MAP: node=band_e status=computed touches=[] ripple=no
+MAP: node=band_i status=computed touches=[] ripple=no
