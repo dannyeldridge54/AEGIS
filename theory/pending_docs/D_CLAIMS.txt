@@ -8,3 +8,4 @@ D721  2026-11-16T00:03Z  SERAPIS-E T_R at rho via Takagi decomposition
 D722  2026-11-16T00:09Z  SERAPIS-E phi to N2N2 width at rho
 D723  2026-11-16T00:16Z  phi to N2N2 dark radiation check
 D724  2026-11-16T00:22Z  2+1 N sector at rho: rank and lightest mass
+D725  2026-11-16T00:27Z  T_R for 2+1 W2 b=0 sector at rho
