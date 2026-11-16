@@ -8691,3 +8691,12 @@ Applied (V32_TODO):
 - D824: Σm_ν sentence: "alive by 0.0005 eV", class prediction (all NO + ΛCDM), negative-mass preference cited (2610.20977; authors Ge, Qu, Wang, Schaan, Wu, Friedland, checked online; bib entry added to refs.bib).
 Build: compiles, 16 pages (v3.1: 15), no undefined citations or references.
 MAP: none
+
+## D848 (v3.2 draft, V.2): P3, tadpole, τ = i and P1′ edits applied
+Applied to papers/v3/serapis_v3.2_draft.tex (published serapis_v3.tex unchanged, checked with git diff):
+- D830: SERAPIS-E tadpole parenthesis: with the uplift's anti-D3 the tadpole needs (N, N0) = (5, 2), N_eff = 3 (4 over the origin), Im S·Im ρ ≈ 560–975.
+- D832 + D839 + D836: the "plateau placed by choice" caveat now states that the E-ratio has no identified string origin (one-loop anti-D3 is additive and linear in Im τ; throat/holomorphic factors approach exponentially), the large-small-tori requirement v₄ ≳ 2e4 g_s (labelled estimate) with the +0.02 n_s shift at natural size, and that the anti-D3 is not the τ = i mass source.
+- D841: new caveat bullet: τ = i (Chronos) kept as a conditional variant under a rule fixed in advance; conditions listed; ε window 1.40–1.45e-4 under corrected reheating; no frozen τ = i prediction contradicted.
+- D846: "Where the CP phase comes from": the uniform-prior sentence replaced by CP-as-string-symmetry (2010.10782, 1901.03251; bib entries added), no CP source in the toroidal configuration, racetrack Kähler axion with CP-odd minima in 90% of the scan (P1′). The caveat bullet now states P1′; its stale flux-relation clause (P2, retired D772) was removed.
+Build: 16 pages, no undefined references, no overfull boxes.
+MAP: none

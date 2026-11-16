@@ -776,3 +776,11 @@ Touches: none.
 3. 2610.20977 bib entry checked online [literature].
 4. Draft compiles, 16 pages, no undefined references [derived].
 Touches: none.
+
+## D848: V.2 v3.2 draft P3, tadpole, τ = i, P1′ edits
+1. Tadpole (5, 2) with anti-D3 added [derived] (D830, D831).
+2. P3 caveat rewritten: no identified string origin, large-tori requirement [derived] (D828–D839).
+3. τ = i conditional-variant bullet [derived] (D841).
+4. CP paragraph and bullet rewritten for P1′; stale P2 clause removed [derived] (D843–D846, D772).
+5. 16 pages, no undefined references, no overfull boxes; v3.1 file unchanged [derived].
+Touches: none.
