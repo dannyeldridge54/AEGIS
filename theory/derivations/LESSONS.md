@@ -198,3 +198,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D948: grep old no-gos for the same object before writing up a new route.
 - D949: (no new lesson)
 - D950: in SUSY setups one-loop masses cancel at leading order; ask what breaks SUSY in the loop.
+- D951: use a worked example to check the sign of a loop-mass mechanism.

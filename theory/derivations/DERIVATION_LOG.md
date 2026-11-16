@@ -1450,3 +1450,8 @@ Touches: none.
 - [derived] soft breaking: m_soft² ∂G/∂m² ∝ L^{−(D−4)} → s = 1 for D = 6 → p = √2, α = 1/3.
 - [estimate] Scherk–Schwarz on the same T² conflicts with low m_{3/2}; a sequestered non-BPS sector remains.
 - Result: Project H stands with a stricter requirement; draft updated.
+
+## D951: brane SUSY breaking class
+- [literature] hep-th/0601158: BSB keeps bulk SUSY at tree level; T² Wilson-line one-loop masses take both signs (14/16 saddles).
+- [estimate] Project H needs n_B > n_F among χ's partners and T² ≫ l_s.
+- Result: realisation class named; sign is a condition, not a guarantee.
