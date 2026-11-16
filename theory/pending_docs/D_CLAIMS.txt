@@ -33,3 +33,4 @@ D746  2026-11-16T03:45Z  reverse ladder: plateau origin requirement
 D747  2026-11-16T03:46Z  D3 half-period gauge thresholds cannot give the plateau
 D748  2026-11-16T03:48Z  n_s shift as BAO-CMB artefact: what it means for the bands
 D749  2026-11-16T03:53Z  r testability timeline
+D750  2026-11-16T03:55Z  reverse ladder: near-term falsifiers (m_bb, Sigma m_nu)
