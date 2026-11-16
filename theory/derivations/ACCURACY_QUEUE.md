@@ -155,4 +155,4 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 
 ## P3 lead (queued 2026-11-16, D910)
 - P3.L1 [done D911: LEAD: Eisenstein term in K gives 1/E approach; pure −log E(τ,2) ghost at fixed points; mixture k > 2c, k + 2c = 2 untested]
-- P3.K1 [open] Locked computation (PREREG first): K = −k log(2y) − c log E(τ,2) with W of the weight that makes V modular invariant (η-multiplier as in the covariant completion) plus a constant uplift V₀; scan k + 2c = 2, k > 2c (and a small grid off that line); require K_{ττ̄} > 0 on the whole fundamental domain, a minimum at ρ with V(ρ) = 0 (V₀ tuned) and m² > 0; compute exact n_s, r for the tilted SERAPIS-E variant (BHK tilt C as in D693) and compare with the frozen band. Pre-state the prediction.
+- P3.K1 [done D912 + D911a: FAILS (η factor makes e^G grow exponentially; ρ a maximum); P3.K route closed]

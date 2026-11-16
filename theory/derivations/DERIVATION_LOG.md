@@ -1235,3 +1235,11 @@ Touches: plateau_origin.
 4. K = −k log 2y − c log E: ghost-free at ρ if k > 2c; plateau approach needs k + 2c = 2 [estimate].
 5. No known string term −c log E(U,2) [literature] (BHK is additive).
 Touches: plateau_origin, serapis_e.
+
+## D912: P3.K1 Eisenstein-Kähler scan (with D911a)
+1. Invariant V needs W ∝ η^{−2k}; e^G = (2y|η|⁴)^{−k}E^{−c} grows as e^{kπy/3} [derived] (D911a).
+2. Positivity holds for k > 2c [derived] (locked run D912).
+3. ρ is a maximum; no plateau for any w tested [derived] (locked run D912).
+4. With k = 0 the metric has a ghost at the fixed points [derived] (D911).
+5. P3.K route closed; P3 unchanged [derived].
+Touches: plateau_origin, serapis_e.

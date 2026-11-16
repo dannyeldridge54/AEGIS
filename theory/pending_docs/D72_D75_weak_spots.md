@@ -9345,3 +9345,18 @@ Assessment:
 4. [literature] String origin: Eisenstein series in K are known for the axio-dilaton (E_{3/2}, the α′³ correction) and, for the torus complex structure U, only additively at one loop (BHK, ∝ E(U,2)/(Im S Im T)); a −c log E(U,2) term with c = O(1) is not a known string term.
 Verdict: LEAD, not an origin. It would move P3 from "plateau in the nilpotent metric by choice" to "plateau from an Eisenstein term in K by choice": cleaner (no nilpotent field) but equally postulated. Testable by a short locked computation: scan (k, c) with positivity on the whole fundamental domain, vacuum at ρ with V(ρ) = 0 and m² > 0, plateau approach, exact n_s and r against the frozen band.
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D911a (correction to D911 point 3): the mixture estimate ignored |W|²
+D911 point 3 took e^K|W|² ∝ y^{−k}E^{−c}, a power law. A modular-invariant potential needs W of weight −k, W ∝ η^{−2k}, and then e^G = (2y|η|⁴)^{−k}E^{−c}: since |η|⁴ ≈ e^{−πy/3}, e^G grows as e^{kπy/3} at the cusp. The power-law plateau estimate (k + 2c = 2) is withdrawn. The positivity statement (4y²G_{ττ̄} = k − 2c at a fixed point) stands.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D912 (P3.K1): the Eisenstein-Kähler route gives no plateau: e^G grows exponentially and ρ is a maximum; route CLOSED
+Lock: PREREG_D912_eisenstein_kahler.md (committed and pushed before the run). Script theory/modular/eisenstein_kahler_d912.py, output field_tests/results/eisenstein_kahler_d912.txt.
+Results [derived]: for w = k + 2c = 2.0, 2.5, 2.9, 3.5 (k = 0.75w, c = 0.125w):
+- (1) Positivity: PASS everywhere on the grid; minimum 4y²G_{ττ̄} = k − 2c = 0.5w at the fixed points (the printed column is 4 × this, a labelling factor in the print statement; numbers unaffected, no rerun).
+- (2) Vacuum: FAIL: V < 0 at ρ + 0.01…0.1 after V(ρ) = 0, so ρ is a local maximum of V along x = 1/2.
+- (3) Plateau: FAIL: V − V₀ ≈ +1e26 … +1e44 V₀ at y = 40, from the e^{kπy/3} growth of (2y|η|⁴)^{−k} (D911a).
+No spectra were computed (the lock runs them only where (1)–(3) pass).
+Verdict (locked rule): FAILS. Pre-stated prediction: positivity CONFIRMED; "plateau from below for w < 3" WRONG (no plateau for any w, because of the η factor); the r estimate is moot.
+Consequence [derived]: within a modular-invariant supergravity with one modulus, an Eisenstein term in K cannot make the plateau: with W ∝ η^{−2k} the η factor dominates at the cusp; with k = 0 (W constant), K = −c ln E has a ghost at the fixed points (D911). P3 stays where it was: the plateau sits in the uplift/nilpotent metric by choice (D870). P3.K route CLOSED.
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
