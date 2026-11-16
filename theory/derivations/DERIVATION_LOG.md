@@ -69,3 +69,14 @@ Touches: serapis_e (frozen; unchanged), lepto_rho (P2 restricted).
 9. Heavy-ν couplings ∝ modular forms of U₃ carry O(s_CP) phases [postulate P2].
 10. [derived] Consistency: D765 is respected (U₁ is not in the relation, so its metric stays single). D698's tilt mechanism is unchanged; only N changes, and the frozen predictions do not move. The exotic-O3′ caveat is open.
 Touches: lepto_rho, lepto_i; mirror to the gravitino/wino chain (volume).
+
+## D767 — downstream of 3/3/3 + 1 (forward side)
+1. Tilt C = (15/64π⁶)·N_eff/(Im S Im ρ), with N_eff = N − N0 [literature] (D696 derivation from BHK hep-th/0508043).
+2. Tadpole 3N + N0 + N_flux = 16, with N_flux = n_flux/2 [literature] (hep-th/0602038 eq 4.10; 2405.18813 eq 3.8).
+3. n_flux = 12 ⇒ N_flux = 6 ⇒ (N, N0) = (3, 1), N_eff = 2 [derived].
+4. The band C = 1.0–1.3e-6 ⇒ Im S·Im ρ = 375–488 (half-unit 188–244) [derived] (computed; K4 reproduces D696's 750–975 for (5, 1)).
+5. T_R = T_R(M_H, c), independent of N [derived] (D725 inputs).
+6. M₂ = b₂g₂²m₃/₂/16π², with m₃/₂ in the phenomenological window [literature] (anomaly mediation; D649-block).
+7. Ω_wino and f_max are unchanged; D732 and D735 regression outputs are identical [derived] (computed).
+8. [derived] Consistency: D766's 225–732 is contradicted, so D766a is written. The frozen bands are untouched (C fixed by the band).
+Touches: lepto_rho (P2 context); no change to serapis_e or the wino window.

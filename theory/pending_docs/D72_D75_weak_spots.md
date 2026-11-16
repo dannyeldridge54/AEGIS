@@ -7405,3 +7405,16 @@ VERDICT (locked rule): VIABLE, with conditions.
 Tool fix: ladder.py now reads letter-suffixed correction notes (D765a); new test, 5/5 pass. Frozen nodes stay protected (by design), so D765a's manual map fix stands.
 Mirror question (forward, next tick): with N = 3 instead of 5, does anything frozen move? Check D698/D692: C = 15N/(64π⁶ Im S Im ρ) is fixed by the band, so only the inferred Im S·Im ρ moves. Also the gravitino/wino chain (m₃/₂ depends on the volume, D732–D736): recompute the volume implied by Im S·Im ρ 225–732 and check that the wino window 0.67–0.80 TeV holds.
 MAP: node=lepto_rho status=assumed touches=[lepto_i] ripple=no
+
+## D766a (correction to D766's Im S·Im ρ)
+D766 rescaled the summary range 375–1220 by N/5 and got 225–732. That was wrong. D696's tilt is set by N_eff = N − N0, not N, and 375–1220 was a union of the full- and half-unit cases. Correct (D767, computed): (N, N0) = (3, 1) gives N_eff = 2 and Im S·Im ρ = 375–488, or 188–244 if a stuck brane counts as half a D3 unit. Still weak coupling and moderate volume, but the half-unit case is getting low. D766's other statements (U₂ = ω only; n_flux = 12 saturates with 3/3/3 + 1) stand.
+MAP: none
+
+## D767 (FORWARD, i-side; Jl tick 6; locked PREREG_D767; results/n3_downstream_d767.txt) — 3/3/3 + 1 halves N_eff; the wino window and the frozen bands do not move
+Computed:
+- Tilt (D696 formula): K4 reproduces (5, 1) → 750–975. With (3, 1) + 6 flux units (n_flux = 12), N_eff = 2 and Im S·Im ρ = 375–488 (half-unit variant 188–244). This corrects D766 (see D766a).
+- Wino chain: by inspection of the inputs, T_R comes from the heavy-ν sector (D725: M_H, c), m₃/₂ from the phenomenological window (gluino and wino bounds), and M₂ = 2.7e-3·m₃/₂ from anomaly mediation. None depends on N or Im S·Im ρ. Regression: D732 and D735 rerun unchanged, with outputs identical to the committed files.
+VERDICT (locked rule): the wino window (0.67–0.80 TeV, Einasto, post-hoc) is UNCHANGED, and so are the frozen SERAPIS-E bands (C is fixed by the band; only the inferred Im S·Im ρ moves). D766a written.
+Note for the paper/state doc: "Im S·Im ρ ≈ 375–1220" becomes 375–488 (or 188–244) if the P2 CP mechanism is adopted. That is a modelling choice to state, not a frozen change.
+Mirror question (reverse, next tick): the stale wall plateau_origin (D760). Under the no-stop rule: deep research on non-perturbative or warped sources of a 1/E(τ,2) term. If none, write POSTULATE P3 for the plateau term with explicit falsifiers. Budget β3: P2 is open, so P3 would make 2 (allowed).
+MAP: node=lepto_rho status=assumed touches=[] ripple=no

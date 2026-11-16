@@ -1,0 +1,4 @@
+(N,N0,N_flux)=(5,1,0) N_eff=4: Im S*Im rho = 750-975; half-unit variant 375-488
+(N,N0,N_flux)=(3,1,6) N_eff=2: Im S*Im rho = 375-488; half-unit variant 188-244
+gravitino_wino_d732 regression: identical
+wino_fraction_d735 regression: identical
