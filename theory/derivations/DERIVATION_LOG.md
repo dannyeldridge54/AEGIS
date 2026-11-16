@@ -1403,3 +1403,7 @@ Touches: none.
 - [literature] E(U,2) = T² lattice sum.
 - [estimate] mass² ∝ E(U,2) from the KK tower, offset tuned; not computed.
 - Result: P3 reformulated; novelty check and locked two-field check next.
+
+## D942: D941 novelty check
+- [literature] 1702.00420 (one-loop Pfaffians), 2508.11206 (KK tower potential): different uses; no Eisenstein-ratio plateau.
+- Result: not found in this check; locked two-field check next.
