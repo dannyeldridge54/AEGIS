@@ -116,3 +116,4 @@ D829  2026-11-16T14:27Z  P3.2 anti-D3 amplitude on our configuration
 D830  2026-11-16T14:33Z  P3.3 anti-D3 placement
 D831  2026-11-16T14:41Z  P3.4 anti-D3 size and shape
 D832  2026-11-16T14:43Z  P3.5 verdict
+D833  2026-11-16T14:48Z  K.1 kappa normalisation
