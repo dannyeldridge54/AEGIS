@@ -135,3 +135,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D886: before computing a hypothesised correction, check its growth at the cusp against the known form of corrections; q-expansion terms die at the cusp, so they can never make a ramp.
 - 2026-11-16 D887: when a deep project ends negative, record the exact form the missing piece must take; that is the useful output for a future computation.
 - 2026-11-16 D887: when a deep project ends negative, record the exact form the missing piece must take; that is the useful output for a future computation.
+- 2026-11-16 D888: before looking for a lift of a vanishing modular form, check which routes the symmetry closes (fixed-point stationarity, uniqueness of the form, non-renormalisation); only the survivors need literature.

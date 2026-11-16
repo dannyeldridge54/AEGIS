@@ -9134,3 +9134,14 @@ Verdict [derived]: the ε-origin project closes NEGATIVE. The τ = i tilt ε ≈
 Consequences: τ = i stays the conditional variant under DECISION_RULE_D841 (unchanged). Frozen predictions unchanged. v3.2 draft: one sentence added to the D686 paragraph (needed form plus why throat corrections fail; cites 2009.03312); rebuilt clean, 17 pages.
 Next: the ρ lift ε ≈ 2e-3 origin (D883), the remaining post hoc number on the main branch.
 MAP: node=eps_tilt status=estimate touches=[band_i, serapis_e] ripple=no
+
+## D888 (DEEP, L.1): reverse path for ρ's lift ε ≈ 1.8e-3: holomorphic and perturbative routes are closed by symmetry; an instanton with Im T/N ≈ 1 or a GUT/string-scale-suppressed operator fit naturally
+Arithmetic: theory/modular/rho_lift_d888.py → theory/derivations/rho_lift_d888.txt (no prediction, no lock; first run crashed on a print format, fixed and rerun, numbers unaffected).
+1. Need [derived] (D883): S₂'s Dirac coupling = ε·y₂ with ε = 1.8e-3 (3.1e-4 to 1.1e-2, 5–95%), y₂ = O(1).
+2. Why it vanishes [derived]: the only weight-4 level-1 form is E₄, and E₄(ρ) = 0 (check: |E₄(ρ)| < 1e-30; E₄′(ρ) = −(2πi/3)E₆(ρ) = −6.035i, E₆(ρ) = 2.8815). Any holomorphic coupling of the same weight is ∝ E₄ and vanishes too, so no holomorphic lift exists at fixed weight.
+3. Route (a), displacement of τ from ρ [derived]: ε ≈ |E₄(τ)|/|E₆|^{2/3} needs |τ − ρ| ≈ 6.0e-4 (1.0e-4 to 3.7e-3). But ρ is a fixed point of ST, so any modular-invariant potential has a stationary point exactly there: the displacement is zero unless modular symmetry is broken explicitly. CLOSED within the model.
+4. Route (b), loops [literature-standard: SUSY non-renormalisation]: a superpotential coupling that vanishes stays zero to all orders in perturbation theory; post-SUSY-breaking thresholds give ~ (1/16π²)(m_soft/M_S₂) ~ 1e-9 or less. CLOSED. (For scale only: ε = 0.28 × 1/16π².)
+5. Route (c), instanton [derived arithmetic]: ε = e^{−2π Im T/N} needs Im T/N = 1.01 (0.72–1.29). This is the natural size in racetrack setups (N ~ Im T). Condition: the instanton prefactor must be a function of U that does not vanish at ρ (e.g. built from η(U), η(ρ) ≠ 0) with the right Z₃ character. ALIVE [estimate].
+6. Route (d), higher-dimension operator [derived arithmetic]: ε = Λ/M_P needs Λ ≈ 4.4e15 GeV (7.6e14 to 2.7e16), i.e. the GUT/string scale. It must enter through a non-holomorphic (Kähler) structure that is not forced to vanish at ρ. ALIVE [estimate].
+Verdict: the ρ lift is not explained, but it is not fine-tuned either: two standard mechanisms give it at natural parameter values (Im T/N ≈ 1 or Λ ≈ M_GUT). Both need explicit model-building (L.2/L.3).
+MAP: node=n_sector_rho status=estimate touches=[lepto_rho,mnu] ripple=no

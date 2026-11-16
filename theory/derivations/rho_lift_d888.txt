@@ -1,0 +1,12 @@
+E4(rho)= 7.54e-31  E6(rho)= (2.8815411 + 1.2478754e-30j)
+E4'(rho)= (3.4358425e-30 - 6.0350856j)  check -(2pi i/3)E6= (2.6135442e-30 - 6.0350856j)
+(a) displacement |tau-rho| for eps=3.1e-04: 1.04e-04
+(a) displacement |tau-rho| for eps=1.8e-03: 6.04e-04
+(a) displacement |tau-rho| for eps=1.1e-02: 3.69e-03
+(c) one-loop 1/16pi^2 = 0.00633257397764611071524246645061  eps/loop = 0.28424460675137353
+(d) instanton: Im T/N = 1.286 for eps=3.1e-04
+(d) instanton: Im T/N = 1.006 for eps=1.8e-03
+(d) instanton: Im T/N = 0.718 for eps=1.1e-02
+(e) Planck-suppressed Lambda = eps*M_P = 7.55e+14 GeV for eps=3.1e-04
+(e) Planck-suppressed Lambda = eps*M_P = 4.38e+15 GeV for eps=1.8e-03
+(e) Planck-suppressed Lambda = eps*M_P = 2.68e+16 GeV for eps=1.1e-02

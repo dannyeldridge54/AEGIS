@@ -1073,3 +1073,12 @@ Touches: eps_tilt, band_i, serapis_e.
 2. No throat source at leading order [literature] (2009.03312, via D886).
 3. Project closes negative; ε stays fitted; D841 rule unchanged [derived].
 Touches: eps_tilt, band_i, serapis_e.
+
+## D888: L.1 ρ lift reverse path
+1. ε = 1.8e-3 (3.1e-4 to 1.1e-2) on S₂'s coupling [derived] (D883).
+2. E₄ is the unique weight-4 form and E₄(ρ) = 0, so no holomorphic lift at fixed weight [derived].
+3. Displacement needs |τ−ρ| ≈ 6e-4 but ρ is a fixed point, so zero without explicit breaking [derived].
+4. Loops cannot lift a zero superpotential coupling [literature] (non-renormalisation theorem).
+5. Instanton: Im T/N = 1.01 (0.72–1.29) [derived] (arithmetic).
+6. Operator: Λ = 4.4e15 GeV (7.6e14 to 2.7e16) [derived] (arithmetic).
+Touches: n_sector_rho, lepto_rho, mnu.
