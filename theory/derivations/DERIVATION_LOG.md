@@ -989,3 +989,10 @@ Touches: lepto_rho, band_e, n_sector_rho.
 3. Light-mediator CP sources evade Nanopoulos–Weinberg [literature] (2312.08327).
 4. Top candidate: suppressed transfer f of the inflaton-AD charge instead of strong dilution [estimate] (D790–D792, D787).
 Touches: lepto_rho, band_e.
+
+## D877: B.3 AD transfer fraction
+1. Two Z₃-allowed inflaton channels carry ΔB = +2 and −1 [derived] (D780, D787, D789).
+2. f = |3b − 1| with b = BR(φ → N_nN_n) [derived].
+3. Band-safe T₂ needs f = 1.4e-4–1.1e-2, |b − 1/3| = 5e-5–4e-3 [derived] (arithmetic on D792's formula).
+4. A tuning unless a symmetry fixes b = 1/3 [estimate].
+Touches: lepto_rho, band_e, n_sector_rho.

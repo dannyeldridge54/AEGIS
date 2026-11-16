@@ -9011,3 +9011,12 @@ Ranking against D875's targets (asymmetry at/after T₂ ≳ 1e5 GeV, or a smalle
 Next (B.3): lock and compute the transfer fraction f from the Z₃-allowed inflaton decay channels (branching ratios of ΔB = ±2, ±1, 0 channels with the D787 charges), the resulting Y_B with T₂ ≳ 1e5 GeV, and whether N* stays in the frozen band.
 Sources: 1803.00820; PRL 124, 111602 (axiogenesis); 2312.08327; hep-ph/0509121.
 MAP: node=lepto_rho status=assumed touches=[band_e] ripple=no
+
+## D877 (DEEP, B.3): the suppressed-transfer route needs the two inflaton channels balanced to 0.005–0.4%; a tuning unless a symmetry fixes b = 1/3
+Derivation + arithmetic on the locked D792 formula (output kept at theory/derivations/b3_transfer_d877.txt; no model run, no results file).
+1. Z₃-allowed inflaton channels [derived] (D780, D787, D789): with N_n (q), N₃ (−q), N_Y (0) and −q_φ ≡ 2q ≡ −q (mod 3), exactly two two-body channels are allowed: φ → N_nN_n and φ → N_Y N₃. Under baryon triality N_n → u^c d^c d^c carries B = +1, N₃ the conjugate (B = −1), N_Y decays to L H (B = 0). So the channels carry ΔB = +2 and ΔB = −1.
+2. Transfer fraction [derived]: an inflaton charge asymmetry η (AD orbit, D790) gives net baryon number per φ quantum = η[2b − (1 − b)] = η(3b − 1), with b = BR(φ → N_nN_n). So f = |3b − 1|; D792's "B per N = η" corresponds to one channel only.
+3. Required f [derived, arithmetic]: Y_B = (28/79)(3/4)(T₂/M)·f·η = 8.75e-11 with the band-safe T₂ = 1e5–1e6 GeV (D781), M = 4.3e11–1e12 GeV, η = 0.3–1 (D791 isocurvature floor): f = 1.4e-4 to 1.1e-2, i.e. |b − 1/3| = 5e-5 to 4e-3.
+4. Verdict: Y_B can be reached inside the frozen band only if the two channel widths sit within 0.005–0.4% of the ratio 1 : 2. With no symmetry forcing b = 1/3, that is a tuning of 1 part in 250–20000. Rank 1 of D876 is WEAKENED: viable in principle, natural only if some structure enforces Γ(N_Y N₃) = 2Γ(N_nN_n) at leading order (an open question: the 2⊕1 couplings of D725 would decide it).
+5. Next step (would need a lock): compute b from the D725 2⊕1 couplings at ρ. If b = 1/3 exactly at leading order, f comes from a small correction and the route becomes natural.
+MAP: node=lepto_rho status=assumed touches=[band_e,n_sector_rho] ripple=no
