@@ -706,3 +706,10 @@ Touches: plateau_origin, serapis_e.
 5. Route (a) cannot give P3 in any modular-invariant completion [derived].
 6. P3's E-ratio has no identified string origin [derived] (D828–D837).
 Touches: plateau_origin, serapis_e.
+
+## D839: W.5 warped verdict (warped-throat project)
+1. Warped uplift couples to U multiplicatively; torus has no conifold [derived] (D837).
+2. Holomorphic invariant factors give exponential plateau approach only [derived] (D838).
+3. Route (a) closed for P3; W.3, W.4 moot [derived].
+4. P3 has no identified string origin; predictions unaffected [derived] (D828–D838).
+Touches: plateau_origin, serapis_e.

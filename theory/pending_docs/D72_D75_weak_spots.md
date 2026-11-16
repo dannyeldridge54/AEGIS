@@ -8575,3 +8575,9 @@ Consequence for P3 [derived]: all three routes listed in D832 are now constraine
 Remaining for the project: W.3 (warped κ) is moot for P3's shape; it would only matter for the D835 bound if a throat is added. Recommend closing the warped-throat project at W.5 without W.3/W.4.
 Sources: Diamond–Shurman, A First Course in Modular Forms, ch. 1–3 (weights, cusp forms) [literature]; D685, D691, D799, D837.
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D839 (DEEP, W.5): warped-throat project verdict
+Summary [derived]: the warped anti-D3 uplift couples to the bulk U only multiplicatively through the throat cutoff (D837); our T⁶/(Z₂×Z₂) has no conifold, so a throat means leaving the toroidal model (D837); and any modular-invariant holomorphic factor approaches its plateau exponentially, while SERAPIS-E's 1 − E(ρ)/E(U) approaches as a power law (D838). W.3 (warped κ) and W.4 (numerics) are SKIPPED as moot for P3's shape.
+Verdict: route (a) closed for P3 as stated. With D828–D836 (one-loop) and D799/D838 (holomorphic, non-perturbative), P3's E-ratio plateau has NO identified string origin. P3 stays a postulate; the frozen predictions do not depend on its origin.
+What this does and does not mean [derived]: it does NOT falsify SERAPIS-E (its predictions come from the plateau's shape, which is postulated and fitted to nothing new). It DOES mean the paper must not suggest a string origin for the E-ratio beyond "postulated". A positive spin-off: a warped throat would give an exponentially approached plateau, which is the shape class of the older τ = i / ρ L-variant family, so a string completion of that family through a throat is not excluded by this argument.
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no

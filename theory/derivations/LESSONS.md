@@ -85,3 +85,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D836: a deep project should end with the requirement it imposes, stated as a number someone can check (v₄ ≳ 2e4 g_s), not only with what failed.
 - 2026-11-16 D837: before computing inside a proposed mechanism, check the model even contains its ingredients. Our torus orientifold has no conifold, so a warped throat means changing the compactification, not adding a term.
 - 2026-11-16 D838: classify a candidate by its approach to the cusp (power law vs exponential) before building it. Holomorphic data can only give exponential approaches, which settled the warped route without a computation.
+- 2026-11-16 D839: close a project as soon as one structural result makes the remaining steps moot, and say which steps were skipped and why. Running W.3–W.4 anyway would have spent credits on numbers that cannot change the verdict.
