@@ -797,3 +797,12 @@ Touches: none.
 3. Racetrack figure scoped; D823 bullet clarified [derived] (D823, D845).
 4. Rebuilt clean, 16 pages [derived].
 Touches: none.
+
+## D851: Q.1 P1′ phase distribution (P1′ follow-up)
+1. Same racetrack model and grid as D845, new locked script [derived] (PREREG_D851).
+2. θ₁ generic: |sin θ₁| > 0.1 in 100%, > 0.5 in 84% [derived] (computed).
+3. θ₂ less generic: > 0.1 in 51% [derived].
+4. Deepest minimum CP-odd in 41% of points; otherwise near-degenerate (median ratio 0.95) [derived].
+5. Grid robustness 54/54 [derived].
+6. P1′ passes the locked phase-support rule for θ₁; depends on which exponential the heavy ν carry [derived].
+Touches: none.

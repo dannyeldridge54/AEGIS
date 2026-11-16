@@ -8710,3 +8710,16 @@ MAP: none
 ## D850 (v3.2 draft, V.4): referee pass on the diff; six fixes
 Report: papers/v3/REFEREE_v3.2_diff.md. Fixes [derived]: undefined internal labels removed or defined (P1′, N_eff, v₄); "holomorphic factor" narrowed to modular-invariant factors built from holomorphic data (D838's actual scope); scope added to the 90% racetrack figure (one modulus, before uplift); D823 bullet clarified (massless without the ε term). Rebuilt: 16 pages, no undefined references, no overfull boxes. PDF updated. v3.2 is NOT uploaded; it waits for Danny's word.
 MAP: none
+
+## D851 (DEEP, Q.1): P1′ phases are generic, and CP-odd vacua are the DEEPEST in 41% of racetracks
+Lock: PREREG_D851_racetrack_phases.md (committed before the run). Script theory/modular/racetrack_phases_d851.py (new; D845 not rerun), output field_tests/results/racetrack_phases_d851.txt.
+Same model and grid as D845 (540 points). 2352 CP-odd minima with t > 2.
+(a) Phases [derived]: θ₁ = 2π⟨Re T⟩/N1: |sin θ₁| > 0.1 in 100%, > 0.5 in 84.4%; histogram of |sin θ₁| (bins 0.0–1.0): 0, 12, 72, 100, 184, 308, 188, 248, 380, 860, peaked toward maximal CP violation. θ₂ = 2π⟨Re T⟩/N2: > 0.1 in 51.2%, > 0.5 in 13.1%. Which phase enters leptogenesis depends on which exponential the heavy-ν couplings carry (Q.2).
+(b) Vacuum selection [derived]: the deepest minimum found is CP-ODD in 220/540 points (40.7%). Where the deepest is CP-even, the best CP-odd minimum is nearly degenerate: median V_odd/V_even = 0.954 (n = 266).
+(c) Robustness [derived]: 400×400 vs 700×700 grids agree on the CP-odd count at 54/54 checked points.
+(d) Uplift probe [derived]: lifting by |V of the deepest CP-even minimum| makes 62.7% of CP-odd minima dS. (Informative only where the deepest minimum is CP-even; where it is CP-odd, the uplift would be tuned to it instead.)
+Verdict (locked rules): P1′ reproduces P1's phase support: |sin θ₁| > 0.1 in 100% (≥ 0.8 required) AND CP-odd deepest minima in 40.7% of points (≥ 20% required). PASS for θ₁. For θ₂ the phase rule fails (51% < 80%).
+Pre-stated predictions: (a) "phases generic" CONFIRMED for θ₁, partly wrong for θ₂; (b) "CP-odd mostly metastable, ≤ 20%" WRONG: 40.7% are the deepest, and the rest are within ~5% of the CP-even depth.
+Consequence [derived]: vacuum selection is not a strong obstacle for P1′: in ~41% of racetracks the true (deepest) AdS minimum is CP-violating, before uplift. The remaining dependence is Q.2: if the heavy-ν couplings carry the faster exponential (N1), P1′ gives an essentially generic phase (P1's old prior is reproduced or exceeded); if the slower one (N2), half the vacua give |sin| < 0.1.
+Caveats [estimate]: one Kähler modulus, K = −3 ln, A = 1 fixed; deepest within t ∈ (1, 60).
+MAP: none
