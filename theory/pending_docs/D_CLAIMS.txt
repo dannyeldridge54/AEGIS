@@ -211,3 +211,4 @@ D924  2026-11-16T20:16Z  Zenodo record audit: v3.2 page filled, all 5 records md
 D925  2026-11-16T20:18Z  completion literature tick
 D926  2026-11-16T20:19Z  completion tick 2: special points
 D927  2026-11-16T20:20Z  LG+LCS lead novelty check
+D928  2026-11-16T20:21Z  LCS ray attractor index
