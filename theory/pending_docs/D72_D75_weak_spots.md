@@ -9545,3 +9545,12 @@ Search (1, standard, phrasing different from D910) + 1 fetch. [literature] Lynke
 Verdict: NULL. P3 (the Ê/(Ê+1) plateau) still has no literature or derived origin; the routes on record (D911–D912 Kähler, D914 T-brane, D917 heterotic GS, Project F flux) are closed. Today's planned queue (Pl at 14:24: steps 1–5) is complete.
 LESSONS: two P3 literature ticks in one day both NULL; the next P3 attempt needs a new mechanism, not a new search phrasing.
 MAP: none
+
+## D941 (P3, new mechanism): P3's Ê/(Ê+1) is exactly what integrating out one heavy field gives when its mass² ∝ Ê competes with a constant pinning term; this moves P3's question to "where does a mass² ∝ E(U,2) come from"
+[derived] (sympy) For V(χ) = A χ² + B(1 − χ)², the minimum is at χ* = B/(A+B) with V_min = AB/(A+B) (the "series combination"). With A = μ²Ê(τ,τ̄), B = μ²: V_min = μ² Ê/(Ê+1), exactly P3; the D646-type ramp multiplies it as before.
+[derived] (sympy) With χ = φ/M (M in Planck units), m_χ²/H² = 6(A+B)²/(AB M²) ≥ 24/M², so χ is heavy and the single-field reduction is good for M ≲ 0.5 (m²/H² ≳ 100) [the adiabatic minimisation itself not checked numerically].
+[literature] E(U,2) is the T² lattice (KK/winding) sum: Σ′ y²/|m + nU|⁴ = 2ζ(4)E(U,2); such sums are what one-loop thresholds on T² produce (DKL, BHK).
+[estimate] Candidate origin: a heavy scalar whose one-loop mass² from the T² tower is ∝ E(U,2), with a tree-level offset making it vanish at the vacuum (Ê = E(U,2) − E(ρ,2) at ρ, or the τ = i analogue). The offset is a tuning, and the sign and coefficient of a KK-induced mass² are not computed.
+Status: P3 reformulated, not derived. It is a known supergravity trick that any positive V can be written via a Kähler metric (nilpotent constructions, 1408.4096-type), so the content here is only the physical reading (heavy field + T² tower mass). Novelty NOT checked: "flattening" by heavy fields (Dong–Horn–Silverstein–Westphal, 1011.4521) is related prior art; dedicated search next tick, then a locked check that the full two-field system reproduces P3 along the valley.
+LESSONS: a bounded ratio X/(X+1) is the signature of a series combination; look for the competing pair before looking for the ratio itself.
+MAP: none

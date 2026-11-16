@@ -188,3 +188,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D938: same operator, opposite regime: cite instanton Weinberg papers carefully.
 - D939: paper wording must match computed status.
 - D940: next P3 attempt needs a new mechanism, not a new search phrasing.
+- D941: X/(X+1) signals a series combination of two competing terms.

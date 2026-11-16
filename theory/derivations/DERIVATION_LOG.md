@@ -1396,3 +1396,10 @@ Touches: none.
 ## D940: P3 literature tick 2
 - [literature] arXiv:1902.04625: level-N hauptmodul inflation, no plateau, no bounded ratio.
 - Result: NULL; plan queue complete.
+
+## D941: P3 as a heavy-field series combination
+- [derived] (sympy) min_χ [Aχ² + B(1−χ)²] = AB/(A+B); A = μ²Ê, B = μ² gives P3.
+- [derived] (sympy) m_χ²/H² = 6(A+B)²/(AB M²) ≥ 24/M².
+- [literature] E(U,2) = T² lattice sum.
+- [estimate] mass² ∝ E(U,2) from the KK tower, offset tuned; not computed.
+- Result: P3 reformulated; novelty check and locked two-field check next.
