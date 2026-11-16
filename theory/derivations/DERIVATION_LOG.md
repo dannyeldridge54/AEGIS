@@ -1434,3 +1434,9 @@ Touches: none.
 - [derived] (sympy) V_min(E) − V_min(E_ρ) = N·P3(λ′Ê), λ′ = λ/(λE_ρ+1), exact.
 - [derived] ramp leftover absorbed into C; residual O(1e-6).
 - Result: Project H closes positive analytically; P3 derived up to model-building assumptions.
+
+## D948: D941/D945 vs earlier no-gos
+- [derived] (sympy) E-term share of V_min is 1/(λÊ+1) ≈ 1e-3–1e-4, not D709's 50%.
+- [derived] no tension competition, so D712/D703's sign wall does not apply.
+- [estimate] new assumptions: tree mass of χ accidentally small (loop ≫ tree); area stabilised with m_A ≫ H.
+- Result: Project H's close stands with two added conditions.

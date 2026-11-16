@@ -9604,3 +9604,12 @@ Verdict: H3 passes: the offset of D945 is the cosmological-constant subtraction 
 Next: write this up for the v3.3 draft (Project H paragraph), then a locked recompute of N* with the vacuum mass from λ′ if the paper is to quote it.
 LESSONS: a constant offset in a potential is often just the cosmological-constant subtraction; check before calling it tuning.
 MAP: none
+
+## D948 (Project H cross-check): D941/D945 evade the earlier no-gos D709 (50% rule) and D712/D703 (tension sign wall), because the E-term enters a heavy MATTER field's mass, not the stabilisation of a modulus; two new conditions recorded
+Found while preparing the paper paragraph: D709 ("any 1/E(τ,2) plateau from integrating out a modulus needs E at leading order") and D712 ("brane-interaction candidate hits the sign wall") concern the same plateau. Checked against them before writing anything up.
+[derived] (sympy) D709's obstruction: for V = aE/X^p − b/X^q a pure 1/E minimum needs p = 2q, and then the E-term is 50% of the competing term at the minimum (loss of perturbative control). In D941 the integrated field is χ with V = Aχ² + B(1−χ)²; at χ* = B/(A+B) the E-term energy is Aχ*² = AB²/(A+B)², a fraction B/(A+B) = 1/(λÊ+1) of V_min: ≈ 1e-3–1e-4 on the plateau, not 50%. The plateau energy is the tree term B; the E-dependence of V is a small correction because χ's large loop mass pushes χ* → 0. D709 does not apply.
+[derived] D712/D703's obstruction is the sign of a codim-2 tension needed to stabilise the AREA against an E-term. D945 needs no tension competition: its sign requirement is only δm_χ² > 0, which a boson loop with positive quartic coupling gives. D712 does not apply.
+NEW conditions [estimate, from this check]: (1) Hierarchy: the loop mass² A ≫ tree mass² B (ratio λÊ ~ 1e3–1e4 on the plateau). That is consistent with perturbation theory only if the tree mass is accidentally small (higher loops are suppressed relative to one loop by λ/16π², not relative to tree); stated as an assumption. (2) Area backreaction: V_min ≈ B[1 − 1/(λÊ)] with λ ∝ 1/A² adds an A-dependence of relative size 1/(λÊ) ≪ 1 to the area's potential; the area modulus must be stabilised with m_A ≫ H (assumed, as in D945), and the shift is small.
+Verdict: Project H's positive close (D947) stands, now explicitly checked against D703/D709/D712, with conditions (1)–(2) added to its assumption list.
+LESSONS: grep the old no-gos for the same object (here 1/E(τ,2)) before writing up a new route; this one survived but could have been caught twice.
+MAP: none
