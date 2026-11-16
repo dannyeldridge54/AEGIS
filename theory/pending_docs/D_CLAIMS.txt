@@ -84,3 +84,4 @@ D797  2026-11-16T10:56Z  P3 anti-D3 metric origin
 D798  2026-11-16T11:07Z  DKL threshold plateau at rho
 D799  2026-11-16T11:15Z  condensate placement for P3
 D800  2026-11-16T11:23Z  SERAPIS-Delta two-term window
+D801  2026-11-16T11:30Z  lattice sums select rho
