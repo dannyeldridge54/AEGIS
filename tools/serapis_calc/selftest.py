@@ -51,6 +51,10 @@ check('L4 power-law exact r = 16/q', abs(rp['r']/(16/q)-1) < 5e-3, f"{rp['r']:.5
 check('L4 power-law alpha_s = 0', abs(rp['alpha_s']) < 2e-5, f"{rp['alpha_s']:.1e}")
 rp150 = spectra(Background(lambda p: math.exp(-lamb*p), lambda p: -lamb*math.exp(-lamb*p), 0.0, Nmax=180), None, Npivot=150.0)
 check('L4 pivot-depth invariance (N=150 vs 30)', abs(rp150['ns']-rp['ns'])<1e-5 and abs(rp150['r']/rp['r']-1)<1e-3, f"{rp150['ns']:.6f}, {rp150['r']:.5f}")
+# L4c: Bunch-Davies start convergence (D958): report alpha_s sensitivity on m^2 phi^2 (bd 1000 vs 5000)
+bgq2 = Background(lambda p: 0.5*p*p, lambda p: p, 17.0)
+a1, a5 = spectra(bgq2, 60.0, bd=1000.0)['alpha_s'], spectra(bgq2, 60.0, bd=5000.0)['alpha_s']
+check('L4c alpha_s converged in BD start (1000 vs 5000, <2%)', abs(a5/a1-1) < 0.02, f'{a1:.4e} vs {a5:.4e}')
 # L2: vacuum at rho with Z3-symmetric (equal) masses
 from .landscape import V_tau, find_vacuum, hessian_canonical
 Er = E_paper(0.5, 3**0.5/2)
