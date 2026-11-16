@@ -260,3 +260,4 @@ D973  2026-11-16T23:09Z  Project H selects rho
 D974  2026-11-16T23:23Z  alpha_s convergence result
 D975  2026-11-16T23:32Z  Project H: implied Im S Im T
 D976  2026-11-16T23:37Z  correction to D956 (Gamma ∝ m)
+D977  2026-11-16T23:59Z  Project H refit-C result
