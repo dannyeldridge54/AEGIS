@@ -9262,3 +9262,11 @@ Findings [literature]:
 3. n_s: no CMB+BAO combination newer than those the draft quotes turned up in a standard search (2512.05108 reviews the spread of n_s constraints; not fetched).
 Assessment [derived]: the frozen Σm_ν = 0.0587 eV (NO floor) is below the zero-prior bound of one combination by 0.007 eV and inside the physical-prior bound. This tests NO + ΛCDM generically, as the draft already says. No frozen number changes; status lines updated (draft Σm_ν sentence cites 2606.17994; prediction_sheet data-check line).
 MAP: node=mnu status=literature touches=[] ripple=no
+
+## D903 (CENTRE, W3.1): at τ = i Affleck–Dine is conditional: the D654a Weinberg operator is allowed and unsuppressed, and the minimal texture has no light enough direction
+Derivation from the notes plus arithmetic: theory/modular/weinberg_i_d903.py → theory/derivations/weinberg_i_d903.txt (no prediction, no lock).
+1. [derived] (D654a): with the η^{-2} multiplier a singlet Weinberg operator with k_L = k_{H_u} = 1 (coefficient E₄η^{-2}, |E₄(i)| = 1.456) is NON-zero at i. At Planck size it gives m ~ 1.8e-5 eV in every direction (arithmetic). The residual Z₂ at i does not force a zero (D785, D794), unlike ρ's E₄ zero.
+2. [derived] (arithmetic): AD at i needs M = v_u²/m_ν₁ = 1.1e22–1.9e23 GeV (D900 window), i.e. c ≲ 1.3e-5–2.2e-4 relative to M_P, or 3e-8–3e-6 relative to M_s: instanton action S ≳ 13–17 for Λ = M_s, the same kind of suppression as at ρ (D897, S ≳ 14–19).
+3. [derived] (D786, D742): the minimal 2⊕1 τ = i texture gives m₁ ≈ 5e-5–4e-3 eV, five orders above the AD window; AD at i would need an extra structure making the lightest seesaw direction ≲ 3e-9 eV (at ρ that role is played by the E₄ zero).
+Verdict: AD at τ = i is a CONDITIONAL alternative (two conditions: instanton-only Weinberg term; a near-massless seesaw direction not in the minimal texture). τ = i's baryogenesis remains inflaton-decay leptogenesis (D745; conditional on P1′ two-cycle CP, D854). The draft's "requires a symmetry that forbids (LH_u)²/M_P" is correct; one sentence added stating the two conditions (D903). Frozen predictions unchanged: Σm_ν NO floor is reached for m₁ ≲ 1e-4 eV either way (D786).
+MAP: node=lepto_i status=estimate touches=[mnu] ripple=no

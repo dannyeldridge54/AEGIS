@@ -1177,3 +1177,10 @@ Touches: none.
 2. ATLAS Run 2 disappearing tracks: 720 GeV at 1 ns [literature] (ATLAS briefing, 10 Mar 2026).
 3. NO floor 0.0587 eV below one zero-prior bound, inside the physical-prior bound [derived].
 Touches: mnu.
+
+## D903: W3.1 Weinberg at τ = i
+1. Singlet Weinberg (E₄η^{-2}) non-zero at i; Planck-size m ~ 1.8e-5 eV [derived] (D654a; arithmetic).
+2. AD window needs S ≳ 13–17 (Λ = M_s) [derived] (arithmetic, D900 window).
+3. Minimal texture m₁ ≈ 5e-5–4e-3 eV, far above the window [derived] (D786, D742).
+4. AD at i conditional; inflaton-decay leptogenesis remains τ = i's route [derived] (D745).
+Touches: lepto_i, mnu.
