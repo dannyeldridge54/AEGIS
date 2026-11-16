@@ -93,3 +93,4 @@ D806  2026-11-16T12:17Z  alpha_s forecast reach
 D807  2026-11-16T12:27Z  referee round 7 merge (recount)
 D808  2026-11-16T12:29Z  referee deferrals 1b
 D809  2026-11-16T12:32Z  gravitino to wino computed
+D810  2026-11-16T12:33Z  orbit charge coefficient
