@@ -734,3 +734,12 @@ Touches: band_i, eps_tilt.
 3. Current-state summary updated and synced [derived].
 4. Stale-wording sweep clean [derived] (D834a).
 Touches: none.
+
+## D843: C.1 CP sources literature (P1 deep project)
+1. CP is an outer automorphism of the symplectic modular group in IIB orientifolds [literature] (2010.10782).
+2. CP violation is spontaneous, via axion vevs [literature] (2010.10782; 1901.03251).
+3. Toroidal prepotentials give no spontaneous CPV in flux vacua; Kähler axions not studied [literature] (2010.10782).
+4. P1's independent coupling phases conflict with the generic string expectation [derived].
+5. Remaining sources in our setup: Kähler axions, brane/Wilson-line moduli [derived].
+6. P1 not falsified; must be reformulated with a named breaking modulus [derived].
+Touches: none.

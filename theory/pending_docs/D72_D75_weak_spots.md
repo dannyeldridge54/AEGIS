@@ -8626,3 +8626,19 @@ MAP: node=band_i status=computed touches=[eps_tilt] ripple=no
 5. The published v3.1 was not touched; the paper change is queued in V32_TODO (D841 line).
 τ = i verdict project complete.
 MAP: none
+
+## D843 (DEEP, C.1): CP in string flavour models: the literature puts P1 under pressure
+Searches: 3; fetched 2010.10782 (Ishiguro–Kobayashi–Otsuka) and 1901.03251 (Baur–Nilles–Trautner–Vaudrevange).
+Findings:
+1. In Type IIB CY orientifolds, CP is a symmetry of the 4D effective action: an outer automorphism of the symplectic modular group, acting as u → −ū, S → −S̄ [literature] (2010.10782 abstract, §2).
+2. CP-invariant fluxes restrict W to odd or even polynomials; spontaneous CP violation then comes only from non-zero AXION vevs (Re u^i, Re S) [literature] (2010.10782 §3.2).
+3. For toroidal-type prepotentials no CP-breaking flux vacua were found ("the prepotential having the toroidal structure does not lead to the spontaneous CP violation"); a non-toroidal example (CP_{11169}[18]) does break CP. Kähler-modulus axions were not analysed (they need non-perturbative stabilisation) [literature] (2010.10782 §4, conclusions).
+4. In heterotic orbifolds CP is at least an outer automorphism of the flavour group, and its breaking "is then controlled by the vacuum expectation values of the moduli fields" [literature] (1901.03251).
+5. 2405.18813 (the source of the retired P2) is itself a spontaneous-CPV-by-moduli mechanism [literature] (D764, D772).
+Assessment [derived]:
+6. P1 assumes the heavy-ν couplings carry INDEPENDENT O(1) phases with no imposed gCP. In string completions CP is a symmetry of the effective theory, so coupling phases are not free: CP violation must be SPONTANEOUS, from some modulus axion vev. P1's falsifier (i), "a UV completion that imposes gCP", is the GENERIC string expectation, not an exotic case.
+7. Our compactification is toroidal (T⁶/(Z₂×Z₂)), and τ sits on a CP-conserving locus (Re τ = ½ at ρ, Re τ = 0 at i). Point 3 says flux-stabilised toroidal complex structures (and S) do not break CP. The remaining candidate sources in our setup are: Kähler-modulus axions (Re ρ_i, non-perturbative stabilisation, not studied in 2010.10782), and brane/Wilson-line moduli [derived].
+8. P1 is NOT falsified (no data contradict it; D763 falsifier (ii) on δ_CP is untouched). It is UNMOTIVATED as stated: it should be reformulated as "CP is broken spontaneously by a Kähler axion or brane modulus", which C.2 tests on our configuration.
+Falsifier status (D763) unchanged: (i) gCP-imposing UV completion — now the generic case, so P1 must name its breaking modulus; (ii) δ_CP ≈ 0/π at > 3σ weakly disfavours P1 (≈ 6% prior mass at |sin δ| < 0.1).
+Sources: 2010.10782; 1901.03251; 1908.00805; 2105.02984; 2405.18813; 2206.08538; 2201.02020.
+MAP: none
