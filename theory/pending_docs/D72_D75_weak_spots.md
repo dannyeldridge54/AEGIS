@@ -8015,3 +8015,7 @@ Ladder flags n_sector_rho and lepto_i cleared (both were reviewed in D804 itself
 MAP: node=serapis_e status=computed touches=[] ripple=no
 D805 process note: jl_check reports K1 FAIL. The comparison arithmetic was written to field_tests/results without a PREREG, as the tick prompt said "no lock needed". Left as is and reported, not hidden by moving the file. The arithmetic contains no prediction, only σ-distances of fixed bands to published numbers. Future data checks will either lock a one-line PREREG or keep the arithmetic inside the D-note (lesson).
 MAP: none
+
+## D803a (CORRECTION, review 16 Nov 06:15 CT): the group label in the paper sentence
+The paper said "reduced to Γ₁(2) … minimum at 1 + i". Γ₁(2) (c even) has its order-2 point at (1+i)/2. The element fixing 1 + i is TST⁻¹ = [[1,−2],[1,−1]] (b even, c odd), which lies in Γ⁰(2), not Γ₁(2). The source's eq. 2.31 is garbled ("mod 1"), and its minimum at 1 + i implies the Γ⁰(2)-type group. The sentence now reads "an index-three congruence subgroup (of Γ⁰(2) type, the stabiliser group of 1 + i)". Physics unchanged: both subgroups have ε₃ = 0.
+MAP: none
