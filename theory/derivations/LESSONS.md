@@ -173,3 +173,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D923: count from the record by script before writing a number into a paper; two wording claims in the draft were wrong until checked.
 - D924: For Zenodo, keywords via the form; PUT metadata built fresh.
 - D925: 2026 complex-structure plateaus live at boundaries; look at Fermat/Z3 interior points next.
+- D926: finite-order points give vacua, infinite-order give plateau directions; CY analogue needs both.

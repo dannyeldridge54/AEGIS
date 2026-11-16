@@ -9441,3 +9441,10 @@ Search (1, standard) for 2026 modular or complex-structure plateau models. New t
 Verdict: a boundary (large-complex-structure) plateau, not an interior SL(2,Z) fixed point, so it does not supply SERAPIS's non-toroidal completion. Open problem unchanged. Next completion tick should not repeat this search.
 LESSONS: complex-structure plateaus in 2026 sit at moduli-space boundaries, not at τ = i or ρ; search interior-point CY examples (Fermat/Z₃-symmetric points) next.
 MAP: none
+
+## D926 (completion tick 2): no inflation study at Landau–Ginzburg/Fermat points; structural lead: a one-parameter CY with an LG point and an LCS point mirrors SERAPIS's fixed point + cusp
+Search (1, standard). [literature] Blumenhagen et al.-type survey "Special Points of Inflation in Flux Compactifications" (arXiv:1412.5537): studies LCS, small-complex-structure, conifold and F-points, all with INFINITE-order monodromy (axion shift symmetries); potentials are polynomial (LCS), cosine-modulated (small CS) or natural-inflation-like (conifold); no plateau, no n_s/r; LG/Fermat points (finite-order monodromy) explicitly not studied. [literature] arXiv:2404.12422 (exact flux vacua and symmetries) appeared in the search, not read this tick.
+Structural reading [estimate, not computed]: SERAPIS uses a finite-order point (τ = i, Z₂; ρ, Z₃) as the vacuum and the cusp (infinite-order, Im τ → ∞) as the plateau direction. The CY analogue would be a one-parameter moduli space containing both a finite-order LG point (e.g. the quintic mirror's Z₅ point at ψ = 0) and an LCS point. Neither 1412.5537 nor the D925 boundary plateau uses this pairing.
+Verdict: NULL for an existing completion; one concrete lead (quintic-mirror LG ↔ LCS) for a future locked computation, flagged as estimate. Do not claim novelty without a dedicated search.
+LESSONS: separate finite-order (vacuum) from infinite-order (plateau) monodromy when mapping SERAPIS onto CY moduli spaces.
+MAP: none

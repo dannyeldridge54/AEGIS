@@ -1318,3 +1318,8 @@ Touches: none.
 - [literature] arXiv:2605.10197 (boundary complex-structure plateau, n_s ≈ 0.9643), arXiv:2604.19250 (pLVS fibre inflation).
 - [derived] (arithmetic) 2605.10197 n_s is 3.1σ below SPA+DESI.
 - Result: NULL for the SERAPIS completion.
+
+## D926: completion tick 2
+- [literature] arXiv:1412.5537: inflation near infinite-order special points only; no plateau, no LG points.
+- [estimate] Lead: quintic-mirror LG (Z5) point plus LCS point as the CY analogue of fixed point plus cusp.
+- Result: NULL for existing completion; lead recorded.
