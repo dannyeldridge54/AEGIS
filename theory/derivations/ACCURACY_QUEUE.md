@@ -126,4 +126,8 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 ## Weinberg-bound project W2 (picked 2026-11-16 under the autonomy rule; D882 point 4)
 - W2.1 [done D891: not protected; c ≲ 1e-3 (M_P) or ≲ 1e-5 (M_s)] Selection rule: at ρ, does the residual Z₃ (charges q_L = −q_H, q_{H_u} ≠ 0 per D783) forbid the Planck-suppressed (LH_u)²/M_P entry along the lightest direction, or only allow it ∝ E₄? Derivation from the notes.
 - W2.2 [done D892: instanton-only Weinberg term (perturbative lepton number) natural for M_N ≲ 1e12 GeV]
-- W2.3 [open] Verdict and v3.2 note.
+- W2.3 [done D893: conditional pass (perturbative lepton number); draft updated] Verdict and v3.2 note.
+
+## Referee pass R2 (picked 2026-11-16 under the autonomy rule)
+- R2.1 [open] Read the v3.2 draft text changed since REFEREE_v3.2_full.md (git diff of serapis_v3.2_draft.tex since the D871 commit): list numeric inconsistencies (abstract vs Sec. VII vs caveats vs prediction_sheet.md), overclaims, stale clauses, missing post hoc labels. Write papers/v3/REFEREE_v3.2_R2.md.
+- R2.2 [open] Fix the items (one D-note), rebuild clean, CHANGELOG.

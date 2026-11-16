@@ -137,7 +137,7 @@
     "D889: assumed",
     "D890: assumed"
    ],
-   "flag": "recheck (D892, lepto_rho)"
+   "flag": "recheck (D893, lepto_rho)"
   },
   {
    "id": "n_sector_i",
@@ -543,16 +543,17 @@
     "D879",
     "D880",
     "D891",
-    "D892"
+    "D892",
+    "D893"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D880: computed",
     "D891: estimate",
-    "D892: estimate"
+    "D892: estimate",
+    "D893: estimate"
    ]
   },
   {
@@ -668,7 +669,7 @@
     "D786: frozen",
     "D824: frozen"
    ],
-   "flag": "recheck (D892, lepto_rho)"
+   "flag": "recheck (D893, lepto_rho)"
   },
   {
    "id": "wino_window",

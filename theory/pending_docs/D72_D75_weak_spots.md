@@ -9188,3 +9188,11 @@ Assessment [derived] (arithmetic: theory/modular/weinberg_inst_d892.py → theor
 5. Consistency [derived]: this needs lepton number to be a perturbative U(1) in the completion, a fifth structural condition on the ρ lepton sector (after Γ₂-singlet leptons, two extra singlets, E₄ protection, and the post hoc lift ε).
 Verdict: W2.2 CONDITIONAL POSITIVE. The literature supplies a standard mechanism that makes the Weinberg coefficient small (instanton-only, lepton number perturbatively conserved); with instanton actions like those of the heavy-ν masses, the bound holds for M_N ≲ 1e12 GeV. Not computed in a concrete compactification [estimate].
 MAP: node=lepto_rho status=estimate touches=[n_sector_rho,mnu] ripple=no
+
+## D893 (CENTRE, W2.3): Weinberg-bound project closed: conditional pass; draft updated; next project R2 (referee pass on today's draft changes)
+Inputs: D891, D892.
+Verdict [derived]: the ρ baryogenesis chain (D880–D883) survives the Planck/string-suppressed Weinberg term on one condition: lepton number is a perturbative global symmetry of the completion (as is typical for D-brane models, 1112.5992), so the term is instanton-only and, with S_W ≥ S_N, meets the bound for M_N ≲ 1e12 GeV [estimate]. This narrows D883's heavy-singlet range (1e11–1e13 GeV) toward its lower half. Frozen predictions unchanged (the chain is post hoc).
+Conditions on the ρ lepton sector now: (i) Γ₂-singlet light leptons; (ii) two extra Z₃-neutral singlets; (iii) E₄(ρ)=0 protection of S₂; (iv) post hoc lift ε ≈ 2e-3 (residual-Z₃ breaking); (v) perturbative lepton number, instanton-only Weinberg term.
+v3.2 draft: ρ caveat gains one sentence (D891–D892); cites 1112.5992 and hep-th/0609191 (bib entries added); rebuilt clean, 17 pages.
+Next project R2: a focused referee pass on the draft text changed since the full referee (D871–D893): consistency of numbers across abstract, Sec. VII and caveats; overclaims; stale clauses.
+MAP: node=lepto_rho status=estimate touches=[n_sector_rho,mnu] ripple=no

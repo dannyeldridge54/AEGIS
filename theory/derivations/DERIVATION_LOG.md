@@ -1110,3 +1110,9 @@ Touches: lepto_rho, n_sector_rho, mnu.
 3. Bound needs S_W ≳ 9.5–14; heavy-ν instantons have S_N ≈ 6.4–12.6 [derived] (arithmetic).
 4. Natural for M_N ≲ 1e12 GeV if S_W ≥ S_N [estimate].
 Touches: lepto_rho, n_sector_rho, mnu.
+
+## D893: W2.3 Weinberg verdict
+1. Weinberg term allowed by Z₃ at ρ; bound c ≲ 1e-3 (M_P) or 1e-5 (M_s) [derived] (D891).
+2. Instanton-only under perturbative lepton number [literature] (1112.5992, hep-th/0609191, via D892).
+3. Bound met for M_N ≲ 1e12 GeV with S_W ≥ S_N [estimate].
+Touches: lepto_rho, n_sector_rho, mnu.

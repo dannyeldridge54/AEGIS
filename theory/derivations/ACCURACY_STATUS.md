@@ -11,7 +11,7 @@ Published: SERAPIS v3.1, 10.5281/zenodo.24281771. Changes queued for v3.2: paper
 - Exactness: every flagged paper number was recomputed with MS (D813–D817). The slow-roll bias is uniform: n_s +0.0003, r −1.3%.
 
 ## Fitted (chosen to match data; stated as such)
-- ε at τ = i (and the ρ L-variant's tilt), which also supplies the τ = i vacuum mass. No derived source comes within 10¹¹ (D826). A loop-sized BHK factor can tilt τ = i, but it changes α_s and r and leaves the vacuum massless (D823). The ε-origin project (D885–D887) closed negative: the needed form is an uplift factor |j−1728|^{2q}, q ~ 1e-5, and leading-order throat physics cannot supply it (D886). At ρ the lepton-sector lift ε ≈ 2e-3 is likewise post hoc: a small residual-Z₃ breaking (|τ−ρ| ≈ 3e-3), with no in-model source (D888a–D890).
+- ε at τ = i (and the ρ L-variant's tilt), which also supplies the τ = i vacuum mass. No derived source comes within 10¹¹ (D826). A loop-sized BHK factor can tilt τ = i, but it changes α_s and r and leaves the vacuum massless (D823). The ε-origin project (D885–D887) closed negative: the needed form is an uplift factor |j−1728|^{2q}, q ~ 1e-5, and leading-order throat physics cannot supply it (D886). At ρ the lepton-sector lift ε ≈ 2e-3 is likewise post hoc: a small residual-Z₃ breaking (|τ−ρ| ≈ 3e-3), with no in-model source (D888a–D890). The ρ chain also needs the Weinberg term along the lightest direction suppressed (≲1e-3 at M_P, ≲1e-5 at M_s), natural if lepton number is perturbatively conserved and the term is instanton-only, for M_N ≲ 1e12 GeV (D891–D893).
 - C for SERAPIS-E: natural size, but its value is chosen to hit the n_s band.
 
 ## Postulated (open)

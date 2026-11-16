@@ -35,3 +35,4 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file un
 - D887: origin-of-ε paragraph gains the needed uplift form |j−1728|^{2q} and why throat corrections fail (D885–D886).
 - D887: origin-of-ε paragraph gains the needed uplift form |j−1728|^{2q} and why throat corrections fail (D885–D886).
 - D890: ρ caveat: lift ε is a small residual-Z₃ breaking (D888a–D889); stale 'still to be built' clause updated.
+- D893: ρ caveat: Weinberg condition and instanton-only resolution (D891–D892); refs 1112.5992, hep-th/0609191.
