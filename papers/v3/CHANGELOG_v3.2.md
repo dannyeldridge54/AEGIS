@@ -42,3 +42,4 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file un
 - D903: τ = i AD paragraph: the D654a singlet Weinberg operator is allowed and unsuppressed; AD at i needs an instanton-only Weinberg term and a light seesaw direction the minimal texture lacks; stated as a conditional alternative.
 - D904: Weinberg sentence: a D-instanton with action 2π/g_s ≈ 13–27 (g_s = 0.23–0.5) would meet the bound (estimate).
 - D904a: Weinberg clause: g_s per branch (free at ρ; 0.4–0.5 at τ = i, at the edge).
+- D905: per-branch conditions table (Table I) at the head of the limitations section; every cell cites its D-note; 18 pages.
