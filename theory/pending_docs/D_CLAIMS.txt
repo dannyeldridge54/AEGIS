@@ -168,3 +168,4 @@ D881  2026-11-16T17:36Z  B.6 fold D880 into draft
 D882  2026-11-16T17:38Z  B.7 rho lepton sector for tiny m_nu1
 D883  2026-11-16T17:49Z  B.8 rho oscillation fit
 D884  2026-11-16T17:52Z  rho chain into draft and board
+D885  2026-11-16T17:54Z  E.1 tau=i epsilon reverse path
