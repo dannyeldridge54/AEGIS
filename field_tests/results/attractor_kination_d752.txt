@@ -1,0 +1,4 @@
+instant-reheating N* = 55.15  (attractor n_s = 0.9637)
+Omega_flat x0.33: max rho_end/rho_k = e^84.7, kination ends at T ~ 1.1e+06 GeV, max dN* = 7.06, N*max = 62.21, attractor n_s max = 0.9679; gap to 0.970: 1.3 sigma (1-sigma reading) / 2.7 (95% reading); at central 0.972: 2.6 / 5.2
+Omega_flat x1.00: max rho_end/rho_k = e^81.4, kination ends at T ~ 2.4e+06 GeV, max dN* = 6.78, N*max = 61.94, attractor n_s max = 0.9677; gap to 0.970: 1.4 sigma (1-sigma reading) / 2.9 (95% reading); at central 0.972: 2.7 / 5.4
+Omega_flat x3.00: max rho_end/rho_k = e^78.1, kination ends at T ~ 5.5e+06 GeV, max dN* = 6.51, N*max = 61.66, attractor n_s max = 0.9676; gap to 0.970: 1.5 sigma (1-sigma reading) / 3.0 (95% reading); at central 0.972: 2.8 / 5.5

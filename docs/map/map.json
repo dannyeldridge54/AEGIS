@@ -433,8 +433,7 @@
     "nstar_i",
     "janus"
    ],
-   "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)",
-   "flag": "recheck (D749, tests_cmb)"
+   "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)"
   },
   {
    "id": "band_e",
@@ -455,8 +454,7 @@
    ],
    "history": [
     "D748: frozen"
-   ],
-   "flag": "recheck (D749, tests_cmb)"
+   ]
   },
   {
    "id": "caps",
@@ -519,11 +517,12 @@
     "E"
    ],
    "title": "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)",
-   "status": "literature",
+   "status": "computed",
    "d": [
     "D705",
     "D749",
-    "D751"
+    "D751",
+    "D752"
    ],
    "depends": [
     "band_i",
@@ -531,7 +530,8 @@
    ],
    "history": [
     "D749: literature",
-    "D751: literature"
+    "D751: literature",
+    "D752: computed"
    ]
   },
   {

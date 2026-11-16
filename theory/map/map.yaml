@@ -306,7 +306,6 @@ nodes:
   - nstar_i
   - janus
   note: corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)
-  flag: recheck (D749, tests_cmb)
 - id: band_e
   layer: 5
   branch:
@@ -322,7 +321,6 @@ nodes:
   - janus
   history:
   - 'D748: frozen'
-  flag: recheck (D749, tests_cmb)
 - id: caps
   layer: 5
   branch:
@@ -368,17 +366,19 @@ nodes:
   - rho
   - E
   title: 'Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)'
-  status: literature
+  status: computed
   d:
   - D705
   - D749
   - D751
+  - D752
   depends:
   - band_i
   - band_e
   history:
   - 'D749: literature'
   - 'D751: literature'
+  - 'D752: computed'
 - id: tests_lhc
   layer: 5
   branch:

@@ -7205,3 +7205,16 @@ Computed:
 - α_s separation: SERAPIS − attractor ≈ −(3–5)e-4, i.e. 0.1–0.3σ. Correction to the printed script line: it used 3.9e-4 for the attractor α_s; the right value is 5.6–8.0e-4, which makes α_s even less discriminating.
 VERDICT: the running α_s (and so the Janus relation, which also needs r) is NOT a 2030 discriminant. The discriminant is n_s itself: if SO+SPHEREx centre n_s near 0.972, plain untilted attractors (and our own Kairos, 0.959–0.961) are excluded at ≳ 4σ, while a long-reheating attractor at N* ≈ 60 survives at ~2σ. SERAPIS's distinctive content (the tilt and its modular origin) is therefore tested by n_s plus the neutrino and wino predictions (D750, D736), not by α_s or r. Together with D749 this sets the model's test calendar: ~2027–2030 Σm_ν (cosmology) and wino (LHC); ~2030 n_s (SO+SPHEREx); 2030s 0νββ null; r and α_s beyond the 2030s.
 MAP: node=tests_cmb status=literature touches=[] ripple=no
+
+## D749a (correction note to D749) — LiteBIRD's reach for r
+D749 called LiteBIRD's reach "also short" (from memory). The repo's prediction sheet (D705) records two LiteBIRD numbers: the mission REQUIREMENT δr < 1e-3 (total), under which r ≈ 5e-4 is invisible, and an optimistic forecast σ(r) ≈ 5e-5 for an r = 0 fiducial, under which it would be seen at ~10σ. Correct statement: r ≈ 5e-4 is below the SO reach and below LiteBIRD's requirement level; it is detectable only if LiteBIRD reaches its optimistic forecast (results ≳ 2035). The paper's sentence ("requires σ(r) ~ 1e-4, beyond the currently planned experiments") is the requirement-level reading and stays as is; the sheet already shows both. No edit needed. Ladder flags band_i and band_e cleared.
+
+## D752 (LEFT; reverse ladder; locked PREREG_D752; results/attractor_kination_d752.txt) — a plain attractor cannot reach the SERAPIS n_s band, even with the longest reheating gravitational waves allow
+Reverse path: D751 left one competitor alive, an attractor at N* ≈ 60. Ask what it needs to reach n_s = 0.970 (N* = 2/(1 − n_s) ≈ 67), and whether that history is allowed.
+Computed (estimates as labelled in the lock):
+- Instant reheating gives N* = 55.15 (attractor n_s = 0.9637).
+- A kination phase raises N* by (1/12)·ln(ρ_end/ρ_k), but makes the primordial GW spectrum blue (∝ f). With r = 5e-4 and ΔN_eff < 0.2, the allowed enhancement caps ρ_end/ρ_k ≈ e^81, so kination must end by T ≈ 2e6 GeV.
+- Then ΔN* ≤ 6.8, N* ≤ 61.9, attractor n_s ≤ 0.9677. Robust: 0.9676–0.9679 for Ω_GW,flat ×3 or ÷3.
+- Separation from SERAPIS: the band edge 0.970 is 1.4σ above the attractor maximum (SO+SPHEREx, 1σ reading; 2.9σ under the 95% reading). For a central n_s = 0.972 it is 2.7σ / 5.4σ.
+VERDICT: n_s ≥ 0.970 is out of reach of any plain e^{−2√2φ}/Starobinsky-type attractor with a standard or kination reheating, by the GW ΔN_eff bound. An SO+SPHEREx measurement centred at ≈ 0.972 would favour a TILTED plateau like SERAPIS over every plain attractor at ~3–5σ, even allowing the most extreme reheating. This sharpens D751 and turns n_s into the model's main 2030 discriminant. Caveats: Ω_GW,flat and the ΔN_eff → Ω_GW conversion are from memory (×3 tested); other ways to raise n_s (e.g. other plateau shapes, non-minimal attractors) are not excluded by this.
+MAP: node=tests_cmb status=computed touches=[band_e, band_i] ripple=no
