@@ -158,7 +158,7 @@ nodes:
   - 'D770: computed'
   - 'D781: computed'
   - 'D783: computed'
-  flag: recheck (D788, lepto_rho)
+  flag: recheck (D792, lepto_rho)
 - id: janus
   layer: 2
   branch:
@@ -329,7 +329,7 @@ nodes:
   - rho
   - E
   title: Leptogenesis at ρ (non-thermal, DI estimate)
-  status: assumed
+  status: computed
   d:
   - D731
   - D762
@@ -347,13 +347,14 @@ nodes:
   - D789
   - D790
   - D791
+  - D792
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D789: assumed'
   - 'D790: assumed'
   - 'D791: assumed'
+  - 'D792: computed'
 - id: gravitino_wino
   layer: 4
   branch:

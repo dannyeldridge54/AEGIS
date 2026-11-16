@@ -7767,3 +7767,19 @@ Next idea (create, for the reverse tick): drop P5. Without the mediator the Z₃
 - A self-consistent but DIFFERENT post-hoc ρ history with distinct r and n_s. To compute.
 Also: the 30-tick milestone; CURRENT_STATE updated.
 MAP: node=lepto_rho status=assumed touches=[] ripple=no
+
+## D792 (REVERSE, ρ-side; Jl tick 31; locked PREREG_D792; results/self_dilution_d792.txt) — a CONSISTENT post-hoc ρ history without P5: the inflaton-AD asymmetry, diluted by the late Z₃-charged N decays, gives Y_B = 8.75e-11 at T₂ ≈ 140–1100 GeV with Λ ≈ 5e16–2e17; it predicts n_s ≈ 0.967–0.970, r ≈ (5.1–5.6)e-4, just OUTSIDE the frozen band; P5 retired
+Bookkeeping [derived]: φ → 2N with ΔB = ±2, so B per N = η (the inflaton-AD charge, D790). The N dominate until T₂, giving Y_B = (28/79)(3/4)(T₂/M)·η.
+Computed (η ∈ {0.3, 0.6, 1} with η ≥ 0.3 from isocurvature, D791; M ∈ {4.3e11, 1e12}):
+- T₂ = 142–1097 GeV (sphalerons active in all cases). The required decay scale is Λ = 5.3e16 – 1.8e17 GeV, about 2–30 × M_s (0.6–3e16, D783 estimate), i.e. a mildly sub-string-coupled dim-6 operator. Plausible.
+- Observables (interpolated from D781, matter-like phase down to T₂): N* ≈ 44.9–45.6; n_s = 0.9666–0.9703 (C = 1.0–1.3e-6); r = (5.13–5.59)e-4. Every point is OUTSIDE the frozen D693 band, with n_s at or below 0.970 and r above 5.12e-4.
+VERDICT (locked rule): CONSISTENT post-hoc alternative.
+- The ρ branch has a complete, self-consistent history with NO mediator: the Z₃-charged inflaton acts as an Affleck–Dine condensate; its charge is stored in the Z₃-charged heavy pair; their late, string-scale-suppressed B-violating decays both dilute and release it.
+- CP violation is spontaneous (the initial offset |Δx| ≥ 0.15 from the CP line); P1 is not needed at ρ.
+- P5 RETIRED (β3 back to 2: P1, P3).
+Two ρ options now:
+- (A) Frozen band (D693) holds if the decay operator has Λ ≲ 1e16 (T₂ ≳ 1e5), but then there is NO baryogenesis mechanism (D788–D791).
+- (B) Self-diluted history: baryogenesis works, but (n_s, r) ≈ (0.967–0.970, 5.1–5.6e-4), just outside the frozen band (post-hoc, scored only on future data).
+- r differs from the frozen band by ~5–10% and n_s by ~0.002–0.005. SO + SPHEREx n_s (~2030, σ ~ 0.002) can separate them marginally.
+- This is the honest status of SERAPIS-E at ρ. τ = i is untouched.
+MAP: node=lepto_rho status=computed touches=[serapis_e] ripple=no

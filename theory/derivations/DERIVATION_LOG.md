@@ -338,3 +338,14 @@ Touches: lepto_rho.
 5. Y_B(Δx = 0.15) = 2.3e-6 ⇒ dilution ~2.7e4 needed [derived] (computed).
 6. [derived] Consistency: D790's verdict is corrected (loose allowance). D769's δx is reused. The τ = i branch is unaffected.
 Touches: lepto_rho.
+
+## D792 — the self-diluted ρ history (reverse side)
+1. Inflaton quanta carry B-triality; φ → N_nN_n gives ΔB = 2 [derived] (D780, D787).
+2. Orbit charge η = (n_φ − n_φ*)/n_φ = 2|Δx|, with |Δx| ≥ 0.15 [derived] (D790, D791).
+3. B per N = η; the N dominate until T₂ [derived].
+4. Y_B = (28/79)(3/4)(T₂/M)·η [derived] (entropy from N decay, s = (4/3)ρ/T₂; sphaleron conversion of B with L = 0).
+5. Y_B = 8.75e-11 ⇒ T₂ = 142–1097 GeV [derived] (computed).
+6. Λ = (M⁵/(192π³Γ))^{1/4}, Γ from T₂, gives 5e16–2e17 GeV [derived] (computed).
+7. N*(T₂) from D781 (0.77 per decade) gives n_s 0.967–0.970, r 5.1–5.6e-4 [derived] (interpolation of computed rows).
+8. [derived] Consistency: D781's frozen-band condition is violated by construction (T₂ < 1e5), so this is an alternative, not a confirmation. The P5 mediator is unnecessary (retired). P1 is not needed at ρ (spontaneous CP).
+Touches: lepto_rho (assumed → computed), serapis_e.

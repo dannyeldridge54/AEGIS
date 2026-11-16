@@ -36,7 +36,7 @@ Falsifiers:
 - W = 0 conflicts with the covariant completion's W₀ ≠ 0 (f² = 3|W₀|²) or with the dilaton racetrack;
 - leptonic CP conservation established.
 
-## P5 — a Z₃-charged colour-triplet diquark scalar X lighter than the heavy pair (status: open)
+## P5 — a Z₃-charged colour-triplet diquark scalar X lighter than the heavy pair (status: retired D792 — not needed: the self-diluted ρ history makes baryons without it)
 Assumptions: X (colour triplet, Z₃ charge fixed by the couplings) has renormalisable couplings y₁·N·u^c·X* and y₂·X·d^c·d^c allowed by Z₃ (baryon triality on the SM, D787) and by matter parity. M_X < M_pair (≈ 4e11–1e12 GeV).
 Form: N → u X* is a 2-body renormalisable decay (fast), then X → d d. The CP asymmetry from X-loop interference is ε ~ y²/(8π)·(phase) [estimate]; y ≳ 0.02–0.17 for ε_req.
 Consequences: the pair decays promptly, so there is NO late matter phase and T_R returns to the D725 value (3e8–3e9). The frozen ρ band is restored without the Λ condition (D781–D783 become moot). Baryogenesis is B-violating from N decays, and the proton is still protected by baryon triality.

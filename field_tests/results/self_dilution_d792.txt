@@ -1,0 +1,8 @@
+M=4.3e+11 eta=0.3: T2=472 GeV (sphalerons on), Lambda=5.30e+16 GeV (M_P=2.4e+18) | C=1.00e-06: N*=45.27 n_s=0.9671 r=5.18e-04 out | C=1.15e-06: N*=45.27 n_s=0.9685 r=5.35e-04 out | C=1.30e-06: N*=45.28 n_s=0.9700 r=5.53e-04 out
+M=4.3e+11 eta=0.6: T2=236 GeV (sphalerons on), Lambda=7.50e+16 GeV (M_P=2.4e+18) | C=1.00e-06: N*=45.04 n_s=0.9668 r=5.21e-04* out | C=1.15e-06: N*=45.04 n_s=0.9682 r=5.38e-04* out | C=1.30e-06: N*=45.05 n_s=0.9697 r=5.56e-04* out
+M=4.3e+11 eta=1.0: T2=142 GeV (sphalerons on), Lambda=9.68e+16 GeV (M_P=2.4e+18) | C=1.00e-06: N*=44.87 n_s=0.9666 r=5.24e-04* out | C=1.15e-06: N*=44.87 n_s=0.9680 r=5.41e-04* out | C=1.30e-06: N*=44.88 n_s=0.9695 r=5.59e-04* out
+M=1.0e+12 eta=0.3: T2=1097 GeV (sphalerons on), Lambda=9.98e+16 GeV (M_P=2.4e+18) | C=1.00e-06: N*=45.55 n_s=0.9674 r=5.13e-04 out | C=1.15e-06: N*=45.55 n_s=0.9688 r=5.30e-04 out | C=1.30e-06: N*=45.56 n_s=0.9703 r=5.48e-04 out
+M=1.0e+12 eta=0.6: T2=549 GeV (sphalerons on), Lambda=1.41e+17 GeV (M_P=2.4e+18) | C=1.00e-06: N*=45.32 n_s=0.9671 r=5.17e-04 out | C=1.15e-06: N*=45.32 n_s=0.9685 r=5.34e-04 out | C=1.30e-06: N*=45.33 n_s=0.9700 r=5.52e-04 out
+M=1.0e+12 eta=1.0: T2=329 GeV (sphalerons on), Lambda=1.82e+17 GeV (M_P=2.4e+18) | C=1.00e-06: N*=45.15 n_s=0.9669 r=5.19e-04 out | C=1.15e-06: N*=45.15 n_s=0.9683 r=5.37e-04 out | C=1.30e-06: N*=45.16 n_s=0.9698 r=5.54e-04 out
+(* = extrapolated below 3e2)
+VERDICT: CONSISTENT post-hoc alternative; P5 not needed
