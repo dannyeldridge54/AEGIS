@@ -155,3 +155,4 @@ D868  2026-11-16T17:14Z  SERAPIS-E uplift without anti-D3
 D869  2026-11-16T17:15Z  throat anti-D3 residual coupling
 D870  2026-11-16T17:17Z  P3 wording uplift sector
 D871  2026-11-16T17:18Z  referee minors batch 1
+D872  2026-11-16T17:19Z  referee minors batch 2
