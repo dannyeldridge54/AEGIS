@@ -66,3 +66,6 @@ Steps (one per tick; lock before any computation; honest labels):
 - Q.1 [done D851: θ₁ generic; 41% deepest CP-odd] Distribution of the axion vev over CP-odd racetrack minima (D845 rerun with fixed seeds is NOT allowed; new lock): fraction with |sin(2π⟨Re T⟩/L·k)| > 0.1 for the phase that enters the heavy-ν couplings.
 - Q.2 [done D852: two-sector condition; 80% generic] How the heavy-ν couplings depend on T (Kähler normalisation vs holomorphic), and the resulting leptogenesis phase δ.
 - Q.3 [done D853] Verdict: does P1′ reproduce the D762/D763 pass fractions?
+
+## τ = i phase map (queued 2026-11-16 on Danny's choice)
+- R.1 [open] Redo D763's τ = i radiative leptogenesis pass fraction with the complex-R phases drawn from P1′ (instanton phase Δ = 2πΔn⟨Re T⟩, D852 distribution) instead of uniform; locked run on the D745/D763 set-up; compare 68–71%.
