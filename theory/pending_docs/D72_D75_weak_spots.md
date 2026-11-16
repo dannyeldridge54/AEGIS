@@ -7323,3 +7323,15 @@ Source (2507.15934v2 html, read in two of three parts): for m_χ < 2 TeV the pap
 Comparison with D735: the same f² line-limit logic, consistent at 1.85 TeV. SERAPIS-E's wino is non-thermal (from gravitinos), with f ≈ 0.14–0.17 at 0.67–0.80 TeV. That is about 2–3× the thermal sub-fraction (m/2.86 TeV)² ≈ 0.055–0.08, so the paper's thermal-fraction shading does not apply directly. The Fig. 6 values are not in the text and cannot be digitised here.
 VERDICT: no change. The window 0.67–0.80 TeV (Einasto, estimate) stands, and is not excluded by any stated limit. Digitising Fig. 6 is still open; it needs the figure image (Danny could save it, or it waits for the PC).
 MAP: node=wino_window status=estimate touches=[] ripple=no
+
+## D762 (REVERSE, ρ-side; Jl tick 1; locked PREREG_D762; results/cp_phase_rho_d762.txt; postulate P1) — the inflaton line Re τ = ½ is CP-conserving, so the leptogenesis phase at ρ cannot come from τ
+Reverse step: D731's PASS needs sin δ ≥ 0.01–0.56. Requirement: a CP phase in the heavy-ν sector during reheating. Source search:
+- Literature (1905.11970 §4.3, fetched): with generalised CP plus modular invariance, the CP-conserving τ are the imaginary axis and the boundary of the fundamental domain, including Re τ = ±½ (CP maps ½+iy → −½+iy = T⁻¹-equivalent). In the symmetric basis all couplings are then real (§4.1).
+- Consequence [derived from the literature statement]: SERAPIS-E rolls along Re τ = ½ and ends at ρ, which lies on that line. With gCP, ε = 0 exactly at every stage of inflation and reheating. D731's PASS therefore silently assumed CP violation in the couplings.
+- No source fixes these phases inside the model, so I wrote POSTULATE P1 (theory/derivations/POSTULATES.md): no gCP; coupling phases independent and uniform.
+Computed under P1 (K4 regression passed): P(|sin δ| ≥ s_min) across the nine D731 cases runs from 0.62 (c = 0.3, M_H = 1e12, light state) to 0.99. The median is 0.95, and 8/9 cases have P ≥ 0.9.
+VERDICT (locked rule): NATURAL under P1. Branch status:
+- ρ-leptogenesis is now CONDITIONAL. It passes naturally if the flavour sector breaks CP explicitly (P1), and fails if gCP is imposed. In that case it needs another baryogenesis source (AD, or a CP phase from a second modulus off its CP locus).
+- The paper's D731 text should state this condition (one sentence; Danny's call).
+Mirror question (forward, i-side, next tick): τ = i is also CP-conserving (imaginary axis). Does D745's radiative resonant leptogenesis at i likewise rely on non-gCP couplings? If yes, is P1 needed on both branches, and what does P1 predict for the low-energy Dirac phase δ_CP (DUNE/Hyper-K)?
+MAP: node=lepto_rho status=assumed touches=[lepto_i] ripple=no

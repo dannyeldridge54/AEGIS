@@ -1,0 +1,12 @@
+K4 regression: P(0)=1.000 P(1)=0.000 P(1/sqrt2)=0.500
+c=0.3 MH=1e12 light: sin_min=0.56 P=0.622
+c=0.3 MH=1e12 heavy: sin_min=0.12 P=0.923
+c=0.3 MH=1e13: sin_min=0.01 P=0.994
+c=0.3 MH=5e13: sin_min=0.01 P=0.994
+c=1 MH=1e12 light: sin_min=0.12 P=0.923
+c=1 MH=1e12 heavy: sin_min=0.09 P=0.943
+c=1 MH=1e13: sin_min=0.01 P=0.994
+c=3 MH=1e12 light: sin_min=0.08 P=0.949
+c=3 MH=1e12 heavy: sin_min=0.04 P=0.975
+min P=0.622 median P=0.949 fraction P>=0.9: 8/9
+VERDICT: NATURAL | with gCP imposed: epsilon=0 at rho (theorem), branch needs another baryogenesis

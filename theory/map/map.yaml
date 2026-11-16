@@ -249,6 +249,7 @@ nodes:
   history:
   - 'D743: estimate'
   - 'D745: computed'
+  flag: recheck (D762, lepto_rho)
 - id: sterile_rho
   layer: 4
   branch:
@@ -303,12 +304,15 @@ nodes:
   - rho
   - E
   title: Leptogenesis at ρ (non-thermal, DI estimate)
-  status: estimate
+  status: assumed
   d:
   - D731
+  - D762
   depends:
   - reheat_rho
   - n_sector_rho
+  history:
+  - 'D762: assumed'
 - id: gravitino_wino
   layer: 4
   branch:
