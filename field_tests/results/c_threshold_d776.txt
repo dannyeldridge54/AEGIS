@@ -1,0 +1,9 @@
+c=0.3: T_R=3.175e+08 M_pair=2.12e+11 pass pair=0.0% single=0.0%
+c=0.35: T_R=3.299e+08 M_pair=2.48e+11 pass pair=0.5% single=0.0%
+c=0.4: T_R=3.411e+08 M_pair=2.83e+11 pass pair=2.2% single=0.0%
+c=0.5: T_R=3.606e+08 M_pair=3.54e+11 pass pair=8.2% single=0.0%
+c=0.6: T_R=3.774e+08 M_pair=4.24e+11 pass pair=12.1% single=0.0%
+c=0.7: T_R=3.922e+08 M_pair=4.95e+11 pass pair=14.3% single=0.0%
+c=0.85: T_R=4.117e+08 M_pair=6.01e+11 pass pair=23.0% single=25.5%
+c=1.0: T_R=4.287e+08 M_pair=7.07e+11 pass pair=29.4% single=54.0%
+c* = 0.6; P(c>=c*) under log-uniform [0.1,10] = 0.61

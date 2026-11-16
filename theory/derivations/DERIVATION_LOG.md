@@ -170,3 +170,14 @@ Touches: lepto_i, lepto_rho.
 7. K4: hierarchical |ε|max/ε_DI = 0.47, consistent with DI as an upper bound [derived].
 8. [derived] Consistency: D731 overestimated (it used ε_DI·sin δ). Its c = 0.3, M_H = 1e12 "PASS" is corrected to FAIL. D733's M_H preference is unchanged. The frozen bands are untouched.
 Touches: lepto_rho (corrected), gravitino_wino.
+
+## D776 — the mixing threshold c* (reverse side)
+1. Weights k_N = k_N3 = −1, so the NN and NN₃ terms both need weight-2 forms, i.e. Y [derived] (D724).
+2. The canonical factor (2 Im τ)^{(k_i + k_j)/2} is equal for both entries, so it cancels in c [derived].
+3. Γ₂ ≅ S₃ allows both invariants independently, so c = β/α is a ratio of free constants [derived].
+4. Spectrum: M_pair/M_single = 0.7072c (c < √2) [derived] (D725 singular values).
+5. CP asymmetry and yield as D775 [literature] (CRV) / [estimate] (non-thermal yield).
+6. c* = 0.6 for ≥ 10% of the grid passing [derived] (computed).
+7. Log-uniform prior on [0.1, 10] ⇒ P(c ≥ c*) = log(10/c*)/log 100 = 0.61 [derived].
+8. [derived] Consistency: D775 is reproduced at c = 0.3 and 1. The frozen bands are untouched (T_R(c) stays inside D725's range).
+Touches: lepto_rho.

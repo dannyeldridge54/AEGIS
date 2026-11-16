@@ -7540,3 +7540,13 @@ Other notes:
 - The paper's D731 sentence is updated (unpublished v3.1).
 - Mirror question (reverse, next tick): what fixes c? The doublet–singlet coupling through the weight-2 doublet (D724/D739) is a free O(1) coefficient. Is there a Γ₂ or weight argument, or a string selection rule, making c ~ 1 natural, or bounding it?
 MAP: node=lepto_rho status=corrected touches=[gravitino_wino] ripple=no
+
+## D776 (REVERSE, ρ-side; Jl tick 15; locked PREREG_D776; results/c_threshold_d776.txt) — c is a free O(1) ratio (the Kähler factors cancel); ρ-leptogenesis needs c ≥ 0.6, natural for ~61% of a log-uniform prior
+Reasoning [derived]: with the consistent weights k_N = k_N3 = −1 (D724), the doublet–doublet and doublet–singlet Majorana terms are both weight-2 forms Y. Each carries the same canonical factor (2 Im τ)^{(k_i + k_j)/2}, so the factor cancels in c. Γ₂ ≅ S₃ allows the two invariants independently, so c is the ratio of two O(1) superpotential constants, not fixed by the symmetry. No literature search this tick (budget). I know of no selection rule fixing c, an honest statement of what was not checked.
+Computed (D775 code path, M_H = 1e12, m₁ = 1e-3 eV, T_R(c) interpolated from D725; K4: c = 0.3 and 1.0 reproduce D775, 0% and 29.4/54.0%):
+- Pass fraction (max of the pair and single channels): 0 / 0.5 / 2.2 / 8.2 / 12.1 / 14.3 / 25.5 / 54.0% for c = 0.3 / 0.35 / 0.4 / 0.5 / 0.6 / 0.7 / 0.85 / 1.0.
+- So c* = 0.6.
+- With a log-uniform prior on [0.1, 10], P(c ≥ 0.6) = 0.61. For c ≥ 3 the pass fraction is ~70% (D775).
+VERDICT: c ≳ 0.6 is a MODEL REQUIREMENT for ρ-leptogenesis at M_H ≈ 1e12 (natural in ~60% of a broad prior). It is not load-bearing for the frozen predictions, so no new postulate is made (β3 kept). For the paper, the D775 sentence's "c ≳ 1" is refined to "c ≳ 0.6".
+Mirror question (forward, next tick): the ρ-branch's neutrino predictions. With the 2⊕1 sector and c ≳ 0.6, does the light-neutrino texture at ρ give normal ordering and Σm_ν ≈ 0.059 eV (the frozen value)? D741 found a TENSION at ρ with the minimal Weinberg texture (no NO points). Recheck with the seesaw from this heavy sector (Casas–Ibarra is agnostic). Is there a modular-form Dirac Yukawa at ρ that, through the seesaw, gives NO with m₁ ≪ m₃?
+MAP: node=lepto_rho status=corrected touches=[] ripple=no
