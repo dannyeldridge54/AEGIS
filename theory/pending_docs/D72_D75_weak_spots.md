@@ -8706,3 +8706,7 @@ MAP: none
 2. Abstract: two clear contradictions fixed. (a) CP: "favours the non-CP completion" replaced by spontaneous CP violation from a racetrack Kähler axion, with the gCP-unbroken version as the one a leptonic-CPV discovery would exclude (D846). (b) Plateau: added "we find no string origin for its form" (D839). The intro's "we have not found its [ε's] microscopic origin" and the SERAPIS-E "microscopic origin for the tilt" (the BHK tilt, D689) remain true and were left.
 3. CHANGELOG_v3.2.md written; PDF saved as papers/v3/serapis_v3.2_draft.pdf (16 pages, no undefined references, no overfull boxes). Not uploaded anywhere.
 MAP: none
+
+## D850 (v3.2 draft, V.4): referee pass on the diff; six fixes
+Report: papers/v3/REFEREE_v3.2_diff.md. Fixes [derived]: undefined internal labels removed or defined (P1′, N_eff, v₄); "holomorphic factor" narrowed to modular-invariant factors built from holomorphic data (D838's actual scope); scope added to the 90% racetrack figure (one modulus, before uplift); D823 bullet clarified (massless without the ε term). Rebuilt: 16 pages, no undefined references, no overfull boxes. PDF updated. v3.2 is NOT uploaded; it waits for Danny's word.
+MAP: none

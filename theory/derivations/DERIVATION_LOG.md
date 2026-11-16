@@ -790,3 +790,10 @@ Touches: none.
 2. Two abstract contradictions fixed (CP, plateau origin) [derived] (D839, D846).
 3. Changelog written, PDF built, 16 pages, clean log [derived].
 Touches: none.
+
+## D850: V.4 referee on the v3.2 diff
+1. Internal labels (P1′, N_eff, v₄) undefined in the paper: removed or defined [derived].
+2. Holomorphic-factor claim narrowed to D838's scope [derived] (D838).
+3. Racetrack figure scoped; D823 bullet clarified [derived] (D823, D845).
+4. Rebuilt clean, 16 pages [derived].
+Touches: none.
