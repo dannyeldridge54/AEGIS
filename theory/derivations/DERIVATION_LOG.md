@@ -524,3 +524,10 @@ Touches: serapis_e.
 4. SR1 error: Δn_s ≈ −0.0004, Δr ≈ +1.5% [derived].
 5. Versus CMB-SPA+DESI: −3.1 … −1.5σ [derived].
 Touches: lepto_rho, serapis_e.
+
+## D814: exact 2⊕1 band (accuracy track)
+1. N* from the D725 matching [derived] (read from results).
+2. MS gives n_s 0.9729–0.9736, r 4.66–4.75e-4 [derived] (computed).
+3. SR1 offset −0.0003 / +1.2% [derived].
+4. Still inside the frozen D693 band [derived].
+Touches: n_sector_rho, serapis_e.

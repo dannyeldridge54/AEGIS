@@ -101,13 +101,14 @@
     "D779",
     "D780",
     "D786",
-    "D787"
+    "D787",
+    "D814"
    ],
    "depends": [],
    "history": [
-    "D780: corrected",
     "D786: corrected",
-    "D787: computed"
+    "D787: computed",
+    "D814: computed"
    ]
   },
   {
@@ -228,7 +229,7 @@
     "D811: computed",
     "D812: corrected"
    ],
-   "flag": "recheck (D813, lepto_rho)"
+   "flag": "recheck (D814, n_sector_rho)"
   },
   {
    "id": "janus",

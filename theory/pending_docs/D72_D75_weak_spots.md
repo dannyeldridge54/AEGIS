@@ -8186,3 +8186,16 @@ Paper:
 Prediction sheet updated, with the D805 σ-distance recomputed: −3.1 … −1.5σ versus CMB-SPA+DESI. The post-hoc ρ history is now slightly more disfavoured by the DESI-shifted n_s.
 REF: cold re-read of the three changed passages against this table: they match. Build clean.
 MAP: node=lepto_rho status=computed touches=[serapis_e] ripple=no
+
+## D814 (ACCURACY TRACK, queue 6a; Jl tick 53, manual "Jl"; locked PREREG_D814; results/twoplusone_ms_d814.txt): the ρ 2⊕1 band check recomputed with exact MS: n_s 0.9729–0.9736, r (4.66–4.75)e-4, still inside the frozen SERAPIS-E band
+K4: C = 1.0e-6, N* = 48.4 gives 0.9701 ✓.
+At C = 1.15e-6:
+- N* = 49.72: n_s 0.9729, r 4.754e-4, α_s −9.86e-4.
+- N* = 50.47: n_s 0.9736, r 4.660e-4, α_s −9.65e-4.
+- (N* read from results/tr_2p1_nstar_d725.txt.)
+Versus D725 SR1 (0.9732–0.9739, 4.60–4.70e-4): Δn_s = −0.0003, Δr = +1.2 to +1.3%, within expectation ✓.
+Paper sentence updated to the MS values, labelled "(exact spectra)" and citing D814.
+REF: re-read against this table. Build clean.
+Note: this check describes a history (prompt 2⊕1 decays at T_R ~ 3e8–3e9 GeV) that the Z₃ late-decay finding (D780–D783) later conditioned. The frozen band now needs T₂ ≳ 1e5 GeV. The sentence stays as the earlier step of the chain, and the Limitations text carries the condition.
+Flag serapis_e (D813) cleared: a confirmation.
+MAP: node=n_sector_rho status=computed touches=[serapis_e] ripple=no

@@ -16,7 +16,7 @@ Method key: MS = exact Mukhanov–Sasaki via spectra() (exact_ns_d588 family); S
 | 11 | SERAPIS-ρ n_s 0.969–0.972, r 4.6–5.1e-4 (frozen, lock D615) | D613 | SR1 (lock) | frozen as locked; **FLAG: MS consistency check** |
 | 12 | SERAPIS-ρ α_s −(8.5–9.5)e-4 | D634 | MS | ok |
 | 13 | ρ doublet-only n_s 0.9735–0.9749 | D722 | ? (not verified) | **FLAG: check method** |
-| 14 | ρ 2⊕1: n_s 0.9732–0.9739, r 4.6–4.7e-4 | D725 | SR1 | **FLAG: recompute MS** |
+| 14 | ρ 2⊕1: n_s 0.9729–0.9736, r 4.66–4.75e-4 | D725/D814 | MS (D814) | ok |
 | 15 | SERAPIS-E at n_s 0.970, r 4.75e-4; untilted 0.961 / 3.6e-4 | D692 | MS | ok |
 | 16 | SERAPIS-E frozen band (lock D693) | D692/D693 | MS | ok |
 | 17 | F-term-tilt alternative n_s 0.968–0.973, α_s −(2.4–4.5)e-3 | D684 | SR1 | flag: low priority (rejected candidate) |
