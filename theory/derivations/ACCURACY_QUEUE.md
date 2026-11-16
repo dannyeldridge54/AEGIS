@@ -49,3 +49,9 @@ Steps (one per tick; lock before any computation; honest labels):
 - T.1 [done D840 (+ D834a)] Collect every τ = i strike and support (D795, D802, D811, D815, D823, D826, D834) into one table; check each against its source note.
 - T.2 [done D841: keep as conditional variant] Decide by a stated rule, written before deciding (retire / keep as conditional / keep): the rule must not depend on new data.
 - T.3 [done D842] Consequences: frozen τ = i predictions stay frozen (never change); paper wording for v3.2; MANIFEST and prediction sheet.
+
+## P1 deep project (CP phases; started 2026-11-16 on Danny's choice)
+- C.1 [open] Literature: CP phases in string orientifold flavour models at CP-conserving τ (ρ, i): sources from Kähler moduli, axion-dilaton S, Wilson lines/brane positions, twisted sectors; status of gCP in Type IIB orientifolds (is gCP generic or not?).
+- C.2 [open] For our configuration (D696/D830: stacks (5, 2), anti-D3?, BHK), list which fields can carry a phase: Im S axion, Kähler axions Re ρ_i, Wilson-line/position moduli of the stacks. Derive whether any is CP-odd at its vacuum.
+- C.3 [open] If a source exists: compute (locked) the induced leptogenesis phase δ and compare with P1's uniform prior.
+- C.4 [open] Verdict (derive / keep / replace P1) and v3.2 note.
