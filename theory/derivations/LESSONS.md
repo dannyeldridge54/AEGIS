@@ -158,3 +158,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D906: a ripple=yes on a narrow change (one window) floods the ladder with flags; set ripple=yes only when the change alters a quantity other nodes use.
 - 2026-11-16 D907: script the readiness checks (D-number existence, cite keys, lock order); a manual manifest drifts behind within hours on a busy day.
 - 2026-11-16 D908: for Zenodo uploads, stage the files from Danny's PC (device_stage_files) and use Chrome's file input; outputs-folder paths and in-page fetches are blocked.
+- 2026-11-16 D909: at a fixed point, a selection rule that zeroes a coupling usually zeroes the field's own mass too; check both before declaring a protected state.

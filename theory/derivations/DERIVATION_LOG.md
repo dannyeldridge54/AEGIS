@@ -1213,3 +1213,11 @@ Touches: none.
 1. Published on Danny's explicit "Publish" [derived].
 2. Uploaded files verified by md5 against the local build [derived].
 Touches: none.
+
+## D909: N1.1 protected light direction at τ = i
+1. Non-zero at i iff Σk ≡ 0 mod 4 (trivial character) [derived] (D654a).
+2. L₁SH_u with k_S ≡ 1 mod 4 vanishes at i [derived].
+3. S's Majorana mass also vanishes (2k_S ≡ 2 mod 4) [derived] (D663).
+4. A Dirac partner S′ (k_S + k_S′ ≡ 0 mod 4) restores the mass and keeps the protection [derived].
+5. Cost: two extra fields plus a post hoc lift, as at ρ [derived] (D779, D888a).
+Touches: lepto_i, mnu.
