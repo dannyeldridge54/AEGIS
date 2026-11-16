@@ -97,3 +97,4 @@ Edge uncertainty: ±0.0005 in n_s, ±1.5% in r. Largest conditional risk: the T�
 
 ## Σm_ν status (D824, 16 Nov 2026)
 Frozen 0.0587 eV (NO floor) vs the strongest 95% bound < 0.0592 eV (DESI DR2 + Lyα AP, ΛCDM; 2607.27410): alive by 0.0005 eV. The data prefer an effective Σm_ν < 0 (2610.20977); if that persists, Advanced SO + DESI DR3 would reject 0.058 eV at ~3σ (forecast). That would test NO + ΛCDM generally, not SERAPIS specifically. τ = i with m₁ free: only m₁ ≲ 5.6e-4 eV survives (D786).
+Data check 16 Nov 2026 (D902): CMB-SPA + DESI DR2 + DES Y5 gives Σm_ν < 0.052 eV (ΛCDM, adiabatic, prior extending to zero; 2606.17994), below the NO floor; the same paper gives < 0.092 eV with a hierarchy-informed prior and calls the 0.052 eV value a prior artefact. Status of the floor: under pressure from zero-prior combinations, alive under physical priors. Frozen value unchanged.
