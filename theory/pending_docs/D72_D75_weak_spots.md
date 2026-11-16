@@ -7679,3 +7679,18 @@ VERDICT (locked rule): τ = i UNAFFECTED.
 - The weight-2-only seesaw at i also reproduces both orderings, consistent with D741/D742, where NO needed extra structure for Σm_ν. Here the Σ values were not evaluated; that is not part of this lock.
 Note: the paper's ρ caveat says "the τ = i branch is not affected", which is now computed (was reasoning in D780).
 MAP: node=n_sector_i status=computed touches=[lepto_i] ripple=no
+
+## D786 (REVERSE, ρ-side; Jl tick 25; arithmetic in code, no model run) — the frozen Σm_ν = 0.0587 eV is now the NO floor of a range: m₁ is no longer forced to ≈ 0 on either branch
+Reverse step from the frozen value (lock D605): Σ = 0.0587 eV ⇔ NO with m₁ ≲ 1e-4 eV (computed: Σ(m₁) = 0.0586 / 0.0587 / 0.0597 / 0.0622 / 0.0652 eV for m₁ = 0 / 1e-4 / 1e-3 / 3e-3 / 5e-3 eV, with Δm²₂₁ = 7.42e-5, Δm²₃₁ = 2.5e-3).
+What each branch now requires:
+- τ = i: m₁ ≈ 0 was needed only for Affleck–Dine (D646). D745 made inflaton-decay leptogenesis viable without AD, so m₁ is free. The D742 texture gives m₁/m₃ = 0.001–0.08, i.e. m₁ ≈ 5e-5 – 4e-3 eV and Σ = 0.059–0.064 eV.
+- ρ: the light leptons must be Γ₂ singlets (D778–D779), so m_ν is generic and there is no m₁ prediction. Only Σ ≥ 0.0586 (NO) or ≥ ~0.10 (IO).
+Status of the frozen number: the lock stays as written (Σ ≃ 0.059 eV if NO). Its physical basis is now "the NO floor, approached when m₁ ≪ 1e-3". The disfavouring condition (Σ > 0.07 eV) is unchanged, and the τ = i range 0.059–0.064 sits inside it.
+- DESI DR2 + Lyα 95% bound 0.0592 eV ⇒ m₁ ≲ 5.6e-4 eV, which already cuts the upper part of the τ = i range. A post-hoc observation, scored only on future data.
+Flags cleared (rechecked, status unchanged): plateau_origin (P3 open; the axion falsifier cleared in D769–D770), lepto_i (D785: unaffected), gravitino_wino (D784 superseded the ρ part), n_sector_rho (D779/D780 corrections stand).
+MAP: node=mnu status=frozen touches=[] ripple=no
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
+MAP: node=lepto_i status=assumed touches=[] ripple=no
+MAP: node=gravitino_wino status=estimate touches=[] ripple=no
+MAP: node=n_sector_rho status=corrected touches=[] ripple=no
+MAP: node=lepto_rho status=corrected touches=[] ripple=no

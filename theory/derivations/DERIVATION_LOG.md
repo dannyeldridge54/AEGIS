@@ -275,3 +275,13 @@ Touches: wino_window (corrected), gravitino_wino.
 6. The light spectrum is generically non-degenerate, with NO and IO points [derived] (computed).
 7. [derived] Consistency: D780 (reasoning) is confirmed. D727's ±s doublet pair is lifted by the c-mixing (D738). D741/D742 are consistent.
 Touches: n_sector_i, lepto_i.
+
+## D786 — the meaning of the frozen Σm_ν (reverse side)
+1. NO: Σ = m₁ + √(m₁² + Δm²₂₁) + √(m₁² + Δm²₃₁) [literature] (standard).
+2. Σ(0) = 0.0586 eV, and Σ = 0.0587 at m₁ = 1e-4 [derived] (computed).
+3. At τ = i, m₁ ≈ 0 came only from AD (D646); D745 removes that need [derived].
+4. The D742 texture gives m₁/m₃ = 0.001–0.08, so Σ = 0.059–0.064 [literature-internal] (D742 computed).
+5. At ρ, singlet leptons give a generic m_ν, so there is no m₁ prediction [derived] (D778–D779).
+6. The DESI DR2 + Lyα bound 0.0592 ⇒ m₁ ≲ 5.6e-4 eV [derived] (computed; bound from the paper's ref arXiv:2607.27410).
+7. [derived] Consistency: the frozen lock is unchanged, and its condition Σ > 0.07 still disfavours. The interpretation is updated, not the number.
+Touches: mnu (frozen; flag cleared), plus flag clears for plateau_origin, lepto_i, gravitino_wino, n_sector_rho, lepto_rho.

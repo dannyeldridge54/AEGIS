@@ -33,12 +33,12 @@ nodes:
   - D747
   - D757
   - D768
+  - D786
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D747: open'
   - 'D757: open'
   - 'D768: assumed'
-  flag: recheck (D770, serapis_e)
+  - 'D786: assumed'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -69,12 +69,12 @@ nodes:
   - D778
   - D779
   - D780
+  - D786
   depends: []
   history:
-  - 'D778: corrected'
   - 'D779: corrected'
   - 'D780: corrected'
-  flag: recheck (D782, lepto_rho)
+  - 'D786: corrected'
 - id: n_sector_i
   layer: 1
   branch:
@@ -263,15 +263,15 @@ nodes:
   - D745
   - D763
   - D774
+  - D786
   depends:
   - reheat_i
   - n_sector_i
   - eta_n
   history:
-  - 'D745: computed'
   - 'D763: assumed'
   - 'D774: assumed'
-  flag: recheck (D785, n_sector_i)
+  - 'D786: assumed'
 - id: sterile_rho
   layer: 4
   branch:
@@ -339,14 +339,14 @@ nodes:
   - D775
   - D776
   - D782
+  - D786
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D775: corrected'
   - 'D776: corrected'
   - 'D782: corrected'
-  flag: recheck (D783, serapis_e)
+  - 'D786: corrected'
 - id: gravitino_wino
   layer: 4
   branch:
@@ -357,10 +357,12 @@ nodes:
   d:
   - D732
   - D733
+  - D786
   depends:
   - reheat_rho
   - covariant
-  flag: recheck (D784, wino_window)
+  history:
+  - 'D786: estimate'
 - id: band_i
   layer: 5
   branch:
@@ -411,10 +413,11 @@ nodes:
   - D605
   - D740
   - D750
+  - D786
   history:
   - 'D740: frozen'
   - 'D750: frozen'
-  flag: recheck (D779, n_sector_rho)
+  - 'D786: frozen'
 - id: wino_window
   layer: 5
   branch:

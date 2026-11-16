@@ -18,26 +18,19 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D774: Leptogenesis at τ=i: inflaton decay marginal, AD robust → assumed",
-  "D775: Leptogenesis at ρ (non-thermal, DI estimate) → corrected",
-  "D776: Leptogenesis at ρ (non-thermal, DI estimate) → corrected",
-  "D777: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → corrected",
-  "D778: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → corrected",
-  "D779: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → corrected",
   "D780: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → corrected",
   "D781: SERAPIS-E potential (Epstein + BHK tilt) → computed",
   "D782: Leptogenesis at ρ (non-thermal, DI estimate) → corrected",
   "D783: SERAPIS-E potential (Epstein + BHK tilt) → computed",
   "D784: Wino 0.67–0.80 TeV, ~15% of DM (post-hoc) → corrected",
-  "D785: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → computed"
+  "D785: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → computed",
+  "D786: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen",
+  "D786: Origin of the plateau → assumed",
+  "D786: Leptogenesis at τ=i: inflaton decay marginal, AD robust → assumed",
+  "D786: Gravitino → wino; favours M_H ~ 1e12 → estimate",
+  "D786: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → corrected",
+  "D786: Leptogenesis at ρ (non-thermal, DI estimate) → corrected"
  ],
- "open_rechecks": [
-  "Origin of the plateau",
-  "Heavy-ν sector at ρ: 2⊕1, weight-2 mixing",
-  "Leptogenesis at τ=i: inflaton decay marginal, AD robust",
-  "Leptogenesis at ρ (non-thermal, DI estimate)",
-  "Gravitino → wino; favours M_H ~ 1e12",
-  "Σm_ν = 0.0587 eV (m1 ≈ 0)"
- ],
+ "open_rechecks": [],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
 }
