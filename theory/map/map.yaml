@@ -49,12 +49,12 @@ nodes:
   - D831
   - D832
   - D833
+  - D836
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D831: assumed'
   - 'D832: assumed'
   - 'D833: assumed'
-  flag: recheck (D835, serapis_e)
+  - 'D836: assumed'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -185,6 +185,7 @@ nodes:
   - 'D811: computed'
   - 'D812: corrected'
   - 'D835: computed'
+  flag: recheck (D836, plateau_origin)
 - id: janus
   layer: 2
   branch:
@@ -425,6 +426,7 @@ nodes:
   history:
   - 'D816: frozen'
   - 'D834: computed'
+  flag: recheck (D836, plateau_origin)
 - id: band_e
   layer: 5
   branch:

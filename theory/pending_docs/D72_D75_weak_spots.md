@@ -8538,3 +8538,12 @@ Transverse stability: ∂²_x V_add at x = ½, y* is below double precision (e^{
 Observation, NOT a claim [estimate; post-hoc]: the anti-D3 wall tilts n_s upward like the BHK term but linearly in y. A joint (C, k) fit is degenerate: a smaller C plus small k could fit the same n_s. Any such variant is post-data and would be scored only on future data.
 Consequence for SERAPIS-E: if an anti-D3 is present (the P3 picture), the T⁴ must be large (v₄ ≳ 2e4 g_s) or the frozen band's C must be read as C_eff including the anti-D3 share. The frozen predictions themselves do not change.
 MAP: node=serapis_e status=computed touches=[eps_tilt,plateau_origin] ripple=no
+
+## D836 (DEEP, K.5): κ-project verdict
+Summary [derived]:
+1. Normalisation: κ/V0 = g_s/(8πv₄), with V0 the unwarped anti-D3 uplift 2T₃ (D833).
+2. τ = i: the anti-D3 term is a saddle, tachyonic along x (m²/H² = −1.48e-3 at k = 2.07e-4); it is not the τ = i vacuum-mass source and destabilises τ = i toward ρ (D834).
+3. SERAPIS-E: in exact MS the term shifts n_s by +0.024 already at k = 5e-5. D833's safety bound is superseded: |Δn_s| ≤ 0.001 needs k ≲ 2e-6, v₄ ≳ 2e4·g_s [estimate] (D835).
+Verdict: the anti-D3 picture (P3) is CONSISTENT with the frozen band only if the four small directions are large (v₄ ≳ 2000 string units at g_s = 0.1), or if the band's fitted C is read as including an anti-D3 share. The former is a concrete, checkable geometric requirement on P3; the latter is post-hoc and not claimed. The ρ vacuum is safe in every case. The τ = i variant gets one more strike: no mass source, and the anti-D3 makes it unstable.
+Open [estimate]: warping changes κ/V0 (interaction and tension warp differently); twisted-sector exchange; whether v₄ ≳ 2e4 g_s is compatible with D696's Im S·Im ρ ≈ 560–975 and the D3 tadpole (it constrains different tori, so no direct conflict is visible).
+MAP: node=plateau_origin status=assumed touches=[serapis_e,band_i] ripple=no

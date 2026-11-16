@@ -680,3 +680,11 @@ Touches: band_i, eps_tilt, plateau_origin.
 4. D831/D833 slope criterion too loose; revised k ≲ 2e-6, v₄ ≳ 2e4 g_s [estimate].
 5. (C, k) degeneracy noted, post-hoc, not claimed [estimate].
 Touches: serapis_e, eps_tilt, plateau_origin.
+
+## D836: K.5 κ verdict (κ deep project)
+1. κ/V0 = g_s/(8πv₄) [derived] (D833).
+2. τ = i saddle, not the mass source [derived] (D834).
+3. Exact MS: harmless needs k ≲ 2e-6, v₄ ≳ 2e4 g_s [estimate] (D835).
+4. P3 consistent with the band only for a large T⁴ (or a post-hoc C share, not claimed) [derived].
+5. ρ safe; τ = i variant weakened [derived].
+Touches: plateau_origin, serapis_e, band_i.
