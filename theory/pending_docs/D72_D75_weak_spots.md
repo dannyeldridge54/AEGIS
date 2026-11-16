@@ -8951,3 +8951,7 @@ Derivation + arithmetic, no model run (no lock).
 4. With the SERAPIS-E tilt moduli (D867: g_s/(8πv₄) ≈ 1e-5–1e-4), k_warped ≈ 1e-11–1e-6; for the generic a₀⁴ ≲ 1e-4, k ≲ 1e-8 [derived] (arithmetic).
 Verdict: a throat anti-D3 is sequestered: its U₁ coupling is ≤ 1e-8 for a₀⁴ ≤ 1e-4, far below the band-safe 2e-6 (D835); only an almost unwarped throat (a₀⁴ ≳ 0.02 with the smallest v₄) would reach the bound. Caveats: (a) needs a conifold throat, absent in T⁶/(Z₂×Z₂) itself (D837), so the CY resolution; (b) the plateau's shape is still postulated (D838); (c) KKLMMT formula quoted from memory [estimate].
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D870: P3 reworded to "uplift sector"; draft and docs updated
+POSTULATES: new P3 update line (not a silent edit of the header): the plateau sits in the uplift sector, realised by a sequestered throat anti-D3 (D869) or a T-brane D-term on the T⁴ cycle (D868). Draft: the plateau caveat now names these two options after the on-torus exclusion (D867); the Kallosh–Linde nilpotent-field wording elsewhere stays valid for the throat option. Rebuilt: 16 pages, clean. ACCURACY_STATUS updated and synced.
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no

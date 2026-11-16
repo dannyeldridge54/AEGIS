@@ -88,3 +88,4 @@ Why: today's results each demand values of the same moduli (g_s, Im ρ₁, Im ρ
 - Corrected scan [done D867 + D861a]: anti-D3 incompatible with SERAPIS-E's BHK tilt (g_s ≥ 3.1 needed); BHK + P1′ was a cross-branch combination.
 - Uplift alternatives [done D868]: rank 1 distant sequestered anti-D3, rank 2 T-brane on T⁴ cycle. Next: residual U₁ coupling of a throat anti-D3 vs k ≲ 2e-6 (D869).
 - Throat anti-D3 [done D869]: sequestered (k ≲ 1e-8). Next: D870 P3 wording 'uplift sector' in POSTULATES/status/draft.
+- P3 wording [done D870]. Next: deferred referee minors batch 1 (D871).

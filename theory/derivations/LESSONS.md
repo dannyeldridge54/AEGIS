@@ -116,3 +116,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D867: before combining constraints, check they belong to the same branch. Five notes imposed SERAPIS-E's tilt on the τ = i CP mechanism; neither frozen branch uses both.
 - 2026-11-16 D868: when a mechanism is excluded, rank the replacements by the specific failure that excluded it (here: an added U₁-dependent term), not by general popularity.
 - 2026-11-16 D869: warping suppresses an anti-brane's forces one power of a₀⁴ more than its tension; check that ratio before excluding an uplift on interaction grounds.
+- 2026-11-16 D870: when one realisation of a postulate dies, restate the postulate at the level that survives (uplift sector) instead of silently swapping in a new mechanism.

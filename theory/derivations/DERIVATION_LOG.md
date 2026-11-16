@@ -945,3 +945,9 @@ Touches: plateau_origin, serapis_e.
 4. k ≤ 1e-8 for a₀⁴ ≤ 1e-4, well under 2e-6 [derived] (D835, D867).
 5. Needs a throat outside the torus; plateau shape still postulated [estimate] (D837, D838).
 Touches: plateau_origin, serapis_e.
+
+## D870: P3 wording
+1. P3 restated as an uplift-sector postulate [derived] (D867–D869).
+2. Draft caveat names the throat and T-brane options [derived] (D868, D869).
+3. Nilpotent-field wording kept, valid for the throat option [derived].
+Touches: plateau_origin, serapis_e.
