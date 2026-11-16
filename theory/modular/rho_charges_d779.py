@@ -5,7 +5,7 @@ Y=np.array([1,1j])/math.sqrt(2); n=np.array([1,-1j])/math.sqrt(2)
 A=np.array([[Y[1],Y[0]],[Y[0],-Y[1]]]); c=1.0
 MR=np.zeros((3,3),complex); MR[:2,:2]=A; MR[:2,2]=c*Y; MR[2,:2]=c*Y
 # eigenbasis of the doublet: columns (n, Y) -- unitary, orthonormal
-B=np.zeros((3,3),complex); B[:2,0]=n; B[:2,1]=Y  # DEVIATIONS D1; B[2,2]=1   # basis vectors; transform M' = B^T M B (Majorana)
+B=np.zeros((3,3),complex); B[:2,0]=n; B[:2,1]=Y; B[2,2]=1  # DEVIATIONS D1 (and D2)   # basis vectors; transform M' = B^T M B (Majorana)
 Bu=B/np.linalg.norm(B,axis=0)
 Mp=Bu.T@MR@Bu
 print("M_R in eigenbasis (rounded):\n",np.round(Mp,6))
