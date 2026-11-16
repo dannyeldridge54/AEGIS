@@ -6847,3 +6847,16 @@ Computed (Takagi residual 4e-17): M1 = 0.2241, M2 = 5e-17. Off-diagonal coupling
 Observed in the same output, not yet analysed: the DIAGONAL holomorphic couplings are non-zero, |(Uᴴ ∂A U*)₁₁| = 0.259 and |(Uᴴ ∂A U*)₂₂| = 0.421. For N1 the Kähler factor can cancel the diagonal term (sterility, D589a). For the MASSLESS state it cannot: the Kähler term is ∝ A, whose (2,2) entry is 0. Reason (reasoning, not computed): M2 grows LINEARLY in |δτ| (a cone), so M2² is stationary at ρ, which is what the D720 sterility check measured, while the Yukawa δτ·N2N2 is not zero. The sterility argument (stationary invariants ⇒ no linear coupling) assumed non-degenerate, non-zero masses; it fails for a state that is massless at the fixed point.
 Consequence if confirmed: φ → N2 N2 is open with an O(0.4)×(Kähler and canonical factors) Yukawa times the N mass scale over M_P, so SERAPIS-E is NOT sterile at ρ in the Γ2-doublet model, and T_R could be much higher than D692's 1e6–1e8 GeV.
 Next: D722 = new lock for the φ → N2N2 width (Kähler-corrected B22, canonical normalisation, M2 = 0), T_R and N*.
+
+## D722 (DEEP; locked PREREG_D722; results/phi_n2n2_d722.txt) — the inflaton is NOT sterile at ρ: φ → N2N2 gives T_R ≈ 7e8–7e10 GeV; D692's 1e6–1e8 bracket is superseded
+Checks (computed, both pass): |B22| = 0.42077 is unchanged under the Takagi phase freedom (α = 0.3, 1.1, 2.0, to 1e-10). The massless state's mass rises linearly, M2/δ → 0.42076 at δ = 1e-5 (ratio 1.0000). The coupling is real, not a basis artefact; D720's sterility check (on M², which is stationary) could not see it.
+Width (computed; overall O(1) N-kinetic prefactor not modelled, estimate): g22 = 1.33·M1/M_P, Γ = g22² m/16π.
+| M1/m | 0.1 | 0.2 | 0.33 | 0.45 | 1 | 10 |
+|---|---|---|---|---|---|---|
+| T_R (GeV) | 6.7e8 | 1.3e9 | 2.2e9 | 3.0e9 | 6.7e9 | 6.7e10 |
+N* (D719 code, C = 1.15e-6): T_R 6.7e8 → N* 49.97, n_s 0.9735, r 4.67e-4; T_R 6.7e10 → N* 51.50, n_s 0.9749, r 4.49e-4.
+VERDICT (locked rule): INCONSISTENT with D692's 1e6–1e8 GeV. Correction note, no retuning of lock D693.
+- n_s stays inside the frozen 0.970–0.975 over the whole range (top end 0.9749, at the edge).
+- r: 4.49e-4 at M1/m = 10 falls just BELOW the frozen r band (4.55–5.12e-4). For M1 ≤ m_φ (T_R ≤ 6.7e9, N* ≲ 50.8) r ≈ 4.56–4.67e-4, inside.
+- The corrected SERAPIS-E N* is ≈ 50.0–51.5 (vs locked 48.4–49.9). This is recorded, and the frozen bands are scored as locked.
+New problem raised (reasoning): if Br(φ → N2N2) ≈ 1, reheating goes into a state that is massless at ρ. Unless N2 thermalises with the SM through its Dirac Yukawa (or gets a mass elsewhere), this is dark radiation, ΔN_eff ≫ 0.3: a potential kill. Also, a massless N2 in the seesaw changes the light-neutrino spectrum. Next: D723.
