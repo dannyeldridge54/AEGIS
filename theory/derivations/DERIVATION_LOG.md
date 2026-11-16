@@ -629,3 +629,11 @@ Touches: plateau_origin, serapis_e.
 5. Enters V additively; K_XX̄ unchanged at this order [derived].
 6. P3's inverted form does not arise at one loop [derived].
 Touches: plateau_origin, serapis_e, eps_tilt.
+
+## D830: P3.3 anti-D3 placement (P3 deep project)
+1. Tadpole with one anti-D3 needs 17 D3 units: (5, 2), N_eff = 3 [derived] (D696).
+2. Anti-D3 on top of D3s annihilates [literature] (hep-th/9805170).
+3. Mobile anti-D3 on T² falls into a D3 stack [derived] (D829).
+4. Stable placement: stuck at an empty O3 point, displaced in T⁴ [derived] (hep-th/0602038).
+5. Shape dependence stays additive E-type sums [derived] (D828, D829).
+Touches: plateau_origin, serapis_e, eps_tilt.
