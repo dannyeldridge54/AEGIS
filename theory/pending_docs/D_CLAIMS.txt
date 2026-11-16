@@ -258,3 +258,4 @@ D971  2026-11-16T23:05Z  correction to D970 coefficient
 D972  2026-11-16T23:07Z  Project H: no collider signal
 D973  2026-11-16T23:09Z  Project H selects rho
 D974  2026-11-16T23:23Z  alpha_s convergence result
+D975  2026-11-16T23:32Z  Project H: implied Im S Im T
