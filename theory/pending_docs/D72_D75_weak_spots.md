@@ -7167,3 +7167,13 @@ Computed (distance from the frozen band 0.970–0.975):
 | SPA+DESI | 0.9737 ± 0.0025 | inside |
 VERDICT: the frozen bands (τ = i, ρ, SERAPIS-E: n_s 0.970–0.975) are within 1.83σ of every combination, with or without DESI. If DESI's pull is an artefact, the CMB-only centre (~0.964–0.969) sits just below the band, a mild pressure (≤ 1.6σ for Planck), not a fail. The untilted Kairos (0.959–0.961) would then be competitive again. These data are pre-freeze: consistency only, not scored. Decisive tests stay SO + SPHEREx (~2030) and LiteBIRD r.
 MAP: node=band_e status=frozen touches=[band_i] ripple=no
+
+## D749 (LEFT; literature + arithmetic; outward check) — r ≈ 5e-4 cannot be tested by any planned experiment this decade; n_s, α_s and the wino carry the near-term tests
+Literature:
+- SPT-3G two-year B-modes (arXiv:2505.02827): r < 0.25 (95%), σ(r) = 0.067 from SPT-3G alone over the BK field. The best combined limit remains BICEP/Keck-class, r ≲ 0.03–0.04 (from memory; not re-checked this tick).
+- Simons Observatory forecast with delensing and foreground cleaning (arXiv:2405.01621, Table III, 5 years): σ(r=0) = 1.2e-3 (simple foregrounds), 2.3–2.4e-3 (realistic).
+Arithmetic:
+- Our r ≈ 5e-4 (τ = i 4.8–5.7e-4; SERAPIS-E 4.55–5.12e-4) is 0.2–0.4σ for SO, so undetectable.
+- The frozen kill condition "r < 2.4e-4 at 95% CL" needs σ(r) ≈ 1.2e-4, ~10–20× better than SO. LiteBIRD's target total uncertainty is ~1e-3 (from memory), also short.
+VERDICT: the r prediction is a long-horizon test (post-2035, needs a successor to SO+LiteBIRD; CMB-S4 is no longer planned, from memory). Near-term decisive tests are n_s with SO+SPHEREx (~2030, D705), the Janus α_s relation, and the post-hoc wino window at Run 3 / HL-LHC (D736). D705's "r at LiteBIRD, optimistic" wording should read "r beyond LiteBIRD's reach at 2σ". Paper and prediction-sheet wording to check next session.
+MAP: node=tests_cmb status=literature touches=[band_e, band_i] ripple=no
