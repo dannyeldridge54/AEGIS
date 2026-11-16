@@ -1,0 +1,11 @@
+A: SV=[0.150819 0.150819], residual 1.4e-16, |P12|=0.190559, P12=1.4894e-17+1.9056e-01j, kappa=|P12|/s=1.2635
+B: eigenvalues [-0.150819  0.150819] (traceless: sum=0.0e+00); theta'=-0.631748; (l1-l2)*theta'=0.190559; real (O^T A' O)_12=0.190559
+   A vs B relative difference = 1.17e-10
+g*=106.75: M/m=0.1: lambda=1.787, Gamma=1.440e-06 GeV, T_R=1.012e+06 GeV
+g*=106.75: M/m=0.2: lambda=1.787, Gamma=5.388e-06 GeV, T_R=1.958e+06 GeV
+g*=106.75: M/m=0.33: lambda=1.787, Gamma=1.202e-05 GeV, T_R=2.925e+06 GeV
+g*=106.75: M/m=0.45: lambda=1.787, Gamma=1.297e-05 GeV, T_R=3.038e+06 GeV
+g*=228.75: M/m=0.1: lambda=1.787, Gamma=1.440e-06 GeV, T_R=8.367e+05 GeV
+g*=228.75: M/m=0.2: lambda=1.787, Gamma=5.388e-06 GeV, T_R=1.618e+06 GeV
+g*=228.75: M/m=0.33: lambda=1.787, Gamma=1.202e-05 GeV, T_R=2.418e+06 GeV
+g*=228.75: M/m=0.45: lambda=1.787, Gamma=1.297e-05 GeV, T_R=2.511e+06 GeV

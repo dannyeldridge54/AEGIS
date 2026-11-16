@@ -6900,3 +6900,18 @@ Observed in the same output, not yet analysed: the coupling matrix in the degene
 - A pseudoscalar Majorana Yukawa is physical (removing it by a chiral rotation leaves an axial-current coupling whose on-shell matrix element ∝ (M_a + M_b)).
 - If confirmed, φ → N N at τ = i is unsuppressed (κ ~ 1), T_R ~ 1e6 GeV (the D589 c_eff ~ 0.02–0.05 range), not 1e3–1e5. That would revise D601/D602's sterile-τ=i bracket and the low-T_R arguments built on it (AD leptogenesis with a massless ν1, N* = 46–49).
 Next if resumed (D727): lock a test of whether the imaginary coupling is physical. Compute Γ(φ → N N) with the correct pseudoscalar width, and cross-check by the axial-current form. Then T_R at m_φ = 1.9e11 GeV, N*, and n_s and y* against the τ = i frozen bands. The same question applies to every earlier off-diagonal width (D597, D690).
+
+## D727 (CENTRE; locked PREREG_D727; results/pseudo_i_d727.txt) — CONFIRMED: the inflaton at τ = i is NOT sterile; an axion-like coupling to the N doublet gives T_R ≈ 1–3e6 GeV
+Computed:
+- Method A (Takagi): |P₁₂| = 0.190559, purely imaginary; κ = |P₁₂|/s = 1.2635, the same as D597's κ = 1.26.
+- Method B (real eigenvectors, independent): A(Y) has eigenvalues ∓0.150819 (traceless), θ′ = −0.6317, (λ₁ − λ₂)θ′ = 0.190559. A and B agree to 1.2e-10, so the coupling is PHYSICAL by the locked rule.
+- Analytic reason (written in the lock before running): for opposite-sign eigenvalues the off-diagonal coupling is (λ₁ − λ₂)θ′ = 2sθ′. Removing θ(φ) by a field rotation leaves a current coupling whose on-shell element is ∝ 2s, an axion-like decay to a massive Majorana pair.
+- D597's λ₁₂ ∝ ΔM used |M₁| − |M₂| and is WRONG for this doublet. D601's item 2 (current couplings ∝ m₁² − m₂²) holds for same-sign masses only.
+- T_R (λ = √2κ = 1.787, pseudoscalar width ∝ (1−4x²)^{1/2}, m = 1.9e11 GeV): 1.0e6 / 2.0e6 / 2.9e6 / 3.0e6 GeV for M/m = 0.1 / 0.2 / 0.33 / 0.45 (g* = 106.75); ×0.83 for g* = 228.75.
+Consequences (estimates):
+- Relative to the frozen bracket's T_R = 1e3–1e5: +1 to +3.5 decades, so ΔN* ≈ +0.8 to +2.7, Δn_s ≈ +0.0006 to +0.0021, Δy* ≈ +0.2 to +0.8.
+- The ε = 1.3e-4 row moves to n_s ≈ 0.971–0.973. The ε = 1.6e-4 row's top end moves to ≈ 0.976 with y* ≈ 24.7–25.3, so the top of the frozen τ = i band is at risk of the y* ≤ 25 cap.
+- Frozen bands are NOT retuned (lock D633/D679); the history behind them changes.
+- AD leptogenesis: the required m_ν1 scales ∝ T_R, to ≈ 1e-9 – 3e-9 eV. Still "essentially massless".
+- NEW OPENING: D597's leptogenesis tension came from T_R ∝ ΔM against ε ∝ 1/ΔM. With an unsuppressed decay, T_R no longer depends on ΔM, so resonant leptogenesis from φ → N₁N₂ with a quasi-degenerate pair may now work. To compute (D728).
+Paper: reheating section given a correction sentence (D727); builds.
