@@ -7855,3 +7855,23 @@ Derivation:
 VERDICT: P3 stays OPEN, sharpened. New falsifier added: a computation of the anti-D3 annulus on T⁶/(Z₂×Z₂) that gives the one-loop goldstino-metric correction as k₁E(τ,2) (additive) with no 1/E piece would refute P3's string origin (though not the phenomenology).
 The paper's statement "plateau placed in the nilpotent metric by choice" remains exactly right; no text change.
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D798 (REVERSE, ρ-side; Jl tick 37; locked PREREG_D798; results/dkl_plateau_d798.txt): the one-loop DKL threshold Δ = −ln(y|η|⁴) has its minimum at ρ and makes a working plateau. p = 2 lands near the untilted family; p = 1 overshoots r and the string bound
+Computed:
+- (a) Grid minimum of Δ at (−0.5, 0.875), the ρ image (grid spacing 0.04 in y). Δ(ρ) = 1.03352 < Δ(i) = 1.05469 ✓.
+- (b) p = 1: V_xx = V_yy = 2/3 at ρ (R = 1.000000 ✓ Z₃-isotropic, massive). p = 2: Hessian ~2e-9, i.e. a massless quartic vacuum ✓ (same flaw as the τ = i Kairos, D567).
+- (c) ∂_x V = 0 on x = ½ ✓ (the CP line is a valley).
+  - p = 1: N* = 50/55 gives n_s 0.9636/0.9668 and r 3.05e-3/2.57e-3, but y* = 47–51, which VIOLATES the string bound y* ≲ 25–29 (D564).
+  - p = 2: N* = 50/55 gives n_s 0.9628/0.9661, r 6.48e-4/5.43e-4, y* = 17.8–18.4 (inside the bound).
+Locked expectations:
+- (a), (b): held.
+- (c): the leading-order "r ≈ 12/N², 3/N²" FAILED quantitatively. r is lower by 37–55%, because Δ = πy/3 − ln y + … and the log term shifts the effective coefficient (not just N*).
+- (c) qualitative: p = 1 is above the strip ✓. p = 2 at N* = 55 sits at r 5.4e-4, the top of the family band, NOT above it ✗.
+Derivation:
+1. Δ is the Kronecker-limit (s → 1) Epstein function: E(τ,s) = ζ(2s)·2y^s/… and Δ = −ln(y|η|⁴) [literature] (DKL 1991; Kronecker limit formula).
+2. y^{1/2}|η|² is maximised at ρ [literature] (classical; confirmed numerically here), so Δ is minimal at ρ [derived].
+3. Δ is smooth and Z₃-symmetric at ρ, so Δ̃ ∝ |z|² and p = 1 is massive and isotropic [derived] (D796 logic).
+4. Δ ≈ πy/3 at the cusp: V_p ≈ 1 − (3/πy)^p = 1 − c e^{−p√(2/3)φ} is an α-attractor with α = 1/p² [derived].
+5. The D564 bound (y* ≲ 25) excludes p = 1 [derived]. p = 2 needs a vacuum-mass/tilt term, exactly as at τ = i (D574–D575): the natural analogue is V = Δ̃²/(Δ̃²+1) + ε Δ̃ [derived].
+Significance: Δ is a genuine one-loop string threshold with a minimum at ρ. Unlike the hand-built |j − 1728| plateau, it needs no choice of vacuum. Its PLACEMENT is still by hand (P3 issue): V ∝ Δ̃²/(Δ̃²+1) must still sit in K^{XX̄}. Not a new prediction yet (post hoc; nothing frozen).
+MAP: node=plateau_origin status=computed touches=[serapis_e] ripple=no
