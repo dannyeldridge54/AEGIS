@@ -1472,7 +1472,7 @@ Touches: none.
 - [estimate] residual solver scatter ~1e-4.
 - Result: SERAPIS-E n_s, r, α_s independently reproduced (α_s to ~10%).
 
-## D956: Sugimoto spectrum sign check
+## D955: Sugimoto spectrum sign check
 - [literature] 1711.11494: USp(32) bosons, fermions in antisymmetric 495 + singlet goldstino.
 - [derived] (arithmetic) 528 − 496 = +32 bosonic excess.
 - [estimate] Project H sign condition met at the massless level; massive levels and couplings unchecked.

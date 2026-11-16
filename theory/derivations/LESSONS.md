@@ -202,4 +202,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D952: run tools/serapis_calc selftest before every locked run.
 - D953: copy the paper's conventions verbatim in reproduction locks; selftest tolerances tighter than the effect measured.
 - D954: α_s at tiny ε needs a wide stencil or dn_s/dN directly.
-- D956: verify recalled spectra against a source before use (495 + 1, not 496).
+- D955: verify recalled spectra against a source before use (495 + 1, not 496).

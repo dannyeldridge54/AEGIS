@@ -9661,7 +9661,7 @@ Verdict: v3.2's SERAPIS-E n_s, r (D953) and α_s band (D954) are now independent
 LESSONS: second derivatives of ln P at ε ~ 1e-5 need either a wider stencil or direct dn_s/dN; next solver upgrade if α_s precision matters.
 MAP: none
 
-## D956 (loop B, step 4): in the Sugimoto brane-SUSY-breaking model the massless open-string sector has n_B − n_F = +32 (bosonic excess): Project H's sign condition (D951) is met there at the massless level
+## D955 (loop B, step 4; labelled D956 in its first commit, corrected to match the claim): in the Sugimoto brane-SUSY-breaking model the massless open-string sector has n_B − n_F = +32 (bosonic excess): Project H's sign condition (D951) is met there at the massless level
 [literature] Mourad & Sagnotti, "An Update on Brane Supersymmetry Breaking" (arXiv:1711.11494, 2017): USp(32) gauge bosons; fermions in the antisymmetric 495; an additional singlet playing the role of a goldstino. The tension left by SUSY breaking drives a runaway (dilaton) potential.
 [derived] (arithmetic) dim adj USp(2n) = n(2n+1) = 528 for n = 16; fermion states 495 + 1 = 496 (same on-shell degrees of freedom per 10D vector and Majorana–Weyl spinor, 8 each): n_B − n_F = +32 per state count, i.e. a net bosonic excess.
 [estimate] For an image-sum mass of χ with equal couplings to the tower, δm_χ² ∝ (n_B − n_F) > 0 (D945): positive. Caveats: (i) only the massless level is counted; massive open-string levels were not checked; (ii) χ's couplings need not be equal across the multiplet; (iii) BSB's runaway dilaton must be stabilised (assumed in SERAPIS anyway); (iv) reaching the "6D on T²" geometry needs the BSB branes to wrap the T² with the other four dimensions small (D945a), e.g. anti-D5s on T² in a T⁴ × T² orientifold — not constructed here.
