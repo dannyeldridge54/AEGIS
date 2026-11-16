@@ -11,3 +11,4 @@ D724  2026-11-16T00:22Z  2+1 N sector at rho: rank and lightest mass
 D725  2026-11-16T00:27Z  T_R for 2+1 W2 b=0 sector at rho
 D726  2026-11-16T00:33Z  cone splitting of degenerate N doublet at tau=i
 D727  2026-11-16T01:22Z  pseudoscalar N coupling at tau=i is physical; T_R
+D728  2026-11-16T01:23Z  resonant leptogenesis at tau=i with unsuppressed decay
