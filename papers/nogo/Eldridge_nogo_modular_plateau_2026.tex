@@ -1,0 +1,61 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{Three No-Go Results for String Origins of Modular Plateau Inflation}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{16 November 2026}
+\begin{abstract}
+Modular plateau models of inflation place the inflaton in the shape modulus $\tau$ of a torus, with a vacuum at a fixed point of $SL(2,\mathbb{Z})$ and a small tilt term. Where these ingredients come from in string theory is open. We record three negative results that close natural candidate origins. (i) In the $T^6/(\mathbb{Z}_2\times\mathbb{Z}_2)$ orientifold whose one-loop K\"ahler correction supplies the tilt, an anti-D3 brane on the inflaton torus cannot be the uplift: the tilt needs $\mathrm{Im}\,S\,\mathrm{Im}\,T_1\lesssim731$, the anti-D3 needs the small tori to be large, $A_2A_3\gtrsim2\times10^4g_s$, and together they require $g_s\gtrsim3$. (ii) A non-holomorphic Eisenstein series in the K\"ahler potential cannot produce the plateau in single-modulus modular supergravity: with a constant superpotential the metric is negative at both fixed points, and with the modular-covariant superpotential the potential grows as $e^{k\pi y/3}$ toward the cusp. (iii) Leading-order warped-throat physics cannot supply the logarithmic dependence on $|j(\tau)-1728|$ that the tilt at $\tau=i$ requires, because the conifold modulus carries no continuous dependence on the bulk complex structure. Each result is labelled by how it was obtained.
+\end{abstract}
+\keywords{string cosmology; modular invariance; inflation; plateau inflation; no-go theorem; anti-D3 brane; uplift; Kähler potential; Eisenstein series; orientifold; warped throat; moduli stabilization}
+\maketitle
+
+\section{Introduction}
+In modular plateau inflation the inflaton is the complex-structure modulus $\tau=x+iy$ of a two-torus, the potential is $SL(2,\mathbb{Z})$ invariant, its vacuum sits at a fixed point ($\tau=i$ or $\rho=e^{2\pi i/3}$), and a small extra term tilts the spectrum to $n_s\approx0.97$~\cite{SERAPIS,KLsl2z}. In the SERAPIS-$E$ variant the plateau is $1-E(\rho,2)/E(\tau,2)$, with $E(\tau,s)$ the non-holomorphic Eisenstein series, and the tilt is the one-loop K\"ahler correction of $T^6/(\mathbb{Z}_2\times\mathbb{Z}_2)$ orientifolds computed by Berg, Haack and K\"ors (BHK)~\cite{BHK}. Two inputs remain without a string origin: the plateau's form, which is placed in the uplift sector by hand, and, at $\tau=i$, the size of the tilt. Negative results narrow the search. We record three, each from computations whose inputs and pass criteria were fixed before they were run~\cite{SERAPIS}.
+
+\section{An anti-D3 uplift on the inflaton torus is excluded}
+\emph{Status: derived, with a locked moduli scan.}
+In BHK's eq.~(3.30) the D3-brane term is $\tfrac12 c\,\mathcal{E}_2(A,U^I)/[(S-\bar S)(T^I-\bar T^I)]$, and after T-duality $T^I$ is the four-cycle transverse to the torus $T^2_I$. The tilt modulus of the inflaton torus is therefore $\mathrm{Im}\,T_1=A_2A_3/g_s$, with $A_{2,3}$ the areas of the other two tori and $\mathrm{Im}\,S=1/(2\sqrt2\pi g_s)$, so
+\begin{equation}
+\mathrm{Im}\,S\,\mathrm{Im}\,T_1=\frac{A_2A_3}{2\sqrt2\,\pi\,g_s^2}.
+\end{equation}
+The tilt's measured size requires $\mathrm{Im}\,S\,\mathrm{Im}\,T_1\lesssim731$. An anti-D3 brane on the same torus adds an interaction with relative strength $\kappa/V_0=g_s/(8\pi A_2A_3)$, which leaves the spectral band intact only if $\kappa/V_0\lesssim2\times10^{-6}$, i.e. $A_2A_3\gtrsim2\times10^4\,g_s$. Combining the two conditions gives
+\begin{equation}
+g_s\gtrsim3.1,
+\end{equation}
+outside the perturbative regime. At the moduli that give the tilt, $\kappa/V_0\approx9\times10^{-6}$ ($g_s=0.5$) to $1.2\times10^{-4}$ ($g_s=0.05$), which would shift $n_s$ by about $+0.005$ to $+0.06$. A scan over $g_s$ and the torus areas, with and without a racetrack for the K\"ahler moduli, found no point that satisfies both conditions. The uplift of this model must therefore come from elsewhere, for instance an anti-D3 brane in a distant warped throat, whose interaction is suppressed by the warp factor, or a T-brane D-term~\cite{TBRANE}.
+
+\section{An Eisenstein term in the K\"ahler potential does not make the plateau}
+\emph{Status: computed, with a scan locked in advance.}
+Non-holomorphic Eisenstein series can appear in the K\"ahler potential, $K\supset\log E_s(\tau,\bar\tau)$, and their positivity at the symmetry points has been analysed~\cite{MV}. A term $-c\log E(\tau,2)$ looks like a natural home for the plateau: $e^K\propto E^{-c}$, so with an uplift the potential would approach a constant as $1/E$. It fails for two reasons.
+
+\emph{Ghost at the fixed points.} At any critical point of $E(\tau,s)$, which includes both $\rho$ and $i$, the Laplacian eigenvalue equation gives $4y^2K_{\tau\bar\tau}=-s(s-1)$ for $K=-\log E(\tau,s)$. We find numerically $4y^2K_{\tau\bar\tau}=-2.000$ at $\rho$ and at $i$ for $s=2$, positive only for $y\gtrsim2$. The inflaton would be a ghost exactly at the vacuum. A mixture $K=-k\log(2y)-c\log E(\tau,2)$ has $4y^2K_{\tau\bar\tau}=k-2c$ at the fixed points and is ghost-free for $k>2c$.
+
+\emph{Growth at the cusp.} With $k>0$ the potential is modular invariant only if $W\propto\eta(\tau)^{-2k}$, so that $G=K+\log|W|^2=-k\log(2y|\eta|^4)-c\log E(\tau,2)$. Since $|\eta|^4\simeq e^{-\pi y/3}$, $e^G$ grows as $e^{k\pi y/3}$. In the scan ($k+2c\in\{2,2.5,2.9,3.5\}$, $k=0.75(k+2c)$) the metric was positive everywhere, but $V=e^G(G^{\tau\bar\tau}|G_\tau|^2-3)+V_0$ had a local \emph{maximum} at $\rho$ and grew to $10^{26}$--$10^{44}\,V_0$ by $y=40$: no plateau and no vacuum. With $k=0$ the growth disappears but the ghost returns. In single-modulus modular supergravity an Eisenstein term in $K$ therefore cannot supply the plateau.
+
+\section{Throat physics cannot supply the tilt at $\tau=i$}
+\emph{Status: derived from the literature.}
+At $\tau=i$ the tilt and the vacuum mass ($m^2/H^2\approx2\times10^{-3}$) come from a term $\varepsilon I_1$ with $\varepsilon\approx(1.40$--$1.45)\times10^{-4}$, where $I_1$ is logarithmic in $|j(\tau)-1728|$ and vanishes quadratically at $i$~\cite{SERAPIS}. Working backward, the uplift would need a factor
+\begin{equation}
+|j(\tau)-1728|^{2q}\simeq1+2q\ln|j-1728|,\qquad q\sim10^{-5},
+\end{equation}
+modular invariant and in its linear regime during inflation. A warped throat's uplift scales as $|\Lambda_0|^4$ with its UV cutoff $\Lambda_0$, so a dependence $\Lambda_0\propto(j-1728)^{q'}$ would do it. The literature does not provide one. For the stabilised conifold modulus, $|z_{\rm cf}|=(1/2\pi)\exp[-2\pi K'/(n_{\rm cf}g_sM)]$ up to corrections of order $z_{\rm cf}^2$ and $z_{\rm cf}e^{2\pi i p\cdot\tau}$, with $K'$ fixed by integer fluxes~\cite{DKMM}. The prefactor is a pure number, the bulk moduli enter only through flux integers, and the corrections are suppressed by $e^{2\pi i\tau}$: they vanish toward the cusp, whereas $\ln|j-1728|\simeq2\pi y$ grows. A logarithmic, one-loop-sized dependence of the throat on the bulk complex structure is not found at leading order; the tilt at $\tau=i$ remains a fitted parameter.
+
+\section{Conclusion}
+The three results close the most direct string origins for the ingredients of modular plateau inflation: the anti-D3 uplift on the inflaton torus, an Eisenstein term in the Kähler potential, and leading-order throat corrections. What survives is narrower and better defined: the plateau's form must sit in an uplift sector away from the inflaton torus (a sequestered throat or a T-brane), and the tilt at $\tau=i$ needs a small power of $|j-1728|$ in that sector, which a future string computation would have to produce. A T-brane uplift carries the torus shape only through the norm of the three-form flux~\cite{TBRANE}, a single lattice term rather than an Eisenstein sum, so it is not a source of the plateau's form either.
+
+\begin{acknowledgments}
+The derivations and code were developed with the assistance of Claude (Anthropic). The author directed the work and checked the results. Scripts, pre-registration files and outputs are in the SERAPIS reproducibility archive~\cite{SERAPIS}.
+\end{acknowledgments}
+
+\begin{thebibliography}{9}
+\bibitem{SERAPIS} D.~Eldridge, ``The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test,'' v3.2, Zenodo (2026), doi:10.5281/zenodo.24289118.
+\bibitem{KLsl2z} R.~Kallosh and A.~Linde, ``$SL(2,\mathbb{Z})$ cosmological attractors,'' arXiv:2408.05203.
+\bibitem{BHK} M.~Berg, M.~Haack and B.~K\"ors, ``String loop corrections to K\"ahler potentials in orientifolds,'' JHEP \textbf{11}, 030 (2005), arXiv:hep-th/0508043.
+\bibitem{MV} A.~Mohseni and C.~Vafa, ``Symmetry points of $\mathcal{N}=1$ modular geometry,'' arXiv:2510.19927.
+\bibitem{DKMM} M.~Demirtas, M.~Kim, L.~McAllister and J.~Moritz, ``Conifold vacua with small flux superpotential,'' Fortsch. Phys. \textbf{68}, 2000085 (2020), arXiv:2009.03312.
+\bibitem{TBRANE} M.~Cicoli, F.~Quevedo and R.~Valandro, ``De Sitter from T-branes,'' JHEP \textbf{03}, 141 (2016), arXiv:1512.04558.
+\end{thebibliography}
+\end{document}
