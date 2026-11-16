@@ -1131,3 +1131,10 @@ Touches: lepto_rho, n_sector_rho, mnu.
 4. FHY extrapolation exceeds the no-thermal ceiling by 4 at D880's point [derived] (check K).
 5. Lift target ε ≈ 1.6e-4; Weinberg bound c ≲ 1e-5 (M_P) / 1e-7 (M_s) [estimate].
 Touches: lepto_rho, n_sector_rho, mnu.
+
+## D896: R2.2b ρ lift recomputed
+1. Same model and draws as D883; target m_ν₁ = 1.34e-10 eV from D895 [derived].
+2. Pass fraction 3.50%; ε median 1.62e-4 (2.8e-5 to 1.0e-3) [derived] (locked run D896).
+3. Window ends: ε = 6.3e-5 to 4.2e-4 [derived] (locked run D896).
+4. |τ−ρ| ≈ √3·ε ≈ 2.8e-4 for l = 1 [derived] (arithmetic).
+Touches: n_sector_rho, lepto_rho, mnu.

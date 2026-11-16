@@ -143,3 +143,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D893: keep a running list of the conditions a post hoc chain has accumulated; it shows at a glance how fragile the branch is.
 - 2026-11-16 D894: when the same mechanism is used on two branches, check both use the same yield formula; D880 imported a literature scaling without comparing to our own D646 integration.
 - 2026-11-16 D880a: never import a literature scaling outside the regime it was derived for when the model already has its own computation of that regime; check against the in-house result first.
+- 2026-11-16 D896: when a target moves, rerun under a fresh lock with a copied script; the old result stays as the record of the old target.

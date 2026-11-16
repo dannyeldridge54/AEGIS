@@ -9216,3 +9216,10 @@ Consequences [estimate] (to be recomputed):
 2. D891's bound tightens by ~130: c ≲ 1e-5 (Λ = M_P) or ≲ 1e-7 (Λ = M_s), i.e. S_W ≳ 14–16, against S_N ≈ 6.4–12.6 for the heavy singlets. D892's "natural for M_N ≲ 1e12 GeV" no longer holds as stated; the Weinberg instanton must be markedly more suppressed than the heavy-ν ones.
 3. The frozen predictions are unchanged: the Σm_ν NO floor (0.0587 eV) is insensitive to m_ν₁ at this level.
 MAP: node=lepto_rho status=computed touches=[n_sector_rho,mnu] ripple=yes
+
+## D896 (R2.2b): with the corrected m_ν₁ target, ρ's lift is ε ≈ 1.6e-4: still NATURAL by the locked rule, at its lower edge
+Lock: PREREG_D896_rho_osc2.md (committed and pushed before the run). Script theory/modular/rho_osc_d896.py (copy of D883's, target changed only), output field_tests/results/rho_osc_d896.txt.
+Results [derived]: pass fraction 699/20,000 = 3.50% (identical to D883, as expected: it does not depend on the target). For m_ν₁ = 1.34e-10 eV (geometric middle of D895's 2e-11–9e-10 eV): ε median 1.62e-4, 5–95% 2.8e-5 to 1.0e-3. Across the window: median ε = 6.3e-5 (2e-11 eV) to 4.2e-4 (9e-10 eV).
+Verdict (locked rule): NATURAL (pass ≥ 1%, median 1.62e-4 ∈ [1e-4, 1e-2]), at the lower edge; the low end of the m_ν₁ window falls below 1e-4. Pre-stated prediction (3.5%, ε ≈ 1.6e-4) CONFIRMED. D883's ε ≈ 1.8e-3 is superseded (its result stays as a record of the old target).
+Consequence [derived] (arithmetic, l = 1): the residual-Z₃ breaking of D889 becomes |u| ≈ 1.6e-4, |τ − ρ| ≈ √3·1.6e-4 ≈ 2.8e-4 (1.1e-4–7.3e-4 across the window). Still post hoc with no in-model source (D890 unchanged in kind).
+MAP: node=n_sector_rho status=computed touches=[lepto_rho,mnu] ripple=no
