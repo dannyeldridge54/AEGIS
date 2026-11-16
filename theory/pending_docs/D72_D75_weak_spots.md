@@ -7276,3 +7276,30 @@ Computed:
 VERDICT (locked rule): NO. In its perturbative regime the BHK loop term changes V only by a factor (1 + O(c′E)), i.e. a TILT. That is exactly SERAPIS-E's use of it (D692), and it cannot also supply the plateau. Plateau-origin routes now closed: Casimir/tension (D703, D712), species (D707–D709), Epstein-Kähler (D717, D718), gauge thresholds (D747), loop-corrected inverse metric (D757). The plateau stays an assumed effective term.
 Wall status: the in-model routes are exhausted. Going deeper now means leaving the model, e.g. non-perturbative (instanton) or warped-throat sources of a 1/E term, a separate project. Loop pauses.
 MAP: node=plateau_origin status=open touches=[] ripple=no
+
+## D758 (DEEP, outward; locked PREREG_D758; results/logderiv_epstein_d758.txt) — a log-derivative (species-type) Epstein plateau
+Reverse-ladder step: the wall at D757 says the plateau cannot come from a loop correction to K. Working backwards from "a plateau that tends to a constant", 2407.12081's species-scale potentials have the form V ∝ G^{ττ̄}|∂ ln Λ_sp|², and with Λ_sp tied to E(τ,2) this gives, along Re τ = ½, V ∝ y²(d ln E/dy)².
+Computed: V(ρ) = 5.5e-38 (zero at the vacuum, as needed); E(ρ) = 5.7833593 (matches D689). V → 4 as y → ∞, with the approach ∝ y^{−3} (read from the printed values: 4 − V = 0.163, 0.021, 0.0026 at y = 5, 10, 20). Untilted α = 1, N* = 48: n_s = 0.95842, r = 1.92e-4.
+Errors recorded: the script's "approach exponent" and "1 − V/V∞" lines used V∞ = 1 instead of 4 and are wrong. "V(i)" was evaluated at y = 1 on Re τ = ½, which is not τ = i. The mpmath slow-roll was too slow and was stopped. D759 supersedes the n_s/r numbers.
+VERDICT: a plateau shape with the right vacuum, but untilted n_s ≈ 0.958–0.962 is below the band. The tilt is needed (D759).
+MAP: node=logderiv_plateau status=computed touches=[plateau_origin] ripple=no
+
+## D759 (DEEP; locked PREREG_D759 + DEVIATIONS D1; results/logderiv_tilted_d759.txt; run1 kept as INVALID) — log-derivative plateau + SERAPIS-E BHK tilt
+Model: V = y²(d ln E/dy)²·(1 + C(E − E(ρ))) along Re τ = ½. Run1's nested finite differences gave noisy n_s; D1 (written before the rerun) switched to mpmath derivatives. The C = 0 rerun reproduces D758 exactly (n_s 0.958418 at N* = 48).
+Computed (N* = 48 / 50 / 52):
+- α = 1 (y* 16.5–22.7):
+  - C = 0: n_s 0.9584/0.9601/0.9616, r 1.9/1.8/1.6e-4.
+  - C = 5e-7: n_s 0.9660/0.9679/0.9697, r 2.4/2.2/2.1e-4.
+  - C = 1e-6: n_s 0.9741/0.9763/0.9783, r 3.0/2.8/2.7e-4.
+  - C = 1.15e-6: n_s 0.9767/0.9789/0.9811.
+  - C = 1.3e-6: n_s 0.9793/0.9816/0.9839.
+  - C = 2e-6: n_s 0.992–0.998.
+  - C = 4e-6: n_s 1.04–1.05 (excluded).
+- α = 1/3 (y* 11.5–12.2): the tilt barely moves n_s (0.958 → 0.968 at N* = 48 for C = 4e-6). The band is reached only at C ≈ 3.2–3.9e-6 for N* = 50–52, with r ≈ 6.8–7.2e-4.
+Band, interpolated in code: for α = 1, n_s 0.970–0.975 needs C = 7.5e-7–1.05e-6 (N* 48), 6.2–9.2e-7 (N* 50) or 5.2–8.1e-7 (N* 52), with r = 2.1–3.1e-4. That is the same order as SERAPIS-E's derived C ≈ 1.0–1.3e-6 (D692), but slightly lower.
+VERDICT (locked rule): CANDIDATE. A natural C (≪ 4e-6) puts n_s in the band with y* ≤ 25 (α = 1). It is a post-hoc second plateau form, distinguished from SERAPIS-E by r: ≈ 2.1–3.1e-4 vs 4.55–5.12e-4. The α = 1/3 version is marginal (band only at the edge of natural C) and has a high r of about 7e-4.
+Caveats:
+- The plateau's origin still needs the species/Laplacian coefficient ratio A ≪ B·E, which D707 judged not generic. 2407.12081 is agnostic about why Λ_sp tracks E. This is a candidate form, not a derivation.
+- The frozen bands are unchanged.
+- A precise r (SO/BICEP σ(r) ~ 1e-3 cannot; LiteBIRD-class σ(r) ≲ 1e-4 could) separates the two.
+MAP: node=logderiv_plateau status=computed touches=[plateau_origin, serapis_e] ripple=no
