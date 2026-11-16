@@ -9527,3 +9527,10 @@ MAP: none
 Verdict: D929's "only n = 1" holds for pure power-law approaches; with a log-corrected leading term, n = 3 (k = 4, y ≈ 6.5) and n = 2 (k = 3, y ≈ 340) reproduce p = 2√2 to < 0.5% over the observable e-folds. Cost: horizon exit must sit at that specific y (a tuning of where the 55 e-folds start), and the leading correction must be ∝ y⁻⁴ ln y (n = 3) or y⁻³ ln y (n = 2) [estimate: no source computed for such a term]. Status of D929 downgraded from "selects n = 1" to "selects n = 1 without tuning". Weak spot recorded; no paper claim relied on D929 yet.
 LESSONS: power-counting selections need a log-correction check before they are stated as rules.
 MAP: none
+
+## D938 (plan step 4, Weinberg): literature confirms the instanton-suppressed form e^{−S} LH_uLH_u/M_s used in D892/D904; nothing new on instanton actions AT modular fixed points
+Search (1, standard) + 2 fetches. [literature] Cvetič, Halverson, Langacker & Richter, "The Weinberg Operator and a Lower String Scale in Orientifold Compactifications" (arXiv:1001.3148, ~2010): D-instantons induce e^{−S_WB} L H_u L H_u / M_s (citing Ibáñez–Schellekens–Uranga); with e^{−S} ≈ 1 and M_s ≈ 1e18 GeV, m_ν ≈ 1e-5 eV; realistic masses need M_s/e^{−S} ≈ 1e14 GeV; S is not derived from g_s or volumes there. [literature] Loualidi, Miskaoui & Nasri (arXiv:2606.11346): radiative ν mass in a non-holomorphic T′ model near τ = i (residual Z₂ stabilises DM); no instantons.
+[derived] (arithmetic) Our requirement S ≳ 14–19 (ρ) / 13–17 (τ = i) (D897, D904a) means e^{−S} ≲ 8e-7–6e-9 / 2e-6–4e-8: a suppressed Weinberg term, in the opposite direction to CHLR's use (they need it UNsuppressed for the heavy states). Consistent with D892's form; the D904 estimate S = 2π/g_s stays the only action estimate we have.
+Verdict: NULL for the open part (no fixed-point instanton action in the literature found); form confirmed. Weinberg suppression stays conditional (D893, D903, D904a).
+LESSONS: literature uses instanton Weinberg terms to make ν masses large enough; ours must be small; cite carefully as "same operator, opposite regime".
+MAP: none

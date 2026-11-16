@@ -1382,3 +1382,8 @@ Touches: none.
 - [derived] (arithmetic) n=3,k=4 needs y≈6.5 (drift 0.015); n=2,k=3 needs y≈340 (drift 0.002).
 - [estimate] no source for such leading terms computed.
 - Result: D929 holds only without tuning.
+
+## D938: Weinberg instanton literature
+- [literature] arXiv:1001.3148 (e^{−S} LHLH/M_s; M_s/e^{−S} ≈ 1e14 GeV for realistic ν masses); arXiv:2606.11346 (radiative, no instantons).
+- [derived] (arithmetic) S ≳ 13–19 ↔ e^{−S} ≲ 2e-6–6e-9.
+- Result: form confirmed; open part NULL.
