@@ -1361,3 +1361,8 @@ Touches: none.
 - [derived] point-wise flatness: 16 real linear conditions on 16 flux integers; one determinant condition on P.
 - [estimate] 5-parameter candidate family; integrality untested.
 - Result: partial no-go; locked integer search queued.
+
+## D934: flat single-U flux search (locked)
+- [computed] nullity 0 at 512/512 grid points (run 2, DEVIATIONS D1 speed-only).
+- [estimate] determinant may vanish nowhere; untested.
+- Result: FAIL on grid; extended lock (ρ points + symbolic det) next.

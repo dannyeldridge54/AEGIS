@@ -181,3 +181,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D931: search flat directions in flux vacua for rolling-modulus origins.
 - D932: a locked partner modulus doubles n; check single vs diagonal flat directions.
 - D933: tadpole kills identically-flat U; point-wise case needs a locked search.
+- D934: numeric SVD screen before exact nullspaces.

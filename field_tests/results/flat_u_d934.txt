@@ -1,0 +1,1 @@
+run 2 (DEVIATIONS D1). grid points 512; nullity histogram {0: 512}; candidates 0; accepted 0

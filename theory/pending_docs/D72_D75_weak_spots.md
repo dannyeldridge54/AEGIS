@@ -9499,3 +9499,10 @@ Remaining route [derived, conditions only]: U₃ can still be flat at a fixed po
 Verdict: single-U flatness is not forbidden, but only point-wise and only on a measure-zero set of moduli values. Next: a LOCKED integer search (fluxes up to a bound, rational P) for solutions with N_flux > 0 inside the tadpole bound; pass if ≥ 1 solution with all of U₁, U₂, S fixed (massive) and U₃ exactly flat.
 LESSONS: a tadpole argument kills "identically flat" in one line; the surviving case is a finite search, lock it before running.
 MAP: none
+
+## D934 (Project F, F1; locked PREREG_D934 + DEVIATIONS D1): FAIL on grid: no flux at all leaves a single U flat at any of the 512 Gaussian-rational points
+Run 1 (exact sympy everywhere) hit the 15-min limit with no output; DEVIATIONS D1 (written and pushed before the rerun) changed only the method (numeric SVD screen, exact check at candidates). Run 2 [computed]: the 16×16 real linear system (W, ∂W and the mixed ∂∂₃W at P vanish) has nullity 0 at all 512 grid points, so there is no nonzero real flux, integer or not, before the tadpole and mass checks even apply. Result: field_tests/results/flat_u_d934.txt.
+Verdict (per the lock): FAIL on this grid; "not found on grid", not a no-go. [estimate] Nullity 0 at every sampled point suggests the determinant may vanish nowhere in the upper half-planes (which would turn D933's point-wise route into a full no-go for T⁶/(Z₂×Z₂) with diagonal moduli); not checked.
+Next (Project F kill rule): ONE extended lock: (a) add ρ-type points (Q(√3)) to the grid, and (b) compute the 16×16 determinant symbolically in (U₁,U₂,S) to see whether it has any zero with Im > 0. If none: F1 killed, record "no point-wise flat single U on T⁶/(Z₂×Z₂)", and Project F switches to the sibling catalogue.
+LESSONS: screen numerically before exact algebra; 512 exact nullspaces took > 15 min, the SVD screen took about a minute.
+MAP: none
