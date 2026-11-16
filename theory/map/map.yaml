@@ -406,13 +406,14 @@ nodes:
   - D876
   - D877
   - D878
+  - D879
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D876: assumed'
   - 'D877: assumed'
   - 'D878: assumed'
+  - 'D879: assumed'
 - id: gravitino_wino
   layer: 4
   branch:
@@ -471,7 +472,7 @@ nodes:
   history:
   - 'D748: frozen'
   - 'D821: frozen'
-  flag: recheck (D878, lepto_rho)
+  flag: recheck (D879, lepto_rho)
 - id: caps
   layer: 5
   branch:
@@ -500,6 +501,7 @@ nodes:
   - 'D750: frozen'
   - 'D786: frozen'
   - 'D824: frozen'
+  flag: recheck (D879, lepto_rho)
 - id: wino_window
   layer: 5
   branch:

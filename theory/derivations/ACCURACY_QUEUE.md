@@ -98,5 +98,6 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - B.1 [done D875] Inventory: every ρ route tried (D725, D731, D780–D793) and why each failed or left the band; list the Z₃ selection rules that bind.
 - B.2 [done D876: top = suppressed AD-charge transfer] Literature: baryogenesis mechanisms compatible with an exact discrete symmetry and a long-lived Z₃-charged state (e.g. late-decay baryogenesis through dim-6 operators, spontaneous baryogenesis from a rolling axion, Z₃-allowed Affleck–Dine directions, gravitational/thermal leptogenesis at low T_R).
 - B.3 [done D877: needs b = 1/3 to 0.005–0.4%; tuning unless symmetric] Pick the best candidate; locked computation of Y_B and of its effect on N* (does it stay inside the frozen band?).
-- B.4 [open] Verdict and v3.2 note.
+- B.4 [done D879: LH_u AD candidate at ρ found] Verdict and v3.2 note.
 - B.3b [done D878: needs tuning]. Next: B.4 verdict (D879) and choose rank 2 or 3 as follow-up.
+- B.5 [open] Locked LH_u AD computation at ρ (T₂ = 1e5–1e6 GeV, m_ν₁, soft masses; ρ lepton-sector compatibility).

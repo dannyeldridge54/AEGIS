@@ -125,3 +125,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D876: when an asymmetry is too big, ask whether the transfer to baryons is really one-to-one before reaching for dilution; dilution costs e-folds, a transfer fraction does not.
 - 2026-11-16 D877: a transfer fraction that must be small is only an improvement over dilution if something makes it small; otherwise it moves the tuning from e-folds to branching ratios.
 - 2026-11-16 D878: test a 'nice ratio' hope against the model's actual couplings at once; one locked run showed b ranges 0.1–0.95 with no reason to sit at 1/3.
+- 2026-11-16 D879: an inventory of failed routes is only as good as its list of routes. Check the standard mechanisms the paper uses elsewhere (LH_u AD at τ = i) against the new branch's selection rules before declaring a gap.

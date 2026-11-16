@@ -1003,3 +1003,11 @@ Touches: lepto_rho, band_e, n_sector_rho.
 3. f never reaches the required 1.4e-4–1.1e-2 without tuning c [derived].
 4. Suppressed-transfer route not natural; ranks 2–3 remain [derived] (D876).
 Touches: lepto_rho, band_e, n_sector_rho.
+
+## D879: B.4 verdict and Z₃ flat directions
+1. Suppressed-transfer route tuned [derived] (D877, D878).
+2. UDD and QQQL forbidden, QDL, LLE, LH_u allowed by Z₃ at ρ [derived] (D780, D787).
+3. LH_u AD was missing from the ρ inventory [derived] (D875).
+4. LH_u AD at T₂ = 1e5–1e6 GeV needs m_ν₁ ≈ 1e-10–1e-9 eV [estimate] (standard formula, from memory).
+5. ρ gains a candidate mechanism inside the frozen band, pending a locked check [derived].
+Touches: lepto_rho, band_e, mnu.

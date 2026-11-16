@@ -530,16 +530,17 @@
     "D875",
     "D876",
     "D877",
-    "D878"
+    "D878",
+    "D879"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D876: assumed",
     "D877: assumed",
-    "D878: assumed"
+    "D878: assumed",
+    "D879: assumed"
    ]
   },
   {
@@ -617,7 +618,7 @@
     "D748: frozen",
     "D821: frozen"
    ],
-   "flag": "recheck (D878, lepto_rho)"
+   "flag": "recheck (D879, lepto_rho)"
   },
   {
    "id": "caps",
@@ -654,7 +655,8 @@
     "D750: frozen",
     "D786: frozen",
     "D824: frozen"
-   ]
+   ],
+   "flag": "recheck (D879, lepto_rho)"
   },
   {
    "id": "wino_window",
