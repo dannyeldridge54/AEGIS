@@ -1,0 +1,11 @@
+c=0.3 M_H=1e+12: decaying light M=2.12e+11, T_R=3.18e+08, M/T_R=668, eps_DI=2.09e-05, Y_B(max)=1.57e-10, need sin(delta)>=0.56 PASS
+c=0.3 M_H=1e+12: decaying heavy M=1.00e+12, T_R=3.18e+08, M/T_R=3150, eps_DI=9.86e-05, Y_B(max)=7.42e-10, need sin(delta)>=0.12 PASS
+c=0.3 M_H=1e+13: decaying light M=2.12e+12, T_R=3.03e+09, M/T_R=699, eps_DI=2.09e-04, Y_B(max)=1.50e-08, need sin(delta)>=0.01 PASS
+c=0.3 M_H=1e+13: decaying heavy M=1.00e+13, T_R=3.03e+09, M/T_R=3297, eps_DI=9.86e-04, Y_B(max)=7.09e-08, need sin(delta)>=0.00 PASS
+c=0.3 M_H=5e+13: decaying light M=1.06e+13, T_R=2.08e+09, M/T_R=5109, eps_DI=1.05e-03, Y_B(max)=5.15e-08, need sin(delta)>=0.00 PASS
+c=1 M_H=1e+12: decaying light M=7.07e+11, T_R=4.29e+08, M/T_R=1649, eps_DI=6.97e-05, Y_B(max)=7.09e-10, need sin(delta)>=0.12 PASS
+c=1 M_H=1e+12: decaying heavy M=1.00e+12, T_R=4.29e+08, M/T_R=2333, eps_DI=9.86e-05, Y_B(max)=1.00e-09, need sin(delta)>=0.09 PASS
+c=1 M_H=1e+13: decaying light M=7.07e+12, T_R=2.54e+09, M/T_R=2781, eps_DI=6.97e-04, Y_B(max)=4.20e-08, need sin(delta)>=0.00 PASS
+c=1 M_H=1e+13: decaying heavy M=1.00e+13, T_R=2.54e+09, M/T_R=3932, eps_DI=9.86e-04, Y_B(max)=5.94e-08, need sin(delta)>=0.00 PASS
+c=3 M_H=1e+12: decaying light M=4.71e+11, T_R=9.46e+08, M/T_R=498, eps_DI=4.65e-05, Y_B(max)=1.04e-09, need sin(delta)>=0.08 PASS
+c=3 M_H=1e+12: decaying heavy M=1.00e+12, T_R=9.46e+08, M/T_R=1057, eps_DI=9.86e-05, Y_B(max)=2.21e-09, need sin(delta)>=0.04 PASS

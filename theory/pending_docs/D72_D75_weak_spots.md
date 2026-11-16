@@ -6960,3 +6960,22 @@ VERDICT: the physical τ = i history is octic → matter → radiation, so the D
 - Interpolated (estimate): the corrected history meets the frozen band only for ε ≈ 1.40–1.46e-4, at n_s ≈ 0.974–0.975, r ≈ 4.8–4.9e-4.
 Status: the frozen τ = i band (lock D633/D679) stands as locked. With the corrected reheating, the model's own history now lands in its upper-n_s corner or just outside it. The lock is not retuned, and any new τ = i band would be post-hoc and scored on future data only. Comparison: SERAPIS-E (ρ, D725) stays well inside its band (n_s 0.9732–0.9739); the ρ branch is now the more robust one, as the paper already argues.
 Paper: one sentence added (D730); builds.
+
+## D731 (CENTRE; locked PREREG_D731; results/lepto_rho_d731.txt) — PASS (estimate): non-thermal leptogenesis works for SERAPIS-E at ρ with a moderate CP phase
+Computed with the Davidson–Ibarra bound as ε, sin δ = 1 upper estimate, over the D725 open cases. In every case M/T_R = 500–5000, so thermal washout is negligible.
+| c | M_H (GeV) | decaying state | Y_B(max) | needs sin δ ≥ |
+|---|---|---|---|---|
+| 0.3 | 1e12 | light 2.1e11 | 1.6e-10 | 0.56 |
+| 0.3 | 1e12 | heavy 1e12 | 7.4e-10 | 0.12 |
+| 0.3 | 1e13 | light / heavy | 1.5e-8 / 7.1e-8 | ≤ 0.01 |
+| 0.3 | 5e13 | light 1.1e13 | 5.2e-8 | ≤ 0.01 |
+| 1 | 1e12 | light / heavy | 7.1e-10 / 1.0e-9 | 0.12 / 0.09 |
+| 1 | 1e13 | light / heavy | 4.2e-8 / 5.9e-8 | ≤ 0.01 |
+| 3 | 1e12 | light / heavy | 1.0e-9 / 2.2e-9 | 0.08 / 0.04 |
+VERDICT (locked): PASS at maximal phase in all cases. The required sin δ ranges from ≲ 0.01 (M_H = 1e13) to 0.56 (the lightest case).
+Caveats:
+- The exactly degenerate light pair gives no mutual resonant asymmetry. ε comes from the non-degenerate partner; the DI bound is an upper estimate, and the actual phases need a flavour model.
+- Self-energy enhancement for M_L/M_H ~ 0.7 is ignored, which is conservative.
+- ρ-branch status after D719–D731: viable with the 2⊕1 (W2) heavy-neutrino sector. T_R 3e8–3e9 GeV, frozen bands hold, no dark radiation, leptogenesis possible.
+Next risk: gravitinos thermally produced at T_R ~ 3e9 GeV decay to winos (covariant completion: m3/2 ~ 1e5–1e6 GeV, TeV wino LSP). Non-thermal wino DM from them may overclose; to check (D732).
+Paper: SERAPIS-E caveat extended (D725, D731); builds.
