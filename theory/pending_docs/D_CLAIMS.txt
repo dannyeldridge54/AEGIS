@@ -151,3 +151,4 @@ D864  2026-11-16T16:49Z  D7 tadpole for racetrack
 D865  2026-11-16T16:56Z  D7 contribution to the tilt
 D866  2026-11-16T17:04Z  BHK D7 coefficient and modulus mapping
 D867  2026-11-16T17:10Z  corrected moduli scan
+D868  2026-11-16T17:14Z  SERAPIS-E uplift without anti-D3
