@@ -1,0 +1,20 @@
+/home/claude/aegis/theory/modular/racetrack_cp_d845.py:8: RuntimeWarning: overflow encountered in scalar power
+  return (2*t)**-3*((4*t*t/3)*np.abs(DW)**2-3*np.abs(W)**2)
+/home/claude/aegis/theory/modular/racetrack_cp_d845.py:8: RuntimeWarning: invalid value encountered in scalar subtract
+  return (2*t)**-3*((4*t*t/3)*np.abs(DW)**2-3*np.abs(W)**2)
+/home/claude/aegis/theory/modular/racetrack_cp_d845.py:24: RuntimeWarning: overflow encountered in scalar multiply
+  r=minimize(lambda x:Vf(x[0],x[1],W0,A,B,a,b)*1e12,[S[i],Tt[j]],method='Nelder-Mead',options=dict(xatol=1e-9,fatol=1e-20,maxiter=4000))
+/home/claude/aegis/theory/modular/racetrack_cp_d845.py:8: RuntimeWarning: overflow encountered in scalar multiply
+  return (2*t)**-3*((4*t*t/3)*np.abs(DW)**2-3*np.abs(W)**2)
+/usr/local/lib/python3.13/site-packages/scipy/optimize/_optimize.py:870: RuntimeWarning: invalid value encountered in subtract
+  np.max(np.abs(fsim[0] - fsim[1:])) <= fatol):
+parameter points: 540; with >=1 CP-odd minimum (t>2): 486 (90.0%)
+N=(5,6) W0=+1e-04 B=+0.5 : CP-odd min s=8.7253 (L=30) t=10.093 V=-2.798e-12; deepest CP-even V=-4.973e-09; n_odd=4 n_even=2
+N=(5,6) W0=+1e-04 B=-0.5 : CP-odd min s=6.2747 (L=30) t=10.093 V=-2.798e-12; deepest CP-even V=-4.973e-09; n_odd=4 n_even=2
+N=(5,6) W0=+1e-04 B=+1 : CP-odd min s=8.8848 (L=30) t=10.818 V=-2.308e-12; deepest CP-even V=-2.362e-12; n_odd=4 n_even=1
+N=(5,6) W0=+1e-04 B=-1 : CP-odd min s=23.8848 (L=30) t=10.818 V=-2.308e-12; deepest CP-even V=-2.362e-12; n_odd=4 n_even=1
+N=(5,6) W0=+1e-04 B=+2 : CP-odd min s=8.9515 (L=30) t=11.548 V=-1.926e-12; deepest CP-even V=-1.942e-12; n_odd=4 n_even=1
+N=(5,6) W0=+1e-04 B=-2 : CP-odd min s=6.0485 (L=30) t=11.548 V=-1.926e-12; deepest CP-even V=-1.942e-12; n_odd=4 n_even=1
+N=(5,6) W0=-1e-04 B=+0.5 : CP-odd min s=11.7739 (L=30) t=9.883 V=-2.935e-12; deepest CP-even V=-7.403e-09; n_odd=4 n_even=2
+N=(5,6) W0=-1e-04 B=-0.5 : CP-odd min s=26.7739 (L=30) t=9.883 V=-2.935e-12; deepest CP-even V=-7.403e-09; n_odd=4 n_even=2
+EXIT 0

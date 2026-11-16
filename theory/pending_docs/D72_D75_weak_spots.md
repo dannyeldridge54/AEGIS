@@ -8655,3 +8655,15 @@ What this does and does not mean:
 - It DOES mean P1 cannot be realised inside the configuration as specified. P1 needs an extension that the model must name: (i) a non-toroidal sector (e.g. a CY resolution, where 2010.10782 found CP-breaking flux vacua), (ii) a racetrack with a CP-odd vacuum for a Kähler axion, or (iii) a hidden-sector CP source communicated to the heavy ν.
 Next: C.3 asks whether option (ii) can be computed cheaply: a two-exponential racetrack for one Re ρ with real coefficients; scan for CP-odd minima (lock first). If none, C.4 verdict.
 MAP: none
+
+## D845 (DEEP, C.3): a CP-invariant racetrack DOES fix a Kähler axion at CP-odd values, usually as a metastable minimum
+Lock: PREREG_D845_racetrack_cp.md (committed before the run). Script theory/modular/racetrack_cp_d845.py, output field_tests/results/racetrack_cp_d845.txt (overflow warnings come from minimiser excursions to t < 1, which are discarded by the locked filter).
+Model: W = W0 + e^{2πiT/N1} + B e^{2πiT/N2}, real W0, B; K = −3 ln(−i(T − T̄)). 540 parameter points (5 ≤ N1 < N2 ≤ 10; W0 = ±1e-4, ±1e-3, ±1e-2; B = ±0.5, ±1, ±2).
+Results [derived]:
+1. 486 of 540 points (90.0%) have at least one CP-odd local minimum (s ∉ {0, L/2} mod L, t > 2, positive-definite Hessian). They come in mirror pairs s ↔ L − s, as CP requires.
+2. Examples, N = (5, 6), W0 = +1e-4: B = +0.5 gives CP-odd minima at t ≈ 10.1 with V = −2.8e-12, while the deepest CP-even minimum has V = −5.0e-9 (CP-odd is METASTABLE, 3 orders shallower). B = ±1, ±2 give CP-odd minima within 1–2% of the CP-even depth (−2.31e-12 vs −2.36e-12; −1.93e-12 vs −1.94e-12).
+3. Verdict rule: option (ii) VIABLE (CP-odd minima with t > 2 exist). Pre-stated prediction ("none") WRONG.
+Interpretation [derived]: with two exponentials, the axion potential contains cos(2πs/N1), cos(2πs/N2) and cos(2πs(1/N1 − 1/N2)) terms with different periods; their competition produces local minima away from the CP-fixed points, in mirror pairs. This is spontaneous CP violation by a Kähler axion with entirely CP-invariant inputs.
+Caveats [estimate]: (a) in the scan's examples the CP-odd minima are metastable or nearly degenerate with CP-even ones; which vacuum is selected is a cosmological question (initial conditions, tunnelling), not settled here; (b) AdS minima before uplift; the uplift (P3 sector) shifts them; (c) one Kähler modulus with K = −3 ln, not the full T⁶/(Z₂×Z₂) three-modulus structure.
+Consequence for P1 [derived]: P1 can be REFORMULATED with a named source: "CP is broken spontaneously by a Kähler axion fixed in a CP-odd racetrack minimum". The leptogenesis phase is then not a free uniform variable but a function of the racetrack vacuum and of how the heavy-ν couplings depend on T. C.4 must state this and what it changes.
+MAP: none

@@ -751,3 +751,12 @@ Touches: none.
 4. S, U₂, U₃ flux-stabilised in a toroidal prepotential: no spontaneous CPV [literature] (2010.10782).
 5. No spontaneous CP source in the specified configuration; δ = 0 unless extended [derived].
 Touches: none.
+
+## D845: C.3 racetrack CP scan (P1 deep project)
+1. CP-invariant racetrack W = W0 + e^{2πiT/N1} + B e^{2πiT/N2} with real coefficients [derived] (PREREG_D845).
+2. 90% of 540 points have CP-odd local minima in mirror pairs [derived] (computed).
+3. Often metastable or near-degenerate with CP-even minima [derived].
+4. Competing axion cosines give spontaneous CPV with CP-invariant inputs [derived].
+5. Vacuum selection, uplift and the three-modulus structure not included [estimate].
+6. P1 can be reformulated with a named source (Kähler-axion racetrack) [derived].
+Touches: none.
