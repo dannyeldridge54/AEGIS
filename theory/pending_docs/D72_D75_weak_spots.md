@@ -8199,3 +8199,19 @@ REF: re-read against this table. Build clean.
 Note: this check describes a history (prompt 2⊕1 decays at T_R ~ 3e8–3e9 GeV) that the Z₃ late-decay finding (D780–D783) later conditioned. The frozen band now needs T₂ ≳ 1e5 GeV. The sentence stays as the earlier step of the chain, and the Limitations text carries the condition.
 Flag serapis_e (D813) cleared: a confirmation.
 MAP: node=n_sector_rho status=computed touches=[serapis_e] ripple=no
+
+## D815 (ACCURACY TRACK, queue 6a; Jl tick 54, manual "Jl"; locked PREREG_D815; results/chronos_ms_d815.txt): Chronos at the corrected T_R recomputed with exact MS. D729 was already accurate to ≤ 0.0001 in n_s; the ε window is now exact: 1.40–1.45e-4
+K4: ε = 1.3e-4, N* = 46.08 gives n_s 0.9697, α_s −9.91e-4, identical to D642 ✓ (34 s).
+(a) D729 rows, MS versus D729:
+- ε = 1.3e-4, n_s: 0.9733/0.9733, 0.9719/0.9720, 0.9736/0.9737, 0.9722/0.9723.
+- ε = 1.3e-4, r: 4.74/4.67, 4.95/4.87, 4.70/4.63, 4.90/4.83 e-4. MS r is about 1.5% higher.
+- ε = 1.6e-4, n_s: 0.9760/0.9761, 0.9746/0.9747, 0.9764/0.9765, 0.9750/0.9750. r is +1.5% again.
+- The in-band pattern is unchanged: the stiff-phase rows (N* ≈ 50) leave the band; the matter-like rows (N* ≈ 48.4–48.8) stay in.
+(b) ε window on a grid of 0.05e-4:
+- At N* = 48.38, every ε in 1.30–1.60e-4 is in band.
+- At N* = 50.31 (the actual history, D730), only ε = 1.40 and 1.45e-4 are in band: n_s 0.9745–0.9750, r 4.85–4.93e-4. At 1.45 the cut n_s ≤ 0.975 is met exactly (0.9750).
+- So the window is ε ≈ 1.40–1.45e-4, replacing D729's interpolated 1.40–1.46.
+Why D729 was close: it used a y* shifted to match MS (the "MS-shifted" column), so its n_s was effectively MS. Its r was SR1 (16ε), hence the 1.5% low bias. EXACTNESS_AUDIT entry 8 is reclassified as "SR1 with MS-shifted y*", now superseded by MS.
+Paper: both sentences now use MS values and say "exact spectra", citing D815.
+REF: cold re-read against this table: matches. Build clean.
+MAP: node=nstar_i status=computed touches=[band_i] ripple=no

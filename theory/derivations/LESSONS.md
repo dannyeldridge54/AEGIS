@@ -62,3 +62,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D812: 'exact' must mean the MS routine. Check the SCRIPT, not the note's wording. D793 called first-order slow roll 'exact spectra', and the label went into the paper and passed a referee.
 - 2026-11-16 D813: once the exact routine exists, an exact recompute often costs under a minute (43 s here). Slow-roll shortcuts in paper numbers aren't worth keeping.
 - 2026-11-16 D814: SR1 on these plateaus is consistently biased (n_s high by ~0.0003–0.0004, r low by ~1.3–1.5%). That is useful as a correction rule of thumb, but the paper still quotes MS.
+- 2026-11-16 D815: before calling a number slow-roll, read the column labels in its results file ('MS-shifted y*'). D729 was half-exact (n_s exact, r slow-roll). Audits should classify per quantity, not per script.

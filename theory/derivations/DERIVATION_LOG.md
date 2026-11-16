@@ -531,3 +531,10 @@ Touches: lepto_rho, serapis_e.
 3. SR1 offset −0.0003 / +1.2% [derived].
 4. Still inside the frozen D693 band [derived].
 Touches: n_sector_rho, serapis_e.
+
+## D815: exact Chronos at the corrected T_R (accuracy track)
+1. D632 MS code, K4 against D642 [derived] (passes).
+2. MS rows agree with D729 to ≤ 0.0001 in n_s; r is +1.5% [derived] (computed).
+3. Exact ε window for the actual (stiff, N* ≈ 50.3) history: 1.40–1.45e-4 [derived] (computed).
+4. The frozen τ = i band is unchanged (it is frozen); only the "meets the band" statement is refined [derived].
+Touches: nstar_i, band_i.

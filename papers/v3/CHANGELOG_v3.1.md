@@ -24,6 +24,7 @@
 ## Round 6 (16 Nov 2026; referee report REFEREE_v3.1_round6.md)
 - New title: "The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test".
 - D775: ρ-leptogenesis computed (CRV ε, Casas–Ibarra grid): passes for c ≳ 0.6 at M_H = 1e12 (D776; 29–70% for c = 1–3), fails for c = 0.3; supersedes the DI-bound estimate of D731.
+- D815: Chronos at corrected T_R exact (MS); ε window 1.40–1.45e-4 (exact grid).
 - D814: ρ 2⊕1 band check exact (MS): n_s 0.9729–0.9736, r 4.66–4.75e-4.
 - D813: self-diluted ρ band recomputed exactly (MS): n_s 0.966–0.970, r (5.2–5.7)e-4, α_s −(1.08–1.18)e-3; 'pending' removed.
 - D812: exactness audit; self-diluted band relabelled 'first-order slow roll' (was mislabelled 'exact spectra'); exact recomputation pending.

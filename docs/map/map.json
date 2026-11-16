@@ -352,14 +352,18 @@
     "i"
    ],
    "title": "N* at τ=i (stiff phase physical)",
-   "status": "corrected",
+   "status": "computed",
    "d": [
     "D729",
-    "D730"
+    "D730",
+    "D815"
    ],
    "depends": [
     "reheat_i",
     "vac_i"
+   ],
+   "history": [
+    "D815: computed"
    ]
   },
   {
@@ -542,7 +546,8 @@
     "nstar_i",
     "janus"
    ],
-   "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)"
+   "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)",
+   "flag": "recheck (D815, nstar_i)"
   },
   {
    "id": "band_e",
