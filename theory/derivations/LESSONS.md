@@ -105,3 +105,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D856: a correction to the notes must reach the draft in the next tick; the CP paragraph had briefly implied the 80% phase figure was a ρ pass fraction.
 - 2026-11-16 D857: mechanisms checked one at a time can each pass and still clash on shared moduli. Tabulate every requirement on the same variables before calling a combined picture consistent; here the racetrack, BHK and anti-D3 each 'worked' alone.
 - 2026-11-16 D858: a diff-only referee misses stale text that predates the diff. The full independent read found ten contradictions that had survived v3.0 and v3.1; run a full pass before any version that will be published.
+- 2026-11-16 D859: settle conventions from the code that produced the number, not from the note's prose. 'Im S = 1.13 at g_s = 0.1' looked like an error; the script shows a deliberate BHK normalisation, and the real open factor is elsewhere (ρ to area).

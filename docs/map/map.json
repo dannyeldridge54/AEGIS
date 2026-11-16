@@ -246,7 +246,7 @@
     "D812: corrected",
     "D835: computed"
    ],
-   "flag": "recheck (D857, lepto_i)"
+   "flag": "recheck (D859, lepto_i)"
   },
   {
    "id": "janus",
@@ -404,7 +404,8 @@
     "D795",
     "D854",
     "D855",
-    "D857"
+    "D857",
+    "D859"
    ],
    "depends": [
     "reheat_i",
@@ -412,9 +413,9 @@
     "eta_n"
    ],
    "history": [
-    "D854: assumed",
     "D855: assumed",
-    "D857: assumed"
+    "D857: assumed",
+    "D859: assumed"
    ]
   },
   {

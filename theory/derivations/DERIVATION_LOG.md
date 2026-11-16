@@ -857,3 +857,12 @@ Touches: lepto_i, serapis_e, plateau_origin.
 2. All majors and three minors fixed as wording/table changes; frozen numbers unchanged [derived].
 3. Rebuilt clean, 16 pages; twelve minors deferred [derived].
 Touches: none.
+
+## D859: M.2 conventions and escapes (moduli-consistency)
+1. D689 uses Im S = 1/(2√2π g_s) (BHK normalisation) [derived] (bhk_tilt_d689.py).
+2. ρ-to-area conversion carries up to 4π² [estimate].
+3. With discrete torsion (needed for rigid branes) h¹¹ = 3: no twisted Kähler moduli [literature] (0902.1694; hep-th/0602038).
+4. Twisted-cycle racetrack escape closed [derived].
+5. Fractional rigid instantons S = σ[T + …] remain [literature] (0902.1694).
+6. No-anti-D3 escape remains [derived].
+Touches: lepto_i, serapis_e.
