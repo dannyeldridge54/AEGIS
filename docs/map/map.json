@@ -428,7 +428,8 @@
     "D864",
     "D899",
     "D900",
-    "D903"
+    "D903",
+    "D904a"
    ],
    "depends": [
     "reheat_i",
@@ -436,11 +437,10 @@
     "eta_n"
    ],
    "history": [
-    "D899: estimate",
     "D900: computed",
-    "D903: estimate"
-   ],
-   "flag": "recheck (D904, lepto_rho)"
+    "D903: estimate",
+    "D904a: estimate"
+   ]
   },
   {
    "id": "sterile_rho",
@@ -566,7 +566,8 @@
     "D895: computed",
     "D897: estimate",
     "D904: estimate"
-   ]
+   ],
+   "flag": "recheck (D904a, lepto_i)"
   },
   {
    "id": "gravitino_wino",
@@ -683,7 +684,7 @@
     "D824: frozen",
     "D902: literature"
    ],
-   "flag": "recheck (D904, lepto_rho)"
+   "flag": "recheck (D904a, lepto_i)"
   },
   {
    "id": "wino_window",
