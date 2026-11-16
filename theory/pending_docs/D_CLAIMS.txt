@@ -179,3 +179,4 @@ D892  2026-11-16T18:19Z  W2.2 Weinberg origin literature
 D893  2026-11-16T18:20Z  W2.3 Weinberg verdict
 D894  2026-11-16T18:22Z  R2.1 referee pass
 D895  2026-11-16T18:23Z  R2.2a AD yield at rho corrected
+D896  2026-11-16T18:26Z  R2.2b rho lift recomputed
