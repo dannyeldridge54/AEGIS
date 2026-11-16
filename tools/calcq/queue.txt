@@ -2,3 +2,4 @@ D957-rho|timeout 3000 python3 theory/flux/repro_rho_d957.py
 D958-nstar|timeout 5000 python3 theory/flux/repro_nstar_d958.py
 D960-alphaconv|timeout 6000 python3 theory/flux/alpha_conv_d960.py
 D961-projH|timeout 6000 python3 theory/flux/projH_vacuum_d961.py
+D958b-nstar|timeout 5000 python3 theory/flux/repro_nstar_d958.py

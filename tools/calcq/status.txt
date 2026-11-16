@@ -1,2 +1,3 @@
 D957-rho|done|22:41Z|22:50Z|0
-D958-nstar|running|22:50Z||
+D958-nstar|done|22:50Z|22:54Z|143
+D960-alphaconv|running|22:54Z||

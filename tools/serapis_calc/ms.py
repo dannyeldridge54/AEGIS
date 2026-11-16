@@ -55,7 +55,8 @@ def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0
         PR = k**3*(y[0]**2+y[1]**2)/(2*np.pi**2); Pt = 8*k**3*(y[4]**2+y[5]**2)/(2*np.pi**2)
         out.append((dl, PR, Pt))
     d = np.array([o[0] for o in out]); lp = np.log([o[1] for o in out])
-    c = np.polyfit(d, lp, 4)
-    c = c[2:]
+    deg = min(4, len(d)-1)                      # D958/D961 DEVIATIONS D1: never underdetermined
+    c = np.polyfit(d, lp, deg)
+    c = c[-3:] if deg >= 2 else np.concatenate([[0.0], c])
     i0 = list(d).index(0.0)
     return dict(ns=1+c[1], alpha_s=2*c[0], r=out[i0][2]/out[i0][1], PR=out[i0][1])

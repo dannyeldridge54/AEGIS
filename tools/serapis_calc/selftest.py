@@ -55,6 +55,8 @@ check('L4 pivot-depth invariance (N=150 vs 30)', abs(rp150['ns']-rp['ns'])<1e-5 
 bgq2 = Background(lambda p: 0.5*p*p, lambda p: p, 17.0)
 a1, a5 = spectra(bgq2, 60.0, bd=1000.0)['alpha_s'], spectra(bgq2, 60.0, bd=5000.0)['alpha_s']
 check('L4c alpha_s converged in BD start (1000 vs 5000, <2%)', abs(a5/a1-1) < 0.02, f'{a1:.4e} vs {a5:.4e}')
+r3 = spectra(bgq2, 60.0, dlnk=(-0.05, 0.0, 0.05))
+check('L4d 3-point call matches 5-point n_s (no underdetermined fit)', abs(r3['ns']-res['ns']) < 1e-4, f"{r3['ns']:.6f} vs {res['ns']:.6f}")
 # L2: vacuum at rho with Z3-symmetric (equal) masses
 from .landscape import V_tau, find_vacuum, hessian_canonical
 Er = E_paper(0.5, 3**0.5/2)
