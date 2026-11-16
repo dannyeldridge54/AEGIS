@@ -44,3 +44,8 @@ Steps (one per tick; lock before any computation; honest labels):
 - W.3 [skipped: moot after D838] Warped κ: interaction vs tension in the throat (redo D833's ratio with warping).
 - W.4 [skipped: moot after D838] Locked numerics if W.2 gives a candidate; compare with V0[1 − E(ρ)/E(τ)].
 - W.5 [done D839] Verdict and v3.2 note.
+
+## τ = i verdict project (started 2026-11-16 on Danny's choice)
+- T.1 [open] Collect every τ = i strike and support (D795, D802, D811, D815, D823, D826, D834) into one table; check each against its source note.
+- T.2 [open] Decide by a stated rule, written before deciding (retire / keep as conditional / keep): the rule must not depend on new data.
+- T.3 [open] Consequences: frozen τ = i predictions stay frozen (never change); paper wording for v3.2; MANIFEST and prediction sheet.
