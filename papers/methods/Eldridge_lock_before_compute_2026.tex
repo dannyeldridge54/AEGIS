@@ -1,0 +1,58 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{Lock Before You Compute: A Pre-Registration Workflow for Theoretical Physics Done with an AI Assistant}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{16 November 2026}
+\begin{abstract}
+Theoretical work can drift: a parameter is retuned after seeing a result, a failed check is quietly rerun, a remembered citation is wrong. We describe the workflow behind a series of inflation papers, developed by an independent researcher working with an AI assistant, that makes such drift visible. Every computation is preceded by a pre-registration file with its inputs, its pass criteria and a stated prediction, hashed and pushed to a public repository before the result exists; fixes go in a deviations file written before any rerun; every claim carries a status label; and predictions are frozen with public hashes and scored only on later data. We report what the workflow caught in one day of work (16 November 2026): 11 correction notes among 95 research notes, including a literature scaling used outside its regime that moved a key mass window by a factor of about 100, a pre-stated prediction that the locked run proved wrong, and a citation written from memory that stated the opposite of its source and had reached a published paper. The published archive reproduces all 22 key results from a clean unpack.
+\end{abstract}
+\keywords{research methods; pre-registration; reproducibility; open science; AI-assisted research; theoretical physics; cosmology; error correction; research integrity; scientific workflow}
+\maketitle
+
+\section{Why}
+Pre-registration is standard in clinical and social science, where analysis choices made after seeing data inflate false positives. Theoretical physics has the same problem in a different form. A model has knobs, a calculation has choices of method, and a result that disagrees with expectation invites another try. Working with an AI assistant adds speed, and with it new failure modes: a fluent but unchecked recollection of a paper, or a formula imported from one regime into another. The workflow below was built to make every such step leave a trace. It was used for the SERAPIS modular inflation papers~\cite{SERAPIS,P1,P2,P3}.
+
+\section{The workflow}
+\emph{1. Lock first.} Before any computation that produces a reportable number, a file \texttt{PREREG\_D\#\#\#\_name.md} states the model, the inputs, the method, the pass criteria (a verdict rule) and a prediction. Its SHA-256 hash is written alongside, and both are committed and pushed to the public repository before the script runs. The result file can then be checked against a rule that existed first.
+
+\emph{2. Fix forward.} If a locked run crashes or has a bug, a \texttt{\_DEVIATIONS.md} file, also hashed and pushed, records what went wrong and what will change, before the rerun. No rerun is made to obtain a different result.
+
+\emph{3. Number every step.} Each research step is a numbered note (D-number) claimed through a script that prevents two sessions from using the same number. A note ends with a line that updates a dependency map of the theory, so that a change to one quantity flags every downstream result for recheck.
+
+\emph{4. Label every claim.} Each step is labelled \emph{derived}, \emph{literature}, \emph{estimate}, or \emph{postulate}. Arithmetic is done in code, not by hand. Corrections are new notes (D\#\#\#a), never silent edits.
+
+\emph{5. Freeze and wait.} Predictions are frozen with public hashes on a stated date and scored only on data published afterwards. Models built after the data are labelled post hoc.
+
+\emph{6. Check the checker.} Referee passes read the paper against its own notes; audits re-verify claims tagged ``from memory''; the published archive is reproduced from a clean unpack.
+
+\section{What it caught in one day}
+On 16 November 2026 the record holds 95 research notes, 19 new locks, 2 deviations files, and 11 correction notes. Four cases illustrate the mechanisms.
+
+\emph{A scaling used outside its regime (caught by a referee pass).} A baryogenesis estimate at one vacuum imported a literature yield formula that includes thermal effects, extrapolated to a reheating temperature where the project's own earlier computation had shown thermal effects to be negligible. A consistency pass that compared the two vacua found the two treatments disagreed by a factor of about 50 in the required neutrino mass. A new locked run with the model's own formula moved the window from $4\times10^{-9}$--$7\times10^{-8}$~eV to $2\times10^{-11}$--$9\times10^{-10}$~eV, a factor of about 100. The results that had been tuned to the old window were redone (one under a fresh lock), and one earlier verdict (``natural'') was withdrawn.
+
+\emph{A prediction proved wrong (caught by the lock).} Before a scan of Eisenstein-series K\"ahler potentials, the pre-registration predicted a power-law plateau for a range of parameters. The run showed no plateau at all: a factor required by modular invariance makes the potential grow exponentially. Because the prediction was written down first, the error is on record, and the correction names the missing factor~\cite{P2}.
+
+\emph{A citation stated the opposite of its source (caught by an audit).} A note written the day before cited, from memory, a result that anomaly-free non-$R$ discrete symmetries cannot forbid proton-decay operators. The audit of memory-tagged claims found that the source says the opposite: such a symmetry exists (proton hexality). The sentence had reached a published paper as a justification. The computed result it accompanied was unaffected; the explanation was corrected in the next draft. One of eight audited claims was wrong in this way.
+
+\emph{The archive reproduces.} The reproducibility archive of the published paper, unpacked into a clean directory, reran 22 scripts; 21 outputs were byte-identical to the stored results and the 22nd differed only by timing lines~\cite{SERAPIS}.
+
+\section{Limits}
+This is one author's practice, assisted by an AI system (Claude, Anthropic), with no external referee. The locks prove order, not correctness: a wrong method can be locked. Labels depend on the honesty of whoever writes them. The audit of memory-tagged claims catches only what was tagged. The counts above describe one intensive day and are not a rate.
+
+\section{Conclusion}
+The workflow costs a few minutes per computation and leaves a public trail from question to number. Its value showed in its failures: each of the errors above would have been easy to miss and easy to quietly fix. Locked, labelled and logged, they became corrections that a reader can check.
+
+\begin{acknowledgments}
+The workflow, code and drafts were developed with the assistance of Claude (Anthropic). The author directed the work and checked the results. The full record (notes, locks, results) is public at github.com/dannyeldridge54/aegis.
+\end{acknowledgments}
+
+\begin{thebibliography}{9}
+\bibitem{SERAPIS} D.~Eldridge, ``The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test,'' v3.2, Zenodo (2026), doi:10.5281/zenodo.24289118.
+\bibitem{P1} D.~Eldridge, ``A Parameter-Free Consistency Relation for Plateau Inflation with an Uplift Ramp,'' Zenodo (2026), doi:10.5281/zenodo.24290583.
+\bibitem{P2} D.~Eldridge, ``Three No-Go Results for String Origins of Modular Plateau Inflation,'' Zenodo (2026), doi:10.5281/zenodo.24290738.
+\bibitem{P3} D.~Eldridge, ``SERAPIS-$E$: Modular Plateau Inflation at the Hexagonal Torus with a One-Loop String Tilt,'' Zenodo (2026), doi:10.5281/zenodo.24290875.
+\end{thebibliography}
+\end{document}
