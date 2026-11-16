@@ -209,3 +209,21 @@ Locks listed: 129. K1 order failures (result committed before lock): none. Locks
 | D835 | PREREG_D835_antiD3_serapis_e.md | 14:53Z | antiD3_serapis_e_d835.txt | OK |
 | D841 | DECISION_RULE_D841_tau_i.md | 15:14Z | (rule, no result file) | OK |
 D835 has DEVIATIONS D1 (solver-path crash before any result; fixed before the rerun).
+
+### Addendum 16 Nov 2026 afternoon (D907 readiness check; times are first-commit UTC; result order and sha256 verified by script)
+| D | lock | lock committed | result file | result after lock (sha) |
+|---|---|---|---|---|
+| D845 | PREREG_D845_racetrack_cp.md | 15:41Z | racetrack_cp_d845.txt | OK (sha OK) |
+| D851 | PREREG_D851_racetrack_phases.md | 16:01Z | racetrack_phases_d851.txt | OK (sha OK) |
+| D852 | PREREG_D852_instanton_phase.md | 16:07Z | instanton_phase_d852.txt | OK (sha OK) |
+| D860 | PREREG_D860_moduli_scan.md | 16:32Z | moduli_scan_d860.txt | OK (sha OK) |
+| D862 | PREREG_D862_alphaprime.md | 16:36Z | alphaprime_d862.txt | OK (sha OK) |
+| D863 | PREREG_D863_loop_T1.md | 16:39Z | loop_T1_d863.txt | OK (sha OK) |
+| D867 | PREREG_D867_moduli_scan2.md | 17:10Z | moduli_scan2_d867.txt | OK (sha OK) |
+| D878 | PREREG_D878_channel_ratio.md | 17:27Z | channel_ratio_d878.txt | OK (sha OK) |
+| D880 | PREREG_D880_lhu_ad_rho.md | 17:30Z | lhu_ad_rho_d880.txt | OK (sha OK) |
+| D883 | PREREG_D883_rho_osc.md | 17:49Z | rho_osc_d883.txt | OK (sha OK) |
+| D895 | PREREG_D895_ad_rho_d646.md | 18:23Z | ad_rho_d895.txt | OK (sha OK) |
+| D896 | PREREG_D896_rho_osc2.md | 18:26Z | rho_osc_d896.txt | OK (sha OK) |
+| D900 | PREREG_D900_ad_tau_i_TR.md | 18:32Z | ad_tau_i_d900.txt | OK (sha OK) |
+D863 has DEVIATIONS D1 (run stopped by Danny; partial output recorded). D880's window is corrected by D880a/D895 (its lock and result stay as recorded); D883's lift by D896.

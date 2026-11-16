@@ -1,5 +1,5 @@
 # SERAPIS v3.2 draft — changes from v3.1 (10.5281/zenodo.24281771)
-Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file unchanged). 16 pages (v3.1: 15).
+Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file unchanged). 18 pages (v3.1: 15).
 ## Abstract
 - CP: leptogenesis CP violation must be spontaneous in a string completion; taken from a racetrack-fixed Kähler axion (P1′, D846). The gCP-unbroken version is the one a leptonic-CPV discovery would exclude.
 - Plateau: "we find no string origin for its form" (D839).
