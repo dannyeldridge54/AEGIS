@@ -13,3 +13,4 @@
 - [D852] Applied in draft: CP paragraph now states the two-instanton-sector condition and the 80% figure; D851 metastability wording fixed.
 - [D853] WITHDRAWN (D853a): the ρ re-weighting applies to a superseded mechanism.
 - [D854] τ = i conditional-variant bullet: add that under P1′ its leptogenesis needs CP-odd axions on two cycle classes (single-modulus P1′ gives the resonant doublet no phase).
+- [D854/D855] Applied in draft (D856).

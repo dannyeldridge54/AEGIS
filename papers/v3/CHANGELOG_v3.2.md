@@ -19,3 +19,7 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file un
 - All frozen predictions and their locks; figures; tables.
 ## Bibliography
 - Added 2610.20977, 2010.10782, 1901.03251.
+## Later additions (16 Nov, D850–D856)
+- Referee-on-diff fixes: undefined internal labels removed/defined; holomorphic-factor claim narrowed; racetrack figure scoped (D850).
+- CP paragraph: CP-odd vacuum is the deepest in ~40% of racetracks, otherwise within ~5% (D851); instanton-generated heavy-ν masses need two charge sectors, phase generic in 80% of CP-odd vacua (D852); τ = i resonant pair needs CP-odd axions on two cycle classes (D854); ρ branch does not use this phase (D855).
+- Caveats: leptogenesis bullet now specific to the τ = i branch; τ = i conditional bullet lists the two-cycle-class condition.

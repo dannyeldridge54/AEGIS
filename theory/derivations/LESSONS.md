@@ -102,3 +102,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D853: replacing a flat prior with a computed distribution usually costs something. Report the loss in the same table as the old numbers (here median 0.95 → 0.84) so the change is visible, not buried.
 - 2026-11-16 D854: check charge selection rules before spending a locked run. The instanton-number-is-linear-in-charge rule made the τ = i answer exact (ε = 0), so the planned Monte Carlo would only have confirmed a zero.
 - 2026-11-16 D855: before re-weighting an old result, check that the mechanism it belongs to is still in the model. D853 re-weighted D731's ρ leptogenesis, which D780 had already removed; I caught it only because D854 asserted something I then had to check.
+- 2026-11-16 D856: a correction to the notes must reach the draft in the next tick; the CP paragraph had briefly implied the 80% phase figure was a ρ pass fraction.

@@ -836,3 +836,9 @@ Touches: lepto_i, band_i.
 3. P1′ matters only for τ = i, which needs two CP-odd axions [derived] (D854).
 4. Brane placement of ρ's heavy states undetermined [estimate].
 Touches: lepto_i, lepto_rho.
+
+## D856: V.5 draft update for D854/D855
+1. τ = i two-cycle-class condition added to the CP paragraph and both caveat bullets [derived] (D854).
+2. ρ branch stated not to use the phase [derived] (D792, D855).
+3. Rebuilt clean, changelog and PDF updated [derived].
+Touches: none.

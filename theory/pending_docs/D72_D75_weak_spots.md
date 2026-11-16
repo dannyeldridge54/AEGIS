@@ -8778,3 +8778,7 @@ Derivation only (bookkeeping against D731, D780, D789, D792).
 3. Net status of P1′: it is the model's CP source only for the τ = i (conditional) branch, and there it requires two CP-odd Kähler axions. The ρ branch does not use it [derived].
 4. Whether ρ's heavy states sit at different brane intersections is undetermined; it would matter only if a ρ inflaton-decay leptogenesis route is revived [estimate].
 MAP: node=lepto_i status=assumed touches=[lepto_rho] ripple=no
+
+## D856 (v3.2 draft, V.5): D854/D855 folded into the draft
+Applied: CP paragraph adds the τ = i two-cycle-class condition (D854) and states that the ρ branch does not use the phase (D792, D855); the 80% figure stays a statement about the phase only. Leptogenesis caveat now says "on the τ = i branch" with two cycle classes. τ = i conditional bullet lists the condition. Rebuilt: 16 pages, no undefined references, no overfull boxes; CHANGELOG_v3.2.md and PDF updated. Not uploaded.
+MAP: none

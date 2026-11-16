@@ -69,3 +69,4 @@ Steps (one per tick; lock before any computation; honest labels):
 
 ## τ = i phase map (queued 2026-11-16 on Danny's choice)
 - R.1 [done D854: ε = 0 at τ = i under single-modulus P1′] Redo D763's τ = i radiative leptogenesis pass fraction with the complex-R phases drawn from P1′ (instanton phase Δ = 2πΔn⟨Re T⟩, D852 distribution) instead of uniform; locked run on the D745/D763 set-up; compare 68–71%.
+- V.5 [done D856] D854/D855 folded into the draft.
