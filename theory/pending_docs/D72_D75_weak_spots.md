@@ -7127,3 +7127,17 @@ Caveats: leading-order analytic ε (not a full RGE integration); upper estimate 
 Reverse-ladder record: target Y_B → requirement η_N ∈ [1e-8, 0.1] → new term η_N → in-model source (RG running) → PASS. The same path as ρ's "hidden effect" rescues (D722, D725, D727).
 MAP: node=eta_n status=computed touches=[lepto_i] ripple=no
 MAP: node=lepto_i status=computed touches=[] ripple=no
+
+## D746 (DEEP; reverse ladder; reasoning + 2 searches, no computation) — what the SERAPIS-E plateau needs, stated as one term; no in-string source found yet
+Target: V/V₀ = 1 − E(ρ,2)/E(τ,2), i.e. a constant V₀ (uplift) minus a NEGATIVE term ∝ 1/E(τ,2), which → e^{−2√2φ} on the plateau.
+Requirement (reasoning). Three ways to get the shape:
+- (i) An F-term piece −3e^K|W|² with |W|² ∝ E(τ,2)^{−1}. For a gaugino condensate this means a gauge kinetic function with a threshold f ⊃ (1/2a)·ln E(τ,2), the "Epstein threshold".
+- (ii) A negative term ∝ g²(τ) with Re f dominated by a one-loop piece β·E(τ,2) at large Im τ.
+- (iii) A ratio of invariants from the Kähler side: closed (Epstein-Kähler ghost, D717/D718).
+New term named: the Epstein threshold, a ln E(τ,2) (or E(τ,2)-linear) contribution to a gauge kinetic function, distinct from the DKL threshold ln(2y|η|⁴), which is the s → 1 (Kronecker) member and gives the ρ-variant/covariant shapes, not E(τ,2).
+Literature (2 searches):
+- Non-holomorphic Eisenstein series of the axio-dilaton appear in type IIB higher-derivative couplings (E(τ,3/2), E(τ,5/2) for R⁴, D⁴R⁴; Green–Gutperle line; 0807.0389, 1001.2535). On T², E(U,s) appear in one-loop amplitudes.
+- The one-loop D3/D7 annulus gives E(U,2) in the KÄHLER potential (Berg–Haack–Körs; our tilt C).
+- I found no source giving ln E(U,2) or E(U,2) in a gauge kinetic function. Option (ii) is also numerically weak: β ~ 1e-3, E ~ 2e2 at horizon exit, so βE ~ 0.2 ≪ Re S ~ 4.
+VERDICT: the requirement is now sharp: one negative-energy term scaling as E(τ,2)^{−1}. But no in-string source is known (search-limited claim). Node plateau_origin stays OPEN. This is the model's main unexplained input, together with ε at τ = i (eps_tilt). Next real step: a direct computation of D3-brane gauge thresholds at the half-periods (whether the annulus that gives E(U,2) in K also gives ln E(U,2) in f) is a research project, not a loop tick. Loop pauses.
+MAP: node=plateau_origin status=open touches=[] ripple=no

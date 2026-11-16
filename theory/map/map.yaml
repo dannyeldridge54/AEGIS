@@ -22,7 +22,10 @@ nodes:
   - D712
   - D717
   - D718
+  - D746
   note: Casimir/tension, species and Epstein-Kähler routes all closed
+  history:
+  - 'D746: open'
 - id: n_sector_rho
   layer: 1
   branch:
