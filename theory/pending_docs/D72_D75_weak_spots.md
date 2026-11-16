@@ -7565,3 +7565,21 @@ VERDICT (locked rule): FAIL. The ρ-branch's minimal (weight-2) lepton sector gi
 - The leptogenesis results (D775–D776) used Casas–Ibarra, which is agnostic about the texture, so they are unaffected only if a texture with the observed spectrum exists. That is now an open condition.
 Mirror question (reverse, next tick): find the MINIMAL addition that splits the degenerate light pair at ρ. Test (b), a weight-6 singlet δ·E6 for L₃N₃ (and/or N₃N₃), and (a), a weight-8 doublet term. Lock a scan; report the NO fraction and Σm_ν. If a minimal addition works, ρ's neutrino sector is restored at that cost.
 MAP: node=n_sector_rho status=corrected touches=[mnu, lepto_rho] ripple=no
+
+## D778 (REVERSE, ρ-side; Jl tick 17; locked PREREG_D778; results/rho_weights_d778.txt) — NOT RESTORED: no Dirac-weight assignment with lepton doublets fixes the ρ spectrum; the residual Z₃ forbids it (theorem); the remedy is lepton SINGLETS
+Computed: all 25 Dirac-weight assignments (w_d, w₃) ∈ {0, 2, 4, 6, 8}², with complex coefficients on the locked grid and c ∈ {0.6, 1, 3}. K4: (2, 2) reproduces D777. Result: zero NO and zero IO points for every assignment.
+A diagnostic after the locked run shows either a degenerate pair, e.g. (4, 4) → (0.99, 0.99, 1.20) and (0, 6) → (0.71, 0.90, 0.90), or a singular M_D.
+Reason (theorem) [derived]:
+- At ρ the residual ST ≅ Z₃ assigns each field a charge q = (rep phase) + (weight phase).
+- A Majorana mass entry m_ij can be non-zero only if q_i + q_j ≡ 0 (mod 3).
+- The two components of a Γ₂ doublet carry DIFFERENT charges (ST has eigenvalues ω, ω² on the doublet, shifted equally by the weight phase).
+- So a light-lepton doublet always yields either a (q, −q) pair, which gets a Dirac-type degenerate mass, or a state with no partner, which is massless. Three non-degenerate light masses need all three light leptons at q = 0, which a doublet cannot do.
+- This holds for the seesaw too (m_ν inherits the light fields' charges).
+- It is the reason modular-flavour fits at ω use τ slightly OFF the fixed point (2405.18813 quotes |τ − τ*| ~ 0.01–0.1). SERAPIS-E's vacuum sits exactly at ρ (a symmetry-fixed minimum).
+Remedy (creation, testable): put the lepton doublets in Γ₂ SINGLETS, L ∈ 1 ⊕ 1 ⊕ 1′ (1 and 1′ both have Z₃ charge 0, plus the weight phase chosen so that q = 0).
+- Then m_ν is unconstrained by Z₃, and three distinct masses are allowed.
+- The heavy-ν doublet sector, needed for reheating and leptogenesis at ρ (D724–D776), is unaffected: the N masses may stay degenerate, since they are heavy.
+- Cost: no Γ₂ predictivity for the PMNS structure (lepton flavour becomes generic).
+VERDICT (locked rule): NOT RESTORED with lepton doublets. ρ-branch lepton doublets are EXCLUDED by the residual Z₃ (exact).
+Next (forward): verify the singlet remedy. Seesaw with L = 1 ⊕ 1 ⊕ 1′ and the D724 heavy sector at ρ, singlet Dirac couplings (weight-0 constants and the weight-6 E6 entries allowed by q = 0). Find the NO fraction with Σm_ν ≤ 0.064 eV. Also check whether leptogenesis (D775) survives with this Dirac structure (Casas–Ibarra is agnostic; just confirm a fit exists).
+MAP: node=n_sector_rho status=corrected touches=[mnu] ripple=no

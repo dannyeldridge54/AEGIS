@@ -90,12 +90,14 @@
     "D723",
     "D724",
     "D739",
-    "D777"
+    "D777",
+    "D778"
    ],
    "depends": [],
    "history": [
     "D739: computed",
-    "D777: corrected"
+    "D777: corrected",
+    "D778: corrected"
    ]
   },
   {
@@ -555,7 +557,7 @@
     "D740: frozen",
     "D750: frozen"
    ],
-   "flag": "recheck (D777, n_sector_rho)"
+   "flag": "recheck (D778, n_sector_rho)"
   },
   {
    "id": "wino_window",

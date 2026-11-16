@@ -191,3 +191,13 @@ Touches: lepto_rho.
 6. So the minimal ρ lepton sector gives Δm²₂₁ = 0 or Δm²₃₂ = 0, i.e. FAIL [derived].
 7. [derived] Consistency: this extends D741 (Weinberg texture at ρ, no NO). The frozen Σm_ν is unchanged (locked), but now lacks a derived spectrum at ρ. Leptogenesis (D775) assumed only a Casas–Ibarra-compatible texture exists, which is now conditional.
 Touches: n_sector_rho (computed → corrected), mnu, lepto_rho.
+
+## D778 — the Z₃ obstruction at ρ (reverse side)
+1. ρ is fixed by ST (order 3), so at τ = ρ the residual symmetry is Z₃ [literature] (standard; 1905.11970 and the modular-flavour literature).
+2. A field of weight k in rep r transforms under the residual Z₃ by (cρ + d)^{−k}·ρ_r(ST) [literature] (modular-form transformation).
+3. In the Γ₂ ≅ S₃ doublet, ρ_2(ST) has eigenvalues ω and ω², so the two components have charges differing by 1 [derived].
+4. Majorana mass entries need q_i + q_j ≡ 0 mod 3 [derived] (Z₃ invariance of the mass term).
+5. A light-lepton doublet therefore gives a degenerate (q, −q) pair or a massless state, and the doublet-based ρ lepton sector is excluded [derived] (consistent with D741, D777 and D778's 0/25 assignments).
+6. Singlets 1 and 1′ of S₃ have ST-charge 0 (ST is a 3-cycle, trivial on both 1-dim reps); with suitable weights, q = 0 for all three [derived].
+7. [derived] Consistency: D777's degeneracy is now explained. The heavy-ν doublet results (D724–D776) are unaffected, since only light-mass degeneracy is excluded. The frozen Σm_ν is untouched (locked).
+Touches: n_sector_rho (corrected), mnu.
