@@ -242,3 +242,4 @@ D955  2026-11-16T22:28Z  B4: Sugimoto spectrum sign check
 D956  2026-11-16T22:28Z  B5: vacuum mass shift of N*
 D957  2026-11-16T22:40Z  B: Sugimoto massive levels
 D958  2026-11-16T22:41Z  C: alpha_s Bunch-Davies start artifact
+D959  2026-11-16T22:42Z  A: Chronos/Kairos reproduction
