@@ -28,7 +28,7 @@ nodes:
   - rho
   - E
   title: Origin of the plateau
-  status: assumed
+  status: estimate
   d:
   - D703
   - D712
@@ -64,11 +64,12 @@ nodes:
   - D911a
   - D912
   - D914
+  - D963
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D911a: assumed'
   - 'D912: assumed'
   - 'D914: assumed'
+  - 'D963: estimate'
 - id: logderiv_plateau
   layer: 1
   branch:

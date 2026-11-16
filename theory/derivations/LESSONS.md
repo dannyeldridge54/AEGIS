@@ -210,3 +210,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D960: clear flagged memory steps quickly against a source.
 - D961: for 'non-SUSY sector in D dims', check the BSB orientifold catalogue first.
 - D962: when n_s, r match to 4 digits and α_s scatters both ways, suspect the numerical start, not the model.
+- D963: check sign arguments against a worked example of the same coupling type.

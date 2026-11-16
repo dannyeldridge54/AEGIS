@@ -1509,3 +1509,8 @@ Touches: none.
 ## D962: SERAPIS-ρ reproduction; map links
 - [computed] ρ n_s 0.96909/0.97224, r 5.160/4.672e-4 match D816 exactly; α_s −13.6%/+8% (locked FAIL, D958 artifact).
 - Result: n_s, r independently reproduced on all three branches; α_s pending D960.
+
+## D963: correction: BSB scalar mass sign
+- [literature] hep-ph/0004091: Wilson-line scalar one-loop mass² negative in the anti-D5 sector.
+- [derived] sign depends on the coupling (quartic tadpole vs mass shift), not only on n_B − n_F.
+- Result: D955/D957/D961 sign verdicts withdrawn; Project H sign condition open.
