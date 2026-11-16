@@ -162,3 +162,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D910: grep the D-notes for a paper's arXiv number before fetching it; both 'new' papers this tick were already recorded.
 - 2026-11-16 D911: a modular-invariant Kähler potential built from a function with a critical point at the vacuum gets its metric sign from the Laplacian eigenvalue there; check positivity at the fixed points first.
 - 2026-11-16 D911a: in modular supergravity always carry the |W|² factor (η powers) into e^G before estimating cusp behaviour; it is exponential, not power-law.
+- 2026-11-16 D913: run the reproducibility check from the published archive itself, not the working repo; it is the artefact readers get.

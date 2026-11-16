@@ -9360,3 +9360,9 @@ No spectra were computed (the lock runs them only where (1)–(3) pass).
 Verdict (locked rule): FAILS. Pre-stated prediction: positivity CONFIRMED; "plateau from below for w < 3" WRONG (no plateau for any w, because of the η factor); the r estimate is moot.
 Consequence [derived]: within a modular-invariant supergravity with one modulus, an Eisenstein term in K cannot make the plateau: with W ∝ η^{−2k} the η factor dominates at the cusp; with k = 0 (W constant), K = −c ln E has a ghost at the fixed points (D911). P3 stays where it was: the plateau sits in the uplift/nilpotent metric by choice (D870). P3.K route CLOSED.
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D913 (RP.1–RP.3): the published v3.2 reproducibility archive reproduces every listed result
+The Zenodo v3.2 zip (md5 6a57f8c6…, identical to the published file) was unpacked in a clean directory and 22 scripts were run there: the 17 README rows (D551–D635, D610–D613, D634) plus five v3.2 results (D692 SERAPIS-E band, D815, D895, D896, D900). 21 outputs are byte-identical to the stored results (blank lines ignored); chronos_ms_d815 matches in every physics line, its stored file also holding four wrapper timing lines. Total about 3 minutes.
+Gap found and fixed in the repo (not in the published archive): the archive's README listed only v3.1-era rows; five v3.2 rows added, plus this check's summary (papers/v3/repro/out/RP_v3.2_SUMMARY.txt). The archive itself contains all the scripts and results, so the README gap does not block reproduction.
+Recommendation to Danny: no v3.2.1 upload needed; the README addition can ride along with any future version.
+MAP: none

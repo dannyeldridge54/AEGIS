@@ -1243,3 +1243,9 @@ Touches: plateau_origin, serapis_e.
 4. With k = 0 the metric has a ghost at the fixed points [derived] (D911).
 5. P3.K route closed; P3 unchanged [derived].
 Touches: plateau_origin, serapis_e.
+
+## D913: reproducibility of the published v3.2 archive
+1. 22 scripts run from a clean unpack of the published zip [derived].
+2. 21 byte-identical, 1 identical up to wrapper timing lines [derived].
+3. README gap (v3.2 rows) fixed in the repo [derived].
+Touches: none.
