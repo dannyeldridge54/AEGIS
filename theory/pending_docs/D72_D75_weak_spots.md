@@ -8667,3 +8667,18 @@ Interpretation [derived]: with two exponentials, the axion potential contains co
 Caveats [estimate]: (a) in the scan's examples the CP-odd minima are metastable or nearly degenerate with CP-even ones; which vacuum is selected is a cosmological question (initial conditions, tunnelling), not settled here; (b) AdS minima before uplift; the uplift (P3 sector) shifts them; (c) one Kähler modulus with K = −3 ln, not the full T⁶/(Z₂×Z₂) three-modulus structure.
 Consequence for P1 [derived]: P1 can be REFORMULATED with a named source: "CP is broken spontaneously by a Kähler axion fixed in a CP-odd racetrack minimum". The leptogenesis phase is then not a free uniform variable but a function of the racetrack vacuum and of how the heavy-ν couplings depend on T. C.4 must state this and what it changes.
 MAP: none
+
+## D846 (DEEP, C.4): P1 verdict: reformulated as P1′ (spontaneous CP violation by a Kähler-axion racetrack)
+Summary [derived]: CP is a symmetry of the string effective theory (D843); the specified configuration has no spontaneous CP source (D844); a CP-invariant two-exponential racetrack fixes a Kähler axion at CP-odd values in 90% of a scan, often metastably (D845).
+Verdict: P1 as written (independent, uniformly distributed O(1) coupling phases) is REPLACED by
+P1′: CP is broken spontaneously by the vev of a Kähler-modulus axion, fixed in a CP-odd minimum of a racetrack W = W0 + A e^{2πiT/N1} + B e^{2πiT/N2} with real (CP-invariant) coefficients. The heavy-ν couplings depend on T (through their Kähler/kinetic normalisation or holomorphic couplings), which transmits the phase.
+What changes [derived]:
+1. δ is no longer a free uniform variable: it is a function of the racetrack vacuum ⟨Re T⟩ and of the heavy-ν couplings' T-dependence. P1's "6% prior mass at |sin δ| < 0.1" (D763) no longer applies as a prior; it becomes a statement about the distribution of CP-odd vacua, which D845 did not compute.
+2. The model gains named ingredients: two gaugino condensates (or instantons) on the same 4-cycle, and a coupling of the heavy-ν sector to that Kähler modulus.
+3. Vacuum selection is an open condition: in D845's examples CP-odd minima are often metastable (one example 10³ shallower than the CP-even minimum), sometimes near-degenerate.
+What stays [derived]: no frozen prediction changes. Y_B is a consistency requirement (fitted through T_R and ε_DI), not a frozen number.
+New falsifiers for P1′:
+(i) a demonstration that, in T⁶/(Z₂×Z₂)-type orientifolds, the Kähler moduli admit at most one non-perturbative term per 4-cycle (no racetrack), or that the heavy-ν sector cannot couple to a racetrack modulus;
+(ii) (unchanged in spirit) leptonic CP conservation δ_CP ≈ 0/π at > 3σ (DUNE/Hyper-K) would disfavour any spontaneous-CPV scenario that also sets the low-energy phase, but P1′ ties the low-energy and leptogenesis phases only model-dependently, so this stays a weak test.
+Open: the distribution of δ over CP-odd vacua, and the three-modulus racetrack; not started.
+MAP: none

@@ -32,3 +32,4 @@ Band edges: ±0.0005–0.0006 in n_s, ±1.5–2% in r (numerical). This is well 
 - α_s: ~1σ by 2030s forecasts; the Janus enhancement needs ~5× better (D806).
 - Wino: HL-LHC reaches ~1 TeV; gamma-ray lines.
 - τ = i variant status (D841, rule committed first): KEPT AS A CONDITIONAL VARIANT. No frozen prediction fails and the vacuum is stable; conditions: ε has no derived source, and a 2⊕1 heavy-ν structure is needed only at τ = i.
+- P1 (D843–D846): CP is a symmetry of the string effective theory, and our specified configuration has no CP source. P1 is replaced by P1′: spontaneous CP violation by a Kähler-axion racetrack minimum (CP-odd minima exist in 90% of a scan, often metastable). No frozen prediction changes.

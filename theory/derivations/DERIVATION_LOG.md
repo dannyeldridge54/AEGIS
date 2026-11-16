@@ -760,3 +760,12 @@ Touches: none.
 5. Vacuum selection, uplift and the three-modulus structure not included [estimate].
 6. P1 can be reformulated with a named source (Kähler-axion racetrack) [derived].
 Touches: none.
+
+## D846: C.4 P1 verdict (P1 deep project)
+1. CP is a string symmetry; specified config has no CP source; racetrack gives CP-odd axion minima [derived] (D843–D845).
+2. P1 replaced by P1′: spontaneous CPV by a Kähler-axion racetrack [derived].
+3. δ becomes vacuum-dependent, not a uniform prior [derived].
+4. New ingredients and open vacuum selection [derived].
+5. No frozen prediction changes [derived].
+6. New falsifiers stated [derived].
+Touches: none.
