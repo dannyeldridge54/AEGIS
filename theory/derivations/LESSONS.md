@@ -22,3 +22,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D769: write the plateau in the exact form the solver uses. The shorthand 1 − E(ρ)/E and the code's Ê/(Ê + 1) give the same n_s and r but different N(y) (D769 run 1 was invalid for this reason).
 - 2026-11-16 D770: in modular field spaces, judge "where it settled" after reducing to the fundamental domain. A raw final point like ½ + 0.29i is ρ in disguise.
 - 2026-11-16 D771: when a source says an ingredient "requires" another (odd flux ⇒ exotic planes), book the second ingredient in the same tick. D766 missed the O3′ cost and needed D766b.
+- 2026-11-16 D772: before adopting a published vacuum, read its FULL flux vector and every relation it imposes (here τ₃ = S was hidden behind "τ₁τ₂ = b₃/a⁰"). One partial read cost three ticks (D764–D771).

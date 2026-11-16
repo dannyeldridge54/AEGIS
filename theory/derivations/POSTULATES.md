@@ -27,3 +27,11 @@ Falsifiers:
 - a warped-throat computation showing anti-D3 metrics depend on U only through e^{4A} warp factors with ln-type, not 1/E-type, dependence.
 - P3 update (D769–D770): falsifier 3 (the light axion) CLEARED. ζ_axion ≤ 1e-7, and every start settles at a ρ image. P3 stays open (its origin is still postulated).
 - P2 update (D771): one allowed configuration only: n_flux = 12 (a⁰ = 2, b₃ = −3), 8 exotic O3′ spread evenly (two per inflaton fixed point), stuck D3s 2/2/2 + 0, N_eff = 2. New falsifiers: exotic-plane placement rules for this flux; stuck D3s at O3′-carrying fixed points.
+
+## P4 — CP violation from a pure-NS flux relation on the non-inflaton tori (status: open)
+Assumptions: F₃ = 0 and H₃ has an odd quantum, so W = S·(a·U₂U₃ + b). At W = 0 this enforces U₂U₃ = −b/a with U₂ at ω, leaving U₁ (the inflaton) free. S is stabilised separately (racetrack, D586). The heavy-ν couplings depend on U₃. Exotic NS O3 planes are spread evenly over the inflaton torus.
+Form: U₃ = −(b/a)/ω, CP-violating unless b/a or a/b is an integer (D764 j-test).
+Falsifiers:
+- no exotic-plane pattern fits both the odd-cycle parity rule and even spreading;
+- W = 0 conflicts with the covariant completion's W₀ ≠ 0 (f² = 3|W₀|²) or with the dilaton racetrack;
+- leptonic CP conservation established.

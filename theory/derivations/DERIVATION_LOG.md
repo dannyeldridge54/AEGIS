@@ -123,3 +123,16 @@ Touches: serapis_e (axion fully OK), plateau_origin (P3 falsifier 3 cleared).
 6. Im S·Im ρ = (750–975)·N_eff/4 = 375–488 [derived] (D696 scaling).
 7. [derived] Consistency: D766's (3, 1) with no O3′ is not allowed with odd flux (D766b correction). D766a's Im S·Im ρ is unchanged because N_eff = 2 in both. The frozen bands are untouched.
 Touches: lepto_rho (P2 restricted).
+
+## D772 — P2 retired, P4 created (reverse side)
+1. G₃ = F₃ − S·H₃, W = ∫G₃∧Ω [literature] (GVW; 2405.18813 eq 3.10).
+2. Model I: F₃ = 2α₀ − 3β³, H₃ = −2α₃ − 3β⁰ ⇒ W = (τ₃ − S)(2τ₁τ₂ + 3) [literature] (fetched).
+3. W = 0 = ∂W gives τ₁τ₂ = −3/2 and τ₃ = S [derived].
+4. Any modulus in a holomorphic relation with another field doubles its effective metric (Kähler transformation argument) [derived] (D765 step 4; for τ₃ = S: −ln Im S − ln Im τ₃ → −2 ln Im τ₃).
+5. Doubled metric ⇒ r ≈ 6.5–7.5e-4, outside the band [derived] (D765 computed).
+6. So Model I is incompatible with SERAPIS-E, and P2 is retired [derived].
+7. F₃ = 0: W = −S∫H₃∧Ω = S·(a·U₂U₃ + b) for an H₃ with α₁- and β¹-type components only [estimate] (form chosen; the component assignment is not checked against the symplectic basis).
+8. Then W = 0 ⇒ U₂U₃ = −b/a and U₁ is absent [derived].
+9. n_flux = ∫F₃∧H₃ = 0; 2n_D3 + n_O3′ = 32; enumeration gives N_eff ≤ 4 [derived] (computed).
+10. [derived] Consistency: D764's CP test carries over unchanged (U₂ = ω needed, D766). D771's configuration is superseded. The frozen bands are untouched.
+Touches: lepto_rho, lepto_i.

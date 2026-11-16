@@ -1,0 +1,8 @@
+n_O3'=4 n_D3=14: (N,N0)=(4,2) N_eff=2 ImS*Imrho=375-488
+n_O3'=8 n_D3=12: (N,N0)=(4,0) N_eff=4 ImS*Imrho=750-975
+n_O3'=12 n_D3=10: (N,N0)=(3,1) N_eff=2 ImS*Imrho=375-488
+n_O3'=16 n_D3=8: none
+n_O3'=20 n_D3=6: (N,N0)=(2,0) N_eff=2 ImS*Imrho=375-488
+n_O3'=24 n_D3=4: none
+n_O3'=28 n_D3=2: none
+VERDICT: VIABLE-ARITHMETIC (max N_eff=4)

@@ -7474,3 +7474,28 @@ Caveats (not checked):
 These are P2's sharpest remaining falsifiers, recorded in POSTULATES.md.
 Mirror question (reverse, next tick): source the exotic-plane rules. Deep research on O3-plane types (O3⁻, Õ3⁻, O3⁺, Õ3⁺), their D3 charges, and how odd H₃/F₃ quanta fix which fixed points carry exotic planes (Frey–Polchinski hep-th/0201029; Hanany–Kol; Witten "baryons and branes"). Then test whether "two exotic planes per inflaton fixed point" is consistent with a⁰ = 2, b₃ = −3. If yes, P2 stays; if no, P2 is retired (freeing β3), and ρ-leptogenesis falls back to P1-type explicit CP.
 MAP: node=lepto_rho status=assumed touches=[] ripple=no
+
+## D772 (REVERSE, ρ-side; Jl tick 11; literature + locked PREREG_D772; results/pure_ns_d772.txt) — P2 RETIRED: 2405.18813's Model I ties every complex-structure modulus (τ₁τ₂ = −3/2 AND τ₃ = S), leaving no free inflaton; new postulate P4 (pure-NS flux) keeps the inflaton free and has tadpole room
+Literature:
+- 2405.18813 Model I, full flux vector (fetched): F₃ = 2α₀ − 3β³, H₃ = −2α₃ − 3β⁰, so W_flux = (τ₃ − S)(2τ₁τ₂ + 3). The SUSY Minkowski conditions fix τ₁τ₂ = −3/2 AND τ₃ = S.
+- Frey–Polchinski (hep-th/0201029, ar5iv, partly read): O3 planes with no discrete flux have D3 charge −¼; with discrete NS, RR or both, +¼. An odd flux through a 3-cycle needs an odd number of its fixed points to carry the matching discrete flux.
+Derived:
+- In Model I all three complex-structure moduli are in flux relations. Whichever is the inflaton (U₁ ∈ {τ₁, τ₂, τ₃}) sits in a relation: τ₁ or τ₂ through τ₁τ₂ = c (D765: metric doubles, r → 6.5–7.5e-4), or τ₃ through τ₃ = S (−ln Im S − ln Im τ₃ → −2 ln Im τ₃, the same doubling).
+- So Model I, and with it P2 as stated, is INCOMPATIBLE with the frozen SERAPIS-E bands. D771's configuration is moot. P2 RETIRED (β3 slot freed).
+Create (no-stop rule): POSTULATE P4.
+- F₃ = 0 and an odd H₃ quantum give W = S·(a·U₂U₃ + b). At W = 0, D_S W = 0 enforces U₂U₃ = −b/a and leaves U₁ (the inflaton) free.
+- S is flat at this order, so it needs separate stabilisation. SERAPIS already uses a supersymmetric racetrack for the dilaton (D586, D591).
+- n_flux = ∫F₃∧H₃ = 0, so no flux tadpole cost. The odd NS quantum needs exotic O3 planes (+¼ each).
+Computed (tadpole room, n_O3′ ≡ 0 mod 4 spread evenly):
+- n_O3′ = 4: (N, N0) = (4, 2), N_eff = 2.
+- n_O3′ = 8: (4, 0), N_eff = 4, Im S·Im ρ = 750–975 (the same as D696's original).
+- n_O3′ = 12: (3, 1), N_eff = 2.
+- n_O3′ = 20: (2, 0), N_eff = 2.
+VERDICT (locked rule): VIABLE-ARITHMETIC. P4 keeps the inflaton's metric single and the frozen bands untouched, and has tadpole room (up to N_eff = 4).
+Untested:
+- the exotic-plane parity pattern for this H₃ (odd count per odd-flux cycle) together with even spreading on the inflaton torus;
+- dilaton stabilisation compatible with W = 0 and the anti-D3 uplift;
+- whether CP violation needs U₂ = ω (as in D766: U₂ = i is CP-even);
+- H₃-only vacua with W = 0 may conflict with D693's W₀ ≠ 0 requirement in the covariant completion (Sec. VII: f² = 3|W₀|²) — to check.
+The paper's CP paragraph is updated (unpublished v3.1).
+MAP: node=lepto_rho status=assumed touches=[lepto_i] ripple=no
