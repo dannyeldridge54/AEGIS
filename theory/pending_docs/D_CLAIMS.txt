@@ -255,3 +255,4 @@ D968  2026-11-16T23:01Z  Project H: gauge-mass correction
 D969  2026-11-16T23:03Z  Project H: ADS ND doublets as chi/phi0
 D970  2026-11-16T23:03Z  Project H: loop coefficient c6
 D971  2026-11-16T23:05Z  correction to D970 coefficient
+D972  2026-11-16T23:07Z  Project H: no collider signal
