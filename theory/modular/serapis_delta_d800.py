@@ -18,7 +18,14 @@ def janus(ns,r):
     return -A**2/2*(1+x/4)*(1+x)
 for eps in [0,1e-5,2e-5,4e-5,6e-5,8e-5,1e-4,1.5e-4]:
     V=mk(eps)
-    phe=mp.findroot(lambda p: sr(V,p)[0]-1,(mp.log(1.2)/s2, mp.log(3.0)/s2),solver='bisect')
+    lo,hi=mp.log(0.87)/s2,mp.log(5.0)/s2  # DEVIATIONS D1
+    flo,fhi=sr(V,lo)[0]-1,sr(V,hi)[0]-1
+    if eps==0: print(f"bracket: {float(flo):.2e} {float(fhi):.2e}")
+    for _ in range(60):
+        m=(lo+hi)/2
+        if (sr(V,m)[0]-1)*flo>0: lo=m
+        else: hi=m
+    phe=hi
     ph=phe; N=mp.mpf(0); dph=mp.mpf('0.004'); res={}
     while N<55 and ph<6:
         d1=mp.diff(V,ph); N+=V(ph)/d1*dph; ph+=dph

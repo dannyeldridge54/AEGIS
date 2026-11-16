@@ -7893,3 +7893,36 @@ VERDICT: P3 stays open; a second placement route is closed (D797: annulus/Casimi
 A plateau needs a τ-dependence that SATURATES at the cusp (ratio forms, X/(X+1)). Only metric-inverse placement (K^{XX̄}) does that naturally, which is exactly P3's assumption.
 Side result for the mirror: 2212.03876 singles out ρ as the dS-minimum point of the condensate potential (Class B, n = 0, A > 3). ρ is therefore a natural moduli-stabilisation point in heterotic condensation, independent of our plateau.
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D798a (CORRECTION to D798): wrong Kähler convention
+D798 used K = −3 ln(2y), as its lock stated. The SERAPIS family (paper φ = ln y/√2; D790 code ρ_kin = v²/(4y²)) uses K = −ln.
+- Recomputed in the family convention (D800, ε = 0): p = 2 gives n_s 0.9628/0.9663, r 2.45e-4/2.03e-4, y* 27.1/28.2 at N* = 50/55. D798 had r 5.4–6.5e-4, y* 18.
+- So the untilted DKL plateau sits BELOW Kairos in r, and its y* exceeds the y* ≤ 25 cut.
+- D798's (a) and (b) (minimum at ρ, isotropy, quartic vacuum) are unaffected; they are convention-independent.
+MAP: node=plateau_origin status=corrected touches=[serapis_e] ripple=no
+
+## D800 (REVERSE, ρ-side; Jl tick 39; locked PREREG_D800 + DEVIATIONS D1; results/serapis_delta_d800.txt): SERAPIS-Δ (two-term DKL plateau) works for n_s but exits at y* ≈ 28–30, violating the y* ≤ 25 cut. Its r is 2–3.4e-4, below the family strip, and the consistency relation is biased by −25%. Not a replacement; post hoc
+Computed (family convention K = −ln; valley x = ½; the crash on the first run was fixed by DEVIATIONS D1 (root finder), kept as _CRASH):
+
+| ε | N* = 50: n_s / r / α_s / y* | N* = 55: n_s / r / α_s / y* | m²/H²_end |
+|---|---|---|---|
+| 0 | 0.9628 / 2.45e-4 / −7.3e-4 / 27.1 | 0.9663 / 2.03e-4 / −6.0e-4 / 28.2 | (quartic) |
+| 1e-5 | 0.9650 / 2.67e-4 / −7.5e-4 / 27.5 | 0.9684 / 2.26e-4 / −6.2e-4 / 28.6 | 2.8e-5 |
+| 2e-5 | 0.9676 / 2.86e-4 / −7.5e-4 / 27.9 | 0.9710 / 2.46e-4 / −6.3e-4 / 29.1 | 5.5e-5 |
+| 4e-5 | 0.9720 / 3.42e-4 / −8.0e-4 / 28.6 | 0.9757 / 3.00e-4 / −6.7e-4 / 29.9 | 1.1e-4 |
+| 6e-5 | 0.9768 / 4.04e-4 / ... / 29.4 | 0.9803 / ... | 1.7e-4 |
+
+Window (n_s 0.965–0.975): ε ≈ 1e-5 – 4e-5, giving r 2.3–3.4e-4, α_s −(6–8)e-4, y* 27.5–29.9.
+Locked expectations:
+- window ε 0.3–0.8e-4: FAILED (actual 1–4e-5);
+- on the strip with consistency ratio 0.8–1.25: FAILED. J/α_s = 0.74–0.76, and r is lower than the family's at the same n_s;
+- m²/H² ≪ 1: held (3e-5 – 1e-4).
+Derivation:
+1. Δ̃ = (π/3)y − ln y − c′ [derived] (Δ = −ln y − 4 ln|η|, with ln|η| ≈ −πy/12).
+2. In Y = Δ̃ the model is the paper's two-term form, but the canonical field is φ = ln y/√2, not ln Y/√2. The −ln y term makes Y grow more slowly than y [derived].
+3. So the same n_s needs a larger y* (Y* ≈ (π/3)·28 ≈ 29 vs Chronos I* ≈ 23–24.5), which gives r ∝ Y*⁻⁴ lower by ≈ 2× [derived] (computed: 2.3–3.4e-4 vs 4.8–5.7e-4).
+4. The consistency relation (eq. consistency) assumes I ≃ y − c (a constant offset). A log offset gives a −25% bias instead of the paper's 11–13% [derived] (computed).
+5. y* = 27.5–29.9 violates the paper's strict cut (≤ 25) and touches the heterotic bound (≲ 29) [derived].
+6. The vacuum mass at ρ is ε-small (m²/H² ~ 1e-4), so oscillations start quartic, as for Chronos [derived].
+VERDICT: SERAPIS-Δ is a genuinely one-loop plateau with a vacuum at ρ, but it is DISFAVOURED by the y* cut. Its r ≈ 2–3e-4 would separate it from SERAPIS(-E) at LiteBIRD precision. Post hoc; recorded, not added to the paper.
+MAP: node=plateau_origin status=computed touches=[serapis_e] ripple=no

@@ -412,3 +412,12 @@ Touches: plateau_origin, serapis_e.
 5. GS mixing: e^{K_S} = 1/(2 Re S − δ_GS Δ) also grows [derived].
 6. A plateau requires saturation at the cusp, i.e. inverse-metric placement [postulate P3].
 Touches: plateau_origin, serapis_e.
+
+## D800: SERAPIS-Δ (reverse side)
+1. Δ̃ ≈ (π/3)y − ln y − c′ on the cusp [derived].
+2. In Y = Δ̃ the model is the two-term form, but φ = ln y/√2 [derived].
+3. The log term slows Y, so y* ≈ 28–30 and r ≈ 2.3–3.4e-4 [derived] (computed).
+4. Log offset → consistency-relation bias −25% [derived] (computed).
+5. y* exceeds the 25 cut [derived]; disfavoured.
+6. m²/H² ~ 1e-4 → quartic start [derived] (computed).
+Touches: plateau_origin, serapis_e.
