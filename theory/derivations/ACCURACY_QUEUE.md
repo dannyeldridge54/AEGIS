@@ -148,4 +148,4 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - W4.1 [done D904: E(-1) action 2π/g_s ≈ 13–27 meets the bound for g_s ≲ 0.33–0.48; quiver charges not derived; W4 closed at estimate level; D904a: possible at ρ (g_s free), marginal at τ = i (racetrack g_s 0.4–0.5 → S 12.6–15.7 vs 13–17)]
 
 ## v3.2 readiness check RD (picked 2026-11-16 under the autonomy rule; no Zenodo action)
-- RD.1 [open] Readiness report papers/v3/V32_READINESS.md: build clean (no undefined refs/citations, no overfull), every D-number cited in the draft exists, every \cite has a bib entry, CHANGELOG covers every draft change since v3.1, MANIFEST lists today's locks (D880–D900), prediction_sheet consistent with Table I; list what is left for Danny to decide (publish or not).
+- RD.1 [done D907: ready; manifest and changelog gaps fixed; decision with Danny]

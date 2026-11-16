@@ -1202,3 +1202,9 @@ Touches: none.
 2. D895 changed only m_ν₁; reheating chain T₂ unchanged [derived] (D781, D895).
 3. All 14 nodes keep their statuses; no new work [derived].
 Touches: none.
+
+## D907: v3.2 readiness check
+1. Build, references and citations checked by script [derived].
+2. Locks verified by sha256 and commit order [derived].
+3. Two mechanical gaps fixed; no substantive blocker [derived].
+Touches: none.

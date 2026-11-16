@@ -156,3 +156,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D904a: before quoting a modulus benchmark, check which branch and which scan it came from, and whether that scan was later withdrawn.
 - 2026-11-16 D905: a summary table makes a branch's accumulated conditions visible at a glance; build it when the caveat paragraphs grow past what a reader can hold.
 - 2026-11-16 D906: a ripple=yes on a narrow change (one window) floods the ladder with flags; set ripple=yes only when the change alters a quantity other nodes use.
+- 2026-11-16 D907: script the readiness checks (D-number existence, cite keys, lock order); a manual manifest drifts behind within hours on a busy day.

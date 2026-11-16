@@ -9311,3 +9311,7 @@ MAP: node=mnu status=frozen touches=[] ripple=no
 MAP: node=wino_window status=corrected touches=[] ripple=no
 MAP: node=tests_cmb status=computed touches=[] ripple=no
 MAP: node=tests_lhc status=literature touches=[] ripple=no
+
+## D907 (RD.1): v3.2 draft readiness check: ready to publish on Danny's word; two mechanical gaps fixed
+Report: papers/v3/V32_READINESS.md. Clean build, 18 pages, 0 undefined refs, 0 overfull; bibtex 0 errors. All 204 cited D-numbers exist (9 inline); all 68 cite keys in refs.bib. All 18 of today's locks verify by sha256 and precede their results. Fixed: MANIFEST.md lacked the 13 locks D845–D900 (addendum added); CHANGELOG page count 16 → 18. No substantive blocker. Decision left to Danny: publish v3.2 or keep holding (no action taken).
+MAP: none
