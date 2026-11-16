@@ -13,7 +13,7 @@ Method key: MS = exact Mukhanov–Sasaki via spectra() (exact_ns_d588 family); S
 | 8 | Chronos at corrected T_R: n_s 0.9720–0.9765, r 4.6–4.9e-4 | D729/D815 | MS (D815; D729 was SR1 r with MS-shifted y*) | ok |
 | 9 | "meets the band only for ε ≈ 1.40–1.46e-4", n_s 0.974–0.975 | D815 | MS grid | ok: 1.40–1.45e-4 |
 | 10 | instant reheating → n_s ≈ 0.976–0.98, y* > 25 | — | E | flag: low priority (an argument, not a prediction) |
-| 11 | SERAPIS-ρ n_s 0.969–0.972, r 4.6–5.1e-4 (frozen, lock D615) | D613 | SR1 (lock) | frozen as locked; **FLAG: MS consistency check** |
+| 11 | SERAPIS-ρ n_s 0.969–0.972, r 4.6–5.1e-4 (frozen, lock D615) | D613 | SR1 (lock) | frozen as locked; MS check D816: n_s 0.9691–0.9722, r 4.67–5.16e-4 (top r +1.2% over edge); stated in paper |
 | 12 | SERAPIS-ρ α_s −(8.5–9.5)e-4 | D634 | MS | ok |
 | 13 | ρ doublet-only n_s 0.9735–0.9749 | D722 | ? (not verified) | **FLAG: check method** |
 | 14 | ρ 2⊕1: n_s 0.9729–0.9736, r 4.66–4.75e-4 | D725/D814 | MS (D814) | ok |

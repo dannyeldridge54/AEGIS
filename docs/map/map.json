@@ -228,8 +228,7 @@
     "D807: corrected",
     "D811: computed",
     "D812: corrected"
-   ],
-   "flag": "recheck (D814, n_sector_rho)"
+   ]
   },
   {
    "id": "janus",
@@ -540,14 +539,17 @@
    "status": "frozen",
    "d": [
     "D602",
-    "D633"
+    "D633",
+    "D816"
    ],
    "depends": [
     "nstar_i",
     "janus"
    ],
    "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)",
-   "flag": "recheck (D815, nstar_i)"
+   "history": [
+    "D816: frozen"
+   ]
   },
   {
    "id": "band_e",

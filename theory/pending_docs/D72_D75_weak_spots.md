@@ -8215,3 +8215,23 @@ Why D729 was close: it used a y* shifted to match MS (the "MS-shifted" column), 
 Paper: both sentences now use MS values and say "exact spectra", citing D815.
 REF: cold re-read against this table: matches. Build clean.
 MAP: node=nstar_i status=computed touches=[band_i] ripple=no
+
+## D816 (ACCURACY TRACK, queue 6a; Jl tick 55, manual "Jl"; locked PREREG_D816; results/rho_ms_d816.txt): the frozen SERAPIS-ρ band checked with exact MS. It is the same band to rounding, except that the top r is 1.2% above the frozen upper edge. Frozen numbers unchanged
+K4: N* = 47 gives n_s 0.9700, α_s −9.53e-4, identical to D634 ✓.
+MS at ε = 6e-5 (N* read from results/rho_nstar_d613.txt), compared with D613 SR1:
+
+| N* | MS n_s | SR1 n_s | MS r | SR1 r | MS α_s |
+|---|---|---|---|---|---|
+| 46.09 | 0.9691 | 0.9691 | 5.160e-4 | 5.08e-4 | −9.87e-4 |
+| 47.61 | 0.9705 | 0.9706 | 4.930e-4 | 4.85e-4 | |
+| 47.96 | 0.9709 | 0.9709 | 4.879e-4 | 4.80e-4 | |
+| 49.49 | 0.9722 | 0.9723 | 4.672e-4 | 4.60e-4 | −8.69e-4 |
+
+Frozen band (lock D615): n_s 0.969–0.972, r 4.6–5.1e-4.
+- MS n_s 0.9691–0.9722 is inside to the quoted precision (0.9722 → 0.972).
+- MS r 4.67–5.16e-4: the top end exceeds 5.1e-4 by 0.06e-4 (1.2%). This is the same +1.5% SR1 bias seen in D813–D815.
+Paper: one sentence added after the frozen ρ numbers. It states the exact values and the 1.2% excess; the frozen band itself is unchanged (lock rule).
+REF: cold re-read against this table: matches. Build clean.
+Scoring consequence: a future r measurement at the very top of the frozen ρ band would be read against the frozen edge as written. The excess is far below any forecast σ(r) (≥ 5e-5, D806), so it is practically irrelevant.
+Flags serapis_e (D814) and band_i (D815) cleared: confirmations.
+MAP: node=band_i status=frozen touches=[] ripple=no

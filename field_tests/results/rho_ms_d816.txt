@@ -1,0 +1,6 @@
+eps=6e-5 N*=47: y*=23.32 n_s=0.9700 r=5.020e-04 alpha_s=-9.53e-04 in_frozen=True
+eps=6e-5 N*=46.09: y*=23.08 n_s=0.9691 r=5.160e-04 alpha_s=-9.87e-04 in_frozen=False
+eps=6e-5 N*=47.61: y*=23.48 n_s=0.9705 r=4.930e-04 alpha_s=-9.31e-04 in_frozen=True
+eps=6e-5 N*=47.96: y*=23.57 n_s=0.9709 r=4.879e-04 alpha_s=-9.19e-04 in_frozen=True
+eps=6e-5 N*=49.49: y*=23.97 n_s=0.9722 r=4.672e-04 alpha_s=-8.69e-04 in_frozen=False
+EXIT 0

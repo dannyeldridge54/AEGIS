@@ -538,3 +538,10 @@ Touches: n_sector_rho, serapis_e.
 3. Exact ε window for the actual (stiff, N* ≈ 50.3) history: 1.40–1.45e-4 [derived] (computed).
 4. The frozen τ = i band is unchanged (it is frozen); only the "meets the band" statement is refined [derived].
 Touches: nstar_i, band_i.
+
+## D816: exact check of the frozen ρ band (accuracy track)
+1. D634 MS code, K4 passes [derived].
+2. MS gives n_s 0.9691–0.9722, r 4.67–5.16e-4, α_s −(8.7–9.9)e-4 [derived] (computed).
+3. Versus frozen 0.969–0.972 / 4.6–5.1e-4: r top +1.2% [derived].
+4. The excess equals the SR1 r bias (~+1.5%) [derived]. Frozen numbers are kept per the lock rule [derived].
+Touches: band_i.
