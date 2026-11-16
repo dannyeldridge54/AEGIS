@@ -11,6 +11,8 @@ import csv, io, json, math, os, threading, time, urllib.request
 import numpy as np
 
 GWOSC_EVENTS = "https://gwosc.org/eventapi/json/allevents/"
+FAILED_FEED_RETRY_S = 6 * 3600
+FAILED_SCAN_RETRY_S = 1800
 BEACON_LAST = "https://beacon.nist.gov/beacon/2.0/pulse/last"
 BEACON_PULSE = "https://beacon.nist.gov/beacon/2.0/chain/{chain}/pulse/{index}"
 GRAVITY_EVERY_S = 3600      # the event catalogue changes rarely
@@ -228,7 +230,7 @@ TELEMETRY = [
 def _donki_window(days=30):
     t = time.time()
     f = lambda x: time.strftime("%Y-%m-%d", time.gmtime(x))
-    return f"startDate={f(t - days * 86400)}&endDate={f(t)}&api_key=DEMO_KEY"
+    return f"startDate={f(t - days * 86400)}&endDate={f(t)}"   # CCMC DONKI web service (moved from api.nasa.gov, 30 Sep 2026); no key needed
 
 
 def _table(doc):
@@ -297,10 +299,10 @@ TELEMETRY += [
     ("geomagnetic_field", SWPC + "goes/primary/magnetometers-1-day.json", None, "Hp",
      ("field_depression", lambda v, r: v <= 20, "GOES Hp field at or below 20 nT, a strongly stretched or compressed magnetosphere")),
     ("sunspots", SWPC + "solar-cycle/observed-solar-cycle-indices.json", None, "ssn", None),
-    ("cme", "https://api.nasa.gov/DONKI/CME?", None, "speed",
+    ("cme", "https://ccmc.gsfc.nasa.gov/DONKI/WS/get/CME?", None, "speed",
      ("fast_cme", lambda v, r: v >= 1000, "coronal mass ejection faster than 1000 km/s (NASA DONKI). Confirm with SOHO/LASCO and the DONKI analysis"),
      {"adapt": _adapt_donki_cme, "period": 3600, "donki": True}),
-    ("flare_catalog", "https://api.nasa.gov/DONKI/FLR?", None, "flux",
+    ("flare_catalog", "https://ccmc.gsfc.nasa.gov/DONKI/WS/get/FLR?", None, "flux",
      ("x_class_flare", lambda v, r: v >= 1e-4, "X-class flare in the NASA DONKI catalogue. Confirm on the GOES flare list"),
      {"adapt": _adapt_donki_flare, "period": 3600, "donki": True}),
     ("near_earth", "https://ssd-api.jpl.nasa.gov/cad.api?dist-max=0.05&date-min=now&date-max=%2B60&sort=date", None, "dist",
@@ -594,7 +596,8 @@ class AnomalyScanner:
                 new, flagged = self.ingest(assess_telemetry(band, rows, key, vkey, rule))
                 self.log(f"{band}: {len(new)} new rows, {len(flagged)} flagged")
             except Exception as e:
-                self.log(f"{band} feed failed: {e}")
+                self.feed_due[band] = now + max(opt.get("period", 0), FAILED_FEED_RETRY_S)   # back off: a dead feed is retried every 6 h, not every cycle
+                self.log(f"{band} feed failed: {e} (retry in {FAILED_FEED_RETRY_S // 3600} h)")
 
     def run_forever(self):
         next_run = {"gravity": 0.0, "quantum": 0.0, "telemetry": 0.0, "local": 0.0}
@@ -606,5 +609,7 @@ class AnomalyScanner:
                         getattr(self, "scan_" + name)()
                     except Exception as e:
                         self.log(f"{name} scan failed: {e}")
+                        next_run[name] = time.time() + max(period[name], FAILED_SCAN_RETRY_S)   # back off after a failure
+                        continue
                     next_run[name] = time.time() + period[name]
             time.sleep(5)
