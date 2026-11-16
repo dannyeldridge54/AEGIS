@@ -7499,3 +7499,16 @@ Untested:
 - H₃-only vacua with W = 0 may conflict with D693's W₀ ≠ 0 requirement in the covariant completion (Sec. VII: f² = 3|W₀|²) — to check.
 The paper's CP paragraph is updated (unpublished v3.1).
 MAP: node=lepto_rho status=assumed touches=[lepto_i] ripple=no
+
+## D773 (FORWARD, i-side; Jl tick 12; locked PREREG_D773 + DEVIATIONS D1; results/p4_susy_d773.txt) — P4 RETIRED; in untwisted T⁶/(Z₂×Z₂) flux vacua no CP-violating flux relation leaves the inflaton torus free, so SERAPIS needs explicit CP (P1 reopened)
+Computed (GVW superpotential, basis read off D772's Model I; K4 reproduces Model I's τ₁τ₂ = −3/2, τ₃ = S):
+- P4, W = −S(2τ₂τ₃ + 3): the only SUSY Minkowski solution is S = 0. Not admissible (Im S > 0 fails); P4 RETIRED. Reason [derived]: W = S·g(τ) needs g = 0 AND S·∂g = 0, and ∂g ≠ 0 on g = 0.
+- General τ₁-free fluxes (all 5.76e6 vectors with entries −3…3 on the 4+4 components not involving τ₁): 0 admissible vacua.
+  - Exact reason (D1 reduction): stationarity in τ₂, τ₃ reduces W = ∂_S W = 0 to a double root of a real quadratic Q(S), so S is real.
+  - This holds for ANY integer fluxes, not just the grid. The grid check agrees.
+Consequence [derived]: in untwisted T⁶/(Z₂×Z₂) GVW vacua, a SUSY Minkowski point that fixes complex moduli off the CP locus needs S paired with a τ-dependent factor. Model I's (τ₃ − S) uses the third torus. So every such vacuum involves the inflaton torus, which D765 excludes (doubled metric, r out of band).
+- Flux-relation CP sources are therefore incompatible with SERAPIS within this setup.
+- Remaining CP routes: explicit CP in the heavy-ν couplings (P1, REOPENED); twisted complex-structure moduli (torsion models; not examined); a separate hidden sector.
+VERDICT (locked rule): P4 RETIRED; reopen explicit CP (P1). D762's result stands: leptogenesis on both branches needs CP phases the CP-conserving vacua cannot provide, and SERAPIS has no in-model source for them. D762's statistics (P1 natural, P = 0.62–0.99) apply again.
+The paper's CP paragraph is updated (unpublished v3.1).
+MAP: node=lepto_rho status=assumed touches=[lepto_i] ripple=no

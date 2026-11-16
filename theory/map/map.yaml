@@ -259,7 +259,7 @@ nodes:
   - 'D743: estimate'
   - 'D745: computed'
   - 'D763: assumed'
-  flag: recheck (D772, lepto_rho)
+  flag: recheck (D773, lepto_rho)
 - id: sterile_rho
   layer: 4
   branch:
@@ -323,13 +323,14 @@ nodes:
   - D767
   - D771
   - D772
+  - D773
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D767: assumed'
   - 'D771: assumed'
   - 'D772: assumed'
+  - 'D773: assumed'
 - id: gravitino_wino
   layer: 4
   branch:

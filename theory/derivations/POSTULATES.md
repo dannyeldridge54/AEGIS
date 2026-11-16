@@ -1,6 +1,6 @@
 # Postulates (Jl loop, L4). Each: assumptions, form, falsifier, status (open / tested / retired). Budget: at most 2 open (balance β3).
 
-## P1 — CP violation at ρ comes from the couplings, not from τ (status: retired D764 → replaced by P2)
+## P1 — CP violation at ρ comes from the couplings, not from τ (status: REOPENED D773 — flux-relation sources P2/P4 retired; P1 is again the working assumption)
 Assumptions: SERAPIS-E's flavour sector does NOT impose generalised CP. The 2⊕1 heavy-ν couplings (c, and the Dirac Yukawas) are complex with independent O(1) phases, uniformly distributed (a "no-preference" prior). τ sits at ρ on the CP-conserving line Re τ = ½ (1905.11970 §4.3), so τ adds no phase.
 Form: the effective leptogenesis phase δ is uniform on [0, 2π); the asymmetry is ε = ε_DI·|sin δ|.
 Falsifier: (i) a UV completion that imposes gCP (then ε = 0 at ρ and the branch needs another baryogenesis); (ii) a measured low-energy Dirac phase δ_CP pointing at CP conservation (δ_CP ≈ 0 or π at > 3σ, DUNE/Hyper-K), which would disfavour (but not exclude) P1.
@@ -28,7 +28,7 @@ Falsifiers:
 - P3 update (D769–D770): falsifier 3 (the light axion) CLEARED. ζ_axion ≤ 1e-7, and every start settles at a ρ image. P3 stays open (its origin is still postulated).
 - P2 update (D771): one allowed configuration only: n_flux = 12 (a⁰ = 2, b₃ = −3), 8 exotic O3′ spread evenly (two per inflaton fixed point), stuck D3s 2/2/2 + 0, N_eff = 2. New falsifiers: exotic-plane placement rules for this flux; stuck D3s at O3′-carrying fixed points.
 
-## P4 — CP violation from a pure-NS flux relation on the non-inflaton tori (status: open)
+## P4 — CP violation from a pure-NS flux relation on the non-inflaton tori (status: retired D773 — no SUSY Minkowski vacuum with Im S > 0; no τ₁-free flux vacuum exists at all)
 Assumptions: F₃ = 0 and H₃ has an odd quantum, so W = S·(a·U₂U₃ + b). At W = 0 this enforces U₂U₃ = −b/a with U₂ at ω, leaving U₁ (the inflaton) free. S is stabilised separately (racetrack, D586). The heavy-ν couplings depend on U₃. Exotic NS O3 planes are spread evenly over the inflaton torus.
 Form: U₃ = −(b/a)/ω, CP-violating unless b/a or a/b is an integer (D764 j-test).
 Falsifiers:

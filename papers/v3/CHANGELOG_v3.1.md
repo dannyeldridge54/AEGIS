@@ -23,6 +23,7 @@
 
 ## Round 6 (16 Nov 2026; referee report REFEREE_v3.1_round6.md)
 - New title: "The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test".
+- D762–D773 CP chain: flux-relation CP sources are incompatible with a free inflaton (D765, D772–D773); leptogenesis uses explicit CP phases (D762).
 - Abstract rewritten: SERAPIS-E is included; reheating and leptogenesis updated (D727–D745); the CP condition (D762–D763) and the plateau's origin status (D768) are stated.
 - New paragraph "Where the CP phase comes from" (D762–D766): both vacua and the inflaton line are CP-conserving; leptogenesis needs high-energy phases; gCP ⇒ no leptogenesis and δ_CP ∈ {0, π}; the flux-relation source (2405.18813) must avoid the inflaton (D765).
 - SERAPIS-E: Im S·Im ρ corrected to 750–975 (D696; 375–488 for half-unit branes or 2/2/2 with 8 exotic O3′, D771); tadpole and K-theory consistency stated as checked (D696); plateau origin by choice, at the level of the SL(2,Z) attractors, with r ≈ 4.5× lower (D768); log-derivative candidate (D758–D760); wino 0.67–0.80 TeV post hoc (D732–D736, D761).

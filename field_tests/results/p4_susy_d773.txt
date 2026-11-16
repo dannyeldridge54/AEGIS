@@ -1,0 +1,5 @@
+K4 Model I solutions: [{S: t3, t1: -3/(2*t2)}]
+P4 solutions: [{S: 0, t2: -3/(2*t3)}]
+P4 admissible (all Im>0): []
+tau1-free flux vectors tried=5764800, admissible SUSY Minkowski vacua found=0
+VERDICT: P4 RETIRED | tau1-free flux CP source: NONE in range -> reopen explicit CP (P1)
