@@ -7218,3 +7218,15 @@ Computed (estimates as labelled in the lock):
 - Separation from SERAPIS: the band edge 0.970 is 1.4σ above the attractor maximum (SO+SPHEREx, 1σ reading; 2.9σ under the 95% reading). For a central n_s = 0.972 it is 2.7σ / 5.4σ.
 VERDICT: n_s ≥ 0.970 is out of reach of any plain e^{−2√2φ}/Starobinsky-type attractor with a standard or kination reheating, by the GW ΔN_eff bound. An SO+SPHEREx measurement centred at ≈ 0.972 would favour a TILTED plateau like SERAPIS over every plain attractor at ~3–5σ, even allowing the most extreme reheating. This sharpens D751 and turns n_s into the model's main 2030 discriminant. Caveats: Ω_GW,flat and the ΔN_eff → Ω_GW conversion are from memory (×3 tested); other ways to raise n_s (e.g. other plateau shapes, non-minimal attractors) are not excluded by this.
 MAP: node=tests_cmb status=computed touches=[band_e, band_i] ripple=no
+
+## D753 (CENTRE; reverse ladder; locked PREREG_D753; results/eps_candidates_d753.txt) — no in-model small number gives the τ = i tilt; at ρ, a two-loop-sized coefficient is a weak lead
+Computed: 28 physical candidates (15 single quantities + loop factor × each), spanning 5e-10 to 0.17.
+- τ = i (target ε = 1.45e-4): 0 hits within ×2.
+- ρ (target 6e-5): 3 hits — L² = (1/16π²)² = 4.0e-5; √A_s = 4.6e-5; L·|η(ρ)|²⁴ = 3.0e-5.
+- Look-elsewhere: with 28 candidates over ~20 decades, the chance of ≥ 1 accidental hit is ≈ 0.84. Hits are numerology unless the functional form also matches.
+Form check (reasoning):
+- √A_s is an OUTPUT of the model (the normalisation), so it is circular. Rejected.
+- L·|η(ρ)|²⁴: the needed tilt shape at ρ is the DKL threshold L = −ln(2y|η|⁴) itself, not a power of η. No structural reason. Rejected.
+- L² × (DKL threshold): a tilt ε_ρ = b′·(1/16π²)² with b′ = 1.5, an O(1) number, replacing D687's unnatural one-loop b ≈ 0.01. Physically: the universal one-loop threshold entering the uplift sector through one further loop (e.g. the X-sector coupling to the threshold-corrected gauge kinetic function arises at one loop). The functional form (L) is unchanged, so it is form-consistent. WEAK LEAD only: the high look-elsewhere chance, and no derivation of the second loop.
+VERDICT: eps_tilt stays an assumed input at τ = i (no candidate). At ρ there is a plausible reinterpretation: a two-loop-sized coefficient, b′ ≈ 1.5. SERAPIS-E's tilt is already derived (C from Im S·Im ρ ≈ 190–245N, D692), so the τ = i ε is the branch's open input, not the model's. Loop pauses (no strong lead).
+MAP: node=eps_tilt status=assumed touches=[] ripple=no
