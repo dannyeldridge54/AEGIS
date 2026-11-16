@@ -1366,3 +1366,8 @@ Touches: none.
 - [computed] nullity 0 at 512/512 grid points (run 2, DEVIATIONS D1 speed-only).
 - [estimate] determinant may vanish nowhere; untested.
 - Result: FAIL on grid; extended lock (ρ points + symbolic det) next.
+
+## D935: F1 killed
+- [computed] ρ grid nullity 0 (343 points); continuous min σ ratio 1.5e-3 at domain corners (> 1e-4 rule).
+- [derived] with D933: no identically or point-wise flat single U in the sampled domain.
+- Result: Project F switches to the sibling catalogue; candidate fourth no-go.
