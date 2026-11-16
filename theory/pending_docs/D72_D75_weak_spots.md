@@ -6860,3 +6860,12 @@ VERDICT (locked rule): INCONSISTENT with D692's 1e6–1e8 GeV. Correction note, 
 - r: 4.49e-4 at M1/m = 10 falls just BELOW the frozen r band (4.55–5.12e-4). For M1 ≤ m_φ (T_R ≤ 6.7e9, N* ≲ 50.8) r ≈ 4.56–4.67e-4, inside.
 - The corrected SERAPIS-E N* is ≈ 50.0–51.5 (vs locked 48.4–49.9). This is recorded, and the frozen bands are scored as locked.
 New problem raised (reasoning): if Br(φ → N2N2) ≈ 1, reheating goes into a state that is massless at ρ. Unless N2 thermalises with the SM through its Dirac Yukawa (or gets a mass elsewhere), this is dark radiation, ΔN_eff ≫ 0.3: a potential kill. Also, a massless N2 in the seesaw changes the light-neutrino spectrum. Next: D723.
+
+## D723 (CENTRE; locked PREREG_D723; results/n2_darkrad_d723.txt) — KILL for the doublet-only N sector at ρ: φ → N2N2 makes the universe dark-radiation dominated
+Computed (order-of-magnitude bookkeeping; the verdict holds by many orders of magnitude):
+- Neutrino bound: a massless N2 pairs with a light ν into a Dirac state of mass y_D v, so y_D < 4.0e-13 (Σm_ν < 0.07 eV).
+- Thermalisation at T_R = 6.7e8–6.7e10 GeV needs y_D > 3.4e-4 – 3.4e-3, i.e. 9e8–9e9 times above the allowed value. N2 never thermalises and cannot decay (it is massless).
+- Competing SM channel (D601 sfermion scaling, T_R,SM ≈ 30–70 GeV): Br_SM ≈ 1e-19 – 1e-14, so ΔN_eff ~ 1e14–1e19 vs the limit ~0.3 (ACT DR6 N_eff 2.86 ± 0.13). Anomaly and trace channels vanish at the fixed point (D601), so nothing rescues it within the doublet-only model.
+VERDICT (locked): KILL for SERAPIS-E's vacuum at ρ with the Γ2 weight-2 doublet as the whole N sector.
+Escape (reasoning, not computed): N2 needs a mass from extra structure, e.g. a third singlet N3 mixing with the doublet at ρ (the 2 ⊕ 1 of D664). With M2 ≠ 0 the seesaw allows y_D ≈ √(m_ν M2)/v. N2 then decays or thermalises into SM radiation if y_D ≳ 3e-4, i.e. M2 ≳ (3.4e-4 × 174)²/0.05 eV ≈ 7e7 GeV. If M2 > m_φ/2 ≈ 1.1e13 GeV the channel closes entirely. So SERAPIS-E needs an N sector beyond the bare doublet, with M2 ≳ 1e8 GeV at ρ. This is a stated condition on the model; the frozen inflation bands (lock D693) are not affected, but the reheating story (T_R, N*) now depends on that extra structure.
+The paper's reheating/T_R sentences for SERAPIS-E need a caveat (not yet edited).

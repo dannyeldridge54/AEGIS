@@ -1,0 +1,7 @@
+neutrino bound: y_D < 4.02e-13
+T_R=6.7e+08: thermalisation needs y_D > 3.44e-04  (ratio needed/allowed = 8.6e+08)
+   T_R,SM=30 GeV: Br_SM=2.0e-15, Delta N_eff ~ 1.4e+15
+   T_R,SM=70 GeV: Br_SM=1.1e-14, Delta N_eff ~ 2.6e+14
+T_R=6.7e+10: thermalisation needs y_D > 3.44e-03  (ratio needed/allowed = 8.6e+09)
+   T_R,SM=30 GeV: Br_SM=2.0e-19, Delta N_eff ~ 1.4e+19
+   T_R,SM=70 GeV: Br_SM=1.1e-18, Delta N_eff ~ 2.6e+18
