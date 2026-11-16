@@ -957,3 +957,9 @@ Touches: plateau_origin, serapis_e.
 2. α_s testing scale stated as 2e-4 (Janus vs attractor) and 2e-5 (2% relation) [derived] (2% of 9e-4).
 3. Rebuilt clean, 17 pages [derived].
 Touches: none.
+
+## D872: referee minors batch 2
+1. Repository URL, ε_CP rename, constant-W₀ label and abstract trim applied [derived] (REFEREE_v3.2_full.md).
+2. All referee items applied or answered [derived].
+3. Rebuilt, 16 pages; two cosmetic 2.9 pt float overflows [derived].
+Touches: none.

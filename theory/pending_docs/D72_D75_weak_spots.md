@@ -8959,3 +8959,7 @@ MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
 ## D871: deferred referee minors, batch 1
 Applied to the v3.2 draft: #5 (self-referencing section pointer), #7 (ρ_x′ defined), #9 (one T_R range, (0.8–3)×10⁶ GeV), #10 (r falsifiers reconciled: the 1.1e-3 value is the locks', footnote h points to the stricter cap row), #11 (cored-halo 2.9 TeV added to the wino falsifier), #13 (α_s testing: 2e-4 separates the Janus value from the attractor; testing the relation itself needs about 2e-5; body sentence aligned). Rebuilt: 17 pages (was 16), no undefined references, no overfull boxes. Remaining deferred: #1, #2, #12, #14, #15.
 MAP: none
+
+## D872: deferred referee minors, batch 2; all referee items now handled
+Applied: #15 repository URL (github.com/dannyeldridge54/aegis, branch unify-bg); #2 the CP asymmetry renamed ε_CP (the κ uses are local and each defined; left); #12 the ρ paragraph's soft-mass numbers labelled as the constant-W₀ embedding; #14 abstract shortened (the wino clause replaced by a pointer to the body). #1 was already covered by the D-label paragraph and Table II's caption. Rebuilt: 16 pages, no undefined references; two 2.9 pt overfull vboxes on a float page (cosmetic). All 10 major and 15 minor referee items are now applied or answered.
+MAP: none

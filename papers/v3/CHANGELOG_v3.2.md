@@ -29,3 +29,4 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file un
 - D867: anti-D3 sentence tightened (incompatible with the BHK tilt's moduli; n_s shift +0.005–0.06); the D861 τ = i sentence removed (cross-branch, D861a).
 - D870: plateau caveat names the remaining uplift options (distant throat anti-D3, T-brane), D868–D869.
 - D871: referee minors batch 1 (#5, #7, #9, #10, #11, #13); 17 pages.
+- D872: referee minors batch 2 (#1 covered, #2 partial, #12, #14, #15); back to 16 pages.
