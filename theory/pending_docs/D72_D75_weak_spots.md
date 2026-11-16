@@ -7694,3 +7694,18 @@ MAP: node=lepto_i status=assumed touches=[] ripple=no
 MAP: node=gravitino_wino status=estimate touches=[] ripple=no
 MAP: node=n_sector_rho status=corrected touches=[] ripple=no
 MAP: node=lepto_rho status=corrected touches=[] ripple=no
+
+## D787 (FORWARD, i-side; Jl tick 26; locked PREREG_D787; results/rz3_charges_d787.txt) — R-Z₃ is SATISFIABLE: if the Higgs carries Z₃ charge, the residual Z₃ acts on SM operators as BARYON TRIALITY; the heavy pair then decays via N·u^c d^c d^c (B-violating), and the proton is protected
+Computed (charges mod 3 with the imposed Yukawas, μ, Weinberg and LH_uN_Y; 9 assignments, free (q_Q, q_Hu)):
+- q_Hu = 0 (3 assignments): every SM operator is Z₃-neutral, so the pair has no allowed decay. STABLE RELIC (FAIL).
+- q_Hu ≠ 0 (6 assignments): UDD and QQQL carry charge ±1 and are FORBIDDEN, while N·UDD (W) and N·QQQL are allowed for the two pair charges. QDL, LLE and LH_u are Z₃-neutral (allowed by Z₃; they need matter parity, which the centre supplies at ρ, D661).
+VERDICT (locked rule): R-Z₃ SATISFIABLE, in 6/9 assignments, exactly those with q_Hu ≠ 0, in which Z₃ acts on gauge-invariant SM operators as a baryon-number triality.
+Consequences [derived]:
+- With the D661 matter parity also imposed (N odd, quarks/leptons odd): N·UDD is even, ALLOWED; N·QQQL is odd, forbidden.
+  - The pair member with the matching charge decays via the superpotential operator N·u^c d^c d^c/Λ².
+  - Its Dirac partner (opposite charge) decays via the Kähler conjugate N†·u^c d^c d^c/Λ², which is also dim-6, so both decay at the D783 rate.
+- Proton: QQQL and UDD are both forbidden by Z₃ (baryon triality) and matter parity together, so there is NO dim-4 or dim-5 proton decay. ΔB = 1 needs an on-shell N, which is impossible. Proton stable.
+- Baryogenesis: the late decays N → u d d violate B directly (κ = 1 in D783: ε ≈ 2e-5 – 1.2e-3 needed). With CP phases (P1) between the W and K operators, the asymmetry is B-violating, so there is no sphaleron dilution factor.
+- Anomaly: baryon triality B₃ is anomaly-free with MSSM content (Ibáñez–Ross; from memory, estimate). The heavy N pair is vector-like under Z₃ (q, −q), adding no anomaly [derived].
+ρ-branch status: the Z₃ chain closes consistently. ρ requires (i) q_Hu ≠ 0 (Z₃ = B₃ on the SM), (ii) Λ ≲ 0.4–1e16 GeV for N·udd (D783), and (iii) late B-violating baryogenesis, which also makes the proton exactly stable as a bonus.
+MAP: node=n_sector_rho status=computed touches=[lepto_rho] ripple=no

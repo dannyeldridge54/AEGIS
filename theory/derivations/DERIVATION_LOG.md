@@ -285,3 +285,14 @@ Touches: n_sector_i, lepto_i.
 6. The DESI DR2 + Lyα bound 0.0592 ⇒ m₁ ≲ 5.6e-4 eV [derived] (computed; bound from the paper's ref arXiv:2607.27410).
 7. [derived] Consistency: the frozen lock is unchanged, and its condition Σ > 0.07 still disfavours. The interpretation is updated, not the number.
 Touches: mnu (frozen; flag cleared), plus flag clears for plateau_origin, lepto_i, gravitino_wino, n_sector_rho, lepto_rho.
+
+## D787 — Z₃ = baryon triality at ρ (forward side)
+1. The charges must allow QH_uU, QH_dD, LH_dE, H_uH_d, LLH_uH_u and LH_uN_Y [derived] (D778, D779 and the paper's chain).
+2. Solving mod 3: H_d = L = −H_u, E = 2H_u, U = −Q − H_u, D = −Q + H_u [derived].
+3. Charge(UDD) = −3Q + H_u ≡ H_u; charge(QQQL) = 3Q − H_u ≡ −H_u [derived] (computed for all 9).
+4. So for H_u ≠ 0 the B-violating operators carry charge ∝ B mod 3, i.e. baryon triality [derived].
+5. The pair (charges ±q) can decay via N·UDD (W) and N†·UDD (K), both dim-6 [derived] (computed).
+6. Matter parity forbids N·QQQL (odd) and allows N·UDD (even) [derived] (D661 matter parity).
+7. B₃ is anomaly-free with MSSM content [estimate] (Ibáñez–Ross, from memory).
+8. [derived] Consistency: D782's R-Z₃ is satisfied. D783's κ = 1 case applies. The proton is stable. The frozen bands remain conditional on Λ (D781–D783).
+Touches: n_sector_rho (corrected → computed), lepto_rho.

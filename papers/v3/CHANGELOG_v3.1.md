@@ -24,6 +24,7 @@
 ## Round 6 (16 Nov 2026; referee report REFEREE_v3.1_round6.md)
 - New title: "The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test".
 - D775: ρ-leptogenesis computed (CRV ε, Casas–Ibarra grid): passes for c ≳ 0.6 at M_H = 1e12 (D776; 29–70% for c = 1–3), fails for c = 0.3; supersedes the DI-bound estimate of D731.
+- D787: R-Z3 satisfiable — with q(H_u) ≠ 0 the Z3 is baryon triality on SM; pair decays via N·udd; proton stable.
 - D784: SERAPIS-E wino after late reheating is thermal: 0.67–1.85 TeV (5–41% of DM), superseding 0.67–0.80 TeV.
 - D782–D783: ρ needs a Z3-allowed decay operator with Λ ≲ 0.4–1e16 GeV (≈ M_s); late-decay baryogenesis with ε ~ 1e-5–1e-3 replaces ρ leptogenesis.
 - D781: frozen SERAPIS-E band survives only if T₂ ≳ 1e5–1e6 GeV (string-scale-suppressed decay); Planck-suppressed decay gives r 5.2–5.5e-4 (outside the frozen r band).

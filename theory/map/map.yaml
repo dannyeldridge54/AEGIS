@@ -60,7 +60,7 @@ nodes:
   - rho
   - E
   title: 'Heavy-ν sector at ρ: 2⊕1, weight-2 mixing'
-  status: corrected
+  status: computed
   d:
   - D723
   - D724
@@ -70,11 +70,12 @@ nodes:
   - D779
   - D780
   - D786
+  - D787
   depends: []
   history:
-  - 'D779: corrected'
   - 'D780: corrected'
   - 'D786: corrected'
+  - 'D787: computed'
 - id: n_sector_i
   layer: 1
   branch:
@@ -347,6 +348,7 @@ nodes:
   - 'D776: corrected'
   - 'D782: corrected'
   - 'D786: corrected'
+  flag: recheck (D787, n_sector_rho)
 - id: gravitino_wino
   layer: 4
   branch:

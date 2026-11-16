@@ -34,3 +34,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D781: an N* shift of ~1.5 e-folds per 2 decades of T_R is enough to cross the frozen r band. Treat every change to the reheating history as a direct test of the frozen numbers, not a side issue.
 - 2026-11-16 D783: include phase-space factors (192π³ for 3-body) in decay-scale estimates. They moved D782's Λ bound by a factor ~3, enough to change "comfortable" into "tight".
 - 2026-11-16 D785: run every structural finding on one vacuum as a mirror test on the other (the plan's β2). The ρ Z₃ obstruction does NOT carry to i, and saying so with a computation keeps the τ = i branch's claims clean.
+- 2026-11-16 D787: a residual discrete symmetry restricted to the SM often reduces to a familiar one (here baryon triality). Identify it; it imports known results (anomaly freedom, proton stability) for free.

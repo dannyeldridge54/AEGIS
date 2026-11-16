@@ -1,0 +1,11 @@
+(qQ,qHu)=(0,0): charges {'Q': 0, 'U': 0, 'D': 0, 'L': 0, 'E': 0, 'Hu': 0, 'Hd': 0} | SM-allowed: ['UDD', 'QDL', 'LLE', 'QQQL', 'UUDE', 'LHu'] | pair q=1 via [], q=2 via [] | B3-like: False
+(qQ,qHu)=(0,1): charges {'Q': 0, 'U': 2, 'D': 1, 'L': 2, 'E': 2, 'Hu': 1, 'Hd': 2} | SM-allowed: ['QDL', 'LLE', 'LHu'] | pair q=1 via ['QQQL'], q=2 via ['UDD', 'UUDE'] | B3-like: True
+(qQ,qHu)=(0,2): charges {'Q': 0, 'U': 1, 'D': 2, 'L': 1, 'E': 1, 'Hu': 2, 'Hd': 1} | SM-allowed: ['QDL', 'LLE', 'LHu'] | pair q=1 via ['UDD', 'UUDE'], q=2 via ['QQQL'] | B3-like: True
+(qQ,qHu)=(1,0): charges {'Q': 1, 'U': 2, 'D': 2, 'L': 0, 'E': 0, 'Hu': 0, 'Hd': 0} | SM-allowed: ['UDD', 'QDL', 'LLE', 'QQQL', 'UUDE', 'LHu'] | pair q=1 via [], q=2 via [] | B3-like: False
+(qQ,qHu)=(1,1): charges {'Q': 1, 'U': 1, 'D': 0, 'L': 2, 'E': 2, 'Hu': 1, 'Hd': 2} | SM-allowed: ['QDL', 'LLE', 'LHu'] | pair q=1 via ['QQQL'], q=2 via ['UDD', 'UUDE'] | B3-like: True
+(qQ,qHu)=(1,2): charges {'Q': 1, 'U': 0, 'D': 1, 'L': 1, 'E': 1, 'Hu': 2, 'Hd': 1} | SM-allowed: ['QDL', 'LLE', 'LHu'] | pair q=1 via ['UDD', 'UUDE'], q=2 via ['QQQL'] | B3-like: True
+(qQ,qHu)=(2,0): charges {'Q': 2, 'U': 1, 'D': 1, 'L': 0, 'E': 0, 'Hu': 0, 'Hd': 0} | SM-allowed: ['UDD', 'QDL', 'LLE', 'QQQL', 'UUDE', 'LHu'] | pair q=1 via [], q=2 via [] | B3-like: False
+(qQ,qHu)=(2,1): charges {'Q': 2, 'U': 0, 'D': 2, 'L': 2, 'E': 2, 'Hu': 1, 'Hd': 2} | SM-allowed: ['QDL', 'LLE', 'LHu'] | pair q=1 via ['QQQL'], q=2 via ['UDD', 'UUDE'] | B3-like: True
+(qQ,qHu)=(2,2): charges {'Q': 2, 'U': 2, 'D': 0, 'L': 1, 'E': 1, 'Hu': 2, 'Hd': 1} | SM-allowed: ['QDL', 'LLE', 'LHu'] | pair q=1 via ['UDD', 'UUDE'], q=2 via ['QQQL'] | B3-like: True
+Assignments satisfying R-Z3 with proton safety: [(0, 1), (0, 2), (1, 1), (1, 2), (2, 1), (2, 2)]
+VERDICT: R-Z3 SATISFIABLE
