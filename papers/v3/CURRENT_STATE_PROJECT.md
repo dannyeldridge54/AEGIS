@@ -1,7 +1,7 @@
 # AEGIS: current state (16 Nov 2026, 12:40 CT). Read before working.
 
 ## Active line: SERAPIS v3 / v3.1 (modular inflation)
-- Paper: v3.1 PUBLISHED 16 Nov 2026, DOI 10.5281/zenodo.24281771 (v3: 24250733). Source papers/v3/serapis_v3.tex.
+- Paper: v3.2 PUBLISHED 16 Nov 2026 13:10 CT on Danny's "Publish", DOI 10.5281/zenodo.24289118 (v3.1: 24281771; v3: 24250733). Source papers/v3/serapis_v3.2.tex (never edit; v3.1 source serapis_v3.tex likewise). Further edits go in a new draft papers/v3/serapis_v3.3_draft.tex.
 - Repo: github.com/dannyeldridge54/AEGIS, branch `unify-bg`. D-notes: theory/pending_docs/D72_D75_weak_spots.md (to D736; next number in NEXT_D.txt). Locks: field_tests/rules/PREREG_D*.
 - Frozen SERAPIS (τ = i, ρ): n_s 0.970–0.975, r (4.6–5.7)e-4, α_s −(8.5–9.9)e-4, β_s −(3.0–4.6)e-5; caps n_s ≤ 0.985, r ≤ 8.3e-4; strip D679/D681. Prediction sheet: papers/v3/prediction_sheet.md.
 - SERAPIS-E (loop-motivated branch, lock D693, frozen after the data): V = V0[1 − E(ρ,2)/E(τ,2)](1 + CÊ), Ê = E(τ,2) − E(ρ,2); tilt from Berg–Haack–Körs one-loop Kähler correction (hep-th/0508043). n_s 0.970–0.975, r (4.55–5.12)e-4, α_s −(9.4–10.6)e-4; m_φ ≈ 2.2e13 GeV; N* 48.4–49.9.
