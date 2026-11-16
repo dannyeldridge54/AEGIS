@@ -109,4 +109,10 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - E.1 [done D885: target = |j−1728|^{~1e-5} from a throat cutoff] Reverse path: from the required εI₁ term (m²/H² ≈ 2e-3 at i, ε ≈ 1.40–1.45e-4) write the needed term's form in K or W and its modular weight; list every route tried (D576–D618, D684–D687, D823, D826, D834) with the factor it missed by.
 - E.2 [done D886: negative] Literature: threshold/one-loop corrections that are logarithmic in |j − 1728| or vanish quadratically at i (Harvey–Moore, DKL with Wilson lines, species scale at enhanced-symmetry points).
 - E.3 [skipped: no candidate after D886] Locked computation of the best candidate's ε.
-- E.4 [open] Verdict and v3.2 note.
+- E.4 [done D887: closed negative, ε fitted] Verdict and v3.2 note.
+
+## ρ-lift project L (picked 2026-11-16 under the autonomy rule)
+- L.1 [open] Reverse path: from D883's lift ε ≈ 1.8e-3 of the E₄-protected S₂ mass, write the needed term (weight, field content) and its size in units of natural scales (Λ/M_P, one-loop, instanton e^{-2π Im T/N}).
+- L.2 [open] Literature: lifting of E₄(ρ)=0 zeros (Planck-suppressed operators, non-holomorphic Kähler corrections, weight-shift terms).
+- L.3 [open] Locked computation if a candidate exists.
+- L.4 [open] Verdict and v3.2 note.

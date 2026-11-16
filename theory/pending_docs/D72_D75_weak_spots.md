@@ -9120,3 +9120,10 @@ Assessment [derived]:
 3. A one-loop (logarithmic) U-dependence of the throat cutoff is not found in this literature; D885's target remains a hypothesis with no identified source.
 Verdict: E.2 NEGATIVE. The τ = i ε stays fitted (C1 of D841 unchanged). The D885 target (|j − 1728|^{~1e-5} in the uplift) is recorded as the precise form a future string computation would have to produce.
 MAP: node=eps_tilt status=estimate touches=[band_i] ripple=no
+
+## D887 (CENTRE, E.4): verdict on the τ = i ε origin; ε stays a fitted parameter
+Inputs: D885 (target form), D886 (no throat source).
+Verdict [derived]: the ε-origin project closes NEGATIVE. The τ = i tilt ε ≈ 1.40–1.45e-4 has no derived source; every route (D576–D618, D684–D687, D823, D826, D834, D885–D886) fails or is conditional. The precise form a future string computation would need is recorded: an uplift factor |j(τ) − 1728|^{2q}, q ~ 1e-5, i.e. a logarithmic, one-loop-sized dependence of the uplift on the bulk complex structure; leading-order throat physics gives none (constant conifold prefactor, e^{2πiτ}-suppressed corrections).
+Consequences: τ = i stays the conditional variant under DECISION_RULE_D841 (unchanged). Frozen predictions unchanged. v3.2 draft: one sentence added to the D686 paragraph (needed form plus why throat corrections fail; cites 2009.03312); rebuilt clean, 17 pages.
+Next: the ρ lift ε ≈ 2e-3 origin (D883), the remaining post hoc number on the main branch.
+MAP: node=eps_tilt status=estimate touches=[band_i, serapis_e] ripple=no
