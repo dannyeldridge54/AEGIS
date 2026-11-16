@@ -70,3 +70,11 @@ Steps (one per tick; lock before any computation; honest labels):
 ## τ = i phase map (queued 2026-11-16 on Danny's choice)
 - R.1 [done D854: ε = 0 at τ = i under single-modulus P1′] Redo D763's τ = i radiative leptogenesis pass fraction with the complex-R phases drawn from P1′ (instanton phase Δ = 2πΔn⟨Re T⟩, D852 distribution) instead of uniform; locked run on the D745/D763 set-up; compare 68–71%.
 - V.5 [done D856] D854/D855 folded into the draft.
+
+## Moduli-consistency deep project (planned 2026-11-16, "Plan next deep jl")
+Why: today's results each demand values of the same moduli (g_s, Im ρ₁, Im ρ₂, Im ρ₃, v₄) from different places. Nobody has checked they can hold at once. A conflict here would be a real internal inconsistency (rule R2 of D841); agreement would turn several estimates into one consistent point.
+- M.1 [open] Requirements table: every constraint on (g_s, Im S, Im ρ_i, v₄ = Im ρ₂·Im ρ₃ in string units, M_s) from D689/D696 (BHK tilt: Im S·Im ρ₁ ≈ 560–975 with stacks (5,2)), D833/D835 (anti-D3 safe: v₄ ≳ 2e4 g_s), D845/D851 (racetrack CP-odd minima at t ≈ 10 in units of e^{2πiT/N}), D852/D854 (heavy-ν masses M ≈ 1e11–1e13 GeV from e^{−2πn Im T}·M_s; two cycle classes at τ = i), D783 (Λ, M_s ≈ 6e15–3e16 GeV), D692 (T_R, N*). Derivation; normalisations checked between notes (Kähler conventions differ: K = −3 ln vs −Σ ln ρ_i).
+- M.2 [open] Map each requirement onto the three untwisted Kähler moduli of T⁶/(Z₂×Z₂): which ρ_i is the inflaton torus's, which carry the racetrack(s) and instantons, which make up v₄.
+- M.3 [open] Locked feasibility scan: is there a common point satisfying all M.1 constraints (with ranges)? Report the allowed region or the first conflict.
+- M.4 [open] If allowed: one benchmark point (all moduli values) with every derived quantity recomputed from it; if not: which constraint must give, and what that does to the frozen predictions (they never change; the variant would).
+- M.5 [open] Verdict, status/postulate updates, v3.2 note.
