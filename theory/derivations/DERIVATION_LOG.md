@@ -1298,3 +1298,8 @@ Touches: none.
 1. Three no-go results compiled from locked notes only [derived] (D867, D912, D886, D914).
 2. Published with full metadata; md5 verified [derived].
 Touches: none.
+
+## D922: paper 3 published
+1. SERAPIS-E compiled from the published v3.2 section and locked notes [derived].
+2. Published with full metadata; md5 verified [derived].
+Touches: none.
