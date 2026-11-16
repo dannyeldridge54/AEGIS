@@ -136,7 +136,7 @@ nodes:
   depends:
   - plateau_origin
   - bhk_tilt
-  flag: recheck (D759, logderiv_plateau)
+  flag: recheck (D764, lepto_rho)
 - id: janus
   layer: 2
   branch:
@@ -251,6 +251,7 @@ nodes:
   - 'D743: estimate'
   - 'D745: computed'
   - 'D763: assumed'
+  flag: recheck (D764, lepto_rho)
 - id: sterile_rho
   layer: 4
   branch:
@@ -309,12 +310,13 @@ nodes:
   d:
   - D731
   - D762
+  - D764
   depends:
   - reheat_rho
   - n_sector_rho
   history:
   - 'D762: assumed'
-  flag: recheck (D763, lepto_i)
+  - 'D764: assumed'
 - id: gravitino_wino
   layer: 4
   branch:

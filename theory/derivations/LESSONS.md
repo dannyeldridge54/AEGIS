@@ -10,3 +10,5 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D762: a PASS that leaves a parameter "unspecified" (here δ) hides an assumption. Make it a postulate at once, so the derived:assumed count stays honest.
 - 2026-11-16 D763: before claiming a low-energy prediction from a high-energy mechanism, check whether the low-energy parameter cancels out of the formula (here U drops out of H = Y†Y). Run a real-parameter control grid as the K4 regression.
 - 2026-11-16 D763: write a postulate's falsifier as "what result would favour the ALTERNATIVE". It is sharper than "what would disfavour the postulate".
+- 2026-11-16 D764: "j(τ) real ⇔ CP-conserving" is a one-line, modular-invariant CP test. Use it instead of basis-dependent coupling phases.
+- 2026-11-16 D764: when a mechanism ties a new field to the inflaton (here U₂ = c/U₁), check at once whether it changes the inflaton's kinetic term. Queue a forward check before trusting the old n_s and r.

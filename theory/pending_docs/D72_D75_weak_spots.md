@@ -7350,3 +7350,17 @@ Forward prediction (new, post-hoc structure statement):
 - A DUNE/Hyper-K discovery of leptonic CP violation (sin δ ≠ 0 at ≥ 3–5σ, late 2030s) would exclude the gCP completion for both vacua and favour P1. A firm δ ≈ 0/π would exclude only half of P1's phase space at |sin δ| < 0.1 (about 6% of a uniform prior), so it does not kill P1. Current fits allow both.
 Correction to P1's falsifier (ii): a δ_CP ≈ 0/π measurement only weakly disfavours P1. The sharp test is the reverse: CP violation discovered ⇒ gCP excluded.
 MAP: node=lepto_i status=assumed touches=[lepto_rho] ripple=no
+
+## D764 (REVERSE, ρ-side; Jl tick 3; locked PREREG_D764; results/second_modulus_cp_d764.txt) — P1 retired: a second modulus fixed by the flux relation U₁U₂ = b₃/a⁰ (2405.18813) supplies the CP phase at ρ for most flux ratios
+Deep research:
+- 2405.18813 (fetched). U₁ stabilised at ω (≅ ρ) plus the flux relation U₁U₂ = b₃/a⁰ fix U₂ off the CP locus. CP violation is "readily induced" when b₃ ∤ a⁰ and a⁰ ∤ b₃. Example a⁰ = 2, b₃ = −3 gives U₂ = 3/4 + (3√3/4)i.
+- 2004.04518 (fetched): fluxes alone have flat directions joining CP-even and CP-odd vacua. Spontaneous CP violation needs an extra lifting, e.g. matter couplings, which is what 2405.18813 provides.
+Computed (CP test: j(U₂) real ⇔ CP-conserving). K4 regressions: s(i) = 0, j(ρ) = 0, s(0.1 + 1.3i) = 0.49, and the paper's example gives s_CP = 0.98 (CP-violating, as stated).
+- Over 46 distinct ratios |b₃/a⁰| (a⁰ ≤ 6, |b₃| ≤ 12), 63% have s_CP > 0.1, with median s_CP = 0.77.
+- The 17 CP-conserving cases are exactly the integer and 1/integer ratios, matching the paper's divisibility statement.
+VERDICT (locked rule): P1 REPLACED by P2. P2 takes the mechanism from the literature and postulates only the assignment of the heavy-ν couplings to U₂.
+- Leptogenesis on both branches now has a concrete CP source: a non-divisible flux ratio.
+- With U₁ = i (τ = i branch) and weight 6, 2405.18813 finds Re U₂ = 0, i.e. no CP violation. So the i-branch would need U₁ = i with a different weight or relation. Not computed here; it goes to the queue.
+- Still assumed (P2 open), but the postulate is narrower and has falsifiers.
+Mirror question (forward, next tick): if U₂ = (b₃/a⁰)/U₁ holds DURING inflation, U₂ moves with the inflaton. Derive the effective kinetic term (−ln Im U₂ is a modular image of −ln Im U₁, so it adds the same hyperbolic metric, i.e. α → α + 1?) and the change in n_s and r for SERAPIS-E. Alternatively, is the relation only imposed at the minimum (heavy U₂ direction)?
+MAP: node=lepto_rho status=assumed touches=[lepto_i, serapis_e] ripple=no
