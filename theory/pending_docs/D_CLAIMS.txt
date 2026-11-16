@@ -130,3 +130,4 @@ D843  2026-11-16T15:28Z  C.1 CP sources literature
 D844  2026-11-16T15:33Z  C.2 CP-odd fields in our setup
 D845  2026-11-16T15:41Z  C.3 racetrack CP scan
 D846  2026-11-16T15:47Z  C.4 P1 verdict
+D847  2026-11-16T15:48Z  V.1 v3.2 draft accuracy edits
