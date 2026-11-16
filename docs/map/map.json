@@ -438,7 +438,7 @@
     "E"
    ],
    "title": "Leptogenesis at ρ (non-thermal, DI estimate)",
-   "status": "assumed",
+   "status": "corrected",
    "d": [
     "D731",
     "D762",
@@ -447,18 +447,18 @@
     "D767",
     "D771",
     "D772",
-    "D773"
+    "D773",
+    "D775"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D771: assumed",
     "D772: assumed",
-    "D773: assumed"
-   ],
-   "flag": "recheck (D774, lepto_i)"
+    "D773: assumed",
+    "D775: corrected"
+   ]
   },
   {
    "id": "gravitino_wino",
@@ -476,7 +476,8 @@
    "depends": [
     "reheat_rho",
     "covariant"
-   ]
+   ],
+   "flag": "recheck (D775, lepto_rho)"
   },
   {
    "id": "band_i",

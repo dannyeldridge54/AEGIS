@@ -159,3 +159,14 @@ Touches: lepto_rho, lepto_i.
 6. Leptogenesis needs sin δ ≳ 0.01–0.56 (D731); with phases O(|ε|), |ε| ≳ 0.01 is needed [estimate].
 7. [derived] Consistency: D773 (untwisted) stands. This adds a tension, not an exclusion. P1 is unchanged.
 Touches: lepto_i, lepto_rho.
+
+## D775 — ρ-leptogenesis CP asymmetry (forward side)
+1. Casas–Ibarra: Y = i·U*·√m·R·√D/v, R complex orthogonal [literature] (Casas–Ibarra; D745 set-up).
+2. H = Y†Y; the degenerate pair is rotated so Re H₁₂ = 0, making Im[(H₁₂)²] = 0 [derived] (D745 alignment).
+3. ε_i = −(1/8π)Σ_j Im[(H_ij)²]/H_ii·[f(x) + g(x)], f = √x[1 − (1 + x)ln((1 + x)/x)], g = √x/(1 − x) [literature] (Covi–Roulet–Vissani 1996).
+4. Spectrum at ρ: pair (0.212, 0.707, 1.0)·M_H and single (1, 1, 0.471)·M_H for c = (0.3, 1, 3) [derived] (D725, computed).
+5. Y_B = (8/23)(3/4)(T_R/m_φ)·2·|ε̄| [estimate] (non-thermal yield, D731 conventions; no washout, M/T_R ≥ 500).
+6. Pass fractions at M_H = 1e12: c = 0.3 → 0%, c = 1 → 29–56%, c = 3 → 68–70% [derived] (computed).
+7. K4: hierarchical |ε|max/ε_DI = 0.47, consistent with DI as an upper bound [derived].
+8. [derived] Consistency: D731 overestimated (it used ε_DI·sin δ). Its c = 0.3, M_H = 1e12 "PASS" is corrected to FAIL. D733's M_H preference is unchanged. The frozen bands are untouched.
+Touches: lepto_rho (corrected), gravitino_wino.

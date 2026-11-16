@@ -7525,3 +7525,18 @@ Derived/estimate:
 VERDICT: the in-model CP chain is EXHAUSTED for now (D762–D774): untwisted flux relations are impossible without the inflaton (D773), and twisted moduli conflict with the orbifold-point tilt (estimate). P1 (explicit CP phases) stays the working assumption on both branches.
 Next (forward): upgrade lepto_rho from the Davidson–Ibarra upper estimate (D731) to an actual CP-asymmetry computation for the 2⊕1 heavy-ν sector at ρ under P1 (random complex couplings), as D745 did for τ = i.
 MAP: node=lepto_i status=assumed touches=[lepto_rho] ripple=no
+
+## D775 (FORWARD, i-side; Jl tick 14; locked PREREG_D775; results/lepto_rho_ci_d775.txt) — ρ-leptogenesis computed: passes for c = 1 and 3 at the preferred M_H = 1e12 (29–70% of the grid), FAILS for c = 0.3; corrects D731's "pass in all cases"
+Computed: Covi–Roulet–Vissani unflavoured ε (vertex + self-energy), Casas–Ibarra 27³ complex-R grid (P1), NO, m₁ = 1e-4 and 1e-3 eV, D731 yield conventions. The degenerate pair is aligned to Re H₁₂ = 0, so it has no mutual term. K4: c = 0.3 hierarchical, max|ε̄_pair|/ε_DI = 0.47, inside [0.3, 1.3]. PASS.
+M_H = 1e12 (the gamma-ray-preferred scale, D733); pass fractions for m₁ = 1e-4 / 1e-3 eV:
+- c = 0.3: pair 0.0 / 0.0%, single 0.0 / 0.0%. max|ε̄_pair| = 1.0e-5 = 0.48 ε_DI, so Y_B max ≈ 7.6e-11, a factor 1.15 short. FAIL.
+- c = 1: pair 32.9 / 29.4%, single 56.2 / 54.0%. PASS.
+- c = 3: single (the lighter state, 4.7e11) 70.2 / 68.0%, slightly above DI (ratio 1.1, self-energy enhancement); the pair (1e12) 0%. PASS.
+M_H = 1e13 (gamma-ray-disfavoured): 78–91%, PASS.
+Why D731 was too optimistic: the actual |ε| reaches only 0.03–0.8 of the DI bound for these spectra. For the heavy single state with c = 0.3 the ratio is only 0.03, because its loop partners (the light pair) are lighter (x < 1 suppresses f + g).
+VERDICT (locked rule): not all M_H = 1e12 cases pass, so lepto_rho is not "computed" across the board. It is CORRECTED: ρ-leptogenesis (under P1) works for c ≳ 1, i.e. M_pair/M_H ≳ 0.5, and fails for the most hierarchical c = 0.3 sector at M_H = 1e12. Combined with D733, SERAPIS-E now points to M_H ≈ 1e12 GeV with an order-one doublet–singlet mixing c ≳ 1.
+Other notes:
+- The T_R for c = 1 and 3 (4.3e8, 9.5e8 GeV, D725) stays inside the frozen-band N* range (D725: n_s 0.9732–0.9739).
+- The paper's D731 sentence is updated (unpublished v3.1).
+- Mirror question (reverse, next tick): what fixes c? The doublet–singlet coupling through the weight-2 doublet (D724/D739) is a free O(1) coefficient. Is there a Γ₂ or weight argument, or a string selection rule, making c ~ 1 natural, or bounding it?
+MAP: node=lepto_rho status=corrected touches=[gravitino_wino] ripple=no

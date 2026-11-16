@@ -1,0 +1,12 @@
+c=0.3 M_H=1e+12 T_R=3.18e+08 m1=0.0001: pair M=2.12e+11 pass=0.0% max|eps|=1.02e-05 (eps_DI=2.09e-05, ratio 0.49); single M=1.00e+12 pass=0.0% max|eps|=3.52e-06 (eps_DI=9.86e-05, ratio 0.04); 
+c=0.3 M_H=1e+12 T_R=3.18e+08 m1=0.001: pair M=2.12e+11 pass=0.0% max|eps|=9.85e-06 (eps_DI=2.09e-05, ratio 0.47); single M=1.00e+12 pass=0.0% max|eps|=3.43e-06 (eps_DI=9.86e-05, ratio 0.03); 
+K4: max|eps_pair|/eps_DI = 0.47 (need 0.3-1.3)
+c=1 M_H=1e+12 T_R=4.29e+08 m1=0.0001: pair M=7.07e+11 pass=32.9% max|eps|=5.38e-05 (eps_DI=6.97e-05, ratio 0.77); single M=1.00e+12 pass=56.2% max|eps|=4.27e-05 (eps_DI=9.86e-05, ratio 0.43); 
+c=1 M_H=1e+12 T_R=4.29e+08 m1=0.001: pair M=7.07e+11 pass=29.4% max|eps|=5.19e-05 (eps_DI=6.97e-05, ratio 0.74); single M=1.00e+12 pass=54.0% max|eps|=4.16e-05 (eps_DI=9.86e-05, ratio 0.42); 
+c=3 M_H=1e+12 T_R=9.46e+08 m1=0.0001: pair M=1.00e+12 pass=0.0% max|eps|=1.39e-06 (eps_DI=9.86e-05, ratio 0.01); single M=4.71e+11 pass=70.2% max|eps|=5.21e-05 (eps_DI=4.64e-05, ratio 1.12); 
+c=3 M_H=1e+12 T_R=9.46e+08 m1=0.001: pair M=1.00e+12 pass=0.0% max|eps|=1.34e-06 (eps_DI=9.86e-05, ratio 0.01); single M=4.71e+11 pass=68.0% max|eps|=5.08e-05 (eps_DI=4.64e-05, ratio 1.09); 
+c=0.3 M_H=1e+13 T_R=3.03e+09 m1=0.0001: pair M=2.12e+12 pass=81.8% max|eps|=1.02e-04 (eps_DI=2.09e-04, ratio 0.49); single M=1.00e+13 pass=79.0% max|eps|=3.52e-05 (eps_DI=9.86e-04, ratio 0.04); 
+c=0.3 M_H=1e+13 T_R=3.03e+09 m1=0.001: pair M=2.12e+12 pass=81.8% max|eps|=9.85e-05 (eps_DI=2.09e-04, ratio 0.47); single M=1.00e+13 pass=77.9% max|eps|=3.43e-05 (eps_DI=9.86e-04, ratio 0.03); 
+c=1 M_H=1e+13 T_R=2.54e+09 m1=0.0001: pair M=7.07e+12 pass=88.1% max|eps|=5.38e-04 (eps_DI=6.97e-04, ratio 0.77); single M=1.00e+13 pass=91.1% max|eps|=4.27e-04 (eps_DI=9.86e-04, ratio 0.43); 
+c=1 M_H=1e+13 T_R=2.54e+09 m1=0.001: pair M=7.07e+12 pass=88.3% max|eps|=5.19e-04 (eps_DI=6.97e-04, ratio 0.74); single M=1.00e+13 pass=90.8% max|eps|=4.16e-04 (eps_DI=9.86e-04, ratio 0.42); 
+VERDICT: lepto_rho: some M_H=1e12 case below 10%
