@@ -1,8 +1,16 @@
+check B(i)=-2Dl(i)-2ln2 = -3.4957 (D831 -3.4957)
+k=0.00e+00 N*=48.4: y*=14.23 n_s=0.9701 r=4.754e-04 alpha_s=-9.880e-04 | wall/BHK at y*=0.000, at y=25=0.000 | d2x V_add=0.00e+00
+k=0.00e+00 N*=49.9: y*=14.47 n_s=0.9715 r=4.551e-04 alpha_s=-9.441e-04 | wall/BHK at y*=0.000, at y=25=0.000 | d2x V_add=0.00e+00
+k=5.00e-05 N*=48.4: y*=16.14 n_s=0.9944 r=9.918e-04 alpha_s=-1.423e-03 | wall/BHK at y*=4.688, at y=25=3.255 | d2x V_add=0.00e+00
+k=5.00e-05 N*=49.9: y*=16.52 n_s=0.9965 r=9.853e-04 alpha_s=-1.394e-03 | wall/BHK at y*=4.600, at y=25=3.255 | d2x V_add=0.00e+00
+k=1.00e-04 N*=48.4: y*=18.93 n_s=1.0246 r=2.214e-03 alpha_s=-2.328e-03 | wall/BHK at y*=8.232, at y=25=6.510 | d2x V_add=0.00e+00
+k=1.00e-04 N*=49.9: y*=19.61 n_s=1.0281 r=2.304e-03 alpha_s=-2.378e-03 | wall/BHK at y*=7.995, at y=25=6.510 | d2x V_add=0.00e+00
 Traceback (most recent call last):
-  File "/home/claude/aegis/theory/modular/antiD3_serapis_e_d835.py", line 23, in <module>
-    exec('\n'.join(src[11:41]).replace('math.log(40)','math.log(25)'))
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 1
-    for n in range(1,31): s+=8*math.pi**2*math.sqrt(y)*n**1.5*SIG[n]*kv(1.5,2*math.pi*n*y)*math.cos(2*math.pi*n*x)
-IndentationError: unexpected indent
+  File "/home/claude/aegis/theory/modular/antiD3_serapis_e_d835.py", line 29, in <module>
+    S=[-0.1,-0.05,0,0.05,0.1]; out=[spectra(B,Ns,math.exp(x)) for x in S]
+                                    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in spectra
+  File "/usr/local/lib/python3.13/site-packages/scipy/optimize/_zeros_py.py", line 858, in brentq
+    r = _zeros._brentq(f, a, b, xtol, rtol, maxiter, args, full_output, disp)
+ValueError: f(a) and f(b) must have different signs
 EXIT 1

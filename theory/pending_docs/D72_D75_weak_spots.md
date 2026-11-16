@@ -8520,3 +8520,21 @@ Consequences [derived]:
 - Worse for the τ = i variant: any anti-D3 present adds a tachyonic x-direction, m²/H² = −1.48e-3·(κ/κ_max). With D826's sources 10¹¹–10¹² short, the τ = i vacuum would be destabilised toward ρ unless κ ≪ κ_max. The ρ vacuum is unaffected (m²/H² ≈ 35, D691, ≫ 6e-3).
 - This adds a third, independent reason the anti-D3 picture favours ρ (after D831's V(ρ) < V(i)).
 MAP: node=band_i status=computed touches=[eps_tilt,plateau_origin] ripple=no
+
+## D835 (DEEP, K.4): the anti-D3 term in SERAPIS-E is NOT harmless at natural size; D831/D833's bound was far too loose
+Lock: PREREG_D835_antiD3_serapis_e.md; DEVIATIONS D1 (solver-path crash before any result; fixed, no physics change). Script theory/modular/antiD3_serapis_e_d835.py, output field_tests/results/antiD3_serapis_e_d835.txt.
+V/V0 = P_E(1 + CÊ) + 4k[Δ(U) − Δ(ρ)], C = 1.0e-6, exact MS (D692 solver). Check B(i) = −3.4957 = D831 ✓; k = 0 reproduces D692 exactly ✓.
+| k = κ/V0 | N* | y* | n_s | r | α_s | wall/BHK at y* |
+|---|---|---|---|---|---|---|
+| 0 | 48.4 / 49.9 | 14.23 / 14.47 | 0.9701 / 0.9715 | 4.75 / 4.55e-4 | −9.9 / −9.4e-4 | 0 |
+| 5e-5 | 48.4 / 49.9 | 16.14 / 16.52 | 0.9944 / 0.9965 | 9.9e-4 | −1.4e-3 | 4.7 / 4.6 |
+| 1e-4 | 48.4 / 49.9 | 18.93 / 19.61 | 1.0246 / 1.0281 | 2.2–2.3e-3 | −2.3e-3 | 8.2 / 8.0 |
+| 2.07e-4 | — | — | — | — | — | run failed: brentq in spectra (no valid horizon-exit bracket from the locked start y = 25); reported as a failure, not rerun |
+Verdict rule ("harmless": |Δn_s| ≤ 0.001, |Δr/r| ≤ 10% at k = 2.07e-4): FAILS, decisively. Already at k = 5e-5, Δn_s = +0.024 and r doubles.
+Pre-stated prediction: "not harmless at the maximum" CONFIRMED; "harmless at k ≲ 0.5e-4" WRONG: 0.5e-4 is badly harmful.
+Why D831/D833 were loose [derived]: their criterion compared the added slope with √(2ε) at y*, but n_s responds to the slope relative to the plateau's own tiny gradient (V'/V ~ 1/y² at y ≈ 14), and the wall's linear rise is 4–8× the BHK rise across the observable window (ratio column). D831 point 4 and D833's numbers (v₄ ≳ 190 g_s) are SUPERSEDED as a safety bound.
+Revised bound [estimate, linear in k from the 5e-5 row]: |Δn_s| ≤ 0.001 needs k ≲ 2e-6, i.e. v₄ ≳ g_s/(8π·2e-6) ≈ 2e4·g_s (≈ 2000 at g_s = 0.1). Large but not absurd (each small torus area ≈ 45 string units at g_s = 0.1).
+Transverse stability: ∂²_x V_add at x = ½, y* is below double precision (e^{−2πy*} ~ 1e-39); no instability, no information.
+Observation, NOT a claim [estimate; post-hoc]: the anti-D3 wall tilts n_s upward like the BHK term but linearly in y. A joint (C, k) fit is degenerate: a smaller C plus small k could fit the same n_s. Any such variant is post-data and would be scored only on future data.
+Consequence for SERAPIS-E: if an anti-D3 is present (the P3 picture), the T⁴ must be large (v₄ ≳ 2e4 g_s) or the frozen band's C must be read as C_eff including the anti-D3 share. The frozen predictions themselves do not change.
+MAP: node=serapis_e status=computed touches=[eps_tilt,plateau_origin] ripple=no

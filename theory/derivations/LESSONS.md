@@ -81,3 +81,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D832: a postulate that loses its proposed origin is downgraded, not retired, when the model's numbers do not depend on that origin. Say plainly which part died (the mechanism) and which stands (the plateau's phenomenology).
 - 2026-11-16 D833: normalise a new term as a RATIO to an energy that lives at the same place (here the anti-D3 tension). Frame and volume factors cancel and the answer becomes one line (κ/V0 = g_s/8πv₄).
 - 2026-11-16 D834: check the SIGN of a candidate mass before its size. The anti-D3 curvature was large enough (6e-3 > 2e-3) in one direction but tachyonic in the other; size alone would have given a false pass.
+- 2026-11-16 D835: an order-of-magnitude slope bound is not a safety bound. Test a new term in the exact pipeline before calling it harmless; here the rough criterion (v₄ ≳ 190 g_s) was loose by about 100×.

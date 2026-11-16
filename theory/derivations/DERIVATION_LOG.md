@@ -672,3 +672,11 @@ Touches: plateau_origin, serapis_e, eps_tilt.
 4. z_a = ½: not an extremum [derived].
 5. Not the τ = i mass source; destabilises τ = i along x; ρ unaffected [derived] (D691, D826).
 Touches: band_i, eps_tilt, plateau_origin.
+
+## D835: K.4 anti-D3 term in SERAPIS-E (κ deep project)
+1. On x = ½ with z_a = 0, B = −2Δ + S, V_add/V0 = 4k[Δ − Δ(ρ)] [derived] (D829, D831).
+2. Exact MS with C = 1e-6: k = 5e-5 gives n_s 0.994–0.997, r ≈ 1e-3 [derived] (computed, PREREG_D835, DEVIATIONS D1).
+3. Harmless rule fails; k_max run fails to bracket [derived].
+4. D831/D833 slope criterion too loose; revised k ≲ 2e-6, v₄ ≳ 2e4 g_s [estimate].
+5. (C, k) degeneracy noted, post-hoc, not claimed [estimate].
+Touches: serapis_e, eps_tilt, plateau_origin.

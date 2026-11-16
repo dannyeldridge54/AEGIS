@@ -18,7 +18,7 @@ nodes:
   - 'D755: estimate'
   - 'D823: estimate'
   - 'D826: estimate'
-  flag: recheck (D834, band_i)
+  flag: recheck (D835, serapis_e)
 - id: plateau_origin
   layer: 1
   branch:
@@ -54,7 +54,7 @@ nodes:
   - 'D831: assumed'
   - 'D832: assumed'
   - 'D833: assumed'
-  flag: recheck (D834, band_i)
+  flag: recheck (D835, serapis_e)
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -159,7 +159,7 @@ nodes:
   branch:
   - E
   title: SERAPIS-E potential (Epstein + BHK tilt)
-  status: corrected
+  status: computed
   d:
   - D692
   - D693
@@ -177,14 +177,14 @@ nodes:
   - D807
   - D811
   - D812
+  - D835
   depends:
   - plateau_origin
   - bhk_tilt
   history:
-  - 'D807: corrected'
   - 'D811: computed'
   - 'D812: corrected'
-  flag: recheck (D833, plateau_origin)
+  - 'D835: computed'
 - id: janus
   layer: 2
   branch:

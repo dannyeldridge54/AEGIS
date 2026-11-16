@@ -4,7 +4,7 @@ from scipy.special import kv, zeta
 from scipy.integrate import solve_ivp
 from scipy.interpolate import CubicSpline
 from scipy.optimize import brentq
-src=open(__file__.replace('serapis_e_exact_d692','running_d632')).read().split('\n')
+src=open(__file__.replace('antiD3_serapis_e_d835','running_d632')).read().split('\n')
 s2=math.sqrt(2)
 SIG=[0]+[sum(d**-3 for d in range(1,n+1) if n%d==0) for n in range(1,31)]
 def Ese(x,y):

@@ -33,7 +33,7 @@ Steps (one per tick; lock before any computation; honest labels):
 
 ## κ deep project (anti-D3 term normalisation; started 2026-11-16 on Danny's choice)
 - K.1 [done D833] Fix κ: anti-D3–D3 force normalisation (T₃², string-frame → Einstein-frame, Vol₄, g_s) in the same units as the SERAPIS-E plateau V0 (D689 conventions).
-- K.2 [done D833, bound v₄ ≳ 190 g_s] Locked numerics: κ/V0 for the D696/D830 moduli (Im S·Im ρ ≈ 560–975) vs the slope bound 2.9e-3/y* (D831).
+- K.2 [done D833; bound SUPERSEDED by D835: v₄ ≳ 2e4 g_s] Locked numerics: κ/V0 for the D696/D830 moduli (Im S·Im ρ ≈ 560–975) vs the slope bound 2.9e-3/y* (D831).
 - K.3 [done D834: saddle, tachyonic along x] τ = i vacuum mass from the anti-D3 term vs the needed m²/H² ≈ 2e-3 (D826).
-- K.4 [open] Decompactification wall: does it bound V at large y without spoiling the band?
+- K.4 [done D835: NOT harmless; k ≲ 2e-6 needed] Decompactification wall: does it bound V at large y without spoiling the band?
 - K.5 [open] Verdict and v3.2 note.
