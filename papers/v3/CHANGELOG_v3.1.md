@@ -24,6 +24,7 @@
 ## Round 6 (16 Nov 2026; referee report REFEREE_v3.1_round6.md)
 - New title: "The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test".
 - D775: ρ-leptogenesis computed (CRV ε, Casas–Ibarra grid): passes for c ≳ 0.6 at M_H = 1e12 (D776; 29–70% for c = 1–3), fails for c = 0.3; supersedes the DI-bound estimate of D731.
+- D804: Limitations item: SERAPIS-E needs the full SL(2,Z) (order-3 stabiliser at ρ); Scherk–Schwarz breaking to an index-3 subgroup would remove the ρ vacuum, isotropy and Z₃.
 - D803: D801 sentence qualified: positive (SUSY) sums select ρ; non-SUSY Scherk–Schwarz sums (reduced group, no order-3 point) are minimised at 1 + i (2504.19364).
 - D801: SERAPIS-E section opens with the lattice-sum argument (Rankin 1953; Montgomery 1988): one-loop sums put the vacuum at ρ; i is a saddle.
 - D796: K4 of the Z₃ structure at ρ (isotropic Hessian, cubic cos 3θ term 2.9|z|); D790's orbit charge confirmed as the cubic-torque charge. No paper text change.
