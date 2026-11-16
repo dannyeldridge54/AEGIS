@@ -26,6 +26,7 @@ Falsifiers:
 - isocurvature or f_NL from the light axion Re τ (forward check D769);
 - a warped-throat computation showing anti-D3 metrics depend on U only through e^{4A} warp factors with ln-type, not 1/E-type, dependence.
 - P3 update (D769–D770): falsifier 3 (the light axion) CLEARED. ζ_axion ≤ 1e-7, and every start settles at a ρ image. P3 stays open (its origin is still postulated).
+- P3 update (D797): no literature source. Tree-level anti-D3 has no torus-τ dependence (1707.07059). Standard one-loop routes give E(τ,2) ADDITIVELY in K_XX̄ (a hilltop at ρ, or a negative metric) or as a Casimir term (unbounded below), never the needed K^{XX̄} = a − b/E. New falsifier: an explicit T⁶/(Z₂×Z₂) anti-D3 annulus giving only additive k₁E. Still open.
 - P2 update (D771): one allowed configuration only: n_flux = 12 (a⁰ = 2, b₃ = −3), 8 exotic O3′ spread evenly (two per inflaton fixed point), stuck D3s 2/2/2 + 0, N_eff = 2. New falsifiers: exotic-plane placement rules for this flux; stuck D3s at O3′-carrying fixed points.
 
 ## P4 — CP violation from a pure-NS flux relation on the non-inflaton tori (status: retired D773 — no SUSY Minkowski vacuum with Im S > 0; no τ₁-free flux vacuum exists at all)

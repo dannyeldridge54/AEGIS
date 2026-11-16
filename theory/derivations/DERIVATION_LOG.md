@@ -385,3 +385,12 @@ Touches: lepto_i, lepto_rho.
 5. Torque ∝ |z|³ sin 3(θ−θ_CP); Q freezes after O(1) oscillations [derived] (standard AD scaling).
 6. η ∝ Δx at small offsets [derived]; coefficient O(1–10) [estimate], compatible with D790's 2 [derived] (D790, computed).
 Touches: lepto_rho, lepto_i, serapis_e.
+
+## D797: can P3's 1/E goldstino metric be derived? (forward side)
+1. Tree level: anti-D3 uplift ∝ e^{4A}/(T+T̄)³, no torus-τ dependence without warping [literature] (1707.07059).
+2. One loop: annulus KK/winding sums give Epstein E(τ,s) [literature] (BHK; D756).
+3. Required: K^{XX̄} = a − b/E [derived] (P3 form rearranged).
+4. Additive k₁E in K_XX̄ gives a hilltop (k₁ > 0) or negative metric (k₁ < 0) [derived].
+5. A Casimir term −cE is unbounded below [derived].
+6. No standard route gives the needed denominator; P3 remains a postulate [postulate P3].
+Touches: plateau_origin, serapis_e.

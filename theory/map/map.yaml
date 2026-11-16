@@ -34,11 +34,12 @@ nodes:
   - D757
   - D768
   - D786
+  - D797
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D757: open'
   - 'D768: assumed'
   - 'D786: assumed'
+  - 'D797: assumed'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -76,7 +77,6 @@ nodes:
   - 'D780: corrected'
   - 'D786: corrected'
   - 'D787: computed'
-  flag: recheck (D788, lepto_rho)
 - id: n_sector_i
   layer: 1
   branch:
@@ -159,7 +159,7 @@ nodes:
   - 'D781: computed'
   - 'D783: computed'
   - 'D793: computed'
-  flag: recheck (D796, lepto_rho)
+  flag: recheck (D797, plateau_origin)
 - id: janus
   layer: 2
   branch:
@@ -278,7 +278,6 @@ nodes:
   - 'D786: assumed'
   - 'D794: computed'
   - 'D795: computed'
-  flag: recheck (D796, lepto_rho)
 - id: sterile_rho
   layer: 4
   branch:

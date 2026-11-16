@@ -48,13 +48,14 @@
     "D747",
     "D757",
     "D768",
-    "D786"
+    "D786",
+    "D797"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D757: open",
     "D768: assumed",
-    "D786: assumed"
+    "D786: assumed",
+    "D797: assumed"
    ]
   },
   {
@@ -102,8 +103,7 @@
     "D780: corrected",
     "D786: corrected",
     "D787: computed"
-   ],
-   "flag": "recheck (D788, lepto_rho)"
+   ]
   },
   {
    "id": "n_sector_i",
@@ -216,7 +216,7 @@
     "D783: computed",
     "D793: computed"
    ],
-   "flag": "recheck (D796, lepto_rho)"
+   "flag": "recheck (D797, plateau_origin)"
   },
   {
    "id": "janus",
@@ -378,8 +378,7 @@
     "D786: assumed",
     "D794: computed",
     "D795: computed"
-   ],
-   "flag": "recheck (D796, lepto_rho)"
+   ]
   },
   {
    "id": "sterile_rho",

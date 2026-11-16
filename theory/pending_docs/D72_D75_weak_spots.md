@@ -7832,3 +7832,26 @@ Derivation, part (2) (orbit charge):
 - So D790's charge is the cubic-torque charge, not an artefact.
 Mirror contrast with D795: at i the leading breaking is relative O(|z|²) (cos 4θ, Z₂ plus the accidental U(1)); at ρ it is O(|z|) (cos 3θ). Thus ρ makes its AD charge at the cubic order, while i would make it only at quartic order and has no carrier (D795).
 MAP: node=lepto_rho status=computed touches=[lepto_i, serapis_e] ripple=no
+
+## D797 (FORWARD, i-side; Jl tick 36; research + derivation, no lock): P3 (the 1/E anti-D3 metric) has no literature source; the natural one-loop routes give E(τ,2) with the WRONG placement, so P3 stays open but sharper; ladder flags cleared
+Housekeeping: the ladder flags were cleared after review.
+- n_sector_rho: stale since D788; resolved by D789–D792 (charged pair, no mediator, P5 retired).
+- serapis_e: D796 confirms the Z₃ structure, so the node is unchanged.
+- lepto_i: D794–D795 leave D745 standing.
+- D749a has no MAP line (pre-dates the rule); noted, not edited.
+Chosen postulate: P3 over P1. P1 is a prior on phases, testable only by DUNE/Hyper-K, with no derivation route. P3 has a concrete question: where could K^{XX̄}(τ) ∝ 1 − E(ρ,2)/E(τ,2) come from?
+Research (3 searches, 2 fetches):
+- 1707.07059 (anti-D3 in non-linear SUGRA, GKP throat): the uplift is M⁴e^{4A₀}/(T+T̄)³, and complex-structure dependence enters only through the warp factor, i.e. the conifold modulus. The paper REQUIRES the uplift to be independent of the other complex-structure moduli. A toroidal τ has no warping, so the tree-level τ-dependence is zero.
+- hep-th/0111025 (brane–antibrane on tori): the image sum is the torus Green's function G(ξ), which "depends on the other moduli of the torus"; it is not written as an Epstein/Eisenstein function, nor extremised in U. No hexagonal case.
+Derivation:
+1. At tree level an anti-D3 on an unwarped torus gives V_up independent of τ [literature] (1707.07059: the warp factor is the only complex-structure dependence).
+2. So any τ-dependence of K^{XX̄} is loop-level. The natural candidate is the BHK-type annulus (KK/winding sums on T²), which produces Epstein sums E(τ,s) [literature] (BHK hep-th/0508043; D756).
+3. The needed form is K^{XX̄} = a − b/E(τ,2) with a, b > 0, i.e. K_XX̄ = 1/(a − b/E) ≈ (1/a)[1 + b/(aE) + …]: a correction to the goldstino metric that DECREASES as the torus elongates (∝ y⁻² at the cusp) [derived].
+4. A BHK-like correction instead enters ADDITIVELY in E: K_XX̄ = k₀ + k₁E. That gives V ⊃ |F|²/(k₀ + k₁E) [derived]:
+   - k₁ > 0: V falls toward the cusp, i.e. a hilltop at ρ, not a minimum (wrong shape).
+   - k₁ < 0: the metric turns negative at y ~ (k₀/|k₁|)^{1/2} (inconsistent).
+5. A Casimir-type annulus vacuum energy V ⊃ −c·E(τ,s)/A^s is unbounded below toward the cusp [derived]; it is not a plateau.
+6. Hence none of the standard one-loop routes gives P3's form. The plateau needs b/E, i.e. the E-function in the DENOMINATOR of the metric correction [derived]. This is possible if the goldstino wave-function is renormalised by a quantity ∝ 1/E (e.g. a loop of states whose masses grow with E) [postulate P3, unchanged].
+VERDICT: P3 stays OPEN, sharpened. New falsifier added: a computation of the anti-D3 annulus on T⁶/(Z₂×Z₂) that gives the one-loop goldstino-metric correction as k₁E(τ,2) (additive) with no 1/E piece would refute P3's string origin (though not the phenomenology).
+The paper's statement "plateau placed in the nilpotent metric by choice" remains exactly right; no text change.
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
