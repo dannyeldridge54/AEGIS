@@ -1,0 +1,22 @@
+c=0.3: SV=[0.38817  0.082343 0.082343] (heavy index 0? True), Takagi residual 2.2e-16
+   CHANNELS M_heavy=1e+12: Gamma_LL=1.300e-01 Gamma_HL=1.165e-02 b=0.9178 f=|3b-1|=1.7533
+   M_heavy=1e+12: M_light=2.12e+11 GeV, open: ['HH:g=1.16e-17', 'HL:g=8.18e-08', 'HL:g=8.18e-08', 'LL:g=2.73e-07', 'LL:g=2.73e-07', 'LL:g=2.73e-07'], T_R=3.175e+08 GeV, seesaw y_D(M_light)=1.87e-02
+   CHANNELS M_heavy=1e+13: Gamma_LL=1.229e+01 Gamma_HL=6.354e-01 b=0.9508 f=|3b-1|=1.8525
+   M_heavy=1e+13: M_light=2.12e+12 GeV, open: ['HH:g=1.16e-16', 'HL:g=8.18e-07', 'HL:g=8.18e-07', 'LL:g=2.73e-06', 'LL:g=2.73e-06', 'LL:g=2.73e-06'], T_R=3.033e+09 GeV, seesaw y_D(M_light)=5.92e-02
+   CHANNELS M_heavy=5e+13: Gamma_LL=6.056e+00 Gamma_HL=0.000e+00 b=1.0000 f=|3b-1|=2.0000
+   M_heavy=5e+13: M_light=1.06e+13 GeV, open: ['LL:g=1.36e-05', 'LL:g=1.36e-05', 'LL:g=1.36e-05'], T_R=2.076e+09 GeV, seesaw y_D(M_light)=1.32e-01
+c=1: SV=[0.38817  0.274478 0.274478] (heavy index 0? True), Takagi residual 2.2e-16
+   CHANNELS M_heavy=1e+12: Gamma_LL=1.293e-01 Gamma_HL=1.289e-01 b=0.5007 f=|3b-1|=0.5022
+   M_heavy=1e+12: M_light=7.07e+11 GeV, open: ['HH:g=1.16e-17', 'HL:g=2.73e-07', 'HL:g=2.73e-07', 'LL:g=2.73e-07', 'LL:g=2.73e-07', 'LL:g=2.73e-07'], T_R=4.287e+08 GeV, seesaw y_D(M_light)=3.42e-02
+   CHANNELS M_heavy=1e+13: Gamma_LL=5.848e+00 Gamma_HL=3.236e+00 b=0.6437 f=|3b-1|=0.9312
+   M_heavy=1e+13: M_light=7.07e+12 GeV, open: ['HH:g=1.16e-16', 'HL:g=2.73e-06', 'HL:g=2.73e-06', 'LL:g=2.73e-06', 'LL:g=2.73e-06', 'LL:g=2.73e-06'], T_R=2.543e+09 GeV, seesaw y_D(M_light)=1.08e-01
+   CHANNELS M_heavy=5e+13: Gamma_LL=0.000e+00 Gamma_HL=0.000e+00 b=nan f=|3b-1|=nan
+   M_heavy=5e+13: M_light=3.54e+13 GeV, open: [], T_R=0.000e+00 GeV, seesaw y_D(M_light)=2.42e-01
+c=3: SV=[0.823433 0.823433 0.38817 ] (heavy index 0? False), Takagi residual 3.2e-16
+   CHANNELS M_heavy=1e+12: Gamma_LL=1.229e-01 Gamma_HL=1.134e+00 b=0.0978 f=|3b-1|=0.7067
+   M_heavy=1e+12: M_light=2.12e+12 GeV, open: ['HH:g=1.16e-17', 'HL:g=8.18e-07', 'HL:g=8.18e-07', 'LL:g=2.73e-07', 'LL:g=2.73e-07', 'LL:g=2.73e-07'], T_R=9.459e+08 GeV, seesaw y_D(M_light)=5.92e-02
+   CHANNELS M_heavy=1e+13: Gamma_LL=0.000e+00 Gamma_HL=4.264e-22 b=0.0000 f=|3b-1|=1.0000
+   M_heavy=1e+13: M_light=2.12e+13 GeV, open: ['HH:g=1.16e-16'], T_R=1.742e-02 GeV, seesaw y_D(M_light)=1.87e-01
+   CHANNELS M_heavy=5e+13: Gamma_LL=0.000e+00 Gamma_HL=0.000e+00 b=nan f=|3b-1|=nan
+   M_heavy=5e+13: M_light=1.06e+14 GeV, open: [], T_R=0.000e+00 GeV, seesaw y_D(M_light)=4.19e-01
+EXIT 0

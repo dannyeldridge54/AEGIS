@@ -9020,3 +9020,15 @@ Derivation + arithmetic on the locked D792 formula (output kept at theory/deriva
 4. Verdict: Y_B can be reached inside the frozen band only if the two channel widths sit within 0.005–0.4% of the ratio 1 : 2. With no symmetry forcing b = 1/3, that is a tuning of 1 part in 250–20000. Rank 1 of D876 is WEAKENED: viable in principle, natural only if some structure enforces Γ(N_Y N₃) = 2Γ(N_nN_n) at leading order (an open question: the 2⊕1 couplings of D725 would decide it).
 5. Next step (would need a lock): compute b from the D725 2⊕1 couplings at ρ. If b = 1/3 exactly at leading order, f comes from a small correction and the route becomes natural.
 MAP: node=lepto_rho status=assumed touches=[band_e,n_sector_rho] ripple=no
+
+## D878 (B.3b): the 2⊕1 couplings give b = 0.10–0.95, never near 1/3 by structure; the transfer route needs c tuned
+Lock: PREREG_D878_channel_ratio.md (committed before the run). Script theory/modular/channel_ratio_d878.py (D725 code verbatim plus per-channel sums), output field_tests/results/channel_ratio_d878.txt.
+| c | M_heavy (GeV) | b = Γ_LL/(Γ_LL + Γ_HL) | f = |3b − 1| |
+|---|---|---|---|
+| 0.3 | 1e12 / 1e13 / 5e13 | 0.918 / 0.951 / 1.000 | 1.75 / 1.85 / 2.00 |
+| 1 | 1e12 / 1e13 | 0.501 / 0.644 | 0.50 / 0.93 |
+| 3 | 1e12 | 0.098 | 0.71 |
+(c = 1 at 5e13 and c = 3 at 1e13/5e13: channels closed; the c = 3, 1e13 "b = 0" row is the tiny Z₃-forbidden-by-charge HH entry, 4e-22, kept in Γ_HL by the bookkeeping and irrelevant.)
+Verdict (locked rule): NEEDS TUNING. No open case has f in D877's required 1.4e-4–1.1e-2; b passes through 1/3 only between c = 1 and c = 3 (at M_heavy = 1e12), so a c tuned to the 1e-4–1e-2 level relative to that crossing would be needed. No structure enforces b = 1/3. Pre-stated prediction CONFIRMED.
+Consequence [derived]: the suppressed-transfer route (D876 rank 1) is not natural with the model's own 2⊕1 sector. ρ baryogenesis inside the frozen band remains open; the remaining candidates are D876 ranks 2–3 (light-mediator late-decay baryogenesis; a Z₃-allowed AD direction).
+MAP: node=lepto_rho status=assumed touches=[band_e,n_sector_rho] ripple=no

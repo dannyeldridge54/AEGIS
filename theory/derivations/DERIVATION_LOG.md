@@ -996,3 +996,10 @@ Touches: lepto_rho, band_e.
 3. Band-safe T₂ needs f = 1.4e-4–1.1e-2, |b − 1/3| = 5e-5–4e-3 [derived] (arithmetic on D792's formula).
 4. A tuning unless a symmetry fixes b = 1/3 [estimate].
 Touches: lepto_rho, band_e, n_sector_rho.
+
+## D878: B.3b channel ratio
+1. LL = N_nN_n and HL = N_Y N₃ identified by Z₃ charge [derived] (D780).
+2. D725 couplings give b = 0.10–0.95 across open cases [derived] (computed, PREREG_D878).
+3. f never reaches the required 1.4e-4–1.1e-2 without tuning c [derived].
+4. Suppressed-transfer route not natural; ranks 2–3 remain [derived] (D876).
+Touches: lepto_rho, band_e, n_sector_rho.
