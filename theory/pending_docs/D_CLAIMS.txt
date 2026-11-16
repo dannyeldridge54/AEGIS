@@ -68,3 +68,4 @@ D781  2026-11-16T08:01Z  forward: SERAPIS-E N*, n_s, r with a late second reheat
 D782  2026-11-16T08:20Z  reverse: what sets the decay scale of the Z3-charged heavy nu at rho; literature confirms residual Z3 stabilises N
 D783  2026-11-16T08:27Z  forward: Lambda window for T2 and late-decay baryogenesis epsilon at rho
 D784  2026-11-16T08:34Z  reverse: wino window at rho after Z3 late reheating (thermal winos only)
+D785  2026-11-16T08:43Z  forward mirror: residual Z4 at tau=i - do the heavy pair states decay to leptons, and is the light spectrum degenerate?
