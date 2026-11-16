@@ -100,4 +100,5 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - B.3 [done D877: needs b = 1/3 to 0.005–0.4%; tuning unless symmetric] Pick the best candidate; locked computation of Y_B and of its effect on N* (does it stay inside the frozen band?).
 - B.4 [done D879: LH_u AD candidate at ρ found] Verdict and v3.2 note.
 - B.3b [done D878: needs tuning]. Next: B.4 verdict (D879) and choose rank 2 or 3 as follow-up.
-- B.5 [open] Locked LH_u AD computation at ρ (T₂ = 1e5–1e6 GeV, m_ν₁, soft masses; ρ lepton-sector compatibility).
+- B.5 [done D880: FITS, m_ν₁ ≈ 4e-9–7e-8 eV] Locked LH_u AD computation at ρ (T₂ = 1e5–1e6 GeV, m_ν₁, soft masses; ρ lepton-sector compatibility).
+- B.6 [open] Fold D880 into status, POSTULATES (none new), and the v3.2 draft (abstract + Sec. VII ρ baryogenesis statement; label post hoc).

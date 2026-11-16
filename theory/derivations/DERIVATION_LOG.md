@@ -1011,3 +1011,11 @@ Touches: lepto_rho, band_e, n_sector_rho.
 4. LH_u AD at T₂ = 1e5–1e6 GeV needs m_ν₁ ≈ 1e-10–1e-9 eV [estimate] (standard formula, from memory).
 5. ρ gains a candidate mechanism inside the frozen band, pending a locked check [derived].
 Touches: lepto_rho, band_e, mnu.
+
+## D880: B.5 LH_u AD at ρ
+1. n_B/s ≃ 1e-11 δ_eff (m_ν₁/1e-8 eV)^{−3/2}(m_{3/2}|a_m|/TeV), mild T_R^{1/3} below 1e8 GeV [literature] (hep-ph/0102187).
+2. At ρ, T_R → T₂ = 1e5–1e6 GeV and m_{3/2} = 2.5e5–7e5 GeV [derived] (D781, covariant completion).
+3. Required m_ν₁ = 4e-9–7e-8 eV [derived] (computed, PREREG_D880).
+4. ρ has a post-hoc baryogenesis route inside the frozen band [derived].
+5. Realistic ρ lepton sector and the condensate's CP phase still open [estimate].
+Touches: lepto_rho, band_e, mnu, n_sector_rho.

@@ -1,0 +1,13 @@
+T2=1e+05 m32=2.5e+05 delta=0.1: required m_nu1=4.35e-09 eV
+T2=1e+05 m32=2.5e+05 delta=1.0: required m_nu1=2.02e-08 eV
+T2=1e+05 m32=7.0e+05 delta=0.1: required m_nu1=8.65e-09 eV
+T2=1e+05 m32=7.0e+05 delta=1.0: required m_nu1=4.02e-08 eV
+T2=3e+05 m32=2.5e+05 delta=0.1: required m_nu1=5.56e-09 eV
+T2=3e+05 m32=2.5e+05 delta=1.0: required m_nu1=2.58e-08 eV
+T2=3e+05 m32=7.0e+05 delta=0.1: required m_nu1=1.10e-08 eV
+T2=3e+05 m32=7.0e+05 delta=1.0: required m_nu1=5.13e-08 eV
+T2=1e+06 m32=2.5e+05 delta=0.1: required m_nu1=7.26e-09 eV
+T2=1e+06 m32=2.5e+05 delta=1.0: required m_nu1=3.37e-08 eV
+T2=1e+06 m32=7.0e+05 delta=0.1: required m_nu1=1.44e-08 eV
+T2=1e+06 m32=7.0e+05 delta=1.0: required m_nu1=6.70e-08 eV
+EXIT 0

@@ -9042,3 +9042,19 @@ New observation [derived + literature-level estimate]: D875's inventory covered 
 Verdict (so far): ρ has a CANDIDATE baryogenesis mechanism inside the frozen band (LH_u AD with T₂ = 1e5–1e6 GeV and m_ν₁ ≲ 1e-9 eV), pending a locked computation. This would change the paper's statement "the frozen band at ρ leaves no baryogenesis mechanism". Caveats [estimate]: (a) the formula is quoted from memory; (b) the ρ light-neutrino sector from the weight-two doublet alone is exactly degenerate (paper caveat), so the lightest-mass condition must be checked in a realistic ρ lepton sector; (c) thermal effects and the soft-mass scale of the covariant completion (m_soft ~ TeV–100 TeV) enter the onset of oscillation.
 Next (top recommendation): B.5, lock and compute LH_u AD at ρ with the literature formula (fetch it), T₂ = 1e5–1e6 GeV, soft masses from the covariant completion, and check whether m_ν₁ ≲ 1e-9 eV is compatible with the ρ lepton sector.
 MAP: node=lepto_rho status=assumed touches=[band_e,mnu] ripple=no
+
+## D880 (DEEP, B.5): LH_u Affleck–Dine leptogenesis gives ρ a baryogenesis mechanism INSIDE the frozen band, for m_ν₁ ≈ 4e-9–7e-8 eV
+Lock: PREREG_D880_lhu_ad_rho.md (committed before the run). Script theory/modular/lhu_ad_rho_d880.py, output field_tests/results/lhu_ad_rho_d880.txt.
+Formula [literature] (Fujii–Hamaguchi–Yanagida, hep-ph/0102187 eqs. 25–26): n_B/s ≃ 1e-11·δ_eff·(m_ν₁/1e-8 eV)^{−3/2}·(m_{3/2}|a_m|/TeV), nearly independent of T_R for 1e8–1e12 GeV and ∝ T_R^{1/3} for 1e5–1e8 GeV; the authors find m_ν₁ ≈ (0.3–1)e-9 eV for m_{3/2} ~ TeV.
+At ρ [derived]: LH_u is Z₃-neutral (D787), so the direction exists; the condensate oscillates while the Z₃-charged pair dominates, so T_R → T₂, the band-safe late reheating (1e5–1e6 GeV, D781); m_{3/2} = 2.5e5–7e5 GeV from the covariant completion.
+Results [derived] (n_B/s = 8.7e-11):
+- T₂ = 1e5 GeV: m_ν₁ = 4.4e-9 (m_{3/2} = 2.5e5, δ = 0.1) to 4.0e-8 eV (7e5, δ = 1).
+- T₂ = 3e5 GeV: 5.6e-9 to 5.1e-8 eV.
+- T₂ = 1e6 GeV: 7.3e-9 to 6.7e-8 eV.
+Verdict (locked rule): FITS. The required lightest-neutrino mass, 4e-9–7e-8 eV, is "essentially massless" and changes Σm_ν by < 1e-7 eV, so the frozen Σm_ν NO floor (0.0587 eV, the "Affleck–Dine route" row) applies to ρ as well. Pre-stated prediction (1e-8–1e-7 eV) roughly CONFIRMED; the low end is 4e-9.
+Consequences:
+1. The statement "the frozen band at ρ leaves no baryogenesis mechanism" (paper abstract and Sec. VII) is no longer correct: LH_u AD gives the observed asymmetry with T₂ inside the band-safe range. This is a POST-HOC consistency route (found after the freeze), not a new frozen forecast; it ties ρ to the same m_ν₁ ≈ 0 condition as AD at τ = i.
+2. The post-hoc self-diluted ρ history (D792, just outside the band) is no longer needed.
+3. Caveats [estimate]: the ρ lepton sector from the weight-two doublet alone gives a degenerate light pair (paper caveat), so a realistic ρ lepton sector with m_ν₁ ≈ 1e-8 eV must still be built; the CP phase δ_eff of the AD condensate is the usual relative phase between A-term and Weinberg term, which in a string completion is again spontaneous (P1′-type; D843); thermal-effect details at T₂ ≪ 1e8 GeV use the paper's mild T_R^{1/3} scaling.
+Sources: hep-ph/0102187; hep-ph/0008041; hep-ph/9310297.
+MAP: node=lepto_rho status=computed touches=[band_e,mnu,n_sector_rho] ripple=no
