@@ -1,0 +1,27 @@
+== E=2.6e-5
+== E=3.4e-5
+== E=6e-5
+check Ly(rho)=0.340372 vs Lc(rho)=0.340372; Iy at y=2: 0.813134 vs Ic: 0.813134
+check Ly(rho)=0.340372 vs Lc(rho)=0.340372; Iy at y=2: 0.813134 vs Ic: 0.813134
+check Ly(rho)=0.340372 vs Lc(rho)=0.340372; Iy at y=2: 0.813134 vs Ic: 0.813134
+plateau near rho: exponent n = 12.008, coefficient c = 3.095e+03
+mass term: m_hat^2 = 3.402e-05 (V0 units, canonical)
+plateau near rho: exponent n = 12.008, coefficient c = 3.095e+03
+mass term: m_hat^2 = 6.003e-05 (V0 units, canonical)
+plateau near rho: exponent n = 12.008, coefficient c = 3.095e+03
+mass term: m_hat^2 = 2.601e-05 (V0 units, canonical)
+T_R=1e+03 w=0.714: rho_x/rho_end=6.5e-07 N*=48.03 y*=23.0 n_s=0.9663 (-0.7 SPA, -2.4 S+D) r=4.09e-04 FAIL
+T_R=1e+03 w=0.714: rho_x/rho_end=1.3e-06 N*=47.96 y*=23.6 n_s=0.9709 (+0.8 SPA, -0.7 S+D) r=4.80e-04 ok
+T_R=1e+03 w=0.714: rho_x/rho_end=4.7e-07 N*=48.06 y*=22.8 n_s=0.9649 (-1.2 SPA, -2.9 S+D) r=3.89e-04 FAIL
+T_R=1e+03 w=0: rho_x/rho_end=6.5e-07 N*=46.06 y*=22.5 n_s=0.9645 (-1.3 SPA, -3.1 S+D) r=4.37e-04 FAIL
+T_R=1e+03 w=0: rho_x/rho_end=4.7e-07 N*=46.05 y*=22.4 n_s=0.9631 (-1.8 SPA, -3.6 S+D) r=4.17e-04 FAIL
+T_R=1e+03 w=0: rho_x/rho_end=1.3e-06 N*=46.09 y*=23.1 n_s=0.9691 (+0.2 SPA, -1.4 S+D) r=5.08e-04 ok
+T_R=1e+05 w=0.714: rho_x/rho_end=6.5e-07 N*=49.56 y*=23.4 n_s=0.9676 (-0.3 SPA, -1.9 S+D) r=3.88e-04 ok
+T_R=1e+05 w=0.714: rho_x/rho_end=1.3e-06 N*=49.49 y*=24.0 n_s=0.9723 (+1.3 SPA, -0.2 S+D) r=4.60e-04 ok
+T_R=1e+05 w=0.714: rho_x/rho_end=4.7e-07 N*=49.59 y*=23.2 n_s=0.9662 (-0.7 SPA, -2.5 S+D) r=3.69e-04 FAIL
+T_R=1e+05 w=0: rho_x/rho_end=1.3e-06 N*=47.61 y*=23.5 n_s=0.9706 (+0.7 SPA, -0.8 S+D) r=4.85e-04 ok
+VERDICT: VIABLE
+T_R=1e+05 w=0: rho_x/rho_end=6.5e-07 N*=47.59 y*=22.9 n_s=0.9659 (-0.8 SPA, -2.5 S+D) r=4.14e-04 FAIL
+VERDICT: NOT VIABLE
+T_R=1e+05 w=0: rho_x/rho_end=4.7e-07 N*=47.58 y*=22.7 n_s=0.9645 (-1.3 SPA, -3.1 S+D) r=3.96e-04 FAIL
+VERDICT: NOT VIABLE

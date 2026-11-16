@@ -20,11 +20,13 @@
     "D602",
     "D687",
     "D753",
-    "D754"
+    "D754",
+    "D755"
    ],
    "history": [
     "D753: assumed",
-    "D754: estimate"
+    "D754: estimate",
+    "D755: estimate"
    ]
   },
   {
@@ -149,8 +151,7 @@
    ],
    "depends": [
     "eps_tilt"
-   ],
-   "flag": "recheck (D754, eps_tilt)"
+   ]
   },
   {
    "id": "serapis_e",
@@ -167,8 +168,7 @@
    "depends": [
     "plateau_origin",
     "bhk_tilt"
-   ],
-   "flag": "recheck (D754, eps_tilt)"
+   ]
   },
   {
    "id": "janus",

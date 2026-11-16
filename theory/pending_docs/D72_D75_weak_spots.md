@@ -7243,3 +7243,12 @@ VERDICT (reasoning, labelled): the ρ tilt is naturally sized if it is a one-loo
 - (b) recompute ρ's n_s, r with ε tied to the SERAPIS-E volume product (a joint prediction instead of two free tilts).
 τ = i's I₁ tilt stays unexplained, one more reason the paper calls ρ the better-motivated vacuum.
 MAP: node=eps_tilt status=estimate touches=[vac_rho, serapis_e] ripple=no
+
+## D755 (CENTRE; locked PREREG_D755; results/joint_tilt_d755.txt) — the ρ tilt tied to the SERAPIS-E volume comes out ×2 too small with δ = N = 1; the structural lead survives only with δ/N ≈ 2
+Literature (a): the hep-th/0508043 excerpt I read does not show the N = 1 one-loop K formulas (eqs. 3.46, 4.3 were not reached). Its introduction says the D3/D7 one-loop corrections are "suppressed for large values of the volume", but whether the DKL function itself enters K with 1/(Im S·Im ρ) is UNCONFIRMED. The heterotic Green–Schwarz form (from memory: K ⊃ −ln(S + S̄ + δ_GS/8π²·L)) has no volume factor; it would give ε ≈ δ_GS/(16π² Re S) ≈ 3e-3·δ_GS, ~50× too large for O(1) δ_GS.
+Computed (b), D613 machinery, only E changed:
+- E = 2.6e-5 and 3.4e-5 (tied, δ = N = 1, X = 244 / 188): n_s 0.9631–0.9676, r 3.7–4.4e-4. Below the frozen ρ band (0.969–0.972); 1.9–3.6σ low vs SPA+DESI in most rows.
+- E = 6e-5 (fitted): n_s 0.9691–0.9723, r 4.6–5.1e-4. Reproduces D613 (check passed).
+VERDICT: the tied relation with δ = N = 1 under-tilts by ×2. It works only with δ/N ≈ 1.8–2.3, an O(1) factor but a fudge until the one-loop K normalisation is known. The D754 lead is therefore downgraded to "same order of magnitude, normalisation open"; it is not a joint prediction.
+Caveat: D613's reheating bracket (T_R 1e3–1e5) predates today's corrections. A higher T_R (the ρ heavy sector gives fast reheating, D725, though for SERAPIS-E's m_φ) raises N* and n_s by ~0.0008 per e-fold, which would close part of the gap. To recheck if this line is pursued. Loop pauses: the next step needs the full BHK N = 1 formulas (read eqs. 3.46/4.3 of hep-th/0508043 at offset ≥ 100k).
+MAP: node=eps_tilt status=estimate touches=[] ripple=no
