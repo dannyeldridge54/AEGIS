@@ -1196,3 +1196,9 @@ Touches: lepto_rho, lepto_i, mnu.
 1. Table assembled from existing D-notes only [derived].
 2. No new physics; frozen predictions unchanged [derived].
 Touches: none.
+
+## D906: ladder flag recheck
+1. Fourteen flags traced to D887, D895, D897, D904a [derived].
+2. D895 changed only m_ν₁; reheating chain T₂ unchanged [derived] (D781, D895).
+3. All 14 nodes keep their statuses; no new work [derived].
+Touches: none.

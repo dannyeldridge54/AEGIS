@@ -9287,3 +9287,27 @@ MAP: node=lepto_i status=estimate touches=[lepto_rho,mnu] ripple=no
 ## D905: per-branch conditions table added to the v3.2 draft
 A compact table (Table I, limitations section) lists for τ = i and ρ: fitted small numbers (D815, D885–D887; D888a–D890, D896), postulates (P3 both; P1′ at i only, D846, D854, D855), reheating (D727, D815; D781), baryogenesis route (D745, D903; D880a, D895), lepton sector (D742, D786; D779, D883, D896), required m_ν₁ (D900; D895) and the Weinberg condition (D903, D904a; D897, D904a). No new claims; every cell cites its note (all 13 cited D-notes checked to exist). The draft is now 18 pages and builds clean (the first build had a 2.9 pt overfull float, fixed with \footnotesize).
 MAP: none
+
+## D906: ladder recheck: all 14 flags from today's corrections settled; no node needs new work
+Flags came from D887 (ε-origin verdict), D895 (ρ AD window, ripple=yes), D897 and D904a. Each checked against the notes [derived]:
+- n_sector_rho: settled by D896 (lift recomputed for the new target; 3.5% pass, ε ≈ 1.6e-4). Computed.
+- serapis_e: D887 concerns τ = i's fitted ε; SERAPIS-E's tilt is the one-loop BHK term (D696), untouched. Computed.
+- sterile_rho, darkrad_rho, reheat_rho, nstar_e: D895 changed only the m_ν₁ window, not the reheating chain (T₂ = 1e5–1e6 GeV, D781, unchanged); these nodes do not depend on m_ν₁. Computed.
+- lepto_rho: settled by D895 (window), D897 (Weinberg bound), D904a (g_s per branch). Estimate.
+- gravitino_wino, wino_window, tests_lhc: depend on T₂ and m_{3/2}, both unchanged. Statuses unchanged.
+- band_i: D887 confirms ε stays fitted; frozen band unchanged. band_e: unchanged. mnu: NO floor unaffected by m_ν₁ ~ 1e-10–1e-9 eV (D900, D902). tests_cmb: unchanged.
+No node needs new work; nothing added to ACCURACY_QUEUE.
+MAP: node=n_sector_rho status=computed touches=[] ripple=no
+MAP: node=serapis_e status=computed touches=[] ripple=no
+MAP: node=sterile_rho status=computed touches=[] ripple=no
+MAP: node=darkrad_rho status=computed touches=[] ripple=no
+MAP: node=reheat_rho status=computed touches=[] ripple=no
+MAP: node=nstar_e status=computed touches=[] ripple=no
+MAP: node=lepto_rho status=estimate touches=[] ripple=no
+MAP: node=gravitino_wino status=computed touches=[] ripple=no
+MAP: node=band_i status=frozen touches=[] ripple=no
+MAP: node=band_e status=frozen touches=[] ripple=no
+MAP: node=mnu status=frozen touches=[] ripple=no
+MAP: node=wino_window status=corrected touches=[] ripple=no
+MAP: node=tests_cmb status=computed touches=[] ripple=no
+MAP: node=tests_lhc status=literature touches=[] ripple=no
