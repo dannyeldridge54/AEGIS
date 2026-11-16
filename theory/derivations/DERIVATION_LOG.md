@@ -784,3 +784,9 @@ Touches: none.
 4. CP paragraph and bullet rewritten for P1′; stale P2 clause removed [derived] (D843–D846, D772).
 5. 16 pages, no undefined references, no overfull boxes; v3.1 file unchanged [derived].
 Touches: none.
+
+## D849: V.3 v3.2 checks and changelog
+1. Every new number checked against its D-note by script; one rounding (563 → 560) noted [derived].
+2. Two abstract contradictions fixed (CP, plateau origin) [derived] (D839, D846).
+3. Changelog written, PDF built, 16 pages, clean log [derived].
+Touches: none.

@@ -8700,3 +8700,9 @@ Applied to papers/v3/serapis_v3.2_draft.tex (published serapis_v3.tex unchanged,
 - D846: "Where the CP phase comes from": the uniform-prior sentence replaced by CP-as-string-symmetry (2010.10782, 1901.03251; bib entries added), no CP source in the toroidal configuration, racetrack Kähler axion with CP-odd minima in 90% of the scan (P1′). The caveat bullet now states P1′; its stale flux-relation clause (P2, retired D772) was removed.
 Build: 16 pages, no undefined references, no overfull boxes.
 MAP: none
+
+## D849 (v3.2 draft, V.3): number check, abstract fixes, changelog, PDF
+1. Number check (script against the cited D-notes): 0.0005 (D824), 975 (D831's 750–975 for N_eff = 4), 90% (D845), 1.40–1.45e-4 (D815), +0.02 (D835), 2e4 (D836) all present. "560" is D830's 563 (N_eff = 3) rounded down; the paper's "≈ 560–975" spans D830 and D831 and is a fair rounding [derived]. α_s −(1.0–1.2)e-3 and C ≈ 3–7e-7 match D823 (3.4–6.5e-7 rounded outward).
+2. Abstract: two clear contradictions fixed. (a) CP: "favours the non-CP completion" replaced by spontaneous CP violation from a racetrack Kähler axion, with the gCP-unbroken version as the one a leptonic-CPV discovery would exclude (D846). (b) Plateau: added "we find no string origin for its form" (D839). The intro's "we have not found its [ε's] microscopic origin" and the SERAPIS-E "microscopic origin for the tilt" (the BHK tilt, D689) remain true and were left.
+3. CHANGELOG_v3.2.md written; PDF saved as papers/v3/serapis_v3.2_draft.pdf (16 pages, no undefined references, no overfull boxes). Not uploaded anywhere.
+MAP: none
