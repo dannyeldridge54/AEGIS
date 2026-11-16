@@ -97,3 +97,4 @@ D810  2026-11-16T12:33Z  orbit charge coefficient
 D811  2026-11-16T12:50Z  D802 remnant computed
 D812  2026-11-16T12:54Z  exactness audit
 D813  2026-11-16T12:57Z  D793 exact MS recompute
+D814  2026-11-16T12:59Z  D725 exact MS
