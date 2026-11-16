@@ -8975,3 +8975,25 @@ MAP: node=serapis_e status=computed touches=[eps_tilt] ripple=no
 ## D874: checkpoint; day summary written; next deep project chosen (ρ baryogenesis)
 papers/v3/DAY_SUMMARY_2026-11-16.md written (plain-language summary of D828–D873, corrections, ranked open items) and synced to the project; CURRENT_STATE updated and synced. Top open item chosen under the autonomy rule: ρ baryogenesis inside the frozen band (plan B.1–B.4 in ACCURACY_QUEUE).
 MAP: none
+
+## D875 (DEEP, B.1): inventory of ρ baryogenesis routes
+From the notes only.
+Binding Z₃ facts at ρ [derived, D778–D780, D787]:
+- The inflaton (δτ at ρ) carries a non-trivial Z₃ charge q_φ ≠ 0.
+- Heavy states: N_Y (charge 0), Dirac pair N_n (q) / N₃ (−q), neutral singlets S₁, S₂.
+- Realistic light masses force q_L = −q_H, so the renormalisable L·N·H needs q_N = 0: the charged pair cannot decay to L + H.
+- Every inflaton decay channel contains a charged N (q_a + q_b ≡ −q_φ ≠ 0).
+- If the Higgs carries Z₃ charge, the residual Z₃ acts on SM operators as baryon triality; the pair can then decay through N·u^c d^c d^c, and the proton is protected (D787).
+- Z₃ is exact (modular symmetry is gauged).
+| Route | Note | Outcome |
+|---|---|---|
+| Thermal / non-thermal leptogenesis after the first reheating (T_R 3e8–3e9 GeV) | D725, D731 | Superseded: the charged pair is long-lived; a second, late reheating dilutes or resets it (D780) |
+| Late decay of the pair via string-scale dim-6 operators, T₂ ≳ 1e5–1e6 GeV | D781, D783 | Frozen band survives only if T₂ ≳ 1e5–1e6 (Λ ≲ M_s); gives reheating, not baryons |
+| Late N → udd decays (dim-6) as the CP source | D788 | Wall: ε ≤ 2e-8 (Nanopoulos–Weinberg), needs ≥ 2e-5 |
+| P5: light Z₃-charged diquark mediator | D788, D789 | Consistent, but all couplings conserve B; N decays cannot make baryons. P5 retired (D792) |
+| Inflaton-decay ε | D790 | Hopeless, ≤ 3e-13 |
+| Inflaton Affleck–Dine orbit charge η | D790, D791 | Large charge (η ~ 0.1–0.2) but isocurvature forces |Δx| ≥ 0.15, overproducing by ~3e4 |
+| Inflaton AD + self-dilution by the late N decays | D792, D793 | Works (Y_B = 8.75e-11 at T₂ ≈ 140–1100 GeV, Λ ≈ 5e16–2e17) but lands at n_s 0.9667–0.9703, r 5.13–5.59e-4: just OUTSIDE the frozen band (post hoc) |
+Diagnosis [derived]: the frozen band needs T₂ ≳ 1e5 GeV (fast late decay), while the only working asymmetry (inflaton AD) needs strong dilution, i.e. a slow decay and T₂ ~ 1e2–1e3 GeV. The two pull T₂ in opposite directions. A route inside the band needs an asymmetry that is (a) produced at or after T₂ ≳ 1e5 GeV, or (b) produced earlier but with a size that the modest dilution at T₂ ≳ 1e5 GeV brings to 8.75e-11.
+Next (B.2, literature): mechanisms of type (a): late-decay baryogenesis with a large ε (resonant, or with light mediators), spontaneous baryogenesis from the racetrack axion (P1′'s axion rolling during reheating), and Z₃-allowed AD flat directions with smaller charge; type (b): an inflaton AD charge reduced to η ~ 1e-4 (needs a smaller |Δx|, which isocurvature forbids, D791) or a different condensate.
+MAP: node=lepto_rho status=assumed touches=[band_rho] ripple=no

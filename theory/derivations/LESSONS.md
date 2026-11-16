@@ -121,3 +121,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D872: a referee item may already be satisfied by existing text; check before adding words (the D-label explanation was already there).
 - 2026-11-16 D873: write ratios of loop terms in geometric variables first; here everything cancelled except the inflaton torus's area, which settled the question without a scan.
 - 2026-11-16 D874: write the day's summary before starting the next deep project; ranking open items on one page made the biggest remaining gap (ρ baryogenesis) obvious.
+- 2026-11-16 D875: an inventory table can turn a pile of failures into one tension with a direction (here: T₂ wanted high by the band, low by the dilution).

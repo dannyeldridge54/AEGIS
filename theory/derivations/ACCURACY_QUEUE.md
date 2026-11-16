@@ -95,7 +95,7 @@ Why: today's results each demand values of the same moduli (g_s, Im ρ₁, Im ρ
 
 ## ρ-baryogenesis deep project (picked 2026-11-16 as the top open item, autonomous mode)
 Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its frozen band (residual Z₃ makes the inflaton's decay products long-lived; D780, D789, D792); the only consistent history is post hoc and just outside the band.
-- B.1 [open] Inventory: every ρ route tried (D725, D731, D780–D793) and why each failed or left the band; list the Z₃ selection rules that bind.
+- B.1 [done D875] Inventory: every ρ route tried (D725, D731, D780–D793) and why each failed or left the band; list the Z₃ selection rules that bind.
 - B.2 [open] Literature: baryogenesis mechanisms compatible with an exact discrete symmetry and a long-lived Z₃-charged state (e.g. late-decay baryogenesis through dim-6 operators, spontaneous baryogenesis from a rolling axion, Z₃-allowed Affleck–Dine directions, gravitational/thermal leptogenesis at low T_R).
 - B.3 [open] Pick the best candidate; locked computation of Y_B and of its effect on N* (does it stay inside the frozen band?).
 - B.4 [open] Verdict and v3.2 note.

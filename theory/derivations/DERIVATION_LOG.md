@@ -975,3 +975,10 @@ Touches: serapis_e, eps_tilt.
 1. Day summary of D828–D873 written and synced [derived].
 2. Open items ranked; ρ baryogenesis inside the frozen band chosen next [derived] (D780, D789, D792).
 Touches: none.
+
+## D875: B.1 ρ baryogenesis inventory
+1. Binding Z₃ rules collected [derived] (D778–D780, D787).
+2. Seven routes tabulated with outcomes [derived] (D725–D793).
+3. Tension: frozen band needs fast late decay (T₂ ≳ 1e5 GeV), the working AD route needs slow decay (T₂ ~ 1e2–1e3 GeV) [derived] (D781, D792).
+4. Targets for B.2: asymmetry produced at or after T₂ ≳ 1e5 GeV, or a smaller early asymmetry [derived].
+Touches: lepto_rho, band_rho.
