@@ -201,3 +201,14 @@ Touches: n_sector_rho (computed → corrected), mnu, lepto_rho.
 6. Singlets 1 and 1′ of S₃ have ST-charge 0 (ST is a 3-cycle, trivial on both 1-dim reps); with suitable weights, q = 0 for all three [derived].
 7. [derived] Consistency: D777's degeneracy is now explained. The heavy-ν doublet results (D724–D776) are unaffected, since only light-mass degeneracy is excluded. The frozen Σm_ν is untouched (locked).
 Touches: n_sector_rho (corrected), mnu.
+
+## D779 — Z₃ bookkeeping of the ρ seesaw (forward side)
+1. In the basis (n, Y, N₃), M_R = [[0, 0, c], [0, √2·i, 0], [c, 0, 0]], up to the normalisation of A [derived] (computed; K4 SVs (c, c, √2)).
+2. So N_n–N₃ is a Dirac pair (charges q, −q) and N_Y has charge 0 [derived] (Z₃ invariance of each non-zero entry).
+3. A Weinberg mass for leptons needs a common lepton charge q_L = −q_H [derived] (D778).
+4. Dirac couplings need q_N = −q_L − q_H = 0, i.e. N_Y only [derived].
+5. So rank(m_ν) = 1 [derived] (computed: 1000/1000).
+6. Each extra q = 0 heavy singlet raises the rank by 1, so two are needed [derived] (computed).
+7. The N_n–N₃ pair has no tree-level coupling to q = 0 leptons, so its decays cannot make a lepton asymmetry [derived].
+8. [derived] Consistency: D775's Casas–Ibarra assumption (all N couple to all L) is violated at ρ, so D775 must be re-examined (correction pending). The reheating result D725 (inflaton → N pairs) is unaffected.
+Touches: n_sector_rho, lepto_rho, mnu.

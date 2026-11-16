@@ -7583,3 +7583,14 @@ Remedy (creation, testable): put the lepton doublets in Γ₂ SINGLETS, L ∈ 1 
 VERDICT (locked rule): NOT RESTORED with lepton doublets. ρ-branch lepton doublets are EXCLUDED by the residual Z₃ (exact).
 Next (forward): verify the singlet remedy. Seesaw with L = 1 ⊕ 1 ⊕ 1′ and the D724 heavy sector at ρ, singlet Dirac couplings (weight-0 constants and the weight-6 E6 entries allowed by q = 0). Find the NO fraction with Σm_ν ≤ 0.064 eV. Also check whether leptogenesis (D775) survives with this Dirac structure (Casas–Ibarra is agnostic; just confirm a fit exists).
 MAP: node=n_sector_rho status=corrected touches=[mnu] ripple=no
+
+## D779 (FORWARD, i-side; Jl tick 18; locked PREREG_D779 + DEVIATIONS D1–D2; results/rho_charges_d779.txt, run1 INVALID kept) — the singlet-lepton remedy alone gives rank(m_ν) = 1; the ρ branch needs two EXTRA Z₃-neutral heavy singlets
+Computed (charge eigenbasis of the Γ₂ doublet at ρ: n = (1, −i)/√2 and Y = (1, i)/√2; K4: M_R's singular values (1, 1, √2) at c = 1, PASS after D1–D2):
+- In that basis M_R has non-zero entries only at (n, N₃) and (Y, Y). So N_n and N₃ form a Dirac-type pair (charges q, −q; mass c), and N_Y is the only Z₃-neutral, pure Majorana state (mass √2).
+- With light leptons as singlets of common charge q_L = −q_H, Dirac couplings are allowed only to q = 0 heavy states, i.e. N_Y alone. Then rank(m_ν) = 1 (1000/1000 random draws): two massless light neutrinos, FAIL.
+- Adding Z₃-neutral heavy singlets with generic masses: rank 2 with one extra, rank 3 with two extra.
+VERDICT (locked rule): the D778 remedy FAILS as stated. MINIMAL working extension: light leptons as Γ₂ singlets (q = −q_H) PLUS at least two extra Z₃-neutral heavy singlet neutrinos.
+- The 2⊕1 sector keeps its role in reheating and leptogenesis (the Dirac pair N_n–N₃ and N_Y; D724–D776). The light masses come from N_Y and the two new singlets.
+- Consequence: D775's leptogenesis assumed 3 heavy states with Casas–Ibarra Yukawas. With 5 heavy states and Z₃-restricted Yukawas (the N_n, N₃ pair has NO Dirac coupling to q = 0 leptons at ρ), the decaying Dirac-pair states cannot produce a lepton asymmetry at tree level, because they do not couple to leptons. Only N_Y and the new singlets can.
+- This affects D775 (computed with the full Casas–Ibarra structure) and is a CORRECTION to check next.
+MAP: node=n_sector_rho status=corrected touches=[lepto_rho, mnu] ripple=no

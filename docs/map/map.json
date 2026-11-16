@@ -91,13 +91,14 @@
     "D724",
     "D739",
     "D777",
-    "D778"
+    "D778",
+    "D779"
    ],
    "depends": [],
    "history": [
-    "D739: computed",
     "D777: corrected",
-    "D778: corrected"
+    "D778: corrected",
+    "D779: corrected"
    ]
   },
   {
@@ -464,7 +465,7 @@
     "D775: corrected",
     "D776: corrected"
    ],
-   "flag": "recheck (D777, n_sector_rho)"
+   "flag": "recheck (D779, n_sector_rho)"
   },
   {
    "id": "gravitino_wino",
@@ -557,7 +558,7 @@
     "D740: frozen",
     "D750: frozen"
    ],
-   "flag": "recheck (D778, n_sector_rho)"
+   "flag": "recheck (D779, n_sector_rho)"
   },
   {
    "id": "wino_window",

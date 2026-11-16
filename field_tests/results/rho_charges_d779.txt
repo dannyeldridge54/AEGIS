@@ -1,15 +1,10 @@
-/home/claude/aegis/theory/modular/rho_charges_d779.py:9: RuntimeWarning: invalid value encountered in divide
-  Bu=B/np.linalg.norm(B,axis=0)
 M_R in eigenbasis (rounded):
- [[ 0.-0.j        0.+0.j       nan     +nanj]
- [ 0.+0.j        0.+1.414214j nan     +nanj]
- [nan     +nanj nan     +nanj nan     +nanj]]
-Traceback (most recent call last):
-  File "/home/claude/aegis/theory/modular/rho_charges_d779.py", line 12, in <module>
-    print("SVs:",np.sort(np.linalg.svd(Mp,compute_uv=False)))
-                         ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 1850, in svd
-    s = _umath_linalg.svd(a, signature=signature)
-  File "/usr/local/lib/python3.13/site-packages/numpy/linalg/_linalg.py", line 153, in _raise_linalgerror_svd_nonconvergence
-    raise LinAlgError("SVD did not converge")
-numpy.linalg.LinAlgError: SVD did not converge
+ [[0.-0.j       0.+0.j       1.+0.j      ]
+ [0.+0.j       0.+1.414214j 0.+0.j      ]
+ [1.+0.j       0.+0.j       0.+0.j      ]]
+SVs: [1.         1.         1.41421356]
+non-zero entries: [(0, 2), (1, 1), (2, 0)]
+q=0 (pure Majorana) heavy states: [1]
+extra q=0 singlet N's: 0 -> generic rank(m_nu) = 1
+extra q=0 singlet N's: 1 -> generic rank(m_nu) = 2
+extra q=0 singlet N's: 2 -> generic rank(m_nu) = 3
