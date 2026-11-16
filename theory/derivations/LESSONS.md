@@ -191,3 +191,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D941: X/(X+1) signals a series combination of two competing terms.
 - D942: one-search novelty checks are not exhaustive; say so.
 - D943: check the sign of dV/dφ before designing initial conditions.
+- D944: corrected locked design passed; the D943 failure was setup.

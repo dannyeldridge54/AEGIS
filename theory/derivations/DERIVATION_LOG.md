@@ -1412,3 +1412,8 @@ Touches: none.
 - [computed] run 1 invalid (normalisation 2/ξ vs 4/ξ; start near ρ).
 - [derived] (sympy) dV₁/dÊ > 0 everywhere: no turnaround; D2's start rule inapplicable.
 - Result: no observables; new lock D944 needed.
+
+## D944: two-field P3 check (locked) PASS
+- [computed] Δn_s = −4.7e-6/−1.8e-5, Δr/r = +0.01%/+0.05% for M = 0.1/0.2; m²/H² = 2.9e5/7.3e4; 1 − c_s² ≲ 4e-14.
+- [derived] m²/H² ≈ 6Ê/M² on the plateau.
+- Result: D941 realises P3 with no observable cost; mass source still assumed.

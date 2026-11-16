@@ -9567,3 +9567,11 @@ Rerun (DEVIATIONS D1–D2): the corrected normalisation passed the 1e-4 sanity c
 Per the DEVIATIONS rule (one rerun only), D943 ends here with no result; the PASS/FAIL question is open. Next: a NEW lock (D944) with the start fixed by e-folds (start where the single-field solution has ≥ 80 e-folds left), same model, C, M, N* and pass rule.
 LESSONS: check the sign of dV/dφ symbolically before designing initial conditions; two process errors in one lock means the lock was written too fast.
 MAP: none
+
+## D944 (P3, locked PREREG_D944): PASS: the heavy-field form of P3 (D941) reproduces SERAPIS-E's background to |Δn_s| ≤ 2e-5 and |Δr/r| ≤ 0.05% for M ≤ 0.2; the heavy field is very heavy and the trajectory barely turns
+[computed] (field_tests/results/twofield_p3_d944.txt; Eisenstein sum passes the lattice check, 2.671734 vs 2.671719) C = 1.15e-6, start at 80 slow-roll e-folds, N* = 55, first-order Hubble-flow formulas for both models: single-field P3 n_s = 0.97566, r = 4.419e-4 (82.0 e-folds). Two-field: M = 0.1: Δn_s = −4.7e-6, Δr/r = +0.01%, m²/H² = 2.9e5, Ω/H = 1.8e-5, 1 − c_s² = 4e-15; M = 0.2: Δn_s = −1.8e-5, +0.05%, m²/H² = 7.3e4; M = 0.5 (reported only): Δn_s = −1.0e-4, +0.28%, m²/H² = 1.2e4. Locked rule met for M = 0.1, 0.2: PASS.
+[derived] Why so heavy: m_χ²/H² = 6(Ê+1)²/(Ê M²) ≈ 6Ê/M² on the plateau, with Ê ~ 10³–10⁴ at horizon exit, far above the D941 lower bound 24/M².
+Note: the absolute n_s here (first-order Hubble flow, N* = 55) is not the paper's exact Mukhanov–Sasaki value; only the two-field minus single-field difference is tested, as locked.
+Verdict: P3 can be read as "one heavy field whose mass² ∝ Ê, integrated out" with no observable cost. What remains assumed is the source of that mass² (a T²-tower one-loop mass ∝ E(U,2) with a tuned offset, D941). P3's status moves from "postulate" to "postulate with a dynamical realisation (two-field, verified at background level)".
+LESSONS: a locked rerun with a corrected design passed cleanly; the D943 failure was in the setup, not the idea.
+MAP: none
