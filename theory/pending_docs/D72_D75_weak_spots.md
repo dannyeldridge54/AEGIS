@@ -9434,3 +9434,10 @@ Audit [derived] (API read vs local md5sum): 12 of 12 files match. 24290583 consi
 Not done: older versions v3.1 (24281771) and v3 (24250733) are superseded and left as they are. The v3.2 record now points to the v3.3 draft fix in its notes.
 LESSONS: Zenodo free-text keywords go in through the form (the API drops them); build PUT metadata fresh, never echo GET.
 MAP: none
+
+## D925 (completion literature tick): NULL for SERAPIS; one new plateau from a CY complex-structure boundary, not a fixed point
+Search (1, standard) for 2026 modular or complex-structure plateau models. New to our notes: [literature] Pirzada & Li, "Controlled Penumbral Inflation from Monodromic Valleys" (arXiv:2605.10197): a plateau from a Type IIB complex-structure flux potential near a one-parameter CY boundary (local only, no full compact embedding); benchmark n_s ≈ 0.9643, r ≈ 1.25e-3, α_s ≈ −r/2 ≈ −6e-4. [literature] "Assisted Fibre Inflation in pLVS" (arXiv:2604.19250): Kähler-moduli fibre inflation, no modular structure.
+[derived] (arithmetic) Penumbral n_s sits 3.1σ below CMB-SPA+DESI (0.9728 ± 0.0027) and 1.4σ below CMB-SPA alone; its α_s is close to the plain-attractor value −(1−n_s)²/2 = −6.4e-4 at that n_s, so our consistency-relation paper's distinction (κ) does not apply to it directly.
+Verdict: a boundary (large-complex-structure) plateau, not an interior SL(2,Z) fixed point, so it does not supply SERAPIS's non-toroidal completion. Open problem unchanged. Next completion tick should not repeat this search.
+LESSONS: complex-structure plateaus in 2026 sit at moduli-space boundaries, not at τ = i or ρ; search interior-point CY examples (Fermat/Z₃-symmetric points) next.
+MAP: none

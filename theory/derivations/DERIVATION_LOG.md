@@ -1313,3 +1313,8 @@ Touches: none.
 - [derived] (md5 comparison) 12/12 posted files identical to local release files.
 - [literature] none.
 - Result: v3.2 page completed (68 refs, 19 keywords, related works to papers 1–4); all five records fully filled.
+
+## D925: completion literature tick
+- [literature] arXiv:2605.10197 (boundary complex-structure plateau, n_s ≈ 0.9643), arXiv:2604.19250 (pLVS fibre inflation).
+- [derived] (arithmetic) 2605.10197 n_s is 3.1σ below SPA+DESI.
+- Result: NULL for the SERAPIS completion.
