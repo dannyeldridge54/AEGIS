@@ -30,3 +30,4 @@ D743  2026-11-16T03:38Z  baryogenesis routes at tau=i: literature
 D744  2026-11-16T03:42Z  reverse ladder: radiative resonant leptogenesis at tau=i (literature)
 D745  2026-11-16T03:43Z  radiative resonant leptogenesis at tau=i (computation)
 D746  2026-11-16T03:45Z  reverse ladder: plateau origin requirement
+D747  2026-11-16T03:46Z  D3 half-period gauge thresholds cannot give the plateau
