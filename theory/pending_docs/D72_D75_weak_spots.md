@@ -7141,3 +7141,11 @@ Literature (2 searches):
 - I found no source giving ln E(U,2) or E(U,2) in a gauge kinetic function. Option (ii) is also numerically weak: β ~ 1e-3, E ~ 2e2 at horizon exit, so βE ~ 0.2 ≪ Re S ~ 4.
 VERDICT: the requirement is now sharp: one negative-energy term scaling as E(τ,2)^{−1}. But no in-string source is known (search-limited claim). Node plateau_origin stays OPEN. This is the model's main unexplained input, together with ε at τ = i (eps_tilt). Next real step: a direct computation of D3-brane gauge thresholds at the half-periods (whether the annulus that gives E(U,2) in K also gives ln E(U,2) in f) is a research project, not a loop tick. Loop pauses.
 MAP: node=plateau_origin status=open touches=[] ripple=no
+
+## D747 (CENTRE; locked PREREG_D747; results/halfperiod_thresholds_d747.txt) — gauge thresholds from D3 stacks at the half-periods cannot make the plateau
+Computed (U = ½ + iy, y = 2–20):
+- ϑ₂ϑ₃ϑ₄ = 2η³ holds to 1e-30. With equal stacks at the three half-periods, the combined gauge threshold is U-INDEPENDENT (holomorphic part).
+- Single-stack thresholds are LINEAR in y: ln|ϑ₃/η|² = ln|ϑ₄/η|² = πy/6 exactly, and ln|ϑ₂/η|² ≈ −πy/3 + ln 4. A condensate built on them therefore gives potentials ∝ e^{−c·y}, while the SERAPIS-E plateau needs a POWER law 1/E(U,2) ∝ y^{−2} (E(U,2) grows as y²: 55, 217, 425 at y = 5, 10, 14).
+Source of the threshold form: Berg–Haack–Körs hep-th/0404087 eqs. 40/44, where a stack at Wilson line A gives −ln|ϑ₁(A,U)/η|² plus a non-holomorphic πU₂a₄², which is also linear in U₂.
+VERDICT (locked rule): route (i) of D746, a gauge-threshold condensate from this brane setup, is EXCLUDED. A power law in U₂ comes naturally only from Kähler/volume factors, and the Epstein-Kähler route is closed (D717/D718). The plateau term remains an assumed effective term. Reverse-ladder status: requirement known (D746); two candidate sources ruled out, Kähler (D717/D718) and gauge thresholds (D747); no third in-model source in sight. The loop stops here: a natural pause.
+MAP: node=plateau_origin status=open touches=[] ripple=no

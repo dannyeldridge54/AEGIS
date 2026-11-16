@@ -1,0 +1,5 @@
+y=2: |t2 t3 t4/(2 eta^3)-1|=4.0e-31; ln|t_k/eta|^2 = -0.708, 1.047, 1.047; slope check pi*y/6=1.047; E(U,2)~10.54 (plateau needs 1/E ~ y^-2)
+y=5: |t2 t3 t4/(2 eta^3)-1|=5.9e-31; ln|t_k/eta|^2 = -3.850, 2.618, 2.618; slope check pi*y/6=2.618; E(U,2)~54.87 (plateau needs 1/E ~ y^-2)
+y=10: |t2 t3 t4/(2 eta^3)-1|=2.0e-31; ln|t_k/eta|^2 = -9.086, 5.236, 5.236; slope check pi*y/6=5.236; E(U,2)~216.83 (plateau needs 1/E ~ y^-2)
+y=14: |t2 t3 t4/(2 eta^3)-1|=6.0e-31; ln|t_k/eta|^2 = -13.274, 7.330, 7.330; slope check pi*y/6=7.330; E(U,2)~424.53 (plateau needs 1/E ~ y^-2)
+y=20: |t2 t3 t4/(2 eta^3)-1|=1.2e-30; ln|t_k/eta|^2 = -19.558, 10.472, 10.472; slope check pi*y/6=10.472; E(U,2)~866.03 (plateau needs 1/E ~ y^-2)

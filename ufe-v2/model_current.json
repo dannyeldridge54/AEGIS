@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D727–D730: at τ = i the inflaton is not sterile; reheating ~1–3e6 GeV; the τ = i frozen band is met only for a narrow ε",
   "D728/D738: leptogenesis from inflaton decay works at ρ, marginal at τ = i (Affleck–Dine remains the route there)",
   "D732–D736: post-hoc wino prediction 0.67–0.80 TeV (~15% of dark matter), testable by LHC Run 3 / HL-LHC",
   "D739: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed",
@@ -29,7 +28,8 @@
   "D744: Degeneracy breaker η_N = ΔM/M of the N doublet (radiative?) → estimate",
   "D745: Degeneracy breaker η_N = ΔM/M of the N doublet (radiative?) → computed",
   "D745: Leptogenesis at τ=i: inflaton decay marginal, AD robust → computed",
-  "D746: Origin of the plateau → open"
+  "D746: Origin of the plateau → open",
+  "D747: Origin of the plateau → open"
  ],
  "open_rechecks": [],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"

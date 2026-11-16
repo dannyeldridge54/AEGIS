@@ -36,11 +36,13 @@
     "D712",
     "D717",
     "D718",
-    "D746"
+    "D746",
+    "D747"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D746: open"
+    "D746: open",
+    "D747: open"
    ]
   },
   {
