@@ -7303,3 +7303,17 @@ Caveats:
 - The frozen bands are unchanged.
 - A precise r (SO/BICEP σ(r) ~ 1e-3 cannot; LiteBIRD-class σ(r) ≲ 1e-4 could) separates the two.
 MAP: node=logderiv_plateau status=computed touches=[plateau_origin, serapis_e] ripple=no
+
+## D760 (DEEP, reverse; literature, no computation) — what would make the species scale track E(τ,2)? Nothing known does
+Reverse step from D759. The candidate V ∝ y²(d ln E/dy)² needs a species number N_sp ∝ E(τ,2) (Λ_sp² ≃ M_P²/N_sp), with E the same non-holomorphic weight-2 Epstein function as the BHK tilt.
+Literature (2407.12081, fetched): the paper's own species number is NOT E(τ,2).
+- It uses N ≃ −6 log[2τ₂|η|⁴] + Ñ₀ (eqs 2.6–2.7, 4.3; Ñ₀ = 25 in their numerics), from the genus-one topological free energy F₁ of type IIA on the Enriques CY (K3×T²)/Z₂, an N = 2 setting.
+- ∂N ∝ G̃₂, the almost-holomorphic weight-2 form, which vanishes at i and ρ.
+- Its potential is V = K²|τ₂G̃₂|²Λ⁴ (eq 1.5), with a Starobinsky-like large-τ₂ limit (eq 4.10).
+- The only Eisenstein series in it is E_{3/2} for 10D IIB (Λ⁶ = 1/E_{3/2}). Species-scale functions in lower dimensions (2310.07213) are R⁴ coefficients: E_{3/2} for the axio-dilaton and Ê₁ = −π log(Im τ|η|⁴) for the T² structure. Neither is E(τ,2).
+Deduction (requirement → term): the D759 form would need a higher-derivative gravitational coupling whose moduli-dependent coefficient is E(U,2). New term "E₂-species": an N = 1 orientifold R² coefficient built from the same annulus/Möbius N = 2 sectors as BHK. By the D747/D756 pattern, the moduli dependence those sectors give to holomorphic-anomaly-type couplings (gauge thresholds, F₁-like) is log η (DKL/Ê₁) type, while E₂ appears in the Kähler potential. That is an inference from memory, not checked against a computed R² amplitude.
+VERDICT: WALL. No known string coupling makes the species scale track E(τ,2).
+- The D759 candidate keeps its numbers, but its plateau has no microscopic source. Label: phenomenological, post-hoc.
+- The literature's version is a different model: the F₁ (log η) species plateau of 2407.12081. It lives in an N = 2 IIA setting, while the BHK tilt is N = 1 IIB. Grafting one onto the other mixes settings, so it is not pursued.
+Deeper next: an explicit N = 1 orientifold R² threshold, to test the inference above. It is a known-type string amplitude, a separate project; the loop pauses here.
+MAP: node=logderiv_plateau status=assumed touches=[plateau_origin] ripple=no
