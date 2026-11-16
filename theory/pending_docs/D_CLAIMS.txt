@@ -74,3 +74,4 @@ D787  2026-11-16T08:58Z  forward: R-Z3 test - MSSM Z3 charges at rho; pair decay
 D788  2026-11-16T09:07Z  reverse: late-decay CP asymmetry via dim-6 udd is Nanopoulos-Weinberg suppressed (wall); P5 colour-triplet mediator
 D789  2026-11-16T09:15Z  forward: test P5 - Z3 charges, matter parity, hypercharge-allowed couplings of X, prompt decay
 D790  2026-11-16T09:24Z  reverse: inflaton-decay CP asymmetry is tiny (wall); inflaton Affleck-Dine via the Z3 charge of its orbit around rho
+D791  2026-11-16T10:00Z  forward: Planck isocurvature bound kills the inflaton-AD window at rho (needs ~1e4 dilution)
