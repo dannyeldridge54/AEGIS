@@ -509,3 +509,10 @@ Touches: lepto_rho, serapis_e.
 4. Linear coefficient +4L_xxE_xx [derived] (computed 4.09).
 5. C_crit = ∞; D802's estimate corrected (D802a) [derived].
 Touches: serapis_e.
+
+## D812: exactness audit (accuracy track)
+1. MS is exact to all orders in slow roll; first-order SR carries O(ε, η²) errors of ~1e-3 in n_s on these plateaus [literature] (standard; cf. D635's 11–13% bias of the closed form).
+2. Script inspection decides each number's method [derived].
+3. D781/D793 use SR1, not MS [derived] (late_reheat_d781.py line 15).
+4. Six numbers are flagged for MS [derived].
+Touches: serapis_e.

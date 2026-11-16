@@ -8155,3 +8155,18 @@ Derivation:
 Correction (D802a): D802 step 3–4's "[estimate] additive curvature ∝ C·E_xx, mattering only for C ≳ 1e-4" assumed the cross term carries E_xx's sign alone. It actually enters as 2L_xx·E_xx > 0, so D802's conclusion (stable) holds more strongly, with no threshold.
 Flags serapis_e (D810) and wino_window (D809) cleared: both confirmations, statuses unchanged.
 MAP: node=serapis_e status=computed touches=[] ripple=no
+
+## D812 (ACCURACY TRACK, queue item 6; Jl tick 51, manual "Jl"): exactness audit of the paper. One MISLABEL was fixed; six numbers are flagged for exact recomputation
+Audit table: theory/derivations/EXACTNESS_AUDIT.md (20 entries).
+Method: each n_s/r/α_s/β_s in serapis_v3.tex was traced to its D-note and script. The script was checked for the exact Mukhanov–Sasaki routine spectra() (exact_ns_d588 family) versus first-order slow roll (1 − 6ε + 2η).
+- Exact MS: Kairos (D637), Chronos α_s (D642), caps (D674, D676), strip (D678), β_s (D666), SERAPIS-ρ α_s (D634), SERAPIS-E (D692/D693).
+- MISLABEL (fixed now): the paper said "(exact spectra, D793)" for the self-diluted ρ band. D781/D793 compute first-order slow roll (late_reheat_d781.py, line 15). The paper now says "first-order slow roll, D793; an exact recomputation is pending". The D793 note's own "exact spectra" wording is corrected here: it was slow roll.
+- FLAGGED for an MS recomputation, one per tick (locked):
+  - D793 (self-diluted);
+  - D725 (ρ 2⊕1 band check);
+  - D729 (Chronos at the corrected T_R, plus its ε interpolation);
+  - D613 (SERAPIS-ρ frozen band, consistency check only; frozen numbers stay);
+  - D722 (method unverified).
+- Paper-internal inconsistency found: "Detecting r ≈ 5e-4 requires σ(r) ~ 1e-4, beyond planned experiments" versus prediction_sheet "LiteBIRD σ(r) ≈ 5e-5 (optimistic) → ~10σ". Literature check queued.
+REF: cold re-read of the changed sentence. It matches late_reheat_d781.py, and the build is clean.
+MAP: node=serapis_e status=corrected touches=[] ripple=no
