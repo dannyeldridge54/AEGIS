@@ -1328,3 +1328,9 @@ Touches: none.
 - [literature] arXiv:1605.03974: conifold-to-orbifold multi-field inflation on the mirror quintic (2016).
 - [literature] arXiv:2404.12422: W=0 vacua on symmetric loci, no inflation.
 - Result: lead partly prior art; narrower pairing stays an unclaimed estimate.
+
+## D928: LCS ray attractor index
+- [derived] (sympy) K = −log t³ gives φ = √(3/2) ln t, p = k√(2/3), α = 1/k².
+- [derived] (arithmetic) α = 1: n_s 0.960–0.967, r 3.3–4.8e-3 for N = 50–60; 2.3–4.7σ below SPA+DESI.
+- [estimate] Power k of the leading correction assumed, not computed.
+- Result: CY LCS analogue is a sibling (α = 1), not SERAPIS (α = 1/12).

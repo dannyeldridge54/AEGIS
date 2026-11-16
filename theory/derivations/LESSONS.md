@@ -175,3 +175,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D925: 2026 complex-structure plateaus live at boundaries; look at Fermat/Z3 interior points next.
 - D926: finite-order points give vacua, infinite-order give plateau directions; CY analogue needs both.
 - D927: raise a lead and run its novelty search in the same tick.
+- D928: compute the attractor index from K before chasing a geometric analogue.

@@ -9454,3 +9454,11 @@ Dedicated search (1, standard) plus 2 fetches. [literature] Cabo Bizeta, Loaiza-
 Verdict: D926's lead is NOT new as "inflation at the orbifold point". The narrower pairing (vacuum AT the finite-order point, plateau along the direction to LCS, as SERAPIS does with the cusp) was not found in these sources; status stays estimate, no novelty claim. A test would need a locked computation of V along the ψ = 0 → LCS ray with real periods; that is beyond a cheap tick (1605.03974 needed ~600 orders).
 LESSONS: run the dedicated novelty search in the same tick a lead is raised; it took one search to find 2016 prior art.
 MAP: none
+
+## D928 (completion tick 4): along a one-modulus LCS direction the plateau index is fixed by K = −log t³: p = k√(2/3), α = 1/k²; a CY analogue of SERAPIS would NOT reproduce its p = 2√2 unless the leading correction is 1/t^(2√3)
+[derived] (sympy) For K = −log(κt³), K_TT̄ = 3/(4t²), dφ/dt = √6/(2t), so φ = √(3/2) ln t and 1/t = e^{−√(2/3) φ}. If the potential approaches its plateau as V ≈ V₀(1 − c/t^k) [assumption: k depends on the flux/instanton structure, not computed], then p = k√(2/3) and α = 2/(3p²) = 1/k².
+[derived] (arithmetic) k = 1 (α = 1): n_s = 1 − 2/N, r = 12/N² → at N = 50/55/60: n_s = 0.9600/0.9636/0.9667, r = 4.8e-3/4.0e-3/3.3e-3; n_s is 4.7/3.4/2.3σ below CMB-SPA+DESI (0.9728 ± 0.0027). SERAPIS's p = 2√2 is α = 1/12; on this ray it would need k = 2√3 ≈ 3.46, not an integer power of 1/t.
+[estimate] So a mirror-quintic-type completion (D926 lead) is a DIFFERENT attractor member: r ~ 10× SERAPIS's, within LiteBIRD reach, and, without a ramp, disfavoured by n_s at about 3σ. With a ramp the D669 consistency relation applies with p = √(2/3).
+Verdict: the CY LCS analogue cannot be SERAPIS itself; it would be a testable sibling. The D926/D927 lead is downgraded from "completion" to "sibling model". Open problem (non-toroidal completion of SERAPIS) unchanged.
+LESSONS: before chasing a geometric analogue, compute its attractor index from the Kähler potential; it fixes r in one line.
+MAP: none
