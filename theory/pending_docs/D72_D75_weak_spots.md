@@ -9669,8 +9669,8 @@ Verdict: KILL condition (n_B − n_F ≤ 0) NOT met; the sign condition has a co
 LESSONS: the memory recall "496 antisymmetric" was the sum 495 + goldstino; the source separates them. Verified before use.
 MAP: none
 
-## D957 (loop B, step 5; estimate, unlocked arithmetic): Project H's full-mass route lowers the vacuum mass by λ′ ≤ 1/E(ρ,2) = 0.173 relative to the published model; that shifts N* by (1/4) ln λ′ ≈ −0.44 or less and n_s by −(3.5–9)e-4 for λ′ = 0.17–0.01
-(D956 is reserved for the D955-lock Chronos result, still running.)
+## D956 (loop B, step 5; estimate, unlocked arithmetic): Project H's full-mass route lowers the vacuum mass by λ′ ≤ 1/E(ρ,2) = 0.173 relative to the published model; that shifts N* by (1/4) ln λ′ ≈ −0.44 or less and n_s by −(3.5–9)e-4 for λ′ = 0.17–0.01
+(The Chronos result under lock PREREG_D955 will take the next claimed number.)
 [derived] D947: the realisable shape is P3(λ′Ê) with λ′ = λ/(λE_ρ+1) < 1/E_ρ = 0.173 (paper convention E_ρ = 5.783). On the plateau λ′ is absorbed into a field shift and C (D946); near the vacuum V ≈ λ′Ê, so m_φ² ∝ λ′.
 [estimate] If the decay rate scales as Γ ∝ m_φ³ (decay through a dimension-5 coupling; channel-dependent), T_R ∝ Γ^{1/2} ∝ λ′^{3/4}; the matching equation's (1/12) ln ρ_th = (1/3) ln T_R term gives ΔN* = (1/4) ln λ′. With dn_s/dN* ≈ 2/N*² = 8e-4 per e-fold at N* ≈ 50: λ′ = 0.173: ΔN* = −0.44, Δn_s ≈ −3.5e-4; 0.05: −0.75, −6.0e-4; 0.02: −0.98, −7.8e-4; 0.01: −1.15, −9.2e-4.
 Verdict: under the locked-in-plan criterion (|Δn_s| < 1e-3) the shift is tolerable for λ′ ≳ 0.01, but it is NOT zero: the Project H realisation predicts n_s lower than the frozen SERAPIS-E band by 3.5e-4 at best. Frozen predictions unchanged (they assume P3 as postulated); if Project H is adopted as the origin, its n_s band moves down by ≥ 3.5e-4 — to be stated in v3.3 and checked by a locked exact computation (reheating channel explicit) before any claim. Label: estimate (Γ ∝ m³ assumed).
