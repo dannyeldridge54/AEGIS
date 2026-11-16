@@ -9248,3 +9248,8 @@ Results [derived]: m_ν₁ = 1.63e-10–7.10e-10 eV (T_R = 0.8e6 GeV, median–m
 Verdict (locked rule): the window is m_ν₁ ≈ 1.6e-10–2.7e-9 eV at τ = i, replacing D646's 2e-13–9e-11 eV (computed at the superseded T_R = 1e3–1e5 GeV; D646 stays as the record at that T_R). Pre-stated prediction CONFIRMED (φ/T ≳ 5e4 rather than ≳ 1e5; immaterial).
 Consequence [derived]: τ = i (1.6e-10–2.7e-9) and ρ (2e-11–9e-10 eV, D895) overlap at 1.6e-10–9e-10 eV; "essentially massless" holds on both branches, and the Σm_ν NO floor 0.0587 eV is unchanged. The τ = i Weinberg requirement (M = v_u²/m_ν₁ ~ 1e22–2e23 GeV ≫ M_P) is slightly milder than D646a's.
 MAP: node=lepto_i status=computed touches=[mnu] ripple=no
+
+## D901 (R3.2): referee R3 closed; draft, prediction sheet and status updated to D900
+All four R3 items answered (papers/v3/REFEREE_v3.2_R3.md, Responses). The v3.2 draft's AD section quotes the τ = i window at the corrected T_R (D900) with D646's values kept as the old-T_R record; the Consequence paragraph gives both vacua's windows; the proton paragraph uses D727's T_R; two pointers to the superseded self-diluted ρ route fixed. Rebuilt clean, 17 pages. Frozen predictions unchanged.
+Next project: with R2 and R3 closed, the remaining open items are long ones (P3 origin, non-toroidal completion, ρ/τ = i ε sources). Top pick by the autonomy rule: a fresh check of today's results against the newest data (Σm_ν bound, n_s from the latest CMB+BAO, ATLAS/CMS wino limits) since the paper's status lines quote them; one literature tick.
+MAP: none
