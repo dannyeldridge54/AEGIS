@@ -164,3 +164,4 @@ D877  2026-11-16T17:25Z  B.3 AD transfer fraction
 D878  2026-11-16T17:27Z  B.3b channel ratio from 2+1 couplings
 D879  2026-11-16T17:28Z  B.4 verdict and Z3 flat directions
 D880  2026-11-16T17:30Z  B.5 LHu AD at rho
+D881  2026-11-16T17:36Z  B.6 fold D880 into draft
