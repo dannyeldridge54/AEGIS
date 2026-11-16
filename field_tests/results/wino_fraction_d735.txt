@@ -1,0 +1,4 @@
+M2=660 GeV: f=0.14, L_Einasto=1.7e-28, f_max=0.16 (x2 unc: 0.22 / 0.11), kpc core f_max=1.6-5.0: PASS (Einasto)
+M2=1000 GeV: f=0.26, L_Einasto=4.0e-28, f_max=0.24 (x2 unc: 0.34 / 0.17), kpc core f_max=2.4-7.5: FAIL (Einasto)
+M2=1850 GeV: f=0.67, L_Einasto=1.4e-27, f_max=0.44 (x2 unc: 0.62 / 0.31), kpc core f_max=4.4-13.9: FAIL (Einasto)
+Einasto passing M2: 660-804 GeV

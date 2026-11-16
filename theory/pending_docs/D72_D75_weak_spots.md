@@ -7007,3 +7007,11 @@ Source: arXiv:2507.15934, text after offset 100k:
 - The robust statement remains: winos are excluded from 1.85 TeV to the thermal mass even as a thermal sub-fraction. Below 1.85 TeV the thermal sub-fraction is therefore not excluded.
 SERAPIS-E's case sits between those two (D732, T_R 3.2e8): f_total = 0.14 / 0.26 / 0.67 at 0.66 / 1.0 / 1.85 TeV, against f_thermal = 0.05 / 0.12 / 0.41. Whether these survive needs Fig. 6's numbers, which the text does not give. Verdict: NULL (needed numbers not found in text). The DpL loop stops here.
 To resume: digitise Fig. 6 of 2507.15934 (or find a table / the Ref. [91] line-search limits), then lock a f²⟨σv⟩ rescale.
+
+## D735 (CENTRE; locked PREREG_D735; results/wino_fraction_d735.txt) — estimate: SERAPIS-E's wino must be 0.66–0.80 TeV for an Einasto Galaxy; any mass for kpc cores
+Rescale (order of magnitude): H.E.S.S. 2018 line limit 4e-28 cm³/s at 1 TeV (Einasto, 1805.05741), scaled ∝ M². Wino line rate σ_γγ + ½σ_Zγ ≈ 7.1e-27 (1307.4400). Allowed fraction f_max = √(L/σ_line):
+- M2 = 0.66 TeV: f_max 0.16 vs f 0.14 → PASS.
+- M2 = 1.0 TeV: f_max 0.24 vs 0.26 → FAIL, marginal (× 2 uncertainty: 0.17–0.34).
+- M2 = 1.85 TeV: f_max 0.44 vs 0.67 → FAIL; consistent with 2507.15934 excluding ≥ 1.85 TeV.
+- Einasto passing range: M2 ≈ 0.66–0.80 TeV (≈ 0.66–1.0 within the × 2 read-off uncertainty). For kpc-scale cores (limits weaker by 1e2–1e3) every mass passes.
+VERDICT (estimate): with a standard cuspy halo, SERAPIS-E at ρ (M_H ~ 1e12, T_R ~ 3e8) predicts a wino LSP at 0.66–0.8 TeV, just above the collider disappearing-track bound (~0.66–0.7 TeV). It makes up ~15% of the DM, with the rest needing another component (as D713 already said). This is a sharp, falsifiable target for HL-LHC disappearing tracks and CTA line searches. Post-hoc; scored on future data only. Caveat: the line shape and Sommerfeld mass dependence are ignored; a dedicated reanalysis (or the Fig. 6 values of 2507.15934) would supersede this.
