@@ -124,6 +124,14 @@ LIMITATIONS = [
 ]
 
 
+
+def _rel(path, root):
+    """Path relative to root when inside it; otherwise the absolute path (data may live in another folder via AEGIS_OUT_DIR)."""
+    try:
+        return path.relative_to(root)
+    except ValueError:
+        return path
+
 def _utc(timestamp):
     return datetime.fromtimestamp(timestamp, timezone.utc).isoformat()
 
@@ -131,7 +139,7 @@ def _utc(timestamp):
 def _source(path, root, content=None, hash_scope=None):
     stat = path.stat()
     result = {
-        "path": str(path.relative_to(root)),
+        "path": str(_rel(path, root)),
         "size_bytes": stat.st_size,
         "file_modified_utc": _utc(stat.st_mtime),
         "sha256": hashlib.sha256(content).hexdigest() if content is not None else None,
@@ -255,7 +263,7 @@ def _sweep_summary(content, out):
 def _additional_local_datasets(root, sources, missing):
     impact_path = root / "research" / "impacts" / "craters.json"
     impact_result_path = impact_path.with_name("impact_result.json")
-    impact = {"status": "unavailable", "input_path": str(impact_path.relative_to(root))}
+    impact = {"status": "unavailable", "input_path": str(_rel(impact_path, root))}
     if impact_path.exists():
         impact_data = impact_path.read_bytes()
         sources.append(_source(impact_path, root, impact_data))
@@ -278,9 +286,9 @@ def _additional_local_datasets(root, sources, missing):
                 result={key: result[key] for key in ("n", "Pbest", "R", "p")},
             )
         else:
-            missing.append(str(impact_result_path.relative_to(root)))
+            missing.append(str(_rel(impact_result_path, root)))
     else:
-        missing.append(str(impact_path.relative_to(root)))
+        missing.append(str(_rel(impact_path, root)))
 
     exo_rows = root / "research" / "exoplanet_locks" / "exo_rows.json"
     exo_prereg = root / "research" / "exoplanet_locks" / "PREREG_EXO.md"
@@ -289,11 +297,11 @@ def _additional_local_datasets(root, sources, missing):
         if path.exists():
             sources.append(_source(path, root, path.read_bytes()))
     if exo_rows.exists():
-        exo = {"status": "input_available", "input_path": str(exo_rows.relative_to(root))}
+        exo = {"status": "input_available", "input_path": str(_rel(exo_rows, root))}
         sources.append(_source(exo_rows, root, exo_rows.read_bytes()))
     else:
-        exo = {"status": "missing_input", "input_path": str(exo_rows.relative_to(root))}
-        missing.append(str(exo_rows.relative_to(root)))
+        exo = {"status": "missing_input", "input_path": str(_rel(exo_rows, root))}
+        missing.append(str(_rel(exo_rows, root)))
     return {
         "scope": "Separate local astronomy datasets; not merged into Gaia star classifications.",
         "impact_structures": impact,
@@ -317,12 +325,12 @@ def build_report(root=ROOT, max_rows=20000, outdir=None):
     if criteria_path.exists():
         sources.append(_source(criteria_path, root, criteria_path.read_bytes()))
     else:
-        missing.append(str(criteria_path.relative_to(root)))
+        missing.append(str(_rel(criteria_path, root)))
     sweep_code_path = root / "ufe-v2" / "aegis" / "sweep.py"
     if sweep_code_path.exists():
         sources.append(_source(sweep_code_path, root, sweep_code_path.read_bytes()))
     else:
-        missing.append(str(sweep_code_path.relative_to(root)))
+        missing.append(str(_rel(sweep_code_path, root)))
     if summary_path.exists():
         content = summary_path.read_bytes()
         sources.append(_source(summary_path, root, content))
@@ -340,14 +348,14 @@ def build_report(root=ROOT, max_rows=20000, outdir=None):
             if type(count) is not int or not 0 <= count <= summary["stars"]:
                 raise ValueError(f"Invalid star summary flag count: {flag}")
     else:
-        missing.append(str(summary_path.relative_to(root)))
+        missing.append(str(_rel(summary_path, root)))
 
     if sweep_path.exists():
         content = sweep_path.read_bytes()
         sources.append(_source(sweep_path, root, content))
         sweep_summary = _sweep_summary(content, out)
     else:
-        missing.append(str(sweep_path.relative_to(root)))
+        missing.append(str(_rel(sweep_path, root)))
 
     catalog_source = None
     if catalog_path.exists():
@@ -404,7 +412,7 @@ def build_report(root=ROOT, max_rows=20000, outdir=None):
                         "source_path": flag_source["path"],
                     })
     else:
-        missing.append(str(flags_path.relative_to(root)))
+        missing.append(str(_rel(flags_path, root)))
 
     additional_local_datasets = _additional_local_datasets(root, sources, missing)
     patch_times = []
@@ -416,7 +424,7 @@ def build_report(root=ROOT, max_rows=20000, outdir=None):
     latest = _utc(max(patch_times)) if patch_times else None
     stars = summary["stars"] if summary else None
     summary_source = next(
-        (source for source in sources if source["path"] == str(summary_path.relative_to(root))),
+        (source for source in sources if source["path"] == str(_rel(summary_path, root))),
         None,
     )
     legacy_snapshot = {
@@ -449,11 +457,11 @@ def build_report(root=ROOT, max_rows=20000, outdir=None):
             "new_measurements_acquired": False,
             "status": "Report generation reads existing local files only; the scanner may update them independently. Latest recorded patch: " + (latest or "unknown"),
             "saved_summary_file_modified_utc": next(
-                (source["file_modified_utc"] for source in sources if source["path"] == str(summary_path.relative_to(root))),
+                (source["file_modified_utc"] for source in sources if source["path"] == str(_rel(summary_path, root))),
                 None,
             ),
             "sweep_state_file_modified_utc": next(
-                (source["file_modified_utc"] for source in sources if source["path"] == str(sweep_path.relative_to(root))),
+                (source["file_modified_utc"] for source in sources if source["path"] == str(_rel(sweep_path, root))),
                 None,
             ),
         },
