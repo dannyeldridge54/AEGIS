@@ -1,0 +1,44 @@
+# AEGIS theory map: one node per claim. The ladder (tools/ladder/ladder.py) keeps it in step with the D-notes.
+# status: computed | estimate | literature | assumed | corrected | killed | open | frozen | recheck
+# layer: 1 inputs, 2 model core, 3 microscopic origin, 4 after inflation, 5 predictions & tests
+nodes:
+  # --- layer 1: inputs we chose and cannot derive yet
+  - {id: eps_tilt, layer: 1, branch: [i, rho], title: "Tilt strength ε (fitted)", status: assumed, d: [D602, D687]}
+  - {id: plateau_origin, layer: 1, branch: [i, rho, E], title: "Origin of the plateau", status: open, d: [D703, D712, D717, D718], note: "Casimir/tension, species and Epstein-Kähler routes all closed"}
+  - {id: n_sector_rho, layer: 1, branch: [rho, E], title: "Heavy-ν sector at ρ: 2⊕1, weight-2 mixing", status: assumed, d: [D723, D724], depends: []}
+  - {id: n_sector_i, layer: 1, branch: [i], title: "Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?)", status: assumed, d: [D664, D738]}
+  - {id: halo_profile, layer: 1, branch: [rho, E], title: "Galactic DM profile (cuspy vs cored)", status: assumed, d: [D735]}
+  # --- layer 2: model core
+  - {id: vac_i, layer: 2, branch: [i], title: "Vacuum at τ=i (Chronos/Kairos)", status: computed, d: [D605, D633], depends: [eps_tilt]}
+  - {id: vac_rho, layer: 2, branch: [rho], title: "Vacuum at ρ (variant)", status: computed, d: [D613, D634], depends: [eps_tilt]}
+  - {id: serapis_e, layer: 2, branch: [E], title: "SERAPIS-E potential (Epstein + BHK tilt)", status: computed, d: [D692, D693], depends: [plateau_origin, bhk_tilt]}
+  - {id: janus, layer: 2, branch: [i, rho, E], title: "Janus relation (α_s from n_s, r)", status: computed, d: [D669, D673, D692]}
+  # --- layer 3: microscopic origin
+  - {id: bhk_tilt, layer: 3, branch: [E], title: "BHK one-loop tilt C", status: literature, d: [D689, D692]}
+  - {id: stuck_d3, layer: 3, branch: [E], title: "Stuck D3 branes at half-periods", status: literature, d: [D694, D695], depends: [bhk_tilt]}
+  - {id: covariant, layer: 3, branch: [i, rho], title: "Modular-covariant SUGRA completion", status: computed, d: [D647, D650, D655]}
+  - {id: matter_parity, layer: 3, branch: [i, rho], title: "Matter parity from the modular centre", status: computed, d: [D661, D663, D664], depends: [covariant]}
+  # --- layer 4: after inflation
+  - {id: sterile_i, layer: 4, branch: [i], title: "Inflaton coupling at τ=i (axion-like, unsuppressed)", status: corrected, d: [D601, D727], depends: [n_sector_i]}
+  - {id: reheat_i, layer: 4, branch: [i], title: "T_R at τ=i ≈ 1–3e6 GeV", status: corrected, d: [D727, D730], depends: [sterile_i]}
+  - {id: nstar_i, layer: 4, branch: [i], title: "N* at τ=i (stiff phase physical)", status: corrected, d: [D729, D730], depends: [reheat_i, vac_i]}
+  - {id: lepto_i, layer: 4, branch: [i], title: "Leptogenesis at τ=i: inflaton decay marginal, AD robust", status: computed, d: [D728, D738, D646], depends: [reheat_i, n_sector_i]}
+  - {id: sterile_rho, layer: 4, branch: [rho, E], title: "Inflaton coupling at ρ (cone splitting)", status: computed, d: [D720, D721, D722, D725], depends: [n_sector_rho]}
+  - {id: darkrad_rho, layer: 4, branch: [rho, E], title: "Dark radiation (doublet-only killed)", status: computed, d: [D723], depends: [n_sector_rho]}
+  - {id: reheat_rho, layer: 4, branch: [rho, E], title: "T_R at ρ ≈ 3e8–3e9 GeV", status: computed, d: [D725], depends: [sterile_rho]}
+  - {id: nstar_e, layer: 4, branch: [E], title: "N* for SERAPIS-E ≈ 49.7–50.5", status: computed, d: [D719, D725], depends: [reheat_rho, serapis_e]}
+  - {id: lepto_rho, layer: 4, branch: [rho, E], title: "Leptogenesis at ρ (non-thermal, DI estimate)", status: estimate, d: [D731], depends: [reheat_rho, n_sector_rho]}
+  - {id: gravitino_wino, layer: 4, branch: [rho, E], title: "Gravitino → wino; favours M_H ~ 1e12", status: estimate, d: [D732, D733], depends: [reheat_rho, covariant]}
+  # --- layer 5: predictions & tests
+  - {id: band_i, layer: 5, branch: [i], title: "Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4)", status: frozen, d: [D602, D633], depends: [nstar_i, janus], note: "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)"}
+  - {id: band_e, layer: 5, branch: [E], title: "Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4)", status: frozen, d: [D693, D725], depends: [nstar_e, janus]}
+  - {id: caps, layer: 5, branch: [i, rho, E], title: "Family caps n_s ≤ 0.985, r ≤ 8.3e-4", status: frozen, d: [D675, D677]}
+  - {id: mnu, layer: 5, branch: [i, rho], title: "Σm_ν = 0.0587 eV (m1 ≈ 0)", status: frozen, d: [D605]}
+  - {id: wino_window, layer: 5, branch: [rho, E], title: "Wino 0.67–0.80 TeV, ~15% of DM (post-hoc)", status: estimate, d: [D735, D736], depends: [gravitino_wino, halo_profile]}
+  - {id: tests_cmb, layer: 5, branch: [i, rho, E], title: "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)", status: literature, d: [D705], depends: [band_i, band_e]}
+  - {id: tests_lhc, layer: 5, branch: [rho, E], title: "Test: Run 3 / HL-LHC disappearing tracks", status: literature, d: [D736], depends: [wino_window]}
+# Observing side (Star Mapper): kept separate; it does not test SERAPIS.
+observing:
+  - {id: mapper_dr3, title: "Gaia DR3 sweep complete (192,208,838 stars; 200/200 ESA checks)", status: computed}
+  - {id: mapper_dr4, title: "Gaia DR4 sweep (release 2 Dec 2026)", status: open, note: "docs/STAR_MAPPER_DR4_PLAN.md"}
+  - {id: mapper_feeds, title: "Live feeds (DONKI moved; GCN via per-circular JSON; NIST beacon intermittent)", status: computed}
