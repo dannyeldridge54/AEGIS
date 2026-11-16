@@ -9145,3 +9145,18 @@ Arithmetic: theory/modular/rho_lift_d888.py → theory/derivations/rho_lift_d888
 6. Route (d), higher-dimension operator [derived arithmetic]: ε = Λ/M_P needs Λ ≈ 4.4e15 GeV (7.6e14 to 2.7e16), i.e. the GUT/string scale. It must enter through a non-holomorphic (Kähler) structure that is not forced to vanish at ρ. ALIVE [estimate].
 Verdict: the ρ lift is not explained, but it is not fine-tuned either: two standard mechanisms give it at natural parameter values (Im T/N ≈ 1 or Λ ≈ M_GUT). Both need explicit model-building (L.2/L.3).
 MAP: node=n_sector_rho status=estimate touches=[lepto_rho,mnu] ripple=no
+
+## D888a (correction to D888 points 5–6): the instanton and Kähler routes are also closed while the residual Z₃ at ρ is exact
+D888 called routes (c) and (d) alive, provided their prefactor does not vanish at ρ. That was wrong. At τ = ρ the residual Z₃ = ⟨ST⟩ is an exact symmetry of the whole U-modular-invariant theory: holomorphic, non-holomorphic (Kähler) and instanton terms alike. S₂'s coupling vanishes because it carries nonzero residual charge (that is the content of E₄(ρ) = 0). Any term that contributes to the same coupling carries the same charge, so it also vanishes at ρ, whatever its prefactor (an η-type prefactor with a "compensating character" just restates the charge). All four D888 routes therefore need the residual Z₃ to be broken. D888's numbers (Im T/N ≈ 1, Λ ≈ 4e15 GeV) are only the sizes the breaking would need if it entered through those channels.
+MAP: node=n_sector_rho status=estimate touches=[lepto_rho,mnu] ripple=no
+
+## D889 (DEEP, L.2): the literature fixes the form of ρ's lift: ε is the size of residual-Z₃ breaking, ε ~ |u|^l with u = (τ−ρ)/(τ−ρ²); our model has no source for it
+Searches 3; fetched 2102.07488 (Novichkov–Penedo–Petcov, residual modular symmetries) and 2406.02527 (Qu–Ding, non-holomorphic modular flavour).
+Findings [literature]:
+1. 2102.07488: near ω (= ρ), each mass-matrix entry is O(ε^l) with ε = |u|, u = (τ−ω)/(τ−ω²), and l (0, 1, 2) fixed by the residual Z₃^{ST} charge of the field pair. A vanishing entry is lifted only order by order in u. The paper treats ε as a free parameter.
+2. 2406.02527: polyharmonic Maass forms coincide with holomorphic modular forms for weight k ≥ 3, so a weight-4 coupling has no non-holomorphic escape (the framework is non-supersymmetric in any case).
+Assessment [derived]:
+3. With l = 1, ε = |u| = 1.8e-3 (3.1e-4 to 1.1e-2) means |τ − ρ| = √3·|u| = 3.1e-3 (5.4e-4 to 1.9e-2). D888's 6e-4 used a different O(1) normalisation; the range overlaps.
+4. In SERAPIS-E, τ sits exactly at ρ: ρ is a fixed point and the plateau's minimum is there. A displacement of ~3e-3 would need a modular-noncovariant source, or a second Z₃-charged field (flavon) with ⟨φ⟩/Λ ≈ 2e-3. Neither is in the model.
+Verdict: L.2 NEGATIVE for an in-model origin. ε at ρ is equivalent to a small residual-Z₃ breaking, |u| ≈ 2e-3, a standard and mild size in the modular-flavour literature, but it is a new post hoc input, like the τ = i ε. L.3 (locked computation) is skipped: there is no candidate to compute. L.4: verdict and a v3.2 note.
+MAP: node=n_sector_rho status=assumed touches=[lepto_rho,mnu] ripple=no

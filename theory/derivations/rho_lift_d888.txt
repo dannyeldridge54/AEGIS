@@ -10,3 +10,6 @@ E4'(rho)= (3.4358425e-30 - 6.0350856j)  check -(2pi i/3)E6= (2.6135442e-30 - 6.0
 (e) Planck-suppressed Lambda = eps*M_P = 7.55e+14 GeV for eps=3.1e-04
 (e) Planck-suppressed Lambda = eps*M_P = 4.38e+15 GeV for eps=1.8e-03
 (e) Planck-suppressed Lambda = eps*M_P = 2.68e+16 GeV for eps=1.1e-02
+|u|=3.1e-04 -> |tau-rho|=5.37e-04
+|u|=1.8e-03 -> |tau-rho|=3.12e-03
+|u|=1.1e-02 -> |tau-rho|=1.91e-02

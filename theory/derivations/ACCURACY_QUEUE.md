@@ -113,12 +113,12 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 
 ## ρ-lift project L (picked 2026-11-16 under the autonomy rule)
 - L.1 [done D888: instanton Im T/N≈1 or Λ≈M_GUT alive; displacement and loops closed] Reverse path: from D883's lift ε ≈ 1.8e-3 of the E₄-protected S₂ mass, write the needed term (weight, field content) and its size in units of natural scales (Λ/M_P, one-loop, instanton e^{-2π Im T/N}).
-- L.2 [open] Literature: lifting of E₄(ρ)=0 zeros (Planck-suppressed operators, non-holomorphic Kähler corrections, weight-shift terms).
-- L.3 [open] Locked computation if a candidate exists.
+- L.2 [done D889: ε = residual-Z₃ breaking |u|≈2e-3, no in-model source; D888a corrects D888] Literature: lifting of E₄(ρ)=0 zeros (Planck-suppressed operators, non-holomorphic Kähler corrections, weight-shift terms).
+- L.3 [skipped: no candidate] Locked computation if a candidate exists.
 - L.4 [open] Verdict and v3.2 note.
 
 ## ρ-lift project L (picked 2026-11-16 under the autonomy rule)
 - L.1 [done D888: instanton Im T/N≈1 or Λ≈M_GUT alive; displacement and loops closed] Reverse path: from D883's lift ε ≈ 1.8e-3 of the E₄-protected S₂ mass, write the needed term (weight, field content) and its size in natural units (Λ/M_P, one-loop, instanton e^{-2π Im T/N}).
-- L.2 [open] Literature: lifting of E₄(ρ)=0 zeros (Planck-suppressed operators, non-holomorphic Kähler corrections, weight-shift terms).
-- L.3 [open] Locked computation if a candidate exists.
+- L.2 [done D889: ε = residual-Z₃ breaking |u|≈2e-3, no in-model source; D888a corrects D888] Literature: lifting of E₄(ρ)=0 zeros (Planck-suppressed operators, non-holomorphic Kähler corrections, weight-shift terms).
+- L.3 [skipped: no candidate] Locked computation if a candidate exists.
 - L.4 [open] Verdict and v3.2 note.

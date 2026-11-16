@@ -1082,3 +1082,11 @@ Touches: eps_tilt, band_i, serapis_e.
 5. Instanton: Im T/N = 1.01 (0.72–1.29) [derived] (arithmetic).
 6. Operator: Λ = 4.4e15 GeV (7.6e14 to 2.7e16) [derived] (arithmetic).
 Touches: n_sector_rho, lepto_rho, mnu.
+
+## D888a / D889: L.2 ρ lift literature
+1. Residual Z₃ at ρ is exact for all U-modular-invariant terms, so the instanton and Kähler routes also vanish (corrects D888) [derived].
+2. Entries scale as |u|^l, l = residual charge, with ε free in the literature [literature] (2102.07488).
+3. Weight ≥ 3 polyharmonic Maass forms are holomorphic, so there is no non-holomorphic lift [literature] (2406.02527).
+4. ε = 1.8e-3 ⇔ |τ−ρ| = 3.1e-3 (l = 1) [derived] (arithmetic).
+5. No in-model source; ε at ρ is a post hoc residual-Z₃ breaking [derived].
+Touches: n_sector_rho, lepto_rho, mnu.
