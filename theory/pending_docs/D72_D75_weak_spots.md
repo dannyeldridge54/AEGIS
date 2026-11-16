@@ -9462,3 +9462,11 @@ MAP: none
 Verdict: the CY LCS analogue cannot be SERAPIS itself; it would be a testable sibling. The D926/D927 lead is downgraded from "completion" to "sibling model". Open problem (non-toroidal completion of SERAPIS) unchanged.
 LESSONS: before chasing a geometric analogue, compute its attractor index from the Kähler potential; it fixes r in one line.
 MAP: none
+
+## D929 (completion tick 5): SERAPIS's plateau exponent p = 2√2 selects a modulus with K = −log Im τ (n = 1) among the standard cases; any completion must keep a T²-type complex-structure modulus
+[derived] (generalising D928) For K = −n log y and V ≈ V₀(1 − c/y^k), φ = √(n/2) ln y and p = k√(2/n). SERAPIS has p = 2√2 (D669), so k² = 4n.
+[derived] (arithmetic) Standard moduli have n = 1 (T² complex structure, axio-dilaton), 2, 3 (one-modulus CY volume/LCS), 7 (G₂ total). Required k = 2.000, 2.828, 3.464, 5.292: an integer power only for n = 1, where k = 2 is exactly the y² growth of E(τ,2) that SERAPIS uses.
+[literature/notes] The axio-dilaton is excluded as the rolling field (fixed by GKP fluxes; earlier note at line ~5236). So the inflaton must be the complex structure U of a T² factor (n = 1), as in the current toroidal setup.
+Verdict: a "non-toroidal completion" can change the rest of the compactification (e.g. K3 × T², or a CY with a T² fibre) but must keep a T²-type U with K = −log Im U to give p = 2√2. This narrows the open problem; it rules out one-modulus CY complex-structure analogues (D926–D928) as SERAPIS itself. [estimate] Exception not checked: a power k that is non-integer from a non-perturbative or log-corrected approach.
+LESSONS: p = k√(2/n) turns the plateau exponent into a constraint on which modulus can roll.
+MAP: none

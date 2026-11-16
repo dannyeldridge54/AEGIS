@@ -1334,3 +1334,8 @@ Touches: none.
 - [derived] (arithmetic) α = 1: n_s 0.960–0.967, r 3.3–4.8e-3 for N = 50–60; 2.3–4.7σ below SPA+DESI.
 - [estimate] Power k of the leading correction assumed, not computed.
 - Result: CY LCS analogue is a sibling (α = 1), not SERAPIS (α = 1/12).
+
+## D929: p = 2√2 selects n = 1
+- [derived] p = k√(2/n) for K = −n log y, V ≈ V₀(1 − c/y^k); SERAPIS needs k² = 4n.
+- [derived] (arithmetic) integer k only for n = 1 (k = 2, the E(τ,2) power).
+- Result: completion must keep a T²-type U modulus; open problem narrowed.
