@@ -204,3 +204,4 @@ D917  2026-11-16T19:45Z  Memory-claim audit 3
 D918  2026-11-16T19:46Z  Memory-claim audit 4 (closes M)
 D919  2026-11-16T19:49Z  Letter novelty re-check
 D920  2026-11-16T19:59Z  Paper 1 published (consistency relation)
+D921  2026-11-16T20:03Z  Paper 2 published (no-go results)
