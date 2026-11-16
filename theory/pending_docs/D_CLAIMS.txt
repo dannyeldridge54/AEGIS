@@ -239,3 +239,4 @@ D952  2026-11-16T21:34Z  Project H scale window
 D953  2026-11-16T21:47Z  independent reproduction of SERAPIS-E
 D954  2026-11-16T22:18Z  alpha_s reproduction
 D955  2026-11-16T22:28Z  B4: Sugimoto spectrum sign check
+D956  2026-11-16T22:28Z  B5: vacuum mass shift of N*
