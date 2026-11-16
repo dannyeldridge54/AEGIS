@@ -9110,3 +9110,13 @@ New reverse-path observation [derived + estimate]:
 Verdict: the reverse path points to one concrete target: a one-loop U-dependence of the warped throat's UV cutoff, giving V_up ∝ |j − 1728|^{~1e-5}. It needs the throat (CY resolution) and is not computed. All in-torus routes stay closed.
 Next (E.2): literature on one-loop/threshold dependence of warped-throat data (the conifold period's normalisation, or the warp factor) on bulk complex-structure moduli.
 MAP: node=eps_tilt status=estimate touches=[band_i] ripple=no
+
+## D886 (DEEP, E.2): the literature does NOT support a logarithmic U-dependence of the throat cutoff; corrections are exponentially small
+Searches 2; fetched 2009.03312 (Conifold vacua with small flux superpotential).
+Findings [literature] (2009.03312 eq. 3.22): the stabilised conifold modulus is |z_cf| = (1/2π)·exp(−2πK′/(n_cf g_s M)) + O(z_cf², z_cf e^{2πi p^i τ_i}), with K′ = K₁ − M^a 𝒦_{1ai} p^i. The prefactor is a pure number; the bulk moduli enter only through the flux-determined valley location p^i (fixed by integers, not a free modulus value) and through corrections suppressed by e^{2πi p·τ}. The IR warp factor is e^{2A}|tip ~ |z_cf|^{2/3}.
+Assessment [derived]:
+1. At tree level the throat's UV data do not depend on the bulk complex structure through a free function; there is no Λ₀(U) of the form (j − 1728)^{q′}.
+2. The bulk-dependent corrections are holomorphic and exponentially small (∝ e^{2πiτ}), i.e. q-expansion-type terms. They vanish toward the cusp rather than growing like ln|j| ≈ 2πy, so they cannot give the εI₁ ramp (which grows linearly in y).
+3. A one-loop (logarithmic) U-dependence of the throat cutoff is not found in this literature; D885's target remains a hypothesis with no identified source.
+Verdict: E.2 NEGATIVE. The τ = i ε stays fitted (C1 of D841 unchanged). The D885 target (|j − 1728|^{~1e-5} in the uplift) is recorded as the precise form a future string computation would have to produce.
+MAP: node=eps_tilt status=estimate touches=[band_i] ripple=no

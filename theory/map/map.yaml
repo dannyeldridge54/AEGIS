@@ -15,10 +15,11 @@ nodes:
   - D823
   - D826
   - D885
+  - D886
   history:
-  - 'D823: estimate'
   - 'D826: estimate'
   - 'D885: estimate'
+  - 'D886: estimate'
 - id: plateau_origin
   layer: 1
   branch:
@@ -457,7 +458,7 @@ nodes:
   - 'D840: computed'
   - 'D841: computed'
   - 'D861: computed'
-  flag: recheck (D885, eps_tilt)
+  flag: recheck (D886, eps_tilt)
 - id: band_e
   layer: 5
   branch:

@@ -1054,3 +1054,10 @@ Touches: none.
 4. A throat cutoff Λ₀(U) ∝ (j − 1728)^{q′} gives it via V_up ∝ |Λ₀|⁴ [estimate] (D837).
 5. Small q′ fits a one-loop U-dependence of the throat's UV data [estimate].
 Touches: eps_tilt, band_i.
+
+## D886: E.2 throat cutoff literature
+1. |z_cf| = (1/2π)exp(−2πK′/n g_s M) with a pure-number prefactor [literature] (2009.03312 eq. 3.22).
+2. Bulk dependence only via fluxes and e^{2πiτ}-suppressed corrections [literature] (2009.03312).
+3. Exponentially small corrections cannot give the linear-in-y εI₁ ramp [derived].
+4. No one-loop log in the throat cutoff found; ε stays fitted [derived].
+Touches: eps_tilt, band_i.

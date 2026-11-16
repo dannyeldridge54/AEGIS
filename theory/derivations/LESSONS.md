@@ -132,3 +132,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D883: a vanishing modular form at the fixed point gives a natural small number; quantify the lift needed (here ε ~ 1e-3) and say plainly that its own origin is still open.
 - 2026-11-16 D884: when one branch's chain closes, switch the next deep project to the other branch's oldest open item, so neither branch drifts.
 - 2026-11-16 D885: a small logarithm in a potential is the linear term of a tiny power; asking 'what is raised to a small power here' turned a dead end into one concrete target.
+- 2026-11-16 D886: before computing a hypothesised correction, check its growth at the cusp against the known form of corrections; q-expansion terms die at the cusp, so they can never make a ramp.
