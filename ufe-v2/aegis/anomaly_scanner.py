@@ -283,24 +283,26 @@ def _adapt_exoplanets(rows):
 GCN_WORDS = ("GRB", "GW", "S2", "FRB", "neutrino", "IceCube", "SGR", "magnetar", "kilonova", "supernova")
 
 
-def _gcn_archive_latest(url, keep=200, timeout=120):
-    """NASA GCN retired archive.json; the daily JSON bundle (archive.json.tar.gz, ~32 MB, refreshed once a day) is the
-    account-free source. Stream it and keep the newest `keep` circulars (highest circularId)."""
-    import heapq, tarfile
-    req = urllib.request.Request(url, headers={"User-Agent": "AEGIS-anomaly-scanner"})
-    best = []
-    with urllib.request.urlopen(req, timeout=timeout) as r, tarfile.open(fileobj=r, mode="r|gz") as tar:
-        for m in tar:
-            if not (m.isfile() and m.name.endswith(".json")):
-                continue
-            try:
-                c = json.loads(tar.extractfile(m).read().decode("utf-8"))
-                cid = int(c.get("circularId"))
-            except Exception:
-                continue
-            item = (cid, {"circularId": cid, "subject": c.get("subject", "")})
-            (heapq.heappush if len(best) < keep else heapq.heappushpop)(best, item)
-    return [it[1] for it in sorted(best, reverse=True)]
+def _gcn_recent(url, keep=20, timeout=30):
+    """NASA GCN Circulars: read the newest circular numbers from the listing page, then fetch each one as
+    https://gcn.nasa.gov/circulars/<id>.json (checked 15 Nov 2026). The old archive.json listing no longer exists."""
+    import re
+    ua = {"User-Agent": "Mozilla/5.0 (AEGIS-anomaly-scanner; open-data survey)"}
+    with urllib.request.urlopen(urllib.request.Request(url, headers=ua), timeout=timeout) as r:
+        html = r.read().decode("utf-8", "replace")
+    ids = sorted({int(m) for m in re.findall(r"/circulars/(\d{4,7})", html)}, reverse=True)
+    if not ids:
+        raise ValueError("no circular numbers found on the GCN listing page")
+    out = []
+    for cid in range(ids[0], max(ids[0] - keep, 0), -1):
+        try:
+            req = urllib.request.Request(f"https://gcn.nasa.gov/circulars/{cid}.json", headers=ua)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                c = json.loads(r.read().decode("utf-8"))
+            out.append({"circularId": c.get("circularId", cid), "subject": c.get("subject", "")})
+        except Exception:
+            continue
+    return out
 
 
 def _adapt_gcn(doc):
@@ -340,9 +342,9 @@ TELEMETRY += [
     ("exoplanet", "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper+from+ps+where+default_flag=1+and+pl_orbper+is+not+null&format=json",
      None, "per", ("ultra_short_period", lambda v, r: v < 0.5, "planet with an orbital period under 12 hours (NASA Exoplanet Archive). Confirm in the discovery paper"),
      {"adapt": _adapt_exoplanets, "period": 21600}),
-    ("gamma_transient", "https://gcn.nasa.gov/circulars/archive.json.tar.gz", None, "score",
+    ("gamma_transient", "https://gcn.nasa.gov/circulars?limit=20", None, "score",
      ("gcn_transient", lambda v, r: v >= 1.0, "NASA GCN circular about a gamma-ray burst, gravitational wave, neutrino, FRB or similar transient. Read the circular on gcn.nasa.gov"),
-     {"adapt": _adapt_gcn, "period": 86400, "getter": _gcn_archive_latest}),
+     {"adapt": _adapt_gcn, "period": 1800, "getter": _gcn_recent}),
 ]
 
 TELEMETRY_MEANING = {
