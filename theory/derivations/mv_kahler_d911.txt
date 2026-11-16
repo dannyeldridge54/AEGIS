@@ -1,0 +1,6 @@
+rho   4y^2*g for K=-logE: -2.0000   for K=+logE: +2.0000
+i     4y^2*g for K=-logE: -2.0000   for K=+logE: +2.0000
+y=2   4y^2*g for K=-logE: +0.1409   for K=+logE: -0.1409
+y=4   4y^2*g for K=-logE: +1.6881   for K=+logE: -1.6881
+y=8   4y^2*g for K=-logE: +1.9595   for K=+logE: -1.9595
+expected cusp, K=-logE: 4y^2 g -> +s = +2 ; at a critical point of E: -s(s-1) = -2
