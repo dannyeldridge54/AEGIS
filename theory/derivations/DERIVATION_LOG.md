@@ -307,3 +307,14 @@ Touches: n_sector_rho (corrected → computed), lepto_rho.
 7. Postulate P5 (X with M_X < M) [postulate P5].
 8. [derived] Consistency: D782/D783's late-decay route is closed (ε). D781's frozen-band condition becomes moot under P5. D787 baryon triality is kept.
 Touches: lepto_rho (assumed), n_sector_rho, serapis_e.
+
+## D789 — P5 consistency and the B bookkeeping (forward side)
+1. X ~ (3, 2/3), X̄ ~ (3̄, −2/3); NUX and X̄DD are gauge-invariant [derived] (computed hypercharge and colour).
+2. Z₃: q_X = −q − q_U, q_X̄ = −2q_D; M_X XX̄ is allowed for exactly one pair charge per assignment [derived] (computed).
+3. Gauge-allowed X-terms with SM fields: XU, X̄QH_u, X̄DD; Z₃ allows only X̄DD [derived] (computed).
+4. Matter parity: X, X̄ even [derived].
+5. Γ(N → uX) ≫ H(T_R), so the decay is prompt [derived] (computed).
+6. B charges: X̄ +2/3, X −2/3, N +1 make all P5 terms and the Dirac mass B-conserving [derived].
+7. So the N decays conserve B, and B violation sits in the inflaton couplings (φNN with ΔB = ±2, ±1) [derived].
+8. [derived] Consistency: D788's statement "baryogenesis in N decays" is corrected (B conserved there). P5 is still useful (it removes the late phase). Baryogenesis moves to φ decays.
+Touches: lepto_rho.

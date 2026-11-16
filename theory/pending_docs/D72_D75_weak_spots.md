@@ -7721,3 +7721,17 @@ WALL → CREATE (no-stop rule): POSTULATE P5 (theory/derivations/POSTULATES.md),
 - the proton is still protected (baryon triality, D787).
 β3 FLAG: three open postulates (P1, P3, P5). The next tick must test or retire one. P5 also needs a Z₃-charge check for X (proton safety) and a reason for a coloured state at ~1e11 GeV.
 MAP: node=lepto_rho status=assumed touches=[n_sector_rho, serapis_e] ripple=no
+
+## D789 (FORWARD, i-side; Jl tick 28; locked PREREG_D789 + DEVIATIONS D1; results/p5_test_d789.txt, run1 INVALID kept) — P5 PASSES its consistency tests; but with P5 the N decays conserve B, so the asymmetry must come from the (Z₃-charged) inflaton's own decays
+Computed (6 D787 assignments × 2 pair charges):
+- (1) For every assignment exactly ONE of the two pair charges (q) gives a consistent X, X̄ with an allowed mass term M_X·XX̄. The Dirac pair decays through that member's coupling (one Dirac fermion), so this suffices.
+- (2) The gauge-allowed renormalisable X-terms are X·U, X̄·Q·H_u and X̄·D·D. Z₃ forbids X·U and X̄·Q·H_u in all cases, so the only allowed one is P5's own X̄·D·D. No leptoquark or U-mixing couplings, hence no proton decay through X. (D1: run 1 counted X̄DD as an "extra" coupling; fixed before rerun.)
+- (3) Matter parity: X and X̄ are even (Higgs-like); NUX and X̄DD are even. Consistent.
+- (4) Γ(N → uX) = 3e6 – 8e8 GeV ≫ H(3e8 GeV) = 0.6 GeV. Prompt: no late phase, T_R back to D725.
+VERDICT (locked rule): P5 PASSES.
+New consequence [derived]: assign B(X̄) = +2/3 (from X̄DD), B(X) = −2/3 (mass), so B(N) = +1 (from NUX). All P5 couplings and the Dirac pair mass CONSERVE B, so N decays cannot make a baryon asymmetry (contradicting D788's "baryogenesis in those decays").
+- B is violated only by the inflaton's own couplings, e.g. φ → N_nN_n (ΔB = 2) allowed by its Z₃ charge, versus φ → N_Y + N₃ (ΔB = −1).
+- So the ρ asymmetry must come from CP violation in the Z₃-charged inflaton's decays: φ vs φ* give B = ±2.
+- This is a correction to D788's text (recorded here, not a silent edit). It is the next computation.
+β3: three open postulates remain (P1, P3, P5). P5 was tested this tick and passed. P1 cannot be retired (τ = i needs it) and neither can P3 (plateau). The flag stands; next tick continues the P5 line.
+MAP: node=lepto_rho status=assumed touches=[] ripple=no
