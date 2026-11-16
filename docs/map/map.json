@@ -54,7 +54,8 @@
     "D747: open",
     "D757: open",
     "D768: assumed"
-   ]
+   ],
+   "flag": "recheck (D769, serapis_e)"
   },
   {
    "id": "logderiv_plateau",
@@ -188,18 +189,18 @@
     "D692",
     "D693",
     "D765",
-    "D765a"
+    "D765a",
+    "D769"
    ],
    "depends": [
     "plateau_origin",
     "bhk_tilt"
    ],
    "history": [
-    "D765: frozen",
     "D765a: computed",
-    "D765a: computed"
-   ],
-   "flag": "recheck (D768, plateau_origin)"
+    "D765a: computed",
+    "D769: computed"
+   ]
   },
   {
    "id": "janus",

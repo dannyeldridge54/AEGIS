@@ -7432,3 +7432,15 @@ Wall status: no microscopic source of the 1/E(τ,2) plateau, consistent with D70
 Comparison: with SERAPIS-E's single −ln metric (y = e^{√2φ}, i.e. 3α = 1), 2408.05203's formula r = 12α/N² = 4/N² gives 1.6–1.7e-3. SERAPIS-E's exact r is 3.5–3.8e-4 untilted, because its plateau approach is 1/E ∝ y⁻² = e^{−2√2φ}, not e^{−√2φ}. So the E(τ,2) plateau sits a factor ~4.5 below the j/Ê₁ attractors in r: a distinguishing feature, consistent with the D700–D702 r-ladder.
 Mirror question (forward, next tick): the axion Re τ is exponentially flat during inflation (x-dependence ∝ e^{−2πy}, y* ≈ 14, as 2408.05203 §7 also notes). Compute, with the 2-field metric, whether a trajectory starting at x₀ ≠ ½ ends at ρ, and the size of ∂N/∂x₀ near x₀ = ½ and at generic x₀. Then the induced ζ from δx ~ √2·y*·H/2π versus 5e-5 (isocurvature / f_NL test of P3).
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D769 (FORWARD, i-side; Jl tick 8; locked PREREG_D769 + DEVIATIONS D1–D2; results/axion_two_field_d769.txt, run1 INVALID kept) — the light axion adds ζ ≲ 1e-7 (passes), but the locked verdict is FAIL on a mis-specified end criterion; the post-inflation relaxation to ρ is untested
+Computed (two-field background, D692 plateau form, C = 1.15e-6, start y = 25):
+- K4: N_total(x₀ = ½) = 109.0902263, equal to the single-field D692 background (109.0902263, checked separately with the D692 code). PASS.
+- N_total(x₀) − N_total(½): +4.4e-8 (0.49/0.51), +1.1e-5 (0.45), +4.3e-4 (0.4), +1.6e-3 (0.3), +4.3e-3 (0.1). x hardly moves during inflation (0.1 → 0.1004), and y_end = 1.297–1.306.
+- ∂N/∂x₀ = −4.3e-3 at 0.45 and −1.4e-2 at 0.3. With δx = √2·y*·H/2π = 7.4e-6: ζ_axion = 3.2e-8 at 0.45 and 1.0e-7 at 0.3, i.e. ≤ 0.2% of ζ in amplitude, ≤ 4e-6 of the power.
+- At ½: ∂²N/∂x² = 0.088, so the second-order δN is 2.4e-12 (f_NL contribution negligible).
+VERDICT (locked rule): FAIL. The ζ part PASSES by a factor ≥ 10 (1.0e-7 ≤ 1e-6), but the second criterion, "|x_end − ½| < 0.05 at the end of inflation", fails for x₀ ≤ 0.44, because the axion has not yet relaxed when ε = 1.
+- The criterion was mis-specified: it tested x at ε = 1, while the question is where the field settles AFTER inflation. That is a design error in the lock, recorded here. The verdict is not changed, and the test is not rerun with a new rule.
+- The post-inflation relaxation (does a trajectory ending at x ≈ 0.1–0.4, y ≈ 1.3 fall into ρ, or near the τ = i saddle?) is a NEW question, D770, with its own lock.
+Physics so far: for SERAPIS-E the axion's curvature contribution is negligible across x₀ ∈ [0.1, 0.9]. This supports the paper's axion statement (made for τ = i), now for ρ.
+MAP: node=serapis_e status=computed touches=[plateau_origin] ripple=no
