@@ -28,3 +28,4 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file un
 - Moduli consistency (D861): τ = i caveat adds that its CP source cannot coexist with a natural-size anti-D3 uplift and the BHK tilt; a consistent point needs string-size small tori.
 - D867: anti-D3 sentence tightened (incompatible with the BHK tilt's moduli; n_s shift +0.005–0.06); the D861 τ = i sentence removed (cross-branch, D861a).
 - D870: plateau caveat names the remaining uplift options (distant throat anti-D3, T-brane), D868–D869.
+- D871: referee minors batch 1 (#5, #7, #9, #10, #11, #13); 17 pages.

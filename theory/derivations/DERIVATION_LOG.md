@@ -951,3 +951,9 @@ Touches: plateau_origin, serapis_e.
 2. Draft caveat names the throat and T-brane options [derived] (D868, D869).
 3. Nilpotent-field wording kept, valid for the throat option [derived].
 Touches: plateau_origin, serapis_e.
+
+## D871: referee minors batch 1
+1. Six wording/table fixes applied, numbers from existing notes [derived] (REFEREE_v3.2_full.md).
+2. α_s testing scale stated as 2e-4 (Janus vs attractor) and 2e-5 (2% relation) [derived] (2% of 9e-4).
+3. Rebuilt clean, 17 pages [derived].
+Touches: none.

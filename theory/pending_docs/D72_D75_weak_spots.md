@@ -8955,3 +8955,7 @@ MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
 ## D870: P3 reworded to "uplift sector"; draft and docs updated
 POSTULATES: new P3 update line (not a silent edit of the header): the plateau sits in the uplift sector, realised by a sequestered throat anti-D3 (D869) or a T-brane D-term on the T⁴ cycle (D868). Draft: the plateau caveat now names these two options after the on-torus exclusion (D867); the Kallosh–Linde nilpotent-field wording elsewhere stays valid for the throat option. Rebuilt: 16 pages, clean. ACCURACY_STATUS updated and synced.
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D871: deferred referee minors, batch 1
+Applied to the v3.2 draft: #5 (self-referencing section pointer), #7 (ρ_x′ defined), #9 (one T_R range, (0.8–3)×10⁶ GeV), #10 (r falsifiers reconciled: the 1.1e-3 value is the locks', footnote h points to the stricter cap row), #11 (cored-halo 2.9 TeV added to the wino falsifier), #13 (α_s testing: 2e-4 separates the Janus value from the attractor; testing the relation itself needs about 2e-5; body sentence aligned). Rebuilt: 17 pages (was 16), no undefined references, no overfull boxes. Remaining deferred: #1, #2, #12, #14, #15.
+MAP: none
