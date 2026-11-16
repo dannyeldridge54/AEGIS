@@ -17,7 +17,7 @@ class Background:
     def state(self, N):
         p, pn = self.sol.sol(N); eps = 0.5*pn*pn
         H = np.sqrt(self.V(p)/(3-eps)); return p, pn, eps, H
-def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0):
+def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0, ic='bd'):
     """Return dict with P_R, P_t at ln k offsets, and n_s, r, alpha_s at the pivot that exits at Nend - Nstar."""
     Np = bg.Nend - Nstar if Npivot is None else Npivot
     _, _, _, Hp = bg.state(Np); kp = Hp   # a(N) = e^{N-Np}: normalised at the pivot (D955 D1)
@@ -43,7 +43,11 @@ def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0
             return [Rp.real, Rp.imag, Rpp.real, Rpp.imag, hp.real, hp.imag, hpp.real, hpp.imag]
         p, pn, eps, H = bg.state(N0); a = np.exp(N0-Np)
         # Bunch-Davies: u = e^{-ik eta}/sqrt(2k); du/dN = -i (k/aH) u; R = u/z, z = a pn; h = u/a
-        u = 1/np.sqrt(2*k); un = -1j*(k/(a*H))*u
+        if ic == 'ds':   # exact de Sitter mode at the start (D974 follow-up); 'bd' keeps the original behaviour
+            eta = -1.0/(a*H*(1-eps)); u = (1 - 1j/(k*eta))/np.sqrt(2*k)
+            un = ((-1j*k*(1 - 1j/(k*eta)) + 1j/(k*eta**2))/np.sqrt(2*k))/(a*H)
+        else:
+            u = 1/np.sqrt(2*k); un = -1j*(k/(a*H))*u
         dV = (bg.V(p+1e-6)-bg.V(p-1e-6))/2e-6; pnn = -(3-eps)*pn - (3-eps)*dV/bg.V(p)
         z = a*pn; zn = z*(1 + pnn/pn)
         R = u/z; Rn = un/z - u*zn/z**2

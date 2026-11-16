@@ -61,6 +61,8 @@ from .ms import spectra_fast
 rf = spectra_fast(bgq2, 60.0)
 check('L4e spectra_fast matches spectra for n_s and r (bd=200)', abs(rf['ns']-res['ns']) < 2e-5 and abs(rf['r']/res['r']-1) < 1e-4, f"{rf['ns']:.6f}/{rf['r']:.5f}")
 # NOTE: spectra_fast alpha_s is NOT validated at bd=200; use spectra() for alpha_s.
+rds = spectra(bgq2, 60.0, ic='ds')
+check("L4f exact de Sitter start agrees with BD start for n_s, r", abs(rds['ns']-res['ns']) < 5e-6 and abs(rds['r']/res['r']-1) < 1e-4, f"{rds['ns']:.7f}")
 # L2: vacuum at rho with Z3-symmetric (equal) masses
 from .landscape import V_tau, find_vacuum, hessian_canonical
 Er = E_paper(0.5, 3**0.5/2)
