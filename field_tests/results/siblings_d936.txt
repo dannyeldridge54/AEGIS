@@ -1,0 +1,16 @@
+A n=3 k=1 p=0.8165 alpha=1.0000 N=50: ns=0.9600 r=4.80e-03 alpha_s=-8.00e-04 | SPA +2.8sig, SPA+DESI +4.7sig | LiteBIRD yes
+A n=3 k=1 p=0.8165 alpha=1.0000 N=55: ns=0.9636 r=3.97e-03 alpha_s=-6.61e-04 | SPA +1.6sig, SPA+DESI +3.4sig | LiteBIRD yes
+A n=3 k=1 p=0.8165 alpha=1.0000 N=60: ns=0.9667 r=3.33e-03 alpha_s=-5.56e-04 | SPA +0.6sig, SPA+DESI +2.3sig | LiteBIRD yes
+B n=4 k=2 p=1.4142 alpha=0.3333 N=50: ns=0.9600 r=1.60e-03 alpha_s=-8.00e-04 | SPA +2.8sig, SPA+DESI +4.7sig | LiteBIRD yes
+B n=4 k=2 p=1.4142 alpha=0.3333 N=55: ns=0.9636 r=1.32e-03 alpha_s=-6.61e-04 | SPA +1.6sig, SPA+DESI +3.4sig | LiteBIRD yes
+B n=4 k=2 p=1.4142 alpha=0.3333 N=60: ns=0.9667 r=1.11e-03 alpha_s=-5.56e-04 | SPA +0.6sig, SPA+DESI +2.3sig | LiteBIRD yes
+C n=2 k=2 p=2.0000 alpha=0.1667 N=50: ns=0.9600 r=8.00e-04 alpha_s=-8.00e-04 | SPA +2.8sig, SPA+DESI +4.7sig | LiteBIRD no
+C n=2 k=2 p=2.0000 alpha=0.1667 N=55: ns=0.9636 r=6.61e-04 alpha_s=-6.61e-04 | SPA +1.6sig, SPA+DESI +3.4sig | LiteBIRD no
+C n=2 k=2 p=2.0000 alpha=0.1667 N=60: ns=0.9667 r=5.56e-04 alpha_s=-5.56e-04 | SPA +0.6sig, SPA+DESI +2.3sig | LiteBIRD no
+D n=2 k=4 p=4.0000 alpha=0.0417 N=50: ns=0.9600 r=2.00e-04 alpha_s=-8.00e-04 | SPA +2.8sig, SPA+DESI +4.7sig | LiteBIRD no
+D n=2 k=4 p=4.0000 alpha=0.0417 N=55: ns=0.9636 r=1.65e-04 alpha_s=-6.61e-04 | SPA +1.6sig, SPA+DESI +3.4sig | LiteBIRD no
+D n=2 k=4 p=4.0000 alpha=0.0417 N=60: ns=0.9667 r=1.39e-04 alpha_s=-5.56e-04 | SPA +0.6sig, SPA+DESI +2.3sig | LiteBIRD no
+E n=4 k=4 p=2.8284 alpha=0.0833 N=50: ns=0.9600 r=4.00e-04 alpha_s=-8.00e-04 | SPA +2.8sig, SPA+DESI +4.7sig | LiteBIRD no
+E n=4 k=4 p=2.8284 alpha=0.0833 N=55: ns=0.9636 r=3.31e-04 alpha_s=-6.61e-04 | SPA +1.6sig, SPA+DESI +3.4sig | LiteBIRD no
+E n=4 k=4 p=2.8284 alpha=0.0833 N=60: ns=0.9667 r=2.78e-04 alpha_s=-5.56e-04 | SPA +0.6sig, SPA+DESI +2.3sig | LiteBIRD no
+SERAPIS reference: alpha=1/12, p=2.8284

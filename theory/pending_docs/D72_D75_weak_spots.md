@@ -9513,3 +9513,10 @@ Verdict (with D933, D934): for the multilinear flux superpotential on T⁶/(Z₂
 Project F: F1 killed per its rule. Next: the sibling catalogue (α = 1, 1/3, 1/6, 1/24, 1/12-diagonal) with D669 consistency-relation predictions, and the result above as a candidate fourth no-go for paper 2's next version.
 LESSONS: the condition matrix was badly conditioned only at domain edges; report where a minimum sits, not just its size.
 MAP: none
+
+## D936 (Project F, catalogue; locked PREREG_D936): sibling catalogue: plain members differ only in r; all need a ramp to reach n_s ≈ 0.973; r splits them into LiteBIRD-visible (α = 1, 1/3) and invisible (1/6, 1/24, 1/12) groups
+[computed] (leading slow roll, no ramp; field_tests/results/siblings_d936.txt) For every member n_s = 1 − 2/N = 0.9600/0.9636/0.9667 and α_s = −2/N² = −8.0/−6.6/−5.6e-4 at N = 50/55/60; distance below CMB-SPA +2.8/+1.6/+0.6σ, below CMB-SPA+DESI +4.7/+3.4/+2.3σ. r = 12α/N² (N = 55): A (α = 1, one-modulus CY LCS, D928) 4.0e-3; B (α = 1/3, n = 4 ray, k = 2) 1.3e-3; C (α = 1/6, diagonal pair, k = 2) 6.6e-4; D (α = 1/24) 1.7e-4; E (α = 1/12, n = 4 ray, k = 4: SERAPIS's p) 3.3e-4. LiteBIRD (optimistic, r ≳ 1e-3): A and B yes; C, D, E no.
+[derived] Without a ramp no member reaches the SPA+DESI n_s (all ≥ 2.3σ low at N ≤ 60); with a ramp each obeys the D669 relation with its own p (0.816, 1.414, 2.000, 4.000, 2.828); κ is not derived for siblings, so no ramped numbers are given (per lock).
+Status: post-hoc models, scored only on future data; nothing frozen changes. Use: an r detection near 1–5e-3 by LiteBIRD would favour A/B (non-SERAPIS geometries); r ≲ 1e-3 keeps SERAPIS and C–E. Project F closes here pending a new idea for a single flat U.
+LESSONS: plain attractor siblings are separated by r alone; n_s needs the ramp in every case.
+MAP: none

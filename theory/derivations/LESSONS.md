@@ -183,3 +183,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D933: tadpole kills identically-flat U; point-wise case needs a locked search.
 - D934: numeric SVD screen before exact nullspaces.
 - D935: report where a minimum sits (edges = conditioning, not zeros).
+- D936: siblings split by r; all need a ramp for n_s.

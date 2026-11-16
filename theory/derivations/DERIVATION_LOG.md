@@ -1371,3 +1371,8 @@ Touches: none.
 - [computed] ρ grid nullity 0 (343 points); continuous min σ ratio 1.5e-3 at domain corners (> 1e-4 rule).
 - [derived] with D933: no identically or point-wise flat single U in the sampled domain.
 - Result: Project F switches to the sibling catalogue; candidate fourth no-go.
+
+## D936: sibling catalogue (locked)
+- [computed] n_s 0.960–0.967, α_s −(5.6–8.0)e-4 for all; r(N=55): 4.0e-3, 1.3e-3, 6.6e-4, 1.7e-4, 3.3e-4 for α = 1, 1/3, 1/6, 1/24, 1/12.
+- [derived] all need a ramp for SPA+DESI n_s; D669 p listed per member.
+- Result: catalogue recorded; Project F closed pending a new idea.
