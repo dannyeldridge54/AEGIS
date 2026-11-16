@@ -1,0 +1,5 @@
+K4 (D732 T_R=3.2e8, M2=660): 0.017 (D732: 0.017)
+T2=1e+05: Y32=1.9e-17, at M2=0.7TeV Omega_nth=3.6e-06 Omega_th=0.007; Einasto-allowed window: 0.67-2.00 TeV
+T2=1e+06: Y32=1.9e-16, at M2=0.7TeV Omega_nth=3.6e-05 Omega_th=0.007; Einasto-allowed window: 0.67-1.99 TeV
+T2=1e+07: Y32=1.9e-15, at M2=0.7TeV Omega_nth=3.6e-04 Omega_th=0.007; Einasto-allowed window: 0.67-1.96 TeV
+Thermal fraction at window ends: f(0.67)=0.053, f(1.85)=0.407

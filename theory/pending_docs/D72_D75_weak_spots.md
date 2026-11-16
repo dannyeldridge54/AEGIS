@@ -7656,3 +7656,14 @@ VERDICT (locked rule): PLAUSIBLE, but TIGHT.
 - This is now the ρ branch's most fragile link.
 ρ-branch status: viable only through R-Z₃ plus string-scale decay plus late-decay baryogenesis. The τ = i branch is untouched by Z₃ issues; its frozen predictions do not carry these conditions.
 MAP: node=serapis_e status=computed touches=[lepto_rho] ripple=no
+
+## D784 (REVERSE, ρ-side; Jl tick 23; locked PREREG_D784; results/wino_late_d784.txt) — after the Z₃ late reheating the SERAPIS-E wino is thermal: window WIDENS from 0.67–0.80 to 0.67–1.85 TeV (5–41% of DM)
+Computed (K4: D732's Ω_total at M₂ = 0.66 TeV, T_R = 3.2e8, reproduced: 0.017):
+- No thermal bath exists before T₂ (the inflaton decays to heavy N), so gravitinos are made only at T₂: Y₃/₂ = 1.9e-17 to 1.9e-15 for T₂ = 1e5–1e7. Their winos give Ω_nth = 4e-6 to 4e-4 at 0.7 TeV, negligible.
+- T₂ ≫ T_f ≈ M₂/20, so winos freeze out thermally: f = (M₂/2.9 TeV)² = 0.053 at 0.67 TeV and 0.41 at 1.85 TeV.
+- Einasto line limit (D735 method): allowed for M₂ ≤ 1.96–2.00 TeV. Combined with 2507.15934's stated exclusion of thermal sub-fractions from 1.85 TeV up, and the ATLAS 670 GeV floor: window 0.67–1.85 TeV.
+VERDICT (locked rule): CHANGED. The sharp post-hoc 0.67–0.80 TeV window (D735, built on T_R = 3e8) is SUPERSEDED by the generic thermal-wino window 0.67–1.85 TeV (5–41% of DM).
+- The prediction is less sharp: HL-LHC disappearing tracks (~1 TeV reach, D736) test only its lower half, and gamma-ray lines its upper end.
+- The rest of the DM needs another component (as D713).
+- The paper's table row, the SERAPIS-E text and the abstract were updated; 2507.15934 added to refs.
+MAP: node=wino_window status=corrected touches=[gravitino_wino] ripple=no

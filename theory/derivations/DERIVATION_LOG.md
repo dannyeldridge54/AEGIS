@@ -255,3 +255,13 @@ Touches: lepto_rho, n_sector_rho, serapis_e.
 7. ε ≤ 1/(8π) for one-loop interference, so this is plausible [estimate].
 8. [derived] Consistency: D781's T₂ boundary is translated; D782's estimate "Λ ≲ 3e16" is refined DOWN to ≲ 1e16 (it neglected the 192π³ phase space). The frozen bands are unchanged (conditional).
 Touches: serapis_e, lepto_rho.
+
+## D784 — the wino after late reheating (reverse side)
+1. φ → NN with no SM channel, so there is no thermal bath before T₂ [derived] (D780).
+2. Thermal gravitino yield Y₃/₂ = 1.9e-12·T₂/1e10 [literature] (D732 formula; Bolz–Brandenburg–Buchmüller-type).
+3. Ω_nth = 2.74e8·M₂·Y₃/₂ ≤ 4e-4 [derived] (computed).
+4. T₂ ≫ M₂/20, so the thermal freeze-out relic is f = (M₂/2.9 TeV)² [literature] (thermal wino mass 2.9 TeV, D732 convention).
+5. f_max = √(L/σ_line) with Einasto L ∝ M² [estimate] (D735 method), giving M₂ ≤ 1.96–2.0 TeV [derived] (computed).
+6. 2507.15934 excludes thermal sub-fractions from 1.85 TeV [literature] (D761), so the window is 0.67–1.85 TeV [derived].
+7. [derived] Consistency: K4 reproduces D732. D735/D736's narrow window depended on T_R = 3e8 (now superseded by D780). The τ = i branch's wino window (0.66–2.9 TeV, paper Sec. VII) is unaffected.
+Touches: wino_window (corrected), gravitino_wino.

@@ -489,7 +489,7 @@
     "reheat_rho",
     "covariant"
    ],
-   "flag": "recheck (D780, n_sector_rho)"
+   "flag": "recheck (D784, wino_window)"
   },
   {
    "id": "band_i",
@@ -573,18 +573,20 @@
     "E"
    ],
    "title": "Wino 0.67–0.80 TeV, ~15% of DM (post-hoc)",
-   "status": "estimate",
+   "status": "corrected",
    "d": [
     "D735",
     "D736",
-    "D761"
+    "D761",
+    "D784"
    ],
    "depends": [
     "gravitino_wino",
     "halo_profile"
    ],
    "history": [
-    "D761: estimate"
+    "D761: estimate",
+    "D784: corrected"
    ]
   },
   {
