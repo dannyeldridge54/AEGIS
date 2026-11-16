@@ -34,3 +34,4 @@ UFE_SOLVE_CHECKLIST.md
 agent/
 papers/v3/build/
 tools/calcq/logs/
+tools/calcq/status.txt

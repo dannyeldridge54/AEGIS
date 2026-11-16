@@ -1,4 +1,0 @@
-D957-rho|done|22:41Z|22:50Z|0
-D958-nstar|done|22:50Z|22:54Z|143
-D960-alphaconv|running|22:54Z||
-D961-projH|running|23:08Z||
