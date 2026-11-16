@@ -232,3 +232,4 @@ D945  2026-11-16T21:16Z  H1: one-loop mass from T2 images
 D946  2026-11-16T21:17Z  H4: ratio is a free parameter
 D947  2026-11-16T21:19Z  H3: offset = CC tuning
 D948  2026-11-16T21:20Z  D941/D945 vs D709/D712 no-gos
+D949  2026-11-16T21:22Z  v3.3 draft: Project H
