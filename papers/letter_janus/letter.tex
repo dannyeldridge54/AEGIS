@@ -1,0 +1,70 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{A Parameter-Free Consistency Relation for Plateau Inflation with an Uplift Ramp}
+\author{Danny Eldridge}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{Draft, 16 November 2026}
+\begin{abstract}
+Many inflationary models combine an exponentially flat plateau with a small rising term, either from an uplift sector or from a power-law correction. We show that for the whole family $V\simeq V_0\,(1-A e^{-p\phi}+\delta e^{q\phi})$ the spectral index $n_s$, the tensor-to-scalar ratio $r$ and the running $\alpha_s$ obey a closed relation in which the unknown ramp strength $\delta$ drops out: given the model-class constants $p$ and $\kappa=q/p$, the measured $(n_s,r)$ predict $\alpha_s$ and its running $\beta_s$. Against exact Mukhanov--Sasaki spectra the relation holds to about $1\%$ for the modular-plateau (SERAPIS) models and for power-law singular T-models. We state plainly what it takes to test: separating it from the plain-attractor value needs $\sigma(\alpha_s)\approx2\times10^{-4}$, and testing it as a relation about $10^{-5}$, both beyond the forecasts for the 2030s; the near-term test of the family is $n_s$.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+Plateau potentials of the $\alpha$-attractor type predict $1-n_s\simeq2/N_*$ and $r\simeq12\alpha/N_*^2$~\cite{KL2013}. Recent CMB and BAO combinations prefer $n_s$ near $0.970$--$0.975$~\cite{SPA2025}, slightly above the plain attractor at $N_*\approx50$--$60$, and several groups now add a small rising term to the plateau to reach it: an uplift sector~\cite{KLY2026}, power-law singular T-models~\cite{KL2025}, or modular plateaus whose vacuum needs an extra mass term~\cite{SERAPIS}. Such a ramp introduces one more parameter, its strength $\delta$, which is usually fitted to $n_s$.
+
+Here we point out that this extra freedom does not survive in the three-point set $(n_s,r,\alpha_s)$. For a plateau with an exponential ramp, the fraction of the slope supplied by the ramp at horizon exit can be read off from $(n_s,r)$ alone, and $\alpha_s$ then follows with no free parameter left. The relation depends only on two numbers fixed by the model class, the plateau exponent $p$ and the ratio $\kappa$ of ramp to plateau exponents. Measuring $\alpha_s$ therefore tests the whole family, and $\kappa$ distinguishes its members. All numbers below were computed with scripts whose inputs and pass criteria were fixed and published before they were run~\cite{SERAPIS}.
+
+\section{The relation}
+Take, at large field, the canonically normalised potential
+\begin{equation}
+V(\phi)\simeq V_0\left(1-A\,e^{-p\phi}+\delta\,e^{q\phi}\right),\qquad \kappa\equiv q/p,
+\label{eq:V}
+\end{equation}
+in reduced Planck units, with $A e^{-p\phi}$ and $\delta e^{q\phi}$ both small during the observable e-folds. Write $A'\equiv A e^{-p\phi_*}$ at horizon exit and define the ramp fraction
+\begin{equation}
+x\equiv\frac{q\,\delta\,e^{q\phi_*}}{p\,A\,e^{-p\phi_*}},
+\end{equation}
+the ratio of the ramp's slope to the plateau's. To leading order in the small terms the slow-roll parameters give
+\begin{align}
+1-n_s&=2pA'(1-\kappa x),\\
+r&=8A'^2(1+x)^2,\\
+\alpha_s&=-2p^2A'^2(1+x)(1+\kappa^2x).
+\end{align}
+The ramp raises $r$ and lowers $1-n_s$; the plain attractor is $x=0$. Eliminating $A'$ between the first two lines, with
+\begin{equation}
+\varrho\equiv\frac{p\sqrt{r/2}}{1-n_s},\qquad x=\frac{\varrho-1}{1+\kappa\varrho},
+\label{eq:x}
+\end{equation}
+the measured $(n_s,r)$ fix $x$, and
+\begin{equation}
+\alpha_s=-\frac{(1-n_s)^2}{2}\,\frac{(1+x)(1+\kappa^2x)}{(1-\kappa x)^2}.
+\label{eq:alpha}
+\end{equation}
+The same steps for the running of the running give
+\begin{equation}
+\beta_s=-\frac{(1-n_s)^3}{4}\,\frac{(1+x)\left[(1-\kappa x)(1+\kappa^2x)+(1+x)(1-\kappa^3x)\right]}{(1-\kappa x)^3}.
+\label{eq:beta}
+\end{equation}
+At $x=0$ Eqs.~(\ref{eq:alpha}) and (\ref{eq:beta}) reduce to the attractor values $-(1-n_s)^2/2$ and $-(1-n_s)^3/2$. Neither $\delta$ nor $A$ appears: only $p$ and $\kappa$, which the model class fixes. For the SERAPIS modular plateaus $(p,\kappa)=(2\sqrt2,\tfrac12)$~\cite{SERAPIS}; for the power-law singular T-models of Ref.~\cite{KL2025} with $\alpha=1/3$, $\kappa=\beta$.
+
+\section{Accuracy}
+% TODO (next tick): D640 offset correction and exact MS comparison (-0.2...-0.4%); D666 both vacua ~1%; D669 KL test (-0.67...-0.94%, 10 points); D671 beta_s (-0.78...-0.95%).
+
+\section{Examples}
+% TODO: SERAPIS (D666 numbers), KL singular T-models (D669 table), uplifted attractors (2608.12819) as closest current work.
+
+\section{Tests}
+% TODO: D670 numbers (Delta alpha_s ~ 2-4e-4 at r = 5e-4; best 2030 1-sigma ~9e-4); D705 forecasts; CMB-S4 cancelled 10 July 2025; n_s as the near-term test.
+
+\section{Conclusion}
+% TODO.
+
+\begin{thebibliography}{9}
+\bibitem{KL2013} R.~Kallosh and A.~Linde, JCAP \textbf{07}, 002 (2013), arXiv:1306.5220.
+\bibitem{SPA2025} CMB-SPA and DESI combinations as summarised in Ref.~\cite{SERAPIS}; to be replaced by the primary references.
+\bibitem{KLY2026} R.~Kallosh, A.~Linde and Y.~Yamada, ``Waterfall-modulated $\alpha$-attractors,'' arXiv:2608.12819.
+\bibitem{KL2025} R.~Kallosh and A.~Linde, arXiv:2512.02969.
+\bibitem{SERAPIS} D.~Eldridge, ``The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test,'' v3.2, Zenodo (2026), doi:10.5281/zenodo.24289118.
+\end{thebibliography}
+\end{document}
