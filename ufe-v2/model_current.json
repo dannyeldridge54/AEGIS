@@ -16,5 +16,7 @@
   "~2035": "r from LiteBIRD"
  },
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
- "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716)."
+ "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
+ "changed_since_freeze": [],
+ "open_rechecks": []
 }

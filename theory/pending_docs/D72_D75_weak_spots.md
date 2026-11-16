@@ -1,4 +1,5 @@
 DEVELOPMENTS 72–75: the four weak spots (13 Nov 2026). AI-assisted. Insert into the matter doc after D71.
+> From D739 on, every D-note carries one map line: `MAP: node=<id> status=<status> touches=[ids]` (or `MAP: none`). Run `python tools/ladder/ladder.py update` after writing it (docs/UPDATE_LADDER_PLAN.md).
 
 > **Numbering rule (from 15 Nov 2026).** Before writing a note, claim its number: `sh tools/dnotes/claim_d.sh "short title"`
 > (pulls, takes the number in `NEXT_D.txt`, increments it, commits and pushes the claim; retries if another session got there first).
