@@ -1249,3 +1249,10 @@ Touches: plateau_origin, serapis_e.
 2. 21 byte-identical, 1 identical up to wrapper timing lines [derived].
 3. README gap (v3.2 rows) fixed in the repo [derived].
 Touches: none.
+
+## D914: T-brane uplift U-dependence
+1. V_up = C_up/V^{8/3}, C_up ∝ g_s ∫|Ĝ|² [literature] (1512.04558 eq. 3.24).
+2. U enters only via the flux norm, not analysed there [literature] (1512.04558).
+3. Torus flux norm |m + nU|²/Im U is one lattice term, not E(U,2) [estimate].
+4. P3 unchanged; both uplift carriers shape-blind for the E-ratio [derived] (D886).
+Touches: plateau_origin.

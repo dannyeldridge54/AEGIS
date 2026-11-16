@@ -9366,3 +9366,10 @@ The Zenodo v3.2 zip (md5 6a57f8c6…, identical to the published file) was unpac
 Gap found and fixed in the repo (not in the published archive): the archive's README listed only v3.1-era rows; five v3.2 rows added, plus this check's summary (papers/v3/repro/out/RP_v3.2_SUMMARY.txt). The archive itself contains all the scripts and results, so the README gap does not block reproduction.
 Recommendation to Danny: no v3.2.1 upload needed; the README addition can ride along with any future version.
 MAP: none
+
+## D914 (P3 / completion): the T-brane uplift's only handle on the torus shape is the G-flux norm, a single lattice term, not an Eisenstein ratio
+Search 1; fetched 1512.04558 (Cicoli–Quevedo–Valandro, De Sitter from T-branes), completing the D868 entry that used the abstract only.
+Findings [literature] (1512.04558): V_up = C_up/(V^{8/3} M_P⁴) (eq. 3.24), C_up ∼ 2g_s n ∫_{D_h}|Ĝ|² ω∧ω; equivalently c_up/V^{8/3} with c_up from e^K|W|², s = 1/g_s and flux quanta (eqs. 2.15–2.16, 2.32). The D-term uses the gauge kinetic function Re f_h = Re T_h/2π; the charged-matter Kähler metric is taken to depend on Re S only. Complex-structure dependence enters only implicitly, through the metric in |Ĝ|², and is not analysed.
+Assessment [estimate]: on a torus factor, the norm of a quantised three-form flux with integers (m, n) along that T² scales as |m + nU|²/Im U (the standard flux-norm form, from memory, to verify before use). At fixed fluxes this is a single lattice term: it goes as 1/y (n = 0) or grows as y (n ≠ 0) toward the cusp. It is neither modular invariant on its own (the fluxes transform) nor a 1/E(U,2) approach, where E(U,2) is a SUM over the lattice of the inverse squares. So a T-brane uplift does not supply the E-ratio either.
+Verdict: P3 unchanged. The T-brane stays an allowed carrier for the uplift sector (D868), but no source of the plateau's form; the anti-D3-in-throat option is likewise shape-blind at leading order (D886). Both uplift carriers are now checked; the plateau's form remains a postulate of the uplift sector.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
