@@ -719,3 +719,11 @@ Touches: plateau_origin, serapis_e.
 2. Correction D834a: the anti-D3 term does not destabilise τ = i at band-allowed k [derived] (D795, D834, D835).
 3. Tally + 4, − 6, 0 5; minuses concern motivation and origin, not data [derived].
 Touches: band_i, eps_tilt.
+
+## D841: T.2 τ = i decision (τ = i verdict project)
+1. Decision rule committed before applying [derived] (DECISION_RULE_D841).
+2. R1 not met: frozen band overlaps current n_s, r, Σm_ν bounds [literature] (D824; CMB-SPA, SPA+DESI).
+3. R2 not met: stable vacuum, frozen band reproduced in exact MS [derived] (D811, D815, D834a).
+4. C1 and C3 met; C2 ambiguous in units, outcome independent of it [derived].
+5. Outcome: keep as conditional variant [derived].
+Touches: band_i, eps_tilt.

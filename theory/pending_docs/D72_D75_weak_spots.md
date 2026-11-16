@@ -8607,3 +8607,13 @@ Each row checked against its source note. "+" supports keeping, "−" counts aga
 Tally: + 4 (3, 5, 7, 14), − 6 (4, 6, 8, 11, 12, 15), 0 5. The minuses are about MOTIVATION and ORIGIN (no derived ε, no vacuum preference in SUSY sums, narrow ε window), not about a failed prediction: no τ = i frozen prediction is contradicted by data.
 No decision here. T.2 will write the decision rule before applying it.
 MAP: node=band_i status=computed touches=[eps_tilt] ripple=no
+
+## D841 (τ = i verdict project, T.2): τ = i is KEPT AS A CONDITIONAL VARIANT
+Rule: DECISION_RULE_D841_tau_i.md, committed and pushed before applying. Inputs: D840 table only.
+R1 (frozen prediction contradicted at ≥ 2σ): NOT MET [derived]. Frozen τ = i band n_s 0.970–0.975, r 4.8–5.7e-4 (lock D605) vs CMB-SPA 0.9684 ± 0.0030 and SPA+DESI 0.9728 ± 0.0027: both overlap the band; r < 0.036 allows it; Σm_ν floor alive by 0.0005 eV (D824).
+R2 (internal inconsistency): NOT MET [derived]. The vacuum is stable (D811; D834a), and exact MS reproduces the frozen band for ε ≈ 1.40–1.45e-4 under corrected reheating (D815, D817).
+C1 (defining parameter has no derived source): MET (ε; D826, D834).
+C2 (window narrower than 3× its own error budget): AMBIGUOUS AS WRITTEN. The rule compares an ε window with an n_s error budget without saying how to convert units. Reading A (relative width): the ε window is 3.5% wide, the band-edge budget ±0.0005–0.0006 in n_s is ≈ 10–12% of the 0.005 band, so the window is narrower than 3× the budget → met. Reading B (in n_s): the band itself (0.005) exceeds 3× the budget (≈ 0.0017) → not met. Reported, not resolved; the outcome does not depend on it.
+C3 (extra structural condition not shared by ρ): MET (heavy-ν 2⊕1 splitting needed only at τ = i; D664a, D690).
+Outcome: KEEP AS CONDITIONAL VARIANT. Conditions to list in v3.2 Limitations: C1, C3 (and C2 under reading A). The frozen τ = i predictions are unchanged.
+MAP: node=band_i status=computed touches=[eps_tilt] ripple=no

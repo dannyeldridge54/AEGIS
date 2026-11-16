@@ -31,3 +31,4 @@ Band edges: ±0.0005–0.0006 in n_s, ±1.5–2% in r (numerical). This is well 
 - r: NOT detectable by LiteBIRD (δr = 1e-3); exclusion only (D820).
 - α_s: ~1σ by 2030s forecasts; the Janus enhancement needs ~5× better (D806).
 - Wino: HL-LHC reaches ~1 TeV; gamma-ray lines.
+- τ = i variant status (D841, rule committed first): KEPT AS A CONDITIONAL VARIANT. No frozen prediction fails and the vacuum is stable; conditions: ε has no derived source, and a 2⊕1 heavy-ν structure is needed only at τ = i.

@@ -18,7 +18,7 @@ nodes:
   - 'D755: estimate'
   - 'D823: estimate'
   - 'D826: estimate'
-  flag: recheck (D840, band_i)
+  flag: recheck (D841, band_i)
 - id: plateau_origin
   layer: 1
   branch:
@@ -423,14 +423,15 @@ nodes:
   - D816
   - D834
   - D840
+  - D841
   depends:
   - nstar_i
   - janus
   note: corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)
   history:
-  - 'D816: frozen'
   - 'D834: computed'
   - 'D840: computed'
+  - 'D841: computed'
 - id: band_e
   layer: 5
   branch:
