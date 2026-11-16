@@ -8642,3 +8642,16 @@ Assessment [derived]:
 Falsifier status (D763) unchanged: (i) gCP-imposing UV completion — now the generic case, so P1 must name its breaking modulus; (ii) δ_CP ≈ 0/π at > 3σ weakly disfavours P1 (≈ 6% prior mass at |sin δ| < 0.1).
 Sources: 2010.10782; 1901.03251; 1908.00805; 2105.02984; 2405.18813; 2206.08538; 2201.02020.
 MAP: none
+
+## D844 (DEEP, C.2): our configuration as specified has NO spontaneous CP source
+Derivation only (no numerics). CP acts as U → −Ū, S → −S̄, ρ_i → −ρ̄_i, and on a brane position z on the inflaton T² as z → −z̄ (D843 point 1).
+(a) Stuck D3 stacks [derived]. At ρ (Re U = ½): −Ū = U − 1 ≡ U, ½ → −½ ≡ ½, U/2 → −Ū/2 = U/2 − ½ ≡ (1+U)/2, and (1+U)/2 → U/2. So CP SWAPS the U/2 and (1+U)/2 stacks. The D696/D830 configuration has equal stacks there (5 and 5), so it is CP-invariant. At i every fixed point maps to itself. Stuck D3s have no continuous position moduli, and their discrete Wilson lines are Z₂-valued (holonomies ±1, real). CP-even. (An unequal pair, e.g. (5, 4), would break CP explicitly in the configuration, not spontaneously; D831 point 5 noted that an anti-D3 over a half-period makes stacks unequal in the BHK sum, but the anti-D3 sits at an EMPTY O3 point (D830), and its T² projection is itself a fixed point mapped as above, so the swap symmetry still holds if it projects to 0 or ½.)
+(b) Kähler axions Re ρ_i [derived]. The tree-level K = −Σ ln(Im ρ_i) and the BHK correction (∝ 1/(Im S·Im ρ), D689) depend only on Im ρ. Our V has no term fixing Re ρ_i: they are perturbatively shift-symmetric and FLAT. Fixing them needs non-perturbative W ⊃ A e^{2πi a ρ}. With CP-invariant (real) W0 and A, a single exponential fixes Re ρ at 0 or 1/(2a): CP-conserving. A two-term racetrack with real coefficients generically also lands on CP-conserving values [estimate: standard for real coefficients; not proven for every racetrack].
+(c) Axion-dilaton S and the other complex structures U₂, U₃ [literature + derived]: flux-stabilised in a toroidal prepotential, which gives no spontaneous CPV (2010.10782, D843 point 3). P2's U₂ route is retired (D772).
+(d) τ itself sits on a CP-conserving locus (Re τ = ½ at ρ, 0 at i) [derived] (1905.11970 §4.3; P1 text).
+Conclusion [derived]: every modulus in the specified configuration is either flat (Re ρ_i) or fixed at a CP-conserving value. The specified configuration has NO spontaneous CP source, so with CP a symmetry of the string effective theory (D843) the leptogenesis phase is δ = 0 at ρ and at i unless the model is extended.
+What this does and does not mean:
+- It does NOT contradict a frozen prediction: Y_B is a consistency requirement (fitted through T_R, ε_DI), not a frozen number.
+- It DOES mean P1 cannot be realised inside the configuration as specified. P1 needs an extension that the model must name: (i) a non-toroidal sector (e.g. a CY resolution, where 2010.10782 found CP-breaking flux vacua), (ii) a racetrack with a CP-odd vacuum for a Kähler axion, or (iii) a hidden-sector CP source communicated to the heavy ν.
+Next: C.3 asks whether option (ii) can be computed cheaply: a two-exponential racetrack for one Re ρ with real coefficients; scan for CP-odd minima (lock first). If none, C.4 verdict.
+MAP: none

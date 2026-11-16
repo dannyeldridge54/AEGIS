@@ -90,3 +90,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D841: when writing a decision rule, state the units of every comparison. C2 compared an ε window with an n_s budget and became ambiguous; it did not change the outcome this time, but it could have.
 - 2026-11-16 D842: generate the manifest rows from git in the same tick as the verdict, so the lock order of a day's deep work is checked while the commits are fresh.
 - 2026-11-16 D843: a postulate's falsifier can quietly become the generic case. Re-read old falsifiers against current literature: 'a UV completion that imposes gCP' turned out to be what string theory does by default.
+- 2026-11-16 D844: check what a symmetry does to each discrete choice in the configuration, not only to the moduli. CP swaps two of our D3 stacks; equal stacks keep it, unequal ones would break it by hand.

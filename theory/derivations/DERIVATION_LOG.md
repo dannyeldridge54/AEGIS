@@ -743,3 +743,11 @@ Touches: none.
 5. Remaining sources in our setup: Kähler axions, brane/Wilson-line moduli [derived].
 6. P1 not falsified; must be reformulated with a named breaking modulus [derived].
 Touches: none.
+
+## D844: C.2 CP-odd fields in our setup (P1 deep project)
+1. CP swaps the U/2 and (1+U)/2 stacks at ρ; equal stacks are CP-invariant [derived] (D696, D830).
+2. Stuck D3 Wilson lines are Z₂, CP-even [derived].
+3. Kähler axions are flat in our V; single-exponential stabilisation is CP-conserving [derived]; real racetracks generically too [estimate].
+4. S, U₂, U₃ flux-stabilised in a toroidal prepotential: no spontaneous CPV [literature] (2010.10782).
+5. No spontaneous CP source in the specified configuration; δ = 0 unless extended [derived].
+Touches: none.
