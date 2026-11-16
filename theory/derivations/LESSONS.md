@@ -37,3 +37,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D787: a residual discrete symmetry restricted to the SM often reduces to a familiar one (here baryon triality). Identify it; it imports known results (anomaly freedom, proton stability) for free.
 - 2026-11-16 D788: check the Nanopoulos–Weinberg order counting BEFORE proposing any decay-baryogenesis route. A particle that is stable without the B-violating coupling needs two insertions, which kills higher-dimension routes at once.
 - 2026-11-16 D789: after adding a mediator, assign B (and L) charges to every new field from its couplings and see whether B is still violated anywhere. A mediator can quietly make the decay B-conserving.
+- 2026-11-16 D790: a charge read-out in modular field space must use the local coordinate of the image the field actually settled at. Reduce first, then compute the charge (the D770 lesson applied to velocities too).

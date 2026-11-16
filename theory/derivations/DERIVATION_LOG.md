@@ -318,3 +318,14 @@ Touches: lepto_rho (assumed), n_sector_rho, serapis_e.
 7. So the N decays conserve B, and B violation sits in the inflaton couplings (φNN with ΔB = ±2, ±1) [derived].
 8. [derived] Consistency: D788's statement "baryogenesis in N decays" is corrected (B conserved there). P5 is still useful (it removes the late phase). Baryogenesis moves to φ decays.
 Touches: lepto_rho.
+
+## D790 — inflaton Affleck–Dine at ρ (reverse side)
+1. ε_φ ≤ g²/8π for interference at order g² [estimate] (Nanopoulos–Weinberg counting; D725 couplings).
+2. ε_φ ≤ 3e-13 ≪ 4e-6, a WALL [derived] (computed).
+3. Near ρ, Z₃ forbids δτ² terms, so the quadratic potential is isotropic, with an approximate U(1) on the disk coordinate w [derived] (the charge of δτ² is 2q_φ ≢ 0).
+4. Cubic δτ³ terms (Z₃-allowed) break the U(1), so an off-axis start gives an orbit charge n = Im(w*ẇ) [derived] (AD mechanism structure).
+5. η = n/(ρ/m): 0 at x₀ = ½; |η| ≈ 0.1–0.2 at |Δx| = 0.05–0.1 [derived] (computed; read-outs at ρ only).
+6. Inflaton quanta carry B-triality, so decays transfer η into B: Y_B = (3/4)(T_R/m_φ)·⟨ΔB⟩·η [estimate].
+7. Requirement η ≈ 4.3e-6 ⇒ |Δx| ≈ 2e-6; isocurvature safety needs |Δx| ≥ 7e-5, hence ~35× over-production [derived] (computed arithmetic).
+8. [derived] Consistency: the CP violation here is spontaneous (the initial x₀), so P1 is not needed at ρ in this route. The D788/D789 picture (P5 for prompt N decay) is kept. The 0.499/0.49 read-outs are flagged unreliable.
+Touches: lepto_rho.

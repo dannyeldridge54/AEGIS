@@ -468,16 +468,17 @@
     "D782",
     "D786",
     "D788",
-    "D789"
+    "D789",
+    "D790"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D786: corrected",
     "D788: assumed",
-    "D789: assumed"
+    "D789: assumed",
+    "D790: assumed"
    ]
   },
   {

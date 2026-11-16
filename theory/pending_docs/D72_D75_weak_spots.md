@@ -7735,3 +7735,21 @@ New consequence [derived]: assign B(X̄) = +2/3 (from X̄DD), B(X) = −2/3 (mas
 - This is a correction to D788's text (recorded here, not a silent edit). It is the next computation.
 β3: three open postulates remain (P1, P3, P5). P5 was tested this tick and passed. P1 cannot be retired (τ = i needs it) and neither can P3 (plateau). The flag stands; next tick continues the P5 line.
 MAP: node=lepto_rho status=assumed touches=[] ripple=no
+
+## D790 (REVERSE, ρ-side; Jl tick 29; locked PREREG_D790 + DEVIATIONS D1; results inflaton_ad_d790(_parta).txt, run1 CRASH kept) — inflaton-decay ε is hopeless (≤ 3e-13); an Affleck–Dine-type orbit charge of the Z₃-charged inflaton is LARGE (|η| ~ 0.1–0.2 for |x₀ − ½| ~ 0.05–0.1), so the route over-produces unless x₀ sits within ~1e-4 of the CP line
+Computed:
+- (a) ε_φ ≤ g²/(8π) = 2.7e-16 – 3.0e-13 for the D725 couplings, against 4.0e-6 needed. WALL (10⁷–10¹⁰ short).
+- (b) Two-field orbit (D770 code path; read-out at ρ_tot = 1e-4·V_end; m = 3.40 in V0 units). K4: x₀ = ½ gives η = 0 exactly. PASS.
+  - Valid read-outs (the field settled at ρ itself): x₀ = 0.45 → η = −0.10; x₀ = 0.40 → η = +0.20. So |η| ≈ 2|Δx|, with a phase-dependent sign.
+  - x₀ = 0.499 and 0.49 settled at the ST image of ρ (τ = ½ + 0.288i), where the ρ-centred disk coordinate is NOT the local one. Their η (0.010, 0.051) are therefore NOT reliable (a read-out defect, recorded; no rerun).
+- Requirement: η = 4.3e-6 (with ⟨ΔB⟩ = 2) ⇒ |Δx| ≈ 2e-6 at slope ~2.
+- Isocurvature: the axion fluctuates by δx = 7.4e-6 (D769). Keeping δη/η = δx/|Δx| ≤ 0.1 needs |Δx| ≥ 7.4e-5, which gives η ≈ 1.5e-4: ~35× OVER-production.
+VERDICT (locked rule): VIABLE by the lock's criterion (η ≥ 4.3e-6 with δη/η ≤ 0.1 is achievable), but with honest caveats:
+- (1) the isocurvature-safe offset over-produces B by ~35× (or more, if the unreliable slope ~10 holds), which needs a dilution factor ~35, or ⟨ΔB⟩·Br ≈ 0.03 (e.g. most inflaton decays into B-neutral channels);
+- (2) the offset x₀ − ½ ~ 1e-4 is an initial-condition choice (CP is broken spontaneously by where inflation started), not natural;
+- (3) Planck's actual baryon-isocurvature bound has not been applied (the 0.1 was an order-of-magnitude allowance).
+ρ baryogenesis status: possible via the inflaton's own Z₃ (≅ B-triality) orbit charge, an Affleck–Dine mechanism with the inflaton as the condensate. This is new: the CP phase is the initial offset from the CP line, so P1's explicit phases are NOT needed at ρ in this route.
+- P1 is still needed at i.
+- P5 (the mediator) is still needed for prompt N decay.
+Next (forward): the branching ⟨ΔB⟩ (inflaton channels B-charged vs neutral), the dilution needed, and the Planck baryon-isocurvature bound.
+MAP: node=lepto_rho status=assumed touches=[] ripple=no
