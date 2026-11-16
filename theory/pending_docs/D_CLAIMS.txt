@@ -106,3 +106,4 @@ D819  2026-11-16T13:25Z  published papers referee merge; D400 MICROSCOPE deviati
 D820  2026-11-16T13:38Z  r detectability literature check
 D821  2026-11-16T13:47Z  error budgets frozen bands
 D822  2026-11-16T13:50Z  prune logderiv and SERAPIS-Delta
+D823  2026-11-16T13:57Z  BHK tilt on tau=i branch
