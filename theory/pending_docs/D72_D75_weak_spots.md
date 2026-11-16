@@ -7804,3 +7804,16 @@ Mirror question (β2): does the ρ-chain's inflaton-AD mechanism (D790–D792) h
 - Open: whether the D7xx τ = i potential actually has Δm ≠ 0 [estimate: generic; not computed]. Even with Δm = 0, the Z₂ carrier argument alone closes the route.
 - Paper sweep: the ρ paragraph's "can generate the baryon asymmetry" now points to the Z₃ caveats and D792–D793. One sentence added to the CP paragraph. No other stale ρ statements found: 3e8 appears only in the constant-W₀ τ = i superpartner row; D731 is cited as superseded; 0.67–0.80 is absent.
 MAP: node=lepto_i status=computed touches=[lepto_rho] ripple=no
+
+## D795 (FORWARD, i-side; Jl tick 34; locked PREREG_D795; results/hessian_i_d795.txt): the τ = i Hessian is exactly isotropic, which corrects D794 step 4; D794's conclusion stands on the carrier argument
+Computed (two-term potential, ε = 1.45e-4; metric isotropic):
+- V_xx/V_yy = 0.99998676 at h = 1e-3 and 0.99999987 at h = 1e-4. ISOTROPIC; verdict rule |R−1| < 1e-3 met.
+- Diagnostic (b), A(δ) on |τ−i| = δ: 2.0e-2, 6.1e-2, 0.83 at δ = 0.01, 0.03, 0.1. The locked ratio test A(0.1)/A(0.03) = 13.7 formally "confirms" δ² scaling, but A grows linearly between 0.01 and 0.03.
+- That linear growth is a coordinate artefact: a circle in τ is not a circle in z = (τ−i)/(τ+i), since |z| varies by O(δ) around it. So (b) was mis-specified in the lock and is NOT evidence either way. No rerun; a z-circle version is a new lock if needed.
+Derivation (why isotropic, a hidden symmetry): V depends on τ only via |j − 1728|. Since j is S-invariant and S: z → −z, j − 1728 = c z²(1 + b z² + …). Hence |j − 1728| = |c||z|²(1 + Re(b z²) + …): an ACCIDENTAL U(1) at quadratic order, broken only at relative order |z|². The same holds for any V = F(|holomorphic modular function|).
+CORRECTION to D794 step 4: Δm = 0 at i for our potential. The orbit charge Q is conserved at i to the same order as at ρ.
+D794's conclusion survives on its carrier argument, sharpened:
+- At ρ the inflaton decays to the Z₃-charged pair (charges ω, ω²). Degenerate, it forms a Dirac-like state with a conserved number, which the late Nu^cd^cd^c decay turns into B (D787–D792).
+- At i the heavy states are massive Majorana parity eigenstates (D785). Their number is violated by M ≫ H at once, so the orbit charge has nowhere to go.
+Flag [estimate]: a modular-weight Kähler connection gives μ_L ~ k ẋ/y (spontaneous leptogenesis). Lepton number is out of equilibrium at T_R ~ 1e6 GeV (Weinberg rate ~1e-12 GeV ≪ H ~ 1e-5 GeV; N heavier than T_R), so this is negligible. Not computed.
+MAP: node=lepto_i status=computed touches=[lepto_rho] ripple=no

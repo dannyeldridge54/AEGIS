@@ -367,3 +367,12 @@ Touches: serapis_e, lepto_rho.
 5. An asymmetry needs an additive charge carried by the decay products. At ρ that is Z₃ (baryon triality, D787) [derived, D787–D792]. At i the only residual is a parity, Z₂ (or Z₄, whose charge −1 states are Z₂-like) [derived].
 6. So there is no inflaton-AD asymmetry at i, and D745 stands as the only τ = i baryogenesis route, needing explicit CP in the heavy-ν couplings [derived].
 Touches: lepto_i, lepto_rho.
+
+## D795: isotropy at τ = i (forward side)
+1. S fixes i and acts as z → −z; j ∘ S = j, so j − 1728 is even in z with a double zero: j − 1728 = c z²(1 + b z² + O(z⁴)) [derived].
+2. |j − 1728| = |c||z|²(1 + Re(b z²) + …) [derived]. Hence V = F(|j − 1728|) has U(1) symmetry at O(|z|²), broken at O(|z|⁴) [derived].
+3. The metric −3 ln(2y) is conformally flat (isotropic) [derived]. So the canonical masses are equal, R = 1 [derived]; numerically 1 − 1.3e-7 [derived] (computed).
+4. So the orbit charge is approximately conserved at i too, and D794 step 4 is corrected [derived].
+5. The asymmetry needs a conserved carrier among the decay products. At ρ that is the Z₃-charged Dirac-like pair [derived, D777–D792]; at i the products are Majorana parity eigenstates (D785), so there is no carrier [derived].
+6. A Kähler-connection chemical potential exists, but L-violation is out of equilibrium at T_R ~ 1e6 GeV [estimate].
+Touches: lepto_i, lepto_rho.

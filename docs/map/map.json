@@ -365,7 +365,8 @@
     "D763",
     "D774",
     "D786",
-    "D794"
+    "D794",
+    "D795"
    ],
    "depends": [
     "reheat_i",
@@ -373,9 +374,9 @@
     "eta_n"
    ],
    "history": [
-    "D774: assumed",
     "D786: assumed",
-    "D794: computed"
+    "D794: computed",
+    "D795: computed"
    ]
   },
   {
@@ -483,7 +484,7 @@
     "D791: assumed",
     "D792: computed"
    ],
-   "flag": "recheck (D794, lepto_i)"
+   "flag": "recheck (D795, lepto_i)"
   },
   {
    "id": "gravitino_wino",
