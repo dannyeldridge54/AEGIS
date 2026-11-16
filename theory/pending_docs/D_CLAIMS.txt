@@ -14,3 +14,4 @@ D727  2026-11-16T01:22Z  pseudoscalar N coupling at tau=i is physical; T_R
 D728  2026-11-16T01:23Z  resonant leptogenesis at tau=i with unsuppressed decay
 D729  2026-11-16T01:25Z  Chronos rows at corrected T_R 1e6-3e6
 D730  2026-11-16T01:27Z  is the octic phase over before the inflaton decays at T_R 1e6
+D731  2026-11-16T01:28Z  non-thermal leptogenesis for SERAPIS-E at rho
