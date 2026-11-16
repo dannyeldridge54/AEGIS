@@ -251,3 +251,4 @@ D964  2026-11-16T22:56Z  Project H: negative-mass branch
 D965  2026-11-16T22:58Z  Project H: gauge-loop sign positive
 D966  2026-11-16T22:59Z  Project H: T2 gauge-loop mass form
 D967  2026-11-16T23:00Z  Project H: gauge-invariant pinning
+D968  2026-11-16T23:01Z  Project H: gauge-mass correction
