@@ -192,3 +192,4 @@ D905  2026-11-16T18:44Z  Per-branch conditions table
 D906  2026-11-16T18:51Z  Ladder flag recheck
 D907  2026-11-16T18:58Z  RD.1 v3.2 readiness check
 D908  2026-11-16T19:12Z  v3.2 published
+D909  2026-11-16T19:13Z  N1.1 protected light direction at tau=i
