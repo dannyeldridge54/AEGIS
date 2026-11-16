@@ -17,3 +17,4 @@ D730  2026-11-16T01:27Z  is the octic phase over before the inflaton decays at T
 D731  2026-11-16T01:28Z  non-thermal leptogenesis for SERAPIS-E at rho
 D732  2026-11-16T01:34Z  gravitino to wino overproduction at rho T_R
 D733  2026-11-16T01:39Z  wino gamma-ray limits vs SERAPIS-E rho corner
+D734  2026-11-16T01:43Z  wino sub-fraction gamma limits (NULL)
