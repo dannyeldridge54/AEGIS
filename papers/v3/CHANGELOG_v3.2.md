@@ -23,3 +23,5 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file un
 - Referee-on-diff fixes: undefined internal labels removed/defined; holomorphic-factor claim narrowed; racetrack figure scoped (D850).
 - CP paragraph: CP-odd vacuum is the deepest in ~40% of racetracks, otherwise within ~5% (D851); instanton-generated heavy-ν masses need two charge sectors, phase generic in 80% of CP-odd vacua (D852); τ = i resonant pair needs CP-odd axions on two cycle classes (D854); ρ branch does not use this phase (D855).
 - Caveats: leptogenesis bullet now specific to the τ = i branch; τ = i conditional bullet lists the two-cycle-class condition.
+## Full independent referee (D858)
+- Ten major consistency fixes applied (see REFEREE_v3.2_full.md, Response): corrected-reheating ε window in abstract/Sec. IV; leptogenesis heading and abstract conditionality; strip/cap scope; SERAPIS-E "derived" wording; 4.5× comparison; Σm_ν and retracted-superpartner rows footnoted; pre-registration claim narrowed; Z₃ stated for SERAPIS-ρ; exact ρ α_s offset. Three minor fixes. Twelve minor items deferred.

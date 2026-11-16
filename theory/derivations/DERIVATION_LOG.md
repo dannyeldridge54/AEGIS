@@ -851,3 +851,9 @@ Touches: none.
 5. D689's Im S convention (1.13 at g_s = 0.1) unexplained; flagged [estimate].
 6. Escapes: twisted blow-up cycles, no anti-D3, fractional instantons [estimate].
 Touches: lepto_i, serapis_e, plateau_origin.
+
+## D858: V.6 full referee fixes
+1. Independent referee found 10 major consistency issues, mostly stale v3.0/v3.1 text [derived] (REFEREE_v3.2_full.md).
+2. All majors and three minors fixed as wording/table changes; frozen numbers unchanged [derived].
+3. Rebuilt clean, 16 pages; twelve minors deferred [derived].
+Touches: none.

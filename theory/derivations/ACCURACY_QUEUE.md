@@ -78,3 +78,4 @@ Why: today's results each demand values of the same moduli (g_s, Im ρ₁, Im ρ
 - M.3 [open] Locked feasibility scan: is there a common point satisfying all M.1 constraints (with ranges)? Report the allowed region or the first conflict.
 - M.4 [open] If allowed: one benchmark point (all moduli values) with every derived quantity recomputed from it; if not: which constraint must give, and what that does to the frozen predictions (they never change; the variant would).
 - M.5 [open] Verdict, status/postulate updates, v3.2 note.
+- V.6 [done D858] Full independent referee; ten majors fixed, twelve minors deferred.

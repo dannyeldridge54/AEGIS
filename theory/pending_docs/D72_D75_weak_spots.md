@@ -8797,3 +8797,8 @@ Conflict B (instanton masses vs racetrack scale) [derived]: on one cycle the E3 
 Escapes to test in M.2 [estimate]: (i) twisted (blow-up) Kähler moduli at the orbifold fixed points, which are small cycles and natural hosts for racetracks and fractional instantons (e^{−2π Im T/k}); (ii) drop the anti-D3 (P3 picture) or accept large v₄ only; (iii) fractional E3s on the racetrack cycle.
 Status: M.1 done. Two genuine tensions between today's P1′ mechanism and the BHK/anti-D3 requirements, both conditional (anti-D3 present; E3 on the racetrack cycle). No frozen prediction is affected.
 MAP: node=lepto_i status=assumed touches=[serapis_e,plateau_origin] ripple=no
+
+## D858 (v3.2 draft, V.6): full independent referee; ten major fixes applied
+An independent referee agent (no prior context) reviewed the whole v3.2 draft: verdict "not yet", 10 major, 15 minor issues, almost all stale statements carried over from v3.0/v3.1 that later sections had corrected (report: papers/v3/REFEREE_v3.2_full.md). Applied all ten majors and three minors as wording/table changes (listed in the report's Response section); no frozen number changed. Two long table entries moved to new footnotes f, g to remove an overfull table. Rebuilt: 16 pages, no undefined references, no overfull boxes; PDF and changelog updated. Twelve minors deferred for Danny (D-label index, symbol overloading, abstract length, repository URL, etc.). Not uploaded.
+Note: this claimed D858, so the moduli-consistency M.2 step becomes D859.
+MAP: none
