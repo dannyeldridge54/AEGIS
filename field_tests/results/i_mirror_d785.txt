@@ -1,0 +1,8 @@
+K4 rho: Y2/Y1 = (7.318822285337134e-17+1.0000000000192684j)
+Y(i) direction: [0.8660254+0.j 0.5      +0.j]  Y2/Y1 = (0.5773502691894715+0j)
+c=0.6: M_R SVs [0.28102497 1.         1.28102497]
+c=0.6: heavy-state lepton couplings min/max column ratio over grid = 4.56e-02; light: degenerate 18/1764, NO 12, IO 12
+c=1: M_R SVs [0.61803399 1.         1.61803399]
+c=1: heavy-state lepton couplings min/max column ratio over grid = 9.55e-02; light: degenerate 54/1764, NO 12, IO 0
+c=3: M_R SVs [1.         2.54138127 3.54138127]
+c=3: heavy-state lepton couplings min/max column ratio over grid = 9.45e-02; light: degenerate 18/1764, NO 18, IO 12

@@ -265,3 +265,13 @@ Touches: serapis_e, lepto_rho.
 6. 2507.15934 excludes thermal sub-fractions from 1.85 TeV [literature] (D761), so the window is 0.67–1.85 TeV [derived].
 7. [derived] Consistency: K4 reproduces D732. D735/D736's narrow window depended on T_R = 3e8 (now superseded by D780). The τ = i branch's wino window (0.66–2.9 TeV, paper Sec. VII) is unaffected.
 Touches: wino_window (corrected), gravitino_wino.
+
+## D785 — the τ = i mirror check (forward side)
+1. S₃ weight-2 doublet q-series [literature] (1803.10391 S₃ basis; from memory, validated by K4 at ρ).
+2. At i, Y ∝ (√3/2, ½), real [derived] (computed).
+3. M_R at i has three distinct singular values for c ∈ {0.6, 1, 3} [derived] (computed).
+4. A real Y at a Z₂ fixed point keeps the symmetric matrices diagonalisable into Majorana states, so there is no protected Dirac pairing [derived] (S has real eigenvalues ±1; q_i + q_j ≡ 0 mod 2 allows self-pairing).
+5. Every heavy eigenstate has a non-zero lepton coupling, so no stable relic [derived] (computed).
+6. The light spectrum is generically non-degenerate, with NO and IO points [derived] (computed).
+7. [derived] Consistency: D780 (reasoning) is confirmed. D727's ±s doublet pair is lifted by the c-mixing (D738). D741/D742 are consistent.
+Touches: n_sector_i, lepto_i.

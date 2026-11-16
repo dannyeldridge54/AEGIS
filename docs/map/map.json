@@ -115,11 +115,13 @@
     "D664",
     "D738",
     "D741",
-    "D742"
+    "D742",
+    "D785"
    ],
    "history": [
     "D741: open",
-    "D742: computed"
+    "D742: computed",
+    "D785: computed"
    ]
   },
   {
@@ -369,7 +371,8 @@
     "D745: computed",
     "D763: assumed",
     "D774: assumed"
-   ]
+   ],
+   "flag": "recheck (D785, n_sector_i)"
   },
   {
    "id": "sterile_rho",
