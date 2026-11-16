@@ -177,3 +177,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D927: raise a lead and run its novelty search in the same tick.
 - D928: compute the attractor index from K before chasing a geometric analogue.
 - D929: p = k√(2/n) constrains which modulus can roll.
+- D930: next search flux vacua with unfixed U directions, not inflation papers.

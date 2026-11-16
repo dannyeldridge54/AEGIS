@@ -1339,3 +1339,7 @@ Touches: none.
 - [derived] p = k√(2/n) for K = −n log y, V ≈ V₀(1 − c/y^k); SERAPIS needs k² = 4n.
 - [derived] (arithmetic) integer k only for n = 1 (k = 2, the E(τ,2) power).
 - Result: completion must keep a T²-type U modulus; open problem narrowed.
+
+## D930: T²-factor completion search
+- [literature] arXiv:2405.06738, 2505.01246: U fixed by fluxes first, volume inflates.
+- Result: NULL; obstacle stated (SERAPIS needs one U left flat by the fluxes).

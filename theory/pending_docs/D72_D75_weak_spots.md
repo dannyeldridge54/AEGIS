@@ -9470,3 +9470,9 @@ MAP: none
 Verdict: a "non-toroidal completion" can change the rest of the compactification (e.g. K3 × T², or a CY with a T² fibre) but must keep a T²-type U with K = −log Im U to give p = 2√2. This narrows the open problem; it rules out one-modulus CY complex-structure analogues (D926–D928) as SERAPIS itself. [estimate] Exception not checked: a power k that is non-integer from a non-perturbative or log-corrected approach.
 LESSONS: p = k√(2/n) turns the plateau exponent into a constraint on which modulus can roll.
 MAP: none
+
+## D930 (plan step 1, completion tick 6): NULL: no 2025–26 compactification leaves a T² complex-structure modulus U free to roll; mainstream K3-fibred models fix U by fluxes first
+Search (1, standard) + 1 fetch, aimed at D929's requirement (a T²-type U with K = −log Im U kept light). [literature] Bera, Chakraborty, Leontaris & Shukla, "Inflating in perturbative LVS: Global Embedding and Robustness" (arXiv:2405.06738): global K3-fibred CY orientifold (h^{1,1} = 3); U^i and S fixed first by the flux superpotential; the inflaton is the overall volume (plateau from α′³ and log-loop terms), benchmark r ≈ 3.9e-5. [literature] review arXiv:2505.01246 (pLVS volume and fibre inflation) and 1603.06789 (fibre inflation, already in our notes): Kähler-modulus inflatons, no modular U.
+Verdict: NULL. The standard ordering (fluxes fix all U, then Kähler moduli inflate) is the obstacle SERAPIS faces: its U must be the field left unfixed. A completion needs a flux choice that leaves one T² U as a flat direction (e.g. U-independent G₃ on that factor) and lifts it only through the BHK loop term. This is a model-building question, not found in the literature this tick.
+LESSONS: search for "flat complex-structure direction" / "unfixed U" in flux vacua next, not inflation papers.
+MAP: none
