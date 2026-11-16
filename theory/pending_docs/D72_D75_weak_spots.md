@@ -8997,3 +8997,17 @@ Binding Z₃ facts at ρ [derived, D778–D780, D787]:
 Diagnosis [derived]: the frozen band needs T₂ ≳ 1e5 GeV (fast late decay), while the only working asymmetry (inflaton AD) needs strong dilution, i.e. a slow decay and T₂ ~ 1e2–1e3 GeV. The two pull T₂ in opposite directions. A route inside the band needs an asymmetry that is (a) produced at or after T₂ ≳ 1e5 GeV, or (b) produced earlier but with a size that the modest dilution at T₂ ≳ 1e5 GeV brings to 8.75e-11.
 Next (B.2, literature): mechanisms of type (a): late-decay baryogenesis with a large ε (resonant, or with light mediators), spontaneous baryogenesis from the racetrack axion (P1′'s axion rolling during reheating), and Z₃-allowed AD flat directions with smaller charge; type (b): an inflaton AD charge reduced to η ~ 1e-4 (needs a smaller |Δx|, which isocurvature forbids, D791) or a different condensate.
 MAP: node=lepto_rho status=assumed touches=[band_e,n_sector_rho] ripple=no
+
+## D876 (DEEP, B.2): literature for ρ baryogenesis; top candidate is a suppressed TRANSFER of the inflaton's AD charge, not extra dilution
+Searches 2; fetched 1803.00820 (non-thermal WIMP baryogenesis) and the PRL page of axiogenesis (Co–Harigaya, PRL 124, 111602; abstract level only).
+Findings [literature]:
+1. Non-thermal re-annihilation baryogenesis (1803.00820): a long-lived φ decays late, produces a B-violating species χ, and χχ annihilations with CP asymmetry ε (benchmark 1e-3) make baryons; it needs T_reh below χ freeze-out, benchmark T_reh = 20 GeV.
+2. Axiogenesis (Co–Harigaya): a rotating PQ-charged scalar carries a charge asymmetry that QCD and electroweak sphalerons convert to baryons; the conversion is partial (set by the field's couplings), not one-to-one.
+3. Low-scale baryogenesis from three-body decays (2312.08327) and WIMP-baryogenesis variants put the CP source in light-mediator loops, evading the Nanopoulos–Weinberg suppression that killed D788.
+Ranking against D875's targets (asymmetry at/after T₂ ≳ 1e5 GeV, or a smaller early asymmetry):
+- Rank 1 [estimate]: inflaton-AD charge η ~ 0.1–0.2 (D790) with a SUPPRESSED transfer to baryon number, in the spirit of axiogenesis. In D792 every φ → NN decay carried ΔB = ±2, so B per N = η (full transfer), and the overproduction (~3e4 at the isocurvature-allowed |Δx| ≥ 0.15, D791) had to be removed by dilution, which forced slow decay (T₂ ~ 1e2–1e3 GeV). If instead only a fraction f of the charge becomes B (competing ΔB = 0 channels, e.g. φ → N_Y N₃ vs φ → N_n N_n under baryon triality, D787), the needed f ≈ 1/(3e4 × residual dilution) lets T₂ stay ≳ 1e5 GeV. Uses only existing ingredients.
+- Rank 2 [estimate]: late-decay baryogenesis with a light-mediator CP source (types 1 and 3) at T₂ ≳ 1e5 GeV; needs new light states and ε ≳ 2e-5.
+- Rank 3 [estimate]: a Z₃-allowed AD flat direction with smaller charge (needs the baryon-triality charges of udd-type directions; not checked).
+Next (B.3): lock and compute the transfer fraction f from the Z₃-allowed inflaton decay channels (branching ratios of ΔB = ±2, ±1, 0 channels with the D787 charges), the resulting Y_B with T₂ ≳ 1e5 GeV, and whether N* stays in the frozen band.
+Sources: 1803.00820; PRL 124, 111602 (axiogenesis); 2312.08327; hep-ph/0509121.
+MAP: node=lepto_rho status=assumed touches=[band_e] ripple=no

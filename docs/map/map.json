@@ -527,16 +527,17 @@
     "D796",
     "D810",
     "D813",
-    "D875"
+    "D875",
+    "D876"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D810: computed",
     "D813: computed",
-    "D875: assumed"
+    "D875: assumed",
+    "D876: assumed"
    ]
   },
   {
@@ -614,7 +615,7 @@
     "D748: frozen",
     "D821: frozen"
    ],
-   "flag": "recheck (D875, lepto_rho)"
+   "flag": "recheck (D876, lepto_rho)"
   },
   {
    "id": "caps",

@@ -982,3 +982,10 @@ Touches: none.
 3. Tension: frozen band needs fast late decay (T₂ ≳ 1e5 GeV), the working AD route needs slow decay (T₂ ~ 1e2–1e3 GeV) [derived] (D781, D792).
 4. Targets for B.2: asymmetry produced at or after T₂ ≳ 1e5 GeV, or a smaller early asymmetry [derived].
 Touches: lepto_rho, band_e, n_sector_rho.
+
+## D876: B.2 ρ baryogenesis literature
+1. Late re-annihilation baryogenesis needs low T_reh [literature] (1803.00820).
+2. Axiogenesis converts a rotation charge partially, via sphalerons [literature] (PRL 124, 111602).
+3. Light-mediator CP sources evade Nanopoulos–Weinberg [literature] (2312.08327).
+4. Top candidate: suppressed transfer f of the inflaton-AD charge instead of strong dilution [estimate] (D790–D792, D787).
+Touches: lepto_rho, band_e.
