@@ -149,3 +149,6 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 
 ## v3.2 readiness check RD (picked 2026-11-16 under the autonomy rule; no Zenodo action)
 - RD.1 [done D907: ready; manifest and changelog gaps fixed; decision with Danny]
+
+## τ = i light-direction project N1 (picked 2026-11-16 under the autonomy rule)
+- N1.1 [open] Does any weight/representation choice at τ = i give the seesaw an (approximately) massless lightest direction, as E₄(ρ) = 0 does at ρ? At i, E₆(i) = 0 (weight 6 forms vanish): a heavy singlet whose Dirac coupling is a weight-6 form would be protected. Check against the residual Z₂ (Z₄ with the centre) charges and D663's weight-parity rule; if allowed, a locked oscillation fit like D883/D896 at τ = i with an E₆-protected singlet.
