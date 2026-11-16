@@ -146,3 +146,4 @@ D859  2026-11-16T16:31Z  M.2 moduli map and escapes
 D860  2026-11-16T16:31Z  M.3 moduli feasibility scan
 D861  2026-11-16T16:33Z  M.4 M.5 benchmark and verdict
 D862  2026-11-16T16:36Z  alpha-prime control at string-size tori
+D863  2026-11-16T16:39Z  loop corrections to racetrack modulus
