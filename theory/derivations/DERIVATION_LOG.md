@@ -376,3 +376,12 @@ Touches: lepto_i, lepto_rho.
 5. The asymmetry needs a conserved carrier among the decay products. At ρ that is the Z₃-charged Dirac-like pair [derived, D777–D792]; at i the products are Majorana parity eigenstates (D785), so there is no carrier [derived].
 6. A Kähler-connection chemical potential exists, but L-violation is out of equilibrium at T_R ~ 1e6 GeV [estimate].
 Touches: lepto_i, lepto_rho.
+
+## D796: Z₃ structure of the SERAPIS-E potential at ρ (reverse side)
+1. ST fixes ρ and acts as z → ω z on z = (τ−ρ)/(τ−ρ̄) [literature] (D777).
+2. Z₃ forces the quadratic form to be ∝|z|² [derived] (D794 step 3); computed R = 1 ± 1e-8 [derived] (computed).
+3. Smooth Z₃-invariant terms: |z|²ⁿ, Re(e^{iφ} z³)|z|²ᵐ, Re z⁶ …. So the angular modes are k ≡ 0 mod 3, with relative orders r (k = 3) and r⁴ (k = 6) [derived]; confirmed numerically [derived] (computed).
+4. The CP line Re τ = ½ is a reflection axis, so the cos 3θ term is aligned with it (no sin 3θ about θ_CP) [derived].
+5. Torque ∝ |z|³ sin 3(θ−θ_CP); Q freezes after O(1) oscillations [derived] (standard AD scaling).
+6. η ∝ Δx at small offsets [derived]; coefficient O(1–10) [estimate], compatible with D790's 2 [derived] (D790, computed).
+Touches: lepto_rho, lepto_i, serapis_e.

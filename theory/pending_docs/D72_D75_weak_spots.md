@@ -7817,3 +7817,18 @@ D794's conclusion survives on its carrier argument, sharpened:
 - At i the heavy states are massive Majorana parity eigenstates (D785). Their number is violated by M ≫ H at once, so the orbit charge has nowhere to go.
 Flag [estimate]: a modular-weight Kähler connection gives μ_L ~ k ẋ/y (spontaneous leptogenesis). Lepton number is out of equilibrium at T_R ~ 1e6 GeV (Weinberg rate ~1e-12 GeV ≪ H ~ 1e-5 GeV; N heavier than T_R), so this is negligible. Not computed.
 MAP: node=lepto_i status=computed touches=[lepto_rho] ripple=no
+
+## D796 (REVERSE, ρ-side mirror of D795; Jl tick 35; locked PREREG_D796; results/hessian_rho_d796.txt): Z₃ structure at ρ confirmed; the cubic term is c₃ ≈ 1.47 r; D790's η ≈ 2|Δx| is consistent in order of magnitude
+Computed (SERAPIS-E potential, C = 1.15e-6; code imported from D790 unchanged):
+- (a) V_xx/V_yy = 0.99999867 at h = 1e-3 and 1.00000001 at h = 1e-4. ISOTROPIC ✓.
+- (b) On z-circles, c1, c2, c4, c5 ≤ 5e-14 (forbidden modes absent ✓).
+- c3 = 1.47e-2, 4.35e-2, 0.131 at r = 0.01, 0.03, 0.1. Ratio 3.01 ✓ (linear in r).
+- c6 = 2.2e-7, 1.7e-5, 1.7e-3, which scales as r⁴, NOT the locked r².
+Locked prediction 4 FAILED. It was a pre-registration error: the lowest smooth Z₃ × CP term in cos 6θ is Re z⁶ ∝ r⁶, i.e. r⁴ relative to the r² mass term. r² was a slip (c3² ∝ r² confused with a cos 6θ term). The measured r⁴ is the correct Z₃ expectation. Recorded as a failed prediction; no rerun.
+Result: V ≈ ½m²|z|²[1 + 2.9 |z| cos(3θ − θ_CP) + O(|z|²)] around ρ (the cos amplitude is 2c3 because rfft halves it).
+Derivation, part (2) (orbit charge):
+- The torque is dQ/dt = −∂_θV ∝ 3 · 2.9 |z|³ sin 3(θ − θ_CP). Relative to Q ~ m|z|², it falls as |z| ∝ a^(−3/2). So Q is generated within the first few oscillations and then frozen; the standard AD freeze-out holds.
+- On the CP line (Δx = 0) the start sits at sin 3(θ−θ_CP) = 0, so Q = 0. A small offset tilts the start by δθ ~ Δx/|z₀| [estimate], giving η ~ 2.9 · 3|z₀| · δθ ~ 9 Δx × O(1), the same order as D790's numerical η ≈ 2|Δx| [estimate; the O(1) factor is from the orbit, which D790 integrated exactly].
+- So D790's charge is the cubic-torque charge, not an artefact.
+Mirror contrast with D795: at i the leading breaking is relative O(|z|²) (cos 4θ, Z₂ plus the accidental U(1)); at ρ it is O(|z|) (cos 3θ). Thus ρ makes its AD charge at the cubic order, while i would make it only at quartic order and has no carrier (D795).
+MAP: node=lepto_rho status=computed touches=[lepto_i, serapis_e] ripple=no

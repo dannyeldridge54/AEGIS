@@ -159,6 +159,7 @@ nodes:
   - 'D781: computed'
   - 'D783: computed'
   - 'D793: computed'
+  flag: recheck (D796, lepto_rho)
 - id: janus
   layer: 2
   branch:
@@ -277,6 +278,7 @@ nodes:
   - 'D786: assumed'
   - 'D794: computed'
   - 'D795: computed'
+  flag: recheck (D796, lepto_rho)
 - id: sterile_rho
   layer: 4
   branch:
@@ -350,14 +352,14 @@ nodes:
   - D790
   - D791
   - D792
+  - D796
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D790: assumed'
   - 'D791: assumed'
   - 'D792: computed'
-  flag: recheck (D795, lepto_i)
+  - 'D796: computed'
 - id: gravitino_wino
   layer: 4
   branch:
