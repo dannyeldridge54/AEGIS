@@ -1529,3 +1529,9 @@ Touches: none.
 - [derived] T²: bosonic windings Σ′|w|⁻⁴ = 2ζ(4)E(U,2)/A²; no light gauginos in ADS 5̄5̄ → positive.
 - [estimate] loop normalisation c₆, massive levels not computed.
 - Result: Project H sign condition met in structure.
+
+## D967: gauge-invariant pinning
+- [derived] charged χ forbids the −2Bχ tadpole.
+- [derived] (sympy) D-term: flat top at finite Ê, not P3; mixing B|χ−φ₀|²: P3 exactly, breaks the gauge group.
+- [estimate] need gφ₀ ≪ T² KK scale to keep E(U,2).
+- Result: new condition on Project H.

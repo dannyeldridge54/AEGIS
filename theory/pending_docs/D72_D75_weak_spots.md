@@ -9754,3 +9754,11 @@ Consequence: a χ that is a brane-localised scalar charged under USp(16)_5̄ (e.
 Next (prep for the queue, locked): numerically evaluate S(0) on T² against 2ζ(4)E(U,2) (identity check via the toolkit lattice sum) and the c₆ loop factor from the 6D gauge propagator; then the pinning term B for the same χ.
 LESSONS: a known one-dimensional loop result plus the image-sum weight rule gives the torus result's structure in one step.
 MAP: none
+
+## D967 (Project H, pinning term): a CHARGED χ (needed for the positive sign, D965) cannot have P3's linear pinning term −2Bχ; the gauge-invariant options are (i) a D-term/Higgs quartic, which gives a flat-topped potential with no 1/E approach (not P3), or (ii) mixing with a second charged field at a vev φ₀, B|χ − φ₀|², which gives P3 exactly but breaks the gauge group
+[derived] (gauge invariance) B(1−χ)² = B − 2Bχ + Bχ² contains a tadpole linear in χ, allowed only for a gauge singlet. D965 requires χ charged under the non-SUSY gauge group, so the D941 form must be rewritten gauge-invariantly.
+[derived] (sympy) (i) V = Aχ² + λ(χ² − v²)²: for A < 2λv², V_min = Av² − A²/(4λ); for A ≥ 2λv², χ = 0 and V = λv⁴ exactly. With A ∝ Ê the potential reaches an exactly flat top at finite Ê (no 1/Ê approach): inflation would sit on a flat top with only the ramp, not P3's power-law approach (k = 2 lost; the D929 exponent rule then gives no p at all). Not SERAPIS.
+[derived] (sympy) (ii) V = A|χ|² + B|χ − φ₀|² with φ₀ the vev of a second field in the same representation: V_min = ABφ₀²/(A + B), exactly P3 (D941) times φ₀². Gauge invariant (χ − φ₀ transforms covariantly), but ⟨φ₀⟩ ≠ 0 breaks the gauge group, giving the gauge bosons masses m_V ~ gφ₀ that cut off the image sum at |w| ≳ 1/m_V [estimate: if m_V ≪ 1/√A₁ (T² scale) the E(U,2) form survives].
+Consequence: Project H's χ must be (charged) AND (mixed with a vev-carrying partner of the same charge), with the gauge-breaking scale gφ₀ below the T² KK scale. A new, sharp model-building condition; not yet checked in the ADS model.
+LESSONS: check every term of an effective potential against the symmetry of the field it was assigned to.
+MAP: none

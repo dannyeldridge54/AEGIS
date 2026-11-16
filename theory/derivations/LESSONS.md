@@ -214,3 +214,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D964: compute a condition's failure branch at once to see if it is decisive.
 - D965: classify sign results by coupling type before generalising.
 - D966: 1D loop result + image-sum weight rule gives the torus structure.
+- D967: check each effective-potential term against the field's symmetry.
