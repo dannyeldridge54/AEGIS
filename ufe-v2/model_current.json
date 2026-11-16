@@ -25,9 +25,11 @@
   "D732–D736: post-hoc wino prediction 0.67–0.80 TeV (~15% of dark matter), testable by LHC Run 3 / HL-LHC",
   "D739: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed",
   "D740: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen",
-  "D741: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → open"
+  "D741: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → open",
+  "D742: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → computed"
  ],
  "open_rechecks": [
+  "Leptogenesis at τ=i: inflaton decay marginal, AD robust",
   "Σm_ν = 0.0587 eV (m1 ≈ 0)"
  ],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"

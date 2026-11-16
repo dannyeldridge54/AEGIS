@@ -42,13 +42,15 @@ nodes:
   branch:
   - i
   title: 'Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?)'
-  status: open
+  status: computed
   d:
   - D664
   - D738
   - D741
+  - D742
   history:
   - 'D741: open'
+  - 'D742: computed'
 - id: halo_profile
   layer: 1
   branch:
@@ -195,6 +197,7 @@ nodes:
   depends:
   - reheat_i
   - n_sector_i
+  flag: recheck (D742, n_sector_i)
 - id: sterile_rho
   layer: 4
   branch:
@@ -316,7 +319,6 @@ nodes:
   - D740
   history:
   - 'D740: frozen'
-  flag: recheck (D741, n_sector_i)
 - id: wino_window
   layer: 5
   branch:

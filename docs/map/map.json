@@ -65,14 +65,16 @@
     "i"
    ],
    "title": "Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?)",
-   "status": "open",
+   "status": "computed",
    "d": [
     "D664",
     "D738",
-    "D741"
+    "D741",
+    "D742"
    ],
    "history": [
-    "D741: open"
+    "D741: open",
+    "D742: computed"
    ]
   },
   {
@@ -280,7 +282,8 @@
    "depends": [
     "reheat_i",
     "n_sector_i"
-   ]
+   ],
+   "flag": "recheck (D742, n_sector_i)"
   },
   {
    "id": "sterile_rho",
@@ -450,8 +453,7 @@
    ],
    "history": [
     "D740: frozen"
-   ],
-   "flag": "recheck (D741, n_sector_i)"
+   ]
   },
   {
    "id": "wino_window",

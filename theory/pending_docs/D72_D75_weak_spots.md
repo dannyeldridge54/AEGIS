@@ -7068,3 +7068,14 @@ Computed: m_ν ∝ [[A(Y), bY],[bYᵀ, 0]] scanned over 400 |b| × 24 phases.
 VERDICT (locked rule): TENSION. The one-parameter 2⊕1 Weinberg texture of D664 does not produce a normal-ordered spectrum with a light enough lightest neutrino. The frozen Σm_ν = 0.0587 eV (lock D605) stays frozen and is scored as locked. The τ = i branch's lepton sector needs more structure: e.g. a nonzero 3-3 entry from another form, charged-lepton mixing, or the D646 Affleck–Dine requirement m_ν1 ≈ 0 imposed as a constraint. D664's "no forced massless state" already pointed this way. Caveat: one complex coefficient and the A-term normalised to 1; a texture with more free coefficients could fit, so this rules out the minimal texture only. Same IO lean as 2512.24804 at τ = i, reached independently.
 Node n_sector_i stays an input, now with a known gap (the light-neutrino texture).
 MAP: node=n_sector_i status=open touches=[mnu] ripple=no
+
+## D742 (CENTRE; locked PREREG_D742; results/texture_ext_d742.txt) — RESOLVED with a singlet 3-3 entry: normal ordering and Σm_ν ≈ 0.059–0.064 eV at τ = i, about 0.5% of parameter space
+Computed (fixed grids):
+- (a) adding the singlet entry d: 464 of 102,400 points pass (NO, splitting ratio within ±10% of 0.0297, Σ ≤ 0.064 eV), a fraction of 4.5e-3. Best Σm_ν = 0.0592 eV; m₁/m₃ = 0.004–0.07.
+- (b) a second doublet form in the 2-2 block instead: 0 of 102,400.
+- (c) both: 4.0e-3, best Σ 0.0589 eV, m₁/m₃ 0.001–0.08.
+VERDICT (locked rule): RESOLVED. The minimal fix is a nonzero 3-3 Weinberg entry from an allowed singlet form (reasoning: weights ≡ 0 mod 4 at i, where E4(i) ≠ 0). The τ = i lepton sector then reaches the frozen normal-ordered spectrum, at ~0.5% tuning of the grid.
+Two caveats:
+- Σ here is ≥ 0.0589 eV rather than exactly 0.0587, because m₁ is small but not zero; within the frozen prediction's precision.
+- The Affleck–Dine requirement (D646: m₁ ~ 1e-9 eV, i.e. m₁/m₃ ~ 2e-8) is NOT produced generically; the grid's smallest m₁/m₃ is 1e-3. AD at τ = i therefore stays a tuned requirement (as D664 said), while inflaton-decay leptogenesis at i is marginal (D738). Baryogenesis at τ = i remains the weakest link of that branch; the ρ branch is unaffected (D731).
+MAP: node=n_sector_i status=computed touches=[mnu, lepto_i] ripple=no
