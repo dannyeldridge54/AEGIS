@@ -102,3 +102,4 @@ D815  2026-11-16T13:01Z  D729 exact MS
 D816  2026-11-16T13:04Z  D613 rho band MS check
 D817  2026-11-16T13:08Z  D722 method + tau=i band exact line
 D818  2026-11-16T13:13Z  r detectability check
+D819  2026-11-16T13:25Z  published papers referee merge; D400 MICROSCOPE deviation
