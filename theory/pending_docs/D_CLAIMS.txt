@@ -201,3 +201,4 @@ D914  2026-11-16T19:40Z  T-brane uplift U-dependence
 D915  2026-11-16T19:42Z  Memory-claim audit 1
 D916  2026-11-16T19:44Z  Memory-claim audit 2
 D917  2026-11-16T19:45Z  Memory-claim audit 3
+D918  2026-11-16T19:46Z  Memory-claim audit 4 (closes M)
