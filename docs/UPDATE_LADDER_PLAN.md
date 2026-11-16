@@ -92,3 +92,8 @@ The Jl functions L1–L10 and checks K1–K8 still apply. Each tick now takes it
 
 ### Deep project (separate approval; not run by the loop)
 - P3 derivation: a one-loop anti-D3 annulus on T⁶/(Z₂×Z₂) to get the goldstino metric's τ-dependence. Long and expensive. Run only when Danny says so.
+
+## Loop autonomy (Danny, 16 Nov 2026 10:39 CT)
+- Each Jl tick schedules the next one automatically (send_later, 5 min) without asking.
+- At every branch point, take the top recommended option instead of asking Danny; state the choice in one line in the tick report.
+- Unchanged hard limits: no Zenodo upload/publish, no sending emails, no password entry, no changes to the PC repo's git, without Danny's explicit word. Lock-before-compute and DEVIATIONS rules unchanged.
