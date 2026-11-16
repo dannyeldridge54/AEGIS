@@ -3,15 +3,17 @@
 \begin{document}
 \title{A Parameter-Free Consistency Relation for Plateau Inflation with an Uplift Ramp}
 \author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
 \affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
-\date{Draft, 16 November 2026}
+\date{16 November 2026}
 \begin{abstract}
 Many inflationary models combine an exponentially flat plateau with a small rising term, either from an uplift sector or from a power-law correction. We show that for the whole family $V\simeq V_0\,(1-A e^{-p\phi}+\delta e^{q\phi})$ the spectral index $n_s$, the tensor-to-scalar ratio $r$ and the running $\alpha_s$ obey a closed relation in which the unknown ramp strength $\delta$ drops out: given the model-class constants $p$ and $\kappa=q/p$, the measured $(n_s,r)$ predict $\alpha_s$ and its running $\beta_s$. Against exact Mukhanov--Sasaki spectra the relation holds to about $1\%$ for the modular-plateau (SERAPIS) models and for power-law singular T-models. We state plainly what it takes to test: separating it from the plain-attractor value needs $\sigma(\alpha_s)\approx2\times10^{-4}$, and testing it as a relation about $10^{-5}$, both beyond the forecasts for the 2030s; the near-term test of the family is $n_s$.
 \end{abstract}
+\keywords{cosmic inflation; inflationary cosmology; plateau inflation; $\alpha$-attractors; consistency relation; running of the spectral index; scalar spectral index; tensor-to-scalar ratio; primordial power spectrum; cosmic microwave background; string cosmology; uplift}
 \maketitle
 
 \section{Introduction}
-Plateau potentials of the $\alpha$-attractor type predict $1-n_s\simeq2/N_*$ and $r\simeq12\alpha/N_*^2$~\cite{KL2013}. Recent CMB and BAO combinations prefer $n_s$ near $0.970$--$0.975$~\cite{SPA2025}, slightly above the plain attractor at $N_*\approx50$--$60$, and several groups now add a small rising term to the plateau to reach it: an uplift sector~\cite{KLY2026}, power-law singular T-models~\cite{KL2025}, or modular plateaus whose vacuum needs an extra mass term~\cite{SERAPIS}. Such a ramp introduces one more parameter, its strength $\delta$, which is usually fitted to $n_s$.
+Plateau potentials of the $\alpha$-attractor type predict $1-n_s\simeq2/N_*$ and $r\simeq12\alpha/N_*^2$~\cite{KL2013}. Current CMB data give $n_s=0.9682\pm0.0032$, and adding DESI DR2 baryon acoustic oscillations gives $n_s=0.9728\pm0.0029$~\cite{ACT,SPT,DESI}, above the plain attractor at $N_*\approx50$--$60$, and several groups now add a small rising term to the plateau to reach it: an uplift sector~\cite{KLY2026}, power-law singular T-models~\cite{KL2025}, or modular plateaus whose vacuum needs an extra mass term~\cite{SERAPIS}. Such a ramp introduces one more parameter, its strength $\delta$, which is usually fitted to $n_s$.
 
 Here we point out that this extra freedom does not survive in the three-point set $(n_s,r,\alpha_s)$. For a plateau with an exponential ramp, the fraction of the slope supplied by the ramp at horizon exit can be read off from $(n_s,r)$ alone, and $\alpha_s$ then follows with no free parameter left. The relation depends only on two numbers fixed by the model class, the plateau exponent $p$ and the ratio $\kappa$ of ramp to plateau exponents. Measuring $\alpha_s$ therefore tests the whole family, and $\kappa$ distinguishes its members. All numbers below were computed with scripts whose inputs and pass criteria were fixed and published before they were run~\cite{SERAPIS}.
 
@@ -50,20 +52,39 @@ The same steps for the running of the running give
 At $x=0$ Eqs.~(\ref{eq:alpha}) and (\ref{eq:beta}) reduce to the attractor values $-(1-n_s)^2/2$ and $-(1-n_s)^3/2$. Neither $\delta$ nor $A$ appears: only $p$ and $\kappa$, which the model class fixes. For the SERAPIS modular plateaus $(p,\kappa)=(2\sqrt2,\tfrac12)$~\cite{SERAPIS}; for the power-law singular T-models of Ref.~\cite{KL2025} with $\alpha=1/3$, $\kappa=\beta$.
 
 \section{Accuracy}
-% TODO (next tick): D640 offset correction and exact MS comparison (-0.2...-0.4%); D666 both vacua ~1%; D669 KL test (-0.67...-0.94%, 10 points); D671 beta_s (-0.78...-0.95%).
+Eqs.~(\ref{eq:alpha}) and (\ref{eq:beta}) are leading order in the small terms and in slow roll. We checked them against exact Mukhanov--Sasaki spectra, with the pass criteria fixed before each run.
 
-\section{Examples}
-% TODO: SERAPIS (D666 numbers), KL singular T-models (D669 table), uplifted attractors (2608.12819) as closest current work.
+\emph{SERAPIS.} For the modular plateau the asymptotic field map carries a known offset, $\phi=\ln(I+c)/\sqrt2$ with $c=\ln1728/2\pi$; including it at first order in $c/I_*$, the relation predicts $\alpha_s$ from the exact $(n_s,r)$ to $-0.2$ to $-0.4\%$ at all eight test points, and a full slow-roll map reproduces it to $+1.1$ to $+1.6\%$ while recovering the input ramp strength~\cite{SERAPIS}. The same closed form serves both of the model's vacua (the square and the hexagonal torus) to about $1\%$. For $\beta_s$ the full slow-roll map agrees with the exact values within $\pm17\%$, with exact $\beta_s=-(2.95$--$4.60)\times10^{-5}$.
 
-\section{Tests}
-% TODO: D670 numbers (Delta alpha_s ~ 2-4e-4 at r = 5e-4; best 2030 1-sigma ~9e-4); D705 forecasts; CMB-S4 cancelled 10 July 2025; n_s as the near-term test.
+\emph{Power-law singular T-models.} For the models of Ref.~\cite{KL2025} with $\alpha=1/3$, $\beta=1$ ($\kappa=1$) and $\beta=\tfrac12$, ramp strengths $\delta=3\times10^{-6}$--$3\times10^{-5}$ and $N_*=50,55$, Eq.~(\ref{eq:alpha}) predicts $\alpha_s$ to $-0.67$ to $-0.94\%$ at all ten points where the slow-roll solution converged (for $\delta=3\times10^{-5}$, $\beta=1$ none was found); at $\delta=10^{-5}$, $N_*=55$ we reproduce the quoted $n_s\approx0.970$, $r\approx0.0015$. Eq.~(\ref{eq:beta}) holds there to $-0.78$ to $-0.95\%$, and it is algebraically identical to the closed form derived separately for SERAPIS.
+
+\section{What the relation distinguishes}
+At fixed $(n_s,r)$ the members of the family differ only through $\kappa$. For $n_s=0.972$ and $r=5\times10^{-4}$, Eq.~(\ref{eq:alpha}) gives $\alpha_s=-3.9\times10^{-4}$ for a plain attractor ($x=0$), $-8.1\times10^{-4}$ for SERAPIS ($\kappa=\tfrac12$) and $-2.5\times10^{-4}$ for a singular T-model with $\kappa=1$ and $p=\sqrt2$. The ramp's signature in $\alpha_s$ is therefore a few times $10^{-4}$. The same family obeys a cap: in the SERAPIS case a string-motivated bound on the field range limits the ramp, giving $n_s\lesssim0.984$ and $r\lesssim8.2\times10^{-4}$ for any ramp strength~\cite{SERAPIS}. Uplifted $\alpha$-attractors that reach $n_s\approx0.97$ numerically~\cite{KLY2026} belong to this family, and Eqs.~(\ref{eq:alpha})--(\ref{eq:beta}) give their running without a further fit.
+
+\section{How and when it can be tested}
+We state the reach plainly. Forecasts for the 2030s give $\sigma(n_s)\approx8\times10^{-4}$ and $\sigma(\alpha_s)\approx1.2\times10^{-3}$ for the Simons Observatory with SPHEREx, and a best 1$\sigma$ of about $9\times10^{-4}$ for $\alpha_s$ in the most ambitious combinations considered~\cite{P2030}; CMB-S4, on which several of those combinations relied, lost its US agency support on 10 July 2025. The ramp's signature in $\alpha_s$ is below $0.5\sigma$ for these data. Separating the family from plain attractors needs $\sigma(\alpha_s)\approx2\times10^{-4}$; testing the relation itself, at the $1\%$ level of its accuracy, needs about $10^{-5}$, and $\beta_s\sim4\times10^{-5}$ is further still. These are targets for 21-cm or spectral-distortion surveys after 2035, not for the next decade. The near-term test of the family is $n_s$ itself: a measurement near $0.972$ with $\sigma\approx8\times10^{-4}$ would favour a tilted plateau over a plain one, and $r$ near $5\times10^{-4}$ is within reach of LiteBIRD's optimistic forecast.
+
+\section{Status of the claims}
+\begin{itemize}
+\item Eqs.~(\ref{eq:x})--(\ref{eq:beta}): \emph{derived}; the elimination and both $x=0$ limits were checked symbolically.
+\item Accuracy of about $1\%$ for $\alpha_s$ and $\beta_s$: \emph{verified numerically} against exact spectra, on two model families, under pass criteria fixed in advance.
+\item Novelty: no equivalent relation was found in a check of five recent papers and four searches (November 2026); the check is not exhaustive.
+\item Agreement with data: \emph{not yet tested}; the relation needs $\sigma(\alpha_s)\lesssim2\times10^{-4}$.
+\end{itemize}
 
 \section{Conclusion}
-% TODO.
+A plateau with an exponential ramp has one more parameter than a plain attractor, but the observables do not see it: $n_s$ and $r$ fix the ramp's share of the slope, and the running and its running follow. The relation is simple, accurate to about $1\%$, and specific to the family through two model-class numbers. It will not be decided in the 2030s, but it gives future high-precision measurements of the running a sharp, parameter-free target, and it turns any model of this kind into a three-observable prediction.
+
+\begin{acknowledgments}
+The derivations and code were developed with the assistance of Claude (Anthropic). The author directed the work and checked the results. Scripts, pre-registration files and outputs are in the SERAPIS reproducibility archive~\cite{SERAPIS}.
+\end{acknowledgments}
 
 \begin{thebibliography}{9}
 \bibitem{KL2013} R.~Kallosh and A.~Linde, JCAP \textbf{07}, 002 (2013), arXiv:1306.5220.
-\bibitem{SPA2025} CMB-SPA and DESI combinations as summarised in Ref.~\cite{SERAPIS}; to be replaced by the primary references.
+\bibitem{ACT} T.~Louis \emph{et al.} (ACT), arXiv:2503.14452.
+\bibitem{SPT} SPT-3G Collaboration, arXiv:2506.20707.
+\bibitem{DESI} DESI Collaboration, ``DESI DR2 Results II,'' arXiv:2503.14738.
+\bibitem{P2030} B.~Bahr-Kalus, D.~Parkinson and R.~Easther, ``Constraining Cosmic Inflation with Observations: Prospects for 2030,'' arXiv:2212.04115, Table~5.
 \bibitem{KLY2026} R.~Kallosh, A.~Linde and Y.~Yamada, ``Waterfall-modulated $\alpha$-attractors,'' arXiv:2608.12819.
 \bibitem{KL2025} R.~Kallosh and A.~Linde, arXiv:2512.02969.
 \bibitem{SERAPIS} D.~Eldridge, ``The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test,'' v3.2, Zenodo (2026), doi:10.5281/zenodo.24289118.
