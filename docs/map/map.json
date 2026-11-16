@@ -77,13 +77,14 @@
     "D910",
     "D911",
     "D911a",
-    "D912"
+    "D912",
+    "D914"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D911: assumed",
     "D911a: assumed",
-    "D912: assumed"
+    "D912: assumed",
+    "D914: assumed"
    ]
   },
   {
