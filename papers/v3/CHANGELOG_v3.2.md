@@ -41,3 +41,4 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file un
 - D902: Σm_ν status sentence adds 2606.17994 (< 0.052 eV zero prior, < 0.092 eV hierarchy prior).
 - D903: τ = i AD paragraph: the D654a singlet Weinberg operator is allowed and unsuppressed; AD at i needs an instanton-only Weinberg term and a light seesaw direction the minimal texture lacks; stated as a conditional alternative.
 - D904: Weinberg sentence: a D-instanton with action 2π/g_s ≈ 13–27 (g_s = 0.23–0.5) would meet the bound (estimate).
+- D904a: Weinberg clause: g_s per branch (free at ρ; 0.4–0.5 at τ = i, at the edge).
