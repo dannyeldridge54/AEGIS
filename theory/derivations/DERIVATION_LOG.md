@@ -607,3 +607,8 @@ Touches: none.
 4. Holomorphic h(τ) destroys the plateau [derived] (D685).
 5. The only candidate is the anti-D3 log correction [postulate P3] (D686).
 Touches: eps_tilt, band_i.
+
+## D827: manifest and status (accuracy track)
+1. Lock order from git first-commit times: no K1 failures [derived] (computed in a short script; the listing has no results file).
+2. Status summary compiled from D807–D826 [derived].
+Touches: none.

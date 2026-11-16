@@ -8401,3 +8401,13 @@ Candidates:
 Verdict: the τ = i vacuum mass and tilt come from ONE fitted term (ε I₁). No derived source is within 10¹¹ of the required size. The only candidate (item 6) lives in the same anti-D3 sector as P3, so it would be settled by the P3 computation (queue item 10, which needs Danny's OK).
 This is consistent with the paper's statement that "the tilt at i and ρ is fitted". For v3.2, one sentence is queued: "the vacuum mass at i shares the fitted ε; covariant F-term and loop sources are 10¹¹–10¹² too small (D826)".
 MAP: node=eps_tilt status=estimate touches=[band_i] ripple=no
+
+## D827 (ACCURACY TRACK, queue 15; Jl tick 65, manual "Jl"): MANIFEST per-lock table (129 locks, D600–D830); ACCURACY_STATUS summary
+- The table was generated from git first-commit times. K1 order failures (a result committed before its lock): NONE.
+- 10 locks have no result file:
+  - nine are forward freezes of predictions (D605, D615, D633, D667, D675, D677, D679, D681, D693), which have no result by design;
+  - one is a Star-Mapper lock (D716).
+- The known unlocked result data_check_d805.txt has no lock at all, as reported in D805.
+- theory/derivations/ACCURACY_STATUS.md written (derived / fitted / postulated / conditional / tests) and synced to the project as claude/ACCURACY_STATUS.md.
+Round 2 of the accuracy queue is complete. Only item 10 (P3, the anti-D3 annulus computation) remains, and it awaits Danny's approval.
+MAP: none

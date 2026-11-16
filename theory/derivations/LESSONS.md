@@ -73,3 +73,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D824: before counting a prediction as a test of the model, check whether every model in the same class makes it. Σm_ν = NO floor is shared by all NO + ΛCDM models, so it tests the class, not SERAPIS.
 - 2026-11-16 D825: a correction to the paper does not propagate on its own. After each paper fix, grep the summary documents (sheet, README, state) for the old number in the same tick.
 - 2026-11-16 D826: when every derived candidate misses by more than 10 orders, say so in one line and tie the open item to the single remaining postulate. Don't keep a list of 'possible' sources alive.
+- 2026-11-16 D827: generate provenance tables from git, not by hand. A script found 129 locks with no order failures in seconds; a hand list would have missed the 9 forward freezes that have no results by design.
