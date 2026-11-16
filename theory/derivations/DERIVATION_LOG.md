@@ -1282,3 +1282,9 @@ Touches: none.
 2. D752 conversion unused in the paper; stays an estimate [derived].
 3. Audit summary: 1 published error (D657a), 1 lead weakened, 5 supported, 1 estimate [derived].
 Touches: none.
+
+## D919: letter novelty re-check
+1. Uplifted α-attractors give n_s, r numerically, no running relation [literature] (2608.12819).
+2. α_s given in model parameters, not eliminated [literature] (2602.01327).
+3. Relation still not found; cite 2608.12819 as closest [derived].
+Touches: none.

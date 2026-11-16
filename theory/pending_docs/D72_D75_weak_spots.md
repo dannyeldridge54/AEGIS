@@ -9402,3 +9402,11 @@ MAP: none
 2. D752 (Ω_GW,flat and the ΔN_eff → Ω_GW conversion): not checked against a source this tick; the claim appears nowhere in the v3.2/v3.3 text (grep: no ΔN_eff or kination sentence) and D752 already tested it against a ×3 change. Relabelled [estimate]; no action.
 Audit M summary (D915–D918): eight "from memory" claims reviewed. One was wrong and had reached the published v3.2 text: D657 (non-R symmetries; corrected as D657a, fixed in the v3.3 draft). One structural lead was weakened (D754, via D917). Five were confirmed or supported (D780 gauge-symmetry premise; D914 flux-norm structure; D749 CMB-S4 cancellation; D760 pattern; D771 O-plane types). One stays an estimate, unused in the paper (D752).
 MAP: none
+
+## D919 (letter): novelty re-check of the running relation: still not found in the 2026 literature
+Searches 2; fetched 2608.12819 (Kallosh–Linde–Yamada, Waterfall-modulated α-attractors) and 2602.01327 (Hossain, inverse-exponential single-field potential); checked the D-notes for each number first (2606.24131, 2506.12436, 2512.02969 already noted).
+Findings [literature]:
+- 2608.12819: uplifted α-attractors (V_original + V_uplift) with numerical n_s, r only (e.g. n_s = 0.9712, r = 0.0036); analytic n_s ≃ 1 − 2/N_c, r ≃ 12α/N_c², r ≃ 3α(1 − n_s)²; no running relation.
+- 2602.01327: separate expressions for r, n_s, α_s in terms of (α, φ*), not eliminated; running reported negligible.
+Verdict: the parameter-free n_s–r–α_s relation for a plateau plus ramp (D635/D640/D669) and its β_s companion (D666) are still not found [literature, 2 new sources + earlier D668 check; not exhaustive]. Cite 2608.12819 as the closest current work.
+MAP: none
