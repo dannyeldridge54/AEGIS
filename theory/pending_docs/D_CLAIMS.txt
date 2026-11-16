@@ -153,3 +153,4 @@ D866  2026-11-16T17:04Z  BHK D7 coefficient and modulus mapping
 D867  2026-11-16T17:10Z  corrected moduli scan
 D868  2026-11-16T17:14Z  SERAPIS-E uplift without anti-D3
 D869  2026-11-16T17:15Z  throat anti-D3 residual coupling
+D870  2026-11-16T17:17Z  P3 wording uplift sector
