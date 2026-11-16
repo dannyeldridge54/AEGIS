@@ -9241,3 +9241,10 @@ Major [derived]: the τ = i AD window (D646: m_ν₁ ≃ 2e-13–9e-11 eV at T_R
 Minors: stale "T_R ~ 1e5 GeV" in the proton paragraph (D690 vs D727); CP-phase paragraph and cap paragraph still point at the superseded self-diluted ρ route.
 Next: R3.2. The major needs a locked recomputation (a results file) of the τ = i window at the corrected T_R, with a thermal-effects check; then the text fixes.
 MAP: node=lepto_i status=estimate touches=[mnu] ripple=no
+
+## D900 (R3.2): at the corrected τ = i reheating, AD needs m_ν₁ ≈ 1.6e-10–2.7e-9 eV; thermal effects still negligible; the two vacua's windows now overlap
+Lock: PREREG_D900_ad_tau_i_TR.md (committed and pushed before the run). Script theory/modular/ad_tau_i_d900.py, output field_tests/results/ad_tau_i_d900.txt.
+Results [derived]: m_ν₁ = 1.63e-10–7.10e-10 eV (T_R = 0.8e6 GeV, median–max Q), 2.04e-10–8.88e-10 (1e6), 6.12e-10–2.66e-9 (3e6). Thermal check (D653 method): φ/T = 4.9e4–5.6e5, thermal/soft ≤ 1.5e-4: PASS.
+Verdict (locked rule): the window is m_ν₁ ≈ 1.6e-10–2.7e-9 eV at τ = i, replacing D646's 2e-13–9e-11 eV (computed at the superseded T_R = 1e3–1e5 GeV; D646 stays as the record at that T_R). Pre-stated prediction CONFIRMED (φ/T ≳ 5e4 rather than ≳ 1e5; immaterial).
+Consequence [derived]: τ = i (1.6e-10–2.7e-9) and ρ (2e-11–9e-10 eV, D895) overlap at 1.6e-10–9e-10 eV; "essentially massless" holds on both branches, and the Σm_ν NO floor 0.0587 eV is unchanged. The τ = i Weinberg requirement (M = v_u²/m_ν₁ ~ 1e22–2e23 GeV ≫ M_P) is slightly milder than D646a's.
+MAP: node=lepto_i status=computed touches=[mnu] ripple=no

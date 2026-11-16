@@ -1158,3 +1158,10 @@ Touches: none.
 3. Same yield gives m_ν₁ ≈ 1.6e-10–2.7e-9 eV [derived] (arithmetic).
 4. Three text minors (D690 stale, two superseded-route pointers) [derived].
 Touches: lepto_i, mnu.
+
+## D900: τ = i AD window at corrected T_R
+1. Corrected τ = i T_R = (0.8–3)e6 GeV [derived] (D727, D815).
+2. Same yield as D646/D646a [derived] (D646).
+3. m_ν₁ = 1.6e-10–2.7e-9 eV; thermal check passes (φ/T ≥ 4.9e4) [derived] (locked run D900).
+4. Overlap with ρ's window at 1.6e-10–9e-10 eV [derived] (D895).
+Touches: lepto_i, mnu.
