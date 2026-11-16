@@ -7015,3 +7015,13 @@ Rescale (order of magnitude): H.E.S.S. 2018 line limit 4e-28 cm³/s at 1 TeV (Ei
 - M2 = 1.85 TeV: f_max 0.44 vs 0.67 → FAIL; consistent with 2507.15934 excluding ≥ 1.85 TeV.
 - Einasto passing range: M2 ≈ 0.66–0.80 TeV (≈ 0.66–1.0 within the × 2 read-off uncertainty). For kpc-scale cores (limits weaker by 1e2–1e3) every mass passes.
 VERDICT (estimate): with a standard cuspy halo, SERAPIS-E at ρ (M_H ~ 1e12, T_R ~ 3e8) predicts a wino LSP at 0.66–0.8 TeV, just above the collider disappearing-track bound (~0.66–0.7 TeV). It makes up ~15% of the DM, with the rest needing another component (as D713 already said). This is a sharp, falsifiable target for HL-LHC disappearing tracks and CTA line searches. Post-hoc; scored on future data only. Caveat: the line shape and Sommerfeld mass dependence are ignored; a dedicated reanalysis (or the Fig. 6 values of 2507.15934) would supersede this.
+
+## D736 (RIGHT; literature, no computation) — SERAPIS-E's wino window is 0.67–0.80 TeV now, and Run 3 / HL-LHC disappearing tracks will close or find it
+Sources:
+- ATLAS arXiv:2603.08315 (137 fb⁻¹, 13 TeV, disappearing tracks; supersedes 2201.02472). Wino-like benchmark (SM-loop splitting ≈ 160 MeV, cτ ≈ 6 cm): excluded up to 670 GeV observed, 770 GeV expected. For lifetimes ~1 ns: 880 GeV (1020 expected).
+- HL-LHC projection: ATL-PHYS-PUB-2018-031 is cited in arXiv:1902.10229 §4.5, but its numbers were not in the part I read. From memory (unchecked): the pure-wino HL-LHC reach is ~0.9–1.1 TeV.
+Verdict:
+- The window (D735, Einasto) is 0.67–0.80 TeV, not 0.66: the lower edge moves up 10 GeV.
+- The expected Run-2 sensitivity (770 GeV) already sits inside the window. A Run-2 + Run-3 combination (~3× luminosity) should cover most or all of it, and the HL-LHC reach exceeds it.
+- So SERAPIS-E (ρ, standard cuspy halo) is decisively testable by ~2030: a disappearing-track signal at 0.67–0.8 TeV, or exclusion of this corner. With a kpc-cored halo the gamma-ray side relaxes and the wino can sit up to 1.85 TeV, beyond the HL-LHC reach.
+Status: post-hoc; scored on future data only. prediction_sheet "falsify" line updated.

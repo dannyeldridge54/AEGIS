@@ -31,6 +31,7 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 - α_s > −3×10⁻⁴, or α_s violating the Janus relation (long term: needs σ(α_s) ~ 1×10⁻⁴, D670).
 - Σm_ν > 0.07 eV. (Lock D605 also lists inverted ordering; that tests the NO input, and with m_ν1 ≈ 0 IO already implies Σm_ν ≈ 0.10 eV.)
 - |f_NL^local| > 5.
+- SERAPIS-E at ρ (D735–D736, estimate, post-hoc): no disappearing-track wino at 0.67–0.80 TeV in Run-3/HL-LHC data falsifies the cuspy-halo version (ATLAS 2603.08315 now excludes < 670 GeV).
 - Covariant completion: no wino up to 2.9 TeV and no gluino up to 21 TeV (FCC-hh reach), or a wino above 2.9 TeV overclosing; lock D605 P5 (constant W0): superpartners below 10⁸ GeV.
 
 ## Who tests what (forecasts: 2212.04115 Table 5 halved to 1σ; SO 2503.00636; LiteBIRD/JAXA; D705)
