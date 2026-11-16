@@ -612,3 +612,11 @@ Touches: eps_tilt, band_i.
 1. Lock order from git first-commit times: no K1 failures [derived] (computed in a short script; the listing has no results file).
 2. Status summary compiled from D807–D826 [derived].
 Touches: none.
+
+## D828: P3.1 literature (P3 deep project)
+1. Tree-level anti-D3 has no U dependence [literature] (1707.07059).
+2. One-loop vacuum energies are additive lattice sums E(U,s) with characters [literature] (2512.20570; hep-ph/0004091).
+3. Additive ±E is a wall or unbounded below, not a plateau [derived].
+4. In V_up = |F|²K^{XX̄}, additive means E in the numerator; P3 needs it in the denominator [derived].
+5. P3 is not supported at one loop; P3.2 sets up the actual amplitude [derived].
+Touches: plateau_origin, serapis_e.

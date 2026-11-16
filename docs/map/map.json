@@ -40,7 +40,7 @@
     "E"
    ],
    "title": "Origin of the plateau",
-   "status": "literature",
+   "status": "assumed",
    "d": [
     "D703",
     "D712",
@@ -56,13 +56,14 @@
     "D799",
     "D800",
     "D801",
-    "D803"
+    "D803",
+    "D828"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D800: computed",
     "D801: literature",
-    "D803: literature"
+    "D803: literature",
+    "D828: assumed"
    ]
   },
   {
@@ -232,7 +233,8 @@
     "D807: corrected",
     "D811: computed",
     "D812: corrected"
-   ]
+   ],
+   "flag": "recheck (D828, plateau_origin)"
   },
   {
    "id": "janus",

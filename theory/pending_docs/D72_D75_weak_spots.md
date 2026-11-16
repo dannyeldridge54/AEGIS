@@ -8411,3 +8411,23 @@ MAP: node=eps_tilt status=estimate touches=[band_i] ripple=no
 - theory/derivations/ACCURACY_STATUS.md written (derived / fitted / postulated / conditional / tests) and synced to the project as claude/ACCURACY_STATUS.md.
 Round 2 of the accuracy queue is complete. Only item 10 (P3, the anti-D3 annulus computation) remains, and it awaits Danny's approval.
 MAP: none
+
+## D828 (P3 DEEP PROJECT, step P3.1; Danny approved 08:13 CT; literature: 3 searches, 2 fetches): known one-loop vacuum energies of brane-supersymmetry-breaking and Scherk–Schwarz orientifolds depend on the torus shape ADDITIVELY, through (shifted) Epstein lattice sums. None has the ratio form 1 − E(ρ)/E(τ) that P3 needs
+Literature:
+- Non-SUSY IIB orientifold on T⁶/Z₂′×Z₂′ with brane supersymmetry breaking, 16 D3s on O3^± planes (2512.20570):
+  - the open-sector (Möbius) vacuum energy VANISHES for equal-rank USp/SO stacks;
+  - the closed-sector Scherk–Schwarz Casimir energy is V ∝ −M_s⁴ λ (Im T)⁻² E₃(U), with E₃(U) = Σ (Im U)³/|p + (2q+1)U|⁶, a Γ₁(2)-type shifted Epstein sum. It is NEGATIVE, grows ∝ y³ at the cusp (unbounded below), and is ADDITIVE.
+- Antoniadis–Benakli–Quirós (hep-ph/0004091), anti-brane sector:
+  - the one-loop potential is a Möbius amplitude with momentum and winding lattice sums;
+  - brane positions and Wilson lines enter as cosine characters;
+  - its contribution to the vacuum energy is positive, falling as 1/R² at large radius;
+  - the mass² of position moduli is negative at a = 0, with the minimum at the half-period a = 1/4 (the anti-brane sits at a half-period fixed point).
+Derivation:
+1. The tree-level anti-D3 uplift has no torus-shape dependence without warping [literature] (1707.07059; D797).
+2. One-loop open (Möbius/annulus) and closed (torus) vacuum energies are closed-channel lattice sums. At fixed area their shape dependence is Σ' (Im U)^s/|m + nU|^{2s} with characters (E(U,s) and shifted versions), entering V ADDITIVELY [literature] (2512.20570; hep-ph/0004091; BHK).
+3. E(U,s) grows ∝ y^s at the cusp, so an additive ±cE gives a wall (+) or V → −∞ (−). Neither is a plateau [derived] (D797 points 4–5).
+4. In non-linear SUGRA, V_up = |F|²K^{XX̄}. An additive one-loop vacuum energy corresponds to K^{XX̄} ⊃ +cE/|F|², i.e. E in the NUMERATOR, while P3 needs K^{XX̄} = a − b/E [derived].
+5. So no known one-loop amplitude produces P3's form at leading order [derived]. P3 would need either (a) a resummed or non-perturbative structure in which E appears inverted (e.g. a wave-function factor Z_X = 1 + cE with the uplift ∝ 1/Z_X, which D797 showed gives a hilltop), or (b) a different physical origin of the plateau [estimate].
+6. Positive lesson for P3.2: the half-period placement of the anti-brane (ABQ minimum at a = 1/4) and the character structure (D689 style) are standard. The P3.2 amplitude can therefore be set up concretely, and its s, sign and character content determined [derived].
+Status: P3 is NOT supported by the one-loop literature. It stays open as a postulate until P3.2–P3.4 compute the actual amplitude for our configuration.
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
