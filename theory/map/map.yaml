@@ -151,14 +151,14 @@ nodes:
   - D770
   - D781
   - D783
+  - D793
   depends:
   - plateau_origin
   - bhk_tilt
   history:
-  - 'D770: computed'
   - 'D781: computed'
   - 'D783: computed'
-  flag: recheck (D792, lepto_rho)
+  - 'D793: computed'
 - id: janus
   layer: 2
   branch:
@@ -355,6 +355,7 @@ nodes:
   - 'D790: assumed'
   - 'D791: assumed'
   - 'D792: computed'
+  flag: recheck (D793, serapis_e)
 - id: gravitino_wino
   layer: 4
   branch:

@@ -349,3 +349,12 @@ Touches: lepto_rho.
 7. N*(T₂) from D781 (0.77 per decade) gives n_s 0.967–0.970, r 5.1–5.6e-4 [derived] (interpolation of computed rows).
 8. [derived] Consistency: D781's frozen-band condition is violated by construction (T₂ < 1e5), so this is an alternative, not a confirmation. The P5 mediator is unnecessary (retired). P1 is not needed at ρ (spontaneous CP).
 Touches: lepto_rho (assumed → computed), serapis_e.
+
+## D793 — exact self-diluted ρ spectra (forward side)
+1. Matter-like phase to T₂, with N* from the matching equation [literature] (D781 step 1).
+2. T₂ ∈ {150, 330, 1100} gives N* 44.9–45.6 [derived] (computed).
+3. Exact first-order slow-roll spectra on the D692 potential give n_s 0.9667–0.9703, r 5.13–5.59e-4 [derived] (computed; K4 passes).
+4. D792's interpolation agrees to ≤ 1% [derived].
+5. Wino T_f = M₂/20 ≤ 92.5 GeV < T₂, so the thermal relic is unchanged [derived].
+6. [derived] Consistency: D784's wino window holds. The frozen band is unchanged (this is an alternative). The family strip and cap (D678–D681) contain these points.
+Touches: serapis_e, lepto_rho.

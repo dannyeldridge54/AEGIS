@@ -51,3 +51,10 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 - Superpartner window assumes the modular-covariant completion, X-independent gauge kinetic functions (anomaly-mediated gauginos) and initial conditions 6–12 e-folds before horizon exit, higgsino threshold (window ends ×2); dilaton–LSP bound relaxes to m_Y ≳ 35 H_end (winos re-thermalise, but gravitinos from Y decays do not; D652, D658); gravitinos decay before BBN (D651); AD thermal effects negligible (D653); Weinberg operator non-zero at i with k_L = k_Hu = 1 (D654a); covariant completion: centre gives ordinary matter parity at ρ (D661) and at τ = i with Γ2 doublets (D663–D664); dim-5 coefficients ≲ 5e-3 (D657).
 - Preheating inefficient (q ≲ 2e-4 for m0 ≲ m_φ) and φ → gravitino + inflatino closed (m_inflatino = 4/3 m3/2) — estimates, D641. If either were efficient, N* would rise 6–9 e-folds and Chronos would leave its band.
 - Collider signals: none expected at LHC/FCC energies.
+
+
+## Post-hoc ρ-branch alternative (D792–D793, 16 Nov 2026; NOT locked, scored only on future data)
+"SERAPIS-E/ρ, self-diluted". The Z₃-charged inflaton acts as an Affleck–Dine condensate; the late, string-scale-suppressed decays of the Z₃-charged heavy ν dilute and release the baryon asymmetry (T₂ ≈ 150–1100 GeV).
+- n_s = 0.967–0.970; r = (5.1–5.6)×10⁻⁴ (outside the frozen D693 band; inside the family strip and cap).
+- Wino: thermal, 0.67–1.85 TeV (5–41% of DM).
+- Baryogenesis: spontaneous CP (initial offset ≥ 0.15 from Re τ = ½); no extra fields.

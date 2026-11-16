@@ -7783,3 +7783,13 @@ Two ρ options now:
 - r differs from the frozen band by ~5–10% and n_s by ~0.002–0.005. SO + SPHEREx n_s (~2030, σ ~ 0.002) can separate them marginally.
 - This is the honest status of SERAPIS-E at ρ. τ = i is untouched.
 MAP: node=lepto_rho status=computed touches=[serapis_e] ripple=no
+
+## D793 (FORWARD, i-side; Jl tick 32; locked PREREG_D793; results/selfdil_exact_d793.txt) — exact spectra confirm the self-diluted ρ history: n_s = 0.9667–0.9703, r = (5.13–5.59)e-4; side checks pass
+Computed (D781 code; K4: T₂ = 300 reproduces D781 exactly, e.g. C = 1.15e-6: N* 45.12, n_s 0.9683, r 5.371e-4):
+- T₂ = 150 / 330 / 1100 GeV: N* = 44.89 / 45.15 / 45.55.
+- n_s = 0.9667 – 0.9703 and r = (5.13 – 5.59)e-4 over C = 1.0–1.3e-6. They match D792's interpolation to ≤ 0.0001 in n_s and ≤ 1% in r.
+- Side checks: wino freeze-out T_f ≤ 92.5 GeV < T₂ (the thermal window 0.67–1.85 TeV of D784 holds); gravitinos Y ~ 3e-20 – 2e-19 (negligible); BBN unaffected.
+VERDICT: the post-hoc ρ-branch alternative ("SERAPIS-E/ρ, self-diluted") predicts n_s = 0.967–0.970 and r = (5.1–5.6)e-4, with α_s and β_s as for the family (the strip, D678).
+- Every point lies OUTSIDE the frozen D693 band (r above 5.12e-4, n_s at or below 0.970) but inside the family strip and cap.
+- Added to the prediction sheet and the paper table (post hoc).
+MAP: node=serapis_e status=computed touches=[lepto_rho] ripple=no
