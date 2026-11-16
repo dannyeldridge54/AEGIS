@@ -1,0 +1,2 @@
+# DEVIATIONS for PREREG_D765 (written before the first run)
+D1: the D632 solver lines executed by the script also use the old field map: phi0 = ln(y_start)/√2 and y* = exp(√2·phiS). Keeping them would put the start at y = 25^{1/√2} ≈ 9.7, inside the inflating region of the new map. So in the executed solver text, "/s2" is replaced by "" and "exp(s2*" by "exp(". Start y stays 25 (expected y* ≈ 9.5 from N ≈ ζ(4)y²/(2k²) with k = 1). No other change.
