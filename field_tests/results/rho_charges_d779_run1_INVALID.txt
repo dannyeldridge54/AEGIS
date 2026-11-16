@@ -1,0 +1,7 @@
+M_R in eigenbasis (rounded):
+ [[0.-0.j 0.-0.j 1.+0.j]
+ [0.-0.j 0.-0.j 1.+0.j]
+ [1.+0.j 1.+0.j 0.+0.j]]
+SVs: [6.28785932e-51 1.41421356e+00 1.41421356e+00]
+non-zero entries: [(0, 2), (1, 2), (2, 0), (2, 1)]
+q=0 (pure Majorana) heavy states: []
