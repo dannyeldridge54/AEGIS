@@ -9223,3 +9223,9 @@ Results [derived]: pass fraction 699/20,000 = 3.50% (identical to D883, as expec
 Verdict (locked rule): NATURAL (pass ≥ 1%, median 1.62e-4 ∈ [1e-4, 1e-2]), at the lower edge; the low end of the m_ν₁ window falls below 1e-4. Pre-stated prediction (3.5%, ε ≈ 1.6e-4) CONFIRMED. D883's ε ≈ 1.8e-3 is superseded (its result stays as a record of the old target).
 Consequence [derived] (arithmetic, l = 1): the residual-Z₃ breaking of D889 becomes |u| ≈ 1.6e-4, |τ − ρ| ≈ √3·1.6e-4 ≈ 2.8e-4 (1.1e-4–7.3e-4 across the window). Still post hoc with no in-model source (D890 unchanged in kind).
 MAP: node=n_sector_rho status=computed touches=[lepto_rho,mnu] ripple=no
+
+## D897 (R2.2c): Weinberg numbers redone with D895's window: the bound tightens to c ≲ 1e-5 (M_P) / 1e-7 (M_s); instanton-only needs S ≳ 14–19, above the heavy-ν 6–13: D892's "natural" claim WITHDRAWN
+Arithmetic: theory/modular/weinberg_d897.py → theory/derivations/weinberg_d897.txt (copies of D891/D892 arithmetic with the new window; no prediction, no lock).
+Results [derived] (arithmetic, v_u = 170 GeV, m_ν₁ = 2e-11 / 1.34e-10 / 9e-10 eV): c needed 1.7e-6 / 1.1e-5 / 7.6e-5 (reduced M_P); 8.4e-6 / 5.7e-5 / 3.8e-4 (M_P); 4.2e-9–9.3e-7 (M_s = 0.6–3e16 GeV). Instanton-only with Λ = M_s: S_W ≳ 13.9–19.3, against S_N = 6.4–12.6 for M_N = 1e11–1e13 GeV.
+Verdict: D892's "bound met for M_N ≲ 1e12 GeV with S_W ≥ S_N" is WITHDRAWN. The instanton-only mechanism still works but needs S_W ≈ 1.5–3 × S_N, a Weinberg instanton cycle larger than the heavy-ν ones [estimate]. This is the same M ≫ M_P requirement τ = i already carried (D646a, M = v²/m_ν₁ ~ 1e25 GeV), so it is now a shared condition of AD on both branches, not a ρ-specific weakness.
+MAP: node=lepto_rho status=estimate touches=[n_sector_rho,mnu] ripple=no

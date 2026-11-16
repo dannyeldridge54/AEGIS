@@ -1138,3 +1138,10 @@ Touches: lepto_rho, n_sector_rho, mnu.
 3. Window ends: ε = 6.3e-5 to 4.2e-4 [derived] (locked run D896).
 4. |τ−ρ| ≈ √3·ε ≈ 2.8e-4 for l = 1 [derived] (arithmetic).
 Touches: n_sector_rho, lepto_rho, mnu.
+
+## D897: Weinberg numbers redone
+1. Window m_ν₁ = 2e-11–9e-10 eV [derived] (D895).
+2. c ≲ 1.7e-6–7.6e-5 (reduced M_P), 4e-9–9e-7 (M_s) [derived] (arithmetic).
+3. S_W ≳ 13.9–19.3 vs S_N = 6.4–12.6 [derived] (arithmetic).
+4. D892's natural claim withdrawn; shared M ≫ M_P condition with τ = i [derived] (D646a).
+Touches: lepto_rho, n_sector_rho, mnu.
