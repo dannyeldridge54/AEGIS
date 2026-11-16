@@ -140,3 +140,4 @@ D853  2026-11-16T16:11Z  Q.3 P1prime verdict
 D854  2026-11-16T16:15Z  R.1 tau=i phase map
 D855  2026-11-16T16:18Z  R.2 rho charge check
 D856  2026-11-16T16:20Z  V.5 fold D854 D855 into draft
+D857  2026-11-16T16:27Z  M.1 moduli requirements table
