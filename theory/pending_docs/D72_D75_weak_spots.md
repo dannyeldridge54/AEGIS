@@ -8882,3 +8882,16 @@ Searches 2, fetch 1 (hep-th/0602038, first part only: "1 O3 and 3 O7 planes"; it
 Verdict: ALLOWED WITH CONDITIONS: (a) D7₁ total ≤ 16 (11 used); (b) rigid/fractional D7s at T²₁ fixed points (torsion), or flux-massive adjoints; (c) SU(5) at the origin, SU(6) at a half-period (flavour counting); (d) the D7 stacks' one-loop sums shift the tilt by O(10–50%), requiring a re-fit of the benchmark moduli.
 Sources: hep-th/0602038; hep-th/0506252; hep-th/0610327 (review); 0902.1694.
 MAP: node=lepto_i status=assumed touches=[serapis_e,eps_tilt] ripple=no
+
+## D864a (correction to D864 point 4)
+D864 said the placement is "forced: SU(5) at the origin, SU(6) at a half-period". That was wrong on two counts. (i) Not forced: SU(6) can also sit at the origin (N_f = 2 < 6). (ii) A single stack at ONE half-period breaks the permutation symmetry of the three half-periods, i.e. it breaks SL(2,Z) of the inflaton torus. The v3.1/v3.2 paper already states that unequal brane numbers at the three half-periods remove SERAPIS-E's ρ vacuum, its isotropic mass and the residual Z₃. Putting SU(6) at a half-period would therefore destroy SERAPIS-E itself, and a symmetric copy at all three half-periods needs 18 + 5 = 23 D7s > 16 (tadpole). Corrected placement: BOTH stacks (SU(5) and SU(6)) at the origin; flavours N_f = N0 ≤ 2 for each, condensation allowed, SL(2,Z) kept.
+
+## D865: with both D7 stacks at the origin, the tilt survives but is reduced; the benchmark must be re-fitted by ×0.4–0.85
+Derivation + arithmetic (no lattice run: the symmetric placement reduces to D696's formula, so no new lattice sums are needed).
+1. D7 stacks at the origin of T²₁ enter the U₁ one-loop sum like an origin stack (D696: tilt ∝ N − N₀ for equal half-period stacks), but with the D7₁ normalisation: BHK's D7_k terms carry 1/(Im T_k·Im ρ₁) instead of the D3 terms' 1/(Im S·Im ρ₁) [estimate on the structure; the exact BHK D7 coefficient was NOT looked up this tick: written as r·(D3 coefficient), r = O(1)].
+2. Effective tilt count: N_eff = (N − N₀) − 11·r·(Im S/Im T₁). At the benchmark Im S/Im T₁ = 0.485/4.31 = 0.113, so the D7s subtract 0.62 (r = ½), 1.24 (r = 1), 2.48 (r = 2) [derived arithmetic].
+3. With no anti-D3 ((5,1), N − N₀ = 4): N_eff = 3.38 / 2.76 / 1.52 → the required Im S·Im ρ₁ rescales by ×0.85 / 0.69 / 0.38. With an anti-D3 ((5,2), 3): ×0.79 / 0.59 / 0.17 (the anti-D3 case is already excluded by D860).
+4. The tilt keeps its sign for r ≲ 3 (no anti-D3); the SL(2,Z) structure, ρ vacuum and E(τ,2) shape are unchanged because the placement is symmetric [derived].
+5. Re-fit [estimate]: C ∝ N_eff/(Im S·Im ρ₁), so keeping C = 1.0–1.3e-6 needs Im S·Im ρ₁ smaller by the factor in point 3, i.e. A₁ (or g_s) shifts; the racetrack conditions on T₁ (A₂A₃/g_s) are untouched if A₁ absorbs the change. The D861 benchmark moves to A₁ ≈ 41 × (0.38–0.85) ≈ 16–35 at fixed g_s (f = 4π² convention).
+Verdict: racetrack D7s are compatible with SERAPIS-E only at the origin; they reduce the tilt's effective brane count by O(15–60%), absorbed by a smaller inflaton torus. Open: BHK's exact D7 coefficient r.
+MAP: node=serapis_e status=computed touches=[eps_tilt,lepto_i] ripple=no

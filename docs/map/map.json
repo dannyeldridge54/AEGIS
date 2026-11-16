@@ -30,7 +30,7 @@
     "D823: estimate",
     "D826: estimate"
    ],
-   "flag": "recheck (D864, lepto_i)"
+   "flag": "recheck (D865, serapis_e)"
   },
   {
    "id": "plateau_origin",
@@ -235,18 +235,18 @@
     "D807",
     "D811",
     "D812",
-    "D835"
+    "D835",
+    "D865"
    ],
    "depends": [
     "plateau_origin",
     "bhk_tilt"
    ],
    "history": [
-    "D811: computed",
     "D812: corrected",
-    "D835: computed"
-   ],
-   "flag": "recheck (D864, lepto_i)"
+    "D835: computed",
+    "D865: computed"
+   ]
   },
   {
    "id": "janus",
@@ -420,7 +420,8 @@
     "D862: assumed",
     "D863: assumed",
     "D864: assumed"
-   ]
+   ],
+   "flag": "recheck (D865, serapis_e)"
   },
   {
    "id": "sterile_rho",

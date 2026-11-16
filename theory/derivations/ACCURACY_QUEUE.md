@@ -83,3 +83,4 @@ Why: today's results each demand values of the same moduli (g_s, Im ρ₁, Im ρ
 - α′ control [done D862]: leading corrections sub-percent at the benchmark; consistent P1′ region is a thin sliver near the string scale; loop corrections to T₁'s K (≈ 1/(Im S·Im T₁) ≈ 0.5) open.
 - Loop correction to T₁ [done D863]: CP-odd racetrack minima survive even ×100; D862's weak-point estimate withdrawn (D862a).
 - D7 tadpole [done D864: allowed with conditions; D7 stacks feed the tilt]. Next: D865 compute the D7 contribution to C (BHK D7 normalisation) and re-fit the benchmark.
+- D7 tilt [done D865 (+D864a)]: both stacks at the origin; N_eff reduced by 0.6–2.5; benchmark A₁ ≈ 16–35. Open: BHK D7 coefficient r.
