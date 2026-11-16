@@ -86,3 +86,4 @@ D799  2026-11-16T11:15Z  condensate placement for P3
 D800  2026-11-16T11:23Z  SERAPIS-Delta two-term window
 D801  2026-11-16T11:30Z  lattice sums select rho
 D802  2026-11-16T11:38Z  BHK term stability at i
+D803  2026-11-16T11:46Z  mixed-sign one-loop sums and the vacuum
