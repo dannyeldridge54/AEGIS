@@ -128,3 +128,4 @@ D841  2026-11-16T15:14Z  T.2 tau=i decision
 D842  2026-11-16T15:25Z  T.3 tau=i consequences
 D843  2026-11-16T15:28Z  C.1 CP sources literature
 D844  2026-11-16T15:33Z  C.2 CP-odd fields in our setup
+D845  2026-11-16T15:41Z  C.3 racetrack CP scan
