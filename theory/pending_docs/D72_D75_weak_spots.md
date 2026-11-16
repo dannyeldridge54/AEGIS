@@ -7230,3 +7230,16 @@ Form check (reasoning):
 - L² × (DKL threshold): a tilt ε_ρ = b′·(1/16π²)² with b′ = 1.5, an O(1) number, replacing D687's unnatural one-loop b ≈ 0.01. Physically: the universal one-loop threshold entering the uplift sector through one further loop (e.g. the X-sector coupling to the threshold-corrected gauge kinetic function arises at one loop). The functional form (L) is unchanged, so it is form-consistent. WEAK LEAD only: the high look-elsewhere chance, and no derivation of the second loop.
 VERDICT: eps_tilt stays an assumed input at τ = i (no candidate). At ρ there is a plausible reinterpretation: a two-loop-sized coefficient, b′ ≈ 1.5. SERAPIS-E's tilt is already derived (C from Im S·Im ρ ≈ 190–245N, D692), so the τ = i ε is the branch's open input, not the model's. Loop pauses (no strong lead).
 MAP: node=eps_tilt status=assumed touches=[] ripple=no
+
+## D754 (DEEP; reasoning + arithmetic; results/rho_tilt_volume_d754.txt) — deeper on D753: the ρ-variant tilt fits the same one-loop-over-volume mechanism that DERIVES SERAPIS-E's tilt
+Reverse path: D753 left "a two-loop-sized coefficient" (ε_ρ ≈ 1.5·(1/16π²)²) as a weak lead. Deeper question: is there a mechanism the model already uses that makes a one-loop factor times a SECOND small number? Yes. SERAPIS-E's tilt is a one-loop Kähler correction divided by moduli volumes, C = 15N/(64π⁶ Im S·Im ρ) (Berg–Haack–Körs; D692).
+Apply the same structure to the ρ variant (reasoning): its tilt function is the universal one-loop DKL threshold L = −ln(2y|η|⁴). If L enters the Kähler potential the same way (a one-loop correction suppressed by Re S·Im ρ_vol; the Green–Schwarz/threshold-type term, form from memory), then ε_ρ = δ/(16π²·Re S·Im ρ_vol).
+Computed:
+- ε_ρ = 6e-5 needs (Re S·Im ρ_vol)/δ = 106.
+- SERAPIS-E needs Im S·Im ρ = 188–244 (×N) for its derived C.
+- The τ = i value (ε = 1.45e-4) would need 44, but its I₁ is not a standard threshold function, so the analogy does not apply there.
+VERDICT (reasoning, labelled): the ρ tilt is naturally sized if it is a one-loop, volume-suppressed Kähler correction with the DKL function. The required volume product (~1e2) matches the SERAPIS-E value to within ×2–4 (the two differ only by O(1) normalisation, N and δ). The ρ variant and SERAPIS-E then share one tilt mechanism (one loop ÷ ~100–250 volume units), and the D687 "unnaturally small coefficient" problem disappears for ρ. This upgrades D753's weak lead to a STRUCTURAL lead. Still to do:
+- (a) confirm in the literature that the DKL/GS one-loop term enters K with a 1/(Re S·Im ρ) suppression in a type-IIB orientifold with branes at the half-periods;
+- (b) recompute ρ's n_s, r with ε tied to the SERAPIS-E volume product (a joint prediction instead of two free tilts).
+τ = i's I₁ tilt stays unexplained, one more reason the paper calls ρ the better-motivated vacuum.
+MAP: node=eps_tilt status=estimate touches=[vac_rho, serapis_e] ripple=no

@@ -1,0 +1,4 @@
+rho variant: eps=6.00e-05 -> (Re S * Im rho)/delta = 1/(16 pi^2 eps) = 106
+tau=i (I1, no standard threshold): eps=1.45e-04 -> (Re S * Im rho)/delta = 1/(16 pi^2 eps) = 44
+SERAPIS-E (D692): Im S * Im rho = 15N/(64 pi^6 C) = [244, 188] (times N)
+two-loop reading: eps/L^2 = 1.5

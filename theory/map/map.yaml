@@ -5,13 +5,15 @@ nodes:
   - i
   - rho
   title: Tilt strength ε (fitted)
-  status: assumed
+  status: estimate
   d:
   - D602
   - D687
   - D753
+  - D754
   history:
   - 'D753: assumed'
+  - 'D754: estimate'
 - id: plateau_origin
   layer: 1
   branch:
@@ -102,6 +104,7 @@ nodes:
   - D634
   depends:
   - eps_tilt
+  flag: recheck (D754, eps_tilt)
 - id: serapis_e
   layer: 2
   branch:
@@ -114,6 +117,7 @@ nodes:
   depends:
   - plateau_origin
   - bhk_tilt
+  flag: recheck (D754, eps_tilt)
 - id: janus
   layer: 2
   branch:

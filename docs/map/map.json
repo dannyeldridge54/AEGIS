@@ -15,14 +15,16 @@
     "rho"
    ],
    "title": "Tilt strength ε (fitted)",
-   "status": "assumed",
+   "status": "estimate",
    "d": [
     "D602",
     "D687",
-    "D753"
+    "D753",
+    "D754"
    ],
    "history": [
-    "D753: assumed"
+    "D753: assumed",
+    "D754: estimate"
    ]
   },
   {
@@ -147,7 +149,8 @@
    ],
    "depends": [
     "eps_tilt"
-   ]
+   ],
+   "flag": "recheck (D754, eps_tilt)"
   },
   {
    "id": "serapis_e",
@@ -164,7 +167,8 @@
    "depends": [
     "plateau_origin",
     "bhk_tilt"
-   ]
+   ],
+   "flag": "recheck (D754, eps_tilt)"
   },
   {
    "id": "janus",
