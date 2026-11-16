@@ -8682,3 +8682,12 @@ New falsifiers for P1′:
 (ii) (unchanged in spirit) leptonic CP conservation δ_CP ≈ 0/π at > 3σ (DUNE/Hyper-K) would disfavour any spontaneous-CPV scenario that also sets the low-energy phase, but P1′ ties the low-energy and leptogenesis phases only model-dependently, so this stays a weak test.
 Open: the distribution of δ over CP-odd vacua, and the three-modulus racetrack; not started.
 MAP: none
+
+## D847 (v3.2 draft, V.1): accuracy-track edits applied to a new draft file
+papers/v3/serapis_v3.2_draft.tex created as a copy of the published v3.1 (serapis_v3.tex, untouched). Date line set to "v3.2 draft, 16 November 2026".
+Applied (V32_TODO):
+- D822: removed the retired log-derivative plateau clause from the SERAPIS-E paragraph.
+- D823, D826: two bullets added to "The origin of ε" (BHK tilt at i leaves ε fitted; vacuum-mass sources 10¹¹–10¹² short). D826's TODO line also named the anti-D3 log correction as the only candidate; that is superseded by D834/D834a and is left to V.2 (D836 line) rather than written in a stale form.
+- D824: Σm_ν sentence: "alive by 0.0005 eV", class prediction (all NO + ΛCDM), negative-mass preference cited (2610.20977; authors Ge, Qu, Wang, Schaan, Wu, Friedland, checked online; bib entry added to refs.bib).
+Build: compiles, 16 pages (v3.1: 15), no undefined citations or references.
+MAP: none

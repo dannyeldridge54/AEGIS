@@ -769,3 +769,10 @@ Touches: none.
 5. No frozen prediction changes [derived].
 6. New falsifiers stated [derived].
 Touches: none.
+
+## D847: V.1 v3.2 draft accuracy edits
+1. Draft file copied from v3.1; published file untouched [derived].
+2. D822, D823, D824, D826 applied with D-note numbers [derived] (D822–D826).
+3. 2610.20977 bib entry checked online [literature].
+4. Draft compiles, 16 pages, no undefined references [derived].
+Touches: none.
