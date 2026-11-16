@@ -1308,3 +1308,8 @@ Touches: none.
 1. Methods note compiled from the public record; counts checked by script [derived].
 2. Published with full metadata; md5 verified [derived].
 Touches: none.
+
+## D924: Zenodo record audit
+- [derived] (md5 comparison) 12/12 posted files identical to local release files.
+- [literature] none.
+- Result: v3.2 page completed (68 refs, 19 keywords, related works to papers 1–4); all five records fully filled.

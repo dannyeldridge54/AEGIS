@@ -171,3 +171,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D919: novelty claims expire; re-check them right before writing a paper that rests on them.
 - 2026-11-16 D920: on Zenodo set keywords through the form, not the API (the API drops free-text subjects); verify every field with an API read before publishing.
 - 2026-11-16 D923: count from the record by script before writing a number into a paper; two wording claims in the draft were wrong until checked.
+- D924: For Zenodo, keywords via the form; PUT metadata built fresh.

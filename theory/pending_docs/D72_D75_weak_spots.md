@@ -9427,3 +9427,10 @@ MAP: none
 ## D923: paper 4 published: "Lock Before You Compute: A Pre-Registration Workflow for Theoretical Physics Done with an AI Assistant"
 Zenodo DOI 10.5281/zenodo.24291026 (concept 24291025), published 16 Nov 2026 ~14:20 CT. Files md5-verified: Eldridge_lock_before_compute_2026.pdf (2 pp, 157c1949…), .tex (d2c27079…). Source papers/methods/methods.tex. Counts from the record (since D829): 95 notes, 19 locks (D829–D912), 2 deviations files (D835, D863), 11 correction notes (D657a, D834a, D853a, D857a, D861a, D862a, D864a, D880a, D888a, D904a, D911a). Worked examples D880a/D895, D911a/D912, D657a/D915–D918, D913. Two wording errors caught before posting ("weeks earlier" → "the day before" for D657, written 15 Nov; "three recomputed under fresh locks" → "redone, one under a fresh lock"). Full record: 10 keywords, 4 references, methods + notes, 4 related works (SERAPIS v3.2, papers 1–3), CC BY 4.0, copyright, repository, Python.
 MAP: none
+
+## D924: Zenodo record audit: SERAPIS v3.2 page filled out; all five records md5-verified
+Metadata-only edit of SERAPIS v3.2 (doi:10.5281/zenodo.24289118) published 16 Nov 2026 ~14:35 CT. Files unchanged (Zenodo forbids file changes after publication). Added: 68 references (cleaned from the \cite keys of serapis_v3.2.tex), methods and notes descriptions (the notes field records the D657a erratum on proton hexality, arXiv:1102.3595), copyright, 4 related works (papers 1–4, isreferencedby), keywords 5→19, repository github.com/dannyeldridge54/aegis, Python.
+Audit [derived] (API read vs local md5sum): 12 of 12 files match. 24290583 consistency relation (2 files, 8 refs, 12 kw); 24290738 no-go (2, 6, 12); 24290875 SERAPIS-E (2, 18, 12); 24291026 methods (2, 4, 10); 24289118 v3.2 (4, 68, 19). Every record has methods+notes, copyright, repository and language. All DOIs registered.
+Not done: older versions v3.1 (24281771) and v3 (24250733) are superseded and left as they are. The v3.2 record now points to the v3.3 draft fix in its notes.
+LESSONS: Zenodo free-text keywords go in through the form (the API drops them); build PUT metadata fresh, never echo GET.
+MAP: none
