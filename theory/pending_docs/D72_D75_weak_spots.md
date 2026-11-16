@@ -6988,3 +6988,14 @@ Computed (literature formulas as locked; Y_3/2 = 1.9e-12 T_R/1e10):
 VERDICT (locked): PASS with a restriction. The fast ρ reheating links the heavy-neutrino scale to the wino. M_H ~ 1e12 GeV leaves the D713 window intact, while M_H ~ 1e13 forces M2 = 0.66–0.75 TeV with winos as nearly all the DM.
 Flag (from memory, NOT checked): wino DM at ~0.7 TeV making all the DM is strongly constrained by gamma-ray searches (Fermi dwarfs, H.E.S.S. Galactic Centre lines; profile-dependent). If so, the M_H ~ 1e13 corner is excluded and SERAPIS-E prefers M_H ~ 1e12 (T_R ~ 3e8). Next: search the current limits (D733).
 Comparison: D651's Y_3/2 ≲ 2e-17 (old T_R 1e3–1e5) is superseded by 6e-14 – 6e-13.
+
+## D733 (RIGHT; literature, no computation) — the M_H ~ 1e13 / T_R ~ 3e9 corner of SERAPIS-E is excluded by gamma rays (for standard profiles)
+Sources:
+- Cohen, Lisanti, Pierce, Slatyer, "Wino Dark Matter Under Siege", arXiv:1307.4082: "the combined H.E.S.S. and Fermi results completely exclude the non-thermal scenario" (wino = all DM) for NFW. H.E.S.S. excludes winos down to 500 GeV for NFW; Fermi dwarfs (profile-marginalised) cover lower masses. Only a ~10 kpc Burkert core (J-factor ~1e-2 of NFW) escapes.
+- arXiv:2507.15934 ("Wino and Real Minimal Dark Matter Excluded by Fermi Gamma-Ray Observations", 14 yr Fermi-LAT inner Galaxy): the thermal 2.8 TeV wino is excluded even for cores up to ~6.7 kpc. Non-thermal winos are excluded from 1.85 TeV to the thermal mass even as a sub-fraction (< 50% at the lower end). The page read gives no 0.66–0.8 TeV statement. Collider disappearing tracks exclude the minimal wino below ~0.7 TeV.
+- Cross-check with D713: consistent (D713 used the 1.85–2.86 TeV exclusion and kept 0.66–1.85 TeV).
+VERDICT:
+- The T_R ≈ 3e9 corner of D732 needs M2 = 0.66–0.75 TeV with winos ≈ 90% of the DM, i.e. effectively non-thermal all-DM winos. It is EXCLUDED for NFW and Einasto (H.E.S.S. + Fermi), and survives only for kpc-scale cores that the 2025 Fermi analysis disfavours. It is also squeezed from below by the ~0.7 TeV collider bound.
+- So SERAPIS-E prefers M_H ~ 1e12 GeV (T_R ≈ 3e8). There the non-thermal winos are 10–40% of the DM and the full 0.66–1.85 TeV window passes the relic bound.
+- Open: whether a 10–40% wino sub-fraction at 0.66–1.85 TeV survives the gamma-ray limits (flux ∝ f²). Needs the cross-section and limit curves (D734).
+Consequence: in SERAPIS-E the heavy-neutrino scale is now tied to M_H ~ 1e12 GeV (M_light ~ 2e11–7e11), and leptogenesis then needs sin δ ≳ 0.1–0.6 (D731).
