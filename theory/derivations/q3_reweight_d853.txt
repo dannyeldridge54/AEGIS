@@ -1,0 +1,11 @@
+c=0.3 MH=1e12 light: s_min=0.56 P1(uniform)=0.622 P1'(D852 hist)=0.482
+c=0.3 MH=1e12 heavy: s_min=0.12 P1(uniform)=0.923 P1'(D852 hist)=0.787
+c=0.3 MH=1e13: s_min=0.01 P1(uniform)=0.994 P1'(D852 hist)=0.980
+c=0.3 MH=5e13: s_min=0.01 P1(uniform)=0.994 P1'(D852 hist)=0.980
+c=1 MH=1e12 light: s_min=0.12 P1(uniform)=0.923 P1'(D852 hist)=0.787
+c=1 MH=1e12 heavy: s_min=0.09 P1(uniform)=0.943 P1'(D852 hist)=0.822
+c=1 MH=1e13: s_min=0.01 P1(uniform)=0.994 P1'(D852 hist)=0.980
+c=3 MH=1e12 light: s_min=0.08 P1(uniform)=0.949 P1'(D852 hist)=0.842
+c=3 MH=1e12 heavy: s_min=0.04 P1(uniform)=0.975 P1'(D852 hist)=0.921
+P1': min=0.482 median=0.842 >=0.9: 4/9
+With CP-odd vacuum deepest in 0.407 of racetracks (D851), unconditional P1' (deepest-vacuum selection): median x 0.407 = 0.343

@@ -8736,3 +8736,20 @@ Verdict (locked rule, ≥ 80%): PASS, narrowly (80.3%). Pre-stated "passes" CONF
 Consequences: P1′ gains a structural condition: at least two instanton sectors with different charges contribute to the heavy-ν masses (2⊕1 at τ = i can supply this if the doublet and singlet masses come from different instanton numbers). P1's old "6% near zero" becomes ≈ 20% near zero under P1′, which weakens the D763 statement accordingly.
 v3.2 draft: CP paragraph updated (D851 metastability wording; D852 two-sector condition and 80% figure); rebuilt, 16 pages, clean.
 MAP: none
+
+## D853 (Q.3): P1′ verdict: leptogenesis stays likely, but less generous than P1
+Arithmetic on locked outputs only (no model run): D762's per-case s_min (field_tests/results/cp_phase_rho_d762.txt) and D852's |sin Δ₁| histogram (field_tests/results/instanton_phase_d852.txt). Within each 0.1-wide bin the distribution is taken as uniform [estimate; matters most for s_min = 0.01]. Output kept at theory/derivations/q3_reweight_d853.txt (not a results file: no model run).
+| D762 case | s_min | P under P1 (uniform) | P under P1′ (D852) |
+|---|---|---|---|
+| c = 0.3, M_H = 1e12, light | 0.56 | 0.622 | 0.482 |
+| c = 0.3, M_H = 1e12, heavy | 0.12 | 0.923 | 0.787 |
+| c = 0.3, M_H = 1e13 / 5e13 | 0.01 | 0.994 | 0.980 |
+| c = 1, M_H = 1e12, light | 0.12 | 0.923 | 0.787 |
+| c = 1, M_H = 1e12, heavy | 0.09 | 0.943 | 0.822 |
+| c = 1, M_H = 1e13 | 0.01 | 0.994 | 0.980 |
+| c = 3, M_H = 1e12, light | 0.08 | 0.949 | 0.842 |
+| c = 3, M_H = 1e12, heavy | 0.04 | 0.975 | 0.921 |
+Summary [derived]: under P1′, given a CP-odd vacuum, min 0.48, median 0.84, 4/9 cases ≥ 0.9 (P1: min 0.62, median 0.95, 8/9). If the universe sits in the DEEPEST racetrack minimum, which is CP-odd in 40.7% of racetracks (D851), the unconditional median is ≈ 0.34 [estimate: treats racetrack parameters as equally likely].
+Verdict: P1′ keeps ρ-leptogenesis likely once a CP-odd vacuum is selected (median 84%), about 10 points below P1's uniform prior. Unconditionally (deepest-vacuum selection over the scanned racetracks) it is roughly one in three. The τ = i pass fraction of D763 (68–71% under complex R) would scale similarly but needs its own phase map; not done.
+P1′ final form (for POSTULATES): CP broken spontaneously by a Kähler axion in a CP-odd racetrack minimum; heavy-ν Majorana masses from at least two D-instanton sectors with different charges on that cycle; physical phase Δ = 2πΔn⟨Re T⟩.
+MAP: none

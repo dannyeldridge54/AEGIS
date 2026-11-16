@@ -814,3 +814,10 @@ Touches: none.
 4. |sin Δ₁| > 0.1 in 80.3% of CP-odd vacua; 19.7% near zero [derived] (computed, PREREG_D852).
 5. P1′ gains a two-sector condition; draft updated [derived].
 Touches: none.
+
+## D853: Q.3 P1′ verdict (P1′ follow-up)
+1. D762 per-case thresholds re-weighted with the D852 phase histogram [derived] (arithmetic on locked outputs).
+2. Given a CP-odd vacuum: median 0.84, min 0.48 (P1: 0.95, 0.62) [derived].
+3. Deepest-vacuum selection: unconditional median ≈ 0.34 [estimate].
+4. P1′ final form: racetrack axion plus two instanton sectors [derived] (D845–D852).
+Touches: none.
