@@ -183,3 +183,4 @@ D896  2026-11-16T18:26Z  R2.2b rho lift recomputed
 D897  2026-11-16T18:30Z  Weinberg numbers redone
 D898  2026-11-16T18:33Z  R2.2c text pass (claim recorded after the note; claim script failed on unstaged files)
 D899  2026-11-16T18:32Z  R3.1 full referee pass
+D900  2026-11-16T18:33Z  R3.2 tau=i AD window at corrected T_R
