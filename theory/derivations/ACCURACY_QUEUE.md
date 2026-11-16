@@ -116,3 +116,9 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - L.2 [open] Literature: lifting of E₄(ρ)=0 zeros (Planck-suppressed operators, non-holomorphic Kähler corrections, weight-shift terms).
 - L.3 [open] Locked computation if a candidate exists.
 - L.4 [open] Verdict and v3.2 note.
+
+## ρ-lift project L (picked 2026-11-16 under the autonomy rule)
+- L.1 [open] Reverse path: from D883's lift ε ≈ 1.8e-3 of the E₄-protected S₂ mass, write the needed term (weight, field content) and its size in natural units (Λ/M_P, one-loop, instanton e^{-2π Im T/N}).
+- L.2 [open] Literature: lifting of E₄(ρ)=0 zeros (Planck-suppressed operators, non-holomorphic Kähler corrections, weight-shift terms).
+- L.3 [open] Locked computation if a candidate exists.
+- L.4 [open] Verdict and v3.2 note.

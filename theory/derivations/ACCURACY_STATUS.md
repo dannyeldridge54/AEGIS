@@ -11,7 +11,7 @@ Published: SERAPIS v3.1, 10.5281/zenodo.24281771. Changes queued for v3.2: paper
 - Exactness: every flagged paper number was recomputed with MS (D813–D817). The slow-roll bias is uniform: n_s +0.0003, r −1.3%.
 
 ## Fitted (chosen to match data; stated as such)
-- ε at τ = i (and the ρ L-variant's tilt), which also supplies the τ = i vacuum mass. No derived source comes within 10¹¹ (D826). A loop-sized BHK factor can tilt τ = i, but it changes α_s and r and leaves the vacuum massless (D823).
+- ε at τ = i (and the ρ L-variant's tilt), which also supplies the τ = i vacuum mass. No derived source comes within 10¹¹ (D826). A loop-sized BHK factor can tilt τ = i, but it changes α_s and r and leaves the vacuum massless (D823). The ε-origin project (D885–D887) closed negative: the needed form is an uplift factor |j−1728|^{2q}, q ~ 1e-5, and leading-order throat physics cannot supply it (D886).
 - C for SERAPIS-E: natural size, but its value is chosen to hit the n_s band.
 
 ## Postulated (open)

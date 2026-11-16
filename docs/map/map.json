@@ -25,12 +25,13 @@
     "D823",
     "D826",
     "D885",
-    "D886"
+    "D886",
+    "D887"
    ],
    "history": [
-    "D826: estimate",
     "D885: estimate",
-    "D886: estimate"
+    "D886: estimate",
+    "D887: estimate"
    ]
   },
   {
@@ -254,7 +255,8 @@
     "D865: computed",
     "D866: corrected",
     "D873: computed"
-   ]
+   ],
+   "flag": "recheck (D887, eps_tilt)"
   },
   {
    "id": "janus",
@@ -598,7 +600,7 @@
     "D841: computed",
     "D861: computed"
    ],
-   "flag": "recheck (D886, eps_tilt)"
+   "flag": "recheck (D887, eps_tilt)"
   },
   {
    "id": "band_e",

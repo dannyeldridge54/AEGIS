@@ -1067,3 +1067,9 @@ Touches: eps_tilt, band_i.
 2. No throat source at leading order [literature] (2009.03312, via D886).
 3. Project closes negative; ε stays fitted; D841 rule unchanged [derived].
 Touches: eps_tilt, band_i, serapis_e.
+
+## D887: E.4 ε verdict
+1. Target form |j−1728|^{2q}, q~1e-5, from D885 [derived].
+2. No throat source at leading order [literature] (2009.03312, via D886).
+3. Project closes negative; ε stays fitted; D841 rule unchanged [derived].
+Touches: eps_tilt, band_i, serapis_e.
