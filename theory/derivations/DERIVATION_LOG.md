@@ -688,3 +688,12 @@ Touches: serapis_e, eps_tilt, plateau_origin.
 4. P3 consistent with the band only for a large T⁴ (or a post-hoc C share, not claimed) [derived].
 5. ρ safe; τ = i variant weakened [derived].
 Touches: plateau_origin, serapis_e, band_i.
+
+## D837: W.1 warped-throat literature (warped-throat project)
+1. Conifold modulus S has GVW W and s_KS ≃ Λ₀³e^{−2πK/g_sM} [literature] (1809.06861).
+2. S couples to bulk Z^I only indirectly (τ, volume) [literature] (1809.06861).
+3. Warping couples S to the volume; anti-D3 energy grows with |S| [literature] (2105.03370; 1809.06618).
+4. U enters V_up only via Λ₀(U): multiplicative f(U) [derived].
+5. T⁶/(Z₂×Z₂) has no conifold, so route (a) leaves the toroidal model [derived].
+6. P3 via (a) needs |Λ₀(U)|⁴ ∝ 1 − E(ρ)/E(U) [derived].
+Touches: plateau_origin, serapis_e.

@@ -83,3 +83,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D834: check the SIGN of a candidate mass before its size. The anti-D3 curvature was large enough (6e-3 > 2e-3) in one direction but tachyonic in the other; size alone would have given a false pass.
 - 2026-11-16 D835: an order-of-magnitude slope bound is not a safety bound. Test a new term in the exact pipeline before calling it harmless; here the rough criterion (v₄ ≳ 190 g_s) was loose by about 100×.
 - 2026-11-16 D836: a deep project should end with the requirement it imposes, stated as a number someone can check (v₄ ≳ 2e4 g_s), not only with what failed.
+- 2026-11-16 D837: before computing inside a proposed mechanism, check the model even contains its ingredients. Our torus orientifold has no conifold, so a warped throat means changing the compactification, not adding a term.

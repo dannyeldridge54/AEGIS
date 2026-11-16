@@ -8547,3 +8547,18 @@ Summary [derived]:
 Verdict: the anti-D3 picture (P3) is CONSISTENT with the frozen band only if the four small directions are large (v₄ ≳ 2000 string units at g_s = 0.1), or if the band's fitted C is read as including an anti-D3 share. The former is a concrete, checkable geometric requirement on P3; the latter is post-hoc and not claimed. The ρ vacuum is safe in every case. The τ = i variant gets one more strike: no mass source, and the anti-D3 makes it unstable.
 Open [estimate]: warping changes κ/V0 (interaction and tension warp differently); twisted-sector exchange; whether v₄ ≳ 2e4 g_s is compatible with D696's Im S·Im ρ ≈ 560–975 and the D3 tadpole (it constrains different tori, so no direct conflict is visible).
 MAP: node=plateau_origin status=assumed touches=[serapis_e,band_i] ripple=no
+
+## D837 (DEEP, W.1): warped anti-D3 uplift and the bulk complex structure (literature)
+Searches: 3; fetched 1809.06861 (Bena–Dudas–Graña–Lüst) and 2105.03370 (Bento–Chakraborty–Parameswaran–Zavala), first sections only.
+Findings:
+1. The conifold modulus S (deformation of the KS throat) is a complex-structure modulus with a GVW superpotential term −M F_S − τK S, F_S = (S/2πi)(log(Λ₀³/S) + 1) + …; its SUSY minimum is s_KS ≃ Λ₀³ e^{−2πK/(g_sM)} [literature] (1809.06861 eqs. 2.5, 2.16, 2.19).
+2. The S potential depends on the bulk complex-structure moduli Z^I only indirectly: "F_UV(Z^I)" does not depend on S, and the coupling runs through τ and the volume prefactor (Im ρ)³ [literature] (1809.06861 §2).
+3. Warping couples S to the VOLUME modulus in the Kähler potential (the warped term in K_SS̄ ∝ 1/|S|^{4/3}); the anti-D3 energy grows with |S| and is minimised at the tip; too small a hierarchy gives a conifold runaway [literature] (1809.06861; 2105.03370 abstract and §1; 1809.06618).
+4. The bulk modulus U can enter the uplift only through the throat's UV data: the cutoff Λ₀ (the matching of the conifold period to the bulk periods) and the flux numbers. V_up ∝ |s_KS|^{4/3} ∝ |Λ₀|⁴ e^{−8πK/(3g_sM)} up to volume factors [derived from 1, 3; estimate on the Λ₀ power].
+Assessment:
+5. This is a MULTIPLICATIVE dependence, V_up = V0·f(U) with f = |Λ₀(U)|⁴ (normalised), not the additive one-loop form of D828–D836. A multiplicative f(U) is structurally able to produce a plateau shape, which the one-loop route was not [derived].
+6. STRUCTURAL OBSTACLE [derived]: T⁶/(Z₂×Z₂) has no conifold point and hence no KS throat. A warped anti-D3 needs a Calabi–Yau with a conifold degeneration (e.g. a resolved/deformed version of the orbifold, with the throat at a former fixed locus). So route (a) means leaving the toroidal model of D689–D696 for its CY resolution, where the BHK coefficient C and the stack counting would need to be recomputed.
+7. Requirement for P3 via route (a) [derived]: f(U) = |Λ₀(U)|⁴ must equal 1 − E(ρ)/E(U) (up to normalisation), i.e. the throat's UV cutoff must depend on U like an inverse Epstein zeta. No source states any modular form for Λ₀(U); W.2 must decide whether such a dependence is even possible (Λ₀ comes from a holomorphic period, so |Λ₀|⁴ is |holomorphic|⁴, which cannot be the non-holomorphic E(U,2) ratio exactly).
+Next: W.2: test point 7. If Λ₀(U) is a holomorphic period, |Λ₀|⁴ = |h(U)|⁴ with h of definite weight; check whether any such f can approach a constant at the cusp with a minimum at ρ (D685/D799 closed the holomorphic cases for W; the question is now for the cutoff).
+Sources: 1809.06861; 2105.03370; 1809.06618; 1910.08094.
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
