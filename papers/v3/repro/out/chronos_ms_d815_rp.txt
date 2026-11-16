@@ -1,0 +1,25 @@
+K4 eps=1.3e-4 N*=46.08: n_s=0.9697 alpha_s=-9.91e-04 r=5.291e-04
+(a) D729 rows
+eps=1.30e-04 N*=49.95: n_s=0.9733 r=4.741e-04 alpha_s=-8.59e-04 inband=False
+eps=1.30e-04 N*=48.38: n_s=0.9719 r=4.949e-04 alpha_s=-9.09e-04 inband=True
+eps=1.30e-04 N*=50.31: n_s=0.9736 r=4.696e-04 alpha_s=-8.48e-04 inband=False
+eps=1.30e-04 N*=48.75: n_s=0.9722 r=4.898e-04 alpha_s=-8.97e-04 inband=True
+eps=1.60e-04 N*=49.93: n_s=0.9760 r=5.215e-04 alpha_s=-8.90e-04 inband=False
+eps=1.60e-04 N*=48.4: n_s=0.9746 r=5.415e-04 alpha_s=-9.38e-04 inband=True
+eps=1.60e-04 N*=50.3: n_s=0.9764 r=5.169e-04 alpha_s=-8.78e-04 inband=False
+eps=1.60e-04 N*=48.76: n_s=0.9750 r=5.366e-04 alpha_s=-9.26e-04 inband=True
+(b) eps window
+N*=48.38 eps=1.30e-04: n_s=0.9719 r=4.949e-04 inband=True
+N*=48.38 eps=1.35e-04: n_s=0.9724 r=5.024e-04 inband=True
+N*=48.38 eps=1.40e-04: n_s=0.9728 r=5.100e-04 inband=True
+N*=48.38 eps=1.45e-04: n_s=0.9733 r=5.178e-04 inband=True
+N*=48.38 eps=1.50e-04: n_s=0.9737 r=5.256e-04 inband=True
+N*=48.38 eps=1.55e-04: n_s=0.9742 r=5.336e-04 inband=True
+N*=48.38 eps=1.60e-04: n_s=0.9746 r=5.418e-04 inband=True
+N*=50.31 eps=1.30e-04: n_s=0.9736 r=4.696e-04 inband=False
+N*=50.31 eps=1.35e-04: n_s=0.9741 r=4.771e-04 inband=False
+N*=50.31 eps=1.40e-04: n_s=0.9745 r=4.848e-04 inband=True
+N*=50.31 eps=1.45e-04: n_s=0.9750 r=4.926e-04 inband=True
+N*=50.31 eps=1.50e-04: n_s=0.9754 r=5.005e-04 inband=False
+N*=50.31 eps=1.55e-04: n_s=0.9759 r=5.086e-04 inband=False
+N*=50.31 eps=1.60e-04: n_s=0.9764 r=5.168e-04 inband=False

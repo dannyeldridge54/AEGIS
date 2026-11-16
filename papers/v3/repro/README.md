@@ -21,6 +21,11 @@ Python 3.13; package versions are in `requirements.txt`. No GPU is needed. Each 
 | Stiff-phase growth (Sec. 6) | `python3 theory/modular/stiff_growth_d595.py` | stiff_growth_d595.txt |
 | SERAPIS-ρ (Sec. 9) | `python3 theory/modular/serapis_rho_d610.py`, `rho_nstar_d613.py`, `rho_running_d634.py` | matching results files |
 | Proton parity at i / ρ (Sec. 7) | `python3 theory/modular/vacuum_i_selection_d551.py`, `vacuum_rho_selection_d612.py` | matching results files |
+| SERAPIS-E frozen band (Sec. SERAPIS-E) | `python3 theory/modular/serapis_e_exact_d692.py` | serapis_e_exact_d692.txt |
+| τ = i corrected reheating band (D815) | `python3 theory/modular/chronos_ms_d815.py` | chronos_ms_d815.txt |
+| ρ Affleck–Dine window (v3.2, D895) | `python3 theory/modular/ad_rho_d895.py` | ad_rho_d895.txt |
+| ρ lepton-sector lift ε (v3.2, D896) | `python3 theory/modular/rho_osc_d896.py` | rho_osc_d896.txt |
+| τ = i Affleck–Dine window at corrected T_R (v3.2, D900) | `python3 theory/modular/ad_tau_i_d900.py` | ad_tau_i_d900.txt |
 
 ## Reproduction check (2026-11-15)
 Three key scripts were re-run from a clean state. Their outputs were byte-identical to the stored results (blank lines ignored):
@@ -30,3 +35,6 @@ exact_ns_d588 (5.0 s), eps_window_lowtr_d602 (0.9 s), janus_analytic_d635 (9.2 s
 - Locks: `field_tests/rules/PREREG_*.md` + `.sha256`, committed before each run.
 - Fixes: `*_DEVIATIONS.md`, each written before its rerun. Superseded outputs are kept, not deleted.
 - AI assistance: the code and drafts were written with Claude (Anthropic). The author directed the work and checked the results.
+
+## Reproduction check of the published v3.2 archive (2026-11-16, D913)
+The Zenodo v3.2 reproducibility zip (md5 6a57f8c68ca101aa76354a1146dd6d3c) was unpacked into a clean directory and all 22 scripts above were run there (python3, same versions). 21 outputs are byte-identical to the stored results (blank lines ignored). The 22nd, chronos_ms_d815, is identical in every physics line; the stored file also carries four timing lines from the original run's wrapper (`real/user/sys`, `EXIT 0`). Summary: `out/RP_v3.2_SUMMARY.txt`; fresh outputs of the v3.2 rows: `out/*_rp.txt`. Total run time about 3 minutes.
