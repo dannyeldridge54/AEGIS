@@ -20,3 +20,4 @@ D733  2026-11-16T01:39Z  wino gamma-ray limits vs SERAPIS-E rho corner
 D734  2026-11-16T01:43Z  wino sub-fraction gamma limits (NULL)
 D735  2026-11-16T02:03Z  wino sub-fraction vs HESS line limit rescale
 D736  2026-11-16T02:05Z  collider tests of the 0.67-0.8 TeV wino
+D737  2026-11-16T02:19Z  2+1 sector at tau=i: splitting and T_R
