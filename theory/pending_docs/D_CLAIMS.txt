@@ -44,3 +44,4 @@ D757  2026-11-16T04:08Z  deeper: can the loop-corrected inverse Kaehler metric m
 D758  2026-11-16T04:10Z  outward: log-derivative (species-type) Epstein plateau V ~ G|d ln E|^2
 D759  2026-11-16T04:18Z  log-derivative Epstein plateau + BHK tilt: n_s, r
 D760  2026-11-16T04:20Z  reverse: what makes the species scale track E(tau,2)? literature check
+D761  2026-11-16T04:22Z  wino sub-fraction limits: 2507.15934 Fig 6 method check
