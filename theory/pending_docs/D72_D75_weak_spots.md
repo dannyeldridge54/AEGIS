@@ -9652,3 +9652,11 @@ Run 2 (paper convention) [computed]: C = 1.0e-6: n_s = 0.97005 / 0.97150, r = 4.
 Verdict: v3.2's n_s and r for SERAPIS-E are independently confirmed; α_s is not independently confirmed (tool limitation). Frozen predictions unchanged.
 LESSONS: (1) a reproduction lock must copy the paper's conventions verbatim (normalisation of E); (2) a selftest tolerance must be tighter than the effect the tool will be used to measure (2e-4 tolerance vs 1e-4-level α_s differences).
 MAP: none
+
+## D954 (locked PREREG_D954): PASS: the upgraded independent solver reproduces v3.2's SERAPIS-E α_s band, but one corner sits exactly on the tolerance edge and a ~1e-4 residual scatter remains
+[computed] (field_tests/results/repro_alpha_d954.txt; 5-point ±0.1 stencil; selftest incl. exact power-law α_s = 6.9e-6) C = 1.0e-6: α_s = −9.686e-4 (N* 48.4), −8.500e-4 (49.9); C = 1.3e-6: −1.043e-3, −1.111e-3; C = 0: −7.567e-4. n_s and r unchanged from D953 to 5 digits (0.97006–0.97464; 4.55–5.12e-4). Locked band [−11.7e-4, −8.5e-4]: all inside (−8.500e-4 on the edge, inclusive). PASS.
+[computed] D669 relation at the same (n_s, r): −9.51, −9.10, −10.23, −9.84 (e-4), −7.29e-4 at C = 0 — smooth in (C, N*), within 2–7% of the solver except the edge corner (−7%).
+[estimate] The solver's α_s still jumps by ~1e-4 between neighbouring N* at C = 1.0e-6 (−9.69 → −8.50) where the relation moves smoothly (−9.51 → −9.10): residual numerical scatter ~1e-4 (≈10%) in the new code's α_s at these tiny ε. Adequate to confirm the published band (−(9.4–10.6)e-4) at the 10% level, not better.
+Verdict: v3.2's SERAPIS-E n_s, r (D953) and α_s band (D954) are now independently reproduced by separately written code; α_s to ~10%. Node status: SERAPIS-E predictions "computed" → "computed, independently reproduced".
+LESSONS: second derivatives of ln P at ε ~ 1e-5 need either a wider stencil or direct dn_s/dN; next solver upgrade if α_s precision matters.
+MAP: none

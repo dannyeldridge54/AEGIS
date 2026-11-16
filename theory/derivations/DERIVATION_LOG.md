@@ -1466,3 +1466,8 @@ Touches: none.
 - [computed] new MS code, paper convention: n_s 0.9700–0.9746, r (4.55–5.12)e-4; C = 0: 0.9612, 3.64e-4 — matches v3.2.
 - [computed] α_s −(8.2–11.5)e-4, one corner outside ±10% → locked FAIL; [estimate] new-code α_s noise ~1.5e-4.
 - Result: n_s, r confirmed; α_s not confirmed (tool limitation).
+
+## D954: α_s reproduction (locked) PASS
+- [computed] α_s −(8.5–11.1)e-4 vs published −(9.4–10.6)e-4; relation −(9.1–10.2)e-4.
+- [estimate] residual solver scatter ~1e-4.
+- Result: SERAPIS-E n_s, r, α_s independently reproduced (α_s to ~10%).

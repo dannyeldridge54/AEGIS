@@ -201,3 +201,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D951: use a worked example to check the sign of a loop-mass mechanism.
 - D952: run tools/serapis_calc selftest before every locked run.
 - D953: copy the paper's conventions verbatim in reproduction locks; selftest tolerances tighter than the effect measured.
+- D954: α_s at tiny ε needs a wide stencil or dn_s/dN directly.
