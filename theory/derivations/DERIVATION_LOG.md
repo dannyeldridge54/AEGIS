@@ -897,3 +897,11 @@ Touches: lepto_i, band_i.
 3. D862's "≈ 0.5" estimate omitted 1/256π⁶; withdrawn (D862a) [derived].
 4. Remaining control issues: string-size tori, assumed σ [estimate].
 Touches: lepto_i, band_i.
+
+## D864: D7 stacks for the racetrack
+1. The orientifold has O3 and three O7 sets [literature] (hep-th/0602038).
+2. 11 D7₁ fit the tadpole of 16 [estimate].
+3. Torsion requires rigid D7s at T²₁ fixed points for pure-SYM condensation [estimate].
+4. Flavour counting forces SU(5) at the origin, SU(6) at a half-period [derived] (D830 stacks).
+5. Asymmetric D7 placement adds O(10–50%) to the tilt; benchmark must be re-fitted [estimate] (D689, D861).
+Touches: lepto_i, serapis_e, eps_tilt.

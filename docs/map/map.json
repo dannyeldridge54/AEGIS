@@ -30,7 +30,7 @@
     "D823: estimate",
     "D826: estimate"
    ],
-   "flag": "recheck (D841, band_i)"
+   "flag": "recheck (D864, lepto_i)"
   },
   {
    "id": "plateau_origin",
@@ -246,7 +246,7 @@
     "D812: corrected",
     "D835: computed"
    ],
-   "flag": "recheck (D859, lepto_i)"
+   "flag": "recheck (D864, lepto_i)"
   },
   {
    "id": "janus",
@@ -408,7 +408,8 @@
     "D859",
     "D860",
     "D862",
-    "D863"
+    "D863",
+    "D864"
    ],
    "depends": [
     "reheat_i",
@@ -416,9 +417,9 @@
     "eta_n"
    ],
    "history": [
-    "D860: assumed",
     "D862: assumed",
-    "D863: assumed"
+    "D863: assumed",
+    "D864: assumed"
    ]
   },
   {
