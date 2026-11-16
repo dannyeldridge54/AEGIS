@@ -14,3 +14,4 @@
 - [D853] WITHDRAWN (D853a): the ρ re-weighting applies to a superseded mechanism.
 - [D854] τ = i conditional-variant bullet: add that under P1′ its leptogenesis needs CP-odd axions on two cycle classes (single-modulus P1′ gives the resonant doublet no phase).
 - [D854/D855] Applied in draft (D856).
+- [D861] τ = i conditional bullet: add that its leptogenesis source (P1′) cannot coexist with a natural-size anti-D3 uplift and the BHK tilt in our configuration; a consistent point needs string-size small tori (D860, D861).

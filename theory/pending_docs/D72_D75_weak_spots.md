@@ -8832,3 +8832,14 @@ Reading [derived]:
 3. Physical consequence: P3's anti-D3 (nilpotent-sector) picture and P1′'s CP source are mutually incompatible in our configuration. A model that uses both is internally inconsistent; it must drop one. Dropping the anti-D3 leaves the plateau's sector (the nilpotent X) without its usual string realisation; dropping P1′ leaves τ = i without leptogenesis (D854). The ρ branch is unaffected in this respect (it needs no CP phase, D855).
 Caveats [estimate]: O(1) factors in Im T_k = A_iA_j/g_s and in M_s; the grid edge at A = 1; σ values are assumed, not computed for E3s in this orbifold.
 MAP: node=lepto_i status=assumed touches=[plateau_origin,band_i] ripple=no
+
+## D861 (DEEP, M.4 + M.5): one consistent benchmark (no anti-D3, string-size tori); τ = i stays CONDITIONAL under the committed rule
+M.4 benchmark (from D860's output: anti-D3 off, f = 4π², σ = ½; arithmetic on the locked D689/D783/D860 formulas, printed in this tick, no results file):
+g_s = 0.232, A = (40.8, 1.0, 1.0): Im S = 0.485, Im ρ₁ = 1611, Im S·Im ρ₁ = 781 (inside D696's 750–975 for stacks (5,1)); BHK tilt C = 1.25e-6 (inside the frozen SERAPIS-E band's 1.0–1.3e-6); M_s = 7.5e16 GeV; racetrack on the T⁴ cycle, Im T₁ = A₂A₃/g_s = 4.31 (W0 ≈ 4e-3 for N = 5); heavy-ν mass from a σ = ½ instanton M = 9.8e10 GeV (D745 used 6.3e10) [derived].
+Control [estimate]: A₂ = A₃ = 1 puts the T⁴ at the string scale, so α′ corrections to the Kähler potential of T₁ are O(1). The benchmark is consistent at the level of our formulas, not under geometric control. M_s = 7.5e16 GeV is about 3% of M_P.
+M.5 verdict, applying DECISION_RULE_D841 as committed (no new rule):
+- R2 lists internal inconsistency as "a computed instability of its vacuum, a tadpole/anomaly failure, or a frozen number that the model cannot produce in exact MS". D860's conflict is between two POSTULATED ingredients (P3's anti-D3 realisation and P1′'s racetrack), not one of the listed kinds, and it disappears when the anti-D3 is dropped (D860, D861 benchmark). R2 is NOT met.
+- C3 ("needs an extra structural condition not shared by ρ") is met again: τ = i leptogenesis needs P1′, and P1′ in our configuration requires NO anti-D3 at natural size and string-size small tori.
+Outcome: τ = i remains a CONDITIONAL VARIANT, now with these conditions: (C1) ε has no derived source; (C3a) 2⊕1 heavy-ν structure; (C3b) CP-odd axions on two cycle classes (D854); (C3c) its uplift/nilpotent sector is not an anti-D3 at natural size, and the T⁴ is at the string scale (D860, D861). The frozen τ = i predictions are unchanged.
+For SERAPIS-E at ρ: no conflict (no CP phase needed, D855); the anti-D3 picture only requires large v₄ (D835).
+MAP: node=band_i status=computed touches=[lepto_i,plateau_origin] ripple=no

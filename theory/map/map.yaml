@@ -58,7 +58,7 @@ nodes:
   - 'D837: assumed'
   - 'D838: assumed'
   - 'D839: assumed'
-  flag: recheck (D860, lepto_i)
+  flag: recheck (D861, band_i)
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -316,6 +316,7 @@ nodes:
   - 'D857: assumed'
   - 'D859: assumed'
   - 'D860: assumed'
+  flag: recheck (D861, band_i)
 - id: sterile_rho
   layer: 4
   branch:
@@ -431,15 +432,15 @@ nodes:
   - D834
   - D840
   - D841
+  - D861
   depends:
   - nstar_i
   - janus
   note: corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)
   history:
-  - 'D834: computed'
   - 'D840: computed'
   - 'D841: computed'
-  flag: recheck (D860, lepto_i)
+  - 'D861: computed'
 - id: band_e
   layer: 5
   branch:

@@ -874,3 +874,11 @@ Touches: lepto_i, serapis_e.
 4. P3's anti-D3 and P1′'s racetrack are incompatible in our configuration [derived].
 5. O(1) factors, grid edge and assumed σ [estimate].
 Touches: lepto_i, plateau_origin, band_i.
+
+## D861: M.4 benchmark and M.5 verdict (moduli-consistency)
+1. Benchmark g_s = 0.232, A = (40.8, 1, 1): C = 1.25e-6, M_s = 7.5e16 GeV, Im T₁ = 4.31, M = 9.8e10 GeV [derived] (arithmetic on locked formulas).
+2. Benchmark has string-size small tori, so it is not under geometric control [estimate].
+3. Under DECISION_RULE_D841, R2 is not met: the conflict is between postulated ingredients and is removable [derived].
+4. τ = i stays conditional with a further condition (no natural-size anti-D3; string-size T⁴) [derived] (D860).
+5. ρ branch unaffected [derived] (D855).
+Touches: band_i, lepto_i, plateau_origin.
