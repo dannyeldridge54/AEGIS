@@ -57,6 +57,10 @@ a1, a5 = spectra(bgq2, 60.0, bd=1000.0)['alpha_s'], spectra(bgq2, 60.0, bd=5000.
 check('L4c alpha_s converged in BD start (1000 vs 5000, <2%)', abs(a5/a1-1) < 0.02, f'{a1:.4e} vs {a5:.4e}')
 r3 = spectra(bgq2, 60.0, dlnk=(-0.05, 0.0, 0.05))
 check('L4d 3-point call matches 5-point n_s (no underdetermined fit)', abs(r3['ns']-res['ns']) < 1e-4, f"{r3['ns']:.6f} vs {res['ns']:.6f}")
+from .ms import spectra_fast
+rf = spectra_fast(bgq2, 60.0)
+check('L4e spectra_fast matches spectra for n_s and r (bd=200)', abs(rf['ns']-res['ns']) < 2e-5 and abs(rf['r']/res['r']-1) < 1e-4, f"{rf['ns']:.6f}/{rf['r']:.5f}")
+# NOTE: spectra_fast alpha_s is NOT validated at bd=200; use spectra() for alpha_s.
 # L2: vacuum at rho with Z3-symmetric (equal) masses
 from .landscape import V_tau, find_vacuum, hessian_canonical
 Er = E_paper(0.5, 3**0.5/2)
