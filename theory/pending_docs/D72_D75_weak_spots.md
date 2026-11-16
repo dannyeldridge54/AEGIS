@@ -7046,3 +7046,14 @@ Reasoning, not computed: other weight-k doublets are products with level-1 forms
 Literature: arXiv:2512.24804 (Γ2 ≅ S3 modular flavour) analyses τ = i∞ and τ = i only. It explicitly leaves the ω (≅ ρ) fixed point for future work, and its τ = i models prefer INVERTED ordering. That is a possible tension for our τ = i Γ2 completion (frozen Σm_ν assumes normal ordering), to check. I found no treatment of the rank-deficient Γ2 doublet at ω (search-only claim, one search).
 VERDICT: the 2⊕1 weight-2-mixing sector with b = 0 used in D724–D725 is the minimal and natural Γ2 structure at ρ, not an arbitrary choice. Weight-4 mixing is excluded by the residual Z3 alignment, and higher weights add nothing new. Node n_sector_rho: assumed → computed (natural within Γ2; the choice of Γ2 itself is still an input).
 MAP: node=n_sector_rho status=computed touches=[mnu] ripple=no
+
+## D740 (RIGHT; literature + arithmetic, no lock needed) — mass ordering: the Γ2 "inverted ordering" result is model-specific; data favour our normal ordering
+Literature (arXiv:2512.24804, read 16 Nov):
+- Its IO preference comes from its texture and fit, not from S3 itself. Leptons are L = 2 with l₃, e^c as PSEUDO-singlets 1′. The τ = i Model A has N ~ 2 with k_L = k_e = k_N = −1, k_l3 = 1.
+- The IO fit gives m₃ = 0, m₁ ≈ m₂ ≈ 0.049 eV. Normal ordering is set aside because it needs tan θ_e ≈ 1.7–2.6 (strong Z₂ᵀ breaking), not because it is forbidden.
+- Our τ = i completion (D664) uses a different assignment: leptons 2 ⊕ 1 (trivial singlet), a full-rank Weinberg operator, and k_L = k_N = 1. The paper's ordering result does not carry over.
+Arithmetic (computed, Δm²₃₁ = 2.5e-3, Δm²₂₁ = 7.42e-5 eV²):
+- Minimal Σm_ν = 0.0586 eV (NO, m₁ = 0) vs 0.1007 eV (IO, m₃ = 0).
+- DESI DR2+CMB gives Σm_ν < 0.0642 eV (D707 table). IO with a massless lightest state sits ~0.036 eV ABOVE that bound, so it is disfavoured by cosmology. NO passes with a +0.0055 eV margin.
+VERDICT: no change to the frozen Σm_ν = 0.0587 eV (NO, m₁ ≈ 0; lock D605). Our model does not yet DERIVE the ordering: that needs the full lepton texture at ρ / i, an open item. Present data side with NO, and the IO-preferring Γ2 textures are in tension with DESI DR2.
+MAP: node=mnu status=frozen touches=[n_sector_i] ripple=no

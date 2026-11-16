@@ -23,20 +23,11 @@
   "D727–D730: at τ = i the inflaton is not sterile; reheating ~1–3e6 GeV; the τ = i frozen band is met only for a narrow ε",
   "D728/D738: leptogenesis from inflaton decay works at ρ, marginal at τ = i (Affleck–Dine remains the route there)",
   "D732–D736: post-hoc wino prediction 0.67–0.80 TeV (~15% of dark matter), testable by LHC Run 3 / HL-LHC",
-  "D739: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed"
+  "D739: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed",
+  "D740: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen"
  ],
  "open_rechecks": [
-  "Inflaton coupling at ρ (cone splitting)",
-  "Dark radiation (doublet-only killed)",
-  "T_R at ρ ≈ 3e8–3e9 GeV",
-  "N* for SERAPIS-E ≈ 49.7–50.5",
-  "Leptogenesis at ρ (non-thermal, DI estimate)",
-  "Gravitino → wino; favours M_H ~ 1e12",
-  "Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4)",
-  "Σm_ν = 0.0587 eV (m1 ≈ 0)",
-  "Wino 0.67–0.80 TeV, ~15% of DM (post-hoc)",
-  "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)",
-  "Test: Run 3 / HL-LHC disappearing tracks"
+  "Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?)"
  ],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
 }

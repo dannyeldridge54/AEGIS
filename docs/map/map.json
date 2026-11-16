@@ -69,7 +69,8 @@
    "d": [
     "D664",
     "D738"
-   ]
+   ],
+   "flag": "recheck (D740, mnu)"
   },
   {
    "id": "halo_profile",
@@ -441,9 +442,12 @@
    "title": "Σm_ν = 0.0587 eV (m1 ≈ 0)",
    "status": "frozen",
    "d": [
-    "D605"
+    "D605",
+    "D740"
    ],
-   "flag": "recheck (D739, n_sector_rho)"
+   "history": [
+    "D740: frozen"
+   ]
   },
   {
    "id": "wino_window",

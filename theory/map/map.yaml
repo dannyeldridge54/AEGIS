@@ -46,6 +46,7 @@ nodes:
   d:
   - D664
   - D738
+  flag: recheck (D740, mnu)
 - id: halo_profile
   layer: 1
   branch:
@@ -310,7 +311,9 @@ nodes:
   status: frozen
   d:
   - D605
-  flag: recheck (D739, n_sector_rho)
+  - D740
+  history:
+  - 'D740: frozen'
 - id: wino_window
   layer: 5
   branch:
