@@ -7079,3 +7079,12 @@ Two caveats:
 - Σ here is ≥ 0.0589 eV rather than exactly 0.0587, because m₁ is small but not zero; within the frozen prediction's precision.
 - The Affleck–Dine requirement (D646: m₁ ~ 1e-9 eV, i.e. m₁/m₃ ~ 2e-8) is NOT produced generically; the grid's smallest m₁/m₃ is 1e-3. AD at τ = i therefore stays a tuned requirement (as D664 said), while inflaton-decay leptogenesis at i is marginal (D738). Baryogenesis at τ = i remains the weakest link of that branch; the ρ branch is unaffected (D731).
 MAP: node=n_sector_i status=computed touches=[mnu, lepto_i] ripple=no
+
+## D743 (RIGHT; literature, no computation) — no published modular baryogenesis route fits the τ = i branch's low reheating temperature
+- arXiv:2604.04585 (modular fixed points, type-III seesaw): leptogenesis only at τ = (3+i)/2, 1, −1 (not i, ω or i∞). Thermal, hierarchical, strong washout, M_Σ1 ≈ 5e11–3e12 GeV, so it needs T_R ≳ 1e11. Far above our τ = i T_R ≈ 1–3e6 GeV (D727). No resonance discussed.
+- arXiv:2602.03384 (modular S4, type-III, resonant leptogenesis tied to light DM): the modulus is a flavour/CP parameter only, with no inflaton role and no fixed-point dynamics.
+- arXiv:2512.24804 (Γ2 ≅ S3): no leptogenesis at τ = i.
+- 2405.07165 (A4 modular Dirac seesaw + leptogenesis): thermal Dirac leptogenesis, not checked in detail; it also relies on high-scale thermal production (from its abstract, unverified).
+Comparison with our notes: thermal routes need T_R ≫ 1e9 GeV (Davidson–Ibarra). The τ = i branch has T_R ≈ 1e6, so only non-thermal routes remain: inflaton decay (marginal, D738) and Affleck–Dine (needs m₁ ~ 1e-9 eV, tuned, D742).
+VERDICT: the literature offers no ready-made rescue. Baryogenesis stays the τ = i branch's weakest link, and the ρ branch (D731, non-thermal, sin δ ≳ 0.01–0.6) is preferred on this count too. Loop pauses here (no new computation; next real step would be a dedicated τ = i baryogenesis construction).
+MAP: node=lepto_i status=estimate touches=[] ripple=no

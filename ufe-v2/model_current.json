@@ -26,11 +26,9 @@
   "D739: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed",
   "D740: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen",
   "D741: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → open",
-  "D742: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → computed"
+  "D742: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → computed",
+  "D743: Leptogenesis at τ=i: inflaton decay marginal, AD robust → estimate"
  ],
- "open_rechecks": [
-  "Leptogenesis at τ=i: inflaton decay marginal, AD robust",
-  "Σm_ν = 0.0587 eV (m1 ≈ 0)"
- ],
+ "open_rechecks": [],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
 }

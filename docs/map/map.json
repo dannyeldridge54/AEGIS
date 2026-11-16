@@ -273,17 +273,20 @@
     "i"
    ],
    "title": "Leptogenesis at τ=i: inflaton decay marginal, AD robust",
-   "status": "computed",
+   "status": "estimate",
    "d": [
     "D728",
     "D738",
-    "D646"
+    "D646",
+    "D743"
    ],
    "depends": [
     "reheat_i",
     "n_sector_i"
    ],
-   "flag": "recheck (D742, n_sector_i)"
+   "history": [
+    "D743: estimate"
+   ]
   },
   {
    "id": "sterile_rho",
