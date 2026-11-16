@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/claude/aegis/theory/modular/serapis_delta_d800.py", line 21, in <module>
+    phe=mp.findroot(lambda p: sr(V,p)[0]-1,(mp.log(1.2)/s2, mp.log(3.0)/s2),solver='bisect')
+  File "/usr/local/lib/python3.13/site-packages/mpmath/calculus/optimization.py", line 985, in findroot
+    raise ValueError('Could not find root within given tolerance. '
+    ...<2 lines>...
+                     % (norm(f(*xl))**2, tol))
+ValueError: Could not find root within given tolerance. (38896.5203479748722946284461322701779 > 1.92592994438723585305597794258492732e-34)
+Try another starting point or tweak arguments.
+EXIT 1
