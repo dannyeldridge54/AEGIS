@@ -406,7 +406,7 @@
     "i"
    ],
    "title": "Leptogenesis at τ=i: inflaton decay marginal, AD robust",
-   "status": "assumed",
+   "status": "estimate",
    "d": [
     "D728",
     "D738",
@@ -425,7 +425,8 @@
     "D860",
     "D862",
     "D863",
-    "D864"
+    "D864",
+    "D899"
    ],
    "depends": [
     "reheat_i",
@@ -433,11 +434,10 @@
     "eta_n"
    ],
    "history": [
-    "D862: assumed",
     "D863: assumed",
-    "D864: assumed"
-   ],
-   "flag": "recheck (D867, plateau_origin)"
+    "D864: assumed",
+    "D899: estimate"
+   ]
   },
   {
    "id": "sterile_rho",
@@ -678,7 +678,7 @@
     "D786: frozen",
     "D824: frozen"
    ],
-   "flag": "recheck (D897, lepto_rho)"
+   "flag": "recheck (D899, lepto_i)"
   },
   {
    "id": "wino_window",
