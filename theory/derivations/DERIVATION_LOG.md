@@ -1343,3 +1343,8 @@ Touches: none.
 ## D930: T²-factor completion search
 - [literature] arXiv:2405.06738, 2505.01246: U fixed by fluxes first, volume inflates.
 - Result: NULL; obstacle stated (SERAPIS needs one U left flat by the fluxes).
+
+## D931: flux-flat U directions lead
+- [literature] arXiv:2209.02720: tree-level flat directions in T⁶/Z₂ flux vacua, include S and U_i, lifted by loops/α′/instantons.
+- [estimate] Could supply SERAPIS's unfixed U; checks pending (single U vs S–U ray; Re U free).
+- Result: lead recorded.
