@@ -1303,3 +1303,8 @@ Touches: none.
 1. SERAPIS-E compiled from the published v3.2 section and locked notes [derived].
 2. Published with full metadata; md5 verified [derived].
 Touches: none.
+
+## D923: paper 4 published
+1. Methods note compiled from the public record; counts checked by script [derived].
+2. Published with full metadata; md5 verified [derived].
+Touches: none.
