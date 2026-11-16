@@ -1,0 +1,5 @@
+1. Takagi at rho: M1=0.224110, M2=5.15e-17, residual=3.9e-17
+2. a12=|(U^H dA/dy U*)_12|=0.000000; diag terms 2.588e-01,4.208e-01; Kähler-factor-only off-diagonal=2.79e-17 (should be 0)
+   physical (2y A) off-diagonal / (2y M1) = 0.000000; a12/M1 = 0.000000
+   coupling factor g12*M_P/M1 = 0.0000
+VERDICT: NULL (locked rule)
