@@ -188,3 +188,4 @@ D901  2026-11-16T18:33Z  R3.2 text pass
 D902  2026-11-16T18:35Z  DC.1 newest-data check
 D903  2026-11-16T18:38Z  W3.1 Weinberg at tau=i
 D904  2026-11-16T18:41Z  W4.1 lepton number and instanton actions
+D905  2026-11-16T18:44Z  Per-branch conditions table
