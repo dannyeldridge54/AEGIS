@@ -25,3 +25,4 @@ Falsifiers:
 - n_s outside 0.970–0.975 (SO + SPHEREx ~2030);
 - isocurvature or f_NL from the light axion Re τ (forward check D769);
 - a warped-throat computation showing anti-D3 metrics depend on U only through e^{4A} warp factors with ln-type, not 1/E-type, dependence.
+- P3 update (D769–D770): falsifier 3 (the light axion) CLEARED. ζ_axion ≤ 1e-7, and every start settles at a ρ image. P3 stays open (its origin is still postulated).

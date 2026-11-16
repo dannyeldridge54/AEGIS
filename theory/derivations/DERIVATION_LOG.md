@@ -103,3 +103,13 @@ Touches: plateau_origin (open → assumed, stale flag cleared), serapis_e.
 8. ζ_axion = |∂N/∂x₀|δx ≤ 1.0e-7 [derived] (computed).
 9. [derived] Consistency: the paper's τ = i axion statement (isocurvature ~1e-8 of ζ, D587) is of the same order, now shown for the ρ branch. The lock's end-criterion defect is recorded, not fixed, and the relaxation goes to D770.
 Touches: serapis_e (axion OK during inflation), plateau_origin (P3's axion falsifier: ζ part passed).
+
+## D770 — post-inflation axion relaxation (reverse side)
+1. Equations of motion in cosmic time for the metric G = δ/(2y²), with H² = ρ/3 [derived] (D769 step 2, time variable changed).
+2. Near y ≈ 1 the n ≥ 1 Bessel terms make V depend on x, with minima at the images of ρ [literature] (E(τ,2)'s minimum is at ρ, D689).
+3. τ = i is a saddle of E(τ,2), so V there is a saddle as well [literature] (D608 for L; for E: D689, global minimum at ρ only).
+4. Hubble friction drains energy, and the field settles into a basin of a local minimum. Since the minima are all images of ρ, every non-measure-zero start settles at a ρ image [derived] (computed: 8/8 starts, x₀ down to 0.02).
+5. The read-out is at ρ_tot = 1e-4·V_end, as the lock states (lesson D769) [derived].
+6. ½ + iy and ½ + i/(4y) are equivalent under ST (on the line x = ½), so y = 0.288 ≅ 0.869 [derived].
+7. [derived] Consistency: D769's ζ bound and D770's basin result together clear P3's axion falsifier. No earlier result is contradicted.
+Touches: serapis_e (axion fully OK), plateau_origin (P3 falsifier 3 cleared).

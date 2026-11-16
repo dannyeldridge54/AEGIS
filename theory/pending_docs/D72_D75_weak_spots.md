@@ -7444,3 +7444,14 @@ VERDICT (locked rule): FAIL. The ζ part PASSES by a factor ≥ 10 (1.0e-7 ≤ 1
 - The post-inflation relaxation (does a trajectory ending at x ≈ 0.1–0.4, y ≈ 1.3 fall into ρ, or near the τ = i saddle?) is a NEW question, D770, with its own lock.
 Physics so far: for SERAPIS-E the axion's curvature contribution is negligible across x₀ ∈ [0.1, 0.9]. This supports the paper's axion statement (made for τ = i), now for ρ.
 MAP: node=serapis_e status=computed touches=[plateau_origin] ripple=no
+
+## D770 (REVERSE, ρ-side; Jl tick 9; locked PREREG_D770; results/axion_relax_d770.txt) — PASS: after inflation every axion start settles at ρ (or an image); none sticks at the τ = i saddle
+Computed (two-field, cosmic time, Hubble friction; final position read when the energy first falls below 1e-4·V_end):
+- x₀ = 0.5, 0.45, 0.4, 0.3, 0.2, 0.1, 0.05, 0.02 → all RHO. The reduced final positions lie within 0.003 of ρ or ρ′ = −½ + i√3/2 (an image).
+- K4: x₀ = ½ stays at x = ½ exactly.
+- Its read-out point y = 0.288 is the ST-image of ρ's neighbourhood along x = ½ (½ + iy ↔ y′ = 1/(4y) = 0.869). The field oscillates through images of ρ on the line x = ½. Not LOST (bound y < 0.2).
+- Even x₀ = 0.02, next to the i-saddle line x = 0, falls into a ρ image.
+VERDICT (locked rule): PASS. Together with D769's ζ_axion ≤ 1.0e-7, P3's axion falsifier is cleared. The light Re τ neither spoils the curvature spectrum nor traps the field away from ρ, for any start x₀ ∈ [0.02, 0.98] (by x → 1 − x symmetry).
+This closes the question D769 left open. The paper's axion paragraph can now cover SERAPIS-E as well as τ = i (one sentence).
+Mirror question (forward, next tick): P3 at the β3 limit. Test or retire P2 or P3 next. Candidate: P2's falsifier "exotic O3′ planes needed for odd b₃ are inconsistent with the stuck-brane torsion model". Literature check on O3′ (exotic O3-plane) charges in T⁶/(Z₂×Z₂) with discrete torsion (hep-th/0602038, 2405.18813 App. A), plus the tadpole arithmetic with n_O3′ > 0.
+MAP: node=serapis_e status=computed touches=[plateau_origin] ripple=no

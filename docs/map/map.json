@@ -55,7 +55,7 @@
     "D757: open",
     "D768: assumed"
    ],
-   "flag": "recheck (D769, serapis_e)"
+   "flag": "recheck (D770, serapis_e)"
   },
   {
    "id": "logderiv_plateau",
@@ -190,7 +190,8 @@
     "D693",
     "D765",
     "D765a",
-    "D769"
+    "D769",
+    "D770"
    ],
    "depends": [
     "plateau_origin",
@@ -198,8 +199,8 @@
    ],
    "history": [
     "D765a: computed",
-    "D765a: computed",
-    "D769: computed"
+    "D769: computed",
+    "D770: computed"
    ]
   },
   {
