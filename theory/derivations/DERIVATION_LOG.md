@@ -1151,3 +1151,10 @@ Touches: lepto_rho, n_sector_rho, mnu.
 2. Referee R2 minors 2–5 fixed [derived].
 3. No new physics; frozen predictions unchanged [derived].
 Touches: none.
+
+## D899: R3.1 full referee pass
+1. τ = i AD window quoted at T_R = 1e3–1e5 GeV [derived] (D646).
+2. Corrected τ = i T_R ≈ (0.8–3)e6 GeV [derived] (D727, D815).
+3. Same yield gives m_ν₁ ≈ 1.6e-10–2.7e-9 eV [derived] (arithmetic).
+4. Three text minors (D690 stale, two superseded-route pointers) [derived].
+Touches: lepto_i, mnu.

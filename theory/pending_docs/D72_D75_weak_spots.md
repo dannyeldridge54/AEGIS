@@ -9234,3 +9234,10 @@ MAP: node=lepto_rho status=estimate touches=[n_sector_rho,mnu] ripple=no
 All five R2 items answered in papers/v3/REFEREE_v3.2_R2.md (Responses). v3.2 draft ρ caveat now quotes m_ν₁ = 2e-11–9e-10 eV (D895), ε ≈ 1.6e-4 and m_ν₁ ≈ 1.3e-10 eV (D896), |τ−ρ| ≈ 3e-4, and the Weinberg condition with S ≳ 14–19 (D897); Consequence paragraph scoped to each vacuum; abstract names the lepton-sector conditions and the fitted ρ parameter. prediction_sheet.md: new ρ AD section, D792 route marked superseded. Rebuilt clean, 17 pages. Frozen predictions unchanged.
 Next project: P3 origin is exhausted for now (D828–D839, D868–D870); the non-toroidal completion is large. Top pick: a fresh full referee pass on the whole v3.2 draft (not only the diff), since today's corrections touched Sec. VII, the abstract and the prediction sheet.
 MAP: none
+
+## D899 (CENTRE, R3.1): full-draft consistency pass: τ = i's AD window still uses the superseded T_R = 1e3–1e5 GeV; three minors
+Output: papers/v3/REFEREE_v3.2_R3.md (targeted cross-section read, keyword-anchored, stated as such).
+Major [derived]: the τ = i AD window (D646: m_ν₁ ≃ 2e-13–9e-11 eV at T_R = 1e3–1e5 GeV) predates the corrected τ = i reheating T_R ≈ (0.8–3)e6 GeV (D727, D815). Same yield (D646/D646a): m_ν₁ ≈ 1.6e-10 (T_R = 0.8e6, median Q) to 2.7e-9 eV (3e6, max Q) (arithmetic). The draft's AD section, Consequence paragraph and prediction_sheet.md row 15 must be restated; D653's thermal check extended to T_R ~ 3e6 GeV. Σm_ν floor unaffected.
+Minors: stale "T_R ~ 1e5 GeV" in the proton paragraph (D690 vs D727); CP-phase paragraph and cap paragraph still point at the superseded self-diluted ρ route.
+Next: R3.2. The major needs a locked recomputation (a results file) of the τ = i window at the corrected T_R, with a thermal-effects check; then the text fixes.
+MAP: node=lepto_i status=estimate touches=[mnu] ripple=no

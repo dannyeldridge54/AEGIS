@@ -147,3 +147,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D897: after a correction moves an input, rerun every downstream number that quoted it in the same session; D892's verdict flipped from natural to conditional.
 - 2026-11-16 D898: a referee pass on the diff alone found a cross-branch error the full pass had missed; run diff passes after every cluster of draft edits.
 - 2026-11-16 D898: commit all edits before claim_d.sh; its pull --rebase fails on unstaged changes, and a piped '| tail -1' hides the failure.
+- 2026-11-16 D899: when a branch's T_R is corrected, search the draft for every number computed at the old T_R (AD windows, N*, relic yields), not only the reheating section.

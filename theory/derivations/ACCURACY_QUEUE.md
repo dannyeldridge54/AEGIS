@@ -135,5 +135,5 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - R2.2c [done D897–D898: Weinberg redone, draft and sheet updated, R2 closed]
 
 ## Full referee pass R3 (picked 2026-11-16 under the autonomy rule)
-- R3.1 [open] Fresh full read of serapis_v3.2_draft.tex (all sections) against prediction_sheet.md and ACCURACY_STATUS.md: numeric consistency across sections, overclaims, stale clauses, labels. papers/v3/REFEREE_v3.2_R3.md.
-- R3.2 [open] Fixes (one D-note), rebuild clean.
+- R3.1 [done D899: 1 major (τ = i AD window at old T_R), 3 minors; REFEREE_v3.2_R3.md]
+- R3.2 [open] Locked recomputation of the τ = i AD window at T_R = (0.8–3)e6 GeV with a thermal check (PREREG first); then fix the AD section, Consequence paragraph, prediction_sheet row 15, and minors 2–4; rebuild clean; CHANGELOG.
