@@ -17,7 +17,7 @@ class Background:
     def state(self, N):
         p, pn = self.sol.sol(N); eps = 0.5*pn*pn
         H = np.sqrt(self.V(p)/(3-eps)); return p, pn, eps, H
-def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None):
+def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0):
     """Return dict with P_R, P_t at ln k offsets, and n_s, r, alpha_s at the pivot that exits at Nend - Nstar."""
     Np = bg.Nend - Nstar if Npivot is None else Npivot
     _, _, _, Hp = bg.state(Np); kp = Hp   # a(N) = e^{N-Np}: normalised at the pivot (D955 D1)
@@ -25,7 +25,7 @@ def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None):
     for dl in dlnk:
         k = kp*np.exp(dl)
         # start where k/aH = 200
-        f = lambda N: k/(np.exp(N-Np)*bg.state(N)[3]) - 200
+        f = lambda N: k/(np.exp(N-Np)*bg.state(N)[3]) - bd
         lo, hi = 0.0, Np
         for _ in range(80):
             mid = 0.5*(lo+hi)
