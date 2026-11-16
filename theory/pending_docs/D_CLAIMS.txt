@@ -132,3 +132,4 @@ D845  2026-11-16T15:41Z  C.3 racetrack CP scan
 D846  2026-11-16T15:47Z  C.4 P1 verdict
 D847  2026-11-16T15:48Z  V.1 v3.2 draft accuracy edits
 D848  2026-11-16T15:51Z  V.2 v3.2 draft P3 tau=i P1prime edits
+D849  2026-11-16T15:57Z  V.3 v3.2 checks changelog
