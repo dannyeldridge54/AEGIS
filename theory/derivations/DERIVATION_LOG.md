@@ -1208,3 +1208,8 @@ Touches: none.
 2. Locks verified by sha256 and commit order [derived].
 3. Two mechanical gaps fixed; no substantive blocker [derived].
 Touches: none.
+
+## D908: v3.2 published
+1. Published on Danny's explicit "Publish" [derived].
+2. Uploaded files verified by md5 against the local build [derived].
+Touches: none.
