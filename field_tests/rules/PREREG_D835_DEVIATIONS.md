@@ -1,0 +1,2 @@
+# PREREG D835 deviations (written before the rerun)
+D1 (2026-11-16): first run crashed before any result (IndentationError). Cause: the copied D692 header builds the MS-solver path by replacing 'serapis_e_exact_d692' in __file__; the new file name lacks that string, so it exec'd its own source. Fix: point the source explicitly at running_d632.py. No change to physics, inputs, runs or verdict rules. The crash output stays in the results history (git).

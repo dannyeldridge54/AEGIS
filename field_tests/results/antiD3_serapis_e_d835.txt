@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/claude/aegis/theory/modular/antiD3_serapis_e_d835.py", line 23, in <module>
+    exec('\n'.join(src[11:41]).replace('math.log(40)','math.log(25)'))
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1
+    for n in range(1,31): s+=8*math.pi**2*math.sqrt(y)*n**1.5*SIG[n]*kv(1.5,2*math.pi*n*y)*math.cos(2*math.pi*n*x)
+IndentationError: unexpected indent
+EXIT 1
