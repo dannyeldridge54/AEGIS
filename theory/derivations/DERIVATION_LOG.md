@@ -937,3 +937,11 @@ Touches: plateau_origin, serapis_e, band_i, lepto_i.
 4. Kähler/hidden-sector uplift is U₁-independent at leading order [literature] (hep-th/0611332, 0707.2671).
 5. P3's wording must move from "anti-D3 sector" to "uplift sector" [derived] (D867).
 Touches: plateau_origin, serapis_e.
+
+## D869: throat anti-D3 residual coupling
+1. The throat anti-D3's Coulomb term carries an extra a₀⁴ relative to its uplift [literature] (KKLMMT structure, from memory).
+2. k_warped ≈ (g_s/8πv₄)·a₀⁴ [derived].
+3. a₀⁴ ~ 1e-6–1e-2 for the plateau height [estimate].
+4. k ≤ 1e-8 for a₀⁴ ≤ 1e-4, well under 2e-6 [derived] (D835, D867).
+5. Needs a throat outside the torus; plateau shape still postulated [estimate] (D837, D838).
+Touches: plateau_origin, serapis_e.

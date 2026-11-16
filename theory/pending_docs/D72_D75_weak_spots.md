@@ -8942,3 +8942,12 @@ Consequence [derived]: P3's wording ("the plateau sits in the anti-D3 / nilpoten
 Next (top recommendation): check that a sequestered distant throat leaves SERAPIS-E's frozen band unchanged, i.e. estimate the residual U₁ coupling of a throat anti-D3 (warp-factor suppression e^{4A₀}) against the D835 bound k ≲ 2e-6.
 Sources: 2512.17995; 1512.04558; hep-th/0611332; 0707.2671; 1707.07059.
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D869: a warped-throat anti-D3 is sequestered enough (k ≈ 1e-9 ≪ 2e-6), if a throat exists
+Derivation + arithmetic, no model run (no lock).
+1. KKLMMT structure [literature]: for an anti-D3 at the tip of a warped throat with warp factor a₀⁴ = e^{4A₀}, the uplift is 2T₃a₀⁴ and the Coulomb attraction to D3s in the bulk carries a further factor a₀⁴: V = 2T₃a₀⁴[1 − (27/32π²)·a₀⁴T₃/(N·r⁴) + …] (hep-th/0308055 form, from memory; structure only).
+2. So the ratio of the interaction to the uplift, which D833 computed unwarped as κ/V0 = g_s/(8πv₄), picks up one extra a₀⁴: k_warped ≈ (g_s/8πv₄)·a₀⁴ [derived from 1].
+3. Size of a₀⁴ [estimate]: the throat anti-D3 must supply the plateau height V0 ~ (1e16 GeV)⁴ against an unwarped 2T₃ in Einstein frame of order M_s⁴/g_s ~ (1e16–1e17 GeV)⁴/g_s, so a₀⁴ ~ 1e-6–1e-2; standard flux throats give a₀⁴ = e^{−8πK/3g_sM} with similar or smaller values.
+4. With the SERAPIS-E tilt moduli (D867: g_s/(8πv₄) ≈ 1e-5–1e-4), k_warped ≈ 1e-11–1e-6; for the generic a₀⁴ ≲ 1e-4, k ≲ 1e-8 [derived] (arithmetic).
+Verdict: a throat anti-D3 is sequestered: its U₁ coupling is ≤ 1e-8 for a₀⁴ ≤ 1e-4, far below the band-safe 2e-6 (D835); only an almost unwarped throat (a₀⁴ ≳ 0.02 with the smallest v₄) would reach the bound. Caveats: (a) needs a conifold throat, absent in T⁶/(Z₂×Z₂) itself (D837), so the CY resolution; (b) the plateau's shape is still postulated (D838); (c) KKLMMT formula quoted from memory [estimate].
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
