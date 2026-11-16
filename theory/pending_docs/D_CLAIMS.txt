@@ -247,3 +247,4 @@ D960  2026-11-16T22:44Z  B: Mobius phase verified
 D961  2026-11-16T22:47Z  Project H: ADS anti-D5 embedding
 D962  2026-11-16T22:52Z  D: link reproductions into the map
 D963  2026-11-16T22:53Z  correction: BSB scalar mass sign
+D964  2026-11-16T22:56Z  Project H: negative-mass branch
