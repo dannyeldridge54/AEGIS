@@ -115,3 +115,4 @@ D828  2026-11-16T14:16Z  P3.1 literature anti-D3 one-loop on orientifolds
 D829  2026-11-16T14:27Z  P3.2 anti-D3 amplitude on our configuration
 D830  2026-11-16T14:33Z  P3.3 anti-D3 placement
 D831  2026-11-16T14:41Z  P3.4 anti-D3 size and shape
+D832  2026-11-16T14:43Z  P3.5 verdict
