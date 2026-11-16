@@ -76,3 +76,4 @@ D789  2026-11-16T09:15Z  forward: test P5 - Z3 charges, matter parity, hyperchar
 D790  2026-11-16T09:24Z  reverse: inflaton-decay CP asymmetry is tiny (wall); inflaton Affleck-Dine via the Z3 charge of its orbit around rho
 D791  2026-11-16T10:00Z  forward: Planck isocurvature bound kills the inflaton-AD window at rho (needs ~1e4 dilution)
 D792  2026-11-16T10:09Z  reverse: self-dilution rho history without P5 - inflaton-AD asymmetry diluted by late N decay
+D793  2026-11-16T10:16Z  forward: exact n_s, r for the self-diluted rho history (T2 = 150-1100 GeV) + side checks
