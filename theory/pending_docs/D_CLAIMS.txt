@@ -253,3 +253,4 @@ D966  2026-11-16T22:59Z  Project H: T2 gauge-loop mass form
 D967  2026-11-16T23:00Z  Project H: gauge-invariant pinning
 D968  2026-11-16T23:01Z  Project H: gauge-mass correction
 D969  2026-11-16T23:03Z  Project H: ADS ND doublets as chi/phi0
+D970  2026-11-16T23:03Z  Project H: loop coefficient c6
