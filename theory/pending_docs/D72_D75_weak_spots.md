@@ -9686,3 +9686,10 @@ MAP: none
 Verdict: Project H's sign condition holds in the Sugimoto model in the regime D952 already requires (A₁ ≫ 1); open: verify the (−1)^l phase from a source; massive-level effects for A₁ ~ 1.
 LESSONS: a partition function's character structure gives the level-by-level boson–fermion count in one line once the amplitudes are quoted.
 MAP: none
+
+## D958 (loop C, diagnostic): α_s depends on the Bunch–Davies start at the 10% level: k/aH = 200 vs 1000 changes SERAPIS-E α_s from −1.035e-3 to −0.902e-3 (13%) with n_s identical to 6 digits; the published v3 α_s used k/aH = 200 and may carry the same bias
+[computed] (diagnostic, tools/serapis_calc ms.py, SERAPIS-E paper convention, C = 1.0e-6, N* = 48.4; not a locked prediction run) bd = 200: n_s = 0.970055, α_s = −1.0348e-3; bd = 1000: n_s = 0.970055, α_s = −9.0167e-4.
+[derived] A finite start leaves an oscillating admixture of the negative-frequency mode with relative amplitude ~ (z″/z)/(k/aH)² ~ 2/bd², whose phase changes rapidly with k; it averages out of P(k) (n_s unaffected) but contaminates the second ln k-derivative across a ±0.1 stencil. This explains D953/D954's non-monotone α_s scatter [estimate for the mechanism].
+Consequence: the toolkit's α_s, and possibly the published v3 α_s values (computed with the same k/aH = 200 start, D588, D642, D692), carry an uncertainty of order 10%; n_s and r are unaffected. Frozen predictions are not changed by a diagnostic; a LOCKED convergence test (bd = 200, 1000, 5000 at fixed points of SERAPIS-E and Chronos) is queued next; if the converged α_s differs from the published band by more than its stated precision, a correction note will follow.
+LESSONS: a quantity that is a second derivative of a numerically integrated spectrum needs its own convergence test in every numerical parameter (start, stencil, tolerance).
+MAP: none

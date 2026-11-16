@@ -205,3 +205,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D955: verify recalled spectra against a source before use (495 + 1, not 496).
 - D956: plateau-absorbed parameters still act at the vacuum through reheating.
 - D957: partition-function characters give the level-by-level B−F count; verify phase conventions from a source.
+- D958: convergence-test second derivatives in every numerical parameter.

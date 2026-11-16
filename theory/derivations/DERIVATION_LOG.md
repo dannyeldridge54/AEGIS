@@ -1487,3 +1487,8 @@ Touches: none.
 - [derived] n_B − n_F = ε_l 𝒩 d_l per level; +32 at the massless level.
 - [literature, unverified here] ε_l = (−1)^l from hatted characters.
 - [estimate] massive levels suppressed for A₁ ≳ 20; sign condition holds there.
+
+## D958: α_s Bunch–Davies start artifact
+- [computed] α_s −1.035e-3 (bd 200) vs −0.902e-3 (bd 1000); n_s identical.
+- [estimate] mechanism: residual negative-frequency oscillation ~2/bd².
+- Result: published α_s may carry ~10% bias; locked convergence test queued.
