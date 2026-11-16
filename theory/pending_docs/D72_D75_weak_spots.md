@@ -8855,3 +8855,18 @@ Verdict (locked rule): "controlled" is formally met (a point with A_min ≥ 2, r
 Reading [derived]: the worry in D861 that string-size tori put the benchmark out of control is weaker than feared for the two corrections computed here (both sub-percent). The real squeeze is the constraint set itself: the racetrack range Im T₁ = A₂A₃/g_s ≤ 14.7 pushes the small tori down as soon as they grow, and only fractional instantons (σ = ¼), the 4π² convention and g_s ≈ 0.5 keep a point alive at A = 2. The consistent P1′ region is a thin sliver near the string scale.
 Not computed [estimate]: string-loop corrections to K for T₁ (BHK-type for the Kähler moduli, ∝ E₂(U_i)/(Im S Im T_k)), which at Im T₁ ≈ 4 are suppressed by 1/(Im S·Im T₁) ≈ 0.5: possibly O(1) at the benchmark and the most likely place for control to fail.
 MAP: node=lepto_i status=assumed touches=[band_i] ripple=no
+
+## D862a (correction to D862's last paragraph)
+D862 estimated the string-loop correction to the racetrack modulus's Kähler potential as "≈ 1/(Im S·Im T₁) ≈ 0.5, possibly O(1)". That left out BHK's normalisation 1/(256π⁶) and the size of the lattice sums. With them (PREREG_D863): δK = c′/t with c′ ≈ 0.008, a relative change of K_TT̄ of ≈ 1e-3. The "likely weak point" statement is withdrawn; D863 tests it directly.
+
+## D863: the one-loop Kähler correction does NOT disturb the CP-odd racetrack minima (even ×100)
+Lock: PREREG_D863_loop_T1.md; DEVIATIONS D1 (first run stopped by Danny after 5 of 12 rows; partial output recorded; rerun unchanged). Script theory/modular/loop_T1_d863.py, output field_tests/results/loop_T1_d863.txt.
+Coefficient [derived, BHK normalisation]: c′ ≈ Σℰ₂/(256π⁶·4·Im S) ≈ 3.8e3/(2.46e5·1.94) ≈ 0.008 at g_s = 0.232.
+Results [derived] (N1, N2 = 5, 6; W0 = ±4e-3; B = ±0.5, ±1, ±2; 24 (W0, B, sign) cases per |c′|):
+- |c′| = 0.008 (×1): CP-odd minimum count unchanged in 24/24; largest position shift 7.7e-5.
+- |c′| = 0.08 (×10): 24/24; shift ≤ 7.7e-4.
+- |c′| = 0.8 (×100): 24/24; shift ≤ 7.9e-3 (still < 1%).
+- CP-odd minima sit at t ≈ 4.5–7.8 (4–6 per point, in mirror pairs).
+Verdict (locked rule): SURVIVE (not fragile). Pre-stated prediction "changes appear only at ×100" WRONG in the safe direction: nothing changes even at ×100; shifts scale linearly in c′.
+Consequence: the string-loop correction is not a weak point of the D861 benchmark. With D862 (α′ sub-percent), the remaining control issues are the string-size small tori themselves and the assumed fractional-instanton factor σ.
+MAP: node=lepto_i status=assumed touches=[band_i] ripple=no

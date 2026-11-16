@@ -890,3 +890,10 @@ Touches: band_i, lepto_i, plateau_origin.
 4. Locked verdict formally "controlled", in practice marginal [derived].
 5. Loop corrections to K for T₁ (∝ 1/(Im S·Im T₁) ≈ 0.5) not computed, likely the weak point [estimate].
 Touches: lepto_i, band_i.
+
+## D863: loop correction to the racetrack modulus
+1. BHK one-loop δK = c′/t with c′ ≈ 0.008 at the benchmark [derived] (D689 normalisation).
+2. CP-odd minima unchanged in 24/24 cases at ×1, ×10, ×100 [derived] (computed, PREREG_D863, DEVIATIONS D1).
+3. D862's "≈ 0.5" estimate omitted 1/256π⁶; withdrawn (D862a) [derived].
+4. Remaining control issues: string-size tori, assumed σ [estimate].
+Touches: lepto_i, band_i.

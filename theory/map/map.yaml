@@ -309,14 +309,15 @@ nodes:
   - D859
   - D860
   - D862
+  - D863
   depends:
   - reheat_i
   - n_sector_i
   - eta_n
   history:
-  - 'D859: assumed'
   - 'D860: assumed'
   - 'D862: assumed'
+  - 'D863: assumed'
 - id: sterile_rho
   layer: 4
   branch:
@@ -441,7 +442,7 @@ nodes:
   - 'D840: computed'
   - 'D841: computed'
   - 'D861: computed'
-  flag: recheck (D862, lepto_i)
+  flag: recheck (D863, lepto_i)
 - id: band_e
   layer: 5
   branch:

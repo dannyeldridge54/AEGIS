@@ -81,3 +81,4 @@ Why: today's results each demand values of the same moduli (g_s, Im ρ₁, Im ρ
 - V.6 [done D858] Full independent referee; ten majors fixed, twelve minors deferred.
 - V.7 [done] D861 folded into the draft τ = i bullet; rebuilt clean.
 - α′ control [done D862]: leading corrections sub-percent at the benchmark; consistent P1′ region is a thin sliver near the string scale; loop corrections to T₁'s K (≈ 1/(Im S·Im T₁) ≈ 0.5) open.
+- Loop correction to T₁ [done D863]: CP-odd racetrack minima survive even ×100; D862's weak-point estimate withdrawn (D862a).
