@@ -7252,3 +7252,15 @@ Computed (b), D613 machinery, only E changed:
 VERDICT: the tied relation with δ = N = 1 under-tilts by ×2. It works only with δ/N ≈ 1.8–2.3, an O(1) factor but a fudge until the one-loop K normalisation is known. The D754 lead is therefore downgraded to "same order of magnitude, normalisation open"; it is not a joint prediction.
 Caveat: D613's reheating bracket (T_R 1e3–1e5) predates today's corrections. A higher T_R (the ρ heavy sector gives fast reheating, D725, though for SERAPIS-E's m_φ) raises N* and n_s by ~0.0008 per e-fold, which would close part of the gap. To recheck if this line is pursued. Loop pauses: the next step needs the full BHK N = 1 formulas (read eqs. 3.46/4.3 of hep-th/0508043 at offset ≥ 100k).
 MAP: node=eps_tilt status=estimate touches=[] ripple=no
+
+## D756 (DEEP; literature, deeper at the D755 wall) — the IIB one-loop Kähler potential contains ONLY Eisenstein E₂ functions: SERAPIS-E's tilt is the natural one, and the ρ variant's DKL tilt has no loop origin there
+Read (hep-th/0508043, text beyond offset 180k):
+- Eq. (3.46), T⁶/(Z₂×Z₂): K⁽¹⁾ = ½Σ_I c·ℰ₂(A_i^I, U^I)/[(S−S̄)(T^I−T̄^I)] + ½Σ_I c·ℰ₂(0, U^I)/[(T^J−T̄^J)(T^K−T̄^K)]. ℰ₂ are spin-structure/orbifold sums of E₂(A, U).
+- Eq. (4.3), T⁶/Z₆′: the same structure, with ℰ₂^{(2,P/W)}(0, U²) ∝ E₂(0, U²).
+- The N = 1 result "cannot" be absorbed into ln K⁽⁰⁾. In the visible text NO ln(Im U|η|⁴) (DKL) term appears in K.
+Consequences:
+1. The D754/D755 lead is CLOSED for the IIB setting. The ρ variant's tilt L = −ln(2y|η|⁴) is not produced by the one-loop Kähler potential. It stays a fitted ε (D687), and its natural home would be heterotic (Green–Schwarz), where D755 showed it is ~50× too large.
+2. SERAPIS-E's tilt is the IIB-natural one: Ê ∝ E₂(0,U) is exactly the second-term function, and E₂(A,U) at the half-periods is the first.
+3. New detail for SERAPIS-E: the E₂(0,U) term is suppressed by the OTHER two Kähler moduli, 1/[(T^J−T̄^J)(T^K−T̄^K)], with no S. The tilt coefficient C therefore receives two contributions, C ≈ c₁/(Im S·Im T^I) + c₂/(Im T^J·Im T^K). D692's Im S·Im ρ ≈ 190–245N is then "the effective volume product". The frozen bands are unchanged (they depend on C only), but the microscopic reading is broader.
+VERDICT: going deeper at the wall resolved it, by elimination: in IIB orientifolds the one-loop tilt is E₂-shaped. SERAPIS-E is the derived branch, while the ρ variant (DKL) and τ = i (I₁) tilts are fitted inputs. This supports the paper's choice to present SERAPIS-E as the derived branch; one caveat sentence to add there (the two suppression channels for C).
+MAP: node=bhk_tilt status=literature touches=[serapis_e, eps_tilt] ripple=no

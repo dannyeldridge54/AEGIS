@@ -27,7 +27,8 @@
     "D753: assumed",
     "D754: estimate",
     "D755: estimate"
-   ]
+   ],
+   "flag": "recheck (D756, bhk_tilt)"
   },
   {
    "id": "plateau_origin",
@@ -168,7 +169,8 @@
    "depends": [
     "plateau_origin",
     "bhk_tilt"
-   ]
+   ],
+   "flag": "recheck (D756, bhk_tilt)"
   },
   {
    "id": "janus",
@@ -196,7 +198,11 @@
    "status": "literature",
    "d": [
     "D689",
-    "D692"
+    "D692",
+    "D756"
+   ],
+   "history": [
+    "D756: literature"
    ]
   },
   {
