@@ -55,3 +55,9 @@ Steps (one per tick; lock before any computation; honest labels):
 - C.2 [done D844: no spontaneous CP source as specified] For our configuration (D696/D830: stacks (5, 2), anti-D3?, BHK), list which fields can carry a phase: Im S axion, Kähler axions Re ρ_i, Wilson-line/position moduli of the stacks. Derive whether any is CP-odd at its vacuum.
 - C.3 [done D845: CP-odd racetrack minima exist (90% of scan)] If a source exists: compute (locked) the induced leptogenesis phase δ and compare with P1's uniform prior.
 - C.4 [done D846: P1 → P1′] Verdict (derive / keep / replace P1) and v3.2 note.
+
+## v3.2 draft (started 2026-11-16 on Danny's choice; NO Zenodo upload without his word)
+- V.1 [open] Copy papers/v3/serapis_v3.tex (v3.1, published) to papers/v3/serapis_v3.2_draft.tex; apply V32_TODO items D822–D826 (accuracy-track edits).
+- V.2 [open] Apply V32_TODO items D830, D832, D836, D839 (P3, tadpole), D841 (τ = i conditional), D846 (P1′).
+- V.3 [open] Build the PDF, check page count and overfull boxes, grep every changed number against its D-note; write CHANGELOG_v3.2.md.
+- V.4 [open] Independent referee pass on the diff only; report to Danny with the PDF.
