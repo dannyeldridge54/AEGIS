@@ -573,3 +573,9 @@ Touches: none.
 4. Two-loop Kähler ≲ 1e-4 [estimate].
 5. Edge uncertainty ±0.0005–0.0006 in n_s, well below the data σ; the dominant risks are conditional [derived].
 Touches: band_e, band_i.
+
+## D822: pruning (accuracy track)
+1. Keep rule: a source, or a unique test within reach [derived] (A4).
+2. Log-derivative plateau: no source (D760); r below LiteBIRD 1σ (D820); retired [derived].
+3. SERAPIS-Δ: fails the y* cut (D800); retired [derived].
+Touches: logderiv_plateau, serapis_e.

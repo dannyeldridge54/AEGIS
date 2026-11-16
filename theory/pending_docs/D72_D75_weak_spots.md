@@ -8315,3 +8315,18 @@ Conclusion:
 - Numerically, both frozen bands are good to about ±0.0006 in n_s at their edges, well below the current data error (0.0025).
 - The real uncertainties are conditional: for τ = i, the corrected reheating (only a narrow ε window survives); for SERAPIS-E, the late-decay condition T₂ ≳ 1e5 GeV.
 MAP: node=band_e status=frozen touches=[band_i] ripple=no
+
+## D822 (ACCURACY TRACK, queue 8; Jl tick 60, manual "Jl"): pruning. The log-derivative plateau and SERAPIS-Δ are RETIRED
+1. Log-derivative Epstein plateau, V ∝ y²(∂_y ln E)² (D758–D759):
+   - no string source (D760);
+   - post hoc;
+   - its r ≈ 2.1–3.1e-4 is below LiteBIRD's 1σ (δr = 1e-3, D820), so it is not testable by detection;
+   - its n_s overlaps the family band, so it has no unique near-term prediction.
+   RETIRED (map status "killed"; reason: no source and no unique test). The paper sentence mentioning it (SERAPIS-E section, "a log-derivative plateau … with the same tilt would …") is marked for removal in v3.2 (papers/v3/V32_TODO.md). The published v3.1 is not edited.
+2. SERAPIS-Δ (the DKL threshold plateau at ρ, D798–D800): disfavoured by the y* ≤ 25 cut (y* 27.5–29.9), r below the strip, consistency relation biased −25%. RETIRED as a branch. Kept as one fact: Δ = −ln(2y|η|⁴) has its minimum at ρ (D798, D801). It is not in the paper; nothing to remove.
+Derivation:
+1. A candidate is kept only if it has a source or a unique test [derived] (rule A4).
+2. Neither has a source; neither has a unique test within forecast reach (D806, D820) [derived].
+3. Both are retired [derived].
+Flag band_i (D821) cleared: confirmation.
+MAP: node=logderiv_plateau status=killed touches=[serapis_e] ripple=no
