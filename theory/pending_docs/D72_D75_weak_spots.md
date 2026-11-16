@@ -7642,3 +7642,17 @@ Consequence for baryogenesis [derived]: the pair dominates the energy density un
 VERDICT: a REQUIREMENT, not a postulate (β3 kept): "R-Z₃ — the SM modular weights admit a dim-6 Z₃-charged operator coupling the heavy pair, suppressed by Λ ≲ 3e16 GeV." It restores the frozen ρ band (D781). ρ-leptogenesis via D775/D776 is SUPERSEDED (diluted), and late-decay baryogenesis becomes the ρ route (to compute).
 Next (forward, locked): compute (a) T₂(Λ, M) with the 3-body width, giving the Λ window that keeps the frozen bands; (b) the late-decay ε needed, and whether a two-operator interference with P1 phases can reach ε ≳ 1e-4 (order of magnitude).
 MAP: node=lepto_rho status=corrected touches=[n_sector_rho, serapis_e] ripple=no
+
+## D783 (FORWARD, i-side; Jl tick 22; locked PREREG_D783; results/lambda_window_d783.txt) — the ρ band needs Λ ≲ 4e15–1e16 GeV, about the string scale (estimate 6e15–3e16); late-decay baryogenesis is plausible (ε ≈ 2e-5 – 3e-3)
+Computed (Γ = M⁵/(192π³Λ⁴), T₂ = (90/π²g*)^{1/4}√(ΓM_P)):
+- The largest Λ with T₂ ≥ 1e5 GeV (the D781 boundary): 3.6e15 / 6.8e15 / 1.05e16 for M = 4.3e11 / 7.1e11 / 1e12. For T₂ ≥ 3e6 (inside for all C): 0.67 / 1.2 / 1.9e15.
+- M_s estimate (M_s ≈ g_s^{1/4}M_P/√(4πV), V = (Im ρ)^{3/2}, Im S·Im ρ = 375–975, g_s = 0.1–0.5): 5.6e15 – 2.6e16 GeV.
+- So the decay operator must be suppressed by a scale AT or slightly BELOW M_s (Λ/M_s ≈ 0.15–1.9 across the grid). M_P suppression (T₂ ~ 1 GeV) is excluded, and the required window overlaps the string scale only at its low end.
+- Late-decay baryogenesis: ε_req = 2e-5 – 1.2e-3 (B-violating) or 5e-5 – 3.3e-3 (L-violating), all ≤ 1/(8π). PLAUSIBLE.
+VERDICT (locked rule): PLAUSIBLE, but TIGHT.
+- The frozen ρ-branch predictions survive only if the Z₃-charged heavy neutrinos decay through string-scale operators with O(1) couplings (Λ ≲ M_s), and the SM weights admit such an operator (R-Z₃).
+- Baryogenesis then comes from those late decays with ε ~ 1e-4 – 1e-3.
+- If the operator is suppressed even mildly more (Λ ≳ 2M_s at M = 1e12), T₂ < 1e5 and the frozen r band is exceeded (D781).
+- This is now the ρ branch's most fragile link.
+ρ-branch status: viable only through R-Z₃ plus string-scale decay plus late-decay baryogenesis. The τ = i branch is untouched by Z₃ issues; its frozen predictions do not carry these conditions.
+MAP: node=serapis_e status=computed touches=[lepto_rho] ripple=no

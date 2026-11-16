@@ -1,0 +1,21 @@
+(a) T2 [GeV] grid:
+  M=4.3e+11: L=1e+15->1.33e+06, L=3e+15->1.47e+05, L=1e+16->1.33e+04, L=3e+16->1.47e+03, L=1e+17->1.33e+02, L=2e+18->2.30e-01
+     Lambda_max(T2>=1e5)=3.64e+15  Lambda_max(T2>=3e6)=6.65e+14
+  M=7.1e+11: L=1e+15->4.64e+06, L=3e+15->5.16e+05, L=1e+16->4.64e+04, L=3e+16->5.16e+03, L=1e+17->4.64e+02, L=2e+18->8.06e-01
+     Lambda_max(T2>=1e5)=6.81e+15  Lambda_max(T2>=3e6)=1.24e+15
+  M=1.0e+12: L=1e+15->1.09e+07, L=3e+15->1.21e+06, L=1e+16->1.09e+05, L=3e+16->1.21e+04, L=1e+17->1.09e+03, L=2e+18->1.90e+00
+     Lambda_max(T2>=1e5)=1.05e+16  Lambda_max(T2>=3e6)=1.91e+15
+M_s estimate (M_P g_s^{1/4}/sqrt(4 pi V), V=(Im rho)^1.5):
+  ImS*Imrho=375 g_s=0.1: Im rho=37.5, V=230, M_s=2.55e+16
+  ImS*Imrho=375 g_s=0.5: Im rho=187.5, V=2567, M_s=1.14e+16
+  ImS*Imrho=975 g_s=0.1: Im rho=97.5, V=963, M_s=1.24e+16
+  ImS*Imrho=975 g_s=0.5: Im rho=487.5, V=10764, M_s=5.57e+15
+(b) required epsilon:
+  M=4.3e+11 T2=1e+05 L-violating: eps_req=1.42e-03 <=0.04 plausible
+  M=4.3e+11 T2=1e+05 B-violating: eps_req=5.02e-04 <=0.04 plausible
+  M=4.3e+11 T2=3e+06 L-violating: eps_req=4.72e-05 <=0.04 plausible
+  M=4.3e+11 T2=3e+06 B-violating: eps_req=1.67e-05 <=0.04 plausible
+  M=1.0e+12 T2=1e+05 L-violating: eps_req=3.29e-03 <=0.04 plausible
+  M=1.0e+12 T2=1e+05 B-violating: eps_req=1.17e-03 <=0.04 plausible
+  M=1.0e+12 T2=3e+06 L-violating: eps_req=1.10e-04 <=0.04 plausible
+  M=1.0e+12 T2=3e+06 B-violating: eps_req=3.89e-05 <=0.04 plausible

@@ -244,3 +244,14 @@ Touches: serapis_e, n_sector_rho.
 6. Earlier asymmetries are diluted by the pair's domination, so baryogenesis must come from the late decays: Y_B ≈ (3/4)(T₂/M)ε [derived] (standard late-decay yield).
 7. [derived] Consistency: D781's condition T₂ ≳ 1e5 is translated into Λ. D775/D776 are superseded for ρ (dilution). The frozen bands are untouched (conditional on R-Z₃).
 Touches: lepto_rho, n_sector_rho, serapis_e.
+
+## D783 — the Λ window (forward side)
+1. Γ = M⁵/(192π³Λ⁴) for a dim-6 three-body decay [estimate] (dimensional analysis, standard phase space).
+2. T₂ = (90/π²g*)^{1/4}√(ΓM_P) (sudden decay) [literature] (standard).
+3. T₂ ≥ 1e5 ⇔ Λ ≤ (pref²·M_P·M⁵/(192π³·1e10))^{1/4} = 3.6e15–1.05e16 [derived] (computed).
+4. M_s ≈ g_s^{1/4}M_P/√(4πV) [estimate] (IIB convention, isotropic V = (Im ρ)^{3/2}; not computed for the actual orientifold).
+5. M_s = 5.6e15–2.6e16 for the D696/D766a moduli range [derived] (from 4).
+6. Y_B = κ(3/4)(T₂/M)ε ⇒ ε_req = 2e-5 – 3e-3 [derived] (computed; κ = 28/79 or 1).
+7. ε ≤ 1/(8π) for one-loop interference, so this is plausible [estimate].
+8. [derived] Consistency: D781's T₂ boundary is translated; D782's estimate "Λ ≲ 3e16" is refined DOWN to ≲ 1e16 (it neglected the 192π³ phase space). The frozen bands are unchanged (conditional).
+Touches: serapis_e, lepto_rho.

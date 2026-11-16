@@ -199,18 +199,18 @@
     "D765a",
     "D769",
     "D770",
-    "D781"
+    "D781",
+    "D783"
    ],
    "depends": [
     "plateau_origin",
     "bhk_tilt"
    ],
    "history": [
-    "D769: computed",
     "D770: computed",
-    "D781: computed"
-   ],
-   "flag": "recheck (D782, lepto_rho)"
+    "D781: computed",
+    "D783: computed"
+   ]
   },
   {
    "id": "janus",
@@ -469,7 +469,8 @@
     "D775: corrected",
     "D776: corrected",
     "D782: corrected"
-   ]
+   ],
+   "flag": "recheck (D783, serapis_e)"
   },
   {
    "id": "gravitino_wino",
