@@ -12,3 +12,4 @@
 - [D851] Draft wording fix: 'often metastable' (CP paragraph) → 'in about 40% of cases the deepest minimum, otherwise within ~5% of it' (D851).
 - [D852] Applied in draft: CP paragraph now states the two-instanton-sector condition and the 80% figure; D851 metastability wording fixed.
 - [D853] Optional: one clause in the CP paragraph: given a CP-odd vacuum, ρ-leptogenesis passes with median probability ≈ 0.84 (D853).
+- [D854] τ = i conditional-variant bullet: add that under P1′ its leptogenesis needs CP-odd axions on two cycle classes (single-modulus P1′ gives the resonant doublet no phase).

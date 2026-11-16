@@ -821,3 +821,11 @@ Touches: none.
 3. Deepest-vacuum selection: unconditional median ≈ 0.34 [estimate].
 4. P1′ final form: racetrack axion plus two instanton sectors [derived] (D845–D852).
 Touches: none.
+
+## D854: R.1 τ = i phase map (P1′ at τ = i)
+1. Instanton charge scales with wrapping, so n_ij ∝ q_i + q_j on one cycle class [derived] (hep-th/0609191 zero-mode counting).
+2. Doublet members share charge, hence phase [derived] (D664a, D690).
+3. Singlet mixing transmits no relative phase on one cycle class [derived].
+4. τ = i resonant ε = 0 under single-modulus P1′; D763's 68–71% becomes 0% [derived] (D763).
+5. Escape: two cycle classes with CP-odd axions [derived].
+Touches: lepto_i, band_i.

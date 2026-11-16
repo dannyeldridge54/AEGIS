@@ -8753,3 +8753,15 @@ Summary [derived]: under P1′, given a CP-odd vacuum, min 0.48, median 0.84, 4/
 Verdict: P1′ keeps ρ-leptogenesis likely once a CP-odd vacuum is selected (median 84%), about 10 points below P1's uniform prior. Unconditionally (deepest-vacuum selection over the scanned racetracks) it is roughly one in three. The τ = i pass fraction of D763 (68–71% under complex R) would scale similarly but needs its own phase map; not done.
 P1′ final form (for POSTULATES): CP broken spontaneously by a Kähler axion in a CP-odd racetrack minimum; heavy-ν Majorana masses from at least two D-instanton sectors with different charges on that cycle; physical phase Δ = 2πΔn⟨Re T⟩.
 MAP: node=lepto_rho status=assumed touches=[lepto_i] ripple=no
+
+## D854 (R.1): at τ = i, single-modulus P1′ gives the resonant pair NO CP phase; τ = i leptogenesis then needs two cycle classes
+Derivation only. The planned locked run was not needed: the result is exact at the level of charges, so no numbers were computed (PREREG_D854 not written).
+Setup [derived]: D745/D763 resonant leptogenesis at τ = i uses the quasi-degenerate pair N₁, N₂ (the Γ2 doublet of the 2⊕1 structure, D664a, D690); its CP asymmetry ∝ Im H₂₁, H = Y†Y. Under P1′ the Dirac Yukawas are real (τ on the CP locus, D844) and all phases sit in the instanton-generated Majorana masses (D852).
+1. Charge rule [derived]: an instanton wrapping n times a cycle class Ξ has action 2πnT_Ξ and absorbs U(1) charge n·I_{Ξ,a} (intersection numbers scale with wrapping). So on ONE cycle class the instanton number of entry M_ij is fixed by the charge it must absorb: n_ij ∝ q_i + q_j, linear in the charges (literature basis: zero-mode counting scales with intersections, hep-th/0609191).
+2. The doublet members N₁, N₂ come from the same brane intersection, so q₁ = q₂: their Majorana entries carry the SAME phase e^{2πi n_dd T} [derived].
+3. Doublet–singlet mixing cannot help on one cycle class [derived]: integrating out N₃ gives δM_dd ∝ M_ds²/M_ss ∝ e^{2πiT(2n_ds − n_ss)} = e^{2πiT(2(q_d+q_s) − 2q_s)/q₀} = e^{2πiT·2q_d/q₀}, the same phase as M_dd. Rephasing invariants of the pair vanish; Im H₂₁ = 0; ε = 0.
+4. Hence D763's 68–71% pass fraction at τ = i becomes 0% under single-modulus P1′ [derived]. ρ (D853) is not affected in the same way: there the relevant N carry different charges, so D852's Δ = 2πΔn⟨Re T⟩ is physical.
+Escape [derived]: instantons on at least TWO cycle classes with independent CP-odd axions (two racetracks, or doublet and mixing entries from different cycles). Then δM_dd carries 2πi(…)(T₁ − T₂)-type phases and Im H₂₁ ≠ 0. This is an extra condition specific to τ = i.
+Consequence: a fourth condition for the τ = i conditional variant (D841): under P1′ its leptogenesis needs two CP-odd Kähler axions on different cycle classes. Not a failed prediction; a further structural requirement.
+Caveat [estimate]: assumes Dirac Yukawas are perturbative and real and that the doublet shares one brane intersection; a doublet formed from two different intersections would change point 2.
+MAP: node=lepto_i status=assumed touches=[band_i] ripple=no

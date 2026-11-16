@@ -389,7 +389,7 @@
     "i"
    ],
    "title": "Leptogenesis at τ=i: inflaton decay marginal, AD robust",
-   "status": "computed",
+   "status": "assumed",
    "d": [
     "D728",
     "D738",
@@ -400,7 +400,8 @@
     "D774",
     "D786",
     "D794",
-    "D795"
+    "D795",
+    "D854"
    ],
    "depends": [
     "reheat_i",
@@ -408,9 +409,9 @@
     "eta_n"
    ],
    "history": [
-    "D786: assumed",
     "D794: computed",
-    "D795: computed"
+    "D795: computed",
+    "D854: assumed"
    ]
   },
   {
@@ -571,7 +572,8 @@
     "D834: computed",
     "D840: computed",
     "D841: computed"
-   ]
+   ],
+   "flag": "recheck (D854, lepto_i)"
   },
   {
    "id": "band_e",
