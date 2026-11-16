@@ -1,0 +1,6 @@
+g_s=0.232: E(-1) action 2pi/g_s = 27.1
+g_s=0.33: E(-1) action 2pi/g_s = 19.0
+g_s=0.4: E(-1) action 2pi/g_s = 15.7
+g_s=0.48: E(-1) action 2pi/g_s = 13.1
+g_s=0.5: E(-1) action 2pi/g_s = 12.6
+g_s for S=13..19: 0.331 - 0.483
