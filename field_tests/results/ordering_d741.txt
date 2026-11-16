@@ -1,0 +1,4 @@
+tau=i: NO 1560, IO 8040 of 9600; R-matching points: 360
+   NO: 48 pts, |b| 1.37-1.46, m_light/m_heavy 0.488-0.489, Sigma m_nu 0.1164-0.1164 eV
+   IO: 312 pts, |b| 0.118-75.8, m_light/m_heavy 0.013-0.016, Sigma m_nu 0.1000-0.1000 eV
+rho: NO 5160, IO 4440 of 9600; R-matching points: 0

@@ -7057,3 +7057,14 @@ Arithmetic (computed, Δm²₃₁ = 2.5e-3, Δm²₂₁ = 7.42e-5 eV²):
 - DESI DR2+CMB gives Σm_ν < 0.0642 eV (D707 table). IO with a massless lightest state sits ~0.036 eV ABOVE that bound, so it is disfavoured by cosmology. NO passes with a +0.0055 eV margin.
 VERDICT: no change to the frozen Σm_ν = 0.0587 eV (NO, m₁ ≈ 0; lock D605). Our model does not yet DERIVE the ordering: that needs the full lepton texture at ρ / i, an open item. Present data side with NO, and the IO-preferring Γ2 textures are in tension with DESI DR2.
 MAP: node=mnu status=frozen touches=[n_sector_i] ripple=no
+
+## D741 (CENTRE; locked PREREG_D741; results/ordering_d741.txt) — TENSION: the minimal D664 lepton texture at τ = i cannot give the frozen Σm_ν
+Computed: m_ν ∝ [[A(Y), bY],[bYᵀ, 0]] scanned over 400 |b| × 24 phases.
+- At τ = i: NO-like for 1560 of 9600 points, IO-like for 8040. Points matching the observed splitting ratio Δm²₂₁/Δm²₃₁ = 0.0297 (±10%):
+  - NO: 48 points, |b| ≈ 1.4, m_light/m_heavy = 0.49, Σm_ν = 0.116 eV.
+  - IO: 312 points, m_light/m_heavy ≈ 0.014, Σm_ν = 0.100 eV.
+  - Both exceed DESI DR2+CMB Σm_ν < 0.0642 eV.
+- At ρ (same matrix form, cross-check only): NO points matching the ratio.
+VERDICT (locked rule): TENSION. The one-parameter 2⊕1 Weinberg texture of D664 does not produce a normal-ordered spectrum with a light enough lightest neutrino. The frozen Σm_ν = 0.0587 eV (lock D605) stays frozen and is scored as locked. The τ = i branch's lepton sector needs more structure: e.g. a nonzero 3-3 entry from another form, charged-lepton mixing, or the D646 Affleck–Dine requirement m_ν1 ≈ 0 imposed as a constraint. D664's "no forced massless state" already pointed this way. Caveat: one complex coefficient and the A-term normalised to 1; a texture with more free coefficients could fit, so this rules out the minimal texture only. Same IO lean as 2512.24804 at τ = i, reached independently.
+Node n_sector_i stays an input, now with a known gap (the light-neutrino texture).
+MAP: node=n_sector_i status=open touches=[mnu] ripple=no

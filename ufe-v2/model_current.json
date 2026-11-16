@@ -24,10 +24,11 @@
   "D728/D738: leptogenesis from inflaton decay works at ρ, marginal at τ = i (Affleck–Dine remains the route there)",
   "D732–D736: post-hoc wino prediction 0.67–0.80 TeV (~15% of dark matter), testable by LHC Run 3 / HL-LHC",
   "D739: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed",
-  "D740: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen"
+  "D740: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen",
+  "D741: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → open"
  ],
  "open_rechecks": [
-  "Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?)"
+  "Σm_ν = 0.0587 eV (m1 ≈ 0)"
  ],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
 }

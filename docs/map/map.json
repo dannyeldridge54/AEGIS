@@ -65,12 +65,15 @@
     "i"
    ],
    "title": "Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?)",
-   "status": "assumed",
+   "status": "open",
    "d": [
     "D664",
-    "D738"
+    "D738",
+    "D741"
    ],
-   "flag": "recheck (D740, mnu)"
+   "history": [
+    "D741: open"
+   ]
   },
   {
    "id": "halo_profile",
@@ -447,7 +450,8 @@
    ],
    "history": [
     "D740: frozen"
-   ]
+   ],
+   "flag": "recheck (D741, n_sector_i)"
   },
   {
    "id": "wino_window",

@@ -42,11 +42,13 @@ nodes:
   branch:
   - i
   title: 'Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?)'
-  status: assumed
+  status: open
   d:
   - D664
   - D738
-  flag: recheck (D740, mnu)
+  - D741
+  history:
+  - 'D741: open'
 - id: halo_profile
   layer: 1
   branch:
@@ -314,6 +316,7 @@ nodes:
   - D740
   history:
   - 'D740: frozen'
+  flag: recheck (D741, n_sector_i)
 - id: wino_window
   layer: 5
   branch:
