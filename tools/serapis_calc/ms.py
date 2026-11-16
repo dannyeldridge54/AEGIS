@@ -13,13 +13,13 @@ class Background:
             return [pn, -(3-eps)*pn - (3-eps)*dV(p)/V(p)]
         ev = lambda N, y: 0.5*y[1]**2 - 1; ev.terminal = True; ev.direction = 1
         s = solve_ivp(rhs, [0, Nmax], [phi0, -dV(phi0)/V(phi0)], events=ev, rtol=1e-11, atol=1e-13, dense_output=True)
-        self.sol = s; self.Nend = s.t_events[0][0]; self.V = V
+        self.sol = s; self.Nend = s.t_events[0][0] if len(s.t_events[0]) else None; self.V = V
     def state(self, N):
         p, pn = self.sol.sol(N); eps = 0.5*pn*pn
         H = np.sqrt(self.V(p)/(3-eps)); return p, pn, eps, H
-def spectra(bg, Nstar, dlnk=(-0.05, 0.0, 0.05)):
+def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None):
     """Return dict with P_R, P_t at ln k offsets, and n_s, r, alpha_s at the pivot that exits at Nend - Nstar."""
-    Np = bg.Nend - Nstar
+    Np = bg.Nend - Nstar if Npivot is None else Npivot
     _, _, _, Hp = bg.state(Np); kp = np.exp(Np)*Hp
     out = []
     for dl in dlnk:
@@ -49,12 +49,13 @@ def spectra(bg, Nstar, dlnk=(-0.05, 0.0, 0.05)):
         R = u/z; Rn = un/z - u*zn/z**2
         h = u/a; hn = un/a - u/a
         y0 = [R.real, R.imag, Rn.real, Rn.imag, h.real, h.imag, hn.real, hn.imag]
-        Nf = min(Np + 10 + dl, bg.Nend - 0.5)
-        s = solve_ivp(rhs, [N0, Nf], y0, rtol=1e-9, atol=1e-30, method='DOP853')
+        Nf = min(Np + 12 + dl, (bg.Nend - 0.5) if bg.Nend else Np + 12 + dl)
+        s = solve_ivp(rhs, [N0, Nf], y0, rtol=1e-11, atol=1e-30, method='DOP853')
         y = s.y[:, -1]
         PR = k**3*(y[0]**2+y[1]**2)/(2*np.pi**2); Pt = 8*k**3*(y[4]**2+y[5]**2)/(2*np.pi**2)
         out.append((dl, PR, Pt))
     d = np.array([o[0] for o in out]); lp = np.log([o[1] for o in out])
-    c = np.polyfit(d, lp, 2)
+    c = np.polyfit(d, lp, 4)
+    c = c[2:]
     i0 = list(d).index(0.0)
     return dict(ns=1+c[1], alpha_s=2*c[0], r=out[i0][2]/out[i0][1], PR=out[i0][1])
