@@ -84,7 +84,7 @@ nodes:
   - rho
   - E
   title: 'Heavy-ν sector at ρ: 2⊕1, weight-2 mixing'
-  status: computed
+  status: assumed
   d:
   - D723
   - D724
@@ -97,12 +97,12 @@ nodes:
   - D787
   - D814
   - D817
+  - D882
   depends: []
   history:
-  - 'D787: computed'
   - 'D814: computed'
   - 'D817: computed'
-  flag: recheck (D880, lepto_rho)
+  - 'D882: assumed'
 - id: n_sector_i
   layer: 1
   branch:
@@ -415,6 +415,7 @@ nodes:
   - 'D878: assumed'
   - 'D879: assumed'
   - 'D880: computed'
+  flag: recheck (D882, n_sector_rho)
 - id: gravitino_wino
   layer: 4
   branch:
@@ -502,7 +503,7 @@ nodes:
   - 'D750: frozen'
   - 'D786: frozen'
   - 'D824: frozen'
-  flag: recheck (D880, lepto_rho)
+  flag: recheck (D882, n_sector_rho)
 - id: wino_window
   layer: 5
   branch:

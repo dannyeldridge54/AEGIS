@@ -1025,3 +1025,11 @@ Touches: lepto_rho, band_e, mnu, n_sector_rho.
 2. Σm_ν footnote now covers both vacua [derived].
 3. Rebuilt clean, 17 pages [derived].
 Touches: none.
+
+## D882: B.7 ρ lepton sector for tiny m_ν₁
+1. D779's minimal extension (Γ₂-singlet leptons plus two neutral singlets) gives rank 3 [derived] (D778, D779).
+2. m_ν₁ ≈ y₂²v_u²/M₂ ≈ 1e-8 eV needs y₂²/M₂ ≈ 3e-22 GeV⁻¹ [derived].
+3. E₄(ρ) = 0 can protect the lightest direction exactly [derived].
+4. Planck-suppressed (LH_u)² must be ≲ 1e-3 of natural size for the lightest direction [estimate] (hep-ph/0008041, title level).
+5. Structure exists; no oscillation fit yet [derived].
+Touches: n_sector_rho, lepto_rho, mnu.
