@@ -59,3 +59,4 @@ D772  2026-11-16T06:23Z  reverse: 2405.18813 Model I fixes tau3=S - no inflaton-
 D773  2026-11-16T06:31Z  forward: P4 has no SUSY Minkowski vacuum; flux-relation CP always uses all three U's; P4 retired, explicit CP reopened
 D774  2026-11-16T06:55Z  reverse: twisted complex-structure moduli as CP source - tension with stuck branes at the orbifold point
 D775  2026-11-16T07:05Z  forward: actual CP asymmetry for the 2+1 heavy-nu sector at rho (CRV, Casas-Ibarra grid, P1)
+D776  2026-11-16T07:19Z  reverse: what fixes c? canonical normalisation cancels; threshold c* for rho leptogenesis
