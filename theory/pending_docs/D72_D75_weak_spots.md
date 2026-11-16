@@ -7380,3 +7380,7 @@ VERDICT (locked rule): CORRECTION.
 Viable P2 variant to test next (reverse): put the flux relation on two moduli that are NOT the inflaton (U₂U₃ = b₃/a⁰ with U₂ at its own fixed point), so U₁'s metric stays single.
 Alternatively, the relation is lifted by a mass below H_inf, but then U₂ is light during inflation (isocurvature risk; F4).
 MAP: node=serapis_e status=frozen touches=[lepto_rho] ripple=no
+
+## D765a (correction to D765's MAP line)
+D765's MAP line set node serapis_e to status=frozen, which changed it from "computed". That was a labelling error: SERAPIS-E's bands are locked (D693) but post-hoc, and the node's status was never "frozen". This note restores it; D765's physics is unchanged.
+MAP: node=serapis_e status=computed touches=[] ripple=no
