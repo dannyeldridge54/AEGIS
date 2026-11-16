@@ -1040,3 +1040,9 @@ Touches: n_sector_rho, lepto_rho, mnu.
 3. ε ≈ 1.8e-3 (3e-4–1.1e-2) gives m_ν₁ ≈ 1.7e-8 eV [derived] (computed).
 4. Natural by the locked rule; origin of ε open [estimate].
 Touches: n_sector_rho, lepto_rho, mnu.
+
+## D884: draft and board update; next project
+1. ρ lepton-sector result added to the draft caveat [derived] (D882, D883).
+2. Theory Map ρ heavy-ν box updated [derived].
+3. Next deep project: origin of τ = i's ε [derived] (D826).
+Touches: none.

@@ -130,3 +130,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D881: reread the abstract after every batch of edits; an earlier trim had left a ',;' that only showed up when this sentence was rewritten.
 - 2026-11-16 D882: a modular form that vanishes at the vacuum (E₄ at ρ) is a natural tool for an exactly or nearly massless state; check the zeros of forms at the fixed point before inventing a new suppression.
 - 2026-11-16 D883: a vanishing modular form at the fixed point gives a natural small number; quantify the lift needed (here ε ~ 1e-3) and say plainly that its own origin is still open.
+- 2026-11-16 D884: when one branch's chain closes, switch the next deep project to the other branch's oldest open item, so neither branch drifts.

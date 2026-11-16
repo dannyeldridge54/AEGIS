@@ -9082,3 +9082,8 @@ Results [derived]:
 Verdict (locked rule): NATURAL (pass fraction ≥ 1%, median ε in [1e-4, 1e-2]). Pre-stated prediction (2–5%, ε ~ 3e-4–3e-3) CONFIRMED.
 Consequence: the ρ branch now has a complete, consistent post-inflation chain at the level of structure: Z₃-allowed LH_u Affleck–Dine leptogenesis inside the frozen band (D880), and a lepton sector with normal ordering, both splittings and m_ν₁ ≈ 1e-8 eV, protected by E₄(ρ) = 0 and lifted by a ~1e-3 correction (D882, D883). Open [estimate]: the physical origin of ε (a higher-weight form, a small displacement of τ from ρ, or loops) and the Planck-suppressed Weinberg bound (D882 point 4).
 MAP: node=n_sector_rho status=computed touches=[lepto_rho,mnu] ripple=no
+
+## D884: D882–D883 folded into the draft and the Theory Map board; next deep project chosen
+Draft: the ρ lepton-sector caveat now adds the E₄-protected fit (3.5% of random draws, m_ν₁ ≈ 1.7e-8 eV, ε ≈ 2e-3; post hoc). Rebuilt: 17 pages, clean. Theory Map board: the ρ heavy-ν box turned green with refs D882, D883. Model card copied to Danny's PC after the ladder update.
+Next deep project (autonomy rule, top open item): the origin of τ = i's tilt ε (oldest open item; D826 found every derived source 1e11–1e12 short). Plan E.1–E.4 in ACCURACY_QUEUE.
+MAP: none

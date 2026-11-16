@@ -104,3 +104,9 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - B.6 [done D881] Fold D880 into status, POSTULATES (none new), and the v3.2 draft (abstract + Sec. VII ρ baryogenesis statement; label post hoc).
 - B.7 [done D882: structure exists (E₄-protected); fit open] Realistic ρ lepton sector with m_ν₁ ≈ 4e-9–7e-8 eV (beyond the weight-two doublet alone).
 - B.8 [done D883: natural, 3.5%, ε ≈ 2e-3] Locked oscillation fit at ρ: Γ₂-singlet leptons + N_Y + S₁ + S₂(weight-4, ∝E₄) + small lift; NO splittings and m_ν₁ ≈ 1e-8 eV.
+
+## ε-origin deep project (τ = i; picked 2026-11-16 under the autonomy rule)
+- E.1 [open] Reverse path: from the required εI₁ term (m²/H² ≈ 2e-3 at i, ε ≈ 1.40–1.45e-4) write the needed term's form in K or W and its modular weight; list every route tried (D576–D618, D684–D687, D823, D826, D834) with the factor it missed by.
+- E.2 [open] Literature: threshold/one-loop corrections that are logarithmic in |j − 1728| or vanish quadratically at i (Harvey–Moore, DKL with Wilson lines, species scale at enhanced-symmetry points).
+- E.3 [open] Locked computation of the best candidate's ε.
+- E.4 [open] Verdict and v3.2 note.
