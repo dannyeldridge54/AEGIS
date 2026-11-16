@@ -713,3 +713,9 @@ Touches: plateau_origin, serapis_e.
 3. Route (a) closed for P3; W.3, W.4 moot [derived].
 4. P3 has no identified string origin; predictions unaffected [derived] (D828–D838).
 Touches: plateau_origin, serapis_e.
+
+## D840: T.1 τ = i evidence table (τ = i verdict project)
+1. Fifteen items collected and checked against their notes [derived] (D664a–D839).
+2. Correction D834a: the anti-D3 term does not destabilise τ = i at band-allowed k [derived] (D795, D834, D835).
+3. Tally + 4, − 6, 0 5; minuses concern motivation and origin, not data [derived].
+Touches: band_i, eps_tilt.

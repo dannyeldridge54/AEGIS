@@ -8581,3 +8581,29 @@ Summary [derived]: the warped anti-D3 uplift couples to the bulk U only multipli
 Verdict: route (a) closed for P3 as stated. With D828–D836 (one-loop) and D799/D838 (holomorphic, non-perturbative), P3's E-ratio plateau has NO identified string origin. P3 stays a postulate; the frozen predictions do not depend on its origin.
 What this does and does not mean [derived]: it does NOT falsify SERAPIS-E (its predictions come from the plateau's shape, which is postulated and fitted to nothing new). It DOES mean the paper must not suggest a string origin for the E-ratio beyond "postulated". A positive spin-off: a warped throat would give an exponentially approached plateau, which is the shape class of the older τ = i / ρ L-variant family, so a string completion of that family through a throat is not excluded by this argument.
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D834a (correction to D834 and D836, found while building D840)
+D834 and D836 said the anti-D3 term "destabilises τ = i toward ρ". That overstated it. The τ = i model HAS a vacuum mass: the (fitted, postulated) εI₁ term gives an isotropic m²/H² ≈ 2.0e-3 at ε = 1.45e-4 (D795, D826). D826's problem is that this mass has no DERIVED source, not that it is absent. Adding D834's anti-D3 curvature along x: net m²/H² = +2.0e-3 − 1.48e-3·(k/2.07e-4). At k = 2.07e-4 the net is +0.5e-3 (still stable); at the D835 band-safe value k ≲ 2e-6 the anti-D3 share is −1.4e-5, negligible [derived, arithmetic on D795/D834/D835]. Corrected statement: the anti-D3 term does not destabilise τ = i at any k allowed by the band; it only fails to be the derived mass source. D834's saddle result and D836's other points stand.
+
+## D840 (τ = i verdict project, T.1): evidence table for the τ = i variant
+Each row checked against its source note. "+" supports keeping, "−" counts against, "0" neutral/conditional.
+| # | Item | Source | Label | Effect |
+|---|---|---|---|---|
+| 1 | Hessian at i is exactly isotropic (accidental U(1)) | D795 | [derived] | 0 |
+| 2 | No Affleck–Dine asymmetry at i; baryogenesis via other routes | D794 | [derived] | 0 |
+| 3 | Mirror check: heavy states couple to leptons, non-degenerate light spectrum | D785 | [derived] | + |
+| 4 | Every SUSY one-loop lattice sum puts the vacuum at ρ; i is a saddle | D801 | [derived] | − (motivation) |
+| 5 | Non-SUSY (Scherk–Schwarz) sums are minimised at 1 + i, an image of i | D803 | [literature]+[derived] | + (motivation) |
+| 6 | Under the reduced group, τ = i keeps its structure but loses its flavour predictions | D804 | [derived] | − |
+| 7 | BHK remnant at i is stabilising for every C | D802, D811 | [derived] | + |
+| 8 | Exact MS: under corrected reheating only ε ≈ 1.40–1.45e-4 stays in the frozen band | D815 | [derived] | − (narrow) |
+| 9 | Frozen band audited exactly; edge error ±0.0005–0.0006 in n_s | D817, D821 | [derived] | 0 |
+| 10 | A loop-sized BHK factor can tilt i into the band, but is a distinct post-hoc variant; ε stays fitted | D823 | [derived] | 0 |
+| 11 | Vacuum mass exists via the fitted ε term (m²/H² ≈ 2e-3) but every derived source is 1e11–1e12 short | D826 | [derived] | − (no origin) |
+| 12 | Anti-D3 term at i is a saddle; not the mass source; does not destabilise at band-allowed k | D834, D834a | [derived] | − (no origin), not destabilising |
+| 13 | P3 (shared plateau postulate) has no identified string origin | D832, D839 | [derived] | 0 (shared with ρ) |
+| 14 | Throat route gives exponentially approached plateaus, the τ = i family's shape class | D839 | [derived] | + (possible origin) |
+| 15 | Heavy-ν splitting at i needs a 2⊕1 structure (open condition of τ = i only) | D664a, D690 | [estimate] | − (extra condition) |
+Tally: + 4 (3, 5, 7, 14), − 6 (4, 6, 8, 11, 12, 15), 0 5. The minuses are about MOTIVATION and ORIGIN (no derived ε, no vacuum preference in SUSY sums, narrow ε window), not about a failed prediction: no τ = i frozen prediction is contradicted by data.
+No decision here. T.2 will write the decision rule before applying it.
+MAP: node=band_i status=computed touches=[eps_tilt] ripple=no
