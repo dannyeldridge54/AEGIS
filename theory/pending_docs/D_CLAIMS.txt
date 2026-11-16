@@ -62,3 +62,4 @@ D775  2026-11-16T07:05Z  forward: actual CP asymmetry for the 2+1 heavy-nu secto
 D776  2026-11-16T07:19Z  reverse: what fixes c? canonical normalisation cancels; threshold c* for rho leptogenesis
 D777  2026-11-16T07:27Z  forward: rho-branch light neutrinos from the 2+1 seesaw with modular Dirac Yukawas
 D778  2026-11-16T07:36Z  reverse: minimal higher-weight Dirac terms that split the rho light-neutrino pair
+D779  2026-11-16T07:44Z  forward: Z3 charge bookkeeping for the singlet-lepton remedy at rho
