@@ -235,13 +235,14 @@ nodes:
   branch:
   - i
   title: 'Leptogenesis at τ=i: inflaton decay marginal, AD robust'
-  status: computed
+  status: assumed
   d:
   - D728
   - D738
   - D646
   - D743
   - D745
+  - D763
   depends:
   - reheat_i
   - n_sector_i
@@ -249,7 +250,7 @@ nodes:
   history:
   - 'D743: estimate'
   - 'D745: computed'
-  flag: recheck (D762, lepto_rho)
+  - 'D763: assumed'
 - id: sterile_rho
   layer: 4
   branch:
@@ -313,6 +314,7 @@ nodes:
   - n_sector_rho
   history:
   - 'D762: assumed'
+  flag: recheck (D763, lepto_i)
 - id: gravitino_wino
   layer: 4
   branch:

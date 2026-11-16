@@ -7335,3 +7335,18 @@ VERDICT (locked rule): NATURAL under P1. Branch status:
 - The paper's D731 text should state this condition (one sentence; Danny's call).
 Mirror question (forward, i-side, next tick): τ = i is also CP-conserving (imaginary axis). Does D745's radiative resonant leptogenesis at i likewise rely on non-gCP couplings? If yes, is P1 needed on both branches, and what does P1 predict for the low-energy Dirac phase δ_CP (DUNE/Hyper-K)?
 MAP: node=lepto_rho status=assumed touches=[lepto_i] ripple=no
+
+## D763 (FORWARD, i-side; Jl tick 2; locked PREREG_D763; results/delta_cp_i_d763.txt) — τ = i leptogenesis needs P1 too; P1 makes no δ_CP prediction, but gCP does (δ ∈ {0, π}), so DUNE/Hyper-K test the CP structure
+Computed on the D745 set-up (NO, m₁ = 1e-3 eV, tanβ = 10). K4 regressions: (A) at δ = 230° reproduces D745, 68.2% pass with max Y_B 4.64e-9; (B) at δ = 0 gives Y_B = 0.
+- (A) Complex R (high-energy phases): pass fraction 71.3 / 68.3 / 67.5 / 68.2 / 68.3% for δ_CP = 0 / 90 / 180 / 230 / 270°. The spread is 3.8 points, under the 10-point rule, so there is NO δ_CP dependence.
+- (B) Real R, with CP only in the PMNS phase: 0 of 1728 points pass for every δ. Max Y_B ≤ 2e-25, which is numerical noise.
+- Reason [derived]: H = Y†Y = √D R†·diag(m)·R √D / v_u², so U cancels. Im H₂₁ = 0 for real R whatever δ is, and the radiative ε ∝ Im H₂₁ vanishes. This is the standard decoupling of unflavoured leptogenesis from the low-energy phases.
+VERDICT (locked rule):
+- D745's PASS rests on complex R, i.e. on high-energy CP phases in the heavy-ν couplings, which P1 supplies. τ = i is CP-conserving (imaginary axis), so with gCP, R is real, ε = 0 and δ ∈ {0, π}.
+- Both branches therefore need P1. lepto_i is now conditional, like lepto_rho (D762).
+Forward prediction (new, post-hoc structure statement):
+- SERAPIS + gCP (either vacuum) predicts δ_CP ∈ {0, π} AND no leptogenesis.
+- SERAPIS + P1 predicts generic δ_CP (no preferred value) AND viable leptogenesis.
+- A DUNE/Hyper-K discovery of leptonic CP violation (sin δ ≠ 0 at ≥ 3–5σ, late 2030s) would exclude the gCP completion for both vacua and favour P1. A firm δ ≈ 0/π would exclude only half of P1's phase space at |sin δ| < 0.1 (about 6% of a uniform prior), so it does not kill P1. Current fits allow both.
+Correction to P1's falsifier (ii): a δ_CP ≈ 0/π measurement only weakly disfavours P1. The sharp test is the reverse: CP violation discovered ⇒ gCP excluded.
+MAP: node=lepto_i status=assumed touches=[lepto_rho] ripple=no

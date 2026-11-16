@@ -8,3 +8,5 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-15 D760: a fetched paper's species function was log η (F₁), not E(τ,2). Check which modular function a source actually uses before building on it.
 - 2026-11-16 D762: check whether a vacuum or trajectory sits on a CP-conserving locus (imaginary axis, Re τ = ±½, the unit arc) before claiming any CP-violating result. Our two vacua and the inflaton line all do, so every CP effect needs an explicit phase source.
 - 2026-11-16 D762: a PASS that leaves a parameter "unspecified" (here δ) hides an assumption. Make it a postulate at once, so the derived:assumed count stays honest.
+- 2026-11-16 D763: before claiming a low-energy prediction from a high-energy mechanism, check whether the low-energy parameter cancels out of the formula (here U drops out of H = Y†Y). Run a real-parameter control grid as the K4 regression.
+- 2026-11-16 D763: write a postulate's falsifier as "what result would favour the ALTERNATIVE". It is sharper than "what would disfavour the postulate".

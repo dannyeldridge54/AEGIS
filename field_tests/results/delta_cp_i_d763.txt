@@ -1,0 +1,10 @@
+A complex R delta=0: pass 520/729 (71.3%) max Y_B=5.08e-09
+A complex R delta=90: pass 498/729 (68.3%) max Y_B=5.00e-09
+A complex R delta=180: pass 492/729 (67.5%) max Y_B=4.20e-09
+A complex R delta=230: pass 497/729 (68.2%) max Y_B=4.64e-09
+A complex R delta=270: pass 498/729 (68.3%) max Y_B=5.00e-09
+B real R delta=0: pass 0/1728 (0.0%) max Y_B=0.00e+00
+B real R delta=90: pass 0/1728 (0.0%) max Y_B=1.48e-25
+B real R delta=180: pass 0/1728 (0.0%) max Y_B=1.13e-41
+B real R delta=230: pass 0/1728 (0.0%) max Y_B=1.98e-25
+B real R delta=270: pass 0/1728 (0.0%) max Y_B=1.48e-25
