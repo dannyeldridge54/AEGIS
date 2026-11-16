@@ -16,3 +16,4 @@
 - [D854/D855] Applied in draft (D856).
 - [D861] τ = i conditional bullet: add that its leptogenesis source (P1′) cannot coexist with a natural-size anti-D3 uplift and the BHK tilt in our configuration; a consistent point needs string-size small tori (D860, D861).
 - [D861] Applied in draft (τ = i bullet).
+- [D867] Applied in draft: anti-D3 caveat tightened; D861 τ = i clause removed (D861a).

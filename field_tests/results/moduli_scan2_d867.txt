@@ -1,0 +1,19 @@
+antiD3=on  racetrack T1 sigma=1.0: pass=0 | C1 28080, C1&C2 0, C1&C2&C3 0
+antiD3=on  racetrack T1 sigma=0.5: pass=0 | C1 28080, C1&C2 0, C1&C2&C3 0
+antiD3=on  racetrack T1 sigma=0.25: pass=0 | C1 28080, C1&C2 0, C1&C2&C3 0
+antiD3=on  racetrack T2 sigma=1.0: pass=0 | C1 28080, C1&C2 0, C1&C2&C3 0
+antiD3=on  racetrack T2 sigma=0.5: pass=0 | C1 28080, C1&C2 0, C1&C2&C3 0
+antiD3=on  racetrack T2 sigma=0.25: pass=0 | C1 28080, C1&C2 0, C1&C2&C3 0
+antiD3=on  racetrack T3 sigma=1.0: pass=0 | C1 28080, C1&C2 0, C1&C2&C3 0
+antiD3=on  racetrack T3 sigma=0.5: pass=0 | C1 28080, C1&C2 0, C1&C2&C3 0
+antiD3=on  racetrack T3 sigma=0.25: pass=0 | C1 28080, C1&C2 0, C1&C2&C3 0
+antiD3=off racetrack T1 sigma=1.0: pass=0 | C1 28740, C1&C2 28740, C1&C2&C3 0
+antiD3=off racetrack T1 sigma=0.5: pass=0 | C1 28740, C1&C2 28740, C1&C2&C3 0
+antiD3=off racetrack T1 sigma=0.25: pass=0 | C1 28740, C1&C2 28740, C1&C2&C3 0
+antiD3=off racetrack T2 sigma=1.0: pass=0 | C1 28740, C1&C2 28740, C1&C2&C3 315
+antiD3=off racetrack T2 sigma=0.5: pass=26 | max min(A)=1.22; e.g. g_s=0.4036 A=(1.2,924.9,1.2) ImT=3.66 M=1.5e+11 Ms=1.5e+16
+antiD3=off racetrack T2 sigma=0.25: pass=90 | max min(A)=1.80; e.g. g_s=0.5000 A=(1.8,1124.2,1.8) ImT=6.45 M=3.8e+11 Ms=9.6e+15
+antiD3=off racetrack T3 sigma=1.0: pass=0 | C1 28740, C1&C2 28740, C1&C2&C3 315
+antiD3=off racetrack T3 sigma=0.5: pass=26 | max min(A)=1.22; e.g. g_s=0.4036 A=(1.2,1.2,924.9) ImT=3.66 M=1.5e+11 Ms=1.5e+16
+antiD3=off racetrack T3 sigma=0.25: pass=90 | max min(A)=1.80; e.g. g_s=0.5000 A=(1.8,1.8,1124.2) ImT=6.45 M=3.8e+11 Ms=9.6e+15
+EXIT 0

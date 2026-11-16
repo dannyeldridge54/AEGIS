@@ -113,3 +113,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D864: a new ingredient placed on the inflaton torus is never neutral. D7 stacks needed for CP land at fixed points of the same torus whose one-loop sums make the tilt, so they feed back into C.
 - 2026-11-16 D865: before placing anything on the inflaton torus, check it against the model's symmetry. D864 put a D7 stack at one half-period, which silently breaks the SL(2,Z) that SERAPIS-E rests on; the paper's own caveat already said so.
 - 2026-11-16 D866: identify every modulus by the source's own frame and dualities before building a scan on it. One wrong identification (BHK's ρ as a 2-cycle area) carried through five notes; reading the T-duality section undid it.
+- 2026-11-16 D867: before combining constraints, check they belong to the same branch. Five notes imposed SERAPIS-E's tilt on the τ = i CP mechanism; neither frozen branch uses both.

@@ -53,12 +53,12 @@ nodes:
   - D837
   - D838
   - D839
+  - D867
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D837: assumed'
   - 'D838: assumed'
   - 'D839: assumed'
-  flag: recheck (D861, band_i)
+  - 'D867: assumed'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -191,6 +191,7 @@ nodes:
   - 'D835: computed'
   - 'D865: computed'
   - 'D866: corrected'
+  flag: recheck (D867, plateau_origin)
 - id: janus
   layer: 2
   branch:
@@ -320,7 +321,7 @@ nodes:
   - 'D862: assumed'
   - 'D863: assumed'
   - 'D864: assumed'
-  flag: recheck (D866, serapis_e)
+  flag: recheck (D867, plateau_origin)
 - id: sterile_rho
   layer: 4
   branch:
@@ -445,7 +446,7 @@ nodes:
   - 'D840: computed'
   - 'D841: computed'
   - 'D861: computed'
-  flag: recheck (D863, lepto_i)
+  flag: recheck (D867, plateau_origin)
 - id: band_e
   layer: 5
   branch:

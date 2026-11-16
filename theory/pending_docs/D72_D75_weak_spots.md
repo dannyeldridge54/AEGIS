@@ -8911,3 +8911,22 @@ MAP: node=serapis_e status=corrected touches=[lepto_i,eps_tilt] ripple=no
 
 ## D857a (correction, found in D866)
 D857 (and D860, D861, D862, D865 built on it) took D689's ρ as the inflaton torus's area. BHK eq. (3.30) with the §5 T-duality makes it the modulus of the 4-cycle transverse to the inflaton torus. The moduli tables, scans and the benchmark in those notes are superseded; their qualitative findings (racetrack versus anti-D3 compete for cycle sizes; instanton masses ∝ W0^N) are kept. D863's loop-stability result does not depend on the mapping and stands.
+
+## D867: corrected moduli scan. An anti-D3 uplift is incompatible with SERAPIS-E's BHK tilt itself; and the D857–D861 "conflict" mixed two branches
+Lock: PREREG_D867_moduli_scan2.md (committed before the run). Script theory/modular/moduli_scan2_d867.py, output field_tests/results/moduli_scan2_d867.txt. v₄ of D833 is the geometric volume A₂A₃ of the two non-inflaton tori, independent of the BHK mapping [derived].
+Scan results [derived]:
+| anti-D3 | racetrack cycle | σ | pass | note |
+|---|---|---|---|---|
+| on | any | any | 0 | C1 and C2 together: 0 points |
+| off | T₁ | any | 0 | C1 and C3 together: 0 points (D866) |
+| off | T₂ or T₃ | 1 | 0 | 315 points reach C4, all too light |
+| off | T₂ or T₃ | ½ | 26 | e.g. g_s = 0.40, A = (1.2, 925, 1.2), Im T = 3.7, M = 1.5e11 GeV; max min(A) = 1.2 |
+| off | T₂ or T₃ | ¼ | 90 | e.g. g_s = 0.50, A = (1.8, 1124, 1.8), Im T = 6.5, M = 3.8e11 GeV; max min(A) = 1.8 |
+Pre-stated predictions: anti-D3 on impossible CONFIRMED; racetrack on T₁ impossible CONFIRMED; T₂/T₃ pass for σ ≤ ½ CONFIRMED; "small tori can exceed string size" WRONG (min area ≤ 1.8, g_s at 0.4–0.5).
+Key finding 1 (anti-D3 vs BHK tilt, no racetrack involved) [derived]: C1 and C2 alone are incompatible: Im S·Im T₁ = A₂A₃/(2√2π g_s²) ≤ 731 and A₂A₃ ≥ 2e4 g_s need g_s ≥ 3.1. At SERAPIS-E's tilt moduli the anti-D3 interaction has κ/V0 = g_s/(8π·A₂A₃) ≈ 9e-6 (g_s = 0.5) to 1.2e-4 (g_s = 0.05), against the band-safe ≲ 2e-6 (D835); by D835's linear scaling that shifts n_s by ≈ +0.005 to +0.06 [estimate]. So SERAPIS-E's frozen band (BHK tilt, no anti-D3 term) is consistent only if its uplift/nilpotent sector is NOT an anti-D3 on this torus. This tightens D836's "needs large small tori" into "not reachable at perturbative coupling".
+Key finding 2 (branch mixing) [derived]: D857–D861 combined the BHK tilt (used only by SERAPIS-E at ρ) with P1′'s racetrack (needed only at τ = i, D854/D855). The frozen τ = i model's tilt is the fitted ε, not BHK; ρ needs no CP phase. So no frozen branch needs BHK + P1′ together, and D861's extra τ = i condition ("no natural-size anti-D3; string-size tori") does not apply to the frozen τ = i model. It would apply only to the post-hoc BHK-tilted τ = i variant of D823. D861a records this.
+What stands: P1′'s racetrack and E3 masses by themselves (τ = i) need only Im T_k ≈ 2–15 on some cycle and σ ≤ ½-type instantons; the anti-D3 is excluded from SERAPIS-E by finding 1.
+MAP: node=plateau_origin status=assumed touches=[serapis_e,band_i,lepto_i] ripple=no
+
+## D861a (correction, found in D867)
+D861's added τ = i condition came from a scan that imposed SERAPIS-E's BHK tilt on the τ = i branch, whose frozen tilt is the fitted ε. The condition is withdrawn for the frozen τ = i model; it applies only to the post-hoc BHK-tilted τ = i variant (D823). The v3.2 draft sentence citing D860/D861 is replaced (D867).

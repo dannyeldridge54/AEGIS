@@ -921,3 +921,11 @@ Touches: serapis_e, eps_tilt, lepto_i.
 4. D689's ρ is the T⁴ modulus, not A₁; D857–D865 mapping superseded (D857a) [derived].
 5. Racetrack on T₁ excluded; on T₂/T₃ reopened [derived].
 Touches: serapis_e, lepto_i, eps_tilt.
+
+## D867: corrected moduli scan
+1. v₄ = A₂A₃ is geometric, independent of the BHK mapping [derived] (D833).
+2. Anti-D3 bound and BHK tilt are incompatible for g_s < 3.1 [derived] (computed, PREREG_D867).
+3. At the tilt's moduli the anti-D3 would shift n_s by ≈ +0.005 to +0.06 [estimate] (D835 scaling).
+4. Racetrack on T₂/T₃ passes for σ ≤ ½, only at string-size tori and g_s ≈ 0.4–0.5 [derived] (computed).
+5. D857–D861 mixed branches: BHK belongs to ρ, P1′ to τ = i; D861's τ = i condition withdrawn (D861a) [derived].
+Touches: plateau_origin, serapis_e, band_i, lepto_i.
