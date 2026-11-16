@@ -1,0 +1,27 @@
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/home/claude/aegis/theory/modular/inflaton_ad_d790.py", line 45, in run
+    ts=np.linspace(max(b.t[0],tend-30),tend,3000); acc=0; en=0
+       ^^
+NameError: name 'np' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/claude/aegis/theory/modular/inflaton_ad_d790.py", line 59, in <module>
+    with Pool(2) as p: res=p.map(run,X0)
+                           ~~~~~^^^^^^^^
+  File "/usr/local/lib/python3.13/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/multiprocessing/pool.py", line 774, in get
+    raise self._value
+NameError: name 'np' is not defined
+EXIT 1

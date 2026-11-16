@@ -25,6 +25,7 @@ def reduce(t):
     return t
 RHO=complex(0.5,math.sqrt(3)/2); RHOp=complex(-0.5,math.sqrt(3)/2)
 
+import numpy as np  # DEVIATIONS D1
 RHOc=complex(0.5,math.sqrt(3)/2)
 def wdisk(x,y,vx,vy):
     t=complex(x,y); w=(t-RHOc)/(t-RHOc.conjugate())
