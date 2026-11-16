@@ -1455,3 +1455,9 @@ Touches: none.
 - [literature] hep-th/0601158: BSB keeps bulk SUSY at tree level; T² Wilson-line one-loop masses take both signs (14/16 saddles).
 - [estimate] Project H needs n_B > n_F among χ's partners and T² ≫ l_s.
 - Result: realisation class named; sign is a condition, not a guarantee.
+
+## D952: Project H scale window
+- [derived] δm² = 0.01745 g E M_s²/A₁² (λ₆ = g/M_s²).
+- [derived] (arithmetic) 17g–175g ≲ A₁ ≲ 2.6e6–6.6e7.
+- [estimate] benchmark small T⁴ fits D945a.
+- Result: no scale conflict; toolkit with 11/11 self-checks added.

@@ -9634,3 +9634,12 @@ MAP: none
 Verdict: Project H now has a named realisation class with three explicit conditions (non-SUSY brane tower with n_B > n_F among χ's partners; T² ≫ l_s; small tree mass for χ). No construction checked. The v3.3 draft's wording ("non-supersymmetric at the T² scale") already covers this; no change.
 LESSONS: a worked example (BSB Wilson lines) is the fastest sign check for a loop-mass mechanism.
 MAP: none
+
+## D952 (Project H, scale window): the T² area A₁ (string units) has a wide consistent window, 20g–200g ≲ A₁ ≲ 3e6–7e7; the benchmark's small T⁴ (A₂ = A₃ = 1) matches D945a's "other dimensions smaller" requirement
+[derived] (dimensions) χ is 4D (dim 1) and Φ is 6D (dim 2), so the quartic coupling is λ₆ = g/M_s². The image sum then gives δm_χ² = g·[2ζ(4)/(4π³)]·E(U,2)·M_s²/A₁² = 0.01745·g·E·M_s²/A₁² (A₁ in string units).
+[derived] (arithmetic) EFT: δm_χ² < M_KK² = M_s²/A₁ ⇒ A₁ > 0.01745·g·Ê = 17g (Ê = 1e3) to 175g (Ê = 1e4). KK modes above H: M_s/√A₁ > H = 3.7e12 GeV ⇒ A₁ < (M_s/H)² = 2.6e6 (M_s = 6e15) to 6.6e7 (M_s = 3e16 GeV). The coefficient λ of D946 absorbs the rest (it is free, D946), so "heavy enough" adds no further condition (m²/H² ≈ 6Ê/M², D944).
+[estimate] The SERAPIS-E benchmark's A₂ = A₃ = 1 (D-note ~8839) puts the other four dimensions at the string scale, i.e. much smaller than a T² with A₁ ≳ 20, as D945a requires for weight s = 2; α′ corrections on that T⁴ are O(1) (already flagged there). The BHK tilt depends on Im T₁ = A₂A₃/g_s, not on A₁, so the window does not touch C.
+Verdict: no scale conflict; Project H's conditions stay those of D950–D951 (non-SUSY brane tower with n_B > n_F, small tree mass, fixed area) plus 20g ≲ A₁ ≲ 1e6.
+Tooling: tools/serapis_calc added (Eisenstein Fourier vs lattice, modular invariance, ρ minimum, P3 slope sign, consistency-relation limits and the paper-1 number, exponent rule): 11/11 self-checks pass; required before every locked run from now on.
+LESSONS: run the verified toolkit's self-test before locked runs; it would have caught both D943 errors.
+MAP: none
