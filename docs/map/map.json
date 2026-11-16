@@ -672,14 +672,14 @@
     "D740",
     "D750",
     "D786",
-    "D824"
+    "D824",
+    "D902"
    ],
    "history": [
-    "D750: frozen",
     "D786: frozen",
-    "D824: frozen"
-   ],
-   "flag": "recheck (D900, lepto_i)"
+    "D824: frozen",
+    "D902: literature"
+   ]
   },
   {
    "id": "wino_window",
