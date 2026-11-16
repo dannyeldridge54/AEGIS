@@ -280,7 +280,7 @@ Touches: n_sector_i, lepto_i.
 1. NO: Σ = m₁ + √(m₁² + Δm²₂₁) + √(m₁² + Δm²₃₁) [literature] (standard).
 2. Σ(0) = 0.0586 eV, and Σ = 0.0587 at m₁ = 1e-4 [derived] (computed).
 3. At τ = i, m₁ ≈ 0 came only from AD (D646); D745 removes that need [derived].
-4. The D742 texture gives m₁/m₃ = 0.001–0.08, so Σ = 0.059–0.064 [literature-internal] (D742 computed).
+4. The D742 texture gives m₁/m₃ = 0.001–0.08, so Σ = 0.059–0.064 [derived] (D742 computed).
 5. At ρ, singlet leptons give a generic m_ν, so there is no m₁ prediction [derived] (D778–D779).
 6. The DESI DR2 + Lyα bound 0.0592 ⇒ m₁ ≲ 5.6e-4 eV [derived] (computed; bound from the paper's ref arXiv:2607.27410).
 7. [derived] Consistency: the frozen lock is unchanged, and its condition Σ > 0.07 still disfavours. The interpretation is updated, not the number.
