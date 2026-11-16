@@ -397,7 +397,7 @@ Touches: plateau_origin, serapis_e.
 
 ## D798: DKL-threshold plateau at ρ (reverse side)
 1. Δ = −ln(y|η|⁴) is modular invariant, the s → 1 Kronecker limit [literature].
-2. Its minimum is at ρ [literature; derived numerically].
+2. Its minimum is at ρ [literature] (confirmed numerically here).
 3. Z₃ gives Δ̃ ∝ |z|², so p = 1 is massive and isotropic (R = 1), p = 2 is quartic [derived] (computed).
 4. Δ ~ πy/3 gives an α-attractor with α = 1/p² [derived]; the log correction lowers r by 37–55% versus leading order [derived] (computed).
 5. p = 1 violates y* ≲ 25 [derived]; p = 2: n_s 0.963–0.966, r 5.4–6.5e-4 [derived] (computed).
