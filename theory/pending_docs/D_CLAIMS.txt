@@ -23,3 +23,4 @@ D736  2026-11-16T02:05Z  collider tests of the 0.67-0.8 TeV wino
 D737  2026-11-16T02:19Z  2+1 sector at tau=i: splitting and T_R
 D738  2026-11-16T02:19Z  2+1 sector at tau=i (renumbered from D737 claim)
 D739  2026-11-16T03:23Z  Z3 alignment of Gamma2 doublets at rho: which weights lift the massless N
+D740  2026-11-16T03:28Z  neutrino mass ordering vs Gamma2 IO preference
