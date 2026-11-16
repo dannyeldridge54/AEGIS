@@ -225,3 +225,4 @@ D938  2026-11-16T20:58Z  Weinberg instanton literature
 D939  2026-11-16T20:59Z  v3.3 draft: modulus paragraph
 D940  2026-11-16T21:04Z  P3 literature tick 2
 D941  2026-11-16T21:05Z  P3 as a heavy-field series combination
+D942  2026-11-16T21:06Z  D941 novelty check
