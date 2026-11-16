@@ -11,8 +11,9 @@ S=CubicSpline(ph,Eg); dS=S.derivative(); L=[]; res={}
 for lp in (1.0,1/Er,0.05):
     V=lambda p,lp=lp:(lambda e:(lp*e)/(lp*e+1)*(1+C*e))(float(S(p)))
     dV=lambda p,lp=lp:(lambda e,de:de*(lp*(1+C*e)/(lp*e+1)**2+C*lp*e/(lp*e+1)))(float(S(p)),float(dS(p)))
-    p0=ph[np.searchsorted(Eg,600/lp)] if 600/lp<Eg[-1] else ph[-200]
-    bg=Background(V,dV,p0); Ve=V(bg.sol.sol(bg.Nend)[0]); TR=TR0*lp**0.25; N=50.5
+    p0=ph[min(np.searchsorted(Eg,5000/lp),len(ph)-200)]   # DEVIATIONS D2
+    bg=Background(V,dV,p0); assert bg.Nend>=58.5, f'only {bg.Nend:.1f} e-folds (DEVIATIONS D2)'
+    Ve=V(bg.sol.sol(bg.Nend)[0]); TR=TR0*lp**0.25; N=50.5
     for it in range(8):
         r=spectra(bg,N,dlnk=(-0.05,0.0,0.05)); Nn=Nstar(r['r'],V(bg.sol.sol(bg.Nend-N)[0])/Ve,TR)
         if abs(Nn-N)<0.005: N=Nn; break
