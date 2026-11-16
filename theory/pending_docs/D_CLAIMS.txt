@@ -186,3 +186,4 @@ D899  2026-11-16T18:32Z  R3.1 full referee pass
 D900  2026-11-16T18:33Z  R3.2 tau=i AD window at corrected T_R
 D901  2026-11-16T18:33Z  R3.2 text pass
 D902  2026-11-16T18:35Z  DC.1 newest-data check
+D903  2026-11-16T18:38Z  W3.1 Weinberg at tau=i
