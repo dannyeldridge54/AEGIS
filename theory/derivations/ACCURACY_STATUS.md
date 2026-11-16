@@ -15,7 +15,7 @@ Published: SERAPIS v3.1, 10.5281/zenodo.24281771. Changes queued for v3.2: paper
 - C for SERAPIS-E: natural size, but its value is chosen to hit the n_s band.
 
 ## Postulated (open)
-- P3: the plateau sits in the anti-D3 (nilpotent) metric with the E(τ,2) placement. Three routes are closed (D797, D799, D798–D800). The τ = i mass candidate (D686) lives in the same sector. Settling it needs a one-loop anti-D3 annulus on T⁶/(Z₂×Z₂): long and expensive, awaiting Danny's approval.
+- P3: the plateau sits in the anti-D3 (nilpotent) metric with the E(τ,2) placement. The deep project (D828–D832) computed the anti-D3 one-loop term for our configuration: additive, a rising wall in y, so P3 has no one-loop origin. P3 stays a postulate (downgraded); the frozen predictions do not depend on its origin. Tadpole with an anti-D3 needs D3 stacks (5, 2), not (5, 1).
 - P1: CP phases in the heavy-ν couplings (leptogenesis). Testable only (DUNE/Hyper-K).
 
 ## Conditional (the bands hold only if)

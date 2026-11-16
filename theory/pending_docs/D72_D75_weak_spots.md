@@ -8477,3 +8477,16 @@ Results [derived]:
 5. N_eff shift [estimate]: if the anti-D3 counts as charge −1 at its T² point in the D696 BHK sum, z_a = 0 gives N0_eff = 1, N_eff = 4 (back to D696's baseline, Im S·Im ρ ≈ 750–975). z_a = ½ makes the stacks unequal (5, 5, 4, 2); D696's equal-stack formula does not apply; open.
 Verdict: the anti-D3 sector in our configuration is an additive, rising-in-y term (a wall) that slightly prefers ρ. It cannot produce P3's plateau. P3.5: write the verdict (P3 has no one-loop origin; the plateau's origin stays a postulate or needs non-perturbative/warped physics) and queue the v3.2 note.
 MAP: node=plateau_origin status=assumed touches=[serapis_e,eps_tilt] ripple=no
+
+## D832 (DEEP, P3.5): P3 verdict
+Summary of D828–D831 [derived]:
+1. One-loop vacuum energies are additive lattice sums (D828). For our configuration the anti-D3 sector gives additive E(U,1)-type terms; K_XX̄ is unchanged at this order (D829).
+2. The only stable, tadpole-consistent placement is a stuck anti-D3 at an empty O3 point displaced in T⁴, with D3 stacks (5, 2) (D830). This corrects D696's (5, 1) whenever an anti-D3 is present.
+3. Its T²-shape term is a rising wall, V ≈ +(4π/3)κy, mildly favouring ρ (D831). P3 needs V → const at large y. Opposite asymptotics.
+Verdict: KEEP P3 as a postulate, DOWNGRADED. It has no one-loop origin in our configuration, and the anti-D3 one-loop term cannot be the plateau. P3 is not retired: the plateau V0[1 − E(ρ)/E(τ)] is the model's defining input, and its phenomenology (frozen band, D692) is unaffected. What could still give it [estimate]:
+ (a) a warped throat: the uplift then depends on the throat's position/shape moduli, which can couple to U through the warp factor (not computed; tree-level unwarped has no U dependence, 1707.07059);
+ (b) non-perturbative: a resummed or instanton-corrected K^{XX̄} in which E appears inverted (no known example; D797, D799 closed the simple cases);
+ (c) a different plateau origin altogether (not the anti-D3 sector).
+Side results to keep [derived]: the anti-D3 wall is bounded at large y, so it is a candidate stabiliser of the decompactification direction, and it has an extremum at τ = i (Δ and the half-period sums are modular-symmetric there), so it is a candidate source for the τ = i vacuum mass (D826). Whether it is big enough needs κ's normalisation (open, D831 point 4).
+Falsifier (for P3 as stated): an explicit warped-throat computation in which the anti-D3 uplift depends on U only additively would remove route (a).
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no

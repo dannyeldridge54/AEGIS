@@ -646,3 +646,12 @@ Touches: plateau_origin, serapis_e, eps_tilt.
 5. Opposite large-y behaviour to P3's 1 − b/E [derived].
 6. Size bound κ/V0 ≲ 2.9e-3/y*; κ's normalisation open [estimate].
 Touches: plateau_origin, serapis_e, eps_tilt.
+
+## D832: P3.5 verdict (P3 deep project)
+1. Anti-D3 one-loop is additive; K_XX̄ unchanged [derived] (D828, D829).
+2. Stable placement and (5, 2) tadpole [derived] (D830).
+3. Rising wall, opposite asymptotics to P3 [derived] (D831).
+4. P3 kept as a postulate, downgraded: no one-loop origin [derived].
+5. Remaining routes: warped throat, non-perturbative, other origin [estimate].
+6. Side: anti-D3 term as decompactification wall and τ = i mass candidate, pending κ [estimate].
+Touches: plateau_origin, serapis_e.
