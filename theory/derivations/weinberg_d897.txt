@@ -1,0 +1,10 @@
+reduced M_P  m_W=1.19e-05 eV: c needed 1.7e-06 / 1.1e-05 / 7.6e-05; S_W >= 9.5 - 13.3
+M_P          m_W=2.37e-06 eV: c needed 8.4e-06 / 5.7e-05 / 3.8e-04; S_W >= 7.9 - 11.7
+M_s low      m_W=4.82e-03 eV: c needed 4.2e-09 / 2.8e-08 / 1.9e-07; S_W >= 15.5 - 19.3
+M_s high     m_W=9.63e-04 eV: c needed 2.1e-08 / 1.4e-07 / 9.3e-07; S_W >= 13.9 - 17.7
+M_s=6e+15, M_N=1e+11: S_N=11.0
+M_s=6e+15, M_N=1e+12: S_N=8.7
+M_s=6e+15, M_N=1e+13: S_N=6.4
+M_s=3e+16, M_N=1e+11: S_N=12.6
+M_s=3e+16, M_N=1e+12: S_N=10.3
+M_s=3e+16, M_N=1e+13: S_N=8.0
