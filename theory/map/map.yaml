@@ -65,11 +65,12 @@ nodes:
   - D912
   - D914
   - D963
+  - D969
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D912: assumed'
   - 'D914: assumed'
   - 'D963: estimate'
+  - 'D969: estimate'
 - id: logderiv_plateau
   layer: 1
   branch:

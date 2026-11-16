@@ -1540,3 +1540,8 @@ Touches: none.
 - [derived] (mpmath-checked) G₆(L;m) ≈ G₆(L;0)[1 − (mL)²/4].
 - [derived] correction = weight-1 sum −(m_V²/4A)E_reg(U,1).
 - [estimate] need g φ₀ ≲ 0.1 M_KK to keep the p = 2√2 approach to ~1%.
+
+## D969: ADS ND doublets as (χ, φ₀)
+- [literature] hep-th/9908023: ND scalar doublets in (16,1,1,16)+(1,16,16,1); no potential/vevs/masses; ND annulus vanishes.
+- [estimate] same-rep pair available; doublet symmetry vs mixing open; ND scalar mass uncomputed.
+- Result: ingredients present; Project H's top open item is the one-loop ND-scalar mass.
