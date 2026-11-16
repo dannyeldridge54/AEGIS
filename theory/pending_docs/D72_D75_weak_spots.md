@@ -9701,3 +9701,10 @@ Run 1 (invalid, kept) failed from the scale-factor bug (D955 DEVIATIONS D1), fix
 Verdict: Chronos and Kairos n_s, r, y* independently confirmed; α_s confirmed to ~10% pending the D958 convergence test. Node: main-branch predictions → "computed, independently reproduced".
 LESSONS: none new (D955 D1 lesson already recorded).
 MAP: none
+
+## D960 (loop B): the Möbius phase convention used in D957 is VERIFIED from a source: hatted characters carry (−1)^k at level k, so the Sugimoto boson excess alternates in sign at successive massive levels
+(Lock file PREREG_D960 belongs to the queued α_s convergence test; numbering differs, as in D710.)
+[literature] hep-th/0503204 (thesis, Sec. 1, eq. 1.83): χ̂(iτ₂ + ½) = q^{h−c/24} Σ_k (−1)^k d_k q^k, differing from χ(iτ₂ + ½) by the overall phase e^{−iπ(h−c/24)}; the (−1)^k follows from Ω acting on α_{−n}|ij⟩ as (−)^n α_{−n}|ji⟩. Same source, Sugimoto model: massless vector in the adjoint and massless Majorana–Weyl spinor in the antisymmetric of USp(32); n₊ = 0, n₋ = 32.
+Consequence: D957's flagged step (ε_l = (−1)^l) is now sourced; its derived count n_B − n_F = (−1)^l 𝒩 d_l and the conclusion (massless +32 dominates the image sum for A₁ ≫ 1) stand. Project H's sign condition in the Sugimoto example is now fully sourced at the level used.
+LESSONS: flagged memory steps get cleared or corrected within a tick or two; this one was right.
+MAP: none

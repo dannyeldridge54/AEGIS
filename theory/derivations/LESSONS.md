@@ -207,3 +207,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D957: partition-function characters give the level-by-level B−F count; verify phase conventions from a source.
 - D958: convergence-test second derivatives in every numerical parameter.
 - D959: (no new lesson)
+- D960: clear flagged memory steps quickly against a source.
