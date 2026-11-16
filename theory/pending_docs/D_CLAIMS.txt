@@ -158,3 +158,4 @@ D871  2026-11-16T17:18Z  referee minors batch 1
 D872  2026-11-16T17:19Z  referee minors batch 2
 D873  2026-11-16T17:21Z  D7 piece of the tilt size
 D874  2026-11-16T17:22Z  day summary checkpoint
+D875  2026-11-16T17:23Z  B.1 rho baryogenesis inventory
