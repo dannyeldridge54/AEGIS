@@ -1323,3 +1323,8 @@ Touches: none.
 - [literature] arXiv:1412.5537: inflation near infinite-order special points only; no plateau, no LG points.
 - [estimate] Lead: quintic-mirror LG (Z5) point plus LCS point as the CY analogue of fixed point plus cusp.
 - Result: NULL for existing completion; lead recorded.
+
+## D927: novelty check of the LG+LCS lead
+- [literature] arXiv:1605.03974: conifold-to-orbifold multi-field inflation on the mirror quintic (2016).
+- [literature] arXiv:2404.12422: W=0 vacua on symmetric loci, no inflation.
+- Result: lead partly prior art; narrower pairing stays an unclaimed estimate.

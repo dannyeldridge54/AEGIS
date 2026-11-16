@@ -9448,3 +9448,9 @@ Structural reading [estimate, not computed]: SERAPIS uses a finite-order point (
 Verdict: NULL for an existing completion; one concrete lead (quintic-mirror LG ↔ LCS) for a future locked computation, flagged as estimate. Do not claim novelty without a dedicated search.
 LESSONS: separate finite-order (vacuum) from infinite-order (plateau) monodromy when mapping SERAPIS onto CY moduli spaces.
 MAP: none
+
+## D927 (completion tick 3): novelty check of D926's lead: inflation near the mirror quintic's Z₅ orbifold point IS in the literature (2016), but as multi-field conifold-to-orbifold rolling, not a plateau toward LCS
+Dedicated search (1, standard) plus 2 fetches. [literature] Cabo Bizeta, Loaiza-Brito & Zavala, "Mirror quintic vacua: hierarchies and inflation" (arXiv:1605.03974, JHEP 10 (2016) 082): flux vacua near the conifold; inflationary regions extend from the conifold to the Z₅ orbifold point, multi-field, no single-field axion monodromy; periods needed to order ~600; no n_s/r in the part read. [literature] Grimm & van de Heisteeg (arXiv:2404.12422): W = 0 flux vacua on symmetric loci (Hulek–Verrill Z₂, Z₆; a Fermat example), no inflation.
+Verdict: D926's lead is NOT new as "inflation at the orbifold point". The narrower pairing (vacuum AT the finite-order point, plateau along the direction to LCS, as SERAPIS does with the cusp) was not found in these sources; status stays estimate, no novelty claim. A test would need a locked computation of V along the ψ = 0 → LCS ray with real periods; that is beyond a cheap tick (1605.03974 needed ~600 orders).
+LESSONS: run the dedicated novelty search in the same tick a lead is raised; it took one search to find 2016 prior art.
+MAP: none
