@@ -47,3 +47,4 @@ D760  2026-11-16T04:20Z  reverse: what makes the species scale track E(tau,2)? l
 D761  2026-11-16T04:22Z  wino sub-fraction limits: 2507.15934 Fig 6 method check
 D762  2026-11-16T04:31Z  reverse: CP phase for rho leptogenesis; gCP makes Re tau=1/2 CP-conserving
 D763  2026-11-16T04:35Z  forward i-side: does D745 need P1? delta_CP dependence of radiative leptogenesis
+D764  2026-11-16T04:38Z  reverse: CP phase from a second modulus via flux relation U1 U2 = b3/a0 (2405.18813)
