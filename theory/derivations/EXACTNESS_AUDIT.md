@@ -21,7 +21,7 @@ Method key: MS = exact Mukhanov–Sasaki via spectra() (exact_ns_d588 family); S
 | 16 | SERAPIS-E frozen band (lock D693) | D692/D693 | MS | ok |
 | 17 | F-term-tilt alternative n_s 0.968–0.973, α_s −(2.4–4.5)e-3 | D684 | SR1 | flag: low priority (rejected candidate) |
 | 18 | Log-derivative plateau | D758 | SR1 | to be retired (queue 8) |
-| 19 | Self-diluted ρ: n_s 0.967–0.970, r 5.1–5.6e-4 | D781/D793 | SR1 (was MISLABELLED "exact spectra") | **FIXED label (D812); FLAG: recompute MS** |
+| 19 | Self-diluted ρ: n_s 0.967–0.970, r 5.1–5.6e-4 | D781/D793 | SR1 (was MISLABELLED "exact spectra") | MS done D813: 0.9664–0.9699, r 5.20–5.66e-4 ✓ |
 | 20 | "Detecting r ≈ 5e-4 requires σ(r) ~ 1e-4, beyond planned experiments" | — | — | **FLAG: inconsistent with prediction_sheet (LiteBIRD σ(r) ≈ 5e-5 optimistic → ~10σ); check the literature** |
 
 Priority for recomputation (one per tick, locked, MS via spectra()): 19 → 14 → 8/9 → 11 → 13 → 20 (literature) → 17/10.

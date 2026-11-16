@@ -8170,3 +8170,19 @@ Method: each n_s/r/α_s/β_s in serapis_v3.tex was traced to its D-note and scri
 - Paper-internal inconsistency found: "Detecting r ≈ 5e-4 requires σ(r) ~ 1e-4, beyond planned experiments" versus prediction_sheet "LiteBIRD σ(r) ≈ 5e-5 (optimistic) → ~10σ". Literature check queued.
 REF: cold re-read of the changed sentence. It matches late_reheat_d781.py, and the build is clean.
 MAP: node=serapis_e status=corrected touches=[] ripple=no
+
+## D813 (ACCURACY TRACK, queue 6a; Jl tick 52, manual "Jl"; locked PREREG_D813; results/selfdil_ms_d813.txt): the self-diluted ρ band recomputed with EXACT Mukhanov–Sasaki: n_s 0.9664–0.9699, r (5.20–5.66)e-4, α_s −(1.08–1.18)e-3. The shifts from SR1 are small; the paper now says "exact" truthfully
+K4: C = 1.0e-6, N* = 48.4 gives n_s 0.9701, r 4.754e-4, α_s −9.88e-4, identical to D692 ✓ (D692 code unchanged; 43 s).
+MS results (N* = 44.89 / 45.15 / 45.55):
+- C = 1.0e-6: n_s 0.9664 / 0.9667 / 0.9671; r 5.31 / 5.27 / 5.20e-4.
+- C = 1.15e-6: n_s 0.9678 / 0.9681 / 0.9685; r 5.48 / 5.44 / 5.37e-4.
+- C = 1.3e-6: n_s 0.9692 / 0.9695 / 0.9699; r 5.66 / 5.62 / 5.55e-4.
+- α_s = −(1.08–1.18)e-3; y* = 13.7–13.9.
+Versus D793 SR1: Δn_s = −0.0003 to −0.0004; Δr = +1.3 to +1.6%. This is within the locked expectation (|Δn_s| ≤ 0.002, |Δr|/r ≤ 10%) ✓.
+Paper:
+- the band in the abstract, Limitations and table row d is now n_s 0.966–0.970, r (5.2–5.7)e-4;
+- the Limitations sentence says "exact Mukhanov–Sasaki spectra, D813; α_s = −(1.08–1.18)e-3";
+- "pending" is removed.
+Prediction sheet updated, with the D805 σ-distance recomputed: −3.1 … −1.5σ versus CMB-SPA+DESI. The post-hoc ρ history is now slightly more disfavoured by the DESI-shifted n_s.
+REF: cold re-read of the three changed passages against this table: they match. Build clean.
+MAP: node=lepto_rho status=computed touches=[serapis_e] ripple=no

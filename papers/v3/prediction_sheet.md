@@ -55,10 +55,10 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 
 ## Post-hoc ρ-branch alternative (D792–D793, 16 Nov 2026; NOT locked, scored only on future data)
 "SERAPIS-E/ρ, self-diluted". The Z₃-charged inflaton acts as an Affleck–Dine condensate; the late, string-scale-suppressed decays of the Z₃-charged heavy ν dilute and release the baryon asymmetry (T₂ ≈ 150–1100 GeV).
-- n_s = 0.967–0.970; r = (5.1–5.6)×10⁻⁴ (outside the frozen D693 band; inside the family strip and cap).
+- n_s = 0.966–0.970; r = (5.2–5.7)×10⁻⁴; α_s = −(1.08–1.18)×10⁻³ (exact MS, D813; outside the frozen D693 band; inside the family strip and cap).
 - Wino: thermal, 0.67–1.85 TeV (5–41% of DM).
 - Baryogenesis: spontaneous CP (initial offset ≥ 0.15 from Re τ = ½); no extra fields.
 
 
 ## Data check D805 (16 Nov 2026; comparison only, frozen predictions unchanged)
-2512.05108: CMB-SPA 0.9693 ± 0.0029, CMB-SPA+DESI 0.9737 ± 0.0025 (shifts +0.3σ from the references). Frozen band 0.970–0.975: −1.48 … +0.52σ vs CMB-SPA+DESI (centred). Post-hoc ρ self-diluted 0.967–0.970: −2.7 … −1.5σ vs CMB-SPA+DESI.
+2512.05108: CMB-SPA 0.9693 ± 0.0029, CMB-SPA+DESI 0.9737 ± 0.0025 (shifts +0.3σ from the references). Frozen band 0.970–0.975: −1.48 … +0.52σ vs CMB-SPA+DESI (centred). Post-hoc ρ self-diluted 0.966–0.970 (MS, D813): −3.1 … −1.5σ vs CMB-SPA+DESI.

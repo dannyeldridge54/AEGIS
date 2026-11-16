@@ -516,3 +516,11 @@ Touches: serapis_e.
 3. D781/D793 use SR1, not MS [derived] (late_reheat_d781.py line 15).
 4. Six numbers are flagged for MS [derived].
 Touches: serapis_e.
+
+## D813: exact self-diluted spectra (accuracy track)
+1. MS solver verbatim from D632/D692 [derived] (K4 passes).
+2. N* from D793 (late-matter phase to T₂) [derived] (D781).
+3. MS gives n_s 0.9664–0.9699, r 5.20–5.66e-4, α_s −(1.08–1.18)e-3 [derived] (computed).
+4. SR1 error: Δn_s ≈ −0.0004, Δr ≈ +1.5% [derived].
+5. Versus CMB-SPA+DESI: −3.1 … −1.5σ [derived].
+Touches: lepto_rho, serapis_e.
