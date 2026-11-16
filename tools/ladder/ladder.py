@@ -99,6 +99,8 @@ def card(m, applied):
         ch.append(f"D{dn}: {byid[node]['title']} → {status}")
     c["changed_since_freeze"] = ch[-12:]
     c["open_rechecks"] = [n["title"] for n in m["nodes"] if n.get("flag")]
+    import datetime
+    c["updated"] = datetime.date.today().isoformat()
     json.dump(c, open(CARD, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
 def main(argv=None):

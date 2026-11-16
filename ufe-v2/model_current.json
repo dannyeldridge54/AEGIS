@@ -1,8 +1,8 @@
 {
  "model": "SERAPIS (modular inflation; vacuum at a fixed point of the torus shape)",
- "updated": "2026-11-15",
- "status": "Frozen predictions, scored only on data published after 15 Nov 2026. A proposed model, not an established result.",
- "paper": "papers/v3/serapis_v3.pdf; Zenodo doi:10.5281/zenodo.24250733",
+ "updated": "2026-11-16",
+ "status": "Frozen predictions, scored only on data published after 15 Nov 2026. A proposed model, not an established result. 16 Nov deep work (D828–D882): plateau has no identified string origin (uplift-sector postulate); τ = i a conditional variant; CP source P1′ (racetrack axion); ρ baryogenesis via LH_u Affleck–Dine inside the band (post hoc). Frozen numbers unchanged.",
+ "paper": "papers/v3/serapis_v3.pdf (v3.1); Zenodo doi:10.5281/zenodo.24281771; v3.2 draft held (papers/v3/serapis_v3.2_draft.pdf)",
  "predictions": {
   "n_s": "0.970-0.975",
   "r": "(4.6-5.7)e-4",
