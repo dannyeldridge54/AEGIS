@@ -620,3 +620,12 @@ Touches: none.
 4. In V_up = |F|²K^{XX̄}, additive means E in the numerator; P3 needs it in the denominator [derived].
 5. P3 is not supported at one loop; P3.2 sets up the actual amplitude [derived].
 Touches: plateau_origin, serapis_e.
+
+## D829: P3.2 anti-D3 amplitude (P3 deep project)
+1. Anti-D3–D3/O3 interaction on T² is the torus Green's function, closed-channel s = 1 shifted lattice sums [literature] (Polchinski §7.2; D828).
+2. Half-period sum S(U) = −2 ln 2 for all U (θ₂θ₃θ₄ = 2η³) [derived] (computed, PREREG_D829).
+3. Case A V ∝ Δ(U) = −ln(y|η|⁴), linear in y at the cusp [derived].
+4. Case B V ∝ 5Δ + 5S − 4G(½), non-monotone [derived].
+5. Enters V additively; K_XX̄ unchanged at this order [derived].
+6. P3's inverted form does not arise at one loop [derived].
+Touches: plateau_origin, serapis_e, eps_tilt.

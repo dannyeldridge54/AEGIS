@@ -26,7 +26,7 @@ Not derivable (tests only): P1 CP phases (DUNE/Hyper-K), halo_profile (astrophys
 Goal: decide from a string computation whether the anti-D3 (nilpotent goldstino) sector's τ-dependence can give K^{XX̄} = a − b/E(τ,2) (P3), and whether a log correction (D686) supplies the τ = i tilt and mass.
 Steps (one per tick; lock before any computation; honest labels):
 - P3.1 [done D828] Literature: one-loop open-string vacuum amplitudes (annulus/Möbius) for D3/anti-D3/O3 systems on T⁶/(Z₂×Z₂) or T²-factorised orientifolds; brane supersymmetry breaking (Sugimoto; Antoniadis–Dudas–Sagnotti; Angelantonj–Sagnotti review). How does the vacuum energy (or goldstino metric) depend on the complex structure U? Which lattice sums appear (E(U,s), with characters for brane positions)?
-- P3.2 [open] Set up the anti-D3 + D3/O3 annulus + Möbius amplitude for our configuration (5/5/5 + 1 stuck D3s; anti-D3 at a fixed point). Write the U-dependence as lattice sums with characters (as BHK, D689). Derive its sign and its large-y behaviour.
+- P3.2 [done D829] Set up the anti-D3 + D3/O3 annulus + Möbius amplitude for our configuration (5/5/5 + 1 stuck D3s; anti-D3 at a fixed point). Write the U-dependence as lattice sums with characters (as BHK, D689). Derive its sign and its large-y behaviour.
 - P3.3 [open] Placement: does it enter V additively (Casimir-like), multiply V, or renormalise K_XX̄? Compare with the required a − b/E form (D797).
 - P3.4 [open] Compute it numerically (locked) and compare its shape with 1 − E(ρ)/E(τ) and with the τ = i εI₁ log form.
 - P3.5 [open] Verdict on P3 (retire / keep / replace), with a paper note for v3.2.
