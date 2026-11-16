@@ -307,7 +307,7 @@ nodes:
   branch:
   - i
   title: 'Leptogenesis at τ=i: inflaton decay marginal, AD robust'
-  status: estimate
+  status: computed
   d:
   - D728
   - D738
@@ -328,14 +328,15 @@ nodes:
   - D863
   - D864
   - D899
+  - D900
   depends:
   - reheat_i
   - n_sector_i
   - eta_n
   history:
-  - 'D863: assumed'
   - 'D864: assumed'
   - 'D899: estimate'
+  - 'D900: computed'
 - id: sterile_rho
   layer: 4
   branch:
@@ -523,7 +524,7 @@ nodes:
   - 'D750: frozen'
   - 'D786: frozen'
   - 'D824: frozen'
-  flag: recheck (D899, lepto_i)
+  flag: recheck (D900, lepto_i)
 - id: wino_window
   layer: 5
   branch:

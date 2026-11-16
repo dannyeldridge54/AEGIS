@@ -14,3 +14,9 @@ Scope and method: the whole serapis_v3.2_draft.tex (89 kB) checked section again
 - Σm_ν = 0.0587 eV (NO floor) and the DESI bound agree in body and sheet.
 - N* = 46–49 (τ = i), 48.4–49.9 (ρ frozen) are used consistently with their stated origins.
 - ε at τ = i (abstract and body) and the ρ numbers updated in D898 agree.
+
+## Responses (D900–D901)
+1. RESOLVED. Locked recomputation D900: at the corrected τ = i reheating T_R = (0.8–3)e6 GeV the window is m_ν₁ ≈ 1.6e-10–2.7e-9 eV, and the D653 thermal check still passes (φ/T ≥ 4.9e4). AD section, Consequence paragraph (now gives both vacua's windows) and prediction_sheet row 15 updated; D646's numbers kept as the record at the old T_R.
+2. FIXED: proton paragraph now gives T_R ≈ (0.8–3)e6 GeV from the unsuppressed decay (D727), superseding D690's 1e5 GeV.
+3. FIXED: CP-phase paragraph now says ρ's LH_u AD route needs a spontaneous condensate phase.
+4. FIXED: cap paragraph marks the self-diluted ρ history as superseded (D895).
