@@ -58,6 +58,7 @@ nodes:
   - 'D837: assumed'
   - 'D838: assumed'
   - 'D839: assumed'
+  flag: recheck (D857, lepto_i)
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -188,7 +189,7 @@ nodes:
   - 'D811: computed'
   - 'D812: corrected'
   - 'D835: computed'
-  flag: recheck (D839, plateau_origin)
+  flag: recheck (D857, lepto_i)
 - id: janus
   layer: 2
   branch:
@@ -304,14 +305,15 @@ nodes:
   - D795
   - D854
   - D855
+  - D857
   depends:
   - reheat_i
   - n_sector_i
   - eta_n
   history:
-  - 'D795: computed'
   - 'D854: assumed'
   - 'D855: assumed'
+  - 'D857: assumed'
 - id: sterile_rho
   layer: 4
   branch:

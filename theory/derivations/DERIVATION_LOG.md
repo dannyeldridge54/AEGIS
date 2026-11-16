@@ -842,3 +842,12 @@ Touches: lepto_i, lepto_rho.
 2. ρ branch stated not to use the phase [derived] (D792, D855).
 3. Rebuilt clean, changelog and PDF updated [derived].
 Touches: none.
+
+## D857: M.1 moduli requirements (moduli-consistency project)
+1. Untwisted 4-cycle moduli Im T_i ≈ A_jA_k/g_s; v₄ = A₂A₃ [derived] (standard IIB O3/O7; O(2π) factors estimate).
+2. Requirements from D696, D835, D845, D852, D783 tabulated [derived].
+3. Conflict A: no untwisted 4-cycle can host the CP-odd racetrack if BHK and the anti-D3 bound both hold [derived].
+4. Conflict B: E3 masses on the racetrack cycle scale as W0^N; need W0 ≈ 0.07–0.3, outside the D845 scan [derived].
+5. D689's Im S convention (1.13 at g_s = 0.1) unexplained; flagged [estimate].
+6. Escapes: twisted blow-up cycles, no anti-D3, fractional instantons [estimate].
+Touches: lepto_i, serapis_e, plateau_origin.

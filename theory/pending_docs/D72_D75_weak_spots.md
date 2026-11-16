@@ -8782,3 +8782,18 @@ MAP: node=lepto_i status=assumed touches=[lepto_rho] ripple=no
 ## D856 (v3.2 draft, V.5): D854/D855 folded into the draft
 Applied: CP paragraph adds the τ = i two-cycle-class condition (D854) and states that the ρ branch does not use the phase (D792, D855); the 80% figure stays a statement about the phase only. Leptogenesis caveat now says "on the τ = i branch" with two cycle classes. τ = i conditional bullet lists the condition. Rebuilt: 16 pages, no undefined references, no overfull boxes; CHANGELOG_v3.2.md and PDF updated. Not uploaded.
 MAP: none
+
+## D857 (DEEP, M.1): moduli requirements table; two conflicts flagged
+Derivation only. Conventions [derived, standard IIB O3/O7 on T²×T²×T²]: torus areas A₁ (inflaton torus), A₂, A₃ in string units; the three untwisted 4-cycle Kähler moduli are Im T₁ ≈ A₂A₃/g_s, Im T₂ ≈ A₁A₃/g_s, Im T₃ ≈ A₁A₂/g_s (O(2π) factors not fixed here [estimate]); v₄ (D833) = A₂A₃ = g_s·Im T₁. D689's ρ is the inflaton torus's Kähler modulus (∝ A₁). Unresolved convention: D689 writes "g_s = 0.1 (Im S = 1.13)", not Im S = 1/g_s = 10; the factor ≈ 9 is not explained in D689 and must be fixed in M.2 [flag].
+| # | Source | Requirement | In areas (g_s = 0.1) |
+|---|---|---|---|
+| 1 | D696, D830 (BHK tilt, stacks (5,2)) | Im S·Im ρ₁ ≈ 560–975 | A₁ ∝ Im ρ₁ ≈ 56–98 (Im S = 10) or 500–860 (D689's Im S = 1.13) |
+| 2 | D833, D835 (anti-D3 safe, only if the anti-D3 is present) | v₄ = A₂A₃ ≳ 2e4·g_s | A₂A₃ ≳ 2000 |
+| 3 | D845, D851 (CP-odd racetrack on cycle T, W0 = 1e-4–1e-2, N = 5–10) | Im T ≈ N ln(1/W0)/2π ≈ 4–15 (t ≈ 10 in the examples) | the racetrack 4-cycle has A_jA_k ≈ 0.4–1.5 |
+| 4 | D852, D854 (heavy-ν Majorana mass from an E3 on the racetrack cycle) | M ≈ x M_s e^{−2πn Im T} ≈ 6e10 (τ = i, D745) – 5e13 GeV (D731) | needs 2πn Im T ≈ 6–12, i.e. n Im T ≈ 1–2 |
+| 5 | D783 (string scale) | M_s ≈ 5.6e15–2.6e16 GeV (isotropic-volume estimate) | used in row 4 |
+Conflict A (racetrack cycle vs BHK and anti-D3) [derived, up to O(2π) factors]: the racetrack needs a 4-cycle with A_jA_k ≈ 1. T₁'s cycle has A₂A₃ ≳ 2000 if the anti-D3 is present (row 2); T₂ and T₃ contain A₁ ≈ 56–860 (row 1), forcing A₃ or A₂ ≲ 0.02, sub-stringy. So NO untwisted 4-cycle can host the CP-odd racetrack when rows 1 and 2 both hold. Without the anti-D3 (row 2 dropped), T₁ with A₂A₃ ≈ 1 is allowed.
+Conflict B (instanton masses vs racetrack scale) [derived]: on one cycle the E3 action is N times the condensate exponent, so M/M_s ≈ (e^{−2π Im T/N})^N ≈ W0^N. Row 4 needs W0^N ≈ 2e-6–3e-3, i.e. W0 ≈ 0.07–0.3 for N = 5–10, outside D845/D851's scanned W0 ≤ 1e-2, and with Im T ≈ 1–2 (marginal control). D851's and D852's statistics were computed in a W0 range in which an E3 on the racetrack cycle gives M ≲ 1e-4 M_s·(1e-4)^{N−1}: far too light.
+Escapes to test in M.2 [estimate]: (i) twisted (blow-up) Kähler moduli at the orbifold fixed points, which are small cycles and natural hosts for racetracks and fractional instantons (e^{−2π Im T/k}); (ii) drop the anti-D3 (P3 picture) or accept large v₄ only; (iii) fractional E3s on the racetrack cycle.
+Status: M.1 done. Two genuine tensions between today's P1′ mechanism and the BHK/anti-D3 requirements, both conditional (anti-D3 present; E3 on the racetrack cycle). No frozen prediction is affected.
+MAP: node=lepto_i status=assumed touches=[serapis_e,plateau_origin] ripple=no

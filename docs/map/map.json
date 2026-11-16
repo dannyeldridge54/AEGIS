@@ -74,7 +74,8 @@
     "D837: assumed",
     "D838: assumed",
     "D839: assumed"
-   ]
+   ],
+   "flag": "recheck (D857, lepto_i)"
   },
   {
    "id": "logderiv_plateau",
@@ -245,7 +246,7 @@
     "D812: corrected",
     "D835: computed"
    ],
-   "flag": "recheck (D839, plateau_origin)"
+   "flag": "recheck (D857, lepto_i)"
   },
   {
    "id": "janus",
@@ -402,7 +403,8 @@
     "D794",
     "D795",
     "D854",
-    "D855"
+    "D855",
+    "D857"
    ],
    "depends": [
     "reheat_i",
@@ -410,9 +412,9 @@
     "eta_n"
    ],
    "history": [
-    "D795: computed",
     "D854: assumed",
-    "D855: assumed"
+    "D855: assumed",
+    "D857: assumed"
    ]
   },
   {
