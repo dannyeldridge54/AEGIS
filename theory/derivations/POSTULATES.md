@@ -13,3 +13,4 @@ Falsifiers:
 - the SERAPIS tadpole budget (5/5/5 + 1, D698) leaves no room for the a⁰, b₃ fluxes;
 - the flux relation spoils inflation: U₂ tracks U₁ during the roll (forward check, D765);
 - leptonic CP conservation established (δ ∈ {0, π}), which would favour integer flux ratios.
+- P2 update (D765): the strong form (U₁ = inflaton in the flux relation) CONFLICTS with the frozen SERAPIS-E bands (r ≈ 6.5–7.5e-4). P2 is restricted to the relation on non-inflaton moduli (U₂U₃ = b₃/a⁰), to be tested by the next reverse tick.

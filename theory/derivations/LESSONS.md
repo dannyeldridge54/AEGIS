@@ -12,3 +12,5 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D763: write a postulate's falsifier as "what result would favour the ALTERNATIVE". It is sharper than "what would disfavour the postulate".
 - 2026-11-16 D764: "j(τ) real ⇔ CP-conserving" is a one-line, modular-invariant CP test. Use it instead of basis-dependent coupling phases.
 - 2026-11-16 D764: when a mechanism ties a new field to the inflaton (here U₂ = c/U₁), check at once whether it changes the inflaton's kinetic term. Queue a forward check before trusting the old n_s and r.
+- 2026-11-16 D765: an imported vacuum relation that involves the inflaton changes the kinetic term, here doubling the Kähler metric and r. Check every new constraint against the inflaton direction before using it for other sectors.
+- 2026-11-16 D765: when reusing a solver under a new field map, grep it for hard-coded maps (s2, start values) and write the DEVIATIONS before the first run, not after a crash.

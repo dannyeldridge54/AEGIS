@@ -183,16 +183,19 @@
     "E"
    ],
    "title": "SERAPIS-E potential (Epstein + BHK tilt)",
-   "status": "computed",
+   "status": "frozen",
    "d": [
     "D692",
-    "D693"
+    "D693",
+    "D765"
    ],
    "depends": [
     "plateau_origin",
     "bhk_tilt"
    ],
-   "flag": "recheck (D764, lepto_rho)"
+   "history": [
+    "D765: frozen"
+   ]
   },
   {
    "id": "janus",
@@ -442,7 +445,8 @@
    "history": [
     "D762: assumed",
     "D764: assumed"
-   ]
+   ],
+   "flag": "recheck (D765, serapis_e)"
   },
   {
    "id": "gravitino_wino",

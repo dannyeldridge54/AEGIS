@@ -7364,3 +7364,19 @@ VERDICT (locked rule): P1 REPLACED by P2. P2 takes the mechanism from the litera
 - Still assumed (P2 open), but the postulate is narrower and has falsifiers.
 Mirror question (forward, next tick): if U₂ = (b₃/a⁰)/U₁ holds DURING inflation, U₂ moves with the inflaton. Derive the effective kinetic term (−ln Im U₂ is a modular image of −ln Im U₁, so it adds the same hyperbolic metric, i.e. α → α + 1?) and the change in n_s and r for SERAPIS-E. Alternatively, is the relation only imposed at the minimum (heavy U₂ direction)?
 MAP: node=lepto_rho status=assumed touches=[lepto_i, serapis_e] ripple=no
+
+## D765 (FORWARD, i-side; Jl tick 4; locked PREREG_D765 + DEVIATIONS D1–D2; results/flux_rel_inflation_d765.txt, run1 CRASH kept) — CORRECTION: if P2's flux relation ties U₂ to the inflaton, SERAPIS-E leaves its frozen bands (r doubles)
+Derivation: with U₂ = c/U₁, −ln Im U₂ = −ln Im U₁ + (Kähler transformation), so K_eff = −2 ln Im U₁. The metric doubles and y = e^{φ} replaces e^{√2φ}.
+Deviations: D1 corrected the solver's field map; D2 moved the start to y = 13 after run 1 overflowed (numerical only; both written before reruns).
+Computed (same MS solver and grid as D692):
+- C = 0: n_s 0.9615 / 0.9626, r 6.90 / 6.52e-4 at N* 48.4 / 49.9 (y* ≈ 10.1–10.2).
+- C = 1.0e-6: n_s 0.9639 / 0.9651, r 7.36 / 6.98e-4.
+- C = 1.3e-6: n_s 0.9647 / 0.9659, r 7.51 / 7.13e-4.
+- vs D692 (single metric) at C = 1.3e-6: n_s 0.9731 / 0.9746, r 5.12 / 4.92e-4.
+Analytic check: N ≈ ζ(4)y²/(2k²) and ε ≈ 1/(8k²N²), so k² = 2 → 1 doubles ε. Untilted r goes 3.75 → 6.90e-4 (×1.84; the tilt and the exact solver account for the rest), and y* 13.8 → 10.1 (√2 is 1.41; got 1.37). Consistent.
+VERDICT (locked rule): CORRECTION.
+- With the flux relation enforced during inflation, no natural C keeps both bands. The tilt moves n_s only ~2.5e3 per unit C (E is smaller at y* ≈ 10). Reaching n_s 0.970 needs C ≈ 3.4e-6, where r ≈ 8.5e-4, above the frozen r band (4.55–5.12e-4) and the 8.3e-4 cap.
+- So P2 in its strong form ("U₁U₂ = b₃/a⁰ with U₁ the inflaton") CONFLICTS with SERAPIS-E. The frozen bands are untouched.
+Viable P2 variant to test next (reverse): put the flux relation on two moduli that are NOT the inflaton (U₂U₃ = b₃/a⁰ with U₂ at its own fixed point), so U₁'s metric stays single.
+Alternatively, the relation is lifted by a mass below H_inf, but then U₂ is light during inflation (isocurvature risk; F4).
+MAP: node=serapis_e status=frozen touches=[lepto_rho] ripple=no

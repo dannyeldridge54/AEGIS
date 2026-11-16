@@ -43,3 +43,16 @@ Touches: lepto_i (→ assumed), lepto_rho.
 8. With 7, D731's requirement sin δ ≥ 0.01–0.56 is met for generic non-divisible fluxes [estimate] (the map from s_CP to δ is not computed; O(1) is assumed).
 9. [derived] Consistency: D762 (τ on the CP locus ⇒ no phase from τ) holds, since the phase comes from U₂, not U₁. D763's need for high-energy phases is met by 7. No contradiction.
 Touches: lepto_rho, lepto_i, serapis_e (flux relation during inflation, open).
+
+## D765 — the flux relation during inflation (forward side)
+1. K = −ln Im U₁ − ln Im U₂ [literature] (factorised T⁶ complex structure).
+2. Impose U₂ = c/U₁ (c real), from the F-term relation of 2405.18813 [postulate P2].
+3. Im U₂ = |c|·Im U₁/|U₁|², so −ln Im U₂ = −ln Im U₁ + ln U₁ + ln Ū₁ − ln|c| [derived].
+4. ln U₁ + ln Ū₁ is a Kähler transformation, so K_eff ≅ −2 ln Im U₁ [derived].
+5. Canonical field: dφ = √(n/2)·dy/y with n = 2, so y = e^{φ} (was e^{√2φ}) [derived].
+6. The plateau 1 − V ≈ 1/E ≈ 1/(2ζ(4)y²) gives N ≈ ζ(4)y²/(2k²) and ε ≈ 1/(8k²N²) with y = e^{kφ} [derived].
+7. k: √2 → 1 gives ε ×2, r ×2, y* ×1/√2 [derived].
+8. Numerical (exact MS): r 6.5–7.5e-4, n_s 0.9615–0.9659 for C ≤ 1.3e-6 [derived] (computed; agrees with 7 within the tilt effect).
+9. The frozen band needs n_s 0.970–0.975 with r 4.55–5.12e-4; no C ≤ 4e-6 meets both [derived].
+10. [derived] Consistency: D692 is reproduced as the n = 1 limit (same code path). D764's CP result stands; only the assignment of the relation to the inflaton modulus fails.
+Touches: serapis_e (frozen; unchanged), lepto_rho (P2 restricted).
