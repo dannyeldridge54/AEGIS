@@ -1567,3 +1567,7 @@ Touches: none.
 ## D974: α_s convergence (locked) NOT CONVERGED
 - [computed] bd 200/1000/5000: SERAPIS-E α_s −10.35/−9.02/−9.34 e-4; Chronos −8.69/−9.35/−9.75 e-4; n_s, r converged.
 - Result: published α_s consistent at ~5%; new method (exact dS start) needs a new lock.
+
+## D975: Project H implies a smaller physical tilt coefficient
+- [derived] C = λ′C₀ ≤ 2.0e-7; Im S Im T ≥ 4904 (vs 750–975).
+- Result: Project H version of SERAPIS-E needs ~6× larger Im S Im T; D961's fixed-C rows test the stronger-ramp regime; refit-C version needs a new lock.

@@ -9816,3 +9816,12 @@ Locked verdict: |α(5000)/α(1000) − 1| = 3.6% (SERAPIS-E), 4.3% (Chronos) > 2
 Status: published α_s values stand as "consistent at the ~5% level"; frozen predictions unchanged; n_s and r converged.
 LESSONS: a convergence test can fail without contradicting the result it tests; report the precision it does establish.
 MAP: none
+
+## D975 (Project H, consequence): realising SERAPIS-E through Project H fixes the physical BHK tilt to C = λ′C₀ ≤ 0.173 × 1.15e-6 = 2.0e-7, i.e. Im S Im T ≳ 4900 for the four-brane excess (vs 750–975 in v3.2): a ~6× larger product of moduli, otherwise the same model
+(Lock PREREG_D975 belongs to the queued α_s exact-start run; numbering differs, as in D710.)
+[derived] Project H's potential is P3(λ′Ê)(1 + CÊ) = P3(X)(1 + (C/λ′)X) with X = λ′Ê (D946/D947). The published fit uses P3(Ê)(1 + C₀Ê), C₀ = 1.0–1.3e-6. On the plateau the two agree at leading order when C/λ′ = C₀, so the physical one-loop coefficient is C = λ′C₀. The full-mass route has λ′ ≤ 1/E(ρ,2) = 0.1729 (D947), so C ≤ 1.99e-7 (for C₀ = 1.15e-6).
+[derived] (arithmetic) With C = 15N/(64π⁶ Im S Im T) and the four-brane excess N − N₀ = 4 (D696): Im S Im T ≥ 60/(64π⁶ × 1.99e-7) = 4904 (check: the published C₀ = 1.0–1.3e-6 gives 750–975, reproduced).
+[computed, diagnostic in D961 DEVIATIONS] At FIXED C, smaller λ′ shortens inflation (63.8, 49.1, 33.5 total e-folds for λ′ = 1, 0.173, 0.05 from the same start), which is this effect seen directly: λ′ < 1 with unchanged C means a stronger effective ramp.
+Consequence: Project H is consistent with SERAPIS-E's observables only with moduli about six times larger in Im S Im T (weaker coupling and/or larger four-cycle) than the v3.2 tadpole placement; this is a parameter shift, not a contradiction, but it changes the D696 "natural size" statement for Project H's version, and the vacuum-mass shift of N* (D956, D961) must be evaluated with C = λ′C₀, not fixed C. The queued D961 rerun uses fixed C (as locked); its λ′ < 1 rows will therefore show the stronger-ramp regime, and a refit-C version needs its own lock.
+LESSONS: when a mechanism rescales an invariant, recompute what the fitted coefficients mean physically before comparing scenarios at fixed coefficients.
+MAP: none
