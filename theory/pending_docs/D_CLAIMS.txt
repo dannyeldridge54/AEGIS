@@ -119,3 +119,4 @@ D832  2026-11-16T14:43Z  P3.5 verdict
 D833  2026-11-16T14:48Z  K.1 kappa normalisation
 D834  2026-11-16T14:49Z  K.3 tau=i mass from anti-D3
 D835  2026-11-16T14:53Z  K.4 anti-D3 wall in SERAPIS-E
+D836  2026-11-16T14:56Z  K.5 kappa verdict
