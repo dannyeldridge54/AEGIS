@@ -8254,3 +8254,7 @@ Exactness pass summary (D812–D817), every flagged paper number now MS:
 The SR1 bias on these plateaus is uniform: n_s +0.0003, r −1.3%. No conclusion changed.
 REF: cold re-read of the D722 sentence: matches. Build clean.
 MAP: node=n_sector_rho status=computed touches=[] ripple=no
+
+## D818 (claimed for the r-detectability check, queue 6b): DEFERRED
+Danny interrupted the tick at 07:13 CT ("Referee pass edit the publisher papers"). The LiteBIRD search had begun, but its fetch was stopped. No result. Queue 6b stays open.
+MAP: none
