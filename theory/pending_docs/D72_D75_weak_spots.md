@@ -9379,3 +9379,13 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 2. D914, the torus flux norm |m + nU|²/Im U: STRUCTURE SUPPORTED, form not quoted [literature + estimate]. Kachru–Schulz–Trivedi-type T⁶/Z₂ analysis (hep-th/0303016): W = ∫G∧Ω is multilinear in the complex structures (eq. 4.19, e.g. W ∝ −τ − T³ − T¹T²T³ − τT¹T²), the G-kinetic term carries 1/Im τ (eq. 3.8) and V has the period-matrix form of eq. 3.12. A per-factor |a + bU|²/Im U dependence follows from that structure but is not written out there. D914's conclusion (a single lattice term, not a lattice sum like E(U,2)) stands.
 Remaining unverified "from memory" items in the D-notes, in priority order (those touching the published v3.2 first): D657 (anomaly-free non-R discrete symmetries cannot forbid dangerous operators: Lee–Raby–Ratz et al.); D749 ("CMB-S4 is no longer planned"); D754/D755 (heterotic Green–Schwarz Kähler form); D760 (E₂ in K vs log η in R²); D752 (Ω_GW conversion); D771 (exotic O-plane types). Already superseded: D650 (wino bound now cited, 2603.08315), D736, D879 (replaced by D880/D895).
 MAP: none
+
+## D657a (correction to D657, found in audit M.2): non-R discrete symmetries CAN forbid the dangerous operators
+D657 said, from memory, that anomaly-free non-R discrete symmetries cannot forbid the dimension-4/5 proton-decay operators while allowing the MSSM couplings (citing Lee, Raby, Ratz et al. without checking). The source says otherwise [literature] (1102.3595): proton hexality is "the unique anomaly free discrete non-R symmetry forbidding the dangerous operators while allowing the usual Yukawa couplings" (it also allows the μ term and the Weinberg operator); what a non-R Z_M cannot do is address the μ problem. D656/D657's computed result (0 anomaly-passing Z₄ or Z₈ assignments from the modular centre) stands; its explanation changes: proton hexality is a Z₆, which the centre of the modular group (order 2, or 4 with the multiplier) cannot supply. The published v3.2 sentence "as expected for a non-R symmetry" is wrong; corrected in serapis_v3.3_draft.tex.
+MAP: none
+
+## D916 (audit M.2): two more memory claims checked; one correction (D657a)
+1. D657: CORRECTED (D657a), with 1102.3595 now cited in the v3.3 draft.
+2. D749 "CMB-S4 is no longer planned": CONFIRMED [literature] (Scientific American, 2025: DOE and NSF "jointly decided that they can no longer support the CMB-S4 project", statement of 10 July 2025).
+v3.3 draft opened (papers/v3/serapis_v3.3_draft.tex, copy of the published v3.2 with the D657a fix and a Table I layout tweak; builds clean, 18 pp). No Zenodo action.
+MAP: none

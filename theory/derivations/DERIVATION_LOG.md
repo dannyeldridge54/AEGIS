@@ -1262,3 +1262,10 @@ Touches: plateau_origin.
 2. W multilinear in T^i, 1/Im factors in the norm [literature] (hep-th/0303016 eqs. 3.8, 3.12, 4.19).
 3. Per-factor |a + bU|²/Im U form inferred, not quoted [estimate].
 Touches: none.
+
+## D916: audit M.2 (with D657a)
+1. Proton hexality is an anomaly-free non-R symmetry forbidding the dangerous operators [literature] (1102.3595).
+2. Non-R Z_M cannot address the μ problem [literature] (1102.3595).
+3. The modular centre cannot supply a Z₆; D656/D657 numbers stand [derived].
+4. CMB-S4 support ended 10 July 2025 [literature] (Scientific American).
+Touches: none.
