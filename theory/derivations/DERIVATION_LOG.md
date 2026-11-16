@@ -1355,3 +1355,9 @@ Touches: none.
 - [derived] (arithmetic) p = k√(2/n): only n = 4, k = 4 matches 2√2.
 - [estimate] that ray sends g_s → 0, shrinking the BHK tilt.
 - Result: D931 lead closed; no flux justification for single-U SERAPIS.
+
+## D933: no identically flat single U
+- [derived] ∂W/∂U₃ ≡ 0 ⇔ F, H ∝ dy³ ⇒ N_flux = 0 (enumeration: 0 nonzero wedges) ⇒ G = 0 for ISD flux.
+- [derived] point-wise flatness: 16 real linear conditions on 16 flux integers; one determinant condition on P.
+- [estimate] 5-parameter candidate family; integrality untested.
+- Result: partial no-go; locked integer search queued.
