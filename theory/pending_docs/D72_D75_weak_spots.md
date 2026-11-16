@@ -8090,3 +8090,19 @@ Paper:
 REF: cold re-read of the four changed passages against D713, D786 and the referee report. Numbers match; no frozen value changed; the build is clean (15 pp, no overfull, no undefined).
 Map: wino_window title "0.67–0.80 TeV, ~15%" → "0.67–1.85 TeV thermal, 5–41% (post-hoc, D784)". Flags band_e and wino_window cleared (the D807 change confirms both; the band is unchanged).
 MAP: none
+
+## D809 (ACCURACY TRACK, queue item 3; Jl tick 48, manual "Jl"; locked PREREG_D809; results/gravitino_ps_d809.txt): gravitino → wino recomputed with the full Pradler–Steffen yield; non-thermal winos ≤ 3e-4 of Ω in every current history, so the 0.67–1.85 TeV window is unchanged
+Computed:
+- K4: Y(1e10 GeV) = 1.900e-12, identical to the old fit (the fit was calibrated there). At 1e6–3e6 GeV, PS is 9–11% lower than the fit (the running couplings).
+- Goldstino enhancement Mᵢ²/(3m₃/₂²) ≤ 1.2e-4 (gauginos ≪ m₃/₂ in anomaly mediation): negligible.
+- (A) τ = i covariant, T_R = 1–3e6: Y = 1.7–5.2e-16, Ω_nth = 3e-5 – 2.6e-4.
+- (B) SERAPIS-E frozen, early T_R = 3e8–3e9 diluted to T₂ = 1e5–1e6: Y = 1.9e-17 – 1.9e-16, Ω_nth = 3e-6 – 1e-4.
+- (C) self-diluted, T₂ = 140–1100 GeV: Ω_nth ≤ 1e-7.
+VERDICT (locked rule Ω_nth < 0.01 everywhere): PASS. The gravitino → wino channel is negligible in all current histories, and the wino window 0.67–1.85 TeV (thermal; D784) is unchanged.
+D732's "M_H ~ 1e13 squeezes the wino" applied to the old fast-ρ reheating without the Z₃ late decay. That history is superseded (D780–D783), so D732's restriction no longer applies.
+Label caveats [estimate]:
+- the dilution is approximated as T₂/T_R;
+- MSSM running is taken from M_Z with thresholds ignored;
+- one wino per gravitino.
+None can move Ω_nth by the ~40× needed to matter.
+MAP: node=gravitino_wino status=computed touches=[wino_window] ripple=no

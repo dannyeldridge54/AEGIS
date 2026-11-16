@@ -503,19 +503,21 @@
     "rho",
     "E"
    ],
-   "title": "Gravitino → wino; favours M_H ~ 1e12",
-   "status": "estimate",
+   "title": "Gravitino → wino negligible (Ω_nth ≤ 3e-4, Pradler–Steffen, D809)",
+   "status": "computed",
    "d": [
     "D732",
     "D733",
-    "D786"
+    "D786",
+    "D809"
    ],
    "depends": [
     "reheat_rho",
     "covariant"
    ],
    "history": [
-    "D786: estimate"
+    "D786: estimate",
+    "D809: computed"
    ]
   },
   {
@@ -615,7 +617,8 @@
    "history": [
     "D761: estimate",
     "D784: corrected"
-   ]
+   ],
+   "flag": "recheck (D809, gravitino_wino)"
   },
   {
    "id": "tests_cmb",

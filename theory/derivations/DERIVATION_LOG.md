@@ -483,3 +483,12 @@ Touches: serapis_e, band_e, wino_window.
 3. So m₃/₂ ≤ 1.1e6 × 1.85/2.9 = 7.0e5 GeV and gluino ≤ 21 × 1.85/2.9 = 13.4 TeV [derived].
 4. τ = i Σm_ν = 0.059–0.064 eV with m₁ free [derived] (D786).
 Touches: wino_window.
+
+## D809: gravitino → wino, full yield (accuracy track)
+1. Y₃/₂ = Σ yᵢgᵢ²(1 + Mᵢ²/3m₃/₂²) ln(kᵢ/gᵢ)(T/1e10) [literature] (Pradler–Steffen hep-ph/0612291).
+2. One-loop MSSM couplings [estimate].
+3. K4 at 1e10: identical to the old fit [derived] (computed).
+4. Ω_nth = 2.74e8·M₂·Y ≤ 2.6e-4 in all histories [derived] (computed).
+5. Dilution by T₂/T_R [estimate]; the margin of ≥40× covers it [derived].
+6. Wino window unchanged; D732's 1e13 restriction is moot after D780–D783 [derived].
+Touches: gravitino_wino, wino_window.
