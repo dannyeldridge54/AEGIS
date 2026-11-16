@@ -26,3 +26,4 @@ D739  2026-11-16T03:23Z  Z3 alignment of Gamma2 doublets at rho: which weights l
 D740  2026-11-16T03:28Z  neutrino mass ordering vs Gamma2 IO preference
 D741  2026-11-16T03:31Z  light-neutrino ordering from the 2+1 Weinberg texture
 D742  2026-11-16T03:36Z  minimal extension of tau=i lepton texture for NO
+D743  2026-11-16T03:38Z  baryogenesis routes at tau=i: literature
