@@ -156,3 +156,8 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 ## P3 lead (queued 2026-11-16, D910)
 - P3.L1 [done D911: LEAD: Eisenstein term in K gives 1/E approach; pure −log E(τ,2) ghost at fixed points; mixture k > 2c, k + 2c = 2 untested]
 - P3.K1 [done D912 + D911a: FAILS (η factor makes e^G grow exponentially; ρ a maximum); P3.K route closed]
+
+## Reproducibility project RP (planned 2026-11-16 13:35 CT on Danny's "Pl")
+- RP.1 [open] Unpack the published v3.2 reproducibility zip (md5 6a57f8c6…, identical to Zenodo) in a clean directory; run the README commands and today's key locked scripts (D693/D696 SERAPIS-E band, D815, D895, D896, D900); compare each output with the stored results file (blank lines ignored). Outputs to a separate folder; no stored result is overwritten.
+- RP.2 [open] List failures and gaps (v3.2 results without a README row).
+- RP.3 [open] Fix in the repo (README rows, missing files); recommend to Danny whether a v3.2.1 archive is warranted (his decision; no Zenodo action).
