@@ -80,3 +80,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D831: compare large-y behaviour first. A wall (∝ y) and a plateau (→ const) cannot be tuned into each other by a coefficient, so the asymptotics alone decide P3 before any normalisation is known.
 - 2026-11-16 D832: a postulate that loses its proposed origin is downgraded, not retired, when the model's numbers do not depend on that origin. Say plainly which part died (the mechanism) and which stands (the plateau's phenomenology).
 - 2026-11-16 D833: normalise a new term as a RATIO to an energy that lives at the same place (here the anti-D3 tension). Frame and volume factors cancel and the answer becomes one line (κ/V0 = g_s/8πv₄).
+- 2026-11-16 D834: check the SIGN of a candidate mass before its size. The anti-D3 curvature was large enough (6e-3 > 2e-3) in one direction but tachyonic in the other; size alone would have given a false pass.

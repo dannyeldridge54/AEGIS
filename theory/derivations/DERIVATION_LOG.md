@@ -664,3 +664,11 @@ Touches: plateau_origin, serapis_e.
 5. Slope bound needs v₄ ≳ 190–200 g_s [derived] (computed, PREREG_D833).
 6. O(1) sector factors, warping and twisted sectors not included [estimate].
 Touches: plateau_origin, serapis_e, eps_tilt.
+
+## D834: K.3 τ = i mass from the anti-D3 term (κ deep project)
+1. B from D831 with stacks (5, 2) and O3 weight 4 [derived] (D830, D831).
+2. Canonical masses at y = 1: d²V/dφ² = 2V_yy, d²V/dχ² = 2V_xx [derived] (family K = −ln).
+3. z_a = 0: extremum, saddle, m²/H² = −1.48e-3 (x), +6.45e-3 (y) at κ_max [derived] (computed, PREREG_D834).
+4. z_a = ½: not an extremum [derived].
+5. Not the τ = i mass source; destabilises τ = i along x; ρ unaffected [derived] (D691, D826).
+Touches: band_i, eps_tilt, plateau_origin.

@@ -8503,3 +8503,20 @@ Interpretation: the anti-D3 wall is harmless for the band if the four small dire
 Caveats [estimate]: (a) O(1) factors in the per-sector amplitude (a factor 2 shifts v₄,min by 2); (b) V0 = 2T₃ identifies the plateau height with the unwarped anti-D3 uplift, i.e. the P3 picture; with warping the interaction and the tension warp differently, not computed; (c) twisted-sector exchange at the fixed points is not included.
 Next: K.2 is largely answered here (bound vs natural size). K.3: does the same κ give the τ = i vacuum mass m²/H² ≈ 2e-3 (D826)? The upper end of κ (v₄ near its minimum) is the most favourable case.
 MAP: node=plateau_origin status=assumed touches=[serapis_e,eps_tilt] ripple=no
+
+## D834 (DEEP, K.3): the anti-D3 term at τ = i is a SADDLE; it cannot be the τ = i vacuum mass
+Lock: PREREG_D834_antiD3_mass_i.md (committed before the run). Script theory/modular/antiD3_mass_i_d834.py, output field_tests/results/antiD3_mass_i_d834.txt.
+Results [derived], at κ/V0 = 2.07e-4 (the D833 maximum):
+| placement | ∇B at i (h = 1e-3 / 1e-4) | eig(V''/κ) | m²/H² |
+|---|---|---|---|
+| z_a = 0 | (0, 1.3e-6) / (0, 1.3e-8) | −1.193 (x), +5.193 (y) | −1.48e-3 (x), +6.45e-3 (y) |
+| z_a = ½ | (0, −3.283) both | — | not an extremum |
+1. Rule 1 (extremum): z_a = 0 gives 1.3e-6 at h = 1e-3, just above the locked 1e-6, and 1.3e-8 at h = 1e-4. The 100× drop for 10× smaller h is the O(h²) finite-difference error, so i IS an extremum; formally the rule fails at h = 1e-3 by truncation, reported as such. z_a = ½ breaks SL(2,Z) and i is NOT an extremum (rule 1 fails).
+2. Rule 2 (minimum): FAILS. z_a = 0 is a saddle, stable along y (+6.45e-3) and TACHYONIC along x (−1.48e-3). Pre-stated prediction (saddle, because V(ρ) < V(i)) CONFIRMED.
+3. Rule 3 (sufficient mass): fails, since one direction is tachyonic. The stable y-direction alone would exceed the needed 2e-3, which is why the sign, not the size, is decisive.
+4. Anisotropy: B_xx = +0.596, B_yy = −2.596. D795's accidental U(1) applies to F(|holomorphic|); B is not of that form, so anisotropy is allowed [derived].
+Consequences [derived]:
+- The anti-D3 term is NOT the τ = i vacuum-mass source (D826's last candidate). The τ = i vacuum mass now has NO candidate source in the computed sectors.
+- Worse for the τ = i variant: any anti-D3 present adds a tachyonic x-direction, m²/H² = −1.48e-3·(κ/κ_max). With D826's sources 10¹¹–10¹² short, the τ = i vacuum would be destabilised toward ρ unless κ ≪ κ_max. The ρ vacuum is unaffected (m²/H² ≈ 35, D691, ≫ 6e-3).
+- This adds a third, independent reason the anti-D3 picture favours ρ (after D831's V(ρ) < V(i)).
+MAP: node=band_i status=computed touches=[eps_tilt,plateau_origin] ripple=no
