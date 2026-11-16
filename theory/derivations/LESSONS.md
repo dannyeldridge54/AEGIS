@@ -164,3 +164,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D911a: in modular supergravity always carry the |W|² factor (η powers) into e^G before estimating cusp behaviour; it is exponential, not power-law.
 - 2026-11-16 D913: run the reproducibility check from the published archive itself, not the working repo; it is the artefact readers get.
 - 2026-11-16 D914: when a fetch is interrupted, queue the full read explicitly; D868's abstract-level entry hid that the T-brane coefficient carries U only through the flux norm.
+- 2026-11-16 D915: audit 'from memory' tags periodically, starting with any claim the published paper leans on.

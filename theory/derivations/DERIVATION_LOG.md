@@ -1256,3 +1256,9 @@ Touches: none.
 3. Torus flux norm |m + nU|²/Im U is one lattice term, not E(U,2) [estimate].
 4. P3 unchanged; both uplift carriers shape-blind for the E-ratio [derived] (D886).
 Touches: plateau_origin.
+
+## D915: audit M.1
+1. Duality as residual gauge symmetry protected from explicit breaking (d = 1) [literature] (hep-th/9401139 §2.6.1).
+2. W multilinear in T^i, 1/Im factors in the norm [literature] (hep-th/0303016 eqs. 3.8, 3.12, 4.19).
+3. Per-factor |a + bU|²/Im U form inferred, not quoted [estimate].
+Touches: none.

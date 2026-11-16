@@ -161,3 +161,9 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - RP.1 [done D913: 22/22 reproduce]
 - RP.2 [done D913: README lacked v3.2 rows]
 - RP.3 [done D913: rows added in repo; no v3.2.1 needed]
+
+## Memory-claim audit M (started 2026-11-16, D915)
+- M.1 [done D915: D780 gauge-symmetry claim supported; D914 flux-norm structure supported]
+- M.2 [open] D657 (Lee–Raby–Ratz et al. on anomaly-free non-R discrete symmetries) and D749 (CMB-S4 status): find and cite, or reword.
+- M.3 [open] D754/D755/D760 (heterotic GS Kähler form; E₂ in K vs log η in R²): check against sources or relabel as estimates.
+- M.4 [open] D752, D771: same.
