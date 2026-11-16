@@ -49,6 +49,8 @@ rp = spectra(bgp, None, Npivot=30.0)
 check('L4 power-law exact n_s', abs(rp['ns']-(1-2/(q-1))) < 1e-4, f"{rp['ns']:.6f} vs {1-2/(q-1):.6f}")
 check('L4 power-law exact r = 16/q', abs(rp['r']/(16/q)-1) < 5e-3, f"{rp['r']:.5f}")
 check('L4 power-law alpha_s = 0', abs(rp['alpha_s']) < 2e-5, f"{rp['alpha_s']:.1e}")
+rp150 = spectra(Background(lambda p: math.exp(-lamb*p), lambda p: -lamb*math.exp(-lamb*p), 0.0, Nmax=180), None, Npivot=150.0)
+check('L4 pivot-depth invariance (N=150 vs 30)', abs(rp150['ns']-rp['ns'])<1e-5 and abs(rp150['r']/rp['r']-1)<1e-3, f"{rp150['ns']:.6f}, {rp150['r']:.5f}")
 # L2: vacuum at rho with Z3-symmetric (equal) masses
 from .landscape import V_tau, find_vacuum, hessian_canonical
 Er = E_paper(0.5, 3**0.5/2)

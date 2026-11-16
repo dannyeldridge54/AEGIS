@@ -20,12 +20,12 @@ class Background:
 def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None):
     """Return dict with P_R, P_t at ln k offsets, and n_s, r, alpha_s at the pivot that exits at Nend - Nstar."""
     Np = bg.Nend - Nstar if Npivot is None else Npivot
-    _, _, _, Hp = bg.state(Np); kp = np.exp(Np)*Hp
+    _, _, _, Hp = bg.state(Np); kp = Hp   # a(N) = e^{N-Np}: normalised at the pivot (D955 D1)
     out = []
     for dl in dlnk:
         k = kp*np.exp(dl)
         # start where k/aH = 200
-        f = lambda N: k/(np.exp(N)*bg.state(N)[3]) - 200
+        f = lambda N: k/(np.exp(N-Np)*bg.state(N)[3]) - 200
         lo, hi = 0.0, Np
         for _ in range(80):
             mid = 0.5*(lo+hi)
@@ -36,12 +36,12 @@ def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None):
             p, pn, eps, H = bg.state(N)
             dV = (bg.V(p+1e-6)-bg.V(p-1e-6))/2e-6
             pnn = -(3-eps)*pn - (3-eps)*dV/bg.V(p)
-            q2 = (k/(np.exp(N)*H))**2
+            q2 = (k/(np.exp(N-Np)*H))**2
             R, Rp, h, hp = y[0]+1j*y[1], y[2]+1j*y[3], y[4]+1j*y[5], y[6]+1j*y[7]
             Rpp = -(3-eps+2*pnn/pn)*Rp - q2*R
             hpp = -(3-eps)*hp - q2*h
             return [Rp.real, Rp.imag, Rpp.real, Rpp.imag, hp.real, hp.imag, hpp.real, hpp.imag]
-        p, pn, eps, H = bg.state(N0); a = np.exp(N0)
+        p, pn, eps, H = bg.state(N0); a = np.exp(N0-Np)
         # Bunch-Davies: u = e^{-ik eta}/sqrt(2k); du/dN = -i (k/aH) u; R = u/z, z = a pn; h = u/a
         u = 1/np.sqrt(2*k); un = -1j*(k/(a*H))*u
         dV = (bg.V(p+1e-6)-bg.V(p-1e-6))/2e-6; pnn = -(3-eps)*pn - (3-eps)*dV/bg.V(p)
