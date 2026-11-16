@@ -47,12 +47,16 @@
     "E"
    ],
    "title": "Heavy-ν sector at ρ: 2⊕1, weight-2 mixing",
-   "status": "assumed",
+   "status": "computed",
    "d": [
     "D723",
-    "D724"
+    "D724",
+    "D739"
    ],
-   "depends": []
+   "depends": [],
+   "history": [
+    "D739: computed"
+   ]
   },
   {
    "id": "n_sector_i",
@@ -291,7 +295,8 @@
    ],
    "depends": [
     "n_sector_rho"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   },
   {
    "id": "darkrad_rho",
@@ -307,7 +312,8 @@
    ],
    "depends": [
     "n_sector_rho"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   },
   {
    "id": "reheat_rho",
@@ -323,7 +329,8 @@
    ],
    "depends": [
     "sterile_rho"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   },
   {
    "id": "nstar_e",
@@ -340,7 +347,8 @@
    "depends": [
     "reheat_rho",
     "serapis_e"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   },
   {
    "id": "lepto_rho",
@@ -357,7 +365,8 @@
    "depends": [
     "reheat_rho",
     "n_sector_rho"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   },
   {
    "id": "gravitino_wino",
@@ -375,7 +384,8 @@
    "depends": [
     "reheat_rho",
     "covariant"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   },
   {
    "id": "band_i",
@@ -410,7 +420,8 @@
    "depends": [
     "nstar_e",
     "janus"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   },
   {
    "id": "caps",
@@ -438,7 +449,8 @@
    "status": "frozen",
    "d": [
     "D605"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   },
   {
    "id": "wino_window",
@@ -456,7 +468,8 @@
    "depends": [
     "gravitino_wino",
     "halo_profile"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   },
   {
    "id": "tests_cmb",
@@ -474,7 +487,8 @@
    "depends": [
     "band_i",
     "band_e"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   },
   {
    "id": "tests_lhc",
@@ -490,7 +504,8 @@
    ],
    "depends": [
     "wino_window"
-   ]
+   ],
+   "flag": "recheck (D739, n_sector_rho)"
   }
  ],
  "observing": [

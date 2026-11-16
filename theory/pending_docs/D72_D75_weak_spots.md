@@ -7036,3 +7036,13 @@ Computed (D725 method at i):
 - T_R ≈ 4–5e6 GeV when an off-diagonal channel is open (M_a + M_b < m). When only the diagonal lightest pair is open, the linear decay vanishes and T_R falls back to the D601 sfermion estimate (~1e2–1e3 GeV; not recomputed; the printed 1e-4 GeV is just the residual).
 - Y_B (D728 formula): PASS only for c = 1, M1/m = 0.33 (9.7e-11, just above 8.75e-11). All other cases fail by ×2 up to ~1e11.
 VERDICT (locked rule): INCONSISTENT with D728's "natural pass". With the doublet alone, ΔM = 0 exactly at i, so ε = 0. With the consistent 2⊕1, ΔM/M ≳ 0.6, so ε is hierarchical-size and Y_B is marginal. Leptogenesis from inflaton decay at τ = i is MARGINAL (one corner passes); AD (D646) stays the robust route at i. The ρ branch (D731) is unaffected. Paper's D728 sentence needs revision.
+
+## D739 (CENTRE; locked PREREG_D739; results/doublet_weights_d739.txt) — at ρ only the weight-2 doublet can lift the massless heavy neutrino; b = 0 is natural there
+Computed (product chain Y_{k+2} = Y ⊗ Y_k → 2, at ρ):
+- k = 2: Y ∝ (1, i), overlap with the null vector n = (1, −i) is maximal; with mixing c = 1 the 3×3 matrix has rank 3. LIFTS.
+- k = 4: Y₄ ∝ (i, 1) ∝ n, so nᵀY₄ = 0 (2e-32) and the rank stays 2. CANNOT lift (confirms D724).
+- k ≥ 6: the chain vanishes at ρ (|Y₆| = 2e-18). Rank 1 with b = 0.
+Reasoning, not computed: other weight-k doublets are products with level-1 forms (E4·Y_{k−4}, E6·Y_{k−6}). Since E4(ρ) = 0 and E6(ρ) ≠ 0, the weight-8 doublet E6·Y also lifts, while E4·Y does not. Singlet N3N3 terms need level-1 forms of weight ≢ 0 (mod 6) in the consistent assignments (weight 2: none; 14: E4²E6 = 0 at ρ), so b = 0 at ρ is generic, not tuned.
+Literature: arXiv:2512.24804 (Γ2 ≅ S3 modular flavour) analyses τ = i∞ and τ = i only. It explicitly leaves the ω (≅ ρ) fixed point for future work, and its τ = i models prefer INVERTED ordering. That is a possible tension for our τ = i Γ2 completion (frozen Σm_ν assumes normal ordering), to check. I found no treatment of the rank-deficient Γ2 doublet at ω (search-only claim, one search).
+VERDICT: the 2⊕1 weight-2-mixing sector with b = 0 used in D724–D725 is the minimal and natural Γ2 structure at ρ, not an arbitrary choice. Weight-4 mixing is excluded by the residual Z3 alignment, and higher weights add nothing new. Node n_sector_rho: assumed → computed (natural within Γ2; the choice of Γ2 itself is still an input).
+MAP: node=n_sector_rho status=computed touches=[mnu]

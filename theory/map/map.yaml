@@ -29,11 +29,14 @@ nodes:
   - rho
   - E
   title: 'Heavy-ν sector at ρ: 2⊕1, weight-2 mixing'
-  status: assumed
+  status: computed
   d:
   - D723
   - D724
+  - D739
   depends: []
+  history:
+  - 'D739: computed'
 - id: n_sector_i
   layer: 1
   branch:
@@ -203,6 +206,7 @@ nodes:
   - D725
   depends:
   - n_sector_rho
+  flag: recheck (D739, n_sector_rho)
 - id: darkrad_rho
   layer: 4
   branch:
@@ -214,6 +218,7 @@ nodes:
   - D723
   depends:
   - n_sector_rho
+  flag: recheck (D739, n_sector_rho)
 - id: reheat_rho
   layer: 4
   branch:
@@ -225,6 +230,7 @@ nodes:
   - D725
   depends:
   - sterile_rho
+  flag: recheck (D739, n_sector_rho)
 - id: nstar_e
   layer: 4
   branch:
@@ -237,6 +243,7 @@ nodes:
   depends:
   - reheat_rho
   - serapis_e
+  flag: recheck (D739, n_sector_rho)
 - id: lepto_rho
   layer: 4
   branch:
@@ -249,6 +256,7 @@ nodes:
   depends:
   - reheat_rho
   - n_sector_rho
+  flag: recheck (D739, n_sector_rho)
 - id: gravitino_wino
   layer: 4
   branch:
@@ -262,6 +270,7 @@ nodes:
   depends:
   - reheat_rho
   - covariant
+  flag: recheck (D739, n_sector_rho)
 - id: band_i
   layer: 5
   branch:
@@ -287,6 +296,7 @@ nodes:
   depends:
   - nstar_e
   - janus
+  flag: recheck (D739, n_sector_rho)
 - id: caps
   layer: 5
   branch:
@@ -307,6 +317,7 @@ nodes:
   status: frozen
   d:
   - D605
+  flag: recheck (D739, n_sector_rho)
 - id: wino_window
   layer: 5
   branch:
@@ -320,6 +331,7 @@ nodes:
   depends:
   - gravitino_wino
   - halo_profile
+  flag: recheck (D739, n_sector_rho)
 - id: tests_cmb
   layer: 5
   branch:
@@ -333,6 +345,7 @@ nodes:
   depends:
   - band_i
   - band_e
+  flag: recheck (D739, n_sector_rho)
 - id: tests_lhc
   layer: 5
   branch:
@@ -344,6 +357,7 @@ nodes:
   - D736
   depends:
   - wino_window
+  flag: recheck (D739, n_sector_rho)
 observing:
 - id: mapper_dr3
   title: Gaia DR3 sweep complete (192,208,838 stars; 200/200 ESA checks)
