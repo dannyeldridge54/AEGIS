@@ -192,3 +192,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D942: one-search novelty checks are not exhaustive; say so.
 - D943: check the sign of dV/dφ before designing initial conditions.
 - D944: corrected locked design passed; the D943 failure was setup.
+- D945: image-sum weight = (D−2)/2 maps the plateau exponent to a dimension.

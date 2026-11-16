@@ -1417,3 +1417,10 @@ Touches: none.
 - [computed] Δn_s = −4.7e-6/−1.8e-5, Δr/r = +0.01%/+0.05% for M = 0.1/0.2; m²/H² = 2.9e5/7.3e4; 1 − c_s² ≲ 4e-14.
 - [derived] m²/H² ≈ 6Ê/M² on the plateau.
 - Result: D941 realises P3 with no observable cost; mass source still assumed.
+
+## D945: one-loop mass from T² images
+- [literature] T² one-loop potentials are lattice sums; no E(U,2) mass for a plateau found.
+- [derived] δm² = λ Σ′ G_D(|w|) = λ·2ζ(2s)E(U,s)/A^s·Γ(D/2−1)/(4π^{D/2}), s = (D−2)/2.
+- [derived] D = 6 ⇒ s = 2 ⇒ p = 2√2; positive for boson loops.
+- [estimate] offset at ρ is a one-number tuning.
+- Result: H2 analytic pass; H3 tuning recorded; H4 open.

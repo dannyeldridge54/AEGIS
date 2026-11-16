@@ -9575,3 +9575,13 @@ Note: the absolute n_s here (first-order Hubble flow, N* = 55) is not the paper'
 Verdict: P3 can be read as "one heavy field whose mass² ∝ Ê, integrated out" with no observable cost. What remains assumed is the source of that mass² (a T²-tower one-loop mass ∝ E(U,2) with a tuned offset, D941). P3's status moves from "postulate" to "postulate with a dynamical realisation (two-field, verified at background level)".
 LESSONS: a locked rerun with a corrected design passed cleanly; the D943 failure was in the setup, not the idea.
 MAP: none
+
+## D945 (Project H, H1–H2 analytic): a field living in SIX dimensions (4D × T²) gets a finite one-loop mass² ∝ +E(U,2)/A² from the winding images of the loop; the lattice weight s = (D−2)/2 ties SERAPIS's k = 2 (p = 2√2) to D = 6
+[literature] Search (1, standard): one-loop potentials on T² and Scherk–Schwarz orbifolds (e.g. hep-th/0601158, 2407.16781, 2512.20570) are image/lattice sums; nothing found computing a scalar's mass² as E(U,2) for an inflaton plateau.
+[derived] (standard method of images) For χ coupled to a field Φ of a D-dimensional theory on R⁴ × T²_{(D−4)=2}... i.e. Φ propagating in D = 4 + 2 dimensions, the one-loop tadpole δm_χ² = λ Σ_w G_D(|w|) over lattice vectors w ≠ 0 after removing the U-independent local divergence (w = 0). G_D(L) = Γ(D/2−1)/(4π^{D/2} L^{D−2}). With |w|² = A|m + nU|²/Im U: Σ′_w |w|^{−(D−2)} = A^{−(D−2)/2} Σ′ (Im U)^s/|m + nU|^{2s} = 2ζ(2s) E(U,s) A^{−s}, s = (D−2)/2.
+[derived] (arithmetic) D = 6 gives s = 2 exactly: δm_χ² = λ ζ(4) E(U,2) / (2π³ A²) × (combinatorial factor of the coupling), G₆ coefficient 1/(4π³) = 0.00806. Sign: positive for a bosonic loop with λ > 0, negative for a fermion loop.
+[derived] (D929 link) k = 2s and n = 1, so p = 2s√2: SERAPIS's p = 2√2 ⇔ s = 2 ⇔ the loop field lives in 6D (e.g. on a brane worldvolume wrapping the T², or a 6D bulk field). D = 5 (s = 3/2, p = 3√2/2·… non-integer k = 3) and D ≥ 7 give other exponents.
+[estimate] The offset: δm² > 0 with minimum at ρ (E(U,2) is minimised there, Rankin/Montgomery), so A = μ²Ê needs a tree-level mass² = −c E(ρ,2) cancelling exactly at ρ: a tuning of one number; at τ = i the analogous cancellation is at a saddle, not a minimum. A² = (Im T-dependent area)² must be fixed (Kähler stabilisation), as already assumed.
+Status: H2 passes analytically (right lattice weight, positive for bosons); H3 (offset) is a one-number tuning; H4 (the B term, ratio A/B = Ê exactly) open. Not a claim of novelty.
+LESSONS: the lattice weight of an image sum is fixed by the dimension the loop field lives in; that maps p to a dimension.
+MAP: none
