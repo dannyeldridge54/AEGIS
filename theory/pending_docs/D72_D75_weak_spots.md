@@ -7088,3 +7088,26 @@ MAP: node=n_sector_i status=computed touches=[mnu, lepto_i] ripple=no
 Comparison with our notes: thermal routes need T_R ≫ 1e9 GeV (Davidson–Ibarra). The τ = i branch has T_R ≈ 1e6, so only non-thermal routes remain: inflaton decay (marginal, D738) and Affleck–Dine (needs m₁ ~ 1e-9 eV, tuned, D742).
 VERDICT: the literature offers no ready-made rescue. Baryogenesis stays the τ = i branch's weakest link, and the ρ branch (D731, non-thermal, sin δ ≳ 0.01–0.6) is preferred on this count too. Loop pauses here (no new computation; next real step would be a dedicated τ = i baryogenesis construction).
 MAP: node=lepto_i status=estimate touches=[] ripple=no
+
+## D744 (DEEP; literature + reasoning; first "reverse ladder" tick) — the τ = i baryon problem, worked backwards: a degeneracy breaker η_N, and radiative resonant leptogenesis as the in-model candidate
+Reverse path (reasoning):
+1. Target: Y_B = 8.75e-11 at T_R ≈ 1–3e6 GeV, from inflaton decay. That needs ε·Br ≈ 3e-5.
+2. Obstacle: the Γ2 doublet N is exactly degenerate at τ = i, so ε = 0. The tree-level 2⊕1 mixing over-splits it (ΔM/M ≥ 0.6, D738).
+3. Requirement: from D728, ANY splitting η_N = ΔM/M between ~1e-8 and ~0.1 works. Seven decades, no tuning.
+4. New term: η_N, the degeneracy breaker (added to the theory map as node eta_n, upstream of lepto_i).
+5. In-model candidate: renormalisation-group running from the degeneracy scale Λ to M splits an exactly degenerate pair ("radiative leptogenesis").
+Literature:
+- Turzyński hep-ph/0311029: two exactly degenerate N with running-induced splitting falls SHORT of the observed asymmetry in the minimal SM case.
+- Branco, González Felipe, Joaquim, Nobre, hep-ph/0507092 ("Enlarging the window for radiative leptogenesis"):
+  - the asymmetry vanishes at Λ (alignment, Re H₁₂ = 0);
+  - running generates both the splitting, δ_N ≃ 2(H₂₂ − H₁₁)t, and the phase, through y_τ²;
+  - ε⁰ ≃ (3y_τ²/32π)·Im H₂₁·Re[(Y_ν)₃₁*(Y_ν)₃₂]/[H_jj(H₂₂ − H₁₁)];
+  - mixing with a THIRD heavy neutrino (θ₂ ≠ 0) is "crucial" for m₁ = 0;
+  - the hierarchical light spectrum is viable for 2e-5 ≲ m₁ ≲ 3e-2 eV, largely independent of M (1e5–1e10 GeV), for thermal leptogenesis.
+Fit to our τ = i setup (reasoning):
+- The ingredients match. The N doublet is exactly degenerate at τ = i by symmetry, a natural Λ-scale degeneracy. A third singlet N₃ is already needed for the light texture (D742's 3-3 entry). Normal ordering with small m₁ is in their viable range.
+- In the MSSM-like spectrum, y_τ² is enhanced by tan²β.
+- Differences: our production is NON-thermal (T_R ≈ 1e6 ≪ M), so their thermal Y_B does not carry over directly; and the N₃–doublet MASS mixing must be absent (or small) at tree level, otherwise D738's large splitting returns.
+- Rough size (estimate): ε ~ (3y_τ²/32π)·t, t = ln(Λ/M)/16π² ≈ 0.16, y_τ ≈ 0.01·tanβ, gives ε ~ 5e-7·tan²β, i.e. ~1e-5 – 5e-5 for tanβ ≈ 5–10. The right range for the non-thermal requirement (~3e-5).
+VERDICT: a promising, in-model route. It needs no added symmetry breaking, only the model's own running plus a third heavy neutrino it already has. To compute next (D745, locked).
+MAP: node=eta_n status=estimate touches=[lepto_i] ripple=no

@@ -27,8 +27,11 @@
   "D740: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen",
   "D741: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → open",
   "D742: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → computed",
-  "D743: Leptogenesis at τ=i: inflaton decay marginal, AD robust → estimate"
+  "D743: Leptogenesis at τ=i: inflaton decay marginal, AD robust → estimate",
+  "D744: Degeneracy breaker η_N = ΔM/M of the N doublet (radiative?) → estimate"
  ],
- "open_rechecks": [],
+ "open_rechecks": [
+  "Leptogenesis at τ=i: inflaton decay marginal, AD robust"
+ ],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
 }

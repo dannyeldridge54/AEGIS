@@ -78,6 +78,21 @@
    ]
   },
   {
+   "id": "eta_n",
+   "layer": 1,
+   "branch": [
+    "i"
+   ],
+   "title": "Degeneracy breaker η_N = ΔM/M of the N doublet (radiative?)",
+   "status": "estimate",
+   "d": [
+    "D744"
+   ],
+   "history": [
+    "D744: estimate"
+   ]
+  },
+  {
    "id": "halo_profile",
    "layer": 1,
    "branch": [
@@ -282,11 +297,13 @@
    ],
    "depends": [
     "reheat_i",
-    "n_sector_i"
+    "n_sector_i",
+    "eta_n"
    ],
    "history": [
     "D743: estimate"
-   ]
+   ],
+   "flag": "recheck (D744, eta_n)"
   },
   {
    "id": "sterile_rho",
