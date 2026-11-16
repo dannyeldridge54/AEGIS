@@ -30,3 +30,10 @@ Steps (one per tick; lock before any computation; honest labels):
 - P3.3 [done D830] Placement: does it enter V additively (Casimir-like), multiply V, or renormalise K_XX̄? Compare with the required a − b/E form (D797).
 - P3.4 [done D831] Compute it numerically (locked) and compare its shape with 1 − E(ρ)/E(τ) and with the τ = i εI₁ log form.
 - P3.5 [done D832] Verdict on P3 (retire / keep / replace), with a paper note for v3.2.
+
+## κ deep project (anti-D3 term normalisation; started 2026-11-16 on Danny's choice)
+- K.1 [open] Fix κ: anti-D3–D3 force normalisation (T₃², string-frame → Einstein-frame, Vol₄, g_s) in the same units as the SERAPIS-E plateau V0 (D689 conventions).
+- K.2 [open] Locked numerics: κ/V0 for the D696/D830 moduli (Im S·Im ρ ≈ 560–975) vs the slope bound 2.9e-3/y* (D831).
+- K.3 [open] τ = i vacuum mass from the anti-D3 term vs the needed m²/H² ≈ 2e-3 (D826).
+- K.4 [open] Decompactification wall: does it bound V at large y without spoiling the band?
+- K.5 [open] Verdict and v3.2 note.
