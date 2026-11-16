@@ -1,0 +1,2 @@
+# DEVIATIONS for PREREG D934 (written before any rerun)
+D1 (speed only): the first run (exact sympy at all 512 grid points) hit the 15-min command limit with no output (no results seen). Rerun with the SAME model, grid, coefficient range [-2,2], acceptance and PASS rule, changing only the method: a numeric screen (numpy SVD of the 16x16 real matrix; smallest singular value < 1e-9 = candidate), then the exact sympy nullspace and all acceptance checks only at candidate points. Also record the numeric nullity at every point. One rerun only.
