@@ -555,8 +555,7 @@
    ],
    "history": [
     "D748: frozen"
-   ],
-   "flag": "recheck (D807, serapis_e)"
+   ]
   },
   {
    "id": "caps",
@@ -601,7 +600,7 @@
     "rho",
     "E"
    ],
-   "title": "Wino 0.67–0.80 TeV, ~15% of DM (post-hoc)",
+   "title": "Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784)",
    "status": "corrected",
    "d": [
     "D735",
@@ -616,8 +615,7 @@
    "history": [
     "D761: estimate",
     "D784: corrected"
-   ],
-   "flag": "recheck (D807, serapis_e)"
+   ]
   },
   {
    "id": "tests_cmb",

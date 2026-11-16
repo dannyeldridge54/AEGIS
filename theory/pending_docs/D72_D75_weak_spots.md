@@ -8080,3 +8080,13 @@ REF: papers/v3/REFEREE_v3.1_round7_independent.md (independent agent, cold read,
 DEFERRED (queue item 1b): minor 10 (split the ~900-word SERAPIS-E paragraph); the covariant m₃/₂ window to match the wino window; extend tab:repro beyond D639; minor 2's TS-stabiliser remark (only the image clause was added).
 Build: 15 pp, no undefined refs, no overfull boxes (the table needed footnote trimming).
 MAP: node=serapis_e status=corrected touches=[band_e, wino_window] ripple=no
+
+## D808 (ACCURACY TRACK, queue items 1b and 2; Jl tick 47, manual "Jl"): referee deferrals applied; map wino title fixed; flags cleared
+Paper:
+- The SERAPIS-E long paragraph is split into three paragraphs (set-up; "Reheating at ρ"; "Predictions"). The nested parenthetical (375–488; E₂(0,U) channel; the IIB loop-origin remark) is moved to a footnote, which also states "in this IIB orientifold" (referee minor 5).
+- Covariant window made consistent with the wino window: m₃/₂ ≃ (2.5–7)×10⁵ GeV and gluino 4.7–13 TeV for an Einasto halo [derived] (linear scaling with M₂: 1.1e6 × 1.85/2.9 = 7.0e5; 21 × 1.85/2.9 = 13.4, as in D713/prediction sheet). Cored halos: up to 2.9 TeV / 1.1e6 / 21 TeV. Table row b falsifier: no gluino < 13 TeV.
+- tab:repro caption now says it covers computations up to D639 and points to MANIFEST.md and the D-notes for later ones.
+- τ = i Σm_ν range: 0.059–0.064 eV with m₁ free (D786) added beside the frozen 0.0587.
+REF: cold re-read of the four changed passages against D713, D786 and the referee report. Numbers match; no frozen value changed; the build is clean (15 pp, no overfull, no undefined).
+Map: wino_window title "0.67–0.80 TeV, ~15%" → "0.67–1.85 TeV thermal, 5–41% (post-hoc, D784)". Flags band_e and wino_window cleared (the D807 change confirms both; the band is unchanged).
+MAP: none

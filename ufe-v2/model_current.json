@@ -31,9 +31,6 @@
   "D806: SERAPIS-E potential (Epstein + BHK tilt) → literature",
   "D807: SERAPIS-E potential (Epstein + BHK tilt) → corrected"
  ],
- "open_rechecks": [
-  "Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4)",
-  "Wino 0.67–0.80 TeV, ~15% of DM (post-hoc)"
- ],
+ "open_rechecks": [],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
 }

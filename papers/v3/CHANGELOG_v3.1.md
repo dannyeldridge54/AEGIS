@@ -24,6 +24,7 @@
 ## Round 6 (16 Nov 2026; referee report REFEREE_v3.1_round6.md)
 - New title: "The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test".
 - D775: ρ-leptogenesis computed (CRV ε, Casas–Ibarra grid): passes for c ≳ 0.6 at M_H = 1e12 (D776; 29–70% for c = 1–3), fails for c = 0.3; supersedes the DI-bound estimate of D731.
+- D808: referee deferrals: SERAPIS-E paragraph split + footnote; m₃/₂ (2.5–7)e5 GeV, gluino 4.7–13 TeV (Einasto); tab:repro scope note; τ = i Σm_ν range 0.059–0.064 eV.
 - D807: independent referee round 7 merged (abstract baryogenesis, intro, table frozen/post-hoc split + frozen SERAPIS-E row, theorem hypotheses, brane-equality condition, ρ Limitations bullet rewritten, gCP wording, wino window 0.67–1.85 TeV, 'loop-motivated branch', running-test qualifier).
 - D804: Limitations item: SERAPIS-E needs the full SL(2,Z) (order-3 stabiliser at ρ); Scherk–Schwarz breaking to an index-3 subgroup would remove the ρ vacuum, isotropy and Z₃.
 - D803: D801 sentence qualified: positive (SUSY) sums select ρ; non-SUSY Scherk–Schwarz sums (reduced group, no order-3 point) are minimised at 1 + i (2504.19364).
