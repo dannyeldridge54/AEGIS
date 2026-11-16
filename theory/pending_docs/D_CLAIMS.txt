@@ -78,3 +78,4 @@ D791  2026-11-16T10:00Z  forward: Planck isocurvature bound kills the inflaton-A
 D792  2026-11-16T10:09Z  reverse: self-dilution rho history without P5 - inflaton-AD asymmetry diluted by late N decay
 D793  2026-11-16T10:16Z  forward: exact n_s, r for the self-diluted rho history (T2 = 150-1100 GeV) + side checks
 D794  2026-11-16T10:32Z  tau=i mirror: AD charge under residual Z2/Z4
+D795  2026-11-16T10:42Z  tau=i Hessian isotropy
