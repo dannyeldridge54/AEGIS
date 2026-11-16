@@ -8457,3 +8457,23 @@ Derivation only (no new numbers; values from D696 and D829).
 Verdict: placement settled. Anti-D3 stuck at an empty O3 point, displaced in T⁴; D-charge (5, 2) to satisfy the tadpole. D829's case A/B are both annihilating and are retired as physical configurations; its additive-in-V conclusion stands. P3 still gets no inverted 1/E form. P3.4: size of the additive term (κ, finite T⁴ sum) vs the plateau, and the shift of N_eff.
 Sources: hep-th/0602038 (stuck branes, tadpole; via D696); Sen, hep-th/9805170 (brane–antibrane tachyon); Banks–Susskind hep-th/9511194.
 MAP: node=plateau_origin status=assumed touches=[serapis_e,eps_tilt] ripple=no
+
+## D831 (DEEP, P3.4): size and shape of the anti-D3 term at the D830 placement
+Lock: PREREG_D831_antiD3_shape.md (committed before the run). Script theory/modular/antiD3_shape_d831.py, output field_tests/results/antiD3_shape_d831.txt.
+Setup [derived]: T⁴ zero-mode part of the 6D Green's function; the T⁴ displacement regularises coincidence to Δ(U) + const. Weights +2 per D3 (NS+RR attract), −2 per O3 unit (repel); (N, N0) = (5, 2), 4 O3 units per T² point. V = −2κB(U).
+Results [derived]:
+| U | B(z_a = 0) | B(z_a = ½) |
+|---|---|---|
+| i | −3.4957 | +0.7081 |
+| ρ | −3.4533 | +1.0335 |
+| ½+2i | −4.1888 | −2.1094 |
+| ½+5i | −8.6394 | −9.3088 |
+| ½+10i | −17.725 | −20.474 |
+| ½+20i | −37.283 | −42.111 |
+1. Large-y slope dB/dy = −1.956 (z_a = 0) and −2.164 (z_a = ½), both → −2π/3 = −2.094. The pre-stated prediction (V ≈ +(4π/3)κy) is CONFIRMED. The anti-D3 term is a rising WALL in y, exponential in the canonical field (y = e^{√2φ}), not a plateau.
+2. Between the vacua: V(ρ) − V(i) = −2κ[B(ρ) − B(i)] = −0.085κ (z_a = 0) and −0.651κ (z_a = ½). The anti-D3 sector mildly favours ρ in both placements [derived].
+3. Shape vs P3 [derived]: P3 needs V_up ∝ 1 − b/E(τ), which goes to a CONSTANT as y → ∞ (E ~ y). The anti-D3 term goes as +κy. These are opposite large-y behaviours; no choice of κ turns one into the other.
+4. Size criterion [derived, from the lock]: not to spoil the plateau's slope, κ/V0 ≲ 2.9e-3/y*. For κ above this the wall dominates the inflaton slope at horizon exit. κ's normalisation (∝ T₃²/Vol₄ with string-frame factors) is NOT computed here [estimate: open].
+5. N_eff shift [estimate]: if the anti-D3 counts as charge −1 at its T² point in the D696 BHK sum, z_a = 0 gives N0_eff = 1, N_eff = 4 (back to D696's baseline, Im S·Im ρ ≈ 750–975). z_a = ½ makes the stacks unequal (5, 5, 4, 2); D696's equal-stack formula does not apply; open.
+Verdict: the anti-D3 sector in our configuration is an additive, rising-in-y term (a wall) that slightly prefers ρ. It cannot produce P3's plateau. P3.5: write the verdict (P3 has no one-loop origin; the plateau's origin stays a postulate or needs non-perturbative/warped physics) and queue the v3.2 note.
+MAP: node=plateau_origin status=assumed touches=[serapis_e,eps_tilt] ripple=no

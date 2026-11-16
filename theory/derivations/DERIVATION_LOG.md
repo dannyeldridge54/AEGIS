@@ -637,3 +637,12 @@ Touches: plateau_origin, serapis_e, eps_tilt.
 4. Stable placement: stuck at an empty O3 point, displaced in T⁴ [derived] (hep-th/0602038).
 5. Shape dependence stays additive E-type sums [derived] (D828, D829).
 Touches: plateau_origin, serapis_e, eps_tilt.
+
+## D831: P3.4 anti-D3 size and shape (P3 deep project)
+1. T⁴-displaced coincidence regularises to Δ(U) + const [derived] (D830).
+2. Weights +2 per D3, −2 per O3 unit, (5, 2) stacks [derived] (D696, D830).
+3. V = −2κB; slope dB/dy → −2π/3, a rising wall [derived] (computed, PREREG_D831).
+4. V(ρ) − V(i) < 0 in both placements [derived].
+5. Opposite large-y behaviour to P3's 1 − b/E [derived].
+6. Size bound κ/V0 ≲ 2.9e-3/y*; κ's normalisation open [estimate].
+Touches: plateau_origin, serapis_e, eps_tilt.

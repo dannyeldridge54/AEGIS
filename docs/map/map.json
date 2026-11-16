@@ -30,7 +30,7 @@
     "D823: estimate",
     "D826: estimate"
    ],
-   "flag": "recheck (D830, plateau_origin)"
+   "flag": "recheck (D831, plateau_origin)"
   },
   {
    "id": "plateau_origin",
@@ -60,13 +60,14 @@
     "D803",
     "D828",
     "D829",
-    "D830"
+    "D830",
+    "D831"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D828: assumed",
     "D829: assumed",
-    "D830: assumed"
+    "D830: assumed",
+    "D831: assumed"
    ]
   },
   {
@@ -237,7 +238,7 @@
     "D811: computed",
     "D812: corrected"
    ],
-   "flag": "recheck (D830, plateau_origin)"
+   "flag": "recheck (D831, plateau_origin)"
   },
   {
    "id": "janus",

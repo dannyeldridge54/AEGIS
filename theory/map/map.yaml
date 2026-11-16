@@ -18,7 +18,7 @@ nodes:
   - 'D755: estimate'
   - 'D823: estimate'
   - 'D826: estimate'
-  flag: recheck (D830, plateau_origin)
+  flag: recheck (D831, plateau_origin)
 - id: plateau_origin
   layer: 1
   branch:
@@ -46,11 +46,12 @@ nodes:
   - D828
   - D829
   - D830
+  - D831
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D828: assumed'
   - 'D829: assumed'
   - 'D830: assumed'
+  - 'D831: assumed'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -180,7 +181,7 @@ nodes:
   - 'D807: corrected'
   - 'D811: computed'
   - 'D812: corrected'
-  flag: recheck (D830, plateau_origin)
+  flag: recheck (D831, plateau_origin)
 - id: janus
   layer: 2
   branch:
