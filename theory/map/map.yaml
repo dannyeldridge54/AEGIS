@@ -338,6 +338,7 @@ nodes:
   - 'D899: estimate'
   - 'D900: computed'
   - 'D903: estimate'
+  flag: recheck (D904, lepto_rho)
 - id: sterile_rho
   layer: 4
   branch:
@@ -430,13 +431,14 @@ nodes:
   - D894
   - D895
   - D897
+  - D904
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D894: estimate'
   - 'D895: computed'
   - 'D897: estimate'
+  - 'D904: estimate'
 - id: gravitino_wino
   layer: 4
   branch:
@@ -526,7 +528,7 @@ nodes:
   - 'D786: frozen'
   - 'D824: frozen'
   - 'D902: literature'
-  flag: recheck (D903, lepto_i)
+  flag: recheck (D904, lepto_rho)
 - id: wino_window
   layer: 5
   branch:
