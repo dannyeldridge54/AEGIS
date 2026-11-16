@@ -6915,3 +6915,18 @@ Consequences (estimates):
 - AD leptogenesis: the required m_ν1 scales ∝ T_R, to ≈ 1e-9 – 3e-9 eV. Still "essentially massless".
 - NEW OPENING: D597's leptogenesis tension came from T_R ∝ ΔM against ε ∝ 1/ΔM. With an unsuppressed decay, T_R no longer depends on ΔM, so resonant leptogenesis from φ → N₁N₂ with a quasi-degenerate pair may now work. To compute (D728).
 Paper: reheating section given a correction sentence (D727); builds.
+
+## D728 (CENTRE; locked PREREG_D728; results/lepto_i_d728.txt) — PASS: non-thermal leptogenesis from φ → N₁N₂ at τ = i works once the decay is unsuppressed
+Computed (D597 conventions with the D727 T_R; maximal CP phase, Br = 1, washout neglected since T_R/M = 4–5e-5):
+| M/m | T_R (GeV) | passing ΔM/M | D690 2⊕1 range (0.08 / 0.2 / 0.5) |
+|---|---|---|---|
+| 0.1 | 1.0e6 | 1e-8 – 0.014 | fail / fail / fail |
+| 0.2 | 2.0e6 | 1e-8 – 0.15 | PASS (1.7e-10) / fail / fail |
+| 0.33 | 2.9e6 | 1e-8 – 0.20 | PASS / PASS (1.65e-10) / fail (6.6e-11) |
+| 0.45 | 3.0e6 | 1e-8 – 0.50 | PASS / PASS / PASS (9.4e-11) |
+VERDICT (locked): PASS; NATURAL PASS for M/m ≈ 0.33–0.45 (the 2⊕1 splitting 0.08–0.2 needs no tuning to resonance). D597's NOT VIABLE is superseded: its ×7 shortfall came from the wrong T_R ∝ ΔM.
+Caveats:
+- ε = x/(1+x²) used far from resonance (x ~ 1e4–1e5), where ε/ε_DI = 1.3–8.3. That is the expected M/ΔM self-energy enhancement, but the regulator is not a full Boltzmann treatment.
+- Maximal CP phase assumed.
+- The ρ branch (D725, T_R ~ 1e9) is a separate case: thermal leptogenesis is plausible there, not computed.
+Paper: the "Leptogenesis from inflaton decay fails" paragraph is corrected (D728). AD is now an alternative, not a requirement. Builds at 13 pp.
