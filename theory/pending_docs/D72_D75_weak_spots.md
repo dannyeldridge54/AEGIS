@@ -8842,4 +8842,4 @@ M.5 verdict, applying DECISION_RULE_D841 as committed (no new rule):
 - C3 ("needs an extra structural condition not shared by ρ") is met again: τ = i leptogenesis needs P1′, and P1′ in our configuration requires NO anti-D3 at natural size and string-size small tori.
 Outcome: τ = i remains a CONDITIONAL VARIANT, now with these conditions: (C1) ε has no derived source; (C3a) 2⊕1 heavy-ν structure; (C3b) CP-odd axions on two cycle classes (D854); (C3c) its uplift/nilpotent sector is not an anti-D3 at natural size, and the T⁴ is at the string scale (D860, D861). The frozen τ = i predictions are unchanged.
 For SERAPIS-E at ρ: no conflict (no CP phase needed, D855); the anti-D3 picture only requires large v₄ (D835).
-MAP: node=band_i status=computed touches=[lepto_i,plateau_origin] ripple=no
+MAP: node=lepto_i status=assumed touches=[band_i,plateau_origin] ripple=no
