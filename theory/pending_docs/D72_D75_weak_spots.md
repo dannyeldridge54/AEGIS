@@ -6950,3 +6950,13 @@ VERDICT (locked rule; no retuning):
 - The frozen band stays as locked and is scored on future data. Where it fails, the D727 correction is the cause, recorded here.
 - Physics question this raises: at T_R ~ 1e6 GeV the inflaton decays early, so does the octic (stiff) phase even last? If decay happens during the octic phase, w = 3/5 holds only until H ~ Γ. The w = 0 rows assume an immediate switch. To check (D730).
 Paper: the D727 estimate sentence is replaced by these computed numbers; builds.
+
+## D730 (CENTRE; locked PREREG_D730; results/octic_decay_d730.txt) — the stiff-phase rows are the physical ones; corrected Chronos meets the frozen band only in a narrow ε strip
+Code reading: in nstarT, 'w=3/5' = octic from ρ_end to the switch ρ_x, then matter down to ρ_R; 'w=0' = matter throughout (conservative).
+Computed: m = 2.28e11 / 2.65e11 GeV (ε = 1.3 / 1.6e-4); ρ_x/ρ_end = 3.4e-6 / 4.5e-6; H_x = 8.4e9 / 1.0e10 GeV. With the D727 Γ = 1.4e-6 – 1.3e-5 GeV, Γ/H_x = 1e-16 – 1.5e-15, and ρ_R/ρ_x ~ 1e-30. Decay during the octic phase is negligible (ω/H ∝ ρ^{-1/8} grows only slowly toward the switch, estimate).
+VERDICT: the physical τ = i history is octic → matter → radiation, so the D729 w = 3/5 rows are physical and the w = 0 rows are only a conservative bound:
+- ε = 1.3e-4: n_s 0.9733–0.9737, r 4.63–4.67e-4 — below the frozen r band (4.8–5.7e-4).
+- ε = 1.6e-4: n_s 0.9761–0.9765, r 5.10–5.14e-4 — above the frozen n_s edge (0.975).
+- Interpolated (estimate): the corrected history meets the frozen band only for ε ≈ 1.40–1.46e-4, at n_s ≈ 0.974–0.975, r ≈ 4.8–4.9e-4.
+Status: the frozen τ = i band (lock D633/D679) stands as locked. With the corrected reheating, the model's own history now lands in its upper-n_s corner or just outside it. The lock is not retuned, and any new τ = i band would be post-hoc and scored on future data only. Comparison: SERAPIS-E (ρ, D725) stays well inside its band (n_s 0.9732–0.9739); the ρ branch is now the more robust one, as the paper already argues.
+Paper: one sentence added (D730); builds.
