@@ -200,7 +200,7 @@
     "E"
    ],
    "title": "SERAPIS-E potential (Epstein + BHK tilt)",
-   "status": "corrected",
+   "status": "computed",
    "d": [
     "D692",
     "D693",
@@ -215,18 +215,18 @@
     "D804",
     "D805",
     "D806",
-    "D807"
+    "D807",
+    "D811"
    ],
    "depends": [
     "plateau_origin",
     "bhk_tilt"
    ],
    "history": [
-    "D805: computed",
     "D806: literature",
-    "D807: corrected"
-   ],
-   "flag": "recheck (D810, lepto_rho)"
+    "D807: corrected",
+    "D811: computed"
+   ]
   },
   {
    "id": "janus",
@@ -619,8 +619,7 @@
    "history": [
     "D761: estimate",
     "D784: corrected"
-   ],
-   "flag": "recheck (D809, gravitino_wino)"
+   ]
   },
   {
    "id": "tests_cmb",

@@ -501,3 +501,11 @@ Touches: gravitino_wino, wino_window.
 5. The sign alternates with the offset (winding), so the sign of Y_B is an initial-condition choice [derived].
 6. D796's 9Δx estimate is corrected to ≈2Δx [derived].
 Touches: lepto_rho, serapis_e.
+
+## D811: BHK remnant at τ = i (accuracy track)
+1. V_τ ∝ 4y²|∂_τL|² [literature] (D684).
+2. δK = CE gives ∂_τL + C∂_τE [derived].
+3. Same-sign x-curvatures, so g_xx = 2(L_xx + CE_xx)² ≥ 0 [derived] (computed).
+4. Linear coefficient +4L_xxE_xx [derived] (computed 4.09).
+5. C_crit = ∞; D802's estimate corrected (D802a) [derived].
+Touches: serapis_e.

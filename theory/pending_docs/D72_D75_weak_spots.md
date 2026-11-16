@@ -8132,3 +8132,26 @@ MAP: node=lepto_rho status=computed touches=[serapis_e] ripple=no
 ## D796a (CORRECTION to D796 step 6)
 "η ~ 9Δx × O(1)" → computed |η| = (1.7–2.1)Δx (D810). The estimate's prefactor 2.9·3|z₀| assumed |z₀| ~ 1 at the start of oscillations. The actual coefficient folds in the orbit geometry. The D796 Fourier results (c₃ = 1.47r, isotropy) are unaffected.
 MAP: none
+
+## D811 (ACCURACY TRACK, queue item 5; Jl tick 50, manual "Jl"; locked PREREG_D811; results/remnant_i_d811.txt): the non-multiplicative BHK remnant at τ = i is STABILISING. No C destabilises i, so D802's estimated C_crit ~ 1e-4 had the wrong sign
+Computed: g_C = 4y²|∂_τL + C∂_τE|² (the C-dependent piece of the covariant τ F-term):
+
+| C | g_xx(i) | g_yy(i) |
+|---|---|---|
+| 0 | 0.177859 | 3.37071 |
+| 1e-6 | 0.177863 | 3.37079 |
+| 1e-4 | 0.178268 | 3.37876 |
+| 1e-2 | 0.2211 | 4.2225 |
+| 1 | 27.75 | 563.0 |
+
+- Matches the prediction g_xx = 2(L_xx + C·E_xx)²: at C = 0, 2(0.298)² = 0.1778; at C = 1, 2(3.725)² = 27.75 ✓.
+- Linear coefficient (0.17786345 − 0.17785936)/1e-6 = 4.09 = 4·L_xx·E_xx = 4(0.298)(3.427) ✓, positive.
+Derivation:
+1. The covariant τ F-term is m₃/₂²M_P² e^{L−L(i)}·4y²|∂_τL|² [literature] (paper; D647/D684).
+2. δK = C·E enters D_τW additively: ∂_τL → ∂_τL + C∂_τE [derived].
+3. Both ∂_τL and ∂_τE vanish linearly at i, and their x-curvatures have the SAME sign (−0.298, −3.43; D801) [derived]. So the modulus square grows with C in both directions, and i stays a minimum for all C [derived] (computed).
+4. The e^{δK} factor is multiplicative (D802), and the metric correction is second order [derived].
+5. C_crit = ∞ [derived]. The τ = i vacuum is not destabilised by a BHK term at any size.
+Correction (D802a): D802 step 3–4's "[estimate] additive curvature ∝ C·E_xx, mattering only for C ≳ 1e-4" assumed the cross term carries E_xx's sign alone. It actually enters as 2L_xx·E_xx > 0, so D802's conclusion (stable) holds more strongly, with no threshold.
+Flags serapis_e (D810) and wino_window (D809) cleared: both confirmations, statuses unchanged.
+MAP: node=serapis_e status=computed touches=[] ripple=no
