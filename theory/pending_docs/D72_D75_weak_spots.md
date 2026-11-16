@@ -8370,3 +8370,17 @@ Derivation:
 4. So the frozen Σm_ν entry cannot discriminate SERAPIS from other NO models. A future rejection would falsify the NO + ΛCDM combination (or point to new physics in the neutrino or dark sector), which the prediction sheet must say [derived].
 Prediction sheet: a note is added to the Σm_ν line (frozen value unchanged).
 MAP: node=mnu status=frozen touches=[] ripple=no
+
+## D825 (ACCURACY TRACK, queue 12 + 13; Jl tick 63, manual "Jl"): ladder flags cleared; cross-document consistency sweep (non-paper documents fixed)
+Flags:
+- serapis_e (D822): the retired log-derivative plateau does not touch the SERAPIS-E potential. Cleared.
+- band_i (D823): the frozen τ = i band is unchanged (the BHK variant is separate). Cleared.
+Sweep, against the published v3.1 and D807/D808/D824:
+- prediction_sheet: superpartner row had stale windows (m₃/₂ 2.5–11e5, wino 0.66–2.9, gluino 4.7–21) → v3.1 windows (0.67–1.85 TeV Einasto, 2.5–7e5 GeV, 4.7–13 TeV; cored-halo extension noted). "derived branch" → "loop-motivated branch, frozen after the data". Σm_ν 0.0588 → 0.0587 (D786).
+- CURRENT_STATE_PROJECT: "derived branch" fixed; stale wino 0.67–0.80 TeV/~15% → 0.67–1.85 TeV, 5–41% (D784).
+- papers/README.md: SERAPIS section now leads with v3.1 (10.5281/zenodo.24281771, new title); v3 DOI kept as the earlier version.
+- MANIFEST.md: v3.1 addendum pointing to the locks D689–D817 and the reproducibility archive; per-lock table queued (item 15).
+- README.md: already updated at publication (D819 era).
+Remaining older mentions ("D735 0.67–0.80" inside historical D-notes) are left as written; history is not edited.
+Project doc claude/CURRENT_STATE.md re-synced.
+MAP: none

@@ -77,5 +77,5 @@ record (version 1: the theory note, doi:10.5281/zenodo.23898709).
 the DESI-style apparent phantom crossing (DESI-MOCK), the H0 inverse ladder, six pre-registered or exploratory
 attempts to raise H0, and weak lensing (DES Y3 full shear PASSES 3 of 3; KiDS-Legacy pending).
 
-## SERAPIS v3 (published 15 Nov 2026)
-**DOI:** [10.5281/zenodo.24250733](https://doi.org/10.5281/zenodo.24250733). "SERAPIS: a modular plateau with a massive vacuum at the square torus, its Janus pair of predictions, and a three-observable consistency relation" (preprint, 10 pp; source, reproducibility archive with locks D605/D615/D633, prediction sheet). Source in papers/v3/.
+## SERAPIS v3.1 (published 16 Nov 2026): "The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test"
+**DOI:** [10.5281/zenodo.24281771](https://doi.org/10.5281/zenodo.24281771). Earlier v3 (15 Nov 2026): [10.5281/zenodo.24250733](https://doi.org/10.5281/zenodo.24250733). "SERAPIS: a modular plateau with a massive vacuum at the square torus, its Janus pair of predictions, and a three-observable consistency relation" (preprint, 10 pp; source, reproducibility archive with locks D605/D615/D633, prediction sheet). Source in papers/v3/.

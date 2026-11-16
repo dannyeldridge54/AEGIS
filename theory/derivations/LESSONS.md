@@ -71,3 +71,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D822: prune by the keep rule (a source, or a unique test within forecast reach). An untestable, sourceless alternative only blurs what the theory actually predicts.
 - 2026-11-16 D823: 'can X replace the fitted parameter?' has two parts: (a) does X reach the band, and (b) does it reproduce the band's OTHER predictions. Here (a) yes, (b) no (α_s −15–20%), so the parameter stays fitted and X is a separate variant.
 - 2026-11-16 D824: before counting a prediction as a test of the model, check whether every model in the same class makes it. Σm_ν = NO floor is shared by all NO + ΛCDM models, so it tests the class, not SERAPIS.
+- 2026-11-16 D825: a correction to the paper does not propagate on its own. After each paper fix, grep the summary documents (sheet, README, state) for the old number in the same tick.

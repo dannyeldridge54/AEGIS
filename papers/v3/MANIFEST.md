@@ -59,3 +59,7 @@ Frozen 2026-11-15 (CT). No D-note after D635 enters paper v3 without a new manif
 | D635 | PREREG_D635_JANUS_ANALYTIC.md | `906d09f1f64a9cda` | aea20cb 2026-11-15T09:12:38-06:00 | — |
 
 Repository state at freeze: unify-bg @ 6528437. D-notes: theory/pending_docs/D72_D75_weak_spots.md. Results: field_tests/results/.
+
+
+## v3.1 addendum (16 Nov 2026; published as 10.5281/zenodo.24281771)
+Locks added after the v3 freeze that v3.1 cites: PREREG_D689–D693 (SERAPIS-E), D719–D736, D759–D817 (field_tests/rules/, each with .sha256; results with the same stem in field_tests/results/). The complete list with hashes is in the reproducibility archive (SERAPIS_v3.1_reproducibility.zip). A per-lock table is queued (accuracy item 15).

@@ -594,3 +594,8 @@ Touches: eps_tilt, band_i.
 3. Below 0.0586, NO + ΛCDM fails generally [derived]; a forecast 3σ rejection is possible with SO + DR3 [literature] (2610.20977).
 4. The Σm_ν entry is not SERAPIS-specific [derived].
 Touches: mnu.
+
+## D825: flags and consistency sweep (accuracy track)
+1. Flag justifications [derived] (D822, D823).
+2. Stale values in non-paper documents replaced by the v3.1 values [derived] (D784, D786, D807, D808).
+Touches: none.

@@ -4,7 +4,7 @@
 - Paper: v3.1 PUBLISHED 16 Nov 2026, DOI 10.5281/zenodo.24281771 (v3: 24250733). Source papers/v3/serapis_v3.tex.
 - Repo: github.com/dannyeldridge54/AEGIS, branch `unify-bg`. D-notes: theory/pending_docs/D72_D75_weak_spots.md (to D736; next number in NEXT_D.txt). Locks: field_tests/rules/PREREG_D*.
 - Frozen SERAPIS (τ = i, ρ): n_s 0.970–0.975, r (4.6–5.7)e-4, α_s −(8.5–9.9)e-4, β_s −(3.0–4.6)e-5; caps n_s ≤ 0.985, r ≤ 8.3e-4; strip D679/D681. Prediction sheet: papers/v3/prediction_sheet.md.
-- SERAPIS-E (derived branch, lock D693, post-hoc): V = V0[1 − E(ρ,2)/E(τ,2)](1 + CÊ), Ê = E(τ,2) − E(ρ,2); tilt from Berg–Haack–Körs one-loop Kähler correction (hep-th/0508043). n_s 0.970–0.975, r (4.55–5.12)e-4, α_s −(9.4–10.6)e-4; m_φ ≈ 2.2e13 GeV; N* 48.4–49.9.
+- SERAPIS-E (loop-motivated branch, lock D693, frozen after the data): V = V0[1 − E(ρ,2)/E(τ,2)](1 + CÊ), Ê = E(τ,2) − E(ρ,2); tilt from Berg–Haack–Körs one-loop Kähler correction (hep-th/0508043). n_s 0.970–0.975, r (4.55–5.12)e-4, α_s −(9.4–10.6)e-4; m_φ ≈ 2.2e13 GeV; N* 48.4–49.9.
 - Microscopic picture: stuck D3 branes at the three half-periods (no moduli, no twisted charge; Maiden–Shiu–Stefański); tadpole: 5/5/5 + 1 at origin; tilt = fixed-point asymmetry; Im S·Im ρ ≈ 375–1220 (natural). Plateau interior form irrelevant (D698).
 - Epstein plateau r-ladder (D700–D702): e = 2 → r ≈ 4.7e-4; e = 2.5 → 3.4e-4; e = 3 → 2.5e-4. Casimir route needs negative codim-2 tension — obstructed in string settings (D703).
 - Research front (D706): species-scale/Laplacian swampland may supply the 1/E(τ,2) term (next step); competitor 2607.00528 (r ~ 1e-5, n_s ≈ 0.961); flavour models near ω/ρ (2512.24804).
@@ -17,7 +17,7 @@
   - The doublet-only N sector is KILLED by dark radiation (massless N2, D723).
   - Viable with a 2⊕1 sector mixing through the weight-2 doublet (D724). T_R 3e8–3e9 GeV, N* 49.7–50.5, n_s 0.9732–0.9739, r 4.6–4.7e-4, inside frozen bands (D725).
   - Leptogenesis passes (D731). Gravitino→wino plus gamma rays favour M_H ~ 1e12, T_R ~ 3e8 (D732–D733).
-  - Post-hoc wino prediction: 0.67–0.80 TeV for a cuspy halo, ~15% of DM (D735). ATLAS 2603.08315 already excludes < 670 GeV, so Run 3/HL-LHC will test it (D736).
+  - Post-hoc wino prediction: 0.67–1.85 TeV thermal, 5–41% of DM (D784, superseding D735's 0.67–0.80). ATLAS 2603.08315 excludes < 670 GeV; HL-LHC reaches ~1 TeV (D736).
   - Open: digitised wino sub-fraction limits (2507.15934 Fig. 6); N splitting/CP phases from a flavour model.
 - Jl learning loop (22:30 on; D758–D769). Mirror-of-SERAPIS loop: forward/reverse sides, functions L1–L10, checks K1–K8, balances β1–β5. Plan in docs/UPDATE_LADDER_PLAN.md; checker tools/loop/jl_check.py; logs in theory/derivations/ (DERIVATION_LOG, LESSONS, POSTULATES).
   - D759: log-derivative Epstein plateau is a post-hoc CANDIDATE (n_s band at C 5–10e-7, r 2.1–3.1e-4). D760: no string coupling makes the species scale track E(τ,2), so it stays phenomenological.

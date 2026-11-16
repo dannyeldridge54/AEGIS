@@ -10,11 +10,11 @@ Labels: **computed** = from locked scripts (exact Mukhanov–Sasaki, D588); **es
 | n_s | 0.970–0.975 | 0.969–0.972 | 0.959–0.961 (D637, N* 46–49) | computed |
 | r | (4.8–5.7)×10⁻⁴ | (4.6–5.1)×10⁻⁴ | (3.3–3.7)×10⁻⁴ (D637) | computed |
 | α_s = dn_s/dln k (lock D633, N* 47–50; −(8.8–10.2)×10⁻⁴ at N* 46–49, D642) | −(8.6–9.9)×10⁻⁴ (lock D633; D605's −(3–5)×10⁻⁴ was an attractor estimate, superseded) | −(8.5–9.5)×10⁻⁴ | ≈ −2/N*² | computed |
-| m_ν1 (Affleck–Dine LH_u, computed D646) | 2×10⁻¹³–9×10⁻¹¹ eV (T_R 1e3–1e5; thermal effects negligible, D653) → Σm_ν ≈ 0.0588 eV IF normal ordering (ordering is input from data, not predicted; lock D605 states NO) | same | — | estimate (D646/D646a) |
+| m_ν1 (Affleck–Dine LH_u, computed D646) | 2×10⁻¹³–9×10⁻¹¹ eV (T_R 1e3–1e5; thermal effects negligible, D653) → Σm_ν ≈ 0.0587 eV IF normal ordering (D786: the NO floor; status D824) (ordering is input from data, not predicted; lock D605 states NO) | same | — | estimate (D646/D646a) |
 | β_s = d²n_s/dln k² (lock D667) | −(3.0–4.6)×10⁻⁵ | same | −4/N*³ | computed |
 | f_NL^local / isocurvature | ≈ 0.01 / ~10⁻⁸ of ζ (D587; lock D605 said ≲10⁻¹⁰) | ≈ 0.01 | — | estimate/computed |
-| Superpartners | covariant completion (adopted, D647–D650): m3/2 ~ (2.5–11)×10⁵ GeV, scalars ~ m3/2, wino LSP 0.66–2.9 TeV, gluino 4.7–21 TeV (estimates; Fermi-LAT 2507.15934 excludes winos 1.85–2.86 TeV and thermal wino DM ⇒ surviving wino 0.66–1.85 TeV, m3/2 ≈ (2.5–7)×10⁵ GeV, extra DM component needed, D713); SERAPIS-E at ρ with fast reheating (D725–D735, estimates): gravitino→wino plus H.E.S.S. line limit narrow this to wino 0.66–0.8 TeV (Einasto; any mass for kpc cores), ~15% of DM, heavy neutrinos ~1e12 GeV; constant-W0 chain (lock D605 P5): none below ~10⁸ GeV | same | — | estimate |
-| SERAPIS-E (derived branch, lock D693, post-hoc) | n_s 0.970–0.975, r (4.55–5.12)e-4, α_s −(9.4–10.6)e-4; Janus κ=1 (p=2√2) ≤6%; N* 48.4–49.9 | — | — | computed |
+| Superpartners | covariant completion (adopted, D647–D650; windows as in v3.1, D808): wino LSP 0.67–1.85 TeV (Einasto; up to 2.9 TeV only for cored halos), m3/2 ≈ (2.5–7)×10⁵ GeV, scalars ~ m3/2, gluino 4.7–13 TeV (estimates; Fermi-LAT 2507.15934 excludes 1.85 TeV to the thermal mass; ATLAS 2603.08315 excludes < 670 GeV; a sub-component of DM, D713/D784); SERAPIS-E at ρ with fast reheating (D725–D735, estimates): gravitino→wino plus H.E.S.S. line limit narrow this to wino 0.66–0.8 TeV (Einasto; any mass for kpc cores), ~15% of DM, heavy neutrinos ~1e12 GeV; constant-W0 chain (lock D605 P5): none below ~10⁸ GeV | same | — | estimate |
+| SERAPIS-E (loop-motivated branch, lock D693, frozen after the data; scored on future data only) | n_s 0.970–0.975, r (4.55–5.12)e-4, α_s −(9.4–10.6)e-4; Janus κ=1 (p=2√2) ≤6%; N* 48.4–49.9 | — | — | computed |
 | Reheating | T_R 10³–10⁵ GeV, stiff phase w ≈ 0.55, N* 46–49 | w = 5/7 | — | computed/estimate |
 
 ## Parameter-free consistency relation (Janus, D635)

@@ -31,9 +31,6 @@
   "D823: Tilt strength ε (fitted) → estimate",
   "D824: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen"
  ],
- "open_rechecks": [
-  "SERAPIS-E potential (Epstein + BHK tilt)",
-  "Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4)"
- ],
+ "open_rechecks": [],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
 }
