@@ -1,0 +1,3 @@
+draws=20000 pass(NO, both splittings 3sigma)=699 (3.50%)
+epsilon for m1 = 1.7e-08 eV: median 1.81e-03, 5-95% [3.13e-04, 1.14e-02], n=699
+EXIT 0

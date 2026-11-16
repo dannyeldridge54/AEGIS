@@ -9072,3 +9072,13 @@ Derivation only (no fit; no lock).
 Verdict: a ρ lepton sector compatible with LH_u AD exists at the level of structure: D779's two extra neutral singlets, with the lightest direction protected by E₄(ρ) = 0 and lifted to ~1e-8 eV by a suppressed correction. It is not fitted (no oscillation fit was run), and the size of the lift is an estimate.
 Open: a locked oscillation fit with this structure (weights, E₄-protected entry, small lift) giving NO splittings and m_ν₁ ≈ 1e-8 eV.
 MAP: node=n_sector_rho status=assumed touches=[lepto_rho,mnu] ripple=no
+
+## D883 (B.8): the ρ lepton sector with an E₄-protected third singlet fits oscillations in 3.5% of random draws, with a lift ε ≈ 2e-3 for m_ν₁ ≈ 1.7e-8 eV: NATURAL by the locked rule
+Lock: PREREG_D883_rho_osc.md (committed before the run). Script theory/modular/rho_osc_d883.py, output field_tests/results/rho_osc_d883.txt.
+Model [derived, D779, D882]: light leptons as Γ₂ singlets; heavy Z₃-neutral N_Y, S₁, S₂ with S₂'s coupling ε·y₂ (zero at ε = 0 because E₄(ρ) = 0); O(1) complex couplings, masses log-uniform 1e11–1e13 GeV; 20,000 draws.
+Results [derived]:
+1. At ε = 0 (rank 2, m₁ = 0), 699/20,000 = 3.5% of draws give normal ordering with both splittings inside the 3σ window after the overall scale is fitted.
+2. For those, the lift giving m_ν₁ = 1.7e-8 eV (the geometric middle of D880's 4e-9–7e-8 eV window; the bisection targeted that value) is ε = 1.8e-3 (median), 3.1e-4 to 1.1e-2 (5–95%).
+Verdict (locked rule): NATURAL (pass fraction ≥ 1%, median ε in [1e-4, 1e-2]). Pre-stated prediction (2–5%, ε ~ 3e-4–3e-3) CONFIRMED.
+Consequence: the ρ branch now has a complete, consistent post-inflation chain at the level of structure: Z₃-allowed LH_u Affleck–Dine leptogenesis inside the frozen band (D880), and a lepton sector with normal ordering, both splittings and m_ν₁ ≈ 1e-8 eV, protected by E₄(ρ) = 0 and lifted by a ~1e-3 correction (D882, D883). Open [estimate]: the physical origin of ε (a higher-weight form, a small displacement of τ from ρ, or loops) and the Planck-suppressed Weinberg bound (D882 point 4).
+MAP: node=n_sector_rho status=computed touches=[lepto_rho,mnu] ripple=no

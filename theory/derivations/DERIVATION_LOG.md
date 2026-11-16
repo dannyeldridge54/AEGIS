@@ -1033,3 +1033,10 @@ Touches: none.
 4. Planck-suppressed (LH_u)² must be ≲ 1e-3 of natural size for the lightest direction [estimate] (hep-ph/0008041, title level).
 5. Structure exists; no oscillation fit yet [derived].
 Touches: n_sector_rho, lepto_rho, mnu.
+
+## D883: B.8 ρ oscillation fit
+1. ρ lepton sector: Γ₂-singlet leptons, N_Y, S₁, and S₂ with an E₄-protected coupling ε·y₂ [derived] (D779, D882).
+2. 3.5% of random draws give NO with both splittings in 3σ [derived] (computed, PREREG_D883).
+3. ε ≈ 1.8e-3 (3e-4–1.1e-2) gives m_ν₁ ≈ 1.7e-8 eV [derived] (computed).
+4. Natural by the locked rule; origin of ε open [estimate].
+Touches: n_sector_rho, lepto_rho, mnu.

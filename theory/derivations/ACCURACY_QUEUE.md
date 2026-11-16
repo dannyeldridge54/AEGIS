@@ -103,4 +103,4 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - B.5 [done D880: FITS, m_ν₁ ≈ 4e-9–7e-8 eV] Locked LH_u AD computation at ρ (T₂ = 1e5–1e6 GeV, m_ν₁, soft masses; ρ lepton-sector compatibility).
 - B.6 [done D881] Fold D880 into status, POSTULATES (none new), and the v3.2 draft (abstract + Sec. VII ρ baryogenesis statement; label post hoc).
 - B.7 [done D882: structure exists (E₄-protected); fit open] Realistic ρ lepton sector with m_ν₁ ≈ 4e-9–7e-8 eV (beyond the weight-two doublet alone).
-- B.8 [open] Locked oscillation fit at ρ: Γ₂-singlet leptons + N_Y + S₁ + S₂(weight-4, ∝E₄) + small lift; NO splittings and m_ν₁ ≈ 1e-8 eV.
+- B.8 [done D883: natural, 3.5%, ε ≈ 2e-3] Locked oscillation fit at ρ: Γ₂-singlet leptons + N_Y + S₁ + S₂(weight-4, ∝E₄) + small lift; NO splittings and m_ν₁ ≈ 1e-8 eV.
