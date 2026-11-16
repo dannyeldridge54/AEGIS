@@ -1518,3 +1518,8 @@ Touches: none.
 ## D964: negative-mass branch of Project H
 - [derived] (sympy) A = −aE: stable only for aE < B; V_min/B = X/(X−1) → −∞ as X → 1.
 - Result: Project H needs the positive sign strictly; D963's question is decisive.
+
+## D965: gauge-loop sign positive
+- [literature] hep-ph/9810410 eq. 3.14: brane scalars from bulk gauge towers, m² > 0, finite.
+- [derived] (mpmath) Δm²(0) − Δm²(½) = (7/4)ζ(3) = 2.1036 (checked).
+- Result: gauge → +, Yukawa → −, Wilson line → −; Project H needs a gauge-charged localised χ.
