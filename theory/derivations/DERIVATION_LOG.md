@@ -929,3 +929,11 @@ Touches: serapis_e, lepto_i, eps_tilt.
 4. Racetrack on T₂/T₃ passes for σ ≤ ½, only at string-size tori and g_s ≈ 0.4–0.5 [derived] (computed).
 5. D857–D861 mixed branches: BHK belongs to ρ, P1′ to τ = i; D861's τ = i condition withdrawn (D861a) [derived].
 Touches: plateau_origin, serapis_e, band_i, lepto_i.
+
+## D868: SERAPIS-E uplift alternatives
+1. Distant sequestered anti-D3 avoids the U₁ term but needs a throat outside the torus [estimate] (D837, D838).
+2. T-brane D-term on the T⁴ cycle adds only an E(U₁,2) piece to C [literature] (1512.04558; D866).
+3. Complex-structure F-term uplift couples to U₁ and is hard to control [literature] (2512.17995).
+4. Kähler/hidden-sector uplift is U₁-independent at leading order [literature] (hep-th/0611332, 0707.2671).
+5. P3's wording must move from "anti-D3 sector" to "uplift sector" [derived] (D867).
+Touches: plateau_origin, serapis_e.

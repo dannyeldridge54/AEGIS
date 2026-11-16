@@ -68,13 +68,14 @@
     "D837",
     "D838",
     "D839",
-    "D867"
+    "D867",
+    "D868"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D838: assumed",
     "D839: assumed",
-    "D867: assumed"
+    "D867: assumed",
+    "D868: assumed"
    ]
   },
   {
@@ -248,7 +249,7 @@
     "D865: computed",
     "D866: corrected"
    ],
-   "flag": "recheck (D867, plateau_origin)"
+   "flag": "recheck (D868, plateau_origin)"
   },
   {
    "id": "janus",

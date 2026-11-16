@@ -8930,3 +8930,15 @@ MAP: node=plateau_origin status=assumed touches=[serapis_e,band_i,lepto_i] rippl
 
 ## D861a (correction, found in D867)
 D861's added τ = i condition came from a scan that imposed SERAPIS-E's BHK tilt on the τ = i branch, whose frozen tilt is the fitted ε. The condition is withdrawn for the frozen τ = i model; it applies only to the post-hoc BHK-tilted τ = i variant (D823). The v3.2 draft sentence citing D860/D861 is replaced (D867).
+
+## D868: what SERAPIS-E's uplift sector can be without an anti-D3 on the inflaton torus (ranked)
+Searches 2; fetched 2512.17995 (F-term uplifting with warping); the T-brane fetch (1512.04558) was interrupted, so its entry uses the abstract-level statement only.
+Criterion: the uplift must (i) not add a large U₁-dependent term to V like the anti-D3 did (D867), and (ii) be able to carry the E(τ,2) plateau postulate P3 (or at least not contradict it).
+1. Anti-D3 in a distant warped throat, sequestered from the inflaton torus [estimate]: its interaction with the D3 stacks on T²₁ is suppressed by the throat's warping and distance, so (i) holds; it still provides the nilpotent X. But our T⁶/(Z₂×Z₂) has no conifold (D837), so this needs the CY resolution; and the throat route cannot give P3's power-law shape (D838). Rank 1 as the uplift, with P3 kept as a postulate.
+2. T-brane (D-term) uplift on a D7 stack (Cicoli–Quevedo–Valandro, 1512.04558) [literature, abstract level]: a D-term from a non-commuting Higgs vev on D7s, scaling with the Kähler moduli; it couples to the inflaton torus only if the D7s wrap a cycle containing T²₁. Placing the stack on the T⁴ cycle avoids U₁ dependence at tree level (i) but then its one-loop BHK-type term is position-independent and of E(U₁,2) shape (D866), i.e. it ADDS to C rather than spoiling it. No nilpotent X needed. Rank 2.
+3. Complex-structure F-term uplift (bulk flux energy ∝ ∫|G₋|²) [literature] (2512.17995): depends on complex-structure moduli including U₁ directly, so it adds a U₁-dependent term at tree level unless the IASD flux avoids T²₁; the paper finds KKLT-type F-term uplift "effectively uncontrollable" and LVS control only at large volume. Rank 3.
+4. Hidden-sector matter / Kähler uplifting (hep-th/0611332, 0707.2671) [literature, titles]: volume-dependent, U₁-independent at leading order; compatible with (i); no nilpotent sector. Rank 4 (not developed here).
+Consequence [derived]: P3's wording ("the plateau sits in the anti-D3 / nilpotent sector") must be loosened to "in the uplift sector", because the anti-D3 on this torus is excluded (D867). The top candidate (distant sequestered anti-D3) keeps the nilpotent X but needs a throat outside the torus; the next best (T-brane on the T⁴ cycle) needs no X and only adds an E(U₁,2) piece to C.
+Next (top recommendation): check that a sequestered distant throat leaves SERAPIS-E's frozen band unchanged, i.e. estimate the residual U₁ coupling of a throat anti-D3 (warp-factor suppression e^{4A₀}) against the D835 bound k ≲ 2e-6.
+Sources: 2512.17995; 1512.04558; hep-th/0611332; 0707.2671; 1707.07059.
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
