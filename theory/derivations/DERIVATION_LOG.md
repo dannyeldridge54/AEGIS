@@ -806,3 +806,11 @@ Touches: none.
 5. Grid robustness 54/54 [derived].
 6. P1′ passes the locked phase-support rule for θ₁; depends on which exponential the heavy ν carry [derived].
 Touches: none.
+
+## D852: Q.2 instanton phase (P1′ follow-up)
+1. Heavy-ν Majorana masses from D-instantons, M ∝ e^{2πinT} [literature] (hep-th/0609191; IIB mirror, estimate).
+2. Kähler normalisation and Dirac Yukawas carry no phase [derived] (D844).
+3. A common phase is removable; CPV needs Δn ≠ 0, Δ = 2πΔn⟨Re T⟩ [derived].
+4. |sin Δ₁| > 0.1 in 80.3% of CP-odd vacua; 19.7% near zero [derived] (computed, PREREG_D852).
+5. P1′ gains a two-sector condition; draft updated [derived].
+Touches: none.

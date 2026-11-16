@@ -10,3 +10,4 @@
 - [D841] Limitations / τ = i section: state that the τ = i branch is kept as a CONDITIONAL variant (decision rule D841): its ε has no derived source (C1), and it needs a 2⊕1 heavy-neutrino structure not required at ρ (C3); its ε window is narrow (1.40–1.45e-4). No frozen τ = i prediction is contradicted by data.
 - [D846] Baryogenesis / postulates: replace P1's 'independent uniform coupling phases' with P1′: CP broken spontaneously by a Kähler-axion racetrack vev (D843–D845); note that CP is a symmetry of the string effective theory and the toroidal configuration alone has no CP source.
 - [D851] Draft wording fix: 'often metastable' (CP paragraph) → 'in about 40% of cases the deepest minimum, otherwise within ~5% of it' (D851).
+- [D852] Applied in draft: CP paragraph now states the two-instanton-sector condition and the 80% figure; D851 metastability wording fixed.

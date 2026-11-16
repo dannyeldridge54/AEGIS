@@ -1,0 +1,5 @@
+CP-odd minima: 2352; CP-even minima: 676
+Delta1 (dn=1): |sin|>0.1 0.803, >0.5 0.517; hist [464, 188, 172, 160, 152, 136, 192, 176, 224, 488]
+Delta2 (dn=2): |sin|>0.1 0.837, >0.5 0.563
+CP-even minima: max |sin Delta1| = 1.11e-06 (expected 0 since L/2 integer or half-integer -> check)
+EXIT 0

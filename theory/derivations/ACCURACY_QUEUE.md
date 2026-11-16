@@ -64,5 +64,5 @@ Steps (one per tick; lock before any computation; honest labels):
 
 ## P1′ follow-up (queued 2026-11-16 after v3.2 draft; draft held, "Not yet" on Zenodo)
 - Q.1 [done D851: θ₁ generic; 41% deepest CP-odd] Distribution of the axion vev over CP-odd racetrack minima (D845 rerun with fixed seeds is NOT allowed; new lock): fraction with |sin(2π⟨Re T⟩/L·k)| > 0.1 for the phase that enters the heavy-ν couplings.
-- Q.2 [open] How the heavy-ν couplings depend on T (Kähler normalisation vs holomorphic), and the resulting leptogenesis phase δ.
+- Q.2 [done D852: two-sector condition; 80% generic] How the heavy-ν couplings depend on T (Kähler normalisation vs holomorphic), and the resulting leptogenesis phase δ.
 - Q.3 [open] Verdict: does P1′ reproduce the D762/D763 pass fractions?
