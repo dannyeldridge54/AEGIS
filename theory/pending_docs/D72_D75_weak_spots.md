@@ -9778,3 +9778,11 @@ MAP: none
 Verdict: the ADS model supplies every ingredient Project H lists (6D non-SUSY gauge tower without light gauginos; charged localised scalars; a same-representation partner), with two unchecked links: the doublet-index symmetry vs χ†φ₀ mixing, and the actual one-loop ND-scalar mass. Next step is a calculation in the model (string one-loop two-point function of ND scalars on T⁴/Z₂ × T²), beyond a cheap tick; recorded as Project H's top open item.
 LESSONS: when a source says "doublet" without naming the group, record the ambiguity rather than guess the symmetry.
 MAP: node=plateau_origin status=estimate touches=[] ripple=no
+
+## D970 (Project H, coefficient): calibrating the image-sum method on ADPQ's 5D result gives the gauge-loop factor κ = 4C = (D−1)C exactly; with the same (D−1) rule in 6D, m_χ² = (5ζ(4)/2π³) g²C E(U,2)/A = 0.0873 g²C E(U,2)/A (A the physical T² area, g the 4D gauge coupling)
+[derived] (mpmath) Image sum on a circle: g₅² = 2πR g², G₅(L) = Γ(3/2)/(4π^{5/2}L³), Σ_{n≠0} G₅(2πRn) = ζ(3)/(32π⁵R³). Matching ADPQ's bosonic part g²Cζ(3)/(4π⁴R²) (D965) requires m² = κ g₅² Σ′G₅ with κ = 4.0000000000 C, which equals (D−1)C at D = 5: the Feynman-gauge seagull (D) minus the scalar–vector exchange (1) [the (D−1) reading is an interpretation; the number 4 is computed].
+[estimate] Assuming the same (D−1) counting in D = 6 (κ = 5C) and the D945 lattice identity Σ′|w|⁻⁴ = 2ζ(4)E(U,2)/A² with g₆² = A g²: m_χ² = 5C g² A · (1/4π³) · 2ζ(4)E(U,2)/A² = (5ζ(4)/2π³) g²C E(U,2)/A, coefficient 0.087266 (no light gauginos; massless level only; Feynman-gauge counting not re-derived in 6D).
+Use: in D941's language A = m_χ² M² × (field normalisation) and the plateau needs λ′ ≤ 1/E(ρ,2) (D947); with this coefficient the ratio A/B is set by g²C/(A B) and is free (D946), so no new constraint arises from c₆ itself; it fixes how heavy χ is: m_χ² ~ 0.09 g²C·Ê·M_KK² ≫ H² for Ê ~ 1e3 unless g²C is tiny [estimate].
+Verdict: Project H's mass term now has an explicit coefficient (calibrated in 5D, extended to 6D by a stated rule). Remaining open items unchanged (doublet mixing, string-level ND mass, stabilisation).
+LESSONS: calibrate an image-sum normalisation on a published lower-dimensional result before using it in a new dimension.
+MAP: none

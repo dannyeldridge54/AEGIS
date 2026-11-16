@@ -217,3 +217,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D967: check each effective-potential term against the field's symmetry.
 - D968: a loop-particle mass lowers the lattice weight by one at first order.
 - D969: record an unnamed symmetry ('doublet') as ambiguous rather than guessing.
+- D970: calibrate image-sum normalisations on a published lower-D result.

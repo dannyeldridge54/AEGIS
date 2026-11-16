@@ -1545,3 +1545,8 @@ Touches: none.
 - [literature] hep-th/9908023: ND scalar doublets in (16,1,1,16)+(1,16,16,1); no potential/vevs/masses; ND annulus vanishes.
 - [estimate] same-rep pair available; doublet symmetry vs mixing open; ND scalar mass uncomputed.
 - Result: ingredients present; Project H's top open item is the one-loop ND-scalar mass.
+
+## D970: Project H loop coefficient
+- [derived] (mpmath) 5D calibration against ADPQ: κ = 4C = (D−1)C exactly.
+- [estimate] 6D, κ = 5C: m_χ² = (5ζ(4)/2π³) g²C E(U,2)/A = 0.0873 g²C E(U,2)/A.
+- Result: explicit coefficient; open items unchanged.
