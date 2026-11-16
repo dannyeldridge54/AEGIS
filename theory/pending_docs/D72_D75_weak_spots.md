@@ -9389,3 +9389,10 @@ MAP: none
 2. D749 "CMB-S4 is no longer planned": CONFIRMED [literature] (Scientific American, 2025: DOE and NSF "jointly decided that they can no longer support the CMB-S4 project", statement of 10 July 2025).
 v3.3 draft opened (papers/v3/serapis_v3.3_draft.tex, copy of the published v3.2 with the D657a fix and a Table I layout tweak; builds clean, 18 pp). No Zenodo action.
 MAP: none
+
+## D917 (audit M.3): the heterotic Green–Schwarz term puts log(T + T̄), not the η threshold, into K; D754's lead weakened; no published sentence affected
+1. D755's memory form K ⊃ −ln(S + S̄ + δ_GS/8π²·L): checked [literature] (1009.3931 eq. 3.11): K = −log[S + S̄ − (1/8π²)Σ_j δ_GS^j log(φ_j + φ̄_j)] − Σ_j log(φ_j + φ̄_j) + …; the Green–Schwarz term involves log(T + T̄) only, and the Dedekind η functions (the DKL threshold) appear in the gauge kinetic functions (its eqs. 3.25, 3.29), not in K. Sign and coefficient: −δ_GS/8π² inside the log (D755's sign convention differed; immaterial to its ×50 estimate).
+2. Consequence for D754 [derived]: D754's structural lead ("the ρ-variant tilt function L = −ln(2y|η|⁴) enters K like a GS/threshold term") is NOT supported as written: in the heterotic case the modular-invariant completion pairs log(T + T̄) in K with η in f; L itself is not a Kähler term there. D755 already found the lead ×2 off; it is now also structurally unsupported. The ρ variant's tilt stays fitted (post hoc), as the paper says.
+3. D760's inference (Eisenstein-type functions in K, log η in holomorphic couplings) is CONSISTENT with this pattern: one-loop K has E₂-type (BHK, IIB) or log(T + T̄) (GS, heterotic) dependence; η appears in f/thresholds [literature: 1009.3931; hep-th/0508043].
+4. Published text: the v3.2/v3.3 drafts call L "the universal N = 2 one-loop threshold" (correct, DKL) and treat its entry into the uplift as a hypothesis; no sentence relies on D754's K-form. No fix needed.
+MAP: none

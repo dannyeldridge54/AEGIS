@@ -1269,3 +1269,10 @@ Touches: none.
 3. The modular centre cannot supply a Z₆; D656/D657 numbers stand [derived].
 4. CMB-S4 support ended 10 July 2025 [literature] (Scientific American).
 Touches: none.
+
+## D917: audit M.3
+1. Heterotic one-loop K has −δ_GS/8π² log(T + T̄) inside the dilaton log; η only in f [literature] (1009.3931 eq. 3.11).
+2. D754's L-in-K lead unsupported as written [derived].
+3. D760's pattern consistent [literature] (1009.3931, hep-th/0508043).
+4. No published sentence affected [derived].
+Touches: none.
