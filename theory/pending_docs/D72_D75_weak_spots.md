@@ -9520,3 +9520,10 @@ MAP: none
 Status: post-hoc models, scored only on future data; nothing frozen changes. Use: an r detection near 1–5e-3 by LiteBIRD would favour A/B (non-SERAPIS geometries); r ≲ 1e-3 keeps SERAPIS and C–E. Project F closes here pending a new idea for a single flat U.
 LESSONS: plain attractor siblings are separated by r alone; n_s needs the ramp in every case.
 MAP: none
+
+## D937 (plan step 2): D929's loophole is real: a log-corrected approach V ≈ V₀(1 − c ln y / y^k) has local index k_eff = k − 1/ln y and can mimic SERAPIS's p = 2√2 for n = 2 or 3, but only at a tuned field value
+[derived] For V₀ − V ∝ y^{−k} ln y, k_eff ≡ −d ln(V₀−V)/d ln y = k − 1/ln y. Matching p = 2√2 needs k_eff = 2√n.
+[derived] (arithmetic; exponential-plateau estimate Δφ = ln(60/50)/p for the observable window) n = 3, k = 4: ln y = 1.87 (y ≈ 6.5), k_eff drifts by 0.015 between N = 50 and 60, so p is constant to < 0.5% over the window; n = 3, k = 5: y ≈ 1.9, drift 0.12; n = 2, k = 3: y ≈ 340, drift 0.002; n = 2, k = 4: y ≈ 2.4, drift 0.09.
+Verdict: D929's "only n = 1" holds for pure power-law approaches; with a log-corrected leading term, n = 3 (k = 4, y ≈ 6.5) and n = 2 (k = 3, y ≈ 340) reproduce p = 2√2 to < 0.5% over the observable e-folds. Cost: horizon exit must sit at that specific y (a tuning of where the 55 e-folds start), and the leading correction must be ∝ y⁻⁴ ln y (n = 3) or y⁻³ ln y (n = 2) [estimate: no source computed for such a term]. Status of D929 downgraded from "selects n = 1" to "selects n = 1 without tuning". Weak spot recorded; no paper claim relied on D929 yet.
+LESSONS: power-counting selections need a log-correction check before they are stated as rules.
+MAP: none

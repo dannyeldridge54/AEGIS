@@ -1376,3 +1376,9 @@ Touches: none.
 - [computed] n_s 0.960–0.967, α_s −(5.6–8.0)e-4 for all; r(N=55): 4.0e-3, 1.3e-3, 6.6e-4, 1.7e-4, 3.3e-4 for α = 1, 1/3, 1/6, 1/24, 1/12.
 - [derived] all need a ramp for SPA+DESI n_s; D669 p listed per member.
 - Result: catalogue recorded; Project F closed pending a new idea.
+
+## D937: D929 log loophole
+- [derived] k_eff = k − 1/ln y for a y^{−k} ln y approach.
+- [derived] (arithmetic) n=3,k=4 needs y≈6.5 (drift 0.015); n=2,k=3 needs y≈340 (drift 0.002).
+- [estimate] no source for such leading terms computed.
+- Result: D929 holds only without tuning.
