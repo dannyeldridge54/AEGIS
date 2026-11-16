@@ -24,6 +24,7 @@
 ## Round 6 (16 Nov 2026; referee report REFEREE_v3.1_round6.md)
 - New title: "The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test".
 - D775: ρ-leptogenesis computed (CRV ε, Casas–Ibarra grid): passes for c ≳ 0.6 at M_H = 1e12 (D776; 29–70% for c = 1–3), fails for c = 0.3; supersedes the DI-bound estimate of D731.
+- D790: inflaton-decay ε ≲ 1e-13 (wall); inflaton Affleck–Dine orbit charge η ≈ 2·Δx can make B but needs a tuned offset (over-produces ~30× at the isocurvature-safe offset).
 - D789: P5 consistent (Z3, matter parity, no leptoquark couplings, prompt); N decays then conserve B — asymmetry must come from the Z3-charged inflaton decays (open).
 - D788: late dim-6 decays cannot make the asymmetry (Nanopoulos–Weinberg, ε ≲ 1e-8); ρ needs a postulated light Z3-charged colour-triplet mediator (P5), which also restores the D725 T_R.
 - D787: R-Z3 satisfiable — with q(H_u) ≠ 0 the Z3 is baryon triality on SM; pair decays via N·udd; proton stable.
