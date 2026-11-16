@@ -1145,3 +1145,9 @@ Touches: n_sector_rho, lepto_rho, mnu.
 3. S_W ≳ 13.9–19.3 vs S_N = 6.4–12.6 [derived] (arithmetic).
 4. D892's natural claim withdrawn; shared M ≫ M_P condition with τ = i [derived] (D646a).
 Touches: lepto_rho, n_sector_rho, mnu.
+
+## D898: R2.2c text pass
+1. Draft numbers replaced by D895–D897 values [derived] (D895, D896, D897).
+2. Referee R2 minors 2–5 fixed [derived].
+3. No new physics; frozen predictions unchanged [derived].
+Touches: none.

@@ -14,3 +14,10 @@ Scope: serapis_v3.2_draft.tex lines changed since D871, read against the abstrac
 - ε at τ = i: abstract (1.3–1.6)e-4 and the corrected-reheating window (1.40–1.45)e-4 agree with Sec. "origin of ε" and the τ = i item.
 - T₂ ≳ 1e5–1e6 GeV agrees between the ρ caveat, footnote e of the prediction table, and D880.
 - The new D885–D893 sentences cite their D-notes and carry post hoc / estimate labels.
+
+## Responses (D895–D898)
+1. RESOLVED. The ρ route now uses the model's own no-thermal yield (D646/D646a), since D653 shows thermal effects are negligible at T₂ = 1e5–1e6 GeV; the FHY extrapolation in D880 exceeded that ceiling (correction D880a; locked run D895). Window m_ν₁ = 2e-11–9e-10 eV. Downstream: lift ε ≈ 1.6e-4 (locked run D896), |τ−ρ| ≈ 3e-4, Weinberg bound c ≲ 1e-5 (M_P) / 1e-7 (M_s) with instanton action 14–19 (D897; D892's "natural" claim withdrawn). Draft text updated.
+2. FIXED: the Consequence paragraph now states ≲ 1e-10 eV at τ = i and ≲ 1e-9 eV at ρ.
+3. FIXED: abstract adds "under conditions on the lepton sector".
+4. FIXED: abstract adds the ρ lepton sector's fitted symmetry-breaking parameter.
+5. FIXED: prediction_sheet.md has a ρ AD section (D880/D895/D896/D897) and marks the self-diluted route (D792) superseded; the m_ν₁ row names both vacua.

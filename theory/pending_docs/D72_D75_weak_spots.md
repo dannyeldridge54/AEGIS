@@ -9229,3 +9229,8 @@ Arithmetic: theory/modular/weinberg_d897.py → theory/derivations/weinberg_d897
 Results [derived] (arithmetic, v_u = 170 GeV, m_ν₁ = 2e-11 / 1.34e-10 / 9e-10 eV): c needed 1.7e-6 / 1.1e-5 / 7.6e-5 (reduced M_P); 8.4e-6 / 5.7e-5 / 3.8e-4 (M_P); 4.2e-9–9.3e-7 (M_s = 0.6–3e16 GeV). Instanton-only with Λ = M_s: S_W ≳ 13.9–19.3, against S_N = 6.4–12.6 for M_N = 1e11–1e13 GeV.
 Verdict: D892's "bound met for M_N ≲ 1e12 GeV with S_W ≥ S_N" is WITHDRAWN. The instanton-only mechanism still works but needs S_W ≈ 1.5–3 × S_N, a Weinberg instanton cycle larger than the heavy-ν ones [estimate]. This is the same M ≫ M_P requirement τ = i already carried (D646a, M = v²/m_ν₁ ~ 1e25 GeV), so it is now a shared condition of AD on both branches, not a ρ-specific weakness.
 MAP: node=lepto_rho status=estimate touches=[n_sector_rho,mnu] ripple=no
+
+## D898 (R2.2c): referee R2 closed; draft, prediction sheet and status updated to D895–D897
+All five R2 items answered in papers/v3/REFEREE_v3.2_R2.md (Responses). v3.2 draft ρ caveat now quotes m_ν₁ = 2e-11–9e-10 eV (D895), ε ≈ 1.6e-4 and m_ν₁ ≈ 1.3e-10 eV (D896), |τ−ρ| ≈ 3e-4, and the Weinberg condition with S ≳ 14–19 (D897); Consequence paragraph scoped to each vacuum; abstract names the lepton-sector conditions and the fitted ρ parameter. prediction_sheet.md: new ρ AD section, D792 route marked superseded. Rebuilt clean, 17 pages. Frozen predictions unchanged.
+Next project: P3 origin is exhausted for now (D828–D839, D868–D870); the non-toroidal completion is large. Top pick: a fresh full referee pass on the whole v3.2 draft (not only the diff), since today's corrections touched Sec. VII, the abstract and the prediction sheet.
+MAP: none

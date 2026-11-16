@@ -132,4 +132,8 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - R2.1 [done D894: 1 major (two AD yields differ ×49 in m_ν₁), 4 minors; REFEREE_v3.2_R2.md]
 - R2.2a [done D895 + D880a: ρ AD window 2e-11–9e-10 eV; D880 corrected ×~100]
 - R2.2b [done D896: ε ≈ 1.6e-4, natural at lower edge]
-- R2.2c [open] Redo D891–D892 Weinberg numbers with D895's window (D897); fix v3.2 draft sentences quoting 4e-9–7e-8 eV, 1.7e-8 eV, ε ≈ 2e-3, |τ−ρ| ≈ 3e-3, M_N ≲ 1e12 GeV; referee minors 2–5 (incl. prediction_sheet.md ρ row); rebuild clean; CHANGELOG; ACCURACY_STATUS sync.
+- R2.2c [done D897–D898: Weinberg redone, draft and sheet updated, R2 closed]
+
+## Full referee pass R3 (picked 2026-11-16 under the autonomy rule)
+- R3.1 [open] Fresh full read of serapis_v3.2_draft.tex (all sections) against prediction_sheet.md and ACCURACY_STATUS.md: numeric consistency across sections, overclaims, stale clauses, labels. papers/v3/REFEREE_v3.2_R3.md.
+- R3.2 [open] Fixes (one D-note), rebuild clean.
