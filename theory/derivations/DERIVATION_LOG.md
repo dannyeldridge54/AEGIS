@@ -1476,3 +1476,8 @@ Touches: none.
 - [literature] 1711.11494: USp(32) bosons, fermions in antisymmetric 495 + singlet goldstino.
 - [derived] (arithmetic) 528 − 496 = +32 bosonic excess.
 - [estimate] Project H sign condition met at the massless level; massive levels and couplings unchecked.
+
+## D957: vacuum-mass shift of N* (Project H)
+- [derived] λ′ < 1/E_ρ = 0.173; m_φ² ∝ λ′.
+- [estimate] Γ ∝ m³ ⇒ ΔN* = ¼ ln λ′ = −0.44 to −1.15; Δn_s ≈ −(3.5–9.2)e-4.
+- Result: tolerable (<1e-3) for λ′ ≳ 0.01, but a real downward shift; locked exact check needed before any claim.
