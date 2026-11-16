@@ -219,3 +219,4 @@ D932  2026-11-16T20:27Z  flat directions are diagonal
 D933  2026-11-16T20:31Z  no identically flat single U
 D934  2026-11-16T20:48Z  flat single U search result
 D935  2026-11-16T20:49Z  F1 killed: no flat single U
+D936  2026-11-16T20:55Z  sibling catalogue
