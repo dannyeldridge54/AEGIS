@@ -7612,3 +7612,19 @@ VERDICT: CORRECTION. ρ-branch reheating (D725), and everything built on its T_R
 - The τ = i branch is NOT affected the same way: its residual Z₂ allows odd leptons with Majorana masses (2q ≡ 0 mod 2), so odd heavy states can decay to odd leptons.
 Next (forward, locked): (a) the N* and n_s, r shift for T₂ ∈ {3e2, 3e4, 3e6} GeV, with an intermediate matter phase of the pair, using the D719/D725 N* code; (b) whether n_s stays in 0.970–0.975.
 MAP: node=n_sector_rho status=corrected touches=[lepto_rho, gravitino_wino, serapis_e] ripple=no
+
+## D781 (FORWARD, i-side; Jl tick 20; locked PREREG_D781; results/late_reheat_d781.txt) — the frozen SERAPIS-E bands survive the Z₃ late reheating only if T₂ ≳ 1e5–1e6 GeV (decay via string-scale operators); Planck-suppressed decay (T₂ ~ 300 GeV) puts SERAPIS-E outside its frozen r band
+Computed (D725 N* code, matter-like until T₂; K4: C = 1.15e-6 at T₂ = 3.175e8 reproduces D725 exactly: N* 49.72, n_s 0.9732, r 4.697e-4):
+| T₂ (GeV) | N* | n_s (C = 1.0 / 1.15 / 1.3e-6) | r (×1e-4) | frozen bands |
+|---|---|---|---|---|
+| 3.2e8 (D725) | 49.7 | 0.9716 / 0.9732 / 0.9748 | 4.52 / 4.70 / 4.89 | INSIDE (C ≥ 1.15) |
+| 3e6 | 48.2 | 0.9701 / 0.9716 / 0.9732 | 4.73 / 4.90 / 5.09 | INSIDE (all C) |
+| 3e4 | 46.6 | 0.9686 / 0.9700 / 0.9715 | 4.95 / 5.12 / 5.31 | OUTSIDE (r just above 5.12 where n_s is in band) |
+| 3e2 | 45.1 | 0.9669 / 0.9683 / 0.9698 | 5.20 / 5.37 / 5.55 | OUTSIDE |
+VERDICT (locked rule): INSIDE for T₂ = 3e6, OUTSIDE for T₂ ≤ 3e4.
+- A lower T₂ lowers N* by ≈ 0.75 per decade of T₂, which lowers n_s and raises r. The frozen strip's r ceiling (5.12e-4) is crossed near T₂ ~ 1e5 GeV.
+- Therefore the frozen D693 predictions hold at ρ ONLY IF the Z₃-charged heavy ν decay through operators suppressed by Λ ≲ M_s (T₂ ≳ 1e5–1e6 GeV). With M_P-suppressed decay (T₂ ~ 300 GeV) SERAPIS-E sits at r ≈ 5.2–5.5e-4, outside its frozen r band (but inside the family cap 8.3e-4 and the strip's broader range).
+- The frozen bands are NOT changed. This is a conditional CORRECTION: the frozen ρ-branch numbers now carry an extra condition (T₂ ≳ 1e5 GeV).
+- If that condition fails, the post-hoc SERAPIS-E prediction moves to r ≈ 5.2–5.5e-4, n_s ≈ 0.967–0.970, scored only on future data.
+Next (reverse): what sets Λ? Which Z₃-allowed operator lets the charged pair decay, and at what scale? Candidates: string-scale (M_s) couplings to the twisted sector; operators with the dilaton or Kähler moduli that carry Z₃ charge; or decay into a light Z₃-charged hidden state (dark radiation). Deep research plus charge bookkeeping.
+MAP: node=serapis_e status=computed touches=[n_sector_rho] ripple=no

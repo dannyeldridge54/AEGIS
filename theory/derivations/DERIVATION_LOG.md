@@ -224,3 +224,13 @@ Touches: n_sector_rho, lepto_rho, mnu.
 8. A stable relic, if no charged operator exists: Ωh² ~ 2.7e8·M·Y ~ 1e14·0.12 [estimate].
 9. [derived] Consistency: this contradicts D725's statement that light states decay via the seesaw y_D (it ignored Z₃), so D725 and everything downstream is corrected. The frozen bands are locked and unchanged. τ = i is unaffected (Z₂ allows Majorana odd leptons).
 Touches: n_sector_rho, lepto_rho, gravitino_wino, serapis_e.
+
+## D781 — late reheating and the frozen bands (forward side)
+1. N* = 67 − ln(k/a₀H₀) + ¼ ln(V*²/(M_P⁴ρ_end)) + (1/12)ln(ρ_th/ρ_end) − (1/12)ln g* for a w = 0 phase down to T₂ [literature] (Liddle–Leach; Planck 2018 X; D719 code).
+2. Both the inflaton and the heavy-N phases are matter-like, so only T₂ enters [derived].
+3. dN*/d log₁₀T₂ = (1/12)·4·ln 10 ≈ 0.77 [derived] (computed: 49.7 → 48.2 → 46.6 → 45.1 per two decades ✓).
+4. Exact spectra (first-order slow roll on the D692 potential) give n_s and r per (C, T₂) [derived] (computed).
+5. The frozen bands hold for T₂ ≥ 3e6 and fail for T₂ ≤ 3e4 [derived] (computed).
+6. The required T₂ ≳ 1e5 GeV implies Λ ≲ (M⁵M_P/T₂⁴)^{1/4}·…, i.e. roughly the string scale for M ~ 1e12 [estimate] (from Γ ~ M⁵/Λ⁴ and T₂ ~ √(ΓM_P)).
+7. [derived] Consistency: K4 reproduces D725. D780's estimate T₂ ~ 300 GeV (Λ = M_P) is now quantified as OUTSIDE. The frozen bands are unchanged (locked); a condition is added.
+Touches: serapis_e, n_sector_rho.

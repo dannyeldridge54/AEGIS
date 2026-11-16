@@ -100,7 +100,8 @@
     "D778: corrected",
     "D779: corrected",
     "D780: corrected"
-   ]
+   ],
+   "flag": "recheck (D781, serapis_e)"
   },
   {
    "id": "n_sector_i",
@@ -197,18 +198,18 @@
     "D765",
     "D765a",
     "D769",
-    "D770"
+    "D770",
+    "D781"
    ],
    "depends": [
     "plateau_origin",
     "bhk_tilt"
    ],
    "history": [
-    "D765a: computed",
     "D769: computed",
-    "D770: computed"
-   ],
-   "flag": "recheck (D780, n_sector_rho)"
+    "D770: computed",
+    "D781: computed"
+   ]
   },
   {
    "id": "janus",
