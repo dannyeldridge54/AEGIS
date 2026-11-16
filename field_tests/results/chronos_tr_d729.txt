@@ -1,0 +1,10 @@
+octic coefficient: V ~ c8 delta^8, c8 = 2.6879e+02
+eps=0.00013 T_R=1e+06 w=3/5: N*=49.95 y*(MS-shifted)=24.3 HS n_s=0.9733 (+1.6 SPA, +0.2 S+D) r=4.67e-04
+eps=0.00013 T_R=1e+06 w=0: N*=48.38 y*(MS-shifted)=23.8 HS n_s=0.9720 (+1.2 SPA, -0.3 S+D) r=4.87e-04
+eps=0.00013 T_R=3e+06 w=3/5: N*=50.31 y*(MS-shifted)=24.4 HS n_s=0.9737 (+1.8 SPA, +0.3 S+D) r=4.63e-04
+eps=0.00013 T_R=3e+06 w=0: N*=48.75 y*(MS-shifted)=23.9 HS n_s=0.9723 (+1.3 SPA, -0.2 S+D) r=4.83e-04
+eps=0.00016 T_R=1e+06 w=3/5: N*=49.93 y*(MS-shifted)=24.7 HS n_s=0.9761 (+2.6 SPA, +1.2 S+D) r=5.14e-04
+eps=0.00016 T_R=1e+06 w=0: N*=48.40 y*(MS-shifted)=24.2 HS n_s=0.9747 (+2.1 SPA, +0.7 S+D) r=5.34e-04
+eps=0.00016 T_R=3e+06 w=3/5: N*=50.30 y*(MS-shifted)=24.8 HS n_s=0.9765 (+2.7 SPA, +1.4 S+D) r=5.10e-04
+eps=0.00016 T_R=3e+06 w=0: N*=48.76 y*(MS-shifted)=24.3 HS n_s=0.9750 (+2.2 SPA, +0.8 S+D) r=5.30e-04
+ALLOWED: [0.00013, 0.00016]

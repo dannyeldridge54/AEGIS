@@ -6930,3 +6930,23 @@ Caveats:
 - Maximal CP phase assumed.
 - The ρ branch (D725, T_R ~ 1e9) is a separate case: thermal leptogenesis is plausible there, not computed.
 Paper: the "Leptogenesis from inflaton decay fails" paragraph is corrected (D728). AD is now an alternative, not a requirement. Builds at 13 pp.
+
+## D729 (CENTRE; locked PREREG_D729; results/chronos_tr_d729.txt) — Chronos (τ = i) at the corrected T_R: half the rows leave the frozen band
+Computed (D602 machinery, only the ε and T_R loops changed):
+| ε | T_R | w | N* | y* | n_s | r | in frozen band? |
+|---|---|---|---|---|---|---|---|
+| 1.3e-4 | 1e6 | 3/5 | 49.95 | 24.3 | 0.9733 | 4.67e-4 | NO (r < 4.8e-4) |
+| 1.3e-4 | 1e6 | 0 | 48.38 | 23.8 | 0.9720 | 4.87e-4 | yes |
+| 1.3e-4 | 3e6 | 3/5 | 50.31 | 24.4 | 0.9737 | 4.63e-4 | NO (r) |
+| 1.3e-4 | 3e6 | 0 | 48.75 | 23.9 | 0.9723 | 4.83e-4 | yes |
+| 1.6e-4 | 1e6 | 3/5 | 49.93 | 24.7 | 0.9761 | 5.14e-4 | NO (n_s > 0.975) |
+| 1.6e-4 | 1e6 | 0 | 48.40 | 24.2 | 0.9747 | 5.34e-4 | yes |
+| 1.6e-4 | 3e6 | 3/5 | 50.30 | 24.8 | 0.9765 | 5.10e-4 | NO (n_s) |
+| 1.6e-4 | 3e6 | 0 | 48.76 | 24.3 | 0.9750 | 5.30e-4 | edge (n_s = 0.9750) |
+All rows satisfy y* ≤ 25 and the D602 data rule (largest pull +1.4σ vs SPA+DESI, +2.7σ vs SPA).
+VERDICT (locked rule; no retuning):
+- With the corrected reheating, the frozen τ = i band (n_s 0.970–0.975, r 4.8–5.7e-4) is matched only by the matter-like (w = 0) half of the bracket.
+- The stiff-phase rows (w = 3/5) leave it: low r at ε = 1.3e-4, n_s > 0.975 at ε = 1.6e-4.
+- The frozen band stays as locked and is scored on future data. Where it fails, the D727 correction is the cause, recorded here.
+- Physics question this raises: at T_R ~ 1e6 GeV the inflaton decays early, so does the octic (stiff) phase even last? If decay happens during the octic phase, w = 3/5 holds only until H ~ Γ. The w = 0 rows assume an immediate switch. To check (D730).
+Paper: the D727 estimate sentence is replaced by these computed numbers; builds.
