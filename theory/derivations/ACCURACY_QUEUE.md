@@ -40,7 +40,7 @@ Steps (one per tick; lock before any computation; honest labels):
 
 ## Warped-throat project (P3 route a; started 2026-11-16 on Danny's choice)
 - W.1 [done D837] Literature: anti-D3 at the tip of a KS throat in a compact torus orientifold; how the warp factor e^{4A₀} and the uplift depend on the bulk complex structure U (throat moduli vs bulk moduli; 1707.07059, KKLMMT, Bena et al., Gautason et al.).
-- W.2 [open] Derive the U-dependence of the warped uplift V_up = 2T₃e^{4A₀(U)}/(...) for our configuration; additive or inverted (1/E) form?
+- W.2 [done D838: cannot give the power-law plateau] Derive the U-dependence of the warped uplift V_up = 2T₃e^{4A₀(U)}/(...) for our configuration; additive or inverted (1/E) form?
 - W.3 [open] Warped κ: interaction vs tension in the throat (redo D833's ratio with warping).
 - W.4 [open] Locked numerics if W.2 gives a candidate; compare with V0[1 − E(ρ)/E(τ)].
 - W.5 [open] Verdict and v3.2 note.

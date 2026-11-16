@@ -8562,3 +8562,16 @@ Assessment:
 Next: W.2: test point 7. If Λ₀(U) is a holomorphic period, |Λ₀|⁴ = |h(U)|⁴ with h of definite weight; check whether any such f can approach a constant at the cusp with a minimum at ρ (D685/D799 closed the holomorphic cases for W; the question is now for the cutoff).
 Sources: 1809.06861; 2105.03370; 1809.06618; 1910.08094.
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D838 (DEEP, W.2): a holomorphic throat cutoff cannot give SERAPIS-E's power-law plateau
+Derivation only (no numerics).
+Setup: D837 point 4 gives V_up = V0·f(U), with f built from the holomorphic period Λ₀(U). Duality invariance of V (under SL(2,Z) or any finite-index subgroup Γ, e.g. Γ⁰(2) after Scherk–Schwarz, D803a/D807) requires f to be invariant. The general invariant built from holomorphic data and the Kähler factor is a finite sum f = Σ_i c_i y^{w_i}|h_i(U)|², h_i holomorphic forms of weight w_i for Γ [derived].
+1. Holomorphic modular forms of negative weight vanish, so w_i ≥ 0 [literature: standard; Diamond–Shurman].
+2. At the cusp h_i = a_i q^{n_i}(1 + …): a term with n_i = 0 grows like y^{w_i}|a_i|²; a term with n_i > 0 (cusp form) decays like y^{w_i}e^{−4πn_i y} [derived].
+3. f → a nonzero CONSTANT at the cusp therefore needs every non-cusp term to have w_i = 0. A weight-0 holomorphic form bounded at all cusps is constant [literature: Liouville on the compactified modular curve]. So f = c₀ + Σ(cusp-form terms): the approach to the plateau is EXPONENTIAL, f = c₀ − O(y^w e^{−2πy}) [derived]. (Poles, e.g. j(U), make f blow up at the cusp and are excluded.)
+4. SERAPIS-E's P3 shape 1 − E(ρ)/E(U) approaches its plateau as a POWER LAW, 1 − E(ρ)/(2ζ(4)y²) (D691 point 2). A power-law approach cannot arise from any f in point 3 [derived].
+Verdict: route (a) cannot reproduce P3 as stated, in any modular-invariant completion. It CAN give an exponentially approached plateau, f = c₀ − A y^w e^{−2πy}, which is the shape class of the older τ = i / ρ L-variant family (D685-era εI₁-type forms), not SERAPIS-E's. The only escapes are (i) breaking the modular symmetry of the uplift (the CY resolution's U need not keep SL(2,Z), but SERAPIS's foundation is that symmetry), or (ii) a non-holomorphic origin, which in string theory means loops, already closed by D828–D836.
+Consequence for P3 [derived]: all three routes listed in D832 are now constrained: one-loop (closed, D828–D836), warped (cannot give the power law, this note; and needs leaving the torus, D837), non-perturbative holomorphic (closed by the same point 3 argument as D799). P3's E-ratio form has NO identified string origin. It stays a postulate.
+Remaining for the project: W.3 (warped κ) is moot for P3's shape; it would only matter for the D835 bound if a throat is added. Recommend closing the warped-throat project at W.5 without W.3/W.4.
+Sources: Diamond–Shurman, A First Course in Modular Forms, ch. 1–3 (weights, cusp forms) [literature]; D685, D691, D799, D837.
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no

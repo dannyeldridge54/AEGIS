@@ -697,3 +697,12 @@ Touches: plateau_origin, serapis_e, band_i.
 5. T⁶/(Z₂×Z₂) has no conifold, so route (a) leaves the toroidal model [derived].
 6. P3 via (a) needs |Λ₀(U)|⁴ ∝ 1 − E(ρ)/E(U) [derived].
 Touches: plateau_origin, serapis_e.
+
+## D838: W.2 throat-cutoff shape (warped-throat project)
+1. Invariant f from holomorphic data is Σ c_i y^{w_i}|h_i|², w_i ≥ 0 [literature] (Diamond–Shurman).
+2. Non-cusp terms grow as y^{w}; cusp forms decay exponentially [derived].
+3. f → constant needs weight-0 constant plus cusp forms: exponential approach [derived].
+4. SERAPIS-E's plateau approaches as a power law 1 − c/y² [derived] (D691).
+5. Route (a) cannot give P3 in any modular-invariant completion [derived].
+6. P3's E-ratio has no identified string origin [derived] (D828–D837).
+Touches: plateau_origin, serapis_e.
