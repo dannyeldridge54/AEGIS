@@ -1535,3 +1535,8 @@ Touches: none.
 - [derived] (sympy) D-term: flat top at finite Ê, not P3; mixing B|χ−φ₀|²: P3 exactly, breaks the gauge group.
 - [estimate] need gφ₀ ≪ T² KK scale to keep E(U,2).
 - Result: new condition on Project H.
+
+## D968: gauge-mass correction to the E(U,2) mass
+- [derived] (mpmath-checked) G₆(L;m) ≈ G₆(L;0)[1 − (mL)²/4].
+- [derived] correction = weight-1 sum −(m_V²/4A)E_reg(U,1).
+- [estimate] need g φ₀ ≲ 0.1 M_KK to keep the p = 2√2 approach to ~1%.

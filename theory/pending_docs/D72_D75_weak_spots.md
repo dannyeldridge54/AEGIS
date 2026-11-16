@@ -9762,3 +9762,11 @@ MAP: none
 Consequence: Project H's χ must be (charged) AND (mixed with a vev-carrying partner of the same charge), with the gauge-breaking scale gφ₀ below the T² KK scale. A new, sharp model-building condition; not yet checked in the ADS model.
 LESSONS: check every term of an effective potential against the symmetry of the field it was assigned to.
 MAP: none
+
+## D968 (Project H, follows D967): a gauge-boson mass m_V from the pinning vev corrects each winding by −(m_V|w|)²/4, i.e. adds a weight-1 piece −(m_V²/4)·Σ′|w|⁻² to the weight-2 E(U,2) sum; the correction is small when m_V ≪ M_KK of the T², and it falls on the plateau relative to E(U,2)
+[derived] (Bessel expansion, checked with mpmath) G₆(L; m) = (m/2πL)² K₂(mL)/2π = (1/4π³L⁴)[1 − (mL)²/4 + O((mL)⁴ ln mL)]; numerically G₆(m)/G₆(0) = 0.999377 / 0.99025 / 0.94377 vs 1 − (mL)²/4 = 0.999375 / 0.99 / 0.9375 at mL = 0.05 / 0.2 / 0.5.
+[derived] So Σ′G₆(|w|; m_V) = (1/4π³)[Σ′|w|⁻⁴ − (m_V²/4) Σ′|w|⁻² + …] = (1/4π³)[2ζ(4)E(U,2)/A² − (m_V²/4A)·E_reg(U,1) + …], where the weight-1 lattice sum needs regularisation (its U-dependence is the Kronecker-limit form −ln(U₂|η(U)|⁴), linear in y at large y) [standard; the regularisation constant drops out of the U-dependence].
+[estimate] Relative size of the correction on the plateau ~ (m_V²A/4)·(πy/3)/(2ζ(4)y²) ∝ m_V²A/y: it decreases toward the cusp, and is ≪ 1 for m_V ≪ M_KK = 1/√A (string units) at y ~ 20–25. A weight-1 admixture would add a k = 1 (p = √2) component to the approach; requirement: m_V²A ≲ 1e-2 to keep the p = 2√2 approach to better than ~1% over the observable window [estimate].
+Verdict: D967's mixing route is consistent if the pinning vev breaks the gauge group well below the T² KK scale (g φ₀ ≲ 0.1 M_KK). Project H's condition list: χ gauge-charged and brane-localised; mixed with a same-charge vev φ₀; g φ₀ ≲ 0.1 M_KK; non-SUSY 6D gauge tower without light gauginos; fixed T² area; 20g ≲ A₁ ≲ 1e6.
+LESSONS: a mass for the loop particle lowers the lattice weight by one at first order; check which weight the leading correction carries.
+MAP: none

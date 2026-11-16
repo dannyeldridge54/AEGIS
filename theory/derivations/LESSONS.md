@@ -215,3 +215,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D965: classify sign results by coupling type before generalising.
 - D966: 1D loop result + image-sum weight rule gives the torus structure.
 - D967: check each effective-potential term against the field's symmetry.
+- D968: a loop-particle mass lowers the lattice weight by one at first order.
