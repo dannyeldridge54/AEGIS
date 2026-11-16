@@ -137,7 +137,7 @@
     "D889: assumed",
     "D890: assumed"
    ],
-   "flag": "recheck (D894, lepto_rho)"
+   "flag": "recheck (D895, lepto_rho)"
   },
   {
    "id": "n_sector_i",
@@ -455,7 +455,8 @@
    ],
    "depends": [
     "n_sector_rho"
-   ]
+   ],
+   "flag": "recheck (D895, lepto_rho)"
   },
   {
    "id": "darkrad_rho",
@@ -471,7 +472,8 @@
    ],
    "depends": [
     "n_sector_rho"
-   ]
+   ],
+   "flag": "recheck (D895, lepto_rho)"
   },
   {
    "id": "reheat_rho",
@@ -487,7 +489,8 @@
    ],
    "depends": [
     "sterile_rho"
-   ]
+   ],
+   "flag": "recheck (D895, lepto_rho)"
   },
   {
    "id": "nstar_e",
@@ -504,7 +507,8 @@
    "depends": [
     "reheat_rho",
     "serapis_e"
-   ]
+   ],
+   "flag": "recheck (D895, lepto_rho)"
   },
   {
    "id": "lepto_rho",
@@ -514,7 +518,7 @@
     "E"
    ],
    "title": "Leptogenesis at ρ (non-thermal, DI estimate)",
-   "status": "estimate",
+   "status": "computed",
    "d": [
     "D731",
     "D762",
@@ -545,16 +549,17 @@
     "D891",
     "D892",
     "D893",
-    "D894"
+    "D894",
+    "D895"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D892: estimate",
     "D893: estimate",
-    "D894: estimate"
+    "D894: estimate",
+    "D895: computed"
    ]
   },
   {
@@ -579,7 +584,8 @@
    "history": [
     "D786: estimate",
     "D809: computed"
-   ]
+   ],
+   "flag": "recheck (D895, lepto_rho)"
   },
   {
    "id": "band_i",
@@ -632,7 +638,7 @@
     "D748: frozen",
     "D821: frozen"
    ],
-   "flag": "recheck (D880, lepto_rho)"
+   "flag": "recheck (D895, lepto_rho)"
   },
   {
    "id": "caps",
@@ -670,7 +676,7 @@
     "D786: frozen",
     "D824: frozen"
    ],
-   "flag": "recheck (D894, lepto_rho)"
+   "flag": "recheck (D895, lepto_rho)"
   },
   {
    "id": "wino_window",
@@ -694,7 +700,8 @@
    "history": [
     "D761: estimate",
     "D784: corrected"
-   ]
+   ],
+   "flag": "recheck (D895, lepto_rho)"
   },
   {
    "id": "tests_cmb",
@@ -720,7 +727,8 @@
     "D749: literature",
     "D751: literature",
     "D752: computed"
-   ]
+   ],
+   "flag": "recheck (D895, lepto_rho)"
   },
   {
    "id": "tests_lhc",
@@ -736,7 +744,8 @@
    ],
    "depends": [
     "wino_window"
-   ]
+   ],
+   "flag": "recheck (D895, lepto_rho)"
   }
  ],
  "observing": [

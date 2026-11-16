@@ -1,0 +1,5 @@
+m_nu1 required (eV), n_B/s = (8/23) T2 (2 v^2/m) Q/(4 MP^2):
+  T2=1e+05 GeV: median Q: 2.04e-11; max Q: 8.88e-11
+  T2=3e+05 GeV: median Q: 6.12e-11; max Q: 2.66e-10
+  T2=1e+06 GeV: median Q: 2.04e-10; max Q: 8.88e-10
+K: FHY-extrapolated n_B/s=8.57e-11 (D880 point: m=4.4e-9 eV, T2=1e5, m32=2.5e5, delta=0.1); no-thermal ceiling (delta=1)=2.02e-11; FHY/ceiling=4

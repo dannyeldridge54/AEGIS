@@ -9202,3 +9202,17 @@ Output: papers/v3/REFEREE_v3.2_R2.md.
 Major [derived]: the τ = i AD integration (D646, Hubble-induced A-terms, yield independent of m_soft) gives m_ν₁ ≤ 9e-11 eV at T_R = 1e5 GeV, while the ρ route (D880, FHY scaling ∝ m_{3/2}) gives m_ν₁ ≥ 4.4e-9 eV at T₂ = 1e5 GeV: a factor ≈ 49 in m_ν₁, ≈ 340 in yield (arithmetic). Same mechanism, two treatments. The ρ window and D891's Weinberg bound inherit this uncertainty. Minors: stale general "m_ν₁ ≲ 1e-10 eV" statement; abstract omits the ρ chain's conditions and its second fitted parameter; prediction_sheet.md still lists the superseded self-diluted ρ route (D792).
 Next: R2.2. The major item needs a decision on which A-term treatment applies at each vacuum (a short derivation from D646 and hep-ph/0102187); the minors are text fixes.
 MAP: node=lepto_rho status=estimate touches=[n_sector_rho,mnu] ripple=no
+
+## D880a (correction to D880): the ρ LH_u AD window was overestimated by ~100; the model's own no-thermal yield applies
+D880 extrapolated the FHY thermal scaling (hep-ph/0102187: ∝ m_{3/2}·m_ν₁^{-3/2}, T^{1/3} below 1e8 GeV) to T₂ = 1e5–1e6 GeV with m_{3/2} = 2.5e5–7e5 GeV. In that regime D653 had already shown thermal effects are negligible (φ/T ≳ 1e6), so the no-thermal D646/D646a yield applies, and it is a ceiling: D880's own point (m_ν₁ = 4.4e-9 eV, T₂ = 1e5 GeV) gives FHY n_B/s = 8.6e-11 against a ceiling of 2.0e-11 even at δ = 1 (D895 check K). The correct window is in D895. D880's statement "inside the frozen band" survives (T₂ unchanged); its m_ν₁ window and everything tuned to it (D883's lift target, D891–D892's Weinberg bound) do not.
+MAP: node=lepto_rho status=corrected touches=[n_sector_rho,mnu] ripple=yes
+
+## D895 (CENTRE, R2.2a): LH_u AD at ρ needs m_ν₁ ≈ 2e-11–9e-10 eV, as at τ = i; the ρ lift and Weinberg bound tighten
+Lock: PREREG_D895_ad_rho_d646.md (committed and pushed before the run). Script theory/modular/ad_rho_d895.py, output field_tests/results/ad_rho_d895.txt.
+Results [derived]: m_ν₁ = 2.0e-11–8.9e-11 eV (T₂ = 1e5 GeV), 6.1e-11–2.7e-10 (3e5), 2.0e-10–8.9e-10 (1e6), median to max Q of D646. Check K: FHY extrapolation exceeds the no-thermal ceiling by 4 at D880's point.
+Verdict (locked rule): window differs from D880 by ~100 (> 3), so D880a is written and D883, D891–D892 are flagged. Pre-stated prediction (2e-11–9e-10 eV) CONFIRMED. Both vacua now use one AD treatment; referee R2 item 1 RESOLVED.
+Consequences [estimate] (to be recomputed):
+1. D883's lift: m_ν₁ ∝ ε², so the geometric-middle target 1.3e-10 eV needs ε ≈ 1.8e-3·√(1.3e-10/1.7e-8) ≈ 1.6e-4 (not 1.8e-3). D883's locked rule ([1e-4, 1e-2]) would sit at its lower edge; this needs a fresh locked run, not a re-scoring.
+2. D891's bound tightens by ~130: c ≲ 1e-5 (Λ = M_P) or ≲ 1e-7 (Λ = M_s), i.e. S_W ≳ 14–16, against S_N ≈ 6.4–12.6 for the heavy singlets. D892's "natural for M_N ≲ 1e12 GeV" no longer holds as stated; the Weinberg instanton must be markedly more suppressed than the heavy-ν ones.
+3. The frozen predictions are unchanged: the Σm_ν NO floor (0.0587 eV) is insensitive to m_ν₁ at this level.
+MAP: node=lepto_rho status=computed touches=[n_sector_rho,mnu] ripple=yes

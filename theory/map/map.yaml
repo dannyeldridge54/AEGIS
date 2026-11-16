@@ -110,7 +110,7 @@ nodes:
   - 'D888a: estimate'
   - 'D889: assumed'
   - 'D890: assumed'
-  flag: recheck (D894, lepto_rho)
+  flag: recheck (D895, lepto_rho)
 - id: n_sector_i
   layer: 1
   branch:
@@ -349,6 +349,7 @@ nodes:
   - D725
   depends:
   - n_sector_rho
+  flag: recheck (D895, lepto_rho)
 - id: darkrad_rho
   layer: 4
   branch:
@@ -360,6 +361,7 @@ nodes:
   - D723
   depends:
   - n_sector_rho
+  flag: recheck (D895, lepto_rho)
 - id: reheat_rho
   layer: 4
   branch:
@@ -371,6 +373,7 @@ nodes:
   - D725
   depends:
   - sterile_rho
+  flag: recheck (D895, lepto_rho)
 - id: nstar_e
   layer: 4
   branch:
@@ -383,13 +386,14 @@ nodes:
   depends:
   - reheat_rho
   - serapis_e
+  flag: recheck (D895, lepto_rho)
 - id: lepto_rho
   layer: 4
   branch:
   - rho
   - E
   title: Leptogenesis at ρ (non-thermal, DI estimate)
-  status: estimate
+  status: computed
   d:
   - D731
   - D762
@@ -421,13 +425,14 @@ nodes:
   - D892
   - D893
   - D894
+  - D895
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D892: estimate'
   - 'D893: estimate'
   - 'D894: estimate'
+  - 'D895: computed'
 - id: gravitino_wino
   layer: 4
   branch:
@@ -446,6 +451,7 @@ nodes:
   history:
   - 'D786: estimate'
   - 'D809: computed'
+  flag: recheck (D895, lepto_rho)
 - id: band_i
   layer: 5
   branch:
@@ -486,7 +492,7 @@ nodes:
   history:
   - 'D748: frozen'
   - 'D821: frozen'
-  flag: recheck (D880, lepto_rho)
+  flag: recheck (D895, lepto_rho)
 - id: caps
   layer: 5
   branch:
@@ -515,7 +521,7 @@ nodes:
   - 'D750: frozen'
   - 'D786: frozen'
   - 'D824: frozen'
-  flag: recheck (D894, lepto_rho)
+  flag: recheck (D895, lepto_rho)
 - id: wino_window
   layer: 5
   branch:
@@ -534,6 +540,7 @@ nodes:
   history:
   - 'D761: estimate'
   - 'D784: corrected'
+  flag: recheck (D895, lepto_rho)
 - id: tests_cmb
   layer: 5
   branch:
@@ -554,6 +561,7 @@ nodes:
   - 'D749: literature'
   - 'D751: literature'
   - 'D752: computed'
+  flag: recheck (D895, lepto_rho)
 - id: tests_lhc
   layer: 5
   branch:
@@ -565,6 +573,7 @@ nodes:
   - D736
   depends:
   - wino_window
+  flag: recheck (D895, lepto_rho)
 observing:
 - id: mapper_dr3
   title: Gaia DR3 sweep complete (192,208,838 stars; 200/200 ESA checks)

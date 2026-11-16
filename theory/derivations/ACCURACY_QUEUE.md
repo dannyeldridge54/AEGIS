@@ -130,4 +130,5 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 
 ## Referee pass R2 (picked 2026-11-16 under the autonomy rule)
 - R2.1 [done D894: 1 major (two AD yields differ ×49 in m_ν₁), 4 minors; REFEREE_v3.2_R2.md]
-- R2.2 [open] Resolve major #1 (which A-term treatment applies at i and at ρ; derivation from D646 and hep-ph/0102187, locked recomputation if the ρ window changes), then fix minors 2–5, rebuild clean, CHANGELOG.
+- R2.2a [done D895 + D880a: ρ AD window 2e-11–9e-10 eV; D880 corrected ×~100]
+- R2.2b [open] Recompute D883 (lift ε) with the new m_ν₁ target under a fresh lock; redo D891–D892 numbers; then fix referee minors 2–5 and the v3.2 draft sentences that quote 4e-9–7e-8 eV, ε ≈ 2e-3 and M_N ≲ 1e12 GeV; rebuild clean; CHANGELOG.

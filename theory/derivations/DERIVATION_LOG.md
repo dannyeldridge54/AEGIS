@@ -1123,3 +1123,11 @@ Touches: lepto_rho, n_sector_rho, mnu.
 3. Ratio ≈ 49 in m_ν₁, ≈ 340 in yield [derived] (arithmetic).
 4. Four text minors listed in REFEREE_v3.2_R2.md [derived].
 Touches: lepto_rho, n_sector_rho, mnu.
+
+## D895: R2.2a AD yield at ρ (with D880a)
+1. Thermal effects negligible at H_osc ~ m_soft ~ 1e5–1e6 GeV [derived] (D653).
+2. n_B/s = (8/23)T₂(2v_u²/m_ν₁)Q/(4M_P²), Q = 0.020–0.087 [derived] (D646, D646a).
+3. m_ν₁ = 2.0e-11–8.9e-10 eV for T₂ = 1e5–1e6 GeV [derived] (locked run D895).
+4. FHY extrapolation exceeds the no-thermal ceiling by 4 at D880's point [derived] (check K).
+5. Lift target ε ≈ 1.6e-4; Weinberg bound c ≲ 1e-5 (M_P) / 1e-7 (M_s) [estimate].
+Touches: lepto_rho, n_sector_rho, mnu.
