@@ -7956,3 +7956,18 @@ Derivation:
 D689 already noted "this correction is multiplicative, so it gives NO vacuum mass". This tick confirms the mirror statement: it gives no destabilisation either.
 Paper: the D801 sentence ("a vacuum at i needs a hand-built function") is consistent with this; no change.
 MAP: node=serapis_e status=computed touches=[plateau_origin] ripple=no
+
+## D803 (FORWARD, i-side; Jl tick 42; research + derivation, no lock): the D801 caveat is REAL. Non-SUSY (Scherk–Schwarz) one-loop sums reduce the group and are minimised at 1 + i, an image of i, not at ρ. The paper sentence is qualified
+Research (1 search, 2 fetches): Antoniadis, Diaz Avalos, Faraggi, "A perturbatively stable non-supersymmetric string model with AdS vacuum" (2504.19364):
+- The one-loop potential is a fundamental-domain integral of shifted lattices. "SL(2,Z) is broken into a subgroup Γ" (they write Γ₁(2), eq. 2.31).
+- The minimum is at the free-fermionic point T = U = 1 + i, with a positive-definite Hessian and Λ = −0.00789 M_s⁴ (AdS). m²_U = m²_T ≈ 0.03–0.06 M_s²g_s².
+- Decompactification directions are unbounded below.
+Derivation:
+1. The Scherk–Schwarz shift splits the lattice into sectors with signs (−1)^{m}; the one-loop energy is a difference of shifted sums, not a positive combination [literature] (2504.19364).
+2. The invariance group is an index-3 congruence subgroup (Γ⁰(2)/Γ₀(2)/Γ₁(2), conjugate up to sign). It has ONE elliptic point of order 2 (at 1 + i or (1+i)/2, both SL(2,Z) images of i) and NO elliptic point of order 3 [literature] (standard: index 3, ε₂ = 1, ε₃ = 0).
+3. So under the reduced group ρ is not a symmetry-enforced critical point, while the image of i is [derived]. The computed minimum at 1 + i realises this [literature].
+4. Hence D801's "lattice sums select ρ" holds for POSITIVE (supersymmetric) sums only. Mixed-sign non-SUSY sums can select an image of i [derived].
+5. Consequence for the branches: the τ = i branch has a one-loop motivation in non-SUSY Scherk–Schwarz settings, and SERAPIS-E's ρ in supersymmetric BHK settings [derived]. Our plateau sector (anti-D3, nilpotent X) is supersymmetric up to the nilpotent breaking, so the BHK picture is the relevant one for SERAPIS-E [estimate].
+6. The flavour group at 1 + i: a T-translate of i, so Γ₂ ≅ S₃ forms transform with a fixed relabelling; whether the residual stabiliser keeps D785's prompt-decay structure is the mirror question for the next tick [estimate].
+Paper: the D801 sentence is qualified. It now states the positive-weight condition and the non-SUSY exception, with ref 2504.19364.
+MAP: node=plateau_origin status=literature touches=[serapis_e] ripple=no

@@ -437,3 +437,12 @@ Touches: plateau_origin, serapis_e.
 4. C_crit ~ 1e-4 versus a natural C ~ 1e-6 [derived] (arithmetic on locked outputs).
 5. The τ = i vacuum is stable [derived].
 Touches: serapis_e, plateau_origin.
+
+## D803: mixed-sign one-loop sums (forward side)
+1. Scherk–Schwarz: one-loop energy = difference of shifted lattice sums [literature] (2504.19364).
+2. The reduced group (index 3) has ε₂ = 1, ε₃ = 0 [literature].
+3. The image of i is enforced critical; ρ is not [derived].
+4. The computed minimum is at 1 + i [literature].
+5. D801 holds only for positive sums [derived].
+6. The SERAPIS-E sector is SUSY-like, so the BHK picture applies [estimate].
+Touches: plateau_origin, serapis_e.

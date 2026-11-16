@@ -39,12 +39,12 @@ nodes:
   - D799
   - D800
   - D801
+  - D803
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D799: assumed'
   - 'D800: computed'
   - 'D801: literature'
-  flag: recheck (D802, serapis_e)
+  - 'D803: literature'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -165,6 +165,7 @@ nodes:
   - 'D783: computed'
   - 'D793: computed'
   - 'D802: computed'
+  flag: recheck (D803, plateau_origin)
 - id: janus
   layer: 2
   branch:
