@@ -25,3 +25,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D772: before adopting a published vacuum, read its FULL flux vector and every relation it imposes (here τ₃ = S was hidden behind "τ₁τ₂ = b₃/a⁰"). One partial read cost three ticks (D764–D771).
 - 2026-11-16 D773: before searching numerically for a vacuum, check whether the equations force a parameter real (here a double root of a real quadratic). A one-line analytic argument replaced 5.8e6 sympy solves and settled the general case.
 - 2026-11-16 D762→D773: a candidate mechanism (flux CP) took five ticks to retire. Next time, test a mechanism's compatibility with the INFLATON first, the cheapest fatal check.
+- 2026-11-16 D774: when a chain of reverse ticks keeps retiring mechanisms, declare the chain exhausted, keep the explicit postulate, and switch the next forward tick to UPGRADING an estimate into a computation. That adds more than another speculative source.

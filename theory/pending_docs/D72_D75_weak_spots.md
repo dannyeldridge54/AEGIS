@@ -7512,3 +7512,16 @@ Consequence [derived]: in untwisted T⁶/(Z₂×Z₂) GVW vacua, a SUSY Minkowsk
 VERDICT (locked rule): P4 RETIRED; reopen explicit CP (P1). D762's result stands: leptogenesis on both branches needs CP phases the CP-conserving vacua cannot provide, and SERAPIS has no in-model source for them. D762's statistics (P1 natural, P = 0.62–0.99) apply again.
 The paper's CP paragraph is updated (unpublished v3.1).
 MAP: node=lepto_rho status=assumed touches=[lepto_i] ripple=no
+
+## D774 (REVERSE, ρ-side; Jl tick 13; literature, no computation) — twisted moduli as the CP source: in tension with SERAPIS-E's orbifold-point tilt; P1 stays the working assumption
+Deep research (1 search, 1 fetch; 1702.08424, T⁶/(Z₂×Z₂) with discrete torsion, Hodge (3, 51)):
+- There are 48 twisted complex-structure (deformation) moduli ε^{(i)}_{αβ}, one per Z₂ singularity. Non-zero values DEFORM the fixed loci: "an exceptional cycle with non-vanishing volume emerges".
+- D-branes can obstruct deformations through FI D-terms, pinning the modulus at the orbifold point. Stuck branes have no open-string moduli. The paper treats IIA D6-branes, and says nothing about IIB D3s or fluxes.
+- No source found on flux stabilisation of twisted moduli at complex values in the IIB O3 torsion model (search-only claim).
+Derived/estimate:
+- SERAPIS-E's tilt (D689–D696) is the BHK one-loop Kähler term evaluated AT the orbifold point, with stuck D3s at fixed points. A CP phase from twisted moduli needs ε ≠ 0 with a phase, which deforms exactly the singular points the stuck stacks sit at (or their images in the other tori).
+- The orbifold point ε = 0 is CP-even. A small |ε| keeps the tilt formula approximately and gives a phase of O(|ε|) in couplings to the twisted sector. Whether the heavy-ν couplings are of that kind is unknown.
+- Route status: possible in principle with |ε| ≳ 0.01 (D731's smallest sin δ), but it sits in tension with the stuck-brane picture. No in-model source. Recorded as a direction, not as a postulate (β3 kept for testable items).
+VERDICT: the in-model CP chain is EXHAUSTED for now (D762–D774): untwisted flux relations are impossible without the inflaton (D773), and twisted moduli conflict with the orbifold-point tilt (estimate). P1 (explicit CP phases) stays the working assumption on both branches.
+Next (forward): upgrade lepto_rho from the Davidson–Ibarra upper estimate (D731) to an actual CP-asymmetry computation for the 2⊕1 heavy-ν sector at ρ under P1 (random complex couplings), as D745 did for τ = i.
+MAP: node=lepto_i status=assumed touches=[lepto_rho] ripple=no

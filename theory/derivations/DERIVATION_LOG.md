@@ -149,3 +149,13 @@ Touches: lepto_rho, lepto_i.
 9. The CP phase for leptogenesis must be explicit (P1) [postulate P1].
 10. [derived] Consistency: D762–D763 (both branches need high-energy CP) stand. D764's j-test result is still correct as a statement about U₃, but has no admissible vacuum to apply to. D771–D772 are superseded.
 Touches: lepto_rho, lepto_i.
+
+## D774 — the twisted-moduli CP route (reverse side)
+1. T⁶/(Z₂×Z₂) with discrete torsion has 48 twisted complex-structure moduli ε, one per Z₂ singularity [literature] (1702.08424).
+2. ε ≠ 0 deforms the singularity and opens an exceptional cycle [literature] (1702.08424).
+3. SERAPIS-E's tilt uses BHK's one-loop K at the orbifold point with stuck D3s at fixed points [literature] (D689, D696).
+4. ε = 0 is CP-even (real periods at the orbifold point, by the symmetry of the singular point) [estimate].
+5. A CP phase needs arg ε ≠ 0, |ε| ≠ 0, which deforms the stuck-brane loci, so the tilt formula holds only for |ε| ≪ 1 [estimate].
+6. Leptogenesis needs sin δ ≳ 0.01–0.56 (D731); with phases O(|ε|), |ε| ≳ 0.01 is needed [estimate].
+7. [derived] Consistency: D773 (untwisted) stands. This adds a tension, not an exclusion. P1 is unchanged.
+Touches: lepto_i, lepto_rho.
