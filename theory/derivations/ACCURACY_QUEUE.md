@@ -125,5 +125,5 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 
 ## Weinberg-bound project W2 (picked 2026-11-16 under the autonomy rule; D882 point 4)
 - W2.1 [done D891: not protected; c ≲ 1e-3 (M_P) or ≲ 1e-5 (M_s)] Selection rule: at ρ, does the residual Z₃ (charges q_L = −q_H, q_{H_u} ≠ 0 per D783) forbid the Planck-suppressed (LH_u)²/M_P entry along the lightest direction, or only allow it ∝ E₄? Derivation from the notes.
-- W2.2 [open] Origin of the Weinberg operator in the string completion: is (LH_u)² generated at tree level by string/KK states (Λ ~ M_s) or only gravitationally (Λ ~ M_P)? Literature on Weinberg-operator coefficients in IIB orientifolds / D-brane models (e.g. instanton-induced Majorana masses, Blumenhagen–Cvetič–Weigand; Ibáñez–Uranga), and whether the Γ₂-singlet charges forbid the tree-level channel.
+- W2.2 [done D892: instanton-only Weinberg term (perturbative lepton number) natural for M_N ≲ 1e12 GeV]
 - W2.3 [open] Verdict and v3.2 note.

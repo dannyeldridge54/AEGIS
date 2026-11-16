@@ -1103,3 +1103,10 @@ Touches: n_sector_rho, lepto_rho, mnu.
 3. m_W = v_u²/Λ = 1.2e-5 eV (reduced M_P), 1e-3–5e-3 eV (M_s) [derived] (arithmetic).
 4. Needed c ≲ 1e-3 (M_P) or ≲ 1e-5 (M_s); c = 1 at M_P gives AD yield ~1e-13 [derived] (arithmetic).
 Touches: lepto_rho, n_sector_rho, mnu.
+
+## D892: W2.2 Weinberg origin literature
+1. Perturbative U(1)s conserve lepton number; Weinberg term instanton-only, C/𝓜 ~ e^{−S}/M_s [literature] (1112.5992).
+2. M_m = x M_s e^{−2πVol/ℓ_s³g_s} [literature] (hep-th/0609191 eq. 2).
+3. Bound needs S_W ≳ 9.5–14; heavy-ν instantons have S_N ≈ 6.4–12.6 [derived] (arithmetic).
+4. Natural for M_N ≲ 1e12 GeV if S_W ≥ S_N [estimate].
+Touches: lepto_rho, n_sector_rho, mnu.

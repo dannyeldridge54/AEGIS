@@ -110,7 +110,7 @@ nodes:
   - 'D888a: estimate'
   - 'D889: assumed'
   - 'D890: assumed'
-  flag: recheck (D891, lepto_rho)
+  flag: recheck (D892, lepto_rho)
 - id: n_sector_i
   layer: 1
   branch:
@@ -418,13 +418,14 @@ nodes:
   - D879
   - D880
   - D891
+  - D892
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D879: assumed'
   - 'D880: computed'
   - 'D891: estimate'
+  - 'D892: estimate'
 - id: gravitino_wino
   layer: 4
   branch:
@@ -512,7 +513,7 @@ nodes:
   - 'D750: frozen'
   - 'D786: frozen'
   - 'D824: frozen'
-  flag: recheck (D891, lepto_rho)
+  flag: recheck (D892, lepto_rho)
 - id: wino_window
   layer: 5
   branch:

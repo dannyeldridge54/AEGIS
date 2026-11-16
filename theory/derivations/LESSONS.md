@@ -139,3 +139,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D888a: a vanishing at a fixed point is a residual-symmetry selection rule; it kills EVERY term with that charge (Kähler and instanton too), so look for the symmetry breaking, not for a new operator.
 - 2026-11-16 D890: when updating a paper caveat, re-read the whole paragraph for clauses the new result makes stale (here 'still to be built').
 - 2026-11-16 D891: a zero protected in one coupling (S₂'s Dirac term) does not protect the effective operator built from other fields; check the full effective operator's charge separately.
+- 2026-11-16 D892: compare a required suppression with the suppression the same mechanism already supplies elsewhere in the model (here the heavy-ν instanton action); that turns 'tuned?' into a concrete condition.

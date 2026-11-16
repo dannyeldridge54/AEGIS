@@ -9176,3 +9176,15 @@ Derivation from the notes plus arithmetic: theory/modular/weinberg_d891.py → t
 4. Requirement [derived] (arithmetic): m_ν₁ = 4e-9–7e-8 eV (D880) needs c ≲ 3e-4–6e-3 (reduced M_P), 2e-3–3e-2 (M_P), or 1e-6–7e-5 (M_s). With c = 1 at the reduced M_P the AD yield is only (0.6–1.7)e-13·δ_eff, about 500–1400 times short.
 Verdict: W2.1 NEGATIVE for protection. The ρ baryogenesis chain (D880–D883) requires the Weinberg coefficient along the lightest direction to be small: a mild 1e-3 if the operator is Planck-suppressed, a severe 1e-5 if it is string-scale suppressed. Which applies depends on how the operator arises in the string completion: tree-level exchange of string/KK states (Λ ~ M_s, dangerous) or only gravitationally (Λ ~ M_P). This is W2.2.
 MAP: node=lepto_rho status=estimate touches=[n_sector_rho,mnu] ripple=no
+
+## D892 (DEEP, W2.2): in D-brane models the Weinberg term is forbidden perturbatively by lepton number and arises only from instantons; with the same suppression as the heavy-ν masses the bound is met at the light end of M_N
+Searches 2; fetched 1112.5992 (Langacker, neutrino masses from the top down) and hep-th/0609191 (Blumenhagen–Cvetič–Weigand).
+Findings [literature]:
+1. 1112.5992: the extra (anomalous, Stückelberg-massive) U(1)s of intersecting-brane models survive as perturbative global selection rules, "typically leading to a conserved lepton number", so the Weinberg operator and Majorana masses are absent perturbatively. Stringy (KK, winding) exchange gives 𝓜 ~ M_s; D-instantons give C/𝓜 ~ e^{−S_inst}/M_s.
+2. hep-th/0609191 eq. 2: instanton Majorana masses M_m = x·M_s·exp(−2π Vol_E2/(ℓ_s³ g_s)), x = O(1).
+Assessment [derived] (arithmetic: theory/modular/weinberg_inst_d892.py → theory/derivations/weinberg_inst_d892.txt):
+3. If lepton number is such a perturbative symmetry, the Weinberg term is instanton-only, c = e^{−S_W} relative to v_u²/M_s. D891's bound (Λ = M_s) needs S_W ≳ 9.5–14.
+4. The heavy singlets of D883 (M_N = 1e11–1e13 GeV) are then also instanton masses: S_N ≈ 6.4–12.6 for M_s = (0.6–3)e16 GeV. An instanton action of the same size as the heavy-ν one meets the bound for M_N ≲ 1e11–1e12 GeV and misses by up to ~10–50 at M_N ~ 1e13 GeV. So the bound is natural, not tuned, provided the Weinberg instanton is at least as suppressed as the lightest heavy-ν instanton [estimate].
+5. Consistency [derived]: this needs lepton number to be a perturbative U(1) in the completion, a fifth structural condition on the ρ lepton sector (after Γ₂-singlet leptons, two extra singlets, E₄ protection, and the post hoc lift ε).
+Verdict: W2.2 CONDITIONAL POSITIVE. The literature supplies a standard mechanism that makes the Weinberg coefficient small (instanton-only, lepton number perturbatively conserved); with instanton actions like those of the heavy-ν masses, the bound holds for M_N ≲ 1e12 GeV. Not computed in a concrete compactification [estimate].
+MAP: node=lepto_rho status=estimate touches=[n_sector_rho,mnu] ripple=no
