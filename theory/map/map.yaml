@@ -48,8 +48,7 @@ nodes:
   - D758
   - D759
   - D760
-  note: V ~ y^2 (d ln E/dy)^2 (1+C E-hat); n_s band at C 5-10e-7 (alpha=1), r 2.1-3.1e-4;
-    needs A << B E (D707)
+  note: V ~ y^2 (d ln E/dy)^2 (1+C E-hat); n_s band at C 5-10e-7 (alpha=1), r 2.1-3.1e-4; needs A << B E (D707)
   history:
   - 'D758: computed'
   - 'D759: computed'
@@ -135,11 +134,13 @@ nodes:
   - D692
   - D693
   - D765
+  - D765a
   depends:
   - plateau_origin
   - bhk_tilt
   history:
   - 'D765: frozen'
+  - 'D765a: computed'
   - 'D765a: computed'
 - id: janus
   layer: 2
@@ -255,7 +256,7 @@ nodes:
   - 'D743: estimate'
   - 'D745: computed'
   - 'D763: assumed'
-  flag: recheck (D764, lepto_rho)
+  flag: recheck (D766, lepto_rho)
 - id: sterile_rho
   layer: 4
   branch:
@@ -315,13 +316,14 @@ nodes:
   - D731
   - D762
   - D764
+  - D766
   depends:
   - reheat_rho
   - n_sector_rho
   history:
   - 'D762: assumed'
   - 'D764: assumed'
-  flag: recheck (D765, serapis_e)
+  - 'D766: assumed'
 - id: gravitino_wino
   layer: 4
   branch:

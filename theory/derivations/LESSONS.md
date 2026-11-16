@@ -14,3 +14,5 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D764: when a mechanism ties a new field to the inflaton (here U₂ = c/U₁), check at once whether it changes the inflaton's kinetic term. Queue a forward check before trusting the old n_s and r.
 - 2026-11-16 D765: an imported vacuum relation that involves the inflaton changes the kinetic term, here doubling the Kähler metric and r. Check every new constraint against the inflaton direction before using it for other sectors.
 - 2026-11-16 D765: when reusing a solver under a new field map, grep it for hard-coded maps (s2, start values) and write the DEVIATIONS before the first run, not after a crash.
+- 2026-11-16 D766: every new flux or brane ingredient must be booked against the tadpole (32 = n_flux + 2n_D3 + n_O3′) the moment it is proposed. Here it forced 5/5/5+1 → 3/3/3+1.
+- 2026-11-16 D766: a frozen map node can't be changed by a MAP line, by design. A label slip on a frozen node needs a manual, documented edit, which is what D765a did.

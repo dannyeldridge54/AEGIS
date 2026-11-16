@@ -7384,3 +7384,24 @@ MAP: node=serapis_e status=frozen touches=[lepto_rho] ripple=no
 ## D765a (correction to D765's MAP line)
 D765's MAP line set node serapis_e to status=frozen, which changed it from "computed". That was a labelling error: SERAPIS-E's bands are locked (D693) but post-hoc, and the node's status was never "frozen". This note restores it; D765's physics is unchanged.
 MAP: node=serapis_e status=computed touches=[] ripple=no
+
+## D766 (REVERSE, ρ-side; Jl tick 5; locked PREREG_D766; results/p2_tadpole_d766.txt) — P2 on non-inflaton moduli works only with U₂ = ω, and it fits the tadpole only if SERAPIS's stuck branes drop from 5/5/5+1 to 3/3/3+1
+Literature (2405.18813, fetched):
+- n_flux = −2f·a⁰b₃ (eq 3.25), with bound n_flux = 32 − 2n_D3 − n_O3′ (eq 3.8).
+- CP violation needs b₃ ∤ a⁰ and a⁰ ∤ b₃. The smallest such case is a⁰ = 2, b₃ = −3, f = 1, so n_flux = 12 (eq 4.14).
+- Odd flux quanta need exotic O3′ planes (their App. A).
+Computed:
+- U₂ = i: U₃ = −(b₃/a⁰)/i = i·(b₃/a⁰) is purely imaginary, so j is real and s_CP = 0 for all 46 flux ratios. CP-conserving always [derived and computed; agrees with 2405.18813's weight-6 statement].
+- U₂ = ω: 63% of ratios give s_CP > 0.1, median 0.77 (reproduces D764).
+- Tadpole: n_flux = 12 ⇒ n_D3 ≤ 10. D698's 5/5/5 + 1 (16) does NOT fit. 3/3/3 + 1 = 10 saturates it exactly (12 + 20 = 32). At fixed C, Im S·Im ρ rescales to 225–732, which keeps weak coupling and moderate volume. 2/2/2(+1) fits with 150–488 only if extra flux or mobile branes fill the remainder.
+VERDICT (locked rule): VIABLE, with conditions.
+- P2 = the third torus's U₃ sits off the CP locus via U₂U₃ = b₃/a⁰ with U₂ = ω, and the heavy-ν couplings depend on U₃.
+- The microscopic picture changes: 3/3/3 + 1 stuck D3s, replacing 5/5/5 + 1 (D698's tilt mechanism, the fixed-point asymmetry, is kept; only N changes).
+- Caveats:
+  - odd b₃ needs exotic O3′ planes, and n_O3′ > 0 would shrink the D3 room below 10;
+  - the next even CP-violating option (a⁰ = 4, b₃ = −6, f = ½, n_flux = 24) leaves n_D3 ≤ 4, i.e. 1/1/1 + 1 with Im S·Im ρ 75–244 (marginal);
+  - that U₁ can stay out of W_flux in this flux restriction is an estimate (torus-permutation symmetry), not checked in the paper.
+- Applies to BOTH branches (U₁ = i or ρ is the inflaton; CP comes from U₃).
+Tool fix: ladder.py now reads letter-suffixed correction notes (D765a); new test, 5/5 pass. Frozen nodes stay protected (by design), so D765a's manual map fix stands.
+Mirror question (forward, next tick): with N = 3 instead of 5, does anything frozen move? Check D698/D692: C = 15N/(64π⁶ Im S Im ρ) is fixed by the band, so only the inferred Im S·Im ρ moves. Also the gravitino/wino chain (m₃/₂ depends on the volume, D732–D736): recompute the volume implied by Im S·Im ρ 225–732 and check that the wino window 0.67–0.80 TeV holds.
+MAP: node=lepto_rho status=assumed touches=[lepto_i] ripple=no

@@ -14,3 +14,4 @@ Falsifiers:
 - the flux relation spoils inflation: U₂ tracks U₁ during the roll (forward check, D765);
 - leptonic CP conservation established (δ ∈ {0, π}), which would favour integer flux ratios.
 - P2 update (D765): the strong form (U₁ = inflaton in the flux relation) CONFLICTS with the frozen SERAPIS-E bands (r ≈ 6.5–7.5e-4). P2 is restricted to the relation on non-inflaton moduli (U₂U₃ = b₃/a⁰), to be tested by the next reverse tick.
+- P2 update (D766): restricted form = U₂ = ω with U₂U₃ = b₃/a⁰, heavy-ν couplings ∝ forms of U₃. U₂ = i never violates CP. The tadpole then forces 3/3/3 + 1 stuck D3s (n_flux = 12 saturates 32). New falsifier: the exotic O3′ planes needed for odd b₃ are inconsistent with the stuck-brane torsion model.

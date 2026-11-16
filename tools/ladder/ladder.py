@@ -24,7 +24,15 @@ MAP_FROM = 739            # MAP lines are required from this D-number on
 STALE_AFTER = 5           # a flag older than this many D-notes fails `check`
 STATUSES = {"computed", "estimate", "literature", "assumed", "corrected", "killed", "open", "frozen"}
 LINE = re.compile(r"MAP:\s*node=(\S+)\s+status=(\S+)(?:\s+touches=\[([^\]]*)\])?(\s+ripple=no)?")
-HEAD = re.compile(r"^## D(\d+)", re.M)
+HEAD = re.compile(r"^## D(\d+)([a-z]?)\b", re.M)
+
+class DN(float):
+    """A D-number that orders correction notes (D765a) just after their parent and prints as written."""
+    def __new__(cls, n, suf=""):
+        o = float.__new__(cls, int(n) + (ord(suf) - 96) / 100 if suf else int(n)); o.label = f"{int(n)}{suf}"; return o
+    def __str__(self): return self.label
+    __repr__ = __str__
+    def __format__(self, spec): return format(self.label, spec)
 
 def load(p=MAP): return yaml.safe_load(open(p, encoding="utf-8"))
 def save(m, p=MAP): open(p, "w", encoding="utf-8").write(yaml.safe_dump(m, sort_keys=False, allow_unicode=True, width=200))
@@ -33,7 +41,7 @@ def notes(text):
     """Yield (D-number, body) for each D-note."""
     hs = list(HEAD.finditer(text))
     for i, h in enumerate(hs):
-        yield int(h.group(1)), text[h.end(): hs[i + 1].start() if i + 1 < len(hs) else len(text)]
+        yield DN(h.group(1), h.group(2)), text[h.end(): hs[i + 1].start() if i + 1 < len(hs) else len(text)]
 
 def downstream(m, start):
     kids = {}

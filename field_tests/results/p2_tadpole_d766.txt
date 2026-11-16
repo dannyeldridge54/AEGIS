@@ -1,0 +1,9 @@
+U2=i: N ratios=46 fraction s_CP>0.1=0.00 max s_CP=0.000 median=0.000
+U2=omega: N ratios=46 fraction s_CP>0.1=0.63 max s_CP=1.000 median=0.767
+n_flux=12 -> n_D3 <= 10
+N=1 per half-period, origin 0: total 3 D3 fits; Im S*Im rho = 75-244
+N=1 per half-period, origin 1: total 4 D3 fits; Im S*Im rho = 75-244
+N=2 per half-period, origin 0: total 6 D3 fits; Im S*Im rho = 150-488
+N=2 per half-period, origin 1: total 7 D3 fits; Im S*Im rho = 150-488
+N=3 per half-period, origin 0: total 9 D3 fits; Im S*Im rho = 225-732
+N=3 per half-period, origin 1: total 10 D3 fits; Im S*Im rho = 225-732

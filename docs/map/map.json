@@ -187,7 +187,8 @@
    "d": [
     "D692",
     "D693",
-    "D765"
+    "D765",
+    "D765a"
    ],
    "depends": [
     "plateau_origin",
@@ -195,6 +196,7 @@
    ],
    "history": [
     "D765: frozen",
+    "D765a: computed",
     "D765a: computed"
    ]
   },
@@ -355,7 +357,7 @@
     "D745: computed",
     "D763: assumed"
    ],
-   "flag": "recheck (D764, lepto_rho)"
+   "flag": "recheck (D766, lepto_rho)"
   },
   {
    "id": "sterile_rho",
@@ -437,7 +439,8 @@
    "d": [
     "D731",
     "D762",
-    "D764"
+    "D764",
+    "D766"
    ],
    "depends": [
     "reheat_rho",
@@ -445,9 +448,9 @@
    ],
    "history": [
     "D762: assumed",
-    "D764: assumed"
-   ],
-   "flag": "recheck (D765, serapis_e)"
+    "D764: assumed",
+    "D766: assumed"
+   ]
   },
   {
    "id": "gravitino_wino",

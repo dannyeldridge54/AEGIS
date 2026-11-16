@@ -56,3 +56,16 @@ Touches: lepto_rho, lepto_i, serapis_e (flux relation during inflation, open).
 9. The frozen band needs n_s 0.970–0.975 with r 4.55–5.12e-4; no C ≤ 4e-6 meets both [derived].
 10. [derived] Consistency: D692 is reproduced as the n = 1 limit (same code path). D764's CP result stands; only the assignment of the relation to the inflaton modulus fails.
 Touches: serapis_e (frozen; unchanged), lepto_rho (P2 restricted).
+
+## D766 — P2 on non-inflaton moduli; the tadpole (reverse side)
+1. CP-conserving ⇔ j(τ) ∈ ℝ [derived] (D764 step 2).
+2. Flux relation U₂U₃ = c, with c = b₃/a⁰ real [literature] (2405.18813 Model I, applied to tori 2 and 3).
+3. U₂ = i ⇒ U₃ = −ic, purely imaginary ⇒ j(U₃) real ⇒ CP-conserving for every c [derived] (checked over 46 ratios: s_CP = 0).
+4. U₂ = ω ⇒ U₃ = c/ω; CP-violating for 63% of small ratios [derived] (computed; = D764).
+5. n_flux = −2f·a⁰b₃ ≥ 12 for any CP-violating choice [literature] (eqs 3.25, 4.31; minimum a⁰ = 2, b₃ = −3, f = 1).
+6. n_flux + 2n_D3 + n_O3′ = 32 [literature] (eq 3.8).
+7. With n_O3′ = 0: n_D3 ≤ 10, so 3/3/3 + 1 saturates [derived].
+8. C = 15N/(64π⁶ Im S Im ρ) is fixed by the frozen band, so Im S·Im ρ ∝ N: 375–1220 → 225–732 for N = 5 → 3 [derived] (D698 formula).
+9. Heavy-ν couplings ∝ modular forms of U₃ carry O(s_CP) phases [postulate P2].
+10. [derived] Consistency: D765 is respected (U₁ is not in the relation, so its metric stays single). D698's tilt mechanism is unchanged; only N changes, and the frozen predictions do not move. The exotic-O3′ caveat is open.
+Touches: lepto_rho, lepto_i; mirror to the gravitino/wino chain (volume).

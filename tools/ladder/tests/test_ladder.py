@@ -35,3 +35,12 @@ def test_ripple_no_flags_only_touches():
     L.update(m, "## D742\nMAP: node=a status=computed touches=[x] ripple=no\n", 739)
     by = {n["id"]: n for n in m["nodes"]}
     assert "flag" in by["x"] and "flag" not in by["b"]
+
+def test_correction_note_suffix_applied_after_parent():
+    m = fresh()
+    text = "## D750 note\nMAP: node=a status=estimate ripple=no\n## D750a correction\nMAP: node=a status=computed ripple=no\n"
+    applied, last = L.update(m, text, 749)
+    by = {n["id"]: n for n in m["nodes"]}
+    assert len(applied) == 2 and by["a"]["status"] == "computed" and "D750a" in by["a"]["d"]
+    applied, last = L.update(m, text, last)
+    assert applied == []          # nothing re-applied on a second run
