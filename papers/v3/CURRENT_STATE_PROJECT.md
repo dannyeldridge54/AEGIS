@@ -1,4 +1,4 @@
-# AEGIS: current state (15 Nov 2026, 23:30 CT). Read before working.
+# AEGIS: current state (16 Nov 2026, 02:45 CT). Read before working.
 
 ## Active line: SERAPIS v3 / v3.1 (modular inflation)
 - Paper: repo `papers/v3/serapis_v3.tex` (13 pp; v3.1 draft adds SERAPIS-E + D719–D736 corrections). Zenodo v3 published, DOI 10.5281/zenodo.24250733; v3.1 NOT yet uploaded (needs Danny's "Publish").
@@ -25,6 +25,13 @@
   - D764–D772: postulate P2 (retired D772: the published flux model also ties τ₃ = S, no free inflaton) — then P4 (pure-NS flux) also retired D773: no untwisted flux vacuum leaves the inflaton torus free, so CP phases are explicit (P1 reopened). Earlier P2 notes: = CP from a second modulus via the flux relation U₂U₃ = b₃/a⁰ with U₂ = ω (2405.18813). With the inflaton in the relation, r doubles and leaves the band (D765 correction). Odd flux needs exotic O3′ planes; the one allowed placement is 8 O3′ with 2/2/2 stuck D3s, Im S·Im ρ = 375–488 (D766a, D766b, D771). Wino window unchanged (D767).
   - D768: plateau origin = postulate P3 (open): anti-D3 nilpotent metric, the same origin level as the SL(2,Z) attractors of 2408.05203. SERAPIS-E's r is ~4.5× below theirs.
   - D769 (running): the light-axion (Re τ) test of P3. A first, invalid run shows ∂N/∂x₀ ~1e-4, i.e. ζ_axion ~1e-9.
+- ρ-branch residual-Z₃ chain (D774–D785, 16 Nov 00:45–02:45):
+  - D775–D776: ρ-leptogenesis computed (CRV): needs c ≥ 0.6. Later superseded by dilution (D782).
+  - D777–D779: at ρ, any lepton-doublet texture gives a degenerate light pair (Z₃ theorem). The light leptons must be Γ₂ singlets, plus 2 extra neutral heavy singlets.
+  - D780–D783: the inflaton is Z₃-charged, so its decay products (the heavy Dirac pair) have no renormalisable SM decay. The frozen band holds only if they decay via string-scale operators (Λ ≲ 0.4–1e16 vs M_s ~ 0.6–3e16), giving T₂ ≳ 1e5 GeV. Baryogenesis comes from the late decays (ε ~ 1e-5–1e-3).
+  - D784: the SERAPIS-E wino is thermal, 0.67–1.85 TeV (5–41% of DM).
+  - D785: τ = i is unaffected (computed mirror check).
+- Paper v3.1 (15 pp, new title "The Shape of the Torus Sets the Sky…") is staged; Zenodo package in /mnt/user-data/outputs/zenodo_v3.1 (session) and papers/v3/zenodo. Danny said "Publish"; it needs his Zenodo login in Chrome plus "go".
 - Tests (D705): n_s at SO LAT + SPHEREx (~2030); r at LiteBIRD (launch 2032, results ≳ 2035, optimistic reach).
 - Pending Danny actions: Zenodo v3.1 "Publish"; outreach emails (4 drafts in papers/v3/drafts/outreach/, not sent); arXiv endorsement/submission.
 
