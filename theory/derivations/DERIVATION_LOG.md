@@ -1444,3 +1444,9 @@ Touches: none.
 ## D949: v3.3 draft Project H caveat
 - [derived] summary of D941–D948; no new numbers.
 - Result: draft builds clean, 18 pp.
+
+## D950: Project H needs a non-SUSY tower
+- [literature] 0805.1874: SUSY orbifold N=2 sectors give log(T₂U₂|η|⁴) Kähler corrections, no masses.
+- [derived] soft breaking: m_soft² ∂G/∂m² ∝ L^{−(D−4)} → s = 1 for D = 6 → p = √2, α = 1/3.
+- [estimate] Scherk–Schwarz on the same T² conflicts with low m_{3/2}; a sequestered non-BPS sector remains.
+- Result: Project H stands with a stricter requirement; draft updated.
