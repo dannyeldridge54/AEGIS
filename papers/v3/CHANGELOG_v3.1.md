@@ -24,6 +24,7 @@
 ## Round 6 (16 Nov 2026; referee report REFEREE_v3.1_round6.md)
 - New title: "The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test".
 - D775: ρ-leptogenesis computed (CRV ε, Casas–Ibarra grid): passes for c ≳ 0.6 at M_H = 1e12 (D776; 29–70% for c = 1–3), fails for c = 0.3; supersedes the DI-bound estimate of D731.
+- D777: limitation added — at ρ a weight-2-only lepton sector gives an exactly degenerate light pair (seesaw and Weinberg); higher-weight forms needed.
 - D762–D773 CP chain: flux-relation CP sources are incompatible with a free inflaton (D765, D772–D773); leptogenesis uses explicit CP phases (D762).
 - Abstract rewritten: SERAPIS-E is included; reheating and leptogenesis updated (D727–D745); the CP condition (D762–D763) and the plateau's origin status (D768) are stated.
 - New paragraph "Where the CP phase comes from" (D762–D766): both vacua and the inflaton line are CP-conserving; leptogenesis needs high-energy phases; gCP ⇒ no leptogenesis and δ_CP ∈ {0, π}; the flux-relation source (2405.18813) must avoid the inflaton (D765).
