@@ -79,3 +79,4 @@ D792  2026-11-16T10:09Z  reverse: self-dilution rho history without P5 - inflato
 D793  2026-11-16T10:16Z  forward: exact n_s, r for the self-diluted rho history (T2 = 150-1100 GeV) + side checks
 D794  2026-11-16T10:32Z  tau=i mirror: AD charge under residual Z2/Z4
 D795  2026-11-16T10:42Z  tau=i Hessian isotropy
+D796  2026-11-16T10:49Z  rho Hessian isotropy + cubic Z3 breaking
