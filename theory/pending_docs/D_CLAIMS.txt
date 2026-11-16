@@ -162,3 +162,4 @@ D875  2026-11-16T17:23Z  B.1 rho baryogenesis inventory
 D876  2026-11-16T17:25Z  B.2 rho baryogenesis literature
 D877  2026-11-16T17:25Z  B.3 AD transfer fraction
 D878  2026-11-16T17:27Z  B.3b channel ratio from 2+1 couplings
+D879  2026-11-16T17:28Z  B.4 verdict and Z3 flat directions
