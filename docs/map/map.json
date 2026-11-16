@@ -21,12 +21,13 @@
     "D687",
     "D753",
     "D754",
-    "D755"
+    "D755",
+    "D823"
    ],
    "history": [
-    "D753: assumed",
     "D754: estimate",
-    "D755: estimate"
+    "D755: estimate",
+    "D823: estimate"
    ]
   },
   {
@@ -552,7 +553,8 @@
    "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)",
    "history": [
     "D816: frozen"
-   ]
+   ],
+   "flag": "recheck (D823, eps_tilt)"
   },
   {
    "id": "band_e",

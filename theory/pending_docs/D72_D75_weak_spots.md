@@ -8330,3 +8330,25 @@ Derivation:
 3. Both are retired [derived].
 Flag band_i (D821) cleared: confirmation.
 MAP: node=logderiv_plateau status=killed touches=[serapis_e] ripple=no
+
+## D823 (ACCURACY TRACK, queue 9; Jl tick 61; locked PREREG_D823; results/bhk_tilt_i_d823.txt): a loop-sized BHK factor CAN tilt the τ = i plateau into the n_s band, at C ≈ (3.4–6.5)e-7. But it predicts a different r(n_s) and a stronger running than the frozen ε-model, and leaves the vacuum massless. ε at τ = i stays fitted; the BHK version is a distinct post-hoc variant
+K4: C = 0 reproduces Kairos exactly (0.9587 / 0.9612 at N* 46.08 / 49.21) ✓. MS, 23 s.
+Scan (V = I²/(I²+1)·[1 + C(E − E(i))], ε = 0):
+
+| C | N* 46.08: n_s / r / α_s | N* 49.21: n_s / r / α_s |
+|---|---|---|
+| 2e-7 | 0.9634 / 4.15e-4 / −9.7e-4 | 0.9663 / 3.72e-4 / −8.7e-4 |
+| 4e-7 | 0.9683 / 4.68e-4 / −1.08e-3 | 0.9716 / 4.26e-4 / −9.8e-4 |
+| 6e-7 | 0.9736 / 5.29e-4 / −1.21e-3 | 0.9772 / 4.90e-4 / −1.11e-3 |
+| 8e-7 | 0.9790 / 6.00e-4 / −1.35e-3 | 0.9831 / 5.66e-4 / −1.26e-3 |
+
+- The n_s band 0.970–0.975 needs C = 4.6–6.5e-7 (N* 46) or 3.4–5.2e-7 (N* 49), i.e. Im S·Im ρ ~ 10³ N: natural (D689 scale) [derived].
+- At fixed n_s, r = 4.9–5.5e-4 (N* 46) or 4.1–4.6e-4 (N* 49). The N* = 49 edge falls BELOW the frozen τ = i r range (4.8–5.7e-4).
+- α_s = −(1.0–1.2)e-3, about 15–20% more negative than the frozen −(8.6–9.9)e-4.
+Derivation:
+1. The BHK factor multiplies the plateau [literature] (D689).
+2. E ∝ y² on the plateau gives an exponential ramp in φ, like εI₁ ∝ y/2 but with twice the power [derived]. So κ = 1 instead of ½ (D689 comparison), which explains the stronger running and lower r at large N* [derived].
+3. The vacuum stays massless (multiplicative, D802), so oscillations are octic/stiff and a mass source is still needed [derived].
+4. Hence ε at τ = i is NOT derived by this route. The loop tilt gives a different, post-hoc variant whose α_s and r differences are beyond 2030s reach (D806, D820) [derived].
+Status: eps_tilt stays "estimate/fitted"; the τ = i BHK variant is recorded and not added (keep rule A4: no unique test within reach). For v3.2, one clause in the Limitations is added to V32_TODO: "a loop-sized BHK factor can supply the τ = i tilt (C ≈ 3–7e-7) but then predicts α_s ≈ −(1.0–1.2)e-3 and a massless vacuum (D823)".
+MAP: node=eps_tilt status=estimate touches=[band_i] ripple=no

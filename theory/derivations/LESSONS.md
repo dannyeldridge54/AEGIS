@@ -69,3 +69,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D820: forecast numbers in planning documents need a citation on the line. The sheet's untraceable σ(r) = 5e-5 overstated LiteBIRD by ~15×, while the paper sentence (which had a source) was right.
 - 2026-11-16 D821: an error budget's useful output is separating numerical uncertainty (small, ±0.0006) from conditional assumptions (reheating, T₂), which decide whether a band applies at all. Report both kinds, separately.
 - 2026-11-16 D822: prune by the keep rule (a source, or a unique test within forecast reach). An untestable, sourceless alternative only blurs what the theory actually predicts.
+- 2026-11-16 D823: 'can X replace the fitted parameter?' has two parts: (a) does X reach the band, and (b) does it reproduce the band's OTHER predictions. Here (a) yes, (b) no (α_s −15–20%), so the parameter stays fitted and X is a separate variant.

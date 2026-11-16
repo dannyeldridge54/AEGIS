@@ -579,3 +579,11 @@ Touches: band_e, band_i.
 2. Log-derivative plateau: no source (D760); r below LiteBIRD 1σ (D820); retired [derived].
 3. SERAPIS-Δ: fails the y* cut (D800); retired [derived].
 Touches: logderiv_plateau, serapis_e.
+
+## D823: BHK tilt on the τ = i plateau (accuracy track)
+1. Multiplicative BHK factor [literature] (D689).
+2. E ∝ y²: κ = 1 ramp [derived].
+3. MS: band at C ≈ 3.4–6.5e-7 (natural) [derived] (computed).
+4. Different r(n_s) and α_s (−1.0 to −1.2e-3) from the frozen ε-model [derived] (computed).
+5. The vacuum stays massless, so ε is not derived [derived].
+Touches: eps_tilt, band_i.
