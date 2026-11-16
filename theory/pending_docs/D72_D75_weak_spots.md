@@ -9800,3 +9800,10 @@ MAP: none
 Consequence: no non-Gaussian or isocurvature handle distinguishes Project H from postulated P3; the only observable difference is the vacuum-mass shift of N* (D956 estimate; locked exact D961 queued). Recorded as a null prediction: if a cosmological-collider signal with m/H ≲ 10 is ever seen, it is not Project H's χ.
 LESSONS: state the null predictions of a mechanism explicitly; they define what it cannot explain.
 MAP: none
+
+## D973 (Project H, branch selection): a mass ∝ E(U,2) selects ρ: E(U,2) has an isotropic minimum at ρ (canonical Hessian 11.567, 11.567) but a SADDLE at i (−6.85, +30.96), so Project H can source SERAPIS-E's ρ vacuum but not the τ = i branch (Chronos/Kairos), whose plateau stays postulated
+[computed] (tools/serapis_calc, E in the paper's BHK convention) E(i,2) = 6.026812 > E(ρ,2) = 5.783359; canonical Hessian at i: eigenvalues −6.854, +30.961 (saddle: E decreases from i toward ρ along Re τ); at ρ: 11.5667, 11.5667 (isotropic minimum, the Z₃ symmetry).
+[derived] Project H's potential is P3(λ′Ê) with Ê ≥ 0 vanishing only at the minimum of E. A vacuum at i would need Ê_i = E − E(i), which is negative near ρ and makes the potential unbounded toward ρ along Re τ; the field would leave i. So Project H realises the plateau only on the ρ branch (SERAPIS-E, and the ρ variant's vacuum), consistent with the paper's statement that SERAPIS-E's plateau, vacuum and tilt use one object.
+Consequence: Chronos/Kairos (τ = i, I-invariant plateau built from |j − 1728|) keep P3 as a postulate; Project H is specific to the ρ/E branch. Recorded on the plateau_origin node scope.
+LESSONS: check the vacuum's stability in the transverse direction before extending a mechanism to another fixed point.
+MAP: none

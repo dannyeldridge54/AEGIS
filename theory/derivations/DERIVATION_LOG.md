@@ -1559,3 +1559,7 @@ Touches: none.
 ## D972: Project H null observables
 - [derived] (arithmetic) m/H = 108–539 → e^{−πm/H} = 10^{−147}–10^{−735}; 1 − c_s² ≲ 1e-12 (D944).
 - Result: no collider/sound-speed signature; only the N* shift distinguishes Project H.
+
+## D973: Project H selects ρ
+- [computed] E(U,2) Hessian: saddle at i (−6.85, +30.96), isotropic minimum at ρ (11.57, 11.57).
+- Result: Project H applies to the ρ/E branch only; τ = i plateau stays postulated.
