@@ -104,11 +104,12 @@ nodes:
   - D888
   - D888a
   - D889
+  - D890
   depends: []
   history:
-  - 'D888: estimate'
   - 'D888a: estimate'
   - 'D889: assumed'
+  - 'D890: assumed'
 - id: n_sector_i
   layer: 1
   branch:
@@ -422,7 +423,7 @@ nodes:
   - 'D878: assumed'
   - 'D879: assumed'
   - 'D880: computed'
-  flag: recheck (D889, n_sector_rho)
+  flag: recheck (D890, n_sector_rho)
 - id: gravitino_wino
   layer: 4
   branch:
@@ -510,7 +511,7 @@ nodes:
   - 'D750: frozen'
   - 'D786: frozen'
   - 'D824: frozen'
-  flag: recheck (D889, n_sector_rho)
+  flag: recheck (D890, n_sector_rho)
 - id: wino_window
   layer: 5
   branch:

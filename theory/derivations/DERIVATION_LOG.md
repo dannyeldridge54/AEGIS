@@ -1090,3 +1090,9 @@ Touches: n_sector_rho, lepto_rho, mnu.
 4. ε = 1.8e-3 ⇔ |τ−ρ| = 3.1e-3 (l = 1) [derived] (arithmetic).
 5. No in-model source; ε at ρ is a post hoc residual-Z₃ breaking [derived].
 Touches: n_sector_rho, lepto_rho, mnu.
+
+## D890: L.4 ρ lift verdict
+1. All U-modular-invariant contributions to the charged coupling vanish at ρ [derived] (D888a).
+2. ε ≈ 1.8e-3 ⇔ |u| ≈ 2e-3 residual-Z₃ breaking [literature] (2102.07488, via D889).
+3. Project closes negative; ε at ρ is post hoc, like ε at τ = i [derived].
+Touches: n_sector_rho, lepto_rho, mnu.

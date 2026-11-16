@@ -34,3 +34,4 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file un
 - D884: ρ lepton-sector caveat gains the E₄-protected fit (D882–D883).
 - D887: origin-of-ε paragraph gains the needed uplift form |j−1728|^{2q} and why throat corrections fail (D885–D886).
 - D887: origin-of-ε paragraph gains the needed uplift form |j−1728|^{2q} and why throat corrections fail (D885–D886).
+- D890: ρ caveat: lift ε is a small residual-Z₃ breaking (D888a–D889); stale 'still to be built' clause updated.

@@ -9160,3 +9160,10 @@ Assessment [derived]:
 4. In SERAPIS-E, τ sits exactly at ρ: ρ is a fixed point and the plateau's minimum is there. A displacement of ~3e-3 would need a modular-noncovariant source, or a second Z₃-charged field (flavon) with ⟨φ⟩/Λ ≈ 2e-3. Neither is in the model.
 Verdict: L.2 NEGATIVE for an in-model origin. ε at ρ is equivalent to a small residual-Z₃ breaking, |u| ≈ 2e-3, a standard and mild size in the modular-flavour literature, but it is a new post hoc input, like the τ = i ε. L.3 (locked computation) is skipped: there is no candidate to compute. L.4: verdict and a v3.2 note.
 MAP: node=n_sector_rho status=assumed touches=[lepto_rho,mnu] ripple=no
+
+## D890 (CENTRE, L.4): ρ-lift project closed: ε at ρ is a post hoc residual-Z₃ breaking; draft updated
+Inputs: D888, D888a, D889.
+Verdict [derived]: project L closes NEGATIVE for an in-model origin. At ρ the residual Z₃ is exact, so holomorphic, Kähler and instanton contributions to S₂'s coupling all vanish; the lift ε ≈ 1.8e-3 is equivalent to a residual-symmetry breaking |u| ≈ 2e-3 (|τ − ρ| ≈ 3e-3 for l = 1; 2102.07488), which SERAPIS-E does not supply. Both branches now carry one post hoc small number of the same kind: ε ≈ 1.4e-4 at τ = i (D887) and ε ≈ 2e-3 at ρ (here). Frozen predictions unchanged (ρ's lepton sector and LH_u AD chain were post hoc throughout).
+v3.2 draft: ρ caveat gains one sentence (the lift is a small residual-Z₃ breaking, D888a–D889), and the stale clause "a realistic ρ lepton sector … is still to be built" now says the D883 sector supplies m_ν₁ with ε as an input; cites 2102.07488; rebuilt clean, 17 pages.
+Next project (W): the Planck-suppressed Weinberg bound (D882 point 4): LH_u AD needs the lightest-direction Weinberg coefficient ≲ 1e-3; check whether the residual Z₃ already forbids it at ρ (the same selection rule as D888a).
+MAP: node=n_sector_rho status=assumed touches=[lepto_rho,mnu] ripple=no

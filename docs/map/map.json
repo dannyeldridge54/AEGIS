@@ -128,13 +128,14 @@
     "D883",
     "D888",
     "D888a",
-    "D889"
+    "D889",
+    "D890"
    ],
    "depends": [],
    "history": [
-    "D888: estimate",
     "D888a: estimate",
-    "D889: assumed"
+    "D889: assumed",
+    "D890: assumed"
    ]
   },
   {
@@ -550,7 +551,7 @@
     "D879: assumed",
     "D880: computed"
    ],
-   "flag": "recheck (D889, n_sector_rho)"
+   "flag": "recheck (D890, n_sector_rho)"
   },
   {
    "id": "gravitino_wino",
@@ -665,7 +666,7 @@
     "D786: frozen",
     "D824: frozen"
    ],
-   "flag": "recheck (D889, n_sector_rho)"
+   "flag": "recheck (D890, n_sector_rho)"
   },
   {
    "id": "wino_window",

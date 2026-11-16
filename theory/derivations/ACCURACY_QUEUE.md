@@ -115,10 +115,15 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - L.1 [done D888: instanton Im T/N≈1 or Λ≈M_GUT alive; displacement and loops closed] Reverse path: from D883's lift ε ≈ 1.8e-3 of the E₄-protected S₂ mass, write the needed term (weight, field content) and its size in units of natural scales (Λ/M_P, one-loop, instanton e^{-2π Im T/N}).
 - L.2 [done D889: ε = residual-Z₃ breaking |u|≈2e-3, no in-model source; D888a corrects D888] Literature: lifting of E₄(ρ)=0 zeros (Planck-suppressed operators, non-holomorphic Kähler corrections, weight-shift terms).
 - L.3 [skipped: no candidate] Locked computation if a candidate exists.
-- L.4 [open] Verdict and v3.2 note.
+- L.4 [done D890: closed negative; draft updated] Verdict and v3.2 note.
 
 ## ρ-lift project L (picked 2026-11-16 under the autonomy rule)
 - L.1 [done D888: instanton Im T/N≈1 or Λ≈M_GUT alive; displacement and loops closed] Reverse path: from D883's lift ε ≈ 1.8e-3 of the E₄-protected S₂ mass, write the needed term (weight, field content) and its size in natural units (Λ/M_P, one-loop, instanton e^{-2π Im T/N}).
 - L.2 [done D889: ε = residual-Z₃ breaking |u|≈2e-3, no in-model source; D888a corrects D888] Literature: lifting of E₄(ρ)=0 zeros (Planck-suppressed operators, non-holomorphic Kähler corrections, weight-shift terms).
 - L.3 [skipped: no candidate] Locked computation if a candidate exists.
-- L.4 [open] Verdict and v3.2 note.
+- L.4 [done D890: closed negative; draft updated] Verdict and v3.2 note.
+
+## Weinberg-bound project W2 (picked 2026-11-16 under the autonomy rule; D882 point 4)
+- W2.1 [open] Selection rule: at ρ, does the residual Z₃ (charges q_L = −q_H, q_{H_u} ≠ 0 per D783) forbid the Planck-suppressed (LH_u)²/M_P entry along the lightest direction, or only allow it ∝ E₄? Derivation from the notes.
+- W2.2 [open] If allowed: its natural size vs the needed ≲ 1e-3 coefficient (m ~ v_u²/M_P ≈ 1.2e-5 eV vs m_ν₁ ≈ 1.7e-8 eV).
+- W2.3 [open] Verdict and v3.2 note.
