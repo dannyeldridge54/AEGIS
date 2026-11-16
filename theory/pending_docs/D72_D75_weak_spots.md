@@ -8895,3 +8895,19 @@ Derivation + arithmetic (no lattice run: the symmetric placement reduces to D696
 5. Re-fit [estimate]: C ∝ N_eff/(Im S·Im ρ₁), so keeping C = 1.0–1.3e-6 needs Im S·Im ρ₁ smaller by the factor in point 3, i.e. A₁ (or g_s) shifts; the racetrack conditions on T₁ (A₂A₃/g_s) are untouched if A₁ absorbs the change. The D861 benchmark moves to A₁ ≈ 41 × (0.38–0.85) ≈ 16–35 at fixed g_s (f = 4π² convention).
 Verdict: racetrack D7s are compatible with SERAPIS-E only at the origin; they reduce the tilt's effective brane count by O(15–60%), absorbed by a smaller inflaton torus. Open: BHK's exact D7 coefficient r.
 MAP: node=serapis_e status=computed touches=[eps_tilt,lepto_i] ripple=no
+
+## D866: BHK's D7 term has a different structure, and the D3 term's Kähler modulus is the T⁴ 4-cycle: D857–D865's moduli mapping must be redone
+Source: hep-th/0508043 (Berg–Haack–Körs, "String loop corrections to Kähler potentials in orientifolds"), eq. (3.30) and §5, fetched in two parts [literature].
+1. Eq. (3.30), N = 1 T⁶/(Z₂×Z₂) (D9/D5 frame): K⁽¹⁾ has two sums with the SAME constant c and a factor ½: (a) ℰ₂(A_i^I, U^I)/((S − S̄)(T^I − T̄^I)), depending on brane Wilson lines A; (b) ℰ₂(0, U^I)/((T^J − T̄^J)(T^K − T̄^K)), J ≠ I ≠ K, at A = 0 [literature].
+2. §5: six T-dualities map D9 → D3 and D5 on T²_I → D7 on the transverse T⁴; (2.77), (3.30) are copied with T-dual variables [literature]. So in our D3/D7 frame: term (a) is the D3 term, with A → D3 positions, and T^I is the modulus of the 4-cycle TRANSVERSE to T²_I; term (b) is the D7 term, POSITION-INDEPENDENT, divided by the other two 4-cycle moduli [derived from 1–2].
+3. Answer to D865's question: there is no "r·(Im S/Im T₁)" origin-stack term. D7 branes give a fixed ℰ₂(0, U₁) ∝ E(U₁,2) piece divided by Im T₂·Im T₃, of the same E(U,2) shape as the tilt; the paper's footnote ("C collects both channels") already allows for it. D865's point-2–5 arithmetic is WITHDRAWN (wrong structure); D864a's symmetry conclusion stands (asymmetric D7 positions break nothing in this term, since it is position-independent, but the flavour/condensation conditions of D864 still apply).
+4. Mapping error found [derived]: D857 identified D689's ρ (in Im S·Im ρ ≈ 560–975) with the inflaton torus's 2-cycle area A₁. By point 2 it is the 4-cycle modulus transverse to the inflaton torus, Im T₁ ∝ A₂A₃/g_s, which is exactly the cycle D861's benchmark used for the racetrack. Consequences:
+   - Racetrack on T₁: the tilt needs Im S·Im T₁ ≈ 750–975 with Im S = 1/(2√2πg_s), the racetrack needs Im T₁ ≈ 2–15; together g_s ≈ 6e-4–6e-3 and A₂A₃ = g_s·Im T₁ ≈ 1e-3–0.1: sub-stringy. Racetrack on T₁ is EXCLUDED [derived, up to O(2π) factors].
+   - Racetrack on T₂ or T₃ (cycles containing the inflaton torus) is REOPENED: e.g. A₁ = A₃ = 1, g_s = 0.1 gives Im T₂ = 10 (racetrack range) and the tilt needs A₂ ≈ 6.7e3·g_s² ≈ 67 [estimate].
+   - The anti-D3 bound (v₄ = A₂A₃ ≳ 2e4 g_s) must also be re-read in this mapping.
+5. D857, D860, D861, D862, D865 used the wrong identification; their specific numbers are superseded. D857a records this; the structural lessons (racetrack and anti-D3 compete for cycle sizes; E3 masses ∝ W0^N) stand.
+Next (top recommendation): redo the M.3 feasibility scan with the corrected mapping (locked), racetrack on T₁, T₂ or T₃, anti-D3 on/off.
+MAP: node=serapis_e status=corrected touches=[lepto_i,eps_tilt] ripple=no
+
+## D857a (correction, found in D866)
+D857 (and D860, D861, D862, D865 built on it) took D689's ρ as the inflaton torus's area. BHK eq. (3.30) with the §5 T-duality makes it the modulus of the 4-cycle transverse to the inflaton torus. The moduli tables, scans and the benchmark in those notes are superseded; their qualitative findings (racetrack versus anti-D3 compete for cycle sizes; instanton masses ∝ W0^N) are kept. D863's loop-stability result does not depend on the mapping and stands.

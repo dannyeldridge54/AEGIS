@@ -30,7 +30,7 @@
     "D823: estimate",
     "D826: estimate"
    ],
-   "flag": "recheck (D865, serapis_e)"
+   "flag": "recheck (D866, serapis_e)"
   },
   {
    "id": "plateau_origin",
@@ -217,7 +217,7 @@
     "E"
    ],
    "title": "SERAPIS-E potential (Epstein + BHK tilt)",
-   "status": "computed",
+   "status": "corrected",
    "d": [
     "D692",
     "D693",
@@ -236,16 +236,17 @@
     "D811",
     "D812",
     "D835",
-    "D865"
+    "D865",
+    "D866"
    ],
    "depends": [
     "plateau_origin",
     "bhk_tilt"
    ],
    "history": [
-    "D812: corrected",
     "D835: computed",
-    "D865: computed"
+    "D865: computed",
+    "D866: corrected"
    ]
   },
   {
@@ -421,7 +422,7 @@
     "D863: assumed",
     "D864: assumed"
    ],
-   "flag": "recheck (D865, serapis_e)"
+   "flag": "recheck (D866, serapis_e)"
   },
   {
    "id": "sterile_rho",

@@ -84,3 +84,4 @@ Why: today's results each demand values of the same moduli (g_s, Im ρ₁, Im ρ
 - Loop correction to T₁ [done D863]: CP-odd racetrack minima survive even ×100; D862's weak-point estimate withdrawn (D862a).
 - D7 tadpole [done D864: allowed with conditions; D7 stacks feed the tilt]. Next: D865 compute the D7 contribution to C (BHK D7 normalisation) and re-fit the benchmark.
 - D7 tilt [done D865 (+D864a)]: both stacks at the origin; N_eff reduced by 0.6–2.5; benchmark A₁ ≈ 16–35. Open: BHK D7 coefficient r.
+- BHK D7 coefficient [done D866]: D7 term position-independent, ∝ E(U₁,2)/(Im T₂ Im T₃); D689's ρ is the T⁴ modulus (D857a). Next: corrected M.3 scan (D867).

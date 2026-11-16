@@ -913,3 +913,11 @@ Touches: lepto_i, serapis_e, eps_tilt.
 4. Symmetric placement keeps SL(2,Z), ρ vacuum and tilt shape [derived].
 5. Benchmark re-fit: A₁ ≈ 16–35 at fixed g_s [estimate].
 Touches: serapis_e, eps_tilt, lepto_i.
+
+## D866: BHK D7 term and modulus mapping
+1. BHK (3.30): D3-type term ℰ₂(A,U^I)/((S−S̄)(T^I−T̄^I)); D7-type term ℰ₂(0,U^I)/((T^J−T̄^J)(T^K−T̄^K)) [literature] (hep-th/0508043).
+2. After T-duality T^I is the 4-cycle transverse to T²_I [literature] (hep-th/0508043 §5).
+3. D7 term is position-independent; D865 arithmetic withdrawn [derived].
+4. D689's ρ is the T⁴ modulus, not A₁; D857–D865 mapping superseded (D857a) [derived].
+5. Racetrack on T₁ excluded; on T₂/T₃ reopened [derived].
+Touches: serapis_e, lepto_i, eps_tilt.
