@@ -9196,3 +9196,9 @@ Conditions on the ρ lepton sector now: (i) Γ₂-singlet light leptons; (ii) tw
 v3.2 draft: ρ caveat gains one sentence (D891–D892); cites 1112.5992 and hep-th/0609191 (bib entries added); rebuilt clean, 17 pages.
 Next project R2: a focused referee pass on the draft text changed since the full referee (D871–D893): consistency of numbers across abstract, Sec. VII and caveats; overclaims; stale clauses.
 MAP: node=lepto_rho status=estimate touches=[n_sector_rho,mnu] ripple=no
+
+## D894 (CENTRE, R2.1): referee pass on today's draft changes: one major inconsistency (two AD yields), four minors
+Output: papers/v3/REFEREE_v3.2_R2.md.
+Major [derived]: the τ = i AD integration (D646, Hubble-induced A-terms, yield independent of m_soft) gives m_ν₁ ≤ 9e-11 eV at T_R = 1e5 GeV, while the ρ route (D880, FHY scaling ∝ m_{3/2}) gives m_ν₁ ≥ 4.4e-9 eV at T₂ = 1e5 GeV: a factor ≈ 49 in m_ν₁, ≈ 340 in yield (arithmetic). Same mechanism, two treatments. The ρ window and D891's Weinberg bound inherit this uncertainty. Minors: stale general "m_ν₁ ≲ 1e-10 eV" statement; abstract omits the ρ chain's conditions and its second fitted parameter; prediction_sheet.md still lists the superseded self-diluted ρ route (D792).
+Next: R2.2. The major item needs a decision on which A-term treatment applies at each vacuum (a short derivation from D646 and hep-ph/0102187); the minors are text fixes.
+MAP: node=lepto_rho status=flagged touches=[n_sector_rho,mnu] ripple=no

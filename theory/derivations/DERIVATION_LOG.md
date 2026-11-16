@@ -1116,3 +1116,10 @@ Touches: lepto_rho, n_sector_rho, mnu.
 2. Instanton-only under perturbative lepton number [literature] (1112.5992, hep-th/0609191, via D892).
 3. Bound met for M_N ≲ 1e12 GeV with S_W ≥ S_N [estimate].
 Touches: lepto_rho, n_sector_rho, mnu.
+
+## D894: R2.1 referee pass
+1. τ = i AD (D646) gives m_ν₁ ≤ 9e-11 eV at T_R = 1e5 GeV [derived] (D646).
+2. ρ AD (D880, FHY) gives m_ν₁ ≥ 4.4e-9 eV at T₂ = 1e5 GeV [literature] (hep-ph/0102187, via D880).
+3. Ratio ≈ 49 in m_ν₁, ≈ 340 in yield [derived] (arithmetic).
+4. Four text minors listed in REFEREE_v3.2_R2.md [derived].
+Touches: lepto_rho, n_sector_rho, mnu.

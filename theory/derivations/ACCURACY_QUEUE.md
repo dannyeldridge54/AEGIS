@@ -129,5 +129,5 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - W2.3 [done D893: conditional pass (perturbative lepton number); draft updated] Verdict and v3.2 note.
 
 ## Referee pass R2 (picked 2026-11-16 under the autonomy rule)
-- R2.1 [open] Read the v3.2 draft text changed since REFEREE_v3.2_full.md (git diff of serapis_v3.2_draft.tex since the D871 commit): list numeric inconsistencies (abstract vs Sec. VII vs caveats vs prediction_sheet.md), overclaims, stale clauses, missing post hoc labels. Write papers/v3/REFEREE_v3.2_R2.md.
-- R2.2 [open] Fix the items (one D-note), rebuild clean, CHANGELOG.
+- R2.1 [done D894: 1 major (two AD yields differ ×49 in m_ν₁), 4 minors; REFEREE_v3.2_R2.md]
+- R2.2 [open] Resolve major #1 (which A-term treatment applies at i and at ρ; derivation from D646 and hep-ph/0102187, locked recomputation if the ρ window changes), then fix minors 2–5, rebuild clean, CHANGELOG.

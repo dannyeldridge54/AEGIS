@@ -141,3 +141,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D891: a zero protected in one coupling (S₂'s Dirac term) does not protect the effective operator built from other fields; check the full effective operator's charge separately.
 - 2026-11-16 D892: compare a required suppression with the suppression the same mechanism already supplies elsewhere in the model (here the heavy-ν instanton action); that turns 'tuned?' into a concrete condition.
 - 2026-11-16 D893: keep a running list of the conditions a post hoc chain has accumulated; it shows at a glance how fragile the branch is.
+- 2026-11-16 D894: when the same mechanism is used on two branches, check both use the same yield formula; D880 imported a literature scaling without comparing to our own D646 integration.
