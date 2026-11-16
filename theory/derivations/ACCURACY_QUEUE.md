@@ -140,3 +140,6 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 
 ## Data check DC (picked 2026-11-16 under the autonomy rule)
 - DC.1 [done D902: one zero-prior Σm_ν bound below the NO floor (2606.17994); wino and n_s unchanged]
+
+## Weinberg at τ = i project W3 (picked 2026-11-16 under the autonomy rule)
+- W3.1 [open] Consistency at τ = i: the draft says the AD route needs M = v_u²/m_ν₁ ~ 1e22–2e23 GeV ≫ M_P "which requires a symmetry that forbids (LH_u)²/M_P", yet D654a says a singlet Weinberg operator with coefficient E₄η^{-2} is non-zero at i for k_L = k_{H_u} = 1. Which operator drives AD, and what forbids the Planck-size one along the AD direction? Derivation from D646a, D654a, D663 (weight-parity), D664 (Γ₂ doublets at i).
