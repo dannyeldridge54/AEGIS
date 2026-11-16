@@ -20,3 +20,6 @@ def E_lattice(x, y, s=2, N=400):
     z = M + Nn*(x + 1j*y)
     a = np.abs(z)**(2*s); a[N, N] = np.inf
     return float((y**s*(1/a)).sum()/(2*float(mp.zeta(2*s))))
+def E_paper(x, y, s=2):
+    """Paper/BHK convention: sum'_{m,n} y^s/|m+n tau|^{2s} = 2 zeta(2s) E(tau,s). SERAPIS v3 uses THIS for E(U,2)."""
+    return 2*float(mp.zeta(2*s))*E_fourier(x, y, s)

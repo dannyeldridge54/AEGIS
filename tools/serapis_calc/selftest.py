@@ -31,6 +31,8 @@ check('paper 1: SERAPIS alpha_s = -8.1e-4 at (0.972, 5e-4)', abs(a+8.1e-4) < 0.0
 # 6. exponent rule (D929)
 p, al = R.exponent(1, 2)
 check('p(n=1,k=2) = 2sqrt2, alpha = 1/12', abs(p-2*math.sqrt(2)) < 1e-12 and abs(al-1/12) < 1e-12)
+from .eisenstein import E_paper
+check('E_paper(rho,2) = 5.7833593 (v3 convention)', abs(E_paper(0.5,3**0.5/2)-5.7833593)<1e-5, f'{E_paper(0.5,3**0.5/2):.7f}')
 # 7. exact MS against the quadratic potential (slow-roll: n_s = 1 - 2/(N+1/2), r = 8/(N+1/2))
 from .ms import Background, spectra
 bg = Background(lambda p: 0.5*p*p, lambda p: p, 17.0)
