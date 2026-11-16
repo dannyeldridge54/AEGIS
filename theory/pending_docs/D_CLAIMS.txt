@@ -222,3 +222,4 @@ D935  2026-11-16T20:49Z  F1 killed: no flat single U
 D936  2026-11-16T20:55Z  sibling catalogue
 D937  2026-11-16T20:56Z  D929 log loophole
 D938  2026-11-16T20:58Z  Weinberg instanton literature
+D939  2026-11-16T20:59Z  v3.3 draft: modulus paragraph
