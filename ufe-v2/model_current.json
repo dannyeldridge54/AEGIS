@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D906: T_R at ρ ≈ 3e8–3e9 GeV → computed",
   "D906: N* for SERAPIS-E ≈ 49.7–50.5 → computed",
   "D906: Leptogenesis at ρ (non-thermal, DI estimate) → estimate",
   "D906: Gravitino → wino negligible (Ω_nth ≤ 3e-4, Pradler–Steffen, D809) → computed",
@@ -29,9 +28,11 @@
   "D906: Tests: SO+SPHEREx (~2030), LiteBIRD (~2035) → computed",
   "D906: Test: Run 3 / HL-LHC disappearing tracks → literature",
   "D909: Leptogenesis at τ=i: inflaton decay marginal, AD robust → estimate",
-  "D910: Origin of the plateau → assumed"
+  "D910: Origin of the plateau → assumed",
+  "D911: Origin of the plateau → assumed"
  ],
  "open_rechecks": [
+  "SERAPIS-E potential (Epstein + BHK tilt)",
   "Σm_ν = 0.0587 eV (m1 ≈ 0)"
  ],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"

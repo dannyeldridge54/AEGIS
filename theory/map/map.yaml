@@ -60,11 +60,12 @@ nodes:
   - D869
   - D870
   - D910
+  - D911
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D869: assumed'
   - 'D870: assumed'
   - 'D910: assumed'
+  - 'D911: assumed'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -207,6 +208,7 @@ nodes:
   - 'D866: corrected'
   - 'D873: computed'
   - 'D906: computed'
+  flag: recheck (D911, plateau_origin)
 - id: janus
   layer: 2
   branch:
