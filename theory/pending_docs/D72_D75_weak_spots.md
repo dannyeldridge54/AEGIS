@@ -9585,3 +9585,7 @@ MAP: none
 Status: H2 passes analytically (right lattice weight, positive for bosons); H3 (offset) is a one-number tuning; H4 (the B term, ratio A/B = Ê exactly) open. Not a claim of novelty.
 LESSONS: the lattice weight of an image sum is fixed by the dimension the loop field lives in; that maps p to a dimension.
 MAP: none
+
+## D945a (correction to D945's wording)
+D945's D = 5 example is garbled and wrong: a field on R⁴ × T² is six-dimensional by definition, so D = 5 does not arise. The correct statement: the image sum has weight s = (D−2)/2 where D counts the dimensions the loop field sees at distances of order the T² size. s = 2 (SERAPIS) holds when any further compact dimensions are much SMALLER than the T² (their KK modes are heavy, so G reduces to 6D). If the field lives in D > 6 dimensions with the extra ones LARGER than the T², s = (D−2)/2 > 2 (D = 8: s = 3, k = 6, p = 6√2; D = 10: s = 4) and the exponent changes. Also D945's first [derived] line contains a stray fragment ("R⁴ × T²_{(D−4)=2}... i.e."); read it as "Φ propagating on R⁴ × T² (D = 6)". The numbers (G₆ coefficient, sign, E(U,2) weight) are unchanged.
+MAP: none
