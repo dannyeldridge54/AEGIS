@@ -1,0 +1,24 @@
+c=0.3: SV=[0.38817  0.082343 0.082343] (heavy index 0? True), Takagi residual 2.2e-16
+   heavy idx 0: P_HH=1.388e-11+6.939e-12j (Re should be ~0); P_HL=[-0.0831-0.0711j -0.0711+0.0831j]
+   light block P_LL=[[(-0.05625+0.36003j), (-0.36003-0.05625j)], [(-0.36003-0.05625j), (0.05625-0.36003j)]]; splitting rates Re-eig=[-0.3644  0.3644]; rotated diag=[-0.3644+0.j  0.3644+0.j], offdiag=1.7669e-17+3.6440e-01j
+   delta=0.0001: SVs [0.38817025 0.08237979 0.08230691], light shifts/delta [-0.3643  0.3645]
+   delta=1e-05: SVs [0.38817025 0.08234699 0.0823397 ], light shifts/delta [-0.3644  0.3644]
+   M_heavy=1e+12: M_light=2.12e+11 GeV, open: ['HH:g=1.16e-17', 'HL:g=8.18e-08', 'HL:g=8.18e-08', 'LL:g=2.73e-07', 'LL:g=2.73e-07', 'LL:g=2.73e-07'], T_R=3.175e+08 GeV, seesaw y_D(M_light)=1.87e-02
+   M_heavy=1e+13: M_light=2.12e+12 GeV, open: ['HH:g=1.16e-16', 'HL:g=8.18e-07', 'HL:g=8.18e-07', 'LL:g=2.73e-06', 'LL:g=2.73e-06', 'LL:g=2.73e-06'], T_R=3.033e+09 GeV, seesaw y_D(M_light)=5.92e-02
+   M_heavy=5e+13: M_light=1.06e+13 GeV, open: ['LL:g=1.36e-05', 'LL:g=1.36e-05', 'LL:g=1.36e-05'], T_R=2.076e+09 GeV, seesaw y_D(M_light)=1.32e-01
+c=1: SV=[0.38817  0.274478 0.274478] (heavy index 0? True), Takagi residual 2.2e-16
+   heavy idx 0: P_HH=1.388e-11+6.939e-12j (Re should be ~0); P_HL=[-0.2702-0.2445j -0.2445+0.2702j]
+   light block P_LL=[[(-0.03626+0.36259j), (-0.36259-0.03626j)], [(-0.36259-0.03626j), (0.03626-0.36259j)]]; splitting rates Re-eig=[-0.3644  0.3644]; rotated diag=[-0.3644+0.j  0.3644+0.j], offdiag=-1.6057e-17+3.6440e-01j
+   delta=0.0001: SVs [0.38817026 0.27451426 0.27444137], light shifts/delta [-0.3645  0.3644]
+   delta=1e-05: SVs [0.38817025 0.27448146 0.27447417], light shifts/delta [-0.3644  0.3644]
+   M_heavy=1e+12: M_light=7.07e+11 GeV, open: ['HH:g=1.16e-17', 'HL:g=2.73e-07', 'HL:g=2.73e-07', 'LL:g=2.73e-07', 'LL:g=2.73e-07', 'LL:g=2.73e-07'], T_R=4.287e+08 GeV, seesaw y_D(M_light)=3.42e-02
+   M_heavy=1e+13: M_light=7.07e+12 GeV, open: ['HH:g=1.16e-16', 'HL:g=2.73e-06', 'HL:g=2.73e-06', 'LL:g=2.73e-06', 'LL:g=2.73e-06', 'LL:g=2.73e-06'], T_R=2.543e+09 GeV, seesaw y_D(M_light)=1.08e-01
+   M_heavy=5e+13: M_light=3.54e+13 GeV, open: [], T_R=0.000e+00 GeV, seesaw y_D(M_light)=2.42e-01
+c=3: SV=[0.823433 0.823433 0.38817 ] (heavy index 0? False), Takagi residual 3.2e-16
+   heavy idx 2: P_HH=1.388e-11+6.939e-12j (Re should be ~0); P_HL=[ 0.5747-0.9299j -0.9299-0.5747j]
+   light block P_LL=[[(0.16296-0.32592j), (0.32592+0.16296j)], [(0.32592+0.16296j), (-0.16296+0.32592j)]]; splitting rates Re-eig=[-0.3644  0.3644]; rotated diag=[-0.3644+0.j  0.3644+0.j], offdiag=-1.5506e-17+3.6440e-01j
+   delta=0.0001: SVs [0.82346989 0.82339703 0.38817023], light shifts/delta [-4.3526321e+03 -3.6410000e-01]
+   delta=1e-05: SVs [0.82343709 0.8234298  0.38817025], light shifts/delta [-4.35263196e+04 -3.64400000e-01]
+   M_heavy=1e+12: M_light=2.12e+12 GeV, open: ['HH:g=1.16e-17', 'HL:g=8.18e-07', 'HL:g=8.18e-07', 'LL:g=2.73e-07', 'LL:g=2.73e-07', 'LL:g=2.73e-07'], T_R=9.459e+08 GeV, seesaw y_D(M_light)=5.92e-02
+   M_heavy=1e+13: M_light=2.12e+13 GeV, open: ['HH:g=1.16e-16'], T_R=1.742e-02 GeV, seesaw y_D(M_light)=1.87e-01
+   M_heavy=5e+13: M_light=1.06e+14 GeV, open: [], T_R=0.000e+00 GeV, seesaw y_D(M_light)=4.19e-01
