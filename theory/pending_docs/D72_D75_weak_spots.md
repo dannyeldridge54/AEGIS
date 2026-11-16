@@ -7264,3 +7264,15 @@ Consequences:
 3. New detail for SERAPIS-E: the E₂(0,U) term is suppressed by the OTHER two Kähler moduli, 1/[(T^J−T̄^J)(T^K−T̄^K)], with no S. The tilt coefficient C therefore receives two contributions, C ≈ c₁/(Im S·Im T^I) + c₂/(Im T^J·Im T^K). D692's Im S·Im ρ ≈ 190–245N is then "the effective volume product". The frozen bands are unchanged (they depend on C only), but the microscopic reading is broader.
 VERDICT: going deeper at the wall resolved it, by elimination: in IIB orientifolds the one-loop tilt is E₂-shaped. SERAPIS-E is the derived branch, while the ρ variant (DKL) and τ = i (I₁) tilts are fitted inputs. This supports the paper's choice to present SERAPIS-E as the derived branch; one caveat sentence to add there (the two suppression channels for C).
 MAP: node=bhk_tilt status=literature touches=[serapis_e, eps_tilt] ripple=no
+
+## D757 (CENTRE; locked PREREG_D757; results/inverse_metric_d757.txt) — the loop-corrected inverse Kähler metric does not make a plateau; the BHK term can only tilt
+Computed:
+- Δ_hyp E(τ,2) = 2.0000·E at y = 1, 2, 5. So K_{UŪ} = (1 + 2c′E)/(4y²) > 0 for c′ > 0: no ghost.
+- With W = W₀ and the other moduli no-scale, V ∝ e^{c′E}[K^{UŪ}|K_U|² − 1]/(2y) along Re U = ½:
+  - c′ = 1e-4: monotonic, no flattening, c′E ≤ 0.18 up to y = 29.
+  - c′ = 1e-3: a shallow extremum near y ≈ 15–17, where c′E ≈ 0.5–0.6; beyond it V turns over and grows.
+  - c′ = 1e-2: an exponential runaway (e^{c′E}) once c′E ≳ 1.
+- No region has V approaching a constant while c′E ≤ 0.3. The y²/E → const (approach y^{−3}) behaviour of the inverse metric needs c′E ≳ 1, where e^{K⁽¹⁾} is no longer a small correction (non-perturbative in the loop expansion).
+VERDICT (locked rule): NO. In its perturbative regime the BHK loop term changes V only by a factor (1 + O(c′E)), i.e. a TILT. That is exactly SERAPIS-E's use of it (D692), and it cannot also supply the plateau. Plateau-origin routes now closed: Casimir/tension (D703, D712), species (D707–D709), Epstein-Kähler (D717, D718), gauge thresholds (D747), loop-corrected inverse metric (D757). The plateau stays an assumed effective term.
+Wall status: the in-model routes are exhausted. Going deeper now means leaving the model, e.g. non-perturbative (instanton) or warped-throat sources of a 1/E term, a separate project. Loop pauses.
+MAP: node=plateau_origin status=open touches=[] ripple=no
