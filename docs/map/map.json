@@ -183,7 +183,7 @@
     "E"
    ],
    "title": "SERAPIS-E potential (Epstein + BHK tilt)",
-   "status": "frozen",
+   "status": "computed",
    "d": [
     "D692",
     "D693",
@@ -194,7 +194,8 @@
     "bhk_tilt"
    ],
    "history": [
-    "D765: frozen"
+    "D765: frozen",
+    "D765a: computed"
    ]
   },
   {
