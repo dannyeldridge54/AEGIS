@@ -9693,3 +9693,11 @@ MAP: none
 Consequence: the toolkit's α_s, and possibly the published v3 α_s values (computed with the same k/aH = 200 start, D588, D642, D692), carry an uncertainty of order 10%; n_s and r are unaffected. Frozen predictions are not changed by a diagnostic; a LOCKED convergence test (bd = 200, 1000, 5000 at fixed points of SERAPIS-E and Chronos) is queued next; if the converged α_s differs from the published band by more than its stated precision, a correction note will follow.
 LESSONS: a quantity that is a second derivative of a numerically integrated spectrum needs its own convergence test in every numerical parameter (start, stencil, tolerance).
 MAP: none
+
+## D959 (loop A; locked PREREG_D955 + DEVIATIONS D1): PASS: v3.2's main-branch predictions (Chronos and Kairos at τ = i) independently reproduced by new code
+[computed] (field_tests/results/repro_chronos_d955.txt; toolkit j via E₄³/Δ with the stable Δ product, checks j(i) = 1728, j(2i) = 66³, j(ρ) = 0, I = y − ln1728/2π at the cusp; MS solver with pivot-normalised scale factor, DEVIATIONS D1) Chronos ε = 1.3e-4: n_s 0.96964 / 0.97246, r 5.30 / 4.86e-4, y* 23.17 / 23.97 (N* = 46 / 49); ε = 1.6e-4: n_s 0.97228 / 0.97518, r 5.77 / 5.33e-4, y* 23.49 / 24.34. Published: n_s 0.970–0.975, r 4.8–5.7e-4, y* 23–24.5. Kairos: n_s 0.95859 / 0.96107, r 3.70 / 3.28e-4, y* 21.89 / 22.52 (published 0.959–0.961, 3.3–3.7e-4, 21.9–22.6). All within the locked tolerances: PASS.
+[computed] α_s −(8.7–10.7)e-4 vs published −(8.8–10.2)e-4: inside ±10%, with the D958 caveat (both codes start modes at k/aH = 200).
+Run 1 (invalid, kept) failed from the scale-factor bug (D955 DEVIATIONS D1), fixed with a new selftest.
+Verdict: Chronos and Kairos n_s, r, y* independently confirmed; α_s confirmed to ~10% pending the D958 convergence test. Node: main-branch predictions → "computed, independently reproduced".
+LESSONS: none new (D955 D1 lesson already recorded).
+MAP: none

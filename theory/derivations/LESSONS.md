@@ -206,3 +206,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D956: plateau-absorbed parameters still act at the vacuum through reheating.
 - D957: partition-function characters give the level-by-level B−F count; verify phase conventions from a source.
 - D958: convergence-test second derivatives in every numerical parameter.
+- D959: (no new lesson)

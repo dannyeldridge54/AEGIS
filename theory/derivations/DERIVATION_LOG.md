@@ -1492,3 +1492,7 @@ Touches: none.
 - [computed] α_s −1.035e-3 (bd 200) vs −0.902e-3 (bd 1000); n_s identical.
 - [estimate] mechanism: residual negative-frequency oscillation ~2/bd².
 - Result: published α_s may carry ~10% bias; locked convergence test queued.
+
+## D959: Chronos/Kairos reproduction (locked) PASS
+- [computed] Chronos n_s 0.9696–0.9752, r 4.86–5.77e-4, y* 23.2–24.3; Kairos n_s 0.9586–0.9611, r 3.28–3.70e-4 — match v3.2.
+- Result: main-branch n_s, r, y* independently reproduced; α_s to ~10%.
