@@ -31,5 +31,12 @@ check('paper 1: SERAPIS alpha_s = -8.1e-4 at (0.972, 5e-4)', abs(a+8.1e-4) < 0.0
 # 6. exponent rule (D929)
 p, al = R.exponent(1, 2)
 check('p(n=1,k=2) = 2sqrt2, alpha = 1/12', abs(p-2*math.sqrt(2)) < 1e-12 and abs(al-1/12) < 1e-12)
+# 7. exact MS against the quadratic potential (slow-roll: n_s = 1 - 2/(N+1/2), r = 8/(N+1/2))
+from .ms import Background, spectra
+bg = Background(lambda p: 0.5*p*p, lambda p: p, 17.0)
+res = spectra(bg, 60.0)
+check('MS quadratic N=60: n_s ~ 0.9669', abs(res['ns']-(1-2/60.5)) < 1e-3, f"{res['ns']:.5f}")
+check('MS quadratic N=60: r ~ 0.1322', abs(res['r']/(8/60.5)-1) < 0.02, f"{res['r']:.4f}")
+check('MS quadratic: alpha_s ~ -2/(N+1/2)^2', abs(res['alpha_s']+2/60.5**2) < 2e-4, f"{res['alpha_s']:.2e}")
 print(f'{len(fails)} failure(s)')
 sys.exit(1 if fails else 0)
