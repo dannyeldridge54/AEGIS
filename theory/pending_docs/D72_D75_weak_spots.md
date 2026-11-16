@@ -8963,3 +8963,11 @@ MAP: none
 ## D872: deferred referee minors, batch 2; all referee items now handled
 Applied: #15 repository URL (github.com/dannyeldridge54/aegis, branch unify-bg); #2 the CP asymmetry renamed ε_CP (the κ uses are local and each defined; left); #12 the ρ paragraph's soft-mass numbers labelled as the constant-W₀ embedding; #14 abstract shortened (the wino clause replaced by a pointer to the body). #1 was already covered by the D-label paragraph and Table II's caption. Rebuilt: 16 pages, no undefined references; two 2.9 pt overfull vboxes on a float page (cosmetic). All 10 major and 15 minor referee items are now applied or answered.
 MAP: none
+
+## D873: the D7-type piece of the tilt is ≤ 11%·q of the D3 piece, and ≲ 1% once the inflaton torus exceeds ~3 string units
+Derivation + arithmetic (no model run, no lock).
+1. BHK eq. (3.30) (D866): D3 term ½c·ℰ₂(A,U₁)/((S − S̄)(T₁ − T̄₁)), D7 term ½c·ℰ₂(0,U₁)/((T₂ − T̄₂)(T₃ − T̄₃)), same c [literature]. Both are E(U₁,2)-shaped for our symmetric placements (D696, D866). Write the ratio of their lattice-sum coefficients as q = O(1) (depends on D7 numbers; not computed) [estimate].
+2. Ratio of moduli factors [derived]: (Im S·Im T₁)/(Im T₂·Im T₃) = [A₂A₃/(2√2π g_s²)]/[A₁²A₂A₃/g_s²] = 1/(2√2π A₁²) = 1/(8.89 A₁²). It depends only on the inflaton torus's area A₁.
+3. So D7/D3 ≈ q/(8.89 A₁²): ≤ 0.11q at A₁ = 1, 0.028q at A₁ = 2, 0.013q at A₁ = 3, 0.0011q at A₁ = 10 [derived]. In D867's racetrack examples (A₁ = 1.2–1.8) it is 0.035q–0.078q.
+Verdict: the D7-type piece changes the fitted Im S·Im T₁ by less than 10% unless both A₁ ≈ 1 and q ≳ 1; for the generic SERAPIS-E point (no racetrack constraint, A₁ free) it is negligible. The paper's footnote ("C collects both channels") is adequate.
+MAP: node=serapis_e status=computed touches=[eps_tilt] ripple=no

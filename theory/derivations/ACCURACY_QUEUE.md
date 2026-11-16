@@ -91,3 +91,4 @@ Why: today's results each demand values of the same moduli (g_s, Im ρ₁, Im ρ
 - P3 wording [done D870]. Next: deferred referee minors batch 1 (D871).
 - Referee minors batch 1 [done D871]. Next: batch 2 (#1, #2, #12, #14, #15) as D872.
 - Referee minors batch 2 [done D872]; all referee items handled.
+- D7 tilt piece [done D873]: ≤ 0.11q at A₁ = 1, negligible for A₁ ≳ 3.

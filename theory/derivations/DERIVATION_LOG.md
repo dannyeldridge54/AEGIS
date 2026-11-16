@@ -963,3 +963,10 @@ Touches: none.
 2. All referee items applied or answered [derived].
 3. Rebuilt, 16 pages; two cosmetic 2.9 pt float overflows [derived].
 Touches: none.
+
+## D873: size of the D7 piece of the tilt
+1. BHK (3.30): D3 and D7 terms share c; both E(U₁,2)-shaped [literature] (hep-th/0508043).
+2. Moduli ratio (Im S·Im T₁)/(Im T₂·Im T₃) = 1/(2√2π A₁²) [derived].
+3. D7/D3 ≈ q/(8.89 A₁²), < 10% unless A₁ ≈ 1 and q ≳ 1 [derived] (arithmetic).
+4. Lattice-coefficient ratio q not computed [estimate].
+Touches: serapis_e, eps_tilt.

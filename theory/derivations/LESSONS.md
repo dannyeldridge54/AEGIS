@@ -119,3 +119,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D870: when one realisation of a postulate dies, restate the postulate at the level that survives (uplift sector) instead of silently swapping in a new mechanism.
 - 2026-11-16 D871: when the abstract and the body give different test thresholds, fix both in the same pass; the body's '10⁻⁴ tests the relation' contradicted the referee-corrected abstract.
 - 2026-11-16 D872: a referee item may already be satisfied by existing text; check before adding words (the D-label explanation was already there).
+- 2026-11-16 D873: write ratios of loop terms in geometric variables first; here everything cancelled except the inflaton torus's area, which settled the question without a scan.
