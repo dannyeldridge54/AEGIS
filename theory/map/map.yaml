@@ -106,12 +106,12 @@ nodes:
   - D889
   - D890
   - D896
+  - D906
   depends: []
   history:
-  - 'D889: assumed'
   - 'D890: assumed'
   - 'D896: computed'
-  flag: recheck (D897, lepto_rho)
+  - 'D906: computed'
 - id: n_sector_i
   layer: 1
   branch:
@@ -198,14 +198,14 @@ nodes:
   - D865
   - D866
   - D873
+  - D906
   depends:
   - plateau_origin
   - bhk_tilt
   history:
-  - 'D865: computed'
   - 'D866: corrected'
   - 'D873: computed'
-  flag: recheck (D887, eps_tilt)
+  - 'D906: computed'
 - id: janus
   layer: 2
   branch:
@@ -351,9 +351,11 @@ nodes:
   - D721
   - D722
   - D725
+  - D906
   depends:
   - n_sector_rho
-  flag: recheck (D895, lepto_rho)
+  history:
+  - 'D906: computed'
 - id: darkrad_rho
   layer: 4
   branch:
@@ -363,9 +365,11 @@ nodes:
   status: computed
   d:
   - D723
+  - D906
   depends:
   - n_sector_rho
-  flag: recheck (D895, lepto_rho)
+  history:
+  - 'D906: computed'
 - id: reheat_rho
   layer: 4
   branch:
@@ -375,9 +379,11 @@ nodes:
   status: computed
   d:
   - D725
+  - D906
   depends:
   - sterile_rho
-  flag: recheck (D895, lepto_rho)
+  history:
+  - 'D906: computed'
 - id: nstar_e
   layer: 4
   branch:
@@ -387,10 +393,12 @@ nodes:
   d:
   - D719
   - D725
+  - D906
   depends:
   - reheat_rho
   - serapis_e
-  flag: recheck (D895, lepto_rho)
+  history:
+  - 'D906: computed'
 - id: lepto_rho
   layer: 4
   branch:
@@ -432,14 +440,14 @@ nodes:
   - D895
   - D897
   - D904
+  - D906
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D895: computed'
   - 'D897: estimate'
   - 'D904: estimate'
-  flag: recheck (D904a, lepto_i)
+  - 'D906: estimate'
 - id: gravitino_wino
   layer: 4
   branch:
@@ -452,13 +460,14 @@ nodes:
   - D733
   - D786
   - D809
+  - D906
   depends:
   - reheat_rho
   - covariant
   history:
   - 'D786: estimate'
   - 'D809: computed'
-  flag: recheck (D895, lepto_rho)
+  - 'D906: computed'
 - id: band_i
   layer: 5
   branch:
@@ -473,15 +482,15 @@ nodes:
   - D840
   - D841
   - D861
+  - D906
   depends:
   - nstar_i
   - janus
   note: corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)
   history:
-  - 'D840: computed'
   - 'D841: computed'
   - 'D861: computed'
-  flag: recheck (D887, eps_tilt)
+  - 'D906: frozen'
 - id: band_e
   layer: 5
   branch:
@@ -493,13 +502,14 @@ nodes:
   - D725
   - D748
   - D821
+  - D906
   depends:
   - nstar_e
   - janus
   history:
   - 'D748: frozen'
   - 'D821: frozen'
-  flag: recheck (D895, lepto_rho)
+  - 'D906: frozen'
 - id: caps
   layer: 5
   branch:
@@ -525,11 +535,11 @@ nodes:
   - D786
   - D824
   - D902
+  - D906
   history:
-  - 'D786: frozen'
   - 'D824: frozen'
   - 'D902: literature'
-  flag: recheck (D904a, lepto_i)
+  - 'D906: frozen'
 - id: wino_window
   layer: 5
   branch:
@@ -542,13 +552,14 @@ nodes:
   - D736
   - D761
   - D784
+  - D906
   depends:
   - gravitino_wino
   - halo_profile
   history:
   - 'D761: estimate'
   - 'D784: corrected'
-  flag: recheck (D895, lepto_rho)
+  - 'D906: corrected'
 - id: tests_cmb
   layer: 5
   branch:
@@ -562,14 +573,14 @@ nodes:
   - D749
   - D751
   - D752
+  - D906
   depends:
   - band_i
   - band_e
   history:
-  - 'D749: literature'
   - 'D751: literature'
   - 'D752: computed'
-  flag: recheck (D895, lepto_rho)
+  - 'D906: computed'
 - id: tests_lhc
   layer: 5
   branch:
@@ -579,9 +590,11 @@ nodes:
   status: literature
   d:
   - D736
+  - D906
   depends:
   - wino_window
-  flag: recheck (D895, lepto_rho)
+  history:
+  - 'D906: literature'
 observing:
 - id: mapper_dr3
   title: Gaia DR3 sweep complete (192,208,838 stars; 200/200 ESA checks)

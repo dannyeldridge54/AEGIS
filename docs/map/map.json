@@ -130,15 +130,15 @@
     "D888a",
     "D889",
     "D890",
-    "D896"
+    "D896",
+    "D906"
    ],
    "depends": [],
    "history": [
-    "D889: assumed",
     "D890: assumed",
-    "D896: computed"
-   ],
-   "flag": "recheck (D897, lepto_rho)"
+    "D896: computed",
+    "D906: computed"
+   ]
   },
   {
    "id": "n_sector_i",
@@ -251,18 +251,18 @@
     "D835",
     "D865",
     "D866",
-    "D873"
+    "D873",
+    "D906"
    ],
    "depends": [
     "plateau_origin",
     "bhk_tilt"
    ],
    "history": [
-    "D865: computed",
     "D866: corrected",
-    "D873: computed"
-   ],
-   "flag": "recheck (D887, eps_tilt)"
+    "D873: computed",
+    "D906: computed"
+   ]
   },
   {
    "id": "janus",
@@ -455,12 +455,15 @@
     "D720",
     "D721",
     "D722",
-    "D725"
+    "D725",
+    "D906"
    ],
    "depends": [
     "n_sector_rho"
    ],
-   "flag": "recheck (D895, lepto_rho)"
+   "history": [
+    "D906: computed"
+   ]
   },
   {
    "id": "darkrad_rho",
@@ -472,12 +475,15 @@
    "title": "Dark radiation (doublet-only killed)",
    "status": "computed",
    "d": [
-    "D723"
+    "D723",
+    "D906"
    ],
    "depends": [
     "n_sector_rho"
    ],
-   "flag": "recheck (D895, lepto_rho)"
+   "history": [
+    "D906: computed"
+   ]
   },
   {
    "id": "reheat_rho",
@@ -489,12 +495,15 @@
    "title": "T_R at ρ ≈ 3e8–3e9 GeV",
    "status": "computed",
    "d": [
-    "D725"
+    "D725",
+    "D906"
    ],
    "depends": [
     "sterile_rho"
    ],
-   "flag": "recheck (D895, lepto_rho)"
+   "history": [
+    "D906: computed"
+   ]
   },
   {
    "id": "nstar_e",
@@ -506,13 +515,16 @@
    "status": "computed",
    "d": [
     "D719",
-    "D725"
+    "D725",
+    "D906"
    ],
    "depends": [
     "reheat_rho",
     "serapis_e"
    ],
-   "flag": "recheck (D895, lepto_rho)"
+   "history": [
+    "D906: computed"
+   ]
   },
   {
    "id": "lepto_rho",
@@ -556,18 +568,18 @@
     "D894",
     "D895",
     "D897",
-    "D904"
+    "D904",
+    "D906"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D895: computed",
     "D897: estimate",
-    "D904: estimate"
-   ],
-   "flag": "recheck (D904a, lepto_i)"
+    "D904: estimate",
+    "D906: estimate"
+   ]
   },
   {
    "id": "gravitino_wino",
@@ -582,7 +594,8 @@
     "D732",
     "D733",
     "D786",
-    "D809"
+    "D809",
+    "D906"
    ],
    "depends": [
     "reheat_rho",
@@ -590,9 +603,9 @@
    ],
    "history": [
     "D786: estimate",
-    "D809: computed"
-   ],
-   "flag": "recheck (D895, lepto_rho)"
+    "D809: computed",
+    "D906: computed"
+   ]
   },
   {
    "id": "band_i",
@@ -609,7 +622,8 @@
     "D834",
     "D840",
     "D841",
-    "D861"
+    "D861",
+    "D906"
    ],
    "depends": [
     "nstar_i",
@@ -617,11 +631,10 @@
    ],
    "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)",
    "history": [
-    "D840: computed",
     "D841: computed",
-    "D861: computed"
-   ],
-   "flag": "recheck (D887, eps_tilt)"
+    "D861: computed",
+    "D906: frozen"
+   ]
   },
   {
    "id": "band_e",
@@ -635,7 +648,8 @@
     "D693",
     "D725",
     "D748",
-    "D821"
+    "D821",
+    "D906"
    ],
    "depends": [
     "nstar_e",
@@ -643,9 +657,9 @@
    ],
    "history": [
     "D748: frozen",
-    "D821: frozen"
-   ],
-   "flag": "recheck (D895, lepto_rho)"
+    "D821: frozen",
+    "D906: frozen"
+   ]
   },
   {
    "id": "caps",
@@ -677,14 +691,14 @@
     "D750",
     "D786",
     "D824",
-    "D902"
+    "D902",
+    "D906"
    ],
    "history": [
-    "D786: frozen",
     "D824: frozen",
-    "D902: literature"
-   ],
-   "flag": "recheck (D904a, lepto_i)"
+    "D902: literature",
+    "D906: frozen"
+   ]
   },
   {
    "id": "wino_window",
@@ -699,7 +713,8 @@
     "D735",
     "D736",
     "D761",
-    "D784"
+    "D784",
+    "D906"
    ],
    "depends": [
     "gravitino_wino",
@@ -707,9 +722,9 @@
    ],
    "history": [
     "D761: estimate",
-    "D784: corrected"
-   ],
-   "flag": "recheck (D895, lepto_rho)"
+    "D784: corrected",
+    "D906: corrected"
+   ]
   },
   {
    "id": "tests_cmb",
@@ -725,18 +740,18 @@
     "D705",
     "D749",
     "D751",
-    "D752"
+    "D752",
+    "D906"
    ],
    "depends": [
     "band_i",
     "band_e"
    ],
    "history": [
-    "D749: literature",
     "D751: literature",
-    "D752: computed"
-   ],
-   "flag": "recheck (D895, lepto_rho)"
+    "D752: computed",
+    "D906: computed"
+   ]
   },
   {
    "id": "tests_lhc",
@@ -748,12 +763,15 @@
    "title": "Test: Run 3 / HL-LHC disappearing tracks",
    "status": "literature",
    "d": [
-    "D736"
+    "D736",
+    "D906"
    ],
    "depends": [
     "wino_window"
    ],
-   "flag": "recheck (D895, lepto_rho)"
+   "history": [
+    "D906: literature"
+   ]
   }
  ],
  "observing": [
