@@ -58,7 +58,7 @@ nodes:
   - 'D837: assumed'
   - 'D838: assumed'
   - 'D839: assumed'
-  flag: recheck (D857, lepto_i)
+  flag: recheck (D860, lepto_i)
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -307,14 +307,15 @@ nodes:
   - D855
   - D857
   - D859
+  - D860
   depends:
   - reheat_i
   - n_sector_i
   - eta_n
   history:
-  - 'D855: assumed'
   - 'D857: assumed'
   - 'D859: assumed'
+  - 'D860: assumed'
 - id: sterile_rho
   layer: 4
   branch:
@@ -438,7 +439,7 @@ nodes:
   - 'D834: computed'
   - 'D840: computed'
   - 'D841: computed'
-  flag: recheck (D854, lepto_i)
+  flag: recheck (D860, lepto_i)
 - id: band_e
   layer: 5
   branch:

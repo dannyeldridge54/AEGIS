@@ -866,3 +866,11 @@ Touches: none.
 5. Fractional rigid instantons S = σ[T + …] remain [literature] (0902.1694).
 6. No-anti-D3 escape remains [derived].
 Touches: lepto_i, serapis_e.
+
+## D860: M.3 moduli feasibility scan (moduli-consistency)
+1. Constraints C1–C5 from D696, D835, D845, D852, D783 on (g_s, A₁, A₂, A₃) [derived] (D857, D859).
+2. Anti-D3 on: no passing point in any convention or σ [derived] (computed, PREREG_D860).
+3. Anti-D3 off: passing points for σ ≤ ½, all at A₂ = A₃ = 1 [derived] (computed).
+4. P3's anti-D3 and P1′'s racetrack are incompatible in our configuration [derived].
+5. O(1) factors, grid edge and assumed σ [estimate].
+Touches: lepto_i, plateau_origin, band_i.

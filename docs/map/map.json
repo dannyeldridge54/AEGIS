@@ -75,7 +75,7 @@
     "D838: assumed",
     "D839: assumed"
    ],
-   "flag": "recheck (D857, lepto_i)"
+   "flag": "recheck (D860, lepto_i)"
   },
   {
    "id": "logderiv_plateau",
@@ -405,7 +405,8 @@
     "D854",
     "D855",
     "D857",
-    "D859"
+    "D859",
+    "D860"
    ],
    "depends": [
     "reheat_i",
@@ -413,9 +414,9 @@
     "eta_n"
    ],
    "history": [
-    "D855: assumed",
     "D857: assumed",
-    "D859: assumed"
+    "D859: assumed",
+    "D860: assumed"
    ]
   },
   {
@@ -578,7 +579,7 @@
     "D840: computed",
     "D841: computed"
    ],
-   "flag": "recheck (D854, lepto_i)"
+   "flag": "recheck (D860, lepto_i)"
   },
   {
    "id": "band_e",

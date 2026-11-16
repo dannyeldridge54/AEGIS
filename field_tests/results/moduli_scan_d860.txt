@@ -1,0 +1,13 @@
+antiD3=on  f=1    sigma=1.0: pass=0 | among C1: fail C2 28904, fail C3 89896, C3 ok but fail C4 0 (of 118800)
+antiD3=on  f=1    sigma=0.5: pass=0 | among C1: fail C2 28904, fail C3 89896, C3 ok but fail C4 0 (of 118800)
+antiD3=on  f=1    sigma=0.25: pass=0 | among C1: fail C2 28904, fail C3 89896, C3 ok but fail C4 0 (of 118800)
+antiD3=on  f=4pi2 sigma=1.0: pass=0 | among C1: fail C2 33138, fail C3 100062, C3 ok but fail C4 0 (of 133200)
+antiD3=on  f=4pi2 sigma=0.5: pass=0 | among C1: fail C2 33138, fail C3 100062, C3 ok but fail C4 0 (of 133200)
+antiD3=on  f=4pi2 sigma=0.25: pass=0 | among C1: fail C2 33138, fail C3 100062, C3 ok but fail C4 0 (of 133200)
+antiD3=off f=1    sigma=1.0: pass=0 | among C1: fail C2 0, fail C3 114659, C3 ok but fail C4 541 (of 115200)
+antiD3=off f=1    sigma=0.5: pass=30 | e.g. g_s=0.281 A=(2018.8,1.0,1.0) Ms=1.11e+16
+antiD3=off f=1    sigma=0.25: pass=158 | e.g. g_s=0.131 A=(924.9,1.0,1.0) Ms=1.36e+16
+antiD3=off f=4pi2 sigma=1.0: pass=2 | e.g. g_s=0.500 A=(89.0,1.0,1.0) Ms=6.12e+16
+antiD3=off f=4pi2 sigma=0.5: pass=69 | e.g. g_s=0.232 A=(40.8,1.0,1.0) Ms=7.47e+16
+antiD3=off f=4pi2 sigma=0.25: pass=263 | e.g. g_s=0.119 A=(22.7,1.0,1.0) Ms=8.46e+16
+EXIT 0

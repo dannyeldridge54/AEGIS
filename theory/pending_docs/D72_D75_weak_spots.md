@@ -8813,3 +8813,22 @@ Status after M.2: Conflict A survives only if the anti-D3 is present AND the ×4
 M.3 will lock one convention set and scan for a common point, with σ ∈ {1, ½, ¼} and anti-D3 on/off.
 Sources: 0902.1694; hep-th/0602038; hep-th/0305224 (magnetized Z₂×Z₂ orientifolds).
 MAP: node=lepto_i status=assumed touches=[serapis_e] ripple=no
+
+## D860 (DEEP, M.3): with the anti-D3, NO moduli point satisfies everything; without it, only at string-size small tori
+Lock: PREREG_D860_moduli_scan.md (committed before the run). Script theory/modular/moduli_scan_d860.py, output field_tests/results/moduli_scan_d860.txt. Grid: 25 g_s × 60³ areas, 12 cases.
+| anti-D3 | f | σ | passing points | binding constraint / example |
+|---|---|---|---|---|
+| on | 1, 4π² | 1, ½, ¼ | 0 (all six cases) | of the BHK-allowed points, 24–25% fail the anti-D3 bound and 75% fail the racetrack range; none reaches C4 |
+| off | 1 | 1 | 0 | 541 points reach C4 and fail it (masses too light) |
+| off | 1 | ½ | 30 | e.g. g_s = 0.28, A = (2019, 1.0, 1.0), M_s = 1.1e16 GeV |
+| off | 1 | ¼ | 158 | e.g. g_s = 0.13, A = (925, 1.0, 1.0), M_s = 1.4e16 GeV |
+| off | 4π² | 1 | 2 | g_s = 0.50, A = (89, 1.0, 1.0) |
+| off | 4π² | ½ | 69 | g_s = 0.23, A = (41, 1.0, 1.0), M_s = 7.5e16 GeV |
+| off | 4π² | ¼ | 263 | g_s = 0.12, A = (23, 1.0, 1.0), M_s = 8.5e16 GeV |
+Verdicts (locked rule): anti-D3 ON: INCONSISTENT in every case. Anti-D3 OFF: CONSISTENT for σ ≤ ½ (and marginally σ = 1 with f = 4π²). Pre-stated prediction CONFIRMED (on: inconsistent; off: passes for σ ≤ ½).
+Reading [derived]:
+1. With the anti-D3 present, the BHK tilt (A₁ large), the anti-D3 safety bound (A₂A₃ ≳ 2e4 g_s) and a CP-odd racetrack on an untwisted 4-cycle (A_iA_j/g_s ≈ 2–15) cannot hold together: the three 4-cycles are all too large. This is Conflict A of D857, now confirmed across conventions and instanton fractions.
+2. Without the anti-D3, the racetrack sits on the T⁴ cycle (Im T₁ = A₂A₃/g_s), which forces A₂ ≈ A₃ ≈ 1: the small tori at the string scale, the edge of geometric control (the passing examples all sit at the grid's lower boundary A = 1). The heavy-ν masses then need fractional instantons (σ ≤ ½) or the 4π² convention.
+3. Physical consequence: P3's anti-D3 (nilpotent-sector) picture and P1′'s CP source are mutually incompatible in our configuration. A model that uses both is internally inconsistent; it must drop one. Dropping the anti-D3 leaves the plateau's sector (the nilpotent X) without its usual string realisation; dropping P1′ leaves τ = i without leptogenesis (D854). The ρ branch is unaffected in this respect (it needs no CP phase, D855).
+Caveats [estimate]: O(1) factors in Im T_k = A_iA_j/g_s and in M_s; the grid edge at A = 1; σ values are assumed, not computed for E3s in this orbifold.
+MAP: node=lepto_i status=assumed touches=[plateau_origin,band_i] ripple=no
