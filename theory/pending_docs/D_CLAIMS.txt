@@ -177,3 +177,4 @@ D890  2026-11-16T18:13Z  L.4 rho lift verdict
 D891  2026-11-16T18:16Z  W2.1 Weinberg selection rule at rho
 D892  2026-11-16T18:19Z  W2.2 Weinberg origin literature
 D893  2026-11-16T18:20Z  W2.3 Weinberg verdict
+D894  2026-11-16T18:22Z  R2.1 referee pass
