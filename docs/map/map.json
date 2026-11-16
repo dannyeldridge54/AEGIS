@@ -101,7 +101,7 @@
     "D779: corrected",
     "D780: corrected"
    ],
-   "flag": "recheck (D781, serapis_e)"
+   "flag": "recheck (D782, lepto_rho)"
   },
   {
    "id": "n_sector_i",
@@ -209,7 +209,8 @@
     "D769: computed",
     "D770: computed",
     "D781: computed"
-   ]
+   ],
+   "flag": "recheck (D782, lepto_rho)"
   },
   {
    "id": "janus",
@@ -457,18 +458,18 @@
     "D772",
     "D773",
     "D775",
-    "D776"
+    "D776",
+    "D782"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D773: assumed",
     "D775: corrected",
-    "D776: corrected"
-   ],
-   "flag": "recheck (D780, n_sector_rho)"
+    "D776: corrected",
+    "D782: corrected"
+   ]
   },
   {
    "id": "gravitino_wino",

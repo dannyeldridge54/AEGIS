@@ -234,3 +234,13 @@ Touches: n_sector_rho, lepto_rho, gravitino_wino, serapis_e.
 6. The required T₂ ≳ 1e5 GeV implies Λ ≲ (M⁵M_P/T₂⁴)^{1/4}·…, i.e. roughly the string scale for M ~ 1e12 [estimate] (from Γ ~ M⁵/Λ⁴ and T₂ ~ √(ΓM_P)).
 7. [derived] Consistency: K4 reproduces D725. D780's estimate T₂ ~ 300 GeV (Λ = M_P) is now quantified as OUTSIDE. The frozen bands are unchanged (locked); a condition is added.
 Touches: serapis_e, n_sector_rho.
+
+## D782 — the decay scale of the Z₃-charged pair (reverse side)
+1. At τ = ω the residual Z₃ is exact, and states whose couplings vanish there are stable [literature] (2111.05674).
+2. The N_n/N₃ pair is Z₃-charged with no renormalisable SM decay [derived] (D779, D780).
+3. A decay needs an SM operator with the opposite Z₃ charge; dim-6 candidates exist for suitable SM weights [estimate] (weights are free up to the Yukawa, μ and anomaly constraints; not enumerated).
+4. Γ ≈ M⁵/(192π³Λ⁴) for 3-body decay [estimate] (dimensional analysis).
+5. T₂ ≈ √(ΓM_P)(90/π²g*)^{1/4} ≳ 1e5 GeV ⇒ Λ ≲ 3e16 GeV (M = 1e12) [estimate].
+6. Earlier asymmetries are diluted by the pair's domination, so baryogenesis must come from the late decays: Y_B ≈ (3/4)(T₂/M)ε [derived] (standard late-decay yield).
+7. [derived] Consistency: D781's condition T₂ ≳ 1e5 is translated into Λ. D775/D776 are superseded for ρ (dilution). The frozen bands are untouched (conditional on R-Z₃).
+Touches: lepto_rho, n_sector_rho, serapis_e.

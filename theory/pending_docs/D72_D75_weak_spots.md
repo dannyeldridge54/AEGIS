@@ -7628,3 +7628,17 @@ VERDICT (locked rule): INSIDE for T₂ = 3e6, OUTSIDE for T₂ ≤ 3e4.
 - If that condition fails, the post-hoc SERAPIS-E prediction moves to r ≈ 5.2–5.5e-4, n_s ≈ 0.967–0.970, scored only on future data.
 Next (reverse): what sets Λ? Which Z₃-allowed operator lets the charged pair decay, and at what scale? Candidates: string-scale (M_s) couplings to the twisted sector; operators with the dilaton or Kähler moduli that carry Z₃ charge; or decay into a light Z₃-charged hidden state (dark radiation). Deep research plus charge bookkeeping.
 MAP: node=serapis_e status=computed touches=[n_sector_rho] ripple=no
+
+## D782 (REVERSE, ρ-side; Jl tick 21; literature + derivation, no computation) — the residual Z₃ at ω exactly stabilises a heavy neutrino (literature: used as DM); SERAPIS-E at ρ needs a Z₃-allowed higher-dimension decay with Λ ≲ 3e16 GeV, and then baryogenesis must come from those late decays
+Literature (2111.05674, modular A₄; fetched): "the Z₃ is restored at τ = ω. This is why N_R1 is stable". The heavy neutrino's only Yukawa is a form that vanishes at the fixed point. Decay happens only if τ deviates from the fixed point (lifetime estimates there). Their DM is TeV-scale with a B−L scalar for annihilation. They do not treat heavy states produced by inflaton decay.
+- So D780's conclusion is the standard fixed-point result, applied to a case (inflaton → charged N at 1e11–1e12 GeV) where stability is fatal, not useful.
+Charge bookkeeping, SERAPIS-E at ρ [derived]:
+- Z₃-charged: δτ (the inflaton and axion), the N_n/N₃ pair. SM fields carry the charges their modular weights give, which are free up to Yukawa, μ-term and anomaly conditions.
+- Z₃-neutral by construction: N_Y, S₁, S₂, the gauge-invariant bilinears H_uH_d and LH_u (D780).
+- The stuck-D3 open strings and twisted states: unknown charges (not checked).
+- A Z₃-allowed decay of the pair needs an SM operator O_SM with charge −q. Renormalisable LHN is excluded (D780). The lowest candidates are dim-6, e.g. N·u·d·d (B-violating) or N·L·Q·d (L-violating), allowed if the SM weights give q_O ≡ −q. That is a CHOICE of SM weights, available at the cost of fixing them.
+Required scale (estimate): Γ ≈ M⁵/(192π³Λ⁴) (3-body) and T₂ ≈ √(ΓM_P)·(90/π²g*)^{1/4} ≳ 1e5 GeV (D781) ⇒ Λ ≲ 3e16 GeV for M = 1e12 (Λ ≲ 1e16 for M = 4e11). That is about the string scale for Im S·Im ρ ~ 1e2–1e3 (estimate; M_s not computed here).
+Consequence for baryogenesis [derived]: the pair dominates the energy density until T₂, so any asymmetry made earlier (D731/D775/D776 at T_R1) is diluted by ~M·Y_N/T₂ ≳ 1e3–1e6. Baryogenesis at ρ must then come from the late, B- or L-violating, CP-violating pair decays themselves: Y_B ≈ (3/4)(T₂/M)·ε_late. With T₂ ~ 1e6 and M ~ 1e12 this needs ε_late ≳ 1e-4.
+VERDICT: a REQUIREMENT, not a postulate (β3 kept): "R-Z₃ — the SM modular weights admit a dim-6 Z₃-charged operator coupling the heavy pair, suppressed by Λ ≲ 3e16 GeV." It restores the frozen ρ band (D781). ρ-leptogenesis via D775/D776 is SUPERSEDED (diluted), and late-decay baryogenesis becomes the ρ route (to compute).
+Next (forward, locked): compute (a) T₂(Λ, M) with the 3-body width, giving the Λ window that keeps the frozen bands; (b) the late-decay ε needed, and whether a two-operator interference with P1 phases can reach ε ≳ 1e-4 (order of magnitude).
+MAP: node=lepto_rho status=corrected touches=[n_sector_rho, serapis_e] ripple=no
