@@ -1,4 +1,4 @@
-# AEGIS: current state (15 Nov 2026, 20:10 CT). Read before working.
+# AEGIS: current state (15 Nov 2026, 23:30 CT). Read before working.
 
 ## Active line: SERAPIS v3 / v3.1 (modular inflation)
 - Paper: repo `papers/v3/serapis_v3.tex` (13 pp; v3.1 draft adds SERAPIS-E + D719–D736 corrections). Zenodo v3 published, DOI 10.5281/zenodo.24250733; v3.1 NOT yet uploaded (needs Danny's "Publish").
@@ -19,6 +19,12 @@
   - Leptogenesis passes (D731). Gravitino→wino plus gamma rays favour M_H ~ 1e12, T_R ~ 3e8 (D732–D733).
   - Post-hoc wino prediction: 0.67–0.80 TeV for a cuspy halo, ~15% of DM (D735). ATLAS 2603.08315 already excludes < 670 GeV, so Run 3/HL-LHC will test it (D736).
   - Open: digitised wino sub-fraction limits (2507.15934 Fig. 6); N splitting/CP phases from a flavour model.
+- Jl learning loop (22:30 on; D758–D769). Mirror-of-SERAPIS loop: forward/reverse sides, functions L1–L10, checks K1–K8, balances β1–β5. Plan in docs/UPDATE_LADDER_PLAN.md; checker tools/loop/jl_check.py; logs in theory/derivations/ (DERIVATION_LOG, LESSONS, POSTULATES).
+  - D759: log-derivative Epstein plateau is a post-hoc CANDIDATE (n_s band at C 5–10e-7, r 2.1–3.1e-4). D760: no string coupling makes the species scale track E(τ,2), so it stays phenomenological.
+  - D762–D763: both vacua and the inflaton line are CP-conserving, so leptogenesis on both branches needs high-energy CP phases. Under gCP there is no leptogenesis and δ_CP ∈ {0, π}. Leptonic CP violation discovered ⇒ gCP excluded.
+  - D764–D767: postulate P2 (open) = CP from a second modulus via the flux relation U₂U₃ = b₃/a⁰ with U₂ = ω (2405.18813). With the inflaton in the relation, r doubles and leaves the band (D765 correction). The tadpole forces 3/3/3+1 stuck D3s, so Im S·Im ρ = 375–488 (D766a). Wino window unchanged (D767).
+  - D768: plateau origin = postulate P3 (open): anti-D3 nilpotent metric, the same origin level as the SL(2,Z) attractors of 2408.05203. SERAPIS-E's r is ~4.5× below theirs.
+  - D769 (running): the light-axion (Re τ) test of P3. A first, invalid run shows ∂N/∂x₀ ~1e-4, i.e. ζ_axion ~1e-9.
 - Tests (D705): n_s at SO LAT + SPHEREx (~2030); r at LiteBIRD (launch 2032, results ≳ 2035, optimistic reach).
 - Pending Danny actions: Zenodo v3.1 "Publish"; outreach emails (4 drafts in papers/v3/drafts/outreach/, not sent); arXiv endorsement/submission.
 
