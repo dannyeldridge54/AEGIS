@@ -8013,3 +8013,5 @@ Derivation:
 4. If the DESI-driven shift holds, the frozen branches sit at the centre, while the post-hoc ρ self-diluted history is pushed to −1.5 … −2.7σ [derived]. This is a future-data discriminator between the frozen SERAPIS-E band and its post-hoc ρ alternative [derived].
 Ladder flags n_sector_rho and lepto_i cleared (both were reviewed in D804 itself).
 MAP: node=serapis_e status=computed touches=[] ripple=no
+D805 process note: jl_check reports K1 FAIL. The comparison arithmetic was written to field_tests/results without a PREREG, as the tick prompt said "no lock needed". Left as is and reported, not hidden by moving the file. The arithmetic contains no prediction, only σ-distances of fixed bands to published numbers. Future data checks will either lock a one-line PREREG or keep the arithmetic inside the D-note (lesson).
+MAP: none
