@@ -727,3 +727,10 @@ Touches: band_i, eps_tilt.
 4. C1 and C3 met; C2 ambiguous in units, outcome independent of it [derived].
 5. Outcome: keep as conditional variant [derived].
 Touches: band_i, eps_tilt.
+
+## D842: T.3 τ = i consequences (τ = i verdict project)
+1. Status note added to the prediction sheet; frozen numbers unchanged [derived] (D841).
+2. MANIFEST addendum: six locks, commit order checked in git, no K1 failures [derived].
+3. Current-state summary updated and synced [derived].
+4. Stale-wording sweep clean [derived] (D834a).
+Touches: none.

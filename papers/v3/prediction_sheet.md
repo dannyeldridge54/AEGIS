@@ -4,6 +4,8 @@ Frozen 15 Nov 2026; harmonised with the R8 referee fixes (R8b, D636/D637) (locks
 Scored only on data published after that date. ε is not retuned; any revision is a new model.
 Labels: **computed** = from locked scripts (exact Mukhanov–Sasaki, D588); **estimate** = analytic/order-of-magnitude.
 
+Status note (16 Nov 2026, D841, decision rule committed first): the τ = i branch (Chronos) is a CONDITIONAL variant: its ε has no derived source and it needs a 2⊕1 heavy-ν structure not required at ρ. No frozen number below changes.
+
 ## Headline numbers
 | Quantity | τ = i branch (Chronos) | ρ branch | Kairos (untilted, reference) | Label |
 |---|---|---|---|---|

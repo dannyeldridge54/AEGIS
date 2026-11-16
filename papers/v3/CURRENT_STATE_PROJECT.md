@@ -54,3 +54,4 @@ Source of truth v5.3 on Zenodo (DOI 10.5281/zenodo.24226521). TWIST-I: N* 56.7, 
 - Lock rules before running; fixes only via *_DEVIATIONS.md written first; no reruns to chase results.
 - No Zenodo changes without Danny's explicit "Publish"; emails stay drafts until he says send; never type passwords.
 - PC repo: don't touch its git. Keep cost low, integrity first. Honest labels (estimate/computed/literature; post-hoc models scored on future data only).
+- 16 Nov deep projects (D828–D842): P3 (anti-D3 one-loop, κ, warped throat) — the E-ratio plateau has no identified string origin; P3 stays a postulate; an anti-D3 needs large small tori (v₄ ≳ 2e4·g_s) for the band. τ = i kept as a CONDITIONAL variant (D841). Frozen predictions unchanged.

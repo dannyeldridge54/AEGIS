@@ -8617,3 +8617,12 @@ C2 (window narrower than 3× its own error budget): AMBIGUOUS AS WRITTEN. The ru
 C3 (extra structural condition not shared by ρ): MET (heavy-ν 2⊕1 splitting needed only at τ = i; D664a, D690).
 Outcome: KEEP AS CONDITIONAL VARIANT. Conditions to list in v3.2 Limitations: C1, C3 (and C2 under reading A). The frozen τ = i predictions are unchanged.
 MAP: node=band_i status=computed touches=[eps_tilt] ripple=no
+
+## D842 (τ = i verdict project, T.3): consequences applied to the unpublished documents
+1. prediction_sheet.md: a status note above the headline table, saying the τ = i branch (Chronos) is a conditional variant (D841). No frozen number changed [derived].
+2. MANIFEST.md: a post-v3.1 addendum listing the six deep-project locks (D829, D831, D833, D834, D835, decision rule D841). Commit order checked from git: every result file was committed after its lock; no K1 failures. D835's DEVIATIONS D1 noted [derived].
+3. CURRENT_STATE_PROJECT.md: one summary line for D828–D842; synced to the project as claude/CURRENT_STATE.md.
+4. Stale-wording sweep: grep for "destabilis" outside the D-notes/log found no remaining τ = i or anti-D3 claims. ACCURACY_STATUS and V32_TODO were already fixed in D840 (D834a).
+5. The published v3.1 was not touched; the paper change is queued in V32_TODO (D841 line).
+τ = i verdict project complete.
+MAP: none

@@ -198,3 +198,14 @@ Locks added after the v3 freeze that v3.1 cites: PREREG_D689–D693 (SERAPIS-E),
 | D823 | PREREG_D823_bhk_tilt_i.md | bb5fe5e921ed | 2026-11-16 07:57 | bhk_tilt_i_d823.txt | OK |
 
 Locks listed: 129. K1 order failures (result committed before lock): none. Locks without a result file: 10 (D605, D615, D633, D667, D675, D677, D679, D681, D693 are forward freezes of predictions, which have no result file by design; D716 is a Star-Mapper category lock). Known unlocked result: data_check_d805.txt (D805, reported in the D-note).
+
+### Addendum 16 Nov 2026 (after v3.1): deep-project locks
+| D | lock | lock committed | result file | result committed after lock |
+|---|---|---|---|---|
+| D829 | PREREG_D829_antiD3_green.md | 14:27Z | antiD3_green_d829.txt | OK |
+| D831 | PREREG_D831_antiD3_shape.md | 14:41Z | antiD3_shape_d831.txt | OK |
+| D833 | PREREG_D833_kappa.md | 14:48Z | kappa_d833.txt | OK |
+| D834 | PREREG_D834_antiD3_mass_i.md | 14:49Z | antiD3_mass_i_d834.txt | OK |
+| D835 | PREREG_D835_antiD3_serapis_e.md | 14:53Z | antiD3_serapis_e_d835.txt | OK |
+| D841 | DECISION_RULE_D841_tau_i.md | 15:14Z | (rule, no result file) | OK |
+D835 has DEVIATIONS D1 (solver-path crash before any result; fixed before the rerun).
