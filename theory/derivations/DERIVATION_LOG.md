@@ -1407,3 +1407,8 @@ Touches: none.
 ## D942: D941 novelty check
 - [literature] 1702.00420 (one-loop Pfaffians), 2508.11206 (KK tower potential): different uses; no Eisenstein-ratio plateau.
 - Result: not found in this check; locked two-field check next.
+
+## D943: two-field P3 check not completed
+- [computed] run 1 invalid (normalisation 2/ξ vs 4/ξ; start near ρ).
+- [derived] (sympy) dV₁/dÊ > 0 everywhere: no turnaround; D2's start rule inapplicable.
+- Result: no observables; new lock D944 needed.

@@ -9560,3 +9560,10 @@ Dedicated search (1, standard) + 2 fetches. [literature] Ruehle & Wieck, "One-lo
 Verdict: in this check (1 search, not exhaustive), D941's combination was not found. Status stays "reformulation + estimate"; no novelty claim. Next: a LOCKED two-field check that V(τ, χ) with A = μ²Ê, B = μ² reproduces P3 along the valley to the precision the frozen predictions use, including the heavy-field correction to n_s for M = 0.1–0.5.
 LESSONS: novelty search done in the tick after the idea, as D927 advised.
 MAP: none
+
+## D943 (P3, locked PREREG_D943 + DEVIATIONS D1–D2): NOT COMPLETED: two code/design errors, no observables produced; a new lock is needed
+Run 1 [computed, invalid]: the Eisenstein Fourier series used 2/ξ(4) instead of 4/ξ(4) (sanity check failed: 2.718 vs lattice 2.672) and the start point sat near ρ (ε_H > 1 within 0.003 e-folds). Kept as twofield_p3_d943_run1.txt.
+Rerun (DEVIATIONS D1–D2): the corrected normalisation passed the 1e-4 sanity check against the lattice sum. It then stopped before integrating: D2 assumed a turnaround of V₁ (dV/dφ = 0 on the plateau), which does not exist. [derived] (sympy) dV₁/dÊ = (CÊ² + 2CÊ + 1)/(Ê + 1)² > 0 for all Ê ≥ 0: the ramp ADDS to the slope, so the field rolls toward the vacuum from any y. My earlier reasoning ("the ramp opposes the plateau slope") was wrong.
+Per the DEVIATIONS rule (one rerun only), D943 ends here with no result; the PASS/FAIL question is open. Next: a NEW lock (D944) with the start fixed by e-folds (start where the single-field solution has ≥ 80 e-folds left), same model, C, M, N* and pass rule.
+LESSONS: check the sign of dV/dφ symbolically before designing initial conditions; two process errors in one lock means the lock was written too fast.
+MAP: none

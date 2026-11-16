@@ -190,3 +190,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D940: next P3 attempt needs a new mechanism, not a new search phrasing.
 - D941: X/(X+1) signals a series combination of two competing terms.
 - D942: one-search novelty checks are not exhaustive; say so.
+- D943: check the sign of dV/dφ before designing initial conditions.
