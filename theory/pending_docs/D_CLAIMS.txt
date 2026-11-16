@@ -95,3 +95,4 @@ D808  2026-11-16T12:29Z  referee deferrals 1b
 D809  2026-11-16T12:32Z  gravitino to wino computed
 D810  2026-11-16T12:33Z  orbit charge coefficient
 D811  2026-11-16T12:50Z  D802 remnant computed
+D812  2026-11-16T12:54Z  exactness audit
