@@ -469,3 +469,10 @@ Touches: serapis_e.
 3. 3σ enhancement needs σ ≈ 1.8e-4 [derived].
 4. The α_s leg is post-2030s [derived]; candidate probes (21-cm, distortions) are [estimate].
 Touches: serapis_e.
+
+## D807: referee merge (accuracy track)
+1. Referee findings checked against the D-notes [derived] (each fix cites its source note).
+2. Completely monotone f → hexagonal minimum (Montgomery + Bernstein) [literature] (referee; 1504.01153).
+3. Half-period character sums are invariant only under index-3 subgroups; the equal-brane total restores SL(2,Z) [derived] (referee's identity Σ_k E₂(φ_k) = −¾E).
+4. No frozen prediction changed [derived].
+Touches: serapis_e, band_e, wino_window.

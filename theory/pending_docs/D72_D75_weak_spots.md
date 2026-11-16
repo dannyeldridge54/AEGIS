@@ -8038,3 +8038,45 @@ Derivation:
 5. Check the paper's framing: if the abstract/title imply a near-term α_s test, a qualifier is needed. FLAGGED for the referee merge (the independent referee is running now; no paper edit this tick to avoid collision).
 Mirror question for the next forward tick: which near-term observable separates SERAPIS-E from a same-(n_s, r) α-attractor? r itself (LiteBIRD σ(r) ~ 5e-5 sees r ≈ 5e-4 at ~10σ) is common to both. Only the (n_s, r) strip position and α_s distinguish them, so check whether the strip alone discriminates at LiteBIRD + SO precision.
 MAP: node=serapis_e status=literature touches=[] ripple=no
+
+## D807 (ACCURACY TRACK, queue item 1; Jl tick 46): independent referee round 7 merged into serapis_v3.tex
+REF: papers/v3/REFEREE_v3.1_round7_independent.md (independent agent, cold read, 16 Nov 06:17–06:25 CT; recommendation "major revision"). All 7 major items and minors 1–9, 11–13 accepted and fixed.
+- M1: the abstract no longer says baryogenesis comes from the late decay. It now says: frozen band, no mechanism; post-hoc AD history outside the band.
+- M2: Intro (iv) limits leptogenesis to τ = i. The D775/D776 computation in the SERAPIS-E section is replaced by one "superseded" sentence.
+- M3 (table):
+  - caption now separates frozen from post-hoc rows;
+  - frozen SERAPIS-E row added (lock D693; α_s and conditions in new footnote e);
+  - the unsourced falsifier on the self-diluted row is replaced by "band excluded at 3σ";
+  - "Not locked" → "Not frozen (pre-registered …)";
+  - row label clarified;
+  - strip width 21%.
+- M4 (SERAPIS-E opening paragraph):
+  - hypothesis is now "completely monotone f" (Montgomery + Bernstein), not "positive weights";
+  - Blanc–Lewin review cited for the s > 0 attribution;
+  - new: full SL(2,Z) requires equal stuck-brane numbers at the three half-periods (each half-period sum has a sign character; referee's character-sum argument);
+  - stabiliser wording fixed (Γ⁰(2)-type contains TST⁻¹);
+  - 2504.19364 labelled a heterotic metastable AdS existence proof;
+  - threshold notation unified to −ln(2 Im τ|η|⁴);
+  - e^{iπ/3} image noted.
+- M5 (ρ Limitations bullet):
+  - about 650 → 330 words;
+  - stale wino and D779 clauses removed;
+  - "slightly off" → "|Re τ − ½| ≥ 0.15", stated as an initial-condition choice;
+  - added: Λ ≈ 2–30 M_s (estimate), η extrapolated from two read-outs, ε ≲ 3e-13, matter parity for proton decay;
+  - P5 detour removed; misplaced Σm_ν sentence removed.
+- M6: gCP statements now say "inflaton-decay leptogenesis" and note that the self-diluted ρ history needs no phases.
+- M7: covariant wino window 0.67–1.85 TeV (Einasto; up to 2.9 TeV only for cored halos), citing 2507.15934; table row b updated.
+- Minors:
+  - 1: CP sentence tightened (leading order, "unlike SERAPIS-E at ρ");
+  - 3: Limitations item adds unequal branes/drift and "only 1 + i is elliptic under Γ⁰(2)";
+  - 4: "derived branch" → "loop-motivated branch" (title, abstract, intro);
+  - 5: "heterotic N = 2 threshold";
+  - 6: "overlapping band … at the same Kähler metric";
+  - 8: strip width 21%;
+  - 9: Σm_ν 0.0587 throughout;
+  - 11: "every numerical computation … (group-theory checks excepted; full list in MANIFEST.md)";
+  - 12: no-go rephrased.
+- D806 qualifier added to the abstract: testing the running needs σ(α_s) ≈ 2e-4, beyond 2030s forecasts.
+DEFERRED (queue item 1b): minor 10 (split the ~900-word SERAPIS-E paragraph); the covariant m₃/₂ window to match the wino window; extend tab:repro beyond D639; minor 2's TS-stabiliser remark (only the image clause was added).
+Build: 15 pp, no undefined refs, no overfull boxes (the table needed footnote trimming).
+MAP: node=serapis_e status=corrected touches=[band_e, wino_window] ripple=no

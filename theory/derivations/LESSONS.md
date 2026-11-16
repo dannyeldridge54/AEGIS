@@ -54,3 +54,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D805: data checks should report what DISCRIMINATES the model's own variants (frozen vs post hoc), not just the fit of the main band. The DESI shift separates SERAPIS-E from its ρ self-diluted alternative.
 - 2026-11-16 D805 (K1): any file in field_tests/results needs a lock, even for pure comparison arithmetic. Lock a one-line PREREG for data checks, or keep the numbers inside the D-note.
 - 2026-11-16 D806: check forecasts before calling a prediction a 'test'. A title-level claim (parameter-free running test) needs the forecast σ next to it; here the running leg is ~5× beyond 2030 reach.
+- 2026-11-16 D807: an independent cold read found 7 major issues in text I had self-checked, including one claim (abstract baryogenesis) that contradicted the paper's own Limitations. Self-review misses what one wrote; keep the A0 referee gate.
