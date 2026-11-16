@@ -559,3 +559,9 @@ Touches: n_sector_rho.
 4. Clock relation R = ζ gives 1 + w₀ ≲ (2–6)e-13 [derived].
 5. The Twist and Twist-2 corrections are taken from D387–D475, as listed in the addenda [derived].
 Touches: none.
+
+## D820: r detectability (accuracy track)
+1. LiteBIRD δr = 1e-3 total; σ_stat = 6e-4 [literature] (2406.02724).
+2. SERAPIS r = (4.6–5.7)e-4 is < 1σ [derived].
+3. The live r test is exclusion at r ≳ 1e-3 [derived].
+Touches: none.

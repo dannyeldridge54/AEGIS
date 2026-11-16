@@ -66,3 +66,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D816: when a frozen number came from an approximation, publish the exact value BESIDE it, never in place of it. That keeps the lock honest and makes the approximation error visible.
 - 2026-11-16 D817: a uniform approximation bias (SR1 here) is itself a result. Record it once (n_s +0.0003, r −1.3%) so that later quick scans can be corrected without a full MS run, and labelled [estimate].
 - 2026-11-16 D819: when a citation and a number come from different papers (here a 2017 value under a 2022 citation), the locked run inherits the error. Verify the value AT the cited source before locking; the fix is a recorded deviation, never a silent edit.
+- 2026-11-16 D820: forecast numbers in planning documents need a citation on the line. The sheet's untraceable σ(r) = 5e-5 overstated LiteBIRD by ~15×, while the paper sentence (which had a source) was right.

@@ -8281,3 +8281,20 @@ Recomputed in v2, arithmetic in code:
 - 1 + w₀ ≲ 5.8 / 3.0 / 2.0e-13 for k = 1 / 2 / 3.
 The conclusion is unchanged and stronger.
 MAP: none
+
+## D820 (ACCURACY TRACK, queue 6b; Jl tick 58, manual "Jl"; literature, 1 fetch): LiteBIRD cannot detect r ≈ 5e-4. The paper's sentence was right; the prediction sheet was wrong and is now corrected
+Literature: "The LiteBIRD mission to explore cosmic inflation" (2406.02724):
+- the goal is δr = 0.001 "including systematic errors and margin";
+- σ_stat = 0.6e-3 at r = 0 (Sec. 6);
+- > 5σ detection only if r ≥ 0.01;
+- launch in Japanese fiscal year 2032.
+Comparison:
+- Paper (v3.1): "Detecting r ≈ 5e-4 itself requires σ(r) ~ 1e-4, beyond the currently planned experiments", plus "a detection of r ≳ 1e-3 by LiteBIRD would rule it out". CORRECT.
+- prediction_sheet: "LiteBIRD σ(r) ≈ 5e-5 … SERAPIS-E r ≈ 4.7e-4 at ~10σ (optimistic); r ladder resolvable at ~2σ per step". WRONG by about 12–20× in σ (the source of 5e-5 was not traceable). Corrected now: SERAPIS r is below LiteBIRD's 1σ, and LiteBIRD tests the model only by exclusion.
+Derivation:
+1. δr_total = 1e-3, σ_stat = 6e-4 [literature] (2406.02724).
+2. r = (4.6–5.7)e-4 gives 0.5–0.95σ (stat) or 0.46–0.57σ (total) [derived].
+3. So the model's r is untestable by detection in the 2030s; exclusion (r ≳ 1e-3) is the live test [derived].
+4. D806's conclusion (the α_s leg is post-2030s) now applies to r detection too. The near-term discriminators are n_s (SO + DESI) and Σm_ν [derived].
+Paper: no change needed. The sheet is fixed. REF: n/a (no paper edit).
+MAP: none

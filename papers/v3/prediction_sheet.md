@@ -40,7 +40,7 @@ A measured α_s outside this band (given measured n_s, r) rejects the whole fami
 |---|---|---|---|
 | SO LAT + SPHEREx (~2030) | n_s, α_s | σ(n_s) ≈ 8e-4, σ(α_s) ≈ 1.2e-3 | n_s 0.970–0.975: 2.3–8.5σ from today's CMB-only 0.9682 — first decisive test |
 | SO SATs, BICEP/Keck + SPT-3G (2020s) | r | σ(r) ~ 2–5e-3 | no detection (consistent) |
-| LiteBIRD (launch 2032, results ≳ 2035) | r | forecast σ(r) ≈ 5e-5 (r = 0 fiducial); requirement δr < 1e-3 | SERAPIS-E r ≈ 4.7e-4 at ~10σ (optimistic); r ladder 4.7/3.4/2.5e-4 resolvable at ~2σ per step; nothing seen at the requirement level |
+| LiteBIRD (launch JFY 2032, results ≳ 2035) | r | total δr = 1e-3 including systematics and margin; σ_stat = 6e-4 at r = 0 (2406.02724) | SERAPIS r ≈ (4.6–5.7)e-4 is BELOW 1σ: not detectable by LiteBIRD alone. LiteBIRD tests SERAPIS by EXCLUSION (r ≳ 1e-3 detected → model out). Corrected D820; the earlier '5e-5, ~10σ' entry was wrong |
 | CMB-S4 | — | DOE/NSF support ended 2025 | — |
 | DESI, Euclid | Σm_ν | σ ~ 0.02 eV | ≈ 0.059 eV |
 | JUNO, DUNE, Hyper-K | ordering | NO vs IO at > 3σ | tests the NO input (not a model output) |
