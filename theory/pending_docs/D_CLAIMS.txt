@@ -174,3 +174,4 @@ D887  2026-11-16T17:58Z  E.4 epsilon verdict
 D888  2026-11-16T18:03Z  L.1 rho lift reverse path
 D889  2026-11-16T18:11Z  L.2 rho lift literature
 D890  2026-11-16T18:13Z  L.4 rho lift verdict
+D891  2026-11-16T18:16Z  W2.1 Weinberg selection rule at rho
