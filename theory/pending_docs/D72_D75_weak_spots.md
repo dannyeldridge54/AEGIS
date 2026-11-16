@@ -6877,3 +6877,17 @@ Computed (Takagi singular values; scan b ∈ {0, 0.3, 1, 3}, c ∈ {0.3, 1, 3}):
 Weights (reasoning): consistent weights for W2 need k_N = k_N3 = −1 (2k_N + 2 = 0, k_N3 + k_N + 2 = 0). Then N3N3 needs a weight-2 SINGLET form, and Γ2 has none (its weight-2 space is the doublet). So b = 0 at leading order, unless a non-modular or higher-order source exists. b = 0 still gives rank 3 (R ≥ 0.21) but leaves an exactly degenerate pair at ρ. The Takagi phases in the degenerate b = 0 cases did not converge (residual up to 0.5), so their off-diagonal couplings are not reliable; their singular values are.
 Inflaton couplings: with all masses non-zero, the stationarity theorem kills the diagonal couplings again, so sterility is restored for the non-degenerate states. Off-diagonal holomorphic couplings at ρ are O(0.01–0.9) for b > 0 (Kähler corrections for mixed weights not modelled). The reheating temperature now depends on this sector: open, next.
 Paper: SERAPIS-E section updated with the D720–D724 caveat (frozen numbers kept, revision stated); builds at 13 pp.
+
+## D725 (CENTRE; locked PREREG_D725; results/tr_2p1_d725.txt, tr_2p1_nstar_d725.txt) — the consistent 2 ⊕ 1 sector at ρ: T_R ≈ 3e8–3e9 GeV, no dark radiation, frozen bands hold
+Computed (Takagi residual ≤ 3e-16; degenerate block handled with a symmetric square root, so the D724 phase failure is removed):
+- The exactly degenerate light pair (0.0823 / 0.2745 / 0.8234 for c = 0.3 / 1 / 3, in model units) SPLITS LINEARLY away from ρ: rates ±0.3644, the same for all c, and matching direct δ = 1e-4 and 1e-5 shifts to < 0.1%. So the inflaton is again NOT sterile for degenerate states. This is the same cone mechanism as D722: the sum of the pair's masses is stationary, the splitting is not. The non-degenerate state's own coupling is 1e-11 ≈ 0 (theorem). The heavy–light couplings are 0.11 / 0.36 / 1.10.
+- Open channels and T_R (M_heavy = 1e12 / 1e13 / 5e13 GeV; m_φ = 2.2e13):
+  - c = 0.3: 3.2e8 / 3.0e9 / 2.1e9
+  - c = 1: 4.3e8 / 2.5e9 / closed (M_light > m/2)
+  - c = 3: 9.5e8 / closed / closed
+  - Closed cases are sterile at linear order; their T_R would come from the D601-type estimate and is not computed here.
+- Dark radiation: the light states have M_L = 2e11–1e13 GeV, so the seesaw allows y_D ≈ √(m_ν M_L)/v = 0.02–0.13, ≫ 3e-4 (D723). They decay to SM radiation. No ΔN_eff problem.
+- N* (D719 code, C = 1.15e-6): T_R 3.2e8 → N* 49.72, n_s 0.9732, r 4.70e-4; T_R 3.0e9 → N* 50.47, n_s 0.9739, r 4.61e-4.
+VERDICT (locked rule): T_R band 3e8–3e9 GeV does not overlap D692's 1e6–1e8, so INCONSISTENT as a T_R statement (correction; no retuning). But n_s 0.9732–0.9739 and r (4.61–4.70)e-4 sit INSIDE the frozen D693 bands (0.970–0.975; 4.55–5.12e-4), and N* 49.7–50.5 is only ~0.6 above the locked 48.4–49.9.
+Net D719–D725 result: SERAPIS-E at ρ is consistent only with a 2 ⊕ 1 heavy-neutrino sector mixing through the weight-2 doublet. Its reheating is fast (T_R ~ 1e8.5–1e9.5 GeV, through the linear splitting of the degenerate pair). The frozen predictions survive unchanged; the paper's caveat (D724) already says the history depends on this sector.
+Open: (a) leptogenesis at T_R ~ 1e9 GeV (thermal leptogenesis becomes plausible; the Davidson–Ibarra bound needs M1 ≳ 1e9); (b) the D601/D602 sterile-τ=i story should be re-checked for the same cone effect wherever degenerate states exist (D664: the doublet at i is exactly degenerate).
