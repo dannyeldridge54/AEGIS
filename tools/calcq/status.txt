@@ -1,1 +1,2 @@
-D957-rho|running|22:41Z||
+D957-rho|done|22:41Z|22:50Z|0
+D958-nstar|running|22:50Z||
