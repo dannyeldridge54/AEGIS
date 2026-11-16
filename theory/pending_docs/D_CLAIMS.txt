@@ -64,3 +64,4 @@ D777  2026-11-16T07:27Z  forward: rho-branch light neutrinos from the 2+1 seesaw
 D778  2026-11-16T07:36Z  reverse: minimal higher-weight Dirac terms that split the rho light-neutrino pair
 D779  2026-11-16T07:44Z  forward: Z3 charge bookkeeping for the singlet-lepton remedy at rho
 D780  2026-11-16T07:54Z  reverse: exact Z3 at rho makes the inflaton's decay products carry Z3 charge - stable or late-decaying charged heavy N
+D781  2026-11-16T08:01Z  forward: SERAPIS-E N*, n_s, r with a late second reheating T2 (Z3 charged N)
