@@ -1,0 +1,3 @@
+# DEVIATIONS for PREREG_D769
+D1 (after run 1 was stopped part-way; partial output kept as axion_two_field_d769_run1_INVALID.txt): the lock wrote V = 1 − E_r/E, the shorthand form (plateau coefficient a = E(ρ) = 5.78). The D692 code and the paper (eq. at line 220) use Ê/(Ê + 1), i.e. a = 1. By D698 the two are observably equivalent at fixed N*, but N_total(y) differs by a factor ≈ a. With a = E(ρ) and y_start = 25, run 1 had only 27 e-folds, so no CMB scale exists and the K4 match to D692 is impossible. Run 1 is therefore INVALID as a test (its ∂N/∂x₀ values are kept as an indication only).
+Fix: use the D692 form V = Ê/(Ê + 1)·(1 + CÊ) with Ê = E(x, y) − E_r. Nothing else changes (y_start = 25, the x₀ grid, the decision rule).
