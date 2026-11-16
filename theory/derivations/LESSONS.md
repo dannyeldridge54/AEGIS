@@ -150,3 +150,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D899: when a branch's T_R is corrected, search the draft for every number computed at the old T_R (AD windows, N*, relic yields), not only the reheating section.
 - 2026-11-16 D900: a correction to an upstream input (T_R) must be propagated to every result computed at the old input; keep the old result as the record at its own input, don't overwrite it.
 - 2026-11-16 D901: close each referee pass with a Responses section in the same file, so the trail from item to fix is one read.
+- 2026-11-16 D902: an arXiv-only bib entry must be @misc in this style file; @article without journal makes bibtex error silently in a grep -c count.

@@ -1171,3 +1171,9 @@ Touches: lepto_i, mnu.
 2. R3 minors fixed (D727 T_R; superseded-route pointers) [derived].
 3. No new physics; frozen predictions unchanged [derived].
 Touches: none.
+
+## D902: DC.1 newest-data check
+1. Σm_ν < 0.052 eV (zero prior), < 0.092 eV (hierarchy prior) [literature] (2606.17994).
+2. ATLAS Run 2 disappearing tracks: 720 GeV at 1 ns [literature] (ATLAS briefing, 10 Mar 2026).
+3. NO floor 0.0587 eV below one zero-prior bound, inside the physical-prior bound [derived].
+Touches: mnu.

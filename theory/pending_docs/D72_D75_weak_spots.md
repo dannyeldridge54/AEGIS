@@ -9253,3 +9253,12 @@ MAP: node=lepto_i status=computed touches=[mnu] ripple=no
 All four R3 items answered (papers/v3/REFEREE_v3.2_R3.md, Responses). The v3.2 draft's AD section quotes the τ = i window at the corrected T_R (D900) with D646's values kept as the old-T_R record; the Consequence paragraph gives both vacua's windows; the proton paragraph uses D727's T_R; two pointers to the superseded self-diluted ρ route fixed. Rebuilt clean, 17 pages. Frozen predictions unchanged.
 Next project: with R2 and R3 closed, the remaining open items are long ones (P3 origin, non-toroidal completion, ρ/τ = i ε sources). Top pick by the autonomy rule: a fresh check of today's results against the newest data (Σm_ν bound, n_s from the latest CMB+BAO, ATLAS/CMS wino limits) since the paper's status lines quote them; one literature tick.
 MAP: none
+
+## D902 (DC.1): newest-data check: one Σm_ν combination sits below the NO floor (zero prior); wino and n_s inputs unchanged
+Searches 3; fetched 2606.17994 (summary page) and the ATLAS disappearing-track briefing (10 Mar 2026).
+Findings [literature]:
+1. Σm_ν: 2606.17994 (16 Jun 2026; CMB-SPA + DESI DR2 BAO + DES Y5 SNe): ΛCDM adiabatic < 0.052 eV (95%, prior extending to zero), < 0.057 eV with neutrino-density isocurvature, < 0.092 eV with a hierarchy-informed prior; CPL < 0.111 eV. The authors call 0.052 eV a prior artefact (below the 0.05878 eV NO minimum). The draft quoted only 2607.27410 (< 0.0592 eV).
+2. Wino: ATLAS full Run 2 disappearing tracks: up to 720 GeV for τ = 1 ns, 225 GeV for τ < 0.03 ns. The pure-wino number the draft uses (670 GeV, 2603.08315) is the wino-lifetime value from the same programme; unchanged.
+3. n_s: no CMB+BAO combination newer than those the draft quotes turned up in a standard search (2512.05108 reviews the spread of n_s constraints; not fetched).
+Assessment [derived]: the frozen Σm_ν = 0.0587 eV (NO floor) is below the zero-prior bound of one combination by 0.007 eV and inside the physical-prior bound. This tests NO + ΛCDM generically, as the draft already says. No frozen number changes; status lines updated (draft Σm_ν sentence cites 2606.17994; prediction_sheet data-check line).
+MAP: node=mnu status=literature touches=[] ripple=no

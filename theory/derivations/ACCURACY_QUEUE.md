@@ -139,4 +139,4 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 - R3.2 [done D900–D901: τ = i AD window at corrected T_R; R3 closed]
 
 ## Data check DC (picked 2026-11-16 under the autonomy rule)
-- DC.1 [open] One literature tick: newest Σm_ν bounds (DESI DR2+, ACT/SPT), newest n_s (CMB+BAO), newest disappearing-track wino limits; compare with the numbers the draft and prediction sheet quote (0.0592 eV, CMB-SPA n_s, 670 GeV). Record any change; no edits to frozen predictions.
+- DC.1 [done D902: one zero-prior Σm_ν bound below the NO floor (2606.17994); wino and n_s unchanged]

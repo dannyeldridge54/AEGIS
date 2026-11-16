@@ -38,3 +38,4 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file un
 - D893: ρ caveat: Weinberg condition and instanton-only resolution (D891–D892); refs 1112.5992, hep-th/0609191.
 - D895–D898: ρ AD window corrected to 2e-11–9e-10 eV (one no-thermal yield for both vacua; D880a); lift ε ≈ 1.6e-4, |τ−ρ| ≈ 3e-4 (D896); Weinberg condition S ≳ 14–19 (D897); abstract conditions clause and fitted ρ parameter; Consequence paragraph scoped per vacuum; prediction sheet ρ AD section (referee R2).
 - D900–D901 (referee R3): τ = i AD window restated at the corrected T_R, 1.6e-10–2.7e-9 eV (locked D900; thermal check passes); Consequence paragraph gives both windows; proton paragraph T_R per D727; two pointers to the superseded self-diluted ρ route fixed; prediction sheet row 15.
+- D902: Σm_ν status sentence adds 2606.17994 (< 0.052 eV zero prior, < 0.092 eV hierarchy prior).
