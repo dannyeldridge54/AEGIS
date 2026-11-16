@@ -1523,3 +1523,9 @@ Touches: none.
 - [literature] hep-ph/9810410 eq. 3.14: brane scalars from bulk gauge towers, m² > 0, finite.
 - [derived] (mpmath) Δm²(0) − Δm²(½) = (7/4)ζ(3) = 2.1036 (checked).
 - Result: gauge → +, Yukawa → −, Wilson line → −; Project H needs a gauge-charged localised χ.
+
+## D966: T² gauge-loop mass structure
+- [derived] (mpmath) ADPQ's Li₃ difference = circle image sum, 2.103599581 = (7/4)ζ(3).
+- [derived] T²: bosonic windings Σ′|w|⁻⁴ = 2ζ(4)E(U,2)/A²; no light gauginos in ADS 5̄5̄ → positive.
+- [estimate] loop normalisation c₆, massive levels not computed.
+- Result: Project H sign condition met in structure.

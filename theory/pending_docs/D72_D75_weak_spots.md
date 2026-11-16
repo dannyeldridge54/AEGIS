@@ -9746,3 +9746,11 @@ Rule (from the three worked examples): gauge loops → positive; Yukawa (fermion
 Verdict: D964's decisive condition has a sourced positive branch. Project H: candidate, with χ specified as a gauge-charged localised scalar; remaining: compute the ND-scalar mass on R⁴ × T² in the ADS model, and the pinning term B.
 LESSONS: classify sign results by coupling type (gauge / Yukawa / Wilson line) before generalising.
 MAP: none
+
+## D966 (Project H): the ADPQ gauge-loop mass IS an image sum (checked); on R⁴ × T² the same structure gives m_χ² ∝ +g²C [S(0) − S(q)] with S a T² winding sum of weight s = 2, i.e. ∝ E(U,2)/A² when the gauge sector has no light gauginos, as in the ADS anti-D5 sector
+[derived] (mpmath) Σ_{n≥1}(1 − cos 2πnq)/n³ at q = ½ = 2.103599581 = (7/4)ζ(3): ADPQ's Δm²(0) − Δm²(q_F) (D965) is exactly the circle (D = 5) image sum, bosonic windings minus gaugino windings shifted by the Scherk–Schwarz phase.
+[derived] (structure) On R⁴ × T² the gauge propagator's windings are |w|² = A|m + nU|²/Im U with weight |w|^{−(D−2)} = |w|^{−4}: S(0) = Σ′ 1/|w|⁴ = 2ζ(4)E(U,2)/A² (bosons), and the gaugino sum S(q) carries the SUSY-breaking phases. In the ADS 5̄5̄ sector there are no massless gauginos ("no massless gauginos", D961 source), so at the massless level only S(0) survives: m_χ² ≈ g²C(R)·c₆·2ζ(4)E(U,2)/A² > 0, with c₆ the 6D loop normalisation [estimate: c₆ and the massive-level corrections not computed].
+Consequence: a χ that is a brane-localised scalar charged under USp(16)_5̄ (e.g. a 9–5̄ ND state) gets exactly the positive A ∝ E(U,2) Project H needs, with s = 2 because the anti-D5 worldvolume is 6D (D945a). This turns Project H's sign condition from "open" (D963–D964) to "met in structure, coefficient uncomputed".
+Next (prep for the queue, locked): numerically evaluate S(0) on T² against 2ζ(4)E(U,2) (identity check via the toolkit lattice sum) and the c₆ loop factor from the 6D gauge propagator; then the pinning term B for the same χ.
+LESSONS: a known one-dimensional loop result plus the image-sum weight rule gives the torus result's structure in one step.
+MAP: none
