@@ -7194,3 +7194,14 @@ New falsifiers (sensitivities from memory, labelled):
 3. Cosmological Σm_ν: 0.0586–0.064 eV. With σ ≈ 0.015–0.02 eV around 2030 (DESI final + Euclid + CMB), this predicts a 3–4σ DETECTION of nonzero neutrino mass. A robust bound Σ < 0.058 eV kills NO with any m₁ ≥ 0, and the model with it. Of the three, this is the sharpest near-term test, and current DESI trends (preference for low Σ) make it live.
 Status: consistent with the frozen Σm_ν = 0.0587 (lock D605), which sits at the low end of the computed range. The m_ββ and m_β ranges are post-hoc derived statements and enter the prediction sheet as "derived, not frozen".
 MAP: node=mnu status=frozen touches=[lepto_i] ripple=no
+
+## D751 (LEFT; reverse ladder; literature + arithmetic; results/discriminant_d751.txt) — by 2030 only n_s itself separates SERAPIS from plain attractors; the running α_s cannot
+Target: a 2030-era signal that tells SERAPIS from a generic e^{−2√2φ}/Starobinsky-type attractor.
+Forecasts (arXiv:2212.04115, Table 5; the caption says 95% intervals, the text says σ, so both readings are shown): SO+SPHEREx σ(n_s) = 0.0016, σ(α_s) = 0.0024; the best combination (LiteBIRD + CMB-S4 + CHIME + SPHEREx) gives 0.0012 and 0.0017.
+Computed:
+- Plain attractor n_s = 1 − 2/N*, α_s = −2/N*²: N* = 50 / 55 / 60 gives n_s = 0.9600 / 0.9636 / 0.9667 and α_s = −8.0 / −6.6 / −5.6e-4.
+- SERAPIS-E: n_s 0.970–0.975, α_s −(9.4–10.6)e-4.
+- n_s separation from the N* = 55 attractor (band edge 0.970): 4.0σ (SO+SPHEREx) to 5.3σ (best combination); twice that under the 95% reading. Against the N* = 60 attractor (0.9667), only 2.1σ (4.1σ under the 95% reading).
+- α_s separation: SERAPIS − attractor ≈ −(3–5)e-4, i.e. 0.1–0.3σ. Correction to the printed script line: it used 3.9e-4 for the attractor α_s; the right value is 5.6–8.0e-4, which makes α_s even less discriminating.
+VERDICT: the running α_s (and so the Janus relation, which also needs r) is NOT a 2030 discriminant. The discriminant is n_s itself: if SO+SPHEREx centre n_s near 0.972, plain untilted attractors (and our own Kairos, 0.959–0.961) are excluded at ≳ 4σ, while a long-reheating attractor at N* ≈ 60 survives at ~2σ. SERAPIS's distinctive content (the tilt and its modular origin) is therefore tested by n_s plus the neutrino and wino predictions (D750, D736), not by α_s or r. Together with D749 this sets the model's test calendar: ~2027–2030 Σm_ν (cosmology) and wino (LHC); ~2030 n_s (SO+SPHEREx); 2030s 0νββ null; r and α_s beyond the 2030s.
+MAP: node=tests_cmb status=literature touches=[] ripple=no

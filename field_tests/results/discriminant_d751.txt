@@ -1,0 +1,8 @@
+attractor N*=50: n_s=0.9600, alpha_s=-8.00e-04
+attractor N*=55: n_s=0.9636, alpha_s=-6.61e-04
+attractor N*=60: n_s=0.9667, alpha_s=-5.56e-04
+SERAPIS-E: n_s 0.970-0.975, alpha_s -(9.4-10.6)e-4 (lock D693)
+SO+SPHEREx (as sigma): n_s separation 4.0 sigma, alpha_s separation 0.25 sigma
+SO+SPHEREx (if table is 95%): n_s separation 8.0 sigma, alpha_s separation 0.51 sigma
+best combo (as sigma): n_s separation 5.3 sigma, alpha_s separation 0.36 sigma
+best combo (if table is 95%): n_s separation 10.7 sigma, alpha_s separation 0.72 sigma

@@ -522,14 +522,16 @@
    "status": "literature",
    "d": [
     "D705",
-    "D749"
+    "D749",
+    "D751"
    ],
    "depends": [
     "band_i",
     "band_e"
    ],
    "history": [
-    "D749: literature"
+    "D749: literature",
+    "D751: literature"
    ]
   },
   {
