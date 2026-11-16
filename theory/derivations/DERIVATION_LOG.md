@@ -455,3 +455,10 @@ Touches: plateau_origin, serapis_e.
 5. ε₃ = 0: ρ has a trivial stabiliser, losing Z₃, isotropy and the critical point [derived].
 6. SERAPIS-E needs the full SL(2,Z) [derived].
 Touches: serapis_e, n_sector_rho, lepto_i.
+
+## D805: data check (forward side)
+1. New n_s values [literature] (2512.05108).
+2. σ-distances [derived] (computed).
+3. Shifts are 0.30–0.33σ, below the flag threshold [derived].
+4. With DESI, the frozen band is centred and the post-hoc ρ alternative is at −1.5 … −2.7σ [derived].
+Touches: serapis_e.

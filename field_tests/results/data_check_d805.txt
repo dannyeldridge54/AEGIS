@@ -1,0 +1,6 @@
+Chronos (tau=i) CMB-SPA new: +0.24..+1.97σ | CMB-SPA+DESI new: -1.48..+0.52σ | Planck+DESI: +0.29..+1.71σ
+SERAPIS-E frozen (D693) CMB-SPA new: +0.24..+1.97σ | CMB-SPA+DESI new: -1.48..+0.52σ | Planck+DESI: +0.29..+1.71σ
+rho self-diluted (post hoc) CMB-SPA new: -0.79..+0.24σ | CMB-SPA+DESI new: -2.68..-1.48σ | Planck+DESI: -0.57..+0.29σ
+SERAPIS-Delta (post hoc, disfavoured) CMB-SPA new: -1.48..+1.97σ | CMB-SPA+DESI new: -3.48..+0.52σ | Planck+DESI: -1.14..+1.71σ
+Kairos CMB-SPA new: -3.55..-2.86σ | CMB-SPA+DESI new: -5.88..-5.08σ | Planck+DESI: -2.86..-2.29σ
+shift CMB-SPA: 0.300000000000004 σ; CMB-SPA+DESI: 0.3333333333333377 σ

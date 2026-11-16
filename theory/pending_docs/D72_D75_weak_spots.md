@@ -7988,3 +7988,28 @@ Derivation:
 6. Hence SERAPIS-E REQUIRES the full SL(2,Z), i.e. supersymmetric-type (positive) one-loop sums. This is consistent with D803 step 5 [derived].
 Paper: one Limitations item added (SERAPIS-E needs the full SL(2,Z); what a Scherk–Schwarz breaking would remove; the τ = i branch at 1 + i keeps its Z₂, but its doublet splits into free singlets).
 MAP: node=serapis_e status=computed touches=[n_sector_rho, lepto_i] ripple=no
+
+## D805 (FORWARD, i-side, L1 Observe; Jl tick 44; comparison arithmetic in code, results/data_check_d805.txt): newest n_s compilations shift by +0.3σ, below the 0.5σ flag threshold; frozen bands unchanged and slightly better centred; no new r or α_s constraint
+Research (2 searches, 2 fetches):
+- "The spectrum of n_s constraints from DESI and CMB data" (2512.05108, Table I):
+  - Planck 0.9638 ± 0.0040; Planck+DESI 0.9690 ± 0.0035;
+  - ACT DR6 0.9666 ± 0.0076; ACT+DESI 0.9767 ± 0.0068;
+  - SPT-3G 0.948 ± 0.012; SPT+DESI 0.955 ± 0.012;
+  - CMB-SPA 0.9693 ± 0.0029; CMB-SPA+DESI 0.9737 ± 0.0025.
+  - No α_s constraint. The upward shift with DESI is tied to the BAO–CMB tension and to τ_reio.
+- No new standard inflationary r limit was found. 2601.20958 constrains a different parameter (causal "r_ect" < 0.0077). r < 0.036 (BK18) remains the reference.
+Comparison (band edges in σ):
+- Chronos / SERAPIS-E frozen (0.970–0.975):
+  - vs CMB-SPA: +0.24 … +1.97σ;
+  - vs CMB-SPA+DESI: −1.48 … +0.52σ (the central value 0.9737 lies INSIDE the band);
+  - vs Planck+DESI: +0.29 … +1.71σ.
+- ρ self-diluted (post hoc, 0.967–0.970): vs CMB-SPA −0.79 … +0.24σ; vs CMB-SPA+DESI −2.68 … −1.48σ (disfavoured if the DESI shift is physical).
+- Kairos (0.959–0.961): −2.9 … −3.6σ (CMB-SPA), −5.1 … −5.9σ (with DESI).
+Shifts versus the paper's F3 references: CMB-SPA +0.30σ, CMB-SPA+DESI +0.33σ. Both are below the 0.5σ rule, so no prediction-sheet flag. The paper's quoted references (0.9684 ± 0.0030, 0.9728 ± 0.0027) can stay. An optional update to 2512.05108's numbers is noted for the next paper revision.
+Derivation:
+1. The data values are [literature] (2512.05108).
+2. Distances = (band edge − mean)/σ [derived] (code).
+3. Shift < 0.5σ, so no flag [derived].
+4. If the DESI-driven shift holds, the frozen branches sit at the centre, while the post-hoc ρ self-diluted history is pushed to −1.5 … −2.7σ [derived]. This is a future-data discriminator between the frozen SERAPIS-E band and its post-hoc ρ alternative [derived].
+Ladder flags n_sector_rho and lepto_i cleared (both were reviewed in D804 itself).
+MAP: node=serapis_e status=computed touches=[] ripple=no

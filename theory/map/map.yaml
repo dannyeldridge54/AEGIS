@@ -82,7 +82,6 @@ nodes:
   - 'D780: corrected'
   - 'D786: corrected'
   - 'D787: computed'
-  flag: recheck (D804, serapis_e)
 - id: n_sector_i
   layer: 1
   branch:
@@ -160,13 +159,14 @@ nodes:
   - D793
   - D802
   - D804
+  - D805
   depends:
   - plateau_origin
   - bhk_tilt
   history:
-  - 'D793: computed'
   - 'D802: computed'
   - 'D804: computed'
+  - 'D805: computed'
 - id: janus
   layer: 2
   branch:
@@ -285,7 +285,6 @@ nodes:
   - 'D786: assumed'
   - 'D794: computed'
   - 'D795: computed'
-  flag: recheck (D804, serapis_e)
 - id: sterile_rho
   layer: 4
   branch:
