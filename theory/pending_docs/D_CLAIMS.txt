@@ -98,3 +98,4 @@ D811  2026-11-16T12:50Z  D802 remnant computed
 D812  2026-11-16T12:54Z  exactness audit
 D813  2026-11-16T12:57Z  D793 exact MS recompute
 D814  2026-11-16T12:59Z  D725 exact MS
+D815  2026-11-16T13:01Z  D729 exact MS
