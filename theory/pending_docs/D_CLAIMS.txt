@@ -220,3 +220,4 @@ D933  2026-11-16T20:31Z  no identically flat single U
 D934  2026-11-16T20:48Z  flat single U search result
 D935  2026-11-16T20:49Z  F1 killed: no flat single U
 D936  2026-11-16T20:55Z  sibling catalogue
+D937  2026-11-16T20:56Z  D929 log loophole
