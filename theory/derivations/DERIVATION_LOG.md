@@ -1392,3 +1392,7 @@ Touches: none.
 - [derived] summary of D928–D937 in the draft; no new numbers.
 - [literature] 2209.02720, 1605.03974 added.
 - Result: draft builds clean (18 pp).
+
+## D940: P3 literature tick 2
+- [literature] arXiv:1902.04625: level-N hauptmodul inflation, no plateau, no bounded ratio.
+- Result: NULL; plan queue complete.

@@ -187,3 +187,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D937: check log corrections before stating power-counting selection rules.
 - D938: same operator, opposite regime: cite instanton Weinberg papers carefully.
 - D939: paper wording must match computed status.
+- D940: next P3 attempt needs a new mechanism, not a new search phrasing.

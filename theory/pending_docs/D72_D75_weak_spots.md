@@ -9539,3 +9539,9 @@ MAP: none
 [derived] (summary of D928, D929, D932–D937; no new numbers) Added to Limitations, before "Prior art": p = k√(2/n) and the n = 1 selection; the log-tuned loophole (y ≈ 6.5 for n = 3, k = 4); α = 1 for one-modulus CY LCS; mirror-quintic prior art; on T⁶/(Z₂×Z₂) identically flat single U excluded by the tadpole and point-wise flatness not found numerically (0.2 ≤ Im ≤ 5) — worded as "we find no flux", not "cannot"; diagonal flat directions give the sibling attractors. [literature] refs 2209.02720 and 1605.03974 added (@misc). Clean build: 0 undefined references, 0 overfull boxes. CHANGELOG_v3.3 updated. v3.2 file untouched. Posting v3.3 waits for Danny's "Publish". Build directory removed from git and ignored.
 LESSONS: wording in papers must match the computed status ("not found numerically" ≠ "cannot").
 MAP: none
+
+## D940 (P3 literature tick 2): NULL: no bounded Eisenstein-ratio plateau in the literature; one older level-N paper new to our notes
+Search (1, standard, phrasing different from D910) + 1 fetch. [literature] Lynker & Schimmrigk, "Modular Inflation at Higher Level N" (arXiv:1902.04625, ~2019): V = Λ⁴|h_N(τ)|² with the Γ₀(N) hauptmodul h_N = (η(τ)/η(Nτ))^{24/(N−1)}; saddle at τ = (1+i)/2 for N = 2; r between 0.0019 and 0.06; no plateau (|h_N|² grows like e^{4π Im τ} toward the cusp, an inference from the q-expansion), no bounded ratio of Eisenstein series. Other hits (2407.12081, 2411.18603, 2411.07552, 2405.08924, 2408.05203) already in our notes.
+Verdict: NULL. P3 (the Ê/(Ê+1) plateau) still has no literature or derived origin; the routes on record (D911–D912 Kähler, D914 T-brane, D917 heterotic GS, Project F flux) are closed. Today's planned queue (Pl at 14:24: steps 1–5) is complete.
+LESSONS: two P3 literature ticks in one day both NULL; the next P3 attempt needs a new mechanism, not a new search phrasing.
+MAP: none
