@@ -551,3 +551,11 @@ Touches: band_i.
 2. The τ = i frozen band versus MS (D642, D815) is the same to rounding [derived].
 3. Across D813–D817 the SR1 bias is uniform: n_s +0.0003, r −1.3% [derived].
 Touches: n_sector_rho.
+
+## D819: published-papers merge (accuracy track, A0)
+1. MICROSCOPE final σ_η = 2.75e-15 [literature] (2209.15487).
+2. η ≈ 1e-3 ζ² gives ζ ≲ 1.66e-6 [literature] (Martins 2204.02930; arithmetic [derived]).
+3. Suppression 2.0–3.4e3 (MICROSCOPE), ~1e5 (combined, 2105.09746) [derived].
+4. Clock relation R = ζ gives 1 + w₀ ≲ (2–6)e-13 [derived].
+5. The Twist and Twist-2 corrections are taken from D387–D475, as listed in the addenda [derived].
+Touches: none.

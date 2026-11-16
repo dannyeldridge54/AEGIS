@@ -8258,3 +8258,26 @@ MAP: node=n_sector_rho status=computed touches=[] ripple=no
 ## D818 (claimed for the r-detectability check, queue 6b): DEFERRED
 Danny interrupted the tick at 07:13 CT ("Referee pass edit the publisher papers"). The LiteBIRD search had begun, but its fetch was stopped. No result. Queue 6b stays open.
 MAP: none
+
+## D819 (Danny 07:13 CT: "Referee pass edit the publisher papers"): independent referee of the three other published Zenodo papers, merged into new-version drafts. Includes the D400 MICROSCOPE input deviation
+Referee: archive/papers/REFEREE_published_2026-11-16.md (independent agent, cold read; 4 web searches). Verdicts:
+- α no-go: issue v2.
+- Twist v5.3: superseded; status notice plus addendum.
+- Twist-2 v1: status notice plus v1.1 addendum.
+Drafts (NOT uploaded; Zenodo needs Danny's "Publish" and login):
+- α no-go v2: archive/papers/alpha_nogo/ALPHA_NOGO_v2.md → Eldridge_alpha_nogo_v2_2026-11-16.pdf (4 pp).
+  - New title: "Rolling moduli move α: a one-loop obstruction to Kähler-modulus quintessence from clocks and MICROSCOPE".
+  - Corrections: MICROSCOPE final value; Martins et al. combined bound; assumptions explicit; ratios instead of σ; DESI 2.8–4.2σ; "conditional" framing; the 1 + w₀ ≲ (2–6)e-13 corollary.
+- Twist v5.4: archive/papers/twist_v5/ADDENDUM_v5.4.md → Twist_v5.4_status_addendum_2026-11-16.pdf (1 p).
+  - Title: "Plateau, cliff and tail in no-scale supergravity: what pre-registered tests kept and what they rejected".
+- Twist-2 v1.1: archive/papers/twist_v6/ADDENDUM_v1.1.md → Eldridge_Twist2_v1.1_addendum_2026-11-16.pdf (2 pp).
+  - Title: "Capturing a no-scale inflaton: thermal trapping, a cliff-sized vacuum energy, and a spectral index that must be fitted".
+D400 DEVIATION (recorded, not a silent edit): the locked D400 run used MICROSCOPE η = (−0.1 ± 1.3)e-14 (2017 first result) under the 2022 citation. The final 2022 value is η(Ti,Pt) = (−1.5 ± 2.3 ± 1.5)e-15 (arXiv:2209.15487, verified by the referee).
+Recomputed in v2, arithmetic in code:
+- σ_η = 2.75e-15 → ζ ≲ 1.66e-6 (was 3.6e-6);
+- suppression 2.0–3.4e3;
+- η_pred/σ = 4.0e6 – 1.17e7;
+- with Martins ζ σ = 5.9e-8: suppression 0.56–0.97e5;
+- 1 + w₀ ≲ 5.8 / 3.0 / 2.0e-13 for k = 1 / 2 / 3.
+The conclusion is unchanged and stronger.
+MAP: none
