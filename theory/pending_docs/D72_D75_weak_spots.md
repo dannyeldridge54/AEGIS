@@ -9058,3 +9058,7 @@ Consequences:
 3. Caveats [estimate]: the ρ lepton sector from the weight-two doublet alone gives a degenerate light pair (paper caveat), so a realistic ρ lepton sector with m_ν₁ ≈ 1e-8 eV must still be built; the CP phase δ_eff of the AD condensate is the usual relative phase between A-term and Weinberg term, which in a string completion is again spontaneous (P1′-type; D843); thermal-effect details at T₂ ≪ 1e8 GeV use the paper's mild T_R^{1/3} scaling.
 Sources: hep-ph/0102187; hep-ph/0008041; hep-ph/9310297.
 MAP: node=lepto_rho status=computed touches=[band_e,mnu,n_sector_rho] ripple=no
+
+## D881 (B.6): D880 folded into the v3.2 draft
+Abstract: the ρ sentence now says inflaton-based baryogenesis fails but LH_u Affleck–Dine, allowed by the residual Z₃, gives the asymmetry inside the frozen band for an essentially massless lightest neutrino (post hoc); the self-diluted history and a stray ",;" typo were removed from the abstract. Sec. VII: the "frozen band without a baryogenesis mechanism" choice is replaced by the D879–D880 route with its numbers and caveats. Table footnote f: the AD route covers both vacua. Rebuilt: 17 pages, no undefined references, no overfull hboxes (footnote shortened once to fix a table overflow). CHANGELOG, V32_TODO and CURRENT_STATE updated (synced).
+MAP: none

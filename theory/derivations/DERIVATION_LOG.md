@@ -1019,3 +1019,9 @@ Touches: lepto_rho, band_e, mnu.
 4. ρ has a post-hoc baryogenesis route inside the frozen band [derived].
 5. Realistic ρ lepton sector and the condensate's CP phase still open [estimate].
 Touches: lepto_rho, band_e, mnu, n_sector_rho.
+
+## D881: B.6 draft update for ρ baryogenesis
+1. Abstract and Sec. VII updated to the LH_u AD route at ρ [derived] (D880).
+2. Σm_ν footnote now covers both vacua [derived].
+3. Rebuilt clean, 17 pages [derived].
+Touches: none.

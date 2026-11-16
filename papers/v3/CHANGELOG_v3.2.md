@@ -30,3 +30,4 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file un
 - D870: plateau caveat names the remaining uplift options (distant throat anti-D3, T-brane), D868–D869.
 - D871: referee minors batch 1 (#5, #7, #9, #10, #11, #13); 17 pages.
 - D872: referee minors batch 2 (#1 covered, #2 partial, #12, #14, #15); back to 16 pages.
+- D881: ρ baryogenesis: abstract and Sec. VII now state LH_u Affleck–Dine inside the frozen band (post hoc, D880); Σm_ν footnote covers both vacua.
