@@ -200,3 +200,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D950: in SUSY setups one-loop masses cancel at leading order; ask what breaks SUSY in the loop.
 - D951: use a worked example to check the sign of a loop-mass mechanism.
 - D952: run tools/serapis_calc selftest before every locked run.
+- D953: copy the paper's conventions verbatim in reproduction locks; selftest tolerances tighter than the effect measured.

@@ -1461,3 +1461,8 @@ Touches: none.
 - [derived] (arithmetic) 17g–175g ≲ A₁ ≲ 2.6e6–6.6e7.
 - [estimate] benchmark small T⁴ fits D945a.
 - Result: no scale conflict; toolkit with 11/11 self-checks added.
+
+## D953: independent reproduction of SERAPIS-E
+- [computed] new MS code, paper convention: n_s 0.9700–0.9746, r (4.55–5.12)e-4; C = 0: 0.9612, 3.64e-4 — matches v3.2.
+- [computed] α_s −(8.2–11.5)e-4, one corner outside ±10% → locked FAIL; [estimate] new-code α_s noise ~1.5e-4.
+- Result: n_s, r confirmed; α_s not confirmed (tool limitation).

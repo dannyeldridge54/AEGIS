@@ -9643,3 +9643,12 @@ Verdict: no scale conflict; Project H's conditions stay those of D950–D951 (no
 Tooling: tools/serapis_calc added (Eisenstein Fourier vs lattice, modular invariance, ρ minimum, P3 slope sign, consistency-relation limits and the paper-1 number, exponent rule): 11/11 self-checks pass; required before every locked run from now on.
 LESSONS: run the verified toolkit's self-test before locked runs; it would have caught both D943 errors.
 MAP: none
+
+## D953 (locked PREREG_D953 + DEVIATIONS D1): independent reproduction of v3.2's SERAPIS-E: n_s and r REPRODUCED by new code; locked verdict FAIL on one α_s corner, traced to the new code's α_s precision, not to the paper
+New exact MS solver (tools/serapis_calc/ms.py, written without the v3 scripts; selftest 15/15 incl. m²φ² at N = 60: n_s 0.96644, r 0.1322).
+Run 1 [computed, not the published model]: the lock used the toolkit's normalised E (∝ y²); the paper (and its script) use the BHK lattice sum Σ′(Im U)²/|m+nU|⁴ = 2ζ(4)E, E(ρ,2) = 5.7833593. Traced by reading serapis_e_exact_d692.py and the v3.2 text; recorded in DEVIATIONS D1 before the rerun. The error was in my lock.
+Run 2 (paper convention) [computed]: C = 1.0e-6: n_s = 0.97005 / 0.97150, r = 4.754e-4 / 4.551e-4 (N* = 48.4 / 49.9); C = 1.3e-6: n_s = 0.97308 / 0.97464, r = 5.116e-4 / 4.920e-4; C = 0 (N* = 49.15): n_s = 0.96117, r = 3.644e-4. Published: n_s 0.970–0.975, r (4.6–5.1)e-4, C = 0: 0.961, 3.6e-4. n_s and r agree to < 0.0005 and ~1–2%: REPRODUCED.
+α_s: new code gives −1.030e-3, −1.151e-3, −8.59e-4, −8.20e-4 (published −(9.4–10.6)e-4); the last corner is outside the locked ±10% band, so the locked verdict is FAIL. The new values are non-monotone in (C, N*) and the toolkit's own m²φ² check is off by 1.4e-4 in α_s (−5.60e-4 vs −2/(N+½)² = −5.46e-4), so the new code's α_s carries ~±1.5e-4 numerical error from its 3-point ±0.05 stencil [estimate; the published value used a 5-point ±0.1 stencil]. Not evidence against the paper's α_s; the toolkit's α_s is marked UNRELIABLE until improved (wider stencil, tighter selftest tolerance) under a new lock.
+Verdict: v3.2's n_s and r for SERAPIS-E are independently confirmed; α_s is not independently confirmed (tool limitation). Frozen predictions unchanged.
+LESSONS: (1) a reproduction lock must copy the paper's conventions verbatim (normalisation of E); (2) a selftest tolerance must be tighter than the effect the tool will be used to measure (2e-4 tolerance vs 1e-4-level α_s differences).
+MAP: none
