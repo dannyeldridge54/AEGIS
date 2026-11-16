@@ -909,7 +909,7 @@ Touches: lepto_i, serapis_e, eps_tilt.
 ## D865: D7 contribution to the tilt
 1. D864's half-period placement breaks SL(2,Z); both stacks must sit at the origin (D864a) [derived].
 2. Origin D7s reduce N_eff by 11·r·Im S/Im T₁ [estimate] (BHK structure, r = O(1)).
-3. At the benchmark this is 0.6–2.5, rescaling Im S·Im ρ₁ by ×0.38–0.85 [derived arithmetic].
+3. At the benchmark this is 0.6–2.5, rescaling Im S·Im ρ₁ by ×0.38–0.85 [derived] (arithmetic).
 4. Symmetric placement keeps SL(2,Z), ρ vacuum and tilt shape [derived].
 5. Benchmark re-fit: A₁ ≈ 16–35 at fixed g_s [estimate].
 Touches: serapis_e, eps_tilt, lepto_i.
