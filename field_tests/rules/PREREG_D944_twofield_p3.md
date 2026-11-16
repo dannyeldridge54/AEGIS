@@ -1,0 +1,5 @@
+# PREREG D944: two-field check of D941 (replaces the uncompleted D943)
+Identical to PREREG_D943 (model on Re tau = 1/2, phi = ln(y)/sqrt2, Ehat = E(tau,2) - E(rho,2) with the corrected 4/xi(4) Fourier sum and the 1e-4 lattice sanity check enforced; V1 = Ehat/(Ehat+1)(1+C Ehat); V2 = [Ehat chi^2 + (1-chi)^2](1+C Ehat), chi = sigma/M; C = 1.15e-6; M = 0.1, 0.2, 0.5; N* = 55; n_s = 1 - 2 eps_H - dln eps_H/dN, r = 16 eps_H; Omega/H and 1 - c_s^2 = 4 Omega^2/(m^2/H^2)), except the start point:
+Start: phi_0 where the single-field slow-roll count N_SR(phi) = integral from phi_end to phi of V1/V1' dphi equals 80 (phi_end: eps_V = 1). Both models start at phi_0 at rest; the two-field model on the valley chi = 1/(Ehat+1). Spline grid to y = 400. If either model gives < 60 total e-folds, report and stop.
+PASS (unchanged from D943): for M = 0.1, 0.2: |dn_s| <= 5e-4, |dr/r| <= 2%, 1 - c_s^2 <= 1e-2. M = 0.5 reported only.
+No reruns; fixes only via DEVIATIONS written first. Script theory/flux/twofield_p3_d944.py; output field_tests/results/twofield_p3_d944.txt.
