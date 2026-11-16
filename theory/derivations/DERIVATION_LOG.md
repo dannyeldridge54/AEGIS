@@ -599,3 +599,11 @@ Touches: mnu.
 1. Flag justifications [derived] (D822, D823).
 2. Stale values in non-paper documents replaced by the v3.1 values [derived] (D784, D786, D807, D808).
 Touches: none.
+
+## D826: τ = i vacuum-mass sources (accuracy track)
+1. Needed m²/H² ≈ 2e-3 [derived] (D795).
+2. Covariant F-term: 3R·2y²g_xx ≈ 1.6e-15 – 1.3e-14 [derived].
+3. BHK factors cannot help (multiplicative; remnant ×1.0003) [derived].
+4. Holomorphic h(τ) destroys the plateau [derived] (D685).
+5. The only candidate is the anti-D3 log correction [postulate P3] (D686).
+Touches: eps_tilt, band_i.

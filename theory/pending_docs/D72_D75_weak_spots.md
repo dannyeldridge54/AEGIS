@@ -8384,3 +8384,20 @@ Sweep, against the published v3.1 and D807/D808/D824:
 Remaining older mentions ("D735 0.67–0.80" inside historical D-notes) are left as written; history is not edited.
 Project doc claude/CURRENT_STATE.md re-synced.
 MAP: none
+
+## D826 (ACCURACY TRACK, queue 14; Jl tick 64, manual "Jl"; derivation + arithmetic, no lock): the τ = i vacuum mass. Every derived source examined is 10¹¹–10¹² too small, or a hilltop. The only live candidate is D686's hypothetical logarithmic correction in the anti-D3 sector, which is P3's sector. The mass stays tied to the fitted ε
+Required: εI₁ gives V_xx = 2.287 ε V0 (D795), so m²/H² = 3·2y²V_xx ≈ 2.0e-3 at ε = 1.45e-4 (y = 1) [derived].
+Candidates:
+1. Covariant F-term V_τ = m₃/₂²M_P² e^{L−L(i)} 4y²|∂_τL|² (D684/D685).
+   - Its mass is m²/H² = 3R·(2y² g_xx) with g_xx = 0.178 (D811) and R = m₃/₂²/(3H²).
+   - For m₃/₂ = 2.5–7e5 GeV and H ≈ 3.7e12 GeV: R = 1.5e-15 – 1.2e-14, so m²/H² ≈ 1.6e-15 – 1.3e-14.
+   - That is 10¹¹–10¹² below what is needed [derived].
+   - D685 already showed that the same R cannot give both tilt and mass without a reheating temperature below BBN.
+2. The BHK remnant inside the F-term (D811): it multiplies g_xx by (1 + C·E_xx/L_xx)², at most a factor ~1.0003 for C ~ 1e-6. It does not change (1) [derived].
+3. The multiplicative BHK factor (D689/D802/D823): it cannot give a mass to a zero of V [derived].
+4. A supersymmetric τ mass from a holomorphic h(τ) with a double zero at i: its F-terms grow as e^{2πy} or e^{πy} toward the cusp and destroy the plateau [derived] (D685 2b).
+5. The species-scale one-loop term: ∝ (m₃/₂/H)² ~ R, as small as (1) [derived] (D685 2a).
+6. A logarithmic correction in the anti-D3 warp/metric sector, f → f(1 + b ln(1 + |j−1728|/1728)), would reproduce εI₁ with b ≈ 0.02 [postulate P3] (D686: an uncomputed string correction).
+Verdict: the τ = i vacuum mass and tilt come from ONE fitted term (ε I₁). No derived source is within 10¹¹ of the required size. The only candidate (item 6) lives in the same anti-D3 sector as P3, so it would be settled by the P3 computation (queue item 10, which needs Danny's OK).
+This is consistent with the paper's statement that "the tilt at i and ρ is fitted". For v3.2, one sentence is queued: "the vacuum mass at i shares the fitted ε; covariant F-term and loop sources are 10¹¹–10¹² too small (D826)".
+MAP: node=eps_tilt status=estimate touches=[band_i] ripple=no
