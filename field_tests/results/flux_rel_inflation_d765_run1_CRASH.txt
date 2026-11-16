@@ -1,0 +1,8 @@
+E(rho,2)=5.7833593 (D689: 5.7833593)
+Traceback (most recent call last):
+  File "/home/claude/aegis/theory/modular/flux_rel_inflation_d765.py", line 23, in <module>
+    S=[-0.1,-0.05,0,0.05,0.1]; out=[spectra(B,Ns,math.exp(x)) for x in S]
+                                    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "<string>", line 29, in spectra
+OverflowError: (34, 'Numerical result out of range')
+DONE

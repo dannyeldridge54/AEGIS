@@ -15,7 +15,7 @@ Er=Ese(0.5,math.sqrt(3)/2)
 def V(phi,C):
     y=math.exp(phi); e=Ese(0.5,y)-Er; return e/(e+1)*(1+C*e)
 def dlnV(phi,e,h=1e-5): return (math.log(V(phi+h,e))-math.log(V(phi-h,e)))/(2*h)
-exec('\n'.join(src[11:41]).replace('math.log(40)','math.log(25)').replace('/s2','').replace('exp(s2*','exp('))  # DEVIATIONS D1
+exec('\n'.join(src[11:41]).replace('math.log(40)','math.log(13)').replace('/s2','').replace('exp(s2*','exp('))  # DEVIATIONS D1
 print(f"E(rho,2)={Er:.7f} (D689: 5.7833593)")
 for C in (0.0,6e-7,1e-6,1.3e-6):
     B=background(C)
