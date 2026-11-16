@@ -9328,3 +9328,9 @@ Derivation from the notes (no computation, no lock).
 4. Cost [derived]: one heavy Dirac pair beyond the 2⊕1 sector (two extra fields, the same count as ρ's two extra singlets, D779), plus a post hoc lift from residual-Z₂ breaking (τ off i), as at ρ (D888a).
 Verdict: N1 CLOSED at the structural level. AD at τ = i could gain its missing light direction by this construction, which would leave it with the same conditions as ρ (extra fields, a fitted lift, an instanton-only Weinberg term marginal at the racetrack g_s, D904a). An oscillation fit would repeat D883/D896's generic rank-2-plus-lift statistics, so none is run. τ = i's main baryogenesis route stays inflaton-decay leptogenesis (D745). No change to the draft or frozen predictions.
 MAP: node=lepto_i status=estimate touches=[mnu] ripple=no
+
+## D910 (P3 literature tick): NULL: no 2026 source for a modular power-law plateau
+Searches 3 (modular E(τ,s) potentials from strings; species-scale plateaus; SL(2,Z) attractors with nilpotent uplift); fetched 2604.07288 and 2604.16281.
+Findings [literature]: the only string-derived power-law plateau in the 2026 literature found is loop blow-up inflation, V = V₀(1 − c/φ^{2/3}) from one-loop Kähler corrections to a blow-up Kähler modulus (2604.07288 eq. 21; 2403.04831; review 2604.16281 §2.3). It involves no modular function of the shape modulus, and the review does not discuss SL(2,Z), Eisenstein or species-scale plateaus. Both papers were already noted (earlier D-notes, "string-loop inflation is mainstream" and "plateau from volume/blow-up structure, not E(U) in a denominator").
+Verdict: NULL. P3 unchanged (plateau form postulated in the uplift sector). The one unread lead from those earlier notes, 2510.19927 (symmetry points of N = 1 modular geometry), is the next P3 item.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no

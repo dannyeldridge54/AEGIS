@@ -1221,3 +1221,9 @@ Touches: none.
 4. A Dirac partner S′ (k_S + k_S′ ≡ 0 mod 4) restores the mass and keeps the protection [derived].
 5. Cost: two extra fields plus a post hoc lift, as at ρ [derived] (D779, D888a).
 Touches: lepto_i, mnu.
+
+## D910: P3 literature tick (null)
+1. Loop blow-up plateau 1 − c/φ^{2/3} is from a blow-up Kähler modulus [literature] (2604.07288, 2403.04831).
+2. No modular power-law plateau source in 2026 literature found [literature] (2604.16281).
+3. P3 unchanged [derived].
+Touches: plateau_origin.

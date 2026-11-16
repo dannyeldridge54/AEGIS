@@ -152,3 +152,6 @@ Why: the better-motivated vacuum ρ has no baryogenesis mechanism inside its fro
 
 ## τ = i light-direction project N1 (picked 2026-11-16 under the autonomy rule)
 - N1.1 [done D909: possible with a heavy Dirac pair (S, S′) plus a post hoc lift; no fit run (would repeat D883/D896); N1 closed]
+
+## P3 lead (queued 2026-11-16, D910)
+- P3.L1 [open] Read 2510.19927 (symmetry points of N = 1 modular geometry): does its fixed-point vacuum structure give a power-law approach to a plateau, or an origin for E(τ,2) in the uplift/nilpotent metric? One fetch; record the verdict.
