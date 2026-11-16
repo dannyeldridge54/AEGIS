@@ -406,7 +406,8 @@
     "D855",
     "D857",
     "D859",
-    "D860"
+    "D860",
+    "D862"
    ],
    "depends": [
     "reheat_i",
@@ -414,11 +415,10 @@
     "eta_n"
    ],
    "history": [
-    "D857: assumed",
     "D859: assumed",
-    "D860: assumed"
-   ],
-   "flag": "recheck (D861, band_i)"
+    "D860: assumed",
+    "D862: assumed"
+   ]
   },
   {
    "id": "sterile_rho",
@@ -580,7 +580,8 @@
     "D840: computed",
     "D841: computed",
     "D861: computed"
-   ]
+   ],
+   "flag": "recheck (D862, lepto_i)"
   },
   {
    "id": "band_e",

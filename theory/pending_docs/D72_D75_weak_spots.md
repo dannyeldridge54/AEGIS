@@ -8843,3 +8843,15 @@ M.5 verdict, applying DECISION_RULE_D841 as committed (no new rule):
 Outcome: τ = i remains a CONDITIONAL VARIANT, now with these conditions: (C1) ε has no derived source; (C3a) 2⊕1 heavy-ν structure; (C3b) CP-odd axions on two cycle classes (D854); (C3c) its uplift/nilpotent sector is not an anti-D3 at natural size, and the T⁴ is at the string scale (D860, D861). The frozen τ = i predictions are unchanged.
 For SERAPIS-E at ρ: no conflict (no CP phase needed, D855); the anti-D3 picture only requires large v₄ (D835).
 MAP: node=lepto_i status=assumed touches=[band_i,plateau_origin] ripple=no
+
+## D862: α′ control of the D861 benchmark: the leading corrections are small; the region barely survives larger tori
+Lock: PREREG_D862_alphaprime.md (committed before the run). Script theory/modular/alphaprime_d862.py, output field_tests/results/alphaprime_d862.txt.
+(a) BBHL α′³ term with χ = −96 (ξ = 0.233): at the benchmark (g_s = 0.232, A = (40.8, 1, 1)) r_α′ = ξ̂/(2𝒱_E) = 0.29% [derived]. The large inflaton torus keeps the overall volume big enough.
+(b) Worldsheet-instanton-type suppression e^{−2πA}: 1.9e-3 (A = 1), 3.5e-6 (A = 2), 6.5e-9 (A = 3) [derived]. Even at string-size tori these are sub-percent.
+(c) D860's constraints rerun with all A_i ≥ A_min (anti-D3 off):
+- A_min = 2: ONE passing point, f = 4π², σ = ¼, at g_s = 0.50 and A = (94.1, 2.00, 2.00): on two grid edges (largest g_s, smallest A); r_α′ = 0.03%.
+- A_min = 3: no passing point in any case.
+Verdict (locked rule): "controlled" is formally met (a point with A_min ≥ 2, r_α′ < 5%, e^{−2πA} < 1%), but by a single point on two grid edges; in practice MARGINAL. Pre-stated predictions: r_α′ ≈ 0.3% CONFIRMED; "points survive at A_min = 2" only barely (one edge point); "none at 3" CONFIRMED.
+Reading [derived]: the worry in D861 that string-size tori put the benchmark out of control is weaker than feared for the two corrections computed here (both sub-percent). The real squeeze is the constraint set itself: the racetrack range Im T₁ = A₂A₃/g_s ≤ 14.7 pushes the small tori down as soon as they grow, and only fractional instantons (σ = ¼), the 4π² convention and g_s ≈ 0.5 keep a point alive at A = 2. The consistent P1′ region is a thin sliver near the string scale.
+Not computed [estimate]: string-loop corrections to K for T₁ (BHK-type for the Kähler moduli, ∝ E₂(U_i)/(Im S Im T_k)), which at Im T₁ ≈ 4 are suppressed by 1/(Im S·Im T₁) ≈ 0.5: possibly O(1) at the benchmark and the most likely place for control to fail.
+MAP: node=lepto_i status=assumed touches=[band_i] ripple=no

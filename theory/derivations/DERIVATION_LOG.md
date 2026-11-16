@@ -882,3 +882,11 @@ Touches: lepto_i, plateau_origin, band_i.
 4. τ = i stays conditional with a further condition (no natural-size anti-D3; string-size T⁴) [derived] (D860).
 5. ρ branch unaffected [derived] (D855).
 Touches: band_i, lepto_i, plateau_origin.
+
+## D862: α′ control at string-size tori
+1. BBHL correction at the benchmark is 0.29% (χ = −96) [derived] (computed, PREREG_D862).
+2. Worldsheet-instanton-type terms e^{−2πA} are sub-percent for A ≥ 1 [derived].
+3. With A_i ≥ 2 only one edge point survives; none at A_i ≥ 3 [derived] (computed).
+4. Locked verdict formally "controlled", in practice marginal [derived].
+5. Loop corrections to K for T₁ (∝ 1/(Im S·Im T₁) ≈ 0.5) not computed, likely the weak point [estimate].
+Touches: lepto_i, band_i.
