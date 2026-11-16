@@ -61,3 +61,8 @@ Steps (one per tick; lock before any computation; honest labels):
 - V.2 [done D848] Apply V32_TODO items D830, D832, D836, D839 (P3, tadpole), D841 (τ = i conditional), D846 (P1′).
 - V.3 [done D849] Build the PDF, check page count and overfull boxes, grep every changed number against its D-note; write CHANGELOG_v3.2.md.
 - V.4 [done D850] Independent referee pass on the diff only; report to Danny with the PDF.
+
+## P1′ follow-up (queued 2026-11-16 after v3.2 draft; draft held, "Not yet" on Zenodo)
+- Q.1 [open] Distribution of the axion vev over CP-odd racetrack minima (D845 rerun with fixed seeds is NOT allowed; new lock): fraction with |sin(2π⟨Re T⟩/L·k)| > 0.1 for the phase that enters the heavy-ν couplings.
+- Q.2 [open] How the heavy-ν couplings depend on T (Kähler normalisation vs holomorphic), and the resulting leptogenesis phase δ.
+- Q.3 [open] Verdict: does P1′ reproduce the D762/D763 pass fractions?
