@@ -8,12 +8,13 @@ def sig(n,a): return sum(d**a for d in range(1,n+1) if n%d==0)
 def E2(x,y):
     s=y**2+phi2/y
     for n in range(1,13):
-        s+=2*mp.sqrt(y)/xi(4)*n**1.5*sig(n,-3)*mp.besselk(1.5,2*mp.pi*n*y)*mp.cos(2*mp.pi*n*x)
+        s+=4*mp.sqrt(y)/xi(4)*n**1.5*sig(n,-3)*mp.besselk(1.5,2*mp.pi*n*y)*mp.cos(2*mp.pi*n*x)
     return float(s)
 yr=np.sqrt(3)/2; Er=E2(0.5,yr)
 # sanity: lattice sum G = sum' y^2/|m+n tau|^4 = 2 zeta(4) E
 tau=0.5+1j*yr; G=sum(yr**2/abs(m+n*tau)**4 for m in range(-300,301) for n in range(-300,301) if (m,n)!=(0,0))
 chk=G/(2*float(mp.zeta(4)))
+assert abs(Er-chk)<1e-4, ('sanity',Er,chk)
 C=1.15e-6
 ph=np.linspace(np.log(yr)/np.sqrt(2),np.log(200)/np.sqrt(2),6000)
 Eh=np.array([E2(0.5,np.exp(np.sqrt(2)*p))-Er for p in ph]); Eh[0]=0.0
@@ -22,9 +23,9 @@ def V1(p): e=Sp(p); return e/(e+1)*(1+C*e)
 def dV1(p): e=Sp(p); de=dSp(p); return de*((1+C*e)/(e+1)**2 + C*e/(e+1))
 def run(model,M=None):
     # start near the slope zero of V1 (largest phi with dV1>0 before turnaround)
-    g=np.array([dV1(p) for p in ph]); idx=np.where(g<=0)[0]
-    pmax=ph[idx[idx>10][0]] if len(idx[idx>10]) else ph[-1]
-    p0=pmax-1e-3
+    g=np.array([dV1(p) for p in ph]); E=Sp(ph)
+    k=[i for i in range(len(ph)-1) if E[i]>10 and g[i]>0 and g[i+1]<=0]
+    pmax=brentq(dV1,ph[k[-1]],ph[k[-1]+1]); p0=pmax-1e-3
     if model==1:
         def rhs(N,u):
             p,pd=u; eps=0.5*pd**2; return [pd,-(3-eps)*pd-(3-eps)*dV1(p)/V1(p)]
@@ -41,6 +42,7 @@ def run(model,M=None):
     end.terminal=True; end.direction=1
     sol=solve_ivp(rhs,[0,3000],u0,events=end,rtol=1e-10,atol=1e-12,dense_output=True,max_step=0.5)
     Nend=sol.t_events[0][0]; Ns=Nend-55
+    if Nend<60: raise SystemExit(f'STOP (D2): total e-folds {Nend:.1f} < 60, model {model}, M={M}')
     def epsH(N):
         u=sol.sol(N); return 0.5*(u[-2]**2+u[-1]**2) if model==2 else 0.5*u[1]**2
     h=1e-3; e0=epsH(Ns); dl=(np.log(epsH(Ns+h))-np.log(epsH(Ns-h)))/(2*h)
