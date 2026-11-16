@@ -229,3 +229,4 @@ D942  2026-11-16T21:06Z  D941 novelty check
 D943  2026-11-16T21:08Z  D943 not completed
 D944  2026-11-16T21:10Z  two-field P3 check PASS
 D945  2026-11-16T21:16Z  H1: one-loop mass from T2 images
+D946  2026-11-16T21:17Z  H4: ratio is a free parameter
