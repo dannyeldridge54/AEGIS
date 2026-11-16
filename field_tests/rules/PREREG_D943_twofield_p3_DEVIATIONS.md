@@ -1,0 +1,5 @@
+# DEVIATIONS for PREREG D943 (written before any rerun; run 1 output kept as field_tests/results/twofield_p3_d943_run1.txt)
+Run 1 is invalid for code reasons, not physics: (a) its own sanity check failed: E(rho,2) from the Fourier series 2.718094 vs lattice sum 2.671719; (b) the start point landed near rho (V ~ 0), so eps_H > 1 within 0.003 e-folds and every observable is meaningless.
+D1 (normalisation): the Bessel sum over n != 0 carries 4/xi(2s) for the cosine form (2/xi(2s) per +/-n), not 2/xi(2s). Fix, and require Fourier vs lattice agreement to 1e-4 before any ODE runs (abort otherwise).
+D2 (start point): the turnaround is the largest phi with dV1/dphi = 0 in the plateau region Ehat > 10 (root of dV1 by brentq), not the first non-positive gradient after index 10. Start at that root minus 1e-3 (single-field) and on the chi* valley (two-field). If total e-folds < 60, report and stop (no parameter change).
+Model, C, M values, N* = 55, formulas and PASS rule unchanged. One rerun only.
