@@ -35,3 +35,4 @@ D748  2026-11-16T03:48Z  n_s shift as BAO-CMB artefact: what it means for the ba
 D749  2026-11-16T03:53Z  r testability timeline
 D750  2026-11-16T03:55Z  reverse ladder: near-term falsifiers (m_bb, Sigma m_nu)
 D751  2026-11-16T03:57Z  what distinguishes SERAPIS from attractors by 2030
+D752  2026-11-16T04:00Z  can an attractor reach n_s 0.970 via kination? GW/Neff bound
