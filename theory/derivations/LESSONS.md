@@ -186,3 +186,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D936: siblings split by r; all need a ramp for n_s.
 - D937: check log corrections before stating power-counting selection rules.
 - D938: same operator, opposite regime: cite instanton Weinberg papers carefully.
+- D939: paper wording must match computed status.

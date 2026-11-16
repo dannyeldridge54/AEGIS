@@ -9534,3 +9534,8 @@ Search (1, standard) + 2 fetches. [literature] Cvetič, Halverson, Langacker & R
 Verdict: NULL for the open part (no fixed-point instanton action in the literature found); form confirmed. Weinberg suppression stays conditional (D893, D903, D904a).
 LESSONS: literature uses instanton Weinberg terms to make ν masses large enough; ours must be small; cite carefully as "same operator, opposite regime".
 MAP: none
+
+## D939 (plan step 5): v3.3 draft gains a "Which modulus can roll" paragraph summarising D925–D937; builds clean, 18 pages
+[derived] (summary of D928, D929, D932–D937; no new numbers) Added to Limitations, before "Prior art": p = k√(2/n) and the n = 1 selection; the log-tuned loophole (y ≈ 6.5 for n = 3, k = 4); α = 1 for one-modulus CY LCS; mirror-quintic prior art; on T⁶/(Z₂×Z₂) identically flat single U excluded by the tadpole and point-wise flatness not found numerically (0.2 ≤ Im ≤ 5) — worded as "we find no flux", not "cannot"; diagonal flat directions give the sibling attractors. [literature] refs 2209.02720 and 1605.03974 added (@misc). Clean build: 0 undefined references, 0 overfull boxes. CHANGELOG_v3.3 updated. v3.2 file untouched. Posting v3.3 waits for Danny's "Publish". Build directory removed from git and ignored.
+LESSONS: wording in papers must match the computed status ("not found numerically" ≠ "cannot").
+MAP: none

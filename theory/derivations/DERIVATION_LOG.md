@@ -1387,3 +1387,8 @@ Touches: none.
 - [literature] arXiv:1001.3148 (e^{−S} LHLH/M_s; M_s/e^{−S} ≈ 1e14 GeV for realistic ν masses); arXiv:2606.11346 (radiative, no instantons).
 - [derived] (arithmetic) S ≳ 13–19 ↔ e^{−S} ≲ 2e-6–6e-9.
 - Result: form confirmed; open part NULL.
+
+## D939: v3.3 draft modulus paragraph
+- [derived] summary of D928–D937 in the draft; no new numbers.
+- [literature] 2209.02720, 1605.03974 added.
+- Result: draft builds clean (18 pp).
