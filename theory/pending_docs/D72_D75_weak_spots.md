@@ -7875,3 +7875,21 @@ Derivation:
 5. The D564 bound (y* ≲ 25) excludes p = 1 [derived]. p = 2 needs a vacuum-mass/tilt term, exactly as at τ = i (D574–D575): the natural analogue is V = Δ̃²/(Δ̃²+1) + ε Δ̃ [derived].
 Significance: Δ is a genuine one-loop string threshold with a minimum at ρ. Unlike the hand-built |j − 1728| plateau, it needs no choice of vacuum. Its PLACEMENT is still by hand (P3 issue): V ∝ Δ̃²/(Δ̃²+1) must still sit in K^{XX̄}. Not a new prediction yet (post hoc; nothing frozen).
 MAP: node=plateau_origin status=computed touches=[serapis_e] ripple=no
+
+## D799 (FORWARD, i-side; Jl tick 38; research + derivation, no lock): the gaugino-condensate placement for P3 fails. Modular weight forces the condensate to GROW toward the cusp, so "uplift minus condensate" is unbounded below, not a plateau
+Research (1 search, 1 fetch): Leedom, Righi, Westphal, "Heterotic de Sitter beyond modular symmetry" (2212.03876):
+- Condensate superpotential W = Ω(S)H(T)/η⁶(T), with H = (G₄/η⁸)ⁿ(G₆/η¹²)ᵐ P(j). The weight (−3) fixes the η⁻⁶.
+- The scalar potential "diverges as Im T → ∞".
+- The fixed points i, ρ are always extrema. Class B with n = 0 has a dS minimum at ρ for A(S,S̄) > 3; at i a minimum only for 0.40 < A < 3.60 (m = 0).
+- With Green–Schwarz mixing, the weight moves into K_S = −ln(S + S̄ + δ_GS ln(y|η|⁴)) = −ln(S + S̄ − δ_GS Δ).
+Derivation:
+1. The weight-(−3) rule forces W ∝ η⁻⁶ × (holomorphic modular function) [literature] (2212.03876; FILQ 1990).
+2. A modular function holomorphic on the fundamental domain, including at i and ρ, is a polynomial in j (up to the G₄, G₆ factors with fixed zeros) [literature]. So |H| ≥ const at the cusp, growing as e^{2πy·deg P} [derived].
+3. So e^K|W|² ∝ y⁻³|η|⁻¹²|H|² ≳ y⁻³e^{πy}. The condensate contribution GROWS like e^{πy} toward the cusp [derived]; it can never be the decaying e^{−cΔ} needed for a plateau approach.
+4. Hence V = V0[1 − (y|η|⁴/(y|η|⁴)_ρ)^c] is not realised by standard modular-invariant condensation. "Uplift − condensate" gives V → −∞; "uplift + condensate" gives a wall, not a plateau [derived].
+5. Green–Schwarz mixing does not rescue it: the τ-dependence enters K_S as S + S̄ − δ_GS Δ, which for δ_GS > 0 makes e^{K_S} = 1/(2Re S − δ_GS Δ) GROW with Δ (and diverge where δ_GS Δ = 2 Re S) [derived].
+6. The hypothetical form's n_s, r were NOT computed (no lock): a model that the framework forbids does not justify a computation (cost rule β5) [derived].
+VERDICT: P3 stays open; a second placement route is closed (D797: annulus/Casimir; D799: condensate). Both standard sources put Δ or E where it grows at the cusp.
+A plateau needs a τ-dependence that SATURATES at the cusp (ratio forms, X/(X+1)). Only metric-inverse placement (K^{XX̄}) does that naturally, which is exactly P3's assumption.
+Side result for the mirror: 2212.03876 singles out ρ as the dS-minimum point of the condensate potential (Class B, n = 0, A > 3). ρ is therefore a natural moduli-stabilisation point in heterotic condensation, independent of our plateau.
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no

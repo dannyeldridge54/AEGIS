@@ -403,3 +403,12 @@ Touches: plateau_origin, serapis_e.
 5. p = 1 violates y* ≲ 25 [derived]; p = 2: n_s 0.963–0.966, r 5.4–6.5e-4 [derived] (computed).
 6. A massive p = 2 version needs the ε Δ̃ term, the ρ analogue of the two-term model [derived].
 Touches: plateau_origin, serapis_e.
+
+## D799: can a gaugino condensate place Δ for P3? (forward side)
+1. W = Ω(S)H/η⁶, with weight −3 [literature] (2212.03876).
+2. H is polynomial in j (× G₄, G₆ powers) [literature].
+3. e^K|W|² ≳ y⁻³e^{πy}, growing at the cusp [derived].
+4. Uplift − condensate is unbounded below; uplift + condensate is a wall [derived].
+5. GS mixing: e^{K_S} = 1/(2 Re S − δ_GS Δ) also grows [derived].
+6. A plateau requires saturation at the cusp, i.e. inverse-metric placement [postulate P3].
+Touches: plateau_origin, serapis_e.

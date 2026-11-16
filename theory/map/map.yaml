@@ -23,7 +23,7 @@ nodes:
   - rho
   - E
   title: Origin of the plateau
-  status: computed
+  status: assumed
   d:
   - D703
   - D712
@@ -36,11 +36,12 @@ nodes:
   - D786
   - D797
   - D798
+  - D799
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D786: assumed'
   - 'D797: assumed'
   - 'D798: computed'
+  - 'D799: assumed'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -160,7 +161,7 @@ nodes:
   - 'D781: computed'
   - 'D783: computed'
   - 'D793: computed'
-  flag: recheck (D798, plateau_origin)
+  flag: recheck (D799, plateau_origin)
 - id: janus
   layer: 2
   branch:
