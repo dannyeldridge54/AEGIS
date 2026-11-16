@@ -15,3 +15,13 @@ Falsifiers:
 - leptonic CP conservation established (δ ∈ {0, π}), which would favour integer flux ratios.
 - P2 update (D765): the strong form (U₁ = inflaton in the flux relation) CONFLICTS with the frozen SERAPIS-E bands (r ≈ 6.5–7.5e-4). P2 is restricted to the relation on non-inflaton moduli (U₂U₃ = b₃/a⁰), to be tested by the next reverse tick.
 - P2 update (D766): restricted form = U₂ = ω with U₂U₃ = b₃/a⁰, heavy-ν couplings ∝ forms of U₃. U₂ = i never violates CP. The tadpole then forces 3/3/3 + 1 stuck D3s (n_flux = 12 saturates 32). New falsifier: the exotic O3′ planes needed for odd b₃ are inconsistent with the stuck-brane torsion model.
+
+## P3 — the SERAPIS-E plateau comes from the anti-D3 (nilpotent goldstino X) sector: K_XX̄(τ) is set so that V_inf = V0[1 − E(ρ,2)/E(τ,2)] (status: open)
+Mechanism source: literature framework. In "geometric inflation" with a nilpotent X (the anti-D3 goldstino), W = W0 + F·X and V = |F|²K^{XX̄}(τ) − 3|W0|², so any non-negative V(τ) is realised by choosing K^{XX̄} = (V(τ) + 3|W0|²)/|F|². SL(2,Z)-invariant attractors with minimum at ρ are built exactly this way in 2408.05203 §9 (refs [16, 17] there).
+Postulated part: the anti-D3 metric's τ-dependence is the Epstein ratio 1/E(τ,2), the same function as the BHK tilt. Not derived from a warped-throat computation.
+Form: K^{XX̄} ∝ 1 − E(ρ,2)/E(τ,2) + 3|W0|²/V0. It is positive on the whole fundamental domain since V ≥ 0, and modular invariant.
+Falsifiers:
+- r outside 4.55–5.12e-4 (LiteBIRD era);
+- n_s outside 0.970–0.975 (SO + SPHEREx ~2030);
+- isocurvature or f_NL from the light axion Re τ (forward check D769);
+- a warped-throat computation showing anti-D3 metrics depend on U only through e^{4A} warp factors with ln-type, not 1/E-type, dependence.

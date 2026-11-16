@@ -38,7 +38,7 @@
     "E"
    ],
    "title": "Origin of the plateau",
-   "status": "open",
+   "status": "assumed",
    "d": [
     "D703",
     "D712",
@@ -46,15 +46,15 @@
     "D718",
     "D746",
     "D747",
-    "D757"
+    "D757",
+    "D768"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D746: open",
     "D747: open",
-    "D757: open"
-   ],
-   "flag": "recheck (D760, logderiv_plateau)"
+    "D757: open",
+    "D768: assumed"
+   ]
   },
   {
    "id": "logderiv_plateau",
@@ -198,7 +198,8 @@
     "D765: frozen",
     "D765a: computed",
     "D765a: computed"
-   ]
+   ],
+   "flag": "recheck (D768, plateau_origin)"
   },
   {
    "id": "janus",

@@ -17,3 +17,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D766: every new flux or brane ingredient must be booked against the tadpole (32 = n_flux + 2n_D3 + n_O3′) the moment it is proposed. Here it forced 5/5/5+1 → 3/3/3+1.
 - 2026-11-16 D766: a frozen map node can't be changed by a MAP line, by design. A label slip on a frozen node needs a manual, documented edit, which is what D765a did.
 - 2026-11-16 D767: rescale from the actual formula, not from a summary range. D766 scaled a union range by N and missed that the tilt depends on N − N0. The forward DERIVE step caught it, which is the design working.
+- 2026-11-16 D768: when every derivation route is closed, check how the leading published models handle the same gap. If they also choose the function (e.g. a nilpotent metric), the honest status is "postulated at the field's standard". Record what still distinguishes us (here r is ~4.5× lower).

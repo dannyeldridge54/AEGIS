@@ -7418,3 +7418,17 @@ VERDICT (locked rule): the wino window (0.67–0.80 TeV, Einasto, post-hoc) is U
 Note for the paper/state doc: "Im S·Im ρ ≈ 375–1220" becomes 375–488 (or 188–244) if the P2 CP mechanism is adopted. That is a modelling choice to state, not a frozen change.
 Mirror question (reverse, next tick): the stale wall plateau_origin (D760). Under the no-stop rule: deep research on non-perturbative or warped sources of a 1/E(τ,2) term. If none, write POSTULATE P3 for the plateau term with explicit falsifiers. Budget β3: P2 is open, so P3 would make 2 (allowed).
 MAP: node=lepto_rho status=assumed touches=[] ripple=no
+
+## D768 (REVERSE, ρ-side; Jl tick 7; literature, no computation) — the plateau wall: no string computation gives 1/E(τ,2), but the anti-D3 "geometric" framework can carry it; postulate P3
+Deep research:
+- 2408.05203 (Kallosh–Linde et al., SL(2,Z) cosmological attractors; fetched). Plateau potentials are built from j, Ê₁ = −π ln(Im τ|η|⁴) and G̃₂, with K = −3α ln(−i(τ − τ̄)). The minimum is at e^{2πi/3} (≅ ρ) and τ = i is a dS saddle for the j-based potentials. Predictions are α-attractor: n_s = 1 − 2/N, r = 12α/N².
+  - The paper claims NO string derivation. Its supergravity embedding is D3̄-induced geometric inflation, i.e. a nilpotent field X whose metric G_XX̄(τ) is CHOSEN to give V.
+  - It uses only Ê₁ (log η), never E(τ,s) with s ≠ 1, the same pattern as D760.
+- 2411.07552 (Landscape of Modular Cosmology) and 2509.02632 (swampland review): listed, not fetched (budget).
+- Anti-D3 / warped throat (2202.05344, 1707.07059 listed): the moduli dependence of the uplift is through warping and volume. I found no 1/E(U,2) dependence (search-only claim).
+Wall status: no microscopic source of the 1/E(τ,2) plateau, consistent with D703–D757 and D760. Create (no-stop rule): POSTULATE P3 (theory/derivations/POSTULATES.md). The plateau is the anti-D3 nilpotent sector with K^{XX̄}(τ) ∝ V(τ) + 3|W0|².
+- This is the SAME level of origin as the published SL(2,Z) attractors (chosen G_XX̄), so SERAPIS-E is no worse off than the literature, but not better.
+- What SERAPIS-E adds beyond them: the E(τ,2) choice ties plateau and tilt to one function, and the tilt has a loop origin (BHK, D692).
+Comparison: with SERAPIS-E's single −ln metric (y = e^{√2φ}, i.e. 3α = 1), 2408.05203's formula r = 12α/N² = 4/N² gives 1.6–1.7e-3. SERAPIS-E's exact r is 3.5–3.8e-4 untilted, because its plateau approach is 1/E ∝ y⁻² = e^{−2√2φ}, not e^{−√2φ}. So the E(τ,2) plateau sits a factor ~4.5 below the j/Ê₁ attractors in r: a distinguishing feature, consistent with the D700–D702 r-ladder.
+Mirror question (forward, next tick): the axion Re τ is exponentially flat during inflation (x-dependence ∝ e^{−2πy}, y* ≈ 14, as 2408.05203 §7 also notes). Compute, with the 2-field metric, whether a trajectory starting at x₀ ≠ ½ ends at ρ, and the size of ∂N/∂x₀ near x₀ = ½ and at generic x₀. Then the induced ζ from δx ~ √2·y*·H/2π versus 5e-5 (isocurvature / f_NL test of P3).
+MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
