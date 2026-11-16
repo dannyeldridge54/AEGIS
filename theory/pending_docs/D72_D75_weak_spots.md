@@ -7317,3 +7317,9 @@ VERDICT: WALL. No known string coupling makes the species scale track E(τ,2).
 - The literature's version is a different model: the F₁ (log η) species plateau of 2407.12081. It lives in an N = 2 IIA setting, while the BHK tilt is N = 1 IIB. Grafting one onto the other mixes settings, so it is not pursued.
 Deeper next: an explicit N = 1 orientifold R² threshold, to test the inference above. It is a known-type string amplitude, a separate project; the loop pauses here.
 MAP: node=logderiv_plateau status=assumed touches=[plateau_origin] ripple=no
+
+## D761 (RIGHT; literature, no computation) — 2507.15934 Fig. 6: method matches D735; the paper states no exclusion of a sub-fraction wino below 1.85 TeV
+Source (2507.15934v2 html, read in two of three parts): for m_χ < 2 TeV the paper switches from its Fermi continuum search to a re-interpretation of a gamma-ray line search at the endpoint E ≈ m_χ (Fig. 6). The signal is suppressed by f_χ². Two profiles are used: Einasto and the more conservative "Thelma". HESS Galactic Centre line limits and Fermi dwarfs each rule out a 100% wino. For a thermal sub-fraction the stated exclusion is only 1.85 TeV up to the thermal mass, where the wino is < 50% of the DM at the lower end.
+Comparison with D735: the same f² line-limit logic, consistent at 1.85 TeV. SERAPIS-E's wino is non-thermal (from gravitinos), with f ≈ 0.14–0.17 at 0.67–0.80 TeV. That is about 2–3× the thermal sub-fraction (m/2.86 TeV)² ≈ 0.055–0.08, so the paper's thermal-fraction shading does not apply directly. The Fig. 6 values are not in the text and cannot be digitised here.
+VERDICT: no change. The window 0.67–0.80 TeV (Einasto, estimate) stands, and is not excluded by any stated limit. Digitising Fig. 6 is still open; it needs the figure image (Danny could save it, or it waits for the PC).
+MAP: node=wino_window status=estimate touches=[] ripple=no

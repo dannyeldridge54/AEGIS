@@ -537,11 +537,15 @@
    "status": "estimate",
    "d": [
     "D735",
-    "D736"
+    "D736",
+    "D761"
    ],
    "depends": [
     "gravitino_wino",
     "halo_profile"
+   ],
+   "history": [
+    "D761: estimate"
    ]
   },
   {
