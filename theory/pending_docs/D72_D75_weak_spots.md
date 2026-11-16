@@ -8235,3 +8235,22 @@ REF: cold re-read against this table: matches. Build clean.
 Scoring consequence: a future r measurement at the very top of the frozen ρ band would be read against the frozen edge as written. The excess is far below any forecast σ(r) (≥ 5e-5, D806), so it is practically irrelevant.
 Flags serapis_e (D814) and band_i (D815) cleared: confirmations.
 MAP: node=band_i status=frozen touches=[] ripple=no
+
+## D817 (ACCURACY TRACK, queue 6a FINISHED; Jl tick 56, manual "Jl"; locked PREREG_D817; results/d722_ms_d817.txt): D722 recomputed exactly; τ = i frozen-band audit line; the exactness pass over the paper's flagged numbers is complete
+(a) D722 doublet-only (SR1, C = 1.15e-6) recomputed with MS. K4 0.9701 ✓.
+- N* = 49.97: n_s 0.9731 (SR1 0.9735), r 4.722e-4 (SR1 4.666e-4).
+- N* = 51.50: n_s 0.9746 (SR1 0.9749), r 4.538e-4 (SR1 4.486e-4).
+- Paper: "n_s = 0.9731–0.9746 from exact spectra, D817".
+(b) τ = i frozen band (lock D605, SR1 via D602: n_s 0.970–0.975, r 4.8–5.7e-4) versus existing MS:
+- D642: n_s 0.9697–0.9754 at N* 46.08/49.21 for ε = 1.3–1.6e-4.
+- D815: r 5.29e-4 at ε = 1.3e-4, N* = 46.08.
+- So MS n_s exceeds the frozen edges by at most 0.0004 (0.9697 vs 0.970; 0.9754 vs 0.975): the same band to the quoted rounding, with the same SR1 bias pattern. No paper change. Audit line added.
+Exactness pass summary (D812–D817), every flagged paper number now MS:
+- D793 → D813: shift −0.0004 / +1.5%;
+- D725 → D814: −0.0003 / +1.2%;
+- D729 → D815: ≤ 0.0001 / +1.5%; window 1.40–1.45;
+- D613 → D816: frozen band to rounding, top r +1.2%;
+- D722 → D817: −0.0003 / +1.2%.
+The SR1 bias on these plateaus is uniform: n_s +0.0003, r −1.3%. No conclusion changed.
+REF: cold re-read of the D722 sentence: matches. Build clean.
+MAP: node=n_sector_rho status=computed touches=[] ripple=no

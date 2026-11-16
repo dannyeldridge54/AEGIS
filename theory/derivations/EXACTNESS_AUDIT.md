@@ -15,7 +15,7 @@ Method key: MS = exact Mukhanov–Sasaki via spectra() (exact_ns_d588 family); S
 | 10 | instant reheating → n_s ≈ 0.976–0.98, y* > 25 | — | E | flag: low priority (an argument, not a prediction) |
 | 11 | SERAPIS-ρ n_s 0.969–0.972, r 4.6–5.1e-4 (frozen, lock D615) | D613 | SR1 (lock) | frozen as locked; MS check D816: n_s 0.9691–0.9722, r 4.67–5.16e-4 (top r +1.2% over edge); stated in paper |
 | 12 | SERAPIS-ρ α_s −(8.5–9.5)e-4 | D634 | MS | ok |
-| 13 | ρ doublet-only n_s 0.9735–0.9749 | D722 | ? (not verified) | **FLAG: check method** |
+| 13 | ρ doublet-only n_s 0.9731–0.9746 | D722/D817 | MS (D817; D722 was SR1) | ok |
 | 14 | ρ 2⊕1: n_s 0.9729–0.9736, r 4.66–4.75e-4 | D725/D814 | MS (D814) | ok |
 | 15 | SERAPIS-E at n_s 0.970, r 4.75e-4; untilted 0.961 / 3.6e-4 | D692 | MS | ok |
 | 16 | SERAPIS-E frozen band (lock D693) | D692/D693 | MS | ok |
@@ -25,3 +25,6 @@ Method key: MS = exact Mukhanov–Sasaki via spectra() (exact_ns_d588 family); S
 | 20 | "Detecting r ≈ 5e-4 requires σ(r) ~ 1e-4, beyond planned experiments" | — | — | **FLAG: inconsistent with prediction_sheet (LiteBIRD σ(r) ≈ 5e-5 optimistic → ~10σ); check the literature** |
 
 Priority for recomputation (one per tick, locked, MS via spectra()): 19 → 14 → 8/9 → 11 → 13 → 20 (literature) → 17/10.
+
+| 21 | τ = i frozen band (lock D605, SR1 via D602) | D642/D815 | MS check | same band to rounding (≤ 0.0004 beyond edges) |
+PASS COMPLETE (D817). Uniform SR1 bias on these plateaus: n_s +0.0003, r −1.3%.

@@ -102,13 +102,14 @@
     "D780",
     "D786",
     "D787",
-    "D814"
+    "D814",
+    "D817"
    ],
    "depends": [],
    "history": [
-    "D786: corrected",
     "D787: computed",
-    "D814: computed"
+    "D814: computed",
+    "D817: computed"
    ]
   },
   {

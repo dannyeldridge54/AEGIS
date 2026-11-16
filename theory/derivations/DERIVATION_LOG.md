@@ -545,3 +545,9 @@ Touches: nstar_i, band_i.
 3. Versus frozen 0.969–0.972 / 4.6–5.1e-4: r top +1.2% [derived].
 4. The excess equals the SR1 r bias (~+1.5%) [derived]. Frozen numbers are kept per the lock rule [derived].
 Touches: band_i.
+
+## D817: D722 exact and the τ = i band line (accuracy track)
+1. MS at the D722 N* gives n_s 0.9731–0.9746 [derived] (computed; K4 passes).
+2. The τ = i frozen band versus MS (D642, D815) is the same to rounding [derived].
+3. Across D813–D817 the SR1 bias is uniform: n_s +0.0003, r −1.3% [derived].
+Touches: n_sector_rho.

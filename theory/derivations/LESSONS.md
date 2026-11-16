@@ -64,3 +64,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - 2026-11-16 D814: SR1 on these plateaus is consistently biased (n_s high by ~0.0003–0.0004, r low by ~1.3–1.5%). That is useful as a correction rule of thumb, but the paper still quotes MS.
 - 2026-11-16 D815: before calling a number slow-roll, read the column labels in its results file ('MS-shifted y*'). D729 was half-exact (n_s exact, r slow-roll). Audits should classify per quantity, not per script.
 - 2026-11-16 D816: when a frozen number came from an approximation, publish the exact value BESIDE it, never in place of it. That keeps the lock honest and makes the approximation error visible.
+- 2026-11-16 D817: a uniform approximation bias (SR1 here) is itself a result. Record it once (n_s +0.0003, r −1.3%) so that later quick scans can be corrected without a full MS run, and labelled [estimate].
