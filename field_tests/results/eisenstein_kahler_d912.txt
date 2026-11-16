@@ -1,0 +1,9 @@
+w=2.0 k=1.500 c=0.250: min 4y^2*g=4.0006; V(rho+0.01,0.03,0.1)/V0=['-2.196e-05', '-1.928e-04', '-1.944e-03']; V(40)-V0=+2.026e+26 V0
+  -> fails checks (positivity True, vacuum False, plateau-from-below False); no spectra
+w=2.5 k=1.875 c=0.312: min 4y^2*g=5.0007; V(rho+0.01,0.03,0.1)/V0=['-2.745e-05', '-2.410e-04', '-2.430e-03']; V(40)-V0=+1.919e+32 V0
+  -> fails checks (positivity True, vacuum False, plateau-from-below False); no spectra
+w=2.9 k=2.175 c=0.362: min 4y^2*g=5.8008; V(rho+0.01,0.03,0.1)/V0=['-3.185e-05', '-2.796e-04', '-2.819e-03']; V(40)-V0=+1.124e+37 V0
+  -> fails checks (positivity True, vacuum False, plateau-from-below False); no spectra
+w=3.5 k=2.625 c=0.438: min 4y^2*g=7.0010; V(rho+0.01,0.03,0.1)/V0=['-3.843e-05', '-3.375e-04', '-3.403e-03']; V(40)-V0=+1.541e+44 V0
+  -> fails checks (positivity True, vacuum False, plateau-from-below False); no spectra
+VERDICT: FAILS for the frozen band 
