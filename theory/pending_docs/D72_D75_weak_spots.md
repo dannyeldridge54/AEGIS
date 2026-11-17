@@ -11335,3 +11335,22 @@ Lock pushed before run; result field_tests/results/a2f_line_scale.txt.
 - Next cloud-doable: H.E.S.S. 2022 (Inner Galaxy Survey) line limits, if quotable at 1–3 TeV. That would turn D1119's M²-scaling estimate and the 1.85 TeV point into computed results.
 VERDICT: robust (scale-independent) halo-conditional verdict.
 MAP: none
+
+## D1125 (CENTRE, Djl loop (A), locked PREREG_A2g-line): the 2026 H.E.S.S. Inner Galaxy Survey line limit (2.3e-28 cm³/s at 1 TeV for γγ + ½γZ) EXCLUDES SERAPIS-E's 1 TeV wino at 26% of DM for H.E.S.S.'s benchmark and McMillan17 haloes, and leaves it marginal only for the light MWPotential2014 halo — the wino window is pushed below ~1 TeV; the v3.3 draft paragraph (D1123) is corrected
+Lock pushed before run; result field_tests/results/a2g_line_igs.txt.
+- Source (quoted, arXiv:2608.07234, H.E.S.S. Collaboration):
+  - A LINE limit (γγ + ½γZ native): 2.3e-28 at 1 TeV, 6.5e-28 at 2.9 TeV, strongest 9.8e-29 at ~440 GeV.
+  - Einasto α 0.17, r_s 20 kpc, ρ_⊙ 0.39 at 8.178 kpc.
+  - "Thermal Wino … already excluded"; winos are excluded to ~10 TeV if non-thermal; Wino NLO cross section from Baumgart et al.
+- f_max with NLL (D1124 band), scaled ×0.758 from the 2018-limit numbers, giving [LO] / [NLO] ranges vs f = 0.26:
+  - Benchmark: [0.143, 0.157] / [0.158, 0.173] → FAIL
+  - McMillan17: [0.202, 0.221] / [0.223, 0.245] → FAIL
+  - MWPotential2014: [0.248, 0.272] (band-dependent) / [0.273, 0.300] → marginal PASS at NLO only
+- Assumption: the J-factor ratios come from the 2018 geometry. The IGS ROIs are larger, which shrinks the cusp advantage of the benchmark (ratios rise), so the true f_max are probably LOWER than shown, which strengthens the exclusion.
+- What changes:
+  - SERAPIS-E's post-hoc wino prediction was thermal 0.67–1.85 TeV at f = (M/2.9 TeV)² = 5–41% (D784). With the IGS line limit, 1.85 TeV is excluded (W2) and 1 TeV is excluded or marginal. The surviving window shrinks to about 0.67–0.9 TeV [estimate; needs the IGS limit at 0.7–0.9 TeV, which is not quoted, and our J for the IGS ROIs].
+  - ATLAS's 670 GeV disappearing-track bound sits at the bottom. The window is closing from both sides: HL-LHC (~1 TeV reach) plus IGS-class line searches could close it entirely.
+- Paper: the v3.3 draft paragraph (D1123) is corrected to say this, and refs.bib adds arXiv:2608.07234. Still unposted.
+- This is the most consequential result of the loop for SERAPIS-E. It is a near-term falsification route for the post-hoc wino (not for the frozen inflationary predictions).
+VERDICT: SERAPIS-E 1 TeV wino EXCLUDED/marginal by H.E.S.S. IGS (J-geometry assumption); window ≈ 0.67–0.9 TeV [estimate].
+MAP: none
