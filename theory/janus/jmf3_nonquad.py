@@ -6,7 +6,7 @@ MMC = '/home/claude/ext/mmc'; base = open(f'{MMC}/parameters_multimodecode.txt')
 def mmc(choice, rows, f0):
     d = tempfile.mkdtemp(); p = re.sub(r'num_inflaton = \d+', 'num_inflaton = 2', base)
     p = re.sub(r'potential_choice = \d+', f'potential_choice = {choice}', p)
-    p = p.replace('get_runningofrunning = .true.', 'get_runningofrunning = .false.')  # DEV D1
+    p = p.replace('get_runningofrunning = .true.', 'get_runningofrunning = .false.').replace('use_deltaN_SR = .true.', 'use_deltaN_SR = .false.')  # DEV D1, D3
     p = re.sub(r'phi_init0 = .*', f'phi_init0 = {f0[0]} {f0[1]}', p)
     for k in (1, 2, 3, 4): p = re.sub(rf'vparams\({k},:\) = .*', f'vparams({k},:) = ' + ' '.join(f'{v:.10f}' for v in rows.get(k, (1.0, 1.0))), p)
     open(f'{d}/parameters_multimodecode.txt', 'w').write(p)
