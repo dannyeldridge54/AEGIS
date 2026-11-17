@@ -1,0 +1,13 @@
+K1 K_TTb - claim simplifies to: 0
+K2 K_SSb = (S + Sb + delta*(e2(T) + eb2(Tb) + log(I*(-T + Tb))))**(-2); K_STb = delta*((T - Tb)*Derivative(eb2(Tb), Tb) - 1)/((T - Tb)*(S + Sb + delta*(e2(T) + eb2(Tb) + log(I*(-T + Tb))))**2)  (= -delta*L_Tb/Y^2 ? True)
+harmonic check: Laplacian of ln|eta|^4 at 0.5+2i = 3.6e-15
+K3 y=4.444: delta/(3Y) = 4.0e-05; delta^2|L_T|^2/(Y^2 K0_TT) = 6.4e-08
+K3 y=11.28: delta/(3Y) = 4.0e-05; delta^2|L_T|^2/(Y^2 K0_TT) = 5.6e-07
+K3 y=18.58: delta/(3Y) = 4.0e-05; delta^2|L_T|^2/(Y^2 K0_TT) = 1.6e-06
+K3 y=24.11: delta/(3Y) = 4.0e-05; delta^2|L_T|^2/(Y^2 K0_TT) = 2.8e-06
+K3 y=26.69: delta/(3Y) = 4.0e-05; delta^2|L_T|^2/(Y^2 K0_TT) = 3.5e-06
+K3 claim (<1e-4 both): TRUE (second term max printed above)
+K4 A-tilde (with K^SSb = 1/K_SSb, leading order in mixing) = ((S + Sb + delta*(e2(T) + eb2(Tb) + log(I*(-T + Tb))))*Derivative(Om(S), S) - Om(S))*((S + Sb + delta*(e2(T) + eb2(Tb) + log(I*(-T + Tb))))*Derivative(Omb(Sb), Sb) - Omb(Sb))/(Om(S)*Omb(Sb))
+K4 A-tilde depends on T only through Y: False  [automated check invalid: sympy subs(Y, Ysym) could not match the simplified expression; corrected structural check appended below]
+A-tilde(full) == A-tilde(Y) with Y substituted: True
+dA/dT = (dA/dY)(dY/dT): True

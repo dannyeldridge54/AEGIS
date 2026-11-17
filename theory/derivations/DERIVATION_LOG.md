@@ -1686,3 +1686,6 @@ Touches: none.
 
 ## D1010: R1 — Green–Schwarz multiplicative tilt κ = ε reproduces SERAPIS-ρ (Δn_s ≤ 5e-5); A(S,S̄) factor next
 - [computed] κ*/ε = 0.996.
+
+## D1011: R2 — GS term with full Kähler structure keeps the tilt linear in L (kinetic change 4e-5 const; Ã depends on T only via Y)
+- [computed] sympy identities K1, K2, K4; K3 numbers.
