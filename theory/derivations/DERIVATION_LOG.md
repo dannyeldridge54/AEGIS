@@ -1704,3 +1704,6 @@ Touches: none.
 
 ## D1016: R3 — single condensate flips the GS tilt sign at weak coupling (R → −1); need δ_GS < 0 or racetrack
 - [derived] R = (v − 2 − a²Y²)/(a²Y² + 2aY + v − 2).
+
+## D1017: R4 — at a SUSY dilaton minimum (F_S = 0) the GS tilt is exactly the e^K one (R = 1) for any Ω(S)
+- [derived] stationarity: d ln(Ω²/Y)/ds = 2F_S/Ω; [computed] racetrack point R = 1.0000.

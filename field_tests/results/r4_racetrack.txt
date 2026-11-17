@@ -1,0 +1,12 @@
+N=(5,6) A2=1: no F_S = 0 minimum in s in (0.05, 20)
+N=(5,6) A2=2: no F_S = 0 minimum in s in (0.05, 20)
+N=(6,7) A2=1: no F_S = 0 minimum in s in (0.05, 20)
+N=(6,7) A2=2: no F_S = 0 minimum in s in (0.05, 20)
+N=(8,9) A2=1: no F_S = 0 minimum in s in (0.05, 20)
+N=(8,9) A2=2: no F_S = 0 minimum in s in (0.05, 20)
+N=(10,11) A2=1: s* = 0.06037, Y = 0.11074, a1*Y = 0.87, R = 1.0000
+N=(10,11) A2=2: no F_S = 0 minimum in s in (0.05, 20)
+Claim 'R > 0 for the racetrack': TRUE (1/1 positive)
+d lnG/ds = 2*((L*delta - 2*s)*Derivative(Om(s), s) + Om(s))/((L*delta - 2*s)*Om(s))  = 2*F_S/Om with F_S = Om_s - Om/Y, Y=2s-dL
+check: True
+partial d lnG/dL at fixed s = delta/(-L*delta + 2*s) = delta/Y  -> R = 1 exactly when F_S = 0
