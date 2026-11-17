@@ -35,3 +35,4 @@ Note (Danny, 17 Nov 00:30 CT): TorsionΛ is an old model — do not use it as a 
   L9 will take the present-day amplitude σ8,0 from CAMB as a stated referee and test only Janus-LT's growth (f, D) against DESI Table 9 ratios.
   Still needed before locking L9: DESI's fiducial cosmology parameters (fetch from 2411.12021) and the fσ_s8 convention (s8 = 8 Mpc/h × h_fid/h).
 - L9 DONE (D1130): fσ8 vs DESI DR1 FS consistent (χ² 3.81/6); fiducial reproduced 0.16%. Open: own σ8 normalisation.
+- L9b (D1132): own σ8 9% low vs CAMB (normalisation). Next L9c: impose D = a in true matter domination (lock first).

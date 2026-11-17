@@ -1773,3 +1773,4 @@ Touches: none.
 ## D1065: L9a — EH98 no-wiggle T(k) vs CAMB: rms 1.3–1.4%, max ≤ 4.0% (BAO wiggles) → VALIDATED
 ## D1127: J7g pulses 2–3 — 31 models × 2 reheating routes: Janus n_s better 124/124 (~390×); ASPIC pivot off 0.16–0.33 e-folds; with J7f, 188/188
 ## D1130: L9 — Janus-LT fσ8 reproduces DESI fiducial to 0.16%; L8b ΛCDM vs DR1 full-shape χ² 3.81/6 → CONSISTENT (σ8 amplitude from CAMB, stated)
+## D1132: L9b — own σ8 ratio to CAMB 0.902–0.917 (constant ~9% low) → NOT VALIDATED; points at D normalisation with radiation at a=1e-3

@@ -11421,3 +11421,13 @@ MAP: none
   - Combined with IGS-class line searches, which press the upper edge, the SERAPIS-E post-hoc wino can be closed this decade if the HL-LHC background is near the lower estimate.
   - D1129's table phrase "HL-LHC … cover the band" holds only for the optimistic background. Refine it at the next paper edit: "cover the band for the lower background estimate (reach 0.5–0.9 TeV)".
 MAP: none
+
+## D1132 — RIGHT/Janus-LT — L9b: Janus-LT's own σ8 is 9% LOW vs CAMB — NOT VALIDATED; the near-constant offset points at the growth normalisation [computed]
+Lock PREREG_L9b_sigma8 (normalisation derived in the lock: P_δ = (4/25)k⁴T²D(0)²P_ℛ/(Ω_m²H0⁴), D = a deep in matter domination).
+σ8 Janus-LT / CAMB: 0.7486/0.8228 = 0.910 (Ω_m 0.314), 0.7073/0.7842 = 0.902 (0.270), 0.7841/0.8550 = 0.917 (0.371); spread 0.015 → fails the 3% claim.
+Diagnosis (as the lock anticipated): the offset is nearly cosmology-independent, so it is not the EH shape (validated to 1.4%, D1065) but the amplitude
+convention. The growth ODE starts with D = a at a = 1e-3, where radiation is still ~30% of matter (a_eq ≈ 3e-4), so D is not yet ∝ a and the
+"D = a in matter domination" normalisation the derivation needs is not what the code imposes. A ~9% low D(0)² ⇒ ~4.5% in D — plausible size; not yet shown.
+Next (new lock, not a rerun of this one): normalise D to a in the matter-dominated limit consistently (e.g. drop radiation from the growth E(a) for the
+normalisation step, or start at a ≫ a_eq and match), then re-test vs CAMB. L9 (D1130) is unaffected: it used CAMB's σ8 as stated.
+MAP: none
