@@ -1716,3 +1716,6 @@ Touches: none.
 
 ## D1020: J7d2 — PSNI unscored: Janus background integrator stalls at the log-singular end (J1c fix path)
 - [computed] bisection added; N_tot = ∞ for all starts.
+
+## D1021: R5 — realistic heterotic δ_GS (−9…−24), Re S ≈ 2 ⇒ GS tilt 0.03–0.08, ~500–1300× too large (normalisation to confirm)
+- [literature] hep-ph/0209061; [estimate] ε = |δ_GS|/(16π² Re S).
