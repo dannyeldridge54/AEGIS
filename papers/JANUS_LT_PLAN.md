@@ -23,3 +23,4 @@ Release: Zenodo v1.0 after L0–L2 (GitHub repo janus-lt-calculator), versions p
 
 
 Note (Danny, 17 Nov 00:30 CT): TorsionΛ is an old model — do not use it as a Janus-LT target or test case. D1025/D1028 TorsionΛ numbers are archival only.
+- L6 DONE (D1041): Pantheon+ SN likelihood, Ω_m 0.3315 ± 0.018 (published 0.334 ± 0.018). Next: joint SN+BAO+CMB w0wa.

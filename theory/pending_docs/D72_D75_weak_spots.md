@@ -10328,3 +10328,11 @@ Verdict: lead CLOSED for R (it gives a 1/(Re S·Re T) correction, not a log). Re
 corrections (Dixon–Kaplunovsky–Louis type, which do contain ln(T₂|η(T)|⁴)) feeding the gauge kinetic function — the next R step.
 Sources: arXiv hep-th/0508043 (ar5iv: Eq. 3.46, App. B).
 MAP: none
+
+## D1041 — RIGHT/Janus-LT — L6: Pantheon+ SN likelihood reproduces the published SN-only Ω_m [computed]
+Lock PREREG_L6_pantheonplus (data sha256-pinned; 33 MB STAT+SYS cov gitignored). Janus-LT distances (grid vs quad ≤ 4e-8), full
+covariance, M marginalised analytically. (a) zHD > 0.01, N = 1590: Ω_m = 0.3315 ± 0.0180 (χ²_min 1412.3) vs Brout+22 0.334 ± 0.018
+→ diff −0.0025 (0.14σ), error bar identical → REPRODUCED. (b) all 1701: Ω_m = 0.362 ± 0.019 (χ² 1762) — reported only; the
+z < 0.01 calibrator/peculiar-velocity SNe pull it, so the published number is consistent with the zHD > 0.01 cut.
+Janus-LT now has BAO (D1028), CMB-compressed (D1029), growth (D1027) and SN (this) likelihoods → joint w0wa next.
+MAP: none
