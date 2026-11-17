@@ -474,3 +474,4 @@ D1187  2026-11-17T21:09Z  R2e-a: MSbar alpha2(2M): Born 2.325 (B1 FAIL +5.4% vs 
 D1188  2026-11-17T21:15Z  Rotation tick plateau_origin: NULL (2604.05548 no plateau derivation)
 D1189  2026-11-17T21:20Z  Hyperion halo tick: 2025-26 literature leans cored for MW inner halo; J-factor implication (est.)
 D1190  2026-11-17T21:25Z  A2l: 1 TeV wino vs IGS with cored (Burkert) Gaia DR3 haloes: PASS 3/5, band-dependent 2/5, no FAIL
+D1191  2026-11-17T21:31Z  BBN tick: LBT Yp IV/V (Yp 0.2458+-0.0013, dN<0.125) and EMPRESS XV (0.2402): tau_i SU(2) dark radiation now 1.7 sigma, SU(2)+gaugino disfavoured
