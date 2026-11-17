@@ -10308,3 +10308,12 @@ to 2e-4 in the second triple. The y→y_end end gives ε^{15.16} (negligible), c
 Label: derived after seeing the number (explanation, not a prediction). Bonus fact: p ~ u exactly means y = 0 is a limit-circle,
 log-type endpoint — the boundary condition chosen there (θ = π/2, the regular branch) is a physical input to state in the paper.
 MAP: none
+
+## D1039 — DEEP/LEFT — J9: Janus β_s (running of the running) vs exact Mukhanov–Sasaki [computed]
+Lock PREREG_J9_beta_s. Exact β_s = 6·c₃ of a degree-5 fit to ln P_R (15 pts on ±1.5; check: 11 pts on ±1).
+LFI p=2, SI, LI(0.3) at N* = 50, 60: β_s from −3.3e-5 to −1.1e-5; all 6 points informative (A vs B within 0.3–7%).
+Janus spectra3 β_s rel. errors 4.2, 3.5, 4.0, 1.0, 3.8, 2.9% → C1 6/6, C2 all ≤ 10% → Janus β_s VALIDATED.
+Honest scope: the reference's own A–B spread (≤ 7%) is the same size as the Janus errors, so this validates β_s at the ~5%
+level, not better; a sharper test needs a less noisy fourth-derivative reference (more k-points or a direct mode-ODE derivative).
+Janus now has n_s, r, α_s, β_s all checked against the exact spectrum (D1002/D1004/D1035; D1039).
+MAP: none

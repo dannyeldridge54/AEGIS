@@ -1757,3 +1757,4 @@ Touches: none.
 ## D1036: S4c3 — 6D KK masses converged (Aitken, q≈0.84): m1² 0.778184, m2/m1 1.780, m3/m1 2.546; VALID
 ## D1037: correction to D1035 — kmii is an ASPIC failure, not my parser; my bugs among listed = 3 (gmlfi, ncli, fi)
 ## D1038: S4c3 convergence order derived: q = (D−2)/((D−1)(1+δ)) = 0.8446 vs measured 0.8442; p ~ u exactly at y=0
+## D1039: J9 — Janus β_s vs exact MS: 6/6 within 1–4% (reference noise ≤ 7%) → VALIDATED at ~5%
