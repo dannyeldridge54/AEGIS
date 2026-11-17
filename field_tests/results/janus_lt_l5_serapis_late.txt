@@ -1,0 +1,9 @@
+grid built in 301 s; interpolation check max |dz| = 8.76e-06 (OK)
+mnu = 0.0000 eV: chi2 = 12.948 at h = 0.6860, wb = 0.02236, wbc = 0.14046
+mnu = 0.0587 eV: chi2 = 15.317 at h = 0.6842, wb = 0.02241, wbc = 0.13979
+mnu = 0.1000 eV: chi2 = 17.745 at h = 0.6829, wb = 0.02245, wbc = 0.13926
+mnu = 0.1500 eV: chi2 = 21.330 at h = 0.6813, wb = 0.02250, wbc = 0.13863
+mnu = 0.2000 eV: chi2 = 25.564 at h = 0.6798, wb = 0.02255, wbc = 0.13800
+z* check at mnu = 0.0: direct 1090.0753 vs grid 1090.0804
+z* check at mnu = 0.2: direct 1089.6487 vs grid 1089.6055
+Delta chi2(frozen 0.0587 eV) - min over grid = 2.369 -> inside Delta chi2 <= 4 (consistency check only; data predate the freeze)
