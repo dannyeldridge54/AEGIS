@@ -10556,3 +10556,11 @@ Run history: run 1 passed B1 then crashed (lalsimulation's T1800545-family PSDs 
 Results [computed]: B1 |h̃| vs LAL TaylorF2 (amplitude order 0), 9 points: ≤ 4.8e-15. B2 SNR(1.4 + 1.4 M_⊙ at 100 Mpc, aLIGO 175-Mpc curve) = 32.7071, trapezoid vs quad 1.8e-6. B3 BNS range (SNR 8, Finn–Chernoff 2.2648, Euclidean): aLIGO140 → 138.6 Mpc (1.0%), aLIGO175 → 180.5 (3.2%), KAGRA25 → 24.5 (2.2%), KAGRA80 → 79.9 (0.2%), KAGRA128 → 134.1 (4.8%, near the 5% edge; the published numbers are rounded and their exact definitions — redshift, f_max — are not in the PSD names).
 Reported (Euclidean, no redshift — overstates ET/CE): BNS range AdV O4 128 Mpc; A+ design 346 Mpc; Einstein Telescope 2.8 Gpc (horizon 6.4 Gpc); Cosmic Explorer 8.3 Gpc (horizon 18.9 Gpc) — for these the cosmological redshift must be included (next: A2c2 with Janus-LT distances; Hyperion now has both pieces).
 MAP: none
+
+## D1063 (DEEP Jl tick, track X / Hyperion, locked PREREG_A2c2): Hyperion now computes gravitational-wave horizons and ranges with cosmology (luminosity distances from Janus-LT agree with astropy to ≤ 7e-7; Finn–Chernoff orientation factor by Monte Carlo 0.44160 vs 1/2.2648, 1.4e-4; the cosmological BNS range of the aLIGO 175-Mpc curve is 176.5 Mpc, 2.2% below the Euclidean 180.5): A2c2 VALIDATED
+Reported [computed; 0PN inspiral amplitude, inspiral cut at f_ISCO/(1+z), SNR 8, Planck18]:
+- A+ design: BNS horizon z = 0.18 (0.90 Gpc), range 0.33 Gpc; BBH 30+30 (inspiral only) horizon z = 1.06, range 1.76 Gpc.
+- Einstein Telescope (P1600143): BNS horizon z = 1.98, range 2.12 Gpc; BBH horizon z = 11.3, range 5.44 Gpc.
+- Cosmic Explorer (P1600143): BNS horizon z = 18.7, range 4.22 Gpc; BBH (inspiral only) horizon z = 8.3, range 5.45 Gpc.
+FLAG (open): CE's BNS horizon z ≈ 19 exceeding its 30+30 BBH horizon is an artefact of the inspiral-only model (heavy binaries redshift their ISCO below the 5 Hz band edge — the merger, not modelled, carries their signal) and/or of this older CE curve; published CE BNS horizons are usually quoted near z ~ 10 (context, not sourced here). BBH numbers here are LOWER bounds; the BNS CE horizon needs a check (A2c3: add the merger with a LAL IMR waveform, and a newer CE curve) before any use.
+MAP: none

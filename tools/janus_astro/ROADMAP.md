@@ -23,6 +23,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A2c DONE (D1062): amplitude vs LAL 5e-15; SNR; BNS ranges of 5 LIGO/KAGRA curves within ≤ 4.8%.
 
+- A2c2 DONE (D1063): cosmological horizons/ranges (D_L vs astropy 7e-7; Finn–Chernoff MC 1.4e-4); A+, ET, CE reported; CE BNS z_h ≈ 19 flagged (inspiral-only).
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].

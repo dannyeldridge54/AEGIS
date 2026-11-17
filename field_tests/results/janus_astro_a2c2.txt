@@ -1,0 +1,13 @@
+C1 z=0.1: D_L ours=475.8223 astropy=475.8223 Mpc rel=3.4e-10
+C1 z=1: D_L ours=6791.2692 astropy=6791.2689 Mpc rel=3.6e-08
+C1 z=3: D_L ours=26016.0208 astropy=26016.0160 Mpc rel=1.9e-07
+C1 z=10: D_L ours=105999.2066 astropy=105999.1359 Mpc rel=6.7e-07
+C2 <(Theta/4)^3>^(1/3) = 0.44160 vs 1/2.2648 = 0.44154 rel=1.4e-04
+C3 aLIGO175 BNS: z_h=0.0930 (D_L 440.2 Mpc), cosmological range=176.5 Mpc vs Euclidean 180.5 rel=2.2e-02
+VERDICTS: C1=PASS C2=PASS C3=PASS -> A2c2 VALIDATED
+Reported aLIGOAPlusDesignSensitivityT1800042 BNS: horizon z=0.180 (D_L 0.90 Gpc); range 0.332 Gpc (comoving-volume equivalent)
+Reported aLIGOAPlusDesignSensitivityT1800042 BBH inspiral-only: horizon z=1.063 (D_L 7.32 Gpc); range 1.762 Gpc (comoving-volume equivalent)
+Reported EinsteinTelescopeP1600143 BNS: horizon z=1.978 (D_L 15.71 Gpc); range 2.121 Gpc (comoving-volume equivalent)
+Reported EinsteinTelescopeP1600143 BBH inspiral-only: horizon z=11.336 (D_L 122.16 Gpc); range 5.440 Gpc (comoving-volume equivalent)
+Reported CosmicExplorerP1600143 BNS: horizon z=18.684 (D_L 213.43 Gpc); range 4.223 Gpc (comoving-volume equivalent)
+Reported CosmicExplorerP1600143 BBH inspiral-only: horizon z=8.302 (D_L 85.74 Gpc); range 5.453 Gpc (comoving-volume equivalent)
