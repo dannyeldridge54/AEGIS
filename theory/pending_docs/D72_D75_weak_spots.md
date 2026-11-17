@@ -11743,3 +11743,19 @@ Lock pushed before run; result field_tests/results/r2a_single.txt.
 - Next: R2b, the Q=0 S=0 two-channel problem with both channels open (thermal energies E ≫ 2δm). This needs an open-channel matching (2×2 asymptotic plane waves).
 VERDICT: R2a VALIDATED.
 MAP: none
+
+## D1158 (CENTRE, Djl loop, relic stage R2b; locked PREREG_R2b): the two-channel open Sommerfeld solver is VALIDATED (free limit |s| = I to 3.7e-10; decoupled channels match single_channel to 3e-7) — but the reported threshold check shows a large jump (|s₀₀,₀₀|² 2.86 just above the χ⁺χ⁻ threshold vs 0.0023 just below from wino_s), which must be understood before thermal averaging (R2c)
+Lock pushed before run; result field_tests/results/r2b_twochannel.txt.
+- Wino LO at M = 2 TeV, |s|² (rows: incoming χ⁰χ⁰ / χ⁺χ⁻; columns: short-distance channel):
+  - v = 0.1: [[0.91, 0.79], [0.82, 2.26]]
+  - v = 0.3: [[0.90, 0.18], [0.18, 1.29]]
+  - Freeze-out velocities give modest enhancement, as expected.
+- T3 (reported): 2.86 (open, E = 1.01·2δm) vs 0.0023 (closed, E = 0.99·2δm).
+  - Possible causes (untested):
+    - (a) A genuine threshold cusp, plus a near-zero of the closed-channel s₀₀ at 2 TeV, below the 2.29 TeV resonance (the A7b/A1b scans show s₀₀ varying strongly with M).
+    - (b) An open-solver artefact at k₁ → 0. The χ⁺χ⁻ channel's k is tiny just above threshold, so R = 300/min(k) is huge and the WKB phase handling is stressed.
+    - (c) A different meaning: the closed solver gives the χ⁰χ⁰-incoming amplitude into χ⁰χ⁰ only, while near threshold the open solver's s₀₀ includes the flux factor of the newly open channel.
+  - Test plan (R2b2, lock first): continuity of the TOTAL annihilation σv(χ⁰χ⁰ incoming) = 2 sΓs† across threshold (the physical, flux-normalised quantity), and a scan of E/2δm ∈ [1.001, 1.5] for smoothness.
+- Thermal relevance: freeze-out (x ≈ 25, v ~ 0.3) is far above threshold. But post-freeze-out annihilation at x ≳ M/(2δm)·… samples low v, so the threshold region matters for the late-time Sommerfeld effect. R2c needs R2b2 settled first.
+VERDICT: R2b VALIDATED (open solver); threshold continuity OPEN (R2b2).
+MAP: none
