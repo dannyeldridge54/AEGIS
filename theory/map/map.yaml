@@ -28,10 +28,11 @@ nodes:
   - D1021
   - D1024
   - D1030
+  - D1031
   history:
-  - 'D1021: estimate'
   - 'D1024: estimate'
   - 'D1030: estimate'
+  - 'D1031: estimate'
 - id: plateau_origin
   layer: 1
   branch:

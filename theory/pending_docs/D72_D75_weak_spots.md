@@ -10249,3 +10249,9 @@ Status: track R's GS route now needs either (a) a non-heterotic setting where th
 MAP: node=eps_tilt status=estimate touches=[] ripple=no
 
 Note (17 Nov 00:30 CT, Danny): TorsionΛ is an OLD model and is no longer used as a target or test case. The TorsionΛ lines in D1025 (L1) and D1028 (L3) are archival only; the validation parts of those notes (Janus-LT vs CAMB, Janus-LT vs DESI) stand on their own. Track L's next targets are the current SERAPIS late-universe branch and standard models.
+
+## D1031 (track R, literature + arithmetic): the ρ-branch tilt variable L is exactly the finite part of the non-holomorphic Eisenstein series at s = 1 (Kronecker's first limit formula): E(τ, s) = π/(s − 1) + π L + 2πγ − π ln 2 + O(s − 1). So any one-loop amplitude ∝ E(τ, s) that is regularised at s → 1 (instead of s = 2) delivers L with its natural (small) loop coefficient — a candidate origin for the ρ tilt that does not need a large Green–Schwarz term
+[literature] Kronecker first limit formula (fetched, Wikipedia "Kronecker limit formula"): E(τ, s) = Σ′ y^s/|mτ + n|^{2s} = π/(s − 1) + 2π(γ − ln 2 − ln(√y|η(τ)|²)) + O(s − 1).
+[derived] (arithmetic) −2π ln(√y|η|²) = −π ln(y|η|⁴) = π(L + ln 2) with L = −ln(2y|η|⁴); so the constant term is π L + 2πγ − π ln 2.
+Connection: D950/D991a already found the weight-1 log in the TWO-POINT function (mass/Kähler metric) of a soft-split tower, i.e. exactly where an s → 1 sum appears; the type IIB one-loop Kähler terms (Berg–Haack–Körs hep-th/0508043, c = 1/(128π⁶), STRINGS_PLAN note) are of E(U, s) type with a naturally small coefficient. Open (next R step, lock first): find an amplitude in the potential (not only the metric) whose U-sum is the s = 1 Epstein sum, and estimate its coefficient against ε = 6e-5. Status: candidate mechanism, labelled [literature]+[derived]; nothing computed.
+MAP: node=eps_tilt status=estimate touches=[] ripple=no
