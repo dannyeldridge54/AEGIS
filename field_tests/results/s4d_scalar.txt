@@ -1,0 +1,4 @@
+D = 6, gamma = 2, threshold -8/(gamma (D-2)^2) = -1/4 = -0.250000
+A'/P' range on (1e-6, 1-1e-6) y_end: min -0.223607 at y/y_end = 1; max 0.223607
+ends: y/y_end=1e-6: 0.223607; 1-1e-6: -0.223607
+S4d: condition (5.10) holds everywhere -> SCALAR SECTOR STABLE (b >= 0)
