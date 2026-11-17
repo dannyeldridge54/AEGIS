@@ -466,3 +466,4 @@ D1179  2026-11-17T20:05Z  Literature: Gailitis theorem applies to total (optical
 D1180  2026-11-17T20:11Z  R2b6 conversion: FAIL; P_conv=0.87 unitarity-exact; threshold question parked
 D1181  2026-11-17T20:19Z  R2c stage a: chi0chi0 thermal Sommerfeld factor at freeze-out 1.38-1.51
 D1182  2026-11-17T20:25Z  R2c-b sourcing: Hisano hep-ph/0610249 wino potentials and Gamma for all charge sectors
+D1183  2026-11-17T20:36Z  R2c-b full LO Sommerfeld thermal sigma_eff: R_eff 1.29-1.37 at freeze-out
