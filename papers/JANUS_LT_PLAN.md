@@ -31,3 +31,6 @@ Note (Danny, 17 Nov 00:30 CT): TorsionΛ is an old model — do not use it as a 
   so ratios vs the DESI fiducial need either (a) σ8 shape-independence assumption (state it), or (b) adding an Eisenstein–Hu transfer function (fetched) to get σ8.
   Do (b) first as its own locked validation (σ8 vs CAMB), then L9.
 - L9a DONE (D1065): EH98 no-wiggle transfer validated (rms 1.4%). Next L9b: σ8 normalisation (fetch A_s→P(k)), then L9.
+- L9b decision (17 Nov): the A_s → P(k) normalisation formula could not be fetched cheaply (two sources tried); rather than write it from memory,
+  L9 will take the present-day amplitude σ8,0 from CAMB as a stated referee and test only Janus-LT's growth (f, D) against DESI Table 9 ratios.
+  Still needed before locking L9: DESI's fiducial cosmology parameters (fetch from 2411.12021) and the fσ_s8 convention (s8 = 8 Mpc/h × h_fid/h).
