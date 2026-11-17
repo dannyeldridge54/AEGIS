@@ -128,7 +128,8 @@ def taylorf2_tidal_dphase(f, M1, M2, Lam1, Lam2, order=6):
 
 def taylorf2_tidal_dphase_hfb(f, M1, M2, Lam1, Lam2, order=7):
     """Tidal SPA phase (rad), Henry-Faye-Blanchet 2020 (arXiv:2005.13367) Eq. 6.6a, quadrupolar Lambda only
-    (magnetic sigma and octupole mu3 set to 0). order in {5, 6, 6.5, 7, 7.5}."""
+    (magnetic sigma and octupole mu3 set to 0). order in {5, 6, 6.5, 7, 7.5}.
+    CAVEAT (D1111-D1117): the 7PN coefficients are the PRE-Erratum-II HFB values; LALSuite (post-erratum, probable) differs by 0.33%."""
     import numpy as _np
     M = M1 + M2; nu = M1*M2/M**2; D = (M1 - M2)/M; X1, X2 = M1/M, M2/M
     mp = 0.5*(X2*X1**4*Lam1 + X1*X2**4*Lam2); mm = 0.5*(X2*X1**4*Lam1 - X1*X2**4*Lam2)

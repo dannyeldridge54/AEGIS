@@ -11229,3 +11229,16 @@ MAP: none
 
 ## D1116 (CENTRE, Djl loop (C), documentation): Hyperion 1.1 draft notes and the project status doc updated with D1103–D1115 (bbn_net, 6.5PN tides, wino γγ line, NLO CMB band, Milky Way bracket; corrections D1082a and D1112a; open: the 7PN coefficient and the NLO convention). Still unpackaged and not uploaded; awaiting Danny's "Publish" and a linked PC.
 MAP: none
+
+## D1117 (CENTRE, Djl loop (D), literature): the 7PN tidal question is almost certainly settled in LAL's favour — Henry–Faye–Blanchet has an "Erratum II" that changed TWO 7PN coefficients (per Abac et al. 2023, arXiv:2307.02033, footnote 1), and our fetched Eq. 6.6a reproduces the PRE-erratum expression; LAL's per-body coefficient differs from the pre-erratum per-body form exactly in the 7PN terms
+- Source (quoted, 2307.02033):
+  - Its Eq. 8 μ̃₊ 7PN coefficients "136190135/27433728 + 978554825/4572288 η − 281935/6048 η²" are identical to our D1111 transcription.
+  - Footnote 1: "Eq. (8) has been modified in the latest version, which is described in the Erratum [23]… Two coefficients of 7PN order have been modified." Footnote 5: their own results use the previous expression, and the change is numerically small.
+  - Its per-body Eq. 12 (pre-erratum) has "193986935/571536 − 13060861/381024 X_A …". LAL's coefficient (via ripplegw, D1115) has "193986935/571536 − 14415613/381024 X …". The same leading term with a different X term: an erratum-type change.
+- Reading:
+  - (b) of D1113 is the explanation: our fetch of arXiv:2005.13367 returned (or I transcribed) the pre-Erratum-II coefficients, and LAL implements the corrected ones.
+  - Our 0.33% gap = pre- vs post-erratum. The erratum text itself is not yet quoted. Status: PROBABLE; it becomes CONFIRMED when the Erratum II coefficients are quoted.
+  - A full numeric check is not possible: only one of the two changed terms is visible in 2307.02033's fetched text.
+- Action (not done here, needs a lock): adopt the post-erratum coefficients once quoted from the erratum (PRD Erratum II or arXiv v4). Until then, Hyperion's 7PN tidal term carries the label "pre-Erratum-II HFB; LAL differs by 0.33% (post-erratum, probable)". The 6PN and 6.5PN terms are unaffected and validated.
+VERDICT: 7PN gap explained by the HFB Erratum II (probable; erratum text to quote).
+MAP: none
