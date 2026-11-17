@@ -1659,3 +1659,6 @@ Touches: none.
 
 ## D1001: Janus large-f_NL δN VALIDATED on slow-roll slices (J6d); J6c at ε=1 NOT VALIDATED
 - [computed] f_NL −0.26…−81 vs Byrnes–Choi–Hall Eq. 21 within 0.4–6 % on 9 slices; transient f_NL decays by ε_H = 1.
+
+## D1002: Janus vs real ASPIC (J7a): n_s ~200×, r ~330× more accurate vs exact MS on 14 points; α_s comparison uninformative
+- [computed] medians dn_s 3.8e-6 vs 7.7e-4; dr/r 7.5e-5 vs 2.5e-2; ASPIC 0.1 µs/pt, Janus 1.2 ms/pt any V.
