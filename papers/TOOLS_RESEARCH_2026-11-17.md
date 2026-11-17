@@ -48,3 +48,9 @@ codes. Fit: run L7's likelihood through Cobaya's MCMC as an independent posterio
 ## Updated order
 1) Ollama one-at-a-time scheduling (free). 2) Conformal abstention test on existing CubeMind scores (no new runs needed — cheapest real gain).
 3) Reranker after M0. 4) Speculative decoding (desk: download). 5) Cobaya check of L7/L10. 6) CosmoPower emulator trial.
+
+## Status note (17 Nov, 22:28Z)
+- CosmoPower on the cloud box: blocked — the PyPI release (cosmopower 0.2.0) requires tensorflow < 2.14 and tensorflow-probability < 0.22, which have no
+  builds for this box's Python 3.13. Route: a PC job in the micromamba 'aegis' env (Python 3.11), pre-trained w0wa networks from the project's GitHub;
+  lock the 20-point comparison before it runs.
+- Cobaya 3.6.2 installs cleanly on the cloud box; L11 (MCMC check of L7) running.
