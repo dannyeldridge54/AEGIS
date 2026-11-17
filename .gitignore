@@ -37,3 +37,4 @@ tools/calcq/logs/
 tools/calcq/status.txt
 tools/launcher/AEGIS_Launcher.exe
 tools/calcq/status_pc.txt
+field_tests/results/*.part*.jsonl
