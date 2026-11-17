@@ -1,0 +1,94 @@
+<meta name="dash-one-writer">
+<style>
+.lg-wrap{display:flex;flex-direction:column;gap:var(--cds-gap-xl)}
+.lg-title{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0}
+.lg-lede{color:var(--color-fg-muted);margin:0;max-width:65ch}
+.lg-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--cds-gap-md)}
+.lg-tile{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);display:flex;flex-direction:column;gap:var(--cds-gap-xs)}
+.lg-tile .n{font-family:var(--font-anthropic-serif);font-weight:400;font-size:2.2em;font-variant-numeric:tabular-nums;line-height:1.1}
+.lg-tile .l{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.lg-h{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.lg-scroll{overflow-x:auto}
+.lg-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.lg-table th,.lg-table td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--color-border-line);vertical-align:top}
+.lg-table th{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);font-weight:var(--cds-font-weight-medium)}
+.lg-pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:var(--cds-font-size-caption);border:1px solid currentColor}
+.lg-ok{color:var(--color-ok)}.lg-bad{color:var(--color-bad)}.lg-mid{color:var(--color-fg-muted)}
+.lg-bars{display:flex;flex-direction:column;gap:var(--cds-gap-sm)}
+.lg-bar{display:grid;grid-template-columns:minmax(120px,190px) 1fr 70px;gap:var(--cds-gap-sm);align-items:center}
+.lg-bar .track{height:10px;background:var(--cds-chart-grid);border-radius:5px;overflow:hidden}
+.lg-bar .fill{height:100%}
+.lg-bar .v{font-variant-numeric:tabular-nums;text-align:right;font-size:var(--cds-font-size-caption)}
+.lg-note{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption);margin:0}
+</style>
+<div class="lg-wrap">
+  <header id="top" style="display:flex;flex-direction:column;gap:var(--cds-gap-sm)">
+    <h1 class="lg-title">AEGIS Results Ledger</h1>
+    <p class="lg-lede">17 Nov 2026: <b data-draw="total" data-source="verdicts" data-field="n" data-where="group=Total">—</b> D-notes recorded, <b data-draw="passed" data-source="verdicts" data-field="n" data-where="group=Passed">—</b> passed their locked claims, <b data-draw="failed" data-source="verdicts" data-field="n" data-where="group=Failed">—</b> failed and stay on record.</p>
+  </header>
+  <section id="tiles" class="lg-tiles">
+    <div class="lg-tile"><span class="n" data-draw="t-pass" data-source="verdicts" data-field="n" data-where="group=Passed">—</span><span class="l">Passed (validated, verified, holds, agrees)</span></div>
+    <div class="lg-tile"><span class="n" data-draw="t-built" data-source="verdicts" data-field="n" data-where="group=Built">—</span><span class="l">Tools built with passing tests</span></div>
+    <div class="lg-tile"><span class="n lg-bad" data-draw="t-fail" data-source="verdicts" data-field="n" data-where="group=Failed">—</span><span class="l">Failed against the lock</span></div>
+  </section>
+  <section id="dnotes" style="display:flex;flex-direction:column;gap:var(--cds-gap-sm)">
+    <h2 class="lg-h">Today's D-notes</h2>
+    <div class="lg-scroll">
+      <table class="lg-table" data-source="dnotes" data-row-key="dnote">
+        <thead><tr><th data-field="dnote">D-note</th><th data-field="track">Track</th><th data-field="item">What was tested</th><th data-field="verdict">Verdict</th><th data-field="key_number">Key number</th><th data-field="key_label">Meaning</th></tr></thead>
+        <tbody data-draw="rows"></tbody>
+      </table>
+    </div>
+    <p class="lg-note">A fail is never re-scored. JMF4's fail was traced to MultiModeCode's own derivative code (D1169); JMF5 agrees with a patched build, labelled "agrees", not "validated".</p>
+  </section>
+  <section id="cubemind" style="display:flex;flex-direction:column;gap:var(--cds-gap-sm)">
+    <h2 class="lg-h">CubeMind eval arms</h2>
+    <p class="lg-note">Items scored out of 300 per arm. A model's plain vs verify pair is compared once both reach 300.</p>
+    <div class="lg-bars" data-draw="arms" data-source="arms" role="img" aria-label="Items scored per CubeMind eval arm"></div>
+  </section>
+</div>
+<script>
+const PASS = ['VALIDATED', 'VERIFIED', 'HOLDS', 'AGREES', 'PASS'];
+dash.calc('verdicts', {inputs: ['dnotes'], title: 'D-notes by verdict group', description: 'Counts of D-notes in each verdict group; Total is all of them.',
+  fn: (dnotes) => {
+    const g = (v) => PASS.includes(v) ? 'Passed' : v === 'BUILT' ? 'Built' : v === 'FAIL' ? 'Failed' : 'Other';
+    const c = {Passed: 0, Built: 0, Failed: 0};
+    dnotes.forEach((r) => { const k = g(String(r.verdict)); c[k] = (c[k] || 0) + 1; });
+    return [{group: 'Total', n: dnotes.length}, ...Object.entries(c).map(([group, n]) => ({group, n}))];
+  }});
+const num = (id, group) => (el) => {
+  const d = dash.data('verdicts'); if (d.status !== 'ok' || !d.data) { el.textContent = '—'; return; }
+  const r = d.data.find((x) => x.group === group); el.textContent = r ? String(r.n) : '0';
+};
+dash.draw('total', num('total', 'Total')); dash.draw('passed', num('passed', 'Passed')); dash.draw('failed', num('failed', 'Failed'));
+dash.draw('t-pass', num('t', 'Passed')); dash.draw('t-built', num('t', 'Built')); dash.draw('t-fail', num('t', 'Failed'));
+dash.draw('rows', (tb) => {
+  const d = dash.data('dnotes'); tb.replaceChildren();
+  if (d.status !== 'ok') return;
+  d.data.forEach((r) => {
+    const tr = document.createElement('tr'); tr.setAttribute('data-key', r.dnote);
+    ['dnote', 'track', 'item', 'verdict', 'key_number', 'key_label'].forEach((k) => {
+      const td = document.createElement('td');
+      if (k === 'verdict') { const s = document.createElement('span'); const v = String(r.verdict); s.className = 'lg-pill ' + (PASS.includes(v) ? 'lg-ok' : v === 'FAIL' ? 'lg-bad' : 'lg-mid'); s.textContent = v; td.appendChild(s); }
+      else td.textContent = r[k];
+      tr.appendChild(td);
+    });
+    tb.appendChild(tr);
+  });
+});
+dash.draw('arms', (box) => {
+  const d = dash.data('arms'); box.replaceChildren();
+  if (d.status !== 'ok') { box.textContent = d.status === 'error' ? 'Failed to load' : '—'; return; }
+  d.data.forEach((r, i) => {
+    const s = +r.items_scored, t = +r.items_total;
+    const row = document.createElement('div'); row.className = 'lg-bar';
+    const lab = document.createElement('span'); lab.textContent = r.model + ' · ' + r.arm;
+    const tr = document.createElement('div'); tr.className = 'track';
+    const f = document.createElement('div'); f.className = 'fill'; f.style.width = (100 * s / t) + '%'; f.style.background = s >= t ? 'var(--color-ok)' : dash.colors[0];
+    tr.appendChild(f);
+    const v = document.createElement('span'); v.className = 'v'; v.textContent = s + ' / ' + t;
+    v.setAttribute('data-source', 'arms'); v.setAttribute('data-field', 'items_scored'); v.setAttribute('data-row', String(i));
+    row.append(lab, tr, v); box.appendChild(row);
+  });
+});
+</script>
