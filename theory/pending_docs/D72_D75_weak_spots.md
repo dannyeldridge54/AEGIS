@@ -11028,3 +11028,17 @@ Lock pushed before run; result field_tests/results/a1f_cmb_nlo.txt.
   - Single f_eff per run; no f_eff(M) tables.
 VERDICT: thermal wino CMB-ALLOWED at NLO (f_max ≥ 1.19, post-hoc convention); A1e still open.
 MAP: none
+
+## D1104 (CENTRE, Djl loop (B), locked PREREG_B4 + DEVIATIONS D1): Hyperion can now get Li-7 — PRyMordial (pure Python, cloned) runs here in ~10 s and gives ⁷Li/H = 5.50e-10 at Ωbh2 = 0.02230, consistent with the quoted standard-BBN 4.94 ± 0.72 (+0.8σ) and 3.4× the Spite plateau; my ω_b override didn't take (cached at import), so the Planck-0.02242 run is still owed (B4b)
+Lock pushed before run. Result field_tests/results/b4_li7.txt. External code PRyMordial commit 725d8a8d, isolated in scratch, run with -I.
+- Install check: pip has no prymordial, PRyMordial or alterbbn ("linx" on pip is unverified as the BBN code). GitHub vallima/PRyMordial and cgiovanetti/LINX are both reachable through the allowlist.
+- Run: small network, Python path, default rates, τn 878.4 s.
+  - Y_p(CMB) 0.24555, D/H 2.4539e-5, ³He/H 1.0415e-5, ⁷Li/H 5.4970e-10, N_eff 3.0444.
+- D1: setting Omegabh2 after import had no effect, because eta0b is computed at import in PRyM_init (line 167). Both runs are at 0.02230. DEVIATIONS written; B4b will patch a scratch copy before import.
+- L1: Li-7 5.50 vs 4.94 ± 0.72 → +0.77σ, CONSISTENT. At 0.02242 it would rise by about 1% [estimate; Li ∝ η^~2].
+- L2 (different ω_b, so indicative only): Y_p is 0.7% below our PRIMAT table, and D/H is 0.6% above.
+  - The Y_p gap (0.0017) is larger than τn alone explains (878.4 vs 879.4 s ≈ 0.0002 [estimate]). It is worth a look in B4b: PRyMordial's default rates and its weak-rate corrections may differ.
+- L3: Li-7 / Spite = 3.44, i.e. 13σ on the observational error alone. Same story as D1100.
+- Hyperion gain: a full BBN network (Y_p, D, ³He, ⁷Li) with NP hooks (ΔN_eff, extra species, τn), runnable in the cloud. It could become tools/janus_astro/bbn_net.py, a wrapper around the external clone, after B4b validates it.
+VERDICT: Li-7 CONSISTENT with the literature (at Ωbh2 0.02230); B4b (Planck ω_b and the Y_p offset) next B tick.
+MAP: none
