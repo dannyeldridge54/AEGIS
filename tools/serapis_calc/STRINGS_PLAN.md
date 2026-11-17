@@ -42,3 +42,6 @@ coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which 
 - S4c3 DONE (D1036): KK masses converged, m1² = 0.778184 α_E, m2/m1 1.780, m3/m1 2.546. Next: derive q≈0.84 from endpoint exponents; dilaton/metric fluctuations.
 - D1038: convergence order q=(D−2)/((D−1)(1+δ)) derived; y=0 is log-type (p~u): state the regular-branch BC as an input.
 - R: BHK IIB one-loop lead CLOSED (D1040, s=2). Next R step: DKL threshold corrections (s=1 log) in the gauge kinetic function (fetch source, lock first).
+- R source pinned (fetched, hep-th/9506178 Eq. 1, 15): (4π)²/g_a² = (4π)²k_a/g_X² + 2b_a ln(μ/M_X) + Δ̃_a, Δ_a^(m) = Σ_i b̃'_a^i ln[(T_i+T̄_i)|η(T_i)|⁴],
+  b̃'_a^i = b'_a^i − k_a δ_GS^i; one-loop dilaton S+S̄ → S+S̄ + Σ_i 2δ_GS^i/(4π)² ln(T_i+T̄_i). Next R step (lock first): hidden-vs-visible
+  asymmetry of b̃' (non-universal part b'_a) in a Z_N orbifold with N=2 sectors (Z3 has none → no asymmetry) → does it change R?
