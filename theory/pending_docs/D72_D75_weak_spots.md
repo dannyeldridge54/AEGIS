@@ -11196,3 +11196,17 @@ Lock pushed before run; result field_tests/results/janus_astro_a2f.txt.
 - Physics impact: none (7e-4 rad ≪ any detectability scale, D1101). The 6PN and 6.5PN pieces are validated.
 VERDICT: (a) refuted; gap localised to one 7PN coefficient (0.33%); source-check pending (A2g).
 MAP: none
+
+## D1114 (CENTRE, Djl loop (A), locked PREREG_A2b-line): with real J-factors the SERAPIS-E 1 TeV wino passes H.E.S.S. comfortably for BOTH Milky Way brackets — f_max = 0.50–0.55 (McMillan17) and 0.62–0.68 (MWPotential2014) at tree-level Sommerfeld vs f = 0.26; D1112's "drops to 0.27" estimate was WRONG (mis-anchored) — corrected here
+Lock pushed before run; result field_tests/results/a2b_line_mcm.txt.
+- Geometry: the A7a H.E.S.S. inner-Galaxy approximation (ψ ≤ 1°, |b| ≥ 0.3°).
+- Cross-check: J for the H.E.S.S. benchmark Einasto (ρ_⊙ 0.39, r_s 20 kpc, α 0.17) is 4.41e21 GeV² cm⁻⁵, vs the sum of H.E.S.S. Table II over the 7 ROIs, 4.66e21 (quoted, D1110 fetch). That is 5% apart, consistent with the ring/mask approximation.
+- J relative to the H.E.S.S. benchmark: McMillan17 NFW 0.499; MWPotential2014 NFW 0.332. Both cuspless-er NFWs with a lower ρ_⊙ carry less J than H.E.S.S.'s benchmark Einasto.
+- f_max at 1 TeV (LO / NLO post hoc):
+  - McMillan17: 0.503 / 0.554 (one-loop 0.87–1.11)
+  - MWPotential2014: 0.616 / 0.679 (one-loop 1.07–1.36)
+  - PASS everywhere vs 0.26.
+- Correction to D1112 (D1112a): I estimated f_max dropping from 0.36 to 0.27 for the heavy halo. That treated A2's 0.36 as belonging to a 0.286 GeV/cm³ halo. In fact A2's 0.36 is already at H.E.S.S.'s own benchmark (ρ_⊙ 0.39, Einasto), which is HEAVIER in J than both Milky Way models. The A2 number is therefore the conservative end, and the realistic Milky Way haloes loosen it ×1.4–1.7.
+- Reading: SERAPIS-E's 1 TeV wino has a factor ~2 margin in fraction (~4 in rate) against the H.E.S.S. 2018 γγ line for every Milky Way model we've validated. This is the strongest absolute statement so far (γZ still not included; H.E.S.S. bounds γγ only).
+VERDICT: PASS, both brackets; D1112a correction.
+MAP: none
