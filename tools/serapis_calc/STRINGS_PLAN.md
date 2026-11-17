@@ -29,3 +29,13 @@ filling 6D, T⁴ volume frozen, φ_6 = φ − ¼ ln Vol₄ reduces the brane ter
 S4b DONE (D1014 exponent, D1015 6D vacuum: subcritical, finite interval, two routes). Next S4c: χ probe on the 6D background.
 S4a solver (two routes); (c) note that the frozen-volume assumption must later be lifted (the T⁴ breathing mode also
 feels the tadpole).
+
+## Track R research note (17 Nov 06:35Z) — type IIB one-loop Kähler terms (lead, not a result)
+[literature] Berg–Haack–Körs hep-th/0508043 (fetched, partial): one-loop K ⊃ −c Σ_i E₂(A_i, U)/[(S−S̄)(S′−S̄′)] inside the log
+(Eq. 2.77, T⁴/Z₂×T²), c = 1/(128π⁶) (Sec. 2.6, App. D); Z₂×Z₂ form in Sec. 3.4 / Eq. 3.30 (not yet read). These carry a
+naturally SMALL coefficient (unlike heterotic GS, D1021/D1024). They are weight-2-type (E₂) in U, the same family as
+Project H's BHK term (D975), not the log L.
+Idea to test (lock first): the Kronecker limit of the non-holomorphic Eisenstein series E(U, s) at s → 1 contains
+−ln(Im U |η(U)|⁴) = L (+ pole + constant) — fetch the exact Kronecker first limit formula before using it. If a one-loop
+amplitude is evaluated at (or regularised near) s = 1 rather than s = 2, its finite part is L with the small 1/(128π⁶)-type
+coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which s the amplitudes carry.
