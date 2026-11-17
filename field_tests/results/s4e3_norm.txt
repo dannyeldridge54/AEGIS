@@ -1,0 +1,7 @@
+L = 1.695796
+C0: A_ref = +0.000000, m L/pi = [0.9318, 2.0403], match = False
+C1: A_ref = -0.027778, m L/pi = [0.9580, 2.0977], match = False
+C2: A_ref = -0.052581, m L/pi = [0.9821, 2.1504], match = False
+C3: A_ref = -0.080464, m L/pi = [1.0098, 2.2112], match = False
+needed common factor: 1.0411, 1.0440 (A_ref ~ -0.0402, -0.0430)
+VERDICT: NOT EXPLAINED by these conventions
