@@ -1,0 +1,8 @@
+numpy
+scipy
+numba
+galpy
+astropy
+colossus
+camb
+lalsuite

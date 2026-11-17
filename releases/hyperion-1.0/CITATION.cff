@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use Hyperion, please cite it as below."
+title: "Hyperion 1.0: a validated astrophysics toolbox (AEGIS)"
+version: "1.0.0"
+date-released: "2026-11-17"
+authors:
+  - family-names: Eldridge
+    given-names: Danny Lee
+    email: dannyeldridge54@gmail.com
+license-url: "https://firstdonoharm.dev/version/3/0/mil-sv.html"
+repository-code: "https://github.com/dannyeldridge54/AEGIS"
+keywords: [astrophysics, gravitational waves, dark matter, Milky Way, Gaia, neutron stars, halo mass function, validation]
