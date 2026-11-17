@@ -1722,3 +1722,6 @@ Touches: none.
 
 ## D1022: J1c — Radau fallback does not rescue PSNI; diagnose trajectory next (J1d)
 - [computed] guard PASS; PSNI unscored.
+
+## D1023: J1d — PSNI scored with a field-value end (exact ε_H never reaches 1 before the singularity); Janus n_s ~1000× better
+- [computed] end_y option added; 42/42 fixed-N* points Janus better.

@@ -268,3 +268,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1020: test the end-of-inflation event on potentials with singular ends; e-fold-time integration can stall before ε_H = 1.
 - D1021: after a mechanism passes form and sign, check its natural size with real model numbers before investing further.
 - D1022: diagnose a failing integration with a trajectory dump before trying a second fix.
+- D1023: when an end condition is never reached, check whether the model itself makes it ill-defined before blaming the solver.
