@@ -10837,3 +10837,19 @@ Lock pushed before run; result field_tests/results/janus_astro_a3e.txt.
   - compact.tov's earlier A0/A0s results used P → 0 with the same tolerance. The Oppenheimer–Volkoff 0.7102 M_⊙ check is a mass, which is insensitive, but A3f should re-run A0's TOV checks too, to be safe.
 VERDICT: diagnostic CONFIRMED; A3f (fix + re-lock) next time D comes round.
 MAP: none
+
+## D1091 (CENTRE, Djl loop (A), locked PREREG_A1c): Hyperion now has the NLO wino potential (Beneke–Szafron–Urban fits); the pre-declared convention puts the resonance at 2.394 TeV vs their 2.419 (−1.02%, lock 1%) — A1c NOT VALIDATED as locked; the reported √2 convention gives 2.423 (+0.16%)
+Lock a0e8e34 pushed before run; result field_tests/results/a1c_nlo.txt.
+- Code: tools/janus_astro/sommerfeld_nlo.py. Eqs. 2.8, 3.14, 3.18, 3.25 and 3.26 were transcribed from the arXiv PDF text (PREP_A, 14:20 UTC entry).
+- T0: with NLO off, the code returns 2.28546 TeV (A1b 2.2855). PASS.
+- T1: primary convention (δV_{00→+−} added as is) gives 2.3944 TeV, 1.02% low. FAIL by 0.02% beyond the lock.
+- Alternative (reported): ×√2 gives 2.4229 TeV, +0.16%.
+- Reading:
+  - The NLO shift is reproduced in size: +0.109 TeV primary and +0.137 TeV with √2, vs the quoted +0.137.
+  - The √2 version matching suggests the paper's δV_{00→+−} is defined in a different two-particle-state normalisation than its Eq. 2.8 matrix (a √2 for identical neutral Majoranas is plausible). That is a hypothesis.
+  - Per the lock: no tuning, no switch. A1d needs a SOURCED statement of the convention (the paper's text around Eq. 3.25 / its state normalisation), then a re-lock.
+- What still stands:
+  - Either way, the NLO resonance sits at 2.39–2.42 TeV.
+  - D1087's rigid-shift estimate (CMB band up to about 2.84 TeV, marginal for the 2.842 TeV thermal wino at high f_eff) is now backed by a real potential within ±0.03 TeV. Not recomputed here.
+VERDICT: A1c NOT VALIDATED as locked (convention unresolved); NLO module working to ~1%.
+MAP: none
