@@ -10384,3 +10384,11 @@ Status change: track R's GS route goes from "candidate with a computed match (D1
 Next R step: either (i) a finer locked κ scan to close the caveat, or (ii) find a source where the stabilised modulus is S (not S'),
 i.e. a non-condensate dilaton stabilisation, which would restore L.
 MAP: node=eps_tilt status=estimate touches=[] ripple=no
+
+## D1046 — RIGHT (R track) — R5b closes D1045's caveat: the ℓ = −ln(2 Im T) tilt fails for every κ with 1e-5 ≤ |κ| ≤ 1e-2 [computed]
+Lock PREREG_R5b_fine_scan (83 κ values, log-spaced per sign). Δn_s(N*=49.49) runs smoothly from −1.08e-2 (κ = 0, untilted) and stays
+negative for |κ| up to a few 1e-3; NaN (model breaks) for 13 of the larger |κ|. The only sign change is at κ* = −9.74e-3 (κ*/ε = −162), at the
+edge of the breakdown region: there r is 3–4× the published value (2.1e-3 vs 5.2e-4 at N* 46.09), α_s is wrong by 3e-4 to O(10), and at N* = 55 the
+model has no sensible spectrum → FAILS r/α_s. Verdict: R5 FAILS CONFIRMED — in the consistent S' frame no GS-type tilt strength reproduces
+SERAPIS-ρ. The R track's GS route is closed unless a stabilisation that fixes S itself (not S') is found (next R step: literature search).
+MAP: none
