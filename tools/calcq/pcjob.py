@@ -1,4 +1,4 @@
-"""Package a LOCKED job for Danny's PC runner in one step.
+r"""Package a LOCKED job for Danny's PC runner in one step.
   python3 tools/calcq/pcjob.py ID --lock field_tests/rules/PREREG_X.md --cmd "python3 -u theory/janus/x.py" --files f1 f2 dir/ [--limit 3600]
 Checks: the lock and its .sha256 exist, the hash matches, both are committed and pushed (lock-before-results); the script file is committed.
 Output: /mnt/user-data/outputs/pcjob_<ID>.tgz (code + lock) and pcjob_<ID>.job ("<ID>|<limit>|python3 ..." for pc_runner2).
