@@ -21,6 +21,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A5a DONE (D1061): Milky Way (MWPotential2014) vs galpy to 1e-15; orbit 1 Gyr to 1e-11 kpc; ρ_DM,⊙ = 0.286 GeV/cm³ → wino limits ×1.36 looser. A7e deferred (no parallaxes in stars.json).
 
+- A2c DONE (D1062): amplitude vs LAL 5e-15; SNR; BNS ranges of 5 LIGO/KAGRA curves within ≤ 4.8%.
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].

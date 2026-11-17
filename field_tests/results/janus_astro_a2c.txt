@@ -1,0 +1,20 @@
+B1 (1.4,1.4) f=20.00: ours=2.793772e-23 LAL=2.793772e-23 rel=3.8e-15
+B1 (1.4,1.4) f=50.00: ours=9.592407e-24 LAL=9.592407e-24 rel=4.6e-15
+B1 (1.4,1.4) f=100.00: ours=4.272931e-24 LAL=4.272931e-24 rel=3.8e-15
+B1 (1.4,1.4) f=300.00: ours=1.185999e-24 LAL=1.185999e-24 rel=2.8e-15
+B1 (10,10) f=20.00: ours=1.437974e-22 LAL=1.437974e-22 rel=3.9e-15
+B1 (10,10) f=50.00: ours=4.937278e-23 LAL=4.937278e-23 rel=3.8e-15
+B1 (10,10) f=100.00: ours=2.199307e-23 LAL=2.199307e-23 rel=4.8e-15
+B1 (36,29) f=20.00: ours=3.817572e-22 LAL=3.817572e-22 rel=4.3e-15
+B1 (36,29) f=50.00: ours=1.310762e-22 LAL=1.310762e-22 rel=3.6e-15
+B2 SNR(1.4+1.4 at 100 Mpc, aLIGO175): trapezoid=32.707084 quad=32.707027 rel=1.8e-06
+B3 aLIGO140MpcT1800545: horizon=314.0 Mpc range=138.6 Mpc vs 140 rel=9.7e-03
+B3 aLIGO175MpcT1800545: horizon=408.8 Mpc range=180.5 Mpc vs 175 rel=3.2e-02
+B3 KAGRA25MpcT1800545: horizon=55.4 Mpc range=24.5 Mpc vs 25 rel=2.2e-02
+B3 KAGRA80MpcT1800545: horizon=180.9 Mpc range=79.9 Mpc vs 80 rel=1.7e-03
+B3 KAGRA128MpcT1800545: horizon=303.8 Mpc range=134.1 Mpc vs 128 rel=4.8e-02
+VERDICTS: B1=PASS B2=PASS B3=PASS -> A2c VALIDATED
+Reported AdVO4T1800545: BNS horizon 289 Mpc, range 128 Mpc (Euclidean, no redshift)
+Reported aLIGOAPlusDesignSensitivityT1800042: BNS horizon 784 Mpc, range 346 Mpc (Euclidean, no redshift)
+Reported EinsteinTelescopeP1600143: BNS horizon 6353 Mpc, range 2805 Mpc (Euclidean, no redshift)
+Reported CosmicExplorerP1600143: BNS horizon 18910 Mpc, range 8349 Mpc (Euclidean, no redshift)
