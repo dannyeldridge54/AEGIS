@@ -104,3 +104,7 @@ n_s and r for SERAPIS-E, Chronos, Kairos and SERAPIS-ρ reproduced by separately
 
 ## Project H sibling (17 Nov 2026, D976–D978; post-hoc, scored only on future data)
 If the plateau comes from Project H at its largest allowed loop coupling (λ′ ≈ 0.17, locked refit C = λ′C₀): n_s ≈ 0.9714, r ≈ 5.0e-4 — a sibling of SERAPIS-E inside the frozen band. Fixed-C variant excluded (≈41 e-folds). Frozen SERAPIS-E values unchanged.
+
+## Reproduction follow-ups (17 Nov 2026, D979–D980)
+- N*: exact end of inflation puts SERAPIS-E's N* bracket 0.17 e-folds above D719 (N* = 46.46–51.04 for T_R = 1e4–1e10 GeV); Δn_s ≈ +1.5e-4, inside the frozen band.
+- α_s: convergence tests (D974, D980) do not pin it below ~10%; published α_s consistent at that level. Next: wide-grid fit (new lock).
