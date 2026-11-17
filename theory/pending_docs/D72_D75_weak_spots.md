@@ -12578,3 +12578,16 @@ MAP: none
 - **Not done:** contacting LAL maintainers is an outward action and is not taken. It could be offered to Danny.
 VERDICT: 7PN RESOLVED in Hyperion's favour (pending a character-exact source check). LAL is the outlier at 0.33%.
 MAP: none
+
+### D1212 — A tick: CTAO-South construction began in Dec 2025, with first telescopes expected at end-2026. The CTA Galactic Centre test of the wino window is a late-2020s to 2030s prospect (2026-11-17)
+- [LEFT · literature] One search; fetched ESO press release eso2521 (18 Dec 2025).
+  - CTAO-South groundbreaking at Paranal on 17 Dec 2025, "beginning of construction of the telescope foundations".
+  - First telescopes deployed "by the end of 2026", with first observations from Chile about a year after the ceremony.
+  - The release states no dates for science operations or the full (alpha) array.
+- **Implication (labelled estimate):**
+  - The Galactic Centre survey that the CTA wino forecast assumes (Rinchiuso et al. 2008.00692: ~500 h, full southern array) needs most of the alpha array. That is plausibly ≥ 2030 if construction runs on its stated pace.
+  - So the D1153/D1190 statement "CTA + HL-LHC cover the window within roughly a decade" stands. HL-LHC (3 ab⁻¹, ~2041) and CTA-GC (2030s) are both decade-scale.
+  - Nearer-term pressure on the 1 TeV wino comes from more H.E.S.S./LST-1 data and from better inner-halo determinations (A2l/A2m: robust for cored/Einasto Gaia fits).
+- **Housekeeping:** Hyperion 1.1 CHANGES updated with D1202–D1211.
+VERDICT: timeline recorded. No change to the window. The CTA test is ≳ 2030 (estimate).
+MAP: none
