@@ -2,6 +2,7 @@
 Pattern as Janus: fast route + independent second route or reference code; every stage locked before running; D-note; Zenodo versions as stages land.
 - A0 DONE (D1052): Lane–Emden (exact n = 0, 1, 5; tables n = 1.5–4), Chandrasekhar mass, Eddington luminosity, Kelvin–Helmholtz time; TOV (exact Schwarzschild interior, Newtonian polytrope limit); Kerr ISCO, horizon; 0PN chirp, time to merger, cycles, strain; NFW/Einasto/Burkert (closed vs quadrature vs colossus); Kepler, escape, Hill, Roche lobe (numerical vs Eggleton); constants vs astropy. 9/9 PASS.
 - A0s DONE (D1053): vs LALSuite, galpy, colossus, OV 1939 (0.7102 Msun), Kepler sidereal year — 7/7 PASS.
+- A2a DONE (D1054): TaylorF2 3.5PN phase vs LALSuite ≤ 6e-10 rad (4 binaries, 2PN and 3.5PN).
 - A1 Realistic stars: main-sequence models with tabulated opacities and nuclear rates; mass–luminosity–radius vs MESA/MIST tracks.
 - A2 Gravitational waves beyond 0PN: 3.5PN TaylorF2 phase, then a referee comparison with LALSuite/PyCBC waveforms; SNR and match for LIGO/ET/LISA noise curves.
 - A3 Neutron stars: tabulated EoS (SLy, APR, …) → mass–radius, tidal deformability Λ; vs published tables and GW170817/NICER bounds.

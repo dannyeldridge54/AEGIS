@@ -10474,3 +10474,10 @@ Results [computed]:
 Honest scope: S1 tests Newtonian order only (PN orders are stage A2); S3, S4 confirm we use the same conventions as galpy/colossus. S6 and S7 are genuine physics reproductions.
 Verdict (locked rule): A0s VALIDATED AGAINST STANDARDS.
 MAP: none
+
+## D1054 (track X, locked PREREG_A2a_taylorf2_vs_lal): Janus-Astro's gravitational-wave phase to 3.5 post-Newtonian order matches LALSuite's TaylorF2 to ≤ 6e-10 rad over the whole inspiral band: A2a VALIDATED
+Lock pushed before the run (b61cf46). Coefficients typed from Buonanno–Iyer–Ochsner–Pan–Sathyaprakash 2009 Table I, first compared here.
+Results [computed]: four binaries (1.4+1.4, 10+10, 36+29, 5+50 M_⊙), 20 Hz to 0.8 f_ISCO (up to 633,004 frequency points), after removing a + b f (t_c, φ_c): max |Δψ| = 2.9e-11 to 5.9e-10 rad at 2PN (O = 4) and 2.9e-11 to 5.2e-10 rad at 3.5PN (O = 7). Sign convention: h̃ ∝ e^{−iΨ}, as stated in the code docstring (the opposite sign fails by the full phase).
+Scope: non-spinning, no tides, frequency-domain phase only (amplitude corrections, spins, tides, SNR/match with detector noise curves are A2b–A2d).
+Verdict (locked rule): A2a VALIDATED.
+MAP: none

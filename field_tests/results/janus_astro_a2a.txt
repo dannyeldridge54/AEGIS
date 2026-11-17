@@ -1,0 +1,9 @@
+O=4 m=(1.4,1.4) band 20-1256.3 Hz, 633004 pts: sign=-1 max|res|=5.93e-10 rad PASS
+O=4 m=(10,10) band 20-175.9 Hz, 79815 pts: sign=-1 max|res|=1.39e-10 rad PASS
+O=4 m=(36,29) band 20-54.1 Hz, 17469 pts: sign=-1 max|res|=2.89e-11 rad PASS
+O=4 m=(5,50) band 20-64.0 Hz, 22507 pts: sign=-1 max|res|=3.44e-11 rad PASS
+O=7 m=(1.4,1.4) band 20-1256.3 Hz, 633004 pts: sign=-1 max|res|=5.24e-10 rad PASS
+O=7 m=(10,10) band 20-175.9 Hz, 79815 pts: sign=-1 max|res|=1.79e-10 rad PASS
+O=7 m=(36,29) band 20-54.1 Hz, 17469 pts: sign=-1 max|res|=2.87e-11 rad PASS
+O=7 m=(5,50) band 20-64.0 Hz, 22507 pts: sign=-1 max|res|=2.89e-11 rad PASS
+A2a VALIDATED
