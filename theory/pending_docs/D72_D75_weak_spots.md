@@ -11779,3 +11779,15 @@ MAP: none
 - **Relevance:** freeze-out is far above threshold, so R2c (thermal average at x ~ 20–30) is unaffected. The tower matters only for late-time/halo velocities, where the D1158–1159 resonance structure must be velocity-averaged.
 VERDICT: closed and open solvers each behave physically. Pointwise threshold continuity is not a valid test (lock error, recorded). The averaged-continuity test is OPEN as R2b3.
 MAP: none
+
+## D1160 — TOOLS — three toolkits from today's lessons: KALUZA v0.1 (REGRESSION PASS), LOCKBENCH v0.1, MultiModeCode built for JANUS-MF [computed + infrastructure]
+Plan and prior-art search: papers/TOOLKITS_PLAN.md (no public general KK-spectrum/stability package found; MultiModeCode/PyTransport are the multi-field references).
+KALUZA (tools/kaluza): general-D tadpole vacua (BTR conventions), tensor tower (Prüfer SL), scalar operator (flagged unvalidated), FD + Prüfer Schrödinger
+solvers, convergence (Aitken + derived order), scalar stability check. Locked regression PREREG_KALUZA_v01: T1 q = 0.84458 (D1038), T2 Aitken 0.778184 (D1036),
+T3 scalar min −0.223607 stable (D1140), T4 tensor m1²(ε=1e-5) = 0.7791277336937695 vs 0.7791277337 → REGRESSION PASS.
+LOCKBENCH (tools/lockbench): lock_ok (sha256 + committed + pushed), sweep (resumable, per-task wall limits; test PASS), reference-precision ledger
+(field_tests/results/LEDGER.jsonl). Seeding the ledger flagged two honest-precision issues: D1039 (β_s "~5%" vs a reference spread up to 7% — the claim was
+slightly sharper than its reference; superseded by D1146, 3.1% vs 2.0%) and D1141 (3% bar vs a 2-sig-fig reference; already NOT VALIDATED).
+JANUS-MF: MultiModeCode release 2.0.0 (github laynep/MultiModeCode @641153c) builds and runs in the cloud (/home/claude/ext/mmc): its default 10-field
+N-quadratic gives n_s = 0.948032 exact (δN slow-roll 0.948395), r = 0.1446, α_s = −9.02e-4, f_NL(SR) = −0.0154. Next: lock Janus two-field δN vs MMC.
+MAP: none

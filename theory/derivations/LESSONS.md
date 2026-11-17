@@ -311,3 +311,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1146: a denser reference turns 'within noise' into a resolved trend — here Janus's β_s truncation error growing with ε for steep potentials.
 - D1148: the PC runner turns a 30-min cloud job into ~2.5 min — queue every heavy, embarrassingly parallel sweep there.
 - D1149: when a systematic appears, a one-parameter scaling test (error vs the expansion parameter) turns it from a worry into a stated, predictable limit.
+- D1160: package validated pieces with a regression lock against the recorded numbers before adding anything new to them.

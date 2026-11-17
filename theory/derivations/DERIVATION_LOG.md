@@ -1784,3 +1784,4 @@ Touches: none.
 ## D1146: J9b (PC) — β_s 24/32 informative, median err 3.1%, max 10.6% → VALIDATED; steep LFI p=3,4 show resolved −6 to −10% truncation systematic
 ## D1148: J10 (PC) — 48 new-pivot points: medians dns 1.7e-6, dr/r 7.6e-5, das 4.5e-7 → accuracy holds at N* 45/55/65
 ## D1149: J11 (PC) — β_s rel. error ∝ ε* (slope 1.14, ≈5ε*) → third-order truncation confirmed; ≤5% for ε* ≲ 0.01
+## D1160: toolkits — KALUZA v0.1 REGRESSION PASS (4/4), LOCKBENCH v0.1 (ledger flagged D1039 precision), MultiModeCode built/running for JANUS-MF
