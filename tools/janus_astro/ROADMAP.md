@@ -47,6 +47,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A8c3 (D1075): disk stars PASS at 8.8 ms/star; extreme r_peri 1.3e-3 (reference sampling suspected) → NOT VALIDATED; A8c4 exact turning points in the reference.
 
+- A6c (D1076): compiled orbits 0.41–0.50 ms/star (identical to batch3 to 5e-10); fast J path fails on cored halos (dropped) → NOT VALIDATED as locked.
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].

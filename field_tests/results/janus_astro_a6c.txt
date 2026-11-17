@@ -1,0 +1,9 @@
+R1 extreme: max rel diff 4.9e-10; fast 0.413 ms/star vs batch3 17.73 ms/star (43x)
+R1 disk: max rel diff 1.1e-11; fast 0.499 ms/star vs batch3 10.26 ms/star (21x)
+   (numba compile, first call: 2.0 s)
+R2 Einasto: J fast 4.412602e+21 vs ref 4.412602e+21 rel 1.6e-13; 0.08 s vs 0.1 s
+R2 NFW: J fast 2.377243e+21 vs ref 2.377243e+21 rel 2.3e-13; 0.05 s vs 0.1 s
+R2 Burkert: J fast 1.513344e+19 vs ref 1.513344e+19 rel 5.6e-16; 0.05 s vs 0.0 s
+R2 core1: J fast 4.438700e+20 vs ref 4.438911e+20 rel 4.7e-05; 0.06 s vs 0.1 s
+R2 core3: J fast 6.619018e+19 vs ref 6.619010e+19 rel 1.1e-06; 0.07 s vs 0.1 s
+VERDICTS: R1=PASS R2=FAIL -> A6c NOT VALIDATED
