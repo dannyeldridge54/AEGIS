@@ -11354,3 +11354,20 @@ Lock pushed before run; result field_tests/results/a2g_line_igs.txt.
 - This is the most consequential result of the loop for SERAPIS-E. It is a near-term falsification route for the post-hoc wino (not for the frozen inflationary predictions).
 VERDICT: SERAPIS-E 1 TeV wino EXCLUDED/marginal by H.E.S.S. IGS (J-geometry assumption); window ≈ 0.67–0.9 TeV [estimate].
 MAP: none
+
+## D1126 (CENTRE, manual Djl (B slot), locked PREREG_A2h): D1125 CONFIRMED with the real IGS geometry — our J for the IGS annuli (0.5°–3.0°) reproduces H.E.S.S.'s benchmark total to −7.4% (S1 PASS), and the model/benchmark J ratios barely change (McMillan17 0.494, MWPotential2014 0.325 vs 0.499 and 0.332 in the 2018 geometry); SERAPIS-E's 1 TeV wino (f = 0.26) is EXCLUDED for the benchmark and McMillan17 haloes and survives only for MWPotential2014 at NLO
+Lock pushed before run; result field_tests/results/a2h_igs_J.txt.
+- Geometry (quoted): 25 annuli of 0.1° width, 0.5°–3.0°, unmasked J table, total 2.5e22. Ours is 2.314e22. The integration emitted quadrature warnings near the cusp; the −7.4% is inside the 10% lock.
+- Direct computation (no ×0.758 shortcut): σv_line tree-SE 1.42e-26 (LO) / 1.17e-26 (NLO), × NLL R ∈ [0.658, 0.794].
+- f_max vs 0.26:
+  - Benchmark: 0.143–0.173 → FAIL
+  - McMillan17: 0.203–0.246 → FAIL
+  - MWPotential2014: LO 0.250–0.275 (band-dependent), NLO 0.276–0.303 → PASS
+- D1125's direction-of-error worry did not materialise: the larger annuli leave the ratios essentially unchanged (−1 to −2%).
+- Conclusion (stands):
+  - With the 2026 H.E.S.S. IGS line limit, SERAPIS-E's 1 TeV thermal wino at 26% of DM survives only if the Milky Way's inner halo is as light as MWPotential2014 AND the NLO potential holds.
+  - For the Gaia-calibrated McMillan17 halo it is excluded.
+  - The surviving post-hoc window is ≈ 0.67–0.9 TeV [estimate pending an IGS limit at those masses; the strongest IGS limit, 9.8e-29 near 440 GeV, suggests the lower masses are also under pressure].
+- Next: the 0.66–0.9 TeV points need a quoted IGS limit there. The text quotes only 1, 10 TeV and ~440 GeV; between 440 GeV and 1 TeV an interpolation would be an assumption.
+VERDICT: CONFIRMED — 1 TeV wino excluded except for the light halo at NLO.
+MAP: none
