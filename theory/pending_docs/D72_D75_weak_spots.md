@@ -11474,3 +11474,13 @@ singular at T = U, not the Kronecker L = −ln(2 Im T|η|⁴) the ρ tilt needs.
 Status: no lift of the exact zero from Wilson lines at this order (per the paper). The D1049 lead stays open but needs another lifting mechanism;
 none found yet. I'll pause this line unless a new source turns up, and switch R effort to S4d.
 MAP: none
+
+## D1138 — DEEP/STRINGS — S4d prep: the template and the expectation for dilaton/metric fluctuations of our 6D tadpole vacuum [literature]
+[literature, fetched ar5iv 1811.11448, Basile–Mourad–Sagnotti, JHEP 01 (2019) 174] For the 10D Dudas–Mourad vacua (orientifold tadpole potentials, 9D Poincaré ×
+an internal interval — the 10D analogue of our 5D Minkowski × interval vacuum, D1015a), the paper finds NO perturbative instabilities in the scalar, vector or
+tensor sectors ("a perturbatively stable solution of Einstein's equations"), with the caveat of strong-coupling regions near the interval ends. Instabilities
+appear only in their flux vacua (AdS₃×S⁷ orientifold ℓ = 2,3,4; AdS₇×S³ heterotic ℓ = 1).
+Use: S4d (scalar = dilaton + metric scalars, gauge-invariant) should follow their §5 method; the expectation from the 10D analogue is a stable, gapped
+spectrum like our tensor result (D1036: m1² 0.778 > 0). Their tensor equations/eigenvalues (§5.3) are past offset 100000 of a 1.1M-char page — fetch
+in a later tick to (a) cross-check our S4c2/S4c3 operator form against theirs at D = 10, (b) lock S4d. Not a result yet.
+MAP: none

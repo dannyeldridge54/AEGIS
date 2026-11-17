@@ -305,3 +305,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1134: once a referee input is replaced by validated own code, rerun the downstream test under a new lock to show nothing moved.
 - D1135: a 'needs tuning' condition is sharper when a symmetry gives an exact zero nearby — then the question is what lifts the zero.
 - D1137: distinguish 'stated' from 'derived' in a source — an asserted zero is weaker evidence than a computed one, and the note should say which.
+- D1138: before computing a new fluctuation sector, find the closest published analogue — it gives the method, the boundary conditions and the expected answer.
