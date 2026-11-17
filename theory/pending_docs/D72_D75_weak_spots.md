@@ -11583,3 +11583,23 @@ Final:
   - A forward-table row for τ=i N_eff (Danny's call at the next "Publish").
 Status: B-side PARKED.
 MAP: none
+
+## D1145 (CENTRE, Djl loop (C), SUMMARY of the C-side Galaxy chain D1083–D1142): Hyperion's Milky Way checks converge on a LIGHT halo (M200 ≈ 0.55–0.7e12) from Gaia-era kinematics; the remaining uncertainty that matters for dark-matter signals is the inner-halo concentration, which these tracers do not fix
+Final:
+- Module: jeans (D1083).
+- Checks:
+  - Halo-star dispersions (2005 data; β-degenerate) (D1089).
+  - Bird+2022 enclosed mass (D1093) and M200 (D1097).
+  - Deason+2019 v_esc, defined to 2 r200 (D1105, D1108).
+  - McMillan17 (D1112).
+  - Gaia DR3 v_esc profile: halo M200c 0.55e12 (D1139).
+- Model scorecard:
+  - MWPotential2014: halo 0.71e12, about +1σ vs the light-halo data; −2.1σ vs Deason's v_esc.
+  - McMillan17: 1.32e12, +5σ vs the K giants and the DR3 v_esc profile, and passes Deason.
+  - The Gaia DR3 NFW: central.
+- For the wino: J in the H.E.S.S. ROIs scales with concentration much more than mass. Within the Gaia fit's 1σ concentration range the 1 TeV f_max spans 0.13–0.45 (D1142).
+- Bugs caught (all via DEVIATIONS): galpy bulge Φ offset (C6 D1); McMillan17 physical-units double scaling (C7 D1).
+- Prep: dust module with R_G (CV18) coded. The maps and per-star Mapper data need Danny's PC (PREP_C).
+- Open: (1) the inner-halo concentration/core; (2) the PC Star Mapper per-star data and dust maps (W3/C1, the highest-value pending item); (3) Jeans with real Mapper kinematics.
+Status: C-side PARKED until the PC is linked.
+MAP: none
