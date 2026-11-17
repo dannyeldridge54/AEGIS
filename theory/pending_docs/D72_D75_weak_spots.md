@@ -12530,3 +12530,14 @@ MAP: none
 - **No computation.** The pulls are arithmetic on our existing ΔN_final values (B7/B8).
 VERDICT: SU(2) dark radiation is DISFAVOURED at ≈ 3σ; U(1) is OK at 1.5σ; the base is OK.
 MAP: none
+
+### D1209 — Paper: the SERAPIS v3.3 draft now carries the 2026 N_eff verdicts (unposted) (2026-11-17)
+- [DOC] papers/v3/serapis_v3.3_draft.tex, nucleosynthesis item (iii):
+  - The old "ACT DR6 allows only the smallest case; SO/CMB-S4 (0.045/0.03) separate the branches" is replaced.
+  - New text: Goldstein–Hill 2026 N_eff = 2.990 ± 0.070 (stating that it uses the same helium data) puts U(1) at +1.5σ and SU(2) at +3.1σ, above ΔN_eff < 0.107. The CMB alone (2.82 ± 0.12, Trendafilova et al.) gives 3.2σ for SU(2). So the τ = i hidden sector must be unpopulated or U(1)-like, and SO (0.045) tests U(1).
+  - CMB-S4 is dropped: it was not carried forward after the 2025 agency decision (arXiv:2608.07453).
+  - The paragraph's D-range is updated to D1081–D1208.
+- **refs.bib:** arXiv_2603_13226 (Goldstein, Hill) and arXiv_2608_07453 (Trendafilova, Raghunathan, Wallisch, …).
+- **Self-correction before commit:** my first wording said "independently places". It was fixed to note the shared helium data, because Goldstein–Hill uses LBT Y_p (D1208).
+- Full revtex build pending (PC).
+MAP: none
