@@ -6,7 +6,7 @@ from tools.janus_calc.core import Model
 from tools.serapis_calc.ms import Background, spectra_fast
 s23 = math.sqrt(2/3)
 book = {'m2phi2': (lambda p: p*p, lambda p: 2*p, 20.0), 'phi4': (lambda p: p**4, lambda p: 4*p**3, 30.0),
-        'starobinsky': (lambda p: (1-math.exp(-s23*p))**2, lambda p: 2*(1-math.exp(-s23*p))*s23*math.exp(-s23*p), 8.0),
+        'starobinsky': (lambda p: (1-math.exp(-s23*p))**2, lambda p: 2*(1-math.exp(-s23*p))*s23*math.exp(-s23*p), 6.5),
         'natural_f5': (lambda p: 1+math.cos(p/5), lambda p: -math.sin(p/5)/5, 0.05)}
 pts = [('SERAPIS-E', ('E', C), N) for C in (1.0e-6, 1.15e-6, 1.3e-6) for N in (44, 47, 50, 53)] + \
       [('Chronos', ('chr', e), N) for e in (1.3e-4, 1.45e-4) for N in (44, 47, 50)] + \
