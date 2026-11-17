@@ -1,0 +1,6 @@
+# PREREG D984: wide-grid α_s for SERAPIS-ρ and Kairos (written before any run; runs only if the D981-lock verdict is converged AND bias_ok on both its models, otherwise this lock is withdrawn unrun)
+Method: identical to PREREG_D981 (tools/serapis_calc/ms.py spectra(..., ic='ds'), 9-point grids W = [-0.8, 0.8] and M = [-0.4, 0.4], degree-4 fit, bd ∈ {200, 1000, 5000} on W, bd = 1000 on M; selftest must pass).
+Models: SERAPIS-ρ exactly as theory/flux/repro_rho_d957.py (ε = 6e-5, I_ρ plateau + εL), N* = 46.09 and 49.49; Kairos = the τ = i j-plateau of theory/flux/alpha_ds_d975.py with ε = 0, N* = 46.08 and 49.21 (D637/D856 K4 points).
+Converged / bias_ok exactly as D981 (2% across bd; 3% W vs M).
+Comparison (only if converged and bias_ok): SERAPIS-ρ vs the published band −(8.5–9.5)e-4 (prediction sheet; D816 references −9.87e-4 at N* 46.09, −8.69e-4 at 49.49): inside or within 5% of an edge → "published ρ α_s stands"; else correction note. Kairos: report α_s and its ratio to −2/N*² (reference only, no verdict).
+Runs on the PC queue (tools/calcq/queue_pc.txt). Script theory/flux/alpha_wide_d984.py; output field_tests/results/alpha_wide_d984.txt. D984 is the lock label; the result note gets the number the claim script returns.
