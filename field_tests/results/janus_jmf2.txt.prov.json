@@ -1,0 +1,24 @@
+{
+ "results": "field_tests/results/janus_jmf2.txt",
+ "results_sha256": "5b96f3b6ab7e86799385decdac0f9cdb645feae7bed70c0b9135a84a87bfd383",
+ "created_utc": "2026-11-17T19:31:40Z",
+ "git_commit": "1c77301b1fde15a4d0c0483d92d36606af1706f1",
+ "git_dirty": false,
+ "lock": "field_tests/rules/PREREG_JMF2_exact_mf.md",
+ "lock_sha256": "572e6df7af3e6c1dafd7aa54a100e78286e877259a664dcda95da160f0b41e97",
+ "code": {
+  "tools/janus_calc/mfms.py": "20a9eac813319ae8358b0c20e0d88c5c3a4a0ac0008986a5d1c01b74ceb16359",
+  "theory/janus/jmf2_exact.py": "a59fbccd514f71c5d5fc6eac7da0f7bbd8b221df906eb634560d9737f364d1e7"
+ },
+ "data": {},
+ "python": "3.13.18",
+ "packages": {
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "sympy": "1.14.0",
+  "mpmath": "1.3.0",
+  "camb": "2.0.5"
+ },
+ "machine": "vm Linux-6.18.44-fc-v553-x86_64-with-glibc2.39",
+ "wall_s": null
+}

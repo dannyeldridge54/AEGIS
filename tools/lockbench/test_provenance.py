@@ -1,0 +1,10 @@
+import sys, os, tempfile, json; sys.path.insert(0, '.')
+from tools.lockbench.provenance import stamp, check
+d = tempfile.mkdtemp(); r = os.path.join(d, 'res.txt'); c = os.path.join(d, 'job.py'); x = os.path.join(d, 'data.dat'); L = os.path.join(d, 'L.md')
+for p, s in ((r, 'ns 0.9634\n'), (c, 'print(1)\n'), (x, '1 2 3\n'), (L, '# lock\n')): open(p, 'w').write(s)
+rec = stamp(r, lock=L, code=[c], data=[x]); assert rec['results_sha256'] and rec['packages'].get('numpy')
+assert check(r) == (True, [])
+open(c, 'a').write('# edit\n'); ok, P = check(r); assert not ok and any('job.py changed' in p for p in P)
+open(r, 'a').write('tampered\n'); ok, P = check(r); assert any('results file changed' in p for p in P)
+os.remove(r + '.prov.json'); assert check(r) == (False, ['no provenance stamp'])
+print('test_provenance: PASS (stamp, clean check, code edit detected, results tamper detected, missing stamp)')
