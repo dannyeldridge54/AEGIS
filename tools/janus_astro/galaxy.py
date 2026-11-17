@@ -56,3 +56,11 @@ def vcirc_array(mw, R):
     fh = -p['hamp']*(np.log(1 + R/p['ha'])/R**2 - 1/(R*(p['ha'] + R)))
     fd = -p['damp']*R/(R*R + (p['a'] + p['b'])**2)**1.5
     return np.sqrt(-R*(fb + fh + fd))
+
+def force_array(mw, R, z):
+    """Vectorised (F_R, F_z) — same formulas as MW.force."""
+    p = mw.p; r = np.sqrt(R*R + z*z); s = (3 - p['alpha'])/2
+    Mb = 2*math.pi*p['bamp']*p['rc']**(3 - p['alpha'])*gamma(s)*gammainc(s, (r/p['rc'])**2)
+    fs = -Mb/r**2 - p['hamp']*(np.log(1 + r/p['ha'])/r**2 - 1/(r*(p['ha'] + r)))
+    sq = np.sqrt(z*z + p['b']**2); D = (R*R + (p['a'] + sq)**2)**1.5
+    return fs*R/r - p['damp']*R/D, fs*z/r - p['damp']*z*(p['a'] + sq)/(sq*D)

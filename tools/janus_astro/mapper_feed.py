@@ -52,3 +52,20 @@ def orbit_params(x, y, z, vx, vy, vz, mw=None, t_gyr=5.0, n=20001):
     rp, ra = float(rs.min()), float(rs.max())
     E = 0.5*(vx*vx + vy*vy + vz*vz) + mw.phi(R/r0, z/r0)*v0*v0
     return dict(rperi=rp, rapo=ra, zmax=float(np.abs(s.y[2]).max()*r0), ecc=(ra - rp)/(ra + rp), E=E, Lz=R*vT)
+
+def orbit_params_batch(x, y, z, vx, vy, vz, t_gyr=3.0, dt=0.01, mw=None):
+    """Many stars at once (arrays, kpc and km/s): kick-drift-kick leapfrog in natural units (r0 = 8 kpc, v0 = 220 km/s),
+    fixed step dt; r_peri / r_apo / z_max from every step. Returns dict of arrays."""
+    from . import galaxy as G
+    mw = mw or G.MW(); r0, v0 = 8.0, 220.0
+    X = np.array([x, y, z], float)/r0; V = np.array([vx, vy, vz], float)/v0
+    def acc(X):
+        R = np.hypot(X[0], X[1]); FR, Fz = G.force_array(mw, R, X[2])
+        return np.array([FR*X[0]/R, FR*X[1]/R, Fz])
+    tn = t_gyr/(r0*3.0856775814913673e16/v0/3.15576e16); n = int(math.ceil(tn/dt)); h = tn/n
+    r = np.sqrt((X**2).sum(0)); rp, ra, zm = r.copy(), r.copy(), np.abs(X[2])
+    a = acc(X)
+    for _ in range(n):
+        V += 0.5*h*a; X += h*V; a = acc(X); V += 0.5*h*a
+        r = np.sqrt((X**2).sum(0)); np.minimum(rp, r, out=rp); np.maximum(ra, r, out=ra); np.maximum(zm, np.abs(X[2]), out=zm)
+    return dict(rperi=rp*r0, rapo=ra*r0, zmax=zm*r0, ecc=(ra - rp)/(ra + rp))
