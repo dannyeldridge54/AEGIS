@@ -10081,3 +10081,8 @@ MAP: none
 - Speed: Janus 1.2 ms median for any V(φ); ASPIC 0.01–0.15 µs from hand-written closed forms; exact MS ~0.4–1 s.
 Consequence: J7 core claim (more accurate than ASPIC on n_s, r, α_s across its standard model classes, scored against the exact solution) holds on 17 models; v1.1 will carry J7b. Next J: J7c reheating route (ASPIC foo_x_rrad vs Janus observe at the same ln R_rad), then extend toward ASPIC's full ~75-model list (two-parameter models).
 MAP: none
+
+## D1005 (DEEP literature tick, P3 plateau origin + fitted ε at τ = i): NULL — DpL loop ends
+Searches 2 (extended): modular-invariant inflation near τ = i, 2026, small-parameter origin; non-holomorphic Eisenstein plateaus from string loops, 2026. Every relevant hit is already in the notes: 2405.06497, 2405.08924, 2411.18603, 2607.00528, 2407.12081, 2512.20570, 2604.07288, 2604.16281, 2510.19927 (D910–D911). No new source for the plateau's form at τ = i or for the size of ε there; no computation run.
+Verdict: NULL. plateau_origin stays assumed (P3); eps_tilt stays estimate (τ = i: fitted; ρ: D991 estimate). Remaining open items belong to the other session's tracks (S4 for D988) or need new calculable input.
+MAP: none
