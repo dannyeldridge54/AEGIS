@@ -10682,4 +10682,5 @@ MAP: none
 - Caveats: LO potential (no NLO), single f_eff, no f_eff(M) table.
 - Wiring: closes the A triangle's CMB corner. The halo J and γ-line corners are already in A7b/W2.
 VERDICT: A1 VALIDATED.
-MAP: node=janus_astro_dm status=validated touches=[wiring_w2, cmb_planck]
+SERAPIS-E link: its wino (0.66/1.0/1.85 TeV with f=0.14/0.26/0.67, D1080) sits off-resonance. CMB f_max at 0.7/1.0/1.9 TeV is ≥1.35 for f_eff=0.41, so all three PASS the CMB corner. The binding corner remains the γ-line (W2).
+MAP: none
