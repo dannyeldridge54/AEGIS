@@ -1669,5 +1669,5 @@ Touches: none.
 ## D1004: Janus vs ASPIC on 17 models (J7b): n_s ~350×, r ~320×, α_s ~50× more accurate vs exact MS
 - [computed] 32/32 points Janus better on n_s; α_s reference convergence-checked (R0).
 
-## D1005: Janus-LT L0b r_d integral VALIDATED (1.9e-6 vs CAMB); EH98 z_d fit off 3.7 % (definition mismatch)
+## D1006: Janus-LT L0b r_d integral VALIDATED (1.9e-6 vs CAMB); EH98 z_d fit off 3.7 % (definition mismatch)
 - [computed] needs own recombination for z_d (L0b2).
