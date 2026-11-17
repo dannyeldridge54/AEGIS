@@ -1,0 +1,11 @@
+hat trace at t=200 (massless 8+8, same sign): 16.000000; first levels (M^2, (-1)^N d): [(0.0, 16), (1.0, -256), (2.0, 2304), (3.0, -15360)]
+L=10.0 U=1j: F_levels(N=8)=9.4941303855e-03 F_theta(N=8)=9.4940648862e-03 rel -6.9e-06 | F(converged)=9.54971717e-03 vs 16 E(U,2)/A^2=9.64289926e-03 ratio 0.99034
+L=10.0 U=(0.5+0.8660254037844386j): F_levels(N=8)=1.2117987569e-02 F_theta(N=8)=1.2117903559e-02 rel -6.9e-06 | F(converged)=1.21990897e-02 vs 16 E(U,2)/A^2=1.23378332e-02 ratio 0.98875
+L=10.0 U=(0.2+1.3j): F_levels(N=8)=6.1348576186e-03 F_theta(N=8)=6.1348031754e-03 rel -8.9e-06 | F(converged)=6.16973874e-03 vs 16 E(U,2)/A^2=6.21730783e-03 ratio 0.99235
+L=12.0 U=1j: F_levels(N=8)=4.6145416798e-03 F_theta(N=8)=4.6144845997e-03 rel -1.2e-05 | F(converged)=4.64134858e-03 vs 16 E(U,2)/A^2=4.65031793e-03 ratio 0.99807
+L=12.0 U=(0.5+0.8660254037844386j): F_levels(N=8)=5.8974518888e-03 F_theta(N=8)=5.8974005394e-03 rel -8.7e-06 | F(converged)=5.93656364e-03 vs 16 E(U,2)/A^2=5.94995813e-03 ratio 0.99775
+L=12.0 U=(0.2+1.3j): F_levels(N=8)=2.9769006561e-03 F_theta(N=8)=2.9768612608e-03 rel -1.3e-05 | F(converged)=2.99372218e-03 vs 16 E(U,2)/A^2=2.99831589e-03 ratio 0.99847
+L=16.0 U=1j: F_levels(N=8)=1.4626587344e-03 F_theta(N=8)=1.4626267778e-03 rel -2.2e-05 | F(converged)=1.47114060e-03 vs 16 E(U,2)/A^2=1.47138966e-03 ratio 0.99983
+L=16.0 U=(0.5+0.8660254037844386j): F_levels(N=8)=1.8698621852e-03 F_theta(N=8)=1.8698347866e-03 rel -1.5e-05 | F(converged)=1.88223739e-03 vs 16 E(U,2)/A^2=1.88260394e-03 ratio 0.99981
+L=16.0 U=(0.2+1.3j): F_levels(N=8)=9.4321696012e-04 F_theta(N=8)=9.4319515690e-04 rel -2.3e-05 | F(converged)=9.48539396e-04 vs 16 E(U,2)/A^2=9.48685888e-04 ratio 0.99985
+routes agree: True; F>0 everywhere: True; shape L=12: True; shape L=16: True -> PASS: string-level sign confirmed positive, U-dependence E(U,2)
