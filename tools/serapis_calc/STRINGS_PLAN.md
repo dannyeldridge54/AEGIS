@@ -41,3 +41,4 @@ amplitude is evaluated at (or regularised near) s = 1 rather than s = 2, its fin
 coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which s the amplitudes carry.
 - S4c3 DONE (D1036): KK masses converged, m1² = 0.778184 α_E, m2/m1 1.780, m3/m1 2.546. Next: derive q≈0.84 from endpoint exponents; dilaton/metric fluctuations.
 - D1038: convergence order q=(D−2)/((D−1)(1+δ)) derived; y=0 is log-type (p~u): state the regular-branch BC as an input.
+- R: BHK IIB one-loop lead CLOSED (D1040, s=2). Next R step: DKL threshold corrections (s=1 log) in the gauge kinetic function (fetch source, lock first).

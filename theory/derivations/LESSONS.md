@@ -285,3 +285,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1037: before blaming a listed failure on a parser, read the raw line; a parse error can sit on top of a genuine upstream failure.
 - D1038: a measured convergence order is a free check — derive it from endpoint exponents; a match confirms the cutoff is the only error source.
 - D1039: for a high derivative of a numerical reference, lock an informativeness test (two stencils) and report the claim no sharper than the reference spread.
+- D1040: check the Eisenstein index of an imported loop term before building on it — only s→1 carries the Kronecker log.

@@ -10317,3 +10317,14 @@ Honest scope: the reference's own A–B spread (≤ 7%) is the same size as the 
 level, not better; a sharper test needs a less noisy fourth-derivative reference (more k-points or a direct mode-ODE derivative).
 Janus now has n_s, r, α_s, β_s all checked against the exact spectrum (D1002/D1004/D1035; D1039).
 MAP: none
+
+## D1040 — DEEP/RIGHT (R track) — the IIB one-loop Kähler lead does not give the s = 1 (Kronecker) term [literature]
+Question from D1031: the GS-type linear-in-L tilt needs L = finite part of E(τ, s→1). Is the IIB one-loop Kähler correction
+(Berg–Haack–Körs, hep-th/0508043, flagged as a lead earlier) such a term? Fetched: their T⁶/(Z₂×Z₂) result (Eq. 3.46) is
+K⁽¹⁾ = ½ Σ_I c E₂(A_i^I, U^I)/[(S−S̄)(T^I−T̄^I)] + ½ Σ_I c E₂(0, U^I)/[(T^J−T̄^J)(T^K−T̄^K)], valid to O(e^{2Φ}), with E₂ built from
+U₂² Σ′ e^{2πi n·a}/|n+mU|⁴ (App. B, Eq. B.7, B.16–17): an s = 2 Eisenstein series. At s = 2 the series is finite and has no
+Kronecker pole/log, so it carries no ln(Im U |η(U)|⁴) piece — it cannot supply the linear-in-L tilt of D1009–D1011/D1031.
+Verdict: lead CLOSED for R (it gives a 1/(Re S·Re T) correction, not a log). Remaining s = 1 sources: one-loop gauge threshold
+corrections (Dixon–Kaplunovsky–Louis type, which do contain ln(T₂|η(T)|⁴)) feeding the gauge kinetic function — the next R step.
+Sources: arXiv hep-th/0508043 (ar5iv: Eq. 3.46, App. B).
+MAP: none
