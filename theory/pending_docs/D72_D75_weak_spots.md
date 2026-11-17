@@ -10043,3 +10043,16 @@ MAP: none
 Module tools/janus_calc/twofield.py: observe_multi(V, grad, hess, φ*) → N, n_s (VW Eq. 17), r (NLO), f_NL^local (VW Eq. 30, WMAP sign); any number of fields, ~3 s per point.
 Next J: T5 strongly non-Gaussian two-field reference (Byrnes–Choi–Hall type, |f_NL| ≳ 1, from a fetched paper) and isocurvature fraction at the end surface; then J7 ASPIC benchmark.
 MAP: none
+
+## D1001 (track J, locks PREREG_J6c_large_fNL and PREREG_J6d_large_fNL_slices): Janus δN reproduces the Byrnes–Choi–Hall analytic f_NL in a LARGE non-Gaussianity model (|f_NL| up to 81) to 0.4–6 % on all 9 uniform-density slices during slow roll: J6d VALIDATED. The earlier J6c test (comparison at ε_H = 1) stays NOT VALIDATED as locked
+[literature] Byrnes, Choi & Hall 0807.1101 (ar5iv): Example A, W = ½e^{−λφ²}m²χ², χ* = 16 (Sec. V.1); product-potential f_NL^(4), WMAP sign, Eqs. 18, 21–25. The paper reports f_NL rising near N ≈ 30, falling from N ≈ 45 and changing again in fast roll near the end.
+[computed] J6c (field_tests/results/janus_j6c_large_fnl.txt): δN to ε_H = 1 gives f_NL = −0.254, +0.0064, +0.0038 (A1–A3) while Eq. 21 evaluated at that end point gives −22.4, −0.015, −0.64 → T5 FAIL ×3, |f_NL| < 1 everywhere → NOT VALIDATED. Convergence fine (T6 PASS). Cause: Eq. 21 is a slow-roll result for a uniform-density final slice; at ε_H = 1 its ε's from the potential are not the true ones (ε_χ^V ≈ 2 at ε_H = 1).
+[computed] J6d (field_tests/results/janus_j6d_slices.txt; lock written before running): uniform-density slices at N_c = 30, 45, 55:
+- A1 (λ 0.05, φ* 1e-3): −0.258 vs −0.278; −32.70 vs −32.94; −19.26 vs −19.29.
+- A2 (λ 0.04, φ* 1e-3): 0.00192 vs 0.00170; −0.889 vs −0.921; −8.16 vs −8.08.
+- A3 (λ 0.05, φ* 1e-4): 0.00372 vs 0.00355; −2.98 vs −3.15; −80.83 vs −81.18.
+All T7 PASS (worst 5.3 % at A3 N_c = 45, where slow-roll corrections are largest); step convergence 1e-5 relative; T7L PASS.
+Observation [computed]: in all three cases f_NL on the slices reaches −8 to −81 and then falls to |f_NL| ≲ 0.25 by ε_H = 1. That f_NL in this model is transient is consistent with the paper's own description; ζ at ε_H = 1 is not guaranteed final (no adiabatic limit imposed), so the end values are not observational predictions. No novelty claimed.
+Consequence: the two-field level is checked in a strongly non-Gaussian, strongly turning case, not only near-single-field ones. Janus now covers single-field n_s/r/α_s/β_s to third order, reheating N*, and multi-field n_s, r (NLO), f_NL on any slice.
+Next J: add a uniform-density end option (rho_c) and an isocurvature/adiabatic-limit check to twofield.observe_multi; then J7 ASPIC benchmark.
+MAP: none

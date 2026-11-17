@@ -1656,3 +1656,6 @@ Touches: none.
 
 ## D1000: Janus J6b NLO δN r VALIDATED; two-field module
 - [computed] r_NLO vs calculator 9e-5; equal-mass angle-independent; twofield.observe_multi added.
+
+## D1001: Janus large-f_NL δN VALIDATED on slow-roll slices (J6d); J6c at ε=1 NOT VALIDATED
+- [computed] f_NL −0.26…−81 vs Byrnes–Choi–Hall Eq. 21 within 0.4–6 % on 9 slices; transient f_NL decays by ε_H = 1.

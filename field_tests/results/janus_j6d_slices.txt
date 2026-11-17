@@ -1,0 +1,10 @@
+A1 lam=0.05 phi*=0.001 N_c=30: slice at (0.0183,11.68) | f_NL num -0.25757 (h -0.25756) | Eq21 -0.27813 | T7 PASS T8 PASS
+A1 lam=0.05 phi*=0.001 N_c=45: slice at (0.07823,8.763) | f_NL num -32.696 (h -32.696) | Eq21 -32.94 | T7 PASS T8 PASS
+A1 lam=0.05 phi*=0.001 N_c=55: slice at (0.206,6.104) | f_NL num -19.256 (h -19.257) | Eq21 -19.289 | T7 PASS T8 PASS
+A2 lam=0.04 phi*=0.001 N_c=30: slice at (0.01038,11.68) | f_NL num 0.0019243 (h 0.0019243) | Eq21 0.0017024 | T7 PASS T8 PASS
+A2 lam=0.04 phi*=0.001 N_c=45: slice at (0.03342,8.763) | f_NL num -0.88884 (h -0.88884) | Eq21 -0.92069 | T7 PASS T8 PASS
+A2 lam=0.04 phi*=0.001 N_c=55: slice at (0.07286,6.104) | f_NL num -8.1617 (h -8.1617) | Eq21 -8.0837 | T7 PASS T8 PASS
+A3 lam=0.05 phi*=0.0001 N_c=30: slice at (0.00183,11.68) | f_NL num 0.0037164 (h 0.0037164) | Eq21 0.0035471 | T7 PASS T8 PASS
+A3 lam=0.05 phi*=0.0001 N_c=45: slice at (0.007823,8.763) | f_NL num -2.9819 (h -2.9819) | Eq21 -3.1482 | T7 PASS T8 PASS
+A3 lam=0.05 phi*=0.0001 N_c=55: slice at (0.0206,6.104) | f_NL num -80.83 (h -80.83) | Eq21 -81.178 | T7 PASS T8 PASS
+T7L: PASS  ->  J6d verdict: VALIDATED

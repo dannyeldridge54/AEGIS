@@ -246,3 +246,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D997: derive physical constants from CODATA (scipy.constants) instead of typing them; it removed a whole class of possible slips.
 - D999: when a test compares two methods, set the tolerance at the order the less accurate method carries (lowest-order δN vs second-order slow roll), not at the better one's precision.
 - D1000: when a check fails at a known order, fix it by adding the next order from a fetched source under a new lock rather than loosening the old tolerance.
+- D1001: compare an analytic slow-roll formula only where slow roll holds; check where a reference evaluates its result (which slice, which epoch) before writing the tolerance.
