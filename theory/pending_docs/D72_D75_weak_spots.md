@@ -12316,3 +12316,13 @@ MAP: none
 - **Skipped (labelled):** Gaia NFW + McMillan17 baryons. galpy's McMillan17 component list was not split this tick.
 VERDICT: McMillan17 PASS, MWPotential2014 FAIL against Horta+2026. Default switch recommended (OPEN, small).
 MAP: none
+
+## D1195 — TOOLS/JANUS — JMF6: Janus-MF VALIDATED on non-separable potentials against an independent code (PyTransport) [VALIDATED]
+Lock PREREG_JMF6_pytransport. Reference: PyTransport 2.0 (transport method, arXiv 1609.00381), each model compiled from its symbolic potential, so its
+derivatives cannot disagree with V (the failure mode of MMC in D1169). n_s by PyTransport's own example convention, same 9-point stencil as Janus-MF.
+C0 (reference reproduces MMC on JMF2 quadratics): |Δ| 2.3e-5, 1.3e-5, 8.8e-5 → PASS. C1 (PyTransport vs Janus-MF): Q1 2.9e-5, Q3 1.3e-5, Q9 9.3e-5,
+N2' (½φᵀMφ) 9.8e-6, N1 (quartic interaction) 9.1e-6 — all ≤ 2e-4 → PASS. Tolerance 1e-8 vs 1e-10 changes PyTransport's n_s by ≤ 1e-6.
+Three-way check on N2': PyTransport 0.946202 = patched-MMC 0.946202 (D1174) vs Janus-MF 0.946212.
+Status: Janus-MF validated on 5 separable models (D1162, D1166) and 2 non-separable models against an independent reference (this note); D1169's
+NOT VALIDATED stays on record as the MMC-reference failure it was. r on non-separable models not yet independently checked (PyTransport tensor route not used).
+MAP: none
