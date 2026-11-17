@@ -11259,3 +11259,16 @@ Lock pushed before run; result field_tests/results/a2c_line_gz.txt.
 - Corrections: D1110 and D1114 stand as γγ-only results, but their headline "comfortable pass" is superseded by this note.
 VERDICT: tree-SE FAIL/marginal on heavier haloes, PASS on MWPotential2014; PASS everywhere with the one-loop reduction. SERAPIS-E 1 TeV is NOT comfortably safe.
 MAP: none
+
+## D1119 (CENTRE, Djl loop (C), locked PREREG_A2e-line; ESTIMATE, assumed limit scaling): SERAPIS-E's 0.66 TeV wino (f = 0.14) passes the full line (γγ + ½γZ) for realistic Milky Way haloes — f_max 0.19–0.25 (McMillan17 / MWPotential2014, tree-SE) — and is marginal only for the H.E.S.S. benchmark Einasto at LO (0.133); with one-loop all pass (0.23–0.50)
+Lock pushed before run; result field_tests/results/a2e_line066.txt.
+- Assumption (labelled): the H.E.S.S. 2018 limit scales as M² from its quoted 1 TeV value, giving 1.74e-28 at 0.66 TeV. Not quoted.
+- σv_line at 0.66 TeV: 9.8e-27 (LO), 8.4e-27 (NLO), with |s₊₋|² 0.22 / 0.19. The Sommerfeld boost is weaker here than at 1 TeV.
+- f_max (LO / NLO):
+  - H.E.S.S. benchmark: 0.133 / 0.144 → LO FAIL by 5%, NLO PASS
+  - McMillan17: 0.189 / 0.204 → PASS
+  - MWPotential2014: 0.232 / 0.250 → PASS
+- Combined with D1118 (1 TeV, f = 0.26, at the edge): SERAPIS-E's lighter wino points pass more comfortably than the 1 TeV one. The 1.85 TeV point already fails (W2). The window's line-safety ranking is 0.66 > 1.0 > 1.85 TeV.
+- Caveat: the M² scaling is the main uncertainty. A quoted H.E.S.S. value near 0.7 TeV would replace it.
+VERDICT: PASS for realistic haloes (estimate); benchmark-halo LO marginal.
+MAP: none
