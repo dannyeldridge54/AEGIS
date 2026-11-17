@@ -1,0 +1,5 @@
+disk+bulge mass within 100 kpc: 7.065e+10 Msun
+s=0.8: M200=0.541e12 pulls KG -0.08 BHB -1.39 -> CONSISTENT
+s=1.0: M200=0.710e12 pulls KG +1.07 BHB -0.88 -> CONSISTENT
+s=1.2: M200=0.885e12 pulls KG +2.23 BHB -0.35 -> TENSION
+s=1.5: M200=1.156e12 pulls KG +4.04 BHB +0.23 -> EXCLUDED
