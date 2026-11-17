@@ -56,3 +56,8 @@ coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which 
 - R (D1137): Wilson-line lift: none at O(BC). Lead paused; R effort → S4d.
 - S4d prep (D1138): BMS 1811.11448 template; next: fetch §5.3 tensor equations, cross-check S4c2 at D=10, then lock S4d scalars.
 - S4d source map (ar5iv 1811.11448, 1.12M chars): offset 500k–600k = §4.3 scalars + §5 DM backgrounds (5.1–5.5); 600k–700k = §5.2 DM scalar sector (Eqs. 5.20–5.33: C = −7A, φ = −(8/φ′)(A′ + 7AΩ′), D Stückelberg, single physical scalar, eigen-eq. 5.33); tensor §5.3 is past 700k. S4d lock should transcribe Eqs. 5.20–5.33 at D=10, then generalise to D=6.
+- S4d source (fetched verbatim LaTeX, ar5iv 1811.11448 Eq. 5.33, D=10, conformal frame ds² = e^{2Ω(z)}[η+h]):
+  A'' + A'(24Ω' − (2/φ')e^{2Ω}V_φ) + A(m² − (7/4)e^{2Ω}V − 14 e^{2Ω}Ω' V_φ/φ') = 0, with C = −7A (5.31), φ = −(8/φ')(A' + 7AΩ') (5.32), D Stückelberg.
+  Prime presumably d/dz (inference). BCs not in the fetched chunk. Next S4d step (lock first): sympy re-derivation of the scalar system for general D from the
+  linearised Einstein–dilaton equations; PASS if at D=10 it reproduces 5.31–5.33 exactly (24 = ?(D), 7/4, 14 → identify D-dependence); then apply at D=6
+  with our background (S4b/S4c2) and BCs from regularity, matching how S4c2 handled the tensor tower.
