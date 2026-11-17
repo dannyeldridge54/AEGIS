@@ -12129,3 +12129,21 @@ MAP: none
   - Same targets (S1 band, S2). The S3 reference recomputed at x_end = 3e4 (2.564).
 VERDICT: S1 FAIL (M_th ≈ 3.47 est.), S2 PASS, S3 FAIL (lock reference error). The Sommerfeld machinery is supported; the Boltzmann inputs (g_*, α₂ scale) are OPEN.
 MAP: none
+
+### D1186 — R2e sourcing: Beneke et al. 2009.00640 relic set-up. Born 2.207 TeV and LO-Sommerfeld 2.886 TeV at Ω h² = 0.1205, a like-for-like target (2026-11-17)
+- [DEEP · literature, fetched this tick] **arXiv:2009.00640:**
+  - **Potential:** on-shell, α₂ = α_os(m_Z)/s_W² with α_os = 1/128.943, m_W = 80.385, m_Z = 91.1876, δm = 164.1 MeV (Sec. 3.3). These are exactly the sommerfeld_nlo constants.
+  - **Annihilation matrices:** MS-bar couplings run at one loop to μ = 2m_χ (Sec. 4.1). α̂(m_Z) = 0.00780372 (Eq. 3.27), ŝ_W²(m_Z) = 0.232486 (Eq. 3.28).
+  - **g_*, h_*:** from their ref. [54] plus [55] at the edges.
+  - **Integration:** Y(1) = Y_eq, to x = 1e8.
+  - **Ω h²:** 0.1205.
+  - **Results (Sec. 4.2.4):** Born 2.207 TeV, LO Sommerfeld 2.886 TeV, NLO 2.842 TeV. First LO resonance at 2.282 TeV.
+- **Why this matters:** Beneke uses the same Ω h² and our exact potential constants, so 2.886 TeV is the like-for-like LO target. Hisano's 2.7–3.0 TeV band was WMAP-era.
+- **Main source of our Born offset (2.53 vs 2.207):** we use on-shell α₂ = 0.0348 in Γ. Beneke uses MS-bar α̂₂ at 2m_χ.
+  - My one-loop SM estimate (b₂ = 19/6, a textbook coefficient): α̂₂(m_Z) = α̂/ŝ² = 0.03357 → α̂₂(5 TeV) ≈ 0.0314. That is −10% in α₂ and −19% in σ, i.e. M_Born ≈ 2.28 TeV.
+  - The remaining ≈ 3% is then the g_* treatment. This is an estimate, to be checked in R2e-a.
+- **g_*(T) table:** not in the repo (only constant 106.75 in relic.py and gwb.py). A citable table (Saikawa–Shirai 1803.01038, EOS2018 data on member.ipmu.jp) would need a small download.
+  - Danny's rule is that downloads need permission, so I'm asking, and splitting R2e:
+  - **R2e-a (locked now):** α̂₂(2M) in Γ plus x_end = 1e8, with g_* still constant.
+  - **R2e-b:** add g_*(T) once there is a table.
+MAP: none
