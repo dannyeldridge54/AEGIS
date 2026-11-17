@@ -1,0 +1,11 @@
+# PREREG W1 (Danny 17 Nov 06:44–06:45 CT: "test my theory about wiring them up together to get data they both need just like we've done to make them … the Janus string and this"): wire Chronos Clock (early universe) and Hyperion (late universe + astrophysics) into one loop (written before running)
+Theory under test (Danny's, stated in our words): connecting the two calculators so each feeds the other the data it needs (a) loses nothing, (b) closes into a self-consistent loop, and (c) yields cross-domain predictions neither gives alone.
+Wiring (theory/wiring/w1_chronos_hyperion.py, never run before this lock):
+- Hyperion → Chronos: H0 of the late-universe cosmology (Planck18 as used by Hyperion's CAMB runs, 67.66) enters Chronos's reheating match (k* = 0.05 Mpc⁻¹ → ln(k/a0H0)); Chronos's own default is 67.4.
+- Chronos → Hyperion: n_s, r, α_s and N* for SERAPIS-E (C = 1e-6, w = 0) at each T_R; Hyperion builds the linear P(k) with CAMB (A_s = 2.1e-9 as Chronos assumes, n_s, n_run = α_s, Planck18 background, Σm_ν = 0.0587 eV as SERAPIS predicts), then σ8, cluster counts n(>1e14), n(>1e15 M_⊙/h) (A7d machinery), and the GW background (A7c route B, matter phase from the end of inflation to T_R).
+Tests:
+W1a no information lost: the wire's Chronos step with H0 = 67.4 reproduces Chronos's own observe() for the same T_R (N*, n_s, r, α_s): relative ≤ 1e-10; the wire's Hyperion step with copied numbers reproduces a direct call: ≤ 1e-12.
+W1b loop closure: iterate H0 → Chronos → (n_s, α_s) → Hyperion → H0 (Hyperion's background is fixed by Planck18; the loop is expected to close in one pass): change in all outputs between pass 1 and pass 2 ≤ 1e-12.
+W1c cross-domain predictions (computed, reported with their size; "new" if the effect exceeds the tools' validated precision): Δn_s from wiring H0 (67.66 vs 67.4); and across T_R = 1e6, 1e7, 1e8, 3.2e8, 3e9 GeV: σ8, n(>1e14), n(>1e15) and the GW knee frequency/plateau. W1c counts as a positive result for (c) if dσ8 or d ln n(>1e15) across the T_R band exceeds 10× the validated precision (σ8 1e-4 from A7d H1; n(>M) 2.9e-3 from A4b).
+Verdict: W1a and W1b PASS → the wiring is VALIDATED; W1c reports whether the wired pair predicts something measurable together.
+Output field_tests/results/wiring_w1.txt. No reruns to chase; DEVIATIONS first.
