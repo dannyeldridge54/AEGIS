@@ -1,0 +1,2 @@
+J1b bisection failed: bisection did not reach the e-fold window — stop, as locked
+Diagnostic after the locked stop (not a rerun of the test): core.Model(V, dV, y0) for y0 = 0.2–4.0 raises "inflation does not end within Nmax = 20000" for every y0, although slow roll predicts ~60 e-folds from y0 = 0.35 and ε_V = 1 at y ≈ α/√2 ≈ 7e-4. The background integrator (DOP853 in e-fold time) stalls in the steep log-singular end region before the ε_H = 1 event fires, so N_tot is never finite and the bisection has nothing to bracket.
