@@ -11960,7 +11960,7 @@ Dashboard artifact "AEGIS Results Ledger" (claude.ai artifact 7iwtR7STB4vHVfP3xy
 (7 passed, 6 tools built, 2 failed and kept on record), each number traced to its source file; CubeMind eval-arm progress (items per arm of 300).
 Data: papers/dash/dnotes_2026-11-17.csv and cubemind_arms_2026-11-17.csv (attached files, not live — updated by hand each ledger refresh).
 LOCKBENCH plan L-1…L-8 is now complete.
-###  — R2b5: the open solver is converged in R with full Coulomb (PASS); the α scan moves both sides smoothly (2026-11-17)
+### D1178 — R2b5: the open solver is converged in R with full Coulomb (PASS); the α scan moves both sides smoothly (2026-11-17)
 - [CENTRE · computed] **Lock:** PREREG_R2b5_coulomb. **Result:** field_tests/results/r2b5_coulomb.txt.
 - **Check 1 (scored):** open side at x = 1.01 with full α.
   - S = 36.199, 36.198, 36.198 at R = R0, 2R0, 4R0 (R0 = 117 GeV⁻¹). Deviation < 1e-4 → **PASS**.
