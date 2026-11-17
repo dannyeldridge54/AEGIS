@@ -471,3 +471,4 @@ D1184  2026-11-17T20:41Z  R2d sourcing: Hisano LO Sommerfeld wino thermal mass 2
 D1185  2026-11-17T20:54Z  R2d LO Sommerfeld relic: M_th ~3.47 TeV (S1 FAIL), yield ratio 0.56 (S2 PASS), S3 FAIL (lock x_end inconsistency)
 D1186  2026-11-17T20:59Z  R2e sourcing: Beneke 2009.00640 relic inputs; LO Sommerfeld M_th 2.886, Born 2.207 (same Oh2); lock R2e-a
 D1187  2026-11-17T21:09Z  R2e-a: MSbar alpha2(2M): Born 2.325 (B1 FAIL +5.4% vs 2.207); LO Som 3.135 vs 2.886
+D1188  2026-11-17T21:15Z  Rotation tick plateau_origin: NULL (2604.05548 no plateau derivation)
