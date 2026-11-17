@@ -10803,3 +10803,24 @@ Lock pushed before run; result field_tests/results/b3_taui_darkrad.txt.
 - Open: whether the enhanced-symmetry states really are massless in the SERAPIS vacuum (D626: Hubble-induced SUSY breaking may lift them), and their production rate. Not computed.
 VERDICT: CONDITIONAL — CONSISTENT (unpopulated/massive), TENSION with ACT DR6 if populated SU(2)-sized.
 MAP: none
+
+## D1089 (CENTRE, Djl loop (C), locked PREREG_C2): Hyperion's Jeans dispersions in MWPotential2014 match the measured halo-star profile for β = 0–0.5; with the measured β ≈ 0.8 the model runs 12–46 km/s too hot, and a 1.5× heavier halo is disfavoured unless the halo is isotropic — the Galaxy loop now has a real-data handle on the halo amplitude
+Lock pushed before run; result field_tests/results/c2_halo_sigma.txt.
+- Data (quoted): Battaglia+2005: σ ≈ 120 km/s to 30 kpc; −0.6r + 132 beyond 40 kpc; 50 ± 22 at 120 kpc. Tracer ρ ∝ r^−3.5. Bird+2019 β ≈ 0.8 (K giants, roughly constant to 25 kpc, less radial beyond).
+- Model: galpy Jeans in MWPotential2014 (non-spherical potential evaluated at R = z = r/√2).
+- Results (σ_r at 20/50/80/120 kpc vs 120/102/84/50):
+  - β = 0: 100/89/82/75 → CONSISTENT. This sits exactly on the 20 km/s tolerance at 20 kpc (Δ = −20.0), a boundary pass.
+  - β = 0.5: 117/104/95/86 → CONSISTENT.
+  - β = 0.8: 132/116/106/96 → NOT CONSISTENT (+46 at 120 kpc, beyond 2σ).
+  - Halo × 1.5: β = 0 CONSISTENT (116/106/98/90); β = 0.5 and 0.8 NOT.
+- Reading:
+  - The usual mass–anisotropy degeneracy: a heavier halo needs a more isotropic halo-star population.
+  - With Bird's measured radial anisotropy (0.8, valid ≲ 25 kpc), the data prefer MWPotential2014's halo or lighter, plus β falling outward (as Bird reports).
+  - So W2's halo-amplitude range s = 0.8–1.2 is supported; s ≳ 1.5 needs near-isotropy that conflicts with the measured β.
+  - For the wino: a heavier halo (more J) is the direction that would tighten limits, and the kinematics disfavour it. The W2 wino conclusions (≤ 1 TeV pass, 1.85 TeV fail) hold.
+- Caveats:
+  - σ_GSR (line of sight) is compared to σ_r, with no projection modelled.
+  - There are no per-bin errors, so a 20 km/s a-priori tolerance was used.
+  - The data are a 2005 sample of 240 objects. Gaia-era profiles (e.g. Bird+2019 tables) would sharpen this; not fetched (abstract has no numbers).
+VERDICT: CONSISTENT for β ≤ 0.5 at the standard halo; halo × 1.5 disfavoured for measured anisotropy.
+MAP: none
