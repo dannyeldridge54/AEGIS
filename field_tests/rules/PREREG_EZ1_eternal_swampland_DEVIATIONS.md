@@ -1,0 +1,4 @@
+# DEVIATIONS for PREREG_EZ1 (written before the rerun)
+D1 (code bug, 16 Nov 21:52 CT): the script evaluated P_R = H²/(8π²ε_H) with the model potentials in their shape-only normalisation (V ≈ 1 on the plateau), giving P_R ≈ 140 at the pivot instead of the measured A_s = 2.1e-9; the eternal-inflation verdicts of that run ("ETERNAL WITHIN RANGE" for all branches) are therefore meaningless and are not results. The lock's criterion is the physical spectrum.
+Disclosure: the faulty run printed max P_R/P_R(pivot) of 1.6 (SERAPIS-E), 1.9 (Chronos), 2.0 (ρ), 6.1e7 (Kairos) in its own units; seen before this file. The Z (swampland) lines are unaffected (ratios of V and its derivatives, field range, r).
+Fix: normalise P_R(φ) → A_s · P_R(φ)/P_R(pivot at N* = 50), A_s = 2.1e-9 (the amplitude every SERAPIS fit uses); same for the plateau extension. One rerun. Verdict read from the rerun's file.

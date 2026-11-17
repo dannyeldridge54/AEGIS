@@ -16,6 +16,8 @@ for name, mk in branches:
         try:
             v = m.V(p); dv = m.dV(p); ev = 0.5*(dv/v)**2; PRx.append(v/(24*math.pi**2*ev) if ev > 0 else float('inf'))
         except Exception: break
+    Np0 = Nend - 50.0; norm = 2.1e-9/PR[np.argmin(abs(Ns - Np0))]          # DEVIATIONS D1: physical amplitude A_s at the pivot
+    PR = PR*norm; PRx = [x*norm for x in PRx]
     PRmax = max(PR.max(), max(PRx) if PRx else 0)
     i1 = np.argmax(PR >= 1) if (PR >= 1).any() else None
     eternal = (PR >= 1).any() or any(x >= 1 for x in PRx)
