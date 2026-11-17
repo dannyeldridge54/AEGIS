@@ -449,3 +449,4 @@ D1162  2026-11-17T19:25Z  JMF2: Janus-MF exact multi-field MS matches MultiModeC
 D1163  2026-11-17T19:25Z  LOCKBENCH L-1: machine-readable claims (tests pass, incl. numpy-bool trap)
 D1164  2026-11-17T19:27Z  LOCKBENCH L-2: lock linter catches this week's four lock mistakes
 D1165  2026-11-17T19:31Z  LOCKBENCH L-4: provenance stamps (tests pass)
+D1166  2026-11-17T19:37Z  JMF3: Janus-MF validated beyond quadratic (quartic, axions) vs MMC
