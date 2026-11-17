@@ -267,3 +267,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1019: commit all working files BEFORE claiming a D-number (the claim script pulls with rebase and refuses on a dirty tree), and check the number is non-empty and check it is non-empty (an empty claim silently drops the note).
 - D1020: test the end-of-inflation event on potentials with singular ends; e-fold-time integration can stall before ε_H = 1.
 - D1021: after a mechanism passes form and sign, check its natural size with real model numbers before investing further.
+- D1022: diagnose a failing integration with a trajectory dump before trying a second fix.
