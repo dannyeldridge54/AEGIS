@@ -12024,3 +12024,26 @@ MAP: none
 - Three locks in a row (R2b2, R2b3, R2b6) had wrong expectations, and each is recorded as FAIL. Lesson: source the expectation BEFORE locking a physics-continuity test, not after.
 VERDICT: FAIL as locked. Solvers validated (exact unitarity). Threshold-averaging question PARKED. Next: R2c thermal average.
 MAP: none
+
+### D1181 — R2c (stage a): χ⁰χ⁰-incoming thermal Sommerfeld factor at freeze-out, R₀₀ ≈ 1.38–1.51 (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_R2c_thermal00. The averaging is from Hisano et al. hep-ph/0610249, Eqs. (11) and (13), fetched this tick.
+  - DEVIATIONS D1: the first run omitted the closed side, against the lock. It is kept as r2c_thermal00_run1.txt. The fix was written before the rerun.
+  - **Result:** field_tests/results/r2c_thermal00.txt.
+- **R₀₀ = ⟨sΓs†⟩/2, χ⁰χ⁰ incoming, LO wino potential with full α, both sides of threshold included:**
+
+  | | x = 20 | x = 25 | x = 30 |
+  |---|---|---|---|
+  | M = 2000 | 1.384 | 1.446 | 1.506 |
+  | M = 2842 | 1.368 | 1.422 | 1.473 |
+
+  - Converged: the open side to < 6e-6, the full average to 1.4–1.7e-3 (criterion 1%).
+- **The closed side (v < v_th, Maxwell weight 0.8–2.6e-4) contributes a lot:** +0.025 to +0.045 at M = 2000 and +0.003 to +0.006 at M = 2842. Its weight is tiny, but S there reaches ~10²–10³ because of the closed-channel resonance structure, so it is not negligible at the 2–3% level.
+- **The parked threshold band (x_E ∈ [0.9, 1.1]) has Maxwell weight 2.5–7.8e-5.** Even with S ~ 340 (D1159 peaks) it moves R₀₀ by at most ~0.01, below 1%. So the D1180 parking decision holds for freeze-out.
+- **Scope (honest):** this is ONE of the ⟨σ_ij v⟩ pieces. Still missing:
+  - χ⁺χ⁻ incoming (row 1 of the same solver);
+  - the charge-1 (χ⁰χ^±) and charge-2 (χ^±χ^±) sectors with their own potentials and Γ;
+  - the g_eff sum of Eq. (13).
+  - Only after those can the thermal relic mass be compared with Beneke's 2.842 TeV (D1152 bracket).
+- **Next (R2c-b):** source the charge-1 and charge-2 wino potentials and Γ matrices (Hisano hep-ph/0610249 / 1307.4082 / Beneke 1411.6930) BEFORE locking (lesson from D1180), then run row 1 and the other sectors.
+VERDICT: stage a COMPUTED and converged. No physics score at this stage (no sourced number for R₀₀ alone).
+MAP: none
