@@ -1,2 +1,3 @@
 D979-projHnsmatch|timeout 20000 python3 theory/flux/projH_nsmatch_d979.py
 D981c-alphawide|timeout 20000 python3 theory/flux/alpha_wide_d981.py
+D989-janusval|timeout 30000 python3 theory/janus/validate_d989.py
