@@ -65,3 +65,12 @@ coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which 
 - S4e plan: scalar KK masses. Validation target [fetched, 2209.10553 Eq. 5.14]: 10D critical orientifold (γ = γ_c, δ = 0), SCALAR master eq. (5.3)/(5.5), shooting: m1 ≈ 0.97π/L, m2 ≈ 2.13π/L, L = Einstein-frame proper length; BCs 'Dirichlet or Neumann' (unspecified → run both, report which reproduces). Steps: fetch the δ = 0 critical background (§3, Eqs. near 3.12–3.13), build Schrödinger solver for H = b + A†A, lock reproduction (≤ 3%), then apply to our 6D subcritical vacuum.
 - S4e (D1141): NOT VALIDATED (4% scale offset, ratio OK). Next: fetch BTR's L and mass definitions (§5.2–5.3), re-lock.
 - S4e follow-up (fetched 2209.10553 §5.2–5.3): L = Einstein-frame proper length between the singularities (y=0 to ∞), no cutoff stated; m² = eigenvalue of H in z with flat η (same as ours); Eq. 5.14 values given to 2 sig. figs, no error bars or method details; heterotic not extractable 'due to numerical instabilities'. Our definitions match theirs, so the 4% gap (D1141) is within what their unstated numerics allow. Next lock S4e2: validate the solver by an INDEPENDENT method on the same 10D case (finite-difference/Chebyshev eigen-solve vs Prüfer, agree ≤ 0.5%), report BTR as context only; then the 6D masses.
+
+## 17 Nov 2026 — why S4e is −4% from BTR (definition check, after D1214)
+Fetched BTR (arXiv 2209.10553) §5.3 / eq. 5.14: L = "the proper length of the internal interval", between the two curvature singularities, no cutoff;
+eigenproblem eq. (5.5) H Ψ = m²Ψ in the conformal coordinate z (dz = e^{B−A} dy); BC "Dirichlet or Neumann" (footnote 4) — which one the shooting used
+is not stated. Our S4e uses L = ∫ e^B dy between cutoffs (converged to 2e-7) — the same definition. Both of our masses are low by the same ~4%
+(0.932/0.97, 2.040/2.13) while the ratio m₂/m₁ agrees (2.190 vs 2.196), and two independent solvers agree to 1e-7 (D1171, D1214). A common factor points
+to a normalisation convention (e.g. which warp-factor value the 9D mass is measured against, or BTR's 2-sig-fig rounding of a slightly different L), not to
+the spectrum. Next step (large list 12): locked check of the mass normalisation — compute m in units of the warp factor at a stated reference point and
+see whether one convention gives 0.97/2.13 for BOTH modes; no change to S4e's verdict (NOT VALIDATED vs BTR stays on record).
