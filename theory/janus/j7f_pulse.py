@@ -70,8 +70,8 @@ def run():
             sel = (x >= min(far[0], far[stop-1])) & (x <= max(far[0], far[stop-1])); x, V, dV = x[sel], V[sel], dV[sel]
             SV, SD = CubicSpline(x*s, V), CubicSpline(x*s, dV/s)
             Vf = lambda p: float(SV(p)); dVf = lambda p: float(SD(p))
-            cand = sorted(x*s, key=lambda p: -sgn*p); m_ok = None
-            for p0 in cand[:: max(1, len(cand)//60)]:
+            cand = sorted([p for p in x*s if sgn*(p - x60*s) >= 0], key=lambda p: sgn*p); m_ok = None   # DEVIATIONS D1: nearest-first
+            for p0 in cand[:: max(1, len(cand)//200)]:
                 try:
                     mm = Model(Vf, dVf, p0, Nmax=4000)
                     if mm.Nend >= 75: m_ok = (p0, mm); break
