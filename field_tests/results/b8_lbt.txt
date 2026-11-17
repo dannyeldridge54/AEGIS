@@ -1,0 +1,4 @@
+base: dN_final=0.0000 (B7 0.0, ok) Yp=0.24592 pull +0.09; 1e5DH=2.4360 pull -0.88 -> OK | EMPRESS Yp pull +1.43
+U(1): dN_final=0.0541 (B7 0.054, ok) Yp=0.24664 pull +0.64; 1e5DH=2.4538 pull -0.68 -> OK | EMPRESS Yp pull +1.61
+SU(2): dN_final=0.1613 (B7 0.161, ok) Yp=0.24804 pull +1.71; 1e5DH=2.4890 pull -0.27 -> OK | EMPRESS Yp pull +1.96
+SU(2)+gaugino: dN_final=0.3015 (B7 0.301, ok) Yp=0.24985 pull +3.08; 1e5DH=2.5350 pull +0.25 -> EXCLUDED | EMPRESS Yp pull +2.41
