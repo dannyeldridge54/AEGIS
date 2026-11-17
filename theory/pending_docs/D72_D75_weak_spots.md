@@ -10686,3 +10686,24 @@ MAP: none
 VERDICT: A1 VALIDATED.
 SERAPIS-E link: its wino (0.66/1.0/1.85 TeV with f=0.14/0.26/0.67, D1080) sits off-resonance. CMB f_max at 0.7/1.0/1.9 TeV is ≥1.35 for f_eff=0.41, so all three PASS the CMB corner. The binding corner remains the γ-line (W2).
 MAP: none
+
+## D1082 (CENTRE, Djl loop (B), locked PREREG_B1): Hyperion now has BBN (wrapper on CAMB's PRIMAT 2021 + PArthENoPE tables) and SERAPIS's light elements are CONSISTENT with observation in both codes — Y_p pull +0.4/+0.6, D/H pull −1.8 (PRIMAT) / +1.3 (PArthENoPE); B1 VALIDATED
+Lock 3578a8c pushed before run; result field_tests/results/b1_bbn.txt.
+- Sourced inputs:
+  - ω_b = 0.02242 ± 0.00014 (Planck 2018 VI Table 2, +BAO column).
+  - 10⁵ D/H = 2.527 ± 0.030 (Cooke+2018).
+  - Y_p = 0.2453 ± 0.0034 (Aver+2021).
+  - SERAPIS ΔN_eff = 0 (D725).
+- T1: the wrapper is lossless (0 difference). PASS.
+- T2: the two codes' Y_p agree within 5.6e-4 for ΔN = 0, 0.5, 1. PASS.
+- D/H between the codes differs by 5.6%. PArthENoPE is higher. This is the known nuclear-rate spread: PRIMAT includes the 2021 LUNA d(p,γ) rate, and PArthENoPE 2017 predates it.
+- R1 (computed): PRIMAT Y_p 0.24721, D/H 2.439e-5; PArthENoPE Y_p 0.24674, D/H 2.576e-5. All four pulls are |pull| < 2 → CONSISTENT. The largest is PRIMAT D/H at −1.77σ (the well-known mild D/H tension, not SERAPIS-specific).
+- R2: BBN-only (Planck ω_b fixed, PRIMAT) gives ΔN_eff in [−0.04, +0.41] at 95%. SERAPIS's ΔN = 0 is INSIDE. This also confirms that D723's dark-radiation-dominated branch is excluded, as already killed.
+- R3 (formal, M̄_P = 2.435e18 GeV, g* = 106.75): the ρ-branch heavy states decay at t = 2.3e-17 s (T = 1e5 GeV) and 2.3e-19 s (1e6 GeV), 16.6–18.6 decades before BBN. Late-decay BBN limits do not reach them; the PREP_B estimate is now formal.
+- Caveats:
+  - PRIMAT's σ(Y_p^BBN) is used as σ(Y_p): the mass/number conversion changes it by less than 1%.
+  - ω_b is held at Planck's value, not jointly fit.
+  - The hmf.py comment calls 0.02242 "TT,TE,EE+lowE+lensing best fit", but Table 2 lists it as the +BAO mean. This is a label fix only, flagged here and not silently edited.
+- Wiring: closes the (B) triangle. Chronos supplies T_R and the decay epoch, Hyperion supplies ω_b and N_eff, and BBN is the referee. The Chronos ΔN_eff from the ρ branch is the next input to wire.
+VERDICT: B1 VALIDATED.
+MAP: none
