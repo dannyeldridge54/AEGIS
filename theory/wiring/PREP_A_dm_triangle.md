@@ -19,3 +19,7 @@ Then: lock PREREG_A1 (wino p_ann vs Planck), run, D-note.
   Derived bracket (labelled DERIVED, not quoted): paper states high-mass SM-channel CMB limits lie at <σv> ≲ 1–3e-27 (m/GeV) cm^3/s with p_ann < 4.1e-28 → f_eff ≈ 0.14–0.41. e+e-/γ asymptote f_eff ≈ 0.4 (quoted).
   A1 will scan f_eff over [0.14, 0.41] instead of using one value.
 - Still missing: one numerical anchor for wino Sommerfeld total σv (needed to lock A1).
+## 2026-11-17 13:55 UTC — NLO (D1087)
+- 2009.00640: resonance 2.282 (LO) → 2.419 TeV (NLO); relic 2.886 → 2.842 TeV.
+- The NLO fit is Eq. 3.25 (off-diagonal, in L = ln(m_W r), x0 = 555/94) and Eq. 3.26 (diagonal). The full text is needed to code it.
+- Our LO solver reproduces 2.282 with their inputs (+0.15%).

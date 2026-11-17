@@ -10768,3 +10768,18 @@ Lock pushed before run (compact.tov gained p_surf, default 0, behaviour unchange
 - Next (A3e, when D comes round again): lock a diagnostic that prints both codes' event radius and P, ρ at the event, plus the radius at which each code crosses each crust boundary. No retuned criterion.
 VERDICT: A3d NOT VALIDATED (wrong diagnosis recorded; the physics outputs are unaffected).
 MAP: none
+
+## D1087 (CENTRE, Djl loop (A), locked PREREG_A1b): our wino Sommerfeld solver puts the LO resonance at 2.2855 TeV with Beneke–Szafron–Urban's inputs vs their 2.282 TeV (+0.15%) — A1b VALIDATED; but our default couplings move it to 2.378 TeV, and NLO (+0.137 TeV, quoted) pushes the CMB-excluded band toward the thermal wino
+Lock pushed before run; result field_tests/results/a1b_resonance.txt.
+- Source (quoted, arXiv:2009.00640):
+  - First ¹S₀ resonance: 2.282 TeV at LO, 2.419 TeV at NLO.
+  - Relic mass: 2.886 TeV (LO), 2.842 TeV (NLO).
+  - Inputs: α = 1/128.943, c_W = m_W/m_Z, m_W = 80.385 GeV, m_Z = 91.1876 GeV, δm = 164.1 MeV. This gives s_W² = 0.2229, α₂ = 0.03479.
+- T1: unchanged solver code, their inputs → peak at 2.2855 TeV, rel +0.0015 (lock: 1%). PASS.
+- Parameter sensitivity: our defaults (α_W = 0.0335, s_W² = 0.231, δm = 0.1645, from 1307.4082) give 2.378 TeV, i.e. +4%. A1/A7b/W2 results carry about ±0.1 TeV in resonance position from the coupling-scheme choice alone. This is worth stating wherever the resonance band is quoted.
+- NLO (not implemented; the fit Eq. 3.25 was only partly quoted by fetch):
+  - A rigid +0.137 TeV shift moves D1081's f_eff = 0.41 band from 2.0–2.7 TeV to about 2.14–2.84 TeV [estimate].
+  - That puts its upper edge at the NLO thermal-wino mass of 2.842 TeV. So "thermal wino CMB-allowed" (D1081, D1084) is safe at LO but MARGINAL at NLO for the high f_eff. At f_eff = 0.14 the band (2.2–2.5 → ~2.34–2.64) stays clear.
+- To settle it: implement the NLO potential (needs the full Eq. 3.25/3.26 text, e.g. from the PDF via a non-truncating route), then recompute A1 with f_eff(M) from the 1506.03811 tables (needs Danny's PC or another route to the epsilon tables).
+VERDICT: A1b VALIDATED; open item: thermal wino vs CMB at NLO and high f_eff is marginal [estimate].
+MAP: none
