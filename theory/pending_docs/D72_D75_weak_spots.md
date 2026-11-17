@@ -11721,3 +11721,16 @@ Lock pushed before run. D1: the log-Y solver crashed and was fixed via DEVIATION
 - Next (R1b): source a standard closed-form tree-level effective cross section for the pure wino (e.g. Hisano et al. 2007, "Non-perturbative effect on thermal relic abundance", or a review quoting σ_eff v = (const)·πα₂²/m²). Lock it, then compare: our Γ assembly must reproduce that constant before the Sommerfeld stage (R2 vs 2.886 TeV LO, R3 vs 2.842 TeV NLO, which is the blind A1e test).
 VERDICT: R1 NOT VALIDATED (σ_eff assembly ~×3 low); solver sane.
 MAP: none
+
+## D1156 (CENTRE, manual Djl, new module; locked PREREG_R1b after DEVIATIONS_R1b): R1's factor was exactly 4 — the Hisano Γ pair rates are already spin-summed, and ×4 reproduces Arkani-Hamed–Delgado–Giudice's pure-wino σ_eff v = 37g⁴/(192πM²) = (37/12)πα₂²/M² to 1e-12; the Born relic module is VALIDATED against that paper's own Ωh² = 0.13 (M/2.5 TeV)² (2.531 vs 2.407 TeV, +5.2%)
+Locks pushed before the rerun. Result field_tests/results/r1b_relic.txt.
+- T1: the convention identity holds exactly. PASS. The independent source, not the target mass, fixed the factor.
+- T2: thermal mass 2.531 TeV vs 2.407 from the source's Ω relation at 0.1205 → +5.2% (lock 6%). PASS.
+- Spread vs Beneke+2020 Born 2.207 TeV: +14.7% (on-shell α₂), +10.7% (MS-bar α₂(m_Z)). The two literature Born values themselves differ by 9% (2.41 vs 2.207): a known input/scheme spread (g*(T_f) near the top/W thresholds, α₂ at μ ~ m, freeze-out treatment).
+  - Our solver uses g* = 106.75 flat, while the true g* at T_f ≈ 100 GeV is below that; Ω ∝ 1/√g*. That pushes us high, a plausible part of the gap [estimate].
+- Next (R2): add Sommerfeld to the freeze-out (the thermally averaged S(v) from sommerfeld_nlo at LO and NLO, plus δm Boltzmann weights).
+  - Targets 2.886 TeV (LO) and 2.842 TeV (NLO), as RATIOS to our Born mass, to cancel the shared g*/α₂ systematics.
+  - Quoted ratios: LO/Born = 2.886/2.207 = 1.308; NLO/Born = 1.288.
+  - The NLO ratio, with the √2 convention FIXED IN ADVANCE, is the blind A1e test that has been open since D1091.
+VERDICT: R1b VALIDATED (Born relic); R2 (Sommerfeld freeze-out, ratio test) next.
+MAP: none
