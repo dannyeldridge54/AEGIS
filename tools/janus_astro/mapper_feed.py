@@ -108,3 +108,41 @@ def orbit_params_batch2(x, y, z, vx, vy, vz, t_gyr=3.0, eta=0.01, mw=None, max_s
         hist_t = [hist_t[1], t.copy()]; hist_r = [hist_r[1], r.copy()]; hist_z = [hist_z[1], az.copy()]
         live = t < T - 1e-12
     return dict(rperi=rp*r0, rapo=ra*r0, zmax=zm*r0, ecc=(ra - rp)/(ra + rp), steps=steps)
+
+def orbit_params_batch3(x, y, z, vx, vy, vz, t_gyr=3.0, eta=0.01, eta_in=0.006, r_in_kpc=1.0, mw=None, max_steps=400000):
+    """A8c3: as batch2, faster — bulge enclosed mass from a 20000-point log-r table (linear interpolation in ln r),
+    turning-point parabolas evaluated only where a turn occurs, two-tier step (eta_in inside r_in_kpc)."""
+    from . import galaxy as G
+    from scipy.special import gamma, gammainc
+    mw = mw or G.MW(); p = mw.p; r0, v0 = 8.0, 220.0
+    s = (3 - p['alpha'])/2; lr_tab = np.linspace(math.log(1e-5), math.log(200.0), 20000)
+    Mb_tab = 2*math.pi*p['bamp']*p['rc']**(3 - p['alpha'])*gamma(s)*gammainc(s, (np.exp(lr_tab)/p['rc'])**2)
+    def acc(X):
+        R = np.hypot(X[0], X[1]); r = np.sqrt(R*R + X[2]*X[2])
+        Mb = np.interp(np.log(r), lr_tab, Mb_tab)
+        fs = (-Mb/r**2 - p['hamp']*(np.log1p(r/p['ha'])/r**2 - 1/(r*(p['ha'] + r))))/r
+        sq = np.sqrt(X[2]*X[2] + p['b']**2); D = (R*R + (p['a'] + sq)**2)**1.5
+        fd = -p['damp']/D
+        return np.array([(fs + fd)*X[0], (fs + fd)*X[1], fs*X[2] + fd*X[2]*(p['a'] + sq)/sq])
+    X = np.array([x, y, z], float)/r0; V = np.array([vx, vy, vz], float)/v0; N = X.shape[1]
+    T = t_gyr/(r0*3.0856775814913673e16/v0/3.15576e16); rin = r_in_kpc/r0
+    t = np.zeros(N); r = np.sqrt((X**2).sum(0)); az = np.abs(X[2])
+    rp, ra, zm = r.copy(), r.copy(), az.copy()
+    t1, t2 = t.copy(), t.copy(); r1, r2 = r.copy(), r.copy(); z1, z2 = az.copy(), az.copy()
+    a = acc(X); live = np.ones(N, bool); steps = 0
+    while live.any() and steps < max_steps:
+        sp = np.sqrt((V**2).sum(0)); et = np.where(r < rin, eta_in, eta)
+        h = np.minimum(et*r/np.maximum(sp, 1e-12), 0.02); h = np.where(live, np.minimum(h, T - t), 0.0)
+        V += 0.5*h*a; X += h*V; a = acc(X); V += 0.5*h*a; t = t + h; steps += 1
+        r = np.sqrt((X**2).sum(0)); az = np.abs(X[2])
+        for y2, y1, cur, ext, lo in ((r2, r1, r, rp, True), (r2, r1, r, ra, False), (z2, z1, az, zm, False)):
+            turn = ((y1 <= y2) & (y1 <= cur)) if lo else ((y1 >= y2) & (y1 >= cur))
+            idx = np.nonzero(turn & live)[0]
+            if idx.size:
+                v = _vertex(t2[idx], t1[idx], t[idx], y2[idx], y1[idx], cur[idx])
+                ext[idx] = np.minimum(ext[idx], v) if lo else np.maximum(ext[idx], v)
+            if lo: np.minimum(ext, np.where(live, cur, ext), out=ext)
+            else: np.maximum(ext, np.where(live, cur, ext), out=ext)
+        t2, t1 = t1, t; r2, r1 = r1, r; z2, z1 = z1, az
+        live = t < T - 1e-12
+    return dict(rperi=rp*r0, rapo=ra*r0, zmax=zm*r0, ecc=(ra - rp)/(ra + rp), steps=steps)
