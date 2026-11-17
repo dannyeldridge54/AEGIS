@@ -49,3 +49,4 @@ coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which 
 - R (D1044): D1043 withdrawn (redefinition, not cancellation). Next R: in the S' frame the GS tilt variable is ln(2 Im T), not L — re-test D1010's ρ match with ln Im T (lock first).
 - R (D1045): GS route NOT reproduced in the consistent frame (S' fixed → tilt variable ln 2ImT). Options: finer κ scan (lock), or a non-condensate dilaton stabilisation fixing S.
 - R (D1048): GS route CLOSED (LRW S' frame + BGW linear multiplet). Tilt origin back to open; remaining idea: non-GS s→1 Eisenstein source (D1031).
+- R (D1049): NEW LEAD — matter wave function log (AGNT hep-th/9301033 Eq. 20, N=2 coefficient). Plan: matter F-term plateau? size γ̃ ↔ 6e-5? S'-shift independence?

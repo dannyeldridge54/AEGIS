@@ -1767,3 +1767,4 @@ Touches: none.
 ## D1046: R5b — fine κ scan: only crossing κ*=−9.7e-3 sits at the breakdown edge with r ×4 → ℓ-tilt FAILS CONFIRMED; GS route closed unless S (not S') is stabilised
 ## D1047: L8 — distance priors fit exactly (χ²=0) but the lock was degenerate (3 params/3 data); informative part: implied h 0.675–0.676, Ω_m 0.3155; own z* 1090.30
 ## D1048: R — BGW (hep-th/9605170): GS term cancels all T-dependence at fixed ℓ; with D1044–D1046 the GS route for the ρ tilt is CLOSED
+## D1049: R lead — AGNT Eq. 20: matter wave function Y_j = 2γ̃_j ln[|η|⁴(T+T̄)] with N=2 coefficient (not GS) → candidate non-GS source of the ρ tilt

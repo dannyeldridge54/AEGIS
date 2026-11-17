@@ -10414,3 +10414,15 @@ frame), and neither reproduces the ρ tilt (D1045/D1046). The GS route for the �
 withdrawn; D1010's computed equivalence stands only as a statement about the form V = P/(1 − κL). Open: the tilt's origin (back to D991a-level
 "open"); remaining candidate from D1031: an s → 1 Eisenstein term entering the potential from a source other than the GS counterterm.
 MAP: node=eps_tilt status=estimate touches=[] ripple=no
+
+## D1049 — RIGHT (R track) — a non-GS s = 1 lead: the one-loop matter wave function carries ln(|η|⁴(T+T̄)) with an N=2-sector coefficient [literature]
+[literature, fetched hep-th/9301033, Antoniadis–Gava–Narain–Taylor] (i) moduli metric: G⁽¹⁾_{TT̄} = b̃^{GS} G⁽⁰⁾_{TT̄} (Sec. 7) — GS-type, no log (closed,
+consistent with D1048). (ii) gauge couplings: −b̃_a ln[|η(iT)|⁴(T+T̄)] (Eq. 19), b̃_a "entirely by N=2 sectors". (iii) untwisted matter wave
+function: Y_j = 2γ̃_j ln[|η(iT_j)|⁴(T_j+T̄_j)] + y_j (Eq. 20), γ̃_j = −b̃_j/2, tied to the N=2 vector-multiplet β-function, NOT to δ_GS.
+Why it matters: a potential that is an F-term of a matter field A_j, V ∝ |∂_A W|²/Z_A, inherits 1/Z_A ∝ e^{−Y_j} ~ (1 + 2γ̃_j L + …) — the
+Kronecker L of D1031 with a coefficient that is (a) not removed by the dilaton shift (it is not GS), (b) zero for Z₃ (no N=2 sectors) and
+model-dependent elsewhere, so it CAN be small. This is the first source found with the right structure that survives D1044–D1048.
+Not yet a claim: needs (1) whether SERAPIS-ρ's plateau can be a matter F-term with T as the rolling field, (2) the size ε = 6e-5 ↔ γ̃_j
+(normalisation of Y_j vs ln Z), (3) the ℓ-vs-L question again (does Y_j hold at fixed GS-shifted dilaton? — it is a matter-sector
+quantity, so the S' shift should not touch it; to be checked). Next R step: lock (1)–(3) as a derivation plan.
+MAP: none
