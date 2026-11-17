@@ -11413,3 +11413,11 @@ C1: L8b best-fit ΛCDM (CAMB σ8 amplitude as stated referee, rescaled to the fi
 Janus-LT now covers BAO, SN, compressed CMB, growth shape and fσ8 against real data. Amplitude σ8,0 still from CAMB (Janus-LT has the EH98 shape, D1065,
 but not the A_s normalisation — formula to be fetched).
 MAP: none
+
+## D1131 (CENTRE, Djl loop (A), literature): HL-LHC disappearing tracks reach a pure wino of 0.9 TeV (95%, 14 TeV, 3 ab⁻¹; Han–Mukhopadhyay–Wang 2018, 1805.00015), or ~0.5 TeV with ×5 background — so the post-IGS SERAPIS-E wino window (≈ 0.67–0.9 TeV, D1128/D1129) is fully covered in the optimistic-background case and not covered in the pessimistic one
+- Quoted: "expected reach on wino-like DM mass at the 95% C.L. is 0.9, 2.1 and 6.5 TeV" for 14 / 27 / 100 TeV. The background is varied 20%–500%; the reach drops to ~500 GeV at high background. Systematics are 20% (background) and 10% (signal).
+- Reading:
+  - The surviving window's lower edge (670 GeV, the current ATLAS bound) sits between the pessimistic (0.5) and optimistic (0.9) HL-LHC reach.
+  - Combined with IGS-class line searches, which press the upper edge, the SERAPIS-E post-hoc wino can be closed this decade if the HL-LHC background is near the lower estimate.
+  - D1129's table phrase "HL-LHC … cover the band" holds only for the optimistic background. Refine it at the next paper edit: "cover the band for the lower background estimate (reach 0.5–0.9 TeV)".
+MAP: none
