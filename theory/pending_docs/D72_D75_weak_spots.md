@@ -11661,3 +11661,17 @@ MAP: none
   - Combined with HL-LHC (0.5–0.9 TeV, D1131): a near-complete test this decade.
 - D1150's scaling estimate (~5–10%) is consistent with this direct quote.
 MAP: none
+
+## D1152 (CENTRE, manual Djl, literature + arithmetic): the wino fraction f(M) = (M/2.9 TeV)² used since D784 is a LOWER estimate below ~2 TeV — Sommerfeld-enhanced freeze-out weakens at low mass, so f(M) lies between the Sommerfeld-thermal scaling (M/2.842)² and the Born-thermal scaling (M/2.207)² (2009.00640); CTA's quoted ~17% at 1 TeV (2008.00692) sits inside that bracket — SERAPIS-E's window fractions rise to ≈ 5.6–9.2% (0.67 TeV) and 10–17% (0.9 TeV), tightening every line verdict
+- Quoted (2009.00640): the observed Ωh² = 0.1205 is reached at 2.842 TeV (NLO), 2.886 (LO), 2.207 (Born, no Sommerfeld). No Ω(M) at lower masses is quoted.
+- Bracket (arithmetic; the Ω ∝ M² scaling within each regime is an estimate):
+  - 0.67 TeV: 0.056–0.092
+  - 0.9 TeV: 0.100–0.166
+  - 1 TeV: 0.124–0.205 (CTA's 17% sits inside)
+- Consequences (re-reading earlier verdicts with the upper f):
+  - 0.66 TeV vs IGS (D1128, f_max 0.15–0.34 for realistic haloes): f up to 0.092 still PASSES.
+  - 1 TeV (D1126/D1142): f 0.12–0.21 instead of 0.26. MORE favourable than assumed: the MWPotential2014/Gaia-low-c haloes pass more easily, while the benchmark and McMillan17 remain marginal. The earlier verdicts used f = 0.26 from D784's "5–41%" mapping, so a re-anchor of D784's f-values is needed (see below).
+  - CTA (D1151): a cap of 7% at 1 TeV vs f 0.12–0.21 → CTA tests 1 TeV in any case; the 0.67 TeV f 0.056–0.092 vs a cap of ~7% → marginal.
+- ⚠ Inconsistency found: D784/D1080 used f = 0.14 / 0.26 / 0.67 at 0.66 / 1.0 / 1.85 TeV. Those are ≈ (M/1.8–2.2)², not (M/2.9)²: 0.26 at 1 TeV implies M_th ≈ 1.96 TeV. So the SERAPIS-E fractions already in use are LARGER than the (M/2.9)² rule quoted in the paper text, and closer to the Born-like end.
+  - The paper says "f = (M₂/2.9 TeV)²", but the tables and checks used 0.14 / 0.26 / 0.67. One of them is wrong. This needs a source-level recheck of D784 on the next A tick, before any v3.3 posting.
+MAP: none
