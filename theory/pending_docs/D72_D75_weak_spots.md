@@ -11078,3 +11078,25 @@ Lock pushed before run. Result field_tests/results/b5_linx.txt. LINX via pip lin
 - Hyperion now has three BBN routes: PRIMAT table, PRyMordial, LINX. That is a good basis for a validated bbn_net module (B4b next).
 VERDICT: B5 CONSISTENT; convention bug found and corrected (D1082a).
 MAP: none
+
+## D1107 (CENTRE, Djl loop (B), locked PREREG_B4b): three independent BBN codes agree at Planck ω_b — Y_p(mass) within 3.2e-4, D/H within 0.17%, Li-7 within 2.5% — B4b VALIDATED; Hyperion's BBN is now a three-referee module
+Lock pushed before run. DEVIATIONS_B4 D1 fixed as locked (scratch copy with Omegabh2 = 0.02242 edited; confirmed in effect). Result field_tests/results/b4b_three.txt.
+- At Ωbh2 = 0.02242, ΔN = 0, giving Y_p(mass) / 10⁵D/H / 10¹⁰⁷Li/H:
+  - PRIMAT 2021 table: 0.24588 / 2.4393 / —
+  - PRyMordial: 0.24560 / 2.4351 / 5.556
+  - LINX (PRIMAT-2023 key network): 0.24592 / 2.4360 / 5.699
+- Spreads: Y_p 3.2e-4 (lock 1e-3), D/H 0.17% (lock 3%), Li 2.5% (lock 5%). PASS.
+- PRyMordial's 0.0003 lower Y_p is consistent with its shorter τn (878.4 vs 879.4 s) [estimate].
+- D1104 estimate check: Li at the Planck ω_b came out 5.556, which matches my ∝η² extrapolation (5.56).
+- SERAPIS (ΔN = 0, Planck ω_b) is unchanged. Pulls vs observation, mass-fraction Y_p:
+  - Y_p: +0.09σ to +0.18σ
+  - D/H: −1.8σ to −2.0σ (Cooke, with the PRIMAT-family rates)
+  - Li-7: 3.5× the Spite plateau
+  - All Standard-Model-level, as in D1096 and D1100.
+- Plan, bbn_net.py:
+  - A thin wrapper that calls LINX (pip, fast after JIT, differentiable; supports ΔN_eff and τn and rate nuisances) as the primary route.
+  - PRyMordial (scratch clone, pinned commit) as the second referee, and the PRIMAT table as the fast path.
+  - It exposes Y_p(mass), Y_p^BBN, D/H, ³He/H and ⁷Li/H with explicit convention names (lesson from D1082a).
+  - Build on a later B tick, with its own lock (same-input agreement plus the τn/ΔN derivative cross-check).
+VERDICT: B4b VALIDATED.
+MAP: none
