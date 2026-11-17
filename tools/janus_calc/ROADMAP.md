@@ -1,7 +1,7 @@
 # Janus String Calculator — goals (set by Danny, 16 Nov 2026): do everything ASPIC does, better, and prove it
 Standing Jl-loop track "J". Every stage: lock first, two independent routes, reproduce the previous stage's limit, record a D-note. ASPIC claims are checked against its manual (cp3.irmp.ucl.ac.be/~ringeval/man/libaspic.html) before any comparison is stated.
 - J0 DONE (D989): n_s, r validated on 32 points (24 SERAPIS + 8 textbook), ~4e4x faster than the exact solver.
-- J0b IN PROGRESS: α_s vs exact solver (PREREG_D989, PC run); then Zenodo v1.0.
+- J0b DONE (D1003): Battery B α_s vs exact 8/8, ≤ 0.30 %; D981c replication converged.
 - J1 BUILT 16 Nov (tools/janus_calc/anyV.py; dev checks: Starobinsky, m²φ², φ⁴, exponential, T-model α=1 and 0.1, natural — formal locked validation folds into J7): Any potential: user gives V(φ) as a formula/string or callable (symbolic derivatives via sympy, numeric fallback); automatic start/end of inflation; no per-model code.
 - J2 DONE (D995). Exact mode switch: every result can be re-run through the exact Mukhanov–Sasaki solver; report fast−exact gap.
 - J3 DONE (D994): n_s median 1.6e-6 (×10 better). Third order: add the next slow-roll order (from the published third-order expressions, verified symbolically and numerically, never from memory); target |Δn_s| ~ 1e-6.

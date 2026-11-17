@@ -10065,3 +10065,10 @@ MAP: none
 Consequence: on n_s and r, the observables that matter for Planck/ACT/SPT-level fits (σ(n_s) ≈ 3e-3 now, ~1e-3 soon), ASPIC's method error (up to 1.2e-3 in n_s, 5 % in r) is a sizeable fraction of the error bar; Janus's (≤ 3.5e-5) is negligible. Claim scope: these 7 models and N* = 50, 60; no claim about ASPIC's reheating module (next: J7b, same comparison through ln R_rad).
 Next J: J7b reheating route (ASPIC foo_x_rrad vs Janus observe with the same ln R_rad); widen to ~20 ASPIC models; an α_s reference with a wider k-range and more points (lock first).
 MAP: none
+
+## D1003 (track J, locks PREREG_D989 and PREREG_D981): Battery B — Janus's α_s against the exact solver on the 8 SERAPIS points: 8/8 PASS, VALIDATED (|Δα_s/α_s| ≤ 0.30 %, median 0.10 %; n_s ≤ 2.3e-5; r 0.01 %); D981c, an independent rerun of the α_s convergence test on Danny's PC, gives the same verdict as the other session's D990 ("converged; published α_s stands") — so D989's α_s verdict is not withdrawn
+[computed] (field_tests/results/pc/janus_validate_d989.txt, sha256 79c2b65c…; PC run 02:57–04:16Z) per point (alpha_dn vs base, bd = 1000 on grid W): SERAPIS-E C = 1e-6 N* 48.4 +0.20 %, N* 50.0 +0.04 %; C = 1.15e-6 N* 48.4 +0.11 %; Chronos N* 46.0 +0.00 %, N* 49.0 +0.07 %; SERAPIS-ρ N* 46.09 +0.13 %, N* 49.49 +0.10 %; Kairos +0.30 %. Lock tolerance 2 %. The second-order formula α_s (alpha_flow, reported, not judged) is 2.5–3.5 % off, which is why Janus uses alpha_dn.
+Speed: base 305–718 s per point, Janus 2.8–6.6 ms → ~1.5×10⁵ faster.
+[computed] (field_tests/results/pc/alpha_wide_d981c.txt, sha256 fe68ce0c…; PC run 02:52–04:18Z) D981c replication: SERAPIS-E α_W(5000) = −9.8974e-4 vs the other session's −9.8782e-4; Chronos −9.9429e-4 vs −9.9405e-4; both converged = True, bias_ok = True, inside the published bands. The two independent runs differ by ≤ 2e-6 (0.2 %), the size of the bd scatter; verdict replicated (D981 DEVIATIONS D3 disclosure stands).
+Consequence: J0b DONE. With Battery A (D990, n_s/r), J3 (D994), J4 (D995) and Battery B, the v1.0 release package is complete; release tick proceeds (no outreach).
+MAP: none

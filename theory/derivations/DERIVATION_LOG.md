@@ -1662,3 +1662,6 @@ Touches: none.
 
 ## D1002: Janus vs real ASPIC (J7a): n_s ~200×, r ~330× more accurate vs exact MS on 14 points; α_s comparison uninformative
 - [computed] medians dn_s 3.8e-6 vs 7.7e-4; dr/r 7.5e-5 vs 2.5e-2; ASPIC 0.1 µs/pt, Janus 1.2 ms/pt any V.
+
+## D1003: Battery B (D989) VALIDATED 8/8, α_s ≤ 0.3 %; D981c replicates the α_s convergence verdict
+- [computed] Janus α_s vs exact solver ≤ 0.30 % at ~1.5e5× speed; independent PC rerun matches the other session to 2e-6.
