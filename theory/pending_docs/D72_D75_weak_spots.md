@@ -12182,3 +12182,16 @@ MAP: none
 - It is already in the notes: its V(j) plateau form is recorded around line 5215, with credit added. A later note lists it as not fetched.
 - The verdict is unchanged: NULL, with no new input for plateau_origin.
 MAP: none
+
+### D1189 — Hyperion halo tick: 2025–26 Milky Way inner-halo literature leans shallow/cored; our Gaia-NFW J-factors are likely upper-side (estimate) (2026-11-17)
+- [LEFT · literature] One standard search on the inner MW dark-matter profile, core vs cusp, 2025–2026.
+- **New: arXiv:2511.17705** (abstract only). The primordial (baryon-corrected) MW halo has "an inner core that is too shallow and an outer decline that is too steep" for CDM. Its concentration and mass differ from CDM predictions by > 3σ. No slope, r_s, ρ☉ or J numbers in the abstract.
+- **Already in the notes:** Singh & Desai 2605.16994 (Gaia DR3; Einasto preferred over NFW and cored over cuspy for most baryon models; line ≈ 9889).
+- **Not relevant:** 2607.08818 (MW satellites, not the MW halo: slopes from −1.5 at 1e5 M☉ to 0 … −0.4 at 1e8 M☉).
+- **Comparison with A2j (a2j_gaia_halo.txt):**
+  - Our Gaia-calibrated NFW (c = 13.9) gives J/J_bench = 0.43 (central), with a range of 0.15 (c −1σ) to 1.25 (c +1σ).
+  - A cored or shallower inner profile at fixed ρ☉ lowers J in the 0.5–3° IGS annuli. They probe r ≈ 70–420 pc, inside any kpc-scale core. So the cored literature trend pushes J toward or below the c −1σ case.
+  - There, f_max ≈ 0.37–0.44 and the 1–1.5 TeV post-hoc wino passes (D1153). This is an ESTIMATE, direction only; no number is claimed.
+- **No computation:** no sourced cored-profile parameters in hand (abstracts only). To lock one, the next halo tick needs the 2511.17705 or 2605.16994 full-text best-fit Einasto/cored parameters.
+VERDICT: literature direction recorded. The J-factor impact is an estimate (favourable to the wino window). A sourced cored-J computation is OPEN.
+MAP: none
