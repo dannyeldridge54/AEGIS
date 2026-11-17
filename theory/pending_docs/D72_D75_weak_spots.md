@@ -11431,3 +11431,10 @@ convention. The growth ODE starts with D = a at a = 1e-3, where radiation is sti
 Next (new lock, not a rerun of this one): normalise D to a in the matter-dominated limit consistently (e.g. drop radiation from the growth E(a) for the
 normalisation step, or start at a ≫ a_eq and match), then re-test vs CAMB. L9 (D1130) is unaffected: it used CAMB's σ8 as stated.
 MAP: none
+
+## D1133 — RIGHT/Janus-LT — L9c: with the growth normalised in true matter domination, Janus-LT's own σ8 matches CAMB to 1.0–1.4% — VALIDATED [computed]
+Lock PREREG_L9c_sigma8_md (one change from L9b, D1132: growth for the amplitude computed with E² = Ω_m a⁻³ + 1 − Ω_m, so D = a exactly at the start).
+σ8 Janus-LT / CAMB: 0.8324/0.8228 = 1.0117, 0.7921/0.7842 = 1.0101, 0.8665/0.8550 = 1.0135; spread 0.0034 → VALIDATED (≤ 3%).
+Confirms D1132's diagnosis (radiation in the growth start). The residual +1.0–1.4% is consistent with EH no-wiggle's own shape error (D1065, rms 1.4%).
+Janus-LT now computes P(k, 0) and σ8 from A_s itself (derived normalisation, validated) — L9's CAMB referee can be dropped in the next version.
+MAP: none
