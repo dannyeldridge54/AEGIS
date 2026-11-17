@@ -105,3 +105,9 @@ def taylorf2_phase_spin(f, m1, m2, chi1, chi2, order=7, spin_order=7):
                      + (-25150083775/3048192 + 10566655595*eta/762048 - 1042165*eta**2/3024 + 5345*eta**3/36)*cs)) + 0*v}
     tot = sum(p[k]*v**k for k in range(order + 1))
     return 3/(128*eta)*x**(-5/3)*tot
+
+# ---- A6b: vectorised SNR (psd may take arrays) ----
+def snr_opt_vec(Mc, D, psd_arr, f_lo, f_hi, n=20000):
+    import numpy as np
+    f = np.geomspace(f_lo, f_hi, n)
+    return math.sqrt(4*np.trapezoid(amplitude0(f, Mc, D)**2/psd_arr(f)*f, np.log(f)))

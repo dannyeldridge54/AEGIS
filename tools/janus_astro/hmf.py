@@ -34,3 +34,20 @@ def n_above(M, k, P, rho, Mmax=1e17, n=200):
     lM = np.linspace(math.log(M), math.log(Mmax), n)
     v = np.array([dndlnM(math.exp(x), k, P, rho)[0] for x in lM])
     return simpson(v, x=lM)
+
+# ---- A6b: cached sigma(M) spline, vectorised dn/dlnM ----
+class SigmaTable:
+    def __init__(self, k, P, rho, lMmin=6.0, lMmax=17.0, n=400):
+        from scipy.interpolate import CubicSpline
+        self.rho = rho; lM = np.linspace(lMmin, lMmax, n)
+        R = (3*10**lM/(4*math.pi*rho))**(1/3)
+        x = np.outer(R, k); W = 3*(np.sin(x) - x*np.cos(x))/x**3
+        s2 = simpson((P*k**3/(2*math.pi**2))[None, :]*W*W, x=np.log(k), axis=1)
+        self.spl = CubicSpline(lM, 0.5*np.log(s2))
+    def sigma(self, M): return np.exp(self.spl(np.log10(M)))
+    def dlnsigma_dlnM(self, M): return self.spl(np.log10(M), 1)/math.log(10)
+def dndlnM_array(M, table, z=0.0, model='tinker08', D=1.0):
+    from colossus.lss import mass_function as mf
+    M = np.asarray(M, float); s = table.sigma(M)*D
+    f = {'tinker08': lambda: mf.modelTinker08(s, z, '200m')}[model]()
+    return f*table.rho/M*np.abs(table.dlnsigma_dlnM(M))

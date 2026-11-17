@@ -1,0 +1,6 @@
+# PREREG A6b (track X, Hyperion; manual Djl 17 Nov 06:17 CT): vectorised Hyperion + benchmark re-run (written before running)
+Code (committed with this lock, never run before it): galaxy.vcirc_array; hmf.SigmaTable (σ(M) on a 400-point cubic spline in log M, built with one vectorised integral) + dndlnM_array; gw.snr_opt_vec (array PSD).
+Identity checks (new vs old Hyperion routines, same inputs): V1 vcirc_array vs MW.vcirc at 1000 radii ≤ 1e-12; V2 dndlnM_array vs hmf.dndlnM (Tinker08, z = 0) at 50 masses 1e12–1e15 M_⊙/h ≤ 1e-4 (spline + analytic derivative vs finite difference); V3 snr_opt_vec vs snr_opt ≤ 1e-12.
+Benchmark (best of 5, same machine), with accuracy vs referee scored at the validated tolerances: B1 1000 v_c vs galpy (≤ 1e-6); B2 50 dn/dlnM vs colossus massFunction (≤ 1e-2), timed including the one-off table build and separately per call; B3 TaylorF2 3.5PN phase on a fine grid (20–1000 Hz, Δf = 1/512 Hz) vs LAL ChooseFDWaveformSequence, residual after a + b f ≤ 1e-2 rad (fixes A6a's T3 design error); B4 SNR vs the LAL-amplitude route (≤ 1e-3).
+Pass V1–V3 and B1–B4 accuracy → A6b VALIDATED. Speed ratios reported, not scored.
+Output field_tests/results/janus_astro_a6b.txt via theory/janus_astro/a6b_check.py. No reruns to chase; DEVIATIONS first.

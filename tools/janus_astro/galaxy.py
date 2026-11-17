@@ -47,3 +47,12 @@ def natural_to_rho_GeVcm3(rho_nat):
     G = 6.67430e-11; kpc = 3.0856775814913673e19
     rho_SI = rho_nat*(220e3)**2/(G*(8*kpc)**2)
     return rho_SI/1.78266192e-21          # GeV/c^2 per cm^3 in kg/m^3
+
+# ---- A6b: vectorised circular speed (same formulas as MW.force at z = 0) ----
+def vcirc_array(mw, R):
+    p = mw.p; R = np.asarray(R, float); s = (3 - p['alpha'])/2
+    Mb = 2*math.pi*p['bamp']*p['rc']**(3 - p['alpha'])*gamma(s)*gammainc(s, (R/p['rc'])**2)
+    fb = -Mb/R**2
+    fh = -p['hamp']*(np.log(1 + R/p['ha'])/R**2 - 1/(R*(p['ha'] + R)))
+    fd = -p['damp']*R/(R*R + (p['a'] + p['b'])**2)**1.5
+    return np.sqrt(-R*(fb + fh + fd))
