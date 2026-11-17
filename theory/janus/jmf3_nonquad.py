@@ -6,6 +6,7 @@ MMC = '/home/claude/ext/mmc'; base = open(f'{MMC}/parameters_multimodecode.txt')
 def mmc(choice, rows, f0):
     d = tempfile.mkdtemp(); p = re.sub(r'num_inflaton = \d+', 'num_inflaton = 2', base)
     p = re.sub(r'potential_choice = \d+', f'potential_choice = {choice}', p)
+    p = p.replace('get_runningofrunning = .true.', 'get_runningofrunning = .false.')  # DEV D1
     p = re.sub(r'phi_init0 = .*', f'phi_init0 = {f0[0]} {f0[1]}', p)
     for k in (1, 2, 3, 4): p = re.sub(rf'vparams\({k},:\) = .*', f'vparams({k},:) = ' + ' '.join(f'{v:.10f}' for v in rows.get(k, (1.0, 1.0))), p)
     open(f'{d}/parameters_multimodecode.txt', 'w').write(p)
@@ -18,7 +19,16 @@ M = {'M1 quartic': (3, {1: (-13.0, -13 + math.log10(9))}, [20.0, 20.0],
                     lambda f: float(0.25*lam @ f**4), lambda f: lam*f**3, lambda f: np.diag(3*lam*f**2)),
      'M2 axions': (2, {1: (-2.6, -2.6), 2: (1.0, 1.2)}, [8.0, 12.0],
                    lambda f: float(L4 @ (1 + np.cos(fi*f))), lambda f: -L4*fi*np.sin(fi*f), lambda f: np.diag(-L4*fi**2*np.cos(fi*f)))}
-L = []; ok = True; partial = False
+from tools.serapis_calc.multifield import run as _run   # DEV D2: IC rule for M2
+_V2, _g2 = M['M2 axions'][3], M['M2 axions'][4]; f2 = None
+for st in range(0, 23):
+    f = np.array([8.0 + st, 12.0 + st])
+    try: Ne = _run(_V2, _g2, f, Nmax=2000, v0=-_g2(f)/_V2(f))[1]
+    except Exception: continue
+    if 70 <= Ne <= 200: f2 = [float(f[0]), float(f[1])]; print('DEV D2: M2 phi_init', f2, 'N_tot', round(Ne, 2)); break
+if f2 is None: M.pop('M2 axions')
+else: M['M2 axions'] = (2, M['M2 axions'][1], f2) + M['M2 axions'][3:]
+L = []; ok = True; partial = f2 is None
 for name, (ch, rows, f0, V, gr, he) in M.items():
     try:
         ns_m, r_m = mmc(ch, rows, f0); s = spectra_mf(V, gr, he, f0)

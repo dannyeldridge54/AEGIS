@@ -1,0 +1,3 @@
+M1 quartic: LISTED (MMC output not found: potential.f90  ERROR: At line number          860  ERROR: The error is code-related.  **********************************************  MODECODE: Need to set third derivative for t)
+M2 axions: LISTED (MMC output not found: .f90  ERROR: At line number          242  ERROR: The error is cosmology-related.  **********************************************  MODECODE: See above.  Try setting your IC closer)
+JMF3: PARTIAL
