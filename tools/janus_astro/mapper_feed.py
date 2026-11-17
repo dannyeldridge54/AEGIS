@@ -146,3 +146,22 @@ def orbit_params_batch3(x, y, z, vx, vy, vz, t_gyr=3.0, eta=0.01, eta_in=0.006, 
         t2, t1 = t1, t; r2, r1 = r1, r; z2, z1 = z1, az
         live = t < T - 1e-12
     return dict(rperi=rp*r0, rapo=ra*r0, zmax=zm*r0, ecc=(ra - rp)/(ra + rp), steps=steps)
+
+def orbit_params_exact_events(x, y, z, vx, vy, vz, t_gyr=3.0, mw=None):
+    """A8c4 reference: DOP853 (rtol 1e-12) with EVENTS at every turning point — d(r^2)/dt = 0 (peri/apo) and v_z = 0
+    (z extrema) — so extremes are located to integrator precision, with no sampling."""
+    from scipy.integrate import solve_ivp
+    from . import galaxy as G
+    mw = mw or G.MW(); r0, v0 = 8.0, 220.0
+    X0 = np.array([x, y, z])/r0; V0 = np.array([vx, vy, vz])/v0
+    def rhs(_, s):
+        R = math.hypot(s[0], s[1]); FR, Fz = mw.force(R, s[2])
+        return [s[3], s[4], s[5], FR*s[0]/R, FR*s[1]/R, Fz]
+    ev_r = lambda _, s: s[0]*s[3] + s[1]*s[4] + s[2]*s[5]
+    ev_z = lambda _, s: s[5]
+    T = t_gyr/(r0*3.0856775814913673e16/v0/3.15576e16)
+    sol = solve_ivp(rhs, [0, T], np.concatenate([X0, V0]), method='DOP853', rtol=1e-12, atol=1e-13, events=[ev_r, ev_z])
+    r_all = [np.linalg.norm(X0), np.linalg.norm(sol.y[:3, -1])] + [float(np.linalg.norm(q[:3])) for q in sol.y_events[0]]
+    z_all = [abs(X0[2]), abs(sol.y[2, -1])] + [abs(float(q[2])) for q in sol.y_events[1]]
+    rp, ra = min(r_all)*r0, max(r_all)*r0
+    return dict(rperi=rp, rapo=ra, zmax=max(z_all)*r0, ecc=(ra - rp)/(ra + rp))
