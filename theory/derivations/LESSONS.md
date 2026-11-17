@@ -336,3 +336,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1214: split long locked jobs into parts that each write their own result file, so a timeout in part 2 doesn't strand part 1.
 - D1215: when a reference code crashes inside itself, record the exact error and stop — it's the reference's bug, and reruns won't change it.
 - D1216: when a common factor separates you from a reference, list the conventions that could produce it before computing; if none matches, quote ratios and state your convention rather than tuning a reference point.
+- D1217: a "won't install" dependency may be fine as source (pure-Python packages: try the repo before calling it BLOCKED); and check a Riemann-sign convention on a known space (sphere) before trusting a curvature term.

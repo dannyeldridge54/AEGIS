@@ -1809,3 +1809,4 @@ Touches: none.
 ## D1214: S4e2 NOT RUN (2-h limit); its V2 part (printed before the limit, informational) shows FD and Prüfer agree to 1.3e-7 — S4e's −4% vs BTR is not a solver error
 ## D1215: J7k — HI scored (Janus better 2/2, ~1000×); RPQTI listed (ASPIC Fortran crash), KMIII listed (2-h limit); pulses 208/208
 ## D1216: S4e3 — four locked warp normalisations (as-is, warp max, midpoint, Planck-weighted) give m L/π 0.93–1.01 / 2.04–2.21; none matches BTR's 0.97/2.13 → NOT EXPLAINED (post-hoc)
+## D1217: JMF9 — Janus-MF-NC (covariant MS, curved field space) matches PyTransport NC on DoubleQuadNC: n_s 0.925024 vs 0.925023 (|d| 8.1e-7); VALIDATED

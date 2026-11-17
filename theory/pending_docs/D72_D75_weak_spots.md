@@ -12628,3 +12628,17 @@ Verdict: NOT EXPLAINED by these four conventions. The needed shift sits between 
 one stated in BTR, and fitting a reference point to the target would be curve-fitting. S4e stays NOT VALIDATED vs BTR; the ratio m₂/m₁ (2.190 vs 2.196)
 and the solver (D1214, two methods agree to 1e-7) are unaffected. Next: our 6D masses are quoted as ratios and in the C0 convention, stated explicitly.
 MAP: none (S4e status unchanged: NOT VALIDATED vs BTR).
+
+## D1217 — JANUS — JMF9: Janus-MF on a curved field space vs PyTransport NC [VALIDATED]
+Lock: field_tests/rules/PREREG_JMF9_curved.md (+ DEV D1, written before any spectrum). Code: tools/janus_calc/mfms_nc.py (new), theory/janus/jmf9_curved.py.
+Unblocked large-list 3: gravipy (PyTransport's NC dependency) fails as a PyPI sdist on Python 3.13 but is pure Python — the GitHub source imports fine;
+PyTransport's NC example compiled with compileName3 (the py2 compileName path fails on 3.13). Equations fetched: Kaiser et al. arXiv 1511.09148 Eqs. 14–19, 24.
+Janus-MF-NC: e-fold time, coordinate basis with D_N Q = Q' + ΓQφ', mass matrix M/H² = G⁻¹∇∇V − R^I_{LMJ}φ'^Lφ'^M + (3−ε)φ'φ'_J + (V^Iφ'_J + φ'^I V_J)/H²
+(the last two reduce exactly to the flat JMF matrix); Bunch–Davies start with a vielbein G^{-1/2}; P_R = w·P_Q·w/σ'², w_I = G_IJφ'^J/σ'.
+Checks: Riemann sign — on the unit sphere the entropic projection of the curvature term equals +(R_fs/2)σ'² (0.0473514786 both), i.e. +εH²R_fs as expected.
+Flat self-check (DQuad Q3): NC code 0.94547697 vs spectra_mf 0.94547697, |d| 3.8e-12 (≤ 1e-6 PASS).
+DEV D1: PyTransport's example start (0.4, 20) gives only 47.15 e-folds (no N* = 55); background-only selection picked second-field start 26 (N_tot ≥ 70).
+Result (DoubleQuadNC, p = (0.002M², 0.004M², 1), M = 5e-7, G = diag(1, sin²φ1), start (0.4, 26)): N_tot PyT 79.313 / Janus 79.312;
+n_s PyTransport 0.925023 (tol 1e-10 identical), Janus-MF-NC 0.925024, |Δn_s| = 8.1e-7 (≤ 2e-4) → JANUS-MF VALIDATED ON CURVED FIELD SPACE.
+Scope: one model, one metric (sphere); r not compared (PyTransport has no tensor route).
+MAP: none (tool validation; Janus-MF coverage now separable, non-separable, 3 fields, adiabatic limit, curved field space).
