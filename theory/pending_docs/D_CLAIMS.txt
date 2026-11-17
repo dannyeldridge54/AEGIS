@@ -496,3 +496,4 @@ D1209  2026-11-17T22:46Z  Paper: v3.3 draft gets the N_eff 2026 verdicts (SU(2) 
 D1210  2026-11-17T22:52Z  C9: NFW refit to Eilers+2019 with McMillan17 baryons fixed: chi2/dof 2.09 (Q1 FAIL marginal), slope negative (Q2 PASS), but r_s 3 kpc implausible
 D1211  2026-11-17T22:58Z  7PN tidal: our coefficients match the independent Mandal et al. 2412.01706 Eq. 4.48 (which agrees with corrected HFB v4); LAL's 0.33% is the outlier
 D1212  2026-11-17T23:03Z  CTA timeline: CTAO-South construction began Dec 2025, first telescopes end-2026; GC wino test late 2020s-2030s
+D1213  2026-11-17T23:05Z  L12 growth consistent with background w0wa fit
