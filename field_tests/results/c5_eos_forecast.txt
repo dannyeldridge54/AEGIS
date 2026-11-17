@@ -1,0 +1,4 @@
+O4-like aLIGO140Mpc D=40 Mpc: SNR=62.7 1-O=2.99e-04 2(1-O)rho^2=2.35 -> DISTINGUISHABLE; rho needed 41
+O4-like aLIGO140Mpc D=100 Mpc: SNR=25.1 1-O=2.99e-04 2(1-O)rho^2=0.38 -> NOT; rho needed 41
+A+ design D=40 Mpc: SNR=154.7 1-O=4.14e-04 2(1-O)rho^2=19.83 -> DISTINGUISHABLE; rho needed 35
+A+ design D=100 Mpc: SNR=61.9 1-O=4.14e-04 2(1-O)rho^2=3.17 -> DISTINGUISHABLE; rho needed 35
