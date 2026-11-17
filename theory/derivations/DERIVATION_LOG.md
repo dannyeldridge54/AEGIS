@@ -1707,3 +1707,6 @@ Touches: none.
 
 ## D1017: R4 — at a SUSY dilaton minimum (F_S = 0) the GS tilt is exactly the e^K one (R = 1) for any Ω(S)
 - [derived] stationarity: d ln(Ω²/Y)/ds = 2F_S/Ω; [computed] racetrack point R = 1.0000.
+
+## : J7d two-parameter models — Janus n_s ~360×, r ~540×, α_s ~40× better than ASPIC (8/8); PSNI start-finder failure listed
+- [computed] TI, SFI; J1b bisection start-finder needed.
