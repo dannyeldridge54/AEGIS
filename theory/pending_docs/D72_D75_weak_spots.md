@@ -10895,3 +10895,17 @@ Lock f1f08c8 (with DEVIATIONS_A3f D1: compact.tov atol_P P_c·1e-16 → P_c·1e-
 - Lesson for the rules: when a cross-code check fails, check the referee's tolerances as hard as the module's.
 VERDICT: A3f VALIDATED.
 MAP: none
+
+## D1095 (CENTRE, Djl loop (A), literature reading, no new computation): the paper's text favours the √2 convention for the NLO off-diagonal, but only indirectly — so A1c's 2.423 TeV (+0.16%) is CONSISTENT post hoc, not a blind validation; A1d not locked
+- Sourced (arXiv:2009.00640, via fetch):
+  - The momentum-space NLO correction Eq. 3.7 has δV_{χ0χ0→χ+χ−} = −4πα₂/(k²+m_W²)[…] with the same prefactor as the tree entry Eq. 2.4, i.e. method-I channel notation with no √2.
+  - The paper says "the transition from method-I to method-II follows the same rules as the tree-level potential". The tree-level transition is what produces the −√2 in Eq. 2.8.
+  - Eq. 3.25's left-hand side uses the same channel labels (δV_{χ0χ0→χ+χ−}).
+  - BUT the text also calls 3.25 a fit to "the off-diagonal potentials in (2.8) and (2.9)". Read literally, that suggests adding it as is.
+  - No explicit statement resolves this. The fetch tool's own inference also favoured √2.
+- Assessment: the weight of the text (method-I labels plus "same rules as tree level") favours ×√2. With ×√2, A1c's reported result is 2.4229 TeV vs 2.419 (+0.16%).
+- Because I already knew that number when reading the text, this is NOT an independent validation. Re-locking A1d with √2 now would be a post-hoc convention choice, so it is recorded as CONSISTENT (post hoc) instead. A1c stays NOT VALIDATED as locked.
+- Independent confirmation route (open): reproduce a SECOND number from the paper with the same convention, chosen before computing. Candidates: the NLO relic mass 2.842 TeV (needs a relic-density solver, larger job) or another resonance/Sommerfeld value quoted in its tables.
+- Practical: Hyperion's NLO module uses off_factor = √2 as its working default, labelled post-hoc. For the CMB band, the difference between conventions is 0.03 TeV.
+VERDICT: CONSISTENT (post hoc); convention favoured by the text but not explicit. A1e (blind second number) is the real test.
+MAP: none
