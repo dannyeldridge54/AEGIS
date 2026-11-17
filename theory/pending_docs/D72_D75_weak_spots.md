@@ -11484,3 +11484,14 @@ Use: S4d (scalar = dilaton + metric scalars, gauge-invariant) should follow thei
 spectrum like our tensor result (D1036: m1² 0.778 > 0). Their tensor equations/eigenvalues (§5.3) are past offset 100000 of a 1.1M-char page — fetch
 in a later tick to (a) cross-check our S4c2/S4c3 operator form against theirs at D = 10, (b) lock S4d. Not a result yet.
 MAP: none
+
+## D1140 — DEEP/STRINGS — S4d: the scalar (dilaton + metric) sector of our subcritical 6D tadpole vacuum is STABLE (sufficient condition holds everywhere) [computed]
+Lock PREREG_S4d_scalar_stability. Source: Basile–Thomée–Raucci 2209.10553 §5.1 — the paper our background (S4b) comes from — general-D scalar master
+equation (5.3), Schrödinger form H = b + 𝒜†𝒜 (5.4–5.8), b ≥ 0 ⇔ Ω′/φ₀′ ≥ −8/(γ(D−2)²) (5.10), shown there for critical/supercritical only.
+Transcription cross-checked: at D = 10 all four coefficients (24, 2, 7/4, 14) equal Basile–Mourad–Sagnotti 1811.11448 Eq. 5.33.
+Result (40-digit, 4000 points on (1e-6, 1−1e-6)·y_end): A′/P′ runs monotonically from +0.223607 to −0.223607 (= ±1/(2√5) to 6 digits); threshold
+−8/(γ(D−2)²) = −1/4 → min −0.2236 > −0.25 everywhere → b ≥ 0 → all scalar m² ≥ 0: SCALAR SECTOR STABLE. Margin 0.026 at the strong-coupling end.
+Observation [arithmetic, D = 6 only]: the endpoint value 1/(2√5) and the threshold 1/4 differ by 11%; for D = 6 the threshold condition γ ≤ 16√(D−1)/(D−2)² = √5
+coincides with γ_c = 4√(D−1)/(D−2) = √5 — a D = 6 coincidence, not a general statement (not checked for other D).
+With D1036 (tensor tower gapped, m₁² 0.778) the 6D vacuum now has both tensor and scalar sectors free of instabilities (vectors not yet checked).
+MAP: none

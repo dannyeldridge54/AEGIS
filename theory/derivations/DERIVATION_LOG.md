@@ -1779,3 +1779,4 @@ Touches: none.
 ## D1135: R — Z6-II-b abelian N=2 sector: b̃_U(1) = 0 exactly (hep-th/0001062, after Eqs. 50–51) → small γ̃ = small correction to an exact zero
 ## D1137: R — Wilson lines (hep-th/0001062 Eqs. 29–51) don't lift the Z6-II-b U(1) zero; U(1) instead gets log(ω(T)−ω(U)), not L. Line paused.
 ## D1138: S4d prep — BMS 1811.11448: DM tadpole vacua (9D × interval) perturbatively stable in all sectors; template + expectation for our 6D S4d
+## D1140: S4d — subcritical 6D vacuum scalar sector: A′/P′ ∈ [−0.2236, +0.2236] ≥ −1/4 → b ≥ 0 → STABLE (BTR 2209.10553 Eq. 5.10)

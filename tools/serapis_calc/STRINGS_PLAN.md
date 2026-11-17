@@ -61,3 +61,4 @@ coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which 
   Prime presumably d/dz (inference). BCs not in the fetched chunk. Next S4d step (lock first): sympy re-derivation of the scalar system for general D from the
   linearised Einstein–dilaton equations; PASS if at D=10 it reproduces 5.31–5.33 exactly (24 = ?(D), 7/4, 14 → identify D-dependence); then apply at D=6
   with our background (S4b/S4c2) and BCs from regularity, matching how S4c2 handled the tensor tower.
+- S4d DONE (D1140): scalar sector stable (b ≥ 0). Remaining: vectors (if any in our truncation); 4D compactification question (D1015a).
