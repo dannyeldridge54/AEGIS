@@ -50,3 +50,9 @@
 - All four loop sides are summarised and parked: A wino (D1143), B BBN/N_eff (D1144), C Galaxy (D1145), D roadmap (D-side note today).
 - SERAPIS-E post-hoc wino: ≈ 0.67–0.9 TeV (f ≈ 5–10%); 1 TeV is undetermined (inner-halo concentration); HL-LHC reach 0.5–0.9 TeV.
 - PC needed for: the Star Mapper orbit feed + per-star data, dust maps (downloads need Danny's OK), and the Zenodo upload of Hyperion 1.1 (needs "Publish").
+
+## CORRECTION 18:50 UTC (D1152–D1153)
+- The wino line verdicts in D1110–D1142 used the OLD D732 fractions (0.14/0.26/0.67), but the current SERAPIS-E wino is thermal (D784): f ≈ 0.05–0.09 (0.67 TeV), 0.12–0.21 (1 TeV), 0.42–0.70 (1.85 TeV).
+- Re-scored: 0.67 TeV passes everywhere; 1 TeV passes for Gaia-calibrated haloes (marginal for the H.E.S.S. benchmark); 1.85 TeV fails.
+- Window ≈ 0.67 to ~1–1.3 TeV (est.), f ≈ 5–20%. CTA (1 TeV cap ~7%) plus HL-LHC can close it.
+- The v3.3 paragraph and table row are corrected (unposted).
