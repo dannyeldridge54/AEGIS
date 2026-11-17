@@ -1,0 +1,2 @@
+LO: R in [0.658, 0.794] (central 2m,mZ); HESS f_max [0.189,0.207] FAIL; McM17 f_max [0.266,0.292] PASS; MWP14 f_max [0.327,0.359] PASS
+NLO: R in [0.658, 0.794] (central 2m,mZ); HESS f_max [0.208,0.228] FAIL; McM17 f_max [0.294,0.323] PASS; MWP14 f_max [0.360,0.396] PASS

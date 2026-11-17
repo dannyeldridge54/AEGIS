@@ -58,6 +58,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 - A3e/A3f DONE (D1090, D1094): mismatch was the referee compact.tov's absolute P tolerance; fixed via DEVIATIONS; NS module VALIDATED (≤ 8e-11 common surface).
 - A2d DONE (D1098): TaylorF2 tidal phase 5PN+6PN (VFH 2011) vs LAL ≤ 8.8e-10 rad; 6.5/7PN tidal (0.03 rad) not yet included.
 - BBN: bbn (PRIMAT table, D1082/D1082a), three-code check (D1107), bbn_net LINX module VALIDATED (D1109; dNeff_init is LINX's initial ΔN).
+- Since D1102 (D1103–D1124): NLO CMB band (D1103); γγ line (D1110/D1114) → full line incl. γZ (D1118) → NLL-resummed line (D1121), scale band (D1124); 6.5PN tides VALIDATED, 7PN PARKED (0.33% vs LAL; HFB erratum; D1111–D1120); MW bracket MWPotential2014–McMillan17 (D1105–D1112); three-code BBN + bbn_net + τ=i ΔN (D1104–D1122); v3.3 paragraph (D1123).
+- OPEN: 7PN coefficient (needs character-exact source); A1e blind NLO-wino check; Mapper per-star + dust (Danny's PC); H.E.S.S. limits below/above 1 TeV (only 1 TeV quoted); NLL′/endpoint line; McMillan17 J with real H.E.S.S. ROI geometry.
 - Release 1.1 DRAFT notes: releases/hyperion-1.1/CHANGES_SINCE_1.0.md (D1102; not packaged/uploaded).
 
 ## Gold-standard stages (referee in brackets)
