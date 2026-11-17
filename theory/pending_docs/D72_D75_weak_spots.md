@@ -11302,3 +11302,20 @@ Lock pushed before run; result field_tests/results/a2d_line_nll.txt.
 - Caveats: one-loop α₂ running (assumption); the exclusive-line NLL (not NLL′ or endpoint); scale variation not run; γγ-only limit applied to γγ + ½γZ (D1118).
 VERDICT: 1 TeV PASS (realistic haloes) / FAIL (benchmark); 0.66 TeV PASS; D1118/D1119 one-loop columns withdrawn.
 MAP: none
+
+## D1122 (CENTRE, Djl loop (B), locked PREREG_B7): τ=i hidden sectors through the BBN network — bbn_net agrees with the PRIMAT table (Y_p ≤ 3e-5, D/H ≤ 0.2%) — B7 VALIDATED; physics: extra radiation pulls D/H TOWARD Cooke (pull −2.4σ → +0.3σ as ΔN goes 0.054 → 0.301) while ACT pulls the other way (D1092) — deuterium and the CMB disagree on dark radiation, and SERAPIS τ=i sits between them
+Lock pushed before run; result field_tests/results/b7_taui_bbnnet.txt.
+- dNeff_init solved in one evaluation each (D1109 ratio): 0.207 / 0.617 / 1.153 → final ΔN 0.0541 / 0.1613 / 0.3015.
+- Results (Y_p mass; 10⁵D/H; 10¹⁰Li). Pulls use observational errors only; with PRIMAT's theory error included (D1082) the D/H pulls shrink about ×0.6:
+  - U(1): 0.24664 (+0.39σ); 2.4538 (−2.44σ); 5.670
+  - SU(2): 0.24804 (+0.81σ); 2.4890 (−1.27σ); 5.614
+  - SU(2)+gaugino: 0.24986 (+1.34σ); 2.5350 (+0.27σ); 5.544
+- Table agreement: Y_p ≤ 3e-5, D/H ≤ 0.2%.
+- Reading:
+  - Deuterium alone would favour SERAPIS τ=i with a populated hidden sector (best near ΔN ≈ 0.3).
+  - ACT DR6 N_eff (D1092) excludes 0.301 at 3.7–4.1σ and prefers ΔN < 0.07.
+  - So the U(1) case (0.054) is the only one acceptable to both, at the cost of a −2.4σ D/H pull (obs error only; ~−1.5σ with theory error), which is about the Standard Model's own D/H tension (D1096).
+  - Li-7 barely moves (−2%). The factor-3 problem is untouched.
+- Net: no SERAPIS-specific tension. The τ=i hidden-sector question is decided by the CMB (N_eff), not by BBN.
+VERDICT: B7 VALIDATED; τ=i: U(1) OK on both, larger sectors excluded by ACT though preferred by D/H.
+MAP: none
