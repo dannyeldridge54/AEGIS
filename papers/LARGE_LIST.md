@@ -6,7 +6,7 @@ Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN
 2. Janus-MF three fields vs PyTransport — DONE (D1207)
 3. Janus-MF curved field space vs PyTransport NC — RUNNING (17:52 CT: gravipy unblocked — it is pure Python; the PyPI sdist fails but the GitHub source imports fine on 3.13 via PYTHONPATH; PyTransport NC DoubleQuadNC build started. Remaining wall: Janus-MF needs a field-metric (Christoffel) extension — next lock)
 4. J7k the three listed ASPIC models — DONE (D1215: HI scored, RPQTI/KMIII listed)
-5. Two-parameter ASPIC model scans (more parameter points per model) — OPEN
+5. Two-parameter ASPIC model scans (more parameter points per model) — RUNNING (J7m locked: 12 new points × 2 N*, cloud ASPIC)
 6. Third-order slow-roll (N3LO) — BLOCKED (needs arXiv 2205.12608 PDF from Danny)
 ## AEGIS — Janus-LT / Hyperion (late universe)
 7. L11 Cobaya MCMC check of L7 — DONE (D1205)
