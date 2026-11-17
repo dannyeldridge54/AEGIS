@@ -55,3 +55,4 @@ coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which 
 - R (D1135): exact-zero example found (Z6-II-b U(1), hep-th/0001062). Next: Wilson-line lift of the zero (same paper treats Wilson lines).
 - R (D1137): Wilson-line lift: none at O(BC). Lead paused; R effort → S4d.
 - S4d prep (D1138): BMS 1811.11448 template; next: fetch §5.3 tensor equations, cross-check S4c2 at D=10, then lock S4d scalars.
+- S4d source map (ar5iv 1811.11448, 1.12M chars): offset 500k–600k = §4.3 scalars + §5 DM backgrounds (5.1–5.5); 600k–700k = §5.2 DM scalar sector (Eqs. 5.20–5.33: C = −7A, φ = −(8/φ′)(A′ + 7AΩ′), D Stückelberg, single physical scalar, eigen-eq. 5.33); tensor §5.3 is past 700k. S4d lock should transcribe Eqs. 5.20–5.33 at D=10, then generalise to D=6.
