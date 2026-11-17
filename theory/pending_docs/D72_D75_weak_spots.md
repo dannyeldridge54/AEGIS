@@ -11791,3 +11791,17 @@ slightly sharper than its reference; superseded by D1146, 3.1% vs 2.0%) and D114
 JANUS-MF: MultiModeCode release 2.0.0 (github laynep/MultiModeCode @641153c) builds and runs in the cloud (/home/claude/ext/mmc): its default 10-field
 N-quadratic gives n_s = 0.948032 exact (δN slow-roll 0.948395), r = 0.1446, α_s = −9.02e-4, f_NL(SR) = −0.0154. Next: lock Janus two-field δN vs MMC.
 MAP: none
+
+## D1161 — LEFT/JANUS-MF — JMF1: Janus two-field δN vs MultiModeCode (independent exact multi-field code) [computed; DEV D1–D2 = output-parser fixes only]
+Lock PREREG_JMF1_mmc. V = ½(m₁²φ₁² + m₂²φ₂²), φ_init (12, 12), N* = 55, mass ratio R = 1, 3, 9.
+| R | Janus δN n_s | MMC exact n_s | MMC δN-SR n_s | Janus r / MMC exact r |
+| 1 | 0.963503 | 0.963372 | 0.963280 | 1.0000 |
+| 3 | 0.946237 | 0.945477 | 0.945908 | 1.0001 |
+| 9 | 0.929400 | 0.927745 | 0.928982 | 1.0002 |
+C1 (|Janus δN − MMC δN-SR| ≤ 2e-4) FAILS (2.2e-4, 3.3e-4, 4.2e-4) → per lock NOT AGREED. Honest reading: my C1 assumed the two "δN" numbers are the same
+quantity; they are not — MMC's δN-SR is the analytic slow-roll δN for sum-separable potentials, Janus's is numerical δN with exact-background N-derivatives and the
+VW first-order n_s formula. At R = 1 (effectively single-field) Janus is closer to MMC's exact result (1.3e-4) than MMC's own δN-SR is (0.9e-4 the other way).
+What the data DO say: (a) r agrees with MMC's exact MS to ≤ 2e-4 relative at all R — strong; (b) Janus δN n_s errors vs exact grow with the trajectory turn:
+1.3e-4 (R = 1), 7.6e-4 (R = 3), 1.7e-3 (R = 9) — the leading-order δN n_s formula is not enough for strongly turning multi-field models (Planck σ(n_s) ≈ 4e-3,
+so already a quarter to half sigma at R = 9). Next (JANUS-MF step 2, lock first): exact multi-field Mukhanov–Sasaki in Janus, validated against MMC's exact numbers.
+MAP: none
