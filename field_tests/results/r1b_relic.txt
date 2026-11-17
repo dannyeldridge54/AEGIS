@@ -1,0 +1,4 @@
+T1 sigma_eff/(pi a2^2/m^2) = 3.083333333333 vs 37/12=3.083333333333 -> PASS
+T2 thermal mass 2.5310 TeV vs source relation 2.4069 (rel +0.052) -> PASS
+R vs Beneke Born 2.207: on-shell 2.531 (+0.147); MSbar 2.444 (+0.107)
+R1b VALIDATED
