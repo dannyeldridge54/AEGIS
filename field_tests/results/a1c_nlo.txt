@@ -1,0 +1,4 @@
+T0 NLO off: 2.28546 TeV vs A1b 2.2855 -> PASS
+T1 NLO primary: 2.3944 TeV vs 2.419 (rel -0.0102) -> FAIL
+alt (x sqrt2): 2.4229 TeV (rel +0.0016) [reported]
+A1c NOT VALIDATED
