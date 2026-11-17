@@ -330,3 +330,4 @@ D1043  2026-11-17T09:09Z  R: hidden threshold coefficient (delta_GS/16pi^2 + b_a
 D1044  2026-11-17T09:33Z  Correction to D1043: condensate eta-exponent is removed by the dilaton redefinition; no free cancellation
 D1045  2026-11-17T09:47Z  R5: GS tilt with consistent variable ln(2 Im T) fails to reproduce rho; D1017 frame inconsistency flagged
 D1046  2026-11-17T10:02Z  R5b: fine kappa scan confirms ell-tilt fails
+D1047  2026-11-17T10:04Z  L8: distance priors - consistent but the test was degenerate (3 params, 3 data)
