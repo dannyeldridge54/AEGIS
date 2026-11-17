@@ -194,6 +194,7 @@ func main() {
 		fmt.Println("4) Run a CubeMind self-improvement / sync experiment")
 		fmt.Println("5) Run all selftests")
 		fmt.Println("6) Open results folders")
+		fmt.Println("7) Talk with CubeMind (voice)")
 		fmt.Println("0) Quit")
 		switch ask("Choose: ") {
 		case "1":
@@ -208,6 +209,8 @@ func main() {
 			selftests()
 		case "6":
 			openFolders()
+		case "7":
+			chatMode()
 		case "0":
 			return
 		}
