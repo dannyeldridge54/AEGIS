@@ -14,7 +14,7 @@ def add(lock, text, commit=True):
     if commit:
         sh('git', 'add', p, p + '.sha256')
         sh('git', 'commit', '-qm', f'{os.path.basename(p)} D{k}\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_014Gbstd4JrhrM8iiEauYtjs')
-        sh('git', 'push', '-q', 'origin', 'HEAD:unify-bg')
+        sh('git', 'fetch', '-q'); sh('git', 'rebase', '-q', '--autostash', 'origin/unify-bg'); sh('git', 'push', '-q', 'origin', 'HEAD:unify-bg')
     return f'D{k}'
 def _t(path):
     t = sh('git', 'log', '-1', '--format=%ct', '--', path); return int(t) if t else None
