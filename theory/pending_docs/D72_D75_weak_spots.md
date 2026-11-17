@@ -12102,3 +12102,30 @@ MAP: none
 - **Differences in our set-up (stated before computing):** constant g_* = 106.75, LO constants from sommerfeld_nlo (α₂ = 0.03479, δm = 0.1641), Ω h² = 0.1205 (Planck). Our Born mass is 2.531 TeV (R1b, +5% vs the source relation).
 - **Locked:** PREREG_R2d_relic_som.
 MAP: none
+
+### D1185 — R2d: LO Sommerfeld wino relic. M_th ≈ 3.47 TeV is above Hisano's 2.7–3.0 (S1 FAIL); the yield reduction 0.56 matches Hisano's ≈ 0.5 (S2 PASS); S3 fails on a lock inconsistency (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_R2d_relic_som. The target is sourced in D1184. **Result:** field_tests/results/r2d_relic_som.txt. No deviations.
+- **S3 (Born, R ≡ 1, x_end = 3e4):** M_th = 2.5642 TeV vs R1b's 2.531, +1.3% → **FAIL** (criterion 0.5%).
+  - Cause (lock error): R1b integrated to x = 1000, while this lock sets x_end = 3e4.
+  - The s-wave tail ∫λ/x² from 1000 to 3e4 adds ≈ 2.5% more annihilation, i.e. ≈ +1.25% in M. That matches the shift.
+  - The machinery is consistent. My reference was not.
+- **R_eff(x)** (all M ≈ 1.11 at x = 3, 1.33 at x = 25):
+  - It grows at late times: ≈ 2.4–2.5 at x = 300, ≈ 7.2–7.6 at x = 3e3, and 27–75 at x = 3e4.
+  - It is largest at 2.5 TeV, nearest the ≈ 2.4 TeV LO zero-energy resonance.
+  - Converged: n = 40 vs 80 within 1.5e-3.
+- **Ω h²(M):** 0.063, 0.075, 0.080, 0.086, 0.098, 0.110 at M = 2.5, 2.7, 2.8, 2.9, 3.1, 3.3 TeV. With x_end = 1e4 these are 1.5–3.5% higher.
+  - Ω h² never reaches 0.1205 on the grid, so the locked root returns NaN → **S1 FAIL**.
+  - Log–log extrapolation beyond the grid (slope 1.87, an ESTIMATE): M_th ≈ 3.47 TeV.
+- **S2:** Y_som/Y_Born at 2.8 TeV = 0.560, in [0.40, 0.60] → **PASS**. Hisano Fig. 2 has ≈ 0.5.
+- **Diagnosis (hypotheses, no rerun):** S2 passes, so the Sommerfeld REDUCTION is right. The gap sits in the absolute Born normalisation of the Boltzmann set-up:
+  - Our Born mass (2.53–2.56) vs Beneke's Born 2.207 (MS-bar) and Hisano's implied ≈ 2.2–2.4 (a "600 GeV shift", my inference).
+  - (i) α₂ is not run to the scale m. A TeV-scale α₂ ≈ 0.0325 against our 0.0348 is +15% in σ. The number is unsourced, to be fetched.
+  - (ii) Constant g_* = 106.75. The real g_* falls to ~10–60 for T = M/x below ~ few GeV, which is exactly where R_eff is large, so late-time annihilation is overstated by up to √(106.75/g_*) ~ 1.3–3.
+  - (iii) Kinetic decoupling is ignored. That works the other way.
+- **Next (R2e, source and lock first):**
+  - a sourced g_*(T), h_*(T) table (e.g. a standard lattice-based tabulation);
+  - a sourced α₂(μ = M) running.
+  - The Boltzmann equation in the full form with g_*^{1/2} = h_*/√g_* (1 + T dh/3h dT).
+  - Same targets (S1 band, S2). The S3 reference recomputed at x_end = 3e4 (2.564).
+VERDICT: S1 FAIL (M_th ≈ 3.47 est.), S2 PASS, S3 FAIL (lock reference error). The Sommerfeld machinery is supported; the Boltzmann inputs (g_*, α₂ scale) are OPEN.
+MAP: none
