@@ -10883,3 +10883,15 @@ Lock pushed before run; result field_tests/results/c3_mw_mass.txt.
   - One-parameter halo scaling only (the scale radius is fixed).
 VERDICT: CONSISTENT for s = 0.8–1.2; TENSION at 1.5.
 MAP: none
+
+## D1094 (CENTRE, Djl loop (D), locked PREREG_A3f after DEVIATIONS_A3f): referee tolerance fixed — Hyperion's neutron-star module agrees with the independent TOV code to 2e-12–8e-11 at a common surface and 5e-10–2e-9 at P → 0; all A0/A0s checks still pass — A3f VALIDATED, NS module VALIDATED (closes A3a–A3e)
+Lock f1f08c8 (with DEVIATIONS_A3f D1: compact.tov atol_P P_c·1e-16 → P_c·1e-30) pushed before run. Results: field_tests/results/janus_astro_a3f.txt, janus_astro_a0.txt, janus_astro_a0s.txt.
+- F1 (common surface ρ = 1e4, lock 1e-7): worst 8.1e-11 / 2.0e-12 / 3.8e-12 at log ρ_c = 14.8 / 15.0 / 15.2. PASS.
+- F2 (P → 0, lock 1e-6): 2.1e-9 / 9.3e-10 / 5.3e-10. PASS. The A3c "ill-conditioned surface" was never the problem.
+- F3: A0 and A0s re-run unchanged. Same PASS/FAIL counts as before, both VALIDATED. The A0s Oppenheimer–Volkoff limit is still 0.7102 M_⊙ (the a0s result file is byte-identical).
+- History closed:
+  - A3a crash → A3b/A3c N4 (surface story, wrong) → A3d (common surface, still off; boundary guess wrong) → A3e (diagnostic: the referee's absolute tolerance) → A3f (fixed, validated).
+  - The physics outputs never changed: SLy M_max 2.048, R_1.4 11.71 km, Λ_1.4 296; AP4 2.188 / 11.32 km / 248.
+- Lesson for the rules: when a cross-code check fails, check the referee's tolerances as hard as the module's.
+VERDICT: A3f VALIDATED.
+MAP: none
