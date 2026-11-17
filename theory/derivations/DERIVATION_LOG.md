@@ -1740,3 +1740,6 @@ Touches: none.
 
 ## D1028: Janus-LT L3 DESI DR2 BAO likelihood reproduces DESI ΛCDM (Ω_m 0.2970 vs 0.2975; h r_d 101.56 vs 101.54); TorsionΛ (b) χ² 123/13
 - [computed] Table IV, 13 points.
+
+## D1029: L4 — Janus-LT w0wa (BAO + compressed CMB): w0 −0.455±0.22, wa −1.62±0.65 matches DESI+CMB; Δχ² −8.0 vs −12.5 → locked INCONSISTENT on Δχ²
+- [computed] 242 s, own recombination.
