@@ -1,0 +1,4 @@
+MWPotential2014 R=8.178: v_c=219.5 (pull -4.27) Omega=26.84 (pull -16.59) kappa=35.94 (pull -0.96) -> FAIL
+MWPotential2014 R=8.256: v_c=219.3 (pull -4.33) Omega=26.56 (pull -19.39) kappa=35.54 (pull -1.36) [reported]
+McMillan17 R=8.178: v_c=233.2 (pull -0.57) Omega=28.52 (pull +0.04) kappa=41.24 (pull +5.43) -> PASS
+McMillan17 R=8.256: v_c=233.2 (pull -0.57) Omega=28.25 (pull -2.54) kappa=40.81 (pull +4.88) [reported]
