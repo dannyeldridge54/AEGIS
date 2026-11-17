@@ -1,0 +1,2 @@
+# DEVIATIONS — PREREG_JMF5_mmc_fixed.md
+D1 (2026-11-17 19:52Z): N1 LISTED: the patched MMC stopped with 'k outside the bounds of the background ... reconsider phi_init and N_pivot' (the corrected light-field force gives fewer e-folds before the pivot than MMC's mode start needs). N1 only, one rerun: step both phi_init components by +0.5 together from (12, 12) until the patched MMC completes (feasibility only; no n_s/r looked at before the choice); Janus uses the same phi_init. N2' result stands as scored (not rerun). Claims unchanged.
