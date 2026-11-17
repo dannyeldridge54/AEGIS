@@ -1621,3 +1621,7 @@ Touches: none.
 ## D987: S3b positivity (locked D986) — SIGN CHANGE
 - [computed] Ĥ(t) oscillates in sign for t ≲ 0.027 (|Ĥ| ~ e^{π²/2t}), positive for t ≥ 0.03.
 - D985 (large T², heavy T⁴ windings) unaffected; all-radius positivity fails; small-R needs the transverse channel.
+
+## D988: Project H local χ mass
+- [derived] winding-zero term = local, string-scale, tadpole-dominated (D987 region); [estimate] exceeds the E(U,2) part by ~A ≳ 100.
+- [derived] positive A₀ → absorbed into λ′ (needs larger Im S Im T); negative A₀ → fatal (D964). Sign needs dilaton backreaction.
