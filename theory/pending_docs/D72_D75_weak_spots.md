@@ -11100,3 +11100,17 @@ Lock pushed before run. DEVIATIONS_B4 D1 fixed as locked (scratch copy with Omeg
   - Build on a later B tick, with its own lock (same-input agreement plus the τn/ΔN derivative cross-check).
 VERDICT: B4b VALIDATED.
 MAP: none
+
+## D1108 (CENTRE, Djl loop (C), literature check): Deason+2019's escape speed is defined to 2 r200 (fiducial; v_esc = √(2[Φ(r0) − Φ(2r200)])) — exactly D1105's definition (i), so D1105's window stands: the standard MWPotential2014 is 2.1σ low, and the halo amplitude needs s ≳ 1.1
+- Source (quoted, arXiv:1901.02016 §3.2/§5):
+  - "we choose 2r200 as the limiting radius in our fiducial definition of v_esc". They tested 2, 3 r200 and ∞.
+  - M200 comes from an NFW halo with free M200 and c200, fixed baryons (Pouliasis+2017 Model I: Miyamoto–Nagai discs plus a Plummer bulge), combined with v_c(r0) = 230 ± 10 km/s. Result: M200 = 1.00 (+0.31/−0.24) e12, c200 = 10.9 (+4.4/−3.3). With the Dutton–Macciò c(M) relation: 1.29e12.
+- Consequences:
+  - D1105's "unverified" label on definition (i) is cleared. The (ii) "to infinity" column is not the paper's definition, so drop it from the reading.
+  - Window from v_esc alone: s ≥ 1.1 (s = 1.1 at −1.4σ, 1.2 at −0.7σ).
+  - Combined with the K-giant M200 (≤ 1.1, D1097), the joint window is s ≈ 1.1.
+  - Part of the pull is a known feature of MWPotential2014: it is built on v_c(r0) = 220 km/s, while Deason uses 230 ± 10. A ~4.5% higher v_c raises v_esc by roughly the same fraction, about 20 km/s [estimate], which alone would move s = 1.0 to about −1.3σ.
+  - So "the standard model is too light" partly reflects its older v_c normalisation, not just its halo.
+- For the Galaxy loop: next time it makes sense to swap MWPotential2014 for a newer Gaia-calibrated potential (e.g. McMillan 2017, available in galpy) and redo C3–C6 at once. That is one lock instead of patching s.
+VERDICT: definition confirmed; D1105 stands; recommend a McMillan17 re-run of C3–C6.
+MAP: none
