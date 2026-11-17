@@ -11649,3 +11649,15 @@ MAP: none
   - The surviving SERAPIS-E window has f = (M/2.9)² ≈ 0.053 (0.67 TeV) to 0.096 (0.9 TeV).
 - Reading: CTA + HL-LHC together should cover the entire post-hoc wino window. The SERAPIS-E wino becomes a definite test within roughly a decade (CTA Galactic Centre survey + HL-LHC 3 ab⁻¹) [estimate; the CTA wino-specific study 2008.00692 was not fetched].
 MAP: none
+
+## D1151 (CENTRE, manual Djl, literature): CTA's own wino study (Rinchiuso et al. 2020, arXiv:2008.00692) confirms D1150 — with 500 h and the benchmark Einasto, a null CTA result caps a 1 TeV wino at "no larger than 7%" of DM and any wino at ~4% near 2.9 TeV; SERAPIS-E's surviving window (f ≈ 5.3% at 0.67 TeV to 9.6% at 0.9 TeV) is therefore mostly within CTA reach, with only the lowest masses marginal
+- Quoted:
+  - "a null detection would allow the Wino to amount to no more than 4% of DM" (thermal mass).
+  - At 1 TeV, "the cross-section limit … requires such DM to constitute a fraction no larger than 7%". Their 1 TeV wino is quoted as ~17% of DM; we use (M/2.9)² = 12%. The fraction scalings differ, which is noted, not resolved.
+  - Halo: Einasto α 0.17, r_s 20, 0.39 GeV/cm³ at 8.5 kpc. Cores weaken the limits by 20% (300 pc) up to ×50 (5 kpc).
+- Reading:
+  - The 7% cap at 1 TeV (benchmark halo) is below SERAPIS-E's f at 0.9–1 TeV (9.6–12%). The 0.67 TeV end (5.3%) sits near the cap.
+  - So CTA tests nearly all of the window for cuspy haloes. Large cores could keep it open.
+  - Combined with HL-LHC (0.5–0.9 TeV, D1131): a near-complete test this decade.
+- D1150's scaling estimate (~5–10%) is consistent with this direct quote.
+MAP: none
