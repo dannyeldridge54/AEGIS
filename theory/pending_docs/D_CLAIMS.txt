@@ -435,3 +435,4 @@ D1148  2026-11-17T18:36Z  J10: Janus accuracy holds at new pivots N*=45,55,65 (P
 D1149  2026-11-17T18:37Z  J11: Janus beta_s error scales as eps* (slope 1.14) - truncation confirmed (PC)
 D1150  2026-11-17T18:41Z  CTA reach
 D1151  2026-11-17T18:43Z  CTA wino quoted
+D1152  2026-11-17T18:43Z  wino f(M) bracket
