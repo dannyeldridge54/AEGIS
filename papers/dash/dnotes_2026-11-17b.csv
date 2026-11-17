@@ -1,0 +1,17 @@
+dnote,track,item,verdict,key_number,key_label
+D1160,Toolkits,KALUZA v0.1 regression + LOCKBENCH v0.1 + MMC build,PASS,4,regression checks passed (of 4)
+D1161,Janus-MF,JMF1 two-field dN vs MultiModeCode,FAIL,0.0017,n_s dN error at R=9
+D1162,Janus-MF,JMF2 exact multi-field MS vs MultiModeCode (quadratic),VALIDATED,0.0000063,max |dn_s|
+D1163,LOCKBENCH,L-1 machine-readable claims,BUILT,1,tests passing
+D1164,LOCKBENCH,L-2 lock linter,BUILT,1,tests passing
+D1165,LOCKBENCH,L-4 provenance stamps,BUILT,1,tests passing
+D1166,Janus-MF,JMF3 quartic + axion vs MultiModeCode,VALIDATED,0.0000024,max |dn_s|
+D1167,LOCKBENCH,L-3 blind mode,BUILT,1,tests passing
+D1168,Janus,J7h three more ASPIC models (PC),HOLDS,206,pulse points Janus better (of 206)
+D1169,Janus-MF,JMF4 non-separable vs MultiModeCode,FAIL,0.0012,max |dn_s| (MMC derivative bugs)
+D1171,LOCKBENCH,L-5 verification kit; KALUZA FD 2nd order,VERIFIED,2.000,observed order
+D1172,LOCKBENCH,L-6 deviation command + rerun guard,BUILT,1,tests passing
+D1174,Janus-MF,JMF5 non-separable vs patched MultiModeCode,AGREES,0.0000094,max |dn_s|
+D1175,LOCKBENCH,L-8 pinned environment + self-test,BUILT,8,test files passing (of 8)
+D1176,Janus,J13 accuracy at N* 45/55/65 on 32 ASPIC models,HOLDS,0.0000014,median |dn_s| (96 points)
+D1195,Janus-MF,JMF6 non-separable vs PyTransport (independent),VALIDATED,0.000093,max |dn_s| (5 models)

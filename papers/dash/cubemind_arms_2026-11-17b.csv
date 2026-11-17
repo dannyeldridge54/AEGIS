@@ -1,0 +1,9 @@
+model,arm,items_scored,items_total,timeouts
+gpt-oss 20b,plain,64,300,1
+gpt-oss 20b,verify,300,300,0
+qwen2.5-coder 14b,plain,300,300,0
+qwen2.5-coder 14b,verify,300,300,0
+qwen3-coder 30b,plain,300,300,0
+qwen3-coder 30b,verify,69,300,1
+qwen3 14b,plain,54,300,1
+qwen3 14b,verify,30,300,0
