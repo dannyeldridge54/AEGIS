@@ -21,3 +21,10 @@ def fetch(which='sfd'):
         import dustmaps.sfd as m; m.fetch()
     else:
         import dustmaps.bayestar as m; m.fetch(version='bayestar2019')
+# Casagrande & VandenBerg 2018 (MNRAS 479, L102; arXiv:1806.01953) Table 2: R_zeta = a0 + T4(a1 + a2 T4) + a3 [Fe/H], T4 = 1e-4 Teff,
+# valid 5250 <= Teff <= 7000 K; mean <R> used outside. E(B-V) convention to be matched to the map (SFD scale) in C1.
+CV18 = {'G': (2.740, 1.4013, 3.1406, -1.5626, -0.0101), 'BP': (3.374, 1.7895, 4.2355, -2.7071, -0.0253), 'RP': (2.035, 1.8593, 0.3985, -0.1771, 0.0026)}
+def R_cv18(band='G', teff=None, feh=0.0):
+    m, a0, a1, a2, a3 = CV18[band]
+    if teff is None or not (5250 <= teff <= 7000): return m
+    T4 = 1e-4*teff; return a0 + T4*(a1 + a2*T4) + a3*feh

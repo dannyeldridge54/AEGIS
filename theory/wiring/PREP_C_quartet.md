@@ -11,3 +11,11 @@
 - T1: our SFD query vs dustmaps' own test values / the IRSA DUST service at a handful of (l, b).
 - T2: A_G-corrected abs_mag_G feeds orbit_params unchanged (lossless).
 - R: how much dust moves the Mapper's HR-diagram selection and its z_max medians (W2 observable).
+## Sourced 13:40 UTC (Djl C)
+- R_G (Casagrande & VandenBerg 2018, arXiv:1806.01953, Table 2):
+  - mean ⟨R_G⟩ = 2.740 (⟨R_BP⟩ 3.374, ⟨R_RP⟩ 2.035)
+  - fit R = a0 + T4(a1 + a2 T4) + a3[Fe/H], T4 = 1e-4 T_eff, valid 5250–7000 K
+  - G coefficients: 1.4013, 3.1406, −1.5626, −0.0101
+  - Coded as mapper_dust.R_cv18; outside the T_eff range it falls back to the mean.
+- Still to settle in C1: which E(B−V) scale CV18 assumes vs the SFD map's (SFD vs the Schlafly & Finkbeiner 2011 recalibration). Fetch that, don't assume it.
+- Remaining blocker: the maps and per-star data on Danny's PC.
