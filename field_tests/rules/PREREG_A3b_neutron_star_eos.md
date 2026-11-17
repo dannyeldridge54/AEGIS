@@ -1,0 +1,5 @@
+# PREREG A3b (track X): neutron stars with realistic EoS — new lock after A3a failed (written before running)
+A3a verdict (locked rule): NOT VALIDATED — run 1 and the single D1 rerun both crashed after N1 passed (|Δy| = 4.4e-6, 8.6e-6). Diagnosis (after the verdict, printed EoS tables only): a UNITS error — Read+ 2009 Table 2 gives the crust K_i for p/c² in g/cm³ (e.g. piece 4 at 1e14 g/cm³ gives p/c² ≈ 4e11 g/cm³, i.e. 3.6e32 dyn/cm²), while ns.py used them as p in dyn/cm² and mixed them with p1 in dyn/cm²; the crust-core joint landed at 28 g/cm³ and M became negative.
+Fix: all K in p/c² units; p1 converted by 1/c²; pressures converted by c² where used (tools/janus_astro/ns.py as committed with this lock; check script theory/janus_astro/a3b_check.py = a3a_check.py with the same units change).
+Tests N1–N4 and pass criteria: identical to PREREG_A3a (N1 |Δy| ≤ 1e-3; N2 SLy M_max vs 2.049, R_1.4 vs 11.736 km ≤ 1.5%; N3 AP4 2.213, 11.428 km ≤ 1.5%; N4 vs compact.tov ≤ 1e-5). Reported: Λ_1.4 vs GW170817 190 (+390/−120).
+Output field_tests/results/janus_astro_a3b.txt. No reruns to chase; DEVIATIONS first.
