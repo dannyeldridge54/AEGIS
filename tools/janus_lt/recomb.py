@@ -72,3 +72,12 @@ class Recomb:
         return float(np.trapezoid(g, zz))
     def z_drag(self):
         return brentq(lambda z: self.tau_d(z) - 1.0, 800, 1300, xtol=1e-4)
+
+def _tau(self, zmax):
+    """L1: photon optical depth tau(z) = int_0^z x_e n_H sigma_T c /[H (1+z')] dz' (no 1/R factor)."""
+    zz = np.linspace(0, zmax, 20001)
+    g = [self.xe_of(z)*self.nH(z)*sigT*c/(self.Hs(z)*(1 + z)) for z in zz]
+    return float(np.trapezoid(g, zz))
+def _z_star(self):
+    return brentq(lambda z: self.tau(z) - 1.0, 800, 1300, xtol=1e-4)
+Recomb.tau = _tau; Recomb.z_star = _z_star
