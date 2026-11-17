@@ -269,3 +269,4 @@ D982  2026-11-17T01:16Z  Second research pass on the five open nodes: string sig
 D983  2026-11-17T01:22Z  Third research pass: field-theory form of the brane-scalar sign rule (mass vs Casimir), new H.E.S.S. wino limits, D982 crash fix
 D984  2026-11-17T01:55Z  Project H at matched n_s predicts r 15.7% higher than SERAPIS-E: distinguishable by LiteBIRD-class r
 D985  2026-11-17T02:10Z  Level S3 PASS: anti-D5 position scalar gets a positive one-loop mass with E(U,2) shape at string level (Mobius amplitude, full tower)
+D986  2026-11-17T02:35Z  Leptogenesis Boltzmann check (locked D982): kappa = 0.939 everywhere, instantaneous yields stand; c=0.3 at M_H=1e12 still fails (now x1.22 short)
