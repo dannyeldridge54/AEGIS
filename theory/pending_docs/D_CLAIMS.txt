@@ -317,3 +317,4 @@ D1030  2026-11-17T06:30Z  R7 no strong hidden-visible coupling asymmetry in hete
 D1031  2026-11-17T06:35Z  R8 Kronecker limit: L is the finite part of E(tau,s->1)
 D1032  2026-11-17T06:40Z  L5 SERAPIS late universe consistency check
 D1033  2026-11-17T06:55Z  S4c2 Pruefer KK probe: method validated, 6D m1 not converged in eps
+D1034  2026-11-17T06:55Z  J8 ASPIC w,rho_reh route head-to-head
