@@ -10617,3 +10617,10 @@ Cost: 517 ms per star for a 5-Gyr orbit — far too slow for the 192M-star DR3 s
 MAP: none
 
 ## D1071a — correction to D1071's diagnosis: the pole constants in mapper_feed (α_G 192.85948°, δ_G 27.12825°, l_Ω 32.93192°) are the EXACT defining values of Gaia's/Hipparcos's Galactic frame (Gaia DR3 documentation §4.1.7: "should be regarded as exact"), not rounded ones. The 7e-6 deg (25 mas) A8a offset is astropy's different realisation of the Galactic frame. A8a's locked verdict (NOT VALIDATED vs astropy) stands as recorded; A8b tests against Gaia's own convention.
+
+## D1072 (DEEP Jl tick, track X / Hyperion -> Star Mapper, locked PREREG_A8b): the mapper feed's sky-to-Galactic conversion reproduces Gaia DR3's own matrix A_G' to 1.9e-16 and its (l, b) to 6e-14 deg; Sun and Galactic Centre geometry exact: A8b VALIDATED. astropy's Galactic frame differs from Gaia's by up to 25 mas — so the Mapper's l, b now match Gaia's published columns, not astropy's
+Source: Gaia DR3 documentation §4.1.7, Eq. 4.62 (A_G' to 16 decimals) and the exact defining angles (fetched 17 Nov).
+Results [computed]: G1 matrix 1.9e-16; G2 (l, b) for 200 stars 5.7e-14 deg; G3 Sun maps to (−8.0, 0, 0.0208) kpc to 7e-13 with velocity V_SUN exactly, the Galactic Centre to the origin to 2e-15 kpc. Reported: astropy offset 6.93e-6 deg (24.9 mas).
+Bookkeeping: the first claim of this number failed (uncommitted D1071a text blocked the claim script's pull), so this note was appended in a follow-up commit.
+Remaining for the Mapper: speed (0.5 s per orbit) → A8c.
+MAP: none
