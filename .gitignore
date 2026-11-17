@@ -39,3 +39,5 @@ tools/launcher/AEGIS_Launcher.exe
 tools/calcq/status_pc.txt
 field_tests/results/*.part*.jsonl
 theory/janus/aspic/j7a_aspic
+theory/janus/aspic/j7b_aspic
+theory/janus/aspic/aspic_out_j7b.txt
