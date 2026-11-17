@@ -10670,3 +10670,16 @@ Results [computed; 200 synthetic disk stars, seed 11; MWPotential2014 halo ampli
 - Wino (tree-level A7b scaling, D735 read-off): 0.66 and 1.0 TeV PASS at every s (f_max 0.27–0.52 vs f = 0.14, 0.26); 1.85 TeV FAILS at every s (f_max 0.26–0.39 vs 0.67).
 Reading: with Hyperion's own Milky Way (MWPotential2014: lighter halo, J 3× below the A7a Einasto normalisation) SERAPIS-E's wino passes up to at least 1 TeV for any halo amplitude within ±20%, and 1.85 TeV fails regardless — the wino window's upper edge sits between 1.0 and 1.85 TeV here. The Mapper's median z_max shifts by 8% across that range (100× the orbit precision), so real Gaia kinematics (radial-velocity stars, D1078 pipeline) are an observable that constrains the same halo the wino limits depend on. Caveats: synthetic sample with fixed initial velocities (real data fix the potential through equilibrium, not this direct response); A7b/D735 ×2 limit uncertainty; one-parameter halo variation only.
 MAP: none
+[CENTRE] Lock PREREG_A1_wino_cmb (9c6f49e) pushed before run. Result field_tests/results/a1_wino_cmb.txt.
+- T1 convention: s=(1,0) → 2πα₂²/M² exact. PASS.
+- T2 anchor: σv_tot(2.9 TeV, v=1e-3) = 9.45e-25 cm³/s, inside 1504.05554's "10⁻²⁴–10⁻²⁵" (order-of-magnitude anchor). PASS.
+- T3: CMB-era rate saturated (σv(1e-6)/σv(1e-7) = 1.000 at every mass).
+- RESULT (computed, LO potential, f_eff bracket DERIVED 0.14–0.41, Planck p_ann<3.2e-28):
+  - The thermal wino (~2.9 TeV) is ALLOWED by the CMB: f_max = 1.5–2.6.
+  - Exclusion is confined to the Sommerfeld resonance band, ~2.0–2.7 TeV for f_eff=0.41 and ~2.2–2.5 TeV for 0.14. At the 2.34 TeV peak, f_max = 0.10–0.17.
+  - Also excluded: 0.5 TeV, at f_eff=0.41 only.
+- This matches the literature picture qualitatively (CMB constrains the wino only near the resonance). Not quoted; check vs 1307.4082 figure later.
+- Caveats: LO potential (no NLO), single f_eff, no f_eff(M) table.
+- Wiring: closes the A triangle's CMB corner. The halo J and γ-line corners are already in A7b/W2.
+VERDICT: A1 VALIDATED.
+MAP: node=janus_astro_dm status=validated touches=[wiring_w2, cmb_planck]
