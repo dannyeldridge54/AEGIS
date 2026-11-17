@@ -12368,3 +12368,14 @@ MAP: none
   - Throughput is about 0.02 s per star (single core). That is slower than the legacy fast leapfrog, so a full sweep needs a timing check on the PC first.
 VERDICT: DONE. McMillan17 is the Mapper default (validated); MWPotential2014 is kept as a legacy option.
 MAP: none
+
+### D1198 — A rotation tick: no new 2026 wino collider or line limits beyond the notes (NULL) (2026-11-17)
+- [LEFT · literature] Two standard searches: 2026 disappearing-track wino limits (ATLAS/CMS, Run 3), and 2026 TeV gamma-ray line searches toward the Galactic Centre.
+- **Already in the notes:**
+  - ATLAS arXiv:2603.08315 (JHEP 07 (2026) 152; 137 fb⁻¹, 13 TeV). The pure-wino chargino limit is 670 GeV observed and 770 GeV expected (95% CL). This is the source of the 0.67 TeV floor of the post-hoc window.
+  - H.E.S.S. IGS arXiv:2608.07234.
+  - Rinchiuso et al. arXiv:1808.04388.
+- **Not in the notes:** MAGIC arXiv:2212.10527 (lines up to 100 TeV toward the GC, 2022). It predates and is weaker than H.E.S.S. IGS 2026 at 1–3 TeV (as I understand it, not fetched), so it does not change D1153 or D1190.
+- **No Run-3 (13.6 TeV) disappearing-track wino result** appeared in this search.
+VERDICT: NULL. The post-hoc wino window (0.67 to ~1–1.5 TeV, D1153; IGS-robust to cored haloes, D1190) is unchanged.
+MAP: none
