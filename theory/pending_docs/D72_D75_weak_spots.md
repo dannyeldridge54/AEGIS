@@ -10783,3 +10783,23 @@ Lock pushed before run; result field_tests/results/a1b_resonance.txt.
 - To settle it: implement the NLO potential (needs the full Eq. 3.25/3.26 text, e.g. from the PDF via a non-truncating route), then recompute A1 with f_eff(M) from the 1506.03811 tables (needs Danny's PC or another route to the epsilon tables).
 VERDICT: A1b VALIDATED; open item: thermal wino vs CMB at NLO and high f_eff is marginal [estimate].
 MAP: none
+
+## D1088 (CENTRE, Djl loop (B), locked PREREG_B3, bookkeeping): τ=i dark radiation — the only candidate is the enhanced-symmetry states massless at the self-dual point; if the sterile inflaton doesn't populate them ΔN = 0, if it does ΔN = 0.05–0.30 — all BBN-allowed, but SU(2)-size sectors (≥ 0.16) clash with ACT DR6's N_eff
+Lock pushed before run; result field_tests/results/b3_taui_darkrad.txt.
+- Inventory (reasoning from the D-notes):
+  - The heavy N doublet at i is massive (D726: 0.3016 each), so it decays.
+  - The near-massless lightest ν (D601) is already part of N_eff = 3.044.
+  - The enhanced-symmetry states at τ = i are the only dark-radiation candidates.
+- Formula (derived, separate entropy conservation, SM g*s = 106.75 at T_R ≲ 1e6 GeV): ΔN = (4/7) g_h (10.75/106.75)^{4/3}.
+- Results:
+  - (a) Not populated: ΔN = 0. The sterile-inflaton argument (D601: no linear decay to equal-mass pairs) favours this.
+  - (b) U(1): 0.054
+  - (c) SU(2): 0.161
+  - (d) SU(2) + gaugino: 0.301
+- All are inside BBN's window (D1082: ≤ 0.41).
+- CMB check: ACT DR6 N_eff = 2.86 ± 0.13 (as cited in D723, not re-fetched) gives roughly ΔN ≲ 0.08 at 2σ above the 3.044 baseline (estimate). (c) and (d) would then be in tension; (b) is fine.
+  - CMB-S4-class σ ≈ 0.03 (from memory, labelled) would see (b) at 1.8σ and (c) at 5σ.
+- Verdict: the τ = i branch is CONSISTENT if the extra states are unpopulated or massive, which is the default reading. If they are populated and SU(2)-sized it is in TENSION with ACT. This closes D1085's open item as a conditional result: a populated SU(2)-sized hidden sector would be a falsifiable N_eff prediction for τ = i, and ρ predicts ΔN = 0 exactly (D725).
+- Open: whether the enhanced-symmetry states really are massless in the SERAPIS vacuum (D626: Hubble-induced SUSY breaking may lift them), and their production rate. Not computed.
+VERDICT: CONDITIONAL — CONSISTENT (unpopulated/massive), TENSION with ACT DR6 if populated SU(2)-sized.
+MAP: none
