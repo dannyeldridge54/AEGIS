@@ -490,3 +490,4 @@ D1203  2026-11-17T22:31Z  kappa tick: McMillan17 local rotation-curve slope rise
 D1204  2026-11-17T22:36Z  2407.12551 (Klacka+ 2024) RAR-based MW model: right local slope but v0 228.8, MOND-like DM, no public code; not a Mapper default
 D1205  2026-11-17T22:36Z  L11 Cobaya MCMC confirms L7 w0wa errors
 D1206  2026-11-17T22:37Z  JMF7 adiabatic limit reached in all multi-field tests
+D1207  2026-11-17T22:39Z  JMF8 Janus-MF validated for three fields vs PyTransport
