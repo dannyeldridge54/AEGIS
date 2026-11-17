@@ -11453,3 +11453,15 @@ one loop. So "near-finite" is not a free tuning: the natural values are 0 (abeli
 correction to an exactly-zero coefficient (e.g. Wilson-line mixing, which hep-th/0001062 treats, or a two-loop term) — a sharper, model-level question.
 Status: lead KEPT; the size problem now reads "what lifts an exactly-zero γ̃ by ~2% of its natural non-abelian size". Not claimed.
 MAP: none
+
+## D1136 (CENTRE, Djl loop (B), literature + arithmetic): N_eff forecasts (CMB-S4 2026, arXiv:2608.07453) — SPT Ext-10k σ ≈ 0.069, Simons Observatory 0.045 (to 2034), CMB-S4 0.029–0.030 — so the τ=i SU(2) hidden sector (ΔN 0.161) is reached at 3.6σ by SO and 5.4σ by CMB-S4, and even the U(1) case (0.054) at 1.8σ by CMB-S4; the τ=i vs ρ separation (D1088/D1122) is testable by ~2034
+- Quoted (2608.07453): "σ(N_eff) = 0.045" (SO, fully populated receiver, lifetime to 2034); SPT Ext-10k ≈ 0.069 (data through 2026); CMB-S4 two-site 0.029 (7 yr) and Chile-only 0.030 (9 yr, with SO LAT); cosmic-variance limit 0.0073.
+- Separation from ΔN = 0 (arithmetic; signal/σ, ignoring the current ACT offset), for U(1) / SU(2) / SU(2)+gaugino (ΔN 0.054 / 0.161 / 0.301):
+  - SPT Ext-10k: 0.8 / 2.3 / 4.4σ
+  - SO: 1.2 / 3.6 / 6.7σ
+  - CMB-S4: 1.8 / 5.4 / 10.0σ
+- Reading:
+  - SERAPIS-ρ predicts ΔN = 0 exactly (D725). SERAPIS-τ=i with a populated hidden sector predicts ΔN ≥ 0.054.
+  - SO decisively tests the SU(2)-size sectors. Only CMB-S4-class or cosmic-variance-limited surveys approach the U(1) case. An SO-era N_eff consistent with 3.044 at the 0.05 level would leave τ=i alive only as "unpopulated/massive or U(1)".
+- Forward-table candidate (post hoc, not frozen): "τ=i hidden sector: ΔN_eff ∈ {0, 0.054, 0.161}; SO/CMB-S4 test." It could go into the v3.3 forward table at the next "Publish" if Danny wants it.
+MAP: none
