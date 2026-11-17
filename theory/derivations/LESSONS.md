@@ -257,3 +257,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1009: a log inside a log (Kähler potential) enters V linearly; a log inside an exponent (condensate) does not — check which one a mechanism uses.
 - D1010: compare a mechanism's natural form (multiplicative) with the fitted form (additive) directly in the calculator rather than arguing equivalence.
 - D1011: check an automated symbolic 'False' before trusting it; subs on simplified expressions can silently fail to match.
+- D1012: guard exponentials of 1/T in recombination codes (He I term overflows once helium has recombined).

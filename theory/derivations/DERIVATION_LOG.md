@@ -1689,3 +1689,6 @@ Touches: none.
 
 ## D1011: R2 — GS term with full Kähler structure keeps the tilt linear in L (kinetic change 4e-5 const; Ã depends on T only via Y)
 - [computed] sympy identities K1, K2, K4; K3 numbers.
+
+## D1012: Janus-LT L0b2 own recombination VALIDATED — z_d 6.7e-4, r_d 4.4e-4 vs CAMB (50/50)
+- [computed] minimal RECFAST, 2.5 s/cosmology.
