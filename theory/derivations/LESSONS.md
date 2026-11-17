@@ -287,3 +287,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1039: for a high derivative of a numerical reference, lock an informativeness test (two stencils) and report the claim no sharper than the reference spread.
 - D1040: check the Eisenstein index of an imported loop term before building on it — only s→1 carries the Kronecker log.
 - D1041: when a paper doesn't state its cut, lock both selections and the claim for one; the other is a diagnostic, not a second chance.
+- D1042: reuse a validated likelihood file and add one new block per lock (L4 + L6 → L7) so a failure points at one piece.

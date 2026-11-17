@@ -10336,3 +10336,13 @@ covariance, M marginalised analytically. (a) zHD > 0.01, N = 1590: Ω_m = 0.3315
 z < 0.01 calibrator/peculiar-velocity SNe pull it, so the published number is consistent with the zHD > 0.01 cut.
 Janus-LT now has BAO (D1028), CMB-compressed (D1029), growth (D1027) and SN (this) likelihoods → joint w0wa next.
 MAP: none
+
+## D1042 — RIGHT/Janus-LT — L7: joint DESI DR2 BAO + CMB(θ*, ω_b, ω_bc) + Pantheon+ w0waCDM [computed]
+Lock PREREG_L7_joint_w0wa. SN distance grid vs quad ≤ 5e-11; z*/z_d grid OK (8.8e-6). ΛCDM χ² = 1430.62 (h 0.6831).
+w0waCDM MAP: w0 = −0.853 ± 0.053, wa = −0.518 ± 0.200, h = 0.6752; Δχ² = −7.70 (2 extra params).
+vs DESI Table V (2503.14738) DESI+CMB+Pantheon+: w0 −0.838 ± 0.055, wa −0.62 +0.22/−0.19 → diffs 0.3σ, 0.5σ → CONSISTENT.
+Errors match DESI's (0.053 vs 0.055; 0.20 vs ~0.21). Δχ² −7.7 ≈ 2.3σ-equivalent for 2 dof vs DESI's ~2.8σ for this combination —
+same direction, somewhat weaker (compressed CMB; MAP not posterior). Contrast L4 (BAO+CMB only): parameters matched but Δχ²
+was INCONSISTENT — adding SN pins w0/wa tightly enough that the compressed-CMB shortfall shrinks. Janus-LT now reproduces the
+headline DESI DR2 dynamical-DE fit end to end with its own recombination, BAO, SN and growth code.
+MAP: none
