@@ -12250,3 +12250,26 @@ MAP: none
 - **Next B item (lock first if pursued):** rerun the B7 pulls with the LBT Y_p and the theory error included (PRIMAT rate uncertainty), so the SU(2) verdict is a scored number, not arithmetic on old outputs.
 VERDICT: new data recorded. SU(2) dark radiation is now in mild tension (1.7σ, and above the 2σ ΔN_ν bound); SU(2)+gaugino is disfavoured; U(1) is safe.
 MAP: none
+
+### D1192 — B8: τ_i dark radiation scored against LBT 2026 with theory errors. SU(2)+gaugino EXCLUDED (Y_p +3.08σ); SU(2) OK (+1.71σ); U(1) OK (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_B8_lbt. **Result:** field_tests/results/b8_lbt.txt. No deviations.
+- **Errors:** Y_p 0.2458 ± 0.0013 ⊕ 0.0002; 10⁵D/H 2.513 ± 0.028 ⊕ 0.083 (LBT Eqs. 1, 2, 19, 20). All ΔN_final values reproduce B7 (≤ 3e-4).
+
+  | Case | Y_p | Y_p pull | 10⁵D/H | D/H pull | Verdict |
+  |---|---|---|---|---|---|
+  | base | 0.24592 | +0.09 | 2.436 | −0.88 | OK |
+  | U(1), ΔN 0.054 | 0.24664 | +0.64 | 2.454 | −0.68 | OK |
+  | SU(2), ΔN 0.161 | 0.24804 | +1.71 | 2.489 | −0.27 | OK |
+  | SU(2)+gaugino, ΔN 0.301 | 0.24985 | **+3.08** | 2.535 | +0.25 | **EXCLUDED** |
+
+  - EMPRESS XV (reported, not scored) gives Y_p pulls of +1.43, +1.61, +1.96 and +2.41 for the four cases.
+- **Consequences:**
+  - (1) The SU(2)+gaugino τ_i hidden sector is excluded at > 3σ by the LBT 2026 helium. That is the first data exclusion of a D1088 dark-radiation option.
+  - (2) SU(2) survives at 1.7σ; it is no longer comfortable.
+  - (3) With the theory error included, D/H is no longer a problem for any case: the base is −0.88σ, against the −2.75σ of the obs-only arithmetic in D1191.
+  - (4) EMPRESS points the same way and harder. If future Y_p settles low, SU(2) would also go.
+- **SERAPIS paper action (at the next rung, no edit now):**
+  - In the v3.3 τ_i paragraph and the forward table, mark SU(2)+gaugino as "excluded by LBT Y_p (arXiv:2601.22239)" and SU(2) as "1.7σ".
+  - Add arXiv_2601_22239 and arXiv_2506_24050 to refs.bib.
+VERDICT: SU(2)+gaugino EXCLUDED; SU(2) OK (1.7σ); U(1) OK; base OK.
+MAP: none
