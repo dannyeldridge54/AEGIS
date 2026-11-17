@@ -68,3 +68,4 @@ Status: draft, collected 17 Nov 2026 (D1081–D1101). Packaging and a Zenodo upl
 - Horta+2026 (arXiv:2601.18876) measures v_c(R☉) = 235.3 km/s. MWPotential2014 gives 219.5 (−4.3σ, FAIL); McMillan17 gives 233.2 (PASS, C8).
 - New mapper_feed.orbit_params_galpy(pot=...) supports McMillan17 through galpy's C integrator. It reproduces our MWPotential2014 integrator to ≤ 4.5e-4 (D9, after a unit fix; D1196a).
 - The default is still MWPotential2014. Flipping it, together with the Sun's frame constants (R0 = 8.21, v0 = 233.1), is the next step.
+- D10 (D1197): the Star Mapper orbit default is now McMillan17 (R0 8.21, v0 233.1 + Schönrich solar motion). Output goes to hyperion_mcm17/; --model MWPotential2014 gives the identical legacy output. Tests T1–T3 PASS.

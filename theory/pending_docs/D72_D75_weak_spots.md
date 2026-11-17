@@ -12347,3 +12347,24 @@ MAP: none
 - Star 1 under McMillan17: r_peri 7.92 → 7.70, r_apo 9.14 → 8.24 (−10%), z_max 0.106 → 0.094. So r_apo can fall by up to 10%, not "0–4%".
 - The CHANGES entry's "D1193–D1195" should read "D1193–D1196".
 MAP: none
+
+### D1197 — D10: the Star Mapper orbit default is switched to McMillan17 with a consistent solar frame. T1 (legacy identical), T2 (LSR circular) and T3 (smoke) all PASS (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_D10_mcm17_default. **Result:** field_tests/results/d10_mcm17_default.txt. No deviations.
+- **Code:**
+  - mapper_feed.galactocentric gets optional r0_xy and v_sun; its defaults are unchanged.
+  - mapper_orbits gets MODELS and DEFAULT_MODEL = 'McMillan17', plus --model.
+- **McMillan17 frame:** R0 = 8.21 kpc, v0 = 233.1 km/s, with the Schönrich 2010 solar motion, so v_sun = (11.1, 245.34, 7.25).
+  - Output goes to cosmos_map/hyperion_mcm17/L5/, version 'hyperion-orbits-2'.
+  - The legacy run (--model MWPotential2014) keeps hyperion/L5/ and 'hyperion-orbits-1', so resumable tiles never mix models.
+- **Tests:**
+  - **T1:** the legacy path is identical to the pre-change output (20 synthetic stars, seed 10) → PASS.
+  - **T2:** the LSR point in McMillan17 has ecc = 0.00041, r_peri = 8.2033, r_apo = 8.2100 → PASS.
+  - **T3:** the McMillan17 smoke test returns 20 finite rows with ecc 0.025–0.334 → PASS.
+- **Reported:** r_apo change, McMillan17 vs MWP2014 (including the frame change), median +0.3%, range −7.7% to +2.7%.
+  - The frame change (a faster Sun) partly offsets the heavier potential, so the net effect on the catalogue is small for disc stars.
+- **Not done:**
+  - The PC copy is untouched; the PC is not linked.
+  - Next PC run: `python -m tools.janus_astro.mapper_orbits --cosmos-map ufe-v2/cosmos_map --skymap apps/skymap` with the default model.
+  - Throughput is about 0.02 s per star (single core). That is slower than the legacy fast leapfrog, so a full sweep needs a timing check on the PC first.
+VERDICT: DONE. McMillan17 is the Mapper default (validated); MWPotential2014 is kept as a legacy option.
+MAP: none
