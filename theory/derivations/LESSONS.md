@@ -330,3 +330,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1195: when a reference fails, find a second reference built a different way (symbolic V, other method) — agreement of three independent codes settles it.
 - D1200: a profile grid is the cheap honest check on Hessian errors — if it reproduces the minimum and Δχ² you can trust the Gaussian summary.
 - D1205: before trusting a sampler's numbers, evaluate your own likelihood at one of its points — if they agree, the wiring is right.
+- D1206: for multi-field results, show the curvature spectrum has stopped evolving where you read it off — interacting models can keep evolving until late.

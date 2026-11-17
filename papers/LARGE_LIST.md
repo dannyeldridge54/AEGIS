@@ -2,7 +2,7 @@
 Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN / RUNNING / BLOCKED(reason) / DONE(ref).
 
 ## AEGIS — Janus (inflation)
-1. JMF7 adiabatic-limit check: P_R at end of inflation vs a few e-folds earlier on Q9, N1, N2' (is isocurvature gone?) — OPEN (next)
+1. JMF7 adiabatic-limit check — DONE (D1206)
 2. Janus-MF beyond two fields (3-field quadratic vs PyTransport) — OPEN
 3. Janus-MF curved field space (non-canonical) vs PyTransport NC examples (needs gravipy → patch or skip) — OPEN
 4. J7k the three listed ASPIC models (PC) — RUNNING

@@ -12488,3 +12488,10 @@ With L10 (D1200, profile) Janus-LT's joint BAO+CMB+SN w0wa result now has three 
   - That would be a locked fit once the PC can run it (or here, cheaply).
 VERDICT: candidate rejected as the default. McMillan17 is retained. A halo-based refit to Eilers/Horta is noted as the upgrade path.
 MAP: none
+
+## D1206 — TOOLS/JANUS — JMF7: adiabatic limit reached by ε = 1 in the multi-field tests [CONFIRMED]
+Lock PREREG_JMF7_adiabatic. P_R evaluated 5, 3, 1, 0 e-folds before ε = 1 (same pivot):
+Q9 change over the last e-fold −5.7e-12 (n_s 0.927750 unchanged); N2' +1.0e-11 (0.946212 unchanged); N1 +4.5e-9 (0.954583 unchanged; still −3.9e-4 at
+5 e-folds before the end, i.e. isocurvature decays late in the interacting model but is gone by the end). All three ADIABATIC LIMIT REACHED → the
+Janus-MF numbers in JMF2–JMF6 are final super-horizon values; no reheating treatment needed for these models.
+MAP: none
