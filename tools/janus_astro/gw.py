@@ -85,3 +85,23 @@ def snr_opt_z(m1, m2, z, DL, psd, f_lo, n=4000):
     """Optimal SNR for a source at redshift z, luminosity distance DL (m): redshifted chirp mass, ISCO cut at f_isco/(1+z)."""
     Mcz = chirp_mass(m1, m2)*(1 + z); fhi = c**3/(6**1.5*math.pi*G*(m1 + m2))/(1 + z)
     return snr_opt(Mcz, DL, psd, f_lo, fhi, n) if fhi > f_lo else 0.0
+
+# ---- A2b: aligned-spin TaylorF2 phase (coefficients: Khan et al. 2016, arXiv:1508.07253, Appendix B) ----
+def taylorf2_phase_spin(f, m1, m2, chi1, chi2, order=7, spin_order=7):
+    """Psi(f) up to a + b f, h ~ exp(-i Psi). Non-spin terms up to `order` (twice PN order); spin terms included only at
+    PN orders 2k <= spin_order (1.5PN SO -> 3, 2PN SS -> 4, 2.5PN SO -> 5, 3PN SO -> 6, 3.5PN SO -> 7)."""
+    import numpy as np
+    M = m1 + m2; eta = m1*m2/M**2; d = (m1 - m2)/M; cs, ca = (chi1 + chi2)/2, (chi1 - chi2)/2; pi = math.pi
+    x = pi*G*M*np.asarray(f, float)/c**3; v = x**(1/3)
+    s = lambda k: 1.0 if k <= spin_order else 0.0
+    p = {0: 1.0 + 0*v, 1: 0*v, 2: (3715/756 + 55*eta/9) + 0*v,
+         3: -16*pi + s(3)*(113*d*ca/3 + (113/3 - 76*eta/3)*cs) + 0*v,
+         4: (15293365/508032 + 27145*eta/504 + 3085*eta**2/72) + s(4)*((-405/8 + 200*eta)*ca**2 - 405/4*d*ca*cs + (-405/8 + 5*eta/2)*cs**2) + 0*v,
+         5: (1 + np.log(x))*(38645*pi/756 - 65*pi*eta/9 + s(5)*(d*(-732985/2268 - 140*eta/9)*ca + (-732985/2268 + 24260*eta/81 + 340*eta**2/9)*cs)),
+         6: (11583231236531/4694215680 - 6848*EULER_GAMMA/21 - 640*pi**2/3 + (-15737765635/3048192 + 2255*pi**2/12)*eta
+             + 76055*eta**2/1728 - 127825*eta**3/1296 - 6848/63*np.log(64*x) + s(6)*(2270/3*pi*d*ca + (2270*pi/3 - 520*pi*eta)*cs)),
+         7: (77096675*pi/254016 + 378515*pi*eta/1512 - 74045*pi*eta**2/756
+             + s(7)*(d*(-25150083775/3048192 + 26804935*eta/6048 - 1985*eta**2/48)*ca
+                     + (-25150083775/3048192 + 10566655595*eta/762048 - 1042165*eta**2/3024 + 5345*eta**3/36)*cs)) + 0*v}
+    tot = sum(p[k]*v**k for k in range(order + 1))
+    return 3/(128*eta)*x**(-5/3)*tot
