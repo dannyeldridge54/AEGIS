@@ -10755,3 +10755,16 @@ Lock pushed before run; result field_tests/results/b2_chronos_bbn.txt.
 - Reading: BBN cannot distinguish SERAPIS's branches. Its only BBN-relevant knob is dark radiation, which is zero at ρ and uncomputed at τ=i. The GW knee (W1: T_R ↔ n_s ↔ knee frequency) remains the discriminating early-universe observable.
 VERDICT: B2 VALIDATED; physics CONSISTENT; τ=i dark radiation OPEN.
 MAP: none
+
+## D1086 (CENTRE, Djl loop (D), locked PREREG_A3d): my diagnosis of the A3b/A3c neutron-star radius mismatch was WRONG — stopping both codes at the same finite surface (ρ = 1e4 g/cm³) leaves the radii 1.0–1.1e-5 apart at log ρ_c = 15.0 and 15.2 (4e-7 at 14.8); masses agree to ≤ 8e-11 — A3d NOT VALIDATED
+Lock pushed before run (compact.tov gained p_surf, default 0, behaviour unchanged). Result field_tests/results/janus_astro_a3d.txt.
+- Criterion was ≤ 1e-7. Radius differences: 4.2e-7, 1.1e-5, 1.0e-5. compact.tov's radius is larger by 0.1 m.
+- Surface sensitivity (reported): R(P → 0) − R(ρ = 1e4) = 0.34 / 0.14 / 0.07 m. This is the same size as the mismatch, but it can't be the cause, because both codes now share a surface.
+- Reading:
+  - The ill-conditioned-surface hypothesis (A3c) is refuted for log ρ_c ≥ 15.
+  - Masses agree to 1e-11, so the interior integration is the same in both codes.
+  - The residual is in how the surface event is located, or in a piecewise-boundary density mismatch between rho_of_P_SI and ns's own ε(P) near the crust joins. This is a hypothesis, not tested.
+  - Physically irrelevant: 0.1 m on 11 km, versus NICER errors of about 1 km. The A3b/A3c physics numbers (SLy and AP4 M_max, R_1.4, Λ_1.4, comparisons with data) stand. Only the 1e-5 code-agreement claim fails.
+- Next (A3e, when D comes round again): lock a diagnostic that prints both codes' event radius and P, ρ at the event, plus the radius at which each code crosses each crust boundary. No retuned criterion.
+VERDICT: A3d NOT VALIDATED (wrong diagnosis recorded; the physics outputs are unaffected).
+MAP: none

@@ -54,6 +54,7 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 - A8d DONE (D1078): PC version — mapper_orbits CLI + START_HYPERION_ORBITS.bat, validated on synthetic tiles.
 
 - A5b DONE (D1083): spherical Jeans σ_r (constant β) vs galpy ≤ 1.5e-11; exact point-mass check 3e-16.
+- A3d (D1086): NOT VALIDATED — a common finite surface leaves R 1e-5 apart (masses 1e-11); the A3c surface diagnosis was wrong; next A3e diagnostic.
 
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
