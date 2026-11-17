@@ -494,3 +494,4 @@ D1207  2026-11-17T22:39Z  JMF8 Janus-MF validated for three fields vs PyTranspor
 D1208  2026-11-17T22:41Z  Goldstein-Hill 2026 N_eff 2.990+-0.070: tau_i SU(2) dark radiation now +3.1 sigma (excluded at 95% by dN<0.107); U(1) +1.5 sigma
 D1209  2026-11-17T22:46Z  Paper: v3.3 draft gets the N_eff 2026 verdicts (SU(2) ~3 sigma; hidden sector empty or U(1)); CMB-S4 removed
 D1210  2026-11-17T22:52Z  C9: NFW refit to Eilers+2019 with McMillan17 baryons fixed: chi2/dof 2.09 (Q1 FAIL marginal), slope negative (Q2 PASS), but r_s 3 kpc implausible
+D1211  2026-11-17T22:58Z  7PN tidal: our coefficients match the independent Mandal et al. 2412.01706 Eq. 4.48 (which agrees with corrected HFB v4); LAL's 0.33% is the outlier
