@@ -35,6 +35,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A6a (D1069): NOT VALIDATED (T3 grid too coarse to unwrap); accuracy matches referees but Hyperion is slower than galpy/colossus (Python loops) — A6b vectorise. A2b2 blocked on sourcing the 3PN SS terms.
 
+- A6b DONE (D1070): vectorised; 1.9–3.3× faster than galpy/colossus/LAL on the benchmark tasks, same accuracy.
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].

@@ -1,0 +1,8 @@
+V1 vcirc_array vs MW.vcirc: 7.8e-16
+V2 dndlnM_array vs dndlnM: 7.0e-07
+V3 snr_opt_vec vs snr_opt: 0.0e+00
+B1 v_c x1000: Hyperion 0.13 ms, galpy 0.43 ms (galpy/Hyperion 3.3x); diff 2.0e-14
+B2 dn/dlnM x50: Hyperion 0.04 ms per call (+ 40 ms one-off table), colossus 0.10 ms (2.2x); diff 2.8e-03
+B3 TaylorF2 phase x501760: Hyperion 20.6 ms, LAL 38.2 ms (1.9x); residual 4.5e-10 rad
+B4 SNR: Hyperion 0.61 ms, LAL route 1.94 ms (3.2x); SNR 32.707084 vs 32.707084
+VERDICTS: V1=PASS V2=PASS V3=PASS B1=PASS B2=PASS B3=PASS B4=PASS -> A6b VALIDATED
