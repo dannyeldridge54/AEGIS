@@ -9979,3 +9979,9 @@ Verdict: D988 OPEN, no new calculable input; the decisive computation is the D̄
 Recheck serapis_e (flag from D912): D912 closed the Eisenstein-Kähler route to the plateau but did not change the SERAPIS-E potential, its tilt or its frozen numbers; node status unchanged; flag cleared.
 Sources: arXiv:1812.09714; hep-th/0410101; arXiv:2511.04367; arXiv:0805.0824.
 MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
+
+## D991a (correction to D991): a soft-split tower's VACUUM ENERGY has weight 2 at order m_s² (an E(U,2)/A² shape, not the log L); the weight-1 log of D950 belongs to the two-point function (mass/Kähler), and appears in the vacuum energy only at order m_s⁴, suppressed by (m_s/M_KK)²; D991's tilt-origin estimate is withdrawn
+[derived] Per real d.o.f. on R⁴ × T², V_fin(m) = −(A/π³) Σ′_w g(m|w|)/|w|⁶, g(x) = x³K₃(x)/8 = 1 − x²/8 + x⁴/64 + O(x⁶ ln x). A boson–fermion pair split by m_s: ΔV = −(A/π³)Σ′[g(m_s|w|) − 1]/|w|⁶ = +(m_s²/8)(1/π³A)·E_paper(U,2) − (m_s⁴/64)(A/π³)Σ′|w|^{−2} + …: the leading U-dependence is E(U,2) (weight 2); the log(U₂|η|⁴) (weight 1) is the m_s⁴ term.
+[computed] (Level S, L = 1, m_s = 0.01, five tori U = ½ + i y, y = 0.866–2.5) ΔV / [weight-2 prediction] = 0.99986–0.99989 at every point, while log(U₂|η|⁴) varies from −1.03 to −1.70 with no matching trend: the weight-2 form holds to 1e-4.
+Consequence: D991 conflated the mass (two-point function, weight 2 → 1 under soft breaking, D950) with the vacuum energy (weight 3 → 2). A soft-split tower adds an E(U,2)-shaped (SERAPIS-E-like) ramp to the ρ potential, not the L tilt; the log term is ~ (m_s/M_KK)² ~ 1e-6 smaller. Track R's mechanism needs a source that enters the POTENTIAL with weight 1 (e.g. a one-loop Kähler/gauge-kinetic threshold feeding an F-term), not a soft-split Casimir energy. eps_tilt stays estimate (unexplained).
+MAP: node=eps_tilt status=estimate touches=[] ripple=no

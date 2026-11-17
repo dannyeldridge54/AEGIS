@@ -32,7 +32,6 @@
   "D992: Origin of the plateau → assumed"
  ],
  "open_rechecks": [
-  "SERAPIS-E potential (Epstein + BHK tilt)",
   "Σm_ν = 0.0587 eV (m1 ≈ 0)"
  ],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"

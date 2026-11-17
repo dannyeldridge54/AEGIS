@@ -1631,3 +1631,6 @@ Touches: none.
 
 ## D991: ρ tilt origin (estimate)
 - [derived] εL has the weight-1 soft-threshold form (D950). [estimate] Hubble-induced soft masses: ε ≈ N c² M_KK²/(48π² M_P²) = 4.6e-6 (N=128, c=1, M_KK=1e16); fitted 6e-5 needs M_KK ≈ 3.6e16 or c ≈ 3.6.
+
+## D991a: correction to D991
+- [derived+computed] soft-split vacuum energy is weight 2 (E(U,2)), verified to 1e-4 on 5 tori; the log is the m_s⁴ term. D991 withdrawn; ρ tilt origin open.

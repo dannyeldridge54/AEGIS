@@ -238,3 +238,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D988: after computing the 'interesting' finite piece, always size the local/divergent piece you dropped; it can dominate.
 - D989: a fast route earns trust only against the slow one on many points, including points chosen to break it.
 - D991: never state a derived number from a head estimate; run it first (a 10x slip was caught only because code ran before the note).
+- D991a: before matching a function's shape, check which object carries it (mass vs vacuum energy differ by one unit of lattice weight).
