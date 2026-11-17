@@ -1,0 +1,26 @@
+S1 m=(1.4,1.4) f=10: ours=1.00240781e+03 LAL=1.00240781e+03 rel=7.0e-15
+S1 m=(1.4,1.4) f=20: ours=1.57869338e+02 LAL=1.57869338e+02 rel=7.7e-15
+S1 m=(1.4,1.4) f=40: ours=2.48628627e+01 LAL=2.48628627e+01 rel=8.3e-15
+S1 m=(10,10) f=10: ours=3.78376801e+01 LAL=3.78376801e+01 rel=6.4e-15
+S1 m=(10,10) f=20: ours=5.95906121e+00 LAL=5.95906121e+00 rel=7.9e-15
+S1 m=(10,10) f=40: ours=9.38493332e-01 LAL=9.38493332e-01 rel=8.2e-15
+S1 m=(36,29) f=10: ours=5.36848557e+00 LAL=5.36848557e+00 rel=7.6e-15
+S1 m=(36,29) f=20: ours=8.45483497e-01 LAL=8.45483497e-01 rel=6.6e-15
+S1 m=(36,29) f=40: ours=1.33155307e-01 LAL=1.33155307e-01 rel=6.9e-15
+S1 m=(5,50) f=10: ours=2.12045336e+01 LAL=2.12045336e+01 rel=7.9e-15
+S1 m=(5,50) f=20: ours=3.33950478e+00 LAL=3.33950478e+00 rel=6.8e-15
+S1 m=(5,50) f=40: ours=5.25939046e-01 LAL=5.25939046e-01 rel=7.8e-15
+S2 GW150914 Mc=28.7165 vs 28.6 rel=4.1e-03
+S3 r=1 kpc: NFW 50.317092 vs galpy 50.317092 (2.0e-14); Burkert 9.311310 vs galpy 9.311310 (7.6e-14)
+S3 r=8 kpc: NFW 117.117696 vs galpy 117.117696 (6.1e-16); Burkert 63.853591 vs galpy 63.853591 (5.6e-16)
+S3 r=20 kpc: NFW 144.492286 vs galpy 144.492286 (2.0e-16); Burkert 117.240581 vs galpy 117.240581 (1.2e-16)
+S3 r=100 kpc: NFW 143.944407 vs galpy 143.944407 (0.0e+00); Burkert 148.765615 vs galpy 148.765615 (3.8e-16)
+S4 M=1e+10: R200c ours=35.03647156 colossus=35.03647156 kpc/h rel=0.0e+00
+S4 M=1e+12: R200c ours=162.62489516 colossus=162.62489516 kpc/h rel=0.0e+00
+S4 M=1e+15: R200c ours=1626.24895163 colossus=1626.24895163 kpc/h rel=0.0e+00
+S5 L_Edd(1 Msun, X=1) = 1.2571e+31 W vs 1.26e31 rel=2.3e-03
+S6 sidereal year 365.257773 d vs 365.256363 rel=3.9e-06
+S7 OV free neutron gas: M_max=0.7102 Msun at R=9.145 km (x_c=0.836) vs 0.71 rel=2.5e-04
+S8 (reported) M_Ch(mu_e=2) = 1.4563 Msun; textbook values 1.44-1.46
+VERDICTS: S1=PASS S2=PASS S3=PASS S4=PASS S5=PASS S6=PASS S7=PASS
+A0s VALIDATED AGAINST STANDARDS

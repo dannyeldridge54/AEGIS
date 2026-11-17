@@ -10459,3 +10459,18 @@ Results [computed]:
 - T9 constants vs astropy 8.0.2 (CODATA 2018, IAU 2015): exact.
 Verdict (locked rule): A0 VALIDATED. Scope honestly: A0 checks implementations against exact solutions and reference codes; the physics content is textbook (leading order). Next stages (ROADMAP): A1 realistic stars (tabulated opacities, main-sequence models vs MESA tracks), A2 PN/EOB waveforms vs LALSuite/PyCBC, A3 neutron-star EoS (SLy, APR) mass–radius vs published tables, A4 halo mass function and concentration vs colossus, A5 Gaia-ready galactic dynamics, then a Zenodo v1.0.
 MAP: none
+
+## D1053 (track X, locked PREREG_A0s_janus_astro_standards): Janus-Astro agrees with the field's standard codes and canonical numbers on all 7 scored tests: A0s VALIDATED AGAINST STANDARDS
+Request: Danny 17 Nov 05:21 CT ("Test it against standard"). Lock pushed before the run (a58040d); code unchanged since D1052; output field_tests/results/janus_astro_a0s.txt.
+Results [computed]:
+- S1 GW time to merger vs LALSuite (lalsimulation, Newtonian order), 4 binaries × 3 frequencies: ≤ 8.3e-15.
+- S2 GW150914 chirp mass from GWTC-1 masses: 28.72 vs published 28.6 M_⊙ (0.41%, input rounding).
+- S3 NFW and Burkert rotation speeds vs galpy 1.12.1: ≤ 7.6e-14.
+- S4 R200c vs colossus (planck18): exact.
+- S5 Eddington luminosity (X = 1, 1 M_⊙): 1.257e31 W vs standard 1.26e31 (0.23%).
+- S6 Earth's sidereal year from Kepler: 365.25777 d vs 365.256363 (3.9e-6; planetary perturbations not modelled).
+- S7 Oppenheimer–Volkoff free neutron gas: M_max = 0.7102 M_⊙ at R = 9.15 km vs the standard 0.71 M_⊙ (2.5e-4) — an independent physics reproduction of a classic result.
+- S8 (reported only) M_Ch(μ_e = 2) = 1.4563 M_⊙, inside the textbook 1.44–1.46.
+Honest scope: S1 tests Newtonian order only (PN orders are stage A2); S3, S4 confirm we use the same conventions as galpy/colossus. S6 and S7 are genuine physics reproductions.
+Verdict (locked rule): A0s VALIDATED AGAINST STANDARDS.
+MAP: none
