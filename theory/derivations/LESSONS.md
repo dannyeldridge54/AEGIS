@@ -275,3 +275,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1027: when agreement is far better than the tolerance, say so and record which definition limits it, rather than tightening the claim post hoc.
 - D1028: validate a likelihood by reproducing the collaboration's own headline numbers before scoring any model with it.
 - D1029: when comparing a compressed likelihood with a full one, lock separate tolerances for parameter values and for Δχ² — the latter is far more sensitive to the compression.
+- D1030: check that an escape route sits inside the controlled regime of the framework that would supply it.

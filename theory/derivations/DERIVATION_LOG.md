@@ -1743,3 +1743,5 @@ Touches: none.
 
 ## D1029: L4 — Janus-LT w0wa (BAO + compressed CMB): w0 −0.455±0.22, wa −1.62±0.65 matches DESI+CMB; Δχ² −8.0 vs −12.5 → locked INCONSISTENT on Δχ²
 - [computed] 242 s, own recombination.
+
+## D1030: R7 — heterotic M-theory gives no ~10³ hidden/visible coupling asymmetry in its controlled regime (1811.08892)
