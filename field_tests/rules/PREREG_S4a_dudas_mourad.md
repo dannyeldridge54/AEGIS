@@ -1,0 +1,6 @@
+# PREREG S4a (Level S, stage 4a): reproduce the Dudas–Mourad 9D orientifold vacuum two ways (written before running)
+Source [literature]: Basile & Thomée, arXiv:2209.10553, eqs. (2.1)–(2.8): action R − ½(∂φ)² − 2α_E e^{γφ}, γ = 3/2; ansatz ds² = e^{2A(y)}dx₉² + e^{2B(y)}dy², gauge B = −(γ/2)φ; field equations (2.3); solution (2.8): e^{2A} = (√α_E y)^{1/9} e^{−α_E y²/8}, e^{φ} = e^{φ₀}(√α_E y)^{2/3} e^{3α_E y²/4}.
+Route A: substitute (2.8) into all three equations (2.3) (finite differences on a dense grid, y ∈ [0.05, 3]/√α_E, α_E = 1, φ₀ = 0); max |residual| relative to the largest term.
+Route B: integrate the two second-order equations of (2.3) numerically (DOP853, rtol 1e-12) from y₀ = 0.5 with initial data from (2.8); compare A(y), φ(y) with (2.8) on [0.5, 2.5]; check that the constraint (second equation) stays satisfied.
+Pass (fixed now): Route A max relative residual ≤ 1e-6; Route B max |ΔA|, |Δφ| ≤ 1e-8 and constraint ≤ 1e-8 → S4a VALIDATED (the toolkit reproduces the known backreacted vacuum; S4b, the 6D anti-D5 analogue, may then be built on this solver). Also report: e^φ at both ends (weak coupling at y → 0, strong at large y) and the finite proper length of the y-interval.
+Script theory/strings/s4a_dm_d.py; output field_tests/results/s4a_dudas_mourad.txt.
