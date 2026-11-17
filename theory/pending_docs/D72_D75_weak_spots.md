@@ -10595,3 +10595,5 @@ MAP: none
 Source reading (colossus/lss/mass_function.py): massFunction passes deltac_args = defaults.DELTAC_ARGS = {} to the model; calling modelPress74/modelSheth99 directly uses deltac_args = {'corrections': True}. δ_c(z = 0) = 1.68647 (constant) vs 1.67567 (corrected) — a 0.6% shift in δ_c that becomes 6% in n(M) at 1e15 M_⊙/h through the exponential tail. This is a convention users of colossus can trip over; Hyperion now states which δ_c it uses.
 Results [computed]: growth unchanged (≤ 7.1e-4 to z = 5); PS z = 0: 4.8e-4, 3.5e-4, 3.5e-4, 1.1e-3 at 1e12–1e15; ST z = 0: ≤ 4.7e-4; all z = 1, 2 and Tinker08 within 2e-2 (VALIDATED by the locked rule).
 MAP: none
+
+## D1068a — precision correction to D1068's headline: the worst agreement over ALL cases is 2.9e-3 (not 1.1e-3, which is the worst at z = 0); every case is inside the locked 2e-2. Verdict unchanged.
