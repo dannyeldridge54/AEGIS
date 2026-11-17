@@ -1,0 +1,2 @@
+# Results produced on Danny's PC queue
+Files here are byte-identical copies of what the PC calc copy (~/aegis_calc) wrote to field_tests/results/. They live in this subfolder so the PC copy's `git pull` never collides with its own untracked output (16 Nov 2026: the D979 output at the top-level path blocked every pull). D-notes citing field_tests/results/<name> for a PC run mean field_tests/results/pc/<name>.
