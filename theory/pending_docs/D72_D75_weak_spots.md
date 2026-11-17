@@ -10969,3 +10969,17 @@ Lock pushed before run; result field_tests/results/w4_eos_gw.txt.
 - Reading: in phase alone, a 0.13 rad difference between two mainstream EoS is small. Distinguishing them needs SNR ≳ 1/0.13 ≈ 8 in the tidal band, a rough Fisher-style scale [estimate]. Plausible for a loud BNS in O5/A+; Hyperion now has every piece (A2c SNR, A2d tides, A3 EoS) to do this properly as a locked forecast.
 VERDICT: W4 VALIDATED; A1e OPEN (no blind target in the source).
 MAP: none
+
+## D1100 (CENTRE, Djl loop (B), literature + arithmetic): lithium-7 — standard BBN predicts 7Li/H = (4.94 ± 0.72)e-10 vs the Spite plateau (1.6 ± 0.3)e-10 (factor 3.1, ≈ 4.3σ); SERAPIS cannot touch it (ΔN = 0, decays at t ≲ 1e-17 s) and inherits it exactly as ΛCDM does — it stays an astrophysical/nuclear open problem
+- Source (quoted, arXiv:2508.09821, citing Yeh+2021 and Fields & Olive 2022): BBN+CMB 7Li/H = (4.94 ± 0.72)e-10; observed (1.6 ± 0.3)e-10; "factor of ∼3−4". That paper argues for an astrophysical/chemical-evolution resolution (plateau ≈ 1.81e-10 from primordial infall plus Pop III/II yields), not new physics.
+- Arithmetic: ratio 3.09; (4.94 − 1.6)/√(0.72² + 0.3²) = 4.3σ (Gaussian errors assumed).
+- CAMB's PRIMAT/PArthENoPE tables carry only Y_p and D/H, so Hyperion has no Li-7 of its own yet. The number is quoted, not computed.
+- SERAPIS levers:
+  - (a) ΔN_eff = 0 (ρ); for τ=i, at most 0.054 survives ACT (D1092). A small ΔN shifts Li-7 only at the few-percent level [estimate, from expansion-rate sensitivity], far from a factor of 3.
+  - (b) Late decays: the ρ-branch heavy states decay at t ≈ 1e-17 – 1e-19 s (D1082), sixteen or more decades too early. Destroying ⁷Be needs energy injection at t ~ 1e2–1e4 s [standard picture, labelled from memory].
+  - (c) ω_b is fixed at Planck's value.
+  - So SERAPIS neither causes nor cures the lithium problem.
+- Verdict: no model-specific tension. Li-7 sits with D/H (D1096) as Standard-Model-level BBN open items that SERAPIS inherits unchanged.
+- Hyperion gap noted: no Li-7 calculator (would need a BBN network, e.g. PRyMordial or AlterBBN; not pip-installable earlier, so re-check).
+VERDICT: SM-level; SERAPIS neutral.
+MAP: none
