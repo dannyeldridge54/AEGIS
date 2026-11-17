@@ -11759,6 +11759,8 @@ Lock pushed before run; result field_tests/results/r2b_twochannel.txt.
 - Thermal relevance: freeze-out (x ≈ 25, v ~ 0.3) is far above threshold. But post-freeze-out annihilation at x ≳ M/(2δm)·… samples low v, so the threshold region matters for the late-time Sommerfeld effect. R2c needs R2b2 settled first.
 VERDICT: R2b VALIDATED (open solver); threshold continuity OPEN (R2b2).
 MAP: none
+
+### D1159 — R2b2 threshold: pointwise FAIL, Rydberg tower below χ⁺χ⁻ threshold SUPPORTED (2026-11-17)
 - [CENTRE · computed] **Locks:** PREREG_R2b2_threshold + DEVIATIONS_R2b2 (D1). **Results:** field_tests/results/r2b2_threshold.txt, r2b2_rydberg.txt.
 - **Scored test (as locked): FAIL.** Total σv(χ⁰χ⁰ in) ∝ sΓs†, M = 2000 GeV, same LO potential on both sides.
   - Below threshold: S(0.95) = 111, S(0.99) = 3.94.
