@@ -476,3 +476,4 @@ D1189  2026-11-17T21:20Z  Hyperion halo tick: 2025-26 literature leans cored for
 D1190  2026-11-17T21:25Z  A2l: 1 TeV wino vs IGS with cored (Burkert) Gaia DR3 haloes: PASS 3/5, band-dependent 2/5, no FAIL
 D1191  2026-11-17T21:31Z  BBN tick: LBT Yp IV/V (Yp 0.2458+-0.0013, dN<0.125) and EMPRESS XV (0.2402): tau_i SU(2) dark radiation now 1.7 sigma, SU(2)+gaugino disfavoured
 D1192  2026-11-17T21:37Z  B8: tau_i dark radiation vs LBT 2026 with theory errors: SU(2)+gaugino EXCLUDED (+3.08 sigma), SU(2) OK (+1.71), U(1) OK
+D1193  2026-11-17T21:42Z  Galaxy tick: Horta+2026 v_c(R0)=235.3 from abundance gradients; MWPotential2014 (220) disfavoured, McMillan17 consistent
