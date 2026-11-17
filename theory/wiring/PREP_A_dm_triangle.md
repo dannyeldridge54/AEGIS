@@ -31,3 +31,14 @@ Then: lock PREREG_A1 (wino p_ann vs Planck), run, D-note.
 - LO (Eq. 2.8, ¹S₀): [[0, −√2 α₂ e^{−m_W r}/r], [·, −α/r − α₂ c_W² e^{−m_Z r}/r]] + 2δm on the +− diagonal; this is the same as sommerfeld.wino_s.
 - Inputs: on-shell α = 1/128.943, c_W = m_W/m_Z, α₂ = α/s_W², m_W = 80.385, m_Z = 91.1876, δm = 0.1641 GeV.
 - Normalisation ambiguity: is δV_{00→+−} added to the matrix entry as is, or with √2? A1c pre-declares "as is" as the primary convention.
+## 2026-11-17 15:57 UTC — wino γ-line (prep for lock A2)
+- Source 1307.4082 (Cohen, Lisanti, Pierce, Slatyer), as fetched:
+  - σ_i v = c_i Σ s_ij Γ_jj' s*_ij' (Eq. A8), with c = 2 for identical χ⁰χ⁰. Same normalisation as our A1 (σv_tot = 2 sΓsᵀ, free s = (1, 0)).
+  - At tree level only Γ^γγ_{+−,+−} ≠ 0. The chargino normalisation is σ^γγ_{+−,+−} v = πα²/M₂² (Eq. B5).
+  - So σv(χ⁰χ⁰ → γγ) = 2|s_{+−}|² πα²/M² [derived from A8 + B5, taking c = 1 for the distinct-particle χ⁺χ⁻ state; to confirm].
+  - H.E.S.S. comparison quantity: σv_γγ + ½σv_γZ (Fig. 1 caption).
+  - The paper says γZ uses "the same structure" but gives no γZ normalisation in the fetched text.
+  - One-loop corrections reduce the line by ×3–4 (their caveat; this is our A7b "one-loop bracket").
+- Still needed for the A2 lock:
+  - (a) A sourced Γ^γZ_{+−,+−} (or the ratio σ_γZ/σ_γγ). Candidate: Hisano et al. 2004/2005, or Beneke et al. resummed line papers.
+  - (b) The H.E.S.S. line limit at 1–3 TeV (Einasto, 2018, arXiv:1805.05741) as numbers at stated masses.
