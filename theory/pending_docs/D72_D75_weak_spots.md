@@ -12195,3 +12195,28 @@ MAP: none
 - **No computation:** no sourced cored-profile parameters in hand (abstracts only). To lock one, the next halo tick needs the 2511.17705 or 2605.16994 full-text best-fit Einasto/cored parameters.
 VERDICT: literature direction recorded. The J-factor impact is an estimate (favourable to the wino window). A sourced cored-J computation is OPEN.
 MAP: none
+
+### D1190 — A2l: the 1 TeV post-hoc wino vs the H.E.S.S. IGS line limit, for the cored (Burkert) Gaia DR3 haloes of Singh & Desai: PASS 3/5, BAND-DEPENDENT 2/5, no FAIL (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_A2l_burkert_J. The halo parameters come from arXiv:2605.16994v1 Table A1, Burkert medians. **Result:** field_tests/results/a2l_burkert_J.txt. No deviations.
+- **Predicted fraction:** f_pred(1 TeV) = [0.124, 0.205] (serapis_inputs, the D1152 thermal bracket). The stale f = 0.26 of A2j is not used.
+- **Results by halo:**
+
+  | Halo | r_c (kpc) | ρ☉ (GeV/cm³) | J/J_bench | f_max (LO / NLO, band edges) | Verdict |
+  |---|---|---|---|---|---|
+  | B0/D1 | 3.37 | 0.466 | 0.338 | 0.245–0.270 / 0.270–0.297 | PASS |
+  | B0/D2 | 3.79 | 0.469 | 0.222 | 0.303–0.332 / 0.333–0.366 | PASS |
+  | B0/D3 | 2.91 | 0.494 | 0.667 | 0.175–0.192 / 0.192–0.211 | BAND-DEP |
+  | B0/D4 | 2.87 | 0.461 | 0.614 | 0.182–0.200 / 0.201–0.220 | BAND-DEP |
+  | B1/D2 | 4.13 | 0.395 | 0.116 | 0.418–0.460 / 0.461–0.506 | PASS |
+
+- **Reading:**
+  - The cored fits carry a HIGH local density (0.40–0.49 GeV/cm³ vs the benchmark's 0.39). So coring alone does not drop J as much as D1189's direction-only estimate implied: J/J_bench spans 0.12–0.67, against 0.43 for the Gaia NFW central (A2j).
+  - Even so, f_max ≥ 0.175 everywhere, above the lower thermal edge 0.124. The band-dependent cases fail only against the upper edge 0.205.
+  - So the 1 TeV wino is not excluded by IGS under any of these cored haloes. It is excluded only if the true fraction sits near the upper (Born-like) edge AND the halo is like D3/D4.
+- **Caveats (labelled):**
+  - The Einasto rows are not used (convention unverified); the NFW rows are not used (garbled extraction).
+  - Median values only. Table A1's 1σ ranges are wide for D1/D4 and not propagated.
+  - R0 = 8.178 kpc is our convention, not the paper's.
+- **Update to D1189:** its "pushes J toward the c −1σ case" was too strong. Coring helps in 3/5 haloes and is neutral to mildly worse in 2/5, because of the higher ρ☉.
+VERDICT: the 1 TeV post-hoc wino SURVIVES IGS for all five cored Gaia haloes (3 clean PASS, 2 band-dependent at the upper fraction edge). D1153's window (0.67 to ~1–1.5 TeV) stands.
+MAP: none
