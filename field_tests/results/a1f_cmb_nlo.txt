@@ -1,0 +1,12 @@
+LO f_eff=0.14: excluded 2.04-2.50 TeV (24 pts)
+LO f_eff=0.41: excluded 2.00-2.64 TeV (33 pts)
+   LO M=2.842: sv=9.018e-25 cm3/s; f_max(f_eff 0.41)=1.568, (0.14)=2.684
+   LO M=2.85: sv=8.767e-25 cm3/s; f_max(f_eff 0.41)=1.593, (0.14)=2.726
+   LO M=2.86: sv=8.468e-25 cm3/s; f_max(f_eff 0.41)=1.624, (0.14)=2.778
+   LO M=2.87: sv=8.185e-25 cm3/s; f_max(f_eff 0.41)=1.654, (0.14)=2.831
+NLO(sqrt2, post hoc) f_eff=0.14: excluded 2.18-2.62 TeV (23 pts)
+NLO(sqrt2, post hoc) f_eff=0.41: excluded 2.00-2.76 TeV (39 pts)
+   NLO(sqrt2, post hoc) M=2.842: sv=1.568e-24 cm3/s; f_max(f_eff 0.41)=1.189, (0.14)=2.035
+   NLO(sqrt2, post hoc) M=2.85: sv=1.510e-24 cm3/s; f_max(f_eff 0.41)=1.214, (0.14)=2.077
+   NLO(sqrt2, post hoc) M=2.86: sv=1.441e-24 cm3/s; f_max(f_eff 0.41)=1.244, (0.14)=2.130
+   NLO(sqrt2, post hoc) M=2.87: sv=1.377e-24 cm3/s; f_max(f_eff 0.41)=1.275, (0.14)=2.182
