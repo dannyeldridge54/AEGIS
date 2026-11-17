@@ -10573,3 +10573,10 @@ Results [computed; SNR 8, optimal horizon, Planck18 via Janus-LT, range = Chen e
 Literature (CE Horizon Study, arXiv:2109.09882, qualitative): CE reaches BNS beyond z ~ 1 and stellar-mass BBH beyond z ~ 10; A+ cannot see 50+50 BBH beyond z ~ 3 — all consistent (A+ 50+50: 3.04, at the edge).
 Remaining caveat: horizons far beyond z ~ 10 (ET BBH 48, CE BNS 16, CE BBH 36) are optimal-orientation numbers that depend on the PSDs' low-frequency wall (5 Hz) and are not the volume-averaged reach (the ranges, 2–6 Gpc, are the robust numbers); the 2017 CE curve is more optimistic than the 2021 40-km design. A sourced quantitative comparison (e.g. Hall & Evans 2019) is the next check if these numbers are used anywhere.
 MAP: none
+
+## D1065 — RIGHT/Janus-LT — L9a: Janus-LT gets a matter transfer function (EH98 no-wiggle), validated vs CAMB 2.0.5 [computed]
+Lock PREREG_L9a_eh_transfer; formulas fetched (ar5iv astro-ph/9709112 Eqs. 26, 28–31; T₀, C₀). New tools/janus_lt/transfer.py.
+30 k in [1e-3, 0.5] h/Mpc, 3 cosmologies: rms |T_EH/T_CAMB − 1| = 1.37%, 1.38%, 1.29%; max 3.8–4.0% (at k ≈ 0.05–0.11 h/Mpc, the BAO
+wiggles EH no-wiggle omits by design) → VALIDATED (shape). Next: L9b σ8/amplitude normalisation (needs the fetched A_s → P(k) relation),
+then L9 fσ8 vs DESI DR1 Table 9 (data pinned in JANUS_LT_PLAN).
+MAP: none

@@ -30,3 +30,4 @@ Note (Danny, 17 Nov 00:30 CT): TorsionΛ is an old model — do not use it as a 
   (errors from App. A covariances, not yet fetched). Design issue before locking: Janus-LT has growth D(z), f(z) but NO transfer function/σ8 normalisation,
   so ratios vs the DESI fiducial need either (a) σ8 shape-independence assumption (state it), or (b) adding an Eisenstein–Hu transfer function (fetched) to get σ8.
   Do (b) first as its own locked validation (σ8 vs CAMB), then L9.
+- L9a DONE (D1065): EH98 no-wiggle transfer validated (rms 1.4%). Next L9b: σ8 normalisation (fetch A_s→P(k)), then L9.
