@@ -275,3 +275,4 @@ D988  2026-11-17T02:38Z  Project H: the U-independent local part of the chi loop
 D989  2026-11-17T03:16Z  Janus String Calculator battery A VALIDATED: 24/24 SERAPIS points, n_s within 2.4e-5, r within 0.013%, ~40,000x faster
 D990  2026-11-17T03:20Z  D981 alpha_s wide-grid result
 D991  2026-11-17T03:36Z  rho tilt origin (estimate): Hubble-induced soft SUSY breaking in a 6D tower gives the weight-1 log(y|eta|^4) form with eps ~ N M_KK^2/(48 pi^2 M_P^2) ~ 5e-5, the fitted size
+D992  2026-11-17T03:45Z  Dp: sign of Project H local chi-mass part (D988) - literature; serapis_e recheck after D912
