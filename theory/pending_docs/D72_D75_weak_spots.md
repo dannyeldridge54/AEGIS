@@ -12403,3 +12403,19 @@ C2 ΛCDM vs minimum Δχ² = 7.69 (L7 7.70) → PASS. C3 DESI Table V best fit (
 Region extents on the grid: 68% (Δχ² ≤ 2.30) w0 −0.90…−0.80, wa −0.76…−0.24; 95% (≤ 6.18) w0 −0.95…−0.75, wa −1.01…−0.11 — compatible with L7's
 Gaussian ±0.053 / ±0.200 (2D region wider than 1D ±σ as expected). Grid saved (janus_lt_l10_grid.npz) for a later Cobaya MCMC cross-check (tools research #6).
 MAP: none
+
+### D1201 — B tick: our D/H offset (2.436 vs observed 2.51–2.55) is the known theory-dd-rate systematic shared by PRIMAT, PRyMordial and LINX; nothing SERAPIS-specific (2026-11-17)
+- [LEFT · literature] One search on the deuterium rate status.
+- **New: arXiv:2509.11743** (Chen, He et al., Sept 2025, SLEGS). D(γ,n)p photodisintegration at 22 energies (2.33–7.09 MeV), with a dibaryon-EFT global fit for p(n,γ)D. The rate is up to 3.8× more precise.
+  - It does NOT revise d(p,γ)³He: LUNA 2020 is already better than 3%.
+  - Ω_b h² from D/H: 0.02232 ± 0.00033 (Cooke D/H) and 0.02221 ± 0.00031 (Navas/PDG D/H = 2.547 ± 0.025).
+  - Planck gives 0.02237 ± 0.00015. With Gómez et al.'s dd rates, the BBN–CMB tension is ≈ 1.2σ.
+- **Our codes (B4b, b4b_three.txt):** at Ω_b h² = 0.02242 the three codes agree at D/H = 2.4393 (PRIMAT table), 2.4351 (PRyMordial) and 2.4360 (LINX).
+  - All three use theory-based d(d,n)³He / d(d,p)t rates (the PRIMAT choice). As far as I know (not re-fetched this tick), that is what puts D/H ≈ 3% below the data-driven-dd codes. PArthENoPE-type rates give ≈ 2.51, matching LBT's own prediction of 2.506 ± 0.083.
+- **Consequence:**
+  - The −3% D/H offset is a nuclear-rate systematic of the Standard Model calculation, identical for SERAPIS and ΛCDM. It is already covered by the ±0.083 theory error used in B8 (base −0.88σ).
+  - Dark radiation pushes D/H UP (SU(2) 2.489, SU(2)+gaugino 2.535), so a data-driven dd rate would make SU(2) slightly worse in D/H. It stays well under 2σ given the theory error.
+- **Paper:** no change needed. v3.3 now quotes D/H with the theory error (D1199).
+- **refs.bib:** author lists filled from the arXiv pages: LBT V (Yeh, Olive, Fields, Aver, …) and EMPRESS XV (Yanagisawa, Ouchi, Matsumoto, …).
+VERDICT: the D/H offset is a known rate systematic, not a model issue. No action beyond the recorded theory error.
+MAP: none
