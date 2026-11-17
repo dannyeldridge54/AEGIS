@@ -18,3 +18,14 @@ S2 result: superstring degeneracies 8/128/1152/7680/42112 exact (NS = R); Wilson
 - S3b positivity shortcut FAILED (D987: Ĥ oscillates for t ≲ 0.027); S3b proper (next, larger): relax D985's heavy-T⁴-winding assumption. For χ moving along a T⁴ circle of radius R, the Möbius strings stretch over 2y + 2πRn; the n ≠ 0 images enter m² with (2t − 4t²R²n²)e^{−tR²n²}, which can carry either sign, and the (w_T², n) = (0, n) terms need the closed-string (transverse) channel to be finite (tadpole region). Needs the transverse Möbius amplitude (ADS eq. 11) and a Poisson resummation in n; lock before running; target: sign of m² for R down to ~√α′.
 - Local-mass sign (D988) literature check [literature, 2107.02814 Basile review §6.3]: probe Dp-branes in the backreacted Dudas–Mourad geometry (9D, 8-branes) are repelled for p < 3, attracted for p > 4, unstable equilibria for p = 3, 4; at large separation repulsive for p < 5 and attractive for p > 5, with p = 5 "needing subleading terms" (undetermined); branes "cannot be described as isolated objects" because of the dilaton potential. No computation for D̄5 position scalars in the 6D T⁴/Z₂ BSB model found; the D988 sign stays open. A real computation would need the 6D backreacted solution plus probe/annulus analysis: research-level, not a toolkit stage.
 - S4a DONE (D996). S4 (path for the D988 local-mass sign): build the backreacted background ourselves. S4a: reproduce the Dudas–Mourad 9D tadpole solution (dilaton + warp + metric ODEs with the exponential tadpole potential) two ways (shooting vs relaxation); S4b: the 6D anti-D5 (T⁴/Z₂ BSB) analogue; S4c: probe-brane / annulus in that background → sign of χ's U-independent mass. Each stage locked, each reproducing the previous limit.
+
+## S4b research note (17 Nov, 05:12Z) — 6D tadpole action
+[literature] hep-th/0503204 (Eq. 6, Eq. 13): string-frame action ∝ e^{−2φ}[R + 4(∂φ)² − H²/12]; the BSB tadpole is
+disk-level, V_φ ~ T ∫ √G e^{−φ} (brane tension ∝ 1/g_s); T⁴/Z₂ with brane SUSY breaking is in its Secs. 2.3, 4.2.3.
+[derived] (frame algebra, to be checked symbolically under the S4b lock): in D dimensions, g_s = e^{4φ/(D−2)} g_E turns
+√g_s e^{−φ} into √g_E e^{(D+2)φ/(D−2)}; with the kinetic term (4/(D−2))(∂φ)², the canonical field is φ_c = φ√(8/(D−2)),
+so the Einstein-frame exponent is γ_D = (D+2)/√(8(D−2)). Check: D = 10 → γ = 3/2 (Dudas–Mourad, D996 ✓). D = 6 (anti-D5
+filling 6D, T⁴ volume frozen, φ_6 = φ − ¼ ln Vol₄ reduces the brane term to e^{−φ_6}) → γ_6 = 8/√32 = √2.
+Next S4b step: lock: (a) symbolic check of γ_D; (b) 6D Dudas–Mourad-type solution of R − ½(∂φ)² − 2α e^{√2 φ} on the
+S4a solver (two routes); (c) note that the frozen-volume assumption must later be lifted (the T⁴ breathing mode also
+feels the tadpole).
