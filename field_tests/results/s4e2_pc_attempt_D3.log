@@ -1,0 +1,5 @@
+10D critical: FD N=4000 [np.float64(2.979558157805592), np.float64(14.286521322476524)], N=8000 [np.float64(2.9795591598677387), np.float64(14.286526987035796)]; Prüfer [2.9795595536, 14.2865291117]; |FD8/Prüfer-1| [np.float64(1.32144451048255e-07), np.float64(1.487180117942799e-07)]; |N4/N8-1| [np.float64(3.3631221696417413e-07), np.float64(3.96496592669493e-07)]
+  m L/pi (FD8) = [0.9317504861309898, 2.0402667620105155] (BTR context 0.97, 2.13)
+V2: SOLVER VALIDATED (independent)
+/home/syndyr/micromamba/envs/aegis/lib/python3.11/site-packages/scipy/integrate/_ivp/lsoda.py:161: UserWarning: lsoda: Repeated convergence failures (perhaps bad Jacobian or tolerances).
+  solver._y, solver.t = integrator.run(
