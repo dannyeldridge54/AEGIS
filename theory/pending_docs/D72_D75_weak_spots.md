@@ -10444,3 +10444,18 @@ gauge and Yukawa terms in Eq. 14 nearly cancel (γ̃ → 0 is the N=2 finiteness
 small number, but now a small number with a known physical meaning: near-finite N=2 sectors (|γ̃| ~ 2% of natural).
 Status: lead KEPT (structure right, not killed by the S' shift), size problem RESTATED as near-finiteness. Not claimed.
 MAP: none
+
+## D1052 (track X, locked PREREG_A0_janus_astro): Janus-Astro, a new astrophysics toolbox (stars, compact objects, gravitational waves, dark-matter halos, binaries), passes all 9 tests of its first battery: A0 VALIDATED
+Request: Danny, 17 Nov 05:15 CT ("astrophysics calculator like we did to string theory"; scope: toolbox of all). Code tools/janus_astro (const, stars, compact, gw, halos, binaries); lock committed and pushed before the run (7771799); script theory/janus_astro/a0_check.py; output field_tests/results/janus_astro_a0.txt; 20 s on the cloud. A smoke run before the lock only checked that functions execute (disclosed in the lock).
+Results [computed]:
+- T1 Lane–Emden vs exact n = 0, 1, 5: max error 2.6e-12; ξ₁ = √6, π to 3e-13.
+- T2 n = 1.5, 2, 3, 4: two integrators agree to ≤ 1e-9; vs the 6-digit tables ≤ 1.8e-6 (table rounding). E.g. n = 3: ξ₁ = 6.8968486, ω₃ = 2.0182360.
+- T3 Chandrasekhar mass (μ_e = 2): 1.456298 M_⊙ (routes agree 2e-6); 0.19% below the textbook 1.459 (constant choices: m_u vs m_H and rounding of 5.836).
+- T4 TOV vs the exact Schwarzschild interior at 2GM/Rc² = 0.1–0.8: R, M to ≤ 1.5e-12; Newtonian limit vs the n = 1 polytrope: 6.5e-8.
+- T5 Kerr ISCO, closed form vs minimum of E(r), a = 0–0.99 both directions: ≤ 2.3e-7 (GM/c²); limits 6, 1, 9 exact.
+- T6 GW time to coalescence: ≤ 4e-16. Caveat: both routes use the same 0PN df/dt, so this tests the integration, not the physics; higher PN orders are stage A2.
+- T7 NFW, Einasto (α = 0.16, 0.30), Burkert enclosed mass, closed form vs quadrature ≤ 1.6e-14; NFW, Einasto vs colossus ≤ 3e-16 (same closed forms: an implementation check).
+- T8 Roche lobe (ray-cast volume of the L1 equipotential) vs Eggleton (1983): 0.25–0.66% for q = 0.1–10, inside Eggleton's stated ~1%; resolution change 2e-6.
+- T9 constants vs astropy 8.0.2 (CODATA 2018, IAU 2015): exact.
+Verdict (locked rule): A0 VALIDATED. Scope honestly: A0 checks implementations against exact solutions and reference codes; the physics content is textbook (leading order). Next stages (ROADMAP): A1 realistic stars (tabulated opacities, main-sequence models vs MESA tracks), A2 PN/EOB waveforms vs LALSuite/PyCBC, A3 neutron-star EoS (SLy, APR) mass–radius vs published tables, A4 halo mass function and concentration vs colossus, A5 Gaia-ready galactic dynamics, then a Zenodo v1.0.
+MAP: none
