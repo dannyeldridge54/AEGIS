@@ -1,0 +1,3 @@
+P1 extreme: worst rperi 1.3e-03, rapo 2.9e-04, ecc 4.6e-04, zmax 4.3e-04; 16.56 ms/star (37586 steps) FAIL
+P2 disk: worst rperi 2.9e-05, rapo 3.3e-05, ecc 9.5e-04, zmax 9.6e-05; 8.79 ms/star (16363 steps) PASS
+VERDICTS: P1 extreme=FAIL P2 disk=PASS -> A8c3 NOT VALIDATED
