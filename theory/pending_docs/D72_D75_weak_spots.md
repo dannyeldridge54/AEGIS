@@ -11242,3 +11242,20 @@ MAP: none
 - Action (not done here, needs a lock): adopt the post-erratum coefficients once quoted from the erratum (PRD Erratum II or arXiv v4). Until then, Hyperion's 7PN tidal term carries the label "pre-Erratum-II HFB; LAL differs by 0.33% (post-erratum, probable)". The 6PN and 6.5PN terms are unaffected and validated.
 VERDICT: 7PN gap explained by the HFB Erratum II (probable; erratum text to quote).
 MAP: none
+
+## D1118 (CENTRE, Djl loop (A), locked PREREG_A2c-line): including γZ cuts the 1 TeV margin sharply — the line is ×4.49 the γγ rate (σv_γZ/σv_γγ = 6.97), so f_max drops ×0.472: SERAPIS-E's 1 TeV wino (f = 0.26) FAILS at tree-level Sommerfeld for the H.E.S.S. benchmark halo (0.17–0.19) and McMillan17-LO (0.24), is marginal for McMillan17-NLO (0.262), passes for MWPotential2014 (0.29–0.32); with the standard one-loop reduction (×3–4) it PASSES everywhere (0.29–0.64)
+Lock pushed before run; result field_tests/results/a2c_line_gz.txt.
+- Source (quoted): Hisano+ 2005 Eq. 28: Γ_γZ = (παα₂/m²)·2c_W² in the chargino entry; Γ_γγ = πα²/m², which matches 1307.4082 B5. Ratio 2α₂c_W²/α = 6.97 (on-shell inputs).
+- Line = γγ + ½γZ = 4.49 × γγ. This applies H.E.S.S. 2018's γγ limit to the line combination, as 1307.4082 does (labelled: H.E.S.S. 2018 quotes γγ only).
+- f_max(line) at 1 TeV, tree-SE, LO / NLO:
+  - H.E.S.S. benchmark Einasto: 0.168 / 0.185 → FAIL
+  - McMillan17: 0.237 → FAIL / 0.262 → marginal PASS
+  - MWPotential2014: 0.291 / 0.321 → PASS
+  - With one-loop ×√3–2: 0.29–0.64, PASS in every case.
+- Reading:
+  - D1110/D1114's "×2 margin" was for γγ alone and was optimistic. With the physically appropriate line (γγ + ½γZ), SERAPIS-E's 1 TeV wino at 26% of DM sits right at the H.E.S.S. 2018 edge.
+  - The verdict now hinges on (i) the one-loop/resummed line correction (literature: ×3–4 reduction, which saves it) and (ii) the Milky Way halo (light passes, heavy borderline).
+  - Correctly resummed line calculations (Baumgart et al., Beneke et al. NLL) are the right next step. They are the field standard and reduce the line rate.
+- Corrections: D1110 and D1114 stand as γγ-only results, but their headline "comfortable pass" is superseded by this note.
+VERDICT: tree-SE FAIL/marginal on heavier haloes, PASS on MWPotential2014; PASS everywhere with the one-loop reduction. SERAPIS-E 1 TeV is NOT comfortably safe.
+MAP: none
