@@ -8,7 +8,7 @@ Standing Jl-loop track "J". Every stage: lock first, two independent routes, rep
 - J4 DONE (D995, N* exact to 1e-3). Reheating → observables in one call: self-consistent N* from (w_reh, T_R or ln R_rad) with the matching equation.
 - J5 DONE (D995). Built-in error bars: truncation estimate (order-to-order) + fast/exact gap per result.
 - J6 Two-field: DONE (D999, D1000, D1001; observe_multi has per-field steps and a uniform-density end option, reproduces D1001 to 1e-6). Next: adiabatic-limit check; then J7 ASPIC.
-- J7d DONE (): two-parameter TI/SFI 8/8, n_s ~360×; PSNI needs J1b start-finder.
+- J7d DONE (D1018): two-parameter TI/SFI 8/8, n_s ~360×; PSNI needs J1b start-finder.
 - J7c2 DONE (D1008): reheating route ln R_rad, n_s ~260×, r ~260×, α_s ~35× vs ASPIC (J7c VOID kept).
 - J7a DONE (D1002) and J7b DONE (D1004): real ASPIC built from GitHub; 17 models / 32 points vs exact MS: n_s ~350×, r ~320×, α_s ~50× more accurate (32/32). Next J7c reheating route; two-parameter ASPIC models.
 - J7 The jaw-drop benchmark: run Janus on ASPIC's full model list and match their published predictions model by model (Encyclopædia Inflationaris tables), plus everything they cannot do (modular plateaus, exact check, two-field, error bars, speed). Lock the comparison criteria before running.
