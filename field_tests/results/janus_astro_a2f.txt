@@ -1,0 +1,6 @@
+P1 explicit octupole 0: max|res| 7.40e-04 rad -> hypothesis (a) REFUTED (octupole)
+P2 octupole 1000 vs 0: max|dphase| 0.00e+00 rad
+P3 LAL's 7PN piece / ours (fitted amplitude of our v^9 tidal-7PN shape): 0.99667
+   residual ~ v^9: fit rms 1.54e-10
+   residual ~ v^10: fit rms 1.25e-05
+   residual ~ v^11: fit rms 2.40e-05
