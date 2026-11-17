@@ -341,3 +341,4 @@ D1054  2026-11-17T11:25Z  Janus-Astro A2a TaylorF2 3.5PN vs LALSuite validated
 D1055  2026-11-17T11:29Z  Janus-Astro A7a: J-factors for SERAPIS-E wino, profile dependence of D735
 D1056  2026-11-17T11:34Z  Djl: A7b wino Sommerfeld solver validated; line rate mass dependence; window per profile
 D1057  2026-11-17T11:40Z  Djl: A7c SERAPIS GW background through each reheating history
+D1058  2026-11-17T11:49Z  Djl: A3 neutron stars - A3a and A3b locked verdicts NOT VALIDATED; SLy/AP4 physics reproduced
