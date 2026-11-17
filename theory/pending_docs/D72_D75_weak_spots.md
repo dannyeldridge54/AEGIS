@@ -11904,3 +11904,10 @@ First use (lock PREREG_L5_kaluza_fd_mms): KALUZA fd_schrodinger on an exact case
 observed order 2.000–2.0004 for both modes, GCI_fine 2.6e-7 / 1.0e-6, Richardson-extrapolated m² within 9e-11 / 7e-12 → VERIFIED (2nd order).
 Scope: verifies the FD operator and y→z map; S4e's −4% gap vs BTR (D1141) is therefore not an FD discretisation error — S4e2 (PC) remains the test.
 MAP: none
+
+## D1172 — TOOLS — LOCKBENCH L-6: deviation command + rerun refusal [built + tested]
+tools/lockbench/deviate.py: `add LOCK "text"` appends the next D<k> (timestamped) to LOCK_DEVIATIONS.md, rehashes, commits and pushes in one step;
+`check LOCK RESULTS…` refuses (exit 1) when results are already committed and no deviation was committed after them. tools/calcq/pcjob.py now runs
+the check (--results) before packing a PC job. Tests PASS (first run allowed; rerun refused; numbering; rerun allowed after a deviation). Live check:
+packing JMF3 again is refused ("results already committed and no deviation written after them"). Turns "no reruns to chase results" into a gate.
+MAP: none
