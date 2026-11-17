@@ -1,0 +1,6 @@
+F1 (l,b) vs astropy: max 6.93e-06 deg
+F2 Galactocentric vs astropy: max |dx| 9.50e-06 kpc, max |dv| 1.92e-03 km/s
+F3 orbit params vs galpy (30 stars, 5 Gyr): worst relative 5.33e-10; Hyperion 517 ms per star
+VERDICTS: F1=FAIL F2=FAIL F3=PASS -> A8a NOT VALIDATED
+Sun: {'rperi': 7.919, 'rapo': 9.166, 'zmax': 0.11, 'ecc': 0.073, 'E': np.float64(-104507.304), 'Lz': -1857.926}
+Sample feed record: {"source_id": "synthetic-0", "l": 165.0021983086124, "b": -12.260073375612878, "x": -9.066412243500999, "y": 0.28553439768051364, "z": -0.21619816899065503, "M_G_noext": 1.7362815109564842, "rperi": 5.9942, "rapo": 9.1953, "zmax": 4.3286, "ecc": 0.2107, "E": -108432.1412, "Lz": -1321.0017}
