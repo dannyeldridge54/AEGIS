@@ -15,7 +15,13 @@ x0 = np.array([12.0, 12.0]); v0 = -gf(x0)/Vf(x0); eps0 = 0.5*v0 @ v0; H0 = math.
 nc = spectra_nc(mf, x0, H0*v0)['ns']; d0 = abs(nc - ref); okS = d0 <= 1e-6
 L.append(f"self-check flat DQuad Q3: spectra_mf {ref:.8f} | NC code {nc:.8f} | |d| {d0:.1e} {'PASS' if okS else 'FAIL'}"); print(L[-1], flush=True)
 # DoubleQuadNC (PyTransport example values)
-M = 0.5e-6; p = np.array([0.002*M**2, 0.004*M**2, 1.0]); fi = np.array([0.4, 20.0])
+M = 0.5e-6; p = np.array([0.002*M**2, 0.004*M**2, 1.0])
+mn = build(sp.Rational(1, 2)*p[0]**2*f[0]**2 + sp.Rational(1, 2)*p[1]**2*f[1]**2, [[p[2]**2, 0], [0, p[2]**2*sp.sin(f[0])**2]], f)
+from tools.janus_calc.mfms_nc import background
+for f1 in (22, 24, 26, 28, 30, 35, 40):   # DEV D1: background-only start selection
+    fi = np.array([0.4, float(f1)]); Vi = float(mn['V'](fi)); dVi = np.array(mn['dV'](fi), float).ravel()
+    if background(mn, fi, -dVi/np.sqrt(3*Vi))[1] >= 70: break
+L.append(f"DEV D1: second-field start {f1} (first with Janus background N_tot >= 70)")
 PyT = importlib.import_module('PyTransJNC_DQuad')
 def ns_pyt(tol):
     V = PyT.V(fi, p); dV = PyT.dV(fi, p); ic = np.concatenate([fi, -dV/np.sqrt(3*V)])
@@ -24,7 +30,6 @@ def ns_pyt(tol):
     zz, _ = S.pSpectra(np.exp(lk), back, p, 6.0, np.array([tol, tol]), PyT)
     c = np.polyfit(lk - np.log(ks), np.log(zz), 2); return c[1] + 4.0, Ne, -dV/np.sqrt(3*V)
 sys.stdout = open(os.devnull, 'w'); a, NeP, fd = ns_pyt(1e-8); b, _, _ = ns_pyt(1e-10); sys.stdout = sys.__stdout__
-mn = build(sp.Rational(1, 2)*p[0]**2*f[0]**2 + sp.Rational(1, 2)*p[1]**2*f[1]**2, [[p[2]**2, 0], [0, p[2]**2*sp.sin(f[0])**2]], f)
 J = spectra_nc(mn, fi, fd); d = abs(J['ns'] - a); ok = d <= 2e-4
 L.append(f"DoubleQuadNC: N_tot PyT {NeP:.3f} / Janus {J['Ne']:.3f} | PyT n_s {a:.6f} (tol 1e-10: {b:.6f}) | Janus-MF-NC {J['ns']:.6f} | |d| {d:.1e} {'PASS' if ok else 'FAIL'}")
 L.append("JMF9: " + ("SELF-CHECK FAILED (fix via DEVIATIONS)" if not okS else ("JANUS-MF VALIDATED ON CURVED FIELD SPACE" if ok else "NOT VALIDATED")))
