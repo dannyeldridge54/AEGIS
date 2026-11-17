@@ -12541,3 +12541,21 @@ MAP: none
 - **Self-correction before commit:** my first wording said "independently places". It was fixed to note the shared helium data, because Goldstein–Hill uses LBT Y_p (D1208).
 - Full revtex build pending (PC).
 MAP: none
+
+### D1210 — C9: refitting only the NFW halo (McMillan17 baryons fixed) to the Eilers+2019 rotation curve fixes the slope sign (Q2 PASS) but needs an implausibly compact halo (r_s ≈ 3 kpc); χ²/dof = 2.09 (Q1 FAIL, marginal) (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_C9_halo_refit. **Data:** field_tests/data/eilers2019_table1.csv (Eilers et al. 2019, arXiv:1810.09466v2 Table 1, fetched this tick; 32 points with R ≤ 20.78 kpc). **Result:** field_tests/results/c9_halo_refit.txt. No deviations.
+- **Statistical errors only:**
+  - ρ_s = 4.88e8 M☉/kpc³, r_s = 3.04 kpc.
+  - χ²/dof = 2.09 → **Q1 FAIL** (criterion < 2). The original McMillan17 has χ²/dof = 122 on the same points.
+  - dv_c/dR(8.178) = −1.09 km/s/kpc → **Q2 PASS** (McMillan17: +1.3).
+  - v_c(8.178) = 228.7 (Horta −1.8σ); Ω = 27.97; κ = 38.8 (Horta +2.3σ; McMillan17 +5.4σ).
+  - ρ_DM☉ ≈ 0.51 GeV/cm³.
+- **With a 2% systematic floor:** χ²/dof = 0.25 (McMillan17 5.6), r_s = 2.91 kpc, dv/dR = −1.31, κ = 38.65.
+- **Reading:**
+  - (i) With McMillan17's baryons held fixed, the declining Eilers curve can only be matched by a very compact NFW halo (r_s ≈ 3 kpc vs ≈ 20 kpc in McMillan17, and vs typical Milky Way fits of ~10–20 kpc). That is implausible for a CDM halo; it means the baryons, not the halo, carry the misfit.
+  - (ii) Eilers' v_c(R☉) ≈ 229 sits 1.7–1.8σ below Horta's 235.3, so no fit to Eilers can match Horta. The two data sets disagree at that level, partly from their different R0 and systematics.
+  - (iii) A credible upgrade needs the baryon normalisation free as well (disc mass/scale), or a published joint fit. This 2-parameter halo-only refit is not a usable Mapper default.
+- **Decision:** McMillan17 stays the Mapper default (it fits Horta's v_c and Ω). Its local-slope defect (D1203) is recorded. The halo-only refit is rejected (r_s implausible).
+- **Next (optional, lock first):** a 4-parameter fit (disc mass and scale length plus NFW ρ_s, r_s) to Eilers, with a prior on r_s (10–25 kpc) and on the local baryon surface density (as in 2407.12551's constraint).
+VERDICT: Q1 FAIL (marginal), Q2 PASS. The refit is rejected as physically implausible. McMillan17 is retained.
+MAP: none
