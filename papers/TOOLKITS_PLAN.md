@@ -22,3 +22,6 @@ build_ext --inplace with the running Python, gravipy import optional (only neede
 module compiles and backEvolve runs (N_end ≈ 72.6 from φ = (12, 12)); no spectra computed yet. Next: lock JMF6 — Janus-MF vs PyTransport on JMF2's
 quadratic models (checks the reference against MMC too) and the non-separable N1 / N2' models of JMF4/JMF5, with PyTransport given the potential
 symbolically (so its derivatives can't disagree with V).
+- 17 Nov 22:30Z: r (tensor-to-scalar) for non-separable Janus-MF cannot be checked with PyTransport — its user guide (Docs/UserGuide2.tex) documents
+  only scalar ζ two- and three-point functions (the "tensors" it names are the N/u/A/B/C field-space objects, not gravitational waves). r on N1/N2'
+  stays checked only against patched MMC (D1174: |Δr/r| ≤ 1e-4). An independent r check would need a code with documented tensor modes.
