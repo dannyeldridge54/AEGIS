@@ -4,7 +4,7 @@ from tools.janus_astro import gwb
 out = []; P = lambda *a: (out.append(' '.join(str(x) for x in a)), print(*a, flush=True))
 MP, As = gwb.MP, 2.1e-9
 # C1
-rd = gwb.History([], N_infl=20.0)
+rd = gwb.History([(1/3, math.log(1e12))])   # DEVIATIONS D1
 c1 = [rd.T2(k) for k in np.geomspace(1e-3, 1e-1, 5)]; ok1 = max(abs(x-1) for x in c1) <= 1e-3
 P('C1 RD plateau T2:', ' '.join(f'{x:.6f}' for x in c1), 'PASS' if ok1 else 'FAIL')
 def case(name, T_R, r, phases):
@@ -39,7 +39,7 @@ for name, T_R, r, h, fR in cases:
     row = []
     for f in [1e-9, 1e-3, 1e-1, 1, 10, 100, 1e3]:
         k = f/fR
-        T2 = 1.0 if k < 1e-3 else (h.T2(k) if k < kend/30 else float('nan'))
+        T2 = 1.0 if k < 1e-3 else (h.T2(k) if k <= kend*1e-3 else float('nan'))   # DEVIATIONS D1
         row.append(f'{f:g} Hz: {gwb.omega_gw_h2(f, T2, r):.2e}')
     P(f'  {name}: r={r} f_R={fR:.3g} Hz f_end~{fend:.3g} Hz plateau={plateau:.2e}; ' + '; '.join(row))
 open('field_tests/results/janus_astro_a7c.txt', 'w').write('\n'.join(out) + '\n')

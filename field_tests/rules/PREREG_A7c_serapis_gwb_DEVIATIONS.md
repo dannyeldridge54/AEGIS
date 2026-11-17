@@ -1,0 +1,3 @@
+# DEVIATIONS for PREREG_A7c (written before the rerun)
+D1 (crash, no results produced, 17 Nov): the first run stopped in C1 with "mode not superhorizon inside the background": a pure-radiation history with inflation ending at N = 0 has k_end = k_R, so modes k ≥ 1e-3 k_R never start 1e3 outside the horizon. The C1 test history was mis-specified, not the solver.
+Fix: C1 uses a radiation phase extended back by a factor 1e12 in density (History([(1/3, ln 1e12)]), k_end = 1e3 k_R), so every C1 mode starts 1e3 outside the horizon during inflation. In the application, route B is evaluated only for k ≤ 1e-3 k_end (superhorizon start inside inflation); higher frequencies are reported as "n/a (within 3 decades of f_end)". No other change; the full locked script is run once more.
