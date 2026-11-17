@@ -44,3 +44,24 @@ def alpha_dn(model, Nstar, d=0.25):
     N_pivot = N_end - N*): carries the next-order terms consistently without a third-order formula."""
     np_, e1 = _ns_at(model, Nstar - d); nm, _ = _ns_at(model, Nstar + d)
     return (np_ - nm)/(2*d)/(1 - e1)
+
+# ---- J3: third order (Ballardini, Davoli & Sirletti 2024, arXiv:2408.05210, eqs. 47-52; alpha = 2 - ln2 - gamma_E = -CE) ----
+AL = 2 - math.log(2) - 0.5772156649015329
+def flow4(model, Nstar, h=0.25, npts=41):
+    Np = model.Nend - Nstar
+    Ns = np.linspace(Np - h*(npts//2)/10, Np + h*(npts//2)/10, npts)
+    e1 = np.array([model.sol.sol(n)[1]**2/2 for n in Ns])
+    l1 = CubicSpline(Ns, np.log(e1)); e2 = l1.derivative()(Ns)
+    l2 = CubicSpline(Ns, np.log(np.abs(e2))); e3 = l2.derivative()(Ns)
+    l3 = CubicSpline(Ns, np.log(np.abs(e3))); e4 = l3.derivative()(Ns)
+    i = npts//2
+    return e1[i], e2[i], e3[i], e4[i]
+def spectra3(model, Nstar):
+    e1, e2, e3, e4 = flow4(model, Nstar); a = AL; p2 = math.pi**2
+    ns = 1 + (-2*e1 - e2 - 2*e1**2 - (3 - 2*a)*e1*e2 + a*e2*e3 - 2*e1**3 + (-15 + 6*a + p2)*e1**2*e2
+              + (-84 + 36*a - 12*a*a + 7*p2)/12*e1*e2**2 + (-72 + 48*a - 12*a*a + 7*p2)/12*e1*e2*e3
+              + (-8 + p2)/4*e2**2*e3 + (-a*a/2 + p2/24)*e2*e3**2 + (-a*a/2 + p2/24)*e2*e3*e4)
+    als = (-2*e1*e2 - e2*e3 - 6*e1**2*e2 + (-3 + 2*a)*e1*e2**2 - 2*(2 - a)*e1*e2*e3 + a*e2*e3**2 + a*e2*e3*e4)
+    bs = -2*e1*e2**2 - 2*e1*e2*e3 - e2*e3**2 - e2*e3*e4
+    r = 16*e1*(1 + CE*e2)        # r kept at second order (third-order r not yet transcribed)
+    return dict(ns=ns, r=r, alpha_s=als, beta_s=bs, eps=(e1, e2, e3, e4))

@@ -1,0 +1,9 @@
+SERAPIS-E C=1.0e-6 N*=48.4: base ns=0.970054 r=4.75442e-04 a=-9.87526e-04 (665s) | janus ns=0.970036 r=4.75490e-04 a_dn=-9.89505e-04 a_flow=-1.01252e-03 (3.9 ms) | dns=-1.9e-05 dr=+0.01% da=+0.20% -> PASS
+SERAPIS-E C=1.0e-6 N*=50.0: base ns=0.971598 r=4.53807e-04 a=-9.42440e-04 (634s) | janus ns=0.971581 r=4.53853e-04 a_dn=-9.42790e-04 a_flow=-9.63905e-04 (2.9 ms) | dns=-1.7e-05 dr=+0.01% da=+0.04% -> PASS
+SERAPIS-E C=1.15e-6 N*=48.4: base ns=0.971557 r=4.93122e-04 a=-1.02403e-03 (718s) | janus ns=0.971538 r=4.93177e-04 a_dn=-1.02511e-03 a_flow=-1.04778e-03 (2.8 ms) | dns=-1.8e-05 dr=+0.01% da=+0.11% -> PASS
+Chronos eps=1.3e-4 N*=46.0: base ns=0.969643 r=5.30414e-04 a=-9.95356e-04 (468s) | janus ns=0.969623 r=5.30469e-04 a_dn=-9.95397e-04 a_flow=-1.02471e-03 (3.0 ms) | dns=-2.0e-05 dr=+0.01% da=+0.00% -> PASS
+Chronos eps=1.3e-4 N*=49.0: base ns=0.972462 r=4.86430e-04 a=-8.89085e-04 (633s) | janus ns=0.972445 r=4.86476e-04 a_dn=-8.89726e-04 a_flow=-9.14010e-04 (6.3 ms) | dns=-1.7e-05 dr=+0.01% da=+0.07% -> PASS
+SERAPIS-rho eps=6e-5 N*=46.09: base ns=0.969091 r=5.16033e-04 a=-9.86427e-04 (612s) | janus ns=0.969071 r=5.16085e-04 a_dn=-9.87758e-04 a_flow=-1.01691e-03 (2.9 ms) | dns=-2.0e-05 dr=+0.01% da=+0.13% -> PASS
+SERAPIS-rho eps=6e-5 N*=49.49: base ns=0.972239 r=4.67203e-04 a=-8.69211e-04 (577s) | janus ns=0.972223 r=4.67246e-04 a_dn=-8.70062e-04 a_flow=-8.93643e-04 (4.4 ms) | dns=-1.6e-05 dr=+0.01% da=+0.10% -> PASS
+Kairos eps=0 N*=46.08: base ns=0.958656 r=3.69030e-04 a=-8.77826e-04 (305s) | janus ns=0.958634 r=3.69048e-04 a_dn=-8.80419e-04 a_flow=-9.08973e-04 (6.6 ms) | dns=-2.3e-05 dr=+0.01% da=+0.30% -> PASS
+8/8 points pass -> VALIDATED

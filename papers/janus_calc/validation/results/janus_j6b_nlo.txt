@@ -1,0 +1,4 @@
+T1b m^2phi^2 N*=59.068: r_LO 0.135924  r_NLO 0.134238  calculator 0.134250  rel 9.1e-05 -> PASS
+T2b equal mass r_NLO ['0.1342381', '0.1342381', '0.1342381', '0.1342381'] spread 4.2e-10 vs single 4.9e-10 -> PASS
+T3b VW R=1/9 (8.2,12.9) N=59.516: r_LO 0.13631 r_NLO 0.13456 ratio 0.98719 (record only)
+J6b verdict: VALIDATED
