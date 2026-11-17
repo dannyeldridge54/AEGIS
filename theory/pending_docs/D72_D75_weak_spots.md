@@ -12379,3 +12379,19 @@ MAP: none
 - **No Run-3 (13.6 TeV) disappearing-track wino result** appeared in this search.
 VERDICT: NULL. The post-hoc wino window (0.67 to ~1–1.5 TeV, D1153; IGS-robust to cored haloes, D1190) is unchanged.
 MAP: none
+
+### D1199 — Paper rung prep: the SERAPIS v3.3 draft now carries today's B8 helium verdicts and the cored-halo robustness (unposted; no Zenodo) (2026-11-17)
+- [DOC] **papers/v3/serapis_v3.3_draft.tex, "Astrophysical cross-checks" paragraph:**
+  - (ii) Gamma-ray line: adds one sentence. For the cored (Burkert) Gaia DR3 haloes (arXiv:2605.16994) the 1 TeV wino passes in 3/5 fits and is marginal only at the upper fraction edge in 2/5, because those fits also raise ρ☉ (D1190).
+  - (iii) Nucleosynthesis: the old "deuterium ≃ 1.8σ" sentence is replaced. Against LBT 2026 (Y_p = 0.2458 ± 0.0013, arXiv:2601.22239), with theory errors, SERAPIS sits at +0.1σ in Y_p and −0.9σ in D/H. Hidden sector: U(1) +0.6σ, SU(2) +1.7σ, SU(2)+gaugino excluded at +3.1σ (D1192). The EMPRESS low Y_p (arXiv:2506.24050) is noted as tightening this further.
+  - The D-range in the paragraph header is updated to D1081–D1192.
+- **refs.bib:** three entries added (arXiv_2601_22239, arXiv_2506_24050, arXiv_2605_16994).
+  - The LBT V and EMPRESS XV author lists were not fetched; they are entered as collaboration names. Full author lists are needed before posting.
+- **Compile check:**
+  - The full build is not possible here: revtex4-2.cls is not installed, and installing it would be a download.
+  - A substitute-class build (article) shows only revtex-environment errors (ruledtabular, acknowledgments) and none from the edited text.
+  - The previous PDF is unchanged in the repo.
+- **Not changed:** the forward table's wino row (still valid) and the frozen predictions.
+- **The SU(2)+gaugino exclusion should also reach the τ_i sector in Table "conditions" if it is listed there.** No row mentions it explicitly (checked by grep for 0.301), so nothing else to edit.
+VERDICT: draft updated (unposted). It needs the author lists filled in, and a full revtex build on a machine that has revtex (the PC).
+MAP: none
