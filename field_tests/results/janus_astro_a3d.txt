@@ -1,0 +1,5 @@
+p_surf(rho=1e4 g/cc) = 1.3281e+18 Pa
+N4' log rho_c=14.8: ns M=0.87459971 R=11.9048548 | compact M=0.87459971 R=11.9048498 | rel 7.8e-11 4.2e-07 | surface sensitivity R(P->0)-R(1e4) = 0.34 m
+N4' log rho_c=15.0: ns M=1.56493632 R=11.5803346 | compact M=1.56493632 R=11.5804574 | rel 3.5e-12 1.1e-05 | surface sensitivity R(P->0)-R(1e4) = 0.14 m
+N4' log rho_c=15.2: ns M=1.99665693 R=10.6465039 | compact M=1.99665693 R=10.6466110 | rel 1.8e-11 1.0e-05 | surface sensitivity R(P->0)-R(1e4) = 0.07 m
+A3d NOT VALIDATED (N4' False)
