@@ -11438,3 +11438,8 @@ Lock PREREG_L9c_sigma8_md (one change from L9b, D1132: growth for the amplitude 
 Confirms D1132's diagnosis (radiation in the growth start). The residual +1.0–1.4% is consistent with EH no-wiggle's own shape error (D1065, rms 1.4%).
 Janus-LT now computes P(k, 0) and σ8 from A_s itself (derived normalisation, validated) — L9's CAMB referee can be dropped in the next version.
 MAP: none
+
+## D1134 — RIGHT/Janus-LT — L9v2: fσ8 vs DESI DR1 with Janus-LT's own σ8 — χ² unchanged (3.81/6), CAMB referee no longer needed [computed]
+Lock PREREG_L9v2_fs8_own. Own σ8 (L9c): fiducial 0.8324, L8b 0.8304 (rescaled to the fiducial convention 0.8095 vs CAMB-based 0.8097); ratios 0.983–1.002;
+χ² = 3.81 for 6 dof, |Δχ²| vs L9 (D1130) < 0.01 → CONSISTENT. Janus-LT's growth test is now self-contained (background, recombination, transfer, σ8, f, D).
+MAP: none

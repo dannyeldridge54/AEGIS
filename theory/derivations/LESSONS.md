@@ -302,3 +302,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1130: reproduce the data paper's own fiducial prediction first (C0) — it catches convention mismatches before the data test.
 - D1132: a normalisation that assumes an asymptotic regime (D = a in matter domination) must be imposed where that regime actually holds.
 - D1133: when a lock predicts its own failure mode, the follow-up lock should change exactly that one thing.
+- D1134: once a referee input is replaced by validated own code, rerun the downstream test under a new lock to show nothing moved.

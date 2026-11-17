@@ -1775,3 +1775,4 @@ Touches: none.
 ## D1130: L9 — Janus-LT fσ8 reproduces DESI fiducial to 0.16%; L8b ΛCDM vs DR1 full-shape χ² 3.81/6 → CONSISTENT (σ8 amplitude from CAMB, stated)
 ## D1132: L9b — own σ8 ratio to CAMB 0.902–0.917 (constant ~9% low) → NOT VALIDATED; points at D normalisation with radiation at a=1e-3
 ## D1133: L9c — own σ8 (A_s → P(k), EH98, MD-normalised D) vs CAMB: +1.0–1.4% → VALIDATED; confirms D1132's diagnosis
+## D1134: L9v2 — fσ8 with own σ8: χ² 3.81/6 (unchanged) → CONSISTENT; Janus-LT growth chain self-contained
