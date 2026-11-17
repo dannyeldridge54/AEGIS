@@ -1,0 +1,2 @@
+# DEVIATIONS for PREREG_A3b (written before the rerun)
+D1 (crash, editing error, 17 Nov): run 1 printed N1 (|Δy| = 8.6e-6, PASS) and crashed with NameError: K2 — the units-fix edit inserted a "#" comment in the middle of the line "K1 = …; K2 = …; K3 = …", commenting out K2 and K3. Fix: restore the two definitions (comment moved to the end of the line). No other change. Single rerun; verdict from it.

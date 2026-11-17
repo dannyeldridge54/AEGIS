@@ -11,7 +11,7 @@ CRUST = [(6.80110e-09, 1.58425, 0.0), (1.06186e-06, 1.28733, 2.44034e+07), (5.32
 TABLE3 = {'SLy': (34.384, 3.005, 2.988, 2.851), 'AP4': (34.269, 2.830, 3.445, 3.348)}
 class PPEOS:
     def __init__(self, logp1, g1, g2, g3, rho1=10**14.7, rho2=10**15.0):
-        K1 = 10**logp1/C**2/rho1**g1;   # A3b: all K in p/c^2 units (g/cm^3), as Read+ Table 2; K2 = K1*rho1**(g1-g2); K3 = K2*rho2**(g2-g3)
+        K1 = 10**logp1/C**2/rho1**g1; K2 = K1*rho1**(g1-g2); K3 = K2*rho2**(g2-g3)   # A3b: all K in p/c^2 units (g/cm^3), as Read+ Table 2
         Kc, gc = CRUST[3][0], CRUST[3][1]
         rho0 = (Kc/K1)**(1/(g1-gc))                    # crust-core joining density
         pieces = [list(p) for p in CRUST] + [[K1, g1, rho0], [K2, g2, rho1], [K3, g3, rho2]]
