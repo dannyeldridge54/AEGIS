@@ -1,0 +1,2 @@
+ cnbi_x_trajectory: not enough efolds!
+ efold requested=   efold maxi=    50.000000000000000        14.505656845504319     

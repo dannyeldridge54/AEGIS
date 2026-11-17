@@ -1,0 +1,6 @@
+COMPILE ulse/ncli/p.f90:17:132:
+
+   17 |     write(*,'(A,3ES24.15)') 'VG ', xx, ncli_norm_potential(xx,1e-4_kp,0.18_kp,2._kp), ncli_norm_deriv_potential(xx,1e-4_kp,0.18_kp,2._kp)
+      |                                                                                                                                    1
+Error: Syntax error in argument list at (1)
+f951: some warnings being treated as errors
