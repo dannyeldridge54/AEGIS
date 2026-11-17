@@ -1,0 +1,4 @@
+E2 extreme: fast vs event reference worst rperi 4.4e-04, rapo 2.9e-04, ecc 4.6e-04, zmax 4.3e-04
+E1 extreme: sampled reference vs event reference r_peri worst 1.4e-03; 6 stars differ > 1e-4; fast closer in 6 (1.00)
+E2 disk: fast vs event reference worst rperi 2.9e-05, rapo 3.3e-05, ecc 9.4e-04, zmax 9.6e-05
+VERDICTS: E1=PASS E2=PASS -> A8c4 VALIDATED | E1 answer: reference sampling CONFIRMED
