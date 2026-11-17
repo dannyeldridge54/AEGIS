@@ -421,3 +421,4 @@ D1134  2026-11-17T18:02Z  L9v2: fs8 with Janus-LT own sigma8 - same chi2, CAMB r
 D1135  2026-11-17T18:03Z  R: Z6-II-b abelian N=2 sector has exactly vanishing threshold coefficient - concrete near-finite example
 D1136  2026-11-17T18:03Z  Neff forecasts
 D1137  2026-11-17T18:04Z  R: Wilson lines do not lift the Z6-II-b U(1) zero (to O(BC)); the U(1) gets a different log
+D1138  2026-11-17T18:05Z  S4d prep: Basile-Mourad-Sagnotti template - DM tadpole vacua (9D x interval) perturbatively stable
