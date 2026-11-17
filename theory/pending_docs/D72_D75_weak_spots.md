@@ -10175,3 +10175,10 @@ PSNI failure [diagnosis, not a rerun]: the start-finder steps geometrically towa
 Running total vs ASPIC (D1002, D1004, D1008, D1018): fixed N*: 21 model settings / 40 scored points; reheating route: 32 points; Janus more accurate on n_s at every scored point.
 Process note: the first commit of this result went in with an empty D-number because the claim script refused to run on uncommitted files (git pull --rebase); fixed in the next commit, nothing else changed.
 MAP: none
+
+## D1019 (track L, locked PREREG_L0c_massive_nu): Janus-LT with massive neutrinos reproduces CAMB 2.0.5's H(z) and D_M(z) to max 4.6e-5 (median 1.9e-5) on 150 cases (50 cosmologies × Σm_ν = 0.06, 0.15, 0.30 eV): L0c VALIDATED; r_d with CAMB's z_d 5.6e-6, with Janus-LT's own recombination 4.4e-4
+[literature] Komatsu et al. 2011 (WMAP7) 1001.4538 Sec. 3.3 (fetched): ρ_ν = 0.2271 N_eff ρ_γ f(m_ν a/T_ν0) (Eq. 24), f(y) = (120/7π⁴)∫x²√(x² + y²)/(e^x + 1) dx (Eq. 25, used by quadrature, not the Eq. 26 fit), T_ν0 = (4/11)^{1/3} T_CMB.
+[computed] (field_tests/results/janus_lt_l0c.txt) max error by mass: 9.6e-6 (0.06 eV), 2.3e-5 (0.15), 4.6e-5 (0.30) — grows ∝ Σm_ν (plausibly CAMB's own massive-ν interpolation); the convention "one massive eigenstate carrying N_eff/3 of the neutrino density" (my reading of CAMB's default) is confirmed by the match. Massless path unchanged.
+Process note: the first commit of this result (32b34247) had an empty D-number in DERIVATION_LOG/LESSONS because the claim ran on a dirty tree; fixed here.
+Janus-LT now: background (ΛCDM, w0–wa, any F(a)), distances, massive ν, own recombination, drag epoch and sound horizon, all first-principles, ≤ 5e-5 (background) / 4e-4 (r_d) from CAMB. Next L1: TorsionΛ F(a) through the same chain (lock first), then L2 growth/σ8.
+MAP: none
