@@ -11699,3 +11699,13 @@ MAP: none
 - Also: fix a7b_check.py/w2_galaxy_loop.py constants next time they run (they are archival; their locked results stand as records of what was run).
 VERDICT: CORRECTION — the post-hoc wino window is wider than D1129 said (≈ 0.67 to 1–1.3 TeV); 1 TeV passes for realistic haloes.
 MAP: none
+
+## D1154 (CENTRE, Djl loop, locked PREREG_A2k): the upper edge of SERAPIS-E's thermal-wino window lies between ~1.1 and ~1.5 TeV — at 1.5 TeV it FAILS for the benchmark, McMillan17 and Gaia DR3 haloes (LO) even with the most optimistic limit bracket; 1.1–1.3 TeV are UNDETERMINED because only the 1 and 2.9 TeV IGS limits are quoted
+Lock pushed before run; result field_tests/results/a2k_upper_edge.txt.
+- Inputs: IGS limit bracket [2.3e-28, 6.5e-28] (monotonic assumption); NLL scale band; thermal f bracket (M/2.842)²–(M/2.207)²; four haloes.
+- Results:
+  - 1.1–1.3 TeV: UNDETERMINED for all haloes at LO. One PASS: MWPotential2014 at 1.1 TeV, NLO.
+  - 1.5 TeV: FAIL for the benchmark, McMillan17 and Gaia DR3 at LO (optimistic f_max 0.18–0.27 < lower f 0.279). It stays UNDETERMINED only for MWPotential2014 and some NLO cases.
+- Window statement: 0.67 TeV up to an edge between ≈ 1.1 and 1.5 TeV (est.). This is consistent with D1153's "≈ 1–1.3 TeV"; the paper row stands.
+- What sharpens it: the IGS limit at 1.1–1.5 TeV (plot-only in the paper) and the halo concentration. CTA (~7% at 1 TeV) would cut well below this edge.
+MAP: none
