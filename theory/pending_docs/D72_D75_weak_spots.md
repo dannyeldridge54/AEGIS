@@ -10651,3 +10651,9 @@ Speed note (profiling, no lock): the remaining slow paths are already modest —
 Results [computed, 200 stars each, 3 Gyr]: E2 extreme: r_peri 4.4e-4, r_apo 2.9e-4, e 4.6e-4, z_max 4.3e-4; disk: r_peri 2.9e-5, r_apo 3.3e-5, e 9.4e-4, z_max 9.6e-5 (all ≤ 1e-3) → PASS. E1: sampled vs exact r_peri up to 1.4e-3; 6 stars differ by > 1e-4; fast closer in 6/6 → reference sampling CONFIRMED.
 Status: the Star Mapper orbit feed (Gaia convention A8b + fast orbits A6c/A8c4) is validated end to end on synthetic stars. Next: A8d (feed hook → hyperion_orbits.json).
 MAP: none
+
+## D1078 (track X / Hyperion -> Star Mapper PC version, locked PREREG_A8d + DEVIATIONS D1): the Mapper orbit command and its Windows launcher are VALIDATED on synthetic Star Mapper tiles — correct selection (53 of 120 rows: radial velocity present and parallax_over_error > 5), every output number identical to direct calls (worst 0.0 after the CSV round trip), resumable (second run skips both tiles, byte-identical outputs), summary JSON for the Sky Map well-formed
+Files: tools/janus_astro/mapper_orbits.py (CLI), ufe-v2/START_HYPERION_ORBITS.bat (installs numpy/scipy/numba/galpy if missing, runs read-only on cosmos_map/tiles/L5, writes cosmos_map/hyperion/L5/*.csv.gz and apps/skymap/data/hyperion_orbits.json).
+Run history: run 1 crashed in the CHECK (test tiles written as "np.float64(…)" strings; the CLI correctly parsed none); D1 (plain decimals in the generator) written and pushed; single rerun PASS.
+Cost on real data (from D1076): ~0.45 ms per star after a 2 s compile — DR3 stars with radial velocities (~33M) ≈ 4 CPU-hours.
+MAP: none
