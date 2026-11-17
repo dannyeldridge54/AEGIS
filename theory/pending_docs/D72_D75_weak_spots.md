@@ -12495,3 +12495,11 @@ Q9 change over the last e-fold −5.7e-12 (n_s 0.927750 unchanged); N2' +1.0e-11
 5 e-folds before the end, i.e. isocurvature decays late in the interacting model but is gone by the end). All three ADIABATIC LIMIT REACHED → the
 Janus-MF numbers in JMF2–JMF6 are final super-horizon values; no reheating treatment needed for these models.
 MAP: none
+
+## D1207 — TOOLS/JANUS — JMF8: Janus-MF validated for THREE fields against PyTransport [VALIDATED]
+Lock PREREG_JMF8_threefield (method as JMF6). T1 separable ½Σm_i²φ_i², m² = (1, 9, 25)×1e-11: PyTransport n_s 0.932503, Janus-MF 0.932592 (|Δ| 8.9e-5);
+T2 with nearest-neighbour couplings ε(φ₁φ₂ + φ₂φ₃), ε = 1e-12: 0.933510 vs 0.933594 (|Δ| 8.5e-5) — both ≤ 2e-4 → PASS. PyTransport tol 1e-8 vs 1e-10 identical
+to 1e-6; adiabatic limit reached (P_R change over the last e-fold ≤ 3e-12). Janus-MF r 0.14475 / 0.14477 (not independently checked — PyTransport has no
+tensor route, see TOOLKITS_PLAN). Note: the ~9e-5 offset is similar in sign and size to Q9's in JMF6 (9.3e-5) — a common small systematic between the two
+codes' stencil/pivot conventions for strongly hierarchical masses, well inside the 2e-4 bar; recorded, not chased.
+MAP: none

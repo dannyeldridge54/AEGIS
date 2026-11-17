@@ -3,7 +3,7 @@ Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN
 
 ## AEGIS — Janus (inflation)
 1. JMF7 adiabatic-limit check — DONE (D1206)
-2. Janus-MF three fields vs PyTransport (JMF8) — RUNNING
+2. Janus-MF three fields vs PyTransport — DONE (D1207)
 3. Janus-MF curved field space (non-canonical) vs PyTransport NC examples (needs gravipy → patch or skip) — OPEN
 4. J7k the three listed ASPIC models (PC) — RUNNING
 5. Two-parameter ASPIC model scans (more parameter points per model) — OPEN
