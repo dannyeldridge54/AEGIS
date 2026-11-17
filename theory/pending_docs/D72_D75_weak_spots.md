@@ -11161,3 +11161,24 @@ Lock pushed before run; result field_tests/results/janus_astro_a2e.txt.
   - A test that separates them, as a future A2f lock: insert explicit zero octupole/magnetic Λ in LAL's dict (SimInspiralWaveformParamsInsertTidalOctupolarLambda1/2 = 0 and the magnetic equivalents, if present). If the residual drops to 1e-9, (a) is confirmed.
 VERDICT: A2e NOT VALIDATED as locked (7PN off by ~7e-4 rad); 6PN and 6.5PN VALIDATED-level agreement.
 MAP: none
+
+## D1112 (CENTRE, Djl loop (C), locked PREREG_C7 + DEVIATIONS D1): McMillan 2017 (Gaia-calibrated) passes the escape speed, the BHB mass and isotropic dispersions, but is 5.1σ too heavy for the K-giant M200 and 2.7σ for the K-giant enclosed mass — the Milky Way data themselves disagree (K giants want a light halo, v_esc a heavy one); MWPotential2014 and McMillan17 bracket the truth
+Lock pushed before run. D1: galpy's McMillan17 returns physical units, and my script multiplied by vo again. Fixed via DEVIATIONS before the rerun. Result field_tests/results/c7_mcmillan17.txt.
+- McMillan17 (no rescaling; v_c(r0) = 233.2 km/s):
+  - C3 KG M(<73) = 6.85e11 (+2.69σ, TENSION)
+  - C3 BHB M(<52) = 5.29e11 (+0.99σ)
+  - C4 halo M200 = 1.315e12: KG +5.10σ EXCLUDED, BHB +0.47σ
+  - C6 v_esc = 563 km/s (+1.45σ, CONSISTENT; MWPotential2014 was −2.1σ)
+  - C2 dispersions: β = 0 CONSISTENT (with +44 at 120 kpc, exactly on the 2σ boundary); β = 0.5 and 0.8 NOT
+  - Local halo density (computed after the run, reported only): ρ_DM(R0) = 0.0101 M_⊙/pc³ ≈ 0.385 GeV/cm³ [conversion 1 M_⊙/pc³ = 37.97 GeV/cm³].
+- Reading:
+  - The halo-mass "tension" in D1105 is not a model artefact but a disagreement between data sets.
+    - K-giant Jeans (Bird+2022: M200 0.55e12) and the measured radial anisotropy (β ≈ 0.8) prefer a LIGHT halo.
+    - The escape speed (Deason+2019) and BHB stars prefer a HEAVY one (~1–1.3e12).
+  - MWPotential2014 (light) and McMillan17 (heavy) bracket the data. The honest MW halo range is about 0.7–1.3e12 M_⊙ in M200, and ρ_⊙ ≈ 0.29–0.39 GeV/cm³.
+- For the wino (W2/A2):
+  - ρ_⊙ 0.385 vs 0.286 is ×1.35, so J (∝ ρ²) is ×1.8 and f_max is ×0.74.
+  - A2's 1 TeV f_max 0.36–0.39 would become ~0.27–0.29 [estimate, local-normalisation scaling]. SERAPIS-E's f = 0.26 would still pass, barely, at tree-level Sommerfeld; with the one-loop line reduction it stays comfortable (0.46–0.58).
+  - This narrows the SERAPIS-E 1 TeV margin. Worth a locked recomputation with the McMillan17 J-factor (H.E.S.S. ROIs) on the next A tick.
+VERDICT: McMillan17 mixed (passes v_esc/BHB, fails K-giant M200); the data sets disagree; SERAPIS-E 1 TeV wino passes even for the heavy halo [estimate].
+MAP: none
