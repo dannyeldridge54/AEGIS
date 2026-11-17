@@ -11515,3 +11515,19 @@ Observation (not a claim): Dirichlet m₂/m₁ = 2.190 vs the target ratio 2.13/
 suggests a definition difference in L or m (frame of the proper length, the ξ → 0 cutoff, or the "≈" rounding of the quoted 0.97/2.13), not the operator.
 Next (new lock, one change): fetch BTR §5.2–5.3's exact definition of L and of the mass normalisation (and the cutoff they used), then re-test.
 MAP: none
+
+## D1142 (CENTRE, Djl loop (D), locked PREREG_A2j): for the Gaia DR3 v_esc halo itself (NFW, M200c 0.55e12, c 13.9), SERAPIS-E's 1 TeV wino is EXCLUDED at LO (f_max 0.22–0.24 vs 0.26) and band-marginal at NLO (0.24–0.26) — D1139's "marginal-to-allowed" was too generous; and the halo's CONCENTRATION uncertainty (c 9.6–20.1) swings f_max from 0.13 to 0.45, so the verdict is set by the inner-halo shape more than by the mass
+Lock pushed before run; result field_tests/results/a2j_gaia_halo.txt.
+- Central halo: r_s 12.4 kpc, ρ(8.178) = 0.270 GeV/cm³, J_IGS/J_bench = 0.427. f_max LO [0.218, 0.240] FAIL; NLO [0.241, 0.264] BAND-DEPENDENT.
+- Variants (J ratio; NLO f_max):
+  - M −1σ: 0.340; 0.27–0.30 PASS
+  - M +1σ: 0.507; 0.22–0.24 FAIL
+  - c −1σ (9.6): 0.151; 0.41–0.45 PASS
+  - c +1σ (20.1): 1.246; 0.14–0.16 FAIL
+- Reading:
+  - D1139 inferred "marginal-to-allowed" from MWPotential2014's J ratio (0.325). The Gaia-fitted NFW is more concentrated (c 13.9 vs MWPotential2014's ~11), so its central J is higher (0.427). Correction recorded here (D1139a).
+  - The 1 TeV verdict is genuinely undetermined: within the Gaia fit's own 1σ concentration range it goes from a clear pass to a clear fail.
+  - The SERAPIS-E window statement "≈ 0.67–0.9 TeV" (D1129) is the appropriate conservative summary; 1 TeV is excluded for the central Gaia halo at LO.
+- What decides it: the inner-Galaxy dark-matter profile (concentration/slope inside ~1 kpc), not the halo mass. That is a known open problem (cores vs cusps) which no kinematic tracer used here constrains.
+VERDICT: central Gaia halo: 1 TeV FAIL (LO) / marginal (NLO); concentration-dominated uncertainty; D1129 window stands; D1139a correction.
+MAP: none
