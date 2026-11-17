@@ -1,0 +1,5 @@
+N*=46.09: pub ns 0.969092 r 5.1608e-04 as -9.8786e-04 | GS(k=6e-5) ns 0.969137 r 5.1676e-04 as -9.8852e-04 | dns 4.4e-05 dr/r 1.3e-03 das 6.6e-07
+N*=49.49: pub ns 0.972239 r 4.6725e-04 as -8.7034e-04 | GS(k=6e-5) ns 0.972287 r 4.6793e-04 as -8.7094e-04 | dns 4.8e-05 dr/r 1.5e-03 das 6.0e-07
+N*=55.0: pub ns 0.976602 r 4.0609e-04 as -7.2311e-04 | GS(k=6e-5) ns 0.976655 r 4.0680e-04 as -7.2361e-04 | dns 5.3e-05 dr/r 1.7e-03 das 5.0e-07
+T2: kappa* = 5.9745e-05 (kappa*/eps = 0.9958)
+T1 PASS -> GS FORM EQUIVALENT (at e^K level)

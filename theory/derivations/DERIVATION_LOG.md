@@ -1683,3 +1683,6 @@ Touches: none.
 
 ## D1009: track R — Green–Schwarz Kähler term −ln(2ReS − δ_GS L) gives +εL with ε = δ_GS/(2ReS); curvature ≤ 2e-6
 - [literature] 2212.03876 Eq. 2.21; [derived] linear over the inflationary range; needs Re S ~ δ_GS·8e3.
+
+## D1010: R1 — Green–Schwarz multiplicative tilt κ = ε reproduces SERAPIS-ρ (Δn_s ≤ 5e-5); A(S,S̄) factor next
+- [computed] κ*/ε = 0.996.

@@ -21,10 +21,11 @@ nodes:
   - D1007
   - D1007a
   - D1009
+  - D1010
   history:
-  - 'D1007: estimate'
   - 'D1007a: estimate'
   - 'D1009: estimate'
+  - 'D1010: estimate'
 - id: plateau_origin
   layer: 1
   branch:
