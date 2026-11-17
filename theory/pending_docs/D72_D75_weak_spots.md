@@ -12047,3 +12047,27 @@ MAP: none
 - **Next (R2c-b):** source the charge-1 and charge-2 wino potentials and Γ matrices (Hisano hep-ph/0610249 / 1307.4082 / Beneke 1411.6930) BEFORE locking (lesson from D1180), then run row 1 and the other sectors.
 VERDICT: stage a COMPUTED and converged. No physics score at this stage (no sourced number for R₀₀ alone).
 MAP: none
+
+### D1182 — R2c-b sourcing: wino Sommerfeld potentials and Γ for every charge/spin sector (Hisano et al. hep-ph/0610249, Eqs. 2–8, 13) (2026-11-17)
+- [DEEP · literature, fetched this tick] **Potentials** (attractive < 0), with **Γ** in units of πα₂²/m²:
+
+  | Sector, spin | Potential | Γ | Eq. |
+  |---|---|---|---|
+  | χ⁻χ⁻, S=0 | V = +α/r + α₂c_W² e^{−m_Z r}/r (the only repulsive channel) | 1/2 | (2) |
+  | χ⁰χ⁻, S=0 and S=1 | V = −α₂ e^{−m_W r}/r | S=0: 1/2; S=1: 25/24 | (3) |
+  | χ⁻χ⁺, S=1 | V = −α/r − α₂c_W² e^{−m_Z r}/r | 25/24 | (4) |
+  | (χ⁰χ⁰, χ⁻χ⁺), S=0 | 2×2 with off-diagonal −√2α₂e^{−m_W r}/r and 2δm on the charged diagonal | ½[[2,√2],[√2,3]] in our (00, +−) order (paper order is (+−, 00): ½[[3,√2],[√2,2]]) | (5) |
+
+  - χ⁰χ⁰ and χ⁻χ⁻ with S=1 are forbidden in the s-wave.
+  - By CP, χ⁺χ⁺ = χ⁻χ⁻ and χ⁰χ⁺ = χ⁰χ⁻.
+- **σv:** σv = cΓ|A|², with c = 2 for identical particles, else 1 (Eq. 6). The matrix form is σ_i v = c_i Σ A_ij Γ_jj' A*_ij' (Eq. 8).
+- **Thermal sum:** Eq. 13 sums over ordered species pairs i, j ∈ {χ⁰, χ⁻, χ⁺} with 4/g_eff². The spin average is not written out; I take it as the s-wave spin weight ¼ (S=0) + ¾ (S=1). That is an assumption, but it is the one relic.py's Born σ_eff uses.
+- **Cross-check against our code:** the Born limits match relic.py's sigma_eff_born term by term:
+  - χ⁰χ⁰: ¼·2·1;
+  - χ⁰χ^±: ¼·½ + ¾·25/24;
+  - χ⁺χ⁻: ¼·3/2 + ¾·25/24;
+  - χ^±χ^±: ¼·2·½.
+
+  So the R1b 37/12 normalisation is consistent with Hisano. The sommerfeld_nlo LO potential also matches Eq. (5).
+- **Locked this tick:** PREREG_R2c_b. Compute next tick.
+MAP: none
