@@ -1,6 +1,6 @@
-star1: ours rp/ra/zm 7.919/9.143/0.106 | galpy-MWP14 64.000/156838.685/4724.976 (max rel 4.5e+04) | galpy-McM17 65.680/166176.491/5006.291
-star2: ours rp/ra/zm 7.316/8.589/0.482 | galpy-MWP14 68.511/137168.866/13501.762 (max rel 2.8e+04) | galpy-McM17 70.309/145335.241/14305.486
-star3: ours rp/ra/zm 4.624/6.384/0.794 | galpy-MWP14 50.754/128949.061/26994.894 (max rel 3.4e+04) | galpy-McM17 52.087/136625.747/28602.154
-star4: ours rp/ra/zm 5.006/11.194/2.923 | galpy-MWP14 80.295/105405.782/40485.963 (max rel 1.4e+04) | galpy-McM17 82.527/111681.375/42896.481
-star5: ours rp/ra/zm 2.429/9.497/7.344 | galpy-MWP14 47.786/128209.616/67509.783 (max rel 1.3e+04) | galpy-McM17 49.305/135843.386/71527.298
-R1 -> FAIL
+star1: ours rp/ra/zm 7.919/9.143/0.106 | galpy-MWP14 7.919/9.143/0.106 (max rel 4.5e-04) | galpy-McM17 7.702/8.237/0.094
+star2: ours rp/ra/zm 7.316/8.589/0.482 | galpy-MWP14 7.316/8.589/0.482 (max rel 6.4e-05) | galpy-McM17 6.590/8.578/0.480
+star3: ours rp/ra/zm 4.624/6.384/0.794 | galpy-MWP14 4.624/6.384/0.794 (max rel 1.2e-05) | galpy-McM17 4.492/6.379/0.793
+star4: ours rp/ra/zm 5.006/11.194/2.923 | galpy-MWP14 5.006/11.194/2.923 (max rel 5.6e-05) | galpy-McM17 4.678/11.056/2.831
+star5: ours rp/ra/zm 2.429/9.497/7.344 | galpy-MWP14 2.429/9.496/7.344 (max rel 6.3e-05) | galpy-McM17 2.179/9.135/6.933
+R1 -> PASS
