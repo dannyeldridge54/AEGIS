@@ -467,3 +467,4 @@ D1180  2026-11-17T20:11Z  R2b6 conversion: FAIL; P_conv=0.87 unitarity-exact; th
 D1181  2026-11-17T20:19Z  R2c stage a: chi0chi0 thermal Sommerfeld factor at freeze-out 1.38-1.51
 D1182  2026-11-17T20:25Z  R2c-b sourcing: Hisano hep-ph/0610249 wino potentials and Gamma for all charge sectors
 D1183  2026-11-17T20:36Z  R2c-b full LO Sommerfeld thermal sigma_eff: R_eff 1.29-1.37 at freeze-out
+D1184  2026-11-17T20:41Z  R2d sourcing: Hisano LO Sommerfeld wino thermal mass 2.7-3.0 TeV; lock R2d
