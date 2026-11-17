@@ -522,18 +522,20 @@
     "E"
    ],
    "title": "N* for SERAPIS-E ≈ 49.7–50.5",
-   "status": "computed",
+   "status": "corrected",
    "d": [
     "D719",
     "D725",
-    "D906"
+    "D906",
+    "D979"
    ],
    "depends": [
     "reheat_rho",
     "serapis_e"
    ],
    "history": [
-    "D906: computed"
+    "D906: computed",
+    "D979: corrected"
    ]
   },
   {
