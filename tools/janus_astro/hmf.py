@@ -28,7 +28,7 @@ def dndlnM(M, k, P, rho):
     R = (3*M/(4*math.pi*rho))**(1/3); s = sigma_R(k, P, R)
     e = 1e-3; s1 = sigma_R(k, P, R*(1+e)**(1/3)); s0 = sigma_R(k, P, R*(1-e)**(1/3))
     dlns_dlnM = (math.log(s1) - math.log(s0))/(math.log(1+e) - math.log(1-e))
-    f = float(mf.modelTinker08(s, 0.0, 200.0))
+    f = float(mf.modelTinker08(s, 0.0, '200m'))   # A7d D1
     return f*rho/M*abs(dlns_dlnM), s
 def n_above(M, k, P, rho, Mmax=1e17, n=200):
     lM = np.linspace(math.log(M), math.log(Mmax), n)

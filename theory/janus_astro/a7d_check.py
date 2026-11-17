@@ -3,6 +3,7 @@ sys.path.insert(0, '.')
 from tools.janus_astro import hmf
 out = []; P = lambda *a: (out.append(' '.join(str(x) for x in a)), print(*a, flush=True))
 rel = lambda a, b: abs(a-b)/abs(b)
+from colossus.cosmology import cosmology as _cc; _cc.setCosmology('planck18')   # A7d D1: colossus cosmology set before first modelTinker08 call
 c0 = hmf.camb_linear(0.0); c1 = hmf.camb_linear(0.0587)
 ok1 = True
 for nm, c in [('massless', c0), ('0.0587 eV', c1)]:

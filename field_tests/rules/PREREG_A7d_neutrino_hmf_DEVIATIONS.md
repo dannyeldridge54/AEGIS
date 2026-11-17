@@ -1,0 +1,2 @@
+# DEVIATIONS for PREREG_A7d (written before the rerun)
+D1 (crash, API, 17 Nov): run 1 crashed in hmf.dndlnM: colossus modelTinker08(sigma, z, mdef) takes the mass definition as a string ('200m'), not the number 200. Fix: pass '200m' (same Δ = 200 × mean as locked); colossus must have a cosmology set (the check script sets 'planck18' before the first call; Δ_m = 200 is independent of it). No other change. Single rerun; verdict from it.
