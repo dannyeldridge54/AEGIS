@@ -1,0 +1,9 @@
+# PREREG D986 (Level S3b): positivity of the D̄5 Möbius trace for all proper times → sign of m_χ² independent of the T⁴ radius (written before the scan)
+[derived] (structure; checked in the D985 normalisation) For χ moving along a T⁴ circle of radius R, the Möbius strings stretch over 2y + 2πRn. Poisson-resumming n: Σ_n e^{−t(y/π + Rn)²} = (√π/(R√t)) Σ_k e^{−π²k²/(tR²)} cos(2ky/R), so ∂²_y at y = 0 = −(√π/(R√t)) Σ_k (4k²/R²) e^{−π²k²/(tR²)} (k = 0 drops). Hence
+ m_χ² ∝ + ∫dt t^{-3} Ĥ(t) [Σ_{p∈T²} e^{−t|p|²}] (√π/(R√t)) Σ_{k≥1} (4k²/R²) e^{−π²k²/(tR²)},
+ every factor positive except possibly Ĥ(t) = Σ_N (−1)^N (d_N^NS + d_N^R) e^{−tN}, the hatted D̄5 Möbius trace. So Ĥ(t) > 0 for all t > 0 ⇒ m_χ² > 0 for every R and every T² (U, A), all T⁴ images included; the T²-winding-zero part is U-independent and UV-divergent where Ĥ ~ e^{π²/2t} beats e^{−π²/(tR²)} (R > √2): the uncancelled BSB dilaton tadpole, a local (U-independent) renormalisation of χ's tree mass [interpretation].
+Scan: Ĥ(t) from the theta-product formulas (x = i e^{−t/2} for NS, q → −q for R), product length n_max = ⌈150/t⌉ + 50, at two precisions (mp.dps = 200 and 400) on 120 log-spaced points t ∈ [0.012, 60]; for t > 60, Ĥ = 16 − 256e^{−t} + … > 15.99 analytically from the level data.
+Validity: the two precisions must agree to 1e-8 relative at every point (else the point is recomputed at dps 800 and the agreeing pair is used; if none, the scan is INCONCLUSIVE).
+Verdict (fixed now): POSITIVE ("m_χ² > 0 for every T⁴ radius and T² shape") if Ĥ > 0 at every point; SIGN CHANGE if Ĥ ≤ 0 anywhere (report where; the R-dependence then needs the full integral).
+Also report: the minimum of Ĥ and where; the fitted small-t growth c in ln Ĥ ≈ c/t (expected π²/2).
+Script theory/strings/s3b_positivity_d986.py; output field_tests/results/s3b_positivity_d986.txt.
