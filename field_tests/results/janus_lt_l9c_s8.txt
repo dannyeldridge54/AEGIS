@@ -1,0 +1,4 @@
+h=0.6736 wb=0.02237 wc=0.12: Om=0.3138 D0=0.7871 sigma8 Janus-LT 0.8324 vs CAMB 0.8228 -> ratio 1.0117
+h=0.7 wb=0.0224 wc=0.11: Om=0.2702 D0=0.7601 sigma8 Janus-LT 0.7921 vs CAMB 0.7842 -> ratio 1.0101
+h=0.64 wb=0.022 wc=0.13: Om=0.3711 D0=0.8177 sigma8 Janus-LT 0.8665 vs CAMB 0.8550 -> ratio 1.0135
+ratio spread 0.0034; own sigma8 VALIDATED
