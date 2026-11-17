@@ -18,7 +18,7 @@ def janus_dN(m, V, LR):
     def g(dN):
         e1, e2, _ = m.flow(dN); P = H(m.Nend - dN)**2/(8*math.pi**2*e1)*(1 - 2*(1+CE)*e1 - CE*e2)
         return dN - rhs(LR, H(m.Nend - dN), He, P)
-    return brentq(g, 20.0, 90.0, xtol=1e-10)
+    return brentq(g, 20.0, min(90.0, m.Nend - 1.0), xtol=1e-10)
 def exact_dN(bg, LR, dN0):
     H = lambda N: bg.state(N)[3]; He = H(bg.Nend - 1e-9); dN = dN0
     for it in range(8):
