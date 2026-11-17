@@ -12293,3 +12293,8 @@ MAP: none
 - **Next C item:** a locked check of v_c(R0) and Ω☉, κ☉ for MWPotential2014, McMillan17 and Gaia-NFW+McMillan baryons with galpy, scored against Horta+2026.
 VERDICT: new data recorded. MWPotential2014 disfavoured at R☉ (≈ 4σ, from its defining value); McMillan17 consistent. A scored galpy check is OPEN.
 MAP: none
+
+### D1193a — addendum to D1193 (2026-11-17)
+- The McMillan17 value D1193 flagged as "recalled" is confirmed by our own computation: field_tests/results/c7_mcmillan17.txt has v_c(8.21) = 233.2 km/s (galpy, C7). Against Horta+2026 that is −2.1 km/s, ≈ −0.6σ.
+- The verdict is unchanged.
+MAP: none
