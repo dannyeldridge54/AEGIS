@@ -11632,3 +11632,10 @@ Lock PREREG_J10_nstar_sweep; ran on Danny's PC in ~2.5 min (WSL, AEGIS_PC_RUNNER
 Medians |Δn_s| 1.7e-6 (max 3.3e-5), |Δr/r| 7.6e-5, |Δα_s| 4.5e-7 → C1–C3 PASS → JANUS ACCURACY HOLDS AT NEW PIVOTS (same level as J7b at N* = 50, 60).
 Coverage now: 16 models × 5 pivots (45–65) for n_s, r, α_s vs exact; β_s validated (D1146).
 MAP: none
+
+## D1149 — LEFT/Janus — J11 (PC runner): Janus's β_s error for power laws scales like ε* — the J9b systematic is third-order truncation [computed]
+Lock PREREG_J11_beta_scaling. V ∝ φ^p, p = 1–6, N* = 50, 60; reference as J9b (spreads 0.9–3.4%). Rel. error grows with p: 0.06–0.7% (p = 1), 4% (p = 2),
+6–7% (3), 9–11% (4), 11–13% (5), 13–15% (6) as ε* goes 0.004 → 0.029. Over the 10 usable points (err > 1%), log–log slope 1.141 → within 1.0 ± 0.35 →
+TRUNCATION SCALING CONFIRMED. Empirically rel. err ≈ 5ε* — so Janus β_s is good to ≲ 5% for ε* ≲ 0.01 (all plateau models and p ≤ 2) and degrades linearly
+above. Next upgrade path: a fourth-order β_s term (needs the N3LO source, arXiv 2205.12608 — still blocked on Danny's PDF), or an exact-MS β_s mode in Janus.
+MAP: none
