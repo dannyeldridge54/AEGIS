@@ -14,8 +14,8 @@ Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN
 9. Janus-LT growth + SN joint w0wa — DONE (D1213) (A_s prior fetched: Planck 2018 VI Table 2, TT,TE,EE+lowE+lensing ln(10^10 A_s) = 3.044 ± 0.014, n_s 0.9649 ± 0.0042, τ 0.0544 ± 0.0073; label as an approximation in w0wa — A_s from a ΛCDM fit; σ8 via L9c machinery with w0wa growth)
 10. L7 uses DESI DR2 BAO already (tools/janus_lt/desi.py, arXiv 2503.14738 Table IV) — DONE (D1042)
 ## AEGIS — strings / KALUZA
-11. S4E2 independent check of S4e masses (PC) — RUNNING (limit ~17:20 CT)
-12. 6D Prüfer step for S4e (own lock, if S4E2 NOT RUN) — OPEN
+11. S4E2 independent check of S4e masses — NOT RUN (timeout; V2 informational) (D1214)
+12. 6D step for S4e with a Prüfer solver + BTR definition-of-L check — OPEN (next; own lock)
 ## LOCKBENCH / tools
 13. Selftest on the PC env (report mismatches vs ENV.lock) — QUEUED on PC (SELFTEST.job)
 14. Ledger upkeep helper (lists missing D-notes; verdicts stay hand-curated — auto-parsing misread lines) — DONE (papers/dash/make_csv.py)

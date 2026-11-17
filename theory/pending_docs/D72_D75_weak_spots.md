@@ -12598,3 +12598,14 @@ from a ΛCDM fit, used here as an approximation in w0waCDM). Joint MAP: w0 −0.
 C1 PASS. fσ8 part χ² 3.76 for 6 points (ratios 0.976–1.009) → C2 PASS. Δχ² ΛCDM vs w0waCDM 7.87 (L7 alone 7.70): growth neither adds nor removes
 evidence for evolving dark energy at DR1 full-shape precision. Janus-LT's w0wa result is now confirmed by Hessian (L7), profile (L10), MCMC (L11) and growth (L12).
 MAP: none
+
+## D1214 — STRINGS/KALUZA — S4e2: NOT RUN (compute-limited) as a whole; its first claim printed before the limit [NOT RUN; V2 informational]
+Lock PREREG_S4e2_independent (+DEVIATIONS D1–D3). The D3 attempt on Danny's PC hit its 2-h limit at 17:20 CT (exit 124) during the second part (6D subcritical
+vacuum, LSODA convergence warnings). Per D1/D3 the run counts as NOT RUN. Before the limit it printed the V2 block (log kept: field_tests/results/s4e2_pc_attempt_D3.log):
+10D critical, Dirichlet — independent FD method B: m² = 2.9795592, 14.286527 (N = 8000) vs S4e's Prüfer 2.9795596, 14.286529 → |FD/Prüfer − 1| 1.3e-7, 1.5e-7;
+N4000 vs N8000 agree; m L/π = 0.93175, 2.04027 (BTR context 0.97, 2.13). The script's own verdict line: "V2: SOLVER VALIDATED (independent)". Labelled
+INFORMATIONAL (the locked job did not complete), but it agrees with D1171 (KALUZA FD verified 2nd order on an exact case): two independent solvers reproduce
+S4e's masses to 1e-7, so D1141's −4% gap to BTR's 2-sig-fig values is not a solver error — it is a convention/definition difference still to be found (BTR's
+L, cutoffs or BC). Next (large list 12): the 6D step under its own lock with a solver that copes with the stiff region (Prüfer, not LSODA), and a written
+check of BTR's definition of L before any comparison.
+MAP: none

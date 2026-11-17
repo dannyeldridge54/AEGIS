@@ -1806,3 +1806,4 @@ Touches: none.
 ## D1206: JMF7 — P_R frozen by ε=1 in Q9, N2', N1 (last-e-fold change ≤ 4.5e-9) → multi-field results final
 ## D1207: JMF8 — Janus-MF matches PyTransport for 3 fields (separable and coupled), |Δn_s| ≤ 8.9e-5; VALIDATED
 ## D1213: L12 — adding DESI DR1 fσ8 + Planck A_s prior leaves w0wa unchanged (w0 −0.852, wa −0.530), fσ8 χ² 3.76/6, ΔχΛCDM 7.87
+## D1214: S4e2 NOT RUN (2-h limit); its V2 part (printed before the limit, informational) shows FD and Prüfer agree to 1.3e-7 — S4e's −4% vs BTR is not a solver error
