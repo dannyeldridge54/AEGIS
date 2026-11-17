@@ -1,0 +1,6 @@
+grid check z=0.01: |dDM/DM| = 3.6e-09
+grid check z=0.5: |dDM/DM| = 3.6e-08
+grid check z=2.26: |dDM/DM| = 2.4e-08
+(a) zHD > 0.01: N = 1590, Omega_m = 0.3315 (+0.0180 / -0.0180), chi2_min = 1412.25
+(b) all: N = 1701, Omega_m = 0.3620 (+0.0190 / -0.0180), chi2_min = 1762.29
+(a) vs Brout+22 0.334 ± 0.018: diff -0.0025 -> REPRODUCED
