@@ -10269,3 +10269,15 @@ MAP: none
 [computed] (field_tests/results/janus_j8_rhow.txt; data janus_j8.part.jsonl; ASPIC raw janus_j8_aspic_raw.txt) C6 (convention flag at > 0.5) not triggered.
 Consequence: Janus now beats ASPIC on all three of ASPIC's routes (fixed N*: D1004/D1018/D1023; ln R_rad: D1008; (w, ρ_reh): this note), on every scored point. The all-model pulse (J7f) and its reheating pulses (J7g) extend this to the full ASPIC list overnight.
 MAP: none
+
+## D1035 — DEEP/LEFT — J7f pulse 1: 32 ASPIC models at once, Janus vs ASPIC vs exact MS [computed]
+Lock PREREG_J7f (+DEVIATIONS D1 nearest-first start). Exact MS reference per model (bd 1000, 9 k-points), N* = 50 and 60.
+Result: 32 models scored, 64 points; Janus n_s closer to exact on 64/64. Medians |Δn_s| Janus 1.2e-6 vs ASPIC 6.7e-4 (~560×);
+|Δr/r| 7.0e-5 vs 3.0e-2 (~430×); |Δα_s| 5.1e-7 vs 2.0e-5; Janus 1.2 ms/point. C1–C4 all pass → JANUS MORE ACCURATE.
+Honest weak spots: (a) DI is an outlier: Janus |Δn_s| 1.7e-3 / 7.2e-4 (ASPIC 2.4e-3 / 1.2e-3) and α_s equal at N*=60 —
+both codes disagree with the reference by ~1e-3, so the DI reference or its tabulated-potential spline is suspect; not claimed
+as a Janus win in spirit. (b) VFMI α_s: ASPIC closer (3e-7 vs 2e-6) at both points. (c) 10 models listed, not scored:
+gmlfi/ncli (my driver line truncation), fi/kmii (my parser: Fortran drops the 'E' in 3-digit exponents, e.g. 1.12+100),
+cnbi/kmiii/hi/rpqti (parameter choice / ASPIC STOP / timeout), oripi/pli (grid < 75 e-folds). Fixups: J7h (locked; fi/kmii
+parser fix needs its own lock). Results: field_tests/results/janus_j7f_pulse.txt.
+MAP: none
