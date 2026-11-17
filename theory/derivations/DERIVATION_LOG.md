@@ -1634,3 +1634,7 @@ Touches: none.
 
 ## D991a: correction to D991
 - [derived+computed] soft-split vacuum energy is weight 2 (E(U,2)), verified to 1e-4 on 5 tori; the log is the m_s⁴ term. D991 withdrawn; ρ tilt origin open.
+
+## D993: eternal inflation + swampland (EZ1)
+- [computed] tilted branches max P_R ≈ 1.6–2× A_s → non-eternal; Kairos 0.13 in range (eternal further up). [derived] the tilt ramp makes ε_V → 4 (E) or 1 (Chronos/ρ) asymptotically.
+- Scorecard: dS and TCC violated (plateau-generic); Δφ ≈ 1.8 M_P.

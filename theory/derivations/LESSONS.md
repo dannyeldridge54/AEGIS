@@ -239,3 +239,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D989: a fast route earns trust only against the slow one on many points, including points chosen to break it.
 - D991: never state a derived number from a head estimate; run it first (a 10x slip was caught only because code ran before the note).
 - D991a: before matching a function's shape, check which object carries it (mass vs vacuum energy differ by one unit of lattice weight).
+- D993: check the amplitude normalisation of any 'physical' quantity computed from shape-only potentials before reading a verdict.
