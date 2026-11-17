@@ -11145,3 +11145,19 @@ Lock pushed before run; result field_tests/results/a2_wino_line.txt.
 - 1.85 TeV (W2 FAIL) is not re-tested here: there is no quoted H.E.S.S. number at that mass.
 VERDICT: A2 PASS for SERAPIS-E at 1 TeV (tree-SE f_max 0.36–0.39 ≥ 0.26).
 MAP: none
+
+## D1111 (CENTRE, Djl loop (B), locked PREREG_A2e): tidal phase from Henry–Faye–Blanchet 2020 — 6PN and 6.5PN (tail) match LAL to ≤ 8.8e-10 rad, but 7PN misses by 6.6–7.8e-4 rad (lock 1e-6) — A2e NOT VALIDATED as locked; the 7.5PN term agrees exactly (same residual), so the gap is one 7PN piece
+Lock pushed before run; result field_tests/results/janus_astro_a2e.txt.
+- Code: gw.taylorf2_tidal_dphase_hfb (Eq. 6.6a, quadrupolar Λ only; σ̃ = μ̃^(3) = 0, as locked).
+- E1 (6PN, HFB vs LAL): ≤ 8.8e-10 rad. PASS. This also cross-checks HFB against VFH 2011 (D1098) at 6PN.
+- E2 (6.5PN tail): ≤ 8.7e-10 rad. PASS.
+- E3 (7PN): residuals 7.40e-4 / 7.81e-4 / 6.59e-4 rad for the three systems. FAIL.
+- 7.5PN (reported): exactly the same residual as 7PN, so the 7.5PN term matches LAL. The whole difference sits in the 7PN coefficient.
+- The miss is 0.1% of the ~0.8 rad tidal phase: physically negligible for any detector (D1101 needs ~0.13 rad-level differences).
+- Hypotheses (untested, no tuning):
+  - (a) LAL fills the magnetic σ̃ and octupole μ̃^(3) from quasi-universal relations in Λ2 when only Λ2 is given. Those enter exactly at 7PN, so this fits the pattern.
+  - (b) The paper's 7PN coefficient (erratum versions v3/v4) differs from what LAL uses.
+  - (c) A transcription issue in the 7PN μ̃ coefficients from the fetched text.
+  - A test that separates them, as a future A2f lock: insert explicit zero octupole/magnetic Λ in LAL's dict (SimInspiralWaveformParamsInsertTidalOctupolarLambda1/2 = 0 and the magnetic equivalents, if present). If the residual drops to 1e-9, (a) is confirmed.
+VERDICT: A2e NOT VALIDATED as locked (7PN off by ~7e-4 rad); 6PN and 6.5PN VALIDATED-level agreement.
+MAP: none
