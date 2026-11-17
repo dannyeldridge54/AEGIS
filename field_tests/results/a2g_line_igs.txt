@@ -1,0 +1,7 @@
+scale factor sqrt(2.3/4) = 0.758
+LO HESS: f_max [0.143, 0.157] vs 0.26 -> FAIL
+LO McM17: f_max [0.202, 0.221] vs 0.26 -> FAIL
+LO MWP14: f_max [0.248, 0.272] vs 0.26 -> BAND-DEPENDENT
+NLO HESS: f_max [0.158, 0.173] vs 0.26 -> FAIL
+NLO McM17: f_max [0.223, 0.245] vs 0.26 -> FAIL
+NLO MWP14: f_max [0.273, 0.300] vs 0.26 -> PASS
