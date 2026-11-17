@@ -69,3 +69,9 @@ Source of truth v5.3 on Zenodo (DOI 10.5281/zenodo.24226521). TWIST-I: N* 56.7, 
 - v3.3 draft: Project H caveat now carries the D976–D978 sibling result (n_s ≈ 0.9714, r ≈ 5.0e-4; fixed-C excluded). Draft unposted until "Publish".
 - CubeMind: Phase 1 eval suite (300 items) + grading loop (CubeMind_Grade_Loop.bat on Desktop) built and pushed to janus-pair.
 - Pending: PC job D979-lock (Project H n_s match, PREREG_D979_projH_ns_match) via the Ubuntu queue.
+
+## Night, 16 Nov 2026 (CT) — string level built
+- Toolkit Level S (tools/serapis_calc/strings.py, STRINGS_PLAN.md): S0 abstruse identity; S1 T² one-loop potential (two routes, 1e-8; curvature = E(U,2)/π³A); S2 full open-string tower (two routes ≤1.5e-4; massless limit recovers S1); S3 (D985, locked PASS): anti-D5 position scalar mass² positive with E(U,2)/A² shape at string level — Project H's decisive sign condition met in the ADS sector.
+- D984 (PC run of lock D979): Project H at matched n_s gives r +15.7% (5.33e-4 vs 4.61e-4); not separable by funded experiments.
+- D981–D983: research prep of five open nodes; halo node → literature (Gaia DR3 prefers Einasto/cored).
+- Pending: D981b (wide-grid α_s), D982c (leptogenesis Boltzmann) reruns after the runner was killed (DEVIATIONS written); D984-lock (ρ/Kairos α_s) to the PC if D981 passes. Outreach draft to string theorists updated (not sent).
