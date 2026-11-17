@@ -1,0 +1,6 @@
+Q1: N_tot 72.61 | PyT n_s 0.963349 (tol 1e-10: 0.963349) | Janus-MF 0.963378 |d| 2.9e-05 PASS | MMC 0.963372 |d| 2.3e-05 C0 PASS
+Q3: N_tot 72.86 | PyT n_s 0.945464 (tol 1e-10: 0.945464) | Janus-MF 0.945477 |d| 1.3e-05 PASS | MMC 0.945477 |d| 1.3e-05 C0 PASS
+Q9: N_tot 73.26 | PyT n_s 0.927657 (tol 1e-10: 0.927658) | Janus-MF 0.92775 |d| 9.3e-05 PASS | MMC 0.927745 |d| 8.8e-05 C0 PASS
+N2p: N_tot 72.86 | PyT n_s 0.946202 (tol 1e-10: 0.946202) | Janus-MF 0.946212 |d| 9.8e-06 PASS
+N1: N_tot 66.41 | PyT n_s 0.954574 (tol 1e-10: 0.954574) | Janus-MF 0.954583 |d| 9.1e-06 PASS
+C0 True C1 True -> JMF6: JANUS-MF VALIDATED ON NON-SEPARABLE (independent reference)
