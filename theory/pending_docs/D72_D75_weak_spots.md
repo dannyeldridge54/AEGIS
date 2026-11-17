@@ -9992,3 +9992,10 @@ MAP: node=eps_tilt status=estimate touches=[] ripple=no
 Consequence (prediction): the observationally preferred SERAPIS branches are NON-eternal: no multiverse from inflation in these branches; the tilt that moves n_s to 0.97 also removes eternal inflation. Untilted Kairos (n_s ≈ 0.96) would be eternal.
 Swampland scorecard (report only) [computed]: all branches |V′|/V ≈ 0.006–0.008 and V″/V ≈ −0.014 to −0.020 at N* = 50 (violate the dS and refined-dS conjectures as usually stated, like every plateau model); field range over the last 60 e-folds 1.76–1.83 M_P (mild tension with Δφ ≲ O(1)); r = (3.2–4.7)e-4 (violates the TCC bound r ≲ 1e-30). Labelled flags (F6 style), not vetoes.
 MAP: none
+
+## D994 (track J, locked PREREG_J3): third-order Janus (Ballardini–Davoli–Sirletti 2024, arXiv:2408.05210 eqs. 47–52) reproduces the base solver's n_s to median 1.6e-6, max 2.9e-6 on all 24 SERAPIS points (second order: 1.7e-5 / 2.4e-5): IMPROVED (×10); running of the running β_s ≈ −(2.8–4.6)e-5
+[literature] Third-order n_s, α_s, β_s in Hubble-flow parameters with α = 2 − ln 2 − γ_E; transcribed via WebFetch and checked before use: (i) the second-order part equals Janus J0 (α = −C); (ii) the ln(k/k*) coefficient of n_s equals α_s term by term; (iii) twice the ln² coefficient equals β_s.
+[computed] (field_tests/results/janus_j3_check.txt; references = D990 base spectra_fast values, no new reference runs) third order |Δn_s|: median 1.6e-6, max 2.9e-6 (locked: ≤ 5e-6 and ≥ 3× median reduction) → IMPROVED. The remaining ~1e-6 is at the reference solver's own stencil precision.
+[computed] β_s = −(2.8–4.6)e-5 across branches and N* = 44–53 (first Janus value of the running of the running; consistent with the D666 estimate β_s ≈ 128u⁶(1+x)(2x² − 5x − 16) in sign and size [to be compared quantitatively]).
+r stays second order (0.013% already); third-order r to be added when transcribed.
+MAP: none
