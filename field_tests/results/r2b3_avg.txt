@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/claude/aegis/field_tests/scripts/r2b3_avg.py", line 17, in <module>
+    A1, A2 = dx(2), dx(1); conv = abs(A1/A2 - 1)
+             ~~^^^
+  File "/home/claude/aegis/field_tests/scripts/r2b3_avg.py", line 16, in <lambda>
+    dx = lambda k: np.trapz(S[::k]*2*C/n[::k]**3, n[::k]) / ((1 - C/b**2) - (1 - C/a**2))
+                   ^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/numpy/__init__.py", line 769, in __getattr__
+    raise AttributeError(f"module {__name__!r} has no attribute {attr!r}")
+AttributeError: module 'numpy' has no attribute 'trapz'. Did you mean: 'trace'?

@@ -13,7 +13,8 @@ def Sopen(x):
 if __name__ == '__main__':
     a, b = 6.036, 7.036; n = np.linspace(a, b, 2001)
     with Pool(2) as p: S = np.array(p.map(Sclosed, n))
-    dx = lambda k: np.trapz(S[::k]*2*C/n[::k]**3, n[::k]) / ((1 - C/b**2) - (1 - C/a**2))
+    dx = lambda k: np.trapezoid(S[::k]*2*C/n[::k]**3, n[::k]) / ((1 - C/b**2) - (1 - C/a**2))
+    np.save("field_tests/results/r2b3_S_grid.npy", np.vstack([n, S]))
     A1, A2 = dx(2), dx(1); conv = abs(A1/A2 - 1)
     xs = [1.01, 1.02, 1.05, 1.1, 1.2]
     with Pool(2) as p: So = p.map(Sopen, xs)
