@@ -13,6 +13,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A7c DONE (D1057): SERAPIS GW background per reheating history (route B mode evolution; plateau 6.5–7.2e-19; knee 0.03–0.08 Hz τ=i vs 8–80 Hz ρ).
 
+- A3a/A3b (D1058): NOT VALIDATED as locked (crash; N4 surface-definition 1.5e-5); SLy M_max 2.048, R_1.4 11.71 km, Λ_1.4 296; AP4 2.188, 11.32 km, 248. Next A3c.
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].
