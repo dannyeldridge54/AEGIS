@@ -11948,3 +11948,9 @@ MAP: none
 ## D1175a — correction to D1175 wording
 D1175 says "L-1…L-8 now all built; L-7 remains" — correct reading: L-1–L-6 and L-8 built, L-7 (dashboard) not yet. Its "D1173-era" tag for the
 ASPIC lfi check is wrong: that check was the ASPIC_INSTALL job (PC log, 13:45 CT, max rel diff 0.0), recorded in D1171's report, not a D-note of its own.
+
+## D1176 — JANUS — J13: Janus accuracy holds at new pivots N* = 45, 55, 65 on all 32 pulse-1 models [HOLDS]
+Lock PREREG_J13_pulse_nstar (moved PC → cloud, same script). 96 points vs exact MS: median |Δn_s| 1.4e-6 (max 4.0e-5 excluding DI; DI max 1.0e-3,
+D1035's suspect-reference outlier, reported as locked), median |Δr/r| 7.2e-5, median |Δα_s| 5.5e-7. C1, C2, C3 all True → HOLDS.
+With J10 (D1148, LFI-type models, 48 points) Janus's accuracy now holds at pivots 45–65 across the full scored ASPIC set.
+MAP: none
