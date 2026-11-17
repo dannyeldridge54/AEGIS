@@ -12341,3 +12341,9 @@ MAP: none
 - **Hyperion 1.1 CHANGES:** entry added.
 VERDICT: galpy path VALIDATED against our MWP2014 integrator. McMillan17 is ready to use. The default flip and the frame constants are OPEN (next D step).
 MAP: none
+
+### D1196a — correction to D1196 (2026-11-17)
+- Star 1's line was cut from the output I read (the progress-bar filter hid it). The full result file shows star 1 at max rel 4.5e-4, so R1's true maximum is 4.5e-4, not 6.4e-5. That is still well inside the 1% criterion, so the PASS stands.
+- Star 1 under McMillan17: r_peri 7.92 → 7.70, r_apo 9.14 → 8.24 (−10%), z_max 0.106 → 0.094. So r_apo can fall by up to 10%, not "0–4%".
+- The CHANGES entry's "D1193–D1195" should read "D1193–D1196".
+MAP: none
