@@ -1,0 +1,8 @@
+SERAPIS-E C=1.15e-6: E: max P_R in range 3.408e-09 -> NOT WITHIN RANGE (nowhere in range); P_R at pivot 2.10e-09
+   Z: |V'|/V at N*=50 = 7.79e-03 (violates dS slope ~O(1)); V''/V = -1.39e-02 (violates refined dS); field range (60 e-folds) = 1.78 M_P (tension with distance ~O(1)); r = 4.72e-04 (violates TCC r<1e-30)
+Chronos eps=1.3e-4: E: max P_R in range 4.062e-09 -> NOT WITHIN RANGE (nowhere in range); P_R at pivot 2.10e-09
+   Z: |V'|/V at N*=50 = 7.81e-03 (violates dS slope ~O(1)); V''/V = -1.38e-02 (violates refined dS); field range (60 e-folds) = 1.83 M_P (tension with distance ~O(1)); r = 4.73e-04 (violates TCC r<1e-30)
+SERAPIS-rho eps=6e-5: E: max P_R in range 4.272e-09 -> NOT WITHIN RANGE (nowhere in range); P_R at pivot 2.10e-09
+   Z: |V'|/V at N*=50 = 7.70e-03 (violates dS slope ~O(1)); V''/V = -1.41e-02 (violates refined dS); field range (60 e-folds) = 1.82 M_P (tension with distance ~O(1)); r = 4.61e-04 (violates TCC r<1e-30)
+Kairos: E: max P_R in range 1.274e-01 -> NOT WITHIN RANGE (nowhere in range); P_R at pivot 2.10e-09
+   Z: |V'|/V at N*=50 = 6.42e-03 (violates dS slope ~O(1)); V''/V = -1.96e-02 (violates refined dS); field range (60 e-folds) = 1.76 M_P (tension with distance ~O(1)); r = 3.16e-04 (violates TCC r<1e-30)
