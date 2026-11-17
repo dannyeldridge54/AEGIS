@@ -413,3 +413,4 @@ D1126  2026-11-17T17:47Z  IGS J
 D1127  2026-11-17T17:49Z  J7g pulses 2-3: reheating routes over 31 ASPIC models, Janus better 124/124
 D1128  2026-11-17T17:50Z  0.66 IGS
 D1129  2026-11-17T17:54Z  table row
+D1130  2026-11-17T17:58Z  L9: Janus-LT growth reproduces DESI fiducial fs8 to 0.16% and fits DR1 full-shape
