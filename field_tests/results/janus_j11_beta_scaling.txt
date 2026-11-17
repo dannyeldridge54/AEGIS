@@ -1,0 +1,13 @@
+p=1 N*=50: eps* 5.0440e-03 beta_A -2.4449e-05 spread 0.015 | Janus -2.4278e-05 rel err 0.0070 
+p=1 N*=60: eps* 4.1993e-03 beta_A -1.4051e-05 spread 0.010 | Janus -1.4041e-05 rel err 0.0006 
+p=2 N*=50: eps* 1.0038e-02 beta_A -3.3264e-05 spread 0.017 | Janus -3.1938e-05 rel err 0.0399 USED
+p=2 N*=60: eps* 8.3636e-03 beta_A -1.9323e-05 spread 0.019 | Janus -1.8515e-05 rel err 0.0418 USED
+p=3 N*=50: eps* 1.4979e-02 beta_A -4.2296e-05 spread 0.016 | Janus -3.9346e-05 rel err 0.0697 USED
+p=3 N*=60: eps* 1.2491e-02 beta_A -2.4259e-05 spread 0.021 | Janus -2.2865e-05 rel err 0.0575 USED
+p=4 N*=50: eps* 1.9868e-02 beta_A -5.2066e-05 spread 0.009 | Janus -4.6516e-05 rel err 0.1066 USED
+p=4 N*=60: eps* 1.6583e-02 beta_A -2.9908e-05 spread 0.034 | Janus -2.7100e-05 rel err 0.0939 USED
+p=5 N*=50: eps* 2.4708e-02 beta_A -6.1416e-05 spread 0.010 | Janus -5.3461e-05 rel err 0.1295 USED
+p=5 N*=60: eps* 2.0640e-02 beta_A -3.5131e-05 spread 0.012 | Janus -3.1224e-05 rel err 0.1112 USED
+p=6 N*=50: eps* 2.9498e-02 beta_A -7.0904e-05 spread 0.016 | Janus -6.0186e-05 rel err 0.1512 USED
+p=6 N*=60: eps* 2.4663e-02 beta_A -4.0293e-05 spread 0.025 | Janus -3.5237e-05 rel err 0.1255 USED
+usable 10; log-log slope 1.141 -> TRUNCATION SCALING CONFIRMED
