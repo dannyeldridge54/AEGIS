@@ -11675,3 +11675,27 @@ MAP: none
 - ⚠ Inconsistency found: D784/D1080 used f = 0.14 / 0.26 / 0.67 at 0.66 / 1.0 / 1.85 TeV. Those are ≈ (M/1.8–2.2)², not (M/2.9)²: 0.26 at 1 TeV implies M_th ≈ 1.96 TeV. So the SERAPIS-E fractions already in use are LARGER than the (M/2.9)² rule quoted in the paper text, and closer to the Born-like end.
   - The paper says "f = (M₂/2.9 TeV)²", but the tables and checks used 0.14 / 0.26 / 0.67. One of them is wrong. This needs a source-level recheck of D784 on the next A tick, before any v3.3 posting.
 MAP: none
+
+## D1153 (CENTRE, manual Djl, CORRECTION of D1110–D1142's input): the SERAPIS-E wino fractions used in A7b/W2 and every line verdict today (f = 0.14 / 0.26 / 0.67 at 0.66 / 1.0 / 1.85 TeV) are the OLD D732 "f_total" values, superseded by D784 (thermal wino after the Z₃ late reheating: f = (M/2.9)² = 0.05 / 0.12 / 0.41) — redoing the verdicts with the current thermal fractions (bracket from D1152): 0.67 TeV PASSES everywhere, 1 TeV PASSES for Gaia-calibrated haloes (marginal only for the H.E.S.S. benchmark), 1.85 TeV still FAILS; the window is ≈ 0.67 to ~1–1.3 TeV, not 0.67–0.9
+- Source check: D1015-area note (line ~7009) lists f_total 0.14 / 0.26 / 0.67 (D732, T_R 3.2e8, gravitino-produced plus thermal) vs f_thermal 0.05 / 0.12 / 0.41. D784 later (REVERSE, locked) established that the wino is thermal: f = (M₂/2.9)². a7b_check.py and w2_galaxy_loop.py hard-code the D732 values, and I carried them into D1110–D1142 without rechecking. That was my error.
+- Current thermal f (bracket (M/2.842)² – (M/2.207)², D1152): 0.67 TeV 0.056–0.092; 1 TeV 0.124–0.205; 1.85 TeV 0.42–0.70.
+- Re-scored by arithmetic against the computed f_max (IGS, NLL band):
+  - 0.67 TeV: the f_max pessimistic floor is ≥ 0.108 (benchmark, D1128) > 0.092 → PASS for ALL haloes.
+  - 1 TeV:
+    - Benchmark 0.143–0.173 vs f 0.124–0.205 → marginal.
+    - McMillan17 0.203–0.246 → PASS, except at the extreme Born-like f.
+    - MWPotential2014 0.25–0.30 → PASS.
+    - Gaia DR3 central 0.218–0.264 → PASS.
+  - 1.85 TeV: f 0.42–0.70 vs f_max ≈ 0.26–0.39 (W2) → FAIL.
+- Corrected surviving window: 0.67 TeV (ATLAS) up to an upper edge between 1 and ~1.3 TeV [estimate: where the rising f(M) meets f_max(M); not computed; needs IGS limits at 1–2 TeV, of which only 2.9 TeV (6.5e-28) is quoted].
+- Superseded statements:
+  - D1125's "1 TeV EXCLUDED" (used f = 0.26).
+  - D1129's "≈ 0.67–0.9 TeV, 5–10%".
+  - D1142's "FAIL at LO" (vs 0.26).
+  - These are corrected here (D1125a, D1129a, D1142a).
+  - The halo/J/NLL computations themselves stand. Only the f compared against changed.
+- Paper: the v3.3 paragraph is rewritten with the thermal-fraction bracket, and the table row now reads "0.67 to ≈1–1.3 TeV (est.), f ≈ 5–20%; excluded by CTA + HL-LHC if nothing is seen". refs.bib adds 2008.00692. Unposted.
+- Lesson for the rules: when a model input is reused across loops, re-read its LATEST D-note, not the first code that used it.
+- Also: fix a7b_check.py/w2_galaxy_loop.py constants next time they run (they are archival; their locked results stand as records of what was run).
+VERDICT: CORRECTION — the post-hoc wino window is wider than D1129 said (≈ 0.67 to 1–1.3 TeV); 1 TeV passes for realistic haloes.
+MAP: none
