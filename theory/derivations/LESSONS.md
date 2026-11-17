@@ -227,3 +227,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D977: test 'equal at leading order' at the observables' precision before identifying models.
 - D978: (no new lesson)
 - D979: a constant offset across all inputs points at a shared definition (here the end of inflation); decompose it before blaming the solver.
+- D980: when removing a suspected cause leaves the scatter unchanged, drop the suspect and look at how the noise is amplified (here a second derivative on a narrow stencil).

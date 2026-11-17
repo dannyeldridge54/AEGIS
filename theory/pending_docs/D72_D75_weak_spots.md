@@ -9858,3 +9858,13 @@ MAP: none
 Effect on predictions: exact n_s at the reproduced N* is 0.96951–0.97416 for T_R = 1e4–1e10 (r = 5.22e-4 to 4.59e-4); the shift from +0.17 e-folds is Δn_s ≈ +1.5e-4 and Δr/r ≈ −0.6% [estimate, from the table slope], inside the frozen SERAPIS-E band. Frozen predictions unchanged (post-hoc rule).
 Verdict: FAIL by the locked tolerance, cause identified; D719's N* bracket corrected upward by 0.17 (correction note, no silent edit of D719). No rerun.
 MAP: node=nstar_e status=corrected touches=[] ripple=no
+
+## D980 (locked PREREG_D975): α_s with the exact de Sitter start is still NOT CONVERGED (scatter 7–10%, larger than D974's); since the start transient is now removed, the scatter is not a start effect; the leading candidate is per-mode readout noise amplified by the narrow ±0.1 stencil [estimate]
+(Lock PREREG_D980 does not exist; this note records lock PREREG_D975, run D975b; numbering differs, as in D710.)
+[computed] (field_tests/results/alpha_ds_d975.txt) SERAPIS-E C = 1e-6, N* = 48.4: α_s = −9.833e-4 (bd 200), −8.389e-4 (1000), −1.0124e-3 (5000); n_s 0.970054/0.970052/0.970051, r 4.7544e-4 constant. Chronos ε = 1.3e-4, N* = 46: α_s = −1.0881e-3, −1.1073e-3, −9.693e-4; n_s 0.969645/0.969642/0.969644, r 5.3041e-4 constant.
+Locked verdict: |α(5000)/α(1000) − 1| = 20.7% (SERAPIS-E), 12.5% (Chronos) > 2% → NOT CONVERGED; no comparison verdict; no rerun.
+[derived] Against D974 (finite Bunch–Davies start, same points): removing the start transient did not reduce the scatter (D974 3.6%/4.3%; now 21%/12%), and the sequence in bd is not a decaying oscillation. So D974's [estimate] that the scatter is the finite-start oscillation is not supported.
+[derived] (arithmetic) With a 5-point stencil of half-width 0.2 at spacing h = 0.1, α_s ~ (ln P)''; a scatter of ~0.9e-4 in α_s needs only ~1e-6 noise in ln P per mode (σ_α ~ σ_lnP/h²), while n_s (σ ~ σ_lnP/h ~ 1e-5 at most) and r stay converged, as observed (n_s varies by ≤ 3e-6).
+[estimate] Leading candidate: ~1e-6 per-mode readout noise (end-of-integration amplitude, varying with integration length as bd changes) amplified by the narrow stencil. Next method (needs its own lock and a selftest on a power law with known α_s): ln P on a wider grid (e.g. 9 points over ±0.8 in ln k) fitted with a quadratic, which cuts the noise in α_s by roughly (0.8/0.2)² ≈ 16×.
+Status: the published α_s values (SERAPIS-E −(9.4–10.6)e-4, Chronos −(8.8–10.2)e-4) are consistent with the mean of all six runs here (−9.4e-4, −1.05e-3) at the ~10% level; precision not improved beyond D974; frozen predictions unchanged.
+MAP: none
