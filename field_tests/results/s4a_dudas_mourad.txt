@@ -1,0 +1,4 @@
+Route A: max relative residual of eqs (2.3) on y in [0.05,3]: 1.98e-06 (eq1 1.3e-06, eq2 6.4e-11, eq3 2.0e-06)
+Route B: max |dA| 1.89e-11, max |dphi| 1.30e-10, constraint max 4.34e-10
+e^phi at y=0.05: 1.360e-01; at y=3: 1.777e+03; proper length of y in (0,inf): 2.0932 (finite)
+S4a NOT VALIDATED
