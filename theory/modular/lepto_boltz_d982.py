@@ -12,11 +12,11 @@ def solve(M,TR,K,eps=1e-6):
     H0=1e4*Gphi; rho0=3*MP**2*H0**2
     S=rho0   # scale
     def rhs(x,y):
-        a=math.exp(x); rp=(math.exp(y[0])*S/a**3 if y[0]>-690 else 0.0); nN=y[1]*S/a**3; rR=max(y[2],1e-300)*S/a**4
+        a=math.exp(x); rp=math.exp(max(y[0],-745.0))*S/a**3; nN=y[1]*S/a**3; rR=max(y[2],1e-300)*S/a**4
         H=math.sqrt(max(rp+M*nN+rR,1e-300)/(3*MP**2)); T=(30*rR/(math.pi**2*gs))**0.25
         z=M/max(T,1e-30); neq_ratio=(z*z*kn(2,z)/2 if z<600 else 0.0)  # n_N^eq/n_l^eq (2 dof each, approx)
         W=GN/2*neq_ratio
-        d0=-Gphi/H if y[0]>-690 else 0.0
+        d0=-Gphi/H
         d1=(2*Gphi*rp/m-GN*nN)*a**3/(H*S)
         d2=(Gphi*rp*(1-2*M/m)+GN*M*nN)*a**4/(H*S)
         d3=(eps*GN*nN-W*y[3]*S/a**3)*a**3/(H*S)
