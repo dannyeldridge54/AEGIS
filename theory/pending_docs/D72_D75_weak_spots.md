@@ -11846,3 +11846,10 @@ Results vs MultiModeCode exact (pivot 55 e-folds before ε=1):
 With D1162 (quadratic, three mass ratios) Janus-MF now agrees with an independent exact code on 5 two-field models to ≤ 6.3e-6 in n_s and
 ≤ 1.2e-4 in r. Provenance stamp written. Honest scope: sum-separable potentials only; non-separable and curved field space not yet tested.
 MAP: none
+
+## D1167 — TOOLS — LOCKBENCH L-3: blind mode [built + tested]
+tools/lockbench/blind.py: seal(results, lock) moves the full results file into field_tests/sealed/ (sha256 recorded in INDEX.jsonl) and returns only
+the verdict (claims.evaluate when numbers are given, else the file's VERDICT line). unseal(results, D-id) restores it only if that D-note exists and states
+the sealed verdict, and refuses if the sealed file changed. Purpose: the agent writing the D-note sees the pass/fail first and the detail after, so
+detail can't steer the write-up. Sealed files stay committed (the hash is the audit trail). Tests PASS (5 cases). Opt-in per lock from now on.
+MAP: none

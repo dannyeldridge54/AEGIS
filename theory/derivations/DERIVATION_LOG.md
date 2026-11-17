@@ -1791,3 +1791,4 @@ Touches: none.
 ## D1164: LOCKBENCH L-2 — lock linter; flags L8, D1039, JMF1, J7h patterns; clean lock passes
 ## D1165: LOCKBENCH L-4 — provenance stamps (sha256 of results/lock/code/data, versions, machine); tests PASS
 ## D1166: JMF3 — Janus-MF matches MultiModeCode on quartic and axion 2-field models (|Δn_s| ≤ 2.4e-6, r ≤ 4e-5); VALIDATED
+## D1167: LOCKBENCH L-3 — blind mode (seal until the D-note states the verdict); tests PASS
