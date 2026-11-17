@@ -1,13 +1,13 @@
 {
  "results": "field_tests/results/janus_jmf3.txt",
- "results_sha256": "b7c71aa46a5f982859270272f031d998d20b51fbdf47a325034ba63814e511b5",
- "created_utc": "2026-11-17T19:36:42Z",
- "git_commit": "980be0cc71b6d299e775ca683bb7ef77ca33f53b",
+ "results_sha256": "c35987e3d22f842867d8058d2108d5de5bd9e975e2f13b167ee64a9b9bcca6f2",
+ "created_utc": "2026-11-17T19:37:32Z",
+ "git_commit": "acee948420c83b19c01b9b95683b95626806b1b5",
  "git_dirty": false,
  "lock": "field_tests/rules/PREREG_JMF3_nonquadratic.md",
  "lock_sha256": "4339fc3cbab336e3a3cc61734d637070a06d0b90e6e154717802ea66c0f384fa",
  "code": {
-  "theory/janus/jmf3_nonquad.py": "518282777621b00c6b9a9e82c63f6cc1c063b8e1216865c19224ef65d2dcbc99",
+  "theory/janus/jmf3_nonquad.py": "47bed09d98b9d55cf2466dda1539ccf8136311e58bff7f56596c2132bd7e90ca",
   "tools/janus_calc/mfms.py": "20a9eac813319ae8358b0c20e0d88c5c3a4a0ac0008986a5d1c01b74ceb16359"
  },
  "data": {},
@@ -20,5 +20,5 @@
   "camb": "2.0.5"
  },
  "machine": "vm Linux-6.18.44-fc-v553-x86_64-with-glibc2.39",
- "wall_s": 6.2
+ "wall_s": 33.2
 }

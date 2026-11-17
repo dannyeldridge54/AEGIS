@@ -1,3 +1,3 @@
-M1 quartic: LISTED (MMC output not found: potential.f90  ERROR: At line number          860  ERROR: The error is code-related.  **********************************************  MODECODE: Need to set third derivative for t)
-M2 axions: LISTED (MMC output not found: potential.f90  ERROR: At line number          860  ERROR: The error is code-related.  **********************************************  MODECODE: Need to set third derivative for t)
-JMF3: PARTIAL
+M1 quartic: Janus-MF ns 0.928813 r 0.28546 alpha_s -6.57e-04 | MMC ns 0.928811 r 0.28547 | C1 |d| 1.4e-06 PASS; C2 rel 2.5e-05 PASS
+M2 axions: Janus-MF ns 0.962302 r 0.12926 alpha_s -6.59e-04 | MMC ns 0.962299 r 0.12927 | C1 |d| 2.4e-06 PASS; C2 rel 4.0e-05 PASS
+JMF3: JANUS-MF VALIDATED BEYOND QUADRATIC
