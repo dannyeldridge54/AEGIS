@@ -10024,3 +10024,14 @@ Data [literature]:
 Verdict: mnu node unchanged (frozen, computed); a confirmed ΛCDM bound below 0.0587 with a physical-prior analysis would be a problem for every NO model with oscillation data, not specifically for SERAPIS; under w0wa the tension disappears. Flag cleared.
 Sources: arXiv:2606.18987; arXiv:2601.16165; earlier D710, D902.
 MAP: node=mnu status=frozen touches=[] ripple=no
+
+## D999 (track J, locked PREREG_J6_two_field_deltaN): Janus two-field δN (n_s, r, f_NL^local): locked verdict NOT VALIDATED (T1 failed on r by 1.2 %); T2, T3, T4 PASS; the T1 miss is the lock comparing first-order δN r = 16ε with the calculator's second-order r = 16ε(1 + C ε₂)
+[literature] Vernizzi & Wands, astro-ph/0603799 (fetched via ar5iv): Eqs. 11, 17, 28, 30 (δN P_ζ, n_s, r, f_NL^(4)); sum-separable Eqs. 51–53, 57, 61, 66–68; Sec. 5.2 example R = m_χ/m_φ = 1/9, exit (φ*, χ*) = (8.2, 12.9), quoted −(6/5) f_NL^(4) = 0.008 at ε ≈ 1. Their f_NL sign is opposite to WMAP's (footnote); we report F = N_a N_b N_ab/(N_c N_c)², the same number in both conventions.
+[computed] (field_tests/results/janus_j6_deltaN.txt; 12 s; DEVIATIONS D1 = a call-name crash before any output)
+- T1 (m²φ², N* = 59.07): δN n_s 0.966019 vs calculator 0.965908 (|Δ| 1.1e-4 < 2e-4 ✓); r 0.13592 vs 0.13425 (|Δr|/r 1.2e-2 > 1e-3 ✗).
+- T2 (equal masses, 4 angles): n_s spread 1.4e-11, |F − F_single| 1.9e-8 ✓.
+- T3 (VW R = 1/9): numeric F = 0.00851 vs analytic Eq. 68 = 0.00856 (|Δ| 5e-5, 0.6 %) and VW's quoted 0.008 ✓; n_s numeric 0.92725 vs Eq. 61 0.92685.
+- T4 (step h vs h/2): N_a 5e-11, F 8e-7 ✓.
+Diagnosis [derived] (arithmetic): δN r/(16ε₁) = 0.99992 and calculator r/δN r = 1 + C ε₂ = 1/1.01252 with ε₂ = 0.01694, C = −0.7296: the whole T1 gap is the known second-order term the δN formula (lowest order in slow roll) does not carry. The δN code itself is correct; the lock's T1 r tolerance was set at the wrong order.
+Consequence: J6 stays NOT VALIDATED as locked. Path forward: J6b, a new lock that adds the second-order δN correction for field fluctuations (from a fetched source, e.g. the n-field second-order P_ζ / Stewart–Lyth extension) and re-tests T1 at 1e-3, plus a strongly non-Gaussian case (curvaton-like or axion-quartic) as T5, since f_NL in the quadratic case is slow-roll small (0.0085 ≈ 1/(2N)).
+MAP: none

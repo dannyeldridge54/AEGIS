@@ -1650,3 +1650,6 @@ Touches: none.
 
 ## D997: Janus-LT L0a VALIDATED
 - [computed] H 5e-11, D_M 3e-6 vs CAMB, 50 cosmologies.
+
+## D999: Janus J6 two-field δN NOT VALIDATED as locked
+- [computed] T2–T4 pass (VW analytic f_NL to 0.6 %); T1 r off 1.2 % = second-order term (1 + Cε₂) missing from lowest-order δN; J6b planned.

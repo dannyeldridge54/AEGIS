@@ -244,3 +244,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D995: build the one-call interface on validated parts, then test the whole chain end to end against an exact chain.
 - D996: pick the residual method before the threshold; a finite-difference floor can fail a correct solution, and the fix is a new lock with an exact method, never a looser threshold.
 - D997: derive physical constants from CODATA (scipy.constants) instead of typing them; it removed a whole class of possible slips.
+- D999: when a test compares two methods, set the tolerance at the order the less accurate method carries (lowest-order δN vs second-order slow roll), not at the better one's precision.
