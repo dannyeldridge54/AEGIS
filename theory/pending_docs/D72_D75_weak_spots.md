@@ -11226,3 +11226,6 @@ MAP: none
 - Physics impact: none (7e-4 rad).
 VERDICT: gap explained to 5 digits; which coefficient is correct is OPEN (needs the HFB erratum / LAL citation).
 MAP: none
+
+## D1116 (CENTRE, Djl loop (C), documentation): Hyperion 1.1 draft notes and the project status doc updated with D1103–D1115 (bbn_net, 6.5PN tides, wino γγ line, NLO CMB band, Milky Way bracket; corrections D1082a and D1112a; open: the 7PN coefficient and the NLO convention). Still unpackaged and not uploaded; awaiting Danny's "Publish" and a linked PC.
+MAP: none
