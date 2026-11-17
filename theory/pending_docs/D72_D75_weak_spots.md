@@ -12147,3 +12147,22 @@ MAP: none
   - **R2e-a (locked now):** α̂₂(2M) in Γ plus x_end = 1e8, with g_* still constant.
   - **R2e-b:** add g_*(T) once there is a table.
 MAP: none
+
+### D1187 — R2e-a: MS-bar α̂₂(2M) brings the Born mass from 2.564 to 2.325 TeV, still +5.4% vs Beneke's 2.207 (B1 FAIL); LO Sommerfeld 3.135 vs 2.886 (+8.6%, reported) (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_R2e_a_alpha. The inputs are sourced in D1186. **Result:** field_tests/results/r2e_a_alpha.txt. No deviations.
+- **Regression:** the old inputs give 2.5642 TeV vs 2.564 → **PASS**.
+- **α̂₂(4.4 TeV):** 0.03150 vs on-shell 0.03479, i.e. −9.5% in α₂ and −18% in σ.
+- **B1:** Born M_th = 2.325 TeV vs Beneke 2.207, +5.35% → **FAIL** (criterion 3%). My D1186 estimate (≈ 2.28, ≈ 3% residual) was too optimistic.
+- **L1 (reported, not scored):** LO-Sommerfeld M_th = 3.135 TeV vs Beneke 2.886 (+8.6%).
+  - Ω h² = 0.0445, 0.0643, 0.0822, 0.0966, 0.1107, 0.1254 at M = 2.2, 2.4, 2.6, 2.8, 3.0, 3.2 TeV (x_end = 1e8).
+  - Stopping at x_end = 3e4 instead raises Ω by 1–15%; the late-time annihilation matters most near the 2.2 TeV side.
+- **Ratios:** ours M_Som/M_Born = 3.135/2.325 = 1.348; Beneke's = 2.886/2.207 = 1.308.
+  - So about 3% of the gap is in the Sommerfeld boost, and ≈ 5% is already in the Born.
+- **Remaining suspects (no rerun):**
+  - (i) Constant g_* = 106.75 and h_* = g_*. The real g_* at T = M/x_f ≈ 90 GeV is below 106.75, because t, h, Z, W are partly Boltzmann-suppressed. At late times it falls to ~10, which overstates the late Sommerfeld boost and matches the extra 3%.
+  - (ii) The g_eff = 6 equilibrium yield and the start at x = 3 vs Beneke's x = 1 are small effects.
+  - (iii) The Born σ_eff content: 37/12 vs Beneke's full tree-level matrices (all final states). Not yet compared term by term.
+- **Next:** R2e-b, sourced g_*(T), h_*(T). This needs Danny's OK for the small Saikawa–Shirai table download, which is still pending.
+  - Meanwhile the loop rotates to other open items, so the relic thread is not chased with unsourced inputs.
+VERDICT: B1 FAIL (+5.4%). Direction and size are consistent with the missing g_*(T). LO Sommerfeld +8.6% (reported). OPEN pending the g_* table.
+MAP: none
