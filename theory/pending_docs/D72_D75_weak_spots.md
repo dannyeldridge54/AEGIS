@@ -10670,6 +10670,8 @@ Results [computed; 200 synthetic disk stars, seed 11; MWPotential2014 halo ampli
 - Wino (tree-level A7b scaling, D735 read-off): 0.66 and 1.0 TeV PASS at every s (f_max 0.27–0.52 vs f = 0.14, 0.26); 1.85 TeV FAILS at every s (f_max 0.26–0.39 vs 0.67).
 Reading: with Hyperion's own Milky Way (MWPotential2014: lighter halo, J 3× below the A7a Einasto normalisation) SERAPIS-E's wino passes up to at least 1 TeV for any halo amplitude within ±20%, and 1.85 TeV fails regardless — the wino window's upper edge sits between 1.0 and 1.85 TeV here. The Mapper's median z_max shifts by 8% across that range (100× the orbit precision), so real Gaia kinematics (radial-velocity stars, D1078 pipeline) are an observable that constrains the same halo the wino limits depend on. Caveats: synthetic sample with fixed initial velocities (real data fix the potential through equilibrium, not this direct response); A7b/D735 ×2 limit uncertainty; one-parameter halo variation only.
 MAP: none
+
+## D1081 (CENTRE, Djl loop (A), locked PREREG_A1): the wino passes the Planck CMB bound everywhere except its Sommerfeld resonance (~2.0–2.7 TeV); the thermal 2.9 TeV wino and all three SERAPIS-E wino points are CMB-allowed — A1 VALIDATED
 [CENTRE] Lock PREREG_A1_wino_cmb (9c6f49e) pushed before run. Result field_tests/results/a1_wino_cmb.txt.
 - T1 convention: s=(1,0) → 2πα₂²/M² exact. PASS.
 - T2 anchor: σv_tot(2.9 TeV, v=1e-3) = 9.45e-25 cm³/s, inside 1504.05554's "10⁻²⁴–10⁻²⁵" (order-of-magnitude anchor). PASS.
