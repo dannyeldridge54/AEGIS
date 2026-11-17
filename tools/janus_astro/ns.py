@@ -53,7 +53,8 @@ def tov_tidal(eos, rho_c, rtol=1e-10):
         dy = -(yy*yy + yy*F + r*r*Q)/r
         return [dP, dm, dy]
     r0 = 1.0; e0 = eos.rho_eps(Pc)[1]*GC2
-    ev = lambda r, y: y[0] - Pg(eos.pb[0])*1e-6; ev.terminal = True; ev.direction = -1
+    Ps = eos.p[0][0]*1e4**eos.p[0][1]            # DEVIATIONS D1: surface at rho = 1e4 g/cm^3
+    ev = lambda r, y: y[0] - Pg(Ps); ev.terminal = True; ev.direction = -1
     s = solve_ivp(rhs, [r0, 5e6], [Pg(Pc), 4/3*math.pi*r0**3*e0, 2.0], method='DOP853', rtol=rtol, atol=[Pg(Pc)*1e-30, 1e-20, 1e-12], events=ev)
     R = float(s.t_events[0][0]) if s.t_events[0].size else float(s.t[-1])
     P_, m, y = (s.y_events[0][0] if s.t_events[0].size else s.y[:, -1])
