@@ -11210,3 +11210,19 @@ Lock pushed before run; result field_tests/results/a2b_line_mcm.txt.
 - Reading: SERAPIS-E's 1 TeV wino has a factor ~2 margin in fraction (~4 in rate) against the H.E.S.S. 2018 γγ line for every Milky Way model we've validated. This is the strongest absolute statement so far (γZ still not included; H.E.S.S. bounds γγ only).
 VERDICT: PASS, both brackets; D1112a correction.
 MAP: none
+
+## D1115 (CENTRE, Djl loop (B), literature/code source check): the 7PN tidal gap is fully explained — LAL's 7PN tidal coefficient (read from ripplegw 0.5.1's TaylorF2.get_14PNTidalCoeff, a port of LALSuite) differs from our transcription of Henry–Faye–Blanchet Eq. 6.6a by exactly the observed factor 0.99667 (equal mass: −15.5802 Λ vs −15.6323 Λ); 6.5PN is identical (5.7432 Λ both)
+- Route: GitHub and git.ligo.org (LAL C source) and the LAL Doxygen pages are blocked or access-denied from here. pip ripplegw (JAX port that "implements TaylorF2 as described in the LALSuite library") gives the per-body coefficient:
+  - 14PN: −X⁴·5·(193986935/571536 − 14415613/381024 X − 57859/378 X² − 209495/1512 X³ + 965/54 X⁴ − 4X⁵)
+  - 13PN: X⁴·24(12 − 11X)π
+- Arithmetic (equal mass):
+  - LAL 7PN term (3/32)·2·c14(½) = −15.58022 Λ, vs HFB as transcribed −15.63230 Λ. Ratio 0.996668, which matches D1113's fitted 0.99667.
+  - 6.5PN: both 5.743224 Λ (exact agreement).
+- So the whole A2e/E3 residual is this one coefficient difference. Which is physically right is still open:
+  - (i) LAL implements an erratum/later version of HFB (the paper flags v1→v4 flux corrections), or
+  - (ii) my fetched transcription of Eq. 6.6a has an error in a 7PN fraction.
+  - Deciding needs the HFB erratum text (or the LAL comment citing its source), not reachable here.
+- Not done: I did NOT adopt LAL's coefficient and call it validated. That would be validating against the referee with the referee's own number. Hyperion keeps the HFB-transcribed form, labelled with a 0.33% open question at 7PN.
+- Physics impact: none (7e-4 rad).
+VERDICT: gap explained to 5 digits; which coefficient is correct is OPEN (needs the HFB erratum / LAL citation).
+MAP: none
