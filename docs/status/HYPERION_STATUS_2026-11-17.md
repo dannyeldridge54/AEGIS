@@ -1,0 +1,26 @@
+
+## 17 Nov 2026 day (CT) — Hyperion + nonstop Djl loop (session 014Gbst…; D1052–D1102)
+- Names (Danny): **Chronos Clock** = string/early-universe calculator (tools/janus_calc). **Hyperion** = late-universe + astrophysics calculator (tools/janus_lt + tools/janus_astro). docs/TOOL_NAMES.md.
+- Hyperion 1.0 built (A0–A8d, D1052–D1078) and packaged in releases/hyperion-1.0 (+zip). NOT uploaded: needs Danny's "Publish" and a linked PC.
+- Wiring: W1 Chronos⇄Hyperion (D1079); W2 Mapper⇄Milky Way⇄wino (D1080); B2 Chronos→BBN (D1085); W4 EoS→Λ→GW (D1099). Toolkit atlas docs/TOOLKIT_ATLAS_333.md.
+- Nonstop 3-min Djl loop (Danny: "continue Janus djl no stopping"), rotating A dark-matter / B first-minutes / C Galaxy / D roadmap. Results D1081–D1102:
+  - A:
+    - Wino vs Planck CMB: excluded only near the resonance (~2.0–2.7 TeV); matches the literature 2.18–2.5 (D1081, D1084).
+    - LO resonance reproduces Beneke+2020 (2.2855 vs 2.282, D1087).
+    - NLO module built; NOT VALIDATED as locked (2.394 vs 2.419; √2 convention gives 2.423, post hoc) (D1091, D1095).
+    - Thermal wino vs CMB is marginal at NLO / high f_eff [estimate].
+  - B:
+    - BBN module, SERAPIS Y_p and D/H consistent (D1082).
+    - GW ΔN ≤ 7e-12 (D1085).
+    - τ=i hidden sector: U(1) OK; SU(2) in tension with ACT DR6 N_eff 2.86±0.13 (D1088, D1092).
+    - D/H 1.7σ and Li-7 ×3.1 are SM-level; SERAPIS neutral (D1096, D1100).
+  - C:
+    - Jeans module (D1083).
+    - Halo-star dispersions (D1089), Gaia-era masses (D1093) and M200 (D1097) bound the halo amplitude to ~0.8–1.1.
+    - Dust prep: R_G CV18 coded; maps need the PC.
+  - D:
+    - NS module VALIDATED after finding that the referee's tolerance was the bug (D1090, D1094).
+    - GW tides 5PN+6PN vs LAL 8.8e-10 rad (D1098).
+    - SLy vs AP4 needs SNR 35–41 (D1101).
+    - Hyperion 1.1 draft notes in releases/hyperion-1.1/CHANGES_SINCE_1.0.md (D1102). This is a major rung for Hyperion; awaiting "Publish".
+- Open: A1e (blind NLO check), dust/Mapper per-star data (PC), Li-7 calculator, 3PN spin–spin.
