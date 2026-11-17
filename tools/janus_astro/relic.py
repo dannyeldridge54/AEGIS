@@ -13,6 +13,7 @@ def sigma_eff_born(m, a2):
     scc = 0.25*2*(0.5)            # chi-chi-: S=0 only, c=2, Gamma=u/2
     g = 2.0
     tot = g*g*(s00 + 2*spm + 4*s0c + 2*scc)
+    tot = 4*tot   # DEVIATIONS_R1b D1: Gamma entries are spin-summed pair rates; 4x reproduces 37/12 (Arkani-Hamed+ hep-ph/0601041 Eq. 6)
     return tot/36.0*u, tot/36.0
 def omega_h2(m, sv, gstar=106.75, geff=6.0):
     lam = math.sqrt(math.pi/45)*MPL*math.sqrt(gstar)*m*sv
