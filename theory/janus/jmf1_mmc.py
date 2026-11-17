@@ -13,10 +13,9 @@ def mmc(R):
     open(f'{d}/parameters_multimodecode.txt', 'w').write(p)
     o = subprocess.run([f'{MMC}/powspec'], cwd=d, capture_output=True, text=True, timeout=600).stdout
     g = lambda name: re.search(rf'{name} =\s+([-0-9.E+]+)(?:\s+\(\s*([-0-9.E+]+)\))?', o)
-    ns = g('n_s'); lines = o.splitlines(); hi = [i for i, l in enumerate(lines) if l.startswith('"phi0001"')]
-    if ns is None or not hi or hi[-1] + 1 >= len(lines): raise RuntimeError('MMC output not found; tail: ' + ' | '.join(lines[-5:]))
-    hdr = [h.strip('"') for h in lines[hi[-1]].split(',')]; row = lines[hi[-1] + 1].split(',')
-    return float(ns.group(1)), float(ns.group(2)), float(row[hdr.index('r')]), o
+    ns = g('n_s'); nt = g('n_t'); rnt = g('r/n_t')
+    if ns is None or nt is None or rnt is None: raise RuntimeError('MMC output not found')
+    return float(ns.group(1)), float(ns.group(2)), float(rnt.group(1))*float(nt.group(1)), o
 for R in (1.0, 3.0, 9.0):
     m2 = np.array([1e-11, 1e-11*R*R])
     V = lambda f: 0.5*float(m2 @ (f*f)); grad = lambda f: m2*f; hess = lambda f: np.diag(m2)
