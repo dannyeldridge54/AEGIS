@@ -280,3 +280,4 @@ D993  2026-11-17T03:52Z  Eternal inflation: the tilted SERAPIS branches never in
 D994  2026-11-17T03:58Z  Janus J3 third order: n_s error 10x smaller (median 1.6e-6, max 2.9e-6 vs exact); beta_s ~ -3e-5
 D995  2026-11-17T03:59Z  Janus J2/J4/J5: one-call reheating->observables matches exact N* to 1e-3 at 5 T_R, n_s within its error bar
 D996  2026-11-17T04:00Z  Level S4a: Dudas-Mourad 9D backreacted vacuum reproduced (symbolic residuals exactly 0; numerical integration 1e-10)
+D997  2026-11-17T04:02Z  Janus-LT L0a: background and distances match CAMB to 5e-11 (H) and 3e-6 (D_M) on 50 cosmologies
