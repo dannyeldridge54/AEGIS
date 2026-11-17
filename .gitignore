@@ -41,3 +41,5 @@ field_tests/results/*.part*.jsonl
 theory/janus/aspic/j7a_aspic
 theory/janus/aspic/j7b_aspic
 theory/janus/aspic/aspic_out_j7b.txt
+theory/janus/aspic/j7c_aspic
+theory/janus/aspic/aspic_out_j7c.txt
