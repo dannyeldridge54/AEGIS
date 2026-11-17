@@ -17,6 +17,8 @@ class Model:
         ev = lambda N, y: y[1]**2/2 - 1.0; ev.terminal = True; ev.direction = 1
         p0 = -dV(phi0)/V(phi0)                       # slow-roll start
         s = solve_ivp(rhs, [0, Nmax], [phi0, p0], events=ev, rtol=1e-12, atol=1e-14, dense_output=True, method='DOP853')
+        if not s.t_events[0].size:   # J1c: stiff fallback for singular ends (e.g. log potentials)
+            s = solve_ivp(rhs, [0, Nmax], [phi0, p0], events=ev, rtol=1e-11, atol=1e-13, dense_output=True, method='Radau')
         if not s.t_events[0].size: raise ValueError('inflation does not end within Nmax')
         self.Nend = float(s.t_events[0][0]); self.sol = s
         # eps1 on a fine grid near the pivot region, smoothed by a spline in N for derivatives
