@@ -225,3 +225,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D975: recompute what fitted coefficients mean after a mechanism rescales an invariant.
 - D976: check the decay channel before scaling T_R with a mass.
 - D977: test 'equal at leading order' at the observables' precision before identifying models.
+- D978: (no new lesson)

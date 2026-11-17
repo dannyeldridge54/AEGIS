@@ -1579,3 +1579,6 @@ Touches: none.
 - [computed] λ′ = 0.173: Δn_s = −2.69e-3, Δr/r = +8.5% at ΔN* = −0.06 (C = λ′C₀).
 - [derived] λ′Ê is not a pure field shift of Ê beyond the y² term.
 - Result: Project H gives a sibling of SERAPIS-E (n_s ≈ 0.9714, r ≈ 5.0e-4), still inside the frozen band.
+
+## D978: Project H fixed-C (locked) — too few e-folds
+- [computed] λ′ = 0.173, C fixed: Ntot = 40.6 < 58.5; scenario excluded; refit-C (D977) is the consistent one.

@@ -9841,3 +9841,10 @@ MAP: none
 Consequence: Project H realises a SIBLING of SERAPIS-E, not the published model: at the same N*, n_s ≈ 0.9714 (vs 0.9740) and r ≈ 5.0e-4 (vs 4.6e-4) for λ′ = 0.173. Both still sit inside the frozen SERAPIS-E band (n_s 0.970–0.975, r 4.6–5.1e-4), so the frozen predictions are not contradicted, but "Project H = the plateau's origin" is downgraded to "Project H gives a nearby member of the family; distinguishing them needs σ(n_s) ≲ 1e-3 and σ(r) ≲ 4e-5". A C refit to the n_s target (rather than C = λ′C₀) would trade the n_s shift for a different r and needs its own lock.
 LESSONS: "equal at leading order" claims must be tested at the precision of the observables before they are used to identify two models.
 MAP: node=plateau_origin status=estimate touches=[] ripple=no
+
+## D978 (locked PREREG_D961 + DEVIATIONS D2): at FIXED C = 1.15e-6, Project H with λ′ = 0.1729 gives only 40.6 e-folds even from the deepest start: it cannot produce N* ≈ 50; reported as a physics result per the DEVIATIONS rule, not rerun
+[computed] (field_tests/results/projH_vacuum_d961_run2.log) The run stopped at the D2 assertion on the first λ′ < 1 (the loop order is λ′ = 1, 0.1729, 0.05; λ′ = 1 is the D977 baseline model and passes): Ntot = 40.6 < N* + 8 from Ehat = 5000/λ′.
+[derived] Consistent with D975/D977: with C fixed, λ′ < 1 makes the effective ramp C/λ′ ≈ 6.6e-6, strong enough to end inflation early; the consistent comparison is C = λ′C₀ (D977).
+Verdict: the fixed-C scenario is excluded (too few e-folds); only the refit-C scenario survives, and it is a sibling model (D977). The D961 lock is closed.
+LESSONS: none new.
+MAP: none
