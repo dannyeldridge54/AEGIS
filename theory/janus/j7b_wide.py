@@ -72,8 +72,8 @@ def summary():
         D['t'].append(r['tj'])
         L.append(f"{r['name']:14s} N*={r['N']:.0f} (exact ns {r['ns_b']:.6f} r {r['r_b']:.3e} a {r['a_b']:.3e}) | dns J {x[0]:.1e} A {x[1]:.1e} | dr/r J {x[2]:.1e} A {x[3]:.1e} | da J {x[4]:.1e} A {x[5]:.1e} | J {r['tj']*1e3:.1f} ms")
     md = np.median; nb = sum(D['nj'][i] < D['na'][i] for i in range(len(D['nj'])))
-    C1 = md(D['nj']) <= md(D['na'])/10 and max(D['nj']) < max(D['na']); C2 = md(D['rj']) <= md(D['ra'])/3
-    C3 = (md(D['aj']) <= md(D['aa'])) if r0ok else 'UNRESOLVED'; C4 = md(D['t']) <= 0.1
+    C1 = bool(md(D['nj']) <= md(D['na'])/10 and max(D['nj']) < max(D['na'])); C2 = bool(md(D['rj']) <= md(D['ra'])/3)
+    C3 = bool(md(D['aj']) <= md(D['aa'])) if r0ok else 'UNRESOLVED'; C4 = md(D['t']) <= 0.1
     L.append(f"{len(R)} points scored; Janus n_s better on {nb}/{len(R)}")
     L.append(f"medians: dns J {md(D['nj']):.1e} A {md(D['na']):.1e} (max {max(D['nj']):.1e} vs {max(D['na']):.1e}) | dr/r {md(D['rj']):.1e} vs {md(D['ra']):.1e} | da {md(D['aj']):.1e} vs {md(D['aa']):.1e} | t {md(D['t'])*1e3:.1f} ms")
     ok = C1 and C2 and (C3 is True or C3 == 'UNRESOLVED')
