@@ -355,3 +355,4 @@ D1068  2026-11-17T12:13Z  Djl: A4b mass functions validated; colossus delta_c co
 D1069  2026-11-17T12:16Z  Djl: A6a benchmark NOT VALIDATED (T3 unwrap grid); Hyperion is slower than galpy/colossus
 D1070  2026-11-17T12:18Z  Djl: A6b vectorised Hyperion validated; now faster than galpy/colossus/LAL on the tested tasks
 D1071  2026-11-17T12:21Z  Djl: A8a mapper feed - orbits match galpy 5e-10; coordinate tests miss by Galactic-pole convention (NOT VALIDATED)
+D1072  2026-11-17T12:24Z  Djl: A8b mapper feed follows Gaia DR3's Galactic convention exactly
