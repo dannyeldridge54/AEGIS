@@ -12419,3 +12419,25 @@ MAP: none
 - **refs.bib:** author lists filled from the arXiv pages: LBT V (Yeh, Olive, Fields, Aver, …) and EMPRESS XV (Yanagisawa, Ouchi, Matsumoto, …).
 VERDICT: the D/H offset is a known rate systematic, not a model issue. No action beyond the recorded theory error.
 MAP: none
+
+### D1202 — A2m: the 1 TeV post-hoc wino vs the H.E.S.S. IGS line limit for the preferred (Einasto) Gaia DR3 haloes of Singh & Desai: PASS 5/5. Caveat: these fits have high local densities (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_A2m_einasto_J. The convention is pinned from arXiv:2605.16994v1 Eq. (22), ρ(r_c) = ρ0 (fetched this tick). **Result:** field_tests/results/a2m_einasto_J.txt. No deviations.
+- **f_pred(1 TeV) = [0.124, 0.205].** Results:
+
+  | Halo | r_c (kpc) | α | ρ☉ (GeV/cm³) | J/J_bench | f_max (LO / NLO, band edges) |
+  |---|---|---|---|---|---|
+  | B0/D1 | 15.3 | 1.01 | 0.77 | 0.039 | 0.72–0.79 / 0.79–0.87 |
+  | B0/D2 | 14.8 | 0.45 | 0.90 | 0.358 | 0.24–0.26 / 0.26–0.29 |
+  | B0/D3 | 16.7 | 1.35 | 0.52 | 0.011 | 1.33–1.47 / 1.47–1.61 |
+  | B0/D4 | 14.3 | 0.74 | 0.95 | 0.118 | 0.42–0.46 / 0.46–0.50 |
+  | B1/D2 | 16.0 | 0.43 | 0.69 | 0.215 | 0.31–0.34 / 0.34–0.37 |
+
+  - All five are **PASS** (f_max lower edge ≥ 0.205).
+- **Reading:**
+  - Singh & Desai's Bayes comparison prefers Einasto, and the large-r_c, α ≈ 0.4–1.4 Einasto fits are strongly cored inside a few kpc. So J in the 70–420 pc IGS annuli drops to 1–36% of the benchmark, and the wino is safe by a wide margin.
+  - Taken together with A2l (Burkert: 3 PASS, 2 BAND-DEP), the 1 TeV wino is not excluded by IGS for any of Singh & Desai's 10 cored/Einasto Gaia fits.
+- **Caveat (labelled):** these fits give ρ☉ = 0.52–0.95 GeV/cm³, above typical local-density determinations (~0.3–0.6; e.g. de Salas 2019's 0.31, cited in the paper itself as 8.17e6 M☉/kpc³).
+  - The fits are rotation-curve-only, with simple baryon models. A higher ρ☉ at fixed J-shape raises J, so these PASS verdicts would only strengthen if ρ☉ were lowered with the shape fixed. That is not computed.
+- **Combined with D1153, D1190 and D1198:** the post-hoc wino window 0.67 to ~1–1.5 TeV is robust to the inner-halo uncertainty at 1 TeV, except for cuspy, high-concentration haloes (NFW c +1σ, H.E.S.S. benchmark).
+VERDICT: PASS 5/5 for the Einasto fits. The 1 TeV wino survives IGS for 8 of the 10 Singh–Desai fits outright and is marginal in 2.
+MAP: none
