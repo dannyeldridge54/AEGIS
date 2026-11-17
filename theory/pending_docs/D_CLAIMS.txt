@@ -361,3 +361,4 @@ D1074  2026-11-17T12:30Z  Djl: A8c2 adaptive orbits nearly there - accuracy met 
 D1075  2026-11-17T12:34Z  Djl: A8c3 disk stars pass at 8.8 ms/star; extreme r_peri 1.3e-3 likely reference sampling (NOT VALIDATED)
 D1076  2026-11-17T12:36Z  Djl: A6c compiled orbits 0.4-0.5 ms/star (20-43x); J fast path fails on cored profiles (NOT VALIDATED)
 D1077  2026-11-17T12:41Z  Djl: A8c4 Mapper fast orbits VALIDATED vs exact turning points; sampled reference was the error
+D1078  2026-11-17T12:45Z  Hyperion -> Star Mapper PC version (CLI + launcher) VALIDATED
