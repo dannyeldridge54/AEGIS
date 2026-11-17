@@ -10527,3 +10527,13 @@ Physics reported: k₂,1.4 = 0.0762 (SLy), 0.0755 (AP4); Λ_1.4 = 296 (SLy), 248
 Next (A3c, new lock): same code with a common surface rule for both integrators (or N4 tolerance stated for the surface definition), then NICER radii and the GW170817 Λ̃ comparison scored.
 Sources: arXiv:0812.2163 (Tables 2 and 3, ar5iv); arXiv:1805.11581.
 MAP: none
+
+## D1059 (DEEP Jl tick, track X / Hyperion, locked PREREG_A3c): with a common surface rule the two TOV integrators agree to ≤ 1.1e-5 in R (masses ≤ 8e-11) — 1.1e-5 at log ρ_c = 14.8 is just over the locked 1e-5, so A3c is NOT VALIDATED; the EoS-vs-data comparison shows the known NICER tension: J0740+6620 wants larger radii, J0614−3329 smaller, than SLy and AP4
+Results [computed]: N1–N3 as A3b (PASS). N4 (both at P → 0): ΔR/R = 1.1e-5, 1.0e-6, 5.1e-6 at log ρ_c = 14.8, 15.0, 15.2; ΔM/M ≤ 8e-11 → FAIL at 14.8 by 10%. Diagnosis (after the verdict): near the surface P ∝ (R − r)^{Γ/(Γ−1)} ≈ (R − r)^{2.7} on the outer crust piece, so the radius is ill-conditioned (δR ∝ δP^{0.37}); a locked 1e-5 on R at P → 0 was too tight for an event-located surface. The ns integrator's radius now lies 0.13 m OUTSIDE compact.tov's at low mass (it lay inside in A3b), so the residual is surface root-finding, not physics. Lesson for the next lock: compare R at a fixed surface density in both codes, or M(R(ρ = 1e4)) only.
+Data comparison [computed vs sourced measurements]:
+- GW170817 Λ_1.4 = 190 (+390/−120): SLy 296, AP4 248 → both consistent.
+- PSR J0740+6620 (Dittmann+ 2024, 2406.14467: M 2.08 ± 0.07, R 12.92 (−1.13/+2.09) km): SLy M_max 2.048 (OK within 1σ), R(2.048) = 10.01 km — outside 68% and outside the doubled interval; AP4 R(2.08) = 10.68 km — outside 68%, just inside the doubled interval.
+- PSR J0614−3329 (2506.14883: M 1.44, R 10.29 (+1.01/−0.86) km): SLy R = 11.68, AP4 11.31 km — both just outside 68% (too large), inside the doubled interval.
+Reading: the two NICER pulsars pull in opposite directions for these classic EoSs (J0740 prefers stiffer/larger, J0614 softer/smaller); AP4 sits closest to both. Literature context, not a SERAPIS test (the EoS is nuclear physics, outside the model).
+Next: A3d only if Danny wants the integrator agreement formally closed (fixed-density surface); otherwise move on to A7d / A4.
+MAP: none

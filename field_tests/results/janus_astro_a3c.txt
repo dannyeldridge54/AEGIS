@@ -1,0 +1,27 @@
+N1 n=1 weak field: C=2.23e-06 y_R=0.289877 vs Newtonian 0.289868 |dy|=8.6e-06 PASS
+N2 SLy: M_max=2.0484 (vs 2.049, 2.9e-04) at rho_c=2.007e+15; R_1.4=11.7059 km (vs 11.736, 2.6e-03); k2_1.4=0.0762 Lambda_1.4=295.6 C=0.1766 PASS
+N3 AP4: M_max=2.1880 (vs 2.213, 1.1e-02) at rho_c=1.916e+15; R_1.4=11.3195 km (vs 11.428, 9.5e-03); k2_1.4=0.0755 Lambda_1.4=247.6 C=0.1826 PASS
+N4 SLy log rho_c=14.8: ns M=0.874600 R=11.90520 | compact.tov M=0.874600 R=11.90507 | rel 7.8e-11 1.1e-05
+N4 SLy log rho_c=15.0: ns M=1.564936 R=11.58047 | compact.tov M=1.564936 R=11.58049 | rel 3.5e-12 1.0e-06
+N4 SLy log rho_c=15.2: ns M=1.996657 R=10.64657 | compact.tov M=1.996657 R=10.64663 | rel 1.8e-11 5.1e-06
+A3c NOT VALIDATED (N1 True, N2 True, N3 True, N4 False)
+Reported: GW170817 Lambda_1.4 = 190 (+390/-120, 90%): SLy 296, AP4 248
+Data comparison (EoS vs measurements; not code validation):
+  SLy: GW170817 Lambda_1.4=296 in 90% [70, 580]: True
+  SLy: J0740+6620 (M 2.08+-0.07, R 12.92 -1.13/+2.09 at 68%): M_max=2.048 >= 2.01: True; R(2.048)=10.01 km in 68% [11.79, 15.01]: False; in 2x68% [10.66, 17.10]: False
+  SLy: J0614-3329 (M 1.44, R 10.29 +1.01/-0.86 at 68%): R(1.44)=11.68 km in 68% [9.43, 11.30]: False; in 2x68% [8.57, 12.31]: True
+  AP4: GW170817 Lambda_1.4=248 in 90% [70, 580]: True
+  AP4: J0740+6620 (M 2.08+-0.07, R 12.92 -1.13/+2.09 at 68%): M_max=2.188 >= 2.01: True; R(2.080)=10.68 km in 68% [11.79, 15.01]: False; in 2x68% [10.66, 17.10]: True
+  AP4: J0614-3329 (M 1.44, R 10.29 +1.01/-0.86 at 68%): R(1.44)=11.31 km in 68% [9.43, 11.30]: False; in 2x68% [8.57, 12.31]: True
+M-R (SLy):
+  log rho_c=14.50: M=0.231 R=14.72 km Lambda=2520989.2
+  log rho_c=14.60: M=0.373 R=12.72 km Lambda=281844.9
+  log rho_c=14.70: M=0.587 R=12.09 km Lambda=34044.9
+  log rho_c=14.80: M=0.875 R=11.90 km Lambda=4616.1
+  log rho_c=14.90: M=1.217 R=11.80 km Lambda=719.7
+  log rho_c=15.00: M=1.565 R=11.58 km Lambda=134.4
+  log rho_c=15.10: M=1.834 R=11.20 km Lambda=33.9
+  log rho_c=15.20: M=1.997 R=10.65 km Lambda=10.9
+  log rho_c=15.30: M=2.048 R=9.99 km Lambda=4.4
+  log rho_c=15.40: M=2.011 R=9.32 km Lambda=2.3
+  log rho_c=15.50: M=1.919 R=8.69 km Lambda=1.6

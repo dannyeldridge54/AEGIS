@@ -15,6 +15,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A3a/A3b (D1058): NOT VALIDATED as locked (crash; N4 surface-definition 1.5e-5); SLy M_max 2.048, R_1.4 11.71 km, Λ_1.4 296; AP4 2.188, 11.32 km, 248. Next A3c.
 
+- A3c (D1059): NOT VALIDATED (N4 R 1.1e-5 vs 1e-5; surface ill-conditioned); EoS vs GW170817 (both OK) and NICER (J0740 wants larger R, J0614 smaller).
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].
