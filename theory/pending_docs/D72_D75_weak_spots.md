@@ -10224,3 +10224,9 @@ MAP: none
 [computed] (field_tests/results/s4c_kk.txt) the weights e^{(D−1)A−B} and e^{(D−3)A+B} span tens of orders of magnitude toward the ends (e^φ ≈ 2e9 near y_end, D1015), so the dense eigh with a diagonal mass matrix returns garbage; refinement makes it worse.
 Fix path (new lock, not a rerun of this one): Liouville transform to a Schrödinger form −ψ̃″ + U(z)ψ̃ = m²ψ̃ in the conformal coordinate dz = e^{B−A}dy, with U from the warp factors (derivation to be done symbolically), solved by a shooting method with the regular-end behaviour; check on a case with a known spectrum first (flat interval: m_n = nπ/L).
 MAP: none
+
+## D1027 (track L, locked PREREG_L2_growth): Janus-LT's linear growth reproduces CAMB 2.0.5: σ8(z)/σ8(0) to ≤ 4.3e-6 and the growth rate f(z) to ≤ 6.1e-5 at z = 0–2 on 20 cosmologies (10 ΛCDM, 10 w0–wa): L2 VALIDATED (lock tolerances 2e-3 / 3e-3 — met with ~500× and ~50× margin)
+[literature] arXiv:2602.08207 Eqs. 5–7 (fetched): D″ + (2 + dlnH/dlna)D′ − (3/2)Ω_m(a)D = 0, f = dlnD/dlna, σ8(z) = σ8 D(z)/D(0).
+[computed] (field_tests/results/janus_lt_l2_growth.txt; tools/janus_lt/growth.py) ΛCDM: max ΔD-ratio 3.6e-6, max Δf/f 6.1e-5; w0–wa: 4.3e-6, 5.2e-5. The f agreement is limited by CAMB's own definition of fσ8 (velocity–density from its transfer functions at 8 h⁻¹Mpc) vs the scale-independent D; the tiny residual shows PPF dark-energy perturbations are negligible for σ8-scale growth in this range. Note: agreement is much better than the lock anticipated; recorded as found.
+Janus-LT now: background, distances, massive ν, recombination, drag epoch, r_d, compressed CMB (L1), and growth/fσ8 — enough to evaluate DESI BAO + RSD + compressed-CMB likelihoods for any F(a) or w0–wa model without CAMB. Next L3: DESI DR2 BAO likelihood (fetch the published table, lock first).
+MAP: none

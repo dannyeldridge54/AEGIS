@@ -272,3 +272,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1024: get normalisations from a primary source before quoting factor-of-1000 conclusions; here it confirmed the estimate.
 - D1025: verify a code's output units by calling its own function (CAMB DAstar = comoving distance in Gpc) rather than guessing twice.
 - D1026: for Sturm–Liouville problems with singular ends, transform to Schrödinger form before discretising, and test on a known spectrum first.
+- D1027: when agreement is far better than the tolerance, say so and record which definition limits it, rather than tightening the claim post hoc.

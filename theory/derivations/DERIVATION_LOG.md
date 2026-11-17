@@ -1734,3 +1734,6 @@ Touches: none.
 
 ## D1015a: correction — the 6D vacuum is 5D Minkowski × interval (not 4D)
 ## D1026: S4c KK probe NOT VALID (ill-conditioned FD eigenproblem at singular ends); Liouville/shooting next
+
+## D1027: Janus-LT L2 growth VALIDATED — σ8 ratio 4e-6, f 6e-5 vs CAMB (20 cosmologies)
+- [computed] scale-independent growth ODE (2602.08207 Eq. 5).
