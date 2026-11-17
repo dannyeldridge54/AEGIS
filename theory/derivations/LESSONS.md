@@ -264,3 +264,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1016: a mechanism's sign can flip once the full potential is included; check sign, not only magnitude, at each refinement.
 - D1017: when a modulus sits at a stationary point, its response to a slow parameter drops out at first order (envelope theorem) — check that before computing the shift.
 - D1018: an automatic start-finder needs bisection on N(y₀), not geometric steps, for extremely flat hilltops.
+- : claim the D-number before writing and check it is non-empty (an empty claim silently drops the note).

@@ -1710,3 +1710,6 @@ Touches: none.
 
 ## D1018: J7d two-parameter models — Janus n_s ~360×, r ~540×, α_s ~40× better than ASPIC (8/8); PSNI start-finder failure listed
 - [computed] TI, SFI; J1b bisection start-finder needed.
+
+## : Janus-LT L0c massive ν VALIDATED (H, D_M ≤ 4.6e-5 vs CAMB, 150 cases)
+- [computed] Komatsu 2011 Eq. 25 by quadrature.
