@@ -1,0 +1,24 @@
+{
+ "results": "field_tests/results/janus_jmf9.txt",
+ "results_sha256": "99c1e141a385c741319014b2622b6a6531e20acf591459d8ff99facef30f83c9",
+ "created_utc": "2026-11-17T23:56:39Z",
+ "git_commit": "c4265b7ca23f3b6bcce833488559dd3e990d1f15",
+ "git_dirty": false,
+ "lock": "field_tests/rules/PREREG_JMF9_curved.md",
+ "lock_sha256": "12ec49c3eedae32e34c76c59d637b77da71cf45767a0ec8aa728353282aa2270",
+ "code": {
+  "theory/janus/jmf9_curved.py": "d211e5c7cad65efc63e943e29fec9d2a18f4ccf5c5b091d364f7d8930b7f6a85",
+  "tools/janus_calc/mfms_nc.py": "e4fc7009c80e6196fac9e6b62bfc43c20c974d584b206510e0899fb30d57ddc1"
+ },
+ "data": {},
+ "python": "3.13.18",
+ "packages": {
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "sympy": "1.14.0",
+  "mpmath": "1.3.0",
+  "camb": "2.0.5"
+ },
+ "machine": "vm Linux-6.18.44-fc-v553-x86_64-with-glibc2.39",
+ "wall_s": 74.9
+}

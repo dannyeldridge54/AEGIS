@@ -1,0 +1,4 @@
+self-check flat DQuad Q3: spectra_mf 0.94547697 | NC code 0.94547697 | |d| 3.8e-12 PASS
+DEV D1: second-field start 26 (first with Janus background N_tot >= 70)
+DoubleQuadNC: N_tot PyT 79.313 / Janus 79.312 | PyT n_s 0.925023 (tol 1e-10: 0.925023) | Janus-MF-NC 0.925024 | |d| 8.1e-07 PASS
+JMF9: JANUS-MF VALIDATED ON CURVED FIELD SPACE
