@@ -1,0 +1,5 @@
+Obh2=0.0223: Neff=3.0444 Yp(CMB)=0.24555 D/H=2.4539e-5 He3/H=1.0415e-5 Li7/H=5.4970e-10 (10s)
+Obh2=0.02242: Neff=3.0444 Yp(CMB)=0.24555 D/H=2.4539e-5 He3/H=1.0415e-5 Li7/H=5.4970e-10 (7s)
+L1 Li7 5.497 vs 4.94+-0.72: +0.77 sigma -> CONSISTENT
+L2 Yp 0.24555 vs PRIMAT 0.24721 (rel -0.0067); D/H 2.4539 vs 2.4393 (rel +0.0060)
+L3 Li7/Spite = 3.44; (5.4969886011662075-1.6)/sqrt(0.3^2+0)= 13.0 sigma (obs error only)
