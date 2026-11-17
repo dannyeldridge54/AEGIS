@@ -1,0 +1,4 @@
+s=0.8: r200=172 kpc; v_esc(to 2r200)=439 km/s pull -3.56 NOT; v_esc(inf)=303 pull -9.02 NOT
+s=1.0: r200=188 kpc; v_esc(to 2r200)=475 km/s pull -2.11 NOT; v_esc(inf)=360 pull -6.73 NOT
+s=1.1: r200=196 kpc; v_esc(to 2r200)=493 km/s pull -1.41 CONSISTENT; v_esc(inf)=385 pull -5.72 NOT
+s=1.2: r200=203 kpc; v_esc(to 2r200)=509 km/s pull -0.74 CONSISTENT; v_esc(inf)=409 pull -4.76 NOT
