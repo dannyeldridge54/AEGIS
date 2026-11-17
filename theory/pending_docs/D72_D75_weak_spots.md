@@ -9857,4 +9857,4 @@ MAP: none
 [derived] The exact ε_H = 1 end is the one the matching equation means; D719's slow-roll end (y_end = 1.715) was an approximation. So the reproduction is right and D719's N* bracket is 0.17 low.
 Effect on predictions: exact n_s at the reproduced N* is 0.96951–0.97416 for T_R = 1e4–1e10 (r = 5.22e-4 to 4.59e-4); the shift from +0.17 e-folds is Δn_s ≈ +1.5e-4 and Δr/r ≈ −0.6% [estimate, from the table slope], inside the frozen SERAPIS-E band. Frozen predictions unchanged (post-hoc rule).
 Verdict: FAIL by the locked tolerance, cause identified; D719's N* bracket corrected upward by 0.17 (correction note, no silent edit of D719). No rerun.
-MAP: node=serapis_e_nstar status=corrected touches=[] ripple=no
+MAP: node=nstar_e status=corrected touches=[] ripple=no
