@@ -11403,3 +11403,13 @@ MAP: none
 - f range arithmetic: (0.67/2.9)² = 0.053, (0.9/2.9)² = 0.096.
 - Publishing-rule note: this changes a published-paper statement (v3.2 lists 0.67–1.85 TeV). When Danny next says "Publish", v3.3 should carry this correction prominently. Not a frozen prediction, but readers of v3.2 would otherwise see an outdated window.
 MAP: none
+
+## D1130 — RIGHT/Janus-LT — L9: Janus-LT growth vs DESI DR1 full-shape fσ8 — fiducial reproduced to 0.16%, data CONSISTENT [computed]
+Lock PREREG_L9_fsigma8 (data fetched: arXiv html 2411.12021v5 Table 9 ratios, Table 11 fiducial fσ8).
+C0: at the Planck-ΛCDM mock cosmology (ω_c 0.1200, ω_b 0.02237, h 0.6736, σ8 0.811355) Janus-LT gives fσ8 = 0.4728, 0.4740, 0.4615, 0.4405, 0.3950,
+0.3755 vs DESI's 0.4723, 0.4733, 0.4608, 0.4398, 0.3944, 0.3750 → max 0.16% (systematically +0.1–0.16%, consistent with the unstated fiducial mν) PASS.
+C1: L8b best-fit ΛCDM (CAMB σ8 amplitude as stated referee, rescaled to the fiducial convention: 0.8097) gives ratios 0.984–1.002; χ² = 3.81 for 6 dof
+(fiducial itself 3.85) → CONSISTENT. DESI DR1 growth data do not distinguish the L8b cosmology from Planck (Δχ² 0.04).
+Janus-LT now covers BAO, SN, compressed CMB, growth shape and fσ8 against real data. Amplitude σ8,0 still from CAMB (Janus-LT has the EH98 shape, D1065,
+but not the A_s normalisation — formula to be fetched).
+MAP: none

@@ -299,3 +299,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1051: a lead with the right structure still needs its size checked at once; restate the size problem in physical terms (here: near-finiteness).
 - D1065: validate a fitting formula's shape before its normalisation — one new thing per lock.
 - D1127: make long batch jobs resumable from a part file — this one survived three 2 h limits and a container restart without recomputing a point.
+- D1130: reproduce the data paper's own fiducial prediction first (C0) — it catches convention mismatches before the data test.
