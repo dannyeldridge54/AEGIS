@@ -12176,3 +12176,9 @@ MAP: none
 - No computation.
 VERDICT: NULL. plateau_origin stays assumed (P3). The relic thread waits on the g_* table permission. The next rotation goes to Hyperion open items (inner-halo concentration for the J-factors; the parked 7PN tidal coefficient).
 MAP: none
+
+### D1188a — correction to D1188 (2026-11-17)
+- D1188 said 2411.07552 (Kallosh–Linde, Landscape of Modular Cosmology) is "not cited for the plateau's origin". That is wrong.
+- It is already in the notes: its V(j) plateau form is recorded around line 5215, with credit added. A later note lists it as not fetched.
+- The verdict is unchanged: NULL, with no new input for plateau_origin.
+MAP: none
