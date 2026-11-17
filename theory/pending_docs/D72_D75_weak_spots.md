@@ -10297,3 +10297,14 @@ fi is the parser case (VG line 1.120507273145942+100); kmii is NOT — ASPIC's o
 n_s = 1.000, x_end = 4.7e-310), so kmii is an ASPIC failure at (my) parameter choice and stays unscored. Corrected count of my own
 bugs among the 10 listed: 3 (gmlfi, ncli driver truncation; fi parser), not 4. FI is rescored under PREREG_J7i (running).
 MAP: none
+
+## D1038 — DEEP/STRINGS — why S4c3 converges as ε^0.84: q = (D−2)/((D−1)(1+δ)) [derived; post-hoc explanation of D1036]
+Sturm–Liouville form (p u')' + m² w u = 0 with p = e^{(D−1)A + gP/2}, w = e^{(D−3)A − gP/2} (S4c2). Near y→0, sin(ωky) ~ u, so
+A ≈ ln u /(2(D−1)(1+δ)), P ≈ (D−2) ln u /(4√(D−1)(1+δ)). Using g/g_c = 1+2δ, g_c = 4√(D−1)/(D−2):
+  p ~ u^a with a = [½ + ½(1+2δ)]/(1+δ) = 1 EXACTLY (for any D, g); w ~ u^b with 1+b = (D−2)/((D−1)(1+δ)).
+With a = 1 the regular eigenfunction tends to a constant at u→0, so cutting the interval at ε drops Rayleigh weight ∫₀^ε w u² ∝ ε^{1+b}:
+δm² ∝ ε^q, q = (D−2)/((D−1)(1+δ)). D = 6, g = 2: δ = −0.052786, q = 0.8/(0.947214) = 0.84459. Measured (D1036): 0.8429, 0.8442 → match
+to 2e-4 in the second triple. The y→y_end end gives ε^{15.16} (negligible), consistent with the clean single power law.
+Label: derived after seeing the number (explanation, not a prediction). Bonus fact: p ~ u exactly means y = 0 is a limit-circle,
+log-type endpoint — the boundary condition chosen there (θ = π/2, the regular branch) is a physical input to state in the paper.
+MAP: none
