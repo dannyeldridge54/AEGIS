@@ -1602,3 +1602,7 @@ Touches: none.
 - [literature] 0805.0824: brane-scalar mass² sign tracks the one-loop vacuum amplitude; [estimate] bosonic-excess sector → positive χ mass (Project H's need).
 - [literature] 2605.16994: Gaia DR3 prefers Einasto/cored halos → halo node literature.
 - [literature] 1707.07059: no U-dependence of the anti-D3 uplift at leading order.
+
+## D983: third prep pass
+- [derived] (structure) brane scalar with positive quartics: δm² ∝ +(N_B−N_F)E(U,2)/A², V ∝ −(N_B−N_F)·(weight s+1): bosonic excess → V<0, m²>0 (Kitazawa's opposite-sign rule in field theory; holds for ADS +128).
+- D982 OOM crash → DEVIATIONS D1, rerun D982b.

@@ -230,3 +230,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D980: when removing a suspected cause leaves the scatter unchanged, drop the suspect and look at how the noise is amplified (here a second derivative on a narrow stencil).
 - D981: prep notes should say which nodes have nothing calculable yet, so loops don't revisit them.
 - D982: a sign rule from one string model is a plausibility argument for another, not a result; label it estimate and name the check that would test it.
+- D983: watch memory in stiff ODE scans; keep only the outputs the verdict needs.
