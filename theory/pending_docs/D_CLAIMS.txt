@@ -433,3 +433,4 @@ D1146  2026-11-17T18:30Z  J9b: sharper beta_s test on the PC - validated (median
 D1147  2026-11-17T18:31Z  D-side summary
 D1148  2026-11-17T18:36Z  J10: Janus accuracy holds at new pivots N*=45,55,65 (PC)
 D1149  2026-11-17T18:37Z  J11: Janus beta_s error scales as eps* (slope 1.14) - truncation confirmed (PC)
+D1150  2026-11-17T18:41Z  CTA reach
