@@ -1,0 +1,3 @@
+V: Om = 0.2970 ± 0.0085 (DESI 0.2975 ± 0.0086), h rd = 101.56 ± 0.72 (DESI 101.54 ± 0.73), r = -0.93 (DESI −0.92), chi2_min = 10.55 / 13 pts -> PASS
+(i) Planck-like LCDM Om=0.3153 h=0.6736: r_d = 146.89 Mpc, chi2 = 36.66 / 13 points
+(ii) TorsionLambda case b (beta=0.192, H0=72.95): r_d = 134.16 Mpc, chi2 = 123.11 / 13 points
