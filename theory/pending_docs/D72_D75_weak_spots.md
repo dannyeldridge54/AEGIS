@@ -11734,3 +11734,12 @@ Locks pushed before the rerun. Result field_tests/results/r1b_relic.txt.
   - The NLO ratio, with the √2 convention FIXED IN ADVANCE, is the blind A1e test that has been open since D1091.
 VERDICT: R1b VALIDATED (Born relic); R2 (Sommerfeld freeze-out, ratio test) next.
 MAP: none
+
+## D1157 (CENTRE, manual Djl, relic module stage R2a; locked PREREG_R2a): the generic single-channel Sommerfeld solver is VALIDATED — attractive Coulomb ≤ 8.8e-7, repulsive Coulomb ≤ 9.1e-6, and Yukawa → Coulomb limit ≤ 8.7e-7 vs the analytic Sommerfeld factors
+Lock pushed before run; result field_tests/results/r2a_single.txt.
+- Code: sommerfeld.single_channel(M, v, V, alpha_tail), with WKB-local amplitude matching (the A7b method).
+- It covers the Q=±2 (repulsive), Q=±1 (attractive W-Yukawa) and Q=0 S=1 (attractive) wino channels (Hisano+ hep-ph/0610249 Eqs. 2–4, quoted this tick, plus their thermal-average Eq. 13 with the 4/g_eff² normalisation that confirms D1156's factor 4).
+- Hisano+ quote a Sommerfeld-corrected thermal wino at 2.7–3.0 TeV, with the relic abundance reduced by ~50% vs perturbative.
+- Next: R2b, the Q=0 S=0 two-channel problem with both channels open (thermal energies E ≫ 2δm). This needs an open-channel matching (2×2 asymptotic plane waves).
+VERDICT: R2a VALIDATED.
+MAP: none
