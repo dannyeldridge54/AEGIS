@@ -10492,3 +10492,5 @@ Region check against the paper (literature, after the run): H.E.S.S. 2018 (1805.
 Consequence: the halo_profile node now carries numbers: SERAPIS-E's wino is in tension with the H.E.S.S. line limit only for a cuspy (Einasto) Galaxy above ~0.8 TeV; Gaia DR3's preference for Einasto/cored (D982) keeps the full 0.67–1.85 TeV thermal window open for cores ≥ 1 kpc. Next: A7b replaces D735's ∝M² limit rescale with the published wino-specific limits (2507.15934 Fig. 6) and the exact ON−OFF J for each annulus.
 Sources: arXiv:1805.05741 (ar5iv); D735; D982.
 MAP: node=halo_profile status=computed touches=[] ripple=no
+
+## D1055a — arithmetic correction to D1055: linear interpolation of f and f_max between 1.0 and 1.85 TeV puts the NFW crossing at M ≈ 1.43 TeV, so the NFW window is ≈ 0.66–1.4 TeV (estimate), not "≈ 0.66–1.5".
