@@ -1653,3 +1653,6 @@ Touches: none.
 
 ## D999: Janus J6 two-field δN NOT VALIDATED as locked
 - [computed] T2–T4 pass (VW analytic f_NL to 0.6 %); T1 r off 1.2 % = second-order term (1 + Cε₂) missing from lowest-order δN; J6b planned.
+
+## D1000: Janus J6b NLO δN r VALIDATED; two-field module
+- [computed] r_NLO vs calculator 9e-5; equal-mass angle-independent; twofield.observe_multi added.

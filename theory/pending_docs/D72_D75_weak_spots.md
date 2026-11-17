@@ -10035,3 +10035,11 @@ MAP: node=mnu status=frozen touches=[] ripple=no
 Diagnosis [derived] (arithmetic): δN r/(16ε₁) = 0.99992 and calculator r/δN r = 1 + C ε₂ = 1/1.01252 with ε₂ = 0.01694, C = −0.7296: the whole T1 gap is the known second-order term the δN formula (lowest order in slow roll) does not carry. The δN code itself is correct; the lock's T1 r tolerance was set at the wrong order.
 Consequence: J6 stays NOT VALIDATED as locked. Path forward: J6b, a new lock that adds the second-order δN correction for field fluctuations (from a fetched source, e.g. the n-field second-order P_ζ / Stewart–Lyth extension) and re-tests T1 at 1e-3, plus a strongly non-Gaussian case (curvaton-like or axion-quartic) as T5, since f_NL in the quadratic case is slow-roll small (0.0085 ≈ 1/(2N)).
 MAP: none
+
+## D1000 (track J, locked PREREG_J6b_deltaN_NLO): next-to-leading-order δN r closes D999's gap: single-field m²φ² r_NLO = 0.134238 vs the calculator's second-order 0.134250 (9.1e-5 relative, < 1e-3); equal-mass two-field identical at 4 angles (spread 4e-10): VALIDATED. Janus now has a validated two-field level (tools/janus_calc/twofield.py: N, n_s, r, f_NL)
+[literature] Byrnes & Wands astro-ph/0605679 Eqs. 43–45 (Hubble-exit σ/s spectra and cross term at first order in slow roll, C = 2 − ln2 − γ_E ≈ 0.7296) and Eq. 81 (P_X ≃ P_X^(0)(1 + n_T − C n_X), applied to tensors: P_T = P_T^(0)(1 + (−2+2C)ε)); η_IJ = V_IJ/3H² (1110.4081 Eq. 2.8).
+[derived] field-basis matrix M_IJ = δ_IJ(1 + (−2+2C)ε) + 4Cε σ̂_Iσ̂_J − 2Cη_IJ (rotation of Eqs. 43–45); r = 8(1 + (−2+2C)ε)/(N_I M_IJ N_J). Single-field check by hand: ratio to lowest order ≈ 1 − C(4ε − 2η) = 1 + C_E ε₂ (C_E = −C), the calculator's form.
+[computed] (field_tests/results/janus_j6b_nlo.txt) T1b r_LO 0.135924 → r_NLO 0.134238 vs 0.134250 ✓; T2b ✓; T3b (Vernizzi–Wands R = 1/9 point) r_LO 0.13631 → r_NLO 0.13456 (−1.28 %), n_s 0.92725, f_NL (WMAP sign) = 0.00709.
+Module tools/janus_calc/twofield.py: observe_multi(V, grad, hess, φ*) → N, n_s (VW Eq. 17), r (NLO), f_NL^local (VW Eq. 30, WMAP sign); any number of fields, ~3 s per point.
+Next J: T5 strongly non-Gaussian two-field reference (Byrnes–Choi–Hall type, |f_NL| ≳ 1, from a fetched paper) and isocurvature fraction at the end surface; then J7 ASPIC benchmark.
+MAP: none
