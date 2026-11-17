@@ -1,0 +1,4 @@
+grid built in 209 s; interpolation check max |dz| = 8.76e-06 (OK)
+LCDM: chi2 = 15.39 at h = 0.6842, wb = 0.02241, wbc = 0.13977
+w0waCDM MAP: w0 = -0.455 ± 0.223, wa = -1.615 ± 0.649, h = 0.6381; chi2 = 7.34; Delta chi2 = -8.04
+vs DESI+CMB (Eq. 25: w0 = -0.42 ± 0.21, wa = -1.75 ± 0.58, Delta chi2 = -12.5): INCONSISTENT  (total 242 s)
