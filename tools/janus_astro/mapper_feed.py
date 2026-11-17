@@ -165,3 +165,26 @@ def orbit_params_exact_events(x, y, z, vx, vy, vz, t_gyr=3.0, mw=None):
     z_all = [abs(X0[2]), abs(sol.y[2, -1])] + [abs(float(q[2])) for q in sol.y_events[1]]
     rp, ra = min(r_all)*r0, max(r_all)*r0
     return dict(rperi=rp, rapo=ra, zmax=max(z_all)*r0, ecc=(ra - rp)/(ra + rp))
+
+def orbit_params_galpy(x, y, z, vx, vy, vz, pot='MWPotential2014', t_gyr=3.0, n=3001):
+    """D9: galpy-backed orbits (C integrator dop853_c) in MWPotential2014 or McMillan17 (C8/D1194: McMillan17 passes
+    Horta+2026 at R_sun, MWPotential2014 fails). Inputs Galactocentric cartesian arrays (kpc, km/s); returns dict of arrays
+    r_peri, r_apo (spherical r, kpc), z_max (kpc), ecc. Axisymmetric potentials, so the sense of rotation does not matter."""
+    import warnings; warnings.filterwarnings('ignore')
+    import astropy.units as u
+    from galpy.orbit import Orbit
+    if pot == 'McMillan17':
+        from galpy.potential.mwpotentials import McMillan17 as P; ro, vo = 8.21, 233.1
+    else:
+        from galpy.potential import MWPotential2014 as P; ro, vo = 8.0, 220.0
+    x, y, z, vx, vy, vz = (np.atleast_1d(np.asarray(a, float)) for a in (x, y, z, vx, vy, vz))
+    R = np.hypot(x, y); phi = np.arctan2(y, x)
+    vR = (x*vx + y*vy)/R; vT = (x*vy - y*vx)/R
+    vxvv = np.array([R/ro, vR/vo, vT/vo, z/ro, vz/vo, phi]).T   # natural units (DEVIATIONS_D9 D1)
+    o = Orbit(vxvv, ro=ro, vo=vo, radec=False)
+    o.integrate(np.linspace(0, t_gyr, n)*u.Gyr, P, method='dop853_c')
+    ts = np.linspace(0, t_gyr, n)*u.Gyr
+    r = np.sqrt(o.R(ts)**2 + o.z(ts)**2); r = np.atleast_2d(r)
+    zz = np.atleast_2d(np.abs(o.z(ts)))
+    rp, ra = r.min(axis=1), r.max(axis=1)
+    return dict(rperi=rp, rapo=ra, zmax=zz.max(axis=1), ecc=(ra - rp)/(ra + rp))
