@@ -1,0 +1,2 @@
+# DEVIATIONS — PREREG_J7k_listed_long.md
+D1 (2026-11-17 21:21Z): First PC run (15:20 CT) produced no numbers: the runner's environment had no gfortran on PATH, so the ASPIC drivers never compiled and all three models were recorded 'listed' for that reason (environment failure, not a model result). One rerun, unchanged script, with the ASPIC build env's gfortran on PATH (~/micromamba/envs/aspicbuild/bin); the failed part file is kept as janus_j7k_p1.envfail.jsonl.
