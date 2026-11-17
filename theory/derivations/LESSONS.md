@@ -303,3 +303,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1132: a normalisation that assumes an asymptotic regime (D = a in matter domination) must be imposed where that regime actually holds.
 - D1133: when a lock predicts its own failure mode, the follow-up lock should change exactly that one thing.
 - D1134: once a referee input is replaced by validated own code, rerun the downstream test under a new lock to show nothing moved.
+- D1135: a 'needs tuning' condition is sharper when a symmetry gives an exact zero nearby — then the question is what lifts the zero.

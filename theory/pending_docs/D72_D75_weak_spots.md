@@ -11443,3 +11443,13 @@ MAP: none
 Lock PREREG_L9v2_fs8_own. Own σ8 (L9c): fiducial 0.8324, L8b 0.8304 (rescaled to the fiducial convention 0.8095 vs CAMB-based 0.8097); ratios 0.983–1.002;
 χ² = 3.81 for 6 dof, |Δχ²| vs L9 (D1130) < 0.01 → CONSISTENT. Janus-LT's growth test is now self-contained (background, recombination, transfer, σ8, f, D).
 MAP: none
+
+## D1135 — RIGHT (R track) — a concrete exactly-vanishing N=2 coefficient (Z6-II-b, U(1)): the D1051 small-γ̃ condition has a known realisation [literature]
+[literature, fetched arXiv hep-th/0001062] In the Z6-II-b orbifold, the Θ² N=2 sector's U(1) factor has a_{U(1)} = 0 ("since the gauge group under the
+additional threshold scale M_I is abelian", after Eq. 50) and b̃_{U(1)} = 0 (c_{U(1)} = 0, no charged hypermultiplets; after Eq. 51), multiplying the
+η-function logs of Eqs. 49, 51. No numerical b^{N=2} values are tabulated for the other groups.
+Meaning for D1049/D1051: γ̃_j = −b̃_j/2 vanishes EXACTLY for an untwisted field in that abelian N=2 vector multiplet → its wave-function log is absent at
+one loop. So "near-finite" is not a free tuning: the natural values are 0 (abelian, uncharged) or O(1)×1/64π² (non-abelian). ε = 6e-5 then needs a small
+correction to an exactly-zero coefficient (e.g. Wilson-line mixing, which hep-th/0001062 treats, or a two-loop term) — a sharper, model-level question.
+Status: lead KEPT; the size problem now reads "what lifts an exactly-zero γ̃ by ~2% of its natural non-abelian size". Not claimed.
+MAP: none
