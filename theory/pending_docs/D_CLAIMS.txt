@@ -337,3 +337,4 @@ D1050  2026-11-17T10:45Z  L8b: CHW priors + DESI BAO robust
 D1051  2026-11-17T10:57Z  R: size of the AGNT matter-log tilt - natural size ~1e-2, 6e-5 needs near-vanishing anomalous dimension
 D1052  2026-11-17T11:19Z  Janus-Astro A0 validated (track X)
 D1053  2026-11-17T11:23Z  Janus-Astro A0s vs standards validated
+D1054  2026-11-17T11:25Z  Janus-Astro A2a TaylorF2 3.5PN vs LALSuite validated
