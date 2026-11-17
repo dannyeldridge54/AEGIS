@@ -82,4 +82,5 @@ Source of truth v5.3 on Zenodo (DOI 10.5281/zenodo.24226521). TWIST-I: N* 56.7, 
 - Track J (Janus String Calculator, tools/janus_calc/ROADMAP.md): J0 done (D989); J0b α_s test running on PC → Zenodo v1.0; next J1 any-potential, J3 third order, then J2/J4/J5/J6, goal J7 = full ASPIC model list matched and surpassed. Each Jl tick advances one J stage when no research result is waiting.
 - Track S (string level, tools/serapis_calc/STRINGS_PLAN.md): S0–S3 done (D985); S3b shortcut failed (D987); next S4a–c (backreacted background → sign of χ's local mass, D988).
 - Track A (research map): D984 ρ/Kairos α_s on PC; D981c replication.
+- Track L (Janus-LT, late-universe twin; papers/JANUS_LT_PLAN.md): L0 background/distances/r_d vs CAMB → L1 any H(z) incl. TorsionΛ F(a) → L2 growth/σ8 → L3 DESI/SN/CMB likelihoods → L4 error bars → L5 fast fits → L6 TorsionΛ (R, σ8, BAO) → L7 benchmark vs CAMB/CLASS.
 - Outreach: on hold 1–2 weeks (Danny).
