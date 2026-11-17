@@ -461,3 +461,4 @@ D1174  2026-11-17T19:53Z  JMF5: Janus-MF non-separable agrees with derivative-co
 D1175  2026-11-17T19:56Z  LOCKBENCH L-8 pinned env + selftest
 D1176  2026-11-17T19:58Z  J13: Janus accuracy holds across N* 45/55/65 on 32 ASPIC models
 D1177  2026-11-17T19:59Z  LOCKBENCH L-7 ledger dashboard
+D1178  2026-11-17T20:00Z  R2b5 Coulomb sector: open solver R-converged (PASS); alpha scan
