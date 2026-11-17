@@ -1713,3 +1713,6 @@ Touches: none.
 
 ## D1019: Janus-LT L0c massive ν VALIDATED (H, D_M ≤ 4.6e-5 vs CAMB, 150 cases)
 - [computed] Komatsu 2011 Eq. 25 by quadrature.
+
+## D1020: J7d2 — PSNI unscored: Janus background integrator stalls at the log-singular end (J1c fix path)
+- [computed] bisection added; N_tot = ∞ for all starts.

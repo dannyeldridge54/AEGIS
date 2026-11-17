@@ -10182,3 +10182,8 @@ MAP: none
 Process note: the first commit of this result (32b34247) had an empty D-number in DERIVATION_LOG/LESSONS because the claim ran on a dirty tree; fixed here.
 Janus-LT now: background (ΛCDM, w0–wa, any F(a)), distances, massive ν, own recombination, drag epoch and sound horizon, all first-principles, ≤ 5e-5 (background) / 4e-4 (r_d) from CAMB. Next L1: TorsionΛ F(a) through the same chain (lock first), then L2 growth/σ8.
 MAP: none
+
+## D1020 (track J, locked PREREG_J7d2_psni): PSNI is still NOT scored — the new bisection start-finder (J1b, added to anyV.py) works as code, but Janus's exact background never reaches ε_H = 1 for PSNI: the e-fold-time integrator stalls in the steep log-singular end region (V = 1 + α ln sin(y/f), V′ ~ α/y) — a real Janus limitation for potentials with a singular end; ASPIC handles PSNI analytically
+[computed] (field_tests/results/janus_j7d2_psni.txt) locked run: "bisection did not reach the e-fold window" → stop as locked. Diagnostic (after the stop, labelled): N_tot(y₀) = ∞ for y₀ = 0.2–4.0 (Nmax = 20000), though slow roll gives ~60 e-folds from y₀ = 0.35 and ε_V = 1 at y ≈ 7e-4.
+Fix path (J1c, lock first): integrate the background in field time (or with a stiff solver, Radau) near the end, or switch the end condition to the first y where ε_H = 1 found by root-finding on a dense trajectory; then rescore PSNI. Honest scorecard vs ASPIC: Janus wins every scored point; ASPIC covers PSNI and Janus currently does not.
+MAP: none
