@@ -10010,3 +10010,8 @@ MAP: none
 [computed] (field_tests/results/s4a_dudas_mourad.txt, s4a2_dm_symbolic.txt) S4a Route A (FD): eq2 6e-11, eq1/eq3 ~1e-6 (second-derivative floor) → locked NOT VALIDATED; Route B: |ΔA| 1.9e-11, |Δφ| 1.3e-10, constraint 4.3e-10. S4a2: symbolic residuals 0, 0, 0. e^φ = 0.14 at y = 0.05 (weak coupling) → 1.8e3 at y = 3 (strong coupling); proper length of the interval 2.09/√α_E (finite), as in the literature (two singular ends at finite distance).
 Consequence: the backreaction solver is validated on the known 9D case; S4b (6D T⁴/Z₂ anti-D5 analogue, needs its 6D dilaton–tadpole action from the literature) can be built on it.
 MAP: none
+
+## D997 (track L, locked PREREG_L0a): Janus-LT's first-principles background reproduces CAMB 2.0.5 on 50 random flat cosmologies (ΛCDM to strong w0–wa): H(z) to max 4.7e-11, D_M(z) to max 2.8e-6 (at z = 1100; medians ~1e-14): VALIDATED
+[computed] (field_tests/results/janus_lt_l0a.txt) constants from scipy.constants (ω_γ from T_CMB = 2.7255 K), massless N_eff = 3.044, CPL dark energy; 0.3 ms vs CAMB background 4 ms per cosmology (13×: CAMB's background-only mode is already fast; the large gains are expected for growth/σ8 and fits).
+Next (L0b): sound horizon r_d (drag epoch) and massive neutrinos; then L1 arbitrary F(a) (TorsionΛ).
+MAP: none

@@ -1647,3 +1647,6 @@ Touches: none.
 
 ## D996: S4a Dudas-Mourad 9D reproduced
 - [computed] symbolic residuals 0; numerical 1e-10; first lock NOT VALIDATED (FD floor), second (symbolic) VALIDATED.
+
+## D997: Janus-LT L0a VALIDATED
+- [computed] H 5e-11, D_M 3e-6 vs CAMB, 50 cosmologies.
