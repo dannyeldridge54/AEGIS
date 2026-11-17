@@ -13,3 +13,4 @@ D982-leptoboltz|timeout 5000 python3 theory/modular/lepto_boltz_d982.py
 D982b-leptoboltz|timeout 5000 python3 theory/modular/lepto_boltz_d982.py
 D981b-alphawide|timeout 7000 python3 theory/flux/alpha_wide_d981.py
 D982c-leptoboltz|timeout 5000 python3 theory/modular/lepto_boltz_d982.py
+D986-S3bpos|timeout 7000 python3 theory/strings/s3b_positivity_d986.py
