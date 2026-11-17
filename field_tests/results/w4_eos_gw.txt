@@ -1,0 +1,4 @@
+SLy: Lambda_1.4 = 295.6 (ref 296) -> OK; tidal phase span 1.215 rad
+AP4: Lambda_1.4 = 247.6 (ref 248) -> OK; tidal phase span 1.018 rad
+SLy - AP4 tidal phase difference (detrended, max abs): 0.133 rad (estimate in D1098: ~0.13)
+T1 lossless: True
