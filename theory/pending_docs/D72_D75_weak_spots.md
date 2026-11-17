@@ -11563,3 +11563,23 @@ Open items:
 - (5) A CTA sensitivity forecast at 0.7–0.9 TeV.
 Status: A-side wino thread PARKED at diminishing returns. The rotation moves to other A items (e.g. f_eff(M) tables, if obtainable on Danny's PC).
 MAP: none
+
+## D1144 (CENTRE, Djl loop (B), SUMMARY of the B-side first-minutes chain D1082–D1136): SERAPIS is BBN-consistent on both branches, inheriting only the Standard Model's D/H (≈1.7–2σ) and Li-7 (×3.5) tensions; the one SERAPIS-specific BBN/CMB discriminant is N_eff (ρ: 0 exactly; τ=i: 0 or ≥ 0.054 if a hidden sector is populated), testable by SO (σ 0.045) and CMB-S4 (σ 0.03)
+Final:
+- Hyperion BBN modules:
+  - bbn (PRIMAT table): D1082, with the Y_p convention fix D1082a (nucleon vs mass fraction).
+  - Three-code agreement (PRIMAT, PRyMordial, LINX: Y_p 3e-4, D/H 0.17%, Li 2.5%) (D1107).
+  - bbn_net (LINX engine): validated, with the caveat that dNeff_init is an initial value (D1109).
+- SERAPIS:
+  - Y_p +0.1 to +0.2σ (mass fraction). D/H −1.8 to −2.0σ (obs + theory), the same as ΛCDM (D1096). Li-7 5.6–5.7e-10, ×3.5 the Spite plateau (D1100, D1104, D1107).
+  - GW dark radiation ≤ 7e-12 (D1085). ρ-branch late decays at 1e-17 – 1e-19 s, far too early to matter (D1082).
+- τ=i hidden sector (D1088, D1092, D1122, D1136):
+  - U(1) 0.054 / SU(2) 0.161 / +gaugino 0.301.
+  - ACT DR6 allows only U(1); D/H mildly prefers more radiation.
+  - SO separates SU(2) at 3.6σ; CMB-S4 reaches U(1) at 1.8σ.
+- Corrections: D1082a (Y_p convention); D1088 → D1092 (ACT bound); D1082 → D1096 (stale PArthENoPE table).
+- Open:
+  - Whether the τ=i enhanced-symmetry states are populated or massive (theory, not BBN).
+  - A forward-table row for τ=i N_eff (Danny's call at the next "Publish").
+Status: B-side PARKED.
+MAP: none
