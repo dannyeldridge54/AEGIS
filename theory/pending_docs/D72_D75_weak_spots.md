@@ -12627,3 +12627,4 @@ Results (BC D, S4e cutoffs, L = 1.695796): C0 as-is [0.9318, 2.0403]; C1 warp ma
 Verdict: NOT EXPLAINED by these four conventions. The needed shift sits between C1 and C2, so a convention of this kind is plausible, but we did not find
 one stated in BTR, and fitting a reference point to the target would be curve-fitting. S4e stays NOT VALIDATED vs BTR; the ratio m₂/m₁ (2.190 vs 2.196)
 and the solver (D1214, two methods agree to 1e-7) are unaffected. Next: our 6D masses are quoted as ratios and in the C0 convention, stated explicitly.
+MAP: none (S4e status unchanged: NOT VALIDATED vs BTR).
