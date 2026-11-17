@@ -1,0 +1,8 @@
+Omega_gamma h2 = 2.4730e-05; per-dN GW energy h2 = 5.616e-06 (literature check 5.6e-6: rel +0.003)
+tau=i TR=1e6: dN_GW <= 6.54e-12 (+DR 0.0) -> Yp 0.247209 (d +8.9e-14) pull +0.56; D/H 2.43930e-05 (d +2.2e-17) pull -1.77 -> CONSISTENT
+tau=i TR=3e6: dN_GW <= 7.29e-12 (+DR 0.0) -> Yp 0.247209 (d +9.9e-14) pull +0.56; D/H 2.43930e-05 (d +2.4e-17) pull -1.77 -> CONSISTENT
+rho TR=3.2e8: dN_GW <= 6.68e-12 (+DR 0.0) -> Yp 0.247209 (d +9.0e-14) pull +0.56; D/H 2.43930e-05 (d +2.2e-17) pull -1.77 -> CONSISTENT
+rho TR=3.0e9: dN_GW <= 6.64e-12 (+DR 0.0) -> Yp 0.247209 (d +9.0e-14) pull +0.56; D/H 2.43930e-05 (d +2.2e-17) pull -1.77 -> CONSISTENT
+T1 wiring lossless -> PASS
+T2 all branches inside window and |pull|<2 -> CONSISTENT
+B2 VALIDATED
