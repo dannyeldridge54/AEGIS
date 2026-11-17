@@ -58,3 +58,8 @@ Status: draft, collected 17 Nov 2026 (D1081–D1101). Packaging and a Zenodo upl
 - τ=i hidden sectors through bbn_net: D/H prefers ΔN ≈ 0.3, ACT excludes it; U(1) is OK (D1122).
 - 7PN tidal term PARKED: pre/post-erratum HFB vs LAL, 0.33% (D1117, D1120).
 - Corrections: D1118's and D1119's "one-loop ×3–4" columns were withdrawn by D1121.
+
+## Final update 17 Nov 18:32 UTC (D1129–D1145)
+- HL-LHC wino reach 0.5–0.9 TeV (D1131). N_eff forecasts: SO 0.045, CMB-S4 0.03 (D1136).
+- Gaia DR3 v_esc profile → light halo, M200c 0.55e12 (D1139). 1 TeV wino verdict for that halo: FAIL (LO) / marginal (NLO); concentration-dominated (D1142, correcting D1139).
+- Side summaries: A wino (D1143), B first minutes (D1144), C Galaxy (D1145). All parked at diminishing returns pending new data, the PC, or a new direction.

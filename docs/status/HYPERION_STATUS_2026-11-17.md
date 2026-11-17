@@ -45,3 +45,8 @@
 - The v3.3 draft paragraph and the forward-table row are updated (unposted).
 - NLL line machinery is in Hyperion (D1121, D1124). bbn_net τ=i scan (D1122). 7PN tide parked (D1120).
 - Note: D1127 is another session's J7g note; mine are D1125, D1126 and D1128.
+
+## Final update 18:32 UTC (D1129–D1145)
+- All four loop sides are summarised and parked: A wino (D1143), B BBN/N_eff (D1144), C Galaxy (D1145), D roadmap (D-side note today).
+- SERAPIS-E post-hoc wino: ≈ 0.67–0.9 TeV (f ≈ 5–10%); 1 TeV is undetermined (inner-halo concentration); HL-LHC reach 0.5–0.9 TeV.
+- PC needed for: the Star Mapper orbit feed + per-star data, dust maps (downloads need Danny's OK), and the Zenodo upload of Hyperion 1.1 (needs "Publish").
