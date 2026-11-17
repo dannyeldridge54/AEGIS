@@ -1,0 +1,66 @@
+spin_order=3 m=(1.4,1.4) chi=(0.05,0.05): max|res|=6.53e-10 rad
+spin_order=3 m=(1.4,1.4) chi=(-0.05,0.03): max|res|=5.22e-10 rad
+spin_order=3 m=(1.4,1.4) chi=(0.09,-0.09): max|res|=5.22e-10 rad
+spin_order=3 m=(10,10) chi=(0.5,0.5): max|res|=1.69e-10 rad
+spin_order=3 m=(10,10) chi=(-0.5,0.3): max|res|=1.44e-10 rad
+spin_order=3 m=(10,10) chi=(0.9,-0.9): max|res|=1.79e-10 rad
+spin_order=3 m=(36,29) chi=(0.5,0.5): max|res|=3.42e-11 rad
+spin_order=3 m=(36,29) chi=(-0.5,0.3): max|res|=3.37e-11 rad
+spin_order=3 m=(36,29) chi=(0.9,-0.9): max|res|=2.85e-11 rad
+spin_order=3 m=(5,50) chi=(0.5,0.5): max|res|=3.13e-11 rad
+spin_order=3 m=(5,50) chi=(-0.5,0.3): max|res|=2.97e-11 rad
+spin_order=3 m=(5,50) chi=(0.9,-0.9): max|res|=2.90e-11 rad
+== spin_order 3 (scored): worst 6.53e-10 rad
+spin_order=4 m=(1.4,1.4) chi=(0.05,0.05): max|res|=5.62e-10 rad
+spin_order=4 m=(1.4,1.4) chi=(-0.05,0.03): max|res|=5.62e-10 rad
+spin_order=4 m=(1.4,1.4) chi=(0.09,-0.09): max|res|=6.11e-10 rad
+spin_order=4 m=(10,10) chi=(0.5,0.5): max|res|=1.22e-10 rad
+spin_order=4 m=(10,10) chi=(-0.5,0.3): max|res|=1.38e-10 rad
+spin_order=4 m=(10,10) chi=(0.9,-0.9): max|res|=2.11e-10 rad
+spin_order=4 m=(36,29) chi=(0.5,0.5): max|res|=2.92e-11 rad
+spin_order=4 m=(36,29) chi=(-0.5,0.3): max|res|=3.42e-11 rad
+spin_order=4 m=(36,29) chi=(0.9,-0.9): max|res|=3.37e-11 rad
+spin_order=4 m=(5,50) chi=(0.5,0.5): max|res|=2.96e-11 rad
+spin_order=4 m=(5,50) chi=(-0.5,0.3): max|res|=2.87e-11 rad
+spin_order=4 m=(5,50) chi=(0.9,-0.9): max|res|=2.89e-11 rad
+== spin_order 4 (scored): worst 6.11e-10 rad
+spin_order=5 m=(1.4,1.4) chi=(0.05,0.05): max|res|=5.77e-10 rad
+spin_order=5 m=(1.4,1.4) chi=(-0.05,0.03): max|res|=5.40e-10 rad
+spin_order=5 m=(1.4,1.4) chi=(0.09,-0.09): max|res|=6.11e-10 rad
+spin_order=5 m=(10,10) chi=(0.5,0.5): max|res|=1.60e-10 rad
+spin_order=5 m=(10,10) chi=(-0.5,0.3): max|res|=1.56e-10 rad
+spin_order=5 m=(10,10) chi=(0.9,-0.9): max|res|=2.11e-10 rad
+spin_order=5 m=(36,29) chi=(0.5,0.5): max|res|=3.36e-11 rad
+spin_order=5 m=(36,29) chi=(-0.5,0.3): max|res|=2.89e-11 rad
+spin_order=5 m=(36,29) chi=(0.9,-0.9): max|res|=2.86e-11 rad
+spin_order=5 m=(5,50) chi=(0.5,0.5): max|res|=2.97e-11 rad
+spin_order=5 m=(5,50) chi=(-0.5,0.3): max|res|=3.59e-11 rad
+spin_order=5 m=(5,50) chi=(0.9,-0.9): max|res|=2.89e-11 rad
+== spin_order 5 (scored): worst 6.11e-10 rad
+spin_order=6 m=(1.4,1.4) chi=(0.05,0.05): max|res|=2.81e-03 rad
+spin_order=6 m=(1.4,1.4) chi=(-0.05,0.03): max|res|=2.22e-04 rad
+spin_order=6 m=(1.4,1.4) chi=(0.09,-0.09): max|res|=1.69e-03 rad
+spin_order=6 m=(10,10) chi=(0.5,0.5): max|res|=1.06e-01 rad
+spin_order=6 m=(10,10) chi=(-0.5,0.3): max|res|=8.35e-03 rad
+spin_order=6 m=(10,10) chi=(0.9,-0.9): max|res|=6.37e-02 rad
+spin_order=6 m=(36,29) chi=(0.5,0.5): max|res|=2.51e-02 rad
+spin_order=6 m=(36,29) chi=(-0.5,0.3): max|res|=4.46e-04 rad
+spin_order=6 m=(36,29) chi=(0.9,-0.9): max|res|=1.31e-02 rad
+spin_order=6 m=(5,50) chi=(0.5,0.5): max|res|=1.46e-01 rad
+spin_order=6 m=(5,50) chi=(-0.5,0.3): max|res|=3.60e-02 rad
+spin_order=6 m=(5,50) chi=(0.9,-0.9): max|res|=3.62e-01 rad
+== spin_order 6 (reported): worst 3.62e-01 rad
+spin_order=7 m=(1.4,1.4) chi=(0.05,0.05): max|res|=2.81e-03 rad
+spin_order=7 m=(1.4,1.4) chi=(-0.05,0.03): max|res|=2.22e-04 rad
+spin_order=7 m=(1.4,1.4) chi=(0.09,-0.09): max|res|=1.69e-03 rad
+spin_order=7 m=(10,10) chi=(0.5,0.5): max|res|=1.06e-01 rad
+spin_order=7 m=(10,10) chi=(-0.5,0.3): max|res|=8.35e-03 rad
+spin_order=7 m=(10,10) chi=(0.9,-0.9): max|res|=6.37e-02 rad
+spin_order=7 m=(36,29) chi=(0.5,0.5): max|res|=2.51e-02 rad
+spin_order=7 m=(36,29) chi=(-0.5,0.3): max|res|=4.46e-04 rad
+spin_order=7 m=(36,29) chi=(0.9,-0.9): max|res|=1.31e-02 rad
+spin_order=7 m=(5,50) chi=(0.5,0.5): max|res|=1.46e-01 rad
+spin_order=7 m=(5,50) chi=(-0.5,0.3): max|res|=3.60e-02 rad
+spin_order=7 m=(5,50) chi=(0.9,-0.9): max|res|=3.62e-01 rad
+== spin_order 7 (reported): worst 3.62e-01 rad
+A2b VALIDATED

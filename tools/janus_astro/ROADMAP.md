@@ -27,6 +27,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A2c3 DONE (D1064): IMRPhenomD horizons; CE flag resolved; A+ 50+50 z_h 3.04 matches the CE Horizon Study's 'not beyond 3'.
 
+- A2b DONE (D1066): aligned-spin TaylorF2 vs LAL ≤ 6.5e-10 rad through 2.5PN spin order; 3PN spin–spin terms missing (A2b2).
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].

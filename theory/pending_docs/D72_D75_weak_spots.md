@@ -10580,3 +10580,8 @@ Lock PREREG_L9a_eh_transfer; formulas fetched (ar5iv astro-ph/9709112 Eqs. 26, 2
 wiggles EH no-wiggle omits by design) → VALIDATED (shape). Next: L9b σ8/amplitude normalisation (needs the fetched A_s → P(k) relation),
 then L9 fσ8 vs DESI DR1 Table 9 (data pinned in JANUS_LT_PLAN).
 MAP: none
+
+## D1066 (DEEP Jl tick, track X / Hyperion, locked PREREG_A2b): Hyperion's aligned-spin gravitational-wave phase (coefficients copied from the PhenomD paper, arXiv:1508.07253 App. B) matches LALSuite to ≤ 6.5e-10 rad through 2.5PN spin order for 12 binary/spin combinations: A2b VALIDATED. At 3PN spin order and beyond it differs by up to 0.36 rad, scaling with spin² — LAL includes 3PN spin–spin terms that the PhenomD Appendix-B list does not
+Results [computed]: worst |Δψ| over 4 binaries × 3 spin pairs, band 20 Hz–0.8 f_ISCO: spin order 3 (1.5PN SO) 6.5e-10; 4 (+2PN SS incl. self-spin) 6.1e-10; 5 (+2.5PN SO) 6.1e-10 → scored PASS. Reported: spin orders 6 and 7 both worst 0.36 rad (5+50 M_⊙, χ = 0.9/−0.9), 0.1 rad (10+10, χ = 0.5/0.5), ≤ 3e-3 rad for neutron-star spins; the 3PN SO term itself is in both codes, so the excess is spin-quadratic at 3PN (and possibly 3.5PN SS/cubic) — exactly as the lock anticipated.
+Next for full spin order: source the 3PN spin–spin (and 3.5PN) phase terms (Bohé, Faye, Marsat, Porter 2015, arXiv:1501.01529, as implemented in LAL) and lock A2b2.
+MAP: none
