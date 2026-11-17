@@ -10707,3 +10707,13 @@ Lock 3578a8c pushed before run; result field_tests/results/b1_bbn.txt.
 - Wiring: closes the (B) triangle. Chronos supplies T_R and the decay epoch, Hyperion supplies ω_b and N_eff, and BBN is the referee. The Chronos ΔN_eff from the ρ branch is the next input to wire.
 VERDICT: B1 VALIDATED.
 MAP: none
+
+## D1083 (CENTRE, Djl loop (D), locked PREREG_A5b): Hyperion gains spherical Jeans velocity dispersions (roadmap A5), matching galpy to 1.5e-11 and the exact point-mass law to 3e-16 — A5b VALIDATED
+Lock 96d9925 pushed before run; results field_tests/results/janus_astro_a5b.txt.
+- Method: tools/janus_astro/jeans.py, with analytic enclosed masses and its own quadrature (independent of galpy forces).
+- T1: NFW and Hernquist potentials, self-consistent and Hernquist(a=0.5) tracers, β = 0 and 0.5, r = 0.1–10. Worst |σ_r/galpy − 1| = 1.5e-11 (lock: 1e-5). PASS.
+- T2: point mass with tracer ν ∝ r^-γ (γ = 3, 3.5; β = 0, 0.5). σ_r² = GM/((γ+1−2β)r) to 3.3e-16 (lock: 1e-6). PASS.
+- R (reported): MWPotential2014's halo alone (NFW a = 16 kpc), Hernquist tracer a = 20 kpc, isotropic: σ_r(8 kpc) = 97.2 km/s. The disk and bulge are omitted, so this is not a Milky Way prediction. (The script's tracer-scale expression is clumsy but evaluates to 2.5 natural units = 20 kpc, as intended.)
+- Use: Jeans dispersions are the halo-mass handle the Galaxy loop (W2/W3) needs for real Mapper kinematics. Velocity dispersions of halo stars constrain the same halo that sets ρ_⊙, J and the wino limits.
+VERDICT: A5b VALIDATED.
+MAP: none
