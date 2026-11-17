@@ -11836,3 +11836,13 @@ tools/lockbench/provenance.py: stamp(results, lock, code, data) writes <results>
 package versions, machine, wall time); check(results) re-hashes everything and reports any change. Tests PASS (clean check; edited code, tampered results and
 missing stamp all detected). Stamped retroactively: janus_jmf2.txt (D1162) and kaluza_v01_regression.txt (D1160). New jobs stamp at the end of the run.
 MAP: none
+
+## D1166 — TOOLS/JANUS — JMF3: JANUS-MF exact multi-field MS validated beyond quadratic [VALIDATED]
+Lock PREREG_JMF3_nonquadratic (+DEVIATIONS D1–D3, all written before reruns: two MMC side outputs that need V''' switched off —
+running-of-running and its δN-SR block, neither feeds the exact n_s, r; axion φ_init by a fixed e-fold rule → (22, 26), N_tot 181.1).
+Results vs MultiModeCode exact (pivot 55 e-folds before ε=1):
+ M1 2-field quartic (λ 1e-13, 9e-13; φ_init 20, 20): n_s 0.928813 vs 0.928811 (|Δ| 1.4e-6), r 0.28546 vs 0.28547 (2.5e-5) — PASS.
+ M2 2-field N-flation axions (f = 10, 15.8): n_s 0.962302 vs 0.962299 (|Δ| 2.4e-6), r 0.12926 vs 0.12927 (4.0e-5) — PASS.
+With D1162 (quadratic, three mass ratios) Janus-MF now agrees with an independent exact code on 5 two-field models to ≤ 6.3e-6 in n_s and
+≤ 1.2e-4 in r. Provenance stamp written. Honest scope: sum-separable potentials only; non-separable and curved field space not yet tested.
+MAP: none

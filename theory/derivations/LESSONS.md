@@ -317,3 +317,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1163: let the framework, not each script, turn numbers into verdicts — one tested evaluator removes a whole class of verdict bugs.
 - D1164: turn each past mistake into an automatic check — the linter's test suite is this week's error log.
 - D1165: a result is only citable if you can prove which code, data and lock produced it — stamp at write time, re-check at cite time.
+- D1166: a reference code's crash in a side output is not a model failure — check which block raised it before touching the test; switch off only what doesn't feed the target, in writing, first.
