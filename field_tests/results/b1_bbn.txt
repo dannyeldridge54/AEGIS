@@ -1,0 +1,9 @@
+T1 lossless max|diff| = 0.0e+00 -> PASS
+T2 max|Yp PRIMAT - PArthENoPE| (dN=0,0.5,1) = 5.55e-04 -> PASS
+D/H PRIMAT vs PArthENoPE rel diff at Planck wb: +0.0562
+R1 primat: Yp=0.24721 (th 1.2e-04, wb 6.0e-05) pull +0.56 CONSISTENT; 1e5 D/H=2.4393 (th 0.0305, wb 0.0250) pull -1.77 CONSISTENT
+R1 parthenope: Yp=0.24674 (th 0.0e+00, wb 5.4e-05) pull +0.42 CONSISTENT; 1e5 D/H=2.5763 (th 0.0000, wb 0.0258) pull +1.25 CONSISTENT
+R2 BBN-only dN 95%: [-0.040, +0.405], best +0.180 (chi2min 2.02); SERAPIS dN=0 INSIDE
+R3 T=1e+05 GeV: t = 2.34e-17 s (16.6 decades before t_BBN ~ 1 s)
+R3 T=1e+06 GeV: t = 2.34e-19 s (18.6 decades before t_BBN ~ 1 s)
+B1 VALIDATED
