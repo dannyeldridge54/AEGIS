@@ -430,3 +430,4 @@ D1143  2026-11-17T18:18Z  A-side wino summary
 D1144  2026-11-17T18:23Z  B-side summary
 D1145  2026-11-17T18:27Z  C-side summary
 D1146  2026-11-17T18:30Z  J9b: sharper beta_s test on the PC - validated (median 3.1%); steep power laws show a resolved -6 to -10% systematic
+D1147  2026-11-17T18:31Z  D-side summary
