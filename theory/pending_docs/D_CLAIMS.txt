@@ -296,3 +296,4 @@ D1009  2026-11-17T05:16Z  R: Green-Schwarz Kahler term gives linear L tilt
 D1010  2026-11-17T05:19Z  R1 Green-Schwarz tilt equivalent at e^K level
 D1011  2026-11-17T05:28Z  R2 GS Kahler mixing: tilt stays linear in L
 D1012  2026-11-17T05:33Z  L0b2 own recombination z_d, r_d vs CAMB VALIDATED
+D1013  2026-11-17T05:34Z  D984 wide-grid alpha_s rho and Kairos
