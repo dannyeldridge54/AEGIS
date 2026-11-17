@@ -35,9 +35,9 @@ D = 10; gc = 4*sp.sqrt(D-1)/(D-2); xi = sp.sqrt(sp.Rational(2*(D-1), D-2))*y
 A = -(xi**2/2 - sp.log(xi))/(2*(D-1)); P = sp.Rational(D-2, 4)/sp.sqrt(D-1)*(xi**2/2 + sp.log(xi))
 Uf, Jf, eBf = setup(D, gc, A, P, y)
 c = float(sp.sqrt(sp.Rational(2*(D-1), D-2)))
-y1 = 1e-4/c; y2 = 6.0/c
-for z2 in (5.0, 6.0, 7.0):
-    pass
+y1 = 1e-4/c; y2 = 8.0/c
+Lc = [quad(eBf, y1, x/c, limit=500, epsrel=1e-12)[0] for x in (6.0, 7.0, 8.0)]
+Ls.append(f"L convergence (xi_max 6,7,8): {Lc}; rel change 7->8 = {abs(Lc[2]/Lc[1]-1):.1e}"); print(Ls[-1], flush=True)
 res = {}
 for bc in ('D', 'N'):
     m2s, L = spectrum(Uf, Jf, eBf, y1, y2, bc)
