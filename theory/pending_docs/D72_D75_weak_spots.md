@@ -12503,3 +12503,30 @@ to 1e-6; adiabatic limit reached (P_R change over the last e-fold ≤ 3e-12). Ja
 tensor route, see TOOLKITS_PLAN). Note: the ~9e-5 offset is similar in sign and size to Q9's in JMF6 (9.3e-5) — a common small systematic between the two
 codes' stencil/pivot conventions for strongly hierarchical masses, well inside the 2e-4 bar; recorded, not chased.
 MAP: none
+
+### D1208 — B tick: the 2026 joint N_eff (Goldstein & Hill, 2.990 ± 0.070) puts τ_i SU(2) dark radiation at +3.1σ (excluded at 95%); U(1) is at +1.5σ; the SERAPIS base is at +0.8σ (2026-11-17)
+- [LEFT · literature, new to the notes] **arXiv:2603.13226** (Goldstein & Hill, Columbia; 13 Mar 2026), "A 2% determination of N_eff from primordial element abundance, CMB, and BAO measurements":
+  - N_eff = 2.990 ± 0.070 (68%), from LBT Y_p + D/H + Planck/ACT DR6/SPT-3G D1 (no low-ℓ EE) + DESI DR2 BAO.
+  - 95% bounds with the ΔN_eff > 0 prior: ΔN_eff < 0.107 (with BAO), < 0.091 (without BAO), < 0.116 / < 0.088 with low-ℓ EE.
+- **Also (arXiv:2608.07453, already in the notes):** CMB-only Planck+ACT+SPT N_eff = 2.82 ± 0.12.
+  - Forecasts: σ(N_eff) = 0.045 for SO by 2034; 0.069 for SPT Ext-10k with data to 2026.
+  - CMB-S4 was not carried forward (2025 agency decision).
+- **SERAPIS dark-radiation cases (N_eff = 3.044 + ΔN_final from LINX, which is the CMB-era quantity), pulls against the two N_eff values (my arithmetic):**
+
+  | Case | vs Goldstein–Hill 2.990 ± 0.070 | vs CMB-only 2.82 ± 0.12 |
+  |---|---|---|
+  | base (ρ, ΔN = 0) | +0.8σ | +1.9σ |
+  | τ_i U(1), 0.054 | +1.5σ | +2.3σ |
+  | τ_i SU(2), 0.161 | **+3.1σ** (and above ΔN < 0.107 at 95%) | +3.2σ |
+  | SU(2)+gaugino, 0.301 | +5.1σ | +4.4σ |
+
+- **Independence:** Goldstein–Hill use the same LBT Y_p as B8, so this is NOT an independent confirmation of the helium-only verdict. It combines helium with the CMB damping tail and BAO. The CMB-only number (2.82 ± 0.12) is independent of BBN and also disfavours SU(2) at 3.2σ.
+- **Consequence for SERAPIS:**
+  - The τ_i hidden sector must be unpopulated or U(1)-like.
+  - SU(2) is now disfavoured at ≈ 3σ by two partly independent routes: helium + CMB + BAO, and CMB alone.
+  - SU(2)+gaugino is excluded (B8, D1192, and here).
+  - The ρ branch (ΔN = 0) is fine.
+  - In the v3.3 draft at the next rung: change the SU(2) wording from "+1.7σ (helium)" to "≈ 3σ (N_eff, Goldstein–Hill 2026; CMB alone 3.2σ)" and add arXiv_2603_13226. Not done now.
+- **No computation.** The pulls are arithmetic on our existing ΔN_final values (B7/B8).
+VERDICT: SU(2) dark radiation is DISFAVOURED at ≈ 3σ; U(1) is OK at 1.5σ; the base is OK.
+MAP: none
