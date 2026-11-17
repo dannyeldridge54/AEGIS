@@ -11,7 +11,7 @@ Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN
 ## AEGIS — Janus-LT / Hyperion (late universe)
 7. L11 Cobaya MCMC check of L7 — DONE (D1205)
 8. CosmoPower emulator trial (PC, Python 3.11 env) — OPEN
-9. Janus-LT growth + SN joint w0wa — BLOCKED (compressed CMB prior carries no A_s, so fσ8 adds only shape; needs an A_s prior fetched from Planck first)
+9. Janus-LT growth + SN joint w0wa — OPEN (A_s prior fetched: Planck 2018 VI Table 2, TT,TE,EE+lowE+lensing ln(10^10 A_s) = 3.044 ± 0.014, n_s 0.9649 ± 0.0042, τ 0.0544 ± 0.0073; label as an approximation in w0wa — A_s from a ΛCDM fit; σ8 via L9c machinery with w0wa growth)
 10. L7 uses DESI DR2 BAO already (tools/janus_lt/desi.py, arXiv 2503.14738 Table IV) — DONE (D1042)
 ## AEGIS — strings / KALUZA
 11. S4E2 independent check of S4e masses (PC) — RUNNING (limit ~17:20 CT)
