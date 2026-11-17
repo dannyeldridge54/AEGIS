@@ -11626,3 +11626,9 @@ MAP: none
   - (3) SERAPIS theory tracks.
   - (4) Slower ticks to save credits.
 MAP: none
+
+## D1148 — LEFT/Janus — J10 (PC runner): Janus vs exact MS at NEW pivots N* = 45, 55, 65 over the 16 J7b models — accuracy holds [computed]
+Lock PREREG_J10_nstar_sweep; ran on Danny's PC in ~2.5 min (WSL, AEGIS_PC_RUNNER), results copied back. 48/48 points, no errors.
+Medians |Δn_s| 1.7e-6 (max 3.3e-5), |Δr/r| 7.6e-5, |Δα_s| 4.5e-7 → C1–C3 PASS → JANUS ACCURACY HOLDS AT NEW PIVOTS (same level as J7b at N* = 50, 60).
+Coverage now: 16 models × 5 pivots (45–65) for n_s, r, α_s vs exact; β_s validated (D1146).
+MAP: none
