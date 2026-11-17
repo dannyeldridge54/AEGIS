@@ -36,5 +36,5 @@ def coulomb_single(M, v, alpha):
     s = solve_ivp(lambda r, y: [y[1], M*(-alpha/r - E)*y[0]], [1e-9, R], [1e-9, 1.0], method='DOP853', rtol=1e-11, atol=1e-16)
     u, up = s.y[0, -1], s.y[1, -1]
     # Coulomb asymptotics contain a log phase; amplitude from u^2 + (u'/k_loc)^2 with local k_loc = sqrt(M(E + alpha/R))
-    kl = math.sqrt(M*(E + alpha/R)); A = math.hypot(u, up/kl)
+    kl = math.sqrt(M*(E + alpha/R)); A = math.hypot(u, up/kl)*math.sqrt(kl/k)   # WKB: amplitude ∝ 1/sqrt(k(r)) (DEVIATIONS D1)
     return 1/(A*k)

@@ -1,0 +1,13 @@
+B1 alpha=0.01 v=0.01: |s|^2=6.310664 exact=6.294941 rel=2.5e-03
+B1 alpha=0.01 v=0.003: |s|^2=21.117813 exact=20.943951 rel=8.3e-03
+B1 alpha=0.03 v=0.01: |s|^2=18.990277 exact=18.849556 rel=7.5e-03
+B1 alpha=0.03 v=0.003: |s|^2=64.381617 exact=62.831853 rel=2.5e-02
+B2 free limit: s=[1.00000000e+00 1.43552937e-08] dev=1.4e-08
+B3 first resonance of |s00|^2 at M = 2380 GeV (|s00|^2 = 3543.4)
+solver NOT VALIDATED (B1 False, B2 True, B3 True)
+Application [estimate]: line rate mass dependence, sigma_line ∝ |s_+-|^2 / M^2 (tree-level annihilation)
+  M=660 GeV: |s00|^2=1.231 |s+-|^2=0.195 R(M)=0.707; f_max Einasto=0.19, NFW=0.25, one-loop bracket Einasto 0.32-0.37; SERAPIS-E f=0.14
+  M=800 GeV: |s00|^2=1.367 |s+-|^2=0.325 R(M)=0.803; f_max Einasto=0.21, NFW=0.29, one-loop bracket Einasto 0.37-0.42
+  M=1000 GeV: |s00|^2=1.663 |s+-|^2=0.632 R(M)=1.000; f_max Einasto=0.24, NFW=0.32, one-loop bracket Einasto 0.41-0.47; SERAPIS-E f=0.26
+  M=1400 GeV: |s00|^2=3.027 |s+-|^2=2.278 R(M)=1.840; f_max Einasto=0.24, NFW=0.33, one-loop bracket Einasto 0.42-0.49
+  M=1850 GeV: |s00|^2=10.407 |s+-|^2=13.035 R(M)=6.029; f_max Einasto=0.18, NFW=0.24, one-loop bracket Einasto 0.31-0.36; SERAPIS-E f=0.67
