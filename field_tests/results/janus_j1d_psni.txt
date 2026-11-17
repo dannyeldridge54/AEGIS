@@ -1,0 +1,3 @@
+field-value end y_end = 7.134241e-04 (ASPIC x_end); start y0 = 0.6; N_tot Janus 181.0947, exact background 181.0947
+PSNI a=1e-3 f=5 N*=50 (exact ns 0.980071 r 7.978e-05 a -3.943e-04) | dns J 3.1e-07 A 3.6e-04 | dr/r J 4.2e-05 A 1.8e-02 | da J 1.8e-07 A 5.2e-07 | J 1.5 ms
+PSNI a=1e-3 f=5 N*=60 (exact ns 0.983358 r 6.652e-05 a -2.745e-04) | dns J 1.3e-07 A 2.6e-04 | dr/r J 3.0e-05 A 1.6e-02 | da J 2.0e-07 A 2.8e-07 | J 1.2 ms

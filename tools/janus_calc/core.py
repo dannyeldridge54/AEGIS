@@ -9,12 +9,16 @@ from scipy.interpolate import CubicSpline
 CE = 0.5772156649015329 + math.log(2) - 2
 class Model:
     """V(phi) from a callable; dV from a callable or a finite difference. Background integrated once and cached."""
-    def __init__(self, V, dV, phi0, Nmax=400.0):
+    def __init__(self, V, dV, phi0, Nmax=400.0, end_y=None):
+        """end_y (J1d): end inflation when the field reaches end_y (for potentials where eps_H = 1 is never reached
+        before a singular point, e.g. PSNI); default: eps_H = 1."""
         self.V, self.dV = V, dV
         def rhs(N, y):
             p, pn = y; eps = pn*pn/2
             return [pn, -(3-eps)*pn - (3-eps)*dV(p)/V(p)]
         ev = lambda N, y: y[1]**2/2 - 1.0; ev.terminal = True; ev.direction = 1
+        if end_y is not None:
+            ev = lambda N, y: y[0] - end_y; ev.terminal = True; ev.direction = 0
         p0 = -dV(phi0)/V(phi0)                       # slow-roll start
         s = solve_ivp(rhs, [0, Nmax], [phi0, p0], events=ev, rtol=1e-12, atol=1e-14, dense_output=True, method='DOP853')
         if not s.t_events[0].size:   # J1c: stiff fallback for singular ends (e.g. log potentials)
