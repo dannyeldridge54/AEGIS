@@ -1,0 +1,5 @@
+G1 T_ICRS_GAL vs Gaia A_G: max 1.9e-16
+G2 (l,b) vs A_G direct: max 5.7e-14 deg
+G3 Sun position 6.8e-13 kpc, Sun velocity 0.0e+00 km/s, GC -> origin 1.6e-15 kpc (Sun at [-8.      0.      0.0208])
+VERDICTS: G1=PASS G2=PASS G3=PASS -> A8b VALIDATED
+Reported: astropy Galactic vs Gaia convention: max 6.93e-06 deg (24.9 mas)
