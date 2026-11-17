@@ -11042,3 +11042,24 @@ Lock pushed before run. Result field_tests/results/b4_li7.txt. External code PRy
 - Hyperion gain: a full BBN network (Y_p, D, ³He, ⁷Li) with NP hooks (ΔN_eff, extra species, τn), runnable in the cloud. It could become tools/janus_astro/bbn_net.py, a wrapper around the external clone, after B4b validates it.
 VERDICT: Li-7 CONSISTENT with the literature (at Ωbh2 0.02230); B4b (Planck ω_b and the Y_p offset) next B tick.
 MAP: none
+
+## D1105 (CENTRE, Djl loop (C), locked PREREG_C6 + DEVIATIONS D1): the local escape speed pulls the OTHER way — Gaia's 528 (+24/−25) km/s (Deason+2019) wants halo amplitude ≥ 1.1 (to 2 r200), while the K-giant M200 (D1097) wants ≤ 1.1; the standard MWPotential2014 (s = 1) is 2.1σ low on v_esc; all Milky Way constraints overlap only at s ≈ 1.1
+Lock pushed before run. D1: galpy's bulge potential (PowerSphericalPotentialwCutoff) has a constant offset Φ(∞) = +1.345 (natural units), which broke the "to infinity" definition. Fixed via DEVIATIONS before the rerun; definition (i) was unaffected. Result field_tests/results/c6_vesc.txt.
+- Data (quoted): v_esc(8.3 kpc) = 528 +24/−25 km/s; M200,tot = 1.00 +0.31/−0.24 e12 (Deason+2019).
+- Escape speed to 2 r200 (definition labelled unverified) / to infinity:
+  - s = 0.8: 439 (−3.6σ) / 471 (−2.3σ) → NOT
+  - s = 1.0: 475 (−2.1σ, NOT) / 509 (−0.7σ)
+  - s = 1.1: 493 (−1.4σ) / 528 (0.0σ) → CONSISTENT
+  - s = 1.2: 509 (−0.7σ) / 545 (+0.7σ) → CONSISTENT
+- Joint reading:
+  - D1089 dispersions: s ≤ 1.0–1.2 depending on β.
+  - D1093 enclosed mass: 0.8–1.2.
+  - D1097 M200: K giants ≤ 1.1, BHB anything.
+  - Escape speed: ≥ 1.1 (2 r200 definition) or ≥ 0.9 (infinity).
+  - The common window is s ≈ 1.0–1.1 (infinity definition) or ≈ 1.1 (2 r200). The standard model sits at the light edge.
+- For the wino (W2): s = 1.1 gives J and ρ_⊙ about 10% above standard (ρ_⊙ ≈ 0.315 GeV/cm³ [interpolated]). The W2 verdicts (≤ 1 TeV pass, 1.85 fail) hold across 0.8–1.2.
+- Caveats:
+  - The definition of v_esc (2 r200 vs ∞) moves the answer by 35 km/s; I should source Deason's exact r_max.
+  - One-parameter halo scaling: a heavier halo with a different scale radius could satisfy both M200 and v_esc.
+VERDICT: tension between v_esc and the K-giant M200 is resolved only at s ≈ 1.1; the standard model is mildly too light (2.1σ on v_esc, 2 r200 definition).
+MAP: none
