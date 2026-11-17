@@ -1725,3 +1725,6 @@ Touches: none.
 
 ## D1023: J1d — PSNI scored with a field-value end (exact ε_H never reaches 1 before the singularity); Janus n_s ~1000× better
 - [computed] end_y option added; 42/42 fixed-N* points Janus better.
+
+## D1024: R6 — GS coefficient C/8π² = 0.380 (E₈), sign OK; ε = 6e-5 needs Re S ≈ 3200 (cf. D975 Im S Im T ≳ 4900)
+- [literature] hep-th/9202059 Eqs. 1.1, 1.4, 3.9, 3.13, 4.15, 4.19.
