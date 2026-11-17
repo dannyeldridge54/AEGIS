@@ -10824,3 +10824,16 @@ Lock pushed before run; result field_tests/results/c2_halo_sigma.txt.
   - The data are a 2005 sample of 240 objects. Gaia-era profiles (e.g. Bird+2019 tables) would sharpen this; not fetched (abstract has no numbers).
 VERDICT: CONSISTENT for β ≤ 0.5 at the standard halo; halo × 1.5 disfavoured for measured anisotropy.
 MAP: none
+
+## D1090 (CENTRE, Djl loop (D), locked PREREG_A3e, diagnostic): FOUND the neutron-star radius mismatch behind A3a–A3d — the REFEREE (compact.tov) had a hard-coded absolute pressure tolerance P_c·1e-16 that is 0.4–5× the surface pressure, so its surface was loose; with a tight tolerance it agrees with ns.tov_tidal to 3e-13–8e-11 — HYPOTHESIS CONFIRMED
+Lock pushed before run; result field_tests/results/janus_astro_a3e.txt.
+- atol_P/p_surf = 0.36 / 1.44 / 5.34 at log ρ_c = 14.8 / 15.0 / 15.2. This matches the pattern of the misses: 4e-7 / 1.1e-5 / 1.0e-5 (worst where the tolerance exceeds the surface pressure).
+- Same RHS with atol_P = P_c·1e-30: R agrees with ns to 8.1e-11 / 3.0e-13 / 3.8e-12. Masses are identical to 8 digits.
+- Consequences:
+  - Hyperion's NS module (ns.tov_tidal) was right all along. A3a–A3d N4 failed on the referee's tolerance.
+  - D1058/D1059's surface-definition story (A3c) and D1086's "piecewise-boundary" guess were both wrong. This note supersedes them.
+  - The physics numbers (SLy/AP4 M_max, R_1.4, Λ, data comparisons) are unchanged.
+- Fix route (per lock, not done here): DEVIATIONS_A3 → compact.tov default atol_P = P_c·1e-30. Then re-lock N4′ as A3f with the original 1e-7 criterion.
+  - compact.tov's earlier A0/A0s results used P → 0 with the same tolerance. The Oppenheimer–Volkoff 0.7102 M_⊙ check is a mass, which is insensitive, but A3f should re-run A0's TOV checks too, to be safe.
+VERDICT: diagnostic CONFIRMED; A3f (fix + re-lock) next time D comes round.
+MAP: none
