@@ -1628,3 +1628,6 @@ Touches: none.
 
 ## D989: Janus calculator battery A (locked D990) VALIDATED
 - [computed] 24/24 SERAPIS points: |Δn_s| ≤ 2.4e-5, |Δr/r| ≤ 0.013%; stress set inside envelope; ~4e4× faster.
+
+## D991: ρ tilt origin (estimate)
+- [derived] εL has the weight-1 soft-threshold form (D950). [estimate] Hubble-induced soft masses: ε ≈ N c² M_KK²/(48π² M_P²) = 4.6e-6 (N=128, c=1, M_KK=1e16); fitted 6e-5 needs M_KK ≈ 3.6e16 or c ≈ 3.6.
