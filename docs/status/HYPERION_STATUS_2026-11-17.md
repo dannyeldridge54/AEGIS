@@ -24,3 +24,18 @@
     - SLy vs AP4 needs SNR 35–41 (D1101).
     - Hyperion 1.1 draft notes in releases/hyperion-1.1/CHANGES_SINCE_1.0.md (D1102). This is a major rung for Hyperion; awaiting "Publish".
 - Open: A1e (blind NLO check), dust/Mapper per-star data (PC), Li-7 calculator, 3PN spin–spin.
+
+## Update 16:55 UTC (D1103–D1115)
+- A:
+  - NLO CMB band ends at 2.76 TeV; the thermal wino is allowed (D1103).
+  - γγ line: SERAPIS-E 1 TeV passes H.E.S.S. with ~×2 margin for every Milky Way model (D1110, D1114). D1112a corrected.
+- B:
+  - Three BBN codes agree (D1107); bbn_net LINX module VALIDATED (D1109).
+  - Y_p convention bug fixed (D1082a, via D1106).
+  - Li-7 reproduced (D1104).
+- C:
+  - Escape speed confirmed at 2 r200 (D1108).
+  - McMillan17 vs MWPotential2014: the MW data disagree; bracket M200 0.7–1.3e12 (D1105, D1112).
+- D:
+  - Tides 6/6.5PN validated. 7PN differs from LAL by 0.33%, explained (LAL coefficient via ripplegw), but which is correct is open (D1111, D1113, D1115).
+- Hyperion 1.1 notes updated (releases/hyperion-1.1/CHANGES_SINCE_1.0.md). Still awaiting Danny's "Publish" and a linked PC.

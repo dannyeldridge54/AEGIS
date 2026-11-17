@@ -31,3 +31,23 @@ Status: draft, collected 17 Nov 2026 (D1081–D1101). Packaging and a Zenodo upl
 ## Still blocked
 - Dust maps and the per-star Star Mapper data (need Danny's PC).
 - 3PN spin–spin terms (A2b2), realistic stars (A1), a Li-7 calculator.
+
+## Update 17 Nov 16:55 UTC (D1103–D1115)
+### More validated
+| Module | What it does | Checked against | Note |
+|---|---|---|---|
+| bbn_net | full BBN network (Y_p mass/nucleon, D, ³He, ⁷Li; ΔN_eff, τn, rate nuisances) on the LINX engine | PRIMAT table, PRyMordial, LINX: three codes agree (Y_p 3e-4, D/H 0.17%, Li 2.5%) | D1104, D1106, D1107, D1109 |
+| gw tides 6.5PN | tail tidal term (Henry–Faye–Blanchet 2020) | LALSuite ≤ 9e-10 rad | D1111 |
+| wino γγ line | absolute σv_γγ from the Sommerfeld vector; J-factors per Milky Way model | H.E.S.S. 2018 benchmark J within 5% | D1110, D1114 |
+### Physics results
+- Wino at NLO vs the CMB: band 2.18–2.62 TeV (f_eff 0.14) up to ≤ 2.76 TeV (0.41). The thermal wino (2.84–2.86) is allowed, with f_max ≥ 1.19 (D1103; the NLO convention was chosen post hoc).
+- SERAPIS-E 1 TeV wino vs the H.E.S.S. γγ line: f_max 0.50–0.68 across the Milky Way bracket vs f = 0.26 → PASS with ~×2 margin (D1110, D1114).
+- Milky Way: the data sets disagree. K-giant Jeans masses want a light halo; the escape speed and BHB stars want a heavy one. MWPotential2014 and McMillan17 bracket them: M200 ≈ 0.7–1.3e12 M_⊙, ρ_⊙ ≈ 0.29–0.39 GeV/cm³ (D1105, D1108, D1112).
+- Li-7: 5.56–5.70e-10 from two networks; the lithium problem (factor ~3.5) is reproduced (D1104, D1107).
+### Not validated / open
+- 7PN tidal term: 0.33% coefficient difference vs LAL, fully explained (LAL's coefficient via ripplegw), but which is correct is open (D1111, D1113, D1115).
+- NLO wino convention (√2) is still post hoc; no blind second number yet (D1095, D1099, D1103).
+### Corrections
+- D1082a: bbn.Yp is the nucleon fraction. The SERAPIS Y_p pull is +0.17σ (was +0.56σ); bbn.Yp_mass added.
+- D1112a: the heavy-halo line estimate (f_max → 0.27) was mis-anchored; the real J-factors give 0.50–0.55.
+- D1087 superseded by D1103: the "marginal" thermal wino is allowed at NLO.
