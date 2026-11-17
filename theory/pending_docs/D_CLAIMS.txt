@@ -292,3 +292,4 @@ D1005  2026-11-17T04:40Z  Dp NULL: P3 / eps at tau=i, no new 2026 source
 D1006  2026-11-17T05:04Z  L0b sound horizon r_d vs CAMB
 D1007  2026-11-17T05:07Z  R: rho-tilt potential source candidate - duality-invariant gaugino condensation
 D1008  2026-11-17T05:15Z  J7c2 ASPIC reheating route head-to-head
+D1009  2026-11-17T05:16Z  R: Green-Schwarz Kahler term gives linear L tilt
