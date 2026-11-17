@@ -11000,3 +11000,12 @@ Lock pushed before run; result field_tests/results/c5_eos_forecast.txt.
   - Treat these as necessary, not sufficient, conditions.
 VERDICT: computed forecast; O4 needs a nearby (≲ 60 Mpc) event, A+ reaches about 100 Mpc [upper bounds].
 MAP: none
+
+## D1102 (CENTRE, Djl loop (D), documentation; publishing-rule check): Hyperion 1.1 draft release notes written (releases/hyperion-1.1/CHANGES_SINCE_1.0.md) — five new validated modules (bbn, jeans, fixed ns, GW tides, wiring) and nine AEGIS physics results since 1.0; NOT packaged or uploaded
+- Publishing rule check: is this a major rung?
+  - YES for Hyperion. The NS module turned from NOT VALIDATED to VALIDATED, GW tides and BBN were added, and the 1.0 README's "NOT validated: neutron stars" line is now outdated.
+  - Two old documents need updating at publish time: the 1.0 README's NS row, and the "sommerfeld resonance 2.38 TeV" entry (it should mention coupling-scheme dependence, ±0.1 TeV, D1087).
+  - No new SERAPIS paper is needed (all SERAPIS-facing results are consistency checks, no new prediction), except possibly a sentence on the τ=i N_eff falsifiability (D1088/D1092). Flagged for the next paper revision.
+- Action held: packaging (zip + SHA256SUMS + CITATION 1.1) and the Zenodo upload wait for Danny's "Publish" and a linked PC (standing rule).
+VERDICT: draft ready; awaiting "Publish".
+MAP: none
