@@ -1,0 +1,5 @@
+LINX key_PRIMAT_2023, Obh2=0.02242, Neff_final=3.0453, run 68s
+Yp(mass)=0.24592 Yp^BBN=0.24725 1e5 D/H=2.4360 1e5 He3/H=1.0280 1e10 Li7/H=5.6987
+X1 vs PRIMAT table: dYp=-0.00129, dDH=-0.0013 -> CONSISTENT
+X2 Li7 5.699 vs PRyMordial 5.497 (at 0.02230) and quoted 4.94+-0.72 (+1.05 sigma)
+X3 Yp vs PRyMordial 0.24555: +0.00037
