@@ -1,0 +1,5 @@
+{"t": "2026-11-17T19:16Z", "dnote": "D1039", "quantity": "beta_s", "claimed_rel": 0.05, "reference_spread_rel": 0.07, "reference": "exact MS 2-stencil", "verdict": "VALIDATED", "precision_honest": false}
+{"t": "2026-11-17T19:16Z", "dnote": "D1146", "quantity": "beta_s", "claimed_rel": 0.031, "reference_spread_rel": 0.02, "reference": "exact MS deg-7 2-stencil", "verdict": "VALIDATED", "precision_honest": true}
+{"t": "2026-11-17T19:16Z", "dnote": "D1149", "quantity": "beta_s error law", "claimed_rel": 0.35, "reference_spread_rel": 0.02, "reference": "slope test", "verdict": "CONFIRMED", "precision_honest": true}
+{"t": "2026-11-17T19:16Z", "dnote": "D1133", "quantity": "sigma8", "claimed_rel": 0.014, "reference_spread_rel": 0.0, "reference": "CAMB 2.0.5", "verdict": "VALIDATED", "precision_honest": true}
+{"t": "2026-11-17T19:16Z", "dnote": "D1141", "quantity": "scalar KK masses", "claimed_rel": 0.03, "reference_spread_rel": 0.05, "reference": "BTR Eq. 5.14 (2 sig. figs)", "verdict": "NOT VALIDATED", "precision_honest": false}

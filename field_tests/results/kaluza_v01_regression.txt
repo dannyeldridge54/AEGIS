@@ -1,0 +1,5 @@
+T1 order q = 0.84458 (D1038 0.84459): PASS
+T2 Aitken on recorded S4c3 values: m* = 0.778184 (D1036 0.778184): PASS
+T3 scalar condition: min -0.223607 vs threshold -0.25 stable True (D1140 −0.223607): PASS
+T4 tensor m1² at ε=1e-5 through the package: 0.7791277336937695 (S4c3 0.7791277337): PASS
+KALUZA v0.1 REGRESSION PASS
