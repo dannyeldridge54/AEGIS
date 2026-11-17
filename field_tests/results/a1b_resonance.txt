@@ -1,0 +1,4 @@
+their inputs: s_W2=0.22290 alpha2=0.03479 -> peak 2.2855 TeV vs 2.282 (rel +0.0015) -> PASS
+our defaults (alpha_W 0.0335, s_W2 0.231, dm 0.1645): peak 2.3783 TeV
+NLO shift quoted +0.137 TeV -> D1081 CMB band ~2.0-2.7 TeV moves to ~2.14-2.84 TeV [estimate, rigid shift]
+A1b VALIDATED
