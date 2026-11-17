@@ -10741,3 +10741,17 @@ MAP: none
 - Caveat: comparison by eye to grid resolution, mixed CMB datasets (WMAP+ACT/SPT vs Planck 2018), unknown f_eff in the paper.
 VERDICT: A1 CROSS-CHECKED — consistent with literature.
 MAP: none
+
+## D1085 (CENTRE, Djl loop (B2), locked PREREG_B2): Chronos → BBN wired — both SERAPIS branches' gravitational-wave background adds ΔN_eff ≤ 7e-12, ten orders below BBN's reach; light elements unchanged and CONSISTENT; B2 VALIDATED
+Lock pushed before run; result field_tests/results/b2_chronos_bbn.txt.
+- Conversion, derived from the N_eff definition with our validated Ω_γh² = 2.473e-5: one ΔN of GW energy is ∫Ω_GW h² d ln f = 5.616e-6. This matches the commonly quoted 5.6e-6 to 0.3%; that literature value is from memory and reported as a check only.
+- ΔN_GW bound: max listed A7c Ω_GW h² × ln(f_end / 1e-18 Hz). This overestimates the true integral, because Ω_GW falls above the knee.
+  - τ=i (T_R 1e6 / 3e6 GeV): ≤ 6.5e-12 / 7.3e-12
+  - ρ (T_R 3.2e8 / 3.0e9 GeV): ≤ 6.7e-12 / 6.6e-12
+- Dark radiation: ρ = 0 (D725). τ=i: no computation exists in the D-notes, so it was set to 0 and flagged OPEN, the only real gap this tick found.
+- T1: the wiring is lossless (bit-identical). PASS.
+- T2: all four histories sit inside D1082's window [−0.04, +0.41]. Y_p shifts by ≤ 1e-13; pulls stay at +0.56 (Y_p) and −1.77 (D/H) → CONSISTENT.
+- T_R vs BBN: every branch reheats at ≥ 1e6 GeV, about 9 decades above the MeV scale where BBN needs a thermal bath. This is reasoning; no low-reheating limit was fetched.
+- Reading: BBN cannot distinguish SERAPIS's branches. Its only BBN-relevant knob is dark radiation, which is zero at ρ and uncomputed at τ=i. The GW knee (W1: T_R ↔ n_s ↔ knee frequency) remains the discriminating early-universe observable.
+VERDICT: B2 VALIDATED; physics CONSISTENT; τ=i dark radiation OPEN.
+MAP: none
