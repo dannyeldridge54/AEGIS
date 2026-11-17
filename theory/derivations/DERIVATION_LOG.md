@@ -1763,3 +1763,4 @@ Touches: none.
 ## D1042: L7 — joint BAO+CMB+Pantheon+ w0wa: w0 −0.853 ± 0.053, wa −0.518 ± 0.200 vs DESI −0.838/−0.62 → CONSISTENT; Δχ² −7.7
 ## D1043: R — hidden condensate gives an L-term ∝ (δ_GS/16π² + b_a): tilt size is a difference of two O(1e-2) terms; 6e-5 needs ~0.5% cancellation [estimate]
 ## D1044: correction to D1043 — condensate η-exponent is absorbed by the dilaton shift S'=S+δ ln η² (LRW 2212.03876 Eqs. 2.12–2.21): no free cancellation; size problem stands
+## D1045: R5 — with the consistent S'-frame tilt variable ln(2 Im T) no κ reproduces SERAPIS-ρ n_s → FAILS; D1010/D1017 used an inconsistent K/W pair

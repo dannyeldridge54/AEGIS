@@ -10370,3 +10370,17 @@ in k(S') with ln(2 Im T) (not L = −ln(2 Im T|η|⁴)); the overall Z(T) ∝ e^
 Verdict: D1043's route WITHDRAWN. D1021's size problem STANDS (coefficient ~δ_GS/(2Re S') ≫ 6e-5). New, sharper question for R: the tilt
 variable in the S' frame is ln(2 Im T), not L — does D1010's match (which used L) survive with ln Im T? (lock first; next R step).
 MAP: none
+
+## D1045 — DEEP/RIGHT (R track) — R5: in the consistent frame the GS tilt does NOT reproduce SERAPIS-ρ; D1010/D1017 used an inconsistent pair [computed + derived]
+Lock PREREG_R5_ln_imT_tilt. Same code as R1 with the tilt variable ℓ = −ln(2 Im T) (the S'-frame variable, D1044) instead of L.
+Scan of n_s(N*=49.49) − n_s(published) over κ ∈ {±1e-3, ±0.01, ±0.05, ±0.2}: −6.6e-3 (κ=−1e-3), −1.5e-2 (κ=+1e-3); |κ| ≥ 0.01 breaks the
+model (pole of 1/(1 − κℓ) or no inflation: NaN / 1e3+ values). No sign change → NO κ REPRODUCES n_s → R5 FAILS (as locked).
+Caveat (not chased): the locked grid is coarse; a crossing strictly inside (−0.01, −0.001) or (0.001, 0.01) is not excluded by this scan.
+[derived] Why this matters: LRW (2212.03876 Eqs. 2.16–2.18) show W = Ω(S')H(T)/η⁶ with S' = S + δ_GS ln η². A dilaton stabilised by Ω
+(F-term or SUSY minimum, D1017) fixes S', not S. D1010/D1017 combined K ⊃ −ln(2Re S − δL) (original frame) with Ω(S) and no extra
+η^{2kδ/b} in W — an inconsistent pair. Consistently, the T-dependence at fixed S' runs through ℓ = −ln(2 Im T), and with ℓ the ρ match fails.
+Status change: track R's GS route goes from "candidate with a computed match (D1010) + sign fixed at a SUSY dilaton (D1017)" to
+"match NOT reproduced in a consistent frame (this note)". D1010's numbers stand as a statement about the form V = P/(1 − κL) only.
+Next R step: either (i) a finer locked κ scan to close the caveat, or (ii) find a source where the stabilised modulus is S (not S'),
+i.e. a non-condensate dilaton stabilisation, which would restore L.
+MAP: node=eps_tilt status=estimate touches=[] ripple=no

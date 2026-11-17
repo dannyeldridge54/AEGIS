@@ -290,3 +290,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1042: reuse a validated likelihood file and add one new block per lock (L4 + L6 → L7) so a failure points at one piece.
 - D1043: before declaring a coefficient 'too large', include every place the same log enters (K and W); sizes can be differences.
 - D1044: before claiming two terms can cancel, check whether a field redefinition maps one into the other; then they are one term.
+- D1045: when a field redefinition exists, decide which variable the stabilisation actually fixes before testing — the frame choice is physics, not convention.
