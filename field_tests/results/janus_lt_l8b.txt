@@ -1,0 +1,2 @@
+CHW priors + DESI DR2 BAO, flat LCDM: chi2_min = 14.05 (dof 13, 1.08/dof) at h = 0.6864, wb = 0.02252, wc = 0.11903, Om = 0.3018
+C1 fit acceptable: PASS; C2 |h - 0.6842 (L4)| = 0.0022 <= 0.005: PASS -> ROBUST
