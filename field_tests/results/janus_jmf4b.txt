@@ -1,0 +1,3 @@
+N1 quad+quartic intxn: MMC-coded d2V vs FD of MMC dV 1.1e-10 | Janus-MF ns 0.955061 r 0.20331 | MMC ns 0.955063 r 0.20331 | C1 |d| 2.6e-06 PASS; C2 rel 9.5e-07 PASS
+N2 off-diagonal mass: MMC-coded d2V vs FD of MMC dV 1.4e-10 | Janus-MF ns 0.947980 r 0.15881 | MMC ns 0.948086 r 0.15879 | C1 |d| 1.1e-04 PASS; C2 rel 7.2e-05 PASS
+JMF4b: JMF4 FAILURE EXPLAINED BY MMC's DERIVATIVE CODE
