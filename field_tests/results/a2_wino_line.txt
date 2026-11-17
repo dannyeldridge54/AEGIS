@@ -1,0 +1,2 @@
+LO: |s+-|^2=0.719 sv_gg=3.171e-27 cm3/s f_max=0.355 (one-loop x1/3-1/4: 0.615-0.710); SERAPIS-E f=0.26 -> PASS at tree-SE
+NLO(sqrt2, post hoc): |s+-|^2=0.592 sv_gg=2.612e-27 cm3/s f_max=0.391 (one-loop x1/3-1/4: 0.678-0.783); SERAPIS-E f=0.26 -> PASS at tree-SE
