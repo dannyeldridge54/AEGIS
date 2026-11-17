@@ -324,3 +324,4 @@ D1037  2026-11-17T07:54Z  D1035a correction: kmii is an ASPIC failure, not parse
 D1038  2026-11-17T07:54Z  S4c3 order q = (D-2)/((D-1)(1+delta)) derived from endpoint exponents
 D1039  2026-11-17T08:15Z  J9: Janus beta_s vs exact MS validated at ~5%
 D1040  2026-11-17T08:19Z  R track: IIB one-loop Kahler (BHK) uses E_2 (s=2), not s=1 - lead closed
+D1041  2026-11-17T08:32Z  L6: Janus-LT reproduces Pantheon+ SN-only Omega_m
