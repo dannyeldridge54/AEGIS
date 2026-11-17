@@ -38,3 +38,12 @@ def coulomb_single(M, v, alpha):
     # Coulomb asymptotics contain a log phase; amplitude from u^2 + (u'/k_loc)^2 with local k_loc = sqrt(M(E + alpha/R))
     kl = math.sqrt(M*(E + alpha/R)); A = math.hypot(u, up/kl)*math.sqrt(kl/k)   # WKB: amplitude ∝ 1/sqrt(k(r)) (DEVIATIONS D1)
     return 1/(A*k)
+
+def single_channel(M, v, V, alpha_tail=0.0, R=None):
+    """Generic single-channel s-wave Sommerfeld factor S = |psi(0)|^2 for potential V(r) (GeV), relative velocity v.
+    alpha_tail: coefficient of a long-range -alpha_tail/r tail (attractive > 0) for the WKB-local amplitude (method of coulomb_single)."""
+    E = M*v*v/4; k = math.sqrt(M*E); R = R or 400/k
+    s = solve_ivp(lambda r, y: [y[1], M*(V(r) - E)*y[0]], [1e-9, R], [1e-9, 1.0], method='DOP853', rtol=1e-11, atol=1e-16)
+    u, up = s.y[0, -1], s.y[1, -1]
+    kl = math.sqrt(M*(E + alpha_tail/R)); A = math.hypot(u, up/kl)*math.sqrt(kl/k)
+    return (1/(A*k))**2
