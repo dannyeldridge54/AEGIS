@@ -12559,3 +12559,22 @@ MAP: none
 - **Next (optional, lock first):** a 4-parameter fit (disc mass and scale length plus NFW ρ_s, r_s) to Eilers, with a prior on r_s (10–25 kpc) and on the local baryon surface density (as in 2407.12551's constraint).
 VERDICT: Q1 FAIL (marginal), Q2 PASS. The refit is rejected as physically implausible. McMillan17 is retained.
 MAP: none
+
+### D1211 — 7PN tidal (unparked from D1120): our HFB 7PN SPA coefficients match an INDEPENDENT 2024 derivation; LALSuite's 0.33% difference is now the outlier (2026-11-17)
+- [CENTRE · literature, HTML source] **Source:** arXiv:2412.01706v2 ("Radiating Love: adiabatic tidal fluxes and modes up to NNLO PN order"), read through its arXiv HTML rendering (built from the LaTeX source).
+  - This is better than the PDF-layout extraction that stalled D1120, but still passes through a summariser.
+- **Their Eq. 4.48:** Ψ_SPA^AT = −(9v⁵/16ν²)[…]. The v⁴ (7PN) coefficient is:
+  - λ̃₊: 136190135/27433728 + 978554825ν/4572288 − 281935ν²/6048 + 5ν³/3;
+  - δλ̃₋: 136190135/27433728 + 213905ν/2592 + 1585ν²/1296.
+  - The v⁰, v², v³ terms are also identical to ours.
+- **These are character-for-character the coefficients in tools/janus_astro/gw.py:taylorf2_tidal_dphase_hfb** (D1111).
+- **The paper states** (quoted, short): the corrected HFB result (arXiv v4, its ref. [46]) "agrees with the above expression of Ψ_SPA^AT". Its results "were used to identify a mistake in the previous result [45], which after correction [46] agree with ours."
+- **Consequence:**
+  - Two independent calculations (HFB v4 corrected, and Mandal et al. 2024) agree with our coefficients.
+  - The 0.33% (7e-4 rad) difference from LALSuite, the ripplegw extraction in D1113–D1117, is therefore either a LAL-side transcription/convention difference or our reading of LAL. It is not an error in Hyperion.
+  - D1117's "LAL is probably post-erratum, so ours is pre-erratum" reading is WITHDRAWN.
+- **Code:** only the gw.py docstring was updated. The coefficients are unchanged.
+- **Caveat:** the values came through a summarising fetch of the HTML. The identical digits across two documents make an extraction error unlikely, but a direct read of the LaTeX source (on the PC, or via an arXiv source download with permission) would make this exact.
+- **Not done:** contacting LAL maintainers is an outward action and is not taken. It could be offered to Danny.
+VERDICT: 7PN RESOLVED in Hyperion's favour (pending a character-exact source check). LAL is the outlier at 0.33%.
+MAP: none
