@@ -1731,3 +1731,6 @@ Touches: none.
 
 ## D1025: L1 — TorsionΛ D715 audit with first-principles Janus-LT: (b) R +6.8σ, l_A −186σ; D715 verdict strengthened
 - [computed] V vs CAMB ΛCDM: z* 5e-4, l_A 3.4e-4.
+
+## D1015a: correction — the 6D vacuum is 5D Minkowski × interval (not 4D)
+## D1026: S4c KK probe NOT VALID (ill-conditioned FD eigenproblem at singular ends); Liouville/shooting next

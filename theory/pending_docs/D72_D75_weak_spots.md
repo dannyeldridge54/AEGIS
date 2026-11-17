@@ -10216,3 +10216,11 @@ MAP: node=eps_tilt status=estimate touches=[] ripple=no
 Process (DEVIATIONS): D1 method-name crash before output; D2 a wrong units fix for CAMB's DAstar; D3 checked directly in CAMB that DAstar = comoving D_M(z*) in Gpc — both wrong V lines are kept on record (janus_lt_l1_torsion_firstrun.txt and git history).
 Consequence for TorsionΛ: its β ≡ Ω_m rescaling (D715) cannot reach H0 ≈ 73 against the CMB acoustic scale; the first-principles chain makes the miss larger, not smaller. Janus-LT is now ready to test any F(a) TorsionΛ variant against compressed CMB + BAO in milliseconds-to-seconds (next L2: growth/σ8; L3: DESI DR2 BAO likelihood).
 MAP: none
+
+## D1015a (correction to D1015): the Basile–Thomée D = 6 vacuum is (D − 1) = 5-dimensional Minkowski × the finite interval, not "a 4D observer on a finite interval"; D1015's sentence about a 4D observer was wrong. With the T⁴ frozen, a 4D reading needs one more compact direction (e.g. one of the five flat directions compactified, or a different ansatz); the interval itself is as computed.
+MAP: none
+
+## D1026 (track S, locked PREREG_S4c_kk_probe): S4c KK probe NOT VALID — the finite-difference generalized eigenproblem on the singular-ended interval is ill-conditioned: eigenvalues ±1e26–1e45 that flip sign with N and ε, no zero mode (T1, T2, T3 all FAIL). No physics conclusion
+[computed] (field_tests/results/s4c_kk.txt) the weights e^{(D−1)A−B} and e^{(D−3)A+B} span tens of orders of magnitude toward the ends (e^φ ≈ 2e9 near y_end, D1015), so the dense eigh with a diagonal mass matrix returns garbage; refinement makes it worse.
+Fix path (new lock, not a rerun of this one): Liouville transform to a Schrödinger form −ψ̃″ + U(z)ψ̃ = m²ψ̃ in the conformal coordinate dz = e^{B−A}dy, with U from the warp factors (derivation to be done symbolically), solved by a shooting method with the regular-end behaviour; check on a case with a known spectrum first (flat interval: m_n = nπ/L).
+MAP: none
