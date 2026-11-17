@@ -11911,3 +11911,19 @@ tools/lockbench/deviate.py: `add LOCK "text"` appends the next D<k> (timestamped
 the check (--results) before packing a PC job. Tests PASS (first run allowed; rerun refused; numbering; rerun allowed after a deviation). Live check:
 packing JMF3 again is refused ("results already committed and no deviation written after them"). Turns "no reruns to chase results" into a gate.
 MAP: none
+
+### D1173 — R2b4: with the photon Coulomb term off, threshold continuity PASSES; the solvers are consistent (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_R2b4_nocoulomb. **Result:** field_tests/results/r2b4_nocoulomb.txt.
+- **α → 0, M = 2000 GeV:** S = 135.6, 158.6, 173.6 at x = 0.95, 0.99, 0.999 (closed side); 168.8, 145.0, 111.0 at x = 1.001, 1.01, 1.05 (open side).
+- **Score:** jump(0.99 → 1.01) = 0.086 ≤ 0.20 → **PASS**.
+  - The curve has a smooth cusp peaked at threshold. |s0|² and |s1|² also join (17.8 → 17.2 and 25.8 → 25.2 across x = 0.999/1.001).
+- **Consequence:** the closed and open solvers share one normalisation, so D1170 candidate (a) is ruled out. The factor ≈ 3 of D1170 lives in the Coulomb sector, and two candidates are left:
+  - (b) the open solver's Coulomb/WKB asymptotics for channel 1 near threshold;
+  - (c) the Gailitis–Damburg expectation is not right in this form.
+- **Physics flag:** switching the photon Coulomb on lowers the open-side S at x = 1.01 from 145 to 36.
+  - An attractive extra potential lowering S is not impossible, since phases and mixing shift. But it is suspicious, and it points at (b).
+- **Next (R2b5, lock first):** two checks.
+  - On the open side at x = 1.01 with full α: double the R cutoff (R → 2R and 4R). Stability within 5% is pre-stated as the pass mark.
+  - Scale α by {0, 0.1, 0.3, 1} on both sides at x = 0.99 (closed side) and 1.01 (open side) to see where the two sides separate.
+VERDICT: solver normalisation consistent (PASS). The Coulomb-sector discrepancy is OPEN (R2b5).
+MAP: none
