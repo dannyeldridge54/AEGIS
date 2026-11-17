@@ -11960,4 +11960,27 @@ Dashboard artifact "AEGIS Results Ledger" (claude.ai artifact 7iwtR7STB4vHVfP3xy
 (7 passed, 6 tools built, 2 failed and kept on record), each number traced to its source file; CubeMind eval-arm progress (items per arm of 300).
 Data: papers/dash/dnotes_2026-11-17.csv and cubemind_arms_2026-11-17.csv (attached files, not live — updated by hand each ledger refresh).
 LOCKBENCH plan L-1…L-8 is now complete.
+###  — R2b5: the open solver is converged in R with full Coulomb (PASS); the α scan moves both sides smoothly (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_R2b5_coulomb. **Result:** field_tests/results/r2b5_coulomb.txt.
+- **Check 1 (scored):** open side at x = 1.01 with full α.
+  - S = 36.199, 36.198, 36.198 at R = R0, 2R0, 4R0 (R0 = 117 GeV⁻¹). Deviation < 1e-4 → **PASS**.
+  - The Coulomb/WKB asymptotics of two_channel_open are not the D1170 cause, so candidate (b) is ruled out.
+- **Check 2 (reported), α scaled by λ:**
+
+  | λ | closed side, x = 0.99 | open side, x = 1.01 |
+  |---|---|---|
+  | 0 | 158.6 | 145.0 |
+  | 0.1 | 209.7 | 134.6 |
+  | 0.3 | 71.6 | 90.7 |
+  | 1 | 3.94 | 36.2 |
+
+  - The open side falls smoothly and monotonically as α is switched on.
+  - The closed side swings because Rydberg levels move through x = 0.99 as λ grows. The lowest level enters (0.99, 1) at λ ≈ 0.1.
+- **Status of the D1170 factor ≈ 3:**
+  - (a) normalisation is ruled out (D1173). (b) open asymptotics are ruled out (here).
+  - What is left is (c): whether "resonance-averaged σv below threshold = σv above" holds in this form for a short-distance absorptive channel with a Coulomb closed channel. I took it on trust from Gailitis–Damburg without a source check (honest label: an expectation, not a sourced statement).
+  - Also open: whether the resonance-averaging weight should be uniform in energy at all, versus the velocity distribution that matters physically.
+- **Next:** a literature tick on the near-threshold wino σv with the χ⁺χ⁻ Coulomb tower (Gailitis–Damburg continuity for absorptive channels; any published plot of σv vs v around v ≈ 2√(δm/M) at M ≈ 2 TeV). No computation until there is a sourced expectation.
+- **Practical note:** freeze-out (R2c) is unaffected. Halo velocities around 1e-3 lie BELOW threshold (x ≪ 1), deep in the closed regime that was already validated against Beneke (A1). So the open question affects only a thin band around v ≈ 0.026.
+VERDICT: both solvers numerically sound (R-convergence PASS, normalisation PASS). The D1170 mismatch is now an expectation question, OPEN (literature).
 MAP: none
