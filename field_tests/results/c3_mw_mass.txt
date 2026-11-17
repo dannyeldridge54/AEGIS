@@ -1,0 +1,13 @@
+G = 4.300917e-06 kpc (km/s)^2/Msun
+s=0.8 KG r=73: v_c=150.7 km/s M=3.86e11 vs 4.3+-0.95 pull -0.47
+s=0.8 BHB r=52: v_c=160.3 km/s M=3.11e11 vs 4.1+-1.2 pull -0.83
+s=0.8: CONSISTENT
+s=1.0 KG r=73: v_c=165.3 km/s M=4.64e11 vs 4.3+-0.95 pull +0.36
+s=1.0 BHB r=52: v_c=175.0 km/s M=3.70e11 vs 4.1+-1.2 pull -0.33
+s=1.0: CONSISTENT
+s=1.2 KG r=73: v_c=178.7 km/s M=5.42e11 vs 4.3+-0.95 pull +1.18
+s=1.2 BHB r=52: v_c=188.6 km/s M=4.30e11 vs 4.1+-1.2 pull +0.17
+s=1.2: CONSISTENT
+s=1.5 KG r=73: v_c=197.1 km/s M=6.59e11 vs 4.3+-0.95 pull +2.42
+s=1.5 BHB r=52: v_c=207.2 km/s M=5.19e11 vs 4.1+-1.2 pull +0.91
+s=1.5: TENSION
