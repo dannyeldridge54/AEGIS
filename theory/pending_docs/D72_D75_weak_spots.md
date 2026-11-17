@@ -11612,3 +11612,17 @@ New, resolved by the denser reference: a systematic for steep power laws — LFI
 p = 1, 2/3 sit at 0.0–3.2%. Janus's β_s error grows with ε (third-order truncation; β_s is ~ε³, the next order is ~ε⁴/ε³ ~ ε ≈ 0.01–0.02 relative at these
 points ×O(5) coefficients). Plateau models (SI, NI, ESI, MHI, RGI, DWI, SFI, LI) 0.3–5%. Not a failure of the claim; a stated limit for steep potentials.
 MAP: none
+
+## D1147 (CENTRE, Djl loop (D), SUMMARY of the D-side roadmap, 17 Nov): Hyperion after today
+- Newly validated today: bbn/bbn_net (three-code), jeans, ns (after the referee-tolerance fix), GW tides 5PN + 6PN + 6.5PN, wino line machinery (absolute γγ, γZ, NLL), Gaia-geometry J-factors, wiring W4 (EoS → Λ → GW). The C5 forecast was a computation, not a module.
+- Not validated / parked:
+  - 7PN tides (0.33% vs LAL; pre/post-erratum HFB; needs a character-exact source; D1120).
+  - NLO wino convention (√2 post hoc; A1e has no blind target).
+  - A2b2 3PN spin–spin; A1 realistic stars (MIST tables).
+- Release: Hyperion 1.1 draft notes are complete (releases/hyperion-1.1/CHANGES_SINCE_1.0.md); packaging and upload await "Publish" plus the PC.
+- The four loop sides are all parked at diminishing returns. Candidate new directions:
+  - (1) PC: the Mapper orbit feed + per-star data + dust maps.
+  - (2) A new Hyperion module: MIST stars, CTA forecasts, an NLO relic-density solver.
+  - (3) SERAPIS theory tracks.
+  - (4) Slower ticks to save credits.
+MAP: none
