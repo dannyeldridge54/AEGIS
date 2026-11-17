@@ -1,0 +1,11 @@
+D1 IMRPhenomD SNR(1.4+1.4, 100 Mpc, aLIGO175) = 31.8721 vs 0PN 32.707 rel=2.6e-02
+D2 n=3000 vs 12000: 31.872057 / 31.872074 rel=5.3e-07
+VERDICTS: D1=PASS D2=PASS -> A2c3 VALIDATED
+Reported aLIGOAPlusDesignSensitivityT1800042 1.4+1.4: horizon z=0.174; range 0.323 Gpc
+Reported aLIGOAPlusDesignSensitivityT1800042 30+30: horizon z=2.449; range 2.476 Gpc
+Reported aLIGOAPlusDesignSensitivityT1800042 50+50: horizon z=3.035; range 3.026 Gpc
+Reported EinsteinTelescopeP1600143 1.4+1.4: horizon z=1.897; range 2.086 Gpc
+Reported EinsteinTelescopeP1600143 30+30: horizon z=47.611; range 5.792 Gpc
+Reported CosmicExplorerP1600143 1.4+1.4: horizon z=16.184; range 4.161 Gpc
+Reported CosmicExplorerP1600143 30+30: horizon z=36.451; range 6.107 Gpc
+Flag test (D1063): CE BBH 30+30 horizon > BNS horizon: True -> RESOLVED (inspiral-only artefact)

@@ -10564,3 +10564,12 @@ Reported [computed; 0PN inspiral amplitude, inspiral cut at f_ISCO/(1+z), SNR 8,
 - Cosmic Explorer (P1600143): BNS horizon z = 18.7, range 4.22 Gpc; BBH (inspiral only) horizon z = 8.3, range 5.45 Gpc.
 FLAG (open): CE's BNS horizon z ≈ 19 exceeding its 30+30 BBH horizon is an artefact of the inspiral-only model (heavy binaries redshift their ISCO below the 5 Hz band edge — the merger, not modelled, carries their signal) and/or of this older CE curve; published CE BNS horizons are usually quoted near z ~ 10 (context, not sourced here). BBH numbers here are LOWER bounds; the BNS CE horizon needs a check (A2c3: add the merger with a LAL IMR waveform, and a newer CE curve) before any use.
 MAP: none
+
+## D1064 (DEEP Jl tick, track X / Hyperion, locked PREREG_A2c3): with LAL's full inspiral–merger–ringdown waveform (IMRPhenomD) the D1063 flag is RESOLVED — Cosmic Explorer's 30+30 BBH horizon (z ≈ 36) now exceeds its BNS horizon (z ≈ 16); the earlier ordering was an inspiral-only artefact. A2c3 VALIDATED (IMRPhenomD BNS SNR within 2.6% of the 0PN value; grid-converged to 5e-7)
+Results [computed; SNR 8, optimal horizon, Planck18 via Janus-LT, range = Chen et al. 2017 definition]:
+- A+ design: BNS z_h 0.174 (range 0.32 Gpc); BBH 30+30 z_h 2.45 (2.48 Gpc); 50+50 z_h 3.04 (3.03 Gpc).
+- Einstein Telescope (P1600143): BNS z_h 1.90 (2.09 Gpc); BBH 30+30 z_h 47.6 (5.79 Gpc).
+- Cosmic Explorer (P1600143, the 2017 curve): BNS z_h 16.2 (4.16 Gpc); BBH 30+30 z_h 36.5 (6.11 Gpc).
+Literature (CE Horizon Study, arXiv:2109.09882, qualitative): CE reaches BNS beyond z ~ 1 and stellar-mass BBH beyond z ~ 10; A+ cannot see 50+50 BBH beyond z ~ 3 — all consistent (A+ 50+50: 3.04, at the edge).
+Remaining caveat: horizons far beyond z ~ 10 (ET BBH 48, CE BNS 16, CE BBH 36) are optimal-orientation numbers that depend on the PSDs' low-frequency wall (5 Hz) and are not the volume-averaged reach (the ranges, 2–6 Gpc, are the robust numbers); the 2017 CE curve is more optimistic than the 2021 40-km design. A sourced quantitative comparison (e.g. Hall & Evans 2019) is the next check if these numbers are used anywhere.
+MAP: none
