@@ -1,0 +1,44 @@
+NFW tracer=self beta=0.0 r=0.1: ours 0.24268007 galpy 0.24268007 rel 3.2e-13
+NFW tracer=self beta=0.0 r=0.5: ours 0.30373823 galpy 0.30373823 rel 1.9e-12
+NFW tracer=self beta=0.0 r=1: ours 0.30567859 galpy 0.30567859 rel 4.4e-13
+NFW tracer=self beta=0.0 r=3: ours 0.27407272 galpy 0.27407272 rel 4.2e-13
+NFW tracer=self beta=0.0 r=10: ours 0.21066411 galpy 0.21066411 rel 1.1e-12
+NFW tracer=self beta=0.5 r=0.1: ours 0.45007435 galpy 0.45007435 rel 7.1e-14
+NFW tracer=self beta=0.5 r=0.5: ours 0.42254808 galpy 0.42254808 rel 1.5e-13
+NFW tracer=self beta=0.5 r=1: ours 0.39665446 galpy 0.39665446 rel 3.0e-13
+NFW tracer=self beta=0.5 r=3: ours 0.33448140 galpy 0.33448140 rel 7.4e-15
+NFW tracer=self beta=0.5 r=10: ours 0.24994957 galpy 0.24994957 rel 1.5e-11
+NFW tracer=Hern0.5 beta=0.0 r=0.1: ours 0.19877617 galpy 0.19877617 rel 2.9e-14
+NFW tracer=Hern0.5 beta=0.0 r=0.5: ours 0.24735065 galpy 0.24735065 rel 4.6e-13
+NFW tracer=Hern0.5 beta=0.0 r=1: ours 0.25351447 galpy 0.25351447 rel 9.7e-14
+NFW tracer=Hern0.5 beta=0.0 r=3: ours 0.23489300 galpy 0.23489300 rel 1.5e-13
+NFW tracer=Hern0.5 beta=0.0 r=10: ours 0.18458414 galpy 0.18458414 rel 7.3e-13
+NFW tracer=Hern0.5 beta=0.5 r=0.1: ours 0.30417017 galpy 0.30417017 rel 3.6e-13
+NFW tracer=Hern0.5 beta=0.5 r=0.5: ours 0.30878254 galpy 0.30878254 rel 1.7e-12
+NFW tracer=Hern0.5 beta=0.5 r=1: ours 0.30322023 galpy 0.30322023 rel 3.7e-13
+NFW tracer=Hern0.5 beta=0.5 r=3: ours 0.27113972 galpy 0.27113972 rel 3.8e-13
+NFW tracer=Hern0.5 beta=0.5 r=10: ours 0.20969564 galpy 0.20969564 rel 1.1e-12
+Hern tracer=self beta=0.0 r=0.1: ours 0.20868547 galpy 0.20868547 rel 0.0e+00
+Hern tracer=self beta=0.0 r=0.5: ours 0.22793446 galpy 0.22793446 rel 2.2e-16
+Hern tracer=self beta=0.0 r=1: ours 0.20837959 galpy 0.20837959 rel 0.0e+00
+Hern tracer=self beta=0.0 r=3: ours 0.15404206 galpy 0.15404206 rel 0.0e+00
+Hern tracer=self beta=0.0 r=10: ours 0.09457044 galpy 0.09457044 rel 3.3e-16
+Hern tracer=self beta=0.5 r=0.1: ours 0.33709993 galpy 0.33709993 rel 0.0e+00
+Hern tracer=self beta=0.5 r=0.5: ours 0.28867513 galpy 0.28867513 rel 0.0e+00
+Hern tracer=self beta=0.5 r=1: ours 0.25000000 galpy 0.25000000 rel 2.2e-16
+Hern tracer=self beta=0.5 r=3: ours 0.17677670 galpy 0.17677670 rel 2.2e-16
+Hern tracer=self beta=0.5 r=10: ours 0.10660036 galpy 0.10660036 rel 2.2e-16
+Hern tracer=Hern0.5 beta=0.0 r=0.1: ours 0.18644715 galpy 0.18644715 rel 2.2e-16
+Hern tracer=Hern0.5 beta=0.0 r=0.5: ours 0.20764436 galpy 0.20764436 rel 2.2e-16
+Hern tracer=Hern0.5 beta=0.0 r=1: ours 0.19448165 galpy 0.19448165 rel 3.3e-16
+Hern tracer=Hern0.5 beta=0.0 r=3: ours 0.14904440 galpy 0.14904440 rel 0.0e+00
+Hern tracer=Hern0.5 beta=0.0 r=10: ours 0.09348045 galpy 0.09348045 rel 0.0e+00
+Hern tracer=Hern0.5 beta=0.5 r=0.1: ours 0.27704415 galpy 0.27704415 rel 0.0e+00
+Hern tracer=Hern0.5 beta=0.5 r=0.5: ours 0.25396048 galpy 0.25396048 rel 0.0e+00
+Hern tracer=Hern0.5 beta=0.5 r=1: ours 0.22857793 galpy 0.22857793 rel 0.0e+00
+Hern tracer=Hern0.5 beta=0.5 r=3: ours 0.16971450 galpy 0.16971450 rel 2.2e-16
+Hern tracer=Hern0.5 beta=0.5 r=10: ours 0.10511389 galpy 0.10511389 rel 1.1e-16
+T1 worst 1.54e-11 -> PASS
+T2 point-mass power-law worst 3.33e-16 -> PASS
+R MWPotential2014 halo only (NFW a=16.0 kpc), Hernquist tracer a=20 kpc, beta=0: sigma_r(8 kpc) = 97.2 km/s
+A5b VALIDATED
