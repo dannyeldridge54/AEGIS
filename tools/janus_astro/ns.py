@@ -32,7 +32,7 @@ class PPEOS:
         i = self._piece(P); K, g, _ = self.p[i]
         rho = (P/(C*C)/K)**(1/g); eps = (1 + self.a[i])*rho + P/(C*C)/(g - 1)   # A3b units
         return rho, eps, g
-def tov_tidal(eos, rho_c, rtol=1e-10):
+def tov_tidal(eos, rho_c, rtol=1e-10, rho_surf=1e4):
     """Returns (M [Msun], R [km], k2, Lambda, C) for central rest-mass density rho_c (g/cm^3)."""
     i = 0
     for j in range(len(eos.p)):
@@ -53,7 +53,7 @@ def tov_tidal(eos, rho_c, rtol=1e-10):
         dy = -(yy*yy + yy*F + r*r*Q)/r
         return [dP, dm, dy]
     r0 = 1.0; e0 = eos.rho_eps(Pc)[1]*GC2
-    Ps = eos.p[0][0]*1e4**eos.p[0][1]*C*C       # A3a D1: surface at rho = 1e4 g/cm^3 (A3b units)
+    Ps = eos.p[0][0]*rho_surf**eos.p[0][1]*C*C   # surface at rho_surf (default 1e4 g/cm^3; A3c: settable)
     ev = lambda r, y: y[0] - Pg(Ps); ev.terminal = True; ev.direction = -1
     s = solve_ivp(rhs, [r0, 5e6], [Pg(Pc), 4/3*math.pi*r0**3*e0, 2.0], method='DOP853', rtol=rtol, atol=[Pg(Pc)*1e-30, 1e-20, 1e-12], events=ev)
     R = float(s.t_events[0][0]) if s.t_events[0].size else float(s.t[-1])
