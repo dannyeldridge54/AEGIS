@@ -336,3 +336,4 @@ D1049  2026-11-17T10:45Z  R: non-GS s=1 lead - untwisted matter wave function Y_
 D1050  2026-11-17T10:45Z  L8b: CHW priors + DESI BAO robust
 D1051  2026-11-17T10:57Z  R: size of the AGNT matter-log tilt - natural size ~1e-2, 6e-5 needs near-vanishing anomalous dimension
 D1052  2026-11-17T11:19Z  Janus-Astro A0 validated (track X)
+D1053  2026-11-17T11:23Z  Janus-Astro A0s vs standards validated
