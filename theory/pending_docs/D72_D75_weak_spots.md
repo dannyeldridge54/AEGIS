@@ -10507,3 +10507,15 @@ Application [estimate; D735 limit read-off ∝ M² and its 1-TeV line rate kept;
 Consequence: the halo-independent statement is the 2507.15934 exclusion above 1.85 TeV; inside SERAPIS-E's 0.67–1.85 TeV window the heavy end now needs a core ≳ 1–3 kpc, the light end (≲ 0.9 TeV) passes even for Einasto. Remaining weak points: D735's ×2 limit read-off; ON−OFF subtraction (makes cores safer); explicit Γ/one-loop line (next: A7b2 with the Beneke et al. or 1307.4082 App. B line rates once reachable).
 Sources: arXiv:2507.15934; arXiv:1307.4082; D735, D1055.
 MAP: node=halo_profile status=computed touches=[] ripple=no
+
+## D1057 (DEEP Jl tick, track X / AEGIS application, locked PREREG_A7c + DEVIATIONS D1–D2): the two SERAPIS branches leave different fingerprints in the primordial GW background — τ = i's long matter era cuts the spectrum above 0.03–0.08 Hz, SERAPIS-E at ρ only above 8–80 Hz; plateau Ω_GW h² = (6.5–7.2)e-19, about ×15 below BBO-class and far below LISA/ET: unobservable with planned detectors, but a clean branch discriminator in the deci-Hz band
+Run history: run 1 crashed in C1 (test history mis-specified; no results); run 2 (after D1) passed C1 and the τ = i matter band, then crashed on the ρ band (route-B start rule required starting during inflation); D2 changed the start rule (superhorizon start on the post-inflation branch — the growing tensor mode is constant in every era), written and pushed before the third and last run. Both DEVIATIONS files are in field_tests/rules.
+Validation [computed]: C1 radiation plateau T² = 1.000001 (5 modes); C2 matter-band slope −2.0000 (τ = i) and −1.9999 (ρ); octic band only 1.6 decades wide (skipped by the locked ≥ 2.2-decade rule, so the stiff phase's +4/7 slope is not tested and has no visible effect); C3 route A vs B dlog10 = 0.205 (the sudden-transition approximation overestimates by ×1.6, as expected for the knee coefficient); C4 f_R(1e8 GeV) = 2.650 Hz. → A7c VALIDATED.
+Application [computed]: Ω_GW h² today (n_t = −r/8, g* = 106.75):
+- τ = i, ε = 1.3e-4, T_R = 1e6: plateau 6.5e-19 (f ≲ 0.01 Hz); 2.8e-20 at 0.1 Hz; 2.9e-22 at 1 Hz; 2.9e-24 at 10 Hz (∝ f⁻² above f_R = 0.027 Hz).
+- τ = i, ε = 1.6e-4, T_R = 3e6: plateau 7.2e-19; 3.1e-19 at 0.1 Hz; 2.8e-21 at 1 Hz (f_R = 0.080 Hz).
+- SERAPIS-E ρ, T_R = 3.2e8: plateau 6.6e-19 to ~1 Hz; 3.2e-19 at 10 Hz; 3.0e-21 at 100 Hz (f_R = 8.5 Hz).
+- SERAPIS-E ρ, T_R = 3.0e9: plateau 6.5e-19 to ~30 Hz; 2.8e-19 at 100 Hz (f_R = 80 Hz).
+Comparison (orders of magnitude, as D710; not scored): LISA ~1e-13, ET ~1e-12, BBO/DECIGO ~1e-17–1e-16: every case is ≥ 15× below even BBO-class. The knee position f_R ∝ T_R separates the branches by ~2–3 decades (0.03–0.08 Hz vs 8–80 Hz): a deci-Hz detector at the 1e-19 level would tell τ = i from ρ. Re-derives D710's 7.1e-19 null (now 6.5–7.2e-19 with each branch's r).
+Caveats: the ρ branch's later heavy-N matter era (T₂ ≳ 1e5–1e6 GeV, D780–D783) is NOT included — if it dominates the energy density it moves ρ's knee down to f(T₂) ≈ 3e-3–3e-2 Hz and erases the discriminator; g* steps not modelled.
+MAP: none

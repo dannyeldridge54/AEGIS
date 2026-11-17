@@ -1,0 +1,11 @@
+C1 RD plateau T2: 1.000001 1.000001 1.000001 1.000001 1.000001 PASS
+C2/C3 tau=i eps=0.00013 T_R=1e+06 w=0.0 band k 1-1.81e+05: slope=-2.0000 (target -2.0000) | T2_B=3.4389e-06 T2_A=5.5099e-06 dlog10=0.205
+C2 tau=i eps=0.00013 T_R=1e+06 band w=0.6: too narrow (1.6 dec), skipped
+C2/C3 SERAPIS-E rho T_R=3.2e+08 w=0.0 band k 1-2.92e+04: slope=-1.9999 (target -2.0000) | T2_B=2.1406e-05 T2_A=3.4296e-05 dlog10=0.205
+C4 f_R(1e8 GeV) = 2.6498 Hz vs 2.65 PASS
+A7c VALIDATED (C1 True, C2 True, C3 True, C4 True)
+Application: Omega_GW h^2 today (route B)
+  tau=i eps=0.00013 T_R=1e+06: r=0.000463 f_R=0.0265 Hz f_end~1.71e+05 Hz plateau=6.52e-19; 1e-09 Hz: 6.53e-19; 0.001 Hz: 6.87e-19; 0.1 Hz: 2.84e-20; 1 Hz: 2.86e-22; 10 Hz: 2.86e-24; 100 Hz: 2.86e-26; 1000 Hz: nan
+  tau=i eps=0.00016 T_R=3e+06: r=0.000512 f_R=0.0795 Hz f_end~2.42e+05 Hz plateau=7.21e-19; 1e-09 Hz: 7.22e-19; 0.001 Hz: 7.60e-19; 0.1 Hz: 3.12e-19; 1 Hz: 2.84e-21; 10 Hz: 2.84e-23; 100 Hz: 2.84e-25; 1000 Hz: nan
+  SERAPIS-E rho T_R=3.2e+08: r=0.00047 f_R=8.48 Hz f_end~2.35e+05 Hz plateau=6.62e-19; 1e-09 Hz: 6.63e-19; 0.001 Hz: 6.62e-19; 0.1 Hz: 6.97e-19; 1 Hz: 6.92e-19; 10 Hz: 3.18e-19; 100 Hz: 2.97e-21; 1000 Hz: nan
+  SERAPIS-E rho T_R=3.0e+09: r=0.000461 f_R=79.5 Hz f_end~4.93e+05 Hz plateau=6.50e-19; 1e-09 Hz: 6.50e-19; 0.001 Hz: 6.50e-19; 0.1 Hz: 6.84e-19; 1 Hz: 6.84e-19; 10 Hz: 6.78e-19; 100 Hz: 2.81e-19; 1000 Hz: nan
