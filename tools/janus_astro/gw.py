@@ -69,3 +69,19 @@ def snr_opt(Mc, D, psd, f_lo, f_hi, n=20000):
 FINN_CHERNOFF = 2.2648   # horizon / sky- and orientation-averaged range (Finn & Chernoff 1993; LIGO convention)
 def horizon(Mc, psd, f_lo, f_hi, rho=8.0):
     return snr_opt(Mc, 1.0, psd, f_lo, f_hi)/rho          # SNR ∝ 1/D: D_h = rho(1 m)/8 in metres
+
+# ---- A2c2: cosmological horizon and range ----
+def theta_samples(n=1_000_000, seed=2026):
+    """Finn-Chernoff orientation factor Theta in [0, 4] for an L-shaped detector, isotropic sky and orientation:
+    F+ = 1/2 (1 + cos^2 th) cos 2ph cos 2ps - cos th sin 2ph sin 2ps,  Fx = 1/2 (1 + cos^2 th) cos 2ph sin 2ps + cos th sin 2ph cos 2ps,
+    Theta = 2 sqrt(F+^2 (1 + cos^2 i)^2 + 4 Fx^2 cos^2 i)."""
+    import numpy as np
+    r = np.random.default_rng(seed)
+    ct = r.uniform(-1, 1, n); ph = r.uniform(0, 2*math.pi, n); ps = r.uniform(0, 2*math.pi, n); ci = r.uniform(-1, 1, n)
+    a = 0.5*(1 + ct**2)*np.cos(2*ph); b = ct*np.sin(2*ph)
+    Fp = a*np.cos(2*ps) - b*np.sin(2*ps); Fx = a*np.sin(2*ps) + b*np.cos(2*ps)
+    return np.sort(2*np.sqrt(Fp**2*(1 + ci**2)**2 + 4*Fx**2*ci**2))
+def snr_opt_z(m1, m2, z, DL, psd, f_lo, n=4000):
+    """Optimal SNR for a source at redshift z, luminosity distance DL (m): redshifted chirp mass, ISCO cut at f_isco/(1+z)."""
+    Mcz = chirp_mass(m1, m2)*(1 + z); fhi = c**3/(6**1.5*math.pi*G*(m1 + m2))/(1 + z)
+    return snr_opt(Mcz, DL, psd, f_lo, fhi, n) if fhi > f_lo else 0.0
