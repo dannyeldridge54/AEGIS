@@ -10944,3 +10944,18 @@ Lock pushed before run; result field_tests/results/c4_m200.txt.
 - Caveats: M200 is an extrapolation of NFW fits beyond the data; scale radius fixed; definition assumed.
 VERDICT: CONSISTENT s = 0.8–1.0; TENSION 1.2; EXCLUDED 1.5.
 MAP: none
+
+## D1098 (CENTRE, Djl loop (D), locked PREREG_A2d + DEVIATIONS D1): Hyperion's gravitational waves now carry neutron-star tides — the 5PN+6PN tidal phase (Vines–Flanagan–Hinderer 2011) matches LALSuite TaylorF2 to ≤ 8.8e-10 rad for three BNS systems — A2d VALIDATED
+Lock pushed before run. D1: the first run crashed on a NameError (K vs G, c in gw.py), fixed via DEVIATIONS before the rerun. Result field_tests/results/janus_astro_a2d.txt.
+- Source: arXiv:1101.1673 Eqs. 3.9–3.10. Transcription checked against the paper's equal-mass Eq. 3.11 (−624, −3115/2) before the lock.
+- Code: gw.taylorf2_tidal_dphase(f, M1, M2, Λ1, Λ2, order).
+- 6PN (scored, 20 Hz to 0.8 f_ISCO), worst residuals:
+  - (1.4, 1.4), Λ = 300/300: 5.5e-10 rad
+  - (1.35, 1.45), Λ = 400/250: 5.4e-10 rad
+  - (1.2, 1.8), Λ = 800/100: 8.8e-10 rad
+  - All ≤ 1e-6. PASS.
+- 5PN only (reported): ≤ 8.6e-10 rad.
+- Size of the effect (reported): the detrended tidal phase is 0.80–0.88 rad at 6PN (0.53–0.59 at 5PN). LAL's extra 6.5PN/7PN tidal terms add 0.03–0.04 rad, which our module doesn't yet include (next step if needed).
+- Use: links A3 (NS module: Λ from SLy/AP4, D1094) to A2 (waveforms). An EoS → Λ → GW phase chain is now possible. Example for next time: SLy Λ_1.4 = 296 vs AP4 248 → a tidal-phase difference of ~0.13 rad [estimate, linear in Λ].
+VERDICT: A2d VALIDATED.
+MAP: none
