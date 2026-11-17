@@ -306,3 +306,4 @@ D1019  2026-11-17T05:55Z  L0c massive neutrinos vs CAMB VALIDATED
 D1020  2026-11-17T05:56Z  J7d2 PSNI: Janus background stalls at log-singular end
 D1021  2026-11-17T06:00Z  R5 realistic heterotic delta_GS gives tilt 500-1000x too large
 D1022  2026-11-17T06:00Z  J1c PSNI still unscored with Radau fallback
+D1023  2026-11-17T06:04Z  J1d PSNI scored with field-value end
