@@ -326,3 +326,4 @@ D1039  2026-11-17T08:15Z  J9: Janus beta_s vs exact MS validated at ~5%
 D1040  2026-11-17T08:19Z  R track: IIB one-loop Kahler (BHK) uses E_2 (s=2), not s=1 - lead closed
 D1041  2026-11-17T08:32Z  L6: Janus-LT reproduces Pantheon+ SN-only Omega_m
 D1042  2026-11-17T09:02Z  L7: Janus-LT joint BAO+CMB+SN w0wa consistent with DESI
+D1043  2026-11-17T09:09Z  R: hidden threshold coefficient (delta_GS/16pi^2 + b_a) gives a cancellation route for the tilt size
