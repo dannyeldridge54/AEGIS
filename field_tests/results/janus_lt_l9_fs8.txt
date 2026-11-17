@@ -1,0 +1,4 @@
+C0 fiducial: Janus-LT 0.4728, 0.4740, 0.4615, 0.4405, 0.3950, 0.3755 vs Table 11; max |rel| = 0.164%
+CAMB sigma8(As=2.1e-9): fid 0.8226, L8b 0.8210; L8b sigma8 rescaled to fid amplitude convention = 0.8097
+L8b/fid ratios 0.9836, 0.9893, 0.9934, 0.9968, 1.0010, 1.0022; chi2 = 3.81 (6 dof); fiducial chi2 = 3.85
+C0 PASS; C1 PASS -> CONSISTENT
