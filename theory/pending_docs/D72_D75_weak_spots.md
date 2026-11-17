@@ -11805,3 +11805,15 @@ What the data DO say: (a) r agrees with MMC's exact MS to ≤ 2e-4 relative at a
 1.3e-4 (R = 1), 7.6e-4 (R = 3), 1.7e-3 (R = 9) — the leading-order δN n_s formula is not enough for strongly turning multi-field models (Planck σ(n_s) ≈ 4e-3,
 so already a quarter to half sigma at R = 9). Next (JANUS-MF step 2, lock first): exact multi-field Mukhanov–Sasaki in Janus, validated against MMC's exact numbers.
 MAP: none
+
+## D1162 — LEFT/JANUS-MF — JMF2: Janus now has an exact multi-field Mukhanov–Sasaki solver, and it matches MultiModeCode — VALIDATED [computed; DEV D1 = state-packing fix]
+Lock PREREG_JMF2_exact_mf; new tools/janus_calc/mfms.py implementing MMC paper Eqs. 3.11–3.23 (mode matrix in e-folds, mass matrix C_IJ, BD start at k/aH = 1000,
+adiabatic projection at the end of inflation; tensors single-field). Two-field quadratic, φ_init (12, 12), N* = 55:
+| R | Janus-MF n_s | MMC exact n_s | |Δn_s| | r rel. diff | Janus δN error (D1161) |
+| 1 | 0.963378 | 0.963372 | 6.3e-6 | 1.2e-4 | 1.3e-4 |
+| 3 | 0.945477 | 0.945477 | 3.3e-8 | 2.2e-5 | 7.6e-4 |
+| 9 | 0.927750 | 0.927745 | 4.7e-6 | 1.4e-5 | 1.7e-3 |
+C1 (≤ 2e-4) and C2 (≤ 2e-3) PASS at all R → JANUS-MF EXACT VALIDATED. Independent cross-check not in the lock: Janus-MF α_s −6.75e-4, −1.49e-3, −3.23e-3 vs MMC's printed
+α_s −6.72e-4, −1.48e-3, −3.24e-3 (JMF1 run) — agree to ≤ 0.6%. The strongly turning case (R = 9) improves from δN's 1.7e-3 error to 4.7e-6 (~360×).
+Janus now covers single-field (validated vs exact and ASPIC, D1035/D1127/D1146–D1149) and multi-field exact (vs MultiModeCode) — the gap named in TOOLKITS_PLAN is closed.
+MAP: none

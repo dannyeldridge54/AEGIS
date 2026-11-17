@@ -11,6 +11,7 @@ Standing Jl-loop track "J". Every stage: lock first, two independent routes, rep
 - J7d DONE (D1018) + PSNI (D1023): field-value end; all tested ASPIC models scored, Janus better at every point.
 - J8 DONE (D1034): ASPIC (w, ρ_reh) route, Janus better 32/32 (n_s ~230×).
 - J7f DONE (D1035): pulse 1, 32 ASPIC models, Janus n_s better 64/64 (~560×).
+- JMF2 DONE (D1162): exact multi-field MS (tools/janus_calc/mfms.py) validated vs MultiModeCode (n_s ≤6e-6).
 - J11 DONE (D1149): β_s error ≈ 5ε* (truncation); good to ≲5% for ε* ≲ 0.01.
 - J9b DONE (D1146): β_s validated at median 3.1% over 16 models (PC run); steep LFI p≥3 −6…−10% (truncation, stated limit).
 - J7g DONE (D1127): pulses 2–3, reheating routes, Janus better 124/124; pulse 1–3 total 188/188.

@@ -313,3 +313,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1149: when a systematic appears, a one-parameter scaling test (error vs the expansion parameter) turns it from a worry into a stated, predictable limit.
 - D1160: package validated pieces with a regression lock against the recorded numbers before adding anything new to them.
 - D1161: before locking 'two codes agree', check they compute the SAME approximation — analytic SR δN ≠ numerical δN; compare each to the exact answer instead.
+- D1162: after an approximation fails against an exact reference, implement the exact equations from the reference's own paper — then the comparison is like-with-like.

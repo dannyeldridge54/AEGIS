@@ -1786,3 +1786,4 @@ Touches: none.
 ## D1149: J11 (PC) — β_s rel. error ∝ ε* (slope 1.14, ≈5ε*) → third-order truncation confirmed; ≤5% for ε* ≲ 0.01
 ## D1160: toolkits — KALUZA v0.1 REGRESSION PASS (4/4), LOCKBENCH v0.1 (ledger flagged D1039 precision), MultiModeCode built/running for JANUS-MF
 ## D1161: JMF1 — two-field δN vs MultiModeCode: r ≤ 2e-4 vs exact; n_s δN error 1.3e-4/7.6e-4/1.7e-3 for R=1/3/9; C1 FAILS (mismatched δN definitions)
+## D1162: JMF2 — Janus-MF exact multi-field MS vs MultiModeCode: |Δn_s| ≤ 6.3e-6, r ≤ 1.2e-4, α_s ≤ 0.6% → VALIDATED; δN error at R=9 1.7e-3 → 4.7e-6
