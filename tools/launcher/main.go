@@ -179,6 +179,10 @@ func openFolders() {
 	}
 }
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "--ui-test" { // headless test mode
+		if len(os.Args) > 2 { ollamaURL = os.Args[2] }
+		addr := startUI(false); fmt.Println("UI " + addr); select {}
+	}
 	lp := filepath.Join(os.Getenv("USERPROFILE"), "AEGIS_launcher.log")
 	logf, _ = os.OpenFile(lp, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	defer func() {
@@ -194,7 +198,8 @@ func main() {
 		fmt.Println("4) Run a CubeMind self-improvement / sync experiment")
 		fmt.Println("5) Run all selftests")
 		fmt.Println("6) Open results folders")
-		fmt.Println("7) Talk with CubeMind (voice)")
+		fmt.Println("7) Talk with CubeMind (voice, console)")
+		fmt.Println("8) Open the CubeMind app (voice, browser window)")
 		fmt.Println("0) Quit")
 		switch ask("Choose: ") {
 		case "1":
@@ -211,6 +216,10 @@ func main() {
 			openFolders()
 		case "7":
 			chatMode()
+		case "8":
+			if startUI(true) != "" {
+				fmt.Println("The app is open in your browser. Keep this window open while you use it.")
+			}
 		case "0":
 			return
 		}
