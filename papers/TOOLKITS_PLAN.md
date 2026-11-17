@@ -14,3 +14,11 @@ Plan (one shared core, small focused packages, each validated before use):
    PC/cloud runners, reference-precision ledger (every validation stores its reference's own spread), D-note/ladder hooks. Feeds CubeMind's mirror checks.
 Not new toolkits: reheating/N* matching stays inside Janus (J7c2/J8 machinery); Janus-LT stays as is (BAO/SN/CMB/growth/σ8 validated, D1041–D1134).
 Order: KALUZA first (biggest gap, pieces already validated), LOCKBENCH packaging alongside, JANUS-MF after MultiModeCode is installed on the PC.
+
+## 2026-11-17 — independent non-separable reference: PyTransport built (cloud)
+PyTransport 2.0 (github jronayne/PyTransport @603669c; Mulryne & Ronayne, arXiv 1609.00381; GPL-3) — transport method, independent of MultiModeCode.
+Built at /home/claude/ext/PyTransport with three build-only patches (tools/janus_calc/pytransport_build.patch): setuptools instead of distutils,
+build_ext --inplace with the running Python, gravipy import optional (only needed for curved field space). Smoke test: the canonical double-quadratic
+module compiles and backEvolve runs (N_end ≈ 72.6 from φ = (12, 12)); no spectra computed yet. Next: lock JMF6 — Janus-MF vs PyTransport on JMF2's
+quadratic models (checks the reference against MMC too) and the non-separable N1 / N2' models of JMF4/JMF5, with PyTransport given the potential
+symbolically (so its derivatives can't disagree with V).
