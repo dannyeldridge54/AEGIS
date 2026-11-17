@@ -463,3 +463,4 @@ D1176  2026-11-17T19:58Z  J13: Janus accuracy holds across N* 45/55/65 on 32 ASP
 D1177  2026-11-17T19:59Z  LOCKBENCH L-7 ledger dashboard
 D1178  2026-11-17T20:00Z  R2b5 Coulomb sector: open solver R-converged (PASS); alpha scan
 D1179  2026-11-17T20:05Z  Literature: Gailitis theorem applies to total (optical) cross section; annihilation below threshold absorbs conversion flux
+D1180  2026-11-17T20:11Z  R2b6 conversion: FAIL; P_conv=0.87 unitarity-exact; threshold question parked
