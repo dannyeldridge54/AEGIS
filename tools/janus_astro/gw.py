@@ -111,3 +111,17 @@ def snr_opt_vec(Mc, D, psd_arr, f_lo, f_hi, n=20000):
     import numpy as np
     f = np.geomspace(f_lo, f_hi, n)
     return math.sqrt(4*np.trapezoid(amplitude0(f, Mc, D)**2/psd_arr(f)*f, np.log(f)))
+
+def taylorf2_tidal_dphase(f, M1, M2, Lam1, Lam2, order=6):
+    """Tidal SPA phase correction (rad), Vines-Flanagan-Hinderer 2011 eqs. 3.9-3.10 (5PN; + 6PN if order >= 6).
+    M in kg, Lam = dimensionless tidal deformability Lambda_A; lambda_A = Lam_A m_A^5 (G = c = 1)."""
+    import numpy as _np
+    M = M1 + M2; eta = M1*M2/M**2
+    x = (_np.pi*G*M*_np.asarray(f)/c**3)**(2/3)
+    tot = 0.0
+    for mA, Lam in ((M1, Lam1), (M2, Lam2)):
+        cA = mA/M; cB = 1 - cA; lh = Lam*cA**5*x**5
+        p01 = -(24/cA)*(1 + 11*cB); tot = tot + p01*lh
+        if order >= 6:
+            p11 = -(5/(28*cA))*(3179 - 919*cA - 2286*cA**2 + 260*cA**3); tot = tot + p11*x*lh
+    return 3/(128*eta*x**2.5)*tot
