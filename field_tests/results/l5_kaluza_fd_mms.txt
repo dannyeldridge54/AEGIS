@@ -1,0 +1,3 @@
+mode 1: m2 [np.float64(0.9999967232608167), np.float64(0.9999991791867837), np.float64(0.9999997946460724)] exact 1 | errors ['3.28e-06', '8.21e-07', '2.05e-07'] | orders [2.0, 2.0004] K1 True | GCI p 1.9999 GCI_fine 2.6e-07 ext err 9.3e-11 K2 True
+mode 2: m2 [np.float64(3.999947572308896), np.float64(3.9999868668108505), np.float64(3.999996713419363)] exact 4 | errors ['5.24e-05', '1.31e-05', '3.29e-06'] | orders [2.0, 2.0] K1 True | GCI p 2.0000 GCI_fine 1.0e-06 ext err 6.9e-12 K2 True
+L5-K: KALUZA FD OPERATOR VERIFIED (2nd order)
