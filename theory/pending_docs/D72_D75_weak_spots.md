@@ -11817,3 +11817,9 @@ C1 (≤ 2e-4) and C2 (≤ 2e-3) PASS at all R → JANUS-MF EXACT VALIDATED. Inde
 α_s −6.72e-4, −1.48e-3, −3.24e-3 (JMF1 run) — agree to ≤ 0.6%. The strongly turning case (R = 9) improves from δN's 1.7e-3 error to 4.7e-6 (~360×).
 Janus now covers single-field (validated vs exact and ASPIC, D1035/D1127/D1146–D1149) and multi-field exact (vs MultiModeCode) — the gap named in TOOLKITS_PLAN is closed.
 MAP: none
+
+## D1163 — TOOLS — LOCKBENCH L-1: locks can now carry machine-readable claims; LOCKBENCH computes the verdict [built + tested]
+tools/lockbench/claims.py: a fenced ```claims YAML block in a PREREG (id, quantity, reduce ∈ value/all/any/max/min/median/mean, op ∈ <=,<,>=,>,==,abs<=, value);
+evaluate(lock, results) returns per-claim pass/observed and a plain-bool verdict. Scripts emit numbers only. Tests (tools/lockbench/test_claims.py) PASS:
+JMF2's numbers pass, JMF1's δN errors fail C1, a missing quantity fails, and numpy scalars give a real bool (the J7b numpy-bool trap). From now on new locks use it.
+MAP: none
