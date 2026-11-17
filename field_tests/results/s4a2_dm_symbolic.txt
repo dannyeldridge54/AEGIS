@@ -1,0 +1,4 @@
+eq1: symbolic residual = 0; numeric max = 0.0e+00
+eq2: symbolic residual = 0; numeric max = 0.0e+00
+eq3: symbolic residual = 0; numeric max = 0.0e+00
+S4a Route A VALIDATED (exact) -> with Route B (S4a, 1e-10): S4a VALIDATED
