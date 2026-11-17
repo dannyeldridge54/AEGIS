@@ -11937,3 +11937,10 @@ derivatives and case 12's off-diagonal ½ in V (D1169's diagnosis); mode solver 
 Verdict: JANUS-MF NON-SEPARABLE AGREES WITH A CONSISTENT REFERENCE. Scope: the reference is MMC's mode solver with my 40-line derivative patch,
 not a fully independent code — label "agrees", not "validated". JMF4's NOT VALIDATED stays on record.
 MAP: none
+
+## D1175 — TOOLS — LOCKBENCH L-8: pinned environment + one-command self-test [built; SELFTEST PASS]
+tools/lockbench/selftest.py: `pin` writes tools/lockbench/ENV.lock (cloud: Python 3.13.18, numpy 2.5.3, scipy 1.18.1, sympy 1.14.0, mpmath 1.3.0,
+gfortran 13.3.0, ASPIC 75400d2, MMC 641153c); `check` compares the running machine (major.minor) and runs all 8 tools/*/test_*.py → SELFTEST PASS (8/8).
+Known: Danny's PC differs (Python 3.11, gfortran 16.2) so `check` there will report MISMATCH — PC results stay labelled "PC", with cross-machine
+checks where they exist (ASPIC lfi identical, D1173-era; J9b/J10/J11 matched cloud methods). LOCKBENCH L-1…L-8 now all built; L-7 (dashboard) remains.
+MAP: none

@@ -1797,3 +1797,4 @@ Touches: none.
 ## D1171: LOCKBENCH L-5 verification kit (GCI/order/MMS); KALUZA FD operator verified 2nd order on an exact case
 ## D1172: LOCKBENCH L-6 — deviation command + rerun guard in pcjob; tests PASS
 ## D1174: JMF5 — with MMC's derivative code fixed, Janus-MF matches on both non-separable models (|Δn_s| ≤ 9.4e-6)
+## D1175: LOCKBENCH L-8 — ENV.lock pin + selftest (8/8 PASS on cloud)

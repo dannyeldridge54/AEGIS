@@ -324,3 +324,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1171: verify a solver on an exact case through the same coordinate map it uses in production — order and extrapolated limit together, not error alone.
 - D1172: a rule that's only remembered gets skipped under pressure — put it in the tool that launches the run.
 - D1174: when you patch a reference, commit the patch and its hash in the lock, and downgrade the label (agrees, not validated).
+- D1175: pin the environment the results were made in, and make a mismatch loud rather than silent.
