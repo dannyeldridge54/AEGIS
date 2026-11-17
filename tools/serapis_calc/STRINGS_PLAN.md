@@ -46,3 +46,4 @@ coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which 
   b̃'_a^i = b'_a^i − k_a δ_GS^i; one-loop dilaton S+S̄ → S+S̄ + Σ_i 2δ_GS^i/(4π)² ln(T_i+T̄_i). Next R step (lock first): hidden-vs-visible
   asymmetry of b̃' (non-universal part b'_a) in a Z_N orbifold with N=2 sectors (Z3 has none → no asymmetry) → does it change R?
 - R (D1043): cancellation route found (K-term vs condensate W-term, coefficient δ_GS/16π² + b_a). Next: fetch explicit f(T) (FILQ/Cvetič), sympy total L-coefficient (lock first).
+- R (D1044): D1043 withdrawn (redefinition, not cancellation). Next R: in the S' frame the GS tilt variable is ln(2 Im T), not L — re-test D1010's ρ match with ln Im T (lock first).

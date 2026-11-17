@@ -10358,3 +10358,15 @@ condition. So the tilt size is a DIFFERENCE of two O(10⁻²) terms, and 6e-5 ne
 Not claimed: normalisations (16π² vs 8π², sign of δ_GS) and f(T) are not yet pinned from one source. Next R step (lock first):
 fetch f(T) explicitly (FILQ / Cvetič et al. duality-invariant condensation) and compute the total L-coefficient of V symbolically.
 MAP: none
+
+## D1044 — CORRECTION to D1043 (R track): the "cancellation route" is a field redefinition, not a free cancellation [literature + derived]
+[literature, fetched] Leedom–Righi–Westphal arXiv 2212.03876: f_a = k_a S + (b'_a − ⅓k_a δ_GS) ln η⁶(T) (Eq. 2.12); W ~ e^{−k_aS/b_a}/η(T)^{6 − 2k_aδ_GS/b_a}
+(Eq. 2.16); redefinition S → S + δ_GS ln η²(T) (Eq. 2.17) gives W = Ω(S)H(T)/η⁶(T) (Eq. 2.18); k ⊃ −ln(S + S̄ + δ_GS ln(−i(T−T̄)|η|⁴)) (Eq. 2.21);
+V = e^k Z(T)|Ω|²[(A − 3)|H|² + V̂] with Z = 1/(i(T−T̄)³|η|¹²) (Eqs. 2.23, 2.26). Z₃/E₈: δ_GS = 3b/k makes the extra η exponent vanish.
+[derived] (arithmetic) In the shifted variable S' = S + δ_GS ln η², S + S̄ + δ_GS ln(2Im T|η|⁴) = S' + S̄' + δ_GS ln(2 Im T): the |η|⁴ moves out of
+the dilaton log exactly as the condensate's extra η-power is absorbed. So the K-term and the W-term of D1043 are NOT independent — one
+is the other written in different variables — and there is no adjustable partial cancellation. What survives: the δ_GS-dependence sits
+in k(S') with ln(2 Im T) (not L = −ln(2 Im T|η|⁴)); the overall Z(T) ∝ e^{3L} is δ-independent.
+Verdict: D1043's route WITHDRAWN. D1021's size problem STANDS (coefficient ~δ_GS/(2Re S') ≫ 6e-5). New, sharper question for R: the tilt
+variable in the S' frame is ln(2 Im T), not L — does D1010's match (which used L) survive with ln Im T? (lock first; next R step).
+MAP: none
