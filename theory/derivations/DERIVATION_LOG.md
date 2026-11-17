@@ -1761,3 +1761,4 @@ Touches: none.
 ## D1040: R track — BHK IIB one-loop Kähler term is E₂ (s=2), not s=1 → cannot give the GS-type log tilt; lead closed; next: DKL thresholds
 ## D1041: L6 — Janus-LT Pantheon+ SN-only Ω_m = 0.3315 ± 0.018 vs published 0.334 ± 0.018 → REPRODUCED
 ## D1042: L7 — joint BAO+CMB+Pantheon+ w0wa: w0 −0.853 ± 0.053, wa −0.518 ± 0.200 vs DESI −0.838/−0.62 → CONSISTENT; Δχ² −7.7
+## D1043: R — hidden condensate gives an L-term ∝ (δ_GS/16π² + b_a): tilt size is a difference of two O(1e-2) terms; 6e-5 needs ~0.5% cancellation [estimate]

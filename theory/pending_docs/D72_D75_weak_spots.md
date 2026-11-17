@@ -10346,3 +10346,15 @@ same direction, somewhat weaker (compressed CMB; MAP not posterior). Contrast L4
 was INCONSISTENT — adding SN pins w0/wa tightly enough that the compressed-CMB shortfall shrinks. Janus-LT now reproduces the
 headline DESI DR2 dynamical-DE fit end to end with its own recombination, BAO, SN and growth code.
 MAP: none
+
+## D1043 — RIGHT (R track) — a cancellation route for the too-large GS tilt (D1021): the hidden condensate's T-dependence [literature + estimate]
+[literature, fetched] Kane–Lykken–Nelson–Wang hep-ph/0209061: W(S,T) = Λ³ f(T)[d₁e^{−3S/2b₁} + d₂e^{−3S/2b₂}] (Eq. 36), "f(T) depends
+on δ_GS" (explicit form not in the fetched text); threshold f_a¹ = ln η²(T)[δ_GS/16π² + b_a] (Eq. 69); δ_GS ∈ {−9,…,−24} (Eq. 39).
+DKL form (hep-th/9506178 Eq. 15): b̃'_a = b'_a − k_a δ_GS.
+[estimate] With f_a = S + f_a¹, a condensate e^{−3f_a/2b_a} carries |η(T)|^{−6(δ_GS/16π² + b_a)/b_a}, i.e. an L-dependence in V = e^K|W|² whose
+coefficient is set by (δ_GS/16π² + b_a), not by δ_GS alone. D1021's ~10³ excess assumed only the K-term; the W-term enters with the
+opposite-type sign structure and can cancel it when δ_GS/16π² ≈ −b_a·(something O(1)) — exactly the Z₃-like "fully GS-cancelled"
+condition. So the tilt size is a DIFFERENCE of two O(10⁻²) terms, and 6e-5 needs a ~0.5% cancellation: a tuning, but a concrete one.
+Not claimed: normalisations (16π² vs 8π², sign of δ_GS) and f(T) are not yet pinned from one source. Next R step (lock first):
+fetch f(T) explicitly (FILQ / Cvetič et al. duality-invariant condensation) and compute the total L-coefficient of V symbolically.
+MAP: none
