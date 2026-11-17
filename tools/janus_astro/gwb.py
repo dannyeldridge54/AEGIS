@@ -41,12 +41,13 @@ class History:
     def T2(self, k):
         """Route B transfer for mode k (units of k_R)."""
         lk = math.log(k)
-        # start where k/aH = 1e-3 (superhorizon): solve lnaH(N) = lk + ln(1e3) searching from Nmin forward
-        Ns = self.N; la = self.lnaH(Ns)
-        tgt = lk - math.log(1e-3)
-        idx = np.where(la >= tgt)[0]
-        if not idx.size or Ns[idx[0]] <= self.Nmin + 0.5: raise ValueError('mode not superhorizon inside the background')
-        N0 = float(Ns[idx[0]])
+        # DEVIATIONS D2: start at the last time before re-entry with k/aH = 1e-3 (post-inflation branch), else at the end of inflation
+        Ne = self.edges[-1]; Ns = self.N; la = self.lnaH(Ns); tgt = lk - math.log(1e-3)
+        post = (Ns >= Ne) & (la >= tgt)
+        if post.any(): N0 = float(Ns[np.where(post)[0][-1]])
+        else:
+            N0 = Ne; self.last_start = k/math.exp(float(self.lnaH(Ne)))
+            if self.last_start > 1e-2: raise ValueError('mode too close to k_end for route B')
         def rhs(N, y): q = k*math.exp(-float(self.lnaH(N))); return [y[1], -(3 - float(self.eps(N)))*y[1] - q*q*y[0]]
         stop = lambda N, y: k*math.exp(-float(self.lnaH(N))) - 200.0; stop.terminal = True; stop.direction = 1
         s = solve_ivp(rhs, [N0, 8.0], [1.0, 0.0], method='DOP853', rtol=1e-9, atol=1e-12, events=stop, max_step=0.05)
