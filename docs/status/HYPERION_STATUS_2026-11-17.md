@@ -56,3 +56,31 @@
 - Re-scored: 0.67 TeV passes everywhere; 1 TeV passes for Gaia-calibrated haloes (marginal for the H.E.S.S. benchmark); 1.85 TeV fails.
 - Window ≈ 0.67 to ~1–1.3 TeV (est.), f ≈ 5–20%. CTA (1 TeV cap ~7%) plus HL-LHC can close it.
 - The v3.3 paragraph and table row are corrected (unposted).
+
+## Evening update 22:20 UTC (D1156–D1201)
+- **Relic module (Sommerfeld + freeze-out).**
+  - Solvers validated:
+    - two-channel open solver: free case, decoupled case, R-convergence, exact unitarity (D1158–D1180);
+    - charged-pair resonance tower below threshold (D1159).
+  - The threshold-averaging question is parked: it only affects a thin velocity band (D1180).
+  - Thermal Sommerfeld factor at freeze-out, all charge sectors (Hisano matrices sourced): 1.29–1.37 (D1181–D1183).
+  - Relic mass vs Beneke 2009.00640:
+    - no boost: ours 2.325 TeV vs 2.207 (+5.4%), after the MS-bar α₂ fix;
+    - LO Sommerfeld: ours 3.135 TeV vs 2.886 (+8.6%).
+  - Remaining suspect: g_*(T). This needs Danny's OK to download the Saikawa–Shirai table ("yes table") (D1185–D1187).
+- **Wino vs cored Gaia haloes (Singh & Desai 2605.16994):** the 1 TeV wino survives the H.E.S.S. IGS line limit for all 5 Burkert fits (3 PASS, 2 marginal at the upper fraction edge) (D1189–D1190). Window unchanged: 0.67 to ~1–1.5 TeV. No new collider or line limits (D1198).
+- **Helium, LBT 2026 (Y_p = 0.2458 ± 0.0013), with theory errors (B8):**
+  - SU(2)+gaugino hidden sector EXCLUDED at +3.1σ;
+  - SU(2) at +1.7σ;
+  - U(1) and base OK (D1191–D1192).
+  - The D/H offset is the known theory dd-rate systematic (D1201).
+- **Milky Way (Horta+2026, v_c☉ = 235.3):** MWPotential2014 FAILS (−4.3σ); McMillan17 PASSES (C8, D1193–D1194).
+  - The Star Mapper orbit default is now McMillan17, via galpy with a consistent solar frame (D9, D10 tests PASS).
+  - Legacy output is unchanged; new output goes to hyperion_mcm17/ (D1196–D1197).
+- **SERAPIS v3.3 draft (unposted):** helium verdicts, the cored-halo sentence and 3 references added (D1199).
+  - A full build needs revtex (on the PC).
+- Plateau-origin rotation: NULL (D1188).
+- **Waiting on Danny:**
+  - "yes table" (g_* download);
+  - a linked PC (Mapper run, revtex build, START_HYPERION_ORBITS.bat);
+  - "Publish" (Zenodo).
