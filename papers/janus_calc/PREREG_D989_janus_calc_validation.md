@@ -1,0 +1,7 @@
+# PREREG D989: Janus String Calculator (tools/janus_calc) vs the base toolkit (tools/serapis_calc) — accuracy and speed (written before the comparison runs)
+Janus route (as committed with this lock): one background integration; Hubble-flow ε1, ε2, ε3 at the pivot (spline derivatives); second-order n_s and r; α_s by differentiating the second-order n_s along the background (alpha_dn, step 0.25); also reported: the second-order α_s formula (alpha_flow), not judged.
+Base route (reference): tools/serapis_calc ms.spectra(..., ic='ds') on the 9-point wide grid W = [-0.8, 0.8] (PREREG_D981 method), bd = 1000; selftest must pass.
+Points (8): SERAPIS-E C = 1.0e-6, N* = 48.4 and 50.0; SERAPIS-E C = 1.15e-6, N* = 48.4; Chronos ε = 1.3e-4, N* = 46.0 and 49.0; SERAPIS-ρ ε = 6e-5, N* = 46.09 and 49.49; Kairos ε = 0, N* = 46.08.
+Pass per point (fixed now): |Δn_s| ≤ 1e-4, |Δr/r| ≤ 0.5%, |Δα_s/α_s| ≤ 2% (alpha_dn vs base). Overall: VALIDATED if all 8 pass; PARTIAL if ≥ 6 pass (state which fail and by how much); NOT VALIDATED otherwise.
+Also reported: wall time per point for each route and the speed ratio. Caveat stated in advance: the base α_s at bd = 1000 on grid W is itself under a convergence test (PREREG_D981, run D981c); if D981c finds the base NOT converged, this α_s comparison is reported but its verdict is withdrawn.
+Runs on Danny's PC queue. Script theory/janus/validate_d989.py; output field_tests/results/janus_validate_d989.txt (copied to field_tests/results/pc/ when committed). D989 is the lock label; the note gets the claimed number.

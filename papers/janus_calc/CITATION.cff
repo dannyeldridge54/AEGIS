@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Janus String Calculator: fast validated inflationary observables for modular-invariant plateau models"
+version: "1.0"
+date-released: 2026-11-17
+authors:
+  - family-names: Eldridge
+    given-names: Danny
+    email: dannyeldridge54@gmail.com
+license: MIT
