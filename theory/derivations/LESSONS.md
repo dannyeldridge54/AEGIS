@@ -279,3 +279,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1031: the log invariant L is the s→1 limit of the same Eisenstein family the model already uses; look for regularised sums before inventing new sources.
 - D1032: label checks on pre-freeze data as consistency checks in the lock title, so they are never quoted as scores.
 - D1033: for singular-end eigenproblems, plan the ε-refinement range from the end asymptotics before locking a convergence tolerance.
+- D1034: reuse a validated matching chain (J7c2) for a new route by changing only the input map (Eq. 13), so the lock tests one new thing.

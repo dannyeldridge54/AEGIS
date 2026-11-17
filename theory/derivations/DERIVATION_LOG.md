@@ -1751,3 +1751,5 @@ Touches: none.
 ## D1032: L5 — SERAPIS ΛCDM + Σm_ν 0.0587 eV: Δχ² = 2.37 vs Σm_ν = 0 (BAO + compressed CMB); consistency check only
 
 ## D1033: S4c2 — Prüfer KK probe validated on flat interval; 6D zero mode + positive tower, m₁² 0.82→0.78 not yet converged (locked NOT VALID)
+
+## D1034: J8 — ASPIC (w, ρ_reh) route: Janus n_s ~230×, r ~230×, α_s ~35× better (32/32); ASPIC pivot 0.22 e-fold off

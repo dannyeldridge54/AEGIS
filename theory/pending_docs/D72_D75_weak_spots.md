@@ -10264,3 +10264,8 @@ MAP: none
 [computed] (field_tests/results/s4c2_kk.txt) V: m_n² = (nπ/2)² to 8e-14, 1.5e-14, 3.1e-13. 6D: θ_end(m² = 0) − π/2 = 0 at all ε (zero mode, T1 PASS); m₂², m₃² = 2.673/2.499/2.469 and 5.578/5.138/5.058; all positive (T3 PASS). The sequence converges (changes 4.5 % then 0.7 %), apparently toward m₁² ≈ 0.778, but the lock asked for ≤ 1e-3 across the three cut-offs.
 Physics reading (stated as trend, not result): a massless bulk scalar on the subcritical 6D interval has a zero mode and a positive gapped tower with m₁ ≈ 0.88 √α_E — no instability for this probe. Next S4c3 (lock first): add ε = 1e-6, 1e-7 (or Richardson in ε using the end asymptotics) to meet 1e-3, then the dilaton/metric fluctuation (the physically relevant probe).
 MAP: none
+
+## D1034 (track J, locked PREREG_J8_aspic_rhow): Janus vs ASPIC through ASPIC's third route — reheating set by (w = 0, ln ρ_reh = −100, −150) — on the 16 J7c2 models (32 points), scored against the exact Martin–Ringeval matching (Eq. 13 → ln R_rad, Eq. 15, M⁴ from the exact-MS amplitude, iterated): JANUS MORE ACCURATE — n_s median error 3.1e-6 vs 7.2e-4 (~230×, 32/32), r 1.1e-4 vs 2.5e-2, α_s 6.7e-7 vs 2.4e-5; ASPIC's pivot is 0.22 e-folds off (median; max 0.33), Janus 8e-5
+[computed] (field_tests/results/janus_j8_rhow.txt; data janus_j8.part.jsonl; ASPIC raw janus_j8_aspic_raw.txt) C6 (convention flag at > 0.5) not triggered.
+Consequence: Janus now beats ASPIC on all three of ASPIC's routes (fixed N*: D1004/D1018/D1023; ln R_rad: D1008; (w, ρ_reh): this note), on every scored point. The all-model pulse (J7f) and its reheating pulses (J7g) extend this to the full ASPIC list overnight.
+MAP: none
