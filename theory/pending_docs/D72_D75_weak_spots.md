@@ -12273,3 +12273,23 @@ MAP: none
   - Add arXiv_2601_22239 and arXiv_2506_24050 to refs.bib.
 VERDICT: SU(2)+gaugino EXCLUDED; SU(2) OK (1.7σ); U(1) OK; base OK.
 MAP: none
+
+### D1193 — Galaxy tick: Horta et al. 2026 measure v_c(R☉) = 235.3 (+2.8/−3.7) km/s from element-abundance gradients. MWPotential2014 (220) is ≈ 4σ low; McMillan17 (≈ 233) is consistent (2026-11-17)
+- [LEFT · literature, new to the notes] **arXiv:2601.18876** (Horta, Price-Whelan, Koposov, Hunt, Hogg, Filion, Daniel; 26 Jan 2026), "The Milky Way's circular velocity curve measured using element abundance gradients", using [Mg/Fe]:
+  - v_c,☉ = 235.3 (+2.8/−3.7) km/s;
+  - κ☉ = 36.9 (+0.8/−1.0) and Ω☉ = 28.5 (+0.4/−0.1) km/s/kpc;
+  - Oort constants A = 16.5 and B = −11.9 km/s/kpc;
+  - radial acceleration 7.0 (+0.2/−0.1) pc/Myr².
+  - No escape speed, M200 or ρ☉ is given.
+- **Also seen:** arXiv:2603.14114 (Z. Liu, UCL). Axisymmetric disk + bulge + halo models cannot fit the photometry and the rotation curve together. No fitted halo numbers; qualitative only.
+- **Comparison with our Galaxy potentials:** these are the defining literature values of each model, not computed this tick.
+  - **MWPotential2014:** v_c(8 kpc) = 220 km/s by construction (Bovy 2015). That is −15 km/s, ≈ −4σ against the new value (using the −3.7 side).
+  - **McMillan17:** v₀ ≈ 233 km/s at R₀ = 8.21 kpc (McMillan 2017, as recalled; that value is labelled for checking). That is ≈ −0.6σ, so consistent.
+  - **Gaia DR3 NFW** (M200 = 0.55e12, c = 13.9, A2j): its v_c at R0 has not yet been evaluated with baryons. OPEN.
+- **Impact:**
+  - Anything in Hyperion that uses MWPotential2014 at face value (orbits, escape speeds, the C-ladder tests) inherits a ≈ 6% low v_c at the Sun, about 13% in mass inside R☉.
+  - The J-factor/IGS work (A2h–A2l) uses ρ☉ and halo shapes directly, not MWPotential2014, so it is unaffected.
+  - **Recommendation for C-ladder defaults:** make McMillan17 the primary potential and keep MWPotential2014 as a legacy comparison. That is a code-default change for the next C tick, locked first. Nothing changed now.
+- **Next C item:** a locked check of v_c(R0) and Ω☉, κ☉ for MWPotential2014, McMillan17 and Gaia-NFW+McMillan baryons with galpy, scored against Horta+2026.
+VERDICT: new data recorded. MWPotential2014 disfavoured at R☉ (≈ 4σ, from its defining value); McMillan17 consistent. A scored galpy check is OPEN.
+MAP: none
