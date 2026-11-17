@@ -10983,3 +10983,20 @@ MAP: none
 - Hyperion gap noted: no Li-7 calculator (would need a BBN network, e.g. PRyMordial or AlterBBN; not pip-installable earlier, so re-check).
 VERDICT: SM-level; SERAPIS neutral.
 MAP: none
+
+## D1101 (CENTRE, Djl loop (C), locked PREREG_C5): forecast — telling SLy from AP4 by inspiral tides needs SNR ≈ 35–41 (not ~8 as D1099 guessed); an optimally oriented GW170817-twin at 40 Mpc does it in O4 (SNR 63) and A+ (155), and A+ still does at 100 Mpc (SNR 62); O4 at 100 Mpc does not
+Lock pushed before run; result field_tests/results/c5_eos_forecast.txt.
+- Method (locked): 1.4 + 1.4 M_⊙, single detector, optimal orientation, 20 Hz to f_ISCO. Overlap is maximised over t_c and φ_c. Distinguishable if 2(1−O)ρ² > 1 (Lindblom–Owen–Brown 2008, from memory, labelled).
+- Results, as SNR / 1−O / 2(1−O)ρ²:
+  - O4-like (aLIGO140Mpc), 40 Mpc: 62.7 / 3.0e-4 / 2.35 → DISTINGUISHABLE
+  - O4-like, 100 Mpc: 25.1 / 3.0e-4 / 0.38 → NOT
+  - A+ design, 40 Mpc: 154.7 / 4.1e-4 / 19.8 → DISTINGUISHABLE
+  - A+ design, 100 Mpc: 61.9 / 4.1e-4 / 3.17 → DISTINGUISHABLE
+  - SNR required: 41 (O4), 35 (A+). A+ is better at high frequency, where tides live.
+- Correction to D1099: its "SNR ≳ 8" back-of-envelope (from 1/Δψ) was wrong by about 5×. The overlap criterion depends on the phase difference weighted by where the SNR accumulates, which is mostly at low frequency, where tides vanish. Recorded as a correction, not a silent edit.
+- Sanity: an SNR of 63 at 40 Mpc for an optimally oriented source matches a ~140 Mpc sky-averaged range (horizon ≈ 2.26 × range; ρ = 8 at about 316 Mpc → 63 at 40) [arithmetic].
+- Caveats (fixed in advance):
+  - This is an optimistic upper bound: no mass or spin degeneracies (real analyses lose a lot to the chirp-mass/Λ̃ correlation), single detector, 0PN amplitude, inspiral-only tides.
+  - Treat these as necessary, not sufficient, conditions.
+VERDICT: computed forecast; O4 needs a nearby (≲ 60 Mpc) event, A+ reaches about 100 Mpc [upper bounds].
+MAP: none
