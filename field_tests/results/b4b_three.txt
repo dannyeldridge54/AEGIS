@@ -1,0 +1,6 @@
+PRyM Omegabh2 in effect: 0.02242
+PRIMAT table: Yp 0.24588 DH 2.4393
+PRyMordial:   Yp 0.24560 DH 2.4351 Li 5.5559
+LINX:         Yp 0.24592 DH 2.4360 Li 5.6990
+Yp spread 0.00032 (<=0.001) | DH spread 0.0017 (<=0.03) | Li rel 0.0251 (<=0.05)
+B4b VALIDATED
