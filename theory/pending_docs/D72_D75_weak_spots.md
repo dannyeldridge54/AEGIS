@@ -11127,3 +11127,21 @@ Lock pushed before run; result field_tests/results/b6_bbn_net.txt.
 - Caveat for users: to impose a target final ΔN_eff, solve for dNeff_init (the ratio is ~0.26 near 0; not linear-tested).
 VERDICT: B6 VALIDATED.
 MAP: none
+
+## D1110 (CENTRE, Djl loop (A), locked PREREG_A2): first absolute (normalised) wino γ-line test — at 1 TeV, σv_γγ = 3.2e-27 (LO) / 2.6e-27 cm³/s (NLO, post-hoc √2) vs H.E.S.S. 2018's 4e-28 → f_max = 0.36 / 0.39 at tree-level Sommerfeld; SERAPIS-E's 1 TeV wino (f = 0.26) PASSES, with margin growing to 0.62–0.78 after the one-loop ×3–4 reduction
+Lock pushed before run; result field_tests/results/a2_wino_line.txt.
+- Normalisation (sourced):
+  - σv = c Σ sΓs*, with c = 2 for identical and c = 1 for distinct particles (hep-ph/0610249 Eqs. 6/8; 1307.4082 Eq. A8).
+  - Γ^γγ only in the +− entry, with σ^γγ_{+−}v = πα²/M² (1307.4082 Eq. B5).
+  - Hence σv_γγ = 2|s_{+−}|²πα²/M².
+  - The total Γ (hep-ph/0610249 Eq. 5) matches PREP_A's 1712.07142 form after basis reordering. This is a cross-source check of A1's normalisation.
+- Limit (quoted, arXiv:1805.05741): H.E.S.S. γγ-only ≈ 4e-28 cm³/s at 1 TeV, Einasto, 7 ROIs. The 2 and 3 TeV values are plot-only, so not used.
+- Results (M = 1 TeV, v = 1e-3):
+  - LO: |s_{+−}|² = 0.719 → f_max 0.355
+  - NLO: 0.592 → 0.391
+  - One-loop bracket: 0.62–0.78
+- Cross-check with A7b/W2 (relative-scaling route, D735 read-off): f_max at 1 TeV was 0.27–0.52 across halo amplitudes. The absolute computation lands inside that range.
+- γZ is not included. H.E.S.S. 2018 bounds γγ only, so this is the like-for-like comparison. Line-shape analyses that include γZ (later H.E.S.S./CTA work) would tighten it by roughly (1 + ½σ_γZ/σ_γγ)^{1/2} [factor unsourced].
+- 1.85 TeV (W2 FAIL) is not re-tested here: there is no quoted H.E.S.S. number at that mass.
+VERDICT: A2 PASS for SERAPIS-E at 1 TeV (tree-SE f_max 0.36–0.39 ≥ 0.26).
+MAP: none
