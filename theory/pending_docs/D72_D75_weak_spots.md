@@ -12441,3 +12441,19 @@ MAP: none
 - **Combined with D1153, D1190 and D1198:** the post-hoc wino window 0.67 to ~1–1.5 TeV is robust to the inner-halo uncertainty at 1 TeV, except for cuspy, high-concentration haloes (NFW c +1σ, H.E.S.S. benchmark).
 VERDICT: PASS 5/5 for the Einasto fits. The 1 TeV wino survives IGS for 8 of the 10 Singh–Desai fits outright and is marginal in 2.
 MAP: none
+
+### D1203 — κ tick: the McMillan17-vs-Horta κ gap (41.2 vs 36.9) is not a definition issue. McMillan17's local rotation curve RISES (dv/dR ≈ +1.3 km/s/kpc) while measurements say it FALLS (2026-11-17)
+- [CENTRE · arithmetic + literature]
+  - **Identities** (flat-disc epicycle): Ω = A − B, κ² = −4B(A − B), dv_c/dR = −(A + B).
+  - **Horta+2026** (A = 16.5, B = −11.9): κ = 36.8, consistent with their quoted 36.9, so their κ follows the standard definition. Ω = 28.4, dv/dR = −4.6 km/s/kpc.
+  - **Gaia DR1 Oort constants** (Bovy 2017; A = 15.3, B = −11.9, recalled and labelled): κ = 36.0, dv/dR = −3.4.
+  - **Eilers et al. 2019** (arXiv:1810.09466, found in this search; value recalled): dv_c/dR ≈ −1.7 km/s/kpc.
+  - **McMillan17 at R = 8.178** (from C8: v_c 233.2, κ 41.24, so Ω 28.52): B = −κ²/(4Ω) = −14.9, A = 13.6, dv/dR = **+1.3** km/s/kpc.
+- **Reading:**
+  - McMillan17 matches v_c and Ω at the Sun (C8 PASS), but its local rotation curve is slightly rising, against every listed measurement (falling by 1.7–4.6 km/s/kpc). Hence κ is 12% high.
+  - So the κ gap is a genuine model-shape mismatch, not a definitional one.
+  - For the Star Mapper this affects mainly the epicyclic amplitudes of near-circular disc orbits (r_peri/r_apo of thin-disc stars at the few-% level). It hardly affects halo stars.
+  - No published 2025–26 Milky Way potential that fixes both v_c and dv/dR was found in this search. arXiv:2407.12551 ("New Galactic mass model for orbit computations") is a candidate to read next.
+- **No computation.**
+VERDICT: the κ discrepancy is REAL (McMillan17's local slope is wrong in sign). McMillan17 remains the better default (v_c, Ω), with this limitation recorded. Candidate replacement to check: 2407.12551.
+MAP: none
