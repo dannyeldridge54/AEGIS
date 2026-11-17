@@ -11709,3 +11709,15 @@ Lock pushed before run; result field_tests/results/a2k_upper_edge.txt.
 - Window statement: 0.67 TeV up to an edge between ≈ 1.1 and 1.5 TeV (est.). This is consistent with D1153's "≈ 1–1.3 TeV"; the paper row stands.
 - What sharpens it: the IGS limit at 1.1–1.5 TeV (plot-only in the paper) and the halo concentration. CTA (~7% at 1 TeV) would cut well below this edge.
 MAP: none
+
+## D1155 (CENTRE, new module R1 — Danny "Run them": run the new directions; locked PREREG_R1 + DEVIATIONS D1): first Hyperion wino relic-density run is NOT VALIDATED — Born thermal mass 1.28 TeV vs the quoted 2.207 TeV (−42%); the Boltzmann solver itself is sane (a 3e-26 cm³/s WIMP gives Ωh² ≈ 0.07–0.08, close to the textbook ~0.09 at g* = 106.75), so my σ_eff assembly from the Hisano Γ matrices is ~×3 too small
+Lock pushed before run. D1: the log-Y solver crashed and was fixed via DEVIATIONS before the rerun (stiff Radau on Y). Result field_tests/results/r1_relic.txt.
+- σ_eff = 0.771 πα₂²/m² with my spin weighting ((1/4)S0 + (3/4)S1 per pair, g_i = 2 each, g_eff = 6).
+- The quoted 2.207 TeV needs σ_eff ≈ 0.771 × (2.207/1.283)² ≈ 2.28 πα₂²/m², i.e. ~×3.
+- Diagnosis candidates (not tested; no tuning):
+  - (a) Hisano's Γ entries are already spin-summed or use a different pair normalisation, so my 1/4, 3/4 weights double-count the averaging. Dropping them gives 1.69, still ×1.35 short.
+  - (b) The g_i: a Dirac chargino could be counted as one species with g = 4 vs two with g = 2 each, which changes the pair-counting combinatorics.
+  - (c) Missing final states in my reading of Eq. 2–5, e.g. the χ⁰χ± channels into W± + γ/Z/h.
+- Next (R1b): source a standard closed-form tree-level effective cross section for the pure wino (e.g. Hisano et al. 2007, "Non-perturbative effect on thermal relic abundance", or a review quoting σ_eff v = (const)·πα₂²/m²). Lock it, then compare: our Γ assembly must reproduce that constant before the Sommerfeld stage (R2 vs 2.886 TeV LO, R3 vs 2.842 TeV NLO, which is the blind A1e test).
+VERDICT: R1 NOT VALIDATED (σ_eff assembly ~×3 low); solver sane.
+MAP: none
