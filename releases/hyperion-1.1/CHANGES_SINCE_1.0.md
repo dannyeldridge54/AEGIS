@@ -69,3 +69,10 @@ Status: draft, collected 17 Nov 2026 (D1081–D1101). Packaging and a Zenodo upl
 - New mapper_feed.orbit_params_galpy(pot=...) supports McMillan17 through galpy's C integrator. It reproduces our MWPotential2014 integrator to ≤ 4.5e-4 (D9, after a unit fix; D1196a).
 - The default is still MWPotential2014. Flipping it, together with the Sun's frame constants (R0 = 8.21, v0 = 233.1), is the next step.
 - D10 (D1197): the Star Mapper orbit default is now McMillan17 (R0 8.21, v0 233.1 + Schönrich solar motion). Output goes to hyperion_mcm17/; --model MWPotential2014 gives the identical legacy output. Tests T1–T3 PASS.
+
+## Later 17 Nov additions (D1202–D1211)
+- **Wino vs Gaia haloes:** 1 TeV wino vs the H.E.S.S. IGS line limit for Singh & Desai's Einasto haloes: PASS 5/5. Combined with the Burkert fits, 8/10 PASS and 2 marginal (A2l, A2m; high-ρ☉ caveat).
+- **McMillan17 local slope:** the McMillan17 local rotation curve rises (+1.3 km/s/kpc) where data fall, so κ is 12% high (D1203).
+  - A halo-only NFW refit to Eilers+2019 fixes the sign but needs r_s ≈ 3 kpc, so it is rejected (C9). McMillan17 stays the default.
+- **Dark radiation:** the 2026 joint N_eff (Goldstein & Hill, 2.990 ± 0.070) puts τ_i SU(2) dark radiation at +3.1σ (D1208).
+- **7PN tidal phase:** Hyperion's coefficients match the independent Mandal et al. 2024 (arXiv:2412.01706, Eq. 4.48), with which the corrected HFB agrees. LALSuite's 0.33% difference is the outlier (D1211).
