@@ -11382,7 +11382,7 @@ Combined with D1035: pulse 1–3 now cover 32 models × (2 fixed-N* + 4 reheatin
 Ran across a container restart (the job resumes from its part file; no point was recomputed).
 MAP: none
 
-## D1127 (CENTRE, Djl loop (C), locked PREREG_A2i): SERAPIS-E's 0.66 TeV wino (f = 0.14) SURVIVES H.E.S.S. IGS for both Gaia-calibrated haloes even at the pessimistic limit bracket (f_max ≥ 0.154 McMillan17, ≥ 0.190 MWPotential2014); only the IGS benchmark halo is undetermined (0.108–0.194) — so SERAPIS-E's wino window narrows to ≈ 0.67–0.9 TeV, and its lower end is safe for realistic haloes
+## D1128 (CENTRE, Djl loop (C), locked PREREG_A2i): SERAPIS-E's 0.66 TeV wino (f = 0.14) SURVIVES H.E.S.S. IGS for both Gaia-calibrated haloes even at the pessimistic limit bracket (f_max ≥ 0.154 McMillan17, ≥ 0.190 MWPotential2014); only the IGS benchmark halo is undetermined (0.108–0.194) — so SERAPIS-E's wino window narrows to ≈ 0.67–0.9 TeV, and its lower end is safe for realistic haloes
 Lock pushed before run; result field_tests/results/a2i_066_igs.txt.
 - Bracket (assumption: the limit is monotonic between the quoted 9.8e-29 at 440 GeV and 2.3e-28 at 1 TeV): lim(0.66) ∈ [9.8e-29, 2.3e-28].
 - NLL R at 0.66 TeV is 0.727–0.857 over the scale band.
