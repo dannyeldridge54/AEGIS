@@ -10392,3 +10392,13 @@ edge of the breakdown region: there r is 3–4× the published value (2.1e-3 vs 
 model has no sensible spectrum → FAILS r/α_s. Verdict: R5 FAILS CONFIRMED — in the consistent S' frame no GS-type tilt strength reproduces
 SERAPIS-ρ. The R track's GS route is closed unless a stabilisation that fixes S itself (not S') is found (next R step: literature search).
 MAP: none
+
+## D1047 — RIGHT/Janus-LT — L8: Planck 2018 distance priors — "CONSISTENT", but my lock was a degenerate test [computed; flaw stated]
+Lock PREREG_L8_distance_priors. All three z* options fit exactly: χ²_min = 0.000 (R = 1.7502, l_A = 301.471, ω_b = 0.02236 reproduced).
+Flaw (mine, in the lock): 3 free parameters (h, ω_b, ω_c) vs 3 data points — χ² = 0 is guaranteed whenever a solution exists, so the
+"CONSISTENT" verdict tests only existence, not Janus-LT. What IS informative: the implied ΛCDM parameters
+  HS-code (g₁ 0.0783): h = 0.6763, Ω_m = 0.3154, z* = 1092.03; HS-text (0.0738): h = 0.6751, Ω_m = 0.3155, z* = 1090.70;
+  Janus-LT own recombination: h = 0.6748, Ω_m = 0.3155, z* = 1090.30.
+Janus-LT's own z* sits 0.4 below HS-text and 1.7 below HS-code; the g₁ choice moves h by 1.2e-3. Comparing these h, Ω_m with the Planck 2018
+chains needs a fetched table (not done; no claim). Next time: a non-degenerate test (fix ω_b from BBN, or add n_s back with a primordial model).
+MAP: none
