@@ -1,0 +1,5 @@
+# PREREG A4b (track X, Hyperion; manual Djl 17 Nov 06:12 CT): PS/ST re-scored with colossus's massFunction δ_c convention (written before running)
+A4 (D1067) failed only on Press–Schechter / Sheth–Tormen at high mass. Source reading (colossus/lss/mass_function.py, after the A4 verdict): massFunction passes deltac_args = colossus.defaults.DELTAC_ARGS = {} to the model, i.e. the constant δ_c = 1.686 (no Ω_m(z) correction), while calling modelPress74 / modelSheth99 directly uses their own default deltac_args = {'corrections': True}. A4 called the models directly, so it used the corrected δ_c — a convention mismatch, not an error in either code.
+Change: theory/janus_astro/a4b_check.py = a4_check.py with deltac_args = {} passed to modelPress74 and modelSheth99 (the wrapper's convention); everything else identical (same masses, redshifts, models, growth from Janus-LT, tolerance 2e-2 on dn/dlnM; M1 growth repeated).
+Pass M1–M2 → A4b VALIDATED. Reported: δ_c(z = 0) with and without corrections, and the size of the convention effect at 1e15 M_⊙/h.
+Output field_tests/results/janus_astro_a4b.txt. No reruns to chase; DEVIATIONS first.
