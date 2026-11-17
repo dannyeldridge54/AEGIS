@@ -552,7 +552,7 @@
     "E"
    ],
    "title": "Leptogenesis at ρ (non-thermal, DI estimate)",
-   "status": "estimate",
+   "status": "computed",
    "d": [
     "D731",
     "D762",
@@ -587,16 +587,17 @@
     "D895",
     "D897",
     "D904",
-    "D906"
+    "D906",
+    "D986"
    ],
    "depends": [
     "reheat_rho",
     "n_sector_rho"
    ],
    "history": [
-    "D897: estimate",
     "D904: estimate",
-    "D906: estimate"
+    "D906: estimate",
+    "D986: computed"
    ]
   },
   {

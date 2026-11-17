@@ -1614,3 +1614,6 @@ Touches: none.
 ## D985: Level S3 (locked D985) PASS
 - [computed] anti-D5 position scalar, Möbius amplitude with full tower: m² > 0 at all 9 grid points; shape = E(U,2)/A² to 1.1% (L=10), 0.02% (L=16); two routes agree to ~1e-5.
 - Project H's decisive sign condition (D964) met at string level in the ADS sector; other conditions remain.
+
+## D986: leptogenesis Boltzmann (locked D982)
+- [computed] κ = 0.9391 on all rows: instantaneous yields stand (×0.94); c = 0.3, M_H = 1e12 fails by ×1.22.
