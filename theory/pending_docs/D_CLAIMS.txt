@@ -267,3 +267,4 @@ D980  2026-11-17T00:40Z  alpha_s with exact de Sitter start (D975): NOT CONVERGE
 D981  2026-11-17T01:10Z  Research prep of the five open map nodes: sources found, one lock queued (D982), what each needs next
 D982  2026-11-17T01:16Z  Second research pass on the five open nodes: string sign rule for brane-scalar masses, Gaia DR3 halo preference, no U-dependence of the uplift at leading order
 D983  2026-11-17T01:22Z  Third research pass: field-theory form of the brane-scalar sign rule (mass vs Casimir), new H.E.S.S. wino limits, D982 crash fix
+D984  2026-11-17T01:55Z  Project H at matched n_s predicts r 15.7% higher than SERAPIS-E: distinguishable by LiteBIRD-class r
