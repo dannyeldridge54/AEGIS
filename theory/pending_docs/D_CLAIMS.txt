@@ -451,3 +451,4 @@ D1164  2026-11-17T19:27Z  LOCKBENCH L-2: lock linter catches this week's four lo
 D1165  2026-11-17T19:31Z  LOCKBENCH L-4: provenance stamps (tests pass)
 D1166  2026-11-17T19:37Z  JMF3: Janus-MF validated beyond quadratic (quartic, axions) vs MMC
 D1167  2026-11-17T19:40Z  LOCKBENCH L-3 blind mode
+D1168  2026-11-17T19:45Z  J7h pulse fix-ups: 3 more models scored
