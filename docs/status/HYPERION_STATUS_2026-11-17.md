@@ -39,3 +39,9 @@
 - D:
   - Tides 6/6.5PN validated. 7PN differs from LAL by 0.33%, explained (LAL coefficient via ripplegw), but which is correct is open (D1111, D1113, D1115).
 - Hyperion 1.1 notes updated (releases/hyperion-1.1/CHANGES_SINCE_1.0.md). Still awaiting Danny's "Publish" and a linked PC.
+
+## Update 17:55 UTC (D1116–D1128)
+- KEY: the H.E.S.S. Inner Galaxy Survey (2026) line limit excludes SERAPIS-E's 1 TeV post-hoc wino except for the light MWPotential2014 halo at NLO. 0.66 TeV survives for realistic haloes. Post-hoc wino window ≈ 0.67–0.9 TeV, f ≈ 5–10% [estimate]; HL-LHC covers it (D1125, D1126, D1128).
+- The v3.3 draft paragraph and the forward-table row are updated (unposted).
+- NLL line machinery is in Hyperion (D1121, D1124). bbn_net τ=i scan (D1122). 7PN tide parked (D1120).
+- Note: D1127 is another session's J7g note; mine are D1125, D1126 and D1128.

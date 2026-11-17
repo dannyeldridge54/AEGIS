@@ -51,3 +51,10 @@ Status: draft, collected 17 Nov 2026 (D1081–D1101). Packaging and a Zenodo upl
 - D1082a: bbn.Yp is the nucleon fraction. The SERAPIS Y_p pull is +0.17σ (was +0.56σ); bbn.Yp_mass added.
 - D1112a: the heavy-halo line estimate (f_max → 0.27) was mis-anchored; the real J-factors give 0.50–0.55.
 - D1087 superseded by D1103: the "marginal" thermal wino is allowed at NLO.
+
+## Update 17 Nov 17:55 UTC (D1116–D1128)
+- NLL-resummed wino line (Ovanesyan–Slatyer–Stewart 2014): R = 0.71 at 1 TeV; robust to scale variation (D1121, D1124).
+- H.E.S.S. Inner Galaxy Survey 2026 (line limit 2.3e-28 at 1 TeV) with its own geometry (25 annuli, 0.5°–3°; our benchmark J within 7.4%): SERAPIS-E's 1 TeV wino is excluded except for the light halo at NLO. 0.66 TeV passes for realistic haloes (bracketed). The wino window is ≈ 0.67–0.9 TeV (D1125, D1126, D1128).
+- τ=i hidden sectors through bbn_net: D/H prefers ΔN ≈ 0.3, ACT excludes it; U(1) is OK (D1122).
+- 7PN tidal term PARKED: pre/post-erratum HFB vs LAL, 0.33% (D1117, D1120).
+- Corrections: D1118's and D1119's "one-loop ×3–4" columns were withdrawn by D1121.
