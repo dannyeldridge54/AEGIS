@@ -308,3 +308,4 @@ D1021  2026-11-17T06:00Z  R5 realistic heterotic delta_GS gives tilt 500-1000x t
 D1022  2026-11-17T06:00Z  J1c PSNI still unscored with Radau fallback
 D1023  2026-11-17T06:04Z  J1d PSNI scored with field-value end
 D1024  2026-11-17T06:05Z  R6 GS normalisation C/8pi^2, sign ok, Re S ~ 3200 needed
+D1025  2026-11-17T06:11Z  L1 TorsionLambda audit first-principles
