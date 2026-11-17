@@ -57,6 +57,7 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 - A3d (D1086): NOT VALIDATED — a common finite surface leaves R 1e-5 apart (masses 1e-11); the A3c surface diagnosis was wrong; next A3e diagnostic.
 - A3e/A3f DONE (D1090, D1094): mismatch was the referee compact.tov's absolute P tolerance; fixed via DEVIATIONS; NS module VALIDATED (≤ 8e-11 common surface).
 - A2d DONE (D1098): TaylorF2 tidal phase 5PN+6PN (VFH 2011) vs LAL ≤ 8.8e-10 rad; 6.5/7PN tidal (0.03 rad) not yet included.
+- Release 1.1 DRAFT notes: releases/hyperion-1.1/CHANGES_SINCE_1.0.md (D1102; not packaged/uploaded).
 
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
