@@ -1,0 +1,6 @@
+peaks n_eff: [np.float64(1.529), np.float64(2.528), np.float64(3.527), np.float64(4.538), np.float64(5.537), np.float64(6.536), np.float64(7.535)]
+peak S: ['348', '341', '339', '338', '337', '337', '337']
+trough S: ['0.371', '0.372', '0.376', '0.382', '0.392', '0.392']
+spacings: [0.999 0.999 1.01  0.999 0.999 0.999]
+mean S over scan (uniform in n_eff, not energy): 113.39
+SUPPORTED True True
