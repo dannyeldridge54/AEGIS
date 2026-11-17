@@ -1,6 +1,6 @@
 """Hyperion BBN network (B6): LINX (pip linx-bbn; Giovanetti, Lisanti, Liu, Mishra-Sharma, Ruderman) as primary engine.
 Referees: PRIMAT 2021 table (bbn.py) and PRyMordial (external clone, D1104/D1107). Explicit helium conventions (lesson D1082a):
-Yp_mass = helium MASS fraction; Yp_BBN = nucleon fraction 4 n_He4/n_b. dNeff_init is LINX's INITIAL Delta N_eff."""
+Yp_mass = helium MASS fraction; Yp_BBN = nucleon fraction 4 n_He4/n_b. dNeff_init is LINX's INITIAL Delta N_eff (D1109: 0.3 initial -> 0.078 final; solve for the init value to hit a target final N_eff)."""
 _cache = {}
 M_HE4, M_H1 = 4.0026032541, 1.00782503223      # atomic masses as quoted in the PRIMAT table header
 def abundances(ombh2=0.02242, dNeff_init=0.0, tau_n_fac=1.0, net='key_PRIMAT_2023'):

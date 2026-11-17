@@ -57,6 +57,7 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 - A3d (D1086): NOT VALIDATED — a common finite surface leaves R 1e-5 apart (masses 1e-11); the A3c surface diagnosis was wrong; next A3e diagnostic.
 - A3e/A3f DONE (D1090, D1094): mismatch was the referee compact.tov's absolute P tolerance; fixed via DEVIATIONS; NS module VALIDATED (≤ 8e-11 common surface).
 - A2d DONE (D1098): TaylorF2 tidal phase 5PN+6PN (VFH 2011) vs LAL ≤ 8.8e-10 rad; 6.5/7PN tidal (0.03 rad) not yet included.
+- BBN: bbn (PRIMAT table, D1082/D1082a), three-code check (D1107), bbn_net LINX module VALIDATED (D1109; dNeff_init is LINX's initial ΔN).
 - Release 1.1 DRAFT notes: releases/hyperion-1.1/CHANGES_SINCE_1.0.md (D1102; not packaged/uploaded).
 
 ## Gold-standard stages (referee in brackets)

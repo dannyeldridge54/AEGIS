@@ -11114,3 +11114,16 @@ MAP: none
 - For the Galaxy loop: next time it makes sense to swap MWPotential2014 for a newer Gaia-calibrated potential (e.g. McMillan 2017, available in galpy) and redo C3–C6 at once. That is one lock instead of patching s.
 VERDICT: definition confirmed; D1105 stands; recommend a McMillan17 re-run of C3–C6.
 MAP: none
+
+## D1109 (CENTRE, Djl loop (D), locked PREREG_B6): Hyperion's BBN network module (tools/janus_astro/bbn_net.py, LINX engine) is VALIDATED — base values reproduced exactly, and its ΔN_eff and ω_b responses match the PRIMAT table to 1.4% and 0.2%
+Lock pushed before run; result field_tests/results/b6_bbn_net.txt.
+- API: abundances(ombh2, dNeff_init, tau_n_fac) → Yp_mass, Yp_BBN, DH, He3H, Li7H, Neff_final (explicit conventions).
+- T1: Y_p(mass) 0.24592, 10⁵D/H 2.4360, 10¹⁰Li 5.699, N_eff 3.0453. These reproduce B5. PASS.
+- T2: LINX's ΔN_init = 0.3 gives a final ΔN_eff of only 0.0784.
+  - LINX's input is an INITIAL ΔN at T_start; this is a mapping caveat for users, recorded in the docstring.
+  - At the matched final ΔN, the responses agree with the PRIMAT table: dY_p −1.0%, dD/H −1.4% (lock 15%). PASS.
+- T3: ω_b 0.02242 → 0.0230: dY_p +0.2%, dD/H −0.1% (lock 10%). PASS.
+- Use: τn, ΔN_eff and nuclear-rate nuisances can now be varied with three BBN routes cross-checked (D1107). This is ready for any SERAPIS-branch dark-radiation or late-decay study.
+- Caveat for users: to impose a target final ΔN_eff, solve for dNeff_init (the ratio is ~0.26 near 0; not linear-tested).
+VERDICT: B6 VALIDATED.
+MAP: none
