@@ -11326,3 +11326,12 @@ MAP: none
 - Hyperion itself (the toolkit) is the release candidate (Hyperion 1.1, D1102/D1116), not a paper.
 - Not done: PDF build (revtex4-2 still missing in the cloud). Consistency: the existing §5 sentence "gamma-ray line searches exclude 1.85 TeV up to the thermal mass" agrees with W2/D1121.
 MAP: none
+
+## D1124 (CENTRE, Djl loop (D), locked PREREG_A2f-line + roadmap review): the NLL line verdict at 1 TeV is ROBUST to scale variation — R ∈ [0.658, 0.794] over μ_m ∈ [m, 4m], μ_Z ∈ [m_Z/2, 2m_Z]; SERAPIS-E 1 TeV (f = 0.26) passes McMillan17 (f_max 0.27–0.32) and MWPotential2014 (0.33–0.40) at every scale, and fails the H.E.S.S. benchmark (0.19–0.23) at every scale
+Lock pushed before run; result field_tests/results/a2f_line_scale.txt.
+- At the LO potential, the tightest case is McMillan17, with f_max 0.266 at the most pessimistic scales: still a PASS, by 2%.
+- So D1121's halo-conditional verdict holds across the theory band. The remaining uncertainties are the inner-Galaxy density and the γγ-only H.E.S.S. limit applied to the full line.
+- Roadmap updated (tools/janus_astro/ROADMAP.md), listing what's done since D1102 and what's open: 7PN parked; A1e; Mapper/dust on the PC; H.E.S.S. limits at other masses; NLL′/endpoint; real ROI geometry.
+- Next cloud-doable: H.E.S.S. 2022 (Inner Galaxy Survey) line limits, if quotable at 1–3 TeV. That would turn D1119's M²-scaling estimate and the 1.85 TeV point into computed results.
+VERDICT: robust (scale-independent) halo-conditional verdict.
+MAP: none
