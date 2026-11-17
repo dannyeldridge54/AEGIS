@@ -28,3 +28,23 @@ Related: Capse.jl (arXiv 2307.14339), differentiable CMB emulation in Julia.
 ## Recommended order
 1) Ollama scheduling rule (no install, frees M1/M2/P7 now). 2) Speculative-decoding test S1 on the PC (needs a small download → Decision Desk).
 3) CosmoPower trial on Janus-LT (pip install; compare its w0wa background quantities with L7/L10 on a locked grid).
+
+## More (round 2, same day)
+### 4. Reranker for MindMem recall (Janus inside retrieval)
+Two stages: fast embedding search pulls 20–50 candidates (fast face), then a cross-encoder reads question + memory together and re-orders them (exact
+face). Reported gains: retrieval precision +15–48% over embedding-only; one example top-K accuracy 0.83 → 0.93; 28–40% fewer hallucinations in several
+production evaluations; cost ~100–150 ms on CPU for 30 candidates; reranking 20 instead of 50 keeps ~80% of the gain. Models: BGE-reranker, Jina,
+Cohere (cloud). [tianpan.co "The Reranker Gap", Apr 2026 — a blog; its numbers need our own locked check]. Fit: after M0 picks the embedder, M0b-style
+locked test "embed top-20 → rerank top-3" on the same 20 questions. Rule from the article worth keeping: wrong ordering = reranker problem; missing
+the right memory = recall/index problem.
+### 5. Conformal abstention for CubeMind answers (a calibrated "I don't know")
+Conformal risk control picks a confidence threshold on a held-out calibration set so that, among answers it does give, the error rate stays at a chosen
+level (e.g. 5%) with a finite-sample guarantee under exchangeability; below the threshold it abstains. One 2025 study: at a 5% target, test selective risk
+4.8–5.3%; under topic/time shift it lost 1–3 points of coverage vs 4–8 for uncalibrated thresholds. [arXiv 2509.01455] Fit: CubeMind already outputs
+CONFIDENCE and we have 300-item scored runs — calibrate on half, test on the other half, locked. This turns "verify" into a provable error cap.
+### 6. Cobaya as the exact face for Janus-LT fits
+Cobaya (arXiv 2005.05290; cobaya.readthedocs.io) is the standard Bayesian sampler/minimiser in cosmology and accepts external likelihoods and theory
+codes. Fit: run L7's likelihood through Cobaya's MCMC as an independent posterior check of our minimiser + Hessian errors and of L10's profile grid.
+## Updated order
+1) Ollama one-at-a-time scheduling (free). 2) Conformal abstention test on existing CubeMind scores (no new runs needed — cheapest real gain).
+3) Reranker after M0. 4) Speculative decoding (desk: download). 5) Cobaya check of L7/L10. 6) CosmoPower emulator trial.
