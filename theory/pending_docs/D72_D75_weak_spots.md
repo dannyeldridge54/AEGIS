@@ -11319,3 +11319,10 @@ Lock pushed before run; result field_tests/results/b7_taui_bbnnet.txt.
 - Net: no SERAPIS-specific tension. The τ=i hidden-sector question is decided by the CMB (N_eff), not by BBN.
 VERDICT: B7 VALIDATED; τ=i: U(1) OK on both, larger sectors excluded by ACT though preferred by D/H.
 MAP: none
+
+## D1123 (CENTRE, Djl loop (C), publishing-rule check): D1081–D1122 warrant ONE paragraph in the SERAPIS v3.3 draft, not a new paper — added to papers/v3/serapis_v3.3_draft.tex before §Limitations: "Astrophysical cross-checks of the post-hoc wino" (CMB, NLL γ-line with halo dependence, BBN/N_eff branch separation), plus a refs.bib entry for 1409.8294. Unposted; awaiting Danny's "Publish".
+- Why no standalone paper: every SERAPIS-facing result is a consistency check of post-hoc ingredients (wino, hidden sector). The frozen inflationary predictions are unchanged.
+- The one genuinely new, falsifiable statement is the halo-conditional 1 TeV line verdict, and the τ=i/ρ N_eff separation. Both fit in one paragraph.
+- Hyperion itself (the toolkit) is the release candidate (Hyperion 1.1, D1102/D1116), not a paper.
+- Not done: PDF build (revtex4-2 still missing in the cloud). Consistency: the existing §5 sentence "gamma-ray line searches exclude 1.85 TeV up to the thermal mass" agrees with W2/D1121.
+MAP: none
