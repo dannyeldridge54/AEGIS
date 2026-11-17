@@ -10402,3 +10402,15 @@ Flaw (mine, in the lock): 3 free parameters (h, ω_b, ω_c) vs 3 data points —
 Janus-LT's own z* sits 0.4 below HS-text and 1.7 below HS-code; the g₁ choice moves h by 1.2e-3. Comparing these h, Ω_m with the Planck 2018
 chains needs a fetched table (not done; no claim). Next time: a non-degenerate test (fix ω_b from BBN, or add n_s back with a primordial model).
 MAP: none
+
+## D1048 — RIGHT (R track) — BGW linear multiplet: with full GS cancellation the condensate potential has NO T-dependence at fixed dilaton [literature]
+[literature, fetched ar5iv hep-th/9605170, Binétruy–Gaillard–Wu] Stabilised variable: the linear-multiplet dilaton ℓ. GS term
+∫E bVG with G = −Σ ln(T^I + T̄^I) (Eq. 3.2) "cancels the T^I moduli-dependence of the superpotential completely"; condensate
+ū u = ℓμ⁶e^{g − (f+1)/(bℓ)}/e² (Eq. 3.37) and m_{3/2} (Eq. 3.38) carry no T; V_pot = [1/(16e²ℓ)]{(1+f−ℓf₍₁₎)(1+bℓ)² − 3b²ℓ²}μ⁶e^{g−(f+1)/(bℓ)} (Eq. 4.1)
+"depends only on the dilaton ℓ".
+Consequence (with D1044–D1046): the stabilised dilaton is the GS-shifted variable in every controlled formulation checked (chiral S' in LRW,
+linear ℓ in BGW). At fixed stabilised dilaton the GS term leaves either no T-dependence (BGW, universal cancellation) or ln(2 Im T) (LRW S'
+frame), and neither reproduces the ρ tilt (D1045/D1046). The GS route for the ρ tilt is CLOSED. D1009–D1011/D1017's "candidate" status is
+withdrawn; D1010's computed equivalence stands only as a statement about the form V = P/(1 − κL). Open: the tilt's origin (back to D991a-level
+"open"); remaining candidate from D1031: an s → 1 Eisenstein term entering the potential from a source other than the GS counterterm.
+MAP: node=eps_tilt status=estimate touches=[] ripple=no

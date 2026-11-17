@@ -293,3 +293,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1045: when a field redefinition exists, decide which variable the stabilisation actually fixes before testing — the frame choice is physics, not convention.
 - D1046: a root found by bracketing next to a region of NaNs is suspect; always check the other observables at the root.
 - D1047: count degrees of freedom before locking a χ² claim — n_params = n_data makes χ²=0 automatic.
+- D1048: check the claimed mechanism in a second independent formulation (chiral vs linear multiplet) before building on it.
