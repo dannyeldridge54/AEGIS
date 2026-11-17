@@ -63,3 +63,8 @@ Status: draft, collected 17 Nov 2026 (D1081–D1101). Packaging and a Zenodo upl
 - HL-LHC wino reach 0.5–0.9 TeV (D1131). N_eff forecasts: SO 0.045, CMB-S4 0.03 (D1136).
 - Gaia DR3 v_esc profile → light halo, M200c 0.55e12 (D1139). 1 TeV wino verdict for that halo: FAIL (LO) / marginal (NLO); concentration-dominated (D1142, correcting D1139).
 - Side summaries: A wino (D1143), B first minutes (D1144), C Galaxy (D1145). All parked at diminishing returns pending new data, the PC, or a new direction.
+
+## Milky Way potential (D1193–D1195)
+- Horta+2026 (arXiv:2601.18876) measures v_c(R☉) = 235.3 km/s. MWPotential2014 gives 219.5 (−4.3σ, FAIL); McMillan17 gives 233.2 (PASS, C8).
+- New mapper_feed.orbit_params_galpy(pot=...) supports McMillan17 through galpy's C integrator. It reproduces our MWPotential2014 integrator to ≤ 6.4e-5 (D9, after a unit fix).
+- The default is still MWPotential2014. Flipping it, together with the Sun's frame constants (R0 = 8.21, v0 = 233.1), is the next step.

@@ -12326,3 +12326,18 @@ Three-way check on N2': PyTransport 0.946202 = patched-MMC 0.946202 (D1174) vs J
 Status: Janus-MF validated on 5 separable models (D1162, D1166) and 2 non-separable models against an independent reference (this note); D1169's
 NOT VALIDATED stays on record as the MMC-reference failure it was. r on non-separable models not yet independently checked (PyTransport tensor route not used).
 MAP: none
+
+### D1196 — D9: a galpy-backed orbit path for the Star Mapper. The MWPotential2014 regression PASSES (≤ 6.4e-5) after a unit fix; the McMillan17 orbit changes are reported; the default is not flipped yet (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_D9_galpy_path, plus DEVIATIONS_D9 D1. **Results:** d9_galpy_path_run1.txt (the FAIL) and d9_galpy_path.txt (after the fix).
+- **New function:** mapper_feed.orbit_params_galpy(..., pot = 'MWPotential2014' | 'McMillan17'). It uses galpy's C integrator, at 0.02 s per 3-Gyr McMillan17 orbit.
+- **Run 1: R1 FAIL.** galpy treats plain floats as natural units even when ro/vo are set, which made the orbits ~1e4× too large. The FAIL stays recorded. The fix (divide the inputs by ro/vo) was written in DEVIATIONS before the rerun.
+- **Rerun: R1 PASS.** galpy-MWP2014 matches our own galaxy.py within ≤ 6.4e-5 on r_peri, r_apo and z_max for all 5 test stars.
+- **What McMillan17 changes (same phase-space inputs, reported):**
+  - r_peri falls by 3–10%: star 2 7.32 → 6.59, star 4 5.01 → 4.68, star 5 2.43 → 2.18 kpc.
+  - r_apo falls by 0–4%; z_max falls by 0–6% (star 5 7.34 → 6.93).
+  - That is, slightly tighter, more bound orbits from the heavier inner Galaxy.
+- **Not done (stated in the lock):** the default stays MWPotential2014. A real switch also changes the Sun's frame constants in mapper_feed (R0_XY = 8.0 → 8.21 and V_SUN from v0 = 220 → 233.1). That shifts every star's Galactocentric velocity, so it gets its own locked step.
+  - The Star Mapper on Danny's PC uses its own copy, which is untouched.
+- **Hyperion 1.1 CHANGES:** entry added.
+VERDICT: galpy path VALIDATED against our MWP2014 integrator. McMillan17 is ready to use. The default flip and the frame constants are OPEN (next D step).
+MAP: none
