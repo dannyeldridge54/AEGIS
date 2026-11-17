@@ -1674,3 +1674,6 @@ Touches: none.
 
 ## D1007: track R candidate — gaugino-condensation potential carries e^{3L} at leading order; linearised gives the ρ tilt εL (not yet computed)
 - [literature] 1812.06520 Eqs. 2.7, 4.1, 4.2; [derived] (Im T|η|⁴)^{-3} = 8e^{3L}.
+
+## D1007a: correction — e^{3L} gaugino-condensation source fails as an εL tilt on the inflaton (ΔL ≈ 19 over 50 e-folds)
+- [computed] L(y) along SERAPIS-ρ: 24.0 (N=60) → 2.5 (N=1); linearisation valid only over ≲ 0.1 e-fold.
