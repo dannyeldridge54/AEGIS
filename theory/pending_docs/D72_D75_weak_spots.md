@@ -10909,3 +10909,20 @@ MAP: none
 - Practical: Hyperion's NLO module uses off_factor = √2 as its working default, labelled post-hoc. For the CMB band, the difference between conventions is 0.03 TeV.
 VERDICT: CONSISTENT (post hoc); convention favoured by the text but not explicit. A1e (blind second number) is the real test.
 MAP: none
+
+## D1096 (CENTRE, Djl loop (B), literature check): the deuterium "tension" is a Standard-Model nuclear-rate question, not a SERAPIS one — a 2026 data-driven analysis predicts 10⁵ D/H = 2.442 ± 0.040 (1.70σ below Cooke+2018), matching PRIMAT; the spread is the d(d,p)t / d(d,n)³He rates
+- Source (quoted, Launders, Giovanetti & Liu 2026, arXiv:2604.16600):
+  - Data-driven standard-BBN prediction 2.442 ± 0.040, 1.70σ below Cooke+2018's 2.527 ± 0.030.
+  - Table II: PRIMAT 2.444 ± 0.037 (1.74σ); PArthENoPE (current version) 2.512 ± 0.042 (0.29σ).
+  - d(p,γ)³He agrees across analyses. The divergence is d(d,p)t, where theirs ≈ PRIMAT ≠ PArthENoPE, and d(d,n)³He. They call for S-factor measurements at 0.1–0.6 MeV.
+- Our numbers (D1082):
+  - PRIMAT table 2.4393: matches their PRIMAT to 0.2%, at our ω_b.
+  - PArthENoPE table 2.576: this is the OLDER 880.2 table shipped with CAMB. The current PArthENoPE gives 2.512, so D1082's "5.6% code spread" overstates today's spread, which is about 2.8%.
+  - Flag: CAMB's PArthENoPE table is stale for D/H; prefer PRIMAT or the new data-driven value.
+- SERAPIS impact:
+  - None specific. SERAPIS uses the standard ω_b and ΔN = 0 (ρ), so it inherits the Standard Model's 1.7σ D/H pull exactly.
+  - Positive ΔN raises D/H (D1082 BBN-only best fit ΔN = +0.18). But ACT DR6 prefers N_eff below 3.044 (D1092), so dark radiation cannot be the fix; the two pull in opposite directions.
+  - The τ=i U(1) hidden sector (ΔN = 0.054) would shave the D/H pull slightly while costing 0.4σ in N_eff. A wash [estimate].
+- Verdict: no SERAPIS tension. The D/H 1.7σ is a nuclear-physics open item shared with ΛCDM.
+VERDICT: SM-level, not model-specific; D1082 code-spread statement refined (stale PArthENoPE table).
+MAP: none
