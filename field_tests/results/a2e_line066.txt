@@ -1,0 +1,7 @@
+assumed limit at 0.66 TeV: 1.742e-28
+LO HESS benchmark: |s+-|^2=0.216 sv_line=9.792e-27 f_max=0.133 (one-loop 0.23-0.27) vs f=0.14 -> FAIL
+LO McMillan17: |s+-|^2=0.216 sv_line=9.792e-27 f_max=0.189 (one-loop 0.33-0.38) vs f=0.14 -> PASS
+LO MWPotential2014: |s+-|^2=0.216 sv_line=9.792e-27 f_max=0.232 (one-loop 0.40-0.46) vs f=0.14 -> PASS
+NLO HESS benchmark: |s+-|^2=0.185 sv_line=8.408e-27 f_max=0.144 (one-loop 0.25-0.29) vs f=0.14 -> PASS
+NLO McMillan17: |s+-|^2=0.185 sv_line=8.408e-27 f_max=0.204 (one-loop 0.35-0.41) vs f=0.14 -> PASS
+NLO MWPotential2014: |s+-|^2=0.185 sv_line=8.408e-27 f_max=0.250 (one-loop 0.43-0.50) vs f=0.14 -> PASS
