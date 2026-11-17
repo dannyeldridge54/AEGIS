@@ -11639,3 +11639,13 @@ Lock PREREG_J11_beta_scaling. V ∝ φ^p, p = 1–6, N* = 50, 60; reference as J
 TRUNCATION SCALING CONFIRMED. Empirically rel. err ≈ 5ε* — so Janus β_s is good to ≲ 5% for ε* ≲ 0.01 (all plateau models and p ≤ 2) and degrades linearly
 above. Next upgrade path: a fourth-order β_s term (needs the N3LO source, arXiv 2205.12608 — still blocked on Danny's PDF), or an exact-MS β_s mode in Janus.
 MAP: none
+
+## D1150 (CENTRE, Djl loop (A), literature + scaling estimate): CTA line limits are expected to be "around ten times stronger, in terms of cross-section, than H.E.S.S." (2405.13104, fn. 10), which scales f_max by 1/√10 ≈ 0.32 — so CTA would reach wino fractions ≈ 0.05–0.10 at 0.7–1 TeV, i.e. the whole surviving SERAPIS-E window (f ≈ 5–10%) [estimate]
+- Quoted (2405.13104, Rodd et al. on higgsinos, footnote 10): CTA limits "around ten times stronger, in terms of cross-section, than H.E.S.S." for comparable observing times. Also: CTA higgsino discovery Δχ² ~ O(200) for 500 h.
+- Scaling (estimate):
+  - f_max ∝ √(limit), so CTA f_max ≈ 0.32 × IGS f_max.
+  - At 1 TeV: IGS f_max 0.14–0.30 → CTA ~0.05–0.10.
+  - At 0.66 TeV: IGS 0.11–0.34 (bracketed) → CTA ~0.035–0.11.
+  - The surviving SERAPIS-E window has f = (M/2.9)² ≈ 0.053 (0.67 TeV) to 0.096 (0.9 TeV).
+- Reading: CTA + HL-LHC together should cover the entire post-hoc wino window. The SERAPIS-E wino becomes a definite test within roughly a decade (CTA Galactic Centre survey + HL-LHC 3 ab⁻¹) [estimate; the CTA wino-specific study 2008.00692 was not fetched].
+MAP: none
