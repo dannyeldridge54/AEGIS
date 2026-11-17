@@ -11861,3 +11861,17 @@ Scored: GMLFI, NCLI, CNBI (the Fortran line-length fix and CNBI α = 1e-2 worked
 Listed (unscored): RPQTI (ASPIC timeout), HI ξ = 20000 (ASPIC timeout even at 300 s), KMIII (20-min wall limit, DEV D1).
 Pulse totals with J7f (D1035) and J7g (D1127): Janus more accurate on 188 + 18 = 206/206 points. Verdict unchanged: JANUS MORE ACCURATE.
 MAP: none
+
+## D1169 — TOOLS/JANUS — JMF4 non-separable: NOT VALIDATED; JMF4b: the gap is MultiModeCode's own derivative code [FINDING]
+JMF4 (lock PREREG_JMF4_nonseparable): Janus-MF vs MMC on two non-separable 2-field potentials, Janus given the correct V, ∇V, Hessian
+(Hessian checked vs finite differences to 1e-10). N1 (MMC case 11, quadratic + quartic interaction): n_s 0.954824 vs 0.955063 (|Δ| 2.4e-4, FAIL at 2e-4),
+r 0.19566 vs 0.20331 (3.8%, FAIL). N2 (case 12, off-diagonal mass): n_s 0.946896 vs 0.948086 (1.2e-3, FAIL), r 0.14467 vs 0.15879 (8.9%, FAIL).
+Verdict as locked: NOT VALIDATED — this stands.
+Diagnosis (read after the failure, modpk_potential.f90 @641153c): MMC's V, dV and d²V disagree for these cases. Case 12: V carries 2εφ₁φ₂
+but dV and d²V are those of εφ₁φ₂. Case 11: dV of the lightest field drops (1/12)φ_L Σλ_iφ_i², and d²V is asymmetric (V_iL ≠ V_Li = 0) and drops a term
+in V_LL. Case 8 (hybrid) has a φ₁ where 1 belongs in V_11 — untested.
+JMF4b (lock PREREG_JMF4b_mmc_bug_check, written before running): Janus-MF given MMC's coded V/dV/d²V reproduces MMC — N1 |Δn_s| 2.6e-6,
+Δr/r 9.5e-7; N2 |Δn_s| 1.1e-4, Δr/r 7.2e-5 — both PASS → JMF4 FAILURE EXPLAINED BY MMC's DERIVATIVE CODE.
+Status: Janus-MF non-separable stays UNVALIDATED (MMC can't serve as the reference there); separable: validated on 5 models (D1162, D1166).
+Next: an independent non-separable reference (another code, or a fixed-derivative MMC build under its own lock). Outreach on hold, so no upstream report.
+MAP: none
