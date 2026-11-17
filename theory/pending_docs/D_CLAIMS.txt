@@ -488,3 +488,4 @@ D1201  2026-11-17T22:16Z  B tick: deuterium offset = known dd-rate systematic; S
 D1202  2026-11-17T22:26Z  A2m: 1 TeV wino vs IGS with Singh-Desai Einasto haloes: PASS 5/5 (high rho_sun caveat)
 D1203  2026-11-17T22:31Z  kappa tick: McMillan17 local rotation-curve slope rises (+1.3 km/s/kpc) vs measured falling (-1.7 to -4.6); kappa gap is real, not definitional
 D1204  2026-11-17T22:36Z  2407.12551 (Klacka+ 2024) RAR-based MW model: right local slope but v0 228.8, MOND-like DM, no public code; not a Mapper default
+D1205  2026-11-17T22:36Z  L11 Cobaya MCMC confirms L7 w0wa errors
