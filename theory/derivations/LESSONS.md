@@ -242,3 +242,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D993: check the amplitude normalisation of any 'physical' quantity computed from shape-only potentials before reading a verdict.
 - D994: a transcribed formula earns use only after internal consistency checks (lower-order match, derivative relations) and a numeric test against an exact route.
 - D995: build the one-call interface on validated parts, then test the whole chain end to end against an exact chain.
+- D996: pick the residual method before the threshold; a finite-difference floor can fail a correct solution, and the fix is a new lock with an exact method, never a looser threshold.

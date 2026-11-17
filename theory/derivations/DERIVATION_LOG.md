@@ -1644,3 +1644,6 @@ Touches: none.
 
 ## D995: Janus J2/J4/J5 (locked PREREG_J4) VALIDATED
 - [computed] N* exact to 1e-3, n_s within error bar, 5 T_R.
+
+## D996: S4a Dudas-Mourad 9D reproduced
+- [computed] symbolic residuals 0; numerical 1e-10; first lock NOT VALIDATED (FD floor), second (symbolic) VALIDATED.

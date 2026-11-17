@@ -10004,3 +10004,9 @@ MAP: none
 [computed] (field_tests/results/janus_j4_check.txt) N* = 46.458, 47.985, 48.749, 49.513, 51.042 (identical to D979 at 3 decimals); n_s = 0.969510–0.974163 (Δ −4.8e-7 to +2.7e-6). One call per point, milliseconds.
 J5 error bars: n_s from |3rd − 2nd|/5, r from the next-order term size, α_s from |alpha_dn − third-order α_s|; on these points the stated ±3–4e-6 covers the true n_s error (≤ 2.7e-6).
 MAP: none
+
+## D996 (track S, locks PREREG_S4a and PREREG_S4a2): the toolkit reproduces the Dudas–Mourad 9D orientifold vacuum (Basile–Thomée 2209.10553 eqs. 2.1–2.8): S4a's locked verdict was NOT VALIDATED (finite-difference floor 2e-6 > 1e-6 in Route A); the new lock S4a2 (symbolic Route A) gives all three field-equation residuals exactly 0; with S4a's Route B (numerical integration matches to 1e-10, constraint 4e-10): VALIDATED
+[literature] Action R − ½(∂φ)² − 2α_E e^{γφ}, γ = 3/2 (orientifold), gauge B = −(γ/2)φ, solution e^{2A} = (√α_E y)^{1/9}e^{−α_E y²/8}, e^φ = e^{φ₀}(√α_E y)^{2/3}e^{3α_E y²/4}.
+[computed] (field_tests/results/s4a_dudas_mourad.txt, s4a2_dm_symbolic.txt) S4a Route A (FD): eq2 6e-11, eq1/eq3 ~1e-6 (second-derivative floor) → locked NOT VALIDATED; Route B: |ΔA| 1.9e-11, |Δφ| 1.3e-10, constraint 4.3e-10. S4a2: symbolic residuals 0, 0, 0. e^φ = 0.14 at y = 0.05 (weak coupling) → 1.8e3 at y = 3 (strong coupling); proper length of the interval 2.09/√α_E (finite), as in the literature (two singular ends at finite distance).
+Consequence: the backreaction solver is validated on the known 9D case; S4b (6D T⁴/Z₂ anti-D5 analogue, needs its 6D dilaton–tadpole action from the literature) can be built on it.
+MAP: none
