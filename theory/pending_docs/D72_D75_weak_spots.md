@@ -9999,3 +9999,8 @@ MAP: none
 [computed] β_s = −(2.8–4.6)e-5 across branches and N* = 44–53 (first Janus value of the running of the running; consistent with the D666 estimate β_s ≈ 128u⁶(1+x)(2x² − 5x − 16) in sign and size [to be compared quantitatively]).
 r stays second order (0.013% already); third-order r to be added when transcribed.
 MAP: none
+
+## D995 (track J, locked PREREG_J4): Janus observe() (J2 exact switch, J4 reheating → N*, J5 error bars) reproduces the exact self-consistent N* of D979 to |ΔN*| < 5e-4 at T_R = 1e4–1e10 GeV and n_s to ≤ 2.7e-6, inside its own stated error bar (±3.3–4.2e-6): VALIDATED
+[computed] (field_tests/results/janus_j4_check.txt) N* = 46.458, 47.985, 48.749, 49.513, 51.042 (identical to D979 at 3 decimals); n_s = 0.969510–0.974163 (Δ −4.8e-7 to +2.7e-6). One call per point, milliseconds.
+J5 error bars: n_s from |3rd − 2nd|/5, r from the next-order term size, α_s from |alpha_dn − third-order α_s|; on these points the stated ±3–4e-6 covers the true n_s error (≤ 2.7e-6).
+MAP: none

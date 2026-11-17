@@ -241,3 +241,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D991a: before matching a function's shape, check which object carries it (mass vs vacuum energy differ by one unit of lattice weight).
 - D993: check the amplitude normalisation of any 'physical' quantity computed from shape-only potentials before reading a verdict.
 - D994: a transcribed formula earns use only after internal consistency checks (lower-order match, derivative relations) and a numeric test against an exact route.
+- D995: build the one-call interface on validated parts, then test the whole chain end to end against an exact chain.

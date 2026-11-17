@@ -1641,3 +1641,6 @@ Touches: none.
 
 ## D994: Janus J3 third order (locked PREREG_J3) IMPROVED
 - [computed] n_s median error 1.7e-5 → 1.6e-6 (max 2.9e-6) on 24 points; β_s ≈ −3e-5.
+
+## D995: Janus J2/J4/J5 (locked PREREG_J4) VALIDATED
+- [computed] N* exact to 1e-3, n_s within error bar, 5 T_R.
