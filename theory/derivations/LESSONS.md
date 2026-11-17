@@ -270,3 +270,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1022: diagnose a failing integration with a trajectory dump before trying a second fix.
 - D1023: when an end condition is never reached, check whether the model itself makes it ill-defined before blaming the solver.
 - D1024: get normalisations from a primary source before quoting factor-of-1000 conclusions; here it confirmed the estimate.
+- D1025: verify a code's output units by calling its own function (CAMB DAstar = comoving distance in Gpc) rather than guessing twice.

@@ -1728,3 +1728,6 @@ Touches: none.
 
 ## D1024: R6 — GS coefficient C/8π² = 0.380 (E₈), sign OK; ε = 6e-5 needs Re S ≈ 3200 (cf. D975 Im S Im T ≳ 4900)
 - [literature] hep-th/9202059 Eqs. 1.1, 1.4, 3.9, 3.13, 4.15, 4.19.
+
+## D1025: L1 — TorsionΛ D715 audit with first-principles Janus-LT: (b) R +6.8σ, l_A −186σ; D715 verdict strengthened
+- [computed] V vs CAMB ΛCDM: z* 5e-4, l_A 3.4e-4.
