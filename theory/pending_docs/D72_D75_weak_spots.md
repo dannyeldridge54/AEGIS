@@ -12166,3 +12166,13 @@ MAP: none
   - Meanwhile the loop rotates to other open items, so the relic thread is not chased with unsourced inputs.
 VERDICT: B1 FAIL (+5.4%). Direction and size are consistent with the missing g_*(T). LO Sommerfeld +8.6% (reported). OPEN pending the g_* table.
 MAP: none
+
+### D1188 — Rotation tick on plateau_origin (the only open/assumed map node; ladder flags empty): NULL (2026-11-17)
+- [DEEP · literature] One extended search: modular-invariant inflation, plateau near τ = i, string one-loop/Eisenstein, 2026.
+- Hits 2607.00528, 2405.08924, 2411.18603 and 2407.12081 are already in the notes (D910–D911, D1005). 2411.07552 (Landscape of Modular Cosmology) is not cited for the plateau's origin.
+- New hit read: arXiv:2604.05548 (Aoki–Strumia, "Cosmological collider signals of modular spontaneous CP breaking").
+  - It takes the modulus as the inflaton but gives no V(τ), no plateau and no τ = i discussion. It only sets ε ∼ η ∼ 1/N generically and bounds H from r ≲ 0.032.
+  - No input for plateau_origin or eps_tilt.
+- No computation.
+VERDICT: NULL. plateau_origin stays assumed (P3). The relic thread waits on the g_* table permission. The next rotation goes to Hyperion open items (inner-halo concentration for the J-factors; the parked 7PN tidal coefficient).
+MAP: none
