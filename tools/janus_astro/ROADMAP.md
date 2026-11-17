@@ -29,6 +29,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A2b DONE (D1066): aligned-spin TaylorF2 vs LAL ≤ 6.5e-10 rad through 2.5PN spin order; 3PN spin–spin terms missing (A2b2).
 
+- A4 (D1067): NOT VALIDATED as locked — growth ≤ 7e-4, Tinker08 ≤ 2.2e-3, but PS/ST up to 6% at 1e15 (colossus wrapper vs its own model function; A4b).
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].
