@@ -349,3 +349,4 @@ D1062  2026-11-17T12:01Z  Djl: A2c GW amplitude, SNR, horizon and BNS range vs L
 D1063  2026-11-17T12:04Z  Djl: A2c2 cosmological horizon and range for A+, ET, CE
 D1064  2026-11-17T12:07Z  Djl: A2c3 IMRPhenomD horizons; D1063 flag resolved
 D1065  2026-11-17T12:09Z  L9a: EH98 no-wiggle transfer validated vs CAMB
+D1066  2026-11-17T12:09Z  Djl: A2b aligned-spin TaylorF2 vs LAL validated to 2.5PN spin; 3PN spin-spin gap identified
