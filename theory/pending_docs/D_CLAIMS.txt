@@ -422,3 +422,4 @@ D1135  2026-11-17T18:03Z  R: Z6-II-b abelian N=2 sector has exactly vanishing th
 D1136  2026-11-17T18:03Z  Neff forecasts
 D1137  2026-11-17T18:04Z  R: Wilson lines do not lift the Z6-II-b U(1) zero (to O(BC)); the U(1) gets a different log
 D1138  2026-11-17T18:05Z  S4d prep: Basile-Mourad-Sagnotti template - DM tadpole vacua (9D x interval) perturbatively stable
+D1139  2026-11-17T18:09Z  Gaia DR3 vesc
