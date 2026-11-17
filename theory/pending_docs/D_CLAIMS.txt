@@ -301,3 +301,4 @@ D1014  2026-11-17T05:38Z  S4b(a) tadpole exponent gamma_D verified symbolically
 D1015  2026-11-17T05:40Z  S4b(b) 6D anti-D5 tadpole vacuum confirmed two routes
 D1016  2026-11-17T05:42Z  R3 single-condensate Omega: GS tilt flips sign
 D1017  2026-11-17T05:44Z  R4 racetrack: GS tilt R=+1 exactly at SUSY dilaton minimum
+D1018  2026-11-17T05:50Z  J7d two-parameter ASPIC models
