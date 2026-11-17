@@ -12298,3 +12298,21 @@ MAP: none
 - The McMillan17 value D1193 flagged as "recalled" is confirmed by our own computation: field_tests/results/c7_mcmillan17.txt has v_c(8.21) = 233.2 km/s (galpy, C7). Against Horta+2026 that is −2.1 km/s, ≈ −0.6σ.
 - The verdict is unchanged.
 MAP: none
+
+### D1194 — C8: our Galaxy potentials vs Horta+2026 at the Sun. McMillan17 PASSES (v_c −0.57σ, Ω +0.04σ); MWPotential2014 FAILS (v_c −4.3σ); κ is off for both models in opposite directions (reported) (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_C8_horta. **Result:** field_tests/results/c8_horta.txt. No deviations. R = 8.178 kpc is scored; R = 8.256 is Horta's implied v_c/Ω and is reported.
+
+  | Model | v_c (km/s) | Ω (km/s/kpc) | κ (reported) | Verdict |
+  |---|---|---|---|---|
+  | MWPotential2014 | 219.5 (−4.27σ) | 26.84 (−16.6σ*) | 35.94 (−0.96σ) | **FAIL** |
+  | McMillan17 | 233.2 (−0.57σ) | 28.52 (+0.04σ) | 41.24 (+5.4σ) | **PASS** |
+
+  - *Horta's Ω error is asymmetric (+0.4/−0.1), so any shortfall gives a huge pull. The v_c pull (−4.3σ) is the robust one.
+- **κ:** McMillan17's epicyclic frequency is 41.2 against 36.9 (+0.8/−1.0), so +5σ. Its rotation curve near R☉ falls less steeply than Horta's (Oort A − B ↔ κ).
+  - Horta's κ comes from their abundance-gradient method (A = 16.5, B = −11.9). This may be a model-shape tension, or a difference in definitions. Reported only, not chased.
+- **Decision recorded (not yet applied in code):** McMillan17 should be the Hyperion default Milky Way potential, with MWPotential2014 kept only as a legacy comparison.
+  - The code default change is a separate small locked step: Hyperion's C-ladder scripts and any orbit tool that defaults to MWPotential2014.
+  - On the PC, START_HYPERION_ORBITS.bat's potential choice should be checked once the PC is linked.
+- **Skipped (labelled):** Gaia NFW + McMillan17 baryons. galpy's McMillan17 component list was not split this tick.
+VERDICT: McMillan17 PASS, MWPotential2014 FAIL against Horta+2026. Default switch recommended (OPEN, small).
+MAP: none
