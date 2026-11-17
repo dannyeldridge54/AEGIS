@@ -10426,3 +10426,9 @@ Not yet a claim: needs (1) whether SERAPIS-ρ's plateau can be a matter F-term w
 (normalisation of Y_j vs ln Z), (3) the ℓ-vs-L question again (does Y_j hold at fixed GS-shifted dilaton? — it is a matter-sector
 quantity, so the S' shift should not touch it; to be checked). Next R step: lock (1)–(3) as a derivation plan.
 MAP: none
+
+## D1050 — RIGHT/Janus-LT — L8b: Planck-2018 distance priors + DESI DR2 BAO, flat ΛCDM — ROBUST (fixes D1047's degenerate test) [computed]
+Lock PREREG_L8b_priors_bao. 3 params vs 16 data: χ²_min = 14.05 (13 dof, 1.08/dof) at h = 0.6864, ω_b = 0.02252, ω_c = 0.11903, Ω_m = 0.3018.
+C1 PASS; C2 |h − 0.6842 (L4, DESI-compressed CMB + BAO)| = 0.0022 ≤ 0.005 PASS → ROBUST: Janus-LT's ΛCDM fit does not depend on which
+CMB compression is used to 0.3%, supporting D1042's joint w0wa result. (BAO pulls ω_b to 0.02252, 1σ above the CHW prior mean.)
+MAP: none
