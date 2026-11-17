@@ -1574,3 +1574,8 @@ Touches: none.
 
 ## D976: correction to D956
 - [derived] Γ ∝ m (D722 channel) ⇒ ΔN* = (1/12) ln λ′ = −0.146 at λ′ = 0.173; Δn_s ≈ −1.2e-4 (D956 overstated by 3×).
+
+## D977: Project H refit-C (locked) FAIL
+- [computed] λ′ = 0.173: Δn_s = −2.69e-3, Δr/r = +8.5% at ΔN* = −0.06 (C = λ′C₀).
+- [derived] λ′Ê is not a pure field shift of Ê beyond the y² term.
+- Result: Project H gives a sibling of SERAPIS-E (n_s ≈ 0.9714, r ≈ 5.0e-4), still inside the frozen band.
