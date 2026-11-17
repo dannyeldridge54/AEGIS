@@ -11927,3 +11927,13 @@ MAP: none
   - Scale α by {0, 0.1, 0.3, 1} on both sides at x = 0.99 (closed side) and 1.01 (open side) to see where the two sides separate.
 VERDICT: solver normalisation consistent (PASS). The Coulomb-sector discrepancy is OPEN (R2b5).
 MAP: none
+
+## D1174 — TOOLS/JANUS — JMF5: Janus-MF non-separable agrees with a derivative-consistent MMC build [AGREES; scope-labelled]
+Lock PREREG_JMF5_mmc_fixed (+DEVIATIONS D1, written before the rerun). Patch theory/janus/mmc_jmf5_fix.patch fixes only MMC's case 11
+derivatives and case 12's off-diagonal ½ in V (D1169's diagnosis); mode solver untouched.
+ N2' (½φᵀMφ, ε = 1e-12): Janus-MF n_s 0.946212 vs 0.946202 (|Δ| 9.4e-6), r 0.14465 vs 0.14467 (9.9e-5) — PASS (first run).
+ N1 (quadratic + quartic interaction): first run LISTED (patched MMC: pivot outside its background — the corrected force gives fewer e-folds);
+ DEV D1 stepped φ_init to (12.5, 12.5) by the written rule: n_s 0.954583 vs 0.954583 (|Δ| 3.7e-7), r 0.19751 vs 0.19751 (6e-7) — PASS.
+Verdict: JANUS-MF NON-SEPARABLE AGREES WITH A CONSISTENT REFERENCE. Scope: the reference is MMC's mode solver with my 40-line derivative patch,
+not a fully independent code — label "agrees", not "validated". JMF4's NOT VALIDATED stays on record.
+MAP: none

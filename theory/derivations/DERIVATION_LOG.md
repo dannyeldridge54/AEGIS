@@ -1796,3 +1796,4 @@ Touches: none.
 ## D1169: JMF4 non-separable NOT VALIDATED vs MMC; JMF4b shows the gap is MMC's inconsistent derivative code (cases 8, 11, 12)
 ## D1171: LOCKBENCH L-5 verification kit (GCI/order/MMS); KALUZA FD operator verified 2nd order on an exact case
 ## D1172: LOCKBENCH L-6 — deviation command + rerun guard in pcjob; tests PASS
+## D1174: JMF5 — with MMC's derivative code fixed, Janus-MF matches on both non-separable models (|Δn_s| ≤ 9.4e-6)
