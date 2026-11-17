@@ -342,3 +342,4 @@ D1055  2026-11-17T11:29Z  Janus-Astro A7a: J-factors for SERAPIS-E wino, profile
 D1056  2026-11-17T11:34Z  Djl: A7b wino Sommerfeld solver validated; line rate mass dependence; window per profile
 D1057  2026-11-17T11:40Z  Djl: A7c SERAPIS GW background through each reheating history
 D1058  2026-11-17T11:49Z  Djl: A3 neutron stars - A3a and A3b locked verdicts NOT VALIDATED; SLy/AP4 physics reproduced
+D1059  2026-11-17T11:53Z  Djl: A3c neutron stars NOT VALIDATED (N4 1.1e-5); EoS vs GW170817/NICER
