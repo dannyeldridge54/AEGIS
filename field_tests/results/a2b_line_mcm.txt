@@ -1,0 +1,5 @@
+J (HESS Einasto benchmark) = 4.4126e+21 (module units)
+McMillan17 NFW LO: J ratio model/HESS = 0.499; f_max = 0.503 (one-loop 0.87-1.01) -> PASS vs 0.26
+McMillan17 NFW NLO: J ratio model/HESS = 0.499; f_max = 0.554 (one-loop 0.96-1.11) -> PASS vs 0.26
+MWPotential2014 NFW LO: J ratio model/HESS = 0.332; f_max = 0.616 (one-loop 1.07-1.23) -> PASS vs 0.26
+MWPotential2014 NFW NLO: J ratio model/HESS = 0.332; f_max = 0.679 (one-loop 1.18-1.36) -> PASS vs 0.26
