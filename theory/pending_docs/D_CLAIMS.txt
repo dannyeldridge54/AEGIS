@@ -287,3 +287,4 @@ D1000  2026-11-17T04:17Z  J6b NLO deltaN r VALIDATED; twofield module
 D1001  2026-11-17T04:21Z  J6c/J6d large f_NL: Janus deltaN vs Byrnes-Choi-Hall Eq21
 D1002  2026-11-17T04:27Z  J7a Janus vs real ASPIC head-to-head
 D1003  2026-11-17T04:33Z  D989 Battery B VALIDATED + D981c replication
+D1004  2026-11-17T04:37Z  J7b Janus vs ASPIC 17 models
