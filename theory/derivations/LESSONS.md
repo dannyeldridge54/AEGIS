@@ -328,3 +328,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1176: test accuracy away from the pivot you tuned on — moving N* by ±10 is a cheap guard against a lucky pivot.
 - D1177: a ledger people can see beats one they have to grep — failures show next to passes, with their numbers.
 - D1195: when a reference fails, find a second reference built a different way (symbolic V, other method) — agreement of three independent codes settles it.
+- D1200: a profile grid is the cheap honest check on Hessian errors — if it reproduces the minimum and Δχ² you can trust the Gaussian summary.

@@ -1801,3 +1801,4 @@ Touches: none.
 ## D1176: J13 — Janus accuracy holds at N* 45/55/65 on 32 ASPIC models (96 pts; median dns 1.4e-6)
 ## D1177: LOCKBENCH L-7 — results ledger dashboard (D1160–D1176 verdicts + CubeMind arms); LOCKBENCH L-1…L-8 complete
 ## D1195: JMF6 — Janus-MF matches PyTransport (independent, symbolic V) on 3 quadratic + 2 non-separable models, |Δn_s| ≤ 9.3e-5; VALIDATED
+## D1200: L10 — w0–wa profile likelihood matches L7 (min 1 step from MAP, ΔχΛCDM 7.69 vs 7.70); DESI best fit inside 68%

@@ -12395,3 +12395,11 @@ MAP: none
 - **The SU(2)+gaugino exclusion should also reach the τ_i sector in Table "conditions" if it is listed there.** No row mentions it explicitly (checked by grep for 0.301), so nothing else to edit.
 VERDICT: draft updated (unposted). It needs the author lists filled in, and a full revtex build on a machine that has revtex (the PC).
 MAP: none
+
+## D1200 — RIGHT/JANUS-LT — L10: w0–wa profile likelihood (BAO + CMB compressed + Pantheon+) [CONSISTENT; CONTAINS DESI]
+Lock PREREG_L10_w0wa_profile; L7's χ² reused unchanged; 15×15 grid, (h, ω_b, ω_bc) profiled at each point.
+C1 grid minimum χ² 1423.00 at (w0, wa) = (−0.85, −0.50), one step from L7's MAP (−0.853, −0.518; χ² 1422.93) → PASS.
+C2 ΛCDM vs minimum Δχ² = 7.69 (L7 7.70) → PASS. C3 DESI Table V best fit (−0.838, −0.62) sits at profile Δχ² 0.31 → inside our 68% region.
+Region extents on the grid: 68% (Δχ² ≤ 2.30) w0 −0.90…−0.80, wa −0.76…−0.24; 95% (≤ 6.18) w0 −0.95…−0.75, wa −1.01…−0.11 — compatible with L7's
+Gaussian ±0.053 / ±0.200 (2D region wider than 1D ±σ as expected). Grid saved (janus_lt_l10_grid.npz) for a later Cobaya MCMC cross-check (tools research #6).
+MAP: none
