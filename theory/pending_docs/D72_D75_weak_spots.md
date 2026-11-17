@@ -11182,3 +11182,17 @@ Lock pushed before run. D1: galpy's McMillan17 returns physical units, and my sc
   - This narrows the SERAPIS-E 1 TeV margin. Worth a locked recomputation with the McMillan17 J-factor (H.E.S.S. ROIs) on the next A tick.
 VERDICT: McMillan17 mixed (passes v_esc/BHB, fails K-giant M200); the data sets disagree; SERAPIS-E 1 TeV wino passes even for the heavy halo [estimate].
 MAP: none
+
+## D1113 (CENTRE, Djl loop (D), locked PREREG_A2f, diagnostic): D1111's 7PN tidal gap is NOT LAL's octupole handling (refuted: an explicit 0 changes nothing, and TaylorF2 ignores octupolar Λ entirely) — the residual is a pure v⁹ (7PN) shape, and LAL's 7PN quadrupole piece is 0.99667 × ours, i.e. one coefficient differs by ~0.33% (0.185 in the equal-mass 7PN μ̃₊ coefficient 55.58)
+Lock pushed before run; result field_tests/results/janus_astro_a2f.txt.
+- P1: octupolar Λ explicitly 0 gives a residual of 7.40e-4 rad, unchanged. Hypothesis (a) REFUTED.
+- P2: octupolar Λ = 1000 vs 0 changes LAL's phase by exactly 0. LAL's TaylorF2 phase does not use the octupole.
+- P3: the residual fits v⁹ to rms 1.5e-10 (v¹⁰: 1.3e-5; v¹¹: 2.4e-5), so it is purely 7PN. The amplitude ratio of LAL's 7PN tidal piece to ours is 0.99667.
+  - Equal mass: our coefficient [136190135/27433728 + 978554825/4572288 ν − 281935/6048 ν² + 5/3 ν³] at ν = 1/4 is 55.5815. LAL implies about 55.396.
+- Remaining hypotheses:
+  - (b) LAL follows a different version/erratum of the HFB 7PN coefficient (the paper itself flags an earlier flux error, v1→v4).
+  - (c) A transcription error in one fetched coefficient. For example, 0.185 equals a change of 2.96 in the ν² coefficient (281935/6048 = 46.62 → ~49.6) or of 0.74 in the ν coefficient.
+- No coefficient is fitted or adopted: that would be tuning. Next step: source the coefficient independently, either from LAL's source code (LALSimInspiralPNCoefficients.c, XLALSimInspiralTaylorF2Phasing_14PNTidalCoeff, via GitHub/git.ligo.org through the allowlist) or from the HFB erratum. Then re-lock as A2g with the sourced value.
+- Physics impact: none (7e-4 rad ≪ any detectability scale, D1101). The 6PN and 6.5PN pieces are validated.
+VERDICT: (a) refuted; gap localised to one 7PN coefficient (0.33%); source-check pending (A2g).
+MAP: none
