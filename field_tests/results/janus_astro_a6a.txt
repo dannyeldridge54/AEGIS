@@ -1,0 +1,5 @@
+T1 v_c x1000: Hyperion 3.1 ms, galpy 0.4 ms (ratio galpy/Hyperion 0.13); max rel diff 2.0e-14
+T2 dn/dlnM x50: Hyperion 48 ms, colossus 0 ms (ratio 0.00); max rel diff 2.8e-03
+T3 TaylorF2 phase x1e5: Hyperion 3.63 ms, LAL (phase+amplitude) 7.61 ms (ratio 2.10); residual 7.0e+03 rad
+T4 SNR (20k pts): Hyperion 28.0 ms, LAL-amplitude route 1.8 ms (ratio 0.06); SNR 32.70708 vs 32.70708 rel 4.1e-15
+VERDICTS: T1=PASS T2=PASS T3=FAIL T4=PASS -> A6a NOT VALIDATED
