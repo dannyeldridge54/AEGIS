@@ -10959,3 +10959,13 @@ Lock pushed before run. D1: the first run crashed on a NameError (K vs G, c in g
 - Use: links A3 (NS module: Λ from SLy/AP4, D1094) to A2 (waveforms). An EoS → Λ → GW phase chain is now possible. Example for next time: SLy Λ_1.4 = 296 vs AP4 248 → a tidal-phase difference of ~0.13 rad [estimate, linear in Λ].
 VERDICT: A2d VALIDATED.
 MAP: none
+
+## D1099 (CENTRE, Djl loop (A, fallback), locked PREREG_W4): A1e has no blind target in 2009.00640 (it quotes no second resonance or Sommerfeld value), so the tick wired the EoS → Λ → GW chain instead — lossless, Λ_1.4 reproduced (SLy 295.6, AP4 247.6), and the two equations of state differ by 0.133 rad of tidal phase at 1.4+1.4 M_⊙ — W4 VALIDATED
+Lock pushed before run; result field_tests/results/w4_eos_gw.txt.
+- A1e: the fetched quote list from 2009.00640 contains only plot masses (1.65, 2.8 TeV), saturation below v ≈ 1e-3, "few percent" at v ≳ 0.01–0.1, and fit accuracy (per mille). There is no blind second number. A1e stays OPEN; the next candidate source is a different NLO paper (e.g. Beneke et al. on the wino line spectrum) that tabulates a Sommerfeld value.
+- T1: chain = direct call, bit-identical. PASS.
+- T2: Λ_1.4 = 295.6 / 247.6 vs 296 / 248. PASS.
+- Result (computed, 6PN tidal, 20 Hz to 0.8 f_ISCO, detrended): the tidal-phase span is 1.215 rad (SLy) and 1.018 rad (AP4), with a maximum SLy−AP4 difference of 0.133 rad. D1098's linear estimate (0.13) is confirmed.
+- Reading: in phase alone, a 0.13 rad difference between two mainstream EoS is small. Distinguishing them needs SNR ≳ 1/0.13 ≈ 8 in the tidal band, a rough Fisher-style scale [estimate]. Plausible for a loud BNS in O5/A+; Hyperion now has every piece (A2c SNR, A2d tides, A3 EoS) to do this properly as a locked forecast.
+VERDICT: W4 VALIDATED; A1e OPEN (no blind target in the source).
+MAP: none
