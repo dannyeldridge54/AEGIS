@@ -1,0 +1,4 @@
+a not populated: g_h=0.00 dN=0.0000 inside [-0.04,0.41]: True; Yp=0.24721 1e5DH=2.4393; 0.0 sigma at CMB-S4 0.03
+b U(1): g_h=2.00 dN=0.0535 inside [-0.04,0.41]: True; Yp=0.24793 1e5DH=2.4572; 1.8 sigma at CMB-S4 0.03
+c SU(2): g_h=6.00 dN=0.1606 inside [-0.04,0.41]: True; Yp=0.24936 1e5DH=2.4928; 5.4 sigma at CMB-S4 0.03
+d SU(2)+gaugino: g_h=11.25 dN=0.3012 inside [-0.04,0.41]: True; Yp=0.25120 1e5DH=2.5396; 10.0 sigma at CMB-S4 0.03
