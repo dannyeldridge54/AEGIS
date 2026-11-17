@@ -232,3 +232,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D982: a sign rule from one string model is a plausibility argument for another, not a result; label it estimate and name the check that would test it.
 - D983: watch memory in stiff ODE scans; keep only the outputs the verdict needs.
 - D984: when a locked outcome label names an experiment, check that experiment's real sensitivity before repeating the label.
+- D985: build a string-level check in stages, each reproducing the previous stage's limit; the bugs were all caught at stage boundaries.

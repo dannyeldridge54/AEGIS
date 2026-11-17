@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D911: Origin of the plateau → assumed",
   "D911a: Origin of the plateau → assumed",
   "D912: Origin of the plateau → assumed",
   "D914: Origin of the plateau → assumed",
@@ -29,7 +28,8 @@
   "D977: Origin of the plateau → estimate",
   "D979: N* for SERAPIS-E ≈ 49.7–50.5 → corrected",
   "D982: Galactic DM profile (cuspy vs cored) → literature",
-  "D984: Origin of the plateau → estimate"
+  "D984: Origin of the plateau → estimate",
+  "D985: Origin of the plateau → estimate"
  ],
  "open_rechecks": [
   "SERAPIS-E potential (Epstein + BHK tilt)",

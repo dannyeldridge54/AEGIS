@@ -1610,3 +1610,7 @@ Touches: none.
 ## D984: Project H n_s-matched (locked D979, PC)
 - [computed] C = 1.238 λ′C₀ restores n_s = 0.97403; r = 5.331e-4 vs 4.607e-4 (+15.7%).
 - [estimate] Δr ≈ 7e-5 needs σ(r) ≲ 2.4e-5 for 3σ: beyond funded missions; locked "LiteBIRD-class" label overstates feasibility.
+
+## D985: Level S3 (locked D985) PASS
+- [computed] anti-D5 position scalar, Möbius amplitude with full tower: m² > 0 at all 9 grid points; shape = E(U,2)/A² to 1.1% (L=10), 0.02% (L=16); two routes agree to ~1e-5.
+- Project H's decisive sign condition (D964) met at string level in the ADS sector; other conditions remain.
