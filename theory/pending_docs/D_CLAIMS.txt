@@ -299,3 +299,4 @@ D1012  2026-11-17T05:33Z  L0b2 own recombination z_d, r_d vs CAMB VALIDATED
 D1013  2026-11-17T05:34Z  D984 wide-grid alpha_s rho and Kairos
 D1014  2026-11-17T05:38Z  S4b(a) tadpole exponent gamma_D verified symbolically
 D1015  2026-11-17T05:40Z  S4b(b) 6D anti-D5 tadpole vacuum confirmed two routes
+D1016  2026-11-17T05:42Z  R3 single-condensate Omega: GS tilt flips sign
