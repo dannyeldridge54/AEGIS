@@ -12004,3 +12004,23 @@ MAP: none
 - **Next: R2b6 (locked in this tick).** Compute P_conv from the open solver's outgoing χ⁺χ⁻ flux at x = 1.01, and test ⟨S⟩ ≈ S_ann + S_conv within 20%.
 VERDICT: the D1170 expectation was incomplete (it left out conversion), now sourced. A quantitative check is OPEN (R2b6).
 MAP: none
+
+### D1180 — R2b6: the Gailitis-total test FAILS because conversion is O(1), not small; the threshold question is PARKED, and the relic work moves to R2c (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_R2b6_conversion. **Result:** field_tests/results/r2b6_conversion.txt.
+- **Self-check:** S_ann = 36.1988 vs 36.20 → OK (the copied integration is faithful).
+- **Unitarity:** |S₀₀|² + P_conv = 1.000000 exactly (|S₀₀| = 0.3591, P_conv = 0.8711).
+  - The open solver conserves flux, which is a strong independent validation of two_channel_open.
+- **Conversion:** at x = 1.01, χ⁰χ⁰ → χ⁺χ⁻ happens with probability 0.87. In S units, S_conv(A) = 1.12e5 and S_conv(B) = 2.24e5.
+- **Score:** ⟨S⟩ / (S_ann + S_conv) − 1 = −0.999 → **FAIL** for both conventions.
+- **Why D1179's expectation was wrong too:** strong mixing makes conversion and elastic scattering O(1), while annihilation is perturbative (O(α₂²), added as sΓs† and not inside the Hamiltonian).
+  - Below threshold, each quasi-bound χ⁺χ⁻ state mostly decays BACK to χ⁰χ⁰ (Γ_back ≫ Γ_ann). So Gailitis continuity of the total (elastic + conversion) says almost nothing about the tiny annihilation piece.
+  - The correct object is MQDT with Γ_ann put into the Hamiltonian as an absorptive term, i.e. averaging with Γ_ann/Γ_back per resonance.
+  - My "≈ 1 in 2,000 conversion" plausibility estimate in D1179 was wrong by ×1700.
+- **Decision (integrity and cost):** PARK the threshold-continuity question. Reasons:
+  - (i) Both solvers are now validated four ways: T1/T2 (D1158), normalisation (D1173), R-convergence (D1178), exact unitarity (here).
+  - (ii) The mismatch concerns only how resonance-averaged annihilation joins across a thin band around v ≈ 0.026.
+  - (iii) Freeze-out (v ~ 0.3, open side) and halo velocities (v ~ 1e-3, closed side, validated vs Beneke in A1) both lie outside that band.
+  - Reopen it only if R2c's thermal average turns out sensitive to x ∈ [0.9, 1.1]; R2c will report that weight.
+- Three locks in a row (R2b2, R2b3, R2b6) had wrong expectations, and each is recorded as FAIL. Lesson: source the expectation BEFORE locking a physics-continuity test, not after.
+VERDICT: FAIL as locked. Solvers validated (exact unitarity). Threshold-averaging question PARKED. Next: R2c thermal average.
+MAP: none
