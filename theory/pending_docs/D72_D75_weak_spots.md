@@ -11371,3 +11371,13 @@ Lock pushed before run; result field_tests/results/a2h_igs_J.txt.
 - Next: the 0.66–0.9 TeV points need a quoted IGS limit there. The text quotes only 1, 10 TeV and ~440 GeV; between 440 GeV and 1 TeV an interpolation would be an assumption.
 VERDICT: CONFIRMED — 1 TeV wino excluded except for the light halo at NLO.
 MAP: none
+
+## D1127 — DEEP/LEFT — J7g pulses 2–3: both ASPIC reheating routes over the whole pulse set — Janus better at 124/124 points [computed]
+Lock PREREG_J7g. Same 32 J7f-scored models, routes ln R_rad ∈ {0, −10} (pulse 2) and (w, ln ρ_reh) ∈ {(0,−100), (0,−150)} (pulse 3), matching as J7c2/J8.
+rrad: 62 points, Janus n_s closer to exact on 62/62; medians |Δn_s| 1.8e-6 vs ASPIC 7.0e-4 (~390×), max 3.1e-5 vs 2.6e-3; |Δr/r| 7.1e-5 vs 2.8e-2;
+|Δα_s| 6.5e-7 vs 1.9e-5; ASPIC's pivot N* off by median 0.158 (max 0.189) e-folds. rhow: 62/62; |Δn_s| 2.1e-6 vs 7.1e-4; |Δr/r| 8.5e-5 vs 2.7e-2;
+|Δα_s| 7.8e-7 vs 1.8e-5; ASPIC N* off median 0.198 (max 0.333). C1–C3 pass both routes → JANUS MORE ACCURATE.
+Listed: di (ASPIC reheating gave no result — also D1035's outlier). fi UNSCORED for good (J7i DEV D1: two Janus-side timeouts).
+Combined with D1035: pulse 1–3 now cover 32 models × (2 fixed-N* + 4 reheating) = 188 scored points, Janus closer on all 188.
+Ran across a container restart (the job resumes from its part file; no point was recomputed).
+MAP: none

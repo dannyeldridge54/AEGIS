@@ -298,3 +298,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1050: a cross-compression check (two different CMB summaries) is a cheap robustness test for any joint fit.
 - D1051: a lead with the right structure still needs its size checked at once; restate the size problem in physical terms (here: near-finiteness).
 - D1065: validate a fitting formula's shape before its normalisation — one new thing per lock.
+- D1127: make long batch jobs resumable from a part file — this one survived three 2 h limits and a container restart without recomputing a point.

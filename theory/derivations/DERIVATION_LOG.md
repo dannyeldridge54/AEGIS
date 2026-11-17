@@ -1771,3 +1771,4 @@ Touches: none.
 ## D1050: L8b — CHW priors + DESI BAO ΛCDM: χ² 14.05/13, h 0.6864 vs 0.6842 (L4) → ROBUST to CMB compression
 ## D1051: R — AGNT matter-log tilt κ = 2g²γ̃; natural size 1.6e-3–1.6e-2 (30–300× too big); ε needs near-finite N=2 sector (γ̃ ≈ 0) [estimate]
 ## D1065: L9a — EH98 no-wiggle T(k) vs CAMB: rms 1.3–1.4%, max ≤ 4.0% (BAO wiggles) → VALIDATED
+## D1127: J7g pulses 2–3 — 31 models × 2 reheating routes: Janus n_s better 124/124 (~390×); ASPIC pivot off 0.16–0.33 e-folds; with J7f, 188/188
