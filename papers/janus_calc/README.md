@@ -9,6 +9,6 @@ A fast calculator for inflationary observables (n_s, r, α_s) of single-field pl
 - Battery A (PREREG_D990): 24/24 SERAPIS-family points pass; |Δn_s| ≤ 2.4×10⁻⁵ (median 1.7×10⁻⁵), |Δr/r| ≤ 0.013%; 8 textbook stress models (m²φ², φ⁴, Starobinsky, natural) also within 3.1×10⁻⁵ / 0.031%. ~1 ms per point vs ~40–70 s for the exact solver (median speed-up ≈ 4×10⁴). Result file: janus_battery_a_d990.txt.
 - Battery B (PREREG_D989): α_s against the exact solver on 8 points — results to be added in v1.1.
 
-**Use:** `from janus_calc import models, core; m = models.serapis_E(1.15e-6); m.spectra(50.0); core.alpha_dn(m, 50.0)` (needs numpy, scipy, mpmath; SERAPIS model builders use the modular functions of the AEGIS toolkit, tools/serapis_calc).
+**Use:** `from janus_calc import models, core; m = models.serapis_E(1.15e-6); m.spectra(50.0); core.alpha_dn(m, 50.0)` (needs numpy, scipy, mpmath; run from this folder: the modular functions the SERAPIS models need are bundled in tools/serapis_calc).
 **Integrity:** every file is listed with its SHA-256 in SHA256SUMS.txt. Pre-registrations were committed (with their own .sha256) before the runs they govern.
 **License:** MIT (free to use, modify and redistribute with attribution). Please cite the Zenodo DOI.
