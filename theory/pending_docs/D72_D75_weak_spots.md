@@ -11895,3 +11895,12 @@ MAP: none
 - R2c (thermal average) waits on this. Freeze-out velocities are far above threshold, where the open solver is the one used and has passed T1/T2. But until this is settled the low-velocity part stays unverified.
 VERDICT: FAIL as locked. A solver-consistency question is OPEN (R2b4).
 MAP: none
+
+## D1171 — TOOLS — LOCKBENCH L-5: verification kit; first use: KALUZA FD operator verified 2nd order [built + VERIFIED]
+tools/lockbench/verify.py: gci3 (Celik et al. 2008 GCI procedure — apparent order by fixed point, existence test, oscillation flag, extrapolated value,
+e_a, e_ext, GCI_fine with Fs 1.25; formulas fetched), observed_order (vs a known exact value), two_solver, mms_orders. Tests PASS
+(trapezoid p = 2 incl. non-uniform ratios, Euler p = 1, GCI recovers the exact limit).
+First use (lock PREREG_L5_kaluza_fd_mms): KALUZA fd_schrodinger on an exact case through its curved-coordinate map (J = 2y, z = y², exact m² = n²):
+observed order 2.000–2.0004 for both modes, GCI_fine 2.6e-7 / 1.0e-6, Richardson-extrapolated m² within 9e-11 / 7e-12 → VERIFIED (2nd order).
+Scope: verifies the FD operator and y→z map; S4e's −4% gap vs BTR (D1141) is therefore not an FD discretisation error — S4e2 (PC) remains the test.
+MAP: none
