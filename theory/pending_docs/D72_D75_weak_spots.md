@@ -10537,3 +10537,10 @@ Data comparison [computed vs sourced measurements]:
 Reading: the two NICER pulsars pull in opposite directions for these classic EoSs (J0740 prefers stiffer/larger, J0614 softer/smaller); AP4 sits closest to both. Literature context, not a SERAPIS test (the EoS is nuclear physics, outside the model).
 Next: A3d only if Danny wants the integrator agreement formally closed (fixed-density surface); otherwise move on to A7d / A4.
 MAP: none
+
+## D1060 (DEEP Jl tick, track X / Hyperion, AEGIS application, locked PREREG_A7d + DEVIATIONS D1): SERAPIS's Σm_ν = 0.0587 eV lowers σ8 by 1.7% and the abundance of the most massive clusters by 11% (n > 1e15 M_⊙/h) relative to massless neutrinos, at fixed A_s and Ω_m — machinery VALIDATED against CAMB and colossus
+Run history: run 1 crashed (colossus modelTinker08 takes mdef as '200m', not 200); D1 written and pushed; single rerun.
+Validation [computed]: H1 σ8 by direct integration vs CAMB 1.5.9: 1.0e-4 (both cosmologies). H2 our Tinker08 dn/dlnM vs colossus massFunction at 1e12–1e15 M_⊙/h: ≤ 4.8e-4. → VALIDATED.
+Application [computed; Planck 2018 best fit, one massive eigenstate, Ω_m fixed, P_cb/ρ_cb prescription]: f_ν = 0.00445; σ8 0.8218 → 0.8076 (−1.72%); σ8,cb 0.8218 → 0.8111; P_m(k = 10 h/Mpc) −4.0% (rule of thumb −8f_ν = −3.6%). Cluster counts n(>M), z = 0: −1.3% (1e13), −3.9% (1e14), −11.2% (1e15 M_⊙/h).
+Reading: these are the standard minimal-mass effects — the Planck ΛCDM baseline already assumes 0.06 eV, so relative to the baseline SERAPIS's 0.0587 eV changes nothing measurable; the numbers matter only against "massless" fits. SERAPIS's prediction Σm_ν = NO floor is therefore cosmologically the most conservative possible (largest σ8 allowed by oscillations), which slightly worsens rather than relieves any low-S8 tension (D710: S8 consistent). Sources: CAMB, colossus (Tinker et al. 2008), Costanzi et al. 2013 convention.
+MAP: none
