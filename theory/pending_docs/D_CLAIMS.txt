@@ -484,3 +484,4 @@ D1197  2026-11-17T21:59Z  D10: Star Mapper default switched to McMillan17 with c
 D1198  2026-11-17T22:04Z  A rotation tick: no new wino/line limits beyond notes (NULL)
 D1199  2026-11-17T22:11Z  Paper rung prep: SERAPIS v3.3 draft gets B8 helium verdicts and cored-halo sentence (unposted)
 D1200  2026-11-17T22:14Z  L10 w0-wa profile likelihood consistent with L7, contains DESI
+D1201  2026-11-17T22:16Z  B tick: deuterium offset = known dd-rate systematic; SLEGS p(n,g)D (2509.11743), PDG D/H 2.547
