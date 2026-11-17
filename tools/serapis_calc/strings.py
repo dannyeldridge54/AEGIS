@@ -45,3 +45,58 @@ def V_routeA(a, L, U, N=40):
 def laplacian_B(L, U, h=1e-3):
     V0 = V_routeB([0, 0], L, U)
     return (V_routeB([h, 0], L, U) + V_routeB([-h, 0], L, U) + V_routeB([0, h], L, U) + V_routeB([0, -h], L, U) - 4*V0)/h**2
+
+# ---------------- S2: open-string annulus (one brane stack wrapping T^2, Wilson line a), light-cone oscillators -------------
+# Tr e^{-t M^2} over the oscillator states, q = e^{-t/alpha'} (alpha' = 1 units below):
+#   NS (bosons, GSO-projected): (1/2) q^{-1/2} [prod(1+q^{n-1/2})^8 - prod(1-q^{n-1/2})^8] / prod(1-q^n)^8   -> 8 + 128 q + ...
+#   R  (fermions):              8 prod(1+q^n)^8 / prod(1-q^n)^8                                             -> 8 + 128 q + ...
+# Supersymmetry: NS = R identically (the abstruse identity). Each state contributes as a 6D field with KK momenta p + a.
+def osc_NS(q, nmax=60):
+    q = mp.mpf(q); A = mp.mpf(1); B = mp.mpf(1); D = mp.mpf(1)
+    for n in range(1, nmax+1):
+        A *= (1+q**(n-0.5))**8; B *= (1-q**(n-0.5))**8; D *= (1-q**n)**8
+    return (A-B)/(2*mp.sqrt(q)*D)
+def osc_R(q, nmax=60):
+    q = mp.mpf(q); A = mp.mpf(1); D = mp.mpf(1)
+    for n in range(1, nmax+1):
+        A *= (1+q**n)**8; D *= (1-q**n)**8
+    return 8*A/D
+def levels(sector, Nmax=6):
+    """Degeneracies d_N and masses M_N^2 = N (alpha'=1) from a power-series expansion (independent of osc_*)."""
+    import sympy as sp
+    x = sp.symbols('x')                       # x = q^{1/2}
+    P = lambda s, k: sp.prod([(1+s*x**(2*n-k))**8 for n in range(1, Nmax+3)])
+    D = sp.prod([(1-x**(2*n))**8 for n in range(1, Nmax+3)])
+    if sector == 'NS':
+        expr = sp.series((P(1, 1)-P(-1, 1))/(2*x*D), x, 0, 2*Nmax+1).removeO()
+    else:
+        expr = sp.series(8*P(1, 0)/D, x, 0, 2*Nmax+1).removeO()
+    c = sp.Poly(sp.expand(expr), x).all_coeffs()[::-1]
+    return [(k/2, int(c[k])) for k in range(len(c)) if c[k] != 0]   # (M^2, degeneracy)
+def V_string_B(a, L, U, sector='NS', Nmax=6, N=40):
+    """Winding route with the full tower: each level M contributes -(A/pi^3) sum' (cos-1)/|w|^6 * g(M|w|), g(x)=x^3 K_3(x)/8."""
+    from scipy.special import kv
+    e1, e2, f1, f2, A = lattice(L, U); a = np.asarray(a, float)
+    m = np.arange(-N, N+1); M, Nn = np.meshgrid(m, m)
+    W = M[..., None]*e1 + Nn[..., None]*e2; w = np.sqrt((W**2).sum(-1)); w[N, N] = np.inf
+    tot = 0.0
+    for M2, d in levels(sector, Nmax):
+        x = math.sqrt(M2)*w
+        g = np.ones_like(w) if M2 == 0 else np.where(np.isfinite(x), x**3*kv(3, np.minimum(x, 700))/8, 0.0)
+        tot += d*((np.cos(W @ a) - 1)/w**6*g).sum()
+    return float(-(A/math.pi**3)*tot)
+def V_string_A(a, L, U, sector='NS', N=40):
+    """Proper-time route with the oscillator trace osc_* (theta/eta products) times the KK sum."""
+    e1, e2, f1, f2, A = lattice(L, U); a = np.asarray(a, float)
+    m = np.arange(-N, N+1); M, Nn = np.meshgrid(m, m)
+    P = 2*math.pi*(M[..., None]*f1 + Nn[..., None]*f2)
+    P2 = (P**2).sum(-1); edge = np.ones_like(P2, bool); edge[1:-1, 1:-1] = False
+    R2 = (math.sqrt(P2[edge].min()) - math.sqrt(a @ a))**2; keep = P2 < R2
+    pa = np.sort(((P + a)**2).sum(-1)[keep]); p0 = np.sort(P2[keep])
+    t0 = 40.0/float(R2)
+    osc = osc_NS if sector == 'NS' else osc_R
+    f = lambda t: float(osc(math.exp(-t)))*(np.exp(-t*pa).sum() - np.exp(-t*p0).sum())/t**3
+    from scipy.integrate import quad
+    pts = [t0, 1e-2, 0.1, 1, 10, 100]
+    tot = sum(quad(f, pts[i], pts[i+1], limit=200, epsrel=1e-9)[0] for i in range(len(pts)-1)) + quad(f, 100, np.inf, limit=200)[0]
+    return float(-tot/(2*(4*math.pi)**2))
