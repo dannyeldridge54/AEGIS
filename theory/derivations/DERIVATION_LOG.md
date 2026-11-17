@@ -1695,3 +1695,6 @@ Touches: none.
 
 ## D1013: D984 wide-grid α_s — SERAPIS-ρ −9.863e-4 / −8.694e-4 converged, published stands; Kairos 0.93×(−2/N²)
 - [computed] PC run; Janus agrees to 0.16 %.
+
+## D1014: S4b(a) γ_D = (D+2)/√(8(D−2)) verified (k = 4/(D−2)); γ₆ = √2, γ₁₀ = 3/2
+- [computed] sympy Christoffel-level check, D = 4, 6, 10.

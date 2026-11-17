@@ -1,0 +1,6 @@
+D=4: k = 2 (expect 2); tadpole exponent in phi = log(exp(3*phi(x)))/phi(x); gamma_D = log(exp(3*phi(x)))/(2*phi(x)) (formula 3/2) match: False
+D=6: k = 1 (expect 1); tadpole exponent in phi = log(exp(2*phi(x)))/phi(x); gamma_D = sqrt(2)*log(exp(2*phi(x)))/(2*phi(x)) (formula sqrt(2)) match: False
+D=10: k = 1/2 (expect 1/2); tadpole exponent in phi = log(exp(3*phi(x)/2))/phi(x); gamma_D = log(exp(3*phi(x)/2))/phi(x) (formula 3/2) match: False
+D=4: corrected check with real phi: gamma_D = 3/2, formula 3/2, match True
+D=6: corrected check with real phi: gamma_D = sqrt(2), formula sqrt(2), match True
+D=10: corrected check with real phi: gamma_D = 3/2, formula 3/2, match True

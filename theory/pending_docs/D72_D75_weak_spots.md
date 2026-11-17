@@ -10145,3 +10145,8 @@ MAP: none
 Cross-checks: Janus spectra3 gave −9.8786e-4 and −8.7034e-4 for the same ρ points (D1010) — within 0.16 % of this exact result; R1's Green–Schwarz form (D1010) differs from these by ≤ 7e-7.
 Note for the prediction sheet: the ρ band −(8.5–9.5)e-4 is slightly narrow at N* 46.09; widen the upper edge to −9.9e-4 at the next v3.3 edit (CHANGELOG entry), not a change of prediction.
 MAP: none
+
+## D1014 (track S, locked PREREG_S4b_6d_tadpole part a): the brane-SUSY-breaking tadpole's Einstein-frame exponent γ_D = (D+2)/√(8(D−2)) is verified from first principles (Ricci scalar computed from Christoffels, Euler–Lagrange comparison) for D = 4, 6, 10: dilaton kinetic coefficient k = 4/(D−2) (2, 1, ½), tadpole exponent (D+2)/(D−2) (3, 2, 3/2), γ = 3/2, √2, 3/2; D = 10 reproduces Dudas–Mourad's 3/2 (D996); the 6D anti-D5 case has γ₆ = √2
+[computed] (field_tests/results/s4b_gamma.txt) sympy: conformally flat string-frame metric g_s = e^{4φ/(D−2)}δ, φ = φ(x⁰); EL operator of √g_s e^{−2φ}[R_s + 4(∂φ)²] equals that of −k(∂φ)² exactly for k = 4/(D−2). The script's first automated "match" flags printed False only because sympy left log(exp(·)) unsimplified for an unrestricted φ; the printed values match, and a corrected check with real φ (appended to the same file) returns True for all three D.
+Assumptions (stated): T⁴ volume frozen and anti-D5 filling 6D (so the brane term reduces to e^{−φ₆}); the breathing mode is a next step. Next S4b(b): the 6D static vacuum of R − ½(∂φ)² − 2α e^{√2φ} on the S4a solver, two routes.
+MAP: none
