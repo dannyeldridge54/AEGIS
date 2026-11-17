@@ -236,3 +236,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D986: a fix written into a lock can itself be the next bug (here a hard cutoff); prefer smooth floors to switches in stiff ODEs.
 - D987: a hoped-for 'every factor is positive' shortcut must be tested where the function is hardest (here the closed-string region), not where it is easy.
 - D988: after computing the 'interesting' finite piece, always size the local/divergent piece you dropped; it can dominate.
+- D989: a fast route earns trust only against the slow one on many points, including points chosen to break it.

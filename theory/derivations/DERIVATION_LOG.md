@@ -1625,3 +1625,6 @@ Touches: none.
 ## D988: Project H local χ mass
 - [derived] winding-zero term = local, string-scale, tadpole-dominated (D987 region); [estimate] exceeds the E(U,2) part by ~A ≳ 100.
 - [derived] positive A₀ → absorbed into λ′ (needs larger Im S Im T); negative A₀ → fatal (D964). Sign needs dilaton backreaction.
+
+## D989: Janus calculator battery A (locked D990) VALIDATED
+- [computed] 24/24 SERAPIS points: |Δn_s| ≤ 2.4e-5, |Δr/r| ≤ 0.013%; stress set inside envelope; ~4e4× faster.
