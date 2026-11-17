@@ -11830,3 +11830,9 @@ tolerance tighter than the reference's own spread (D1039), comparison against an
 per-task wall limit or no resume (J7h kmiii, S4e2, J7g restarts). Tests (test_lint.py) PASS: each historical case is flagged; a clean lock returns no problems.
 Rule from now on: lint before committing a lock; a non-empty lint list must be fixed or explicitly justified in the lock text.
 MAP: none
+
+## D1165 — TOOLS — LOCKBENCH L-4: provenance stamps [built + tested]
+tools/lockbench/provenance.py: stamp(results, lock, code, data) writes <results>.prov.json (results sha256, git commit, lock sha256, code and data hashes, python and
+package versions, machine, wall time); check(results) re-hashes everything and reports any change. Tests PASS (clean check; edited code, tampered results and
+missing stamp all detected). Stamped retroactively: janus_jmf2.txt (D1162) and kaluza_v01_regression.txt (D1160). New jobs stamp at the end of the run.
+MAP: none
