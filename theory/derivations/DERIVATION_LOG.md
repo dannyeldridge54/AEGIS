@@ -1755,3 +1755,4 @@ Touches: none.
 ## D1034: J8 — ASPIC (w, ρ_reh) route: Janus n_s ~230×, r ~230×, α_s ~35× better (32/32); ASPIC pivot 0.22 e-fold off
 ## D1035: J7f pulse 1 — 32 ASPIC models at once: Janus n_s better 64/64 (median ~560×), r ~430×; DI outlier; 10 listed
 ## D1036: S4c3 — 6D KK masses converged (Aitken, q≈0.84): m1² 0.778184, m2/m1 1.780, m3/m1 2.546; VALID
+## D1037: correction to D1035 — kmii is an ASPIC failure, not my parser; my bugs among listed = 3 (gmlfi, ncli, fi)

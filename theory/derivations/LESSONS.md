@@ -282,3 +282,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1034: reuse a validated matching chain (J7c2) for a new route by changing only the input map (Eq. 13), so the lock tests one new thing.
 - D1035: in a batch over many models, list every unscored model with its cause; two were my own output-parser bugs (Fortran 3-digit exponents drop the E), not model failures.
 - D1036: when a cutoff limit drifts, measure the convergence order from consecutive triples and extrapolate; agreement of two triples is the test, not one more ε.
+- D1037: before blaming a listed failure on a parser, read the raw line; a parse error can sit on top of a genuine upstream failure.

@@ -10290,3 +10290,10 @@ m2/m1 = 1.780, m3/m1 = 2.546 (not the flat-interval 2, 3 — the warping shifts 
 Status: D1033's "not converged" is resolved; the spectrum is gapped (m1² > 0) and the zero mode remains. Open: the q ≈ 0.84
 order should follow from the endpoint exponents of p(y), w(y) (a check to derive, not yet done); next: dilaton/metric fluctuations.
 MAP: none
+
+## D1037 — CORRECTION to D1035 (J7f listing) [computed]
+D1035 attributed two unscored models (fi, kmii) to my parser (Fortran drops 'E' in 3-digit exponents). Checking the raw ASPIC output:
+fi is the parser case (VG line 1.120507273145942+100); kmii is NOT — ASPIC's own PT line fails at those parameters (x* = 4.5e15,
+n_s = 1.000, x_end = 4.7e-310), so kmii is an ASPIC failure at (my) parameter choice and stays unscored. Corrected count of my own
+bugs among the 10 listed: 3 (gmlfi, ncli driver truncation; fi parser), not 4. FI is rescored under PREREG_J7i (running).
+MAP: none
