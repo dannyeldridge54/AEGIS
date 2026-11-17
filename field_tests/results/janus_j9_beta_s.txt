@@ -1,0 +1,7 @@
+LFI p=2    N*=50: beta_A -3.3341e-05 beta_B -3.3116e-05 (informative) | Janus -3.1941e-05 rel err 0.042
+LFI p=2    N*=60: beta_A -1.9193e-05 beta_B -1.9244e-05 (informative) | Janus -1.8515e-05 rel err 0.035
+SI         N*=50: beta_A -2.9167e-05 beta_B -3.1271e-05 (informative) | Janus -3.0321e-05 rel err 0.040
+SI         N*=60: beta_A -1.7484e-05 beta_B -1.6888e-05 (informative) | Janus -1.7651e-05 rel err 0.010
+LI a=0.3   N*=50: beta_A -1.8784e-05 beta_B -1.9113e-05 (informative) | Janus -1.9498e-05 rel err 0.038
+LI a=0.3   N*=60: beta_A -1.0915e-05 beta_B -1.0848e-05 (informative) | Janus -1.1234e-05 rel err 0.029
+C1 informative 6/6: PASS; C2: PASS -> Janus beta_s VALIDATED
