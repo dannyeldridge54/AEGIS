@@ -1,0 +1,4 @@
+T1 base: Yp_mass 0.24592 DH 2.4360 Li 5.699 Neff 3.0453 -> PASS
+T2 dN_init 0.3 (dNeff_final 0.0784): dYp LINX 0.00104 table 0.00105 (-0.010); dDH 0.0258 vs 0.0261 (-0.014) -> PASS
+T3 wb 0.0230: dYp 0.00024 vs 0.00024 (+0.002); dDH -0.1002 vs -0.1004 (-0.001) -> PASS
+B6 VALIDATED
