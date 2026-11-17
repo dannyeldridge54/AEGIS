@@ -364,3 +364,4 @@ D1077  2026-11-17T12:41Z  Djl: A8c4 Mapper fast orbits VALIDATED vs exact turnin
 D1078  2026-11-17T12:45Z  Hyperion -> Star Mapper PC version (CLI + launcher) VALIDATED
 D1079  2026-11-17T12:47Z  W1: Chronos Clock <-> Hyperion wiring validated; T_R links n_s to the GW knee
 D1080  2026-11-17T13:04Z  W2 Galaxy loop: Mapper orbits -> MW halo -> rho_sun -> J -> wino, wiring validated
+D1081  2026-11-17T13:11Z  A1 wino CMB annihilation vs Planck 2018 (Djl A)
