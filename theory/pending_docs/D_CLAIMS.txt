@@ -264,3 +264,4 @@ D977  2026-11-16T23:59Z  Project H refit-C result
 D978  2026-11-17T00:00Z  Project H fixed-C result
 D979  2026-11-17T00:39Z  N* reproduction (D958): FAIL by a constant +0.171, fully traced to the end-of-inflation definition
 D980  2026-11-17T00:40Z  alpha_s with exact de Sitter start (D975): NOT CONVERGED; scatter is from the stencil, not the start
+D981  2026-11-17T01:10Z  Research prep of the five open map nodes: sources found, one lock queued (D982), what each needs next
