@@ -1680,3 +1680,6 @@ Touches: none.
 
 ## D1008: Janus vs ASPIC reheating route (J7c2): n_s ~260×, r ~260×, α_s ~35× more accurate; ASPIC pivot off 0.16 e-fold
 - [computed] 32/32; J7c VOID (lock slip ½ ln H*) kept on record.
+
+## D1009: track R — Green–Schwarz Kähler term −ln(2ReS − δ_GS L) gives +εL with ε = δ_GS/(2ReS); curvature ≤ 2e-6
+- [literature] 2212.03876 Eq. 2.21; [derived] linear over the inflationary range; needs Re S ~ δ_GS·8e3.
