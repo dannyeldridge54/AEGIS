@@ -23,3 +23,11 @@ Then: lock PREREG_A1 (wino p_ann vs Planck), run, D-note.
 - 2009.00640: resonance 2.282 (LO) → 2.419 TeV (NLO); relic 2.886 → 2.842 TeV.
 - The NLO fit is Eq. 3.25 (off-diagonal, in L = ln(m_W r), x0 = 555/94) and Eq. 3.26 (diagonal). The full text is needed to code it.
 - Our LO solver reproduces 2.282 with their inputs (+0.15%).
+## 2026-11-17 14:20 UTC — NLO potential sourced (2009.00640 via the arXiv PDF; text converted from the PDF, so verify against the journal)
+- Eq. 3.25: δV_{00→+−} = (2595 α₂²/(π r)) × { exp[−79(L−787/12)(L−736/373)(L−116/65)(L²−286L/59+533/77) / (34(L−512/19)(L−339/176)(L−501/281)(L²−268L/61+38/7))] for x < x0 ; −exp[−13267(L−76/43)(L−28/17)(L+37/30)(L²−389L/88+676/129) / (5(L−191/108)(L−256/153)(L+8412/13)(L²−457L/103+773/146))] for x > x0 }, with x = m_W r, x0 = 555/94, L = ln x.
+- Eq. 3.26: δV_{+−→+−} = δV^{∞}/(1 + (32/11)x^{−22/9}) + δV^{0}/(1 + (7/59)x^{61/29}) + (α/r)[(−1/30 + (4/135)ln x)/(1 + (58/79)x^{−17/15} + (1/30)x^{119/120} + (8/177)x^{17/8})].
+- Eq. 3.14: δV^{0} = (α₂²/(2πr))(−(19/6) ln(m_Z r) + 4.92585).
+- Eq. 3.18: δV^{∞} = (α²/(2πr))(80/9)(ln(m_Z r) + γ_E).
+- LO (Eq. 2.8, ¹S₀): [[0, −√2 α₂ e^{−m_W r}/r], [·, −α/r − α₂ c_W² e^{−m_Z r}/r]] + 2δm on the +− diagonal; this is the same as sommerfeld.wino_s.
+- Inputs: on-shell α = 1/128.943, c_W = m_W/m_Z, α₂ = α/s_W², m_W = 80.385, m_Z = 91.1876, δm = 0.1641 GeV.
+- Normalisation ambiguity: is δV_{00→+−} added to the matrix entry as is, or with √2? A1c pre-declares "as is" as the primary convention.
