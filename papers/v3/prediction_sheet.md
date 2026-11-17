@@ -108,3 +108,4 @@ If the plateau comes from Project H at its largest allowed loop coupling (λ′ 
 ## Reproduction follow-ups (17 Nov 2026, D979–D980)
 - N*: exact end of inflation puts SERAPIS-E's N* bracket 0.17 e-folds above D719 (N* = 46.46–51.04 for T_R = 1e4–1e10 GeV); Δn_s ≈ +1.5e-4, inside the frozen band.
 - α_s: convergence tests (D974, D980) do not pin it below ~10%; published α_s consistent at that level. Next: wide-grid fit (new lock).
+- Project H at matched n_s (D984, locked D979; post-hoc sibling): n_s 0.97403, r 5.33e-4 vs SERAPIS-E 4.61e-4 (+15.7%); separating them needs σ(r) ≲ 2.4e-5, beyond funded missions.

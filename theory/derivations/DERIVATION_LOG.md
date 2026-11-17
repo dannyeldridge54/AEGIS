@@ -1606,3 +1606,7 @@ Touches: none.
 ## D983: third prep pass
 - [derived] (structure) brane scalar with positive quartics: δm² ∝ +(N_B−N_F)E(U,2)/A², V ∝ −(N_B−N_F)·(weight s+1): bosonic excess → V<0, m²>0 (Kitazawa's opposite-sign rule in field theory; holds for ADS +128).
 - D982 OOM crash → DEVIATIONS D1, rerun D982b.
+
+## D984: Project H n_s-matched (locked D979, PC)
+- [computed] C = 1.238 λ′C₀ restores n_s = 0.97403; r = 5.331e-4 vs 4.607e-4 (+15.7%).
+- [estimate] Δr ≈ 7e-5 needs σ(r) ≲ 2.4e-5 for 3σ: beyond funded missions; locked "LiteBIRD-class" label overstates feasibility.
