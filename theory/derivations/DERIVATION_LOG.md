@@ -1737,3 +1737,6 @@ Touches: none.
 
 ## D1027: Janus-LT L2 growth VALIDATED — σ8 ratio 4e-6, f 6e-5 vs CAMB (20 cosmologies)
 - [computed] scale-independent growth ODE (2602.08207 Eq. 5).
+
+## D1028: Janus-LT L3 DESI DR2 BAO likelihood reproduces DESI ΛCDM (Ω_m 0.2970 vs 0.2975; h r_d 101.56 vs 101.54); TorsionΛ (b) χ² 123/13
+- [computed] Table IV, 13 points.

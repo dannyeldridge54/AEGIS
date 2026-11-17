@@ -273,3 +273,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1025: verify a code's output units by calling its own function (CAMB DAstar = comoving distance in Gpc) rather than guessing twice.
 - D1026: for Sturm–Liouville problems with singular ends, transform to Schrödinger form before discretising, and test on a known spectrum first.
 - D1027: when agreement is far better than the tolerance, say so and record which definition limits it, rather than tightening the claim post hoc.
+- D1028: validate a likelihood by reproducing the collaboration's own headline numbers before scoring any model with it.
