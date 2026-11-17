@@ -1,0 +1,9 @@
+# PREREG A7b (track X, AEGIS application, Djl tick 17 Nov 05:29 CT): wino Sommerfeld solver, validated on normalisation-free checks, then the mass dependence of the line rate in SERAPIS-E's window (written before running)
+Code: tools/janus_astro/sommerfeld.py as committed with this lock (potential from 1307.4082 App. A / 2507.15934; α_W = 0.0335, s_W² = 0.231, δm = 0.1645 GeV from 1307.4082 eq. 2; never run before this lock).
+Tests:
+B1 Coulomb check: single attractive Coulomb channel, |s|² vs the exact S = 2πη/(1 − e^{−2πη}), η = α/v (v = relative velocity; E = M v²/4, k = M v/2): for α = 0.01, 0.03, M = 1000 GeV, v = 1e-2, 3e-3: relative ≤ 1e-3.
+B2 Free limit: α_W → 1e-9: s → (1, 0) to ≤ 1e-6.
+B3 Resonance position (normalisation-free): the first peak of |s_{χ0χ0}|² for M scanned over 1.5–3.5 TeV, relative velocity v = 2e-3 (1e-3 per particle as in 1307.4082) lies at 2.3–2.5 TeV (1307.4082: "near the resonance at 2.3 TeV", conclusions "~2.4 TeV", δm-dependent).
+Pass B1–B3 → solver VALIDATED.
+Application [estimate]: the line cross section is σv_line = σ_γγ + ½σ_Zγ ∝ |s_{χ+χ−}|²/M² at tree level (χ0χ0 → γγ vanishes at tree level; the line comes only through the χ+χ− component, 1307.4082 App. B). Report R(M) = σv_line(M)/σv_line(1 TeV) at M = 0.66, 0.8, 1.0, 1.4, 1.85 TeV and |s_{+−}|², |s_00|²; then, keeping D735's line-limit read-off (∝ M²) and its line rate assigned at 1 TeV (caveat: D735's 7.1e-27 cm³/s from 1307.4400 has no stated mass), give f_max(M) for Einasto and NFW (A7a's J ratio) and compare with SERAPIS-E's f(M). Stated caveat in advance: one-loop corrections reduce the line by ~3–4 (1307.4082) — reported as a bracket, not applied by default.
+Script theory/janus_astro/a7b_check.py; output field_tests/results/janus_astro_a7b.txt. No reruns to chase; fixes via DEVIATIONS first.
