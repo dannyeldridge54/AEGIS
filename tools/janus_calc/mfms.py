@@ -17,12 +17,12 @@ def _mode(st, n, V, grad, hess, k, N0, Nend):
     def rhs(N, y):
         f, fp, eps, H2 = st(N); a = math.exp(N); q2 = k*k/(a*a*H2)
         g = np.array(grad(f)); Cm = np.array(hess(f))/H2 + (np.outer(fp, g) + np.outer(g, fp))/H2 + (3 - eps)*np.outer(fp, fp)
-        Y = y[:2*n*n].view(complex).reshape(n, n); Yn = y[2*n*n:4*n*n].view(complex).reshape(n, n); h, hn = y[4*n*n:4*n*n+2].view(complex)
+        Y = y[:2*n*n].view(complex).reshape(n, n); Yn = y[2*n*n:4*n*n].view(complex).reshape(n, n); h, hn = y[4*n*n:4*n*n+4].view(complex)
         Ynn = -(1 - eps)*Yn - (q2 - 2 + eps)*Y - Cm @ Y; hnn = -(3 - eps)*hn - q2*h
         return np.concatenate([Yn.ravel().view(float), Ynn.ravel().view(float), np.array([hn, hnn]).view(float)])
     y0 = np.concatenate([P0.astype(complex).ravel().view(float), Pn0.astype(complex).ravel().view(float), np.array([h0, hn0], complex).view(float)])
     s = solve_ivp(rhs, [N0, Nend], y0, method='DOP853', rtol=1e-10, atol=1e-30)
-    y = s.y[:, -1]; Y = y[:2*n*n].view(complex).reshape(n, n); h = y[4*n*n:4*n*n+2].view(complex)[0]
+    y = s.y[:, -1]; Y = y[:2*n*n].view(complex).reshape(n, n); h = y[4*n*n:4*n*n+4].view(complex)[0]
     f, fp, eps, H2 = st(Nend); a = math.exp(Nend); w = fp/np.linalg.norm(fp)
     Pdphi = k**3/(2*math.pi**2)*(Y @ Y.conj().T).real/a**2
     PR = float(w @ Pdphi @ w)/(fp @ fp); Ph = 8*k**3*abs(h)**2/(2*math.pi**2)
