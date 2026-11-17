@@ -1,0 +1,4 @@
+h=0.6736 wb=0.02237 wc=0.12: rms 1.371%, max 3.800% at k=0.112 h/Mpc -> PASS
+h=0.7 wb=0.0224 wc=0.11: rms 1.375%, max 3.877% at k=0.0473 h/Mpc -> PASS
+h=0.64 wb=0.022 wc=0.13: rms 1.285%, max 4.007% at k=0.112 h/Mpc -> PASS
+EH no-wiggle transfer VALIDATED
