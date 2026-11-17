@@ -9,7 +9,7 @@ Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN
 5. Two-parameter ASPIC model scans (more parameter points per model) — OPEN
 6. Third-order slow-roll (N3LO) — BLOCKED (needs arXiv 2205.12608 PDF from Danny)
 ## AEGIS — Janus-LT / Hyperion (late universe)
-7. L11 Cobaya MCMC check of L7 — RUNNING (cloud)
+7. L11 Cobaya MCMC check of L7 — DONE (D1205)
 8. CosmoPower emulator trial (PC, Python 3.11 env) — OPEN
 9. Janus-LT growth + SN joint w0wa (fσ8 added to L7 likelihood) — OPEN
 10. L7 with DESI DR2 BAO when the table is fetched (check what's current) — OPEN

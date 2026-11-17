@@ -12457,3 +12457,11 @@ MAP: none
 - **No computation.**
 VERDICT: the κ discrepancy is REAL (McMillan17's local slope is wrong in sign). McMillan17 remains the better default (v_c, Ω), with this limitation recorded. Candidate replacement to check: 2407.12551.
 MAP: none
+
+## D1205 — RIGHT/JANUS-LT — L11: Cobaya MCMC confirms L7's w0–wa errors [CONFIRMED]
+Lock PREREG_L11_cobaya (+DEVIATIONS D1: Cobaya's own summary step crashed; summary computed from the saved chain with numpy, no re-sampling; likelihood
+wiring checked first — direct χ² at the chain's first row 1476.02 = Cobaya's column). Sampler: Cobaya 3.6.2 adaptive Metropolis, R−1 (means) 0.0164.
+Posterior (30% burn-in): w0 = −0.842 ± 0.053 (L7 MAP −0.853 ± 0.053), wa = −0.565 ± 0.213 (L7 −0.518 ± 0.200) → C1, C2, C3 PASS.
+Chain χ²: min 1423.07 (L7 1422.93), weighted median 1426.93 (≈ min + 4 for 5 free parameters — good mixing).
+With L10 (D1200, profile) Janus-LT's joint BAO+CMB+SN w0wa result now has three agreeing estimates: Hessian, profile grid, MCMC.
+MAP: none

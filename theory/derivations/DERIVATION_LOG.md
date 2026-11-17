@@ -1802,3 +1802,4 @@ Touches: none.
 ## D1177: LOCKBENCH L-7 — results ledger dashboard (D1160–D1176 verdicts + CubeMind arms); LOCKBENCH L-1…L-8 complete
 ## D1195: JMF6 — Janus-MF matches PyTransport (independent, symbolic V) on 3 quadratic + 2 non-separable models, |Δn_s| ≤ 9.3e-5; VALIDATED
 ## D1200: L10 — w0–wa profile likelihood matches L7 (min 1 step from MAP, ΔχΛCDM 7.69 vs 7.70); DESI best fit inside 68%
+## D1205: L11 — Cobaya MCMC on L7's likelihood: w0 −0.842±0.053, wa −0.565±0.213 vs L7 −0.853±0.053, −0.518±0.200 → CONFIRMED

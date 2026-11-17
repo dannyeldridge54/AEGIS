@@ -1,0 +1,24 @@
+{
+ "results": "field_tests/results/janus_jmf7.txt",
+ "results_sha256": "94445cded4662dafa3ecc02f823bd9fb3feb9242792557b26d0384029f054e9c",
+ "created_utc": "2026-11-17T22:36:06Z",
+ "git_commit": "7d77f3a0ff47eb2246a43a0deda7848c409118e8",
+ "git_dirty": false,
+ "lock": "field_tests/rules/PREREG_JMF7_adiabatic.md",
+ "lock_sha256": "35697f2e4a9e2a4feb2a3fd5d6f81c17d6f88449e36232e201d441d568c4375f",
+ "code": {
+  "theory/janus/jmf7_adiabatic.py": "9600048602bc655361b8b2964145e751dc0a63aceabb2709c9a1d8aba4553dc0",
+  "tools/janus_calc/mfms.py": "20a9eac813319ae8358b0c20e0d88c5c3a4a0ac0008986a5d1c01b74ceb16359"
+ },
+ "data": {},
+ "python": "3.13.18",
+ "packages": {
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "sympy": "1.14.0",
+  "mpmath": "1.3.0",
+  "camb": "2.0.5"
+ },
+ "machine": "vm Linux-6.18.44-fc-v553-x86_64-with-glibc2.39",
+ "wall_s": 195.7
+}
