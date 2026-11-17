@@ -1,0 +1,6 @@
+J1b bisection failed: bisection did not reach the e-fold window — stop, as locked
+LFI p=2 50.0 0.0
+LFI p=2 60.0 0.0
+SI 50.0 0.0
+SI 60.0 0.0
+regression guard max dns 0 PASS

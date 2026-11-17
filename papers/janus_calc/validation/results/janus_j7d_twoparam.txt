@@ -1,0 +1,12 @@
+TI a=0.1 mu=10.0   N*=50 (exact ns 0.959086 r 1.108e-01 a -7.994e-04) | dns J 5.7e-06 A 8.4e-04 | dr/r J 1.6e-04 A 2.8e-02 | da J 5.0e-07 A 4.2e-05 | J 3.4 ms
+TI a=0.1 mu=10.0   N*=60 (exact ns 0.965682 r 8.660e-02 a -5.508e-04) | dns J 3.1e-06 A 6.0e-04 | dr/r J 1.1e-04 A 2.6e-02 | da J 1.7e-07 A 2.4e-05 | J 1.3 ms
+TI a=0.2 mu=8.0    N*=50 (exact ns 0.957941 r 8.241e-02 a -7.882e-04) | dns J 4.2e-06 A 8.6e-04 | dr/r J 1.4e-04 A 3.5e-02 | da J 5.1e-07 A 3.9e-05 | J 1.2 ms
+TI a=0.2 mu=8.0    N*=60 (exact ns 0.964461 r 6.152e-02 a -5.441e-04) | dns J 2.2e-06 A 6.2e-04 | dr/r J 9.0e-05 A 3.2e-02 | da J 3.9e-07 A 2.2e-05 | J 1.1 ms
+model 3: Janus could not build (no start with >= 75 e-folds) — listed, not scored
+SFI p=4 mu=15.0    N*=50 (exact ns 0.960922 r 1.583e-02 a -6.508e-04) | dns J 1.1e-06 A 8.0e-04 | dr/r J 5.0e-05 A 4.5e-02 | da J 7.6e-07 A 1.5e-05 | J 1.3 ms
+SFI p=4 mu=15.0    N*=60 (exact ns 0.966406 r 1.122e-02 a -4.634e-04) | dns J 5.6e-07 A 6.0e-04 | dr/r J 3.3e-05 A 4.1e-02 | da J 5.3e-07 A 9.0e-06 | J 1.2 ms
+SFI p=2 mu=10.0    N*=50 (exact ns 0.950999 r 1.864e-02 a -4.270e-04) | dns J 8.3e-07 A 5.2e-04 | dr/r J 7.3e-06 A 5.6e-02 | da J 7.3e-07 A 1.6e-05 | J 1.1 ms
+SFI p=2 mu=10.0    N*=60 (exact ns 0.954346 r 1.186e-02 a -2.591e-04) | dns J 3.7e-07 A 3.4e-04 | dr/r J 2.9e-05 A 5.7e-02 | da J 4.9e-07 A 9.1e-06 | J 1.3 ms
+8 points; Janus n_s better on 8/8
+medians: dns J 1.7e-06 A 6.1e-04 (max 5.7e-06 vs 8.6e-04) | dr/r 7.0e-05 vs 3.8e-02 | da 5.0e-07 vs 1.9e-05
+C1 True C2 True C3 True C4 True -> JANUS MORE ACCURATE

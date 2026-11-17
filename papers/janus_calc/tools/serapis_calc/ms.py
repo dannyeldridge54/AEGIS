@@ -7,12 +7,16 @@ import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.interpolate import CubicSpline
 class Background:
-    def __init__(self, V, dV, phi0, Nmax=400):
+    def __init__(self, V, dV, phi0, Nmax=400, end_y=None):
         def rhs(N, y):
             p, pn = y; eps = 0.5*pn*pn
             return [pn, -(3-eps)*pn - (3-eps)*dV(p)/V(p)]
         ev = lambda N, y: 0.5*y[1]**2 - 1; ev.terminal = True; ev.direction = 1
+        if end_y is not None:   # J1d: field-value end
+            ev = lambda N, y: y[0] - end_y; ev.terminal = True; ev.direction = 0
         s = solve_ivp(rhs, [0, Nmax], [phi0, -dV(phi0)/V(phi0)], events=ev, rtol=1e-11, atol=1e-13, dense_output=True)
+        if not len(s.t_events[0]):   # J1c: stiff fallback for singular ends
+            s = solve_ivp(rhs, [0, Nmax], [phi0, -dV(phi0)/V(phi0)], events=ev, rtol=1e-11, atol=1e-13, dense_output=True, method='Radau')
         self.sol = s; self.Nend = s.t_events[0][0] if len(s.t_events[0]) else None; self.V = V
     def state(self, N):
         p, pn = self.sol.sol(N); eps = 0.5*pn*pn

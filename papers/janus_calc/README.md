@@ -1,4 +1,4 @@
-# Janus String Calculator (v1.1)
+# Janus String Calculator (v1.2)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24298159.svg)](https://doi.org/10.5281/zenodo.24298159)
 **Author:** Danny Eldridge (dannyeldridge54@gmail.com) · AEGIS / SERAPIS project · built with Claude (Anthropic)
 
@@ -17,6 +17,9 @@ A fast, pre-registered and validated calculator for inflationary observables: n_
 - **J7b, ASPIC on 17 models (PREREG_J7b):** 32 scored points (power-law p = 2, 4, 2/3, 3, 1; Starobinsky; natural f = 5, 7, 10; ESI q = 1, √2; MHI; RGI; double-well; small-field; logamediate), α_s reference convergence-checked first (R0). Median errors vs exact Mukhanov–Sasaki: n_s 2.0×10⁻⁶ (Janus) vs 7.1×10⁻⁴ (ASPIC), r 8.7×10⁻⁵ vs 2.8×10⁻², α_s 4.1×10⁻⁷ vs 2.0×10⁻⁵; Janus better on n_s at 32/32. (KMII α = 2: ASPIC reports never-ending inflation; listed, not scored.) `validation/results/janus_j7b_*.txt`.
 - **J7c2, ASPIC's reheating route (PREREG_J7c2):** same ln R_rad (0, −10) on 16 models; reference = exact Martin–Ringeval matching (arXiv:1004.5525 Eq. 15) with exact-MS amplitude normalisation. Median errors: n_s 2.6×10⁻⁶ vs 6.7×10⁻⁴, r 9.7×10⁻⁵ vs 2.5×10⁻², α_s 5.5×10⁻⁷ vs 2.0×10⁻⁵; ASPIC's pivot is 0.16 e-folds off (median), Janus's 1×10⁻⁴. The first lock (J7c) had a derivation slip in its own matching equation and is kept as VOID with the reason. `validation/results/janus_j7c2_reheat.txt`.
 
+- **J7d + J1d, two-parameter models and PSNI (PREREG_J7d, J7d2, J1c, J1d):** twisted (TI) and small-field (SFI) at two settings each: median n_s error 1.7×10⁻⁶ vs ASPIC 6.1×10⁻⁴ (8/8). PSNI (α = 10⁻³, f = 5): in an exact treatment ε_H = 1 is never reached before the log singularity (ε_H ≈ 0.07 there), so the end of inflation must be a field value; given ASPIC's own end point, Janus n_s error 1–3×10⁻⁷ vs ASPIC 2.6–3.6×10⁻⁴. Two intermediate locks (J7d2 start-finder, J1c stiff fallback) did not fix PSNI and are kept with their diagnosis. New option: `Model(V, dV, phi0, end_y=...)` ends inflation at a field value.
+- **Running total vs ASPIC:** 42 scored points at fixed N* (22 model settings) + 32 on the reheating route; Janus has the smaller n_s error at every one.
+
 **Use:**
 ```python
 from janus_calc import models, core, anyV, observe, twofield
@@ -27,4 +30,4 @@ twofield.observe_multi(V, grad, hess, [phi1, phi2])               # two-field n_
 ```
 Needs numpy, scipy, sympy, mpmath; run from this folder (the modular functions, multi-field background and exact solver are bundled in tools/serapis_calc). Validation scripts in `validation/scripts` were run inside the AEGIS research repository and are included as provenance.
 **Integrity:** every file is listed with its SHA-256 in SHA256SUMS.txt.
-**License:** MIT (free to use, modify and redistribute with attribution). Please cite the Zenodo DOI: https://doi.org/10.5281/zenodo.24298159 (v1.0); v1.1: https://doi.org/10.5281/zenodo.24298903.
+**License:** MIT (free to use, modify and redistribute with attribution). Please cite the Zenodo DOI: https://doi.org/10.5281/zenodo.24298159 (v1.0); v1.1: https://doi.org/10.5281/zenodo.24298903; v1.2: https://doi.org/10.5281/zenodo.24299624.
