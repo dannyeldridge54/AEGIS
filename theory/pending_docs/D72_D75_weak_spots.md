@@ -11009,3 +11009,22 @@ MAP: none
 - Action held: packaging (zip + SHA256SUMS + CITATION 1.1) and the Zenodo upload wait for Danny's "Publish" and a linked PC (standing rule).
 VERDICT: draft ready; awaiting "Publish".
 MAP: none
+
+## D1103 (CENTRE, Djl loop (A), locked PREREG_A1f; NLO convention post hoc): with the NLO wino potential the CMB-excluded band is 2.18–2.62 TeV (f_eff 0.14) to ≤2.00–2.76 TeV (f_eff 0.41); the NLO thermal wino (2.842–2.86 TeV) is ALLOWED with margin f_max = 1.19–1.24 — D1087's "marginal" rigid-shift estimate was too pessimistic
+Lock pushed before run; result field_tests/results/a1f_cmb_nlo.txt.
+- A1e still has no blind target: 2507.15934 (fetched) quotes no σv or Sommerfeld numbers, only the NLO thermal mass 2.86 ± 0.01 TeV (citing 2009.00640).
+- Inputs: Beneke+ on-shell couplings (α₂ = 0.03479); tree Γ; v = 1e-7; grid 2.00–3.00 TeV in 0.02 steps; Planck p_ann < 3.2e-28; NLO off-diagonal ×√2 (post hoc, D1095).
+- Results:
+  - LO (same inputs): excluded 2.04–2.50 (f_eff 0.14) / 2.00–2.64 TeV (0.41).
+  - NLO: excluded 2.18–2.62 / 2.00–2.76 TeV.
+  - The lower edge at f_eff 0.41 sits at the grid start; D1081 found 1.9 TeV allowed, so the true edge is between 1.9 and 2.0.
+  - NLO raises σv near 2.85 TeV by ×1.7 (1.57e-24 vs 9.0e-25 at 2.842).
+  - At the NLO thermal mass 2.842 / 2.86 TeV: f_max = 1.189 / 1.244 (f_eff 0.41) and 2.04 / 2.13 (f_eff 0.14). The thermal wino is CMB-ALLOWED in every case, with about 19% margin in abundance (×1.41 in σv) at the high f_eff.
+- Supersedes D1087's rigid-shift estimate (band to ~2.84 TeV, "marginal"). The real NLO band ends at 2.76 TeV, below the thermal mass.
+- SERAPIS-E wino points (0.66–1.85 TeV): outside every band, so unchanged.
+- Caveats:
+  - Post-hoc √2 convention. The primary convention would shift the resonance by −0.03 TeV, moving the band down and adding margin.
+  - Tree Γ (NLO annihilation matrices not used).
+  - Single f_eff per run; no f_eff(M) tables.
+VERDICT: thermal wino CMB-ALLOWED at NLO (f_max ≥ 1.19, post-hoc convention); A1e still open.
+MAP: none
