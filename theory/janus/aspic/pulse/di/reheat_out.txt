@@ -1,0 +1,5 @@
+COMPILE heory/janus/aspic/pulse/di/r.f90:17:6:
+
+   17 |   x = di_x_star(0.01_kp,0.1_kp,xe, 0._kp, -150._kp, P, bf); e = (/di_epsilon_one(x,0.01_kp,0.1_kp), di_epsilon_two(x,0.01_kp,0.1_kp), di_epsilon_three(x,0.01_kp,0.1_kp)/)
+      |      1
+Error: More actual than formal arguments in procedure call at (1)

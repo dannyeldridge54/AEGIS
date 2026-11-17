@@ -1,0 +1,6 @@
+ alpha1<alpha<alpha2: Never Ending Inflation Regime (if inflation proceeds from the right to the left), or non slow-roll Inflation Regime (if inflation proceeds from the left to the right)
+NZ  -6.1519970748321050E+01
+RT rrad     0.0                     NaN   1.000000000000000E+00   0.000000000000000E+00  -0.000000000000000E+00   4.503599627370496E+15
+RT rrad   -10.0                     NaN   1.000000000000000E+00   0.000000000000000E+00  -0.000000000000000E+00   4.503599627370496E+15
+RT rhow  -100.0                     NaN   1.000000000000000E+00   0.000000000000000E+00  -0.000000000000000E+00   4.503599627370496E+15
+RT rhow  -150.0                     NaN   1.000000000000000E+00   0.000000000000000E+00  -0.000000000000000E+00   4.503599627370496E+15

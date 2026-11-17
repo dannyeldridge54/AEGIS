@@ -1,0 +1,6 @@
+COMPILE  OUT/INOUT) at (1)
+theory/janus/aspic/pulse/hi/r.f90:17:6:
+
+   17 |   x = hi_x_star(20000._kp,xe, 0._kp, -150._kp, P, bf); e = (/hi_epsilon_one(x,20000._kp), hi_epsilon_two(x,20000._kp), hi_epsilon_three(x,20000._kp)/)
+      |      1
+Error: More actual than formal arguments in procedure call at (1)
