@@ -11984,3 +11984,23 @@ LOCKBENCH plan L-1…L-8 is now complete.
 - **Practical note:** freeze-out (R2c) is unaffected. Halo velocities around 1e-3 lie BELOW threshold (x ≪ 1), deep in the closed regime that was already validated against Beneke (A1). So the open question affects only a thin band around v ≈ 0.026.
 VERDICT: both solvers numerically sound (R-convergence PASS, normalisation PASS). The D1170 mismatch is now an expectation question, OPEN (literature).
 MAP: none
+
+### D1179 — Literature: Gailitis' theorem concerns the TOTAL (optical-theorem) cross section; below threshold, annihilation also absorbs the flux that goes into χ⁺χ⁻ conversion above threshold (2026-11-17)
+- [DEEP · literature] **Sources:**
+  - arXiv:1607.07649 (Siegert-state QDT), §3.3. The energy average (over the mean level spacing, density-of-states weight, Eqs. 25–26) of the reduced collision matrix W is continuous across threshold (after Eq. 32).
+    - Via σ_aa^t ∼ Re(1 − W_aa) this "results into Gailitis' theorem, σ̄^{<t}_aa = σ^{>t}_aa" (unnumbered).
+    - Conditions: the reduced R-matrix is ≈ constant across the threshold region; Im R_ee > 0.
+  - arXiv:2312.03883 (GD oscillations in e⁻e⁺p̄) only confirms the qualitative picture: a narrow resonance series below the threshold, Gailitis–Damburg oscillations above.
+  - arXiv:1712.07142 (Braaten et al., ZREFT wino III), Introduction: LO ZREFT reproduces the resonances in χ⁰χ⁰ scattering just below the χ⁺χ⁻ threshold. The excerpt read has no annihilation-continuity statement.
+- **What this changes:** the theorem is about the TOTAL cross section, which is linear in S via the optical theorem. It is not about one inelastic channel.
+  - Below threshold, the χ⁰χ⁰ reaction channels are annihilation only, because χ⁺χ⁻ is closed.
+  - Above threshold, the reaction is annihilation plus real conversion χ⁰χ⁰ → χ⁺χ⁻.
+  - So the sourced expectation is ⟨σ_ann⟩_below ≈ σ_ann^> + σ_conv^> (+ an elastic-average difference): the quasi-bound χ⁺χ⁻ states can only annihilate or fall back.
+  - My R2b3 expectation ⟨σ_ann⟩ = σ_ann^> left out σ_conv. That was the lock error. The R2b3 FAIL stands as scored.
+- **Plausibility estimate (not computed):**
+  - In S units (σv / (πα₂²/M²)): S_conv = 2PM/(k₀α₂²) ≈ 1.3e5·P at M = 2000, x = 1.01. The identical-particle convention for χ⁰χ⁰ is uncertain by ×2.
+  - The D1170 gap needs S_conv ≈ 71, i.e. a conversion probability P ≈ 5e-4. That is plausible for a Coulomb-enhanced threshold channel.
+  - So the factor ≈ 3 is now physically plausible, but NOT shown.
+- **Next: R2b6 (locked in this tick).** Compute P_conv from the open solver's outgoing χ⁺χ⁻ flux at x = 1.01, and test ⟨S⟩ ≈ S_ann + S_conv within 20%.
+VERDICT: the D1170 expectation was incomplete (it left out conversion), now sourced. A quantitative check is OPEN (R2b6).
+MAP: none
