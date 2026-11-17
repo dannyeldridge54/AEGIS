@@ -11465,3 +11465,12 @@ MAP: none
   - SO decisively tests the SU(2)-size sectors. Only CMB-S4-class or cosmic-variance-limited surveys approach the U(1) case. An SO-era N_eff consistent with 3.044 at the 0.05 level would leave τ=i alive only as "unpopulated/massive or U(1)".
 - Forward-table candidate (post hoc, not frozen): "τ=i hidden sector: ΔN_eff ∈ {0, 0.054, 0.161}; SO/CMB-S4 test." It could go into the v3.3 forward table at the next "Publish" if Danny wants it.
 MAP: none
+
+## D1137 — RIGHT (R track) — Wilson lines do not lift D1135's exact zero (to O(BC)) [literature]
+[literature, fetched hep-th/0001062] Wilson lines B, C enter at O(BC) (Eqs. 29, 36, 40–41, 43, 45). The U(1) η-log term is −(a_{U(1)}/16π²){log(9|η(T)η(U/3)|⁴) +
+log(9|η(U)η(T/3)|⁴)} (Eq. 49) with a_{U(1)} = −c(U(1)) + Σ T_{U(1)}(1 + 2n) (Eq. 50), and the paper states a_{U(1)} = 0 — an assertion, not derived in the text.
+What the U(1) does get is a log(ω(T) − ω(U))² term with coefficient b_{U(1)} − b̂_{U(1)} = 2b^{N=2}_vec (Eq. 51): a log of a modular-function DIFFERENCE,
+singular at T = U, not the Kronecker L = −ln(2 Im T|η|⁴) the ρ tilt needs.
+Status: no lift of the exact zero from Wilson lines at this order (per the paper). The D1049 lead stays open but needs another lifting mechanism;
+none found yet. I'll pause this line unless a new source turns up, and switch R effort to S4d.
+MAP: none

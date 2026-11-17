@@ -53,3 +53,4 @@ coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which 
 - R (D1051): matter-log lead size: κ = 2g²γ̃, natural 30–300× too big; needs near-finite N=2 sector. Next: find an orbifold with small γ̃ (literature: N=2 finite sectors).
 - R search (17 Nov): arXiv 1410.6147 checked — its N=2 sectors have b^{N=2} = −2C(E8) etc. (Eq. 5.21, 5.28), not small; it uses N=4 restoration instead. No near-finite N=2 example found yet; next candidates: hep-th/0001062, 1001.1480 (b'_a tables).
 - R (D1135): exact-zero example found (Z6-II-b U(1), hep-th/0001062). Next: Wilson-line lift of the zero (same paper treats Wilson lines).
+- R (D1137): Wilson-line lift: none at O(BC). Lead paused; R effort → S4d.

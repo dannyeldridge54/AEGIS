@@ -1777,3 +1777,4 @@ Touches: none.
 ## D1133: L9c — own σ8 (A_s → P(k), EH98, MD-normalised D) vs CAMB: +1.0–1.4% → VALIDATED; confirms D1132's diagnosis
 ## D1134: L9v2 — fσ8 with own σ8: χ² 3.81/6 (unchanged) → CONSISTENT; Janus-LT growth chain self-contained
 ## D1135: R — Z6-II-b abelian N=2 sector: b̃_U(1) = 0 exactly (hep-th/0001062, after Eqs. 50–51) → small γ̃ = small correction to an exact zero
+## D1137: R — Wilson lines (hep-th/0001062 Eqs. 29–51) don't lift the Z6-II-b U(1) zero; U(1) instead gets log(ω(T)−ω(U)), not L. Line paused.
