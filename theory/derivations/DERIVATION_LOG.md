@@ -1788,3 +1788,4 @@ Touches: none.
 ## D1161: JMF1 — two-field δN vs MultiModeCode: r ≤ 2e-4 vs exact; n_s δN error 1.3e-4/7.6e-4/1.7e-3 for R=1/3/9; C1 FAILS (mismatched δN definitions)
 ## D1162: JMF2 — Janus-MF exact multi-field MS vs MultiModeCode: |Δn_s| ≤ 6.3e-6, r ≤ 1.2e-4, α_s ≤ 0.6% → VALIDATED; δN error at R=9 1.7e-3 → 4.7e-6
 ## D1163: LOCKBENCH L-1 — machine-readable claims + evaluator, tests PASS
+## D1164: LOCKBENCH L-2 — lock linter; flags L8, D1039, JMF1, J7h patterns; clean lock passes

@@ -11823,3 +11823,10 @@ tools/lockbench/claims.py: a fenced ```claims YAML block in a PREREG (id, quanti
 evaluate(lock, results) returns per-claim pass/observed and a plain-bool verdict. Scripts emit numbers only. Tests (tools/lockbench/test_claims.py) PASS:
 JMF2's numbers pass, JMF1's δN errors fail C1, a missing quantity fails, and numpy scalars give a real bool (the J7b numpy-bool trap). From now on new locks use it.
 MAP: none
+
+## D1164 — TOOLS — LOCKBENCH L-2: lock linter — would have caught all four of this week's lock mistakes [built + tested]
+tools/lockbench/lint.py (optional ```design block: n_params, n_data, script; per-claim reference_kind, reference_spread). Flags: degenerate fit (n_params ≥ n_data — L8/D1047),
+tolerance tighter than the reference's own spread (D1039), comparison against an approximation instead of an exact reference/data (JMF1/D1161), job script with no
+per-task wall limit or no resume (J7h kmiii, S4e2, J7g restarts). Tests (test_lint.py) PASS: each historical case is flagged; a clean lock returns no problems.
+Rule from now on: lint before committing a lock; a non-empty lint list must be fixed or explicitly justified in the lock text.
+MAP: none

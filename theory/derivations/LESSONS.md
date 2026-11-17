@@ -315,3 +315,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1161: before locking 'two codes agree', check they compute the SAME approximation — analytic SR δN ≠ numerical δN; compare each to the exact answer instead.
 - D1162: after an approximation fails against an exact reference, implement the exact equations from the reference's own paper — then the comparison is like-with-like.
 - D1163: let the framework, not each script, turn numbers into verdicts — one tested evaluator removes a whole class of verdict bugs.
+- D1164: turn each past mistake into an automatic check — the linter's test suite is this week's error log.
