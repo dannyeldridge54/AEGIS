@@ -234,3 +234,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D984: when a locked outcome label names an experiment, check that experiment's real sensitivity before repeating the label.
 - D985: build a string-level check in stages, each reproducing the previous stage's limit; the bugs were all caught at stage boundaries.
 - D986: a fix written into a lock can itself be the next bug (here a hard cutoff); prefer smooth floors to switches in stiff ODEs.
+- D987: a hoped-for 'every factor is positive' shortcut must be tested where the function is hardest (here the closed-string region), not where it is easy.

@@ -1617,3 +1617,7 @@ Touches: none.
 
 ## D986: leptogenesis Boltzmann (locked D982)
 - [computed] κ = 0.9391 on all rows: instantaneous yields stand (×0.94); c = 0.3, M_H = 1e12 fails by ×1.22.
+
+## D987: S3b positivity (locked D986) — SIGN CHANGE
+- [computed] Ĥ(t) oscillates in sign for t ≲ 0.027 (|Ĥ| ~ e^{π²/2t}), positive for t ≥ 0.03.
+- D985 (large T², heavy T⁴ windings) unaffected; all-radius positivity fails; small-R needs the transverse channel.

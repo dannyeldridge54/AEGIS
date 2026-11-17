@@ -9920,3 +9920,12 @@ MAP: node=plateau_origin status=estimate touches=[] ripple=no
 Run history: D982 OOM (D1), D982b killed with the runner (D2), D982c stalled on c = 3 rows (D3: discontinuous φ switch-off, smoothed; κ unchanged to 1e-11 on the smoke point). Disclosure in D1–D3: partial logs showed κ = 0.9391 before the final run.
 Status: lepto_rho can move from "estimate" to "computed" for its yield convention (κ applied); the ρ-branch leptogenesis verdicts of D775 are unchanged except that c = 0.3 at M_H = 1e12 is further from passing.
 MAP: node=lepto_rho status=computed touches=[] ripple=no
+
+## D987 (locked PREREG_D986, Level S3b): the hatted D̄5 Möbius trace is NOT positive for all proper times: it is positive for t ≳ 0.03 (minimum ≈ 4e-7 near t ≈ 0.04, rising to 16) but oscillates in sign with magnitude ~e^{π²/2t} for t ≲ 0.027; so m_χ² > 0 is not guaranteed for every T⁴ radius; D985's large-torus result is unaffected
+(Lock PREREG_D986 shares the number of the leptogenesis note above only by label; this note is the S3b result.)
+[computed] (field_tests/results/s3b_positivity_d986.txt; dps 200 vs 400 agree at all 120 points, no precision flags) Ĥ(t): t = 0.0120: +1.3e104; 0.0129: −7.7e91; 0.0139: −3.2e80; 0.0149: −8.3e69; 0.0160: −1.2e60; 0.0172: +8.0e50; 0.0184: +2.4e42; 0.0198: +2.8e34; 0.0213: −1.1e27; 0.0229: +1.5e20; 0.0246: −6.2e13; 0.0264: −7.0e7; positive for all t ≥ 0.03 up to 60 (16.0). Small-t growth of |Ĥ|: c = 4.886 (π²/2 = 4.935). Locked verdict: SIGN CHANGE.
+[derived] Interpretation: at small t the Möbius trace is controlled by the transverse (closed-string) channel, where the hatted characters carry phases; the oscillation is the closed-string tadpole region, not the open-string spectrum. Consequences:
+- D985 stands: its U-dependent part comes from T² windings |w| ≥ 10√α′, weighted by e^{−|w|²/4t} ≤ e^{−925} at t ≤ 0.027 against |Ĥ| ≤ e^{c/t} ~ e^{180}: the oscillating region contributes < e^{−700} there.
+- The all-R statement (D986 lock's hoped POSITIVE) fails: with T⁴ images resummed, the k-terms e^{−π²k²/(tR²)} do not suppress t ~ 0.02 when R ≳ 1, and the T²-winding-zero piece is the tadpole-divergent, U-independent local term; the sign of χ's mass including small-R T⁴ images therefore needs the full integral with the transverse-channel treatment (S3b proper, as scoped in STRINGS_PLAN).
+Status: Project H's sign condition remains computed at string level for large T² and heavy T⁴ windings (D985); its extension to small T⁴ radius is open. plateau_origin unchanged (estimate).
+MAP: none
