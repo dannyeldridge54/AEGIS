@@ -10015,3 +10015,12 @@ MAP: none
 [computed] (field_tests/results/janus_lt_l0a.txt) constants from scipy.constants (ω_γ from T_CMB = 2.7255 K), massless N_eff = 3.044, CPL dark energy; 0.3 ms vs CAMB background 4 ms per cosmology (13×: CAMB's background-only mode is already fast; the large gains are expected for growth/σ8 and fits).
 Next (L0b): sound horizon r_d (drag epoch) and massive neutrinos; then L1 arbitrary F(a) (TorsionΛ).
 MAP: none
+
+## D998 (DEEP, recheck mnu after D909; data + literature): frozen Σm_ν = 0.0587 eV (NO floor, m₁ ≈ 0) UNCHANGED; D909 only adds a structural route to m₁ ≈ 0 at τ = i; 2026 data still put the prediction at the most-favoured physical point; flag cleared
+Recheck [derived]: D909 shows τ = i can protect a light seesaw direction (heavy Dirac pair, post hoc lift), as ρ does (D779). If adopted, it fixes m₁ ≈ 0 at τ = i too, i.e. it supports the frozen value rather than moving it; without it, τ = i's m₁ stays free (D786: 0.059–0.064 eV). No frozen number changes.
+Data [literature]:
+- Jimenez, Peña Garay, Simpson, Verde, arXiv:2606.18987 (DESI DR2 + Planck CamSpec + NuFIT): Σm_ν < 0.0642 eV (95%, ΛCDM), NH over IH Bayes factor > 460 (conservative prior), > 40 in extensions. Same bound D710 used; 0.0587 passes.
+- Reanalysis of DESI DR1 full shape + BAO + CMB + SNe, arXiv:2601.16165: Σm_ν < 0.049 eV (ΛCDM, Mν > 0 prior) and < 0.077 eV (w0waCDM); IH disfavoured at ≈3.5σ / 2.4σ. The ΛCDM bound lies below the NO floor (0.058–0.059), the same zero-prior effect D902 recorded (0.052 eV); with the physical prior Σm_ν ≥ 0.059 the posterior piles up at the floor, which is where the frozen value sits.
+Verdict: mnu node unchanged (frozen, computed); a confirmed ΛCDM bound below 0.0587 with a physical-prior analysis would be a problem for every NO model with oscillation data, not specifically for SERAPIS; under w0wa the tension disappears. Flag cleared.
+Sources: arXiv:2606.18987; arXiv:2601.16165; earlier D710, D902.
+MAP: node=mnu status=frozen touches=[] ripple=no

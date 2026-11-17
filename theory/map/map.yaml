@@ -558,11 +558,11 @@ nodes:
   - D824
   - D902
   - D906
+  - D998
   history:
-  - 'D824: frozen'
   - 'D902: literature'
   - 'D906: frozen'
-  flag: recheck (D909, lepto_i)
+  - 'D998: frozen'
 - id: wino_window
   layer: 5
   branch:
