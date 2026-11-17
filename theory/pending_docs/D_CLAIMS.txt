@@ -428,3 +428,4 @@ D1141  2026-11-17T18:13Z  S4e: scalar mass solver 4% off BTR 10D targets - not v
 D1142  2026-11-17T18:14Z  Gaia halo 1 TeV
 D1143  2026-11-17T18:18Z  A-side wino summary
 D1144  2026-11-17T18:23Z  B-side summary
+D1145  2026-11-17T18:27Z  C-side summary
