@@ -11759,3 +11759,21 @@ Lock pushed before run; result field_tests/results/r2b_twochannel.txt.
 - Thermal relevance: freeze-out (x ≈ 25, v ~ 0.3) is far above threshold. But post-freeze-out annihilation at x ≳ M/(2δm)·… samples low v, so the threshold region matters for the late-time Sommerfeld effect. R2c needs R2b2 settled first.
 VERDICT: R2b VALIDATED (open solver); threshold continuity OPEN (R2b2).
 MAP: none
+- [CENTRE · computed] **Locks:** PREREG_R2b2_threshold + DEVIATIONS_R2b2 (D1). **Results:** field_tests/results/r2b2_threshold.txt, r2b2_rydberg.txt.
+- **Scored test (as locked): FAIL.** Total σv(χ⁰χ⁰ in) ∝ sΓs†, M = 2000 GeV, same LO potential on both sides.
+  - Below threshold: S(0.95) = 111, S(0.99) = 3.94.
+  - Above threshold: S(1.01) = 36.2, S(1.05) = 35.6, S(1.2) = 32.7, S(1.5) = 27.4. The open side is smooth.
+  - Jump = 8.2, against the ≤ 0.20 criterion. FAIL stands.
+- **Why:** the lock was ill-posed (my error).
+  - The closed χ⁺χ⁻ channel has a −α/r Coulomb tail, so there is an infinite Rydberg tower of χ⁺χ⁻ quasi-bound states (Feshbach resonances) just below 2δm.
+  - Pointwise continuity cannot hold there. Only the resonance-averaged σv should join the open side (Gailitis–Damburg).
+- **Diagnostic D1 (pre-registered after the FAIL): SUPPORTED.**
+  - 7 peaks, at n_eff = 1.53, 2.53, …, 7.54. Spacings 0.999–1.01, so the quantum defect is constant at ≈ 0.47.
+  - Peaks S ≈ 340 (heights limited by the grid). Troughs S ≈ 0.37–0.39.
+  - The closed solver is therefore behaving physically: a textbook Rydberg series with 1 − x_n = 0.0917/(n − 0.47)².
+- **Not yet shown:** that the energy average below threshold equals the open-side value (≈36).
+  - The scan mean (113) is uniform in n_eff, not in energy, so it is not that test.
+- **Next (R2b3, lock first):** energy-averaged σv over one Rydberg period near n ≈ 6–8 (fine grid that resolves the peak widths, or the analytic area), compared with the open side extrapolated to x → 1⁺. PASS if within 20%.
+- **Relevance:** freeze-out is far above threshold, so R2c (thermal average at x ~ 20–30) is unaffected. The tower matters only for late-time/halo velocities, where the D1158–1159 resonance structure must be velocity-averaged.
+VERDICT: closed and open solvers each behave physically. Pointwise threshold continuity is not a valid test (lock error, recorded). The averaged-continuity test is OPEN as R2b3.
+MAP: none
