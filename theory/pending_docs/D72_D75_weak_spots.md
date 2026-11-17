@@ -11875,3 +11875,23 @@ JMF4b (lock PREREG_JMF4b_mmc_bug_check, written before running): Janus-MF given 
 Status: Janus-MF non-separable stays UNVALIDATED (MMC can't serve as the reference there); separable: validated on 5 models (D1162, D1166).
 Next: an independent non-separable reference (another code, or a fixed-derivative MMC build under its own lock). Outreach on hold, so no upstream report.
 MAP: none
+
+### D1170 — R2b3: the resonance-averaged threshold continuity test FAILS, closed-side average is ≈ 3× the open side (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_R2b3_avg.
+  - DEVIATIONS_R2b3 D1: np.trapz was removed in numpy 2. The first run crashed before any number was seen, and its crash log is kept.
+  - **Results:** field_tests/results/r2b3_avg.txt and r2b3_S_grid.npy.
+- **Closed side:** energy-averaged S over one Rydberg period, n_eff ∈ [6.036, 7.036].
+  - ⟨S⟩ = 107.61 on both grids (N = 1001 and 2001), so it is converged; the peaks are broad in n_eff.
+  - Grid maximum 337, minimum 0.372.
+- **Open side:** S = 36.20, 36.05, 35.58, 34.70, 32.73 at x = 1.01, 1.02, 1.05, 1.1, 1.2. The quadratic fit gives S₊ = 36.35 at x → 1⁺.
+- **Score:** ⟨S⟩/S₊ − 1 = +1.96 → **FAIL** (criterion ±0.20). The closed side, averaged, is 2.96× the open side.
+- **Reading (not yet a conclusion):** a factor ≈ 3 points to a normalisation or definition mismatch between the two solvers, not to physics. Gailitis–Damburg says the averaged σv below threshold joins the open-side value. Candidates:
+  - (a) the χ⁺χ⁻ component normalisation differs between wino_s_nlo and two_channel_open;
+  - (b) the WKB/Coulomb treatment of channel 1 in the open solver, which is near threshold at x = 1.01;
+  - (c) my expectation is wrong for this short-distance absorptive set-up.
+- **Next (R2b4, lock first):** switch off the photon Coulomb term (α → 0 in V_{+−}, both solvers). With no Coulomb there is no Rydberg tower, so S must be pointwise continuous at threshold (a cusp at most). Test x = 0.99 vs 1.01 at the 20% level.
+  - PASS → the solvers agree, and the Coulomb tail or the GD expectation is the issue.
+  - FAIL → a solver normalisation bug, which would also hit R2b.
+- R2c (thermal average) waits on this. Freeze-out velocities are far above threshold, where the open solver is the one used and has passed T1/T2. But until this is settled the low-velocity part stays unverified.
+VERDICT: FAIL as locked. A solver-consistency question is OPEN (R2b4).
+MAP: none
