@@ -21,7 +21,7 @@ Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN
 14. Ledger upkeep helper (lists missing D-notes; verdicts stay hand-curated — auto-parsing misread lines) — DONE (papers/dash/make_csv.py)
 ## CubeMind
 15. M1 EmoBank appraiser (PC) — RUNNING · 16. M0 embedder (PC) — QUEUED · 17. M2 memory on/off (PC) — QUEUED · 18. Phase 7 AEGIS tools (PC) — QUEUED
-19. Phase C2 agreement-vote confidence (PC) — QUEUED · 20. Forge drafter run on skills_wanted.jsonl (PC, needs Ollama slot) — OPEN
+19. Phase C2 agreement-vote confidence (PC) — RUNNING · 20. Forge drafter run on skills_wanted.jsonl — QUEUED on PC (FORGE.job)
 21. Reranker test after M0 — OPEN · 22. Speculative decoding test — BLOCKED (download needs Danny's OK on the desk)
 23. Grading loop: gpt-oss plain / qwen3-coder+verify / qwen3:14b arms to 300 → Phase 3/4 comparisons — RUNNING
 24. M3 affect weight — BLOCKED until M1 passes
