@@ -271,3 +271,4 @@ D984  2026-11-17T01:55Z  Project H at matched n_s predicts r 15.7% higher than S
 D985  2026-11-17T02:10Z  Level S3 PASS: anti-D5 position scalar gets a positive one-loop mass with E(U,2) shape at string level (Mobius amplitude, full tower)
 D986  2026-11-17T02:35Z  Leptogenesis Boltzmann check (locked D982): kappa = 0.939 everywhere, instantaneous yields stand; c=0.3 at M_H=1e12 still fails (now x1.22 short)
 D987  2026-11-17T02:36Z  S3b trace positivity (locked D986): SIGN CHANGE at small proper time; all-radius extension fails; D985 unaffected
+D988  2026-11-17T02:38Z  Project H: the U-independent local part of the chi loop mass is string-scale and tadpole-dominated; a positive one only rescales lambda' (D947), a negative one is fatal (D964); its sign needs dilaton-tadpole backreaction
