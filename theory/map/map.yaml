@@ -154,9 +154,12 @@ nodes:
   - rho
   - E
   title: Galactic DM profile (cuspy vs cored)
-  status: assumed
+  status: literature
   d:
   - D735
+  - D982
+  history:
+  - 'D982: literature'
 - id: vac_i
   layer: 2
   branch:

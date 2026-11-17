@@ -1597,3 +1597,8 @@ Touches: none.
 - [literature] 1105.0591: brane adjoint one-loop mass matrix traceless → tachyonic direction (sign warning for Project H).
 - [literature] 2311.05824: Boltzmann system for inflaton-decay leptogenesis; locked check PREREG_D982 queued.
 - ε origin and halo profile: no new calculable input.
+
+## D982: second prep pass
+- [literature] 0805.0824: brane-scalar mass² sign tracks the one-loop vacuum amplitude; [estimate] bosonic-excess sector → positive χ mass (Project H's need).
+- [literature] 2605.16994: Gaia DR3 prefers Einasto/cored halos → halo node literature.
+- [literature] 1707.07059: no U-dependence of the anti-D3 uplift at leading order.

@@ -229,3 +229,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D979: a constant offset across all inputs points at a shared definition (here the end of inflation); decompose it before blaming the solver.
 - D980: when removing a suspected cause leaves the scatter unchanged, drop the suspect and look at how the noise is amplified (here a second derivative on a narrow stencil).
 - D981: prep notes should say which nodes have nothing calculable yet, so loops don't revisit them.
+- D982: a sign rule from one string model is a plausibility argument for another, not a result; label it estimate and name the check that would test it.
