@@ -10865,3 +10865,21 @@ MAP: none
 - Reading: ACT mildly prefers LESS radiation than the Standard Model. Every positive ΔN costs, and SERAPIS's cleanest branch, ρ with ΔN = 0, is the least penalised.
 VERDICT: CONFIRMED — the τ=i branch survives only if its enhanced-symmetry sector is unpopulated, massive, or at most U(1)-sized.
 MAP: none
+
+## D1093 (CENTRE, Djl loop (C), locked PREREG_C3): Gaia-era Milky Way masses (Bird+2022 Jeans: 4.3 ± 0.95e11 M_⊙ within 73 kpc, 4.1 ± 1.2e11 within 52 kpc) agree with MWPotential2014 (pulls +0.4/−0.3) and with halo amplitudes 0.8–1.2; a 1.5× halo is in 2.4σ TENSION — independent confirmation of D1089 with modern data
+Lock pushed before run; result field_tests/results/c3_mw_mass.txt.
+- Data (quoted, arXiv:2207.08839 Table 1). The same paper's NFW fits give M200 = 0.55 (+0.15/−0.11) e12 (KG) and 1.00 (+0.67/−0.33) e12 (BHB), not scored.
+- Model: M(<r) ≈ r v_c²/G (spherical approximation; G from astropy constants, 4.3009e-6).
+- Pulls (KG at 73 kpc / BHB at 52 kpc), all CONSISTENT unless noted:
+  - s = 0.8: −0.47 / −0.83
+  - s = 1.0: +0.36 / −0.33
+  - s = 1.2: +1.18 / +0.17
+  - s = 1.5: +2.42 / +0.91 → TENSION
+- Reading:
+  - Two independent kinematic routes now agree: halo-star dispersions (D1089, 2005 data, β-degenerate) and Gaia-era Jeans masses (this note, β handled inside the source's 3D Jeans).
+  - Both bound the halo amplitude to s ≈ 0.8–1.2 and disfavour 1.5. So W2's wino results across s = 0.8–1.2 are the observationally allowed set: pass ≤ 1 TeV, 1.85 TeV fails, and ρ_⊙ = 0.23–0.34 GeV/cm³.
+- Caveats:
+  - The spherical approximation for a disk+bulge+halo potential at 50–75 kpc is small there, because the disk is far inside (estimate).
+  - One-parameter halo scaling only (the scale radius is fixed).
+VERDICT: CONSISTENT for s = 0.8–1.2; TENSION at 1.5.
+MAP: none
