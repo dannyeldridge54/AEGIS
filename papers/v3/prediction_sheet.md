@@ -101,3 +101,6 @@ Data check 16 Nov 2026 (D902): CMB-SPA + DESI DR2 + DES Y5 gives Σm_ν < 0.052 
 
 ## Independent reproduction (16 Nov 2026, D953–D962)
 n_s and r for SERAPIS-E, Chronos, Kairos and SERAPIS-ρ reproduced by separately written code (tools/serapis_calc). α_s agrees to ~10%; both codes show ~10% sensitivity of α_s to the Bunch–Davies start (D958); convergence test D960 pending. Frozen values unchanged.
+
+## Project H sibling (17 Nov 2026, D976–D978; post-hoc, scored only on future data)
+If the plateau comes from Project H at its largest allowed loop coupling (λ′ ≈ 0.17, locked refit C = λ′C₀): n_s ≈ 0.9714, r ≈ 5.0e-4 — a sibling of SERAPIS-E inside the frozen band. Fixed-C variant excluded (≈41 e-folds). Frozen SERAPIS-E values unchanged.
