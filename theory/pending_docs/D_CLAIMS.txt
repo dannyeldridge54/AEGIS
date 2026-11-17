@@ -426,3 +426,4 @@ D1139  2026-11-17T18:09Z  Gaia DR3 vesc
 D1140  2026-11-17T18:09Z  S4d: subcritical 6D tadpole vacuum - scalar sector stable (b>=0 everywhere)
 D1141  2026-11-17T18:13Z  S4e: scalar mass solver 4% off BTR 10D targets - not validated; ratio m2/m1 matches to 0.3%
 D1142  2026-11-17T18:14Z  Gaia halo 1 TeV
+D1143  2026-11-17T18:18Z  A-side wino summary
