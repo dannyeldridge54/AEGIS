@@ -308,3 +308,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1138: before computing a new fluctuation sector, find the closest published analogue — it gives the method, the boundary conditions and the expected answer.
 - D1140: a sufficient stability condition from the literature, checked on a case the source did not cover, is a cheap and decisive first step before any eigenvalue solve.
 - D1141: a common scale offset with a matching ratio points at a normalisation definition (here L or m), not at the operator — check definitions before touching the solver.
+- D1146: a denser reference turns 'within noise' into a resolved trend — here Janus's β_s truncation error growing with ε for steep potentials.

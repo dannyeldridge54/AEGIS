@@ -11603,3 +11603,12 @@ Final:
 - Open: (1) the inner-halo concentration/core; (2) the PC Star Mapper per-star data and dust maps (W3/C1, the highest-value pending item); (3) Jeans with real Mapper kinematics.
 Status: C-side PARKED until the PC is linked.
 MAP: none
+
+## D1146 — DEEP/LEFT — J9b (first job run by the PC runner): β_s over 16 models with a denser exact reference — VALIDATED, plus a RESOLVED systematic [computed]
+Lock PREREG_J9b_beta_s_sharp; ran on Danny's PC (WSL, AEGIS_PC_RUNNER), code copied unchanged from the lock commit; results copied back.
+Exact β_s from a degree-7 fit to ln P_R (41 pts on ±1.5 vs 31 on ±1); informative if spread ≤ 5%: 24/32 informative (median reference spread 2.0%).
+Janus spectra3 vs reference at informative points: median |err| 3.1%, max 10.6% → C1, C2 PASS → Janus β_s VALIDATED (sharper than D1039's ~5%).
+New, resolved by the denser reference: a systematic for steep power laws — LFI p = 3: −7.0%, −6.1%; p = 4: −10.5%, −9.3% (reference spread 1–2.5%), while
+p = 1, 2/3 sit at 0.0–3.2%. Janus's β_s error grows with ε (third-order truncation; β_s is ~ε³, the next order is ~ε⁴/ε³ ~ ε ≈ 0.01–0.02 relative at these
+points ×O(5) coefficients). Plateau models (SI, NI, ESI, MHI, RGI, DWI, SFI, LI) 0.3–5%. Not a failure of the claim; a stated limit for steep potentials.
+MAP: none
