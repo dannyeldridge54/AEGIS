@@ -11944,3 +11944,7 @@ gfortran 13.3.0, ASPIC 75400d2, MMC 641153c); `check` compares the running machi
 Known: Danny's PC differs (Python 3.11, gfortran 16.2) so `check` there will report MISMATCH — PC results stay labelled "PC", with cross-machine
 checks where they exist (ASPIC lfi identical, D1173-era; J9b/J10/J11 matched cloud methods). LOCKBENCH L-1…L-8 now all built; L-7 (dashboard) remains.
 MAP: none
+
+## D1175a — correction to D1175 wording
+D1175 says "L-1…L-8 now all built; L-7 remains" — correct reading: L-1–L-6 and L-8 built, L-7 (dashboard) not yet. Its "D1173-era" tag for the
+ASPIC lfi check is wrong: that check was the ASPIC_INSTALL job (PC log, 13:45 CT, max rel diff 0.0), recorded in D1171's report, not a D-note of its own.
