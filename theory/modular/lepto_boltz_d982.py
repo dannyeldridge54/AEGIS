@@ -23,7 +23,7 @@ def solve(M,TR,K,eps=1e-6):
         return [d0,d1,d2,d3]
     # integrate until phi and N gone
     xend=math.log(1e4)+ (2/3)*math.log(H0/Gphi)
-    sol=solve_ivp(rhs,[0,xend],[0.0,0.0,1e-30,0.0],method='LSODA',rtol=1e-9,atol=[1e-12,1e-40,1e-40,1e-50])
+    sol=solve_ivp(rhs,[0,xend],[0.0,0.0,1e-30,0.0],t_eval=[xend],method='LSODA',rtol=1e-9,atol=[1e-12,1e-40,1e-40,1e-50])
     a=math.exp(sol.t[-1]); rR=sol.y[2,-1]*S/a**4; T=(30*rR/(math.pi**2*gs))**0.25; s=2*math.pi**2*gs*T**3/45
     nBL=sol.y[3,-1]*S/a**3
     left=((math.exp(sol.y[0,-1]) if sol.y[0,-1]>-690 else 0.0)*S/a**3)/rR
