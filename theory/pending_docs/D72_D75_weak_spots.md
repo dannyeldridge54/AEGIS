@@ -9937,6 +9937,7 @@ Consequence: the "small tree mass" condition becomes "χ's total U-independent m
 MAP: node=plateau_origin status=estimate touches=[] ripple=no
 
 ## D989 (locked PREREG_D990 + DEVIATIONS D1): the Janus String Calculator (tools/janus_calc) reproduces the base toolkit's n_s and r on all 24 SERAPIS-family points (SERAPIS-E ×12, Chronos ×6, SERAPIS-ρ ×4, Kairos ×2) and on all 8 stress points, about 40,000 times faster: VALIDATED for n_s and r
+(Lock PREREG_D989 is battery B, the α_s comparison running on the PC; numbering differs, as in D710.)
 [computed] (field_tests/results/janus_battery_a_d990.txt) SERAPIS family: |Δn_s| max 2.4e-5, median 1.7e-5 (limit 1e-4); |Δr/r| max 0.013%, median 0.011% (limit 0.5%); 24/24 PASS → VALIDATED. Janus 0.9–1.3 ms per point vs 37–73 s for the base spectra_fast (median speed-up ≈ 4e4).
 [computed] Stress set (m²φ², φ⁴, Starobinsky, natural f = 5; N* = 50, 60; ε₁ up to 2e-2): |Δn_s| ≤ 3.1e-5, |Δr/r| ≤ 0.031%, all inside the looser envelope; the second-order Hubble-flow formulas hold well beyond the SERAPIS regime.
 [derived] The SERAPIS-family residual is systematic, not noise: Δn_s = −(1.1–2.4)e-5 and Δr/r = +0.004–0.013% at every point, shrinking as ε₂ falls (larger N*), the size of the next (third) order in the slow-roll expansion (ε₂² × O(1) ≈ 1e-3 × 1e-2); it could be absorbed by a third-order term later, but it is already 4–7× inside the locked tolerance.
