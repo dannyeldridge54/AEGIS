@@ -1677,3 +1677,6 @@ Touches: none.
 
 ## D1007a: correction — e^{3L} gaugino-condensation source fails as an εL tilt on the inflaton (ΔL ≈ 19 over 50 e-folds)
 - [computed] L(y) along SERAPIS-ρ: 24.0 (N=60) → 2.5 (N=1); linearisation valid only over ≲ 0.1 e-fold.
+
+## D1008: Janus vs ASPIC reheating route (J7c2): n_s ~260×, r ~260×, α_s ~35× more accurate; ASPIC pivot off 0.16 e-fold
+- [computed] 32/32; J7c VOID (lock slip ½ ln H*) kept on record.

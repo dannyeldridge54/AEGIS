@@ -253,3 +253,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1006: check what a fitting formula's variable is defined as (EH98 z_d is tuned for its own fit) before using it as a stand-in for another code's quantity.
 - D1007: before hunting for a new mechanism, check whether the standard potential already contains the invariant (here e^{3L} in duality-invariant gaugino condensation).
 - D1007a: before linearising a function of the inflaton, compute how much its argument changes over the last 60 e-folds; check scale, not just form.
+- D1008: run a units/scaling check on a derived matching equation before locking it (the M⁴ 'cancellation' was the tell: it should not cancel).
