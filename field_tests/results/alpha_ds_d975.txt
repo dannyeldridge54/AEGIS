@@ -1,0 +1,8 @@
+SERAPIS-E C=1e-6 N*=48.4 bd=200: ns=0.970054 r=4.7544e-04 alpha_s=-9.8327e-04
+SERAPIS-E C=1e-6 N*=48.4 bd=1000: ns=0.970052 r=4.7544e-04 alpha_s=-8.3888e-04
+SERAPIS-E C=1e-6 N*=48.4 bd=5000: ns=0.970051 r=4.7544e-04 alpha_s=-1.0124e-03
+SERAPIS-E C=1e-6: converged=False alpha_s(5000)=-1.0124e-03 published band (-0.00106, -0.00094) -> NOT CONVERGED
+Chronos eps=1.3e-4 N*=46.0 bd=200: ns=0.969645 r=5.3041e-04 alpha_s=-1.0881e-03
+Chronos eps=1.3e-4 N*=46.0 bd=1000: ns=0.969642 r=5.3041e-04 alpha_s=-1.1073e-03
+Chronos eps=1.3e-4 N*=46.0 bd=5000: ns=0.969644 r=5.3041e-04 alpha_s=-9.6930e-04
+Chronos eps=1.3e-4: converged=False alpha_s(5000)=-9.6930e-04 published band (-0.00102, -0.00088) -> NOT CONVERGED
