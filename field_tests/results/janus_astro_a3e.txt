@@ -1,0 +1,4 @@
+log rho_c=14.8: P_c=4.817e+33 Pa atol_P/p_surf=0.36 | R ns 11.90485484 km | compact shipped 11.90484981 (rel 4.2e-07) | compact tight 11.90485484 (rel 8.1e-11); M tight 0.87459971
+log rho_c=15.0: P_c=1.907e+34 Pa atol_P/p_surf=1.44 | R ns 11.58033459 km | compact shipped 11.58045743 (rel 1.1e-05) | compact tight 11.58033459 (rel 3.0e-13); M tight 1.56493632
+log rho_c=15.2: P_c=7.089e+34 Pa atol_P/p_surf=5.34 | R ns 10.64650393 km | compact shipped 10.64661103 (rel 1.0e-05) | compact tight 10.64650393 (rel 3.8e-12); M tight 1.99665693
+HYPOTHESIS CONFIRMED
