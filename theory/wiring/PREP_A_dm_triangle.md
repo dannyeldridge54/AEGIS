@@ -11,3 +11,11 @@ Goal: halo-independent wino test — p_ann(M) = f_eff · ⟨σv⟩(v_rec) / M (�
 - f_eff(M) for the W⁺W⁻ channel at 0.5–3 TeV (Slatyer 2016 tables or the Planck 2018 paper's convention).
 - An independent numerical anchor for the Sommerfeld-enhanced total σv (e.g. a quoted value at the 2.4 TeV resonance or at 1–3 TeV, v ~ 1e-3) to fix the off-diagonal convention.
 Then: lock PREREG_A1 (wino p_ann vs Planck), run, D-note.
+
+## Sourced 2026-11-17 (Djl tick A)
+- p_ann (Planck 2018): p_ann < 3.2e-28 cm^3 s^-1 GeV^-1, p_ann ≡ f_eff<σv>/m_DM (Slatyer, Les Houches lectures arXiv:2109.02696, citing Planck 2018 VI). CL not stated there → treat as Planck 95% pending a direct quote.
+- Earlier bound 4.1e-28 (Planck 2015 / Slatyer 1506.03811).
+- f_eff: 1506.03811 gives no W+W- number in text (Fig. 4 only; tables at nebel.rc.fas.harvard.edu/epsilon, not reachable from here).
+  Derived bracket (labelled DERIVED, not quoted): paper states high-mass SM-channel CMB limits lie at <σv> ≲ 1–3e-27 (m/GeV) cm^3/s with p_ann < 4.1e-28 → f_eff ≈ 0.14–0.41. e+e-/γ asymptote f_eff ≈ 0.4 (quoted).
+  A1 will scan f_eff over [0.14, 0.41] instead of using one value.
+- Still missing: one numerical anchor for wino Sommerfeld total σv (needed to lock A1).
