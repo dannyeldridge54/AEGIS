@@ -314,3 +314,4 @@ D1027  2026-11-17T06:20Z  L2 growth vs CAMB VALIDATED
 D1028  2026-11-17T06:22Z  L3 DESI DR2 BAO likelihood reproduces DESI LCDM
 D1029  2026-11-17T06:29Z  L4 w0wa fit vs DESI+CMB
 D1030  2026-11-17T06:30Z  R7 no strong hidden-visible coupling asymmetry in heterotic M-theory linear regime
+D1031  2026-11-17T06:35Z  R8 Kronecker limit: L is the finite part of E(tau,s->1)
