@@ -479,3 +479,4 @@ D1192  2026-11-17T21:37Z  B8: tau_i dark radiation vs LBT 2026 with theory error
 D1193  2026-11-17T21:42Z  Galaxy tick: Horta+2026 v_c(R0)=235.3 from abundance gradients; MWPotential2014 (220) disfavoured, McMillan17 consistent
 D1194  2026-11-17T21:47Z  C8: galpy vs Horta+2026 at R0: McMillan17 PASS (v_c -0.57, Omega +0.04 sigma), MWPotential2014 FAIL (-4.3 sigma)
 D1195  2026-11-17T21:49Z  JMF6: Janus-MF validated on non-separable vs PyTransport
+D1196  2026-11-17T21:53Z  D9: galpy orbit path for the Star Mapper (MWP2014 regression PASS after unit fix); McMillan17 effect reported; default not flipped
