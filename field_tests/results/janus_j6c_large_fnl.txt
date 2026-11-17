@@ -1,0 +1,4 @@
+A1 lam=0.05 phi*=0.001: N=64.560 end=(0.5194,1.01) r=0.1220 | f_NL num -0.25416 (h: -0.25418) | Eq21 -22.367 | rel 9.89e-01 T5 FAIL T6 PASS
+A2 lam=0.04 phi*=0.001: N=64.560 end=(0.1534,1.009) r=0.1243 | f_NL num 0.0064273 (h: 0.0064272) | Eq21 -0.014901 | rel 1.43e+00 T5 FAIL T6 PASS
+A3 lam=0.05 phi*=0.0001: N=64.560 end=(0.05194,1.009) r=0.1243 | f_NL num 0.0037924 (h: 0.0037924) | Eq21 -0.64166 | rel 1.01e+00 T5 FAIL T6 PASS
+T5L (|f_NL|>=1 somewhere): FAIL  ->  J6c verdict: NOT VALIDATED
