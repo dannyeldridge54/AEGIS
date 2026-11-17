@@ -1,0 +1,10 @@
+6PN m=(1.4,1.4) Lam=(300,300): tidal phase (detrended) 0.833 rad; max|res| 5.45e-10 rad
+5PN m=(1.4,1.4) Lam=(300,300): tidal phase (detrended) 0.555 rad; max|res| 8.58e-10 rad
+   LAL tidal ALL minus 6PN (6.5PN+7PN+...) detrended: 0.035 rad [reported]
+6PN m=(1.35,1.45) Lam=(400,250): tidal phase (detrended) 0.883 rad; max|res| 5.35e-10 rad
+5PN m=(1.35,1.45) Lam=(400,250): tidal phase (detrended) 0.589 rad; max|res| 5.25e-10 rad
+   LAL tidal ALL minus 6PN (6.5PN+7PN+...) detrended: 0.037 rad [reported]
+6PN m=(1.2,1.8) Lam=(800,100): tidal phase (detrended) 0.797 rad; max|res| 8.79e-10 rad
+5PN m=(1.2,1.8) Lam=(800,100): tidal phase (detrended) 0.534 rad; max|res| 4.65e-10 rad
+   LAL tidal ALL minus 6PN (6.5PN+7PN+...) detrended: 0.029 rad [reported]
+A2d VALIDATED
