@@ -357,3 +357,4 @@ D1070  2026-11-17T12:18Z  Djl: A6b vectorised Hyperion validated; now faster tha
 D1071  2026-11-17T12:21Z  Djl: A8a mapper feed - orbits match galpy 5e-10; coordinate tests miss by Galactic-pole convention (NOT VALIDATED)
 D1072  2026-11-17T12:24Z  Djl: A8b mapper feed follows Gaia DR3's Galactic convention exactly
 D1073  2026-11-17T12:26Z  Djl: A8c batch orbits 70x faster but NOT VALIDATED (r_peri 2.5%)
+D1074  2026-11-17T12:30Z  Djl: A8c2 adaptive orbits nearly there - accuracy met for disk stars, cost 15-26 ms/star (NOT VALIDATED)
