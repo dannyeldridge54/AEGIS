@@ -95,5 +95,12 @@ check('S1 KK-sum route = winding route (tilted T2)', abs(_A/_B-1) < 1e-6, f'{_A/
 _e = _S.lattice(1.3, complex(0.5, 3**0.5/2))[-1]; _lap = _S.laplacian_B(1.3, complex(0.5, 3**0.5/2))
 from tools.serapis_calc.eisenstein import E_paper as _Ep
 check('S1 curvature = E_paper(U,2)/(pi^3 A) at rho', abs(_lap/(_Ep(0.5, 3**0.5/2)/(math.pi**3*_e))-1) < 1e-3)
+check('S2 superstring level degeneracies 8,128,1152,7680,42112 (NS = R)', [d for _, d in _S.levels('NS', 4)] == [8, 128, 1152, 7680, 42112] == [d for _, d in _S.levels('R', 4)])
+check('S2 NS trace = R trace (abstruse identity, product form)', max(abs(_S.logosc(t, 'NS')-_S.logosc(t, 'R')) for t in (0.3, 1, 3, 200)) < 1e-10)
+_a = [0.37*2*math.pi/12, 0.21*2*math.pi/12]
+_lv = _S.V_string_B(_a, 12.0, complex(0.2, 1.3), 'NS', Nmax=40, N=4); _th = _S.V_string_Atheta(_a, 12.0, complex(0.2, 1.3), 'NS', N=4)
+check('S2 string tower: level-sum route = theta-trace route (L=12)', abs(_th/_lv-1) < 5e-4, f'{_th/_lv-1:.1e}')
+_m16 = _S.V_string_B(_a, 16.0, complex(0.5, 3**0.5/2), 'NS', Nmax=40, N=60)/(8*_S.V_routeB(_a, 16.0, complex(0.5, 3**0.5/2))) - 1
+check('S2 massless limit: string -> 8 x S1 at large torus (massive share < 1e-3 at L=16)', 0 < _m16 < 1e-3, f'{_m16:.1e}')
 print(f'{len(fails)} failure(s)')
 sys.exit(1 if fails else 0)

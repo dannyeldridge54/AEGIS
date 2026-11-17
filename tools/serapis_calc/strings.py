@@ -61,18 +61,37 @@ def osc_R(q, nmax=60):
     for n in range(1, nmax+1):
         A *= (1+q**n)**8; D *= (1-q**n)**8
     return 8*A/D
+def _pmul(a, b, n):
+    out = [0]*(n+1)
+    for i, x in enumerate(a[:n+1]):
+        if x:
+            for j, y in enumerate(b[:n+1-i]): out[i+j] += x*y
+    return out
+def _ppow(a, k, n):
+    r = [1] + [0]*n
+    for _ in range(k): r = _pmul(r, a, n)
+    return r
 def levels(sector, Nmax=6):
-    """Degeneracies d_N and masses M_N^2 = N (alpha'=1) from a power-series expansion (independent of osc_*)."""
-    import sympy as sp
-    x = sp.symbols('x')                       # x = q^{1/2}
-    P = lambda s, k: sp.prod([(1+s*x**(2*n-k))**8 for n in range(1, Nmax+3)])
-    D = sp.prod([(1-x**(2*n))**8 for n in range(1, Nmax+3)])
+    """Exact integer degeneracies d_N and masses M^2 = N (alpha'=1) by series multiplication in x = q^{1/2} (independent of osc_*)."""
+    n = 2*Nmax + 2; num = [1] + [0]*n; den_inv = [1] + [0]*n
+    for k in range(1, n+1):                               # 1/(1-x^{2k})^8 = (sum_j x^{2kj})^8
+        geo = [1 if (i % (2*k) == 0) else 0 for i in range(n+1)]
+        den_inv = _pmul(den_inv, _ppow(geo, 8, n), n)
     if sector == 'NS':
-        expr = sp.series((P(1, 1)-P(-1, 1))/(2*x*D), x, 0, 2*Nmax+1).removeO()
+        Pp = [1] + [0]*n; Pm = [1] + [0]*n
+        for k in range(1, n+1):
+            e = 2*k - 1
+            if e > n: break
+            f = [1] + [0]*n; f[e] = 1; g = [1] + [0]*n; g[e] = -1
+            Pp = _pmul(Pp, _ppow(f, 8, n), n); Pm = _pmul(Pm, _ppow(g, 8, n), n)
+        diff = [(x - y)//2 for x, y in zip(Pp, Pm)]           # (P+ - P-)/2, odd powers only; divide by x
+        ser = _pmul(diff[1:] + [0], den_inv, n)
     else:
-        expr = sp.series(8*P(1, 0)/D, x, 0, 2*Nmax+1).removeO()
-    c = sp.Poly(sp.expand(expr), x).all_coeffs()[::-1]
-    return [(k/2, int(c[k])) for k in range(len(c)) if c[k] != 0]   # (M^2, degeneracy)
+        P = [1] + [0]*n
+        for k in range(1, n//2+1):
+            f = [1] + [0]*n; f[2*k] = 1; P = _pmul(P, _ppow(f, 8, n), n)
+        ser = [8*c for c in _pmul(P, den_inv, n)]
+    return [(k/2, ser[k]) for k in range(0, 2*Nmax+1) if ser[k] != 0]
 def V_string_B(a, L, U, sector='NS', Nmax=6, N=40):
     """Winding route with the full tower: each level M contributes -(A/pi^3) sum' (cos-1)/|w|^6 * g(M|w|), g(x)=x^3 K_3(x)/8."""
     from scipy.special import kv
@@ -100,3 +119,29 @@ def V_string_A(a, L, U, sector='NS', N=40):
     pts = [t0, 1e-2, 0.1, 1, 10, 100]
     tot = sum(quad(f, pts[i], pts[i+1], limit=200, epsrel=1e-9)[0] for i in range(len(pts)-1)) + quad(f, 100, np.inf, limit=200)[0]
     return float(-tot/(2*(4*math.pi)**2))
+
+def logosc(t, sector='NS', nmax=400):
+    """log Tr_osc(q = e^{-t}) in floating point (log space, so small t does not overflow)."""
+    n = np.arange(1, nmax+1)
+    lD = 8*np.log1p(-np.exp(-t*n)).sum()
+    if sector == 'NS':
+        lA = 8*np.log1p(np.exp(-t*(n-0.5))).sum(); lB = 8*np.log1p(-np.exp(-t*(n-0.5))).sum()
+        return lA + np.log(-np.expm1(lB-lA)) - math.log(2) + t/2 - lD
+    lA = 8*np.log1p(np.exp(-t*n)).sum()
+    return math.log(8) + lA - lD
+def V_string_Atheta(a, L, U, sector='NS', N=4):
+    """Route A': oscillator trace (theta/eta products, log space) integrated in proper time against the winding sum:
+    V(a)-V(0) = -(A/(2 (4 pi)^3)) sum'_w (cos(a.w)-1) int_0^inf dt t^-4 e^{-|w|^2/4t} Tr_osc(e^{-t})."""
+    from scipy.integrate import quad
+    e1, e2, f1, f2, A = lattice(L, U); a = np.asarray(a, float)
+    tot = 0.0
+    for m in range(-N, N+1):
+        for n in range(-N, N+1):
+            if m == 0 and n == 0: continue
+            w = m*e1 + n*e2; w2 = float(w @ w); c = math.cos(float(a @ w)) - 1
+            g = lambda t: math.exp(-w2/(4*t) + logosc(t, sector))/t**4
+            ts = w2/16                                            # peak of t^-4 e^{-w^2/4t}
+            cuts = sorted({1e-3, min(0.3, ts/10), ts/10, ts/3, ts, 3*ts, 10*ts, 100*ts})
+            I = sum(quad(g, lo, hi, limit=200, epsrel=1e-11)[0] for lo, hi in zip(cuts[:-1], cuts[1:]) if hi > lo) + quad(g, cuts[-1], np.inf, limit=200)[0]
+            tot += c*I
+    return float(-(A/(2*(4*math.pi)**3))*tot)
