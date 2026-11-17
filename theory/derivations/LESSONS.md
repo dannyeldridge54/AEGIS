@@ -296,3 +296,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1048: check the claimed mechanism in a second independent formulation (chiral vs linear multiplet) before building on it.
 - D1049: when one route closes, look for the same mathematical object (here the s=1 log) in a different physical slot (matter wave function vs dilaton).
 - D1050: a cross-compression check (two different CMB summaries) is a cheap robustness test for any joint fit.
+- D1051: a lead with the right structure still needs its size checked at once; restate the size problem in physical terms (here: near-finiteness).

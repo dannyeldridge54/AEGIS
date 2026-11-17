@@ -1769,3 +1769,4 @@ Touches: none.
 ## D1048: R — BGW (hep-th/9605170): GS term cancels all T-dependence at fixed ℓ; with D1044–D1046 the GS route for the ρ tilt is CLOSED
 ## D1049: R lead — AGNT Eq. 20: matter wave function Y_j = 2γ̃_j ln[|η|⁴(T+T̄)] with N=2 coefficient (not GS) → candidate non-GS source of the ρ tilt
 ## D1050: L8b — CHW priors + DESI BAO ΛCDM: χ² 14.05/13, h 0.6864 vs 0.6842 (L4) → ROBUST to CMB compression
+## D1051: R — AGNT matter-log tilt κ = 2g²γ̃; natural size 1.6e-3–1.6e-2 (30–300× too big); ε needs near-finite N=2 sector (γ̃ ≈ 0) [estimate]

@@ -10432,3 +10432,15 @@ Lock PREREG_L8b_priors_bao. 3 params vs 16 data: χ²_min = 14.05 (13 dof, 1.08/
 C1 PASS; C2 |h − 0.6842 (L4, DESI-compressed CMB + BAO)| = 0.0022 ≤ 0.005 PASS → ROBUST: Janus-LT's ΛCDM fit does not depend on which
 CMB compression is used to 0.3%, supporting D1042's joint w0wa result. (BAO pulls ω_b to 0.02252, 1σ above the CHW prior mean.)
 MAP: none
+
+## D1051 — RIGHT (R track) — size of the D1049 matter-log tilt: natural ~1e-2; ε = 6e-5 needs an almost-vanishing N=2 anomalous dimension [literature + estimate]
+[literature, fetched hep-th/9301033] Y_i ≡ finite part of G⁽¹⁾_{iī}/G⁽⁰⁾_{iī} (Sec. 6, text before Eq. 15); it enters Yukawas as [1 + g²(Y_i+Y_j+Y_k)]^{−1/2}
+(Eq. 15); γ̃_j = −b̃_j/2 is "the anomalous dimension of A_j in the N=2 theory"; one-loop γ_i = −(1/64π²){−(4/k)C₂(R_i) + g⁻²Σ|λ_ijk|²} (Eq. 14);
+b = (1/32π²)(−3Tr Q_V² + Tr Q_M²) (Eq. 7). No orbifold numbers given. (Source text is partly garbled on g² bookkeeping — noted.)
+[derived/estimate] A matter-F-term plateau V ∝ |∂_A W|²/(G⁽⁰⁾(1 + g²Y)) gives V ∝ P·(1 − 2g²γ̃ ln[|η|⁴·2Im T] + …) = P·(1 + 2g²γ̃ L + …):
+the multiplicative L-tilt of D1010 with κ = 2g²γ̃. Since D1010 matched with κ = ε, the needed size is g²γ̃ = 3e-5.
+Natural size: γ̃ ~ (1/64π²)×(group factor O(1–10)) ~ 1.6e-3 to 1.6e-2, × 2g² (g² ≈ 0.5) → κ ~ 1.6e-3 to 1.6e-2: 30–300× too large — UNLESS the
+gauge and Yukawa terms in Eq. 14 nearly cancel (γ̃ → 0 is the N=2 finiteness condition; Z₃ has γ̃ = 0 exactly). So this lead also needs a
+small number, but now a small number with a known physical meaning: near-finite N=2 sectors (|γ̃| ~ 2% of natural).
+Status: lead KEPT (structure right, not killed by the S' shift), size problem RESTATED as near-finiteness. Not claimed.
+MAP: none
