@@ -447,3 +447,4 @@ D1160  2026-11-17T19:17Z  New toolkits: KALUZA v0.1 (regression pass), LOCKBENCH
 D1161  2026-11-17T19:19Z  JMF1: Janus two-field dN vs MultiModeCode - r matches exact to 2e-4; n_s C1 fails (different dN approximations); dN error grows with mass ratio
 D1162  2026-11-17T19:25Z  JMF2: Janus-MF exact multi-field MS matches MultiModeCode - ns to <=6e-6, r to <=1.2e-4
 D1163  2026-11-17T19:25Z  LOCKBENCH L-1: machine-readable claims (tests pass, incl. numpy-bool trap)
+D1164  2026-11-17T19:27Z  LOCKBENCH L-2: lock linter catches this week's four lock mistakes
