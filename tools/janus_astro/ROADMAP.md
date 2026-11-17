@@ -41,6 +41,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A8b DONE (D1072): mapper coordinates = Gaia DR3 convention (A_G' to 2e-16); astropy differs by 25 mas (D1071a corrects D1071).
 
+- A8c (D1073): batch orbits 2.9 ms/star (70×) but r_peri off 2.5% → NOT VALIDATED; A8c2 (adaptive step / turning-point refinement).
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].

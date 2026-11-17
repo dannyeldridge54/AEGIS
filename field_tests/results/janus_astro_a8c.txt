@@ -1,0 +1,4 @@
+C1 force_array vs MW.force: 4.2e-15
+C2 batch vs exact (200 stars, 3 Gyr): worst rperi 2.5e-02, rapo 1.0e-02, ecc 5.1e-04, zmax 5.1e-03
+C3 cost: batch 2.88 ms/star (0.6 s for 200); exact 205 ms/star
+VERDICTS: C1=PASS C2=FAIL C3=PASS -> A8c NOT VALIDATED

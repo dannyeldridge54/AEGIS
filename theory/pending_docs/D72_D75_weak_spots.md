@@ -10624,3 +10624,8 @@ Results [computed]: G1 matrix 1.9e-16; G2 (l, b) for 200 stars 5.7e-14 deg; G3 S
 Bookkeeping: the first claim of this number failed (uncommitted D1071a text blocked the claim script's pull), so this note was appended in a follow-up commit.
 Remaining for the Mapper: speed (0.5 s per orbit) → A8c.
 MAP: none
+
+## D1073 (DEEP Jl tick, track X / Hyperion -> Star Mapper, locked PREREG_A8c): batch orbits run at 2.9 ms per star (70× faster than the exact integration, inside the 10 ms target) with eccentricities good to 5e-4, but pericentres miss by up to 2.5% and apocentres by 1% on the worst stars — A8c NOT VALIDATED (limit 1e-3)
+Results [computed, 200 synthetic stars, 3 Gyr]: C1 vectorised forces vs MW.force 4.2e-15 (PASS); C2 worst relative error r_peri 2.5e-2, r_apo 1.0e-2, e 5.1e-4, z_max 5.1e-3 (FAIL); C3 2.88 ms/star vs exact 205 ms/star (PASS).
+Diagnosis (after the verdict, not yet tested): the fixed step dt = 0.01 natural units (0.36 Myr) both under-resolves fast pericentre passages of the synthetic high-velocity stars (velocities up to ~1000 km/s from pm ~ N(0, 20) mas/yr at 5 kpc) and samples r only once per step, so the extremes are clipped. Next (A8c2, new lock): per-star step from the local orbital time, or leapfrog plus a parabolic refinement of each turning point, and a realistic test population (disk-like kinematics) alongside the extreme one.
+MAP: none
