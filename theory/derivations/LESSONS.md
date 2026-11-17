@@ -261,3 +261,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1013: a 'stands' verdict near a band edge should still trigger a band review in the paper draft.
 - D1014: give sympy real assumptions before testing log/exp identities, or the check fails for the wrong reason.
 - D1015: before solving, compare the exponent with the critical one (γ_c = 4√(D−1)/(D−2)); it decides the branch (hyperbolic, critical or trigonometric).
+- D1016: a mechanism's sign can flip once the full potential is included; check sign, not only magnitude, at each refinement.

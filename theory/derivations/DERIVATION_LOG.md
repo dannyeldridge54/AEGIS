@@ -1701,3 +1701,6 @@ Touches: none.
 
 ## D1015: S4b(b) — 6D tadpole subcritical (γ_o = 2 < √5): trigonometric vacuum on a finite interval, two routes agree (≤ 4e-11)
 - [literature] 2209.10553 Eqs. 3.1–3.17; [computed] analytic residual 2e-36, numeric 3e-12.
+
+## D1016: R3 — single condensate flips the GS tilt sign at weak coupling (R → −1); need δ_GS < 0 or racetrack
+- [derived] R = (v − 2 − a²Y²)/(a²Y² + 2aY + v − 2).
