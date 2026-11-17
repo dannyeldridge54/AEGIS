@@ -1,0 +1,20 @@
+SERAPIS-rho eps=6e-5 N*=46.09 grid W bd=200: ns=0.969091 r=5.1603e-04 alpha_s=-9.8622e-04
+SERAPIS-rho eps=6e-5 N*=46.09 grid W bd=1000: ns=0.969091 r=5.1603e-04 alpha_s=-9.8643e-04
+SERAPIS-rho eps=6e-5 N*=46.09 grid W bd=5000: ns=0.969091 r=5.1603e-04 alpha_s=-9.8628e-04
+SERAPIS-rho eps=6e-5 N*=46.09 grid M bd=1000: alpha_s=-9.8519e-04
+SERAPIS-rho eps=6e-5 N*=46.09: converged=True bias_ok=True alpha_W(5000)=-9.8628e-04 -> published rho alpha_s stands
+SERAPIS-rho eps=6e-5 N*=49.49 grid W bd=200: ns=0.972239 r=4.6720e-04 alpha_s=-8.6897e-04
+SERAPIS-rho eps=6e-5 N*=49.49 grid W bd=1000: ns=0.972239 r=4.6720e-04 alpha_s=-8.6921e-04
+SERAPIS-rho eps=6e-5 N*=49.49 grid W bd=5000: ns=0.972239 r=4.6720e-04 alpha_s=-8.6938e-04
+SERAPIS-rho eps=6e-5 N*=49.49 grid M bd=1000: alpha_s=-8.7130e-04
+SERAPIS-rho eps=6e-5 N*=49.49: converged=True bias_ok=True alpha_W(5000)=-8.6938e-04 -> published rho alpha_s stands
+Kairos eps=0 N*=46.08 grid W bd=200: ns=0.958656 r=3.6903e-04 alpha_s=-8.7842e-04
+Kairos eps=0 N*=46.08 grid W bd=1000: ns=0.958656 r=3.6903e-04 alpha_s=-8.7783e-04
+Kairos eps=0 N*=46.08 grid W bd=5000: ns=0.958657 r=3.6903e-04 alpha_s=-8.7873e-04
+Kairos eps=0 N*=46.08 grid M bd=1000: alpha_s=-8.7881e-04
+Kairos eps=0 N*=46.08: converged=True bias_ok=True alpha_W(5000)=-8.7873e-04 -> reference: alpha_s/(-2/N*^2) = 0.933
+Kairos eps=0 N*=49.21 grid W bd=200: ns=0.961235 r=3.2562e-04 alpha_s=-7.7221e-04
+Kairos eps=0 N*=49.21 grid W bd=1000: ns=0.961236 r=3.2562e-04 alpha_s=-7.7372e-04
+Kairos eps=0 N*=49.21 grid W bd=5000: ns=0.961236 r=3.2562e-04 alpha_s=-7.7249e-04
+Kairos eps=0 N*=49.21 grid M bd=1000: alpha_s=-7.7277e-04
+Kairos eps=0 N*=49.21: converged=True bias_ok=True alpha_W(5000)=-7.7249e-04 -> reference: alpha_s/(-2/N*^2) = 0.935

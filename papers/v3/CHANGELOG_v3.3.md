@@ -12,3 +12,5 @@ Draft only; not uploaded. Source: papers/v3/serapis_v3.3_draft.tex (v3.2 file un
 - D985: Project H caveat: string-level check (Level S3, locked): the anti-D5 position scalar's one-loop mass² from the Möbius amplitude with the full tower is positive with E(U,2)/A² shape (to 1% for A ≳ (10√α′)²); the sign condition is met at string level in the ADS sector; other conditions remain open.
 - D987–D988: Project H caveat: the χ mass's shape-independent local part is string-scale and tadpole-dominated (sign oscillates in the closed-string region); positive → absorbed into λ′, negative → fatal; needs dilaton backreaction.
 - D979, D981/D990: reproducibility section gains an "Independent reproduction" paragraph: N* offset +0.171 (end-of-inflation definition; Δn_s = +1.5e-4, D979); α_s convergence test passed (−9.88e-4 SERAPIS-E, −9.94e-4 Chronos, stable to 0.2%, inside published bands; D990). Replaces the 'convergence test pending' wording of the D953–D962 entry.
+
+- (17 Nov, D1013) Prediction sheet: widen SERAPIS-ρ α_s band upper edge from −9.5e-4 to −9.9e-4 at N* ≈ 46 (exact wide-grid −9.863e-4); no change of prediction.

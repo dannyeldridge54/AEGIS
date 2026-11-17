@@ -1692,3 +1692,6 @@ Touches: none.
 
 ## D1012: Janus-LT L0b2 own recombination VALIDATED — z_d 6.7e-4, r_d 4.4e-4 vs CAMB (50/50)
 - [computed] minimal RECFAST, 2.5 s/cosmology.
+
+## D1013: D984 wide-grid α_s — SERAPIS-ρ −9.863e-4 / −8.694e-4 converged, published stands; Kairos 0.93×(−2/N²)
+- [computed] PC run; Janus agrees to 0.16 %.
