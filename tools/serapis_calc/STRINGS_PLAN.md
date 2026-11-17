@@ -51,3 +51,4 @@ coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which 
 - R (D1048): GS route CLOSED (LRW S' frame + BGW linear multiplet). Tilt origin back to open; remaining idea: non-GS s→1 Eisenstein source (D1031).
 - R (D1049): NEW LEAD — matter wave function log (AGNT hep-th/9301033 Eq. 20, N=2 coefficient). Plan: matter F-term plateau? size γ̃ ↔ 6e-5? S'-shift independence?
 - R (D1051): matter-log lead size: κ = 2g²γ̃, natural 30–300× too big; needs near-finite N=2 sector. Next: find an orbifold with small γ̃ (literature: N=2 finite sectors).
+- R search (17 Nov): arXiv 1410.6147 checked — its N=2 sectors have b^{N=2} = −2C(E8) etc. (Eq. 5.21, 5.28), not small; it uses N=4 restoration instead. No near-finite N=2 example found yet; next candidates: hep-th/0001062, 1001.1480 (b'_a tables).
