@@ -177,9 +177,11 @@ nodes:
   - D735
   - D982
   - D1055
+  - D1056
   history:
   - 'D982: literature'
   - 'D1055: computed'
+  - 'D1056: computed'
 - id: vac_i
   layer: 2
   branch:

@@ -9,6 +9,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A7a DONE (D1055): J-factors for the H.E.S.S. inner-Galaxy region (two routes ≤ 8e-8); wino window per halo profile.
 
+- A7b DONE (D1056): wino Sommerfeld solver (Coulomb 3e-5, resonance 2.38 TeV); line rate ×6 from 1 to 1.85 TeV; window per halo profile.
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].

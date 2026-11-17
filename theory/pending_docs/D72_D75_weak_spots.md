@@ -10494,3 +10494,16 @@ Sources: arXiv:1805.05741 (ar5iv); D735; D982.
 MAP: node=halo_profile status=computed touches=[] ripple=no
 
 ## D1055a — arithmetic correction to D1055: linear interpolation of f and f_max between 1.0 and 1.85 TeV puts the NFW crossing at M ≈ 1.43 TeV, so the NFW window is ≈ 0.66–1.4 TeV (estimate), not "≈ 0.66–1.5".
+
+## D1056 (DEEP Jl tick, track X / AEGIS application, locked PREREG_A7b + DEVIATIONS D1): Janus-Astro now has its own wino Sommerfeld solver (validated: Coulomb exact to 3e-5, free limit, first resonance at 2.38 TeV vs the literature 2.3–2.4); the line rate rises ×6 from 1 to 1.85 TeV, so the heavy end of SERAPIS-E's wino window is excluded for cuspy halos and for a 1 kpc core at tree level; cores ≥ 3 kpc or Burkert keep every mass
+Research [literature]: 2507.15934 (Fermi continuum, 14 yr inner Galaxy) excludes the THERMAL wino (2.86 TeV) for cores up to 6.7 kpc and rules out 1.85–2.8 TeV even as a subcomponent (≲ 50% at the low end) — no numbers below 1.85 TeV. 1307.4082: potential and boundary conditions (used), resonance "near 2.3 TeV"/"~2.4 TeV", one-loop corrections cut the line by ~3–4, H.E.S.S. (NFW) excludes non-thermal winos as ALL the DM down to 0.5 TeV. Explicit Γ matrices were not reachable (two fetches failed on allowlist); the application therefore uses only the tree-level fact that the line comes through the χ+χ− component (σ_line ∝ |s_{+−}|²/M²), normalised to D735's 1-TeV line rate.
+Run history: run 1 failed B1 (0.25–2.5%) because the Coulomb CHECK routine missed the WKB √(k_loc/k) amplitude factor; DEVIATIONS D1 written and pushed before the single rerun; the wino solver itself was unchanged; rerun: B1 ≤ 2.9e-5, B2 1.4e-8, B3 2380 GeV → VALIDATED. Run-1 file kept.
+Computed: |s_00|², |s_{+−}|² (v_rel = 2e-3) = 1.23, 0.20 (0.66 TeV); 1.66, 0.63 (1.0); 3.03, 2.28 (1.4); 10.4, 13.0 (1.85). Line-rate ratio R(M) = σ_line(M)/σ_line(1 TeV) = 0.71, 0.80, 1, 1.84, 6.03 at 0.66, 0.8, 1.0, 1.4, 1.85 TeV.
+Application [estimate; D735 limit read-off ∝ M² and its 1-TeV line rate kept; A7a J ratios]: f_max (tree) Einasto 0.19, 0.21, 0.24, 0.24, 0.18; SERAPIS-E f = 0.14 (0.66), 0.26 (1.0), 0.67 (1.85).
+- Einasto: window ≈ 0.66–0.9 TeV at tree level (D735: 0.66–0.80); with the one-loop reduction (f_max × √3–2) ≈ 0.66–1.4 TeV.
+- NFW (×1.36): 0.66 and 1.0 TeV pass, 1.85 fails (0.24 vs 0.67; one-loop 0.42–0.49, still fails).
+- 1 kpc core (×3.15): 1.85 TeV FAILS at tree level (0.57 vs 0.67) but PASSES with one-loop (0.98–1.13). This revises A7a/D1055, which used a mass-independent line rate and passed 1.85 TeV for a 1 kpc core.
+- 3 kpc core (×8.2) and Burkert (×17): every mass passes.
+Consequence: the halo-independent statement is the 2507.15934 exclusion above 1.85 TeV; inside SERAPIS-E's 0.67–1.85 TeV window the heavy end now needs a core ≳ 1–3 kpc, the light end (≲ 0.9 TeV) passes even for Einasto. Remaining weak points: D735's ×2 limit read-off; ON−OFF subtraction (makes cores safer); explicit Γ/one-loop line (next: A7b2 with the Beneke et al. or 1307.4082 App. B line rates once reachable).
+Sources: arXiv:2507.15934; arXiv:1307.4082; D735, D1055.
+MAP: node=halo_profile status=computed touches=[] ripple=no
