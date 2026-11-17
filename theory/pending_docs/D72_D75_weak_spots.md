@@ -11853,3 +11853,11 @@ the verdict (claims.evaluate when numbers are given, else the file's VERDICT lin
 the sealed verdict, and refuses if the sealed file changed. Purpose: the agent writing the D-note sees the pass/fail first and the detail after, so
 detail can't steer the write-up. Sealed files stay committed (the hash is the audit trail). Tests PASS (5 cases). Opt-in per lock from now on.
 MAP: none
+
+## D1168 — JANUS — J7h: the 6 models J7f listed by my own driver choices, rerun (PC) [DONE]
+Lock PREREG_J7h_pulse_fixups (+DEVIATIONS D1: per-model 20-min wall limit after kmiii hung). Run on Danny's PC, results staged back.
+Scored: GMLFI, NCLI, CNBI (the Fortran line-length fix and CNBI α = 1e-2 worked). Pulse 1: Janus n_s closer to exact MS on 6/6 points
+(median |Δn_s| 7.0e-6 vs ASPIC 7.0e-4). Pulses 2–3 (reheating routes): 12/12 (median 9.4e-6 vs 6.7e-4).
+Listed (unscored): RPQTI (ASPIC timeout), HI ξ = 20000 (ASPIC timeout even at 300 s), KMIII (20-min wall limit, DEV D1).
+Pulse totals with J7f (D1035) and J7g (D1127): Janus more accurate on 188 + 18 = 206/206 points. Verdict unchanged: JANUS MORE ACCURATE.
+MAP: none
