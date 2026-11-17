@@ -74,3 +74,9 @@ is not stated. Our S4e uses L = ∫ e^B dy between cutoffs (converged to 2e-7) �
 to a normalisation convention (e.g. which warp-factor value the 9D mass is measured against, or BTR's 2-sig-fig rounding of a slightly different L), not to
 the spectrum. Next step (large list 12): locked check of the mass normalisation — compute m in units of the warp factor at a stated reference point and
 see whether one convention gives 0.97/2.13 for BOTH modes; no change to S4e's verdict (NOT VALIDATED vs BTR stays on record).
+
+## 17 Nov 2026 17:49 CT — root of the S4e 4% (fetched BTR 2209.10553 §3.1, §5)
+BTR state that A carries "an appropriate integration constant … and a redefinition of φ0" without giving its value, set α_E = 1 "only in this section" (§3),
+and give L only as a scaling (L ~ e^{−γφ0/2}, eq. 3.13), no prefactor. Since m L scales as e^{a} under A → A + a (D1216), their absolute m L/π depends on
+that unstated constant; the convention-free check is the ratio m₂/m₁ (ours 2.190 vs theirs 2.13/0.97 = 2.196, within their 2-sig-fig rounding ±0.6%).
+Status: absolute scale NOT RECOVERABLE from the paper (not a solver or definition error on our side); ratio AGREES. S4e verdict on record unchanged.
