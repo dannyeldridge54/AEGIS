@@ -10481,3 +10481,14 @@ Results [computed]: four binaries (1.4+1.4, 10+10, 36+29, 5+50 M_⊙), 20 Hz to 
 Scope: non-spinning, no tides, frequency-domain phase only (amplitude corrections, spins, tides, SNR/match with detector noise curves are A2b–A2d).
 Verdict (locked rule): A2a VALIDATED.
 MAP: none
+
+## D1055 (track X, AEGIS application, locked PREREG_A7a_jfactor_wino): exact J-factors for the H.E.S.S. inner-Galaxy region; D735's "cores weaken limits by 1e2–1e3" becomes 10–290 in J; with any core ≥ 1 kpc or Burkert every SERAPIS-E wino mass passes, with NFW the window widens to ≈ 0.66–1.5 TeV
+Lock pushed before the run (e0831b0); output field_tests/results/janus_astro_a7a.txt.
+Computed (r_⊙ = 8.5 kpc, ρ_⊙ = 0.39 GeV/cm³; region ψ ≤ 1°, |b| ≥ 0.3°): two routes agree to ≤ 8e-8, normalisation exact → J VALIDATED.
+- J [GeV² cm⁻⁵]: Einasto (r_s 20, α 0.17) 4.413e21; NFW (r_s 20) 2.377e21; Einasto with 1 kpc core 4.44e20; 3 kpc core 6.62e19; Burkert (r₀ 12.67) 1.51e19.
+- J_Ein/J: NFW 1.86; 1 kpc core 9.9; 3 kpc core 67; Burkert 292.
+Application [estimate; D735's line-limit read-off and wino line rate unchanged]: f_max scales as √(J_Ein/J). Einasto: as D735 (0.66 TeV PASS; 1.0 marginal FAIL 0.26 vs 0.24; 1.85 FAIL). NFW: 0.66 and 1.0 TeV PASS (f_max 0.33 vs 0.26), 1.85 FAIL (0.60 vs 0.67) → window ≈ 0.66–1.5 TeV by interpolation of f ∝ and f_max ∝ M (estimate). 1 kpc core, 3 kpc core, Burkert: all masses PASS (f_max ≥ 1.39 at 1.85 TeV for 1 kpc).
+Region check against the paper (literature, after the run): H.E.S.S. 2018 (1805.05741 via ar5iv) uses seven 0.1°-wide annuli from 0.3° to 1.0°, masks |b| < 0.3° AND a 0.4° disk around HESS J1745-303 (not modelled here: a small-area difference, reported), quotes no numerical J, and subtracts OFF regions placed symmetrically about the pointing (Einasto ON/OFF J ratio ≈ 3.5 for one ROI). So the ON−OFF signal for cored profiles is smaller than ON alone: the true weakening for cores is LARGER than computed here (as the lock stated); the PASS verdicts for cores are conservative.
+Consequence: the halo_profile node now carries numbers: SERAPIS-E's wino is in tension with the H.E.S.S. line limit only for a cuspy (Einasto) Galaxy above ~0.8 TeV; Gaia DR3's preference for Einasto/cored (D982) keeps the full 0.67–1.85 TeV thermal window open for cores ≥ 1 kpc. Next: A7b replaces D735's ∝M² limit rescale with the published wino-specific limits (2507.15934 Fig. 6) and the exact ON−OFF J for each annulus.
+Sources: arXiv:1805.05741 (ar5iv); D735; D982.
+MAP: node=halo_profile status=computed touches=[] ripple=no
