@@ -313,3 +313,4 @@ D1026  2026-11-17T06:16Z  S4c KK probe NOT VALID + D1015a correction
 D1027  2026-11-17T06:20Z  L2 growth vs CAMB VALIDATED
 D1028  2026-11-17T06:22Z  L3 DESI DR2 BAO likelihood reproduces DESI LCDM
 D1029  2026-11-17T06:29Z  L4 w0wa fit vs DESI+CMB
+D1030  2026-11-17T06:30Z  R7 no strong hidden-visible coupling asymmetry in heterotic M-theory linear regime
