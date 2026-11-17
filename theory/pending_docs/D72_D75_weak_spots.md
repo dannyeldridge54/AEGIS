@@ -9944,3 +9944,14 @@ MAP: node=plateau_origin status=estimate touches=[] ripple=no
 DEVIATIONS D1: Starobinsky start φ₀ 8 → 6.5 (the Janus Nmax = 400 was exceeded; no numbers produced before the fix).
 Scope: validates n_s and r only. α_s (alpha_dn) is tested separately against the exact solver (PREREG_D989, PC run in progress). The base toolkit remains the reference; Janus is the fast route for scans.
 MAP: none
+
+## D990 — D981 result: α_s wide-grid run converged; published α_s stands (2026-11-17)
+
+Lock: field_tests/rules/PREREG_D981_alpha_wide.md (sha256 verified before run). Script theory/flux/alpha_wide_d981.py unchanged. Attempt 1 was lost to a container restart with no output written anywhere; attempt 2 (started 2026-11-17T02:06Z) is the only run with output. No other reruns.
+
+| model | α_s W bd=200 | W bd=1000 | W bd=5000 | M bd=1000 | locked band | verdict |
+|---|---|---|---|---|---|---|
+| SERAPIS-E (C=1e-6, N*=48.4) | −9.869e-4 | −9.879e-4 | −9.878e-4 | −9.869e-4 | −(9.4–10.6)e-4 | converged, bias OK, inside → **published α_s stands** |
+| Chronos (ε=1.3e-4, N*=46.0) | −9.947e-4 | −9.941e-4 | −9.941e-4 | −9.959e-4 | −(8.8–10.2)e-4 | converged, bias OK, inside → **published α_s stands** |
+
+n_s and r reproduce the published values (0.97005 / 4.75e-4 and 0.96964 / 5.30e-4). Spread across boundary depth is <0.2%, across grids <0.2%, so D980's 21%/12% scatter was a narrow-grid artefact, as suspected. α_s ≈ −9.9e-4 for both branches, indistinguishable at foreseeable precision (σ(α_s) ~ 2e-3 for CMB-S4-class), so α_s is a consistency check, not a discriminator. Raw output: field_tests/results/alpha_wide_d981.txt.

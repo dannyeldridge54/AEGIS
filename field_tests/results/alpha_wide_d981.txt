@@ -1,0 +1,10 @@
+SERAPIS-E C=1e-6 N*=48.4 grid W bd=200: ns=0.970054 r=4.7544e-04 alpha_s=-9.8689e-04
+SERAPIS-E C=1e-6 N*=48.4 grid W bd=1000: ns=0.970054 r=4.7544e-04 alpha_s=-9.8793e-04
+SERAPIS-E C=1e-6 N*=48.4 grid W bd=5000: ns=0.970054 r=4.7544e-04 alpha_s=-9.8782e-04
+SERAPIS-E C=1e-6 N*=48.4 grid M bd=1000: ns=0.970054 r=4.7544e-04 alpha_s=-9.8688e-04
+SERAPIS-E C=1e-6: converged=True bias_ok=True alpha_W(5000)=-9.8782e-04 band (-0.00106, -0.00094) -> published alpha_s stands at this precision
+Chronos eps=1.3e-4 N*=46.0 grid W bd=200: ns=0.969642 r=5.3041e-04 alpha_s=-9.9467e-04
+Chronos eps=1.3e-4 N*=46.0 grid W bd=1000: ns=0.969642 r=5.3041e-04 alpha_s=-9.9406e-04
+Chronos eps=1.3e-4 N*=46.0 grid W bd=5000: ns=0.969643 r=5.3041e-04 alpha_s=-9.9405e-04
+Chronos eps=1.3e-4 N*=46.0 grid M bd=1000: ns=0.969643 r=5.3041e-04 alpha_s=-9.9585e-04
+Chronos eps=1.3e-4: converged=True bias_ok=True alpha_W(5000)=-9.9405e-04 band (-0.00102, -0.00088) -> published alpha_s stands at this precision
