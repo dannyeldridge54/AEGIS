@@ -11063,3 +11063,18 @@ Lock pushed before run. D1: galpy's bulge potential (PowerSphericalPotentialwCut
   - One-parameter halo scaling: a heavier halo with a different scale radius could satisfy both M200 and v_esc.
 VERDICT: tension between v_esc and the K-giant M200 is resolved only at s ≈ 1.1; the standard model is mildly too light (2.1σ on v_esc, 2 r200 definition).
 MAP: none
+
+## D1106 (CENTRE, Djl loop (D), locked PREREG_B5): a second BBN network (LINX, JAX) runs here and agrees with PRIMAT (Y_p mass 0.24592 vs 0.24588, D/H −0.13%) — and it exposed a convention error in our own bbn.Yp: it returns the NUCLEON fraction 4Y (0.24721), not the mass fraction (0.24588); D1082's Y_p pulls are corrected here (D1082a)
+Lock pushed before run. Result field_tests/results/b5_linx.txt. LINX via pip linx-bbn (commit bfba07c on GitHub, for reference), network key_PRIMAT_2023, Ωbh2 = 0.02242, 68 s including JIT.
+- LINX: Y_p(mass) 0.24592, Y_p^BBN 0.24725, 10⁵D/H 2.4360, 10⁵³He/H 1.028, 10¹⁰⁷Li/H 5.699, N_eff 3.0453.
+- X1 vs our PRIMAT table: ΔY_p = −0.0013 as locked (comparing LINX mass to our "Y_p"), ΔD/H = −0.13% → CONSISTENT by the lock.
+  - Diagnosis (computed right after): CAMB's Y_p() returns the nucleon fraction Y_p^BBN = 0.24721. The table's mass-fraction column 'Yp' = 0.24588. LINX mass 0.24592 matches it to 4e-5, and LINX 4Y = 0.24725 matches CAMB's Y_p to 4e-5. Two codes agree to 4e-5 once conventions match.
+- X2: ⁷Li/H 5.70e-10 vs PRyMordial 5.50 (at ω_b 0.02230; Li ∝ η² would give ~5.56 at 0.02242 [estimate]) vs quoted 4.94 ± 0.72 (+1.05σ). So the codes agree to about 2–4% on Li-7. The lithium problem is the same in all three codes.
+- X3 / D1104's "−0.7% Y_p offset": EXPLAINED. PRyMordial's "YP (CMB)" (0.24555) is a mass fraction and was compared with our nucleon fraction. Like for like (mass vs mass) the gap is 0.0004, attributable to τn 878.4 vs 879.4 s plus ω_b 0.02230 vs 0.02242 [estimate].
+- D1082a (correction):
+  - B1 compared Y_p^BBN to Aver's mass fraction. Corrected Y_p pulls with the mass fraction: PRIMAT 0.24588 → +0.17σ (was +0.56); PArthENoPE 0.24541 → +0.03σ (was +0.42). Still CONSISTENT; the D/H rows were unaffected.
+  - B2/B3 use the same nucleon-fraction Y_p, so their helium pulls shift the same way (closer to Aver). The verdicts are unchanged.
+  - DEVIATIONS_B1 D1 is written. bbn.py's docstring is fixed, and bbn.Yp_mass has been added (bbn.Yp is left as is for reproducibility).
+- Hyperion now has three BBN routes: PRIMAT table, PRyMordial, LINX. That is a good basis for a validated bbn_net module (B4b next).
+VERDICT: B5 CONSISTENT; convention bug found and corrected (D1082a).
+MAP: none
