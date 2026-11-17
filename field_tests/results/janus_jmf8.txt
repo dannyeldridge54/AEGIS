@@ -1,0 +1,3 @@
+T1: N_tot 109.11 | PyT n_s 0.932503 (tol 1e-10: 0.932503) | Janus-MF n_s 0.932592 r 0.14475 |d| 8.9e-05 PASS | adiabatic P_R(1)/P_R(0)-1 +3.2e-12
+T2: N_tot 109.11 | PyT n_s 0.933510 (tol 1e-10: 0.933510) | Janus-MF n_s 0.933594 r 0.14477 |d| 8.5e-05 PASS | adiabatic P_R(1)/P_R(0)-1 +1.9e-12
+JMF8: JANUS-MF VALIDATED FOR THREE FIELDS
