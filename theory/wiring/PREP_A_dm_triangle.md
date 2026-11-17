@@ -42,3 +42,12 @@ Then: lock PREREG_A1 (wino p_ann vs Planck), run, D-note.
 - Still needed for the A2 lock:
   - (a) A sourced Γ^γZ_{+−,+−} (or the ratio σ_γZ/σ_γγ). Candidate: Hisano et al. 2004/2005, or Beneke et al. resummed line papers.
   - (b) The H.E.S.S. line limit at 1–3 TeV (Einasto, 2018, arXiv:1805.05741) as numbers at stated masses.
+## 2026-11-17 17:10 UTC — resummed line (prep for A2d-line)
+- Ovanesyan, Slatyer, Stewart 2014 (arXiv:1409.8294, as fetched):
+  - σ(χ⁰χ⁰ → X) = σ_tree(χ⁺χ⁻ → X) × |s₀₀(Σ₁ − Σ₂) + √2 s₀± Σ₁|². At tree level Σ₁ = Σ₂ = 1, which reduces to 2|s₊₋|²σ_tree (our A2 form, up to normalisation).
+  - Σ₁ = (e^{Ω+D}/3)(2z^{−4ψ/b₀} + z^{2ψ/b₀}); Σ₁ − Σ₂ = (2e^{Ω+D}/3)(z^{−4ψ/b₀} − z^{2ψ/b₀}).
+  - z = α₂(μ_Z)/α₂(μ_mχ), ψ = 1 − iπ, D = (α₂(μ_Z)/2π) ln(4mχ²/μ_Z²) ln(m_W²/μ_Z²).
+  - Ω is a combination of the cusp coefficients Γ₀^g, Γ₁^g, b₀, b₁, α₂(μ_Z) and ln z. NOT quoted in full, so it cannot be coded yet.
+  - Quoted: NLL+SE has ≈5% uncertainty at high mass; H.E.S.S. constrains such models below ~4 TeV.
+- No quoted resummed/tree ratio at 1 TeV was found (Baumgart 1808.04388 is not fetchable here).
+- Next: the full Ω (with b₀ = 19/6 as in 2009.00640 Eq. 3.14, and Γ₀^g, Γ₁^g, b₁ from a standard SU(2) source), then lock A2d-line.
