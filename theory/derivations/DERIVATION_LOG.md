@@ -1671,3 +1671,6 @@ Touches: none.
 
 ## D1006: Janus-LT L0b r_d integral VALIDATED (1.9e-6 vs CAMB); EH98 z_d fit off 3.7 % (definition mismatch)
 - [computed] needs own recombination for z_d (L0b2).
+
+## D1007: track R candidate — gaugino-condensation potential carries e^{3L} at leading order; linearised gives the ρ tilt εL (not yet computed)
+- [literature] 1812.06520 Eqs. 2.7, 4.1, 4.2; [derived] (Im T|η|⁴)^{-3} = 8e^{3L}.

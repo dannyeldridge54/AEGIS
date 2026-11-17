@@ -18,10 +18,11 @@ nodes:
   - D886
   - D887
   - D991
+  - D1007
   history:
-  - 'D886: estimate'
   - 'D887: estimate'
   - 'D991: estimate'
+  - 'D1007: estimate'
 - id: plateau_origin
   layer: 1
   branch:
