@@ -351,3 +351,4 @@ D1064  2026-11-17T12:07Z  Djl: A2c3 IMRPhenomD horizons; D1063 flag resolved
 D1065  2026-11-17T12:09Z  L9a: EH98 no-wiggle transfer validated vs CAMB
 D1066  2026-11-17T12:09Z  Djl: A2b aligned-spin TaylorF2 vs LAL validated to 2.5PN spin; 3PN spin-spin gap identified
 D1067  2026-11-17T12:11Z  Djl: A4 mass functions vs colossus NOT VALIDATED (PS/ST high-mass); Tinker08 and growth pass
+D1068  2026-11-17T12:13Z  Djl: A4b mass functions validated; colossus delta_c convention found
