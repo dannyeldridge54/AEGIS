@@ -1,0 +1,6 @@
+f_pred(1 TeV) = [0.124, 0.205]
+B0/D1: r_c=15.29 kpc alpha=1.01 rho_sun=0.768 GeV/cm3 J/J_bench=0.0392; LO f_max [0.721,0.792] PASS; NLO f_max [0.794,0.872] PASS
+B0/D2: r_c=14.84 kpc alpha=0.45 rho_sun=0.896 GeV/cm3 J/J_bench=0.3583; LO f_max [0.238,0.262] PASS; NLO f_max [0.263,0.289] PASS
+B0/D3: r_c=16.69 kpc alpha=1.35 rho_sun=0.522 GeV/cm3 J/J_bench=0.0114; LO f_max [1.334,1.465] PASS; NLO f_max [1.470,1.614] PASS
+B0/D4: r_c=14.29 kpc alpha=0.74 rho_sun=0.947 GeV/cm3 J/J_bench=0.1179; LO f_max [0.416,0.457] PASS; NLO f_max [0.458,0.503] PASS
+B1/D2: r_c=15.97 kpc alpha=0.43 rho_sun=0.692 GeV/cm3 J/J_bench=0.2146; LO f_max [0.308,0.338] PASS; NLO f_max [0.339,0.373] PASS
