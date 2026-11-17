@@ -334,3 +334,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1207: when two codes agree everywhere with the same small offset, note the pattern (convention) rather than chase it, unless it threatens the bar.
 - D1213: a growth check is only as strong as its amplitude prior — state where A_s came from and in which model it was fitted.
 - D1214: split long locked jobs into parts that each write their own result file, so a timeout in part 2 doesn't strand part 1.
+- D1215: when a reference code crashes inside itself, record the exact error and stop — it's the reference's bug, and reruns won't change it.

@@ -12609,3 +12609,11 @@ S4e's masses to 1e-7, so D1141's −4% gap to BTR's 2-sig-fig values is not a so
 L, cutoffs or BC). Next (large list 12): the 6D step under its own lock with a solver that copes with the stiff region (Prüfer, not LSODA), and a written
 check of BTR's definition of L before any comparison.
 MAP: none
+
+## D1215 — JANUS — J7k: the last three listed ASPIC models with long limits (PC) [1 scored, 2 listed — no further reruns per lock]
+Lock PREREG_J7k_listed_long (+DEVIATIONS D1: first run had no gfortran on PATH). PC ASPIC build (verified identical to cloud).
+HI (ξ = 20000): pulse 1 SCORED — Janus |Δn_s| 8.1e-7 (N*=50) and 4.2e-7 (N*=60) vs ASPIC 5.3e-4 and 4.0e-4 → Janus better 2/2; its reheating pulses (2–3)
+listed (ASPIC reheating driver gave no result). RPQTI: listed — ASPIC itself crashes ("Fortran runtime error: Recursive I/O not allowed", rpqtisr.F90 line 38),
+an ASPIC bug, not ours. KMIII: listed — 2-h per-model limit (as in J7h's 20-min limit; the model's integration is too slow at these parameters).
+Pulse totals (J7f + J7g + J7h + J7k): Janus more accurate on 206 + 2 = 208/208 points. Per the lock, no further reruns for these three.
+MAP: none
