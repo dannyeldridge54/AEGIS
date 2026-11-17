@@ -1,0 +1,3 @@
+on-shell alpha2=0.03479: sigma_eff = 0.7708 pi a2^2/m^2; thermal Born mass 1.2831 TeV vs 2.207 (rel -0.419)
+MSbar(mZ) alpha2=0.03357: sigma_eff = 0.7708 pi a2^2/m^2; thermal Born mass 1.2388 TeV vs 2.207 (rel -0.439)
+R1 NOT VALIDATED
