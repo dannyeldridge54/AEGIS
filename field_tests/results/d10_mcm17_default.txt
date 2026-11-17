@@ -1,0 +1,4 @@
+T1 legacy path identical to pre-change output (20 rows): PASS
+T2 LSR in McMillan17: ecc=0.00041 rperi=8.2033 rapo=8.2100: PASS
+T3 McMillan17 smoke: 20 rows, ecc range 0.025-0.334: PASS
+reported: r_apo change McM17 vs MWP14 (incl. frame change): median +0.003, range -0.077 to +0.027

@@ -24,17 +24,19 @@ def icrs_to_galactic(ra, dec):
     v = np.array([np.cos(dec)*np.cos(ra), np.cos(dec)*np.sin(ra), np.sin(dec)])
     g = T_ICRS_GAL @ v
     return np.degrees(np.arctan2(g[1], g[0])) % 360, np.degrees(np.arcsin(np.clip(g[2], -1, 1)))
-def galactocentric(ra, dec, d_kpc, pmra, pmdec, rv):
-    """Arrays in; returns x, y, z (kpc) and vx, vy, vz (km/s) in astropy's Galactocentric convention."""
+def galactocentric(ra, dec, d_kpc, pmra, pmdec, rv, r0_xy=None, v_sun=None):
+    """Arrays in; returns x, y, z (kpc) and vx, vy, vz (km/s) in astropy's Galactocentric convention.
+    r0_xy / v_sun default to the MWPotential2014 frame (R0_XY, V_SUN); D10 passes the McMillan17 frame."""
+    r0_xy = R0_XY if r0_xy is None else r0_xy; v_sun = V_SUN if v_sun is None else np.asarray(v_sun, float)
     ra, dec = np.radians(ra), np.radians(dec)
     cr, sr, cd, sd = np.cos(ra), np.sin(ra), np.cos(dec), np.sin(dec)
     pos = d_kpc*np.array([cd*cr, cd*sr, sd])
     e_r = np.array([cd*cr, cd*sr, sd]); e_a = np.array([-sr, cr, 0*sr]); e_d = np.array([-sd*cr, -sd*sr, cd])
     vel = rv*e_r + K_PM*d_kpc*(pmra*e_a + pmdec*e_d)
     p, v = T_ICRS_GAL @ pos, T_ICRS_GAL @ vel
-    dgc = math.hypot(R0_XY, Z_SUN); p[0] = p[0] - dgc
+    dgc = math.hypot(r0_xy, Z_SUN); p[0] = p[0] - dgc
     th = math.asin(Z_SUN/dgc); H = np.array([[math.cos(th), 0, math.sin(th)], [0, 1, 0], [-math.sin(th), 0, math.cos(th)]])
-    return H @ p, H @ v + V_SUN[:, None]
+    return H @ p, H @ v + v_sun[:, None]
 def abs_mag_G(G, parallax_mas):
     """M_G = G + 5 log10(parallax / mas) - 10 (no extinction correction; flagged as such)."""
     return G + 5*np.log10(parallax_mas) - 10
