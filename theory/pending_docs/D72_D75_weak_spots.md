@@ -11381,3 +11381,20 @@ Listed: di (ASPIC reheating gave no result — also D1035's outlier). fi UNSCORE
 Combined with D1035: pulse 1–3 now cover 32 models × (2 fixed-N* + 4 reheating) = 188 scored points, Janus closer on all 188.
 Ran across a container restart (the job resumes from its part file; no point was recomputed).
 MAP: none
+
+## D1127 (CENTRE, Djl loop (C), locked PREREG_A2i): SERAPIS-E's 0.66 TeV wino (f = 0.14) SURVIVES H.E.S.S. IGS for both Gaia-calibrated haloes even at the pessimistic limit bracket (f_max ≥ 0.154 McMillan17, ≥ 0.190 MWPotential2014); only the IGS benchmark halo is undetermined (0.108–0.194) — so SERAPIS-E's wino window narrows to ≈ 0.67–0.9 TeV, and its lower end is safe for realistic haloes
+Lock pushed before run; result field_tests/results/a2i_066_igs.txt.
+- Bracket (assumption: the limit is monotonic between the quoted 9.8e-29 at 440 GeV and 2.3e-28 at 1 TeV): lim(0.66) ∈ [9.8e-29, 2.3e-28].
+- NLL R at 0.66 TeV is 0.727–0.857 over the scale band.
+- f_max (pessimistic–optimistic), LO / NLO:
+  - Benchmark: 0.108–0.180 / 0.117–0.194 → UNDETERMINED
+  - McMillan17: 0.154–0.256 / 0.166–0.276 → PASS
+  - MWPotential2014: 0.190–0.315 / 0.205–0.340 → PASS
+- SERAPIS-E's post-hoc wino after IGS (D1125–D1127):
+  - 0.66–0.67 TeV (f ≈ 0.05–0.14, the ATLAS floor at 670 GeV) passes for realistic haloes.
+  - 1 TeV (f = 0.26) is excluded except for the light halo at NLO.
+  - 1.85 TeV is excluded.
+  - Surviving band ≈ 0.67–0.9 TeV [the upper edge is an estimate: f(M) = (M/2.9)² rises faster than the limit loosens].
+- Falsification route: HL-LHC disappearing tracks (reach ~1 TeV) cover the entire surviving band. A null HL-LHC result plus IGS would exclude the SERAPIS-E wino. That is a clean near-term test of a post-hoc ingredient.
+VERDICT: 0.66 TeV PASS (realistic haloes; bracketed); the window ≈ 0.67–0.9 TeV.
+MAP: none
