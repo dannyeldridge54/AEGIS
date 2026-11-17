@@ -11531,3 +11531,35 @@ Lock pushed before run; result field_tests/results/a2j_gaia_halo.txt.
 - What decides it: the inner-Galaxy dark-matter profile (concentration/slope inside ~1 kpc), not the halo mass. That is a known open problem (cores vs cusps) which no kinematic tracer used here constrains.
 VERDICT: central Gaia halo: 1 TeV FAIL (LO) / marginal (NLO); concentration-dominated uncertainty; D1129 window stands; D1139a correction.
 MAP: none
+
+## D1143 (CENTRE, Djl loop (A), SUMMARY of the A-side wino chain D1081–D1142): SERAPIS-E's post-hoc wino after today's work — CMB-safe at every mass; γ-line (H.E.S.S. IGS 2026, NLL, Gaia-era haloes) leaves ≈ 0.67–0.9 TeV (f ≈ 5–10%), with 1 TeV undetermined (inner-halo concentration) and 1.85 TeV excluded; HL-LHC (0.5–0.9 TeV reach) can close the window
+Final verdicts:
+- CMB (Planck p_ann):
+  - LO: D1081, cross-checked with the literature in D1084.
+  - NLO band 2.18–2.62 TeV (f_eff 0.14) up to ≤ 2.76 TeV (0.41) (D1103).
+  - Every SERAPIS-E mass and the thermal wino are allowed.
+- Line machinery built and validated:
+  - LO resonance vs Beneke+2020, +0.15% (D1087).
+  - NLO potential: 2.394 vs 2.419 TeV as locked (NOT VALIDATED); the √2 convention, chosen post hoc, gives 2.423 (D1091, D1095).
+  - Absolute γγ (D1110), +γZ (D1118), NLL Sudakov (D1121), scale band R 0.66–0.79 (D1124).
+- Haloes: J in both H.E.S.S. geometries (D1114, D1126), within 5–7% of H.E.S.S.'s own benchmark J.
+- Line verdicts, f_max at 1 TeV vs f = 0.26:
+  - H.E.S.S. 2018 γγ-only: a comfortable pass (superseded).
+  - With γZ + NLL: halo-dependent (D1121, D1124).
+  - H.E.S.S. IGS 2026 (2.3e-28 for the line): excluded for the benchmark and McMillan17; for the Gaia DR3 v_esc halo FAIL at LO and marginal at NLO; concentration swings it 0.13–0.45 (D1125, D1126, D1142).
+  - 0.66 TeV passes for realistic haloes (bracketed, D1128). 1.85 TeV fails (W2).
+- Collider: HL-LHC disappearing-track reach 0.5–0.9 TeV (D1131).
+- Paper: the v3.3 draft paragraph and forward-table row are updated to ≈ 0.67–0.9 TeV (D1123, D1125, D1129, D1131). Unposted.
+Corrections made along the way (all recorded as notes):
+- D1112a: heavy-halo f_max mis-anchored.
+- D1118/1119 one-loop ×3–4 columns: withdrawn by D1121.
+- D1139a: light-halo optimism, corrected by D1142.
+- D1087: "marginal" CMB, superseded by D1103.
+Open items:
+- (1) A1e: a blind NLO check; no second quoted number exists.
+- (2) The IGS limit at 0.66–0.9 TeV is not quoted (bracketed only).
+- (3) The inner-halo concentration/core question.
+- (4) NLL′/endpoint line shapes.
+- (5) A CTA sensitivity forecast at 0.7–0.9 TeV.
+Status: A-side wino thread PARKED at diminishing returns. The rotation moves to other A items (e.g. f_eff(M) tables, if obtainable on Danny's PC).
+MAP: none
