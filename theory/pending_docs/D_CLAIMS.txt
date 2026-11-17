@@ -486,3 +486,4 @@ D1199  2026-11-17T22:11Z  Paper rung prep: SERAPIS v3.3 draft gets B8 helium ver
 D1200  2026-11-17T22:14Z  L10 w0-wa profile likelihood consistent with L7, contains DESI
 D1201  2026-11-17T22:16Z  B tick: deuterium offset = known dd-rate systematic; SLEGS p(n,g)D (2509.11743), PDG D/H 2.547
 D1202  2026-11-17T22:26Z  A2m: 1 TeV wino vs IGS with Singh-Desai Einasto haloes: PASS 5/5 (high rho_sun caveat)
+D1203  2026-11-17T22:31Z  kappa tick: McMillan17 local rotation-curve slope rises (+1.3 km/s/kpc) vs measured falling (-1.7 to -4.6); kappa gap is real, not definitional
