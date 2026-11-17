@@ -1592,3 +1592,8 @@ Touches: none.
 - [computed] α_s scatter 21% (SERAPIS-E), 12% (Chronos) across bd = 200/1000/5000; n_s, r converged to ≤3e-6.
 - [derived] Start transient removed but scatter remains → not a start effect (D974's estimate not supported).
 - [estimate] Readout noise ~1e-6 in ln P amplified by the ±0.1 stencil; next: wide-grid quadratic fit (new lock).
+
+## D981: prep of five open nodes
+- [literature] 1105.0591: brane adjoint one-loop mass matrix traceless → tachyonic direction (sign warning for Project H).
+- [literature] 2311.05824: Boltzmann system for inflaton-decay leptogenesis; locked check PREREG_D982 queued.
+- ε origin and halo profile: no new calculable input.
