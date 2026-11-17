@@ -454,3 +454,4 @@ D1167  2026-11-17T19:40Z  LOCKBENCH L-3 blind mode
 D1168  2026-11-17T19:45Z  J7h pulse fix-ups: 3 more models scored
 D1169  2026-11-17T19:45Z  JMF4 non-separable NOT VALIDATED; JMF4b: explained by MMC derivative bugs
 D1170  2026-11-17T19:47Z  R2b3 averaged threshold continuity: FAIL (closed avg 3x open)
+D1171  2026-11-17T19:48Z  LOCKBENCH L-5 verification kit; KALUZA FD verified 2nd order
