@@ -10,10 +10,11 @@ for t in (101, 202):
     rows = []
     for i in range(60):
         plx = r.uniform(0.2, 5); row = {c: '' for c in cols}
-        row.update(source_id=str(t*1000 + i), ra=repr(r.uniform(0, 360)), dec=repr(math.degrees(math.asin(r.uniform(-1, 1)))), parallax=repr(plx),
-                   parallax_error=repr(plx/r.choice([3.0, 8.0, 20.0])), pmra=repr(r.normal(0, 10)), pmdec=repr(r.normal(0, 10)),
-                   radial_velocity=repr(r.normal(0, 40)) if r.uniform() > 0.3 else '', phot_g_mean_mag=repr(r.uniform(8, 16)),
-                   bp_rp=repr(r.uniform(0, 2)), ruwe=repr(r.uniform(0.8, 1.4)), r_med_geo=repr(1000/plx*r.uniform(0.95, 1.05)) if r.uniform() > 0.2 else '')
+        fr = lambda x: repr(float(x))          # A8d D1: plain decimal strings
+        row.update(source_id=str(t*1000 + i), ra=fr(r.uniform(0, 360)), dec=fr(math.degrees(math.asin(r.uniform(-1, 1)))), parallax=fr(plx),
+                   parallax_error=fr(plx/r.choice([3.0, 8.0, 20.0])), pmra=fr(r.normal(0, 10)), pmdec=fr(r.normal(0, 10)),
+                   radial_velocity=fr(r.normal(0, 40)) if r.uniform() > 0.3 else '', phot_g_mean_mag=fr(r.uniform(8, 16)),
+                   bp_rp=fr(r.uniform(0, 2)), ruwe=fr(r.uniform(0.8, 1.4)), r_med_geo=fr(1000/plx*r.uniform(0.95, 1.05)) if r.uniform() > 0.2 else '')
         rows.append(row)
     with gzip.open(td/f'{t:05d}.csv.gz', 'wt', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=cols); w.writeheader(); w.writerows(rows)

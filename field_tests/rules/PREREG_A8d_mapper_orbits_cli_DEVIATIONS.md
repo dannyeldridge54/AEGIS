@@ -1,0 +1,2 @@
+# DEVIATIONS for PREREG_A8d (written before the rerun)
+D1 (crash, test-data generator, 17 Nov): run 1 wrote the synthetic tiles with repr() of numpy scalars, which NumPy 2 renders as "np.float64(…)"; the CLI therefore parsed no numbers (it processed 0 stars, as it should for unparseable fields) and the check crashed when computing the expected selection. Fix: the generator writes repr(float(x)) — plain decimal strings as in real Star Mapper tiles. No change to mapper_orbits.py or to any criterion. Single rerun; verdict from it.
