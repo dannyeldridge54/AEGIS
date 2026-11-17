@@ -8,7 +8,7 @@ ph = r.uniform(-0.37, 0.37, n); Rg = 8.0 + r.uniform(-3, 3, n); zg = r.uniform(-
 x, y = -Rg*np.cos(ph), Rg*np.sin(ph); vR, vphi, vz = r.normal(0, 35, n), r.uniform(220, 232, n) + r.normal(0, 25, n), r.normal(0, 20, n)
 er, ep = np.array([x, y])/Rg, np.array([-y, x])/Rg; ep = -ep if (ep[1, 0] < 0 and x[0] < 0) else ep
 P_, V_ = np.array([x, y, zg]), np.array([vR*er[0] + vphi*ep[0], vR*er[1] + vphi*ep[1], vz])
-fref = {0.66: 0.19, 1.0: 0.24, 1.85: 0.18}; fpred = {0.66: 0.14, 1.0: 0.26, 1.85: 0.67}; Jref = 4.413e21
+fref = {0.66: 0.19, 1.0: 0.24, 1.85: 0.18}; fpred = {0.66: 0.14, 1.0: 0.26, 1.85: 0.67}  # ARCHIVAL D732 values; current = D784 thermal (D1153); Jref = 4.413e21
 def chain(s):
     p = dict(G.params()); p['hamp'] *= s; mw = G.MW(p)
     o = fast.orbits_fast(*P_, *V_, mw=mw)

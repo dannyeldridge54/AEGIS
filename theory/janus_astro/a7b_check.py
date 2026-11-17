@@ -14,7 +14,7 @@ Mpk = Ms[ipk]; ok3 = 2300 <= Mpk <= 2500; P(f'B3 first resonance of |s00|^2 at M
 P('solver', 'VALIDATED' if ok1 and ok2 and ok3 else 'NOT VALIDATED', f'(B1 {ok1}, B2 {ok2}, B3 {ok3})')
 P('Application [estimate]: line rate mass dependence, sigma_line ∝ |s_+-|^2 / M^2 (tree-level annihilation)')
 ref = abs(S.wino_s(1000.0)[1])**2/1000.0**2
-fE = {}; fpred = {660: 0.14, 1000: 0.26, 1850: 0.67}
+fE = {}; fpred = {660: 0.14, 1000: 0.26, 1850: 0.67}   # ARCHIVAL: D732 f_total; superseded by D784 thermal f=(M/2.9)^2 (see D1153). Do not reuse.
 for M in (660, 800, 1000, 1400, 1850):
     s = S.wino_s(float(M)); R = (abs(s[1])**2/M**2)/ref
     line = f'  M={M} GeV: |s00|^2={abs(s[0])**2:.3f} |s+-|^2={abs(s[1])**2:.3f} R(M)={R:.3f}'
