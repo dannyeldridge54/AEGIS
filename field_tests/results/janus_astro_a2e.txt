@@ -1,0 +1,13 @@
+6PN m=(1.4,1.4) Lam=(300,300): tidal phase (detrended) 0.833 rad; max|res| 5.45e-10 rad
+6.5PN m=(1.4,1.4) Lam=(300,300): tidal phase (detrended) 0.692 rad; max|res| 7.98e-10 rad
+7PN m=(1.4,1.4) Lam=(300,300): tidal phase (detrended) 0.842 rad; max|res| 7.40e-04 rad
+7.5PN m=(1.4,1.4) Lam=(300,300): tidal phase (detrended) 0.760 rad; max|res| 7.40e-04 rad
+6PN m=(1.35,1.45) Lam=(400,250): tidal phase (detrended) 0.883 rad; max|res| 5.35e-10 rad
+6.5PN m=(1.35,1.45) Lam=(400,250): tidal phase (detrended) 0.734 rad; max|res| 7.11e-10 rad
+7PN m=(1.35,1.45) Lam=(400,250): tidal phase (detrended) 0.893 rad; max|res| 7.81e-04 rad
+7.5PN m=(1.35,1.45) Lam=(400,250): tidal phase (detrended) 0.805 rad; max|res| 7.81e-04 rad
+6PN m=(1.2,1.8) Lam=(800,100): tidal phase (detrended) 0.797 rad; max|res| 8.79e-10 rad
+6.5PN m=(1.2,1.8) Lam=(800,100): tidal phase (detrended) 0.661 rad; max|res| 8.73e-10 rad
+7PN m=(1.2,1.8) Lam=(800,100): tidal phase (detrended) 0.802 rad; max|res| 6.59e-04 rad
+7.5PN m=(1.2,1.8) Lam=(800,100): tidal phase (detrended) 0.723 rad; max|res| 6.59e-04 rad
+A2e NOT VALIDATED

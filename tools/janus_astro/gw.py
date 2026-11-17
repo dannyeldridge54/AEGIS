@@ -125,3 +125,23 @@ def taylorf2_tidal_dphase(f, M1, M2, Lam1, Lam2, order=6):
         if order >= 6:
             p11 = -(5/(28*cA))*(3179 - 919*cA - 2286*cA**2 + 260*cA**3); tot = tot + p11*x*lh
     return 3/(128*eta*x**2.5)*tot
+
+def taylorf2_tidal_dphase_hfb(f, M1, M2, Lam1, Lam2, order=7):
+    """Tidal SPA phase (rad), Henry-Faye-Blanchet 2020 (arXiv:2005.13367) Eq. 6.6a, quadrupolar Lambda only
+    (magnetic sigma and octupole mu3 set to 0). order in {5, 6, 6.5, 7, 7.5}."""
+    import numpy as _np
+    M = M1 + M2; nu = M1*M2/M**2; D = (M1 - M2)/M; X1, X2 = M1/M, M2/M
+    mp = 0.5*(X2*X1**4*Lam1 + X1*X2**4*Lam2); mm = 0.5*(X2*X1**4*Lam1 - X1*X2**4*Lam2)
+    v = (_np.pi*G*M*_np.asarray(f)/c**3)**(1/3)
+    L0 = (1 + 22*nu)*mp + D*mm
+    br = L0*_np.ones_like(v)
+    if order >= 6:
+        br = br + ((195/112 + 1595/28*nu + 325/84*nu**2)*mp + D*(195/112 + 4415/336*nu)*mm)*v**2
+    if order >= 6.5:
+        br = br - _np.pi*L0*v**3
+    if order >= 7:
+        br = br + ((136190135/27433728 + 978554825/4572288*nu - 281935/6048*nu**2 + 5/3*nu**3)*mp
+                   + D*(136190135/27433728 + 213905/2592*nu + 1585/1296*nu**2)*mm)*v**4
+    if order >= 7.5:
+        br = br + _np.pi*((-397/112 - 5343/56*nu + 1315/42*nu**2)*mp + D*(-397/112 - 6721/336*nu)*mm)*v**5
+    return -(9*v**5/(16*nu**2))*br
