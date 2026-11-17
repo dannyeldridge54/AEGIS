@@ -11286,3 +11286,19 @@ MAP: none
 - Hyperion keeps the label "7PN tidal: 0.33% vs LAL, unresolved; use LAL/ripple coefficient if exact LAL agreement is needed".
 VERDICT: PARKED (needs a character-exact source).
 MAP: none
+
+## D1121 (CENTRE, Djl loop (A), locked PREREG_A2d-line): first NLL-resummed wino line in Hyperion (Ovanesyan–Slatyer–Stewart 2014) — Sudakov suppression is modest at these masses (R = 0.71 at 1 TeV, 0.77 at 0.66 TeV), NOT the ×3–4 assumed in D1118/D1119; SERAPIS-E's 1 TeV wino then PASSES for both realistic Milky Way haloes (f_max 0.28–0.38) but FAILS for the H.E.S.S. benchmark Einasto (0.20–0.22); 0.66 TeV passes everywhere (0.15–0.28)
+Lock pushed before run; result field_tests/results/a2d_line_nll.txt.
+- Inputs:
+  - Ω (Eq. 24), Σ₁ and Σ₁ − Σ₂, b₀ = 19/6, b₁ = −35/6, Γ₀ = 8, Γ₁ = 8(70/9 − 2π²/3), μ_m = 2m, μ_Z = m_Z — all quoted.
+  - α₂(m_Z) MS-bar 0.03357 (2009.00640 inputs). One-loop running (assumption, labelled).
+- Sudakov factors: |Σ₁| = 0.910 / 0.871 at 0.66 / 1 TeV; |Σ₁ − Σ₂| = 0.17 / 0.19. Sanity checks: R < 1 and decreasing with mass. PASS.
+- R (resummed / tree-SE line) = 0.77 (0.66 TeV), 0.71 (1 TeV), the same at LO and NLO potentials.
+- f_max (H.E.S.S. benchmark / McMillan17 / MWPotential2014):
+  - 1 TeV LO: 0.200 / 0.281 / 0.346. NLO: 0.220 / 0.311 / 0.381. Against f = 0.26: FAIL / PASS / PASS.
+  - 0.66 TeV LO: 0.151 / 0.215 / 0.264. NLO: 0.164 / 0.232 / 0.284. Against f = 0.14: PASS everywhere (estimate; M² limit scaling, D1119).
+- Correction to D1118/D1119: the "one-loop ×3–4 reduction" (1307.4082's caveat, which refers to fixed-order one-loop at multi-TeV masses) badly overstates the relief at 1 TeV. The resummed relief is only ×1/0.71 in rate, ×1.19 in f_max. Those notes' "passes everywhere with one-loop" columns are withdrawn and replaced by this note.
+- Bottom line: SERAPIS-E's 1 TeV wino at 26% of DM is allowed by H.E.S.S. 2018 for the measured Milky Way halo range (MWPotential2014 to McMillan17), but excluded if the inner Galaxy is as dark-matter-rich as H.E.S.S.'s benchmark Einasto. A falsifiable, halo-dependent verdict: the next H.E.S.S./CTA line results decide it.
+- Caveats: one-loop α₂ running (assumption); the exclusive-line NLL (not NLL′ or endpoint); scale variation not run; γγ-only limit applied to γγ + ½γZ (D1118).
+VERDICT: 1 TeV PASS (realistic haloes) / FAIL (benchmark); 0.66 TeV PASS; D1118/D1119 one-loop columns withdrawn.
+MAP: none
