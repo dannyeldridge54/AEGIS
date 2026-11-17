@@ -1,0 +1,5 @@
+w0: posterior -0.842 ± 0.053 (L7 MAP -0.853 ± 0.053) -> C1 True C2 True
+wa: posterior -0.565 ± 0.213 (L7 MAP -0.518 ± 0.2) -> C1 True C2 True
+R-1 (means, last) = 0.0164 -> C3 True; rows after burn-in 2100, total weight 7616
+chain chi2: min 1423.07, weighted median 1426.93 (L7 minimum 1422.93; 5 free parameters)
+L11: L7 ERRORS CONFIRMED BY MCMC
