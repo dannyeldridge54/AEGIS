@@ -481,3 +481,4 @@ D1194  2026-11-17T21:47Z  C8: galpy vs Horta+2026 at R0: McMillan17 PASS (v_c -0
 D1195  2026-11-17T21:49Z  JMF6: Janus-MF validated on non-separable vs PyTransport
 D1196  2026-11-17T21:53Z  D9: galpy orbit path for the Star Mapper (MWP2014 regression PASS after unit fix); McMillan17 effect reported; default not flipped
 D1197  2026-11-17T21:59Z  D10: Star Mapper default switched to McMillan17 with consistent solar frame (T1-T3 PASS)
+D1198  2026-11-17T22:04Z  A rotation tick: no new wino/line limits beyond notes (NULL)
