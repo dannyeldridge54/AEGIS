@@ -17,7 +17,7 @@ def tov(rho_of_P, P_c, r_max=1e6, rtol=1e-11, atol=0.0, p_surf=0.0):
         return [dP, dm]
     r0 = 1e-3; rho0 = rho_of_P(P_c)
     ev = lambda r, y: y[0] - p_surf; ev.terminal = True; ev.direction = -1
-    s = solve_ivp(rhs, [r0, r_max], [P_c, 4/3*math.pi*r0**3*rho0], method='DOP853', rtol=rtol, atol=[P_c*1e-16, 1e-30], events=ev)
+    s = solve_ivp(rhs, [r0, r_max], [P_c, 4/3*math.pi*r0**3*rho0], method='DOP853', rtol=rtol, atol=[P_c*1e-30, 1e-30], events=ev)
     return float(s.t_events[0][0]), float(s.y_events[0][0][1])
 
 def schwarzschild_interior_Pc(rho, R):
