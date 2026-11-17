@@ -1,0 +1,5 @@
+self-check S_ann = 36.1988 (locked ref 36.20) -> OK
+k0=25.7481 k1=2.5620  P_conv=0.87107  |S00|=0.359067  |S00|^2+P=1.000000
+S_conv(A)=1.118e+05  S_conv(B)=2.236e+05
+conv A: S_ann+S_conv=1.118e+05  <S>/(..)-1 = -0.9990 -> FAIL
+conv B: S_ann+S_conv=2.236e+05  <S>/(..)-1 = -0.9995 -> FAIL
