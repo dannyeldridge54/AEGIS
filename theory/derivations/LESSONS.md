@@ -226,3 +226,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D976: check the decay channel before scaling T_R with a mass.
 - D977: test 'equal at leading order' at the observables' precision before identifying models.
 - D978: (no new lesson)
+- D979: a constant offset across all inputs points at a shared definition (here the end of inflation); decompose it before blaming the solver.

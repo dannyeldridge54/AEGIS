@@ -1582,3 +1582,8 @@ Touches: none.
 
 ## D978: Project H fixed-C (locked) — too few e-folds
 - [computed] λ′ = 0.173, C fixed: Ntot = 40.6 < 58.5; scenario excluded; refit-C (D977) is the consistent one.
+
+## D979: N* reproduction (locked D958) — FAIL by constant +0.171, traced
+- [computed] Exact N* = 46.46–51.04 for T_R = 1e4–1e10 GeV, vs D719 +0.17 at every T_R.
+- [derived] (arithmetic) ΔN* = (1/3) ln(V*/V_end exact 2.267 / slow-roll 1.357) = 0.171; diagnostic reproduces it to ±0.004.
+- Result: D719's N* bracket is 0.17 low (slow-roll end of inflation); Δn_s ≈ +1.5e-4, inside the frozen band.

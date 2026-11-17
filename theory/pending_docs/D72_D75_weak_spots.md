@@ -9848,3 +9848,13 @@ MAP: node=plateau_origin status=estimate touches=[] ripple=no
 Verdict: the fixed-C scenario is excluded (too few e-folds); only the refit-C scenario survives, and it is a sibling model (D977). The D961 lock is closed.
 LESSONS: none new.
 MAP: none
+
+## D979 (locked PREREG_D958 + DEVIATIONS D1): N* reproduction FAILS the 0.10 tolerance by a constant +0.171 e-folds at every T_R, fully traced to the end-of-inflation definition (exact ε_H = 1 gives V*/V_end = 2.267; D719 used the slow-roll end, 1.357)
+(Lock PREREG_D979_projH_ns_match belongs to the queued PC run; numbering differs, as in D710.)
+[computed] (field_tests/results/repro_nstar_d958.txt, run D958c) Exact background + exact MS r, self-consistent N*: T_R = 1e4, 1e6, 1e7, 1e8, 1e10 GeV → N* = 46.458, 47.985, 48.749, 49.513, 51.042 vs D719 46.29, 47.81, 48.58, 49.34, 50.87: offset +0.168 to +0.175, outside the locked 0.10 → FAIL as locked.
+[derived] (arithmetic) In the matching equation ρ_end ∝ V*/(V*/V_end), and V_end enters as +¼ ln + (1/12) ln of the ratio, so ΔN* = (1/3) ln(2.2669/1.357) = 0.1710.
+[computed] (diagnostic, tools/serapis_calc/nstar.py) With D719's own r and only V*/V_end changed: T_R = 1e4: 46.285 → 46.457; 1e8: 49.341 → 49.512 (Δ = 0.171 both). The residual against the run, ≤ 0.004, is the exact-vs-slow-roll r (as the lock anticipated, ~0.01).
+[derived] The exact ε_H = 1 end is the one the matching equation means; D719's slow-roll end (y_end = 1.715) was an approximation. So the reproduction is right and D719's N* bracket is 0.17 low.
+Effect on predictions: exact n_s at the reproduced N* is 0.96951–0.97416 for T_R = 1e4–1e10 (r = 5.22e-4 to 4.59e-4); the shift from +0.17 e-folds is Δn_s ≈ +1.5e-4 and Δr/r ≈ −0.6% [estimate, from the table slope], inside the frozen SERAPIS-E band. Frozen predictions unchanged (post-hoc rule).
+Verdict: FAIL by the locked tolerance, cause identified; D719's N* bracket corrected upward by 0.17 (correction note, no silent edit of D719). No rerun.
+MAP: node=serapis_e_nstar status=corrected touches=[] ripple=no
