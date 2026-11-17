@@ -12071,3 +12071,23 @@ MAP: none
   So the R1b 37/12 normalisation is consistent with Hisano. The sommerfeld_nlo LO potential also matches Eq. (5).
 - **Locked this tick:** PREREG_R2c_b. Compute next tick.
 MAP: none
+
+### D1183 — R2c-b: the full LO Sommerfeld thermal σ_eff (all sectors, Hisano Eq. 13) is R_eff ≈ 1.29–1.37 at freeze-out (2026-11-17)
+- [CENTRE · computed] **Lock:** PREREG_R2c_b_alls. The matrices are sourced in D1182. **Result:** field_tests/results/r2c_b_alls.txt. No deviations.
+- **T1 (all potentials off):** R_eff = 1.0000000 and every sector = 1 → **PASS**.
+- **T2 (convergence):** n = 40 vs 80 agree to ≤ 3.8e-5 → **PASS**.
+- **R_eff = σ_eff(Sommerfeld)/σ_eff(Born):**
+
+  | | x = 20 | x = 25 | x = 30 |
+  |---|---|---|---|
+  | M = 2000 | 1.287 | 1.324 | 1.359 |
+  | M = 2842 | 1.293 | 1.331 | 1.367 |
+
+- **By sector at M = 2000, x = 25:** χ⁰χ⁰ 1.446 (reproduces R2c-a's 1.446, an independent consistency check), χ⁺χ⁻ 1.426, χ⁰χ^± 1.321, χ^±χ^± 0.757 (repulsive, as expected).
+- **Rough implication (ESTIMATE, not computed):** with M_th ∝ √σ_eff and our R1b Born M_th = 2.531 TeV, freeze-out alone gives √1.33 × 2.531 ≈ 2.92 TeV.
+  - That ignores the continued Sommerfeld-enhanced annihilation after freeze-out (x ≫ 30), which pushes M_th up.
+  - Beneke's NLO value is 2.842 TeV and Hisano 2006 quote ≈ 2.7–3.0 TeV at LO, so the LO estimate lands in the right region. This is not a scored comparison.
+- **Next (R2d):** solve the Boltzmann equation with R_eff(x) on a grid of x ∈ [3, 3e4], which brings in the low-velocity (closed-side, resonant) regime. Get M_th(LO Sommerfeld) by root-finding to Ω h² = 0.1205.
+  - Pre-state a sourced comparison target: Hisano hep-ph/0610249's LO thermal mass. The exact quoted value must be fetched before the lock.
+VERDICT: R2c-b COMPUTED; T1 and T2 PASS.
+MAP: none
