@@ -53,3 +53,19 @@ def taylorf2_phase(f, m1, m2, order=7):
         else:
             s = s + phi[k]*v**k
     return 3/(128*eta*v**5)*s
+
+# ---- A2c: Newtonian-order amplitude, SNR, horizon and range ----
+def amplitude0(f, Mc, D):
+    """|h~(f)| for an optimally oriented (face-on, overhead) binary, leading order:
+    sqrt(5/24) pi^{-2/3} (G Mc / c^3)^{5/6} f^{-7/6} c / D   (f in Hz, Mc in kg, D in m)."""
+    import numpy as np
+    return math.sqrt(5/24)*math.pi**(-2/3)*(G*Mc/c**3)**(5/6)*np.asarray(f, float)**(-7/6)*c/D
+def snr_opt(Mc, D, psd, f_lo, f_hi, n=20000):
+    """Optimal SNR rho^2 = 4 int |h|^2 / S_n df (log-spaced trapezoid); psd: callable S_n(f) [1/Hz]."""
+    import numpy as np
+    f = np.geomspace(f_lo, f_hi, n); S = np.array([psd(x) for x in f])
+    y = amplitude0(f, Mc, D)**2/S
+    return math.sqrt(4*np.trapezoid(y*f, np.log(f)))
+FINN_CHERNOFF = 2.2648   # horizon / sky- and orientation-averaged range (Finn & Chernoff 1993; LIGO convention)
+def horizon(Mc, psd, f_lo, f_hi, rho=8.0):
+    return snr_opt(Mc, 1.0, psd, f_lo, f_hi)/rho          # SNR ∝ 1/D: D_h = rho(1 m)/8 in metres
