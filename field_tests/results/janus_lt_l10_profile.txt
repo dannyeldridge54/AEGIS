@@ -1,0 +1,5 @@
+grid min chi2 1423.00 at w0 -0.85, wa -0.500; L7 MAP chi2 1422.93 at (-0.853, -0.518) -> C1 True
+LCDM chi2 1430.62; Delta chi2 vs minimum 7.69 (L7: 7.70) -> C2 True
+DESI best fit (-0.838, -0.62): profile Delta chi2 0.31 -> C3 (inside 68%) True
+68% (Delta chi2 2.30) grid extent w0 (np.float64(-0.9), np.float64(-0.8)), wa (np.float64(-0.7571428571428571), np.float64(-0.24285714285714288)); 95% (6.18) w0 (np.float64(-0.95), np.float64(-0.75)), wa (np.float64(-1.0142857142857142), np.float64(-0.11428571428571432)); L7 Gaussian: w0 ±0.053, wa ±0.200
+L10: PROFILE CONSISTENT WITH L7; CONTAINS DESI  (1234 s)
