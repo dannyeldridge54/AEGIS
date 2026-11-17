@@ -1,0 +1,6 @@
+D = 6: gamma_o = 2, gamma_c = sqrt(5) = 2.236068, delta = -0.052786 (subcritical: -1/2 < delta < 0 -> trigonometric branch)
+interval: y in (0, 4.442883) (sin -> 0 at y = 0, cos -> 0 at y_end)
+Route A (analytic Eq. 3.11 in ODEs 3.2, 40-digit arithmetic): max residuals eq1 1.6e-36, eq2 1.9e-37, eq3 2.4e-36
+Route B (numerical from y0 = 0.3 y_end): max |dA| 2.5e-13, |dphi| 2.7e-12, constraint 4.0e-11
+e^phi (phi0 = 0): y = 0.05 y_end: 3.087e-01; y = 0.95 y_end: 2.313e+09
+S4b(b) two routes agree: 6D vacuum CONFIRMED

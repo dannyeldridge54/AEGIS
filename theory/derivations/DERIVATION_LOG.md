@@ -1698,3 +1698,6 @@ Touches: none.
 
 ## D1014: S4b(a) γ_D = (D+2)/√(8(D−2)) verified (k = 4/(D−2)); γ₆ = √2, γ₁₀ = 3/2
 - [computed] sympy Christoffel-level check, D = 4, 6, 10.
+
+## D1015: S4b(b) — 6D tadpole subcritical (γ_o = 2 < √5): trigonometric vacuum on a finite interval, two routes agree (≤ 4e-11)
+- [literature] 2209.10553 Eqs. 3.1–3.17; [computed] analytic residual 2e-36, numeric 3e-12.

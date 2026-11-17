@@ -26,6 +26,6 @@ disk-level, V_φ ~ T ∫ √G e^{−φ} (brane tension ∝ 1/g_s); T⁴/Z₂ wit
 √g_s e^{−φ} into √g_E e^{(D+2)φ/(D−2)}; with the kinetic term (4/(D−2))(∂φ)², the canonical field is φ_c = φ√(8/(D−2)),
 so the Einstein-frame exponent is γ_D = (D+2)/√(8(D−2)). Check: D = 10 → γ = 3/2 (Dudas–Mourad, D996 ✓). D = 6 (anti-D5
 filling 6D, T⁴ volume frozen, φ_6 = φ − ¼ ln Vol₄ reduces the brane term to e^{−φ_6}) → γ_6 = 8/√32 = √2.
-Next S4b step: lock: (a) symbolic check of γ_D; (b) 6D Dudas–Mourad-type solution of R − ½(∂φ)² − 2α e^{√2 φ} on the
+S4b DONE (D1014 exponent, D1015 6D vacuum: subcritical, finite interval, two routes). Next S4c: χ probe on the 6D background.
 S4a solver (two routes); (c) note that the frozen-volume assumption must later be lifted (the T⁴ breathing mode also
 feels the tadpole).

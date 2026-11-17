@@ -260,3 +260,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1012: guard exponentials of 1/T in recombination codes (He I term overflows once helium has recombined).
 - D1013: a 'stands' verdict near a band edge should still trigger a band review in the paper draft.
 - D1014: give sympy real assumptions before testing log/exp identities, or the check fails for the wrong reason.
+- D1015: before solving, compare the exponent with the critical one (γ_c = 4√(D−1)/(D−2)); it decides the branch (hyperbolic, critical or trigonometric).
