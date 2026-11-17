@@ -1,0 +1,4 @@
+joint MAP: w0 -0.852, wa -0.530, h 0.6755, ln10^10As 3.045; chi2 1426.69 (fs8 part 3.76; ratios 0.976, 0.984, 0.993, 1.001, 1.008, 1.009)
+LCDM chi2 1434.57; Delta chi2 7.87 (L7 alone 7.70)
+C1 (within 1 sigma of L7) True; C2 (fs8 chi2 <= 12.59) True
+L12: GROWTH CONSISTENT WITH THE BACKGROUND FIT [A_s prior from a LCDM fit used in w0wa — approximation] (313 s)

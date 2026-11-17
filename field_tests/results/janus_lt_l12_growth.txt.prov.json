@@ -1,0 +1,26 @@
+{
+ "results": "field_tests/results/janus_lt_l12_growth.txt",
+ "results_sha256": "754180bfd194d028780a13f059a90a45ba6e97471d2a8e965194e871e0451eb4",
+ "created_utc": "2026-11-17T23:05:17Z",
+ "git_commit": "bc333aefa2954c1f8a597e71fa564000c50d95d8",
+ "git_dirty": false,
+ "lock": "field_tests/rules/PREREG_L12_growth_joint.md",
+ "lock_sha256": "d2e7da86a414c919af1da75e6288a9ab307e3378e396c60ab823c2a0189aff9e",
+ "code": {
+  "theory/janus_lt/l12_growth_joint.py": "772369e556fc71b62d43b7a9ccc13c973b0a74afdb3d9fde0ef52e8d1c73b5dc",
+  "theory/janus_lt/l7_joint.py": "aaf6bc5dcd3365f5f8d082bfaf4aeac1eb829e74350ffbf0035b09b2ebf7c2f5",
+  "theory/janus_lt/l9_fs8.py": "327c1c8934b869b4fb94c8cb1cf82fae83a3404f13bba62c2b35a2e4b724bd02",
+  "theory/janus_lt/l9c_sigma8.py": "bc3e8c425771d73bfcb72300be2bc17cbea4018b6adde6a4ccd25535dccc896d"
+ },
+ "data": {},
+ "python": "3.13.18",
+ "packages": {
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "sympy": "1.14.0",
+  "mpmath": "1.3.0",
+  "camb": "2.0.5"
+ },
+ "machine": "vm Linux-6.18.44-fc-v553-x86_64-with-glibc2.39",
+ "wall_s": 313.5
+}
