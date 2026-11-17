@@ -11494,4 +11494,16 @@ Result (40-digit, 4000 points on (1e-6, 1−1e-6)·y_end): A′/P′ runs monoto
 Observation [arithmetic, D = 6 only]: the endpoint value 1/(2√5) and the threshold 1/4 differ by 11%; for D = 6 the threshold condition γ ≤ 16√(D−1)/(D−2)² = √5
 coincides with γ_c = 4√(D−1)/(D−2) = √5 — a D = 6 coincidence, not a general statement (not checked for other D).
 With D1036 (tensor tower gapped, m₁² 0.778) the 6D vacuum now has both tensor and scalar sectors free of instabilities (vectors not yet checked).
+## D1139 (CENTRE, Djl loop (C), literature + arithmetic): a Gaia DR3 escape-velocity profile (arXiv:2402.00108, 4–11 kpc) gives a LIGHT halo, M200c(DM) = 0.55 (+0.15/−0.14) e12 M_⊙ (total 0.64e12), agreeing with the K giants and against Deason+2019's heavier v_esc reading — the D1112 data disagreement tilts toward the light halo: MWPotential2014 (halo M200 0.71e12) +1.1σ, McMillan17 (1.315e12) +5.1σ
+- Quoted (abstract): escape-velocity profile 4–11 kpc from Gaia DR3; dark-matter halo M200c ≈ 0.55 +0.15/−0.14 e12, c200c ≈ 13.9 +6.2/−4.3; total M200c ≈ 0.64 +0.15/−0.14 e12. No v_esc(R0) number in the abstract.
+- Arithmetic (halo-only M200 from D1097/D1112):
+  - MWPotential2014: (0.710 − 0.55)/0.15 = +1.07σ
+  - McMillan17: (1.315 − 0.55)/0.15 = +5.1σ
+  - MWPotential2014 at s = 0.8: −0.06σ
+- Two independent Gaia-era kinematic routes now prefer a halo near 0.55e12: K-giant Jeans (D1097) and the DR3 escape-velocity profile. McMillan17 (built on pre-Gaia constraints) is disfavoured by both. Deason+2019 (DR2 high-velocity tail) is the outlier.
+- Consequence for the SERAPIS-E wino (D1126):
+  - The realistic halo is MWPotential2014-like or lighter. There the IGS verdict for 1 TeV is marginal: f_max 0.25–0.30 (LO band-dependent; NLO pass), and for s = 0.8 the J ratio falls further, which raises f_max [estimate].
+  - So the 1 TeV point is "marginal-to-allowed", not "excluded", for the halo the newest Gaia data prefer. The window statement "≈ 0.67–0.9 TeV" (D1129) is a conservative choice; an honest range is "0.67–~1 TeV depending on the halo".
+  - No paper edit this tick. Flagged for the next "Publish" review.
+VERDICT: the Gaia DR3 v_esc profile favours the light halo; McMillan17 disfavoured at 5σ; the SERAPIS-E 1 TeV wino is marginal rather than excluded for that halo.
 MAP: none
