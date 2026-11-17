@@ -1,0 +1,36 @@
+M1 z=0.5: D ours=0.770033 colossus=0.770019 rel=1.9e-05
+M1 z=1: D ours=0.608092 colossus=0.608051 rel=6.7e-05
+M1 z=2: D ours=0.418335 colossus=0.418238 rel=2.3e-04
+M1 z=5: D ours=0.211941 colossus=0.211790 rel=7.1e-04
+M2 press74 z=0 M=1e+12: ours=5.87453e-03 colossus=5.87171e-03 rel=4.8e-04 (with colossus growth: 4.8e-04)
+M2 press74 z=0 M=1e+13: ours=7.17741e-04 colossus=7.17996e-04 rel=3.5e-04 (with colossus growth: 3.5e-04)
+M2 press74 z=0 M=1e+14: ours=5.17868e-05 colossus=5.18050e-05 rel=3.5e-04 (with colossus growth: 3.5e-04)
+M2 press74 z=0 M=1e+15: ours=3.96647e-07 colossus=3.96197e-07 rel=1.1e-03 (with colossus growth: 1.1e-03)
+M2 press74 z=1 M=1e+12: ours=5.58996e-03 colossus=5.58739e-03 rel=4.6e-04 (with colossus growth: 4.1e-04)
+M2 press74 z=1 M=1e+13: ours=3.74993e-04 colossus=3.75026e-04 rel=9.0e-05 (with colossus growth: 2.7e-04)
+M2 press74 z=1 M=1e+14: ours=5.12670e-06 colossus=5.13817e-06 rel=2.2e-03 (with colossus growth: 2.8e-03)
+M2 press74 z=2 M=1e+12: ours=3.09222e-03 colossus=3.08941e-03 rel=9.1e-04 (with colossus growth: 2.9e-04)
+M2 press74 z=2 M=1e+13: ours=7.19552e-05 colossus=7.18513e-05 rel=1.4e-03 (with colossus growth: 1.1e-04)
+M2 press74 z=2 M=1e+14: ours=5.21296e-08 colossus=5.22798e-08 rel=2.9e-03 (with colossus growth: 7.0e-03)
+M2 sheth99 z=0 M=1e+12: ours=3.96446e-03 colossus=3.96259e-03 rel=4.7e-04 (with colossus growth: 4.7e-04)
+M2 sheth99 z=0 M=1e+13: ours=4.77207e-04 colossus=4.77378e-04 rel=3.6e-04 (with colossus growth: 3.6e-04)
+M2 sheth99 z=0 M=1e+14: ours=4.03868e-05 colossus=4.03887e-05 rel=4.8e-05 (with colossus growth: 4.8e-05)
+M2 sheth99 z=0 M=1e+15: ours=7.22236e-07 colossus=7.22273e-07 rel=5.2e-05 (with colossus growth: 5.2e-05)
+M2 sheth99 z=1 M=1e+12: ours=3.78956e-03 colossus=3.78783e-03 rel=4.6e-04 (with colossus growth: 4.2e-04)
+M2 sheth99 z=1 M=1e+13: ours=3.03525e-04 colossus=3.03579e-04 rel=1.8e-04 (with colossus growth: 3.0e-04)
+M2 sheth99 z=1 M=1e+14: ours=8.08160e-06 colossus=8.09264e-06 rel=1.4e-03 (with colossus growth: 1.7e-03)
+M2 sheth99 z=2 M=1e+12: ours=2.51115e-03 colossus=2.50922e-03 rel=7.7e-04 (with colossus growth: 3.4e-04)
+M2 sheth99 z=2 M=1e+13: ours=9.63108e-05 colossus=9.62247e-05 rel=8.9e-04 (with colossus growth: 1.9e-04)
+M2 sheth99 z=2 M=1e+14: ours=3.25905e-07 colossus=3.26502e-07 rel=1.8e-03 (with colossus growth: 4.7e-03)
+M2 tinker08 z=0 M=1e+12: ours=4.21660e-03 colossus=4.21459e-03 rel=4.8e-04 (with colossus growth: 4.8e-04)
+M2 tinker08 z=0 M=1e+13: ours=5.32910e-04 colossus=5.33105e-04 rel=3.6e-04 (with colossus growth: 3.6e-04)
+M2 tinker08 z=0 M=1e+14: ours=4.75493e-05 colossus=4.75509e-05 rel=3.3e-05 (with colossus growth: 3.3e-05)
+M2 tinker08 z=0 M=1e+15: ours=7.32376e-07 colossus=7.32175e-07 rel=2.7e-04 (with colossus growth: 2.7e-04)
+M2 tinker08 z=1 M=1e+12: ours=3.76908e-03 colossus=3.76735e-03 rel=4.6e-04 (with colossus growth: 4.3e-04)
+M2 tinker08 z=1 M=1e+13: ours=3.05365e-04 colossus=3.05416e-04 rel=1.7e-04 (with colossus growth: 3.0e-04)
+M2 tinker08 z=1 M=1e+14: ours=7.05600e-06 colossus=7.06739e-06 rel=1.6e-03 (with colossus growth: 2.0e-03)
+M2 tinker08 z=2 M=1e+12: ours=2.30607e-03 colossus=2.30425e-03 rel=7.9e-04 (with colossus growth: 3.3e-04)
+M2 tinker08 z=2 M=1e+13: ours=7.91737e-05 colossus=7.90908e-05 rel=1.0e-03 (with colossus growth: 1.7e-04)
+M2 tinker08 z=2 M=1e+14: ours=1.59178e-07 colossus=1.59532e-07 rel=2.2e-03 (with colossus growth: 5.6e-03)
+VERDICTS: M1=PASS M2=PASS -> A4b VALIDATED
+Reported: delta_c(z=0) constant=1.68647, corrected=1.67567
