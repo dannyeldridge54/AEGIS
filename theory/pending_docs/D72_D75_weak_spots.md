@@ -10281,3 +10281,12 @@ gmlfi/ncli (my driver line truncation), fi/kmii (my parser: Fortran drops the 'E
 cnbi/kmiii/hi/rpqti (parameter choice / ASPIC STOP / timeout), oripi/pli (grid < 75 e-folds). Fixups: J7h (locked; fi/kmii
 parser fix needs its own lock). Results: field_tests/results/janus_j7f_pulse.txt.
 MAP: none
+
+## D1036 — DEEP/STRINGS — S4c3: the 6D orientifold KK masses converge (fixes D1033's T2 FAIL) [computed, extrapolated]
+Lock PREREG_S4c3_richardson. Same Prüfer shooting as S4c2 (flat check passes to 1e-13), cutoffs ε = 1e-5…1e-8.
+m1²(ε) = 0.779128, 0.778320, 0.778204, 0.778187: algebraic convergence m1²(ε) = m* + c ε^q with q = 0.843 (triple A) vs 0.844 (B).
+Aitken limits agree to < 1e-6: m1² = 0.778184, m2² = 2.464374, m3² = 5.043681 (units of the 5D scale α_E as in D1033), so
+m2/m1 = 1.780, m3/m1 = 2.546 (not the flat-interval 2, 3 — the warping shifts the tower). T1–T3 PASS → S4c3 VALID.
+Status: D1033's "not converged" is resolved; the spectrum is gapped (m1² > 0) and the zero mode remains. Open: the q ≈ 0.84
+order should follow from the endpoint exponents of p(y), w(y) (a check to derive, not yet done); next: dilaton/metric fluctuations.
+MAP: none
