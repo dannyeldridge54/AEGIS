@@ -10717,3 +10717,27 @@ Lock 96d9925 pushed before run; results field_tests/results/janus_astro_a5b.txt.
 - Use: Jeans dispersions are the halo-mass handle the Galaxy loop (W2/W3) needs for real Mapper kinematics. Velocity dispersions of halo stars constrain the same halo that sets ρ_⊙, J and the wino limits.
 VERDICT: A5b VALIDATED.
 MAP: none
+
+## D1084 (CENTRE, Djl loop (A), literature cross-check of D1081, no new computation): our wino CMB exclusion band agrees with the published one — Hryczuk et al. 2014 (arXiv:1401.6212 §3.9) find WMAP-9+ACT/SPT excludes 2.18–2.5 TeV; A1 with Planck 2018 gives 2.2–2.5 TeV (f_eff 0.14) widening to 2.0–2.7 TeV (f_eff 0.41); thermal wino unexcluded in both
+- Published values (quoted, 1401.6212 §3.9, 95% CL):
+  - WMAP-5: 2.30–2.42 TeV
+  - WMAP-9: 2.25–2.46 TeV
+  - WMAP-9+ACT/SPT: 2.18–2.5 TeV
+  - The paper notes Planck constraints are expected to tighten. Its f_eff is not stated in the fetched text.
+- Ours (D1081, grid 0.1 TeV, 0.02 near the resonance):
+  - f_eff = 0.14: excluded 2.2–2.5 TeV. This matches WMAP-9+ACT/SPT to grid resolution.
+  - f_eff = 0.41: excluded 2.0–2.7 TeV, plus a marginal 0.5 TeV point. This is wider, as expected for Planck 2018, which is tighter than WMAP-era data.
+- Both put the thermal wino (~2.9–3.2 TeV) outside the CMB exclusion.
+- Resonance location: 1307.4082 places it at about 2.3 TeV, 1401.6212 near 2.4 TeV; A7b/A1 peak at 2.34–2.38 TeV. Consistent.
+- 1401.6212's other probes (quoted, for the triangle):
+  - Diffuse Galactic γ excludes < 0.65 and 2.0–2.65 TeV.
+  - Isotropic γ excludes < 0.75 and 1.92–2.7 TeV.
+  - Dwarfs exclude only near 2.4 TeV.
+  - H.E.S.S. lines exclude > 2 TeV (conservative profile: 2.25–2.45).
+  - Of those probes, low-mass exclusions (< 0.65–0.75 TeV) come from diffuse/isotropic γ-rays, not the CMB.
+- Implication for SERAPIS-E's wino points (0.66, 1.0, 1.85 TeV; fractions 0.14, 0.26, 0.67):
+  - The published low-mass γ-ray exclusions assume f_wino = 1; with f² scaling, 0.66 TeV at f = 0.14 is suppressed ×51 [estimate].
+  - So the CMB and diffuse corners do not bind them, and the γ-line/W2 corner remains the binding one (1.85 TeV fails).
+- Caveat: comparison by eye to grid resolution, mixed CMB datasets (WMAP+ACT/SPT vs Planck 2018), unknown f_eff in the paper.
+VERDICT: A1 CROSS-CHECKED — consistent with literature.
+MAP: none
