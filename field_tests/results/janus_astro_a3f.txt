@@ -1,0 +1,7 @@
+F1 log rho_c=14.8: ns M=0.87459971 R=11.9048548 | compact M=0.87459971 R=11.9048548 | worst rel 8.1e-11 (tol 1e-07) PASS
+F2 log rho_c=14.8: ns M=0.87459971 R=11.9051991 | compact M=0.87459971 R=11.9051992 | worst rel 2.1e-09 (tol 1e-06) PASS
+F1 log rho_c=15.0: ns M=1.56493632 R=11.5803346 | compact M=1.56493632 R=11.5803346 | worst rel 2.0e-12 (tol 1e-07) PASS
+F2 log rho_c=15.0: ns M=1.56493632 R=11.5804743 | compact M=1.56493632 R=11.5804743 | worst rel 9.3e-10 (tol 1e-06) PASS
+F1 log rho_c=15.2: ns M=1.99665693 R=10.6465039 | compact M=1.99665693 R=10.6465039 | worst rel 3.8e-12 (tol 1e-07) PASS
+F2 log rho_c=15.2: ns M=1.99665693 R=10.6465727 | compact M=1.99665693 R=10.6465727 | worst rel 5.3e-10 (tol 1e-06) PASS
+F1 True F2 True

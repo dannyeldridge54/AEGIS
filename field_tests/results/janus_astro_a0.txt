@@ -6,11 +6,11 @@ T2 n=2: xi1=4.3528746 omega=2.4110460 routes 1.8e-12/2.4e-11 table 1.1e-06/1.7e-
 T2 n=3: xi1=6.8968486 omega=2.0182360 routes 1.4e-11/3.3e-12 table 2.0e-07/2.0e-06
 T2 n=4: xi1=14.9715463 omega=1.7972299 routes 4.2e-12/1.2e-11 table 2.4e-07/4.8e-08
 T3 M_Ch(mu_e=2) A=1.456298 B=1.456300 Msun; A/B-1=2.0e-06; vs 1.459: 1.9e-03
-T4 uniform 2GM/Rc2=0.1: dR/R=2.0e-13 dM/M=6.0e-13
+T4 uniform 2GM/Rc2=0.1: dR/R=1.9e-13 dM/M=5.7e-13
 T4 uniform 2GM/Rc2=0.3: dR/R=2.5e-13 dM/M=7.4e-13
-T4 uniform 2GM/Rc2=0.6: dR/R=5.1e-13 dM/M=1.5e-12
-T4 uniform 2GM/Rc2=0.8: dR/R=2.0e-13 dM/M=5.9e-13
-T4 Newtonian n=1 polytrope: 2GM/Rc2=4.5e-16 dR/R=6.5e-08 dM/M=5.1e-12
+T4 uniform 2GM/Rc2=0.6: dR/R=5.5e-13 dM/M=1.7e-12
+T4 uniform 2GM/Rc2=0.8: dR/R=8.6e-14 dM/M=2.6e-13
+T4 Newtonian n=1 polytrope: 2GM/Rc2=4.5e-16 dR/R=7.6e-12 dM/M=4.9e-12
 T5 limits: 6.0 1.0 9.0
 T5 a=0 pro: r=6.00000000 |d|=8.5e-08
 T5 a=0 retro: r=6.00000000 |d|=8.5e-08
@@ -63,4 +63,4 @@ T9 pc: 3.0856775815e+16 vs astropy 3.0856775815e+16 rel=0.0e+00
 T9 R_s(Msun): 2.9532500761e+03 vs astropy 2.9532500761e+03 rel=0.0e+00
 VERDICTS: T1=PASS T2=PASS T3=PASS T4=PASS T5=PASS T6=PASS T7=PASS T8=PASS T9=PASS
 A0 VALIDATED
-runtime 20.4 s
+runtime 18.4 s
