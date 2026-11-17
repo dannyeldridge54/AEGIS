@@ -1,6 +1,1 @@
-COMPILE ulse/rpqti/p.f90:17:132:
-
-   17 |     write(*,'(A,3ES24.15)') 'VG ', xx, rpqti_norm_potential(xx,10._kp,0.01_kp,-0.01_kp), rpqti_norm_deriv_potential(xx,10._kp,0.01_kp,-0.01_kp)
-      |                                                                                                                                    1
-Error: Missing kind-parameter at (1)
-f951: some warnings being treated as errors
+TIMEOUT
