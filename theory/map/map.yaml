@@ -178,10 +178,11 @@ nodes:
   - D982
   - D1055
   - D1056
+  - D1061
   history:
-  - 'D982: literature'
   - 'D1055: computed'
   - 'D1056: computed'
+  - 'D1061: computed'
 - id: vac_i
   layer: 2
   branch:

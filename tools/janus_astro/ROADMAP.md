@@ -19,6 +19,8 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 
 - A7d DONE (D1060): Σm_ν = 0.0587 eV: σ8 −1.72%, n(>1e15 M_⊙/h) −11% vs massless (CAMB + colossus, H1 1e-4, H2 ≤ 5e-4).
 
+- A5a DONE (D1061): Milky Way (MWPotential2014) vs galpy to 1e-15; orbit 1 Gyr to 1e-11 kpc; ρ_DM,⊙ = 0.286 GeV/cm³ → wino limits ×1.36 looser. A7e deferred (no parallaxes in stars.json).
+
 ## Gold-standard stages (referee in brackets)
 - A2b GW amplitude + spins (aligned) + tides [LALSuite TaylorF2, IMRPhenomD for inspiral match]; A2c detector noise curves, SNR, match, horizon distance [PyCBC/LALSuite PSDs, published BNS ranges]; A2d stochastic backgrounds Ω_GW(f) from inflation, PTA/LISA/ET power-law sensitivity curves [published PLS curves].
 - A3 Neutron stars: tabulated EoS (SLy, APR4) → M–R, tidal Λ [published tables; GW170817 Λ̃, NICER radii].

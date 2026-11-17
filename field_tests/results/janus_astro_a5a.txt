@@ -1,0 +1,14 @@
+G1 R=0.5 kpc: v_c ours=110.806162 galpy=110.806162 km/s rel=2.2e-16
+G1 R=1 kpc: v_c ours=140.461022 galpy=140.461022 km/s rel=0.0e+00
+G1 R=2 kpc: v_c ours=187.003341 galpy=187.003341 km/s rel=0.0e+00
+G1 R=4 kpc: v_c ours=222.695996 galpy=222.695996 km/s rel=0.0e+00
+G1 R=8 kpc: v_c ours=220.000000 galpy=220.000000 km/s rel=0.0e+00
+G1 R=16 kpc: v_c ours=202.789176 galpy=202.789176 km/s rel=0.0e+00
+G1 R=30 kpc: v_c ours=188.527244 galpy=188.527244 km/s rel=1.3e-16
+G2 (R,z)=(8,1) kpc: FR -0.93379125/-0.93379125 Fz -0.31132036/-0.31132036 rel=7.1e-16
+G2 (R,z)=(4,0.5) kpc: FR -1.89626712/-1.89626712 Fz -1.05947345/-1.05947345 rel=9.4e-16
+G2 (R,z)=(12,3) kpc: FR -0.53006164/-0.53006164 Fz -0.19239981/-0.19239981 rel=6.3e-16
+G3 v_c(8 kpc) = 220.000000 km/s
+G4 orbit 1 Gyr: dE/E=7.2e-15; final R ours=9.314892 galpy=9.314892, z ours=-0.048687 galpy=-0.048687 kpc; max|d|=1.1e-11 kpc
+VERDICTS: G1=PASS G2=PASS G3=PASS G4=PASS -> A5a VALIDATED
+Application: rho_DM(8 kpc) = 0.2864 GeV/cm^3 (A7a/A7b used 0.39; J scales by 0.539, f_max by 1.362); v_esc(8 kpc) = 513.0 km/s
