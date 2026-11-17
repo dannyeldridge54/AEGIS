@@ -1,0 +1,5 @@
+base Neff_final 3.0453
+U(1): init 0.2069 -> dNeff_final 0.0541 (1 evals); Yp 0.24664 (table 0.24661, pull +0.39); 1e5DH 2.4538 (table 2.4573, pull -2.44); Li 5.670 -> agree True
+SU(2): init 0.6169 -> dNeff_final 0.1613 (1 evals); Yp 0.24804 (table 0.24803, pull +0.81); 1e5DH 2.4890 (table 2.4930, pull -1.27); Li 5.614 -> agree True
+SU(2)+gaugino: init 1.1533 -> dNeff_final 0.3015 (1 evals); Yp 0.24986 (table 0.24986, pull +1.34); 1e5DH 2.5350 (table 2.5397, pull +0.27); Li 5.544 -> agree True
+B7 VALIDATED
