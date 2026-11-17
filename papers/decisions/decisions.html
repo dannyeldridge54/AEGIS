@@ -24,6 +24,7 @@ button{font:inherit;font-weight:600;border-radius:8px;padding:8px 14px;border:1p
 button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 button.yes{border-color:var(--ok);color:var(--ok)} button.no{border-color:var(--bad);color:var(--bad)} button.later{border-color:var(--later);color:var(--later)}
 button:disabled{opacity:.5;cursor:default}
+.rec{display:inline-block;font-size:.78rem;font-weight:600;padding:1px 8px;border-radius:999px;border:1px solid var(--accent);color:var(--accent)}
 .status{font-weight:600}.status.approved{color:var(--ok)}.status.rejected{color:var(--bad)}.status.later{color:var(--later)}
 textarea{font:inherit;width:100%;box-sizing:border-box;min-height:2.6em;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);padding:8px}
 .empty,.err{background:var(--panel);border:1px dashed var(--line);border-radius:10px;padding:20px;color:var(--muted)}
@@ -32,7 +33,7 @@ h2{font-family:var(--display);font-weight:500;font-size:1.05rem;margin:8px 0 0;c
 <div class="wrap">
   <header>
     <h1>Decision Desk</h1>
-    <p class="sub">Things the loops can't decide without you. <span class="count" id="count">Loading…</span></p>
+    <p class="sub">The loops take the top recommendation on their own and log it here; tap Undo to reopen any of them. Items that can't be undone (publishing, outreach, deleting, money) wait for you. <span class="count" id="count">Loading…</span></p>
   </header>
   <section class="list" id="open" aria-live="polite"><div class="empty">Waiting for the desk to load. New items appear here as the loops add them.</div></section>
   <h2 id="doneHead" hidden>Decided</h2>
@@ -51,6 +52,7 @@ function card(d) {
   const h = document.createElement('p'); h.className = 'title'; h.textContent = d.title || '(untitled)';
   const p = document.createElement('p'); p.className = 'detail'; p.textContent = d.detail || '';
   c.append(m, h, p);
+  if (d.recommend) { const r = document.createElement('p'); r.className = 'detail'; const b0 = document.createElement('span'); b0.className = 'rec'; b0.textContent = 'Recommended: ' + d.recommend; r.appendChild(b0); if (d.why) r.append(document.createTextNode(' ' + d.why)); c.appendChild(r); }
   if (d.status === 'open') {
     const note = document.createElement('textarea'); note.id = 'note-' + d.id; note.placeholder = 'Optional note for Claude'; note.setAttribute('aria-label', 'Note for ' + (d.title || 'this item'));
     const b = document.createElement('div'); b.className = 'btns';
@@ -65,9 +67,12 @@ function card(d) {
   } else {
     const s = document.createElement('p'); s.className = 'detail';
     const st = document.createElement('span'); st.className = 'status ' + (/approve|yes|go/i.test(d.choice || '') ? 'approved' : /reject|no|stop/i.test(d.choice || '') ? 'rejected' : 'later');
-    st.textContent = (d.choice || d.status) + ' · ' + fmt(d.decided_at);
-    s.append(st); if (d.note) s.append(document.createTextNode(' — ' + d.note));
+    st.textContent = (d.choice || d.status) + (d.decided_by === 'auto' ? ' (auto, top recommendation)' : '') + ' · ' + fmt(d.decided_at);
+    s.append(st); if (d.note) s.append(document.createTextNode(' — ' + d.note)); if (d.acted) s.append(document.createTextNode(' · Done: ' + d.acted));
     c.append(s);
+    if (d.decided_by === 'auto') { const b = document.createElement('div'); b.className = 'btns'; const u = document.createElement('button'); u.className = 'later'; u.textContent = 'Undo';
+      u.onclick = async () => { u.disabled = true; try { await db.collection('decisions').doc(d.id).update({status: 'open', choice: null, decided_by: 'danny-undo', note: 'reopened by Danny', decided_at: new Date().toISOString(), no_auto: true}); } catch (e) { u.disabled = false; } };
+      b.appendChild(u); c.appendChild(b); }
   }
   return c;
 }
@@ -82,7 +87,7 @@ function render() {
 async function decide(id, choice, note, box) {
   box.querySelectorAll('button').forEach((x) => x.disabled = true);
   try {
-    await db.collection('decisions').doc(id).update({status: /later|wait/i.test(choice) ? 'later' : 'decided', choice, note: note || '', decided_at: new Date().toISOString()});
+    await db.collection('decisions').doc(id).update({status: /later|wait/i.test(choice) ? 'later' : 'decided', choice, decided_by: 'danny', note: note || '', decided_at: new Date().toISOString()});
   } catch (e) {
     box.querySelectorAll('button').forEach((x) => x.disabled = false);
     const err = document.createElement('p'); err.className = 'detail'; err.textContent = 'Not saved: ' + (e && e.code === 'permission_denied' ? 'only Danny can decide these.' : 'try again in a moment.'); box.after(err);
