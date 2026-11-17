@@ -11398,3 +11398,8 @@ Lock pushed before run; result field_tests/results/a2i_066_igs.txt.
 - Falsification route: HL-LHC disappearing tracks (reach ~1 TeV) cover the entire surviving band. A null HL-LHC result plus IGS would exclude the SERAPIS-E wino. That is a clean near-term test of a post-hoc ingredient.
 VERDICT: 0.66 TeV PASS (realistic haloes; bracketed); the window ≈ 0.67–0.9 TeV.
 MAP: none
+
+## D1129 (CENTRE, Djl loop (D), documentation): v3.3 draft forward-table row for the SERAPIS-E post-hoc wino updated from "0.67–1.85 TeV, 5–41%" to "0.67–≈0.9 TeV, ≈5–10% (after H.E.S.S. IGS; upper edge est.); HL-LHC disappearing tracks cover the band". Hyperion 1.1 notes and claude/HYPERION_STATUS.md updated through D1128. Unposted; awaiting Danny's "Publish".
+- f range arithmetic: (0.67/2.9)² = 0.053, (0.9/2.9)² = 0.096.
+- Publishing-rule note: this changes a published-paper statement (v3.2 lists 0.67–1.85 TeV). When Danny next says "Publish", v3.3 should carry this correction prominently. Not a frozen prediction, but readers of v3.2 would otherwise see an outdated window.
+MAP: none
