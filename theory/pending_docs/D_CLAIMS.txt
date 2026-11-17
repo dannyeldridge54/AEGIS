@@ -418,3 +418,4 @@ D1131  2026-11-17T17:58Z  HL-LHC reach
 D1132  2026-11-17T18:00Z  L9b: own sigma8 9% low vs CAMB - not validated; constant offset points at D normalisation
 D1133  2026-11-17T18:00Z  L9c: own sigma8 validated vs CAMB to 1.0-1.4%
 D1134  2026-11-17T18:02Z  L9v2: fs8 with Janus-LT own sigma8 - same chi2, CAMB referee dropped
+D1135  2026-11-17T18:03Z  R: Z6-II-b abelian N=2 sector has exactly vanishing threshold coefficient - concrete near-finite example
