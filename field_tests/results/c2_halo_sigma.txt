@@ -1,0 +1,6 @@
+MWPotential2014 beta=0.0: 20kpc 100.0(d -20.0) 50kpc 89.3(d -12.7) 80kpc 81.8(d -2.2) 120kpc 74.6(d +24.6) -> CONSISTENT
+MWPotential2014 beta=0.5: 20kpc 116.9(d -3.1) 50kpc 103.6(d +1.6) 80kpc 94.6(d +10.6) 120kpc 86.0(d +36.0) -> CONSISTENT
+MWPotential2014 beta=0.8: 20kpc 132.1(d +12.1) 50kpc 116.3(d +14.3) 80kpc 105.8(d +21.8) 120kpc 96.0(d +46.0) -> NOT CONSISTENT
+halo x1.5 beta=0.0: 20kpc 116.3(d -3.7) 50kpc 106.4(d +4.4) 80kpc 98.1(d +14.1) 120kpc 89.8(d +39.8) -> CONSISTENT
+halo x1.5 beta=0.5: 20kpc 136.4(d +16.4) 50kpc 123.6(d +21.6) 80kpc 113.5(d +29.5) 120kpc 103.6(d +53.6) -> NOT CONSISTENT
+halo x1.5 beta=0.8: 20kpc 154.5(d +34.5) 50kpc 138.8(d +36.8) 80kpc 127.0(d +43.0) 120kpc 115.7(d +65.7) -> NOT CONSISTENT
