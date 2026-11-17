@@ -492,3 +492,4 @@ D1205  2026-11-17T22:36Z  L11 Cobaya MCMC confirms L7 w0wa errors
 D1206  2026-11-17T22:37Z  JMF7 adiabatic limit reached in all multi-field tests
 D1207  2026-11-17T22:39Z  JMF8 Janus-MF validated for three fields vs PyTransport
 D1208  2026-11-17T22:41Z  Goldstein-Hill 2026 N_eff 2.990+-0.070: tau_i SU(2) dark radiation now +3.1 sigma (excluded at 95% by dN<0.107); U(1) +1.5 sigma
+D1209  2026-11-17T22:46Z  Paper: v3.3 draft gets the N_eff 2026 verdicts (SU(2) ~3 sigma; hidden sector empty or U(1)); CMB-S4 removed
