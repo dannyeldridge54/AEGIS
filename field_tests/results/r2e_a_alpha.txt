@@ -1,0 +1,9 @@
+Regression (old inputs): 2.5642 TeV vs 2.564 -> PASS
+alpha2hat(2*2.2TeV)=0.03150 (os 0.03479); B1 Born M_th=2.3250 TeV vs Beneke 2.207 (rel +0.0535) -> FAIL
+M=2.2: Oh2=0.0445 (xend 3e4: 0.0514)
+M=2.4: Oh2=0.0643 (xend 3e4: 0.0686)
+M=2.6: Oh2=0.0822 (xend 3e4: 0.0841)
+M=2.8: Oh2=0.0966 (xend 3e4: 0.0980)
+M=3.0: Oh2=0.1107 (xend 3e4: 0.1122)
+M=3.2: Oh2=0.1254 (xend 3e4: 0.1270)
+L1 (reported) LO-Sommerfeld M_th = 3.135 TeV vs Beneke 2.886 (rel +0.086)
