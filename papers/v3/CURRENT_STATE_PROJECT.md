@@ -79,7 +79,7 @@ Source of truth v5.3 on Zenodo (DOI 10.5281/zenodo.24226521). TWIST-I: N* 56.7, 
 - D987: S3b shortcut failed (trace oscillates in sign at t ≲ 0.027, closed-string tadpole region); D985 (large T², heavy T⁴ windings) stands; small-T⁴-radius sign needs the transverse channel.
 
 ## Standing Jl tracks (from 16 Nov 2026 night)
-- Track J (Janus String Calculator, tools/janus_calc/ROADMAP.md): J0 done (D989); J0b α_s test running on PC → Zenodo v1.0; next J1 any-potential, J3 third order, then J2/J4/J5/J6, goal J7 = full ASPIC model list matched and surpassed. Each Jl tick advances one J stage when no research result is waiting.
+- Track J (Janus String Calculator, tools/janus_calc/ROADMAP.md): v1.0 RELEASED 17 Nov (GitHub dannyeldridge54/janus-string-calculator, Zenodo DOI 10.5281/zenodo.24298159): Battery A n_s/r, Battery B α_s ≤0.30% (D1003), J3 third order, J4 reheating, J6 two-field incl. large f_NL (D999–D1001), J7a vs real ASPIC n_s ~200×/r ~330× more accurate (D1002); J7b (17 models) running; next J1 any-potential, J3 third order, then J2/J4/J5/J6, goal J7 = full ASPIC model list matched and surpassed. Each Jl tick advances one J stage when no research result is waiting.
 - Track S (string level, tools/serapis_calc/STRINGS_PLAN.md): S0–S3 done (D985); S3b shortcut failed (D987); next S4a–c (backreacted background → sign of χ's local mass, D988).
 - Track A (research map): D984 ρ/Kairos α_s on PC; D981c replication.
 - Track L (Janus-LT, late-universe twin; papers/JANUS_LT_PLAN.md): L0 background/distances/r_d vs CAMB → L1 any H(z) incl. TorsionΛ F(a) → L2 growth/σ8 → L3 DESI/SN/CMB likelihoods → L4 error bars → L5 fast fits → L6 TorsionΛ (R, σ8, BAO) → L7 benchmark vs CAMB/CLASS.

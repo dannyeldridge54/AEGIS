@@ -3,6 +3,7 @@ message: "If you use this software, please cite it as below."
 title: "Janus String Calculator: fast validated inflationary observables (single- and two-field, third order, reheating)"
 version: "1.0"
 date-released: 2026-11-17
+doi: "10.5281/zenodo.24298159"
 authors:
   - family-names: Eldridge
     given-names: Danny

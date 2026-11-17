@@ -1,4 +1,5 @@
 # Janus String Calculator (v1.0)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24298159.svg)](https://doi.org/10.5281/zenodo.24298159)
 **Author:** Danny Eldridge (dannyeldridge54@gmail.com) · AEGIS / SERAPIS project · built with Claude (Anthropic)
 
 A fast, pre-registered and validated calculator for inflationary observables: n_s, r, α_s, β_s for any single-field potential (third-order slow roll on the exact background), reheating → N* in one call, and two-field n_s, r and f_NL^local (δN). Includes the modular-invariant SERAPIS family (SL(2,ℤ) Eisenstein / j-invariant plateaus: SERAPIS-E, SERAPIS-ρ, Chronos, Kairos).
@@ -23,4 +24,4 @@ twofield.observe_multi(V, grad, hess, [phi1, phi2])               # two-field n_
 ```
 Needs numpy, scipy, sympy, mpmath; run from this folder (the modular functions, multi-field background and exact solver are bundled in tools/serapis_calc). Validation scripts in `validation/scripts` were run inside the AEGIS research repository and are included as provenance.
 **Integrity:** every file is listed with its SHA-256 in SHA256SUMS.txt.
-**License:** MIT (free to use, modify and redistribute with attribution). Please cite the Zenodo DOI.
+**License:** MIT (free to use, modify and redistribute with attribution). Please cite the Zenodo DOI: https://doi.org/10.5281/zenodo.24298159 (v1.0).
