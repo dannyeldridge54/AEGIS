@@ -1,0 +1,36 @@
+KMII a=2: no prediction from ASPIC (its own message: never-ending inflation for this alpha; V has a positive minimum 1-2/e) -- not scored
+LFI p=2        N*=50 (exact ns 0.959701 r 1.582e-01 a -8.176e-04) | dns J 8.1e-06 A 8.1e-04 | dr/r J 1.8e-04 A 2.0e-02 | da J 1.5e-08 A 4.6e-05 | J 1.7 ms
+LFI p=2        N*=60 (exact ns 0.966442 r 1.322e-01 a -5.662e-04) | dns J 4.7e-06 A 5.8e-04 | dr/r J 1.2e-04 A 1.7e-02 | da J 6.6e-08 A 2.7e-05 | J 1.2 ms
+LFI p=4        N*=50 (exact ns 0.939330 r 3.132e-01 a -1.248e-03) | dns J 2.4e-05 A 1.2e-03 | dr/r J 3.1e-04 A 2.0e-02 | da J 2.5e-06 A 1.1e-04 | J 1.0 ms
+LFI p=4        N*=60 (exact ns 0.949510 r 2.621e-01 a -8.617e-04) | dns J 1.4e-05 A 8.8e-04 | dr/r J 2.2e-04 A 1.7e-02 | da J 1.2e-06 A 6.6e-05 | J 1.2 ms
+LFI p=0.6667   N*=50 (exact ns 0.973299 r 5.309e-02 a -5.346e-04) | dns J 1.9e-06 A 5.3e-04 | dr/r J 8.8e-05 A 2.0e-02 | da J 4.7e-07 A 1.4e-05 | J 1.3 ms
+LFI p=0.6667   N*=60 (exact ns 0.977742 r 4.430e-02 a -3.715e-04) | dns J 1.1e-06 A 3.8e-04 | dr/r J 6.1e-05 A 1.7e-02 | da J 2.7e-07 A 8.2e-06 | J 1.2 ms
+SI             N*=50 (exact ns 0.961495 r 4.255e-03 a -7.471e-04) | dns J 8.5e-07 A 1.1e-03 | dr/r J 4.9e-05 A 5.4e-02 | da J 9.5e-07 A 1.8e-05 | J 1.3 ms
+SI             N*=60 (exact ns 0.967747 r 3.007e-03 a -5.236e-04) | dns J 4.6e-07 A 7.8e-04 | dr/r J 3.6e-05 A 4.7e-02 | da J 4.0e-07 A 1.1e-05 | J 1.3 ms
+NI f=5         N*=50 (exact ns 0.947585 r 4.926e-02 a -5.860e-04) | dns J 2.0e-06 A 6.9e-04 | dr/r J 5.3e-05 A 5.4e-02 | da J 5.7e-07 A 3.6e-05 | J 1.2 ms
+NI f=5         N*=60 (exact ns 0.952166 r 3.153e-02 a -3.553e-04) | dns J 7.8e-07 A 4.5e-04 | dr/r J 7.9e-06 A 5.5e-02 | da J 2.4e-07 A 2.0e-05 | J 1.1 ms
+NI f=10        N*=50 (exact ns 0.958965 r 1.217e-01 a -7.970e-04) | dns J 6.2e-06 A 8.3e-04 | dr/r J 1.7e-04 A 2.6e-02 | da J 2.9e-07 A 4.3e-05 | J 1.2 ms
+NI f=10        N*=60 (exact ns 0.965525 r 9.630e-02 a -5.471e-04) | dns J 3.3e-06 A 5.9e-04 | dr/r J 1.1e-04 A 2.4e-02 | da J 1.8e-07 A 2.5e-05 | J 1.3 ms
+ESI q=1        N*=50 (exact ns 0.962020 r 2.763e-03 a -7.298e-04) | dns J 7.3e-07 A 1.0e-03 | dr/r J 4.6e-05 A 5.3e-02 | da J 1.0e-06 A 1.6e-05 | J 1.2 ms
+ESI q=1        N*=60 (exact ns 0.968136 r 1.958e-03 a -5.129e-04) | dns J 3.9e-07 A 7.5e-04 | dr/r J 3.4e-05 A 4.6e-02 | da J 3.5e-07 A 1.0e-05 | J 1.2 ms
+MHI mu=10      N*=50 (exact ns 0.961180 r 7.645e-02 a -8.017e-04) | dns J 4.1e-06 A 8.9e-04 | dr/r J 1.4e-04 A 3.2e-02 | da J 6.8e-07 A 3.5e-05 | J 1.0 ms
+MHI mu=10      N*=60 (exact ns 0.967817 r 5.862e-02 a -5.540e-04) | dns J 2.2e-06 A 6.4e-04 | dr/r J 9.1e-05 A 2.9e-02 | da J 3.8e-07 A 2.0e-05 | J 1.3 ms
+RGI a=1        N*=50 (exact ns 0.969109 r 4.205e-03 a -6.226e-04) | dns J 5.4e-07 A 8.5e-04 | dr/r J 5.5e-05 A 4.1e-02 | da J 8.2e-07 A 1.3e-05 | J 1.3 ms
+RGI a=1        N*=60 (exact ns 0.974295 r 3.189e-03 a -4.320e-04) | dns J 2.9e-07 A 6.1e-04 | dr/r J 3.9e-05 A 3.6e-02 | da J 4.2e-07 A 8.2e-06 | J 1.1 ms
+DWI phi0=25    N*=50 (exact ns 0.960309 r 8.913e-02 a -7.427e-04) | dns J 4.3e-06 A 8.0e-04 | dr/r J 1.4e-04 A 3.1e-02 | da J 5.4e-07 A 3.5e-05 | J 1.1 ms
+DWI phi0=25    N*=60 (exact ns 0.966409 r 6.857e-02 a -5.052e-04) | dns J 2.2e-06 A 5.7e-04 | dr/r J 9.1e-05 A 2.8e-02 | da J 3.1e-07 A 2.1e-05 | J 1.8 ms
+SFI p=2 mu=20  N*=50 (exact ns 0.967100 r 4.920e-02 a -5.857e-04) | dns J 2.0e-06 A 6.2e-04 | dr/r J 8.9e-05 A 2.8e-02 | da J 5.6e-07 A 1.8e-05 | J 1.2 ms
+SFI p=2 mu=20  N*=60 (exact ns 0.971946 r 3.844e-02 a -4.028e-04) | dns J 1.0e-06 A 4.5e-04 | dr/r J 5.9e-05 A 2.6e-02 | da J 1.5e-07 A 1.1e-05 | J 1.1 ms
+LI a=0.3       N*=50 (exact ns 0.976603 r 1.464e-02 a -4.706e-04) | dns J 6.1e-07 A 4.9e-04 | dr/r J 5.8e-05 A 2.3e-02 | da J 4.5e-07 A 6.1e-06 | J 1.2 ms
+LI a=0.3       N*=60 (exact ns 0.980522 r 1.204e-02 a -3.268e-04) | dns J 3.4e-07 A 3.5e-04 | dr/r J 4.0e-05 A 2.0e-02 | da J 3.1e-07 A 3.8e-06 | J 1.1 ms
+ESI q=1.414    N*=50 (exact ns 0.961270 r 1.476e-03 a -7.522e-04) | dns J 7.6e-07 A 1.1e-03 | dr/r J 4.5e-05 A 5.6e-02 | da J 1.1e-06 A 1.8e-05 | J 1.2 ms
+ESI q=1.414    N*=60 (exact ns 0.967567 r 1.038e-03 a -5.274e-04) | dns J 3.0e-07 A 8.1e-04 | dr/r J 3.3e-05 A 4.9e-02 | da J 3.4e-07 A 1.1e-05 | J 1.2 ms
+NI f=7         N*=50 (exact ns 0.956475 r 9.067e-02 a -7.442e-04) | dns J 4.4e-06 A 8.0e-04 | dr/r J 1.4e-04 A 3.5e-02 | da J 3.7e-07 A 4.0e-05 | J 1.7 ms
+NI f=7         N*=60 (exact ns 0.962535 r 6.716e-02 a -4.968e-04) | dns J 2.2e-06 A 5.6e-04 | dr/r J 8.7e-05 A 3.3e-02 | da J 2.8e-07 A 2.3e-05 | J 1.1 ms
+LFI p=3        N*=50 (exact ns 0.949513 r 2.361e-01 a -1.032e-03) | dns J 1.5e-05 A 1.0e-03 | dr/r J 2.5e-04 A 2.0e-02 | da J 7.9e-07 A 7.7e-05 | J 1.1 ms
+LFI p=3        N*=60 (exact ns 0.957974 r 1.974e-01 a -7.135e-04) | dns J 8.7e-06 A 7.3e-04 | dr/r J 1.7e-04 A 1.7e-02 | da J 4.6e-07 A 4.5e-05 | J 1.2 ms
+LFI p=1        N*=50 (exact ns 0.969897 r 7.951e-02 a -6.051e-04) | dns J 3.1e-06 A 6.0e-04 | dr/r J 1.1e-04 A 2.0e-02 | da J 4.2e-07 A 2.1e-05 | J 1.2 ms
+LFI p=1        N*=60 (exact ns 0.974915 r 6.636e-02 a -4.200e-04) | dns J 1.8e-06 A 4.3e-04 | dr/r J 7.7e-05 A 1.7e-02 | da J 2.6e-07 A 1.3e-05 | J 1.2 ms
+32 points scored; Janus n_s better on 32/32
+medians: dns J 2.0e-06 A 7.1e-04 (max 2.4e-05 vs 1.2e-03) | dr/r 8.7e-05 vs 2.8e-02 | da 4.1e-07 vs 2.0e-05 | t 1.2 ms
+R0 PASS; C1 True C2 True C3 True C4 True -> JANUS MORE ACCURATE

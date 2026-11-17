@@ -10072,3 +10072,12 @@ Speed: base 305–718 s per point, Janus 2.8–6.6 ms → ~1.5×10⁵ faster.
 [computed] (field_tests/results/pc/alpha_wide_d981c.txt, sha256 fe68ce0c…; PC run 02:52–04:18Z) D981c replication: SERAPIS-E α_W(5000) = −9.8974e-4 vs the other session's −9.8782e-4; Chronos −9.9429e-4 vs −9.9405e-4; both converged = True, bias_ok = True, inside the published bands. The two independent runs differ by ≤ 2e-6 (0.2 %), the size of the bd scatter; verdict replicated (D981 DEVIATIONS D3 disclosure stands).
 Consequence: J0b DONE. With Battery A (D990, n_s/r), J3 (D994), J4 (D995) and Battery B, the v1.0 release package is complete; release tick proceeds (no outreach).
 MAP: none
+
+## D1004 (track J, locked PREREG_J7b_aspic_wide, DEVIATIONS D1 = verdict-print bug only): Janus vs the real ASPIC on 17 models / 32 scored points against exact Mukhanov–Sasaki with a convergence-checked α_s reference: JANUS MORE ACCURATE on all three observables — n_s median error 2.0e-6 vs 7.1e-4 (~350×; Janus better on 32/32, max 2.4e-5 vs 1.2e-3), r 8.7e-5 vs 2.8e-2 (~320×), α_s 4.1e-7 vs 2.0e-5 (~50×)
+[computed] (field_tests/results/janus_j7b_wide.txt; R0 janus_j7b_r0.txt; ASPIC raw janus_j7b_aspic_raw.txt; data janus_j7b.part.jsonl)
+- Models: LFI p = 2, 4, 2/3, 3, 1; SI; NI f = 5, 7, 10; ESI q = 1, √2; MHI μ = 10; RGI α = 1; DWI φ0 = 25; SFI p = 2 μ = 20; LI α = 0.3 (N* = 50, 60). KMII α = 2: ASPIC returns no prediction (its own "never ending inflation" message; V has a positive minimum 1 − 2/e) — listed, not scored.
+- R0 (α_s reference): 9 k-points on [−1, 1], bd = 1000 vs [−0.5, 0.5], bd = 2000 agree to 4.5e-8 (LFI p = 2) and 7.8e-7 (SI) — passes 2e-5; this resolves the J7a α_s problem (D1002: 5 points over ±0.1 at bd = 200 had ~1e-3 ripple).
+- Largest ASPIC errors are on plateaus (r: 4–6 % on SI, ESI, NI f = 5, RGI) and steep monomials (n_s ~1e-3 for p = 3, 4): its pivot is placed on the leading-order slow-roll trajectory with the εV = 1 end. Janus's worst n_s error (2.4e-5, LFI p = 4 at N* = 50) is where ε is largest.
+- Speed: Janus 1.2 ms median for any V(φ); ASPIC 0.01–0.15 µs from hand-written closed forms; exact MS ~0.4–1 s.
+Consequence: J7 core claim (more accurate than ASPIC on n_s, r, α_s across its standard model classes, scored against the exact solution) holds on 17 models; v1.1 will carry J7b. Next J: J7c reheating route (ASPIC foo_x_rrad vs Janus observe at the same ln R_rad), then extend toward ASPIC's full ~75-model list (two-parameter models).
+MAP: none

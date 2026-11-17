@@ -1665,3 +1665,6 @@ Touches: none.
 
 ## D1003: Battery B (D989) VALIDATED 8/8, α_s ≤ 0.3 %; D981c replicates the α_s convergence verdict
 - [computed] Janus α_s vs exact solver ≤ 0.30 % at ~1.5e5× speed; independent PC rerun matches the other session to 2e-6.
+
+## D1004: Janus vs ASPIC on 17 models (J7b): n_s ~350×, r ~320×, α_s ~50× more accurate vs exact MS
+- [computed] 32/32 points Janus better on n_s; α_s reference convergence-checked (R0).
