@@ -77,3 +77,9 @@ Source of truth v5.3 on Zenodo (DOI 10.5281/zenodo.24226521). TWIST-I: N* 56.7, 
 - Pending: D981b (wide-grid α_s), D982c (leptogenesis Boltzmann) reruns after the runner was killed (DEVIATIONS written); D984-lock (ρ/Kairos α_s) to the PC if D981 passes. Outreach draft to string theorists updated (not sent).
 - D986: leptogenesis Boltzmann (locked D982, after DEVIATIONS D1–D3): κ = 0.939 everywhere; instantaneous yields stand; lepto_rho → computed; c = 0.3/M_H = 1e12 fails by ×1.22.
 - D987: S3b shortcut failed (trace oscillates in sign at t ≲ 0.027, closed-string tadpole region); D985 (large T², heavy T⁴ windings) stands; small-T⁴-radius sign needs the transverse channel.
+
+## Standing Jl tracks (from 16 Nov 2026 night)
+- Track J (Janus String Calculator, tools/janus_calc/ROADMAP.md): J0 done (D989); J0b α_s test running on PC → Zenodo v1.0; next J1 any-potential, J3 third order, then J2/J4/J5/J6, goal J7 = full ASPIC model list matched and surpassed. Each Jl tick advances one J stage when no research result is waiting.
+- Track S (string level, tools/serapis_calc/STRINGS_PLAN.md): S0–S3 done (D985); S3b shortcut failed (D987); next S4a–c (backreacted background → sign of χ's local mass, D988).
+- Track A (research map): D984 ρ/Kairos α_s on PC; D981c replication.
+- Outreach: on hold 1–2 weeks (Danny).
