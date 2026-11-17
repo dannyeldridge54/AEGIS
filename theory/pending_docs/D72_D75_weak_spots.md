@@ -10853,3 +10853,15 @@ Lock a0e8e34 pushed before run; result field_tests/results/a1c_nlo.txt.
   - D1087's rigid-shift estimate (CMB band up to about 2.84 TeV, marginal for the 2.842 TeV thermal wino at high f_eff) is now backed by a real potential within ±0.03 TeV. Not recomputed here.
 VERDICT: A1c NOT VALIDATED as locked (convention unresolved); NLO module working to ~1%.
 MAP: none
+
+## D1092 (CENTRE, Djl loop (B), literature check + arithmetic): ACT DR6 re-fetched — N_eff = 2.86 ± 0.13 (2.89 ± 0.11 with He+D); the standard 3.044 already sits 1.4σ high, so a populated U(1) τ=i hidden sector is fine (1.8–1.9σ) but SU(2) (2.7–2.9σ) and SU(2)+gaugino (3.7–4.1σ) are in tension — D1088's reading confirmed and sharpened
+- Source (quoted, ACT DR6 extended models, arXiv:2503.14454 abstract): N_eff = 2.86 ± 0.13, and with primordial He and D abundances 2.89 ± 0.11. The data combination is not named in the abstract; it is the paper's headline combination.
+- Pulls (3.044 + ΔN − N_eff)/σ, arithmetic. The first number is against 2.86 ± 0.13, the second against 2.89 ± 0.11:
+  - ΔN = 0 (ρ branch; τ=i unpopulated): +1.42σ / +1.40σ
+  - U(1), 0.054: +1.83σ / +1.89σ
+  - SU(2), 0.161: +2.65σ / +2.86σ (TENSION)
+  - SU(2)+gaugino, 0.301: +3.73σ / +4.14σ (EXCLUDED at > 3σ)
+- Correction to D1088: its "ΔN ≲ 0.08 at 2σ" estimate was measured from 3.044, but ACT's central value is below 3.044. The actual 2σ upper edge is N_eff < 3.12 / 3.11, i.e. ΔN < 0.076 / 0.066. Same conclusion, now quantified.
+- Reading: ACT mildly prefers LESS radiation than the Standard Model. Every positive ΔN costs, and SERAPIS's cleanest branch, ρ with ΔN = 0, is the least penalised.
+VERDICT: CONFIRMED — the τ=i branch survives only if its enhanced-symmetry sector is unpopulated, massive, or at most U(1)-sized.
+MAP: none
