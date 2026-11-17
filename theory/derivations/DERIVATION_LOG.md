@@ -1799,3 +1799,4 @@ Touches: none.
 ## D1174: JMF5 — with MMC's derivative code fixed, Janus-MF matches on both non-separable models (|Δn_s| ≤ 9.4e-6)
 ## D1175: LOCKBENCH L-8 — ENV.lock pin + selftest (8/8 PASS on cloud)
 ## D1176: J13 — Janus accuracy holds at N* 45/55/65 on 32 ASPIC models (96 pts; median dns 1.4e-6)
+## D1177: LOCKBENCH L-7 — results ledger dashboard (D1160–D1176 verdicts + CubeMind arms); LOCKBENCH L-1…L-8 complete

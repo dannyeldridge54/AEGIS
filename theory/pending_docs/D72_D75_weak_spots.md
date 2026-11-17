@@ -11954,3 +11954,10 @@ Lock PREREG_J13_pulse_nstar (moved PC → cloud, same script). 96 points vs exac
 D1035's suspect-reference outlier, reported as locked), median |Δr/r| 7.2e-5, median |Δα_s| 5.5e-7. C1, C2, C3 all True → HOLDS.
 With J10 (D1148, LFI-type models, 48 points) Janus's accuracy now holds at pivots 45–65 across the full scored ASPIC set.
 MAP: none
+
+## D1177 — TOOLS — LOCKBENCH L-7: results ledger dashboard [built; page check PASSED]
+Dashboard artifact "AEGIS Results Ledger" (claude.ai artifact 7iwtR7STB4vHVfP3xyJg5w, private to Danny): today's D-notes D1160–D1176 with verdicts
+(7 passed, 6 tools built, 2 failed and kept on record), each number traced to its source file; CubeMind eval-arm progress (items per arm of 300).
+Data: papers/dash/dnotes_2026-11-17.csv and cubemind_arms_2026-11-17.csv (attached files, not live — updated by hand each ledger refresh).
+LOCKBENCH plan L-1…L-8 is now complete.
+MAP: none

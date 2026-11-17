@@ -326,3 +326,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1174: when you patch a reference, commit the patch and its hash in the lock, and downgrade the label (agrees, not validated).
 - D1175: pin the environment the results were made in, and make a mismatch loud rather than silent.
 - D1176: test accuracy away from the pivot you tuned on — moving N* by ±10 is a cheap guard against a lucky pivot.
+- D1177: a ledger people can see beats one they have to grep — failures show next to passes, with their numbers.
