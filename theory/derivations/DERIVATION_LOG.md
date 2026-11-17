@@ -1749,3 +1749,5 @@ Touches: none.
 ## D1031: R8 — L = finite part of E(τ, s → 1) (Kronecker): E = π/(s−1) + πL + 2πγ − π ln 2 + O(s−1)
 
 ## D1032: L5 — SERAPIS ΛCDM + Σm_ν 0.0587 eV: Δχ² = 2.37 vs Σm_ν = 0 (BAO + compressed CMB); consistency check only
+
+## D1033: S4c2 — Prüfer KK probe validated on flat interval; 6D zero mode + positive tower, m₁² 0.82→0.78 not yet converged (locked NOT VALID)
