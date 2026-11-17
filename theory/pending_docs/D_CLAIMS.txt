@@ -346,3 +346,4 @@ D1059  2026-11-17T11:53Z  Djl: A3c neutron stars NOT VALIDATED (N4 1.1e-5); EoS 
 D1060  2026-11-17T11:56Z  Djl: A7d SERAPIS neutrino mass in sigma8 and cluster counts
 D1061  2026-11-17T11:58Z  Djl: A5a Milky Way potential and orbits validated vs galpy; local DM density for the wino
 D1062  2026-11-17T12:01Z  Djl: A2c GW amplitude, SNR, horizon and BNS range vs LALSuite
+D1063  2026-11-17T12:04Z  Djl: A2c2 cosmological horizon and range for A+, ET, CE
