@@ -1,0 +1,5 @@
+central: r_s=12.4 kpc rho_sun=0.270 GeV/cm3 J/J_bench=0.427; LO f_max [0.218,0.240] FAIL; NLO f_max [0.241,0.264] BAND-DEP
+M-1s: r_s=11.2 kpc rho_sun=0.223 GeV/cm3 J/J_bench=0.340; LO f_max [0.245,0.269] BAND-DEP; NLO f_max [0.270,0.296] PASS
+M+1s: r_s=13.5 kpc rho_sun=0.312 GeV/cm3 J/J_bench=0.507; LO f_max [0.200,0.220] FAIL; NLO f_max [0.221,0.242] FAIL
+c-1s: r_s=18.0 kpc rho_sun=0.204 GeV/cm3 J/J_bench=0.151; LO f_max [0.368,0.404] PASS; NLO f_max [0.405,0.445] PASS
+c+1s: r_s=8.6 kpc rho_sun=0.344 GeV/cm3 J/J_bench=1.246; LO f_max [0.128,0.140] FAIL; NLO f_max [0.141,0.155] FAIL
