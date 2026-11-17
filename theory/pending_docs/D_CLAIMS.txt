@@ -284,3 +284,4 @@ D997  2026-11-17T04:02Z  Janus-LT L0a: background and distances match CAMB to 5e
 D998  2026-11-17T04:07Z  Dp: mnu recheck after D909 + 2026 Sigma m_nu data
 D999  2026-11-17T04:14Z  J6 two-field deltaN: NOT VALIDATED (T1 r order mismatch); T2-T4 pass
 D1000  2026-11-17T04:17Z  J6b NLO deltaN r VALIDATED; twofield module
+D1001  2026-11-17T04:21Z  J6c/J6d large f_NL: Janus deltaN vs Byrnes-Choi-Hall Eq21
