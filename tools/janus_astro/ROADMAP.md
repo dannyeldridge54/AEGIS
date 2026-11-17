@@ -1,4 +1,4 @@
-# Janus-Astro — astrophysics toolbox (track X)
+# Kairos Cosmos — astrophysics module (was Janus-Astro; track X; names: docs/TOOL_NAMES.md)
 Goals (Danny, 17 Nov 2026): an astrophysics calculator built "like we did Janus" — every result validated against the field's gold-standard code or exact solution, faster and with error bars, then turned on AEGIS's own predictions and data.
 Pattern (same as Janus / Janus-LT): fast route + independent second route + gold-standard referee; every stage locked before running (PREREG + sha256 pushed), D-note, no reruns to chase; Zenodo versions only on Danny's "Publish".
 
