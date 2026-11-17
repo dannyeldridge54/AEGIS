@@ -12464,4 +12464,27 @@ wiring checked first — direct χ² at the chain's first row 1476.02 = Cobaya's
 Posterior (30% burn-in): w0 = −0.842 ± 0.053 (L7 MAP −0.853 ± 0.053), wa = −0.565 ± 0.213 (L7 −0.518 ± 0.200) → C1, C2, C3 PASS.
 Chain χ²: min 1423.07 (L7 1422.93), weighted median 1426.93 (≈ min + 4 for 5 free parameters — good mixing).
 With L10 (D1200, profile) Janus-LT's joint BAO+CMB+SN w0wa result now has three agreeing estimates: Hessian, profile grid, MCMC.
+### D1204 — Candidate replacement potential arXiv:2407.12551 (Klačka, Šturc, Puha 2024): it gets the local slope right but is not a suitable Mapper default (2026-11-17)
+- [LEFT · literature, fetched] **Model:**
+  - Baryons: three Miyamoto–Nagai components. Thin disc 3.364e10 M☉ (a = 4.51, b = 0.21 kpc); thick disc 4.157e10 (a = 2.34, b = 0.68); bulge 0.907e10 (a = 0, b = 0.30).
+  - Dark matter: NO halo profile. The "DM" acceleration comes from the McGaugh 2016 radial-acceleration relation, g_DM = g_bar/(exp(√(g_bar/g†)) − 1) with g† = 1.2e-10 m/s², treated as spherical.
+  - Fit to the Eilers+2019 rotation curve over 5.7–15.7 kpc, with R0 = 8.247 kpc (GRAVITY).
+- **Results:**
+  - v0 = 228.8 ± 0.2 km/s; dv_c/dR = −1.72 km/s/kpc (Eq. 35, matching Eilers);
+  - A = 14.73, B = −13.01 km/s/kpc;
+  - ρ_DM(R0) = 8.41e-3 M☉/pc³ ≈ 0.32 GeV/cm³; M_vir = 1.34e12 M☉.
+  - No public implementation is visible in the fetched text (truncated at 100k characters).
+- **Against Horta+2026 (my arithmetic):**
+  - v_c −1.8σ;
+  - κ = 38.0 (+1.4σ), better than McMillan17's +5.4σ;
+  - Ω = A − B = 27.7 (−7.6σ, because Horta's −0.1 error is tiny; it is 2.7% low).
+- **Verdict:** not a Mapper default.
+  - (i) Its dark matter is a phenomenological RAR (MOND-like) term rather than a halo, so it cannot serve the J-factor/halo work and mixes frameworks.
+  - (ii) Its v0 and Ω are worse than McMillan17 against Horta.
+  - (iii) There is no ready implementation.
+  - It does show that a slightly falling local curve (−1.7) with v0 ≈ 229–235 is easy to fit with standard baryons, which reinforces D1203: McMillan17's rising local slope is a model artefact.
+- **Practical decision:** McMillan17 stays the default, with the D1203 limitation recorded.
+  - A better option for later is a halo-based potential refit to Eilers+2019 or Horta+2026, e.g. an NFW/Einasto halo plus McMillan17 baryons fitted to v_c(R) over 5–15 kpc.
+  - That would be a locked fit once the PC can run it (or here, cheaply).
+VERDICT: candidate rejected as the default. McMillan17 is retained. A halo-based refit to Eilers/Horta is noted as the upgrade path.
 MAP: none
