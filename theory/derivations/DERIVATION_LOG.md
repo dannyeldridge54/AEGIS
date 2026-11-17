@@ -1808,3 +1808,4 @@ Touches: none.
 ## D1213: L12 — adding DESI DR1 fσ8 + Planck A_s prior leaves w0wa unchanged (w0 −0.852, wa −0.530), fσ8 χ² 3.76/6, ΔχΛCDM 7.87
 ## D1214: S4e2 NOT RUN (2-h limit); its V2 part (printed before the limit, informational) shows FD and Prüfer agree to 1.3e-7 — S4e's −4% vs BTR is not a solver error
 ## D1215: J7k — HI scored (Janus better 2/2, ~1000×); RPQTI listed (ASPIC Fortran crash), KMIII listed (2-h limit); pulses 208/208
+## D1216: S4e3 — four locked warp normalisations (as-is, warp max, midpoint, Planck-weighted) give m L/π 0.93–1.01 / 2.04–2.21; none matches BTR's 0.97/2.13 → NOT EXPLAINED (post-hoc)

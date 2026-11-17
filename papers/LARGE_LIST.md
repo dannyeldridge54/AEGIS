@@ -15,7 +15,7 @@ Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN
 10. L7 uses DESI DR2 BAO already (tools/janus_lt/desi.py, arXiv 2503.14738 Table IV) — DONE (D1042)
 ## AEGIS — strings / KALUZA
 11. S4E2 independent check of S4e masses — NOT RUN (timeout; V2 informational) (D1214)
-12. 6D step for S4e with a Prüfer solver + BTR definition-of-L check — OPEN (next; own lock)
+12. S4e normalisation convention — DONE (D1216: 4 locked conventions, NOT EXPLAINED; quote ratios + C0). 6D masses step still OPEN
 ## LOCKBENCH / tools
 13. Selftest on the PC env (report mismatches vs ENV.lock) — QUEUED on PC (SELFTEST.job)
 14. Ledger upkeep helper (lists missing D-notes; verdicts stay hand-curated — auto-parsing misread lines) — DONE (papers/dash/make_csv.py)

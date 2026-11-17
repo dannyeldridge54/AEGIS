@@ -12617,3 +12617,13 @@ listed (ASPIC reheating driver gave no result). RPQTI: listed — ASPIC itself c
 an ASPIC bug, not ours. KMIII: listed — 2-h per-model limit (as in J7h's 20-min limit; the model's integration is too slow at these parameters).
 Pulse totals (J7f + J7g + J7h + J7k): Janus more accurate on 206 + 2 = 208/208 points. Per the lock, no further reruns for these three.
 MAP: none
+
+## D1216 — DEEP — S4e3: does a warp-factor normalisation explain S4e's common −4% vs BTR? [NOT EXPLAINED; post-hoc]
+Lock: field_tests/rules/PREREG_S4e3_mass_normalisation.md (committed before computing). Script theory/strings/s4e3_norm.py; result field_tests/results/s4e3_norm.txt.
+Fact used (analytic): shifting A → A + a rescales the η-frame eigenvalue m² by e^{2a} and leaves L = ∫e^B dy fixed, so m L scales by e^{a}; quoting masses
+with e^{A}=1 at a reference point multiplies S4e's m L/π by e^{−A_ref}. Needed factor: 1.041 (mode 1), 1.044 (mode 2), i.e. A_ref ≈ −0.040 to −0.043.
+Results (BC D, S4e cutoffs, L = 1.695796): C0 as-is [0.9318, 2.0403]; C1 warp max (A_ref −0.0278) [0.9580, 2.0977]; C2 proper-length midpoint
+(A_ref −0.0526) [0.9821, 2.1504]; C3 9D-Planck-weighted (A_ref −0.0805) [1.0098, 2.2112]. None within ±0.01 of (0.97, 2.13) for both modes.
+Verdict: NOT EXPLAINED by these four conventions. The needed shift sits between C1 and C2, so a convention of this kind is plausible, but we did not find
+one stated in BTR, and fitting a reference point to the target would be curve-fitting. S4e stays NOT VALIDATED vs BTR; the ratio m₂/m₁ (2.190 vs 2.196)
+and the solver (D1214, two methods agree to 1e-7) are unaffected. Next: our 6D masses are quoted as ratios and in the C0 convention, stated explicitly.
