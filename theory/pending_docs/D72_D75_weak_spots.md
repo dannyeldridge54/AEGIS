@@ -10926,3 +10926,21 @@ MAP: none
 - Verdict: no SERAPIS tension. The D/H 1.7σ is a nuclear-physics open item shared with ΛCDM.
 VERDICT: SM-level, not model-specific; D1082 code-spread statement refined (stale PArthENoPE table).
 MAP: none
+
+## D1097 (CENTRE, Djl loop (C), locked PREREG_C4): halo M200 — MWPotential2014's halo (0.71e12 M_⊙) sits between Bird+2022's K-giant (0.55) and BHB (1.00) NFW fits; s = 0.8–1.0 CONSISTENT, s = 1.2 in 2.2σ TENSION with the K giants, s = 1.5 EXCLUDED (4.0σ) — the halo-amplitude window narrows to ≈ 0.8–1.1
+Lock pushed before run; result field_tests/results/c4_m200.txt.
+- M200 (200 ρ_crit, H0 = 67.66; the 200-critical definition is assumed) for s = 0.8 / 1.0 / 1.2 / 1.5: 0.541 / 0.710 / 0.885 / 1.156 e12.
+- Pulls (KG, BHB):
+  - s = 0.8: −0.08, −1.39
+  - s = 1.0: +1.07, −0.88
+  - s = 1.2: +2.23, −0.35 → TENSION
+  - s = 1.5: +4.04, +0.23 → EXCLUDED
+- Disk + bulge add 0.07e12 (excluded from the halo M200, as locked).
+- The two tracers disagree with each other (KG 0.55 vs BHB 1.00). The K giants, with tighter errors, drive the bound.
+- Combined with D1089 (dispersions) and D1093 (enclosed mass at 52–73 kpc, which allows 0.8–1.2): the extrapolated M200 is the tightest handle, favouring s ≈ 0.8–1.1.
+- W2 consequences:
+  - The W2 wino conclusions are unaffected: ≤ 1 TeV passes and 1.85 TeV fails at every s.
+  - The ρ_⊙ range narrows to about 0.23–0.31 GeV/cm³ [estimate: s-linear interpolation of W2's 0.229 / 0.286 / 0.344].
+- Caveats: M200 is an extrapolation of NFW fits beyond the data; scale radius fixed; definition assumed.
+VERDICT: CONSISTENT s = 0.8–1.0; TENSION 1.2; EXCLUDED 1.5.
+MAP: none
