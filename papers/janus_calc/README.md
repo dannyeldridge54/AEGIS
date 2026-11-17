@@ -1,4 +1,4 @@
-# Janus String Calculator (v1.0)
+# Janus String Calculator (v1.1)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24298159.svg)](https://doi.org/10.5281/zenodo.24298159)
 **Author:** Danny Eldridge (dannyeldridge54@gmail.com) · AEGIS / SERAPIS project · built with Claude (Anthropic)
 
@@ -14,6 +14,9 @@ A fast, pre-registered and validated calculator for inflationary observables: n_
 - **J6, two fields (PREREG_J6, J6b, J6c, J6d):** f_NL vs the Vernizzi–Wands analytic result to 0.6%; next-to-leading-order r vs the single-field calculator to 9×10⁻⁵; large non-Gaussianity (|f_NL| up to 81, Byrnes–Choi–Hall Example A) to 0.4–6% on uniform-density slices. Two locks did NOT pass as written and are kept, with the reasons: J6 (r compared at the wrong slow-roll order; fixed by J6b) and J6c (analytic formula compared at ε = 1 where it does not apply; J6d compares where it does).
 - **J7a, head-to-head with ASPIC (PREREG_J7a):** ASPIC (github.com/cosmicinflation/aspic, commit 75400d2) built from source and run through its documented route; both codes scored against the exact Mukhanov–Sasaki solver on 14 points (power-law p = 2, 4, 2/3; Starobinsky; natural f = 5, 10; ESI; N* = 50, 60). Median |Δn_s|: Janus 3.8×10⁻⁶, ASPIC 7.7×10⁻⁴ (Janus better on all 14); median |Δr/r|: 7.5×10⁻⁵ vs 2.5×10⁻². ASPIC is faster per point (closed forms, ~0.1 µs, one hand-coded module per model); Janus takes any V(φ) at ~1 ms. The α_s part of J7a was uninformative (reference too coarse) and is being redone in J7b. `validation/results/janus_j7a_*.txt`.
 
+- **J7b, ASPIC on 17 models (PREREG_J7b):** 32 scored points (power-law p = 2, 4, 2/3, 3, 1; Starobinsky; natural f = 5, 7, 10; ESI q = 1, √2; MHI; RGI; double-well; small-field; logamediate), α_s reference convergence-checked first (R0). Median errors vs exact Mukhanov–Sasaki: n_s 2.0×10⁻⁶ (Janus) vs 7.1×10⁻⁴ (ASPIC), r 8.7×10⁻⁵ vs 2.8×10⁻², α_s 4.1×10⁻⁷ vs 2.0×10⁻⁵; Janus better on n_s at 32/32. (KMII α = 2: ASPIC reports never-ending inflation; listed, not scored.) `validation/results/janus_j7b_*.txt`.
+- **J7c2, ASPIC's reheating route (PREREG_J7c2):** same ln R_rad (0, −10) on 16 models; reference = exact Martin–Ringeval matching (arXiv:1004.5525 Eq. 15) with exact-MS amplitude normalisation. Median errors: n_s 2.6×10⁻⁶ vs 6.7×10⁻⁴, r 9.7×10⁻⁵ vs 2.5×10⁻², α_s 5.5×10⁻⁷ vs 2.0×10⁻⁵; ASPIC's pivot is 0.16 e-folds off (median), Janus's 1×10⁻⁴. The first lock (J7c) had a derivation slip in its own matching equation and is kept as VOID with the reason. `validation/results/janus_j7c2_reheat.txt`.
+
 **Use:**
 ```python
 from janus_calc import models, core, anyV, observe, twofield
@@ -24,4 +27,4 @@ twofield.observe_multi(V, grad, hess, [phi1, phi2])               # two-field n_
 ```
 Needs numpy, scipy, sympy, mpmath; run from this folder (the modular functions, multi-field background and exact solver are bundled in tools/serapis_calc). Validation scripts in `validation/scripts` were run inside the AEGIS research repository and are included as provenance.
 **Integrity:** every file is listed with its SHA-256 in SHA256SUMS.txt.
-**License:** MIT (free to use, modify and redistribute with attribution). Please cite the Zenodo DOI: https://doi.org/10.5281/zenodo.24298159 (v1.0).
+**License:** MIT (free to use, modify and redistribute with attribution). Please cite the Zenodo DOI: https://doi.org/10.5281/zenodo.24298159 (v1.0); v1.1: https://doi.org/10.5281/zenodo.24298903.

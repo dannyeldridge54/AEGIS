@@ -1,0 +1,37 @@
+VOID — wrong matching coefficient in the lock (see PREREG_J7c_aspic_reheating_DEVIATIONS D1); kept for the record.
+N_0 (ASPIC Nzero) = -61.519971; KMII a=2 excluded (no ASPIC prediction, J7b)
+LFI p=2        lnRrad=-10: exact dN* 52.4742 (ASPIC 47.2424, Janus 52.4742) ns 0.961609 | dns J 7.0e-06 A 3.4e-03 | dr/r J 1.6e-04 A 8.6e-02 | da J 1.0e-07 A 1.2e-04
+LFI p=2        lnRrad=+0: exact dN* 62.5182 (ASPIC 57.2424, Janus 62.5182) ns 0.967799 | dns J 4.1e-06 A 2.3e-03 | dr/r J 1.1e-04 A 7.2e-02 | da J 6.2e-08 A 7.0e-05
+LFI p=4        lnRrad=-10: exact dN* 53.3234 (ASPIC 48.2164, Janus 53.3234) ns 0.943139 | dns J 2.0e-05 A 4.8e-03 | dr/r J 2.8e-04 A 8.1e-02 | da J 2.1e-06 A 1.2e-04
+LFI p=4        lnRrad=+0: exact dN* 63.4096 (ASPIC 58.2628, Janus 63.4096) ns 0.952243 | dns J 1.2e-05 A 3.3e-03 | dr/r J 1.9e-04 A 6.8e-02 | da J 1.1e-06 A 7.2e-05
+LFI p=0.6667   lnRrad=-10: exact dN* 51.7565 (ASPIC 46.3039, Janus 51.7565) ns 0.974203 | dns J 1.7e-06 A 2.4e-03 | dr/r J 8.2e-05 A 9.3e-02 | da J 4.0e-07 A 1.1e-04
+LFI p=0.6667   lnRrad=+0: exact dN* 61.7714 (ASPIC 56.2715, Janus 61.7714) ns 0.978380 | dns J 1.0e-06 A 1.7e-03 | dr/r J 5.8e-05 A 7.7e-02 | da J 2.1e-07 A 6.2e-05
+SI             lnRrad=-10: exact dN* 51.6020 (ASPIC 45.5292, Janus 51.6020) ns 0.962655 | dns J 7.6e-07 A 3.6e-03 | dr/r J 4.6e-05 A 1.9e-01 | da J 8.8e-07 A 1.7e-04
+SI             lnRrad=+0: exact dN* 61.6031 (ASPIC 55.4372, Janus 61.6031) ns 0.968565 | dns J 3.6e-07 A 2.5e-03 | dr/r J 3.4e-05 A 1.6e-01 | da J 6.2e-07 A 1.0e-04
+NI f=5         lnRrad=-10: exact dN* 52.2616 (ASPIC 46.7746, Janus 52.2616) ns 0.948831 | dns J 1.6e-06 A 2.5e-03 | dr/r J 4.1e-05 A 2.2e-01 | da J 3.5e-07 A 1.3e-04
+NI f=5         lnRrad=+0: exact dN* 62.2732 (ASPIC 56.6756, Janus 62.2732) ns 0.952929 | dns J 6.4e-07 A 1.5e-03 | dr/r J 7.3e-07 A 2.1e-01 | da J 2.4e-07 A 7.4e-05
+NI f=10        lnRrad=-10: exact dN* 52.4127 (ASPIC 47.1245, Janus 52.4127) ns 0.960783 | dns J 5.3e-06 A 3.3e-03 | dr/r J 1.5e-04 A 1.1e-01 | da J 2.5e-07 A 1.3e-04
+NI f=10        lnRrad=+0: exact dN* 62.4454 (ASPIC 57.0996, Janus 62.4454) ns 0.966801 | dns J 2.9e-06 A 2.3e-03 | dr/r J 1.0e-04 A 9.7e-02 | da J 9.4e-08 A 7.4e-05
+ESI q=1        lnRrad=-10: exact dN* 51.4985 (ASPIC 45.3342, Janus 51.4985) ns 0.963082 | dns J 6.6e-07 A 3.6e-03 | dr/r J 4.4e-05 A 2.0e-01 | da J 9.2e-07 A 1.7e-04
+ESI q=1        lnRrad=+0: exact dN* 61.4992 (ASPIC 55.2421, Janus 61.4992) ns 0.968886 | dns J 3.3e-07 A 2.5e-03 | dr/r J 3.3e-05 A 1.7e-01 | da J 2.8e-07 A 1.0e-04
+MHI mu=10      lnRrad=-10: exact dN* 52.2807 (ASPIC 46.8866, Janus 52.2807) ns 0.962919 | dns J 3.5e-06 A 3.4e-03 | dr/r J 1.2e-04 A 1.3e-01 | da J 5.0e-07 A 1.4e-04
+MHI mu=10      lnRrad=+0: exact dN* 62.3008 (ASPIC 56.8394, Janus 62.3008) ns 0.969039 | dns J 1.9e-06 A 2.4e-03 | dr/r J 8.4e-05 A 1.1e-01 | da J 2.7e-07 A 8.1e-05
+RGI a=1        lnRrad=-10: exact dN* 51.5009 (ASPIC 45.4246, Janus 51.5009) ns 0.970016 | dns J 5.7e-07 A 3.0e-03 | dr/r J 5.2e-05 A 1.6e-01 | da J 7.1e-07 A 1.5e-04
+RGI a=1        lnRrad=+0: exact dN* 61.5020 (ASPIC 55.3510, Janus 61.5020) ns 0.974928 | dns J 2.7e-07 A 2.1e-03 | dr/r J 3.7e-05 A 1.3e-01 | da J 4.1e-07 A 8.7e-05
+DWI phi0=25    lnRrad=-10: exact dN* 52.2913 (ASPIC 46.9339, Janus 52.2913) ns 0.961924 | dns J 3.7e-06 A 3.1e-03 | dr/r J 1.2e-04 A 1.3e-01 | da J 2.5e-07 A 1.3e-04
+DWI phi0=25    lnRrad=+0: exact dN* 62.3149 (ASPIC 56.8920, Janus 62.3149) ns 0.967528 | dns J 1.9e-06 A 2.1e-03 | dr/r J 8.3e-05 A 1.1e-01 | da J 3.0e-07 A 7.6e-05
+SFI p=2 mu=20  lnRrad=-10: exact dN* 51.8738 (ASPIC 46.3967, Janus 51.8738) ns 0.968154 | dns J 1.8e-06 A 2.6e-03 | dr/r J 8.2e-05 A 1.2e-01 | da J 5.1e-07 A 1.2e-04
+SFI p=2 mu=20  lnRrad=+0: exact dN* 61.8871 (ASPIC 56.3466, Janus 61.8871) ns 0.972680 | dns J 9.4e-07 A 1.8e-03 | dr/r J 5.5e-05 A 1.1e-01 | da J 1.5e-07 A 6.8e-05
+LI a=0.3       lnRrad=-10: exact dN* 51.4653 (ASPIC 45.7155, Janus 51.4653) ns 0.977272 | dns J 5.3e-07 A 2.3e-03 | dr/r J 5.5e-05 A 1.1e-01 | da J 4.4e-07 A 1.1e-04
+LI a=0.3       lnRrad=+0: exact dN* 61.4694 (ASPIC 55.6669, Janus 61.4694) ns 0.980990 | dns J 3.3e-07 A 1.6e-03 | dr/r J 3.9e-05 A 8.9e-02 | da J 2.2e-07 A 6.4e-05
+ESI q=1.414    lnRrad=-10: exact dN* 51.4511 (ASPIC 45.1353, Janus 51.4511) ns 0.962331 | dns J 6.9e-07 A 3.8e-03 | dr/r J 4.3e-05 A 2.1e-01 | da J 9.0e-07 A 1.8e-04
+ESI q=1.414    lnRrad=+0: exact dN* 61.4515 (ASPIC 55.0404, Janus 61.4515) ns 0.968314 | dns J 3.1e-07 A 2.7e-03 | dr/r J 3.2e-05 A 1.7e-01 | da J 4.8e-07 A 1.1e-04
+NI f=7         lnRrad=-10: exact dN* 52.3549 (ASPIC 47.0025, Janus 52.3549) ns 0.958132 | dns J 3.7e-06 A 3.1e-03 | dr/r J 1.2e-04 A 1.4e-01 | da J 3.2e-07 A 1.3e-04
+NI f=7         lnRrad=+0: exact dN* 62.3782 (ASPIC 56.9518, Janus 62.3782) ns 0.963662 | dns J 1.9e-06 A 2.1e-03 | dr/r J 7.8e-05 A 1.3e-01 | da J 2.4e-07 A 7.6e-05
+LFI p=3        lnRrad=-10: exact dN* 52.9206 (ASPIC 47.7635, Janus 52.9206) ns 0.952316 | dns J 1.3e-05 A 4.1e-03 | dr/r J 2.2e-04 A 8.3e-02 | da J 6.4e-07 A 1.2e-04
+LFI p=3        lnRrad=+0: exact dN* 62.9858 (ASPIC 57.7870, Janus 62.9858) ns 0.959978 | dns J 7.6e-06 A 2.8e-03 | dr/r J 1.6e-04 A 6.9e-02 | da J 3.1e-07 A 7.3e-05
+LFI p=1        lnRrad=-10: exact dN* 51.9568 (ASPIC 46.5882, Janus 51.9568) ns 0.971031 | dns J 2.8e-06 A 2.7e-03 | dr/r J 1.0e-04 A 9.0e-02 | da J 3.6e-07 A 1.1e-04
+LFI p=1        lnRrad=+0: exact dN* 61.9791 (ASPIC 56.5641, Janus 61.9791) ns 0.975717 | dns J 1.6e-06 A 1.8e-03 | dr/r J 7.2e-05 A 7.5e-02 | da J 2.3e-07 A 6.4e-05
+32 points; Janus n_s better on 32/32
+medians: dns J 1.7e-06 A 2.6e-03 (max 2.0e-05 vs 4.8e-03) | dr/r 8.0e-05 vs 1.1e-01 | da 3.4e-07 vs 1.1e-04 | C5 ASPIC dN* error median 5.457 max 6.411 (Janus 1.3e-12)
+C1 True C2 True C3 True -> JANUS MORE ACCURATE (reheating route)
