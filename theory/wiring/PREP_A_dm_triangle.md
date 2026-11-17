@@ -51,3 +51,6 @@ Then: lock PREREG_A1 (wino p_ann vs Planck), run, D-note.
   - Quoted: NLL+SE has ≈5% uncertainty at high mass; H.E.S.S. constrains such models below ~4 TeV.
 - No quoted resummed/tree ratio at 1 TeV was found (Baumgart 1808.04388 is not fetchable here).
 - Next: the full Ω (with b₀ = 19/6 as in 2009.00640 Eq. 3.14, and Γ₀^g, Γ₁^g, b₁ from a standard SU(2) source), then lock A2d-line.
+## 2026-11-17 18:00 UTC — HL-LHC wino reach (sourced)
+- Han, Mukhopadhyay, Wang 2018 (arXiv:1805.00015): pure-wino disappearing-track expected 95% reach of 0.9 TeV at 14 TeV with 3 ab⁻¹ (lower-background estimate). It drops to ~0.5 TeV with ×5 background. The 2σ and 5σ reaches are close in mass.
+- CTA line sensitivity at 0.7–0.9 TeV: not sourced this tick.
