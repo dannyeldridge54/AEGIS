@@ -13,7 +13,7 @@ def compressed(H0, Om_eff):
 H0, Om = 67.36, 0.3153; zs, rs, DM, R, lA = compressed(H0, Om)
 p = camb.CAMBparams(); p.set_cosmology(H0=H0, ombh2=wb, omch2=Om*(H0/100)**2 - wb, mnu=0, num_massive_neutrinos=0, nnu=3.044, TCMB=2.7255, YHe=0.24)
 Rc = camb.get_background(p, no_thermo=False); d = Rc.get_derived_params()
-DMc = d['DAstar']*(1 + d['zstar'])   # DEVIATIONS D2: DAstar is in Mpc
+DMc = 1000*d['DAstar']   # DEVIATIONS D3: DAstar = comoving D_M(z*) in Gpc (checked in CAMB)
 lAc = math.pi*DMc/d['rstar']
 dz, dl = abs(zs/d['zstar'] - 1), abs(lA/lAc - 1); V = dz <= 2e-3 and dl <= 1e-3
 L.append(f"V (LCDM vs CAMB): z* {zs:.3f} vs {d['zstar']:.3f} ({dz:.1e}); r_s {rs:.3f} vs {d['rstar']:.3f}; D_M {DM:.2f} vs {DMc:.2f}; l_A {lA:.3f} vs {lAc:.3f} ({dl:.1e}) -> {'PASS' if V else 'FAIL'}")
