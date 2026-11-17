@@ -12091,3 +12091,14 @@ MAP: none
   - Pre-state a sourced comparison target: Hisano hep-ph/0610249's LO thermal mass. The exact quoted value must be fetched before the lock.
 VERDICT: R2c-b COMPUTED; T1 and T2 PASS.
 MAP: none
+
+### D1184 — R2d sourcing: Hisano 2006 LO Sommerfeld thermal wino mass is 2.7–3.0 TeV; R2d locked (2026-11-17)
+- [DEEP · literature, fetched this tick] hep-ph/0610249, Secs. 3–4:
+  - With Sommerfeld, the observed abundance needs **2.7 TeV ≲ m ≲ 3.0 TeV**. The text calls this a mass "shifted by 600 GeV".
+  - The band is the WMAP Ω h² range with h = 0.73, shown as shaded bands in Fig. 2 (right). No single Ω h² number is quoted.
+  - The Boltzmann integration runs to today; the reduction continues past x = 100.
+  - Fig. 2 (left): the final yield with Sommerfeld is ≈ 50% of the perturbative one at m = 2.8 TeV.
+  - Inputs: δm ≃ 0.17 GeV, running α₂, temperature-dependent g_*. The perturbative mass is not stated in the text; "≈ 2.1–2.4" would be my inference only.
+- **Differences in our set-up (stated before computing):** constant g_* = 106.75, LO constants from sommerfeld_nlo (α₂ = 0.03479, δm = 0.1641), Ω h² = 0.1205 (Planck). Our Born mass is 2.531 TeV (R1b, +5% vs the source relation).
+- **Locked:** PREREG_R2d_relic_som.
+MAP: none
