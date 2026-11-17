@@ -1,0 +1,40 @@
+--- mmc/modpk_potential.f90	2026-11-17 13:17:25.987815922 -0600
++++ mmc_fix/modpk_potential.f90	2026-11-17 13:51:37.413015740 -0600
+@@ -201,7 +201,7 @@
+             V_potential = V_potential +0.5e0_dp* m2_matrix(i,j)*phi(i)*phi(j)
+           else
+             m2_matrix(i,j) = lambda2
+-            V_potential = V_potential + m2_matrix(i,j)*phi(i)*phi(j)
++            V_potential = V_potential + 0.5e0_dp*m2_matrix(i,j)*phi(i)*phi(j)  ! JMF5 fix: V = 1/2 phi.M.phi
+           end if
+ 
+         end do
+@@ -412,7 +412,8 @@
+ 
+          !i=lightest
+          first_deriv(phi_light_index) = m2_V(phi_light_index)*phi(phi_light_index) + &
+-           (1.0e0_dp/6.0e0_dp)*(phi(phi_light_index)**3)*lambda4(phi_light_index)
++           (1.0e0_dp/6.0e0_dp)*(phi(phi_light_index)**3)*lambda4(phi_light_index) + &
++           (1.0e0_dp/12.0e0_dp)*phi(phi_light_index)*(sum(lambda4*phi*phi) - lambda4(phi_light_index)*phi(phi_light_index)**2)  ! JMF5 fix
+ 
+        case(12)
+ 
+@@ -643,7 +644,7 @@
+ 
+              else if (i==Phi_light_index .and. j/=Phi_light_index) then
+ 
+-               second_deriv(i,j) = 0e0_dp
++               second_deriv(i,j) = (1.0e0_dp/6.0e0_dp)*Lambda4(j)*phi(Phi_light_index)*phi(j)  ! JMF5 fix
+ 
+              else if (i/=Phi_light_index .and. j==Phi_light_index) then
+ 
+@@ -653,7 +654,8 @@
+              else if (i==Phi_light_index .and. j==Phi_light_index) then
+ 
+                second_deriv(i,j) = m2_V(Phi_light_index) + &
+-                 0.5e0_dp*Lambda4(Phi_light_index)*phi(Phi_light_index)**2
++                 0.5e0_dp*Lambda4(Phi_light_index)*phi(Phi_light_index)**2 + &
++                 (1.0e0_dp/12.0e0_dp)*(sum(Lambda4*phi*phi) - Lambda4(Phi_light_index)*phi(Phi_light_index)**2)  ! JMF5 fix
+ 
+              end if
+ 
