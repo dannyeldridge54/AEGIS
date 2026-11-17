@@ -12591,3 +12591,10 @@ MAP: none
 - **Housekeeping:** Hyperion 1.1 CHANGES updated with D1202–D1211.
 VERDICT: timeline recorded. No change to the window. The CTA test is ≳ 2030 (estimate).
 MAP: none
+
+## D1213 — RIGHT/JANUS-LT — L12: growth (DESI DR1 fσ8) agrees with the background w0–wa fit [CONSISTENT]
+Lock PREREG_L12_growth_joint. L7 likelihood + six DESI DR1 full-shape fσ8 ratios + Planck 2018 A_s prior (ln10¹⁰A_s 3.044 ± 0.014, n_s 0.9649 fixed —
+from a ΛCDM fit, used here as an approximation in w0waCDM). Joint MAP: w0 −0.852, wa −0.530, h 0.6755, ln10¹⁰A_s 3.045 (L7 alone −0.853, −0.518) →
+C1 PASS. fσ8 part χ² 3.76 for 6 points (ratios 0.976–1.009) → C2 PASS. Δχ² ΛCDM vs w0waCDM 7.87 (L7 alone 7.70): growth neither adds nor removes
+evidence for evolving dark energy at DR1 full-shape precision. Janus-LT's w0wa result is now confirmed by Hessian (L7), profile (L10), MCMC (L11) and growth (L12).
+MAP: none

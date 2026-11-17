@@ -1805,3 +1805,4 @@ Touches: none.
 ## D1205: L11 — Cobaya MCMC on L7's likelihood: w0 −0.842±0.053, wa −0.565±0.213 vs L7 −0.853±0.053, −0.518±0.200 → CONFIRMED
 ## D1206: JMF7 — P_R frozen by ε=1 in Q9, N2', N1 (last-e-fold change ≤ 4.5e-9) → multi-field results final
 ## D1207: JMF8 — Janus-MF matches PyTransport for 3 fields (separable and coupled), |Δn_s| ≤ 8.9e-5; VALIDATED
+## D1213: L12 — adding DESI DR1 fσ8 + Planck A_s prior leaves w0wa unchanged (w0 −0.852, wa −0.530), fσ8 χ² 3.76/6, ΔχΛCDM 7.87
