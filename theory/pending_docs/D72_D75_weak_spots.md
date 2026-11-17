@@ -12220,3 +12220,33 @@ MAP: none
 - **Update to D1189:** its "pushes J toward the c −1σ case" was too strong. Coring helps in 3/5 haloes and is neutral to mildly worse in 2/5, because of the higher ρ☉.
 VERDICT: the 1 TeV post-hoc wino SURVIVES IGS for all five cored Gaia haloes (3 clean PASS, 2 band-dependent at the upper fraction edge). D1153's window (0.67 to ~1–1.5 TeV) stands.
 MAP: none
+
+### D1191 — BBN tick: the 2026 helium updates tighten dark radiation. τ_i SU(2) (ΔN_eff 0.161) is now at +1.7σ on Y_p and above the new ΔN_ν 2σ bound; SU(2)+gaugino (0.301) is disfavoured; U(1) is fine (2026-11-17)
+- [LEFT · literature, new to the notes]
+  - **LBT Y_p IV/V (Aver et al.; arXiv:2601.22238 / 2601.22239):**
+    - Y_p = 0.2458 ± 0.0013 (Eq. 2; 15 lowest-metallicity H II regions). That is 2.6× tighter than the Aver 0.2453 ± 0.0034 our B-locks used.
+    - D/H_obs = (2.513 ± 0.028)e-5 (Eq. 1).
+    - CMB+BBN+Y_p+D: N_ν = 2.925 ± 0.082; ΔN_ν < 0.089 (2σ two-sided, Eq. 32), or δN_ν < 0.125 with an N_ν ≥ 3 prior (Eq. 34).
+    - SBBN Y_p = 0.2467 ± 0.0002 (Eq. 19).
+  - **EMPRESS XV (arXiv:2506.24050):** Y_p = 0.2402 ± 0.0040 (Eq. 15). With Cooke D/H this gives N_eff = 2.54 (+0.20/−0.25), "mild (~2σ) tension" with SM/Planck.
+- **Our existing bbn_net predictions (B6/B7 results, no new computation), as pulls with observational errors only (the D1088 convention):**
+
+  | Case | Y_p | vs LBT | vs EMPRESS | vs old Aver |
+  |---|---|---|---|---|
+  | base | 0.24592 | +0.09σ | +1.43σ | +0.18σ |
+  | τ_i U(1), ΔN 0.054 | 0.24664 | +0.65σ | +1.61σ | +0.39σ |
+  | τ_i SU(2), ΔN 0.161 | 0.24804 | **+1.72σ** | +1.96σ | +0.81σ |
+
+  - D/H vs the new 2.513 ± 0.028: base −2.75σ, U(1) −2.11σ, SU(2) −0.86σ. Our base sits 0.077 below the observation, where the paper's own prediction is 2.506 ± 0.083. The theory (rate) error dominates and is not included in these pulls.
+- **Reading (labelled):**
+  - **On Y_p:** the new LBT value moves the τ_i SU(2) dark-radiation case from harmless (+0.8σ) to +1.7σ.
+  - **Against the 2σ ΔN bound:** SU(2) (ΔN_final 0.161) sits above the one-sided bound of 0.125, and SU(2)+gaugino (0.301) is well above it.
+    - Caveat: their N_ν is the BBN-epoch count in their code, while ours is LINX's final ΔN_eff. It is the same quantity only to ≈ few %, so this is a qualitative comparison. The direct Y_p pulls above are the like-for-like test.
+  - **EMPRESS's low Y_p** pulls the other way: it disfavours ANY extra radiation and the base too. The two measurements disagree at ~1.3σ.
+- **Consequence for SERAPIS:**
+  - The preferred dark-radiation options narrow to "unpopulated or U(1)".
+  - SU(2) is marginal, and SU(2)+gaugino is disfavoured at > 2σ by the LBT bound.
+  - This is worth updating in the v3.3 draft's τ_i paragraph and the forward table at the next paper rung (no edit now).
+- **Next B item (lock first if pursued):** rerun the B7 pulls with the LBT Y_p and the theory error included (PRIMAT rate uncertainty), so the SU(2) verdict is a scored number, not arithmetic on old outputs.
+VERDICT: new data recorded. SU(2) dark radiation is now in mild tension (1.7σ, and above the 2σ ΔN_ν bound); SU(2)+gaugino is disfavoured; U(1) is safe.
+MAP: none
