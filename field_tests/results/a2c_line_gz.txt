@@ -1,0 +1,7 @@
+sv_gZ/sv_gg = 6.973; line/gg = 4.486; f_max factor 0.472
+HESS benchmark Einasto LO: f_max(gg) 0.355 -> f_max(gg+gZ/2) 0.168; one-loop 0.290-0.335 -> tree-SE FAIL, one-loop PASS
+HESS benchmark Einasto NLO: f_max(gg) 0.391 -> f_max(gg+gZ/2) 0.185; one-loop 0.320-0.369 -> tree-SE FAIL, one-loop PASS
+McMillan17 LO: f_max(gg) 0.503 -> f_max(gg+gZ/2) 0.237; one-loop 0.411-0.475 -> tree-SE FAIL, one-loop PASS
+McMillan17 NLO: f_max(gg) 0.554 -> f_max(gg+gZ/2) 0.262; one-loop 0.453-0.523 -> tree-SE PASS, one-loop PASS
+MWPotential2014 LO: f_max(gg) 0.616 -> f_max(gg+gZ/2) 0.291; one-loop 0.504-0.582 -> tree-SE PASS, one-loop PASS
+MWPotential2014 NLO: f_max(gg) 0.679 -> f_max(gg+gZ/2) 0.321; one-loop 0.555-0.641 -> tree-SE PASS, one-loop PASS
