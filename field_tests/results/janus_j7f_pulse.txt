@@ -1,0 +1,77 @@
+ahi    N*=50 exact ns 0.938588 r 1.928e-04 | dns J 2.1e-06 A 2.3e-03 | dr/r J 9.7e-06 A 1.1e-01 | da J 2.0e-06 A 5.0e-05
+ahi    N*=60 exact ns 0.948779 r 1.101e-04 | dns J 1.0e-06 A 1.7e-03 | dr/r J 1.8e-06 A 1.0e-01 | da J 2.9e-07 A 3.3e-05
+ai     N*=50 exact ns 0.973338 r 2.182e-04 | dns J 3.2e-07 A 6.5e-04 | dr/r J 4.8e-05 A 3.3e-02 | da J 1.7e-07 A 7.3e-06
+ai     N*=60 exact ns 0.977763 r 1.712e-04 | dns J 9.8e-08 A 4.7e-04 | dr/r J 3.4e-05 A 2.8e-02 | da J 5.3e-07 A 4.3e-06
+bei    N*=50 exact ns 0.974999 r 3.985e-02 | dns J 1.4e-06 A 4.9e-04 | dr/r J 7.7e-05 A 2.0e-02 | da J 3.7e-07 A 1.0e-05
+bei    N*=60 exact ns 0.979155 r 3.325e-02 | dns J 7.8e-07 A 3.5e-04 | dr/r J 5.3e-05 A 1.7e-02 | da J 1.5e-07 A 6.4e-06
+cnai   N*=50 exact ns 0.962236 r 2.215e-01 | dns J 7.8e-06 A 4.8e-04 | dr/r J 1.3e-04 A 8.1e-03 | da J 3.4e-08 A 3.2e-05
+cnai   N*=60 exact ns 0.966793 r 2.043e-01 | dns J 4.8e-06 A 3.3e-04 | dr/r J 8.8e-05 A 6.3e-03 | da J 1.0e-07 A 2.0e-05
+cnbi   LISTED: ASPIC gave no result:  cnbi_x_trajectory: not enough efolds! |  efold requested=   efold maxi=    50.000000000000000        14.505656845504319     
+dei    N*=50 exact ns 0.969375 r 5.661e-02 | dns J 2.3e-06 A 6.3e-04 | dr/r J 9.8e-05 A 2.5e-02 | da J 5.2e-07 A 1.8e-05
+dei    N*=60 exact ns 0.974378 r 4.571e-02 | dns J 1.3e-06 A 4.5e-04 | dr/r J 6.8e-05 A 2.2e-02 | da J 3.2e-07 A 1.1e-05
+di     N*=50 exact ns 0.969339 r 4.705e-04 | dns J 1.7e-03 A 2.4e-03 | dr/r J 1.3e-03 A 3.6e-02 | da J 1.3e-04 A 1.5e-04
+di     N*=60 exact ns 0.975122 r 3.610e-04 | dns J 7.2e-04 A 1.2e-03 | dr/r J 2.6e-03 A 2.9e-02 | da J 1.0e-03 A 1.0e-03
+dwi    N*=50 exact ns 0.960309 r 8.913e-02 | dns J 4.3e-06 A 8.0e-04 | dr/r J 1.4e-04 A 3.1e-02 | da J 3.9e-07 A 3.6e-05
+dwi    N*=60 exact ns 0.966409 r 6.857e-02 | dns J 2.3e-06 A 5.7e-04 | dr/r J 9.1e-05 A 2.8e-02 | da J 3.0e-07 A 2.1e-05
+esi    N*=50 exact ns 0.962020 r 2.763e-03 | dns J 7.0e-07 A 1.0e-03 | dr/r J 4.6e-05 A 5.3e-02 | da J 1.3e-06 A 1.6e-05
+esi    N*=60 exact ns 0.968136 r 1.958e-03 | dns J 3.9e-07 A 7.5e-04 | dr/r J 3.4e-05 A 4.6e-02 | da J 4.3e-07 A 1.0e-05
+fi     LISTED: could not convert string to float: '1.120507273145942+100'
+gdwi   N*=50 exact ns 0.949995 r 5.398e-03 | dns J 1.2e-06 A 1.3e-03 | dr/r J 2.0e-05 A 7.1e-02 | da J 1.4e-06 A 2.2e-05
+gdwi   N*=60 exact ns 0.957344 r 3.423e-03 | dns J 5.7e-07 A 9.6e-04 | dr/r J 1.6e-05 A 6.4e-02 | da J 6.9e-07 A 1.4e-05
+gmlfi  LISTED: ASPIC gave no result: COMPILE /aspic/pulse/gmlfi/p.f90:17:132: |  |    17 |     write(*,'(A,3ES24.15)') 'VG ', xx, gmlfi_norm_potential(xx,2._kp,1._kp,0.01_kp), gmlfi_norm_deriv_potential(xx,2._kp,1._kp,0.01_kp)
+hbi    N*=50 exact ns 0.972368 r 1.260e-01 | dns J 4.5e-06 A 5.1e-04 | dr/r J 1.1e-04 A 1.1e-02 | da J 3.9e-07 A 2.3e-05
+hbi    N*=60 exact ns 0.976926 r 1.141e-01 | dns J 2.7e-06 A 3.5e-04 | dr/r J 7.6e-05 A 8.1e-03 | da J 2.1e-07 A 1.4e-05
+hf1i   N*=50 exact ns 0.960191 r 1.561e-01 | dns J 7.8e-06 A 3.2e-04 | dr/r J 1.8e-04 A 6.6e-03 | da J 4.3e-08 A 2.9e-05
+hf1i   N*=60 exact ns 0.966799 r 1.306e-01 | dns J 4.5e-06 A 2.2e-04 | dr/r J 1.2e-04 A 5.5e-03 | da J 1.0e-07 A 1.7e-05
+hi     LISTED: ASPIC gave no result: TIMEOUT
+kmii   LISTED: could not convert string to float: '4.680782737905718-310'
+kmiii  LISTED: ASPIC gave no result:  x=   -1.0000000000000000      | STOP Lambert: x not defined in branch -1
+lfi    N*=50 exact ns 0.959701 r 1.582e-01 | dns J 8.1e-06 A 8.1e-04 | dr/r J 1.8e-04 A 2.0e-02 | da J 4.3e-08 A 4.6e-05
+lfi    N*=60 exact ns 0.966442 r 1.322e-01 | dns J 4.7e-06 A 5.8e-04 | dr/r J 1.2e-04 A 1.7e-02 | da J 4.0e-08 A 2.7e-05
+li     N*=50 exact ns 0.976600 r 1.465e-02 | dns J 6.4e-07 A 5.0e-04 | dr/r J 5.8e-05 A 2.3e-02 | da J 6.3e-07 A 6.0e-06
+li     N*=60 exact ns 0.980520 r 1.204e-02 | dns J 3.0e-07 A 3.6e-04 | dr/r J 4.1e-05 A 2.0e-02 | da J 7.0e-08 A 4.1e-06
+mhi    N*=50 exact ns 0.961180 r 7.645e-02 | dns J 4.1e-06 A 8.9e-04 | dr/r J 1.4e-04 A 3.2e-02 | da J 6.9e-07 A 3.5e-05
+mhi    N*=60 exact ns 0.967817 r 5.862e-02 | dns J 2.2e-06 A 6.4e-04 | dr/r J 9.1e-05 A 2.9e-02 | da J 4.3e-07 A 2.0e-05
+ncli   LISTED: ASPIC gave no result: COMPILE ulse/ncli/p.f90:17:132: |  |    17 |     write(*,'(A,3ES24.15)') 'VG ', xx, ncli_norm_potential(xx,1e-4_kp,0.18_kp,2._kp), ncli_norm_deriv_potential(xx,1e-4_kp,0.18_kp,2._kp)
+ni     N*=50 exact ns 0.947585 r 4.926e-02 | dns J 2.0e-06 A 6.9e-04 | dr/r J 5.3e-05 A 5.4e-02 | da J 5.4e-07 A 3.6e-05
+ni     N*=60 exact ns 0.952165 r 3.153e-02 | dns J 8.2e-07 A 4.5e-04 | dr/r J 7.8e-06 A 5.5e-02 | da J 3.0e-07 A 2.0e-05
+oi     N*=50 exact ns 0.934804 r 3.460e-01 | dns J 2.9e-05 A 1.3e-03 | dr/r J 3.4e-04 A 2.0e-02 | da J 3.7e-06 A 1.3e-04
+oi     N*=60 exact ns 0.945803 r 2.892e-01 | dns J 1.7e-05 A 9.5e-04 | dr/r J 2.4e-04 A 1.7e-02 | da J 1.8e-06 A 7.7e-05
+oripi  LISTED: grid gives < 75 e-folds or no end
+osti   N*=50 exact ns 0.963505 r 1.141e-01 | dns J 5.4e-06 A 7.6e-04 | dr/r J 1.5e-04 A 2.3e-02 | da J 4.0e-07 A 3.5e-05
+osti   N*=60 exact ns 0.969646 r 9.354e-02 | dns J 3.1e-06 A 5.4e-04 | dr/r J 1.0e-04 A 2.0e-02 | da J 2.1e-07 A 2.1e-05
+pai    N*=50 exact ns 0.971854 r 7.835e-03 | dns J 6.2e-07 A 7.5e-04 | dr/r J 5.8e-05 A 3.6e-02 | da J 8.7e-07 A 1.2e-05
+pai    N*=60 exact ns 0.976612 r 6.119e-03 | dns J 3.2e-07 A 5.4e-04 | dr/r J 4.1e-05 A 3.1e-02 | da J 4.0e-07 A 7.5e-06
+pli    LISTED: grid gives < 75 e-folds or no end
+psni   N*=50 exact ns 0.980064 r 7.981e-05 | dns J 1.5e-07 A 3.6e-04 | dr/r J 4.2e-05 A 1.8e-02 | da J 5.5e-07 A 7.2e-08
+psni   N*=60 exact ns 0.983353 r 6.654e-05 | dns J 3.2e-08 A 2.6e-04 | dr/r J 3.0e-05 A 1.6e-02 | da J 1.3e-08 A 6.4e-07
+rchi   N*=50 exact ns 0.971210 r 6.496e-03 | dns J 7.1e-07 A 9.0e-04 | dr/r J 7.3e-05 A 3.6e-02 | da J 7.1e-07 A 1.4e-05
+rchi   N*=60 exact ns 0.977029 r 5.061e-03 | dns J 3.9e-07 A 6.5e-04 | dr/r J 5.3e-05 A 3.0e-02 | da J 7.6e-07 A 8.8e-06
+rcmi   N*=50 exact ns 0.920698 r 2.986e-02 | dns J 5.5e-07 A 2.4e-04 | dr/r J 2.1e-04 A 9.4e-02 | da J 8.0e-07 A 4.2e-05
+rcmi   N*=60 exact ns 0.917786 r 1.373e-02 | dns J 7.0e-07 A 4.7e-04 | dr/r J 3.0e-04 A 1.1e-01 | da J 2.4e-07 A 2.1e-05
+rcqi   N*=50 exact ns 0.939938 r 3.086e-01 | dns J 2.4e-05 A 1.2e-03 | dr/r J 3.1e-04 A 2.0e-02 | da J 2.4e-06 A 1.1e-04
+rcqi   N*=60 exact ns 0.950018 r 2.582e-01 | dns J 1.4e-05 A 8.7e-04 | dr/r J 2.1e-04 A 1.7e-02 | da J 1.2e-06 A 6.5e-05
+rgi    N*=50 exact ns 0.969110 r 4.205e-03 | dns J 5.9e-07 A 8.4e-04 | dr/r J 5.5e-05 A 4.1e-02 | da J 8.9e-07 A 1.3e-05
+rgi    N*=60 exact ns 0.974296 r 3.189e-03 | dns J 3.0e-07 A 6.1e-04 | dr/r J 3.9e-05 A 3.6e-02 | da J 3.7e-07 A 8.2e-06
+rpqti  LISTED: ASPIC gave no result: TIMEOUT
+saai   N*=50 exact ns 0.962165 r 7.803e-03 | dns J 9.3e-07 A 1.0e-03 | dr/r J 5.4e-05 A 5.0e-02 | da J 1.1e-06 A 1.7e-05
+saai   N*=60 exact ns 0.968274 r 5.569e-03 | dns J 4.8e-07 A 7.3e-04 | dr/r J 3.8e-05 A 4.4e-02 | da J 7.0e-07 A 1.1e-05
+sabi   N*=50 exact ns 0.961106 r 8.436e-03 | dns J 1.1e-06 A 1.1e-03 | dr/r J 5.6e-05 A 5.3e-02 | da J 1.2e-06 A 2.0e-05
+sabi   N*=60 exact ns 0.967475 r 5.970e-03 | dns J 5.2e-07 A 7.8e-04 | dr/r J 4.0e-05 A 4.6e-02 | da J 5.0e-07 A 1.2e-05
+sati   N*=50 exact ns 0.960201 r 4.667e-03 | dns J 9.6e-07 A 1.6e-03 | dr/r J 5.1e-05 A 7.6e-02 | da J 9.9e-07 A 3.6e-05
+sati   N*=60 exact ns 0.966776 r 3.263e-03 | dns J 4.5e-07 A 1.1e-03 | dr/r J 3.7e-05 A 6.6e-02 | da J 7.1e-07 A 2.2e-05
+sbki   N*=50 exact ns 0.961255 r 2.955e-02 | dns J 2.6e-06 A 1.3e-03 | dr/r J 1.2e-04 A 4.3e-02 | da J 1.1e-06 A 3.1e-05
+sbki   N*=60 exact ns 0.970730 r 2.178e-02 | dns J 1.5e-06 A 1.1e-03 | dr/r J 1.0e-04 A 3.4e-02 | da J 6.3e-07 A 2.0e-05
+sfi    N*=50 exact ns 0.967100 r 4.920e-02 | dns J 2.0e-06 A 6.2e-04 | dr/r J 8.9e-05 A 2.8e-02 | da J 5.4e-07 A 1.8e-05
+sfi    N*=60 exact ns 0.971946 r 3.844e-02 | dns J 1.1e-06 A 4.5e-04 | dr/r J 5.9e-05 A 2.6e-02 | da J 1.3e-07 A 1.1e-05
+si     N*=50 exact ns 0.961496 r 4.255e-03 | dns J 8.4e-07 A 1.1e-03 | dr/r J 4.9e-05 A 5.4e-02 | da J 1.1e-06 A 1.8e-05
+si     N*=60 exact ns 0.967748 r 3.006e-03 | dns J 4.3e-07 A 7.8e-04 | dr/r J 3.6e-05 A 4.7e-02 | da J 4.8e-07 A 1.1e-05
+ti     N*=50 exact ns 0.959086 r 1.108e-01 | dns J 5.7e-06 A 8.4e-04 | dr/r J 1.6e-04 A 2.8e-02 | da J 3.7e-07 A 4.2e-05
+ti     N*=60 exact ns 0.965682 r 8.660e-02 | dns J 3.1e-06 A 6.0e-04 | dr/r J 1.1e-04 A 2.6e-02 | da J 1.3e-07 A 2.4e-05
+vfmi   N*=50 exact ns 0.951662 r 1.012e-03 | dns J 1.1e-06 A 6.6e-04 | dr/r J 2.9e-05 A 3.4e-02 | da J 1.9e-06 A 3.1e-07
+vfmi   N*=60 exact ns 0.959499 r 6.514e-04 | dns J 6.2e-07 A 4.6e-04 | dr/r J 2.4e-05 A 3.2e-02 | da J 8.4e-07 A 3.4e-07
+wri    N*=50 exact ns 0.964838 r 9.912e-02 | dns J 4.7e-06 A 7.7e-04 | dr/r J 1.4e-04 A 2.4e-02 | da J 4.7e-07 A 3.3e-05
+wri    N*=60 exact ns 0.970906 r 8.087e-02 | dns J 2.6e-06 A 5.5e-04 | dr/r J 9.7e-05 A 2.1e-02 | da J 9.9e-08 A 1.9e-05
+models: 32 scored, 10 listed; points 64; Janus n_s better on 64/64
+medians: dns J 1.2e-06 A 6.7e-04 (max 1.7e-03 vs 2.4e-03) | dr/r 7.0e-05 vs 3.0e-02 | da 5.1e-07 vs 2.0e-05 | t 1.2 ms
+C1 True C2 True C3 True C4 True -> JANUS MORE ACCURATE
