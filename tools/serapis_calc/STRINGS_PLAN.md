@@ -63,3 +63,4 @@ coefficient: a candidate natural origin for ε L. Read Eq. 3.30 and check which 
   with our background (S4b/S4c2) and BCs from regularity, matching how S4c2 handled the tensor tower.
 - S4d DONE (D1140): scalar sector stable (b ≥ 0). Remaining: vectors (if any in our truncation); 4D compactification question (D1015a).
 - S4e plan: scalar KK masses. Validation target [fetched, 2209.10553 Eq. 5.14]: 10D critical orientifold (γ = γ_c, δ = 0), SCALAR master eq. (5.3)/(5.5), shooting: m1 ≈ 0.97π/L, m2 ≈ 2.13π/L, L = Einstein-frame proper length; BCs 'Dirichlet or Neumann' (unspecified → run both, report which reproduces). Steps: fetch the δ = 0 critical background (§3, Eqs. near 3.12–3.13), build Schrödinger solver for H = b + A†A, lock reproduction (≤ 3%), then apply to our 6D subcritical vacuum.
+- S4e (D1141): NOT VALIDATED (4% scale offset, ratio OK). Next: fetch BTR's L and mass definitions (§5.2–5.3), re-lock.

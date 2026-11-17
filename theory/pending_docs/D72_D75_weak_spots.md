@@ -11507,3 +11507,11 @@ With D1036 (tensor tower gapped, m₁² 0.778) the 6D vacuum now has both tensor
   - No paper edit this tick. Flagged for the next "Publish" review.
 VERDICT: the Gaia DR3 v_esc profile favours the light halo; McMillan17 disfavoured at 5σ; the SERAPIS-E 1 TeV wino is marginal rather than excluded for that halo.
 MAP: none
+
+## D1141 — DEEP/STRINGS — S4e: scalar-mass solver misses the 10D validation by ~4% (lock: 3%) → NOT VALIDATED; no 6D masses claimed [computed]
+Lock PREREG_S4e_scalar_masses. 10D critical orientifold (BTR 2209.10553 Eq. 3.10), proper length L = 1.695796 (converged 1.9e-7). Dirichlet: m L/π = 0.9318, 2.0403
+vs targets 0.97, 2.13 (−3.9%, −4.2%); Neumann: 2.032, 2.961 (no match). V1 FAILS the 3% bar → NOT VALIDATED; per the lock the 6D step was not run.
+Observation (not a claim): Dirichlet m₂/m₁ = 2.190 vs the target ratio 2.13/0.97 = 2.196 (0.3%) — the spectrum's SHAPE matches; a common ~4% scale offset
+suggests a definition difference in L or m (frame of the proper length, the ξ → 0 cutoff, or the "≈" rounding of the quoted 0.97/2.13), not the operator.
+Next (new lock, one change): fetch BTR §5.2–5.3's exact definition of L and of the mass normalisation (and the cutoff they used), then re-test.
+MAP: none

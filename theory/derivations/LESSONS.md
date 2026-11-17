@@ -307,3 +307,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1137: distinguish 'stated' from 'derived' in a source — an asserted zero is weaker evidence than a computed one, and the note should say which.
 - D1138: before computing a new fluctuation sector, find the closest published analogue — it gives the method, the boundary conditions and the expected answer.
 - D1140: a sufficient stability condition from the literature, checked on a case the source did not cover, is a cheap and decisive first step before any eigenvalue solve.
+- D1141: a common scale offset with a matching ratio points at a normalisation definition (here L or m), not at the operator — check definitions before touching the solver.

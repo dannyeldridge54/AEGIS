@@ -1780,3 +1780,4 @@ Touches: none.
 ## D1137: R — Wilson lines (hep-th/0001062 Eqs. 29–51) don't lift the Z6-II-b U(1) zero; U(1) instead gets log(ω(T)−ω(U)), not L. Line paused.
 ## D1138: S4d prep — BMS 1811.11448: DM tadpole vacua (9D × interval) perturbatively stable in all sectors; template + expectation for our 6D S4d
 ## D1140: S4d — subcritical 6D vacuum scalar sector: A′/P′ ∈ [−0.2236, +0.2236] ≥ −1/4 → b ≥ 0 → STABLE (BTR 2209.10553 Eq. 5.10)
+## D1141: S4e — Dirichlet m L/π 0.932, 2.040 vs BTR 0.97, 2.13 (−4%) → NOT VALIDATED; ratio m₂/m₁ 2.190 vs 2.196 matches
