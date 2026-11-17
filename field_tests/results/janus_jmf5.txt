@@ -1,3 +1,4 @@
 N1 quad+quartic intxn: LISTED (MMC output not found: ed in file modpk.f90  ERROR: At line number          154  ERROR: The error is cosmology-related.  **********************************************  MODECODE: Reconsider your phi_in)
 N2' off-diagonal mass (1/2 phi.M.phi): Hessian FD 1.4e-10 | Janus-MF ns 0.946212 r 0.14465 | MMC ns 0.946202 r 0.14467 | C1 |d| 9.4e-06 PASS; C2 rel 9.9e-05 PASS
 JMF5: PARTIAL
+N1 (DEV D1, phi_init [12.5, 12.5]): Janus-MF ns 0.954583 r 0.19751 | MMC-fixed ns 0.954583 r 0.19751 | C1 |d| 3.7e-07 PASS; C2 rel 6.0e-07 PASS
