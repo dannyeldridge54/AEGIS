@@ -47,3 +47,32 @@ def single_channel(M, v, V, alpha_tail=0.0, R=None):
     u, up = s.y[0, -1], s.y[1, -1]
     kl = math.sqrt(M*(E + alpha_tail/R)); A = math.hypot(u, up/kl)*math.sqrt(kl/k)
     return (1/(A*k))**2
+
+def two_channel_open(M, v, Vfun, dm, tails=(0.0, 0.0), R=None):
+    """Both channels open (E > 2 dm). Channel 0: chi0chi0 (threshold 0), channel 1: chi+chi- (threshold 2 dm).
+    Vfun(r) -> 2x2 potential WITHOUT the 2dm constant (added here). tails: attractive -a/r coefficients per channel for WKB-local k.
+    Returns s[i, j] = Sommerfeld amplitude for incoming channel i into short-distance channel j; free case s = I."""
+    import cmath
+    E = M*v*v/4; thr = np.array([0.0, 2*dm]); k = np.sqrt(M*(E - thr)); R = R or 300/min(k)
+    def V(r): return Vfun(r) + np.diag(thr)
+    cols = []
+    for j in range(2):
+        y0 = np.zeros(4); y0[j] = 1e-9; y0[2+j] = 1.0
+        s = solve_ivp(lambda r, y: np.concatenate([y[2:], M*(V(r) - E*np.eye(2)) @ y[:2]]), [1e-9, R], y0, method='DOP853', rtol=1e-10, atol=1e-16)
+        cols.append(s.y[:, -1])
+    U = np.array([c[:2] for c in cols]).T; Up = np.array([c[2:] for c in cols]).T     # [channel, solution]
+    B = np.zeros((2, 2), complex)
+    for ch in range(2):
+        kl = math.sqrt(M*(E - thr[ch] + tails[ch]/R))
+        for sol in range(2):
+            u, up = U[ch, sol], Up[ch, sol]
+            # u = a e^{i phi} + b e^{-i phi}, u' = i kl (a e^{i phi} - b e^{-i phi}); amplitude rescaled by sqrt(kl/k) (WKB)
+            B[ch, sol] = 0.5*(u - up/(1j*kl))*math.sqrt(kl/k[ch])
+    out = np.zeros((2, 2), complex)
+    for i in range(2):
+        target = np.zeros(2, complex); target[i] = -1/(2j*k[i])
+        # incoming coefficients carry phase e^{-i kl R}; compare magnitudes via phase-free target: solve B c = target * e^{-i phi_i}
+        ph = cmath.exp(-1j*math.sqrt(M*(E - thr[i] + tails[i]/R))*R)
+        c = np.linalg.solve(B, target*0 + np.where(np.arange(2) == i, target[i]*ph, 0))
+        out[i, :] = c          # u'(0) per channel = c (since u_j' (0) = delta)
+    return out
