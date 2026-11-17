@@ -11272,3 +11272,17 @@ Lock pushed before run; result field_tests/results/a2e_line066.txt.
 - Caveat: the M² scaling is the main uncertainty. A quoted H.E.S.S. value near 0.7 TeV would replace it.
 VERDICT: PASS for realistic haloes (estimate); benchmark-halo LO marginal.
 MAP: none
+
+## D1120 (CENTRE, Djl loop (D), literature): HFB arXiv v4 (14 Nov 2024) states that all results include the Erratum corrections (flux/acceleration shift), yet its Eq. 6.6a 7PN μ̃₊ coefficients, as extracted, are the SAME as our transcription (which differs from LAL by 0.33%) — the fetch tool reconstructs fractions from the PDF layout, so this cannot discriminate; the 7PN question is PARKED
+- Quoted (v4):
+  - Footnote 3: "All the results in this paper take into account the corrections of the equations described in the Erratum [33]".
+  - Footnote 12: the acceleration-shift error "affected the energy flux, the time-domain phase, and the SPA phase".
+- Extracted Eq. 6.6a 7PN coefficients (tool note: "reconstructed from the layout, not character-for-character"): identical to D1111's.
+- Three readings:
+  - (i) v4's coefficients really are these, and LAL differs for another reason (e.g. LAL implements Erratum II, published later than v4? unlikely given the dates).
+  - (ii) The PDF-text extraction mis-reads one flattened fraction (plausible: a 0.33% shift is one digit-level change in one fraction).
+  - (iii) Abac et al.'s "two 7PN coefficients modified" refers to changes already inside v4, and LAL follows v4. Then (ii) is the explanation.
+- Decision: park. A 7e-4 rad question is not worth more ticks without a character-exact source (journal HTML or LAL C source). Both are blocked from here; Danny's PC or a browser could reach them.
+- Hyperion keeps the label "7PN tidal: 0.33% vs LAL, unresolved; use LAL/ripple coefficient if exact LAL agreement is needed".
+VERDICT: PARKED (needs a character-exact source).
+MAP: none
