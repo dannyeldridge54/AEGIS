@@ -953,6 +953,22 @@
    "info": ""
   },
   {
+   "id": "Q_future",
+   "label": "Future colliders: HL-LHC 0.97, HE-LHC 1.4–1.7, FCC-hh 2.9–3.7 TeV wino reach; FCC-hh covers the whole SERAPIS window",
+   "lane": "lhc",
+   "status": "computed",
+   "refs": "D1306",
+   "info": ""
+  },
+  {
+   "id": "Q_fccref",
+   "label": "Published future-collider wino reach (HL 0.9, HE 2.1, FCC 6.5 TeV)",
+   "lane": "lhc",
+   "status": "literature",
+   "refs": "arXiv:1805.00015",
+   "info": ""
+  },
+  {
    "id": "Q_pdf",
    "label": "Own LO cross section with a PDF set (blocked: CERN file needs one click at home)",
    "lane": "lhc",
@@ -2967,6 +2983,42 @@
    "sign": -1,
    "ref": "D1305",
    "verdict": "PDF-limited above 1.5 TeV",
+   "source": "curated"
+  },
+  {
+   "s": "Q_fccref",
+   "t": "Q_future",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1306",
+   "verdict": "HL/HE match; FCC short",
+   "source": "curated"
+  },
+  {
+   "s": "Q_xsec",
+   "t": "Q_future",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1306",
+   "verdict": "scaling to 100 TeV (rough)",
+   "source": "curated"
+  },
+  {
+   "s": "Q_future",
+   "t": "Q_panel",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1306",
+   "verdict": "whole window testable at FCC-hh",
+   "source": "curated"
+  },
+  {
+   "s": "Q_pdf",
+   "t": "Q_future",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "next",
+   "verdict": "fixes the 100 TeV gap",
    "source": "curated"
   },
   {

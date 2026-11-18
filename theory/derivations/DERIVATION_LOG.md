@@ -2072,3 +2072,9 @@ Touches: none.
 1. [derived] Locked T1–T4 (PREREG_LHC6).
 2. [derived] Charge asymmetry σ(χ̃₂⁰χ̃₁⁺)/σ(χ̃₂⁰χ̃₁⁻): 1.58 → 3.36 up to 1.5 TeV, then down to 3.28 at 2 TeV — the locked monotonic rise FAILS; the turnover coincides with the PDF-limited region.
 3. [derived] At equal τ₀ the asymmetry and the charged/neutral ratio agree between 13 and 13.6 TeV to 0.093% and 0.050%.
+
+## D1306: Future colliders — CERN+1 matches the published HL-LHC and HE-LHC wino reaches; FCC-hh comes out short; FCC-hh covers the whole SERAPIS window (2026-11-18)
+1. [literature] Published disappearing-track wino reaches (arXiv:1805.00015): HL-LHC 0.9/0.5, HE-LHC 2.1/1.5, FCC-hh 6.5/4.5 TeV.
+2. [estimate] CERN+1: Drell–Yan-scaled cross sections (κ extrapolated), Run-2 efficiency and decay window, background × luminosity × R_bkg (1 or 10).
+3. [derived] HL-LHC 0.974/0.801, HE-LHC 1.684/1.360, FCC-hh 3.741/2.876 TeV; FCC-hh high-background variant 36% short (locked 25% fails); κ = 0 gives 4.03/3.11 TeV.
+4. [derived] Every FCC-hh variant exceeds 1.85 TeV, so the full SERAPIS wino window is testable there.

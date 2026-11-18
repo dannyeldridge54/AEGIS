@@ -13766,3 +13766,17 @@ LABEL: numerics (computed) on literature tables (Resummino, arXiv:2304.11915); l
 - T2 PASS: at equal τ₀ the asymmetry at 13.6 TeV equals that at 13 TeV to 0.093% (ratios cancel the evolution that κ absorbed in D1299).
 - T3 PASS: R = (χ̃₂⁰χ̃₁⁺ + χ̃₂⁰χ̃₁⁻)/χ̃₁⁺χ̃₁⁻ = 1.94 → 2.20 → 2.04 across 100–2000 GeV is a function of τ₀ only to 0.050%.
 - T4: tools/lhc/selftest.py runs all three; T2/T3 guard the tables against corruption; T1 marks the PDF-limited region.
+
+## D1306 — CERN+1 LHC7: future colliders — HL-LHC and HE-LHC reaches match the published study; FCC-hh comes out 17–36% short (high-background variant FAILS the locked 25%); every future machine variant covers the SERAPIS window (2026-11-18)
+MAP: none
+LABEL: numerics (computed; rough extrapolation beyond 13.6 TeV, labelled) vs literature (arXiv:1805.00015: wino reach HL-LHC 0.9/0.5,
+HE-LHC 2.1/1.5, FCC-hh 6.5/4.5 TeV, low/high background); locked first (PREREG_LHC7; one code-bounds deviation recorded beforehand).
+CERN+1 (low / high background = R_bkg 1 / 10): HL-LHC 0.974 / 0.801 TeV · HE-LHC (27 TeV, 15 ab⁻¹) 1.684 / 1.360 TeV · FCC-hh (100 TeV,
+30 ab⁻¹) 3.741 / 2.876 TeV.
+- P1 PASS: HL-LHC 0.974 TeV vs published 0.9 TeV (+8%).
+- P2 PARTLY FAIL: HE-LHC within 25% of the band (1.36–1.68 vs 1.5–2.1 TeV) PASS; FCC-hh low 3.74 vs 4.5 (−17%) PASS, high 2.88 vs 4.5
+  (−36%) FAIL. Diagnosis (not a fix): the κ = −0.163 evolution factor fitted on 13→13.6 TeV is extrapolated to 100 TeV ((100/13)^κ = 0.72);
+  with pure scaling (κ = 0) FCC-hh gives 4.03 / 3.11 TeV — the gap is the cross-section extrapolation over a 7.7× energy lever arm, the
+  part labelled rough. Fix needs the PDF-based route (own LO) or a published 100 TeV wino cross section.
+- P3 PASS: FCC-hh covers the whole SERAPIS window (0.67–1.85 TeV) in every variant (≥ 2.88 TeV); HE-LHC covers 0.67–1.36…1.68 TeV.
+TOOL: tools/lhc/future.py (`reach`, `table`, COLLIDERS).
