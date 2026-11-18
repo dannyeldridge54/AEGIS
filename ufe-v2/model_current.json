@@ -18,8 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1239: T_R at ρ ≈ 3e8–3e9 GeV → computed",
-  "D1240: Dark radiation (doublet-only killed) → computed",
   "D1240: Family caps n_s ≤ 0.985, r ≤ 8.3e-4 → frozen",
   "D1240: T_R at τ=i ≈ 1–3e6 GeV → corrected",
   "D1241: T_R at τ=i ≈ 1–3e6 GeV → corrected",
@@ -29,10 +27,14 @@
   "D1245: POSTULATE: audited SERAPIS-E box (N* 50.1–51.3): n_s 0.9717–0.9760, r 4.38–4.90e-4; 4/9 inside frozen band → postulate",
   "D1246: SERAPIS-E potential (Epstein + BHK tilt) → computed",
   "D1246: BHK one-loop tilt C → literature",
-  "D1246: Stuck D3 branes at half-periods → literature"
+  "D1246: Stuck D3 branes at half-periods → literature",
+  "D1247: Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4) → frozen",
+  "D1247: N* at τ=i (stiff phase physical) → corrected"
  ],
  "open_rechecks": [
-  "N* at τ=i (stiff phase physical)",
+  "Tilt strength ε (fitted)",
+  "Vacuum at τ=i (Chronos/Kairos)",
+  "Vacuum at ρ (variant)",
   "Leptogenesis at τ=i: inflaton decay marginal, AD robust",
   "Inflaton coupling at ρ (cone splitting)",
   "N* for SERAPIS-E ≈ 50.1–51.3 (exact end + n = 1 reheating; D1234, D1235)",

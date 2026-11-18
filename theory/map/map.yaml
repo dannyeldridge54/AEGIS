@@ -35,6 +35,7 @@ nodes:
   - 'D1031: estimate'
   - 'D1045: estimate'
   - 'D1048: estimate'
+  flag: recheck (D1247, band_i)
 - id: plateau_origin
   layer: 1
   branch:
@@ -196,6 +197,7 @@ nodes:
   - D633
   depends:
   - eps_tilt
+  flag: recheck (D1247, band_i)
 - id: vac_rho
   layer: 2
   branch:
@@ -207,6 +209,7 @@ nodes:
   - D634
   depends:
   - eps_tilt
+  flag: recheck (D1247, band_i)
 - id: serapis_e
   layer: 2
   branch:
@@ -342,17 +345,18 @@ nodes:
   branch:
   - i
   title: N* at τ=i (stiff phase physical)
-  status: computed
+  status: corrected
   d:
   - D729
   - D730
   - D815
+  - D1247
   depends:
   - reheat_i
   - vac_i
   history:
   - 'D815: computed'
-  flag: recheck (D1241, reheat_i)
+  - 'D1247: corrected'
 - id: lepto_i
   layer: 4
   branch:
@@ -556,15 +560,16 @@ nodes:
   - D861
   - D906
   - D962
+  - D1247
   depends:
   - nstar_i
   - janus
   note: corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)
   history:
-  - 'D861: computed'
   - 'D906: frozen'
   - 'D962: computed'
-  flag: recheck (D1241, reheat_i)
+  - 'D1247: frozen'
+  flag: recheck (D1247, nstar_i)
 - id: band_e
   layer: 5
   branch:
@@ -683,7 +688,7 @@ nodes:
   - 'D752: computed'
   - 'D906: computed'
   - 'D1229: computed'
-  flag: recheck (D1245, band_e_audited)
+  flag: recheck (D1247, nstar_i)
 - id: tests_lhc
   layer: 5
   branch:

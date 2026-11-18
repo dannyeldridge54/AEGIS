@@ -1836,3 +1836,4 @@ Touches: none.
 ## D1243: NA10 — D745 radiative resonant leptogenesis rerun with D730 m_φ: pass 38–86 % / 42–86 % (was 34–86 %), PASS; eta_n, lepto_i unchanged
 ## D1245: PW1 (web postulate 1) — audited SERAPIS-E box n_s 0.9717–0.9760, r 4.38–4.90e-4 (live Janus scan); 4/9 corners inside frozen band; pre-stated ranges FAIL (5/9)
 ## D1246: NA11 — SERAPIS-E core arithmetic all PASS (lattice E(ρ,2) = 5.7833592, isotropic minimum, 2ζ(4)y² plateau, BHK C per tadpole row, tadpole = 16); D1234a: D689's 13–16 % belonged to the predecessor model, janus consistent with D693's ≤ 6 %
+## D1247: NA12 — τ = i with audited reheating (N* 50.40–50.45): ε window narrows to ≈ 1.39–1.44e-4 (only ε = 1.40e-4 in band on the grid; n_s 0.97462, r 4.83e-4); D861 arithmetic PASS

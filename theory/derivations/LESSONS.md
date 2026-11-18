@@ -363,3 +363,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1243: reproduce the original run in the same session before reading the rerun — an exact reproduction makes the one-line diff the only explanation for the change.
 - D1245: write the postulate's expected ranges before the run — mine missed (5/9), which shows the slope estimate was too narrow and keeps the postulate honest.
 - D1246: when a locked reference number comes from a note, check that note's MODEL is the one being audited — D689's offset was for the predecessor plateau.
+- D1247: a window that sits at a band edge (D815's ε = 1.45e-4 at n_s = 0.9750 exactly) is the first casualty of any upstream correction; record edge-sitting windows as fragile when they are found.

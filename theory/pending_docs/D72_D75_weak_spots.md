@@ -12961,3 +12961,16 @@ MAP: node=stuck_d3 status=literature touches=[] ripple=no
 
 ## D1234a — correction to D1234 (part A)
 D1234 compared today's Janus relation error (3.3–4.0 %) with D689's "13–16 %" and called it FAIL-as-locked. D689's 13–16 % was computed for the PREDECESSOR model V = P_ρ(τ)[1 + C(E − E(ρ))] (D689), not for SERAPIS-E (P_E = Ê/(Ê+1), D691). The right SERAPIS-E statement is D693's frozen "Janus κ = 1 (p = 2√2) ≤ 6 %", which the 3.3–4.0 % satisfies. The lock's [12 %, 17 %] bar was built on the wrong reference; the FAIL stands as recorded, but it carries no information about SERAPIS-E; the node janus is CONSISTENT with D693.
+
+## D1247 — CENTRE — NA12: τ = i with the audited reheating — the ε window narrows from 1.40–1.45e-4 to ≈ 1.40e-4 (only the 1.40 grid point stays in band); pre-stated expectation CONFIRMED; D861 benchmark arithmetic PASS
+Lock: field_tests/rules/PREREG_NA12_band_i_audited.md. Script: field_tests/scripts/na12/band_i_na12.py (D815's exact-MS code + new driver). Results: field_tests/results/na12_band_i_audited.txt.
+[computed, exact MS; N* shift estimate] N*(ε) = 50.31 + ½ ln(m(ε)/1.9e11) = 50.40–50.45:
+- ε 1.30e-4: n_s 0.97368, r 4.685e-4 (r below 4.8e-4) — out
+- ε 1.35e-4: n_s 0.97415, r 4.758e-4 — out (r)
+- ε 1.40e-4: n_s 0.97462, r 4.834e-4, α_s −8.54e-4 — IN
+- ε 1.45e-4: n_s 0.97509 — out (n_s > 0.975; D815 had it exactly at 0.9750)
+- ε 1.50e-4: n_s 0.97556 — out
+Verdict: window non-empty → τ = i keeps its band (CONSISTENT), but the window is now squeezed between the r floor (4.8e-4) and the n_s ceiling (0.975): ε ≈ 1.39–1.44e-4 (interpolated). τ = i is a narrower conditional variant than D841 recorded; ε stays fitted (eps_tilt).
+D861 benchmark: Im S = 0.1125/g_s = 0.485 at g_s = 0.232, C = 15·4/(64π⁶·781) = 1.2486e-6 (quoted 1.25e-6) → PASS.
+MAP: node=band_i status=frozen touches=[eps_tilt, tests_cmb] ripple=yes
+MAP: node=nstar_i status=corrected touches=[band_i] ripple=yes
