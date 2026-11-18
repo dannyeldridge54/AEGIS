@@ -12730,3 +12730,10 @@ for one-or-two-point use; Janus wins once a model is evaluated at more than ~20 
 equal Auclair–Ringeval's (D1219) term by term — two independent sources agree.
 Next (own lock): cut the background build (store only the window around N_end − 70…N_end on a second pass; or a lower-cost start) and retest JS2.
 MAP: none (tool speed).
+
+## D1227 — JANUS — JSJ2: janus-jit with the build fix [ADOPTED as single-field default; per point faster than ASPIC, per model not yet]
+Lock: field_tests/rules/PREREG_JSJ2_corejit.md (follows D1226). Fix: the build zeroed 200 000-row arrays on every call (2–3 ms fixed); now grows from 4 096 rows. Result field_tests/results/jsj2.txt.
+JS1: 16/16 within 1e-7 / 1e-6 of core.spectra3; median |Δn_s| vs exact 2.86e-6 for both. JS2: median ×29 vs core (≥ 20 ✓). JS3: per point 0.150 ms vs ASPIC 0.244 ms → FASTER (×1.6).
+JS4: per model (build + 2 points) 2.8 ms vs ASPIC 0.49 ms → NOT faster; the remaining cost is the background build from a near-hilltop start (2–3 ms for these models).
+Net: Janus is now faster than ASPIC for any scan with more than ~25 points per model and ~250× more accurate at every point. Timings vary ~2× between runs on this shared machine (ASPIC 0.47 → 0.24 ms/pt between JSJ1 and JSJ2), so ratios are reported per run.
+MAP: none (tool speed).
