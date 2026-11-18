@@ -161,7 +161,22 @@ for a, b, ref, v, sg in (
     ('X_d2', 'vac_i', 'D1280, D1287', 'square τ=i is a saddle', -1),
     ('X_su3', 'serapis_e', 'D1283', 'shape matches, size does not', -1)):
     edge(a, b, 'lattice', sg, ref, v)
-out = dict(nodes=list(N.values()), edges=E, lanes=['left', 'centre', 'right', 'theory', 'janus', 'strings', 'wiring', 'lattice'])
+# ---- LHC lane (Janus-LHC, 2026-11-18: "do everything they're doing, but better") ----
+for i, l, st, r in (
+    ('Q_xsec', 'Wino cross sections: ln–ln spline of Resummino tables (LOO max 0.3%) + Drell–Yan scaling route (no PDF file), universal κ ≈ −0.163', 'computed', 'D1299; Zenodo 24342227'),
+    ('Q_resummino', 'Resummino aNNLO+NNLL tables, 13 & 13.6 TeV (their standard)', 'literature', 'arXiv:2304.11915'),
+    ('Q_life', 'Wino lifetime engine: δm(m) two-loop, cτ(1 TeV) = 5.83 cm, BR(π) 97.9%', 'computed', 'D1300'),
+    ('Q_stats', 'CLs limits: pyhf + exact Poisson (asymptotics off ≤8% at low counts)', 'computed', 'docs/LHC_TOOLKIT.md'),
+    ('Q_dt', 'Disappearing-track recast: wino excluded < 666.6 GeV (ATLAS 660); HL-LHC ≈ 975 GeV', 'computed', 'D1301'),
+    ('Q_atlas', 'ATLAS disappearing-track search, 136 fb⁻¹', 'literature', 'arXiv:2201.02472'),
+    ('Q_pdf', 'Own LO cross section with a PDF set (blocked: CERN file needs one click at home)', 'open', 'docs/LHC_TOOLKIT.md')):
+    node(i, l, 'lhc', st, r)
+for a, b, ref, v, sg in (
+    ('Q_resummino', 'Q_xsec', 'D1299', 'reproduced to 0.3%', 1), ('Q_xsec', 'Q_dt', 'D1301', 'signal yield', 1), ('Q_life', 'Q_dt', 'D1301', 'decay window', 1),
+    ('Q_stats', 'Q_dt', 'D1301', 'N95', 1), ('Q_atlas', 'Q_dt', 'D1301', 'limit reproduced (1%)', 1), ('Q_pdf', 'Q_xsec', 'next', 'independent check', 1),
+    ('Q_dt', 'tests_lhc', 'D1301', 'HL-LHC reach ≈ 975 GeV', 1), ('Q_xsec', 'W_registry', 'registry', 'lhc_xsec', 1), ('Q_dt', 'W_registry', 'registry', 'lhc_dt_limit', 1)):
+    edge(a, b, 'lhc', sg, ref, v)
+out = dict(nodes=list(N.values()), edges=E, lanes=['left', 'centre', 'right', 'theory', 'janus', 'strings', 'wiring', 'lattice', 'lhc'])
 bad = [e for e in E if e['s'] not in N or e['t'] not in N]
 assert not bad, bad
 (ROOT / 'docs/web').mkdir(parents=True, exist_ok=True); json.dump(out, open(ROOT / 'docs/web/web.json', 'w'), indent=1, ensure_ascii=False)

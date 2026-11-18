@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1295, D1296, D1297",
+   "refs": "D1296, D1297, D1298",
    "info": ""
   },
   {
@@ -878,6 +878,62 @@
    "lane": "lattice",
    "status": "literature",
    "refs": "D1285, hep-th/0403001",
+   "info": ""
+  },
+  {
+   "id": "Q_xsec",
+   "label": "Wino cross sections: ln–ln spline of Resummino tables (LOO max 0.3%) + Drell–Yan scaling route (no PDF file), universal κ ≈ −0.163",
+   "lane": "lhc",
+   "status": "computed",
+   "refs": "D1299; Zenodo 24342227",
+   "info": ""
+  },
+  {
+   "id": "Q_resummino",
+   "label": "Resummino aNNLO+NNLL tables, 13 & 13.6 TeV (their standard)",
+   "lane": "lhc",
+   "status": "literature",
+   "refs": "arXiv:2304.11915",
+   "info": ""
+  },
+  {
+   "id": "Q_life",
+   "label": "Wino lifetime engine: δm(m) two-loop, cτ(1 TeV) = 5.83 cm, BR(π) 97.9%",
+   "lane": "lhc",
+   "status": "computed",
+   "refs": "D1300",
+   "info": ""
+  },
+  {
+   "id": "Q_stats",
+   "label": "CLs limits: pyhf + exact Poisson (asymptotics off ≤8% at low counts)",
+   "lane": "lhc",
+   "status": "computed",
+   "refs": "docs/LHC_TOOLKIT.md",
+   "info": ""
+  },
+  {
+   "id": "Q_dt",
+   "label": "Disappearing-track recast: wino excluded < 666.6 GeV (ATLAS 660); HL-LHC ≈ 975 GeV",
+   "lane": "lhc",
+   "status": "computed",
+   "refs": "D1301",
+   "info": ""
+  },
+  {
+   "id": "Q_atlas",
+   "label": "ATLAS disappearing-track search, 136 fb⁻¹",
+   "lane": "lhc",
+   "status": "literature",
+   "refs": "arXiv:2201.02472",
+   "info": ""
+  },
+  {
+   "id": "Q_pdf",
+   "label": "Own LO cross section with a PDF set (blocked: CERN file needs one click at home)",
+   "lane": "lhc",
+   "status": "open",
+   "refs": "docs/LHC_TOOLKIT.md",
    "info": ""
   }
  ],
@@ -2780,6 +2836,87 @@
    "ref": "D1283",
    "verdict": "shape matches, size does not",
    "source": "curated"
+  },
+  {
+   "s": "Q_resummino",
+   "t": "Q_xsec",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1299",
+   "verdict": "reproduced to 0.3%",
+   "source": "curated"
+  },
+  {
+   "s": "Q_xsec",
+   "t": "Q_dt",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1301",
+   "verdict": "signal yield",
+   "source": "curated"
+  },
+  {
+   "s": "Q_life",
+   "t": "Q_dt",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1301",
+   "verdict": "decay window",
+   "source": "curated"
+  },
+  {
+   "s": "Q_stats",
+   "t": "Q_dt",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1301",
+   "verdict": "N95",
+   "source": "curated"
+  },
+  {
+   "s": "Q_atlas",
+   "t": "Q_dt",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1301",
+   "verdict": "limit reproduced (1%)",
+   "source": "curated"
+  },
+  {
+   "s": "Q_pdf",
+   "t": "Q_xsec",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "next",
+   "verdict": "independent check",
+   "source": "curated"
+  },
+  {
+   "s": "Q_dt",
+   "t": "tests_lhc",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1301",
+   "verdict": "HL-LHC reach ≈ 975 GeV",
+   "source": "curated"
+  },
+  {
+   "s": "Q_xsec",
+   "t": "W_registry",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "registry",
+   "verdict": "lhc_xsec",
+   "source": "curated"
+  },
+  {
+   "s": "Q_dt",
+   "t": "W_registry",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "registry",
+   "verdict": "lhc_dt_limit",
+   "source": "curated"
   }
  ],
  "lanes": [
@@ -2790,6 +2927,7 @@
   "janus",
   "strings",
   "wiring",
-  "lattice"
+  "lattice",
+  "lhc"
  ]
 }
