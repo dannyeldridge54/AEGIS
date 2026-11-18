@@ -105,9 +105,28 @@ def summarise(outdir, model=DEFAULT_MODEL):
                 n_stars=n, tiles=tiles,
                 most_eccentric=[dict(source_id=s, ecc=round(e_, 4), l=l_, b=b_, zmax=z_) for e_, s, l_, b_, z_ in ecc_top[:50]],
                 notes='Descriptive orbit parameters, no population classification; M_G without extinction; distance from r_med_geo or 1/parallax (flagged).')
+def check(cosmos_map, level=5, n=8):
+    """Pre-flight: sample n tiles, report the column schema, how many stars pass select(), and a time estimate. Reads only."""
+    import random
+    tiles = sorted((pathlib.Path(cosmos_map)/'tiles'/f'L{level}').glob('*.csv.gz'))
+    if not tiles: return dict(ok=False, problem=f'no tiles found under {cosmos_map}/tiles/L{level}')
+    random.seed(0); sample = random.sample(tiles, min(n, len(tiles))); tot = kept = 0; cols = None
+    for tp in sample:
+        with gzip.open(tp, 'rt', newline='') as fh: rows = list(csv.DictReader(fh))
+        if rows and cols is None: cols = list(rows[0].keys())
+        tot += len(rows); kept += len(select(rows))
+    gaia = all(k in (cols or []) for k in ('radial_velocity', 'parallax', 'parallax_error'))
+    mapper = all(k in (cols or []) for k in ('rv', 'dist_plx_pc', 'dist_bj_pc', 'ruwe'))
+    est = int(kept/len(sample)*len(tiles))
+    return dict(ok=kept > 0, tiles=len(tiles), sampled=len(sample), rows_sampled=tot, usable_sampled=kept,
+                schema='Gaia columns' if gaia else ('Star Mapper derived columns (proxy cut, A8d D2)' if mapper else 'UNKNOWN - no usable columns'),
+                est_usable_stars=est, problem=None if kept else '0 usable stars in the sample: check the column names before running')
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--cosmos-map', required=True); ap.add_argument('--skymap'); ap.add_argument('--max-tiles', type=int)
-    ap.add_argument('--model', default=DEFAULT_MODEL, choices=sorted(MODELS))
-    a = ap.parse_args(argv); print(json.dumps(run(a.cosmos_map, a.skymap, a.max_tiles, model=a.model))); return 0
+    ap.add_argument('--model', default=DEFAULT_MODEL, choices=sorted(MODELS)); ap.add_argument('--check', action='store_true', help='pre-flight only: sample tiles, report schema and usable stars')
+    a = ap.parse_args(argv)
+    if a.check: r = check(a.cosmos_map); print(json.dumps(r, indent=1)); return 0 if r['ok'] else 1
+    print(json.dumps(run(a.cosmos_map, a.skymap, a.max_tiles, model=a.model))); return 0
 if __name__ == '__main__': sys.exit(main())
