@@ -13,7 +13,7 @@
    "label": "Origin of the plateau",
    "lane": "theory",
    "status": "assumed",
-   "refs": "D988, D992, D798a",
+   "refs": "D992, D798a, D1352",
    "info": "Casimir/tension, species and Epstein-Kähler routes all closed"
   },
   {
@@ -53,7 +53,7 @@
    "label": "Galactic DM profile (cuspy vs cored)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1056, D1061, D1249",
+   "refs": "D1249, D1320, D1322",
    "info": ""
   },
   {
@@ -61,7 +61,7 @@
    "label": "Vacuum at τ=i (Chronos/Kairos)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D605, D633",
+   "refs": "D1344, D1349, D1351",
    "info": ""
   },
   {
@@ -85,7 +85,7 @@
    "label": "Janus relation (α_s from n_s, r)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D692, D1234, D1255",
+   "refs": "D1234, D1255, D1346",
    "info": ""
   },
   {
@@ -161,6 +161,14 @@
    "info": ""
   },
   {
+   "id": "darkrad_i",
+   "label": "Dark radiation at τ=i (hidden sector): U(1) ΔN 0.054 OK (+1.5σ); SU(2) 0.161 ≈3σ (N_eff 2026, D1208); SU(2)+gaugino 0.301 excluded (LBT Y_p, D1192)",
+   "lane": "theory",
+   "status": "computed",
+   "refs": "D1208, D1320, D1325",
+   "info": ""
+  },
+  {
    "id": "darkrad_rho",
    "label": "Dark radiation (doublet-only killed)",
    "lane": "theory",
@@ -205,7 +213,7 @@
    "label": "Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4)",
    "lane": "theory",
    "status": "frozen",
-   "refs": "D906, D962, D1247",
+   "refs": "D962, D1247, D1343",
    "info": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)"
   },
   {
@@ -213,7 +221,7 @@
    "label": "Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4)",
    "lane": "theory",
    "status": "frozen",
-   "refs": "D962, D1231, D1233",
+   "refs": "D1231, D1233, D1232",
    "info": ""
   },
   {
@@ -290,10 +298,10 @@
   },
   {
    "id": "wino_window",
-   "label": "Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784)",
+   "label": "Wino 0.67–1.25 TeV thermal (to ~1.5 for Einasto cores), 5–30% of DM (post-hoc; IGS line D1153/A2o; LHC floor 0.67, HL-LHC ~0.98)",
    "lane": "theory",
-   "status": "corrected",
-   "refs": "D906, D1230, D1250",
+   "status": "computed",
+   "refs": "D1324, D1337, D1338",
    "info": ""
   },
   {
@@ -308,8 +316,8 @@
    "id": "tests_lhc",
    "label": "Test: Run 3 / HL-LHC disappearing tracks",
    "lane": "theory",
-   "status": "literature",
-   "refs": "D736, D906, D1249",
+   "status": "computed",
+   "refs": "D906, D1249, D1350",
    "info": ""
   },
   {
@@ -881,6 +889,54 @@
    "info": ""
   },
   {
+   "id": "G_A2",
+   "label": "Config A2 disk (3α=1): r = 1.52e-3, n_s 0.9608 [P6 side model; scored on future r]",
+   "lane": "lattice",
+   "status": "postulate",
+   "refs": "D1352",
+   "info": ""
+  },
+  {
+   "id": "G_D4",
+   "label": "Config D4 disks (3α=2): r = 3.01e-3 [P6 side model; scored on future r]",
+   "lane": "lattice",
+   "status": "postulate",
+   "refs": "D1352",
+   "info": ""
+  },
+  {
+   "id": "G_E6",
+   "label": "Config E6 disks (3α=3): r = 4.47e-3 [P6 side model; scored on future r]",
+   "lane": "lattice",
+   "status": "postulate",
+   "refs": "D1352",
+   "info": ""
+  },
+  {
+   "id": "G_E8",
+   "label": "Config E8 disks (3α=4): r = 5.89e-3 [P6 side model; scored on future r]",
+   "lane": "lattice",
+   "status": "postulate",
+   "refs": "D1352",
+   "info": ""
+  },
+  {
+   "id": "G_BW16",
+   "label": "Config BW16 disks (3α=8): r = 1.13e-2 [P6 side model; scored on future r]",
+   "lane": "lattice",
+   "status": "postulate",
+   "refs": "D1352",
+   "info": ""
+  },
+  {
+   "id": "G_Leech",
+   "label": "Config Leech disks (3α=12): r = 1.64e-2 [P6 side model; scored on future r]",
+   "lane": "lattice",
+   "status": "postulate",
+   "refs": "D1352",
+   "info": ""
+  },
+  {
    "id": "Q_xsec",
    "label": "Wino cross sections: ln–ln spline of Resummino tables (LOO max 0.3%) + Drell–Yan scaling route (no PDF file), universal κ ≈ −0.163",
    "lane": "lhc",
@@ -1114,6 +1170,15 @@
   {
    "s": "n_sector_rho",
    "t": "sterile_rho",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "computed",
+   "source": "map.yaml"
+  },
+  {
+   "s": "vac_i",
+   "t": "darkrad_i",
    "kind": "depends",
    "sign": 1,
    "ref": "theory/map/map.yaml",
@@ -1459,7 +1524,7 @@
    "kind": "depends",
    "sign": 1,
    "ref": "theory/map/map.yaml",
-   "verdict": "corrected",
+   "verdict": "computed",
    "source": "map.yaml"
   },
   {
@@ -1468,7 +1533,7 @@
    "kind": "depends",
    "sign": 1,
    "ref": "theory/map/map.yaml",
-   "verdict": "corrected",
+   "verdict": "computed",
    "source": "map.yaml"
   },
   {
@@ -1495,7 +1560,7 @@
    "kind": "depends",
    "sign": 1,
    "ref": "theory/map/map.yaml",
-   "verdict": "literature",
+   "verdict": "computed",
    "source": "map.yaml"
   },
   {
@@ -2891,6 +2956,168 @@
    "sign": -1,
    "ref": "D1283",
    "verdict": "shape matches, size does not",
+   "source": "curated"
+  },
+  {
+   "s": "X_d2",
+   "t": "G_A2",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "one disk per complex dimension",
+   "source": "curated"
+  },
+  {
+   "s": "G_A2",
+   "t": "tests_cmb",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "r forecast (LiteBIRD/CMB-S4)",
+   "source": "curated"
+  },
+  {
+   "s": "G_A2",
+   "t": "plateau_origin",
+   "kind": "lattice",
+   "sign": -1,
+   "ref": "D1352",
+   "verdict": "n_s 0.961, below the SERAPIS band",
+   "source": "curated"
+  },
+  {
+   "s": "X_d4",
+   "t": "G_D4",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "one disk per complex dimension",
+   "source": "curated"
+  },
+  {
+   "s": "G_D4",
+   "t": "tests_cmb",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "r forecast (LiteBIRD/CMB-S4)",
+   "source": "curated"
+  },
+  {
+   "s": "G_D4",
+   "t": "plateau_origin",
+   "kind": "lattice",
+   "sign": -1,
+   "ref": "D1352",
+   "verdict": "n_s 0.961, below the SERAPIS band",
+   "source": "curated"
+  },
+  {
+   "s": "X_d6",
+   "t": "G_E6",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "one disk per complex dimension",
+   "source": "curated"
+  },
+  {
+   "s": "G_E6",
+   "t": "tests_cmb",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "r forecast (LiteBIRD/CMB-S4)",
+   "source": "curated"
+  },
+  {
+   "s": "G_E6",
+   "t": "plateau_origin",
+   "kind": "lattice",
+   "sign": -1,
+   "ref": "D1352",
+   "verdict": "n_s 0.961, below the SERAPIS band",
+   "source": "curated"
+  },
+  {
+   "s": "X_d8",
+   "t": "G_E8",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "one disk per complex dimension",
+   "source": "curated"
+  },
+  {
+   "s": "G_E8",
+   "t": "tests_cmb",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "r forecast (LiteBIRD/CMB-S4)",
+   "source": "curated"
+  },
+  {
+   "s": "G_E8",
+   "t": "plateau_origin",
+   "kind": "lattice",
+   "sign": -1,
+   "ref": "D1352",
+   "verdict": "n_s 0.961, below the SERAPIS band",
+   "source": "curated"
+  },
+  {
+   "s": "X_bw16",
+   "t": "G_BW16",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "one disk per complex dimension",
+   "source": "curated"
+  },
+  {
+   "s": "G_BW16",
+   "t": "tests_cmb",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "r forecast (LiteBIRD/CMB-S4)",
+   "source": "curated"
+  },
+  {
+   "s": "G_BW16",
+   "t": "plateau_origin",
+   "kind": "lattice",
+   "sign": -1,
+   "ref": "D1352",
+   "verdict": "n_s 0.961, below the SERAPIS band",
+   "source": "curated"
+  },
+  {
+   "s": "X_d24",
+   "t": "G_Leech",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "one disk per complex dimension",
+   "source": "curated"
+  },
+  {
+   "s": "G_Leech",
+   "t": "tests_cmb",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1352",
+   "verdict": "r forecast (LiteBIRD/CMB-S4)",
+   "source": "curated"
+  },
+  {
+   "s": "G_Leech",
+   "t": "plateau_origin",
+   "kind": "lattice",
+   "sign": -1,
+   "ref": "D1352",
+   "verdict": "n_s 0.961, below the SERAPIS band",
    "source": "curated"
   },
   {

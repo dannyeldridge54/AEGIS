@@ -26,7 +26,8 @@ class Api:
     def test_node(self, node): return test_node(node)
     def derive_weave(self, on, order=None):
         return WEAVE.start(self._win, order or []) if on else WEAVE.stop()
-    def testable_nodes(self): return sorted(NODE_TESTS)
+    def testable_nodes(self): return sorted(x['id'] for x in _web())
+    def test_particle(self, pid): return test_particle(pid)
     def sweep_node(self, node): return sweep_node(node)
     def set_weave_sweep(self, on): WEAVE.sweep = bool(on); return dict(sweep=WEAVE.sweep)
     def open_classic(self):
@@ -216,6 +217,79 @@ NODE_SWEEPS.update({
     'L_cmb': ('string_meter', {'ns_sigma': 0.0016}, 'ns', [0.970, 0.972, 0.974, 0.976], ('C', +1)),
     'X_ms': ('serapis_ms', {'Nstar': 50.7}, 'C', [1.0e-6, 1.15e-6, 1.3e-6], ('ns', +1)),
 })
+
+# ---- every node gets a test (Danny 16:27 "test for all node configs particles discoveries") ----
+# 1) LOCAL_TESTS: exact checks computed here (no registry). 2) registry tests (NODE_TESTS). 3) RECORD check for the rest:
+#    the node's status agrees with the ladder map and every D-note it cites exists — a consistency test, labelled as such.
+def _web():
+    import json
+    if not hasattr(_web, 'd'):
+        t = open(os.path.join(BASE, 'data.js'), encoding='utf-8').read(); D = json.loads(t[t.index('=') + 1:].rstrip().rstrip(';'))
+        _web.d = D['web']['nodes']; _web.p = D.get('particles', [])
+    return _web.d
+def _link_file(name, repo_rel):
+    for p in (os.path.join(CM_DIR, 'aegis_link', name), os.path.join(os.environ.get('AEGIS_DIR', ''), repo_rel)):
+        if p and os.path.isfile(p): return p
+    return None
+def _record_check(node):
+    import re
+    n = next((x for x in _web() if x['id'] == node), None)
+    if not n: return False, 'not on the web'
+    out, ok = [], True
+    mp = _link_file('map.yaml', 'theory/map/map.yaml')
+    if mp:
+        import yaml
+        m = yaml.safe_load(open(mp, encoding='utf-8')); m = m['nodes'] if isinstance(m, dict) else m
+        x = next((y for y in m if y['id'] == node), None)
+        if x:
+            same = x.get('status') == n.get('status'); ok &= same
+            out.append(f"map status {x.get('status')} {'=' if same else '≠'} web {n.get('status')}")
+    refs = sorted(set(re.findall(r'D\d{3,4}[a-z]?', n.get('refs', '') + ' ' + n.get('label', ''))))
+    ix = _link_file('dnotes_index.txt', '')
+    if refs and ix:
+        have = set(open(ix, encoding='utf-8').read().split()); miss = [r for r in refs if r not in have]
+        ok &= not miss; out.append(f"{len(refs) - len(miss)}/{len(refs)} cited D-notes exist" + (f" (missing {', '.join(miss[:4])})" if miss else ''))
+    elif refs: out.append(f'{len(refs)} D-refs (no index here to check them)')
+    else: out.append('literature/source ref: ' + n.get('refs', '')[:60])
+    return ok, 'record check (no calculation): ' + '; '.join(out)
+def _g_cfg(d, r_expect):
+    """D1352 lattice-disk config: exact T-model closed form at N* = 50.7; must reproduce the locked result."""
+    def f():
+        a = d / 6; N = 50.7; ye = math.asinh(math.sqrt(4/(3*a))); y = math.acosh(math.cosh(ye) + 4*N/(3*a)); r = 64/(3*a*math.sinh(y)**2)
+        return abs(r - r_expect)/r_expect < 2e-3, f'3α = {d/2:g}: r = {r:.4g} at N* = 50.7 (D1352: {r_expect:.4g}); n_s ≈ 0.9609 for every lattice'
+    return f
+def _moduli():
+    v = [d*(d+1)//2 - 1 for d in (1, 2, 3, 4, 5, 8, 24)]
+    return v == [0, 2, 5, 9, 14, 35, 299], f'shape moduli d(d+1)/2−1 for d = 1,2,3,4,5,8,24 → {v}'
+def _cm_mem():
+    p = os.path.join(CM_DIR, 'cubemind_memory.jsonl')
+    if not os.path.isfile(p): return False, 'no CubeMind memory file found'
+    n = sum(1 for _ in open(p, encoding='utf-8')); return n > 100, f'CubeMind memory holds {n} records'
+def _cm_eval():
+    import json
+    p = os.path.join(CM_DIR, 'mindmem', 'qa1_score.json')
+    if not os.path.isfile(p): return False, 'no QA1 score file'
+    j = json.load(open(p)); s = j.get('pc_ollama') or next(iter(j.values()))
+    return s['similarity_only'] >= 0.6, f"QA1 hit@5: similarity-only {s['similarity_only']} (adopted), default {s['default']} — locked bar 0.6"
+def _w_app():
+    n = len(_web()); t = sum(1 for x in _web() if x['id'] in NODE_TESTS or x['id'] in LOCAL_TESTS)
+    return n > 100, f'Janus answers: {n} web nodes, {t} with a calculation test, the rest record-checked'
+LOCAL_TESTS = {
+    'G_A2': _g_cfg(2, 1.522e-3), 'G_D4': _g_cfg(4, 3.009e-3), 'G_E6': _g_cfg(6, 4.465e-3),
+    'G_E8': _g_cfg(8, 5.893e-3), 'G_BW16': _g_cfg(16, 1.134e-2), 'G_Leech': _g_cfg(24, 1.641e-2),
+    'X_moduli': _moduli, 'CM_mem': _cm_mem, 'CM_eval': _cm_eval, 'W_app': _w_app,
+}
+NODE_TESTS.update({
+    'X_rings': (*_LL('automorphisms', 'Z2'), _approx('automorphisms', 8, 0, 'Z[i] square lattice symmetries')),
+    'X_su3': (*_LL('hexagons', 'A2'), _approx('hexagonal_planes', 1, 0, 'A2 (SU(3) root lattice) is one hexagon')),
+    'X_narain': (*_LL('flip', 'E8'), _is('self_dual', True, 'E8 (even self-dual, Narain-type) is self-dual')),
+    'Q_sym': ('lhc_selftest', {}, _ran('CERN+1 symmetry self-tests')),
+    'Q_band': (*_DT(136, 'ATLAS_136'), _approx('m_limit_GeV', 666.6, 10.0, '136/fb limit inside the D1309 band 661.5 ± 10 GeV')),
+    'L_reheat': ('nstar_match', {'r': 4.8e-4, 'V_ratio': 2.2674, 'T_R': 8.94e8}, _ran('N* with the reheating/kination history')),
+    'T_hyperion': ('janus_lt', {'h': 0.6736, 'ombh2': 0.02237, 'omch2': 0.12, 'w0': -1, 'wa': 0, 'z': [0.5, 1.0]}, _ran('Hyperion late-universe engine')),
+    'tests_cmb': ('serapis_point', {'C': 1.25e-6, 'T_R': 8.94e8}, _band(('r',), 4.0e-4, 6.0e-4, 'SERAPIS r for LiteBIRD (σ ≈ 1e-3 → needs CMB-S4-class)')),
+    'band_i': ('serapis_emulator', {'C': 1.15e-6}, _band(('ns',), 0.970, 0.975, 'n_s inside the frozen band')),
+})
 _LANE_ORDER = ['theory', 'centre', 'left', 'right', 'lhc', 'janus', 'strings', 'lattice', 'wiring']
 def _link_log(rec):
     """Every node test / sweep result also goes to CubeMind's aegis_link/janus_tests.jsonl, which its learn loop ingests (tiered)."""
@@ -227,20 +301,29 @@ def _link_log(rec):
     return rec
 def test_node(node):
     import time
-    t = NODE_TESTS.get(node)
-    if not t: return dict(node=node, ok=None, text='no runnable test for this node yet', seconds=0.0)
-    name, args, chk = t; t0 = time.time()
+    t0 = time.time()
+    if node in LOCAL_TESTS or node not in NODE_TESTS:
+        kind = 'local' if node in LOCAL_TESTS else 'record'
+        try: ok, txt = (LOCAL_TESTS[node] if kind == 'local' else (lambda: _record_check(node)))()
+        except Exception as e: ok, txt = False, f'{type(e).__name__}: {e}'
+        return _link_log(dict(node=node, tool=kind, ok=bool(ok), text=txt, seconds=round(time.time() - t0, 2)))
+    name, args, chk = NODE_TESTS[node]
     try:
         r = run_tool(name, args); ok, txt = (False, 'tool error: ' + str(r.get('error'))[:160]) if 'error' in r else chk(r)
     except Exception as e: ok, txt = False, f'{type(e).__name__}: {e}'
     return _link_log(dict(node=node, tool=name, ok=bool(ok), text=txt, seconds=round(time.time() - t0, 2)))
+def test_particle(pid):
+    """A particle is tested through the node that carries it (particles list in data.js)."""
+    _web(); p = next((x for x in _web.p if x['id'] == pid), None)
+    if not p: return dict(particle=pid, ok=False, text='unknown particle')
+    r = test_node(p['node']); return dict(r, particle=pid, state=p.get('state'), text=f"{p.get('name')} ({p.get('state')}) via {p['node']}: {r['text']}")
 class Weave:
     """Derive-the-weave switch: walks every testable node (lane order), test-runs it, pulses it on the weave, feeds the result."""
     def __init__(self): self.on = False; self.th = None; self.win = None; self.last = []; self.sweep = False
     def start(self, win, order):
         if self.on: return dict(on=True, note='already deriving')
         self.on, self.win = True, win
-        nodes = [n for n in order if n in NODE_TESTS] + [n for n in NODE_TESTS if n not in order]
+        ids = [x['id'] for x in _web()]; nodes = [n for n in order if n in ids] + [n for n in ids if n not in order]
         self.th = threading.Thread(target=self._run, args=(nodes,), daemon=True); self.th.start(); return dict(on=True, nodes=len(nodes))
     def stop(self): self.on = False; return dict(on=False)
     def _one(self, n):

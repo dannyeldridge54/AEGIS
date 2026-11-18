@@ -14,6 +14,9 @@ def build(out):
         h = s.read_text(encoding='utf-8', errors='replace').split()
         if h: locks.append(f"{s.name[:-7]} {h[0]}")
     (out / 'locks.txt').write_text('\n'.join(locks) + '\n', encoding='utf-8')
-    return {k: (out / k).stat().st_size for k in list(FILES) + ['locks.txt']}
+    import re   # every D-note heading (record checks in Janus look cited D-numbers up here)
+    ids = re.findall(r'^(?:#{2,4} \**|\*\*)(D\d+[a-z]?)\b', (R / 'theory/pending_docs/D72_D75_weak_spots.md').read_text(encoding='utf-8'), re.M)
+    (out / 'dnotes_index.txt').write_text(' '.join(sorted(set(ids))) + '\n', encoding='utf-8')
+    return {k: (out / k).stat().st_size for k in list(FILES) + ['locks.txt', 'dnotes_index.txt']}
 if __name__ == '__main__':
     print(build(sys.argv[1] if len(sys.argv) > 1 else 'aegis_link'))

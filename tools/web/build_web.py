@@ -162,6 +162,15 @@ for a, b, ref, v, sg in (
     ('X_d2', 'vac_i', 'D1280, D1287', 'square τ=i is a saddle', -1),
     ('X_su3', 'serapis_e', 'D1283', 'shape matches, size does not', -1)):
     edge(a, b, 'lattice', sg, ref, v)
+# ---- Lattice-geometry configs (D1352, postulate P6 side model; Danny 2026-11-18 "new configs based on our geometry") ----
+for i, l, r in (('G_A2', 'Config A2 disk (3α=1): r = 1.52e-3, n_s 0.9608', 'D1352'), ('G_D4', 'Config D4 disks (3α=2): r = 3.01e-3', 'D1352'),
+                ('G_E6', 'Config E6 disks (3α=3): r = 4.47e-3', 'D1352'), ('G_E8', 'Config E8 disks (3α=4): r = 5.89e-3', 'D1352'),
+                ('G_BW16', 'Config BW16 disks (3α=8): r = 1.13e-2', 'D1352'), ('G_Leech', 'Config Leech disks (3α=12): r = 1.64e-2', 'D1352')):
+    node(i, l + ' [P6 side model; scored on future r]', 'lattice', 'postulate', r)
+for g, x in (('G_A2', 'X_d2'), ('G_D4', 'X_d4'), ('G_E6', 'X_d6'), ('G_E8', 'X_d8'), ('G_BW16', 'X_bw16'), ('G_Leech', 'X_d24')):
+    edge(x, g, 'lattice', 1, 'D1352', 'one disk per complex dimension')
+    edge(g, 'tests_cmb', 'lattice', 1, 'D1352', 'r forecast (LiteBIRD/CMB-S4)')
+    edge(g, 'plateau_origin', 'lattice', -1, 'D1352', 'n_s 0.961, below the SERAPIS band')
 # ---- LHC lane (Janus-LHC, 2026-11-18: "do everything they're doing, but better") ----
 for i, l, st, r in (
     ('Q_xsec', 'Wino cross sections: ln–ln spline of Resummino tables (LOO max 0.3%) + Drell–Yan scaling route (no PDF file), universal κ ≈ −0.163', 'computed', 'D1299; Zenodo 24342227'),
