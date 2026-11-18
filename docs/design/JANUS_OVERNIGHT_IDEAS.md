@@ -501,3 +501,19 @@ P is a real applied-engineering design toolkit (label: tool / shared-numerics; n
 - **Power generation & storage:** solar single-diode I–V + MPP (P1b datasheet-calibrated), wind power curve, battery/supercap equivalent circuits, storage sizing and dispatch, load profiles, efficiency/loss budgets.
 - **PC / hardware design engineering:** power-supply sizing (component wattage → PSU headroom, rail budgets), thermal/airflow estimates, UPS/battery runtime, and — where Danny wants — an optimizer-driven "design assistant": given constraints (budget, load, site), the AEGIS optimizer searches component/sizing choices and returns a justified design.
 Honest value-add = the optimizer + a unified Janus UI over standard engineering, not a physics breakthrough. Every design is checked against datasheets/standards under a lock before it's called good; a real original design would get a prior-art search first.
+
+### [CH] scope extended (Danny, 01:50 CT): materials/lattice + chemical engineering + medicinal (drug) cheminformatics
+Label everything tool (standard science/engineering) or physics-math shared (lattice link). No new-physics claim.
+
+**Materials / lattice (the honest shared-math bridge):** 2D-lattice minimization (Epstein zeta / hexagonal, shared with SERAPIS's vacuum), crystal packing, simple band-structure/tight-binding, graphene-type honeycomb; optimizer-driven lattice/material search. Prior-art search + locked test before any novelty claim.
+
+**Chemical engineering (applied, standard):** stoichiometry & mass/energy balances, reaction kinetics & equilibria, thermodynamics (EOS, phase), reactor models (CSTR/PFR/batch), separations (distillation/extraction basics), process sizing; optimizer for design/operating-point problems.
+
+**Medicinal / drug cheminformatics (research & education only):** RDKit molecular properties, drug-likeness (Lipinski/Veber), simple ADMET/QSAR descriptors, similarity & scaffold search, and public data (PubChem/ChEMBL-style) via the web tools (as HYPOTHESIS, cited). Educational structure–property and mechanism explanations.
+
+**Hard medical/drug limits (referee-checked):**
+- No synthesis, production, extraction or "how to make" routes for drugs — especially controlled, illegal, or hazardous substances — regardless of framing.
+- No clinical or dosing advice, no personalized medical recommendations; it is not a doctor. Point real medical questions to professionals.
+- No claims that SERAPIS or our physics yields a drug or a cure.
+- Property/prediction outputs are computational estimates labelled as such, never clinical fact.
+This is the same kind of open cheminformatics academic labs use; it stops at understanding and screening, not manufacture or treatment.
