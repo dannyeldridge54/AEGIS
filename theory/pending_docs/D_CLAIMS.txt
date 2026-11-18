@@ -643,3 +643,4 @@ D1356  2026-11-18T23:28Z  BTR -4% gap: shape agrees, common length scale
 D1357  2026-11-18T23:33Z  BTR scale recheck: singular-end cut-off
 D1358  2026-11-18T23:36Z  BTR gap: self-adjoint extension ruled out
 D1359  2026-11-18T23:43Z  Moonshine layer of the SERAPIS circuit
+D1360  2026-11-18T23:44Z  Hyperion full PC run complete (MWPotential2014)
