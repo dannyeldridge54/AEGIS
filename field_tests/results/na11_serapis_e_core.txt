@@ -1,0 +1,19 @@
+1. lattice vs E_paper
+  ρ: lattice L200 5.78328931 L400 5.78334176 extrap 5.78335924; E_paper 5.78335930; quoted 5.7833593 → PASS
+  i: lattice L200 6.02674809 L400 6.02679601 extrap 6.02681199; E_paper 6.02681204; quoted 6.0268 → PASS
+2. Hessian at ρ
+  grad (0.00e+00,2.08e-06); Exx 7.711123 Eyy 7.711133 Exy 0.00e+00 → PASS (h=1e-3 FD; tolerance 1e-5)
+3. plateau approach
+  y=10: E/(2ζ(4)y²) = 1.001745
+  y=30: E/(2ζ(4)y²) = 1.000065
+  y=100: E/(2ζ(4)y²) = 1.000002
+  PASS
+4. bhk_tilt C = 15 N_eff/(64π⁶ ImS Imρ)
+  N=5 N0=1 flux=0 N_eff=4: C(750)=1.3002e-06 C(975)=1.0002e-06 → ok
+  N=5 N0=0 flux=1 N_eff=5: C(938)=1.2995e-06 C(1219)=9.9995e-07 → ok
+  N=4 N0=0 flux=4 N_eff=4: C(750)=1.3002e-06 C(975)=1.0002e-06 → ok
+  N=3 N0=0 flux=7 N_eff=3: C(563)=1.2990e-06 C(731)=1.0005e-06 → ok
+  PASS
+5. tadpole 3N+N0+flux = 16
+  PASS
+VERDICTS: 1 True 2 True 3 True 4 True 5 True
