@@ -1,0 +1,6 @@
+T1 table points reproduce PW6: True
+T2 n_s 0.973: interp P 875.2 C 1.1141e-06 | exact P 871.7 C 1.1187e-06 | ΔP/P +0.403%
+T2 n_s 0.975: interp P 748.6 C 1.3027e-06 | exact P 746.3 C 1.3067e-06 | ΔP/P +0.306%
+T3 registry call 0.04 s: {"ns": 0.9744, "C": 1.2481903627532274e-06, "P": 781.2273120950151, "Nstar": 50.1816, "r": 0.0004822420000000008, "alpha_s": -0.0009990480000000015, "engine": "PW6 table (log-interp)", "P_range": [697.0999999999952, 890.256065152069], "P_rel_sigma": 0.12362347178703192, "T_R": 738900000.0, "N_eff": 
+T4 P_rel_sigma 0.124 vs PW5 0.14: True
+VERDICT: T1 PASS T2 PASS T3 PASS T4 PASS → ADOPT
