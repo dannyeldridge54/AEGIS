@@ -1858,82 +1858,82 @@ Touches: none.
 ## D1270: PW7 KILLED — benchmark instanton M_H 9.8e10 → T_R ≈ 7e7 GeV, leptogenesis 0 % (Y_B ×12 short); point's M_H = 1e12 is a choice, not a benchmark output; would-be point N* 49.41, n_s 0.97362 (still in frozen band)
 - D1272 (2026-11-18): SERAPIS-E tool cross-check — PT1 emulator |Δn_s|≤3.2e-5 vs exact across C∈[1.0,1.6]e-6; PW6 meter C,P consistent (~1%). Trajectory reproduced. [tool/numerics]
 
-## D1272 — SERAPIS-E tool cross-check (2026-11-18)
+## D1272: SERAPIS-E tool cross-check: the PT1 emulator and PW6 inverse meter reproduce the EXACT point across the C band (2026-11-18)
 1. Computed the exact SERAPIS-E point (n_s, r, alpha_s, N*) via Janus core spectra3 + N* self-consistency at T_R=7.389e8 GeV, g*=228.75, N_eff=4, Nmax=4000, for C in {1.0,1.15,1.30,1.60}e-6. [derived]
 2. Computed the PT1 emulator at the same C and differenced: |Δn_s| ≤ 3.2e-5 across the band, r to ~1e-6, alpha_s to ~1e-5. [derived]
 3. Inverse meter (PW6 log-interp table) at n_s=0.97439 -> C=1.248e-6, P=782 (=15·N_eff/64π⁶C); exact pipeline C≈1.26e-6, agree ~1%. [derived]
 4. Recorded point n_s=0.97439 <-> C≈1.25e-6, r≈4.8e-4, alpha_s≈-9.9e-4, N*=50.18 reproduced; trajectory consistent. No new physics claim. [derived]
 
-## D1273 — SERAPIS-E position vs CMB data + α_s relation consistency (2026-11-18)
+## D1273: Where SERAPIS-E sits against the CMB: +2.0σ vs CMB-SPA, +0.6σ vs CMB-SPA+DESI; the Janus α_s relation is ~3% approximate (2026-11-18)
 1. Took the exact SERAPIS-E point n_s=0.97439, r=4.82e-4, α_s=−9.98e-4, N*=50.18 (pipeline, D1272-verified). [derived]
 2. Differenced n_s against the published constraints: +2.00σ vs CMB-SPA 0.9684±0.0030; +0.59σ vs CMB-SPA+DESI 0.9728±0.0027. [literature]
 3. Compared r=4.82e-4 to the r<0.036 bound: 75× below, so r is not a near-term discriminator. [literature]
 4. Evaluated the analytic Janus relation α_s(n_s,r,p=2√2,κ=1) = −9.640e-4 vs pipeline −9.980e-4 → 3.4% approximation; use the pipeline value for scoring. [derived]
 
-## D1274 — n_s theory error budget (2026-11-18)
+## D1274: n_s error budget: σ_theory = 0.0133 × (fractional moduli uncertainty); pinning Im S·Im ρ to ≲5% is the highest-value next target (2026-11-18)
 1. Took the D1272-verified exact table n_s(C) and formed the local slope at C0=1.25e-6 from the 1.15–1.30e-6 bracket: dn_s/dC = 1.067e4 per unit C. [derived]
 2. Converted to a fractional form: C0·dn_s/dC = 0.01333, so σ_theory(n_s) = 0.01333 × (δC/C). [derived]
 3. Used C = 15·N_eff/(64π⁶·Im S·Im ρ) to map δC/C onto the moduli product: 5% → 6.7e-4, 10% → 1.33e-3, 20% → 2.67e-3. [derived]
 4. Combined theory and data errors in quadrature against the CMB offsets; tension vs CMB-SPA falls only 2.00σ→1.82σ at 10% moduli, so the tension is not an artefact of our uncertainty. [derived]
 
-## D1275 — Im S·Im ρ construction vs CMB meter (2026-11-18)
+## D1275: Im S·Im ρ: the construction (560–975) CONTAINS the CMB-meter value (804), but is wider than the data — SERAPIS-E is currently a meter, not a predictor (2026-11-18)
 1. Took the construction range Im S·Im ρ = 560–975 (stacks (5,2)) and formed its central value and width: 768 ± 208 (±27%). [derived] (D696/D830)
 2. Compared the PW6 inverse-meter value at n_s=0.974, Im S·Im ρ = 804: it lies inside the range, +4.8% from central — an independent consistency pass. [derived] (D1268)
 3. Propagated the construction width through D1274's slope: σ_theory(n_s)=0.01333×0.27=3.6e-3, i.e. 1.2× the CMB-SPA error and 1.3× the +DESI error. [derived]
 4. Concluded the branch currently operates as a meter (data→moduli, ±14%, D1265) not a predictor, and identified the heavy-ν/leptogenesis sector as an independent cross-scale constraint on the same product. [derived]
 
-## D1276 — d=2 shape selection via the Epstein zeta (2026-11-18)
+## D1276: Shape selection in d=2: hexagonal (τ=ρ) beats square (τ=i) at equal covolume, and the margin grows with the exponent (2026-11-18)
 1. Built unit-covolume Gram forms for the square (τ=i) and hexagonal (τ=ρ) lattices and checked det(Gram)=1 for both, so the comparison is at fixed covolume. [derived]
 2. Summed the Epstein zeta over 400 shells at s=2,3,4: hexagonal is lower by 4.04%, 11.11%, 19.80% respectively. [derived]
 3. Noted the margin grows with s — shorter-range lattice sums select the shape more sharply. [derived]
 4. Identified these two forms as the modular domain's elliptic fixed points, which are exactly our n_sector_i and n_sector_rho; recorded as a selection argument only, since the sector is actually fixed by the flux/stack construction. [derived]
 5. Recorded the dimension chain A2/FCC/D4/E8/Leech and the nesting A2 ⊂ D4 ⊂ E8 ⊂ Λ24, with E8 and Leech universally optimal. [literature]
 
-## D1265a — correction: n_s response evaluated at the point of use (2026-11-18)
+## D1265a: CORRECTION to D1265 (PW5): the n_s response at the benchmark is 0.0135, not 0.0117 — the CMB meter is ±12% on Im S·Im ρ, not ±14% (2026-11-18)
 1. Fitted n_s vs ln C quadratically through the four D1272 exact points (max residual 9e-6). [derived]
 2. Evaluated the response at the D861 benchmark C=1.249e-6: dn_s/dlnC = 0.01352, versus 0.01171 used in D1265 (13.4% low; that value matches C≈1.12e-6). [derived]
 3. Re-derived the n_s-only meter: σ(ln C) = 0.0016/0.01352 = 0.118, so Im S·Im ρ to ±12% instead of ±14%; PW5's PASS is unchanged. [derived]
 
-## D1275a — correction: the heavy-ν handle is degenerate, not independent (2026-11-18)
+## D1275a: CORRECTION to D1275: the heavy-ν sector is NOT a clean independent handle on Im S·Im ρ₁ (2026-11-18)
 1. Read the heavy-ν mass formula M = x·M_s·e^{−2πn Im T} with the instanton on a rigid cycle distinct from the gauge branes. [literature] (D852, hep-th/0609191)
 2. Read M_s ≈ g_s^{1/4}M_P/√(4πV), V=(Im ρ)^{3/2}, and Im S = 1/(2√2π g_s). [derived] (D783, D689)
 3. Concluded M constrains Im S·Im ρ₁ only jointly with Im T_inst, x and V, and that M_H is itself a choice (D1270); the ν handle is useful only if the construction fixes Im T_inst and x. [derived]
 
-## D1277 — Shape selection vs scale (2026-11-18)
+## D1277: Shape selection vs scale: in 2D hexagonal wins at every scale; in 3D BCC and FCC swap exactly at the self-dual scale (2026-11-18)
 1. Built unit-covolume bases for square, hexagonal, SC, BCC and FCC and verified det = 1 for each. [derived]
 2. Summed the Gaussian energy Σ e^{−πα|v|²} over 14 shells (2D) and 7 shells (3D) for α = 0.25…4. [derived]
 3. 2D: hexagonal is lowest at every α; 3D: BCC lowest for α<1, FCC for α>1, exact tie at α=1, SC never lowest. [derived]
 4. Explained the swap by Poisson duality θ_L(α)=α^{−d/2}θ_{L*}(1/α) with FCC* ~ BCC; self-dual lattices cannot flip. [literature]
 5. Concluded the ρ-sector (hexagonal) preference of D1276 holds at all scales in d=2. [derived]
 
-## D1278 — Shape flip by dimension (2026-11-18)
+## D1278: Going up in dimension: the winning shape flips with scale if and only if it is not self-dual (tested d = 2, 3, 4, 5, 8) (2026-11-18)
 1. Computed unit-covolume Gaussian energies for Zⁿ, Dₙ, Dₙ*, E8 with exact Jacobi theta formulas (θ₃ⁿ; (θ₃ⁿ+θ₄ⁿ)/2; θ₃ⁿ+θ₂ⁿ; (θ₂⁸+θ₃⁸+θ₄⁸)/2), rescaled to covolume 1. [derived]
 2. Computed Aₙ and Aₙ* by brute force on the Cartan Gram matrix and its inverse, normalised to determinant 1. [derived]
 3. Checked d=3 against D1277 (exact reproduction) and found: d=4 D4 at all α; d=5 D5*/D5 swap with an exact tie at α=1; d=8 E8 at all α. [derived]
 4. Stated the rule (flip iff the winner is not self-dual) and its prediction for E6, E7 (flip) and Leech (no flip) — an extrapolation from the tested cases, not a derivation. [estimate]
 
-## D1279 — Torus shape flow and the backwards chain (2026-11-18)
+## D1279: Running it backwards: a torus started at any shape slides to the hexagon; the square is a saddle held only by mirror symmetry (2026-11-18)
 1. Wrote the d=2 torus shape as τ=x+iy with basis (1,τ) at unit covolume and the Gaussian lattice energy E(τ)=Σ' exp(−π|m+nτ|²/y). [derived]
 2. Ran hyperbolic gradient descent from τ=3i, 0.02+3i and 0.30+2i, reducing to the fundamental domain to classify shapes; all paths end hexagonal with E decreasing monotonically. [derived]
 3. Computed Hessians: τ=i has eigenvalues −0.295, +1.118 (saddle); τ=ρ has +0.635, +0.635 (isotropic minimum). [derived]
 4. Noted τ=i and τ=ρ are critical points of any modular-invariant function, with min/saddle character set by the function. [literature]
 5. Counted torus shape moduli d(d+1)/2−1 = 0, 2, 5, 9, 14, 35, 299 for d = 1, 2, 3, 4, 5, 8, 24. [derived]
 
-## D1273a — audit correction: benchmark vs model, sourced data (2026-11-18)
+## D1273a: CORRECTION to D1273: the 2σ tension belongs to the benchmark point, not the model; and the data inputs were unsourced (2026-11-18)
 1. Checked the n_s inputs against primary sources: SPT-3G D1 CMB-SPA 0.9679±0.0033; published CMB-SPA 0.9679–0.9693 and CMB-SPA+DESI 0.9728–0.9737; BK18 r₀.₀₅<0.036. [literature] (2506.20707, 2512.10613, 2512.05108, 2110.00483)
 2. Read D861: the benchmark's g_s and A₁ are chosen so C lands inside the frozen band 1.0–1.3e-6. [literature] (D861)
 3. Computed the band's n_s span 0.97176–0.97493 and its σ offsets for every analysis: CMB-SPA +0.85…+2.18σ, +DESI −0.78…+0.79σ. [derived]
 4. Concluded the 2σ figure belongs to the benchmark point and the band reaches ~1σ at its low edge. [derived]
 
-## D1274a — audit correction: void premise of verdict (1) (2026-11-18)
+## D1274a: CORRECTION to D1274: verdict (1) had a void premise — the moduli are fitted, not independently known (2026-11-18)
 1. Confirmed the slope with a fresh symmetric difference: 0.01334 vs the 0.01333 used. [derived]
 2. Noted verdict (1) assumes an independent moduli value with an error bar, which D1275b shows does not exist; verdicts (2) and (3) are unaffected. [derived]
 
-## D1275b — audit correction: circular consistency check (2026-11-18)
+## D1275b: CORRECTION to D1275: the "independent consistency pass" was circular; Im S·Im ρ is currently an input fitted to n_s (2026-11-18)
 1. Read D689, D830 and DERIVATION_LOG: Im S·Im ρ is computed from the C that fits the n_s band, and C is "fixed by the frozen band". [literature] (D689, D830)
 2. Concluded the 560–975 range is the n_s band mapped through the same formula over N_eff=3,4, so the meter value lying inside it is not an independent test. [derived]
 3. Listed what the construction does fix (N_eff, the sector, the formula for C, naturalness) and what it does not (Im S·Im ρ; D861's g_s and A₁ are choices). [derived]
 
-## D1265b — audit refinement of D1265a (2026-11-18)
+## D1265b: REFINEMENT of D1265a: the n_s response at the benchmark is 0.0133 (fresh symmetric difference), not 0.0135 (2026-11-18)
 1. Ran exact points at C=1.249e-6×(0.97, 1, 1.03) and formed the symmetric log-slope 0.01334, versus D1265a's wide-fit 0.01352. [derived]
 2. Recomputed the meter: σ(ln C)=0.120, Im S·Im ρ to ±12% (unchanged). [derived]
