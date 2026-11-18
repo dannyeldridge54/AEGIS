@@ -6,3 +6,6 @@ mpmath>=1.3
 numba>=0.58
 pyhf>=0.7
 fpylll>=0.6   # only needed for the Leech and BW16 lattices in Lattice Lab
+galpy>=1.9    # Hyperion orbits (McMillan17); astropy comes with it
+astropy>=5.3
+camb>=1.5     # optional: only for `aegis hyperion bbn`

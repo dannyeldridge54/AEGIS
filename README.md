@@ -18,10 +18,11 @@ r ≈ (4.6–5.7)×10⁻⁴, α_s ≈ −(8.5–10.6)×10⁻⁴, plus a paramete
 ```
 git clone https://github.com/dannyeldridge54/AEGIS && cd AEGIS
 pip install -r requirements-tools.txt        # Python 3.10+
-python tools/release_smoketest.py            # 9 checks against published values, ~2 s
+python tools/release_smoketest.py            # 11 checks against published values, ~2 s
 ```
 - **CERN+1** ([tools/lhc](tools/lhc), [README](tools/lhc/README.md), [user guide](tools/lhc/USER_GUIDE.md)) — independent wino LHC toolkit: cross sections at any energy, mass-dependent lifetimes, a disappearing-track recast that reproduces two ATLAS limits, exact-Poisson and pyhf CLs, theory bands, future-collider reach. Not affiliated with or endorsed by CERN.
 - **Lattice Lab** ([tools/lattice/lattice_lab.py](tools/lattice/lattice_lab.py)) — lattice energies, duality flips, theta series, Epstein zeta, hexagonal/square planes from d=2 to d=24 (E8, BW16, Leech). Run `python -m tools.lattice.lattice_lab` for commands.
+- **Hyperion** ([tools/janus_astro](tools/janus_astro)) — late-universe and Milky Way calculator: Big Bang helium/deuterium (PRIMAT tables), 3 Gyr star orbits in McMillan17 or MWPotential2014, the Star Mapper orbit feed. `aegis hyperion bbn 0.02237`, `aegis hyperion orbit <ra> <dec> <pc> <pmra> <pmdec> <rv>`.
 - **Janus calculator** ([tools/janus_calc](tools/janus_calc)) — exact numerical inflation observables (n_s, r, α_s) for any potential; also released at [janus-string-calculator](https://github.com/dannyeldridge54/janus-string-calculator).
 
 ## Tools (see [TOOLS.md](TOOLS.md))

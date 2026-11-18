@@ -6,7 +6,7 @@ Every example below was run on 18 Nov 2026; the output shown is real.
 
 CERN+1 is independent work and is not affiliated with or endorsed by CERN. Free for individuals, scientists and students; business use needs the AEGIS Commercial License.
 
-## Self-test (9 checks against published values)
+## Self-test (11 checks against published values)
 ```
 aegis test
 ```
@@ -21,8 +21,10 @@ PASS  Lattice Lab E6 energy at alpha=1.25: 0.104582 (expected 0.10458 ± 5e-05)
 PASS  Lattice Lab hexagonal planes in E8: 1120 (expected 1120 ± 0)
 PASS  Janus calc phi^2 n_s at N*=60 (exact numerical vs slow-roll 1-2/60.5): 0.966439 (expected 0.9669421487603306 ± 0.002)
 PASS  Janus calc phi^2 r at N*=60 (vs slow-roll 8/60.5): 0.132189 (expected 0.1322314049586777 ± 0.003)
+PASS  Hyperion MWPotential2014 v_c at R0 [km/s] (Bovy 2015 normalisation: 220): 220 (expected 220.0 ± 0.5)
+PASS  Hyperion BBN Y_p at omega_b=0.02236 (PRIMAT, Pitrou+2021: 0.24709): 0.247183 (expected 0.24709 ± 0.0003)
 
-9/9 passed in 0.6s
+11/11 passed in 1.6s
 ```
 
 ## Wino pair cross sections at 700 GeV, 14 TeV
@@ -177,6 +179,53 @@ Output:
  "beta_s": -1.8515743327097914e-05
 }
 ```
+
+## Hyperion: primordial helium and deuterium at the Planck baryon density
+Needs the `camb` package (`pip install camb`); not included in the one-file program.
+```
+aegis hyperion bbn 0.02237
+```
+Output:
+```
+{
+ "omega_b_h2": 0.02237,
+ "dNeff": 0.0,
+ "Y_p_nucleon": 0.2471871417270726,
+ "Y_p_mass": 0.2458601841277483,
+ "D/H": 2.4482576081094778e-05,
+ "note": "PRIMAT 2021 tables via CAMB; Y_p_nucleon = 4 n_He/n_b, Y_p_mass = helium mass fraction"
+}
+```
+Y_p_nucleon is CAMB's convention (4 n_He/n_b); Y_p_mass is the helium mass fraction that observers quote (LBT 2026: 0.2458 ± 0.0013).
+
+## Hyperion: Milky Way orbit of Barnard's Star
+Inputs: ra, dec (degrees), distance (pc), proper motions pmra, pmdec (mas/yr), radial velocity (km/s). Default potential McMillan17 (needs `galpy`); add `MWPotential2014` as a 7th argument for the older model.
+```
+aegis hyperion orbit 269.452 4.6934 1.8266 -802.8 10362.4 -110.5
+```
+Output:
+```
+{
+ "model": "McMillan17",
+ "l_deg": 31.00869365619361,
+ "b_deg": 14.062737225315729,
+ "xyz_kpc": [
+  -8.20848024081269,
+  0.0009128043849150689,
+  0.021239986053722133
+ ],
+ "v_kms": [
+  -130.0833339368338,
+  250.22484817476806,
+  26.038000078414168
+ ],
+ "r_peri_kpc": 6.207267505245889,
+ "r_apo_kpc": 14.322420838710412,
+ "z_max_kpc": 0.6331264844064163,
+ "eccentricity": 0.39528867645248633
+}
+```
+r_peri / r_apo: closest and farthest distance from the Galactic centre over 3 Gyr; z_max: greatest height above the disc; eccentricity 0 = circular. The same code computes the Star Mapper orbit feed (validated by lock A8d).
 
 ## What the numbers mean
 - **Cross sections** (fb): production rate of each wino pair. The quoted spread is interpolation and route error only; add the Resummino PDF and scale uncertainty (5–15%, larger above 1.5 TeV).
