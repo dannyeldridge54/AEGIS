@@ -12802,3 +12802,19 @@ So the D979 N* correction (+0.17 e-fold) moves two corners of the box just outsi
 Verdict: band_e CONSISTENT on its own definition; ladder flag on band_e (touched by nstar_e): the frozen band should either state its N* range (48.4–49.9) explicitly as the
 scored definition or be widened by a new post-hoc note — no silent edit; the scored-on-future-data rule stands either way. Phase 2 (next): janus relation κ check, mnu arithmetic, nstar_e formula.
 MAP: node=band_e status=frozen touches=[nstar_e, tests_cmb] ripple=no
+
+## D1234 — CENTRE — NA2 node audit, phase 2: mnu PASS; janus relation FAIL as locked (it is 4× BETTER than D689 said); nstar_e FAIL as locked (the node still carries the pre-D979 window)
+Lock: field_tests/rules/PREREG_NA2_relation_mnu_nstar.md. Results: field_tests/results/na2_relation_mnu_nstar.txt. Inputs: NA1's 12 PC rows (Janus app, live).
+A. janus [computed]: the leading-order relation with (p, κ) = (2√2, 1) underestimates the exact Janus-core α_s by 3.3–4.0 % at all 12 points — NOT the 13–16 % D689 states.
+Locked bar [12 %, 17 %] → FAIL as locked. Reading: D689's "13–16 %" does not reproduce on today's exact α_s (third-order flow, D1228 engine); the relation is closer than recorded. The cause of D689's larger number is not traced here (no rerun to chase it). κ = ½ (D669's "SERAPIS is (2√2, ½)", written for the original tilt) is off by 19–25 %, so κ = 1 is the right member for SERAPIS-E, as the pipeline already uses.
+B. mnu [computed, NuFIT 6.0 Table 1, 2410.05380]: NO, m1 = 0: Δm²21 7.49e-5, Δm²31 2.513e-3 eV² (IC24 with SK-atm) → Σ = 0.05878 eV (IC19: 0.05899). Frozen 0.0587 within 0.08 meV → PASS. Margins: 0.0642 − Σ = 5.42 meV (stated 5.5, ok); Σ − 0.053 = 5.78 meV (stated 5.7, ok).
+C. nstar_e [computed]: self-consistent N* with the exact ε_H = 1 end (V*/V_end = 2.267), C 1.15e-6: T_R 3e8 → 49.878, 3e9 → 50.642 (node: 49.7–50.5) → FAIL as locked (+0.14 to +0.18).
+This is exactly D979's +0.17 end-of-inflation correction: the node value 49.7–50.5 (D725) predates D979 and was never updated. Corrected window: N* 49.88–50.64; n_s 0.97304–0.97378, r 4.73–4.64e-4 — inside the frozen band.
+Information (D781's later T₂ = 1e5–1e6 GeV reheating chain): N* 47.22–47.99, n_s 0.97033–0.97113, r 5.10–4.99e-4 — inside the frozen n_s and r band but BELOW the band's own N* range (48.4–49.9).
+Correction to D1233 (no silent edit): D1233 called 49.7–50.5 "the D979-corrected N*"; it is the uncorrected D725 window. The corrected upper edge is 50.64, so the NA1 band-exit at the top edge is slightly larger than D1233 reported (direction unchanged). See D1233a.
+MAP: node=nstar_e status=computed touches=[band_e, C_nstar] ripple=yes
+MAP: node=janus status=computed touches=[band_e] ripple=no
+MAP: node=mnu status=frozen touches=[] ripple=no
+
+## D1233a — correction to D1233
+D1233 attributed the N* window 49.7–50.5 to D979. It is D725's window (slow-roll end). D979's exact end gives 49.88–50.64 (computed in D1234). The D1233 verdict (frozen band CONSISTENT on its own N* range; flag on band_e from nstar_e) stands; the corrected top edge is 50.64, not 50.5.

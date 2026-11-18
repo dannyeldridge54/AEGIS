@@ -352,3 +352,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1230: when a graph analysis moves its top conflict after adding nodes, follow the new flag to the code — a hard-coded constant (g_* = 106.75) was sitting under it.
 - D1231: a start-finder fix proven at one parameter point is not a general fix — lock its range of validity, or expect the same failure elsewhere.
 - D1233: after a correction to an input (N*), re-derive every frozen output that used it — a frozen band can stay "consistent" on its old definition while the corrected input already sits outside it.
+- D1234: node labels go stale silently — nstar_e kept D725's window after D979 corrected it. Every audit phase must recompute the node value itself, not trust the label or the note that cites it.

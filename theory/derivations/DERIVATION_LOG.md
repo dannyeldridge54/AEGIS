@@ -1825,3 +1825,4 @@ Touches: none.
 ## D1230: web tick 2 — Chronos/Hyperion added to the web; top conflict = wino window; our relic uses constant g_* = 106.75, and the SM EOS shifts WIMP abundances 5–10 % (2005.03544) ≈ our +5.4 % mass offset → needs the EOS table ("yes table")
 ## D1231: J7m2 — bisection start fails for all three listed PSNI points (e-fold window unreachable) → 5b BLOCKED; J7m totals unchanged
 ## D1233: NA1 — SERAPIS-E chain recomputed live in the Janus app: frozen band consistent (9/9 inside), caps consistent; corrected N* 50.5 pushes two box corners just outside (r −1.7 %, n_s +2.5e-4) → flag band_e
+## D1234: NA2 — mnu Σ = 0.05878 eV from NuFIT 6.0 PASS; Janus relation off by 3–4 % (not D689's 13–16 %) FAIL-as-locked; nstar_e node still pre-D979: corrected 49.88–50.64 (FAIL-as-locked); D1233a correction
