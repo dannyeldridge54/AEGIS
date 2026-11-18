@@ -50,3 +50,23 @@ def limit_search(key):
     S = R.SEARCHES[key]; pb = p_window_avg(S['m_bench'])
     f = lambda m: S['n_bench']*(R.sig_tot(m, '13')/R.sig_tot(S['m_bench'], '13'))*(p_window_avg(m)/pb) - S['n95']
     return brentq(f, 250, 1500, xtol=0.5000001257475)
+
+def limit_search_atlas_conditions(key):
+    """D1311: recast with the search's own conditions where published (mass-dependent event acceptance, fixed lifetime,
+    its decay window). ATLAS_36 -> 457.2 GeV vs published 460."""
+    from scipy.optimize import brentq
+    from . import recast_dt as R, lifetime
+    S = R._search(key)
+    tau = (lambda m: S['tau_fixed_ns']) if 'tau_fixed_ns' in S else (lambda m: None)
+    rout = S.get('r_out', R.R_OUT)
+    def P(m):
+        bg = np.maximum(boost_samples(m), 1e-3)
+        t = tau(m) if tau(m) is not None else lifetime.widths(m)['tau_ns']
+        lam = bg*t*1e-9*2.99792458e11
+        return float(np.mean(np.exp(-R.R_IN/lam) - np.exp(-rout/lam)))
+    if 'acc' in S:
+        (m0, a0), (m1, a1) = S['acc']; acc = lambda m: a0 + (a1 - a0)*(m - m0)/(m1 - m0)   # linear through the published points
+    else: acc = lambda m: 1.0
+    pb = P(S['m_bench'])
+    f = lambda m: S['n_bench']*(R.sig_tot(m, '13')/R.sig_tot(S['m_bench'], '13'))*(P(m)/pb)*(acc(m)/acc(S['m_bench'])) - S['n95']
+    return brentq(f, 300, 1500, xtol=0.200000050299)

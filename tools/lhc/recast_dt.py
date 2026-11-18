@@ -22,7 +22,8 @@ def hl_lhc(lumi=3000.0, b_run2=3.0, sqrts=14.0):
 
 # ---- generic: any benchmark-anchored disappearing-track search (validated on two ATLAS searches) ----
 SEARCHES = {'ATLAS_136': dict(lumi=136.0, n_bench=8.6, m_bench=600.0, n95=0.037*136.0, ref='arXiv:2201.02472', published=660.0),
-            'ATLAS_36': dict(lumi=36.1, n_bench=13.5, m_bench=400.0, n95=0.22*36.1, ref='arXiv:1712.02118', published=460.0)}
+            'ATLAS_36': dict(lumi=36.1, n_bench=13.5, m_bench=400.0, n95=0.22*36.1, ref='arXiv:1712.02118', published=460.0,
+                             acc=((400.0, 0.09), (600.0, 0.12)), tau_fixed_ns=0.2, r_out=295.0)}   # D1311: paper Table 2, fixed tau, 295 mm
 def _search(key):
     if key not in SEARCHES: raise ValueError(f"unknown search {key!r}; use one of {', '.join(SEARCHES)}")
     return SEARCHES[key]

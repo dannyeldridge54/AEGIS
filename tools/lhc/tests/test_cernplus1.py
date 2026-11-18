@@ -75,3 +75,6 @@ def test_higgsino_bad_inputs():
     from tools.lhc import higgsino as H
     with pytest.raises(ValueError): H.sigma(2000)
     with pytest.raises(ValueError): H.sigma(500, 'C1N2p')
+
+def test_atlas36_with_search_conditions():   # D1311
+    assert kinematics.limit_search_atlas_conditions('ATLAS_36') == pytest.approx(457.2, abs=0.6)
