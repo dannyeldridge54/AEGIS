@@ -600,13 +600,14 @@ nodes:
   - D809
   - D906
   - D1242
+  - D1355
   depends:
   - reheat_rho
   - covariant
   history:
-  - 'D809: computed'
   - 'D906: computed'
   - 'D1242: computed'
+  - 'D1355: computed'
 - id: band_i
   layer: 5
   branch:

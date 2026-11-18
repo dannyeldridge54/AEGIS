@@ -14292,3 +14292,13 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - Both corrections are dated in circuit.py's docstring; tolerances otherwise unchanged since written. Runs log to CubeMind (aegis_link/circuit_runs.jsonl) with per-wire drift.
 - Verdict: circuit 25/25 closed; no physics change; plateau_origin untouched. Next: fill each layer to 7 sites, then the 10D layer and the SUSY shell.
 MAP: node=janus status=computed touches=[] ripple=no
+
+## D1355 — CENTRE / DEEP: the SUSY shell of the SERAPIS circuit (beyond the 10D layer) — 9 laws, 8 closed; one record correction, one record inconsistency flagged (2026-11-18)
+- Built on Danny's 16:42 request ("once we get the 9 dimensionals worked out, start working for the supersymmetry beyond it"). Layers now A2 → D4 → E8 → Leech → 10D → SUSY; 45 laws, 43 closed.
+- [literature] One-loop anomaly mediation M_i = b_i g_i²/(16π²) m3/2, b = (33/5, 1, −3), g_i² at ~1 TeV = 0.212 (GUT-normalised), 0.420, 1.118 (approximate inputs; two-loop/thresholds not included).
+- [derived] m3/2 needed for M2 = 1.85 TeV: 6.96e5 GeV (record 7.0e5, D809/D1264; 0.6% off) ✓. Covariant bound 6.7e8 GeV / need = 963 (record ×960) ✓. Window lower edge 670 GeV vs recast floor 666.6 GeV ✓. Wino Δm 163.69 / 164.25 / 164.43 MeV and cτ 5.91 / 5.80 / 5.77 cm at 0.67 / 1.25 / 1.85 TeV ✓ (two-loop band, cτ falls). Gluino |M3|/M2 = 7.99 one-loop vs D809's 7.0 (14%, inside the 20% tolerance; D809 likely includes higher-order effects) ✓. HL-LHC coverage 52.9% / 26.1% of the 1.25 / 1.85 TeV windows vs records 52% (D1350) / 26% (D1304) ✓. Gravitino → wino Ω_nth ≤ 3e-4 (D809) within the 5e-4 bound (record law) ✓.
+- CORRECTION (record, not physics): the bino particle card said "≈ M₂/2 (D809)". D809 has no bino; in AMSB M1/M2 = 3.3 at one loop (the wino is the LSP). Card corrected in tools/web/particles.json; the circuit law now checks the card's text.
+- OPEN (flagged, not edited — wino_window is the other session's track): the wino window's upper edge differs between records: map node wino_window 1.25 TeV thermal (~1.5 cored; D1324, D1337, D1338) vs Q_panel and the wino particle card 0.67–1.85 TeV (D1304, older). The newer map value is probably the current one; Q_panel/the card need re-stating by whoever owns the wino line. Shown pink in the Circuit view.
+- Reported, not a law: SUSY-breaking scale ↔ plateau height (F ~ √V0) — no locked tool ties V0 (from C) to the F-term yet.
+- Tolerances for all nine laws were written into circuit.py before the first run (23:40 UTC); no tolerance changed after seeing results.
+MAP: node=gravitino_wino status=computed touches=[] ripple=no

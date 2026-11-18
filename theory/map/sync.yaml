@@ -134,3 +134,8 @@ serapis_e:
     at: D1352
     by: D1352
     verdict: 'no effect: D1352 tested a lattice-disk plateau (side model P6); it does not reproduce SERAPIS n_s, so plateau_origin stays assumed and the SERAPIS-E potential is unchanged'
+wino_window:
+  gravitino_wino:
+    at: D1355
+    by: D1355
+    verdict: 'no effect on the window value (gravitino -> wino still <= 3e-4 of Omega); D1355 flags for the wino-line owner that Q_panel and the wino card still say 1.85 TeV vs this node''s 1.25 TeV'

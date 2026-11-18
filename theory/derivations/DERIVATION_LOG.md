@@ -2158,3 +2158,8 @@ Touches: none.
 1. [derived] Six A2 triangle laws (n_s, n_s-MS, N*, α_s, C, r) close within tolerances fixed before the run; spreads 2.5e-5 … 3.6%.
 2. [derived] dN*/dln T_R = (1−3w)/(3(1+w)) = 1/3 at w = 0 (ρ ∝ T⁴); the first-run bound 1/12 was the per-ρ coefficient (my error).
 3. [derived] r/3(1−n_s)² = 0.245: SERAPIS-E sits below the Starobinsky line; B1 is not a law for this model (my misapplication).
+
+## D1355: SUSY shell of the circuit
+1. [literature] One-loop AMSB M_i = b_i g_i²/(16π²) m3/2, b = (33/5, 1, −3); g_i² at 1 TeV = 0.212, 0.420, 1.118.
+2. [derived] m3/2(M2 = 1.85 TeV) = 6.96e5 GeV (record 7e5); |M3|/M2 = 7.99 (D809: 7.0); M1/M2 = 3.33 → wino LSP; bino card "M2/2" corrected.
+3. [derived] HL-LHC covers 52.9% / 26.1% of the 1.25 / 1.85 TeV windows (records 52% / 26%); window upper edge 1.25 vs 1.85 TeV across records is an open inconsistency.
