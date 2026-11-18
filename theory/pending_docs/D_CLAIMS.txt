@@ -587,3 +587,4 @@ D1300  2026-11-18T13:05Z  LHC2: wino chargino lifetime engine
 D1301  2026-11-18T13:07Z  LHC3: disappearing-track recast + HL-LHC projection
 D1302  2026-11-18T13:23Z  wino_window vs Janus-LHC D1301: floor confirmed (666.6 GeV); own HL-LHC projection ~975 GeV covers more of the window than the cited 0.5-0.9
 D1303  2026-11-18T13:26Z  LHC4: recast validation vs ATLAS 36 fb-1
+D1304  2026-11-18T13:28Z  LHC5: model vs collider panel
