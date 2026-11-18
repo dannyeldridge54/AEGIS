@@ -1,0 +1,18 @@
+TI a=0.05 mu=6   N*=50 eps=(4.36e-03,3.65e-02,1.06e-02,3.21e-02) exact 0.95476955 | D2 1.1e-05 D3 3.2e-06 | narrow fit: D2 1.1e-05 D3 3.4e-06
+TI a=0.05 mu=6   N*=60 eps=(3.08e-03,3.33e-02,7.83e-03,2.96e-02) exact 0.96053411 | D2 6.8e-06 D3 1.5e-06 | narrow fit: D2 6.9e-06 D3 1.4e-06
+TI a=0.05 mu=12  N*=50 eps=(8.10e-03,2.42e-02,1.65e-02,2.31e-02) exact 0.95942377 | D2 7.0e-06 D3 6.5e-06 | narrow fit: D2 6.9e-06 D3 6.6e-06
+TI a=0.05 mu=12  N*=60 eps=(6.47e-03,2.09e-02,1.34e-02,1.97e-02) exact 0.96608164 | D2 4.3e-06 D3 3.6e-06 | narrow fit: D2 4.3e-06 D3 3.6e-06
+TI a=0.15 mu=6   N*=50 eps=(3.77e-03,3.69e-02,1.29e-02,2.43e-02) exact 0.95567644 | D2 1.3e-05 D3 3.1e-06 | narrow fit: D2 1.3e-05 D3 3.2e-06
+TI a=0.15 mu=6   N*=60 eps=(2.66e-03,3.29e-02,1.02e-02,2.17e-02) exact 0.96188061 | D2 8.2e-06 D3 1.5e-06 | narrow fit: D2 8.3e-06 D3 1.3e-06
+TI a=0.15 mu=12  N*=50 eps=(7.60e-03,2.53e-02,1.61e-02,2.28e-02) exact 0.95936056 | D2 7.7e-06 D3 6.1e-06 | narrow fit: D2 7.7e-06 D3 6.2e-06
+TI a=0.15 mu=12  N*=60 eps=(6.01e-03,2.19e-02,1.31e-02,1.91e-02) exact 0.96601459 | D2 4.8e-06 D3 3.3e-06 | narrow fit: D2 4.8e-06 D3 3.3e-06
+TI a=0.3 mu=6    N*=50 eps=(3.01e-03,3.95e-02,1.41e-02,1.78e-02) exact 0.95471053 | D2 1.5e-05 D3 2.7e-06 | narrow fit: D2 1.6e-05 D3 2.6e-06
+TI a=0.3 mu=6    N*=60 eps=(2.08e-03,3.47e-02,1.20e-02,1.45e-02) exact 0.96136440 | D2 9.8e-06 D3 1.3e-06 | narrow fit: D2 9.9e-06 D3 1.2e-06
+TI a=0.3 mu=12   N*=50 eps=(7.07e-03,2.67e-02,1.54e-02,2.31e-02) exact 0.95906275 | D2 8.4e-06 D3 5.7e-06 | narrow fit: D2 8.4e-06 D3 5.7e-06
+TI a=0.3 mu=12   N*=60 eps=(5.51e-03,2.33e-02,1.25e-02,1.92e-02) exact 0.96567841 | D2 5.2e-06 D3 3.1e-06 | narrow fit: D2 5.3e-06 D3 3.0e-06
+SFI p=3 mu=8     N*=50 eps=(3.62e-04,5.17e-02,1.42e-02,1.78e-02) exact 0.94809589 | D2 2.1e-05 D3 1.0e-06 | narrow fit: D2 2.1e-05 D3 1.1e-06
+SFI p=3 mu=8     N*=60 eps=(2.23e-04,4.54e-02,1.21e-02,1.44e-02) exact 0.95460070 | D2 1.4e-05 D3 5.4e-07 | narrow fit: D2 1.4e-05 D3 7.2e-07
+SFI p=3 mu=20    N*=50 eps=(2.14e-03,3.06e-02,1.55e-02,2.25e-02) exact 0.96531661 | D2 1.1e-05 D3 1.5e-06 | narrow fit: D2 1.1e-05 D3 1.3e-06
+SFI p=3 mu=20    N*=60 eps=(1.61e-03,2.66e-02,1.26e-02,1.88e-02) exact 0.97031389 | D2 6.5e-06 D3 7.8e-07 | narrow fit: D2 6.4e-06 D3 8.6e-07
+16 points; D3 < D2 on 16; median D2 8.27e-06, D3 2.87e-06 | narrow (reported only): median D2 8.36e-06, D3 2.80e-06, D3<D2 on 16
+N3: NOT CONFIRMED
