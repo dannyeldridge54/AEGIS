@@ -53,3 +53,4 @@ theory/janus/aspic/aspic_out_j7e.txt
 theory/janus/aspic/pulse/*/r
 data/sn/Pantheon+SH0ES_STAT+SYS.cov
 field_tests/results/l11_chain/
+field_tests/cache/
