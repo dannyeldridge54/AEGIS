@@ -7,7 +7,7 @@ on:
     paths: [ 'apps/sarah_sky/**' ]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -45,9 +45,25 @@ jobs:
           mkdir -p out
           cp android/app/build/outputs/apk/debug/app-debug.apk out/SarahsSky.apk
 
-      - name: Upload APK
+      - name: Upload APK (artifact)
         uses: actions/upload-artifact@v4
         with:
           name: SarahsSky-apk
           path: apps/sarah_sky/out/SarahsSky.apk
           if-no-files-found: error
+
+      - name: Publish APK to the apk-dist branch
+        if: github.ref == 'refs/heads/unify-bg'
+        working-directory: ${{ github.workspace }}
+        run: |
+          git config user.name "sarah-apk-bot"
+          git config user.email "noreply@anthropic.com"
+          git checkout --orphan apk-dist
+          git rm -rf --cached . >/dev/null 2>&1 || true
+          find . -maxdepth 1 -mindepth 1 ! -name '.git' ! -name 'apps' -exec rm -rf {} + 2>/dev/null || true
+          mkdir -p dist
+          cp apps/sarah_sky/out/SarahsSky.apk dist/SarahsSky.apk
+          rm -rf apps
+          git add -f dist/SarahsSky.apk
+          git commit -m "APK build ${GITHUB_SHA::7}"
+          git push -f origin apk-dist
