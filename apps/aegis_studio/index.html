@@ -54,6 +54,8 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
 #scope{width:100%;height:120px;display:block;border-radius:8px;background:#05010f}
 #info .t{font:600 14px var(--f-body);color:var(--fg)} #links{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:5px;max-height:220px;overflow:auto}
 #links li{border-left:3px solid var(--line);padding-left:8px;font-size:12px} #links li.pos{border-color:var(--teal)} #links li.neg{border-color:var(--red)}
+.feedlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;max-height:260px;overflow:auto;font-size:12px}
+.feedlist li{border-left:3px solid var(--violet);padding-left:8px} .feedlist li.calc{border-color:var(--cyan)} .feedlist li.link{border-color:var(--magenta)} .feedlist li.wave{border-color:var(--amber)} .feedlist li.job{border-color:var(--teal)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -89,6 +91,7 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
         <div style="display:flex;gap:6px;margin-top:8px"><button class="btn" id="bexact">Compute exact here</button></div>
       </div>
       <div class="card"><h2>Scope · selected node</h2><canvas id="scope" width="640" height="200"></canvas><div class="small" id="scopecap">pick a knob on the weave</div></div>
+      <div class="card"><h2>Live calculations</h2><ul id="feed" class="feedlist"></ul></div>
       <div class="card" id="info"><h2>Node</h2><div class="small">Click a glowing knob on the weave.</div><ul id="links"></ul></div>
     </aside>
   </div>

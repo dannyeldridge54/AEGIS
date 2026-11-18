@@ -52,15 +52,39 @@ def link_loop(api, win):
     try: _link_loop(api, win)
     except Exception as e:
         import traceback; os.makedirs(LINK, exist_ok=True); open(os.path.join(LINK, 'link_error.txt'), 'w').write(traceback.format_exc())
+def push(win, kind, title, text):
+    import json
+    if win is None: return
+    try: win.evaluate_js(f"feed({json.dumps(dict(kind=kind, title=title, text=text))})")
+    except Exception: pass
 def _link_loop(api, win):
-    import json, time
+    import json, time, glob
     inbox, outbox = os.path.join(LINK, 'inbox'), os.path.join(LINK, 'outbox'); os.makedirs(inbox, exist_ok=True); os.makedirs(outbox, exist_ok=True)
     open(os.path.join(LINK, 'status.json'), 'w').write(json.dumps(dict(running=True, pid=os.getpid(), since=time.strftime('%H:%M:%S'))))
+    time.sleep(4); push(win, 'link', 'Link to Claude open', 'watching janus_link/inbox; cloud calculations appear here as they run')
+    feedf = os.path.join(LINK, 'feed.jsonl'); fpos = os.path.getsize(feedf) if os.path.exists(feedf) else 0
+    qlogs = os.path.join(os.path.dirname(LINK), 'queue', 'logs'); seen = {}
+    for st in glob.glob(os.path.join(qlogs, '*.status')):
+        try: seen[st] = open(st).read().strip()
+        except OSError: pass
     while True:
+        if os.path.exists(feedf) and os.path.getsize(feedf) > fpos:          # cloud calculations streamed by Claude
+            with open(feedf, encoding='utf-8') as fh:
+                fh.seek(fpos); lines = fh.read().splitlines(); fpos = fh.tell()
+            for ln in lines:
+                try: ev = json.loads(ln); push(win, ev.get('kind', 'calc'), ev.get('title', 'calc'), ev.get('text', ''))
+                except Exception: pass
+        for st in glob.glob(os.path.join(qlogs, '*.status')):                 # PC job starts / finishes
+            try: v = open(st).read().strip()
+            except OSError: continue
+            if seen.get(st) != v:
+                seen[st] = v; push(win, 'job', 'PC job ' + os.path.basename(st)[:-7], v)
         for f in sorted(os.listdir(inbox)):
             if not f.endswith('.json'): continue
             p = os.path.join(inbox, f)
-            try: req = json.load(open(p, encoding='utf-8')); res = handle(api, win, req)
+            try:
+                req = json.load(open(p, encoding='utf-8')); push(win, 'link', 'From Claude: ' + str(req.get('cmd')), json.dumps({k: v for k, v in req.items() if k not in ('cmd', 'id')}))
+                res = handle(api, win, req); push(win, 'calc', 'Result: ' + str(req.get('cmd')), json.dumps({k: v for k, v in res.items() if k != 'rows'})[:300] + (f" · {len(res['rows'])} rows" if 'rows' in res else ''))
             except Exception as e: res = dict(ok=False, error=repr(e), file=f)
             tmp = os.path.join(outbox, f + '.tmp'); open(tmp, 'w', encoding='utf-8').write(json.dumps(res)); os.replace(tmp, os.path.join(outbox, f))
             try: os.replace(p, os.path.join(inbox, f + '.done'))

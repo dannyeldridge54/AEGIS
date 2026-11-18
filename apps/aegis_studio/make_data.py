@@ -4,7 +4,7 @@ R = pathlib.Path(__file__).resolve().parents[2]; W = R / 'docs/web'
 def j(n):
     p = W / n; return json.load(open(p, encoding='utf-8')) if p.exists() else None
 waves = j('waves.json'); waves and waves.pop('reach', None)
-D = dict(web=j('web.json'), waves=waves, modes=j('modes.json'), landscape=j('landscape.json'), grid=j('knob_grid.json'))
+D = dict(web=j('web.json'), waves=waves, modes=j('modes.json'), landscape=j('landscape.json'), grid=j('knob_grid.json'), shapes=j('shapes.json'))
 web = D['web']; import yaml
 mp = yaml.safe_load(open(R / 'theory/map/map.yaml', encoding='utf-8')); lay = {n['id']: n.get('layer', 1) for n in mp['nodes']}
 for n in web['nodes']: n['layer'] = lay.get(n['id'], 1)

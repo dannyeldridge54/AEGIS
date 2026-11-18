@@ -74,7 +74,7 @@ function response(src, sgn) { let x = new Float64Array(NN); const e0 = new Float
 function hops(src) { const d = new Array(NN).fill(99); const q = [ix[src]]; d[ix[src]] = 0; while (q.length) { const u = q.shift(); for (const v of adj[u]) if (d[v] > d[u] + 1) { d[v] = d[u] + 1; q.push(v); } } return d; }
 let waves = []; // {r, d, t0, sgn}
 let modeOn = null; // resonance mode index
-function sendWave(sgn) { if (!sel) return; waves.push({r: response(sel, sgn), d: hops(sel), t0: performance.now()/1000, src: sel}); }
+function sendWave(sgn) { if (!sel) return; feed({kind: 'wave', title: `${sgn > 0 ? '+' : '−'}wave from ${sel}`, text: 'information ripple through the web (heuristic graph model)'}); waves.push({r: response(sel, sgn), d: hops(sel), t0: performance.now()/1000, src: sel}); }
 // ---------- selection ----------
 let sel = null; const ray = new THREE.Raycaster(); const mouse = new THREE.Vector2();
 canvas.addEventListener('click', ev => { const b = canvas.getBoundingClientRect(); mouse.set(((ev.clientX - b.left)/b.width)*2 - 1, -((ev.clientY - b.top)/b.height)*2 + 1);
@@ -121,7 +121,7 @@ function readout(exact) { if (!knobsReady) return; const ns = exact ? exact.ns :
   for (const [m, s, c] of [[0.9684, 0.0030, 'rgba(0,229,255,.35)'], [0.9728, 0.0027, 'rgba(255,43,214,.35)']]) { const i = document.createElement('i'); i.style.left = X(m - s); i.style.width = `${2*s/(hi - lo)*100}%`; i.style.background = c; band.appendChild(i); }
   if (ns != null) { const mk = document.createElement('div'); mk.className = 'mk'; mk.style.left = X(ns); band.appendChild(mk); } }
 document.getElementById('bexact').onclick = async () => { const api = window.pywebview?.api; if (!api) { document.getElementById('rsrc').textContent = 'live engine only in the desktop app'; return; }
-  document.getElementById('rsrc').textContent = 'computing…'; try { readout(await api.recompute(K.N.get(), K.C.get())); } catch (e) { document.getElementById('rsrc').textContent = 'engine error: ' + e; } };
+  document.getElementById('rsrc').textContent = 'computing…'; feed({kind: 'calc', title: 'Exact Janus run started', text: `SERAPIS-E at N* ${K.N.get()}, C ×${K.C.get()}`}); try { const t0 = performance.now(); const r = await api.recompute(K.N.get(), K.C.get()); readout(r); feed({kind: 'calc', title: 'Exact Janus result', text: `n_s ${r.ns.toFixed(6)}  r ${r.r.toExponential(3)}  α_s ${r.alpha_s.toExponential(3)}  (${((performance.now() - t0)/1000).toFixed(2)} s)`}); } catch (e) { document.getElementById('rsrc').textContent = 'engine error: ' + e; } };
 // ---------- landscape ----------
 (() => { if (!LAND) return; const nx = LAND.phi.length, ny = LAND.C.length; const g = new THREE.PlaneGeometry(160, 100, nx - 1, ny - 1); const pos = g.attributes.position; const cols = [];
   let mn = Infinity, mx = -Infinity; LAND.V.forEach(r => r.forEach(v => { mn = Math.min(mn, v); mx = Math.max(mx, v); }));
@@ -173,40 +173,46 @@ function frame(now) { requestAnimationFrame(frame); const t = now/1000; tNow = t
 resize(); setView('weave'); readout(); landMarker(); requestAnimationFrame(frame);
 addEventListener('pywebviewready', () => { const e = document.getElementById('engine'); e.textContent = 'engine: live (Python)'; e.classList.add('live'); });
 
-// ---------- top strip: geometric shapes forming from the strings ----------
-(() => { const cv = document.getElementById('shapes'), cx = cv.getContext('2d'); let W2 = 0, H2 = 0;
+// ---------- top strip: physics shapes forming (all computed: docs/web/shapes.json, tools/web/real_shapes.py) ----------
+(() => { const cv = document.getElementById('shapes'), cx = cv.getContext('2d'); let W2 = 0, H2 = 0; const SH = D.shapes;
   const fit = () => { const r = devicePixelRatio || 1; W2 = cv.clientWidth; H2 = cv.clientHeight; cv.width = W2*r; cv.height = H2*r; cx.setTransform(r, 0, 0, r, 0, 0); }; addEventListener('resize', fit); fit();
-  const cpow = (re, im, e) => { const r = Math.hypot(re, im), a = Math.atan2(im, re); const rr = Math.pow(r, e); return [rr*Math.cos(a*e), rr*Math.sin(a*e)]; };
-  function calabiYau(n, al) { const L = []; for (let k1 = 0; k1 < n; k1++) for (let k2 = 0; k2 < n; k2++) for (let a = 0; a <= 8; a++) { const xi = -1 + 2*a/8; const line = [];
-      for (let b = 0; b <= 16; b++) { const th = (Math.PI/2)*b/16; const ch = [Math.cosh(xi)*Math.cos(th), Math.sinh(xi)*Math.sin(th)], sh = [Math.sinh(xi)*Math.cos(th), Math.cosh(xi)*Math.sin(th)];
-        let z1 = cpow(ch[0], ch[1], 2/n), z2 = cpow(sh[1], -sh[0], 2/n); const p1 = 2*Math.PI*k1/n, p2 = 2*Math.PI*k2/n;   // −i·sinh = (Im, −Re)
-        z1 = [z1[0]*Math.cos(p1) - z1[1]*Math.sin(p1), z1[0]*Math.sin(p1) + z1[1]*Math.cos(p1)]; z2 = [z2[0]*Math.cos(p2) - z2[1]*Math.sin(p2), z2[0]*Math.sin(p2) + z2[1]*Math.cos(p2)];
-        line.push([z1[0], z2[0], Math.cos(al)*z1[1] + Math.sin(al)*z2[1]]); } L.push(line); } return L; }
-  function torusKnot(p, q) { const line = []; for (let i = 0; i <= 600; i++) { const t = 2*Math.PI*i/600; const r = 0.7 + 0.3*Math.cos(q*t); line.push([r*Math.cos(p*t), r*Math.sin(p*t), 0.3*Math.sin(q*t)]); } return [line]; }
-  function cliffordTorus(m) { const L = []; for (let a = 0; a < 18; a++) { const line = []; const u = 2*Math.PI*a/18; for (let b = 0; b <= 48; b++) { const v = 2*Math.PI*b/48;
-      const x4 = [Math.cos(u), Math.sin(u), Math.cos(v + m*u), Math.sin(v + m*u)].map(c => c/Math.SQRT2); const w = 1.6 - x4[3]; line.push([x4[0]/w*1.6, x4[1]/w*1.6, x4[2]/w*1.6]); } L.push(line); } return L; }
-  function lissajous(a, b, c) { const line = []; for (let i = 0; i <= 700; i++) { const t = 2*Math.PI*i/700; line.push([Math.sin(a*t + 0.5), Math.sin(b*t), Math.sin(c*t + 1.1)].map(v => 0.85*v)); } return [line]; }
-  const hue = f => `hsl(${(0.57 + 0.36*Math.pow(f, 1.3))*360} 100% 62%)`;
-  let shapes = []; let cycle = -1;
-  function rebuild(k) { const m = modeOn ? modeOn.k : (k % 5) + 1; shapes = [
-      {name: `Calabi–Yau slice n=${3 + (k % 3)}`, L: calabiYau(3 + (k % 3), 0.6), f: 0.05},
-      {name: `torus knot (${2 + (m % 3)}, ${3 + (m % 4)})`, L: torusKnot(2 + (m % 3), 3 + (m % 4)), f: 0.30},
-      {name: `Clifford torus twist ${1 + (k % 3)}`, L: cliffordTorus(1 + (k % 3)), f: 0.62},
-      {name: `Lissajous ${1 + (m % 3)}:${2 + (k % 3)}:${3 + (m % 2)}`, L: lissajous(1 + (m % 3), 2 + (k % 3), 3 + (m % 2)), f: 0.92}];
-    shapes.forEach(sh => { let R = 1e-9; sh.L.forEach(l => l.forEach(p => R = Math.max(R, Math.hypot(...p)))); sh.L = sh.L.map(l => l.map(p => p.map(v => v/R))); }); }
-  function frameS(now) { requestAnimationFrame(frameS); const t = now/1000; const T = 9/(speed || 1); const k = Math.floor(t/T); const prog = (t % T)/T;
-    if (k !== cycle) { cycle = k; rebuild(k); }
+  if (!SH) return;
+  const hue = f => `hsl(${(0.57 + 0.36*Math.pow(Math.min(1, Math.max(0, f)), 1.3))*360} 100% 62%)`;
+  const norm = L => { let R = 1e-9; L.forEach(l => l.forEach(p => R = Math.max(R, Math.hypot(...p)))); return L.map(l => l.map(p => p.map(v => v/R))); };
+  const sphere = []; for (let a = 1; a < 8; a++) { const th = Math.PI*a/8, l = []; for (let b = 0; b <= 40; b++) { const ph = 2*Math.PI*b/40; l.push([Math.sin(th)*Math.cos(ph), Math.sin(th)*Math.sin(ph), Math.cos(th)]); } sphere.push(l); }
+  for (let b = 0; b < 12; b++) { const ph = Math.PI*b/12, l = []; for (let a = 0; a <= 30; a++) { const th = 2*Math.PI*a/30; l.push([Math.sin(th)*Math.cos(ph), Math.sin(th)*Math.sin(ph), Math.cos(th)]); } sphere.push(l); }
+  const mm = SH.ms_mode; const modeL = [mm.N_minus_Np.map((n, i) => { const A = Math.hypot(mm.re[i], mm.im[i]); const rad = 0.35*(1 + 0.25*Math.log10(Math.max(A, 1e-12))); return [n/7, rad*mm.re[i]/A, rad*mm.im[i]/A]; })];
+  const tp = SH.tau_path; const tauL = (() => { const arc = []; for (let i = 0; i <= 40; i++) { const t = Math.PI/3 + (Math.PI/3)*i/40; arc.push([Math.cos(t), Math.sin(t), 0]); }
+    const ymax = Math.min(2.6, tp.path[tp.path.length - 1][1]); return {frame: [arc, [[-0.5, Math.sqrt(3)/2, 0], [-0.5, ymax, 0]], [[0.5, Math.sqrt(3)/2, 0], [0.5, ymax, 0]]], path: tp.path.filter(p => p[1] <= ymax).map(p => [p[0], p[1], 0]), ymax}; })();
+  const panels = [
+    {title: 'Fermat curve z₁ⁿ+z₂ⁿ=1 (Calabi–Yau slice)', kind: 'fermat', f: 0.05},
+    {title: 'Inflaton path on the curved field space', kind: 'sphere', f: 0.35, sub: () => `N_tot ${SH.inflaton_sphere.Ne.toFixed(1)} e-folds · Janus-MF-NC`},
+    {title: 'SERAPIS-E modulus: Re τ = ½ from ρ', kind: 'tau', f: 0.65, sub: () => 'SL(2,ℤ) domain · vacua i, ρ'},
+    {title: 'Mukhanov–Sasaki mode R_k(N)', kind: 'mode', f: 0.95, sub: () => 'phase of R_k; radius ∝ 1 + ¼ log₁₀|R_k/R_frozen|'}];
+  let cycle = -1, fer = null;
+  function proj(p, ry, rx) { const [x, y, z] = p; const x1 = x*Math.cos(ry) + z*Math.sin(ry), z1 = -x*Math.sin(ry) + z*Math.cos(ry); return [x1, y*Math.cos(rx) - z1*Math.sin(rx)]; }
+  function strokeL(L, frac, cxm, cym, sc, ry, rx, col, alpha, w) { const total = L.reduce((a, l) => a + l.length, 0); let budget = Math.floor(total*frac);
+    cx.strokeStyle = col; cx.shadowColor = col; cx.globalAlpha = alpha; cx.lineWidth = w;
+    for (const l of L) { if (budget <= 0) break; const n = Math.min(l.length, budget); budget -= n; cx.beginPath(); for (let i = 0; i < n; i++) { const q = proj(l[i], ry, rx); const px = cxm + sc*q[0], py = cym - sc*q[1]; i ? cx.lineTo(px, py) : cx.moveTo(px, py); } cx.stroke(); } }
+  function frameS(now) { requestAnimationFrame(frameS); const t = now/1000; const T = 10/(speed || 1); const k = Math.floor(t/T); const prog = (t % T)/T;
+    if (k !== cycle) { cycle = k; fer = norm(SH.fermat[String(3 + (k % 3))]); }
     let energy = 0; for (let i = 0; i < NN; i++) energy += Math.abs(amp[i]); energy = Math.min(1, energy/40);
-    cx.clearRect(0, 0, W2, H2); cx.globalCompositeOperation = 'lighter'; const n = shapes.length, cw = W2/n;
-    shapes.forEach((sh, si) => { const cxm = cw*(si + 0.5), cym = H2/2 + 6, sc = Math.min(cw, H2 - 34)*0.42*(1 + 0.06*energy); const ry = t*0.4 + si, rx = 0.5 + 0.2*Math.sin(t*0.3 + si);
-      const grow = Math.min(1, prog*1.25 + energy*0.3); const fade = prog > 0.88 ? 1 - (prog - 0.88)/0.12 : 1;
-      const total = sh.L.reduce((a, l) => a + l.length, 0); let budget = Math.floor(total*grow);
-      cx.lineWidth = 1.1; cx.shadowBlur = 10;
-      sh.L.forEach((line, li) => { if (budget <= 0) return; const nseg = Math.min(line.length, budget); budget -= nseg; const c = hue((sh.f + 0.25*li/sh.L.length) % 1);
-        cx.strokeStyle = c; cx.shadowColor = c; cx.globalAlpha = 0.75*fade; cx.beginPath();
-        for (let i = 0; i < nseg; i++) { let [x, y, z] = line[i]; const x1 = x*Math.cos(ry) + z*Math.sin(ry), z1 = -x*Math.sin(ry) + z*Math.cos(ry); const y1 = y*Math.cos(rx) - z1*Math.sin(rx);
-          const px = cxm + sc*x1, py = cym + sc*y1; i ? cx.lineTo(px, py) : cx.moveTo(px, py); } cx.stroke(); });
-      cx.globalAlpha = 0.85; cx.shadowBlur = 0; cx.fillStyle = hue(sh.f); cx.font = '600 10px Bahnschrift, Segoe UI, sans-serif'; cx.fillText(sh.name.toUpperCase(), cxm - cw*0.45, 16); });
-    cx.globalCompositeOperation = 'source-over'; cx.globalAlpha = 0.6; cx.fillStyle = '#a296d8'; cx.font = '500 10px Cascadia Mono, Consolas, monospace';
-    cx.fillText('shapes form each cycle; wave energy speeds the weaving; resonance mode sets the knot (visual, not physics)', 12, H2 - 8); cx.globalAlpha = 1; }
+    cx.clearRect(0, 0, W2, H2); cx.globalCompositeOperation = 'lighter'; cx.shadowBlur = 9; const cw = W2/panels.length; const grow = Math.min(1, prog*1.2 + 0.3*energy); const fade = prog > 0.9 ? 1 - (prog - 0.9)/0.1 : 1;
+    panels.forEach((pn, si) => { const cxm = cw*(si + 0.5), cym = H2/2 + 8, sc = Math.min(cw, H2 - 40)*0.42; const ry = 0.35*t + si, rx = 0.45;
+      if (pn.kind === 'fermat') strokeL(fer, grow, cxm, cym, sc, ry, rx, hue(pn.f), 0.7*fade, 1);
+      if (pn.kind === 'sphere') { strokeL(sphere, 1, cxm, cym, sc, ry*0.6, rx, hue(pn.f), 0.12, 0.8); strokeL([SH.inflaton_sphere.xyz], grow, cxm, cym, sc*1.01, ry*0.6, rx, hue(pn.f + 0.2), 0.95*fade, 2.2);
+        const iN = Math.min(SH.inflaton_sphere.N.length - 1, Math.floor(grow*(SH.inflaton_sphere.N.length - 1))); pn.live = `N = ${SH.inflaton_sphere.N[iN].toFixed(1)}  ε = ${SH.inflaton_sphere.eps[iN].toFixed(4)}`; }
+      if (pn.kind === 'tau') { const s2 = sc*0.72, ox = cxm, oy = cym + sc*0.95; strokeL(tauL.frame, 1, ox, oy, s2, 0, 0, hue(pn.f), 0.5, 1.2); strokeL([tauL.path], grow, ox, oy, s2, 0, 0, hue(pn.f + 0.25), 0.95*fade, 2.4);
+        for (const [nm, v] of Object.entries(tp.vacua)) { cx.globalAlpha = 1; cx.fillStyle = hue(0.1); cx.beginPath(); cx.arc(ox + s2*v[0], oy - s2*v[1], 3.5, 0, 7); cx.fill(); cx.fillText(nm === 'rho' ? 'ρ' : 'i', ox + s2*v[0] + 6, oy - s2*v[1] + 4); }
+        const ip = Math.min(tauL.path.length - 1, Math.floor(grow*(tauL.path.length - 1))); pn.live = `Im τ = ${tauL.path[ip][1].toFixed(3)}`; }
+      if (pn.kind === 'mode') { strokeL([[[-1, 0, 0], [1.1, 0, 0]]], 1, cxm, cym, sc*0.95, 0.5, 0.35, hue(0.5), 0.25, 1); strokeL(modeL, grow, cxm, cym, sc*0.95, 0.5, 0.35, hue(pn.f), 0.95*fade, 1.6);
+        const im = Math.min(mm.N_minus_Np.length - 1, Math.floor(grow*(mm.N_minus_Np.length - 1))); pn.live = `N − N* = ${mm.N_minus_Np[im].toFixed(2)}  |R| = ${Math.hypot(mm.re[im], mm.im[im]).toFixed(3)}`; }
+      cx.shadowBlur = 0; cx.globalAlpha = 0.95; cx.fillStyle = hue(pn.f); cx.font = '600 10px Bahnschrift, Segoe UI, sans-serif'; cx.fillText(pn.title.toUpperCase(), cxm - cw*0.46, 15);
+      cx.globalAlpha = 0.75; cx.fillStyle = '#c9c0f0'; cx.font = '500 10px Cascadia Mono, Consolas, monospace'; if (pn.sub) cx.fillText(pn.sub(), cxm - cw*0.46, 28); if (pn.live) cx.fillText(pn.live, cxm - cw*0.46, H2 - 8); cx.shadowBlur = 9; });
+    cx.globalCompositeOperation = 'source-over'; cx.globalAlpha = 1; }
   requestAnimationFrame(frameS); })();
+// ---------- live calculation feed ----------
+const FEED = []; function feed(ev) { const ul = document.getElementById('feed'); if (!ul) return; const li = document.createElement('li'); li.className = ev.kind || '';
+  const ts = new Date().toLocaleTimeString(); li.innerHTML = '<b></b> <span class="small"></span><br><span></span>'; li.children[0].textContent = ev.title || ev.kind; li.children[1].textContent = ts;
+  li.children[3].textContent = ev.text || ''; ul.prepend(li); while (ul.children.length > 60) ul.lastChild.remove(); return 'ok'; }
+window.feed = feed;
