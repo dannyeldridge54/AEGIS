@@ -233,12 +233,13 @@
     "D1055",
     "D1056",
     "D1061",
-    "D1249"
+    "D1249",
+    "D1320"
    ],
    "history": [
-    "D1056: computed",
     "D1061: computed",
-    "D1249: computed"
+    "D1249: computed",
+    "D1320: computed"
    ]
   },
   {
@@ -555,6 +556,29 @@
    ],
    "history": [
     "D906: computed"
+   ]
+  },
+  {
+   "id": "darkrad_i",
+   "layer": 4,
+   "branch": [
+    "i"
+   ],
+   "title": "Dark radiation at τ=i (hidden sector): U(1) ΔN 0.054 OK (+1.5σ); SU(2) 0.161 ≈3σ (N_eff 2026, D1208); SU(2)+gaugino 0.301 excluded (LBT Y_p, D1192)",
+   "status": "computed",
+   "d": [
+    "D1088",
+    "D1122",
+    "D1192",
+    "D1208",
+    "D1320"
+   ],
+   "depends": [
+    "vac_i"
+   ],
+   "history": [
+    "D1320: computed (node added)",
+    "D1320: computed"
    ]
   },
   {

@@ -13908,3 +13908,14 @@ MAP: node=wino_window status=corrected touches=[] ripple=no
 - From now on this session writes "## D…" headers.
 VERDICT: tool fixed; the map is consistent; flags 0.
 MAP: none
+
+## D1320 — Map: new node darkrad_i for the τ = i hidden-sector dark radiation, which had no node; halo_profile linked to the Gaia cored/Einasto tests (2026-11-18)
+- [CENTRE · bookkeeping; no new computation]
+- **New node darkrad_i** (layer 4, branch i, depends on vac_i, status computed). Title:
+  > U(1) ΔN 0.054 OK (+1.5σ); SU(2) 0.161 ≈ 3σ (N_eff 2026); SU(2)+gaugino 0.301 excluded (LBT Y_p)
+  - d: D1088, D1122, D1192, D1208.
+  - Before this, these verdicts (B7/B8, the Goldstein–Hill N_eff) existed only in D-notes and the v3.3 draft, with no map node to flag when inputs change.
+- **halo_profile:** the Singh–Desai cored and Einasto tests (D1190, D1202) are attached via the MAP line below. Status unchanged (computed).
+VERDICT: map coverage of our B and A threads completed.
+MAP: node=darkrad_i status=computed touches=[] ripple=no
+MAP: node=halo_profile status=computed touches=[] ripple=no
