@@ -106,8 +106,7 @@
     "D985: estimate",
     "D988: estimate",
     "D992: assumed"
-   ],
-   "flag": "recheck (D1229, tests_cmb)"
+   ]
   },
   {
    "id": "logderiv_plateau",
@@ -701,8 +700,7 @@
     "D821: frozen",
     "D906: frozen",
     "D962: computed"
-   ],
-   "flag": "recheck (D1229, tests_cmb)"
+   ]
   },
   {
    "id": "caps",

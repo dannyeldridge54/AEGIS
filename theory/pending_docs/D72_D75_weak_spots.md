@@ -12777,3 +12777,16 @@ J7d2's success at (1e-3, 5) does not carry to these parameters. Likely reason (n
 hilltop saturates below 80 for these (α, f), so the window is unreachable by construction; a fix would need a different start rule (e.g. the J1d field-value end), i.e. a new lock.
 Large list 5b → BLOCKED (start rule). J7m totals unchanged (16/16 scored points Janus better; 4 listed).
 MAP: none.
+
+### D1232 — Recheck after D1229 (tests_cmb → computed): band_e and plateau_origin are unchanged. D1230 corroborates this session's g_*(T) lead for the relic offset (2026-11-18)
+- [CENTRE · recheck] **D1229** (another session) changed tests_cmb only. It adds an r discriminator: SERAPIS-E r = 4.55–5.12e-4 vs loop blow-up ≈ 1.7e-5 vs Casas–Ibáñez ≳ 1e-3, and it finds no new string home for the plateau (NULL).
+  - **band_e:** its inputs (the frozen pipeline, N*, C, T_R) are untouched by D1229, so the frozen n_s/r band is unchanged. Status stays frozen.
+  - **plateau_origin:** D1229 is a NULL literature result for P3, so it stays assumed.
+  - Both recheck flags are cleared.
+- **D1230** (another session, web tick 2) independently reaches the same lead as D1185/D1187.
+  - Our relic code uses a constant g_* = 106.75.
+  - Saikawa & Shirai (arXiv:2005.03544) report that the SM equation of state shifts WIMP abundances by ~5–10% (EOS uncertainty ~5%), the same size as our +5.4% Born mass offset vs Beneke (≈ +11% in Ω).
+  - Same blocker: the EOS table download needs Danny's "yes table".
+- **No computation.**
+VERDICT: rechecks closed (no change). The g_* lead is corroborated by an independent session and still blocked on "yes table".
+MAP: node=band_e status=frozen touches=[] ripple=no
