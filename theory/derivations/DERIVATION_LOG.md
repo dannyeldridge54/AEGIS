@@ -1848,3 +1848,4 @@ Touches: none.
 ## D1257: U2 predict_fast ADOPTED (exact to TK1, 23–26 s vs ≥ 15 min); W1 measured wave: tilt link 0.394σ > N* link 0.343σ > T_R decade 0.261σ (heuristic ordering REVERSED), all linear (≤ 3 % asymmetry); C and N* separate in r
 ## D1258: W2 — reheating-chain waves at the PW2 point: m_φ ±10 % 0.016σ, g* SM→MSSM 0.021σ (ΔN* −0.063), Kähler √3 0.061σ; all linear, as pre-stated; flag: SERAPIS should use MSSM g* = 228.75
 ## D1260: U4 — Hyperion/Janus-LT recombination vectorised: ×72 faster (6.6 → 0.09 s), z*, z_d, χ² identical; ADOPTED
+## D1261: TK2 — SERAPIS late universe (ΛCDM, Σm_ν 0.05878) χ² 15.32; w0wa preferred Δχ² −7.98 (2.4σ, 2 dof); fit in 19 s with U4

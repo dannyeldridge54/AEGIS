@@ -62,7 +62,7 @@ String compactification on T⁶/(Z₂×Z₂) with stuck D3 branes → one-loop B
 - **α_s:** not a 2030 discriminant (σ ≈ 0.002).
 - **Winos:** HL-LHC disappearing tracks reach 0.9–1.1 TeV only (1812.07831); 1.1–1.85 TeV needs the H.E.S.S./CTA line or a 27 TeV collider (D1249).
 - **Σm_ν:** any robust bound below 0.0588 eV excludes normal ordering and SERAPIS's input together.
-- **Late universe:** ΛCDM; DESI w0–wa pulls −2.8σ / +2.6σ (1-D) — the main open data tension (shared with ΛCDM) (D1252).
+- **Late universe:** ΛCDM + Σm_ν 0.0588 eV: χ² 15.32 on DESI DR2 BAO + compressed CMB; w0waCDM preferred by Δχ² = −8.0 (≈ 2.4σ, 2 dof) — the main open data tension, shared with every ΛCDM model (D1252, TK2)
 
 ## 7. Toolkit cross-checks (TK1 complete, D1254–D1256; U1b D1255)
 

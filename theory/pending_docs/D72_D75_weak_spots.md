@@ -13122,3 +13122,9 @@ Profile: one χ² evaluation 8 ms; one recombination solve 6.6–7.0 s ⇒ the L
 Change: the same nodes and quadrature, evaluated as arrays (vectorised E(z) with the same f_nu spline; sol() on arrays). T1 |Δz*|, |Δz_d| = 0 at 1e-7 printed precision; T2 ×62–85 (total 32.8 s → 0.5 s); T3 χ² identical to 1e-8. All PASS → ADOPTED; zgrid cache keys rebuild automatically.
 Effect: a full L5/L7-type late-universe fit drops from ~4 min to seconds; the Janus-LT tool in the shared registry gains the same speed; TK2 (SERAPIS late-universe check) is now cheap.
 MAP: node=J_lt status=computed touches=[R_w0wa] ripple=no
+
+## D1261 — RIGHT — TK2: SERAPIS's late universe (ΛCDM + Σm_ν 0.05878 eV) through the upgraded Janus-LT — χ² 15.32 (L5 reproduced), w0waCDM preferred by Δχ² = −7.98 (p = 0.018, ≈ 2.4σ, 2 dof); whole fit 19 s (was ~240 s)
+Lock: field_tests/rules/PREREG_TK2_serapis_late.md. Results: field_tests/results/tk2_serapis_late.txt. Data: DESI DR2 BAO (Table IV) + DESI's compressed CMB (A1–A2). Engine: Janus-LT with U4 recombination.
+[computed] SERAPIS late (ΛCDM, Σm_ν 0.05878): χ² 15.322 at h 0.6842, ω_b 0.02241, ω_bc 0.13979 (L5: 15.32 at 0.0587 → T1 PASS). w0waCDM (same Σm_ν): χ² 7.337 at w0 −0.457, wa −1.608, h 0.6383 (L4/D1029: −0.455, −1.615). Δχ² = −7.98 → 2.4σ-equivalent preference for evolving dark energy. T3: 19 s → PASS.
+Reading: SERAPIS has no dynamical dark energy (its late universe is ΛCDM with the NO-floor neutrino mass), so it inherits ΛCDM's current 2.4σ tension with DESI DR2 + compressed CMB (DESI's own full-CMB number is larger, D1029). This is SERAPIS's main open data tension and is shared with every ΛCDM model; a ≥ 3σ confirmation in DESI DR3 + full CMB would require a dark-energy sector SERAPIS does not have.
+MAP: node=R_w0wa status=computed touches=[C_nstar] ripple=no
