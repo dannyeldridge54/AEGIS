@@ -1,0 +1,10 @@
+m=  100 dm=149.50 MeV  ctau=11.276 cm  tau=0.3761 ns  BR pi/e/mu=0.9746/0.0250/0.0004
+m=  300 dm=161.34 MeV  ctau=6.432 cm  tau=0.2145 ns  BR pi/e/mu=0.9784/0.0208/0.0007
+m=  500 dm=163.16 MeV  ctau=6.026 cm  tau=0.2010 ns  BR pi/e/mu=0.9786/0.0207/0.0008
+m=  700 dm=163.75 MeV  ctau=5.902 cm  tau=0.1969 ns  BR pi/e/mu=0.9786/0.0206/0.0008
+m= 1000 dm=164.11 MeV  ctau=5.831 cm  tau=0.1945 ns  BR pi/e/mu=0.9786/0.0206/0.0008
+m= 1100 dm=164.17 MeV  ctau=5.818 cm  tau=0.1941 ns  BR pi/e/mu=0.9786/0.0206/0.0008
+m= 1500 dm=164.34 MeV  ctau=5.784 cm  tau=0.1929 ns  BR pi/e/mu=0.9786/0.0206/0.0008
+m= 2000 dm=164.46 MeV  ctau=5.762 cm  tau=0.1922 ns  BR pi/e/mu=0.9786/0.0205/0.0008
+m= 3000 dm=164.54 MeV  ctau=5.745 cm  tau=0.1916 ns  BR pi/e/mu=0.9786/0.0205/0.0008
+dm=160 MeV benchmark: tau 0.2257 ns ctau 6.766 cm
