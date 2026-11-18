@@ -1,0 +1,2 @@
+# DEVIATIONS — U1
+D1 (2026-11-18 03:18Z): D1 (diagnostic, written after the U1 run: T2 speed PASS ×7800 but T3/T4 α_s FAIL — step-dependent): locate the α_s noise. (a) Same compiled integrator on a SMOOTH symbolic potential (Starobinsky, build(Vexpr)) — α_s across the three step sets; (b) SERAPIS-E with the potential spline on 16000 instead of 4000 points (pipeline npts) — α_s across step sets. No change to the U1 verdict; U1 stays not adopted until a new lock (U1b) passes.
