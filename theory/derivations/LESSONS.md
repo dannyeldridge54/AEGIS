@@ -378,3 +378,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1261: once a toolkit is fast, rerun the model's whole data comparison routinely — the late-universe tension is now a 19-second check, not a quarterly one.
 - D1262: a uniform-shift expectation must allow for the response varying across the parameter box (dn_s/dN* depends on C); state the band from the extremes, not the centre.
 - D1263: a discriminant built on a leading-order relation inherits its bias; check the relation's known offset for each branch before postulating it separates them.
+- D1264: a bound computed for one branch's field range (Chronos, y 23–30) does not transfer to another branch (SERAPIS-E, y ≈ 15) when the bound grows exponentially in y — re-evaluate at each branch's own field values.

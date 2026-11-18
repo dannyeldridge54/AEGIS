@@ -1851,3 +1851,4 @@ Touches: none.
 ## D1261: TK2 — SERAPIS late universe (ΛCDM, Σm_ν 0.05878) χ² 15.32; w0wa preferred Δχ² −7.98 (2.4σ, 2 dof); fit in 19 s with U4
 ## D1262: A1 — MSSM g* = 228.75 applied to SERAPIS reheating: point N* 50.181, n_s 0.974393, r 4.821e-4; box n_s 0.97166–0.97596, r 4.389–4.897e-4, N* 50.07–51.22 (expectation band FAIL by 5e-7 on one corner)
 ## D1263: PW3 KILLED — Janus κ does not separate the ρ/τ = i vacua (τ = i own-κ 10.8 %, crossed 13.2 %); vacua differ by Δα_s 1.4e-4 only (≤ 0.09σ) — vacuum choice not decidable from CMB inflation data
+## D1264: PW4 PASSES — SERAPIS-E covariant m3/2 bound at its own y (14.6–16.6): < 2.0e9 / 6.7e8 GeV, ×960 above the AMSB wino need (≤ 7e5); Chronos-range bound (y 23–30) was marginal

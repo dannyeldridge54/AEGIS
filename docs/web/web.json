@@ -85,7 +85,7 @@
    "label": "Janus relation (α_s from n_s, r)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D673, D692, D1234",
+   "refs": "D692, D1234, D1255",
    "info": ""
   },
   {
@@ -93,7 +93,7 @@
    "label": "BHK one-loop tilt C",
    "lane": "theory",
    "status": "literature",
-   "refs": "D692, D756, D1246",
+   "refs": "D756, D1246, D1257",
    "info": ""
   },
   {
@@ -181,7 +181,7 @@
    "label": "N* for SERAPIS-E ≈ 50.07–51.22 (exact end, n = 1, MSSM g*; D1234, D1235, D1262)",
    "lane": "theory",
    "status": "corrected",
-   "refs": "D979, D1234, D1237",
+   "refs": "D1237, D1258, D1262",
    "info": ""
   },
   {
@@ -241,6 +241,14 @@
    "info": "web loop postulate 3; kept on the web as killed"
   },
   {
+   "id": "m32_window",
+   "label": "POSTULATE (passed): SERAPIS-E covariant bound m3/2 < 6.7e8 GeV at its own y (14.6–16.6) ≫ AMSB wino need ≤ 7e5 GeV (×960)",
+   "lane": "theory",
+   "status": "postulate",
+   "refs": "D1264",
+   "info": "web loop postulate 4 (pattern covariant ↔ eps_tilt)"
+  },
+  {
    "id": "caps",
    "label": "Family caps n_s ≤ 0.985, r ≤ 8.3e-4",
    "lane": "theory",
@@ -269,7 +277,7 @@
    "label": "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1248, D1252, D1254",
+   "refs": "D1256, D1260, D1261",
    "info": ""
   },
   {
@@ -990,6 +998,42 @@
    "sign": -1,
    "ref": "theory/map/map.yaml",
    "verdict": "killed",
+   "source": "map.yaml"
+  },
+  {
+   "s": "covariant",
+   "t": "m32_window",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "serapis_e",
+   "t": "m32_window",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "wino_window",
+   "t": "m32_window",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "eps_tilt",
+   "t": "m32_window",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
    "source": "map.yaml"
   },
   {

@@ -306,6 +306,7 @@ nodes:
   - D647
   - D650
   - D655
+  flag: recheck (D1264, m32_window)
 - id: matter_parity
   layer: 3
   branch:
@@ -654,6 +655,23 @@ nodes:
   - 'D1263: postulate PW3 killed by its locked test'
   - 'D1263: killed'
   note: web loop postulate 3; kept on the web as killed
+- id: m32_window
+  layer: 5
+  branch:
+  - E
+  title: 'POSTULATE (passed): SERAPIS-E covariant bound m3/2 < 6.7e8 GeV at its own y (14.6–16.6) ≫ AMSB wino need ≤ 7e5 GeV (×960)'
+  status: postulate
+  d:
+  - D1264
+  depends:
+  - covariant
+  - serapis_e
+  - wino_window
+  - eps_tilt
+  history:
+  - 'D1264: postulate PW4 passed its locked test'
+  - 'D1264: postulate'
+  note: web loop postulate 4 (pattern covariant ↔ eps_tilt)
 - id: caps
   layer: 5
   branch:
@@ -711,6 +729,7 @@ nodes:
   - 'D906: corrected'
   - 'D1230: corrected'
   - 'D1250: corrected'
+  flag: recheck (D1264, m32_window)
 - id: tests_cmb
   layer: 5
   branch:

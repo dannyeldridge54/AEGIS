@@ -13148,3 +13148,10 @@ MAP: node=vac_discriminant status=killed touches=[] ripple=no
 
 ## D1255a — MAP-line correction (no content change) for D1255, D1260, D1261
 Their MAP lines named web-only toolkit nodes (X_ms, J_lt, R_w0wa), which tools/ladder does not know (they live in tools/web/build_web.py, not theory/map/map.yaml); ladder.py stopped on them. Changed to the nearest theory-map nodes (janus; tests_cmb; tests_cmb). The notes' text and verdicts are unchanged.
+
+## D1264 — CENTRE — PW4 (web postulate 4, pattern covariant ↔ eps_tilt) PASSES: at SERAPIS-E's own field values the covariant X-positivity bound is m₃/₂ < 2.0e9 GeV (horizon exit, y = 14.6) and < 6.7e8 GeV (12 e-folds earlier, y = 16.6) — ×960 above the ≤ 7e5 GeV the AMSB wino window needs
+Lock: field_tests/rules/PREREG_PW4_m32_serapis.md. Results: field_tests/results/pw4_m32_serapis.txt. Formula: D655 (K = −ln 2 Im τ; m₃/₂/H < √(3V_pl/[e^{L−L_ρ}(4y²|∂_τL|² − 3)])) with SERAPIS-E's plateau and H* = 5.44e12 GeV (A1 point, r 4.82e-4).
+[computed] exit: y 14.632, e^{L−L_ρ} 1.1e5, bound 2.0e9 GeV; 12 e-folds before exit: y 16.570, e^{L−L_ρ} 7.4e5, bound 6.75e8 GeV. (A "20 e-folds before" row fell outside the integrated background — N_end = 63.2 from the Ê = 600 start — and is discarded.)
+Expectation (≥ 1e8 GeV) PASS; versus the AMSB requirement m₃/₂ ≈ 2.5–7e5 GeV (D809): margin ×960 → CONSISTENT; the postulate survives (node m32_window, status postulate).
+Why it matters: D649/D655 evaluated the bound only at the Chronos field range y = 23–30, where it is 3e5–1.3e7 GeV — marginal for the wino (y = 30 already below 7e5). SERAPIS-E's plateau approaches as 1/y² and exits at y ≈ 15, so the e^{πy/3} growth of the F-term is ~e^{−9} smaller: the SUSY-breaking scale needed for the wino window is comfortably allowed in SERAPIS-E, whereas it was a live constraint for Chronos.
+MAP: node=m32_window status=postulate touches=[wino_window, covariant] ripple=no
