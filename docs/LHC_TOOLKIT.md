@@ -19,7 +19,7 @@
   CLs automatically when counts are small, and report both.
 
 ## Next (in order)
-1. Verify the Resummino table against the PDF; add the higgsino table; fix the 200 GeV interpolation error.
+1. Verify the Resummino table against the PDF; add the higgsino table. (DONE 12:55Z: interpolating ln σ vs ln m cut the leave-one-out max error from 10.3% to 0.30% (13 TeV) / 0.15% (13.6 TeV), median 0.016%.)
 2. Disappearing-track recast: ATLAS/CMS HEPData acceptance × efficiency maps (fetch as text) → our limit vs theirs (must reproduce the published limit before any use).
 3. Our own LO cross section (Drell–Yan-like q q̄' → W*/Z*/γ* → χχ) with a PDF set — needs a PDF download (Danny's OK); K-factor vs Resummino as the validation.
 4. pyhf with published full likelihoods (HEPData) for one SUSY analysis; speed + agreement benchmark.

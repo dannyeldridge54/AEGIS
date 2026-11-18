@@ -8,9 +8,10 @@ from scipy.interpolate import CubicSpline
 D = json.load(open(pathlib.Path(__file__).with_name('data') / 'wino_xsec_resummino_2304.11915.json'))
 M = np.array(D['mass_GeV'], float)
 def _spl(sqrts, proc, drop=None):
-    y = np.log(np.array(D['sqrt_s'][sqrts][proc], float)); x = M
+    y = np.log(np.array(D['sqrt_s'][sqrts][proc], float)); x = np.log(M)   # ln(sigma) vs ln(m): near power law, flatter to interpolate
     if drop is not None: x = np.delete(x, drop); y = np.delete(y, drop)
-    return CubicSpline(x, y)
+    sp = CubicSpline(x, y)
+    return lambda m: sp(np.log(m))
 def sigma(m, proc='C1N2p', sqrts='13.6'):
     """Cross section in fb at mass m (GeV), 100 <= m <= 2000. sqrts '13', '13.6' (table) or a number in [13, 14] (log-linear in sqrt(s))."""
     m = float(m)
