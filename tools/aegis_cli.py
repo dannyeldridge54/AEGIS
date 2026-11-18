@@ -101,7 +101,7 @@ def hyperion(args):
 
 def scorecard(args):
     p = os.path.join(_root(), 'tools', 'scorecard')
-    if p not in sys.path: sys.path.insert(0, p)
+    if os.path.isdir(p) and p not in sys.path: sys.path.insert(0, p)
     try: from inflation_scorecard.cli import scorecard_main
     except ImportError as e: print(f'The Inflation Scorecard needs pyyaml:  pip install pyyaml   ({e})'); return
     if not args: args = ['--help']
