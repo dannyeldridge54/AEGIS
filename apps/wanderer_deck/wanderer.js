@@ -104,24 +104,65 @@
     return o;
   }
 
+
+  /* ---- ritual style: black and gold, masked, candle-lit, smoke and sigils (original designs) ---- */
+  var GOLD = '#d8b46a';
+  function ritualize(v) {
+    var r = Object.assign({}, v);
+    r.accent = v.edge; r.bg = ['#0d0b10', '#000000']; r.sky = v.edge; r.cloak = '#08070a'; r.edge = v.edge;
+    r.skin = '#cdb8ac'; r.beardC = v.key === 'madness' ? '#8a2ab0' : '#8a3a1a'; r.bone = '#e8dcc0'; r.horn = '#b89a6a'; r.tree = '#1a1620';
+    r.eye = v.edge; r.dark = Math.max(.6, v.dark); return r;
+  }
+  function sigilWheel(cx, cy, col, R) {
+    var o = '<g stroke="' + col + '" fill="none" stroke-width=".7" opacity=".85">';
+    o += '<circle cx="' + cx + '" cy="' + cy + '" r="58"/><circle cx="' + cx + '" cy="' + cy + '" r="52" stroke-dasharray="1 2.4"/><circle cx="' + cx + '" cy="' + cy + '" r="34" opacity=".6"/>';
+    o += '<polygon points="' + [0, 1, 2].map(function (i) { var a = -Math.PI / 2 + i * 2 * Math.PI / 3; return f(cx + 52 * Math.cos(a)) + ',' + f(cy + 52 * Math.sin(a)); }).join(' ') + '"/>';
+    o += '<polygon points="' + [0, 1, 2].map(function (i) { var a = Math.PI / 2 + i * 2 * Math.PI / 3; return f(cx + 52 * Math.cos(a)) + ',' + f(cy + 52 * Math.sin(a)); }).join(' ') + '" opacity=".5"/>';
+    for (var i = 0; i < 24; i++) { var a = i * Math.PI / 12, r1 = i % 2 ? 55 : 53, r2 = 58; o += '<path d="M' + f(cx + r1 * Math.cos(a)) + ' ' + f(cy + r1 * Math.sin(a)) + ' L' + f(cx + r2 * Math.cos(a)) + ' ' + f(cy + r2 * Math.sin(a)) + '"/>'; }
+    o += '<path d="M' + (cx - 70) + ' ' + (cy - 6) + ' a8 8 0 1 0 0 12 a6 6 0 1 1 0 -12Z M' + (cx + 70) + ' ' + (cy - 6) + ' a8 8 0 1 1 0 12 a6 6 0 1 0 0 -12Z" fill="' + col + '" opacity=".7"/>';   // waxing / waning
+    for (var k = 0; k < 4; k++) { var aa = Math.PI / 4 + k * Math.PI / 2; o += '<circle cx="' + f(cx + 58 * Math.cos(aa)) + '" cy="' + f(cy + 58 * Math.sin(aa)) + '" r="2" fill="' + col + '"/>'; }
+    return o + '</g>';
+  }
+  function rays(col) { var o = '<g stroke="' + col + '" stroke-width=".4" opacity=".35">'; for (var i = -6; i <= 6; i++) o += '<path d="M100 -10 L' + (100 + i * 22) + ' 300"/>'; return o + '</g>'; }
+  function smoke(R, uid) {
+    var o = '<g filter="url(#sm' + uid + ')" fill="none" stroke="#c8c0d0" stroke-width="3" opacity=".22">';
+    for (var i = 0; i < 6; i++) { var x = 30 + R() * 140, y = 290; o += '<path d="M' + f(x) + ' ' + y + ' C' + f(x - 20 + R() * 40) + ' 230 ' + f(x - 30 + R() * 60) + ' 190 ' + f(x - 20 + R() * 40) + ' ' + f(140 + R() * 40) + '"/>'; }
+    return o + '</g>';
+  }
+  function candles(col, uid) {
+    var o = '', xs = [20, 180], hs = [40, 40];
+    xs.forEach(function (x, i) { var h = hs[i], y = 292 - h;
+      o += '<rect x="' + (x - 4) + '" y="' + y + '" width="8" height="' + h + '" fill="#e8e0d0"/><path d="M' + (x - 4) + ' ' + (y + 2) + ' q2 6 0 10" stroke="#c8c0b0" stroke-width="1.4" fill="none"/>' +
+           '<path d="M' + x + ' ' + (y - 11) + ' C' + (x + 3) + ' ' + (y - 6) + ' ' + (x + 3) + ' ' + (y - 2) + ' ' + x + ' ' + y + ' C' + (x - 3) + ' ' + (y - 2) + ' ' + (x - 3) + ' ' + (y - 6) + ' ' + x + ' ' + (y - 11) + 'Z" fill="#ffd27a" filter="url(#gl' + uid + ')"/>'; });
+    return o;
+  }
+  function mask(col) {   // a cloth mask over the eyes: one eyehole lit, the other sealed with a gold seam
+    return '<path d="M79 95 C88 90 112 90 121 95 L121 110 C112 114 88 114 79 110Z" fill="#050406" stroke="' + col + '" stroke-width=".9"/>' +
+      '<path d="M88 104 Q93 99 98 104 Q93 108 88 104Z" fill="' + col + '" opacity=".9"/><circle cx="93" cy="104" r="1.3" fill="#fff"/>' +
+      '<path d="M102 104 L112 104 M104 101 L104 107 M110 101 L110 107" stroke="' + GOLD + '" stroke-width=".9"/>' +
+      '<path d="M100 92 L100 112" stroke="' + GOLD + '" stroke-width=".5" opacity=".7"/>';
+  }
+
   function cardSVG(k, opts) {
     opts = opts || {};
-    var v = typeof k === 'number' ? V[k] : V.filter(function (x) { return x.key === k; })[0], R = rng(V.indexOf(v) + 3), uid = 'w' + Math.floor(Math.random() * 1e9);
+    var v = typeof k === 'number' ? V[k] : V.filter(function (x) { return x.key === k; })[0], R = rng(V.indexOf(v) + 3), uid = 'w' + Math.floor(Math.random() * 1e9), RIT = opts.style === 'ritual';
+    if (RIT) v = ritualize(v);
     var o = [], w = v.thin ? .82 : 1;
     o.push('<defs><linearGradient id="bg' + uid + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + v.bg[0] + '"/><stop offset="1" stop-color="' + v.bg[1] + '"/></linearGradient>' +
       '<radialGradient id="sk' + uid + '"><stop offset="0" stop-color="' + v.sky + '" stop-opacity="1"/><stop offset=".6" stop-color="' + v.sky + '" stop-opacity=".5"/><stop offset="1" stop-color="' + v.sky + '" stop-opacity="0"/></radialGradient>' +
       '<filter id="gl' + uid + '" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
-      '<clipPath id="cp' + uid + '"><rect x="4" y="4" width="192" height="292" rx="10"/></clipPath></defs>');
+      '<filter id="sm' + uid + '"><feGaussianBlur stdDeviation="3"/></filter><clipPath id="cp' + uid + '"><rect x="4" y="4" width="192" height="292" rx="10"/></clipPath></defs>');
     o.push('<g clip-path="url(#cp' + uid + ')"><rect width="200" height="300" fill="url(#bg' + uid + ')"/>');
     // sky body: sun / moon behind the head
     o.push('<circle cx="100" cy="92" r="' + (v.halo ? 70 : 58) + '" fill="url(#sk' + uid + ')"/>');
     if (v.blood) o.push('<circle cx="100" cy="70" r="40" fill="#b00a20" opacity=".9"/><circle cx="100" cy="70" r="40" fill="none" stroke="#ff3d5b" stroke-width="1"/>');
     if (v.madness) { var sp = ''; for (var s = 0; s < 220; s++) { var a = s * .19, r = 2 + s * .5; sp += (s ? ' L' : 'M') + f(100 + r * Math.cos(a)) + ' ' + f(110 + r * Math.sin(a)); } o.push('<path d="' + sp + '" stroke="#d43cff" stroke-width=".8" fill="none" opacity=".55"/>'); }
+    if (RIT) o.push(rays(GOLD), sigilWheel(100, 104, GOLD, R), smoke(R, uid));
     // Yggdrasil behind
     var tr = [];
     if (v.bigTree) { branch(R, 100, 300, -Math.PI / 2, 70, 6, v.tree, 9, tr); }
     else { branch(R, 30, 300, -Math.PI / 2 + .15, 50, 4, v.tree, 5, tr); branch(R, 170, 300, -Math.PI / 2 - .15, 50, 4, v.tree, 5, tr); }
-    o.push('<g opacity="' + (v.bigTree ? .95 : .6) + '">' + tr.join('') + '</g>');
+    o.push('<g opacity="' + (RIT ? (v.bigTree ? .5 : .25) : (v.bigTree ? .95 : .6)) + '">' + tr.join('') + '</g>');
     // roots
     var rt = []; for (var q = 0; q < 5; q++) branch(R, 100, 286, Math.PI / 2 + (q - 2) * .5, 14, 2, v.tree, 3, rt); o.push('<g opacity=".7">' + rt.join('') + '</g>');
 
@@ -142,6 +183,7 @@
       for (var e2 = 0; e2 < 6; e2++) fig.push(eyeDiamond(f(20 + R() * 160), f(20 + R() * 60), 3 + R() * 3, cols[e2 % 4])); }
     if (v.runes) for (var rn = 0; rn < 9; rn++) fig.push(algiz(f(30 + R() * 140), f(160 + R() * 120), 4, v.eye).replace('stroke-width="1.1"', 'stroke-width="1.1" opacity=".75"'));
 
+    if (RIT && !v.madness) fig.push(mask(v.accent));
     var body = '<g>' + fig.join('') + '</g>';
     if (v.hanged) {   // Odin's nine nights: hung from Yggdrasil by one foot, upside down — the Hanged Man
       o.push('<path d="M10 20 C70 6 130 6 190 22" stroke="' + v.tree + '" stroke-width="7" fill="none"/><path d="M100 10 L100 26" stroke="#c8b890" stroke-width="1.4"/>');
@@ -154,8 +196,9 @@
     o.push('</g>');
     // frame and title plate
     var light = v.dark < .5, ink = light ? '#2a1f3a' : '#f3eeff';
-    o.push('<rect x="4" y="4" width="192" height="292" rx="10" fill="none" stroke="' + v.edge + '" stroke-width="2"/>');
-    if (opts.title !== false) o.push('<rect x="16" y="254" width="168" height="36" rx="6" fill="' + (light ? '#fff' : '#04020b') + '" opacity=".74"/>' +
+    o.push('<rect x="4" y="4" width="192" height="292" rx="10" fill="none" stroke="' + (RIT ? GOLD : v.edge) + '" stroke-width="' + (RIT ? 1 : 2) + '"/>' + (RIT ? '<rect x="9" y="9" width="182" height="282" rx="7" fill="none" stroke="' + GOLD + '" stroke-width=".4" opacity=".6"/>' : ''));
+    if (RIT && opts.title !== false) o.push('<defs><linearGradient id="tf' + uid + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset=".35" stop-color="#000" stop-opacity=".92"/></linearGradient></defs><rect x="9" y="238" width="182" height="53" fill="url(#tf' + uid + ')"/>' + candles(GOLD, uid) + '<text x="100" y="270" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" letter-spacing="3"' + (v.name.length > 12 ? ' textLength="138" lengthAdjust="spacingAndGlyphs"' : '') + ' fill="' + GOLD + '">' + v.name.toUpperCase() + '</text><text x="100" y="283" text-anchor="middle" font-family="Georgia,serif" font-size="7" letter-spacing=".5"' + (v.chart.length > 30 ? ' textLength="138" lengthAdjust="spacingAndGlyphs"' : '') + ' fill="#a296a0">' + v.chart + '</text>');
+    else if (opts.title !== false) o.push('<rect x="16" y="254" width="168" height="36" rx="6" fill="' + (light ? '#fff' : '#04020b') + '" opacity=".74"/>' +
       '<text x="100" y="270" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="' + ink + '">' + v.name + '</text>' +
       '<text x="100" y="284" text-anchor="middle" font-family="Georgia,serif" font-size="7.6" fill="' + ink + '" opacity=".8">' + v.chart + '</text>');
     return '<svg class="wcard" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + v.name + '">' + o.join('') + '</svg>';

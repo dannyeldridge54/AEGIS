@@ -4,6 +4,6 @@ h1{font-weight:normal;color:#ff6ec7;margin:0 0 4px}p{color:#a296d8;margin:0 0 14
 .g{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.c{text-align:center}.c small{display:block;color:#a296d8;font-size:11px;margin-top:4px}
 .bar{height:6px;border-radius:3px;background:linear-gradient(90deg,#fff4c2,#4cc3ff,#7a5cff,#04020b);margin:0 0 14px}
 svg{width:100%;height:auto;display:block;border-radius:10px}</style>
-<h1>Danny Lee Eldridge — the Wanderer</h1><p>Born 15 Feb 1992, 8:43 pm, Oklahoma City. Royal stag of the Elder line on the left, ram horn on the right. Light ⟶ dark; each card is a placement in the birth chart.</p><div class="bar"></div>
+<h1>Danny Lee Eldridge — the Wanderer · ritual</h1><p>Born 15 Feb 1992, 8:43 pm, Oklahoma City. Royal stag of the Elder line on the left, ram horn on the right. Light ⟶ dark; each card is a placement in the birth chart.</p><div class="bar"></div>
 <div class="g" id="g"></div><script src="wanderer.js"></script>
-<script>g.innerHTML=WandererArt.VARIANTS.map((v,i)=>'<div class="c">'+WandererArt.cardSVG(i)+'<small>'+(i+1)+'. '+v.story+'</small></div>').join('')</script>
+<script>g.innerHTML=WandererArt.VARIANTS.map((v,i)=>'<div class="c">'+WandererArt.cardSVG(i,{style:(location.hash==='#classic'?'':'ritual')})+'<small>'+(i+1)+'. '+v.story+'</small></div>').join('')</script>
