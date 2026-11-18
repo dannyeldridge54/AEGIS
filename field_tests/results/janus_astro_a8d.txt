@@ -1,4 +1,4 @@
-run 1: {'tiles_done': 2, 'tiles_skipped': 0, 'stars': 53, 'seconds': 1.5, 'summary_stars': 53}
+run 1: {'tiles_done': 2, 'tiles_skipped': 0, 'stars': 53, 'seconds': 1.2, 'summary_stars': 53}
 M1 selection: 53 processed of 120 (expected 53): PASS
 M2 values vs direct calls: worst 0.0e+00
 M3 resume: {'tiles_done': 0, 'tiles_skipped': 2, 'stars': 0, 'seconds': 0.0, 'summary_stars': 53} identical

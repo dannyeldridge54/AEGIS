@@ -19,7 +19,7 @@ for t in (101, 202):
     with gzip.open(td/f'{t:05d}.csv.gz', 'wt', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=cols); w.writeheader(); w.writerows(rows)
     allrows += rows
-res1 = MO.run(cm, sk); P('run 1:', res1)
+res1 = MO.run(cm, sk, model='MWPotential2014'); P('run 1:', res1)
 outs = {}
 for op in sorted((cm/'hyperion'/'L5').glob('*.csv.gz')):
     with gzip.open(op, 'rt', newline='') as fh: outs.update({rr['source_id']: rr for rr in csv.DictReader(fh)})
@@ -41,7 +41,7 @@ for i, rw in enumerate(expect):
         y = float(got[k]); e = abs(y - x)/abs(x) if x != 0 else abs(y); worst = max(worst, e)
 ok['M2'] = worst <= 1e-12; P(f'M2 values vs direct calls: worst {worst:.1e}')
 h1 = {p_.name: hashlib.sha256(p_.read_bytes()).hexdigest() for p_ in (cm/'hyperion'/'L5').glob('*.csv.gz')}
-res2 = MO.run(cm, sk); h2 = {p_.name: hashlib.sha256(p_.read_bytes()).hexdigest() for p_ in (cm/'hyperion'/'L5').glob('*.csv.gz')}
+res2 = MO.run(cm, sk, model='MWPotential2014'); h2 = {p_.name: hashlib.sha256(p_.read_bytes()).hexdigest() for p_ in (cm/'hyperion'/'L5').glob('*.csv.gz')}
 ok['M3'] = res2['tiles_done'] == 0 and res2['tiles_skipped'] == 2 and h1 == h2; P('M3 resume:', res2, 'identical' if h1 == h2 else 'CHANGED')
 S = json.load(open(sk/'data'/'hyperion_orbits.json'))
 m4 = all(k in S for k in ('version', 'model', 'n_stars', 'tiles', 'most_eccentric')) and S['n_stars'] == len(expect)
