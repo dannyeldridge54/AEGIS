@@ -1,14 +1,210 @@
 [
- {"id":"photon","sym":"γ","name":"Photon","state":"observed","node":"R_biref","info":"Carries the CMB; birefringence β tests an axion coupling c_γ/f (D403, D404)."},
- {"id":"nu","sym":"ν","name":"SM neutrinos","state":"observed","node":"mnu","info":"Observed oscillations; model fixes Σm_ν = 0.0587 eV (m1 ≈ 0), checked by DESI BAO."},
- {"id":"inflaton","sym":"φ","name":"Inflaton","state":"inferred","node":"serapis_e","info":"Seen only through the CMB spectrum it seeded: n_s, r, α_s. SERAPIS-E plateau; band n_s 0.970–0.975."},
- {"id":"graviton","sym":"h","name":"Primordial gravitons","state":"predicted","node":"tests_cmb","info":"Tensor modes r ≈ 4.5–5.7e-4; LiteBIRD (~2035) and SO+SPHEREx (~2030) are the tests."},
- {"id":"N","sym":"N","name":"Heavy neutrino doublet","state":"predicted","node":"n_sector_rho","info":"Γ2 doublet at τ = i, 2⊕1 at ρ; mass splitting η_N; drives leptogenesis."},
- {"id":"wino","sym":"W̃","name":"Wino","state":"predicted","node":"wino_window","info":"0.67–1.85 TeV, 5–41 % of dark matter (post-hoc window); HL-LHC disappearing tracks test it."},
- {"id":"gravitino","sym":"G̃","name":"Gravitino","state":"predicted","node":"gravitino_wino","info":"Decays to wino; non-thermal share Ω ≤ 3e-4 (Pradler–Steffen), negligible."},
- {"id":"axion","sym":"a","name":"Axion-like inflaton coupling","state":"predicted","node":"sterile_i","info":"Unsuppressed coupling at τ = i sets reheating T_R ≈ 1–3e6 GeV."},
- {"id":"darkrad","sym":"ΔN","name":"Dark radiation","state":"bounded","node":"darkrad_rho","info":"Doublet-only route killed; ΔN_eff bounded by BBN/CMB (filter F7)."},
- {"id":"modulus","sym":"τ","name":"Modulus / dilaton","state":"bounded","node":"R_clock","info":"Must be pinned today: clocks/α-drift ζ ≲ 3.6e-6 (D400); residual displacement ≤ 1e-7–1e-5 M_P."},
- {"id":"kk","sym":"KK","name":"Kaluza–Klein scalar modes","state":"computed","node":"S_kk10","info":"String-sector masses: 10D ratio m₂/m₁ 2.190 agrees with BTR; 6D masses pending (S4E4)."},
- {"id":"baryon","sym":"B","name":"Baryon asymmetry","state":"observed","node":"C_lepto","info":"Observed η_B; the model needs yield 0.87e-10 × dilution D from leptogenesis."}
+ {
+  "id": "photon",
+  "sym": "γ",
+  "name": "Photon",
+  "state": "observed",
+  "node": "R_biref",
+  "info": "Carries the CMB; birefringence β tests an axion coupling c_γ/f (D403, D404)."
+ },
+ {
+  "id": "nu",
+  "sym": "ν",
+  "name": "SM neutrinos",
+  "state": "observed",
+  "node": "mnu",
+  "info": "Observed oscillations; model fixes Σm_ν = 0.0587 eV (m1 ≈ 0), checked by DESI BAO."
+ },
+ {
+  "id": "inflaton",
+  "sym": "φ",
+  "name": "Inflaton",
+  "state": "inferred",
+  "node": "serapis_e",
+  "info": "Seen only through the CMB spectrum it seeded: n_s, r, α_s. SERAPIS-E plateau; band n_s 0.970–0.975."
+ },
+ {
+  "id": "graviton",
+  "sym": "h",
+  "name": "Primordial gravitons",
+  "state": "predicted",
+  "node": "tests_cmb",
+  "info": "Tensor modes r ≈ 4.5–5.7e-4; LiteBIRD (~2035) and SO+SPHEREx (~2030) are the tests."
+ },
+ {
+  "id": "N",
+  "sym": "N",
+  "name": "Heavy neutrino doublet",
+  "state": "predicted",
+  "node": "n_sector_rho",
+  "info": "Γ2 doublet at τ = i, 2⊕1 at ρ; mass splitting η_N; drives leptogenesis."
+ },
+ {
+  "id": "wino",
+  "sym": "W̃",
+  "name": "Wino",
+  "state": "predicted",
+  "node": "wino_window",
+  "info": "0.67–1.85 TeV, 5–41 % of dark matter (post-hoc window); HL-LHC disappearing tracks test it."
+ },
+ {
+  "id": "gravitino",
+  "sym": "G̃",
+  "name": "Gravitino",
+  "state": "predicted",
+  "node": "gravitino_wino",
+  "info": "Decays to wino; non-thermal share Ω ≤ 3e-4 (Pradler–Steffen), negligible."
+ },
+ {
+  "id": "axion",
+  "sym": "a",
+  "name": "Axion-like inflaton coupling",
+  "state": "predicted",
+  "node": "sterile_i",
+  "info": "Unsuppressed coupling at τ = i sets reheating T_R ≈ 1–3e6 GeV."
+ },
+ {
+  "id": "darkrad",
+  "sym": "ΔN",
+  "name": "Dark radiation",
+  "state": "bounded",
+  "node": "darkrad_rho",
+  "info": "Doublet-only route killed; ΔN_eff bounded by BBN/CMB (filter F7)."
+ },
+ {
+  "id": "modulus",
+  "sym": "τ",
+  "name": "Modulus / dilaton",
+  "state": "bounded",
+  "node": "R_clock",
+  "info": "Must be pinned today: clocks/α-drift ζ ≲ 3.6e-6 (D400); residual displacement ≤ 1e-7–1e-5 M_P."
+ },
+ {
+  "id": "kk",
+  "sym": "KK",
+  "name": "Kaluza–Klein scalar modes",
+  "state": "computed",
+  "node": "S_kk10",
+  "info": "String-sector masses: 10D ratio m₂/m₁ 2.190 agrees with BTR; 6D masses pending (S4E4)."
+ },
+ {
+  "id": "baryon",
+  "sym": "B",
+  "name": "Baryon asymmetry",
+  "state": "observed",
+  "node": "C_lepto",
+  "info": "Observed η_B; the model needs yield 0.87e-10 × dilution D from leptogenesis."
+ },
+ {
+  "id": "electron",
+  "sym": "e",
+  "name": "Electron",
+  "state": "observed",
+  "node": "R_clock",
+  "info": "Standard Model lepton; α drift / clock tests (F1)."
+ },
+ {
+  "id": "muon",
+  "sym": "μ",
+  "name": "Muon",
+  "state": "observed",
+  "node": "R_clock",
+  "info": "Standard Model lepton."
+ },
+ {
+  "id": "tau_l",
+  "sym": "τ⁻",
+  "name": "Tau lepton",
+  "state": "observed",
+  "node": "mnu",
+  "info": "Standard Model lepton (charged-lepton sector of the flavour texture)."
+ },
+ {
+  "id": "quarks",
+  "sym": "q",
+  "name": "Quarks (u d s c b t)",
+  "state": "observed",
+  "node": "H_bbn",
+  "info": "Standard Model; baryons from leptogenesis → sphalerons (8/23 factor)."
+ },
+ {
+  "id": "gluon",
+  "sym": "g",
+  "name": "Gluon",
+  "state": "observed",
+  "node": "H_bbn",
+  "info": "Standard Model gauge boson."
+ },
+ {
+  "id": "WZ",
+  "sym": "W/Z",
+  "name": "W and Z bosons",
+  "state": "observed",
+  "node": "C_lepto",
+  "info": "Electroweak bosons; sphaleron processes convert lepton → baryon asymmetry."
+ },
+ {
+  "id": "higgs",
+  "sym": "H",
+  "name": "Higgs boson",
+  "state": "observed",
+  "node": "C_lepto",
+  "info": "Discovered 2012; v = 174 GeV sets the seesaw (y_D = √(m_ν M)/v)."
+ },
+ {
+  "id": "N3",
+  "sym": "N₃",
+  "name": "Heavy singlet neutrino (2⊕1)",
+  "state": "predicted",
+  "node": "n_sector_rho",
+  "info": "The singlet that mixes with the Γ₂ doublet at ρ (D725); M ~ 1e12 GeV."
+ },
+ {
+  "id": "NL",
+  "sym": "N_L",
+  "name": "Light heavy-neutrino pair",
+  "state": "predicted",
+  "node": "darkrad_rho",
+  "info": "M_L 2e11–2e13 GeV; thermalises and decays (no dark radiation, D1240)."
+ },
+ {
+  "id": "bino",
+  "sym": "B̃",
+  "name": "Bino",
+  "state": "predicted",
+  "node": "gravitino_wino",
+  "info": "AMSB gaugino, ≈ M₂/2 (D809)."
+ },
+ {
+  "id": "gluino",
+  "sym": "g̃",
+  "name": "Gluino",
+  "state": "predicted",
+  "node": "tests_lhc",
+  "info": "AMSB gaugino M₃ ≈ 4.7–13 TeV (D809) — beyond LHC reach."
+ },
+ {
+  "id": "sfermions",
+  "sym": "f̃",
+  "name": "Sfermions (squarks, sleptons)",
+  "state": "predicted",
+  "node": "m32_window",
+  "info": "Scalars near m₃/₂ ~ 2.5–7e5 GeV — the MSSM spectrum relativistic at reheating (MSSM g*, D1262)."
+ },
+ {
+  "id": "dilaton",
+  "sym": "S",
+  "name": "Dilaton (string coupling)",
+  "state": "predicted",
+  "node": "bhk_tilt",
+  "info": "Im S = 0.485 at the benchmark g_s = 0.232 (D861); stabilised."
+ },
+ {
+  "id": "stuckD3",
+  "sym": "D3",
+  "name": "Stuck D3 branes (string objects)",
+  "state": "predicted",
+  "node": "stuck_d3",
+  "info": "5 per half-period + 1 at the origin; their asymmetry IS the tilt (D696)."
+ }
 ]

@@ -66,6 +66,9 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
     <div class="tabs" role="tablist">
       <button class="tab" role="tab" id="t-weave" aria-selected="true">Weave</button>
       <button class="tab" role="tab" id="t-land" aria-selected="false">Landscape</button>
+      <button class="tab" role="tab" id="t-onion" aria-selected="false">Onion</button>
+      <button class="tab" role="tab" id="t-vortex" aria-selected="false">Vortex</button>
+      <button class="tab" role="tab" id="t-bh" aria-selected="false">Black hole</button>
       <button class="tab" role="tab" id="t-classic" aria-selected="false">Classic views</button>
     </div>
     <div class="spacer"></div>
@@ -94,6 +97,7 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
       <div class="card"><h2>Wiring · shared toolkits → CubeMind</h2>
         <div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn" id="bpoint">SERAPIS point</button><button class="btn" id="bms">Exact MS here</button><button class="btn" id="btools">List tools</button></div>
         <div class="small" id="wirecap">same registry CubeMind's +aegis arm uses; every result is stored in CubeMind memory</div></div>
+      <div class="card" id="partcard" hidden><h2>Particles · ⚑ = not discovered</h2><div style="display:flex;gap:6px;margin-bottom:6px"><button class="btn on" id="bparts">Labels</button></div><ul id="partlist" class="feedlist"></ul><div class="small">Click a node: its geometry lens appears in the centre and ripples with its waves.</div></div>
       <div class="card"><h2>Live calculations</h2><ul id="feed" class="feedlist"></ul></div>
       <div class="card" id="info"><h2>Node</h2><div class="small">Click a glowing knob on the weave.</div><ul id="links"></ul></div>
     </aside>
@@ -109,5 +113,6 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
 <script src="vendor/UnrealBloomPass.js"></script>
 <script src="data.js"></script>
 <script src="studio.js"></script>
+<script src="views3.js"></script>
 </body>
 </html>
