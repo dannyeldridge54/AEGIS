@@ -1,0 +1,13 @@
+PW1 — audited SERAPIS-E box, live Janus app scan p001 (Danny PC)
+  C 1.000e-6 N* 50.1: n_s 0.97169 r 4.5257e-04 α_s -9.409e-04 | expect OUT | frozen OUT
+  C 1.000e-6 N* 50.7: n_s 0.97225 r 4.4504e-04 α_s -9.269e-04 | expect in | frozen OUT
+  C 1.000e-6 N* 51.3: n_s 0.97280 r 4.3778e-04 α_s -9.111e-04 | expect in | frozen OUT
+  C 1.150e-6 N* 50.1: n_s 0.97326 r 4.7063e-04 α_s -9.767e-04 | expect in | frozen in
+  C 1.150e-6 N* 50.7: n_s 0.97384 r 4.6324e-04 α_s -9.576e-04 | expect in | frozen in
+  C 1.150e-6 N* 51.3: n_s 0.97441 r 4.5611e-04 α_s -9.452e-04 | expect in | frozen in
+  C 1.300e-6 N* 50.1: n_s 0.97485 r 4.8956e-04 α_s -1.014e-03 | expect OUT | frozen in
+  C 1.300e-6 N* 50.7: n_s 0.97545 r 4.8234e-04 α_s -1.001e-03 | expect OUT | frozen OUT
+  C 1.300e-6 N* 51.3: n_s 0.97604 r 4.7539e-04 α_s -9.855e-04 | expect OUT | frozen OUT
+audited box: n_s 0.97169–0.97604, r 4.3778e-04–4.8956e-04, α_s -9.111e-04 to -1.014e-03
+(1) pre-stated ranges: 5/9 inside → FAIL
+(2) inside the frozen D693 band: 4/9
