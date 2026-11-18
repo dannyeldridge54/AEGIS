@@ -142,6 +142,7 @@ def sweep_node(node):
     else: ok, txt = True, f'{len(rows)} points, no trend check'
     meta = dict(node=node, tool=name, swept=key, n=len(rows), ok=ok, text=txt, path=path, seconds=round(time.time() - t0, 2))
     open(path[:-4] + '.json', 'w', encoding='utf-8').write(json.dumps(meta))
+    _link_log(dict(node=node + ' sweep', tool=name, ok=ok, text=txt))
     to_cubemind(f"Janus sweep {node}: {name} over {key} {vals[0]}..{vals[-1]} -> {txt} (table {os.path.basename(path)})", name, importance=2)
     return meta
 
@@ -216,6 +217,14 @@ NODE_SWEEPS.update({
     'X_ms': ('serapis_ms', {'Nstar': 50.7}, 'C', [1.0e-6, 1.15e-6, 1.3e-6], ('ns', +1)),
 })
 _LANE_ORDER = ['theory', 'centre', 'left', 'right', 'lhc', 'janus', 'strings', 'lattice', 'wiring']
+def _link_log(rec):
+    """Every node test / sweep result also goes to CubeMind's aegis_link/janus_tests.jsonl, which its learn loop ingests (tiered)."""
+    import json
+    try:
+        d = os.path.join(CM_DIR, 'aegis_link'); os.makedirs(d, exist_ok=True)
+        with open(os.path.join(d, 'janus_tests.jsonl'), 'a', encoding='utf-8') as fh: fh.write(json.dumps(rec, default=str) + '\n')
+    except Exception: pass
+    return rec
 def test_node(node):
     import time
     t = NODE_TESTS.get(node)
@@ -224,7 +233,7 @@ def test_node(node):
     try:
         r = run_tool(name, args); ok, txt = (False, 'tool error: ' + str(r.get('error'))[:160]) if 'error' in r else chk(r)
     except Exception as e: ok, txt = False, f'{type(e).__name__}: {e}'
-    return dict(node=node, tool=name, ok=bool(ok), text=txt, seconds=round(time.time() - t0, 2))
+    return _link_log(dict(node=node, tool=name, ok=bool(ok), text=txt, seconds=round(time.time() - t0, 2)))
 class Weave:
     """Derive-the-weave switch: walks every testable node (lane order), test-runs it, pulses it on the weave, feeds the result."""
     def __init__(self): self.on = False; self.th = None; self.win = None; self.last = []; self.sweep = False
