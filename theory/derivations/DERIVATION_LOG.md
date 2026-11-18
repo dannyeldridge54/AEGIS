@@ -2131,3 +2131,7 @@ Touches: none.
 
 ## D1347: CubeMind learn-loop upgrade
 1. [derived] Hash-embed cosine: same-topic pairs median 0.60 vs different-topic 90th percentile 0.65 → too weak for duplicate detection; rule-based pre-gate used instead.
+
+## D1348: CubeMind embedder/proposer + literature data
+1. [derived] 1,801/1,831 learner cycles were 'holding' → verification, not model speed, limited proposals.
+2. [literature] 2601.09542: τ = i, ω extrema only for tuned parameters, generally not minima.

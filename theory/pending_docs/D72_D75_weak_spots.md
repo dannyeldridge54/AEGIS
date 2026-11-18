@@ -14235,3 +14235,12 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [MEASURED] The fallback hash embedder cannot separate near-duplicates: "move τ" proposal pairs have cosine median 0.60, while unrelated pairs reach 0.65 at the 90th percentile (36 unique proposals). The same embedder gives QA1 hit@5 0.25 (default weights) vs 0.35 (similarity only). Both point to the missing real embedder (Ollama nomic-embed-text): with it, QA1 becomes a real score and near-duplicate detection becomes possible.
 - Deployed to C:\Users\Danny\CubeMind_janus (watchdog hot-restarts the learner on code change); repo janus-pair 04b5657.
 MAP: none
+
+## D1348 — CUBEMIND + CENTRE — real embedder and fast proposer installed (Danny "Get them"); the learner's real bottleneck was the verification gate; max-gap (b) NULL; τ = i literature datum for (c) (2026-11-18)
+- [TOOL] Downloads OK'd by Danny (15:15 CT), run as PC queue jobs: nomic-embed-text (274 MB) and qwen3:8b (5.2 GB).
+- [TOOL] QA1 with the real embedder: records store 256-d hash vectors, the real model gives 768-d; qa1_eval now re-embeds records into a side cache (mindmem/emb_cache_pc_ollama.json), memory file untouched. Real score pending (job QA1REAL2 running; Ollama congested).
+- [MEASURED] ollama ps: qwen3:14b runs 40% CPU / 60% GPU (does not fit in VRAM) → proposer timeouts and unparseable replies. The proposer now prefers qwen3:8b when installed. Grading loop note (not changed): it cycles every installed chat model incl. 30b/20b with keep_alive forever, which forces CPU offload — flagged to Danny.
+- [MEASURED] Learn log since 12:00Z: 1,831 cycles, of which 1,801 "holding" (waiting for verification), 22 proposals made, 3 parse failures, 1 timeout. The verification gate, not the model, was the main bottleneck; D1347's pre-gate + this loop's verifier step address it. After/before comparison next ticks: proposals/hour and parse-failure rate.
+- Derivation (b) max-gap dynamics: NULL — D1285 already read hep-th/0403001 (moduli trapping selects shape AND size; at Im S·Im ρ ≈ 780 the extra states are heavy).
+- Derivation (c) datum [literature]: Wang & Zhang, arXiv:2601.09542 (Jordan-frame modular SUGRA): τ = i and ω are extrema only for tuned superpotential parameters and generally not minima; stabilisation comes from soft-mass or racetrack-type terms. Consistent with vac_i = assumed (D1344).
+MAP: none
