@@ -17,3 +17,12 @@
 {"k": "pulse", "s": "X_rule", "t": "X_rule", "w": 1.0, "why": "tool lattice_lab ok", "ts": 1795039442.7325327}
 {"k": "pulse", "s": "tests_lhc", "t": "tests_lhc", "w": 1.0, "why": "tool lhc_lifetime ok", "ts": 1795039442.7355893}
 {"k": "pulse", "s": "X_rule", "t": "X_rule", "w": 1.0, "why": "tool lattice_lab ok", "ts": 1795039442.736751}
+{"k": "pulse", "s": "kaluza", "t": "kaluza", "w": 1.0, "why": "tool kaluza_stable ok", "ts": 1795040192.6452327}
+{"k": "pulse", "s": "tests_lhc", "t": "tests_lhc", "w": 1.0, "why": "tool lhc_dt_limit ok", "ts": 1795040193.2384655}
+{"k": "pulse", "s": "serapis_e", "t": "ms_jit", "w": 1.0, "why": "tool serapis_ms ok", "ts": 1795040197.8299506}
+{"k": "pulse", "s": "janus_core", "t": "janus_core", "w": 1.0, "why": "tool janus_mf ok", "ts": 1795040203.3482184}
+{"k": "pulse", "s": "serapis_e", "t": "serapis_point", "w": 1.0, "why": "tool serapis_emulator ok", "ts": 1795040203.426707}
+{"k": "pulse", "s": "serapis_e", "t": "serapis_point", "w": 1.0, "why": "tool serapis_point ok", "ts": 1795040204.1367168}
+{"k": "pulse", "s": "serapis_e", "t": "serapis_point", "w": 1.0, "why": "tool serapis_emulator ok", "ts": 1795040204.2123246}
+{"k": "pulse", "s": "serapis_e", "t": "serapis_point", "w": 1.0, "why": "tool serapis_emulator ok", "ts": 1795040204.286352}
+{"k": "pulse", "s": "serapis_e", "t": "serapis_point", "w": 1.0, "why": "tool serapis_emulator ok", "ts": 1795040204.359444}

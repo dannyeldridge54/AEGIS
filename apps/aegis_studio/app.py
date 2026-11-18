@@ -243,19 +243,33 @@ class Weave:
         nodes = [n for n in order if n in NODE_TESTS] + [n for n in NODE_TESTS if n not in order]
         self.th = threading.Thread(target=self._run, args=(nodes,), daemon=True); self.th.start(); return dict(on=True, nodes=len(nodes))
     def stop(self): self.on = False; return dict(on=False)
-    def _run(self, nodes):
+    def _one(self, n):
         import json
-        ok = fail = 0; push(self.win, 'calc', 'Deriving the weave', f'{len(nodes)} testable nodes')
-        for n in nodes:
-            if not self.on: break
-            res = test_node(n); self.last.append(res); ok += res['ok'] is True; fail += res['ok'] is False
+        if not self.on: return None
+        res = test_node(n)
+        with self.lock:
+            self.last.append(res)
             if self.win is not None:
                 try: self.win.evaluate_js(f"weaveResult({json.dumps(res)})")
                 except Exception: pass
             push(self.win, 'calc', f"{'PASS' if res['ok'] else 'FAIL'} · {n}", f"{res['tool']}: {res['text']} ({res['seconds']} s)")
-            if self.sweep and res['ok'] and n in NODE_SWEEPS and self.on:
-                sw = sweep_node(n); push(self.win, 'calc', f"{'SWEEP OK' if sw['ok'] else 'SWEEP CHECK'} · {n}", f"{sw['text']} → {os.path.basename(sw.get('path', ''))}")
-        self.on = False; push(self.win, 'calc', 'Weave derived', f'{ok} pass, {fail} fail of {ok + fail} nodes')
+        if self.sweep and res['ok'] and n in NODE_SWEEPS and self.on:
+            sw = sweep_node(n)
+            with self.lock: push(self.win, 'calc', f"{'SWEEP OK' if sw['ok'] else 'SWEEP CHECK'} · {n}", f"{sw['text']} → {os.path.basename(sw.get('path', ''))}")
+        return res
+    def _run(self, nodes):
+        """Parallel pass (Danny 16:15 "Janus node loop as fast as possible"): tools run as separate processes, so threads
+        overlap them. The slow nodes start first so they never hold up the tail. JANUS_WORKERS overrides the pool size."""
+        from concurrent.futures import ThreadPoolExecutor
+        import time
+        self.lock = threading.Lock(); t0 = time.time()
+        workers = int(os.environ.get('JANUS_WORKERS', '0')) or max(2, min(8, (os.cpu_count() or 4) // 2))
+        slow = ('S_kk6', 'J_mf', 'X_ms', 'S_6d', 'Q_dt36')
+        nodes = [n for n in nodes if n in slow] + [n for n in nodes if n not in slow]
+        push(self.win, 'calc', 'Deriving the weave', f'{len(nodes)} testable nodes, {workers} at once')
+        with ThreadPoolExecutor(max_workers=workers) as ex: out = [r for r in ex.map(self._one, nodes) if r]
+        ok = sum(r['ok'] is True for r in out); fail = sum(r['ok'] is False for r in out)
+        self.on = False; push(self.win, 'calc', 'Weave derived', f'{ok} pass, {fail} fail of {ok + fail} nodes in {time.time() - t0:.0f} s')
         if self.win is not None:
             try: self.win.evaluate_js("weaveDone()")
             except Exception: pass
