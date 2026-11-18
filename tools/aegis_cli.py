@@ -38,6 +38,7 @@ AEGIS Community License: free for individuals, scientists, students, schools, no
 Any business or for-profit use needs the AEGIS Commercial License. CERN+1 is not affiliated with or endorsed by CERN.
 """
 import sys, os, json
+VERSION = '2026.11.18'
 
 def _root():
     base = getattr(sys, '_MEIPASS', None) or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -242,6 +243,8 @@ def aion(args):
 
 def tracker(args):
     import runpy
+    sp = os.path.join(_root(), 'tools', 'scorecard')
+    if os.path.isdir(sp) and sp not in sys.path: sys.path.insert(0, sp)
     sys.argv = ['track.py'] + args
     runpy.run_path(os.path.join(_root(), 'tools', 'tracker', 'track.py'), run_name='__main__')
 
@@ -281,7 +284,7 @@ def menu(args):
              ('Inflation Scorecard: score n_s and r against current data', lambda: scorecard(['--ns', input('  n_s: '), '--r', input('  r [0]: ') or '0'])),
              ('Show license', lambda: license_([]))]
     while True:
-        print('\nAEGIS toolkits — free for people and science; businesses need a commercial license.')
+        print(f'\nAEGIS toolkits {VERSION} — free for people and science; businesses need a commercial license.')
         for i, (t, _) in enumerate(items, 1): print(f'  {i}. {t}')
         print('  0. Quit')
         ch = input('Choose: ').strip()
@@ -297,6 +300,7 @@ def main(argv=None):
     _root(); argv = sys.argv[1:] if argv is None else argv
     cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
     if not argv: return menu([])
+    if argv[0] in ('--version', 'version'): print('aegis', VERSION); return
     if argv[0] in ('-h', '--help', 'help') or argv[0] not in cmds: print(__doc__); return
     try: cmds[argv[0]](argv[1:])
     except SystemExit: raise

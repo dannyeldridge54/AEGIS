@@ -17,17 +17,17 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
-      - run: pip install numpy scipy sympy mpmath numba galpy astropy pyyaml pyinstaller
+      - run: pip install numpy scipy sympy mpmath numba galpy astropy pyyaml camb pyinstaller
       - name: Build
         shell: bash
         run: |
           SEP=":"; [ "$RUNNER_OS" = "Windows" ] && SEP=";"
           pyinstaller --onefile --name aegis-${RUNNER_OS} --paths . \
-            --add-data "tools/lhc/data${SEP}tools/lhc/data" --add-data "tools/release_smoketest.py${SEP}tools" --add-data "LICENSE${SEP}." --add-data "data/desi${SEP}data/desi" \
+            --add-data "tools/lhc/data${SEP}tools/lhc/data" --add-data "tools/release_smoketest.py${SEP}tools" --add-data "LICENSE${SEP}." --add-data "data/desi${SEP}data/desi" --add-data "tools/tracker/track.py${SEP}tools/tracker" --add-data "tools/tracker/predictions.yaml${SEP}tools/tracker" --add-data "tools/aion/aion/templates${SEP}aion/templates" \
             --hidden-import tools.lhc.xsec --hidden-import tools.lhc.lifetime --hidden-import tools.lhc.recast_dt --hidden-import tools.lhc.stats \
             --hidden-import tools.lhc.theory_band --hidden-import tools.lhc.kinematics --hidden-import tools.lhc.future --hidden-import tools.lhc.higgsino \
             --hidden-import tools.lattice.lattice_lab --hidden-import tools.janus_calc.core --hidden-import tools.janus_calc.anyV \
-            --hidden-import tools.chem.wavelength --hidden-import tools.power.circuits --hidden-import tools.sound.engine --hidden-import tools.serapis_calc.emulator --hidden-import tools.serapis_calc.meter --hidden-import tools.serapis_calc.modular --hidden-import tools.serapis_calc.eisenstein --hidden-import tools.serapis_calc.selftest --hidden-import tools.janus_lt.background --hidden-import tools.janus_lt.desi --hidden-import tools.janus_lt.growth --hidden-import tools.janus_astro.galaxy --hidden-import tools.janus_astro.fast --hidden-import tools.janus_astro.mapper_feed --hidden-import tools.janus_astro.mapper_orbits --hidden-import tools.janus_astro.const --hidden-import tools.janus_astro.jfactor --collect-all galpy \
+            --hidden-import tools.chem.wavelength --hidden-import tools.power.circuits --hidden-import tools.sound.engine --hidden-import tools.serapis_calc.emulator --hidden-import tools.serapis_calc.meter --hidden-import tools.serapis_calc.modular --hidden-import tools.serapis_calc.eisenstein --hidden-import tools.serapis_calc.selftest --hidden-import tools.janus_lt.background --hidden-import tools.janus_lt.desi --hidden-import tools.janus_lt.growth --hidden-import tools.janus_astro.galaxy --hidden-import tools.janus_astro.fast --hidden-import tools.janus_astro.mapper_feed --hidden-import tools.janus_astro.mapper_orbits --hidden-import tools.janus_astro.const --hidden-import tools.janus_astro.jfactor --collect-all galpy --collect-all camb --hidden-import tools.janus_astro.bbn --paths tools/aion --hidden-import aion.cli --hidden-import aion.core \
             --paths tools/scorecard --hidden-import inflation_scorecard.cli --hidden-import inflation_scorecard.core --hidden-import inflation_scorecard.janus --add-data "tools/scorecard/inflation_scorecard/data${SEP}inflation_scorecard/data" \
             tools/aegis_cli.py
       - name: Self-test the executable
@@ -41,6 +41,9 @@ jobs:
           ./dist/aegis-${RUNNER_OS}* wavelength 21cm
           ./dist/aegis-${RUNNER_OS}* power solar
           ./dist/aegis-${RUNNER_OS}* sound tone 440 1 t.wav
+          ./dist/aegis-${RUNNER_OS}* hyperion bbn 0.02237
+          ./dist/aegis-${RUNNER_OS}* aion --help
+          ./dist/aegis-${RUNNER_OS}* tracker --out trk && ls trk
       - uses: actions/upload-artifact@v4
         with:
           name: aegis-${{ runner.os }}
