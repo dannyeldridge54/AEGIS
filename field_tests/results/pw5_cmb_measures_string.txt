@@ -1,0 +1,6 @@
+response (per ln C, per decade T_R): ∂n_s = 1.1711e-02, 7.745e-04; ∂ln r = 0.2830, -0.0214
+n_s only (T_R fixed): σ(ln C) = 0.137 (13.7 %) → Im S·Im ρ to ±14 %
+(n_s, r) with LiteBIRD optimistic: σ(ln C) = 0.186, σ(log10 T_R) = 2.76 decades, corr -0.73
+(n_s, r) with LiteBIRD requirement δr 1e-3: σ(ln C) = 3.42, σ(log10 T_R) = 51.7 decades (r uninformative)
+slopes dln r/dn_s: C-response 24.16 vs box C-edge 24.69 (2.1 %); T-response -27.62 vs box T-edge -30.00 (7.9 %)
+PW5 expectation + consistency: PASS
