@@ -536,3 +536,4 @@ D1249  2026-11-18T02:44Z  untitled
 D1250  2026-11-18T02:45Z  untitled
 D1251  2026-11-18T02:52Z  untitled
 D1252  2026-11-18T03:00Z  untitled
+D1253  2026-11-18T03:07Z  R2e-c: late-x tail (R_eff to 1e5) moves Omega only -0.2 to -0.5%; candidate (i) ruled out
