@@ -361,3 +361,45 @@ Every app gets packaged for Windows and Android: Janus Studio, Janus Loops, Sara
 13. U
 14. N
 - **Approval (Danny, 23:07 CT):** "Yes, install on PC". OK given to download and install the Android SDK command-line tools, a JDK (Temurin 17) and Gradle on the PC, through a queued PC job, for building debug APKs overnight. Use only official sources (developer.android.com / Adoptium / gradle.org). Install into Desktop\AEGIS_PCJOBS\android_tools so nothing system-wide changes and no system or security settings are touched.
+
+### [RA] Remote access to CubeMind and Claude from anywhere (Danny, 23:07 CT; chose Tailscale)
+**Claude**
+- Already reachable anywhere: the Claude app on the phone, or claude.ai. This session and its loops continue from any device.
+
+**CubeMind (on the PC)**
+1. **Network.** A private Tailscale network between the PC and the phone.
+   - DANNY installs Tailscale on both and signs in himself; we never handle his login.
+   - No ports are opened to the public internet, and no router or firewall changes are made by us.
+2. **CubeMind Web** (`cubemind/webapp/`): a small FastAPI server on the PC, serving a chat PWA in the Janus palette. Features:
+   - chat with the local model (Ollama), with the AEGIS tools (registry) and MindMem memory, i.e. the +aegis/+tools arms;
+   - tool results shown as cards;
+   - memory search;
+   - the Janus Loops player;
+   - PC job status: queue, running, done.
+3. **Access and security.**
+   - The server binds to 127.0.0.1 and to the Tailscale interface only.
+   - Every request needs a one-time access token, which Danny types into his phone once.
+   - Bind and token rules are checked by the referee.
+4. **Running and installing.**
+   - Started by a PC job or the `START_CUBEMIND_WEB.bat` shortcut.
+   - On the phone: open the Tailscale address, then "Add to Home screen". It's also packaged as an Android APK in the PKG slot.
+5. **Bridges.**
+   - CubeMind can hand a question to Claude: it writes a request file that the loop picks up and answers on the next tick.
+   - Claude's loop results are pushed into MindMem, so each sees the other's work.
+
+**Rotation (updated)**
+1. V
+2. R
+3. T
+4. CH
+5. S
+6. P
+7. X
+8. PT
+9. SA
+10. PKG
+11. RA
+12. RF
+13. C
+14. U
+15. N
