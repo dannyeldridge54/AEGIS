@@ -14338,3 +14338,12 @@ MAP: node=S_kk10 status=corrected touches=[] ripple=no
 - A8d re-validated on today's parallel mapper code (M1–M4 PASS, field_tests/results/janus_astro_a8d.txt).
 - Circuit 53 laws, 51 closed (open: BTR literature precision; wino window upper edge, flagged for its owner).
 MAP: node=vac_i status=computed touches=[] ripple=no
+
+## D1360 — HYPERION / MAPPER: the full PC orbit run is complete — 24,522,893 Star Mapper stars, 12,288 tiles, MWPotential2014, 83 min; output sane; A8d re-validated on the parallel code (2026-11-19)
+- [computed] Queue job HYPMAP4 (A8d DEVIATIONS D4: MWPotential2014 for speed; WSL Python because Windows Application Control blocks astropy's DLL for Windows Python — that setting untouched; 8 parallel tile workers, byte-identical to serial). Finished 2026-11-18 17:43 CT, 4,971 s, ≈5,500 stars/s. Output: cosmos_map/hyperion/L5 (git-ignored, on Danny's PC) + hyperion_job/data/hyperion_orbits.json.
+- Sanity (descriptive, not a locked test): summary n_stars 24,522,893 = Σ tile counts; 0 tiles with median ecc outside [0,1) or rperi > rapo; across tiles the median eccentricity is 0.164 (tile range 0.105–0.213), median z_max 0.58 kpc, median pericentre 6.73 kpc and apocentre 8.86 kpc — disc-like orbits around the solar circle, as expected for an RV sample near the Sun. Most eccentric: ecc 0.9999 (radial / halo-like or distance-error tails; descriptive only).
+- 24.5M kept vs the --check estimate of ~14.9M: the estimate sampled 8 tiles only; the D2 proxy cut keeps more of the sky than that sample suggested. Not a discrepancy in the run.
+- A8d (locked, synthetic tiles) re-run on today's parallel mapper code: M1–M4 PASS.
+- The McMillan17 full run (D10 default) remains open: ~10 days at ~18 stars/s on this PC (CPU-bound); partial output kept in cosmos_map/hyperion_mcm17.
+- The Janus Gallery sky map now reads real orbits (api.sky_sample, read-only). RUNNING.lock set to FINISHED.
+MAP: node=mapper_dr3 status=computed touches=[] ripple=no

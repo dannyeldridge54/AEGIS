@@ -2182,3 +2182,7 @@ Touches: none.
 1. [derived] Exact j series: c₀ = 744 = 3·(240 + 8) = 3 dim E8; c₁ − 196560 (Leech kissing) = 324.
 2. [literature] McKay/Thompson: 196884 = 1 + 196883; 21493760 = 1 + 196883 + 21296876 (Monster representations).
 3. [derived] Heterotic 16 = rank E8⊕E8 = rank D16⁺ (isospectral to 2.7e-13); bosonic 24 = Leech rank (no roots); j(i) = 1728 from the series ties the layer to the τ = i vacuum.
+
+## D1360: Hyperion full run
+1. [derived] 24,522,893 stars integrated in MWPotential2014 (3 Gyr) on the PC; every tile sane (0 bad), median ecc 0.164, z_max 0.58 kpc, r_peri 6.73, r_apo 8.86 kpc.
+2. [derived] A8d M1–M4 PASS on the parallel code; McMillan17 full run still open (CPU-bound, ~10 days).
