@@ -385,3 +385,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1268: a linear Fisher response (PW5) is a good meter only near its expansion point (±0.002 in n_s); beyond that, invert with the exact pipeline — secant on ln C with predict_fast converges in 3–5 calls.
 - D1270: check that every "benchmark" number used in a prediction comes from the same benchmark — PW2 mixed a string benchmark (C) with a chosen M_H; the benchmark's own M_H fails leptogenesis by ×12.
 - CH1 (05:11Z): check a lock's formula against a second form before locking (the 21 cm prefactor 4/3 vs 8/3 was a transcription slip); Fermi hyperfine needs (1+a_e) to reach 0.1 %.
+- P1 (07:39Z): a sanity band needs real datasheet-calibrated params, not hand-picked I0/n — the single-diode math was exact but the example module was unphysical (49 V). Calibrate from Voc/Isc/Vmp/Imp next.

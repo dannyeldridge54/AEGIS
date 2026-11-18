@@ -1,0 +1,9 @@
+solar: Voc 49.08 V, Isc 8.791 A, Pmax 334.0 W @ Vmp 40.59 Imp 8.23, FF 0.774, MPP residual 1.78e-15 A
+RC fc 159.15 Hz: |H| 0.707106781 phase -45.000000°
+RL fc 159.1549 Hz: |H| 0.707106781 phase -45.000000°
+T1 solar band: False
+T2 MPP residual≤1e-6: True
+T3 RC corner: True
+T4 RL corner: True
+P1 VERDICT: FAIL
+DEV D1: T1 FAIL as locked (unphysical diode params → 49 V/334 W); math verified by T2–T4; NOT retuned; engine kept, P1 NOT adopted; P1b = datasheet-calibrated test.
