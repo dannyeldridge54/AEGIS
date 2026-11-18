@@ -17,6 +17,12 @@ class Api:
         return dict(ns=float(out['ns']), r=float(out['r']), alpha_s=float(out['alpha_s']))
     def tool(self, name, args):
         return run_tool(name, args)
+    def collector_points(self):
+        """Live collector points (data/collect/serapis_grid.csv on the Desktop) for the Data overlay."""
+        import csv
+        p = os.path.join(os.path.expanduser('~'), 'Desktop', 'AEGIS_PCJOBS', 'data', 'collect', 'serapis_grid.csv')
+        try: return [dict(C=float(r['C']), T=float(r['T_R']), ns=float(r['ns']), r=float(r['r'])) for r in csv.DictReader(open(p))]
+        except Exception: return []
     def open_classic(self):
         webview.create_window('Janus · classic views', url=os.path.join(BASE, 'classic.html'), width=1500, height=950, background_color='#05020D'); return True
 def selftest():

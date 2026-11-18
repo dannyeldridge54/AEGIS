@@ -93,6 +93,8 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
         <div class="small" id="rsrc">grid: Janus core on SERAPIS-E</div>
         <div style="display:flex;gap:6px;margin-top:8px"><button class="btn" id="bexact">Compute exact here</button></div>
       </div>
+      <div class="card"><h2>Data · (n_s, r) — SERAPIS vs measurements</h2><canvas id="dataplot" width="720" height="520" style="width:100%;display:block;border-radius:8px;background:#05010f"></canvas>
+        <div class="small" id="datacap">ellipses: CMB-SPA, CMB-SPA+DESI (1σ, 2σ); dashed: SO+SPHEREx forecast; dots: collector points (live)</div></div>
       <div class="card"><h2>Scope · selected node</h2><canvas id="scope" width="640" height="200"></canvas><div class="small" id="scopecap">pick a knob on the weave</div></div>
       <div class="card"><h2>Wiring · shared toolkits → CubeMind</h2>
         <div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn" id="bpoint">SERAPIS point</button><button class="btn" id="bms">Exact MS here</button><button class="btn" id="btools">List tools</button></div>
@@ -114,5 +116,6 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
 <script src="data.js"></script>
 <script src="studio.js"></script>
 <script src="views3.js"></script>
+<script src="dataplot.js"></script>
 </body>
 </html>
