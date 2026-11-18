@@ -1,0 +1,5 @@
+1. D751 reproduction: vs N*55 3.98σ / 5.30σ; vs N*60 2.08σ → PASS
+2. SERAPIS-E audited box lower edge n_s 0.97169: vs att55 5.0σ/6.7σ; vs att60 3.1σ/4.2σ; vs kination cap 0.9677 2.5σ/3.3σ
+2. τ = i audited n_s 0.97462: vs att55 6.9σ/9.2σ; vs att60 5.0σ/6.6σ; vs kination cap 0.9677 4.3σ/5.8σ
+3. SERAPIS-E box r_min 4.378e-04: 8.8σ (LiteBIRD optimistic σ 5e-5); below requirement δr 1e-3
+3. τ = i r 4.830e-04: 9.7σ (LiteBIRD optimistic σ 5e-5); below requirement δr 1e-3
