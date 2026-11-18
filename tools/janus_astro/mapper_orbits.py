@@ -65,8 +65,14 @@ def process_rows(rows, mw=None, model=DEFAULT_MODEL):
 def run(cosmos_map, skymap=None, max_tiles=None, level=5, model=DEFAULT_MODEL):
     cm = pathlib.Path(cosmos_map); tiles = sorted((cm/'tiles'/f'L{level}').glob('*.csv.gz'))
     outdir = cm/MODELS[model]['outdir']/f'L{level}'; outdir.mkdir(parents=True, exist_ok=True)
-    done = skipped = nstars = 0; t0 = time.time()
-    for tp in tiles[:max_tiles] if max_tiles else tiles:
+    done = skipped = nstars = 0; t0 = time.time(); todo = tiles[:max_tiles] if max_tiles else tiles
+    if model != 'MWPotential2014':
+        try:
+            from galpy.util._load_extension_libs import load_libgalpy
+            if not load_libgalpy()[1]: print('WARNING: galpy C extension not loaded; McMillan17 orbits will be very slow. '
+                                            'Try: pip install --force-reinstall galpy  (or run with --model MWPotential2014, the fast numba path)', flush=True)
+        except Exception: pass
+    for tp in todo:
         op = outdir/tp.name
         if op.exists(): skipped += 1; continue
         with gzip.open(tp, 'rt', newline='') as fh: rows = list(csv.DictReader(fh))
@@ -75,6 +81,9 @@ def run(cosmos_map, skymap=None, max_tiles=None, level=5, model=DEFAULT_MODEL):
         with gzip.open(tmp, 'wt', newline='') as fh:
             w = csv.writer(fh); w.writerow(OUT_COLS); w.writerows(res)
         tmp.replace(op); done += 1; nstars += len(res)
+        if done % 10 == 0 or done == 1:
+            el = time.time() - t0; left = len(todo) - done - skipped
+            print(f'tiles {done + skipped}/{len(todo)}  stars {nstars}  {nstars/max(el, 1e-9):.0f} stars/s  ETA {left*el/done/3600:.1f} h', flush=True)
     summary = summarise(outdir, model)
     if skymap:
         dp = pathlib.Path(skymap)/'data'; dp.mkdir(parents=True, exist_ok=True)
