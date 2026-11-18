@@ -13945,3 +13945,10 @@ MAP: none
 - **halo_profile** gets this note on the map; status unchanged.
 VERDICT: 20/20 PASS. The 1 TeV wino is robust to the cored/Einasto inner-halo uncertainty.
 MAP: node=halo_profile status=computed touches=[] ripple=no
+
+## D1323 — SERAPIS v3.3 draft (unposted): the cored-halo sentence is updated to A2n (2026-11-18)
+- [DOC] The item (ii) sentence now reads:
+  > for all ten cored (Burkert) and Einasto Gaia DR3 halo shapes of [2605.16994], normalised to a local density of 0.3–0.4 GeV cm⁻³, the 1 TeV wino passes (D1190, D1202, D1322); with the fits' own, higher local densities two Burkert fits are marginal at the upper fraction edge.
+- It replaces "passes in three of five fits and is marginal … in the other two". The fitted-ρ☉ caveat is kept, not dropped.
+- No other change. The full build is still pending (PC). No Zenodo.
+MAP: none
