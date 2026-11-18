@@ -351,3 +351,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1229: a graph heuristic is only a pointer — check its top flag against the notes first (here it re-found the known open postulate P3), then look for what the literature adds (a discriminator, r).
 - D1230: when a graph analysis moves its top conflict after adding nodes, follow the new flag to the code — a hard-coded constant (g_* = 106.75) was sitting under it.
 - D1231: a start-finder fix proven at one parameter point is not a general fix — lock its range of validity, or expect the same failure elsewhere.
+- D1233: after a correction to an input (N*), re-derive every frozen output that used it — a frozen band can stay "consistent" on its old definition while the corrected input already sits outside it.

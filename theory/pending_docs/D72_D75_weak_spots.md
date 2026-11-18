@@ -12790,3 +12790,15 @@ MAP: none.
 - **No computation.**
 VERDICT: rechecks closed (no change). The g_* lead is corroborated by an independent session and still blocked on "yes table".
 MAP: node=band_e status=frozen touches=[] ripple=no
+
+## D1233 — CENTRE — NA1 node audit, phase 1: the SERAPIS-E chain recomputed live in the Janus app [band CONSISTENT; corrected-N* edge leaves it at two corners]
+Lock: field_tests/rules/PREREG_NA1_serapis_e_chain.md. Run LIVE on Danny's PC through the Janus app link (scan request n001, 57.6 s; Danny watching); raw rows
+field_tests/results/na1_pc_scan_n001.json; table field_tests/results/na1_serapis_e_chain.txt. Engine: Janus core spectra3 on the unchanged pipeline potential.
+Frozen SERAPIS-E band (D693; C = 1.0–1.3e-6, N* 48.4–49.9): all 9 audited points inside — n_s 0.97006–0.97464 (band 0.970–0.975), r 4.551–5.117e-4 (band 4.55–5.12e-4),
+α_s −9.45 to −10.62e-4 (band −9.4 to −10.6e-4; the −10.62e-4 corner is 0.2 % past the quoted edge, inside the ±2 % Janus tolerance) → CONSISTENT. The band's edges are the box corners,
+as frozen. Caps (n_s ≤ 0.985, r ≤ 8.3e-4): CONSISTENT. PC vs cloud, same code at C 1.15e-6: max |Δn_s| 7.9e-8.
+Corrected N* (nstar_e, D979: 49.7–50.5) at its upper edge 50.5: C 1.0e-6 gives r 4.475e-4 (below the frozen r floor 4.55e-4); C 1.3e-6 gives n_s 0.97525 (above 0.975); C 1.15e-6 stays inside.
+So the D979 N* correction (+0.17 e-fold) moves two corners of the box just outside the frozen band — by 1.7 % in r and 2.5e-4 in n_s. The frozen band was not updated after D979.
+Verdict: band_e CONSISTENT on its own definition; ladder flag on band_e (touched by nstar_e): the frozen band should either state its N* range (48.4–49.9) explicitly as the
+scored definition or be widened by a new post-hoc note — no silent edit; the scored-on-future-data rule stands either way. Phase 2 (next): janus relation κ check, mnu arithmetic, nstar_e formula.
+MAP: node=band_e status=frozen touches=[nstar_e, tests_cmb] ripple=no

@@ -1824,3 +1824,4 @@ Touches: none.
 ## D1229: web-guided tick — top web conflict = SERAPIS-E plateau's string home; 2026 literature NULL for a new home; r separates SERAPIS-E (4.6–5.1e-4) from loop blow-up (1.8e-5) and Casas–Ibáñez (1–3e-3)
 ## D1230: web tick 2 — Chronos/Hyperion added to the web; top conflict = wino window; our relic uses constant g_* = 106.75, and the SM EOS shifts WIMP abundances 5–10 % (2005.03544) ≈ our +5.4 % mass offset → needs the EOS table ("yes table")
 ## D1231: J7m2 — bisection start fails for all three listed PSNI points (e-fold window unreachable) → 5b BLOCKED; J7m totals unchanged
+## D1233: NA1 — SERAPIS-E chain recomputed live in the Janus app: frozen band consistent (9/9 inside), caps consistent; corrected N* 50.5 pushes two box corners just outside (r −1.7 %, n_s +2.5e-4) → flag band_e
