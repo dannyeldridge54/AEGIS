@@ -13804,3 +13804,9 @@ MAP: none
 ## D1310 — CERN+1: theory band callable from CubeMind (LHC11 pass)
 MAP: none
 - Registry lhc_dt_limit {search, band: true} → theory_band.band: ATLAS_136 661.5 ± 10.0 GeV, ATLAS_36 446.4 ± 5.5 GeV (P1, P2 PASS). README updated with the band and the open 36 fb⁻¹ residual. [derived]
+
+## D1280a — correction to D1280: Hessian values used E/(2ζ(4)) instead of the published E(τ,2)
+MAP: none
+- tools/serapis_calc/potentials.py divides E(τ,2) by 2ζ(4); the published model (E(ρ,2)=5.78334) and pipeline.py do not. D1280's numbers came from the divided form.
+- Corrected (referee, 18 Nov): Hessian at ρ = [+7.711, +7.711] V₀ (D1280: 3.562); V(i) = 0.1958 V₀ (D1280: 0.1011); Hessian at i = [−2.216, +10.012] V₀.
+- Unchanged: eigenvalue ratio −0.2214, signs, verdict (minimum at ρ, saddle at i). Shape–Scale–Duality paper erratum added. Future lattice/SERAPIS numbers use the published normalisation. [derived]

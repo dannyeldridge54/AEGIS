@@ -13,3 +13,24 @@ Referee verdict: NOT READY (textual fixes only; every number reproduced). All 12
 11 every abstract item labelled known / numerical / new.
 12 3D flow stated as 8/8 starts at α=1.6 and 0.6 (seed 1297).
 Optional: SERAPIS moved to a "Speculative" section.
+
+## Pass 2 — second-pass referee (18 Nov 2026)
+Verdict: READY (after the changes below). All 12 round-1 fixes confirmed in the text. Numbers re-checked against
+field_tests/results/*2026-11-18*.txt and tools/lattice/lattice_lab.py: d=6 energies, dual ties (<1e-13), E8/E4, E8+E8 = D16+ (2.5e-14),
+BW16 vs heterotic, Leech shells/E8^3, hexagon and square counts, E(rho,2)/E(i,2), Epstein sign changes, 8/8 3D flow — all reproduce.
+Changes:
+1. BW16 truncation corrected: omitted shells beyond Q=6 contribute ~5e-4 at alpha=1 (recomputed with Q=7.5: 0.70763 -> 0.70812), not 1e-2.
+2. 2D critical-point scan: stated as a grid scan truncated at Im tau <= 3 (as in the code); gradient bound 2e-11 -> 3e-11 (max found 2.2e-11).
+3. Ennola (Cambridge 1964) proved FCC and BCC are LOCAL minima for all s>0; removed the attribution of an FCC/BCC "switch" to Ennola
+   (Epstein section and 3D flow). The 3D flow is now compared with the Sarnak–Strömbergsson conjecture.
+4. Added Ennola, Proc. Glasgow Math. Assoc. 6, 198 (1964) (the 2D lemma) for the 2D Epstein minimum.
+5. d=3 status: the Sarnak–Strömbergsson conjecture now cites a posted proof (Luo–Wei, arXiv:2609.17356, preprint); still labelled N.
+6. CKMRV: "among all periodic configurations" -> "among all point configurations of the same density"; Montgomery "among lattices".
+7. Coulangeon criticality: "spherical 4-designs", critical "among lattices of fixed covolume".
+8. Leech code step: "11-dimensional even subcode" (wrong: every Golay word is even) -> 11-dim subcode (2048 words) lacking the all-ones word.
+9. E8/Leech hexagon counts: "classical" -> "follow from the classical inner-product distributions [CS]". Square-plane /8 exactness stated.
+10. LaTeX: Epstein continuation split over three lines (fixes 18.7pt overfull box); Lambda_L defined.
+Bibliography verified (web): Montgomery GMJ 30, 75 (1988); Ennola PCPS 60, 855 (1964); Diananda PGMA 6, 202 (1964); Rankin 1, 149;
+Cassels 4, 73; Sarnak–Strömbergsson Invent. 165, 115; Bétermin SIAM J. Math. Anal. 48, 3236 (2016); Coulangeon IMRN 2006, 49620;
+Coulangeon–Schürmann IMRN 2012, 829; Cohn–Kumar JAMS 20, 99; Angelinos–Chakraborty–Dymarsky JHEP 11 (2022) 118.
+Build: pdflatex x2, no undefined references or overfull boxes; one benign revtex "float is stuck" warning (Table I is placed on p. 2).
