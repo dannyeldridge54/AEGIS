@@ -14143,3 +14143,17 @@ MAP: node=wino_window status=computed touches=[] ripple=no
 - A check would need those figures read off (image download of the PDF, which needs Danny's OK) or a digitised table.
 - A2p/A2q stay ESTIMATE. Nothing else changes.
 MAP: none
+
+## D1340 — Hyperion tick: A2p's one labelled assumption (paper s₀ₘ = our Sommerfeld vector) is now CHECKED analytically against two of our validated rates (2026-11-18)
+- [arithmetic] **Line.**
+  - Paper: σ_line v = (F₀+F₁)σ₀v = 4s₀₁²·πα_W²s_W²/(2M²) = 2πα_W²s_W² s₀₁²/M² (Eqs. 2.10, 2.13).
+  - Ours (a2l_burkert_J.py, the D1114/D1118 line chain): σ_γγ v = 2πα² s₁²/M² with α = α_W s_W². Adding ½σ_γZ (relative weight c_W²/s_W²) gives 2πα_W²s_W² s₁²/M².
+  - These are identical, so s₀₁ = s₁ with no √2.
+- [arithmetic] **WW.**
+  - Paper: 𝓜⁺⁻ = 8M(√2 s₀₀ + s₀₁).
+  - Ours: the relic Γ matrix (Hisano, r2b/r2c G = [[2, √2], [√2, 3]], whose WW part is [[2, √2], [√2, 1]]) gives s·Γ·s ∝ |√2 s₀ + s₁|².
+  - Same combination, so s₀₀ = s₀.
+- Both solvers share the LO potential (off-diagonal −√2α₂e^{−m_W r}/r) and the free normalisation s = (1, 0). Checked numerically at 1 TeV, v = 1e-3: sommerfeld (1.289, 0.794) vs sommerfeld_nlo LO (1.320, 0.848). The difference is only the inputs (α_W 0.0335 vs the on-shell α₂, and δm).
+- Consequence: A2p/A2q drop the normalisation caveat. They stay ESTIMATE only for being LL (NLL ≈5% per 1808.08956), with fixed α_W and no external numeric check.
+- Small note: the sommerfeld.py inputs give s₁ ≈ 6% lower than the on-shell set at 1 TeV. R depends only on s₀₀/s₀₁ (0.616 vs 0.642), so the effect on R is second-order. Not rerun (no chasing).
+MAP: none
