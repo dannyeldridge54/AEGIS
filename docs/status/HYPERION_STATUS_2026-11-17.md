@@ -99,3 +99,18 @@
   - An NFW-only refit to Eilers+2019 was rejected (r_s ≈ 3 kpc; D1210).
 - **GW:** the 7PN tidal coefficients match the independent Mandal et al. 2412.01706. LAL's 0.33% is the outlier (D1211).
 - **Waiting on Danny:** a PC link for this session, or "hand off" to the PC session (Mapper run, revtex build); "Publish".
+
+## Update 17:10 UTC 18 Nov (D1302–D1320)
+- **Wino window:**
+  - The Janus-LHC recast confirms the ATLAS floor at 666.6 GeV; the HL-LHC projection is ≈ 0.98 TeV (ITk not modelled) (D1302).
+  - Future colliders cover the whole window (other session, D1306).
+  - The map label is updated to 0.67–~1.5 TeV, f 5–20% (D1318).
+- **Relic L1 gap (+4.4%):** the velocity grid is ruled out (D1269). The P-wave/v² terms are unresolved; only the χ⁺χ⁻→WW part is sourced (D1266). PARKED.
+- **Galaxy:** the 3-parameter refit to Eilers+2019 is prior-limited and not adopted; McMillan17 stays (D1315).
+- **Map hygiene:**
+  - 25 lattice-ripple and stale flags were cleared (D1314).
+  - ladder.py now reads "### D" headers (D1319).
+  - New node darkrad_i for the τ=i dark-radiation verdicts (D1320).
+  - Flags: 0.
+- **Literature:** D1275b's circularity does not touch v3.3 (D1316); 2026 Li-7 is NULL (D1317).
+- **Waiting on Danny:** a PC link or "hand off" (Mapper run, revtex build); "Publish".
