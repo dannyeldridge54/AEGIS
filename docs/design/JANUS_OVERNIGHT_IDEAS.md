@@ -229,3 +229,30 @@ Use the same look as Janus, with a warmer accent available.
 - Interpretive texts are written fresh, not copied.
 - Clear labels separate what is sky fact from what is tradition and meaning.
 
+
+### [RF] Referee (Danny, 22:58 CT: "Add a referee to loop")
+Once per rotation, a fresh, independent reviewer checks everything made since the last referee pass. The reviewer is a separate agent that has not seen the work being made.
+
+What it checks:
+- D-notes, locks and results: numbers must match field_tests/results, and each lock must come before its compute.
+- Code and app views.
+- Sarah's app content: astrology is labelled as a tradition, art is original, and there are no medical claims.
+- Lyrics: original, not copied.
+- Chemistry and power claims: within the safety limits, and no overclaiming.
+
+Each item gets PASS, FIX (with file, line and the fix) or FAIL. FIX items are applied: corrections as D###a notes, never silent edits. Reports go in docs/referee/RF_<date>.md.
+
+Rotation (updated):
+1. V
+2. R
+3. T
+4. CH
+5. S
+6. P
+7. X
+8. PT
+9. SA
+10. RF
+11. C
+12. U
+13. N
