@@ -54,3 +54,5 @@ theory/janus/aspic/pulse/*/r
 data/sn/Pantheon+SH0ES_STAT+SYS.cov
 field_tests/results/l11_chain/
 field_tests/cache/
+apps/aegis_studio/build/
+apps/aegis_studio/dist/
