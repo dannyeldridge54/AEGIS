@@ -76,3 +76,13 @@ Status: draft, collected 17 Nov 2026 (D1081–D1101). Packaging and a Zenodo upl
   - A halo-only NFW refit to Eilers+2019 fixes the sign but needs r_s ≈ 3 kpc, so it is rejected (C9). McMillan17 stays the default.
 - **Dark radiation:** the 2026 joint N_eff (Goldstein & Hill, 2.990 ± 0.070) puts τ_i SU(2) dark radiation at +3.1σ (D1208).
 - **7PN tidal phase:** Hyperion's coefficients match the independent Mandal et al. 2024 (arXiv:2412.01706, Eq. 4.48), with which the corrected HFB agrees. LALSuite's 0.33% difference is the outlier (D1211).
+
+## 18 Nov additions (D1238–D1315)
+- **Relic:**
+  - The Saikawa–Shirai g_*(T) EOS (field_tests/data/saikawa_shirai_2020_gstar.dat, with provenance) is wired into the relic Boltzmann solver (Gondolo–Gelmini g_*^{1/2}).
+  - Born wino M_th = 2.252 TeV vs Beneke 2.207 (+2.0%, PASS); LO Sommerfeld 3.013 vs 2.886 (+4.4%, parked).
+  - The late-x tail and the velocity grid are ruled out as the cause (D1253, D1269). The residual needs Beneke's per-channel annihilation matrices.
+- **Ladder tool:** ladder.py now skips (and reports) MAP ids that are not map nodes instead of crashing (web-only nodes).
+- **Wino window cross-checks:** the Janus-LHC recast reproduces the ATLAS floor at 666.6 GeV, and its HL-LHC projection is ≈ 975 GeV (D1302). The m₃/₂ bound clears the window by ×960 (D1271).
+- **Galaxy:** the 3-parameter refit of McMillan17 baryons + NFW to Eilers+2019 is prior-limited (r_s at 10 kpc) and is not adopted. McMillan17 stays the default (C10, D1315).
+- **Map hygiene:** 25 lattice-ripple and stale flags were rechecked and cleared with no status changes (D1314).
