@@ -1,10 +1,9 @@
 :root{
-  --bg:#0b1020; --bg2:#121a33; --panel:#141d38ee; --line:#2a3766; --text:#e9eefc; --muted:#a9b4d6;
-  --accent:#7fd3ff; --accent2:#ffcf6b; --ok:#6fd18b; --warn:#f0b54a; --bad:#ff6b7a;
+  --bg:#04020b; --bg2:#120a2e; --panel:#0b0620ee; --line:#2a1f5a; --text:#f3eeff; --muted:#a296d8;
+  --accent:#4cc3ff; --accent2:#ff6ec7; --ok:#2f8bff; --warn:#d43cff; --bad:#ff3d8b;
   --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; --fs:15px;
 }
-:root[data-theme="light"]{ --bg:#f5f7fc; --bg2:#ffffff; --panel:#ffffffee; --line:#cfd7ea; --text:#0e1430; --muted:#4b5677; --accent:#0b6aa8; --accent2:#9a6200 }
-@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]){ --bg:#f5f7fc; --bg2:#ffffff; --panel:#ffffffee; --line:#cfd7ea; --text:#0e1430; --muted:#4b5677; --accent:#0b6aa8; --accent2:#9a6200 } }
+:root[data-theme="light"]{ --bg:#f6f3ff; --bg2:#ffffff; --panel:#ffffffee; --line:#cfd7ea; --text:#0e1430; --muted:#4b5677; --accent:#5a2bd6; --accent2:#c0267f }
 html.big{ --fs:19px }
 *{box-sizing:border-box}
 [hidden]{display:none!important}

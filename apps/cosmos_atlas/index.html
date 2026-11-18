@@ -6,8 +6,8 @@
 <style>
 /* Layout: an observatory console. Left = the map (canvas), right = controls, narration and catalog. Single deliberate dark "night sky" look. */
 :root{
-  --bg:#080c18; --panel:#0f1628; --panel2:#151e36; --line:#24304f; --fg:#dde5f4; --muted:#8e9ab8;
-  --star:#f2c66d; --gal:#6fd0ff; --qso:#b893ff; --flag:#ff6f6f; --ok:#59d39a; --warn:#f2b34d;
+  --bg:#04020b; --panel:#0b0620; --panel2:#120a2e; --line:#2a1f5a; --fg:#f3eeff; --muted:#a296d8;
+  --star:#ff6ec7; --gal:#2f8bff; --qso:#7a5cff; --flag:#ff3d8b; --ok:#4cc3ff; --warn:#d43cff;
   --display:"Chakra Petch","Segoe UI",system-ui,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   color-scheme:dark;
 }
@@ -313,10 +313,10 @@ function draw(){
     if(f.ctx) for(const s of S.context){ if(s[3]>f.dmax) continue; const [x,y]=T(s[4],s[5],W,H,scale); dot(x,y,1.3*d,bprpColor(s[8]),{k:'star',s}); n++ }
     for(const s of S.flagged){ const hv=s[10].includes('high_velocity'), dm=s[10].includes('distance'); if((hv&&!f.hv)||(dm&&!hv&&!f.dm)) continue; if(s[3]>f.dmax||(s[9]||0)<f.vmin) continue;
       const [x,y]=T(s[4],s[5],W,H,scale); dot(x,y,(dm?3:2.2)*d,dm?C.star:C.flag,{k:'star',s}); n++ }
-    if(f.xp&&XP){ const seen=new Set(); for(const p of XP){ if(p[6]==null||p[6]>f.dmax||seen.has(p[1])) continue; seen.add(p[1]); const [x,y]=T(p[7],p[8],W,H,scale); dot(x,y,2*d,'#59d39a',{k:'xp',p}); n++ } }
+    if(f.xp&&XP){ const seen=new Set(); for(const p of XP){ if(p[6]==null||p[6]>f.dmax||seen.has(p[1])) continue; seen.add(p[1]); const [x,y]=T(p[7],p[8],W,H,scale); dot(x,y,2*d,'#4cc3ff',{k:'xp',p}); n++ } }
     const [cx,cy]=T(0,0,W,H,scale); ctx.fillStyle=C.star; ctx.beginPath(); ctx.arc(cx,cy,4*d,0,6.2832); ctx.fill(); ctx.fillStyle=C.fg; ctx.fillText('Sun',cx+6*d,cy+12*d);
     ctx.fillStyle=C.muted; ctx.fillText('→ Galactic centre',W-150*d,H/2-8*d);
-    legend.push(['ordinary star (colour = temperature)','#cfd8ea'],['fast-moving (flagged)',C.flag],['distance mismatch',C.star],['has known planets','#59d39a']);
+    legend.push(['ordinary star (colour = temperature)','#cfd8ea'],['fast-moving (flagged)',C.flag],['distance mismatch',C.star],['has known planets','#4cc3ff']);
     hud(`${n.toLocaleString()} stars shown · zoom ×${cam.k.toFixed(1)}`);
   } else if(view==='msky'||view==='gsky'){
     const scale=Math.min(W/(2*Math.PI),H/Math.PI)*0.95;
@@ -399,11 +399,11 @@ function drawPoint(W,H,d,dot,legend){
     if(a>-1){ const [x,y]=P2(a,z), px=deg=>deg/90*R*k;
       if($('#oTel').checked){ ctx.strokeStyle='rgba(255,111,111,.9)'; ctx.lineWidth=1.2*d; for(const r of [0.25,1,2]){ctx.beginPath();ctx.arc(x,y,Math.max(2*d,px(r)),0,6.2832);ctx.stroke()} }
       const fl=+$('#pFL').value||700, ep=$('#pEP').value.split(',').map(Number), cam=$('#pCam').value.split(',').map(Number), rot=(+$('#pRot').value)*Math.PI/180;
-      if(ep[0]>0&&ep[1]>0){ const tf=ep[1]/(fl/ep[0]); ctx.strokeStyle='#59d39a'; ctx.lineWidth=1.5*d; ctx.beginPath(); ctx.arc(x,y,Math.max(2*d,px(tf/2)),0,6.2832); ctx.stroke() }
-      if(cam[0]>0&&cam[1]>0){ const fw=2*Math.atan(cam[0]/2/fl)*180/Math.PI, fh=2*Math.atan(cam[1]/2/fl)*180/Math.PI; ctx.save(); ctx.translate(x,y); ctx.rotate(rot); ctx.strokeStyle='#6fd0ff'; ctx.lineWidth=1.2*d; ctx.strokeRect(-px(fw/2),-px(fh/2),px(fw),px(fh)); ctx.restore() } } }
+      if(ep[0]>0&&ep[1]>0){ const tf=ep[1]/(fl/ep[0]); ctx.strokeStyle='#4cc3ff'; ctx.lineWidth=1.5*d; ctx.beginPath(); ctx.arc(x,y,Math.max(2*d,px(tf/2)),0,6.2832); ctx.stroke() }
+      if(cam[0]>0&&cam[1]>0){ const fw=2*Math.atan(cam[0]/2/fl)*180/Math.PI, fh=2*Math.atan(cam[1]/2/fl)*180/Math.PI; ctx.save(); ctx.translate(x,y); ctx.rotate(rot); ctx.strokeStyle='#2f8bff'; ctx.lineWidth=1.2*d; ctx.strokeRect(-px(fw/2),-px(fh/2),px(fw),px(fh)); ctx.restore() } } }
   ctx.restore();
   ctx.font=`${12*d}px IBM Plex Mono, monospace`; ctx.fillStyle=C.fg; for(const [t,az] of [['N',0],['NE',45],['E',90],['SE',135],['S',180],['SW',225],['W',270],['NW',315]]){const [x,y]=P2(-5,az);ctx.fillText(t,x-ctx.measureText(t).width/2,y+4*d)}
-  legend.push(['star (size = brightness)','#eef3ff'],['planet / Sun / Moon','#ffb36b'],['Telrad rings 0.5°/2°/4°','#ff6f6f'],['eyepiece true field','#59d39a'],['camera frame','#6fd0ff']);
+  legend.push(['star (size = brightness)','#eef3ff'],['planet / Sun / Moon','#ffb36b'],['Telrad rings 0.5°/2°/4°','#ff3d8b'],['eyepiece true field','#4cc3ff'],['camera frame','#2f8bff']);
   const moon=AE?(()=>{const ph=Astronomy.MoonPhase(c.date),il=Astronomy.Illumination(Astronomy.Body.Moon,c.date).phase_fraction;return ` · Moon ${Math.round(il*100)}% lit (${ph<180?'waxing':'waning'})`})():'';
   hud(`${c.lat.toFixed(4)}°, ${c.lon.toFixed(4)}° · ${c.date.toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})} · Sun ${salt.toFixed(0)}°${moon}${AE?'':' · loading ephemeris'}`);
   optics(); pointTables(c);
@@ -491,7 +491,7 @@ function drawTonight(W,H,d,dot,legend){
   if($('#tV').checked) for(const v of (VSX||P.variables)){ if(v[5]==null||v[6]==null||v[6]-v[5]<0.5||v[5]>mlim) continue; const [al,az]=altaz(v[0],v[1],lst,lat); if(al<amin) continue;
     const [x,y]=P2(al,az); dot(x,y,2.4*d,C.qso,{k:'var',v,al}); rows.push([v[3],'variable '+v[4],v[2],al,`${v[5]}–${v[6]}`,{k:'var',v,al},3]) }
   if($('#tX').checked&&XP){ const seen=new Set(); for(const p of XP){ if(p[14]==null||p[14]>Math.min(mlim,13)||seen.has(p[1])) continue; const [al,az]=altaz(p[2],p[3],lst,lat); if(al<amin) continue; seen.add(p[1]);
-    const [x,y]=P2(al,az); dot(x,y,2.4*d,'#59d39a',{k:'xp',p,al}); rows.push([p[1],'planet host ('+(p[10]||'')+')',p[14],al,`${p[0]}${p[12]?', P='+p[12]+' d':''}`,{k:'xp',p,al},4]) } }
+    const [x,y]=P2(al,az); dot(x,y,2.4*d,'#4cc3ff',{k:'xp',p,al}); rows.push([p[1],'planet host ('+(p[10]||'')+')',p[14],al,`${p[0]}${p[12]?', P='+p[12]+' d':''}`,{k:'xp',p,al},4]) } }
   if($('#tT').checked&&TR){ for(const t of TR){ if(!/^SN|SLSN|CV/.test(t[3])||TRnow-t[6]>30) continue; const [al,az]=altaz(t[1],t[2],lst,lat); if(al<amin) continue; const [x,y]=P2(al,az); dot(x,y,3*d,trCol(t[3]),{k:'tr',t,al}); rows.push([t[0],t[3]+' (p '+t[4]+')',null,al,`last seen ${(TRnow-t[6]).toFixed(0)} d ago`,{k:'tr',t,al},5]) } }
   if(selT){const [ra,de]=selT; const [al,az]=altaz(ra,de,lst,lat); if(al>0){const [x,y]=P2(al,az); ctx.strokeStyle=C.flag; ctx.lineWidth=1.5*d; ctx.beginPath(); ctx.arc(x,y,fov/2/90*R*k,0,6.2832); ctx.stroke()}}
   rows.sort((a,b)=>a[6]-b[6]||(a[2]??99)-(b[2]??99));
@@ -513,7 +513,7 @@ function drawFirst(W,H,d){
   ctx.strokeStyle=C.gal; ctx.lineWidth=3*d; ctx.beginPath(); ctx.moveTo(X(zOf(ystar)),H/2); ctx.lineTo(X(zOf(2.3)),H/2); ctx.stroke();
   ctx.setLineDash([6*d,5*d]); ctx.lineWidth=2*d; ctx.beginPath(); ctx.moveTo(X(zOf(2.3)),H/2); ctx.lineTo(W/2,H/2); ctx.stroke(); ctx.setLineDash([]);
   ctx.strokeStyle=C.flag; ctx.beginPath(); ctx.arc(X(zOf(28.5)),H/2,7*d,0,6.2832); ctx.stroke();
-  ctx.fillStyle=C.ok||'#59d39a'; ctx.fillStyle='#59d39a'; ctx.beginPath(); ctx.arc(W/2,H/2,6*d,0,6.2832); ctx.fill();
+  ctx.fillStyle=C.ok||'#4cc3ff'; ctx.fillStyle='#4cc3ff'; ctx.beginPath(); ctx.arc(W/2,H/2,6*d,0,6.2832); ctx.fill();
   ctx.font=`${11*d}px IBM Plex Mono, monospace`; ctx.fillStyle=C.fg;
   ctx.fillText('square torus (vacuum)',W/2+8*d,H/2+18*d); ctx.fillText(`inflation starts here (Im τ ≈ ${ystar})`,X(zOf(ystar))-160*d,H/2-12*d);
   ctx.fillStyle=C.flag; ctx.fillText('string-home limit Im τ ≈ 29',X(zOf(28.5))-80*d,H/2+26*d);

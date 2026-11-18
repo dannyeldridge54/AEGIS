@@ -66,12 +66,12 @@ function buildLayers() {
     L.starsBright.addSources(D.stars.stars.filter((s) => s.mag < 1.0).map((s) => A.source(s.ra, s.dec, { kind: "star", label: s.name, ...s })));
   }
   if (D.messier) {
-    L.messier = catalog("Messier objects", "#7fd3ff", { size: 12, label: true, shape: "square" });
+    L.messier = catalog("Messier objects", "#4cc3ff", { size: 12, label: true, shape: "square" });
     L.messier.addSources(D.messier.objects.map((m) => A.source(m.ra, m.dec, { kind: "messier", label: m.id + (m.common ? " " + m.common : ""), ...m })));
-    L.messierDots = catalog("Messier objects (markers)", "#7fd3ff", { size: 8, shape: "square" });
+    L.messierDots = catalog("Messier objects (markers)", "#4cc3ff", { size: 8, shape: "square" });
     L.messierDots.addSources(D.messier.objects.map((m) => A.source(m.ra, m.dec, { kind: "messier", label: m.id, ...m })));
   }
-  L.planets = catalog("Sun, Moon and planets (now)", "#ffcf6b", { size: 14, label: true, shape: "circle", font: "bold 13px sans-serif" });
+  L.planets = catalog("Sun, Moon and planets (now)", "#ff6ec7", { size: 14, label: true, shape: "circle", font: "bold 13px sans-serif" });
   updatePlanetLayer();
   if (D.flags && D.flags.stars && D.flags.stars.length) addFlagLayers(D.flags);
   if (D.disc && D.disc.stars) addDiscoveryLayers(D.disc);
@@ -84,7 +84,7 @@ function buildLayers() {
   applyVisibility();
 }
 
-const FLAG_COLORS = { high_velocity: "#ff6b7a", distance_mismatch: "#f0b54a", astrometric_excess: "#c58bff" };
+const FLAG_COLORS = { high_velocity: "#ff3d8b", distance_mismatch: "#d43cff", astrometric_excess: "#c58bff" };
 const FLAG_LABELS = { high_velocity: "High velocity", distance_mismatch: "Distance mismatch", astrometric_excess: "Wobbly fit (RUWE > 1.4)" };
 function addDiscoveryLayers(disc) {
   const L = state.layers; L.disc = L.disc || {};
@@ -198,8 +198,8 @@ const PANELS = {
     return `<h3>Sky picture</h3><select id="surveySel" aria-label="Sky picture">${SURVEYS.map((s) => `<option value="${esc(s.id)}" ${s.id === state.survey ? "selected" : ""}>${esc(s.label)}</option>`).join("")}</select>
       <p class="muted" id="surveyBand">${esc(SURVEYS.find((s) => s.id === state.survey)?.band || "")}</p>
       <h3>Drawn on top</h3>${row("constellations", "Constellation lines", "#5d7bd6")}${row("conNames", "Constellation names", "#8fa6ff")}${row("stars", "Bright star names", "#ffe9a8")}
-      ${row("messier", "Messier galaxies, nebulae and clusters", "#7fd3ff")}${row("planets", "Sun, Moon and planets (now)", "#ffcf6b")}
-      ${row("aegis", "AEGIS flagged stars", "#ff6b7a")}${row("coverage", "AEGIS survey coverage", "#6fd18b")}
+      ${row("messier", "Messier galaxies, nebulae and clusters", "#4cc3ff")}${row("planets", "Sun, Moon and planets (now)", "#ff6ec7")}
+      ${row("aegis", "AEGIS flagged stars", "#ff3d8b")}${row("coverage", "AEGIS survey coverage", "#2f8bff")}
       ${discRows()}
       <h3>View</h3><p><button class="btn ghost" data-proj="AIT">Whole-sky map</button><button class="btn ghost" data-proj="SIN">Globe</button><button class="btn ghost" data-proj="TAN">Flat (zoomed)</button></p>
       <p class="muted">The buttons on the sky itself add a coordinate grid, a SIMBAD pointer and full screen.</p>`;

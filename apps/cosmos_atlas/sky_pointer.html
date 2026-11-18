@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>AEGIS Sky Pointer</title>
 <style>
-:root{--bg:#04070f;--fg:#dde5f4;--muted:#8e9ab8;--acc:#f2c66d;--red:#ff6f6f;--grn:#59d39a;color-scheme:dark}
+:root{--bg:#04020b;--fg:#f3eeff;--muted:#a296d8;--acc:#ff6ec7;--red:#ff3d8b;--grn:#4cc3ff;color-scheme:dark}
 html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:15px system-ui,-apple-system,Segoe UI,sans-serif}
 body.night{filter:grayscale(1) sepia(1) hue-rotate(-50deg) saturate(5) brightness(.7)}
 #c{position:fixed;inset:0;width:100%;height:100%;touch-action:none}
@@ -291,21 +291,21 @@ function proj(alt,az){const d=Math.PI/180,a0=view.alt*d,z0=view.az*d,a=alt*d,z=a
   const x=Math.cos(a)*Math.sin(z-z0)/cosc, y=(Math.cos(a0)*Math.sin(a)-Math.sin(a0)*Math.cos(a)*Math.cos(z-z0))/cosc;
   const f=Math.min(cv.width,cv.height)/2/Math.tan(view.fov/2*d); return [cv.width/2+x*f, cv.height/2-y*f]}
 function draw(){const dpr=devicePixelRatio||1;cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;const t=new Date(),o=obs(),rot=Astronomy.Rotation_EQJ_HOR(t,o);
-  const [salt]=bodyHor('Sun',t,o); ctx.fillStyle=salt<-12?'#04070f':salt<0?'#0c1430':'#22355f'; ctx.fillRect(0,0,cv.width,cv.height);
+  const [salt]=bodyHor('Sun',t,o); ctx.fillStyle=salt<-12?'#04020b':salt<0?'#0c1430':'#22355f'; ctx.fillRect(0,0,cv.width,cv.height);
   // horizon & alt grid
   ctx.lineWidth=dpr; const path=(pts,col,w)=>{ctx.strokeStyle=col;ctx.lineWidth=w*dpr;ctx.beginPath();let pen=false;for(const p of pts){const q=proj(p[0],p[1]);if(!q){pen=false;continue}pen?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);pen=true}ctx.stroke()};
   for(const a of [0,30,60]) path(Array.from({length:181},(_,i)=>[a,i*2]),a?'rgba(120,140,190,.3)':'rgba(242,198,109,.7)',a?.7:1.5);
-  ctx.font=`${12*dpr}px system-ui`; ctx.fillStyle='#f2c66d'; for(const [n,z] of [['N',0],['E',90],['S',180],['W',270]]){const q=proj(1,z);if(q)ctx.fillText(n,q[0]-4*dpr,q[1]-4*dpr)}
+  ctx.font=`${12*dpr}px system-ui`; ctx.fillStyle='#ff6ec7'; for(const [n,z] of [['N',0],['E',90],['S',180],['W',270]]){const q=proj(1,z);if(q)ctx.fillText(n,q[0]-4*dpr,q[1]-4*dpr)}
   for(const seg of DATA.lines) path(seg.map(p=>horJ(rot,p[0],p[1],t)),'rgba(170,190,235,.5)',.9);
   ctx.fillStyle='rgba(200,215,245,.75)'; ctx.font=`${11*dpr}px system-ui`; for(const n of DATA.names){const [a,z]=horJ(rot,n[1],n[2],t);const q=proj(a,z);if(q&&a>0)ctx.fillText(n[0],q[0],q[1])}
   for(const s of DATA.stars){const [a,z]=horJ(rot,s[0],s[1],t);if(a<-1)continue;const q=proj(a,z);if(!q)continue;ctx.fillStyle='#eef3ff';ctx.beginPath();ctx.arc(q[0],q[1],Math.max(.7,3.2-s[2]*.55)*dpr,0,7);ctx.fill();if(s[2]<1.6&&!/^HIP/.test(s[3])){ctx.fillStyle='#9fb0d6';ctx.fillText(s[3],q[0]+5*dpr,q[1]-4*dpr)}}
-  for(const m of DATA.dso){const [a,z]=horJ(rot,m[0],m[1],t);const q=proj(a,z);if(!q||a<0)continue;ctx.strokeStyle='#6fd0ff';ctx.beginPath();ctx.arc(q[0],q[1],3*dpr,0,7);ctx.stroke()}
+  for(const m of DATA.dso){const [a,z]=horJ(rot,m[0],m[1],t);const q=proj(a,z);if(!q||a<0)continue;ctx.strokeStyle='#2f8bff';ctx.beginPath();ctx.arc(q[0],q[1],3*dpr,0,7);ctx.stroke()}
   for(const n of PL){const [a,z]=bodyHor(n,t,o);const q=proj(a,z);if(!q)continue;ctx.fillStyle=n==='Sun'?'#ffd166':n==='Moon'?'#e9eefc':'#ffb36b';ctx.beginPath();ctx.arc(q[0],q[1],(n==='Sun'||n==='Moon'?7:4)*dpr,0,7);ctx.fill();ctx.fillText(n,q[0]+7*dpr,q[1]-5*dpr)}
   // crosshair
   ctx.strokeStyle='rgba(255,111,111,.85)';ctx.lineWidth=1.2*dpr;const cx=cv.width/2,cy=cv.height/2;for(const r of [0.5,2,4]){const f=Math.min(cv.width,cv.height)/2/Math.tan(view.fov/2*Math.PI/180);ctx.beginPath();ctx.arc(cx,cy,Math.max(3*dpr,Math.tan(r/2*Math.PI/180)*f),0,7);ctx.stroke()}
   let g='';
   if(target){let a,z;if(target.body)[a,z]=bodyHor(target.body,t,o);else [a,z]=horJ(rot,target.ra,target.dec,t);
-    const q=proj(a,z); if(q){ctx.strokeStyle='#59d39a';ctx.lineWidth=2*dpr;ctx.beginPath();ctx.arc(q[0],q[1],12*dpr,0,7);ctx.stroke()}
+    const q=proj(a,z); if(q){ctx.strokeStyle='#4cc3ff';ctx.lineWidth=2*dpr;ctx.beginPath();ctx.arc(q[0],q[1],12*dpr,0,7);ctx.stroke()}
     const dz=((z-view.az+540)%360)-180, da=a-view.alt; g=(Math.abs(dz)<1&&Math.abs(da)<1)?'On target ✓':`${dz>0?'→ right':'← left'} ${Math.abs(dz).toFixed(0)}°   ${da>0?'↑ up':'↓ down'} ${Math.abs(da).toFixed(0)}°`;
     $('#info').textContent=`${target.n}: altitude ${a.toFixed(1)}°, azimuth ${z.toFixed(1)}°${a<0?' (below horizon)':''}\nYou: ${lat.toFixed(5)}°, ${lon.toFixed(5)}° · looking alt ${view.alt.toFixed(0)}°, az ${view.az.toFixed(0)}°${compass?' (compass)':''}`}
   else $('#info').textContent=`You: ${lat.toFixed(5)}°, ${lon.toFixed(5)}° · looking alt ${view.alt.toFixed(0)}°, az ${view.az.toFixed(0)}°${compass?' (compass)':' (drag to look around, pinch to zoom)'}`;
