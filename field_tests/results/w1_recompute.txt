@@ -1,0 +1,6 @@
+baseline: N* 48.749 n_s 0.971912 r 4.8829e-04 a_s -1.0144e-03
+w_N: +wave dn_s +9.99e-04 dr/r -2.71e-02 da +2.94e-05 | −wave dn_s -1.03e-03 dr/r +2.89e-02 da -3.00e-05 | strength 0.343 σ_SPA | asymmetry 0.03
+w_C: +wave dn_s +1.18e-03 dr/r +2.89e-02 da -2.83e-05 | −wave dn_s -1.17e-03 dr/r -2.79e-02 da +2.74e-05 | strength 0.394 σ_SPA | asymmetry 0.01
+w_T: +wave dn_s +7.66e-04 dr/r -2.09e-02 da +2.20e-05 | −wave dn_s -7.83e-04 dr/r +2.19e-02 da -2.31e-05 | strength 0.261 σ_SPA | asymmetry 0.02
+n_s distance: SPA +1.17σ, SPA+DESI -0.33σ
+ordering nstar_e vs bhk_tilt: REVERSED (134 s)
