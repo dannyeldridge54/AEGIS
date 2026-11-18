@@ -19,7 +19,8 @@
     stars: [], cons: [], deep: [], planets: [],
     show: { stars: true, lines: true, planets: true, deep: false, zodiac: false },
     observer: null, flip: false, headingOffset: 0, zoom: 35,
-    R: null, haveOrient: false, calMode: false, DPR: Math.min(2, window.devicePixelRatio || 1)
+    R: null, haveOrient: false, calMode: false, DPR: Math.min(2, window.devicePixelRatio || 1),
+    locked: false, manAz: 0, manAlt: 30, manRoll: 0   // locked view: phone can move; touch pans on the az/alt axes
   };
   window.AR = {
     // swap in a deeper catalog later: [{name,ra,dec,mag,bv?,desig?}] (ra/dec in degrees)
@@ -27,6 +28,7 @@
     get state() { return state; }
   };
 
+  var panMoved = false;   // true when the last single-finger gesture was a drag (so it isn't treated as a tap)
   function showErr(m) { errBox.textContent = m; errBox.style.display = 'block'; }
   function toast(m) { showErr(m); setTimeout(function () { errBox.style.display = 'none'; }, 2200); }
 
@@ -113,10 +115,27 @@
   function mulVec(m, v) { return [m[0]*v[0]+m[1]*v[1]+m[2]*v[2], m[3]*v[0]+m[4]*v[1]+m[5]*v[2], m[6]*v[0]+m[7]*v[1]+m[8]*v[2]]; }
   function rotZ(v, ang) { var c = Math.cos(ang), s = Math.sin(ang); return [c*v[0]-s*v[1], s*v[0]+c*v[1], v[2]]; }
 
+  // Locked view: build the camera basis from a manual az/alt (+roll) instead of the live phone orientation,
+  // so the sky holds still and the phone can move. Touch drag changes manAz/manAlt; pinch changes zoom.
+  function setManualR() {
+    var az = (state.manAz + state.headingOffset) * D2R, alt = state.manAlt * D2R, ce = Math.cos(alt);
+    var look = [ce * Math.sin(az), ce * Math.cos(az), Math.sin(alt)];
+    var wUp = [0, 0, 1];
+    // right = normalize(worldUp x look); up = normalize(look x right); then apply roll about look
+    var right = norm(cross(wUp, look)); if (!isFinite(right[0])) right = [1, 0, 0];
+    var up = norm(cross(look, right));
+    var rr = state.manRoll * D2R, c = Math.cos(rr), s = Math.sin(rr), i, R2 = [0, 0, 0], U2 = [0, 0, 0];
+    for (i = 0; i < 3; i++) { R2[i] = right[i] * c + up[i] * s; U2[i] = up[i] * c - right[i] * s; }
+    state.R = { look: look, up: U2, right: R2 };
+  }
+  function cross(a, b) { return [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]]; }
+  function norm(v) { var n = Math.hypot(v[0], v[1], v[2]) || 1; return [v[0]/n, v[1]/n, v[2]/n]; }
+
   var compassHeading = null; // iOS true heading if available
   function onOrient(ev) {
     if (ev.alpha == null) return;
     state.haveOrient = true;
+    if (state.locked) return;   // frozen: the phone no longer drives the view
     var scr = (screen.orientation && screen.orientation.angle) || window.orientation || 0;
     var m = rotFromEuler(ev.alpha, ev.beta, ev.gamma);
     // back camera look = device -Z ; screen up = device +Y ; screen right = device +X (rotated by screen angle)
@@ -151,12 +170,12 @@
     // alt/az changes with time; recompute a few times a minute is plenty
     var i, s;
     cache.stars = [];
-    for (i = 0; i < state.stars.length; i++) { s = state.stars[i]; var aa = altaz(date, s.ra, s.dec); if (aa.alt > -2) cache.stars.push({ s: s, enu: altazToENU(aa.alt, aa.az) }); }
+    for (i = 0; i < state.stars.length; i++) { s = state.stars[i]; var aa = altaz(date, s.ra, s.dec); if (aa.alt > -2) cache.stars.push({ s: s, enu: altazToENU(aa.alt, aa.az), alt: aa.alt, az: aa.az }); }
     cache.deep = [];
-    for (i = 0; i < state.deep.length; i++) { s = state.deep[i]; var ad = altaz(date, s.ra, s.dec); if (ad.alt > -2) cache.deep.push({ s: s, enu: altazToENU(ad.alt, ad.az) }); }
+    for (i = 0; i < state.deep.length; i++) { s = state.deep[i]; var ad = altaz(date, s.ra, s.dec); if (ad.alt > -2) cache.deep.push({ s: s, enu: altazToENU(ad.alt, ad.az), alt: ad.alt, az: ad.az }); }
     computePlanets(date);
     cache.planets = [];
-    for (i = 0; i < state.planets.length; i++) { s = state.planets[i]; var ap = altaz(date, s.ra, s.dec); cache.planets.push({ s: s, enu: altazToENU(ap.alt, ap.az), alt: ap.alt }); }
+    for (i = 0; i < state.planets.length; i++) { s = state.planets[i]; var ap = altaz(date, s.ra, s.dec); cache.planets.push({ s: s, enu: altazToENU(ap.alt, ap.az), alt: ap.alt, az: ap.az }); }
     // constellation star lookup by designation for lines
   }
 
@@ -181,6 +200,8 @@
     // zodiac band (tradition): draw the ecliptic + 12 sign ticks + Sun/Moon sign readout
     if (state.show.zodiac) drawZodiac(W, H);
     updateTraditions();
+    drawCompass(W, H);
+    drawMiniMap(W, H);
 
     // deep sky
     if (state.show.deep) {
@@ -265,6 +286,64 @@
       if (tradTxt) tradTxt.innerHTML = '☉ Sun in <b>' + sunSign + '</b> · ☾ Moon in <b>' + moonSign + '</b> · ' + phase;
     } catch (e) {}
   }
+  // --- cosmic compass (top-left): a rose whose needle shows the view azimuth; tinted magenta when locked ---
+  function drawCompass(W, H) {
+    var la = lookAltAz(), r = 30, cx = 20 + r + safeL(), cy = 56 + r;
+    ctx.save();
+    ctx.fillStyle = 'rgba(6,2,20,.62)'; ctx.beginPath(); ctx.arc(cx, cy, r + 7, 0, 6.2832); ctx.fill();
+    ctx.strokeStyle = state.locked ? 'rgba(255,79,216,.75)' : 'rgba(76,195,255,.6)'; ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, 6.2832); ctx.stroke();
+    ctx.fillStyle = 'rgba(185,169,230,.9)'; ctx.font = '9px Segoe UI,sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('N', cx, cy - r + 7); ctx.fillText('S', cx, cy + r - 7); ctx.fillText('E', cx + r - 7, cy); ctx.fillText('W', cx - r + 7, cy);
+    // needle to the current azimuth (N up, E right)
+    var a = la.az * D2R, nx = cx + Math.sin(a) * (r - 9), ny = cy - Math.cos(a) * (r - 9);
+    ctx.strokeStyle = '#ff4fd8'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(nx, ny); ctx.stroke();
+    ctx.fillStyle = '#ff6ec7'; ctx.beginPath(); ctx.arc(nx, ny, 2.6, 0, 6.2832); ctx.fill();
+    // altitude pip: a little tick ring, filled toward zenith
+    ctx.fillStyle = '#4cc3ff'; ctx.beginPath(); ctx.arc(cx, cy, 2, 0, 6.2832); ctx.fill();
+    ctx.fillStyle = 'rgba(243,238,255,.9)'; ctx.font = '8px Segoe UI,sans-serif';
+    ctx.fillText(la.alt.toFixed(0) + '°', cx, cy + r + 9);
+    ctx.restore();
+  }
+  function safeL() { return 0; }
+
+  // --- sky mini-map (top-right): azimuthal all-sky radar, zenith at centre, horizon at the rim. Shows where you're aimed. ---
+  function drawMiniMap(W, H) {
+    var R = 44, cx = W - 18 - R, cy = 56 + R;
+    ctx.save();
+    ctx.fillStyle = 'rgba(6,2,20,.62)'; ctx.beginPath(); ctx.arc(cx, cy, R + 7, 0, 6.2832); ctx.fill();
+    ctx.strokeStyle = 'rgba(76,195,255,.5)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.2832); ctx.stroke();
+    ctx.strokeStyle = 'rgba(160,123,255,.18)'; ctx.beginPath(); ctx.arc(cx, cy, R * 0.5, 0, 6.2832); ctx.stroke();
+    ctx.fillStyle = 'rgba(185,169,230,.75)'; ctx.font = '8px Segoe UI,sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('N', cx, cy - R + 6); ctx.fillText('S', cx, cy + R - 6); ctx.fillText('E', cx + R - 6, cy); ctx.fillText('W', cx - R + 6, cy);
+    function pt(alt, az) { var rr = (1 - Math.max(0, alt) / 90) * R, aa = az * D2R; return [cx + rr * Math.sin(aa), cy - rr * Math.cos(aa)]; }
+    function dot(alt, az, col, rad) { if (alt < 0) return; var p = pt(alt, az); ctx.fillStyle = col; ctx.beginPath(); ctx.arc(p[0], p[1], rad, 0, 6.2832); ctx.fill(); }
+    var i;
+    for (i = 0; i < cache.stars.length; i++) if (cache.stars[i].s.mag < 1.7) dot(cache.stars[i].alt, cache.stars[i].az, 'rgba(243,238,255,.8)', 1.2);
+    for (i = 0; i < cache.planets.length; i++) { var cp = cache.planets[i]; dot(cp.alt, cp.az, cp.s.col, cp.s.moon || cp.s.sun ? 2.6 : 1.8); }
+    // current view marker + a little field-of-view wedge
+    var la = lookAltAz();
+    if (la.alt > -4) {
+      var p = pt(la.alt, la.az), vf = fov() * R2D, a0 = la.az;
+      ctx.strokeStyle = 'rgba(255,79,216,.5)'; ctx.fillStyle = 'rgba(255,79,216,.12)';
+      var p1 = pt(Math.max(0, la.alt), a0 - vf * 0.7), p2 = pt(Math.max(0, la.alt), a0 + vf * 0.7);
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(p1[0], p1[1]); ctx.lineTo(p[0], p[1]); ctx.lineTo(p2[0], p2[1]); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = '#ff4fd8'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(p[0], p[1], 4, 0, 6.2832); ctx.stroke();
+    }
+    ctx.restore();
+    state._mini = { cx: cx, cy: cy, R: R };   // for tap-to-aim
+  }
+  // tap on the mini-map -> aim there (locks the view so the tap holds)
+  function miniAim(sx, sy) {
+    var m = state._mini; if (!m) return false;
+    var dx = sx - m.cx, dy = sy - m.cy, rr = Math.hypot(dx, dy); if (rr > m.R + 4) return false;
+    var alt = 90 * (1 - rr / m.R), az = (Math.atan2(dx, -dy) * R2D + 360) % 360;
+    state.manAz = (az - state.headingOffset + 360) % 360; state.manAlt = Math.max(-5, Math.min(89, alt));
+    if (!state.locked) toggleLock(true);
+    setManualR(); toast('aimed: ' + cardinal(az) + ' ' + alt.toFixed(0) + '°'); return true;
+  }
+  function cardinal(az) { return ['N','NE','E','SE','S','SW','W','NW'][Math.round(az / 45) % 8]; }
+
   function drawZodiac(W, H) {
     // ecliptic as a smooth band of points (tradition label lives in the UI)
     ctx.strokeStyle = 'rgba(255,79,216,.5)'; ctx.setLineDash([4, 6]); ctx.lineWidth = 1.4; ctx.beginPath();
@@ -295,6 +374,8 @@
 
   /* ---------- interaction ---------- */
   cv.addEventListener('click', function (e) {
+    if (panMoved) { panMoved = false; return; }   // a drag, not a tap
+    if (miniAim(e.clientX, e.clientY)) return;     // tapped the mini-map -> aim there
     var best = null, bd = 1e9;
     for (var i = 0; i < hitList.length; i++) {
       var h = hitList[i], dx = e.clientX - h.x, dy = e.clientY - h.y, d = Math.sqrt(dx*dx+dy*dy);
@@ -329,6 +410,17 @@
     toast('North set on ' + (best.o.name || 'star'));
   }
 
+  function toggleLock(on) {
+    state.locked = (on === undefined) ? !state.locked : on;
+    var b = document.getElementById('tLock'); if (b) b.setAttribute('aria-pressed', state.locked);
+    if (state.locked) {   // freeze where we're currently aimed, then let touch pan/zoom
+      var la = lookAltAz(); state.manAz = la.az; state.manAlt = la.alt; setManualR();
+      toast('Locked — drag to look around, pinch to zoom. Phone can move.');
+    } else {
+      toast('Live — the sky follows your phone again.');
+    }
+  }
+
   /* ---------- controls ---------- */
   function wire() {
     document.getElementById('zoom').addEventListener('input', function (e) { state.zoom = +e.target.value; });
@@ -339,16 +431,28 @@
       state.calMode = !state.calMode; this.setAttribute('aria-pressed', state.calMode); retic.hidden = !state.calMode;
       if (state.calMode) toast('Aim the ring at a bright star you know, then tap it');
     });
-    // pinch zoom
-    var pinch = 0;
+    document.getElementById('tLock').addEventListener('click', function () { toggleLock(); });
+    // pinch zoom + (when locked) single-finger pan on the az/alt axes
+    var pinch = 0, panX = 0, panY = 0, panId = null;
+    cv.addEventListener('touchstart', function (e) {
+      if (e.touches.length === 1 && state.locked) { panX = e.touches[0].clientX; panY = e.touches[0].clientY; panId = e.touches[0].identifier; panMoved = false; }
+    }, { passive: true });
     cv.addEventListener('touchmove', function (e) {
       if (e.touches.length === 2) {
         var dx = e.touches[0].clientX - e.touches[1].clientX, dy = e.touches[0].clientY - e.touches[1].clientY, d = Math.hypot(dx, dy);
         if (pinch) { state.zoom = Math.max(0, Math.min(100, state.zoom + (d - pinch) * 0.15)); document.getElementById('zoom').value = state.zoom; }
-        pinch = d; e.preventDefault();
+        pinch = d; e.preventDefault(); return;
+      }
+      if (e.touches.length === 1 && state.locked && panId !== null) {
+        var t = e.touches[0], mx = t.clientX - panX, my = t.clientY - panY; panX = t.clientX; panY = t.clientY;
+        if (Math.abs(mx) + Math.abs(my) > 2) panMoved = true;
+        var sens = (fov() * R2D) / window.innerHeight;   // drag 1 screen-height ≈ one FOV
+        state.manAz = (state.manAz - mx * sens + 360) % 360;
+        state.manAlt = Math.max(-80, Math.min(88, state.manAlt + my * sens));
+        setManualR(); e.preventDefault();
       }
     }, { passive: false });
-    cv.addEventListener('touchend', function () { pinch = 0; });
+    cv.addEventListener('touchend', function () { pinch = 0; panId = null; });
     window.addEventListener('resize', sizeCanvas);
   }
 
