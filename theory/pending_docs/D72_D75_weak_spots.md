@@ -12873,4 +12873,4 @@ MAP: node=nstar_e status=corrected touches=[band_e, C_nstar] ripple=yes
   - The thermal-mass anchors used in the fraction bracket (D1152: 2.207 and 2.842) are Beneke's, and our own code now agrees with Beneke's Born to 2%. The f(M) bracket is therefore corroborated, not changed.
   - The paper needs no edit (it quotes Beneke's numbers).
 VERDICT: B1 PASS, L1 FAIL (+4.4%). Most of the gap is closed by the sourced EOS. The residual is in the late-time Sommerfeld treatment and is OPEN.
-MAP: node=H_relic status=computed touches=[wino_window] ripple=no
+MAP: none
