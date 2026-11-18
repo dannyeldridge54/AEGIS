@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AEGIS Studio</title>
+<title>AEGIS Studio · Prismatic Light</title>
 <style>
 /* Neon console: one WebGL stage (weave / landscape) + a right rack of knobs, readouts and a scope */
 :root{
   --bg:#04020b; --panel:#0b0620; --panel2:#120a2e; --line:#2a1f5a; --fg:#f3eeff; --muted:#a296d8;
-  --cyan:#00e5ff; --magenta:#ff2bd6; --lime:#39ff88; --amber:#ff9e00; --violet:#bf5cff; --yellow:#fff200; --red:#ff2e63; --teal:#00ffc8;
+  /* Prismatic Light: blue · violet · magenta · pink, and their mixes */
+  --cyan:#3d8bff; --magenta:#ff2bd6; --lime:#6f6bff; --amber:#ff7ac8; --violet:#9b4dff; --yellow:#d77bff; --red:#ff3d8b; --teal:#5fb0ff;
   --f-display:"Bahnschrift","Segoe UI Semibold","Segoe UI",system-ui,sans-serif; --f-body:"Segoe UI",system-ui,sans-serif; --f-mono:"Cascadia Mono","Consolas",ui-monospace,monospace;
   color-scheme:dark;
 }
@@ -17,7 +18,7 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
 [hidden]{display:none!important}
 .app{display:grid;grid-template-rows:auto 1fr;height:100%}
 .top{display:flex;align-items:center;gap:16px;padding:10px 16px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#0b0620,#140838 60%,#0b0620)}
-.brand{font:700 20px var(--f-display);letter-spacing:.14em;background:linear-gradient(90deg,var(--cyan),var(--magenta),var(--yellow));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.brand{font:700 20px var(--f-display);letter-spacing:.14em;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
 .tabs{display:flex;gap:6px}
 .tab{font:600 12px var(--f-display);letter-spacing:.12em;text-transform:uppercase;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer}
 .tab[aria-selected=true]{background:var(--magenta);border-color:var(--magenta);color:#14001a;box-shadow:0 0 16px var(--magenta)}
@@ -58,7 +59,7 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
 <body>
 <div class="app">
   <div class="top">
-    <div class="brand">AEGIS STUDIO</div>
+    <div class="brand">AEGIS STUDIO</div><span class="pill" style="border-color:#9b4dff;color:#d9b8ff">Prismatic Light</span>
     <div class="tabs" role="tablist">
       <button class="tab" role="tab" id="t-weave" aria-selected="true">Weave</button>
       <button class="tab" role="tab" id="t-land" aria-selected="false">Landscape</button>

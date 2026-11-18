@@ -42,15 +42,15 @@ function field(x, y) { let s = 0; for (let i = 0; i < NN; i++) { const a = amp[i
 const fabric = []; (() => {
   const mk = (pts, colors) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(pts.length*3), 3)); g.setAttribute('color', new THREE.BufferAttribute(new Float32Array(colors), 3));
     const l = new THREE.Line(g, new THREE.LineBasicMaterial({vertexColors: true, transparent: true, opacity: 0.32, blending: THREE.AdditiveBlending, depthWrite: false})); l.userData.base = pts; weave.add(l); fabric.push(l); };
-  for (let j = 0; j < 46; j++) { const y = -58 + j*2.5; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.62 + 0.30*j/45, 1, 0.55);
+  for (let j = 0; j < 46; j++) { const y = -58 + j*2.5; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.61 + 0.32*j/45, 1, 0.58);
     for (let i = 0; i <= 160; i++) { const x = -105 + 210*i/160; pts.push([x, y + 0.9*Math.sin(i*0.9 + j)]); cs.push(c.r, c.g, c.b); } mk(pts, cs); }
-  for (let i = 0; i < 70; i++) { const x = -105 + 210*i/69; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.64 + 0.28*i/69, 1, 0.45);
+  for (let i = 0; i < 70; i++) { const x = -105 + 210*i/69; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.93 - 0.32*i/69, 1, 0.5);
     for (let j = 0; j <= 90; j++) { const y = -58 + 113*j/90; pts.push([x + 0.9*Math.sin(j*0.9 + i), y]); cs.push(c.r, c.g, c.b); } mk(pts, cs); }
 })();
 // ---------- threads (the web's links) ----------
 const threads = WEB.edges.map((e, k) => { const a = P[e.s], b = P[e.t]; const mid = a.clone().add(b).multiplyScalar(0.5); mid.z += 6 + (k % 5); mid.y += ((k*7) % 9) - 4;
   const curve = new THREE.QuadraticBezierCurve3(a.clone(), mid, b.clone()); const base = curve.getPoints(64);
-  const g = new THREE.BufferGeometry().setFromPoints(base); const xm = (a.x + b.x)/2; const c = e.sign < 0 ? new THREE.Color(C('--red')) : new THREE.Color().setHSL(0.62 + 0.30*Math.min(1, Math.max(0, (xm + 100)/200)), 1, 0.6);
+  const g = new THREE.BufferGeometry().setFromPoints(base); const xm = (a.x + b.x)/2; const c = e.sign < 0 ? new THREE.Color(C('--red')) : new THREE.Color().setHSL(0.61 + 0.32*Math.min(1, Math.max(0, (xm + 100)/200)), 1, 0.62);
   const l = new THREE.Line(g, new THREE.LineBasicMaterial({color: c, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false})); weave.add(l);
   return {e, l, base, c}; });
 // particles running along threads
@@ -124,7 +124,7 @@ document.getElementById('bexact').onclick = async () => { const api = window.pyw
 // ---------- landscape ----------
 (() => { if (!LAND) return; const nx = LAND.phi.length, ny = LAND.C.length; const g = new THREE.PlaneGeometry(160, 100, nx - 1, ny - 1); const pos = g.attributes.position; const cols = [];
   let mn = Infinity, mx = -Infinity; LAND.V.forEach(r => r.forEach(v => { mn = Math.min(mn, v); mx = Math.max(mx, v); }));
-  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) { const k = j*nx + i; const v = LAND.V[j][i]; const h = (v - mn)/(mx - mn + 1e-12); pos.setZ(k, 55*h); const c = new THREE.Color().setHSL(0.72*(1 - h), 1, 0.5); cols.push(c.r, c.g, c.b); }
+  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) { const k = j*nx + i; const v = LAND.V[j][i]; const h = (v - mn)/(mx - mn + 1e-12); pos.setZ(k, 55*h); const c = new THREE.Color().setHSL(0.61 + 0.32*h, 1, 0.42 + 0.2*h); cols.push(c.r, c.g, c.b); }
   g.setAttribute('color', new THREE.Float32BufferAttribute(cols, 3)); g.computeVertexNormals();
   land.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({vertexColors: true, transparent: true, opacity: 0.28, side: THREE.DoubleSide})));
   land.add(new THREE.LineSegments(new THREE.WireframeGeometry(g), new THREE.LineBasicMaterial({vertexColors: true, transparent: true, opacity: 0.55})));

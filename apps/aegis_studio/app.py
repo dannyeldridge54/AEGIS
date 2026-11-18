@@ -18,5 +18,5 @@ class Api:
     def open_classic(self):
         webview.create_window('AEGIS Web · classic views', url=os.path.join(BASE, 'classic.html'), width=1500, height=950, background_color='#05020D'); return True
 if __name__ == '__main__':
-    webview.create_window('AEGIS Studio', url=os.path.join(BASE, 'index.html'), js_api=Api(), width=1680, height=1000, min_size=(1100, 680), background_color='#04020B')
+    webview.create_window('AEGIS Studio · Prismatic Light', url=os.path.join(BASE, 'index.html'), js_api=Api(), width=1680, height=1000, min_size=(1100, 680), background_color='#04020B')
     webview.start(http_server=True)
