@@ -12,7 +12,7 @@ are skipped); a summary for the Sky Map goes to apps/skymap/data/hyperion_orbits
   {"version", "model", "n_stars", "tiles": {tile: {n, med_ecc, med_zmax, med_rperi, med_rapo}}, "most_eccentric": [...50]}
 Read-only on the sweep: never changes tiles or sweep state. AI-assisted (Claude); validated by lock PREREG_A8d."""
 from __future__ import annotations
-import argparse, csv, gzip, json, math, pathlib, sys, time
+import argparse, csv, gzip, json, math, os, pathlib, sys, time
 import numpy as np
 HERE = pathlib.Path(__file__).resolve()
 sys.path.insert(0, str(HERE.parents[2]))
@@ -69,7 +69,15 @@ def _status(path, **kw):
     try:
         with open(path, 'w', encoding='utf-8') as fh: json.dump(kw, fh, indent=1)
     except OSError: pass
-def run(cosmos_map, skymap=None, max_tiles=None, level=5, model=DEFAULT_MODEL, status_file=None):
+def _one_tile(tp, outdir, model):
+    tp = pathlib.Path(tp); op = pathlib.Path(outdir)/tp.name
+    with gzip.open(tp, 'rt', newline='') as fh: rows = list(csv.DictReader(fh))
+    res = process_rows(rows, model=model)
+    tmp = op.with_suffix('.tmp')
+    with gzip.open(tmp, 'wt', newline='') as fh:
+        w = csv.writer(fh); w.writerow(OUT_COLS); w.writerows(res)
+    tmp.replace(op); return len(res)
+def run(cosmos_map, skymap=None, max_tiles=None, level=5, model=DEFAULT_MODEL, status_file=None, workers=1):
     cm = pathlib.Path(cosmos_map); tiles = sorted((cm/'tiles'/f'L{level}').glob('*.csv.gz'))
     outdir = cm/MODELS[model]['outdir']/f'L{level}'; outdir.mkdir(parents=True, exist_ok=True)
     done = skipped = nstars = 0; t0 = time.time(); todo = tiles[:max_tiles] if max_tiles else tiles
@@ -79,20 +87,22 @@ def run(cosmos_map, skymap=None, max_tiles=None, level=5, model=DEFAULT_MODEL, s
             if not load_libgalpy()[1]: print('WARNING: galpy C extension not loaded; McMillan17 orbits will be very slow. '
                                             'Try: pip install --force-reinstall galpy  (or run with --model MWPotential2014, the fast numba path)', flush=True)
         except Exception: pass
-    for tp in todo:
-        op = outdir/tp.name
-        if op.exists(): skipped += 1; continue
-        with gzip.open(tp, 'rt', newline='') as fh: rows = list(csv.DictReader(fh))
-        res = process_rows(rows, model=model)
-        tmp = op.with_suffix('.tmp')
-        with gzip.open(tmp, 'wt', newline='') as fh:
-            w = csv.writer(fh); w.writerow(OUT_COLS); w.writerows(res)
-        tmp.replace(op); done += 1; nstars += len(res)
+    pend = [tp for tp in todo if not (outdir/tp.name).exists()]; skipped = len(todo) - len(pend)
+    def tick(n_new):
+        nonlocal done, nstars
+        done += 1; nstars += n_new
         if done % 10 == 0 or done == 1:
-            el = time.time() - t0; left = len(todo) - done - skipped
-            print(f'tiles {done + skipped}/{len(todo)}  stars {nstars}  {nstars/max(el, 1e-9):.0f} stars/s  ETA {left*el/done/3600:.1f} h', flush=True)
+            el = time.time() - t0; left = len(pend) - done
+            print(f'tiles {done + skipped}/{len(todo)}  stars {nstars}  {nstars/max(el, 1e-9):.0f} stars/s  ETA {left*el/done/3600:.1f} h  workers {workers}', flush=True)
             _status(status_file, state='running', model=model, tiles_total=len(todo), tiles_done=done + skipped, stars_this_run=nstars,
-                    stars_per_s=round(nstars/max(el, 1e-9), 1), eta_hours=round(left*el/done/3600, 2))
+                    stars_per_s=round(nstars/max(el, 1e-9), 1), eta_hours=round(left*el/done/3600, 2), workers=workers)
+    if workers <= 1:
+        for tp in pend: tick(_one_tile(str(tp), str(outdir), model))
+    else:   # tiles are independent and each writes its own file (atomic rename), so a parallel run gives the same output files
+        from concurrent.futures import ProcessPoolExecutor, as_completed
+        import multiprocessing as mp   # spawn: fork is unsafe once galpy/numba have started OpenMP threads
+        with ProcessPoolExecutor(max_workers=workers, mp_context=mp.get_context('spawn')) as ex:
+            for f in as_completed([ex.submit(_one_tile, str(tp), str(outdir), model) for tp in pend]): tick(f.result())
     summary = summarise(outdir, model)
     _status(status_file, state='finished', model=model, tiles_total=len(todo), tiles_done=done + skipped, stars_this_run=nstars,
             summary_stars=summary['n_stars'], seconds=round(time.time() - t0, 1))
@@ -136,8 +146,8 @@ def check(cosmos_map, level=5, n=8):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--cosmos-map', required=True); ap.add_argument('--skymap'); ap.add_argument('--max-tiles', type=int)
-    ap.add_argument('--model', default=DEFAULT_MODEL, choices=sorted(MODELS)); ap.add_argument('--check', action='store_true', help='pre-flight only: sample tiles, report schema and usable stars'); ap.add_argument('--status', help='write progress JSON here (e.g. status.json)')
+    ap.add_argument('--model', default=DEFAULT_MODEL, choices=sorted(MODELS)); ap.add_argument('--check', action='store_true', help='pre-flight only: sample tiles, report schema and usable stars'); ap.add_argument('--status', help='write progress JSON here (e.g. status.json)'); ap.add_argument('--workers', type=int, default=1, help='parallel tile processes (0 = all cores minus one)')
     a = ap.parse_args(argv)
     if a.check: r = check(a.cosmos_map); print(json.dumps(r, indent=1)); return 0 if r['ok'] else 1
-    print(json.dumps(run(a.cosmos_map, a.skymap, a.max_tiles, model=a.model, status_file=a.status))); return 0
+    print(json.dumps(run(a.cosmos_map, a.skymap, a.max_tiles, model=a.model, status_file=a.status, workers=a.workers if a.workers > 0 else max(1, (os.cpu_count() or 2) - 1)))); return 0
 if __name__ == '__main__': sys.exit(main())
