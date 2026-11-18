@@ -1,0 +1,6 @@
+# PREREG D1343 — τ = i variant: α_s recheck on the ripple-free exact MS path (written 18 Nov 2026 before computing)
+Why: ACCURACY_QUEUE item (D1255): α_s quoted from the old 5-point exact-MS fits at bd = 200 carries a ~1e-4 ripple. D1247 (NA12) quotes the τ = i variant's α_s = −8.54e-4 (ε = 1.40e-4) from the D632 code (theory/modular/running_d632.py, bd = 200, 5 points). The SERAPIS-E point (D1262) already uses predict_fast (U1b) and is not rechecked here.
+Method: the same potential as D632 (V = I²/(I²+1) + ε I₁, I from log|j|, y = e^{√2 φ}, the l < 300 branch only, valid for y > 1), written as a sympy expression and compiled with tools/serapis_calc/ms_jit.build; spectra_msjit with 9 points in ln k ∈ [−0.1, 0.1] and bd = 4000 (the U1b settings). φ₀ = ln 40/√2 as in D632. The same N*(ε) rule as NA12: m = 2.28e11 + (ε − 1.3e-4)/0.3e-4 · 0.37e11, N* = 50.31 + 0.5 ln(m/1.9e11). ε ∈ {1.40e-4, 1.45e-4}.
+Sanity gate (run first): at ε = 1.40e-4 the new n_s and r must agree with D1247's to |Δn_s| ≤ 5e-5 and |Δr/r| ≤ 1 % (else the potential transcription is wrong: stop, write DEVIATIONS).
+Reported: the new α_s at both ε. Decision rule: if |α_s(new) − α_s(D1247)| > 2e-5 at ε = 1.40e-4, write correction note D1247a and update SERAPIS_DERIVATION §4; otherwise record "D1247 α_s confirmed" and close the queue item for τ = i.
+Single run; no reruns to chase numbers.
