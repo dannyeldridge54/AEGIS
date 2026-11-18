@@ -14011,3 +14011,15 @@ MAP: none
 - Caveat: the f = 1 exclusion bands are 2014 values. A W⁺W⁻ dwarf combination with modern J-factors would sharpen them, but cannot reach f² ~ 0.1 at these masses unless it improves by ×10.
 VERDICT: NULL for new constraints; the window is confirmed against continuum probes.
 MAP: none
+
+## D1328 — Hyperion 1.1 release prep: a smoke test pins today's validated results; 6/6 PASS in ≈ 10 s (2026-11-18)
+- [TOOL] tools/janus_astro/hyperion_smoketest.py. Each check is against the recorded value:
+  1. Relic Born Ω h² at M = 2252.1 GeV with the Saikawa–Shirai EOS = 0.120499, vs 0.1205 (D1238).
+  2. McMillan17 LSR orbit: r_apo/R0 = 1.000 (D1197).
+  3. The galpy MWPotential2014 path reproduces galaxy.py r_peri to 1e-5 (D1196).
+  4. The 7PN tidal SPA term in gw.py equals an independent re-implementation of Mandal+ 2412.01706 Eq. 4.48 to 1e-9 (D1211).
+  5. The 1 TeV wino IGS f_max (Burkert B0/D1, ρ☉ 0.4, LO) = 0.2857 vs 0.286 (D1322).
+  6. The thermal-fraction edge at 1 TeV = (1/2.207)² (D1152).
+- It exits non-zero on any failure, so it can run before a "Publish". A line is added to the Hyperion 1.1 CHANGES.
+- **Still needed for a 1.1 upload** (Danny): his "Publish", plus a PC run of START_HYPERION_ORBITS.bat with the McMillan17 default (output to hyperion_mcm17/).
+MAP: none

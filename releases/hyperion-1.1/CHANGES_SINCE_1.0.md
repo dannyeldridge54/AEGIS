@@ -92,3 +92,4 @@ Status: draft, collected 17 Nov 2026 (D1081–D1101). Packaging and a Zenodo upl
   - Window 0.67 to 1–1.25 TeV, f 5–30% (D1324).
 - **Map:** a new darkrad_i node for the τ=i dark-radiation verdicts (D1320).
 - **Draft accuracy fix:** SO sees U(1) dark radiation only at ≈ 1.2σ (D1325).
+- Release prep: tools/janus_astro/hyperion_smoketest.py (6 checks, ~10 s, all PASS; D1328).
