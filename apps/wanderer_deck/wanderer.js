@@ -7,25 +7,25 @@
   function rng(s) { var a = s * 7919 + 17; return function () { a = (a * 16807) % 2147483647; return a / 2147483647; }; }
 
   var V = [
-    { key: 'dawn', name: 'The Hermit of Dawn', note: 'lantern lit, robe of morning light', dark: 0.0,
+    { key: 'dawn', skin: '#f2c6a8', beardC: '#c0622e', chart: 'Ascendant 28° Virgo — the Hermit\'s sign', story: 'Born at the Hermit\'s door: Virgo rising carries the lantern into the world.', name: 'The Hermit of Dawn', note: 'lantern lit, robe of morning light', dark: 0.0,
       bg: ['#fff7d6', '#ffc98a'], sky: '#fffbe8', cloak: '#f3eeff', edge: '#d8a54a', face: '#3a2a10', beard: '#ffffff', bone: '#c9a66b', horn: '#b0895a', eye: '#ffcc33', staff: 'lantern', tree: '#e0b070', halo: 1 },
-    { key: 'ascetic', name: 'The Ascetic', note: 'nothing kept but the staff and the sun', dark: 0.12,
+    { key: 'ascetic', skin: '#ecc4a6', beardC: '#b85a2a', chart: 'Saturn 11° Aquarius · 5th house', story: 'Saturn takes the toys away; what is left is the staff and the sun.', name: 'The Ascetic', note: 'nothing kept but the staff and the sun', dark: 0.12,
       bg: ['#ffe9f3', '#c9b8ff'], sky: '#fff4c2', cloak: '#e8dcc8', edge: '#a07bff', face: '#2a1f3a', beard: '#f3eeff', bone: '#d8c8a8', horn: '#b8a07a', eye: '#4cc3ff', staff: 'plain', tree: '#b9a0e8', halo: 1, thin: 1 },
-    { key: 'green', name: 'The Green Knight', note: 'holly and axe; the bargain of the turning year', dark: 0.25,
+    { key: 'green', skin: '#e0b896', beardC: '#a8501f', chart: 'Venus ☌ Mars, Capricorn · 4th house', story: 'Love and the axe in one house at midwinter: the Green Knight\'s Yule bargain.', name: 'The Green Knight', note: 'holly and axe; the bargain of the turning year', dark: 0.25,
       bg: ['#d9f5c8', '#3f7d3a'], sky: '#f6ffd8', cloak: '#2f7a32', edge: '#b6e36a', face: '#0e2a10', beard: '#6fbf4a', bone: '#d9cfa0', horn: '#8a7a4a', eye: '#e8ff7a', staff: 'axe', tree: '#5a9a40', ivy: 3, holly: 1 },
-    { key: 'ygg', name: 'Yggdrasil Walker', note: 'the World Tree grows out of his crown', dark: 0.35,
+    { key: 'ygg', skin: '#d8b49c', beardC: '#a0522a', chart: 'Uranus ☌ Neptune, Capricorn · 4th house', story: 'The roots are lightning and dream. The family tree is a world tree, and the Elder stag walks it.', name: 'Yggdrasil Walker', note: 'the World Tree grows out of his crown', dark: 0.35,
       bg: ['#bfe7ff', '#2a4a7a'], sky: '#e8f6ff', cloak: '#3a5a8a', edge: '#4cc3ff', face: '#0b1a2a', beard: '#cfe6ff', bone: '#e8dcc0', horn: '#a08a60', eye: '#6fb8ff', staff: 'plain', tree: '#7aa0d0', bigTree: 1, ivy: 1 },
-    { key: 'allfather', name: 'The Allfather', note: 'Huginn and Muninn, Gungnir, one eye given for wisdom', dark: 0.48,
+    { key: 'allfather', skin: '#c8ac9c', beardC: '#9a4e2a', chart: 'Sun ☌ Mercury, Aquarius · 5th house', story: 'Mercury is Woden. The sun travels with the messenger; the ravens are thought and memory.', name: 'The Allfather', note: 'Huginn and Muninn, Gungnir, one eye given for wisdom', dark: 0.48,
       bg: ['#9aa0c0', '#1a1830'], sky: '#d0d4ee', cloak: '#4a4a62', edge: '#a296d8', face: '#08080f', beard: '#d8d8e8', bone: '#cfc4a8', horn: '#7a6a50', eye: '#4cc3ff', staff: 'spear', tree: '#5a5878', ravens: 1 },
-    { key: 'ivy', name: 'Overgrown', note: 'the forest takes him back, gently', dark: 0.58,
+    { key: 'ivy', skin: '#a89a7a', beardC: '#7a4a22', chart: 'Jupiter ℞ 11° Virgo · 12th house', story: 'Growth that happens out of sight: the forest grows through him while no one is looking.', name: 'Overgrown', note: 'the forest takes him back, gently', dark: 0.58,
       bg: ['#5a7a50', '#0e1a0c'], sky: '#9ac080', cloak: '#25351f', edge: '#7ac05a', face: '#050a04', beard: '#8aa070', bone: '#b0a880', horn: '#6a5a3a', eye: '#b6ff6a', staff: 'plain', tree: '#3a5a2a', ivy: 9, flowers: 1 },
-    { key: 'hanged', name: 'Nine Nights', note: 'hung on the windy tree, wounded by his own spear, he finds the runes', dark: 0.7,
+    { key: 'hanged', skin: '#b8a0c0', beardC: '#8a4a3a', chart: 'Moon 25° Cancer · 10th house', story: 'Hung at the top of the sky by his own heart, nine nights, until the runes come.', name: 'Nine Nights', note: 'hung on the windy tree, wounded by his own spear, he finds the runes', dark: 0.7,
       bg: ['#3a2a5a', '#04020b'], sky: '#7a5cff', cloak: '#2a1f5a', edge: '#d43cff', face: '#000', beard: '#b0a0e0', bone: '#d8d0e8', horn: '#8a7aa0', eye: '#ff6ec7', staff: 'none', tree: '#4a3a7a', hanged: 1, runes: 1 },
-    { key: 'decay', name: 'The Rot', note: 'bone antlers, moth-eaten cloak, mushrooms at his feet', dark: 0.8,
+    { key: 'decay', skin: '#a0987a', beardC: '#6a4a2a', chart: 'Pluto 23° Scorpio · 2nd house', story: 'What he owns must rot so something can grow. Scorpio\'s card is Death, and Death is rebirth.', name: 'The Rot', note: 'bone antlers, moth-eaten cloak, mushrooms at his feet', dark: 0.8,
       bg: ['#4a4630', '#0a0904'], sky: '#8a8460', cloak: '#3a3524', edge: '#9a9060', face: '#000', beard: '#7a7460', bone: '#d8d0b0', horn: '#5a4a30', eye: '#c8d040', staff: 'plain', tree: '#3a3424', decay: 1 },
-    { key: 'blood', name: 'Blood Moon', note: 'red moon, thorned crown, the price paid in full', dark: 0.9,
+    { key: 'blood', skin: '#b88a80', beardC: '#7a2a1a', chart: 'Moon ☍ Mars', story: 'The moon against the warrior. The price is paid in full.', name: 'Blood Moon', note: 'red moon, thorned crown, the price paid in full', dark: 0.9,
       bg: ['#3a0610', '#050102'], sky: '#d01030', cloak: '#1a0306', edge: '#ff3d5b', face: '#000', beard: '#5a1a1e', bone: '#e8d0c8', horn: '#4a1a1a', eye: '#ff2040', staff: 'spear', tree: '#3a0a12', blood: 1, thorns: 1 },
-    { key: 'madness', name: 'The Unravelling', note: 'too many eyes open at once; the mind splits into colours', dark: 1.0,
+    { key: 'madness', skin: '#a890c8', beardC: '#d43cff', chart: 'Sun □ Pluto', story: 'The self pressed until it splits into colours — and is made again.', name: 'The Unravelling', note: 'too many eyes open at once; the mind splits into colours', dark: 1.0,
       bg: ['#1a0630', '#000'], sky: '#ff6ec7', cloak: '#120a2e', edge: '#d43cff', face: '#000', beard: '#7a5cff', bone: '#f3eeff', horn: '#d43cff', eye: '#ff6ec7', staff: 'plain', tree: '#2a1f5a', madness: 1 }
   ];
 
@@ -40,16 +40,16 @@
     }
     return tips;
   }
-  function antler(R, col, out) {   // deer antler, left side: a beam sweeping up and out with tines
-    var pts = [[88, 100], [76, 86], [70, 66], [72, 44], [80, 26]], d = 'M' + pts.map(function (p) { return p.join(' '); }).join(' L');
-    out.push('<path d="' + d + '" stroke="' + col + '" stroke-width="4.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>');
-    var tips = [];
-    [[76, 86, -2.6, 16], [70, 66, -2.9, 15], [71, 52, -1.9, 12], [72, 44, -2.5, 13], [80, 26, -1.2, 10], [80, 26, -1.9, 9]].forEach(function (t) {
-      tips = tips.concat(branch(R, t[0], t[1], t[2], t[3], 1, col, 2.4, out)); });
+  function antler(R, col, out) {   // royal stag (the Eldridge / Elder crest): beam with brow, bez, trez tines and a crown of three
+    var beam = [[86, 88], [76, 74], [70, 56], [70, 38], [74, 20]];
+    out.push('<path d="M' + beam.map(function (p) { return p.join(' '); }).join(' L') + '" stroke="' + col + '" stroke-width="4.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>');
+    var tines = [[80, 80, 56, 76], [74, 68, 52, 58], [70, 50, 50, 40], [72, 26, 58, 8], [74, 20, 72, 2], [74, 22, 88, 6]], tips = [];
+    tines.forEach(function (t) { var mx = (t[0] + t[2]) / 2, my = (t[1] + t[3]) / 2 + 4;
+      out.push('<path d="M' + t[0] + ' ' + t[1] + ' Q' + mx + ' ' + my + ' ' + t[2] + ' ' + t[3] + '" stroke="' + col + '" stroke-width="2.8" fill="none" stroke-linecap="round"/>'); tips.push([t[2], t[3]]); });
     return tips;
   }
   function ramHorn(col, out) {   // ram horn, right side: a thick spiral curling out and down past the ear
-    var cx = 128, cy = 104, p = [];
+    var cx = 132, cy = 100, p = [];
     for (var i = 0; i <= 60; i++) { var t = i / 60, a = -2.3 + t * 5.6, r = 22 * (1 - t * .78); p.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); }
     var d = 'M' + p.map(function (q) { return f(q[0]) + ' ' + f(q[1]); }).join(' L');
     out.push('<path d="' + d + '" stroke="' + col + '" stroke-width="8" fill="none" stroke-linecap="round"/>');
@@ -69,21 +69,29 @@
   function algiz(x, y, s, col) { return '<path d="M' + x + ' ' + (y + s) + ' L' + x + ' ' + (y - s) + ' M' + (x - s * .7) + ' ' + (y - s) + ' L' + x + ' ' + (y - s * .2) + ' L' + (x + s * .7) + ' ' + (y - s) + '" stroke="' + col + '" stroke-width="1.1" fill="none" stroke-linecap="round"/>'; }
   function eyeDiamond(x, y, s, col) { return '<path d="M' + (x - s) + ' ' + y + ' L' + x + ' ' + (y - s * .55) + ' L' + (x + s) + ' ' + y + ' L' + x + ' ' + (y + s * .55) + 'Z" fill="#000" stroke="' + col + '" stroke-width=".8"/><circle cx="' + x + '" cy="' + y + '" r="' + f(s * .22) + '" fill="' + col + '"/>'; }
 
-  function figure(v, R, uid) {
-    var o = [], w = v.thin ? .82 : 1;
-    // cloak
-    o.push('<path d="M100 84 C78 84 70 100 70 116 C' + f(100 - 44 * w) + ' 132 ' + f(100 - 50 * w) + ' 160 ' + f(100 - 52 * w) + ' 190 L' + f(100 - 60 * w) + ' 286 L' + f(100 + 60 * w) + ' 286 L' + f(100 + 52 * w) + ' 190 C' + f(100 + 50 * w) + ' 160 ' + f(100 + 44 * w) + ' 132 130 116 C130 100 122 84 100 84Z" fill="' + v.cloak + '" stroke="' + v.edge + '" stroke-width="1.4"/>');
-    o.push('<path d="M100 150 L100 286" stroke="' + v.edge + '" stroke-width=".6" opacity=".5"/>');   // the mirror seam
-    // hood opening and face in shadow
-    o.push('<ellipse cx="100" cy="114" rx="15" ry="19" fill="' + v.face + '"/>');
-    o.push('<circle cx="94" cy="110" r="2.4" fill="' + v.eye + '" filter="url(#gl' + uid + ')"/>');           // the eye kept
-    o.push('<path d="M103 107 L109 113 M109 107 L103 113" stroke="' + v.edge + '" stroke-width=".9" opacity=".8"/>');   // the eye given
-    o.push(algiz(100, 96, 4, v.eye));
-    // beard
-    var bd = 'M86 120 C88 132 94 146 100 158 C106 146 112 132 114 120 C108 126 92 126 86 120Z';
-    o.push('<path d="' + bd + '" fill="' + v.beard + '"/>');
-    for (var i = 0; i < 6; i++) o.push('<path d="M' + (90 + i * 4) + ' 126 L' + f(95 + i * 2) + ' ' + (146 - Math.abs(i - 2.5) * 3) + '" stroke="#000" stroke-opacity=".25" stroke-width=".6"/>');
-    // hands
+  function figure(v, R, uid) {   // Danny: shaved crown, short dark sides, full red beard, blue-grey eyes; hood down on the shoulders
+    var o = [], w = v.thin ? .82 : 1, sk = v.skin, bc = v.beardC;
+    o.push('<path d="M100 132 C78 130 64 138 ' + f(100 - 46 * w) + ' 156 C' + f(100 - 52 * w) + ' 180 ' + f(100 - 54 * w) + ' 220 ' + f(100 - 60 * w) + ' 286 L' + f(100 + 60 * w) + ' 286 C' + f(100 + 54 * w) + ' 220 ' + f(100 + 52 * w) + ' 180 ' + f(100 + 46 * w) + ' 156 C136 138 122 130 100 132Z" fill="' + v.cloak + '" stroke="' + v.edge + '" stroke-width="1.4"/>');
+    o.push('<path d="M64 146 C76 128 124 128 136 146 C124 140 76 140 64 146Z" fill="' + v.edge + '" opacity=".55"/>');   // the hood, down
+    o.push('<path d="M100 160 L100 286" stroke="' + v.edge + '" stroke-width=".6" opacity=".5"/>');                  // the mirror seam
+    o.push('<ellipse cx="80" cy="108" rx="3.5" ry="6" fill="' + sk + '"/><ellipse cx="120" cy="108" rx="3.5" ry="6" fill="' + sk + '"/>');   // ears
+    o.push('<path d="M100 78 C86 78 80 90 80 104 C80 118 88 128 100 128 C112 128 120 118 120 104 C120 90 114 78 100 78Z" fill="' + sk + '"/>');  // head
+    o.push('<path d="M81 96 C80 104 81 110 83 114 L85 113 C84 107 84 101 85 95Z M119 96 C120 104 119 110 117 114 L115 113 C116 107 116 101 115 95Z" fill="#4a3a2a" opacity=".85"/>');   // short dark sides
+    o.push('<ellipse cx="94" cy="84" rx="7" ry="3.5" fill="#fff" opacity=".22"/>');                                   // light on the shaved crown
+    o.push(algiz(100, 89, 3.2, v.eye).replace('stroke-width="1.1"', 'stroke-width=".9" opacity=".8"'));
+    o.push('<path d="M88 99 Q93 96 97 99 M103 99 Q107 96 112 99" stroke="#6a3a1e" stroke-width="1.6" fill="none" stroke-linecap="round"/>');   // brows
+    if (v.madness) { o.push(eyeDiamond(93, 104, 4, '#4cc3ff'), eyeDiamond(107, 104, 4, '#ff6ec7')); }
+    else {
+      o.push('<path d="M89 104 Q93 101 97 104 Q93 106 89 104Z" fill="#fff"/><circle cx="93" cy="104" r="1.6" fill="#7a9ab0"/><circle cx="93" cy="104" r="1.6" fill="' + v.eye + '" opacity=".55" filter="url(#gl' + uid + ')"/>');   // the eye kept
+      o.push('<path d="M103 104 Q107 106 111 104" stroke="#5a3020" stroke-width="1.1" fill="none" stroke-linecap="round"/>');   // the eye given (closed)
+    }
+    o.push('<path d="M100 102 L98 112 Q100 114 103 112" stroke="#000" stroke-opacity=".25" stroke-width=".9" fill="none"/>');   // nose
+    // the beard: full, wide, red
+    var bd = 'M80 106 C78 126 80 146 89 155 C95 161 105 161 111 155 C120 146 122 126 120 106 C117 116 112 120 106 120 L94 120 C88 120 83 116 80 106Z';
+    o.push('<path d="' + bd + '" fill="' + bc + '"/>');
+    for (var i = 0; i < 14; i++) { var x = 84 + i * 2.4; o.push('<path d="M' + f(x) + ' ' + f(112 + Math.abs(i - 6.5) * .6) + ' Q' + f(x + (R() - .5) * 3) + ' 136 ' + f(x * .55 + 45) + ' ' + f(150 + (6.5 - Math.abs(i - 6.5)) * 1.4) + '" stroke="#000" stroke-opacity=".22" stroke-width=".7" fill="none"/>'); }
+    o.push('<path d="M90 117 C94 114 98 115 100 116 C102 115 106 114 110 117 C106 119 103 118 100 118 C97 118 94 119 90 117Z" fill="' + bc + '" stroke="#000" stroke-opacity=".25" stroke-width=".5"/>');   // moustache
+    o.push('<path d="M96 120 Q100 121 104 120" stroke="#5a2a1a" stroke-width=".9" fill="none"/>');   // mouth
     return o;
   }
   function staff(v, w, uid) {
@@ -120,12 +128,12 @@
     var fig = [], at = antler(R, v.bone, fig), hornEnd = ramHorn(v.horn, fig);
     fig = fig.concat(figure(v, R, uid), staff(v, w, uid));
     if (v.ivy) ivy(R, v.ivy, v.key === 'ivy' ? '#5aa040' : '#3f8a32', fig);
-    if (v.ravens) fig.push(raven(150, 66, 1.1, false), raven(52, 128, 1, true), raven(138, 140, .8, false));
+    if (v.ravens) fig.push(raven(150, 60, 1.1, false), raven(46, 132, 1, true), raven(146, 150, .8, false));
     if (v.flowers) for (var fl = 0; fl < 10; fl++) fig.push('<circle cx="' + f(55 + R() * 90) + '" cy="' + f(150 + R() * 130) + '" r="1.6" fill="#ffd6f2"/>');
-    if (v.holly) for (var h = 0; h < 6; h++) { var hx = 74 + h * 10, hy = 92 - Math.abs(h - 2.5) * 3; fig.push(leaf(hx, hy, h * 60, 1.1, '#1f6a28') + '<circle cx="' + hx + '" cy="' + (hy + 2) + '" r="1.5" fill="#e0203a"/>'); }
-    if (v.thorns) { var th = 'M72 98'; for (var t = 0; t < 9; t++) th += ' L' + (76 + t * 6) + ' ' + (t % 2 ? 88 : 98); fig.push('<path d="' + th + '" stroke="#3a0a0a" stroke-width="1.6" fill="none"/>'); }
+    if (v.holly) for (var h = 0; h < 6; h++) { var hx = 76 + h * 9.6, hy = 86 - Math.abs(h - 2.5) * 3; fig.push(leaf(hx, hy, h * 60, 1.1, '#1f6a28') + '<circle cx="' + hx + '" cy="' + (hy + 2) + '" r="1.5" fill="#e0203a"/>'); }
+    if (v.thorns) { var th = 'M80 86'; for (var t = 0; t < 9; t++) th += ' L' + (82 + t * 4.5) + ' ' + (t % 2 ? 76 : 84); fig.push('<path d="' + th + '" stroke="#3a0a0a" stroke-width="1.6" fill="none"/>'); }
     if (v.blood) { at.slice(0, 7).forEach(function (p) { fig.push('<path d="M' + f(p[0]) + ' ' + f(p[1]) + ' q1.5 5 0 ' + f(5 + R() * 9) + '" stroke="#c00020" stroke-width="1.6" fill="none" stroke-linecap="round"/>'); });
-      fig.push('<path d="M94 113 q1 10 -1 22" stroke="#ff2040" stroke-width="1.2" fill="none"/>'); }
+      fig.push('<path d="M93 106 q1 6 -1 12" stroke="#ff2040" stroke-width="1.2" fill="none"/>'); }
     if (v.decay) { for (var c = 0; c < 9; c++) { var cx = 60 + R() * 80, cy = 170 + R() * 110; fig.push('<ellipse cx="' + f(cx) + '" cy="' + f(cy) + '" rx="' + f(2 + R() * 4) + '" ry="' + f(1.5 + R() * 3) + '" fill="#0a0904"/>'); }
       for (var m = 0; m < 5; m++) { var mx = 40 + m * 30, my = 286; fig.push('<path d="M' + (mx - 6) + ' ' + my + ' Q' + mx + ' ' + (my - 12) + ' ' + (mx + 6) + ' ' + my + 'Z" fill="#c8b890"/><rect x="' + (mx - 1.2) + '" y="' + my + '" width="2.4" height="6" fill="#d8d0b0"/>'); }
       for (var mo = 0; mo < 4; mo++) { var ox = 30 + R() * 140, oy = 40 + R() * 80; fig.push('<path d="M' + f(ox) + ' ' + f(oy) + ' l-5 -3 l1 6Z M' + f(ox) + ' ' + f(oy) + ' l5 -3 l-1 6Z" fill="#b0a880" opacity=".8"/>'); } }
@@ -147,8 +155,9 @@
     // frame and title plate
     var light = v.dark < .5, ink = light ? '#2a1f3a' : '#f3eeff';
     o.push('<rect x="4" y="4" width="192" height="292" rx="10" fill="none" stroke="' + v.edge + '" stroke-width="2"/>');
-    if (opts.title !== false) o.push('<rect x="22" y="262" width="156" height="26" rx="6" fill="' + (light ? '#fff' : '#04020b') + '" opacity=".72"/>' +
-      '<text x="100" y="279" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="' + ink + '">' + v.name + '</text>');
+    if (opts.title !== false) o.push('<rect x="16" y="254" width="168" height="36" rx="6" fill="' + (light ? '#fff' : '#04020b') + '" opacity=".74"/>' +
+      '<text x="100" y="270" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="' + ink + '">' + v.name + '</text>' +
+      '<text x="100" y="284" text-anchor="middle" font-family="Georgia,serif" font-size="7.6" fill="' + ink + '" opacity=".8">' + v.chart + '</text>');
     return '<svg class="wcard" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="' + v.name + '">' + o.join('') + '</svg>';
   }
   var api = { VARIANTS: V, cardSVG: cardSVG };
