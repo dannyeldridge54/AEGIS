@@ -2045,3 +2045,9 @@ Touches: none.
 2. [derived] At LO without PDF evolution, s·σ is a function of τ₀ = 4m²/s only; built Φ(τ₀) from the 13 TeV table.
 3. [derived] Pure scaling predicts the 13.6 TeV table to ≤1.0%; a factor (√s/13)^κ with κ = −0.161…−0.165 (same for all three processes) brings it to ≤0.29%.
 4. [derived] At 14 TeV the scaling and log-linear routes agree to ≤1%; their mean and spread are the tool's estimate and error.
+
+## D1300: Wino chargino lifetime engine — δm(1 TeV) = 164.1 MeV, cτ = 5.83 cm, BR(π) = 97.9% (2026-11-18)
+1. [literature] Two-loop δm fit and the π, eν width formulas of arXiv:1212.5989 (Eqs. 17, 21, 22); PDG constants.
+2. [derived] Added the μν mode with the exact muon-decay phase-space factor.
+3. [derived] δm rises from 149.5 MeV (100 GeV) to 164.5 MeV (3 TeV); cτ falls from 11.3 to 5.75 cm; τ(δm=160 MeV) = 0.226 ns.
+4. [derived] Locked P1 partly failed (δm(1 TeV) = 164.1, not ≤163 MeV); P2–P4 passed.

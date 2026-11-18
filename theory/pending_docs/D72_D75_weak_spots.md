@@ -13694,3 +13694,16 @@ Danny (voice, 06:52): "theorize what it is" — the PDF file is blocked, so buil
 - P3 PASS: at 14 TeV (HL-LHC) the scaling route and the log-linear route agree to 0.7–1.0% for 500–1800 GeV.
 TOOL: tools/lhc/xsec.py `sigma_scaling`, `sigma_best` (mean of the two routes, spread quoted as the extrapolation error, ~1%).
 Example: χ̃₂⁰χ̃₁⁺ at 1.1 TeV, 14 TeV: 0.787 fb ± 0.8% (route spread). Still to come: an independent LO computation with a real PDF set.
+
+## D1300 — Janus-LHC LHC2: pure-wino chargino lifetime engine — δm 164.1 MeV and cτ 5.83 cm at 1 TeV; PREREG P2–P4 PASS, P1 partly FAIL (my δm window was 1 MeV too low) (2026-11-18)
+MAP: none
+LABEL: numerics (computed) from literature formulas (Ibe–Matsumoto–Sato arXiv:1212.5989 Eqs. 17, 21, 22; PDG constants), locked first
+(PREREG_LHC2). Toolkit result; no change to any model prediction or to the wino_window node (other session's track).
+δm / cτ / τ at m = 100, 300, 500, 1000, 1500, 2000, 3000 GeV: 149.50 MeV / 11.28 cm / 0.376 ns · 161.34 / 6.43 / 0.215 · 163.16 / 6.03 / 0.201 ·
+164.11 / 5.83 / 0.195 · 164.34 / 5.78 / 0.193 · 164.46 / 5.76 / 0.192 · 164.54 / 5.75 / 0.192. BR(π) = 97.9%, BR(eν) 2.1%, BR(μν) 0.08%.
+- P1 PARTLY FAIL: I predicted δm(1 TeV) = 160–163 MeV; the two-loop fit gives 164.11 MeV (it approaches the 164.4 MeV asymptote). The
+  monotonic rise and the 155–166 MeV band for 0.3–3 TeV hold.
+- P2 PASS: cτ(1 TeV) = 5.83 cm (inside 4–8 cm). P3 PASS: BR(π) = 97.9%. P4 PASS: at the δm = 160 MeV benchmark, τ = 0.226 ns (13% from 0.2 ns).
+BETTER THAN THE USUAL PRACTICE: searches often quote a single benchmark (τ ≈ 0.2 ns); this engine gives the mass-dependent lifetime with
+the μν phase-space factor included and the ±0.3–0.4 MeV theory error from the source (→ ±~1% on cτ) available for propagation.
+TOOL: tools/lhc/lifetime.py (`dm`, `widths`).
