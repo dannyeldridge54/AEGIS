@@ -1,0 +1,18 @@
+NA5 canonical-factor audit (theory/modular/*.py)
+1. D722 text: "the inflaton is NOT sterile at ρ: φ → N2N2" and D721 "SERAPIS-E is NOT sterile at ρ in the Γ2-doublet model" → the decaying inflaton is the flavour modulus τ → YES
+2. INCONSISTENT (n=1 potential map AND n=3 coupling factor in the same file):
+    theory/modular/phi_n2n2_d722.py
+    theory/modular/tr_takagi_d721.py
+3. taint list (file | n=1 map | √(2/3) factor | m=2.2e13 | D-notes in header):
+    theory/modular/ad_isocurv_d791.py | False | False | True | D791
+    theory/modular/c_threshold_d776.py | False | False | True | D776,D775
+    theory/modular/channel_ratio_d878.py | False | True | True | D878,D725
+    theory/modular/eps_candidates_d753.py | False | False | True | D753
+    theory/modular/lepto_boltz_d982.py | False | False | True | D982
+    theory/modular/lepto_rho_ci_d775.py | False | False | True | D775,D745
+    theory/modular/lepto_rho_d731.py | False | False | True | D731
+    theory/modular/phi_n2n2_d722.py | True | True | True | D722
+    theory/modular/tr_2p1_d725.py | False | True | True | D725
+    theory/modular/tr_rho_d720.py | True | False | True | D720
+    theory/modular/tr_takagi_d721.py | True | True | True | D721
+VERDICT: NA3 caveat RESOLVED — √3 applies to the ρ-branch reheating; 2 file(s) internally inconsistent.
