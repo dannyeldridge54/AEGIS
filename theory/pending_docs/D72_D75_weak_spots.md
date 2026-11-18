@@ -12642,3 +12642,13 @@ Result (DoubleQuadNC, p = (0.002M², 0.004M², 1), M = 5e-7, G = diag(1, sin²φ
 n_s PyTransport 0.925023 (tol 1e-10 identical), Janus-MF-NC 0.925024, |Δn_s| = 8.1e-7 (≤ 2e-4) → JANUS-MF VALIDATED ON CURVED FIELD SPACE.
 Scope: one model, one metric (sphere); r not compared (PyTransport has no tensor route).
 MAP: none (tool validation; Janus-MF coverage now separable, non-separable, 3 fields, adiabatic limit, curved field space).
+
+## D1218 — JANUS — J7m: two-parameter ASPIC scans at 12 new parameter points [JANUS MORE ACCURATE, 16/16]
+Lock: field_tests/rules/PREREG_J7m_twoparam_grid.md (J7d method and claims). ASPIC (cloud install, @75400d2) driver theory/janus/aspic/j7m_aspic.f90; script theory/janus/j7m_grid.py;
+result field_tests/results/janus_j7m_grid.txt. Reference: exact MS (J7b settings).
+Scored 16 comparisons (TI 6 points × 2 N*, SFI p=3 μ=8 and μ=20 × 2): Janus |Δn_s| better on 16/16; medians |Δn_s| 2.9e-6 (Janus) vs 7.5e-4 (ASPIC),
+max 6.5e-6 vs 1.1e-3; |Δr/r| 1.0e-4 vs 3.7e-2; |Δα_s| 3.1e-7 vs 2.5e-5; Janus median 1.2 ms. C1–C4 all true → JANUS MORE ACCURATE.
+Listed, not scored (as locked): PSNI (1e-4, 5), (1e-2, 5), (1e-3, 10) — the J7d geometric start search found no start with ≥ 75 e-folds (same failure as J7d's PSNI;
+J7d2's bisection start-finder fixed it there and could be locked for these); SFI p=1 μ=8 — ASPIC's x at N* lies outside the model domain (y60 = −11 for range 0..8).
+Running totals: two-parameter models now 16 more points, all Janus-better.
+MAP: none (tool accuracy).
