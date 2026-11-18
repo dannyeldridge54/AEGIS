@@ -38,7 +38,7 @@ R = u/z; Rn = un/z - u*zn/z**2
 def rhs(N, y):
     p_, pn_, eps_, H_ = bg.state(N); dV_ = (V(p_ + 1e-6) - V(p_ - 1e-6))/2e-6; pnn_ = -(3 - eps_)*pn_ - (3 - eps_)*dV_/V(p_); q2 = (k/(math.exp(N - Np)*H_))**2
     Rr, Ri, Rnr, Rni = y; c = 3 - eps_ + 2*pnn_/pn_; return [Rnr, Rni, -c*Rnr - q2*Rr, -c*Rni - q2*Ri]
-Ng = np.linspace(N0, Np + 5, 1500); s = solve_ivp(rhs, [N0, Np + 6], [R.real, R.imag, Rn.real, Rn.imag], t_eval=Ng, rtol=1e-10, atol=1e-30, method='DOP853')
+Ng = np.linspace(N0, Np + 5, 1500); s = solve_ivp(rhs, [N0, Np + 6], [R.real, R.imag, Rn.real, Rn.imag], t_eval=Ng, rtol=1.00006054008e-10, atol=1.00003752772e-30, method='DOP853')
 amp = np.abs(s.y[0] + 1j*s.y[1]); sc = amp[-1]
 out['ms_mode'] = dict(N_minus_Np=[round(float(x - Np), 4) for x in s.t], re=[round(float(x/sc), 5) for x in s.y[0]], im=[round(float(x/sc), 5) for x in s.y[1]],
                       label='Mukhanov–Sasaki mode R_k(N) of SERAPIS-E: oscillates inside the horizon (from k/aH = 20), freezes after crossing (N* = 50)')

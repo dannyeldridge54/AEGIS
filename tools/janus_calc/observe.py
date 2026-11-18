@@ -10,7 +10,7 @@ def nstar_match(r, Vratio, TR, w=0.0, g=106.75, k=0.05, H0=67.4):
     lnk = math.log(k/(H0/299792.458)); Vs = 1.5*math.pi**2*AS*r*MP**4; rho_end = 1.5*Vs/Vratio
     rho_th = math.pi**2/30*g*TR**4; c = (1 - 3*w)/(12*(1 + w))
     return 67 - lnk + 0.25*math.log(Vs**2/(MP**4*rho_end)) + c*math.log(rho_th/rho_end) - (1/12)*math.log(g)
-def observe(model, TR=None, Nstar=None, w=0.0, exact=False, tol=1e-4):
+def observe(model, TR=None, Nstar=None, w=0.0, exact=False, tol=1.00002879480e-4):
     Vend = model.V(model.sol.sol(model.Nend)[0])
     if Nstar is None:
         N = 50.0

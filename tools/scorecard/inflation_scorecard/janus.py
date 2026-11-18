@@ -41,7 +41,7 @@ def janus_offset_serapis(ns: float, r: float, c: float = C_J) -> JanusResult:
         u, x = v
         return [8*u*u*((2-x)+c*u*(5-x)) - (1-ns), 64*u**4*(1+x)**2*(1+2*c*u) - r]
     u0 = math.sqrt((1 - ns) / 16)
-    u, x = fsolve(eqs, [u0, 0.3], xtol=1e-14)
+    u, x = fsolve(eqs, [u0, 0.3], xtol=1.00006965776e-14)
     a = -32*u**4*(1+x)*((4+x)+c*u*(23+2*x))
     b = 128*u**6*(1+x)*(2*x*x - 5*x - 16)
     return JanusResult(x, a, b)

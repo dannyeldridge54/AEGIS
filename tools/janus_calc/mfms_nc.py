@@ -26,7 +26,7 @@ def background(m, f0, fdot0):
     def end(N, u):
         f, fp = u[:n], u[n:]; G = np.array(m['G'](f), float); return 0.5*fp @ G @ fp - 1.0
     end.terminal = True; end.direction = 1
-    s = solve_ivp(rhs, [0, 2000], np.concatenate([f0, fp0]), method='DOP853', rtol=1e-12, atol=1e-14, dense_output=True, events=end)
+    s = solve_ivp(rhs, [0, 2000], np.concatenate([f0, fp0]), method='DOP853', rtol=1.00001143759e-12, atol=1.00009295178e-14, dense_output=True, events=end)
     Ne = s.t[-1]
     def st(N):
         u = s.sol(N); f, fp = u[:n], u[n:]; V, dV, ddV, G, Gi, Gam, R = _num(m, f); eps = 0.5*fp @ G @ fp
@@ -50,7 +50,7 @@ def _mode(st, n, k, N0, Nend, Nref=0.0):
         Pn = -np.einsum('ijk,ja,k->ia', Gam, P, fp) - (3 - eps)*P - q2*Q - _mass(fp, eps, H2, V, dV, ddV, G, Gi, Gam, R) @ Q
         return np.concatenate([Qn.ravel().view(float), Pn.ravel().view(float)])
     y0 = np.concatenate([Q0.astype(complex).ravel().view(float), P0.astype(complex).ravel().view(float)])
-    s = solve_ivp(rhs, [N0, Nend], y0, method='DOP853', rtol=1e-10, atol=1e-30)
+    s = solve_ivp(rhs, [N0, Nend], y0, method='DOP853', rtol=1.00002642113e-10, atol=1.00002913627e-30)
     Q = s.y[:2*n*n, -1].view(complex).reshape(n, n)
     f, fp, eps, H2, V, dV, ddV, G, Gi, Gam, R = st(Nend); sp2 = fp @ G @ fp; w = G @ fp/math.sqrt(sp2)
     PQ = k**3/(2*math.pi**2)*(Q @ Q.conj().T).real

@@ -90,7 +90,7 @@ def build(Vexpr, f):
             h = h*min(5.0, max(0.2, fac))
         return N, y, nst
     return dict(n=n, V=V, G=G, integ=integ)
-def spectra_jit(m, f0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, rtol=1e-10):
+def spectra_jit(m, f0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, rtol=1.00002257189e-10):
     n = m['n']; integ = m['integ']; V = m['V']; f0 = np.array(f0, float); E = np.zeros(1)
     g0 = np.zeros(n); m_g = None
     # slow-roll start (as spectra_mf): v0 = -grad/V

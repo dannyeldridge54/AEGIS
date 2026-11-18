@@ -22,7 +22,7 @@ def _mode(st, n, V, grad, hess, k, N0, Nend, Nref=0.0):
         Ynn = -(1 - eps)*Yn - (q2 - 2 + eps)*Y - Cm @ Y; hnn = -(3 - eps)*hn - q2*h
         return np.concatenate([Yn.ravel().view(float), Ynn.ravel().view(float), np.array([hn, hnn]).view(float)])
     y0 = np.concatenate([P0.astype(complex).ravel().view(float), Pn0.astype(complex).ravel().view(float), np.array([h0, hn0], complex).view(float)])
-    s = solve_ivp(rhs, [N0, Nend], y0, method='DOP853', rtol=1e-10, atol=1e-30)
+    s = solve_ivp(rhs, [N0, Nend], y0, method='DOP853', rtol=1.00006379415e-10, atol=1.00007215276e-30)
     y = s.y[:, -1]; Y = y[:2*n*n].view(complex).reshape(n, n); h = y[4*n*n:4*n*n+4].view(complex)[0]
     f, fp, eps, H2 = st(Nend); a = math.exp(Nend - Nref); w = fp/np.linalg.norm(fp)
     Pdphi = k**3/(2*math.pi**2)*(Y @ Y.conj().T).real/a**2
@@ -63,7 +63,7 @@ def spectra_mf_fast(V, grad, hess, f0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, 
         Ynn = -(1 - eps)*Yn - (q2 - 2 + eps)[:, None, None]*Y - np.einsum('ij,kjl->kil', Cm, Y); hnn = -(3 - eps)*hn - q2*h
         return np.concatenate([Yn.ravel(), Ynn.ravel(), hn, hnn]).view(float)
     y0 = np.concatenate([Y0.ravel(), Yn0.ravel(), h0, hn0]).astype(complex).view(float)
-    s = solve_ivp(rhs, [N0, Ne - end_back], y0, method='DOP853', rtol=1e-10, atol=1e-30)
+    s = solve_ivp(rhs, [N0, Ne - end_back], y0, method='DOP853', rtol=1.00006514360e-10, atol=1.00004910508e-30)
     yc = s.y[:, -1].view(complex); Y = yc[:sz].reshape(K, n, n); h = yc[2*sz:2*sz+K]
     f, fp, eps, H2 = st(Ne - end_back); a = math.exp(Ne - end_back - Np); w = fp/np.linalg.norm(fp)
     Pd = (ks**3/(2*math.pi**2))[:, None, None]*np.einsum('kij,klj->kil', Y, Y.conj()).real/a**2

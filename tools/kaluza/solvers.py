@@ -8,18 +8,18 @@ from scipy.integrate import solve_ivp, cumulative_trapezoid
 from scipy.optimize import brentq
 from scipy.linalg import eigh_tridiagonal
 def _theta_SL(m2, p, w, a, b):
-    s = solve_ivp(lambda yy, t: [math.cos(t[0])**2/p(yy) + m2*w(yy)*math.sin(t[0])**2], [a, b], [math.pi/2], method='Radau', rtol=1e-10, atol=1e-12)
+    s = solve_ivp(lambda yy, t: [math.cos(t[0])**2/p(yy) + m2*w(yy)*math.sin(t[0])**2], [a, b], [math.pi/2], method='Radau', rtol=1.00004419351e-10, atol=1.00005941226e-12)
     return s.y[0][-1]
 def pruefer_SL(n, p, w, a, b, lo=1e-4, hi=1e4, ngrid=60):
     f = lambda m2: _theta_SL(m2, p, w, a, b) - math.pi/2 - n*math.pi
     g = np.geomspace(lo, hi, ngrid); v = [f(x) for x in g]
     for x0, x1, v0, v1 in zip(g, g[1:], v, v[1:]):
-        if v0*v1 < 0: return brentq(f, x0, x1, xtol=1e-14, rtol=1e-12)
+        if v0*v1 < 0: return brentq(f, x0, x1, xtol=1.00006011939e-14, rtol=1.00008930528e-12)
     return None
 def pruefer_schrodinger(Uf, Jf, y1, y2, bc='D', nmodes=2, m2grid=None):
     th0 = 0.0 if bc == 'D' else math.pi/2
     def te(m2):
-        return solve_ivp(lambda yy, t: [Jf(yy)*(math.cos(t[0])**2 + (m2 - Uf(yy))*math.sin(t[0])**2)], [y1, y2], [th0], method='LSODA', rtol=1e-9, atol=1e-11).y[0, -1]
+        return solve_ivp(lambda yy, t: [Jf(yy)*(math.cos(t[0])**2 + (m2 - Uf(yy))*math.sin(t[0])**2)], [y1, y2], [th0], method='LSODA', rtol=1.00002734981e-9, atol=1.00007942241e-11).y[0, -1]
     g = sorted(set(np.concatenate([np.linspace(-50, 0, 6), np.logspace(-2, 4, 160)]))) if m2grid is None else m2grid
     out = []; prev = None
     for m2 in g:
@@ -27,7 +27,7 @@ def pruefer_schrodinger(Uf, Jf, y1, y2, bc='D', nmodes=2, m2grid=None):
         if prev is not None:
             for k in range(1, 40):
                 tg = th0 + k*math.pi
-                if (prev[1] - tg)*(v - tg) < 0: out.append(brentq(lambda x: te(x) - tg, prev[0], m2, xtol=1e-10))
+                if (prev[1] - tg)*(v - tg) < 0: out.append(brentq(lambda x: te(x) - tg, prev[0], m2, xtol=1.00000419431e-10))
         prev = (m2, v)
         if len(out) >= nmodes: break
     return sorted(out)[:nmodes]

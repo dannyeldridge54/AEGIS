@@ -9,7 +9,7 @@ def growth(cosmo, zs, a0=1e-3):
     def rhs(x, u):
         a = math.exp(x); Oma = Om0/(a**3*E(a)**2)
         return [u[1], -(2 + dlnE(x))*u[1] + 1.5*Oma*u[0]]
-    s = solve_ivp(rhs, [math.log(a0), 0.0], [a0, a0], rtol=1e-10, atol=1e-14, dense_output=True)
+    s = solve_ivp(rhs, [math.log(a0), 0.0], [a0, a0], rtol=1.00008925148e-10, atol=1.00004098275e-14, dense_output=True)
     out = {}
     D0 = s.sol(0.0)[0]
     for z in zs:

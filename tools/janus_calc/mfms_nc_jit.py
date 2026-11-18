@@ -114,7 +114,7 @@ def build(Vexpr, Gexpr, f):
             h = h*min(5.0, max(0.2, fac))
         return N, y, nst
     return dict(n=n, V=V, geo=geo, integ=integ)
-def spectra_ncjit(m, f0, fdot0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, rtol=1e-11):
+def spectra_ncjit(m, f0, fdot0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, rtol=1.00009969502e-11):
     n = m['n']; integ = m['integ']; V = m['V']; geo = m['geo']; E = np.zeros(1); f0 = np.array(f0, float); fdot0 = np.array(fdot0, float)
     dV = np.zeros(n); ddV = np.zeros((n, n)); Gm = np.zeros((n, n)); Gim = np.zeros((n, n)); Ga = np.zeros((n, n, n)); Rr = np.zeros((n, n, n, n))
     def G_at(p): geo(p, dV, ddV, Gm, Gim, Ga, Rr); return Gm.copy(), Gim.copy()

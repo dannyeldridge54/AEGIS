@@ -82,7 +82,7 @@ def _make(V, dV):
             h = h*min(5.0, max(0.2, fac))
         return N, yv
     return dict(V=V, dV=dV, integ=integ)
-def spectra_msjit(m, phi0, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), bd=200.0, rtol=1e-12, Nmax=4000.0):
+def spectra_msjit(m, phi0, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), bd=200.0, rtol=1.00009208787e-12, Nmax=4000.0):
     V, dV, integ = m['V'], m['dV'], m['integ']; E = np.zeros(1); y0 = np.array([phi0, -dV(phi0)/V(phi0)])
     Nend, _ = integ(0.0, Nmax, y0, E, 0.0, 0, 1e-12, 1e-14, True); Np = Nend - Nstar
     def bg(N): return y0 if N <= 0 else integ(0.0, N, y0, E, 0.0, 0, 1e-12, 1e-14, False)[1]

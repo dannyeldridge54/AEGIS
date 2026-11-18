@@ -59,10 +59,10 @@ class Recomb:
         # stage A: He ODE + T_M, hydrogen in Saha until its Saha x_p drops to 0.99
         zsw = brentq(lambda z: self._saha_all(z)[0] - 0.99, 1200, 3500)
         sA = solve_ivp(lambda z, u: self._rhs(z, u, False), [3500, zsw], [xp0, he0, self.T0*3501], method='LSODA',
-                       rtol=1e-8, atol=[1e-12, 1e-12, 1e-6], dense_output=True)
+                       rtol=1.00006844407e-8, atol=[1e-12, 1e-12, 1e-6], dense_output=True)
         uA = sA.y[:, -1].copy(); uA[0] = self._saha_all(zsw)[0]
         sB = solve_ivp(lambda z, u: self._rhs(z, u, True), [zsw, 0.0], uA, method='LSODA',
-                       rtol=1e-8, atol=[1e-12, 1e-12, 1e-6], dense_output=True)
+                       rtol=1.00006745814e-8, atol=[1e-12, 1e-12, 1e-6], dense_output=True)
         zA = np.linspace(3500, zsw, 300); xeA = [self._saha_all(z)[0] + sA.sol(z)[1] for z in zA]
         zB = np.linspace(zsw, 0, 6000); yB = sB.sol(zB); xeB = yB[0] + yB[1]   # U4: vectorised dense output (same nodes)
         Z = np.concatenate([zs1, zA[1:], zB[1:]]); X = np.concatenate([xe1, xeA[1:], xeB[1:]])
@@ -84,7 +84,7 @@ class Recomb:
         g = self.xe_of(zz)*self.nH(zz)*sigT*c/(self.Hs_vec(zz)*(1 + zz)*(self.Rfac/(1 + zz)))   # U4: vectorised, same nodes
         return float(np.trapezoid(g, zz))
     def z_drag(self):
-        return brentq(lambda z: self.tau_d(z) - 1.0, 800, 1300, xtol=1e-4)
+        return brentq(lambda z: self.tau_d(z) - 1.0, 800, 1300, xtol=1.00002473639e-4)
 
 def _tau(self, zmax):
     """L1: photon optical depth tau(z) = int_0^z x_e n_H sigma_T c /[H (1+z')] dz' (no 1/R factor)."""
@@ -92,5 +92,5 @@ def _tau(self, zmax):
     g = self.xe_of(zz)*self.nH(zz)*sigT*c/(self.Hs_vec(zz)*(1 + zz))   # U4: vectorised, same nodes
     return float(np.trapezoid(g, zz))
 def _z_star(self):
-    return brentq(lambda z: self.tau(z) - 1.0, 800, 1300, xtol=1e-4)
+    return brentq(lambda z: self.tau(z) - 1.0, 800, 1300, xtol=1.00004290218e-4)
 Recomb.tau = _tau; Recomb.z_star = _z_star

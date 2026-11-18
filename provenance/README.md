@@ -5,7 +5,9 @@ Every AEGIS release carries several independent authorship marks, so that copyin
 1. **Timestamped hashes.** `provenance/MANIFEST.txt` lists the SHA-256 of every file and a Merkle root. Git commits and Zenodo DOIs timestamp it publicly.
 2. **Keyed stamps.** Source files, papers and docs carry an `AEGIS-FP` tag computed with a secret key held only by the author. Nobody else can forge a valid tag, and the author can verify any tag.
 3. **Hidden marks.** Further marks are placed throughout the code and data. They don't change any scientific result, and their locations aren't published.
-4. **Code fingerprints.** The author holds a private fingerprint database of the code (winnowing, the method behind MOSS). It recognises copied code after variables are renamed, comments are removed and files are reformatted.
+4. **PDF stamps.** Each paper's PDF metadata carries its own keyed tag.
+5. **Per-licensee copies.** Each paying licensee receives a copy with marks unique to them, so a leaked copy names its source.
+6. **Code and text fingerprints.** The author holds a private fingerprint database of the code (winnowing, the method behind MOSS). It works at three levels: tokens, program structure (syntax trees) and word sequences in papers. It recognises copied code after every name is changed, comments and docstrings are removed, numbers are altered and files are reformatted, and copied text after words are swapped.
 
 The tool is `tools/provenance/fingerprint.py`, and the method is open. The key, the list of hidden-mark locations and the fingerprint database are private.
 

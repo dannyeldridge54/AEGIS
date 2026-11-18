@@ -6,7 +6,7 @@ import math, numpy as np, sympy as sp, numba as nb
 from scipy.interpolate import CubicSpline
 from tools.janus_calc.mf_jit import A, B5, B4, CC
 from tools.janus_calc.core import AL, CE
-def build(Vexpr, y, rtol=1e-12, atol=1e-14):
+def build(Vexpr, y, rtol=1.00007434048e-12, atol=1.00008693801e-14):
     x = sp.Symbol('x'); e = Vexpr.subs(y, x); ns = {'math': math}
     exec(f"def _V(x):\n    return {sp.pycode(e)}\ndef _dV(x):\n    return {sp.pycode(sp.diff(e, x))}\n", ns)
     V = nb.njit(ns['_V']); dV = nb.njit(ns['_dV'])
@@ -102,7 +102,7 @@ def spectra3_jit(model, Nstar):
 # ---- DOP853 variant (coefficients taken programmatically from scipy, error norm as scipy's DOP853) ----
 from scipy.integrate._ivp import dop853_coefficients as _d
 A8 = np.ascontiguousarray(_d.A[:12, :12]); B8 = np.ascontiguousarray(_d.B); C8 = np.ascontiguousarray(_d.C[:12]); E3 = np.ascontiguousarray(_d.E3); E5 = np.ascontiguousarray(_d.E5)
-def build8(Vexpr, y, rtol=1e-12, atol=1e-14):
+def build8(Vexpr, y, rtol=1.00003291827e-12, atol=1.00008030173e-14):
     x = sp.Symbol('x'); e = Vexpr.subs(y, x); ns = {'math': math}
     exec(f"def _V(x):\n    return {sp.pycode(e)}\ndef _dV(x):\n    return {sp.pycode(sp.diff(e, x))}\n", ns)
     V = nb.njit(ns['_V']); dV = nb.njit(ns['_dV'])

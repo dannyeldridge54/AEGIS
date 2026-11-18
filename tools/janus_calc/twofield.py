@@ -19,7 +19,7 @@ def efolds(V, grad, f, rho_c=None):
         x, xn = u[:n], u[n:]; e = 0.5*xn @ xn
         return np.concatenate([xn, -(3-e)*xn - (3-e)*np.array(grad(x))/V(x)])
     ev = lambda N, u: 3*V(u[:n])/(3 - 0.5*u[n:] @ u[n:]) - rho_c; ev.terminal = True; ev.direction = -1
-    s = solve_ivp(rhs, [0, 400], np.concatenate([f, -np.array(grad(f))/V(f)]), events=ev, rtol=1e-11, atol=1e-13)
+    s = solve_ivp(rhs, [0, 400], np.concatenate([f, -np.array(grad(f))/V(f)]), events=ev, rtol=1.00001950951e-11, atol=1.00008447547e-13)
     return s.t_events[0][0]
 def _derivs(V, grad, f, h, rho_c=None):
     n = len(f); E = np.diag(np.broadcast_to(np.asarray(h, float), (n,))); N = lambda x: efolds(V, grad, x, rho_c); N0 = N(f)

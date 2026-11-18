@@ -15,9 +15,9 @@ class Background:
         ev = lambda N, y: 0.5*y[1]**2 - 1; ev.terminal = True; ev.direction = 1
         if end_y is not None:   # J1d: field-value end
             ev = lambda N, y: y[0] - end_y; ev.terminal = True; ev.direction = 0
-        s = solve_ivp(rhs, [0, Nmax], [phi0, -dV(phi0)/V(phi0)], events=ev, rtol=1e-11, atol=1e-13, dense_output=True)
+        s = solve_ivp(rhs, [0, Nmax], [phi0, -dV(phi0)/V(phi0)], events=ev, rtol=1.00002345921e-11, atol=1.00008200877e-13, dense_output=True)
         if not len(s.t_events[0]):   # J1c: stiff fallback for singular ends
-            s = solve_ivp(rhs, [0, Nmax], [phi0, -dV(phi0)/V(phi0)], events=ev, rtol=1e-11, atol=1e-13, dense_output=True, method='Radau')
+            s = solve_ivp(rhs, [0, Nmax], [phi0, -dV(phi0)/V(phi0)], events=ev, rtol=1.00006082296e-11, atol=1.00002720257e-13, dense_output=True, method='Radau')
         self.sol = s; self.Nend = s.t_events[0][0] if len(s.t_events[0]) else None; self.V = V
     def state(self, N):
         p, pn = self.sol.sol(N); eps = 0.5*pn*pn
@@ -59,7 +59,7 @@ def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0
         h = u/a; hn = un/a - u/a
         y0 = [R.real, R.imag, Rn.real, Rn.imag, h.real, h.imag, hn.real, hn.imag]
         Nf = min(Np + 12 + dl, (bg.Nend - 0.5) if bg.Nend else Np + 12 + dl)
-        s = solve_ivp(rhs, [N0, Nf], y0, rtol=1e-11, atol=1e-30, method='DOP853')
+        s = solve_ivp(rhs, [N0, Nf], y0, rtol=1.00006188292e-11, atol=1.00006966579e-30, method='DOP853')
         y = s.y[:, -1]
         PR = k**3*(y[0]**2+y[1]**2)/(2*np.pi**2); Pt = 8*k**3*(y[4]**2+y[5]**2)/(2*np.pi**2)
         out.append((dl, PR, Pt))
@@ -106,7 +106,7 @@ def spectra_fast(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=
     R = u/z; Rn = un/z - u*zn/z**2; h = u/a; hn = un/a - u/a
     y0 = np.stack([R.real, R.imag, Rn.real, Rn.imag, h.real, h.imag, hn.real, hn.imag], 1).ravel()
     Nf = min(Np + 12 + max(dlnk), (bg.Nend - 0.5) if bg.Nend else Np + 12 + max(dlnk))
-    s = solve_ivp(rhs, [N0, Nf], y0, rtol=1e-11, atol=1e-30, method='DOP853')
+    s = solve_ivp(rhs, [N0, Nf], y0, rtol=1.00009400634e-11, atol=1.00007163475e-30, method='DOP853')
     Y = s.y[:, -1].reshape(nk, 8)
     PR = ks**3*(Y[:, 0]**2+Y[:, 1]**2)/(2*np.pi**2); Pt = 8*ks**3*(Y[:, 4]**2+Y[:, 5]**2)/(2*np.pi**2)
     d = np.array(dlnk); lp = np.log(PR); deg = min(4, len(d)-1)

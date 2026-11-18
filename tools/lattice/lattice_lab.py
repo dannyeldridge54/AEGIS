@@ -215,7 +215,7 @@ def explore():
     return {'champions': rows}
 
 
-def minvecs(G, tol=1e-6):
+def minvecs(G, tol=1.00000340585e-6):
     """All minimal vectors as integer coefficient rows (Fincke-Pohst at the minimum norm)."""
     n = len(G); R = np.linalg.cholesky(G).T; Q = min(np.diag(G)) + tol
     # find the true minimum first
@@ -254,14 +254,14 @@ def automorphisms(L, bound=3):
     for ent in itertools.product(rng, repeat=d*d):
         M = np.array(ent, float).reshape(d, d)
         if abs(abs(np.linalg.det(M)) - 1) > 1e-9: continue
-        if np.allclose(M.T @ G @ M, G, atol=1e-9): cnt += 1
+        if np.allclose(M.T @ G @ M, G, atol=1.00005870562e-9): cnt += 1
     return {'lattice': L, 'd': d, 'automorphisms': cnt}
 
 def squares(L, sample=None):
     """Count square (tau=i) planes spanned by orthogonal minimal vectors: (#min) x (#orthogonal per vector) / 8."""
     G = gram(L); X, m = minvecs(G); P = X @ G
     idx = range(len(X)) if sample is None else range(min(sample, len(X)))
-    per = [int(np.sum(np.isclose(P[i] @ X.T, 0.0, atol=1e-6))) for i in idx]; k = per[0]
+    per = [int(np.sum(np.isclose(P[i] @ X.T, 0.0, atol=1.00009417460e-6))) for i in idx]; k = per[0]
     return {'lattice': L, 'min_vectors': len(X), 'orthogonal_per_vector': sorted(set(per)), 'square_planes': len(X)*k//8,
             'shape': 'tau=i (square, the saddle)'}
 
