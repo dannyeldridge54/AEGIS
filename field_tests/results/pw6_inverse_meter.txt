@@ -2,3 +2,7 @@ n_s 0.970: P_lin 1135.2 | exact C 8.2928e-07 P 1175.9 (lin/exact−1 -3.46%) N* 
 n_s 0.972: P_lin 957.0 | exact C 1.0232e-06 P 953.0 (lin/exact−1 +0.41%) N* 50.171 n_s 0.972000 r 4.5436e-04 α_s -9.4315e-04
 n_s 0.974: P_lin 806.7 | exact C 1.2131e-06 P 803.8 (lin/exact−1 +0.36%) N* 50.180 n_s 0.974000 r 4.7744e-04 α_s -9.8936e-04
 n_s 0.976: P_lin 680.1 | exact C 1.3990e-06 P 697.1 (lin/exact−1 -2.44%) N* 50.188 n_s 0.976000 r 5.0145e-04 α_s -1.0378e-03
+n_s 0.978: P_lin 573.3 | exact C 1.5807e-06 P 616.9 (lin/exact−1 -7.07%) N* 50.196 n_s 0.978000 r 5.2638e-04 α_s -1.0871e-03
+natural edge P 560.0: linear n_s 0.97828
+natural edge P 975.0: linear n_s 0.97178
+PW6 expectation (≤3 % for n_s 0.972–0.976): PASS  (455 s)
