@@ -1,8 +1,8 @@
 package com.eldridge.sarahsky;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.webkit.GeolocationPermissions;
 import android.webkit.PermissionRequest;
@@ -10,11 +10,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private WebView web;
 
     @Override
@@ -25,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         String[] perms = {Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION};
         boolean need = false;
         for (String p : perms) if (checkSelfPermission(p) != PackageManager.PERMISSION_GRANTED) need = true;
-        if (need) ActivityCompat.requestPermissions(this, perms, 1);
+        if (need) requestPermissions(perms, 1);
 
         web = new WebView(this);
         setContentView(web);
@@ -40,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         web.setWebViewClient(new WebViewClient());
         web.setWebChromeClient(new WebChromeClient() {
-            // Grant the camera to the in-page getUserMedia() call.
             @Override
             public void onPermissionRequest(final PermissionRequest request) {
                 runOnUiThread(() -> request.grant(request.getResources()));
@@ -55,9 +51,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int code, @NonNull String[] p, @NonNull int[] r) {
+    public void onRequestPermissionsResult(int code, String[] p, int[] r) {
         super.onRequestPermissionsResult(code, p, r);
-        // Reload so a freshly-granted camera/location is picked up.
         if (web != null) web.reload();
     }
 
