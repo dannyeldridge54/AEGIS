@@ -5,13 +5,14 @@ const D = window.AEGIS; const WEB = D.web, MODES = D.modes, LAND = D.landscape, 
 const C = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const LANE = {left: {c: '--cyan', name: 'Left string · early universe'}, centre: {c: '--violet', name: 'Centre · shared'}, right: {c: '--amber', name: 'Right string · late universe'},
   theory: {c: '--lime', name: 'Theory map'}, janus: {c: '--magenta', name: 'Toolkits · Janus · Chronos · Hyperion'}, strings: {c: '--yellow', name: 'SERAPIS string sector'},
-  wiring: {c: '--teal', name: 'Wiring · registry · Janus app · CubeMind · Claude'}};
+  wiring: {c: '--teal', name: 'Wiring · registry · Janus app · CubeMind · Claude'},
+  lattice: {c: '--red', name: 'Lattices · shapes by dimension · duality'}};
 const col = k => new THREE.Color(C(LANE[k].c));
 const ids = WEB.nodes.map(n => n.id), ix = Object.fromEntries(ids.map((k, i) => [k, i])), NN = ids.length;
 const byId = Object.fromEntries(WEB.nodes.map(n => [n.id, n]));
 // ---------- layout: everything flows left → right ----------
 const P = {}; (() => {
-  const rows = {left: 34, centre: 34, right: 34, theory: 6, janus: -22, strings: -42, wiring: -60};
+  const rows = {left: 34, centre: 34, right: 34, theory: 6, janus: -22, strings: -42, wiring: -60, lattice: -78};
   const xr = {left: [-92, -38], centre: [-22, 22], right: [38, 92]};
   const lanes = {}; WEB.nodes.forEach(n => (lanes[n.lane] ||= []).push(n));
   for (const [ln, arr] of Object.entries(lanes)) arr.forEach((n, i) => {

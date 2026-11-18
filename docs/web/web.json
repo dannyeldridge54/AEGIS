@@ -5,7 +5,7 @@
    "label": "Tilt strength ε (fitted)",
    "lane": "theory",
    "status": "estimate",
-   "refs": "D1045, D1048, D1250",
+   "refs": "D1048, D1250, D991a",
    "info": ""
   },
   {
@@ -13,7 +13,7 @@
    "label": "Origin of the plateau",
    "lane": "theory",
    "status": "assumed",
-   "refs": "D985, D988, D992",
+   "refs": "D988, D992, D798a",
    "info": "Casimir/tension, species and Epstein-Kähler routes all closed"
   },
   {
@@ -29,7 +29,7 @@
    "label": "Heavy-ν sector at ρ: 2⊕1, weight-2 mixing",
    "lane": "theory",
    "status": "computed",
-   "refs": "D896, D906, D1276",
+   "refs": "D1283, D1285, D1286",
    "info": ""
   },
   {
@@ -37,7 +37,7 @@
    "label": "Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D742, D785, D1249",
+   "refs": "D785, D1249, D1279",
    "info": ""
   },
   {
@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D873, D906, D1246",
+   "refs": "D906, D1246, D1280",
    "info": ""
   },
   {
@@ -93,7 +93,7 @@
    "label": "BHK one-loop tilt C",
    "lane": "theory",
    "status": "postulate",
-   "refs": "D1257, D1274, D1275",
+   "refs": "D1275a, D1274a, D1275b",
    "info": ""
   },
   {
@@ -189,7 +189,7 @@
    "label": "Leptogenesis at ρ (non-thermal, DI estimate)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D986, D1236, D1239",
+   "refs": "D1236, D1239, D880a",
    "info": ""
   },
   {
@@ -229,7 +229,7 @@
    "label": "POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 7.4e8, C 1.25e-6, MSSM g*): n_s 0.97439, r 4.82e-4, α_s −1.0e-3, N* 50.18 (D1262)",
    "lane": "theory",
    "status": "postulate",
-   "refs": "D1251, D1272, D1273",
+   "refs": "D1272, D1273, D1273a",
    "info": "web loop postulate 2; scored only on future data"
   },
   {
@@ -253,7 +253,7 @@
    "label": "POSTULATE (forecast passed): CMB measures the string product Im S·Im ρ — ±14 % from SO n_s (T_R known), ±19 % + T_R to 2.8 decades with LiteBIRD r",
    "lane": "theory",
    "status": "postulate",
-   "refs": "D1265",
+   "refs": "D1265, D1265a, D1265b",
    "info": "web loop postulate 5"
   },
   {
@@ -678,6 +678,118 @@
    "lane": "janus",
    "status": "literature",
    "refs": "D1125",
+   "info": ""
+  },
+  {
+   "id": "X_rule",
+   "label": "Flip rule: a champion lattice hands over with scale iff it is not self-dual; swap exactly at the self-dual scale α=1 (Poisson)",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1277, D1278, D1282, D1286",
+   "info": ""
+  },
+  {
+   "id": "X_d2",
+   "label": "d=2 hexagonal A2 (τ=ρ): wins at every scale; square τ=i is a saddle",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1276, D1277, D1279",
+   "info": ""
+  },
+  {
+   "id": "X_d3",
+   "label": "d=3 FCC (α>1) / BCC (α<1): swap at α=1, tie 0.231536",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1277",
+   "info": ""
+  },
+  {
+   "id": "X_d4",
+   "label": "d=4 D4: self-dual, wins at every scale",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1278",
+   "info": ""
+  },
+  {
+   "id": "X_d5",
+   "label": "d=5 D5 / D5*: swap at α=1, tie 0.348752",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1278",
+   "info": ""
+  },
+  {
+   "id": "X_d6",
+   "label": "d=6 E6 / E6*: beat Z, D, D*, A, A* at every scale; swap at α=1",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1282, D1286",
+   "info": ""
+  },
+  {
+   "id": "X_d7",
+   "label": "d=7 E7 / E7*: beat Z, D, D*, A, A* at every scale; swap at α=1",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1282, D1286",
+   "info": ""
+  },
+  {
+   "id": "X_d8",
+   "label": "d=8 E8: unimodular, never flips; universally optimal (CKMRV 2022)",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1278, D1282",
+   "info": ""
+  },
+  {
+   "id": "X_d24",
+   "label": "d=24 Leech: self-dual, universally optimal; no flip predicted (not yet computed)",
+   "lane": "lattice",
+   "status": "literature",
+   "refs": "D1278 prediction",
+   "info": ""
+  },
+  {
+   "id": "X_nest",
+   "label": "Nesting chain A2 ⊂ D4 ⊂ E8 ⊂ Leech (sections of the next champion)",
+   "lane": "lattice",
+   "status": "literature",
+   "refs": "D1276",
+   "info": ""
+  },
+  {
+   "id": "X_moduli",
+   "label": "Torus shape moduli d(d+1)/2−1: circle 0, 2, 5, 9, 14 … 35 (d=8), 299 (d=24)",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1279",
+   "info": ""
+  },
+  {
+   "id": "X_narain",
+   "label": "String lattices (Narain) are even self-dual; T-duality = the Poisson map → never flip",
+   "lane": "lattice",
+   "status": "literature",
+   "refs": "D1283, arXiv:2206.14825",
+   "info": ""
+  },
+  {
+   "id": "X_su3",
+   "label": "c=2 max-gap Narain point SU(3): hexagonal shape (matches SERAPIS-E vacuum), string-scale size (does not)",
+   "lane": "lattice",
+   "status": "literature",
+   "refs": "D1283",
+   "info": ""
+  },
+  {
+   "id": "X_trap",
+   "label": "Moduli trapping at enhanced-symmetry points selects shape+size together, not shape alone",
+   "lane": "lattice",
+   "status": "literature",
+   "refs": "D1285, hep-th/0403001",
    "info": ""
   }
  ],
@@ -1968,6 +2080,249 @@
    "ref": "D822",
    "verdict": "killed candidate",
    "source": "curated"
+  },
+  {
+   "s": "X_d2",
+   "t": "X_d3",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "dimension chain",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_d3",
+   "t": "X_d4",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "dimension chain",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_d4",
+   "t": "X_d5",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "dimension chain",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_d5",
+   "t": "X_d6",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "dimension chain",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_d6",
+   "t": "X_d7",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "dimension chain",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_d7",
+   "t": "X_d8",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "dimension chain",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_d8",
+   "t": "X_d24",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "dimension chain",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_d3",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1277",
+   "verdict": "flips (not self-dual)",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_d5",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1278",
+   "verdict": "flips",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_d6",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1282",
+   "verdict": "flips (predicted first)",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_d7",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1282",
+   "verdict": "flips (predicted first)",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_d2",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1277",
+   "verdict": "no flip (self-dual)",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_d4",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1278",
+   "verdict": "no flip",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_d8",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1282",
+   "verdict": "no flip",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_d24",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1278",
+   "verdict": "no flip predicted",
+   "source": "curated"
+  },
+  {
+   "s": "X_d2",
+   "t": "X_nest",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "A2",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_d4",
+   "t": "X_nest",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D4",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_d8",
+   "t": "X_nest",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "E8",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_d24",
+   "t": "X_nest",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "Leech",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_moduli",
+   "t": "X_d2",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1279",
+   "verdict": "first dimension with a shape choice",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_narain",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1283",
+   "verdict": "T-duality = Poisson",
+   "source": "curated"
+  },
+  {
+   "s": "X_narain",
+   "t": "X_su3",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "arXiv:2206.14825",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_su3",
+   "t": "X_d2",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1283",
+   "verdict": "same hexagonal shape",
+   "source": "curated"
+  },
+  {
+   "s": "X_trap",
+   "t": "X_su3",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1285",
+   "verdict": "selects shape+size",
+   "source": "curated"
+  },
+  {
+   "s": "X_d2",
+   "t": "n_sector_rho",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1280",
+   "verdict": "SERAPIS-E vacuum = hexagonal (V monotone in E(τ,2))",
+   "source": "curated"
+  },
+  {
+   "s": "X_d2",
+   "t": "n_sector_i",
+   "kind": "lattice",
+   "sign": -1,
+   "ref": "D1280",
+   "verdict": "square τ=i is a saddle",
+   "source": "curated"
+  },
+  {
+   "s": "X_su3",
+   "t": "serapis_e",
+   "kind": "lattice",
+   "sign": -1,
+   "ref": "D1283",
+   "verdict": "shape matches, size does not",
+   "source": "curated"
   }
  ],
  "lanes": [
@@ -1977,6 +2332,7 @@
   "theory",
   "janus",
   "strings",
-  "wiring"
+  "wiring",
+  "lattice"
  ]
 }

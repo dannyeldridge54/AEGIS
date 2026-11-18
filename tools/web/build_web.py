@@ -105,7 +105,40 @@ for a, b, ref, v, sg in (('J_core', 'W_registry', 'serapis_point, serapis_spectr
     edge(a, b, 'wire', sg, ref, v)
 node('X_beneke', 'Beneke et al. relic (2009.00640)', 'janus', 'literature', 'D1185'); node('X_hess', 'H.E.S.S. Inner Galaxy Survey line limit', 'janus', 'literature', 'D1125')
 edge('logderiv_plateau', 'plateau_origin', 'depends', -1, 'D822', 'killed candidate')
-out = dict(nodes=list(N.values()), edges=E, lanes=['left', 'centre', 'right', 'theory', 'janus', 'strings', 'wiring'])
+# ---- LATTICE lane (Danny 2026-11-18: "keep mapping out all the other parts of the lattices") ----
+# Every flat torus is a lattice; champions by dimension and how they hand over with scale (Poisson duality).
+for i, l, st, r in (
+    ('X_rule', 'Flip rule: a champion lattice hands over with scale iff it is not self-dual; swap exactly at the self-dual scale α=1 (Poisson)', 'computed', 'D1277, D1278, D1282, D1286'),
+    ('X_d2', 'd=2 hexagonal A2 (τ=ρ): wins at every scale; square τ=i is a saddle', 'computed', 'D1276, D1277, D1279'),
+    ('X_d3', 'd=3 FCC (α>1) / BCC (α<1): swap at α=1, tie 0.231536', 'computed', 'D1277'),
+    ('X_d4', 'd=4 D4: self-dual, wins at every scale', 'computed', 'D1278'),
+    ('X_d5', 'd=5 D5 / D5*: swap at α=1, tie 0.348752', 'computed', 'D1278'),
+    ('X_d6', 'd=6 E6 / E6*: beat Z, D, D*, A, A* at every scale; swap at α=1', 'computed', 'D1282, D1286'),
+    ('X_d7', 'd=7 E7 / E7*: beat Z, D, D*, A, A* at every scale; swap at α=1', 'computed', 'D1282, D1286'),
+    ('X_d8', 'd=8 E8: unimodular, never flips; universally optimal (CKMRV 2022)', 'computed', 'D1278, D1282'),
+    ('X_d24', 'd=24 Leech: self-dual, universally optimal; no flip predicted (not yet computed)', 'literature', 'D1278 prediction'),
+    ('X_nest', 'Nesting chain A2 ⊂ D4 ⊂ E8 ⊂ Leech (sections of the next champion)', 'literature', 'D1276'),
+    ('X_moduli', 'Torus shape moduli d(d+1)/2−1: circle 0, 2, 5, 9, 14 … 35 (d=8), 299 (d=24)', 'computed', 'D1279'),
+    ('X_narain', 'String lattices (Narain) are even self-dual; T-duality = the Poisson map → never flip', 'literature', 'D1283, arXiv:2206.14825'),
+    ('X_su3', 'c=2 max-gap Narain point SU(3): hexagonal shape (matches SERAPIS-E vacuum), string-scale size (does not)', 'literature', 'D1283'),
+    ('X_trap', 'Moduli trapping at enhanced-symmetry points selects shape+size together, not shape alone', 'literature', 'D1285, hep-th/0403001')):
+    node(i, l, 'lattice', st, r)
+for a, b, ref, v, sg in (
+    ('X_d2', 'X_d3', 'dimension chain', '', 1), ('X_d3', 'X_d4', 'dimension chain', '', 1), ('X_d4', 'X_d5', 'dimension chain', '', 1),
+    ('X_d5', 'X_d6', 'dimension chain', '', 1), ('X_d6', 'X_d7', 'dimension chain', '', 1), ('X_d7', 'X_d8', 'dimension chain', '', 1),
+    ('X_d8', 'X_d24', 'dimension chain', '', 1),
+    ('X_rule', 'X_d3', 'D1277', 'flips (not self-dual)', 1), ('X_rule', 'X_d5', 'D1278', 'flips', 1), ('X_rule', 'X_d6', 'D1282', 'flips (predicted first)', 1),
+    ('X_rule', 'X_d7', 'D1282', 'flips (predicted first)', 1), ('X_rule', 'X_d2', 'D1277', 'no flip (self-dual)', 1), ('X_rule', 'X_d4', 'D1278', 'no flip', 1),
+    ('X_rule', 'X_d8', 'D1282', 'no flip', 1), ('X_rule', 'X_d24', 'D1278', 'no flip predicted', 1),
+    ('X_d2', 'X_nest', 'A2', '', 1), ('X_d4', 'X_nest', 'D4', '', 1), ('X_d8', 'X_nest', 'E8', '', 1), ('X_d24', 'X_nest', 'Leech', '', 1),
+    ('X_moduli', 'X_d2', 'D1279', 'first dimension with a shape choice', 1),
+    ('X_rule', 'X_narain', 'D1283', 'T-duality = Poisson', 1), ('X_narain', 'X_su3', 'arXiv:2206.14825', '', 1),
+    ('X_su3', 'X_d2', 'D1283', 'same hexagonal shape', 1), ('X_trap', 'X_su3', 'D1285', 'selects shape+size', 1),
+    ('X_d2', 'n_sector_rho', 'D1280', 'SERAPIS-E vacuum = hexagonal (V monotone in E(τ,2))', 1),
+    ('X_d2', 'n_sector_i', 'D1280', 'square τ=i is a saddle', -1),
+    ('X_su3', 'serapis_e', 'D1283', 'shape matches, size does not', -1)):
+    edge(a, b, 'lattice', sg, ref, v)
+out = dict(nodes=list(N.values()), edges=E, lanes=['left', 'centre', 'right', 'theory', 'janus', 'strings', 'wiring', 'lattice'])
 bad = [e for e in E if e['s'] not in N or e['t'] not in N]
 assert not bad, bad
 (ROOT / 'docs/web').mkdir(parents=True, exist_ok=True); json.dump(out, open(ROOT / 'docs/web/web.json', 'w'), indent=1, ensure_ascii=False)
