@@ -613,3 +613,4 @@ D1326  2026-11-18T17:14Z  v3.3 draft: 1.25/1.5 TeV bullet from A2o added (unpost
 D1327  2026-11-18T17:17Z  Continuum gamma-ray probes (dwarfs, diffuse, isotropic) vs the computed window: no constraint (f^2 <= 0.1; f=1 exclusions lie outside 0.67-1.5 TeV)
 D1328  2026-11-18T17:19Z  Hyperion 1.1 smoke test added: 6/6 PASS in 10 s (relic, Mapper, galpy path, 7PN, IGS f_max, fraction)
 D1329  2026-11-18T17:19Z  v3.3 draft: forward-table footnotes b/c clarified (AMSB window vs thermal fraction; c no longer 'Einasto halo')
+D1330  2026-11-18T17:21Z  Gaia DR4: date confirmed; archive offline 25 Nov–2 Dec; 5-job cap
