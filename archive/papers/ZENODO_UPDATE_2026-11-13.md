@@ -154,3 +154,8 @@ Chrome relay method; files from commit a0068864; every Zenodo md5 = repo md5.
 - **Janus String Calculator v1.3** (new version of 24299624): 24340392, DOI 10.5281/zenodo.24340392. v1.2 GitHub zip removed from this version; janus_calc_v1.3.zip (67ec6527…) added. References the ripple note; isSupplementTo SERAPIS-E v2.
 - **Twist-2 v2** (new version of 24281969): 24340393, DOI 10.5281/zenodo.24340393. Earlier PDFs kept + v2 addendum pdf (6e69379c…), tex (f1e7f2bd…).
 - **Lock Before You Compute v2** (new version of 24291026): 24340396, DOI 10.5281/zenodo.24340396. v1 files kept + v2 addendum pdf (35aeace3…), tex (a071abf4…); references the CubeMind report and Shape/Scale/Duality.
+
+## 18 Nov 2026, ~07:05 CT — Janus-LHC paper published (Danny: "Publish")
+- New record 24342227, DOI 10.5281/zenodo.24342227: "Janus-LHC: Wino Pair Cross Sections at Any LHC Energy from Drell–Yan Scaling with One Universal Evolution Exponent" (preprint v1, CC BY 4.0). Basis D1299 (PREREG_LHC1).
+- Files (commit 45d04f70, md5 = repo): Eldridge_JanusLHC_scaling_2026.pdf (7f7e3ab3…), .tex (0991c1f3…), janus_lhc_v0.1.zip (2e548114…).
+- Related: references arXiv:2304.11915, 24291026 (lock workflow), 24340392 (Janus calculator v1.3); isSupplementedBy the GitHub repo.
