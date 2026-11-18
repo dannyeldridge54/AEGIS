@@ -93,3 +93,10 @@ Status: draft, collected 17 Nov 2026 (D1081–D1101). Packaging and a Zenodo upl
 - **Map:** a new darkrad_i node for the τ=i dark-radiation verdicts (D1320).
 - **Draft accuracy fix:** SO sees U(1) dark radiation only at ≈ 1.2σ (D1325).
 - Release prep: tools/janus_astro/hyperion_smoketest.py (6 checks, ~10 s, all PASS; D1328).
+- **Line + endpoint photons (A2p/A2q, LL estimate):**
+  - The wino LL line+endpoint spectrum is implemented from 2507.15937 Eq. 2.9 (field_tests/scripts/a2p_endpoint.py).
+  - In a 10% window, endpoint photons add +12/+14/+16% at 1.0/1.25/1.5 TeV (D1337).
+  - Applied to the IGS window: 1.0 TeV has no FAIL but is clean only at NLO for NFW-like haloes; 1.25 TeV gains one Burkert LO FAIL; 1.5 TeV is left with three Einasto cores (D1338).
+  - The Sommerfeld normalisation was checked analytically against the validated line and WW rates (D1340).
+- The smoke test now has 7 checks, adding R(1 TeV, 10%) = 1.1174; all PASS in ~11 s (D1341).
+- Docs: the Hyperion ROADMAP open list is refreshed (D1333); the Gaia DR4 plan notes the archive is offline 25 Nov–2 Dec (D1330).

@@ -122,3 +122,11 @@
   - SO tests SU(2) (3.6σ) but not U(1) (1.2σ) (D1325);
   - 1.25/1.5 TeV bullet added;
   - an older covariant superpartner row (0.67–1.85) is flagged for a clarifying footnote (D1326).
+
+## Update 17:45 UTC 18 Nov (D1327–D1341)
+- **v3.3 table footnotes b/c clarified** (D1329). Smoke test 7/7 (D1328, D1341).
+- **Gaia DR4:** still 2 Dec; the ESA archive is offline 25 Nov–2 Dec; 5-job cap (D1330).
+- **Literature NULLs:** n_s (D1331); TeV line searches and D/H (D1332); a numeric endpoint check (D1339).
+- **Endpoint photons (LL estimate):** +12–16% signal at 1–1.5 TeV (D1337/D1337a). The window top edge is slightly tighter (D1338). The normalisation is checked (D1340).
+- **GitHub Sponsors:** FUNDING.yml and the README link are on unify-bg. They go on master only on Danny's OK (approval pending; not being checked).
+- **Waiting on Danny:** a PC link (Mapper, revtex); "Publish"; OK to download PDFs for figure read-off (endpoint check, Beneke supplement).
