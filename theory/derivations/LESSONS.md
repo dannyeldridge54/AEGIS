@@ -361,3 +361,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1241: with M = x·m in every formula, T_R ∝ m^{3/2} exactly — a one-line scaling check confirms a rerun before reading any table.
 - D1242: check which outputs actually depend on a corrected input before rerunning everything — the diluted gravitino yield is T_R-independent at leading order; only the undiluted τ = i case moved.
 - D1243: reproduce the original run in the same session before reading the rerun — an exact reproduction makes the one-line diff the only explanation for the change.
+- D1245: write the postulate's expected ranges before the run — mine missed (5/9), which shows the slope estimate was too narrow and keeps the postulate honest.

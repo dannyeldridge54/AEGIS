@@ -45,7 +45,7 @@
    "label": "Degeneracy breaker η_N = ΔM/M of the N doublet (radiative?)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D744, D745",
+   "refs": "D744, D745, D1243",
    "info": ""
   },
   {
@@ -215,6 +215,14 @@
    "status": "frozen",
    "refs": "D962, D1231, D1233",
    "info": ""
+  },
+  {
+   "id": "band_e_audited",
+   "label": "POSTULATE: audited SERAPIS-E box (N* 50.1–51.3): n_s 0.9717–0.9760, r 4.38–4.90e-4; 4/9 inside frozen band",
+   "lane": "theory",
+   "status": "postulate",
+   "refs": "D1245",
+   "info": "web loop postulate 1; scored only on future data"
   },
   {
    "id": "caps",
@@ -818,6 +826,42 @@
    "sign": 1,
    "ref": "theory/map/map.yaml",
    "verdict": "frozen",
+   "source": "map.yaml"
+  },
+  {
+   "s": "nstar_e",
+   "t": "band_e_audited",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "reheat_rho",
+   "t": "band_e_audited",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "serapis_e",
+   "t": "band_e_audited",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "band_e",
+   "t": "band_e_audited",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
    "source": "map.yaml"
   },
   {

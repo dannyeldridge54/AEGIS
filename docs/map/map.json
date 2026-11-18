@@ -737,6 +737,28 @@
    "flag": "recheck (D1237, nstar_e)"
   },
   {
+   "id": "band_e_audited",
+   "layer": 5,
+   "branch": [
+    "E"
+   ],
+   "title": "POSTULATE: audited SERAPIS-E box (N* 50.1–51.3): n_s 0.9717–0.9760, r 4.38–4.90e-4; 4/9 inside frozen band",
+   "status": "postulate",
+   "d": [
+    "D1245"
+   ],
+   "depends": [
+    "nstar_e",
+    "reheat_rho",
+    "serapis_e",
+    "band_e"
+   ],
+   "history": [
+    "D1245: postulate (PW1)"
+   ],
+   "note": "web loop postulate 1; scored only on future data"
+  },
+  {
    "id": "caps",
    "layer": 5,
    "branch": [

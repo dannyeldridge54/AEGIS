@@ -12937,3 +12937,12 @@ MAP: node=eta_n status=computed touches=[lepto_i] ripple=no
 - **Ladder tool:** ladder.py now skips (and reports) touched ids that are not map nodes (C_lepto, C_nstar, H_relic) instead of crashing.
 VERDICT: wino_window unchanged; the NA audit is unblocked for phase 5.
 MAP: none
+
+## D1245 — CENTRE — PW1 (web loop, postulate 1): the audited SERAPIS-E box — n_s 0.9717–0.9760, r 4.38–4.90e-4, α_s −9.1 to −10.1e-4; only 4 of 9 corners lie inside the frozen band; my pre-stated ranges FAIL (5/9)
+Lock: field_tests/rules/PREREG_PW1_band_e_audited.md. Computed LIVE in Danny's Janus app (link scan p001); raw field_tests/results/pw1_raw.json; table field_tests/results/pw1_band_e_audited.txt.
+Pattern used: N* ↔ T_R ↔ m_φ chain (D1234–D1239): the audited reheating moves N* from 48.4–49.9 (frozen band's basis) to 50.1–51.3.
+[computed] C 1.0–1.3e-6 × N* 50.1–51.3: n_s 0.97169–0.97604, r 4.378–4.896e-4, α_s −9.11e-4 to −1.014e-3.
+(1) My pre-stated ranges (n_s 0.972–0.976, r 4.3–4.8e-4): 5/9 inside → FAIL (the box is wider in both directions than my slope estimate).
+(2) Inside the frozen D693 band: 4/9. Out: C = 1.0e-6 at all three N* (r 4.38–4.53e-4 below the 4.55e-4 floor); C = 1.3e-6 at N* 50.7, 51.3 (n_s 0.9755–0.9760 above 0.975).
+Reading: the audited chain predicts a box that is shifted (n_s up ~+1.5e-3, r down ~4 %) and only partly overlaps the frozen band. The frozen band stays as locked (scored on future data); the new node band_e_audited (status postulate) records what the audited theory now says, for scoring by SO/LiteBIRD. The middle tilt C ≈ 1.15e-6 remains inside both.
+MAP: node=band_e_audited status=postulate touches=[band_e, tests_cmb] ripple=yes

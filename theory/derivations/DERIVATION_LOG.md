@@ -1834,3 +1834,4 @@ Touches: none.
 ## D1241: NA8 — τ = i chain with D730's m (2.28/2.65e11): T_R ×1.31/1.65 → 1.3–5.0e6 GeV, N* +0.09/+0.17; lepto_i verdicts unchanged
 ## D1242: NA9 — gravitino → wino at audited T_R: max Ω_nth 4.4e-4 (τ = i, M2 1.85 TeV) < 0.01 PASS; label ≤ 3e-4 → ≤ 5e-4; diluted SERAPIS-E case T_R-insensitive; C_lepto PASS
 ## D1243: NA10 — D745 radiative resonant leptogenesis rerun with D730 m_φ: pass 38–86 % / 42–86 % (was 34–86 %), PASS; eta_n, lepto_i unchanged
+## D1245: PW1 (web postulate 1) — audited SERAPIS-E box n_s 0.9717–0.9760, r 4.38–4.90e-4 (live Janus scan); 4/9 corners inside frozen band; pre-stated ranges FAIL (5/9)
