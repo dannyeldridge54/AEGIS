@@ -521,3 +521,4 @@ D1234  2026-11-18T02:11Z  untitled
 D1235  2026-11-18T02:14Z  untitled
 D1236  2026-11-18T02:15Z  untitled
 D1237  2026-11-18T02:17Z  untitled
+D1238  2026-11-18T02:20Z  R2e-b: with Saikawa-Shirai g_*(T): Born 2.252 TeV (B1 PASS +2.0% vs Beneke 2.207); LO Sommerfeld 3.013 (L1 FAIL +4.4% vs 2.886)
