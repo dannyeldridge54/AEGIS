@@ -1,0 +1,86 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{Shape, Scale and Duality: Why the SERAPIS-$E$ Vacuum Is Hexagonal, When Lattice Optima Flip, and What String Lattices Add}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{18 November 2026}
+\begin{abstract}
+SERAPIS-$E$ is a modular plateau inflation model whose potential is built from the Eisenstein series $E(\tau,2)$ of a torus shape $\tau$~\cite{P3,P5}. Here we ask why its vacuum sits at the hexagonal shape $\tau=\rho=e^{2\pi i/3}$. We also ask whether that choice survives changes of scale and of dimension. (i) The potential is a monotone function of $E(\tau,2)$, so it inherits the critical points of $E$. The hexagon is an isotropic minimum (Hessian $[+3.562,+3.562]\,V_0$), and the square $\tau=i$ is a de~Sitter saddle, unstable only along the axion ($[-1.279,+5.779]\,V_0$). A $\tau=i$ vacuum therefore needs extra physics. (ii) For the Gaussian lattice energy at fixed covolume, the hexagon wins at every scale. A torus started at any shape flows to it. (iii) Going up in dimension, we find a simple rule from Poisson duality. The best lattice changes with scale if and only if it is not its own dual, and then it swaps with its dual exactly at the self-dual scale. We test the rule for $d=2$--8: the hexagon, $D_4$ and $E_8$ never flip, while FCC/BCC, $D_5/D_5^*$, $E_6/E_6^*$ and $E_7/E_7^*$ swap at the self-dual scale. The $E_6$ and $E_7$ cases were predicted before they were computed. (iv) In string theory toroidal compactifications are even self-dual Narain lattices, and T-duality is the same Poisson map, so they never flip. The two-dimensional Narain lattice with the largest spectral gap is the SU(3) point, whose shape is hexagonal~\cite{ACD}. Its shape matches the SERAPIS-$E$ vacuum but its size does not: it sits at the string scale, while SERAPIS-$E$ needs $\mathrm{Im}\,S\,\mathrm{Im}\,\rho\approx780$. We report this as a match on shape only. No new prediction for the sky follows. The result is a computed reason for the vacuum shape, plus one open question.
+\end{abstract}
+\keywords{lattice energy; Epstein zeta; theta function; Poisson duality; modular invariance; torus moduli; E8; Narain lattice; T-duality; string cosmology; SERAPIS}
+\maketitle
+
+\section{Introduction}
+In SERAPIS-$E$~\cite{P3} the inflaton is the shape $\tau=x+iy$ of a two-torus in a $T^6/(\mathbb Z_2\times\mathbb Z_2)$ orientifold, with
+\begin{equation}
+\frac{V}{V_0}=\frac{\hat E}{\hat E+1}\bigl(1+C\hat E\bigr),\qquad \hat E=E(\tau,2)-E(\rho,2),
+\label{eq:V}
+\end{equation}
+and $C\simeq1.25\times10^{-6}$ a one-loop string tilt. The audit of the model~\cite{P5} confirmed its arithmetic, but it left one question open: why the hexagon? A flat two-torus is a lattice $\mathbb R^2/\Lambda$, so ``which torus shape is preferred'' is the same question as ``which lattice is preferred.'' This note answers it with computations. Each result is labelled \emph{computed} (code in the archive~\cite{AEGIS}) or \emph{literature}. Predictions stated before a computation are marked as such~\cite{P4}.
+
+\section{The vacuum is the hexagon}
+\emph{Lattice sums.} At unit covolume the Epstein zeta $Z(s)=\sum_{v\neq0}|v|^{-2s}$ is lower for the hexagon than for the square by 4.04\%, 11.11\% and 19.80\% at $s=2,3,4$. At $s=2$ the values are $5.78334$ and $6.02680$, the familiar $E(\rho,2)$ and $E(i,2)$. This is Rankin's theorem~\cite{Rankin}. The margin grows with $s$: the shorter the range of the sum, the sharper the selection. \emph{Computed.}
+
+\emph{The model's own potential.} $dV/d\hat E=V_0(C\hat E^2+2C\hat E+1)/(\hat E+1)^2>0$ for $\hat E\ge0$. Equation~(\ref{eq:V}) is therefore monotone in $E(\tau,2)$, and at any critical point $\mathrm{Hess}\,V=V'(\hat E)\,\mathrm{Hess}\,E$. Evaluating with the model's code at $C=1.25\times10^{-6}$:
+\begin{itemize}
+\item $\tau=\rho$: $V=0$, Hessian $[+3.5623,+3.5623]\,V_0$, an isotropic minimum;
+\item $\tau=i$: $V=0.1011\,V_0$, Hessian $[-1.2792,+5.7786]\,V_0$, a saddle whose negative mode is purely along $x$ (the axion).
+\end{itemize}
+The eigenvalue ratio $-0.2214$ equals that of the bare Epstein function, as the chain rule requires. Step sizes $h=10^{-3}$ and $10^{-4}$ agree to all digits. Any potential that is a monotone function of $E(\tau,2)$ has its vacuum only at $\rho$. A $\tau=i$ vacuum, such as the conditional variant of Ref.~\cite{P5}, needs a pinned axion or a different modular building block. \emph{Computed.}
+
+\emph{Flow.} Hyperbolic gradient descent on the Gaussian energy $\sum_{v\ne0}e^{-\pi|v|^2}$ was started from a thin rectangle ($\tau=3i$). The path runs rectangle $\to$ square (held about 3600 steps by the $x\to-x$ symmetry) $\to$ rhombus $\to$ hexagon, and the energy falls monotonically. Oblique starts go straight to the hexagon. \emph{Computed.}
+
+\section{Scale and dimension: the flip rule}
+We use the Gaussian energy $\theta_\Lambda(\alpha)-1=\sum_{v\neq0}e^{-\pi\alpha|v|^2}$ at unit covolume, where $\alpha$ sets the scale. Poisson summation gives
+\begin{equation}
+\theta_\Lambda(\alpha)=\alpha^{-d/2}\,\theta_{\Lambda^*}(1/\alpha),
+\label{eq:P}
+\end{equation}
+so $\theta_\Lambda(1)=\theta_{\Lambda^*}(1)$ for every lattice. If $\Lambda$ beats $\Lambda^*$ for all $\alpha>1$, Eq.~(\ref{eq:P}) forces $\Lambda^*$ to beat $\Lambda$ for all $\alpha<1$. This gives the rule:
+
+\emph{The best lattice changes with scale if and only if it is not similar to its own dual. When it does, it swaps with its dual exactly at $\alpha=1$.}
+
+Table~\ref{tab:flip} lists the tests. The $E_6$ and $E_7$ outcomes were written down before they were computed (their Gram determinants are 3 and 2, so they are not self-dual). They were obtained by exact enumeration of all vectors with $|v|^2\le12$, converged to $3\times10^{-11}$. Checks: $E_8$ at $\alpha=2$ gives $1+240e^{-4\pi}$, and $E_8$ ties its dual to $7\times10^{-15}$. One caveat applies. In $d=6,7$ we compare $E_n$ only with its own dual. Optimality against all lattices at all scales is proven only in $d=8$ and $24$~\cite{CKMRV}, and in $d=2$ for the Gaussian energy~\cite{Montgomery}.
+
+\begin{table}[t]
+\caption{Gaussian lattice energy at unit covolume. ``Flip'' means the winner changes at $\alpha=1$. $\Delta$ is $\theta_{L}-\theta_{L^*}$ at $\alpha=1.25$. All entries are computed.}
+\label{tab:flip}
+\begin{ruledtabular}\footnotesize
+\begin{tabular}{llll}
+$d$ & lattice(s) & self-dual & flip at $\alpha=1$\\ \hline
+2 & hexagonal & yes & no\\
+3 & FCC / BCC & no & yes, tie .231536\\
+4 & $D_4$ & yes & no\\
+5 & $D_5$ / $D_5^*$ & no & yes, tie .348752\\
+6 & $E_6$ / $E_6^*$ & no & yes, $\Delta=-1.6$e-3\\
+7 & $E_7$ / $E_7^*$ & no & yes, $\Delta=-2.6$e-3\\
+8 & $E_8$ & yes & no, $|\Delta|<$1e-14
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+Going backwards in dimension, a flat $d$-torus has $d(d+1)/2-1$ shape moduli: 0 for the circle, 2 for the two-torus, 35 at $d=8$ and 299 at $d=24$. The circle has no shape to choose, and the two-torus is the first case where one is chosen.
+
+\section{String lattices}
+A toroidal string compactification of $c$ dimensions is specified by an even self-dual lattice in $\mathbb R^{c,c}$, the Narain lattice. T-duality $R\to1/R$ is the Poisson map of Eq.~(\ref{eq:P}). In the language of Sec.~III, a self-dual lattice cannot flip: physics at $R$ and $1/R$ is the same. The flips we found belong to lattices that are not self-dual. A momentum lattice alone is one such lattice, and T-duality swaps it with its dual (the winding lattice) at the self-dual radius.
+
+Angelinos, Chakraborty and Dymarsky~\cite{ACD} construct the Narain lattices with the largest spectral gap from codes. For $c=1$ the optimum is the self-dual radius ($\Delta^*=1/2$). For $c=2$ it is the SU(3)$_1$ point, $\Delta^*=2/3$, with complex structure and complexified K\"ahler modulus both at $(1+i\sqrt3)/2$, which is equivalent to $\rho$ under SL(2,$\mathbb Z$). Its \emph{shape} is therefore the SERAPIS-$E$ vacuum, and it is the same hexagon that wins the lattice energy. Its \emph{size} is at the string scale. SERAPIS-$E$ instead needs $\mathrm{Im}\,S\,\mathrm{Im}\,\rho\approx780$, deep in the supergravity regime. The agreement is on shape only. The maximum-gap criterion is not a dynamical vacuum selector, so the coincidence explains nothing by itself. \emph{Literature plus comparison.}
+
+\section{Conclusions}
+The hexagonal vacuum of SERAPIS-$E$ is not an extra choice. It follows from the potential being monotone in $E(\tau,2)$, and it is the shape preferred by lattice energy at every scale. The square $\tau=i$ is a saddle. Across $d=2$--8, the scale behaviour of lattice optima follows one rule set by duality. The $E_6$ and $E_7$ cases were predicted in advance and confirmed. The string-optimal two-torus matches our vacuum in shape but not in size. Open question: is there a dynamical mechanism that drives compactifications to maximum-gap points? If so, the shape of the SERAPIS-$E$ vacuum would be derived rather than chosen. Nothing here changes the model's frozen predictions or its audited point $n_s=0.97439$, $r=4.82\times10^{-4}$~\cite{P5}.
+
+\emph{Method note.} The calculations were done with an AI assistant (Claude, Anthropic) under the pre-registration workflow of Ref.~\cite{P4}. Scripts and outputs are in the archive~\cite{AEGIS} (field\_tests/results, 18 November 2026; notes D1276--D1283).
+
+\begin{thebibliography}{99}
+\bibitem{P3} D.~Eldridge, ``SERAPIS-$E$: Modular Plateau Inflation at the Hexagonal Torus with a One-Loop String Tilt,'' Zenodo (2026), doi:10.5281/zenodo.24290875.
+\bibitem{P5} D.~Eldridge, ``SERAPIS-$E$ Audited: Corrected Reheating, a Point Prediction, and How the CMB Would Measure the Compactification,'' Zenodo (2026), doi:10.5281/zenodo.24330316.
+\bibitem{P4} D.~Eldridge, ``Lock Before You Compute: A Pre-Registration Workflow for Theoretical Physics Done with an AI Assistant,'' Zenodo (2026), doi:10.5281/zenodo.24291026.
+\bibitem{Rankin} R.~A.~Rankin, ``A minimum problem for the Epstein zeta-function,'' Proc.\ Glasgow Math.\ Assoc.\ \textbf{1}, 149 (1953).
+\bibitem{Montgomery} H.~L.~Montgomery, ``Minimal theta functions,'' Glasgow Math.\ J.\ \textbf{30}, 75 (1988).
+\bibitem{CKMRV} H.~Cohn, A.~Kumar, S.~D.~Miller, D.~Radchenko and M.~Viazovska, ``Universal optimality of the $E_8$ and Leech lattices and interpolation formulas,'' Ann.\ Math.\ \textbf{196}, 983 (2022), arXiv:1902.05438.
+\bibitem{ACD} N.~Angelinos, D.~Chakraborty and A.~Dymarsky, ``Optimal Narain CFTs from codes,'' arXiv:2206.14825 (2022).
+\bibitem{AEGIS} Reproducibility archive: github.com/dannyeldridge54/aegis (locks in field\_tests/rules, outputs in field\_tests/results).
+\end{thebibliography}
+\end{document}
