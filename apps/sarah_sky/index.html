@@ -64,12 +64,34 @@
 <section id="sarahOverlays" aria-label="Sky traditions and tools">
   <h2>Overlays &amp; tools</h2>
   <div class="tag">Each overlay is a cultural / spiritual tradition &mdash; not astronomy. The sky beneath is real &amp; computed.</div>
-  <label><input type="checkbox" id="ovZodiac" disabled> Western zodiac &amp; houses <span class="tag">(soon)</span></label>
+  <label><input type="checkbox" id="ovZodiac"> Western zodiac &amp; today's signs</label>
+  <div id="zodiacOut" class="tag" style="display:none;margin:2px 0 6px 22px;color:#ffd9f1"></div>
   <label><input type="checkbox" id="ovVedic" disabled> Vedic nakshatras <span class="tag">(soon)</span></label>
   <label><input type="checkbox" id="ovChinese" disabled> Chinese lunar mansions <span class="tag">(soon)</span></label>
   <label><input type="checkbox" id="ovMoon" disabled> Moon phase &amp; sign <span class="tag">(soon)</span></label>
   <label><input type="checkbox" id="ovTarot" disabled> Daily tarot &amp; oracle <span class="tag">(soon)</span></label>
   <div class="tag" style="margin-top:6px">Private to this device. No accounts, no tracking.</div>
 </section>
+<script>
+/* Western zodiac readout — real Sun/Moon sign + Moon phase from astronomy-engine. Tradition, not astronomy. */
+(function () {
+  var A = window.Astronomy, cb = document.getElementById('ovZodiac'), out = document.getElementById('zodiacOut');
+  if (!A || !cb) return;
+  var SIGNS = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+  var PHASES = ['New moon','Waxing crescent','First quarter','Waxing gibbous','Full moon','Waning gibbous','Last quarter','Waning crescent'];
+  function compute() {
+    try {
+      var d = new Date(), sun = A.SunPosition(d), moon = A.EclipticGeoMoon(d), ph = A.MoonPhase(d);
+      var ss = SIGNS[Math.floor((sun.elon % 360) / 30) % 12], ms = SIGNS[Math.floor((moon.lon % 360) / 30) % 12];
+      var ps = PHASES[Math.floor(((ph % 360) + 22.5) / 45) % 8];
+      out.innerHTML = '☉ Sun in <b>' + ss + '</b> · ☾ Moon in <b>' + ms + '</b> · ' + ps + '<br><span style="opacity:.7">tradition &mdash; not astronomy</span>';
+    } catch (e) { out.textContent = 'unavailable'; }
+  }
+  cb.addEventListener('change', function () {
+    out.style.display = cb.checked ? 'block' : 'none';
+    if (cb.checked) compute();
+  });
+})();
+</script>
 </body>
 </html>
