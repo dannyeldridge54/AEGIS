@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1288, D1289, D1291",
+   "refs": "D1289, D1291, D1292",
    "info": ""
   },
   {
@@ -790,6 +790,14 @@
    "lane": "lattice",
    "status": "computed",
    "refs": "D1292",
+   "info": ""
+  },
+  {
+   "id": "X_epstein",
+   "label": "Epstein (SERAPIS-type) energy: dual handover at exponent s=d/4 — the Mellin image of the self-dual scale α=1",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1293",
    "info": ""
   },
   {
@@ -2425,6 +2433,33 @@
    "sign": 1,
    "ref": "registry",
    "verdict": "lattice_lab",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_epstein",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1293",
+   "verdict": "α ↔ 1/α becomes s ↔ d/2−s",
+   "source": "curated"
+  },
+  {
+   "s": "X_mellin",
+   "t": "X_epstein",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1293",
+   "verdict": "functional equation",
+   "source": "curated"
+  },
+  {
+   "s": "X_epstein",
+   "t": "serapis_e",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1293",
+   "verdict": "d=2, s=2: no handover",
    "source": "curated"
   },
   {

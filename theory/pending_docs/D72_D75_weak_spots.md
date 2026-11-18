@@ -13603,3 +13603,16 @@ and the boundary-monotonicity claim P2 (no extra critical point appeared near th
 So in d=2 there is no hidden third shape anywhere: the web's two SERAPIS sectors (τ=i, τ=ρ) are the complete list.
 TOOL: tools/lattice/lattice_lab.py (one tool for the lattice web: shells, energy, flip, compare, champion, modular, epstein, critical,
 explore), registered in the CubeMind/Janus registry as `lattice_lab` and deployed to the PC (checked: E6 flip gap −1.6007e-3 there).
+
+## D1293 — In the Epstein zeta (SERAPIS-E's kind of energy) the dual handover moves from the scale α=1 to the exponent s=d/4, exactly; PREREG P1–P4 PASS (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: numerics (computed with lattice_lab `epstein`, now analytically continued), locked first (PREREG_D1293).
+Z_L(s) − Z_{L*}(s) at unit covolume: FCC−BCC +1.1e-4 (s=0.65), 0 (s=0.75=d/4), −1.7e-4 (0.85); D5−D5* +6.2e-4 / 1.8e-15 / −8.2e-4
+around s=1.25; E6−E6* +5.5e-4 / −2.7e-15 / −6.9e-4 around 1.5; E7−E7* +1.2e-3 / −6.2e-15 / −1.5e-3 around 1.75 (P1 PASS: tie at
+s=d/4 to ≤1e-14, sign change across it). P2 PASS: the lattice that wins at large scale (α>1) has the lower Epstein energy for every
+s > d/4 (incl. s = d/2+½ … d/2+2). P3 PASS: hex, D4, E8 equal their duals for all s (≤5e-14). P4 PASS: hex 5.783359, square 6.026812 at s=2.
+MEANING [derived]: the functional equation π^{−s}Γ(s)Z_L(s) = π^{−(d/2−s)}Γ(d/2−s)Z_{L*}(d/2−s) maps s ↔ d/2−s exactly as Poisson maps
+α ↔ 1/α; the self-dual exponent s = d/4 plays the role of the self-dual scale. For the SERAPIS-E torus (d=2, self-dual hexagon) s=2 > d/4,
+and nothing hands over at any s — so E(τ,2) selects the hexagon for the same reason the Gaussian energy does at every scale.
+Two "dials" (scale α and exponent s), one rule, one hinge each (α=1, s=d/4).
+Files: field_tests/epstein_handover.py, field_tests/results/epstein_handover_2026-11-18.txt; tools/lattice/lattice_lab.py epstein upgraded.

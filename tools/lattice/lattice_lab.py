@@ -141,13 +141,17 @@ def modular(L):
     return {'lattice': L, 'd': d, 'form': form[0], 'form_coeffs': form[1][:kmax+1], 'shells': got, 'match': got == form[1][:kmax+1]}
 
 def epstein(L, s):
+    """Analytically continued Epstein zeta at unit covolume (valid for all s except 0, d/2):
+    pi^-s Gamma(s) Z_L(s) = Int_1^inf (theta_L-1) a^(s-1) + Int_1^inf (theta_L*-1) a^(d/2-s-1) - 1/s - 1/(d/2-s)."""
     from scipy.integrate import quad
-    G = unit(gram(L)); d = len(G); s = float(s); Q = 40.0 if d == 2 else _Q_for(d)
+    G = unit(gram(L)); d = len(G); s = float(s); Q = 40.0 if d == 2 else max(_Q_for(d), 12.0 if d <= 8 else _Q_for(d))
     qL = norms(G, Q); qL = qL[qL > 1e-12]; qD = norms(unit(np.linalg.inv(G)), Q); qD = qD[qD > 1e-12]
     th = lambda a, q: np.exp(-np.pi*a*q).sum()
-    hi = quad(lambda a: th(a, qL)*a**(s-1), 1, np.inf, limit=200)[0]
-    lo = quad(lambda a: (a**(-d/2)*(1+th(1/a, qD)) - 1)*a**(s-1), 0, 1, limit=200)[0]
-    return {'lattice': L, 'd': d, 's': s, 'epstein': math.pi**s/math.gamma(s)*(hi+lo), 'method': 'Mellin transform of the Gaussian energy (D1291)'}
+    I1 = quad(lambda a: th(a, qL)*a**(s-1), 1, np.inf, limit=200)[0]
+    I2 = quad(lambda a: th(a, qD)*a**(d/2-s-1), 1, np.inf, limit=200)[0]
+    lam = I1 + I2 - 1/s - 1/(d/2-s)
+    return {'lattice': L, 'd': d, 's': s, 'epstein': math.pi**s/math.gamma(s)*lam,
+            'method': 'analytic continuation via Mellin + Poisson (D1291, D1293)'}
 
 def _E2d(x, y, a=1.0):
     G = np.array([[1, x], [x, x*x+y*y]])/y; q = norms(G, 30.0/a); return np.exp(-np.pi*a*q).sum()-1

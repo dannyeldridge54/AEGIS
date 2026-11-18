@@ -2002,3 +2002,10 @@ Touches: none.
 1. [derived] Locked P1–P2 (PREREG_D1292).
 2. [derived] Grid + Nelder–Mead refinement of the hyperbolic gradient over the fundamental domain at α = 0.5, 1, 2: only (0,1) saddle and (½, √3/2) minimum, |∇| ≤ 2e-11.
 3. [derived] So the τ=i and τ=ρ sectors are the complete list of stationary torus shapes in d=2.
+
+## D1293: For Epstein energies the dual handover sits at the exponent s=d/4, the exact analogue of the self-dual scale α=1 (2026-11-18)
+1. [derived] Locked P1–P4 (PREREG_D1293); Z_L(s) analytically continued via Mellin + Poisson.
+2. [derived] FCC/BCC, D5/D5*, E6/E6*, E7/E7*: Z_L − Z_{L*} changes sign at s=d/4 with a tie ≤1e-14; the large-scale winner has the lower Z for s>d/4.
+3. [derived] Self-dual hex, D4, E8: Z_L = Z_{L*} for all s.
+4. [derived] Functional equation s ↔ d/2−s is the Mellin image of Poisson α ↔ 1/α; s=d/4 is its fixed point.
+5. [derived] SERAPIS-E: d=2, s=2, hexagon self-dual ⇒ no handover at any s; same selection as at every scale.
