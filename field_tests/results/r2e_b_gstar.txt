@@ -1,0 +1,9 @@
+g*^1/2 at T=100 GeV: 10.276 (sqrt(106.75)=10.332); at 1 GeV: 8.647; at 0.1 GeV: 4.661
+B1 Born M_th = 2.2521 TeV vs Beneke 2.207 (rel +0.0204) -> PASS; R2e-a was 2.325; start x=1: 2.2521
+M=2.2: Oh2=0.0551
+M=2.4: Oh2=0.0736
+M=2.6: Oh2=0.0902
+M=2.8: Oh2=0.1048
+M=3.0: Oh2=0.1195
+M=3.2: Oh2=0.1349
+L1 LO-Sommerfeld M_th = 3.013 TeV vs Beneke 2.886 (rel +0.044) -> FAIL; R2e-a was 3.135
