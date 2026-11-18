@@ -150,6 +150,10 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     d1 = abs(W['mLpi_1']/0.97 - 1) if W.get('mLpi_1') else float('inf'); d2 = abs(W['mLpi_2']/2.13 - 1) if W.get('mLpi_2') else float('inf')
     law('law', '10D', ('S_btr', 'S_kk10'), 'KK masses match BTR 2209.10553 (m L/π = 0.97, 2.13) within 3% [known open, D1141]', max(d1, d2) < 0.03,
         f"m L/π = {W.get('mLpi_1')}, {W.get('mLpi_2')} → off {d1:.1%}, {d2:.1%} (convention/definition gap, D1141/D1214)")
+    # BTR spectrum SHAPE (2026-11-19 00:05 UTC; tolerance = BTR's own two-figure rounding, fixed before this law's first run):
+    # m2/m1 from 2.125–2.135 over 0.965–0.975 → 2.179–2.212 (BTR 2209.10553 eq. 5.14: m1 ≈ 0.97 π/L, m2 ≈ 2.13 π/L, L = Einstein-frame proper length)
+    rr = W['mLpi_2']/W['mLpi_1'] if W.get('mLpi_1') else float('nan'); W['kk10_ratio'] = rr
+    law('law', '10D', ('S_btr', 'S_kk10'), 'spectrum shape matches BTR: m₂/m₁ inside BTR rounding 2.179–2.212', 2.179 <= rr <= 2.212, f"m₂/m₁ = {rr:.4f} (BTR 2.13/0.97 = 2.196) → the −4% gap is one common length scale, not the shape")
     law('down', '10D→Leech', ('S_6d', 'S_stab'), '6D reduction stays stable (scalar sector b ≥ 0)', W['S6_stable'] == 1.0, 'kaluza_stable D = 6, γ = 2')
     # SUSY shell laws
     d = abs(W['m32_need_GeV']/W['m32_need_record_GeV'] - 1)
