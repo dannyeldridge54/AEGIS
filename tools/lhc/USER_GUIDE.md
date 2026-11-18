@@ -227,6 +227,30 @@ Output:
 ```
 r_peri / r_apo: closest and farthest distance from the Galactic centre over 3 Gyr; z_max: greatest height above the disc; eccentricity 0 = circular. The same code computes the Star Mapper orbit feed (validated by lock A8d).
 
+## Inflation Scorecard: SERAPIS-E's band against current data
+Needs `pyyaml`. Give n_s as one value or a min-max band; add `--r`, `--alpha-s`, `--neff`, `--sum-mnu` as wanted. `--out file.md` saves the table.
+```
+aegis scorecard --label SERAPIS-E --ns 0.970 0.975 --r 0.0005
+```
+Output (first rows):
+```
+| Probe | Dataset | Comparison | Pull (σ) | Verdict | arXiv |
+|---|---|---|---|---|---|
+| n_s by release | WMAP9 | 0.972 ± 0.013: nearest edge 0.00σ, far edge 0.23σ | +0.00 | consistent | 1212.5226 |
+| n_s by release | Planck 2013 | 0.9603 ± 0.0073: nearest edge 1.33σ, far edge 2.01σ | +1.33 | consistent | 1303.5082 |
+| n_s by release | Planck 2015 | 0.9655 ± 0.0062: nearest edge 0.73σ, far edge 1.53σ | +0.73 | consistent | 1502.02114 |
+| n_s by release | Planck 2018 | 0.9649 ± 0.0042: nearest edge 1.21σ, far edge 2.40σ | +1.21 | consistent | 1807.06211 |
+| n_s by release | P-ACT-LB (ACT DR6) | 0.974 ± 0.003: nearest edge 0.00σ, far edge 1.33σ | +0.00 | consistent | 2503.14452 |
+| n_s by release | SPA (SPT+Planck+ACT) | 0.9682 ± 0.0032: nearest edge 0.56σ, far edge 2.13σ | +0.56 | consistent | 2512.10613 |
+| n_s by release | SPA + DESI BAO | 0.9728 ± 0.0029: nearest edge 0.00σ, far edge 0.97σ | +0.00 | consistent | 2512.10613 |
+| running α_s | Planck 2018 | -0.0045 ± 0.0067 | +0.67 | consistent | 1807.06211 |
+| running α_s | ACT DR6 (P-ACT-LB) | 0.0062 ± 0.0052 | -1.19 | consistent | 2503.14454 |
+| running α_s | ACT+Planck+SPT | 0.008 ± 0.0057 | -1.40 | consistent | 2511.01612 |
+| running α_s | DESI DR1 Lya P1D + BAO + CMB | 0.0014 ± 0.0041 | -0.34 | consistent | 2601.21432 |
+| running α_s | Planck + eBOSS Lya (Rogers & Poulin) | -0.0108 ± 0.0022 | +4.91 | fail | 2511.01612 |
+```
+Each row is one published constraint with its arXiv number; the σ column is the distance from the band's nearest edge.
+
 ## What the numbers mean
 - **Cross sections** (fb): production rate of each wino pair. The quoted spread is interpolation and route error only; add the Resummino PDF and scale uncertainty (5–15%, larger above 1.5 TeV).
 - **Lifetime**: `dm_MeV` is the charged–neutral mass gap; `ctau_cm` the mean decay length; `BR_*` the branching ratios.
