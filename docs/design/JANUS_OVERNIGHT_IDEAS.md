@@ -256,3 +256,41 @@ Rotation (updated):
 11. C
 12. U
 13. N
+
+### [CH] and [S] in more detail (Danny, 23:04 CT)
+Danny's words: "Toolkit for chemistry mapping out wavelength and matter formation and toolkit for sounds as well."
+
+**CH — wavelength and matter-formation toolkit (`tools/chem/`)**
+1. **Wavelength map.** Atomic lines computed from first principles:
+   - Hydrogen-like Rydberg series (Lyman, Balmer, Paschen…; reduced-mass corrected) for H, He⁺ and Li²⁺.
+   - Fine-structure splitting.
+   - The 21 cm hyperfine line.
+   - Molecular rotation/vibration ladders (CO, H₂, OH, H₂O) from standard spectroscopic constants. These come from the literature and the source is cited.
+   - Small-molecule electronic excitations with PySCF (TD-DFT).
+   - A wavelength → colour/energy/frequency converter covering radio to gamma.
+
+   Everything is placed on one log-wavelength ribbon (the electromagnetic spectrum) in the Janus palette, with the CMB peak, recombination photons (Lyα at z* from our own U4 recombination solver) and the inflation-scale numbers marked where they really sit.
+2. **Matter-formation timeline.** One axis running from the end of inflation (SERAPIS T_R, physics) to today:
+   - reheating;
+   - leptogenesis (D1239);
+   - QCD transition;
+   - BBN (H, D, He-3, He-4, Li-7 yields from a standard network — a small BBN code if pip-installable, otherwise abundances from the literature, cited);
+   - recombination (z* 1090, our solver);
+   - first molecules (H₂, HeH⁺, the first molecule);
+   - first stars;
+   - heavy-element formation (s/r-process, labelled literature).
+
+   Each step is labelled physics (ours), physics (literature) or tool.
+3. **Molecule lab.** RDKit structures, PySCF energies and orbitals, IR/UV spectra mapped onto the same wavelength ribbon. Educational/materials use only; no hazardous or controlled-substance synthesis.
+
+**S — sound toolkit (`tools/sound/`)**
+- **Engine:** numpy synthesis to WAV (oscillators, envelopes, filters, reverb), MIDI via mido/pretty_midi, and a mapping library (data → pitch, rhythm, timbre, pan).
+- **Mappings:**
+  - CMB/primordial spectra → drone;
+  - the torus y(N) → a falling glide;
+  - the wavelength ribbon → a scale (spectral lines become notes; the Balmer series is a real "chord", art-labelled);
+  - the matter-formation timeline → a song structure;
+  - D-note statuses → timbre;
+  - collector points → rhythm.
+- **Lyrics:** original lyric generator prompts and drafts built from our story; never reproduce existing songs.
+- **Player:** a Sound card in Janus with play/stop and layer toggles. Labelled art/analogy, except where a real frequency is played (e.g. the 21 cm line scaled into the audible range, with the scale factor stated).
