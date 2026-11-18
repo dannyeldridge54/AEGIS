@@ -12687,3 +12687,13 @@ regime neither code resolves (post-hoc diagnosis: mode start is fine, k/aH ≫ 1
 yet checked). By the lock (all three cases) → NOT ADOPTED. My case choice (c) did not include a physical-output gate; that was a lock-design gap.
 Follow-up: JMF12b, a new lock with a pre-declared sanity gate (reference n_s in [0.8, 1.1]) and new cases; case (c) itself goes to the list as an open physics question.
 MAP: none.
+
+## D1223 — JANUS — JMF12b: compiled Janus-MF-NC with a physical-output gate [INCONCLUSIVE: 1 case gated in]
+Lock: field_tests/rules/PREREG_JMF12b_ncjit.md (+ DEV D1 before any scored number: crashed/short cases listed). Result field_tests/results/janus_jmf12b.txt.
+d (R=0.7): listed — background has < 55 e-folds. e (R=1.5): reference n_s −0.83 (nc-jit 33.5) → listed by the gate. f (R=1, start (0.6, 24)): 0.92878754 vs 0.92878771,
+|Δ| 1.8e-7, ×34 → passes. Only 1 case gated in (lock needs 2) → INCONCLUSIVE.
+Pattern across JMF12/12b: every R ≠ 1 sphere gives unphysical n_s in BOTH codes (R=1.5: −0.83, R=2: 3.49), while every R = 1 and flat case agrees to ≤ 2e-7.
+Checked here (diagnostic, not a verdict): the coordinate-pole hypothesis is refuted — φ1 moves AWAY from the pole (0.4 → 0.8–1.15) in all runs. Since both codes share
+the same equations (mfms_nc), a shared formulation issue for R ≠ 1 is now the leading suspect (e.g. a metric-scale factor missing somewhere that R = 1 hides); PyTransport NC
+at R = 1.5 would settle it. Moved to item 25 with this lead. nc-jit stays NOT ADOPTED until item 25 is resolved; for R = 1/flat use it only under a lock that names it.
+MAP: none.
