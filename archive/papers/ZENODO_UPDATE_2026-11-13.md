@@ -146,3 +146,11 @@ Done through the Zenodo API in Danny's signed-in Chrome; no credentials were han
 5. In the new Zenodo tab: window.opener.postMessage('ready','https://example.com'), collect the blobs, PUT each to <bucket>/<name> with X-CSRFToken. Check every returned checksum equals the repo md5.
 6. POST /api/deposit/depositions/<id>/actions/publish. Then cross-link old records: actions/edit → PUT metadata with the new related_identifier → actions/publish; verify metadata grew only by the link.
 7. Log here and in the project PAPERS doc. Zenodo CSP blocks fetching GitHub from zenodo.org itself, and zenodo.org rejects cross-origin API calls — hence the relay.
+
+## 18 Nov 2026, ~05:25 CT — five records published (Danny: "Get them written and put in… publish with the same method", then "Publish")
+Chrome relay method; files from commit a0068864; every Zenodo md5 = repo md5.
+- **CubeMind interim report** (new): 24340339, DOI 10.5281/zenodo.24340339. Files Eldridge_CubeMind_interim_2026.pdf (13186284…), .tex (12b4c236…).
+- **SERAPIS-E v2** (new version of 24290875): 24340373, DOI 10.5281/zenodo.24340373. v1 files kept + Eldridge_SERAPIS-E_v2_update_2026.pdf (d807bba6…), .tex (01509d23…). Title "(v2: audited update)"; v2 paragraph prepended; references audit + Shape/Scale/Duality.
+- **Janus String Calculator v1.3** (new version of 24299624): 24340392, DOI 10.5281/zenodo.24340392. v1.2 GitHub zip removed from this version; janus_calc_v1.3.zip (67ec6527…) added. References the ripple note; isSupplementTo SERAPIS-E v2.
+- **Twist-2 v2** (new version of 24281969): 24340393, DOI 10.5281/zenodo.24340393. Earlier PDFs kept + v2 addendum pdf (6e69379c…), tex (f1e7f2bd…).
+- **Lock Before You Compute v2** (new version of 24291026): 24340396, DOI 10.5281/zenodo.24340396. v1 files kept + v2 addendum pdf (35aeace3…), tex (a071abf4…); references the CubeMind report and Shape/Scale/Duality.
