@@ -13787,3 +13787,9 @@ MAP: none
 - Median transverse βγ of the chargino: 0.54 / 0.50 / 0.47 at m = 400/600/800 GeV (P2 in 0.3–0.8: PASS — the old 0.5 was right on the median).
 - Recasts with the full boost distribution: ATLAS 136 fb⁻¹ 661.5 GeV (was 666.6; published 660, now 0.2% off); ATLAS 36 fb⁻¹ 446.6 GeV (was 447.8; published 460, 2.9%) (P3 shifts ≤3%, within 4%: PASS).
 - Tool: tools/lhc/kinematics.py (fit, boost_samples, p_window_avg). Lock: PREREG_LHC8_kinematic_boost.md. [derived]/[estimate]
+
+## D1308 — CERN+1: computed boost wired into CubeMind (LHC9 pass)
+MAP: none
+- Registry lhc_dt_limit now takes boost="kinematic" → kinematics.limit_search (D1307). Returns ATLAS_136 661.5 GeV, ATLAS_36 446.6 GeV (P1, P2 PASS).
+- Honest note: one smoke call (ATLAS_136) ran before the lock was committed; ATLAS_36 was first run after it.
+- Web node Q_boost added (123 nodes / 232 edges). [derived]

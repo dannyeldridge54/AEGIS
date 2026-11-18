@@ -42,3 +42,10 @@ def p_window_avg(m, tau_ns=None, sqrts=13.0):
     bg = boost_samples(m, sqrts); bg = np.maximum(bg, 1e-3)
     lam = bg*tau*1e-9*2.99792458e11
     return float(np.mean(np.exp(-recast_dt.R_IN/lam) - np.exp(-recast_dt.R_OUT/lam)))
+def limit_search(key):
+    """Benchmark-anchored recast with the computed boost distribution (D1307) instead of fixed beta*gamma = 0.5."""
+    from scipy.optimize import brentq
+    from . import recast_dt as R
+    S = R.SEARCHES[key]; pb = p_window_avg(S['m_bench'])
+    f = lambda m: S['n_bench']*(R.sig_tot(m, '13')/R.sig_tot(S['m_bench'], '13'))*(p_window_avg(m)/pb) - S['n95']
+    return brentq(f, 250, 1500, xtol=0.5)

@@ -2084,3 +2084,6 @@ Touches: none.
 2. [estimate] L(τ) shape N τ^(−a)(1−√τ)^b fitted to Resummino 13 TeV table: max deviation 3.2%.
 3. [derived] transverse βγ = p sinθ/m, cosθ from 1+cos²θ; decay window average replaces fixed βγ.
 4. [estimate] ATLAS recasts 661.5 / 446.6 GeV vs published 660 / 460.
+
+## D1308: registry access to the computed boost
+1. [derived] lhc_dt_limit(search, boost="kinematic") calls kinematics.limit_search; values identical to D1307 (661.5 / 446.6 GeV).

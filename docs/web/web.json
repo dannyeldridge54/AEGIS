@@ -961,6 +961,14 @@
    "info": ""
   },
   {
+   "id": "Q_boost",
+   "label": "Chargino boost distribution from the cross-section table itself (median βγ 0.47–0.54); recasts 661.5 vs 660 and 446.6 vs 460 GeV",
+   "lane": "lhc",
+   "status": "computed",
+   "refs": "D1307",
+   "info": ""
+  },
+  {
    "id": "Q_fccref",
    "label": "Published future-collider wino reach (HL 0.9, HE 2.1, FCC 6.5 TeV)",
    "lane": "lhc",
@@ -3019,6 +3027,24 @@
    "sign": 1,
    "ref": "next",
    "verdict": "fixes the 100 TeV gap",
+   "source": "curated"
+  },
+  {
+   "s": "Q_xsec",
+   "t": "Q_boost",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1307",
+   "verdict": "luminosity shape fitted to 3.2%",
+   "source": "curated"
+  },
+  {
+   "s": "Q_boost",
+   "t": "Q_dt",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1307",
+   "verdict": "replaces fixed βγ=0.5",
    "source": "curated"
   },
   {

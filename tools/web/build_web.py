@@ -173,6 +173,7 @@ for i, l, st, r in (
     ('Q_panel', 'Model vs collider: SERAPIS wino window 0.67–1.85 TeV starts at the LHC limit; HL-LHC tests 26%', 'computed', 'D1304'),
     ('Q_sym', 'Symmetry self-tests: ratios scale with τ₀ to 0.1%; u/d charge asymmetry turns over above 1.5 TeV (PDF-limited)', 'computed', 'D1305'),
     ('Q_future', 'Future colliders: HL-LHC 0.97, HE-LHC 1.4–1.7, FCC-hh 2.9–3.7 TeV wino reach; FCC-hh covers the whole SERAPIS window', 'computed', 'D1306'),
+    ('Q_boost', 'Chargino boost distribution from the cross-section table itself (median βγ 0.47–0.54); recasts 661.5 vs 660 and 446.6 vs 460 GeV', 'computed', 'D1307'),
     ('Q_fccref', 'Published future-collider wino reach (HL 0.9, HE 2.1, FCC 6.5 TeV)', 'literature', 'arXiv:1805.00015'),
     ('Q_pdf', 'Own LO cross section with a PDF set (blocked: CERN file needs one click at home)', 'open', 'docs/LHC_TOOLKIT.md')):
     node(i, l, 'lhc', st, r)
@@ -181,7 +182,7 @@ for a, b, ref, v, sg in (
     ('Q_stats', 'Q_dt', 'D1301', 'N95', 1), ('Q_atlas', 'Q_dt', 'D1301', 'limit reproduced (1%)', 1), ('Q_pdf', 'Q_xsec', 'next', 'independent check', 1),
     ('Q_dt36', 'Q_dt', 'D1303', 'method validated twice', 1), ('Q_dt', 'Q_panel', 'D1304', 'reach', 1), ('Q_panel', 'wino_window', 'D1304', 'read-only overlay', 1), ('Q_panel', 'tests_lhc', 'D1304', 'HL-LHC 26% of window', 1),
     ('Q_sym', 'Q_xsec', 'D1305', 'guards the tables', 1), ('Q_resummino', 'Q_sym', 'D1305', 'PDF-limited above 1.5 TeV', -1),
-    ('Q_fccref', 'Q_future', 'D1306', 'HL/HE match; FCC short', 1), ('Q_xsec', 'Q_future', 'D1306', 'scaling to 100 TeV (rough)', 1), ('Q_future', 'Q_panel', 'D1306', 'whole window testable at FCC-hh', 1), ('Q_pdf', 'Q_future', 'next', 'fixes the 100 TeV gap', 1),
+    ('Q_fccref', 'Q_future', 'D1306', 'HL/HE match; FCC short', 1), ('Q_xsec', 'Q_future', 'D1306', 'scaling to 100 TeV (rough)', 1), ('Q_future', 'Q_panel', 'D1306', 'whole window testable at FCC-hh', 1), ('Q_pdf', 'Q_future', 'next', 'fixes the 100 TeV gap', 1), ('Q_xsec', 'Q_boost', 'D1307', 'luminosity shape fitted to 3.2%', 1), ('Q_boost', 'Q_dt', 'D1307', 'replaces fixed βγ=0.5', 1),
     ('Q_dt', 'tests_lhc', 'D1301', 'HL-LHC reach ≈ 975 GeV', 1), ('Q_xsec', 'W_registry', 'registry', 'lhc_xsec', 1), ('Q_dt', 'W_registry', 'registry', 'lhc_dt_limit', 1)):
     edge(a, b, 'lhc', sg, ref, v)
 out = dict(nodes=list(N.values()), edges=E, lanes=['left', 'centre', 'right', 'theory', 'janus', 'strings', 'wiring', 'lattice', 'lhc'])
