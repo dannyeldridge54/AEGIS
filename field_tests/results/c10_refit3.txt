@@ -1,0 +1,2 @@
+stat: f_d=0.848 rho_s=2.577e+07 Msun/kpc3 r_s=10.00 kpc on_bound=True chi2/dof=2.82 (McMillan17 orig chi2/dof=126.20) Q1 FAIL | v_c(8.178)=229.0 (Horta pull -1.71) dv/dR=-0.83 Q2 PASS Omega=28.00 (-5.0) kappa=39.01 (+2.63) rho_DM_sun~0.362 GeV/cm3
+stat+2%: f_d=0.918 rho_s=2.430e+07 Msun/kpc3 r_s=10.00 kpc on_bound=True chi2/dof=0.31 (McMillan17 orig chi2/dof=5.77) | v_c(8.178)=229.9 (Horta pull -1.46) dv/dR=-1.13 Omega=28.11 (-3.9) kappa=38.95 (+2.56) rho_DM_sun~0.342 GeV/cm3
