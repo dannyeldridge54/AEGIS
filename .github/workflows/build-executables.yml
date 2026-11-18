@@ -32,9 +32,12 @@ jobs:
         shell: bash
         run: ./dist/aegis-${RUNNER_OS}* test --exit
       - uses: actions/upload-artifact@v4
-        with: {name: aegis-${{ runner.os }}, path: dist/*}
+        with:
+          name: aegis-${{ runner.os }}
+          path: dist/*
       - name: Attach to release
         if: github.event_name == 'release'
         shell: bash
-        env: {GH_TOKEN: '${{ github.token }}'}
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: gh release upload "${{ github.event.release.tag_name }}" dist/* --clobber
