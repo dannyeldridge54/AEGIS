@@ -27,7 +27,7 @@ jobs:
             --hidden-import tools.lhc.xsec --hidden-import tools.lhc.lifetime --hidden-import tools.lhc.recast_dt --hidden-import tools.lhc.stats \
             --hidden-import tools.lhc.theory_band --hidden-import tools.lhc.kinematics --hidden-import tools.lhc.future --hidden-import tools.lhc.higgsino \
             --hidden-import tools.lattice.lattice_lab --hidden-import tools.janus_calc.core --hidden-import tools.janus_calc.anyV \
-            --hidden-import tools.janus_lt.background --hidden-import tools.janus_lt.desi --hidden-import tools.janus_lt.growth --hidden-import tools.janus_astro.galaxy --hidden-import tools.janus_astro.fast --hidden-import tools.janus_astro.mapper_feed --hidden-import tools.janus_astro.mapper_orbits --hidden-import tools.janus_astro.const --hidden-import tools.janus_astro.jfactor --collect-all galpy \
+            --hidden-import tools.serapis_calc.emulator --hidden-import tools.serapis_calc.meter --hidden-import tools.serapis_calc.modular --hidden-import tools.serapis_calc.eisenstein --hidden-import tools.serapis_calc.selftest --hidden-import tools.janus_lt.background --hidden-import tools.janus_lt.desi --hidden-import tools.janus_lt.growth --hidden-import tools.janus_astro.galaxy --hidden-import tools.janus_astro.fast --hidden-import tools.janus_astro.mapper_feed --hidden-import tools.janus_astro.mapper_orbits --hidden-import tools.janus_astro.const --hidden-import tools.janus_astro.jfactor --collect-all galpy \
             --paths tools/scorecard --hidden-import inflation_scorecard.cli --hidden-import inflation_scorecard.core --hidden-import inflation_scorecard.janus --add-data "tools/scorecard/inflation_scorecard/data${SEP}inflation_scorecard/data" \
             tools/aegis_cli.py
       - name: Self-test the executable
@@ -37,6 +37,7 @@ jobs:
           ./dist/aegis-${RUNNER_OS}* hyperion orbit 269.452 4.6934 1.8266 -802.8 10362.4 -110.5
           ./dist/aegis-${RUNNER_OS}* scorecard --ns 0.970 0.975 --r 0.0005 | head -5
           ./dist/aegis-${RUNNER_OS}* late desi -0.75 -0.86
+          ./dist/aegis-${RUNNER_OS}* serapis j 0 1
       - uses: actions/upload-artifact@v4
         with:
           name: aegis-${{ runner.os }}

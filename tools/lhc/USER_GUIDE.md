@@ -277,6 +277,51 @@ Output:
 ```
 For comparison, ΛCDM (`aegis late desi`) gives χ² = 26.5 on the same 13 numbers, so these values fit the DESI BAO points better, as DESI reported. r_d is held fixed; nothing is fitted. `aegis late growth 0.5` gives the linear growth factor and rate.
 
+## SERAPIS: the model's predictions at tilt C = 1.15e-6
+```
+aegis serapis predict 1.15e-6
+```
+Output:
+```
+{
+ "C": 1.15e-06,
+ "T_R": 738900000.0,
+ "ns": 0.9733260506288407,
+ "r": 0.00046957375279225186,
+ "alpha_s": -0.0009736193951019191,
+ "engine": "PT1 quadratic emulator (fixed T_R)",
+ "valid": "C 1.0-1.6e-6",
+ "label": "SERAPIS-E model prediction (frozen band D693; scored only on future data)"
+}
+```
+A model prediction (frozen band D693), scored only on future data. Valid for C between 1.0e-6 and 1.6e-6.
+
+## SERAPIS: what the SPA + DESI n_s would mean for the string compactification
+```
+aegis serapis meter 0.9728 0.0027
+```
+Output:
+```
+{
+ "ns": 0.9728,
+ "C": 1.0953047220016353e-06,
+ "P": 890.256065152069,
+ "Nstar": 50.1746,
+ "r": 0.00046359200000000025,
+ "alpha_s": -0.0009616340000000005,
+ "engine": "PW6 table (log-interp)",
+ "P_range": [
+  722.3676897718151,
+  1163.607510887196
+ ],
+ "P_rel_sigma": 0.24781623983657475,
+ "T_R": 738900000.0,
+ "N_eff": 4,
+ "status": "postulate (PW6, D1268)"
+}
+```
+The inverse meter reads a measured n_s back to the tilt C and the product P = Im S·Im ρ. It rests on a postulate (PW6, D1268). `aegis serapis j 0 1` gives Klein's j(i) = 1728; `aegis serapis eisenstein 0.5 0.866` compares two independent ways of computing E(τ, 2); `aegis serapis test` runs the calculator's cross-checks.
+
 ## Inflation Scorecard: SERAPIS-E's band against current data
 Needs `pyyaml`. Give n_s as one value or a min-max band; add `--r`, `--alpha-s`, `--neff`, `--sum-mnu` as wanted. `--out file.md` saves the table.
 ```

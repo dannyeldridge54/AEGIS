@@ -17,6 +17,11 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   late dist <z> [H0 ombh2 omch2 w0 wa mnu]   comoving / angular / Hubble distances and H(z) (default Planck 2018)
   late desi [w0 wa H0 ombh2 omch2 rd]       chi-square of a w0-wa cosmology against DESI DR2 BAO (13 points)
   late growth <z> [H0 ombh2 omch2 w0 wa]    linear growth D(z)/D(0) and growth rate f(z)
+  serapis predict <C>               SERAPIS-E n_s, r, alpha_s at BHK tilt C (fast emulator, valid 1.0-1.6e-6)
+  serapis meter <n_s> [sigma]       inverse meter: the C and Im S*Im rho a measured n_s implies (postulate PW6)
+  serapis j <x> <y>                 Klein j-invariant at tau = x + iy (j(i) = 1728)
+  serapis eisenstein <x> <y> [s]    non-holomorphic Eisenstein series E(tau, s), two independent methods
+  serapis test                      SERAPIS calculator self-test (independent cross-checks)
   scorecard --ns <n_s> [--r <r>] [--alpha-s <a>] [--label <name>]
                                     score an inflation model against every current CMB/LSS constraint (Inflation Scorecard)
   license                           show license terms
@@ -143,6 +148,38 @@ def late(args):
         D, f = growth(C, [z])[z]
         _show({'z': z, 'params': p, 'D_over_D0': float(D), 'growth_rate_f': float(f), 'note': 'scale-independent linear growth (no neutrino free-streaming)'})
 
+def serapis(args):
+    if not args: print(__doc__); return
+    c = args[0]
+    if c == 'predict':
+        from tools.serapis_calc import emulator as E
+        if len(args) < 2: raise ValueError('predict needs C, e.g. aegis serapis predict 1.15e-6')
+        C = float(args[1])
+        if not 1.0e-6 <= C <= 1.6e-6: raise ValueError('the emulator is valid for C between 1.0e-6 and 1.6e-6 (the frozen band)')
+        out = E.emulate(C); out['label'] = 'SERAPIS-E model prediction (frozen band D693; scored only on future data)'; _show(out)
+    elif c == 'meter':
+        from tools.serapis_calc import meter as M
+        if len(args) < 2: raise ValueError('meter needs n_s, e.g. aegis serapis meter 0.9728 0.0027')
+        ns = float(args[1]); sig = float(args[2]) if len(args) > 2 else None
+        if not 0.95 < ns < 0.99: raise ValueError('n_s should be between 0.95 and 0.99')
+        _show(M.meter(ns, sig))
+    elif c == 'j':
+        from tools.serapis_calc import modular as J
+        x, y = float(args[1]), float(args[2])
+        if y <= 0: raise ValueError('tau must be in the upper half-plane (y > 0)')
+        v = complex(J.j(complex(x, y))); _show({'tau': [x, y], 'j_real': v.real, 'j_imag': v.imag})
+    elif c == 'eisenstein':
+        from tools.serapis_calc import eisenstein as EI
+        x, y = float(args[1]), float(args[2]); s_ = float(args[3]) if len(args) > 3 else 2.0
+        if y <= 0: raise ValueError('tau must be in the upper half-plane (y > 0)')
+        a, b = float(EI.E_fourier(x, y, s_)), float(EI.E_lattice(x, y, s_))
+        _show({'tau': [x, y], 's': s_, 'E_fourier': a, 'E_lattice_sum': b, 'agreement': abs(a/b - 1)})
+    elif c == 'test':
+        import runpy
+        try: runpy.run_module('tools.serapis_calc.selftest', run_name='__main__')
+        except SystemExit: pass
+    else: print(__doc__)
+
 def lattice(args):
     from tools.lattice import lattice_lab
     lattice_lab.main(args)
@@ -170,6 +207,8 @@ def menu(args):
              ('Hyperion: Milky Way orbit of one star', lambda: hyperion(['orbit'] + [input(f'  {q}: ') for q in ('ra (deg)', 'dec (deg)', 'distance (pc)', 'pmra (mas/yr)', 'pmdec (mas/yr)', 'radial velocity (km/s)')])),
              ('Late universe: distances to a redshift (Planck 2018)', lambda: late(['dist', input('  redshift z: ')])),
              ('Late universe: score w0, wa against DESI DR2 BAO', lambda: late(['desi', input('  w0 [-1]: ') or '-1', input('  wa [0]: ') or '0'])),
+             ('SERAPIS: predictions at a tilt C', lambda: serapis(['predict', input('  C [1.15e-6]: ') or '1.15e-6'])),
+             ('SERAPIS: what a measured n_s implies (inverse meter)', lambda: serapis([a for a in ['meter', input('  n_s: '), input('  sigma [none]: ')] if a])),
              ('Inflation Scorecard: score n_s and r against current data', lambda: scorecard(['--ns', input('  n_s: '), '--r', input('  r [0]: ') or '0'])),
              ('Show license', lambda: license_([]))]
     while True:
@@ -184,7 +223,7 @@ def menu(args):
 
 def main(argv=None):
     _root(); argv = sys.argv[1:] if argv is None else argv
-    cmds = {'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
+    cmds = {'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
     if not argv: return menu([])
     if argv[0] in ('-h', '--help', 'help') or argv[0] not in cmds: print(__doc__); return
     try: cmds[argv[0]](argv[1:])
