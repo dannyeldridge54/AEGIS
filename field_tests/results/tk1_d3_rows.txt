@@ -1,0 +1,8 @@
+grid C 1.30e-06 N* 50.700 | MS(U1b) n_s 0.975448 r 4.82285e-04 α_s -9.9885e-04 (3.8s) | Janus3 Δn_s +1.8e-07 Δr/r +0.012% Δα -1.8e-06 | rel α_s -9.6457e-04 (3.4%) | pulls SPA +2.35σ SPA+DESI +0.98σ | PASS
+T_R 6.6e+08 C 1.30e-06 N* 50.146 | MS(U1b) n_s 0.974892 r 4.88946e-04 α_s -1.0130e-03 (1.9s) | Janus3 Δn_s +2.4e-07 Δr/r +0.012% Δα -1.9e-06 | rel α_s -9.7789e-04 (3.5%) | pulls SPA +2.16σ SPA+DESI +0.77σ | PASS
+T_R 2.0e+10 C 1.00e-06 N* 51.265 | MS(U1b) n_s 0.972767 r 4.38151e-04 α_s -9.0846e-04 (1.9s) | Janus3 Δn_s +1.6e-07 Δr/r +0.010% Δα -2.6e-06 | rel α_s -8.7630e-04 (3.5%) | pulls SPA +1.46σ SPA+DESI -0.01σ | PASS
+T_R 2.0e+10 C 1.15e-06 N* 51.272 | MS(U1b) n_s 0.974380 r 4.56395e-04 α_s -9.4559e-04 (1.8s) | Janus3 Δn_s +1.1e-06 Δr/r +0.011% Δα +2.4e-06 | rel α_s -9.1279e-04 (3.5%) | pulls SPA +1.99σ SPA+DESI +0.59σ | PASS
+T_R 2.0e+10 C 1.30e-06 N* 51.279 | MS(U1b) n_s 0.976021 r 4.75578e-04 α_s -9.8438e-04 (2.0s) | Janus3 Δn_s -5.1e-08 Δr/r +0.012% Δα -3.3e-06 | rel α_s -9.5116e-04 (3.4%) | pulls SPA +2.54σ SPA+DESI +1.19σ | PASS
+CAMB r 4.382e-04: primordial-tensor D_ℓ^BB(ℓ=80) = 2.701e-05 μK²
+CAMB r 4.889e-04: primordial-tensor D_ℓ^BB(ℓ=80) = 3.014e-05 μK²
+TK1 D3 VERDICT (agreement bars): PASS
