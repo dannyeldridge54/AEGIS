@@ -611,3 +611,4 @@ D1324  2026-11-18T17:12Z  A2o: window upper edge computed - 1 TeV passes all Gai
 D1325  2026-11-18T17:14Z  v3.3 overclaim fixed: SO (sigma 0.045) sees tau_i U(1) dark radiation only at 1.2 sigma, not a test; SU(2) at 3.6 sigma
 D1326  2026-11-18T17:14Z  v3.3 draft: 1.25/1.5 TeV bullet from A2o added (unposted); covariant-row 0.67-1.85 left (different scenario, flagged)
 D1327  2026-11-18T17:17Z  Continuum gamma-ray probes (dwarfs, diffuse, isotropic) vs the computed window: no constraint (f^2 <= 0.1; f=1 exclusions lie outside 0.67-1.5 TeV)
+D1328  2026-11-18T17:19Z  Hyperion 1.1 smoke test added: 6/6 PASS in 10 s (relic, Mapper, galpy path, 7PN, IGS f_max, fraction)
