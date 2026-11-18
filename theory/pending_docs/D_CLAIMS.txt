@@ -570,3 +570,4 @@ D1283  2026-11-18T10:57Z  Literature: optimal Narain CFTs (2206.14825) vs our la
 D1284  2026-11-18T11:11Z  wino_window recheck after D1283 (Narain-lattice literature; graph ripple only): unchanged
 D1285  2026-11-18T11:29Z  Literature: moduli trapping at enhanced symmetry points vs D1283 open question
 D1286  2026-11-18T11:34Z  Lattice winners d=6,7 all families (PREREG D1286)
+D1287  2026-11-18T11:37Z  Correction: lattice notes mis-mapped to n_sector_rho
