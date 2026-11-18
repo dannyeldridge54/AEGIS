@@ -11,6 +11,9 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   cern future                       HL-LHC / HE-LHC / FCC-hh wino reach
   lattice <command> [args]          Lattice Lab (e.g. lattice hexagons E8, lattice energy E6 1.25)
   janus "<V(phi)>" [N*]             inflation observables n_s, r, alpha_s for any potential, e.g. janus "0.5*phi**2" 60
+  hyperion bbn <omega_b h^2> [dNeff]   primordial helium Y_p and D/H (PRIMAT 2021 tables; needs camb)
+  hyperion orbit <ra> <dec> <dist_pc> <pmra> <pmdec> <rv> [McMillan17|MWPotential2014]
+                                    3 Gyr Milky Way orbit of one star: r_peri, r_apo, z_max, eccentricity
   license                           show license terms
 
 AEGIS Community License: free for individuals, scientists, students, schools, nonprofits and public research.
@@ -55,6 +58,33 @@ def janus(args):
     s = core.spectra3(anyV.from_formula(args[0]), N)
     _show({'V': args[0], 'N_star': N, **{k: v for k, v in s.items() if k in ('ns', 'r', 'alpha_s', 'beta_s')}})
 
+def hyperion(args):
+    if not args: print(__doc__); return
+    if args[0] == 'bbn':
+        try: from tools.janus_astro import bbn
+        except ImportError: print('hyperion bbn needs the camb package:  pip install camb'); return
+        ob = float(args[1]); dN = float(args[2]) if len(args) > 2 else 0.0
+        if not 0.005 < ob < 0.05: raise ValueError('omega_b h^2 should be between 0.005 and 0.05 (Planck: 0.0224)')
+        _show({'omega_b_h2': ob, 'dNeff': dN, 'Y_p_nucleon': bbn.Yp(ob, dN), 'Y_p_mass': bbn.Yp_mass(ob, dN), 'D/H': bbn.DH(ob, dN),
+               'note': 'PRIMAT 2021 tables via CAMB; Y_p_nucleon = 4 n_He/n_b, Y_p_mass = helium mass fraction'})
+    elif args[0] == 'orbit':
+        import numpy as np
+        from tools.janus_astro import mapper_feed as F, mapper_orbits as MO
+        ra, dec, d_pc, pmra, pmdec, rv = (float(a) for a in args[1:7]); model = args[7] if len(args) > 7 else MO.DEFAULT_MODEL
+        if model not in MO.MODELS: raise ValueError('model must be McMillan17 or MWPotential2014')
+        if not 0 < d_pc < 2e5: raise ValueError('distance must be in parsecs, 0 to 200000')
+        M = MO.MODELS[model]; A = lambda x: np.array([x])
+        l, b = F.icrs_to_galactic(A(ra), A(dec))
+        p, v = F.galactocentric(A(ra), A(dec), A(d_pc/1000.0), A(pmra), A(pmdec), A(rv), r0_xy=M['r0'], v_sun=M['v_sun'])
+        if model == 'MWPotential2014':
+            from tools.janus_astro import fast; o = fast.orbits_fast(*p, *v)
+        else:
+            try: o = F.orbit_params_galpy(*p, *v, pot=model)
+            except ImportError: print('McMillan17 orbits need galpy:  pip install galpy astropy   (or add MWPotential2014)'); return
+        _show({'model': model, 'l_deg': float(l[0]), 'b_deg': float(b[0]), 'xyz_kpc': [float(q[0]) for q in p], 'v_kms': [float(q[0]) for q in v],
+               'r_peri_kpc': float(o['rperi'][0]), 'r_apo_kpc': float(o['rapo'][0]), 'z_max_kpc': float(o['zmax'][0]), 'eccentricity': float(o['ecc'][0])})
+    else: print(__doc__)
+
 def lattice(args):
     from tools.lattice import lattice_lab
     lattice_lab.main(args)
@@ -78,6 +108,8 @@ def menu(args):
              ('Lattice Lab: hexagonal planes in a lattice', lambda: lattice(['hexagons', input('  lattice (D4, E6, E7, E8, BW16, Leech): ')])),
              ('Lattice Lab: energy of a lattice', lambda: lattice(['energy', input('  lattice (e.g. E6): '), input('  alpha values, comma separated: ')])),
              ('Janus: inflation observables for a potential', lambda: janus([input('  V(phi), e.g. 0.5*phi**2: '), input('  N* [55]: ') or '55'])),
+             ('Hyperion: primordial helium and deuterium', lambda: hyperion(['bbn', input('  omega_b h^2 [0.02237]: ') or '0.02237', input('  extra N_eff [0]: ') or '0'])),
+             ('Hyperion: Milky Way orbit of one star', lambda: hyperion(['orbit'] + [input(f'  {q}: ') for q in ('ra (deg)', 'dec (deg)', 'distance (pc)', 'pmra (mas/yr)', 'pmdec (mas/yr)', 'radial velocity (km/s)')])),
              ('Show license', lambda: license_([]))]
     while True:
         print('\nAEGIS toolkits — free for people and science; businesses need a commercial license.')
@@ -91,7 +123,7 @@ def menu(args):
 
 def main(argv=None):
     _root(); argv = sys.argv[1:] if argv is None else argv
-    cmds = {'cern': cern, 'janus': janus, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
+    cmds = {'cern': cern, 'janus': janus, 'hyperion': hyperion, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
     if not argv: return menu([])
     if argv[0] in ('-h', '--help', 'help') or argv[0] not in cmds: print(__doc__); return
     try: cmds[argv[0]](argv[1:])
