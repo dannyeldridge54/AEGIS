@@ -13707,3 +13707,18 @@ LABEL: numerics (computed) from literature formulas (Ibe–Matsumoto–Sato arXi
 BETTER THAN THE USUAL PRACTICE: searches often quote a single benchmark (τ ≈ 0.2 ns); this engine gives the mass-dependent lifetime with
 the μν phase-space factor included and the ±0.3–0.4 MeV theory error from the source (→ ±~1% on cτ) available for propagation.
 TOOL: tools/lhc/lifetime.py (`dm`, `widths`).
+
+## D1301 — Janus-LHC LHC3: our disappearing-track recast reproduces the ATLAS pure-wino limit (666.6 vs 660 GeV) and projects HL-LHC to ≈975 GeV; PREREG P1–P3 PASS (2026-11-18)
+MAP: none
+LABEL: numerics (computed) anchored on literature (ATLAS arXiv:2201.02472: EW SR 3 obs / 3.0 ± 0.7 bkg, σ_vis < 0.037 fb, benchmark
+8.6 events at 600 GeV, τ = 0.2 ns); locked first (PREREG_LHC3). Toolkit result; NOT a change to the wino_window node (other session).
+Recast v0: N_sig(m) = 8.6 × σ_tot(m)/σ_tot(600) × P(m)/P(600); σ_tot from Janus-LHC route 1 (13 TeV), P = probability to decay
+between 122.5 and 299 mm with the mass-dependent lifetime from LHC2 (D1300), fixed βγ = 0.5.
+- P1 PASS: excluded up to 666.6 GeV with the observed N₉₅ = 5.03 (ATLAS: 660 observed, 680 expected); with an expected-style
+  N₉₅ = 5.40 (n = b = 3): 657.7 GeV. The result is insensitive to the βγ assumption (0.3 / 0.5 / 0.8 → 664.6 / 666.6 / 667.8 GeV),
+  because the pure-wino lifetime barely changes with mass there.
+- P2 PASS: HL-LHC (14 TeV, 3000 fb⁻¹, background ×22 → 66 events, N₉₅ = 17.6 by exact Poisson CLs, Run-2 efficiency kept):
+  ≈ 975 GeV. Caveat stated: the HL-LHC tracker (ITk) changes the efficiency; this is a like-for-like extrapolation, not a detector study.
+- P3 PASS: the pure-wino lifetime at 666 GeV is 0.197 ns (1.4% from ATLAS's 0.2 ns benchmark).
+BETTER THAN USUAL: the limit comes with the mass-dependent lifetime and an explicit βγ sensitivity instead of one fixed τ; runs in < 1 s.
+TOOL: tools/lhc/recast_dt.py (`limit`, `hl_lhc`, `n_sig`).

@@ -2051,3 +2051,9 @@ Touches: none.
 2. [derived] Added the μν mode with the exact muon-decay phase-space factor.
 3. [derived] δm rises from 149.5 MeV (100 GeV) to 164.5 MeV (3 TeV); cτ falls from 11.3 to 5.75 cm; τ(δm=160 MeV) = 0.226 ns.
 4. [derived] Locked P1 partly failed (δm(1 TeV) = 164.1, not ≤163 MeV); P2–P4 passed.
+
+## D1301: Disappearing-track recast reproduces the ATLAS wino limit (666.6 vs 660 GeV) and projects HL-LHC to ≈975 GeV (2026-11-18)
+1. [literature] ATLAS 136 fb⁻¹ EW signal region: σ_vis < 0.037 fb (N₉₅ = 5.03), benchmark 8.6 events at 600 GeV, τ = 0.2 ns.
+2. [derived] N_sig(m) scaled from the benchmark with Janus-LHC cross sections and the decay probability between 122.5 and 299 mm using the LHC2 lifetime.
+3. [derived] Limit 666.6 GeV (observed N₉₅), 657.7 GeV (n = b); βγ 0.3–0.8 moves it by ≤ 2 GeV.
+4. [estimate] HL-LHC like-for-like (14 TeV, 3000 fb⁻¹, Run-2 efficiency): N₉₅ = 17.6 on b = 66 → ≈ 975 GeV.
