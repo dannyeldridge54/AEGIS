@@ -353,3 +353,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1231: a start-finder fix proven at one parameter point is not a general fix — lock its range of validity, or expect the same failure elsewhere.
 - D1233: after a correction to an input (N*), re-derive every frozen output that used it — a frozen band can stay "consistent" on its old definition while the corrected input already sits outside it.
 - D1234: node labels go stale silently — nstar_e kept D725's window after D979 corrected it. Every audit phase must recompute the node value itself, not trust the label or the note that cites it.
+- D1235: when one chain feeds a model built later (SERAPIS-E n = 1 fed by the n = 3 era reheating script), re-check every convention constant (Kähler weight, canonical factor, mass) at the hand-off; a correct-looking ratio (m²/H² = 34.7) can hide a wrong absolute scale.

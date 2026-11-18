@@ -12818,3 +12818,16 @@ MAP: node=mnu status=frozen touches=[] ripple=no
 
 ## D1233a — correction to D1233
 D1233 attributed the N* window 49.7–50.5 to D979. It is D725's window (slow-roll end). D979's exact end gives 49.88–50.64 (computed in D1234). The D1233 verdict (frozen band CONSISTENT on its own N* range; flag on band_e from nstar_e) stands; the corrected top edge is 50.64, not 50.5.
+
+## D1235 — CENTRE — NA3 node audit, phase 3: reheat_rho re-derived — two input errors found in the ρ reheating chain (m_φ low by ×1.44; inflaton coupling normalised as n = 3 while SERAPIS-E is n = 1); corrected T_R ×2.1, N* +0.24 to +0.63; n_s, r still inside the frozen band
+Lock: field_tests/rules/PREREG_NA3_reheat_rho.md. Results: field_tests/results/na3_reheat_rho.txt.
+A [computed]: d²v/dφ² at ρ = 11.567 V0 with the pipeline's n = 1 (D689: 11.57) → PASS. m²/H*² = 34.8 (D689: 34.7). But m_φ = 3.17e13 GeV (V0^{1/4} = 4.77e15 GeV from A_s = 2.1e-9, r = 4.72e-4 at N* = 50), not D689's 2.2e13 → FAIL as locked.
+D689's own m²/H² = 34.7 with m = 2.2e13 implies H* = 3.7e12 GeV, but the band's r gives H* = 5.4e12: D689's H* was low by ×1.44 (V* low by ≈ ×2; cause not traced, no rerun to chase it). D725 inherited m_φ = 2.2e13.
+B [computed]: D725's T_R reproduced from its printed couplings to +0.03 to +0.15 % on 6 of 7 rows; the c = 0.3, M_H = 5e13 row is +1.01 % (lock: 1 %) → FAIL as locked. Cause: that row sits near threshold (x = M_L/m_φ = 0.48, (1−4x²)^{3/2}), so 3-digit rounding of the printed M_L moves T_R by ~1 %. Arithmetic is otherwise right.
+C [computed]: D725 line 14 converts Im τ to the canonical inflaton with y√(2/3), i.e. K = −3 ln(2 Im τ). SERAPIS-E's inflaton has n = 1 (φ = ln y/√2, pipeline and A above) → dy/dφ = y√2, couplings ×√3, Γ ×3. With m_φ = 3.17e13 as well:
+T_R ×2.08–2.86 (×9.8 on the near-threshold row) → window 6.6e8–2.0e10 GeV (was 3.2e8–3.0e9). Self-consistent N* (exact end): 50.14–51.28 (D725 inputs with the exact end: 49.90–50.65). n_s 0.97330–0.97439, r 4.70–4.56e-4: inside the frozen n_s band and just above the r floor 4.55e-4.
+|ΔN*| up to 0.63 > 0.05 → FLAG reheat_rho and nstar_e (ripple).
+Caveat [not derived here]: the √3 applies only if the flavour modulus τ of the 2⊕1 sector IS SERAPIS-E's inflaton U (Kähler weight 1). If the neutrino sector depends on a different, weight-3 modulus, D725's normalisation is right for that modulus, but then the inflaton does not couple through this mass matrix at all and reheat_rho needs a different channel. Either way the node as written is not SERAPIS-E-consistent.
+Frozen predictions unchanged (post-hoc rule). Combined with NA2: N* ≈ 50.1–51.3 sits 0.2–1.4 e-folds above the frozen band's N* range 48.4–49.9; the band's n_s, r still hold except the r floor is now 0.3 % away at the top T_R.
+Next: decide which modulus the 2⊕1 neutrino sector uses (theory question; check D720–D725 and the paper's sector definitions); then lepto_rho (its T_R inputs come from D725, so D731/D775/D986 yields scale with T_R/m_φ).
+MAP: node=reheat_rho status=computed touches=[nstar_e, lepto_rho, sterile_rho, C_nstar] ripple=yes
