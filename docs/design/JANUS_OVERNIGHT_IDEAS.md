@@ -294,3 +294,34 @@ Danny's words: "Toolkit for chemistry mapping out wavelength and matter formatio
   - collector points → rhythm.
 - **Lyrics:** original lyric generator prompts and drafts built from our story; never reproduce existing songs.
 - **Player:** a Sound card in Janus with play/stop and layer toggles. Labelled art/analogy, except where a real frequency is played (e.g. the 21 cm line scaled into the audible range, with the scale factor stated).
+
+### [S] Sound engine as a full music studio (Danny, 23:05 CT)
+Danny's words: "Sound engine like Fruity Loops but integrated into our system and CubeMind."
+
+This is a pattern-based music studio of our own, in the style of a step-sequencer DAW. It uses original design and names: no FL Studio branding, assets or copied UI.
+
+**"Janus Loops" studio** (a tab in the Janus app; Web Audio API, offline)
+- **Step sequencer:** 16/32 steps, swing, per-step velocity and pitch.
+- **Piano roll:** notes, scales and chord stamps.
+- **Channel rack of instruments:**
+  - subtractive and FM synths;
+  - a sampler that plays any WAV;
+  - drum kits synthesised from scratch (no copied samples);
+  - "data instruments" whose timbre comes from our physics (torus glide, Balmer-chord pad, CMB drone, D3-stack bells).
+- **Patterns → playlist/arrangement**, with a mixer (volume, pan, EQ, reverb, delay, compressor) and automation lanes.
+- **Data lanes:** drag any data series onto an automation lane, e.g. collector points, a W1 wave, or the matter-formation timeline.
+- **Export:** WAV, MIDI and project JSON. Projects are saved locally.
+
+**Integration**
+- **Python side:** `tools/sound/` renders the same project JSON offline to WAV (numpy), so the cloud, the PC and CubeMind produce identical audio.
+- **Registry tools:**
+  - `sound_render` (project JSON → WAV);
+  - `sound_map` (data series + mapping → pattern);
+  - `lyrics_draft` (theme → original lyric draft; never existing songs).
+- **CubeMind:**
+  - can compose by writing pattern/project JSON through the registry, e.g. "make a 90-bpm track from the audit timeline";
+  - every song or render is stored in MindMem with its data source and mapping;
+  - the referee checks that lyrics are original.
+- **Janus:** a "Send to Loops" button on any view pushes that view's data into the studio as a pattern.
+
+**Labels.** Art/analogy, except where real frequencies are shown with their scale factor.
