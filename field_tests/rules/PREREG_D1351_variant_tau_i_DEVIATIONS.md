@@ -1,0 +1,3 @@
+# DEVIATIONS for PREREG_D1351 (written before any use of the run's numbers)
+D1 (gate): the transcription gate failed at y = 1.5 (rel 1.2e-5 > 1e-8) and passed at y = 3 (3e-16). Diagnosis: D632's V uses the truncated q-series j·q ≈ 1 + 744q + 196884q² (l < 300 branch); modular.j is exact. The first missing term, 21493760 q³, is ≈ 1.1e-5 of j·q at y = 1.5 (q = e^{−3π}) and ≈ 1e-16 at y = 3 — the size of the observed gaps.
+Fix (gate only): rerun the gate comparing modular.j with D632's formula PLUS the q³ term (expected agreement ~ next term, 864299970 q⁴ ≈ 4e-8 at y = 1.5; accept ≤ 1e-7) and with the plain D632 formula at y = 3 (≤ 1e-8). No change to V, ε, the grid, the scan or the verdict rule. The rest of the first run is used only if this gate passes.
