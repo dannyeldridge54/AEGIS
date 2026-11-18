@@ -594,3 +594,4 @@ D1307  2026-11-18T13:45Z  untitled
 D1308  2026-11-18T13:54Z  untitled
 D1309  2026-11-18T13:55Z  CERN+1 theory band
 D1310  2026-11-18T13:57Z  CERN+1 band in registry
+D1311  2026-11-18T14:34Z  CERN+1 36fb residual explained
