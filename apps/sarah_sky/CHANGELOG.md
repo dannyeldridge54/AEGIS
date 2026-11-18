@@ -1,4 +1,9 @@
 # Changelog
+## 1.3.1 — 18 Nov 2026
+- Point & See accuracy: on Android the compass-referenced sensor stream is now used and the drifting relative stream is ignored once it appears (they were overwriting each other); on iPhone the gyro is tied to the compass heading; motion is smoothed to stop the jitter; sensors now start even on browsers that expose a permission prompt.
+- Set North (tap the Sun, Moon, a planet or a bright star) is remembered between sessions, which also corrects magnetic declination.
+- Location: best GPS fix within ~12 s (shows its accuracy), remembered for next time; a clear notice if it falls back to Oklahoma City.
+- Floating buttons hide while a panel is open; Point & See moved below the map toolbar.
 ## 1.3.0 — 18 Nov 2026
 - Opening screen: "Philosophia — for Sarah", a turning zodiac wheel, flower of life, star and planet symbols while the map loads — when loading finishes "Philosophia" flips to "for Sarah", the wheel spins up and the screen zooms open into the sky (tap to skip; calm version with reduced motion).
 - Janus "Prismatic Light" colours; dark by default (a light theme stays available).

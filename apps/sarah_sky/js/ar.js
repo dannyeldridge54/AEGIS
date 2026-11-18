@@ -18,7 +18,7 @@
   var state = {
     stars: [], cons: [], deep: [], planets: [],
     show: { stars: true, lines: true, planets: true, deep: false, zodiac: false },
-    observer: null, flip: false, headingOffset: 0, zoom: 35,
+    observer: null, flip: false, headingOffset: (function () { try { return parseFloat(localStorage.getItem('sky.headingOffset')) || 0; } catch (e) { return 0; } })(), zoom: 35,
     R: null, haveOrient: false, calMode: false, DPR: Math.min(2, window.devicePixelRatio || 1),
     locked: false, manAz: 0, manAlt: 30, manRoll: 0   // locked view: phone can move; touch pans on the az/alt axes
   };
@@ -62,11 +62,30 @@
 
   /* ---------- geolocation ---------- */
   function getLoc() {
+    // Best fix within ~12 s (watchPosition keeps improving), remembered on the device for next time.
+    // Note: for the sky, 1 km of GPS error moves stars by less than 0.01 deg - the compass matters far more.
     return new Promise(function (res) {
-      if (!navigator.geolocation) return res(mk(35.47, -97.52, 390)); // OKC fallback
-      navigator.geolocation.getCurrentPosition(
-        function (p) { res(mk(p.coords.latitude, p.coords.longitude, p.coords.altitude || 300)); },
-        function () { res(mk(35.47, -97.52, 390)); }, { enableHighAccuracy: true, timeout: 6000 });
+      var saved = null; try { saved = JSON.parse(localStorage.getItem('sky.loc') || 'null'); } catch (e) {}
+      var fallback = function () {
+        if (saved) { toast('Using your last saved location'); return res(mk(saved.lat, saved.lon, saved.h)); }
+        toast('Location unavailable - using Oklahoma City. The view may be shifted if you are far away.');
+        res(mk(35.47, -97.52, 390));
+      };
+      if (!navigator.geolocation) return fallback();
+      var best = null, done = false, id = null;
+      var finish = function () {
+        if (done) return; done = true; if (id != null) navigator.geolocation.clearWatch(id);
+        if (!best) return fallback();
+        var c = best.coords, h = (c.altitude != null && isFinite(c.altitude)) ? c.altitude : 300;
+        try { localStorage.setItem('sky.loc', JSON.stringify({ lat: c.latitude, lon: c.longitude, h: h })); } catch (e) {}
+        toast('Location set (±' + Math.round(c.accuracy) + ' m)');
+        res(mk(c.latitude, c.longitude, h));
+      };
+      id = navigator.geolocation.watchPosition(function (p) {
+        if (!best || p.coords.accuracy < best.coords.accuracy) best = p;
+        if (best.coords.accuracy <= 30) finish();
+      }, function () { finish(); }, { enableHighAccuracy: true, maximumAge: 60000, timeout: 15000 });
+      setTimeout(finish, 12000);
     });
     function mk(lat, lon, h) { return new A.Observer(lat, lon, h); }
   }
@@ -131,21 +150,36 @@
   function cross(a, b) { return [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]]; }
   function norm(v) { var n = Math.hypot(v[0], v[1], v[2]) || 1; return [v[0]/n, v[1]/n, v[2]/n]; }
 
-  var compassHeading = null; // iOS true heading if available
+  var compassHeading = null;   // iOS magnetic heading if available
+  var absSeen = false, iosOffset = null, SM = 0.25, prevR = null;
+  function blend(a, b) { return norm([a[0] + SM * (b[0] - a[0]), a[1] + SM * (b[1] - a[1]), a[2] + SM * (b[2] - a[2])]); }
   function onOrient(ev) {
     if (ev.alpha == null) return;
+    var isAbs = ev.type === 'deviceorientationabsolute' || ev.absolute === true;
+    if (isAbs) absSeen = true;
+    else if (absSeen) return;            // Android: ignore the relative stream once the compass-referenced one exists
+    var alpha = ev.alpha;
+    if (typeof ev.webkitCompassHeading === 'number' && !isNaN(ev.webkitCompassHeading)) {
+      compassHeading = ev.webkitCompassHeading;
+      // iOS alpha is relative; tie it to the compass while the phone is near flat, then keep that offset
+      if (Math.abs(ev.beta) < 50 && Math.abs(ev.gamma) < 50) {
+        var off = ((360 - compassHeading) - ev.alpha + 540) % 360 - 180;
+        iosOffset = iosOffset == null ? off : iosOffset + 0.1 * (((off - iosOffset + 540) % 360) - 180);
+      }
+      if (iosOffset != null) alpha = ev.alpha + iosOffset;
+    }
     state.haveOrient = true;
     if (state.locked) return;   // frozen: the phone no longer drives the view
     var scr = (screen.orientation && screen.orientation.angle) || window.orientation || 0;
-    var m = rotFromEuler(ev.alpha, ev.beta, ev.gamma);
+    var m = rotFromEuler(alpha, ev.beta, ev.gamma);
     // back camera look = device -Z ; screen up = device +Y ; screen right = device +X (rotated by screen angle)
     var look = mulVec(m, [0, 0, -1]), up0 = mulVec(m, [0, 1, 0]), right0 = mulVec(m, [1, 0, 0]);
-    // rotate the screen basis by the screen-orientation angle in the (right,up) plane
     var sa = scr * D2R, c = Math.cos(sa), s = Math.sin(sa), i;
     var up = [0, 0, 0], right = [0, 0, 0];
     for (i = 0; i < 3; i++) { up[i] = up0[i] * c + right0[i] * s; right[i] = right0[i] * c - up0[i] * s; }
-    state.R = { look: look, up: up, right: right };
-    if (typeof ev.webkitCompassHeading === 'number' && !isNaN(ev.webkitCompassHeading)) compassHeading = ev.webkitCompassHeading;
+    if (prevR) { look = blend(prevR.look, look); up = blend(prevR.up, up); right = blend(prevR.right, right); }   // steady the jitter
+    prevR = { look: look, up: up, right: right };
+    state.R = prevR;
   }
   function dot(a, b) { return a[0]*b[0]+a[1]*b[1]+a[2]*b[2]; }
 
@@ -244,7 +278,8 @@
 
     // readout
     var la = lookAltAz();
-    lookB.innerHTML = 'alt <b>' + la.alt.toFixed(0) + '°</b> · az <b>' + la.az.toFixed(0) + '°</b>' + (compassHeading != null ? '' : ' <span style="color:#ff9">~</span>');
+    var _az = ((Math.round(la.az) % 360) + 360) % 360, _al = Math.round(la.alt) || 0;
+    lookB.innerHTML = 'alt <b>' + _al + '°</b> · az <b>' + _az + '°</b>' + ((compassHeading != null || absSeen) ? '' : ' <span style="color:#ff9" title="no compass: tap Set North">~</span>');
     requestAnimationFrame(draw);
   }
 
@@ -400,12 +435,13 @@
 
   // "Set North": tap the star you're actually pointing the reticle at; we rotate heading so it lines up
   function calibrateTo(cx, cy, best) {
-    if (!best || best.kind !== 'star' && best.kind !== 'planet') { toast('Tap a bright star you can name to set North'); return; }
+    if (!best || best.kind !== 'star' && best.kind !== 'planet') { toast('Tap the Sun, Moon, a planet or a bright star you can see to set North'); return; }
     var date = new Date(lastDate || Date.now());
     var aa = altaz(date, best.o.ra, best.o.dec);
     var la = lookAltAz(); // current pointing az (true)
     // we want that star's true az to equal where the phone points -> adjust offset
     state.headingOffset += (la.az - aa.az);
+    try { localStorage.setItem('sky.headingOffset', String(state.headingOffset)); } catch (e) {}
     state.calMode = false; retic.hidden = true; document.getElementById('tCal').setAttribute('aria-pressed', 'false');
     toast('North set on ' + (best.o.name || 'star'));
   }
@@ -466,14 +502,15 @@
 
   /* ---------- sensors permission (iOS gated) ---------- */
   function askOrient() {
-    var add = function () {
-      window.addEventListener('deviceorientationabsolute', onOrient, true);
-      window.addEventListener('deviceorientation', onOrient, true);
-    };
+    // Listen first (Android and desktop send events without asking); then ask where the browser gates it (iOS).
+    window.addEventListener('deviceorientationabsolute', onOrient, true);
+    window.addEventListener('deviceorientation', onOrient, true);
     if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-      return DeviceOrientationEvent.requestPermission().then(function (r) { if (r === 'granted') add(); else showErr('Motion access was declined — the sky can’t follow the phone. Tap Start to try again.'); });
+      return DeviceOrientationEvent.requestPermission().then(function (r) {
+        if (r !== 'granted' && !state.haveOrient) showErr('Motion access was declined — the sky can’t follow the phone. Tap Start to try again.');
+      }).catch(function () {});
     }
-    add(); return Promise.resolve();
+    return Promise.resolve();
   }
 
   /* ---------- start ---------- */

@@ -131,3 +131,7 @@ body{ background:var(--bg); color:var(--ink); }
 #splash .sp-sub, #splash .sp-sym{ transition:opacity .8s ease, letter-spacing 1.2s ease; }
 #splash.sp-ready .sp-sub{ letter-spacing:.24em; }
 @media (prefers-reduced-motion: reduce){ #splash .sp-card, #splash .sp-sigil, #splash{ transition:opacity .4s ease !important; } }
+/* keep the floating buttons out of the way of open panels */
+body.panel-open #sarahOverlays:not([open]), body.panel-open #arBtn{ opacity:0; pointer-events:none; }
+#sarahOverlays, #arBtn{ transition:opacity .25s ease; }
+@media (max-width:420px){ #arBtn{ padding:8px 12px !important; font-size:13px !important; } }
