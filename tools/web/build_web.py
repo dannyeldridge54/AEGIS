@@ -86,9 +86,26 @@ for a, b, ref, v, sg in (('T_chronos', 'J_core', 'TOOL_NAMES', 'Chronos runs Jan
                          ('H_bbn', 'darkrad_rho', 'D1088–D1192', 'N_eff / Y_p bound hidden sector', -1), ('H_bbn', 'C_D', 'B2 Chronos→BBN D1085', '', 1),
                          ('X_beneke', 'H_relic', 'Beneke 2009.00640', '+5.4% (no boost), +8.6% (LO Sommerfeld)', -1), ('X_hess', 'H_line', 'H.E.S.S. IGS 2026', '', 1)):
     edge(a, b, 'pair', sg, ref, v)
+# --- WIRING: one shared toolkit registry feeds the Janus app and CubeMind; every result flows into CubeMind's memory (Danny 18 Nov 2026: "wire them together") ---
+for i, l, st, r in (('W_registry', 'Shared toolkit registry (aegis_tools): 12 tools incl. serapis_point / serapis_ms', 'computed', 'cubemind a1351d8'),
+                    ('W_app', 'Janus app + link (live scans, tool calls, waves)', 'computed', 'apps/aegis_studio'),
+                    ('W_claude', 'Claude loops (Djl / Jl): locks, D-notes, audits', 'computed', 'D1233–D1252'),
+                    ('CM_mem', 'CubeMind memory (MindMem): D-notes + every Janus result as EVIDENCE', 'computed', 'mindmem ingest'),
+                    ('CM_eval', 'CubeMind evals: P7 (+aegis WIN vs plain), P8 physics track', 'computed', 'PREREG_PHASE7/8')):
+    node(i, l, 'wiring', st, r)
+for a, b, ref, v, sg in (('J_core', 'W_registry', 'serapis_point, serapis_spectra, janus_single', 'registered', 1), ('X_ms', 'W_registry', 'serapis_ms', 'registered', 1),
+                         ('J_mf', 'W_registry', 'janus_mf', 'registered', 1), ('J_lt', 'W_registry', 'janus_lt', 'registered', 1),
+                         ('S_10d', 'W_registry', 'kaluza_tensor / kaluza_stable', 'registered', 1), ('janus', 'W_registry', 'janus_relation', 'registered', 1),
+                         ('nstar_e', 'W_registry', 'nstar_match', 'registered', 1), ('serapis_e', 'W_registry', 'serapis potential (pipeline)', 'registered', 1),
+                         ('W_registry', 'W_app', 'link cmd tool{name,args}', 'Janus app runs any toolkit', 1), ('W_registry', 'CM_eval', '+aegis arm (P7), physics track (P8)', 'CubeMind calls the same tools', 1),
+                         ('W_app', 'CM_mem', 'to_cubemind()', 'every scan / tool result → EVIDENCE record', 1), ('W_claude', 'W_app', 'janus_link inbox / feed', 'Claude drives the app live', 1),
+                         ('W_claude', 'CM_mem', 'DERIVATION_LOG ingest', 'every D-note → memory', 1), ('CM_mem', 'CM_eval', 'retrieval', 'memory informs answers', 1),
+                         ('CM_eval', 'W_claude', 'RESULTS.md', 'scores feed the next lock', 1), ('W_app', 'band_e', 'live scans PW1/PW2', 'the app computed the audited box and the point', 1),
+                         ('W_claude', 'serapis_e', 'NA1–NA16 audit', 'audited every node', 1)):
+    edge(a, b, 'wire', sg, ref, v)
 node('X_beneke', 'Beneke et al. relic (2009.00640)', 'janus', 'literature', 'D1185'); node('X_hess', 'H.E.S.S. Inner Galaxy Survey line limit', 'janus', 'literature', 'D1125')
 edge('logderiv_plateau', 'plateau_origin', 'depends', -1, 'D822', 'killed candidate')
-out = dict(nodes=list(N.values()), edges=E, lanes=['left', 'centre', 'right', 'theory', 'janus', 'strings'])
+out = dict(nodes=list(N.values()), edges=E, lanes=['left', 'centre', 'right', 'theory', 'janus', 'strings', 'wiring'])
 bad = [e for e in E if e['s'] not in N or e['t'] not in N]
 assert not bad, bad
 (ROOT / 'docs/web').mkdir(parents=True, exist_ok=True); json.dump(out, open(ROOT / 'docs/web/web.json', 'w'), indent=1, ensure_ascii=False)

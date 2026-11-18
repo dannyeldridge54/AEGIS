@@ -585,6 +585,46 @@
    "info": ""
   },
   {
+   "id": "W_registry",
+   "label": "Shared toolkit registry (aegis_tools): 12 tools incl. serapis_point / serapis_ms",
+   "lane": "wiring",
+   "status": "computed",
+   "refs": "cubemind a1351d8",
+   "info": ""
+  },
+  {
+   "id": "W_app",
+   "label": "Janus app + link (live scans, tool calls, waves)",
+   "lane": "wiring",
+   "status": "computed",
+   "refs": "apps/aegis_studio",
+   "info": ""
+  },
+  {
+   "id": "W_claude",
+   "label": "Claude loops (Djl / Jl): locks, D-notes, audits",
+   "lane": "wiring",
+   "status": "computed",
+   "refs": "D1233–D1252",
+   "info": ""
+  },
+  {
+   "id": "CM_mem",
+   "label": "CubeMind memory (MindMem): D-notes + every Janus result as EVIDENCE",
+   "lane": "wiring",
+   "status": "computed",
+   "refs": "mindmem ingest",
+   "info": ""
+  },
+  {
+   "id": "CM_eval",
+   "label": "CubeMind evals: P7 (+aegis WIN vs plain), P8 physics track",
+   "lane": "wiring",
+   "status": "computed",
+   "refs": "PREREG_PHASE7/8",
+   "info": ""
+  },
+  {
    "id": "X_beneke",
    "label": "Beneke et al. relic (2009.00640)",
    "lane": "janus",
@@ -1575,6 +1615,159 @@
    "source": "curated"
   },
   {
+   "s": "J_core",
+   "t": "W_registry",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "serapis_point, serapis_spectra, janus_single",
+   "verdict": "registered",
+   "source": "curated"
+  },
+  {
+   "s": "X_ms",
+   "t": "W_registry",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "serapis_ms",
+   "verdict": "registered",
+   "source": "curated"
+  },
+  {
+   "s": "J_mf",
+   "t": "W_registry",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "janus_mf",
+   "verdict": "registered",
+   "source": "curated"
+  },
+  {
+   "s": "J_lt",
+   "t": "W_registry",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "janus_lt",
+   "verdict": "registered",
+   "source": "curated"
+  },
+  {
+   "s": "S_10d",
+   "t": "W_registry",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "kaluza_tensor / kaluza_stable",
+   "verdict": "registered",
+   "source": "curated"
+  },
+  {
+   "s": "janus",
+   "t": "W_registry",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "janus_relation",
+   "verdict": "registered",
+   "source": "curated"
+  },
+  {
+   "s": "nstar_e",
+   "t": "W_registry",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "nstar_match",
+   "verdict": "registered",
+   "source": "curated"
+  },
+  {
+   "s": "serapis_e",
+   "t": "W_registry",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "serapis potential (pipeline)",
+   "verdict": "registered",
+   "source": "curated"
+  },
+  {
+   "s": "W_registry",
+   "t": "W_app",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "link cmd tool{name,args}",
+   "verdict": "Janus app runs any toolkit",
+   "source": "curated"
+  },
+  {
+   "s": "W_registry",
+   "t": "CM_eval",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "+aegis arm (P7), physics track (P8)",
+   "verdict": "CubeMind calls the same tools",
+   "source": "curated"
+  },
+  {
+   "s": "W_app",
+   "t": "CM_mem",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "to_cubemind()",
+   "verdict": "every scan / tool result → EVIDENCE record",
+   "source": "curated"
+  },
+  {
+   "s": "W_claude",
+   "t": "W_app",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "janus_link inbox / feed",
+   "verdict": "Claude drives the app live",
+   "source": "curated"
+  },
+  {
+   "s": "W_claude",
+   "t": "CM_mem",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "DERIVATION_LOG ingest",
+   "verdict": "every D-note → memory",
+   "source": "curated"
+  },
+  {
+   "s": "CM_mem",
+   "t": "CM_eval",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "retrieval",
+   "verdict": "memory informs answers",
+   "source": "curated"
+  },
+  {
+   "s": "CM_eval",
+   "t": "W_claude",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "RESULTS.md",
+   "verdict": "scores feed the next lock",
+   "source": "curated"
+  },
+  {
+   "s": "W_app",
+   "t": "band_e",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "live scans PW1/PW2",
+   "verdict": "the app computed the audited box and the point",
+   "source": "curated"
+  },
+  {
+   "s": "W_claude",
+   "t": "serapis_e",
+   "kind": "wire",
+   "sign": 1,
+   "ref": "NA1–NA16 audit",
+   "verdict": "audited every node",
+   "source": "curated"
+  },
+  {
    "s": "logderiv_plateau",
    "t": "plateau_origin",
    "kind": "depends",
@@ -1590,6 +1783,7 @@
   "right",
   "theory",
   "janus",
-  "strings"
+  "strings",
+  "wiring"
  ]
 }

@@ -91,6 +91,9 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
         <div style="display:flex;gap:6px;margin-top:8px"><button class="btn" id="bexact">Compute exact here</button></div>
       </div>
       <div class="card"><h2>Scope · selected node</h2><canvas id="scope" width="640" height="200"></canvas><div class="small" id="scopecap">pick a knob on the weave</div></div>
+      <div class="card"><h2>Wiring · shared toolkits → CubeMind</h2>
+        <div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn" id="bpoint">SERAPIS point</button><button class="btn" id="bms">Exact MS here</button><button class="btn" id="btools">List tools</button></div>
+        <div class="small" id="wirecap">same registry CubeMind's +aegis arm uses; every result is stored in CubeMind memory</div></div>
       <div class="card"><h2>Live calculations</h2><ul id="feed" class="feedlist"></ul></div>
       <div class="card" id="info"><h2>Node</h2><div class="small">Click a glowing knob on the weave.</div><ul id="links"></ul></div>
     </aside>

@@ -4,13 +4,14 @@
 const D = window.AEGIS; const WEB = D.web, MODES = D.modes, LAND = D.landscape, GRID = D.grid;
 const C = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const LANE = {left: {c: '--cyan', name: 'Left string · early universe'}, centre: {c: '--violet', name: 'Centre · shared'}, right: {c: '--amber', name: 'Right string · late universe'},
-  theory: {c: '--lime', name: 'Theory map'}, janus: {c: '--magenta', name: 'Toolkits · Janus · Chronos · Hyperion'}, strings: {c: '--yellow', name: 'SERAPIS string sector'}};
+  theory: {c: '--lime', name: 'Theory map'}, janus: {c: '--magenta', name: 'Toolkits · Janus · Chronos · Hyperion'}, strings: {c: '--yellow', name: 'SERAPIS string sector'},
+  wiring: {c: '--teal', name: 'Wiring · registry · Janus app · CubeMind · Claude'}};
 const col = k => new THREE.Color(C(LANE[k].c));
 const ids = WEB.nodes.map(n => n.id), ix = Object.fromEntries(ids.map((k, i) => [k, i])), NN = ids.length;
 const byId = Object.fromEntries(WEB.nodes.map(n => [n.id, n]));
 // ---------- layout: everything flows left → right ----------
 const P = {}; (() => {
-  const rows = {left: 34, centre: 34, right: 34, theory: 6, janus: -22, strings: -42};
+  const rows = {left: 34, centre: 34, right: 34, theory: 6, janus: -22, strings: -42, wiring: -60};
   const xr = {left: [-92, -38], centre: [-22, 22], right: [38, 92]};
   const lanes = {}; WEB.nodes.forEach(n => (lanes[n.lane] ||= []).push(n));
   for (const [ln, arr] of Object.entries(lanes)) arr.forEach((n, i) => {
@@ -216,3 +217,14 @@ const FEED = []; function feed(ev) { const ul = document.getElementById('feed');
   const ts = new Date().toLocaleTimeString(); li.innerHTML = '<b></b> <span class="small"></span><br><span></span>'; li.children[0].textContent = ev.title || ev.kind; li.children[1].textContent = ts;
   li.children[3].textContent = ev.text || ''; ul.prepend(li); while (ul.children.length > 60) ul.lastChild.remove(); return 'ok'; }
 window.feed = feed;
+
+// ---------- wiring: run any registry toolkit from the app; results go to CubeMind memory (app.py to_cubemind) ----------
+(() => { const api = () => window.pywebview && window.pywebview.api; const cap = document.getElementById('wirecap');
+  async function run(name, args, label) { if (!api()) { cap.textContent = 'offline snapshot — open in the Janus app to run toolkits'; return; }
+    feed({kind: 'calc', title: `Toolkit started: ${name}`, text: JSON.stringify(args)}); cap.textContent = `${label} running…`;
+    try { const r = await api().tool(name, args); feed({kind: 'calc', title: `Toolkit result: ${name}`, text: JSON.stringify(r).slice(0, 300)});
+      if (r.cubemind) feed({kind: 'link', title: '→ CubeMind memory', text: `${name} stored as EVIDENCE (topic serapis)`}); cap.textContent = `${label} done`; }
+    catch (e) { cap.textContent = 'toolkit error: ' + e; } }
+  document.getElementById('bpoint').onclick = () => run('serapis_point', {C: 1.15e-6*K.C.get(), T_R: 8.94e8}, 'SERAPIS point (T_R 8.94e8)');
+  document.getElementById('bms').onclick = () => run('serapis_ms', {C: 1.15e-6*K.C.get(), Nstar: K.N.get()}, 'exact Mukhanov–Sasaki (~3 min)');
+  document.getElementById('btools').onclick = () => run('list', {}, 'tool list'); })();

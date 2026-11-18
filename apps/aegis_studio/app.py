@@ -15,6 +15,8 @@ class Api:
                 m, V, dV, p0 = build('serapis_e', max(key, 1e-6)*1.15e-6); self._cache[key] = Model(V, dV, p0, Nmax=4000)
             out = spectra3(self._cache[key], float(nstar))
         return dict(ns=float(out['ns']), r=float(out['r']), alpha_s=float(out['alpha_s']))
+    def tool(self, name, args):
+        return run_tool(name, args)
     def open_classic(self):
         webview.create_window('Janus · classic views', url=os.path.join(BASE, 'classic.html'), width=1500, height=950, background_color='#05020D'); return True
 def selftest():
@@ -31,15 +33,37 @@ def selftest():
     L.append('JANUS EXE SELFTEST: ' + ('PASS' if ok else 'FAIL'))
     out = os.path.join(os.path.dirname(os.path.abspath(sys.executable if getattr(sys, 'frozen', False) else __file__)), 'janus_selftest.txt')
     open(out, 'w', encoding='utf-8').write('\n'.join(L) + '\n'); return ok
+# ---------- the wiring: shared toolkit registry (CubeMind aegis_tools) + CubeMind memory feed ----------
+CM_DIR = os.environ.get('CUBEMIND_DIR', os.path.join(os.path.expanduser('~'), 'CubeMind_janus'))
+CM_MEM = os.environ.get('CUBEMIND_MEM', os.path.join(os.path.expanduser('~'), 'Desktop', 'AEGIS_PCJOBS', 'cubemind_code', 'cubemind_memory.jsonl'))
+def to_cubemind(text, model, importance=3):
+    """Every Janus computation becomes a CubeMind memory record (tier EVIDENCE, topic serapis). Returns True if written."""
+    try:
+        if CM_DIR not in sys.path: sys.path.insert(0, CM_DIR)
+        from mindmem.store import Store
+        Store(CM_MEM).add(text=text, source='janus_app', kind='result', tier='EVIDENCE', topic='serapis', importance=importance, model=model); return True
+    except Exception: return False
+def run_tool(name, args):
+    """Run any AEGIS toolkit through the SAME registry CubeMind's +aegis arm uses (aegis_tools.call)."""
+    import json
+    if CM_DIR not in sys.path: sys.path.insert(0, CM_DIR)
+    from aegis_tools import call, TOOLS
+    if name == 'list': return dict(tools=sorted(TOOLS))
+    res = call(name, args); res['cubemind'] = to_cubemind(f'Janus app ran {name} {json.dumps(args)} -> {json.dumps(res, default=str)[:600]}', name)
+    return res
 # ---------- link to Claude: file inbox/outbox (Desktop\AEGIS_PCJOBS\janus_link) ----------
 LINK = os.path.join(os.path.expanduser('~'), 'Desktop', 'AEGIS_PCJOBS', 'janus_link')
 def handle(api, win, req):
-    """One request (dict) -> result (dict). Commands: ping | recompute{N, C} | scan{Ns:[..], Cs:[..]} | selftest | wave{node, sign} | knob{name, value} | view{name} | eval{js} (UI only)."""
+    """One request (dict) -> result (dict). Commands: ping | recompute{N, C} | scan{Ns:[..], Cs:[..]} | tool{name, args} (any AEGIS toolkit via the shared registry; 'list' lists them) | selftest | wave{node, sign} | knob{name, value} | view{name} | eval{js} (UI only).
+    scan and tool results are also written to CubeMind's memory (to_cubemind)."""
     import json, time
     c = req.get('cmd'); t0 = time.time()
     if c == 'ping': out = dict(ok=True, app='Janus', engine='live', time=time.strftime('%Y-%m-%d %H:%M:%S'))
     elif c == 'recompute': out = dict(ok=True, **api.recompute(req['N'], req['C']))
-    elif c == 'scan': out = dict(ok=True, rows=[dict(N=n, C=cf, **api.recompute(n, cf)) for cf in req['Cs'] for n in req['Ns']])
+    elif c == 'scan':
+        out = dict(ok=True, rows=[dict(N=n, C=cf, **api.recompute(n, cf)) for cf in req['Cs'] for n in req['Ns']])
+        out['cubemind'] = to_cubemind('Janus app scan (SERAPIS-E, Janus core): ' + '; '.join(f"C {1.15e-6*r['C']:.3g} N* {r['N']}: n_s {r['ns']:.5f} r {r['r']:.4g} a_s {r['alpha_s']:.3g}" for r in out['rows'])[:1500], 'janus_core_scan')
+    elif c == 'tool': out = dict(ok=True, **run_tool(req['name'], req.get('args', {})))
     elif c == 'selftest': out = dict(ok=bool(selftest()))
     elif c in ('wave', 'knob', 'view', 'eval') and win is not None:
         js = {'wave': lambda: f"select({json.dumps(req['node'])}); sendWave({int(req.get('sign', 1))}); 'ok'",
@@ -84,7 +108,8 @@ def _link_loop(api, win):
             p = os.path.join(inbox, f)
             try:
                 req = json.load(open(p, encoding='utf-8')); push(win, 'link', 'From Claude: ' + str(req.get('cmd')), json.dumps({k: v for k, v in req.items() if k not in ('cmd', 'id')}))
-                res = handle(api, win, req); push(win, 'calc', 'Result: ' + str(req.get('cmd')), json.dumps({k: v for k, v in res.items() if k != 'rows'})[:300] + (f" · {len(res['rows'])} rows" if 'rows' in res else ''))
+                res = handle(api, win, req); push(win, 'calc', 'Result: ' + str(req.get('cmd')) + (' · ' + str(req.get('name')) if req.get('cmd') == 'tool' else ''), json.dumps({k: v for k, v in res.items() if k not in ('rows', 'cubemind')}, default=str)[:300] + (f" · {len(res['rows'])} rows" if 'rows' in res else ''))
+                if res.get('cubemind'): push(win, 'link', '→ CubeMind memory', 'result stored as an EVIDENCE record (topic serapis)')
             except Exception as e: res = dict(ok=False, error=repr(e), file=f)
             tmp = os.path.join(outbox, f + '.tmp'); open(tmp, 'w', encoding='utf-8').write(json.dumps(res)); os.replace(tmp, os.path.join(outbox, f))
             try: os.replace(p, os.path.join(inbox, f + '.done'))
