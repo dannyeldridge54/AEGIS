@@ -1,0 +1,24 @@
+A. inflaton mass at ρ
+  n=1: d²v/dφ² at ρ (h=2e-3,1e-3,5e-4): 11.5665 11.5667 11.5667; v(ρ)=0.00e+00
+  n=3: d²v/dφ² at ρ (h=2e-3,1e-3,5e-4): 3.8555 3.8556 3.8556; v(ρ)=0.00e+00
+  N*=50: r 4.7189e-04, v(φ*) 0.99832, V0^(1/4) 4.7675e+15 GeV, m_φ 3.1746e+13 GeV (D689 2.2e13: OUT), H* 5.385e+12, m²/H*² 34.8
+A VERDICT: d²v/dφ² PASS (11.567 vs 11.57); m_φ FAIL
+B. D725 T_R reproduced from printed couplings
+  c=0.3 M_H=1e+12: printed 3.1750e+08, reproduced 3.1796e+08 (+0.15%) in
+  c=0.3 M_H=1e+13: printed 3.0330e+09, reproduced 3.0374e+09 (+0.15%) in
+  c=0.3 M_H=5e+13: printed 2.0760e+09, reproduced 2.0969e+09 (+1.01%) OUT
+  c=1 M_H=1e+12: printed 4.2870e+08, reproduced 4.2930e+08 (+0.14%) in
+  c=1 M_H=1e+13: printed 2.5430e+09, reproduced 2.5467e+09 (+0.15%) in
+  c=3 M_H=1e+12: printed 9.4590e+08, reproduced 9.4623e+08 (+0.03%) in
+  c=3 M_H=1e+13: printed 1.7420e-02, reproduced 1.7408e-02 (-0.07%) in
+B VERDICT: FAIL
+C. kinetic normalisation: D725 can = y√(2/3) (n=3); SERAPIS-E pipeline n=1 → y√2: ratio √3 → MISMATCH
+  c=0.3 M_H=1e+12: T_R D725 3.175e+08 → n=1 with m_φ 3.175e+13: 6.617e+08 GeV (×2.08)
+  c=0.3 M_H=1e+13: T_R D725 3.033e+09 → n=1 with m_φ 3.175e+13: 6.472e+09 GeV (×2.13)
+  c=0.3 M_H=5e+13: T_R D725 2.076e+09 → n=1 with m_φ 3.175e+13: 2.028e+10 GeV (×9.77)
+  c=1 M_H=1e+12: T_R D725 4.287e+08 → n=1 with m_φ 3.175e+13: 8.950e+08 GeV (×2.09)
+  c=1 M_H=1e+13: T_R D725 2.543e+09 → n=1 with m_φ 3.175e+13: 7.269e+09 GeV (×2.86)
+  c=3 M_H=1e+12: T_R D725 9.459e+08 → n=1 with m_φ 3.175e+13: 1.986e+09 GeV (×2.10)
+  N* D725 window T_R 3.18e+08–3.03e+09: 49.897–50.646
+  N* n=1 window T_R 6.62e+08–2.03e+10: 50.140–51.276; n_s 0.97330–0.97439, r 4.7012e-04–4.5639e-04
+C VERDICT: FLAG reheat_rho, nstar_e (|ΔN*| up to 0.631 > 0.05)
