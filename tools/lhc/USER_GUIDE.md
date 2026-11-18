@@ -57,6 +57,24 @@ Output:
 }
 ```
 
+## Higgsino pair cross sections at 500 GeV, 14 TeV
+```
+aegis cern higgsino 500 14
+```
+Output:
+```
+{
+ "N1C1p": 9.95585313634676,
+ "N1C1m": 4.207753271677155,
+ "C1C1": 7.828613549152232,
+ "N1N2": 7.260014904845716,
+ "total_fb": 29.252234862021865,
+ "mass_GeV": 500.0,
+ "sqrt_s_TeV": 14.0,
+ "note": "Resummino aNNLO+NNLL tables (2304.11915 Tab. 4); other energies by Drell-Yan scaling"
+}
+```
+
 ## Chargino lifetime at 1 TeV
 ```
 aegis cern life 1000

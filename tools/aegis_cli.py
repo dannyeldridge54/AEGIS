@@ -7,6 +7,7 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   cern xsec <mass_GeV> [sqrt_s_TeV] wino pair cross sections (fb), default 13.6 TeV
   cern life <mass_GeV>              chargino-neutralino mass splitting, lifetime, decay length
   cern limit [ATLAS_136|ATLAS_36]   disappearing-track recast limit with theory band
+  cern higgsino <mass_GeV> [TeV]    higgsino pair cross sections (fb), 100-1500 GeV
   cern future                       HL-LHC / HE-LHC / FCC-hh wino reach
   lattice <command> [args]          Lattice Lab (e.g. lattice hexagons E8, lattice energy E6 1.25)
   janus "<V(phi)>" [N*]             inflation observables n_s, r, alpha_s for any potential, e.g. janus "0.5*phi**2" 60
@@ -37,6 +38,12 @@ def cern(args):
         m = float(args[1]); w = lifetime.widths(m); w['dm_MeV'] = 1e3*lifetime.dm(m); _show(w)
     elif c == 'limit':
         _show(theory_band.band(args[1] if len(args) > 1 else 'ATLAS_136'))
+    elif c == 'higgsino':
+        from tools.lhc import higgsino as H
+        m = float(args[1]); rs = args[2] if len(args) > 2 else '13.6'
+        if rs in ('13', '13.6'): out = {p: H.sigma(m, p, rs) for p in H.PROCS}
+        else: out = {p: H.sigma_scaling(m, p, float(rs)) for p in H.PROCS}
+        out.update(total_fb=sum(out.values()), mass_GeV=m, sqrt_s_TeV=float(rs), note='Resummino aNNLO+NNLL tables (2304.11915 Tab. 4); other energies by Drell-Yan scaling'); _show(out)
     elif c == 'future':
         _show(future.table())
     else: print(__doc__)
@@ -64,6 +71,7 @@ def license_(args):
 def menu(args):
     items = [('Run the self-test', lambda: test([])),
              ('CERN+1: wino cross sections at a mass', lambda: cern(['xsec', input('  mass in GeV: '), input('  energy in TeV [13.6]: ') or '13.6'])),
+             ('CERN+1: higgsino cross sections at a mass', lambda: cern(['higgsino', input('  mass in GeV (100-1500): '), input('  energy in TeV [13.6]: ') or '13.6'])),
              ('CERN+1: chargino lifetime at a mass', lambda: cern(['life', input('  mass in GeV: ')])),
              ('CERN+1: ATLAS disappearing-track limit with theory band', lambda: cern(['limit', input('  ATLAS_136 or ATLAS_36 [ATLAS_136]: ') or 'ATLAS_136'])),
              ('CERN+1: future-collider reach', lambda: cern(['future'])),
