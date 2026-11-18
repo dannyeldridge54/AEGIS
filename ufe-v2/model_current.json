@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1240: Family caps n_s ≤ 0.985, r ≤ 8.3e-4 → frozen",
   "D1240: T_R at τ=i ≈ 1–3e6 GeV → corrected",
   "D1241: T_R at τ=i ≈ 1–3e6 GeV → corrected",
   "D1241: Leptogenesis at τ=i: inflaton decay marginal, AD robust → estimate",
@@ -29,7 +28,8 @@
   "D1246: BHK one-loop tilt C → literature",
   "D1246: Stuck D3 branes at half-periods → literature",
   "D1247: Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4) → frozen",
-  "D1247: N* at τ=i (stiff phase physical) → corrected"
+  "D1247: N* at τ=i (stiff phase physical) → corrected",
+  "D1248: Tests: SO+SPHEREx (~2030), LiteBIRD (~2035) → computed"
  ],
  "open_rechecks": [
   "Tilt strength ε (fitted)",
@@ -40,7 +40,6 @@
   "N* for SERAPIS-E ≈ 50.1–51.3 (exact end + n = 1 reheating; D1234, D1235)",
   "Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4)",
   "Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4)",
-  "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)",
   "Test: Run 3 / HL-LHC disappearing tracks"
  ],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"

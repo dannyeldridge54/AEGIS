@@ -12974,3 +12974,12 @@ Verdict: window non-empty → τ = i keeps its band (CONSISTENT), but the window
 D861 benchmark: Im S = 0.1125/g_s = 0.485 at g_s = 0.232, C = 15·4/(64π⁶·781) = 1.2486e-6 (quoted 1.25e-6) → PASS.
 MAP: node=band_i status=frozen touches=[eps_tilt, tests_cmb] ripple=yes
 MAP: node=nstar_i status=corrected touches=[band_i] ripple=yes
+
+## D1248 — LEFT — NA13: tests_cmb re-derived and updated — the audited predictions separate BETTER from attractors (higher n_s): SERAPIS-E 3.1σ from the N* = 60 attractor (was 2.1σ), 2.5σ from the kination cap; τ = i 5.0σ / 4.3σ
+Lock: field_tests/rules/PREREG_NA13_tests_cmb.md. Results: field_tests/results/na13_tests_cmb.txt. [arithmetic on fetched forecasts, D751/D749a/D752]
+1. D751 reproduced: 3.98σ / 5.30σ (vs N* = 55 attractor), 2.08σ (vs N* = 60) → PASS.
+2. With the audited lower n_s edges (SERAPIS-E 0.97169, PW1; τ = i 0.97462, NA12), SO+SPHEREx σ = 0.0016 / best combination 0.0012:
+   SERAPIS-E: 5.0/6.7σ (att55), 3.1/4.2σ (att60), 2.5/3.3σ (kination cap 0.9677). τ = i: 6.9/9.2σ, 5.0/6.6σ, 4.3/5.8σ.
+3. r: 4.38e-4 (SERAPIS-E min) and 4.83e-4 (τ = i) are 8.8σ and 9.7σ for LiteBIRD's optimistic σ(r) = 5e-5; invisible at its δr = 1e-3 requirement (D749a stands).
+Node value: tests_cmb — "n_s is the 2030 discriminant: ≥ 2.5σ (SO+SPHEREx) from every attractor history incl. maximal kination; r only if LiteBIRD reaches its optimistic forecast".
+MAP: node=tests_cmb status=computed touches=[] ripple=no

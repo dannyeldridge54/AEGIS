@@ -364,3 +364,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1245: write the postulate's expected ranges before the run — mine missed (5/9), which shows the slope estimate was too narrow and keeps the postulate honest.
 - D1246: when a locked reference number comes from a note, check that note's MODEL is the one being audited — D689's offset was for the predecessor plateau.
 - D1247: a window that sits at a band edge (D815's ε = 1.45e-4 at n_s = 0.9750 exactly) is the first casualty of any upstream correction; record edge-sitting windows as fragile when they are found.
+- D1248: an upstream correction can strengthen a test as well as weaken a fit — re-derive the discriminant after every shift in the prediction, not only the consistency check.
