@@ -1820,3 +1820,4 @@ Touches: none.
 ## D1225: MSJ1 — compiled exact single-field MS reference matches spectra_fast on 16/16 points (|Δn_s| ≤ 2e-8) at median ×23 → adopted (ms-jit)
 ## D1226: JSJ1 — compiled single-field Janus: same answers (≤1e-7), per point 0.225 ms vs ASPIC 0.468 ms (faster, ~250× more accurate), but ×19 vs core (<×20 locked) → not adopted yet; build step is the bottleneck
 ## D1227: JSJ2 — janus-jit adopted: same answers, ×29 vs core, per point 0.150 ms vs ASPIC 0.244 ms (faster); per model with the build still 2.8 vs 0.49 ms
+## D1228: JSJ3 — janus-jit with compiled DOP853: same answers (≤1e-7), per point 0.095 vs ASPIC 0.404 ms, per model 0.58 vs 0.81 ms → faster than ASPIC both ways, ~250× more accurate; adopted

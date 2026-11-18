@@ -347,3 +347,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1225: speeding up the exact face matters as much as the fast face — it is what every Janus check waits on; compiling it took the reference from 10 s to 0.4 s with no accuracy change.
 - D1226: once per-point cost is compiled away, the one-off setup (background build) dominates; time the whole use case (build + points) when setting a speed claim.
 - D1227: profile fixed costs separately from per-step costs — a large zeroed buffer allocated per call cost more than the whole integration it held.
+- D1228: take numerical tables (Butcher tableaux) from a library programmatically, never retype them; and use medians of repeats for timing claims on a shared machine.

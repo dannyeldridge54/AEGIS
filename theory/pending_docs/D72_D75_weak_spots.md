@@ -12737,3 +12737,12 @@ JS1: 16/16 within 1e-7 / 1e-6 of core.spectra3; median |Δn_s| vs exact 2.86e-6 
 JS4: per model (build + 2 points) 2.8 ms vs ASPIC 0.49 ms → NOT faster; the remaining cost is the background build from a near-hilltop start (2–3 ms for these models).
 Net: Janus is now faster than ASPIC for any scan with more than ~25 points per model and ~250× more accurate at every point. Timings vary ~2× between runs on this shared machine (ASPIC 0.47 → 0.24 ms/pt between JSJ1 and JSJ2), so ratios are reported per run.
 MAP: none (tool speed).
+
+## D1228 — JANUS — JSJ3: janus-jit with a compiled DOP853 background — faster than ASPIC per point AND per model [ADOPTED]
+Lock: field_tests/rules/PREREG_JSJ3_dop853.md. Code: tools/janus_calc/core_jit.build8 (DOP853 tableau and error norm imported from scipy's dop853_coefficients — not typed
+from memory); rtol 1e-12. Result field_tests/results/jsj3.txt (timings = medians of 10; ASPIC best of 5 minus process start).
+JS1: 16/16 within 1e-7 / 1e-6 of core.spectra3; median |Δn_s| vs exact 2.86e-6 (unchanged). ~700 background steps instead of ~2500.
+Speed (this run): per point 0.095 ms vs ASPIC 0.404 ms → FASTER (×4.3); per model (build + 2 points) 0.58 ms vs ASPIC 0.81 ms → FASTER (×1.4).
+Accuracy at the same points (D1218): Janus median |Δn_s| 2.9e-6 vs ASPIC 7.5e-4 (~250× better). Janus is now faster and more accurate than ASPIC in every use pattern tested.
+Speed path for single-field Janus: 400 ms build + 1.2 ms/pt (core) → 2.8 ms per model (D1227) → 0.58 ms per model (here).
+MAP: none (tool speed).
