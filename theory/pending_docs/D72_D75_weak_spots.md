@@ -13810,3 +13810,9 @@ MAP: none
 - tools/serapis_calc/potentials.py divides E(τ,2) by 2ζ(4); the published model (E(ρ,2)=5.78334) and pipeline.py do not. D1280's numbers came from the divided form.
 - Corrected (referee, 18 Nov): Hessian at ρ = [+7.711, +7.711] V₀ (D1280: 3.562); V(i) = 0.1958 V₀ (D1280: 0.1011); Hessian at i = [−2.216, +10.012] V₀.
 - Unchanged: eigenvalue ratio −0.2214, signs, verdict (minimum at ρ, saddle at i). Shape–Scale–Duality paper erratum added. Future lattice/SERAPIS numbers use the published normalisation. [derived]
+
+## D1311 — CERN+1: the ATLAS 36.1 fb⁻¹ residual is explained (LHC12: all three predictions pass)
+MAP: none
+- ATLAS arXiv:1712.02118 Table 2: electroweak event acceptance rises 0.09 → 0.12 from 400 to 600 GeV (τ = 0.2 ns); the 460 GeV limit is quoted at fixed τ = 0.2 ns; decay window 122.5–295 mm. [literature]
+- Our recast had held acceptance constant and used our mass-dependent τ. Shifts from the 446.5 GeV baseline: acceptance(m) +8.0 GeV (P1 5–10: PASS); τ fixed at 0.2 ns +2.0, R_out 295 mm +0.0 (P2 <3: PASS); all three 457.2 GeV, −0.6% from 460 (P3 within 1.5%: PASS). [estimate]
+- So the D1309 P3b failure came from the constant-acceptance simplification, not the physics. The 136 fb⁻¹ recast is untouched (no equivalent table used).

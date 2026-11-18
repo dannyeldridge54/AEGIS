@@ -2097,3 +2097,8 @@ Touches: none.
 
 ## D1310: registry access to the theory band
 1. [derived] lhc_dt_limit(search, band=true) returns theory_band.band(search); values identical to D1309.
+
+## D1311: ATLAS 36 fb⁻¹ residual
+1. [literature] acceptance 0.09 (400 GeV) and 0.12 (600 GeV) at τ = 0.2 ns, arXiv:1712.02118 Table 2; limit at fixed τ = 0.2 ns; window 122.5–295 mm.
+2. [estimate] acceptance taken linear in mass between the two points.
+3. [derived] recast with kinematic boost and these inputs: 457.2 GeV vs published 460 GeV.
