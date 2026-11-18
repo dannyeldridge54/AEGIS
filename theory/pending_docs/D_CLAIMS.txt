@@ -603,3 +603,4 @@ D1316  2026-11-18T17:00Z  A tick: D1275b circularity does not touch the v3.3 dra
 D1317  2026-11-18T17:02Z  B tick: 2026 Li-7 literature (Taioli+ 2601.12438, Burns 2603.22414) - lithium problem persists, no new primordial value; NULL
 D1318  2026-11-18T17:03Z  wino_window map node relabelled to the D1153 window (0.67-~1.5 TeV, f 5-20%; 1.85 excluded by IGS line); d-list gains D1153/D1190/D1202/D1238/D1302
 D1319  2026-11-18T17:03Z  ladder.py: header regex accepts '### D' notes (this session's MAP lines were invisible to the ladder)
+D1320  2026-11-18T17:05Z  Map: new node darkrad_i (tau=i hidden-sector dark radiation verdicts); halo_profile gains D1190/D1202
