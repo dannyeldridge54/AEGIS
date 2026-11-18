@@ -13952,3 +13952,32 @@ MAP: node=halo_profile status=computed touches=[] ripple=no
 - It replaces "passes in three of five fits and is marginal … in the other two". The fitted-ρ☉ caveat is kept, not dropped.
 - No other change. The full build is still pending (PC). No Zenodo.
 MAP: none
+
+## D1324 — A2o: the upper edge of the post-hoc wino window, computed. 1.0 TeV passes for every Gaia-based halo; 1.25 TeV is band-dependent for NFW/Burkert; 1.5 TeV fails for NFW/Burkert and passes only for Einasto cores. Window = 0.67 to 1–1.25 TeV (to ~1.5 for Einasto cores) (2026-11-18)
+- [CENTRE · computed] **Lock:** PREREG_A2o_upper_edge. **Result:** field_tests/results/a2o_upper_edge.txt.
+  - S1 check: B0/D1 at 1 TeV reproduces A2n's 0.286 exactly.
+  - Assumptions labelled in the lock:
+    - the IGS limit interpolated log–log between its 1 TeV and 2.9 TeV values (2.86e-28 at 1.25, 3.42e-28 at 1.5);
+    - the NLL band scaled from 1 TeV;
+    - the Singh–Desai shapes at ρ☉ = 0.40.
+- **f_pred:** 0.124–0.205 (1 TeV), 0.193–0.321 (1.25), 0.279–0.462 (1.5). Central NLL R = 0.709, 0.675, 0.648.
+- **M = 1.0 TeV:** all 11 Gaia-based haloes PASS (NFW and 10 Singh–Desai). The H.E.S.S. benchmark is BAND-DEP (f_max 0.143–0.173), consistent with D1153's "marginal".
+- **M = 1.25 TeV:**
+  - Einasto 5/5 PASS; Burkert B0/D2 and B1/D2 PASS.
+  - Burkert B0/D1, B0/D3, B0/D4 and the Gaia NFW are BAND-DEP.
+  - The benchmark FAILS.
+- **M = 1.5 TeV:**
+  - Gaia NFW FAIL; Burkert B0/D1, D3, D4 FAIL (LO); Burkert B0/D2, B1/D2 BAND-DEP.
+  - Einasto D1, D3, D4 PASS; D2 and B1/D2 BAND-DEP (LO), PASS (NLO).
+  - The benchmark FAILS.
+- **Window:** the D1153 estimate "0.67 to ~1–1.3 (est.)" is replaced by a computed edge.
+  - Clean pass to 1.0 TeV for all Gaia haloes.
+  - To 1.25 TeV it depends on the fraction-bracket edge for cuspier haloes.
+  - To ~1.5 TeV only for Einasto cores.
+  - The fraction range widens accordingly to f ≈ 5–30%.
+- **Updated:**
+  - the v3.3 forward-table row (unposted): "0.67 to 1–1.25 TeV (halo-dependent; to ≈1.5 TeV for Einasto cores), thermal, f ≈ 5–30%";
+  - the map title of wino_window.
+- **Tests:** HL-LHC (≈ 0.98 projected) plus CTA cover this computed window. The 1–1.25 TeV slice is the part that needs CTA.
+VERDICT: upper edge computed; 1.85 stays excluded; the window is narrower at the top than the earlier ~1.5 label.
+MAP: node=wino_window status=computed touches=[] ripple=no
