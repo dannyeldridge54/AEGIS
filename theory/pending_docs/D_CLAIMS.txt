@@ -528,3 +528,4 @@ D1241  2026-11-18T02:28Z  untitled
 D1242  2026-11-18T02:30Z  untitled
 D1243  2026-11-18T02:33Z  untitled
 D1244  2026-11-18T02:34Z  wino_window recheck after D1242 (unchanged); g_* table now in repo for the NA audit (D1236 phase 5 unblocked)
+D1245  2026-11-18T02:35Z  untitled
