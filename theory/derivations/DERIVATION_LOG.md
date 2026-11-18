@@ -1811,3 +1811,4 @@ Touches: none.
 ## D1216: S4e3 — four locked warp normalisations (as-is, warp max, midpoint, Planck-weighted) give m L/π 0.93–1.01 / 2.04–2.21; none matches BTR's 0.97/2.13 → NOT EXPLAINED (post-hoc)
 ## D1217: JMF9 — Janus-MF-NC (covariant MS, curved field space) matches PyTransport NC on DoubleQuadNC: n_s 0.925024 vs 0.925023 (|d| 8.1e-7); VALIDATED
 ## D1218: J7m — 12 new two-parameter points (TI, SFI scored; PSNI ×3 and SFI p=1 listed): Janus better on 16/16, median |Δn_s| 2.9e-6 vs ASPIC 7.5e-4 → JANUS MORE ACCURATE
+## D1219: N3 — N3LO n_s beats second order at 16/16 points (median 2.87e-6 vs 8.27e-6) but misses the locked ×3 margin (2.88) → NOT CONFIRMED; residual looks like fourth order (post-hoc)

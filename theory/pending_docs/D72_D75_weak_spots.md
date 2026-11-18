@@ -12652,3 +12652,13 @@ Listed, not scored (as locked): PSNI (1e-4, 5), (1e-2, 5), (1e-3, 10) — the J7
 J7d2's bisection start-finder fixed it there and could be locked for these); SFI p=1 μ=8 — ASPIC's x at N* lies outside the model domain (y60 = −11 for range 0..8).
 Running totals: two-parameter models now 16 more points, all Janus-better.
 MAP: none (tool accuracy).
+
+## D1219 — JANUS — N3: third-order slow-roll n_s (Auclair–Ringeval N3LO) vs exact MS [NOT CONFIRMED by the locked rule; third order helps 16/16]
+Lock: field_tests/rules/PREREG_N3_slowroll_third.md. Script theory/janus/n3_slowroll.py; result field_tests/results/n3_slowroll.txt.
+Source: arXiv 2205.12608v2 App. C (δ_i = 0), read via WebFetch (large-list 6 unblocked — no download needed); last three coefficients flagged ambiguous in extraction.
+Result on the 16 J7m points: Δ3 < Δ2 on 16/16; median Δ2 8.27e-6, Δ3 2.87e-6 (ratio 2.88; the lock required ≥ 3) → verdict NOT CONFIRMED.
+Narrow exact fit (reported only) agrees: 8.36e-6 vs 2.80e-6, 16/16. Gains: ×3–20 on small-ε1 points (SFI p=3: 2.1e-5 → 1.0e-6), only ×1.1–1.7 on TI μ=12 (ε1 ≈ 6–8e-3).
+Post-hoc reading (labelled as such, not a verdict): the residual Δ3 ≈ 3–6e-6 is the size of fourth-order terms (ε2⁴ ≈ (0.025–0.04)⁴ ≈ 0.4–2.6e-6 times O(1–10)
+coefficients), and a wrong coefficient would not make Δ3 < Δ2 at every point — so the extracted coefficients look right, but the locked margin was not met.
+Not changed after the fact; a future lock could use smaller-ε models where fourth order is negligible.
+MAP: none.

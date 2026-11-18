@@ -338,3 +338,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1216: when a common factor separates you from a reference, list the conventions that could produce it before computing; if none matches, quote ratios and state your convention rather than tuning a reference point.
 - D1217: a "won't install" dependency may be fine as source (pure-Python packages: try the repo before calling it BLOCKED); and check a Riemann-sign convention on a known space (sphere) before trusting a curvature term.
 - D1218: a start-finder that failed on one model in an earlier test (PSNI, J7d) will fail again on new points of that model — reuse the fix (J7d2 bisection) in the next lock instead of re-listing.
+- D1219: when testing a higher-order expansion, choose test points where the NEXT order is negligible, or the improvement margin you lock is capped by the order after the one you test.
