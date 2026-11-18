@@ -291,6 +291,9 @@ def menu(args):
         except Exception as e: print('Error:', e)
 
 def main(argv=None):
+    for st in (sys.stdout, sys.stderr):   # Windows consoles default to cp1252, which cannot print α, σ, ⁻¹
+        try: st.reconfigure(encoding='utf-8', errors='replace')
+        except Exception: pass
     _root(); argv = sys.argv[1:] if argv is None else argv
     cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
     if not argv: return menu([])
