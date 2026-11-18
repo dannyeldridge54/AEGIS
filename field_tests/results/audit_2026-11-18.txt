@@ -1,0 +1,26 @@
+AUDIT of tonight's SERAPIS-E notes (D1272-D1275, D1265a), 2026-11-18 — fresh computations + primary-source checks.
+
+1) Fresh exact runs (Janus core spectra3 + N* self-consistency, T_R=7.389e8, g*=228.75, N_eff=4, Nmax=4000):
+   C=1.2115e-6  n_s=0.973984  r=4.7730e-4  a_s=-9.8891e-4  N*=50.180
+   C=1.2490e-6  n_s=0.974384  r=4.8202e-4  a_s=-9.9766e-4  N*=50.181   <- benchmark: CONFIRMS recorded 0.97439/4.82e-4/-9.98e-4/50.18
+   C=1.2865e-6  n_s=0.974784  r=4.8680e-4  a_s=-1.0102e-3  N*=50.183
+   Symmetric log-slope at the benchmark (+-3%): dn_s/dlnC = 0.01334   (D1274 used 0.01333: OK; D1265a's wide quadratic fit gave
+   0.01352, 1.3% high; D1265's 0.01171 confirmed 12% low). Meter: 0.0016/0.01334 = 0.120 -> Im S*Im rho to +-12% (unchanged).
+   P = 15*N_eff/(64 pi^6 C) at C=1.249e-6 = 780.7 (D861 quotes 781: OK).
+
+2) Data inputs. r: BK18 r_0.05 < 0.036 (95%) confirmed [2110.00483]; newer SPA+BK 0.034, SPA+BK+DESI 0.035 [2512.10613].
+   n_s: the pair used tonight (CMB-SPA 0.9684+-0.0030, +DESI 0.9728+-0.0027) does NOT appear in the SPT-3G D1 paper [2506.20707],
+   whose CMB-SPA headline is 0.9679+-0.0033. Published analyses: CMB-SPA 0.9679-0.9693 (+-0.0029-0.0033); +DESI 0.9728-0.9737
+   (+-0.0025-0.0029) [2506.20707, 2512.10613, 2512.05108]. Our pair lies inside that spread, at the high-tension end.
+
+3) Benchmark vs band. D861 CHOSE g_s=0.232, A1=40.8 so that C=1.25e-6 lands "inside the frozen SERAPIS-E band's 1.0-1.3e-6".
+   The frozen band (the model's committed prediction) spans n_s 0.97176 (C=1.0e-6) to 0.97493 (C=1.3e-6).
+   sigma offsets (band low / benchmark / band high):
+     CMB-SPA (notes)       +1.12 / +1.99 / +2.18     CMB-SPA SPT-3G D1   +1.17 / +1.96 / +2.13
+     SPA+BK                +1.11 / +1.93 / +2.10     CMB-SPA 2512.05108  +0.85 / +1.75 / +1.94
+     +DESI (notes)         -0.39 / +0.59 / +0.79     SPA+BK+DESI         -0.36 / +0.55 / +0.73
+     SPA+lens+DESI         -0.48 / +0.53 / +0.74     CMB-SPA+DESI 05108  -0.78 / +0.27 / +0.49
+
+4) Circularity. D689 computes Im S*Im rho from the C that fits n_s; D830: "Im S*Im rho ~ 563-731 for n_s 0.970-0.975";
+   DERIVATION_LOG: "C ... is fixed by the frozen band". So the 560-975 range is the n_s band mapped through the same formula
+   (merged over N_eff = 3, 4) — not an independent output of the construction.
