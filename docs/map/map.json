@@ -160,13 +160,14 @@
     "D896",
     "D906",
     "D1276",
-    "D1277"
+    "D1277",
+    "D1278"
    ],
    "depends": [],
    "history": [
-    "D906: computed",
     "D1276: computed",
-    "D1277: computed"
+    "D1277: computed",
+    "D1278: computed"
    ]
   },
   {
@@ -539,7 +540,7 @@
    "history": [
     "D906: computed"
    ],
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "darkrad_rho",
@@ -562,7 +563,7 @@
     "D906: computed",
     "D1240: computed"
    ],
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "reheat_rho",
@@ -588,7 +589,7 @@
     "D1237: corrected",
     "D1239: computed"
    ],
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "nstar_e",
@@ -617,7 +618,7 @@
     "D1258: corrected",
     "D1262: corrected"
    ],
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "lepto_rho",
@@ -676,7 +677,7 @@
     "D1236: computed",
     "D1239: computed"
    ],
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "gravitino_wino",
@@ -704,7 +705,7 @@
     "D906: computed",
     "D1242: computed"
    ],
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "band_i",
@@ -765,7 +766,7 @@
     "D1231: frozen",
     "D1233: frozen"
    ],
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "band_e_audited",
@@ -789,7 +790,7 @@
     "D1245: postulate"
    ],
    "note": "web loop postulate 1; scored only on future data",
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "serapis_point",
@@ -816,7 +817,7 @@
     "D1273: postulate"
    ],
    "note": "web loop postulate 2; scored only on future data",
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "vac_discriminant",
@@ -841,7 +842,7 @@
     "D1263: killed"
    ],
    "note": "web loop postulate 3; kept on the web as killed",
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "m32_window",
@@ -865,7 +866,7 @@
     "D1264: postulate"
    ],
    "note": "web loop postulate 4 (pattern covariant ↔ eps_tilt)",
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "string_meter",
@@ -889,7 +890,7 @@
     "D1265: postulate"
    ],
    "note": "web loop postulate 5",
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "inverse_meter",
@@ -911,7 +912,7 @@
     "D1268: postulate"
    ],
    "note": "web loop postulate 6",
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "instanton_MH",
@@ -934,7 +935,7 @@
     "D1270: killed"
    ],
    "note": "web loop postulate 7",
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "caps",
@@ -1008,7 +1009,7 @@
     "D1230: corrected",
     "D1250: corrected"
    ],
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "tests_cmb",
@@ -1043,7 +1044,7 @@
     "D1260: computed",
     "D1261: computed"
    ],
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   },
   {
    "id": "tests_lhc",
@@ -1066,7 +1067,7 @@
     "D906: literature",
     "D1249: literature"
    ],
-   "flag": "recheck (D1277, n_sector_rho)"
+   "flag": "recheck (D1278, n_sector_rho)"
   }
  ],
  "observing": [

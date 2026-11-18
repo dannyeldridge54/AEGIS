@@ -1905,3 +1905,9 @@ Touches: none.
 3. 2D: hexagonal is lowest at every α; 3D: BCC lowest for α<1, FCC for α>1, exact tie at α=1, SC never lowest. [derived]
 4. Explained the swap by Poisson duality θ_L(α)=α^{−d/2}θ_{L*}(1/α) with FCC* ~ BCC; self-dual lattices cannot flip. [literature]
 5. Concluded the ρ-sector (hexagonal) preference of D1276 holds at all scales in d=2. [derived]
+
+## D1278 — Shape flip by dimension (2026-11-18)
+1. Computed unit-covolume Gaussian energies for Zⁿ, Dₙ, Dₙ*, E8 with exact Jacobi theta formulas (θ₃ⁿ; (θ₃ⁿ+θ₄ⁿ)/2; θ₃ⁿ+θ₂ⁿ; (θ₂⁸+θ₃⁸+θ₄⁸)/2), rescaled to covolume 1. [derived]
+2. Computed Aₙ and Aₙ* by brute force on the Cartan Gram matrix and its inverse, normalised to determinant 1. [derived]
+3. Checked d=3 against D1277 (exact reproduction) and found: d=4 D4 at all α; d=5 D5*/D5 swap with an exact tie at α=1; d=8 E8 at all α. [derived]
+4. Stated the rule (flip iff the winner is not self-dual) and its prediction for E6, E7 (flip) and Leech (no flip). [postulate P1]

@@ -13352,3 +13352,21 @@ RELEVANCE: 2D lattice duality is τ → −1/τ in our modular parameter; τ=i a
 d=2 preference for the ρ (hexagonal) sector in D1276 is therefore scale-robust, not an artefact of the exponent chosen.
 The T-/S-duality parallel is the same Poisson-duality mathematics, recorded as such — not a derived physical link.
 Result file: field_tests/results/shape_duality_flip_2026-11-18.txt.
+
+## D1278 — Going up in dimension: the winning shape flips with scale if and only if it is not self-dual (tested d = 2, 3, 4, 5, 8) (2026-11-18)
+MAP: node=n_sector_rho status=computed
+LABEL: numerics (computed) + literature. No new physics claim.
+Extends D1277 upward. Gaussian energy Σ_{v≠0} e^{−πα|v|²} at unit covolume, α = 0.5…2; Zⁿ, Dₙ, Dₙ*, E8 by exact Jacobi
+theta formulas, Aₙ, Aₙ* by brute force on the Cartan Gram.
+- d=3: reproduces D1277 (BCC below α=1, FCC above, exact tie at α=1).
+- d=4: D4 wins at every α; D4 and D4* are identical to 6 digits (same shape) → NO flip.
+- d=5: D5* below α=1, D5 above, exact tie 0.348752 at α=1 → FLIPS.
+- d=8: E8 wins at every α (3.4× below D8 at α=2) → NO flip.
+- Every dual pair tested ties exactly at α=1 (A4/A4*, A5/A5*, D8/D8*), confirming the Poisson mechanism of D1277.
+RULE: the winner flips with scale iff the best lattice is not self-dual up to similarity. Self-dual winners (hexagonal, D4,
+E8) win at all scales; distinct dual pairs (FCC/BCC, D5/D5*) must swap, exactly at the self-dual scale.
+PREDICTION (recorded before testing): E6, E7 are not self-dual (det 3, 2), so d=6 and d=7 should flip between Eₙ and Eₙ*;
+Leech (d=24) is self-dual → no flip (consistent with its proven universal optimality). E6/E7 left for a cycle with an
+LLL-reduced basis or theta series — too skewed for a cheap box search.
+CAVEAT: only the families Z, D, D*, A, A*, E8 compared; no claim about D4 among all lattices.
+Result file: field_tests/results/shape_flip_by_dimension_2026-11-18.txt.
