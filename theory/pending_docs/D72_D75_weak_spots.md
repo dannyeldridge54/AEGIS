@@ -14244,3 +14244,13 @@ MAP: none
 - Derivation (b) max-gap dynamics: NULL — D1285 already read hep-th/0403001 (moduli trapping selects shape AND size; at Im S·Im ρ ≈ 780 the extra states are heavy).
 - Derivation (c) datum [literature]: Wang & Zhang, arXiv:2601.09542 (Jordan-frame modular SUGRA): τ = i and ω are extrema only for tuned superpotential parameters and generally not minima; stabilisation comes from soft-mass or racetrack-type terms. Consistent with vac_i = assumed (D1344).
 MAP: none
+
+## D1349 — CENTRE — What pins the axion at τ = i: a periodic term A·V0(1 − cos 2πx) does it without touching inflation, A ≥ 0.056 V0; but in SERAPIS-E's own potential the pinned τ = i is a FALSE vacuum (V = 0.196 V0), so it cannot end inflation (2026-11-18)
+- [COMPUTED] Lock PREREG_D1349 (+ DEVIATIONS D1 precision guard, D2 V0 = plateau normalisation). C = 1.25e-6, V = P_E(1 + CÊ), E_paper.
+- The pin ΔV = A V0 (1 − cos 2πx) and its x-derivative vanish on x = 0 (checked: 0 to machine precision), so the x = 0 trajectory, N*, n_s, r, α_s are exactly unchanged; it adds 4π²A V0 of axion curvature.
+- Axion curvature along x = 0 (units of V0): ∂²ₓV = −2.216 (y = 1, τ = i), −1.555 (1.05), −1.038 (1.10), −0.255 (1.25), −2.0e-2 (1.5), −1.8e-4 (2), −4e-8 (3); below double precision from y = 5 (exponentially small, ~e^{−2πy}). Required A: 5.61e-2 V0 at τ = i; 4.5e-6 V0 by y = 2. The CMB part of the path needs essentially no pin.
+- ∂²ᵧV at τ = i = +10.0 V0 → with A ≥ 0.056 V0, τ = i is a true local minimum.
+- BUT V(τ = i) = 0.196 V0 (the true minimum at ρ has V = 0): within SERAPIS-E's E(τ,2) potential the pinned τ = i is a false vacuum carrying ~20 % of the inflation energy, not a viable post-inflation vacuum.
+- Scope: this is SERAPIS-E's potential. The τ = i VARIANT uses its own j-based potential (D632, V = I²/(I²+1) + εI₁); whether its axion is tachyonic, and its vacuum energy at τ = i, is the next check (lock first).
+- Status: vac_i stays assumed; the condition is now quantitative (an explicit periodic axion term of size ≥ 0.056 V0 in SERAPIS-E's potential, and even then a false vacuum).
+MAP: node=vac_i status=assumed touches=[] ripple=no

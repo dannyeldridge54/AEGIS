@@ -2135,3 +2135,8 @@ Touches: none.
 ## D1348: CubeMind embedder/proposer + literature data
 1. [derived] 1,801/1,831 learner cycles were 'holding' → verification, not model speed, limited proposals.
 2. [literature] 2601.09542: τ = i, ω extrema only for tuned parameters, generally not minima.
+
+## D1349: τ = i axion pin
+1. [derived] ΔV = A V0(1 − cos 2πx) vanishes with ∂ₓ on x = 0 → inflation along x = 0 unchanged.
+2. [derived] Stability needs A ≥ −∂²ₓV/(4π²) = 5.61e-2 V0 (maximum at τ = i); ∂²ᵧV(i) = +10.0 V0.
+3. [derived] V(i) = 0.196 V0 > 0 = V(ρ): the pinned τ = i of SERAPIS-E's potential is a false vacuum.

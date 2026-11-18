@@ -1,0 +1,12 @@
+pin identity on x=0: dV 0.0e+00, d/dx 0.0e+00
+y=  1.00  V/V0=1.957877e-01  d2V/dx2 [V0]=-2.21633e+00  (h-check 8.9e-08)  A_needed [V0]=+5.6140e-02  (per local V: +2.8674e-01)
+y=  1.05  V/V0=2.075426e-01  d2V/dx2 [V0]=-1.55506e+00  (h-check 2.5e-08)  A_needed [V0]=+3.9390e-02  (per local V: +1.8979e-01)
+y=  1.10  V/V0=2.389914e-01  d2V/dx2 [V0]=-1.03801e+00  (h-check 3.6e-08)  A_needed [V0]=+2.6293e-02  (per local V: +1.1002e-01)
+y=  1.25  V/V0=3.892352e-01  d2V/dx2 [V0]=-2.55275e-01  (h-check 3.3e-08)  A_needed [V0]=+6.4662e-03  (per local V: +1.6613e-02)
+y=  1.50  V/V0=6.165953e-01  d2V/dx2 [V0]=-2.04648e-02  (h-check 8.1e-07)  A_needed [V0]=+5.1838e-04  (per local V: +8.4071e-04)
+y=  2.00  V/V0=8.265011e-01  d2V/dx2 [V0]=-1.76636e-04  (h-check 3.1e-05)  A_needed [V0]=+4.4743e-06  (per local V: +5.4135e-06)
+y=  3.00  V/V0=9.373501e-01  d2V/dx2 [V0]=-4.44089e-08  (h-check 0.0e+00)  A_needed [V0]=+1.1249e-09  (per local V: +1.2001e-09)
+y=  5.00  V/V0=9.800953e-01  |d2V/dx2| below double precision (< 1e-12): no pin needed
+y=  8.00  V/V0=9.927152e-01  |d2V/dx2| below double precision (< 1e-12): no pin needed
+y= 12.00  V/V0=9.971268e-01  |d2V/dx2| below double precision (< 1e-12): no pin needed
+A_min = 5.6140e-02 V0 (at y = 1);  d2V/dy2 at tau=i = +1.00121e+01 -> minimum along y

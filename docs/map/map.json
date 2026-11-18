@@ -254,13 +254,15 @@
    "d": [
     "D605",
     "D633",
-    "D1344"
+    "D1344",
+    "D1349"
    ],
    "depends": [
     "eps_tilt"
    ],
    "history": [
-    "D1344: assumed"
+    "D1344: assumed",
+    "D1349: assumed"
    ]
   },
   {

@@ -25,9 +25,9 @@ band_i:
     verdict: 'no effect: D1346 confirmed the Janus-accuracy verdicts (no value changed)'
 darkrad_i:
   vac_i:
-    at: D1344
-    by: D1344
-    verdict: computation unchanged; conditional on the pinned τ = i vacuum (D1344)
+    at: D1349
+    by: D1349
+    verdict: no change to the computation; D1349 quantifies the τ = i condition (pin A ≥ 0.056 V0) and finds it a false vacuum (V = 0.196 V0) in SERAPIS-E's own potential; τ = i results stay conditional
 darkrad_rho:
   n_sector_rho:
     at: D1286
@@ -73,9 +73,9 @@ nstar_e:
     verdict: 'no effect: lattice-shape notes; the potential and its end of inflation are unchanged'
 nstar_i:
   vac_i:
-    at: D1344
-    by: D1344
-    verdict: computation unchanged; now CONDITIONAL on an axion-pinning term at τ = i (vac_i assumed, D1344)
+    at: D1349
+    by: D1349
+    verdict: no change to the computation; D1349 quantifies the τ = i condition (pin A ≥ 0.056 V0) and finds it a false vacuum (V = 0.196 V0) in SERAPIS-E's own potential; τ = i results stay conditional
 serapis_point:
   bhk_tilt:
     at: D1275b
@@ -116,9 +116,9 @@ vac_discriminant:
     by: D1344
     verdict: 'no effect: D1272 tool cross-check, D1273/D1273a CMB pulls; the point values are unchanged'
   vac_i:
-    at: D1344
-    by: D1344
-    verdict: the ρ-vs-i discriminant stands; it now compares ρ with a CONDITIONAL τ = i vacuum (D1344)
+    at: D1349
+    by: D1349
+    verdict: no change to the computation; D1349 quantifies the τ = i condition (pin A ≥ 0.056 V0) and finds it a false vacuum (V = 0.196 V0) in SERAPIS-E's own potential; τ = i results stay conditional
 vac_rho:
   eps_tilt:
     at: D1250
