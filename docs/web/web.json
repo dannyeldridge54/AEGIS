@@ -261,7 +261,7 @@
    "label": "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D906, D1229, D1248",
+   "refs": "D1229, D1248, D1252",
    "info": ""
   },
   {
@@ -282,10 +282,10 @@
   },
   {
    "id": "L_bridge",
-   "label": "Twist-era bridges B1 r−3(1−n_s)², B2 α_s+½(1−n_s)² — NOT SERAPIS nulls (); SERAPIS null = Janus relation",
+   "label": "Twist-era bridges B1 r−3(1−n_s)², B2 α_s+½(1−n_s)² — NOT SERAPIS nulls (D1252); SERAPIS null = Janus relation",
    "lane": "left",
    "status": "corrected",
-   "refs": "twin-ladder B1/B2, ",
+   "refs": "twin-ladder B1/B2, D1252",
    "info": ""
   },
   {
@@ -349,7 +349,7 @@
    "label": "Shared N*: SERAPIS-E 50.1–51.3 (ρ), τ=i 50.40–50.45 (audited)",
    "lane": "centre",
    "status": "corrected",
-   "refs": "D1235, D1247, ",
+   "refs": "D1235, D1247, D1252",
    "info": ""
   },
   {

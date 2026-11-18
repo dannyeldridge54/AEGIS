@@ -702,14 +702,14 @@ nodes:
   - D906
   - D1229
   - D1248
+  - D1252
   depends:
   - band_i
   - band_e
   history:
-  - 'D906: computed'
   - 'D1229: computed'
   - 'D1248: computed'
-  flag: recheck (D1251, serapis_point)
+  - 'D1252: computed'
 - id: tests_lhc
   layer: 5
   branch:

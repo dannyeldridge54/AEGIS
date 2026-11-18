@@ -15,7 +15,7 @@ for n in m['nodes']:
         edge(d, n['id'], 'depends', -1 if N[n['id']]['status'] in ('killed',) else 1, 'theory/map/map.yaml', n['status'], 'map.yaml')
 # --- LEFT string: early universe ---
 node('L_cmb', 'CMB data: n_s, r, α_s (CMB-SPA n_s 0.9684±0.0030; r < 0.036)', 'left', 'literature', 'twin-ladder F3')
-node('L_bridge', 'Twist-era bridges B1 r−3(1−n_s)², B2 α_s+½(1−n_s)² — NOT SERAPIS nulls (); SERAPIS null = Janus relation', 'left', 'corrected', 'twin-ladder B1/B2, ')
+node('L_bridge', 'Twist-era bridges B1 r−3(1−n_s)², B2 α_s+½(1−n_s)² — NOT SERAPIS nulls (D1252); SERAPIS null = Janus relation', 'left', 'corrected', 'twin-ladder B1/B2, D1252')
 node('L_nstar', 'N* (left hand-off)', 'left', 'computed', 'D1148, D1176')
 node('L_reheat', 'Reheating / kination duration', 'left', 'computed', 'J7c2 D1008')
 for a, b, ref in (('L_cmb', 'janus', 'Janus relation α_s(n_s, r)'), ('L_cmb', 'L_bridge', 'twin-ladder'), ('L_bridge', 'janus', 'B1/B2 null tests'),
@@ -34,7 +34,7 @@ for a, b, ref, v in (('R_desi', 'R_w0wa', 'D1029', 'Δχ²_ΛCDM ≈ 7.7'), ('R_
                      ('wino_window', 'tests_lhc', 'map', '')):
     edge(a, b, 'string', 1, ref, v)
 # --- CENTRE: shared quantities ---
-node('C_nstar', 'Shared N*: SERAPIS-E 50.1–51.3 (ρ), τ=i 50.40–50.45 (audited)', 'centre', 'corrected', 'D1235, D1247, '); node('C_dm', 'Shared DM mass ∝ dilution D', 'centre', 'estimate', 'twin-ladder')
+node('C_nstar', 'Shared N*: SERAPIS-E 50.1–51.3 (ρ), τ=i 50.40–50.45 (audited)', 'centre', 'corrected', 'D1235, D1247, D1252'); node('C_dm', 'Shared DM mass ∝ dilution D', 'centre', 'estimate', 'twin-ladder')
 node('C_lepto', 'Shared leptogenesis yield 0.87e-10 × D', 'centre', 'estimate', 'twin-ladder'); node('C_D', 'Dilution D ≤ 1e3 (F2)', 'centre', 'estimate', 'D394, D406')
 for a, b in (('L_nstar', 'C_nstar'), ('C_nstar', 'R_w0wa'), ('C_D', 'C_nstar'), ('C_D', 'C_dm'), ('C_D', 'C_lepto'), ('C_dm', 'wino_window'),
              ('C_lepto', 'lepto_i'), ('C_lepto', 'lepto_rho'), ('C_dm', 'darkrad_rho')):
