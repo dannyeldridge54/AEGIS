@@ -155,3 +155,36 @@ Each pass, propose one new track or tool, write it into this file, and slot it i
 10. N
 
 V = views, R = research, T = toolkit upgrade, CH = chemistry, S = sound/music, P = power/circuits, X = central hub, C = CubeMind/PC, U = solver speed-ups, N = new ideas.
+
+### [PT] Postulate new tools and new uses of our data (Danny, 22:48 CT)
+Each pass, use what we already have to propose either a new tool or a new use of existing data. Existing data includes the COLLECT grids, the W/PW tables, the CubeMind memory, the D-note history, the locked results and the Janus spectra.
+
+For each proposal:
+1. State it as a postulate: what it would do, and which data it reuses.
+2. Write a small lock with a pre-stated test.
+3. Run the test.
+4. Adopt it into the rotation, or kill it. Killed proposals stay listed here.
+
+Example ideas:
+- Collector grid → an instant emulator (a fitted surrogate for n_s, r, α_s over C and T_R) that replaces exact runs inside the app.
+- D-note history → a "where errors hide" map. Which kinds of nodes most often needed corrections? Use that to aim future audits.
+- Lock files → a lock-quality score.
+- Spectra → a sonification test set.
+- W1/W2 responses → an automatic error budget for any prediction.
+- MindMem → a "what's stale" detector, flagging records that cite superseded numbers.
+
+### Rotation (updated)
+1. V
+2. R
+3. T
+4. CH
+5. S
+6. P
+7. X
+8. PT
+9. C
+10. U
+11. N
+
+Progress:
+- V1 (measurement lens) is done; it was the first tick at 04:48Z.
