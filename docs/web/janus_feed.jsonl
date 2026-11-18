@@ -1,1 +1,16 @@
 {"k": "pulse", "s": "serapis_e", "t": "serapis_point", "w": 1.0, "why": "demo", "ts": 1794990420.2551877}
+{"k": "node", "id": "d1272", "lane": "theory", "status": "computed", "title": "D1272: tools faithful: emulator <=3.2e-5 vs exact", "ts": 1794996684.2400026}
+{"k": "edge", "s": "serapis_point", "t": "d1272", "sign": 1, "why": "result D1272", "ts": 1794996684.2403529}
+{"k": "pulse", "s": "serapis_point", "t": "d1272", "w": 1.0, "why": "D1272 verified", "ts": 1794996684.2405546}
+{"k": "node", "id": "d1273", "lane": "theory", "status": "computed", "title": "D1273: n_s is the sharp test: +2.0s CMB-SPA, +0.6s +DESI", "ts": 1794996684.2407265}
+{"k": "edge", "s": "serapis_point", "t": "d1273", "sign": 1, "why": "result D1273", "ts": 1794996684.240873}
+{"k": "pulse", "s": "serapis_point", "t": "d1273", "w": 1.0, "why": "D1273 verified", "ts": 1794996684.241032}
+{"k": "node", "id": "d1274", "lane": "theory", "status": "computed", "title": "D1274: error budget: sigma_th(n_s)=0.0133 x moduli frac", "ts": 1794996684.2411833}
+{"k": "edge", "s": "bhk_tilt", "t": "d1274", "sign": 1, "why": "result D1274", "ts": 1794996684.2413101}
+{"k": "pulse", "s": "bhk_tilt", "t": "d1274", "w": 1.0, "why": "D1274 verified", "ts": 1794996684.241461}
+{"k": "node", "id": "d1275", "lane": "theory", "status": "computed", "title": "D1275: construction 560-975 contains meter 804; meter not predictor", "ts": 1794996684.241598}
+{"k": "edge", "s": "bhk_tilt", "t": "d1275", "sign": 1, "why": "result D1275", "ts": 1794996684.241768}
+{"k": "pulse", "s": "bhk_tilt", "t": "d1275", "w": 1.0, "why": "D1275 verified", "ts": 1794996684.2419536}
+{"k": "node", "id": "d1276", "lane": "theory", "status": "computed", "title": "D1276: d=2 hexagonal beats square; margin grows with s", "ts": 1794996684.2420938}
+{"k": "edge", "s": "n_sector_rho", "t": "d1276", "sign": 1, "why": "result D1276", "ts": 1794996684.2422261}
+{"k": "pulse", "s": "n_sector_rho", "t": "d1276", "w": 1.0, "why": "D1276 verified", "ts": 1794996684.2424185}

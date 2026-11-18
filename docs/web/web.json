@@ -29,7 +29,7 @@
    "label": "Heavy-ν sector at ρ: 2⊕1, weight-2 mixing",
    "lane": "theory",
    "status": "computed",
-   "refs": "D890, D896, D906",
+   "refs": "D896, D906, D1276",
    "info": ""
   },
   {
@@ -92,8 +92,8 @@
    "id": "bhk_tilt",
    "label": "BHK one-loop tilt C",
    "lane": "theory",
-   "status": "literature",
-   "refs": "D756, D1246, D1257",
+   "status": "postulate",
+   "refs": "D1257, D1274, D1275",
    "info": ""
   },
   {
@@ -229,7 +229,7 @@
    "label": "POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 7.4e8, C 1.25e-6, MSSM g*): n_s 0.97439, r 4.82e-4, α_s −1.0e-3, N* 50.18 (D1262)",
    "lane": "theory",
    "status": "postulate",
-   "refs": "D1251",
+   "refs": "D1251, D1272, D1273",
    "info": "web loop postulate 2; scored only on future data"
   },
   {
