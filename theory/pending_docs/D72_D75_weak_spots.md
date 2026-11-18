@@ -13754,3 +13754,15 @@ session's node, NOT modified); collider side from CERN+1 (D1301, D1303). Locked 
 - P3 PASS: nothing in this extrapolation reaches 1.2 TeV; 975–1850 GeV (74% of the window) needs other probes (indirect detection,
   future colliders).
 TOOL: tools/lhc/panel.py `panel()`.
+
+## D1305 — CERN+1 LHC6: symmetry self-tests — the tables obey Drell–Yan scaling of ratios to 0.1% and the SU(2) charged/neutral ratio to 0.05%, but the charge asymmetry turns over above ~1.5 TeV (T1 FAIL as locked); PREREG T2–T3 PASS (2026-11-18)
+MAP: none
+LABEL: numerics (computed) on literature tables (Resummino, arXiv:2304.11915); locked first (PREREG_LHC6). Toolkit result; no model change.
+- T1 FAIL (as stated): A = σ(χ̃₂⁰χ̃₁⁺)/σ(χ̃₂⁰χ̃₁⁻) rises 1.58 (100 GeV) → 2.43 (500) → 3.12 (1000) → 3.36 (1500 GeV), then FALLS to 3.28 at
+  2 TeV (13 TeV; at 13.6 TeV peak 3.357 at 1600 GeV, 3.30 at 2 TeV). I predicted a monotonic rise (more u than d valence quarks at large x).
+  The turnover sits exactly where the table's quoted PDF uncertainties become very large (≫ 10% above ~1.5 TeV), i.e. where the global
+  PDFs are least constrained — the u/d behaviour of the PDF set at x ≳ 0.3 drives it. Flagged, not explained away: the self-test
+  reports the table's charge asymmetry above 1.5 TeV as PDF-limited.
+- T2 PASS: at equal τ₀ the asymmetry at 13.6 TeV equals that at 13 TeV to 0.093% (ratios cancel the evolution that κ absorbed in D1299).
+- T3 PASS: R = (χ̃₂⁰χ̃₁⁺ + χ̃₂⁰χ̃₁⁻)/χ̃₁⁺χ̃₁⁻ = 1.94 → 2.20 → 2.04 across 100–2000 GeV is a function of τ₀ only to 0.050%.
+- T4: tools/lhc/selftest.py runs all three; T2/T3 guard the tables against corruption; T1 marks the PDF-limited region.

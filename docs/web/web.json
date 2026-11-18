@@ -945,6 +945,14 @@
    "info": ""
   },
   {
+   "id": "Q_sym",
+   "label": "Symmetry self-tests: ratios scale with τ₀ to 0.1%; u/d charge asymmetry turns over above 1.5 TeV (PDF-limited)",
+   "lane": "lhc",
+   "status": "computed",
+   "refs": "D1305",
+   "info": ""
+  },
+  {
    "id": "Q_pdf",
    "label": "Own LO cross section with a PDF set (blocked: CERN file needs one click at home)",
    "lane": "lhc",
@@ -2941,6 +2949,24 @@
    "sign": 1,
    "ref": "D1304",
    "verdict": "HL-LHC 26% of window",
+   "source": "curated"
+  },
+  {
+   "s": "Q_sym",
+   "t": "Q_xsec",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1305",
+   "verdict": "guards the tables",
+   "source": "curated"
+  },
+  {
+   "s": "Q_resummino",
+   "t": "Q_sym",
+   "kind": "lhc",
+   "sign": -1,
+   "ref": "D1305",
+   "verdict": "PDF-limited above 1.5 TeV",
    "source": "curated"
   },
   {

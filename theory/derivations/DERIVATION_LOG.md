@@ -2067,3 +2067,8 @@ Touches: none.
 1. [literature] Model window 0.67–1.85 TeV (thermal wino, D784; read-only).
 2. [derived] CERN+1 Run-2 limit 666.6 GeV (D1301) sits 3.4 GeV below the lower edge.
 3. [estimate] HL-LHC like-for-like reach ≈ 975 GeV ⇒ 25.9% of the window testable; 975–1850 GeV needs other probes.
+
+## D1305: CERN+1 symmetry self-tests — ratios scale with τ₀ to 0.1%; the u/d charge asymmetry turns over above 1.5 TeV (2026-11-18)
+1. [derived] Locked T1–T4 (PREREG_LHC6).
+2. [derived] Charge asymmetry σ(χ̃₂⁰χ̃₁⁺)/σ(χ̃₂⁰χ̃₁⁻): 1.58 → 3.36 up to 1.5 TeV, then down to 3.28 at 2 TeV — the locked monotonic rise FAILS; the turnover coincides with the PDF-limited region.
+3. [derived] At equal τ₀ the asymmetry and the charged/neutral ratio agree between 13 and 13.6 TeV to 0.093% and 0.050%.
