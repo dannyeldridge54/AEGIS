@@ -13628,3 +13628,17 @@ MEANING: the champions of every dimension we mapped are built out of the d=2 cha
 is the repeated tile inside D4, E6, E7, E8 and Leech (Danny's "every shape fits inside the others", made exact). The square (τ=i) appears
 inside D4 too (as orthogonal root pairs) but is never a minimal-vector plane at 120° — the 90° planes are the saddle shape (D1279).
 Files: tools/lattice/lattice_lab.py `hexagons`, field_tests/results/hexagons_inside_2026-11-18.txt.
+
+## D1295 — Why the two SERAPIS sectors are τ=i and τ=ρ: they are the Gaussian and Eisenstein integers, the only lattice shapes with extra rotations, and symmetry forces every shape-energy to be stationary there; PREREG P1–P3 PASS (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: numerics (computed; new lattice_lab `automorphisms`), locked first (PREREG_D1295). Literature: imaginary-quadratic units.
+- P1 PASS: automorphism group orders — generic oblique 2, rectangle (τ=2i) 4, rhombus (τ=0.5+1.4i) 4, square (τ=i) 8, hexagon (τ=ρ) 12.
+- P2 PASS: units of Z[i] = 4 (±1, ±i), of Z[ω] = 6 (sixth roots of 1); 8 = 2·4 and 12 = 2·6 (units × complex conjugation). The square
+  torus IS the Gaussian integers and the hexagonal torus IS the Eisenstein integers — the only imaginary-quadratic rings with units
+  beyond ±1, hence the only 2D lattices with rotations other than 180°.
+- P3 PASS: the Gaussian energy's gradient at τ=i and τ=ρ is ≤4.5e-10 at α=0.5, 1, 2, while at the rectangle τ=2i (only 4 symmetries)
+  it is 0.14–0.32. A rotation that fixes the shape turns the tangent plane, so any shape-energy (Gaussian, Epstein E(τ,s), the SERAPIS-E
+  potential) must have zero gradient there — that is WHY i and ρ are the two critical points (D1292) and the two sectors of the model.
+  Which one is the minimum is then a property of the energy (hexagon for all energies we tested, D1277/D1280/D1293).
+CHAIN: number theory (units of Z[i], Z[ω]) → lattice symmetry (8, 12) → forced stationary shapes (i, ρ) → SERAPIS-E's two sectors.
+Files: field_tests/units_symmetry.py, field_tests/results/units_symmetry_2026-11-18.txt.

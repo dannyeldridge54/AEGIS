@@ -2015,3 +2015,10 @@ Touches: none.
 2. [derived] Exact enumeration: D4 24·8/12 = 16, E6 72·20/12 = 120, E7 126·32/12 = 336, E8 240·56/12 = 1120.
 3. [derived] Leech: 196560 minimal vectors, 4600 at 120° to each of 6 sampled ones → 75,348,000 ([literature] transitivity of Co0).
 4. [derived] Each such plane has Gram ∝ [[2,−1],[−1,2]], i.e. shape τ=ρ — the SERAPIS-E vacuum.
+
+## D1295: τ=i and τ=ρ are forced: they are Z[i] and Z[ω], the only 2D lattices with extra rotations, and symmetry makes every shape-energy stationary there (2026-11-18)
+1. [derived] Locked P1–P3 (PREREG_D1295).
+2. [derived] Automorphism orders: oblique 2, rectangle 4, rhombus 4, square 8, hexagon 12.
+3. [literature] Z[i] and Z[ω] are the only imaginary-quadratic rings with units beyond ±1 (4 and 6 units); 8 = 2·4, 12 = 2·6.
+4. [derived] A shape-fixing rotation acts on the tangent plane, so ∇E = 0 at τ=i, ρ for any shape-energy; checked ≤4.5e-10 (vs 0.14–0.32 at τ=2i).
+5. [derived] Hence the two SERAPIS sectors are forced by symmetry; which is the minimum (hexagon) is set by the energy.

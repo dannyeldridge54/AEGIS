@@ -229,7 +229,19 @@ def hexagons(L, sample=None):
     return {'lattice': L, 'min_norm': float(m), 'min_vectors': len(X), 'at_120deg_per_vector': sorted(set(per)),
             'hexagonal_planes': len(X)*k//12, 'example_plane_gram': gram2, 'shape': 'tau=rho (hexagon)' if k else None}
 
-CMDS = dict(hexagons=hexagons, shells=shells, energy=energy, flip=flip, compare=compare, champion=champion, modular=modular,
+def automorphisms(L, bound=3):
+    """Order of the automorphism group: integer matrices M (entries |m| <= bound) with M^T G M = G. Exact for d=2 (bound 3 is ample
+    for reduced bases); for d>2 use only on small, reduced Grams."""
+    G = gram(L); d = len(G)
+    if d > 3: return {'lattice': L, 'note': 'brute force only for d <= 3'}
+    rng = range(-bound, bound+1); cnt = 0
+    for ent in itertools.product(rng, repeat=d*d):
+        M = np.array(ent, float).reshape(d, d)
+        if abs(abs(np.linalg.det(M)) - 1) > 1e-9: continue
+        if np.allclose(M.T @ G @ M, G, atol=1e-9): cnt += 1
+    return {'lattice': L, 'd': d, 'automorphisms': cnt}
+
+CMDS = dict(automorphisms=automorphisms, hexagons=hexagons, shells=shells, energy=energy, flip=flip, compare=compare, champion=champion, modular=modular,
             epstein=epstein, critical=critical, explore=explore)
 
 def main(argv):

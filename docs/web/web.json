@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1291, D1292, D1293",
+   "refs": "D1292, D1293, D1294",
    "info": ""
   },
   {
@@ -806,6 +806,14 @@
    "lane": "lattice",
    "status": "computed",
    "refs": "D1294",
+   "info": ""
+  },
+  {
+   "id": "X_rings",
+   "label": "τ=i = Gaussian integers Z[i] (4 units, 8 symmetries), τ=ρ = Eisenstein integers Z[ω] (6 units, 12 symmetries): extra rotations force every shape-energy to be stationary there",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1295",
    "info": ""
   },
   {
@@ -2540,6 +2548,33 @@
    "sign": 1,
    "ref": "D1294",
    "verdict": "same shape",
+   "source": "curated"
+  },
+  {
+   "s": "X_rings",
+   "t": "X_crit",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1295",
+   "verdict": "symmetry ⇒ stationary",
+   "source": "curated"
+  },
+  {
+   "s": "X_rings",
+   "t": "vac_i",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1295",
+   "verdict": "Z[i]",
+   "source": "curated"
+  },
+  {
+   "s": "X_rings",
+   "t": "vac_rho",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1295",
+   "verdict": "Z[ω]",
    "source": "curated"
   },
   {
