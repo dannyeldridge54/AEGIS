@@ -13137,3 +13137,11 @@ Lock: field_tests/rules/PREREG_A1_mssm_gstar.md. Code: pipeline.predict_fast(g=�
 Expectation (Δn_s −(6.3 ± 0.5)e-5): 6/7 inside; the C 1.0e-6, high-T_R corner has −5.75e-5 (0.05e-5 outside) → FAIL as locked (the n_s response per e-fold depends on C: 0.91–1.01e-3).
 Status: SERAPIS's audited numbers now use the MSSM g*; frozen predictions unchanged (post-hoc); the shift is 0.02σ for SO+SPHEREx.
 MAP: node=nstar_e status=corrected touches=[band_e_audited, serapis_point] ripple=yes
+
+## D1263 — CENTRE — PW3 (web postulate 3) KILLED: the Janus κ does not separate SERAPIS's two vacua at leading order (τ = i: own κ = ½ 10.8 % off, crossed κ = 1 13.2 % off); the vacua differ only by Δα_s = 1.44e-4 (0.06–0.09σ for 2030s surveys) — CMB inflation data cannot tell ρ from τ = i
+Lock: field_tests/rules/PREREG_PW3_kappa_vacua.md. Results: field_tests/results/pw3_kappa_vacua.txt. Inputs: exact MS points (ρ: A1/D1262; τ = i: NA12/D1247).
+[computed] ρ (κ = 1): exact α_s −9.981e-4; own-κ relation −9.642e-4 (3.4 %); crossed κ = ½ −7.632e-4 (23.5 %). τ = i (κ = ½): exact −8.543e-4; own κ −7.623e-4 (10.8 %); crossed κ = 1 −9.667e-4 (13.2 %).
+T1 FAIL (τ = i own κ > 6 %), T2 FAIL (τ = i crossed < 15 %) → postulate KILLED as locked. The τ = i miss matches the known leading-order offset bias of the εI-type tilt (11–13 %, D635/D672); the offset-corrected relation (D640) would be needed — not tested here.
+Between vacua: Δn_s 2.3e-4, Δr/r 0.26 %, Δα_s 1.44e-4 → 0.06σ (SO+SPHEREx), 0.085σ (best 2030s combination). Reading: the vacuum choice (ρ vs τ = i) is not decidable from (n_s, r, α_s) before 2035; it has to come from the other sectors (neutrino ordering texture, leptogenesis channel, wino window), as D751 already suggested for α_s.
+Node vac_discriminant added to the web with status killed (honest record).
+MAP: node=vac_discriminant status=killed touches=[] ripple=no

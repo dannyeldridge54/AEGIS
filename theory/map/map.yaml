@@ -629,6 +629,23 @@ nodes:
   - 'D1251: postulate (PW2), expectation PASS 4/4'
   - 'D1251: postulate'
   note: web loop postulate 2; scored only on future data
+- id: vac_discriminant
+  layer: 5
+  branch:
+  - E
+  - i
+  title: "KILLED POSTULATE: Janus κ separates the ρ and τ=i vacua (τ=i own-κ 10.8 % off, crossed 13.2 %); vacua differ only by Δα_s 1.4e-4 (≤0.09σ)"
+  status: killed
+  d:
+  - D1263
+  depends:
+  - janus
+  - vac_i
+  - vac_rho
+  - serapis_point
+  history:
+  - 'D1263: postulate PW3 killed by its locked test'
+  note: web loop postulate 3; kept on the web as killed
 - id: caps
   layer: 5
   branch:

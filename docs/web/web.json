@@ -233,6 +233,14 @@
    "info": "web loop postulate 2; scored only on future data"
   },
   {
+   "id": "vac_discriminant",
+   "label": "KILLED POSTULATE: Janus κ separates the ρ and τ=i vacua (τ=i own-κ 10.8 % off, crossed 13.2 %); vacua differ only by Δα_s 1.4e-4 (≤0.09σ)",
+   "lane": "theory",
+   "status": "killed",
+   "refs": "D1263",
+   "info": "web loop postulate 3; kept on the web as killed"
+  },
+  {
    "id": "caps",
    "label": "Family caps n_s ≤ 0.985, r ≤ 8.3e-4",
    "lane": "theory",
@@ -946,6 +954,42 @@
    "sign": 1,
    "ref": "theory/map/map.yaml",
    "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "janus",
+   "t": "vac_discriminant",
+   "kind": "depends",
+   "sign": -1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "killed",
+   "source": "map.yaml"
+  },
+  {
+   "s": "vac_i",
+   "t": "vac_discriminant",
+   "kind": "depends",
+   "sign": -1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "killed",
+   "source": "map.yaml"
+  },
+  {
+   "s": "vac_rho",
+   "t": "vac_discriminant",
+   "kind": "depends",
+   "sign": -1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "killed",
+   "source": "map.yaml"
+  },
+  {
+   "s": "serapis_point",
+   "t": "vac_discriminant",
+   "kind": "depends",
+   "sign": -1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "killed",
    "source": "map.yaml"
   },
   {
