@@ -2,9 +2,9 @@
 # Every entry cites the D-note that made the decision. Recomputations go through a lock as usual.
 band_e:
   janus:
-    at: D1346
-    by: D1346
-    verdict: 'no effect: D1346 confirmed the Janus-accuracy verdicts (no value changed)'
+    at: D1354
+    by: D1354
+    verdict: 'no effect: D1354 is the SERAPIS circuit (consistency laws over existing tools) plus two corrections to my own circuit laws; no Janus value or relation changed'
   nstar_e:
     at: D1262
     by: D1344
@@ -20,9 +20,9 @@ band_e_audited:
     verdict: 'no effect: D1295-D1298 are lattice-shape notes (vacuum shape confirmed at ρ)'
 band_i:
   janus:
-    at: D1346
-    by: D1346
-    verdict: 'no effect: D1346 confirmed the Janus-accuracy verdicts (no value changed)'
+    at: D1354
+    by: D1354
+    verdict: 'no effect: D1354 is the SERAPIS circuit (consistency laws over existing tools) plus two corrections to my own circuit laws; no Janus value or relation changed'
 darkrad_i:
   vac_i:
     at: D1351
@@ -113,9 +113,9 @@ tests_lhc:
     verdict: 'synced: window 0.67-1.25 TeV (to ~1.5 Einasto) vs CERN+1 reaches; HL-LHC covers 23-52%, HE-LHC all (D1350)'
 vac_discriminant:
   janus:
-    at: D1346
-    by: D1346
-    verdict: 'no effect: D1346 confirmed the Janus-accuracy verdicts (no value changed)'
+    at: D1354
+    by: D1354
+    verdict: 'no effect: D1354 is the SERAPIS circuit (consistency laws over existing tools) plus two corrections to my own circuit laws; no Janus value or relation changed'
   serapis_point:
     at: D1273a
     by: D1344
