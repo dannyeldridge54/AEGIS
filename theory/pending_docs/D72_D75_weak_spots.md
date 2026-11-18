@@ -13021,3 +13021,20 @@ So the left lane's bridges belong to the Twist model and were never SERAPIS null
 R_w0wa: SERAPIS's late universe is ΛCDM; 1-D pulls of (−1, 0) from L7 (w0 −0.853 ± 0.053, wa −0.518 ± 0.200): −2.8σ, +2.6σ (correlated; the joint test is D1029/D1032: ΛCDM + Σm_ν 0.0587 consistent at Δχ² 2.37 on the Σm_ν grid; w0wa preferred by Δχ² ≈ 8 with the compressed CMB). This is the main open data tension for SERAPIS's late side (shared with ΛCDM).
 C_nstar: "SERAPIS-E 50.1–51.3 (ρ), τ = i 50.40–50.45".
 MAP: node=tests_cmb status=computed touches=[] ripple=no
+
+### D1253 — R2e-c: following R_eff out to x = 1e5 (not holding it from 3e4) moves Ω h² by only −0.5% / −0.2%, and in the wrong direction. D1238's candidate (i) is RULED OUT (2026-11-18)
+- [CENTRE · computed] **Lock:** PREREG_R2e_c_xtail. DEVIATIONS D1: T1 (table reproduction) was not implemented; recorded before the output was read. **Result:** field_tests/results/r2e_c_xtail.txt.
+- **M = 2.8 TeV:** R_eff(3e4) = 31.5 → R_eff(1e5) = 72.6. Ω h² = 0.1043 vs R2e-b 0.1048 (−0.48%).
+- **M = 3.0 TeV:** R_eff 27.5 → 46.3. Ω h² = 0.1193 vs 0.1195 (−0.20%).
+- **Maxwell weight below the v = 1e-3 grid floor** at x = 1e5: 0.30%.
+- **Reading:**
+  - Even though R_eff more than doubles between x = 3e4 and 1e5, the yield is already frozen, so Ω moves by < 0.5%.
+  - The shift lowers Ω, which would RAISE our M_th by ~0.1–0.25% (Ω ∝ M^1.9). That is the wrong direction to explain our +4.4% vs Beneke.
+  - Candidate (i) is ruled out as the main cause.
+- **Remaining candidates for the L1 gap** (ours M_Som/M_Born = 1.338 vs Beneke 1.308):
+  - (ii) the velocity grid / closed-side resolution near the resonance tail at intermediate x (300–3e4), where R_eff is 2.4–31;
+  - (iii) the spin-weight convention (¼/¾ per charge sector) vs Beneke's full annihilation matrices;
+  - (iv) Beneke's annihilation matrices in MS-bar at 2m, where ours use Born-ratio scaling. That affects the Sommerfeld-weighted Γ differently in each channel.
+  - Candidate (iii)/(iv) needs Beneke's channel-by-channel matrices: one sourcing tick before any lock.
+VERDICT: candidate (i) RULED OUT (≤ 0.5% in Ω, wrong sign). The L1 gap stays OPEN; next is sourcing (iii)/(iv).
+MAP: none
