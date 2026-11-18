@@ -1,0 +1,18 @@
+A. darkrad_rho
+  scaling check: thr(6.7e10) = 3.40e-03 (D723: 3.4e-3) → ok
+  c=0.3 M_H=1e12: T_R 6.61e+08, M_L 2.12e+11, y_D 1.871e-02 vs need 3.38e-04 (×55) ok
+  c=0.3 M_H=1e13: T_R 6.46e+09, M_L 2.12e+12, y_D 5.917e-02 vs need 1.06e-03 (×56) ok
+  c=0.3 M_H=5e13: T_R 2.03e+10, M_L 1.06e+13, y_D 1.323e-01 vs need 1.87e-03 (×71) ok
+  c=1 M_H=1e12: T_R 8.94e+08, M_L 7.07e+11, y_D 3.417e-02 vs need 3.93e-04 (×87) ok
+  c=1 M_H=1e13: T_R 7.26e+09, M_L 7.07e+12, y_D 1.081e-01 vs need 1.12e-03 (×97) ok
+  c=3 M_H=1e12: T_R 1.99e+09, M_L 2.12e+12, y_D 5.917e-02 vs need 5.85e-04 (×101) ok
+  c=3 M_H=1e13: T_R 1.43e+09, M_L 2.12e+13, y_D 1.871e-01 vs need 4.97e-04 (×376) ok
+A VERDICT: PASS; closure bound M2 > m_φ/2 = 1.59e+13 GeV (was 1.1e13)
+B. caps: D674 τ=i N* 46.08 → n_s 0.9836, r 8.20e-4; 49.21 → 0.9795, 6.10e-4. D676 ρ N* 46.09 → 0.9844, 8.30e-4; 49.49 → 0.9797, 6.01e-4.
+  slope dn_s/dN* = -1.38e-03, dr/dN* = -6.74e-05 (both <0) → at N* 50.1–51.3 the ρ cap is lower (linear est. n_s ≤ 0.9789); frozen caps CONSISTENT (conservative)
+C. τ=i canonical factors (model K = −ln 2Im τ, n=1 → √2 at y=1):
+  cone_i_d726: √(2/3) (n=3) MISMATCH; D726 NULL by lock (cone absent at i) — result not used by any node
+  pseudo_i_d727: λ = √2·κ (n=1) ok; feeds reheat_i
+  lepto_i_d728: λ = √2·1.2635 (n=1) ok; feeds lepto_i
+  two_plus_one_i_d738: (check: no explicit factor printed in grep); lepto_i/eta_n
+  m_φ at i: D727/D728/D738 use 1.9e11 GeV; D730 computes 2.28e11 / 2.65e11 (ε 1.3 / 1.6e-4) → Γ ∝ m: +20–39%, T_R ∝ √Γ: +10–18% → ΔN* ≈ (1/3)ln(1.10–1.18) = +0.03–0.06 (estimate) → FLAG (small) on reheat_i
