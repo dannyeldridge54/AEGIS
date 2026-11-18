@@ -1,7 +1,7 @@
 name: tools
 on:
   push:
-    paths: ["tools/**", "apps/skymap/**", "ufe-v2/aegis/discoveries.py", "ufe-v2/aegis/map_feed.py", "ufe-v2/aegis/community_reviews.py", ".github/workflows/tools.yml"]
+    paths: ["tools/**", "requirements-tools.txt", "apps/skymap/**", "ufe-v2/aegis/discoveries.py", "ufe-v2/aegis/map_feed.py", "ufe-v2/aegis/community_reviews.py", ".github/workflows/tools.yml"]
   pull_request:
     paths: ["tools/**", "apps/skymap/**"]
 jobs:
@@ -25,3 +25,15 @@ jobs:
       - run: python -m pytest -q tools/ladder/tests
       - run: python tools/ladder/ladder.py check
       - run: python tools/tracker/track.py --out /tmp/tracker
+  toolkits:
+    # The public toolkits (CERN+1, Lattice Lab, Janus, Hyperion, aegis CLI), kept separate from the research-ledger checks above
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install numpy scipy sympy mpmath numba pyhf galpy astropy pytest
+      - run: python -m pytest -q tools/lhc/tests tools/lattice/tests
+      - run: python tools/release_smoketest.py
+      - run: python -m tools.aegis_cli cern xsec 700 14 && python -m tools.aegis_cli hyperion orbit 269.452 4.6934 1.8266 -802.8 10362.4 -110.5
