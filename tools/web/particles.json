@@ -206,5 +206,45 @@
   "state": "predicted",
   "node": "stuck_d3",
   "info": "5 per half-period + 1 at the origin; their asymmetry IS the tilt (D696)."
+ },
+ {
+  "id": "heavyH",
+  "sym": "H⁰ A⁰ H±",
+  "name": "Heavy MSSM Higgs bosons",
+  "state": "predicted",
+  "node": "covariant",
+  "info": "The MSSM has two Higgs doublets: besides the 125 GeV Higgs, H⁰, A⁰, H± must exist (mass ~ the soft scale, not computed in the D-notes)."
+ },
+ {
+  "id": "higgsino",
+  "sym": "H̃",
+  "name": "Higgsinos",
+  "state": "predicted",
+  "node": "gravitino_wino",
+  "info": "Fermion partners of the Higgs doublets (MSSM structure; mass set by μ, not computed)."
+ },
+ {
+  "id": "inflatino",
+  "sym": "φ̃",
+  "name": "Inflatino",
+  "state": "predicted",
+  "node": "serapis_e",
+  "info": "Fermion partner of the SUSY inflaton multiplet (τ); mixes with the goldstino during inflation (literature, D-notes ~D120)."
+ },
+ {
+  "id": "goldstino",
+  "sym": "X",
+  "name": "Goldstino / nilpotent X sector",
+  "state": "predicted",
+  "node": "covariant",
+  "info": "SUSY breaking via a nilpotent X superfield (D649 positivity); the goldstino is eaten by the gravitino."
+ },
+ {
+  "id": "T1",
+  "sym": "T₁",
+  "name": "Kähler modulus T₁ (racetrack)",
+  "state": "predicted",
+  "node": "covariant",
+  "info": "Stabilised by a racetrack; Im T₁ = A₂A₃/g_s = 4.31 at the benchmark (D861)."
  }
 ]
