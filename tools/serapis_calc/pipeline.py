@@ -43,6 +43,20 @@ def predict(model='serapis_e', C=1.15e-6, TR=1e7, lam=1.0, tol=0.02, verbose=Fal
     rel = relation.alpha_s(res['ns'], res['r'], m['p'], m['kappa'])
     return dict(model=model, C=C, TR=TR, Nstar=N, ns=res['ns'], r=res['r'], alpha_s=res['alpha_s'],
                 alpha_s_relation=rel, sigma=data.sigma(res['ns']), Ntotal=bg.Nend)
+def predict_fast(model='serapis_e', C=1.15e-6, TR=1e7, lam=1.0):
+    """U2 (PREREG_U2_pipeline_fast): self-consistent N* with Janus core (third-order flow) and the exact-end V*/V_end, then ONE compiled
+    ripple-free exact Mukhanov-Sasaki spectrum (U1b, D1255) at that N*. Same keys as predict."""
+    from tools.janus_calc.core import Model, spectra3
+    from .ms_jit import build_spline, spectra_msjit
+    m, V, dV, p0 = build(model, C, lam); M = Model(V, dV, p0, Nmax=4000); Ve = V(M.sol.sol(M.Nend)[0]); N = 50.0
+    for _ in range(40):
+        a = spectra3(M, N); N2 = Nstar(a['r'], V(M.sol.sol(M.Nend - N)[0])/Ve, TR)
+        if abs(N2 - N) < 1e-4: N = N2; break
+        N = N2
+    mj, q0 = build_spline(model, C, lam); res = spectra_msjit(mj, q0, N, dlnk=tuple(np.linspace(-0.1, 0.1, 9)), bd=4000.0)
+    rel = relation.alpha_s(res['ns'], res['r'], m['p'], m['kappa'])
+    return dict(model=model, C=C, TR=TR, Nstar=N, ns=res['ns'], r=res['r'], alpha_s=res['alpha_s'], alpha_s_relation=rel,
+                sigma=data.sigma(res['ns']), Ntotal=M.Nend, engine='predict_fast (U2): Janus N* + compiled exact MS')
 if __name__ == '__main__':
     a = argparse.ArgumentParser(); a.add_argument('--model', default='serapis_e'); a.add_argument('--C', type=float, default=1.15e-6)
     a.add_argument('--TR', type=float, default=1e7); a.add_argument('--lam', type=float, default=1.0); a.add_argument('-v', action='store_true')
