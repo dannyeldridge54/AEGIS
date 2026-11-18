@@ -13013,3 +13013,11 @@ Expectation 4/4 inside → PASS. Inside frozen band_e (n_s 2.5e-4 below its ceil
 Status: postulate (one model point built from post-hoc choices: c, M_H, the benchmark); scored only on future data — SO+SPHEREx σ(n_s) ≈ 0.0016 measures it at ≈ 4σ from N* = 60 attractors.
 Precision: Janus core vs exact MS is being quantified in TK1 (expected ≤ 1e-4 in n_s).
 MAP: node=serapis_point status=postulate touches=[band_e, tests_cmb] ripple=no
+
+##  — CENTRE — NA16 lanes: the twin-ladder bridges B1/B2 fail on every SERAPIS-E point (10/10) — they are nulls of the pre-SERAPIS Twist model, not of SERAPIS; relabelled; C_nstar updated; R_w0wa 1-D pulls recorded
+Lock: field_tests/rules/PREREG_NA16_lanes.md. Results: field_tests/results/na16_lanes.txt. [arithmetic on PW1/PW2 numbers]
+B1 = r − 3(1−n_s)² = −1.25 to −1.95e-3 (target −0.9e-4 ± 1.2e-4); B2 = α_s + ½(1−n_s)² = −5.4 to −7.0e-4 (target 0 ± 1e-4) — all FAIL. Reason: B1/B2 encode the Starobinsky-like attractor (r/(1−n_s)² = 3, α_s = −½(1−n_s)²); SERAPIS-E has r/(1−n_s)² = 0.57–0.83 (untilted α-attractor value 3α = 0.25 for p = 2√2, raised by the tilt) and α_s ≈ −(1.6–2.0)×½(1−n_s)².
+So the left lane's bridges belong to the Twist model and were never SERAPIS nulls; SERAPIS's null test is the Janus relation (κ = 1, p = 2√2, ≤ 6 %, D693/D1234a). Web: L_bridge relabelled "Twist-era", status corrected.
+R_w0wa: SERAPIS's late universe is ΛCDM; 1-D pulls of (−1, 0) from L7 (w0 −0.853 ± 0.053, wa −0.518 ± 0.200): −2.8σ, +2.6σ (correlated; the joint test is D1029/D1032: ΛCDM + Σm_ν 0.0587 consistent at Δχ² 2.37 on the Σm_ν grid; w0wa preferred by Δχ² ≈ 8 with the compressed CMB). This is the main open data tension for SERAPIS's late side (shared with ΛCDM).
+C_nstar: "SERAPIS-E 50.1–51.3 (ρ), τ = i 50.40–50.45".
+MAP: node=tests_cmb status=computed touches=[] ripple=no

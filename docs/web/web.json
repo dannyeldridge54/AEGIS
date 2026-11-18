@@ -282,10 +282,10 @@
   },
   {
    "id": "L_bridge",
-   "label": "Bridges B1 r−3(1−n_s)² , B2 α_s+½(1−n_s)²",
+   "label": "Twist-era bridges B1 r−3(1−n_s)², B2 α_s+½(1−n_s)² — NOT SERAPIS nulls (); SERAPIS null = Janus relation",
    "lane": "left",
-   "status": "computed",
-   "refs": "twin-ladder B1/B2",
+   "status": "corrected",
+   "refs": "twin-ladder B1/B2, ",
    "info": ""
   },
   {
@@ -346,10 +346,10 @@
   },
   {
    "id": "C_nstar",
-   "label": "Shared N* (+ heat share)",
+   "label": "Shared N*: SERAPIS-E 50.1–51.3 (ρ), τ=i 50.40–50.45 (audited)",
    "lane": "centre",
-   "status": "computed",
-   "refs": "twin-ladder",
+   "status": "corrected",
+   "refs": "D1235, D1247, ",
    "info": ""
   },
   {

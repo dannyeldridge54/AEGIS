@@ -368,3 +368,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1249: a test statement ("LHC will close the window") must be re-read whenever the window it refers to is widened; D784 widened the window and D736's claim silently went stale.
 - D1250: a full node audit in one evening found 6 real input errors, all of the same kind (constants copied between eras of the model); a periodic audit of hard-coded constants is worth scheduling.
 - D1251: chaining the web's constraints (leptogenesis → T_R → N*, string benchmark → C) turns a band into one point; each link is post-hoc, so the point is a postulate, but it is sharp enough to be wrong.
+- : null tests are model-specific; when the model changes (Twist → SERAPIS), re-derive the nulls or label the old ones as belonging to the old model.
