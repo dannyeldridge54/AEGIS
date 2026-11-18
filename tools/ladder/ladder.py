@@ -56,34 +56,61 @@ def downstream(m, start):
                 seen.add(k); todo.append(k)
     return seen
 
-def update(m, text, last):
+def _done_from_watermark(text, last):
+    """Migration: replay the old watermark rule to recover exactly which notes it applied (notes written out of order,
+    e.g. D1265a after D1280, were skipped by it and are NOT done)."""
+    done, run = set(), MAP_FROM - 1
+    for dn, _ in notes(text):
+        if dn > run and dn <= last:
+            done.add(str(dn))
+        run = max(run, dn)
+    return done
+
+def update(m, text, last, done=None):
     byid = {n["id"]: n for n in m["nodes"]}
     applied = []
+    if done is None:
+        done = _done_from_watermark(text, last)
     for dn, body in notes(text):
-        if dn <= last:
+        if dn < MAP_FROM or str(dn) in done:
             continue
+        done.add(str(dn))
         for node, status, touches, noripple in LINE.findall(body):
             if node not in byid:
                 raise SystemExit(f"D{dn}: MAP line names unknown node '{node}' (add it to map.yaml first)")
             if status not in STATUSES:
                 raise SystemExit(f"D{dn}: unknown status '{status}'")
             n = byid[node]
+            latest = max([DN(*re.match(r"D(\d+)([a-z]?)$", x).groups()) for x in n.get("d", []) if re.match(r"D\d+[a-z]?$", x)] or [DN(0)])
+            if dn < latest:
+                # out-of-order note (e.g. a correction written after newer notes): record it, but never roll the
+                # node's status or flags back to an older state
+                n.setdefault("d", [])
+                if f"D{dn}" not in n["d"]:
+                    n["d"].append(f"D{dn}")
+                hist = n.setdefault("history", []); hist.append(f"D{dn}: {status} (late)"); n["history"] = hist[-3:]
+                applied.append((dn, node, status + " (late, recorded only)"))
+                continue
             if n.get("status") != "frozen":
                 n["status"] = status
             n.setdefault("d", [])
             if f"D{dn}" not in n["d"]:
                 n["d"].append(f"D{dn}")
-            n.pop("flag", None)
+            fm0 = re.match(r"recheck \(D(\d+)([a-z]?),", n.get("flag", ""))
+            if not fm0 or DN(*fm0.groups()) <= dn:   # a note clears only flags raised by older notes
+                n.pop("flag", None)
             hist = n.setdefault("history", []); hist.append(f"D{dn}: {status}"); n["history"] = hist[-3:]
             t = [x.strip() for x in touches.split(",") if x.strip()]
             for k in (set(t) if noripple else downstream(m, [node] + t) | set(t)):
                 if k != node and k in byid:
-                    byid[k]["flag"] = f"recheck (D{dn}, {node})"
+                    fm = re.match(r"recheck \(D(\d+)([a-z]?),", byid[k].get("flag", ""))
+                    if not fm or DN(*fm.groups()) <= dn:   # never replace a newer flag with an older note's
+                        byid[k]["flag"] = f"recheck (D{dn}, {node})"
                 elif k != node:
                     print(f"ladder: D{dn} touches unknown map id '{k}' (ignored; web-only node?)")
             applied.append((dn, node, status))
         last = max(last, dn)
-    return applied, last
+    return applied, last, done
 
 def export(m):
     EXPORT.parent.mkdir(parents=True, exist_ok=True)
@@ -111,7 +138,8 @@ def main(argv=None):
     st = json.load(open(STATE)) if STATE.exists() else {"last": MAP_FROM - 1}
     text = NOTES.read_text(encoding="utf-8")
     if a.cmd == "update":
-        applied, st["last"] = update(m, text, st["last"])
+        applied, st["last"], done = update(m, text, st["last"], set(st["done"]) if "done" in st else None)
+        st["done"] = sorted(done)
         save(m); export(m); card(m, applied); json.dump(st, open(STATE, "w"))
         print(f"applied {len(applied)} MAP line(s); last D{st['last']}; flagged: {sum(1 for n in m['nodes'] if n.get('flag'))}")
     elif a.cmd == "flags":

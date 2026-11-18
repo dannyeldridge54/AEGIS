@@ -32,10 +32,11 @@ nodes:
   - D1045
   - D1048
   - D1250
+  - D991a
   history:
-  - 'D1045: estimate'
   - 'D1048: estimate'
   - 'D1250: estimate'
+  - 'D991a: estimate (late)'
 - id: plateau_origin
   layer: 1
   branch:
@@ -86,11 +87,12 @@ nodes:
   - D985
   - D988
   - D992
+  - D798a
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D985: estimate'
   - 'D988: estimate'
   - 'D992: assumed'
+  - 'D798a: corrected (late)'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -256,6 +258,7 @@ nodes:
   - 'D906: computed'
   - 'D1246: computed'
   - 'D1280: computed'
+  flag: recheck (D1275b, bhk_tilt)
 - id: janus
   layer: 2
   branch:
@@ -287,10 +290,13 @@ nodes:
   - D1257
   - D1274
   - D1275
+  - D1275a
+  - D1274a
+  - D1275b
   history:
-  - 'D1257: literature'
-  - 'D1274: postulate'
-  - 'D1275: postulate'
+  - 'D1275a: postulate'
+  - 'D1274a: postulate (late)'
+  - 'D1275b: postulate'
 - id: stuck_d3
   layer: 3
   branch:
@@ -305,7 +311,7 @@ nodes:
   - bhk_tilt
   history:
   - 'D1246: literature'
-  flag: recheck (D1275, bhk_tilt)
+  flag: recheck (D1275b, bhk_tilt)
 - id: covariant
   layer: 3
   branch:
@@ -541,13 +547,14 @@ nodes:
   - D986
   - D1236
   - D1239
+  - D880a
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D986: computed'
   - 'D1236: computed'
   - 'D1239: computed'
+  - 'D880a: corrected (late)'
   flag: recheck (D1285, n_sector_rho)
 - id: gravitino_wino
   layer: 4
@@ -648,15 +655,16 @@ nodes:
   - D1251
   - D1272
   - D1273
+  - D1273a
   depends:
   - lepto_rho
   - reheat_rho
   - bhk_tilt
   - band_e_audited
   history:
-  - 'D1251: postulate'
   - 'D1272: postulate'
   - 'D1273: postulate'
+  - 'D1273a: postulate'
   note: web loop postulate 2; scored only on future data
   flag: recheck (D1285, n_sector_rho)
 - id: vac_discriminant
@@ -704,14 +712,17 @@ nodes:
   status: postulate
   d:
   - D1265
+  - D1265a
+  - D1265b
   depends:
   - bhk_tilt
   - stuck_d3
   - tests_cmb
   - reheat_rho
   history:
-  - 'D1265: postulate PW5 passed (forecast + consistency)'
   - 'D1265: postulate'
+  - 'D1265a: postulate'
+  - 'D1265b: postulate'
   note: web loop postulate 5
   flag: recheck (D1285, n_sector_rho)
 - id: inverse_meter
