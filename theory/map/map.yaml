@@ -599,7 +599,7 @@ nodes:
   layer: 5
   branch:
   - E
-  title: 'POSTULATE: audited SERAPIS-E box (N* 50.1–51.3): n_s 0.9717–0.9760, r 4.38–4.90e-4; 4/9 inside frozen band'
+  title: 'POSTULATE: audited SERAPIS-E box (N* 50.07–51.22, MSSM g*): n_s 0.9717–0.9760, r 4.39–4.90e-4; partly outside frozen band (D1262)'
   status: postulate
   d:
   - D1245
@@ -616,7 +616,7 @@ nodes:
   layer: 5
   branch:
   - E
-  title: 'POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 8.9e8, C 1.25e-6): n_s 0.9745, r 4.81e-4, α_s −1.0e-3, N* 50.2'
+  title: 'POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 7.4e8, C 1.25e-6, MSSM g*): n_s 0.97439, r 4.82e-4, α_s −1.0e-3, N* 50.18 (D1262)'
   status: postulate
   d:
   - D1251
