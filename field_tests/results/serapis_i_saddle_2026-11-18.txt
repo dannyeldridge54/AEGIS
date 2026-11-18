@@ -1,0 +1,17 @@
+Is tau = i a minimum or a saddle of the ACTUAL SERAPIS-E potential? (cloud loop, 2026-11-18)
+Model code: tools/serapis_calc/potentials.py  V/V0 = P3(Ehat) = Ehat/(Ehat+1)*(1+C*Ehat),  Ehat = E(tau,2) - E(rho,2)
+(E = normalised non-holomorphic Eisenstein, eisenstein.E_fourier). C = 1.25e-6. Central-difference Hessian in (x,y), h = 1e-3 and 1e-4.
+
+dP3/dE = (C E^2 + 2 C E + 1)/(E+1)^2  > 0 for E >= 0, C >= 0 (repo's slope_sign_symbolic) -> V is monotone in E(tau,2).
+Ehat(i) = 0.112468  (E(i,2) = 2.784202, E(rho,2) = 2.671734)
+
+tau = i   : V = 0.101097, gradient (0.0e+00, -2.9e-10) -> critical point; Hessian eig [-1.2792, +5.7786] -> SADDLE
+            negative mode along (x,y) = (1, 0): the axion / shear direction; positive along y.
+tau = rho : V = 0 (vacuum); Hessian eig [+3.5623, +3.5623] -> isotropic MINIMUM.
+Both step sizes agree to all printed digits. Eigenvalue ratio at i: -1.2792/5.7786 = -0.2214, equal to the bare Epstein s=2
+ratio from the audit (-3.4278/15.4783 = -0.2215): Hess V = P3'(Ehat) * Hess E at a critical point, P3' > 0.
+
+Verdict: in SERAPIS-E tau = i is a dS saddle (V = 0.10 V0) unstable only along the axion x; it is not a vacuum. Any potential
+that is a monotone function of E(tau,2) can have its vacuum only at rho. A tau = i vacuum therefore needs an extra ingredient:
+x pinned (heavy axion / CP locus) or a different modular building block in which i is a minimum (e.g. SERAPIS-1's j-based form).
+Label: derived from the frozen model's own code (verification of an existing model; no new prediction, no lock needed).
