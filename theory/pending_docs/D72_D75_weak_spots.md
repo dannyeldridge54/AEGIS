@@ -12851,3 +12851,26 @@ Consequence: NA3's corrected chain stands (couplings ×√3, m_φ = 3.17e13): T_
 Status: reheat_rho → corrected (pending reruns); nstar_e → corrected window 50.1–51.3 (exact end + n = 1); lepto_rho → flag kept until the κ recheck. ACCURACY_QUEUE: add "ρ-chain rerun with n = 1, m_φ = 3.17e13" (one lock covering D722/D725/D775/D982).
 MAP: node=reheat_rho status=corrected touches=[nstar_e, lepto_rho, sterile_rho, darkrad_rho] ripple=yes
 MAP: node=nstar_e status=corrected touches=[band_e, C_nstar] ripple=yes
+
+### D1238 — R2e-b: the g_*(T) equation of state closes most of the relic gap. Born 2.252 TeV (B1 PASS, +2.0% vs Beneke 2.207); LO Sommerfeld 3.013 TeV (L1 FAIL, +4.4% vs 2.886) (2026-11-18)
+- [CENTRE · computed] **Lock:** PREREG_R2e_b_gstar.
+  - **Data:** Saikawa–Shirai 2020 g_*ρ and g_*s, from PTArcade's bundled copy (commit e87e772). It cross-checks against the IPMU original to < 0.01%; see the provenance file. Downloaded with Danny's OK.
+  - **Result:** field_tests/results/r2e_b_gstar.txt. No deviations.
+- **g_*^{1/2}** (Gondolo–Gelmini, with the h_* derivative term) = 10.28 at T = 100 GeV (vs √106.75 = 10.33), 8.65 at 1 GeV, 4.66 at 0.1 GeV.
+- **B1:** Born M_th = 2.2521 TeV vs Beneke 2.207, +2.04% → **PASS** (≤ 3%). R2e-a, with constant g_*, gave 2.325. Starting at x = 1 instead of 3 gives the identical 2.2521.
+- **L1:** LO-Sommerfeld M_th = 3.013 TeV vs Beneke 2.886, +4.4% → **FAIL** (≤ 3%). R2e-a gave 3.135.
+  - Ω h² = 0.0551, 0.0736, 0.0902, 0.1048, 0.1195, 0.1349 at M = 2.2–3.2 TeV.
+- **Progress of the relic chain against Beneke:**
+  - Born: +14.7% (R1b) → +5.4% (MS-bar α̂₂) → **+2.0%** (EOS).
+  - LO Sommerfeld: (R2d est. 3.47) → +8.6% → **+4.4%**.
+  - So the EOS was the D1187/D1230 suspect, and it accounted for ~3.5 points of the Born gap and ~4 points of the Sommerfeld gap.
+- **Remaining gap is in the Sommerfeld factor:** M_Som/M_Born is 1.338 (ours) vs 1.308 (Beneke), +2.3%. Candidates, not tested and no rerun:
+  - (i) R_eff is held fixed beyond x = 3e4, while Beneke tabulates to x = 1e8;
+  - (ii) the 25-point x grid and the n = 40 velocity grid near the late-time resonance tail;
+  - (iii) the spin-weight assumption ¼/¾ (D1182) vs Beneke's full matrices;
+  - (iv) the remaining Born offset (+2.0%) enters as well.
+- **For SERAPIS:**
+  - The thermal-mass anchors used in the fraction bracket (D1152: 2.207 and 2.842) are Beneke's, and our own code now agrees with Beneke's Born to 2%. The f(M) bracket is therefore corroborated, not changed.
+  - The paper needs no edit (it quotes Beneke's numbers).
+VERDICT: B1 PASS, L1 FAIL (+4.4%). Most of the gap is closed by the sourced EOS. The residual is in the late-time Sommerfeld treatment and is OPEN.
+MAP: node=H_relic status=computed touches=[wino_window] ripple=no
