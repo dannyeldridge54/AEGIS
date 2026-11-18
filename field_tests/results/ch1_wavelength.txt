@@ -1,0 +1,13 @@
+T1 H Lyα vac nm: 121.568446 vs 121.567 (+0.0012%, tol 0.002%) PASS
+T2 H Hα air nm: 656.288306 vs 656.28 (+0.0013%, tol 0.010%) PASS
+T3 He II 2→1 nm: 30.379733 vs 30.378 (+0.0057%, tol 0.010%) PASS
+T4 21 cm MHz: 1418.840091 vs 1420.405751768 (-0.1102%, tol 0.100%) FAIL
+T5 round-trip |Δ| 2.2e-16 PASS; 500 nm → 2.4797 eV, green
+ribbon: He II 30.4 nm λ = 3.0380e-08 m [tool]
+ribbon: H Lyα λ = 1.2157e-07 m [tool]
+ribbon: H Hα λ = 6.5647e-07 m [tool]
+ribbon: Lyα emitted at recombination z*≈1090 → observed today λ = 1.3268e-04 m [physics (our U4 z*)]
+ribbon: CMB peak today (Wien, T 2.7255 K) λ = 1.0632e-03 m [physics-literature]
+ribbon: H 21 cm λ = 2.1129e-01 m [tool]
+CH1 VERDICT: FAIL
+DEV D1 rerun (prefactor fixed): T4 still −0.110 % vs tol 0.100 % → FAIL as locked. Reason: the Fermi formula omits the electron anomalous moment (1+a_e = 1.00116), which alone accounts for +0.116 %. Not chased here (no second rerun). CH1 NOT ADOPTED; next CH pass: fresh lock CH1b with the (1+a_e) factor and the same tests.
