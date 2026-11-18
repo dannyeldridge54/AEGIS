@@ -1856,3 +1856,4 @@ Touches: none.
 ## D1267: papers 5 (SERAPIS-E audited, doi 10.5281/zenodo.24330316) and 6 (MS start-condition ripple, doi 10.5281/zenodo.24330318) published, files md5-verified
 ## D1268: PW6 PASSES — inverse string meter at T_R 7.39e8: n_s 0.972/0.974/0.976 → Im S·Im ρ 953/804/697 (exact); PW5 linear inverse ≤ 0.4–2.4 % inside, 3.5–7 % at 0.970/0.978
 ## D1270: PW7 KILLED — benchmark instanton M_H 9.8e10 → T_R ≈ 7e7 GeV, leptogenesis 0 % (Y_B ×12 short); point's M_H = 1e12 is a choice, not a benchmark output; would-be point N* 49.41, n_s 0.97362 (still in frozen band)
+- D1272 (2026-11-18): SERAPIS-E tool cross-check — PT1 emulator |Δn_s|≤3.2e-5 vs exact across C∈[1.0,1.6]e-6; PW6 meter C,P consistent (~1%). Trajectory reproduced. [tool/numerics]

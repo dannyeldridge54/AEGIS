@@ -13241,3 +13241,16 @@ MAP: node=instanton_MH status=killed touches=[serapis_point, lepto_rho, reheat_r
 - band_i (flagged by D1250, eps_tilt) belongs to the NA audit chain and is left to it.
 VERDICT: unchanged.
 MAP: none
+
+### D1272 — SERAPIS-E tool cross-check: the PT1 emulator and PW6 inverse meter reproduce the EXACT point across the C band (2026-11-18)
+MAP: serapis_point
+LABEL: tool/numerics cross-check (no new physics claim; scored as a tool-accuracy statement).
+Cloud verification cycle ("get ahead and verify the trajectory"). Exact point = Janus core spectra3 + N* self-consistency
+at T_R=7.389e8 GeV, g*=228.75, N_eff=4, Nmax=4000. Compared the adopted fast tools (PT1 emulator, D-era T1/PT1; PW6
+inverse meter, D1268) against it over the emulator's validity band C∈[1.0,1.6]e-6:
+- emulator vs exact: |Δn_s| ≤ 3.2e-5 (C=1.0→−3.2e-5, 1.15→−4.7e-6, 1.30→+2.4e-5, 1.60→−2.8e-5); r to ~1e-6, α_s to ~1e-5.
+- inverse meter (log-interp table) at n_s=0.97439 → C=1.248e-6, P=782 (=15·N_eff/64π⁶C); exact pipeline C≈1.26e-6 (≈1%).
+- recorded point n_s=0.97439 ↔ C≈1.25e-6, r≈4.8e-4, α_s≈−9.9e-4, N*=50.18 — reproduced; trajectory consistent.
+VERDICT: the surrogate + meter are quantitatively faithful to the exact pipeline across the band; safe to keep using the
+fast tools for scans and for the inverse meter at the leptogenesis T_R. Result file: field_tests/results/emulator_exact_crosscheck_2026-11-18.txt.
+LESSON: a round(x,6) in a one-off print crushed C≈1.25e-6 to "1e-6" and sent me chasing a phantom meter bug — print raw/scientific when checking small quantities.
