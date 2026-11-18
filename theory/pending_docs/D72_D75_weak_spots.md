@@ -12919,3 +12919,10 @@ Lock: field_tests/rules/PREREG_NA9_gravitino_wino.md. Script: field_tests/script
 Locked rule Ω_nth < 0.01 → PASS; the wino window 0.67–1.85 TeV (thermal) is unaffected (non-thermal share ≤ 0.04 %). Node label updated: "Ω_nth ≤ 5e-4".
 C_lepto: 0.87e-10 vs Y_obs = 8.70e-11 (NA4): −0.04 % → PASS.
 MAP: node=gravitino_wino status=computed touches=[wino_window] ripple=no
+
+## D1243 — CENTRE — NA10: radiative resonant leptogenesis at τ = i (D745) with D730's inflaton mass — PASS, slightly stronger (34–86 % → 38–86 % / 42–86 %)
+Lock: field_tests/rules/PREREG_NA10_radlepto_i.md. Scripts: field_tests/scripts/na10/ (D745 code, only line 9: m_φ, M = 0.33 m_φ, T_R from NA8). Results: field_tests/results/na10_radlepto_i.txt. [computed]
+Original D745 reproduced exactly (33.9–85.5 % pass). With m_φ = 2.28e11 (T_R 3.85e6, M 7.5e10): 38.4–85.9 %; with 2.65e11 (T_R 4.82e6, M 8.7e10): 41.7–86.4 %. Max Y_B rises ~10–20 % in every cell.
+Locked rule (every cell ≥ 10 %) → PASS. δ_N < Γ fraction unchanged (1.2–3.2 %). eta_n (radiative breaker) and lepto_i: verdicts unchanged.
+Caveat carried from D745: the m1 grid (1e-4–5e-3 eV) lies above D895's m_ν₁ window (2e-11–9e-10 eV); the pass fraction is flat in m1 across the grid, so the extrapolation is mild but not computed.
+MAP: node=eta_n status=computed touches=[lepto_i] ripple=no

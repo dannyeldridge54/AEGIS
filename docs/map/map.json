@@ -197,11 +197,13 @@
    "status": "computed",
    "d": [
     "D744",
-    "D745"
+    "D745",
+    "D1243"
    ],
    "history": [
     "D744: estimate",
-    "D745: computed"
+    "D745: computed",
+    "D1243: computed"
    ]
   },
   {
@@ -488,7 +490,8 @@
     "D904a: estimate",
     "D909: estimate",
     "D1241: estimate"
-   ]
+   ],
+   "flag": "recheck (D1243, eta_n)"
   },
   {
    "id": "sterile_rho",
