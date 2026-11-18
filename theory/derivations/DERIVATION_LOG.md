@@ -2092,4 +2092,4 @@ Touches: none.
 1. [literature] per-channel scale and PDF uncertainties from arXiv:2304.11915 Table 6 (13.0 TeV).
 2. [estimate] channels fully correlated, σ-weighted; scale and PDF in quadrature.
 3. [derived] N(m)=N_b(1±ε(m))σ(m)/σ(m_b)·P(m)/P(m_b); δm ±0.4 MeV enters through P.
-4. [computed] 661.5 ± 10.0 GeV (136 fb⁻¹); 446.4 ± 5.5 GeV (36.1 fb⁻¹).
+4. [derived] 661.5 ± 10.0 GeV (136 fb⁻¹); 446.4 ± 5.5 GeV (36.1 fb⁻¹).
