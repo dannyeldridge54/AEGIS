@@ -540,3 +540,4 @@ D1253  2026-11-18T03:07Z  R2e-c: late-x tail (R_eff to 1e5) moves Omega only -0.
 D1254  2026-11-18T03:15Z  untitled
 D1255  2026-11-18T03:22Z  untitled
 D1256  2026-11-18T03:27Z  untitled
+D1257  2026-11-18T03:32Z  untitled
