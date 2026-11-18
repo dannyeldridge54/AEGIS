@@ -13266,3 +13266,17 @@ Cloud verification cycle. Point (exact pipeline, T_R=7.389e8 GeV, g*=228.75, N_e
 VERDICT: the model lives on the HIGH-n_s side. It is comfortable against the DESI-combined n_s and in tension at 2σ with
 CMB-SPA alone, so which n_s the data settles to is the sharpest near-term test of SERAPIS-E — not r. For scoring, use the
 pipeline α_s, not the analytic relation. Result file: field_tests/results/serapis_point_vs_data_2026-11-18.txt.
+
+## D1274 — n_s error budget: σ_theory = 0.0133 × (fractional moduli uncertainty); pinning Im S·Im ρ to ≲5% is the highest-value next target (2026-11-18)
+MAP: node=bhk_tilt status=postulate
+LABEL: tool/numerics error budget (no new physics claim).
+Cloud cycle, derived from the D1272-verified exact table (no new model builds). At the operating point C0=1.25e-6
+(bracket 1.15–1.30e-6): dn_s/dC = 1.067e4 per unit C, so C0·dn_s/dC = 0.01333. Since C = 15·N_eff/(64π⁶·Im S·Im ρ),
+dC/C = −d(ImS·Imρ)/(ImS·Imρ), giving **σ_theory(n_s) = 0.01333 × (fractional uncertainty on Im S·Im ρ)**:
+2% → 2.7e-4; 5% → 6.7e-4; 10% → 1.33e-3; 20% → 2.67e-3; 30% → 4.0e-3.
+Folding theory+data in quadrature (offsets +0.0060 vs CMB-SPA, +0.0016 vs CMB-SPA+DESI):
+moduli 5% → 1.95σ / 0.57σ; 10% → 1.82σ / 0.53σ; 20% → 1.49σ / 0.42σ.
+VERDICT: (1) the CMB-SPA tension is NOT rescued by our own uncertainty unless the moduli product is known worse than ~30%;
+(2) for n_s to be a sharper test than the data, Im S·Im ρ must be pinned to ≲5% — that is now the highest-value target on
+this branch; (3) T_R and g* enter only through N*, which moved ≤0.03 over the whole C band (D1272), so they are subdominant.
+Result file: field_tests/results/ns_error_budget_2026-11-18.txt.

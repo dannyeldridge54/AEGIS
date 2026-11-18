@@ -1869,3 +1869,9 @@ Touches: none.
 2. Differenced n_s against the published constraints: +2.00σ vs CMB-SPA 0.9684±0.0030; +0.59σ vs CMB-SPA+DESI 0.9728±0.0027. [literature]
 3. Compared r=4.82e-4 to the r<0.036 bound: 75× below, so r is not a near-term discriminator. [literature]
 4. Evaluated the analytic Janus relation α_s(n_s,r,p=2√2,κ=1) = −9.640e-4 vs pipeline −9.980e-4 → 3.4% approximation; use the pipeline value for scoring. [derived]
+
+## D1274 — n_s theory error budget (2026-11-18)
+1. Took the D1272-verified exact table n_s(C) and formed the local slope at C0=1.25e-6 from the 1.15–1.30e-6 bracket: dn_s/dC = 1.067e4 per unit C. [derived]
+2. Converted to a fractional form: C0·dn_s/dC = 0.01333, so σ_theory(n_s) = 0.01333 × (δC/C). [derived]
+3. Used C = 15·N_eff/(64π⁶·Im S·Im ρ) to map δC/C onto the moduli product: 5% → 6.7e-4, 10% → 1.33e-3, 20% → 2.67e-3. [derived]
+4. Combined theory and data errors in quadrature against the CMB offsets; tension vs CMB-SPA falls only 2.00σ→1.82σ at 10% moduli, so the tension is not an artefact of our uncertainty. [derived]
