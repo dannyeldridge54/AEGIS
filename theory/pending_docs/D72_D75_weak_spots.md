@@ -13722,3 +13722,17 @@ between 122.5 and 299 mm with the mass-dependent lifetime from LHC2 (D1300), fix
 - P3 PASS: the pure-wino lifetime at 666 GeV is 0.197 ns (1.4% from ATLAS's 0.2 ns benchmark).
 BETTER THAN USUAL: the limit comes with the mass-dependent lifetime and an explicit βγ sensitivity instead of one fixed τ; runs in < 1 s.
 TOOL: tools/lhc/recast_dt.py (`limit`, `hl_lhc`, `n_sig`).
+
+### D1302 — wino_window against Janus-LHC (D1301, another session): the 0.67 TeV floor is reproduced (666.6 GeV), and the in-house HL-LHC projection (≈ 975 GeV) reaches further into the window than the reach we cite (2026-11-18)
+- [CENTRE · recheck, no new computation]
+  - **D1301:** a disappearing-track recast with a mass-dependent lifetime excludes the pure wino to 666.6 GeV, vs ATLAS 660 observed / 680 expected. This independently reproduces the floor of our post-hoc window (D1153: 0.67 TeV, from ATLAS 2603.08315's 670 GeV).
+  - The HL-LHC projection of the same recast (14 TeV, 3000 fb⁻¹, Run-2 efficiency kept; ITk not modelled) gives ≈ 975 GeV. Our D1153/v3.3 text cites the 0.5–0.9 TeV HL-LHC reach of arXiv:1805.00015.
+- **Consequence:**
+  - On the in-house projection, HL-LHC alone would cover ≈ 0.67–0.98 TeV of the window.
+  - The upper part (~1–1.5 TeV) then rests on CTA/IGS (D1212, D1190, D1202).
+  - The 1 TeV benchmark sits right at the projected HL-LHC edge.
+  - The window's status is unchanged. Only the test-coverage statement could be refined.
+- **Paper (at the next rung, labelled):** keep the literature reach (1805.00015) as the cited number, and optionally add "an in-house recast projects ≈ 0.98 TeV (Janus-LHC, D1301; detector upgrade not modelled)". No edit now.
+- **Not touched:** Janus-LHC itself (the other session's tool and Zenodo record 24342227).
+VERDICT: floor confirmed; projected HL-LHC coverage slightly extended (estimate, ITk caveat). Window unchanged.
+MAP: none
