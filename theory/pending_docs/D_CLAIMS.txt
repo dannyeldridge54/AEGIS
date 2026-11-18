@@ -614,3 +614,4 @@ D1327  2026-11-18T17:17Z  Continuum gamma-ray probes (dwarfs, diffuse, isotropic
 D1328  2026-11-18T17:19Z  Hyperion 1.1 smoke test added: 6/6 PASS in 10 s (relic, Mapper, galpy path, 7PN, IGS f_max, fraction)
 D1329  2026-11-18T17:19Z  v3.3 draft: forward-table footnotes b/c clarified (AMSB window vs thermal fraction; c no longer 'Einasto halo')
 D1330  2026-11-18T17:21Z  Gaia DR4: date confirmed; archive offline 25 Nov–2 Dec; 5-job cap
+D1331  2026-11-18T17:23Z  n_s check vs 2610.37383 (no new CMB data; band within 1σ)
