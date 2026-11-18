@@ -26,10 +26,10 @@ NS_MODEL = 0.9744   # frozen SERAPIS operating point (D1251)
 LAYOUT = {
     'A2':    {'string_meter': (0, 0), 'serapis_e': (1, 0), 'serapis_point': (0, 1), 'X_ms': (-1, 1),
               'L_nstar': (-1, 0), 'L_bridge': (0, -1), 'inverse_meter': (1, -1)},
-    'D4':    {'nstar_e': (0, 0), 'L_reheat': (1, 0), 'band_e': (0, 1), 'caps': (-1, 1)},
+    'D4':    {'nstar_e': (0, 0), 'L_reheat': (1, 0), 'band_e': (0, 1), 'caps': (-1, 1), 'L_cmb': (-1, 0), 'eps_tilt': (0, -1), 'C_nstar': (1, -1)},
     'E8':    {'wino_window': (0, 0), 'Q_dt': (1, 0), 'Q_panel': (0, 1), 'Q_future': (-1, 1), 'Q_life': (-1, 0),
               'tests_cmb': (0, -1), 'G_A2': (1, -1)},
-    'Leech': {'X_epstein': (0, 0), 'X_hexin': (1, 0), 'X_mod': (0, 1), 'S_stab': (-1, 1)},
+    'Leech': {'X_epstein': (0, 0), 'X_hexin': (1, 0), 'X_mod': (0, 1), 'S_stab': (-1, 1), 'X_narain': (-1, 0), 'X_su3': (0, -1), 'X_d24': (1, -1)},
 }
 
 def run(call, ns_model=NS_MODEL, log_path=None):
@@ -64,6 +64,15 @@ def run(call, ns_model=NS_MODEL, log_path=None):
     W['E8_modular'] = 1.0 if get('lattice_lab', {'cmd': 'modular', 'args': ['E8']}).get('match') is True else 0.0
     W['E8_flips'] = 1.0 if get('lattice_lab', {'cmd': 'flip', 'args': ['E8']}).get('flips') else 0.0
     ks = get('kaluza_stable', {'D': 6, 'gamma': 2}); W['S6_stable'] = 1.0 if ('error' not in ks and ks) else 0.0
+    # D4 growth (2026-11-18 23:12 UTC; tolerances below written before first run)
+    W['C_data'] = get('string_meter', {'ns': DATA['ns_spa_desi'][0], 'ns_sigma': DATA['ns_spa_desi'][1]}).get('C')
+    W['ns_C10'] = get('serapis_emulator', {'C': 1.0e-6}).get('ns'); W['ns_C13'] = get('serapis_emulator', {'C': 1.3e-6}).get('ns')
+    W['Nstar_TR10'] = get('serapis_point', {'C': W['C'], 'T_R': W['T_R']*10}).get('Nstar')
+    W['Nstar_rule'] = W['Nstar'] + math.log(10)/3 if W.get('Nstar') is not None else None
+    # Leech growth
+    fn = get('lattice_lab', {'cmd': 'flip', 'args': ['E8']}); W['E8_selfdual'] = 1.0 if fn.get('self_dual') is True else 0.0
+    W['hex_A2_su3'] = get('lattice_lab', {'cmd': 'hexagons', 'args': ['A2']}).get('hexagonal_planes')
+    W['Leech_modular'] = 1.0 if get('lattice_lab', {'cmd': 'modular', 'args': ['Leech']}).get('match') is True else 0.0
     # DOWN pass: the top layers hand values back to the core — the E8-layer r forecast for SERAPIS must equal the core r
     W['ns_down'] = get('serapis_emulator', {'C': W['C_back']}).get('ns') if W.get('C_back') else None
 
@@ -104,10 +113,18 @@ def run(call, ns_model=NS_MODEL, log_path=None):
     law('law', 'E8', ('tests_cmb',), 'r below the CMB bound', W['r_pt'] < DATA['r_max'], f"r = {W['r_pt']:.3g}")
     sep = min(W[f'r_cfg_{g}'] for g in ('A2', 'D4', 'E6', 'E8', 'BW16', 'Leech'))/W['r_pt']
     law('law', 'E8', ('G_A2', 'tests_cmb'), 'lattice configs ≥ 3× SERAPIS r (separable by r data)', sep > 3, f"smallest ratio {sep:.2f} (A2)")
+    # D4 growth laws (tolerances fixed 23:12 UTC before the first run)
+    law('law', 'D4', ('L_cmb',), 'data n_s (SPA+DESI) maps to C inside the audited range 1.0–1.3e-6', W.get('C_data') is not None and 1.0e-6 <= W['C_data'] <= 1.3e-6, f"C(n_s = {DATA['ns_spa_desi'][0]}) = {W.get('C_data')}")
+    law('law', 'D4', ('eps_tilt', 'serapis_e'), 'tilt direction: n_s rises with C across the audited range', None not in (W.get('ns_C10'), W.get('ns_C13')) and W['ns_C13'] > W['ns_C10'], f"n_s(1.0e-6) = {W.get('ns_C10')}, n_s(1.3e-6) = {W.get('ns_C13')}")
+    tri('D4', ('L_reheat', 'C_nstar', 'nstar_e'), 'N* at 10×T_R', ('Nstar_hi', 'Nstar_rule', 'Nstar_TR10'), 0.2)
     # Leech: lattice completion
     law('law', 'Leech', ('X_epstein',), 'E(ρ,2) = 5.7833593 (SERAPIS-E vacuum scale)', W['E_rho2'] is not None and abs(W['E_rho2'] - 5.7833593) < 2e-6, f"{W['E_rho2']}")
     law('law', 'Leech', ('X_mod',), 'θ_E8 = E4 ⇔ E8 never flips', W['E8_modular'] == 1.0 and W['E8_flips'] == 0.0, f"modular {W['E8_modular']:.0f}, flips {W['E8_flips']:.0f}")
     law('law', 'Leech', ('S_stab',), '6D vacuum stability tool answers', W['S6_stable'] == 1.0, 'kaluza_stable D = 6, γ = 2')
+    # Leech growth laws (tolerances fixed 23:12 UTC before the first run)
+    law('law', 'Leech', ('X_narain', 'X_mod'), 'E8 is even self-dual (Narain-type: never flips)', W['E8_selfdual'] == 1.0 and W['E8_flips'] == 0.0, f"self-dual {W['E8_selfdual']:.0f}, flips {W['E8_flips']:.0f}")
+    law('law', 'Leech', ('X_su3', 'X_epstein'), 'SU(3) root lattice A2 is exactly one hexagon (the SERAPIS tile)', W.get('hex_A2_su3') == 1, f"{W.get('hex_A2_su3')}")
+    law('law', 'Leech', ('X_d24', 'X_mod'), 'θ_Leech = E4³ − 720Δ', W['Leech_modular'] == 1.0, f"match {W['Leech_modular']:.0f}")
     # UP links: the SERAPIS hexagon carried up the nesting chain (counts locked in D1294)
     for lo, hi, L, n in (('A2', 'D4', 'D4', 16), ('D4', 'E8', 'E8', 1120), ('A2', 'Leech', 'A2', 1)):
         law('up', f'{lo}→{hi}', ('X_hexin',), f'hexagon carried {lo} → {hi}: {n} copies in {L}', W.get(f'hex_{L}') == n, f"{W.get(f'hex_{L}')} (D1294: {n})")
