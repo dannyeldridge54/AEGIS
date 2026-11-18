@@ -1910,4 +1910,4 @@ Touches: none.
 1. Computed unit-covolume Gaussian energies for Zⁿ, Dₙ, Dₙ*, E8 with exact Jacobi theta formulas (θ₃ⁿ; (θ₃ⁿ+θ₄ⁿ)/2; θ₃ⁿ+θ₂ⁿ; (θ₂⁸+θ₃⁸+θ₄⁸)/2), rescaled to covolume 1. [derived]
 2. Computed Aₙ and Aₙ* by brute force on the Cartan Gram matrix and its inverse, normalised to determinant 1. [derived]
 3. Checked d=3 against D1277 (exact reproduction) and found: d=4 D4 at all α; d=5 D5*/D5 swap with an exact tie at α=1; d=8 E8 at all α. [derived]
-4. Stated the rule (flip iff the winner is not self-dual) and its prediction for E6, E7 (flip) and Leech (no flip). [postulate P1]
+4. Stated the rule (flip iff the winner is not self-dual) and its prediction for E6, E7 (flip) and Leech (no flip) — an extrapolation from the tested cases, not a derivation. [estimate]
