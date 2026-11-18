@@ -1,0 +1,13 @@
+check free (alpha=0) s = [ 1. -0.]
+M=1000 Delta=0.05 F0=5.41 F1=-2.885 line(2(F0+F1))=5.05 endpoint=0.3429 R=1.0679
+M=1000 Delta=0.10 F0=5.41 F1=-2.885 line(2(F0+F1))=5.05 endpoint=0.5931 R=1.1174
+M=1000 Delta=0.15 F0=5.41 F1=-2.885 line(2(F0+F1))=5.05 endpoint=0.8116 R=1.1607
+M=1250 Delta=0.05 F0=9.295 F1=-3.707 line(2(F0+F1))=11.18 endpoint=0.9992 R=1.0894
+M=1250 Delta=0.10 F0=9.295 F1=-3.707 line(2(F0+F1))=11.18 endpoint=1.582 R=1.1415
+M=1250 Delta=0.15 F0=9.295 F1=-3.707 line(2(F0+F1))=11.18 endpoint=2.042 R=1.1827
+M=1500 Delta=0.05 F0=17.85 F1=-5.072 line(2(F0+F1))=25.55 endpoint=2.779 R=1.1088
+M=1500 Delta=0.10 F0=17.85 F1=-5.072 line(2(F0+F1))=25.55 endpoint=4.145 R=1.1622
+M=1500 Delta=0.15 F0=17.85 F1=-5.072 line(2(F0+F1))=25.55 endpoint=5.165 R=1.2022
+M=2900 Delta=0.05 F0=128.7 F1=4.704 line(2(F0+F1))=266.9 endpoint=51.8 R=1.1941
+M=2900 Delta=0.10 F0=128.7 F1=4.704 line(2(F0+F1))=266.9 endpoint=68.24 R=1.2557
+M=2900 Delta=0.15 F0=128.7 F1=4.704 line(2(F0+F1))=266.9 endpoint=79.45 R=1.2977

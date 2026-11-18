@@ -14096,3 +14096,21 @@ MAP: none
 - Inputs for A2p: tools/janus_astro/sommerfeld.py wino_s(M, v) returns (s₀₀, s₀₁) with free normalisation (1, 0). That convention must be checked against the paper's s₀ₘ before the lock.
 - Nothing computed yet. Danny interrupted the tick, so it is paused here.
 MAP: none
+
+## D1337 — A2p (Hyperion, locked PREREG_A2p_endpoint, ESTIMATE): endpoint photons raise the wino line signal in a 10% window by +12% at 1.0 TeV, +14% at 1.25 and +16% at 1.5 TeV (+26% at 2.9 TeV). D1324's line-only f_max is conservative by that factor (2026-11-18)
+- Lock pushed before the run (PREREG_A2p_endpoint.md + .sha256). Results: field_tests/results/a2p_endpoint.txt.
+- [computed, LL]: R = (line + endpoint photons in the window)/(line photons).
+  | Δ | 1.0 TeV | 1.25 TeV | 1.5 TeV | 2.9 TeV |
+  |---|---|---|---|---|
+  | 5% | 1.068 | 1.089 | 1.109 | 1.194 |
+  | 10% | 1.117 | 1.142 | 1.162 | 1.256 |
+  | 15% | 1.161 | 1.183 | 1.202 | 1.298 |
+- Sanity checks PASS: with α_W = 0 the solver gives s = (1, 0); R ≥ 1 everywhere; R rises with Δ and with M (the Sudakov logs grow).
+- Labels and caveats:
+  - ESTIMATE: LL only; NLL scale band ≈5% (1808.08956); α_W fixed at 0.0335.
+  - Assumed: s₀ₘ normalisation equals the paper's (both use the 1307.4082 potential). M_V in Eq. 2.10 cancels in R.
+  - The common Sudakov factor cancels in R, so R multiplies the NLL line band D1324 already used.
+  - No literature ratio to compare against (1808.08956 Fig. 1 not read off).
+- Consequence (not recomputed): the IGS line test sees ≈R× more signal than D1324 assumed, so the upper bound f_max shrinks by 1/R (≈ −12…−16%). This **tightens**, not loosens, the window. The D1324 verdicts at the band-dependent 1.25 TeV (NFW/Burkert) may tip toward failing. "Conservative" in the title means the old window edge is the optimistic one.
+- Next rung (A2q): a locked re-run of D1324's f_max × 1/R at 1.0/1.25/1.5 TeV.
+MAP: node=wino_window status=computed touches=[] ripple=no
