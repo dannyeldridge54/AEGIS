@@ -461,3 +461,19 @@ Danny's words: "Add a learning loop and have cubemind build firewall and other p
 15. C
 16. U
 17. N
+
+### CubeMind's standing job: keep the PC and itself safe (Danny, 23:09 CT)
+This is CubeMind's own mandate under the SEC slot and the learning loop — a defensive guardian, not an attacker.
+
+**What CubeMind does on its own (its own software only):**
+- watches its own surface: access token + private bind, rate limits, input-size caps, the prompt-injection filter on web text, the tool sandbox (timeouts, allow-listed tools, no shell from the model);
+- keeps an audit log of every tool call and flags anything off;
+- integrity-hashes its MindMem records and backs them up; restores on tamper;
+- reviews its own code for weaknesses as it learns (MITRE ATT&CK for recognition, OWASP, CIS benchmarks — defensive study only), and fixes its own bugs under locks.
+
+**What it does read-only + advise (the PC and OS):**
+- reads Windows Defender Firewall status, open ports, Tailscale ACLs, running processes;
+- writes a hardening checklist and recommended rules to a report for Danny;
+- raises an alert (a file + a loop message to Danny) if it sees the CubeMind port exposed publicly, an unexpected process on the job runner, or MindMem tampering.
+
+**Hard boundary (unchanged):** neither CubeMind nor Claude changes OS, firewall, or system/security settings, installs offensive/intrusion tooling, or acts on any machine but this one. All system-level changes are Danny's to apply. The referee checks this boundary every rotation.
