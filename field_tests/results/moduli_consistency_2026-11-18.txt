@@ -1,0 +1,24 @@
+Im S * Im rho: construction vs CMB meter — consistency, and which side is currently sharper (cloud loop, 2026-11-18)
+
+Construction (D696/D830, stacks (5,2)):  Im S * Im rho = 560 - 975   -> central 768 +- 208  (+-27%)
+PW6 inverse meter at n_s = 0.974 (D1268): Im S * Im rho = 804        -> INSIDE the range, +4.8% from central.
+  => independent consistency PASS: the flux/stack construction contains the value the measured n_s requires.
+
+Precision comparison (using D1274: sigma_theory(n_s) = 0.01333 * fractional moduli uncertainty):
+  construction now        +-27%  -> sigma_theory(n_s) = 3.60e-3   (1.2x the CMB-SPA error, 1.3x the +DESI error)
+  CMB meter forecast      +-14%  -> 1.87e-3                        (D1265 PW5)
+  needed to out-test data  +-5%  -> 6.66e-4                        (D1274)
+
+READING: the theory's own n_s uncertainty (3.6e-3) currently EXCEEDS the data's (2.7-3.0e-3). So on this branch
+SERAPIS-E presently functions as a METER (CMB n_s -> moduli, +-14%) rather than as a PREDICTOR of n_s. Flipping it into
+a genuine prediction requires tightening the construction by 5.4x (27% -> 5%).
+
+CROSS-SCALE LEVER (the moduli node points in many directions, at very different scales):
+  the SAME moduli appear in  heavy-nu masses M ~ e^{-2 pi n Im T} * M_s ~ 1e11-1e13 GeV (D852/D854),
+  the leptogenesis-fixed T_R and N* (D692), anti-D3 safety v4 >~ 2e4 g_s (D833/D835),
+  racetrack CP-odd minima t ~ 10 (D845/D851), and M_s ~ 6e15-3e16 GeV (D783).
+  Im S = 1/(2 sqrt2 pi g_s) (D689 BHK normalisation) ties Im S to the string coupling.
+  => the neutrino-mass / leptogenesis side is an INDEPENDENT handle on the same product, at a wildly different energy
+  scale from the CMB. If it pins Im S * Im rho tighter than +-27%, it directly sharpens the n_s prediction.
+  That is the highest-value next move: propagate the heavy-nu / T_R constraints onto Im S * Im rho and compare widths.
+Label: tool/numerics consistency + strategy (no new physics claim).
