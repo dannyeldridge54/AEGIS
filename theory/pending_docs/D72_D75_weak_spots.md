@@ -12746,3 +12746,15 @@ Speed (this run): per point 0.095 ms vs ASPIC 0.404 ms → FASTER (×4.3); per m
 Accuracy at the same points (D1218): Janus median |Δn_s| 2.9e-6 vs ASPIC 7.5e-4 (~250× better). Janus is now faster and more accurate than ASPIC in every use pattern tested.
 Speed path for single-field Janus: 400 ms build + 1.2 ms/pt (core) → 2.8 ms per model (D1227) → 0.58 ms per model (here).
 MAP: none (tool speed).
+
+## D1229 — CENTRE — web-guided research tick: the web's top conflict (serapis_e / plateau_origin / S_6d) re-checked against 2026 literature [NULL for a new string home; r discriminates the rivals]
+Source of the target: AEGIS web wave analysis (tools/web/waves.py, docs/web/waves.json — heuristic graph analysis, not physics): highest conflict index at serapis_e (0.138),
+plateau_origin (0.121), S_6d (0.080) — the open link between the SERAPIS-E plateau and its string-sector home (postulate P3, D910–D992).
+Searches 2 (one extended); fetched 2407.12081 (abstract/summary), 2604.07288, 2606.10850. Checked against our notes first: 2407.12081, 2405.06497 and 2604.07288 are already in DEEP 2.3 and D910/D911.
+Findings [literature]: (1) no new (2026) string-derived Eisenstein/Epstein plateau since D911: 2606.10850 (Shukla, CY threefolds for unified LVS inflation) uses BBHL α′³ and loop
+corrections with non-modular K; plateau forms are the LVS ones (fibre; loop blow-up V₀ − C/φ^{2/3}). (2) The three plateau families near our band separate cleanly by r:
+SERAPIS-E band n_s 0.970–0.975, r 4.55–5.12e-4 (frozen, D-band); loop blow-up n_s 0.9758–0.9765, r ≈ 1.7–1.8e-5 (2604.07288 Table 1); modular-invariant Starobinsky
+(Casas–Ibáñez 2407.12081) n_s ≈ 0.960–0.966, r ≈ 1.1e-3–3.3e-3 (N_e 50–60). So n_s alone cannot separate SERAPIS-E from loop blow-up, but r does (×25).
+Verdict: NULL for P3 (plateau_origin stays assumed); new, useful discriminator recorded: an r measurement at the few×1e-4 level separates SERAPIS-E from loop blow-up inflation;
+r ≳ 1e-3 would favour the Casas–Ibáñez form over both. The conflict at serapis_e is therefore real (an unclosed postulate), not a web artefact.
+MAP: node=tests_cmb status=computed touches=[band_e, plateau_origin] ripple=no

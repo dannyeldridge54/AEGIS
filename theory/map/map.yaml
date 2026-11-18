@@ -90,6 +90,7 @@ nodes:
   - 'D985: estimate'
   - 'D988: estimate'
   - 'D992: assumed'
+  flag: recheck (D1229, tests_cmb)
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -550,6 +551,7 @@ nodes:
   - 'D821: frozen'
   - 'D906: frozen'
   - 'D962: computed'
+  flag: recheck (D1229, tests_cmb)
 - id: caps
   layer: 5
   branch:
@@ -615,13 +617,14 @@ nodes:
   - D751
   - D752
   - D906
+  - D1229
   depends:
   - band_i
   - band_e
   history:
-  - 'D751: literature'
   - 'D752: computed'
   - 'D906: computed'
+  - 'D1229: computed'
 - id: tests_lhc
   layer: 5
   branch:
