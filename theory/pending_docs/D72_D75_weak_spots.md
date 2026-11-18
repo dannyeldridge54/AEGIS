@@ -14134,3 +14134,12 @@ MAP: none
   - D1324's headline holds in shape. The endpoint makes the top edge a little tighter.
 - The v3.3 text is not changed. It waits for an NLL endpoint source (1808.08956 Fig. 1, or 2507.15937 App. B) to replace the LL estimate.
 MAP: node=wino_window status=computed touches=[] ripple=no
+
+## D1339 — Hyperion tick: NULL for a sourced number to check A2p (D1337) against. All three papers give the endpoint/line comparison only as figures (2026-11-18)
+- [LITERATURE]
+  - 2507.15937 App. B: NLL "qualitatively identical to the LL expression in Eq. (2.9)", with no LL-vs-NLL numbers.
+  - 1808.08956 (abstract): NLL scale band ≈5%. It notes that the full spectrum differs from a single endpoint bin for limits. No ratio in the text read.
+  - Rinchiuso et al. 1808.04388 (full ar5iv text, 0–200k characters): line-only vs line+endpoint is shown only in Figs. 4R and 5R (σ/E = 10%, 3 TeV, benchmark ⟨σv⟩_line = 1e-27). No number in the text.
+- A check would need those figures read off (image download of the PDF, which needs Danny's OK) or a digitised table.
+- A2p/A2q stay ESTIMATE. Nothing else changes.
+MAP: none
