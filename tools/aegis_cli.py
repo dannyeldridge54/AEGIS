@@ -70,9 +70,13 @@ def hyperion(args):
     elif args[0] == 'orbit':
         import numpy as np
         from tools.janus_astro import mapper_feed as F, mapper_orbits as MO
+        if len(args) < 7: raise ValueError('orbit needs 6 numbers: ra dec dist_pc pmra pmdec rv   e.g. aegis hyperion orbit 269.452 4.6934 1.8266 -802.8 10362.4 -110.5')
         ra, dec, d_pc, pmra, pmdec, rv = (float(a) for a in args[1:7]); model = args[7] if len(args) > 7 else MO.DEFAULT_MODEL
         if model not in MO.MODELS: raise ValueError('model must be McMillan17 or MWPotential2014')
         if not 0 < d_pc < 2e5: raise ValueError('distance must be in parsecs, 0 to 200000')
+        if not 0 <= ra <= 360: raise ValueError('ra must be in degrees, 0 to 360')
+        if not -90 <= dec <= 90: raise ValueError('dec must be in degrees, -90 to 90')
+        if abs(rv) > 1500 or max(abs(pmra), abs(pmdec)) > 2e4: raise ValueError('rv (km/s) or proper motion (mas/yr) looks wrong: |rv| < 1500, |pm| < 20000')
         M = MO.MODELS[model]; A = lambda x: np.array([x])
         l, b = F.icrs_to_galactic(A(ra), A(dec))
         p, v = F.galactocentric(A(ra), A(dec), A(d_pc/1000.0), A(pmra), A(pmdec), A(rv), r0_xy=M['r0'], v_sun=M['v_sun'])
