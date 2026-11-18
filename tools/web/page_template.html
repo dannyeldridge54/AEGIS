@@ -5,25 +5,31 @@
 <style>
 /* Layout: an observatory console — six horizontal lanes (two ladder strings meeting at a centre, the theory map, Janus pairs, string sector) on one deliberate night palette */
 :root{
-  --bg:#070b14; --panel:#0d1424; --line:#1c2742; --fg:#dce6f7; --muted:#8393b3;
-  --left:#5fd0ff; --right:#ffb057; --centre:#c9a7ff; --theory:#7ee3b0; --janus:#ff7aa8; --strings:#f4e36b;
-  --pos:#39e0c9; --neg:#ff4f7b;
+  --bg:#05020d; --panel:#0c0720; --line:#2a1f55; --fg:#f1ecff; --muted:#a79bd6;
+  --left:#00e5ff; --right:#ff9e00; --centre:#bf5cff; --theory:#39ff88; --janus:#ff2bd6; --strings:#fff200;
+  --pos:#00ffc8; --neg:#ff2e63;
   --f-display:"Chakra Petch", "Segoe UI", system-ui, sans-serif; --f-body:"IBM Plex Sans", system-ui, sans-serif; --f-mono:"IBM Plex Mono", ui-monospace, monospace;
   color-scheme:dark;
 }
 html,body{background:var(--bg);color:var(--fg)}
 body{font:14px/1.5 var(--f-body);padding-block:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1{font:700 26px/1.1 var(--f-display);letter-spacing:.04em;margin:0;text-wrap:balance}
+h1{font:700 28px/1.1 var(--f-display);letter-spacing:.06em;margin:0;text-wrap:balance;background:linear-gradient(90deg,var(--left),var(--janus),var(--strings));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.tabs a{font:600 13px var(--f-display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.tabs a[aria-current=page]{color:var(--bg);background:var(--janus);border-color:var(--janus);box-shadow:0 0 14px var(--janus)}
+.view canvas{display:block;width:100%;height:auto;background:var(--panel);border:1px solid var(--line);border-radius:10px}
+.modebar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
 .sub{color:var(--muted);margin:4px 0 0;max-width:70ch}
 header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between;margin-bottom:12px}
 .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 button{font:600 13px var(--f-display);letter-spacing:.06em;text-transform:uppercase;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:8px 12px;cursor:pointer}
 button:hover{border-color:var(--muted)} button:focus-visible{outline:2px solid var(--left);outline-offset:2px}
-button.pos{border-color:var(--pos);color:var(--pos)} button.neg{border-color:var(--neg);color:var(--neg)}
+button.pos{border-color:var(--pos);color:var(--pos);box-shadow:0 0 10px color-mix(in srgb,var(--pos) 45%,transparent)} button.neg{border-color:var(--neg);color:var(--neg);box-shadow:0 0 10px color-mix(in srgb,var(--neg) 45%,transparent)}
+button.on{background:var(--centre);color:var(--bg);border-color:var(--centre)}
 button[disabled]{opacity:.4;cursor:default}
 .wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px}
 @media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}}
-.stage{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow-x:auto;min-width:0}
+.stage{background:radial-gradient(ellipse at 50% 40%,#1a0b3d 0%,var(--panel) 70%);border:1px solid var(--line);border-radius:10px;overflow-x:auto;min-width:0}
 svg{display:block}
 .side{display:flex;flex-direction:column;gap:12px;min-width:0}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
@@ -40,6 +46,7 @@ svg{display:block}
 .nodelabel{font:500 10px var(--f-mono);fill:var(--muted);pointer-events:none}
 .status{font:500 11px var(--f-mono);padding:1px 6px;border-radius:999px;border:1px solid var(--line)}
 @media (prefers-reduced-motion:reduce){.pulse{display:none}}
+[hidden]{display:none!important}
 </style>
 <header>
   <div>
@@ -53,14 +60,18 @@ svg{display:block}
     <button id="bclear">Clear</button>
   </div>
 </header>
-<div class="wrap">
+<nav class="tabs" aria-label="Views"><a href="#web">Web</a><a href="#torus">Torus weave</a><a href="#resonance">Resonance</a><a href="#particles">Particles</a></nav>
+<section class="view" id="v-web"><div class="wrap">
   <div class="stage"><svg id="g" role="img" aria-label="AEGIS web graph"></svg></div>
   <div class="side">
     <div class="card"><h2>Selected node</h2><div id="info" class="k">Click any node.</div><ul class="links" id="links"></ul></div>
     <div class="card"><h2>What the waves found</h2><div id="findings"></div><p class="k" style="margin:8px 0 0">Heuristic graph analysis (not physics). Top targets go to a locked real recompute.</p></div>
   </div>
 </div>
-<div class="legend" id="legend"></div>
+<div class="legend" id="legend"></div></section>
+<section class="view" id="v-torus" hidden><p class="sub" style="margin:0 0 8px">The same web wrapped on a torus. Each lane is a ring around the tube; the two ladder strings sit mirror-image above and below the equator, so every link weaves a symmetric pattern as it crosses lanes. Drag to turn it.</p><canvas id="ct" width="1200" height="720"></canvas></section>
+<section class="view" id="v-resonance" hidden><p class="sub" style="margin:0 0 8px">Resonance modes of the web (eigenmodes of its signed link matrix). Low modes are groups that move together; colour flips where a mode splits the web into opposing halves. Pick a mode.</p><div class="modebar" id="modebar"></div><div class="wrap"><canvas id="cr" width="900" height="720"></canvas><div class="card"><h2>Mode</h2><div id="modeinfo" class="k"></div></div></div></section>
+<section class="view" id="v-particles" hidden><p class="sub" style="margin:0 0 8px">The particles and fields the model makes, by how we know them: observed, inferred from data, computed, bounded, or predicted and waiting for a test. A flash at the detector line marks an observation. Click a particle.</p><div class="wrap"><canvas id="cp" width="900" height="720"></canvas><div class="card"><h2>Particle</h2><div id="pinfo" class="k">Click a particle.</div></div></div></section>
 <script>
 const WEB = __WEB__; const WAVES = __WAVES__;
 const LANES = {left:{y:70,label:'Left string · early universe',c:'--left'}, centre:{y:150,label:'Centre · shared quantities',c:'--centre'}, right:{y:230,label:'Right string · late universe',c:'--right'},
@@ -75,10 +86,11 @@ for (const [lane, arr] of Object.entries(byLane)) {
 }
 const NS = 'http://www.w3.org/2000/svg'; const el = (t, a, p = svg) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
 for (const [lane, L] of Object.entries(LANES)) { const t = el('text', {x: 12, y: L.y + 4, class: 'lane-label', fill: css(L.c)}); t.textContent = L.label.split(' · ')[0]; const t2 = el('text', {x: 12, y: L.y + 18, class: 'nodelabel'}); t2.textContent = L.label.split(' · ')[1] || ''; }
-const gE = el('g', {}), gP = el('g', {}), gN = el('g', {});
+const defs = el('defs', {}); const flt = el('filter', {id: 'glow', x: '-50%', y: '-50%', width: '200%', height: '200%'}, defs); el('feGaussianBlur', {stdDeviation: 3.2, result: 'b'}, flt); const mg = el('feMerge', {}, flt); el('feMergeNode', {in: 'b'}, mg); el('feMergeNode', {in: 'SourceGraphic'}, mg);
+const gE = el('g', {}), gP = el('g', {filter: 'url(#glow)'}), gN = el('g', {filter: 'url(#glow)'});
 const kindDash = {depends: '', string: '', centre: '6 3', pair: '2 3', 'string-sector': '8 3 2 3'};
 const edgeEls = WEB.edges.map(e => { const a = pos[e.s], b = pos[e.t]; const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2 - 18;
-  const p = el('path', {d: `M${a.x},${a.y} Q${mx},${my} ${b.x},${b.y}`, fill: 'none', stroke: e.sign < 0 ? css('--neg') : css('--muted'), 'stroke-width': 1.3, 'stroke-dasharray': kindDash[e.kind] || '', opacity: .45}, gE);
+  const p = el('path', {d: `M${a.x},${a.y} Q${mx},${my} ${b.x},${b.y}`, fill: 'none', stroke: e.sign < 0 ? css('--neg') : css(LANES[WEB.nodes.find(z => z.id === e.s).lane].c), 'stroke-width': 1.3, 'stroke-dasharray': kindDash[e.kind] || '', opacity: .45}, gE);
   const tt = el('title', {}, p); tt.textContent = `${e.s} → ${e.t} · ${e.kind}${e.sign < 0 ? ' (tension)' : ''} · ${e.ref}${e.verdict ? ' · ' + e.verdict : ''}`; return p; });
 const statusFill = {killed: .25, frozen: .6, corrected: .8};
 const nodeEls = {};
@@ -129,4 +141,88 @@ add('Hidden links (alike, unlinked)', WAVES.hidden.slice(0, 6).map(h => `${h.a}�
 add('Opposites (rise when the other falls)', WAVES.opposites.slice(0, 4).map(h => `${h.a}↔${h.b} ${h.sim}`).join(' · '));
 const lg = document.getElementById('legend'); Object.entries(LANES).forEach(([k, L]) => { const s = document.createElement('span'); s.innerHTML = `<i class="sw"></i>`; s.firstChild.style.background = css(L.c); s.append(L.label); lg.appendChild(s); });
 [['solid', 'dependency / string'], ['dashed red', 'tension link'], ['+ halo', 'rises with the wave'], ['− halo', 'falls']].forEach(([a, b]) => { const s = document.createElement('span'); s.textContent = `${a}: ${b}`; lg.appendChild(s); });
+
+// ---------- views / routing ----------
+const MODES = __MODES__; const PARTS = __PARTS__;
+const VIEWS = ['web', 'torus', 'resonance', 'particles']; let view = 'web';
+function route() { view = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'web';
+  VIEWS.forEach(v => { document.getElementById('v-' + v).hidden = v !== view; }); document.querySelector('header .controls').hidden = view !== 'web';
+  document.querySelectorAll('.tabs a').forEach(a => a.getAttribute('href') === '#' + view ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current')); }
+addEventListener('hashchange', route); route();
+const LC = Object.fromEntries(Object.entries(LANES).map(([k, L]) => [k, css(L.c)])); const laneOf = Object.fromEntries(WEB.nodes.map(n => [n.id, n.lane]));
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// ---------- torus weave ----------
+(() => { const cv = document.getElementById('ct'), cx = cv.getContext('2d'); const Wc = cv.width, Hc = cv.height; const R0 = 230, r0 = 105;
+  const laneV = {left: Math.PI*0.5, right: -Math.PI*0.5, centre: 0, theory: Math.PI, janus: Math.PI*0.78, strings: -Math.PI*0.78};
+  const uv = {}; for (const [lane, arr] of Object.entries(byLane)) arr.forEach((n, i) => { uv[n.id] = [2*Math.PI*i/arr.length + (lane === 'right' ? Math.PI/arr.length : 0), laneV[lane]]; });
+  let rx = 1.05, ry = 0, drag = null;
+  cv.addEventListener('pointerdown', e => drag = [e.clientX, e.clientY, rx, ry]); addEventListener('pointerup', () => drag = null);
+  cv.addEventListener('pointermove', e => { if (drag) { ry = drag[3] + (e.clientX - drag[0])*0.01; rx = drag[2] + (e.clientY - drag[1])*0.01; } });
+  const P = (u, v) => { let x = (R0 + r0*Math.cos(v))*Math.cos(u), y = (R0 + r0*Math.cos(v))*Math.sin(u), z = r0*Math.sin(v);
+    let x1 = x*Math.cos(ry) + z*Math.sin(ry), z1 = -x*Math.sin(ry) + z*Math.cos(ry); let y1 = y*Math.cos(rx) - z1*Math.sin(rx), z2 = y*Math.sin(rx) + z1*Math.cos(rx);
+    const f = 900/(900 + z2); return [Wc/2 + x1*f, Hc/2 + y1*f, z2]; };
+  const wrap = d => { while (d > Math.PI) d -= 2*Math.PI; while (d < -Math.PI) d += 2*Math.PI; return d; };
+  function frame(t) { if (view === 'torus') { if (!drag && !reduceMotion) ry += 0.0025;
+    cx.fillStyle = css('--panel'); cx.fillRect(0, 0, Wc, Hc); cx.globalCompositeOperation = 'lighter';
+    cx.lineWidth = 0.6; cx.strokeStyle = 'rgba(160,140,255,0.10)';                    // faint torus mesh
+    for (let i = 0; i < 36; i++) { cx.beginPath(); for (let j = 0; j <= 48; j++) { const q = P(2*Math.PI*i/36, 2*Math.PI*j/48); j ? cx.lineTo(q[0], q[1]) : cx.moveTo(q[0], q[1]); } cx.stroke(); }
+    for (let j = 0; j < 12; j++) { cx.beginPath(); for (let i = 0; i <= 72; i++) { const q = P(2*Math.PI*i/72, 2*Math.PI*j/12); i ? cx.lineTo(q[0], q[1]) : cx.moveTo(q[0], q[1]); } cx.stroke(); }
+    WEB.edges.forEach((e, k) => { const [u1, v1] = uv[e.s], [u2, v2] = uv[e.t]; const du = wrap(u2 - u1), dv = wrap(v2 - v1); const col = e.sign < 0 ? css('--neg') : LC[laneOf[e.s]];
+      for (const mir of [1, -1]) {                                                       // the strand and its mirror image weave the symmetric pattern
+        cx.beginPath(); for (let i = 0; i <= 40; i++) { const f = i/40; const q = P(u1 + du*f + mir*0.35*Math.sin(Math.PI*f), (v1 + dv*f)*mir); i ? cx.lineTo(q[0], q[1]) : cx.moveTo(q[0], q[1]); }
+        cx.strokeStyle = col; cx.globalAlpha = mir > 0 ? 0.55 : 0.18; cx.lineWidth = 1.2; cx.shadowColor = col; cx.shadowBlur = 8; cx.stroke(); }
+      const f = ((t/2600 + k*0.137) % 1); const q = P(u1 + du*f + 0.35*Math.sin(Math.PI*f), v1 + dv*f);
+      cx.globalAlpha = 1; cx.fillStyle = col; cx.beginPath(); cx.arc(q[0], q[1], 2.2, 0, 7); cx.fill(); });
+    WEB.nodes.forEach(n => { const q = P(...uv[n.id]); const c = LC[n.lane]; cx.globalAlpha = q[2] > 0 ? 0.55 : 1; cx.shadowColor = c; cx.shadowBlur = 16; cx.fillStyle = c; cx.beginPath(); cx.arc(q[0], q[1], 4.5, 0, 7); cx.fill(); });
+    cx.globalAlpha = 1; cx.shadowBlur = 0; cx.globalCompositeOperation = 'source-over'; cx.font = '600 13px Chakra Petch, sans-serif';
+    let yy = 26; for (const [k, L] of Object.entries(LANES)) { cx.fillStyle = LC[k]; cx.fillText(L.label, 16, yy); yy += 20; } }
+    requestAnimationFrame(frame); }
+  requestAnimationFrame(frame); })();
+// ---------- resonance ----------
+(() => { const cv = document.getElementById('cr'), cx = cv.getContext('2d'); const Wc = cv.width, Hc = cv.height; const mi = Object.fromEntries(MODES.ids.map((k, i) => [k, i]));
+  const ang = {}; WEB.nodes.forEach((n, i) => ang[n.id] = 2*Math.PI*i/WEB.nodes.length); let mode = MODES.modes.find(m => m.freq > 0) || MODES.modes[0];
+  const bar = document.getElementById('modebar'); MODES.modes.filter(m => m.freq > 0).forEach(m => { const b = document.createElement('button'); b.textContent = 'Mode ' + m.k + ' · ω ' + m.freq; b.onclick = () => { mode = m; show(); bar.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); }; bar.appendChild(b); });
+  bar.firstChild && bar.firstChild.classList.add('on');
+  function show() { document.getElementById('modeinfo').innerHTML = ''; const d = document.getElementById('modeinfo');
+    const h = document.createElement('div'); h.style.cssText = 'color:var(--fg);font:600 14px var(--f-body)'; h.textContent = `Mode ${mode.k}, frequency ω = ${mode.freq}`; d.appendChild(h);
+    const pl = mode.top.filter(([, v]) => v > 0).map(([k]) => k), mn = mode.top.filter(([, v]) => v < 0).map(([k]) => k);
+    const a = document.createElement('p'); a.textContent = 'Swings together (+): ' + (pl.join(', ') || '—'); const b = document.createElement('p'); b.textContent = 'Swings opposite (−): ' + (mn.join(', ') || '—'); d.append(a, b);
+    const c = document.createElement('p'); c.textContent = 'Lower ω = a looser, larger-scale grouping of the web. A mode split between two lanes points at the links that hold them together.'; d.appendChild(c); }
+  show();
+  function frame(t) { if (view === 'resonance') { cx.fillStyle = css('--panel'); cx.fillRect(0, 0, Wc, Hc); cx.globalCompositeOperation = 'lighter';
+    const ph = reduceMotion ? 1 : Math.sin(t/1000*(1.2 + 3*mode.freq)); const pts = {};
+    WEB.nodes.forEach(n => { const a = mode.vec[mi[n.id]]; const R = 250 + 260*a*ph; pts[n.id] = [Wc/2 + R*Math.cos(ang[n.id]), Hc/2 + R*Math.sin(ang[n.id]), a]; });
+    WEB.edges.forEach(e => { const p = pts[e.s], q = pts[e.t]; const same = p[2]*q[2] > 0; const col = same ? (p[2] > 0 ? css('--pos') : css('--janus')) : 'rgba(255,255,255,0.15)';
+      cx.strokeStyle = col; cx.globalAlpha = Math.min(1, 0.15 + 6*Math.abs(p[2]*q[2])*4); cx.lineWidth = same ? 1.6 : 0.7; cx.shadowColor = col; cx.shadowBlur = same ? 10 : 0;
+      cx.beginPath(); cx.moveTo(p[0], p[1]); cx.quadraticCurveTo(Wc/2, Hc/2, q[0], q[1]); cx.stroke(); });
+    WEB.nodes.forEach(n => { const p = pts[n.id]; const a = Math.abs(p[2]); const col = p[2]*ph >= 0 ? css('--pos') : css('--janus'); cx.globalAlpha = 0.35 + Math.min(0.65, 3*a);
+      cx.fillStyle = col; cx.shadowColor = col; cx.shadowBlur = 8 + 40*a; cx.beginPath(); cx.arc(p[0], p[1], 3 + 18*a, 0, 7); cx.fill(); });
+    cx.globalAlpha = 1; cx.shadowBlur = 0; cx.globalCompositeOperation = 'source-over'; cx.font = '500 11px IBM Plex Mono, monospace'; cx.fillStyle = css('--fg');
+    mode.top.slice(0, 6).forEach(([k]) => { const p = pts[k]; cx.fillText(k, p[0] + 10, p[1] - 8); }); }
+    requestAnimationFrame(frame); }
+  requestAnimationFrame(frame); })();
+// ---------- particles ----------
+(() => { const cv = document.getElementById('cp'), cx = cv.getContext('2d'); const Wc = cv.width, Hc = cv.height;
+  const RING = {observed: 120, inferred: 175, computed: 225, bounded: 275, predicted: 330}; const COL = {observed: css('--pos'), inferred: css('--left'), computed: css('--theory'), bounded: css('--right'), predicted: css('--janus')};
+  const byState = {}; PARTS.forEach(p => (byState[p.state] ||= []).push(p)); const ps = [];
+  for (const [st, arr] of Object.entries(byState)) arr.forEach((p, i) => ps.push({...p, R: RING[st], a0: 2*Math.PI*i/arr.length + st.length, w: 0.00035*(400/RING[st]), flash: 0}));
+  let pick = null; cv.addEventListener('click', e => { const r = cv.getBoundingClientRect(); const x = (e.clientX - r.left)*Wc/r.width, y = (e.clientY - r.top)*Hc/r.height;
+    let best = null, bd = 30; ps.forEach(p => { const d = Math.hypot(p.x - x, p.y - y); if (d < bd) { bd = d; best = p; } }); if (best) { pick = best; info(best); } });
+  function info(p) { const d = document.getElementById('pinfo'); d.innerHTML = ''; const h = document.createElement('div'); h.style.cssText = 'color:var(--fg);font:600 15px var(--f-body)'; h.textContent = `${p.sym}  ${p.name}`;
+    const s = document.createElement('span'); s.className = 'status'; s.textContent = p.state; s.style.color = COL[p.state]; const t = document.createElement('p'); t.textContent = p.info; const n = document.createElement('p'); n.textContent = 'Web node: ' + p.node; d.append(h, s, t, n); }
+  function frame(t) { if (view === 'particles') { cx.fillStyle = css('--panel'); cx.fillRect(0, 0, Wc, Hc); cx.globalCompositeOperation = 'lighter';
+    for (const [st, R] of Object.entries(RING)) { cx.strokeStyle = COL[st]; cx.globalAlpha = 0.28; cx.setLineDash(st === 'predicted' ? [6, 6] : st === 'bounded' ? [2, 5] : []); cx.lineWidth = 1; cx.beginPath(); cx.arc(Wc/2, Hc/2, R, 0, 7); cx.stroke();
+      cx.setLineDash([]); cx.globalAlpha = 0.8; cx.fillStyle = COL[st]; cx.font = '600 11px Chakra Petch, sans-serif'; cx.fillText(st.toUpperCase(), Wc/2 - 26, Hc/2 - R - 6); }
+    const g = cx.createRadialGradient(Wc/2, Hc/2, 4, Wc/2, Hc/2, 70); g.addColorStop(0, css('--strings')); g.addColorStop(1, 'rgba(0,0,0,0)'); cx.globalAlpha = 0.9; cx.fillStyle = g; cx.beginPath(); cx.arc(Wc/2, Hc/2, 70, 0, 7); cx.fill();
+    cx.fillStyle = css('--bg'); cx.font = '700 13px Chakra Petch, sans-serif'; cx.globalAlpha = 1; cx.fillText('WEB', Wc/2 - 15, Hc/2 + 5);
+    cx.strokeStyle = css('--fg'); cx.globalAlpha = 0.35; cx.setLineDash([3, 4]); cx.beginPath(); cx.moveTo(Wc/2, Hc/2); cx.lineTo(Wc - 20, Hc/2); cx.stroke(); cx.setLineDash([]);
+    cx.globalAlpha = 0.7; cx.fillStyle = css('--fg'); cx.font = '500 11px IBM Plex Mono, monospace'; cx.fillText('detector', Wc - 80, Hc/2 - 8);
+    ps.forEach(p => { const a = p.a0 + (reduceMotion ? 0 : t*p.w); p.x = Wc/2 + p.R*Math.cos(a); p.y = Hc/2 + p.R*Math.sin(a);
+      const crossing = Math.abs(Math.sin(a)) < 0.03 && Math.cos(a) > 0; if (crossing && (p.state === 'observed' || p.state === 'inferred')) p.flash = 1; p.flash *= 0.96;
+      const c = COL[p.state]; cx.globalAlpha = 1; cx.shadowColor = c; cx.shadowBlur = 14 + 40*p.flash; cx.fillStyle = c; cx.beginPath(); cx.arc(p.x, p.y, 9 + 8*p.flash + (pick === p ? 4 : 0), 0, 7); cx.fill();
+      cx.shadowBlur = 0; cx.globalCompositeOperation = 'source-over'; cx.fillStyle = css('--bg'); cx.font = '700 11px IBM Plex Sans, sans-serif'; const w = cx.measureText(p.sym).width; cx.fillText(p.sym, p.x - w/2, p.y + 4); cx.globalCompositeOperation = 'lighter';
+      if (p.state === 'predicted') { cx.strokeStyle = c; cx.globalAlpha = 0.5; cx.beginPath(); cx.arc(p.x, p.y, 15 + 4*Math.sin(t/300 + p.a0), 0, 7); cx.stroke(); } });
+    cx.globalCompositeOperation = 'source-over'; cx.shadowBlur = 0; }
+    requestAnimationFrame(frame); }
+  requestAnimationFrame(frame); })();
 </script>
