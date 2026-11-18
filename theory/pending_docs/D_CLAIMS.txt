@@ -620,3 +620,4 @@ D1333  2026-11-18T17:25Z  Hyperion ROADMAP OPEN list refreshed
 D1334  2026-11-18T17:26Z  NLL endpoint source located (1808.08956); number not yet extracted
 D1335  2026-11-18T17:27Z  Endpoint formula sourced: 2507.15937 Eq 2.9 (LL line+endpoint, any multiplet)
 D1336  2026-11-18T17:37Z  Endpoint formula alttext copy confirms D1335; F0+F1 = 4|s01|^2 for wino
+D1337  2026-11-18T17:39Z  A2p: wino endpoint adds 12-16% at 1-1.5 TeV (10% window)
