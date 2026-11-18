@@ -28,7 +28,7 @@ jobs:
             --hidden-import tools.lhc.theory_band --hidden-import tools.lhc.kinematics --hidden-import tools.lhc.future --hidden-import tools.lhc.higgsino \
             --hidden-import tools.lattice.lattice_lab --hidden-import tools.janus_calc.core --hidden-import tools.janus_calc.anyV \
             --hidden-import tools.janus_astro.galaxy --hidden-import tools.janus_astro.fast --hidden-import tools.janus_astro.mapper_feed --hidden-import tools.janus_astro.mapper_orbits --hidden-import tools.janus_astro.const --hidden-import tools.janus_astro.jfactor --collect-all galpy \
-            --paths tools/scorecard --hidden-import inflation_scorecard.cli --hidden-import inflation_scorecard.core --hidden-import inflation_scorecard.janus --collect-data inflation_scorecard \
+            --paths tools/scorecard --hidden-import inflation_scorecard.cli --hidden-import inflation_scorecard.core --hidden-import inflation_scorecard.janus --add-data "tools/scorecard/inflation_scorecard/data${SEP}inflation_scorecard/data" \
             tools/aegis_cli.py
       - name: Self-test the executable
         shell: bash
