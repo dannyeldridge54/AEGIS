@@ -163,7 +163,7 @@
     o += '<defs><linearGradient id="sun' + gid + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4c2"/><stop offset=".5" stop-color="#ff6ec7"/><stop offset="1" stop-color="#d43cff"/></linearGradient>' +
          '<clipPath id="sc' + gid + '"><rect x="0" y="0" width="120" height="' + hz + '"/></clipPath></defs>';
     var sun = '<circle cx="' + CX + '" cy="' + (hz - 8) + '" r="30" fill="url(#sun' + gid + ')"/>';
-    for (var i = 0; i < n; i++) sun += '<rect x="20" y="' + f(hz - 8 + i * (30 / n)) + '" width="80" height="' + f(.6 + i * .25) + '" fill="#04020b"/>';
+    for (var i = 0; i < n; i++) sun += '<rect x="20" y="' + f(hz - 28 + i * (24 / n)) + '" width="80" height="' + f(.8 + i * .35) + '" fill="#04020b"/>';
     o += '<g clip-path="url(#sc' + gid + ')" filter="url(#' + gid + ')">' + sun + '</g>';
     var x = 8, city = '';
     while (x < 112) { var w = 5 + R() * 8, h = 6 + R() * 24; city += '<rect x="' + f(x) + '" y="' + f(hz - h) + '" width="' + f(w) + '" height="' + f(h) + '" fill="#0b0620" stroke="' + c2 + '" stroke-width=".4"/>'; if (R() > .5) city += '<rect x="' + f(x + w / 2 - .6) + '" y="' + f(hz - h + 2) + '" width="1.2" height="1.2" fill="#fff4c2"/>'; x += w + 1; }
@@ -184,12 +184,12 @@
       style === 'constellation' ? constellationArt(index, gid) : style === 'galaxy' ? galaxyArt(index, gid) : style === 'neon' ? neonArt(index, gid) : style === 'circuit' ? circuitArt(index, gid) : style === 'grid' ? gridArt(index, gid) :
       (major ? majorSigil(index) : minorArt(suit, rank));
     var o = '<svg class="tcard" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + (name || '') + (reversed ? ', reversed' : '') + '">' +
-      '<defs><linearGradient id="tg' + gid + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + (cyber ? '#120a2e' : '#1a0b3d') + '"/><stop offset="1" stop-color="#04020b"/></linearGradient>' + glow(gid, style === 'neon' ? 1.6 : 1) + '</defs>' +
+      '<defs><clipPath id="ic' + gid + '"><rect x="6" y="6" width="108" height="188" rx="6"/></clipPath><linearGradient id="tg' + gid + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + (cyber ? '#120a2e' : '#1a0b3d') + '"/><stop offset="1" stop-color="#04020b"/></linearGradient>' + glow(gid, style === 'neon' ? 1.6 : 1) + '</defs>' +
       '<g' + (reversed ? ' transform="rotate(180 60 100)"' : '') + '>' +
       '<rect x="1" y="1" width="118" height="198" rx="9" fill="url(#tg' + gid + ')" stroke="' + edge + '" stroke-width="1.4"' + (cyber ? ' filter="url(#' + gid + ')"' : '') + '/>' +
       '<rect x="6" y="6" width="108" height="188" rx="6" fill="none" stroke="' + edge + '" stroke-width=".4" opacity=".6"/>' + bg +
       (cosmic || cyber ? '' : '<line x1="60" y1="16" x2="60" y2="168" stroke="#f3eeff" stroke-width=".3" stroke-dasharray="1 3" opacity=".5"/>') +   // the mirror axis
-      art +
+      '<g clip-path="url(#ic' + gid + ')">' + art + '</g>' +
       '<text x="60" y="17" text-anchor="middle" font-size="9" fill="#a296d8" font-family="' + (cyber ? 'Consolas,monospace' : 'Segoe UI,system-ui,sans-serif') + '" letter-spacing="1.5">' + (major ? ROMAN[index] : (SUIT[suit].el.toUpperCase())) + '</text>' +
       '<rect x="14" y="178" width="92" height="12" rx="3" fill="#04020b" opacity=".55"/>' +
       '<text x="60" y="187" text-anchor="middle" font-size="8.6" fill="#f3eeff" font-family="Segoe UI,system-ui,sans-serif">' + (name || '').replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</text>' +

@@ -1,4 +1,7 @@
 # Changelog
+## 1.6.2 — 18 Nov 2026
+- Tarot: five more decks — Constellations, Spiral Galaxy, Neon Sign, Cyber Circuit, Neon Horizon (ten in all). Card art is now kept inside the card frame; Neon Horizon's sun shows one stripe per card number.
+
 ## 1.6.1 — 18 Nov 2026
 - Tarot: five deck styles in the Janus palette — Mirror Lattice, Orbitals, Feynman Paths, Sacred Geometry, Symmetry Rosette. Pick one under Readings → Tarot → Deck; the choice is remembered and the open spread redraws in the new deck.
 
