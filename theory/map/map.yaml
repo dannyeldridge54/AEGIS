@@ -458,6 +458,7 @@ nodes:
   - 'D1235: computed'
   - 'D1237: corrected'
   - 'D1239: computed'
+  flag: recheck (D1270, instanton_MH)
 - id: nstar_e
   layer: 4
   branch:
@@ -532,6 +533,7 @@ nodes:
   - 'D986: computed'
   - 'D1236: computed'
   - 'D1239: computed'
+  flag: recheck (D1270, instanton_MH)
 - id: gravitino_wino
   layer: 4
   branch:
@@ -637,7 +639,7 @@ nodes:
   - 'D1251: postulate (PW2), expectation PASS 4/4'
   - 'D1251: postulate'
   note: web loop postulate 2; scored only on future data
-  flag: recheck (D1268, inverse_meter)
+  flag: recheck (D1270, instanton_MH)
 - id: vac_discriminant
   layer: 5
   branch:
@@ -706,6 +708,23 @@ nodes:
   - 'D1268: postulate PW6 passed'
   - 'D1268: postulate'
   note: web loop postulate 6
+- id: instanton_MH
+  layer: 5
+  branch:
+  - E
+  title: 'KILLED (tension recorded): the string benchmark''s own σ = ½ instanton heavy-ν mass (9.8e10 GeV) cannot drive thermal leptogenesis at ρ — 0 % pass for c = 0.3/1/3 (Y_B ×~12 short); point would
+    move to N* 49.41, n_s 0.97362'
+  status: killed
+  d:
+  - D1270
+  depends:
+  - serapis_point
+  - lepto_rho
+  - reheat_rho
+  history:
+  - 'D1270: postulate PW7 killed (benchmark M_H incompatible with ρ leptogenesis)'
+  - 'D1270: killed'
+  note: web loop postulate 7
 - id: caps
   layer: 5
   branch:

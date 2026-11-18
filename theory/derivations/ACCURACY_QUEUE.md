@@ -181,3 +181,4 @@ Cost: about 6–10 ticks; one locked script per stage; no subagents.
 - [x] (D1237 → done in D1239) ρ-chain rerun with the n = 1 canonical factor and m_φ = 3.17e13: D722/D725 T_R, D775 ε pass fractions, D982 κ for M/T_R < 500 rows — one lock (NA6)
 - [ ] (D1255) Recheck D-notes that quote an exact-MS α_s from ms.spectra 5-point fits at bd = 200 (ripple ~1e-4 in α_s): redo with ms_jit.build_spline/bd 4000/9-pt
 - [x] (D1258 → done in D1262) Use MSSM g* = 228.75 in nstar.py/predict_fast for SERAPIS (SUSY; spectrum relativistic at T_R): ΔN* −0.063, Δn_s −6.3e-5 — apply with a lock, update the audited box/point
+- [D1270] Paper 5 (doi 10.5281/zenodo.24330316) states the point as "leptogenesis-fixed T_R"; add in any v2: M_H = 1e12 is a choice; the D861 benchmark instanton (9.8e10) fails thermal leptogenesis at ρ.

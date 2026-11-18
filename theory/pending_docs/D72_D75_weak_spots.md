@@ -13224,3 +13224,12 @@ MAP: node=inverse_meter status=postulate touches=[string_meter, serapis_point] r
   - Reopen if the supplement becomes reachable (PC or Danny).
 VERDICT: (ii) RULED OUT. L1 PARKED at +4.4% (understood to be a short-distance-matrix difference; untestable without sources).
 MAP: none
+
+## D1270 — CENTRE — PW7 (web postulate 7) KILLED as a consistency postulate: the string benchmark's own heavy-ν mass (σ = ½ instanton, M_H = 9.8e10 GeV, D861) gives T_R ≈ 7e7 GeV and NO thermal leptogenesis at ρ (0 % of the grid for c = 0.3, 1, 3) — the point prediction keeps M_H = 1e12 as a CHOICE, not a benchmark output
+Lock: field_tests/rules/PREREG_PW7_instanton_MH.md. Scripts: field_tests/scripts/pw7_tr.py, pw7_lepto.py (NA6 copies, only M_H changed). Results: field_tests/results/pw7_instanton_MH.txt. [computed]
+(1) T_R at M_H 9.8e10 (SM g*, as NA6; the 1e12 reference rows reproduce NA6 exactly): c = 0.3 6.48e7, c = 1 8.77e7, c = 3 1.96e8 GeV; MSSM g* (×0.82652): 5.35e7 / 7.25e7 / 1.62e8. T_R ∝ M_H as expected (couplings scale with M_H).
+(2) Leptogenesis (D775/NA6 grid): pass 0.0 % for every c and m1 (pair and single). Best ε ≈ 5e-6 (c = 1 pair, 0.77 ε_DI): max Y_B ≈ 0.245·(T_R/m_φ)·2ε ≈ 7e-12 vs Y_obs 8.75e-11 — short by ×~12. Locked 10 % rule: FAIL (as pre-stated).
+(3) c = 1 spectra at T_R 7.25e7 (MSSM): N* 49.411, n_s 0.973616, r 4.918e-4, α_s −1.019e-3 (vs point N* 50.181, n_s 0.974393): pre-stated N* ≈ 49.41, n_s ≈ 0.9736 confirmed.
+Verdict: the expectation (FAIL = tension) holds. The D861 benchmark (g_s 0.232, Im S·Im ρ 781, C 1.25e-6) and thermal leptogenesis at ρ are not jointly self-consistent with the σ = ½ instanton: either a different instanton action (σ smaller, M_H larger by ×10) or non-thermal/other baryogenesis is needed. The PW2/A1 point prediction stays as published but its M_H = 1e12 is now explicitly a CHOICE (leptogenesis-driven), not a benchmark output — this caveat applies to paper 5 (D1267; not editable on Zenodo; record here and in any v2).
+Note: interestingly the 9.8e10 point still sits inside the frozen band (n_s 0.97362, r 4.92e-4), so the band itself does not discriminate.
+MAP: node=instanton_MH status=killed touches=[serapis_point, lepto_rho, reheat_rho] ripple=no

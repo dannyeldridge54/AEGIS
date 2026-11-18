@@ -265,6 +265,14 @@
    "info": "web loop postulate 6"
   },
   {
+   "id": "instanton_MH",
+   "label": "KILLED (tension recorded): the string benchmark's own σ = ½ instanton heavy-ν mass (9.8e10 GeV) cannot drive thermal leptogenesis at ρ — 0 % pass for c = 0.3/1/3 (Y_B ×~12 short); point would move to N* 49.41, n_s 0.97362",
+   "lane": "theory",
+   "status": "killed",
+   "refs": "D1270",
+   "info": "web loop postulate 7"
+  },
+  {
    "id": "caps",
    "label": "Family caps n_s ≤ 0.985, r ≤ 8.3e-4",
    "lane": "theory",
@@ -1104,6 +1112,33 @@
    "sign": 1,
    "ref": "theory/map/map.yaml",
    "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "serapis_point",
+   "t": "instanton_MH",
+   "kind": "depends",
+   "sign": -1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "killed",
+   "source": "map.yaml"
+  },
+  {
+   "s": "lepto_rho",
+   "t": "instanton_MH",
+   "kind": "depends",
+   "sign": -1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "killed",
+   "source": "map.yaml"
+  },
+  {
+   "s": "reheat_rho",
+   "t": "instanton_MH",
+   "kind": "depends",
+   "sign": -1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "killed",
    "source": "map.yaml"
   },
   {
