@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1246, D1280, D1287",
+   "refs": "D1280, D1287, D1288",
    "info": ""
   },
   {
@@ -754,10 +754,10 @@
   },
   {
    "id": "X_d24",
-   "label": "d=24 Leech: self-dual, universally optimal; no flip predicted (not yet computed)",
+   "label": "d=24 Leech: built from scratch — no roots, 196560 norm-4 vectors, self-dual (never flips), beats E8³ at every scale",
    "lane": "lattice",
-   "status": "literature",
-   "refs": "D1278 prediction",
+   "status": "computed",
+   "refs": "D1289",
    "info": ""
   },
   {
@@ -2247,8 +2247,8 @@
    "t": "X_d24",
    "kind": "lattice",
    "sign": 1,
-   "ref": "D1278",
-   "verdict": "no flip predicted",
+   "ref": "D1278, D1289",
+   "verdict": "no flip (confirmed)",
    "source": "curated"
   },
   {

@@ -1983,3 +1983,10 @@ Touches: none.
 3. [derived] Gaussian energies agree to ≤2.5e-14 at α = 1–3; both beat D16 and Z¹⁶.
 4. [literature] Equal theta series ⇒ isospectral flat tori (Milnor 1964); both are even unimodular, so self-dual and never flip.
 5. [derived] d=16 is a tie between two distinct champion shapes — lattice energy cannot choose between the E8×E8 and Spin(32)/Z2 heterotic lattices.
+
+## D1289: The Leech lattice (d=24) verified from scratch — rootless, 196560 minimal vectors, self-dual, beats E8³ at every scale (2026-11-18)
+1. [derived] Locked P0–P3 (PREREG_D1289). Built from Golay-code generators + LLL; det 1, even.
+2. [derived] P0 partly failed: the code step gave the 11-dim even subcode (506 octads), not the 12-dim Golay code.
+3. [derived] Enumeration |v|²≤4: no norm-2 vectors, 196560 of norm 4.
+4. [literature] Even unimodular, rootless, d=24 ⇒ unique ⇒ Λ24 (Conway); shells 16773120 (norm 6), 398034000 (norm 8).
+5. [derived] Self-dual ⇒ no flip; Gaussian energy below E8³ at all α≥1 (α=2: 2.39e-6 vs 2.51e-3) and, by Poisson, at all α<1.

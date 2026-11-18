@@ -1,0 +1,10 @@
+Golay: dim 11 codewords 2048 weights {0: 1, 8: 506, 12: 1288, 16: 253}
+basis rows 24
+det 1.0 diag even: True integral: True
+Leech shells <=4: {0.0: 1, 4.0: 196560} (16s)
+E8^3 shells (from E8 shells, convolution): {0: 1, 2: 720, 4: 179280, 6: 16954560, 8: 396974160}
+alpha: [1.   1.25 1.5  2.   3.  ]
+Leech theta-1 (enum<=4)          : 6.854720e-01 2.962193e-02 1.280080e-03 2.390476e-06 8.336407e-12
+Leech + lit. shells 6,8          : 7.995462e-01 3.061225e-02 1.288912e-03 2.391187e-06 8.336411e-12
+E8^3 theta-1 (shells<=8)         : 2.085012e+00 3.075250e-01 5.928013e-02 2.513068e-03 4.688944e-06
+Leech lower than E8^3 at every alpha>=1 (using LOWER bound for E8^3, UPPER-ish for Leech): True

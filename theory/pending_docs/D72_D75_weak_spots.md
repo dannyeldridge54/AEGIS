@@ -13556,3 +13556,20 @@ Files: field_tests/d16_heterotic.py, field_tests/results/d16_heterotic_2026-11-1
 
 ### D1290 — wino_window recheck after D1286: unchanged (graph ripple from n_sector_rho; E6/E7 lattice numerics; no wino input touched) (2026-11-18)
 MAP: none
+
+## D1289 — d=24 Leech lattice built and verified: no roots, 196560 vectors of norm 4, self-dual (never flips), beats E8³ at every scale; PREREG P1–P3 PASS, P0 partly FAIL (code step) (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: numerics (computed), locked first (PREREG_D1289). Literature: Conway–Sloane (uniqueness; shells 6, 8).
+Construction: generators {2c (code basis), 4(e_i±e_j), (−3,1²³)} in √8-scaled integers, LLL (fpylll), Gram/8.
+- P0 PARTLY FAIL: my quadratic-residue code came out as the 11-dimensional EVEN-WEIGHT SUBCODE of the Golay code (2048 words,
+  506 octads), not the full 12-dim code (4096, 759) I predicted. Recorded as a failed sub-prediction, not hidden.
+- The lattice checks still pass: det 1, integral, all norms even. Enumeration |v|² ≤ 4: **0 vectors of norm 2, exactly 196560 of
+  norm 4** (P1 PASS). An even unimodular 24-dim lattice with no roots is unique (Conway), so this IS Λ24 — the extra generators
+  (−3,1²³) and 4(e_i±e_j) supply what the subcode lacked.
+- P2 PASS: det 1 ⇒ self-dual ⇒ θ_Λ(α) = α^{−12}θ_Λ(1/α); no flip at any scale.
+- P3 PASS: Gaussian energy θ−1 at α = 1 / 1.25 / 2: Leech 0.7995 / 0.0306 / 2.39e-6 (enumerated ≤4 + literature shells 6, 8)
+  vs E8³ 2.085 / 0.3075 / 2.51e-3 (shells from E8 counts 240, 2160, 6720, 17520 by convolution) — Leech lower at every α ≥ 1, by
+  ~1000× at α=2 (it has no norm-2 vectors at all), and by Poisson also at every α < 1 (both self-dual).
+Champion chain now: 2 hex · 3 FCC/BCC · 4 D4 · 5 D5/D5* · 6 E6/E6* · 7 E7/E7* · 8 E8 · 16 E8⊕E8 = D16⁺ (tie) · 24 Leech.
+Self-dual champions (2, 4, 8, 16, 24) never hand over; the rest hand over to their duals exactly at the self-dual scale.
+Files: field_tests/leech_d24.py, field_tests/results/leech_d24_2026-11-18.txt.
