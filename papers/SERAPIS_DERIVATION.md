@@ -82,5 +82,15 @@ Wiring: every toolkit above sits in one shared registry (aegis_tools) used by th
 
 1. Plateau origin (assumed) — the deepest open item.
 2. Wino window — needs the Saikawa–Shirai g*(T) table (blocked by the network proxy; manual save needed).
-3. τ = i: ε is fitted, not derived.
+3. τ = i: ε is fitted, not derived — and τ = i is a saddle of the SERAPIS-E potential, not a vacuum (D1280); the variant needs a pinned axion.
 4. Frozen band vs audited box: post-hoc tension recorded (PW1); the frozen band is still what gets scored.
+
+## 9. Geometry: shapes, scale and string lattices (D1276–D1283, 18 Nov)
+
+**Why the vacuum sits at ρ [computed].** Every torus is a lattice; SERAPIS-E depends on the shape τ only through E(τ,2) and is monotone in it, so it inherits E's shape: the hexagon τ = ρ is the only minimum, and τ = i is a saddle, unstable along the axion (D1279–D1280).
+
+**Scale [computed].** The best lattice changes with scale only if it is not its own dual. Then it swaps with its dual exactly at the self-dual scale (Poisson duality). Tested for d = 2–8: hexagon, D4 and E8 never flip; FCC/BCC (d = 3), D5/D5* (d = 5), E6/E6* and E7/E7* all swap at α = 1 (D1277, D1278, D1282; E6/E7 predicted before testing).
+
+**String side [literature].** Toroidal compactifications are even self-dual Narain lattices, and T-duality is the same Poisson map, so they never flip. The lattice with the largest spectral gap for two compact dimensions is the SU(3) point, with a hexagonal shape (Angelinos–Chakraborty–Dymarsky 2022, arXiv:2206.14825). Its shape is the SERAPIS-E vacuum shape. Its size is not: it sits at the string scale, while SERAPIS-E needs Im S·Im ρ ≈ 780. So the agreement is on shape only (D1283).
+
+**Open.** Is there a dynamical reason for a compactification to sit at a maximum-gap point? If so, the hexagonal shape would be derived rather than chosen.

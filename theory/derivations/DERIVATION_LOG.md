@@ -1951,3 +1951,10 @@ Touches: none.
 3. [derived] Exact enumeration (|x|² ≤ 12, converged ≤3e-11): E6 beats E6* for α>1 (Δθ=−1.60e-3 at α=1.25), E7 beats E7* (Δθ=−2.59e-3); ties at α=1 to 1e-13.
 4. [derived] E8 = E8* (unimodular): Δθ ≤ 7e-15 at every α → no flip.
 5. [literature] Universal optimality is proven only in d=8 (E8) and d=24 (Leech) (Cohn–Kumar–Miller–Radchenko–Viazovska 2022); in d=6,7 the comparison here is Eₙ vs its own dual only.
+
+## D1283: Optimal Narain (string) lattices match our shape results on the shape, not on the size (2026-11-18)
+1. [literature] Angelinos–Chakraborty–Dymarsky, arXiv:2206.14825: toroidal compactifications ↔ even self-dual lattices in R^{c,c}; max spectral gap c=1: 1/2 (self-dual radius), c=2: 2/3 at SU(3)₁ with t = b = (1+i√3)/2.
+2. [derived] t=(1+i√3)/2 is SL(2,Z)-equivalent to ρ=e^{2πi/3}: the c=2 optimum has the hexagonal shape — the SERAPIS-E vacuum point (D1280) and the lattice-energy winner (D1277).
+3. [derived] T-duality R→1/R is the Poisson map α→1/α at unit covolume; a self-dual lattice is invariant, so by D1278 it never flips (D1282: E8 ties its dual to 7e-15).
+4. [derived] The c=2 optimum also fixes the Kähler modulus at the hexagonal point (string-scale volume), whereas SERAPIS-E needs Im S·Im ρ ≈ 780; so the match is on the shape only.
+5. [postulate P1] If some dynamics selects max-gap points, the shape half of the SERAPIS-E vacuum would be derived rather than chosen — open, needs a literature search.

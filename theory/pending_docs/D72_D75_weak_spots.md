@@ -13468,3 +13468,25 @@ Verdict: PASS — the D1278 rule holds for d=6,7,8 (now tested d=2–8). Limit (
 whether Eₙ beats every other lattice at every scale in d=6,7 is a separate open question (universal optimality is only proven
 in d=8, 24). Leech (d=24) part of the prediction not yet tested here (no-flip follows from its self-duality).
 Files: field_tests/e6e7_flip.py, field_tests/results/e6e7_flip_2026-11-18.txt.
+
+## D1283 — Literature: the string-theory version of our shape results — optimal Narain lattices (Angelinos–Chakraborty–Dymarsky 2022) (2026-11-18)
+MAP: node=n_sector_rho status=literature
+LABEL: literature + comparison. No new physics claim; one honest mismatch recorded.
+Source read: N. Angelinos, D. Chakraborty, A. Dymarsky, "Optimal Narain CFTs from Codes", arXiv:2206.14825 (JHEP 2022).
+What it says (fetched text): a toroidal string compactification of c dimensions is fixed by an even SELF-DUAL lattice in R^{c,c}
+(the Narain lattice); the "best" one maximises the spectral gap Δ* (lightest state). Optimal theories for c ≤ 8 are built from codes:
+c=1: Δ*=1/2, boson at the self-dual radius; c=2: Δ*=2/3, the SU(3)₁ point with t = b = (1+i√3)/2 (hexagonal shape AND hexagonal
+B+i·volume); c=3,4,5: 3/4, 1, 1; c=6,7: √(4/3). Large c: random codes reach Δ* ≈ c/(2πe), the conjectured asymptotic maximum.
+Comparison with our results:
+1. [matches D1276–D1280] The c=2 optimum sits at the hexagonal shape τ=ρ — the same point where SERAPIS-E has its only vacuum
+   (D1280) and where the hexagon wins the lattice energy at every scale (D1277). Two independent "best shape" criteria agree.
+2. [matches D1278/D1282] Narain lattices are self-dual by construction, and T-duality (R → 1/R) is exactly the Poisson map
+   α → 1/α we used. D1278's rule says a self-dual winner never flips with scale — the string-theory statement that physics at
+   R and 1/R is the same. The flips we found (FCC/BCC, D5, E6, E7) are flips of a non-self-dual sublattice (momenta alone),
+   which T-duality swaps with its dual (windings) at the self-dual radius.
+3. [MISMATCH, honest] The c=2 optimum also needs the Kähler modulus at the hexagonal point (volume ~ string scale). In
+   SERAPIS-E the Kähler side is large (Im S·Im ρ ≈ 780, the supergravity regime). So only the SHAPE half of our vacuum
+   coincides with the string-optimal point; the size half does not. Not a contradiction — the max-gap criterion is not a
+   dynamical vacuum selector — but it means "SERAPIS-E sits at the optimal string lattice" would be an overclaim.
+Verdict: PASS (literature). Paper: added as SERAPIS_DERIVATION §9 (geometry). Next: whether any known mechanism selects
+max-gap points dynamically (would turn item 1 from coincidence into derivation) — SEARCH.
