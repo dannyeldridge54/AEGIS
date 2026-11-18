@@ -373,3 +373,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1255: "exact" numerical references have their own error budget; a rtol scan that changes nothing while a physical-setup parameter (bd) changes the answer points to a systematic, not noise.
 - D1256: once the reference is fixed, finish the locked test with it via a written deviation — the corrected reference turned two FAILs-by-noise into nine clean agreements.
 - D1257: a heuristic graph ranking (waves.py) is a guess until a measured wave replaces it — the first measured one reversed the top two.
+- D1258: default constants inherited from a generic formula (g* = 106.75, SM) must be re-chosen for the model's own particle content (MSSM).

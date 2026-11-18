@@ -13083,3 +13083,13 @@ Reading rule (locked): heuristic ordering nstar_e > bhk_tilt → REVERSED (0.394
 Physics read-out: C and N* move n_s the same way but r OPPOSITE ways (C up: r up; N* up: r down) — the (n_s, r) plane separates tilt from reheating, which is why the audited box (PW1) is a parallelogram. A decade of T_R = 0.77 e-fold = 7.7e-4 in n_s.
 Web: the heuristic wave strengths are now replaced by measured ones for these three edges (docs/web/w1.json).
 MAP: node=bhk_tilt status=literature touches=[band_e] ripple=no
+
+## D1258 — CENTRE — W2 measured reheating-chain waves at the PW2 point: all linear and exactly as pre-stated (ΔN* = ⅓ ln T_R ratio, Δn_s ≈ 1.0e-3 per e-fold); the SM g* = 106.75 used throughout should be the MSSM 228.75 for a SUSY model — a −0.063 e-fold, −6.3e-5 n_s correction (flag)
+Lock: field_tests/rules/PREREG_W2_reheat_chain.md. Engine predict_fast (U2). Results: field_tests/results/w2_reheat_chain.txt (168 s for 7 points).
+[computed] baseline (PW2): N* 50.2447, n_s 0.974456, r 4.813e-4, α_s −9.971e-4.
+- w_m (m_φ ×/÷ 1.1 → T_R ×/÷ 1.154): ΔN* ±0.0475, Δn_s ±4.73e-5, Δr/r ∓0.12 % → 0.016 σ_SPA
+- w_g (SM → MSSM g*: T_R × 0.8265): ΔN* −0.0632, Δn_s −6.31e-5, Δr/r +0.16 % → 0.021 σ_SPA. Check: the explicit g-terms of the N* formula cancel at fixed T_R (50.1814 both) — g* enters only through T_R ∝ g*^(−1/4).
+- w_n (Kähler-weight factor √3 in the couplings → T_R ×/÷ 1.732): ΔN* ±0.1823, Δn_s ±1.81e-4, Δr/r ∓0.46 % → 0.061 σ_SPA
+All asymmetries < 0.5 %; expectation PASS 3/3. Compared with W1: one decade of T_R moves n_s by 7.7e-4 (0.26σ), the tilt ±10 % by 0.39σ — the whole reheating chain's internal uncertainties (m_φ, g*, coupling normalisation) are ≤ 0.06σ each.
+Flag [derived]: SERAPIS is supersymmetric (AMSB winos; m₃/₂ 2.5–7e5 GeV, D809) and its scalars sit far below T_R ~ 1e9 GeV, so the full MSSM is relativistic at reheating ⇒ g* = 228.75 is the consistent choice; nstar.py defaults to the SM 106.75. With MSSM g*: PW2 point → N* 50.181, n_s 0.974393 (−6.3e-5). Recorded as an accuracy-queue item (not applied silently; frozen predictions unchanged; effect 0.02σ).
+MAP: node=nstar_e status=corrected touches=[C_nstar] ripple=no
