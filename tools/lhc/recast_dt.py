@@ -18,3 +18,11 @@ def limit(n95=N95_OBS, lumi=L_RUN2, sqrts='13', bg=0.5):
 def hl_lhc(lumi=3000.0, b_run2=3.0, sqrts=14.0):
     b = b_run2*lumi/L_RUN2; n95 = stats.ul_poisson(b, int(round(b)))   # expected limit: observe n = b
     return {'b': b, 'N95': n95, 'm_limit_GeV': limit(n95, lumi, sqrts)}
+
+# ---- generic: any benchmark-anchored disappearing-track search (validated on two ATLAS searches) ----
+SEARCHES = {'ATLAS_136': dict(lumi=136.0, n_bench=8.6, m_bench=600.0, n95=0.037*136.0, ref='arXiv:2201.02472', published=660.0),
+            'ATLAS_36': dict(lumi=36.1, n_bench=13.5, m_bench=400.0, n95=0.22*36.1, ref='arXiv:1712.02118', published=460.0)}
+def limit_search(key, bg=0.5):
+    S = SEARCHES[key]
+    f = lambda m: S['n_bench']*(sig_tot(m, '13')/sig_tot(S['m_bench'], '13'))*(p_window(m, bg)/p_window(S['m_bench'], bg)) - S['n95']
+    return brentq(f, 200, 1999)
