@@ -359,3 +359,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1239: judge a rescaled result by the original locked rule (pass fraction), not by its best case (max yield) — the best case passed, the rule did not.
 - D1240: a mass computed in one note (D730) and a different mass hard-coded in its sibling scripts (1.9e11) is the same failure mode as NA3 — audit hard-coded constants against the latest computed value.
 - D1241: with M = x·m in every formula, T_R ∝ m^{3/2} exactly — a one-line scaling check confirms a rerun before reading any table.
+- D1242: check which outputs actually depend on a corrected input before rerunning everything — the diluted gravitino yield is T_R-independent at leading order; only the undiluted τ = i case moved.

@@ -1832,3 +1832,4 @@ Touches: none.
 ## D1239: NA6 — ρ chain rerun (n = 1, m_φ 3.17e13): T_R confirmed to 0.15 %, c = 3 M_H = 1e13 newly open (1.43e9); lepto pass fractions c = 1: 41–64 %, c = 3: 75 %, c = 0.3 @1e12: 2.2 % → still FAIL (D1236a correction)
 ## D1240: NA7 — darkrad_rho PASS at corrected T_R (×55–376 margin); caps CONSISTENT (cap falls with N*); τ = i scripts n = 1 except NULL D726; reheat_i m_φ 1.9e11 vs 2.3–2.7e11 (D730) → ΔN* +0.03–0.16 flag
 ## D1241: NA8 — τ = i chain with D730's m (2.28/2.65e11): T_R ×1.31/1.65 → 1.3–5.0e6 GeV, N* +0.09/+0.17; lepto_i verdicts unchanged
+## D1242: NA9 — gravitino → wino at audited T_R: max Ω_nth 4.4e-4 (τ = i, M2 1.85 TeV) < 0.01 PASS; label ≤ 3e-4 → ≤ 5e-4; diluted SERAPIS-E case T_R-insensitive; C_lepto PASS

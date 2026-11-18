@@ -660,18 +660,18 @@
     "D733",
     "D786",
     "D809",
-    "D906"
+    "D906",
+    "D1242"
    ],
    "depends": [
     "reheat_rho",
     "covariant"
    ],
    "history": [
-    "D786: estimate",
     "D809: computed",
-    "D906: computed"
-   ],
-   "flag": "recheck (D1237, reheat_rho)"
+    "D906: computed",
+    "D1242: computed"
+   ]
   },
   {
    "id": "band_i",
@@ -804,7 +804,7 @@
     "D906: corrected",
     "D1230: corrected"
    ],
-   "flag": "recheck (D1237, reheat_rho)"
+   "flag": "recheck (D1242, gravitino_wino)"
   },
   {
    "id": "tests_cmb",

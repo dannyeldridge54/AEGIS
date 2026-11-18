@@ -12910,3 +12910,12 @@ lepto_i: D728's passing ΔM/M range only widens (upper end at M/m = 0.1: 1.4e-2 
 Effect on band_i: n_s rises by ≈ (dn_s/dN*)·ΔN* — at most a few ×1e-4 (estimate from D678's strip slope); band_i frozen, scored as frozen. Node values updated: reheat_i T_R 1.3–5.0e6 GeV (was 1–3e6).
 MAP: node=reheat_i status=corrected touches=[nstar_i] ripple=yes
 MAP: node=lepto_i status=estimate touches=[] ripple=no
+
+## D1242 — CENTRE — NA9: gravitino → wino with the audited T_R — still negligible (max Ω_nth 4.4e-4 < 0.01, PASS), but the node label "≤ 3e-4" is exceeded at the new τ = i T_R; C_lepto arithmetic PASS
+Lock: field_tests/rules/PREREG_NA9_gravitino_wino.md. Script: field_tests/scripts/na9/gravitino_na9.py (D809 code, only T_R lists changed). Results: field_tests/results/na9_gravitino_wino.txt. [computed]
+(A) τ = i, T_R 1.3–5.0e6 GeV (NA8): Ω_nth = 4.1e-5 – 1.6e-4 (M2 = 670 GeV) and 1.1e-4 – 4.4e-4 (M2 = 1850 GeV) — up from ≤ 2.6e-4.
+(B) SERAPIS-E early T_R 6.6e8–2.0e10 diluted to T₂ = 1e5–1e6: Ω_nth = 3.4e-6 – 9.7e-5 — essentially unchanged, because the diluted yield Y(T_R)·T₂/T_R depends on T_R only through the log running.
+(C) self-diluted: ≤ 1.1e-7.
+Locked rule Ω_nth < 0.01 → PASS; the wino window 0.67–1.85 TeV (thermal) is unaffected (non-thermal share ≤ 0.04 %). Node label updated: "Ω_nth ≤ 5e-4".
+C_lepto: 0.87e-10 vs Y_obs = 8.70e-11 (NA4): −0.04 % → PASS.
+MAP: node=gravitino_wino status=computed touches=[wino_window] ripple=no
