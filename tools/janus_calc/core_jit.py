@@ -98,3 +98,76 @@ def spectra3_jit(model, Nstar):
               + (-8 + p2)/4*e2**2*e3 + (-a*a/2 + p2/24)*e2*e3**2 + (-a*a/2 + p2/24)*e2*e3*e4)
     als = (-2*e1*e2 - e2*e3 - 6*e1**2*e2 + (-3 + 2*a)*e1*e2**2 - 2*(2 - a)*e1*e2*e3 + a*e2*e3**2 + a*e2*e3*e4)
     return dict(ns=ns, r=16*e1*(1 + CE*e2), alpha_s=als, eps=(e1, e2, e3, e4))
+# ---- DOP853 variant (coefficients taken programmatically from scipy, error norm as scipy's DOP853) ----
+from scipy.integrate._ivp import dop853_coefficients as _d
+A8 = np.ascontiguousarray(_d.A[:12, :12]); B8 = np.ascontiguousarray(_d.B); C8 = np.ascontiguousarray(_d.C[:12]); E3 = np.ascontiguousarray(_d.E3); E5 = np.ascontiguousarray(_d.E5)
+def build8(Vexpr, y, rtol=1e-12, atol=1e-14):
+    x = sp.Symbol('x'); e = Vexpr.subs(y, x); ns = {'math': math}
+    exec(f"def _V(x):\n    return {sp.pycode(e)}\ndef _dV(x):\n    return {sp.pycode(sp.diff(e, x))}\n", ns)
+    V = nb.njit(ns['_V']); dV = nb.njit(ns['_dV'])
+    @nb.njit
+    def f(y, out):
+        p = y[0]; pn = y[1]; eps = 0.5*pn*pn; out[0] = pn; out[1] = -(3 - eps)*pn - (3 - eps)*dV(p)/V(p)
+    @nb.njit
+    def step(y, h, K, tmp):
+        f(y, K[0])
+        for s in range(1, 12):
+            for q in range(2):
+                a = 0.0
+                for r in range(s): a += A8[s, r]*K[r, q]
+                tmp[q] = y[q] + h*a
+            f(tmp, K[s])
+        yn = np.zeros(2)
+        for q in range(2):
+            a = 0.0
+            for r in range(12): a += B8[r]*K[r, q]
+            yn[q] = y[q] + h*a
+        f(yn, K[12]); e5 = 0.0; e3 = 0.0
+        for q in range(2):
+            sc = atol + rtol*max(abs(y[q]), abs(yn[q])); a5 = 0.0; a3 = 0.0
+            for r in range(13): a5 += E5[r]*K[r, q]; a3 += E3[r]*K[r, q]
+            e5 += (a5/sc)**2; e3 += (a3/sc)**2
+        if e5 == 0.0 and e3 == 0.0: return yn, 0.0
+        return yn, abs(h)*e5/math.sqrt((e5 + 0.01*e3)*2)
+    @nb.njit
+    def run(y0, Nmax):
+        K = np.zeros((13, 2)); tmp = np.zeros(2); cap = 1024; Ns = np.empty(cap); Ys = np.empty((cap, 2)); n = 0
+        y = y0.copy(); N = 0.0; h = 1e-2; Ns[0] = 0.0; Ys[0] = y
+        while N < Nmax:
+            yn, err = step(y, h, K, tmp)
+            if err <= 1.0:
+                if 0.5*yn[1]*yn[1] >= 1.0:
+                    lo = 0.0; hi = h
+                    for it in range(80):
+                        mid = 0.5*(lo + hi); yt, _ = step(y, mid, K, tmp)
+                        if 0.5*yt[1]*yt[1] >= 1.0: hi = mid
+                        else: lo = mid
+                    n += 1
+                    if n >= cap:
+                        cap *= 2; N2 = np.empty(cap); Y2 = np.empty((cap, 2)); N2[:n] = Ns[:n]; Y2[:n] = Ys[:n]; Ns = N2; Ys = Y2
+                    Ns[n] = N + hi; Ys[n] = step(y, hi, K, tmp)[0]
+                    return Ns[:n+1], Ys[:n+1], True
+                N += h; y = yn; n += 1
+                if n >= cap:
+                    cap *= 2; N2 = np.empty(cap); Y2 = np.empty((cap, 2)); N2[:n] = Ns[:n]; Y2[:n] = Ys[:n]; Ns = N2; Ys = Y2
+                Ns[n] = N; Ys[n] = y
+            h = h*min(10.0, max(0.2, 0.9*err**(-1.0/8) if err > 0 else 10.0))
+        return Ns[:n+1], Ys[:n+1], False
+    @nb.njit
+    def at(Ns, Ys, Nq):
+        i = np.searchsorted(Ns, Nq) - 1
+        if i < 0: i = 0
+        y = Ys[i].copy(); N = Ns[i]; K = np.zeros((13, 2)); tmp = np.zeros(2); h = max(min(Nq - N, 1e-1), 1e-12)
+        while N < Nq - 1e-15:
+            if N + h > Nq: h = Nq - N
+            yn, err = step(y, h, K, tmp)
+            if err <= 1.0: N += h; y = yn
+            h = h*min(10.0, max(0.2, 0.9*err**(-1.0/8) if err > 0 else 10.0))
+        return y
+    @nb.njit
+    def grid_e1(Ns, Ys, Ng):
+        out = np.zeros(Ng.size)
+        for j in range(Ng.size):
+            yv = at(Ns, Ys, Ng[j]); out[j] = 0.5*yv[1]*yv[1]
+        return out
+    return dict(V=V, dV=dV, run=run, at=at, grid_e1=grid_e1)
