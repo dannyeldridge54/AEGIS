@@ -68,7 +68,7 @@ def _done_from_watermark(text, last):
     return done
 
 def update(m, text, last, done=None):
-    byid = {n["id"]: n for n in m["nodes"]}
+    byid = {n["id"]: n for n in m["nodes"] + m.get("observing", [])}   # observing entries (mapper_dr3/dr4/feeds) are valid MAP targets too
     applied = []
     if done is None:
         done = _done_from_watermark(text, last)
@@ -124,7 +124,7 @@ def card(m, applied):
         return
     c = json.load(open(CARD, encoding="utf-8"))
     ch = c.get("changed_since_freeze", [])
-    byid = {n["id"]: n for n in m["nodes"]}
+    byid = {n["id"]: n for n in m["nodes"] + m.get("observing", [])}
     for dn, node, status in applied:
         ch.append(f"D{dn}: {byid[node]['title']} → {status}")
     c["changed_since_freeze"] = ch[-12:]

@@ -7208,6 +7208,7 @@ MAP: node=tests_cmb status=literature touches=[] ripple=no
 
 ## D749a (correction note to D749) — LiteBIRD's reach for r
 D749 called LiteBIRD's reach "also short" (from memory). The repo's prediction sheet (D705) records two LiteBIRD numbers: the mission REQUIREMENT δr < 1e-3 (total), under which r ≈ 5e-4 is invisible, and an optimistic forecast σ(r) ≈ 5e-5 for an r = 0 fiducial, under which it would be seen at ~10σ. Correct statement: r ≈ 5e-4 is below the SO reach and below LiteBIRD's requirement level; it is detectable only if LiteBIRD reaches its optimistic forecast (results ≳ 2035). The paper's sentence ("requires σ(r) ~ 1e-4, beyond the currently planned experiments") is the requirement-level reading and stays as is; the sheet already shows both. No edit needed. Ladder flags band_i and band_e cleared.
+MAP: node=tests_cmb status=literature touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D752 (LEFT; reverse ladder; locked PREREG_D752; results/attractor_kination_d752.txt) — a plain attractor cannot reach the SERAPIS n_s band, even with the longest reheating gravitational waves allow
 Reverse path: D751 left one competitor alive, an attractor at N* ≈ 60. Ask what it needs to reach n_s = 0.970 (N* = 2/(1 − n_s) ≈ 67), and whether that history is allowed.
@@ -8584,6 +8585,7 @@ MAP: node=plateau_origin status=assumed touches=[serapis_e] ripple=no
 
 ## D834a (correction to D834 and D836, found while building D840)
 D834 and D836 said the anti-D3 term "destabilises τ = i toward ρ". That overstated it. The τ = i model HAS a vacuum mass: the (fitted, postulated) εI₁ term gives an isotropic m²/H² ≈ 2.0e-3 at ε = 1.45e-4 (D795, D826). D826's problem is that this mass has no DERIVED source, not that it is absent. Adding D834's anti-D3 curvature along x: net m²/H² = +2.0e-3 − 1.48e-3·(k/2.07e-4). At k = 2.07e-4 the net is +0.5e-3 (still stable); at the D835 band-safe value k ≲ 2e-6 the anti-D3 share is −1.4e-5, negligible [derived, arithmetic on D795/D834/D835]. Corrected statement: the anti-D3 term does not destabilise τ = i at any k allowed by the band; it only fails to be the derived mass source. D834's saddle result and D836's other points stand.
+MAP: node=band_i status=computed touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D840 (τ = i verdict project, T.1): evidence table for the τ = i variant
 Each row checked against its source note. "+" supports keeping, "−" counts against, "0" neutral/conditional.
@@ -8770,6 +8772,7 @@ MAP: node=lepto_i status=assumed touches=[band_i] ripple=no
 1. D853 re-weighted D762's per-case thresholds, which belong to D731's ρ inflaton-decay leptogenesis. That route was already SUPERSEDED: at ρ the exact Z₃ forbids the renormalisable L·N·H decay of the charged pair N_n/N₃ (D780), the P5 route conserves B (D789), and the frozen ρ band has no baryogenesis mechanism; the only consistent ρ history is the post-hoc inflaton-AD one, which needs no CP phase (D792). So D853's ρ numbers (median 0.84, unconditional ≈ 0.34) describe a mechanism the model no longer uses. They are withdrawn as statements about SERAPIS; they remain correct as arithmetic on D762.
 2. D854 asserted that at ρ "the relevant N carry different charges, so D852's Δ is physical". That was not checked. The ρ heavy states differ in Z₃ charge (N_Y: 0, N_n: q, N₃: −q; D780), but Z₃ is a modular charge, not a brane U(1) charge; whether they sit at different brane intersections is not determined by the model. The assertion is withdrawn as unsupported.
 3. The V32_TODO optional clause [D853] (median 0.84) is withdrawn.
+MAP: node=lepto_rho status=assumed touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D855 (R.2): P1′'s quantitative leptogenesis consequences live only at τ = i
 Derivation only (bookkeeping against D731, D780, D789, D792).
@@ -8858,6 +8861,7 @@ MAP: node=lepto_i status=assumed touches=[band_i] ripple=no
 
 ## D862a (correction to D862's last paragraph)
 D862 estimated the string-loop correction to the racetrack modulus's Kähler potential as "≈ 1/(Im S·Im T₁) ≈ 0.5, possibly O(1)". That left out BHK's normalisation 1/(256π⁶) and the size of the lattice sums. With them (PREREG_D863): δK = c′/t with c′ ≈ 0.008, a relative change of K_TT̄ of ≈ 1e-3. The "likely weak point" statement is withdrawn; D863 tests it directly.
+MAP: node=lepto_i status=assumed touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D863: the one-loop Kähler correction does NOT disturb the CP-odd racetrack minima (even ×100)
 Lock: PREREG_D863_loop_T1.md; DEVIATIONS D1 (first run stopped by Danny after 5 of 12 rows; partial output recorded; rerun unchanged). Script theory/modular/loop_T1_d863.py, output field_tests/results/loop_T1_d863.txt.
@@ -8885,6 +8889,7 @@ MAP: node=lepto_i status=assumed touches=[serapis_e,eps_tilt] ripple=no
 
 ## D864a (correction to D864 point 4)
 D864 said the placement is "forced: SU(5) at the origin, SU(6) at a half-period". That was wrong on two counts. (i) Not forced: SU(6) can also sit at the origin (N_f = 2 < 6). (ii) A single stack at ONE half-period breaks the permutation symmetry of the three half-periods, i.e. it breaks SL(2,Z) of the inflaton torus. The v3.1/v3.2 paper already states that unequal brane numbers at the three half-periods remove SERAPIS-E's ρ vacuum, its isotropic mass and the residual Z₃. Putting SU(6) at a half-period would therefore destroy SERAPIS-E itself, and a symmetric copy at all three half-periods needs 18 + 5 = 23 D7s > 16 (tadpole). Corrected placement: BOTH stacks (SU(5) and SU(6)) at the origin; flavours N_f = N0 ≤ 2 for each, condensation allowed, SL(2,Z) kept.
+MAP: node=lepto_i status=assumed touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D865: with both D7 stacks at the origin, the tilt survives but is reduced; the benchmark must be re-fitted by ×0.4–0.85
 Derivation + arithmetic (no lattice run: the symmetric placement reduces to D696's formula, so no new lattice sums are needed).
@@ -8911,6 +8916,7 @@ MAP: node=serapis_e status=corrected touches=[lepto_i,eps_tilt] ripple=no
 
 ## D857a (correction, found in D866)
 D857 (and D860, D861, D862, D865 built on it) took D689's ρ as the inflaton torus's area. BHK eq. (3.30) with the §5 T-duality makes it the modulus of the 4-cycle transverse to the inflaton torus. The moduli tables, scans and the benchmark in those notes are superseded; their qualitative findings (racetrack versus anti-D3 compete for cycle sizes; instanton masses ∝ W0^N) are kept. D863's loop-stability result does not depend on the mapping and stands.
+MAP: node=lepto_i status=assumed touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D867: corrected moduli scan. An anti-D3 uplift is incompatible with SERAPIS-E's BHK tilt itself; and the D857–D861 "conflict" mixed two branches
 Lock: PREREG_D867_moduli_scan2.md (committed before the run). Script theory/modular/moduli_scan2_d867.py, output field_tests/results/moduli_scan2_d867.txt. v₄ of D833 is the geometric volume A₂A₃ of the two non-inflaton tori, independent of the BHK mapping [derived].
@@ -8930,6 +8936,7 @@ MAP: node=plateau_origin status=assumed touches=[serapis_e,band_i,lepto_i] rippl
 
 ## D861a (correction, found in D867)
 D861's added τ = i condition came from a scan that imposed SERAPIS-E's BHK tilt on the τ = i branch, whose frozen tilt is the fitted ε. The condition is withdrawn for the frozen τ = i model; it applies only to the post-hoc BHK-tilted τ = i variant (D823). The v3.2 draft sentence citing D860/D861 is replaced (D867).
+MAP: node=lepto_i status=assumed touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D868: what SERAPIS-E's uplift sector can be without an anti-D3 on the inflaton torus (ranked)
 Searches 2; fetched 2512.17995 (F-term uplifting with warping); the T-brane fetch (1512.04558) was interrupted, so its entry uses the abstract-level statement only.
@@ -9955,9 +9962,11 @@ Lock: field_tests/rules/PREREG_D981_alpha_wide.md (sha256 verified before run). 
 | Chronos (ε=1.3e-4, N*=46.0) | −9.947e-4 | −9.941e-4 | −9.941e-4 | −9.959e-4 | −(8.8–10.2)e-4 | converged, bias OK, inside → **published α_s stands** |
 
 n_s and r reproduce the published values (0.97005 / 4.75e-4 and 0.96964 / 5.30e-4). Spread across boundary depth is <0.2%, across grids <0.2%, so D980's 21%/12% scatter was a narrow-grid artefact, as suspected. α_s ≈ −9.9e-4 for both branches, indistinguishable at foreseeable precision (σ(α_s) ~ 2e-3 for CMB-S4-class), so α_s is a consistency check, not a discriminator. Raw output: field_tests/results/alpha_wide_d981.txt.
+MAP: none  (added by D1342, metadata only)
 
 ## D990a — correction to D990's run history (2026-11-17)
 D990 said attempt 1 left "no output anywhere". That was wrong: PREREG_D981_alpha_wide_DEVIATIONS.md (written by a parallel session before I ran) records two earlier killed runs with partial logs (D1: 7/8 runs; D2/D981b: 5/8), and designates one full rerun, D981c on Danny's PC queue, as the run the verdict is read from. The run reported in D990 was a further full run of the unchanged locked script in this cloud session, made without having read that file, so it is outside D2's plan. Disclosure: its eight values are identical, digit for digit, to every value in the D1 and D2 partial logs (the computation is deterministic), so no result was chased and the outcome cannot differ. Status: D990 is a complete run that agrees with the locked bands; the formal verdict stays with D981c as D2 specifies; if D981c disagrees, D981c wins and D990 is withdrawn. Note-number clash: lock PREREG_D990 (Janus calculator, D989) is unrelated to note D990, as with D710.
+MAP: none  (added by D1342, metadata only)
 
 ## D991 (track R, ρ tilt origin, PREP/estimate): the ρ branch's tilt term εL, L = −ln(2y|η|⁴), has exactly the weight-1 form of a soft-SUSY-breaking threshold (D950); with Hubble-induced soft masses during inflation the size ε ~ N c² M_KK²/(48π² M_P²) reaches the fitted 6e-5 for M_KK ≈ 3.6e16 GeV (N = 128, c = 1) or c ≈ 3.6 at M_KK = 1e16 GeV — plausible, not automatic
 (Correction inside this note: the claim line said "~5e-5"; the arithmetic gives 4.6e-6 at N = 128, c = 1, M_KK = 1e16 GeV. A factor-10 slip in a head estimate, caught by code before the note was written; the numbers below are the computed ones.)
@@ -10494,6 +10503,7 @@ Sources: arXiv:1805.05741 (ar5iv); D735; D982.
 MAP: node=halo_profile status=computed touches=[] ripple=no
 
 ## D1055a — arithmetic correction to D1055: linear interpolation of f and f_max between 1.0 and 1.85 TeV puts the NFW crossing at M ≈ 1.43 TeV, so the NFW window is ≈ 0.66–1.4 TeV (estimate), not "≈ 0.66–1.5".
+MAP: node=halo_profile status=computed touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D1056 (DEEP Jl tick, track X / AEGIS application, locked PREREG_A7b + DEVIATIONS D1): Janus-Astro now has its own wino Sommerfeld solver (validated: Coulomb exact to 3e-5, free limit, first resonance at 2.38 TeV vs the literature 2.3–2.4); the line rate rises ×6 from 1 to 1.85 TeV, so the heavy end of SERAPIS-E's wino window is excluded for cuspy halos and for a 1 kpc core at tree level; cores ≥ 3 kpc or Burkert keep every mass
 Research [literature]: 2507.15934 (Fermi continuum, 14 yr inner Galaxy) excludes the THERMAL wino (2.86 TeV) for cores up to 6.7 kpc and rules out 1.85–2.8 TeV even as a subcomponent (≲ 50% at the low end) — no numbers below 1.85 TeV. 1307.4082: potential and boundary conditions (used), resonance "near 2.3 TeV"/"~2.4 TeV", one-loop corrections cut the line by ~3–4, H.E.S.S. (NFW) excludes non-thermal winos as ALL the DM down to 0.5 TeV. Explicit Γ matrices were not reachable (two fetches failed on allowlist); the application therefore uses only the tree-level fact that the line comes through the χ+χ− component (σ_line ∝ |s_{+−}|²/M²), normalised to D735's 1-TeV line rate.
@@ -10597,6 +10607,7 @@ Results [computed]: growth unchanged (≤ 7.1e-4 to z = 5); PS z = 0: 4.8e-4, 3.
 MAP: none
 
 ## D1068a — precision correction to D1068's headline: the worst agreement over ALL cases is 2.9e-3 (not 1.1e-3, which is the worst at z = 0); every case is inside the locked 2e-2. Verdict unchanged.
+MAP: none  (added by D1342, metadata only)
 
 ## D1069 (DEEP Jl tick, track X / Hyperion, locked PREREG_A6a): honest benchmark — Hyperion agrees with galpy (2e-14), colossus (2.8e-3) and LAL's SNR (4e-15) but is SLOWER than galpy (×8) and colossus (cached), faster than LAL only for the bare phase (×2.1); the T3 accuracy check failed because the test grid was too coarse to unwrap the phase: A6a NOT VALIDATED as locked
 A2b2 status: the 3PN spin–spin and 3.5PN spin phase terms are in arXiv:1601.05588 (Mishra et al. 2016, Eqs. 5–6, plus a supplementary Mathematica file) and 1501.01529, but the fetch tool will not quote full equations (quote-length limit), so the coefficients could not be sourced this tick; A2b2 waits for a reachable copy (the LAL C source, or Danny attaching the paper). A1 (realistic stars) needs opacity and nuclear-rate tables not reachable from the shell.
@@ -10617,6 +10628,7 @@ Cost: 517 ms per star for a 5-Gyr orbit — far too slow for the 192M-star DR3 s
 MAP: none
 
 ## D1071a — correction to D1071's diagnosis: the pole constants in mapper_feed (α_G 192.85948°, δ_G 27.12825°, l_Ω 32.93192°) are the EXACT defining values of Gaia's/Hipparcos's Galactic frame (Gaia DR3 documentation §4.1.7: "should be regarded as exact"), not rounded ones. The 7e-6 deg (25 mas) A8a offset is astropy's different realisation of the Galactic frame. A8a's locked verdict (NOT VALIDATED vs astropy) stands as recorded; A8b tests against Gaia's own convention.
+MAP: none  (added by D1342, metadata only)
 
 ## D1072 (DEEP Jl tick, track X / Hyperion -> Star Mapper, locked PREREG_A8b): the mapper feed's sky-to-Galactic conversion reproduces Gaia DR3's own matrix A_G' to 1.9e-16 and its (l, b) to 6e-14 deg; Sun and Galactic Centre geometry exact: A8b VALIDATED. astropy's Galactic frame differs from Gaia's by up to 25 mas — so the Mapper's l, b now match Gaia's published columns, not astropy's
 Source: Gaia DR3 documentation §4.1.7, Eq. 4.62 (A_G' to 16 decimals) and the exact defining angles (fetched 17 Nov).
@@ -11494,6 +11506,8 @@ Result (40-digit, 4000 points on (1e-6, 1−1e-6)·y_end): A′/P′ runs monoto
 Observation [arithmetic, D = 6 only]: the endpoint value 1/(2√5) and the threshold 1/4 differ by 11%; for D = 6 the threshold condition γ ≤ 16√(D−1)/(D−2)² = √5
 coincides with γ_c = 4√(D−1)/(D−2) = √5 — a D = 6 coincidence, not a general statement (not checked for other D).
 With D1036 (tensor tower gapped, m₁² 0.778) the 6D vacuum now has both tensor and scalar sectors free of instabilities (vectors not yet checked).
+MAP: none  (added by D1342, metadata only)
+
 ## D1139 (CENTRE, Djl loop (C), literature + arithmetic): a Gaia DR3 escape-velocity profile (arXiv:2402.00108, 4–11 kpc) gives a LIGHT halo, M200c(DM) = 0.55 (+0.15/−0.14) e12 M_⊙ (total 0.64e12), agreeing with the K giants and against Deason+2019's heavier v_esc reading — the D1112 data disagreement tilts toward the light halo: MWPotential2014 (halo M200 0.71e12) +1.1σ, McMillan17 (1.315e12) +5.1σ
 - Quoted (abstract): escape-velocity profile 4–11 kpc from Gaia DR3; dark-matter halo M200c ≈ 0.55 +0.15/−0.14 e12, c200c ≈ 13.9 +6.2/−4.3; total M200c ≈ 0.64 +0.15/−0.14 e12. No v_esc(R0) number in the abstract.
 - Arithmetic (halo-only M200 from D1097/D1112):
@@ -11948,6 +11962,7 @@ MAP: none
 ## D1175a — correction to D1175 wording
 D1175 says "L-1…L-8 now all built; L-7 remains" — correct reading: L-1–L-6 and L-8 built, L-7 (dashboard) not yet. Its "D1173-era" tag for the
 ASPIC lfi check is wrong: that check was the ASPIC_INSTALL job (PC log, 13:45 CT, max rel diff 0.0), recorded in D1171's report, not a D-note of its own.
+MAP: none  (added by D1342, metadata only)
 
 ## D1176 — JANUS — J13: Janus accuracy holds at new pivots N* = 45, 55, 65 on all 32 pulse-1 models [HOLDS]
 Lock PREREG_J13_pulse_nstar (moved PC → cloud, same script). 96 points vs exact MS: median |Δn_s| 1.4e-6 (max 4.0e-5 excluding DI; DI max 1.0e-3,
@@ -11960,6 +11975,8 @@ Dashboard artifact "AEGIS Results Ledger" (claude.ai artifact 7iwtR7STB4vHVfP3xy
 (7 passed, 6 tools built, 2 failed and kept on record), each number traced to its source file; CubeMind eval-arm progress (items per arm of 300).
 Data: papers/dash/dnotes_2026-11-17.csv and cubemind_arms_2026-11-17.csv (attached files, not live — updated by hand each ledger refresh).
 LOCKBENCH plan L-1…L-8 is now complete.
+MAP: none  (added by D1342, metadata only)
+
 ### D1178 — R2b5: the open solver is converged in R with full Coulomb (PASS); the α scan moves both sides smoothly (2026-11-17)
 - [CENTRE · computed] **Lock:** PREREG_R2b5_coulomb. **Result:** field_tests/results/r2b5_coulomb.txt.
 - **Check 1 (scored):** open side at x = 1.01 with full α.
@@ -12464,6 +12481,8 @@ wiring checked first — direct χ² at the chain's first row 1476.02 = Cobaya's
 Posterior (30% burn-in): w0 = −0.842 ± 0.053 (L7 MAP −0.853 ± 0.053), wa = −0.565 ± 0.213 (L7 −0.518 ± 0.200) → C1, C2, C3 PASS.
 Chain χ²: min 1423.07 (L7 1422.93), weighted median 1426.93 (≈ min + 4 for 5 free parameters — good mixing).
 With L10 (D1200, profile) Janus-LT's joint BAO+CMB+SN w0wa result now has three agreeing estimates: Hessian, profile grid, MCMC.
+MAP: none  (added by D1342, metadata only)
+
 ### D1204 — Candidate replacement potential arXiv:2407.12551 (Klačka, Šturc, Puha 2024): it gets the local slope right but is not a suitable Mapper default (2026-11-17)
 - [LEFT · literature, fetched] **Model:**
   - Baryons: three Miyamoto–Nagai components. Thin disc 3.364e10 M☉ (a = 4.51, b = 0.21 kpc); thick disc 4.157e10 (a = 2.34, b = 0.68); bulge 0.907e10 (a = 0, b = 0.30).
@@ -12818,6 +12837,7 @@ MAP: node=mnu status=frozen touches=[] ripple=no
 
 ## D1233a — correction to D1233
 D1233 attributed the N* window 49.7–50.5 to D979. It is D725's window (slow-roll end). D979's exact end gives 49.88–50.64 (computed in D1234). The D1233 verdict (frozen band CONSISTENT on its own N* range; flag on band_e from nstar_e) stands; the corrected top edge is 50.64, not 50.5.
+MAP: node=band_e status=frozen touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D1235 — CENTRE — NA3 node audit, phase 3: reheat_rho re-derived — two input errors found in the ρ reheating chain (m_φ low by ×1.44; inflaton coupling normalised as n = 3 while SERAPIS-E is n = 1); corrected T_R ×2.1, N* +0.24 to +0.63; n_s, r still inside the frozen band
 Lock: field_tests/rules/PREREG_NA3_reheat_rho.md. Results: field_tests/results/na3_reheat_rho.txt.
@@ -12891,6 +12911,7 @@ MAP: node=reheat_rho status=computed touches=[nstar_e] ripple=no
 
 ## D1236a — correction to D1236
 D1236 said c = 0.3, M_H = 1e12 "would PASS" because max Y_B (1.03e-10) exceeds Y_obs. The locked D775 rule is a ≥ 10 % pass fraction over the Casas–Ibarra grid; with the corrected inputs that fraction is 2.2 % (D1239) → still FAIL.
+MAP: node=lepto_rho status=computed touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D1240 — CENTRE — NA7: darkrad_rho PASS (light N's thermalise with ×55–376 margin at the corrected T_R); caps CONSISTENT (conservative at the higher N*); τ = i scripts use the right n = 1 factor except the NULL D726; small flag on reheat_i (m_φ 1.9e11 vs D730's 2.3–2.7e11)
 Lock: field_tests/rules/PREREG_NA7_darkrad_caps_ibranch.md. Results: field_tests/results/na7_darkrad_caps_ibranch.txt.
@@ -12961,6 +12982,7 @@ MAP: node=stuck_d3 status=literature touches=[] ripple=no
 
 ## D1234a — correction to D1234 (part A)
 D1234 compared today's Janus relation error (3.3–4.0 %) with D689's "13–16 %" and called it FAIL-as-locked. D689's 13–16 % was computed for the PREDECESSOR model V = P_ρ(τ)[1 + C(E − E(ρ))] (D689), not for SERAPIS-E (P_E = Ê/(Ê+1), D691). The right SERAPIS-E statement is D693's frozen "Janus κ = 1 (p = 2√2) ≤ 6 %", which the 3.3–4.0 % satisfies. The lock's [12 %, 17 %] bar was built on the wrong reference; the FAIL stands as recorded, but it carries no information about SERAPIS-E; the node janus is CONSISTENT with D693.
+MAP: node=nstar_e status=computed touches=[] ripple=no  (added by D1342, metadata only)
 
 ## D1247 — CENTRE — NA12: τ = i with the audited reheating — the ε window narrows from 1.40–1.45e-4 to ≈ 1.40e-4 (only the 1.40 grid point stays in band); pre-stated expectation CONFIRMED; D861 benchmark arithmetic PASS
 Lock: field_tests/rules/PREREG_NA12_band_i_audited.md. Script: field_tests/scripts/na12/band_i_na12.py (D815's exact-MS code + new driver). Results: field_tests/results/na12_band_i_audited.txt.
@@ -13148,6 +13170,7 @@ MAP: node=vac_discriminant status=killed touches=[] ripple=no
 
 ## D1255a — MAP-line correction (no content change) for D1255, D1260, D1261
 Their MAP lines named web-only toolkit nodes (X_ms, J_lt, R_w0wa), which tools/ladder does not know (they live in tools/web/build_web.py, not theory/map/map.yaml); ladder.py stopped on them. Changed to the nearest theory-map nodes (janus; tests_cmb; tests_cmb). The notes' text and verdicts are unchanged.
+MAP: none  (added by D1342, metadata only)
 
 ## D1264 — CENTRE — PW4 (web postulate 4, pattern covariant ↔ eps_tilt) PASSES: at SERAPIS-E's own field values the covariant X-positivity bound is m₃/₂ < 2.0e9 GeV (horizon exit, y = 14.6) and < 6.7e8 GeV (12 e-folds earlier, y = 16.6) — ×960 above the ≤ 7e5 GeV the AMSB wino window needs
 Lock: field_tests/rules/PREREG_PW4_m32_serapis.md. Results: field_tests/results/pw4_m32_serapis.txt. Formula: D655 (K = −ln 2 Im τ; m₃/₂/H < √(3V_pl/[e^{L−L_ρ}(4y²|∂_τL|² − 3)])) with SERAPIS-E's plateau and H* = 5.44e12 GeV (A1 point, r 4.82e-4).
@@ -14164,4 +14187,11 @@ MAP: none
 ## D1341 — Hyperion 1.1 prep: the smoke test gains check 7 (A2p line+endpoint ratio at 1 TeV, 10% window = 1.1174); 7/7 PASS in ≈ 11 s (2026-11-18)
 - [CODE] tools/janus_astro/hyperion_smoketest.py imports field_tests/scripts/a2p_endpoint.R and pins R(1 TeV, 0.10) to 1e-3 (D1337). Got 1.11744.
 - Every validated result from today is now pinned: relic, McMillan17 LSR, galpy, 7PN, IGS f_max, wino fraction, endpoint.
+MAP: none
+
+## D1342 — MAP-line backfill: 20 D-notes had no MAP line, so `ladder.py check` (and the tools CI job) failed all day; metadata added, no content changed (2026-11-18)
+- [TOOL] Notes fixed: D749a, D834a, D853a, D857a, D861a, D862a, D864a, D990, D990a, D1055a, D1068a, D1071a, D1140, D1175a, D1177, D1205, D1233a, D1234a, D1236a, D1255a. Each now ends with a MAP line tagged "(added by D1342, metadata only)".
+- Rule used: a correction whose parent has a MAP line repeats the parent's node and status with touches=[] and ripple=no (map unchanged); a note whose parent has none, or whose subject has no map node (Kaluza D1140, lockbench D1177, Janus-LT D1205, α_s run history D990/D990a), gets `MAP: none`.
+- Effect on the map: none. These notes are already in the ladder's applied set, so no status, flag or history changes; `ladder.py check` → "ladder OK".
+- Asked for by Danny ("Add them"), 18 Nov 14:53 CT.
 MAP: none

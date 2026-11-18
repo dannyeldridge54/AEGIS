@@ -2109,3 +2109,6 @@ Touches: none.
 ## D1313: CERN+1 higgsino cross sections
 1. [literature] Resummino aNNLO+NNLL higgsino tables, arXiv:2304.11915 Table 4.
 2. [derived] Drell–Yan scaling s·σ = Φ(τ₀)(√s/13)^κ with the wino κ predicts the 13.6 TeV higgsino tables to ≤ 0.34%.
+
+## D1342: MAP-line backfill (metadata only)
+1. [derived] 20 notes lacked MAP lines; each gets the parent's node/status (ripple=no) or `MAP: none`; ladder applied-set unchanged, so the map is unchanged.

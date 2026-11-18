@@ -45,3 +45,8 @@ def test_correction_note_suffix_applied_after_parent():
     assert len(applied) == 2 and by["a"]["status"] == "computed" and "D750a" in by["a"]["d"]
     applied, last, done = L.update(m, text, last, done)   # the applied-set (not the watermark) is what prevents re-application
     assert applied == []          # nothing re-applied on a second run
+
+def test_observing_entries_are_valid_targets():
+    m = fresh(); m["observing"] = [{"id": "obs", "status": "open", "title": "O"}]
+    applied, last, _ = L.update(m, "## D760\nMAP: node=obs status=computed\n", 759)
+    assert applied and m["observing"][0]["status"] == "computed"

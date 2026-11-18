@@ -826,13 +826,15 @@ nodes:
   - D1302
   - D1318
   - D1324
+  - D1337
+  - D1338
   depends:
   - gravitino_wino
   - halo_profile
   history:
-  - 'D1250: corrected'
-  - 'D1318: corrected'
-  - 'D1324: computed'
+  - 'D1338: computed'
+  - 'D1337: computed (late)'
+  - 'D1338: computed'
 - id: tests_cmb
   layer: 5
   branch:
@@ -885,6 +887,10 @@ observing:
   title: Gaia DR4 sweep (release 2 Dec 2026)
   status: open
   note: docs/STAR_MAPPER_DR4_PLAN.md
+  d:
+  - D1330
+  history:
+  - 'D1330: open'
 - id: mapper_feeds
   title: Live feeds (DONKI moved; GCN via per-circular JSON; NIST beacon intermittent)
   status: computed
