@@ -345,8 +345,8 @@ def run_circuit():
     res = C.run(run_tool, log_path=os.path.join(d, 'circuit_runs.jsonl'))
     for c in res['comps']:
         for l in c['laws']: _link_log(dict(node=f"circuit:{c['node']}:{l['law']}", tool=c['tool'], ok=l['ok'], text=l['text']))
-    to_cubemind(f"SERAPIS circuit: {res['closed']}/{res['laws']} laws closed (health {res['health']}); open: " +
-                ('; '.join(f"{o['node']} {o['law']}" for o in res['open']) or 'none'), 'circuit', importance=4)
+    to_cubemind(f"SERAPIS circuit: {res['closed']}/{res['n_laws']} laws closed (health {res['health']}); open: " +
+                ('; '.join(f"{o['layer']} {'/'.join(o['nodes'])} {o['law']}" for o in res['open']) or 'none'), 'circuit', importance=4)
     return res
 CHAINS = {'serapis': _chain_serapis, 'lhc': _chain_lhc, 'lattice': _chain_lattice}
 def run_chain(name):
@@ -444,7 +444,7 @@ class Weave:
             cr = run_circuit()
             for c in cr['comps']:
                 self._emit(dict(node=c['node'], tool='circuit', ok=c['ok'], text='; '.join(f"{'✓' if l['ok'] else '✗'} {l['law']}: {l['text']}" for l in c['laws']), seconds=c['seconds'], shared=True))
-            with self.lock: push(self.win, 'calc', f"SERAPIS circuit · health {cr['health']:.0%}", f"{cr['closed']}/{cr['laws']} laws closed" + (f"; OPEN: {', '.join(o['node'] + ' (' + o['law'] + ')' for o in cr['open'])}" if cr['open'] else '; all closed'))
+            with self.lock: push(self.win, 'calc', f"SERAPIS circuit · health {cr['health']:.0%}", f"{cr['closed']}/{cr['n_laws']} laws closed" + (f"; OPEN: {', '.join(o['layer'] + ' ' + '/'.join(o['nodes']) + ' (' + o['law'] + ')' for o in cr['open'])}" if cr['open'] else '; all closed'))
         ok = sum(r['ok'] is True for r in out); fail = sum(r['ok'] is False for r in out)
         self.on = False; push(self.win, 'calc', 'Weave derived', f'{ok} pass, {fail} fail of {ok + fail} nodes in {time.time() - t0:.0f} s')
         if self.win is not None:
