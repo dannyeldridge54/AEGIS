@@ -16,3 +16,10 @@ Source: ESA Gaia news 2026: "Gaia DR4 is planned for Wednesday, 2 December 2026"
 
 ## Load and cost
 The DR3 sweep took weeks on Danny's PC. The DR4 query volume per tile will be larger, so it runs at the same polite rate (2 workers). Run it overnight. Fans: it will work the CPU, and it stops when the window is closed.
+
+## Update 18 Nov 2026 (D1330; source: ESA Gaia news 2026)
+- Date confirmed: ESA's 8 Oct 2026 notice says the archive is **offline 25 Nov to 2 Dec 2026** and comes back on 2 Dec with DR4.
+  - Any DR3 query (Mapper top-ups, ESA spot checks) must finish before 25 Nov or wait until 2 Dec.
+- Archive release (14 Oct 2026): **max 5 concurrent jobs per user**. The planned 2 workers fit.
+  - DataLink structures are renamed: RAW → DATAMODEL_GAIA, INDIVIDUAL → DATAMODEL_STANDARD. The AEGIS cloud tree does not use DataLink; check the PC tree (ufe-v2/aegis) before any epoch-data pull.
+- Still no public DR4 data model, so the rule "no coding blind" stands.
