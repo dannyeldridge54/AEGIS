@@ -1,0 +1,102 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{A Start-Condition Ripple in Exact Mukhanov--Sasaki Running, and a Cheap Fix}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{17 November 2026}
+\begin{abstract}
+Exact Mukhanov--Sasaki (MS) integration is the standard reference for inflationary spectra, but its running $\alpha_s$ can be wrong at the $10^{-4}$--$10^{-3}$ level. We found that a five-point second difference of $\ln P(k)$ gave $\alpha_s=+2.2\times10^{-4}$, $-3.6\times10^{-3}$ and $-1.3\times10^{-4}$ for steps $\Delta\ln k=0.1$, $0.05$ and $0.025$ on a smooth Starobinsky-type plateau. Tightening the integrator tolerance from $10^{-10}$ to $10^{-13}$ does not change a 21-point fit at all. Moving the Bunch--Davies start from $k/aH=200$ to $1000$ shifts $\alpha_s$ by $3\times10^{-5}$. The scatter is therefore a deterministic ripple in $P(k)$ left by starting the modes at finite $k/aH$, of relative size $\sim(aH/k)^2$, which narrow finite differences amplify. Starting at $k/aH=4000$ and fitting nine points over $\pm0.1$ in $\ln k$ removes it. $\alpha_s$ is then stable to $7\times10^{-7}$ under changes of the fit window and of the start, and a third-order slow-roll code agrees with it to $\le4\times10^{-6}$. With the potential compiled, one nine-mode spectrum takes $0.9$~s instead of $\approx570$~s. Every test was pre-registered, and the first, failed attempt is reported.
+\end{abstract}
+\keywords{cosmic inflation; Mukhanov--Sasaki equation; Bunch--Davies vacuum; running of the spectral index; numerical methods; slow-roll; reproducibility; pre-registration}
+\maketitle
+
+\section{The problem}
+Upcoming CMB and galaxy surveys will measure the running of the spectral index, $\alpha_s=d n_s/d\ln k$, only to $\sigma(\alpha_s)\approx2\times10^{-3}$ by 2030~\cite{Prospects}. Model predictions of $\alpha_s$ are often near $10^{-3}$, however, and parameter-free relations between $\alpha_s$ and $(n_s,r)$ are tested at the few-percent level~\cite{P1}. That needs a reference $\alpha_s$ good to $\sim10^{-5}$.
+
+The usual reference is the exact MS equation for the comoving curvature perturbation, integrated from a Bunch--Davies start deep inside the horizon to well after horizon exit. $n_s$ and $\alpha_s$ then come from finite differences of $\ln P_{\mathcal R}(k)$ around the pivot. We found that this second step can fail badly, and that the cause is not the integrator.
+
+\section{Set-up}
+We integrate the background and the scalar and tensor modes in e-folds $N$ with an adaptive fifth-order Runge--Kutta (Dormand--Prince) step. All modes of a spectrum start at the same $N_0$, fixed so that the smallest $k$ has $k/aH=b$. They start from the de Sitter Bunch--Davies solution
+\begin{equation}
+u_k=\frac{1}{\sqrt{2k}}\Bigl(1-\frac{i}{k\eta}\Bigr)e^{-ik\eta},\qquad \eta=-\frac{1}{aH(1-\epsilon)},
+\end{equation}
+evaluated with the local $H$ and $\epsilon$. The modes are integrated to 12 e-folds after pivot exit. The test potentials are
+\begin{itemize}
+\item a smooth Starobinsky-type plateau;
+\item the SERAPIS-$E$ potential $V/V_0=\hat E(1+C\hat E)/(\hat E+1)$ with $\hat E=E(\tau,2)-E(\rho,2)$ and $C=(1.0$--$1.3)\times10^{-6}$~\cite{P3}, evaluated through a cubic spline with an analytic derivative.
+\end{itemize}
+The default in our earlier code, and a common choice, was $b=200$ with five points at $\Delta\ln k=\pm0.05,\pm0.1$.
+
+\section{Diagnosis}
+Each test below was written down and hashed before it was run~\cite{P4}.
+
+\emph{First attempt (failed).} We compiled the integrator to speed it up. The compiled code reproduced $n_s$ and $r$ (three of four reference rows within $10^{-5}$; the fourth was off by $1.1\times10^{-5}$ against a five-digit printed reference). It failed the $\alpha_s$ stability test: on SERAPIS-$E$ the step $\Delta\ln k=0.1$, $0.05$, $0.025$ gave $\alpha_s=-3.3\times10^{-4}$, $-3.0\times10^{-3}$, $-7.7\times10^{-4}$. The slow-roll value is $\approx-9.3\times10^{-4}$. We did not adopt it.
+
+\emph{Not the integrator.} The same compiled code on a smooth Starobinsky-type plateau is just as step-dependent: $\alpha_s=+2.25\times10^{-4}$, $-3.57\times10^{-3}$ and $-1.27\times10^{-4}$. A 21-point degree-4 fit over the same range, however, gives
+\begin{itemize}
+\item $\alpha_s=-5.8925\times10^{-4}$ at relative tolerance $10^{-12}$ and at $10^{-13}$ (identical to all printed digits);
+\item $-5.8931\times10^{-4}$ at $10^{-10}$;
+\item $-6.1878\times10^{-4}$ when the start moves from $b=200$ to $b=1000$.
+\end{itemize}
+The scatter does not respond to the tolerance but does respond to the start.
+
+\emph{The ripple.} The de Sitter Bunch--Davies mode is not the exact positive-frequency solution at finite $k/aH$ on a slow-roll background. The mismatch seeds a small negative-frequency component whose relative size is of order $(aH/k)^2$ at the start, $\approx2.5\times10^{-5}$ for $b=200$. It beats against the main solution, so $P(k)$ carries an oscillation with phase $\approx2k|\eta_0|$. Because all modes share one $\eta_0$ and $k|\eta_0|\approx b$, a step of $0.05$ in $\ln k$ moves the phase by $\sim20$ radians. Across a five-point stencil the ripple is effectively random. A second difference divides it by $(\Delta\ln k)^2$, which turns a $10^{-5}$ ripple into $10^{-4}$--$10^{-3}$ noise in $\alpha_s$. $n_s$, a first difference, and $r$, a ratio at one $k$, are hardly affected. The amplitude is an order-of-magnitude estimate, not a derivation; the evidence for the mechanism is the response to $b$ and the absence of any response to the tolerance.
+
+\section{The fix}
+Two changes, and no change to the integrator:
+\begin{enumerate}
+\item start at $b=4000$, where $(aH/k)^2\approx6\times10^{-8}$;
+\item obtain $n_s$ and $\alpha_s$ from a degree-4 fit to nine points over $\pm0.1$ in $\ln k$ instead of a narrow stencil.
+\end{enumerate}
+Before running, we required:
+\begin{itemize}
+\item[(T1)] $n_s$ and $r$ match the earlier exact results;
+\item[(T2)] $\le15$~s per spectrum;
+\item[(T3)] $\alpha_s$ changes by $\le2\times10^{-5}$ between windows $\pm0.1$ and $\pm0.05$ and between $b=4000$ and $8000$;
+\item[(T4)] $\alpha_s$ agrees with third-order slow-roll flow to $\le3\times10^{-5}$.
+\end{itemize}
+
+At four SERAPIS-$E$ points all four tests pass:
+\begin{itemize}
+\item $n_s$ agrees with the earlier exact values to all five printed digits, and $r$ to $10^{-5}$.
+\item One nine-mode spectrum takes $0.8$--$0.9$~s.
+\item The $\pm0.05$ window moves $\alpha_s$ by $\le2.2\times10^{-7}$ and $b=8000$ moves it by $\le6.4\times10^{-7}$.
+\item Third-order flow on the exact background (the Janus calculator~\cite{Janus}) differs by $1.5$--$4.0\times10^{-6}$.
+\end{itemize}
+For example, at $C=1.15\times10^{-6}$, $N_*=50.14$ the exact result is $\alpha_s=-9.7423\times10^{-4}$, with $-9.7434\times10^{-4}$ in the narrower window, $-9.7365\times10^{-4}$ at $b=8000$, and $-9.7274\times10^{-4}$ from slow roll.
+
+\section{Consequences}
+\emph{Reference error, not model error.} Before the fix, exact MS appeared to disagree with third-order slow roll by up to $1.4\times10^{-4}$ in $\alpha_s$ at some points. After it, the two agree to a few $\times10^{-6}$ on all nine points of the audited SERAPIS-$E$ range~\cite{P5}, with $|\Delta n_s|\le1.1\times10^{-6}$ and $\Delta r/r\approx0.011\%$. The disagreement was in the reference.
+
+\emph{Older numbers.} Any $\alpha_s$ taken from a five-point stencil at $b=200$ carries this ripple at the $10^{-4}$ level and should be rechecked. $n_s$ and $r$ from the same runs are unaffected.
+
+\emph{Speed.} The old path, an interpreted integrator at $\approx63$~s per mode, needed $\approx570$~s for nine modes. With the potential compiled, nine modes take $0.9$~s ($\times600$). Exact spectra are now cheap enough to run at every point of a parameter scan.
+
+\section{A second, simpler speed-up}
+The same audit vectorised the hydrogen recombination solver used in BAO+CMB fits for $z_*$ and $z_d$. Over five baryon/matter points it is $\times72$ faster ($6.6$~s to $0.09$~s per call). It gives identical $z_*$, $z_d$ and $\chi^2$ to all printed digits ($10^{-7}$ in $z$, $10^{-8}$ in $\chi^2$). We report it because both changes passed the same pre-stated test: equal answers, judged against the old code, before adoption.
+
+\section{Recommendation}
+For exact-MS running:
+\begin{itemize}
+\item start modes at $k/aH\gtrsim10^3$--$10^4$;
+\item fit $\ln P$ over a window of $\pm0.1$ in $\ln k$ rather than taking narrow second differences;
+\item vary both the start and the window as a stability check.
+\end{itemize}
+Tightening the integrator tolerance does not reveal this error.
+
+\begin{acknowledgments}
+Code and diagnostics were developed with the assistance of Claude (Anthropic); the author directed the work and checked the results. Locks, scripts and outputs (PREREG\_U1, U1 deviations, PREREG\_U1b, PREREG\_U4) are in the archive~\cite{AEGIS}.
+\end{acknowledgments}
+
+\begin{thebibliography}{99}
+\bibitem{Prospects} B.~Bahr-Kalus, D.~Parkinson and R.~Easther, ``Constraining Cosmic Inflation with Observations: Prospects for 2030,'' arXiv:2212.04115.
+\bibitem{P1} D.~Eldridge, ``A Parameter-Free Consistency Relation for Plateau Inflation with an Uplift Ramp,'' Zenodo (2026), doi:10.5281/zenodo.24290583.
+\bibitem{P3} D.~Eldridge, ``SERAPIS-$E$: Modular Plateau Inflation at the Hexagonal Torus with a One-Loop String Tilt,'' Zenodo (2026), doi:10.5281/zenodo.24290875.
+\bibitem{P4} D.~Eldridge, ``Lock Before You Compute: A Pre-Registration Workflow for Theoretical Physics Done with an AI Assistant,'' Zenodo (2026), doi:10.5281/zenodo.24291026.
+\bibitem{Janus} D.~Eldridge, ``Janus String Calculator,'' v1.2, Zenodo (2026), doi:10.5281/zenodo.24299624.
+\bibitem{P5} D.~Eldridge, ``SERAPIS-$E$ Audited: Corrected Reheating, a Point Prediction, and How the CMB Would Measure the Compactification,'' companion paper (2026).
+\bibitem{AEGIS} Reproducibility archive: github.com/dannyeldridge54/aegis (field\_tests/rules, field\_tests/results).
+\end{thebibliography}
+\end{document}

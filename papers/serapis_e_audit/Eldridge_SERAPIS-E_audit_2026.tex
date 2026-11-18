@@ -1,0 +1,158 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{SERAPIS-$E$ Audited: Corrected Reheating, a Point Prediction, and How the CMB Would Measure the Compactification}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{17 November 2026}
+\begin{abstract}
+SERAPIS-$E$ is a modular plateau model in which the plateau, the vacuum at $\rho=e^{2\pi i/3}$ and a one-loop string tilt all come from the Eisenstein series $E(\tau,2)$~\cite{P3}. We report a full audit of its derivation chain, with every step recomputed under a pre-registered lock. The core arithmetic stands. Two input errors in the reheating chain are corrected: the inflaton mass at $\rho$ is $3.17\times10^{13}$~GeV, not $2.2\times10^{13}$, and the inflaton couplings were normalised with the wrong K\"ahler weight. With the MSSM $g_*=228.75$ the reheating temperature becomes $T_R=5.5\times10^8$--$1.65\times10^{10}$~GeV and $N_*=50.07$--$51.22$. The audited range is $n_s=0.97166$--$0.97596$ and $r=(4.39$--$4.90)\times10^{-4}$, partly outside the band we froze before the audit. A leptogenesis-fixed reheating temperature then gives a point prediction, $n_s=0.97439$, $r=4.82\times10^{-4}$, $\alpha_s=-9.98\times10^{-4}$, which lies inside the frozen band. A fast slow-roll code agrees with exact Mukhanov--Sasaki spectra to $|\Delta n_s|\le1.1\times10^{-6}$ over the whole range. We measure how each input moves the observables and turn the result into a forecast. If $T_R$ is known, Simons Observatory plus SPHEREx would fix the string combination $\mathrm{Im}\,S\,\mathrm{Im}\,\rho$ to $\pm14\%$. Two side results are reported: one postulate passes (a gravitino-mass window) and one is killed (a running test separating the model's two vacua). The audited model inherits the $2.4\sigma$ preference of DESI DR2 for evolving dark energy over $\Lambda$CDM. All results after the audit are post hoc and are scored only on future data.
+\end{abstract}
+\keywords{cosmic inflation; string cosmology; modular invariance; Eisenstein series; reheating; leptogenesis; Mukhanov--Sasaki; spectral index; tensor-to-scalar ratio; pre-registration; reproducibility; audit}
+\maketitle
+
+\section{Introduction}
+SERAPIS-$E$~\cite{P3} takes the torus shape $\tau$ of the inflaton torus in a $T^6/(\mathbb{Z}_2\times\mathbb{Z}_2)$ orientifold as the inflaton, with
+\begin{equation}
+\frac{V}{V_0}=\frac{\hat E}{\hat E+1}\bigl(1+C\hat E\bigr),\qquad \hat E=E(\tau,2)-E(\rho,2),
+\label{eq:V}
+\end{equation}
+and $C=15N_{\rm eff}/(64\pi^6\,\mathrm{Im}\,S\,\mathrm{Im}\,\rho)$ the one-loop K\"ahler correction of Berg, Haack and K\"ors~\cite{BHK}. Here $\mathrm{Im}\,\rho$ is the volume modulus of the four-cycle transverse to the inflaton torus, written $\mathrm{Im}\,T_1$ in Ref.~\cite{P3}. With $K=-\ln(2\,\mathrm{Im}\,\tau)$ the canonical field along $x=\tfrac12$ is $\phi=\ln y/\sqrt2$. Its predictions $n_s=0.970$--$0.975$, $r=(4.55$--$5.12)\times10^{-4}$, $\alpha_s=-(9.4$--$10.6)\times10^{-4}$ were frozen with a public hash on 15 November 2026~\cite{SERAPIS}.
+
+A prediction is only as good as the chain behind it. Here we re-derive every link: lattice sums, the tilt, the inflaton mass, reheating, $N_*$, the spectra, and the side sectors. Each check was written as a pre-registration file and committed, with its SHA-256 hash, before any number was computed~\cite{P4}. Fixes after a lock went into a deviations file written before any rerun, and failed expectations are reported as failed. Every number below comes from a locked script whose output is in the archive~\cite{AEGIS}. The frozen band is not changed by anything here; it is still what will be scored.
+
+\section{What the audit confirmed}
+\emph{Lattice sums and the tilt.} A direct lattice sum gives $E(\rho,2)=5.7833592$ and $E(i,2)=6.0268120$. The isotropic minimum sits at $\rho$, and the cusp approach $E(\tfrac12+iy,2)/2\zeta(4)y^2=1.000065$ at $y=30$. The BHK formula reproduces $C=(1.0$--$1.3)\times10^{-6}$ for every row of the stuck-D3 tadpole $3N+N_0+N_{\rm flux}=16$. The flux-free placement $(N,N_0)=(5,1)$ gives $N_{\rm eff}=4$. A benchmark $g_s=0.232$, $\mathrm{Im}\,S=0.485$, $\mathrm{Im}\,S\,\mathrm{Im}\,\rho=781$ gives $C=1.249\times10^{-6}$. \emph{Status: computed.}
+
+\emph{Vacuum curvature.} With $n=1$, $V''(\phi)$ at $\rho$ is $11.567\,V_0$ and $m_\phi^2/H_*^2=34.8$, as in the original derivation. \emph{Status: computed.}
+
+\emph{Unchanged sectors.} The following are unchanged by the corrections below:
+\begin{itemize}
+\item the neutrino-mass input $\Sigma m_\nu=0.05878$~eV (normal ordering, $m_1\approx0$, NuFIT~6.0~\cite{NuFIT});
+\item the safety caps $n_s\le0.985$, $r\le8.3\times10^{-4}$;
+\item the absence of dark radiation at $\rho$ (the light sterile states thermalise, with a margin of $\times55$--$376$);
+\item matter parity.
+\end{itemize}
+
+\section{What the audit corrected}
+\emph{Inflaton mass.} The derivation used $m_\phi=2.2\times10^{13}$~GeV at $\rho$. Its own ratio $m^2/H^2=34.7$ then implies $H_*=3.7\times10^{12}$~GeV. The predicted $r$ with $A_s=2.1\times10^{-9}$, however, gives $H_*=5.4\times10^{12}$~GeV and $V_0^{1/4}=4.77\times10^{15}$~GeV. The corrected mass is $m_\phi=3.17\times10^{13}$~GeV. \emph{Status: computed; error found.}
+
+\emph{Kähler weight of the couplings.} At $\rho$ the inflaton reheats by decaying to heavy neutrinos through the flavour modulus of a $\Gamma_2$ $2\oplus1$ sector, and that modulus is the inflaton itself. Two scripts mapped the potential with $y=e^{\sqrt2\phi}$ ($n=1$) but converted the couplings with $y\sqrt{2/3}$, i.e.\ $K=-3\ln(2\,\mathrm{Im}\,\tau)$, for the same field. With $n=1$ the couplings grow by $\sqrt3$ and the widths by 3. \emph{Status: computed; error found.}
+
+\emph{Reheating and $N_*$.} A direct rerun with both fixes reproduces the rescaled $T_R$ to $\le0.15\%$. With the standard-model $g_*=106.75$ the window is $T_R=6.6\times10^8$--$2.0\times10^{10}$~GeV. The model is supersymmetric, however, so the correct count at $T_R$ is the MSSM value $g_*=228.75$. That lowers $T_R$ by $(106.75/228.75)^{1/4}=0.8265$, giving
+\begin{equation}
+T_R=5.5\times10^8\text{--}1.65\times10^{10}~\text{GeV},\qquad N_*=50.07\text{--}51.22 .
+\end{equation}
+$N_*$ is matched with the exact end of inflation ($\epsilon_H=1$), not an approximate one. The explicit $g_*$ terms in $N_*$ cancel at fixed $T_R$; we checked this to all printed digits. The frozen band assumed $N_*=48.4$--$49.9$. \emph{Status: computed; corrected.}
+
+\emph{Running relation.} The parameter-free running relation of Ref.~\cite{P1}, with $(p,\kappa)=(2\sqrt2,1)$, had been reported as $13$--$16\%$ off. That number belonged to a predecessor potential. For SERAPIS-$E$ the relation sits $3.3$--$4.0\%$ below exact $\alpha_s$. \emph{Status: computed; correction in the model's favour.}
+
+\emph{Second vacuum.} The variant with its vacuum at $\tau=i$ uses the computed inflaton mass $(2.28$--$2.65)\times10^{11}$~GeV. This gives $T_R=1.3$--$5.0\times10^6$~GeV and $N_*=50.40$--$50.45$, and narrows the fitted tilt to $\epsilon\approx(1.39$--$1.44)\times10^{-4}$. \emph{Status: computed.}
+
+\emph{Two smaller corrections.}
+\begin{itemize}
+\item High-luminosity LHC disappearing-track searches reach winos only up to $0.9$--$1.1$~TeV~\cite{HLLHC}. They therefore cannot close the post-hoc wino window of Ref.~\cite{P3}.
+\item Two ``bridge'' null tests that had been applied to SERAPIS points belong to a predecessor model. They fail on every SERAPIS point and are not tests of this model.
+\end{itemize}
+
+\section{The audited predictions}
+Scanning $C=(1.0$--$1.3)\times10^{-6}$ over the corrected $T_R$ window with exact Mukhanov--Sasaki spectra gives
+\begin{align}
+n_s&=0.97166\text{--}0.97596,\qquad r=(4.39\text{--}4.90)\times10^{-4},\nonumber\\
+\alpha_s&=-(9.11\text{--}10.14)\times10^{-4}.
+\end{align}
+The higher $N_*$ moves the range up by about $0.001$ in $n_s$. One corner is outside the frozen $n_s$ ceiling, and the low-$C$, high-$T_R$ corners fall below the frozen $r$ floor. We record this tension openly. Because the audit came after the freeze, the audited range is a postulate and the frozen band is what gets scored.
+
+\emph{A point prediction.} Leptogenesis at $\rho$ works for heavy-neutrino coupling $c\gtrsim1$: 41--64\% of the scanned light-neutrino parameter space reproduces the observed baryon asymmetry at $M_H=10^{12}$~GeV. It fails our 10\% rule for $c=0.3$, reaching only 2.2\%. Taking $c=1$ and $M_H=10^{12}$~GeV fixes $T_R=7.39\times10^8$~GeV and so $N_*=50.18$. With the string benchmark $C=1.25\times10^{-6}$, the exact spectra give
+\begin{equation}
+n_s=0.97439,\quad r=4.82\times10^{-4},\quad \alpha_s=-9.98\times10^{-4}.
+\end{equation}
+This point lies inside the frozen band, $2.5\times10^{-4}$ below its $n_s$ ceiling. It is $+2.0\sigma$ from CMB-SPA ($0.9684\pm0.0030$~\cite{SPT}) and $+0.6\sigma$ from CMB-SPA+DESI ($0.9728\pm0.0027$). Varying the leptogenesis choices moves it: $c=3$ stays inside, $M_H=10^{13}$~GeV leaves in $n_s$. \emph{Status: postulate.}
+
+\section{Toolkit cross-checks}
+The spectra above come from two independent paths.
+\begin{itemize}
+\item \emph{Exact path:} numerical Mukhanov--Sasaki mode integration.
+\item \emph{Fast path:} third-order slow-roll flow on the exact background, from the Janus calculator~\cite{Janus}.
+\end{itemize}
+On nine points spanning the audited range the two agree to $|\Delta n_s|\le1.1\times10^{-6}$, $\Delta r/r\approx0.011\%$ and $|\Delta\alpha_s|\le3.3\times10^{-6}$. Second-order flow alone is off by $\Delta n_s\approx-1.6\times10^{-5}$.
+
+Getting $\alpha_s$ right from the exact path needed one fix. Starting modes at $k/aH=200$ leaves a ripple of relative size $(aH/k)^2$ in $P(k)$, which a narrow finite difference turns into $10^{-4}$-level noise in $\alpha_s$. The fix, starting at $k/aH=4000$ and fitting nine points over $\pm0.1$ in $\ln k$, is described in a companion note~\cite{P6}.
+
+With CAMB~2.0.5~\cite{CAMB}, the primordial-tensor $D_\ell^{BB}(\ell=80)$ is $2.7$--$3.0\times10^{-5}~\mu{\rm K}^2$ for $r=4.4$--$4.9\times10^{-4}$. Every point satisfies $r<0.036$.
+
+\section{How each input moves the sky}
+We perturbed one input at a time by a fixed amount (a ``wave'') at a baseline point ($C=1.15\times10^{-6}$, $T_R=10^7$~GeV), applied it in both directions, and measured the response. All responses were linear, with up/down asymmetry $\le3\%$. Strengths are $|\Delta n_s|$ in units of the CMB-SPA error:
+\begin{itemize}
+\item the tilt $C$ ($\pm10\%$): $0.394\sigma$;
+\item $N_*$ ($\pm1$ e-fold): $0.343\sigma$;
+\item a decade in $T_R$: $0.261\sigma$.
+\end{itemize}
+The tilt therefore dominates, reversing the ordering we had assumed. Inside the reheating chain, the uncertainties in the inflaton mass ($\pm15\%$), in $g_*$ (SM vs MSSM) and in the K\"ahler weight ($\times\sqrt3$) move $n_s$ by only $0.016\sigma$, $0.021\sigma$ and $0.061\sigma$. The measured derivatives at the point are
+\begin{align}
+\frac{\partial n_s}{\partial\ln C}&=1.171\times10^{-2}, & \frac{\partial\ln r}{\partial\ln C}&=0.283,\nonumber\\
+\frac{\partial n_s}{\partial\log_{10}T_R}&=7.75\times10^{-4}, & \frac{\partial\ln r}{\partial\log_{10}T_R}&=-0.0214 .
+\end{align}
+The implied slopes $d\ln r/dn_s$ match the edges of the audited range to 2--8\%.
+
+\section{The CMB as a string meter}
+Since $C\propto N_{\rm eff}/(\mathrm{Im}\,S\,\mathrm{Im}\,\rho)$ and $N_{\rm eff}=4$ is fixed by the tadpole, a measured $n_s$ is a measurement of the product of the dilaton and the transverse volume modulus. A Fisher forecast with the derivatives above gives:
+\begin{itemize}
+\item Simons Observatory with SPHEREx ($\sigma(n_s)\approx0.0016$~\cite{SOfc}): $\mathrm{Im}\,S\,\mathrm{Im}\,\rho$ to $\pm14\%$, if $T_R$ is known.
+\item With LiteBIRD's optimistic $\sigma(r)\approx5\times10^{-5}$ added and $T_R$ free: $\pm19\%$, with $T_R$ to $2.76$ decades (correlation $-0.73$).
+\item At LiteBIRD's requirement $\delta r=10^{-3}$, $r$ carries no information.
+\end{itemize}
+For the benchmark $\mathrm{Im}\,S\,\mathrm{Im}\,\rho=780$, the inflaton torus is a long thin tube at horizon exit ($y\approx14.6$) and relaxes to the hexagonal torus at the end. \emph{Status: forecast (postulate passed its pre-stated check).}
+
+\section{Two side postulates}
+\emph{Gravitino window (passes).} With $K=-\ln(2\,\mathrm{Im}\,\tau)$, positivity of the nilpotent-sector potential bounds $m_{3/2}/H$ along the trajectory. At SERAPIS-$E$'s own field values the bound is
+\begin{itemize}
+\item $m_{3/2}<2.0\times10^9$~GeV at horizon exit ($y=14.6$);
+\item $m_{3/2}<6.7\times10^8$~GeV twelve e-folds earlier ($y=16.6$).
+\end{itemize}
+This is $\times960$ above the $\lesssim7\times10^5$~GeV an anomaly-mediated wino window needs. The bound was marginal for a predecessor model that exits at $y=23$--$30$; the $1/y^2$ plateau of SERAPIS-$E$ removes the problem. Non-thermal winos from gravitino decay stay at $\Omega_{\rm nth}\le4.4\times10^{-4}$. \emph{Status: postulate; consistent.}
+
+\emph{Running as a vacuum discriminant (killed).} We asked whether the running relation's $\kappa$ separates the two vacua ($\kappa=1$ at $\rho$, $\kappa=\tfrac12$ at $i$). It does not. At $\tau=i$ the own-$\kappa$ relation is $10.8\%$ off and the crossed one $13.2\%$. Moreover the vacua differ by only $\Delta\alpha_s=1.4\times10^{-4}$, at most $0.09\sigma$ for any planned combination. \emph{Status: killed; kept on record.}
+
+\section{Late universe}
+SERAPIS fixes $\Sigma m_\nu=0.05878$~eV and has no dynamical dark energy. Fitting DESI DR2 BAO~\cite{DESI} plus a compressed CMB likelihood with this $\Sigma m_\nu$ gives $\chi^2=15.32$ for $\Lambda$CDM. A $w_0w_a$ fit with the same $\Sigma m_\nu$ improves this by $\Delta\chi^2=-7.98$ ($w_0=-0.46$, $w_a=-1.61$), a $2.4\sigma$ preference with two extra parameters. This tension is not specific to SERAPIS; it is shared by every model with a cosmological constant. A robust bound $\Sigma m_\nu<0.0588$~eV would exclude normal ordering and SERAPIS together. \emph{Status: computed.}
+
+\section{Tests}
+\begin{itemize}
+\item \emph{$n_s$.} At SO+SPHEREx precision the audited range sits $\ge3.1\sigma$ from the $N_*=60$ attractor and $2.5\sigma$ from the maximal-kination attractor. This is the decisive test around 2030.
+\item \emph{$r$.} $r\approx4.4$--$4.9\times10^{-4}$ is visible only if LiteBIRD reaches its optimistic sensitivity, where it would be an $\approx9\sigma$ detection.
+\item \emph{$\alpha_s$.} Not testable in the 2030s.
+\item \emph{Winos.} Above $1.1$~TeV, winos need gamma-ray line searches or a higher-energy collider.
+\end{itemize}
+
+\section{Limitations}
+\begin{itemize}
+\item The plateau factor $\hat E/(\hat E+1)$ is still a postulate~\cite{P2,P3}.
+\item The $\tau=i$ tilt is fitted.
+\item The wino relic window needs the temperature-dependent $g_*(T)$ and is not re-derived here.
+\item All audited numbers were produced after the frozen band and after the data they are compared with. They are post hoc and will be scored only on future data.
+\end{itemize}
+
+\begin{acknowledgments}
+The derivations, code and audit were developed with the assistance of Claude (Anthropic). The author directed the work and checked the results. Every check has a pre-registration file, a SHA-256 hash committed before computing, a script and an output file in the archive~\cite{AEGIS}.
+\end{acknowledgments}
+
+\begin{thebibliography}{99}
+\bibitem{P3} D.~Eldridge, ``SERAPIS-$E$: Modular Plateau Inflation at the Hexagonal Torus with a One-Loop String Tilt,'' Zenodo (2026), doi:10.5281/zenodo.24290875.
+\bibitem{BHK} M.~Berg, M.~Haack and B.~K\"ors, ``String loop corrections to K\"ahler potentials in orientifolds,'' JHEP \textbf{11}, 030 (2005), arXiv:hep-th/0508043.
+\bibitem{SERAPIS} D.~Eldridge, ``The Shape of the Torus Sets the Sky: SERAPIS Modular Inflation, a String-Loop Tilt and a Parameter-Free Running Test,'' v3.2, Zenodo (2026), doi:10.5281/zenodo.24289118.
+\bibitem{P4} D.~Eldridge, ``Lock Before You Compute: A Pre-Registration Workflow for Theoretical Physics Done with an AI Assistant,'' Zenodo (2026), doi:10.5281/zenodo.24291026.
+\bibitem{AEGIS} Reproducibility archive: github.com/dannyeldridge54/aegis (locks in field\_tests/rules, outputs in field\_tests/results).
+\bibitem{NuFIT} I.~Esteban \emph{et al.}, ``NuFIT-6.0,'' arXiv:2410.05380.
+\bibitem{P1} D.~Eldridge, ``A Parameter-Free Consistency Relation for Plateau Inflation with an Uplift Ramp,'' Zenodo (2026), doi:10.5281/zenodo.24290583.
+\bibitem{HLLHC} X.~Cid~Vidal \emph{et al.}, ``Report from Working Group 3: Beyond the Standard Model Physics at the HL-LHC and HE-LHC,'' arXiv:1812.07831.
+\bibitem{SPT} SPT-3G Collaboration, arXiv:2506.20707.
+\bibitem{Janus} D.~Eldridge, ``Janus String Calculator,'' v1.2, Zenodo (2026), doi:10.5281/zenodo.24299624.
+\bibitem{P6} D.~Eldridge, ``A Start-Condition Ripple in Exact Mukhanov--Sasaki Running,'' companion note (2026).
+\bibitem{CAMB} A.~Lewis, A.~Challinor and A.~Lasenby, Astrophys. J. \textbf{538}, 473 (2000), arXiv:astro-ph/9911177.
+\bibitem{SOfc} B.~Bahr-Kalus, D.~Parkinson and R.~Easther, ``Constraining Cosmic Inflation with Observations: Prospects for 2030,'' arXiv:2212.04115.
+\bibitem{DESI} DESI Collaboration, ``DESI DR2 Results II,'' arXiv:2503.14738.
+\bibitem{P2} D.~Eldridge, ``Three No-Go Results for String Origins of Modular Plateau Inflation,'' Zenodo (2026), doi:10.5281/zenodo.24290738.
+\end{thebibliography}
+\end{document}
