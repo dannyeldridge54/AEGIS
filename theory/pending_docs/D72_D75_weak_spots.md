@@ -12769,3 +12769,11 @@ conventional estimates for m_DM > 1 GeV; EOS uncertainty ≈ 5 %; m/T_FO ≈ 10�
 Verdict: lead strengthened, not resolved. The g_*(T) values needed to compute the shift are in the EOS table (member.ipmu.jp/satoshi.shirai/EOS2018); the paper's text does not quote them,
 and downloading the table needs Danny's OK ("yes table", open since D1187). With it: lock a rerun of thermal_mass with g_*(T) and g_*s(T) and compare to 2.207 TeV.
 MAP: node=wino_window status=corrected touches=[H_relic] ripple=no
+
+## D1231 — JANUS — J7m2: J7d2 bisection start-finder on the three listed J7m PSNI points [all 3 FAILED, as reported by the lock; item 5b BLOCKED]
+Lock: field_tests/rules/PREREG_J7m2_psni.md. Script theory/janus/j7m2_psni.py; result field_tests/results/janus_j7m2_psni.txt.
+For (α, f) = (1e-4, 5), (1e-2, 5), (1e-3, 10): start_bisect "did not reach the e-fold window" (N_tot = 80 ± 0.5 between ASPIC's N* = 60 point and the hilltop). Per the lock, each point stops here; no tuning.
+J7d2's success at (1e-3, 5) does not carry to these parameters. Likely reason (not checked): the PSNI end is a field-value/log-singular end (D1023) and the e-fold count between y60 and the
+hilltop saturates below 80 for these (α, f), so the window is unreachable by construction; a fix would need a different start rule (e.g. the J1d field-value end), i.e. a new lock.
+Large list 5b → BLOCKED (start rule). J7m totals unchanged (16/16 scored points Janus better; 4 listed).
+MAP: none.

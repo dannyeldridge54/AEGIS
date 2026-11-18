@@ -6,7 +6,7 @@ Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN
 2. Janus-MF three fields vs PyTransport — DONE (D1207)
 3. Janus-MF curved field space vs PyTransport NC — DONE (D1217: |Δn_s| 8.1e-7, VALIDATED)
 4. J7k the three listed ASPIC models — DONE (D1215: HI scored, RPQTI/KMIII listed)
-5. Two-parameter ASPIC model scans — DONE (D1218: 16/16 Janus better; PSNI ×3 listed → follow-up 5b with J7d2 bisection)
+5. Two-parameter ASPIC model scans — DONE (D1218: 16/16 Janus better; PSNI ×3 listed; 5b J7d2 bisection FAILED all 3 (D1231) → BLOCKED: needs a field-value-end start rule)
 6. Third-order slow-roll (N3LO) — DONE (D1219: better 16/16 but ×2.88 < locked ×3 → NOT CONFIRMED; follow-up 6b on small-ε points)
 ## AEGIS — Janus-LT / Hyperion (late universe)
 7. L11 Cobaya MCMC check of L7 — DONE (D1205)
