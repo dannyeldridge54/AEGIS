@@ -1898,3 +1898,10 @@ Touches: none.
 1. Read the heavy-ν mass formula M = x·M_s·e^{−2πn Im T} with the instanton on a rigid cycle distinct from the gauge branes. [literature] (D852, hep-th/0609191)
 2. Read M_s ≈ g_s^{1/4}M_P/√(4πV), V=(Im ρ)^{3/2}, and Im S = 1/(2√2π g_s). [derived] (D783, D689)
 3. Concluded M constrains Im S·Im ρ₁ only jointly with Im T_inst, x and V, and that M_H is itself a choice (D1270); the ν handle is useful only if the construction fixes Im T_inst and x. [derived]
+
+## D1277 — Shape selection vs scale (2026-11-18)
+1. Built unit-covolume bases for square, hexagonal, SC, BCC and FCC and verified det = 1 for each. [derived]
+2. Summed the Gaussian energy Σ e^{−πα|v|²} over 14 shells (2D) and 7 shells (3D) for α = 0.25…4. [derived]
+3. 2D: hexagonal is lowest at every α; 3D: BCC lowest for α<1, FCC for α>1, exact tie at α=1, SC never lowest. [derived]
+4. Explained the swap by Poisson duality θ_L(α)=α^{−d/2}θ_{L*}(1/α) with FCC* ~ BCC; self-dual lattices cannot flip. [literature]
+5. Concluded the ρ-sector (hexagonal) preference of D1276 holds at all scales in d=2. [derived]

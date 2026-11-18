@@ -13337,3 +13337,18 @@ and the total volume — three extra unknowns. And D1270 already showed M_H = 1e
 benchmark's own 9.8e10 kills thermal leptogenesis). REVISED: the ν sector becomes a useful handle only if the construction
 fixes the instanton cycle's Im T and x. D1275's meter-not-predictor conclusion stands; only the "next move" is downgraded
 to conditional. (The cross-scale coupling is real — it is just degenerate, not independent.)
+
+## D1277 — Shape selection vs scale: in 2D hexagonal wins at every scale; in 3D BCC and FCC swap exactly at the self-dual scale (2026-11-18)
+MAP: node=n_sector_rho status=computed
+LABEL: numerics (computed) + literature (theorems). No new physics claim.
+Follow-up to D1276 ("does it go the other way?"). Gaussian/theta energy Σ_{v≠0} e^{−πα|v|²}, all lattices at unit covolume:
+- 2D (square vs hexagonal, α = 0.25…4): hexagonal lowest at EVERY α — no flip (reproduces Montgomery).
+- 3D (SC, BCC, FCC, α = 0.25…4): BCC wins for α<1, FCC for α>1, exact tie at α=1 (0.231536 both); SC never wins.
+MECHANISM: Poisson summation, θ_L(α) = α^{−d/2} θ_{L*}(1/α). FCC and BCC are mutual duals, so they must exchange order at the
+self-dual scale α=1. The 2D hexagonal lattice is self-dual up to similarity, so it has no distinct partner to swap with and
+cannot flip. E8 and Leech — optimal at every scale — are self-dual too. So a shape can only lose to its own dual, and only on
+the far side of the self-dual scale.
+RELEVANCE: 2D lattice duality is τ → −1/τ in our modular parameter; τ=i and τ=ρ are fixed points of modular maps. The
+d=2 preference for the ρ (hexagonal) sector in D1276 is therefore scale-robust, not an artefact of the exponent chosen.
+The T-/S-duality parallel is the same Poisson-duality mathematics, recorded as such — not a derived physical link.
+Result file: field_tests/results/shape_duality_flip_2026-11-18.txt.
