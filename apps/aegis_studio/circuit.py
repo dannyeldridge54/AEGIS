@@ -9,7 +9,7 @@ GEOMETRY (a design pattern for the software circuit, not a physics claim):
             16, 120, 1120, … D1294). An UP-link carries a quantity from a lower layer into the next and must arrive unchanged.
   DOWN    — a downward pass feeds top-layer values back into the core and checks the core still reproduces them.
 Layers: A2 = SERAPIS core (τ-plane: n_s, r, C, N*, α_s) · D4 = sectors (reheating / N*) · E8 = observables & colliders ·
-        Leech = string/lattice completion. Supersymmetry (wino, gravitino, goldstino, sfermions) is the next shell beyond.
+        Leech = string/lattice completion · 10D = the ten-dimensional vacuum and its KK tower (the "9 dimensionals"). Supersymmetry (wino, gravitino, goldstino, sfermions) is the next shell beyond.
 
 Tolerances are written here before a law's first run and change only through a dated note — never loosened to pass.
 Correction 2026-11-18 22:41 UTC: bridge B1 r ≈ 3(1−n_s)² (Starobinsky class) was misapplied as a law on the first run;
@@ -30,6 +30,7 @@ LAYOUT = {
     'E8':    {'wino_window': (0, 0), 'Q_dt': (1, 0), 'Q_panel': (0, 1), 'Q_future': (-1, 1), 'Q_life': (-1, 0),
               'tests_cmb': (0, -1), 'G_A2': (1, -1)},
     'Leech': {'X_epstein': (0, 0), 'X_hexin': (1, 0), 'X_mod': (0, 1), 'S_stab': (-1, 1), 'X_narain': (-1, 0), 'X_su3': (0, -1), 'X_d24': (1, -1)},
+    '10D':   {'S_10d': (0, 0), 'S_kk10': (1, 0), 'S_btr': (0, 1), 'S_6d': (-1, 1)},
 }
 
 def run(call, ns_model=NS_MODEL, log_path=None):
@@ -73,6 +74,12 @@ def run(call, ns_model=NS_MODEL, log_path=None):
     fn = get('lattice_lab', {'cmd': 'flip', 'args': ['E8']}); W['E8_selfdual'] = 1.0 if fn.get('self_dual') is True else 0.0
     W['hex_A2_su3'] = get('lattice_lab', {'cmd': 'hexagons', 'args': ['A2']}).get('hexagonal_planes')
     W['Leech_modular'] = 1.0 if get('lattice_lab', {'cmd': 'modular', 'args': ['Leech']}).get('match') is True else 0.0
+    # 10D layer ("9 dimensionals", 2026-11-18 23:20 UTC; tolerances below fixed before the first run)
+    k1 = get('kaluza_scalar', {'D': 10, 'gamma': 1.5}); k2 = get('kaluza_scalar', {'D': 10, 'gamma': 1.5, 'method': 'fd'})
+    W['kk10_kind_critical'] = 1.0 if k1.get('kind') == 'critical' else 0.0
+    W['m2_1_pr'], W['m2_2_pr'] = (k1.get('m2') or [None, None])[:2]; W['m2_1_fd'], W['m2_2_fd'] = (k2.get('m2') or [None, None])[:2]
+    W['m2_1_lock'], W['m2_2_lock'] = 2.9795596, 14.286529   # D1214 (Prüfer, two-solver validated)
+    W['mLpi_1'], W['mLpi_2'] = (k1.get('mL_over_pi') or [None, None])[:2]
     # DOWN pass: the top layers hand values back to the core — the E8-layer r forecast for SERAPIS must equal the core r
     W['ns_down'] = get('serapis_emulator', {'C': W['C_back']}).get('ns') if W.get('C_back') else None
 
@@ -125,6 +132,14 @@ def run(call, ns_model=NS_MODEL, log_path=None):
     law('law', 'Leech', ('X_narain', 'X_mod'), 'E8 is even self-dual (Narain-type: never flips)', W['E8_selfdual'] == 1.0 and W['E8_flips'] == 0.0, f"self-dual {W['E8_selfdual']:.0f}, flips {W['E8_flips']:.0f}")
     law('law', 'Leech', ('X_su3', 'X_epstein'), 'SU(3) root lattice A2 is exactly one hexagon (the SERAPIS tile)', W.get('hex_A2_su3') == 1, f"{W.get('hex_A2_su3')}")
     law('law', 'Leech', ('X_d24', 'X_mod'), 'θ_Leech = E4³ − 720Δ', W['Leech_modular'] == 1.0, f"match {W['Leech_modular']:.0f}")
+    # 10D laws
+    law('law', '10D', ('S_10d',), '10D vacuum is the critical branch at γ = γ_c = 3/2', W['kk10_kind_critical'] == 1.0, 'kaluza_scalar D = 10, γ = 3/2')
+    tri('10D', ('S_kk10', 'S_10d', 'S_btr'), 'm²₁ (10D scalar KK)', ('m2_1_pr', 'm2_1_fd', 'm2_1_lock'), 1e-5, rel=True)
+    tri('10D', ('S_kk10', 'S_10d', 'S_6d'), 'm²₂ (10D scalar KK)', ('m2_2_pr', 'm2_2_fd', 'm2_2_lock'), 1e-5, rel=True)
+    d1 = abs(W['mLpi_1']/0.97 - 1) if W.get('mLpi_1') else float('inf'); d2 = abs(W['mLpi_2']/2.13 - 1) if W.get('mLpi_2') else float('inf')
+    law('law', '10D', ('S_btr', 'S_kk10'), 'KK masses match BTR 2209.10553 (m L/π = 0.97, 2.13) within 3% [known open, D1141]', max(d1, d2) < 0.03,
+        f"m L/π = {W.get('mLpi_1')}, {W.get('mLpi_2')} → off {d1:.1%}, {d2:.1%} (convention/definition gap, D1141/D1214)")
+    law('down', '10D→Leech', ('S_6d', 'S_stab'), '6D reduction stays stable (scalar sector b ≥ 0)', W['S6_stable'] == 1.0, 'kaluza_stable D = 6, γ = 2')
     # UP links: the SERAPIS hexagon carried up the nesting chain (counts locked in D1294)
     for lo, hi, L, n in (('A2', 'D4', 'D4', 16), ('D4', 'E8', 'E8', 1120), ('A2', 'Leech', 'A2', 1)):
         law('up', f'{lo}→{hi}', ('X_hexin',), f'hexagon carried {lo} → {hi}: {n} copies in {L}', W.get(f'hex_{L}') == n, f"{W.get(f'hex_{L}')} (D1294: {n})")
