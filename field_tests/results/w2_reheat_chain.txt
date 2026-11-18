@@ -1,0 +1,6 @@
+baseline (PW2 point): N* 50.2447 n_s 0.974456 r 4.81318e-04 α_s -9.97059e-04
+w_m (T_R ×1.1537^±1): +: ΔN* +0.0475 Δn_s +4.73e-05 Δr/r -1.21e-03 Δα +6.0e-07 | −: ΔN* -0.0475 Δn_s -4.73e-05 Δr/r +1.21e-03 | strength 0.016 σ_SPA | asym 0.00 | expect |Δn_s| 4.8e-05 → in
+w_g (T_R ×0.8265^±1): +: ΔN* -0.0632 Δn_s -6.31e-05 Δr/r +1.61e-03 Δα -1.1e-06 | −: ΔN* +0.0632 Δn_s +6.30e-05 Δr/r -1.61e-03 | strength 0.021 σ_SPA | asym 0.00 | expect |Δn_s| 6.4e-05 → in
+   g-term check: Nstar(g=228.75, T_R_MSSM) = 50.1814 vs Nstar(g=106.75, same T_R) = 50.1814 (cancellation at fixed T_R)
+w_n (T_R ×1.7321^±1): +: ΔN* +0.1823 Δn_s +1.81e-04 Δr/r -4.62e-03 Δα +5.0e-06 | −: ΔN* -0.1823 Δn_s -1.82e-04 Δr/r +4.67e-03 | strength 0.061 σ_SPA | asym 0.00 | expect |Δn_s| 1.8e-04 → in
+(1) expectation: PASS  (168 s)
