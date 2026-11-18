@@ -1,0 +1,4 @@
+grid 2.4 s
+SERAPIS late (ΛCDM, Σm_ν 0.05878): χ² 15.322 at h 0.6842, ω_b 0.02241, ω_bc 0.13979 | L5 at 0.0587: 15.32 → T1 PASS
+w0waCDM (Σm_ν 0.05878): χ² 7.337 at w0 -0.457, wa -1.608, h 0.6383 | Δχ² = -7.98 → p = 0.0185 (2 dof) ≈ 2.36σ preference for dynamical dark energy over SERAPIS's ΛCDM
+total 19 s → T3 PASS
