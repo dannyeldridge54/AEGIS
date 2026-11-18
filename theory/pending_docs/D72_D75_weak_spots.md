@@ -14211,3 +14211,12 @@ MAP: node=band_i status=computed touches=[] ripple=no
 - No effect / already in sync (17 pairs, reasons in sync.yaml): lattice-shape notes D1279–D1298 (filed on n_sector_rho/serapis_e; D1287), frozen band_e, audited box already on MSSM g* (D1262), D1275b circularity (consistent with the string meter's inverse-map reading), lower wino ceiling (m3/2 margin only grows), D1343 confirmation.
 - After this pass: `python tools/ladder/sync.py` lists the open items; the derivation loop now runs it every tick.
 MAP: node=vac_i status=assumed touches=[] ripple=no
+
+## D1345 — CUBEMIND — verifier pass: 8 open proposals reviewed (6 rejected with reasons, 2 answered from locked results); the QA1 eval had failed every cycle (import path) and is fixed (2026-11-18)
+- [TOOL] CubeMind's learn loop on the PC was idle: "holding (8 open proposals await verification)" every 15 s, and step_eval returned rc=1 every cycle (qa1_eval.py run as a script could not import mindmem). Fixed on the PC copy and in the CubeMind repo (janus-pair 50bb5db).
+- QA1 now runs: hit@5 default weights 0.25 vs similarity-only 0.35 (20 questions, 519 records) — this is the hash-embed HARNESS score (Ollama not reachable from the folder sandbox); the real PC score decides. If the PC score shows the same order, the tuned retrieval weights are hurting and should be rolled back (learn-loop rule: keep a change only if the score rises).
+- Verdicts (filed by appending superseding records; nothing deleted; script CubeMind_janus/verify_batch_d1345.py):
+  - Rejected (6): τ moved off ρ ×4 — ill-posed, τ = ρ is the only minimum (D1280); "T_R sets C" — category error (C is the string-side input, D1275b); "n_s vs N_eff" — not a model relation.
+  - Answered (2): "C → n_s" — n_s and r rise with C (emulator D1272: C 1.0/1.15/1.3/1.5e-6 → n_s 0.97173/0.97333/0.97495/0.97712), tier EVIDENCE; "T_R → n_s" — doubling T_R gives N* +0.23, n_s +~1.8e-4, r −~0.9% [estimate from the D1262 audited box], tier HYPOTHESIS.
+- Open proposals now 0, so the proposer restarts; the rejection reasons feed its next prompt.
+MAP: none

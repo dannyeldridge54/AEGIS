@@ -2121,3 +2121,7 @@ Touches: none.
 1. [derived] Out-of-sync pairs found by comparing each node's last D-note with its inputs' last D-notes (19 nodes).
 2. [derived] vac_i: D1280 (τ = i is a saddle of SERAPIS-E) implies the τ = i vacuum needs a pinned axion → status assumed.
 3. [derived] 17 pairs reviewed as no effect or already in sync (reasons recorded in theory/map/sync.yaml); tests_lhc left to the wino track.
+
+## D1345: CubeMind verifier pass
+1. [derived] 8 proposals checked against D1280, D1275b, D1272, D1262; 6 rejected with reasons, 2 answered (1 tool-grounded, 1 estimate).
+2. [estimate] dN*/d ln T_R ≈ 0.34 from the audited box (D1262), giving the T_R → n_s answer.
