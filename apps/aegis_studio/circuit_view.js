@@ -64,7 +64,7 @@
     const api = window.pywebview?.api; const b = box.querySelector('#bcircuit');
     if (!api || !api.run_circuit) { box.querySelector('#copen').textContent = 'Run the circuit from the Janus app (it needs the toolkit registry).'; return; }
     b.disabled = true; b.textContent = 'Running…';
-    try { last = await api.run_circuit(); draw(last); } catch (e) { box.querySelector('#copen').textContent = 'Circuit error: ' + e; }
+    try { last = await api.run_circuit(); window.__circuitLast = last; draw(last); } catch (e) { box.querySelector('#copen').textContent = 'Circuit error: ' + e; }
     b.disabled = false; b.textContent = 'Run circuit';
   }
   box.querySelector('#bcircuit').onclick = runIt;
@@ -75,5 +75,5 @@
   tab.addEventListener('click', () => show(true));
   document.querySelectorAll('.tabs .tab').forEach(t => { if (t !== tab) t.addEventListener('click', () => show(false)); });
   addEventListener('resize', () => { if (!box.hidden) draw(last); });
-  window.circuitResult = r => { last = r; if (!box.hidden) draw(r); };   // the weave pass can push its circuit result here
+  window.circuitResult = r => { last = r; window.__circuitLast = r; if (!box.hidden) draw(r); };   // the weave pass can push its circuit result here
 })();

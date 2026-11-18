@@ -31,6 +31,7 @@ class Api:
     def run_chain(self, name): return run_chain(name)
     def chains(self): return sorted(CHAINS)
     def run_circuit(self): return run_circuit()
+    def sky_sample(self, n=30000): return sky_sample(int(n))
     def sweep_node(self, node): return sweep_node(node)
     def set_weave_sweep(self, on): WEAVE.sweep = bool(on); return dict(sweep=WEAVE.sweep)
     def open_classic(self):
@@ -336,6 +337,27 @@ def _chain_lattice():
         f"A2 Epstein E(ρ,2) = {ep.get('epstein', 0):.7f} is the SERAPIS-E vacuum energy scale; same potential gives n_s = {em['ns']:.4f} in band")
     return st
 
+
+def sky_sample(n=30000):
+    """Gallery sky map: a random sample of Hyperion orbits (l, b, ecc) from the Mapper output. Read-only; no git touched."""
+    import glob, gzip, csv, random
+    base = os.environ.get('HYPERION_DIR') or os.path.join(os.path.expanduser('~'), '.copilot', 'repos', 'AEGIS', 'ufe-v2', 'cosmos_map')
+    for sub, model in (('hyperion', 'MWPotential2014'), ('hyperion_mcm17', 'McMillan17')):
+        tiles = sorted(glob.glob(os.path.join(base, sub, 'L5', '*.csv.gz')))
+        if tiles: break
+    else: return dict(stars=[], tiles=0, model='none', note='no Mapper output yet')
+    random.seed(1); random.shuffle(tiles); stars, used = [], 0
+    per = max(5, n // max(1, min(len(tiles), 400)))
+    for tp in tiles[:400]:
+        try:
+            with gzip.open(tp, 'rt', newline='') as fh: rows = list(csv.DictReader(fh))
+        except Exception: continue
+        used += 1
+        for r in random.sample(rows, min(per, len(rows))):
+            try: stars.append([round(float(r['l']), 3), round(float(r['b']), 3), round(float(r['ecc']), 3)])
+            except (KeyError, ValueError): pass
+        if len(stars) >= n: break
+    return dict(stars=stars[:n], tiles=used, model=model, total_tiles=len(tiles))
 def run_circuit():
     """The SERAPIS circuit (circuit.py): every component fires in order, wires carry the quantities, laws are checked.
     Each run is appended to CubeMind's aegis_link/circuit_runs.jsonl (drift vs the last run); each law goes to janus_tests."""
