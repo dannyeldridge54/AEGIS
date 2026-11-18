@@ -1,0 +1,26 @@
+NA6 part 1 — T_R direct rerun vs NA3 rescaled
+  c=0.3 M_H=1e+12: rerun 6.608e+08 vs NA3 6.617e+08 (-0.14%) in
+  c=0.3 M_H=1e+13: rerun 6.463e+09 vs NA3 6.472e+09 (-0.14%) in
+  c=0.3 M_H=5e+13: rerun 2.031e+10 vs NA3 2.028e+10 (+0.15%) in
+  c=1 M_H=1e+12: rerun 8.937e+08 vs NA3 8.950e+08 (-0.15%) in
+  c=1 M_H=1e+13: rerun 7.258e+09 vs NA3 7.269e+09 (-0.15%) in
+  c=3 M_H=1e+12: rerun 1.986e+09 vs NA3 1.986e+09 (+0.00%) in
+  c=3 M_H=1e+13: rerun 1.432e+09 — NEWLY OPEN (HL channel, M_H+M_L = 3.12e13 < m_φ 3.17e13); was 0.017 GeV
+PART 1 VERDICT: PASS
+
+NA6 part 2 — D775 grid with corrected inputs (κ = 0.9391 applied)
+c=0.3 M_H=1e+12 T_R=6.61e+08 m1=0.0001: pair M=2.12e+11 pass=2.2% max|eps|=1.02e-05 (eps_DI=2.09e-05, ratio 0.49); single M=1.00e+12 pass=0.0% max|eps|=3.52e-06 (eps_DI=9.86e-05, ratio 0.04); 
+c=0.3 M_H=1e+12 T_R=6.61e+08 m1=0.001: pair M=2.12e+11 pass=2.2% max|eps|=9.85e-06 (eps_DI=2.09e-05, ratio 0.47); single M=1.00e+12 pass=0.0% max|eps|=3.43e-06 (eps_DI=9.86e-05, ratio 0.03); 
+K4: max|eps_pair|/eps_DI = 0.47 (need 0.3-1.3)
+c=1 M_H=1e+12 T_R=8.94e+08 m1=0.0001: pair M=7.07e+11 pass=41.4% max|eps|=5.38e-05 (eps_DI=6.97e-05, ratio 0.77); single M=1.00e+12 pass=63.6% max|eps|=4.27e-05 (eps_DI=9.86e-05, ratio 0.43); 
+c=1 M_H=1e+12 T_R=8.94e+08 m1=0.001: pair M=7.07e+11 pass=40.9% max|eps|=5.19e-05 (eps_DI=6.97e-05, ratio 0.74); single M=1.00e+12 pass=59.3% max|eps|=4.16e-05 (eps_DI=9.86e-05, ratio 0.42); 
+c=3 M_H=1e+12 T_R=1.99e+09 m1=0.0001: pair M=1.00e+12 pass=0.0% max|eps|=1.39e-06 (eps_DI=9.86e-05, ratio 0.01); single M=4.71e+11 pass=75.2% max|eps|=5.21e-05 (eps_DI=4.64e-05, ratio 1.12); 
+c=3 M_H=1e+12 T_R=1.99e+09 m1=0.001: pair M=1.00e+12 pass=0.0% max|eps|=1.34e-06 (eps_DI=9.86e-05, ratio 0.01); single M=4.71e+11 pass=72.7% max|eps|=5.08e-05 (eps_DI=4.64e-05, ratio 1.09); 
+c=0.3 M_H=1e+13 T_R=6.46e+09 m1=0.0001: pair M=2.12e+12 pass=83.1% max|eps|=1.02e-04 (eps_DI=2.09e-04, ratio 0.49); single M=1.00e+13 pass=81.2% max|eps|=3.52e-05 (eps_DI=9.86e-04, ratio 0.04); 
+c=0.3 M_H=1e+13 T_R=6.46e+09 m1=0.001: pair M=2.12e+12 pass=84.0% max|eps|=9.85e-05 (eps_DI=2.09e-04, ratio 0.47); single M=1.00e+13 pass=79.6% max|eps|=3.43e-05 (eps_DI=9.86e-04, ratio 0.03); 
+c=1 M_H=1e+13 T_R=7.26e+09 m1=0.0001: pair M=7.07e+12 pass=91.1% max|eps|=5.38e-04 (eps_DI=6.97e-04, ratio 0.77); single M=1.00e+13 pass=93.0% max|eps|=4.27e-04 (eps_DI=9.86e-04, ratio 0.43); 
+c=1 M_H=1e+13 T_R=7.26e+09 m1=0.001: pair M=7.07e+12 pass=90.8% max|eps|=5.19e-04 (eps_DI=6.97e-04, ratio 0.74); single M=1.00e+13 pass=92.7% max|eps|=4.16e-04 (eps_DI=9.86e-04, ratio 0.42); 
+c=3 M_H=1e+13 T_R=1.43e+09 m1=0.0001: pair M=1.00e+13 pass=18.9% max|eps|=1.39e-05 (eps_DI=9.86e-04, ratio 0.01); single M=4.71e+12 pass=88.6% max|eps|=5.21e-04 (eps_DI=4.64e-04, ratio 1.12); 
+c=3 M_H=1e+13 T_R=1.43e+09 m1=0.001: pair M=1.00e+13 pass=17.3% max|eps|=1.34e-05 (eps_DI=9.86e-04, ratio 0.01); single M=4.71e+12 pass=87.5% max|eps|=5.08e-04 (eps_DI=4.64e-04, ratio 1.09); 
+VERDICT: lepto_rho: some M_H=1e12 case below 10%
+κ unverified rows (M/T_R < 500): c=0.3 pair M=2.12e11/T_R 6.61e8 = 321; c=0.3 pair M=2.12e12/6.46e9 = 328
