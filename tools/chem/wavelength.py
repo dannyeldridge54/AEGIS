@@ -15,8 +15,10 @@ def air(lam_vac_nm):
 def series(ion='H', n_low=2, n_max=12):
     return [dict(ion=ion, series=SERIES.get(n_low, f'n={n_low}'), n_up=k, lam_nm=line(ion, n_low, k)) for k in range(n_low + 1, n_max + 1)] + [dict(ion=ion, series=SERIES.get(n_low), n_up='∞', lam_nm=line(ion, n_low, 10**9))]
 def hydrogen_21cm():
-    """Hyperfine frequency (Hz), Fermi formula with reduced-mass factor; no QED/recoil corrections."""
-    return (8/3)*gp*(me/mp)*alpha**2*c*Rinf*(1 + me/mp)**-3   # CH1 DEV D1: 8/3 (lock had 4/3)
+    """Hyperfine frequency (Hz): Fermi formula with reduced-mass factor and the electron anomaly (1 + a_e) (CH1b).
+    Not included: Breit +3/2 alpha^2, higher QED, recoil, proton structure (partly cancel; residual stated in CH1b)."""
+    ae = K.physical_constants['electron mag. mom. anomaly'][0]
+    return (8/3)*gp*(me/mp)*alpha**2*c*Rinf*(1 + me/mp)**-3*(1 + ae)   # CH1 DEV D1: 8/3 (lock had 4/3); CH1b: (1 + a_e)
 BANDS = [(1e-3, 'radio'), (1e-6, 'microwave/sub-mm'), (7.8e-7, 'infrared'), (3.8e-7, 'visible'), (1e-8, 'ultraviolet'), (1e-11, 'X-ray'), (0, 'gamma')]
 def convert(lam_m=None, nu_hz=None, E_eV=None):
     if lam_m is None: lam_m = c/nu_hz if nu_hz else h*c/(E_eV*eV)
