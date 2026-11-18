@@ -360,3 +360,4 @@ Every app gets packaged for Windows and Android: Janus Studio, Janus Loops, Sara
 12. C
 13. U
 14. N
+- **Approval (Danny, 23:07 CT):** "Yes, install on PC". OK given to download and install the Android SDK command-line tools, a JDK (Temurin 17) and Gradle on the PC, through a queued PC job, for building debug APKs overnight. Use only official sources (developer.android.com / Adoptium / gradle.org). Install into Desktop\AEGIS_PCJOBS\android_tools so nothing system-wide changes and no system or security settings are touched.
