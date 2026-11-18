@@ -42,15 +42,15 @@ function field(x, y) { let s = 0; for (let i = 0; i < NN; i++) { const a = amp[i
 const fabric = []; (() => {
   const mk = (pts, colors) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(pts.length*3), 3)); g.setAttribute('color', new THREE.BufferAttribute(new Float32Array(colors), 3));
     const l = new THREE.Line(g, new THREE.LineBasicMaterial({vertexColors: true, transparent: true, opacity: 0.32, blending: THREE.AdditiveBlending, depthWrite: false})); l.userData.base = pts; weave.add(l); fabric.push(l); };
-  for (let j = 0; j < 46; j++) { const y = -58 + j*2.5; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.78 - 0.75*j/45, 1, 0.55);
+  for (let j = 0; j < 46; j++) { const y = -58 + j*2.5; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.62 + 0.30*j/45, 1, 0.55);
     for (let i = 0; i <= 160; i++) { const x = -105 + 210*i/160; pts.push([x, y + 0.9*Math.sin(i*0.9 + j)]); cs.push(c.r, c.g, c.b); } mk(pts, cs); }
-  for (let i = 0; i < 70; i++) { const x = -105 + 210*i/69; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.5 + 0.4*i/69, 1, 0.45);
+  for (let i = 0; i < 70; i++) { const x = -105 + 210*i/69; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.64 + 0.28*i/69, 1, 0.45);
     for (let j = 0; j <= 90; j++) { const y = -58 + 113*j/90; pts.push([x + 0.9*Math.sin(j*0.9 + i), y]); cs.push(c.r, c.g, c.b); } mk(pts, cs); }
 })();
 // ---------- threads (the web's links) ----------
 const threads = WEB.edges.map((e, k) => { const a = P[e.s], b = P[e.t]; const mid = a.clone().add(b).multiplyScalar(0.5); mid.z += 6 + (k % 5); mid.y += ((k*7) % 9) - 4;
   const curve = new THREE.QuadraticBezierCurve3(a.clone(), mid, b.clone()); const base = curve.getPoints(64);
-  const g = new THREE.BufferGeometry().setFromPoints(base); const c = e.sign < 0 ? new THREE.Color(C('--red')) : col(byId[e.s].lane);
+  const g = new THREE.BufferGeometry().setFromPoints(base); const xm = (a.x + b.x)/2; const c = e.sign < 0 ? new THREE.Color(C('--red')) : new THREE.Color().setHSL(0.62 + 0.30*Math.min(1, Math.max(0, (xm + 100)/200)), 1, 0.6);
   const l = new THREE.Line(g, new THREE.LineBasicMaterial({color: c, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false})); weave.add(l);
   return {e, l, base, c}; });
 // particles running along threads
@@ -58,9 +58,9 @@ const NP = threads.length*2; const pg = new THREE.BufferGeometry(); pg.setAttrib
 const pts = new THREE.Points(pg, new THREE.PointsMaterial({size: 2.2, vertexColors: true, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false})); weave.add(pts);
 // ---------- knobs (nodes) ----------
 const deg = new Array(NN).fill(0); WEB.edges.forEach(e => { deg[ix[e.s]]++; deg[ix[e.t]]++; });
-const knobs = WEB.nodes.map((n, i) => { const g = new THREE.Group(); const c = col(n.lane); const r = 1.4 + 0.25*Math.sqrt(deg[i]);
+const knobs = WEB.nodes.map((n, i) => { const g = new THREE.Group(); const c = col(n.lane); const r = 0.75 + 0.14*Math.sqrt(deg[i]);
   const core = new THREE.Mesh(new THREE.SphereGeometry(r, 20, 14), new THREE.MeshBasicMaterial({color: c})); g.add(core);
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(r*1.9, 0.18, 8, 40), new THREE.MeshBasicMaterial({color: c, transparent: true, opacity: n.status === 'open' ? 0.9 : 0.45}));
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(r*1.8, 0.09, 8, 40), new THREE.MeshBasicMaterial({color: c, transparent: true, opacity: n.status === 'open' ? 0.9 : 0.45}));
   if (n.status === 'killed') core.material.color.multiplyScalar(0.3); g.add(ring); g.position.copy(P[n.id]); g.userData = {id: n.id, core, ring, r}; weave.add(g); return g; });
 // ---------- HUD ----------
 const hud = document.getElementById('hud'); Object.values(LANE).forEach(L => { const d = document.createElement('div'); d.className = 'lane'; d.style.color = C(L.c); d.textContent = L.name; hud.appendChild(d); });
@@ -163,7 +163,7 @@ function frame(now) { requestAnimationFrame(frame); const t = now/1000; const dt
     threads.forEach(th => { const pa = th.l.geometry.attributes.position; th.base.forEach((p, k) => { const f = field(p.x, p.y); pa.setXYZ(k, p.x, p.y + (twoD ? f*0.8 : 0), twoD ? 0 : p.z + f); }); pa.needsUpdate = true; });
     const pp = pg.attributes.position, pc = pg.attributes.color; threads.forEach((th, k) => { for (let q = 0; q < 2; q++) { const u = ((t*0.25*speed + k*0.137 + q*0.5) % 1); const idx = Math.floor(u*64); const p = th.l.geometry.attributes.position;
       pp.setXYZ(2*k + q, p.getX(idx), p.getY(idx), p.getZ(idx) + 0.4); pc.setXYZ(2*k + q, th.c.r, th.c.g, th.c.b); } }); pp.needsUpdate = true; pc.needsUpdate = true;
-    knobs.forEach((g, i) => { const a = amp[i]; const p = P[ids[i]]; g.position.set(p.x, p.y + (twoD ? a*0.8 : 0), twoD ? 0 : a); const s = 1 + Math.min(1.5, Math.abs(a)*0.25) + (ids[i] === sel ? 0.35 + 0.15*Math.sin(t*6) : 0);
+    knobs.forEach((g, i) => { const a = amp[i]; const p = P[ids[i]]; g.position.set(p.x, p.y + (twoD ? a*0.8 : 0), twoD ? 0 : a); const s = 1 + Math.min(1.2, Math.abs(a)*0.2) + (ids[i] === sel ? 0.35 + 0.15*Math.sin(t*6) : 0);
       g.scale.setScalar(s); g.userData.ring.rotation.z = t*(0.3 + 0.1*(i % 5)); g.userData.ring.material.color.set(a > 0.05 ? C('--teal') : a < -0.05 ? C('--red') : C(LANE[byId[ids[i]].lane].c)); });
   } else { land.rotation.z = t*0.05; }
   if (sel) { scopeBuf[sp] = amp[ix[sel]]/8; sp = (sp + 1) % scopeBuf.length; } drawScope();
