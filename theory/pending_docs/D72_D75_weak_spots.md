@@ -13780,3 +13780,10 @@ CERN+1 (low / high background = R_bkg 1 / 10): HL-LHC 0.974 / 0.801 TeV · HE-LH
   part labelled rough. Fix needs the PDF-based route (own LO) or a published 100 TeV wino cross section.
 - P3 PASS: FCC-hh covers the whole SERAPIS window (0.67–1.85 TeV) in every variant (≥ 2.88 TeV); HE-LHC covers 0.67–1.36…1.68 TeV.
 TOOL: tools/lhc/future.py (`reach`, `table`, COLLIDERS).
+
+## D1307 — CERN+1: computed chargino boost replaces fixed βγ = 0.5 (LHC8, all three locked predictions pass)
+MAP: none
+- Parton luminosity L(τ)=Nτ^(−a)(1−√τ)^b fitted to the 13 TeV wino table itself: a=1.564, b=11.92; table shape reproduced to 3.2% over 200–2000 GeV (P1 ≤5%: PASS).
+- Median transverse βγ of the chargino: 0.54 / 0.50 / 0.47 at m = 400/600/800 GeV (P2 in 0.3–0.8: PASS — the old 0.5 was right on the median).
+- Recasts with the full boost distribution: ATLAS 136 fb⁻¹ 661.5 GeV (was 666.6; published 660, now 0.2% off); ATLAS 36 fb⁻¹ 446.6 GeV (was 447.8; published 460, 2.9%) (P3 shifts ≤3%, within 4%: PASS).
+- Tool: tools/lhc/kinematics.py (fit, boost_samples, p_window_avg). Lock: PREREG_LHC8_kinematic_boost.md. [derived]/[estimate]

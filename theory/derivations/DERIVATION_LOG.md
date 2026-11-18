@@ -2078,3 +2078,9 @@ Touches: none.
 2. [estimate] CERN+1: Drell–Yan-scaled cross sections (κ extrapolated), Run-2 efficiency and decay window, background × luminosity × R_bkg (1 or 10).
 3. [derived] HL-LHC 0.974/0.801, HE-LHC 1.684/1.360, FCC-hh 3.741/2.876 TeV; FCC-hh high-background variant 36% short (locked 25% fails); κ = 0 gives 4.03/3.11 TeV.
 4. [derived] Every FCC-hh variant exceeds 1.85 TeV, so the full SERAPIS wino window is testable there.
+
+## D1307: CERN+1 kinematic boost distribution
+1. [derived] Φ(τ₀)=∫dτ/τ L(τ) g(τ₀/τ), g=β(3−β²)/2 for an s-wave fermion pair through a vector current.
+2. [estimate] L(τ) shape N τ^(−a)(1−√τ)^b fitted to Resummino 13 TeV table: max deviation 3.2%.
+3. [derived] transverse βγ = p sinθ/m, cosθ from 1+cos²θ; decay window average replaces fixed βγ.
+4. [estimate] ATLAS recasts 661.5 / 446.6 GeV vs published 660 / 460.
