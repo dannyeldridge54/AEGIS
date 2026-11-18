@@ -279,7 +279,8 @@
     // readout
     var la = lookAltAz();
     var _az = ((Math.round(la.az) % 360) + 360) % 360, _al = Math.round(la.alt) || 0;
-    lookB.innerHTML = 'alt <b>' + _al + '°</b> · az <b>' + _az + '°</b>' + ((compassHeading != null || absSeen) ? '' : ' <span style="color:#ff9" title="no compass: tap Set North">~</span>');
+    var _fv = fov() * R2D, _mag = 24 / _fv;   // ×1 = the starting view
+    lookB.innerHTML = 'alt <b>' + _al + '°</b> · az <b>' + _az + '°</b> · view <b>' + (_fv < 10 ? _fv.toFixed(1) : _fv.toFixed(0)) + '°</b>' + (Math.abs(_mag - 1) >= 0.1 ? ' (×' + _mag.toFixed(_mag < 10 ? 1 : 0) + ')' : '') + ((compassHeading != null || absSeen) ? '' : ' <span style="color:#ff9" title="no compass: tap Set North">~</span>');
     requestAnimationFrame(draw);
   }
 

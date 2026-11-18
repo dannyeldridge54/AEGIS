@@ -1,4 +1,10 @@
 # Changelog
+## 1.6.0 — 18 Nov 2026
+- Compare two people (synastry): pick any saved chart under a cast chart to see the aspects between the two charts, each in plain words, and an overall tone.
+- Tarot: every Minor Arcana card now has its own upright and reversed meaning (all 56), not a suit formula.
+- Point & See shows the field of view and magnification (×1 = the starting view).
+- Search is never silent: offline it says the name lookup needs the internet; online it says "Not found" after 6 seconds if the lookup does not answer.
+- Map zoom buttons lifted off the bottom bar on phones.
 ## 1.5.1 — 18 Nov 2026
 - Point & See: pinch zoom rebuilt on pointer events (works the same on Android, iPhone and desktop), wider zoom range (90° to 2°, even steps), double-tap to zoom in, zoom remembered; Lock shows "Unlock" while locked, the locked view stays still while the phone moves, one finger looks around, and unlocking returns to the phone without a slide.
 - The Point & See button hides while any sheet is open; on small phones "Bigger text" moves into More so the top bar stays one row.

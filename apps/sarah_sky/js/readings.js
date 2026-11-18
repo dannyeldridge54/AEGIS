@@ -194,6 +194,27 @@
     return h;
   }
 
+  /* ---------- two-person comparison (synastry) ---------- */
+  var SYN = { conjunction: 'merges with', sextile: 'gets along easily with', square: 'rubs against', trine: 'flows with', opposition: 'mirrors and challenges' };
+  function recToInp(r) { var d = r.date.split('-'), t = (r.time || '12:00').split(':'); return { y: +d[0], mo: +d[1], d: +d[2], h: +t[0], mi: +t[1], tz: r.tz, lat: +r.lat, lon: +r.lon, houses: r.houses || 'placidus', sidereal: r.zod === 'sid' }; }
+  function synastry(c1, c2) {
+    var out = [], score = 0, W = { conjunction: 1, sextile: 1, trine: 2, square: -1.5, opposition: -1 };
+    c1.pl.forEach(function (a) { c2.pl.forEach(function (b) {
+      var sep = Math.abs(((a.lon - b.lon + 540) % 360) - 180);
+      ASPECTS.forEach(function (x) { var orb = Math.abs(sep - x[0]), lim = (a.name === 'Sun' || a.name === 'Moon' || b.name === 'Sun' || b.name === 'Moon') ? 7 : 5;
+        if (orb <= lim) { out.push({ a: a, b: b, x: x, orb: orb }); var w = W[x[1]] * (1 - orb / (lim + 1)) * ((['Sun','Moon','Venus','Mars'].indexOf(a.name) >= 0 && ['Sun','Moon','Venus','Mars'].indexOf(b.name) >= 0) ? 1.5 : 1); score += w; } });
+    }); });
+    out.sort(function (p, q) { return p.orb - q.orb; });
+    return { list: out, score: score };
+  }
+  function synHTML(n1, c1, n2, c2) {
+    var S = synastry(c1, c2), h = '<h4>' + esc(n1) + ' &amp; ' + esc(n2) + '</h4>';
+    var lvl = S.score > 8 ? 'very harmonious' : S.score > 3 ? 'mostly easy' : S.score > -3 ? 'a mix of ease and friction' : 'lively, with friction to work through';
+    h += '<p>Overall tone: <b>' + lvl + '</b> (balance ' + S.score.toFixed(1) + ').</p><ul class="rd">';
+    S.list.slice(0, 14).forEach(function (a) { h += '<li>' + esc(n1) + '’s ' + a.a.g + ' ' + a.a.name + ' ' + a.x[2] + ' ' + esc(n2) + '’s ' + a.b.g + ' ' + a.b.name + ' (orb ' + a.orb.toFixed(1) + '°): ' + a.a.key.split(',')[0] + ' ' + SYN[a.x[1]] + ' ' + a.b.key.split(',')[0] + '.</li>'; });
+    return h + '</ul><p class="trad">Synastry is an astrological tradition, not astronomy — a conversation starter about two people, not a verdict.</p>';
+  }
+
   /* ---------- tarot spreads ---------- */
   var SPREADS = {
     one: ['The answer'],
@@ -206,7 +227,8 @@
     var T = window.SarahTarot; if (!T) return { name: '?', mean: '' };
     if (i < 22) return { name: T.MAJOR[i][0], mean: rev ? T.MAJOR[i][2] : T.MAJOR[i][1], major: true };
     var k = i - 22, s = T.SUITS[Math.floor(k / 14)], r = T.RANKS[k % 14];
-    return { name: r[0] + ' of ' + s[0], mean: r[1] + ' in ' + s[1] + (rev ? ' — reversed: blocked or turned inward' : '') };
+    var mm = T.MINOR && T.MINOR[s[0]] ? T.MINOR[s[0]][k % 14] : null;
+    return { name: r[0] + ' of ' + s[0], mean: mm ? (rev ? mm[1] : mm[0]) + ' · ' + s[1] : r[1] + ' in ' + s[1] };
   }
   function drawSpread(kind) {
     var pos = SPREADS[kind], deck = []; for (var i = 0; i < 78; i++) deck.push(i);
@@ -269,7 +291,11 @@
       if (!isFinite(inp.lat) || !isFinite(inp.lon) || !inp.y) { $('cOut').innerHTML = '<p>Please enter the date, time and place (latitude/longitude).</p>'; return; }
       try {
         var c = compute(inp);
-        $('cOut').innerHTML = '<h3>' + esc($('cName').value || 'Birth chart') + '</h3>' + wheel(c) + report(c) + transitHTML(c);
+        var others = saved().filter(function (r) { return !(r.name === $('cName').value && r.date === $('cDate').value && r.time === $('cTime').value); });
+        $('cOut').innerHTML = '<h3>' + esc($('cName').value || 'Birth chart') + '</h3>' + wheel(c) + report(c) + transitHTML(c) +
+          '<h4>Compare with someone</h4><div class="row"><select id="cCmp"><option value="">Choose a saved chart…</option>' + others.map(function (r, i) { return '<option value="' + i + '">' + esc(r.name || r.date) + '</option>'; }).join('') + '</select></div><div id="cCmpOut"></div>';
+        var me = $('cName').value || 'This chart';
+        $('cCmp').onchange = function () { var r = others[+this.value]; if (!r) return; try { $('cCmpOut').innerHTML = synHTML(me, c, r.name || r.date, compute(recToInp(r))); } catch (e3) { $('cCmpOut').textContent = 'Could not compare: ' + e3.message; } };
         var rec = { name: $('cName').value, date: $('cDate').value, time: $('cTime').value, tz: inp.tz, place: $('cPlace').value, lat: inp.lat, lon: inp.lon, houses: inp.houses, zod: $('cZod').value };
         var all = saved().filter(function (s) { return !(s.name === rec.name && s.date === rec.date && s.time === rec.time); }); all.unshift(rec);
         try { localStorage.setItem('sky.charts', JSON.stringify(all.slice(0, 30))); } catch (e2) {} fillSaved();
@@ -278,5 +304,5 @@
     };
     m.querySelectorAll('.tb button').forEach(function (b) { b.onclick = function () { $('tOut').innerHTML = spreadHTML(drawSpread(b.dataset.s), $('tQ').value.trim()); $('tOut').scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
   }
-  window.SarahReadings = { compute: compute, transits: transits, lifePath: lifePath, open: function (tab) { var m = $('readings'); if (!m) { build(); m = $('readings'); } m.hidden = false; if (tab) m.querySelector('[data-r="' + tab + '"]').click(); } };
+  window.SarahReadings = { compute: compute, synastry: synastry, transits: transits, lifePath: lifePath, open: function (tab) { var m = $('readings'); if (!m) { build(); m = $('readings'); } m.hidden = false; if (tab) m.querySelector('[data-r="' + tab + '"]').click(); } };
 })();

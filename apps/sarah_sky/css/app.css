@@ -204,3 +204,5 @@ body.panel-open #sarahOverlays:not([open]), body.panel-open #arBtn{ opacity:0; p
 
 body.sheet-open #arBtn{ opacity:0; pointer-events:none; }
 @media (max-width:420px){ #bigText{ display:none; } .bar{ flex-wrap:nowrap; } .search{ min-width:0; } }
+
+@media (max-width:700px){ #sky div:has(> .aladin-zoom-in), #sky .aladin-fov, #sky .aladin-status-bar{ transform:translateY(-10px); } }

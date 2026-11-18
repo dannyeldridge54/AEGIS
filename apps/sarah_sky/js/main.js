@@ -319,7 +319,10 @@ function buildSearch() {
       for (const [k, l] of Object.entries(D.disc?.stars || {})) for (const x of l) if (x.id === gid) st = { ...x, ...(st || {}), cats: [...(st?.cats || []), k] };
       if (st) { goto(st.ra, st.dec, 0.05); showInfo({ kind: "aegis", ...st }); return; }
     }
-    try { state.aladin.gotoObject($("#search").value.trim(), { error: () => alertNote("Not found. Try a constellation, a bright star, a Messier number or a planet.") }); } catch { alertNote("Not found."); }
+    if (!navigator.onLine) { alertNote("Not in the built-in list, and the name lookup needs the internet. Try a constellation, a bright star, a Messier number or a planet."); return; }
+    let answered = false; const miss = () => { if (!answered) { answered = true; alertNote("Not found. Try a constellation, a bright star, a Messier number or a planet."); } };
+    setTimeout(miss, 6000);
+    try { state.aladin.gotoObject($("#search").value.trim(), { success: () => { answered = true; }, error: miss }); } catch { miss(); }
   };
 }
 
