@@ -1840,3 +1840,4 @@ Touches: none.
 ## D1248: NA13 — tests_cmb: D751 reproduced; audited n_s edges separate SERAPIS-E 3.1σ (att60) / 2.5σ (kination cap), τ = i 5.0σ / 4.3σ with SO+SPHEREx; r 8.8–9.7σ only for optimistic LiteBIRD
 ## D1249: NA14 sweep — vac/n_sector/halo arithmetic all PASS (D785 rerun identical); tests_lhc corrected: HL-LHC wino reach 0.9–1.1 TeV (1812.07831) cannot close 0.67–1.85 TeV; HE-LHC 1.5–2.1 TeV would
 ## D1250: NA15 — theory-lane audit complete (wino_window BLOCKED on g*(T)); matter parity and covariant bounds PASS; eps_tilt → 1.39–1.44e-4 (τ = i); audit summary of all corrections
+## D1251: PW2 — SERAPIS-E point prediction (c = 1, M_H 1e12 → T_R 8.94e8 → N* 50.24; C 1.25e-6): n_s 0.97445, r 4.81e-4, α_s −9.97e-4; expectation PASS; inside frozen band; live Janus app

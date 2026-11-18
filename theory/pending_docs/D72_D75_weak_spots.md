@@ -13004,3 +13004,12 @@ Confirmed unchanged — core potential arithmetic, BHK C, tadpole, mnu (NuFIT 6.
 The frozen predictions stand as locked; the audited SERAPIS-E box (PW1) lies 4/9 inside them.
 MAP: node=eps_tilt status=estimate touches=[band_i, vac_i, vac_rho] ripple=no
 MAP: node=wino_window status=corrected touches=[] ripple=no
+
+## D1251 — CENTRE — PW2 (web postulate 2): the SERAPIS-E POINT prediction — n_s = 0.97445, r = 4.81e-4, α_s = −9.97e-4, N* = 50.24; pre-stated expectation PASS 4/4; inside the frozen band
+Lock: field_tests/rules/PREREG_PW2_serapis_point.md. Computed LIVE in Danny's Janus app (link scans, Janus core spectra3); results field_tests/results/pw2_serapis_point.txt.
+Chain (web pattern leptogenesis ↔ reheating ↔ N* ↔ tilt): ρ leptogenesis passes for c ≳ 1 at the gamma-ray-allowed M_H ≈ 1e12 (D733, D775, NA6) → audited T_R = 8.94e8 GeV (NA6, n = 1, m_φ 3.17e13) → self-consistent N* = 50.24 (exact end, D979) → with the string benchmark C = 1.25e-6 (D861: g_s 0.232, Im S·Im ρ₁ = 781, 5 stuck D3s per half-period + 1 at the origin) →
+[computed] n_s 0.97445, r 4.814e-4, α_s −9.97e-4. Spread over the other leptogenesis-allowed histories: c = 3 → 0.97472 / 4.78e-4; M_H = 1e13 → 0.97514 / 4.73e-4 (that corner is gamma-ray disfavoured, D733).
+Expectation 4/4 inside → PASS. Inside frozen band_e (n_s 2.5e-4 below its ceiling). Pulls: CMB-SPA +2.0σ, CMB-SPA+DESI +0.6σ.
+Status: postulate (one model point built from post-hoc choices: c, M_H, the benchmark); scored only on future data — SO+SPHEREx σ(n_s) ≈ 0.0016 measures it at ≈ 4σ from N* = 60 attractors.
+Precision: Janus core vs exact MS is being quantified in TK1 (expected ≤ 1e-4 in n_s).
+MAP: node=serapis_point status=postulate touches=[band_e, tests_cmb] ripple=no

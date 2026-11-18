@@ -748,7 +748,7 @@
     "D1231: frozen",
     "D1233: frozen"
    ],
-   "flag": "recheck (D1245, band_e_audited)"
+   "flag": "recheck (D1251, serapis_point)"
   },
   {
    "id": "band_e_audited",
@@ -772,6 +772,29 @@
     "D1245: postulate"
    ],
    "note": "web loop postulate 1; scored only on future data"
+  },
+  {
+   "id": "serapis_point",
+   "layer": 5,
+   "branch": [
+    "E"
+   ],
+   "title": "POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 8.9e8, C 1.25e-6): n_s 0.9745, r 4.81e-4, α_s −1.0e-3, N* 50.2",
+   "status": "postulate",
+   "d": [
+    "D1251"
+   ],
+   "depends": [
+    "lepto_rho",
+    "reheat_rho",
+    "bhk_tilt",
+    "band_e_audited"
+   ],
+   "history": [
+    "D1251: postulate (PW2), expectation PASS 4/4",
+    "D1251: postulate"
+   ],
+   "note": "web loop postulate 2; scored only on future data"
   },
   {
    "id": "caps",
@@ -873,7 +896,8 @@
     "D906: computed",
     "D1229: computed",
     "D1248: computed"
-   ]
+   ],
+   "flag": "recheck (D1251, serapis_point)"
   },
   {
    "id": "tests_lhc",

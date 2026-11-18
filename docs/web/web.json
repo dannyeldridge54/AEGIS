@@ -5,7 +5,7 @@
    "label": "Tilt strength ε (fitted)",
    "lane": "theory",
    "status": "estimate",
-   "refs": "D1031, D1045, D1048",
+   "refs": "D1045, D1048, D1250",
    "info": ""
   },
   {
@@ -37,7 +37,7 @@
    "label": "Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D741, D742, D785",
+   "refs": "D742, D785, D1249",
    "info": ""
   },
   {
@@ -53,7 +53,7 @@
    "label": "Galactic DM profile (cuspy vs cored)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1055, D1056, D1061",
+   "refs": "D1056, D1061, D1249",
    "info": ""
   },
   {
@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D866, D873, D906",
+   "refs": "D873, D906, D1246",
    "info": ""
   },
   {
@@ -93,7 +93,7 @@
    "label": "BHK one-loop tilt C",
    "lane": "theory",
    "status": "literature",
-   "refs": "D689, D692, D756",
+   "refs": "D692, D756, D1246",
    "info": ""
   },
   {
@@ -101,7 +101,7 @@
    "label": "Stuck D3 branes at half-periods",
    "lane": "theory",
    "status": "literature",
-   "refs": "D694, D695",
+   "refs": "D694, D695, D1246",
    "info": ""
   },
   {
@@ -140,8 +140,8 @@
    "id": "nstar_i",
    "label": "N* at τ=i (stiff phase physical)",
    "lane": "theory",
-   "status": "computed",
-   "refs": "D729, D730, D815",
+   "status": "corrected",
+   "refs": "D730, D815, D1247",
    "info": ""
   },
   {
@@ -205,7 +205,7 @@
    "label": "Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4)",
    "lane": "theory",
    "status": "frozen",
-   "refs": "D861, D906, D962",
+   "refs": "D906, D962, D1247",
    "info": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)"
   },
   {
@@ -223,6 +223,14 @@
    "status": "postulate",
    "refs": "D1245",
    "info": "web loop postulate 1; scored only on future data"
+  },
+  {
+   "id": "serapis_point",
+   "label": "POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 8.9e8, C 1.25e-6): n_s 0.9745, r 4.81e-4, α_s −1.0e-3, N* 50.2",
+   "lane": "theory",
+   "status": "postulate",
+   "refs": "D1251",
+   "info": "web loop postulate 2; scored only on future data"
   },
   {
    "id": "caps",
@@ -245,7 +253,7 @@
    "label": "Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784)",
    "lane": "theory",
    "status": "corrected",
-   "refs": "D784, D906, D1230",
+   "refs": "D906, D1230, D1250",
    "info": ""
   },
   {
@@ -253,7 +261,7 @@
    "label": "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D752, D906, D1229",
+   "refs": "D906, D1229, D1248",
    "info": ""
   },
   {
@@ -261,7 +269,7 @@
    "label": "Test: Run 3 / HL-LHC disappearing tracks",
    "lane": "theory",
    "status": "literature",
-   "refs": "D736, D906",
+   "refs": "D736, D906, D1249",
    "info": ""
   },
   {
@@ -672,7 +680,7 @@
    "kind": "depends",
    "sign": 1,
    "ref": "theory/map/map.yaml",
-   "verdict": "computed",
+   "verdict": "corrected",
    "source": "map.yaml"
   },
   {
@@ -681,7 +689,7 @@
    "kind": "depends",
    "sign": 1,
    "ref": "theory/map/map.yaml",
-   "verdict": "computed",
+   "verdict": "corrected",
    "source": "map.yaml"
   },
   {
@@ -858,6 +866,42 @@
   {
    "s": "band_e",
    "t": "band_e_audited",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "lepto_rho",
+   "t": "serapis_point",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "reheat_rho",
+   "t": "serapis_point",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "bhk_tilt",
+   "t": "serapis_point",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "band_e_audited",
+   "t": "serapis_point",
    "kind": "depends",
    "sign": 1,
    "ref": "theory/map/map.yaml",

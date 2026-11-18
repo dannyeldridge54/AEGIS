@@ -367,3 +367,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1248: an upstream correction can strengthen a test as well as weaken a fit — re-derive the discriminant after every shift in the prediction, not only the consistency check.
 - D1249: a test statement ("LHC will close the window") must be re-read whenever the window it refers to is widened; D784 widened the window and D736's claim silently went stale.
 - D1250: a full node audit in one evening found 6 real input errors, all of the same kind (constants copied between eras of the model); a periodic audit of hard-coded constants is worth scheduling.
+- D1251: chaining the web's constraints (leptogenesis → T_R → N*, string benchmark → C) turns a band into one point; each link is post-hoc, so the point is a postulate, but it is sharp enough to be wrong.
