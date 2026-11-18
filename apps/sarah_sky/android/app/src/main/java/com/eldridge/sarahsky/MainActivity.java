@@ -10,6 +10,9 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
+import androidx.webkit.WebViewAssetLoader;
 
 public class MainActivity extends Activity {
     private WebView web;
@@ -31,11 +34,21 @@ public class MainActivity extends Activity {
         s.setJavaScriptEnabled(true);
         s.setDomStorageEnabled(true);
         s.setMediaPlaybackRequiresUserGesture(false);
-        s.setAllowFileAccess(true);
+        s.setAllowFileAccess(false);
         s.setGeolocationEnabled(true);
         s.setCacheMode(WebSettings.LOAD_DEFAULT);
 
-        web.setWebViewClient(new WebViewClient());
+        // Serve the app over https://appassets.androidplatform.net so ES modules, fetch() of data files,
+        // camera and sensors all work (file:// blocks module scripts and JSON fetches).
+        final WebViewAssetLoader loader = new WebViewAssetLoader.Builder()
+                .addPathHandler("/assets/", new WebViewAssetLoader.AssetsPathHandler(this))
+                .build();
+        web.setWebViewClient(new WebViewClient() {
+            @Override
+            public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+                return loader.shouldInterceptRequest(request.getUrl());
+            }
+        });
         web.setWebChromeClient(new WebChromeClient() {
             @Override
             public void onPermissionRequest(final PermissionRequest request) {
@@ -47,13 +60,15 @@ public class MainActivity extends Activity {
             }
         });
 
-        web.loadUrl("file:///android_asset/sarah_sky/index.html");
+        web.loadUrl("https://appassets.androidplatform.net/assets/sarah_sky/index.html");
     }
 
     @Override
     public void onRequestPermissionsResult(int code, String[] p, int[] r) {
         super.onRequestPermissionsResult(code, p, r);
-        if (web != null) web.reload();
+        boolean granted = false;
+        for (int x : r) if (x == PackageManager.PERMISSION_GRANTED) granted = true;
+        if (web != null && granted) web.reload();
     }
 
     @Override

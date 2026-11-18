@@ -339,7 +339,7 @@ async function main() {
   if (await initSky()) { try { buildLayers(); } catch (e) { console.error("layers", e); } setInterval(() => { if (!state.when) updatePlanetLayer(); }, 60000); }
   if (!navigator.onLine) alertNote("You are offline: telescope images need the internet. Drawn layers, Tonight, Tour and Learn still work.");
   else fetch("https://alasky.cds.unistra.fr/MocServer/query?ID=CDS/P/DSS2/color&get=id", { mode: "no-cors", cache: "no-store" }).catch(() => alertNote("The telescope image server (CDS) cannot be reached from this network, so only the drawn layers are shown."));
-  if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol !== "file:" && location.hostname !== "appassets.androidplatform.net") navigator.serviceWorker.register("sw.js").catch(() => {});
   window.__skymap = state; // for tests and the curious
 }
 main();

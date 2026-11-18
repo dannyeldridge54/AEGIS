@@ -1,4 +1,7 @@
 # Changelog
+## 1.3.2 — 18 Nov 2026
+- Android app: the app is now served inside the app over https (WebViewAssetLoader) instead of file://. On file:// the phone blocked the main script and the data files, which is why most buttons did nothing. Search, tabs, Tonight, Tour, Learn, AEGIS stars and the star data now load in the app.
+- The app only reloads after permissions if one was actually granted.
 ## 1.3.1 — 18 Nov 2026
 - Point & See accuracy: on Android the compass-referenced sensor stream is now used and the drifting relative stream is ignored once it appears (they were overwriting each other); on iPhone the gyro is tied to the compass heading; motion is smoothed to stop the jitter; sensors now start even on browsers that expose a permission prompt.
 - Set North (tap the Sun, Moon, a planet or a bright star) is remembered between sessions, which also corrects magnetic declination.
