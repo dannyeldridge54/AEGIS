@@ -887,16 +887,17 @@
     "D906",
     "D1229",
     "D1248",
-    "D1252"
+    "D1252",
+    "D1254"
    ],
    "depends": [
     "band_i",
     "band_e"
    ],
    "history": [
-    "D1229: computed",
     "D1248: computed",
-    "D1252: computed"
+    "D1252: computed",
+    "D1254: computed"
    ]
   },
   {

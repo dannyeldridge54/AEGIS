@@ -13038,3 +13038,17 @@ MAP: node=tests_cmb status=computed touches=[] ripple=no
   - Candidate (iii)/(iv) needs Beneke's channel-by-channel matrices: one sourcing tick before any lock.
 VERDICT: candidate (i) RULED OUT (≤ 0.5% in Ω, wrong sign). The L1 gap stays OPEN; next is sourcing (iii)/(iv).
 MAP: none
+
+## D1254 — CENTRE — TK1 (toolkits, partial: 4 of 9 rows before the 30-min wall): Janus core = exact Mukhanov–Sasaki to |Δn_s| ≤ 1.5e-6, |Δr/r| ≤ 0.01 % on every row; 2 rows FAIL the α_s bar as locked — DEV D2 shows the exact-MS α_s itself is numerically unstable (step-dependent), not Janus
+Lock: field_tests/rules/PREREG_TK1_serapis_e_toolkits.md + DEVIATIONS D1 (Janus-core self-consistent N*, MS once with 3 k, two parallel jobs), D2 (diagnostic). Results: field_tests/results/tk1_grid.txt, tk1_e2e.txt, tk1_d2_diag.txt.
+[computed] rows (exact MS | Janus3 − MS):
+- grid C 1.0e-6, N* 50.7: n_s 0.97225, r 4.450e-4 | Δn_s +6.7e-7, Δr/r +0.01 %, Δα −1.2e-4 → FAIL (α)
+- grid C 1.15e-6, N* 50.7: n_s 0.97384, r 4.632e-4, α_s −9.575e-4 | +1.6e-7, +0.01 %, −1.1e-7 → PASS
+- e2e T_R 6.6e8, C 1.0e-6 (N* 50.133): n_s 0.97172, r 4.521e-4 | +1.5e-6, +0.01 %, −4.2e-5 → PASS
+- e2e T_R 6.6e8, C 1.15e-6 (N* 50.140): n_s 0.97329, r 4.701e-4 | +6.5e-7, +0.01 %, +1.4e-4 → FAIL (α)
+Second-order Janus: Δn_s ≈ −1.6e-5 (as known). Janus relation: 0.4–15 % vs the MS α_s (the 15 % row is the noisy MS α_s).
+Data pulls (exact MS n_s): CMB-SPA +1.1 to +1.8σ; CMB-SPA+DESI −0.4 to +0.4σ; r < 0.036 everywhere.
+DEV D2 diagnostic (same point, C 1.0e-6, N* 50.7, Janus α_s −9.27e-4): exact-MS α_s = −8.04e-4 (3 k, ±0.05), −7.60e-4 (5 k, ±0.1), −2.24e-4 (5 k, ±0.025) — strongly step-dependent while n_s (0.972249–0.972254) and r are stable.
+Reading: the MS power spectrum carries relative noise ~1e-6 (BD start at k/aH = 200 with rtol 1e-11, and a finite-difference dV inside the mode equation, ms.py line "dV = (V(p+1e-6) − V(p−1e-6))/2e-6" on a spline) — second differences over Δln k ≈ 0.025–0.1 amplify it to 1e-4–1e-3 in α_s. The locked α_s bar therefore tests the reference, not Janus; FAILs stand as recorded, labelled "reference noise". The exact-MS α_s needs a precision upgrade (analytic dV, tighter tolerance, wider/ more k) — taken up as U1 in the upgrade loop.
+Not reached (wall): grid C 1.3e-6; e2e T_R 6.6e8 C 1.3e-6 and all T_R 2.0e10 rows; CAMB BB. To be run with the upgraded MS (U1).
+MAP: node=tests_cmb status=computed touches=[] ripple=no

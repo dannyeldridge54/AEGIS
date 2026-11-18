@@ -369,3 +369,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1250: a full node audit in one evening found 6 real input errors, all of the same kind (constants copied between eras of the model); a periodic audit of hard-coded constants is worth scheduling.
 - D1251: chaining the web's constraints (leptogenesis → T_R → N*, string benchmark → C) turns a band into one point; each link is post-hoc, so the point is a postulate, but it is sharp enough to be wrong.
 - D1252: null tests are model-specific; when the model changes (Twist → SERAPIS), re-derive the nulls or label the old ones as belonging to the old model.
+- D1254: before using a "reference" for a derivative quantity, check its own stability under the differencing step; the exact MS was exact for P(k) but not for its second derivative.
