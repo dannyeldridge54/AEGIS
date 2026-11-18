@@ -591,3 +591,4 @@ D1304  2026-11-18T13:28Z  LHC5: model vs collider panel
 D1305  2026-11-18T13:35Z  LHC6: CERN+1 symmetry self-tests
 D1306  2026-11-18T13:37Z  LHC7: CERN+1 future colliders
 D1307  2026-11-18T13:45Z  untitled
+D1308  2026-11-18T13:54Z  untitled
