@@ -1,0 +1,25 @@
+SERAPIS-E theory error budget on n_s (cloud loop, 2026-11-18). Derived from the D1272-verified exact table (no new model builds).
+
+Local slope at the operating point C0 = 1.25e-6 (bracket C = 1.15e-6 .. 1.30e-6):
+  dn_s/dC = 1.067e4 per unit C        ->   C0 * dn_s/dC = 0.01333
+Since C = 15*N_eff/(64 pi^6 * Im S * Im rho),  dC/C = - d(ImS*Imrho)/(ImS*Imrho), so
+
+  sigma_theory(n_s)  =  0.01333 * (fractional uncertainty on Im S * Im rho)
+
+  moduli to  2%  -> sigma_theory(n_s) = 2.7e-4
+  moduli to  5%  -> 6.7e-4
+  moduli to 10%  -> 1.33e-3
+  moduli to 20%  -> 2.67e-3
+  moduli to 30%  -> 4.00e-3
+
+Folding theory + data in quadrature (offset vs CMB-SPA = +0.0060, vs CMB-SPA+DESI = +0.0016):
+  moduli  5%:  2.0 sigma -> 1.95 sigma vs CMB-SPA ; 0.57 sigma vs +DESI
+  moduli 10%:            1.82 sigma    ; 0.53 sigma
+  moduli 20%:            1.49 sigma    ; 0.42 sigma
+
+Readings:
+ (1) The CMB-SPA tension is NOT rescued by our own uncertainty unless Im S * Im rho is known worse than ~30%.
+ (2) For n_s to be a SHARPER test than the data, the moduli product must be pinned to <~5% (sigma_theory < 7e-4 vs data 2.7-3.0e-3).
+     Pinning Im S * Im rho is therefore the highest-value next target on this branch.
+ (3) T_R and g* enter only through N*, which moved <=0.03 across the whole C band (D1272) — subdominant to C here.
+Label: tool/numerics error budget (no new physics claim).
