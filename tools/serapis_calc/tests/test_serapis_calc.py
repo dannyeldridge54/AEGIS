@@ -20,5 +20,5 @@ def test_meter_inverts_emulator():                  # forward (C -> n_s) then in
 def test_ns_inside_frozen_band():                   # D693 frozen n_s 0.970-0.975 across C 1.0-1.3e-6 (emulator at the leptogenesis T_R)
     for C in (1.0e-6, 1.15e-6, 1.3e-6):
         assert 0.970 <= E.emulate(C)['ns'] <= 0.975, C
-# NOTE (18 Nov): at C = 1.0e-6 the emulator gives r = 4.51e-4, 0.8% below the frozen r edge 4.55e-4. The frozen band
-# was made with N* 48.4-49.9; the emulator's fixed T_R gives N* ~ 50. Reported to Danny; not hidden by a looser test.
+# NOTE: at C = 1.0e-6 the emulator gives r = 4.51e-4, just below the frozen r floor 4.55e-4. Already recorded by the
+# node audit (D1233/D1233a: the corrected N* puts C = 1.0e-6 below the r floor); the frozen band stays locked as made.
