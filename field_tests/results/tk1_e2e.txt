@@ -1,1 +1,2 @@
 T_R 6.6e+08 C 1.00e-06 N* 50.133 | MS n_s 0.97172 r 4.5210e-04 α_s -9.007e-04 (178s) | Janus3 Δn_s +1.5e-06 Δr/r +0.01% Δα -4.2e-05 | Janus2 Δn_s -1.5e-05 | rel α_s -9.042e-04 (0.4%) | pulls SPA +1.11σ SPA+DESI -0.40σ, r<0.036 ok | PASS
+T_R 6.6e+08 C 1.15e-06 N* 50.140 | MS n_s 0.97329 r 4.7008e-04 α_s -1.111e-03 (165s) | Janus3 Δn_s +6.5e-07 Δr/r +0.01% Δα +1.4e-04 | Janus2 Δn_s -1.7e-05 | rel α_s -9.402e-04 (15.4%) | pulls SPA +1.63σ SPA+DESI +0.18σ, r<0.036 ok | FAIL

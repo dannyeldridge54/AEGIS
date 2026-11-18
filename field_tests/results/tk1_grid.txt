@@ -1,1 +1,2 @@
 grid C 1.00e-06 N* 50.700 | MS n_s 0.97225 r 4.4499e-04 α_s -8.036e-04 (177s) | Janus3 Δn_s +6.7e-07 Δr/r +0.01% Δα -1.2e-04 | Janus2 Δn_s -1.5e-05 | rel α_s -8.900e-04 (10.8%) | pulls SPA +1.28σ SPA+DESI -0.20σ, r<0.036 ok | FAIL
+grid C 1.15e-06 N* 50.700 | MS n_s 0.97384 r 4.6319e-04 α_s -9.575e-04 (171s) | Janus3 Δn_s +1.6e-07 Δr/r +0.01% Δα -1.1e-07 | Janus2 Δn_s -1.7e-05 | rel α_s -9.264e-04 (3.2%) | pulls SPA +1.81σ SPA+DESI +0.38σ, r<0.036 ok | PASS
