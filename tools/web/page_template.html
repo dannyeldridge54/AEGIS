@@ -1,0 +1,132 @@
+<title>AEGIS Web</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an observatory console — six horizontal lanes (two ladder strings meeting at a centre, the theory map, Janus pairs, string sector) on one deliberate night palette */
+:root{
+  --bg:#070b14; --panel:#0d1424; --line:#1c2742; --fg:#dce6f7; --muted:#8393b3;
+  --left:#5fd0ff; --right:#ffb057; --centre:#c9a7ff; --theory:#7ee3b0; --janus:#ff7aa8; --strings:#f4e36b;
+  --pos:#39e0c9; --neg:#ff4f7b;
+  --f-display:"Chakra Petch", "Segoe UI", system-ui, sans-serif; --f-body:"IBM Plex Sans", system-ui, sans-serif; --f-mono:"IBM Plex Mono", ui-monospace, monospace;
+  color-scheme:dark;
+}
+html,body{background:var(--bg);color:var(--fg)}
+body{font:14px/1.5 var(--f-body);padding-block:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font:700 26px/1.1 var(--f-display);letter-spacing:.04em;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:4px 0 0;max-width:70ch}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between;margin-bottom:12px}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button{font:600 13px var(--f-display);letter-spacing:.06em;text-transform:uppercase;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:8px 12px;cursor:pointer}
+button:hover{border-color:var(--muted)} button:focus-visible{outline:2px solid var(--left);outline-offset:2px}
+button.pos{border-color:var(--pos);color:var(--pos)} button.neg{border-color:var(--neg);color:var(--neg)}
+button[disabled]{opacity:.4;cursor:default}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}}
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow-x:auto;min-width:0}
+svg{display:block}
+.side{display:flex;flex-direction:column;gap:12px;min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.card h2{font:600 13px var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.k{font:500 12px var(--f-mono);color:var(--muted)}
+.links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;max-height:300px;overflow:auto}
+.links li{font-size:13px;border-left:3px solid var(--line);padding-left:8px}
+.links li.neg{border-left-color:var(--neg)} .links li.pos{border-left-color:var(--pos)}
+.links b{font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font:500 12px var(--f-mono);color:var(--muted);margin-top:8px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.finding{font-size:13px;margin:0 0 6px}
+.lane-label{font:600 11px var(--f-display);letter-spacing:.14em;text-transform:uppercase}
+.nodelabel{font:500 10px var(--f-mono);fill:var(--muted);pointer-events:none}
+.status{font:500 11px var(--f-mono);padding:1px 6px;border-radius:999px;border:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){.pulse{display:none}}
+</style>
+<header>
+  <div>
+    <h1>AEGIS Web</h1>
+    <p class="sub">Both ladder strings, the theory map, the Janus fast/exact pairs and the SERAPIS string sector in one web. Every line cites the D-note that backs it. Pick a node, then send a wave or its exact inverse.</p>
+  </div>
+  <div class="controls">
+    <span class="k" id="sel">no node selected</span>
+    <button id="bplus" class="pos" disabled>Send +wave</button>
+    <button id="bminus" class="neg" disabled>Send −wave</button>
+    <button id="bclear">Clear</button>
+  </div>
+</header>
+<div class="wrap">
+  <div class="stage"><svg id="g" role="img" aria-label="AEGIS web graph"></svg></div>
+  <div class="side">
+    <div class="card"><h2>Selected node</h2><div id="info" class="k">Click any node.</div><ul class="links" id="links"></ul></div>
+    <div class="card"><h2>What the waves found</h2><div id="findings"></div><p class="k" style="margin:8px 0 0">Heuristic graph analysis (not physics). Top targets go to a locked real recompute.</p></div>
+  </div>
+</div>
+<div class="legend" id="legend"></div>
+<script>
+const WEB = __WEB__; const WAVES = __WAVES__;
+const LANES = {left:{y:70,label:'Left string · early universe',c:'--left'}, centre:{y:150,label:'Centre · shared quantities',c:'--centre'}, right:{y:230,label:'Right string · late universe',c:'--right'},
+  theory:{y:320,label:'Theory map',c:'--theory'}, janus:{y:540,label:'Janus pairs · fast ↔ exact',c:'--janus'}, strings:{y:640,label:'SERAPIS string sector',c:'--strings'}};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const W = 1180, H = 700, svg = document.getElementById('g'); svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('width', W); svg.setAttribute('height', H);
+const byLane = {}; WEB.nodes.forEach(n => (byLane[n.lane] ||= []).push(n));
+const pos = {};
+for (const [lane, arr] of Object.entries(byLane)) {
+  const L = LANES[lane]; const rows = lane === 'theory' ? 3 : 1; const per = Math.ceil(arr.length / rows);
+  arr.forEach((n, i) => { const r = Math.floor(i / per), c = i % per; const span = W - 220; pos[n.id] = {x: 190 + (per > 1 ? c * span / (per - 1) : span / 2), y: L.y + r * 64}; });
+}
+const NS = 'http://www.w3.org/2000/svg'; const el = (t, a, p = svg) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
+for (const [lane, L] of Object.entries(LANES)) { const t = el('text', {x: 12, y: L.y + 4, class: 'lane-label', fill: css(L.c)}); t.textContent = L.label.split(' · ')[0]; const t2 = el('text', {x: 12, y: L.y + 18, class: 'nodelabel'}); t2.textContent = L.label.split(' · ')[1] || ''; }
+const gE = el('g', {}), gP = el('g', {}), gN = el('g', {});
+const kindDash = {depends: '', string: '', centre: '6 3', pair: '2 3', 'string-sector': '8 3 2 3'};
+const edgeEls = WEB.edges.map(e => { const a = pos[e.s], b = pos[e.t]; const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2 - 18;
+  const p = el('path', {d: `M${a.x},${a.y} Q${mx},${my} ${b.x},${b.y}`, fill: 'none', stroke: e.sign < 0 ? css('--neg') : css('--muted'), 'stroke-width': 1.3, 'stroke-dasharray': kindDash[e.kind] || '', opacity: .45}, gE);
+  const tt = el('title', {}, p); tt.textContent = `${e.s} → ${e.t} · ${e.kind}${e.sign < 0 ? ' (tension)' : ''} · ${e.ref}${e.verdict ? ' · ' + e.verdict : ''}`; return p; });
+const statusFill = {killed: .25, frozen: .6, corrected: .8};
+const nodeEls = {};
+WEB.nodes.forEach(n => { const p = pos[n.id]; const g = el('g', {tabindex: 0, role: 'button', 'aria-label': n.label}, gN); g.style.cursor = 'pointer';
+  const halo = el('circle', {cx: p.x, cy: p.y, r: 14, fill: 'none', stroke: 'none', 'stroke-width': 3}, g);
+  el('circle', {cx: p.x, cy: p.y, r: 7, fill: css(LANES[n.lane].c), opacity: statusFill[n.status] ?? 1, stroke: n.status === 'open' ? css('--fg') : 'none', 'stroke-dasharray': '2 2'}, g);
+  const t = el('text', {x: p.x, y: p.y + 20, 'text-anchor': 'middle', class: 'nodelabel'}, g); t.textContent = n.id.length > 16 ? n.id.slice(0, 15) + '…' : n.id;
+  const tt = el('title', {}, g); tt.textContent = `${n.label} [${n.status}] ${n.refs}`;
+  g.addEventListener('click', () => select(n.id)); g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); select(n.id); } });
+  nodeEls[n.id] = {g, halo}; });
+// --- wave engine (same model as tools/web/waves.py) ---
+const ids = WEB.nodes.map(n => n.id), ix = Object.fromEntries(ids.map((k, i) => [k, i])), N = ids.length;
+const gate = WEB.nodes.map(n => ({killed: .1, frozen: .5})[n.status] ?? 1);
+const S = Array.from({length: N}, () => new Float64Array(N));
+WEB.edges.forEach(e => { const a = ix[e.s], b = ix[e.t]; S[b][a] += e.sign; S[a][b] += .5 * e.sign; });
+const alpha = WAVES.alpha;
+function wave(src, sgn) { let x = new Float64Array(N); const e0 = new Float64Array(N); e0[ix[src]] = sgn; x.set(e0); const steps = [];
+  for (let t = 0; t < 60; t++) { const y = new Float64Array(N); for (let i = 0; i < N; i++) { let s = 0; const r = S[i]; for (let j = 0; j < N; j++) if (r[j]) s += r[j] * x[j]; y[i] = e0[i] + alpha * gate[i] * s; } x = y; if (t < 8) steps.push(x.slice()); }
+  return {final: x, steps}; }
+let current = null, timers = [];
+function select(id) { current = id; document.getElementById('sel').textContent = id; ['bplus', 'bminus'].forEach(b => document.getElementById(b).disabled = false);
+  const n = WEB.nodes.find(z => z.id === id); const info = document.getElementById('info');
+  info.innerHTML = ''; const h = document.createElement('div'); h.style.cssText = 'font:600 14px var(--f-body);color:var(--fg);margin-bottom:4px'; h.textContent = n.label; info.appendChild(h);
+  const s = document.createElement('span'); s.className = 'status'; s.textContent = n.status; info.appendChild(s); const r = document.createElement('div'); r.className = 'k'; r.style.marginTop = '4px'; r.textContent = (n.refs ? 'Sources: ' + n.refs : '') + (n.info ? ' · ' + n.info : ''); info.appendChild(r);
+  const ul = document.getElementById('links'); ul.innerHTML = '';
+  WEB.edges.filter(e => e.s === id || e.t === id).forEach(e => { const li = document.createElement('li'); li.className = e.sign < 0 ? 'neg' : 'pos'; const other = e.s === id ? e.t : e.s;
+    li.innerHTML = `<b></b> <span class="k"></span><br><span class="k"></span>`; li.children[0].textContent = (e.s === id ? '→ ' : '← ') + other; li.children[1].textContent = `${e.kind}${e.sign < 0 ? ' · tension' : ''}`;
+    li.children[3].textContent = `${e.ref}${e.verdict ? ' · ' + e.verdict : ''}`; ul.appendChild(li); });
+  edgeEls.forEach((p, k) => { const e = WEB.edges[k]; p.setAttribute('stroke-width', (e.s === id || e.t === id) ? 2.6 : 1.3); p.setAttribute('opacity', (e.s === id || e.t === id) ? 1 : .18); }); }
+function clearWave() { timers.forEach(clearTimeout); timers = []; gP.innerHTML = ''; Object.values(nodeEls).forEach(o => o.halo.setAttribute('stroke', 'none')); edgeEls.forEach(p => { p.setAttribute('opacity', .45); p.setAttribute('stroke-width', 1.3); }); }
+function send(sgn) { if (!current) return; clearWave(); const {final, steps} = wave(current, sgn); const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const show = x => ids.forEach((k, i) => { const v = x[i]; const o = nodeEls[k].halo; if (Math.abs(v) < 2e-3 || k === current) { o.setAttribute('stroke', k === current ? css(sgn > 0 ? '--pos' : '--neg') : 'none'); return; }
+    o.setAttribute('stroke', v > 0 ? css('--pos') : css('--neg')); o.setAttribute('stroke-width', Math.min(6, 1 + 18 * Math.abs(v))); o.setAttribute('opacity', Math.min(1, .25 + 3 * Math.abs(v))); });
+  if (reduce) { show(final); } else {
+    steps.forEach((x, t) => timers.push(setTimeout(() => { show(x);
+      WEB.edges.forEach((e, k) => { const a = x[ix[e.s]], b = x[ix[e.t]]; if (Math.abs(a) > 2e-3 && Math.abs(b) < 2e-3 + Math.abs(a)) { const p = edgeEls[k]; const L = p.getTotalLength(); const dot = el('circle', {r: 3, fill: (a * e.sign) > 0 ? css('--pos') : css('--neg'), class: 'pulse'}, gP);
+        const t0 = performance.now(); const anim = now => { const f = Math.min(1, (now - t0) / 420); const pt = p.getPointAtLength(L * f); dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y); if (f < 1) requestAnimationFrame(anim); else dot.remove(); }; requestAnimationFrame(anim); } });
+    }, t * 450)));
+    timers.push(setTimeout(() => show(final), steps.length * 450 + 300)); }
+  const top = ids.map((k, i) => [k, final[i]]).filter(([k]) => k !== current).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])).slice(0, 8);
+  const ul = document.getElementById('links'); const li = document.createElement('li'); li.className = sgn > 0 ? 'pos' : 'neg'; li.innerHTML = '<b></b><br><span class="k"></span>';
+  li.children[0].textContent = `${sgn > 0 ? '+' : '−'}wave from ${current}: strongest responses`; li.children[2].textContent = top.map(([k, v]) => `${k} ${v > 0 ? '+' : ''}${v.toFixed(3)}`).join(' · '); ul.prepend(li); }
+document.getElementById('bplus').onclick = () => send(1); document.getElementById('bminus').onclick = () => send(-1); document.getElementById('bclear').onclick = clearWave;
+// findings
+const F = document.getElementById('findings'); const add = (h, rows) => { const d = document.createElement('div'); d.className = 'finding'; const b = document.createElement('b'); b.textContent = h; d.appendChild(b); const s = document.createElement('div'); s.className = 'k'; s.textContent = rows; d.appendChild(s); F.appendChild(d); };
+add('Most conflicted (+ and − paths meet)', WAVES.conflict.slice(0, 6).map(([k, v]) => `${k} ${v}`).join(' · '));
+add('Hidden links (alike, unlinked)', WAVES.hidden.slice(0, 6).map(h => `${h.a}↔${h.b} ${h.sim}`).join(' · '));
+add('Opposites (rise when the other falls)', WAVES.opposites.slice(0, 4).map(h => `${h.a}↔${h.b} ${h.sim}`).join(' · '));
+const lg = document.getElementById('legend'); Object.entries(LANES).forEach(([k, L]) => { const s = document.createElement('span'); s.innerHTML = `<i class="sw"></i>`; s.firstChild.style.background = css(L.c); s.append(L.label); lg.appendChild(s); });
+[['solid', 'dependency / string'], ['dashed red', 'tension link'], ['+ halo', 'rises with the wave'], ['− halo', 'falls']].forEach(([a, b]) => { const s = document.createElement('span'); s.textContent = `${a}: ${b}`; lg.appendChild(s); });
+</script>
