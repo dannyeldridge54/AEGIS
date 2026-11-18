@@ -1,0 +1,56 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{Janus-LHC: Wino Pair Cross Sections at Any LHC Energy from Drell--Yan Scaling with One Universal Evolution Exponent}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{18 November 2026}
+\begin{abstract}
+Searches for electroweakinos at the LHC need production cross sections at the collider's actual energy. The reference values are computed with Resummino at aNNLO+NNLL accuracy, one mass point at a time, and are tabulated at 13 and 13.6~TeV~\cite{Res}. We present Janus-LHC, a small open toolkit with two routes to these numbers. The first interpolates the tables in $\ln\sigma$ against $\ln m$. A leave-one-out test gives a median error of 0.016\% and a maximum of 0.30\%. The second uses no parton-distribution file. At leading order, without parton evolution, $s\,\sigma$ depends only on $\tau_0=4m^2/s$. With the scaling function $\Phi(\tau_0)$ built from the 13~TeV table alone, this route predicts every 13.6~TeV entry for wino-like $\tilde\chi_2^0\tilde\chi_1^\pm$ and $\tilde\chi_1^+\tilde\chi_1^-$ (200--2000~GeV) to $\le1.0\%$. One correction factor $(\sqrt s/13\,\mathrm{TeV})^{\kappa}$ then brings every entry to $\le0.29\%$. The fitted exponent is the same for all three processes: $\kappa=-0.161$, $-0.163$, $-0.165$. It is a single, process-independent signature of parton evolution. At 14~TeV (HL-LHC) the two routes agree to 0.7--1.0\% from 500 to 1800~GeV, so we quote their mean with the spread as the extrapolation error. The toolkit also sets 95\% CLs limits for counting experiments in two independent ways, with pyhf and with exact Poisson sums. The usual asymptotic formulae are off by up to 8\% at low counts, so the toolkit falls back to the exact result there. All tests were pre-registered.
+\end{abstract}
+\keywords{LHC; electroweakino; wino; cross section; Drell--Yan scaling; parton luminosity; HL-LHC; CLs; pyhf; reinterpretation; reproducibility}
+\maketitle
+
+\section{Motivation}
+Supersymmetric and minimal dark-matter models with a wino-like state need the electroweakino pair cross section at whatever energy a search uses: 13, 13.6 or 14~TeV. The standard values come from Resummino at NLO+NLL or aNNLO+NNLL, with global parton distributions and a separate run for each mass and energy~\cite{Res}. We wanted three things: an answer at any mass and energy in microseconds, an honest error bar on that answer, and a check that does not depend on the parton-distribution file. That file could not be downloaded in our environment.
+
+\section{Route 1: interpolation of the reference tables}
+We take the wino-like tables of Ref.~\cite{Res} (Table~6), for $\tilde\chi_2^0\tilde\chi_1^+$, $\tilde\chi_2^0\tilde\chi_1^-$ and $\tilde\chi_1^+\tilde\chi_1^-$, from 100 to 2000~GeV, at 13 and 13.6~TeV. The interpolation is a cubic spline in $\ln\sigma$ against $\ln m$, because $\sigma$ is close to a power law in $m$. We tested it by dropping each interior point and predicting it from the rest, 54 points per energy. The median error is 0.016\%. The maximum is 0.15\% at 13.6~TeV and 0.30\% at 13~TeV. A spline in $\ln\sigma$ against $m$ gives a 10.3\% maximum error near 200~GeV, so the $\ln m$ axis matters.
+
+\section{Route 2: Drell--Yan scaling}
+At leading order, $\sigma=\sum_{ij}\int d\tau\,\mathcal L_{ij}(\tau)\,\hat\sigma_{ij}(\tau s)$. If the parton luminosity did not evolve with the factorisation scale, then $s\,\sigma$ would be a function of $\tau_0=4m^2/s$ alone:
+\begin{equation}
+s\,\sigma(m,\sqrt s)=\Phi(\tau_0)\,\Bigl(\frac{\sqrt s}{13\ \mathrm{TeV}}\Bigr)^{\kappa}.
+\end{equation}
+Here $\kappa=0$ is exact scaling, and $\kappa\neq0$ absorbs the evolution between the two energies. We built $\Phi$ from the 13~TeV table only and predicted the 13.6~TeV table. Before computing, we pre-registered three predictions~\cite{P4}:
+\begin{itemize}
+\item[(P1)] exact scaling is good to 5\%;
+\item[(P2)] one exponent per process gives $\le1\%$;
+\item[(P3)] the two routes agree at 14~TeV to 5\%.
+\end{itemize}
+
+\emph{Results.} All three passed.
+\begin{itemize}
+\item \emph{P1.} With $\kappa=0$, the deviations lie between $+0.45\%$ and $+1.0\%$ for all three processes. They have one sign and vary smoothly with mass.
+\item \emph{P2.} Fitting $\kappa$ gives $-0.165$, $-0.163$ and $-0.161$ for $\tilde\chi_2^0\tilde\chi_1^+$, $\tilde\chi_2^0\tilde\chi_1^-$ and $\tilde\chi_1^+\tilde\chi_1^-$. The maximum deviation then falls to 0.29\%, 0.26\% and 0.26\%.
+\item \emph{P3.} At 14~TeV the scaling route and a log-linear-in-$\sqrt s$ extrapolation agree to 0.71--0.96\% from 500 to 1800~GeV.
+\end{itemize}
+That $\kappa$ is the same for all three processes is the physics content. The violation of scaling between 13 and 13.6~TeV comes from parton evolution, which these $q\bar q'$ channels share. It does not depend on the hard process.
+
+\emph{Example.} For $m=1.1$~TeV at 14~TeV, $\sigma(\tilde\chi_2^0\tilde\chi_1^+)=0.787$~fb $\pm0.8\%$. The error is the route spread, to be combined with the reference's scale and PDF uncertainties.
+
+\section{Statistics}
+For counting experiments the toolkit computes 95\% CLs upper limits on the signal yield in two ways: with pyhf, using its asymptotic $\tilde q_\mu$, and with exact Poisson sums, $\mathrm{CLs}=P(N\le n\,|\,s+b)/P(N\le n\,|\,b)$. Pairs (pyhf vs exact): for $b=0.5$, $n=0$, 3.07 vs 3.00; for $b=3$, $n=3$, 5.00 vs 5.40; for $b=10$, $n=12$, 9.51 vs 9.97. The asymptotic formulae are thus off by up to 8\% at low counts, and the toolkit reports the exact value there.
+
+\section{Limitations and next steps}
+Both routes inherit the precision of the reference tables. Route~2 is calibrated on 13 and 13.6~TeV and extrapolates to 14~TeV, which is a small step in $\tau_0$. Next: an independent leading-order computation with a global PDF set, giving a K-factor against Resummino; a disappearing-track recast from published HEPData efficiency maps; and published full likelihoods in pyhf. Code: \texttt{tools/lhc} in the archive~\cite{AEGIS}.
+
+\emph{Method note.} Prepared with an AI assistant (Claude, Anthropic) under the workflow of Ref.~\cite{P4}. Note D1299 in the archive.
+
+\begin{thebibliography}{9}
+\bibitem{Res} ``Electroweak superpartner production at 13.6 TeV with Resummino,'' arXiv:2304.11915 (2023).
+\bibitem{P4} D.~Eldridge, ``Lock Before You Compute,'' Zenodo (2026), doi:10.5281/zenodo.24291026.
+\bibitem{AEGIS} Archive: github.com/dannyeldridge54/aegis.
+\end{thebibliography}
+\end{document}

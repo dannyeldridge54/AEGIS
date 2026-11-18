@@ -1,5 +1,5 @@
 {
- "source": "Fiaschi, Fuks, Klasen, Neuwirth et al., \"Electroweak superpartner production at 13.6 TeV with Resummino\", arXiv:2304.11915, Table 6 (wino-like), as extracted via ar5iv (labelled aNNLO+NNLL in the extracted text; verify against the PDF before scoring anything)",
+ "source": "\"Electroweak superpartner production at 13.6 TeV with Resummino\", arXiv:2304.11915, Table 6 (wino-like), as extracted via ar5iv (labelled aNNLO+NNLL in the extracted text; verify against the PDF before scoring anything)",
  "units": "fb",
  "mass_GeV": [
   100,
