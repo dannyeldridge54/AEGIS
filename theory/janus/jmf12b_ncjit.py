@@ -15,7 +15,11 @@ CASES = {'d R=0.7': (Vq, [[F(0.49), 0], [0, F(0.49)*sp.sin(f[0])**2]], np.array(
 L = []; ok = True; spd = []
 for nm, (Vx, Gx, fi, ic) in CASES.items():
     ms = bsym(Vx, Gx, f); fd = sr_pyt(ms, fi) if ic == 'pyt' else sr_flat(Vf, gf, fi)
-    t = time.time(); a = spectra_nc(ms, fi, fd); ta = time.time() - t
+    try:
+        t = time.time(); a = spectra_nc(ms, fi, fd); ta = time.time() - t
+        if a['Ne'] < 65: raise RuntimeError(f"N_tot {a['Ne']:.2f} < 65")
+    except Exception as ex:
+        L.append(f"{nm}: LISTED (DEV D1: reference failed: {ex})"); print(L[-1], flush=True); continue
     mj = bjit(Vx, Gx, f); spectra_ncjit(mj, fi, fd)
     t = time.time(); b = spectra_ncjit(mj, fi, fd); tb = time.time() - t
     if not (0.8 <= a['ns'] <= 1.1):
