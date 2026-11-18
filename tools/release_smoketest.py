@@ -23,4 +23,10 @@ V = lambda p: 0.5*p*p; dV = lambda p: p
 s = Model(V, dV, 20.0).spectra(60.0)
 check('Janus calc phi^2 n_s at N*=60 (exact numerical vs slow-roll 1-2/60.5)', s['ns'], 1 - 2/60.5, 2e-3)
 check('Janus calc phi^2 r at N*=60 (vs slow-roll 8/60.5)', s['r'], 8/60.5, 3e-3)
+from tools.janus_astro import galaxy as G
+check('Hyperion MWPotential2014 v_c at R0 [km/s] (Bovy 2015 normalisation: 220)', 220.0*G.MW().vcirc(1.0), 220.0, 0.5)
+try:
+    from tools.janus_astro import bbn
+    check('Hyperion BBN Y_p at omega_b=0.02236 (PRIMAT, Pitrou+2021: 0.24709)', bbn.Yp(0.02236), 0.24709, 3e-4)
+except ImportError: print('SKIP  Hyperion BBN (camb not installed)')
 print(f"\n{sum(OK)}/{len(OK)} passed in {time.time()-t0:.1f}s"); sys.exit(0 if all(OK) else 1)

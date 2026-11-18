@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
-      - run: pip install numpy scipy sympy mpmath numba pyinstaller
+      - run: pip install numpy scipy sympy mpmath numba galpy astropy pyinstaller
       - name: Build
         shell: bash
         run: |
@@ -27,6 +27,7 @@ jobs:
             --hidden-import tools.lhc.xsec --hidden-import tools.lhc.lifetime --hidden-import tools.lhc.recast_dt --hidden-import tools.lhc.stats \
             --hidden-import tools.lhc.theory_band --hidden-import tools.lhc.kinematics --hidden-import tools.lhc.future --hidden-import tools.lhc.higgsino \
             --hidden-import tools.lattice.lattice_lab --hidden-import tools.janus_calc.core --hidden-import tools.janus_calc.anyV \
+            --hidden-import tools.janus_astro.galaxy --hidden-import tools.janus_astro.fast --hidden-import tools.janus_astro.mapper_feed --hidden-import tools.janus_astro.mapper_orbits --hidden-import tools.janus_astro.const --hidden-import tools.janus_astro.jfactor --collect-all galpy \
             tools/aegis_cli.py
       - name: Self-test the executable
         shell: bash
