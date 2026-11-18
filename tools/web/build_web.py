@@ -169,11 +169,14 @@ for i, l, st, r in (
     ('Q_stats', 'CLs limits: pyhf + exact Poisson (asymptotics off ≤8% at low counts)', 'computed', 'docs/LHC_TOOLKIT.md'),
     ('Q_dt', 'Disappearing-track recast: wino excluded < 666.6 GeV (ATLAS 660); HL-LHC ≈ 975 GeV', 'computed', 'D1301'),
     ('Q_atlas', 'ATLAS disappearing-track search, 136 fb⁻¹', 'literature', 'arXiv:2201.02472'),
+    ('Q_dt36', 'Second validation: ATLAS 36.1 fb⁻¹ reproduced, 447.8 vs 460 GeV, same method, no retuning', 'computed', 'D1303'),
+    ('Q_panel', 'Model vs collider: SERAPIS wino window 0.67–1.85 TeV starts at the LHC limit; HL-LHC tests 26%', 'computed', 'D1304'),
     ('Q_pdf', 'Own LO cross section with a PDF set (blocked: CERN file needs one click at home)', 'open', 'docs/LHC_TOOLKIT.md')):
     node(i, l, 'lhc', st, r)
 for a, b, ref, v, sg in (
     ('Q_resummino', 'Q_xsec', 'D1299', 'reproduced to 0.3%', 1), ('Q_xsec', 'Q_dt', 'D1301', 'signal yield', 1), ('Q_life', 'Q_dt', 'D1301', 'decay window', 1),
     ('Q_stats', 'Q_dt', 'D1301', 'N95', 1), ('Q_atlas', 'Q_dt', 'D1301', 'limit reproduced (1%)', 1), ('Q_pdf', 'Q_xsec', 'next', 'independent check', 1),
+    ('Q_dt36', 'Q_dt', 'D1303', 'method validated twice', 1), ('Q_dt', 'Q_panel', 'D1304', 'reach', 1), ('Q_panel', 'wino_window', 'D1304', 'read-only overlay', 1), ('Q_panel', 'tests_lhc', 'D1304', 'HL-LHC 26% of window', 1),
     ('Q_dt', 'tests_lhc', 'D1301', 'HL-LHC reach ≈ 975 GeV', 1), ('Q_xsec', 'W_registry', 'registry', 'lhc_xsec', 1), ('Q_dt', 'W_registry', 'registry', 'lhc_dt_limit', 1)):
     edge(a, b, 'lhc', sg, ref, v)
 out = dict(nodes=list(N.values()), edges=E, lanes=['left', 'centre', 'right', 'theory', 'janus', 'strings', 'wiring', 'lattice', 'lhc'])

@@ -2062,3 +2062,8 @@ Touches: none.
 1. [literature] ATLAS 36.1 fb⁻¹ EW SR: N₉₅ = 0.22 fb × 36.1 fb⁻¹ = 7.94; benchmark 13.5 events at 400 GeV, τ = 0.2 ns.
 2. [derived] Same benchmark-anchored recast as D1301: limit 447.8 GeV (−2.7%); the 136 fb⁻¹ search stays at 666.6 GeV (+1.0%).
 3. [derived] Boost assumption βγ = 0.3–0.8 changes either limit by ≤ 5 GeV.
+
+## D1304: Model vs collider — the SERAPIS wino window begins at the LHC limit and HL-LHC tests its lower 26% (2026-11-18)
+1. [literature] Model window 0.67–1.85 TeV (thermal wino, D784; read-only).
+2. [derived] CERN+1 Run-2 limit 666.6 GeV (D1301) sits 3.4 GeV below the lower edge.
+3. [estimate] HL-LHC like-for-like reach ≈ 975 GeV ⇒ 25.9% of the window testable; 975–1850 GeV needs other probes.

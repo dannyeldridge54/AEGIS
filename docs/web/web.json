@@ -929,6 +929,22 @@
    "info": ""
   },
   {
+   "id": "Q_dt36",
+   "label": "Second validation: ATLAS 36.1 fb⁻¹ reproduced, 447.8 vs 460 GeV, same method, no retuning",
+   "lane": "lhc",
+   "status": "computed",
+   "refs": "D1303",
+   "info": ""
+  },
+  {
+   "id": "Q_panel",
+   "label": "Model vs collider: SERAPIS wino window 0.67–1.85 TeV starts at the LHC limit; HL-LHC tests 26%",
+   "lane": "lhc",
+   "status": "computed",
+   "refs": "D1304",
+   "info": ""
+  },
+  {
    "id": "Q_pdf",
    "label": "Own LO cross section with a PDF set (blocked: CERN file needs one click at home)",
    "lane": "lhc",
@@ -2889,6 +2905,42 @@
    "sign": 1,
    "ref": "next",
    "verdict": "independent check",
+   "source": "curated"
+  },
+  {
+   "s": "Q_dt36",
+   "t": "Q_dt",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1303",
+   "verdict": "method validated twice",
+   "source": "curated"
+  },
+  {
+   "s": "Q_dt",
+   "t": "Q_panel",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1304",
+   "verdict": "reach",
+   "source": "curated"
+  },
+  {
+   "s": "Q_panel",
+   "t": "wino_window",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1304",
+   "verdict": "read-only overlay",
+   "source": "curated"
+  },
+  {
+   "s": "Q_panel",
+   "t": "tests_lhc",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1304",
+   "verdict": "HL-LHC 26% of window",
    "source": "curated"
   },
   {

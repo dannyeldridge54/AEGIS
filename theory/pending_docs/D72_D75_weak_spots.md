@@ -13744,3 +13744,13 @@ LABEL: numerics (computed) anchored on literature (ATLAS JHEP 06 (2018) 022 / ar
 Same method as LHC3 (D1301), nothing refitted: ATLAS 36.1 fb⁻¹ → 447.8 GeV (published 460, −2.7%); ATLAS 136 fb⁻¹ → 666.6 GeV
 (published 660, +1.0%). βγ 0.3–0.8 moves them by ≤ 5 GeV (P2 PASS). Two searches, two luminosities, one method, both within 3%.
 TOOL: tools/lhc/recast_dt.py `limit_search(key)` with SEARCHES = {ATLAS_136, ATLAS_36}.
+
+## D1304 — CERN+1 LHC5: model vs collider — the SERAPIS wino window starts exactly where the LHC stops (666.6 vs 670 GeV); HL-LHC can test 26% of it; PREREG P1–P3 PASS (2026-11-18)
+MAP: none
+LABEL: numerics (computed); model side read-only from theory/map/map.yaml (wino_window: 0.67–1.85 TeV thermal, D784 — other
+session's node, NOT modified); collider side from CERN+1 (D1301, D1303). Locked first (PREREG_LHC5).
+- P1 PASS: CERN+1 Run-2 limit 666.6 GeV vs the window's lower edge 670 GeV (3.4 GeV apart).
+- P2 PASS: HL-LHC like-for-like reach ≈ 975 GeV covers 25.9% of the window (670–975 GeV).
+- P3 PASS: nothing in this extrapolation reaches 1.2 TeV; 975–1850 GeV (74% of the window) needs other probes (indirect detection,
+  future colliders).
+TOOL: tools/lhc/panel.py `panel()`.
