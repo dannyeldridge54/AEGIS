@@ -1,0 +1,8 @@
+N95 obs 5.032
+P1 recast limit (obs): 666.6 GeV
+expected-style (n=b=3) N95 5.4 -> limit 657.7
+P3 tau at limit: 0.1973 ns
+ sensitivity bg 0.3 limit 664.6
+ sensitivity bg 0.5 limit 666.6
+ sensitivity bg 0.8 limit 667.8
+P2 HL-LHC: {'b': 66.18, 'N95': 17.6, 'm_limit_GeV': 975.1}
