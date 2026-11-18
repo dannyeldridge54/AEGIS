@@ -170,7 +170,7 @@
   },
   {
    "id": "reheat_rho",
-   "label": "T_R at ρ ≈ 6.6e8–2.0e10 GeV (n = 1, m_φ 3.17e13; D1235, D1239)",
+   "label": "T_R at ρ ≈ 5.5e8–1.65e10 GeV (n = 1, m_φ 3.17e13, MSSM g*; D1235, D1239, D1262)",
    "lane": "theory",
    "status": "computed",
    "refs": "D1235, D1237, D1239",
@@ -178,7 +178,7 @@
   },
   {
    "id": "nstar_e",
-   "label": "N* for SERAPIS-E ≈ 50.1–51.3 (exact end + n = 1 reheating; D1234, D1235)",
+   "label": "N* for SERAPIS-E ≈ 50.07–51.22 (exact end, n = 1, MSSM g*; D1234, D1235, D1262)",
    "lane": "theory",
    "status": "corrected",
    "refs": "D979, D1234, D1237",
@@ -261,7 +261,7 @@
    "label": "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1229, D1248, D1252",
+   "refs": "D1248, D1252, D1254",
    "info": ""
   },
   {

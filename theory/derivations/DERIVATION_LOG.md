@@ -1849,3 +1849,4 @@ Touches: none.
 ## D1258: W2 — reheating-chain waves at the PW2 point: m_φ ±10 % 0.016σ, g* SM→MSSM 0.021σ (ΔN* −0.063), Kähler √3 0.061σ; all linear, as pre-stated; flag: SERAPIS should use MSSM g* = 228.75
 ## D1260: U4 — Hyperion/Janus-LT recombination vectorised: ×72 faster (6.6 → 0.09 s), z*, z_d, χ² identical; ADOPTED
 ## D1261: TK2 — SERAPIS late universe (ΛCDM, Σm_ν 0.05878) χ² 15.32; w0wa preferred Δχ² −7.98 (2.4σ, 2 dof); fit in 19 s with U4
+## D1262: A1 — MSSM g* = 228.75 applied to SERAPIS reheating: point N* 50.181, n_s 0.974393, r 4.821e-4; box n_s 0.97166–0.97596, r 4.389–4.897e-4, N* 50.07–51.22 (expectation band FAIL by 5e-7 on one corner)

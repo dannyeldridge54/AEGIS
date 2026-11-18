@@ -13128,3 +13128,12 @@ Lock: field_tests/rules/PREREG_TK2_serapis_late.md. Results: field_tests/results
 [computed] SERAPIS late (ΛCDM, Σm_ν 0.05878): χ² 15.322 at h 0.6842, ω_b 0.02241, ω_bc 0.13979 (L5: 15.32 at 0.0587 → T1 PASS). w0waCDM (same Σm_ν): χ² 7.337 at w0 −0.457, wa −1.608, h 0.6383 (L4/D1029: −0.455, −1.615). Δχ² = −7.98 → 2.4σ-equivalent preference for evolving dark energy. T3: 19 s → PASS.
 Reading: SERAPIS has no dynamical dark energy (its late universe is ΛCDM with the NO-floor neutrino mass), so it inherits ΛCDM's current 2.4σ tension with DESI DR2 + compressed CMB (DESI's own full-CMB number is larger, D1029). This is SERAPIS's main open data tension and is shared with every ΛCDM model; a ≥ 3σ confirmation in DESI DR3 + full CMB would require a dark-energy sector SERAPIS does not have.
 MAP: node=R_w0wa status=computed touches=[C_nstar] ripple=no
+
+## D1262 — CENTRE — A1: SERAPIS reheating with the MSSM g* = 228.75 (correction of the SM default, flag D1258) — N* −0.063 everywhere, n_s −5.8 to −6.4e-5, r +0.16 %; pre-stated band FAIL by 5e-7 on one corner; audited values updated
+Lock: field_tests/rules/PREREG_A1_mssm_gstar.md. Code: pipeline.predict_fast(g=…) (default unchanged). Results: field_tests/results/a1_mssm_gstar.txt.
+[computed] T_R (from Γ) × 0.82649 (g*^(−1/4)), N* with g = 228.75:
+- PW2 point (c = 1, M_H 1e12): T_R 7.39e8 GeV, **N* 50.181, n_s 0.974393, r 4.821e-4, α_s −9.981e-4** (was 50.245 / 0.974456 / 4.813e-4 / −9.971e-4)
+- audited box (C 1.0–1.3e-6 × T_R 5.46e8–1.65e10): **N* 50.07–51.22, n_s 0.97166–0.97596, r (4.389–4.897)e-4, α_s −(9.11–10.14)e-4**
+Expectation (Δn_s −(6.3 ± 0.5)e-5): 6/7 inside; the C 1.0e-6, high-T_R corner has −5.75e-5 (0.05e-5 outside) → FAIL as locked (the n_s response per e-fold depends on C: 0.91–1.01e-3).
+Status: SERAPIS's audited numbers now use the MSSM g*; frozen predictions unchanged (post-hoc); the shift is 0.02σ for SO+SPHEREx.
+MAP: node=nstar_e status=corrected touches=[band_e_audited, serapis_point] ripple=yes

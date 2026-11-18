@@ -25,8 +25,8 @@ String compactification on T⁶/(Z₂×Z₂) with stuck D3 branes → one-loop B
 |---|---|---|---|
 | Inflaton mass at ρ | 2.2e13 GeV | **3.17e13 GeV** | D1235: old H* low ×1.44 |
 | Inflaton coupling normalisation (ρ chain) | n = 3 (y√(2/3)) | **n = 1 (y√2)** | D1235/D1237: same field had two Kähler weights in D721/D722 |
-| T_R at ρ | 3e8–3e9 GeV | **6.6e8–2.0e10 GeV** | D1239 (direct rerun, ≤ 0.15 % vs rescaling) |
-| N* (SERAPIS-E, ρ) | 49.7–50.5 | **50.1–51.3** | D1234 (exact ε_H = 1 end, D979) + D1235 |
+| T_R at ρ | 3e8–3e9 GeV | **5.5e8–1.65e10 GeV** | D1239; MSSM g* = 228.75 (D1262) |
+| N* (SERAPIS-E, ρ) | 49.7–50.5 | **50.07–51.22** | D1234 (exact end), D1235 (n = 1), D1262 (MSSM g*) |
 | Inflaton mass at τ = i | 1.9e11 GeV | **2.28–2.65e11 GeV** | D1241 (D730's computed value) |
 | T_R at τ = i | 1–3e6 GeV | **1.3–5.0e6 GeV** | D1241 |
 | N* at τ = i | 50.31 | **50.40–50.45** | D1247 |
@@ -37,10 +37,10 @@ String compactification on T⁶/(Z₂×Z₂) with stuck D3 branes → one-loop B
 
 **Frozen (D693, scored on future data):** n_s 0.970–0.975, r (4.55–5.12)e-4, α_s −(9.4–10.6)e-4, N* 48.4–49.9, C 1.0–1.3e-6. Caps n_s ≤ 0.985, r ≤ 8.3e-4 (still valid, D1240).
 
-**Audited box (PW1, D1245) [postulate]:** C 1.0–1.3e-6 × N* 50.1–51.3 → n_s 0.9717–0.9760, r (4.38–4.90)e-4, α_s −(9.1–10.1)e-4. Only 4 of 9 corners inside the frozen band.
+**Audited box (PW1 D1245, MSSM g* D1262) [postulate]:** C 1.0–1.3e-6 × N* 50.07–51.22 → n_s 0.97166–0.97596, r (4.39–4.90)e-4, α_s −(9.1–10.1)e-4. Partly outside the frozen band.
 
-**Point prediction (PW2, D1251) [postulate]:** leptogenesis (c = 1, M_H = 1e12 GeV) → T_R = 8.94e8 GeV → N* = 50.24; string benchmark C = 1.25e-6 →
-**n_s = 0.97445, r = 4.81e-4, α_s = −9.97e-4** (inside the frozen band; CMB-SPA +2.0σ, CMB-SPA+DESI +0.6σ).
+**Point prediction (PW2 D1251, MSSM g* D1262) [postulate]:** leptogenesis (c = 1, M_H = 1e12 GeV) → T_R = 7.39e8 GeV → N* = 50.18; string benchmark C = 1.25e-6 →
+**n_s = 0.97439, r = 4.82e-4, α_s = −9.98e-4** (exact MS; inside the frozen band; CMB-SPA +2.0σ, CMB-SPA+DESI +0.6σ).
 
 **τ = i variant:** ε ≈ 1.40e-4: n_s 0.97462, r 4.83e-4, α_s −8.54e-4 (D1247).
 

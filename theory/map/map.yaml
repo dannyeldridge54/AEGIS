@@ -438,7 +438,7 @@ nodes:
   branch:
   - rho
   - E
-  title: T_R at ρ ≈ 6.6e8–2.0e10 GeV (n = 1, m_φ 3.17e13; D1235, D1239)
+  title: T_R at ρ ≈ 5.5e8–1.65e10 GeV (n = 1, m_φ 3.17e13, MSSM g*; D1235, D1239, D1262)
   status: computed
   d:
   - D725
@@ -456,7 +456,7 @@ nodes:
   layer: 4
   branch:
   - E
-  title: N* for SERAPIS-E ≈ 50.1–51.3 (exact end + n = 1 reheating; D1234, D1235)
+  title: N* for SERAPIS-E ≈ 50.07–51.22 (exact end, n = 1, MSSM g*; D1234, D1235, D1262)
   status: corrected
   d:
   - D719
