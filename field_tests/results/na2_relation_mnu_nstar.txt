@@ -1,0 +1,23 @@
+A. Janus relation vs exact α_s (12 NA1 PC rows)
+  C x0.8696 N* 48.40: exact -9.8953e-04 | κ=1 -9.5099e-04 deficit  3.89% OUT | κ=½ -8.0198e-04 deficit  18.95%
+  C x0.8696 N* 49.15: exact -9.6718e-04 | κ=1 -9.3017e-04 deficit  3.83% OUT | κ=½ -7.8008e-04 deficit  19.35%
+  C x0.8696 N* 49.90: exact -9.4538e-04 | κ=1 -9.1030e-04 deficit  3.71% OUT | κ=½ -7.5911e-04 deficit  19.70%
+  C x0.8696 N* 50.50: exact -9.3125e-04 | κ=1 -8.9505e-04 deficit  3.89% OUT | κ=½ -7.4299e-04 deficit  20.22%
+  C x1.0000 N* 48.40: exact -1.0277e-03 | κ=1 -9.8635e-04 deficit  4.02% OUT | κ=½ -8.0900e-04 deficit  21.28%
+  C x1.0000 N* 49.15: exact -1.0062e-03 | κ=1 -9.6586e-04 deficit  4.01% OUT | κ=½ -7.8711e-04 deficit  21.77%
+  C x1.0000 N* 49.90: exact -9.8401e-04 | κ=1 -9.4632e-04 deficit  3.83% OUT | κ=½ -7.6616e-04 deficit  22.14%
+  C x1.0000 N* 50.50: exact -9.6260e-04 | κ=1 -9.3134e-04 deficit  3.25% OUT | κ=½ -7.5004e-04 deficit  22.08%
+  C x1.1304 N* 48.40: exact -1.0618e-03 | κ=1 -1.0233e-03 deficit  3.63% OUT | κ=½ -8.1609e-04 deficit  23.14%
+  C x1.1304 N* 49.15: exact -1.0370e-03 | κ=1 -1.0032e-03 deficit  3.26% OUT | κ=½ -7.9420e-04 deficit  23.42%
+  C x1.1304 N* 49.90: exact -1.0182e-03 | κ=1 -9.8408e-04 deficit  3.35% OUT | κ=½ -7.7328e-04 deficit  24.05%
+  C x1.1304 N* 50.50: exact -1.0042e-03 | κ=1 -9.6943e-04 deficit  3.46% OUT | κ=½ -7.5718e-04 deficit  24.60%
+A VERDICT: FAIL
+B. NuFIT 6.0 NO (IC24 with SK-atm): Δm²21 7.49e-5, Δm²31 2.513e-3 → m2 0.00865, m3 0.05013, Σ 0.05878 eV (IC19: 0.05899)
+   margins: 0.0642−Σ = 5.42 meV (stated 5.5: ok); Σ−0.053 = 5.78 meV (stated 5.7: ok)
+B VERDICT: PASS
+C. N* self-consistent (exact ε_H=1 end, C 1.15e-6)
+  T_R 3e+08: N* 49.878 V*/V_end 2.2674 n_s 0.97304 r 4.7345e-04 vs node 49.7 (+0.178) OUT
+  T_R 3e+09: N* 50.642 V*/V_end 2.2675 n_s 0.97378 r 4.6394e-04 vs node 50.5 (+0.142) OUT
+  T_R 1e+05: N* 47.222 V*/V_end 2.2670 n_s 0.97033 r 5.1032e-04 (information)
+  T_R 1e+06: N* 47.985 V*/V_end 2.2671 n_s 0.97113 r 4.9906e-04 (information)
+C VERDICT: FAIL
