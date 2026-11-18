@@ -13871,3 +13871,13 @@ MAP: none
 - **Consequence:** no care is needed in v3.3. D1275b's caveat applies to the other session's string-meter material (PW5/PW6, T1 tool, and any paper that quotes 804 as an independent check). That is theirs to carry.
 VERDICT: NULL for our draft.
 MAP: none
+
+### D1317 — B tick: 2026 lithium-7 literature changes nothing. The lithium problem persists, and SERAPIS inherits it unchanged. NULL (2026-11-18)
+- [LEFT · literature; abstracts fetched]
+  - **arXiv:2601.12438** (Taioli, Triggiani, Simonucci; v3, Sept 2026): extra ⁷Be destruction channels (electron, antineutrino and proton capture, excited-state β⁺) "cannot resolve the cosmological lithium problem". Standard BBN still exceeds the metal-poor-star values by a factor of 3–4. They estimate the ⁷Be half-life under BBN conditions at about two days and call for a full-network reassessment.
+  - **arXiv:2603.22414** (Burns; v2, Jul 2026): a BBN sensitivity atlas (14 parameters, 63 rates; data on GitHub). No new Li number in the abstract.
+- **Ours (B4b/B6):** Li-7/H ≈ 5.5–5.7e-10 in all three codes (the standard value). With dark radiation it shifts by ≤ 3% (B7/B8: 5.54–5.67e-10).
+  - SERAPIS neither helps nor worsens the lithium problem; the v3.3 draft already says it "inherits the Standard Model's lithium tension unchanged".
+- No new primordial Y_p, D/H or N_eff value beyond D1191–D1208 appeared.
+VERDICT: NULL.
+MAP: none
