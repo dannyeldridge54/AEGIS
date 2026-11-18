@@ -344,3 +344,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1222: an equivalence test needs a pre-declared physical-output gate on the reference; a case where the reference itself is unphysical tests nothing and can sink the lock.
 - D1223: a validation at one parameter value (sphere radius 1) can hide a scale-dependent error; validate a curved-space code at ≥ 2 curvature radii against the external reference.
 - D1224: an absolute ODE tolerance silently turns off error control when the solution's scale drifts (e^-N normalisations); normalise to the pivot so variables stay O(1), and test at least one long run against an external code.
+- D1225: speeding up the exact face matters as much as the fast face — it is what every Janus check waits on; compiling it took the reference from 10 s to 0.4 s with no accuracy change.

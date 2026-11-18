@@ -12711,3 +12711,11 @@ Note: PyTransport's own n_s shifts by 4e-5 between its time grids (R=1: 0.925023
 Consequences: JMF9's VALIDATED scope extends to R = 1.5 and 2; JMF12/12b case (c)/(e) failures are explained; nc-jit adopted as the curved-space PC default; every
 earlier Janus-MF verdict stands (all were short runs, and A1 shows no change). Item 25 → DONE.
 MAP: none (tool correctness).
+
+## D1225 — JANUS — MSJ1: compiled exact single-field MS reference ("ms-jit") [ADOPTED]
+Lock: field_tests/rules/PREREG_MSJ1_msjit.md. Code: tools/serapis_calc/ms_jit.py (spectra_fast's equations, background + all k in one compiled DP5(4) ODE, rtol 1e-11,
+analytic dV from sympy). Script theory/janus/msj1.py; result field_tests/results/msj1.txt.
+All 16 comparisons (TI ×6, SFI p=3 ×2, N* = 50, 60; J7b settings) within the locked limits: |Δn_s| ≤ ~2e-8, |Δr/r| ≤ ~4e-8, |Δα_s| ≤ ~4e-8; 10–11 s → 0.38–0.46 s, median ×23.
+Adopted as the exact reference for new locks ("ms-jit"). Speed status of the Janus pair: single-field Janus ~4 ms; exact reference 10 s → 0.4 s; multi-field 15.5 s → 0.4 s (jit),
+curved field space 27 s → 0.8 s (nc-jit, D1224).
+MAP: none (tool speed).
