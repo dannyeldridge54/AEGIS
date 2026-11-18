@@ -1,0 +1,17 @@
+TI a=0.05 mu=6   N*=50: ref 0.954769551 (10.5 s) | ms-jit |dn_s| 1.7e-08 |dr/r| 3.0e-08 |da| 6.7e-08 (0.44 s, x24) True
+TI a=0.05 mu=6   N*=60: ref 0.960534109 (10.7 s) | ms-jit |dn_s| 9.7e-09 |dr/r| 2.9e-08 |da| 1.4e-08 (0.48 s, x22) True
+TI a=0.05 mu=12  N*=50: ref 0.959423769 (10.6 s) | ms-jit |dn_s| 4.2e-09 |dr/r| 3.3e-08 |da| 6.0e-08 (0.50 s, x21) True
+TI a=0.05 mu=12  N*=60: ref 0.966081639 (10.1 s) | ms-jit |dn_s| 1.4e-09 |dr/r| 4.3e-08 |da| 4.8e-08 (0.49 s, x21) True
+TI a=0.15 mu=6   N*=50: ref 0.955676442 (15.8 s) | ms-jit |dn_s| 4.6e-09 |dr/r| 1.9e-08 |da| 2.4e-09 (0.71 s, x22) True
+TI a=0.15 mu=6   N*=60: ref 0.961880606 (16.1 s) | ms-jit |dn_s| 1.0e-09 |dr/r| 3.4e-08 |da| 6.9e-10 (0.75 s, x21) True
+TI a=0.15 mu=12  N*=50: ref 0.959360558 (16.4 s) | ms-jit |dn_s| 1.5e-08 |dr/r| 3.7e-08 |da| 1.9e-08 (0.68 s, x24) True
+TI a=0.15 mu=12  N*=60: ref 0.966014590 (15.8 s) | ms-jit |dn_s| 1.2e-09 |dr/r| 2.4e-08 |da| 3.9e-08 (0.69 s, x23) True
+TI a=0.3 mu=6    N*=50: ref 0.954710535 (13.0 s) | ms-jit |dn_s| 1.6e-08 |dr/r| 3.6e-08 |da| 1.9e-08 (0.47 s, x27) True
+TI a=0.3 mu=6    N*=60: ref 0.961364396 (11.2 s) | ms-jit |dn_s| 1.3e-08 |dr/r| 5.4e-08 |da| 3.5e-08 (0.53 s, x21) True
+TI a=0.3 mu=12   N*=50: ref 0.959062750 (10.4 s) | ms-jit |dn_s| 1.1e-08 |dr/r| 2.1e-08 |da| 1.1e-08 (0.46 s, x23) True
+TI a=0.3 mu=12   N*=60: ref 0.965678412 (10.4 s) | ms-jit |dn_s| 7.0e-09 |dr/r| 3.7e-08 |da| 1.4e-08 (0.41 s, x26) True
+SFI p=3 mu=8     N*=50: ref 0.948095894 (10.8 s) | ms-jit |dn_s| 8.0e-09 |dr/r| 1.6e-08 |da| 3.8e-08 (0.40 s, x27) True
+SFI p=3 mu=8     N*=60: ref 0.954600699 (11.0 s) | ms-jit |dn_s| 9.0e-09 |dr/r| 2.2e-08 |da| 1.1e-08 (0.45 s, x25) True
+SFI p=3 mu=20    N*=50: ref 0.965316613 (10.8 s) | ms-jit |dn_s| 2.1e-08 |dr/r| 2.4e-08 |da| 1.7e-08 (0.46 s, x24) True
+SFI p=3 mu=20    N*=60: ref 0.970313888 (9.9 s) | ms-jit |dn_s| 1.1e-08 |dr/r| 4.2e-08 |da| 1.5e-08 (0.38 s, x26) True
+median speed-up x23 | M1 True -> ADOPTED (ms-jit)
