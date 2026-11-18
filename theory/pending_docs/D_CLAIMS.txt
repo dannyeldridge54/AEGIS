@@ -605,3 +605,4 @@ D1318  2026-11-18T17:03Z  wino_window map node relabelled to the D1153 window (0
 D1319  2026-11-18T17:03Z  ladder.py: header regex accepts '### D' notes (this session's MAP lines were invisible to the ladder)
 D1320  2026-11-18T17:05Z  Map: new node darkrad_i (tau=i hidden-sector dark radiation verdicts); halo_profile gains D1190/D1202
 D1321  2026-11-18T17:07Z  v3.3 draft: HL-LHC recast sentence (D1302) and relic Born 2% agreement with Beneke (D1238); ref added (unposted)
+D1322  2026-11-18T17:10Z  A2n: Singh-Desai cored/Einasto shapes at standard rho_sun 0.4/0.3: 1 TeV wino PASS 20/20
