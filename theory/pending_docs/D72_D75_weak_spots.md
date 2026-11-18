@@ -13093,3 +13093,25 @@ Lock: field_tests/rules/PREREG_W2_reheat_chain.md. Engine predict_fast (U2). Res
 All asymmetries < 0.5 %; expectation PASS 3/3. Compared with W1: one decade of T_R moves n_s by 7.7e-4 (0.26σ), the tilt ±10 % by 0.39σ — the whole reheating chain's internal uncertainties (m_φ, g*, coupling normalisation) are ≤ 0.06σ each.
 Flag [derived]: SERAPIS is supersymmetric (AMSB winos; m₃/₂ 2.5–7e5 GeV, D809) and its scalars sit far below T_R ~ 1e9 GeV, so the full MSSM is relativistic at reheating ⇒ g* = 228.75 is the consistent choice; nstar.py defaults to the SM 106.75. With MSSM g*: PW2 point → N* 50.181, n_s 0.974393 (−6.3e-5). Recorded as an accuracy-queue item (not applied silently; frozen predictions unchanged; effect 0.02σ).
 MAP: node=nstar_e status=corrected touches=[C_nstar] ripple=no
+
+### D1259 — Sourcing for the L1 gap: Beneke's relic includes P-wave and O(v²) S-wave annihilation, while ours is leading S-wave only. A new main candidate (v) (2026-11-18)
+- [DEEP · literature, fetched] **arXiv:2009.00640, Sec. 4.1–4.2** (quoted, short):
+  - "We therefore include P-wave and O(v²)-suppressed S-wave annihilation."
+  - The annihilation matrices f̂(^{2S+1}L_J) are "tabulated in Appendix C of [30]".
+  - Short-distance couplings are "the MS-bar couplings evolved with one-loop accuracy to the scale μ = 2m_χ".
+  - Thermal average on 160 log-spaced x points.
+  - Eq. (4.3) combines ¹S₀ + 3·³S₁ + O(v²) S-wave + ¹P₁ + ³P_J, each Born term weighted by its own Sommerfeld factor (Eq. 4.1).
+  - Kinetic equilibrium is not addressed in the part read.
+- **Ours (R1–R2e):** leading S-wave only (Hisano Eqs. 2–5, D1182) with Born-ratio α̂₂ scaling. So both our Born (+2.0%) and our LO-Sommerfeld (+4.4%) masses lack the v² terms.
+- **Size (ESTIMATE):** at freeze-out ⟨v²⟩ ≈ 6/x ≈ 0.24 (x ≈ 25), so v²-suppressed terms are naturally O(10%) of σv at x ~ 25, falling as 1/x afterwards.
+  - Their sign is not known from the text: the P-wave adds, and the O(v²) S-wave correction usually subtracts.
+  - The P-wave pieces are not Sommerfeld-enhanced the same way. Their weight relative to S-wave is largest at freeze-out, where R_eff is smallest. That changes M_Som/M_Born, which is exactly the ratio that is off (1.338 vs 1.308).
+- **Candidate list for L1** (and the residual +2% in B1):
+  - (v) missing P-wave / O(v²) S-wave — NEW, now the leading suspect;
+  - (ii) velocity-grid resolution;
+  - (iii) spin weights;
+  - (iv) per-channel MS-bar scaling.
+  - Candidate (i) was ruled out (D1253).
+- **Next:** source the f̂ tables (ref. [30] Appendix C; likely Beneke–Hellmann–Ruiz-Femenía, the "Non-relativistic pair annihilation" series — exact arXiv number to confirm) before any lock. If they are character-exact, add the v² terms as a locked R2f.
+VERDICT: (v) added as the leading candidate (sourced). No computation.
+MAP: none
