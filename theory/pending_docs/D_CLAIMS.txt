@@ -582,3 +582,4 @@ D1295  2026-11-18T12:03Z  Units/symmetry of the two SERAPIS sectors (PREREG D129
 D1296  2026-11-18T12:07Z  Square planes inside champions (PREREG D1296)
 D1297  2026-11-18T12:22Z  d=3 shape flow (PREREG D1297)
 D1298  2026-11-18T12:26Z  Barnes-Wall BW16 (PREREG D1298)
+D1299  2026-11-18T12:57Z  LHC1: Drell-Yan scaling route for wino cross sections
