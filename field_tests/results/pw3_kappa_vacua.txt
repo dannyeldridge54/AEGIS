@@ -1,0 +1,4 @@
+ρ (κ=1): exact α_s -9.9814e-04 | own-κ relation -9.6419e-04 (3.4%) | crossed-κ -7.6322e-04 (23.5%)
+τ=i (κ=½): exact α_s -8.5430e-04 | own-κ relation -7.6234e-04 (10.8%) | crossed-κ -9.6670e-04 (13.2%)
+between vacua: Δn_s 2.3e-04, Δr/r 0.26%, Δα_s 1.44e-04 → 0.060σ (SO+SPHEREx), 0.085σ (best combination)
+T1 FAIL, T2 FAIL, T3 ≲0.1σ as expected
