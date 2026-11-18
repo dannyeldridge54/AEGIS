@@ -1,0 +1,16 @@
+C×0.8696 N*=48.4: n_s 0.970055 r 4.7550e-04 α_s -9.8953e-04 | in band (n_s, r, α_s) = (True, True, True)
+C×0.8696 N*=49.15: n_s 0.970788 r 4.6508e-04 α_s -9.6718e-04 | in band (n_s, r, α_s) = (True, True, True)
+C×0.8696 N*=49.9: n_s 0.971504 r 4.5515e-04 α_s -9.4538e-04 | in band (n_s, r, α_s) = (True, True, True)
+C×0.8696 N*=50.5: n_s 0.972066 r 4.4752e-04 α_s -9.3125e-04 | in band (n_s, r, α_s) = (True, False, True)  [corrected-N* edge]
+C×1.0 N*=48.4: n_s 0.971557 r 4.9318e-04 α_s -1.0277e-03 | in band (n_s, r, α_s) = (True, True, True)
+C×1.0 N*=49.15: n_s 0.972316 r 4.8293e-04 α_s -1.0062e-03 | in band (n_s, r, α_s) = (True, True, True)
+C×1.0 N*=49.9: n_s 0.973060 r 4.7316e-04 α_s -9.8401e-04 | in band (n_s, r, α_s) = (True, True, True)
+C×1.0 N*=50.5: n_s 0.973644 r 4.6567e-04 α_s -9.6260e-04 | in band (n_s, r, α_s) = (True, True, True)  [corrected-N* edge]
+C×1.1304 N*=48.4: n_s 0.973083 r 5.1166e-04 α_s -1.0618e-03 | in band (n_s, r, α_s) = (True, True, True)
+C×1.1304 N*=49.15: n_s 0.973871 r 5.0161e-04 α_s -1.0370e-03 | in band (n_s, r, α_s) = (True, True, True)
+C×1.1304 N*=49.9: n_s 0.974642 r 4.9204e-04 α_s -1.0182e-03 | in band (n_s, r, α_s) = (True, True, True)
+C×1.1304 N*=50.5: n_s 0.975248 r 4.8471e-04 α_s -1.0042e-03 | in band (n_s, r, α_s) = (False, True, True)  [corrected-N* edge]
+PC vs cloud (C×1.0, same code): max |Δn_s| 7.9e-08
+caps: max n_s 0.97525 ≤ 0.985, max r 5.117e-04 ≤ 8.3e-4 → CONSISTENT
+frozen band (N* 48.4–49.9): CONSISTENT
+corrected N* edge 50.5: C×0.8696: n_s in r OUT; C×1.0: n_s in r in; C×1.1304: n_s OUT r in
