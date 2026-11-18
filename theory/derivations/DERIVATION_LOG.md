@@ -2168,3 +2168,8 @@ Touches: none.
 1. [literature] BTR eq. 5.14: m₁ ≈ 0.97 π/L, m₂ ≈ 2.13 π/L, L = Einstein-frame proper length; Dirichlet or Neumann BCs.
 2. [derived] Our m₂/m₁ = 2.190 lies inside BTR's rounding range 2.179–2.212 → the spectrum shape agrees; the −4% is a common length/mass scale.
 3. [estimate] Neumann BCs do not reproduce 0.97/2.13 (exploratory); candidates left: dilaton-normalisation convention, α_E normalisation, rounding.
+
+## D1357: BTR scale recheck
+1. [derived] m L/π is independent of α_E (y → y/√α_E, m² → α_E m², L → L/√α_E).
+2. [estimate] Singular-end cut ξ₁ → 0: m L/π → ≈0.9384, 2.0543 (+0.7% vs ξ₁ = 1e-4); gap to BTR ≈ −3.3%/−3.6%, ratio still 2.189.
+3. [derived] Far-end cut and far-end BC have no effect (< 1e-5); Neumann at the singular end −0.3%/−0.4%; no single choice gives +4% → open.

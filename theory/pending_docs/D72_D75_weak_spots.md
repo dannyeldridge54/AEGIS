@@ -14311,3 +14311,14 @@ MAP: node=gravitino_wino status=computed touches=[] ripple=no
 - Remaining candidates for the common 4%: (i) BTR's interval taken between the true singular endpoints with a different dilaton normalisation of the Einstein frame (e.g. ½(∂φ)² vs 4/(D−2)(∂φ)²) rescaling y; (ii) the overall potential normalisation α_E (we set α_E = 1; m² scales with it); (iii) BTR's numbers are themselves rounded rough values. Next: one locked recheck varying the dilaton normalisation convention — if a single convention change moves both masses by +4%, the open circuit closes.
 - Circuit: new law "spectrum shape matches BTR" closed (46 laws, 44 closed); the scale law stays OPEN until that recheck.
 MAP: node=S_kk10 status=corrected touches=[] ripple=no
+
+## D1357 — STRINGS / KALUZA: what sets the common −4% to BTR? Endpoint cut-offs and mixed BCs (locked) — the singular-end cut-off is NOT converged (+0.7% in the limit) but explains only ~1/6 of the gap; open circuit stays open (2026-11-19)
+- [computed] Lock PREREG_D1357_btr_scale (committed before running). Script field_tests/scripts/d1357/btr_scale.py; results field_tests/results/D1357_btr_scale.json. 10D critical vacuum, γ = 3/2, scalar master operator (S4e convention), Prüfer.
+- T1 [derived]: α_E rescales y → y/√α_E, m² → α_E m², L → L/√α_E, so m L/π is α_E-independent (no tool knob needed); the same holds for any overall rescaling of the dilaton normalisation that leaves the physics fixed. Not the cause.
+- T2 lower (singular-end) cut ξ₁ = 1e-2, 1e-3, 1e-4, 1e-5, 1e-6 → m₁L/π = 0.90309, 0.92057, 0.93175, 0.93614, 0.93764; m₂L/π = 1.98979, 2.01889, 2.04027, 2.04938, 2.05260. NOT converged at the D1214 cut 1e-4: successive steps shrink by ≈0.35 → geometric limit ≈ 0.9384, 2.0543 (+0.7%) [estimate: Aitken-style extrapolation].
+- T3 upper cut ξ₂ = 6–9: no change (< 1e-5). ξ₂ = 10: the grid loses the first mode (numerical artefact of the search grid, not physics).
+- T4 mixed BCs: Dirichlet→Neumann identical to baseline (the far end is walled off by the potential); Neumann→Dirichlet −0.3%/−0.4%.
+- Verdict by the locked rule: no single choice moves both masses by +3…+5% → open circuit stays OPEN. In the ξ₁ → 0 limit the gap is ≈ −3.3% / −3.6% (BTR 0.97, 2.13), still a common scale (ratio 2.189).
+- CORRECTION to D1214's framing: its 1e-7 agreement is between two solvers at the SAME cut ξ₁ = 1e-4; the cut itself carries ≈ −0.7% (singular end). The circuit's locked 10D values stay as the D1214 reference (labelled at ξ₁ = 1e-4); a converged value needs the ξ₁ → 0 limit or the self-adjoint-extension treatment of the singular end (cf. 2310.15272).
+- Remaining candidates for the ≈3.4%: the self-adjoint extension at the singular end (a different extension than the ξ₁-cut Dirichlet), or BTR's rounded/rough values. Next: one search for BTR's or 2310.15272's endpoint treatment, then a locked extension test.
+MAP: node=S_kk10 status=corrected touches=[] ripple=no
