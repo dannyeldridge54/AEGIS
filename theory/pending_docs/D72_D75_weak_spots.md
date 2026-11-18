@@ -14157,3 +14157,6 @@ MAP: none
 - Consequence: A2p/A2q drop the normalisation caveat. They stay ESTIMATE only for being LL (NLL ≈5% per 1808.08956), with fixed α_W and no external numeric check.
 - Small note: the sommerfeld.py inputs give s₁ ≈ 6% lower than the on-shell set at 1 TeV. R depends only on s₀₀/s₀₁ (0.616 vs 0.642), so the effect on R is second-order. Not rerun (no chasing).
 MAP: none
+
+## D1340a — Label fix to D1340: the ratios 0.616 and 0.642 are s₀₁/s₀₀, not s₀₀/s₀₁ (2026-11-18)
+MAP: none
