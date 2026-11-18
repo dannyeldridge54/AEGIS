@@ -1958,3 +1958,10 @@ Touches: none.
 3. [derived] T-duality R→1/R is the Poisson map α→1/α at unit covolume; a self-dual lattice is invariant, so by D1278 it never flips (D1282: E8 ties its dual to 7e-15).
 4. [derived] The c=2 optimum also fixes the Kähler modulus at the hexagonal point (string-scale volume), whereas SERAPIS-E needs Im S·Im ρ ≈ 780; so the match is on the shape only.
 5. [postulate P1] If some dynamics selects max-gap points, the shape half of the SERAPIS-E vacuum would be derived rather than chosen — open, needs a literature search.
+
+## D1285: Moduli trapping selects enhanced-symmetry points dynamically, but shape and size together — not SERAPIS-E's shape-only match (2026-11-18)
+1. [literature] Kofman et al., hep-th/0403001: particle production near extra-species points traps moduli there; Hubble friction makes it permanent; self-dual radius is the toroidal example.
+2. [estimate] The c=2 maximum-gap point (SU(3), D1283) is an enhanced-symmetry point with extra light states.
+3. [derived] Those states are light only when shape AND complexified size sit at the special point; at Im S·Im ρ ≈ 780 they are heavy for every shape, so τ=ρ alone is not a trapping point.
+4. [derived] Trapping would therefore pull the torus to string-scale volume, opposite to SERAPIS-E; the shape preference remains the D1280 result (V monotone in E(τ,2)).
+5. [postulate P1] A shape-only selector at large volume would need light states whose masses depend on τ alone (brane or flux sector on the inflaton torus) — open.

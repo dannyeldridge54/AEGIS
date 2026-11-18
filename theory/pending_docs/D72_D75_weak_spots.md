@@ -13493,3 +13493,24 @@ max-gap points dynamically (would turn item 1 from coincidence into derivation) 
 
 ### D1284 — wino_window recheck after D1283: unchanged (graph ripple from n_sector_rho; Narain-lattice literature; no wino input touched) (2026-11-18)
 MAP: none
+
+## D1285 — D1283's open question: a dynamical selector of max-symmetry points exists (moduli trapping), but it selects shape AND size together, so it does not explain SERAPIS-E's shape-only match (2026-11-18)
+MAP: node=n_sector_rho status=literature
+LABEL: literature + reasoning. No new physics claim; answers D1283's SEARCH item with a mostly negative result.
+Source read: Kofman, Linde, Liu, Maloney, McAllister, Silverstein, "Beauty is Attractive: Moduli Trapping at Enhanced Symmetry
+Points", arXiv:hep-th/0403001 (JHEP 2004). Content (fetched): a modulus rolling past an "extra species point" (ESP), where new
+states become light, produces those particles; their energy grows with distance from the ESP and pulls the modulus back;
+Hubble friction damps the orbit so it settles AT the ESP. The self-dual radius of toroidal compactifications is their example
+("all circles end up at the self-dual radius"); the strongest attraction is to points with the most light species, often the most
+symmetric ones. They present "beauty is attractive" as a speculation conditional on early-universe dynamics, not a theorem.
+Comparison with D1283:
+1. [literature] So a dynamical mechanism that favours maximal-symmetry points DOES exist, and the c=2 max-gap SU(3) point is such
+   an enhanced-symmetry point (extra light W states there — standard toroidal-string fact, [estimate]-level reading, not re-derived).
+2. [derived, reasoning] The extra light states at that point need BOTH moduli at the special value: their masses depend on the
+   shape and on the complexified size (winding/momentum). At SERAPIS-E's large volume (Im S·Im ρ ≈ 780) they are heavy whatever
+   the shape, so the shape alone is NOT an extra-species point and trapping gives no pull toward τ=ρ there.
+3. [derived] Hence trapping would drive the torus to the string-scale SU(3) point — the opposite of the large volume SERAPIS-E needs
+   — and cannot be the reason for the shape-only match. The shape preference in SERAPIS-E stays explained by D1280 (potential
+   monotone in E(τ,2)), not by trapping.
+Verdict: PASS (literature). D1283's open question narrowed: a selector exists but it is the wrong kind (shape+size). A shape-only
+selector would need extra light states depending on τ alone at large volume (e.g. from branes/fluxes on that torus) — new open item.
