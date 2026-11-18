@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1292, D1293, D1294",
+   "refs": "D1293, D1294, D1295",
    "info": ""
   },
   {
@@ -814,6 +814,14 @@
    "lane": "lattice",
    "status": "computed",
    "refs": "D1295",
+   "info": ""
+  },
+  {
+   "id": "X_sqin",
+   "label": "The saddle square (τ=i) also sits inside every champion: 18 (D4), 270 (E6), 945 (E7), 3780 (E8), 2,288,695,500 (Leech); square/hex ratio rises with d",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1296",
    "info": ""
   },
   {
@@ -2575,6 +2583,42 @@
    "sign": 1,
    "ref": "D1295",
    "verdict": "Z[ω]",
+   "source": "curated"
+  },
+  {
+   "s": "X_sqin",
+   "t": "X_hexin",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1296",
+   "verdict": "saddle vs minimum multiplicity",
+   "source": "curated"
+  },
+  {
+   "s": "X_sqin",
+   "t": "vac_i",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1296",
+   "verdict": "same shape",
+   "source": "curated"
+  },
+  {
+   "s": "X_sqin",
+   "t": "X_d8",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1296",
+   "verdict": "3780",
+   "source": "curated"
+  },
+  {
+   "s": "X_sqin",
+   "t": "X_d24",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1296",
+   "verdict": "2.29e9",
    "source": "curated"
   },
   {

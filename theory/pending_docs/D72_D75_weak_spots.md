@@ -13642,3 +13642,15 @@ LABEL: numerics (computed; new lattice_lab `automorphisms`), locked first (PRERE
   Which one is the minimum is then a property of the energy (hexagon for all energies we tested, D1277/D1280/D1293).
 CHAIN: number theory (units of Z[i], Z[ω]) → lattice symmetry (8, 12) → forced stationary shapes (i, ρ) → SERAPIS-E's two sectors.
 Files: field_tests/units_symmetry.py, field_tests/results/units_symmetry_2026-11-18.txt.
+
+## D1296 — The saddle shape (square, τ=i) is ALSO inside every champion, and it outnumbers the hexagon more and more with dimension: 18/16 (D4), 270/120 (E6), 945/336 (E7), 3780/1120 (E8), 2,288,695,500/75,348,000 (Leech); PREREG all PASS (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: numerics (computed; new lattice_lab `squares`), locked first (PREREG_D1296). Leech per-vector count from 6 sampled minimal
+vectors (all 93150) + [literature] transitivity.
+Square plane = span of two orthogonal minimal vectors. Counts (min × orthogonal-per-vector / 8): D4 24·6 → 18 · E6 72·30 → 270 ·
+E7 126·60 → 945 · E8 240·126 → 3780 · Leech 196560·93150 → 2,288,695,500. All exactly as predicted.
+Ratio square/hex planes: 1.125, 2.25, 2.81, 3.375, 30.4 — rising with dimension.
+MEANING: both SERAPIS shapes live inside every champion — the minimum (hexagon) and the saddle (square). In higher dimensions the
+saddle planes vastly outnumber the minimum planes (×30 in Leech), yet the champions are still the most "hexagon-rich" lattices of
+their dimension (D1294). In the web: every champion node now carries both 2D sectors with exact multiplicities.
+Files: tools/lattice/lattice_lab.py `squares`, field_tests/results/squares_inside_2026-11-18.txt.

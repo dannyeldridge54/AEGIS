@@ -1,0 +1,5 @@
+{"lattice": "D4", "min_vectors": 24, "orthogonal_per_vector": [6], "square_planes": 18, "shape": "tau=i (square, the saddle)"}
+{"lattice": "E6", "min_vectors": 72, "orthogonal_per_vector": [30], "square_planes": 270, "shape": "tau=i (square, the saddle)"}
+{"lattice": "E7", "min_vectors": 126, "orthogonal_per_vector": [60], "square_planes": 945, "shape": "tau=i (square, the saddle)"}
+{"lattice": "E8", "min_vectors": 240, "orthogonal_per_vector": [126], "square_planes": 3780, "shape": "tau=i (square, the saddle)"}
+{"lattice": "Leech", "min_vectors": 196560, "orthogonal_per_vector": [93150], "square_planes": 2288695500, "shape": "tau=i (square, the saddle)"}

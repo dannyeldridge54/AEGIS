@@ -2022,3 +2022,8 @@ Touches: none.
 3. [literature] Z[i] and Z[ω] are the only imaginary-quadratic rings with units beyond ±1 (4 and 6 units); 8 = 2·4, 12 = 2·6.
 4. [derived] A shape-fixing rotation acts on the tangent plane, so ∇E = 0 at τ=i, ρ for any shape-energy; checked ≤4.5e-10 (vs 0.14–0.32 at τ=2i).
 5. [derived] Hence the two SERAPIS sectors are forced by symmetry; which is the minimum (hexagon) is set by the energy.
+
+## D1296: Square (τ=i) planes inside the champions: 18 (D4), 270 (E6), 945 (E7), 3780 (E8), 2,288,695,500 (Leech) — outnumbering hexagons increasingly with d (2026-11-18)
+1. [derived] Locked counts (PREREG_D1296) = (#min)(#orthogonal per vector)/8.
+2. [derived] Exact enumeration: D4 18, E6 270, E7 945, E8 3780; Leech 196560·93150/8 from 6 sampled vectors ([literature] Co0 transitive).
+3. [derived] Square/hex plane ratio 1.125, 2.25, 2.81, 3.375, 30.4 — rising with dimension.

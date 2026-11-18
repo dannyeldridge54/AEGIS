@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1274a: BHK one-loop tilt C → postulate (late, recorded only)",
   "D1275b: BHK one-loop tilt C → postulate",
   "D1265b: POSTULATE (forecast passed): CMB measures the string product Im S·Im ρ — ±14 % from SO n_s (T_R known), ±19 % + T_R to 2.8 decades with LiteBIRD r → postulate",
   "D1286: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed",
@@ -29,7 +28,8 @@
   "D1292: SERAPIS-E potential (Epstein + BHK tilt) → computed",
   "D1293: SERAPIS-E potential (Epstein + BHK tilt) → computed",
   "D1294: SERAPIS-E potential (Epstein + BHK tilt) → computed",
-  "D1295: SERAPIS-E potential (Epstein + BHK tilt) → computed"
+  "D1295: SERAPIS-E potential (Epstein + BHK tilt) → computed",
+  "D1296: SERAPIS-E potential (Epstein + BHK tilt) → computed"
  ],
  "open_rechecks": [
   "Vacuum at τ=i (Chronos/Kairos)",
