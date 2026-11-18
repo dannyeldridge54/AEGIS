@@ -1,3 +1,45 @@
 # Sync ledger (tools/ladder/sync.py). A node reviewed against an input's newer note is in sync up to 'at'.
 # Every entry cites the D-note that made the decision. Recomputations go through a lock as usual.
-{}
+vac_rho:
+  eps_tilt: {at: D1250, by: D1344, verdict: "no effect: the ρ vacuum does not depend on ε (any potential monotone in E(τ,2) has its vacuum at ρ, D1280); D1045/D1048 are tilt-frame results, D1250 the audit close-out"}
+sterile_i:
+  n_sector_i: {at: D1279, by: D1344, verdict: "no effect: D1249 was an audit sweep, D1279 a lattice-shape flow; no sterile-sector input changed"}
+sterile_rho:
+  n_sector_rho: {at: D1286, by: D1344, verdict: "no effect: D1282-D1286 are lattice-shape notes filed on n_sector_rho by mistake (D1287); no heavy-ν input changed"}
+lepto_rho:
+  n_sector_rho: {at: D1286, by: D1344, verdict: "no effect: same lattice-shape notes (D1287)"}
+darkrad_rho:
+  n_sector_rho: {at: D1286, by: D1344, verdict: "no effect: same lattice-shape notes (D1287)"}
+lepto_i:
+  n_sector_i: {at: D1279, by: D1344, verdict: "no effect: audit sweep and lattice-shape flow"}
+  eta_n: {at: D1243, by: D1344, verdict: "in sync: D1243 (NA10) is the τ = i leptogenesis result itself (PASS 38-86%), recorded in SERAPIS_DERIVATION §5"}
+band_e:
+  nstar_e: {at: D1262, by: D1344, verdict: "no effect by design: band_e is the FROZEN band (D693); audited N* goes to band_e_audited"}
+  janus: {at: D1255, by: D1344, verdict: "no effect by design: frozen band"}
+band_e_audited:
+  nstar_e: {at: D1262, by: D1344, verdict: "in sync: the audited box already uses the MSSM g* N* 50.07-51.22 (node title cites D1262)"}
+  serapis_e: {at: D1298, by: D1344, verdict: "no effect: D1295-D1298 are lattice-shape notes (vacuum shape confirmed at ρ)"}
+nstar_e:
+  serapis_e: {at: D1298, by: D1344, verdict: "no effect: lattice-shape notes; the potential and its end of inflation are unchanged"}
+m32_window:
+  serapis_e: {at: D1298, by: D1344, verdict: "no effect: lattice-shape notes"}
+  wino_window: {at: D1338, by: D1344, verdict: "no effect on the verdict: the window's upper edge moved DOWN (1.85 -> ~1.0-1.25 TeV, D1324), so the AMSB m3/2 need falls and the x960 margin only grows"}
+stuck_d3:
+  bhk_tilt: {at: D1275b, by: D1344, verdict: "no effect: D1274a/D1275/D1275a/D1275b concern whether Im S·Im ρ is independent of n_s (it is not, D1275b); the tadpole count 3N+N0+Nflux = 16 is unchanged"}
+string_meter:
+  bhk_tilt: {at: D1275b, by: D1344, verdict: "consistent: D1275b says Im S·Im ρ is fitted to n_s today; the string meter is exactly that inverse map, read as a forecast of precision, not an independent check"}
+serapis_point:
+  bhk_tilt: {at: D1275b, by: D1344, verdict: "no effect: the point takes the string benchmark C = 1.25e-6 as an input (D1251); D1275b only removes the 'independent check' wording"}
+vac_discriminant:
+  vac_i: {at: D1344, by: D1344, verdict: "the ρ-vs-i discriminant stands; it now compares ρ with a CONDITIONAL τ = i vacuum (D1344)"}
+  serapis_point: {at: D1273a, by: D1344, verdict: "no effect: D1272 tool cross-check, D1273/D1273a CMB pulls; the point values are unchanged"}
+inverse_meter:
+  serapis_point: {at: D1273a, by: D1344, verdict: "no effect: same"}
+instanton_MH:
+  serapis_point: {at: D1273a, by: D1344, verdict: "no effect: same"}
+tests_cmb:
+  band_i: {at: D1343, by: D1344, verdict: "in sync: D1343 confirmed the τ = i values (Δα_s -7e-7)"}
+nstar_i:
+  vac_i: {at: D1344, by: D1344, verdict: "computation unchanged; now CONDITIONAL on an axion-pinning term at τ = i (vac_i assumed, D1344)"}
+darkrad_i:
+  vac_i: {at: D1344, by: D1344, verdict: "computation unchanged; conditional on the pinned τ = i vacuum (D1344)"}

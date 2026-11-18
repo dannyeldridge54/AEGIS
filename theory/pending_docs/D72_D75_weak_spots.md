@@ -14203,3 +14203,11 @@ MAP: none
 - Verdict: the old τ = i α_s was not affected by the bd = 200 ripple at a level that matters (≤ 1e-6). SERAPIS_DERIVATION §4 (τ = i: α_s −8.54e-4) stands. The SERAPIS-E point (D1262) was already on the U1b path. Remaining part of the D1255 queue item: the Janus-accuracy notes D1148, D1176, D1218 (they compare Janus with exact-MS references).
 - Result file: field_tests/results/d1343_tau_i_alpha.txt; script field_tests/scripts/d1343/tau_i_alpha.py.
 MAP: node=band_i status=computed touches=[] ripple=no
+
+## D1344 — CENTRE — Node sync pass 1 (Danny: "all the nodes working in tandem, sync them up"): 19 nodes were out of sync with an input; 17 reviewed as no effect / in sync, 1 real fix (vac_i → assumed: the τ = i vacuum needs a pinned axion, D1280), 1 handed to the wino track (tests_lhc) (2026-11-18)
+- [TOOL] New sync board tools/ladder/sync.py: a node is out of sync when one of its inputs (map 'depends') changed in a later D-note than the node's own last D-note. Reviews are kept in theory/map/sync.yaml, each citing the deciding note.
+- Real fix: vac_i ("Vacuum at τ=i") still read 'computed', but D1280 found τ = i is a SADDLE of the SERAPIS-E potential (unstable along the axion); D1280's MAP line only reached serapis_e. The τ = i vacuum therefore holds only with an axion-pinning term (explicit CP / flux; open). Status → assumed. Downstream i-branch results (nstar_i, lepto_i, band_i) are unchanged as computations but are now conditional on that pinning.
+- Handed over (not reviewed here): tests_lhc ← wino_window (D1318–D1338). The window's top edge fell to ~1.0–1.25 TeV (D1324) and HL-LHC reaches ~0.98 TeV (D1302), so the LHC test now covers most of the window; the update belongs to the wino track (other session).
+- No effect / already in sync (17 pairs, reasons in sync.yaml): lattice-shape notes D1279–D1298 (filed on n_sector_rho/serapis_e; D1287), frozen band_e, audited box already on MSSM g* (D1262), D1275b circularity (consistent with the string meter's inverse-map reading), lower wino ceiling (m3/2 margin only grows), D1343 confirmation.
+- After this pass: `python tools/ladder/sync.py` lists the open items; the derivation loop now runs it every tick.
+MAP: node=vac_i status=assumed touches=[] ripple=no
