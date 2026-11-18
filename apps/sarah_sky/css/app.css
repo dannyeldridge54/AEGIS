@@ -90,3 +90,7 @@ body{ background:var(--bg); color:var(--ink); }
 #sarahOverlays:not([open]){ padding:6px 12px; }
 #sarahOverlays[open] summary{ margin-bottom:6px; }
 @media (max-width:600px){ #sarahOverlays{ right:10px; left:auto; bottom:110px; max-width:calc(100vw - 20px); } #sarahOverlays[open]{ left:10px; } }
+#sarahOverlays .out{ margin:2px 0 8px 22px; color:#ffd9f1; font-size:13px; line-height:1.35; }
+#sarahOverlays .trad{ opacity:.65; font-size:11px; }
+#sarahOverlays .tbtn{ margin-top:4px; background:transparent; color:var(--a-pink); border:1px solid var(--a-violet); border-radius:8px; padding:3px 10px; font:inherit; }
+#sarahOverlays[open]{ max-height:70vh; overflow:auto; }

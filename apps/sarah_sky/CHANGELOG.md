@@ -1,4 +1,9 @@
 # Changelog
+## 1.3.0 — 18 Nov 2026
+- Janus "Prismatic Light" colours; dark by default (a light theme stays available).
+- Overlays & tools panel is now a button that opens on tap, so it no longer covers the map on phones.
+- Working traditions (each labelled as tradition, not astronomy, from real Sun/Moon positions): Western zodiac; Vedic nakshatra, pada, rashi and tithi (Lahiri ayanamsa); Chinese calendar year animal, element, stem-branch and lunar date; Moon phase, illumination, age, sign and next full/new moon; daily tarot card (same card all day) with extra draws.
+- Choices remembered on the device; nothing leaves it.
 ## 1.1.0 — 15 Nov 2026
 - AEGIS discovery categories layer (seven categories from the Star Mapper, rules locked in PREREG_D716), with counts and toggles.
 - Combined classroom review tallies shown on each star; Gaia source_id search; star cards show 3D motion and true brightness.
