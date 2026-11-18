@@ -10,6 +10,7 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   cern higgsino <mass_GeV> [TeV]    higgsino pair cross sections (fb), 100-1500 GeV
   cern future                       HL-LHC / HE-LHC / FCC-hh wino reach
   lattice <command> [args]          Lattice Lab (e.g. lattice hexagons E8, lattice energy E6 1.25)
+  string kk|stable [D=..] [gamma=..] [fd]  10D/6D string vacua: scalar KK masses (10D critical, D1214), stability (D1140)
   janus "<V(phi)>" [N*]             inflation observables n_s, r, alpha_s for any potential, e.g. janus "0.5*phi**2" 60
   hyperion bbn <omega_b h^2> [dNeff]   primordial helium Y_p and D/H (PRIMAT 2021 tables; needs camb)
   hyperion orbit <ra> <dec> <dist_pc> <pmra> <pmdec> <rv> [McMillan17|MWPotential2014]
@@ -252,6 +253,24 @@ def lattice(args):
     from tools.lattice import lattice_lab
     lattice_lab.main(args)
 
+def string(args):
+    """string kk [D=10] [gamma=1.5] [fd]   — scalar KK masses on a BTR vacuum (10D critical by default; validated D1214)
+       string stable [D=6] [gamma=2]       — scalar stability of a subcritical vacuum (D1140)"""
+    sub = args[0] if args else 'kk'; kv = dict(a.split('=', 1) for a in args[1:] if '=' in a)
+    if sub == 'stable':
+        import sympy as sp
+        from tools.kaluza.background import vacuum
+        from tools.kaluza.stability import scalar_condition
+        r = scalar_condition(vacuum(int(kv.get('D', 6)), sp.nsimplify(kv.get('gamma', '2'))))
+        print(f"{int(kv.get('D', 6))}D vacuum, γ = {kv.get('gamma', '2')}: scalar condition min {r['min']:.6f} vs threshold {r['threshold']} → {'STABLE' if r['stable'] else 'UNSTABLE'}")
+        return
+    if sub != 'kk': print(string.__doc__); return
+    from tools.kaluza.scalar import kk_scalar
+    r = kk_scalar(int(kv.get('D', 10)), float(kv.get('gamma', 1.5)), method='fd' if 'fd' in args else 'pruefer')
+    print(f"{r['D']}D {r['kind']} vacuum (γ = {r['gamma']:g}), {r['method']}: m² = {', '.join(f'{v:.7f}' for v in r['m2'])}")
+    print(f"  interval L = {r['L']:.6f}; m L/π = {', '.join(f'{v:.5f}' for v in r['mL_over_pi'])}; ratio m₂²/m₁² = {r['ratio']:.5f}")
+    print('  note: S4e convention — open −4% gap vs BTR 2209.10553 (D1141/D1214)')
+
 def test(args):
     import runpy
     try: runpy.run_path(os.path.join(_root(), 'tools', 'release_smoketest.py'), run_name='__main__')
@@ -298,7 +317,7 @@ def main(argv=None):
         try: st.reconfigure(encoding='utf-8', errors='replace')
         except Exception: pass
     _root(); argv = sys.argv[1:] if argv is None else argv
-    cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
+    cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'string': string, 'test': test, 'license': license_, 'menu': menu}
     if not argv: return menu([])
     if argv[0] in ('--version', 'version'): print('aegis', VERSION); return
     if argv[0] in ('-h', '--help', 'help') or argv[0] not in cmds: print(__doc__); return

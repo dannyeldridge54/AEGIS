@@ -293,6 +293,10 @@ NODE_TESTS.update({
     'T_hyperion': ('janus_lt', {'h': 0.6736, 'ombh2': 0.02237, 'omch2': 0.12, 'w0': -1, 'wa': 0, 'z': [0.5, 1.0]}, _ran('Hyperion late-universe engine')),
     'tests_cmb': ('serapis_point', {'C': 1.25e-6, 'T_R': 8.94e8}, _band(('r',), 4.0e-4, 6.0e-4, 'SERAPIS r for LiteBIRD (σ ≈ 1e-3 → needs CMB-S4-class)')),
     'band_i': ('serapis_emulator', {'C': 1.15e-6}, _band(('ns',), 0.970, 0.975, 'n_s inside the frozen band')),
+    # new tool kaluza_scalar (Danny 17:17 "add new tool"): 10D string vacuum + scalar KK tower
+    'S_10d': ('kaluza_scalar', {'D': 10, 'gamma': 1.5}, _is('kind', 'critical', '10D vacuum branch')),
+    'S_kk10': ('kaluza_scalar', {'D': 10, 'gamma': 1.5}, lambda r: (abs((r.get('m2') or [0])[0]/2.9795596 - 1) < 1e-5, f"10D scalar KK m²₁ = {(r.get('m2') or [None])[0]} (D1214: 2.9795596)")),
+    'S_btr': ('kaluza_scalar', {'D': 10, 'gamma': 1.5}, lambda r: (abs((r.get('mL_over_pi') or [0])[0]/0.97 - 1) < 0.03, f"m L/π = {(r.get('mL_over_pi') or [None])[0]} vs BTR 0.97 (open −4% gap, D1141)")),
 })
 
 # ---- Tool chains (Danny 16:35 "wire up tools with our serapis pattern as well as each other") ----
