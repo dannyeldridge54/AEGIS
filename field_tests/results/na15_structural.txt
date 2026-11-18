@@ -1,0 +1,9 @@
+1. matter_parity: 2k_L+2k_Hu ≡ 2 mod 4 for all odd k_L, even k_Hu in [−7,7]: PASS
+2. covariant y=23: τ=i 1.30e+07 vs ρ 1.30e+07 (0.0%) PASS
+2. covariant y=26: τ=i 2.60e+06 vs ρ 2.60e+06 (0.0%) PASS
+2. covariant y=28: τ=i 8.70e+05 vs ρ 8.60e+05 (1.1%) PASS
+2. covariant y=30: τ=i 3.00e+05 vs ρ 2.90e+05 (3.3%) PASS
+3. eps_tilt: τ = i window under audited reheating ε ≈ 1.39–1.44e-4 (NA12, D1247); was 1.40–1.45e-4 (D815). Status estimate (fitted).
+4. sterile_i: D727 λ = √2κ (n = 1) consistent (NA7); T_R corrected with D730 mass (NA8). Recorded.
+5. plateau_origin: assumed (string home open, D1229 NULL); logderiv_plateau: killed (D822). Unchanged.
+6. wino_window: BLOCKED — g*(T) table (member.ipmu.jp) refused by the egress proxy; needs manual save to Desktop\AEGIS_PCJOBS\data\eos2018.
