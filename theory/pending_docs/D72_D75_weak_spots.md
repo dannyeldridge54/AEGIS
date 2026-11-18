@@ -13514,3 +13514,17 @@ Comparison with D1283:
    monotone in E(τ,2)), not by trapping.
 Verdict: PASS (literature). D1283's open question narrowed: a selector exists but it is the wrong kind (shape+size). A shape-only
 selector would need extra light states depending on τ alone at large volume (e.g. from branes/fluxes on that torus) — new open item.
+
+## D1286 — In d=6 and d=7 the E-lattices beat every standard family at every scale (E above the self-dual scale, E* below); PREREG P1–P4 all PASS (2026-11-18)
+MAP: node=n_sector_rho status=computed
+LABEL: numerics (computed), locked first (field_tests/rules/PREREG_D1286_lattice_winners_d6_d7.md, commit 0c9b3b18). No new physics claim.
+Families Zⁿ, Dₙ, Dₙ*, Aₙ, Aₙ*, Eₙ, Eₙ* at unit covolume; Gaussian energy θ−1 by exact enumeration |v|² ≤ 12 (Q10 vs Q12 agree to
+3e-14 at α ≥ 1.25); α < 1 from Poisson. Values θ−1 at α = 1 / 1.25 / 2:
+- d=6: E .392541 / .104582 / .002056 · E* .392541 / .106182 / .002327 · D .421498 / .118704 / .002796 · A .471219 / .146040 · Z .644455.
+- d=7: E .434176 / .103067 / .001437 · E* .434176 / .105655 / .001813 · D .504442 / .135170 / .002802 · A .563465 · Z .786593.
+P1 PASS (E6, E7 win for every α>1) · P2 PASS (E6*, E7* win for every α<1) · P3 PASS (Zⁿ never wins; it is last everywhere) ·
+P4 PASS (every L/L* pair ties at α=1 to ≤9e-14). Ranking below the winner is the same at every α>1: E > E* > D > (A, D*) > A* > Z.
+So the flip rule (D1278) now holds against the whole field, not just pairwise: in non-self-dual dimensions the champion hands over
+to its own dual exactly at the self-dual scale. Dimension chain of champions: 2 hex (A2, self-dual) · 3 FCC/BCC (A3=D3 / dual) ·
+4 D4 (self-dual) · 5 D5/D5* · 6 E6/E6* · 7 E7/E7* · 8 E8 (self-dual). Caveat: only these families were compared.
+Files: field_tests/lattice_winners_d6_d7.py, field_tests/results/lattice_winners_d6_d7_2026-11-18.txt.

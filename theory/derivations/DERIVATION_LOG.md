@@ -1965,3 +1965,10 @@ Touches: none.
 3. [derived] Those states are light only when shape AND complexified size sit at the special point; at Im S·Im ρ ≈ 780 they are heavy for every shape, so τ=ρ alone is not a trapping point.
 4. [derived] Trapping would therefore pull the torus to string-scale volume, opposite to SERAPIS-E; the shape preference remains the D1280 result (V monotone in E(τ,2)).
 5. [postulate P1] A shape-only selector at large volume would need light states whose masses depend on τ alone (brane or flux sector on the inflaton torus) — open.
+
+## D1286: In d=6,7 the E-lattices win against all standard families at every scale, handing over to their duals at α=1 (2026-11-18)
+1. [derived] Locked predictions P1–P4 (PREREG_D1286) before computing.
+2. [derived] Exact enumeration (|v|²≤12) of Zⁿ, Dₙ, Dₙ*, Aₙ, Aₙ*, Eₙ, Eₙ*, n=6,7, unit covolume: E has the lowest Gaussian energy for all α>1 (d=6 α=1.25: E .10458, E* .10618, D .11870, A .14604).
+3. [derived] By Poisson, Eₙ* has the lowest energy for all α<1; every L/L* pair ties at α=1 to ≤9e-14.
+4. [derived] Zⁿ is last at every α; the order E > E* > D > (A, D*) > A* > Z holds at every α>1 tested.
+5. [derived] Champion chain d=2…8: hex, FCC/BCC, D4, D5/D5*, E6/E6*, E7/E7*, E8 — self-dual champions never hand over; the others hand over to their own dual exactly at α=1.
