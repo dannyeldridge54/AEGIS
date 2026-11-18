@@ -1,0 +1,6 @@
+P1 fit {'a': np.float64(1.5642), 'b': np.float64(11.9225), 'lnN': np.float64(3.5206), 'max_rel_dev': 0.0319}
+P2 m 400 median bT 0.538 mean 0.633
+P2 m 600 median bT 0.503 mean 0.58
+P2 m 800 median bT 0.473 mean 0.538
+P3 ATLAS_136 kinematic limit 661.5 fixed-bg 666.6 published 660.0
+P3 ATLAS_36 kinematic limit 446.6 fixed-bg 447.8 published 460.0
