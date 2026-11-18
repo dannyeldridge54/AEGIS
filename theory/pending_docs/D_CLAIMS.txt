@@ -597,3 +597,4 @@ D1310  2026-11-18T13:57Z  CERN+1 band in registry
 D1311  2026-11-18T14:34Z  CERN+1 36fb residual explained
 D1312  2026-11-18T14:36Z  CERN+1 gamma-line link
 D1313  2026-11-18T14:39Z  CERN+1 higgsino
+D1314  2026-11-18T16:52Z  Flag sweep: 25 recheck flags cleared - lattice-numerics ripples (D1279, D1286, D1298 'past 9 dimensions') change no physics node; D1250/D1264/D1275b rechecked, unchanged
