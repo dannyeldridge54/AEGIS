@@ -1,0 +1,7 @@
+PW2/A1 point: N* 50.181, r 4.8216e-04, H* 5.443e+12 GeV
+exit: y 14.632, V_pl 0.998392, e^(L-Lr) 1.097e+5, bracket 2.217e+7 -> m3/2/H < 0.000368, m3/2 < 2.001e+09 GeV
+12 e-folds before exit: y 16.570, V_pl 0.999039, e^(L-Lr) 7.376e+5, bracket 1.95e+8 -> m3/2/H < 0.000124, m3/2 < 6.748e+08 GeV
+20 e-folds before: y 4990.894, V_pl 68.399035, e^(L-Lr) 4.703e+2265, bracket 1.284e+2273 -> m3/2/H < 4.0e-1136, m3/2 < 0.000e+00 GeV
+Nend 63.20048369204242
+note: the '20 e-folds before' row lies outside the integrated background (N_end − 70.2 < 0: start of the integration at Ê = 600) — extrapolated, discarded; not part of the verdict.
+VERDICT: bound at 12 e-folds before exit 6.75e8 GeV ≥ 1e8 (expectation PASS); vs AMSB need ≤ 7e5 GeV: margin ×960 → CONSISTENT (postulate survives)
