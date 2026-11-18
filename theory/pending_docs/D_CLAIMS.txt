@@ -609,3 +609,4 @@ D1322  2026-11-18T17:10Z  A2n: Singh-Desai cored/Einasto shapes at standard rho_
 D1323  2026-11-18T17:11Z  v3.3 draft: cored-halo sentence updated to the A2n result (10/10 shapes pass at standard rho_sun)
 D1324  2026-11-18T17:12Z  A2o: window upper edge computed - 1 TeV passes all Gaia/Singh-Desai haloes; 1.25 band-dependent; 1.5 fails for NFW/Burkert, passes only Einasto cores
 D1325  2026-11-18T17:14Z  v3.3 overclaim fixed: SO (sigma 0.045) sees tau_i U(1) dark radiation only at 1.2 sigma, not a test; SU(2) at 3.6 sigma
+D1326  2026-11-18T17:14Z  v3.3 draft: 1.25/1.5 TeV bullet from A2o added (unposted); covariant-row 0.67-1.85 left (different scenario, flagged)
