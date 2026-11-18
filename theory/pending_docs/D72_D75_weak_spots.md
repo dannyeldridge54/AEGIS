@@ -14282,3 +14282,13 @@ MAP: node=vac_i status=computed touches=[] ripple=no
 - Files: field_tests/scripts/d1352/{configs.py, closed_form_check.py}; field_tests/results/D1352_lattice_configs.json.
 - Janus full coverage (same session): node tests now cover 59 nodes (16 with sweeps) incl. all 21 testable lattice nodes (E8 1120 hexagonal planes, θ_E8 = E4, θ_Leech, A2 Epstein 5.7833593, D4 18 squares, E6 120/270, flips) and all 10 LHC nodes.
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1354 — CENTRE: the SERAPIS circuit on the lattice plan — 25 laws over four stacked hexagonal layers, all closed; the circuit caught two errors of mine (2026-11-18)
+- What it is (engineering of the checks, not a physics claim): apps/aegis_studio/circuit.py. Components = web nodes on A2 hexagonal patches; layers stacked along the nesting chain A2 → D4 → E8 → Leech; a TRIANGLE law = three independent routes to one quantity must agree; UP links carry a quantity into the next layer unchanged; a DOWN pass hands C back to the core.
+- [derived] A2 core (operating point n_s = 0.9744, D1251): n_s three routes spread 2.5e-5 (tol 3e-4); with exact MS 2.6e-5 (1e-3); N* 50.18, spread 2.6e-4 (0.2); α_s spread 3.6% (6%, D1234); C 1.248e-6, spread 0.19% (2%); r 4.82e-4, spread 0.07% (2%).
+- [derived] D4: frozen band n_s = 0.97437 ✓; F3 pull +0.58σ vs CMB-SPA+DESI ✓; cap n_s(C = 1.6e-6) = 0.9782 < 0.985 ✓; dN*/dln T_R = 0.3333 ✓ (see correction 2). E8: wino floor 666.6 / 666.6 / ATLAS 660 GeV ✓; HL-LHC reach 975.1 vs 974.4 GeV ✓; Δm 164.11 MeV ✓; lattice configs ≥ 3.22× SERAPIS r ✓. Leech: E(ρ,2) = 5.7833593 ✓; θ_E8 = E4 ⇔ no flip ✓. Up: hexagon ×16 in D4, ×1120 in E8 ✓; N*, r unchanged ✓. Down: n_s(C_back) = 0.97437 ✓.
+- CORRECTION 1 (first circuit run, 22:41 UTC): I wrote the twin-ladder bridge B1, r ≈ 3(1−n_s)², as a law. B1 belongs to the D403-era Starobinsky-class model; SERAPIS-E sits below that line by design (r / 3(1−n_s)² = 0.245). B1 is now reported as a ratio, not a law. Not a model failure.
+- CORRECTION 2 (22:47 UTC): the D4 reheating law was written as |dN*/dln T_R| ≤ 1/12 — that is the coefficient per e-fold of ρ_reh. Per e-fold of T_R (ρ ∝ T⁴) it is (1−3w)/(3(1+w)) = 1/3 at w = 0. The tool returned 0.3333; the law was wrong, not the tool. Restated as = 1/3 ± 0.01.
+- Both corrections are dated in circuit.py's docstring; tolerances otherwise unchanged since written. Runs log to CubeMind (aegis_link/circuit_runs.jsonl) with per-wire drift.
+- Verdict: circuit 25/25 closed; no physics change; plateau_origin untouched. Next: fill each layer to 7 sites, then the 10D layer and the SUSY shell.
+MAP: node=janus status=computed touches=[] ripple=no

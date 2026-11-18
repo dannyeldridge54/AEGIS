@@ -2153,3 +2153,8 @@ Touches: none.
 2. [literature] 3α = 1…7 disk family (Ferrara–Kallosh 2016; Kallosh–Linde–Wrase–Yamada 2017).
 3. [derived] Exact T-model: sinh²y_e = 4/(3α), cosh y* = cosh y_e + 4N/(3α), r = 64/(3α sinh²y*); numerics agree to 3.5e-4 (r).
 4. [derived] n_s = 0.9608 (N*=50.7) / 0.9639 (N*=55) for every lattice; r = 1.5e-3 (A2) … 1.6e-2 (Leech). Lattice shows only in r; below the SERAPIS n_s band; plateau_origin stays assumed.
+
+## D1354: SERAPIS circuit + two corrections
+1. [derived] Six A2 triangle laws (n_s, n_s-MS, N*, α_s, C, r) close within tolerances fixed before the run; spreads 2.5e-5 … 3.6%.
+2. [derived] dN*/dln T_R = (1−3w)/(3(1+w)) = 1/3 at w = 0 (ρ ∝ T⁴); the first-run bound 1/12 was the per-ρ coefficient (my error).
+3. [derived] r/3(1−n_s)² = 0.245: SERAPIS-E sits below the Starobinsky line; B1 is not a law for this model (my misapplication).
