@@ -32,6 +32,7 @@ LAYOUT = {
     'D4':    {'nstar_e': (0, 0), 'L_reheat': (1, 0), 'band_e': (0, 1), 'caps': (-1, 1), 'L_cmb': (-1, 0), 'eps_tilt': (0, -1), 'C_nstar': (1, -1)},
     'E8':    {'wino_window': (0, 0), 'Q_dt': (1, 0), 'Q_panel': (0, 1), 'Q_future': (-1, 1), 'Q_life': (-1, 0),
               'tests_cmb': (0, -1), 'G_A2': (1, -1)},
+    'Late':  {'J_lt': (0, 0), 'R_desi': (1, 0), 'R_growth': (0, 1), 'R_w0wa': (-1, 1), 'T_hyperion': (-1, 0), 'R_clock': (0, -1), 'R_biref': (1, -1)},
     'Leech': {'X_epstein': (0, 0), 'X_hexin': (1, 0), 'X_mod': (0, 1), 'S_stab': (-1, 1), 'X_narain': (-1, 0), 'X_su3': (0, -1), 'X_d24': (1, -1)},
     '10D':   {'S_10d': (0, 0), 'S_kk10': (1, 0), 'S_btr': (0, 1), 'S_6d': (-1, 1)},
     'SUSY':  {'m32_window': (0, 0), 'gravitino_wino': (1, 0), 'covariant': (0, 1), 'tests_lhc': (-1, 1), 'H_relic': (-1, 0), 'matter_parity': (0, -1), 'H_line': (1, -1)},
@@ -103,6 +104,27 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     W['het_iso'] = max((abs(ch['E8xE8'][a]/ch['D16+'][a] - 1) for a in ch.get('E8xE8', {})), default=float('inf')) if 'D16+' in ch else float('inf')
     W['D16p_selfdual'] = 1.0 if get('lattice_lab', {'cmd': 'flip', 'args': ['D16+']}).get('self_dual') is True else 0.0
     q = math.exp(-2*math.pi); W['j_at_i'] = sum(v*q**k for k, v in cf.items()) if cf else None
+    # Late-universe layer (2026-11-19 01:05 UTC; tolerances fixed BEFORE the first run). Planck-like ΛCDM inputs.
+    cos = dict(h=0.6736, ombh2=0.02237, omch2=0.12, w0=-1, wa=0)
+    zs = [round(0.05*k, 2) for k in range(1, 48)]   # 0.05 … 2.35
+    lt = get('janus_lt', dict(cos, z=zs)); zq = [0.51, 1.32, 2.33]
+    if lt:
+        Hs = [lt[str(z)]['H_kms_Mpc'] if str(z) in lt else lt.get(f'{z:g}', {}).get('H_kms_Mpc') for z in zs]
+        ok_grid = None not in Hs
+        if ok_grid:
+            import numpy as _np
+            zz = _np.array([0.0] + zs); H0 = 100*cos['h']; HH = _np.array([H0] + Hs); c_km = 299792.458
+            integ = _np.concatenate([[0.0], _np.cumsum(0.5*(c_km/HH[1:] + c_km/HH[:-1])*_np.diff(zz))])
+            from scipy.integrate import quad as _quad
+            Om = (cos['ombh2'] + cos['omch2'])/cos['h']**2; Orad = 4.18e-5/cos['h']**2   # photons + 3 massless ν (literature)
+            Ez = lambda z: math.sqrt(Om*(1 + z)**3 + Orad*(1 + z)**4 + (1 - Om - Orad))
+            for z in zq:
+                W[f'DM_tool_{z}'] = lt[f'{z:g}']['DM_Mpc'] if f'{z:g}' in lt else None
+                W[f'DM_Hint_{z}'] = float(_np.interp(z, zz, integ))
+                W[f'DM_lcdm_{z}'] = c_km/H0*_quad(lambda x: 1/Ez(x), 0, z)[0]
+                W[f'f_{z}'] = lt[f'{z:g}']['f'] if f'{z:g}' in lt else None
+                Omz = Om*(1 + z)**3/Ez(z)**2; W[f'f_linder_{z}'] = Omz**0.55
+                W[f'D_{z}'] = lt[f'{z:g}']['D'] if f'{z:g}' in lt else None
     # DOWN pass: the top layers hand values back to the core — the E8-layer r forecast for SERAPIS must equal the core r
     W['ns_down'] = get('serapis_emulator', {'C': W['C_back']}).get('ns') if W.get('C_back') else None
 
@@ -194,6 +216,15 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     law('law', 'Moonshine', ('X_d16', 'X_bw16'), 'heterotic: 26 − 10 = 16 internal dims carry E8⊕E8 and D16⁺ — both self-dual, isospectral (1e-12)', 26 - 10 == 16 and W['het_iso'] < 1e-12 and W['D16p_selfdual'] == 1.0 and W['E8_selfdual'] == 1.0, f"max |E_E8xE8/E_D16+ − 1| = {W['het_iso']:.1e}; D16⁺ self-dual {W['D16p_selfdual']:.0f}")
     law('up', 'Leech→Moonshine', ('X_d24', 'X_crit'), 'bosonic: 26 − 2 = 24 transverse dims = Leech rank; Leech has no roots', 26 - 2 == 24 and not W.get('Leech_roots'), f"Leech shells: norm 2 → {W.get('Leech_roots', 0)}, norm 4 → {W.get('Leech_kiss')}")
     law('down', 'Moonshine→A2', ('X_rings', 'vac_i'), 'j(i) = 1728 from the exact series: the τ = i vacuum of the variant potential (D1351)', W.get('j_at_i') is not None and abs(W['j_at_i'] - 1728) < 1e-3, f"Σ cₙ e^(−2πn) (n ≤ 12) = {W.get('j_at_i')}")
+    # Late-universe laws
+    if 'DM_tool_1.32' in W:
+        for z, nd in ((0.51, ('J_lt', 'R_desi', 'T_hyperion')), (1.32, ('J_lt', 'R_desi', 'R_w0wa')), (2.33, ('J_lt', 'T_hyperion', 'R_clock'))):
+            tri('Late', nd, f'D_M(z = {z}) Mpc', (f'DM_tool_{z}', f'DM_Hint_{z}', f'DM_lcdm_{z}'), 0.003, rel=True)
+        dg = max(abs(W[f'f_{z}']/W[f'f_linder_{z}'] - 1) for z in (0.51, 1.32))
+        law('law', 'Late', ('R_growth', 'J_lt'), 'growth rate f(z) = Ω_m(z)^0.55 (Linder γ, ΛCDM) within 1%', dg < 0.01, f"max |f/Ω_m^0.55 − 1| = {dg:.2%} at z = 0.51, 1.32")
+        law('law', 'Late', ('R_growth', 'R_biref'), 'growth factor D(z) falls with redshift', W['D_0.51'] > W['D_1.32'] > W['D_2.33'], f"D = {W['D_0.51']:.4f}, {W['D_1.32']:.4f}, {W['D_2.33']:.4f}")
+    else:
+        law('law', 'Late', ('J_lt',), 'late-universe engine answered on the z grid', False, 'janus_lt returned no grid')
     # UP links: the SERAPIS hexagon carried up the nesting chain (counts locked in D1294)
     for lo, hi, L, n in (('A2', 'D4', 'D4', 16), ('D4', 'E8', 'E8', 1120), ('A2', 'Leech', 'A2', 1)):
         law('up', f'{lo}→{hi}', ('X_hexin',), f'hexagon carried {lo} → {hi}: {n} copies in {L}', W.get(f'hex_{L}') == n, f"{W.get(f'hex_{L}')} (D1294: {n})")

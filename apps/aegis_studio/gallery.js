@@ -163,7 +163,7 @@
   }
   // ---- 9. Circuit 3D: the four hexagon layers as floating sheets with the up/down wires ----
   function circuit3d(t) {
-    const res = window.__circuitLast, L = (res && res.layers) || null, ORDER = ['A2', 'D4', 'E8', 'Leech', '10D', 'SUSY', 'Moonshine'];
+    const res = window.__circuitLast, L = (res && res.layers) || null, ORDER = ['A2', 'D4', 'E8', 'Late', 'Leech', '10D', 'SUSY', 'Moonshine'];
     const layout = L || { A2: { string_meter: [0, 0], serapis_e: [1, 0], serapis_point: [0, 1], X_ms: [-1, 1], L_nstar: [-1, 0], L_bridge: [0, -1], inverse_meter: [1, -1] }, D4: { nstar_e: [0, 0], L_reheat: [1, 0], band_e: [0, 1], caps: [-1, 1] }, E8: { wino_window: [0, 0], Q_dt: [1, 0], Q_panel: [0, 1], Q_future: [-1, 1], Q_life: [-1, 0], tests_cmb: [0, -1], G_A2: [1, -1] }, Leech: { X_epstein: [0, 0], X_hexin: [1, 0], X_mod: [0, 1], S_stab: [-1, 1] } };
     const a = t*0.3, ca = Math.cos(a), sa = Math.sin(a), s = Math.min(W, H)/9, pos = {};
     const pj = (x, y, z) => { const X1 = x*ca - y*sa, Y1 = x*sa + y*ca, k = 9/(9 + Y1*0.6); return [W/2 + X1*s*k, H*0.55 - z*s*k + Y1*s*0.35*k, k]; };
