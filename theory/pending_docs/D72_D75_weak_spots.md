@@ -13881,3 +13881,17 @@ MAP: none
 - No new primordial Y_p, D/H or N_eff value beyond D1191–D1208 appeared.
 VERDICT: NULL.
 MAP: none
+
+### D1318 — Map hygiene: the wino_window node is relabelled to the current window. Its title still showed the D784 thermal range "0.67–1.85 TeV, 5–41% of DM" (2026-11-18)
+- [CENTRE · bookkeeping; no new computation]
+- **Old title:** "Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784)". That is the thermal-mass range before the line-limit tests.
+- **Since then:**
+  - D1153: the H.E.S.S. IGS line limit excludes 1.85 TeV (f ≈ 0.4–0.7). The window is 0.67 to ~1–1.5 TeV with f ≈ 5–20%.
+  - D1190/D1202: 1 TeV survives all 10 Singh–Desai Gaia haloes.
+  - D1238: the relic code agrees with Beneke's Born mass to 2%.
+  - D1302: the Janus-LHC recast reproduces the 0.67 TeV floor; the HL-LHC projection is ≈ 0.98 TeV.
+- **New title:** "Wino 0.67–~1.5 TeV thermal, 5–20% of DM (post-hoc; 1.85 TeV excluded by the IGS line, D1153; LHC floor 0.67, HL-LHC ~0.98)".
+  - The node's d-list gains D1153, D1190, D1202, D1238 and D1302.
+  - Status stays corrected. map.yaml is edited in this commit, and this note documents the change.
+VERDICT: label brought in line with D1153–D1302.
+MAP: node=wino_window status=corrected touches=[] ripple=no

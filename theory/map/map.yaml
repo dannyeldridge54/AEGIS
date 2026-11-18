@@ -787,7 +787,7 @@ nodes:
   branch:
   - rho
   - E
-  title: Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784)
+  title: Wino 0.67–~1.5 TeV thermal, 5–20% of DM (post-hoc; 1.85 TeV excluded by the IGS line, D1153; LHC floor 0.67, HL-LHC ~0.98)
   status: corrected
   d:
   - D735
@@ -797,6 +797,11 @@ nodes:
   - D906
   - D1230
   - D1250
+  - D1153
+  - D1190
+  - D1202
+  - D1238
+  - D1302
   depends:
   - gravitino_wino
   - halo_profile
