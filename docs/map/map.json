@@ -250,19 +250,21 @@
     "i"
    ],
    "title": "Vacuum at τ=i (Chronos/Kairos)",
-   "status": "assumed",
+   "status": "computed",
    "d": [
     "D605",
     "D633",
     "D1344",
-    "D1349"
+    "D1349",
+    "D1351"
    ],
    "depends": [
     "eps_tilt"
    ],
    "history": [
     "D1344: assumed",
-    "D1349: assumed"
+    "D1349: assumed",
+    "D1351: computed"
    ]
   },
   {

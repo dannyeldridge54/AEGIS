@@ -2143,3 +2143,7 @@ Touches: none.
 
 ## D1350: tests_lhc sync
 1. [derived] Window 0.67–1.25 TeV vs CERN+1 reaches: HL-LHC 0.80–0.97 TeV → 23–52 % covered; HE-LHC 1.36–1.68 TeV → 100 %.
+
+## D1351: τ = i variant vacuum
+1. [derived] V depends on τ via |j − 1728| (double zero at i) → V(i) = 0; scan minimum at i.
+2. [derived] ∂²ₓV > 0 along x = 0 for y = 1.02–3 and ∂²ᵧV(i) > 0 → true vacuum, no pin; D1280/D1349 apply to SERAPIS-E's E(τ,2) potential only.

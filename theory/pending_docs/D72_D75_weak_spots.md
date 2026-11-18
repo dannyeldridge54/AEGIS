@@ -14262,3 +14262,12 @@ MAP: node=vac_i status=assumed touches=[] ripple=no
 - Current floor: Run 2 ATLAS 136 fb⁻¹ recast 666.6 GeV (CERN+1; published 660) — the window's lower edge.
 - Status: tests_lhc literature → computed (CERN+1 recast + projections). From now on the loop has an LHC part (CERN+1 tests green, new ATLAS/CMS disappearing-track results, tests_lhc kept in sync).
 MAP: node=tests_lhc status=computed touches=[] ripple=no
+
+## D1351 — CENTRE — The τ = i VARIANT's own potential has a TRUE zero-energy vacuum at τ = i, stable along the axion everywhere on its path: no pin needed. D1280's saddle (and D1349's false vacuum) belong to SERAPIS-E's E(τ,2) potential only (2026-11-18)
+- [COMPUTED] Lock PREREG_D1351 (+ DEVIATIONS D1: the transcription gate first failed at y = 1.5 by 1.2e-5 because D632 truncates j's q-series after q²; with the q³ term restored the gate passes at 3.8e-8 ≈ the next term 4e-8; y = 3 passes at 1e-16).
+- Potential off the axis: V = I²/(I²+1) + εI₁, I, I₁ from |j(τ) − 1728| (exact Klein j), ε = 1.40e-4.
+- V(i) = 3e-20 (zero: j(i) = 1728 is a double zero of j − 1728). 2-D scan over |x| ≤ 0.5, y ∈ [0.9, 1.5]: minimum exactly at τ = i.
+- Axion curvature on the path x = 0: ∂²ₓV = +3.1e-4 (y = 1.02), +3.2e-4 (1.05), +1.9e-3 (1.1), +0.20 (1.25), +0.27 (1.5), +1.3e-2 (2), +7.9e-6 (3) — positive everywhere; ∂²ᵧV(i) = +3.2e-4 > 0. Near i both curvatures are ε-scale (the εI₁ term dominates as |j − 1728| → 0).
+- Verdict (pre-stated rule): the variant's τ = i is a true vacuum with V = 0 and no tachyon; no axion pin needed. vac_i returns to computed, scoped to the variant's j-based potential. In SERAPIS-E's E(τ,2) potential τ = i stays a saddle (D1280) and, pinned, a false vacuum (D1349).
+- Downstream i-branch results (nstar_i, lepto_i, band_i, darkrad_i) are no longer conditional on a pin — for the variant.
+MAP: node=vac_i status=computed touches=[] ripple=no
