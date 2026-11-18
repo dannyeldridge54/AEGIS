@@ -28,6 +28,8 @@ class Api:
         return WEAVE.start(self._win, order or []) if on else WEAVE.stop()
     def testable_nodes(self): return sorted(x['id'] for x in _web())
     def test_particle(self, pid): return test_particle(pid)
+    def run_chain(self, name): return run_chain(name)
+    def chains(self): return sorted(CHAINS)
     def sweep_node(self, node): return sweep_node(node)
     def set_weave_sweep(self, on): WEAVE.sweep = bool(on); return dict(sweep=WEAVE.sweep)
     def open_classic(self):
@@ -290,6 +292,56 @@ NODE_TESTS.update({
     'tests_cmb': ('serapis_point', {'C': 1.25e-6, 'T_R': 8.94e8}, _band(('r',), 4.0e-4, 6.0e-4, 'SERAPIS r for LiteBIRD (σ ≈ 1e-3 → needs CMB-S4-class)')),
     'band_i': ('serapis_emulator', {'C': 1.15e-6}, _band(('ns',), 0.970, 0.975, 'n_s inside the frozen band')),
 })
+
+# ---- Tool chains (Danny 16:35 "wire up tools with our serapis pattern as well as each other") ----
+# Each step feeds the next tool the previous tool's OUTPUT and checks the hand-off against an independent route.
+# Tolerances fixed before the first run (2026-11-18 22:36 UTC); a failed hand-off is a real inconsistency to investigate.
+def _chain_serapis(ns_obs=0.9744):
+    st = []; add = lambda node, tool, ok, txt: st.append(dict(node=node, tool=tool, ok=bool(ok), text=txt))
+    m = run_tool('string_meter', {'ns': ns_obs, 'ns_sigma': 0.0016}); C, Nm, rm, Tm = m.get('C'), m.get('Nstar'), m.get('r'), m.get('T_R')
+    add('string_meter', 'string_meter', C is not None, f'n_s {ns_obs} → C = {C:.4g}, N* = {Nm}, T_R = {Tm:.3g}')
+    e = run_tool('serapis_emulator', {'C': C}); d = abs(e['ns'] - ns_obs)
+    add('serapis_e', 'serapis_emulator', d < 1e-4, f'round trip C → n_s = {e["ns"]:.5f} (|Δ| = {d:.1e}, tol 1e-4)')
+    dr = abs(e['r'] - rm)/rm; add('serapis_e', 'serapis_emulator', dr < 0.01, f'r: meter {rm:.4g} vs emulator {e["r"]:.4g} (rel {dr:.1e}, tol 1%)')
+    j = run_tool('janus_relation', {'ns': e['ns'], 'r': e['r'], 'p': 2.8284, 'kappa': 1}); dj = abs(j['alpha_s'] - e['alpha_s'])/abs(e['alpha_s'])
+    add('L_bridge', 'janus_relation', dj < 0.06, f'α_s: Janus relation {j["alpha_s"]:.4g} vs emulator {e["alpha_s"]:.4g} (rel {dj:.1%}, D1234 tol 6%)')
+    pt = run_tool('serapis_point', {'C': C, 'T_R': Tm}); dn = abs(pt['ns'] - e['ns']); dr2 = abs(pt['r'] - e['r'])/e['r']
+    add('serapis_point', 'serapis_point', dn < 3e-4 and dr2 < 0.02, f'exact point n_s {pt["ns"]:.5f}, r {pt["r"]:.4g} vs emulator (|Δn_s| {dn:.1e} tol 3e-4; r rel {dr2:.1e} tol 2%)')
+    nm = run_tool('nstar_match', {'r': pt['r'], 'V_ratio': pt['V_ratio'], 'T_R': Tm}); dN = abs(nm['Nstar'] - pt['Nstar'])
+    add('L_nstar', 'nstar_match', dN < 0.2, f'N* from r: {nm["Nstar"]:.3f} vs exact point {pt["Nstar"]:.3f} (|Δ| {dN:.2g}, tol 0.2)')
+    ms = run_tool('serapis_ms', {'C': C, 'Nstar': pt['Nstar']}); dm = abs(ms['ns'] - pt['ns'])
+    add('X_ms', 'serapis_ms', dm < 1e-3, f'exact Mukhanov–Sasaki n_s {ms["ns"]:.5f} vs slow-roll point {pt["ns"]:.5f} (|Δ| {dm:.1e}, tol 1e-3)')
+    return st
+def _chain_lhc(m_gev=1000):
+    st = []; add = lambda node, tool, ok, txt: st.append(dict(node=node, tool=tool, ok=bool(ok), text=txt))
+    lf = run_tool('lhc_lifetime', {'m': m_gev}); add('Q_life', 'lhc_lifetime', 150 < lf['dm_MeV'] < 175, f"m = {m_gev} GeV → Δm = {lf['dm_MeV']:.2f} MeV, cτ = {lf['ctau_cm']:.3g} cm (two-loop band 150–175 MeV)")
+    xs = run_tool('lhc_xsec', {'m': m_gev, 'sqrts': '13'}); xs6 = run_tool('lhc_xsec', {'m': m_gev, 'sqrts': '13.6'})
+    k = xs6['sum']/xs['sum']; add('Q_xsec', 'lhc_xsec', 1.05 < k < 1.25, f"σ(13.6)/σ(13) = {k:.3f} at {m_gev} GeV (energy scaling, expect 1.05–1.25)")
+    dt = run_tool('lhc_dt_limit', {'lumi': 136, 'sqrts': '13', 'search': 'ATLAS_136', 'boost': 'fixed', 'band': False})
+    add('Q_dt', 'lhc_dt_limit', abs(dt['m_limit_GeV'] - 660) < 15, f"recast limit {dt['m_limit_GeV']:.1f} GeV vs ATLAS published 660 (tol 15)")
+    fu = run_tool('lhc_future', {}); pa = run_tool('lhc_panel', {}); hl = fu['HL-LHC']['low_bkg_TeV']*1000
+    add('Q_panel', 'lhc_panel', abs(pa['hl_lhc_reach_GeV'] - hl) < 5, f"panel HL-LHC reach {pa['hl_lhc_reach_GeV']:.1f} GeV = future-collider tool {hl:.1f} GeV (tol 5)")
+    add('wino_window', 'lhc_panel', abs(pa['run2_limit_GeV'] - dt['m_limit_GeV']) < 1, f"window floor {pa['run2_limit_GeV']:.1f} GeV = recast limit {dt['m_limit_GeV']:.1f} GeV")
+    return st
+def _chain_lattice():
+    st = []; add = lambda node, tool, ok, txt: st.append(dict(node=node, tool=tool, ok=bool(ok), text=txt))
+    h = run_tool('lattice_lab', {'cmd': 'hexagons', 'args': ['E8']}); q = run_tool('lattice_lab', {'cmd': 'squares', 'args': ['E8']}); md = run_tool('lattice_lab', {'cmd': 'modular', 'args': ['E8']})
+    add('X_hexin', 'lattice_lab', h.get('hexagonal_planes') == 1120, f"E8: {h.get('hexagonal_planes')} hexagons, {q.get('square_planes')} squares (D1294/D1296: 1120, 3780)")
+    add('X_sqin', 'lattice_lab', q.get('square_planes') == 3780, f"squares/hexagons in E8 = {q.get('square_planes', 0)/max(h.get('hexagonal_planes', 1), 1):.3f}")
+    fl = run_tool('lattice_lab', {'cmd': 'flip', 'args': ['E8']})
+    add('X_mod', 'lattice_lab', md.get('match') is True and fl.get('flips') is False, f"θ_E8 = E4 ({md.get('match')}) ⇔ E8 never flips ({not fl.get('flips')}): modularity ↔ flip rule (D1291)")
+    ep = run_tool('lattice_lab', {'cmd': 'epstein', 'args': ['A2', '2']}); em = run_tool('serapis_emulator', {'C': 1.15e-6})
+    add('X_mellin', 'lattice_lab', abs(ep.get('epstein', 0) - 5.7833593) < 2e-6 and 0.970 < em['ns'] < 0.976,
+        f"A2 Epstein E(ρ,2) = {ep.get('epstein', 0):.7f} is the SERAPIS-E vacuum energy scale; same potential gives n_s = {em['ns']:.4f} in band")
+    return st
+CHAINS = {'serapis': _chain_serapis, 'lhc': _chain_lhc, 'lattice': _chain_lattice}
+def run_chain(name):
+    import time
+    t0 = time.time()
+    try: steps = CHAINS[name]()
+    except Exception as e: steps = [dict(node=name, tool='chain', ok=False, text=f'{type(e).__name__}: {e}')]
+    for s_ in steps: s_['chain'] = name; _link_log(dict(s_, node=f"chain:{name}:{s_['node']}"))
+    return dict(chain=name, ok=all(s_['ok'] for s_ in steps), steps=steps, seconds=round(time.time() - t0, 2))
 _LANE_ORDER = ['theory', 'centre', 'left', 'right', 'lhc', 'janus', 'strings', 'lattice', 'wiring']
 def _link_log(rec):
     """Every node test / sweep result also goes to CubeMind's aegis_link/janus_tests.jsonl, which its learn loop ingests (tiered)."""
@@ -299,7 +351,8 @@ def _link_log(rec):
         with open(os.path.join(d, 'janus_tests.jsonl'), 'a', encoding='utf-8') as fh: fh.write(json.dumps(rec, default=str) + '\n')
     except Exception: pass
     return rec
-def test_node(node):
+def test_node(node, pre=None):
+    """pre: a tool result already computed for this node's (tool, args) — shared wire, no second run."""
     import time
     t0 = time.time()
     if node in LOCAL_TESTS or node not in NODE_TESTS:
@@ -309,9 +362,9 @@ def test_node(node):
         return _link_log(dict(node=node, tool=kind, ok=bool(ok), text=txt, seconds=round(time.time() - t0, 2)))
     name, args, chk = NODE_TESTS[node]
     try:
-        r = run_tool(name, args); ok, txt = (False, 'tool error: ' + str(r.get('error'))[:160]) if 'error' in r else chk(r)
+        r = pre if pre is not None else run_tool(name, args); ok, txt = (False, 'tool error: ' + str(r.get('error'))[:160]) if 'error' in r else chk(r)
     except Exception as e: ok, txt = False, f'{type(e).__name__}: {e}'
-    return _link_log(dict(node=node, tool=name, ok=bool(ok), text=txt, seconds=round(time.time() - t0, 2)))
+    return _link_log(dict(node=node, tool=name, ok=bool(ok), text=txt, seconds=round(time.time() - t0, 2), shared=pre is not None))
 def test_particle(pid):
     """A particle is tested through the node that carries it (particles list in data.js)."""
     _web(); p = next((x for x in _web.p if x['id'] == pid), None)
@@ -326,20 +379,33 @@ class Weave:
         ids = [x['id'] for x in _web()]; nodes = [n for n in order if n in ids] + [n for n in ids if n not in order]
         self.th = threading.Thread(target=self._run, args=(nodes,), daemon=True); self.th.start(); return dict(on=True, nodes=len(nodes))
     def stop(self): self.on = False; return dict(on=False)
-    def _one(self, n):
+    def _emit(self, res):
         import json
-        if not self.on: return None
-        res = test_node(n)
         with self.lock:
             self.last.append(res)
             if self.win is not None:
                 try: self.win.evaluate_js(f"weaveResult({json.dumps(res)})")
                 except Exception: pass
-            push(self.win, 'calc', f"{'PASS' if res['ok'] else 'FAIL'} · {n}", f"{res['tool']}: {res['text']} ({res['seconds']} s)")
-        if self.sweep and res['ok'] and n in NODE_SWEEPS and self.on:
-            sw = sweep_node(n)
-            with self.lock: push(self.win, 'calc', f"{'SWEEP OK' if sw['ok'] else 'SWEEP CHECK'} · {n}", f"{sw['text']} → {os.path.basename(sw.get('path', ''))}")
-        return res
+            push(self.win, 'calc', f"{'PASS' if res['ok'] else 'FAIL'} · {res['node']}", f"{res['tool']}: {res['text']} ({res['seconds']} s{', shared wire' if res.get('shared') else ''})")
+    def _one(self, group):
+        """One wire = every node that asks the same (tool, args): run the tool ONCE, then check each node against that answer."""
+        if not self.on: return []
+        out = []
+        if len(group) == 1:
+            r = test_node(group[0]); self._emit(r); out.append(r)
+        else:
+            name, args, _ = NODE_TESTS[group[0]]
+            try: shared = run_tool(name, args)
+            except Exception as e: shared = {'error': f'{type(e).__name__}: {e}'}
+            for n in group:
+                if not self.on: break
+                r = test_node(n, pre=shared); self._emit(r); out.append(r)
+            with self.lock: push(self.win, 'calc', f'Shared wire · {name}', f"{len(group)} nodes from one run: {', '.join(group)}")
+        for n in group:
+            if self.sweep and n in NODE_SWEEPS and self.on and any(r['node'] == n and r['ok'] for r in out):
+                sw = sweep_node(n)
+                with self.lock: push(self.win, 'calc', f"{'SWEEP OK' if sw['ok'] else 'SWEEP CHECK'} · {n}", f"{sw['text']} → {os.path.basename(sw.get('path', ''))}")
+        return out
     def _run(self, nodes):
         """Parallel pass (Danny 16:15 "Janus node loop as fast as possible"): tools run as separate processes, so threads
         overlap them. The slow nodes start first so they never hold up the tail. JANUS_WORKERS overrides the pool size."""
@@ -350,8 +416,22 @@ class Weave:
         slow = ('S_kk6', 'J_mf', 'X_ms', 'S_6d', 'Q_dt36')
         nodes = [n for n in nodes if n in slow] + [n for n in nodes if n not in slow]
         push(self.win, 'calc', 'Deriving the weave', f'{len(nodes)} testable nodes, {workers} at once')
-        with ThreadPoolExecutor(max_workers=workers) as ex: out = [r for r in ex.map(self._one, nodes) if r]
-        ok = sum(r['ok'] is True for r in out); fail = sum(r['ok'] is False for r in out)
+        import json as _j
+        groups, seen = [], {}
+        for n in nodes:
+            if n in NODE_TESTS and n not in LOCAL_TESTS:
+                k = (NODE_TESTS[n][0], _j.dumps(NODE_TESTS[n][1], sort_keys=True))
+                if k in seen: seen[k].append(n); continue
+                seen[k] = [n]; groups.append(seen[k])
+            else: groups.append([n])
+        push(self.win, 'calc', 'Shared wires', f'{len(nodes)} nodes → {len(groups)} runs ({sum(len(g) > 1 for g in groups)} shared wires)')
+        with ThreadPoolExecutor(max_workers=workers) as ex: out = [r for rs in ex.map(self._one, groups) for r in rs]
+        for cname in CHAINS:   # tool-to-tool wires after the node pass
+            if not self.on: break
+            ch = run_chain(cname)
+            for st_ in ch['steps']:
+                self._emit(dict(node=st_['node'], tool='chain ' + cname, ok=st_['ok'], text=st_['text'], seconds=0.0, shared=True))
+                ok = sum(r['ok'] is True for r in out); fail = sum(r['ok'] is False for r in out)
         self.on = False; push(self.win, 'calc', 'Weave derived', f'{ok} pass, {fail} fail of {ok + fail} nodes in {time.time() - t0:.0f} s')
         if self.win is not None:
             try: self.win.evaluate_js("weaveDone()")
