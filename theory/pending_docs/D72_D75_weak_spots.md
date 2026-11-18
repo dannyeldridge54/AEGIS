@@ -14057,3 +14057,10 @@ MAP: none
 - [LITERATURE] One search for D/H. The newest hits are 2024 (ESPRESSO PKS1937−101, 2402.05586; J1332+0052, 2401.12797). Nothing from 2026, so the B track's D/H inputs stand.
 - Verdict: NULL. Following D1331 (also NULL for data), the A/B/inflation literature has run dry for today. The loop steps down to the 30-minute pace until new data arrives (Gaia DR4 on 2 Dec is the next scheduled input; D1330).
 MAP: none
+
+## D1333 — D tick: Hyperion ROADMAP's OPEN list was stale. 3 of its 6 items were closed in D1126/D1211/D1324; the list is refreshed (2026-11-18)
+- [DOC] tools/janus_astro/ROADMAP.md still listed these as open: 7PN, H.E.S.S. at other masses, real ROI geometry.
+- All three are done: D1211 (7PN matches 2412.01706), the line limit quoted from 440 GeV to 2.9 TeV (D1125 era) plus A2o (D1324), and the IGS annuli J (D1126).
+- A dated status block is added under the old line (old text kept).
+- Still open: A1e, Mapper/dust on the PC, NLL′/endpoint, and relic LO-Sommerfeld +4.4% (parked). New item: the Gaia DR4 sweep (D1330).
+MAP: none

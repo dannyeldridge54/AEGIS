@@ -61,6 +61,12 @@ Pattern (same as Janus / Janus-LT): fast route + independent second route + gold
 - BBN: bbn (PRIMAT table, D1082/D1082a), three-code check (D1107), bbn_net LINX module VALIDATED (D1109; dNeff_init is LINX's initial ΔN).
 - Since D1102 (D1103–D1124): NLO CMB band (D1103); γγ line (D1110/D1114) → full line incl. γZ (D1118) → NLL-resummed line (D1121), scale band (D1124); 6.5PN tides VALIDATED, 7PN PARKED (0.33% vs LAL; HFB erratum; D1111–D1120); MW bracket MWPotential2014–McMillan17 (D1105–D1112); three-code BBN + bbn_net + τ=i ΔN (D1104–D1122); v3.3 paragraph (D1123).
 - OPEN: 7PN coefficient (needs character-exact source); A1e blind NLO-wino check; Mapper per-star + dust (Danny's PC); H.E.S.S. limits below/above 1 TeV (only 1 TeV quoted); NLL′/endpoint line; McMillan17 J with real H.E.S.S. ROI geometry.
+- Status of that list as of D1333 (2026-11-18):
+  - CLOSED 7PN: matches Mandal+ 2412.01706, so LAL is the outlier (D1211; a character-exact check on the PC is optional).
+  - CLOSED H.E.S.S. at other masses: the IGS line limit is quoted from ~440 GeV to 2.9 TeV (D1125 era); upper edge computed (A2o, D1324).
+  - CLOSED real ROI geometry: IGS annuli 0.5–3° reproduce the H.E.S.S. benchmark J (D1126); Gaia-calibrated haloes (D1322/D1324).
+  - STILL OPEN: A1e blind NLO check (no independent second number exists); Mapper per-star + dust (PC); NLL′/endpoint line shapes; relic LO-Sommerfeld +4.4% vs Beneke (PARKED, needs the Mathematica supplement; download needs Danny's OK).
+  - NEW: the Gaia DR4 sweep (2 Dec 2026; archive offline 25 Nov–2 Dec; D1330).
 - Release 1.1 DRAFT notes: releases/hyperion-1.1/CHANGES_SINCE_1.0.md (D1102; not packaged/uploaded).
 
 ## Gold-standard stages (referee in brackets)
