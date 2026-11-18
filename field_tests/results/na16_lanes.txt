@@ -1,0 +1,16 @@
+1. bridges on SERAPIS-E points
+  PW2 point: B1 -1.477e-03 (FAIL), B2 -6.706e-04 (FAIL), r/(1-n_s)^2 = 0.737
+  PW1 C1.000 N50.1: B1 -1.951e-03 (FAIL), B2 -5.402e-04 (FAIL), r/(1-n_s)^2 = 0.565
+  PW1 C1.000 N50.7: B1 -1.865e-03 (FAIL), B2 -5.418e-04 (FAIL), r/(1-n_s)^2 = 0.578
+  PW1 C1.000 N51.3: B1 -1.782e-03 (FAIL), B2 -5.411e-04 (FAIL), r/(1-n_s)^2 = 0.592
+  PW1 C1.150 N50.1: B1 -1.675e-03 (FAIL), B2 -6.191e-04 (FAIL), r/(1-n_s)^2 = 0.658
+  PW1 C1.150 N50.7: B1 -1.590e-03 (FAIL), B2 -6.154e-04 (FAIL), r/(1-n_s)^2 = 0.677
+  PW1 C1.150 N51.3: B1 -1.509e-03 (FAIL), B2 -6.177e-04 (FAIL), r/(1-n_s)^2 = 0.696
+  PW1 C1.300 N50.1: B1 -1.409e-03 (FAIL), B2 -6.976e-04 (FAIL), r/(1-n_s)^2 = 0.774
+  PW1 C1.300 N50.7: B1 -1.326e-03 (FAIL), B2 -6.992e-04 (FAIL), r/(1-n_s)^2 = 0.800
+  PW1 C1.300 N51.3: B1 -1.247e-03 (FAIL), B2 -6.985e-04 (FAIL), r/(1-n_s)^2 = 0.828
+  B1 fails 10/10, B2 fails 10/10
+  reference: Starobinsky r/(1-n_s)^2 = 3; α-attractor 3α with α = 2/(3p²) = 1/12 for p = 2√2 → 0.25 (untilted); SERAPIS-E tilt raises it to ~0.6–0.75
+  VERDICT: B1/B2 are Twist-era (Starobinsky-like) nulls, NOT SERAPIS-E nulls → relabel; SERAPIS null = Janus relation (κ = 1, ≤ 6 %)
+2. R_w0wa 1-D pulls of ΛCDM: w0 -2.77σ, wa +2.59σ (correlated; see D1029/D1032: ΛCDM + Σm_ν 0.0587 Δχ² 2.37 vs Σm_ν grid, D1029 Δχ²(w0wa−ΛCDM) = −8.0)
+3. C_nstar → "Shared N*: SERAPIS-E 50.1–51.3 (ρ, D1235), τ = i 50.40–50.45 (D1247)"
