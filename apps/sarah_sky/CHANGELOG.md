@@ -1,4 +1,8 @@
 # Changelog
+## 1.3.3 — 18 Nov 2026
+- New tradition: Maya calendar — Tzolk'in day sign, Haab' date and Long Count (GMT correlation 584283; checked: 21 Dec 2012 = 13.0.0.0.0 4 Ajaw 3 K'ank'in).
+- One-time AR accuracy tip.
+
 ## 1.3.2 — 18 Nov 2026
 - Android app: the app is now served inside the app over https (WebViewAssetLoader) instead of file://. On file:// the phone blocked the main script and the data files, which is why most buttons did nothing. Search, tabs, Tonight, Tour, Learn, AEGIS stars and the star data now load in the app.
 - The app only reloads after permissions if one was actually granted.

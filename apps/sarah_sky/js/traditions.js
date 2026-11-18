@@ -89,6 +89,19 @@
       '<br><button type="button" id="tarotDraw" class="tbtn">Draw another</button>';
   };
 
+  // ---- Maya calendar (GMT correlation 584283): Long Count, Tzolk'in and Haab' ----
+  R.maya = function (d) {
+    var jdn = Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 864e5) + 2440588;   // local calendar day
+    var n = jdn - 584283;
+    var NAMES = ['Imix','Ik\'','Ak\'b\'al','K\'an','Chikchan','Kimi','Manik\'','Lamat','Muluk','Ok','Chuwen','Eb\'','B\'en','Ix','Men','K\'ib\'','Kab\'an','Etz\'nab\'','Kawak','Ajaw'];
+    var HAAB = ['Pop','Wo\'','Sip','Sotz\'','Sek','Xul','Yaxk\'in','Mol','Ch\'en','Yax','Sak\'','Keh','Mak','K\'ank\'in','Muwan','Pax','K\'ayab','Kumk\'u','Wayeb\''];
+    var tzN = ((n + 3) % 13 + 13) % 13 + 1, tzD = ((n + 19) % 20 + 20) % 20;
+    var h = ((n + 348) % 365 + 365) % 365, hm = Math.floor(h / 20), hd = h % 20;
+    var b = Math.floor(n / 144000), r = n - b * 144000, k = Math.floor(r / 7200); r -= k * 7200;
+    var t = Math.floor(r / 360); r -= t * 360; var w = Math.floor(r / 20), ki = r - w * 20;
+    return 'Tzolk\'in <b>' + tzN + ' ' + NAMES[tzD] + '</b> · Haab\' <b>' + hd + ' ' + HAAB[hm] + '</b><br>Long Count ' + [b, k, t, w, ki].join('.');
+  };
+
   function wire(id, outId, fn) {
     var cb = $(id), out = $(outId); if (!cb || !out) return;
     var show = function () {
@@ -106,5 +119,6 @@
   wire('ovChinese', 'chineseOut', R.chinese);
   wire('ovMoon', 'moonOut', R.moon);
   wire('ovTarot', 'tarotOut', R.tarot);
+  wire('ovMaya', 'mayaOut', R.maya);
   window.SarahTraditions = R;   // for tests
 })();
