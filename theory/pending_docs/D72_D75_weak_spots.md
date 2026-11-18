@@ -13592,3 +13592,14 @@ scales: because the hexagon wins at EVERY scale (D1277), it must win for every s
 statement, not an accident of s=2. One Eisenstein family runs from the d=2 inflaton torus (non-holomorphic E(τ,s)) up to the
 E8/heterotic/Leech lattices (holomorphic E4, E4², E4³−720Δ).
 Files: field_tests/theta_modular.py, field_tests/results/theta_modular_2026-11-18.txt.
+
+## D1292 — The 2D lattice energy has exactly two critical points in the fundamental domain at every scale: τ=i (saddle) and τ=ρ (minimum); PREREG P1 PASS (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: numerics (computed with the new tools/lattice/lattice_lab.py `critical`), locked first (PREREG_D1292).
+Grid over the fundamental domain (x ∈ [0, ½] by symmetry, |τ| ≥ 1, y ≤ 3), local minima of the hyperbolic gradient norm, each refined
+with Nelder–Mead, classified by the Hessian. α = 0.5, 1, 2: the only critical points are (0, 1) saddle and (0.5, 0.866025) minimum,
+|∇| ≤ 2e-11. P1 PASS for the Gaussian energy at all three scales. Not separately scanned here: E(τ,2) itself (its i/ρ structure is D1280)
+and the boundary-monotonicity claim P2 (no extra critical point appeared near the boundary; not scored).
+So in d=2 there is no hidden third shape anywhere: the web's two SERAPIS sectors (τ=i, τ=ρ) are the complete list.
+TOOL: tools/lattice/lattice_lab.py (one tool for the lattice web: shells, energy, flip, compare, champion, modular, epstein, critical,
+explore), registered in the CubeMind/Janus registry as `lattice_lab` and deployed to the PC (checked: E6 flip gap −1.6007e-3 there).

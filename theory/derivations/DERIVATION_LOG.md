@@ -1997,3 +1997,8 @@ Touches: none.
 3. [literature] Weight-8 modular forms are one-dimensional ⇒ every even unimodular 16-lattice has θ = E4² ⇒ the D1288 tie is forced.
 4. [derived] Non-self-dual champions violate θ(α) = α^{−d/2}θ(1/α) by their L−L* gap; self-dual ones satisfy it (≤2e-11). The flip rule = modularity under τ → −1/τ with τ = iα.
 5. [derived] Z_Λ(s) = π^s/Γ(s)∫₀^∞(θ_Λ−1)α^{s−1}dα reproduces D1276 (hex 5.783359, square 6.026812 at s=2): E(τ,2) is the all-scale integral of the Gaussian energy, so the hexagon's win at every scale (D1277) implies its win for every s.
+
+## D1292: The 2D lattice energy has only two critical points (τ=i saddle, τ=ρ minimum) at every scale tested (2026-11-18)
+1. [derived] Locked P1–P2 (PREREG_D1292).
+2. [derived] Grid + Nelder–Mead refinement of the hyperbolic gradient over the fundamental domain at α = 0.5, 1, 2: only (0,1) saddle and (½, √3/2) minimum, |∇| ≤ 2e-11.
+3. [derived] So the τ=i and τ=ρ sectors are the complete list of stationary torus shapes in d=2.

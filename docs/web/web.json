@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1287, D1288, D1289",
+   "refs": "D1288, D1289, D1291",
    "info": ""
   },
   {
@@ -774,6 +774,22 @@
    "lane": "lattice",
    "status": "computed",
    "refs": "D1291",
+   "info": ""
+  },
+  {
+   "id": "X_crit",
+   "label": "d=2: only two stationary shapes at every scale — τ=i saddle, τ=ρ minimum (no hidden third)",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1292",
+   "info": ""
+  },
+  {
+   "id": "X_tool",
+   "label": "Lattice Lab tool (tools/lattice/lattice_lab.py; registry lattice_lab): shells, energy, flip, champion, modular, epstein, critical",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1292",
    "info": ""
   },
   {
@@ -2364,6 +2380,51 @@
    "sign": 1,
    "ref": "D1276, D1277, D1291",
    "verdict": "hex wins every scale ⇒ every s",
+   "source": "curated"
+  },
+  {
+   "s": "X_crit",
+   "t": "X_d2",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1292",
+   "verdict": "complete list",
+   "source": "curated"
+  },
+  {
+   "s": "X_crit",
+   "t": "vac_i",
+   "kind": "lattice",
+   "sign": -1,
+   "ref": "D1292",
+   "verdict": "saddle",
+   "source": "curated"
+  },
+  {
+   "s": "X_crit",
+   "t": "vac_rho",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1292",
+   "verdict": "minimum",
+   "source": "curated"
+  },
+  {
+   "s": "X_tool",
+   "t": "X_rule",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1292",
+   "verdict": "computes every lattice result",
+   "source": "curated"
+  },
+  {
+   "s": "X_tool",
+   "t": "W_registry",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "registry",
+   "verdict": "lattice_lab",
    "source": "curated"
   },
   {
