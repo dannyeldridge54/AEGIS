@@ -10,7 +10,9 @@ GEOMETRY (a design pattern for the software circuit, not a physics claim):
   DOWN    — a downward pass feeds top-layer values back into the core and checks the core still reproduces them.
 Layers: A2 = SERAPIS core (τ-plane: n_s, r, C, N*, α_s) · D4 = sectors (reheating / N*) · E8 = observables & colliders ·
         Leech = string/lattice completion · 10D = the ten-dimensional vacuum and its KK tower (the "9 dimensionals") ·
-        SUSY = the supersymmetry shell beyond (anomaly-mediated gauginos, gravitino window, wino window ↔ LHC). Supersymmetry (wino, gravitino, goldstino, sfermions) is the next shell beyond.
+        SUSY = the supersymmetry shell beyond (anomaly-mediated gauginos, gravitino window, wino window ↔ LHC) ·
+        Moonshine = new territory past SUSY (Danny 2026-11-19): the 26D string, heterotic 16, Leech, Klein's j and the Monster —
+        MATHEMATICAL links (exact identities), not physics predictions. Supersymmetry (wino, gravitino, goldstino, sfermions) is the next shell beyond.
 
 Tolerances are written here before a law's first run and change only through a dated note — never loosened to pass.
 Correction 2026-11-18 22:41 UTC: bridge B1 r ≈ 3(1−n_s)² (Starobinsky class) was misapplied as a law on the first run;
@@ -33,6 +35,7 @@ LAYOUT = {
     'Leech': {'X_epstein': (0, 0), 'X_hexin': (1, 0), 'X_mod': (0, 1), 'S_stab': (-1, 1), 'X_narain': (-1, 0), 'X_su3': (0, -1), 'X_d24': (1, -1)},
     '10D':   {'S_10d': (0, 0), 'S_kk10': (1, 0), 'S_btr': (0, 1), 'S_6d': (-1, 1)},
     'SUSY':  {'m32_window': (0, 0), 'gravitino_wino': (1, 0), 'covariant': (0, 1), 'tests_lhc': (-1, 1), 'H_relic': (-1, 0), 'matter_parity': (0, -1), 'H_line': (1, -1)},
+    'Moonshine': {'X_mellin': (0, 0), 'X_d8': (1, 0), 'X_d16': (0, 1), 'X_bw16': (-1, 1), 'X_rings': (-1, 0), 'X_crit': (0, -1), 'vac_i': (1, -1)},
 }
 
 def run(call, ns_model=NS_MODEL, log_path=None, records=None):
@@ -91,6 +94,15 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     W['m32_need_GeV'] = W['win_hi_panel_GeV']/W['amsb_M2_over_m32']; W['m32_need_record_GeV'] = 7.0e5; W['m32_bound_GeV'] = 6.7e8   # D809/D1264
     lfs = [get('lhc_lifetime', {'m': m}) for m in (670, 1250, 1850)]
     W['dm_670'], W['dm_1250'], W['dm_1850'] = [x.get('dm_MeV') for x in lfs]; W['ct_670'], W['ct_1250'], W['ct_1850'] = [x.get('ctau_cm') for x in lfs]
+    # Moonshine layer (2026-11-19 00:45 UTC; all laws exact identities or tolerances fixed BEFORE the first run)
+    jc = get('modular_j', {'nmax': 12}); cf = {int(k): v for k, v in (jc.get('coeffs') or {}).items()}
+    W['j_c0'], W['j_c1'], W['j_c2'] = cf.get(0), cf.get(1), cf.get(2)
+    e8s = get('lattice_lab', {'cmd': 'shells', 'args': ['E8']}).get('shells') or {}; W['E8_roots'] = e8s.get('2') or e8s.get('2.0')
+    lsh = get('lattice_lab', {'cmd': 'shells', 'args': ['Leech']}).get('shells') or {}; W['Leech_kiss'] = lsh.get('4') or lsh.get('4.0'); W['Leech_roots'] = lsh.get('2', 0)
+    ch = get('lattice_lab', {'cmd': 'champion', 'args': ['16']}).get('energy') or {}
+    W['het_iso'] = max((abs(ch['E8xE8'][a]/ch['D16+'][a] - 1) for a in ch.get('E8xE8', {})), default=float('inf')) if 'D16+' in ch else float('inf')
+    W['D16p_selfdual'] = 1.0 if get('lattice_lab', {'cmd': 'flip', 'args': ['D16+']}).get('self_dual') is True else 0.0
+    q = math.exp(-2*math.pi); W['j_at_i'] = sum(v*q**k for k, v in cf.items()) if cf else None
     # DOWN pass: the top layers hand values back to the core — the E8-layer r forecast for SERAPIS must equal the core r
     W['ns_down'] = get('serapis_emulator', {'C': W['C_back']}).get('ns') if W.get('C_back') else None
 
@@ -174,6 +186,14 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     cov = [(W['hl_panel'] - W['m_floor'])/(hi - W['m_floor']) for hi in (W['win_hi_map_GeV'], W['win_hi_panel_GeV'])]
     law('law', 'SUSY', ('tests_lhc', 'Q_panel'), 'HL-LHC covers the recorded share of the window (D1350 52%/D1304 26%, ±2 pts)', abs(cov[0]*100 - 52) <= 2 and abs(cov[1]*100 - 26) <= 2, f"computed {cov[0]:.1%} (to 1.25 TeV), {cov[1]:.1%} (to 1.85 TeV)")
     law('report', 'SUSY', ('covariant', 'serapis_e'), 'report: SUSY-breaking scale ↔ plateau height (F ~ √V0) — no tool yet; not a law', True, 'needs a locked tool tying V0 (from C) to F-term SUSY breaking')
+    # Moonshine laws (exact identities; [literature] Monster irrep dims 196883, 21296876; dim E8 = 248)
+    law('law', 'Moonshine', ('X_mellin', 'X_d8'), "j's constant term 744 = 3 × dim E8 = 3 × (240 roots + rank 8)", W['j_c0'] == 744 and W.get('E8_roots') == 240 and W['j_c0'] == 3*(W['E8_roots'] + 8), f"c₀ = {W['j_c0']}, E8 roots (tool) = {W.get('E8_roots')}")
+    law('law', 'Moonshine', ('X_mellin',), 'McKay: 196884 = 1 + 196883 (smallest Monster representation)', W['j_c1'] == 1 + 196883, f"c₁ = {W['j_c1']} (exact series)")
+    law('up', 'Leech→Moonshine', ('X_d24', 'X_mellin'), 'Conway: c₁ − Leech kissing number = 324', W['j_c1'] is not None and W.get('Leech_kiss') is not None and W['j_c1'] - W['Leech_kiss'] == 324, f"{W['j_c1']} − {W.get('Leech_kiss')} = {(W['j_c1'] or 0) - (W.get('Leech_kiss') or 0)}")
+    law('law', 'Moonshine', ('X_mellin', 'X_bw16'), 'Thompson: 21493760 = 1 + 196883 + 21296876', W['j_c2'] == 1 + 196883 + 21296876, f"c₂ = {W['j_c2']}")
+    law('law', 'Moonshine', ('X_d16', 'X_bw16'), 'heterotic: 26 − 10 = 16 internal dims carry E8⊕E8 and D16⁺ — both self-dual, isospectral (1e-12)', 26 - 10 == 16 and W['het_iso'] < 1e-12 and W['D16p_selfdual'] == 1.0 and W['E8_selfdual'] == 1.0, f"max |E_E8xE8/E_D16+ − 1| = {W['het_iso']:.1e}; D16⁺ self-dual {W['D16p_selfdual']:.0f}")
+    law('up', 'Leech→Moonshine', ('X_d24', 'X_crit'), 'bosonic: 26 − 2 = 24 transverse dims = Leech rank; Leech has no roots', 26 - 2 == 24 and not W.get('Leech_roots'), f"Leech shells: norm 2 → {W.get('Leech_roots', 0)}, norm 4 → {W.get('Leech_kiss')}")
+    law('down', 'Moonshine→A2', ('X_rings', 'vac_i'), 'j(i) = 1728 from the exact series: the τ = i vacuum of the variant potential (D1351)', W.get('j_at_i') is not None and abs(W['j_at_i'] - 1728) < 1e-3, f"Σ cₙ e^(−2πn) (n ≤ 12) = {W.get('j_at_i')}")
     # UP links: the SERAPIS hexagon carried up the nesting chain (counts locked in D1294)
     for lo, hi, L, n in (('A2', 'D4', 'D4', 16), ('D4', 'E8', 'E8', 1120), ('A2', 'Leech', 'A2', 1)):
         law('up', f'{lo}→{hi}', ('X_hexin',), f'hexagon carried {lo} → {hi}: {n} copies in {L}', W.get(f'hex_{L}') == n, f"{W.get(f'hex_{L}')} (D1294: {n})")

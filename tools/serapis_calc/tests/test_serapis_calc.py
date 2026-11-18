@@ -22,3 +22,8 @@ def test_ns_inside_frozen_band():                   # D693 frozen n_s 0.970-0.97
         assert 0.970 <= E.emulate(C)['ns'] <= 0.975, C
 # NOTE: at C = 1.0e-6 the emulator gives r = 4.51e-4, just below the frozen r floor 4.55e-4. Already recorded by the
 # node audit (D1233/D1233a: the corrected N* puts C = 1.0e-6 below the r floor); the frozen band stays locked as made.
+
+def test_j_series_exact_coefficients():   # Klein j = q^-1 + 744 + 196884 q + 21493760 q^2 + ... (moonshine layer, D1359)
+    from tools.serapis_calc.jseries import coeffs
+    c = coeffs(5)
+    assert [c[k] for k in range(-1, 6)] == [1, 744, 196884, 21493760, 864299970, 20245856256, 333202640600]
