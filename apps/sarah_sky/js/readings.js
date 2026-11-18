@@ -160,6 +160,40 @@
     return h;
   }
 
+  /* ---------- today's transits to the natal chart, and the life-path number ---------- */
+  var TRANSIT_KEY = { conjunction: 'activates', sextile: 'opens a door for', square: 'challenges', trine: 'supports', opposition: 'pulls against' };
+  function transits(c, when) {
+    var date = when || new Date(), out = [];
+    var tp = PLANETS.map(function (p) { return { name: p[0], g: p[1], lon: lonOfDate(p[2], date), slow: ['Jupiter','Saturn','Uranus','Neptune','Pluto'].indexOf(p[0]) >= 0 }; });
+    var targets = c.pl.concat([{ name: 'Ascendant', g: 'AC', lon: c.an.asc }, { name: 'Midheaven', g: 'MC', lon: c.an.mc }]);
+    tp.forEach(function (t) {
+      targets.forEach(function (n) {
+        var sep = Math.abs(((t.lon - n.lon + 540) % 360) - 180);
+        ASPECTS.forEach(function (x) { var orb = Math.abs(sep - x[0]), lim = t.name === 'Moon' ? 3 : (t.slow ? 2 : 1.5); if (orb <= lim) out.push({ t: t, n: n, x: x, orb: orb }); });
+      });
+    });
+    out.sort(function (a, b) { return (b.t.slow - a.t.slow) || (a.orb - b.orb); });
+    var moonHouse = houseOf(tp[1].lon, c.cusps);
+    return { list: out, moonHouse: moonHouse, date: date };
+  }
+  function lifePath(y, m, d) {
+    var red = function (n) { while (n > 9 && n !== 11 && n !== 22 && n !== 33) n = String(n).split('').reduce(function (a, b) { return a + +b; }, 0); return n; };
+    return red(red(y) + red(m) + red(d));
+  }
+  var LP = { 1: 'the leader: independence, beginnings', 2: 'the peacemaker: partnership, sensitivity', 3: 'the creator: expression, joy', 4: 'the builder: order, hard work',
+    5: 'the adventurer: freedom, change', 6: 'the nurturer: home, responsibility', 7: 'the seeker: depth, inner wisdom', 8: 'the achiever: power, material mastery',
+    9: 'the humanitarian: compassion, completion', 11: 'master number 11: intuition, inspiration', 22: 'master number 22: the master builder', 33: 'master number 33: the master teacher' };
+  function transitHTML(c) {
+    var T = transits(c), h = '<h4>Today’s sky on this chart (' + T.date.toLocaleDateString() + ')</h4>';
+    h += '<p>The Moon is passing through your house ' + T.moonHouse + ' (' + HOUSE_KEY[T.moonHouse - 1] + ') — a theme for today.</p><ul class="rd">';
+    if (!T.list.length) h += '<li>No close transits today — a quiet sky for this chart.</li>';
+    T.list.slice(0, 10).forEach(function (a) { h += '<li>' + (a.t.slow ? '<b>' : '') + 'Transiting ' + a.t.g + ' ' + a.t.name + ' ' + a.x[2] + ' natal ' + a.n.g + ' ' + a.n.name + (a.t.slow ? '</b>' : '') +
+      ' (orb ' + a.orb.toFixed(1) + '°): ' + a.t.name + ' ' + TRANSIT_KEY[a.x[1]] + ' your ' + a.n.name + (a.n.key ? ' (' + a.n.key + ')' : '') + '.</li>'; });
+    var lp = lifePath(c.inp.y, c.inp.mo, c.inp.d);
+    h += '</ul><h4>Numerology</h4><p>Life path <b>' + lp + '</b> — ' + LP[lp] + '.</p><p class="trad">Transits and numerology are traditions, not astronomy. Slow planets (bold) mark longer seasons; the Moon changes daily.</p>';
+    return h;
+  }
+
   /* ---------- tarot spreads ---------- */
   var SPREADS = {
     one: ['The answer'],
@@ -235,7 +269,7 @@
       if (!isFinite(inp.lat) || !isFinite(inp.lon) || !inp.y) { $('cOut').innerHTML = '<p>Please enter the date, time and place (latitude/longitude).</p>'; return; }
       try {
         var c = compute(inp);
-        $('cOut').innerHTML = '<h3>' + esc($('cName').value || 'Birth chart') + '</h3>' + wheel(c) + report(c);
+        $('cOut').innerHTML = '<h3>' + esc($('cName').value || 'Birth chart') + '</h3>' + wheel(c) + report(c) + transitHTML(c);
         var rec = { name: $('cName').value, date: $('cDate').value, time: $('cTime').value, tz: inp.tz, place: $('cPlace').value, lat: inp.lat, lon: inp.lon, houses: inp.houses, zod: $('cZod').value };
         var all = saved().filter(function (s) { return !(s.name === rec.name && s.date === rec.date && s.time === rec.time); }); all.unshift(rec);
         try { localStorage.setItem('sky.charts', JSON.stringify(all.slice(0, 30))); } catch (e2) {} fillSaved();
@@ -244,5 +278,5 @@
     };
     m.querySelectorAll('.tb button').forEach(function (b) { b.onclick = function () { $('tOut').innerHTML = spreadHTML(drawSpread(b.dataset.s), $('tQ').value.trim()); $('tOut').scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
   }
-  window.SarahReadings = { compute: compute, open: function (tab) { var m = $('readings'); if (!m) { build(); m = $('readings'); } m.hidden = false; if (tab) m.querySelector('[data-r="' + tab + '"]').click(); } };
+  window.SarahReadings = { compute: compute, transits: transits, lifePath: lifePath, open: function (tab) { var m = $('readings'); if (!m) { build(); m = $('readings'); } m.hidden = false; if (tab) m.querySelector('[data-r="' + tab + '"]').click(); } };
 })();
