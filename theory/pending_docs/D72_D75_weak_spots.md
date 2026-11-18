@@ -13793,3 +13793,10 @@ MAP: none
 - Registry lhc_dt_limit now takes boost="kinematic" → kinematics.limit_search (D1307). Returns ATLAS_136 661.5 GeV, ATLAS_36 446.6 GeV (P1, P2 PASS).
 - Honest note: one smoke call (ATLAS_136) ran before the lock was committed; ATLAS_36 was first run after it.
 - Web node Q_boost added (123 nodes / 232 edges). [derived]
+
+## D1309 — CERN+1: theory uncertainty band on the disappearing-track limits (LHC10: P1, P2 pass; P3 split)
+MAP: none
+- Resummino Table 6 (13.0 TeV block; its 13.6 TeV block matches our stored table exactly, confirming the labels) scale⊕PDF, σ-weighted over the three channels: ε = 5.6% (400 GeV), 7.7% (600), 9.0% (700), 15.1% (1000). [literature]
+- ATLAS 136 fb⁻¹: 661.5 GeV, σ band ±10.0 GeV, δm(±0.4 MeV) band ±0.1 GeV → 661.5 ± 10.0 GeV; published 660 inside (pull −0.15). P1 (≤15) PASS, P2 (≤5) PASS, P3a PASS. [computed]
+- ATLAS 36.1 fb⁻¹: 446.4 ± 5.5 GeV; published 460 is 2.5 band-widths away (locked criterion 1.5) → P3b FAIL. The −2.9% residual there is not explained by theory uncertainty; candidate causes: mass-independent efficiency assumption or the 2017 search's different track selection. [computed]
+- Tool: tools/lhc/theory_band.py (eps, band).

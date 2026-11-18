@@ -2087,3 +2087,9 @@ Touches: none.
 
 ## D1308: registry access to the computed boost
 1. [derived] lhc_dt_limit(search, boost="kinematic") calls kinematics.limit_search; values identical to D1307 (661.5 / 446.6 GeV).
+
+## D1309: theory band on CERN+1 recasts
+1. [literature] per-channel scale and PDF uncertainties from arXiv:2304.11915 Table 6 (13.0 TeV).
+2. [estimate] channels fully correlated, σ-weighted; scale and PDF in quadrature.
+3. [derived] N(m)=N_b(1±ε(m))σ(m)/σ(m_b)·P(m)/P(m_b); δm ±0.4 MeV enters through P.
+4. [computed] 661.5 ± 10.0 GeV (136 fb⁻¹); 446.4 ± 5.5 GeV (36.1 fb⁻¹).

@@ -961,6 +961,14 @@
    "info": ""
   },
   {
+   "id": "Q_band",
+   "label": "Theory band on the recasts: 661.5 ± 10 GeV (136 fb⁻¹, published 660 inside); 446.4 ± 5.5 GeV (36 fb⁻¹, 460 outside)",
+   "lane": "lhc",
+   "status": "computed",
+   "refs": "D1309",
+   "info": ""
+  },
+  {
    "id": "Q_boost",
    "label": "Chargino boost distribution from the cross-section table itself (median βγ 0.47–0.54); recasts 661.5 vs 660 and 446.6 vs 460 GeV",
    "lane": "lhc",
@@ -3045,6 +3053,24 @@
    "sign": 1,
    "ref": "D1307",
    "verdict": "replaces fixed βγ=0.5",
+   "source": "curated"
+  },
+  {
+   "s": "Q_resummino",
+   "t": "Q_band",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1309",
+   "verdict": "scale+PDF per channel",
+   "source": "curated"
+  },
+  {
+   "s": "Q_band",
+   "t": "Q_dt",
+   "kind": "lhc",
+   "sign": 1,
+   "ref": "D1309",
+   "verdict": "error bar on the limit",
    "source": "curated"
   },
   {
