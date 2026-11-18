@@ -1,0 +1,5 @@
+# PREREG PW4 — postulate 4 (web opposite covariant ↔ eps_tilt, −0.71): SERAPIS-E's own covariant gravitino bound allows the AMSB wino
+Postulate (node m32_window, status postulate): the X-positivity bound of the modular-covariant completion (D647/D649/D655: m₃/₂/H < √(3 V_pl / [e^{L−L_ρ}(4y²|∂_τL|² − 3)]), K = −ln(2 Im τ)), evaluated with SERAPIS-E's OWN plateau (V_pl = Ê/(Ê+1)(1+CÊ)) and OWN field values (y at horizon exit and 12 e-folds earlier, from the Janus background at the PW2/A1 point C 1.25e-6, N* 50.18) and H* from A_s and r, lies ABOVE the gravitino mass the wino window needs in anomaly mediation (m₃/₂ ≈ 2.5–7e5 GeV, D809).
+D649/D655 evaluated the bound only at the Chronos field range y = 23–30 (bound 3e5–1.3e7 GeV, i.e. marginal for the wino); SERAPIS-E exits at y* ≈ 14, where e^{L−L_ρ} is ~e^{−π·9/3} smaller.
+Pre-stated expectation: bound(y_start) ≥ 1e8 GeV ⇒ CONSISTENT with margin ≥ ×100. KILL if bound(y_start) < 7e5 GeV.
+Code: D655's formula (mpmath, dps 40) with V_pl replaced by SERAPIS-E's and H by SERAPIS-E's H*. Results: field_tests/results/pw4_m32_serapis.txt.
