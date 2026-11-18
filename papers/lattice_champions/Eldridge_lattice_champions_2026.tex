@@ -1,0 +1,85 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{Lattice Champions and the Hexagon: One Duality Rule from $d=2$ to $d=24$, Modular Forms, and the Shape That Tiles Them All}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{18 November 2026}
+\begin{abstract}
+We follow the best lattice shape, measured by the Gaussian energy $\theta(\alpha)-1$ at unit covolume, from dimension 2 to 24, extending Ref.~\cite{P6}. Every result was computed by exact enumeration and checked against pre-registered predictions; failures are reported. We find seven things.
+\begin{itemize}
+\item \emph{One duality rule.} A champion lattice changes with scale only if it is not similar to its own dual. It then hands over to its dual exactly at the self-dual scale $\alpha=1$. This holds for the hexagon, FCC/BCC, $D_4$, $D_5$, $E_6$, $E_7$, $E_8$, the Barnes--Wall lattice $BW_{16}$ and the Leech lattice. In $d=6,7$, $E_n$ and $E_n^*$ beat every standard family at every scale.
+\item \emph{The rule is modularity.} The self-dual champions' theta functions are Eisenstein modular forms: $E_4$ ($E_8$), $E_4^2$ ($E_8\oplus E_8=D_{16}^+$, a forced isospectral tie) and $E_4^3-720\Delta$ (Leech). The $d=16$ champion is $BW_{16}$, not the heterotic pair.
+\item \emph{The exponent hinge.} In Epstein-zeta energies, the dual handover moves to the exponent $s=d/4$.
+\item \emph{Exactly two stationary 2D shapes.} In $d=2$ only $\tau=i$ (a saddle) and $\tau=\rho$ (the minimum) are stationary, at every scale. They are the Gaussian integers and the Eisenstein integers, and their extra rotations force the stationarity.
+\item \emph{The hexagon tiles the champions.} It sits inside every higher champion: 16 copies through the origin in $D_4$, 120 in $E_6$, 336 in $E_7$, 1120 in $E_8$, 100\,800 in $BW_{16}$ and 75\,348\,000 in Leech. The square, the 2D saddle shape, also sits inside each of them, and its share grows with dimension.
+\item \emph{The 3D flow.} Every 3-torus relaxes to FCC above the self-dual scale and to BCC below it. The cube never wins.
+\item \emph{The SERAPIS-E link.} $E(\tau,2)$ is the scale-integral (Mellin transform) of the Gaussian energy. The SERAPIS-$E$ vacuum at $\rho$ is therefore selected at every scale.
+\end{itemize}
+\end{abstract}
+\keywords{lattice energy; theta function; Epstein zeta; Poisson duality; modular forms; Eisenstein series; E8; Leech lattice; Barnes--Wall; heterotic string; isospectral tori; torus moduli; SERAPIS}
+\maketitle
+
+\section{Setup}
+For a lattice $L\subset\mathbb R^d$ at unit covolume we use the Gaussian energy $\theta_L(\alpha)-1=\sum_{v\ne0}e^{-\pi\alpha|v|^2}$. Poisson summation gives $\theta_L(\alpha)=\alpha^{-d/2}\theta_{L^*}(1/\alpha)$. All vectors with $|v|^2\le Q$ were enumerated exactly with the Fincke--Pohst algorithm: $Q=12$ up to $d=8$, $Q=6$ at $d=16$ and $Q=4$ at $d=24$, plus the literature shell counts where stated. Bases come from Cartan matrices, from Construction~D ($BW_{16}$), or from Golay-code generators followed by LLL reduction (Leech). Every prediction was locked before computing~\cite{P4}. The code is \texttt{tools/lattice/lattice\_lab.py}~\cite{AEGIS}.
+
+\section{One rule across dimensions}
+Table~\ref{tab:chain} gives the champion chain. Lattices similar to their duals ($A_2$, $D_4$, $E_8$, $BW_{16}$, Leech) never hand over. Distinct dual pairs swap exactly at $\alpha=1$; their energies tie there to better than $10^{-13}$. In $d=6$ and 7, $E_n$ beats $\mathbb Z^n$, $D_n$, $D_n^*$, $A_n$ and $A_n^*$ for every $\alpha>1$, and $E_n^*$ wins for every $\alpha<1$. At $\alpha=1.25$ in $d=6$ the energies are 0.10458 for $E_6$, 0.10618 for $E_6^*$ and 0.11870 for $D_6$. The $E_6$ and $E_7$ outcomes were predicted before they were computed.
+
+\begin{table}[b]
+\caption{Champions by dimension (Gaussian energy, all scales; computed).}
+\label{tab:chain}
+\begin{ruledtabular}\footnotesize
+\begin{tabular}{lll}
+$d$ & champion & hands over at $\alpha=1$?\\ \hline
+2 & hexagon $A_2$ & no (self-dual up to similarity)\\
+3 & FCC / BCC & yes\\
+4 & $D_4$ & no\\
+5 & $D_5$ / $D_5^*$ & yes\\
+6, 7 & $E_n$ / $E_n^*$ & yes (predicted first)\\
+8 & $E_8$ & no\\
+16 & $BW_{16}$ & no (2-modular)\\
+24 & Leech & no
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\section{The rule is modularity}
+Enumerated $E_8$ shells are $240\sigma_3(n)$ for $n\le6$, so $\theta_{E_8}=E_4$. $E_8\oplus E_8$ and $D_{16}^+$ have identical shells 1, 480, 61\,920, 1\,050\,240, which are the coefficients of $E_4^2$. Their energies agree to $2.5\times10^{-14}$ at every scale. This is Milnor's isospectral pair, and the tie is forced because weight-8 modular forms form a one-dimensional space. They are the gauge lattices of the two heterotic strings, so lattice energy cannot tell those theories apart.
+
+$BW_{16}$ (kissing number 4320) is similar to its dual and beats both heterotic lattices at every scale. At $\alpha=2$ its energy is $8.3\times10^{-5}$ against $1.7\times10^{-3}$. Leech, built from scratch, has no norm-2 vectors and 196\,560 vectors of norm 4, in agreement with $E_4^3-720\Delta$. One sub-prediction failed: the code step gave the 11-dimensional even subcode of the Golay code, not the full code. The lattice is still Leech by uniqueness. Leech beats $E_8^3$ at every scale.
+
+The lattices that hand over break the self-Poisson identity $\theta(\alpha)=\alpha^{-d/2}\theta(1/\alpha)$, and the size of the break is their gap to their dual. The self-dual lattices satisfy it to within $2\times10^{-11}$. So ``never hands over'' and ``the energy is a modular form'' are the same statement.
+
+\section{From scale to exponent}
+The Epstein zeta at unit covolume, analytically continued as
+\begin{align}
+\pi^{-s}\Gamma(s)Z_L(s)={}&\int_1^\infty(\theta_L-1)\alpha^{s-1}d\alpha\nonumber\\
+&+\int_1^\infty(\theta_{L^*}-1)\alpha^{d/2-s-1}d\alpha-\frac1s-\frac{1}{d/2-s},
+\end{align}
+reproduces $E(\rho,2)=5.783359$ and $E(i,2)=6.026812$. For FCC/BCC, $D_5$, $E_6$ and $E_7$, the difference $Z_L-Z_{L^*}$ changes sign at $s=d/4$ and vanishes there to $10^{-14}$. The scale hinge $\alpha=1$ thus becomes the exponent hinge $s=d/4$. $E(\tau,2)$, the building block of SERAPIS-$E$, is the scale-integral of the Gaussian energy. Because the hexagon wins at every scale, it wins for every $s$.
+
+\section{Why exactly two 2D shapes}
+A scan of the fundamental domain at $\alpha=0.5$, 1 and 2 finds exactly two critical points: $\tau=i$, a saddle, and $\tau=\rho$, the minimum, with $|\nabla|\le2\times10^{-11}$. Their automorphism groups have orders 8 and 12, against 4 for rectangles and rhombi and 2 for generic shapes. These orders are $2\times$ the units of $\mathbb Z[i]$ and of $\mathbb Z[\omega]$, the only imaginary-quadratic rings with extra units. A rotation that fixes the shape turns the tangent plane, so the gradient vanishes there for every shape-energy. At a rectangle ($\tau=2i$) it does not. The two SERAPIS sectors are therefore forced by number theory; the energy only decides which of the two is the minimum.
+
+\section{The hexagon tiles the champions}
+A hexagonal plane is the span of two minimal vectors at $120^\circ$. Counted as (minimal vectors)$\times$(vectors at $120^\circ$ to one of them)$/12$, there are 16 in $D_4$, 120 in $E_6$, 336 in $E_7$, 1120 in $E_8$, 100\,800 in $BW_{16}$ and 75\,348\,000 in Leech. All counts were predicted before computing. Every such plane has the exact shape $\tau=\rho$. Square planes (the saddle shape) number 18, 270, 945, 3780 and 2\,288\,695\,500, and their share grows with dimension.
+
+\section{The 3D flow}
+Minimising over the five-dimensional shape space of 3-tori from random starts sends 8 of 8 starts to FCC at $\alpha=1.6$ and 8 of 8 to BCC at $\alpha=0.6$. The cube is never reached. This is the 3D counterpart of the 2D flow to the hexagon, and the switch at $\alpha=1$ is the duality rule seen as a flow.
+
+\section{String lattices and SERAPIS-$E$}
+Toroidal string compactifications are self-dual Narain lattices, and T-duality is the Poisson map, so they never hand over~\cite{P6}. The $c=2$ string lattice with the largest spectral gap has the hexagonal shape, which is the SERAPIS-$E$ vacuum~\cite{SE}. That match is on shape only~\cite{P6}. Moduli trapping at enhanced-symmetry points selects shape and size together, so it does not explain the shape-only match.
+
+\emph{Method note.} Prepared with an AI assistant (Claude, Anthropic). Notes D1276--D1298 are in the archive~\cite{AEGIS}.
+
+\begin{thebibliography}{9}
+\bibitem{P6} D.~Eldridge, ``Shape, Scale and Duality,'' Zenodo (2026), doi:10.5281/zenodo.24339574.
+\bibitem{SE} D.~Eldridge, ``SERAPIS-$E$ v2,'' Zenodo (2026), doi:10.5281/zenodo.24340373.
+\bibitem{P4} D.~Eldridge, ``Lock Before You Compute,'' Zenodo (2026), doi:10.5281/zenodo.24291026.
+\bibitem{CS} J.~H.~Conway and N.~J.~A.~Sloane, \emph{Sphere Packings, Lattices and Groups} (Springer, 3rd ed., 1999).
+\bibitem{CKMRV} H.~Cohn \emph{et al.}, Ann.\ Math.\ \textbf{196}, 983 (2022), arXiv:1902.05438.
+\bibitem{AEGIS} Archive: github.com/dannyeldridge54/aegis.
+\end{thebibliography}
+\end{document}
