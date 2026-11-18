@@ -599,3 +599,4 @@ D1312  2026-11-18T14:36Z  CERN+1 gamma-line link
 D1313  2026-11-18T14:39Z  CERN+1 higgsino
 D1314  2026-11-18T16:52Z  Flag sweep: 25 recheck flags cleared - lattice-numerics ripples (D1279, D1286, D1298 'past 9 dimensions') change no physics node; D1250/D1264/D1275b rechecked, unchanged
 D1315  2026-11-18T16:54Z  C10: 3-param refit (f_d + NFW, r_s 10-25) to Eilers: Q1 FAIL (chi2/dof 2.82), Q3 FAIL (r_s at 10 kpc bound), Q2 PASS; refit parked, McMillan17 stays
+D1316  2026-11-18T17:00Z  A tick: D1275b circularity does not touch the v3.3 draft (no Im S Im rho / string-meter claim); NULL
