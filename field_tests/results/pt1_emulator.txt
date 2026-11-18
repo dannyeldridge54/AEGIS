@@ -1,0 +1,4 @@
+leave-one-out over 5 PW6 points: max|Δn_s| 1.81e-04 (T1 True); max|Δr/r| 0.381% (T2 True); max|Δα_s| 5.60e-06 (T3 True)
+emulate() 0.0148 ms/call (T4 True)
+sample: emulate(1.15e-6) = {'C': 1.15e-06, 'T_R': 738900000.0, 'ns': 0.9733260506288407, 'r': 0.00046957375279225186, 'alpha_s': -0.0009736193951019191, 'engine': 'PT1 quadratic emulator (fixed T_R)', 'valid': 'C 1.0-1.6e-6'}
+PT1 VERDICT: ALL PASS → ADOPT (register serapis_emulator)
