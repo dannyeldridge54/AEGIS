@@ -572,3 +572,4 @@ D1285  2026-11-18T11:29Z  Literature: moduli trapping at enhanced symmetry point
 D1286  2026-11-18T11:34Z  Lattice winners d=6,7 all families (PREREG D1286)
 D1287  2026-11-18T11:37Z  Correction: lattice notes mis-mapped to n_sector_rho
 D1288  2026-11-18T11:38Z  d=16 heterotic lattices E8+E8 vs D16+ (PREREG D1288)
+D1289  2026-11-18T11:42Z  Leech lattice d=24 (PREREG D1289)
