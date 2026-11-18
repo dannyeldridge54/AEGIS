@@ -144,6 +144,77 @@ def sweep_node(node):
     open(path[:-4] + '.json', 'w', encoding='utf-8').write(json.dumps(meta))
     to_cubemind(f"Janus sweep {node}: {name} over {key} {vals[0]}..{vals[-1]} -> {txt} (table {os.path.basename(path)})", name, importance=2)
     return meta
+
+# ---- full weave coverage (Danny 2026-11-18 "full mapping and testing all"; "remember the lattices") ----
+def _get(r, path):
+    for k in path.split('.'):
+        if not isinstance(r, dict) or k not in r: return None
+        r = r[k]
+    return r
+def _approx(path, val, tol, label):
+    def chk(r):
+        v = _get(r, path)
+        if not isinstance(v, (int, float)) or isinstance(v, bool): return (False, f'{label}: no {path} in result')
+        return (abs(v - val) <= tol, f'{label} = {v:.6g} (expect {val:g} ± {tol:g})')
+    return chk
+def _is(path, want, label):
+    return lambda r: (_get(r, path) == want, f'{label} = {_get(r, path)} (expect {want})')
+_ran = lambda label: (lambda r: ('error' not in r, label))
+_LL = lambda cmd, *a: ('lattice_lab', {'cmd': cmd, 'args': list(a)})
+_DT = lambda lumi, srch: ('lhc_dt_limit', {'lumi': lumi, 'sqrts': '13', 'search': srch, 'boost': 'fixed', 'band': False})
+NODE_TESTS.update({
+    # lattice lane — published/locked lattice facts (SPLAG; D1277-D1298)
+    'X_rule': (*_LL('flip', 'E6'), _is('flips', True, 'E6 hands over to its dual at alpha=1')),
+    'X_tool': (*_LL('flip', 'E8'), _is('flips', False, 'E8 is self-dual: never flips')),
+    'X_d2': (*_LL('epstein', 'A2', '2'), _approx('epstein', 5.7833593, 2e-6, 'A2 Epstein E(rho,2)')),
+    'X_epstein': (*_LL('epstein', 'A2', '2'), _approx('epstein', 5.7833593, 2e-6, 'A2 Epstein E(rho,2)')),
+    'X_mellin': (*_LL('epstein', 'A2', '1.5'), _ran('A2 Epstein at s=1.5 (Mellin continuation)')),
+    'X_d3': (*_LL('champion', '3'), _ran('d=3 champions (FCC/BCC)')), 'X_flow3': (*_LL('champion', '3'), _ran('d=3 flow FCC <-> BCC')),
+    'X_d4': (*_LL('squares', 'D4'), _approx('square_planes', 18, 0, 'D4 square planes')),
+    'X_nest': (*_LL('hexagons', 'D4'), _approx('hexagonal_planes', 16, 0, 'hexagons inside D4')),
+    'X_d5': (*_LL('flip', 'D5'), _is('flips', True, 'D5 flips with its dual')),
+    'X_d6': (*_LL('flip', 'E6'), _is('flips', True, 'E6 flips with its dual')),
+    'X_hexin': (*_LL('hexagons', 'E6'), _approx('hexagonal_planes', 120, 0, 'hexagons inside E6')),
+    'X_sqin': (*_LL('squares', 'E6'), _approx('square_planes', 270, 0, 'squares inside E6')),
+    'X_d7': (*_LL('flip', 'E7'), _is('flips', True, 'E7 flips with its dual')),
+    'X_d8': (*_LL('hexagons', 'E8'), _approx('hexagonal_planes', 1120, 0, 'E8 hexagonal planes')),
+    'X_mod': (*_LL('modular', 'E8'), _is('match', True, 'theta_E8 = E4')),
+    'X_d24': (*_LL('modular', 'Leech'), _is('match', True, 'theta_Leech = E4^3 - 720 Delta')),
+    'X_d16': (*_LL('champion', '16'), _ran('d=16 champions (E8+E8 = D16+, BW16)')),
+    'X_bw16': (*_LL('flip', 'BW16'), _ran('BW16 vs its dual')),
+    'X_crit': (*_LL('critical'), _ran('2D critical points: tau=i saddle, tau=rho minimum')),
+    # LHC lane — CERN+1 values pinned in the smoke test
+    'Q_xsec': ('lhc_xsec', {'m': 1000, 'sqrts': '13.6'}, _approx('sum', 2.3793, 0.03, 'wino pair sigma(1 TeV, 13.6 TeV) fb')),
+    'Q_resummino': ('lhc_xsec', {'m': 1000, 'sqrts': '13.6'}, _approx('sum', 2.3793, 0.03, 'Resummino-table sigma fb')),
+    'Q_life': ('lhc_lifetime', {'m': 1000}, _approx('dm_MeV', 164.11, 0.05, 'chargino-neutralino dm MeV')),
+    'Q_stats': ('lhc_ul', {'b': 3.0, 'n': 3}, _approx('ul_exact', 5.395, 0.01, 'exact Poisson N95')),
+    'Q_dt': (*_DT(136, 'ATLAS_136'), _approx('m_limit_GeV', 666.6, 0.5, 'ATLAS 136/fb limit GeV')),
+    'Q_atlas': (*_DT(136, 'ATLAS_136'), _approx('m_limit_GeV', 666.6, 0.5, 'ATLAS 136/fb limit GeV')),
+    'Q_dt36': (*_DT(36, 'ATLAS_36'), _approx('m_limit_GeV', 447.8, 0.5, 'ATLAS 36/fb limit GeV')),
+    'Q_panel': ('lhc_panel', {}, _approx('run2_limit_GeV', 666.6, 0.5, 'panel Run-2 floor GeV')),
+    'Q_future': ('lhc_future', {}, _approx('HL-LHC.low_bkg_TeV', 0.974, 0.01, 'HL-LHC reach TeV')),
+    'Q_fccref': ('lhc_future', {}, _ran('FCC-hh reach (17-36% short of the study, D1306)')),
+    # janus / theory / sides / wiring
+    'T_chronos': ('janus_single', {'V': 'phi**2', 'Nstar': 55}, _approx('ns', 1 - 2/55.5, 2e-3, 'phi^2 n_s')),
+    'X_ms': ('serapis_ms', {'C': 1.15e-6, 'Nstar': 50.7}, _band(('ns',), 0.970, 0.976, 'exact-MS n_s')),
+    'eps_tilt': _SER, 'C_lepto': _SER,
+    'band_e': ('serapis_emulator', {'C': 1.15e-6}, _band(('ns',), 0.970, 0.975, 'n_s in the frozen band')),
+    'caps': ('serapis_emulator', {'C': 1.6e-6}, _band(('ns',), 0.95, 0.985, 'n_s under the cap 0.985')),
+    'L_cmb': ('string_meter', {'ns': 0.9744, 'ns_sigma': 0.0016}, _band(('C',), 1.0e-6, 1.6e-6, 'C from n_s')),
+    'L_nstar': ('nstar_match', {'r': 4.8e-4, 'V_ratio': 2.2674, 'T_R': 8.94e8}, _ran('N* matching')),
+    'L_bridge': ('janus_relation', {'ns': 0.9745, 'r': 4.8e-4, 'p': 2.8284, 'kappa': 1}, _ran('Janus relation alpha_s(n_s, r)')),
+    'R_growth': ('janus_lt', {'h': 0.6736, 'ombh2': 0.02237, 'omch2': 0.12, 'w0': -1, 'wa': 0, 'z': [0.5, 1.0], 'sigma8': 0.811}, _ran('growth run')),
+    'S_kk6': ('kaluza_tensor', {'D': 6, 'gamma': 2, 'n': [1], 'eps': 1e-2}, _ran('6D KK first tensor mode (quick cutoff eps=1e-2)')),
+    'W_registry': ('lhc_selftest', {}, _ran('toolkit registry answers')),
+})
+NODE_SWEEPS.update({
+    'Q_xsec': ('lhc_xsec', {'sqrts': '13.6'}, 'm', [600, 800, 1000, 1250, 1500], ('sum', -1)),
+    'Q_resummino': ('lhc_xsec', {'sqrts': '13.6'}, 'm', [600, 800, 1000, 1250, 1500], ('sum', -1)),
+    'Q_stats': ('lhc_ul', {'b': 3.0}, 'n', [0, 2, 4, 6, 8], ('ul_exact', +1)),
+    'Q_life': ('lhc_lifetime', {}, 'm', [600, 800, 1000, 1250, 1500], ('dm_MeV', 0)),
+    'L_cmb': ('string_meter', {'ns_sigma': 0.0016}, 'ns', [0.970, 0.972, 0.974, 0.976], ('C', +1)),
+    'X_ms': ('serapis_ms', {'Nstar': 50.7}, 'C', [1.0e-6, 1.15e-6, 1.3e-6], ('ns', +1)),
+})
 _LANE_ORDER = ['theory', 'centre', 'left', 'right', 'lhc', 'janus', 'strings', 'lattice', 'wiring']
 def test_node(node):
     import time
