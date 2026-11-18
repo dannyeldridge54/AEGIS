@@ -1,0 +1,10 @@
+PW2 — SERAPIS-E point prediction, computed LIVE in Danny's Janus app (link scans pw2_1..3, engine Janus core spectra3, C factor 1.086957 × 1.15e-6 = 1.25e-6)
+Self-consistent N* (tools/serapis_calc/nstar.py, V*/V_end = 2.2674 exact end, g* 106.75): one link round per T_R, residual |ΔN*| ≤ 0.005 (n_s change ≤ 3e-6)
+raw: {"N": 50.24, "ns": 0.974453045467589, "r": 0.00048143653565976575, "alpha_s": -0.000996787840328044}  T_R 8.94e8 → N* recomputed 50.2447
+raw: {"N": 50.51, "ns": 0.974720398765442, "r": 0.00047815226465763595, "alpha_s": -0.0009942738154371676}  T_R 1.986e9 → 50.5096
+raw: {"N": 50.94, "ns": 0.9751448846448383, "r": 0.0004730381975049, "alpha_s": -0.0009765919814101573}  T_R 7.258e9 → 50.9398
+POINT (c = 1, M_H = 1e12, T_R 8.94e8, C 1.25e-6): N* 50.24, n_s 0.97445, r 4.814e-4, α_s −9.97e-4
+(1) expectation (N* 50.2±0.1, n_s 0.9745±0.0006, r (4.78±0.15)e-4, α_s −(9.9±0.3)e-4): 4/4 inside → PASS
+(2) frozen band_e (n_s 0.970–0.975, r 4.55–5.12e-4): INSIDE (n_s 2.5e-4 below the ceiling)
+    spread: c = 3 (T_R 1.99e9) n_s 0.97472, r 4.78e-4 — inside; M_H = 1e13 (T_R 7.26e9) n_s 0.97514 — OUTSIDE (n_s)
+(3) pulls: CMB-SPA +2.02σ, CMB-SPA+DESI +0.61σ; r < 0.036 ok
