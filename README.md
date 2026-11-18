@@ -14,6 +14,16 @@ r ≈ (4.6–5.7)×10⁻⁴, α_s ≈ −(8.5–10.6)×10⁻⁴, plus a paramete
 - Locked rules: [field_tests/rules/](field_tests/rules/) · results: [field_tests/results/](field_tests/results/)
 - Current state: [papers/v3/CURRENT_STATE_PROJECT.md](papers/v3/CURRENT_STATE_PROJECT.md)
 
+## Quick start: the public toolkits (release 2026.11.18)
+```
+git clone https://github.com/dannyeldridge54/AEGIS && cd AEGIS
+pip install -r requirements-tools.txt        # Python 3.10+
+python tools/release_smoketest.py            # 9 checks against published values, ~2 s
+```
+- **CERN+1** ([tools/lhc](tools/lhc), [README](tools/lhc/README.md)) — independent wino LHC toolkit: cross sections at any energy, mass-dependent lifetimes, a disappearing-track recast that reproduces two ATLAS limits, exact-Poisson and pyhf CLs, theory bands, future-collider reach. Not affiliated with or endorsed by CERN.
+- **Lattice Lab** ([tools/lattice/lattice_lab.py](tools/lattice/lattice_lab.py)) — lattice energies, duality flips, theta series, Epstein zeta, hexagonal/square planes from d=2 to d=24 (E8, BW16, Leech). Run `python -m tools.lattice.lattice_lab` for commands.
+- **Janus calculator** ([tools/janus_calc](tools/janus_calc)) — exact numerical inflation observables (n_s, r, α_s) for any potential; also released at [janus-string-calculator](https://github.com/dannyeldridge54/janus-string-calculator).
+
 ## Tools (see [TOOLS.md](TOOLS.md))
 - **AION** — pre-registration kit: `aion new / lock / deviate / check` ([tools/aion](tools/aion)). Audit of this repo: [docs/AION_AUDIT.md](docs/AION_AUDIT.md).
 - **Star Mapper** — Gaia DR3 sweeps and anomaly scanning ([ufe-v2](ufe-v2)); **Cosmos Atlas** sky viewer ([apps/cosmos_atlas](apps/cosmos_atlas)).
@@ -27,4 +37,7 @@ r ≈ (4.6–5.7)×10⁻⁴, α_s ≈ −(8.5–10.6)×10⁻⁴, plus a paramete
 The Twist / torsion-cosmology tests (2025–Nov 2026) and the TypeScript agent are in [archive/](archive/README.md).
 The clean Twist release: [the-twist-torsion-cosmology](https://github.com/dannyeldridge54/the-twist-torsion-cosmology).
 
-Licence: see [LICENSE](LICENSE) (Hippocratic License 3.0, HL3-MIL-SV, for this repository).
+## License
+**AEGIS Community License** ([LICENSE](LICENSE)): free for individuals, scientists, students, schools, nonprofits and public research.
+Any business or for-profit use, including internal R&D, needs the **AEGIS Commercial License** ([licensing/COMMERCIAL_LICENSE.md](licensing/COMMERCIAL_LICENSE.md)): a yearly minimum or a share of group profit, rising with company size. No military or mass-surveillance use at any price.
+Versions released before 18 November 2026 keep the license they were released under (HL3-MIL-SV).

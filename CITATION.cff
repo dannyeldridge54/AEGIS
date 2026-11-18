@@ -4,9 +4,9 @@ title: 'SERAPIS: modular inflation with a vacuum at a fixed point, frozen predic
 authors:
   - family-names: Eldridge
     given-names: Danny Lee
-version: "3"
+version: "2026.11.18"
 doi: 10.5281/zenodo.24250733
-date-released: 2026-11-15
+date-released: 2026-11-18
 url: https://github.com/dannyeldridge54/AEGIS
-license-url: https://github.com/dannyeldridge54/AEGIS/blob/unify-bg/LICENSE
+license-url: https://github.com/dannyeldridge54/AEGIS/blob/master/LICENSE
 notes: "Earlier Twist / torsion-born EDE work: doi:10.5281/zenodo.23867116 (see archive/)."
