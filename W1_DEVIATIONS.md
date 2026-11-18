@@ -1,0 +1,2 @@
+# DEVIATIONS — W1
+D1 (2026-11-18 03:30Z): D1 (written before any W1 result exists; the first run died on the cloud 30-min wall with no output): rerun W1 with the adopted fast path — pipeline.predict → pipeline.predict_fast (U2, D-note pending: Janus-core self-consistent N* + compiled ripple-free exact MS, equivalence to 1e-5 in n_s), and the w_N spectra with ms_jit.build_spline/spectra_msjit (U1b, bd 4000, 9-pt). Baseline, waves, reading rule unchanged (T_R = 1e7 GeV baseline as locked, although the audited ρ reheating is 6.6e8–2e10).
