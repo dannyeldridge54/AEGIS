@@ -596,3 +596,4 @@ D1309  2026-11-18T13:55Z  CERN+1 theory band
 D1310  2026-11-18T13:57Z  CERN+1 band in registry
 D1311  2026-11-18T14:34Z  CERN+1 36fb residual explained
 D1312  2026-11-18T14:36Z  CERN+1 gamma-line link
+D1313  2026-11-18T14:39Z  CERN+1 higgsino
