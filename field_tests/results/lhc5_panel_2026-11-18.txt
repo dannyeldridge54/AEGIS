@@ -1,0 +1,13 @@
+{
+ "window_GeV": [
+  670.0,
+  1850.0
+ ],
+ "window_source": "theory/map/map.yaml (wino_window, D784)",
+ "run2_limit_GeV": 666.6169594713512,
+ "hl_lhc_reach_GeV": 975.099103567421,
+ "run2_covers": 0.0,
+ "hl_lhc_covers": 0.2585585623452721,
+ "untested_above_GeV": 975.099103567421,
+ "note": "CERN+1 is independent (not affiliated with CERN); HL-LHC is a like-for-like extrapolation"
+}
