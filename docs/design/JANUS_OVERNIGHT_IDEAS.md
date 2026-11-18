@@ -325,3 +325,38 @@ This is a pattern-based music studio of our own, in the style of a step-sequence
 - **Janus:** a "Send to Loops" button on any view pushes that view's data into the studio as a pattern.
 
 **Labels.** Art/analogy, except where real frequencies are shown with their scale factor.
+
+### [PKG] Windows .exe programs and Android apps (Danny, 23:06 CT)
+Every app gets packaged for Windows and Android: Janus Studio, Janus Loops, Sarah's app, the chemistry/wavelength explorer, the power lab and the Nexus hub.
+
+**Windows .exe**
+- Built on Danny's PC by a queued job (`queue/*.job` → PC runner), using PyInstaller and pywebview. Janus already has `build_studio.bat`, so reuse that pattern.
+- One-file .exe per app, with an icon in the palette.
+- Output goes to `Desktop\AEGIS_PCJOBS\dist\<app>.exe`.
+- Pure web apps (Loops, Sarah) get a small pywebview shell.
+
+**Android**
+- Step 1, now: every web app is a PWA (manifest + service worker + icons). On a phone, "Add to Home screen" installs it like an app and it works offline.
+- Step 2, later: a real APK via Capacitor (or Bubblewrap TWA). This needs the Android SDK, JDK and Gradle — large downloads.
+  - ASK DANNY ONCE before installing them, on the PC or in the cloud.
+  - Debug-signed APK first. Release signing uses a key Danny creates and keeps; never type his passwords.
+
+**Rules**
+- Never upload to a store or share anything without Danny's say.
+- Sarah's app goes to her only after Danny approves.
+
+**Rotation (updated)**
+1. V
+2. R
+3. T
+4. CH
+5. S
+6. P
+7. X
+8. PT
+9. SA
+10. PKG
+11. RF
+12. C
+13. U
+14. N
