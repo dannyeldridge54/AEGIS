@@ -1,0 +1,6 @@
+Q1: ref n_s 0.96337827 (15.49 s) | jit |dn_s| 2.6e-08 |dr/r| 9.3e-09 0.430 s x36 True (first call incl. compile 3.0 s) | jit quick |dn_s| 1.5e-07 0.168 s x92
+Q3: ref n_s 0.94547697 (16.52 s) | jit |dn_s| 2.3e-08 |dr/r| 2.7e-09 0.415 s x40 True (first call incl. compile 1.5 s) | jit quick |dn_s| 2.5e-07 0.137 s x121
+Q9: ref n_s 0.92774973 (16.43 s) | jit |dn_s| 5.3e-08 |dr/r| 2.5e-09 0.451 s x36 True (first call incl. compile 1.5 s) | jit quick |dn_s| 2.0e-07 0.162 s x102
+N2p: ref n_s 0.94621167 (15.79 s) | jit |dn_s| 4.1e-08 |dr/r| 7.5e-09 0.444 s x36 True (first call incl. compile 1.6 s) | jit quick |dn_s| 2.9e-07 0.137 s x115
+N1: ref n_s 0.95458288 (16.85 s) | jit |dn_s| 3.8e-08 |dr/r| 1.3e-08 0.354 s x48 True (first call incl. compile 1.4 s) | jit quick |dn_s| 1.3e-07 0.119 s x142
+median speed-up x36 | J1 True -> ADOPTED (PC default, labelled jit)
