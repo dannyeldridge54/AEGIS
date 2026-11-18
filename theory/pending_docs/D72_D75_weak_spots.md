@@ -13165,3 +13165,21 @@ Lock: field_tests/rules/PREREG_PW5_cmb_measures_string.md. Results: field_tests/
 Consistency: response slopes dln r/dn_s reproduce the audited box edges: C-edge 24.2 vs 24.7 (2.1 %), T_R-edge −27.6 vs −30.0 (7.9 %) → PASS. Expectation PASS.
 Reading: SERAPIS turns the CMB tilt into a measurement of a string quantity — the product of the dilaton and the inflaton-torus volume moduli — at the 15–20 % level in the 2030s, conditional on N_eff (the stuck-brane asymmetry) and on the reheating channel. That is a concrete "string meter" no generic plateau model offers.
 MAP: node=string_meter status=postulate touches=[bhk_tilt, tests_cmb] ripple=no
+
+### D1266 — Sourcing candidate (v): ref. [30] is Hellmann & Ruiz-Femenía 1303.0200. Its pure-wino appendix gives the v² terms only for χ⁺χ⁻ → W⁺W⁻, and they are POSITIVE, which points the wrong way for our Born residual (2026-11-18)
+- [DEEP · literature, ar5iv HTML via summariser] **Reference [30] of 2009.00640:** C. Hellmann and P. Ruiz-Femenía, "Non-relativistic pair annihilation of nearly mass degenerate neutralinos and charginos II", JHEP 08 (2013) 084, arXiv:1303.0200. Ref. [31] is Beneke–Hellmann–Ruiz-Femenía, arXiv:1411.6924.
+- **Appendix C.2** (pure-wino, χ⁺₁χ⁻₁ → W⁺W⁻ only; units πα₂²/m_χ²):
+  - S-wave: ³S₁ 1/48, ¹S₀ 1/2 (Eqs. 143–144);
+  - P-wave: f̂(¹P₁) = 2/3, f̂(³P_J) = 14/3;
+  - O(v²) S-wave: ĝ(¹S₀) = −8/3, ĝ(³S₁) = −1/9 (Eq. 145);
+  - σv_rel = (9/16) + (7/48) v_rel² (Eq. 146), in units of πα₂²/m_χ².
+  - Numerically at m_χ = 2748.92 GeV: a = 3.06e-27, b_P = 1.81e-27, b_S = −1.02e-27 cm³/s.
+- **The full exclusive table for every sector** (C.3, Table 5) and the NNLO S-wave coefficients are in a Mathematica supplement. The summariser could not reach them (the HTML is 1.5M characters, truncated). They are NOT obtained.
+- **Direction check (ESTIMATE):** for this channel the net v² coefficient is positive, (b_P + b_S)/a = +0.26. At freeze-out, ⟨σv⟩ ≈ a + 6b/x adds ≈ +6% at x = 25.
+  - If the other channels behave similarly, including v² terms RAISES σ_eff. Our Born M_th then goes UP (≈ +3%, M ∝ √σ), away from Beneke's 2.207.
+  - So (v) can explain our B1 residual (+2.0%) only if Beneke's "Born" 2.207 excludes the v² terms or the net sign differs in other channels. Neither is established.
+  - For L1, the v² terms are only weakly Sommerfeld-enhanced, so they lower M_Som/M_Born, the right direction. Their net effect on the L1 mass is therefore unclear.
+- **Status:** (v) is downgraded from "leading" to "unresolved" (it cannot be quantified without the full Table 5 or the supplement). Candidates (ii) velocity grid, (iii) spin weights and (iv) per-channel MS-bar scaling stay open.
+  - The most decidable next step is (ii): a locked grid-doubling at intermediate x. It is cheap and needs no new sources.
+VERDICT: partial source obtained (χ⁺χ⁻ → WW only). Candidate (v) is unresolved and likely the wrong direction for B1. Next cheap test: (ii).
+MAP: none
