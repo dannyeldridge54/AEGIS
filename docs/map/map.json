@@ -407,7 +407,7 @@
    "branch": [
     "i"
    ],
-   "title": "T_R at τ=i ≈ 1–3e6 GeV",
+   "title": "T_R at τ=i ≈ 1.3–5.0e6 GeV (D730 mass, D1241)",
    "status": "corrected",
    "d": [
     "D727",
@@ -543,7 +543,7 @@
     "rho",
     "E"
    ],
-   "title": "T_R at ρ ≈ 3e8–3e9 GeV",
+   "title": "T_R at ρ ≈ 6.6e8–2.0e10 GeV (n = 1, m_φ 3.17e13; D1235, D1239)",
    "status": "computed",
    "d": [
     "D725",
@@ -567,7 +567,7 @@
    "branch": [
     "E"
    ],
-   "title": "N* for SERAPIS-E ≈ 49.7–50.5",
+   "title": "N* for SERAPIS-E ≈ 50.1–51.3 (exact end + n = 1 reheating; D1234, D1235)",
    "status": "corrected",
    "d": [
     "D719",
@@ -653,7 +653,7 @@
     "rho",
     "E"
    ],
-   "title": "Gravitino → wino negligible (Ω_nth ≤ 3e-4, Pradler–Steffen, D809)",
+   "title": "Gravitino → wino negligible (Ω_nth ≤ 5e-4, Pradler–Steffen, D809, D1242)",
    "status": "computed",
    "d": [
     "D732",

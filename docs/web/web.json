@@ -85,7 +85,7 @@
    "label": "Janus relation (α_s from n_s, r)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D669, D673, D692",
+   "refs": "D673, D692, D1234",
    "info": ""
   },
   {
@@ -130,10 +130,10 @@
   },
   {
    "id": "reheat_i",
-   "label": "T_R at τ=i ≈ 1–3e6 GeV",
+   "label": "T_R at τ=i ≈ 1.3–5.0e6 GeV (D730 mass, D1241)",
    "lane": "theory",
    "status": "corrected",
-   "refs": "D727, D730",
+   "refs": "D730, D1240, D1241",
    "info": ""
   },
   {
@@ -149,7 +149,7 @@
    "label": "Leptogenesis at τ=i: inflaton decay marginal, AD robust",
    "lane": "theory",
    "status": "estimate",
-   "refs": "D903, D904a, D909",
+   "refs": "D904a, D909, D1241",
    "info": ""
   },
   {
@@ -165,23 +165,23 @@
    "label": "Dark radiation (doublet-only killed)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D723, D906",
+   "refs": "D723, D906, D1240",
    "info": ""
   },
   {
    "id": "reheat_rho",
-   "label": "T_R at ρ ≈ 3e8–3e9 GeV",
+   "label": "T_R at ρ ≈ 6.6e8–2.0e10 GeV (n = 1, m_φ 3.17e13; D1235, D1239)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D725, D906",
+   "refs": "D1235, D1237, D1239",
    "info": ""
   },
   {
    "id": "nstar_e",
-   "label": "N* for SERAPIS-E ≈ 49.7–50.5",
+   "label": "N* for SERAPIS-E ≈ 50.1–51.3 (exact end + n = 1 reheating; D1234, D1235)",
    "lane": "theory",
    "status": "corrected",
-   "refs": "D725, D906, D979",
+   "refs": "D979, D1234, D1237",
    "info": ""
   },
   {
@@ -189,15 +189,15 @@
    "label": "Leptogenesis at ρ (non-thermal, DI estimate)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D904, D906, D986",
+   "refs": "D986, D1236, D1239",
    "info": ""
   },
   {
    "id": "gravitino_wino",
-   "label": "Gravitino → wino negligible (Ω_nth ≤ 3e-4, Pradler–Steffen, D809)",
+   "label": "Gravitino → wino negligible (Ω_nth ≤ 5e-4, Pradler–Steffen, D809, D1242)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D786, D809, D906",
+   "refs": "D809, D906, D1242",
    "info": ""
   },
   {
@@ -213,7 +213,7 @@
    "label": "Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4)",
    "lane": "theory",
    "status": "frozen",
-   "refs": "D821, D906, D962",
+   "refs": "D962, D1231, D1233",
    "info": ""
   },
   {
@@ -221,7 +221,7 @@
    "label": "Family caps n_s ≤ 0.985, r ≤ 8.3e-4",
    "lane": "theory",
    "status": "frozen",
-   "refs": "D675, D677",
+   "refs": "D675, D677, D1240",
    "info": ""
   },
   {
@@ -229,7 +229,7 @@
    "label": "Σm_ν = 0.0587 eV (m1 ≈ 0)",
    "lane": "theory",
    "status": "frozen",
-   "refs": "D902, D906, D998",
+   "refs": "D906, D998, D1234",
    "info": ""
   },
   {
@@ -237,7 +237,7 @@
    "label": "Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784)",
    "lane": "theory",
    "status": "corrected",
-   "refs": "D761, D784, D906",
+   "refs": "D784, D906, D1230",
    "info": ""
   },
   {
