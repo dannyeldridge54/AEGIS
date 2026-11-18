@@ -2128,3 +2128,6 @@ Touches: none.
 
 ## D1346: D1255 recheck closed
 1. [derived] Janus-vs-exact α_s agreement of 3–6e-7 (D1148, D1176, D1218) excludes a 1e-4 reference ripple; verdicts stand.
+
+## D1347: CubeMind learn-loop upgrade
+1. [derived] Hash-embed cosine: same-topic pairs median 0.60 vs different-topic 90th percentile 0.65 → too weak for duplicate detection; rule-based pre-gate used instead.

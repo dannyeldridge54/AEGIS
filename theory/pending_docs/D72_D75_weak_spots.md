@@ -14226,3 +14226,12 @@ MAP: none
 - Reasoning [derived]: a ~1e-4 ripple in the exact-MS reference would show up as |Δα_s| ~1e-4 against an independent method (Janus third-order flow); agreement at 3–6e-7 means those references were not rippled at that level, so every C-criterion verdict stands. No recomputation needed.
 - With D1343 (τ = i confirmed) and D1262 (SERAPIS-E point already on U1b), the D1255 recheck item is closed.
 MAP: node=janus status=computed touches=[] ripple=no
+
+## D1347 — CUBEMIND — learn-loop upgrade (Danny: "upgrade the loop faster smarter better learning"): verifier-rule pre-gate, normalised duplicates, eval only on change, idle back-off; the hash embedder is too weak to judge near-duplicates (2026-11-18)
+- [TOOL] mindmem/verify_rules.py (from the D1345 verifier): settled questions are filed the moment they are proposed — rejected with the reason (τ off ρ, T_R→C, N_eff→n_s, …) or answered from locked results (tier EVIDENCE; estimates stay HYPOTHESIS). They no longer wait in the open queue for Claude, and the reasons feed the next prompt.
+- [TOOL] Duplicate check now compares normalised question text (letters only), not the exact string.
+- [TOOL] step_eval reruns QA1 only when the memory changed (it ran every 15 s); verified on the PC: second call "unchanged memory (cached)".
+- [TOOL] Idle back-off: the 15 s cycle doubles up to 120 s while nothing happens, and resets on any ingest, proposal or result.
+- [MEASURED] The fallback hash embedder cannot separate near-duplicates: "move τ" proposal pairs have cosine median 0.60, while unrelated pairs reach 0.65 at the 90th percentile (36 unique proposals). The same embedder gives QA1 hit@5 0.25 (default weights) vs 0.35 (similarity only). Both point to the missing real embedder (Ollama nomic-embed-text): with it, QA1 becomes a real score and near-duplicate detection becomes possible.
+- Deployed to C:\Users\Danny\CubeMind_janus (watchdog hot-restarts the learner on code change); repo janus-pair 04b5657.
+MAP: none
