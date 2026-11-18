@@ -1,12 +1,16 @@
 {
-  "name": "AEGIS Sky Map",
-  "short_name": "Sky Map",
-  "description": "A free interactive map of the whole sky for classrooms: telescope surveys, constellations, planets tonight, guided tours and the AEGIS Gaia survey.",
+  "name": "Sarah's Sky",
+  "short_name": "Sarah's Sky",
+  "description": "Point your phone at the sky and see the stars, planets and constellations right where they are. Plus a whole-sky map, planets tonight, and world sky-traditions.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b1020",
-  "theme_color": "#0b1020",
+  "orientation": "portrait",
+  "background_color": "#05010f",
+  "theme_color": "#05010f",
+  "shortcuts": [
+    {"name": "Point & See (AR)", "short_name": "Point & See", "description": "Hold the phone up to the real sky", "url": "./ar.html"}
+  ],
   "icons": [
     {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
     {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},

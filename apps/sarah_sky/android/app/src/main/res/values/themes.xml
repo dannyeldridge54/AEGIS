@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.SarahsSky" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:statusBarColor">#05010f</item>
+        <item name="android:windowBackground">#05010f</item>
+    </style>
+</resources>

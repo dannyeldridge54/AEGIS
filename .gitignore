@@ -56,3 +56,10 @@ field_tests/results/l11_chain/
 field_tests/cache/
 apps/aegis_studio/build/
 apps/aegis_studio/dist/
+
+# Sarah's Sky Android build
+apps/sarah_sky/android/.gradle/
+apps/sarah_sky/android/build/
+apps/sarah_sky/android/app/build/
+apps/sarah_sky/android/app/src/main/assets/sarah_sky/
+apps/sarah_sky/out/

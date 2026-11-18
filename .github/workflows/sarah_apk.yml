@@ -1,0 +1,53 @@
+name: Sarah's Sky APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ unify-bg ]
+    paths: [ 'apps/sarah_sky/**' ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/sarah_sky
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Stage the web app into the APK assets
+        run: |
+          mkdir -p android/app/src/main/assets/sarah_sky
+          cp -r index.html ar.html css js data vendor icons manifest.webmanifest sw.js \
+                android/app/src/main/assets/sarah_sky/
+          ls android/app/src/main/assets/sarah_sky
+
+      - name: Build debug APK
+        working-directory: apps/sarah_sky/android
+        run: gradle assembleDebug --no-daemon --stacktrace
+
+      - name: Collect APK
+        run: |
+          mkdir -p out
+          cp android/app/build/outputs/apk/debug/app-debug.apk out/SarahsSky.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: SarahsSky-apk
+          path: apps/sarah_sky/out/SarahsSky.apk
+          if-no-files-found: error
