@@ -1,0 +1,25 @@
+Torus shape flow (d=2) and the backwards dimensional chain (cloud loop, 2026-11-18)
+Every lattice is a flat torus R^d/Lambda; its shape is the torus shape. In d=2 the shape is tau = x+iy (unit covolume, basis (1,tau)).
+Energy: Gaussian lattice energy E(tau) = sum_{(m,n)!=0} exp(-pi*|m+n*tau|^2/y) (alpha=1, |m|,|n|<=14).
+Flow: hyperbolic gradient descent  d tau = -eta * y^2 * grad E, eta=0.02, central differences h=1e-6. Shapes read off after
+reduction to the fundamental domain (angle between basis vectors, side ratio |tau|).
+
+  start 0.00+3.00i : rectangle -> SQUARE (held ~3600 steps) -> rhombus -> HEXAGONAL   E 0.732610 -> 0.180341 -> 0.159596
+  start 0.02+3.00i : oblique   -> rhombus (83.7 deg) -> HEXAGONAL                         (skips the square)
+  start 0.30+2.00i : oblique   -> HEXAGONAL
+  Energy decreases monotonically along every path; every path ends at the hexagonal torus (60.1 deg, ratio 1.000).
+
+Critical points (Hessian eigenvalues of E):
+  square    tau = i   : [-0.29509, +1.11816]   -> SADDLE (stable along the rectangle family x=0, unstable to shear)
+  hexagonal tau = rho : [+0.63536, +0.63536]   -> MINIMUM, isotropic (equal eigenvalues = its 6-fold symmetry)
+The exactly symmetric start (x=0) sits on the square until round-off breaks x -> -x; then it shears to the hexagon.
+
+Backwards in dimension: torus shape-moduli dimension d(d+1)/2 - 1 = 0 (d=1, the circle S^1: no shape choice),
+2 (d=2), 5 (d=3), 9 (d=4), 14 (d=5), 35 (d=8), 299 (d=24). The chain starts from the circle and gains shape freedom
+quadratically.
+
+Relevance (careful): tau = i and tau = rho are critical points of EVERY smooth modular-invariant function (fixed points of
+S and ST), but whether each is a minimum or a saddle is function-specific. For the lattice energy, rho is the attractor and i
+is held only by the x -> -x symmetry — the same symmetry as the CP locus our tau = i sector relies on (D844/D854).
+Whether the SERAPIS-E potential makes i a minimum or a saddle is an OPEN check; not assumed here.
+Label: numerics (computed) + literature (modular fixed points). No new physics claim.
