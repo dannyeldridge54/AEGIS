@@ -62,7 +62,14 @@ def process_rows(rows, mw=None, model=DEFAULT_MODEL):
         out.append([r['source_id'], l[i], b[i], *p[:, i], *v[:, i], MG[i], o['rperi'][i], o['rapo'][i], o['zmax'][i], o['ecc'][i],
                     ';'.join(flag + ['MG_noext'])])
     return out
-def run(cosmos_map, skymap=None, max_tiles=None, level=5, model=DEFAULT_MODEL):
+def _status(path, **kw):
+    """Progress file for the PC job board: overwritten in place (no deletes), read by Danny or by the loop."""
+    if not path: return
+    kw['updated_utc'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
+    try:
+        with open(path, 'w', encoding='utf-8') as fh: json.dump(kw, fh, indent=1)
+    except OSError: pass
+def run(cosmos_map, skymap=None, max_tiles=None, level=5, model=DEFAULT_MODEL, status_file=None):
     cm = pathlib.Path(cosmos_map); tiles = sorted((cm/'tiles'/f'L{level}').glob('*.csv.gz'))
     outdir = cm/MODELS[model]['outdir']/f'L{level}'; outdir.mkdir(parents=True, exist_ok=True)
     done = skipped = nstars = 0; t0 = time.time(); todo = tiles[:max_tiles] if max_tiles else tiles
@@ -84,7 +91,11 @@ def run(cosmos_map, skymap=None, max_tiles=None, level=5, model=DEFAULT_MODEL):
         if done % 10 == 0 or done == 1:
             el = time.time() - t0; left = len(todo) - done - skipped
             print(f'tiles {done + skipped}/{len(todo)}  stars {nstars}  {nstars/max(el, 1e-9):.0f} stars/s  ETA {left*el/done/3600:.1f} h', flush=True)
+            _status(status_file, state='running', model=model, tiles_total=len(todo), tiles_done=done + skipped, stars_this_run=nstars,
+                    stars_per_s=round(nstars/max(el, 1e-9), 1), eta_hours=round(left*el/done/3600, 2))
     summary = summarise(outdir, model)
+    _status(status_file, state='finished', model=model, tiles_total=len(todo), tiles_done=done + skipped, stars_this_run=nstars,
+            summary_stars=summary['n_stars'], seconds=round(time.time() - t0, 1))
     if skymap:
         dp = pathlib.Path(skymap)/'data'; dp.mkdir(parents=True, exist_ok=True)
         json.dump(summary, open(dp/'hyperion_orbits.json', 'w', encoding='utf-8'), indent=1)
@@ -125,8 +136,8 @@ def check(cosmos_map, level=5, n=8):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--cosmos-map', required=True); ap.add_argument('--skymap'); ap.add_argument('--max-tiles', type=int)
-    ap.add_argument('--model', default=DEFAULT_MODEL, choices=sorted(MODELS)); ap.add_argument('--check', action='store_true', help='pre-flight only: sample tiles, report schema and usable stars')
+    ap.add_argument('--model', default=DEFAULT_MODEL, choices=sorted(MODELS)); ap.add_argument('--check', action='store_true', help='pre-flight only: sample tiles, report schema and usable stars'); ap.add_argument('--status', help='write progress JSON here (e.g. status.json)')
     a = ap.parse_args(argv)
     if a.check: r = check(a.cosmos_map); print(json.dumps(r, indent=1)); return 0 if r['ok'] else 1
-    print(json.dumps(run(a.cosmos_map, a.skymap, a.max_tiles, model=a.model))); return 0
+    print(json.dumps(run(a.cosmos_map, a.skymap, a.max_tiles, model=a.model, status_file=a.status))); return 0
 if __name__ == '__main__': sys.exit(main())
