@@ -2039,3 +2039,9 @@ Touches: none.
 3. [derived] Gaussian energy below E8⊕E8 at α = 1–2 (e.g. 8.28e-5 vs 1.67e-3 at α=2) and, by self-duality, at α < 1.
 4. [derived] 280 hexagonal partners per minimal vector → 100,800 τ=ρ planes inside BW16.
 5. [derived] Refines D1288: the heterotic pair ties with each other, but BW16 is the d=16 champion.
+
+## D1299: LHC wino cross sections from Drell–Yan scaling — one universal exponent κ ≈ −0.163 reproduces the 13.6 TeV table to 0.3% (2026-11-18)
+1. [literature] Resummino aNNLO+NNLL wino cross sections at 13 and 13.6 TeV (arXiv:2304.11915, Table 6).
+2. [derived] At LO without PDF evolution, s·σ is a function of τ₀ = 4m²/s only; built Φ(τ₀) from the 13 TeV table.
+3. [derived] Pure scaling predicts the 13.6 TeV table to ≤1.0%; a factor (√s/13)^κ with κ = −0.161…−0.165 (same for all three processes) brings it to ≤0.29%.
+4. [derived] At 14 TeV the scaling and log-linear routes agree to ≤1%; their mean and spread are the tool's estimate and error.

@@ -13681,3 +13681,16 @@ REFINES D1288: the two heterotic lattices tie with each other but are NOT the d=
 beats both at every scale. Updated chain: 2 hex · 3 FCC/BCC · 4 D4 · 5 D5/D5* · 6 E6/E6* · 7 E7/E7* · 8 E8 · 16 BW16 · 24 Leech.
 All self-dual-up-to-similarity champions (2, 4, 8, 16, 24) never hand over; the rest hand over to their duals at α=1.
 Files: field_tests/results/barnes_wall_16_2026-11-18.txt; tools/lattice/lattice_lab.py (BW16).
+
+## D1299 — Janus-LHC LHC1: wino cross sections without a PDF file — Drell–Yan scaling with one universal evolution exponent reproduces the official 13.6 TeV values to 0.3%; PREREG P1–P3 PASS (2026-11-18)
+MAP: none
+LABEL: numerics (computed) on literature tables (Resummino, arXiv:2304.11915 Table 6), locked first (PREREG_LHC1_scaling). Toolkit
+result; no change to any model prediction or to the wino_window node (other session's track).
+Danny (voice, 06:52): "theorize what it is" — the PDF file is blocked, so build the cross section from physics instead of from a PDF grid.
+- P1 PASS: pure leading-order scaling s·σ = Φ(4m²/s), Φ built from the 13 TeV table, predicts every 13.6 TeV entry (200–2000 GeV,
+  χ̃₂⁰χ̃₁⁺, χ̃₂⁰χ̃₁⁻, χ̃₁⁺χ̃₁⁻) to ≤1.0% (always +0.45…+1.0%: one sign, smooth).
+- P2 PASS: one correction factor (√s/13)^κ with κ = −0.165, −0.163, −0.161 for the three processes — the SAME number, i.e. a universal
+  parton-evolution effect — brings every entry to ≤0.29%.
+- P3 PASS: at 14 TeV (HL-LHC) the scaling route and the log-linear route agree to 0.7–1.0% for 500–1800 GeV.
+TOOL: tools/lhc/xsec.py `sigma_scaling`, `sigma_best` (mean of the two routes, spread quoted as the extrapolation error, ~1%).
+Example: χ̃₂⁰χ̃₁⁺ at 1.1 TeV, 14 TeV: 0.787 fb ± 0.8% (route spread). Still to come: an independent LO computation with a real PDF set.
