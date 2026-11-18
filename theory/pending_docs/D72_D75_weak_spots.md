@@ -14195,3 +14195,11 @@ MAP: none
 - Effect on the map: none. These notes are already in the ladder's applied set, so no status, flag or history changes; `ladder.py check` → "ladder OK".
 - Asked for by Danny ("Add them"), 18 Nov 14:53 CT.
 MAP: none
+
+## D1343 — CENTRE — τ = i variant: α_s rechecked on the ripple-free exact MS path (U1b); D1247 CONFIRMED (Δα_s ≈ −7e-7 ≪ 2e-5); queue item closed for τ = i (2026-11-18)
+- [COMPUTED] Lock PREREG_D1343. Same D632 potential (V = I²/(I²+1) + ε I₁, y = e^{√2φ}) as a sympy expression compiled with ms_jit.build; spectra_msjit, 9 points in ln k ∈ [−0.1, 0.1], bd = 4000; N*(ε) rule of NA12.
+- ε = 1.40e-4 (N* 50.428): n_s 0.974615 (D1247 0.97462), r 4.83347e-4 (4.8335e-4), α_s −8.5498e-4 (D1247 −8.543e-4), Δα_s −6.8e-7. Gate PASS.
+- ε = 1.45e-4 (N* 50.440): n_s 0.975086, r 4.90995e-4, α_s −8.5950e-4 (D1247 −8.587e-4), Δα_s −8.0e-7. Gate PASS.
+- Verdict: the old τ = i α_s was not affected by the bd = 200 ripple at a level that matters (≤ 1e-6). SERAPIS_DERIVATION §4 (τ = i: α_s −8.54e-4) stands. The SERAPIS-E point (D1262) was already on the U1b path. Remaining part of the D1255 queue item: the Janus-accuracy notes D1148, D1176, D1218 (they compare Janus with exact-MS references).
+- Result file: field_tests/results/d1343_tau_i_alpha.txt; script field_tests/scripts/d1343/tau_i_alpha.py.
+MAP: node=band_i status=computed touches=[] ripple=no

@@ -2112,3 +2112,7 @@ Touches: none.
 
 ## D1342: MAP-line backfill (metadata only)
 1. [derived] 20 notes lacked MAP lines; each gets the parent's node/status (ripple=no) or `MAP: none`; ladder applied-set unchanged, so the map is unchanged.
+
+## D1343: τ = i α_s recheck (ripple-free exact MS)
+1. [derived] D632 potential compiled with ms_jit; 9-point ln k fit at bd = 4000 gives α_s = −8.5498e-4 (ε = 1.40e-4) vs −8.543e-4 before: Δ = −7e-7.
+2. [derived] Lock rule: |Δα_s| ≤ 2e-5 → D1247 confirmed; no correction note.
