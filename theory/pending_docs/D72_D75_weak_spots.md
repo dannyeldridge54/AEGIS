@@ -14118,3 +14118,19 @@ MAP: node=wino_window status=computed touches=[] ripple=no
 ## D1337a — Correction to the D1337 title: the line-only f_max was OPTIMISTIC for the wino, not conservative (2026-11-18)
 - More signal photons means a tighter limit. Ignoring the endpoint therefore over-allowed the wino fraction by R ≈ 1.12–1.16 at 1.0–1.5 TeV. The D1337 body already says this; only the word "conservative" in its title was wrong.
 MAP: none
+
+## D1338 — A2q (locked PREREG_A2q_endpoint_edge, ESTIMATE): with the endpoint factor, 1.0 TeV still has no FAIL for any Gaia halo but is clean only at NLO; 1.25 TeV gains one LO FAIL (Burkert B0/D4); 1.5 TeV is left with three Einasto cores (D1, D3, D4) (2026-11-18)
+- Lock pushed before the run. Result: field_tests/results/a2q_endpoint_edge.txt. f_max/R with R(10%) = 1.117, 1.142, 1.162 (A2p, D1337); A2o rule.
+- **1.0 TeV:**
+  - Gaia NFW and Burkert B0/D3, B0/D4 move PASS → BAND-DEP at LO; they still PASS at NLO.
+  - Every other Gaia halo PASSes; the H.E.S.S. benchmark stays BAND-DEP.
+- **1.25 TeV:**
+  - Burkert B0/D4 LO FAIL (NLO band-dep). Burkert B0/D2 LO PASS → band-dep.
+  - Einasto 5/5 PASS (unchanged).
+- **1.5 TeV:**
+  - Einasto B0/D2 and B1/D2 lose their NLO PASS (→ band-dep). Burkert B0/D1 NLO band-dep → FAIL.
+  - Only Einasto D1, D3, D4 PASS.
+- **Window (sensitivity, not yet a replacement for D1324):** 0.67 to 1.0 TeV for all Gaia haloes at NLO (LO band-dependent for NFW-like haloes); 1.0–1.25 halo-dependent; to ~1.5 only for three of five Einasto cores.
+  - D1324's headline holds in shape. The endpoint makes the top edge a little tighter.
+- The v3.3 text is not changed. It waits for an NLL endpoint source (1808.08956 Fig. 1, or 2507.15937 App. B) to replace the LL estimate.
+MAP: node=wino_window status=computed touches=[] ripple=no
