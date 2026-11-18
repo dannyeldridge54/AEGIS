@@ -14220,3 +14220,9 @@ MAP: node=vac_i status=assumed touches=[] ripple=no
   - Answered (2): "C → n_s" — n_s and r rise with C (emulator D1272: C 1.0/1.15/1.3/1.5e-6 → n_s 0.97173/0.97333/0.97495/0.97712), tier EVIDENCE; "T_R → n_s" — doubling T_R gives N* +0.23, n_s +~1.8e-4, r −~0.9% [estimate from the D1262 audited box], tier HYPOTHESIS.
 - Open proposals now 0, so the proposer restarts; the rejection reasons feed its next prompt.
 MAP: none
+
+## D1346 — JANUS — D1255 queue item closed: the Janus-accuracy verdicts (D1148, D1176, D1218) cannot be flipped by the old exact-MS α_s ripple (2026-11-18)
+- [READ] D1148: median |Δα_s| 4.5e-7 (Janus vs exact MS, 16 models × 5 pivots); D1176: 5.5e-7 (32 models); D1218: 3.1e-7 vs a 2.5e-5 bar.
+- Reasoning [derived]: a ~1e-4 ripple in the exact-MS reference would show up as |Δα_s| ~1e-4 against an independent method (Janus third-order flow); agreement at 3–6e-7 means those references were not rippled at that level, so every C-criterion verdict stands. No recomputation needed.
+- With D1343 (τ = i confirmed) and D1262 (SERAPIS-E point already on U1b), the D1255 recheck item is closed.
+MAP: node=janus status=computed touches=[] ripple=no

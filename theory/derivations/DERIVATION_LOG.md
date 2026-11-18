@@ -2125,3 +2125,6 @@ Touches: none.
 ## D1345: CubeMind verifier pass
 1. [derived] 8 proposals checked against D1280, D1275b, D1272, D1262; 6 rejected with reasons, 2 answered (1 tool-grounded, 1 estimate).
 2. [estimate] dN*/d ln T_R ≈ 0.34 from the audited box (D1262), giving the T_R → n_s answer.
+
+## D1346: D1255 recheck closed
+1. [derived] Janus-vs-exact α_s agreement of 3–6e-7 (D1148, D1176, D1218) excludes a 1e-4 reference ripple; verdicts stand.
