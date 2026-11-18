@@ -638,3 +638,4 @@ D1351  2026-11-18T21:38Z  untitled
 D1352  2026-11-18T21:59Z  lattice-geometry alpha-attractor configs
 D1353  2026-11-18T22:26Z  P3 literature: Kallosh-Linde streamlined supergravity
 D1354  2026-11-18T23:06Z  SERAPIS circuit on the lattice plan + two corrections
+D1355  2026-11-18T23:23Z  SUSY shell of the SERAPIS circuit + bino card correction
