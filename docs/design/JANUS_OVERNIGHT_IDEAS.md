@@ -182,9 +182,50 @@ Example ideas:
 6. P
 7. X
 8. PT
-9. C
-10. U
-11. N
+9. SA
+10. C
+11. U
+12. N
 
 Progress:
 - V1 (measurement lens) is done; it was the first tick at 04:48Z.
+
+### [SA] Sarah's phone app (Danny, 22:49 CT)
+Danny's words: "phone app for Sarah. Add star map with overlay astrology from all over world tarot and other esoteric spiritual things to it for her plus all things she will need."
+
+**Base.** Fork the existing installable AEGIS Sky Map (apps/skymap) into apps/sarah_sky, and keep the skymap's real astronomy:
+- real star, constellation and planet positions;
+- tonight's sky;
+- works offline as an installed phone app (PWA: manifest + service worker).
+
+Use the same look as Janus, with a warmer accent available.
+
+**Overlays.** All are toggles, and each is labelled "cultural / spiritual tradition — not astronomy":
+- **Western tropical zodiac:** signs, house wheel, aspects between the real planet positions.
+- **Vedic (sidereal):** rashis (Lahiri ayanamsa) and the 27 nakshatras.
+- **Chinese:** the 28 lunar mansions (xiu), the four symbols, and the animal year.
+- **Arabic:** the 28 manazil al-qamar (lunar stations).
+- **Others:** Egyptian decans, Mayan Tzolk'in day signs, Celtic tree calendar, and Aboriginal/Polynesian/Andean sky stories where well documented. Respect each culture: describe, don't appropriate. Sacred material only from public, published sources.
+
+**Personal tools.**
+- **Birth chart:** she enters her own date, time and place, which stay on the phone.
+- **Moon:** today's phase, Moon sign and nakshatra.
+- **Planetary hours, retrograde calendar, eclipses** (real computed dates).
+- **Numerology** and a **chakra/colour guide**.
+- **Crystals** and **herb/correspondence tables**, with no medical claims.
+- **Journal:** private, on-device, exportable.
+
+**Tarot.**
+- A 78-card deck with ORIGINAL card art in the palette (no copied decks).
+- Spreads: one card, three cards, Celtic Cross.
+- Upright and reversed meanings.
+- Saved readings.
+
+**Other oracles.** I Ching (64 hexagrams, coin method), runes (Elder Futhark), and a daily "sky + card" card.
+
+**Rules.**
+- Nothing leaves the phone: no accounts, no tracking.
+- Astronomy is computed (astronomy-engine, which is pure code and needs no data download).
+- Interpretive texts are written fresh, not copied.
+- Clear labels separate what is sky fact from what is tradition and meaning.
+
