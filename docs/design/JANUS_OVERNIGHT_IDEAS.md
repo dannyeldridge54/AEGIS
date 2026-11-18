@@ -494,3 +494,10 @@ This is CubeMind's own mandate under the SEC slot and the learning loop — a de
 
 ### [HO] Handover notes (Danny, 01:29 CT: "Add handover notes in loop")
 Once per rotation, refresh docs/HANDOFF_LOOP.md so any new chat or future session can resume from cold: update the State block (latest D-notes, papers, tonight's done/pending, CubeMind memory count, PC jobs), the rotation if it changed, and the "last updated" time. Also mirror it to the project as claude/LOOP_HANDOFF.md. Keep it tight — it is a resume card, not a log. The RF referee checks it still matches reality.
+
+### [P] scope clarified (Danny, 01:42 CT): power / circuitry / generation + PC design engineering
+P is a real applied-engineering design toolkit (label: tool / shared-numerics; no new-physics claim). Tracks within P:
+- **Circuit design:** DC/AC analysis, RC/RL/RLC, filters, op-amp blocks, transfer functions/Bode; later a small SPICE wrapper (ngspice/PySpice) for netlists.
+- **Power generation & storage:** solar single-diode I–V + MPP (P1b datasheet-calibrated), wind power curve, battery/supercap equivalent circuits, storage sizing and dispatch, load profiles, efficiency/loss budgets.
+- **PC / hardware design engineering:** power-supply sizing (component wattage → PSU headroom, rail budgets), thermal/airflow estimates, UPS/battery runtime, and — where Danny wants — an optimizer-driven "design assistant": given constraints (budget, load, site), the AEGIS optimizer searches component/sizing choices and returns a justified design.
+Honest value-add = the optimizer + a unified Janus UI over standard engineering, not a physics breakthrough. Every design is checked against datasheets/standards under a lock before it's called good; a real original design would get a prior-art search first.
