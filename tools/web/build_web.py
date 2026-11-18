@@ -68,6 +68,25 @@ for a, b, ref, v, sg in (('S_btr', 'S_10d', 'BTR §3.1', '', 1), ('S_10d', 'S_kk
                          ('S_gs', 'eps_tilt', 'D1009–D1024', 'tilt sign OK; magnitude needs Re S ≈ 3200', -1), ('S_gs', 'covariant', 'D1011', '', 1),
                          ('bhk_tilt', 'S_gs', 'one-loop tilt', '', 1), ('stuck_d3', 'S_6d', 'branes', '', 1)):
     edge(a, b, 'string-sector', sg, ref, v)
+
+# --- CHRONOS (early-universe calculator) and HYPERION (late-universe + astrophysics) toolkits ---
+for i, l, st, r in (('T_chronos', 'Chronos Clock (tools/janus_calc)', 'computed', 'docs/TOOL_NAMES.md'),
+                    ('T_hyperion', 'Hyperion (tools/janus_lt + janus_astro)', 'computed', 'D1052–D1078; releases/hyperion-1.0'),
+                    ('H_relic', 'Wino relic + Sommerfeld: 2.325 TeV vs Beneke 2.207 (+5.4%); g_*(T) suspect', 'corrected', 'D1158–D1187'),
+                    ('H_line', 'γγ line vs H.E.S.S. IGS: window 0.67 to ~1–1.5 TeV', 'computed', 'D1110–D1190'),
+                    ('H_bbn', 'BBN: 3 codes agree; Y_p LBT 2026; SU(2)+gaugino excluded 3.1σ', 'computed', 'D1082–D1192'),
+                    ('H_mw', 'Milky Way: McMillan17 passes v_c☉, MWPotential2014 fails', 'computed', 'D1193–D1197'),
+                    ('H_ns', 'Neutron stars + GW tides (6.5PN validated; 7PN open)', 'computed', 'D1090–D1115')):
+    node(i, l, 'janus', st, r)
+for a, b, ref, v, sg in (('T_chronos', 'J_core', 'TOOL_NAMES', 'Chronos runs Janus', 1), ('T_chronos', 'J_mf', 'TOOL_NAMES', '', 1), ('T_chronos', 'T_hyperion', 'W1 wiring D1079', 'Chronos ⇄ Hyperion', 1),
+                         ('T_hyperion', 'J_lt', 'TOOL_NAMES', 'Hyperion late-time core', 1), ('T_hyperion', 'H_relic', 'D1158–D1187', '', 1), ('T_hyperion', 'H_line', 'D1110–D1190', '', 1),
+                         ('T_hyperion', 'H_bbn', 'D1082–D1192', '', 1), ('T_hyperion', 'H_mw', 'D1193', '', 1), ('T_hyperion', 'H_ns', 'D1090', '', 1),
+                         ('H_relic', 'wino_window', 'D784, D1153', 'thermal fraction f', 1), ('H_line', 'wino_window', 'D1125–D1190', 'line limit trims the window', -1),
+                         ('H_mw', 'H_line', 'halo J-factor', 'halo choice moves the line verdict', 1), ('H_mw', 'halo_profile', 'D1189', 'cored Gaia haloes', 1),
+                         ('H_bbn', 'darkrad_rho', 'D1088–D1192', 'N_eff / Y_p bound hidden sector', -1), ('H_bbn', 'C_D', 'B2 Chronos→BBN D1085', '', 1),
+                         ('X_beneke', 'H_relic', 'Beneke 2009.00640', '+5.4% (no boost), +8.6% (LO Sommerfeld)', -1), ('X_hess', 'H_line', 'H.E.S.S. IGS 2026', '', 1)):
+    edge(a, b, 'pair', sg, ref, v)
+node('X_beneke', 'Beneke et al. relic (2009.00640)', 'janus', 'literature', 'D1185'); node('X_hess', 'H.E.S.S. Inner Galaxy Survey line limit', 'janus', 'literature', 'D1125')
 edge('logderiv_plateau', 'plateau_origin', 'depends', -1, 'D822', 'killed candidate')
 out = dict(nodes=list(N.values()), edges=E, lanes=['left', 'centre', 'right', 'theory', 'janus', 'strings'])
 bad = [e for e in E if e['s'] not in N or e['t'] not in N]

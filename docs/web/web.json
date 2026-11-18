@@ -245,7 +245,7 @@
    "label": "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D751, D752, D906",
+   "refs": "D752, D906, D1229",
    "info": ""
   },
   {
@@ -510,6 +510,78 @@
    "lane": "strings",
    "status": "estimate",
    "refs": "D1009–D1024",
+   "info": ""
+  },
+  {
+   "id": "T_chronos",
+   "label": "Chronos Clock (tools/janus_calc)",
+   "lane": "janus",
+   "status": "computed",
+   "refs": "docs/TOOL_NAMES.md",
+   "info": ""
+  },
+  {
+   "id": "T_hyperion",
+   "label": "Hyperion (tools/janus_lt + janus_astro)",
+   "lane": "janus",
+   "status": "computed",
+   "refs": "D1052–D1078; releases/hyperion-1.0",
+   "info": ""
+  },
+  {
+   "id": "H_relic",
+   "label": "Wino relic + Sommerfeld: 2.325 TeV vs Beneke 2.207 (+5.4%); g_*(T) suspect",
+   "lane": "janus",
+   "status": "corrected",
+   "refs": "D1158–D1187",
+   "info": ""
+  },
+  {
+   "id": "H_line",
+   "label": "γγ line vs H.E.S.S. IGS: window 0.67 to ~1–1.5 TeV",
+   "lane": "janus",
+   "status": "computed",
+   "refs": "D1110–D1190",
+   "info": ""
+  },
+  {
+   "id": "H_bbn",
+   "label": "BBN: 3 codes agree; Y_p LBT 2026; SU(2)+gaugino excluded 3.1σ",
+   "lane": "janus",
+   "status": "computed",
+   "refs": "D1082–D1192",
+   "info": ""
+  },
+  {
+   "id": "H_mw",
+   "label": "Milky Way: McMillan17 passes v_c☉, MWPotential2014 fails",
+   "lane": "janus",
+   "status": "computed",
+   "refs": "D1193–D1197",
+   "info": ""
+  },
+  {
+   "id": "H_ns",
+   "label": "Neutron stars + GW tides (6.5PN validated; 7PN open)",
+   "lane": "janus",
+   "status": "computed",
+   "refs": "D1090–D1115",
+   "info": ""
+  },
+  {
+   "id": "X_beneke",
+   "label": "Beneke et al. relic (2009.00640)",
+   "lane": "janus",
+   "status": "literature",
+   "refs": "D1185",
+   "info": ""
+  },
+  {
+   "id": "X_hess",
+   "label": "H.E.S.S. Inner Galaxy Survey line limit",
+   "lane": "janus",
+   "status": "literature",
+   "refs": "D1125",
    "info": ""
   }
  ],
@@ -1258,6 +1330,159 @@
    "kind": "string-sector",
    "sign": 1,
    "ref": "branes",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "T_chronos",
+   "t": "J_core",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "TOOL_NAMES",
+   "verdict": "Chronos runs Janus",
+   "source": "curated"
+  },
+  {
+   "s": "T_chronos",
+   "t": "J_mf",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "TOOL_NAMES",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "T_chronos",
+   "t": "T_hyperion",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "W1 wiring D1079",
+   "verdict": "Chronos ⇄ Hyperion",
+   "source": "curated"
+  },
+  {
+   "s": "T_hyperion",
+   "t": "J_lt",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "TOOL_NAMES",
+   "verdict": "Hyperion late-time core",
+   "source": "curated"
+  },
+  {
+   "s": "T_hyperion",
+   "t": "H_relic",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "D1158–D1187",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "T_hyperion",
+   "t": "H_line",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "D1110–D1190",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "T_hyperion",
+   "t": "H_bbn",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "D1082–D1192",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "T_hyperion",
+   "t": "H_mw",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "D1193",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "T_hyperion",
+   "t": "H_ns",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "D1090",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "H_relic",
+   "t": "wino_window",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "D784, D1153",
+   "verdict": "thermal fraction f",
+   "source": "curated"
+  },
+  {
+   "s": "H_line",
+   "t": "wino_window",
+   "kind": "pair",
+   "sign": -1,
+   "ref": "D1125–D1190",
+   "verdict": "line limit trims the window",
+   "source": "curated"
+  },
+  {
+   "s": "H_mw",
+   "t": "H_line",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "halo J-factor",
+   "verdict": "halo choice moves the line verdict",
+   "source": "curated"
+  },
+  {
+   "s": "H_mw",
+   "t": "halo_profile",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "D1189",
+   "verdict": "cored Gaia haloes",
+   "source": "curated"
+  },
+  {
+   "s": "H_bbn",
+   "t": "darkrad_rho",
+   "kind": "pair",
+   "sign": -1,
+   "ref": "D1088–D1192",
+   "verdict": "N_eff / Y_p bound hidden sector",
+   "source": "curated"
+  },
+  {
+   "s": "H_bbn",
+   "t": "C_D",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "B2 Chronos→BBN D1085",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_beneke",
+   "t": "H_relic",
+   "kind": "pair",
+   "sign": -1,
+   "ref": "Beneke 2009.00640",
+   "verdict": "+5.4% (no boost), +8.6% (LO Sommerfeld)",
+   "source": "curated"
+  },
+  {
+   "s": "X_hess",
+   "t": "H_line",
+   "kind": "pair",
+   "sign": 1,
+   "ref": "H.E.S.S. IGS 2026",
    "verdict": "",
    "source": "curated"
   },
