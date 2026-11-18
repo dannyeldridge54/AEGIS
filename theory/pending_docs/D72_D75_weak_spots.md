@@ -13454,3 +13454,17 @@ Result file: field_tests/results/serapis_i_saddle_2026-11-18.txt.
 - It changes no input to the wino window: not the thermal masses, the fraction bracket, the halo J-factors, the line limits or the relic anchor (D1238). Status unchanged; flag cleared.
 VERDICT: unchanged.
 MAP: none
+
+## D1282 — D1278's prediction confirmed: E6 and E7 flip against their duals exactly at the self-dual scale; E8 does not (2026-11-18)
+MAP: node=n_sector_rho status=computed
+LABEL: numerics (computed). Prediction recorded in D1278 BEFORE this test. No new physics claim.
+Method: exact enumeration of every lattice vector with |x|² ≤ 12 (Fincke–Pohst on the Cartan Gram, unit covolume), Gaussian
+energy θ(α)=Σ e^{−πα|x|²} for α ≥ 1; α < 1 follows exactly from Poisson, θ_L(1/α)=α^{d/2}θ_{L*}(α). Converged to ≤3e-11 (Q=10 vs 12).
+Sanity: E8 at α=2 gives 1.000837 = 1+240e^{−4π}; E6 shell 72 at norm 2/3^{1/6} reproduces 1.002056.
+- E6 vs E6*: tie at α=1 (1.3925406, Δ=9e-14); E6 lower for α>1 (Δ=−1.60e-3 at 1.25, −2.71e-4 at 2) → E6* lower for α<1. FLIPS.
+- E7 vs E7*: tie at α=1 (1.4341764, Δ=2e-14); E7 lower for α>1 (Δ=−2.59e-3 at 1.25) → E7* lower for α<1. FLIPS.
+- E8 vs E8*: identical at every α (Δ ≤ 7e-15) → no flip.
+Verdict: PASS — the D1278 rule holds for d=6,7,8 (now tested d=2–8). Limit (honest): this compares each Eₙ with its OWN dual;
+whether Eₙ beats every other lattice at every scale in d=6,7 is a separate open question (universal optimality is only proven
+in d=8, 24). Leech (d=24) part of the prediction not yet tested here (no-flip follows from its self-duality).
+Files: field_tests/e6e7_flip.py, field_tests/results/e6e7_flip_2026-11-18.txt.

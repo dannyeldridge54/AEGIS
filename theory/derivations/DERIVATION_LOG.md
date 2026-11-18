@@ -1944,3 +1944,10 @@ Touches: none.
 3. Computed central-difference Hessians with the model's own E_fourier: τ=i [−1.2792, +5.7786] (saddle, negative mode along x), τ=ρ [+3.5623, +3.5623] (minimum); h = 1e-3 and 1e-4 agree. [derived]
 4. Checked the eigenvalue ratio at i (−0.2214) against the bare Epstein s=2 ratio (−0.2215). [derived]
 5. Concluded a τ = i vacuum needs an extra ingredient (pinned axion or a non-monotone building block), as in SERAPIS-1's j-based form; Kallosh–Linde likewise have i as a saddle. [literature] (D530/SERAPIS-1 history, arXiv:2212.03876 context)
+
+## D1282: E6 and E7 flip against their duals at the self-dual scale α=1; E8 does not (D1278 prediction confirmed) (2026-11-18)
+1. [derived] Poisson summation at unit covolume: θ_L(α) = α^{−d/2} θ_{L*}(1/α); hence θ_L(1) = θ_{L*}(1) for every lattice.
+2. [derived] So if θ_L(α) < θ_{L*}(α) for all α > 1, then θ_{L*}(α) < θ_L(α) for all α < 1: a lattice that is not isometric to its dual must swap with it exactly at α=1.
+3. [derived] Exact enumeration (|x|² ≤ 12, converged ≤3e-11): E6 beats E6* for α>1 (Δθ=−1.60e-3 at α=1.25), E7 beats E7* (Δθ=−2.59e-3); ties at α=1 to 1e-13.
+4. [derived] E8 = E8* (unimodular): Δθ ≤ 7e-15 at every α → no flip.
+5. [literature] Universal optimality is proven only in d=8 (E8) and d=24 (Leech) (Cohn–Kumar–Miller–Radchenko–Viazovska 2022); in d=6,7 the comparison here is Eₙ vs its own dual only.
