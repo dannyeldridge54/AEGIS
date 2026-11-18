@@ -1,0 +1,13 @@
+SERAPIS-E tool cross-check (cloud loop, 2026-11-18) — emulator (PT1) & inverse meter (PW6/T1) vs the EXACT point
+Exact = Janus core spectra3 + Nstar self-consistency at T_R=7.389e8 GeV, MSSM g*=228.75, N_eff=4, Nmax=4000.
+
+C (BHK)    exact: ns        r         alpha_s     N*       | emulator ns   d(ns)=em-exact
+1.00e-6    0.97176    4.517e-04   -9.38e-4   50.17    | 0.97173     -3.19e-05
+1.15e-6    0.97333    4.697e-04   -9.74e-4   50.18    | 0.97333     -4.70e-06
+1.30e-6    0.97493    4.885e-04   -1.01e-3   50.18    | 0.97495     +2.35e-05
+1.60e-6    0.97821    5.292e-04   -1.10e-3   50.20    | 0.97819     -2.76e-05
+
+Result: |d(ns)| <= 3.2e-5 across the emulator's whole validity band C in [1.0,1.6]e-6 (r to ~1e-6, alpha_s to ~1e-5).
+Meter (PW6 log-interp table) at ns=0.97439 -> C=1.248e-6, P=782 (=15*N_eff/(64 pi^6 C)); exact pipeline C~1.26e-6 (agree ~1%).
+Recorded SERAPIS-E point ns=0.97439 <-> C~1.25e-6, r=4.77-4.82e-4, alpha_s=-9.9e-4, N*=50.18 — reproduced. Trajectory consistent.
+Label: tool/numerics cross-check (no new physics claim). Confirms T1/PT1 adoption (D1268 era) quantitatively.
