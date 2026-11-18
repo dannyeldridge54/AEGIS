@@ -1,0 +1,22 @@
+f_pred(1 TeV) = [0.124, 0.205]
+rho_sun=0.4: Bur B0/D1: J/J_bench=0.2494; LO f_max [0.286,0.314] PASS; NLO f_max [0.315,0.346] PASS
+rho_sun=0.4: Bur B0/D2: J/J_bench=0.1620; LO f_max [0.355,0.390] PASS; NLO f_max [0.391,0.429] PASS
+rho_sun=0.4: Bur B0/D3: J/J_bench=0.4383; LO f_max [0.216,0.237] PASS; NLO f_max [0.237,0.261] PASS
+rho_sun=0.4: Bur B0/D4: J/J_bench=0.4627; LO f_max [0.210,0.230] PASS; NLO f_max [0.231,0.254] PASS
+rho_sun=0.4: Bur B1/D2: J/J_bench=0.1196; LO f_max [0.413,0.453] PASS; NLO f_max [0.455,0.499] PASS
+rho_sun=0.4: Ein B0/D1: J/J_bench=0.0106; LO f_max [1.384,1.520] PASS; NLO f_max [1.525,1.675] PASS
+rho_sun=0.4: Ein B0/D2: J/J_bench=0.0714; LO f_max [0.534,0.587] PASS; NLO f_max [0.589,0.646] PASS
+rho_sun=0.4: Ein B0/D3: J/J_bench=0.0067; LO f_max [1.740,1.912] PASS; NLO f_max [1.917,2.106] PASS
+rho_sun=0.4: Ein B0/D4: J/J_bench=0.0210; LO f_max [0.984,1.081] PASS; NLO f_max [1.084,1.191] PASS
+rho_sun=0.4: Ein B1/D2: J/J_bench=0.0716; LO f_max [0.533,0.586] PASS; NLO f_max [0.588,0.645] PASS
+rho_sun=0.3: Bur B0/D1: J/J_bench=0.1403; LO f_max [0.381,0.418] PASS; NLO f_max [0.420,0.461] PASS
+rho_sun=0.3: Bur B0/D2: J/J_bench=0.0911; LO f_max [0.473,0.519] PASS; NLO f_max [0.521,0.572] PASS
+rho_sun=0.3: Bur B0/D3: J/J_bench=0.2465; LO f_max [0.287,0.316] PASS; NLO f_max [0.317,0.348] PASS
+rho_sun=0.3: Bur B0/D4: J/J_bench=0.2603; LO f_max [0.280,0.307] PASS; NLO f_max [0.308,0.338] PASS
+rho_sun=0.3: Bur B1/D2: J/J_bench=0.0673; LO f_max [0.550,0.604] PASS; NLO f_max [0.606,0.666] PASS
+rho_sun=0.3: Ein B0/D1: J/J_bench=0.0060; LO f_max [1.845,2.027] PASS; NLO f_max [2.033,2.233] PASS
+rho_sun=0.3: Ein B0/D2: J/J_bench=0.0401; LO f_max [0.712,0.782] PASS; NLO f_max [0.785,0.862] PASS
+rho_sun=0.3: Ein B0/D3: J/J_bench=0.0038; LO f_max [2.320,2.549] PASS; NLO f_max [2.556,2.808] PASS
+rho_sun=0.3: Ein B0/D4: J/J_bench=0.0118; LO f_max [1.312,1.442] PASS; NLO f_max [1.446,1.588] PASS
+rho_sun=0.3: Ein B1/D2: J/J_bench=0.0403; LO f_max [0.711,0.781] PASS; NLO f_max [0.783,0.861] PASS
+E1 (no verdict worse at 0.40 than at fitted rho_sun, LO): PASS
