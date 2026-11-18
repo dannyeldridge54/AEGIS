@@ -14023,3 +14023,9 @@ MAP: none
 - It exits non-zero on any failure, so it can run before a "Publish". A line is added to the Hyperion 1.1 CHANGES.
 - **Still needed for a 1.1 upload** (Danny): his "Publish", plus a PC run of START_HYPERION_ORBITS.bat with the McMillan17 default (output to hyperion_mcm17/).
 MAP: none
+
+## D1329 — SERAPIS v3.3 draft (unposted): forward-table footnotes b and c clarified, closing the D1326 flag (2026-11-18)
+- [DOC] **Footnote b** (covariant superpartner row, "wino 0.67–1.85 TeV") now adds: "the AMSB mass window of the covariant completion, not the thermal fraction of row c". The two rows can no longer be read as the same quantity.
+- **Footnote c** (post-hoc thermal wino row): "Einasto halo" is replaced by "window from the H.E.S.S. IGS line test over Gaia-calibrated haloes (D1153, D1324)". The row now uses many haloes (D1324), so the old single-halo label was stale.
+- No numbers changed. Unposted; no Zenodo.
+MAP: none
