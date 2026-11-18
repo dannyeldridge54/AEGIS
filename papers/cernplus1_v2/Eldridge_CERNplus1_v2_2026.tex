@@ -1,0 +1,92 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{CERN+1: An Independent LHC Toolkit That Checks Itself --- Wino Lifetimes, Two Reproduced ATLAS Limits, and a Model-versus-Collider Panel}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{18 November 2026}
+\begin{abstract}
+CERN+1 is a small, open toolkit that repeats the main steps an LHC search uses to test a wino-like dark-matter candidate. It adds an independent check at every step. The name means ``the chain, plus one more check''; the work is independent and is not affiliated with or endorsed by CERN or any LHC experiment. The toolkit has five parts.
+\begin{itemize}
+\item \emph{Cross sections}~\cite{P1}: two routes that agree to 1\%.
+\item \emph{Lifetime}: a mass-dependent pure-wino lifetime engine, built from the two-loop mass splitting with the $\pi$, $e\nu$ and $\mu\nu$ widths. At 1~TeV it gives $\delta m=164.1$~MeV, $c\tau=5.83$~cm and BR$(\pi)=97.9\%$.
+\item \emph{Recast}: a disappearing-track reinterpretation that reproduces two ATLAS searches with one method and no retuning. For 136~fb$^{-1}$ it gives 666.6~GeV against the published 660~GeV. For 36.1~fb$^{-1}$ it gives 447.8~GeV against 460~GeV.
+\item \emph{Statistics}: CLs limits from pyhf and from exact Poisson sums side by side, because the asymptotic formulae are off by up to 8\% at low counts.
+\item \emph{Model-versus-collider panel}: the thermal-wino window of the SERAPIS model, 0.67--1.85~TeV, begins at the Run-2 limit. The HL-LHC can test its lower 26\%.
+\end{itemize}
+Every step was pre-registered, and failures are reported. We describe the process, why it is more accurate than the standard shortcuts, and how it came about.
+\end{abstract}
+\keywords{LHC; wino; chargino lifetime; disappearing track; recast; reinterpretation; CLs; HL-LHC; dark matter; reproducibility; pre-registration}
+\maketitle
+
+\section{Why a second, self-checking chain}
+A wino-like electroweakino is one of the cleanest dark-matter targets at a hadron collider. Its charged partner is about 160~MeV heavier than the neutral one. It lives long enough to leave a few centimetres of track that then ``disappear''. To test a specific model one needs four things: the production rate at the collider energy, the charged-state lifetime, the search's efficiency and limit, and a statistics engine. The experiments' chain is MadGraph/Pythia/Delphes for simulation, Resummino/Prospino for cross sections, and SModelS, CheckMATE or full likelihoods for reinterpretation. That chain is accurate, but it is slow, and it often fixes key inputs to one benchmark. CERN+1 recomputes each input independently and attaches a measured error to every answer.
+
+\section{The process}
+Five rules were applied to every component.
+\begin{enumerate}
+\item \emph{Lock before computing.} The expected outcome and the pass criterion are written, hashed and published first~\cite{P4}.
+\item \emph{Two routes.} A number is trusted only when two independent methods agree, and their spread is the quoted error.
+\item \emph{Reproduce before predicting.} A recast is used for predictions only after it reproduces the experiment's own limit.
+\item \emph{Replace benchmarks with physics.} Fixed benchmark inputs are replaced by quantities computed from the model.
+\item \emph{Report failures.} One sub-prediction below failed, and it is recorded as a failure.
+\end{enumerate}
+
+\section{Cross sections (summary of Ref.~\cite{P1})}
+Route~1 is a spline of $\ln\sigma$ against $\ln m$ through the Resummino tables~\cite{Res}. Left-out points are reproduced with a median error of 0.016\% and a maximum of 0.30\%. Route~2 is Drell--Yan scaling, $s\sigma=\Phi(4m^2/s)(\sqrt s/13\,\mathrm{TeV})^\kappa$, built from the 13~TeV table alone. It predicts every 13.6~TeV entry to $\le0.29\%$. The exponent $\kappa=-0.163$ is the same for all three wino channels. At 14~TeV the two routes agree to $\le1\%$.
+
+\section{Lifetime engine}
+We use the two-loop fit to the wino mass splitting~\cite{IMS} and the widths $\Gamma(\tilde\chi^\pm\to\tilde\chi^0\pi^\pm)$ and $\Gamma(e\nu)$ given there. We add the $\mu\nu$ mode with its exact phase-space factor. Results:
+\begin{itemize}
+\item $\delta m$ rises from 149.5~MeV at 100~GeV to 164.5~MeV at 3~TeV.
+\item $c\tau$ falls from 11.3 to 5.75~cm.
+\item BR$(\pi)=97.9\%$.
+\item The lifetime is 0.197~ns at 666~GeV, compared with the 0.2~ns benchmark used by ATLAS.
+\end{itemize}
+The pre-registered window for $\delta m(1\,\mathrm{TeV})$, 160--163~MeV, was 1~MeV too low. The value is 164.1~MeV, so that sub-prediction failed. The other predictions passed.
+
+\section{Disappearing-track recast, validated twice}
+The signal yield is anchored on each search's published benchmark and scaled with our cross sections and our lifetime:
+\begin{equation}
+N(m)=N_{\rm b}\,\frac{\sigma(m)}{\sigma(m_{\rm b})}\,\frac{P(m)}{P(m_{\rm b})}.
+\end{equation}
+Here $P$ is the probability to decay between the fourth pixel layer (122.5~mm) and the first SCT layer (299~mm). It is compared with the published model-independent limit $N_{95}$.
+\begin{itemize}
+\item ATLAS 136~fb$^{-1}$~\cite{AT136}: benchmark 8.6 events at 600~GeV, $N_{95}=5.03$. The limit is 666.6~GeV against the published 660~GeV ($+1.0\%$).
+\item ATLAS 36.1~fb$^{-1}$~\cite{AT36}: benchmark 13.5 events at 400~GeV, $N_{95}=7.94$. The limit is 447.8~GeV against 460~GeV ($-2.7\%$).
+\end{itemize}
+Nothing was retuned between the two searches. Varying the assumed transverse boost $\beta\gamma$ from 0.3 to 0.8 moves either limit by $\le5$~GeV. A like-for-like HL-LHC extrapolation (14~TeV, 3000~fb$^{-1}$, background scaled with luminosity, Run-2 efficiency, exact-Poisson $N_{95}=17.6$) reaches about 975~GeV.
+
+\section{Statistics}
+pyhf and exact Poisson CLs disagree by up to 8\% at low counts. For example, at $b=n=3$ they give 5.00 and 5.40 signal events. The toolkit reports the exact value whenever counts are small.
+
+\section{Model versus collider}
+The SERAPIS model predicts a thermal wino between 0.67 and 1.85~TeV, making up 5--41\% of the dark matter~\cite{SE}. The panel reads that window from the model's theory map and overlays the CERN+1 reach. The window's lower edge lies 3.4~GeV above the Run-2 limit. The HL-LHC covers 670--975~GeV, which is 26\% of the window. The remaining 74\% needs other probes: a gamma-ray line from wino annihilation, and future colliders. Both are planned as the next CERN+1 modules, each to reproduce a published result first.
+
+\section{Why this is more accurate and better}
+\begin{itemize}
+\item Every answer carries a measured error, either an interpolation error or the spread between routes.
+\item Lifetimes are computed as a function of mass rather than fixed at one benchmark.
+\item Exact CLs at low counts, where the asymptotic formulae are off by up to 8\%.
+\item The recast is validated on two searches before it is used.
+\item Answers take microseconds to seconds, against minutes to hours for the reference codes.
+\end{itemize}
+Not yet better: there is no full event generation or detector simulation. CERN+1 uses the experiments' published efficiencies, and its cross sections rest on the reference tables until our own PDF-based leading-order route is added.
+
+\section{How we came up with it}
+CERN+1 grew out of the SERAPIS research, which predicts wino dark matter in a window that LHC searches can test. To score that prediction honestly we needed the experiments' numbers, fast and with errors. When a parton-distribution download was blocked, we asked what physics alone fixes. Drell--Yan scaling turned one energy's table into a predictor for every energy, and the leftover correction came out the same in every channel. The habits that built our inflation calculator --- lock first, two routes, reproduce before predicting --- were then applied to each LHC step.
+
+\emph{Method note.} Prepared with an AI assistant (Claude, Anthropic). Code: \texttt{tools/lhc}; notes D1299--D1304 in the archive~\cite{AEGIS}.
+
+\begin{thebibliography}{9}
+\bibitem{P1} D.~Eldridge, ``Janus-LHC: Wino Pair Cross Sections at Any LHC Energy from Drell--Yan Scaling,'' Zenodo (2026), doi:10.5281/zenodo.24342227.
+\bibitem{Res} ``Electroweak superpartner production at 13.6 TeV with Resummino,'' arXiv:2304.11915.
+\bibitem{IMS} M.~Ibe, S.~Matsumoto and R.~Sato, ``Mass splitting between charged and neutral winos at two-loop level,'' Phys.\ Lett.\ B \textbf{721}, 252 (2013), arXiv:1212.5989.
+\bibitem{AT136} ATLAS Collaboration, ``Search for long-lived charginos based on a disappearing-track signature using 136~fb$^{-1}$,'' Eur.\ Phys.\ J.\ C \textbf{82}, 606 (2022), arXiv:2201.02472.
+\bibitem{AT36} ATLAS Collaboration, JHEP \textbf{06}, 022 (2018), arXiv:1712.02118.
+\bibitem{SE} D.~Eldridge, ``SERAPIS-$E$ v2,'' Zenodo (2026), doi:10.5281/zenodo.24340373.
+\bibitem{P4} D.~Eldridge, ``Lock Before You Compute,'' Zenodo (2026), doi:10.5281/zenodo.24291026.
+\bibitem{AEGIS} Archive: github.com/dannyeldridge54/aegis.
+\end{thebibliography}
+\end{document}
