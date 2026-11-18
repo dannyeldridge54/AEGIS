@@ -41,3 +41,7 @@ The clean Twist release: [the-twist-torsion-cosmology](https://github.com/dannye
 **AEGIS Community License** ([LICENSE](LICENSE)): free for individuals, scientists, students, schools, nonprofits and public research.
 Any business or for-profit use, including internal R&D, needs the **AEGIS Commercial License** ([licensing/COMMERCIAL_LICENSE.md](licensing/COMMERCIAL_LICENSE.md)): a yearly minimum or a share of group profit, rising with company size. No military or mass-surveillance use at any price.
 Versions released before 18 November 2026 keep the license they were released under (HL3-MIL-SV).
+
+## Support this work
+
+All of this (the research, the toolkits and the papers) is built by one person, Danny Eldridge, an independent, self-taught researcher in Oklahoma City, working with the help of AI. He is trying to change his circumstances in life, and he promises to keep doing what he is doing now: releasing the work openly, free to individuals, scientists and students, and using it to try to make the world a better place. If it helps you, a donation of any size keeps it going: **email dannyeldridge54@gmail.com to donate** (a direct donation link is coming). Businesses: please license through the AEGIS Commercial License instead.

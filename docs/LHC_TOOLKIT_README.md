@@ -48,3 +48,7 @@ The same habits that built the Janus calculator (lock first, two routes, reprodu
 ## References
 Resummino 13.6 TeV tables: arXiv:2304.11915 · Wino mass splitting and widths: arXiv:1212.5989 · ATLAS disappearing tracks (136 fb⁻¹):
 arXiv:2201.02472 · CERN+1 cross-section note: doi:10.5281/zenodo.24342227 · Lock workflow: doi:10.5281/zenodo.24291026.
+
+## Support this work
+
+All of this (the research, the toolkits and the papers) is built by one person, Danny Eldridge, an independent, self-taught researcher in Oklahoma City, working with the help of AI. He is trying to change his circumstances in life, and he promises to keep doing what he is doing now: releasing the work openly, free to individuals, scientists and students, and using it to try to make the world a better place. If it helps you, a donation of any size keeps it going: **email dannyeldridge54@gmail.com to donate** (a direct donation link is coming). Businesses: please license through the AEGIS Commercial License instead.
