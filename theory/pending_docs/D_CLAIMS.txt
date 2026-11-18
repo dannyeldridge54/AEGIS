@@ -566,3 +566,4 @@ D1279  2026-11-18T10:26Z  untitled
 D1280  2026-11-18T10:36Z  untitled
 D1281  2026-11-18T10:38Z  wino_window recheck after D1278 (lattice theta-function note; graph ripple only): unchanged
 D1282  2026-11-18T10:53Z  E6/E7 flip test (D1278 prediction)
+D1283  2026-11-18T10:57Z  Literature: optimal Narain CFTs (2206.14825) vs our lattice/shape results
