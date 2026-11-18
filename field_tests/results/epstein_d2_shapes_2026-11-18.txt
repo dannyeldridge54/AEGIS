@@ -1,0 +1,23 @@
+d=2 lattice-shape selection: Epstein zeta at equal covolume (cloud loop, 2026-11-18)
+Computed sum_{(m,n)!=0} Q(m,n)^{-s} for unit-covolume Gram forms, N=400 shells.
+  square     Q = m^2 + n^2                      (modular point tau = i)
+  hexagonal  Q = (2/sqrt3)(m^2 + m n + n^2)     (modular point tau = rho = e^{2 i pi/3})
+  det(Gram) = 1.000 for both (fair comparison).
+
+  s = 2.0 :  square 6.02679601   hexagonal 5.78334176   -> hexagonal lower by  4.04%
+  s = 3.0 :  square 4.65891362   hexagonal 4.14125655   -> hexagonal lower by 11.11%
+  s = 4.0 :  square 4.28143066   hexagonal 3.43376427   -> hexagonal lower by 19.80%
+
+Result: hexagonal minimises at every exponent tested, and the margin GROWS with s (shorter-range sums select the
+shape more sharply). This reproduces the known d=2 theorem (hexagonal minimises the Epstein zeta at fixed covolume).
+
+Relevance to SERAPIS-E: the modular fundamental domain's two elliptic fixed points are exactly these two shapes —
+tau = i (square, stabiliser order 4) and tau = rho (hexagonal, order 6) — and our model carries BOTH as separate
+sectors (map nodes n_sector_i, n_sector_rho). So on lattice-sum energy alone the rho (hexagonal) sector is the
+preferred one in d=2, and the margin is exponent-dependent. This is a selection argument, NOT yet a derivation that
+the model must sit at rho: the actual sector choice is set by the flux/stack construction, not by the 2D lattice sum.
+
+Dimension chain (literature, for the record): d=2 A2 hexagonal; d=3 FCC; d=4 D4; d=8 E8; d=24 Leech, with
+A2 < D4 < E8 < Leech nesting, E8 and Leech universally optimal (Cohn-Kumar-Miller-Radchenko-Viazovska; Viazovska 2016).
+Heterotic gauge lattice is E8 x E8 — the d=8 member of that same chain.
+Label: numerics (computed here) + literature (the optimality theorems). No new physics claim.
