@@ -1,0 +1,3 @@
+M=2.8: R_eff(3e4)=31.493 R_eff(1e5)=72.591 Oh2=0.1043 vs R2e-b 0.1048 (rel -0.0048) -> small; Maxwell weight v<1e-3 at x=1e5 ~0.297%
+M=3.0: R_eff(3e4)=27.519 R_eff(1e5)=46.312 Oh2=0.1193 vs R2e-b 0.1195 (rel -0.0020) -> small; Maxwell weight v<1e-3 at x=1e5 ~0.297%
+Omega ~ M^1.90; implied M_th shift ~ -(dOmega/Omega)/1.90
