@@ -27,3 +27,17 @@ _(appended by the grader each pass — newest last)_
 - 2026-11-18T09:50Z — **cloud cycle 1 (D1272, PASS).** Trajectory check: exact SERAPIS-E point reproduces recorded r/α_s/N*; PT1 emulator |Δn_s|≤3.2e-5 and PW6 meter C/P consistent (~1%) across C∈[1.0,1.6]e-6. Tools validated; I'm now ahead of CubeMind's likely "emulator vs exact" proposal (pre-answered: faithful). Next: rotate tracks + grade CubeMind's first real proposals once the learner's cycling.
 - 2026-11-18T10:00Z — **cloud cycle 2 (D1273, PASS).** Position check: SERAPIS-E n_s=0.97439 is +2.00σ vs CMB-SPA but +0.59σ vs CMB-SPA+DESI; r=4.82e-4 is 75× below the bound. So **n_s is the sharpest near-term test, not r**. Also: the analytic Janus α_s relation is ~3% off the pipeline (−9.64e-4 vs −9.98e-4) — score with the pipeline value. PC learner: fixed (stale deploy + keep_alive string→number, the real HTTP 400); always-on learner due to start at the 10:00 watchdog tick.
 - 2026-11-18T10:05Z — **cloud cycle 3 (D1274, PASS).** Error budget: σ_theory(n_s) = 0.0133 × (fractional Im S·Im ρ uncertainty). The CMB-SPA tension survives our own error (2.00σ→1.82σ at 10% moduli), so it is NOT an artefact. **Next target identified by the math: pin Im S·Im ρ to ≲5%** (σ_theory 6.7e-4, well under the data's 2.7e-3) — highest-value move on this branch. Chain so far: D1272 tools faithful → D1273 n_s is the sharp test → D1274 what limits it.
+
+### Grading pass 1 — 2026-11-18T10:14Z (first real proposals)
+**Learner confirmed self-learning**: 4 cycles, proposer producing (the HTTP 400 was `keep_alive` sent as the string "-1"; now numeric). Cadence ~2–4 min.
+
+| # | Proposal (abridged) | Verdict | Why |
+|---|---|---|---|
+| 1 | "r at C=1.15e-6 is exactly 4.696e-04; check by running serapis_emulator(C=1.15e-6)" | **REJECT** | Tautology — 4.696e-04 is already a result-bus record in its own memory; the "check" re-runs the same deterministic function. |
+| 2 | "r = 4.696e-04 at C=1.15e-6, N*=50.24; verify emulator output equals it" | **REJECT** | Same tautology, restated. |
+
+**Diagnosis (good news inside):** it is *grounded* — using real stored values, not hallucinating. The failure is that it restates what it can already see. Two causes, both fixed this pass:
+1. The prompt didn't forbid restating known values → added hard anti-tautology rules: no restating DATA numbers, no deterministic re-run checks, must be a NEW input / relation / sensitivity / cross-check, and must state what would falsify it.
+2. `ingest: 0` every cycle — its DERIVATION_LOG copy was stale, so it had almost nothing to reason from. Fed it D1272–D1276 (verified 5 sections present on the PC).
+
+**Next pass:** check whether proposals become non-trivial now that it has real material + stricter rules. Watch `ingest` going >0.
