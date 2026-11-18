@@ -129,3 +129,8 @@ vac_rho:
     at: D1250
     by: D1344
     verdict: 'no effect: the ρ vacuum does not depend on ε (any potential monotone in E(τ,2) has its vacuum at ρ, D1280); D1045/D1048 are tilt-frame results, D1250 the audit close-out'
+serapis_e:
+  plateau_origin:
+    at: D1352
+    by: D1352
+    verdict: 'no effect: D1352 tested a lattice-disk plateau (side model P6); it does not reproduce SERAPIS n_s, so plateau_origin stays assumed and the SERAPIS-E potential is unchanged'
