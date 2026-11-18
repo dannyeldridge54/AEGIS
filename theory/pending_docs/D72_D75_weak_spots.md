@@ -13490,3 +13490,6 @@ Comparison with our results:
    dynamical vacuum selector — but it means "SERAPIS-E sits at the optimal string lattice" would be an overclaim.
 Verdict: PASS (literature). Paper: added as SERAPIS_DERIVATION §9 (geometry). Next: whether any known mechanism selects
 max-gap points dynamically (would turn item 1 from coincidence into derivation) — SEARCH.
+
+### D1284 — wino_window recheck after D1283: unchanged (graph ripple from n_sector_rho; Narain-lattice literature; no wino input touched) (2026-11-18)
+MAP: none
