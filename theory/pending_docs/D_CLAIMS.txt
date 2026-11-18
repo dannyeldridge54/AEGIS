@@ -636,3 +636,4 @@ D1349  2026-11-18T21:32Z  untitled
 D1350  2026-11-18T21:37Z  untitled
 D1351  2026-11-18T21:38Z  untitled
 D1352  2026-11-18T21:59Z  lattice-geometry alpha-attractor configs
+D1353  2026-11-18T22:26Z  P3 literature: Kallosh-Linde streamlined supergravity
