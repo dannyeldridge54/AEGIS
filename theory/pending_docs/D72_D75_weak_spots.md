@@ -14064,3 +14064,12 @@ MAP: none
 - A dated status block is added under the old line (old text kept).
 - Still open: A1e, Mapper/dust on the PC, NLL′/endpoint, and relic LO-Sommerfeld +4.4% (parked). New item: the Gaia DR4 sweep (D1330).
 MAP: none
+
+## D1334 — Hyperion tick (partial; interrupted): source for the NLL′/endpoint item located, Baumgart et al. arXiv:1808.08956; the endpoint/line ratio is not extracted yet (2026-11-18)
+- [LITERATURE] Baumgart, Cohen, Moult, Rodd, Slatyer, Solon, Stewart, Vaidya, "Precision photon spectra for wino annihilation" (JHEP Jan 2019).
+  - Abstract: NLL scale variation is ≈5%.
+  - Fig. 1: cumulative σ vs z_cut for the 2.9 TeV thermal wino only, with the H.E.S.S. resolution ≈10% shown as a band.
+- The first 100k characters of the ar5iv text quote no line+endpoint/line ratio. The rest (≈930k characters) is unread, and the ratio is probably readable only off Fig. 1.
+- Also check 2507.15937 (newer, same group?) before any lock.
+- The open item stays OPEN. Nothing computed.
+MAP: none
