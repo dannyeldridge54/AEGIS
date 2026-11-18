@@ -442,6 +442,10 @@ class Weave:
         with ThreadPoolExecutor(max_workers=workers) as ex: out = [r for rs in ex.map(self._one, groups) for r in rs]
         if self.on:   # the SERAPIS circuit after the node pass: every component fires, wires carry values, laws checked
             cr = run_circuit()
+            if self.win is not None:
+                try:
+                    import json as _j2; self.win.evaluate_js(f"window.circuitResult && circuitResult({_j2.dumps({k: v for k, v in cr.items() if k != 'comps'}, default=str)})")
+                except Exception: pass
             for c in cr['comps']:
                 self._emit(dict(node=c['node'], tool='circuit', ok=c['ok'], text='; '.join(f"{'✓' if l['ok'] else '✗'} {l['law']}: {l['text']}" for l in c['laws']), seconds=c['seconds'], shared=True))
             with self.lock: push(self.win, 'calc', f"SERAPIS circuit · health {cr['health']:.0%}", f"{cr['closed']}/{cr['n_laws']} laws closed" + (f"; OPEN: {', '.join(o['layer'] + ' ' + '/'.join(o['nodes']) + ' (' + o['law'] + ')' for o in cr['open'])}" if cr['open'] else '; all closed'))
