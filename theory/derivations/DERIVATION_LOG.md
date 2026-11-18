@@ -1854,3 +1854,4 @@ Touches: none.
 ## D1264: PW4 PASSES — SERAPIS-E covariant m3/2 bound at its own y (14.6–16.6): < 2.0e9 / 6.7e8 GeV, ×960 above the AMSB wino need (≤ 7e5); Chronos-range bound (y 23–30) was marginal
 ## D1265: PW5 PASSES (forecast) — CMB as a string meter: SO n_s → Im S·Im ρ ±14 % (T_R known); + LiteBIRD r (optimistic) → ±19 % and T_R to 2.8 decades; response slopes match the audited box edges (2–8 %)
 ## D1267: papers 5 (SERAPIS-E audited, doi 10.5281/zenodo.24330316) and 6 (MS start-condition ripple, doi 10.5281/zenodo.24330318) published, files md5-verified
+## D1268: PW6 PASSES — inverse string meter at T_R 7.39e8: n_s 0.972/0.974/0.976 → Im S·Im ρ 953/804/697 (exact); PW5 linear inverse ≤ 0.4–2.4 % inside, 3.5–7 % at 0.970/0.978

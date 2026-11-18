@@ -13190,3 +13190,15 @@ MAP: none
 Both cite each other via DOIs reserved before the final build. Record metadata set through the RDM API (12 / 8 keywords as subjects, 15 / 7 references, related works, CC BY 4.0, methods + notes). Checks before posting: every number traced to field_tests/results; bib titles of 2212.04115 and 1812.07831 fetched; Dormand–Prince confirmed in mf_jit; ripple amplitude labelled an order-of-magnitude estimate.
 Path note: drafts made in the built-in browser; files uploaded via Claude in Chrome file_upload from device-staged copies (LESSONS).
 MAP: none
+
+## D1268 — CENTRE/STRINGS — PW6 (web postulate 6) PASSES: the inverse string meter — at the leptogenesis T_R (7.39e8 GeV) a future n_s fixes Im S·Im ρ; PW5's linear inverse holds to ≤ 0.4 % at n_s 0.972–0.974 and 2.4 % at 0.976, but drifts to 3.5 % / 7.1 % at 0.970 / 0.978
+Lock: field_tests/rules/PREREG_PW6_inverse_string_meter.md (793371ff). Script field_tests/scripts/pw6.py. Results field_tests/results/pw6_inverse_meter.txt (455 s). [computed, exact inversion with predict_fast = Janus N* + U1b exact MS]
+Table (target n_s → exact C, P = Im S·Im ρ, N*, r, α_s):
+0.970 → 8.293e-7, 1176, 50.163, 4.32e-4, −8.99e-4 (linear 1135, −3.5 %)
+0.972 → 1.023e-6, 953, 50.171, 4.54e-4, −9.43e-4 (linear 957, +0.4 %)
+0.974 → 1.213e-6, 804, 50.180, 4.77e-4, −9.89e-4 (linear 807, +0.4 %)
+0.976 → 1.399e-6, 697, 50.188, 5.01e-4, −1.04e-3 (linear 680, −2.4 %)
+0.978 → 1.581e-6, 617, 50.196, 5.26e-4, −1.09e-3 (linear 573, −7.1 %)
+Expectation (≤ 3 % for n_s 0.972–0.976): PASS. Second pre-stated statement ("natural" P 560–975 ↔ n_s ≈ 0.972–0.978): the linear map gives 0.9718–0.9783; the exact map puts P = 975 at n_s ≈ 0.9718 but P = 560 beyond 0.978 (P 617 there) — the upper edge holds only for the linear map (exact edge not computed; no rerun).
+Reading: n_s alone, at fixed T_R, is a monotone meter of the string product; use the exact table (or a log-quadratic fit) outside 0.972–0.976. The frozen n_s ceiling 0.975 corresponds to P ≈ 750 at this T_R. Postulate, scored only on future data.
+MAP: node=inverse_meter status=postulate touches=[string_meter, serapis_point] ripple=no

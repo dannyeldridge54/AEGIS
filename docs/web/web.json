@@ -257,6 +257,14 @@
    "info": "web loop postulate 5"
   },
   {
+   "id": "inverse_meter",
+   "label": "POSTULATE (passed): inverse string meter — at T_R 7.39e8 a future n_s gives Im S·Im ρ: 0.972 → 953, 0.974 → 804, 0.976 → 697 (linear PW5 inverse within 0.4–2.4 %; 3.5–7 % at 0.970/0.978)",
+   "lane": "theory",
+   "status": "postulate",
+   "refs": "D1268",
+   "info": "web loop postulate 6"
+  },
+  {
    "id": "caps",
    "label": "Family caps n_s ≤ 0.985, r ≤ 8.3e-4",
    "lane": "theory",
@@ -370,10 +378,10 @@
   },
   {
    "id": "C_nstar",
-   "label": "Shared N*: SERAPIS-E 50.1–51.3 (ρ), τ=i 50.40–50.45 (audited)",
+   "label": "Shared N*: SERAPIS-E 50.07–51.22 (ρ, MSSM g*), τ=i 50.40–50.45 (audited)",
    "lane": "centre",
    "status": "corrected",
-   "refs": "D1235, D1247, D1252",
+   "refs": "D1235, D1247, D1252, D1262",
    "info": ""
   },
   {
@@ -1074,6 +1082,24 @@
   {
    "s": "reheat_rho",
    "t": "string_meter",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "string_meter",
+   "t": "inverse_meter",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "serapis_point",
+   "t": "inverse_meter",
    "kind": "depends",
    "sign": 1,
    "ref": "theory/map/map.yaml",

@@ -637,7 +637,7 @@ nodes:
   - 'D1251: postulate (PW2), expectation PASS 4/4'
   - 'D1251: postulate'
   note: web loop postulate 2; scored only on future data
-  flag: recheck (D1262, nstar_e)
+  flag: recheck (D1268, inverse_meter)
 - id: vac_discriminant
   layer: 5
   branch:
@@ -690,6 +690,22 @@ nodes:
   - 'D1265: postulate PW5 passed (forecast + consistency)'
   - 'D1265: postulate'
   note: web loop postulate 5
+  flag: recheck (D1268, inverse_meter)
+- id: inverse_meter
+  layer: 5
+  branch:
+  - E
+  title: 'POSTULATE (passed): inverse string meter — at T_R 7.39e8 a future n_s gives Im S·Im ρ: 0.972 → 953, 0.974 → 804, 0.976 → 697 (linear PW5 inverse within 0.4–2.4 %; 3.5–7 % at 0.970/0.978)'
+  status: postulate
+  d:
+  - D1268
+  depends:
+  - string_meter
+  - serapis_point
+  history:
+  - 'D1268: postulate PW6 passed'
+  - 'D1268: postulate'
+  note: web loop postulate 6
 - id: caps
   layer: 5
   branch:
