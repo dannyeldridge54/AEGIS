@@ -12670,3 +12670,11 @@ Results on the five JMF6 models (Q1, Q3, Q9, N2p, N1): fast (bd 1000) |Δn_s| �
 quick (bd 300) |Δn_s| ≤ 2.5e-7, |Δr/r| ≤ 5e-8, median ×11.2 (→ 1.4 s). Both within the locked 1e-6 / 1e-5 → fast is the default MF route for new locks;
 bd = 300 allowed as labelled "quick mode". Next speed steps (own locks): same vectorisation for Janus-MF-NC (curved); compiled core for the PC.
 MAP: none (tool speed).
+
+## D1221 — JANUS — JMF11: compiled Janus-MF (numba) [ADOPTED as PC default, "jit"]
+Lock: field_tests/rules/PREREG_JMF11_jit.md. Code: tools/janus_calc/mf_jit.py (same equations as spectra_mf; background + all k-modes + tensors in one
+compiled real ODE system; adaptive Dormand–Prince 5(4), rtol 1e-11; potential given as a sympy expression, gradient/Hessian generated and compiled).
+Results vs spectra_mf on Q1, Q3, Q9, N2p, N1: |Δn_s| 2.3e-8–5.3e-8, |Δr/r| ≤ 1.3e-8; 0.35–0.45 s vs 15.5–16.9 s → median ×36 (first call incl. compile 1.4–3.0 s).
+Quick mode (bd 300, reported only): |Δn_s| ≤ 2.9e-7, 0.12–0.17 s, ×92–142. Probe while writing: tighter rtol converges to n_s = 0.94547695 on Q3, i.e. the old
+spectra_mf (DOP853, rtol 1e-10) carries ~2e-8 itself. Speed path so far: 15.5 s → 4 s (D1220 vectorised) → 0.4 s (jit) → 0.14 s (jit quick).
+MAP: none (tool speed). Next: same compile for Janus-MF-NC (curved field space) and for the exact single-field MS reference.
