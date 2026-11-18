@@ -1,0 +1,24 @@
+NA14 sweep
+1. vac w
+  w(n=12): 0.7143 vs quoted 0.714 → PASS
+  w(n=8): 0.6 vs quoted 0.6 → PASS
+2. vac_rho running ratios
+  9.5/4.5: 2.111 vs quoted 2.11 → PASS
+  8.5/3.7: 2.297 vs quoted 2.29 → PASS
+3. n_sector_rho
+  699/20000 %: 3.495 vs quoted 3.5 → PASS
+  √3·1.6e-4: 0.0002771 vs quoted 0.00028 → PASS
+  √3·6.3e-5: 0.0001091 vs quoted 0.00011 → PASS
+  √3·4.2e-4: 0.0007275 vs quoted 0.00073 → PASS
+4. n_sector_i
+  Y2/Y1 vs 1/√3: 0.5773 vs quoted 0.5773502691896258 → PASS
+  |Y|: 0.1508 vs quoted 0.1508 → PASS
+  D785 script rerun: output IDENTICAL to results file → PASS
+5. halo_profile
+  ratio: 1.364 vs quoted 1.364 → PASS
+  0.24×k: 0.3273 vs quoted 0.33 → PASS
+  0.18×k: 0.2455 vs quoted 0.25 → PASS
+  0.57×k: 0.7773 vs quoted 0.78 → PASS
+6. tests_lhc [literature 1812.07831]: HL-LHC 3 ab^-1 disappearing tracks — §4.1.1 (τ=1 ns): wino excl 1100 GeV, discovery 800 GeV; §4.1.3 (pure wino): 900 GeV optimistic / 500 GeV conservative (95% CL); HE-LHC 27 TeV 2.1/1.5 TeV.
+   Window 0.67–1.85 TeV (D784): HL-LHC can probe only ~0.67–0.9 TeV (optimistic) — it CANNOT close the window above ~0.9–1.1 TeV. D736 ("Run 3 / HL-LHC will close or find it") was written for the older 0.67–0.80 TeV window → CORRECTED: only the lower part is LHC-testable; the upper part needs indirect detection (H.E.S.S./CTA line) or a 27–100 TeV collider.
+ARITHMETIC: ALL PASS
