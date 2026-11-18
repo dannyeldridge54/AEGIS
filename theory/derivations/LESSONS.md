@@ -374,3 +374,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1256: once the reference is fixed, finish the locked test with it via a written deviation — the corrected reference turned two FAILs-by-noise into nine clean agreements.
 - D1257: a heuristic graph ranking (waves.py) is a guess until a measured wave replaces it — the first measured one reversed the top two.
 - D1258: default constants inherited from a generic formula (g* = 106.75, SM) must be re-chosen for the model's own particle content (MSSM).
+- D1260: profile before optimising — the late-universe fit was 99 % recombination bookkeeping in scalar loops, not physics; vectorising the same nodes gave ×72 with bit-identical answers.

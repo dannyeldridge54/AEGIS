@@ -1847,3 +1847,4 @@ Touches: none.
 ## D1256: TK1 complete — 9/9 SERAPIS-E box points; Janus core = exact MS (U1b) to Δn_s ≤ 1.1e-6, Δr/r 0.011 %, Δα ≤ 3.3e-6; CAMB BB(80) 2.7–3.0e-5 μK²; pulls SPA +1.5–2.5σ, SPA+DESI 0–1.2σ
 ## D1257: U2 predict_fast ADOPTED (exact to TK1, 23–26 s vs ≥ 15 min); W1 measured wave: tilt link 0.394σ > N* link 0.343σ > T_R decade 0.261σ (heuristic ordering REVERSED), all linear (≤ 3 % asymmetry); C and N* separate in r
 ## D1258: W2 — reheating-chain waves at the PW2 point: m_φ ±10 % 0.016σ, g* SM→MSSM 0.021σ (ΔN* −0.063), Kähler √3 0.061σ; all linear, as pre-stated; flag: SERAPIS should use MSSM g* = 228.75
+## D1260: U4 — Hyperion/Janus-LT recombination vectorised: ×72 faster (6.6 → 0.09 s), z*, z_d, χ² identical; ADOPTED

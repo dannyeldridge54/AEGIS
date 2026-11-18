@@ -13115,3 +13115,10 @@ MAP: node=nstar_e status=corrected touches=[C_nstar] ripple=no
 - **Next:** source the f̂ tables (ref. [30] Appendix C; likely Beneke–Hellmann–Ruiz-Femenía, the "Non-relativistic pair annihilation" series — exact arXiv number to confirm) before any lock. If they are character-exact, add the v² terms as a locked R2f.
 VERDICT: (v) added as the leading candidate (sourced). No computation.
 MAP: none
+
+## D1260 — JANUS/TOOLKITS — U4 (upgrade loop: Hyperion / Janus-LT recombination) ADOPTED — ×72 faster (6.6 s → 0.09 s per Recomb + z* + z_d), z*, z_d and the BAO+CMB χ² identical to all printed digits on 5 points
+Lock: field_tests/rules/PREREG_U4_recomb_vec.md. Results: field_tests/results/u4_recomb_vec.txt. Reference copy of the old code: field_tests/scripts/recomb_ref_u4.py.
+Profile: one χ² evaluation 8 ms; one recombination solve 6.6–7.0 s ⇒ the L4/L5/L7/L10–L12 grids (25 solves) spent ~3 min in scalar Python loops (interp1d and H(z) called node by node on 20001-node trapezoid grids inside every brentq step; dense output called per node).
+Change: the same nodes and quadrature, evaluated as arrays (vectorised E(z) with the same f_nu spline; sol() on arrays). T1 |Δz*|, |Δz_d| = 0 at 1e-7 printed precision; T2 ×62–85 (total 32.8 s → 0.5 s); T3 χ² identical to 1e-8. All PASS → ADOPTED; zgrid cache keys rebuild automatically.
+Effect: a full L5/L7-type late-universe fit drops from ~4 min to seconds; the Janus-LT tool in the shared registry gains the same speed; TK2 (SERAPIS late-universe check) is now cheap.
+MAP: node=J_lt status=computed touches=[R_w0wa] ripple=no
