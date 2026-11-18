@@ -12994,3 +12994,13 @@ D736's unchecked "from memory" HL-LHC number (~0.9–1.1 TeV) is now sourced and
 MAP: node=tests_lhc status=literature touches=[wino_window] ripple=no
 MAP: node=n_sector_i status=computed touches=[] ripple=no
 MAP: node=halo_profile status=computed touches=[] ripple=no
+
+## D1250 — CENTRE — NA15 close-out: the theory-lane audit is complete (32/32 nodes; wino_window BLOCKED on the g*(T) table) — matter parity and covariant bounds PASS; eps_tilt updated to the audited τ = i window
+Lock: field_tests/rules/PREREG_NA15_structural.md. Results: field_tests/results/na15_structural.txt.
+matter_parity: 2k_L + 2k_Hu ≡ 2 (mod 4) for every odd k_L, even k_Hu → PASS (D663's incompatibility is general). covariant: ρ bounds equal τ = i's to ≤ 3.3 % at y = 23–30 → PASS ("the same", D655).
+eps_tilt: ε ≈ 1.39–1.44e-4 at τ = i under the audited reheating (D1247). sterile_i: consistent (NA7/NA8). plateau_origin (assumed), logderiv_plateau (killed): unchanged.
+AUDIT SUMMARY (D1233–D1250): corrections found — m_φ(ρ) 2.2e13 → 3.17e13; ρ couplings n = 3 → n = 1 (×√3); nstar_e 49.7–50.5 → 50.1–51.3; T_R(ρ) → 6.6e8–2.0e10; m_φ(i) 1.9e11 → 2.28–2.65e11 (T_R(i) 1.3–5.0e6); τ = i ε window narrows to 1.39–1.44e-4; gravitino label ≤ 5e-4; tests_lhc window coverage; D689 offset belonged to the predecessor model.
+Confirmed unchanged — core potential arithmetic, BHK C, tadpole, mnu (NuFIT 6.0), Janus relation ≤ 6 %, caps, dark radiation, leptogenesis verdicts (ρ: c ≳ 1; τ = i: radiative PASS), gravitino → wino negligible.
+The frozen predictions stand as locked; the audited SERAPIS-E box (PW1) lies 4/9 inside them.
+MAP: node=eps_tilt status=estimate touches=[band_i, vac_i, vac_rho] ripple=no
+MAP: node=wino_window status=corrected touches=[] ripple=no

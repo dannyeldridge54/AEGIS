@@ -366,3 +366,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1247: a window that sits at a band edge (D815's ε = 1.45e-4 at n_s = 0.9750 exactly) is the first casualty of any upstream correction; record edge-sitting windows as fragile when they are found.
 - D1248: an upstream correction can strengthen a test as well as weaken a fit — re-derive the discriminant after every shift in the prediction, not only the consistency check.
 - D1249: a test statement ("LHC will close the window") must be re-read whenever the window it refers to is widened; D784 widened the window and D736's claim silently went stale.
+- D1250: a full node audit in one evening found 6 real input errors, all of the same kind (constants copied between eras of the model); a periodic audit of hard-coded constants is worth scheduling.

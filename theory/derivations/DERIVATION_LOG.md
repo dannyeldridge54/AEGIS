@@ -1839,3 +1839,4 @@ Touches: none.
 ## D1247: NA12 — τ = i with audited reheating (N* 50.40–50.45): ε window narrows to ≈ 1.39–1.44e-4 (only ε = 1.40e-4 in band on the grid; n_s 0.97462, r 4.83e-4); D861 arithmetic PASS
 ## D1248: NA13 — tests_cmb: D751 reproduced; audited n_s edges separate SERAPIS-E 3.1σ (att60) / 2.5σ (kination cap), τ = i 5.0σ / 4.3σ with SO+SPHEREx; r 8.8–9.7σ only for optimistic LiteBIRD
 ## D1249: NA14 sweep — vac/n_sector/halo arithmetic all PASS (D785 rerun identical); tests_lhc corrected: HL-LHC wino reach 0.9–1.1 TeV (1812.07831) cannot close 0.67–1.85 TeV; HE-LHC 1.5–2.1 TeV would
+## D1250: NA15 — theory-lane audit complete (wino_window BLOCKED on g*(T)); matter parity and covariant bounds PASS; eps_tilt → 1.39–1.44e-4 (τ = i); audit summary of all corrections

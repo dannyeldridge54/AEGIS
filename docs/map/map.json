@@ -40,14 +40,14 @@
     "D1030",
     "D1031",
     "D1045",
-    "D1048"
+    "D1048",
+    "D1250"
    ],
    "history": [
-    "D1031: estimate",
     "D1045: estimate",
-    "D1048: estimate"
-   ],
-   "flag": "recheck (D1247, band_i)"
+    "D1048: estimate",
+    "D1250: estimate"
+   ]
   },
   {
    "id": "plateau_origin",
@@ -246,7 +246,7 @@
    "depends": [
     "eps_tilt"
    ],
-   "flag": "recheck (D1247, band_i)"
+   "flag": "recheck (D1250, eps_tilt)"
   },
   {
    "id": "vac_rho",
@@ -263,7 +263,7 @@
    "depends": [
     "eps_tilt"
    ],
-   "flag": "recheck (D1247, band_i)"
+   "flag": "recheck (D1250, eps_tilt)"
   },
   {
    "id": "serapis_e",
@@ -719,7 +719,7 @@
     "D962: computed",
     "D1247: frozen"
    ],
-   "flag": "recheck (D1247, nstar_i)"
+   "flag": "recheck (D1250, eps_tilt)"
   },
   {
    "id": "band_e",
@@ -833,18 +833,18 @@
     "D761",
     "D784",
     "D906",
-    "D1230"
+    "D1230",
+    "D1250"
    ],
    "depends": [
     "gravitino_wino",
     "halo_profile"
    ],
    "history": [
-    "D784: corrected",
     "D906: corrected",
-    "D1230: corrected"
-   ],
-   "flag": "recheck (D1249, tests_lhc)"
+    "D1230: corrected",
+    "D1250: corrected"
+   ]
   },
   {
    "id": "tests_cmb",
