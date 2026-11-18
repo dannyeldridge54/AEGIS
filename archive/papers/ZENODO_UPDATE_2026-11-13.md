@@ -131,3 +131,18 @@ Done through the Zenodo API in Danny's signed-in Chrome; no credentials were han
 - α no-go v2: record 24281962, DOI 10.5281/zenodo.24281962 (new version of 24232382). Title "Rolling moduli move α: a one-loop obstruction to Kähler-modulus quintessence from clocks and MICROSCOPE". 1 file, Eldridge_alpha_nogo_v2_2026-11-16.pdf, md5 01fcb661….
 - The Twist v5.4: record 24281967, DOI 10.5281/zenodo.24281967 (new version of 24226521; concept 24202420). Title "Plateau, cliff and tail in no-scale supergravity: what pre-registered tests kept and what they rejected (Twist v5.4)". The 4 v5.3 files were imported, and Twist_v5.4_status_addendum_2026-11-16.pdf (md5 beccb4d9…) was added. The STATUS paragraph is prepended to the previous description.
 - Twist-2 v1.1: record 24281969, DOI 10.5281/zenodo.24281969 (new version of 24235736). Title "Capturing a no-scale inflaton: thermal trapping, a cliff-sized vacuum energy, and a spectral index that must be fitted (Twist-2 v1.1)". The v1 PDF was imported, and Eldridge_Twist2_v1.1_addendum_2026-11-16.pdf (md5 b783d585…) was added. STATUS prepended.
+
+## 18 Nov 2026, ~05:10 CT — "Shape, Scale and Duality" PUBLISHED (Danny: "Publiish", chose "New short paper" + "Publish + cross-link")
+- New record 24339574, DOI 10.5281/zenodo.24339574. Preprint v1, CC BY 4.0. Basis D1276–D1283.
+- Files: Eldridge_shape_scale_duality_2026.pdf (md5 549c73243281188a4c6db86e785ccf74), .tex (md5 be0894f6fded2e1b91532a0f5541cc60); Zenodo's md5 = repo build (commit 98467f3e).
+- Related: continues 24290875 (SERAPIS-E), isSupplementTo 24330316 (audit), references 24291026, 24299624, arXiv:2206.14825, arXiv:1902.05438; isSupplementedBy the GitHub repo.
+- Cross-links (metadata only, files untouched): 24290875, 24330316, 24299624 now carry "isSupplementedBy 10.5281/zenodo.24339574" (each description/metadata grew only by the link).
+
+### HOW TO PUBLISH (standing method, Danny 2026-11-18: "do it every time in Chrome — write this down")
+1. Build + commit + push the files to the public repo; note the commit hash and md5s.
+2. In Danny's signed-in Chrome (Claude in Chrome — NOT the built-in browser, whose popups are blocked), open a tab on https://example.com/.
+3. Create the draft from a zenodo.org tab: POST /api/deposit/depositions with full metadata (X-CSRFToken = csrftoken cookie). Note links.bucket.
+4. In the example.com tab: fetch each file from raw.githubusercontent.com/<repo>/<commit>/<path> as a Blob, add a message listener that answers 'ready' from https://zenodo.org by posting {name, blob}, then window.open('https://zenodo.org/uploads/<id>').
+5. In the new Zenodo tab: window.opener.postMessage('ready','https://example.com'), collect the blobs, PUT each to <bucket>/<name> with X-CSRFToken. Check every returned checksum equals the repo md5.
+6. POST /api/deposit/depositions/<id>/actions/publish. Then cross-link old records: actions/edit → PUT metadata with the new related_identifier → actions/publish; verify metadata grew only by the link.
+7. Log here and in the project PAPERS doc. Zenodo CSP blocks fetching GitHub from zenodo.org itself, and zenodo.org rejects cross-origin API calls — hence the relay.
