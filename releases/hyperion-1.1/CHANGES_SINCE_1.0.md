@@ -86,3 +86,9 @@ Status: draft, collected 17 Nov 2026 (D1081–D1101). Packaging and a Zenodo upl
 - **Wino window cross-checks:** the Janus-LHC recast reproduces the ATLAS floor at 666.6 GeV, and its HL-LHC projection is ≈ 975 GeV (D1302). The m₃/₂ bound clears the window by ×960 (D1271).
 - **Galaxy:** the 3-parameter refit of McMillan17 baryons + NFW to Eilers+2019 is prior-limited (r_s at 10 kpc) and is not adopted. McMillan17 stays the default (C10, D1315).
 - **Map hygiene:** 25 lattice-ripple and stale flags were rechecked and cleared with no status changes (D1314).
+- **Wino window, computed (A2n/A2o):**
+  - At a standard ρ☉ (0.3–0.4 GeV/cm³), the 1 TeV wino passes IGS for all 10 Singh–Desai halo shapes (D1322).
+  - The upper edge is computed: 1.0 TeV passes every Gaia-based halo; 1.25 TeV is band-dependent for NFW/Burkert; 1.5 TeV passes only Einasto cores.
+  - Window 0.67 to 1–1.25 TeV, f 5–30% (D1324).
+- **Map:** a new darkrad_i node for the τ=i dark-radiation verdicts (D1320).
+- **Draft accuracy fix:** SO sees U(1) dark radiation only at ≈ 1.2σ (D1325).

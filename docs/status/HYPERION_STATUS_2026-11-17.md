@@ -114,3 +114,11 @@
   - Flags: 0.
 - **Literature:** D1275b's circularity does not touch v3.3 (D1316); 2026 Li-7 is NULL (D1317).
 - **Waiting on Danny:** a PC link or "hand off" (Mapper run, revtex build); "Publish".
+
+## Update 17:20 UTC 18 Nov (D1322–D1326)
+- **Wino vs halo:** 1 TeV passes IGS for all 10 Singh–Desai shapes at a standard local density (D1322).
+- **Upper edge computed:** window = 0.67 to 1–1.25 TeV (to ~1.5 only for Einasto cores), f 5–30% (D1324). The v3.3 table row and the map label are updated.
+- **v3.3 draft fixes (unposted):**
+  - SO tests SU(2) (3.6σ) but not U(1) (1.2σ) (D1325);
+  - 1.25/1.5 TeV bullet added;
+  - an older covariant superpartner row (0.67–1.85) is flagged for a clarifying footnote (D1326).
