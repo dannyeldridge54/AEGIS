@@ -32,6 +32,29 @@ D['memstars'] = _stars
 web = D['web']; import yaml
 mp = yaml.safe_load(open(R / 'theory/map/map.yaml', encoding='utf-8')); lay = {n['id']: n.get('layer', 1) for n in mp['nodes']}
 for n in web['nodes']: n['layer'] = lay.get(n['id'], 1)
+# Janus auto-feeder seed: pulses to animate along edges (wiring lane + edges touching the newest nodes). Live pulses come from janus_feed.jsonl via the app.
+_pulses = []
+_w = D['web']
+if _w:
+    _edges = _w.get('edges', [])
+    # wiring edges (kind 'wire') always pulse
+    for e in _edges:
+        if e.get('kind') == 'wire': _pulses.append(dict(s=e['s'], t=e['t'], w=1.0))
+    # newest nodes (highest D-number in refs) -> pulse their edges
+    def _lastd(n):
+        import re as _re; m=_re.findall(r'D(\d{3,4})', str(n.get('refs',''))); return max((int(x) for x in m), default=0)
+    _newest = sorted(_w.get('nodes', []), key=_lastd, reverse=True)[:6]
+    _nid = {n['id'] for n in _newest}
+    for e in _edges:
+        if e['s'] in _nid or e['t'] in _nid: _pulses.append(dict(s=e['s'], t=e['t'], w=0.8))
+    # live feed (if present after a run)
+    _ff = R / 'docs/web/janus_feed.jsonl'
+    if _ff.exists():
+        for l in open(_ff, encoding='utf-8'):
+            try: r=json.loads(l)
+            except Exception: continue
+            if r.get('k')=='pulse': _pulses.append(dict(s=r['s'], t=r['t'], w=r.get('w',1.0), why=r.get('why','')))
+D['pulses'] = _pulses[-120:]
 (pathlib.Path(__file__).parent / 'data.js').write_text('window.AEGIS = ' + json.dumps(D, ensure_ascii=False) + ';\n', encoding='utf-8')
 (pathlib.Path(__file__).parent / 'classic.html').write_text('<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>[hidden]{display:none!important}body{margin:0}</style></head><body>'
     + open(W / 'aegis_web.html', encoding='utf-8').read() + '</body></html>', encoding='utf-8')
