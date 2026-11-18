@@ -39,7 +39,7 @@ The clean Twist release: [the-twist-torsion-cosmology](https://github.com/dannye
 
 ## License
 **AEGIS Community License** ([LICENSE](LICENSE)): free for individuals, scientists, students, schools, nonprofits and public research.
-Any business or for-profit use, including internal R&D, needs the **AEGIS Commercial License** ([licensing/COMMERCIAL_LICENSE.md](licensing/COMMERCIAL_LICENSE.md)): a yearly minimum or a share of group profit, rising with company size. No military or mass-surveillance use at any price.
+Any business or for-profit use, including internal R&D, needs the **AEGIS Commercial License** ([licensing/COMMERCIAL_LICENSE.md](licensing/COMMERCIAL_LICENSE.md)): a yearly minimum or a share of group profit, rising with company size. No military, mass-surveillance or organized-religion use at any price.
 Versions released before 18 November 2026 keep the license they were released under (HL3-MIL-SV).
 
 ## Support this work

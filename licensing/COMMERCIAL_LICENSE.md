@@ -32,7 +32,7 @@ Public companies already publish these figures (US SEC proxy statement DEF 14A, 
 3. **Audit.** Once a year, on 30 days' notice, an independent auditor may verify use, size and profit, including related-party transfers that move profit out of the group's reported accounts. If the licensee underpaid by more than 5%, it pays the audit cost.
 4. **Unlicensed use.** Fees for every year of unlicensed use at three times the list price, plus interest and the licensor's legal costs. The multiple is the parties' agreed estimate of loss, including the cost of detection and enforcement.
 5. **Whistleblower reward.** Anyone who reports unlicensed business use with evidence that leads to payment receives 20% of the amount recovered. Report to dannyeldridge54@gmail.com; identities are kept confidential.
-6. **Prohibited uses** (military, weapons, mass surveillance, human-rights violations) are never licensed at any price.
+6. **Prohibited uses** are never licensed at any price: military, weapons, mass surveillance, human-rights violations, and use by, for or funded by organized religious institutions, or to promote, proselytize for or fund organized religion.
 7. **No sublicensing, resale or rebranding** without written consent.
 8. **Governing law:** Oklahoma, USA.
 
