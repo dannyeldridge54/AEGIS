@@ -18,22 +18,28 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1016: Tilt strength ε (fitted) → estimate",
-  "D1017: Tilt strength ε (fitted) → estimate",
-  "D1021: Tilt strength ε (fitted) → estimate",
-  "D1024: Tilt strength ε (fitted) → estimate",
-  "D1030: Tilt strength ε (fitted) → estimate",
-  "D1031: Tilt strength ε (fitted) → estimate",
-  "D1045: Tilt strength ε (fitted) → estimate",
-  "D1048: Tilt strength ε (fitted) → estimate",
-  "D1055: Galactic DM profile (cuspy vs cored) → computed",
-  "D1056: Galactic DM profile (cuspy vs cored) → computed",
   "D1061: Galactic DM profile (cuspy vs cored) → computed",
-  "D1229: Tests: SO+SPHEREx (~2030), LiteBIRD (~2035) → computed"
+  "D1229: Tests: SO+SPHEREx (~2030), LiteBIRD (~2035) → computed",
+  "D1230: Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784) → corrected",
+  "D1231: Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4) → frozen",
+  "D1233: Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4) → frozen",
+  "D1234: N* for SERAPIS-E ≈ 49.7–50.5 → computed",
+  "D1234: Janus relation (α_s from n_s, r) → computed",
+  "D1234: Σm_ν = 0.0587 eV (m1 ≈ 0) → frozen",
+  "D1235: T_R at ρ ≈ 3e8–3e9 GeV → computed",
+  "D1236: Leptogenesis at ρ (non-thermal, DI estimate) → computed",
+  "D1237: T_R at ρ ≈ 3e8–3e9 GeV → corrected",
+  "D1237: N* for SERAPIS-E ≈ 49.7–50.5 → corrected"
  ],
  "open_rechecks": [
-  "Origin of the plateau",
-  "Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4)"
+  "Inflaton coupling at ρ (cone splitting)",
+  "Dark radiation (doublet-only killed)",
+  "Leptogenesis at ρ (non-thermal, DI estimate)",
+  "Gravitino → wino negligible (Ω_nth ≤ 3e-4, Pradler–Steffen, D809)",
+  "Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4)",
+  "Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784)",
+  "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)",
+  "Test: Run 3 / HL-LHC disappearing tracks"
  ],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
 }

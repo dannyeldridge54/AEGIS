@@ -77,8 +77,10 @@ def update(m, text, last):
             hist = n.setdefault("history", []); hist.append(f"D{dn}: {status}"); n["history"] = hist[-3:]
             t = [x.strip() for x in touches.split(",") if x.strip()]
             for k in (set(t) if noripple else downstream(m, [node] + t) | set(t)):
-                if k != node:
+                if k != node and k in byid:
                     byid[k]["flag"] = f"recheck (D{dn}, {node})"
+                elif k != node:
+                    print(f"ladder: D{dn} touches unknown map id '{k}' (ignored; web-only node?)")
             applied.append((dn, node, status))
         last = max(last, dn)
     return applied, last

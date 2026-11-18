@@ -252,6 +252,9 @@ nodes:
   - D669
   - D673
   - D692
+  - D1234
+  history:
+  - 'D1234: computed'
 - id: bhk_tilt
   layer: 3
   branch:
@@ -391,6 +394,7 @@ nodes:
   - n_sector_rho
   history:
   - 'D906: computed'
+  flag: recheck (D1237, reheat_rho)
 - id: darkrad_rho
   layer: 4
   branch:
@@ -405,20 +409,25 @@ nodes:
   - n_sector_rho
   history:
   - 'D906: computed'
+  flag: recheck (D1237, reheat_rho)
 - id: reheat_rho
   layer: 4
   branch:
   - rho
   - E
   title: T_R at ρ ≈ 3e8–3e9 GeV
-  status: computed
+  status: corrected
   d:
   - D725
   - D906
+  - D1235
+  - D1237
   depends:
   - sterile_rho
   history:
   - 'D906: computed'
+  - 'D1235: computed'
+  - 'D1237: corrected'
 - id: nstar_e
   layer: 4
   branch:
@@ -430,12 +439,15 @@ nodes:
   - D725
   - D906
   - D979
+  - D1234
+  - D1237
   depends:
   - reheat_rho
   - serapis_e
   history:
-  - 'D906: computed'
   - 'D979: corrected'
+  - 'D1234: computed'
+  - 'D1237: corrected'
 - id: lepto_rho
   layer: 4
   branch:
@@ -479,13 +491,15 @@ nodes:
   - D904
   - D906
   - D986
+  - D1236
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D904: estimate'
   - 'D906: estimate'
   - 'D986: computed'
+  - 'D1236: computed'
+  flag: recheck (D1237, reheat_rho)
 - id: gravitino_wino
   layer: 4
   branch:
@@ -506,6 +520,7 @@ nodes:
   - 'D786: estimate'
   - 'D809: computed'
   - 'D906: computed'
+  flag: recheck (D1237, reheat_rho)
 - id: band_i
   layer: 5
   branch:
@@ -543,13 +558,16 @@ nodes:
   - D821
   - D906
   - D962
+  - D1231
+  - D1233
   depends:
   - nstar_e
   - janus
   history:
-  - 'D821: frozen'
-  - 'D906: frozen'
   - 'D962: computed'
+  - 'D1231: frozen'
+  - 'D1233: frozen'
+  flag: recheck (D1237, nstar_e)
 - id: caps
   layer: 5
   branch:
@@ -577,10 +595,11 @@ nodes:
   - D902
   - D906
   - D998
+  - D1234
   history:
-  - 'D902: literature'
   - 'D906: frozen'
   - 'D998: frozen'
+  - 'D1234: frozen'
 - id: wino_window
   layer: 5
   branch:
@@ -594,13 +613,15 @@ nodes:
   - D761
   - D784
   - D906
+  - D1230
   depends:
   - gravitino_wino
   - halo_profile
   history:
-  - 'D761: estimate'
   - 'D784: corrected'
   - 'D906: corrected'
+  - 'D1230: corrected'
+  flag: recheck (D1237, reheat_rho)
 - id: tests_cmb
   layer: 5
   branch:
@@ -623,6 +644,7 @@ nodes:
   - 'D752: computed'
   - 'D906: computed'
   - 'D1229: computed'
+  flag: recheck (D1237, nstar_e)
 - id: tests_lhc
   layer: 5
   branch:
@@ -637,6 +659,7 @@ nodes:
   - wino_window
   history:
   - 'D906: literature'
+  flag: recheck (D1237, reheat_rho)
 observing:
 - id: mapper_dr3
   title: Gaia DR3 sweep complete (192,208,838 stars; 200/200 ESA checks)
