@@ -13202,3 +13202,25 @@ Table (target n_s → exact C, P = Im S·Im ρ, N*, r, α_s):
 Expectation (≤ 3 % for n_s 0.972–0.976): PASS. Second pre-stated statement ("natural" P 560–975 ↔ n_s ≈ 0.972–0.978): the linear map gives 0.9718–0.9783; the exact map puts P = 975 at n_s ≈ 0.9718 but P = 560 beyond 0.978 (P 617 there) — the upper edge holds only for the linear map (exact edge not computed; no rerun).
 Reading: n_s alone, at fixed T_R, is a monotone meter of the string product; use the exact table (or a log-quadratic fit) outside 0.972–0.976. The frozen n_s ceiling 0.975 corresponds to P ≈ 750 at this T_R. Postulate, scored only on future data.
 MAP: node=inverse_meter status=postulate touches=[string_meter, serapis_point] ripple=no
+
+### D1269 — R2e-d: the velocity grid is converged (Ω changes ≤ 0.04% from n = 40 to 160). Candidate (ii) is RULED OUT (2026-11-18)
+- [CENTRE · computed] **Lock:** PREREG_R2e_d_vgrid. **Result:** field_tests/results/r2e_d_vgrid.txt. No deviations.
+- **Ω h²** at n = 40 / 80 / 160:
+
+  | M | n = 40 | n = 80 | n = 160 |
+  |---|---|---|---|
+  | 2.8 TeV | 0.10477 | 0.10477 | 0.10475 |
+  | 3.0 TeV | 0.11951 | 0.11955 | 0.11956 |
+
+  - Q = 0.040% → **RULED OUT** (criterion 1%). n = 40 reproduces R2e-b exactly.
+- **Remaining L1 candidates:**
+  - (iii) the spin weights ¼/¾ per charge sector;
+  - (iv) per-channel MS-bar scaling (we scale the whole Born by (α̂₂(2M)/α₂^os)², while Beneke evaluates each matrix entry with MS-bar couplings, including s_W and α running differently);
+  - (v) v² terms (unresolved; D1266).
+  - (i) and (ii) are ruled out.
+  - None of the three remaining candidates can be tested without Beneke's channel-by-channel matrices, which sit in 1303.0200's Mathematica supplement, not reachable here.
+- **Decision:** park L1 at +4.4%, with the B1 Born PASS (+2.0%) as the validated anchor.
+  - SERAPIS uses Beneke's published masses (2.207/2.842), so no SERAPIS number depends on closing L1.
+  - Reopen if the supplement becomes reachable (PC or Danny).
+VERDICT: (ii) RULED OUT. L1 PARKED at +4.4% (understood to be a short-distance-matrix difference; untestable without sources).
+MAP: none
