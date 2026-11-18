@@ -14160,3 +14160,8 @@ MAP: none
 
 ## D1340a — Label fix to D1340: the ratios 0.616 and 0.642 are s₀₁/s₀₀, not s₀₀/s₀₁ (2026-11-18)
 MAP: none
+
+## D1341 — Hyperion 1.1 prep: the smoke test gains check 7 (A2p line+endpoint ratio at 1 TeV, 10% window = 1.1174); 7/7 PASS in ≈ 11 s (2026-11-18)
+- [CODE] tools/janus_astro/hyperion_smoketest.py imports field_tests/scripts/a2p_endpoint.R and pins R(1 TeV, 0.10) to 1e-3 (D1337). Got 1.11744.
+- Every validated result from today is now pinned: relic, McMillan17 LSR, galpy, 7PN, IGS f_max, wino fraction, endpoint.
+MAP: none

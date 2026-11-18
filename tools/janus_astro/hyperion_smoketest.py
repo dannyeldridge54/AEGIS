@@ -35,4 +35,7 @@ sv = 2*sv0[1]**2*math.pi*N.ALPHA**2/1e6*0.389379e-27*2.99792458e10*(1 + N.ALPHA2
 check("1 TeV wino f_max (Burkert B0/D1, rho_sun 0.4, LO)", math.sqrt(2.3e-28/(sv*0.794*jr)), 0.286, 0.01, "D1322")
 # 6. Thermal-fraction bracket at 1 TeV (D1152)
 check("wino fraction upper edge at 1 TeV", SI.wino_fraction(1.0)[1], (1/2.207)**2, 1e-9, "D1152")
+# 7. LL line+endpoint photon ratio at 1 TeV, 10% window (A2p, D1337; 2507.15937 Eq. 2.9)
+sys.path.insert(0, 'field_tests/scripts'); import a2p_endpoint as A2P
+check("1 TeV wino line+endpoint ratio R(10%)", A2P.R(1000, 0.10)[4], 1.1174, 1e-3, "D1337")
 print(f"{sum(checks)}/{len(checks)} PASS in {time.time()-t0:.0f} s"); sys.exit(0 if all(checks) else 1)
