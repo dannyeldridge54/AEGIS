@@ -521,6 +521,8 @@
     getLoc().then(function (ob) { state.observer = ob; });
     askOrient();
     requestAnimationFrame(draw);
+    try { if (!localStorage.getItem('sky.arTip')) { localStorage.setItem('sky.arTip', '1');
+      setTimeout(function () { showErr('Tip for accuracy: move the phone in a slow figure-8 once to wake the compass, then use Set North on the Moon, the Sun or a bright star you can see. It is remembered.'); setTimeout(function () { errBox.style.display = 'none'; }, 7000); }, 3200); } } catch (e) {}
     setTimeout(function () { if (!state.haveOrient) showErr('Your phone isn’t sending motion data. On iPhone use Safari; make sure Motion & Orientation Access is on in Settings → Safari.'); }, 2500);
   });
 
