@@ -630,6 +630,7 @@ nodes:
   status: postulate
   d:
   - D1251
+  - D1272
   depends:
   - lepto_rho
   - reheat_rho
@@ -638,8 +639,8 @@ nodes:
   history:
   - 'D1251: postulate (PW2), expectation PASS 4/4'
   - 'D1251: postulate'
+  - 'D1272: postulate'
   note: web loop postulate 2; scored only on future data
-  flag: recheck (D1270, instanton_MH)
 - id: vac_discriminant
   layer: 5
   branch:
@@ -658,6 +659,7 @@ nodes:
   - 'D1263: postulate PW3 killed by its locked test'
   - 'D1263: killed'
   note: web loop postulate 3; kept on the web as killed
+  flag: recheck (D1272, serapis_point)
 - id: m32_window
   layer: 5
   branch:
@@ -708,6 +710,7 @@ nodes:
   - 'D1268: postulate PW6 passed'
   - 'D1268: postulate'
   note: web loop postulate 6
+  flag: recheck (D1272, serapis_point)
 - id: instanton_MH
   layer: 5
   branch:
@@ -725,6 +728,7 @@ nodes:
   - 'D1270: postulate PW7 killed (benchmark M_H incompatible with ρ leptogenesis)'
   - 'D1270: killed'
   note: web loop postulate 7
+  flag: recheck (D1272, serapis_point)
 - id: caps
   layer: 5
   branch:

@@ -1857,3 +1857,9 @@ Touches: none.
 ## D1268: PW6 PASSES — inverse string meter at T_R 7.39e8: n_s 0.972/0.974/0.976 → Im S·Im ρ 953/804/697 (exact); PW5 linear inverse ≤ 0.4–2.4 % inside, 3.5–7 % at 0.970/0.978
 ## D1270: PW7 KILLED — benchmark instanton M_H 9.8e10 → T_R ≈ 7e7 GeV, leptogenesis 0 % (Y_B ×12 short); point's M_H = 1e12 is a choice, not a benchmark output; would-be point N* 49.41, n_s 0.97362 (still in frozen band)
 - D1272 (2026-11-18): SERAPIS-E tool cross-check — PT1 emulator |Δn_s|≤3.2e-5 vs exact across C∈[1.0,1.6]e-6; PW6 meter C,P consistent (~1%). Trajectory reproduced. [tool/numerics]
+
+## D1272 — SERAPIS-E tool cross-check (2026-11-18)
+1. Computed the exact SERAPIS-E point (n_s, r, alpha_s, N*) via Janus core spectra3 + N* self-consistency at T_R=7.389e8 GeV, g*=228.75, N_eff=4, Nmax=4000, for C in {1.0,1.15,1.30,1.60}e-6. [derived]
+2. Computed the PT1 emulator at the same C and differenced: |Δn_s| ≤ 3.2e-5 across the band, r to ~1e-6, alpha_s to ~1e-5. [derived]
+3. Inverse meter (PW6 log-interp table) at n_s=0.97439 -> C=1.248e-6, P=782 (=15·N_eff/64π⁶C); exact pipeline C≈1.26e-6, agree ~1%. [derived]
+4. Recorded point n_s=0.97439 <-> C≈1.25e-6, r≈4.8e-4, alpha_s≈-9.9e-4, N*=50.18 reproduced; trajectory consistent. No new physics claim. [derived]

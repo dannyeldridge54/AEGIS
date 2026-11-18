@@ -13242,8 +13242,8 @@ MAP: node=instanton_MH status=killed touches=[serapis_point, lepto_rho, reheat_r
 VERDICT: unchanged.
 MAP: none
 
-### D1272 — SERAPIS-E tool cross-check: the PT1 emulator and PW6 inverse meter reproduce the EXACT point across the C band (2026-11-18)
-MAP: serapis_point
+## D1272 — SERAPIS-E tool cross-check: the PT1 emulator and PW6 inverse meter reproduce the EXACT point across the C band (2026-11-18)
+MAP: node=serapis_point status=postulate
 LABEL: tool/numerics cross-check (no new physics claim; scored as a tool-accuracy statement).
 Cloud verification cycle ("get ahead and verify the trajectory"). Exact point = Janus core spectra3 + N* self-consistency
 at T_R=7.389e8 GeV, g*=228.75, N_eff=4, Nmax=4000. Compared the adopted fast tools (PT1 emulator, D-era T1/PT1; PW6
