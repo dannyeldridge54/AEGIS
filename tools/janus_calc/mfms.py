@@ -40,3 +40,32 @@ def spectra_mf(V, grad, hess, f0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, end_b
         PR, Ph = _mode(st, n, V, grad, hess, k, lo, Ne - end_back); PRs.append(PR); Phs.append(Ph)
     lp = np.log(PRs); c = np.polyfit(lks, lp, 2); i0 = npts//2
     return dict(ns=1 + c[1], alpha_s=2*c[0], r=Phs[i0]/PRs[i0], PR=PRs[i0], lnk=lks, lnPR=lp, Ne=Ne)
+def spectra_mf_fast(V, grad, hess, f0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, end_back=0.0):
+    """Same equations and outputs as spectra_mf, but all k-modes integrated together in one vectorised ODE
+    (common start where the LOWEST k has k/aH = bd, so every mode starts at k/aH >= bd). Equivalence vs spectra_mf: PREREG_JMF10_fast."""
+    st, Ne, n = _bg(V, grad, f0); Np = Ne - Nstar
+    f, fp, eps, H2 = st(Np); kp = math.exp(Np)*math.sqrt(H2)
+    lks = np.linspace(-dlnk, dlnk, npts); ks = kp*np.exp(lks); K = len(ks)
+    lo, hi = 0.0, Np
+    for _ in range(80):
+        mid = 0.5*(lo + hi); g = ks.min()/(math.exp(mid)*math.sqrt(st(mid)[3])) - bd
+        lo, hi = (mid, hi) if g > 0 else (lo, mid)
+    N0 = lo; f, fp, eps, H2 = st(N0); a = math.exp(N0); H = math.sqrt(H2)
+    eta = -1.0/(a*H*(1 - eps)); u = (1 - 1j/(ks*eta))*np.exp(-1j*ks*eta)/np.sqrt(2*ks)
+    du = (-1j*ks*(1 - 1j/(ks*eta)) + 1j/(ks*eta**2))*np.exp(-1j*ks*eta)/np.sqrt(2*ks); un = du/(a*H)
+    I = np.eye(n); Y0 = np.einsum('k,ij->kij', u, I); Yn0 = np.einsum('k,ij->kij', un, I); h0 = u/a; hn0 = un/a - u/a
+    k2 = ks*ks; sz = K*n*n
+    def rhs(N, y):
+        f, fp, eps, H2 = st(N); a = math.exp(N); q2 = k2/(a*a*H2)
+        g = np.array(grad(f)); Cm = np.array(hess(f))/H2 + (np.outer(fp, g) + np.outer(g, fp))/H2 + (3 - eps)*np.outer(fp, fp)
+        yc = y.view(complex); Y = yc[:sz].reshape(K, n, n); Yn = yc[sz:2*sz].reshape(K, n, n); h = yc[2*sz:2*sz+K]; hn = yc[2*sz+K:]
+        Ynn = -(1 - eps)*Yn - (q2 - 2 + eps)[:, None, None]*Y - np.einsum('ij,kjl->kil', Cm, Y); hnn = -(3 - eps)*hn - q2*h
+        return np.concatenate([Yn.ravel(), Ynn.ravel(), hn, hnn]).view(float)
+    y0 = np.concatenate([Y0.ravel(), Yn0.ravel(), h0, hn0]).astype(complex).view(float)
+    s = solve_ivp(rhs, [N0, Ne - end_back], y0, method='DOP853', rtol=1e-10, atol=1e-30)
+    yc = s.y[:, -1].view(complex); Y = yc[:sz].reshape(K, n, n); h = yc[2*sz:2*sz+K]
+    f, fp, eps, H2 = st(Ne - end_back); a = math.exp(Ne - end_back); w = fp/np.linalg.norm(fp)
+    Pd = (ks**3/(2*math.pi**2))[:, None, None]*np.einsum('kij,klj->kil', Y, Y.conj()).real/a**2
+    PRs = np.einsum('i,kij,j->k', w, Pd, w)/(fp @ fp); Phs = 8*ks**3*np.abs(h)**2/(2*math.pi**2)
+    lp = np.log(PRs); c = np.polyfit(lks, lp, 2); i0 = npts//2
+    return dict(ns=1 + c[1], alpha_s=2*c[0], r=Phs[i0]/PRs[i0], PR=PRs[i0], lnk=lks, lnPR=lp, Ne=Ne)
