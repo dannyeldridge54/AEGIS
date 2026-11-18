@@ -1,0 +1,21 @@
+Shape selection vs scale, going up in dimension. Gaussian energy sum_{v!=0} exp(-pi*alpha*|v|^2), all lattices at unit covolume.
+Z^n, D_n, D_n*, E8 via exact Jacobi theta formulas (60 terms); A_n, A_n* by brute force on the Cartan Gram (N=7 in d=4, N=6 in d=5).
+alpha = 0.5 / 0.8 / 1.0 / 1.25 / 2.0
+
+d=3 (sanity, reproduces D1277): BCC / BCC / TIE FCC=BCC (0.231536) / FCC / FCC          -> FLIPS at alpha=1
+d=4: D4 wins at every alpha (D4 = D4* to 6 digits: same shape). e.g. alpha=1: Z4 .393204, D4 .285764, A4 = A4* .306292
+                                                                                          -> NO flip
+d=5: D5* / D5* / TIE D5=D5* (0.348752) / D5 / D5 ; A5 = A5* at alpha=1 (0.385791)         -> FLIPS at alpha=1
+d=8: E8 at every alpha. alpha=1: Z8 .941017, D8 = D8* .598025, E8 .455763 ; alpha=2: D8 .002885 vs E8 .000837 (3.4x)
+                                                                                          -> NO flip
+
+RULE (holds at d = 2, 3, 4, 5, 8): the winning shape flips with scale iff the best lattice is NOT self-dual (up to
+similarity). Self-dual winners (hexagonal, D4, E8) win at every scale; distinct dual pairs (FCC/BCC, D5/D5*) must swap,
+and they swap exactly at the self-dual scale alpha = 1 (Poisson: theta_L(alpha) = alpha^{-d/2} theta_{L*}(1/alpha)).
+Every dual pair tested (A4/A4*, A5/A5*, D8/D8*) ties exactly at alpha = 1, confirming the mechanism.
+
+PREDICTION (stated before testing): E6 and E7 are not self-dual (det 3 and 2), so in d = 6 and d = 7 the winner should flip
+between E_n and E_n*; Leech (d=24) is self-dual, so no flip (consistent with its proven universal optimality).
+E6/E7 not run here: their Cartan bases are too skewed for a cheap coefficient-box search (needs LLL reduction or theta series).
+Caveat: only the families Z, D, D*, A, A*, E8 were compared; D4's optimality among ALL lattices is not claimed.
+Label: numerics (computed) + literature (Montgomery; Cohn-Kumar-Miller-Radchenko-Viazovska). No new physics claim.
