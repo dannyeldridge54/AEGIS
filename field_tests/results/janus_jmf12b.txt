@@ -1,0 +1,4 @@
+d R=0.7: LISTED (DEV D1: reference failed: math domain error)
+e R=1.5: reference n_s -0.8275 outside [0.8, 1.1] -> LISTED (gate), nc-jit gave 33.4711
+f R=1 start (0.6,24): ref n_s 0.92878754 N_tot 81.2166 (26.1 s) | nc-jit 0.92878771 N_tot 81.2166 (0.77 s, x34) |dn_s| 1.8e-07 True
+gated in 1; median speed-up x34 | K1b False -> INCONCLUSIVE
