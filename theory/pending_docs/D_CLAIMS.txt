@@ -584,3 +584,4 @@ D1297  2026-11-18T12:22Z  d=3 shape flow (PREREG D1297)
 D1298  2026-11-18T12:26Z  Barnes-Wall BW16 (PREREG D1298)
 D1299  2026-11-18T12:57Z  LHC1: Drell-Yan scaling route for wino cross sections
 D1300  2026-11-18T13:05Z  LHC2: wino chargino lifetime engine
+D1301  2026-11-18T13:07Z  LHC3: disappearing-track recast + HL-LHC projection
