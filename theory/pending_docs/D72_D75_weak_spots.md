@@ -14114,3 +14114,7 @@ MAP: none
 - Consequence (not recomputed): the IGS line test sees ≈R× more signal than D1324 assumed, so the upper bound f_max shrinks by 1/R (≈ −12…−16%). This **tightens**, not loosens, the window. The D1324 verdicts at the band-dependent 1.25 TeV (NFW/Burkert) may tip toward failing. "Conservative" in the title means the old window edge is the optimistic one.
 - Next rung (A2q): a locked re-run of D1324's f_max × 1/R at 1.0/1.25/1.5 TeV.
 MAP: node=wino_window status=computed touches=[] ripple=no
+
+## D1337a — Correction to the D1337 title: the line-only f_max was OPTIMISTIC for the wino, not conservative (2026-11-18)
+- More signal photons means a tighter limit. Ignoring the endpoint therefore over-allowed the wino fraction by R ≈ 1.12–1.16 at 1.0–1.5 TeV. The D1337 body already says this; only the word "conservative" in its title was wrong.
+MAP: none
