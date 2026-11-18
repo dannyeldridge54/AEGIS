@@ -13830,3 +13830,21 @@ MAP: none
 - P2: σ(C1C1) wino/higgsino = 3.59 (200 GeV), 3.47 (500), 3.40 (1000), 3.33 (1500) (2–5: PASS). [derived]
 - P3: charge-asymmetry test T2 for higgsinos: 0.063% (≤1%: PASS). The passing T2 also supports the inferred column order.
 - Tool: tools/lhc/higgsino.py (sigma, sigma_scaling, total); 2 new unit tests (20 total).
+
+### D1314 — Flag sweep at Danny's request ("fix any new nodes or anything past 9d"): all 25 open recheck flags reviewed and cleared. 22 are pure ripples from lattice numerics (D1279, D1286, D1298 "Past 9 dimensions") that make no physics claim; 3 come from real notes (D1250, D1264, D1275b) and are rechecked unchanged (2026-11-18)
+- [CENTRE · recheck; no computation, no status changes]
+- **Lattice ripples (22 flags).** These lattice notes are labelled by their own author "numerics … No new physics claim". D1287 calls them "bookkeeping only; no number changes".
+  - D1279 maps to n_sector_i; D1286 to n_sector_rho; D1298 to serapis_e. Because the ripple setting was left at its default, each one flagged every downstream node.
+  - **From D1279 (n_sector_i):** sterile_i, reheat_i, nstar_i, lepto_i, band_i.
+  - **From D1286 (n_sector_rho):** sterile_rho, darkrad_rho, reheat_rho, lepto_rho, gravitino_wino, tests_lhc.
+  - **From D1298 (serapis_e), the "past 9 dimensions" note on BW16 vs E8⊕E8 in d = 16:** nstar_e, band_e, band_e_audited, serapis_point, vac_discriminant, m32_window, string_meter, inverse_meter, instanton_MH, tests_cmb. Most of these are new postulate nodes.
+  - None of these nodes uses a lattice energy, a d > 2 shape result, or anything else those notes computed. Their inputs (potential, C, T_R, N*, couplings, data) are untouched, so every status is unchanged.
+- **Real-source flags (3), rechecked:**
+  - vac_i, vac_rho ← D1250 (eps_tilt narrowed to 1.39–1.44e-4 at τ = i). The vacuum locations (τ = i, ρ) and their properties do not depend on the size of ε. Unchanged.
+  - covariant ← D1264 (PW4). D1264 confirms the covariant completion's bound at SERAPIS-E's own field values (×960 margin). It does not alter the construction. Unchanged.
+  - stuck_d3 ← D1275b. The correction says Im S·Im ρ is fitted to n_s, so the "independent consistency pass" was circular. That concerns bhk_tilt's evidence, not the stuck-D3-at-half-periods construction itself, so stuck_d3 is unchanged.
+  - D1275b's point is recorded on bhk_tilt (postulate) and should be reflected wherever papers call 804 an independent check. That belongs to the other session's PW/T1 thread.
+- **Fix to stop the flood (a recommendation, not an edit of others' notes):** lattice/shape notes with no physics claim should end with "ripple=no" (or MAP: none). With the default ripple, each such note re-flags up to ~11 nodes.
+- **All 25 flags are cleared** with `ladder.py clear`. A ladder update follows.
+VERDICT: 25/25 rechecked. No node changes status. The flag backlog is zero.
+MAP: none

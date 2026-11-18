@@ -209,7 +209,6 @@ nodes:
   - D633
   depends:
   - eps_tilt
-  flag: recheck (D1250, eps_tilt)
 - id: vac_rho
   layer: 2
   branch:
@@ -221,7 +220,6 @@ nodes:
   - D634
   depends:
   - eps_tilt
-  flag: recheck (D1250, eps_tilt)
 - id: serapis_e
   layer: 2
   branch:
@@ -322,7 +320,6 @@ nodes:
   - bhk_tilt
   history:
   - 'D1246: literature'
-  flag: recheck (D1275b, bhk_tilt)
 - id: covariant
   layer: 3
   branch:
@@ -334,7 +331,6 @@ nodes:
   - D647
   - D650
   - D655
-  flag: recheck (D1264, m32_window)
 - id: matter_parity
   layer: 3
   branch:
@@ -359,7 +355,6 @@ nodes:
   - D727
   depends:
   - n_sector_i
-  flag: recheck (D1279, n_sector_i)
 - id: reheat_i
   layer: 4
   branch:
@@ -376,7 +371,6 @@ nodes:
   history:
   - 'D1240: corrected'
   - 'D1241: corrected'
-  flag: recheck (D1279, n_sector_i)
 - id: nstar_i
   layer: 4
   branch:
@@ -394,7 +388,6 @@ nodes:
   history:
   - 'D815: computed'
   - 'D1247: corrected'
-  flag: recheck (D1279, n_sector_i)
 - id: lepto_i
   layer: 4
   branch:
@@ -434,7 +427,6 @@ nodes:
   - 'D904a: estimate'
   - 'D909: estimate'
   - 'D1241: estimate'
-  flag: recheck (D1279, n_sector_i)
 - id: sterile_rho
   layer: 4
   branch:
@@ -452,7 +444,6 @@ nodes:
   - n_sector_rho
   history:
   - 'D906: computed'
-  flag: recheck (D1286, n_sector_rho)
 - id: darkrad_rho
   layer: 4
   branch:
@@ -469,7 +460,6 @@ nodes:
   history:
   - 'D906: computed'
   - 'D1240: computed'
-  flag: recheck (D1286, n_sector_rho)
 - id: reheat_rho
   layer: 4
   branch:
@@ -489,7 +479,6 @@ nodes:
   - 'D1235: computed'
   - 'D1237: corrected'
   - 'D1239: computed'
-  flag: recheck (D1286, n_sector_rho)
 - id: nstar_e
   layer: 4
   branch:
@@ -512,7 +501,6 @@ nodes:
   - 'D1237: corrected'
   - 'D1258: corrected'
   - 'D1262: corrected'
-  flag: recheck (D1298, serapis_e)
 - id: lepto_rho
   layer: 4
   branch:
@@ -566,7 +554,6 @@ nodes:
   - 'D1236: computed'
   - 'D1239: computed'
   - 'D880a: corrected (late)'
-  flag: recheck (D1286, n_sector_rho)
 - id: gravitino_wino
   layer: 4
   branch:
@@ -588,7 +575,6 @@ nodes:
   - 'D809: computed'
   - 'D906: computed'
   - 'D1242: computed'
-  flag: recheck (D1286, n_sector_rho)
 - id: band_i
   layer: 5
   branch:
@@ -614,7 +600,6 @@ nodes:
   - 'D906: frozen'
   - 'D962: computed'
   - 'D1247: frozen'
-  flag: recheck (D1279, n_sector_i)
 - id: band_e
   layer: 5
   branch:
@@ -637,7 +622,6 @@ nodes:
   - 'D962: computed'
   - 'D1231: frozen'
   - 'D1233: frozen'
-  flag: recheck (D1298, serapis_e)
 - id: band_e_audited
   layer: 5
   branch:
@@ -655,7 +639,6 @@ nodes:
   - 'D1245: postulate (PW1)'
   - 'D1245: postulate'
   note: web loop postulate 1; scored only on future data
-  flag: recheck (D1298, serapis_e)
 - id: serapis_point
   layer: 5
   branch:
@@ -677,7 +660,6 @@ nodes:
   - 'D1273: postulate'
   - 'D1273a: postulate'
   note: web loop postulate 2; scored only on future data
-  flag: recheck (D1298, serapis_e)
 - id: vac_discriminant
   layer: 5
   branch:
@@ -696,7 +678,6 @@ nodes:
   - 'D1263: postulate PW3 killed by its locked test'
   - 'D1263: killed'
   note: web loop postulate 3; kept on the web as killed
-  flag: recheck (D1298, serapis_e)
 - id: m32_window
   layer: 5
   branch:
@@ -714,7 +695,6 @@ nodes:
   - 'D1264: postulate PW4 passed its locked test'
   - 'D1264: postulate'
   note: web loop postulate 4 (pattern covariant ↔ eps_tilt)
-  flag: recheck (D1298, serapis_e)
 - id: string_meter
   layer: 5
   branch:
@@ -735,7 +715,6 @@ nodes:
   - 'D1265a: postulate'
   - 'D1265b: postulate'
   note: web loop postulate 5
-  flag: recheck (D1298, serapis_e)
 - id: inverse_meter
   layer: 5
   branch:
@@ -751,7 +730,6 @@ nodes:
   - 'D1268: postulate PW6 passed'
   - 'D1268: postulate'
   note: web loop postulate 6
-  flag: recheck (D1298, serapis_e)
 - id: instanton_MH
   layer: 5
   branch:
@@ -769,7 +747,6 @@ nodes:
   - 'D1270: postulate PW7 killed (benchmark M_H incompatible with ρ leptogenesis)'
   - 'D1270: killed'
   note: web loop postulate 7
-  flag: recheck (D1298, serapis_e)
 - id: caps
   layer: 5
   branch:
@@ -855,7 +832,6 @@ nodes:
   - 'D1256: computed'
   - 'D1260: computed'
   - 'D1261: computed'
-  flag: recheck (D1298, serapis_e)
 - id: tests_lhc
   layer: 5
   branch:
@@ -872,7 +848,6 @@ nodes:
   history:
   - 'D906: literature'
   - 'D1249: literature'
-  flag: recheck (D1286, n_sector_rho)
 observing:
 - id: mapper_dr3
   title: Gaia DR3 sweep complete (192,208,838 stars; 200/200 ESA checks)
