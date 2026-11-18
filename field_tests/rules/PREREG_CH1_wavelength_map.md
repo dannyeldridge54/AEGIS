@@ -1,0 +1,6 @@
+# PREREG CH1 — chemistry toolkit 1: wavelength map (hydrogen-like lines, 21 cm, EM converter)
+Locked 2026-11-18 05:09Z before building/testing. Label: tool (standard atomic physics; constants from scipy.constants = CODATA 2018).
+Build tools/chem/wavelength.py: (a) hydrogen-like Bohr lines with reduced-mass Rydberg R_M = R_∞/(1 + m_e/M) for H, He⁺, Li²⁺ (vacuum wavelengths), series Lyman/Balmer/Paschen/Brackett/Pfund; (b) 21 cm hyperfine ν = (4/3) g_p (m_e/m_p) α² c R_∞ ·(1+m_e/m_p)^-3 ; (c) λ ↔ ν ↔ E ↔ band/colour converter (radio → gamma); (d) air wavelength via Edlén/Ciddor-type formula (Morton 2000 form) for λ > 200 nm.
+Tests vs reference values (pre-stated tolerances): T1 H Lyα (vac) 121.567 nm ± 0.002 %; T2 H Hα (air) 656.28 nm ± 0.01 %; T3 He II 30.378 nm ± 0.01 %; T4 21 cm ν = 1420.4058 MHz within 0.1 % (Bohr-level formula, no QED/recoil corrections — tolerance reflects that); T5 converter round-trip λ→E→λ exact to 1e-12.
+Reference sources (literature, NIST ASD values quoted from standard tables): Lyα 121.567 nm; Hα 656.28 nm (air); He II 2→1 30.378 nm; 21 cm 1420.405751768 MHz.
+Adopt (register 'chem_wavelength' in the cubemind registry) if T1–T5 pass. Results: field_tests/results/ch1_wavelength.txt.
