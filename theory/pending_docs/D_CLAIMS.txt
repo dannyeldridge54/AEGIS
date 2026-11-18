@@ -625,3 +625,4 @@ D1338  2026-11-18T17:40Z  A2q: endpoint factor applied to the wino upper edge
 D1339  2026-11-18T17:41Z  NULL: no text-quoted endpoint/line ratio; only figures
 D1340  2026-11-18T17:42Z  A2p normalisation assumption checked: paper s0m = our s
 D1341  2026-11-18T17:44Z  Smoke test gains A2p check (7/7 PASS)
+D1342  2026-11-18T20:53Z  untitled
