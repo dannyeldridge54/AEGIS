@@ -13315,3 +13315,25 @@ DIMENSION CHAIN (literature): d=2 A2, d=3 FCC, d=4 D4, d=8 E8, d=24 Leech; A2 �
 universally optimal (Viazovska 2016; Cohn–Kumar–Miller–Radchenko–Viazovska). The heterotic gauge lattice E8×E8 is the
 d=8 member — a possible cross-dimension link worth its own cycle.
 Result file: field_tests/results/epstein_d2_shapes_2026-11-18.txt.
+
+## D1265a — CORRECTION to D1265 (PW5): the n_s response at the benchmark is 0.0135, not 0.0117 — the CMB meter is ±12% on Im S·Im ρ, not ±14% (2026-11-18)
+MAP: node=string_meter status=postulate
+LABEL: correction (numerics). PW5 verdict unchanged — the correction makes it stronger. No rerun of the locked PW5 script.
+D1265 applied ∂n_s/∂ln C = 1.171e-2 at the D861 benchmark (C=1.249e-6, Im S·Im ρ≈781). A quadratic fit of the
+D1272-verified exact table (max residual 9e-6) shows the response varies ~40% across the band: 0.0101 (C=1.0e-6),
+0.0122 (1.15e-6), **0.0135 (1.249e-6)**, 0.0141 (1.30e-6). D1265's value is the slope near C≈1.12e-6 — evaluated off the
+point it was applied to (13.4% low). With the correct slope, σ(ln C) = 0.0016/0.01352 = 0.118 → **Im S·Im ρ to ±12%**
+(was ±14%): the n_s-only CMB meter is ~15% sharper than recorded. LESSON: a response that varies 40% across the band must
+be evaluated at the point where it is used. Result file: field_tests/results/ns_response_slope_check_2026-11-18.txt.
+
+## D1275a — CORRECTION to D1275: the heavy-ν sector is NOT a clean independent handle on Im S·Im ρ₁ (2026-11-18)
+MAP: node=bhk_tilt status=postulate
+LABEL: correction (reading of our own notes; no new computation).
+D1275 called the ν-mass/leptogenesis side "an INDEPENDENT handle on the same product" and its highest-value next move.
+That was too strong. Per D852 the heavy-ν mass is M = x·M_s·e^{−2πn Im T} with the instanton on a RIGID cycle different
+from the gauge branes — a different modulus from the ρ₁ in the BHK tilt; per D783 M_s ≈ g_s^{1/4}M_P/√(4πV) with
+V = (Im ρ)^{3/2}; per D689 Im S = 1/(2√2π g_s). So M constrains Im S·Im ρ₁ only JOINTLY with Im T_inst, the prefactor x
+and the total volume — three extra unknowns. And D1270 already showed M_H = 1e12 is a CHOICE, not a benchmark output (the
+benchmark's own 9.8e10 kills thermal leptogenesis). REVISED: the ν sector becomes a useful handle only if the construction
+fixes the instanton cycle's Im T and x. D1275's meter-not-predictor conclusion stands; only the "next move" is downgraded
+to conditional. (The cross-scale coupling is real — it is just degenerate, not independent.)

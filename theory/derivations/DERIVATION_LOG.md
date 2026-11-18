@@ -1888,3 +1888,13 @@ Touches: none.
 3. Noted the margin grows with s — shorter-range lattice sums select the shape more sharply. [derived]
 4. Identified these two forms as the modular domain's elliptic fixed points, which are exactly our n_sector_i and n_sector_rho; recorded as a selection argument only, since the sector is actually fixed by the flux/stack construction. [derived]
 5. Recorded the dimension chain A2/FCC/D4/E8/Leech and the nesting A2 ⊂ D4 ⊂ E8 ⊂ Λ24, with E8 and Leech universally optimal. [literature]
+
+## D1265a — correction: n_s response evaluated at the point of use (2026-11-18)
+1. Fitted n_s vs ln C quadratically through the four D1272 exact points (max residual 9e-6). [derived]
+2. Evaluated the response at the D861 benchmark C=1.249e-6: dn_s/dlnC = 0.01352, versus 0.01171 used in D1265 (13.4% low; that value matches C≈1.12e-6). [derived]
+3. Re-derived the n_s-only meter: σ(ln C) = 0.0016/0.01352 = 0.118, so Im S·Im ρ to ±12% instead of ±14%; PW5's PASS is unchanged. [derived]
+
+## D1275a — correction: the heavy-ν handle is degenerate, not independent (2026-11-18)
+1. Read the heavy-ν mass formula M = x·M_s·e^{−2πn Im T} with the instanton on a rigid cycle distinct from the gauge branes. [literature] (D852, hep-th/0609191)
+2. Read M_s ≈ g_s^{1/4}M_P/√(4πV), V=(Im ρ)^{3/2}, and Im S = 1/(2√2π g_s). [derived] (D783, D689)
+3. Concluded M constrains Im S·Im ρ₁ only jointly with Im T_inst, x and V, and that M_H is itself a choice (D1270); the ν handle is useful only if the construction fixes Im T_inst and x. [derived]
