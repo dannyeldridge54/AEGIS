@@ -12678,3 +12678,12 @@ Results vs spectra_mf on Q1, Q3, Q9, N2p, N1: |Δn_s| 2.3e-8–5.3e-8, |Δr/r| �
 Quick mode (bd 300, reported only): |Δn_s| ≤ 2.9e-7, 0.12–0.17 s, ×92–142. Probe while writing: tighter rtol converges to n_s = 0.94547695 on Q3, i.e. the old
 spectra_mf (DOP853, rtol 1e-10) carries ~2e-8 itself. Speed path so far: 15.5 s → 4 s (D1220 vectorised) → 0.4 s (jit) → 0.14 s (jit quick).
 MAP: none (tool speed). Next: same compile for Janus-MF-NC (curved field space) and for the exact single-field MS reference.
+
+## D1222 — JANUS — JMF12: compiled Janus-MF-NC [NOT ADOPTED by the locked rule; 2 of 3 cases match at ×36–39]
+Lock: field_tests/rules/PREREG_JMF12_ncjit.md. Code: tools/janus_calc/mfms_nc_jit.py; script theory/janus/jmf12_ncjit.py; result field_tests/results/janus_jmf12.txt.
+(a) DoubleQuadNC R=1: n_s 0.92502415 (ref, 27.5 s) vs 0.92502408 (nc-jit, 0.76 s), |Δ| 6.5e-8, ×36. (b) flat Q3: 0.94547697 vs 0.94547694, |Δ| 2.3e-8, ×39.
+(c) sphere R=2, same potential and start: N_tot 176.18 in both, but the reference gives n_s = 3.49 and nc-jit 85.9 — both unphysical, so this case sits in a
+regime neither code resolves (post-hoc diagnosis: mode start is fine, k/aH ≫ 1000 is reachable; a strong entropic growth late in the 176-e-fold run is the likely cause — not
+yet checked). By the lock (all three cases) → NOT ADOPTED. My case choice (c) did not include a physical-output gate; that was a lock-design gap.
+Follow-up: JMF12b, a new lock with a pre-declared sanity gate (reference n_s in [0.8, 1.1]) and new cases; case (c) itself goes to the list as an open physics question.
+MAP: none.

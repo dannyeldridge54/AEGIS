@@ -25,3 +25,4 @@ Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN
 21. Reranker test after M0 — OPEN · 22. Speculative decoding test — BLOCKED (download needs Danny's OK on the desk)
 23. Grading loop: gpt-oss plain / qwen3-coder+verify / qwen3:14b arms to 300 → Phase 3/4 comparisons — RUNNING
 24. M3 affect weight — BLOCKED until M1 passes
+25. JMF12 case (c): DoubleQuad on a radius-2 sphere gives n_s 3.49 (python NC) vs 85.9 (nc-jit) over 176 e-folds — find why (entropic growth? resolution?) — OPEN (reason: both codes unphysical; could be a real instability or a shared numerical issue)

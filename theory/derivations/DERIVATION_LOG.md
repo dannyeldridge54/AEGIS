@@ -1814,3 +1814,4 @@ Touches: none.
 ## D1219: N3 — N3LO n_s beats second order at 16/16 points (median 2.87e-6 vs 8.27e-6) but misses the locked ×3 margin (2.88) → NOT CONFIRMED; residual looks like fourth order (post-hoc)
 ## D1220: JMF10 — Janus-MF fast (one ODE for all k) ×3.9 at |Δn_s| ≤ 5e-8; quick mode (bd 300) ×11.2 at ≤ 2.5e-7 → both adopted (labelled)
 ## D1221: JMF11 — compiled Janus-MF (numba DP5(4)) matches spectra_mf to ≤ 5.3e-8 in n_s at median ×36 speed (quick mode ×121) → adopted as PC default
+## D1222: JMF12 — compiled Janus-MF-NC matches on DoubleQuadNC and flat (|Δn_s| ≤ 6.5e-8, ×36–39) but the R=2 sphere case is unphysical in both codes (n_s 3.49 vs 85.9) → NOT ADOPTED; JMF12b with a sanity gate next
