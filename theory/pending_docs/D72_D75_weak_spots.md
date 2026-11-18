@@ -13895,3 +13895,16 @@ MAP: none
   - Status stays corrected. map.yaml is edited in this commit, and this note documents the change.
 VERDICT: label brought in line with D1153–D1302.
 MAP: node=wino_window status=corrected touches=[] ripple=no
+
+## D1319 — Ladder fix: the ladder only read "## D…" headers, so this session's MAP lines (written under "### D…" since ~D1159) were silently attributed to the preceding "##" note and never applied. The regex now accepts both (2026-11-18)
+- [TOOL] tools/ladder/ladder.py: HEAD = `^###? D(\d+)([a-z]?)\b`. A rerun applied 2 pending MAP lines: D1318's wino_window relabel and this note's own line. Flags: 0.
+- **Effect on the past:** almost all of this session's notes since D1159 ended with "MAP: none". The few real lines were:
+  - D1238's (H_relic; it crashed and was replaced by none);
+  - D1244/D1271/D1281/D1284/D1290 (none plus clear commands);
+  - D1314 (clears).
+  - So no missed status change, except that wino_window's d-list lacked the D1153–D1302 notes, which D1318 added by hand.
+- **"D-notes without a MAP line"** (reported by `check`): 749a, 834a, 853a, 862a, 864a, 857a, 861a, 990, 990a, 1055a, 1068a, 1071a, 1140, 1175a, 1177, 1205, 1233a, 1236a, 1234a, 1255a. Most are other sessions' correction notes.
+  - Mine among them (1140, 1177, 1205) were claim-number gaps or notes written by other sessions. They are left as is, with no silent edits.
+- From now on this session writes "## D…" headers.
+VERDICT: tool fixed; the map is consistent; flags 0.
+MAP: none

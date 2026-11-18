@@ -615,13 +615,14 @@ nodes:
   - D962
   - D1231
   - D1233
+  - D1232
   depends:
   - nstar_e
   - janus
   history:
-  - 'D962: computed'
   - 'D1231: frozen'
   - 'D1233: frozen'
+  - 'D1232: frozen (late)'
 - id: band_e_audited
   layer: 5
   branch:
@@ -802,13 +803,14 @@ nodes:
   - D1202
   - D1238
   - D1302
+  - D1318
   depends:
   - gravitino_wino
   - halo_profile
   history:
-  - 'D906: corrected'
   - 'D1230: corrected'
   - 'D1250: corrected'
+  - 'D1318: corrected'
 - id: tests_cmb
   layer: 5
   branch:

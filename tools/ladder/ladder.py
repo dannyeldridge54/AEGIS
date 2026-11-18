@@ -25,7 +25,7 @@ MAP_FROM = 739            # MAP lines are required from this D-number on
 STALE_AFTER = 5           # a flag older than this many D-notes fails `check`
 STATUSES = {"computed", "estimate", "literature", "assumed", "corrected", "killed", "open", "frozen", "postulate"}
 LINE = re.compile(r"MAP:\s*node=(\S+)\s+status=(\S+)(?:\s+touches=\[([^\]]*)\])?(\s+ripple=no)?")
-HEAD = re.compile(r"^## D(\d+)([a-z]?)\b", re.M)
+HEAD = re.compile(r"^###? D(\d+)([a-z]?)\b", re.M)   # accepts "## D" and "### D" headers (D1319)
 
 class DN(float):
     """A D-number that orders correction notes (D765a) just after their parent and prints as written."""
