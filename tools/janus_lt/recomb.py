@@ -63,12 +63,24 @@ class Recomb:
         sB = solve_ivp(lambda z, u: self._rhs(z, u, True), [zsw, 0.0], uA, method='LSODA',
                        rtol=1e-8, atol=[1e-12, 1e-12, 1e-6], dense_output=True)
         zA = np.linspace(3500, zsw, 300); xeA = [self._saha_all(z)[0] + sA.sol(z)[1] for z in zA]
-        zB = np.linspace(zsw, 0, 6000); xeB = [sB.sol(z)[0] + sB.sol(z)[1] for z in zB]
+        zB = np.linspace(zsw, 0, 6000); yB = sB.sol(zB); xeB = yB[0] + yB[1]   # U4: vectorised dense output (same nodes)
         Z = np.concatenate([zs1, zA[1:], zB[1:]]); X = np.concatenate([xe1, xeA[1:], xeB[1:]])
         o = np.argsort(Z); self.z, self.xe = Z[o], X[o]; self.xe_of = interp1d(self.z, self.xe, kind='cubic')
+    def Hs_vec(self, z):
+        """U4: vectorised H(z) in 1/s — the same E(z) as Cosmo.E (same f_nu spline), evaluated on arrays."""
+        from tools.janus_lt import background as B
+        cc = self.c; z = np.asarray(z, float); a = 1/(1 + z)
+        if cc.mnu <= 0: nu = cc.onu*np.ones_like(a)
+        else:
+            y = cc.ynu*a; B.f_nu(1.0); fn = np.where(y < 1e-6, 1.0, np.where(y < 1e6, np.exp(B._FNU(np.log(np.clip(y, 1e-6, 1e6)))), 180*1.2020569031595942*y/(7*math.pi**4)))
+            nu = cc.onu*(2/3 + fn/3)
+        de = a**(-3*(1 + cc.w0 + cc.wa))*np.exp(-3*cc.wa*(1 - a))
+        if cc.Fde: de = de*np.array([cc.Fde(x) for x in a])
+        E = np.sqrt(cc.og*a**-4 + nu*a**-4 + cc.om*a**-3 + cc.ode*de)
+        return cc.H0*E*1e3/(K.parsec*1e6)
     def tau_d(self, zmax):
         zz = np.linspace(0, zmax, 20001)
-        g = [self.xe_of(z)*self.nH(z)*sigT*c/(self.Hs(z)*(1 + z)*(self.Rfac/(1 + z))) for z in zz]
+        g = self.xe_of(zz)*self.nH(zz)*sigT*c/(self.Hs_vec(zz)*(1 + zz)*(self.Rfac/(1 + zz)))   # U4: vectorised, same nodes
         return float(np.trapezoid(g, zz))
     def z_drag(self):
         return brentq(lambda z: self.tau_d(z) - 1.0, 800, 1300, xtol=1e-4)
@@ -76,7 +88,7 @@ class Recomb:
 def _tau(self, zmax):
     """L1: photon optical depth tau(z) = int_0^z x_e n_H sigma_T c /[H (1+z')] dz' (no 1/R factor)."""
     zz = np.linspace(0, zmax, 20001)
-    g = [self.xe_of(z)*self.nH(z)*sigT*c/(self.Hs(z)*(1 + z)) for z in zz]
+    g = self.xe_of(zz)*self.nH(zz)*sigT*c/(self.Hs_vec(zz)*(1 + zz))   # U4: vectorised, same nodes
     return float(np.trapezoid(g, zz))
 def _z_star(self):
     return brentq(lambda z: self.tau(z) - 1.0, 800, 1300, xtol=1e-4)
