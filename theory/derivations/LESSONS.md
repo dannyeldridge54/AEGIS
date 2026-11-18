@@ -357,3 +357,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1236: a downstream yield that "fails by ×1.2" is within the reach of upstream convention errors (here ×1.4); audit the inputs before treating a narrow fail or pass as physics.
 - D1237: grep each script for every place a field's normalisation appears; one file mapped the same modulus with two Kähler weights and it survived a dozen downstream notes.
 - D1239: judge a rescaled result by the original locked rule (pass fraction), not by its best case (max yield) — the best case passed, the rule did not.
+- D1240: a mass computed in one note (D730) and a different mass hard-coded in its sibling scripts (1.9e11) is the same failure mode as NA3 — audit hard-coded constants against the latest computed value.

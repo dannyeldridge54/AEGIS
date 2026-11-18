@@ -12891,3 +12891,13 @@ MAP: node=reheat_rho status=computed touches=[nstar_e] ripple=no
 
 ## D1236a — correction to D1236
 D1236 said c = 0.3, M_H = 1e12 "would PASS" because max Y_B (1.03e-10) exceeds Y_obs. The locked D775 rule is a ≥ 10 % pass fraction over the Casas–Ibarra grid; with the corrected inputs that fraction is 2.2 % (D1239) → still FAIL.
+
+## D1240 — CENTRE — NA7: darkrad_rho PASS (light N's thermalise with ×55–376 margin at the corrected T_R); caps CONSISTENT (conservative at the higher N*); τ = i scripts use the right n = 1 factor except the NULL D726; small flag on reheat_i (m_φ 1.9e11 vs D730's 2.3–2.7e11)
+Lock: field_tests/rules/PREREG_NA7_darkrad_caps_ibranch.md. Results: field_tests/results/na7_darkrad_caps_ibranch.txt.
+A [computed]: D723's thermalisation threshold scales as √T_R (3.4e-4 at 6.7e8 → 3.4e-3 at 6.7e10, reproduced). At NA6's T_R (6.6e8–2.0e10) all 7 open rows have y_D = √(m_ν M_L)/v = 0.019–0.19 vs need 3.4e-4–1.9e-3 (×55–376) → PASS: no dark radiation. Closure bound for the channel: M2 > m_φ/2 = 1.6e13 GeV (was 1.1e13).
+B [derived]: the exact caps fall with N* (ρ: dn_s/dN* = −1.4e-3, dr/dN* = −6.7e-5 per e-fold, from D676's two points), so the corrected ρ N* 50.1–51.3 gives a tighter cap (≈ 0.979, linear estimate); the frozen family caps n_s ≤ 0.985, r ≤ 8.3e-4 remain valid upper bounds → CONSISTENT.
+C [code audit]: τ = i model K = −ln(2 Im τ) (D672) → factor √2 at y = 1. pseudo_i_d727 (λ = √2 κ), lepto_i_d728 (√2·1.2635), two_plus_one_i_d738 (g = √2|P|M/M_P): consistent. cone_i_d726 uses √(2/3) (n = 3) — mismatch, but D726 was NULL by its lock and feeds no node.
+Flag (estimate): D727/D728/D738 use m_φ = 1.9e11 GeV at i; D730 computed m = 2.28e11 / 2.65e11 (ε 1.3 / 1.6e-4). Γ ∝ m (fixed M) to m³ (fixed M/m) → T_R +10 % to +62 %, ΔN* ≈ +0.03 to +0.16. Small; recheck in the τ = i chain audit (NA8).
+MAP: node=darkrad_rho status=computed touches=[] ripple=no
+MAP: node=caps status=frozen touches=[] ripple=no
+MAP: node=reheat_i status=corrected touches=[nstar_i, lepto_i] ripple=yes

@@ -1830,3 +1830,4 @@ Touches: none.
 ## D1236: NA4 — lepto_rho rescaled by NA3: Y_B ×1.44–1.98; c = 0.3 M_H = 1e12 → 1.03e-10 (passes, conditional on NA3 caveat); κ recheck needed where M/T_R < 500; wino window BLOCKED (EOS table host refused by proxy)
 ## D1237: NA5 — the ρ decays are the inflaton's (flavour modulus = inflaton); D721/D722 scripts used n = 1 for V and n = 3 for couplings → NA3 correction stands; taint list D720–D982 queued for one rerun lock
 ## D1239: NA6 — ρ chain rerun (n = 1, m_φ 3.17e13): T_R confirmed to 0.15 %, c = 3 M_H = 1e13 newly open (1.43e9); lepto pass fractions c = 1: 41–64 %, c = 3: 75 %, c = 0.3 @1e12: 2.2 % → still FAIL (D1236a correction)
+## D1240: NA7 — darkrad_rho PASS at corrected T_R (×55–376 margin); caps CONSISTENT (cap falls with N*); τ = i scripts n = 1 except NULL D726; reheat_i m_φ 1.9e11 vs 2.3–2.7e11 (D730) → ΔN* +0.03–0.16 flag

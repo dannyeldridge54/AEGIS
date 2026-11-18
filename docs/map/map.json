@@ -411,10 +411,14 @@
    "status": "corrected",
    "d": [
     "D727",
-    "D730"
+    "D730",
+    "D1240"
    ],
    "depends": [
     "sterile_i"
+   ],
+   "history": [
+    "D1240: corrected"
    ]
   },
   {
@@ -436,7 +440,8 @@
    ],
    "history": [
     "D815: computed"
-   ]
+   ],
+   "flag": "recheck (D1240, reheat_i)"
   },
   {
    "id": "lepto_i",
@@ -480,7 +485,8 @@
     "D903: estimate",
     "D904a: estimate",
     "D909: estimate"
-   ]
+   ],
+   "flag": "recheck (D1240, reheat_i)"
   },
   {
    "id": "sterile_rho",
@@ -517,15 +523,16 @@
    "status": "computed",
    "d": [
     "D723",
-    "D906"
+    "D906",
+    "D1240"
    ],
    "depends": [
     "n_sector_rho"
    ],
    "history": [
-    "D906: computed"
-   ],
-   "flag": "recheck (D1237, reheat_rho)"
+    "D906: computed",
+    "D1240: computed"
+   ]
   },
   {
    "id": "reheat_rho",
@@ -692,7 +699,8 @@
     "D861: computed",
     "D906: frozen",
     "D962: computed"
-   ]
+   ],
+   "flag": "recheck (D1240, reheat_i)"
   },
   {
    "id": "band_e",
@@ -735,7 +743,11 @@
    "status": "frozen",
    "d": [
     "D675",
-    "D677"
+    "D677",
+    "D1240"
+   ],
+   "history": [
+    "D1240: frozen"
    ]
   },
   {
@@ -819,7 +831,7 @@
     "D906: computed",
     "D1229: computed"
    ],
-   "flag": "recheck (D1237, nstar_e)"
+   "flag": "recheck (D1240, reheat_i)"
   },
   {
    "id": "tests_lhc",
