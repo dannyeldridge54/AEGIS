@@ -70,6 +70,7 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
       <button class="tab" role="tab" id="t-vortex" aria-selected="false">Vortex</button>
       <button class="tab" role="tab" id="t-bh" aria-selected="false">Black hole</button>
       <button class="tab" role="tab" id="t-strings" aria-selected="false">Strings</button>
+      <button class="tab" role="tab" id="t-memstars" aria-selected="false">Memory stars</button>
       <button class="tab" role="tab" id="t-classic" aria-selected="false">Classic views</button>
     </div>
     <div class="spacer"></div>
@@ -100,6 +101,10 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
       <div class="card"><h2>Wiring · shared toolkits → CubeMind</h2>
         <div style="display:flex;gap:6px;flex-wrap:wrap"><button class="btn" id="bpoint">SERAPIS point</button><button class="btn" id="bms">Exact MS here</button><button class="btn" id="btools">List tools</button></div>
         <div class="small" id="wirecap">same registry CubeMind's +aegis arm uses; every result is stored in CubeMind memory</div></div>
+      <div class="card" id="memcard" hidden><h2>CubeMind memory stars</h2>
+        <div class="small">Each star is a D-note CubeMind remembers (public titles only — no private memory text). Magenta = passed/adopted, grey = killed, cyan = note.</div>
+        <input id="memq" type="search" placeholder="search the memory…" style="width:100%;margin-top:6px;padding:8px;border-radius:10px;border:1px solid #a07bff;background:#0b0620;color:#f3eeff">
+        <div class="small" id="memread" style="margin-top:6px">type to light the matches and draw the constellation</div></div>
       <div class="card" id="lenscard" hidden><h2>Measurement lens · future n_s → string product</h2>
         <div style="display:flex;gap:8px;align-items:center"><label class="small"><input type="checkbox" id="lenson" checked> lens on</label>
         <input type="range" id="lensns" min="0.970" max="0.978" step="0.0002" value="0.9744" style="flex:1"></div>
@@ -123,5 +128,6 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
 <script src="views3.js"></script>
 <script src="dataplot.js"></script>
 <script src="strings3.js"></script>
+<script src="memstars3.js"></script>
 </body>
 </html>

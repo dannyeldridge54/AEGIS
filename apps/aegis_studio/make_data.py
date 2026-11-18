@@ -14,6 +14,21 @@ if _f.exists():
         mm = re.match(r"n_s ([0-9.]+): P_lin ([0-9.]+) \| exact C ([0-9.e+-]+) P ([0-9.]+) .*N\* ([0-9.]+) n_s [0-9.]+ r ([0-9.e+-]+) α_s ([0-9.e+-]+)", l)
         if mm: a = mm.groups(); _m.append(dict(ns=float(a[0]), Plin=float(a[1]), C=float(a[2]), P=float(a[3]), Nstar=float(a[4]), r=float(a[5]), alpha_s=float(a[6])))
 if D['strings'] is not None: D['strings']['meter'] = _m
+# CubeMind memory stars (public D-note titles only; NO private memory text). Each D-note = a star: pos from a hash, tier EVIDENCE.
+import hashlib
+_stars = []
+_log = R / 'theory/derivations/DERIVATION_LOG.md'
+if _log.exists():
+    for l in open(_log, encoding='utf-8'):
+        m = re.match(r'^## (D\d+[a-z]?):\s*(.+)', l.strip())
+        if not m: continue
+        did, title = m.group(1), m.group(2)[:80]
+        h = hashlib.sha1(did.encode()).digest()
+        x = (h[0]/255-0.5)*2; y = (h[1]/255-0.5)*2; z = (h[2]/255-0.5)*2
+        low = title.lower()
+        topic = ('killed' if 'kill' in low else 'pass' if ('pass' in low or 'adopt' in low) else 'note')
+        _stars.append(dict(id=did, title=title, pos=[round(x,3), round(y,3), round(z,3)], topic=topic))
+D['memstars'] = _stars
 web = D['web']; import yaml
 mp = yaml.safe_load(open(R / 'theory/map/map.yaml', encoding='utf-8')); lay = {n['id']: n.get('layer', 1) for n in mp['nodes']}
 for n in web['nodes']: n['layer'] = lay.get(n['id'], 1)
