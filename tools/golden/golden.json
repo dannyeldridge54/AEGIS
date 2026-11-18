@@ -1,0 +1,209 @@
+{
+ "cern xsec 700 14": {
+  "C1N2p": {
+   "sigma_fb": 8.780762319836754,
+   "route_spread": 0.007386300822042641,
+   "scaling": 8.748333643866168,
+   "loglinear": 8.81319099580734
+  },
+  "C1N2m": {
+   "sigma_fb": 3.279917759025885,
+   "route_spread": 0.007442687137039228,
+   "scaling": 3.267712058168061,
+   "loglinear": 3.2921234598837095
+  },
+  "C1C1": {
+   "sigma_fb": 5.646324695796284,
+   "route_spread": 0.0077159439052518295,
+   "scaling": 5.6245413334844825,
+   "loglinear": 5.668108058108085
+  },
+  "total_fb": 17.707004774658923,
+  "mass_GeV": 700.0,
+  "sqrt_s_TeV": 14.0,
+  "note": "interpolation/scaling error ~1%; add the Resummino PDF+scale uncertainty (5-15%)"
+ },
+ "cern life 1000": {
+  "dm_MeV": 164.10841056185092,
+  "Gamma_GeV": 3.3842704948438434e-15,
+  "tau_ns": 0.19449153308012132,
+  "ctau_cm": 5.8307094762277885,
+  "BR_pi": 0.9786043880364436,
+  "BR_e": 0.02057423991613105,
+  "BR_mu": 0.0008213720474253162
+ },
+ "cern limit ATLAS_136": {
+  "m_limit_GeV": 661.4721749182042,
+  "xsec_band_GeV": 9.972573688851185,
+  "dm_band_GeV": 0.08103147801818977,
+  "total_GeV": 9.972902891334936,
+  "published_GeV": 660.0
+ },
+ "cern higgsino 500 14": {
+  "N1C1p": 9.95585313634676,
+  "N1C1m": 4.207753271677155,
+  "C1C1": 7.828613549152232,
+  "N1N2": 7.260014904845716,
+  "total_fb": 29.252234862021865,
+  "mass_GeV": 500.0,
+  "sqrt_s_TeV": 14.0,
+  "note": "Resummino aNNLO+NNLL tables (2304.11915 Tab. 4); other energies by Drell-Yan scaling"
+ },
+ "lattice energy E6 1.25": {
+  "lattice": "E6",
+  "d": 6,
+  "energy": {
+   "1.25": 0.10458150082432871
+  }
+ },
+ "janus 0.5*phi**2 60": {
+  "V": "0.5*phi**2",
+  "N_star": 60.0,
+  "ns": 0.9664468048271635,
+  "r": 0.13218861700871157,
+  "alpha_s": -0.0005662789069318062,
+  "beta_s": -1.8515743327097914e-05
+ },
+ "hyperion orbit 269.452 4.6934 1.8266 -802.8 10362.4 -110.5 MWPotential2014": {
+  "model": "MWPotential2014",
+  "l_deg": 31.00869365619361,
+  "b_deg": 14.062737225315729,
+  "xyz_kpc": [
+   -7.998480211555297,
+   0.0009128043849150689,
+   0.02123988498295031
+  ],
+  "v_kms": [
+   -130.08208415075686,
+   237.1248481747681,
+   26.0473892685829
+  ],
+  "r_peri_kpc": 5.91654280977491,
+  "r_apo_kpc": 15.271960561316973,
+  "z_max_kpc": 0.6644136180941871,
+  "eccentricity": 0.44153273063665
+ },
+ "late dist 1.0": {
+  "z": 1.0,
+  "params": {
+   "H0": 67.66,
+   "ombh2": 0.02242,
+   "omch2": 0.11933,
+   "w0": -1.0,
+   "wa": 0.0,
+   "mnu": 0.06
+  },
+  "D_M_comoving_Mpc": 3395.6712667990764,
+  "D_A_angular_Mpc": 1697.8356333995382,
+  "D_L_luminosity_Mpc": 6791.342533598153,
+  "D_H_Mpc": 2485.2619968153786,
+  "H_z_kms_Mpc": 120.62811018884723,
+  "note": "flat FLRW, photons + 3.046 neutrino species (one massive), CPL dark energy w0 + wa(1-a); agrees with astropy Planck18 to 3e-5"
+ },
+ "late desi -0.75 -0.86": {
+  "params": {
+   "H0": 67.66,
+   "ombh2": 0.02242,
+   "omch2": 0.11933,
+   "w0": -0.75,
+   "wa": -0.86,
+   "mnu": 0.06
+  },
+  "r_d_Mpc": 147.09,
+  "chi2": 13.189449685391663,
+  "n_points": 13,
+  "data": "DESI DR2 BAO, arXiv:2503.14738 Table IV",
+  "note": "r_d fixed (default Planck 2018: 147.09 Mpc); no fitting is done here"
+ },
+ "late growth 0.5": {
+  "z": 0.5,
+  "params": {
+   "H0": 67.66,
+   "ombh2": 0.02242,
+   "omch2": 0.11933,
+   "w0": -1.0,
+   "wa": 0.0,
+   "mnu": 0.06
+  },
+  "D_over_D0": 0.7706000373157338,
+  "growth_rate_f": 0.755763164752367,
+  "note": "scale-independent linear growth (no neutrino free-streaming)"
+ },
+ "serapis predict 1.15e-6": {
+  "C": 1.15e-06,
+  "T_R": 738900000.0,
+  "ns": 0.9733260506288407,
+  "r": 0.00046957375279225186,
+  "alpha_s": -0.0009736193951019191,
+  "engine": "PT1 quadratic emulator (fixed T_R)",
+  "valid": "C 1.0-1.6e-6",
+  "label": "SERAPIS-E model prediction (frozen band D693; scored only on future data)"
+ },
+ "serapis meter 0.9728 0.0027": {
+  "ns": 0.9728,
+  "C": 1.0953047220016353e-06,
+  "P": 890.256065152069,
+  "Nstar": 50.1746,
+  "r": 0.00046359200000000025,
+  "alpha_s": -0.0009616340000000005,
+  "engine": "PW6 table (log-interp)",
+  "P_range": [
+   722.3676897718151,
+   1163.607510887196
+  ],
+  "P_rel_sigma": 0.24781623983657475,
+  "T_R": 738900000.0,
+  "N_eff": 4,
+  "status": "postulate (PW6, D1268)"
+ },
+ "serapis j 0.2 1.3": {
+  "tau": [
+   0.2,
+   1.3
+  ],
+  "j_real": 1849.6724156713758,
+  "j_imag": -3300.0711319961724
+ },
+ "wavelength line H 2 3": {
+  "ion": "H",
+  "n_low": 2,
+  "n_up": 3,
+  "series": "Balmer",
+  "vacuum_nm": 656.469606333245,
+  "air_nm": 656.2883061003822,
+  "nu_hz": 456673782164129.2,
+  "E_eV": 1.888651008928232,
+  "band": "visible",
+  "colour": "red",
+  "note": "Bohr levels with reduced mass; fine structure ~1e-5 not included"
+ },
+ "wavelength 21cm": {
+  "nu_MHz": 1420.4854516773682,
+  "lam_cm": 21.104929842540283,
+  "measured_MHz": 1420.405751768,
+  "relative_difference": 5.611066363897521e-05,
+  "note": "Fermi formula, reduced mass, (1 + a_e); missing Breit/QED/recoil/proton-structure terms (CH1b)"
+ },
+ "wavelength convert 500 nm": {
+  "lam_m": 5.000000000000001e-07,
+  "nu_hz": 599584915999999.9,
+  "E_eV": 2.4796839686640046,
+  "band": "visible",
+  "colour": "green"
+ },
+ "power solar": {
+  "Voc": 49.075855582314404,
+  "Isc": 8.791208790663614,
+  "Pmax": 333.96106513985563,
+  "Vmp": 40.58905348913221,
+  "Imp": 8.227860381845915,
+  "FF": 0.7740684438664016,
+  "Vt": 2.0040211714446965,
+  "mpp_residual": 1.7763568394002505e-15
+ },
+ "power rc 1000 1000 1e-6": {
+  "mag": 0.15717672547758985,
+  "phase_deg": -80.95693892096232,
+  "fc": 159.15494309189532
+ }
+}
