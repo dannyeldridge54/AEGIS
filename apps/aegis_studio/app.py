@@ -30,6 +30,7 @@ class Api:
     def test_particle(self, pid): return test_particle(pid)
     def run_chain(self, name): return run_chain(name)
     def chains(self): return sorted(CHAINS)
+    def run_circuit(self): return run_circuit()
     def sweep_node(self, node): return sweep_node(node)
     def set_weave_sweep(self, on): WEAVE.sweep = bool(on); return dict(sweep=WEAVE.sweep)
     def open_classic(self):
@@ -334,6 +335,19 @@ def _chain_lattice():
     add('X_mellin', 'lattice_lab', abs(ep.get('epstein', 0) - 5.7833593) < 2e-6 and 0.970 < em['ns'] < 0.976,
         f"A2 Epstein E(ρ,2) = {ep.get('epstein', 0):.7f} is the SERAPIS-E vacuum energy scale; same potential gives n_s = {em['ns']:.4f} in band")
     return st
+
+def run_circuit():
+    """The SERAPIS circuit (circuit.py): every component fires in order, wires carry the quantities, laws are checked.
+    Each run is appended to CubeMind's aegis_link/circuit_runs.jsonl (drift vs the last run); each law goes to janus_tests."""
+    import importlib.util
+    sp = importlib.util.spec_from_file_location('serapis_circuit', os.path.join(BASE, 'circuit.py')); C = importlib.util.module_from_spec(sp); sp.loader.exec_module(C)
+    d = os.path.join(CM_DIR, 'aegis_link'); os.makedirs(d, exist_ok=True)
+    res = C.run(run_tool, log_path=os.path.join(d, 'circuit_runs.jsonl'))
+    for c in res['comps']:
+        for l in c['laws']: _link_log(dict(node=f"circuit:{c['node']}:{l['law']}", tool=c['tool'], ok=l['ok'], text=l['text']))
+    to_cubemind(f"SERAPIS circuit: {res['closed']}/{res['laws']} laws closed (health {res['health']}); open: " +
+                ('; '.join(f"{o['node']} {o['law']}" for o in res['open']) or 'none'), 'circuit', importance=4)
+    return res
 CHAINS = {'serapis': _chain_serapis, 'lhc': _chain_lhc, 'lattice': _chain_lattice}
 def run_chain(name):
     import time
@@ -426,12 +440,12 @@ class Weave:
             else: groups.append([n])
         push(self.win, 'calc', 'Shared wires', f'{len(nodes)} nodes → {len(groups)} runs ({sum(len(g) > 1 for g in groups)} shared wires)')
         with ThreadPoolExecutor(max_workers=workers) as ex: out = [r for rs in ex.map(self._one, groups) for r in rs]
-        for cname in CHAINS:   # tool-to-tool wires after the node pass
-            if not self.on: break
-            ch = run_chain(cname)
-            for st_ in ch['steps']:
-                self._emit(dict(node=st_['node'], tool='chain ' + cname, ok=st_['ok'], text=st_['text'], seconds=0.0, shared=True))
-                ok = sum(r['ok'] is True for r in out); fail = sum(r['ok'] is False for r in out)
+        if self.on:   # the SERAPIS circuit after the node pass: every component fires, wires carry values, laws checked
+            cr = run_circuit()
+            for c in cr['comps']:
+                self._emit(dict(node=c['node'], tool='circuit', ok=c['ok'], text='; '.join(f"{'✓' if l['ok'] else '✗'} {l['law']}: {l['text']}" for l in c['laws']), seconds=c['seconds'], shared=True))
+            with self.lock: push(self.win, 'calc', f"SERAPIS circuit · health {cr['health']:.0%}", f"{cr['closed']}/{cr['laws']} laws closed" + (f"; OPEN: {', '.join(o['node'] + ' (' + o['law'] + ')' for o in cr['open'])}" if cr['open'] else '; all closed'))
+        ok = sum(r['ok'] is True for r in out); fail = sum(r['ok'] is False for r in out)
         self.on = False; push(self.win, 'calc', 'Weave derived', f'{ok} pass, {fail} fail of {ok + fail} nodes in {time.time() - t0:.0f} s')
         if self.win is not None:
             try: self.win.evaluate_js("weaveDone()")
