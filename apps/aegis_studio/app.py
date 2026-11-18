@@ -49,6 +49,10 @@ def handle(api, win, req):
     else: out = dict(ok=False, error=f'unknown or unavailable command: {c}')
     out['seconds'] = round(time.time() - t0, 3); out['id'] = req.get('id'); return out
 def link_loop(api, win):
+    try: _link_loop(api, win)
+    except Exception as e:
+        import traceback; os.makedirs(LINK, exist_ok=True); open(os.path.join(LINK, 'link_error.txt'), 'w').write(traceback.format_exc())
+def _link_loop(api, win):
     import json, time
     inbox, outbox = os.path.join(LINK, 'inbox'), os.path.join(LINK, 'outbox'); os.makedirs(inbox, exist_ok=True); os.makedirs(outbox, exist_ok=True)
     open(os.path.join(LINK, 'status.json'), 'w').write(json.dumps(dict(running=True, pid=os.getpid(), since=time.strftime('%H:%M:%S'))))
@@ -69,4 +73,5 @@ if __name__ == '__main__':
     if '--headless' in sys.argv:              # no window: just the link (for batch runs)
         link_loop(api, None)
     win = webview.create_window('Janus', url=os.path.join(BASE, 'index.html'), js_api=api, width=1680, height=1000, min_size=(1100, 680), background_color='#04020B')
-    webview.start(lambda: threading.Thread(target=link_loop, args=(api, win), daemon=True).start(), http_server=True)
+    threading.Thread(target=link_loop, args=(api, win), daemon=True).start()   # start the link before the GUI loop
+    webview.start(http_server=True)
