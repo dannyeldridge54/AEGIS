@@ -13988,3 +13988,11 @@ MAP: node=wino_window status=computed touches=[] ripple=no
 - **Draft sentence now:** "the Simons Observatory (σ ≈ 0.045) would see the U(1) case only at ≃ 1.2σ (a 2σ test needs σ ≲ 0.027), but SU(2) at ≃ 3.6σ on its own."
 - **Consequence for SERAPIS:** the τ = i hidden sector is tested decisively only in its SU(2)/SU(2)+gaugino forms. U(1) and empty remain indistinguishable in the 2030s on N_eff alone.
 MAP: node=darkrad_i status=computed touches=[] ripple=no
+
+## D1326 — SERAPIS v3.3 draft (unposted): a 1.25/1.5 TeV bullet from A2o is added to the line-test list; one row with a different scenario is flagged, not edited (2026-11-18)
+- [DOC] Item (ii) now has, between the 1 TeV and 1.85 TeV bullets:
+  > At 1.25 TeV (f ≈ 0.19–0.32) the verdict depends on the fraction-bracket edge for NFW and Burkert haloes; at 1.5 TeV (f ≈ 0.28–0.46) it fails for them and survives only for Einasto cores (limit interpolated between 1 and 2.9 TeV; D1324).
+- **Flagged, not edited:** forward-table line 322, "Superpartners (covariant, est.): wino 0.67–1.85 TeV (Einasto) | no wino < 1.85 (2.9 cored)".
+  - That row is the covariant-completion superpartner forecast. It is an older, separate estimate with "1.85" as its CTA-reach number. It is not the post-hoc thermal window (line 323, updated in D1324).
+  - Its CTA-reach meaning differs, so it is not changed here. A reader could confuse the two rows, so a footnote clarifying "different scenario (full AMSB spectrum), not the thermal post-hoc fraction" is suggested for the next rung.
+MAP: none
