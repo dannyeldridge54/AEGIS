@@ -14302,3 +14302,12 @@ MAP: node=janus status=computed touches=[] ripple=no
 - Reported, not a law: SUSY-breaking scale ↔ plateau height (F ~ √V0) — no locked tool ties V0 (from C) to the F-term yet.
 - Tolerances for all nine laws were written into circuit.py before the first run (23:40 UTC); no tolerance changed after seeing results.
 MAP: node=gravitino_wino status=computed touches=[] ripple=no
+
+## D1356 — STRINGS / KALUZA: the −4% gap to BTR is one common length scale — the spectrum SHAPE agrees inside BTR's rounding; BTR's L is the Einstein-frame proper length, the same definition we use (2026-11-19)
+- [literature] BTR 2209.10553 (ar5iv §5.1–5.3): scalar eigenproblem 𝓗Ψ = m²Ψ, 𝓗 = b + 𝓐†𝓐 (eqs. 5.4–5.9) in the conformally flat z (dz = e^{B−A} dy), "Dirichlet or Neumann" boundary conditions; eq. 5.14 (10D orientifold): m₁ ≈ 0.97 π/L, m₂ ≈ 2.13 π/L, L = "the Einstein-frame proper length of the internal dimension"; rough expectation m_n ≈ nπ/L.
+- Checked against our notes: tools/kaluza/scalar.py's L = ∫ e^B dy is that same Einstein-frame proper length (action R − 4/(D−2)(∂φ)², Einstein frame), ξ-cut converged < 1e-6. So the length DEFINITION is not the cause (hypothesis closed).
+- [estimate] exploratory, not locked: Neumann instead of Dirichlet gives lowest found mode m L/π ≈ 2.03 (no 0.97 mode found on the grid), so Neumann does not reproduce 0.97/2.13 either; Dirichlet stays the closer match.
+- [derived] Shape: m₂/m₁ = 2.0403/0.9318 = 2.190 vs BTR 2.13/0.97 = 2.196; BTR's two-figure rounding allows 2.179–2.212 → AGREES. Both masses are low by the same 3.9–4.2% ⇒ one common scale factor ≈ 1.04 in L or in the mass unit, not a solver or operator-shape error (two independent solvers already agree to 1e-7, D1214).
+- Remaining candidates for the common 4%: (i) BTR's interval taken between the true singular endpoints with a different dilaton normalisation of the Einstein frame (e.g. ½(∂φ)² vs 4/(D−2)(∂φ)²) rescaling y; (ii) the overall potential normalisation α_E (we set α_E = 1; m² scales with it); (iii) BTR's numbers are themselves rounded rough values. Next: one locked recheck varying the dilaton normalisation convention — if a single convention change moves both masses by +4%, the open circuit closes.
+- Circuit: new law "spectrum shape matches BTR" closed (46 laws, 44 closed); the scale law stays OPEN until that recheck.
+MAP: node=S_kk10 status=corrected touches=[] ripple=no
