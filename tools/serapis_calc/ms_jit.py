@@ -5,7 +5,31 @@ from tools.janus_calc.mf_jit import A, B5, B4, CC
 def build(Vexpr, y):
     x = sp.Symbol('x'); e = Vexpr.subs(y, x); ns = {'math': math}
     exec(f"def _V(x):\n    return {sp.pycode(e)}\ndef _dV(x):\n    return {sp.pycode(sp.diff(e, x))}\n", ns)
-    V = nb.njit(ns['_V']); dV = nb.njit(ns['_dV'])
+    return _make(nb.njit(ns['_V']), nb.njit(ns['_dV']))
+def build_spline(model='serapis_e', C=1.15e-6, lam=1.0):
+    """U1: the pipeline's SERAPIS-E potential (cubic spline of E(tau,2) - E(rho,2), V = e/(e+1)(1 + C e/lam)) with ANALYTIC spline dV, compiled.
+    Returns (m, phi0) for spectra_msjit."""
+    from tools.serapis_calc.pipeline import build as pbuild
+    from scipy.interpolate import CubicSpline
+    import inspect
+    m0, V0, dV0, p0 = pbuild(model, C, lam)
+    S = V0.__closure__ and [c.cell_contents for c in V0.__closure__ if isinstance(c.cell_contents, CubicSpline)][0]
+    xk = np.ascontiguousarray(S.x); cf = np.ascontiguousarray(S.c); n = xk.size - 1; Cc = float(C); L = float(lam)
+    @nb.njit
+    def _ee(p):
+        i = np.searchsorted(xk, p) - 1
+        if i < 0: i = 0
+        if i > n - 1: i = n - 1
+        t = p - xk[i]; e = ((cf[0, i]*t + cf[1, i])*t + cf[2, i])*t + cf[3, i]; de = (3*cf[0, i]*t + 2*cf[1, i])*t + cf[2, i]
+        return e, de
+    @nb.njit
+    def V(p):
+        e, de = _ee(p); return e/(e + 1)*(1 + Cc*e/L)
+    @nb.njit
+    def dV(p):
+        e, de = _ee(p); return de*((1 + Cc*e/L)/(e + 1)**2 + (Cc/L)*e/(e + 1))
+    return _make(V, dV), p0
+def _make(V, dV):
     @nb.njit
     def rhs(N, yv, ks, Np, K, out):
         p = yv[0]; pn = yv[1]; eps = 0.5*pn*pn; v = V(p); H = math.sqrt(v/(3 - eps))

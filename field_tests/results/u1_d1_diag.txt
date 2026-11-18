@@ -1,0 +1,10 @@
+Starobinsky 0.1 n_s 0.9648970 α_s 2.24729e-04
+Starobinsky 0.05 n_s 0.9648912 α_s -3.57267e-03
+Starobinsky 0.025 n_s 0.9649489 α_s -1.27204e-04
+SERAPIS-E npts 16000 0.1 n_s 0.9722493 α_s -3.27163e-04
+SERAPIS-E npts 16000 0.05 n_s 0.9722437 α_s -3.03253e-03
+SERAPIS-E npts 16000 0.025 n_s 0.9722878 α_s -7.72790e-04
+D1 diag rtol 1e-12 bd 200: 21-pt deg-4 fit n_s 0.9648969 α_s -5.89250e-04
+D1 diag rtol 1e-13 bd 200: 21-pt deg-4 fit n_s 0.9648969 α_s -5.89250e-04
+D1 diag rtol 1e-12 bd 1000: 21-pt deg-4 fit n_s 0.9648982 α_s -6.18783e-04
+D1 diag rtol 1e-10 bd 200: 21-pt deg-4 fit n_s 0.9648969 α_s -5.89308e-04
