@@ -559,3 +559,22 @@ Built (`apps/sarah_sky/ar.html` + `js/ar.js`, deployed to PC):
 
 Still needs: real-phone test (camera + compass can't be tested headless) before sharing to Sarah;
 then Vedic/Chinese/Moon overlays, tarot (78 ORIGINAL cards), birth chart, journal — all tradition-labelled.
+
+## [SA-PKG] Sarah's app on Android — PWA + real APK (2026-11-18)
+Danny: wants it on Sarah's US Android phone, both a PWA and a real APK.
+- Google's SDK/maven are blocked from the cloud box, so the APK can't be compiled here. Built it on
+  GitHub Actions instead (runners reach Google fine). AEGIS is public with Actions on; the session is
+  scoped to AEGIS, so everything routes through it.
+- APK: apps/sarah_sky/android/ = a plain WebView wrapper (no androidx/appcompat — dropped to kill a
+  kotlin-stdlib duplicate-class clash). MainActivity loads file:///android_asset/sarah_sky/index.html,
+  grants getUserMedia via onPermissionRequest, grants geolocation, requests CAMERA+FINE_LOCATION at
+  launch. Workflow .github/workflows/sarah_apk.yml (push on apps/sarah_sky/** or dispatch): stages the
+  PWA into assets, gradle 8.9 assembleDebug, uploads the artifact AND force-pushes dist/SarahsSky.apk to
+  branch apk-dist (artifact DL redirects to Azure blob = blocked here; the branch is pullable over git).
+  Verified: 1.16 MB signed APK, contains classes.dex + assets/sarah_sky/{index,ar}.html etc. Delivered
+  to Danny. Debug-signed = sideload (allow unknown source once).
+- PWA: branch gh-pages holds the app at repo root + .nojekyll. Danny enables Pages once
+  (Settings → Pages → Deploy from branch → gh-pages / root). URL will be
+  https://dannyeldridge54.github.io/AEGIS/ — Sarah opens it in Chrome → Install app. sw.js v1.2.0 now
+  precaches ar.html + js/ar.js so AR works offline; manifest branded "Sarah's Sky" + Point&See shortcut.
+- Both still need a real-phone pass (camera/compass can't be tested headless) before sharing to Sarah.
