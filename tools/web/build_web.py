@@ -34,7 +34,7 @@ for a, b, ref, v in (('R_desi', 'R_w0wa', 'D1029', 'Δχ²_ΛCDM ≈ 7.7'), ('R_
                      ('wino_window', 'tests_lhc', 'map', '')):
     edge(a, b, 'string', 1, ref, v)
 # --- CENTRE: shared quantities ---
-node('C_nstar', 'Shared N*: SERAPIS-E 50.1–51.3 (ρ), τ=i 50.40–50.45 (audited)', 'centre', 'corrected', 'D1235, D1247, D1252'); node('C_dm', 'Shared DM mass ∝ dilution D', 'centre', 'estimate', 'twin-ladder')
+node('C_nstar', 'Shared N*: SERAPIS-E 50.07–51.22 (ρ, MSSM g*), τ=i 50.40–50.45 (audited)', 'centre', 'corrected', 'D1235, D1247, D1252, D1262'); node('C_dm', 'Shared DM mass ∝ dilution D', 'centre', 'estimate', 'twin-ladder')
 node('C_lepto', 'Shared leptogenesis yield 0.87e-10 × D', 'centre', 'estimate', 'twin-ladder'); node('C_D', 'Dilution D ≤ 1e3 (F2)', 'centre', 'estimate', 'D394, D406')
 for a, b in (('L_nstar', 'C_nstar'), ('C_nstar', 'R_w0wa'), ('C_D', 'C_nstar'), ('C_D', 'C_dm'), ('C_D', 'C_lepto'), ('C_dm', 'wino_window'),
              ('C_lepto', 'lepto_i'), ('C_lepto', 'lepto_rho'), ('C_dm', 'darkrad_rho')):
