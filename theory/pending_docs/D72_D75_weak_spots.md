@@ -14088,3 +14088,11 @@ MAP: none
   - Expectation not yet sourced. The lock must fix the comparison to the 2.9 TeV Fig. 1 of 1808.08956 (read off), or else run as an "estimate" with no pass bar.
   - Before locking, the formula needs a character-exact check (PDF).
 MAP: none
+
+## D1336 — Hyperion tick (partial): Eqs. 2.5–2.13 of 2507.15937 re-read from the HTML alttext; they match D1335. The line normalisation is pinned (2026-11-18)
+- [LITERATURE] Eqs. 2.6, 2.7 and 2.9–2.12 match D1335. Sentence after 2.9: "This is the differential cross section to produce two photons."
+  - Eq. 2.13: F₀ + F₁ = |𝓜⁰⁰|²/64M² = 4|Σ m² s₀ₘ|². For the wino (n = 1) this is 4|s₀₁|².
+  - Eq. 2.10 writes σ₀ with "M_V". This is probably M_χ; flagged, not assumed.
+- Inputs for A2p: tools/janus_astro/sommerfeld.py wino_s(M, v) returns (s₀₀, s₀₁) with free normalisation (1, 0). That convention must be checked against the paper's s₀ₘ before the lock.
+- Nothing computed yet. Danny interrupted the tick, so it is paused here.
+MAP: none
