@@ -1012,8 +1012,7 @@
     "D906: corrected",
     "D1230: corrected",
     "D1250: corrected"
-   ],
-   "flag": "recheck (D1278, n_sector_rho)"
+   ]
   },
   {
    "id": "tests_cmb",

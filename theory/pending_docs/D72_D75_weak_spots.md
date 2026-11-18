@@ -13448,3 +13448,9 @@ an ingredient the ρ vacuum does not: the axion x pinned (heavy axion / CP locus
 block in which i is a minimum (SERAPIS-1's j-based form had i as the vacuum; Kallosh–Linde's construction, like SERAPIS-E, has
 i as a saddle). This strengthens D861's criterion C3 for the i-variant; it does not change any ρ-vacuum prediction.
 Result file: field_tests/results/serapis_i_saddle_2026-11-18.txt.
+
+### D1281 — wino_window recheck after D1278: unchanged (graph ripple only) (2026-11-18)
+- [CENTRE · recheck] D1278 (another session) is a numerical note on Gaussian lattice energies in d = 2–8: self-dual winners never flip with scale, dual pairs swap at α = 1. Its MAP node n_sector_rho reaches wino_window only through the downstream graph.
+- It changes no input to the wino window: not the thermal masses, the fraction bracket, the halo J-factors, the line limits or the relic anchor (D1238). Status unchanged; flag cleared.
+VERDICT: unchanged.
+MAP: none
