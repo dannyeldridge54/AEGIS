@@ -1,3 +1,4 @@
+# AEGIS-FP 2B3HAN4EXZU44LWJ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Janus-LHC: pure-wino chargino mass splitting and lifetime.
 dm: two-loop fit (Ibe, Matsumoto, Sato, arXiv:1212.5989, Eq. 17; quoted fit accuracy < 0.02% for 100-4000 GeV; theory error +-0.3-0.4 MeV).
 Widths: Eq. 21 (pi mode, normalised to Gamma(pi->mu nu)) and Eq. 22 (e nu); mu nu with exact 3-body phase-space factor added here."""

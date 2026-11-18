@@ -1,3 +1,4 @@
+# AEGIS-FP ILFEHO6N2C2JH5K2 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J-factors for dark-matter annihilation: J = ∫_ΔΩ dΩ ∫ ρ²(r(s, ψ)) ds, in GeV² cm⁻⁵.
 Profiles (GeV/cm³, kpc): Einasto, NFW, Burkert, Einasto with a constant-density core. Region: cone ψ ≤ psi_max around the
 Galactic Centre with the plane |b| < b_mask removed. Route A: (l, b) grid. Route B: polar (ψ, φ) around the GC."""

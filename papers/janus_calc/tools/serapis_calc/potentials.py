@@ -1,3 +1,4 @@
+# AEGIS-FP XO4TD6R4UVHQEGCA · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """SERAPIS plateau potentials (dimensionless V/V0) and a symbolic slope-sign check."""
 import sympy as sp
 from .eisenstein import E_fourier

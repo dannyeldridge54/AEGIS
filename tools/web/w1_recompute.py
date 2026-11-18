@@ -1,3 +1,4 @@
+# AEGIS-FP ET3SQ3JOIDIFSXMW · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """W1 (locked PREREG_W1_recompute)."""
 import sys, json, time; sys.path.insert(0, '.')
 from tools.serapis_calc.pipeline import predict, build

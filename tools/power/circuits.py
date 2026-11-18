@@ -1,3 +1,4 @@
+# AEGIS-FP QTW2C2KRG6ZIWXCO · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """P1 power toolkit (lock PREREG_P1). Standard EE models; label tool/shared-numerics. No energy-breakthrough claims."""
 import math
 Q = 1.602176634e-19; KB = 1.380649e-23

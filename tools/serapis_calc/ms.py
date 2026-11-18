@@ -1,3 +1,4 @@
+# AEGIS-FP 7DVW4AMBEBBS4VJT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Exact single-field Mukhanov-Sasaki spectra (M_P = 1), written independently of the v3 scripts.
 Background in e-fold time N; mode equation for u = z R (scalar, z = a phi_N) and u_t (tensor, z = a):
 u'' + (1-eps) u' + [k^2/(aH)^2 - (z''/z)/(aH)^2] u = 0 is avoided; we integrate R directly:

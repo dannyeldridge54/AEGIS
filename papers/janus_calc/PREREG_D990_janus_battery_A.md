@@ -1,3 +1,4 @@
+<!-- AEGIS-FP MMQCIWXAXLJ2G4RC · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG D990: Janus String Calculator test battery A — n_s and r on 32 points (written before running)
 Janus (tools/janus_calc, as committed with this lock): second-order Hubble-flow n_s, r. Reference: base toolkit tools/serapis_calc ms.spectra_fast (validated in the base selftest for n_s and r), default stencil, bd = 200.
 Points: SERAPIS-E C ∈ {1.0, 1.15, 1.3}e-6 × N* ∈ {44, 47, 50, 53} (12); Chronos ε ∈ {1.3, 1.45}e-4 × N* ∈ {44, 47, 50} (6); SERAPIS-ρ ε = 6e-5 × N* ∈ {44, 46.09, 49.49, 52} (4); Kairos (ε = 0) × N* ∈ {46, 50} (2) → 24 SERAPIS-family points.

@@ -1,3 +1,4 @@
+# AEGIS-FP IL5P5J3GXR3OY6Y2 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Command line: inflation-scorecard (score a model) and janus (predict the running)."""
 from __future__ import annotations
 import argparse, sys

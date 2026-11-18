@@ -1,3 +1,4 @@
+<!-- AEGIS-FP EFPWTBGNZNNDWV5G · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee response: CubeMind interim report
 
 ## 18 Nov pass

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP LRBPAWUDBMOHFPNX · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Postulates (Jl loop, L4). Each: assumptions, form, falsifier, status (open / tested / retired). Budget: at most 2 open (balance β3).
 
 ## P1 — CP violation at ρ comes from the couplings, not from τ (status: open — reopened D773; flux-relation sources P2/P4 retired; P1 is again the working assumption)

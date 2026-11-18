@@ -1,3 +1,4 @@
+<!-- AEGIS-FP EYL7DZO6YI63E6DY · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Weak-point ladder (Danny 10:12 CT: "Work all the weak points, set a plan, and start deriving everything that you can")
 Rules: lock (PREREG + sha256, pushed) before any computation; no reruns to chase results (DEVIATIONS first); honest labels; every outcome — good or bad — goes into the paper as written. Never publish/submit/send.
 Order = cheapest high-value first.

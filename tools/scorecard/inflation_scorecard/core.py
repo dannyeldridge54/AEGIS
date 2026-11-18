@@ -1,3 +1,4 @@
+# AEGIS-FP CDPXHPF5AB6J3IQ2 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Scorecard core: pulls and verdicts. Only numpy + pyyaml needed; CAMB optional (Lyman-alpha, S8)."""
 from __future__ import annotations
 import math

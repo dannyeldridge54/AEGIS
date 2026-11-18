@@ -1,3 +1,4 @@
+# AEGIS-FP 4B4XTVRK4TSHXWBQ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Eisenstein & Hu 1998 no-wiggle transfer function (astro-ph/9709112 Eqs. 26, 28-31). Validated: L9a."""
 import numpy as np
 def T_nowiggle(k_hMpc, h, ob, oc, Tcmb=2.7255):

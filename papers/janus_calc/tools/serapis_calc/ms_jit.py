@@ -1,3 +1,4 @@
+# AEGIS-FP VXX6SJRF64IT7OOH · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Exact single-field MS reference, compiled (numba): spectra_fast's equations (R and h modes, e-fold time) with background + all k in one
 compiled real ODE, adaptive Dormand–Prince 5(4). Potential from a sympy expression in one symbol. Equivalence vs ms.spectra_fast: PREREG_MSJ1."""
 import math, numpy as np, sympy as sp, numba as nb

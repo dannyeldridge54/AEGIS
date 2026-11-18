@@ -1,3 +1,4 @@
+<!-- AEGIS-FP KOZHBCLS7CESFZHT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J7c2 — reheating-route head-to-head, corrected matching (replaces VOID J7c, see its DEVIATIONS D1)
 
 Locked 2026-11-17 before any J7c2 number.

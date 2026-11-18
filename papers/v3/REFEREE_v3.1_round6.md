@@ -1,3 +1,4 @@
+<!-- AEGIS-FP EUIQV3VVDGPIG3AK · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee report, round 6 (16 Nov 2026, 05:40 UTC): SERAPIS v3.1 draft (papers/v3/serapis_v3.tex)
 Reviewer: Claude (internal referee pass against D719–D768). Recommendation: major revision before the Zenodo v3.1 upload.
 

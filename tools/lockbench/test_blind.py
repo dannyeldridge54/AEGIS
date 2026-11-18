@@ -1,3 +1,4 @@
+# AEGIS-FP BCWTTBU4C3RTON6L · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import sys, os, tempfile, shutil; sys.path.insert(0, '.')
 import tools.lockbench.blind as B
 d = tempfile.mkdtemp(); B.SEALED = f'{d}/sealed'; B.INDEX = f'{B.SEALED}/INDEX.jsonl'

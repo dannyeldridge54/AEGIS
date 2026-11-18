@@ -1,3 +1,4 @@
+# AEGIS-FP YNAYXXCLYQJXQNON · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Hyperion BBN network (B6): LINX (pip linx-bbn; Giovanetti, Lisanti, Liu, Mishra-Sharma, Ruderman) as primary engine.
 Referees: PRIMAT 2021 table (bbn.py) and PRyMordial (external clone, D1104/D1107). Explicit helium conventions (lesson D1082a):
 Yp_mass = helium MASS fraction; Yp_BBN = nucleon fraction 4 n_He4/n_b. dNeff_init is LINX's INITIAL Delta N_eff (D1109: 0.3 initial -> 0.078 final; solve for the init value to hit a target final N_eff)."""

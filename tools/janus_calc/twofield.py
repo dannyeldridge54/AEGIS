@@ -1,3 +1,4 @@
+# AEGIS-FP QPIX5QHUXXP3R756 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J6: multi-field delta-N for Janus (M_P reduced = 1). Validated: D999 (f_NL vs Vernizzi-Wands analytic to 0.6 %,
 angle independence 1e-11, step convergence 1e-6) and D1000 (NLO r vs the single-field second-order calculator to 9e-5).
 Sources: Vernizzi & Wands astro-ph/0603799 Eqs 11, 17, 28, 30; Byrnes & Wands astro-ph/0605679 Eqs 43-45, 81.

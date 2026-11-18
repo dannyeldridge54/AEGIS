@@ -1,3 +1,4 @@
+# AEGIS-FP MIYRO6WR4DN7EOK5 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Figure 5: the exact allowed strip (D678/D679) against current n_s bands. AI-assisted."""
 import re, numpy as np, matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 R='field_tests/results/janus_strip_d678.txt'; R2='field_tests/results/rho_strip_d680.txt'; O='papers/v3/figs/'

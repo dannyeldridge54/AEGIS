@@ -1,3 +1,4 @@
+<!-- AEGIS-FP PPAB7LSKSM7R3APG · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J7b — Janus vs ASPIC widened to 17 models, with a resolved α_s reference
 
 Locked 2026-11-17 before any J7b number. Same codes, pivot definition and claims as PREREG_J7a (ASPIC @75400d2,

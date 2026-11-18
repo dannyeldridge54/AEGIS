@@ -1,3 +1,4 @@
+# AEGIS-FP AZCBBJ2XSIYB36DB · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J7d (locked PREREG_J7d_aspic_twoparam)."""
 import sys, json, time, math, numpy as np, warnings; sys.path.insert(0, '.'); warnings.filterwarnings('ignore')
 from tools.janus_calc.core import Model, spectra3

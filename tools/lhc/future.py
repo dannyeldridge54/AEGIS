@@ -1,3 +1,4 @@
+# AEGIS-FP VD42BPKFA4QORMYX · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """CERN+1 future colliders: wino disappearing-track reach at any sqrt(s) and luminosity (rough beyond 13.6 TeV).
 Cross section from the Drell-Yan scaling route; efficiency and decay window from the Run-2 recast; background x lumi x R_bkg."""
 import math

@@ -1,3 +1,4 @@
+# AEGIS-FP RM72HOFHJV3JXBRY · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Scalar-sector sufficient stability condition (BTR 2209.10553 Eq. 5.10; D1140): Ω'/φ₀' ≥ −8/(γ(D−2)²) everywhere ⇒ b ≥ 0 ⇒ all scalar m² ≥ 0."""
 import sympy as sp, mpmath as mp
 from .background import y

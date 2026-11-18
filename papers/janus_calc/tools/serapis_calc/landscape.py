@@ -1,3 +1,4 @@
+# AEGIS-FP KDK5LKDSSCTR7QKV · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Level 2: the potential on the whole upper half-plane: vacuum finder and masses (Hessian in canonical units)."""
 import numpy as np
 from scipy.optimize import minimize

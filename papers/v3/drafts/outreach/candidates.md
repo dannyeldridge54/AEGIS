@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 3WXLEBKB4KQIOWLY · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Endorsement / collaboration candidates (drafts only — Danny reviews and sends himself)
 Chosen because their own papers are the closest prior art cited in SERAPIS v3. Emails are as printed on their own papers / institute pages (public, professional).
 | # | Who | Why them (cited work) | Email (source) |

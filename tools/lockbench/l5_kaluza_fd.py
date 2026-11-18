@@ -1,3 +1,4 @@
+# AEGIS-FP N4TPM54NGIMR5HEH · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L5-K (locked PREREG_L5_kaluza_fd_mms)."""
 import sys, math, time, numpy as np; sys.path.insert(0, '.'); t0 = time.time()
 from tools.kaluza.solvers import fd_schrodinger

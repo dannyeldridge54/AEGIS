@@ -1,3 +1,4 @@
+# AEGIS-FP QJEAPNH7QZ46BIFS · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L-5 verification kit. Formulas [fetched 2026-11-17: Celik et al. 2008 ASME J. Fluids Eng. 130 078001, as reproduced on volupe.com GCI page]:
  eps21 = phi2 - phi1, eps32 = phi3 - phi2, s = sign(eps32/eps21); p ln r21 = ln|eps32/eps21| + ln[(r21^p - s)/(r32^p - s)] (fixed-point solve);
  phi_ext = (r21^p phi1 - phi2)/(r21^p - 1); e_a = |(phi1-phi2)/phi1|; e_ext = |(phi_ext - phi1)/phi_ext|; GCI_fine = 1.25 e_a/(r21^p - 1).

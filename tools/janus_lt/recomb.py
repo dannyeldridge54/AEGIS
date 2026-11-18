@@ -1,3 +1,4 @@
+# AEGIS-FP PWTOKFBWEPFBPFNH · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L0b2: minimal RECFAST (Seager-Sasselov-Scott; equations as transcribed in astro-ph/0602577 Eqs. 1-4, 6-10) for
 x_e(z), plus the drag epoch z_d (tau_d = 1). SI units, constants from scipy.constants. Saha for early phases."""
 import math, numpy as np

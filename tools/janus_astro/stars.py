@@ -1,3 +1,4 @@
+# AEGIS-FP OVDQEWTKPPB2KFEW · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Stellar structure. Lane-Emden polytropes (two routes: series start + DOP853, and an independent RK45 run at
 different tolerance), exact n = 0, 1, 5 solutions, polytrope mass/radius scalings, Chandrasekhar mass,
 Eddington luminosity, Kelvin-Helmholtz time."""

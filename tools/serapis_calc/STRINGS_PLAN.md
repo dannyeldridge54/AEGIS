@@ -1,3 +1,4 @@
+<!-- AEGIS-FP QNQE74A77D4EKRBM · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Level S plan: string one-loop masses for Project H (started 16 Nov 2026)
 Goal: decide, by computation, whether a gauge-charged scalar χ on the anti-D5 branes of the ADS T⁴/Z₂ orientifold (hep-th/9908023) gets a POSITIVE one-loop mass² ∝ E(U,2)/A on a T² factor (Project H's open condition, D964–D968, D983).
 Rule: each stage must reproduce an independent route before it is used; results go through locks as usual.

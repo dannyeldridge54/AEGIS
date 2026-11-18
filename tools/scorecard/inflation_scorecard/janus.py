@@ -1,3 +1,4 @@
+# AEGIS-FP P5GQKKTRGBSXV3AI · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Janus calculator: closed-form running alpha_s and running-of-running beta_s from (n_s, r).
 
 For V ~ 1 - A e^{-p phi} + delta e^{q phi} with kappa = q/p (AEGIS D669, D671; paper Sec. V):

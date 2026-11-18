@@ -1,3 +1,4 @@
+# AEGIS-FP TPUH55A6EZFMIDH3 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J4 (locked PREREG_J4): Janus reheating -> N*, n_s vs D979 exact."""
 import sys, warnings; sys.path.insert(0, '.'); warnings.filterwarnings('ignore')
 from tools.janus_calc import models as J

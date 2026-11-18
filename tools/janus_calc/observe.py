@@ -1,3 +1,4 @@
+# AEGIS-FP UMDVPHUTQHKSIS37 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """One-call interface (J2 exact switch, J4 reheating -> observables, J5 error bars).
 observe(model, TR=..., w=0.0) solves N* self-consistently from the reheating temperature with the matching equation
 (Planck 2018 X form, as the AEGIS toolkit uses), V*/V_end taken from the exact background (end at eps_H = 1, D979),

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP AZZLTQOIOGNTOBU3 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee response — Lattice Champions (18 Nov 2026)
 Referee verdict: NOT READY (textual fixes only; every number reproduced). All 12 required fixes applied:
 1 flip rule → Proposition with Poisson proof; constancy on α>1 labelled numerical; "isometric to dual" defined.

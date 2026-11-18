@@ -1,3 +1,4 @@
+<!-- AEGIS-FP BDRYKNFSKWSMR5TQ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J7a — Janus vs ASPIC (the real library) head-to-head on the pivot-scale observables
 
 Locked 2026-11-17 before ASPIC or Janus is run on these points.

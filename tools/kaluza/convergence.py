@@ -1,3 +1,4 @@
+# AEGIS-FP OBZG22NCE5V7ZTVN · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Cutoff convergence (S4c3/D1036) and the derived order (D1038)."""
 import math
 def aitken(m1, m2, m3):

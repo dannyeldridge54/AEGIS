@@ -1,3 +1,4 @@
+# AEGIS-FP WUM6XKQXL7XY2Y7I · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J6 (locked PREREG_J6_two_field_deltaN): two-field delta-N for Janus. M_P (reduced) = 1.
 Formulas fetched 16 Nov 2026 from Vernizzi & Wands, astro-ph/0603799 (ar5iv):
   Eq.(11) P_zeta = sum_I N_I^2 H*^2/(4 pi^2);  Eq.(17) n-1 = -2eps - 2/(sum N_K^2) + 2 sum V_IJ N_I N_J/(V sum N_K^2);

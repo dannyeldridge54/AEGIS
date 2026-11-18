@@ -1,3 +1,4 @@
+# AEGIS-FP UND3AD42PUWPYWHM · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Fig. 6: n_s by data release vs the frozen SERAPIS band (D710). AI-assisted."""
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 d=[("WMAP9",2012.9,0.972,0.013),("Planck13",2013.2,0.9603,0.0073),("Planck15",2015.1,0.9655,0.0062),("Planck18",2018.5,0.9649,0.0042),("P-ACT-LB",2024.9,0.974,0.003),("SPA",2025.9,0.9682,0.0032),("SPA+DESI",2026.3,0.9728,0.0029)]

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP OGKPYMCSIDOQ5NZC · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # R8 independent referee pass (2026-11-15, separate agent with no prior context; read-only)
 Recommendation: MAJOR REVISION. Closed-form Janus algebra verified exact; Chronos/ρ numbers match results files.
 

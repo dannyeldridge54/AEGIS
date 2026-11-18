@@ -1,3 +1,4 @@
+# AEGIS-FP WJTG2AKEAREUZSXH · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Disk cache for the (ω_b, ω_bc) → (z*, z_drag) recombination grid that L7/L10/L11/L12-type scripts rebuild every run (25 × ~6.7 s ≈ 3 min).
 Values are computed by exactly the same calls (Cosmo(67.5, wb, wbc − wb, mnu=0.06); Recomb(c, wb, YHe=0.24)); the cache key is the SHA-256 of
 background.py + recomb.py + the grid nodes, so any code change rebuilds it. Returns the same arrays bit-for-bit (checked by selftest_zgrid())."""

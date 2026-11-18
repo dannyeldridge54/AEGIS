@@ -1,3 +1,4 @@
+<!-- AEGIS-FP R7BKBPXZFD4ILM2X · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # New tools that fit the Janus method (fast face + exact face, locked comparison) — research 17 Nov 2026
 
 The Janus method = a fast approximate route that is only trusted after a locked comparison with an exact reference. Three outside tools follow

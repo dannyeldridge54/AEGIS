@@ -1,3 +1,4 @@
+# AEGIS-FP HZDF5KLEW2X5KMQF · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """All levels linked: model -> potential -> vacuum -> background -> exact spectra -> N* (self-consistent with reheating)
 -> observables -> consistency relation -> distance to data.
 

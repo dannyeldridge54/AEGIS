@@ -1,3 +1,4 @@
+<!-- AEGIS-FP BFB33SNZEGHGNTLI · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J6 — Janus two-field level: δN n_s, r, f_NL^local (validation lock)
 
 Locked 2026-11-17 (before any J6 code is run). Track J, goal J6.

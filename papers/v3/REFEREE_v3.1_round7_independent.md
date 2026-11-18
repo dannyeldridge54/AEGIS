@@ -1,3 +1,4 @@
+<!-- AEGIS-FP FZXH57AXT2HS2NE2 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee report: SERAPIS v3.1 (round 7, independent)
 
 Manuscript: `papers/v3/serapis_v3.tex` (16 Nov 2026, v3.1), refs.bib, serapis_v3.pdf.

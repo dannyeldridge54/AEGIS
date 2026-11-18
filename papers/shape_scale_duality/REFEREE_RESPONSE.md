@@ -1,3 +1,4 @@
+<!-- AEGIS-FP N4WDHMEYTEMPOAKO · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee response — Shape, Scale and Duality (doi:10.5281/zenodo.24339574)
 
 ## 18 Nov pass

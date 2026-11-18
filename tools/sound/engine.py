@@ -1,3 +1,4 @@
+# AEGIS-FP S6ZPF5TR7CRCQUA7 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """S1 sound engine (lock PREREG_S1). numpy synthesis → 16-bit PCM WAV. Label: art/analogy (sonification).
 Real frequency ratios (e.g. Balmer) are scaled into the audible range by a stated factor; nothing here is a physical claim."""
 import json, wave, math, pathlib

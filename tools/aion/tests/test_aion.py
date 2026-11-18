@@ -1,3 +1,4 @@
+# AEGIS-FP OA7SLU4X4Q2JM4DK · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import subprocess, time
 from pathlib import Path
 from aion import core

@@ -1,3 +1,4 @@
+# AEGIS-FP Q3SCAMYJ4PV3X3KD · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Paper 1 consistency relation (D669): alpha_s and beta_s from (n_s, r) given (p, kappa)."""
 import math
 def x_ramp(ns, r, p, kappa):

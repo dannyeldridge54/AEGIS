@@ -1,3 +1,4 @@
+<!-- AEGIS-FP SETFRRDQC3357MLS · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # DEVIATIONS — PREREG_J7b_aspic_wide
 
 D1 (17 Nov ~04:45Z, after the first `summary`, no numbers recomputed): the verdict line printed "NOT SHOWN" while

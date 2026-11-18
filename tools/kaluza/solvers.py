@@ -1,3 +1,4 @@
+# AEGIS-FP MVZMKBKHOEPVDCUV · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Two independent eigen-solvers (must agree before a number is used).
 pruefer_SL: Sturm–Liouville (p u')' + m² w u = 0 by Prüfer angle, Neumann-type start θ = π/2 (S4c2, D1036).
 pruefer_schrodinger: −Ψ'' + U Ψ = m² Ψ written in y with dz = J dy, Dirichlet or Neumann (S4e).

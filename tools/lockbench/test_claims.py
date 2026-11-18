@@ -1,3 +1,4 @@
+# AEGIS-FP QPZ7Y55ICPX6ACPP · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import sys, os, tempfile; sys.path.insert(0, '.')
 from tools.lockbench.claims import evaluate
 lock = '''# test lock\n```claims\n- id: C1\n  quantity: dns\n  reduce: all\n  op: "<="\n  value: 2.0e-4\n- id: C2\n  quantity: drr\n  reduce: max\n  op: "<="\n  value: 2.0e-3\n```\n'''

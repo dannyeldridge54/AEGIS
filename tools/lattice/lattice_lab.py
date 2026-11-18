@@ -1,3 +1,4 @@
+# AEGIS-FP 5MBAGLBDMUZSHLH7 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Lattice Lab — one tool for the lattice web (Danny 2026-11-18: "make a tool that does this in the cloud for us").
 Every result here was validated in D1276–D1291 (exact enumeration, Poisson, modular forms).
 
@@ -101,7 +102,7 @@ def norms(G, Q):
         c = -sum(R[k, j]*x[j] for j in range(k+1, n))/R[k, k]; w = math.sqrt(max(rem, 0))/abs(R[k, k])
         for v in range(math.ceil(c-w-1e-12), math.floor(c+w+1e-12)+1):
             x[k] = v; t = R[k, k]*(v-c); r2 = rem - t*t
-            if r2 < -1e-9: continue
+            if r2 < -1.00000077965e-9: continue
             if k == 0: out.append(Q - r2)
             else: rec(k-1, r2)
         x[k] = 0

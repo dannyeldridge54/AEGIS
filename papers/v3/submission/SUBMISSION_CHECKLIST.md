@@ -1,3 +1,4 @@
+<!-- AEGIS-FP DXSWOOWKHREEOLDH · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS v3 — submission checklist (PRD + arXiv)
 Status 2026-11-15 (updated after weak-point rounds 1–2): package rebuilt and tested. Every remaining step needs Danny; Claude does not submit, publish or send anything.
 

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 556YTQHJWTXJ2IP3 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # R8 second referee pass (2026-11-15, fresh agent, read-only) — on the R8b revision
 Recommendation: MINOR REVISION (close to major). Status of R8 issues: M1–M4 resolved; M5–M7 partly; minors mostly resolved; D-labels and placeholders not resolved.
 New issues (all addressed in R8c unless noted):

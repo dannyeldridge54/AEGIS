@@ -1,3 +1,4 @@
+# AEGIS-FP CPOS2HASRP5JTXQJ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import subprocess, sys, pathlib, yaml
 from importlib import resources
 HERE = pathlib.Path(__file__).resolve().parents[1]

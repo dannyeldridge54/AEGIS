@@ -1,3 +1,4 @@
+# AEGIS-FP XVNHPXGLRJ7E5OWY · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Optimal SNR, horizon and range with LAL's inspiral-merger-ringdown waveform IMRPhenomD (referee-generated amplitude),
 evaluated on a log frequency grid via SimInspiralChooseFDWaveformSequence; detector-frame masses m(1+z), distance D_L."""
 import math, numpy as np

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP JCRHMMSMFFWC6QGK · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Commercial licence
 
 This software is **dual-licensed**:

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP TYG6QBU75PGORQSK · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Third independent referee pass (2026-11-15, read-only) on D639–D646 — MAJOR (limited scope)
 1 MAJOR (verified): F_τ(i) ≠ 0 only because constant W0 breaks SL(2,Z); for invariant G, ∂_τG(i) = 0 → covariant completion gives m_Q² = m3/2² for all k (weight-1 cancellation disappears). [Independently found in D647.]
 2 MAJOR (suspected): weight-1 matter + weight parity → trilinear Yukawas (weight 2) and Weinberg operator (weight 3) vanish at i unless flavour multiplets with suitable ρ(S).

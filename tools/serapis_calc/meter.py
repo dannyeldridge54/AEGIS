@@ -1,3 +1,4 @@
+# AEGIS-FP 6FQV43KRJIO5FRAR · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Inverse string meter (PW6 D1268; tool T1): a measured n_s -> C and Im S·Im ρ for SERAPIS-E at the leptogenesis T_R.
 Table: exact inversion (Janus N* + U1b exact MS) at T_R 7.389e8 GeV, MSSM g* 228.75, N_eff = 4. Status: postulate (scored on future data)."""
 import math

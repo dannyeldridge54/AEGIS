@@ -1,3 +1,4 @@
+<!-- AEGIS-FP IM6VPSFZXBKTSH5T · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # DRAFT — cover letter (JCAP; swap journal name for PRD). NOT SENT. Danny to edit and submit himself.
 
 Dear Editors,

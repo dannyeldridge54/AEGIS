@@ -1,3 +1,4 @@
+<!-- AEGIS-FP KG4F2VOZW4TTSJKG · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # DEVIATIONS for PREREG_D990 (written before resuming)
 D1 (set-up, 16 Nov 21:12 CT): worker 1 stopped at the Starobinsky stress point: with the script's start φ0 = 8 the model inflates for ≈ (3/4)e^{√(2/3)·8} ≈ 510 e-folds, beyond the Janus Model's Nmax = 400, so the Janus background raised "inflation does not end within Nmax". Not a physics result; no Starobinsky numbers were produced.
 Fix: Starobinsky start φ0 = 6.5 (≈ 150 e-folds, ≫ N* = 60); the observables at N* ≤ 60 do not depend on the start. Nothing else changes (Nmax, points, thresholds). Workers resume; completed points are not recomputed (resumable by the lock).

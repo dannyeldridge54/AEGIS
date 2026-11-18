@@ -1,3 +1,4 @@
+<!-- AEGIS-FP BSQ5AGS2BX6UJJEB · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS v3 — reproducibility
 
 Every number in the paper comes from a script in `theory/modular/`. Each script was locked by a PREREG file (with a sha256 hash and a git commit) before it was run. See `papers/v3/MANIFEST.md`.

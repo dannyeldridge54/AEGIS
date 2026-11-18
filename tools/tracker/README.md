@@ -1,3 +1,4 @@
+<!-- AEGIS-FP DT6YPL2R3TCKZMVK · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS prediction tracker
 
 Re-scores the frozen SERAPIS predictions (`predictions.yaml`, from the locks) against the Inflation Scorecard's

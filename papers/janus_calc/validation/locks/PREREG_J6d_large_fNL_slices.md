@@ -1,3 +1,4 @@
+<!-- AEGIS-FP EQP7P5GOSX4VULFQ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J6d — large-f_NL comparison on uniform-density slices during slow roll (follows J6c NOT VALIDATED)
 
 Locked 2026-11-17 after J6c's result (J6c stays NOT VALIDATED as recorded) and before any J6d number.

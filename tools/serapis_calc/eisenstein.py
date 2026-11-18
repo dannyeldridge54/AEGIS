@@ -1,3 +1,4 @@
+# AEGIS-FP FOJYSREWPRQVSMGL · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Non-holomorphic Eisenstein series E(tau,s) = (1/2) sum_{gcd(c,d)=1} y^s/|c tau+d|^{2s}.
 Two independent evaluations: Fourier series (fast) and direct lattice sum (slow, check only)."""
 import mpmath as mp

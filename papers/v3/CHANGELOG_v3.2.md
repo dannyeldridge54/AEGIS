@@ -1,3 +1,4 @@
+<!-- AEGIS-FP CK3MSNJAV5CJVJCJ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS v3.2 draft — changes from v3.1 (10.5281/zenodo.24281771)
 Draft only; not uploaded. Source: papers/v3/serapis_v3.2_draft.tex (v3.1 file unchanged). 18 pages (v3.1: 15).
 ## Abstract

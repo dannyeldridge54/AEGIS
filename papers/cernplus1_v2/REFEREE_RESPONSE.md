@@ -1,3 +1,4 @@
+<!-- AEGIS-FP RLNA2AHP2TZPGRET · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee response — CERN+1 v2 (18 Nov 2026)
 Referee verdict: NOT READY (all numbers reproduced). Applied:
 1 window floor: stated as post-hoc, set from ATLAS (arXiv:2603.08315); recast "reproduces the edge".

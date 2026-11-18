@@ -1,3 +1,4 @@
+# AEGIS-FP P2I6A4WWUWYFAIOT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Jl loop mechanical checks (K1 lock-before-compute, K2 labels, K7 map line, beta3 postulate budget, beta4 derived:assumed). AI-assisted.
 Usage (repo root): python tools/loop/jl_check.py D762"""
 import re, subprocess, sys, pathlib, yaml

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 7JAZ6YVX6FEQXE7R · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Letter outline: "A parameter-free consistency relation for tilted plateau inflation" (working title)
 Started 2026-11-16 13:50 CT on Danny's Jl at the paper branch (autonomy rule: top recommendation, option 1). Draft only; no upload without Danny's word.
 Framing (honest): the relation is a clean, model-independent consistency check for any plateau with an uplift ramp; its own test needs σ(α_s) ~ 2e-5 (beyond the 2030s); distinguishing it from the attractor value needs ~2e-4 (post-2035). The near-term discriminant is n_s (SO + SPHEREx ~2030).

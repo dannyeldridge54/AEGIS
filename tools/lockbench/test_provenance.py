@@ -1,3 +1,4 @@
+# AEGIS-FP LAIUBQSBYWEGS5VH · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import sys, os, tempfile, json; sys.path.insert(0, '.')
 from tools.lockbench.provenance import stamp, check
 d = tempfile.mkdtemp(); r = os.path.join(d, 'res.txt'); c = os.path.join(d, 'job.py'); x = os.path.join(d, 'data.dat'); L = os.path.join(d, 'L.md')

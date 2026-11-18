@@ -1,3 +1,4 @@
+# AEGIS-FP FHQJSSMQRBKJEKOM · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """D990 (locked PREREG_D990): Janus vs base spectra_fast, n_s and r, 32 points. Usage: python3 ... <worker 0|1> | summary"""
 import sys, os, time, math, json, numpy as np, warnings; sys.path.insert(0, '.'); warnings.filterwarnings('ignore')
 OUT = 'field_tests/results/janus_battery_a_d990.txt'; PART = 'field_tests/results/janus_battery_a_d990.part{}.jsonl'

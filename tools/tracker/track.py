@@ -1,3 +1,4 @@
+# AEGIS-FP 27DB5QS2TZAWKREB · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """SERAPIS prediction tracker: re-score the frozen predictions against tools/scorecard's constraints.yaml.
 Run from the repo root:  python tools/tracker/track.py   -> docs/tracker/STATUS.md and docs/tracker/index.html
 Adding a data release = adding a line to constraints.yaml (with a 'date' field after the freeze to count as a test)."""

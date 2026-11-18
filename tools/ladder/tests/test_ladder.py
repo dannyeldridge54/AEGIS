@@ -1,3 +1,4 @@
+# AEGIS-FP T5S6TQT773EGD5TH · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import importlib.util, pathlib
 spec = importlib.util.spec_from_file_location("ladder", pathlib.Path(__file__).resolve().parents[1] / "ladder.py")
 L = importlib.util.module_from_spec(spec); spec.loader.exec_module(L)

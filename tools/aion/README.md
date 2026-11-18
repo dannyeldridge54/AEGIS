@@ -1,3 +1,4 @@
+<!-- AEGIS-FP YBWOQVUJ7L5W6VNU · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # AION — lock before you look
 
 *(Working name. Aion is the Greek god of unbounded time; the kit exists to prove what came first.)*

@@ -1,3 +1,4 @@
+# AEGIS-FP FMICCXYCTEHQSWDS · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Wino Sommerfeld vector with the NLO electroweak potential of Beneke, Szafron, Urban 2020 (arXiv:2009.00640,
 Eqs. 2.8, 3.14, 3.18, 3.25, 3.26; on-shell inputs). Same solver/normalisation as sommerfeld.wino_s (free case s = (1, 0))."""
 import math, numpy as np

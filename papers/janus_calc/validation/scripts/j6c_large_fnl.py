@@ -1,3 +1,4 @@
+# AEGIS-FP E2SJNLOGW2VHUUYS · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J6c (locked PREREG_J6c_large_fNL): Janus delta-N vs Byrnes-Choi-Hall 0807.1101 Eq. 21 (Example A)."""
 import sys, numpy as np; sys.path.insert(0, '.')
 from tools.serapis_calc.multifield import run

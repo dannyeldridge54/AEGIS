@@ -1,3 +1,4 @@
+# AEGIS-FP FIUFDHSRVUSPOPZI · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Compact-binary gravitational waves at leading (Newtonian, 0PN) order: chirp mass, frequency evolution,
 time to coalescence (closed form and by integrating df/dt), cycles, strain amplitude."""
 import math

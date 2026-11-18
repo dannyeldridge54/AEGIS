@@ -1,3 +1,4 @@
+<!-- AEGIS-FP VAVM6E372QZVP6OZ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 ## 1 — To: dinggj@ustc.edu.cn
 Subject: Modular inflation at τ = i — request for feedback (and possible arXiv endorsement)
 

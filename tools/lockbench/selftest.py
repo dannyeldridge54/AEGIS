@@ -1,3 +1,4 @@
+# AEGIS-FP BQOXU22LYGREU4WF · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L-8: pinned environment + one-command self-test.
   python3 tools/lockbench/selftest.py pin     -> writes tools/lockbench/ENV.lock (python, numpy, scipy, sympy, mpmath, gfortran, ASPIC/MMC commits)
   python3 tools/lockbench/selftest.py check   -> compares the running machine to ENV.lock (exit 1 on a major/minor mismatch) and runs every

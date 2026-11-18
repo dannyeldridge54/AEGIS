@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 3BKSOVH3WUVK3MAY · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Full derivations (one section per tick, appended by the DERIVE step)
 Each section gives the chain from model assumptions to the tick's result, one equation per step:
 - each step labelled [derived] / [literature] / [postulate Pn] / [estimate];

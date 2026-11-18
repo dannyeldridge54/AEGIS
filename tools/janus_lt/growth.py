@@ -1,3 +1,4 @@
+# AEGIS-FP L5YJAZXVU5TEGNJF · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L2: scale-independent linear growth, arXiv:2602.08207 Eqs. 5-7: D'' + (2 + dlnH/dlna) D' - 1.5 Om(a) D = 0, x = ln a."""
 import math, numpy as np
 from scipy.integrate import solve_ivp

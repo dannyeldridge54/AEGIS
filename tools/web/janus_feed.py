@@ -1,3 +1,4 @@
+# AEGIS-FP MA4OED4XOLCJNVVE · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Janus auto-feeder (AF). Every tool run / D-note / collector pass / ingest appends an event here; Janus animates a
 pulse along the named edge and grows the web when new nodes/edges arrive. Honest: this just records activity — no claims.
 Writes docs/web/janus_feed.jsonl (tail-able); the Janus app polls a deployed copy. Keep it small (ring-trimmed)."""

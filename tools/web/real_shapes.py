@@ -1,3 +1,4 @@
+# AEGIS-FP 6WO4SLJOJKZGOOYC · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Physics-accurate curves for the Janus top strip (all computed here from our validated tools; no decoration):
  1. inflaton path on the curved field space: Janus-MF-NC background (D1217/D1224) for DoubleQuadNC (R=1, start (0.4, 26)),
     embedded on the sphere of radius R (metric R²(dφ1² + sin²φ1 dφ2²) → φ1 polar, φ2 azimuth); ordered in e-folds N.

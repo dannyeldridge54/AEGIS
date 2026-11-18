@@ -1,3 +1,4 @@
+# AEGIS-FP VKJA3QFRB3AFOYN4 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """AEGIS update ladder: D-note MAP lines -> theory map -> Whiteboard data -> Star Mapper model card.
 
     python tools/ladder/ladder.py update     # apply new MAP lines, flag downstream nodes, write exports

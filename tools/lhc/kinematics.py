@@ -1,3 +1,4 @@
+# AEGIS-FP LS5SCZQZWQPOWL5M · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """CERN+1 kinematics: a parton luminosity extracted from the cross-section table itself (no PDF file), and the chargino boost
 distribution it implies. L(tau) = N tau^-a (1 - sqrt(tau))^b fitted to the 13 TeV table shape via
 Phi(tau0) = Int_{tau0}^1 dtau/tau L(tau) g(tau0/tau), g = beta(3 - beta^2)/2 (s-wave fermion pair, vector current)."""

@@ -1,3 +1,4 @@
+# AEGIS-FP A26K2G5I3RD4ZSTJ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Spherical Jeans equation, constant anisotropy beta (Binney & Tremaine 2008 §4.8):
 sigma_r^2(r) = [nu(r) r^{2 beta}]^{-1} * int_r^inf nu(r') r'^{2 beta} G M(r')/r'^2 dr'."""
 import math

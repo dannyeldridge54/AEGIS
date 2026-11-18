@@ -1,3 +1,4 @@
+# AEGIS-FP 3BRUZ3HI2AJR3UAO · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Level 6: N* from the matching equation (Planck 2018 X eq. 47 form, as used in D719; w = 0 between end of inflation and reheating).
 N* = 67 - ln(k/a0H0) + 1/4 ln(V*^2/(M_P^4 rho_end)) + 1/12 ln(rho_th/rho_end) - 1/12 ln(g*)."""
 import math

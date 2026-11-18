@@ -1,3 +1,4 @@
+# AEGIS-FP LIIPGMJE4EPFDUDU · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L-1: machine-readable claims. A lock may carry a fenced block
 
 ```claims

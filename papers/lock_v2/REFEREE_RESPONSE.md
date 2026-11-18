@@ -1,3 +1,4 @@
+<!-- AEGIS-FP KTFLMTAH7V4QAFZL · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee response: Lock Before You Compute v2 addendum
 
 ## 18 Nov pass

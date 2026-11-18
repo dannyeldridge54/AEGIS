@@ -1,3 +1,4 @@
+# AEGIS-FP 7KLN33UB4UJ4XLVS · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J1: any potential. Give V(phi) as a formula string (sympy syntax, variable 'phi', parameters as keywords) or a
 callable; derivatives are exact (sympy) for strings, finite-difference (5-point) for callables. The start of the
 background is found automatically: the field value where enough e-folds remain (slow-roll estimate, then refined)."""

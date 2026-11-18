@@ -1,3 +1,4 @@
+# AEGIS-FP FPIR55TGUQNHDIK3 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Hyperion -> Star Mapper orbit feed (PC version).
 
     python -m tools.janus_astro.mapper_orbits --cosmos-map ufe-v2/cosmos_map [--skymap apps/skymap] [--max-tiles N]

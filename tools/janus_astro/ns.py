@@ -1,3 +1,4 @@
+# AEGIS-FP AHHJS7T7NU7DLBND · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Neutron stars with realistic equations of state: Read-Lackey-Owen-Friedman (2009, arXiv:0812.2163) piecewise polytropes
 (SLy crust = their Table 2; core = log p1, Gamma1..3 at rho1 = 10^14.7, rho2 = 10^15 g/cm^3), TOV + tidal y-equation
 (Hinderer 2008 form), mass-radius curve, M_max, R_1.4, Love number k2 and Lambda. Internally cgs -> geometric (cm)."""

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 2FNHZFAQCR6NMGQ6 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # AEGIS: current state (16 Nov 2026, 12:40 CT). Read before working.
 
 ## Active line: SERAPIS v3 / v3.1 (modular inflation)

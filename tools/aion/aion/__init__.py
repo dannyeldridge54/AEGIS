@@ -1,3 +1,4 @@
+# AEGIS-FP M5SOAYTTWGG3JYZX · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """AION — lock before you look.
 
 A small pre-registration kit for computational research kept in git:

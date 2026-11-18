@@ -1,3 +1,4 @@
+# AEGIS-FP CA7NXIV3Y3MVEFKA · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Resumable parallel sweep with a per-task wall limit (the default for every new AEGIS/Janus batch job).
 Usage in a job script:
     from tools.calcq.sweep import sweep

@@ -1,3 +1,4 @@
+# AEGIS-FP IPCFAL64BUGOA6WF · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Level 3b: background for several canonical fields (flat field space), e-fold time; ends at eps_H = 1."""
 import numpy as np
 from scipy.integrate import solve_ivp

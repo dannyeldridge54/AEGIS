@@ -1,3 +1,4 @@
+# AEGIS-FP QN2KQ4TMCYABVLGN · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """CERN+1 model-vs-collider panel: the SERAPIS wino window (read-only from the theory map) against CERN+1 collider reach."""
 import pathlib, re
 from . import recast_dt

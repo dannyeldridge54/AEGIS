@@ -1,3 +1,4 @@
+# AEGIS-FP JENXMK7PTHPAUGV2 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """AEGIS Web desktop app: opens the AEGIS Web display (aegis_web.html) in a native window (pywebview → Windows Edge WebView2).
 Build (Windows): python -m PyInstaller --onefile --windowed --name AEGIS_Web --add-data "aegis_web.html;." aegis_web_app.py"""
 import os, sys, webview

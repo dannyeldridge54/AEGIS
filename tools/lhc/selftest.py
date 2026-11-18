@@ -1,3 +1,4 @@
+# AEGIS-FP VZRVBXTSZW5KZNV7 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """CERN+1 symmetry self-tests (LHC6): charge asymmetry (u/d), Drell-Yan scaling of ratios, SU(2) charged/neutral ratio."""
 import math, numpy as np
 from scipy.interpolate import CubicSpline

@@ -1,3 +1,4 @@
+# AEGIS-FP IXF2GXQYZRHI2X3L · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Landscape grid for the AEGIS web: the SERAPIS-E potential V(φ; C) from the unchanged pipeline (tools/serapis_calc/pipeline.build),
 on φ from just above the minimum to the start of the 600-plateau region, for BHK tilt C/1.15e-6 from 0 to 3. Writes docs/web/landscape.json."""
 import json, pathlib, sys, numpy as np

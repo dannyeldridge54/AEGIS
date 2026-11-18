@@ -1,3 +1,4 @@
+# AEGIS-FP YJO5YP4Y5TJDPF2M · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Wino Sommerfeld enhancement at leading order (s-wave, spin singlet), two states (chi0 chi0, chi+ chi-).
 Potential (Cohen-Lisanti-Pierce-Slatyer 1307.4082 App. A eq. A4; same as 2507.15934 eq. for n = 3, i = 0, 1):
   V_00 = 0, V_0+ = V_+0 = -sqrt(2) alpha_W e^{-m_W r}/r, V_++ = 2 dm - alpha/r - alpha_W c_W^2 e^{-m_Z r}/r.

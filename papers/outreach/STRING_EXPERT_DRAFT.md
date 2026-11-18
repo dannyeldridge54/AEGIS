@@ -1,3 +1,4 @@
+<!-- AEGIS-FP OFCZQUP6TBIUNSLM · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # DRAFT — not sent. Send only on Danny's "Send". Suggested recipients (look up current addresses on their institutional pages): Ivano Basile; Emilian Dudas (CPHT); Jihad Mourad; Noriaki Kitazawa.
 
 Subject: One-loop mass of a charged brane scalar in the T⁴/Z₂ anti-D5 (BSB) orientifold — sign and complex-structure dependence?

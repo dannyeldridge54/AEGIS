@@ -1,3 +1,4 @@
+# AEGIS-FP 6XISMVWRXIRTA4IA · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """SERAPIS v3 figures 1-4. Data: field_tests/results (D602, D635/D632, D634) and the D595/D588 background code. AI-assisted."""
 import re, math, os, sys, numpy as np
 import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt

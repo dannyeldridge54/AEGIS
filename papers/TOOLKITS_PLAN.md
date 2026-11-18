@@ -1,3 +1,4 @@
+<!-- AEGIS-FP PECAUYFECV7L3DIF · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # New toolkits from what we learned (17 Nov 2026) — research summary + plan
 Searched for prior art (web, 17 Nov):
 - Warped-compactification KK spectra / stability: no general public package found — results are per-paper (e.g. 1911.01444, 2206.10628, hep-th/0512212);

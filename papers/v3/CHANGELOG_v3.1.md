@@ -1,3 +1,4 @@
+<!-- AEGIS-FP EGSIU6TH2WV3VYLC · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS v3.1 — PUBLISHED 2026-11-16 as 10.5281/zenodo.24281771 (new version of 10.5281/zenodo.24250733; concept 10.5281/zenodo.24250732)
 - Added missed prior art: Schimmrigk, automorphic inflation (1512.09082) and j-inflation (1612.09559) — V ∝ |j|², zero at ρ, slow roll near τ = i (E6 = 0). Cited in the introduction, prior-art paragraph and ρ section (D659).
 - No numbers or predictions changed.

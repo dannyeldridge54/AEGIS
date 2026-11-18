@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 4O6GIKQEKAEOFIIE · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Janus-LT: the late-universe twin of the Janus calculator (plan, 16 Nov 2026)
 Goal: instant, validated late-universe cosmology for ANY expansion history — ΛCDM, w0–wa, early dark energy, SERAPIS's late branches, modified growth — with an exact Boltzmann code as the referee. Audience: everyone fitting SN, BAO, CMB-distance and growth data (far larger than the inflation community).
 Pattern (same as Janus): fast physics-aware route + exact referee; every stage locked, two routes, D-note, Zenodo version.

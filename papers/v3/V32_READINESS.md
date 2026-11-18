@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 7BZO25GLP6FKLBSE · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS v3.2 draft: readiness check (16 Nov 2026, 13:00 CT; D907)
 No upload or Zenodo action taken. v3.1 (10.5281/zenodo.24281771) is unchanged.
 

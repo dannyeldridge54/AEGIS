@@ -1,3 +1,4 @@
+# AEGIS-FP LZBIDRGZYF2MGJSV · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import sys, os, tempfile; sys.path.insert(0, '.')
 from tools.lockbench.lint import lint
 d = tempfile.mkdtemp()

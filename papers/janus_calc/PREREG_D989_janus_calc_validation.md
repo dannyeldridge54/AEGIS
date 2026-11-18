@@ -1,3 +1,4 @@
+<!-- AEGIS-FP JRY52PEAJF3TWBWO · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG D989: Janus String Calculator (tools/janus_calc) vs the base toolkit (tools/serapis_calc) — accuracy and speed (written before the comparison runs)
 Janus route (as committed with this lock): one background integration; Hubble-flow ε1, ε2, ε3 at the pivot (spline derivatives); second-order n_s and r; α_s by differentiating the second-order n_s along the background (alpha_dn, step 0.25); also reported: the second-order α_s formula (alpha_flow), not judged.
 Base route (reference): tools/serapis_calc ms.spectra(..., ic='ds') on the 9-point wide grid W = [-0.8, 0.8] (PREREG_D981 method), bd = 1000; selftest must pass.

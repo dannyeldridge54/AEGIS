@@ -1,3 +1,4 @@
+# AEGIS-FP VAY7SQS33KNLAABI · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Milky Way potential and orbits: our own implementation of the three MWPotential2014 components (Bovy 2015, ApJS 216, 29)
 with parameters read from galpy (the referee) in natural units (r0 = 8 kpc, v0 = 220 km/s, G = 1):
   bulge   rho = amp r^-alpha exp(-(r/rc)^2)           M(r) = 2 pi amp rc^(3-alpha) gamma_lower((3-alpha)/2, (r/rc)^2)

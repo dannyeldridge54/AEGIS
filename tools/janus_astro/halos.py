@@ -1,3 +1,4 @@
+# AEGIS-FP 3YLJTKZ6XXVI3BYD · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Dark-matter halo profiles: NFW, Einasto, Burkert. Enclosed mass in closed form and by direct quadrature
 (two routes), circular velocity, M200/R200 definitions (Delta x rho_crit)."""
 import math, numpy as np

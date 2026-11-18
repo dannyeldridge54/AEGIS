@@ -1,3 +1,4 @@
+# AEGIS-FP ILSENDMMY34TWM4I · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L-2: lock linter — run before a lock is committed. Returns a list of problems (empty = clean).
 Reads the ```claims block (claims.py) and an optional ```design block:
 ```design

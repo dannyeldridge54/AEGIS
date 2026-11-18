@@ -1,3 +1,4 @@
+<!-- AEGIS-FP U6YIT4DCAMWNMHKG · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS — one-page prediction sheet (R6)
 
 Frozen 15 Nov 2026; harmonised with the R8 referee fixes (R8b, D636/D637) (locks D605 τ=i, D615 ρ, D633 + addendum running; hashes in MANIFEST.md).

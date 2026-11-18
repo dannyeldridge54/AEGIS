@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 2FJSDZ27ZNKEUBYS · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Readiness ladder status
 - [x] R1 freeze manifest — papers/v3/MANIFEST.md (2026-11-15 09:18 CT; 28 locks, 0 missing hashes)
 - [x] R2 reproducibility package — papers/v3/repro/ (3 key scripts re-run: byte-identical)

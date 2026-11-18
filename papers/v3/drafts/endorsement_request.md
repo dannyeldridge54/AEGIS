@@ -1,3 +1,4 @@
+<!-- AEGIS-FP E32B465GZXV5RTYP · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # DRAFT — arXiv endorsement request (astro-ph.CO or hep-th). NOT SENT. Danny sends it himself.
 
 Subject: arXiv endorsement request — modular-invariant inflation paper (astro-ph.CO)

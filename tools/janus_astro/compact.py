@@ -1,3 +1,4 @@
+# AEGIS-FP S2GBWQVXGDOONWQT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Compact objects. TOV integrator (any barotropic EoS rho(P)); exact Schwarzschild interior for checks;
 Kerr equatorial circular orbits: ISCO by the Bardeen-Press-Teukolsky closed form and by minimising E(r);
 horizon, photon sphere."""

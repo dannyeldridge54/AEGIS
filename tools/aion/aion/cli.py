@@ -1,3 +1,4 @@
+# AEGIS-FP 5KMGRH6FMEX2P5VS · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Command line: aion new | lock | deviate | check."""
 from __future__ import annotations
 import argparse, sys

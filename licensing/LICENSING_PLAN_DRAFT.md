@@ -1,3 +1,4 @@
+<!-- AEGIS-FP G2SUQU6S2MUP7SG7 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # AEGIS licensing plan — DRAFT for Danny (18 Nov 2026)
 
 > **Status 18 Nov 2026:** adopted, with one change from Danny — every business pays (starting at $10/yr), only individuals, scientists, students and public-good bodies are free. The governing texts are `LICENSE` and `licensing/COMMERCIAL_LICENSE.md`.

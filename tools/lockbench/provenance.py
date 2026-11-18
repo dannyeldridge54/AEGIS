@@ -1,3 +1,4 @@
+# AEGIS-FP 3X4IX5FEORJQAYCQ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L-4: provenance stamp — every results file gets <results>.prov.json recording what produced it.
 stamp(results, lock=None, code=[], data=[], t0=None) -> dict ; check(results) -> (ok, problems) re-hashes everything listed."""
 import hashlib, json, os, platform, socket, subprocess, sys, time

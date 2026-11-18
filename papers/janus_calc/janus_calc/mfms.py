@@ -1,3 +1,4 @@
+# AEGIS-FP MY7SRINA4FLW4QOH · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """JANUS-MF: exact multi-field Mukhanov–Sasaki (MultiModeCode equations, arXiv 1410.0685 Eqs. 3.11–3.23). M_P = 1, e-fold time, a = e^N.
 spectra_mf(V, grad, hess, f0, Nstar, dlnk) -> dict(ns, r, PR(k*), lnk, lnPR). Validated: JMF2 (see field_tests)."""
 import math, numpy as np

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP YD33J3KVMX6OPB3V · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Accuracy queue (Jl accuracy track; top open item first). Status: open / in progress / done (D###) / retired (D###)
 
 1. [done D807] Referee merge: papers/v3/REFEREE_v3.1_round7_independent.md (agent running since 06:17 CT). Fix valid items via correction notes; add the D806 qualifier (the α_s leg is beyond 2030s reach) to the title/abstract framing. Rebuild. (A0)

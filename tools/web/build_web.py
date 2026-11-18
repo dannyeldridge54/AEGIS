@@ -1,3 +1,4 @@
+# AEGIS-FP VSDDZW674GKY5PO4 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """AEGIS web: one graph of the twin-ladder strings, the theory map, the Janus fast/exact pairs and the SERAPIS string sector.
 Every edge cites the D-note (or source) that backs it. Output: docs/web/web.json (read by the Web artifact and by waves.py).
 Curated links are labelled source='curated' (my reading of the D-notes); theory-map dependencies come from theory/map/map.yaml unchanged."""

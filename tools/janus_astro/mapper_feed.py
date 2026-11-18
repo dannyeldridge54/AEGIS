@@ -1,3 +1,4 @@
+# AEGIS-FP BRN5Q2GQYO2OV65K · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Hyperion -> Star Mapper feed: Gaia astrometry (ra, dec, distance, pmra, pmdec, radial_velocity) to Galactocentric
 phase space, absolute magnitude, and Milky Way orbit parameters (pericentre, apocentre, z_max, eccentricity, energy, L_z)
 in Hyperion's validated MWPotential2014 model (galaxy.py, A5a/D1061).

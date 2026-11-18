@@ -1,3 +1,4 @@
+# AEGIS-FP EGYA55FBHEFAQ2UB · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """General-D tadpole vacua (BTR 2209.10553 §3, action R − 4/(D−2)(∂φ)² − 2α_E e^{γφ}, gauge B = −γφ/2, α_E = 1, φ₀ = 0).
 Returns sympy expressions A(y), P(y)=φ(y), the coordinate y, and the interval (y1, y2)."""
 import sympy as sp

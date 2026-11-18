@@ -1,3 +1,4 @@
+<!-- AEGIS-FP HXYPJVJPRJL4KASX · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J7d2 — PSNI rescore with a bisection start-finder (J1b), follows D1018
 Locked 2026-11-17 before any J7d2 number.
 J1b: tools/janus_calc/anyV.py gets start_bisect(V, dV, y_lo, y_hi, Nwant=80): bisection on the starting field y₀ between

@@ -1,3 +1,4 @@
+# AEGIS-FP JJDVFKNAIQ6IJ55N · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J6b (locked PREREG_J6b_deltaN_NLO): NLO delta-N r. Formulas: Byrnes & Wands astro-ph/0605679 Eqs 43-45, 81; see lock."""
 import sys, numpy as np; sys.path.insert(0, '.'); sys.argv = ['x']
 import importlib.util

@@ -1,3 +1,4 @@
+# AEGIS-FP BJYDS4UZDAZSGHZQ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """D989 (locked PREREG_D989): Janus String Calculator vs base toolkit."""
 import sys, time, math, numpy as np, warnings; sys.path.insert(0, '.'); warnings.filterwarnings('ignore')
 from tools.janus_calc import models as J, core

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP BR4LSFZLSYOS6WCN · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS — derivation status (audited 17–18 Nov 2026)
 
 Status as of D1252. Every number below was re-derived or recomputed during the node audit NA1–NA16 (D1233–D1252) and the web postulates PW1–PW2 (D1245, D1251). Labels: **[computed]** (code run tonight, locked), **[literature]** (fetched source), **[assumed]** (stated input, not derived), **[postulate]** (built from post-hoc choices; scored only on future data).

@@ -1,3 +1,4 @@
+# AEGIS-FP NDC3DCGAQIBKA5F7 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Build docs/web/aegis_web.html from web.json + waves.json (rerun after build_web.py and waves.py)."""
 import json, pathlib
 R = pathlib.Path(__file__).resolve().parents[2]

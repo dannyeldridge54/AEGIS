@@ -1,3 +1,4 @@
+<!-- AEGIS-FP EMWGXIANYZIZ26DK · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # References verified (Readiness R3)
 
 Each entry was opened on arxiv.org (abs, pdf or html) or ar5iv on 2026-11-15; title, authors and year were read from the page.

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP A3WVBGUG4GZHGOVY · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Fourth independent referee pass (2026-11-15, read-only) on D647–D655 — MINOR (one must-fix)
 1 MAJOR (verified): D654's weight rule ignores the η^{-2} multiplier (v(S) = i): Y(i) ≠ 0 iff Σk_i ≡ 0 mod 4 (not k_Y ≡ 0); singlet Weinberg operator with k_L = k_Hu = 1 is non-zero (E4η^{-2}); re-derive proton-parity selection rules (D551, D612). → D654a, D656, D657.
 2 minor: covariant superpartner row in the "Frozen predictions" table is not locked; FCC-hh needed for its falsifiers.

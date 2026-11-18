@@ -1,3 +1,4 @@
+# AEGIS-FP A4E2CFTN7Q36MPJA · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """A6c: compiled (numba) fast paths for Hyperion's heaviest calculations. Each kernel implements the SAME algorithm as a
 validated Python routine and is regression-tested against it:
   orbits_fast      == mapper_feed.orbit_params_batch3 (per-star adaptive KDK leapfrog, tabulated bulge M(r), parabolic

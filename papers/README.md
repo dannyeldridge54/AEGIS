@@ -1,3 +1,4 @@
+<!-- AEGIS-FP VWCKZB4JWBBF24BI · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Paper: Torsion-Born Early Dark Energy with an Onset Locked to Matter–Radiation Equality
 
 > **Status notice (11 Nov 2026).** This early-dark-energy paper is kept as a historical record; it is no longer the

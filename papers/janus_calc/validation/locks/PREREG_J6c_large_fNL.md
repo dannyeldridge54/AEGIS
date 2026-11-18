@@ -1,3 +1,4 @@
+<!-- AEGIS-FP GXHZKAN3YIBZXXWF · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J6c — Janus two-field δN in a LARGE f_NL case (T5 of the J6 plan)
 
 Locked 2026-11-17 before any J6c number is computed.

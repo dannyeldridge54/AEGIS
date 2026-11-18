@@ -1,3 +1,4 @@
+<!-- AEGIS-FP EKRLE5PHMWQ25IQE · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS — what changed on 16 Nov 2026 (D828–D873)
 
 ## Unchanged

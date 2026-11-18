@@ -1,3 +1,4 @@
+# AEGIS-FP FADFNMG2JGQK7DWK · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J6d (locked PREREG_J6d_large_fNL_slices)."""
 import sys, numpy as np; sys.path.insert(0, '.')
 from scipy.integrate import solve_ivp

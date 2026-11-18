@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 6W7UZA3WEU26LZHK · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J7d — Janus vs ASPIC on two-parameter models (fixed N*), same method and claims as PREREG_J7b
 Locked 2026-11-17 before any J7d number. ASPIC @75400d2, srflow second order at foo_x_trajectory(−N*, x_end, params).
 Reference: exact MS, J7b settings (9 k-points on [−1, 1], bd = 1000; R0 passed in J7b). Janus: core.spectra3.

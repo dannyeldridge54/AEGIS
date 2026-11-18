@@ -1,3 +1,4 @@
+# AEGIS-FP KA2OLC7DKFUVXGSG · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import hashlib, subprocess
 def lock_ok(path, branch='origin/unify-bg'):
     """True only if the lock file's sha256 matches its .sha256, and both are committed and present on the remote branch."""

@@ -1,3 +1,4 @@
+# AEGIS-FP RVY3FZHDIAAQCPT4 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Hyperion relic-density module (R1): wino triplet freeze-out with coannihilation (Born; Sommerfeld hooks later).
 Annihilation matrices: Hisano et al. hep-ph/0610249 Eqs. 2-8. Boltzmann: standard Kolb-Turner form (constants labelled in PREREG_R1)."""
 import math

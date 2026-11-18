@@ -1,3 +1,4 @@
+# AEGIS-FP JTY5S3LUTCXSBXMB · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Data for the Janus 'Strings' view: the inflaton torus modulus y(N) = Im τ along the SERAPIS-E history at the A1 point (C 1.25e-6, N* 50.18),
 and the brane / tadpole configuration (D696, D861, NA11). Output: docs/web/string_geom.json."""
 import sys, json, math, pathlib; R = pathlib.Path(__file__).resolve().parents[2]; sys.path.insert(0, str(R))

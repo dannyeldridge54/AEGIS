@@ -1,3 +1,4 @@
+# AEGIS-FP LRISJSJVSGUGBCC5 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Release smoke test for the AEGIS public toolkits. Run from the repo root:  python tools/release_smoketest.py
 Checks CERN+1 (tools/lhc), Lattice Lab (tools/lattice) and the Janus inflation calculator (tools/janus_calc)
 against values published in the papers. Exit code 0 = all pass."""

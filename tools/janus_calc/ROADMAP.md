@@ -1,3 +1,4 @@
+<!-- AEGIS-FP MTHGMEOZWE5PHYML · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Janus String Calculator — goals (set by Danny, 16 Nov 2026): do everything ASPIC does, better, and prove it
 Standing Jl-loop track "J". Every stage: lock first, two independent routes, reproduce the previous stage's limit, record a D-note. ASPIC claims are checked against its manual (cp3.irmp.ucl.ac.be/~ringeval/man/libaspic.html) before any comparison is stated.
 - J0 DONE (D989): n_s, r validated on 32 points (24 SERAPIS + 8 textbook), ~4e4x faster than the exact solver.

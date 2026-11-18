@@ -1,3 +1,4 @@
+<!-- AEGIS-FP JXT7LUIRBMAN5PEH · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # 50 research loops (16 Nov 2026) — ★ = running
 ## Early universe (Janus makes these fast)
 1. Eternal inflation threshold per branch (quantum jump vs classical roll)

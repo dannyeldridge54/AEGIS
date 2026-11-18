@@ -1,3 +1,4 @@
+# AEGIS-FP ONLAKCUP2IWGS6HO · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """JANUS-MF-JIT: spectra_mf_fast's equations (MultiModeCode Eqs. 3.11–3.23, as tools/janus_calc/mfms.py) with the whole integration compiled by numba.
 Background + all k-modes + tensors in one real ODE system, adaptive Dormand–Prince 5(4) with the same rtol (1e-10). Potential given as a sympy expression.
 Equivalence vs spectra_mf: PREREG_JMF11_jit."""

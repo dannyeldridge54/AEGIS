@@ -1,3 +1,4 @@
+# AEGIS-FP IH4ZU5PCUAV4KM5J · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L0: background expansion and distances from first principles (scipy.constants; no CAMB inside).
 Flat FLRW: photons (from T_CMB), massless neutrinos (N_eff, (7/8)(4/11)^{4/3}), baryons + CDM, dark energy
 (Λ, w0–wa CPL, or any F(a) multiplying ρ_DE, or a callable w(a)). Distances in Mpc."""

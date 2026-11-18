@@ -1,3 +1,4 @@
+# AEGIS-FP YSV2CHUQY2HH5XTT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Halo mass function with massive neutrinos. Linear P(k) from CAMB (referee code); sigma(R) by direct integration;
 Tinker et al. (2008) multiplicity f(sigma) taken from colossus (modelTinker08, Delta = 200 x mean) so no coefficient is retyped.
 Massive neutrinos: cold-dark-matter + baryon prescription (P_cb and rho_cb in the mass function; Costanzi et al. 2013 convention),

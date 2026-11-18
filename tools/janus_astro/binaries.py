@@ -1,3 +1,4 @@
+# AEGIS-FP H7HIP6C2W2O4RBDQ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Binaries and orbits: Kepler's third law, escape speed, Hill radius, Roche lobe radius by Eggleton (1983)'s
 fit and by direct numerical volume of the critical Roche equipotential (second route)."""
 import math, numpy as np

@@ -1,3 +1,4 @@
+# AEGIS-FP 57YXIFF4EAZYZXML · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Build docs/D_INDEX.md from the D-notes file: one line per note (number, date, title, verdict).
 Run from the repo root:  python tools/dnotes/build_index.py
 Dates are the git author date of the line holding the note's heading (git blame)."""

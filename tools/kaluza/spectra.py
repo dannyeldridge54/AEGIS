@@ -1,3 +1,4 @@
+# AEGIS-FP 2JTULM42XTGGYSIY · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Operators built from a background (background.vacuum)."""
 import sympy as sp
 from .background import y

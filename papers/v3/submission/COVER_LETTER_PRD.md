@@ -1,3 +1,4 @@
+<!-- AEGIS-FP WAUBP3FTHBOB2WKD · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # DRAFT cover letter — Physical Review D. NOT SENT. Danny submits through the APS portal himself.
 
 Dear Editors,

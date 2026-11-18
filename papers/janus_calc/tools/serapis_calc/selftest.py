@@ -1,3 +1,4 @@
+# AEGIS-FP GHJEAL3FXHO5SYDP · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Independent cross-checks. Exit code 0 only if every check passes."""
 import math, sys
 import mpmath as mp

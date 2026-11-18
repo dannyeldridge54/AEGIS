@@ -1,3 +1,4 @@
+# AEGIS-FP O55HUD4ZSAOTQLBI · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J7d2 (locked PREREG_J7d2_psni)."""
 import sys, time, math, numpy as np, warnings; sys.path.insert(0, '.'); warnings.filterwarnings('ignore')
 from tools.janus_calc.anyV import start_bisect

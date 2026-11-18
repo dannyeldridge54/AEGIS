@@ -1,3 +1,4 @@
+<!-- AEGIS-FP B6X6NUPF7FDOEFIG · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee pass R3 on the v3.2 draft (whole draft, cross-section numeric check; 2026-11-16, D899)
 Scope and method: the whole serapis_v3.2_draft.tex (89 kB) checked section against section for the quantities N*, T_R, ε, m_ν₁, m_{3/2}, the wino window, Σm_ν and the n_s/r bands, and for references to results corrected today (D880a, D888a, D892 withdrawn, D792 superseded); plus prediction_sheet.md. This is a targeted consistency read (keyword-anchored), not a line-by-line prose review.
 

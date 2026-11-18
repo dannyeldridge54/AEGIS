@@ -1,3 +1,4 @@
+# AEGIS-FP M4CM5LUGBB3M3DW6 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J3 (locked PREREG_J3): third-order n_s vs D990 references."""
 import sys, json, glob, numpy as np, warnings; sys.path.insert(0, '.'); warnings.filterwarnings('ignore')
 from tools.janus_calc import models as J, core

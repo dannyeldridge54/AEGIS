@@ -1,3 +1,4 @@
+<!-- AEGIS-FP WPNXV4QAWCPTL7BB · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Inflation Scorecard (+ Janus calculator)
 
 Give it an inflation model's predictions; it scores them against every current dataset, one row per dataset,

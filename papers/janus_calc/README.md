@@ -1,3 +1,4 @@
+<!-- AEGIS-FP L2MHITDTBOUD6I22 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Janus String Calculator (v1.3)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24298159.svg)](https://doi.org/10.5281/zenodo.24298159)
 **Author:** Danny Eldridge (dannyeldridge54@gmail.com) · AEGIS / SERAPIS project · built with Claude (Anthropic)

@@ -1,3 +1,4 @@
+# AEGIS-FP KGQBZKBP4ZPZTM7C · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """AION core: lock, deviate, check. Standard library only."""
 from __future__ import annotations
 import datetime as _dt, fnmatch, hashlib, json, os, re, subprocess

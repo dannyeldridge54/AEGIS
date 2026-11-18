@@ -1,3 +1,4 @@
+# AEGIS-FP VS6JNW43H6FKSFMB · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """SI constants: CODATA 2018 via scipy.constants; IAU 2015 nominal solar values; Julian year."""
 from scipy import constants as C
 G, c, hbar, h, k_B, sigma_SB = C.G, C.c, C.hbar, C.h, C.k, C.Stefan_Boltzmann

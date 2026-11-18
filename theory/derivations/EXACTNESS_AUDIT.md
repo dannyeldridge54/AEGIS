@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 4O6JPNQXMC7EWEW5 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Exactness audit of papers/v3/serapis_v3.tex (A2; D812, 16 Nov 2026)
 Method key: MS = exact Mukhanov–Sasaki via spectra() (exact_ns_d588 family); SR1 = first-order slow roll (1−6ε+2η, 16ε); A = analytic/closed form; I = interpolated; E = estimate.
 

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP XAQXAI7KBRPVOEBK · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS accuracy status (16 Nov 2026, after the accuracy track D807–D827)
 Published: SERAPIS v3.1, 10.5281/zenodo.24281771. Changes queued for v3.2: papers/v3/V32_TODO.md.
 

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP BRFZPVTY4MBBWY7J · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J1d — PSNI with an explicit field-value end (follows D1022)
 Locked 2026-11-17 after a diagnostic trajectory (recorded in the D-note) and before any J1d score.
 Diagnostic finding (data, no score): from y₀ = 0.35 the exact background reaches the singular point y → 0 at N ≈ 62.06

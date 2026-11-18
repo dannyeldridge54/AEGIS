@@ -1,3 +1,4 @@
+# AEGIS-FP UXKZ7GI5CNERZ45H · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Janus-LHC: disappearing-track recast (ATLAS arXiv:2201.02472, 136 fb^-1) and HL-LHC projection. v0: benchmark-anchored scaling."""
 import math
 from scipy.optimize import brentq

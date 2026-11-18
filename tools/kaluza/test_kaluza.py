@@ -1,3 +1,4 @@
+# AEGIS-FP YI3EMSOAI6WTCIE4 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """KALUZA v0.1 regression test (locked PREREG_KALUZA_v01): reproduce recorded AEGIS results through the package code paths."""
 import sys, math, sympy as sp; sys.path.insert(0, '.')
 from tools.kaluza.background import vacuum, gamma_c

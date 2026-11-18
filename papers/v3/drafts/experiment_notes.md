@@ -1,3 +1,4 @@
+<!-- AEGIS-FP O2GVAXL7QBTZ6GLT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # DRAFT — short notes for experiment teams (one paragraph each). NOT SENT.
 Use only after the arXiv posting exists; link the paper, never attach unpublished files unasked.
 

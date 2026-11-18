@@ -1,3 +1,4 @@
+# AEGIS-FP ZTCD5G5LT4B6GW2O · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Fast route: one background integration (in e-folds N, canonical field phi, M_P = 1), then the Hubble-flow
 parameters eps1 = phi'^2/2, eps2 = d ln eps1/dN, eps3 = d ln eps2/dN at horizon crossing of the pivot, and the
 second-order slow-roll spectra (Stewart-Gong / Schwarz-Terrero-Escalante):

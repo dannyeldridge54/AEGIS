@@ -1,3 +1,4 @@
+# AEGIS-FP 3PLGCO2ER5PPBAPS · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Hyperion BBN: thin wrapper on CAMB's tabulated BBN codes (PRIMAT 2021, PArthENoPE 880.2).
 Yp = BBN helium NUCLEON fraction 4 n_He4/n_b (CAMB Y_p; NOT the mass fraction — DEVIATIONS_B1 D1); Yp_mass = mass fraction (table 'Yp' column); DH = D/H number ratio; inputs ω_b = Ω_b h², ΔN = N_eff − 3.044."""
 from camb.bbn import BBN_table_interpolator

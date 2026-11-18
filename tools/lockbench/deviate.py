@@ -1,3 +1,4 @@
+# AEGIS-FP TGJ7SKTPU22XAM4E · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L-6: deviations as a command, and a rerun guard.
   python3 tools/lockbench/deviate.py add LOCK.md "what changed and why"   -> appends D<k> to LOCK_DEVIATIONS.md, rehashes, commits + pushes
   python3 tools/lockbench/deviate.py check LOCK.md RESULTS...             -> exit 1 (REFUSE) if any RESULTS file is committed and no deviation

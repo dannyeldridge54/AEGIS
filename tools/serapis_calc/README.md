@@ -1,3 +1,4 @@
+<!-- AEGIS-FP IHYE6X4XD7NSVAZ2 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # serapis_calc
 Verified building blocks (Eisenstein E(τ,s), SERAPIS potentials, consistency relation, exponent rule).
 Rule: run `python3 -m tools.serapis_calc.selftest` from the repo root before every locked run; it must exit 0.

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP HZG44YDVDDWSVXHT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee pass on the v3.2 draft diff (16 Nov 2026, D850)
 Scope: only passages changed from v3.1 (git word-diff). Checked for overclaiming, labels, consistency, readability.
 ## Fixed

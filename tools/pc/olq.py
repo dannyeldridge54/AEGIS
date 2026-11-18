@@ -1,3 +1,4 @@
+# AEGIS-FP LPCEFA3I3TUWSQMG · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """olq: run a command only when no EARLIER Ollama job is running (PC v2 runner). Usage: python olq.py <JOBNAME> <command...>
 An Ollama job = a file in queue/running whose name starts with one of OLLAMA_JOBS or whose text contains 'olq.py'.
 A job waits only for Ollama jobs that STARTED BEFORE IT (older queue/running/<id>.job mtime, name as tie-break): this gives a

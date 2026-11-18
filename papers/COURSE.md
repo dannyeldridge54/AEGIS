@@ -1,3 +1,4 @@
+<!-- AEGIS-FP M6WT65RMIV3DQ2BN · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Course (set 16 Nov 2026, from tonight's data) — accelerate overall performance
 Evidence → rule. Ticks follow these rules; revisit weekly with the numbers below.
 1. Compute where it survives. Cloud: 6 heavy runs killed tonight (runner time limit ×2, container restart ×1, OOM ×1, stalls ×2); PC: 0 kills, 16 cores. RULE: anything > 10 min goes to queue_pc.txt (results → field_tests/results/pc/); cloud only for < 10 min jobs and locks.

@@ -1,3 +1,4 @@
+# AEGIS-FP 7C5TSZXVNYZAAYOO · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import sys, os, subprocess, tempfile; sys.path.insert(0, os.getcwd()); import tools.lockbench.deviate as D
 d = tempfile.mkdtemp(); os.chdir(d); run = lambda *c: subprocess.run(c, capture_output=True, text=True)
 run('git', 'init', '-q'); run('git', 'config', 'user.email', 't@t'); run('git', 'config', 'user.name', 't')

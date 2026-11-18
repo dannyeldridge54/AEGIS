@@ -1,3 +1,4 @@
+# AEGIS-FP FUNGVEB6XXFXQCSF · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Hyperion -> Star Mapper dust feed (PREP, not yet validated: maps not reachable from the cloud workspace).
 E(B-V) along each star's line of sight from dustmaps: SFD 1998 (2D, total column) or Bayestar19 (3D, distance-resolved).
 A_G = R_G * E(B-V): R_G must be passed explicitly (to be sourced; no default on purpose)."""

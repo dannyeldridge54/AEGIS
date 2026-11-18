@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 65DH4PPUGRHJQ6GO · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG D981: α_s from a wide ln k grid (follow-up to D974/D980; written before any run)
 Motivation (D980, [estimate]): the α_s scatter is consistent with ~1e-6 per-mode noise in ln P amplified by the ±0.2 five-point stencil; a wider grid reduces that amplification by roughly (L_new/L_old)².
 Solver: tools/serapis_calc/ms.py spectra(..., ic='ds'), unchanged code (degree-4 fit, deg = min(4, npoints-1)); selftest must pass.

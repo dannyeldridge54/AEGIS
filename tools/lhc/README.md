@@ -1,3 +1,4 @@
+<!-- AEGIS-FP XTH3X427LFK62N36 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # CERN+1 — an independent, validated toolkit that redoes the LHC chain and checks itself
 
 *Independent work by Danny Eldridge (AEGIS project), built with Claude (Anthropic). Not affiliated with, produced by, or endorsed by

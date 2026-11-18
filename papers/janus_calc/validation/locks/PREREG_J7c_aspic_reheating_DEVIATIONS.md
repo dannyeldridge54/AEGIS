@@ -1,3 +1,4 @@
+<!-- AEGIS-FP TLR42BXG2JJGD4YW · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # DEVIATIONS — PREREG_J7c_aspic_reheating
 
 D1 (17 Nov ~04:47Z, after the J7c run): the lock's own [derived] step is wrong. From Martin–Ringeval Eq. 15,

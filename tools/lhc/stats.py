@@ -1,3 +1,4 @@
+# AEGIS-FP IZBVUG5757UZQ6LW · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Janus-LHC statistics: CLs upper limits for counting experiments, two independent routes that must agree:
 (1) pyhf (the HistFactory/likelihood tool ATLAS and CMS publish their likelihoods for), (2) our own asymptotic-free CLs from
 exact Poisson sums. Agreement is the validation."""

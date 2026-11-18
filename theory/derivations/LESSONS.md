@@ -1,3 +1,4 @@
+<!-- AEGIS-FP J2K3LNWX76NJ7WIP · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Loop lessons (read FIRST every tick; append after every tick's DERIVE step)
 Each line: date, D-number, the lesson, and how it changes the next steps. Keep it short; condense when it grows past ~60 lines.
 

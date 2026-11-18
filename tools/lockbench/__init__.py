@@ -1,3 +1,4 @@
+# AEGIS-FP 6OLLQQL4OCVFUKWN · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """LOCKBENCH — the AEGIS research method as code (v0.1, 17 Nov 2026).
 - lock(path): verify a PREREG lock exists, its sha256 matches, and it is committed + pushed (no result may exist before this passes).
 - sweep: resumable parallel sweeps with per-task wall limits (re-exported from tools/calcq/sweep.py, tested).

@@ -1,3 +1,4 @@
+# AEGIS-FP SGAVMKRJJW6E5BF7 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Single source of truth for SERAPIS-model inputs used by Hyperion checks (lesson D1153: re-read the LATEST D-note).
 Each value cites the D-note that currently defines it."""
 WINO_THERMAL_MASS_TEV = (2.207, 2.842)   # Born vs NLO-Sommerfeld thermal mass (2009.00640); f bracket (D1152)

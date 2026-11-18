@@ -1,3 +1,4 @@
+<!-- AEGIS-FP VRSZ7YTQ2BVBX4XS · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS-E v2 update — referee response
 
 ## 18 Nov pass

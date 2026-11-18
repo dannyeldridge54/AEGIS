@@ -1,3 +1,4 @@
+# AEGIS-FP VOYSQLA3CYOGXJIZ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L3: DESI DR2 BAO likelihood (Table IV of arXiv:2503.14738, data/desi/dr2_bao_table4.txt)."""
 import math, numpy as np
 from .background import C_KMS

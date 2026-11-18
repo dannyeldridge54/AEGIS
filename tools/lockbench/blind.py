@@ -1,3 +1,4 @@
+# AEGIS-FP 7H7XUJJ3X2PBSKYW · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """L-3: blind mode. A finished job seals its full results; only the claims verdict is visible until a D-note records that verdict.
 seal(results, lock) -> verdict dict (runs claims.evaluate on the parsed numbers, moves the file to field_tests/sealed/, records sha256)
 unseal(results, dnote_id, dnotes=...) -> restores the file only if the D-note exists and states the sealed verdict; verifies the hash."""

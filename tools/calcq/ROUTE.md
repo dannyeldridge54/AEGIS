@@ -1,3 +1,4 @@
+<!-- AEGIS-FP IUACNSXW5LDRF3EM · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Improved compute route (17 Nov 2026)
 1. Every batch job uses tools/calcq/sweep.py: resumable part file, one process per task, per-task wall limit (default 20 min), errors/timeouts recorded,
    never silently retried (test: tools/calcq/test_sweep.py PASS). No more DEVIATIONS notes for stuck single cases.

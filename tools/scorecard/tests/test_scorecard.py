@@ -1,3 +1,4 @@
+# AEGIS-FP HL2K5YCEAULIJ2CN · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import math, pytest
 from scipy.optimize import brentq
 from scipy.integrate import quad

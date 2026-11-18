@@ -1,3 +1,4 @@
+<!-- AEGIS-FP L6XY2SOBHFYRFDPT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee response — Janus-LHC / CERN+1 cross sections (doi:10.5281/zenodo.24342227)
 
 ## 18 Nov pass

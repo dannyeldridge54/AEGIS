@@ -1,3 +1,4 @@
+# AEGIS-FP G3YFMVAGNNBFLPMG · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Knob grid for AEGIS Studio: SERAPIS-E n_s, r, α_s from Janus (core.Model + spectra3, validated D1218/D1228) on C/1.15e-6 ∈ [0, 3] and N* ∈ [45, 65],
 potential from the unchanged pipeline.build. The app interpolates this grid for instant knob response and can recompute any point live."""
 import json, pathlib, sys, numpy as np, warnings; warnings.filterwarnings('ignore')

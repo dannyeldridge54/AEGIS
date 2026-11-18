@@ -1,3 +1,4 @@
+# AEGIS-FP VPET5IH57KTJK2LN · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Reference-precision ledger: field_tests/results/LEDGER.jsonl. A claim's stated precision may not be smaller than the reference's own spread."""
 import json, time
 PATH = 'field_tests/results/LEDGER.jsonl'

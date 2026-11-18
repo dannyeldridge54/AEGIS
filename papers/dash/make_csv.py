@@ -1,3 +1,4 @@
+# AEGIS-FP QG5OY76G5JCBZON6 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Ledger upkeep helper (LARGE_LIST item 14). Lists D-notes in the derivation log that the newest ledger CSV doesn't have yet, with their log lines,
 so each can be added by hand with its real verdict and key number. (Auto-parsing verdicts and numbers from log lines was tried and mis-read too many
 lines — e.g. picking '0.1' from 'KALUZA v0.1' — so the ledger stays hand-curated.)

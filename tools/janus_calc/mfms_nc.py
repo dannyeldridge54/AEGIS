@@ -1,3 +1,4 @@
+# AEGIS-FP 2PTFOX42KI6XEUTD · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """JANUS-MF-NC: exact multi-field MS on a curved field space (Kaiser et al. arXiv 1511.09148 Eqs. 14-19, 24), e-fold time, M_P = 1.
 Q^I evolved in the coordinate basis with D_N Q = Q' + Γ Q φ'. P' = D_N P covariant. Riemann: R^a_{bcd} = ∂_c Γ^a_{db} − ∂_d Γ^a_{cb} + Γ^a_{ce}Γ^e_{db} − Γ^a_{de}Γ^e_{cb}
 (sphere positive; mass term −R^I_{LMJ}φ'^Lφ'^M gives +ε H² R_fs on the entropic direction in 2D, checked in curvature_sign_check)."""

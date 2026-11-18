@@ -1,3 +1,4 @@
+# AEGIS-FP 4J526UUC6A63DFUE · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Klein j via Eisenstein E4, E6 q-series (general tau). Checks: j(i)=1728, j(2i)=66^3, j(rho)=0."""
 import mpmath as mp
 def _sig(n, k): return sum(d**k for d in range(1, n+1) if n % d == 0)

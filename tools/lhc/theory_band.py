@@ -1,3 +1,4 @@
+# AEGIS-FP MLO6FLSP57ACCETV · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """CERN+1 theory band (D1309): Resummino scale(+)PDF uncertainty (arXiv:2304.11915 Table 6, 13.0 TeV, channels combined
 fully correlated, sigma-weighted) and delta-m +-0.4 MeV (IMS) propagated into the benchmark-anchored disappearing-track limits."""
 import math, numpy as np

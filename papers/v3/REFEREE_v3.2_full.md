@@ -1,3 +1,4 @@
+<!-- AEGIS-FP YA7IRVH7PCKVRFCQ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee report: "The Shape of the Torus Sets the Sky" (SERAPIS v3.2 draft)
 
 ## 1. Summary

@@ -1,3 +1,4 @@
+<!-- AEGIS-FP ZC3HKFKSHGISW764 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # LOCKBENCH improvement plan (17 Nov 2026) — researched against established practice
 Prior art checked: provenance tracking (LHCb, arXiv 1910.02863; DataLad/HPC data versioning, arXiv 2505.06558; reproducibility survey arXiv 2402.07530),
 blind analysis and preregistration (particle-physics blinding; registered reports), code verification & numerical-error estimation (Roy/Oberkampf V&V:

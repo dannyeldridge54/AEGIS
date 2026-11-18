@@ -1,3 +1,4 @@
+# AEGIS-FP LWPLZO2ZL6SPLRNB · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """PT1 fast SERAPIS-E emulator (lock PREREG_PT1). Quadratic surrogate in u=ln(C/1.25e-6) fit to the 5 PW6 exact points
 (D1268) at T_R 7.389e8 GeV, MSSM g*. Label: tool (interpolant; valid C~1.0-1.6e-6 at that T_R). Reference: predict_fast."""
 import math

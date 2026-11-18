@@ -1,3 +1,4 @@
+# AEGIS-FP IJPRFFISSFXFVJCT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import sys, math; sys.path.insert(0, '.')
 from tools.lockbench.verify import gci3, observed_order, two_solver, mms_orders
 trap = lambda n: (lambda h: h*(0.5*math.exp(0) + sum(math.exp(i*h) for i in range(1, n)) + 0.5*math.exp(1)))(1/n)

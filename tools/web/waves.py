@@ -1,3 +1,4 @@
+# AEGIS-FP T7Q5JWGQN33IHKGM · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Waves on the AEGIS web (heuristic, labelled as such). A +1 wave enters a node and spreads along links (forward weight 1, backward 0.5, times the
 link sign; killed nodes pass 10 %, frozen nodes 50 %), damped so it fades (Katz-style series x = e + α W x). The inverse wave is −1. Outputs:
  - reach: how strongly each node responds to a wave from each source;

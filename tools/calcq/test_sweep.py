@@ -1,3 +1,4 @@
+# AEGIS-FP 72WPIKGKN4N2DKBV · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 import os, sys, time, json, tempfile; sys.path.insert(0, '.')
 from tools.calcq.sweep import sweep
 def f(t):

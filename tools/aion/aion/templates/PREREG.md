@@ -1,3 +1,4 @@
+<!-- AEGIS-FP 6JILJKSJGVB27TWX · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG {id}: {title}
 Locked {date} before computing. Script: {script}. Output: {output}.
 

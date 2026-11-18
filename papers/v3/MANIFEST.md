@@ -1,3 +1,4 @@
+<!-- AEGIS-FP OW7KNKE2AUBMZ6KH · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # SERAPIS v3 — freeze manifest
 
 Frozen 2026-11-15 (CT). No D-note after D635 enters paper v3 without a new manifest entry.

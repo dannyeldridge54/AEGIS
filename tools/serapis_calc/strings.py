@@ -1,3 +1,4 @@
+# AEGIS-FP 3ZOGEMRX3OIFNGYW · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Level S (string/one-loop on tori). Built in stages; every stage is checked against an independent route.
 S0: Jacobi theta functions and the abstruse identity theta3^4 - theta4^4 - theta2^4 = 0 (supersymmetric cancellation).
 S1: one-loop Wilson-line / brane-scalar potential of one real bulk boson on R^4 x T^2 (D = 6), two independent routes:

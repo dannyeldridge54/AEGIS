@@ -1,3 +1,4 @@
+<!-- AEGIS-FP ESXYLEPBS2LKFGAT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Fifth independent referee pass (2026-11-15, read-only) on v3.1 additions (D659–D688) — MINOR REVISION
 1 MAJOR (suspected): Γ2 fix at τ = i makes the N doublet degenerate, which shuts the splitting-driven off-diagonal decays behind T_R 1e3–1e5 and the N* bracket — state the source of splitting or flag as open.
 2 minor (verified): τ = i coefficient b = 4πε ≈ 1.8e-3 (not 0.02); ρ value 0.009 correct.

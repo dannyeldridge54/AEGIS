@@ -1,3 +1,4 @@
+# AEGIS-FP LI4QZ5UC3TWICLAR · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Janus single-field fast face, compiled: core.Model + core.spectra3 with the background integrated by a compiled Dormand–Prince 5(4)
 (rtol 1e-12, atol 1e-14, as core.Model's DOP853), ε1 = 1 end found by bisection inside the compiled step, and ε-flow parameters from the
 same 41-point CubicSpline construction as core.flow4. Potential from a sympy expression. Equivalence vs core: PREREG_JSJ1."""

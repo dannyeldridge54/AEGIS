@@ -1,3 +1,4 @@
+<!-- AEGIS-FP VO34RTURYKCBBEE7 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J7c — Janus vs ASPIC through the reheating route (same ln R_rad), scored against an exact solution
 
 Locked 2026-11-17 before any J7c number.

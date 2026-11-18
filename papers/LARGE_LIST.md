@@ -1,3 +1,4 @@
+<!-- AEGIS-FP BQ72RKQI75UUDUZ6 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # The large list — everything open across AEGIS + CubeMind (17 Nov 2026). Rule (Danny, 16:31 CT): whenever an item hits a wall, start the next one.
 Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN / RUNNING / BLOCKED(reason) / DONE(ref).
 

@@ -1,3 +1,4 @@
+# AEGIS-FP 225F5G5U526S7BYE · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """J7a (locked PREREG_J7a_aspic_headtohead): Janus fast vs ASPIC (real library, driver theory/janus/aspic/j7a_aspic.f90)
 vs exact Mukhanov-Sasaki. Resumable: field_tests/results/janus_j7a.part.jsonl. Usage: python3 ... run | summary"""
 import sys, os, json, time, math, numpy as np, warnings; sys.path.insert(0, '.'); warnings.filterwarnings('ignore')

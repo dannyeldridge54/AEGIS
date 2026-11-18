@@ -1,3 +1,4 @@
+<!-- AEGIS-FP ZIOATIWFJTCGWTXJ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # PREREG J1c — stiff-solver fallback for singular inflation ends; PSNI rescore (follows D1020)
 Locked 2026-11-17 before any J1c number.
 Change: core.Model — if the DOP853 background run returns no ε_H = 1 event, rerun the same ODE with method='Radau'

@@ -1,3 +1,4 @@
+# AEGIS-FP Z4KTNZ23O4RL36UE · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Resonance modes of the AEGIS web: eigenvectors of the signed graph Laplacian L = D − S_sym (S_sym = symmetrised signed links, |weights| on the diagonal).
 Low modes = groups of nodes that move together; a sign change inside a mode marks a split. Writes docs/web/modes.json. Heuristic, not physics."""
 import json, pathlib, numpy as np

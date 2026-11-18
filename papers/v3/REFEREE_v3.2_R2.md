@@ -1,3 +1,4 @@
+<!-- AEGIS-FP LNV6RUGRLKSQIZYJ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # Referee pass R2 on the v3.2 draft (text changed since the D871 commit d14dfac; 2026-11-16, D894)
 Scope: serapis_v3.2_draft.tex lines changed since D871, read against the abstract, Sec. VII, the caveats list, and prediction_sheet.md.
 

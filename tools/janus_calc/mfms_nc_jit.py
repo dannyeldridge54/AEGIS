@@ -1,3 +1,4 @@
+# AEGIS-FP 7LGDKKIZVC7GKX65 · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """JANUS-MF-NC-JIT: mfms_nc's equations (Kaiser et al. 1511.09148 Eqs. 14-19, 24; coordinate basis, D_N Q = Q' + ΓQφ') compiled with numba.
 Background + all k-modes in one real ODE system, adaptive Dormand–Prince 5(4). Equivalence vs mfms_nc.spectra_nc: PREREG_JMF12_ncjit."""
 import math, numpy as np, sympy as sp, numba as nb

@@ -1,3 +1,4 @@
+# AEGIS-FP XWW47DALN6E3ZP4U · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """CH1 wavelength map (tool label: standard atomic physics; constants scipy.constants = CODATA). Lock PREREG_CH1_wavelength_map."""
 import math
 from scipy import constants as K

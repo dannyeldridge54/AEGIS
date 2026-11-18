@@ -1,3 +1,4 @@
+# AEGIS-FP 2G72K76JQEDWF37Y · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Primordial (inflationary) gravitational-wave background today through an arbitrary post-inflation history.
 Route A: piecewise power-law transfer (slope 2(3w-1)/(3w+1) for modes entering in a phase with equation of state w).
 Route B: numerical tensor-mode evolution h'' + (3 - eps) h' + (k/aH)^2 h = 0 in e-folds N through a smooth w(N) background,

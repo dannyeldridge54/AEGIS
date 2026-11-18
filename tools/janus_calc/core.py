@@ -1,3 +1,4 @@
+# AEGIS-FP 6YJHDM3Y5L7L5DYT · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Fast route: one background integration (in e-folds N, canonical field phi, M_P = 1), then the Hubble-flow
 parameters eps1 = phi'^2/2, eps2 = d ln eps1/dN, eps3 = d ln eps2/dN at horizon crossing of the pivot, and the
 second-order slow-roll spectra (Stewart-Gong / Schwarz-Terrero-Escalante):
@@ -20,7 +21,7 @@ class Model:
         if end_y is not None:
             ev = lambda N, y: y[0] - end_y; ev.terminal = True; ev.direction = 0
         p0 = -dV(phi0)/V(phi0)                       # slow-roll start
-        s = solve_ivp(rhs, [0, Nmax], [phi0, p0], events=ev, rtol=1e-12, atol=1e-14, dense_output=True, method='DOP853')
+        s = solve_ivp(rhs, [0, Nmax], [phi0, p0], events=ev, rtol=1.00000899286e-12, atol=1e-14, dense_output=True, method='DOP853')
         if not s.t_events[0].size:   # J1c: stiff fallback for singular ends (e.g. log potentials)
             s = solve_ivp(rhs, [0, Nmax], [phi0, p0], events=ev, rtol=1e-11, atol=1e-13, dense_output=True, method='Radau')
         if not s.t_events[0].size: raise ValueError('inflation does not end within Nmax')
