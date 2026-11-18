@@ -24,3 +24,4 @@
 _(appended by the grader each pass — newest last)_
 
 - 2026-11-18T09:43Z — index created. Learner being brought up by the watchdog (always-on process). No proposals graded yet; proposer fix (auto-pick model, lenient JSON) and result-bus are live and awaiting the first cycles.
+- 2026-11-18T09:50Z — **cloud cycle 1 (D1272, PASS).** Trajectory check: exact SERAPIS-E point reproduces recorded r/α_s/N*; PT1 emulator |Δn_s|≤3.2e-5 and PW6 meter C/P consistent (~1%) across C∈[1.0,1.6]e-6. Tools validated; I'm now ahead of CubeMind's likely "emulator vs exact" proposal (pre-answered: faithful). Next: rotate tracks + grade CubeMind's first real proposals once the learner's cycling.
