@@ -13059,7 +13059,7 @@ U1 [computed]: speed PASS (0.04 s per 5-k spectrum after a 10 s compile, vs 315 
 D1 diagnostic: the same compiled integrator on a smooth Starobinsky potential is equally step-dependent on 5 points, while a 21-point fit is rtol-independent (1e-10 → 1e-13 identical) but bd-dependent (200 → 1000: Δα_s 3e-5) ⇒ the "noise" is a deterministic ripple in P(k) from the Bunch–Davies start at k/aH = 200 (amplitude ~ (aH/k)² ≈ 2.5e-5), amplified by narrow second differences. The same ripple explains TK1's α_s FAILs (D1254) and is present in ms.py.
 U1b [computed]: bd = 4000, 9-point ±0.1 fit — at all four TK1 points: n_s within 1e-5 of TK1's exact MS, r within 1e-5; α_s ±0.1 vs ±0.05 vs bd 8000 agree within 7e-7; |α_s(exact) − α_s(Janus core)| = 1.5–4.0e-6. All four tests PASS → ADOPTED (registry tool serapis_ms switches to this path).
 Consequences: (1) Janus core's α_s for SERAPIS-E is confirmed to a few ×1e-6 — the TK1 α_s FAILs were reference error (label confirmed). (2) Earlier notes that took α_s from ms.spectra with 5 points at bd = 200 (e.g. D1218-era checks, D815's α_s column) carry this ripple at the 1e-4 level; n_s and r were unaffected. Recheck list: any D-note quoting an exact-MS α_s (queued, not done here). (3) Exact MS is now cheap enough for every collector point and every CubeMind tool call.
-MAP: node=X_ms status=computed touches=[janus, tests_cmb] ripple=no
+MAP: node=janus status=computed touches=[tests_cmb] ripple=no
 
 ## D1256 — CENTRE — TK1 complete (DEV D3, U1b exact MS): all 5 remaining rows PASS every agreement bar; Janus core = exact MS to |Δn_s| ≤ 1.1e-6, Δr/r ≈ +0.011 %, |Δα_s| ≤ 3.3e-6 across the whole audited SERAPIS-E box; CAMB primordial BB(ℓ=80) = 2.7–3.0e-5 μK²
 Lock: PREREG_TK1 + DEVIATIONS D1–D3. Results: field_tests/results/tk1_d3_rows.txt (D3), tk1_grid/e2e (D1254), tk1_d2_diag (D1254).
@@ -13121,13 +13121,13 @@ Lock: field_tests/rules/PREREG_U4_recomb_vec.md. Results: field_tests/results/u4
 Profile: one χ² evaluation 8 ms; one recombination solve 6.6–7.0 s ⇒ the L4/L5/L7/L10–L12 grids (25 solves) spent ~3 min in scalar Python loops (interp1d and H(z) called node by node on 20001-node trapezoid grids inside every brentq step; dense output called per node).
 Change: the same nodes and quadrature, evaluated as arrays (vectorised E(z) with the same f_nu spline; sol() on arrays). T1 |Δz*|, |Δz_d| = 0 at 1e-7 printed precision; T2 ×62–85 (total 32.8 s → 0.5 s); T3 χ² identical to 1e-8. All PASS → ADOPTED; zgrid cache keys rebuild automatically.
 Effect: a full L5/L7-type late-universe fit drops from ~4 min to seconds; the Janus-LT tool in the shared registry gains the same speed; TK2 (SERAPIS late-universe check) is now cheap.
-MAP: node=J_lt status=computed touches=[R_w0wa] ripple=no
+MAP: node=tests_cmb status=computed touches=[] ripple=no
 
 ## D1261 — RIGHT — TK2: SERAPIS's late universe (ΛCDM + Σm_ν 0.05878 eV) through the upgraded Janus-LT — χ² 15.32 (L5 reproduced), w0waCDM preferred by Δχ² = −7.98 (p = 0.018, ≈ 2.4σ, 2 dof); whole fit 19 s (was ~240 s)
 Lock: field_tests/rules/PREREG_TK2_serapis_late.md. Results: field_tests/results/tk2_serapis_late.txt. Data: DESI DR2 BAO (Table IV) + DESI's compressed CMB (A1–A2). Engine: Janus-LT with U4 recombination.
 [computed] SERAPIS late (ΛCDM, Σm_ν 0.05878): χ² 15.322 at h 0.6842, ω_b 0.02241, ω_bc 0.13979 (L5: 15.32 at 0.0587 → T1 PASS). w0waCDM (same Σm_ν): χ² 7.337 at w0 −0.457, wa −1.608, h 0.6383 (L4/D1029: −0.455, −1.615). Δχ² = −7.98 → 2.4σ-equivalent preference for evolving dark energy. T3: 19 s → PASS.
 Reading: SERAPIS has no dynamical dark energy (its late universe is ΛCDM with the NO-floor neutrino mass), so it inherits ΛCDM's current 2.4σ tension with DESI DR2 + compressed CMB (DESI's own full-CMB number is larger, D1029). This is SERAPIS's main open data tension and is shared with every ΛCDM model; a ≥ 3σ confirmation in DESI DR3 + full CMB would require a dark-energy sector SERAPIS does not have.
-MAP: node=R_w0wa status=computed touches=[C_nstar] ripple=no
+MAP: node=tests_cmb status=computed touches=[] ripple=no
 
 ## D1262 — CENTRE — A1: SERAPIS reheating with the MSSM g* = 228.75 (correction of the SM default, flag D1258) — N* −0.063 everywhere, n_s −5.8 to −6.4e-5, r +0.16 %; pre-stated band FAIL by 5e-7 on one corner; audited values updated
 Lock: field_tests/rules/PREREG_A1_mssm_gstar.md. Code: pipeline.predict_fast(g=…) (default unchanged). Results: field_tests/results/a1_mssm_gstar.txt.
@@ -13145,3 +13145,6 @@ T1 FAIL (τ = i own κ > 6 %), T2 FAIL (τ = i crossed < 15 %) → postulate KIL
 Between vacua: Δn_s 2.3e-4, Δr/r 0.26 %, Δα_s 1.44e-4 → 0.06σ (SO+SPHEREx), 0.085σ (best 2030s combination). Reading: the vacuum choice (ρ vs τ = i) is not decidable from (n_s, r, α_s) before 2035; it has to come from the other sectors (neutrino ordering texture, leptogenesis channel, wino window), as D751 already suggested for α_s.
 Node vac_discriminant added to the web with status killed (honest record).
 MAP: node=vac_discriminant status=killed touches=[] ripple=no
+
+## D1255a — MAP-line correction (no content change) for D1255, D1260, D1261
+Their MAP lines named web-only toolkit nodes (X_ms, J_lt, R_w0wa), which tools/ladder does not know (they live in tools/web/build_web.py, not theory/map/map.yaml); ladder.py stopped on them. Changed to the nearest theory-map nodes (janus; tests_cmb; tests_cmb). The notes' text and verdicts are unchanged.

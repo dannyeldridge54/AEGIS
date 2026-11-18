@@ -261,8 +261,10 @@ nodes:
   - D673
   - D692
   - D1234
+  - D1255
   history:
   - 'D1234: computed'
+  - 'D1255: computed'
 - id: bhk_tilt
   layer: 3
   branch:
@@ -274,9 +276,11 @@ nodes:
   - D692
   - D756
   - D1246
+  - D1257
   history:
   - 'D756: literature'
   - 'D1246: literature'
+  - 'D1257: literature'
 - id: stuck_d3
   layer: 3
   branch:
@@ -465,14 +469,15 @@ nodes:
   - D979
   - D1234
   - D1237
+  - D1258
+  - D1262
   depends:
   - reheat_rho
   - serapis_e
   history:
-  - 'D979: corrected'
-  - 'D1234: computed'
   - 'D1237: corrected'
-  flag: recheck (D1239, reheat_rho)
+  - 'D1258: corrected'
+  - 'D1262: corrected'
 - id: lepto_rho
   layer: 4
   branch:
@@ -594,7 +599,7 @@ nodes:
   - 'D962: computed'
   - 'D1231: frozen'
   - 'D1233: frozen'
-  flag: recheck (D1251, serapis_point)
+  flag: recheck (D1262, nstar_e)
 - id: band_e_audited
   layer: 5
   branch:
@@ -612,6 +617,7 @@ nodes:
   - 'D1245: postulate (PW1)'
   - 'D1245: postulate'
   note: web loop postulate 1; scored only on future data
+  flag: recheck (D1262, nstar_e)
 - id: serapis_point
   layer: 5
   branch:
@@ -629,12 +635,13 @@ nodes:
   - 'D1251: postulate (PW2), expectation PASS 4/4'
   - 'D1251: postulate'
   note: web loop postulate 2; scored only on future data
+  flag: recheck (D1262, nstar_e)
 - id: vac_discriminant
   layer: 5
   branch:
   - E
   - i
-  title: "KILLED POSTULATE: Janus κ separates the ρ and τ=i vacua (τ=i own-κ 10.8 % off, crossed 13.2 %); vacua differ only by Δα_s 1.4e-4 (≤0.09σ)"
+  title: 'KILLED POSTULATE: Janus κ separates the ρ and τ=i vacua (τ=i own-κ 10.8 % off, crossed 13.2 %); vacua differ only by Δα_s 1.4e-4 (≤0.09σ)'
   status: killed
   d:
   - D1263
@@ -645,6 +652,7 @@ nodes:
   - serapis_point
   history:
   - 'D1263: postulate PW3 killed by its locked test'
+  - 'D1263: killed'
   note: web loop postulate 3; kept on the web as killed
 - id: caps
   layer: 5
@@ -721,13 +729,17 @@ nodes:
   - D1248
   - D1252
   - D1254
+  - D1256
+  - D1260
+  - D1261
   depends:
   - band_i
   - band_e
   history:
-  - 'D1248: computed'
-  - 'D1252: computed'
-  - 'D1254: computed'
+  - 'D1256: computed'
+  - 'D1260: computed'
+  - 'D1261: computed'
+  flag: recheck (D1262, nstar_e)
 - id: tests_lhc
   layer: 5
   branch:

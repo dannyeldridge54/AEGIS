@@ -321,10 +321,12 @@
     "D669",
     "D673",
     "D692",
-    "D1234"
+    "D1234",
+    "D1255"
    ],
    "history": [
-    "D1234: computed"
+    "D1234: computed",
+    "D1255: computed"
    ]
   },
   {
@@ -339,11 +341,13 @@
     "D689",
     "D692",
     "D756",
-    "D1246"
+    "D1246",
+    "D1257"
    ],
    "history": [
     "D756: literature",
-    "D1246: literature"
+    "D1246: literature",
+    "D1257: literature"
    ]
   },
   {
@@ -559,7 +563,7 @@
     "rho",
     "E"
    ],
-   "title": "T_R at ρ ≈ 6.6e8–2.0e10 GeV (n = 1, m_φ 3.17e13; D1235, D1239)",
+   "title": "T_R at ρ ≈ 5.5e8–1.65e10 GeV (n = 1, m_φ 3.17e13, MSSM g*; D1235, D1239, D1262)",
    "status": "computed",
    "d": [
     "D725",
@@ -583,7 +587,7 @@
    "branch": [
     "E"
    ],
-   "title": "N* for SERAPIS-E ≈ 50.1–51.3 (exact end + n = 1 reheating; D1234, D1235)",
+   "title": "N* for SERAPIS-E ≈ 50.07–51.22 (exact end, n = 1, MSSM g*; D1234, D1235, D1262)",
    "status": "corrected",
    "d": [
     "D719",
@@ -591,18 +595,19 @@
     "D906",
     "D979",
     "D1234",
-    "D1237"
+    "D1237",
+    "D1258",
+    "D1262"
    ],
    "depends": [
     "reheat_rho",
     "serapis_e"
    ],
    "history": [
-    "D979: corrected",
-    "D1234: computed",
-    "D1237: corrected"
-   ],
-   "flag": "recheck (D1239, reheat_rho)"
+    "D1237: corrected",
+    "D1258: corrected",
+    "D1262: corrected"
+   ]
   },
   {
    "id": "lepto_rho",
@@ -748,7 +753,7 @@
     "D1231: frozen",
     "D1233: frozen"
    ],
-   "flag": "recheck (D1251, serapis_point)"
+   "flag": "recheck (D1262, nstar_e)"
   },
   {
    "id": "band_e_audited",
@@ -756,7 +761,7 @@
    "branch": [
     "E"
    ],
-   "title": "POSTULATE: audited SERAPIS-E box (N* 50.1–51.3): n_s 0.9717–0.9760, r 4.38–4.90e-4; 4/9 inside frozen band",
+   "title": "POSTULATE: audited SERAPIS-E box (N* 50.07–51.22, MSSM g*): n_s 0.9717–0.9760, r 4.39–4.90e-4; partly outside frozen band (D1262)",
    "status": "postulate",
    "d": [
     "D1245"
@@ -771,7 +776,8 @@
     "D1245: postulate (PW1)",
     "D1245: postulate"
    ],
-   "note": "web loop postulate 1; scored only on future data"
+   "note": "web loop postulate 1; scored only on future data",
+   "flag": "recheck (D1262, nstar_e)"
   },
   {
    "id": "serapis_point",
@@ -779,7 +785,7 @@
    "branch": [
     "E"
    ],
-   "title": "POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 8.9e8, C 1.25e-6): n_s 0.9745, r 4.81e-4, α_s −1.0e-3, N* 50.2",
+   "title": "POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 7.4e8, C 1.25e-6, MSSM g*): n_s 0.97439, r 4.82e-4, α_s −1.0e-3, N* 50.18 (D1262)",
    "status": "postulate",
    "d": [
     "D1251"
@@ -794,7 +800,32 @@
     "D1251: postulate (PW2), expectation PASS 4/4",
     "D1251: postulate"
    ],
-   "note": "web loop postulate 2; scored only on future data"
+   "note": "web loop postulate 2; scored only on future data",
+   "flag": "recheck (D1262, nstar_e)"
+  },
+  {
+   "id": "vac_discriminant",
+   "layer": 5,
+   "branch": [
+    "E",
+    "i"
+   ],
+   "title": "KILLED POSTULATE: Janus κ separates the ρ and τ=i vacua (τ=i own-κ 10.8 % off, crossed 13.2 %); vacua differ only by Δα_s 1.4e-4 (≤0.09σ)",
+   "status": "killed",
+   "d": [
+    "D1263"
+   ],
+   "depends": [
+    "janus",
+    "vac_i",
+    "vac_rho",
+    "serapis_point"
+   ],
+   "history": [
+    "D1263: postulate PW3 killed by its locked test",
+    "D1263: killed"
+   ],
+   "note": "web loop postulate 3; kept on the web as killed"
   },
   {
    "id": "caps",
@@ -888,17 +919,21 @@
     "D1229",
     "D1248",
     "D1252",
-    "D1254"
+    "D1254",
+    "D1256",
+    "D1260",
+    "D1261"
    ],
    "depends": [
     "band_i",
     "band_e"
    ],
    "history": [
-    "D1248: computed",
-    "D1252: computed",
-    "D1254: computed"
-   ]
+    "D1256: computed",
+    "D1260: computed",
+    "D1261: computed"
+   ],
+   "flag": "recheck (D1262, nstar_e)"
   },
   {
    "id": "tests_lhc",
