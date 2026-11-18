@@ -1,6 +1,6 @@
 # AEGIS / Janus / CubeMind — loop handover (resume-from-cold)
 
-Kept current by the loop's **HO** slot. If you are a new chat or future session, read this first, then `docs/design/JANUS_OVERNIGHT_IDEAS.md` (every slot's full spec). Last updated: 2026-11-18 07:30Z.
+Kept current by the loop's **HO** slot. If you are a new chat or future session, read this first, then `docs/design/JANUS_OVERNIGHT_IDEAS.md` (every slot's full spec). Last updated: 2026-11-18 08:13Z.
 
 ## What this is
 Danny runs a single always-on **3-minute loop** that rotates through every track of the project, one slot per tick. It is a Claude scheduled task (send_later chain) bound to Danny's PC (device syndyr), persistent session `session_014Gbstd4JrhrM8iiEauYtjs`. CubeMind also learns continuously on the PC runner independently (LEARN.job).
@@ -30,10 +30,9 @@ V (Janus views) → R (theory research) → T (toolkit upgrades) → CH (chemist
 - Continuous learning: `mindmem/learn_loop.py` (ingest D-notes → memory upkeep → locked QA mini-eval when built → learn_log.jsonl), self-requeues via LEARN.job. Keep a change only if the eval score rises.
 
 ## State (07:30Z 2026-11-18)
-- D-notes D1233–D1270 (D1269 = other session). Web 85 nodes.
+- D-notes D1233–D1271 (D1269, D1271 = other session). Web 85 nodes.
 - Papers 5/6 PUBLISHED (D1267): SERAPIS-E audited 10.5281/zenodo.24330316; MS ripple 10.5281/zenodo.24330318. Cross-links added on 24290875/24291026/24299624. Danny: no more Zenodo / no more papers tonight.
-- Tonight: V1 measurement-lens (done, deployed); PW6 inverse meter PASS (D1268); PW7 benchmark instanton M_H KILLED (D1270, point's M_H=1e12 is a choice — caveat queued for paper 5 v2); T1 string_meter tool ADOPTED; CH1 wavelength map built but NOT adopted (21 cm needs 1+a_e → CH1b next); S1 sound engine LOCKED, build/render pending.
-- CubeMind memory ~905 records (D1268–D1270 not yet ingested). Phase 7 WIN (+aegis 235 vs plain 184) but loses to +tools 255; physics-item test still needed. Phase 8 queued, GPU-contended.
+- Tonight (loop): V1 measurement-lens (deployed); PW6 inverse meter PASS (D1268); PW7 benchmark instanton M_H KILLED (D1270); T1 string_meter tool + PT1 serapis_emulator ADOPTED (deployed both CubeMind dirs); S1 sound engine ADOPTED (s1_demo.wav); CH1 wavelength + P1 power NOT adopted (CH1b/P1b next); X NEXUS doc; SA sarah_sky forked; PKG Janus .exe build updated; RA cubemind/webapp scaffold (Tailscale); L QA1 locked+built (PC score pending); SEC sec.py + SECURITY.md; RF referee runs each lap. CubeMind: models RAM/VRAM-resident, tools CPU, learn_loop + LEARN.job running; proposer/verifier. ~905 records (D1268–D1270 not yet ingested). Phase 7 WIN (+aegis 235 vs plain 184) but loses to +tools 255; physics-item test still needed. Phase 8 queued, GPU-contended.
 - PC jobs running: M1R1, M2R1, RETRY3, COLLECT2; queued AANUMBA, P8, S4E4, SELFTEST, SPECDL, LEARN. wino_window BLOCKED (needs g*(T) eos2018 table). COLLECT2 next collector pass after it ends (~07:10Z+).
 
 ## Key paths
