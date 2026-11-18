@@ -64,3 +64,94 @@ Each Djl tick does one item.
 Research ticks (PW7 and onward) are interleaved.
 
 Every view reads its data from data.js (make_data.py), which goes to the PC by device_commit_files to Desktop\AEGIS_PCJOBS\aegis_studio. Danny restarts Janus.bat to load the changes.
+
+## New tracks (Danny 22:46 CT)
+
+Danny's words: "Add upgrading to toolkits all; also add a chemistry and sound one that we can use this info to make music and lyrics, chemistry, and also power generation, storage, circuitry loops, with a central one on how they all work together. Then think of more and add all to a loop 3 mins."
+
+Every track uses the same look and the same rules. Lock before computing, and label everything honestly: **physics** (derived from the theory), **tool** (standard science or engineering code), or **art/analogy** (a creative mapping, not a claim).
+
+### [T] Toolkit upgrades (all toolkits)
+Go round every toolkit in the registry in turn: janus_single, janus_mf, janus_lt, kaluza_tensor, kaluza_stable, lock_lint, lock_verdict, serapis_point, serapis_spectra, serapis_ms, janus_relation, nstar_match, plus CubeMind and MindMem.
+
+For each one:
+1. Profile it.
+2. Lock the plan.
+3. Make it faster or more accurate.
+4. Test it against the old version (same answers).
+5. Adopt it, update the bundle and deploy.
+
+This continues the U-series (U6 onward).
+
+### [CH] Chemistry
+A chemistry toolkit in the same registry, built on standard open tools. Install them only from pip (no downloads without Danny's OK beyond package installs):
+- RDKit for molecules and their properties;
+- PySCF for small quantum-chemistry calculations (energies, orbitals, spectra);
+- thermochemistry and reaction energies.
+
+Views:
+- molecule orbitals as glowing isosurfaces in the Janus palette;
+- spectra rendered like the CMB spectra;
+- periodic-table and bond "webs".
+
+Link to the theory: a bridge only where the physics is real. For example, the same eigenvalue and lattice-sum mathematics (the Epstein zeta / hexagonal-lattice minimum, as in graphene and close packing) gets the label **physics-math shared**. Everything else is labelled **tool**.
+
+Safety: no synthesis routes for hazardous or controlled substances; this is educational and materials chemistry only.
+
+### [S] Sound, music and lyrics
+A sonification toolkit:
+- spectra → pitch;
+- the inflaton torus y(N) → a falling glissando;
+- D3 stacks → chords;
+- web waves → rhythm;
+- each D-note status → timbre (corrected = bright, killed = muted).
+
+Output: WAV/MIDI made with numpy and mido or pretty_midi, played in the Janus app.
+
+Lyrics: original lyrics written from the derivation story (the audit, the ripple, the torus). Never reproduce existing songs.
+
+Label: **art/analogy**.
+
+### [P] Power generation, storage and circuitry
+An engineering toolkit:
+- circuit simulation (PySpice/ngspice or lcapy) and transfer functions;
+- battery and supercapacitor models (equivalent circuits, the Peukert law, PyBaMM if it installs);
+- generation: solar cell I–V curves, wind power curves, grid balancing;
+- storage sizing.
+
+Views:
+- a circuit "web" with current flowing in the palette;
+- an energy-flow river.
+
+Link to the theory: only where it is real. For example, the same ODE solvers and the same spectral and transfer-function maths as Janus/Hyperion, labelled **shared numerics**. There is no claim that SERAPIS gives new energy technology.
+
+### [X] Central integration
+One hub view and one document that show how every track connects:
+- shared mathematics (lattice sums, eigenproblems, ODE flows, spectra);
+- the shared registry (aegis_tools) and CubeMind memory;
+- shared colours.
+
+Each link is labelled **physics**, **numerics**, **tool** or **art**. The hub is a new top-level view ("Nexus"): tracks as rings, links as glowing threads, and threads light up when a tool is used.
+
+### [N] New ideas
+Each pass, propose one new track or tool, write it into this file, and slot it into the rotation. Candidates:
+- materials/crystal-lattice explorer (shares the hexagonal-lattice maths);
+- climate/energy-balance toy model;
+- orbital mechanics;
+- signal processing (FFT lab);
+- a data-sonification API for any CSV;
+- an education mode that explains each node.
+
+## Rotation (3-minute ticks, one slot per tick, then repeat)
+1. V
+2. R
+3. T
+4. CH
+5. S
+6. P
+7. X
+8. C
+9. U
+10. N
+
+V = views, R = research, T = toolkit upgrade, CH = chemistry, S = sound/music, P = power/circuits, X = central hub, C = CubeMind/PC, U = solver speed-ups, N = new ideas.
