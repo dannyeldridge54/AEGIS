@@ -544,3 +544,4 @@ D1257  2026-11-18T03:32Z  untitled
 D1258  2026-11-18T03:37Z  untitled
 D1259  2026-11-18T03:40Z  Sourcing: Beneke 2009.00640 relic includes P-wave and O(v^2) S-wave annihilation (ours S-wave only); new candidate (v) for the L1 gap
 D1260  2026-11-18T03:41Z  untitled
+D1261  2026-11-18T03:44Z  untitled
