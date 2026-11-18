@@ -1,0 +1,6 @@
+Q1: n_s 0.96337827 r 0.144033 (15.44 s) | fast |dn_s| 2.6e-08 |dr/r| 1.0e-08 (4.07 s, x3.8) True | quick |dn_s| 1.5e-07 |dr/r| 4.9e-08 (1.37 s, x11.2) True
+Q3: n_s 0.94547697 r 0.144637 (15.08 s) | fast |dn_s| 2.3e-08 |dr/r| 3.9e-09 (4.05 s, x3.7) True | quick |dn_s| 2.5e-07 |dr/r| 4.6e-08 (1.49 s, x10.2) True
+Q9: n_s 0.92774973 r 0.145682 (17.06 s) | fast |dn_s| 5.3e-08 |dr/r| 2.3e-09 (3.86 s, x4.4) True | quick |dn_s| 2.0e-07 |dr/r| 4.1e-08 (1.66 s, x10.3) True
+N2p: n_s 0.94621167 r 0.144652 (16.25 s) | fast |dn_s| 4.1e-08 |dr/r| 8.7e-09 (3.95 s, x4.1) True | quick |dn_s| 2.9e-07 |dr/r| 5.8e-08 (1.27 s, x12.7) True
+N1: n_s 0.95458288 r 0.197507 (16.52 s) | fast |dn_s| 3.8e-08 |dr/r| 1.4e-08 (4.28 s, x3.9) True | quick |dn_s| 1.4e-07 |dr/r| 3.3e-08 (1.39 s, x11.9) True
+median speed-up fast x3.9, quick x11.2 | F1 True F2 True
