@@ -33,17 +33,18 @@
     <circle r="4" fill="#fff4c2"/><path d="M -7 -2 A 8 8 0 1 0 -7 2" fill="none" stroke="#e8e0ff" stroke-width="1.2" transform="translate(10,0)"/>
   </svg>
   <div class="sp-title">Sarah&rsquo;s Sky</div>
-  <div class="sp-names">Philosophia</div>
-  <div class="sp-for">for Sarah</div>
+  <div class="sp-flip"><div class="sp-card"><div class="sp-names sp-face">Philosophia</div><div class="sp-for sp-face sp-back">for Sarah</div></div></div>
   <div class="sp-sub">the love of wisdom &middot; written in the sky</div>
   <div class="sp-sym" aria-hidden="true">☉︎ &nbsp; ☾︎ &nbsp; ✦︎ &nbsp; ☿︎ &nbsp; ♀︎ &nbsp; ♂︎ &nbsp; ♃︎ &nbsp; ♄︎</div>
 </div>
 <script>
-(function(){ var sp=document.getElementById('splash'), t0=Date.now(), MIN=2200;
-  function hide(){ var w=Math.max(0,MIN-(Date.now()-t0)); setTimeout(function(){ sp.classList.add('sp-out'); setTimeout(function(){ sp.remove(); },900); }, w); }
-  if(document.readyState==='complete') hide(); else window.addEventListener('load', hide);
-  setTimeout(hide, 6000);   /* never block the map */
-  sp.addEventListener('click', function(){ sp.classList.add('sp-out'); setTimeout(function(){ sp.remove(); },600); });
+(function(){ var sp=document.getElementById('splash'), t0=Date.now(), MIN=2400, done=false;
+  function finish(){ sp.classList.add('sp-out'); setTimeout(function(){ if(sp.parentNode) sp.remove(); },1300); }
+  function ready(){ if(done) return; done=true; var w=Math.max(0,MIN-(Date.now()-t0));
+    setTimeout(function(){ sp.classList.add('sp-ready'); setTimeout(finish, 2300); }, w); }
+  if(document.readyState==='complete') ready(); else window.addEventListener('load', ready);
+  setTimeout(ready, 6500);   /* never block the map */
+  sp.addEventListener('click', function(){ done=true; finish(); });
 })();
 </script>
 <a class="skip" href="#panel">Skip to controls</a>

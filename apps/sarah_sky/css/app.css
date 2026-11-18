@@ -98,7 +98,8 @@ body{ background:var(--bg); color:var(--ink); }
 /* Opening screen (Philo · Sophia · Sarah) */
 #splash{ position:fixed; inset:0; z-index:1000; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
   background:radial-gradient(ellipse at 50% 42%, #1a0b3d 0%, #0b0620 45%, #04020b 100%); color:#f3eeff; transition:opacity .9s ease; text-align:center; padding:24px; }
-#splash.sp-out{ opacity:0; pointer-events:none; }
+#splash.sp-out{ opacity:0; pointer-events:none; transform:scale(1.9); filter:blur(6px); }
+#splash{ transition:opacity 1.2s ease, transform 1.25s cubic-bezier(.6,0,.2,1), filter 1.2s ease; }
 #splash .sp-sigil{ width:min(62vw,300px); height:auto; filter:drop-shadow(0 0 18px rgba(122,92,255,.55)); }
 #splash .sp-ring{ animation:sp-spin 40s linear infinite; transform-box:view-box; transform-origin:0 0; }
 #splash .sp-flower{ animation:sp-spin 60s linear infinite reverse; transform-box:view-box; transform-origin:0 0; }
@@ -115,3 +116,18 @@ body{ background:var(--bg); color:var(--ink); }
 @keyframes sp-pulse{ 0%,100%{ opacity:.55; transform:scale(.97); } 50%{ opacity:1; transform:scale(1.03); } }
 @keyframes sp-fade{ from{ opacity:.45; } to{ opacity:.95; } }
 @media (prefers-reduced-motion: reduce){ #splash *{ animation:none !important; } }
+
+/* cinematic reveal: Philosophia flips to "for Sarah", the wheel spins up, then the sky opens */
+#splash .sp-flip{ perspective:700px; height:2.4em; display:flex; align-items:center; justify-content:center; }
+#splash .sp-card{ position:relative; transform-style:preserve-3d; transition:transform 1.1s cubic-bezier(.5,-0.3,.3,1.4); }
+#splash .sp-face{ backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+#splash .sp-back{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) rotateX(180deg); white-space:nowrap; font-size:clamp(24px,6.6vw,34px);
+  text-shadow:0 0 18px rgba(255,110,199,.65); }
+#splash.sp-ready .sp-card{ transform:rotateX(180deg); }
+#splash .sp-sigil{ transition:transform 1.6s cubic-bezier(.6,0,.2,1), filter 1.6s ease; }
+#splash.sp-ready .sp-sigil{ transform:rotate(-120deg) scale(1.12); filter:drop-shadow(0 0 30px rgba(255,110,199,.8)); }
+#splash.sp-ready .sp-ring{ animation-duration:6s; }
+#splash.sp-ready .sp-flower{ animation-duration:9s; }
+#splash .sp-sub, #splash .sp-sym{ transition:opacity .8s ease, letter-spacing 1.2s ease; }
+#splash.sp-ready .sp-sub{ letter-spacing:.24em; }
+@media (prefers-reduced-motion: reduce){ #splash .sp-card, #splash .sp-sigil, #splash{ transition:opacity .4s ease !important; } }
