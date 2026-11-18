@@ -349,3 +349,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1227: profile fixed costs separately from per-step costs — a large zeroed buffer allocated per call cost more than the whole integration it held.
 - D1228: take numerical tables (Butcher tableaux) from a library programmatically, never retype them; and use medians of repeats for timing claims on a shared machine.
 - D1229: a graph heuristic is only a pointer — check its top flag against the notes first (here it re-found the known open postulate P3), then look for what the literature adds (a discriminator, r).
+- : when a graph analysis moves its top conflict after adding nodes, follow the new flag to the code — a hard-coded constant (g_* = 106.75) was sitting under it.

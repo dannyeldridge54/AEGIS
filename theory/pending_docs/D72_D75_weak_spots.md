@@ -12758,3 +12758,14 @@ SERAPIS-E band n_s 0.970–0.975, r 4.55–5.12e-4 (frozen, D-band); loop blow-u
 Verdict: NULL for P3 (plateau_origin stays assumed); new, useful discriminator recorded: an r measurement at the few×1e-4 level separates SERAPIS-E from loop blow-up inflation;
 r ≳ 1e-3 would favour the Casas–Ibáñez form over both. The conflict at serapis_e is therefore real (an unclosed postulate), not a web artefact.
 MAP: node=tests_cmb status=computed touches=[band_e, plateau_origin] ripple=no
+
+##  — RIGHT (Hyperion) — web-guided tick 2: with Chronos/Hyperion added to the web, the top conflict moves to the wino window; g_*(T) is the concrete lead [lead; needs the EOS table]
+Web: Chronos and Hyperion toolkit nodes added (tools/web/build_web.py; 73 nodes, 101 cited edges). The heuristic wave analysis (docs/web/waves.json, not physics) now ranks
+wino_window highest (conflict 0.131), then tests_lhc, H_line (H.E.S.S. line limit), H_relic (relic mass), halo_profile — the relic and the line limit pull the window in opposite directions.
+Checked our code: tools/janus_astro/relic.py uses a constant g_* = 106.75 in omega_h2() and thermal_mass() (high-T SM value).
+Literature [fetched 2005.03544, Saikawa & Shirai, "Precise WIMP dark matter abundance and SM thermodynamics"]: the SM equation of state changes WIMP abundances by "about 5–10 %" vs
+conventional estimates for m_DM > 1 GeV; EOS uncertainty ≈ 5 %; m/T_FO ≈ 10–30. Our relic is +5.4 % in mass vs Beneke 2009.00640 (D1185), i.e. ≈ +11 % in abundance at fixed mass
+(Ω ∝ m² for a wino-like σv ∝ 1/m²) — the same size as the EOS effect, consistent with D1187's g_*(T) suspicion. [estimate; scaling not yet computed]
+Verdict: lead strengthened, not resolved. The g_*(T) values needed to compute the shift are in the EOS table (member.ipmu.jp/satoshi.shirai/EOS2018); the paper's text does not quote them,
+and downloading the table needs Danny's OK ("yes table", open since D1187). With it: lock a rerun of thermal_mass with g_*(T) and g_*s(T) and compare to 2.207 TeV.
+MAP: node=wino_window status=corrected touches=[H_relic] ripple=no
