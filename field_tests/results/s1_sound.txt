@@ -1,0 +1,8 @@
+render: {"path": "field_tests/results/s1_demo.wav", "sr": 44100, "dur": 8.0, "peak": 0.95, "rms": 0.40409941614144734, "channels": 2}
+torus glide Hz: 440.0 → 180.0 (y 16.74→1.31)
+Balmer audible Hz: Ha 440.1, Hb 594.1, Hg 665.4, Hd 704.1 (ratios 1.000, 1.350, 1.512, 1.600)
+T1 WAV 44100/16-bit: True
+T2 dur 8.0±0.1: True (8.000)
+T3 peak≤1 & RMS>0.02: True (peak 0.950, rms 0.404)
+T4 FFT peaks match ratios ≤1%: True
+S1 VERDICT: ALL PASS → ADOPT engine
