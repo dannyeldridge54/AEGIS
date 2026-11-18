@@ -322,6 +322,72 @@ Output:
 ```
 The inverse meter reads a measured n_s back to the tilt C and the product P = Im S·Im ρ. It rests on a postulate (PW6, D1268). `aegis serapis j 0 1` gives Klein's j(i) = 1728; `aegis serapis eisenstein 0.5 0.866` compares two independent ways of computing E(τ, 2); `aegis serapis test` runs the calculator's cross-checks.
 
+## Wavelength: hydrogen's red Balmer line (H-alpha)
+```
+aegis wavelength line H 2 3
+```
+Output:
+```
+{
+ "ion": "H",
+ "n_low": 2,
+ "n_up": 3,
+ "series": "Balmer",
+ "vacuum_nm": 656.469606333245,
+ "air_nm": 656.2883061003822,
+ "nu_hz": 456673782164129.2,
+ "E_eV": 1.888651008928232,
+ "band": "visible",
+ "colour": "red",
+ "note": "Bohr levels with reduced mass; fine structure ~1e-5 not included"
+}
+```
+NIST: 656.279 nm in air. The 0.009 nm gap is fine structure, which the Bohr formula leaves out. `aegis wavelength convert 656.3 nm` converts any wavelength, frequency or energy (units nm, um, mm, cm, m, Hz–THz, eV, keV).
+
+## Wavelength: the hydrogen 21 cm line
+```
+aegis wavelength 21cm
+```
+Output:
+```
+{
+ "nu_MHz": 1420.4854516773682,
+ "lam_cm": 21.104929842540283,
+ "measured_MHz": 1420.405751768,
+ "relative_difference": 5.611066363897521e-05,
+ "note": "Fermi formula, reduced mass, (1 + a_e); missing Breit/QED/recoil/proton-structure terms (CH1b)"
+}
+```
+Locked test CH1b: within 1 part in 10,000 of the measured frequency (it is 5.6e-5).
+
+## Power: a 60-cell solar panel
+```
+aegis power solar
+```
+Output:
+```
+{
+ "Voc": 49.075855582314404,
+ "Isc": 8.791208790663614,
+ "Pmax": 333.96106513985563,
+ "Vmp": 40.58905348913221,
+ "Imp": 8.227860381845915,
+ "FF": 0.7740684438664016,
+ "Vt": 2.0040211714446965,
+ "mpp_residual": 1.7763568394002505e-15
+}
+```
+Optional arguments, in order: photocurrent Iph (A), saturation current I0 (A), ideality n, series and shunt resistance (Ω), number of cells. `aegis power rc 1000 1000 1e-6` gives an RC filter's gain and phase.
+
+## Sound: write a tone
+```
+aegis sound tone 432 3 tone.wav triangle
+```
+Writes a 3-second, 44.1 kHz stereo WAV. Shapes: sine, triangle, square, saw.
+
+## AION and the prediction tracker
+`aegis aion new|lock|deviate|check` is the pre-registration kit (write a lock, hash it, record deviations, audit a repository). `aegis tracker --out site` writes the SERAPIS prediction status page.
+
 ## Inflation Scorecard: SERAPIS-E's band against current data
 Needs `pyyaml`. Give n_s as one value or a min-max band; add `--r`, `--alpha-s`, `--neff`, `--sum-mnu` as wanted. `--out file.md` saves the table.
 ```

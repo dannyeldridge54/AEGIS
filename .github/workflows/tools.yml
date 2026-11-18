@@ -34,6 +34,6 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install numpy scipy sympy mpmath numba pyhf galpy astropy pytest
-      - run: python -m pytest -q tools/lhc/tests tools/lattice/tests tools/janus_astro/tests tools/janus_lt/tests tools/serapis_calc/tests
+      - run: python -m pytest -q tools/lhc/tests tools/lattice/tests tools/janus_astro/tests tools/janus_lt/tests tools/serapis_calc/tests tools/chem/tests
       - run: python tools/release_smoketest.py
       - run: python -m tools.aegis_cli cern xsec 700 14 && python -m tools.aegis_cli hyperion orbit 269.452 4.6934 1.8266 -802.8 10362.4 -110.5

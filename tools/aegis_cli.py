@@ -22,6 +22,14 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   serapis j <x> <y>                 Klein j-invariant at tau = x + iy (j(i) = 1728)
   serapis eisenstein <x> <y> [s]    non-holomorphic Eisenstein series E(tau, s), two independent methods
   serapis test                      SERAPIS calculator self-test (independent cross-checks)
+  wavelength line <ion> <n_low> <n_up>   hydrogen-like line, vacuum and air wavelength (H, He+, Li2+)
+  wavelength convert <value> <unit>      nm / um / m / Hz / MHz / GHz / eV -> wavelength, frequency, energy, band, colour
+  wavelength 21cm                        hydrogen hyperfine line (Fermi formula with (1 + a_e); 5.6e-5 of the measured value)
+  power solar [Iph I0 n Rs Rsh cells]    solar-panel I-V: Voc, Isc, max power, fill factor (single-diode model)
+  power rc <f_Hz> <R_ohm> <C_F>          RC low-pass gain, phase and corner frequency (also: power rl <f> <R> <L_H>)
+  sound tone <Hz> <seconds> <file.wav> [sine|triangle|square|saw]   write a tone as a WAV file
+  aion <new|lock|deviate|check> ...    pre-registration kit: write a lock, hash it, record deviations, audit a repo
+  tracker [--out DIR]               SERAPIS prediction tracker: every frozen prediction vs the latest data
   scorecard --ns <n_s> [--r <r>] [--alpha-s <a>] [--label <name>]
                                     score an inflation model against every current CMB/LSS constraint (Inflation Scorecard)
   license                           show license terms
@@ -180,6 +188,63 @@ def serapis(args):
         except SystemExit: pass
     else: print(__doc__)
 
+UNITS = {'nm': ('lam_m', 1e-9), 'um': ('lam_m', 1e-6), 'mm': ('lam_m', 1e-3), 'cm': ('lam_m', 1e-2), 'm': ('lam_m', 1.0),
+         'hz': ('nu_hz', 1.0), 'khz': ('nu_hz', 1e3), 'mhz': ('nu_hz', 1e6), 'ghz': ('nu_hz', 1e9), 'thz': ('nu_hz', 1e12), 'ev': ('E_eV', 1.0), 'kev': ('E_eV', 1e3)}
+def wavelength(args):
+    from tools.chem import wavelength as W
+    if not args: print(__doc__); return
+    c = args[0]
+    if c == 'line':
+        ion = args[1] if len(args) > 1 else 'H'
+        if ion not in W.ZOF: raise ValueError('ion must be H, He+ or Li2+')
+        lo, up = int(args[2]) if len(args) > 2 else 2, int(args[3]) if len(args) > 3 else 3
+        if not 1 <= lo < up: raise ValueError('need 1 <= n_low < n_up, e.g. aegis wavelength line H 2 3 (H-alpha)')
+        lv = W.line(ion, lo, up); _show({'ion': ion, 'n_low': lo, 'n_up': up, 'series': W.SERIES.get(lo, ''), 'vacuum_nm': lv,
+              'air_nm': W.air(lv) if lv > 200 else None, **{k: v for k, v in W.convert(lam_m=lv*1e-9).items() if k != 'lam_m'},
+              'note': 'Bohr levels with reduced mass; fine structure ~1e-5 not included'})
+    elif c == 'convert':
+        if len(args) < 3 or args[2].lower() not in UNITS: raise ValueError('give a value and a unit: nm, um, mm, cm, m, Hz, kHz, MHz, GHz, THz, eV, keV')
+        k, f = UNITS[args[2].lower()]; v = float(args[1])
+        if v <= 0: raise ValueError('value must be positive')
+        _show(W.convert(**{k: v*f}))
+    elif c == '21cm':
+        v = W.hydrogen_21cm(); _show({'nu_MHz': v/1e6, 'lam_cm': 2.99792458e10/v, 'measured_MHz': 1420.405751768, 'relative_difference': v/1420405751.768 - 1,
+              'note': 'Fermi formula, reduced mass, (1 + a_e); missing Breit/QED/recoil/proton-structure terms (CH1b)'})
+    else: print(__doc__)
+
+def power(args):
+    from tools.power import circuits as P
+    if not args: print(__doc__); return
+    c = args[0]
+    if c == 'solar':
+        keys = ['Iph', 'I0', 'n', 'Rs', 'Rsh', 'cells']; kw = {k: (int(v) if k == 'cells' else float(v)) for k, v in zip(keys, args[1:])}
+        r = P.solar_iv(**kw); _show({k: v for k, v in r.items() if not hasattr(v, '__len__')})
+    elif c in ('rc', 'rl'):
+        if len(args) < 4: raise ValueError(f'{c} needs f R {"C" if c == "rc" else "L"}, e.g. aegis power {c} 1000 1000 {"1e-6" if c == "rc" else "0.1"}')
+        f, R, X = (float(a) for a in args[1:4])
+        if min(f, R, X) <= 0: raise ValueError('frequency, resistance and C/L must be positive')
+        _show((P.rc_lowpass if c == 'rc' else P.rl_lowpass)(f, R, X))
+    else: print(__doc__)
+
+def sound(args):
+    from tools.sound import engine as S
+    if len(args) < 4 or args[0] != 'tone': raise ValueError('usage: aegis sound tone <Hz> <seconds> <file.wav> [sine|triangle|square|saw]')
+    hz, dur = float(args[1]), float(args[2]); kind = args[4] if len(args) > 4 else 'sine'
+    if not (20 <= hz <= 20000 and 0 < dur <= 600): raise ValueError('frequency 20-20000 Hz, duration up to 600 s')
+    _show(S.write_wav(args[3], S.note(hz, dur, kind=kind)))
+
+def aion(args):
+    p = os.path.join(_root(), 'tools', 'aion')
+    if os.path.isdir(p) and p not in sys.path: sys.path.insert(0, p)
+    from aion.cli import main as amain
+    sys.argv = ['aion'] + (args or ['--help']); r = amain()
+    if r: sys.exit(r)
+
+def tracker(args):
+    import runpy
+    sys.argv = ['track.py'] + args
+    runpy.run_path(os.path.join(_root(), 'tools', 'tracker', 'track.py'), run_name='__main__')
+
 def lattice(args):
     from tools.lattice import lattice_lab
     lattice_lab.main(args)
@@ -209,6 +274,10 @@ def menu(args):
              ('Late universe: score w0, wa against DESI DR2 BAO', lambda: late(['desi', input('  w0 [-1]: ') or '-1', input('  wa [0]: ') or '0'])),
              ('SERAPIS: predictions at a tilt C', lambda: serapis(['predict', input('  C [1.15e-6]: ') or '1.15e-6'])),
              ('SERAPIS: what a measured n_s implies (inverse meter)', lambda: serapis([a for a in ['meter', input('  n_s: '), input('  sigma [none]: ')] if a])),
+             ('Wavelength: a hydrogen line', lambda: wavelength(['line', input('  ion [H]: ') or 'H', input('  lower level [2]: ') or '2', input('  upper level [3]: ') or '3'])),
+             ('Wavelength: convert a wavelength, frequency or energy', lambda: wavelength(['convert'] + (input('  value and unit, e.g. 656.3 nm: ').split() + ['', ''])[:2])),
+             ('Power: solar panel curve', lambda: power(['solar'])),
+             ('Sound: write a tone to a WAV file', lambda: sound(['tone', input('  frequency Hz [432]: ') or '432', input('  seconds [3]: ') or '3', input('  file [tone.wav]: ') or 'tone.wav'])),
              ('Inflation Scorecard: score n_s and r against current data', lambda: scorecard(['--ns', input('  n_s: '), '--r', input('  r [0]: ') or '0'])),
              ('Show license', lambda: license_([]))]
     while True:
@@ -223,7 +292,7 @@ def menu(args):
 
 def main(argv=None):
     _root(); argv = sys.argv[1:] if argv is None else argv
-    cmds = {'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
+    cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
     if not argv: return menu([])
     if argv[0] in ('-h', '--help', 'help') or argv[0] not in cmds: print(__doc__); return
     try: cmds[argv[0]](argv[1:])
