@@ -14029,3 +14029,15 @@ MAP: none
 - **Footnote c** (post-hoc thermal wino row): "Einasto halo" is replaced by "window from the H.E.S.S. IGS line test over Gaia-calibrated haloes (D1153, D1324)". The row now uses many haloes (D1324), so the old single-halo label was stale.
 - No numbers changed. Unposted; no Zenodo.
 MAP: none
+
+## D1330 — C tick: Gaia DR4 is still on for Wed 2 Dec 2026; the ESA archive is offline 25 Nov–2 Dec; new limit of 5 concurrent jobs (2026-11-18)
+- [LITERATURE] ESA Gaia news 2026:
+  - 25 Sep item: the map is "unveiled" on 2 Dec.
+  - 8 Oct item: the archive closes 25 Nov and reopens 2 Dec with DR4.
+  - 14 Oct archive release: a cap of 5 concurrent jobs, and the DataLink renames (RAW→DATAMODEL_GAIA, INDIVIDUAL→DATAMODEL_STANDARD).
+- Consequences for the Mapper (docs/STAR_MAPPER_DR4_PLAN.md updated):
+  - No DR3 archive queries from 25 Nov to 2 Dec.
+  - The 2 workers stay under the cap.
+  - The cloud tree uses no DataLink calls (grep: none). The PC tree is unchecked (not touched).
+- The DR4 data model is not public yet, so the rule "no code changes before release" stands. Node mapper_dr4 stays open.
+MAP: node=mapper_dr4 status=open touches=[] ripple=no
