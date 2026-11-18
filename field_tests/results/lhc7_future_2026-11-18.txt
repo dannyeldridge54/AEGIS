@@ -1,0 +1,15 @@
+{
+ "HL-LHC": {
+  "low_bkg_TeV": 0.9744431085494022,
+  "high_bkg_TeV": 0.8014182404924096
+ },
+ "HE-LHC": {
+  "low_bkg_TeV": 1.683588054906859,
+  "high_bkg_TeV": 1.359955185554642
+ },
+ "FCC-hh": {
+  "low_bkg_TeV": 3.741207284592161,
+  "high_bkg_TeV": 2.875516513420489
+ }
+}
+diagnostic kappa=0 (pure scaling) FCC-hh: {'low_bkg_TeV': 4.031, 'high_bkg_TeV': 3.113}
