@@ -178,8 +178,9 @@
     // constellation lines (polylines of [ra,dec])
     if (state.show.lines) drawLines(W, H);
 
-    // zodiac band (tradition): draw the ecliptic + 12 sign ticks
+    // zodiac band (tradition): draw the ecliptic + 12 sign ticks + Sun/Moon sign readout
     if (state.show.zodiac) drawZodiac(W, H);
+    updateTraditions();
 
     // deep sky
     if (state.show.deep) {
@@ -248,6 +249,22 @@
     return { alt: alt, az: (az - state.headingOffset + 360) % 360 };
   }
 
+  var SIGNS12 = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+  var PHASES = ['New moon','Waxing crescent','First quarter','Waxing gibbous','Full moon','Waning gibbous','Last quarter','Waning crescent'];
+  var tradEl = document.getElementById('trad'), tradTxt = document.getElementById('tradText'), tradAt = 0;
+  function updateTraditions() {
+    if (!state.show.zodiac) { if (tradEl) tradEl.style.display = 'none'; return; }
+    if (tradEl) tradEl.style.display = 'block';
+    var now = Date.now(); if (now - tradAt < 5000) return; tradAt = now;
+    try {
+      var d = new Date();
+      var sun = A.SunPosition(d), moon = A.EclipticGeoMoon(d), ph = A.MoonPhase(d);
+      var sunSign = SIGNS12[Math.floor((sun.elon % 360) / 30) % 12];
+      var moonSign = SIGNS12[Math.floor((moon.lon % 360) / 30) % 12];
+      var phase = PHASES[Math.floor(((ph % 360) + 22.5) / 45) % 8];
+      if (tradTxt) tradTxt.innerHTML = '☉ Sun in <b>' + sunSign + '</b> · ☾ Moon in <b>' + moonSign + '</b> · ' + phase;
+    } catch (e) {}
+  }
   function drawZodiac(W, H) {
     // ecliptic as a smooth band of points (tradition label lives in the UI)
     ctx.strokeStyle = 'rgba(255,79,216,.5)'; ctx.setLineDash([4, 6]); ctx.lineWidth = 1.4; ctx.beginPath();
