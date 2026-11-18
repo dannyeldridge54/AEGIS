@@ -553,3 +553,4 @@ D1266  2026-11-18T04:13Z  Sourcing (v): Hellmann-Ruiz-Femenia 1303.0200 App. C g
 D1267  2026-11-18T04:36Z  Papers 5+6 published on Zenodo (SERAPIS-E audited; MS ripple)
 D1268  2026-11-18T04:40Z  PW6 inverse string meter
 D1269  2026-11-18T04:53Z  R2e-d: velocity grid converged (Omega changes 0.04% n=40->160); candidate (ii) ruled out
+D1270  2026-11-18T04:54Z  PW7 instanton M_H vs leptogenesis
