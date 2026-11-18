@@ -14,6 +14,8 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   hyperion bbn <omega_b h^2> [dNeff]   primordial helium Y_p and D/H (PRIMAT 2021 tables; needs camb)
   hyperion orbit <ra> <dec> <dist_pc> <pmra> <pmdec> <rv> [McMillan17|MWPotential2014]
                                     3 Gyr Milky Way orbit of one star: r_peri, r_apo, z_max, eccentricity
+  scorecard --ns <n_s> [--r <r>] [--alpha-s <a>] [--label <name>]
+                                    score an inflation model against every current CMB/LSS constraint (Inflation Scorecard)
   license                           show license terms
 
 AEGIS Community License: free for individuals, scientists, students, schools, nonprofits and public research.
@@ -97,6 +99,14 @@ def hyperion(args):
                'r_peri_kpc': float(o['rperi'][0]), 'r_apo_kpc': float(o['rapo'][0]), 'z_max_kpc': float(o['zmax'][0]), 'eccentricity': float(o['ecc'][0])})
     else: print(__doc__)
 
+def scorecard(args):
+    p = os.path.join(_root(), 'tools', 'scorecard')
+    if p not in sys.path: sys.path.insert(0, p)
+    try: from inflation_scorecard.cli import scorecard_main
+    except ImportError as e: print(f'The Inflation Scorecard needs pyyaml:  pip install pyyaml   ({e})'); return
+    if not args: args = ['--help']
+    scorecard_main(args)
+
 def lattice(args):
     from tools.lattice import lattice_lab
     lattice_lab.main(args)
@@ -122,6 +132,7 @@ def menu(args):
              ('Janus: inflation observables for a potential', lambda: janus([input('  V(phi), e.g. 0.5*phi**2: '), input('  N* [55]: ') or '55'])),
              ('Hyperion: primordial helium and deuterium', lambda: hyperion(['bbn', input('  omega_b h^2 [0.02237]: ') or '0.02237', input('  extra N_eff [0]: ') or '0'])),
              ('Hyperion: Milky Way orbit of one star', lambda: hyperion(['orbit'] + [input(f'  {q}: ') for q in ('ra (deg)', 'dec (deg)', 'distance (pc)', 'pmra (mas/yr)', 'pmdec (mas/yr)', 'radial velocity (km/s)')])),
+             ('Inflation Scorecard: score n_s and r against current data', lambda: scorecard(['--ns', input('  n_s: '), '--r', input('  r [0]: ') or '0'])),
              ('Show license', lambda: license_([]))]
     while True:
         print('\nAEGIS toolkits — free for people and science; businesses need a commercial license.')
@@ -135,7 +146,7 @@ def menu(args):
 
 def main(argv=None):
     _root(); argv = sys.argv[1:] if argv is None else argv
-    cmds = {'cern': cern, 'janus': janus, 'hyperion': hyperion, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
+    cmds = {'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
     if not argv: return menu([])
     if argv[0] in ('-h', '--help', 'help') or argv[0] not in cmds: print(__doc__); return
     try: cmds[argv[0]](argv[1:])
