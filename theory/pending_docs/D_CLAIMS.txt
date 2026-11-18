@@ -552,3 +552,4 @@ D1265  2026-11-18T04:09Z  untitled
 D1266  2026-11-18T04:13Z  Sourcing (v): Hellmann-Ruiz-Femenia 1303.0200 App. C gives only chi+chi- -> WW wino v^2 terms; positive (+26% of a per v^2); (v) likely wrong direction for B1
 D1267  2026-11-18T04:36Z  Papers 5+6 published on Zenodo (SERAPIS-E audited; MS ripple)
 D1268  2026-11-18T04:40Z  PW6 inverse string meter
+D1269  2026-11-18T04:53Z  R2e-d: velocity grid converged (Omega changes 0.04% n=40->160); candidate (ii) ruled out
