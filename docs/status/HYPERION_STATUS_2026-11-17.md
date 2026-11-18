@@ -84,3 +84,18 @@
   - "yes table" (g_* download);
   - a linked PC (Mapper run, revtex build, START_HYPERION_ORBITS.bat);
   - "Publish" (Zenodo).
+
+## Overnight update 08:00 UTC 18 Nov (D1202–D1271)
+- **Relic vs Beneke 2009.00640:**
+  - The Saikawa–Shirai g_*(T) table is now in the repo: field_tests/data/saikawa_shirai_2020_gstar.dat, the PTArcade copy, checked against the IPMU original to < 0.01%. It was downloaded with Danny's "yes".
+  - Born M_th = 2.252 TeV vs 2.207 (+2.0%, PASS; D1238).
+  - LO Sommerfeld M_th = 3.013 vs 2.886 (+4.4%, PARKED).
+  - The late-x tail and the velocity grid are ruled out (D1253, D1269). What is left needs Beneke's per-channel matrices: the Mathematica supplement of 1303.0200, which is not reachable here (D1259, D1266).
+  - NOTE for the other loop: wino_window is no longer blocked on the g_* table (D1244).
+- **Halo:** the 1 TeV wino survives H.E.S.S. IGS for all 10 Singh–Desai Gaia fits (8 PASS, 2 marginal; D1190, D1202).
+- **Dark radiation:** N_eff 2026 (Goldstein–Hill) puts τ_i SU(2) at +3.1σ (D1208). SU(2)+gaugino is excluded by LBT Y_p (D1192). Both are in the v3.3 draft, unposted (D1199, D1209).
+- **Galaxy:**
+  - McMillan17 is the Star Mapper default (D1197). It passes Horta+2026 v_c, but its local slope is wrong in sign (D1203).
+  - An NFW-only refit to Eilers+2019 was rejected (r_s ≈ 3 kpc; D1210).
+- **GW:** the 7PN tidal coefficients match the independent Mandal et al. 2412.01706. LAL's 0.33% is the outlier (D1211).
+- **Waiting on Danny:** a PC link for this session, or "hand off" to the PC session (Mapper run, revtex build); "Publish".
