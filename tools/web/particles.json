@@ -173,7 +173,7 @@
   "name": "Bino",
   "state": "predicted",
   "node": "gravitino_wino",
-  "info": "AMSB gaugino, ≈ M₂/2 (D809)."
+  "info": "AMSB gaugino: M₁ ≈ 3.3 M₂ at one loop (heavier than the wino, which is the LSP). Corrected D1355 (the card said ≈ M₂/2; D809 has no bino)."
  },
  {
   "id": "gluino",

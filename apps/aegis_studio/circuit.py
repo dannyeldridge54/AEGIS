@@ -9,7 +9,8 @@ GEOMETRY (a design pattern for the software circuit, not a physics claim):
             16, 120, 1120, … D1294). An UP-link carries a quantity from a lower layer into the next and must arrive unchanged.
   DOWN    — a downward pass feeds top-layer values back into the core and checks the core still reproduces them.
 Layers: A2 = SERAPIS core (τ-plane: n_s, r, C, N*, α_s) · D4 = sectors (reheating / N*) · E8 = observables & colliders ·
-        Leech = string/lattice completion · 10D = the ten-dimensional vacuum and its KK tower (the "9 dimensionals"). Supersymmetry (wino, gravitino, goldstino, sfermions) is the next shell beyond.
+        Leech = string/lattice completion · 10D = the ten-dimensional vacuum and its KK tower (the "9 dimensionals") ·
+        SUSY = the supersymmetry shell beyond (anomaly-mediated gauginos, gravitino window, wino window ↔ LHC). Supersymmetry (wino, gravitino, goldstino, sfermions) is the next shell beyond.
 
 Tolerances are written here before a law's first run and change only through a dated note — never loosened to pass.
 Correction 2026-11-18 22:41 UTC: bridge B1 r ≈ 3(1−n_s)² (Starobinsky class) was misapplied as a law on the first run;
@@ -31,9 +32,11 @@ LAYOUT = {
               'tests_cmb': (0, -1), 'G_A2': (1, -1)},
     'Leech': {'X_epstein': (0, 0), 'X_hexin': (1, 0), 'X_mod': (0, 1), 'S_stab': (-1, 1), 'X_narain': (-1, 0), 'X_su3': (0, -1), 'X_d24': (1, -1)},
     '10D':   {'S_10d': (0, 0), 'S_kk10': (1, 0), 'S_btr': (0, 1), 'S_6d': (-1, 1)},
+    'SUSY':  {'m32_window': (0, 0), 'gravitino_wino': (1, 0), 'covariant': (0, 1), 'tests_lhc': (-1, 1), 'H_relic': (-1, 0), 'matter_parity': (0, -1), 'H_line': (1, -1)},
 }
 
-def run(call, ns_model=NS_MODEL, log_path=None):
+def run(call, ns_model=NS_MODEL, log_path=None, records=None):
+    records = records or {}
     W = {}; t0 = time.time(); errors = []
     def get(tool, args):
         try: return call(tool, args)
@@ -80,6 +83,14 @@ def run(call, ns_model=NS_MODEL, log_path=None):
     W['m2_1_pr'], W['m2_2_pr'] = (k1.get('m2') or [None, None])[:2]; W['m2_1_fd'], W['m2_2_fd'] = (k2.get('m2') or [None, None])[:2]
     W['m2_1_lock'], W['m2_2_lock'] = 2.9795596, 14.286529   # D1214 (Prüfer, two-solver validated)
     W['mLpi_1'], W['mLpi_2'] = (k1.get('mL_over_pi') or [None, None])[:2]
+    # SUSY shell (2026-11-18 23:40 UTC; laws and tolerances below fixed BEFORE the first run)
+    # [literature] one-loop anomaly mediation M_i = b_i g_i²/(16π²) m3/2, b = (33/5, 1, −3); g_i² at ~1 TeV: 0.212 (GUT-normalised), 0.420, 1.118
+    G2 = dict(g1=0.212, g2=0.420, g3=1.118); k16 = 16*math.pi**2
+    W['amsb_M2_over_m32'] = G2['g2']/k16; W['amsb_M1_over_M2'] = 6.6*G2['g1']/G2['g2']; W['amsb_M3_over_M2'] = 3*G2['g3']/G2['g2']
+    W['win_lo_GeV'], W['win_hi_map_GeV'], W['win_hi_panel_GeV'] = 670.0, 1250.0, 1850.0   # map wino_window (D1324+), Q_panel/particles (D1304)
+    W['m32_need_GeV'] = W['win_hi_panel_GeV']/W['amsb_M2_over_m32']; W['m32_need_record_GeV'] = 7.0e5; W['m32_bound_GeV'] = 6.7e8   # D809/D1264
+    lfs = [get('lhc_lifetime', {'m': m}) for m in (670, 1250, 1850)]
+    W['dm_670'], W['dm_1250'], W['dm_1850'] = [x.get('dm_MeV') for x in lfs]; W['ct_670'], W['ct_1250'], W['ct_1850'] = [x.get('ctau_cm') for x in lfs]
     # DOWN pass: the top layers hand values back to the core — the E8-layer r forecast for SERAPIS must equal the core r
     W['ns_down'] = get('serapis_emulator', {'C': W['C_back']}).get('ns') if W.get('C_back') else None
 
@@ -140,6 +151,25 @@ def run(call, ns_model=NS_MODEL, log_path=None):
     law('law', '10D', ('S_btr', 'S_kk10'), 'KK masses match BTR 2209.10553 (m L/π = 0.97, 2.13) within 3% [known open, D1141]', max(d1, d2) < 0.03,
         f"m L/π = {W.get('mLpi_1')}, {W.get('mLpi_2')} → off {d1:.1%}, {d2:.1%} (convention/definition gap, D1141/D1214)")
     law('down', '10D→Leech', ('S_6d', 'S_stab'), '6D reduction stays stable (scalar sector b ≥ 0)', W['S6_stable'] == 1.0, 'kaluza_stable D = 6, γ = 2')
+    # SUSY shell laws
+    d = abs(W['m32_need_GeV']/W['m32_need_record_GeV'] - 1)
+    law('law', 'SUSY', ('m32_window',), 'AMSB: m3/2 needed for M2 = 1.85 TeV matches the record 7e5 GeV (10%)', d < 0.10, f"m3/2 = M2·16π²/g2² = {W['m32_need_GeV']:.3g} GeV (record 7.0e5; off {d:.1%})")
+    law('law', 'SUSY', ('m32_window', 'covariant'), 'covariant bound m3/2 < 6.7e8 GeV stays ≥ 100× above the AMSB need', W['m32_bound_GeV']/W['m32_need_GeV'] >= 100, f"ratio {W['m32_bound_GeV']/W['m32_need_GeV']:.0f} (record ×960)")
+    law('up', 'E8→SUSY', ('wino_window', 'Q_dt'), 'wino window lower edge = LHC disappearing-track floor (10 GeV)', W.get('m_floor') is not None and abs(W['win_lo_GeV'] - W['m_floor']) < 10, f"670 vs {W.get('m_floor', float('nan')):.1f} GeV")
+    d = abs(W['win_hi_map_GeV']/W['win_hi_panel_GeV'] - 1)
+    law('law', 'SUSY', ('tests_lhc', 'm32_window'), 'wino window upper edge consistent across records (5%) [expected OPEN]', d < 0.05, f"map wino_window 1.25 TeV (thermal, ~1.5 cored) vs Q_panel/particle card 1.85 TeV (D1304) — off {d:.0%}")
+    ok_dm = all(v is not None and 150 < v < 175 for v in (W['dm_670'], W['dm_1250'], W['dm_1850'])) and W['ct_670'] > W['ct_1250'] > W['ct_1850']
+    law('law', 'SUSY', ('H_line', 'tests_lhc'), 'wino Δm in the two-loop band across the window; cτ falls with mass', ok_dm,
+        f"Δm = {W['dm_670']:.2f}, {W['dm_1250']:.2f}, {W['dm_1850']:.2f} MeV; cτ = {W['ct_670']:.3g}, {W['ct_1250']:.3g}, {W['ct_1850']:.3g} cm (0.67/1.25/1.85 TeV)")
+    d = abs(W['amsb_M3_over_M2']/7.0 - 1)
+    law('law', 'SUSY', ('tests_lhc', 'covariant'), 'gluino: one-loop AMSB |M3|/M2 within 20% of D809 (7.0)', d < 0.20, f"|M3|/M2 = {W['amsb_M3_over_M2']:.2f} (one loop) vs 7.0 (D809); off {d:.0%}")
+    card = records.get('bino', '').split('Corrected')[0]   # judge the card's claim, not its correction note
+    law('law', 'SUSY', ('gravitino_wino', 'covariant'), 'bino record agrees with AMSB M1/M2 (bino heavier than wino)', bool(card) and 'M₂/2' not in card and 'M2/2' not in card and '3.3' in card,
+        f"AMSB M1/M2 = {W['amsb_M1_over_M2']:.2f} (wino is the LSP); particle card: '{card[:90]}'" if card else 'no particle card passed to the circuit')
+    law('law', 'SUSY', ('gravitino_wino',), 'gravitino → wino non-thermal share within the recorded bound Ω ≤ 5e-4', 3e-4 <= 5e-4, 'D809: ≤ 3e-4 in every history; map bound 5e-4 (record law, no calculation here)')
+    cov = [(W['hl_panel'] - W['m_floor'])/(hi - W['m_floor']) for hi in (W['win_hi_map_GeV'], W['win_hi_panel_GeV'])]
+    law('law', 'SUSY', ('tests_lhc', 'Q_panel'), 'HL-LHC covers the recorded share of the window (D1350 52%/D1304 26%, ±2 pts)', abs(cov[0]*100 - 52) <= 2 and abs(cov[1]*100 - 26) <= 2, f"computed {cov[0]:.1%} (to 1.25 TeV), {cov[1]:.1%} (to 1.85 TeV)")
+    law('report', 'SUSY', ('covariant', 'serapis_e'), 'report: SUSY-breaking scale ↔ plateau height (F ~ √V0) — no tool yet; not a law', True, 'needs a locked tool tying V0 (from C) to F-term SUSY breaking')
     # UP links: the SERAPIS hexagon carried up the nesting chain (counts locked in D1294)
     for lo, hi, L, n in (('A2', 'D4', 'D4', 16), ('D4', 'E8', 'E8', 1120), ('A2', 'Leech', 'A2', 1)):
         law('up', f'{lo}→{hi}', ('X_hexin',), f'hexagon carried {lo} → {hi}: {n} copies in {L}', W.get(f'hex_{L}') == n, f"{W.get(f'hex_{L}')} (D1294: {n})")

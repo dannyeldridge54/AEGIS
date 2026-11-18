@@ -16,7 +16,7 @@
   stage.appendChild(box);
   const svg = box.querySelector('#csvg'), NS = 'http://www.w3.org/2000/svg';
   const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim() || '#888';
-  const ORDER = ['A2', 'D4', 'E8', 'Leech', '10D'];
+  const ORDER = ['A2', 'D4', 'E8', 'Leech', '10D', 'SUSY'];
   const DEFAULT = { A2: { string_meter: [0, 0], serapis_e: [1, 0], serapis_point: [0, 1], X_ms: [-1, 1], L_nstar: [-1, 0], L_bridge: [0, -1], inverse_meter: [1, -1] },
     D4: { nstar_e: [0, 0], L_reheat: [1, 0], band_e: [0, 1], caps: [-1, 1] },
     E8: { wino_window: [0, 0], Q_dt: [1, 0], Q_panel: [0, 1], Q_future: [-1, 1], Q_life: [-1, 0], tests_cmb: [0, -1], G_A2: [1, -1] },

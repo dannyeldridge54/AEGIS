@@ -368,7 +368,8 @@ def run_circuit():
     import importlib.util
     sp = importlib.util.spec_from_file_location('serapis_circuit', os.path.join(BASE, 'circuit.py')); C = importlib.util.module_from_spec(sp); sp.loader.exec_module(C)
     d = os.path.join(CM_DIR, 'aegis_link'); os.makedirs(d, exist_ok=True)
-    res = C.run(run_tool, log_path=os.path.join(d, 'circuit_runs.jsonl'))
+    _web(); recs = {p_['id']: p_.get('info', '') for p_ in getattr(_web, 'p', [])}
+    res = C.run(run_tool, log_path=os.path.join(d, 'circuit_runs.jsonl'), records=recs)
     for c in res['comps']:
         for l in c['laws']: _link_log(dict(node=f"circuit:{c['node']}:{l['law']}", tool=c['tool'], ok=l['ok'], text=l['text']))
     to_cubemind(f"SERAPIS circuit: {res['closed']}/{res['n_laws']} laws closed (health {res['health']}); open: " +
