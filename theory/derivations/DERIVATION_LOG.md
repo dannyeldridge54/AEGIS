@@ -2147,3 +2147,9 @@ Touches: none.
 ## D1351: τ = i variant vacuum
 1. [derived] V depends on τ via |j − 1728| (double zero at i) → V(i) = 0; scan minimum at i.
 2. [derived] ∂²ₓV > 0 along x = 0 for y = 1.02–3 and ∂²ᵧV(i) > 0 → true vacuum, no pin; D1280/D1349 apply to SERAPIS-E's E(τ,2) potential only.
+
+## D1352: lattice-geometry α-attractor configs
+1. [postulate P6] One Poincaré disk per complex dimension of lattice L: 3α = d/2 (A2 1, D4 2, E6 3, E8 4, BW16 8, Leech 12).
+2. [literature] 3α = 1…7 disk family (Ferrara–Kallosh 2016; Kallosh–Linde–Wrase–Yamada 2017).
+3. [derived] Exact T-model: sinh²y_e = 4/(3α), cosh y* = cosh y_e + 4N/(3α), r = 64/(3α sinh²y*); numerics agree to 3.5e-4 (r).
+4. [derived] n_s = 0.9608 (N*=50.7) / 0.9639 (N*=55) for every lattice; r = 1.5e-3 (A2) … 1.6e-2 (Leech). Lattice shows only in r; below the SERAPIS n_s band; plateau_origin stays assumed.

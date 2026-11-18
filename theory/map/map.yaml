@@ -88,11 +88,12 @@ nodes:
   - D988
   - D992
   - D798a
+  - D1352
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D988: estimate'
   - 'D992: assumed'
   - 'D798a: corrected (late)'
+  - 'D1352: assumed'
 - id: logderiv_plateau
   layer: 1
   branch:

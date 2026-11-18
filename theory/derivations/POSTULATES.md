@@ -55,3 +55,8 @@ Falsifiers: a coloured scalar with these couplings in conflict with gauge-coupli
 - P1′ update (D855, D853a): P1′ is needed only for the τ = i branch (resonant leptogenesis), where it requires CP-odd axions on two cycle classes. The ρ branch's frozen band has no baryogenesis mechanism and its post-hoc AD history needs no phase; D853's ρ numbers are withdrawn.
 - P1′/P3 update (D860, D861): in our configuration P1′'s racetrack and P3's anti-D3 (with BHK) cannot hold together; without the anti-D3 a consistent point exists only with string-size small tori (benchmark g_s = 0.232, A = (40.8, 1, 1)). τ = i (which needs P1′) therefore also needs its nilpotent sector not to be a natural-size anti-D3.
 - P3 update (D867–D870): the anti-D3 on the inflaton torus is excluded for SERAPIS-E (D867). P3 now reads: the plateau sits in the UPLIFT sector, realised by a sequestered throat anti-D3 (D869, nilpotent X kept) or a T-brane D-term on the T⁴ cycle (D868, no X); both need ingredients beyond T⁶/(Z₂×Z₂). Its E-ratio form still has no identified origin (D839).
+
+## P6 — lattice-disk plateau: one Poincaré disk per complex dimension of a weave lattice, 3α = d/2 (status: side model — D1352; not part of the SERAPIS chain, scored only on future r data)
+Mechanism source: literature 3α = 1…7 disk family (Ferrara–Kallosh 2016; Kallosh–Linde–Wrase–Yamada 2017). Postulated part: the lattice → disk-count rule.
+Form: V = V0 tanh²(φ/√(6α)), 3α = d/2 (A2 1, D4 2, E6 3, E8 4, BW16 8, Leech 12).
+Falsifiers: r < 1e-3 at 95% CL kills every config; a detected r picks one lattice (A2 ≈ 1.4e-3 … Leech ≈ 1.5e-2).

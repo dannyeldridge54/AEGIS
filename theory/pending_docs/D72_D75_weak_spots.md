@@ -14271,3 +14271,14 @@ MAP: node=tests_lhc status=computed touches=[] ripple=no
 - Verdict (pre-stated rule): the variant's τ = i is a true vacuum with V = 0 and no tachyon; no axion pin needed. vac_i returns to computed, scoped to the variant's j-based potential. In SERAPIS-E's E(τ,2) potential τ = i stays a saddle (D1280) and, pinned, a false vacuum (D1349).
 - Downstream i-branch results (nstar_i, lepto_i, band_i, darkrad_i) are no longer conditional on a pin — for the variant.
 MAP: node=vac_i status=computed touches=[] ripple=no
+
+## D1352 — LATTICE / LEFT: geometry configs — one Poincaré disk per complex dimension of each lattice (A2…Leech) as α-attractor T-models; n_s is lattice-blind, r carries the lattice (2026-11-18)
+- [postulate P6] Lock PREREG_D1352 (+ DEVIATIONS D1: the locked large-N check tolerance 1e-3 was mis-set — 12α/N² has a ~2% O(1/N) correction; replaced by the exact T-model closed form, which the numerics match to 3.5e-4 on r and 5e-6 on n_s, PASS). Main results not rerun.
+- Rule (ours): 3α = d/2. A2 → 1, D4 → 2, E6 → 3, E8 → 4, BW16 → 8, Leech → 12 (literature anchor: 3α = 1…7 Poincaré disks, Ferrara–Kallosh 2016; Kallosh–Linde–Wrase–Yamada 2017).
+- [computed] N* = 50.7: n_s = 0.9608–0.9609 for every lattice; r = 1.52e-3 (A2), 3.01e-3 (D4), 4.47e-3 (E6), 5.89e-3 (E8), 1.13e-2 (BW16), 1.64e-2 (Leech). Pulls −2.5σ (CMB-SPA), −4.4σ (SPA+DESI) → all "out" by the locked rule.
+- [computed] N* = 55: n_s = 0.9638–0.9639; r = 1.30e-3 … 1.41e-2; pulls −1.5σ (SPA), −3.3σ (SPA+DESI) → all "alive" (on SPA only).
+- Plateau origin (NEXT item d): a lattice-disk plateau does NOT reproduce SERAPIS n_s; plateau_origin stays assumed.
+- Verdict: the lattice choice is invisible in n_s (α-attractor universality) and sits ~0.01 below SERAPIS's band (0.969–0.975); these configs are r-forecasts, not n_s fits. LiteBIRD-class σ(r) ≈ 1e-3 separates A2/D4 (≲3e-3) from E8 (≈5e-3) and BW16/Leech (≳1e-2). All ≫ SERAPIS r ≈ 5e-4, so a detection of r ≳ 1e-3 would favour a lattice disk config over SERAPIS, and r < 1e-3 kills every config here. Post-data models: scored only on future r/n_s data; not added to the frozen SERAPIS tracker.
+- Files: field_tests/scripts/d1352/{configs.py, closed_form_check.py}; field_tests/results/D1352_lattice_configs.json.
+- Janus full coverage (same session): node tests now cover 59 nodes (16 with sweeps) incl. all 21 testable lattice nodes (E8 1120 hexagonal planes, θ_E8 = E4, θ_Leech, A2 Epstein 5.7833593, D4 18 squares, E6 120/270, flips) and all 10 LHC nodes.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
