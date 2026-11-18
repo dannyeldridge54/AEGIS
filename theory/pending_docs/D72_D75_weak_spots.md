@@ -13736,3 +13736,11 @@ TOOL: tools/lhc/recast_dt.py (`limit`, `hl_lhc`, `n_sig`).
 - **Not touched:** Janus-LHC itself (the other session's tool and Zenodo record 24342227).
 VERDICT: floor confirmed; projected HL-LHC coverage slightly extended (estimate, ITk caveat). Window unchanged.
 MAP: none
+
+## D1303 — CERN+1 LHC4: the disappearing-track recast passes a second, independent search — ATLAS 36.1 fb⁻¹ reproduced at 447.8 GeV vs 460 GeV, with no retuning; PREREG P1–P2 PASS (2026-11-18)
+MAP: none
+LABEL: numerics (computed) anchored on literature (ATLAS JHEP 06 (2018) 022 / arXiv:1712.02118: EW SR 9 obs / 11.8 ± 3.1 bkg,
+σ_vis < 0.22 fb ⇒ N₉₅ = 7.94; benchmark 400 GeV, τ = 0.2 ns → 13.5 events); locked first (PREREG_LHC4). No wino_window edits.
+Same method as LHC3 (D1301), nothing refitted: ATLAS 36.1 fb⁻¹ → 447.8 GeV (published 460, −2.7%); ATLAS 136 fb⁻¹ → 666.6 GeV
+(published 660, +1.0%). βγ 0.3–0.8 moves them by ≤ 5 GeV (P2 PASS). Two searches, two luminosities, one method, both within 3%.
+TOOL: tools/lhc/recast_dt.py `limit_search(key)` with SEARCHES = {ATLAS_136, ATLAS_36}.

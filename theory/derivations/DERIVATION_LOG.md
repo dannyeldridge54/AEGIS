@@ -2057,3 +2057,8 @@ Touches: none.
 2. [derived] N_sig(m) scaled from the benchmark with Janus-LHC cross sections and the decay probability between 122.5 and 299 mm using the LHC2 lifetime.
 3. [derived] Limit 666.6 GeV (observed N₉₅), 657.7 GeV (n = b); βγ 0.3–0.8 moves it by ≤ 2 GeV.
 4. [estimate] HL-LHC like-for-like (14 TeV, 3000 fb⁻¹, Run-2 efficiency): N₉₅ = 17.6 on b = 66 → ≈ 975 GeV.
+
+## D1303: The CERN+1 recast reproduces a second ATLAS search (36.1 fb⁻¹): 447.8 vs 460 GeV without retuning (2026-11-18)
+1. [literature] ATLAS 36.1 fb⁻¹ EW SR: N₉₅ = 0.22 fb × 36.1 fb⁻¹ = 7.94; benchmark 13.5 events at 400 GeV, τ = 0.2 ns.
+2. [derived] Same benchmark-anchored recast as D1301: limit 447.8 GeV (−2.7%); the 136 fb⁻¹ search stays at 666.6 GeV (+1.0%).
+3. [derived] Boost assumption βγ = 0.3–0.8 changes either limit by ≤ 5 GeV.
