@@ -1,0 +1,7 @@
+NA12: N*(eps) = 50.31 + 0.5 ln(m(eps)/1.9e11)
+eps=1.30e-04 m=2.280e+11 N*=50.401: n_s=0.97368 r=4.6846e-04 alpha_s=-8.454e-04 inband=False
+eps=1.35e-04 m=2.342e+11 N*=50.415: n_s=0.97415 r=4.7584e-04 alpha_s=-8.501e-04 inband=False
+eps=1.40e-04 m=2.403e+11 N*=50.428: n_s=0.97462 r=4.8335e-04 alpha_s=-8.543e-04 inband=True
+eps=1.45e-04 m=2.465e+11 N*=50.440: n_s=0.97509 r=4.9100e-04 alpha_s=-8.587e-04 inband=False
+eps=1.50e-04 m=2.527e+11 N*=50.453: n_s=0.97556 r=4.9878e-04 alpha_s=-8.635e-04 inband=False
+D861 check: ImS = 0.1125/0.232 = 0.485; C = 1.2486e-06
