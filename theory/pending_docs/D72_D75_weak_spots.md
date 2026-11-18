@@ -12759,7 +12759,7 @@ Verdict: NULL for P3 (plateau_origin stays assumed); new, useful discriminator r
 r ≳ 1e-3 would favour the Casas–Ibáñez form over both. The conflict at serapis_e is therefore real (an unclosed postulate), not a web artefact.
 MAP: node=tests_cmb status=computed touches=[band_e, plateau_origin] ripple=no
 
-##  — RIGHT (Hyperion) — web-guided tick 2: with Chronos/Hyperion added to the web, the top conflict moves to the wino window; g_*(T) is the concrete lead [lead; needs the EOS table]
+## D1230 — RIGHT (Hyperion) — web-guided tick 2: with Chronos/Hyperion added to the web, the top conflict moves to the wino window; g_*(T) is the concrete lead [lead; needs the EOS table]
 Web: Chronos and Hyperion toolkit nodes added (tools/web/build_web.py; 73 nodes, 101 cited edges). The heuristic wave analysis (docs/web/waves.json, not physics) now ranks
 wino_window highest (conflict 0.131), then tests_lhc, H_line (H.E.S.S. line limit), H_relic (relic mass), halo_profile — the relic and the line limit pull the window in opposite directions.
 Checked our code: tools/janus_astro/relic.py uses a constant g_* = 106.75 in omega_h2() and thermal_mass() (high-T SM value).
