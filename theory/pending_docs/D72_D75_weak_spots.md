@@ -13387,3 +13387,48 @@ RELEVANCE (careful): τ=i and τ=ρ are critical points of every smooth modular-
 min-vs-saddle is function-specific. For the lattice energy ρ is the attractor and i is held only by x→−x — the same
 symmetry as the CP locus our τ=i sector relies on (D844/D854). OPEN CHECK: is τ=i a minimum or a saddle of the actual
 SERAPIS-E potential? Not assumed here. Result file: field_tests/results/torus_shape_flow_2026-11-18.txt.
+
+## D1273a — CORRECTION to D1273: the 2σ tension belongs to the benchmark point, not the model; and the data inputs were unsourced (2026-11-18)
+MAP: node=serapis_point status=postulate
+LABEL: correction (audit; fresh computation + primary sources). Audit file: field_tests/results/audit_2026-11-18.txt.
+(1) DATA: D1273 used CMB-SPA n_s=0.9684±0.0030 and CMB-SPA+DESI 0.9728±0.0027 from earlier notes, never re-fetched. That pair
+does not appear in the SPT-3G D1 paper (2506.20707), whose CMB-SPA headline is 0.9679±0.0033. Published analyses span CMB-SPA
+0.9679–0.9693 (±0.0029–0.0033) and CMB-SPA+DESI 0.9728–0.9737 (±0.0025–0.0029) (2506.20707, 2512.10613, 2512.05108); our pair
+sits inside the spread at its high-tension end. r bound confirmed: BK18 r₀.₀₅ < 0.036 (95%); newer 0.034–0.035.
+(2) BENCHMARK vs MODEL: D861 chose g_s=0.232, A₁=40.8 so C=1.25e-6 lands inside the frozen band C=1.0–1.3e-6. The frozen band is
+the model's committed prediction: n_s 0.97176–0.97493 (fresh exact runs). Against CMB-SPA the band runs +0.85…+1.17σ (low edge)
+to +1.94…+2.18σ (high edge); the benchmark is +1.75…+1.99σ. Against CMB-SPA+DESI the band is −0.78…+0.79σ.
+REVISED VERDICT: "SERAPIS-E is in 2σ tension with CMB-SPA" was a statement about the benchmark point. The model's band reaches
+~1σ at its low edge. The conclusion that n_s (not r) is the sharp test STANDS; the tension is 1–2σ depending on where in the band
+the model sits and which analysis is used, and the benchmark should be read as one placement, not the prediction.
+
+## D1274a — CORRECTION to D1274: verdict (1) had a void premise — the moduli are fitted, not independently known (2026-11-18)
+MAP: node=bhk_tilt status=postulate
+LABEL: correction (audit).
+D1274's conditional math is correct and the slope is confirmed (fresh symmetric difference 0.01334 vs 0.01333 used). But verdict
+(1) — "the CMB-SPA tension is not rescued by our own uncertainty unless the moduli are known worse than ~30%" — presumed the
+moduli product has an independent theory value with an error bar. It does not (D1275b): it is fitted via the frozen band. So
+there is no "own uncertainty" to fold in, and the tension statement is replaced by D1273a's band-vs-benchmark reading.
+Verdicts (2) — an independent determination to ≲5% would make n_s a sharper test than the data — and (3) — T_R and g* are
+subdominant through N* — STAND.
+
+## D1275b — CORRECTION to D1275: the "independent consistency pass" was circular; Im S·Im ρ is currently an input fitted to n_s (2026-11-18)
+MAP: node=bhk_tilt status=postulate
+LABEL: correction (audit; reading of D689, D696, D830, D861 and DERIVATION_LOG).
+D1275 reported that the construction range 560–975 "contains" the CMB-meter value 804 as an independent check. It is not
+independent: D689 computes Im S·Im ρ FROM the C that fits n_s; D830 states "Im S·Im ρ ≈ 563–731 for n_s 0.970–0.975";
+DERIVATION_LOG: "C … is fixed by the frozen band". The 560–975 range is the n_s band mapped through the same formula, merged over
+N_eff = 3 and 4 — so a value derived from n_s necessarily lands inside it. Likewise its "±27% width" is the N_eff ambiguity plus
+the band width, not a theory uncertainty, so the comparison of that width with the data error is meaningless.
+WHAT THE CONSTRUCTION ACTUALLY FIXES: discrete data — N_eff (tadpole: 3 or 4), the sector (ρ) and the formula for C; and
+D689's locked rule finds the fitted values NATURAL (weak coupling, moderate volume). It does not fix Im S·Im ρ; D861's g_s and
+A₁ are choices. REVISED VERDICT: SERAPIS-E is a meter BY CONSTRUCTION at present — there is no independent theory value to
+test. Turning it into a predictor requires moduli stabilisation that fixes g_s and Im ρ₁ independently. D1275a's correction (the
+heavy-ν handle is degenerate) stands.
+
+## D1265b — REFINEMENT of D1265a: the n_s response at the benchmark is 0.0133 (fresh symmetric difference), not 0.0135 (2026-11-18)
+MAP: node=string_meter status=postulate
+LABEL: correction (audit; fresh computation).
+D1265a's 0.01352 came from a quadratic fit over the wide band C=1.0–1.6e-6. Fresh exact runs at C=1.249e-6·(0.97, 1, 1.03) give
+the symmetric local slope 0.01334 (1.3% lower). D1265's 0.01171 remains ~12% low. The meter is unchanged at ±12%
+(σ(ln C)=0.0016/0.01334=0.120). PW5 verdict unchanged.

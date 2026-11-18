@@ -1918,3 +1918,22 @@ Touches: none.
 3. Computed Hessians: τ=i has eigenvalues −0.295, +1.118 (saddle); τ=ρ has +0.635, +0.635 (isotropic minimum). [derived]
 4. Noted τ=i and τ=ρ are critical points of any modular-invariant function, with min/saddle character set by the function. [literature]
 5. Counted torus shape moduli d(d+1)/2−1 = 0, 2, 5, 9, 14, 35, 299 for d = 1, 2, 3, 4, 5, 8, 24. [derived]
+
+## D1273a — audit correction: benchmark vs model, sourced data (2026-11-18)
+1. Checked the n_s inputs against primary sources: SPT-3G D1 CMB-SPA 0.9679±0.0033; published CMB-SPA 0.9679–0.9693 and CMB-SPA+DESI 0.9728–0.9737; BK18 r₀.₀₅<0.036. [literature] (2506.20707, 2512.10613, 2512.05108, 2110.00483)
+2. Read D861: the benchmark's g_s and A₁ are chosen so C lands inside the frozen band 1.0–1.3e-6. [literature] (D861)
+3. Computed the band's n_s span 0.97176–0.97493 and its σ offsets for every analysis: CMB-SPA +0.85…+2.18σ, +DESI −0.78…+0.79σ. [derived]
+4. Concluded the 2σ figure belongs to the benchmark point and the band reaches ~1σ at its low edge. [derived]
+
+## D1274a — audit correction: void premise of verdict (1) (2026-11-18)
+1. Confirmed the slope with a fresh symmetric difference: 0.01334 vs the 0.01333 used. [derived]
+2. Noted verdict (1) assumes an independent moduli value with an error bar, which D1275b shows does not exist; verdicts (2) and (3) are unaffected. [derived]
+
+## D1275b — audit correction: circular consistency check (2026-11-18)
+1. Read D689, D830 and DERIVATION_LOG: Im S·Im ρ is computed from the C that fits the n_s band, and C is "fixed by the frozen band". [literature] (D689, D830)
+2. Concluded the 560–975 range is the n_s band mapped through the same formula over N_eff=3,4, so the meter value lying inside it is not an independent test. [derived]
+3. Listed what the construction does fix (N_eff, the sector, the formula for C, naturalness) and what it does not (Im S·Im ρ; D861's g_s and A₁ are choices). [derived]
+
+## D1265b — audit refinement of D1265a (2026-11-18)
+1. Ran exact points at C=1.249e-6×(0.97, 1, 1.03) and formed the symmetric log-slope 0.01334, versus D1265a's wide-fit 0.01352. [derived]
+2. Recomputed the meter: σ(ln C)=0.120, Im S·Im ρ to ±12% (unchanged). [derived]
