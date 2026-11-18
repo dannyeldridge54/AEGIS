@@ -201,3 +201,6 @@ body.panel-open #sarahOverlays:not([open]), body.panel-open #arBtn{ opacity:0; p
   .bar{ padding-top:max(6px, env(safe-area-inset-top)); }
 }
 @keyframes sheetUp{ from{ transform:translateY(100%); } to{ transform:none; } }
+
+body.sheet-open #arBtn{ opacity:0; pointer-events:none; }
+@media (max-width:420px){ #bigText{ display:none; } .bar{ flex-wrap:nowrap; } .search{ min-width:0; } }

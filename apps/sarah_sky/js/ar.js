@@ -184,8 +184,8 @@
   function dot(a, b) { return a[0]*b[0]+a[1]*b[1]+a[2]*b[2]; }
 
   /* ---------- projection ---------- */
-  function fov() { // zoom 0..100 -> vertical FOV ~70deg .. 12deg
-    return (70 - (state.zoom / 100) * 58) * D2R;
+  function fov() { // zoom 0..100 -> vertical FOV 90deg .. 2deg on a log scale (each step feels the same)
+    return 90 * Math.pow(2 / 90, state.zoom / 100) * D2R;
   }
   function project(enu, W, H) {
     var R = state.R; if (!R) return null;
@@ -453,8 +453,11 @@
       var la = lookAltAz(); state.manAz = la.az; state.manAlt = la.alt; setManualR();
       toast('Locked — drag to look around, pinch to zoom. Phone can move.');
     } else {
+      prevR = null;   // start fresh from the sensors, no slide from the frozen view
       toast('Live — the sky follows your phone again.');
     }
+    if (b) b.textContent = state.locked ? '🔓 Unlock' : '🔒 Lock';
+    document.body.classList.toggle('ar-locked', state.locked);
   }
 
   /* ---------- controls ---------- */
@@ -468,27 +471,33 @@
       if (state.calMode) toast('Aim the ring at a bright star you know, then tap it');
     });
     document.getElementById('tLock').addEventListener('click', function () { toggleLock(); });
-    // pinch zoom + (when locked) single-finger pan on the az/alt axes
-    var pinch = 0, panX = 0, panY = 0, panId = null;
-    cv.addEventListener('touchstart', function (e) {
-      if (e.touches.length === 1 && state.locked) { panX = e.touches[0].clientX; panY = e.touches[0].clientY; panId = e.touches[0].identifier; panMoved = false; }
-    }, { passive: true });
-    cv.addEventListener('touchmove', function (e) {
-      if (e.touches.length === 2) {
-        var dx = e.touches[0].clientX - e.touches[1].clientX, dy = e.touches[0].clientY - e.touches[1].clientY, d = Math.hypot(dx, dy);
-        if (pinch) { state.zoom = Math.max(0, Math.min(100, state.zoom + (d - pinch) * 0.15)); document.getElementById('zoom').value = state.zoom; }
-        pinch = d; e.preventDefault(); return;
-      }
-      if (e.touches.length === 1 && state.locked && panId !== null) {
-        var t = e.touches[0], mx = t.clientX - panX, my = t.clientY - panY; panX = t.clientX; panY = t.clientY;
-        if (Math.abs(mx) + Math.abs(my) > 2) panMoved = true;
-        var sens = (fov() * R2D) / window.innerHeight;   // drag 1 screen-height ≈ one FOV
+    // Gestures with pointer events (work the same on Android WebView, iPhone and desktop):
+    //  two fingers = pinch zoom (always); one finger drag = look around (when locked); double-tap = zoom in; wheel = zoom
+    var ptrs = {}, pinch0 = null, zoom0 = 0, lastTap = 0, Z = Math.log(45);
+    var setZoom = function (z) { state.zoom = Math.max(0, Math.min(100, z)); document.getElementById('zoom').value = state.zoom; try { localStorage.setItem('sky.arZoom', String(state.zoom)); } catch (e) {} };
+    var dist = function () { var k = Object.keys(ptrs); if (k.length < 2) return 0; var a = ptrs[k[0]], b = ptrs[k[1]]; return Math.hypot(a.x - b.x, a.y - b.y); };
+    cv.addEventListener('pointerdown', function (e) {
+      ptrs[e.pointerId] = { x: e.clientX, y: e.clientY }; try { cv.setPointerCapture(e.pointerId); } catch (x) {}
+      if (Object.keys(ptrs).length === 2) { pinch0 = dist(); zoom0 = state.zoom; panMoved = true; }
+      else { panMoved = false; var now = Date.now(); if (now - lastTap < 300) { setZoom(state.zoom + 18); panMoved = true; } lastTap = now; }
+    });
+    cv.addEventListener('pointermove', function (e) {
+      var p = ptrs[e.pointerId]; if (!p) return;
+      var mx = e.clientX - p.x, my = e.clientY - p.y; p.x = e.clientX; p.y = e.clientY;
+      var n = Object.keys(ptrs).length;
+      if (n >= 2 && pinch0) { var d = dist(); if (d > 0) setZoom(zoom0 + 100 * Math.log(d / pinch0) / Z); return; }
+      if (n === 1 && state.locked) {
+        if (Math.abs(mx) + Math.abs(my) > 1) panMoved = true;
+        var sens = (fov() * R2D) / window.innerHeight;   // drag one screen-height = one field of view
         state.manAz = (state.manAz - mx * sens + 360) % 360;
         state.manAlt = Math.max(-80, Math.min(88, state.manAlt + my * sens));
-        setManualR(); e.preventDefault();
+        setManualR();
       }
-    }, { passive: false });
-    cv.addEventListener('touchend', function () { pinch = 0; panId = null; });
+    });
+    var up = function (e) { delete ptrs[e.pointerId]; if (Object.keys(ptrs).length < 2) pinch0 = null; };
+    cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up); cv.addEventListener('pointerleave', up);
+    cv.addEventListener('wheel', function (e) { e.preventDefault(); setZoom(state.zoom - e.deltaY * 0.05); }, { passive: false });
+    try { var z = parseFloat(localStorage.getItem('sky.arZoom')); if (isFinite(z)) setZoom(z); } catch (e) {}
     window.addEventListener('resize', sizeCanvas);
   }
 

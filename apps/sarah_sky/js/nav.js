@@ -17,6 +17,7 @@
   }
   function mark(which) {
     document.querySelectorAll('#bottomNav button').forEach(function (b) { b.classList.toggle('on', b.dataset.nav === which); });
+    document.body.classList.toggle('sheet-open', which !== 'sky');
   }
   function pushNav() { try { history.pushState({ sky: 1 }, ''); } catch (e) {} }
 
@@ -30,7 +31,7 @@
     [['layers', '🗺️', 'Layers', 'Sky pictures and what is drawn on top'], ['tour', '🧭', 'Guided tour', 'Ten stops around the sky'],
      ['learn', '📖', 'Learn', 'Short lessons'], ['aegis', '⭐', 'AEGIS stars', 'Unusual stars from the AEGIS survey'],
      ['ar', '📷', 'Point & See', 'Hold the phone up to the sky'], ['tarot', '🃏', 'Tarot spreads', 'One card to the Celtic Cross'],
-     ['about', 'ℹ️', 'About', 'Credits and privacy']].map(function (i) {
+     ['big', '🔠', 'Bigger text', 'Switch larger text on or off'], ['about', 'ℹ️', 'About', 'Credits and privacy']].map(function (i) {
       return '<button data-more="' + i[0] + '"><span class="mi">' + i[1] + '</span><span><b>' + i[2] + '</b><small>' + i[3] + '</small></span></button>'; }).join('') + '</div>';
   document.body.appendChild(more);
 
@@ -51,6 +52,7 @@
     var w = b.dataset.more; more.hidden = true;
     if (w === 'ar') { location.href = 'ar.html'; return; }
     if (w === 'tarot') { window.SarahReadings && SarahReadings.open('tarot'); mark('readings'); return; }
+    if (w === 'big') { var bt = $('bigText'); if (bt) bt.click(); mark('sky'); return; }
     tab(w);
   });
   // closing things by their own × also resets the bar

@@ -1,4 +1,7 @@
 # Changelog
+## 1.5.1 — 18 Nov 2026
+- Point & See: pinch zoom rebuilt on pointer events (works the same on Android, iPhone and desktop), wider zoom range (90° to 2°, even steps), double-tap to zoom in, zoom remembered; Lock shows "Unlock" while locked, the locked view stays still while the phone moves, one finger looks around, and unlocking returns to the phone without a slide.
+- The Point & See button hides while any sheet is open; on small phones "Bigger text" moves into More so the top bar stays one row.
 ## 1.5.0 — 18 Nov 2026
 - Phone navigation: a bottom tab bar (Sky · Tonight · Signs · Readings · More) like a native app; panels open as bottom sheets; a "More" sheet for Layers, Tour, Learn, AEGIS stars, Point & See, Tarot and About.
 - The Android back button now closes whatever is open (panel, readings, signs, More) instead of leaving the app.
