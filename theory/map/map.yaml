@@ -151,10 +151,11 @@ nodes:
   - D741
   - D742
   - D785
+  - D1249
   history:
-  - 'D741: open'
   - 'D742: computed'
   - 'D785: computed'
+  - 'D1249: computed'
 - id: eta_n
   layer: 1
   branch:
@@ -182,10 +183,11 @@ nodes:
   - D1055
   - D1056
   - D1061
+  - D1249
   history:
-  - 'D1055: computed'
   - 'D1056: computed'
   - 'D1061: computed'
+  - 'D1249: computed'
 - id: vac_i
   layer: 2
   branch:
@@ -666,6 +668,7 @@ nodes:
   - 'D784: corrected'
   - 'D906: corrected'
   - 'D1230: corrected'
+  flag: recheck (D1249, tests_lhc)
 - id: tests_cmb
   layer: 5
   branch:
@@ -699,11 +702,12 @@ nodes:
   d:
   - D736
   - D906
+  - D1249
   depends:
   - wino_window
   history:
   - 'D906: literature'
-  flag: recheck (D1237, reheat_rho)
+  - 'D1249: literature'
 observing:
 - id: mapper_dr3
   title: Gaia DR3 sweep complete (192,208,838 stars; 200/200 ESA checks)

@@ -365,3 +365,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1246: when a locked reference number comes from a note, check that note's MODEL is the one being audited — D689's offset was for the predecessor plateau.
 - D1247: a window that sits at a band edge (D815's ε = 1.45e-4 at n_s = 0.9750 exactly) is the first casualty of any upstream correction; record edge-sitting windows as fragile when they are found.
 - D1248: an upstream correction can strengthen a test as well as weaken a fit — re-derive the discriminant after every shift in the prediction, not only the consistency check.
+- D1249: a test statement ("LHC will close the window") must be re-read whenever the window it refers to is widened; D784 widened the window and D736's claim silently went stale.

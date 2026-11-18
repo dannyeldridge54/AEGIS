@@ -12983,3 +12983,14 @@ Lock: field_tests/rules/PREREG_NA13_tests_cmb.md. Results: field_tests/results/n
 3. r: 4.38e-4 (SERAPIS-E min) and 4.83e-4 (τ = i) are 8.8σ and 9.7σ for LiteBIRD's optimistic σ(r) = 5e-5; invisible at its δr = 1e-3 requirement (D749a stands).
 Node value: tests_cmb — "n_s is the 2030 discriminant: ≥ 2.5σ (SO+SPHEREx) from every attractor history incl. maximal kination; r only if LiteBIRD reaches its optimistic forecast".
 MAP: node=tests_cmb status=computed touches=[] ripple=no
+
+## D1249 — CENTRE — NA14 sweep: vac_rho, vac_i, n_sector_rho, n_sector_i, halo_profile arithmetic ALL PASS (D785 rerun bit-identical); tests_lhc CORRECTED — HL-LHC reaches only ~0.9–1.1 TeV winos, so it cannot close the 0.67–1.85 TeV window
+Lock: field_tests/rules/PREREG_NA14_sweep.md. Results: field_tests/results/na14_sweep.txt.
+[arithmetic] w(δ¹²) = 5/7 = 0.714, w(δ⁸) = 3/5 (D613, D730); α_s ratios 2.11, 2.30 (D634 quoted 2.29: rounding of the inputs 8.5/3.7); 699/20000 = 3.50 %, |τ − ρ| = √3·ε = 2.8e-4 (1.1–7.3e-4) (D896);
+Y(i) ∝ (√3/2, ½), |Y| = 0.1508 (D664); D785 script rerun → output IDENTICAL; ρ_⊙ rescaling ×1.364 → f_max 0.33, 0.25, 0.78 (D1061). All PASS.
+[literature, 1812.07831 HL/HE-LHC BSM report] disappearing tracks at HL-LHC (14 TeV, 3 ab⁻¹): §4.1.1 (τ = 1 ns) wino exclusion 1100 GeV, discovery 800 GeV; §4.1.3 pure wino 900 GeV (optimistic) / 500 GeV (conservative); HE-LHC (27 TeV) 2.1 / 1.5 TeV.
+D736 said Run 3/HL-LHC "will close or find" the wino window — true for the 0.67–0.80 TeV window it was written for, but the window is now 0.67–1.85 TeV (D784). CORRECTED: HL-LHC tests ~0.67–0.9 (≤ 1.1) TeV only; 1.1–1.85 TeV needs the gamma-ray line (H.E.S.S./CTA, wino_window) or a 27–100 TeV collider (HE-LHC reach 1.5–2.1 TeV covers it).
+D736's unchecked "from memory" HL-LHC number (~0.9–1.1 TeV) is now sourced and matches.
+MAP: node=tests_lhc status=literature touches=[wino_window] ripple=no
+MAP: node=n_sector_i status=computed touches=[] ripple=no
+MAP: node=halo_profile status=computed touches=[] ripple=no
