@@ -1,3 +1,4 @@
+# AEGIS-FP CXYFZXB6KNLDHWLO · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """CERN+1 higgsino cross sections (mass-degenerate higgsinos, arXiv:2304.11915 Table 4, 100-1500 GeV).
 Same two routes as the wino module: ln-ln spline through the tables (13.0, 13.6 TeV) and Drell-Yan scaling from the 13 TeV
 table with the wino-fitted kappa (D1313: reproduces every 13.6 TeV higgsino entry to <= 0.34% without refitting)."""

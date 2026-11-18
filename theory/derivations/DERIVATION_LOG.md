@@ -2105,3 +2105,7 @@ Touches: none.
 
 ## D1312: gamma-line link in the CERN+1 panel
 1. [literature] verdicts taken as recorded in D1126, D1150 and D1153 (Hyperion track); no recomputation.
+
+## D1313: CERN+1 higgsino cross sections
+1. [literature] Resummino aNNLO+NNLL higgsino tables, arXiv:2304.11915 Table 4.
+2. [derived] Drell–Yan scaling s·σ = Φ(τ₀)(√s/13)^κ with the wino κ predicts the 13.6 TeV higgsino tables to ≤ 0.34%.

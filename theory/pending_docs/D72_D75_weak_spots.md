@@ -13822,3 +13822,11 @@ MAP: none
 - The planned "reproduce H.E.S.S. first" step was already done on the Hyperion track: D1126 reproduces the H.E.S.S. IGS benchmark J-factor to −7.4%; D1153 gives the verdicts with the current thermal fractions (0.67 TeV allowed; 1.0 TeV allowed for Gaia-calibrated haloes, marginal for the benchmark halo; 1.85 TeV excluded); D1150 projects CTA at ~10× in cross section. [literature: our own notes]
 - CERN+1 panel() now carries these as a read-only 'gamma_line' block with its sources; nothing from that track was edited or rerun.
 - Combined picture: collider (HL-LHC 0.90–0.98 TeV reach) and line searches (window upper edge ~1.0–1.3 TeV) together close almost all of the post-hoc wino window.
+
+## D1313 — CERN+1: higgsino tables added; the wino κ predicts every higgsino 13.6 TeV entry to ≤ 0.34% (LHC13: all pass)
+MAP: none
+- Data: arXiv:2304.11915 Table 4 (aNNLO+NNLL, mass-degenerate higgsinos, 100–1500 GeV, 13.0 and 13.6 TeV), central values; column order from the header sequence (N1C1+, N1C1−, C1C1, N1N2). [literature]
+- P1: Drell–Yan scaling from the 13 TeV higgsino table with the wino-fitted κ = −0.163, no refit: max 0.34%, median 0.10% over all four channels (≤1%: PASS). The exponent carries over from winos to higgsinos. [derived]
+- P2: σ(C1C1) wino/higgsino = 3.59 (200 GeV), 3.47 (500), 3.40 (1000), 3.33 (1500) (2–5: PASS). [derived]
+- P3: charge-asymmetry test T2 for higgsinos: 0.063% (≤1%: PASS). The passing T2 also supports the inferred column order.
+- Tool: tools/lhc/higgsino.py (sigma, sigma_scaling, total); 2 new unit tests (20 total).

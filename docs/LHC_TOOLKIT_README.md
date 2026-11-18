@@ -18,6 +18,8 @@ Code path: `tools/lhc/` (registry tools `lhc_xsec`, `lhc_ul`, `lhc_lifetime`, `l
 | Event generation, detector simulation | MadGraph5_aMC@NLO, Pythia8, Delphes | Not yet (planned, heavy) | — |
 | Parton distributions | LHAPDF global sets | Pending (one PDF file to fetch) — then an independent LO calculation as a third cross-section route | — |
 
+**Higgsinos (D1313):** `tools/lhc/higgsino.py` adds the four higgsino channels (100–1500 GeV); the wino-fitted scaling exponent predicts the 13.6 TeV higgsino tables to ≤ 0.34% without refitting.
+
 ## Our process (how we work, and why it is more accurate)
 1. **Lock before computing.** Every prediction (what a check should give, and what counts as a pass) is written down, hashed (SHA-256)
    and published to the repository BEFORE the calculation runs (field_tests/rules/PREREG_LHC*.md). Failures are reported as failures —
