@@ -12831,3 +12831,13 @@ Caveat [not derived here]: the √3 applies only if the flavour modulus τ of th
 Frozen predictions unchanged (post-hoc rule). Combined with NA2: N* ≈ 50.1–51.3 sits 0.2–1.4 e-folds above the frozen band's N* range 48.4–49.9; the band's n_s, r still hold except the r floor is now 0.3 % away at the top T_R.
 Next: decide which modulus the 2⊕1 neutrino sector uses (theory question; check D720–D725 and the paper's sector definitions); then lepto_rho (its T_R inputs come from D725, so D731/D775/D986 yields scale with T_R/m_φ).
 MAP: node=reheat_rho status=computed touches=[nstar_e, lepto_rho, sterile_rho, C_nstar] ripple=yes
+
+## D1236 — CENTRE — NA4 node audit, phase 4: lepto_rho rescaled by NA3 — yields rise ×1.44–1.98 (×6.8 near threshold); D775's one failing case (c = 0.3, M_H = 1e12) now passes (1.03e-10 vs 8.75e-11); two light-pair rows fall below D986's M/T_R ≥ 500 premise
+Lock: field_tests/rules/PREREG_NA4_lepto_rho_rescale.md. Results: field_tests/results/na4_lepto_rho_rescale.txt. [computed, rescaling only — ε untouched]
+Y_B ∝ (T_R/m_φ)·ε (D731 form); ε (D775 CI grid) does not depend on T_R or m_φ. NA3's corrections give f = (T_R,new/T_R,old)(2.2e13/3.17e13) = 1.44–1.98 (6.77 on the near-threshold c = 0.3, M_H = 5e13 row).
+1. c = 0.3, M_H = 1e12: Y_B,max = 7.1e-11 (D986, κ applied) × 1.444 = 1.03e-10 ≥ Y_obs 8.75e-11 → would PASS under the NA3 inputs (was ×1.22 short).
+2. M/T_R,new: the c = 0.3 light pair (M = 2.1e11, 2.1e12) has 320–327 < 500 → D986's κ = 0.939 (instantaneous decay, no washout) must be rechecked for these rows; all other rows ≥ 504; none < 10.
+3. Y_obs = η/7.04 with η = 273.9e-10·ω_b, ω_b = 0.02237: 8.70e-11, −0.53% from the 8.75e-11 used → PASS.
+Reading: if NA3's √3 normalisation holds (inflaton = flavour modulus, weight 1), ρ-leptogenesis passes in every M_H = 1e12 case, removing D775's c ≳ 1 condition — but this rests on NA3's caveat (which modulus the 2⊕1 sector uses) and a κ recheck. Not adopted: status stays "computed (D986)" with a flag.
+Wino window (phase 5): BLOCKED — the Saikawa–Shirai g*(T) table (member.ipmu.jp/satoshi.shirai/EOS2018, standardmodel2018.dat) is refused by the egress proxy from both the cloud and the PC link; needs Danny to save the file or allow the domain.
+MAP: node=lepto_rho status=computed touches=[C_lepto] ripple=yes
