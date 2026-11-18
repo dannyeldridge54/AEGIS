@@ -877,16 +877,18 @@ nodes:
   - rho
   - E
   title: 'Test: Run 3 / HL-LHC disappearing tracks'
-  status: literature
+  status: computed
   d:
   - D736
   - D906
   - D1249
+  - D1350
   depends:
   - wino_window
   history:
   - 'D906: literature'
   - 'D1249: literature'
+  - 'D1350: computed'
 observing:
 - id: mapper_dr3
   title: Gaia DR3 sweep complete (192,208,838 stars; 200/200 ESA checks)

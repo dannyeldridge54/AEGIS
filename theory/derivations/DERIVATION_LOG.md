@@ -2140,3 +2140,6 @@ Touches: none.
 1. [derived] ΔV = A V0(1 − cos 2πx) vanishes with ∂ₓ on x = 0 → inflation along x = 0 unchanged.
 2. [derived] Stability needs A ≥ −∂²ₓV/(4π²) = 5.61e-2 V0 (maximum at τ = i); ∂²ᵧV(i) = +10.0 V0.
 3. [derived] V(i) = 0.196 V0 > 0 = V(ρ): the pinned τ = i of SERAPIS-E's potential is a false vacuum.
+
+## D1350: tests_lhc sync
+1. [derived] Window 0.67–1.25 TeV vs CERN+1 reaches: HL-LHC 0.80–0.97 TeV → 23–52 % covered; HE-LHC 1.36–1.68 TeV → 100 %.

@@ -14254,3 +14254,11 @@ MAP: none
 - Scope: this is SERAPIS-E's potential. The τ = i VARIANT uses its own j-based potential (D632, V = I²/(I²+1) + εI₁); whether its axion is tachyonic, and its vacuum energy at τ = i, is the next check (lock first).
 - Status: vac_i stays assumed; the condition is now quantitative (an explicit periodic axion term of size ≥ 0.056 V0 in SERAPIS-E's potential, and even then a false vacuum).
 MAP: node=vac_i status=assumed touches=[] ripple=no
+
+## D1350 — LHC — tests_lhc synced to the current wino window (Danny: "Add lhc"): HL-LHC disappearing tracks cover 23–52 % of the post-hoc window 0.67–1.25 TeV; HE-LHC covers all of it; the Einasto tail to 1.5 TeV needs HE-LHC at low background or FCC-hh (2026-11-18)
+- [READ] wino_window (other session's node, read only): 0.67–1.25 TeV thermal (to ~1.5 for Einasto cores), 5–30 % of DM (D1318, D1324, D1337, D1338).
+- [COMPUTED, CERN+1, D1302/D1306 projections] 95 % reach of disappearing-track searches: HL-LHC 0.80 (high background) – 0.97 TeV (low); HE-LHC 1.36–1.68 TeV; FCC-hh 2.88–3.74 TeV (FCC-hh 17–36 % short of the published study, D1306).
+- Coverage of 0.67–1.25 TeV: HL-LHC 23–52 %; HE-LHC 100 %; FCC-hh 100 %. Einasto tail to 1.5 TeV: HE-LHC only at low background; FCC-hh always.
+- Current floor: Run 2 ATLAS 136 fb⁻¹ recast 666.6 GeV (CERN+1; published 660) — the window's lower edge.
+- Status: tests_lhc literature → computed (CERN+1 recast + projections). From now on the loop has an LHC part (CERN+1 tests green, new ATLAS/CMS disappearing-track results, tests_lhc kept in sync).
+MAP: node=tests_lhc status=computed touches=[] ripple=no

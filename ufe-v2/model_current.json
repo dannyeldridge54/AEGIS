@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1320: Dark radiation at τ=i (hidden sector): U(1) ΔN 0.054 OK (+1.5σ); SU(2) 0.161 ≈3σ (N_eff 2026, D1208); SU(2)+gaugino 0.301 excluded (LBT Y_p, D1192) → computed",
   "D1320: Galactic DM profile (cuspy vs cored) → computed",
   "D1322: Galactic DM profile (cuspy vs cored) → computed",
   "D1324: Wino 0.67–1.25 TeV thermal (to ~1.5 for Einasto cores), 5–30% of DM (post-hoc; IGS line D1153/A2o; LHC floor 0.67, HL-LHC ~0.98) → computed",
@@ -29,7 +28,8 @@
   "D1343: Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4) → computed",
   "D1344: Vacuum at τ=i (Chronos/Kairos) → assumed",
   "D1346: Janus relation (α_s from n_s, r) → computed",
-  "D1349: Vacuum at τ=i (Chronos/Kairos) → assumed"
+  "D1349: Vacuum at τ=i (Chronos/Kairos) → assumed",
+  "D1350: Test: Run 3 / HL-LHC disappearing tracks → computed"
  ],
  "open_rechecks": [],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
