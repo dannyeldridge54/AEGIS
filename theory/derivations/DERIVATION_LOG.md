@@ -1853,3 +1853,4 @@ Touches: none.
 ## D1263: PW3 KILLED — Janus κ does not separate the ρ/τ = i vacua (τ = i own-κ 10.8 %, crossed 13.2 %); vacua differ by Δα_s 1.4e-4 only (≤ 0.09σ) — vacuum choice not decidable from CMB inflation data
 ## D1264: PW4 PASSES — SERAPIS-E covariant m3/2 bound at its own y (14.6–16.6): < 2.0e9 / 6.7e8 GeV, ×960 above the AMSB wino need (≤ 7e5); Chronos-range bound (y 23–30) was marginal
 ## D1265: PW5 PASSES (forecast) — CMB as a string meter: SO n_s → Im S·Im ρ ±14 % (T_R known); + LiteBIRD r (optimistic) → ±19 % and T_R to 2.8 decades; response slopes match the audited box edges (2–8 %)
+## D1267: papers 5 (SERAPIS-E audited, doi 10.5281/zenodo.24330316) and 6 (MS start-condition ripple, doi 10.5281/zenodo.24330318) published, files md5-verified

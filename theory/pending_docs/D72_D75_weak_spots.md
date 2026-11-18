@@ -13183,3 +13183,10 @@ MAP: node=string_meter status=postulate touches=[bhk_tilt, tests_cmb] ripple=no
   - The most decidable next step is (ii): a locked grid-doubling at intermediate x. It is cheap and needs no new sources.
 VERDICT: partial source obtained (χ⁺χ⁻ → WW only). Candidate (v) is unresolved and likely the wrong direction for B1. Next cheap test: (ii).
 MAP: none
+
+## D1267: papers 5 and 6 published on Zenodo (Danny 22:18 CT "Publish" → "Publish when built")
+(5) "SERAPIS-E Audited: Corrected Reheating, a Point Prediction, and How the CMB Would Measure the Compactification" — DOI 10.5281/zenodo.24330316 (concept 24330315), 4 pp. Files md5-verified on Zenodo: Eldridge_SERAPIS-E_audit_2026.pdf (6f462e1d…), .tex (b4a4aa5f…). Source papers/serapis_e_audit/. Content strictly from NA1–NA16 (D1233–D1252, corrections D1233a/D1234a/D1236a), A1 (D1262), TK1 (D1254/D1256), U1b (D1255), W1/W2 (D1257/D1258), PW1–PW5 (D1245, D1251, D1263–D1265), TK2 (D1261). Labels: confirmed / corrected / postulate / killed; frozen band unchanged and still scored.
+(6) "A Start-Condition Ripple in Exact Mukhanov–Sasaki Running, and a Cheap Fix" — DOI 10.5281/zenodo.24330318 (concept 24330317), 3 pp. Files md5-verified: Eldridge_MS_ripple_2026.pdf (bdd49db4…), .tex (dd978982…). Source papers/methods_ripple/. Content from U1 (failed attempt reported), U1 D1 diagnostic, U1b, U4.
+Both cite each other via DOIs reserved before the final build. Record metadata set through the RDM API (12 / 8 keywords as subjects, 15 / 7 references, related works, CC BY 4.0, methods + notes). Checks before posting: every number traced to field_tests/results; bib titles of 2212.04115 and 1812.07831 fetched; Dormand–Prince confirmed in mf_jit; ripple amplitude labelled an order-of-magnitude estimate.
+Path note: drafts made in the built-in browser; files uploaded via Claude in Chrome file_upload from device-staged copies (LESSONS).
+MAP: none
