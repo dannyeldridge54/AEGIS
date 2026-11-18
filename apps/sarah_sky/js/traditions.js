@@ -82,6 +82,7 @@
     else { var k = c - 22, s = SUITS[Math.floor(k / 14)], r = RANKS[k % 14]; name = r[0] + ' of ' + s[0]; mean = r[1] + ' in ' + s[1] + (rev ? ' (reversed: blocked or turned inward)' : ''); }
     return '🃏 <b>' + name + (rev ? ' (reversed)' : '') + '</b><br>' + mean;
   }
+  window.SarahTarot = { MAJOR: MAJOR, SUITS: SUITS, RANKS: RANKS };
   var extra = 0;
   R.tarot = function (d) {
     var key = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();

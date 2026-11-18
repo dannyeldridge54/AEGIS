@@ -111,9 +111,11 @@
   <div id="mayaOut" class="out" style="display:none"></div>
   <label><input type="checkbox" id="ovTarot"> Daily tarot</label>
   <div id="tarotOut" class="out" style="display:none"></div>
+  <div class="rbtns"><button type="button" onclick="SarahReadings.open('chart')">🔮 Birth chart</button><button type="button" onclick="SarahReadings.open('tarot')">🃏 Tarot spreads</button></div>
   <div class="tag" style="margin-top:6px">Private to this device. No accounts, no tracking.</div>
 </details>
 <script src="js/traditions.js"></script>
+<script src="js/readings.js"></script>
 <script>
 (function(){ var pn=document.getElementById('panel'); if(!pn) return;
   var sync=function(){ document.body.classList.toggle('panel-open', !pn.hidden); };

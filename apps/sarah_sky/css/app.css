@@ -135,3 +135,37 @@ body{ background:var(--bg); color:var(--ink); }
 body.panel-open #sarahOverlays:not([open]), body.panel-open #arBtn{ opacity:0; pointer-events:none; }
 #sarahOverlays, #arBtn{ transition:opacity .25s ease; }
 @media (max-width:420px){ #arBtn{ padding:8px 12px !important; font-size:13px !important; } }
+
+/* Readings: birth chart + tarot */
+#sarahOverlays .rbtns{ display:flex; gap:6px; margin:8px 0 2px; flex-wrap:wrap; }
+#sarahOverlays .rbtns button{ flex:1; background:linear-gradient(90deg,rgba(76,195,255,.18),rgba(255,110,199,.18)); color:#f3eeff; border:1px solid #7a5cff; border-radius:10px; padding:7px 8px; font:600 13px Segoe UI,system-ui,sans-serif; }
+#readings{ position:fixed; inset:0; z-index:900; background:rgba(4,2,11,.86); backdrop-filter:blur(6px); display:flex; align-items:flex-start; justify-content:center; overflow:auto; padding:12px; }
+#readings[hidden]{ display:none; }
+#readings .rbox{ width:min(720px,100%); background:linear-gradient(180deg,#0b0620,#120a2e); border:1px solid #7a5cff; border-radius:16px; color:#f3eeff; box-shadow:0 0 40px rgba(122,92,255,.35); }
+#readings .rhead{ display:flex; align-items:center; gap:10px; padding:12px 14px; border-bottom:1px solid #2a1f5a; position:sticky; top:0; background:#0b0620; border-radius:16px 16px 0 0; }
+#readings .rhead b{ color:#ff6ec7; }
+#readings .rtabs{ display:flex; gap:6px; flex:1; }
+#readings .rtabs button, #readings .tb button, #readings .row button{ background:transparent; color:#f3eeff; border:1px solid #2a1f5a; border-radius:999px; padding:6px 12px; font:inherit; }
+#readings .rtabs button.on{ background:#4cc3ff; color:#04020b; border-color:#4cc3ff; }
+#readings #rClose{ background:none; border:0; color:#f3eeff; font-size:24px; }
+#readings .rbody{ padding:12px 14px 18px; }
+#readings label{ display:block; font-size:13px; color:#a296d8; margin:6px 0; }
+#readings label.half{ display:inline-block; width:calc(50% - 6px); margin-right:4px; }
+#readings input, #readings select{ display:block; width:100%; margin-top:3px; background:#04020b; color:#f3eeff; border:1px solid #2a1f5a; border-radius:8px; padding:8px; font:15px Segoe UI,system-ui,sans-serif; }
+#readings .row{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; margin-top:8px; }
+#readings .row input{ flex:1; margin:0; }
+#readings .row select{ width:auto; flex:1; margin:0; }
+#readings .go{ background:linear-gradient(90deg,#4cc3ff,#ff6ec7) !important; color:#04020b !important; border:0 !important; font-weight:700 !important; }
+#readings .cw{ width:100%; max-width:380px; display:block; margin:8px auto; }
+#readings h3{ margin:14px 0 4px; color:#ff6ec7; } #readings h4{ margin:14px 0 4px; color:#6fb8ff; }
+#readings .big3{ font-size:16px; text-align:center; }
+#readings .ct{ width:100%; border-collapse:collapse; font-size:13px; } #readings .ct td, #readings .ct th{ border-bottom:1px solid #2a1f5a; padding:4px 6px; text-align:left; }
+#readings .rd{ padding-left:18px; font-size:14px; line-height:1.45; }
+#readings .trad{ color:#a296d8; font-size:11px; opacity:.85; }
+#readings .q{ text-align:center; font-style:italic; color:#ffd9f1; }
+#readings .spread{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin-top:10px; }
+#readings .tc{ border:1px solid #7a5cff; border-radius:12px; padding:10px; background:linear-gradient(160deg,#120a2e,#1a0b3d); animation:tcin .7s both cubic-bezier(.3,1.4,.5,1); }
+#readings .tc.maj{ border-color:#ff6ec7; box-shadow:0 0 14px rgba(255,110,199,.35); }
+#readings .tcp{ font-size:11px; color:#a296d8; } #readings .tcn{ font-weight:700; margin:4px 0; color:#f3eeff; } #readings .tc.rev .tcn{ color:#ff9fd6; }
+#readings .tcm{ font-size:13px; color:#d9cfff; }
+@keyframes tcin{ from{ opacity:0; transform:rotateY(90deg) translateY(10px); } to{ opacity:1; transform:none; } }

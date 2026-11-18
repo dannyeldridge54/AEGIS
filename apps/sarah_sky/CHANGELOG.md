@@ -1,4 +1,7 @@
 # Changelog
+## 1.4.0 — 18 Nov 2026
+- Readings: full birth chart — Sun, Moon, Mercury to Pluto (with retrogrades), Ascendant and Midheaven from the real sky (true ecliptic of date); Placidus, Whole-sign or Equal houses; Tropical or Sidereal (Lahiri); aspects with orbs; element and modality balance; a chart wheel; and a written reading for every placement. Time zone history handled through the time-zone database (or local mean time for old births); birthplace lookup; charts saved on the device. Checked against Einstein's published chart (14 Mar 1879, 11:30 LMT, Ulm): Sun 23°30' Pisces, Moon 14°32' Sagittarius, Ascendant 11°39' Cancer, MC 12°50' Pisces — all match.
+- Tarot spreads: one card, Past–Present–Future, Mind–Body–Spirit and the 10-card Celtic Cross, shuffled with the device's secure random generator, with position meanings and a Major Arcana count.
 ## 1.3.3 — 18 Nov 2026
 - New tradition: Maya calendar — Tzolk'in day sign, Haab' date and Long Count (GMT correlation 584283; checked: 21 Dec 2012 = 13.0.0.0.0 4 Ajaw 3 K'ank'in).
 - One-time AR accuracy tip.
