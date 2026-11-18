@@ -1,4 +1,8 @@
 # Changelog
+## 1.5.0 — 18 Nov 2026
+- Phone navigation: a bottom tab bar (Sky · Tonight · Signs · Readings · More) like a native app; panels open as bottom sheets; a "More" sheet for Layers, Tour, Learn, AEGIS stars, Point & See, Tarot and About.
+- The Android back button now closes whatever is open (panel, readings, signs, More) instead of leaving the app.
+- Safe-area padding for phones with notches and gesture bars.
 ## 1.4.1 — 18 Nov 2026
 - Birth chart now ends with "Today's sky on this chart": the real planets today against the natal chart (transits to every planet, the Ascendant and the Midheaven, tight orbs, slow planets first) and the house the Moon is passing through.
 - Numerology: life-path number (with master numbers 11, 22, 33) and its meaning.

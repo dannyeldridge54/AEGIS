@@ -169,3 +169,35 @@ body.panel-open #sarahOverlays:not([open]), body.panel-open #arBtn{ opacity:0; p
 #readings .tcp{ font-size:11px; color:#a296d8; } #readings .tcn{ font-weight:700; margin:4px 0; color:#f3eeff; } #readings .tc.rev .tcn{ color:#ff9fd6; }
 #readings .tcm{ font-size:13px; color:#d9cfff; }
 @keyframes tcin{ from{ opacity:0; transform:rotateY(90deg) translateY(10px); } to{ opacity:1; transform:none; } }
+
+/* ---- phone navigation (bottom bar + sheets) ---- */
+#bottomNav, #moreSheet{ display:none; }
+@media (max-width:700px){
+  .tabs{ display:none !important; }
+  footer.status{ display:none; }
+  #bottomNav{ display:flex; position:fixed; left:0; right:0; bottom:0; z-index:950; height:calc(62px + env(safe-area-inset-bottom));
+    padding-bottom:env(safe-area-inset-bottom); background:rgba(11,6,32,.94); backdrop-filter:blur(10px); border-top:1px solid rgba(122,92,255,.45); }
+  #bottomNav button{ flex:1; background:none; border:0; color:#a296d8; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+    font:600 11px "Segoe UI",system-ui,sans-serif; letter-spacing:.02em; -webkit-tap-highlight-color:transparent; }
+  #bottomNav .ni{ font-size:21px; line-height:1; font-family:"Segoe UI Symbol","Noto Sans Symbols 2","Segoe UI",sans-serif; }
+  #bottomNav button.on{ color:#f3eeff; }
+  #bottomNav button.on .ni{ color:#ff6ec7; text-shadow:0 0 12px rgba(255,110,199,.7); }
+  body{ padding-bottom:calc(62px + env(safe-area-inset-bottom)); box-sizing:border-box; }
+  .panel{ left:0 !important; right:0 !important; bottom:calc(62px + env(safe-area-inset-bottom)) !important; max-height:62vh !important; border-radius:18px 18px 0 0 !important; }
+  #sarahOverlays:not([open]){ display:none; }
+  #sarahOverlays[open]{ left:0 !important; right:0 !important; bottom:calc(62px + env(safe-area-inset-bottom)) !important; max-width:none !important;
+    max-height:64vh; border-radius:18px 18px 0 0; }
+  #readings{ bottom:calc(62px + env(safe-area-inset-bottom)); padding:0; align-items:stretch; }
+  #readings .rbox{ border-radius:0; min-height:100%; border-left:0; border-right:0; }
+  #moreSheet:not([hidden]){ display:block; position:fixed; inset:0 0 calc(62px + env(safe-area-inset-bottom)) 0; z-index:940; background:rgba(4,2,11,.55); }
+  #moreSheet .ms{ position:absolute; left:0; right:0; bottom:0; background:linear-gradient(180deg,#120a2e,#0b0620); border:1px solid rgba(122,92,255,.5); border-bottom:0;
+    border-radius:18px 18px 0 0; padding:8px 10px 10px; animation:sheetUp .28s cubic-bezier(.2,.9,.3,1); }
+  #moreSheet .msh{ display:flex; justify-content:space-between; align-items:center; padding:6px 6px 8px; color:#ff6ec7; }
+  #moreSheet .msh button{ background:none; border:0; color:#f3eeff; font-size:24px; }
+  #moreSheet button[data-more]{ display:flex; gap:12px; align-items:center; width:100%; text-align:left; background:none; border:0; border-top:1px solid #2a1f5a;
+    color:#f3eeff; padding:12px 8px; font:15px "Segoe UI",system-ui,sans-serif; }
+  #moreSheet .mi{ font-size:22px; width:30px; text-align:center; }
+  #moreSheet small{ display:block; color:#a296d8; font-size:12px; margin-top:2px; }
+  .bar{ padding-top:max(6px, env(safe-area-inset-top)); }
+}
+@keyframes sheetUp{ from{ transform:translateY(100%); } to{ transform:none; } }
