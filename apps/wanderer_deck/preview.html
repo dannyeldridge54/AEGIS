@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><title>The Wanderer — 10 lights</title>
+<style>body{margin:0;background:#04020b;color:#f3eeff;font:14px Georgia,serif;padding:18px}
+h1{font-weight:normal;color:#ff6ec7;margin:0 0 4px}p{color:#a296d8;margin:0 0 14px}
+.g{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.c{text-align:center}.c small{display:block;color:#a296d8;font-size:11px;margin-top:4px}
+.bar{height:6px;border-radius:3px;background:linear-gradient(90deg,#fff4c2,#4cc3ff,#7a5cff,#04020b);margin:0 0 14px}
+svg{width:100%;height:auto;display:block;border-radius:10px}</style>
+<h1>The Wanderer — ten lights</h1><p>Light ⟶ dark. Deer antler and ram horn, one eye kept, ᛉ on the brow, Yggdrasil behind.</p><div class="bar"></div>
+<div class="g" id="g"></div><script src="wanderer.js"></script>
+<script>g.innerHTML=WandererArt.VARIANTS.map((v,i)=>'<div class="c">'+WandererArt.cardSVG(i)+'<small>'+(i+1)+'. '+v.note+'</small></div>').join('')</script>

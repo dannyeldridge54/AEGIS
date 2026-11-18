@@ -28,12 +28,21 @@ def _f(v):
     try:
         x = float(v); return x if math.isfinite(x) else float('nan')
     except (TypeError, ValueError): return float('nan')
+def adapt(r):
+    """A8d DEVIATIONS D2: map the Star Mapper's derived tile columns onto the Gaia names. Returns (row, proxy) or (None, True) if cut."""
+    if 'radial_velocity' in r or 'rv' not in r: return r, False
+    dp, db, ru = _f(r.get('dist_plx_pc')), _f(r.get('dist_bj_pc')), _f(r.get('ruwe'))
+    if not (math.isfinite(dp) and dp > 0 and math.isfinite(db) and db > 0 and math.isfinite(ru) and ru < 1.4 and abs(dp/db - 1) < 0.2): return None, True
+    q = dict(r); q.update(radial_velocity=r.get('rv'), r_med_geo=db, parallax=1000.0/dp, parallax_error=1000.0/dp/10.0, phot_g_mean_mag=r.get('g_mag'))
+    return q, True
 def select(rows):
     keep = []
-    for r in rows:
+    for r0 in rows:
+        r, proxy = adapt(r0)
+        if r is None: continue
         plx, eplx, rv = _f(r.get('parallax')), _f(r.get('parallax_error')), _f(r.get('radial_velocity'))
         if not (math.isfinite(rv) and math.isfinite(plx) and math.isfinite(eplx) and eplx > 0 and plx/eplx > 5): continue
-        d = _f(r.get('r_med_geo')); flag = []
+        d = _f(r.get('r_med_geo')); flag = ['proxy_cut'] if proxy else []
         if math.isfinite(d) and d > 0: dk = d/1000.0
         else: dk = 1.0/plx; flag.append('dist_parallax')
         keep.append((r, dk, flag))
