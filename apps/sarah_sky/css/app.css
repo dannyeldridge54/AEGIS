@@ -94,3 +94,24 @@ body{ background:var(--bg); color:var(--ink); }
 #sarahOverlays .trad{ opacity:.65; font-size:11px; }
 #sarahOverlays .tbtn{ margin-top:4px; background:transparent; color:var(--a-pink); border:1px solid var(--a-violet); border-radius:8px; padding:3px 10px; font:inherit; }
 #sarahOverlays[open]{ max-height:70vh; overflow:auto; }
+
+/* Opening screen (Philo · Sophia · Sarah) */
+#splash{ position:fixed; inset:0; z-index:1000; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+  background:radial-gradient(ellipse at 50% 42%, #1a0b3d 0%, #0b0620 45%, #04020b 100%); color:#f3eeff; transition:opacity .9s ease; text-align:center; padding:24px; }
+#splash.sp-out{ opacity:0; pointer-events:none; }
+#splash .sp-sigil{ width:min(62vw,300px); height:auto; filter:drop-shadow(0 0 18px rgba(122,92,255,.55)); }
+#splash .sp-ring{ animation:sp-spin 40s linear infinite; transform-box:view-box; transform-origin:0 0; }
+#splash .sp-flower{ animation:sp-spin 60s linear infinite reverse; transform-box:view-box; transform-origin:0 0; }
+#splash .sp-star{ animation:sp-pulse 3.2s ease-in-out infinite; transform-box:view-box; transform-origin:0 0; }
+#splash .sp-title{ font-size:clamp(26px,7vw,40px); font-weight:700; letter-spacing:.02em;
+  background:linear-gradient(90deg,#4cc3ff,#7a5cff,#ff6ec7); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#splash .sp-names{ font-size:clamp(20px,5.4vw,28px); letter-spacing:.36em; text-transform:uppercase; color:#e8e0ff; padding-left:.36em; }
+#splash .sp-for{ font-size:clamp(17px,4.4vw,22px); font-style:italic; color:#ff6ec7; letter-spacing:.08em; }
+#splash .sp-names i{ font-style:normal; color:#ff6ec7; margin:0 .35em; letter-spacing:0; }
+#splash .sp-sub{ font-size:13px; color:#a296d8; letter-spacing:.12em; font-style:italic; }
+#splash .sp-sigil text, #splash .sp-sym{ font-family:'Segoe UI Symbol','Noto Sans Symbols','Noto Sans Symbols 2','DejaVu Sans',serif; font-variant-emoji:text; }
+#splash .sp-sym{ margin-top:8px; font-size:18px; color:#cdb8ff; opacity:.85; animation:sp-fade 2.4s ease-in-out infinite alternate; }
+@keyframes sp-spin{ to{ transform:rotate(360deg); } }
+@keyframes sp-pulse{ 0%,100%{ opacity:.55; transform:scale(.97); } 50%{ opacity:1; transform:scale(1.03); } }
+@keyframes sp-fade{ from{ opacity:.45; } to{ opacity:.95; } }
+@media (prefers-reduced-motion: reduce){ #splash *{ animation:none !important; } }
