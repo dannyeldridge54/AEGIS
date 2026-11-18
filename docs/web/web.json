@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1280, D1287, D1288",
+   "refs": "D1287, D1288, D1289",
    "info": ""
   },
   {
@@ -758,6 +758,22 @@
    "lane": "lattice",
    "status": "computed",
    "refs": "D1289",
+   "info": ""
+  },
+  {
+   "id": "X_mod",
+   "label": "Upward link: self-dual champions are Eisenstein modular forms — θ_E8 = E4, θ_E8⊕E8 = E4², θ_Leech = E4³−720Δ; flip rule = modularity",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1291",
+   "info": ""
+  },
+  {
+   "id": "X_mellin",
+   "label": "E(τ,s) = Mellin transform of the Gaussian lattice energy: SERAPIS-E’s E(τ,2) is the all-scale integral; hex wins every scale ⇒ every s",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1291",
    "info": ""
   },
   {
@@ -2285,6 +2301,69 @@
    "sign": 1,
    "ref": "Leech",
    "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_mod",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1291",
+   "verdict": "no flip ⇔ modular form",
+   "source": "curated"
+  },
+  {
+   "s": "X_d8",
+   "t": "X_mod",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1291",
+   "verdict": "θ = E4",
+   "source": "curated"
+  },
+  {
+   "s": "X_d16",
+   "t": "X_mod",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1291",
+   "verdict": "θ = E4² (forced tie)",
+   "source": "curated"
+  },
+  {
+   "s": "X_d24",
+   "t": "X_mod",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1291",
+   "verdict": "θ = E4³ − 720Δ",
+   "source": "curated"
+  },
+  {
+   "s": "X_mod",
+   "t": "X_mellin",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1291",
+   "verdict": "same Eisenstein family",
+   "source": "curated"
+  },
+  {
+   "s": "X_mellin",
+   "t": "serapis_e",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1291",
+   "verdict": "E(τ,2) = scale-integral of lattice energy",
+   "source": "curated"
+  },
+  {
+   "s": "X_d2",
+   "t": "X_mellin",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1276, D1277, D1291",
+   "verdict": "hex wins every scale ⇒ every s",
    "source": "curated"
   },
   {

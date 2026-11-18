@@ -1990,3 +1990,10 @@ Touches: none.
 3. [derived] Enumeration |v|²≤4: no norm-2 vectors, 196560 of norm 4.
 4. [literature] Even unimodular, rootless, d=24 ⇒ unique ⇒ Λ24 (Conway); shells 16773120 (norm 6), 398034000 (norm 8).
 5. [derived] Self-dual ⇒ no flip; Gaussian energy below E8³ at all α≥1 (α=2: 2.39e-6 vs 2.51e-3) and, by Poisson, at all α<1.
+
+## D1291: Self-dual champions' energies are modular forms (E4, E4², E4³−720Δ); the flip rule is modularity; E(τ,2) is the scale-integral of the lattice energy (2026-11-18)
+1. [derived] Locked P1–P4 (PREREG_D1291).
+2. [derived] E8 enumerated shells = 240σ3(n) (n≤6): θ_E8 = E4. E8⊕E8 = D16⁺ shells = E4² coefficients; Leech shells = E4³ − 720Δ.
+3. [literature] Weight-8 modular forms are one-dimensional ⇒ every even unimodular 16-lattice has θ = E4² ⇒ the D1288 tie is forced.
+4. [derived] Non-self-dual champions violate θ(α) = α^{−d/2}θ(1/α) by their L−L* gap; self-dual ones satisfy it (≤2e-11). The flip rule = modularity under τ → −1/τ with τ = iα.
+5. [derived] Z_Λ(s) = π^s/Γ(s)∫₀^∞(θ_Λ−1)α^{s−1}dα reproduces D1276 (hex 5.783359, square 6.026812 at s=2): E(τ,2) is the all-scale integral of the Gaussian energy, so the hexagon's win at every scale (D1277) implies its win for every s.

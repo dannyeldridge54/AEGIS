@@ -1,0 +1,15 @@
+P1 E8 shells  : [1, 240, 2160, 6720, 17520, 30240, 60480]
+   240*sigma3  : [1, 240, 2160, 6720, 17520, 30240, 60480]
+   P1 PASS
+P2 E4^2 coeffs: [1, 480, 61920, 1050240]  (D1288 enumerated: 1,480,61920,1050240) PASS
+P3 E4^3-720Delta: [1, 0, 196560, 16773120]  (D1289 enumerated: 1,0,196560) PASS ; next coeff 16773120 (lit 16773120)
+P4 FCC  self-Poisson violation theta(1.25) - 1.25^(-d/2) theta(0.8) = -8.954e-04
+P4 D5   self-Poisson violation theta(1.25) - 1.25^(-d/2) theta(0.8) = -2.076e-03
+P4 E6   self-Poisson violation theta(1.25) - 1.25^(-d/2) theta(0.8) = -1.601e-03
+P4 E7   self-Poisson violation theta(1.25) - 1.25^(-d/2) theta(0.8) = -2.587e-03
+P4 E8   self-Poisson violation theta(1.25) - 1.25^(-d/2) theta(0.8) = +1.790e-11
+P4 D4   self-Poisson violation theta(1.25) - 1.25^(-d/2) theta(0.8) = +2.593e-12
+Mellin square s=2: Z=6.026812
+Mellin square s=3: Z=4.658914
+Mellin hex    s=2: Z=5.783359
+Mellin hex    s=3: Z=4.141257

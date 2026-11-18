@@ -13573,3 +13573,22 @@ Construction: generators {2c (code basis), 4(e_i±e_j), (−3,1²³)} in √8-sc
 Champion chain now: 2 hex · 3 FCC/BCC · 4 D4 · 5 D5/D5* · 6 E6/E6* · 7 E7/E7* · 8 E8 · 16 E8⊕E8 = D16⁺ (tie) · 24 Leech.
 Self-dual champions (2, 4, 8, 16, 24) never hand over; the rest hand over to their duals exactly at the self-dual scale.
 Files: field_tests/leech_d24.py, field_tests/results/leech_d24_2026-11-18.txt.
+
+## D1291 — Upward link: the self-dual champions' energies ARE Eisenstein modular forms (E8 = E4, E8⊕E8 = E4², Leech = E4³−720Δ), and SERAPIS-E's E(τ,2) is the scale-integral of the same lattice energy; PREREG P1–P4 PASS (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: numerics (computed), locked first (PREREG_D1291). Identity checks labelled [derived].
+- P1 PASS: E8 shells from exact enumeration (|v|² ≤ 12): 240, 2160, 6720, 17520, 30240, 60480 = 240·σ3(n), n=1…6 → θ_E8 = E4.
+- P2 PASS: E4² = 1 + 480q + 61920q² + 1050240q³ = the shells enumerated for E8⊕E8 AND D16⁺ (D1288). Their tie is forced: the space of
+  weight-8 modular forms is one-dimensional, so every even unimodular 16-lattice has θ = E4².
+- P3 PASS: E4³ − 720Δ = 1 + 0q + 196560q² + 16773120q³ = Leech's enumerated shells (D1289) and the literature norm-6 shell.
+- P4 PASS: non-self-dual champions break self-Poisson θ(α) = α^{−d/2}θ(1/α) at α=1.25 by FCC −9.0e-4, D5 −2.1e-3, E6 −1.6e-3,
+  E7 −2.6e-3 (each equals its L−L* gap, D1282); self-dual ones keep it to truncation (E8 1.8e-11, D4 2.6e-12).
+So "never flips" (D1278) ⇔ "the energy is a modular form of the full modular group": τ → −1/τ in the theta variable τ = iα is exactly
+the scale inversion α → 1/α. The flip rule is modularity.
+LINK TO SERAPIS-E [derived, checked]: the Epstein zeta is the Mellin transform of the Gaussian energy,
+Z_Λ(s) = π^s/Γ(s) ∫₀^∞ (θ_Λ(α) − 1) α^{s−1} dα (Poisson for α < 1). Numerically: square 6.026812 (s=2), 4.658914 (s=3); hex
+5.783359, 4.141257 — the D1276 values. So E(τ,2), the building block of SERAPIS-E, is the Gaussian lattice energy summed over all
+scales: because the hexagon wins at EVERY scale (D1277), it must win for every s — the vacuum choice at ρ is a scale-by-scale
+statement, not an accident of s=2. One Eisenstein family runs from the d=2 inflaton torus (non-holomorphic E(τ,s)) up to the
+E8/heterotic/Leech lattices (holomorphic E4, E4², E4³−720Δ).
+Files: field_tests/theta_modular.py, field_tests/results/theta_modular_2026-11-18.txt.
