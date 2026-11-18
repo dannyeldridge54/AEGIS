@@ -1,0 +1,10 @@
+P1 N1C1p max 0.262% median 0.136%
+P1 N1C1m max 0.254% median 0.110%
+P1 C1C1 max 0.338% median 0.095%
+P1 N1N2 max 0.216% median 0.093%
+P1 overall max 0.338% median 0.104%
+P2 wino/higgsino C1C1 at 200 3.585
+P2 wino/higgsino C1C1 at 500 3.467
+P2 wino/higgsino C1C1 at 1000 3.398
+P2 wino/higgsino C1C1 at 1500 3.331
+P3 T2 max 0.063%

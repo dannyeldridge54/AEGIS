@@ -64,3 +64,14 @@ def test_future_ordering():
 
 def test_selftests_T2_T3():
     r = selftest.run(); assert r['T2_pass'] and r['T3_pass']
+
+def test_higgsino_scaling_reproduces_13p6():
+    from tools.lhc import higgsino as H
+    for p in H.PROCS:
+        for m in (300, 800, 1400):
+            assert H.sigma_scaling(m, p, 13.6) == pytest.approx(H.sigma(m, p, '13.6'), rel=0.004)
+
+def test_higgsino_bad_inputs():
+    from tools.lhc import higgsino as H
+    with pytest.raises(ValueError): H.sigma(2000)
+    with pytest.raises(ValueError): H.sigma(500, 'C1N2p')
