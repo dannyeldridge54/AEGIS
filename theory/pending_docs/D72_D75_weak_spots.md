@@ -13863,3 +13863,11 @@ MAP: none
 - **Decision:** galaxy-model refit PARKED. McMillan17 stays the Star Mapper default (passes Horta's v_c and Ω; slope defect recorded, D1203). Revisit with a published 2025–26 Milky Way mass model fitted to Gaia DR3 rotation-curve data, if one appears.
 VERDICT: Q1 FAIL, Q2 PASS, Q3 FAIL. Not adopted.
 MAP: none
+
+### D1316 — A tick: D1275b's circularity point (Im S·Im ρ is fitted to n_s) does not touch the SERAPIS v3.3 draft. NULL (2026-11-18)
+- [CENTRE · audit, no computation] grep of papers/v3/serapis_v3.3_draft.tex for 804, "Im S", "meter", "dilaton" and "independent": no Im S·Im ρ value, no string-meter claim, and no "independent consistency" statement about the BHK coefficient.
+  - The only "independent" hits are the affiliation, the BBN-code sentence (three independent codes) and the astrophysics-toolkit sentence. None of them concerns C or Im S·Im ρ.
+  - The draft's BHK/C statements already say C is fixed by the frozen band (consistent with D1275b).
+- **Consequence:** no care is needed in v3.3. D1275b's caveat applies to the other session's string-meter material (PW5/PW6, T1 tool, and any paper that quotes 804 as an independent check). That is theirs to carry.
+VERDICT: NULL for our draft.
+MAP: none
