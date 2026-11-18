@@ -25,7 +25,7 @@ jobs:
           pyinstaller --onefile --name aegis-${RUNNER_OS} --paths . \
             --add-data "tools/lhc/data${SEP}tools/lhc/data" --add-data "tools/release_smoketest.py${SEP}tools" --add-data "LICENSE${SEP}." \
             --hidden-import tools.lhc.xsec --hidden-import tools.lhc.lifetime --hidden-import tools.lhc.recast_dt --hidden-import tools.lhc.stats \
-            --hidden-import tools.lhc.theory_band --hidden-import tools.lhc.kinematics --hidden-import tools.lhc.future \
+            --hidden-import tools.lhc.theory_band --hidden-import tools.lhc.kinematics --hidden-import tools.lhc.future --hidden-import tools.lhc.higgsino \
             --hidden-import tools.lattice.lattice_lab --hidden-import tools.janus_calc.core --hidden-import tools.janus_calc.anyV \
             tools/aegis_cli.py
       - name: Self-test the executable
