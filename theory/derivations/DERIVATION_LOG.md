@@ -2093,3 +2093,6 @@ Touches: none.
 2. [estimate] channels fully correlated, σ-weighted; scale and PDF in quadrature.
 3. [derived] N(m)=N_b(1±ε(m))σ(m)/σ(m_b)·P(m)/P(m_b); δm ±0.4 MeV enters through P.
 4. [derived] 661.5 ± 10.0 GeV (136 fb⁻¹); 446.4 ± 5.5 GeV (36.1 fb⁻¹).
+
+## D1310: registry access to the theory band
+1. [derived] lhc_dt_limit(search, band=true) returns theory_band.band(search); values identical to D1309.

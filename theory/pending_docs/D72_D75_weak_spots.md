@@ -13800,3 +13800,7 @@ MAP: none
 - ATLAS 136 fb⁻¹: 661.5 GeV, σ band ±10.0 GeV, δm(±0.4 MeV) band ±0.1 GeV → 661.5 ± 10.0 GeV; published 660 inside (pull −0.15). P1 (≤15) PASS, P2 (≤5) PASS, P3a PASS. [computed]
 - ATLAS 36.1 fb⁻¹: 446.4 ± 5.5 GeV; published 460 is 2.5 band-widths away (locked criterion 1.5) → P3b FAIL. The −2.9% residual there is not explained by theory uncertainty; candidate causes: mass-independent efficiency assumption or the 2017 search's different track selection. [computed]
 - Tool: tools/lhc/theory_band.py (eps, band).
+
+## D1310 — CERN+1: theory band callable from CubeMind (LHC11 pass)
+MAP: none
+- Registry lhc_dt_limit {search, band: true} → theory_band.band: ATLAS_136 661.5 ± 10.0 GeV, ATLAS_36 446.4 ± 5.5 GeV (P1, P2 PASS). README updated with the band and the open 36 fb⁻¹ residual. [derived]
