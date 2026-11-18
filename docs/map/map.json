@@ -806,8 +806,7 @@
     "D784: corrected",
     "D906: corrected",
     "D1230: corrected"
-   ],
-   "flag": "recheck (D1242, gravitino_wino)"
+   ]
   },
   {
    "id": "tests_cmb",

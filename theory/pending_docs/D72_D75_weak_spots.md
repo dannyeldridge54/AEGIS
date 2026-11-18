@@ -12926,3 +12926,14 @@ Original D745 reproduced exactly (33.9–85.5 % pass). With m_φ = 2.28e11 (T_R 
 Locked rule (every cell ≥ 10 %) → PASS. δ_N < Γ fraction unchanged (1.2–3.2 %). eta_n (radiative breaker) and lepto_i: verdicts unchanged.
 Caveat carried from D745: the m1 grid (1e-4–5e-3 eV) lies above D895's m_ν₁ window (2e-11–9e-10 eV); the pass fraction is flat in m1 across the grid, so the extrapolation is mild but not computed.
 MAP: node=eta_n status=computed touches=[lepto_i] ripple=no
+
+### D1244 — wino_window recheck after D1242: unchanged. The g_*(T) table that D1236's phase 5 was blocked on is now in the repo (2026-11-18)
+- [CENTRE · recheck] **D1242** (NA9, another session): the non-thermal gravitino → wino share is ≤ 4.4e-4 of Ω with the audited T_R, i.e. ≤ 0.04% of the wino density. The thermal window and fraction bracket (D1152/D1153) are unaffected. wino_window's status is unchanged; flag cleared.
+- **For the NA audit (D1236, "Wino window (phase 5): BLOCKED — Saikawa–Shirai g*(T) table refused by the egress proxy"):**
+  - The table is now at field_tests/data/saikawa_shirai_2020_gstar.dat, with a provenance file. It is the PTArcade-bundled copy of Saikawa–Shirai 2020, checked against the IPMU original to < 0.01%, and was downloaded with Danny's OK.
+  - The relic rerun with it is D1238 (R2e-b): Born 2.252 TeV (+2.0% vs Beneke, PASS); LO Sommerfeld 3.013 TeV (+4.4%).
+  - Phase 5 can proceed from these.
+- **The other flags** (nstar_i, lepto_i, sterile_rho, nstar_e, band_i, band_e, tests_cmb, tests_lhc) come from the NA audit's own ripple chain (D1237–D1243). They are left to that chain to avoid duplicate rechecks.
+- **Ladder tool:** ladder.py now skips (and reports) touched ids that are not map nodes (C_lepto, C_nstar, H_relic) instead of crashing.
+VERDICT: wino_window unchanged; the NA audit is unblocked for phase 5.
+MAP: none
