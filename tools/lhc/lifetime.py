@@ -7,6 +7,7 @@ HBAR_GEV_S = 6.582119569e-25; C_CM_S = 2.99792458e10
 M_PI, M_MU, M_E = 0.13957039, 0.1056583755, 0.51099895e-3     # GeV
 TAU_PI = 2.6033e-8; GF = 1.1663788e-5
 def dm(m_gev):
+    if not 1.0 <= float(m_gev) <= 1e5: raise ValueError('wino mass must be between 1 GeV and 100 TeV (the two-loop fit is calibrated on 100-4000 GeV)')
     L = math.log(m_gev)
     return 1e-3*(-413.315 + 305.383*L - 60.8831*L**2 + 5.41948*L**3 - 0.181509*L**4)   # GeV
 def _f(x):

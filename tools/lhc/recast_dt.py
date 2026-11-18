@@ -23,7 +23,10 @@ def hl_lhc(lumi=3000.0, b_run2=3.0, sqrts=14.0):
 # ---- generic: any benchmark-anchored disappearing-track search (validated on two ATLAS searches) ----
 SEARCHES = {'ATLAS_136': dict(lumi=136.0, n_bench=8.6, m_bench=600.0, n95=0.037*136.0, ref='arXiv:2201.02472', published=660.0),
             'ATLAS_36': dict(lumi=36.1, n_bench=13.5, m_bench=400.0, n95=0.22*36.1, ref='arXiv:1712.02118', published=460.0)}
+def _search(key):
+    if key not in SEARCHES: raise ValueError(f"unknown search {key!r}; use one of {', '.join(SEARCHES)}")
+    return SEARCHES[key]
 def limit_search(key, bg=0.5):
-    S = SEARCHES[key]
+    S = _search(key)
     f = lambda m: S['n_bench']*(sig_tot(m, '13')/sig_tot(S['m_bench'], '13'))*(p_window(m, bg)/p_window(S['m_bench'], bg)) - S['n95']
     return brentq(f, 200, 1999)

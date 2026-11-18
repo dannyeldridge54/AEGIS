@@ -1,3 +1,4 @@
+<!-- AEGIS-FP PUIMVMCV2JXDXHQR · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) -->
 # CERN+1 and AEGIS toolkits — user guide
 
 Run any command with `python -m tools.aegis_cli <command>` from the AEGIS folder, or with the one-file program: `aegis <command>` (double-click it for a menu).

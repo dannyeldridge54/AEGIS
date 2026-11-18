@@ -13,15 +13,20 @@ def _spl(sqrts, proc, drop=None):
     if drop is not None: x = np.delete(x, drop); y = np.delete(y, drop)
     sp = CubicSpline(x, y)
     return lambda m: sp(np.log(m))
+PROCS = ('C1N2p', 'C1N2m', 'C1C1')
+def _check_proc(proc):
+    if proc not in PROCS: raise ValueError(f"unknown process {proc!r}; use one of {', '.join(PROCS)} (chi2^0 chi1^+, chi2^0 chi1^-, chi1^+ chi1^-)")
 def sigma(m, proc='C1N2p', sqrts='13.6'):
     """Cross section in fb at mass m (GeV), 100 <= m <= 2000. sqrts '13', '13.6' (table) or a number in [13, 14] (log-linear in sqrt(s))."""
-    m = float(m)
+    _check_proc(proc); m = float(m)
     if not (100 <= m <= 2000): raise ValueError('mass outside the 100-2000 GeV reference table')
     if str(sqrts) in D['sqrt_s']: return float(math.exp(_spl(str(sqrts), proc)(m)))
     s = float(sqrts); a, b = math.log(sigma(m, proc, '13')), math.log(sigma(m, proc, '13.6'))
     return float(math.exp(a + (b - a)*(s - 13.0)/0.6))     # log-linear in sqrt(s): an EXTRAPOLATION above 13.6 TeV, labelled as such
 KAPPA = -0.16300000003275   # LHC1 (2026-11-18): universal PDF-evolution exponent fitted on the 13 -> 13.6 TeV tables (all 3 processes: -0.161..-0.165)
 def sigma_scaling(m, proc='C1N2p', sqrts=14.0):
+    _check_proc(proc)
+    if not float(sqrts) > 0: raise ValueError('collision energy sqrt(s) must be a positive number of TeV, e.g. 14')
     """Physics route (no PDF file): Drell-Yan scaling s*sigma = Phi(4m^2/s) built from the 13 TeV table, times (sqrt(s)/13)^KAPPA.
     Reproduces the 13.6 TeV table to <=0.3%; at 14 TeV it agrees with the log-linear route to <=1%."""
     t13 = 4*M**2/13000.0**2

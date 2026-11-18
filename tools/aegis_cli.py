@@ -86,6 +86,9 @@ def main(argv=None):
     cmds = {'cern': cern, 'janus': janus, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
     if not argv: return menu([])
     if argv[0] in ('-h', '--help', 'help') or argv[0] not in cmds: print(__doc__); return
-    cmds[argv[0]](argv[1:])
+    try: cmds[argv[0]](argv[1:])
+    except SystemExit: raise
+    except (ValueError, IndexError, KeyError) as e:
+        print(f'Input problem: {e}\nRun "aegis help" for the list of commands and examples.'); sys.exit(2)
 
 if __name__ == '__main__': main()

@@ -10,7 +10,7 @@ T = {400: [(86.95, 5.6, .5), (38.69, 6.4, .6), (60.87, 4.9, .5)], 500: [(33.98, 
 _ms = sorted(T); _eps = [sum(s*math.hypot(p, q) for s, p, q in T[m])/sum(s for s, _, _ in T[m])/100 for m in _ms]
 def eps(m): return float(np.interp(m, _ms, _eps))
 def _lim(key, sgn=0, dd=0.0):
-    S = R.SEARCHES[key]
+    S = R._search(key)
     Pm = lambda m: K.p_window_avg(m, tau_ns=L.widths(d=L.dm(m) + dd)['tau_ns'])
     pb = Pm(S['m_bench'])
     f = lambda m: S['n_bench']*(1 + sgn*eps(m))*(R.sig_tot(m, '13')/R.sig_tot(S['m_bench'], '13'))*(Pm(m)/pb) - S['n95']
