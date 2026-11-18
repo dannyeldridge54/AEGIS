@@ -1,0 +1,22 @@
+Does shape selection flip with scale? Gaussian (theta) energy sum_{v!=0} exp(-pi*alpha*|v|^2), unit covolume (cloud loop, 2026-11-18)
+covolumes checked = 1.0000 for square, hexagonal, SC, BCC, FCC.
+
+2D (14 shells):   alpha 0.25 / 0.5 / 1 / 2 / 4  ->  HEX wins at every alpha (no flip).
+  e.g. alpha=1: square 0.180341, hex 0.159595 ; alpha=2: 0.007484 vs 0.004239.
+
+3D (7 shells):
+  alpha=0.25  SC 7.000167  BCC 7.000013  FCC 7.000020  -> BCC
+  alpha=0.5   SC 1.860237  BCC 1.840809  FCC 1.841980  -> BCC
+  alpha=0.8   SC 0.569353  BCC 0.517043  FCC 0.518295  -> BCC
+  alpha=1.0   SC 0.282363  BCC 0.231536  FCC 0.231536  -> TIE (self-dual point)
+  alpha=1.25  SC 0.122938  BCC 0.086403  FCC 0.085508  -> FCC
+  alpha=2.0   SC 0.011247  BCC 0.004792  FCC 0.004378  -> FCC
+  alpha=4.0   SC 0.000021  BCC 0.000003  FCC 0.000002  -> FCC
+
+Mechanism: Poisson summation gives theta_L(alpha) = alpha^{-d/2} theta_{L*}(1/alpha); FCC and BCC are mutual duals, so they
+must exchange order at alpha = 1, where they tie exactly. A self-dual (up to similarity) lattice such as the 2D hexagonal
+has no distinct dual to swap with, so it cannot flip -> hexagonal wins at all scales (Montgomery). E8 and Leech, the
+lattices proven optimal at every scale (Cohn-Kumar-Miller-Radchenko-Viazovska), are self-dual as well.
+In our modular language, 2D lattice duality is tau -> -1/tau; tau = i and tau = rho are fixed points of modular maps.
+Label: numerics (computed) + literature (theorems). No new physics claim; the T-duality / S-duality parallel is the same
+Poisson-duality mathematics, not a derived physical link.
