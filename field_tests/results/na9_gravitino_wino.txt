@@ -1,0 +1,25 @@
+(D) K4: Y(1e10)=1.900e-12 vs old fit 1.9e-12 (ratio 1.00); g_i(1e10)=[0.564, 0.687, 0.851]
+-- M2=670 GeV, M3=4700 GeV, m3/2=2.5e+05: goldstino term max 1.2e-04
+(A) tau=i T_R=1e+06: Y=2.21e-16 (old 2.47e-16), Omega_nth=4.07e-05
+(A) tau=i T_R=5e+06: Y=8.75e-16 (old 9.50e-16), Omega_nth=1.61e-04
+(B frozen) T_R=7e+08 T2=1e+05: Y=1.86e-17, Omega_nth=3.42e-06
+(B frozen) T_R=7e+08 T2=1e+06: Y=1.86e-16, Omega_nth=3.42e-05
+(C self-dil) T_R=7e+08 T2=1e+02: Y=2.61e-20, Omega_nth=4.79e-09
+(C self-dil) T_R=7e+08 T2=1e+03: Y=2.05e-19, Omega_nth=3.76e-08
+(B frozen) T_R=2e+10 T2=1e+05: Y=1.91e-17, Omega_nth=3.50e-06
+(B frozen) T_R=2e+10 T2=1e+06: Y=1.91e-16, Omega_nth=3.50e-05
+(C self-dil) T_R=2e+10 T2=1e+02: Y=2.67e-20, Omega_nth=4.90e-09
+(C self-dil) T_R=2e+10 T2=1e+03: Y=2.10e-19, Omega_nth=3.85e-08
+-- M2=1850 GeV, M3=13000 GeV, m3/2=7.0e+05: goldstino term max 1.1e-04
+(A) tau=i T_R=1e+06: Y=2.21e-16 (old 2.47e-16), Omega_nth=1.12e-04
+(A) tau=i T_R=5e+06: Y=8.75e-16 (old 9.50e-16), Omega_nth=4.44e-04
+(B frozen) T_R=7e+08 T2=1e+05: Y=1.86e-17, Omega_nth=9.45e-06
+(B frozen) T_R=7e+08 T2=1e+06: Y=1.86e-16, Omega_nth=9.45e-05
+(C self-dil) T_R=7e+08 T2=1e+02: Y=2.61e-20, Omega_nth=1.32e-08
+(C self-dil) T_R=7e+08 T2=1e+03: Y=2.05e-19, Omega_nth=1.04e-07
+(B frozen) T_R=2e+10 T2=1e+05: Y=1.91e-17, Omega_nth=9.67e-06
+(B frozen) T_R=2e+10 T2=1e+06: Y=1.91e-16, Omega_nth=9.67e-05
+(C self-dil) T_R=2e+10 T2=1e+02: Y=2.67e-20, Omega_nth=1.35e-08
+(C self-dil) T_R=2e+10 T2=1e+03: Y=2.10e-19, Omega_nth=1.06e-07
+max Omega_nth = 4.44e-04 → locked rule (<0.01): PASS; node label "≤ 3e-4": EXCEEDED
+C_lepto: 0.87e-10 vs Y_obs 8.70e-11: -0.04% → PASS
