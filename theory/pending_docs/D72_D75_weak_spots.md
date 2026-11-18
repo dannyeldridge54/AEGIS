@@ -14051,3 +14051,9 @@ MAP: node=mapper_dr4 status=open touches=[] ripple=no
 - Not new: the paper's Starobinsky point (n_s 0.961–0.967 for N 50–60, "slightly below the 2σ lower limit") is the same pressure on R² that is already logged.
 - Verdict: NULL for new data. Nothing changes.
 MAP: none
+
+## D1332 — A/B tick: NULL. No new TeV γ-ray line search since H.E.S.S. IGS (2608.07234), and no new primordial D/H measurement in 2026 (2026-11-18)
+- [LITERATURE] One extended search for line searches. The newest result is still H.E.S.S. IGS arXiv:2608.07234, already the basis of D1153/D1324. Phys.org's Sept 2026 story covers the same result. MAGIC 2212.10527 was already noted (D1153 era).
+- [LITERATURE] One search for D/H. The newest hits are 2024 (ESPRESSO PKS1937−101, 2402.05586; J1332+0052, 2401.12797). Nothing from 2026, so the B track's D/H inputs stand.
+- Verdict: NULL. Following D1331 (also NULL for data), the A/B/inflation literature has run dry for today. The loop steps down to the 30-minute pace until new data arrives (Gaia DR4 on 2 Dec is the next scheduled input; D1330).
+MAP: none
