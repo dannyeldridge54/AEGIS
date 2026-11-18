@@ -16,12 +16,33 @@ MODELS = {
   # name: (path Re tau, kinetic n, plateau exponent p, ramp kappa for the relation)
   'serapis_e': dict(x=0.5, n=1, p=2*SQ2, kappa=1.0),
 }
-def build(model='serapis_e', C=1.15e-6, lam=1.0, ymax=3000, npts=4000):
+_EGRID = {}
+def _egrid(model, lam, ymax, npts):
+    """The E(tau,2) grid along the inflaton line does NOT depend on C: compute it once and cache it (memory + disk).
+    Speed pass 2026-11-18: this was 9.4 s of every serapis_point/spectra/ms call. Same numbers bit-for-bit (cache keyed on the
+    Eisenstein source, so any change to eisenstein.py invalidates it)."""
+    import hashlib, os, pathlib
     m = MODELS[model]; x = m['x']; n = m['n']
+    src = pathlib.Path(__file__).with_name('eisenstein.py').read_bytes()
+    key = hashlib.md5(repr((model, x, n, float(lam), float(ymax), int(npts))).encode() + src).hexdigest()[:16]
+    if key in _EGRID: return _EGRID[key]
+    cdir = pathlib.Path(os.environ.get('AEGIS_CACHE', pathlib.Path.home() / '.cache' / 'aegis')); f = cdir / f'egrid_{key}.npz'
+    try:
+        z = np.load(f); out = (z['ph'], z['E']); _EGRID[key] = out; return out
+    except Exception:
+        pass
     yv = 3**0.5/2 if x == 0.5 else 1.0
     Er = E_paper(x, yv)
     ph = np.linspace(math.log(yv)*math.sqrt(n/2)+1e-4, math.log(ymax)*math.sqrt(n/2), npts)
     E = np.maximum(lam*np.array([E_paper(x, math.exp(p/math.sqrt(n/2)))-Er for p in ph]), 1e-14)
+    try:
+        cdir.mkdir(parents=True, exist_ok=True); np.savez(f, ph=ph, E=E)
+    except Exception:
+        pass
+    _EGRID[key] = (ph, E); return ph, E
+def build(model='serapis_e', C=1.15e-6, lam=1.0, ymax=3000, npts=4000):
+    m = MODELS[model]
+    ph, E = _egrid(model, lam, ymax, npts)
     S = CubicSpline(ph, E); dS = S.derivative()
     V = lambda p: (lambda e: e/(e+1)*(1+C*e/lam))(float(S(p)))
     dV = lambda p: (lambda e, de: de*((1+C*e/lam)/(e+1)**2 + (C/lam)*e/(e+1)))(float(S(p)), float(dS(p)))
