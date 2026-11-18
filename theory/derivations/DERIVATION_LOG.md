@@ -1875,3 +1875,9 @@ Touches: none.
 2. Converted to a fractional form: C0·dn_s/dC = 0.01333, so σ_theory(n_s) = 0.01333 × (δC/C). [derived]
 3. Used C = 15·N_eff/(64π⁶·Im S·Im ρ) to map δC/C onto the moduli product: 5% → 6.7e-4, 10% → 1.33e-3, 20% → 2.67e-3. [derived]
 4. Combined theory and data errors in quadrature against the CMB offsets; tension vs CMB-SPA falls only 2.00σ→1.82σ at 10% moduli, so the tension is not an artefact of our uncertainty. [derived]
+
+## D1275 — Im S·Im ρ construction vs CMB meter (2026-11-18)
+1. Took the construction range Im S·Im ρ = 560–975 (stacks (5,2)) and formed its central value and width: 768 ± 208 (±27%). [derived] (D696/D830)
+2. Compared the PW6 inverse-meter value at n_s=0.974, Im S·Im ρ = 804: it lies inside the range, +4.8% from central — an independent consistency pass. [derived] (D1268)
+3. Propagated the construction width through D1274's slope: σ_theory(n_s)=0.01333×0.27=3.6e-3, i.e. 1.2× the CMB-SPA error and 1.3× the +DESI error. [derived]
+4. Concluded the branch currently operates as a meter (data→moduli, ±14%, D1265) not a predictor, and identified the heavy-ν/leptogenesis sector as an independent cross-scale constraint on the same product. [derived]

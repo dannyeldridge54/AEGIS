@@ -306,7 +306,7 @@
     "D906: computed",
     "D1246: computed"
    ],
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "janus",
@@ -344,12 +344,13 @@
     "D756",
     "D1246",
     "D1257",
-    "D1274"
+    "D1274",
+    "D1275"
    ],
    "history": [
-    "D1246: literature",
     "D1257: literature",
-    "D1274: postulate"
+    "D1274: postulate",
+    "D1275: postulate"
    ]
   },
   {
@@ -371,7 +372,7 @@
    "history": [
     "D1246: literature"
    ],
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "covariant",
@@ -613,7 +614,7 @@
     "D1258: corrected",
     "D1262: corrected"
    ],
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "lepto_rho",
@@ -760,7 +761,7 @@
     "D1231: frozen",
     "D1233: frozen"
    ],
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "band_e_audited",
@@ -784,7 +785,7 @@
     "D1245: postulate"
    ],
    "note": "web loop postulate 1; scored only on future data",
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "serapis_point",
@@ -811,7 +812,7 @@
     "D1273: postulate"
    ],
    "note": "web loop postulate 2; scored only on future data",
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "vac_discriminant",
@@ -836,7 +837,7 @@
     "D1263: killed"
    ],
    "note": "web loop postulate 3; kept on the web as killed",
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "m32_window",
@@ -860,7 +861,7 @@
     "D1264: postulate"
    ],
    "note": "web loop postulate 4 (pattern covariant ↔ eps_tilt)",
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "string_meter",
@@ -884,7 +885,7 @@
     "D1265: postulate"
    ],
    "note": "web loop postulate 5",
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "inverse_meter",
@@ -906,7 +907,7 @@
     "D1268: postulate"
    ],
    "note": "web loop postulate 6",
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "instanton_MH",
@@ -929,7 +930,7 @@
     "D1270: killed"
    ],
    "note": "web loop postulate 7",
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "caps",
@@ -1037,7 +1038,7 @@
     "D1260: computed",
     "D1261: computed"
    ],
-   "flag": "recheck (D1274, bhk_tilt)"
+   "flag": "recheck (D1275, bhk_tilt)"
   },
   {
    "id": "tests_lhc",

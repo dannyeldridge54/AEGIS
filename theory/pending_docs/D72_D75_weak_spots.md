@@ -13280,3 +13280,20 @@ VERDICT: (1) the CMB-SPA tension is NOT rescued by our own uncertainty unless th
 (2) for n_s to be a sharper test than the data, Im S·Im ρ must be pinned to ≲5% — that is now the highest-value target on
 this branch; (3) T_R and g* enter only through N*, which moved ≤0.03 over the whole C band (D1272), so they are subdominant.
 Result file: field_tests/results/ns_error_budget_2026-11-18.txt.
+
+## D1275 — Im S·Im ρ: the construction (560–975) CONTAINS the CMB-meter value (804), but is wider than the data — SERAPIS-E is currently a meter, not a predictor (2026-11-18)
+MAP: node=bhk_tilt status=postulate
+LABEL: tool/numerics consistency + strategy (no new physics claim).
+Cloud cycle, from existing locked results (no new model builds).
+- Construction (D696/D830, stacks (5,2)): Im S·Im ρ = 560–975 → central 768 ± 208 (±27%).
+- PW6 inverse meter at n_s=0.974 (D1268): Im S·Im ρ = 804 → **inside** the construction range, +4.8% from central.
+  Independent consistency PASS: the flux/stack construction contains the value the measured n_s requires.
+- Precision (via D1274, σ_theory(n_s)=0.01333×δ): construction ±27% → σ_theory=3.6e-3, which EXCEEDS the data error
+  (CMB-SPA 3.0e-3, +DESI 2.7e-3). CMB meter forecast ±14% → 1.87e-3 (D1265). Needed to out-test data ±5% → 6.7e-4 (D1274).
+VERDICT: on this branch SERAPIS-E presently works as a METER (n_s → moduli, ±14%) rather than a PREDICTOR of n_s; the
+theory is ~1.2–1.3× less precise than the measurement. Flipping it into a genuine prediction needs a 5.4× tightening (27%→5%).
+CROSS-SCALE LEVER: the same moduli set the heavy-ν masses M ~ e^{−2πn Im T}·M_s ≈ 1e11–1e13 GeV (D852/D854), the
+leptogenesis-fixed T_R and N* (D692), anti-D3 safety v₄ ≳ 2e4 g_s (D833/D835), racetrack minima t≈10 (D845/D851) and
+M_s ≈ 6e15–3e16 GeV (D783); Im S = 1/(2√2π g_s) (D689). The ν-mass/leptogenesis side is an INDEPENDENT handle on the
+same product at a very different energy scale — propagating it onto Im S·Im ρ is the highest-value next move.
+Result file: field_tests/results/moduli_consistency_2026-11-18.txt.
