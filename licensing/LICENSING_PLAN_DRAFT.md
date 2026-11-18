@@ -1,5 +1,7 @@
 # AEGIS licensing plan — DRAFT for Danny (18 Nov 2026)
 
+> **Status 18 Nov 2026:** adopted, with one change from Danny — every business pays (starting at $10/yr), only individuals, scientists, students and public-good bodies are free. The governing texts are `LICENSE` and `licensing/COMMERCIAL_LICENSE.md`.
+
 Goal: free or nearly free for people and small outfits; expensive for corporations; hard to dodge.
 
 ## 1. Code (CERN+1, Janus calc, Lattice Lab, CubeMind, SERAPIS calc) — new versions from here on
