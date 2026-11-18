@@ -159,3 +159,16 @@ Chrome relay method; files from commit a0068864; every Zenodo md5 = repo md5.
 - New record 24342227, DOI 10.5281/zenodo.24342227: "Janus-LHC: Wino Pair Cross Sections at Any LHC Energy from Drell–Yan Scaling with One Universal Evolution Exponent" (preprint v1, CC BY 4.0). Basis D1299 (PREREG_LHC1).
 - Files (commit 45d04f70, md5 = repo): Eldridge_JanusLHC_scaling_2026.pdf (7f7e3ab3…), .tex (0991c1f3…), janus_lhc_v0.1.zip (2e548114…).
 - Related: references arXiv:2304.11915, 24291026 (lock workflow), 24340392 (Janus calculator v1.3); isSupplementedBy the GitHub repo.
+
+## 18 Nov 2026, 08:50–09:35 CT — 8 records published (Danny: "Publish"), all under CC BY-NC-SA 4.0 (AEGIS Community License)
+Chrome relay method; files from commit 16ca6792; every Zenodo md5 = repo md5. Zenodo was overloaded (500/504s); uploads retried, octet-stream content type needed for .tex.
+New versions (refereed revisions, notice + license paragraph prepended):
+- Shape, Scale and Duality v2: 24345619 (pdf 1d378786…, tex 7fa9e6d2…) — Hessian normalisation corrected.
+- CERN+1 (formerly Janus-LHC) v2: 24345741 (pdf bdddf1e1…, tex 4c7abac3…; v0.1 zip kept) — renamed, independence statement.
+- SERAPIS-E v2.1: 24345807 (pdf 5c3b894a…, tex 8a866bda…).
+- Twist-2 v2.1: 24345939 (pdf 4df7279c…, tex af29f105…).
+- CubeMind interim v1.1: 24346035 (pdf 9454f5a9…, tex f91bd545…).
+- Lock Before You Compute v2.1: 24346127 (pdf b0d10582…, tex 9185398c…).
+New records:
+- CERN+1 v3: 24346559 (pdf b3a754e8…, tex 1ab2d3ac…, fig 8c585682…); continues 24345741.
+- Lattice Champions and the Hexagon v1: 24346701 (pdf 70384028…, tex 09467894…); continues 24345619.
