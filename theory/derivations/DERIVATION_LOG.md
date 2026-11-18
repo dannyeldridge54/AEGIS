@@ -2027,3 +2027,8 @@ Touches: none.
 1. [derived] Locked counts (PREREG_D1296) = (#min)(#orthogonal per vector)/8.
 2. [derived] Exact enumeration: D4 18, E6 270, E7 945, E8 3780; Leech 196560·93150/8 from 6 sampled vectors ([literature] Co0 transitive).
 3. [derived] Square/hex plane ratio 1.125, 2.25, 2.81, 3.375, 30.4 — rising with dimension.
+
+## D1297: In d=3 every torus flows to FCC above the self-dual scale and to BCC below it; the cube is never a resting shape (2026-11-18)
+1. [derived] Locked P1–P3 (PREREG_D1297).
+2. [derived] 16 minimisations over the 5-dim shape space (8 random starts × α = 1.6, 0.6): all end at FCC (α=1.6, E = 0.02133827) or BCC (α=0.6, E = 1.18691409), matching the reference energies to 8 digits.
+3. [derived] The cube Z³ is never reached; the destination switches at α=1 exactly as the flip rule (D1278) requires for the dual pair FCC/BCC.

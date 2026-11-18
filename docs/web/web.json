@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1293, D1294, D1295",
+   "refs": "D1294, D1295, D1296",
    "info": ""
   },
   {
@@ -822,6 +822,14 @@
    "lane": "lattice",
    "status": "computed",
    "refs": "D1296",
+   "info": ""
+  },
+  {
+   "id": "X_flow3",
+   "label": "d=3 flow: any 3-torus flows to FCC (rhombic dodecahedron cells) at large scale, BCC (truncated octahedra) at small scale; the cube never",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1297",
    "info": ""
   },
   {
@@ -2619,6 +2627,33 @@
    "sign": 1,
    "ref": "D1296",
    "verdict": "2.29e9",
+   "source": "curated"
+  },
+  {
+   "s": "X_flow3",
+   "t": "X_d3",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1297",
+   "verdict": "destination switches at α=1",
+   "source": "curated"
+  },
+  {
+   "s": "X_moduli",
+   "t": "X_flow3",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1279, D1297",
+   "verdict": "5 shape moduli",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_flow3",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1297",
+   "verdict": "flip rule seen as a flow",
    "source": "curated"
   },
   {

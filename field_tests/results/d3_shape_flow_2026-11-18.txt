@@ -1,0 +1,21 @@
+alpha=1.6 start 0: E 0.076874 -> 0.02133827  end shape FCC (nearest 12, next 0, min norm 1.25992)
+alpha=1.6 start 1: E 0.044331 -> 0.02133827  end shape FCC (nearest 12, next 0, min norm 1.25992)
+alpha=1.6 start 2: E 0.073486 -> 0.02133827  end shape FCC (nearest 12, next 0, min norm 1.25992)
+alpha=1.6 start 3: E 0.045491 -> 0.02133827  end shape FCC (nearest 12, next 0, min norm 1.25992)
+alpha=1.6 start 4: E 0.188744 -> 0.02133827  end shape FCC (nearest 12, next 0, min norm 1.25992)
+alpha=1.6 start 5: E 0.190595 -> 0.02133827  end shape FCC (nearest 12, next 0, min norm 1.25992)
+alpha=1.6 start 6: E 0.056642 -> 0.02133827  end shape FCC (nearest 12, next 0, min norm 1.25992)
+alpha=1.6 start 7: E 0.057418 -> 0.02133827  end shape FCC (nearest 12, next 0, min norm 1.25992)
+alpha=1.6 SUMMARY: {'FCC': 8}
+alpha=0.6 start 0: E 1.200488 -> 1.18691409  end shape BCC (nearest 8, next 6, min norm 1.19055)
+alpha=0.6 start 1: E 1.197966 -> 1.18691409  end shape BCC (nearest 8, next 6, min norm 1.19055)
+alpha=0.6 start 2: E 1.225468 -> 1.18691409  end shape BCC (nearest 8, next 6, min norm 1.19055)
+alpha=0.6 start 3: E 1.218080 -> 1.18691409  end shape BCC (nearest 8, next 6, min norm 1.19055)
+alpha=0.6 start 4: E 1.222708 -> 1.18691409  end shape BCC (nearest 8, next 6, min norm 1.19055)
+alpha=0.6 start 5: E 1.281830 -> 1.18691409  end shape BCC (nearest 8, next 6, min norm 1.19055)
+alpha=0.6 start 6: E 1.205422 -> 1.18691409  end shape BCC (nearest 8, next 6, min norm 1.19055)
+alpha=0.6 start 7: E 1.326078 -> 1.18691409  end shape BCC (nearest 8, next 6, min norm 1.19055)
+alpha=0.6 SUMMARY: {'BCC': 8}
+FCC E(1.6)= {1.6: 0.021338270633829426} E(0.6)= {0.6: 1.1886054456614787}
+BCC E(1.6)= {1.6: 0.022199179356204857} E(0.6)= {0.6: 1.1869140919062136}
+Z3 E(1.6)= {1.6: 0.0398874176817281} E(0.6)= {0.6: 1.2210923290826785}

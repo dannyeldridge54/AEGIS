@@ -13654,3 +13654,16 @@ MEANING: both SERAPIS shapes live inside every champion — the minimum (hexagon
 saddle planes vastly outnumber the minimum planes (×30 in Leech), yet the champions are still the most "hexagon-rich" lattices of
 their dimension (D1294). In the web: every champion node now carries both 2D sectors with exact multiplicities.
 Files: tools/lattice/lattice_lab.py `squares`, field_tests/results/squares_inside_2026-11-18.txt.
+
+## D1297 — Running it backwards in d=3: every 3-torus flows to FCC at large scale and to BCC at small scale; the cube never wins; PREREG P1–P3 PASS (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: numerics (computed), locked first (PREREG_D1297).
+Minimised the Gaussian energy over the 5-dimensional shape space of unit-covolume 3-tori from 8 random starts at each scale:
+- α = 1.6: 8/8 starts end at FCC (12 nearest neighbours), energy 0.02133827 = the FCC reference 0.02133827 (P1 PASS).
+- α = 0.6: 8/8 starts end at BCC (8 + 6 neighbours), energy 1.18691409 = the BCC reference 1.18691409 (P2 PASS).
+- The cube Z³ (6 neighbours; 0.0399 / 1.2211) was never an end point (P3 PASS).
+MEANING: D1279's 2D result (any torus slides to the hexagon) has a 3D twin with a twist: the destination depends on scale, and switches
+exactly where the flip rule says (α=1, FCC ↔ BCC duals). In 2D the destination never switches because the hexagon is its own dual.
+Shapes in Danny's terms: the FCC cell is the rhombic dodecahedron, BCC's the truncated octahedron, the cube is the cube — the cube is
+the "square" of 3D (a saddle-type shape), never a resting point.
+Files: field_tests/d3_shape_flow.py, field_tests/results/d3_shape_flow_2026-11-18.txt.
