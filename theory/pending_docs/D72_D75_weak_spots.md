@@ -12901,3 +12901,12 @@ Flag (estimate): D727/D728/D738 use m_φ = 1.9e11 GeV at i; D730 computed m = 2.
 MAP: node=darkrad_rho status=computed touches=[] ripple=no
 MAP: node=caps status=frozen touches=[] ripple=no
 MAP: node=reheat_i status=corrected touches=[nstar_i, lepto_i] ripple=yes
+
+## D1241 — CENTRE — NA8: τ = i chain with D730's computed inflaton mass — T_R ×1.31–1.65 (N* +0.09–0.17); lepto_i verdicts unchanged (D728 window widens; D738 pass/fail pattern identical)
+Lock: field_tests/rules/PREREG_NA8_i_chain_mass.md. Scripts: field_tests/scripts/na8/ (only m changed). Results: field_tests/results/na8_i_chain_mass.txt.
+[computed] T_R ratios 1.315 (m 2.28e11) and 1.647 (2.65e11) match (m/1.9e11)^{3/2} to < 0.1 % → PASS. D727's T_R window (g* 106.75, M/m 0.1–0.45): 1.0–3.0e6 → 1.3–4.0e6 (ε 1.3e-4) / 1.7–5.0e6 GeV (ε 1.6e-4).
+ΔN* = (1/3) ln(T_R ratio) = +0.091 / +0.166 (matter-dominated decay segment of D730's octic → matter → radiation history).
+lepto_i: D728's passing ΔM/M range only widens (upper end at M/m = 0.1: 1.4e-2 → 4.7e-2); D738 rows: same single PASS (c = 1, M1/m = 0.33) in all runs; the nearest fail (c = 1, M1/m = 0.2) rises 4.73e-11 → 7.78e-11, still < 8.75e-11. Verdict unchanged.
+Effect on band_i: n_s rises by ≈ (dn_s/dN*)·ΔN* — at most a few ×1e-4 (estimate from D678's strip slope); band_i frozen, scored as frozen. Node values updated: reheat_i T_R 1.3–5.0e6 GeV (was 1–3e6).
+MAP: node=reheat_i status=corrected touches=[nstar_i] ripple=yes
+MAP: node=lepto_i status=estimate touches=[] ripple=no

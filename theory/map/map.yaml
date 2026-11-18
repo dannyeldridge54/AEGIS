@@ -323,10 +323,12 @@ nodes:
   - D727
   - D730
   - D1240
+  - D1241
   depends:
   - sterile_i
   history:
   - 'D1240: corrected'
+  - 'D1241: corrected'
 - id: nstar_i
   layer: 4
   branch:
@@ -342,7 +344,7 @@ nodes:
   - vac_i
   history:
   - 'D815: computed'
-  flag: recheck (D1240, reheat_i)
+  flag: recheck (D1241, reheat_i)
 - id: lepto_i
   layer: 4
   branch:
@@ -373,15 +375,15 @@ nodes:
   - D903
   - D904a
   - D909
+  - D1241
   depends:
   - reheat_i
   - n_sector_i
   - eta_n
   history:
-  - 'D903: estimate'
   - 'D904a: estimate'
   - 'D909: estimate'
-  flag: recheck (D1240, reheat_i)
+  - 'D1241: estimate'
 - id: sterile_rho
   layer: 4
   branch:
@@ -553,7 +555,7 @@ nodes:
   - 'D861: computed'
   - 'D906: frozen'
   - 'D962: computed'
-  flag: recheck (D1240, reheat_i)
+  flag: recheck (D1241, reheat_i)
 - id: band_e
   layer: 5
   branch:
@@ -656,7 +658,7 @@ nodes:
   - 'D752: computed'
   - 'D906: computed'
   - 'D1229: computed'
-  flag: recheck (D1240, reheat_i)
+  flag: recheck (D1241, reheat_i)
 - id: tests_lhc
   layer: 5
   branch:

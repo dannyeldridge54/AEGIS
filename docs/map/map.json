@@ -412,13 +412,15 @@
    "d": [
     "D727",
     "D730",
-    "D1240"
+    "D1240",
+    "D1241"
    ],
    "depends": [
     "sterile_i"
    ],
    "history": [
-    "D1240: corrected"
+    "D1240: corrected",
+    "D1241: corrected"
    ]
   },
   {
@@ -441,7 +443,7 @@
    "history": [
     "D815: computed"
    ],
-   "flag": "recheck (D1240, reheat_i)"
+   "flag": "recheck (D1241, reheat_i)"
   },
   {
    "id": "lepto_i",
@@ -474,7 +476,8 @@
     "D900",
     "D903",
     "D904a",
-    "D909"
+    "D909",
+    "D1241"
    ],
    "depends": [
     "reheat_i",
@@ -482,11 +485,10 @@
     "eta_n"
    ],
    "history": [
-    "D903: estimate",
     "D904a: estimate",
-    "D909: estimate"
-   ],
-   "flag": "recheck (D1240, reheat_i)"
+    "D909: estimate",
+    "D1241: estimate"
+   ]
   },
   {
    "id": "sterile_rho",
@@ -700,7 +702,7 @@
     "D906: frozen",
     "D962: computed"
    ],
-   "flag": "recheck (D1240, reheat_i)"
+   "flag": "recheck (D1241, reheat_i)"
   },
   {
    "id": "band_e",
@@ -831,7 +833,7 @@
     "D906: computed",
     "D1229: computed"
    ],
-   "flag": "recheck (D1240, reheat_i)"
+   "flag": "recheck (D1241, reheat_i)"
   },
   {
    "id": "tests_lhc",
