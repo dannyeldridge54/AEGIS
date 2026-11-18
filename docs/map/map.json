@@ -793,7 +793,8 @@
    "status": "postulate",
    "d": [
     "D1251",
-    "D1272"
+    "D1272",
+    "D1273"
    ],
    "depends": [
     "lepto_rho",
@@ -802,9 +803,9 @@
     "band_e_audited"
    ],
    "history": [
-    "D1251: postulate (PW2), expectation PASS 4/4",
     "D1251: postulate",
-    "D1272: postulate"
+    "D1272: postulate",
+    "D1273: postulate"
    ],
    "note": "web loop postulate 2; scored only on future data"
   },
@@ -831,7 +832,7 @@
     "D1263: killed"
    ],
    "note": "web loop postulate 3; kept on the web as killed",
-   "flag": "recheck (D1272, serapis_point)"
+   "flag": "recheck (D1273, serapis_point)"
   },
   {
    "id": "m32_window",
@@ -900,7 +901,7 @@
     "D1268: postulate"
    ],
    "note": "web loop postulate 6",
-   "flag": "recheck (D1272, serapis_point)"
+   "flag": "recheck (D1273, serapis_point)"
   },
   {
    "id": "instanton_MH",
@@ -923,7 +924,7 @@
     "D1270: killed"
    ],
    "note": "web loop postulate 7",
-   "flag": "recheck (D1272, serapis_point)"
+   "flag": "recheck (D1273, serapis_point)"
   },
   {
    "id": "caps",

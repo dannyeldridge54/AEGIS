@@ -13254,3 +13254,15 @@ inverse meter, D1268) against it over the emulator's validity band C∈[1.0,1.6]
 VERDICT: the surrogate + meter are quantitatively faithful to the exact pipeline across the band; safe to keep using the
 fast tools for scans and for the inverse meter at the leptogenesis T_R. Result file: field_tests/results/emulator_exact_crosscheck_2026-11-18.txt.
 LESSON: a round(x,6) in a one-off print crushed C≈1.25e-6 to "1e-6" and sent me chasing a phantom meter bug — print raw/scientific when checking small quantities.
+
+## D1273 — Where SERAPIS-E sits against the CMB: +2.0σ vs CMB-SPA, +0.6σ vs CMB-SPA+DESI; the Janus α_s relation is ~3% approximate (2026-11-18)
+MAP: node=serapis_point status=postulate
+LABEL: tool/numerics + position vs published data (no new physics claim).
+Cloud verification cycle. Point (exact pipeline, T_R=7.389e8 GeV, g*=228.75, N_eff=4): n_s=0.97439, r=4.82e-4, α_s=−9.98e-4, N*=50.18.
+- F3 position: n_s is +2.00σ above CMB-SPA (0.9684±0.0030) but only +0.59σ from CMB-SPA+DESI (0.9728±0.0027).
+  r=4.82e-4 is 75× below the r<0.036 bound — r is not a near-term discriminator for this model.
+- Internal consistency: the analytic Janus relation α_s(n_s,r,p=2√2,κ=1) gives −9.640e-4 vs the pipeline's −9.980e-4,
+  a +3.4e-5 difference (3.4% of |α_s|). The relation is a ~3% approximation here, not exact.
+VERDICT: the model lives on the HIGH-n_s side. It is comfortable against the DESI-combined n_s and in tension at 2σ with
+CMB-SPA alone, so which n_s the data settles to is the sharpest near-term test of SERAPIS-E — not r. For scoring, use the
+pipeline α_s, not the analytic relation. Result file: field_tests/results/serapis_point_vs_data_2026-11-18.txt.

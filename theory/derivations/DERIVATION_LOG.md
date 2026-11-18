@@ -1863,3 +1863,9 @@ Touches: none.
 2. Computed the PT1 emulator at the same C and differenced: |Δn_s| ≤ 3.2e-5 across the band, r to ~1e-6, alpha_s to ~1e-5. [derived]
 3. Inverse meter (PW6 log-interp table) at n_s=0.97439 -> C=1.248e-6, P=782 (=15·N_eff/64π⁶C); exact pipeline C≈1.26e-6, agree ~1%. [derived]
 4. Recorded point n_s=0.97439 <-> C≈1.25e-6, r≈4.8e-4, alpha_s≈-9.9e-4, N*=50.18 reproduced; trajectory consistent. No new physics claim. [derived]
+
+## D1273 — SERAPIS-E position vs CMB data + α_s relation consistency (2026-11-18)
+1. Took the exact SERAPIS-E point n_s=0.97439, r=4.82e-4, α_s=−9.98e-4, N*=50.18 (pipeline, D1272-verified). [derived]
+2. Differenced n_s against the published constraints: +2.00σ vs CMB-SPA 0.9684±0.0030; +0.59σ vs CMB-SPA+DESI 0.9728±0.0027. [literature]
+3. Compared r=4.82e-4 to the r<0.036 bound: 75× below, so r is not a near-term discriminator. [literature]
+4. Evaluated the analytic Janus relation α_s(n_s,r,p=2√2,κ=1) = −9.640e-4 vs pipeline −9.980e-4 → 3.4% approximation; use the pipeline value for scoring. [derived]

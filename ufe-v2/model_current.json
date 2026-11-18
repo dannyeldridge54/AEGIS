@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1256: Tests: SO+SPHEREx (~2030), LiteBIRD (~2035) → computed",
   "D1257: BHK one-loop tilt C → literature",
   "D1258: N* for SERAPIS-E ≈ 50.07–51.22 (exact end, n = 1, MSSM g*; D1234, D1235, D1262) → corrected",
   "D1260: Tests: SO+SPHEREx (~2030), LiteBIRD (~2035) → computed",
@@ -29,7 +28,8 @@
   "D1265: POSTULATE (forecast passed): CMB measures the string product Im S·Im ρ — ±14 % from SO n_s (T_R known), ±19 % + T_R to 2.8 decades with LiteBIRD r → postulate",
   "D1268: POSTULATE (passed): inverse string meter — at T_R 7.39e8 a future n_s gives Im S·Im ρ: 0.972 → 953, 0.974 → 804, 0.976 → 697 (linear PW5 inverse within 0.4–2.4 %; 3.5–7 % at 0.970/0.978) → postulate",
   "D1270: KILLED (tension recorded): the string benchmark's own σ = ½ instanton heavy-ν mass (9.8e10 GeV) cannot drive thermal leptogenesis at ρ — 0 % pass for c = 0.3/1/3 (Y_B ×~12 short); point would move to N* 49.41, n_s 0.97362 → killed",
-  "D1272: POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 7.4e8, C 1.25e-6, MSSM g*): n_s 0.97439, r 4.82e-4, α_s −1.0e-3, N* 50.18 (D1262) → postulate"
+  "D1272: POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 7.4e8, C 1.25e-6, MSSM g*): n_s 0.97439, r 4.82e-4, α_s −1.0e-3, N* 50.18 (D1262) → postulate",
+  "D1273: POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 7.4e8, C 1.25e-6, MSSM g*): n_s 0.97439, r 4.82e-4, α_s −1.0e-3, N* 50.18 (D1262) → postulate"
  ],
  "open_rechecks": [
   "Vacuum at τ=i (Chronos/Kairos)",
