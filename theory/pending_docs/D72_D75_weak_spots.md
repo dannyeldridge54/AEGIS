@@ -13996,3 +13996,18 @@ MAP: node=darkrad_i status=computed touches=[] ripple=no
   - That row is the covariant-completion superpartner forecast. It is an older, separate estimate with "1.85" as its CTA-reach number. It is not the post-hoc thermal window (line 323, updated in D1324).
   - Its CTA-reach meaning differs, so it is not changed here. A reader could confuse the two rows, so a footnote clarifying "different scenario (full AMSB spectrum), not the thermal post-hoc fraction" is suggested for the next rung.
 MAP: none
+
+## D1327 — A tick: continuum γ-ray probes (dwarfs, Galactic diffuse, isotropic) do not constrain the computed window (0.67 to 1–1.5 TeV) (2026-11-18)
+- [CENTRE · literature + arithmetic]
+- **Probes as recorded in D1084** (Hryczuk et al. 2014, arXiv:1401.6212, wino = 100% of DM, f = 1):
+  - dwarfs exclude only near the resonance (≈ 2.4 TeV);
+  - diffuse Galactic excludes < 0.65 and 2.0–2.65 TeV;
+  - isotropic excludes < 0.75 and 1.92–2.7 TeV.
+- **The newer combined dwarf analysis** (Fermi-LAT, HAWC, H.E.S.S., MAGIC, VERITAS; arXiv:2108.13646, ICRC 2021 proceedings) gives only bb̄ and τ⁺τ⁻ limits in the text read, with W⁺W⁻ "in progress". So there is no newer WW dwarf number to use.
+- **Window check:** inside 0.67–1.5 TeV, the f = 1 exclusions above are absent except the diffuse/isotropic low-mass edge (0.65–0.75 TeV).
+  - At 0.67–0.75 TeV the thermal fraction is f ≈ 0.05–0.12, so the signal scales by f² ≲ 0.014. That is ~70× below an f = 1 exclusion that is itself only marginal there.
+  - Across the window f² ≤ 0.21 (1.5 TeV upper edge), and no f = 1 exclusion exists at 0.75–1.92 TeV.
+- **Verdict:** the continuum probes add no constraint. The line (IGS) remains the binding astrophysical test (D1324).
+- Caveat: the f = 1 exclusion bands are 2014 values. A W⁺W⁻ dwarf combination with modern J-factors would sharpen them, but cannot reach f² ~ 0.1 at these masses unless it improves by ×10.
+VERDICT: NULL for new constraints; the window is confirmed against continuum probes.
+MAP: none
