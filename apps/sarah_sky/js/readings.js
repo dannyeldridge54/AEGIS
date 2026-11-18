@@ -233,13 +233,13 @@
   function drawSpread(kind) {
     var pos = SPREADS[kind], deck = []; for (var i = 0; i < 78; i++) deck.push(i);
     for (var j = deck.length - 1; j > 0; j--) { var r = rnd(j + 1), t = deck[j]; deck[j] = deck[r]; deck[r] = t; }   // Fisher-Yates
-    return pos.map(function (p, n) { var rev = rnd(2) === 1; var c = tarotCard(deck[n], rev); return { pos: p, card: c, rev: rev }; });
+    return pos.map(function (p, n) { var rev = rnd(2) === 1; var c = tarotCard(deck[n], rev); return { pos: p, card: c, rev: rev, idx: deck[n] }; });
   }
   function spreadHTML(cards, q) {
     var h = q ? '<p class="q">“' + esc(q) + '”</p>' : '';
     h += '<div class="spread">';
     cards.forEach(function (x, i) {
-      h += '<div class="tc' + (x.rev ? ' rev' : '') + (x.card.major ? ' maj' : '') + '" style="animation-delay:' + (i * 0.18) + 's"><div class="tcp">' + (i + 1) + '. ' + x.pos + '</div><div class="tcn">' + esc(x.card.name) + (x.rev ? ' ↺' : '') + '</div><div class="tcm">' + esc(x.card.mean) + '</div></div>';
+      h += '<div class="tc' + (x.rev ? ' rev' : '') + (x.card.major ? ' maj' : '') + '" style="animation-delay:' + (i * 0.18) + 's"><div class="tcp">' + (i + 1) + '. ' + x.pos + '</div>' + (window.SarahTarotArt ? SarahTarotArt.cardSVG(x.idx, x.rev, x.card.name) : '') + '<div class="tcn">' + esc(x.card.name) + (x.rev ? ' ↺' : '') + '</div><div class="tcm">' + esc(x.card.mean) + '</div></div>';
     });
     var maj = cards.filter(function (x) { return x.card.major; }).length;
     h += '</div><p class="trad">' + maj + ' of ' + cards.length + ' cards are Major Arcana' + (maj * 2 > cards.length ? ' — a reading about big themes.' : '.') + ' Tarot is a tradition for reflection, not prediction.</p>';
@@ -268,7 +268,8 @@
       '<div class="row"><button type="submit" class="go">Cast chart</button><button type="button" id="cHere">Use my location</button><select id="cSaved"><option value="">Saved charts…</option></select></div>' +
       '<p class="trad">“Find” looks the place up on OpenStreetMap (only the place name is sent). Charts are saved only on this device.</p></form><div id="cOut"></div></div>' +
       '<div class="rbody" id="rTarot" hidden><label>Your question (optional) <input id="tQ" placeholder="What do I need to know about…"></label>' +
-      '<div class="row tb"><button data-s="one">One card</button><button data-s="three">Past · Present · Future</button><button data-s="mind">Mind · Body · Spirit</button><button data-s="celtic">Celtic Cross</button></div><div id="tOut"></div></div></div>';
+      '<div class="row tb"><button data-s="one">One card</button><button data-s="three">Past · Present · Future</button><button data-s="mind">Mind · Body · Spirit</button><button data-s="celtic">Celtic Cross</button></div>' +
+      '<label class="deckpick">Deck <select id="tDeck"></select></label><div id="tOut"></div></div></div>';
     document.body.appendChild(m);
     m.querySelectorAll('.rtabs button').forEach(function (b) { b.onclick = function () { m.querySelectorAll('.rtabs button').forEach(function (x) { x.classList.toggle('on', x === b); }); $('rChart').hidden = b.dataset.r !== 'chart'; $('rTarot').hidden = b.dataset.r !== 'tarot'; }; });
     $('rClose').onclick = function () { m.hidden = true; };
@@ -302,7 +303,13 @@
         $('cOut').scrollIntoView({ behavior: 'smooth', block: 'start' });
       } catch (err) { $('cOut').innerHTML = '<p>Could not compute this chart: ' + esc(err.message || err) + '</p>'; }
     };
-    m.querySelectorAll('.tb button').forEach(function (b) { b.onclick = function () { $('tOut').innerHTML = spreadHTML(drawSpread(b.dataset.s), $('tQ').value.trim()); $('tOut').scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
+    var lastSpread = null;
+    m.querySelectorAll('.tb button').forEach(function (b) { b.onclick = function () { lastSpread = drawSpread(b.dataset.s); $('tOut').innerHTML = spreadHTML(lastSpread, $('tQ').value.trim()); $('tOut').scrollIntoView({ behavior: 'smooth', block: 'start' }); }; });
+    var A = window.SarahTarotArt;
+    if (A && A.STYLES) {
+      $('tDeck').innerHTML = A.STYLES.map(function (k) { return '<option value="' + k + '"' + (k === A.currentStyle() ? ' selected' : '') + '>' + A.STYLE_NAMES[k] + '</option>'; }).join('');
+      $('tDeck').onchange = function () { A.setStyle(this.value); if (lastSpread) $('tOut').innerHTML = spreadHTML(lastSpread, $('tQ').value.trim()); };
+    } else $('tDeck').parentNode.hidden = true;
   }
   window.SarahReadings = { compute: compute, synastry: synastry, transits: transits, lifePath: lifePath, open: function (tab) { var m = $('readings'); if (!m) { build(); m = $('readings'); } m.hidden = false; if (tab) m.querySelector('[data-r="' + tab + '"]').click(); } };
 })();

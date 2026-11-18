@@ -206,3 +206,11 @@ body.sheet-open #arBtn{ opacity:0; pointer-events:none; }
 @media (max-width:420px){ #bigText{ display:none; } .bar{ flex-wrap:nowrap; } .search{ min-width:0; } }
 
 @media (max-width:700px){ #sky div:has(> .aladin-zoom-in), #sky .aladin-fov, #sky .aladin-status-bar{ transform:translateY(-10px); } }
+
+/* tarot card art */
+.tcard{ display:block; width:100%; max-width:150px; margin:6px auto; filter:drop-shadow(0 0 10px rgba(122,92,255,.35)); }
+#readings .tc .tcard{ max-width:140px; }
+#sarahOverlays .tdaily .tcard{ max-width:110px; margin:4px 0; }
+
+.deckpick{display:flex;align-items:center;gap:8px;margin:8px 0;color:#a296d8}
+.deckpick select{flex:1;background:#120a2e;color:#f3eeff;border:1px solid #2a1f5a;border-radius:8px;padding:6px}

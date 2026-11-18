@@ -80,7 +80,8 @@
     var c = n % 78, rev = ((n >>> 7) & 1) === 1, name, mean;
     if (c < 22) { name = MAJOR[c][0]; mean = rev ? MAJOR[c][2] : MAJOR[c][1]; }
     else { var k = c - 22, s = SUITS[Math.floor(k / 14)], r = RANKS[k % 14], mm = (typeof MINOR !== 'undefined' && MINOR[s[0]]) ? MINOR[s[0]][k % 14] : null; name = r[0] + ' of ' + s[0]; mean = mm ? (rev ? mm[1] : mm[0]) : (r[1] + ' in ' + s[1]); }
-    return '🃏 <b>' + name + (rev ? ' (reversed)' : '') + '</b><br>' + mean;
+    var art = window.SarahTarotArt ? '<div class="tdaily">' + SarahTarotArt.cardSVG(c, rev, name) + '</div>' : '';
+    return art + '🃏 <b>' + name + (rev ? ' (reversed)' : '') + '</b><br>' + mean;
   }
   var MINOR = {   // [upright, reversed] for Ace..Ten, Page, Knight, Queen, King — traditional keyword meanings
     Wands: [['inspiration, a spark, new passion','delays, a spark that will not catch'],['planning, a bold decision','fear of the unknown, playing safe'],['expansion, looking ahead','obstacles abroad, frustration'],['celebration, homecoming, harmony','instability at home, a celebration cut short'],['competition, friction, struggle','avoiding conflict, tension inside'],['victory, recognition','pride before a fall, private doubt'],['standing your ground, perseverance','overwhelm, giving up'],['speed, news, swift action','delays, scattered energy'],['resilience, the last push','exhaustion, defensiveness'],['burden, too much responsibility','letting go, delegating'],['enthusiasm, a free spirit, good news','hasty ideas, setbacks'],['adventure, energy, impulsive action','recklessness, haste'],['confidence, warmth, determination','jealousy, self-doubt'],['vision, leadership, entrepreneurship','impulsiveness, overbearing']],

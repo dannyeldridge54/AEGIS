@@ -1,4 +1,7 @@
 # Changelog
+## 1.6.1 — 18 Nov 2026
+- Tarot: five deck styles in the Janus palette — Mirror Lattice, Orbitals, Feynman Paths, Sacred Geometry, Symmetry Rosette. Pick one under Readings → Tarot → Deck; the choice is remembered and the open spread redraws in the new deck.
+
 ## 1.6.0 — 18 Nov 2026
 - Compare two people (synastry): pick any saved chart under a cast chart to see the aspects between the two charts, each in plain words, and an overall tone.
 - Tarot: every Minor Arcana card now has its own upright and reversed meaning (all 56), not a suit formula.
