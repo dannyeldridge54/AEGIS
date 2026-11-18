@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1294, D1295, D1296",
+   "refs": "D1295, D1296, D1297",
    "info": ""
   },
   {
@@ -750,6 +750,14 @@
    "lane": "lattice",
    "status": "computed",
    "refs": "D1288",
+   "info": ""
+  },
+  {
+   "id": "X_bw16",
+   "label": "d=16 champion: Barnes–Wall BW16 — kissing 4320, similar to its dual (never flips), beats E8⊕E8 = D16⁺ at every scale, 100,800 hexagons inside",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1298",
    "info": ""
   },
   {
@@ -2654,6 +2662,51 @@
    "sign": 1,
    "ref": "D1297",
    "verdict": "flip rule seen as a flow",
+   "source": "curated"
+  },
+  {
+   "s": "X_d8",
+   "t": "X_bw16",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "dimension chain",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_bw16",
+   "t": "X_d16",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1298",
+   "verdict": "beats the heterotic pair",
+   "source": "curated"
+  },
+  {
+   "s": "X_bw16",
+   "t": "X_d24",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "dimension chain",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_bw16",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1298",
+   "verdict": "similar-to-dual ⇒ no flip",
+   "source": "curated"
+  },
+  {
+   "s": "X_hexin",
+   "t": "X_bw16",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1298",
+   "verdict": "100,800",
    "source": "curated"
   },
   {

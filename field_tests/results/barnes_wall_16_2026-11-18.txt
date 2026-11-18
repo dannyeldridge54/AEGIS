@@ -1,0 +1,9 @@
+BW16 det 16777216.0
+P1 min norm 8.0 kissing 4320
+P2 BW16 first shells {0.0: 1, 2.82843: 4320, 4.24264: 61440}
+P2 BW16* first shells {0.0: 1, 2.82843: 4320, 4.24264: 61440}
+P3 alpha 1.0: BW16 7.07626549e-01  BW16* 7.07626549e-01  E8+E8 1.11914835e+00  -> BW16 lower
+P3 alpha 1.25: BW16 6.85047651e-02  BW16* 6.85047651e-02  E8+E8 1.95730431e-01  -> BW16 lower
+P3 alpha 1.5: BW16 7.15842532e-03  BW16* 7.15842532e-03  E8+E8 3.91395689e-02  -> BW16 lower
+P3 alpha 2.0: BW16 8.28438430e-05  BW16* 8.28438430e-05  E8+E8 1.67467742e-03  -> BW16 lower
+P4 hexagonal partners per minimal vector: 280 -> hexagonal planes 100800

@@ -60,6 +60,20 @@ def _leech():
     B = np.array([[M[i, j] for j in range(24)] for i in range(M.nrows)]); B = B[np.any(B != 0, axis=1)]
     return (B @ B.T) / 8.0
 
+def _rm(r, m):
+    """Reed-Muller code RM(r, m) generator rows (0/1), length 2^m."""
+    pts = list(itertools.product([0, 1], repeat=m)); rows = []
+    for deg in range(r+1):
+        for S in itertools.combinations(range(m), deg):
+            rows.append(np.array([int(all(p[i] for i in S)) for p in pts]))
+    return np.array(rows)
+def _bw16():
+    from fpylll import IntegerMatrix, LLL
+    G = [list(map(int, c)) for c in _rm(1, 4)] + [list(map(int, 2*c)) for c in _rm(3, 4)] + [list(4*np.eye(16, dtype=int)[i]) for i in range(16)]
+    M = IntegerMatrix.from_matrix(G); LLL.reduction(M)
+    B = np.array([[M[i, j] for j in range(16)] for i in range(M.nrows)]); B = B[np.any(B != 0, axis=1)]
+    return (B @ B.T).astype(float)
+
 def gram(name):
     s = str(name).strip()
     if s.startswith('['): return np.array(json.loads(s), float)
@@ -67,10 +81,11 @@ def gram(name):
         t = complex(s[4:].replace('i', 'j')); return np.array([[1, t.real], [t.real, abs(t)**2]], float)
     dual = s.endswith('*'); b = s.rstrip('*')
     fixed = {'hex': np.array([[2., 1], [1, 2]]), 'square': np.eye(2), 'FCC': _A(3), 'BCC': np.linalg.inv(_A(3)),
-             'D16+': None, 'E8xE8': None, 'Leech': None}
+             'D16+': None, 'E8xE8': None, 'Leech': None, 'BW16': None}
     if b == 'D16+': G = _D16p()
     elif b == 'E8xE8': G = np.zeros((16, 16)); G[:8, :8] = _E(8); G[8:, 8:] = _E(8)
     elif b == 'Leech': G = _leech()
+    elif b == 'BW16': G = _bw16()
     elif b in fixed: G = fixed[b]
     else:
         fam, n = b[0], int(b[1:])

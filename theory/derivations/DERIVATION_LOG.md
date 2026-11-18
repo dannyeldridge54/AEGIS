@@ -2032,3 +2032,10 @@ Touches: none.
 1. [derived] Locked P1–P3 (PREREG_D1297).
 2. [derived] 16 minimisations over the 5-dim shape space (8 random starts × α = 1.6, 0.6): all end at FCC (α=1.6, E = 0.02133827) or BCC (α=0.6, E = 1.18691409), matching the reference energies to 8 digits.
 3. [derived] The cube Z³ is never reached; the destination switches at α=1 exactly as the flip rule (D1278) requires for the dual pair FCC/BCC.
+
+## D1298: Barnes–Wall BW16 is the d=16 champion over E8⊕E8 = D16⁺ at every scale; similar to its dual, so it never flips (2026-11-18)
+1. [derived] Locked P1–P4 (PREREG_D1298). BW16 by Construction D (RM(1,4) + 2·RM(3,4) + 4Z¹⁶) and LLL.
+2. [derived] Minimal norm 8, kissing 4320; BW16 and BW16* at unit covolume have identical shells and energies (2-modular ⇒ no flip).
+3. [derived] Gaussian energy below E8⊕E8 at α = 1–2 (e.g. 8.28e-5 vs 1.67e-3 at α=2) and, by self-duality, at α < 1.
+4. [derived] 280 hexagonal partners per minimal vector → 100,800 τ=ρ planes inside BW16.
+5. [derived] Refines D1288: the heterotic pair ties with each other, but BW16 is the d=16 champion.

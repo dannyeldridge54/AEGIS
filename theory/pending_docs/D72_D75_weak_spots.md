@@ -13667,3 +13667,17 @@ exactly where the flip rule says (α=1, FCC ↔ BCC duals). In 2D the destinatio
 Shapes in Danny's terms: the FCC cell is the rhombic dodecahedron, BCC's the truncated octahedron, the cube is the cube — the cube is
 the "square" of 3D (a saddle-type shape), never a resting point.
 Files: field_tests/d3_shape_flow.py, field_tests/results/d3_shape_flow_2026-11-18.txt.
+
+## D1298 — Past 9 dimensions: the Barnes–Wall lattice BW16 beats the heterotic lattices E8⊕E8 = D16⁺ at every scale, is similar to its own dual (never flips), and holds 100,800 hexagons; PREREG P1–P4 PASS (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: numerics (computed; lattice_lab gains 'BW16' via Construction D + LLL), locked first (PREREG_D1298).
+- P1 PASS: minimal norm 8, kissing number 4320 (Gram det 2^24 in these coordinates).
+- P2 PASS: BW16 and its dual, both at unit covolume, have identical shells (1, 4320, 61440, …) and identical energies to 9 digits —
+  similar to its dual (2-modular) ⇒ no flip. Refined rule: "self-dual UP TO SIMILARITY" is what matters (as for hex, D4).
+- P3 PASS: Gaussian energy at α = 1 / 1.25 / 1.5 / 2: BW16 0.7076 / 0.0685 / 7.16e-3 / 8.28e-5 vs E8⊕E8 1.119 / 0.196 / 3.91e-2 /
+  1.67e-3 — BW16 lower everywhere (×20 at α=2); by self-duality also at every α < 1.
+- P4 PASS: 280 minimal vectors at 120° to each → 100,800 hexagonal (τ=ρ) planes.
+REFINES D1288: the two heterotic lattices tie with each other but are NOT the d=16 champion — BW16 (the densest known 16-dim packing)
+beats both at every scale. Updated chain: 2 hex · 3 FCC/BCC · 4 D4 · 5 D5/D5* · 6 E6/E6* · 7 E7/E7* · 8 E8 · 16 BW16 · 24 Leech.
+All self-dual-up-to-similarity champions (2, 4, 8, 16, 24) never hand over; the rest hand over to their duals at α=1.
+Files: field_tests/results/barnes_wall_16_2026-11-18.txt; tools/lattice/lattice_lab.py (BW16).
