@@ -1911,3 +1911,10 @@ Touches: none.
 2. Computed Aₙ and Aₙ* by brute force on the Cartan Gram matrix and its inverse, normalised to determinant 1. [derived]
 3. Checked d=3 against D1277 (exact reproduction) and found: d=4 D4 at all α; d=5 D5*/D5 swap with an exact tie at α=1; d=8 E8 at all α. [derived]
 4. Stated the rule (flip iff the winner is not self-dual) and its prediction for E6, E7 (flip) and Leech (no flip) — an extrapolation from the tested cases, not a derivation. [estimate]
+
+## D1279 — Torus shape flow and the backwards chain (2026-11-18)
+1. Wrote the d=2 torus shape as τ=x+iy with basis (1,τ) at unit covolume and the Gaussian lattice energy E(τ)=Σ' exp(−π|m+nτ|²/y). [derived]
+2. Ran hyperbolic gradient descent from τ=3i, 0.02+3i and 0.30+2i, reducing to the fundamental domain to classify shapes; all paths end hexagonal with E decreasing monotonically. [derived]
+3. Computed Hessians: τ=i has eigenvalues −0.295, +1.118 (saddle); τ=ρ has +0.635, +0.635 (isotropic minimum). [derived]
+4. Noted τ=i and τ=ρ are critical points of any modular-invariant function, with min/saddle character set by the function. [literature]
+5. Counted torus shape moduli d(d+1)/2−1 = 0, 2, 5, 9, 14, 35, 299 for d = 1, 2, 3, 4, 5, 8, 24. [derived]

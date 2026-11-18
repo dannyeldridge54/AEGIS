@@ -13370,3 +13370,20 @@ Leech (d=24) is self-dual → no flip (consistent with its proven universal opti
 LLL-reduced basis or theta series — too skewed for a cheap box search.
 CAVEAT: only the families Z, D, D*, A, A*, E8 compared; no claim about D4 among all lattices.
 Result file: field_tests/results/shape_flip_by_dimension_2026-11-18.txt.
+
+## D1279 — Running it backwards: a torus started at any shape slides to the hexagon; the square is a saddle held only by mirror symmetry (2026-11-18)
+MAP: node=n_sector_i status=computed
+LABEL: numerics (computed) + literature (modular fixed points). No new physics claim.
+Every lattice is a flat torus R^d/Λ, so the shapes of D1276–D1278 ARE torus shapes. In d=2 the shape is τ (unit covolume,
+basis (1,τ)). Hyperbolic gradient descent dτ = −η y²∇E on the Gaussian lattice energy (α=1):
+- start 3i (thin rectangle): rectangle → SQUARE (held ~3600 steps) → rhombus → HEXAGONAL; E 0.7326 → 0.1803 → 0.1596.
+- start 0.02+3i: oblique → rhombus → HEXAGONAL (skips the square). start 0.30+2i: oblique → HEXAGONAL.
+Every path ends at the hexagonal torus; energy falls monotonically.
+Hessians: square τ=i [−0.295, +1.118] → SADDLE (stable along the rectangles, unstable to shear); hexagonal τ=ρ
+[+0.635, +0.635] → isotropic MINIMUM. The exactly symmetric start sits on the square until round-off breaks x→−x.
+Backwards in dimension: torus shape-moduli dimension d(d+1)/2−1 = 0 (d=1, the circle — no shape choice), 2, 5, 9, 14,
+35 (d=8), 299 (d=24); the chain starts from the circle and gains shape freedom quadratically.
+RELEVANCE (careful): τ=i and τ=ρ are critical points of every smooth modular-invariant function (fixed points of S, ST), but
+min-vs-saddle is function-specific. For the lattice energy ρ is the attractor and i is held only by x→−x — the same
+symmetry as the CP locus our τ=i sector relies on (D844/D854). OPEN CHECK: is τ=i a minimum or a saddle of the actual
+SERAPIS-E potential? Not assumed here. Result file: field_tests/results/torus_shape_flow_2026-11-18.txt.

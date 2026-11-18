@@ -155,10 +155,11 @@ nodes:
   - D742
   - D785
   - D1249
+  - D1279
   history:
-  - 'D742: computed'
   - 'D785: computed'
   - 'D1249: computed'
+  - 'D1279: computed'
 - id: eta_n
   layer: 1
   branch:
@@ -338,6 +339,7 @@ nodes:
   - D727
   depends:
   - n_sector_i
+  flag: recheck (D1279, n_sector_i)
 - id: reheat_i
   layer: 4
   branch:
@@ -354,6 +356,7 @@ nodes:
   history:
   - 'D1240: corrected'
   - 'D1241: corrected'
+  flag: recheck (D1279, n_sector_i)
 - id: nstar_i
   layer: 4
   branch:
@@ -371,6 +374,7 @@ nodes:
   history:
   - 'D815: computed'
   - 'D1247: corrected'
+  flag: recheck (D1279, n_sector_i)
 - id: lepto_i
   layer: 4
   branch:
@@ -410,7 +414,7 @@ nodes:
   - 'D904a: estimate'
   - 'D909: estimate'
   - 'D1241: estimate'
-  flag: recheck (D1243, eta_n)
+  flag: recheck (D1279, n_sector_i)
 - id: sterile_rho
   layer: 4
   branch:
@@ -589,7 +593,7 @@ nodes:
   - 'D906: frozen'
   - 'D962: computed'
   - 'D1247: frozen'
-  flag: recheck (D1250, eps_tilt)
+  flag: recheck (D1279, n_sector_i)
 - id: band_e
   layer: 5
   branch:
@@ -706,7 +710,7 @@ nodes:
   - 'D1265: postulate PW5 passed (forecast + consistency)'
   - 'D1265: postulate'
   note: web loop postulate 5
-  flag: recheck (D1278, n_sector_rho)
+  flag: recheck (D1279, n_sector_i)
 - id: inverse_meter
   layer: 5
   branch:
@@ -722,7 +726,7 @@ nodes:
   - 'D1268: postulate PW6 passed'
   - 'D1268: postulate'
   note: web loop postulate 6
-  flag: recheck (D1278, n_sector_rho)
+  flag: recheck (D1279, n_sector_i)
 - id: instanton_MH
   layer: 5
   branch:
@@ -827,7 +831,7 @@ nodes:
   - 'D1256: computed'
   - 'D1260: computed'
   - 'D1261: computed'
-  flag: recheck (D1278, n_sector_rho)
+  flag: recheck (D1279, n_sector_i)
 - id: tests_lhc
   layer: 5
   branch:

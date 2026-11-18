@@ -184,12 +184,13 @@
     "D741",
     "D742",
     "D785",
-    "D1249"
+    "D1249",
+    "D1279"
    ],
    "history": [
-    "D742: computed",
     "D785: computed",
-    "D1249: computed"
+    "D1249: computed",
+    "D1279: computed"
    ]
   },
   {
@@ -425,7 +426,8 @@
    ],
    "depends": [
     "n_sector_i"
-   ]
+   ],
+   "flag": "recheck (D1279, n_sector_i)"
   },
   {
    "id": "reheat_i",
@@ -447,7 +449,8 @@
    "history": [
     "D1240: corrected",
     "D1241: corrected"
-   ]
+   ],
+   "flag": "recheck (D1279, n_sector_i)"
   },
   {
    "id": "nstar_i",
@@ -470,7 +473,8 @@
    "history": [
     "D815: computed",
     "D1247: corrected"
-   ]
+   ],
+   "flag": "recheck (D1279, n_sector_i)"
   },
   {
    "id": "lepto_i",
@@ -516,7 +520,7 @@
     "D909: estimate",
     "D1241: estimate"
    ],
-   "flag": "recheck (D1243, eta_n)"
+   "flag": "recheck (D1279, n_sector_i)"
   },
   {
    "id": "sterile_rho",
@@ -737,7 +741,7 @@
     "D962: computed",
     "D1247: frozen"
    ],
-   "flag": "recheck (D1250, eps_tilt)"
+   "flag": "recheck (D1279, n_sector_i)"
   },
   {
    "id": "band_e",
@@ -890,7 +894,7 @@
     "D1265: postulate"
    ],
    "note": "web loop postulate 5",
-   "flag": "recheck (D1278, n_sector_rho)"
+   "flag": "recheck (D1279, n_sector_i)"
   },
   {
    "id": "inverse_meter",
@@ -912,7 +916,7 @@
     "D1268: postulate"
    ],
    "note": "web loop postulate 6",
-   "flag": "recheck (D1278, n_sector_rho)"
+   "flag": "recheck (D1279, n_sector_i)"
   },
   {
    "id": "instanton_MH",
@@ -1044,7 +1048,7 @@
     "D1260: computed",
     "D1261: computed"
    ],
-   "flag": "recheck (D1278, n_sector_rho)"
+   "flag": "recheck (D1279, n_sector_i)"
   },
   {
    "id": "tests_lhc",
