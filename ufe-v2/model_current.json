@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1264: POSTULATE (passed): SERAPIS-E covariant bound m3/2 < 6.7e8 GeV at its own y (14.6–16.6) ≫ AMSB wino need ≤ 7e5 GeV (×960) → postulate",
   "D1265: POSTULATE (forecast passed): CMB measures the string product Im S·Im ρ — ±14 % from SO n_s (T_R known), ±19 % + T_R to 2.8 decades with LiteBIRD r → postulate",
   "D1268: POSTULATE (passed): inverse string meter — at T_R 7.39e8 a future n_s gives Im S·Im ρ: 0.972 → 953, 0.974 → 804, 0.976 → 697 (linear PW5 inverse within 0.4–2.4 %; 3.5–7 % at 0.970/0.978) → postulate",
   "D1270: KILLED (tension recorded): the string benchmark's own σ = ½ instanton heavy-ν mass (9.8e10 GeV) cannot drive thermal leptogenesis at ρ — 0 % pass for c = 0.3/1/3 (Y_B ×~12 short); point would move to N* 49.41, n_s 0.97362 → killed",
@@ -29,12 +28,12 @@
   "D1276: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed",
   "D1277: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed",
   "D1278: Heavy-ν sector at ρ: 2⊕1, weight-2 mixing → computed",
-  "D1279: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → computed"
+  "D1279: Heavy-ν sector at τ=i: Γ2 doublet (+ singlet?) → computed",
+  "D1280: SERAPIS-E potential (Epstein + BHK tilt) → computed"
  ],
  "open_rechecks": [
   "Vacuum at τ=i (Chronos/Kairos)",
   "Vacuum at ρ (variant)",
-  "SERAPIS-E potential (Epstein + BHK tilt)",
   "Stuck D3 branes at half-periods",
   "Modular-covariant SUGRA completion",
   "Inflaton coupling at τ=i (axion-like, unsuppressed)",

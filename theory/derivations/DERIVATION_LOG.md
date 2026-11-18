@@ -1937,3 +1937,10 @@ Touches: none.
 ## D1265b: REFINEMENT of D1265a: the n_s response at the benchmark is 0.0133 (fresh symmetric difference), not 0.0135 (2026-11-18)
 1. Ran exact points at C=1.249e-6×(0.97, 1, 1.03) and formed the symmetric log-slope 0.01334, versus D1265a's wide-fit 0.01352. [derived]
 2. Recomputed the meter: σ(ln C)=0.120, Im S·Im ρ to ±12% (unchanged). [derived]
+
+## D1280: τ = i is a SADDLE of the actual SERAPIS-E potential (unstable only along the axion); any potential monotone in E(τ,2) has its vacuum only at ρ (2026-11-18)
+1. Took the model V/V0 = P3(Ê), Ê = E(τ,2) − E(ρ,2), from tools/serapis_calc/potentials.py, with C = 1.25e-6. [derived]
+2. Used the repo's symbolic slope dP3/dE = (CE²+2CE+1)/(E+1)² > 0 to note that V is monotone in E(τ,2), so Hess V = P3′·Hess E at critical points. [derived]
+3. Computed central-difference Hessians with the model's own E_fourier: τ=i [−1.2792, +5.7786] (saddle, negative mode along x), τ=ρ [+3.5623, +3.5623] (minimum); h = 1e-3 and 1e-4 agree. [derived]
+4. Checked the eigenvalue ratio at i (−0.2214) against the bare Epstein s=2 ratio (−0.2215). [derived]
+5. Concluded a τ = i vacuum needs an extra ingredient (pinned axion or a non-monotone building block), as in SERAPIS-1's j-based form; Kallosh–Linde likewise have i as a saddle. [literature] (D530/SERAPIS-1 history, arXiv:2212.03876 context)

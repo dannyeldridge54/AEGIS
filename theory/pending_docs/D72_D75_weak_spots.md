@@ -13432,3 +13432,19 @@ LABEL: correction (audit; fresh computation).
 D1265a's 0.01352 came from a quadratic fit over the wide band C=1.0–1.6e-6. Fresh exact runs at C=1.249e-6·(0.97, 1, 1.03) give
 the symmetric local slope 0.01334 (1.3% lower). D1265's 0.01171 remains ~12% low. The meter is unchanged at ±12%
 (σ(ln C)=0.0016/0.01334=0.120). PW5 verdict unchanged.
+
+## D1280 — τ = i is a SADDLE of the actual SERAPIS-E potential (unstable only along the axion); any potential monotone in E(τ,2) has its vacuum only at ρ (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: derived from the frozen model's own code (verification; no new prediction, no lock needed).
+Resolves the open check from D1279. Model: V/V0 = P3(Ê) = Ê/(Ê+1)(1+CÊ), Ê = E(τ,2) − E(ρ,2) (tools/serapis_calc/potentials.py,
+eisenstein.E_fourier), C = 1.25e-6. The repo's slope_sign_symbolic gives dP3/dE = (CE²+2CE+1)/(E+1)² > 0 for E ≥ 0, so V is
+monotone in E(τ,2) and, at any critical point, Hess V = P3′(Ê)·Hess E — the signature is inherited exactly.
+- τ = i: gradient 0 (critical point), V = 0.1011 V0, Hessian [−1.2792, +5.7786] → SADDLE; the negative mode is purely along x
+  (the axion / shear direction), positive along y. Ratio −0.2214 = bare Epstein ratio −0.2215 (audit), confirming the chain rule.
+- τ = ρ: V = 0 (vacuum), Hessian [+3.5623, +3.5623] → isotropic MINIMUM. Both h = 1e-3 and 1e-4 agree to all digits.
+VERDICT: in SERAPIS-E, τ = i is a dS saddle, not a vacuum — a field there rolls along the axion to ρ. More generally, any potential
+that is a monotone function of E(τ,2) can have its vacuum only at ρ. A τ = i vacuum (the D861 conditional variant) therefore needs
+an ingredient the ρ vacuum does not: the axion x pinned (heavy axion / CP locus, cf. D844/D854) or a different modular building
+block in which i is a minimum (SERAPIS-1's j-based form had i as the vacuum; Kallosh–Linde's construction, like SERAPIS-E, has
+i as a saddle). This strengthens D861's criterion C3 for the i-variant; it does not change any ρ-vacuum prediction.
+Result file: field_tests/results/serapis_i_saddle_2026-11-18.txt.
