@@ -12662,3 +12662,11 @@ Post-hoc reading (labelled as such, not a verdict): the residual Δ3 ≈ 3–6e-
 coefficients), and a wrong coefficient would not make Δ3 < Δ2 at every point — so the extracted coefficients look right, but the locked margin was not met.
 Not changed after the fact; a future lock could use smaller-ε models where fourth order is negligible.
 MAP: none.
+
+## D1220 — JANUS — JMF10: faster Janus-MF (vectorised k-modes; quick mode) [F1 PASS, F2 PASS]
+Lock: field_tests/rules/PREREG_JMF10_fast.md. Code: tools/janus_calc/mfms.spectra_mf_fast; script theory/janus/jmf10_fast.py; result field_tests/results/janus_jmf10.txt.
+Why it was slow: spectra_mf solved 9 k-modes in 9 separate ODE runs (~33k Python RK steps, 15 s per model). spectra_mf_fast integrates all modes in one ODE.
+Results on the five JMF6 models (Q1, Q3, Q9, N2p, N1): fast (bd 1000) |Δn_s| ≤ 5.3e-8, |Δr/r| ≤ 1e-8, median ×3.9 (15 s → 4 s);
+quick (bd 300) |Δn_s| ≤ 2.5e-7, |Δr/r| ≤ 5e-8, median ×11.2 (→ 1.4 s). Both within the locked 1e-6 / 1e-5 → fast is the default MF route for new locks;
+bd = 300 allowed as labelled "quick mode". Next speed steps (own locks): same vectorisation for Janus-MF-NC (curved); compiled core for the PC.
+MAP: none (tool speed).

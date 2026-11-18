@@ -339,3 +339,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1217: a "won't install" dependency may be fine as source (pure-Python packages: try the repo before calling it BLOCKED); and check a Riemann-sign convention on a known space (sphere) before trusting a curvature term.
 - D1218: a start-finder that failed on one model in an earlier test (PSNI, J7d) will fail again on new points of that model — reuse the fix (J7d2 bisection) in the next lock instead of re-listing.
 - D1219: when testing a higher-order expansion, choose test points where the NEXT order is negligible, or the improvement margin you lock is capped by the order after the one you test.
+- D1220: profile before optimising — the cost was Python solver-step overhead per k-mode, not the physics; one shared ODE removed most of it with no change to the equations.
