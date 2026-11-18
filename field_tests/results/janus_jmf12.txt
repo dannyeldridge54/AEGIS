@@ -1,0 +1,4 @@
+a DoubleQuadNC R=1: ref n_s 0.92502415 N_tot 79.3118 (27.5 s) | nc-jit 0.92502408 N_tot 79.3118 (0.76 s, x36) |dn_s| 6.5e-08 True
+b flat Q3: ref n_s 0.94547697 N_tot 72.8529 (25.3 s) | nc-jit 0.94547694 N_tot 72.8529 (0.65 s, x39) |dn_s| 2.3e-08 True
+c sphere R=2: ref n_s 3.49282475 N_tot 176.1800 (2.1 s) | nc-jit 85.89732036 N_tot 176.1800 (0.23 s, x9) |dn_s| 8.2e+01 False
+median speed-up x36 | K1 False -> NOT ADOPTED
