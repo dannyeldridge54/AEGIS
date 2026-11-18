@@ -13233,3 +13233,11 @@ Lock: field_tests/rules/PREREG_PW7_instanton_MH.md. Scripts: field_tests/scripts
 Verdict: the expectation (FAIL = tension) holds. The D861 benchmark (g_s 0.232, Im S·Im ρ 781, C 1.25e-6) and thermal leptogenesis at ρ are not jointly self-consistent with the σ = ½ instanton: either a different instanton action (σ smaller, M_H larger by ×10) or non-thermal/other baryogenesis is needed. The PW2/A1 point prediction stays as published but its M_H = 1e12 is now explicitly a CHOICE (leptogenesis-driven), not a benchmark output — this caveat applies to paper 5 (D1267; not editable on Zenodo; record here and in any v2).
 Note: interestingly the 9.8e10 point still sits inside the frozen band (n_s 0.97362, r 4.92e-4), so the band itself does not discriminate.
 MAP: node=instanton_MH status=killed touches=[serapis_point, lepto_rho, reheat_rho] ripple=no
+
+### D1271 — wino_window recheck after D1264: unchanged (2026-11-18)
+- [CENTRE · recheck] **D1264** (another session, PW4): at SERAPIS-E's own field values the covariant X-positivity bound is m₃/₂ < 2.0e9 GeV at horizon exit and < 6.7e8 GeV 12 e-folds earlier. The AMSB wino window needs m₃/₂ ≈ 2.5–7e5 GeV, so the margin is ×960.
+- This removes a potential constraint on the window's UV side (the earlier Chronos-range bound was marginal at y = 30). It does not change the thermal mass range or the fraction bracket (D1152/D1153), the IGS verdicts (D1190, D1202) or the relic anchor (D1238).
+- wino_window status unchanged; flag cleared.
+- band_i (flagged by D1250, eps_tilt) belongs to the NA audit chain and is left to it.
+VERDICT: unchanged.
+MAP: none

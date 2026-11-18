@@ -45,7 +45,6 @@
   "POSTULATE: audited SERAPIS-E box (N* 50.07–51.22, MSSM g*): n_s 0.9717–0.9760, r 4.39–4.90e-4; partly outside frozen band (D1262)",
   "POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 7.4e8, C 1.25e-6, MSSM g*): n_s 0.97439, r 4.82e-4, α_s −1.0e-3, N* 50.18 (D1262)",
   "POSTULATE (forecast passed): CMB measures the string product Im S·Im ρ — ±14 % from SO n_s (T_R known), ±19 % + T_R to 2.8 decades with LiteBIRD r",
-  "Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784)",
   "Tests: SO+SPHEREx (~2030), LiteBIRD (~2035)"
  ],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"

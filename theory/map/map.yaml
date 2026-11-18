@@ -782,7 +782,6 @@ nodes:
   - 'D906: corrected'
   - 'D1230: corrected'
   - 'D1250: corrected'
-  flag: recheck (D1264, m32_window)
 - id: tests_cmb
   layer: 5
   branch:
