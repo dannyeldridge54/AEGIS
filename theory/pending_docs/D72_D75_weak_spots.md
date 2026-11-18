@@ -12719,3 +12719,14 @@ All 16 comparisons (TI ×6, SFI p=3 ×2, N* = 50, 60; J7b settings) within the l
 Adopted as the exact reference for new locks ("ms-jit"). Speed status of the Janus pair: single-field Janus ~4 ms; exact reference 10 s → 0.4 s; multi-field 15.5 s → 0.4 s (jit),
 curved field space 27 s → 0.8 s (nc-jit, D1224).
 MAP: none (tool speed).
+
+## D1226 — JANUS — JSJ1: compiled single-field Janus vs core and vs ASPIC [JS1 ✓, JS2 ✗ (×19 < ×20) → NOT ADOPTED by margin; per point faster than ASPIC]
+Lock: field_tests/rules/PREREG_JSJ1_corejit.md. Code: tools/janus_calc/core_jit.py; script theory/janus/jsj1.py; result field_tests/results/jsj1.txt.
+JS1: all 16 J7m points within 1e-7 (n_s, α_s) and 1e-6 (r/r) of core.spectra3; accuracy vs the exact reference unchanged (median |Δn_s| 2.86e-6 for both).
+JS2: per model (build + 2 points) core 81–122 ms vs janus-jit 3.5–6 ms → median ×19, below the locked ×20 → not adopted by this lock.
+JS3 (vs ASPIC, same 12 parameter points, same machine, this run): per point janus-jit median 0.225 ms vs ASPIC 0.468 ms → Janus FASTER per point (×2.1), while
+~250× more accurate (D1218: median |Δn_s| 2.9e-6 vs 7.5e-4). Per model including the background build: janus-jit 5.1 ms vs ASPIC 0.94 ms → ASPIC still faster
+for one-or-two-point use; Janus wins once a model is evaluated at more than ~20 points. Also confirmed: core's third-order coefficients (Ballardini et al. 2408.05210)
+equal Auclair–Ringeval's (D1219) term by term — two independent sources agree.
+Next (own lock): cut the background build (store only the window around N_end − 70…N_end on a second pass; or a lower-cost start) and retest JS2.
+MAP: none (tool speed).

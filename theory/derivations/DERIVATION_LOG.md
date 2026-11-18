@@ -1818,3 +1818,4 @@ Touches: none.
 ## D1223: JMF12b — nc-jit matches at R=1 (×34, |Δ| 1.8e-7) but R≠1 spheres are unphysical in both codes → INCONCLUSIVE; suspect a shared R-scaling issue in mfms_nc (item 25), pole hypothesis refuted
 ## D1224: JMF13 — Janus-MF codes normalised a = e^N, so long runs dropped mode amplitudes below the ODE atol (garbage at R ≥ 1.5); fixed with a = e^(N−N_p): unchanged ≤ 1e-7 where it worked, R = 1.5/2 now match PyTransport to 4e-5 → adopted
 ## D1225: MSJ1 — compiled exact single-field MS reference matches spectra_fast on 16/16 points (|Δn_s| ≤ 2e-8) at median ×23 → adopted (ms-jit)
+## D1226: JSJ1 — compiled single-field Janus: same answers (≤1e-7), per point 0.225 ms vs ASPIC 0.468 ms (faster, ~250× more accurate), but ×19 vs core (<×20 locked) → not adopted yet; build step is the bottleneck
