@@ -1,0 +1,40 @@
+# Builds one-click AEGIS toolkit executables (Windows .exe, macOS, Linux) and attaches them to each GitHub release.
+name: build-executables
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install numpy scipy sympy mpmath numba pyinstaller
+      - name: Build
+        shell: bash
+        run: |
+          SEP=":"; [ "$RUNNER_OS" = "Windows" ] && SEP=";"
+          pyinstaller --onefile --name aegis-${RUNNER_OS} --paths . \
+            --add-data "tools/lhc/data${SEP}tools/lhc/data" --add-data "tools/release_smoketest.py${SEP}tools" --add-data "LICENSE${SEP}." \
+            --hidden-import tools.lhc.xsec --hidden-import tools.lhc.lifetime --hidden-import tools.lhc.recast_dt --hidden-import tools.lhc.stats \
+            --hidden-import tools.lhc.theory_band --hidden-import tools.lhc.kinematics --hidden-import tools.lhc.future \
+            --hidden-import tools.lattice.lattice_lab --hidden-import tools.janus_calc.core --hidden-import tools.janus_calc.anyV \
+            tools/aegis_cli.py
+      - name: Self-test the executable
+        shell: bash
+        run: ./dist/aegis-${RUNNER_OS}* test --exit
+      - uses: actions/upload-artifact@v4
+        with: {name: aegis-${{ runner.os }}, path: dist/*}
+      - name: Attach to release
+        if: github.event_name == 'release'
+        shell: bash
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: gh release upload "${{ github.event.release.tag_name }}" dist/* --clobber
