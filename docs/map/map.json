@@ -348,7 +348,8 @@
     "D756: literature",
     "D1246: literature",
     "D1257: literature"
-   ]
+   ],
+   "flag": "recheck (D1265, string_meter)"
   },
   {
    "id": "stuck_d3",
@@ -852,6 +853,29 @@
    "note": "web loop postulate 4 (pattern covariant ↔ eps_tilt)"
   },
   {
+   "id": "string_meter",
+   "layer": 5,
+   "branch": [
+    "E"
+   ],
+   "title": "POSTULATE (forecast passed): CMB measures the string product Im S·Im ρ — ±14 % from SO n_s (T_R known), ±19 % + T_R to 2.8 decades with LiteBIRD r",
+   "status": "postulate",
+   "d": [
+    "D1265"
+   ],
+   "depends": [
+    "bhk_tilt",
+    "stuck_d3",
+    "tests_cmb",
+    "reheat_rho"
+   ],
+   "history": [
+    "D1265: postulate PW5 passed (forecast + consistency)",
+    "D1265: postulate"
+   ],
+   "note": "web loop postulate 5"
+  },
+  {
    "id": "caps",
    "layer": 5,
    "branch": [
@@ -958,7 +982,7 @@
     "D1260: computed",
     "D1261: computed"
    ],
-   "flag": "recheck (D1262, nstar_e)"
+   "flag": "recheck (D1265, string_meter)"
   },
   {
    "id": "tests_lhc",

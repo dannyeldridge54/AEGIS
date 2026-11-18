@@ -13155,3 +13155,13 @@ Lock: field_tests/rules/PREREG_PW4_m32_serapis.md. Results: field_tests/results/
 Expectation (≥ 1e8 GeV) PASS; versus the AMSB requirement m₃/₂ ≈ 2.5–7e5 GeV (D809): margin ×960 → CONSISTENT; the postulate survives (node m32_window, status postulate).
 Why it matters: D649/D655 evaluated the bound only at the Chronos field range y = 23–30, where it is 3e5–1.3e7 GeV — marginal for the wino (y = 30 already below 7e5). SERAPIS-E's plateau approaches as 1/y² and exits at y ≈ 15, so the e^{πy/3} growth of the F-term is ~e^{−9} smaller: the SUSY-breaking scale needed for the wino window is comfortably allowed in SERAPIS-E, whereas it was a live constraint for Chronos.
 MAP: node=m32_window status=postulate touches=[wino_window, covariant] ripple=no
+
+## D1265 — LEFT/STRINGS — PW5 (web postulate 5) PASSES as a forecast: the CMB measures the string compactification — SO+SPHEREx n_s alone fixes Im S·Im ρ to ±14 % (T_R known); with LiteBIRD's optimistic r the (C, T_R) degeneracy breaks: ±19 % on Im S·Im ρ and T_R to 2.8 decades
+Lock: field_tests/rules/PREREG_PW5_cmb_measures_string.md. Results: field_tests/results/pw5_cmb_measures_string.txt. Inputs: measured responses W1/W2 (D1257/D1258), forecasts D751 (σ n_s 0.0016) and D749a (σ r 5e-5 optimistic, 1e-3 requirement).
+[computed] Response at the SERAPIS point: ∂n_s/∂ln C = 1.171e-2, ∂n_s/∂log₁₀T_R = 7.75e-4; ∂ln r/∂ln C = +0.283, ∂ln r/∂log₁₀T_R = −0.0214 (C and T_R move r in OPPOSITE directions).
+- n_s only, T_R fixed: σ(ln C) = 0.137 → Im S·Im ρ (= 15 N_eff/(64π⁶ C)) to ±14 % (e.g. 781 ± 107 at the D861 benchmark, N_eff = 4).
+- (n_s, r) with LiteBIRD optimistic σ(r) = 5e-5: σ(ln C) = 0.186, σ(log₁₀T_R) = 2.76 decades (correlation −0.73).
+- With LiteBIRD's δr = 1e-3 requirement only: r is uninformative (σ ln C = 3.4) — the degeneracy stays unless T_R is known from elsewhere (leptogenesis selects T_R ≈ 7e8 GeV, PW2).
+Consistency: response slopes dln r/dn_s reproduce the audited box edges: C-edge 24.2 vs 24.7 (2.1 %), T_R-edge −27.6 vs −30.0 (7.9 %) → PASS. Expectation PASS.
+Reading: SERAPIS turns the CMB tilt into a measurement of a string quantity — the product of the dilaton and the inflaton-torus volume moduli — at the 15–20 % level in the 2030s, conditional on N_eff (the stuck-brane asymmetry) and on the reheating channel. That is a concrete "string meter" no generic plateau model offers.
+MAP: node=string_meter status=postulate touches=[bhk_tilt, tests_cmb] ripple=no

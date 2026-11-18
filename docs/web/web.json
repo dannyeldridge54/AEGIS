@@ -249,6 +249,14 @@
    "info": "web loop postulate 4 (pattern covariant ↔ eps_tilt)"
   },
   {
+   "id": "string_meter",
+   "label": "POSTULATE (forecast passed): CMB measures the string product Im S·Im ρ — ±14 % from SO n_s (T_R known), ±19 % + T_R to 2.8 decades with LiteBIRD r",
+   "lane": "theory",
+   "status": "postulate",
+   "refs": "D1265",
+   "info": "web loop postulate 5"
+  },
+  {
    "id": "caps",
    "label": "Family caps n_s ≤ 0.985, r ≤ 8.3e-4",
    "lane": "theory",
@@ -1030,6 +1038,42 @@
   {
    "s": "eps_tilt",
    "t": "m32_window",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "bhk_tilt",
+   "t": "string_meter",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "stuck_d3",
+   "t": "string_meter",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "tests_cmb",
+   "t": "string_meter",
+   "kind": "depends",
+   "sign": 1,
+   "ref": "theory/map/map.yaml",
+   "verdict": "postulate",
+   "source": "map.yaml"
+  },
+  {
+   "s": "reheat_rho",
+   "t": "string_meter",
    "kind": "depends",
    "sign": 1,
    "ref": "theory/map/map.yaml",
