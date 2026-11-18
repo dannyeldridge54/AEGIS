@@ -1,0 +1,17 @@
+SERAPIS-E point: position vs CMB data (F3) and internal consistency of the Janus alpha_s relation (cloud loop, 2026-11-18)
+Point (exact pipeline, T_R=7.389e8 GeV, g*=228.75, N_eff=4): n_s=0.97439, r=4.82e-4, alpha_s=-9.98e-4, N*=50.18.
+
+F3 (position vs data):
+  n_s vs CMB-SPA        0.9684 +- 0.0030  ->  +2.00 sigma
+  n_s vs CMB-SPA+DESI   0.9728 +- 0.0027  ->  +0.59 sigma
+  r = 4.82e-4 vs r < 0.036                ->  PASS (75x below the bound; r is not observable soon)
+
+Internal consistency (Janus relation alpha_s(n_s, r, p=2sqrt2, kappa=1)):
+  relation  alpha_s = -9.640e-4
+  pipeline  alpha_s = -9.980e-4
+  difference +3.40e-5  (3.4% of |alpha_s|)
+
+Reading: the prediction sits on the HIGH-n_s side — comfortable against CMB-SPA+DESI (0.6 sigma) but 2.0 sigma above
+CMB-SPA alone. The model is therefore falsifiable by which n_s the data settles to, and that is the sharpest near-term test.
+The analytic Janus alpha_s relation is accurate to ~3% here, not exact — use the pipeline value for scoring.
+Label: tool/numerics + position-vs-published-data (no new physics claim).
