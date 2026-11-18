@@ -371,3 +371,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1252: null tests are model-specific; when the model changes (Twist → SERAPIS), re-derive the nulls or label the old ones as belonging to the old model.
 - D1254: before using a "reference" for a derivative quantity, check its own stability under the differencing step; the exact MS was exact for P(k) but not for its second derivative.
 - D1255: "exact" numerical references have their own error budget; a rtol scan that changes nothing while a physical-setup parameter (bd) changes the answer points to a systematic, not noise.
+- D1256: once the reference is fixed, finish the locked test with it via a written deviation — the corrected reference turned two FAILs-by-noise into nine clean agreements.

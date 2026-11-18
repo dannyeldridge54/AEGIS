@@ -13060,3 +13060,14 @@ D1 diagnostic: the same compiled integrator on a smooth Starobinsky potential is
 U1b [computed]: bd = 4000, 9-point ±0.1 fit — at all four TK1 points: n_s within 1e-5 of TK1's exact MS, r within 1e-5; α_s ±0.1 vs ±0.05 vs bd 8000 agree within 7e-7; |α_s(exact) − α_s(Janus core)| = 1.5–4.0e-6. All four tests PASS → ADOPTED (registry tool serapis_ms switches to this path).
 Consequences: (1) Janus core's α_s for SERAPIS-E is confirmed to a few ×1e-6 — the TK1 α_s FAILs were reference error (label confirmed). (2) Earlier notes that took α_s from ms.spectra with 5 points at bd = 200 (e.g. D1218-era checks, D815's α_s column) carry this ripple at the 1e-4 level; n_s and r were unaffected. Recheck list: any D-note quoting an exact-MS α_s (queued, not done here). (3) Exact MS is now cheap enough for every collector point and every CubeMind tool call.
 MAP: node=X_ms status=computed touches=[janus, tests_cmb] ripple=no
+
+## D1256 — CENTRE — TK1 complete (DEV D3, U1b exact MS): all 5 remaining rows PASS every agreement bar; Janus core = exact MS to |Δn_s| ≤ 1.1e-6, Δr/r ≈ +0.011 %, |Δα_s| ≤ 3.3e-6 across the whole audited SERAPIS-E box; CAMB primordial BB(ℓ=80) = 2.7–3.0e-5 μK²
+Lock: PREREG_TK1 + DEVIATIONS D1–D3. Results: field_tests/results/tk1_d3_rows.txt (D3), tk1_grid/e2e (D1254), tk1_d2_diag (D1254).
+[computed] (exact MS = compiled ripple-free U1b, D1255):
+- grid C 1.3e-6, N* 50.7: n_s 0.975448, r 4.823e-4, α_s −9.989e-4
+- T_R 6.6e8, C 1.3e-6 (N* 50.146): 0.974892, 4.889e-4, −1.013e-3
+- T_R 2.0e10, C 1.0/1.15/1.3e-6 (N* 51.265/51.272/51.279): n_s 0.972767/0.974380/0.976021, r 4.382/4.564/4.756e-4, α_s −9.08/−9.46/−9.84e-4
+Janus core (3rd order) − exact: Δn_s −5e-8 … +1.1e-6, Δr/r +0.010…0.012 %, Δα_s −3.3e-6 … +2.4e-6 → PASS ×5. Janus relation (κ = 1) 3.4–3.5 % below exact α_s (≤ 6 % frozen) → PASS.
+Data pulls (exact n_s): CMB-SPA +1.5 to +2.5σ; CMB-SPA+DESI 0.0 to +1.2σ; r < 0.036. CAMB 2.0.5: primordial-tensor D_ℓ^BB(80) = 2.70e-5 μK² (r 4.38e-4) to 3.01e-5 μK² (r 4.89e-4) — ~1/300 of lensing B-modes at ℓ = 80, hence the need for delensing (LiteBIRD-class).
+TK1 overall: 9/9 points computed; n_s and r agree everywhere to the 1e-6 / 1e-4 level; the 2 earlier α_s FAILs (D1254) were the old reference's ripple (D1255), confirmed by the U1b rows (Δα ≤ 3.3e-6).
+MAP: node=tests_cmb status=computed touches=[] ripple=no

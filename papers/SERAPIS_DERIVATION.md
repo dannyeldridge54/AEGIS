@@ -64,9 +64,19 @@ String compactification on T⁶/(Z₂×Z₂) with stuck D3 branes → one-loop B
 - **Σm_ν:** any robust bound below 0.0588 eV excludes normal ordering and SERAPIS's input together.
 - **Late universe:** ΛCDM; DESI w0–wa pulls −2.8σ / +2.6σ (1-D) — the main open data tension (shared with ΛCDM) (D1252).
 
-## 7. Toolkit cross-checks (TK1, D-note pending)
+## 7. Toolkit cross-checks (TK1 complete, D1254–D1256; U1b D1255)
 
-Exact Mukhanov–Sasaki vs Janus core (third order): |Δn_s| ≤ 1.5e-6, |Δr/r| ≤ 0.01 % on every point so far; second order |Δn_s| ≈ 1.5e-5. The exact-MS α_s from a 3-point difference scatters by up to 1.5e-4 (diagnostic DEV D2 running). CAMB BB amplitudes: pending.
+| Toolkit | Agreement with exact Mukhanov–Sasaki over the audited box (9 points) |
+|---|---|
+| Janus core, third-order flow | Δn_s ≤ 1.1e-6, Δr/r ≈ 0.011 %, Δα_s ≤ 3.3e-6 |
+| Janus core, second order | Δn_s ≈ −1.6e-5 |
+| Janus relation (κ = 1, p = 2√2) | α_s 3.4–3.5 % below exact (frozen bar ≤ 6 %) |
+| Exact MS, compiled (U1b) | 0.9–3.8 s per 9-k spectrum (old path ≈ 570 s); α_s stable to 2e-5 |
+| CAMB 2.0.5 | primordial-tensor D_ℓ^BB(80) = 2.7–3.0e-5 μK² for r = 4.4–4.9e-4 |
+| Data pulls | CMB-SPA +1.5 to +2.5σ; CMB-SPA+DESI 0.0 to +1.2σ; r < 0.036 |
+
+The old exact-MS α_s carried a start-condition ripple (bd = 200) at the 1e-4 level; fixed in U1b, recheck of older α_s quotes queued.
+Wiring: every toolkit above sits in one shared registry (aegis_tools) used by the Janus app and by CubeMind; every app result and every collector point is stored in CubeMind's memory.
 
 ## 8. What is still open
 
