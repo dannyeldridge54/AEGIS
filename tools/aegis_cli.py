@@ -55,7 +55,15 @@ def janus(args):
     from tools.janus_calc import anyV, core
     if not args: print(__doc__); return
     N = float(args[1]) if len(args) > 1 else 55.0
-    s = core.spectra3(anyV.from_formula(args[0]), N)
+    if not 1 <= N <= 200: raise ValueError('N* (e-folds) should be between 1 and 200; 50-60 is usual')
+    try: model = anyV.from_formula(args[0])
+    except Exception as e:
+        if 'does not end' in str(e): raise ValueError(f'with V = {args[0]} inflation never ends (slow roll is never violated), so N* = {N:g} has no meaning. Try a potential that steepens, e.g. "0.5*phi**2"')
+        raise ValueError(f'could not read the potential "{args[0]}". Write it in phi with * and **, e.g. "0.5*phi**2" or "1-exp(-sqrt(2/3)*phi)"')
+    try: s = core.spectra3(model, N)
+    except Exception as e:
+        if 'does not end' in str(e): raise ValueError(f'with V = {args[0]} inflation never ends (slow roll is never violated), so N* = {N:g} has no meaning. Try a potential that steepens, e.g. "0.5*phi**2"')
+        raise
     _show({'V': args[0], 'N_star': N, **{k: v for k, v in s.items() if k in ('ns', 'r', 'alpha_s', 'beta_s')}})
 
 def hyperion(args):
