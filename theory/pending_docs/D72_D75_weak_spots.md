@@ -13919,3 +13919,13 @@ MAP: none
 VERDICT: map coverage of our B and A threads completed.
 MAP: node=darkrad_i status=computed touches=[] ripple=no
 MAP: node=halo_profile status=computed touches=[] ripple=no
+
+## D1321 — SERAPIS v3.3 draft (unposted): the astrophysics paragraph gains the LHC recast and relic cross-checks (2026-11-18)
+- [DOC] papers/v3/serapis_v3.3_draft.tex, gamma-ray item (ii), after the CTA + HL-LHC sentence:
+  - "our own disappearing-track recast reproduces the Run-2 pure-wino limit (667 vs. 660 GeV) and projects ≈ 0.98 TeV at HL-LHC with Run-2 efficiencies (detector upgrade not modelled; D1302)";
+  - "With the thermal relic computed in our toolkit, the Born mass agrees with Ref. [2009.00640] to 2% (D1238)."
+  - refs.bib gains arXiv_2009_00640 (Beneke et al. 2020; first author only, "and others").
+- The literature reach (1805.00015) stays the primary cited number.
+- **Not stated:** the LO-Sommerfeld +4.4% (parked, D1269). The draft only claims the Born agreement.
+- A full revtex build is still pending (PC). No Zenodo.
+MAP: none
