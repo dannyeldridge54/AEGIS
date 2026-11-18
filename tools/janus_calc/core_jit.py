@@ -5,7 +5,7 @@ import math, numpy as np, sympy as sp, numba as nb
 from scipy.interpolate import CubicSpline
 from tools.janus_calc.mf_jit import A, B5, B4, CC
 from tools.janus_calc.core import AL, CE
-def build(Vexpr, y):
+def build(Vexpr, y, rtol=1e-12, atol=1e-14):
     x = sp.Symbol('x'); e = Vexpr.subs(y, x); ns = {'math': math}
     exec(f"def _V(x):\n    return {sp.pycode(e)}\ndef _dV(x):\n    return {sp.pycode(sp.diff(e, x))}\n", ns)
     V = nb.njit(ns['_V']); dV = nb.njit(ns['_dV'])
@@ -25,11 +25,11 @@ def build(Vexpr, y):
         for q in range(2):
             y5 = y[q]; e = 0.0
             for r in range(7): y5 += h*B5[r]*ks[r, q]; e += h*(B5[r] - B4[r])*ks[r, q]
-            yn[q] = y5; sc = 1e-14 + 1e-12*max(abs(y[q]), abs(y5)); err += (e/sc)**2
+            yn[q] = y5; sc = atol + rtol*max(abs(y[q]), abs(y5)); err += (e/sc)**2
         return yn, math.sqrt(err/2)
     @nb.njit
     def run(y0, Nmax):
-        ks = np.zeros((7, 2)); tmp = np.zeros(2); Ns = np.zeros(200000); Ys = np.zeros((200000, 2)); n = 0
+        ks = np.zeros((7, 2)); tmp = np.zeros(2); cap = 4096; Ns = np.empty(cap); Ys = np.empty((cap, 2)); n = 0
         y = y0.copy(); N = 0.0; h = 1e-3; Ns[0] = 0.0; Ys[0] = y
         while N < Nmax:
             yn, err = step(N, y, h, ks, tmp)
@@ -40,10 +40,15 @@ def build(Vexpr, y):
                         mid = 0.5*(lo + hi); yt, _ = step(N, y, mid, ks, tmp)
                         if 0.5*yt[1]*yt[1] >= 1.0: hi = mid
                         else: lo = mid
-                    n += 1; Ns[n] = N + hi; Ys[n] = step(N, y, hi, ks, tmp)[0]
+                    n += 1
+                    if n >= cap:
+                        cap *= 2; N2 = np.empty(cap); Y2 = np.empty((cap, 2)); N2[:n] = Ns[:n]; Y2[:n] = Ys[:n]; Ns = N2; Ys = Y2
+                    Ns[n] = N + hi; Ys[n] = step(N, y, hi, ks, tmp)[0]
                     return Ns[:n+1], Ys[:n+1], True
-                N += h; y = yn; n += 1; Ns[n] = N; Ys[n] = y
-                if n >= 199999: break
+                N += h; y = yn; n += 1
+                if n >= cap:
+                    cap *= 2; N2 = np.empty(cap); Y2 = np.empty((cap, 2)); N2[:n] = Ns[:n]; Y2[:n] = Ys[:n]; Ns = N2; Ys = Y2
+                Ns[n] = N; Ys[n] = y
             h = h*min(5.0, max(0.2, 0.9*err**-0.2 if err > 0 else 5.0))
         return Ns[:n+1], Ys[:n+1], False
     @nb.njit
