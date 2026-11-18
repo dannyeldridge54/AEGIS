@@ -641,3 +641,4 @@ D1354  2026-11-18T23:06Z  SERAPIS circuit on the lattice plan + two corrections
 D1355  2026-11-18T23:23Z  SUSY shell of the SERAPIS circuit + bino card correction
 D1356  2026-11-18T23:28Z  BTR -4% gap: shape agrees, common length scale
 D1357  2026-11-18T23:33Z  BTR scale recheck: singular-end cut-off
+D1358  2026-11-18T23:36Z  BTR gap: self-adjoint extension ruled out
