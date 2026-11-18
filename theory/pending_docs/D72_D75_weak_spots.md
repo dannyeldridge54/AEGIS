@@ -13071,3 +13071,15 @@ Janus core (3rd order) − exact: Δn_s −5e-8 … +1.1e-6, Δr/r +0.010…0.01
 Data pulls (exact n_s): CMB-SPA +1.5 to +2.5σ; CMB-SPA+DESI 0.0 to +1.2σ; r < 0.036. CAMB 2.0.5: primordial-tensor D_ℓ^BB(80) = 2.70e-5 μK² (r 4.38e-4) to 3.01e-5 μK² (r 4.89e-4) — ~1/300 of lensing B-modes at ℓ = 80, hence the need for delensing (LiteBIRD-class).
 TK1 overall: 9/9 points computed; n_s and r agree everywhere to the 1e-6 / 1e-4 level; the 2 earlier α_s FAILs (D1254) were the old reference's ripple (D1255), confirmed by the U1b rows (Δα ≤ 3.3e-6).
 MAP: node=tests_cmb status=computed touches=[] ripple=no
+
+## D1257 — CENTRE/JANUS — U2 (upgrade loop, counterpart 2: the SERAPIS pipeline) ADOPTED — predict_fast reproduces TK1's end-to-end rows exactly in 23–26 s (old predict ≥ 15 min); W1 rerun (DEV D1) finally completes: the first measured web wave says the BHK tilt link is STRONGER than the N* link (heuristic ordering REVERSED), all links linear
+Locks: PREREG_U2_pipeline_fast; PREREG_W1_recompute + DEVIATIONS D1. Results: field_tests/results/u2_pipeline_fast.txt, w1_recompute.txt, docs/web/w1.json. Code: tools/serapis_calc/pipeline.predict_fast.
+U2 [computed]: C 1.0e-6, T_R 6.6e8 → N* 50.1330, n_s 0.971723, r 4.52103e-4 (TK1 50.133, 0.97172, 4.5210e-4); C 1.15e-6, T_R 2.0e10 → N* 51.2717, n_s 0.974380, r 4.56395e-4, α_s −9.45586e-4 (TK1 D3: 51.272, 0.974380, 4.56395e-4, −9.4559e-4). T1–T3 PASS; 23–26 s per call → ADOPTED.
+W1 [computed] baseline (as locked: C 1.15e-6, T_R 1e7 — the pre-audit reheating): N* 48.749, n_s 0.971912, r 4.883e-4, α_s −1.0144e-3.
+- w_N (N* ± 1): Δn_s +9.99e-4 / −1.03e-3, Δr/r ∓2.7–2.9 %, Δα_s ±3e-5 → strength 0.343 σ_SPA, asymmetry 3 %
+- w_C (C × 1.1 / × 0.9): Δn_s +1.18e-3 / −1.17e-3, Δr/r ±2.8–2.9 % (same sign as n_s), Δα_s ∓2.8e-5 → 0.394 σ_SPA, asymmetry 1 %
+- w_T (T_R × 10 / ÷ 10): Δn_s +7.7e-4 / −7.8e-4, Δr/r ∓2.1 %, Δα_s ±2.2e-5 → 0.261 σ_SPA, asymmetry 2 %
+Reading rule (locked): heuristic ordering nstar_e > bhk_tilt → REVERSED (0.394 > 0.343 σ). All asymmetries ≤ 3 % → every link linear (no nonlinear flag).
+Physics read-out: C and N* move n_s the same way but r OPPOSITE ways (C up: r up; N* up: r down) — the (n_s, r) plane separates tilt from reheating, which is why the audited box (PW1) is a parallelogram. A decade of T_R = 0.77 e-fold = 7.7e-4 in n_s.
+Web: the heuristic wave strengths are now replaced by measured ones for these three edges (docs/web/w1.json).
+MAP: node=bhk_tilt status=literature touches=[band_e] ripple=no

@@ -1845,3 +1845,4 @@ Touches: none.
 ## D1254: TK1 (partial) — Janus core vs exact MS |Δn_s| ≤ 1.5e-6, r 0.01 % (4 rows); α_s bar fails on 2 rows because the exact-MS α_s is step-dependent noise (D2: −8.0/−7.6/−2.2e-4 for 3 step sets); remaining rows + CAMB → upgraded MS (U1)
 ## D1255: U1/U1b — compiled exact MS for SERAPIS-E: ×600 faster (0.9 s / 9 k); α_s noise traced to the BD-start ripple at k/aH = 200 (not the integrator); bd 4000 + 9-pt fit → α_s stable 2e-5, Janus core α_s confirmed to ≤ 4e-6; ADOPTED
 ## D1256: TK1 complete — 9/9 SERAPIS-E box points; Janus core = exact MS (U1b) to Δn_s ≤ 1.1e-6, Δr/r 0.011 %, Δα ≤ 3.3e-6; CAMB BB(80) 2.7–3.0e-5 μK²; pulls SPA +1.5–2.5σ, SPA+DESI 0–1.2σ
+## D1257: U2 predict_fast ADOPTED (exact to TK1, 23–26 s vs ≥ 15 min); W1 measured wave: tilt link 0.394σ > N* link 0.343σ > T_R decade 0.261σ (heuristic ordering REVERSED), all linear (≤ 3 % asymmetry); C and N* separate in r

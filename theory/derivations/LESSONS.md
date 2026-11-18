@@ -372,3 +372,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1254: before using a "reference" for a derivative quantity, check its own stability under the differencing step; the exact MS was exact for P(k) but not for its second derivative.
 - D1255: "exact" numerical references have their own error budget; a rtol scan that changes nothing while a physical-setup parameter (bd) changes the answer points to a systematic, not noise.
 - D1256: once the reference is fixed, finish the locked test with it via a written deviation — the corrected reference turned two FAILs-by-noise into nine clean agreements.
+- D1257: a heuristic graph ranking (waves.py) is a guess until a measured wave replaces it — the first measured one reversed the top two.
