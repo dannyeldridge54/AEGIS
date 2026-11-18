@@ -578,3 +578,4 @@ D1291  2026-11-18T11:45Z  Theta of self-dual champions = Eisenstein/modular form
 D1292  2026-11-18T11:46Z  Critical points of 2D lattice energy (PREREG D1292)
 D1293  2026-11-18T11:49Z  Epstein handover at s=d/4 (PREREG D1293)
 D1294  2026-11-18T11:58Z  Hexagons inside champions (PREREG D1294)
+D1295  2026-11-18T12:03Z  Units/symmetry of the two SERAPIS sectors (PREREG D1295)
