@@ -2009,3 +2009,9 @@ Touches: none.
 3. [derived] Self-dual hex, D4, E8: Z_L = Z_{L*} for all s.
 4. [derived] Functional equation s ↔ d/2−s is the Mellin image of Poisson α ↔ 1/α; s=d/4 is its fixed point.
 5. [derived] SERAPIS-E: d=2, s=2, hexagon self-dual ⇒ no handover at any s; same selection as at every scale.
+
+## D1294: The hexagonal torus (τ=ρ) is the repeated tile inside every higher champion: 16 (D4), 120 (E6), 336 (E7), 1120 (E8), 75,348,000 (Leech) (2026-11-18)
+1. [derived] Locked counts (PREREG_D1294) = (#min vectors)(#at 120° per vector)/12.
+2. [derived] Exact enumeration: D4 24·8/12 = 16, E6 72·20/12 = 120, E7 126·32/12 = 336, E8 240·56/12 = 1120.
+3. [derived] Leech: 196560 minimal vectors, 4600 at 120° to each of 6 sampled ones → 75,348,000 ([literature] transitivity of Co0).
+4. [derived] Each such plane has Gram ∝ [[2,−1],[−1,2]], i.e. shape τ=ρ — the SERAPIS-E vacuum.

@@ -198,7 +198,38 @@ def explore():
                      'hands_over': w[0.5] != w[2.0]})
     return {'champions': rows}
 
-CMDS = dict(shells=shells, energy=energy, flip=flip, compare=compare, champion=champion, modular=modular,
+
+def minvecs(G, tol=1e-6):
+    """All minimal vectors as integer coefficient rows (Fincke-Pohst at the minimum norm)."""
+    n = len(G); R = np.linalg.cholesky(G).T; Q = min(np.diag(G)) + tol
+    # find the true minimum first
+    q = norms(G, Q); q = q[q > 1e-9]; m = q.min(); Q = m + tol; out = []; x = np.zeros(n)
+    def rec(k, rem):
+        c = -sum(R[k, j]*x[j] for j in range(k+1, n))/R[k, k]; w = math.sqrt(max(rem, 0))/abs(R[k, k])
+        for v in range(math.ceil(c-w-1e-12), math.floor(c+w+1e-12)+1):
+            x[k] = v; t = R[k, k]*(v-c); r2 = rem - t*t
+            if r2 < -1e-9: continue
+            if k == 0:
+                if Q - r2 > 1e-9: out.append(x.copy())
+            else: rec(k-1, r2)
+        x[k] = 0
+    rec(n-1, Q); return np.array(out), m
+
+def hexagons(L, sample=None):
+    """Count hexagonal (A2) planes spanned by minimal vectors at 120 degrees: (#min) x (#at 120 deg per vector) / 12."""
+    G = gram(L); X, m = minvecs(G)
+    P = X @ G                                   # rows: G x  -> dot(u_i, u_j) = X_i G X_j
+    idx = range(len(X)) if sample is None else range(min(sample, len(X)))
+    per = [int(np.sum(np.isclose(P[i] @ X.T, -m/2))) for i in idx]
+    k = per[0]
+    gram2 = None
+    if k:
+        j = int(np.where(np.isclose(P[0] @ X.T, -m/2))[0][0]); u, v = X[0], X[j]
+        gram2 = [[float(u @ G @ u), float(u @ G @ v)], [float(v @ G @ u), float(v @ G @ v)]]
+    return {'lattice': L, 'min_norm': float(m), 'min_vectors': len(X), 'at_120deg_per_vector': sorted(set(per)),
+            'hexagonal_planes': len(X)*k//12, 'example_plane_gram': gram2, 'shape': 'tau=rho (hexagon)' if k else None}
+
+CMDS = dict(hexagons=hexagons, shells=shells, energy=energy, flip=flip, compare=compare, champion=champion, modular=modular,
             epstein=epstein, critical=critical, explore=explore)
 
 def main(argv):

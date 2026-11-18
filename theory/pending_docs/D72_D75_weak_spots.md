@@ -13616,3 +13616,15 @@ MEANING [derived]: the functional equation π^{−s}Γ(s)Z_L(s) = π^{−(d/2−
 and nothing hands over at any s — so E(τ,2) selects the hexagon for the same reason the Gaussian energy does at every scale.
 Two "dials" (scale α and exponent s), one rule, one hinge each (α=1, s=d/4).
 Files: field_tests/epstein_handover.py, field_tests/results/epstein_handover_2026-11-18.txt; tools/lattice/lattice_lab.py epstein upgraded.
+
+## D1294 — "Every shape fits inside the others": the SERAPIS-E hexagon sits inside every champion — 16 copies through the origin of D4, 120 of E6, 336 of E7, 1120 of E8, 75,348,000 of Leech; PREREG all PASS (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: numerics (computed with the new lattice_lab `hexagons`), locked first (PREREG_D1294). Leech per-vector count from 6 sampled
+minimal vectors (all gave 4600; the full count assumes the Conway group acts transitively — [literature]).
+Hexagonal plane = span of two minimal vectors at 120°. Counts (min vectors × at-120° per vector / 12):
+D4 24 × 8 → 16 · E6 72 × 20 → 120 · E7 126 × 32 → 336 · E8 240 × 56 → 1120 · Leech 196560 × 4600 → 75,348,000. All exactly as predicted.
+Every plane's Gram is ∝ [[2,−1],[−1,2]] (Leech [[4,−2],[−2,4]]): the shape is exactly τ = ρ, the SERAPIS-E vacuum torus.
+MEANING: the champions of every dimension we mapped are built out of the d=2 champion. The hexagon is not just the best 2-torus — it
+is the repeated tile inside D4, E6, E7, E8 and Leech (Danny's "every shape fits inside the others", made exact). The square (τ=i) appears
+inside D4 too (as orthogonal root pairs) but is never a minimal-vector plane at 120° — the 90° planes are the saddle shape (D1279).
+Files: tools/lattice/lattice_lab.py `hexagons`, field_tests/results/hexagons_inside_2026-11-18.txt.

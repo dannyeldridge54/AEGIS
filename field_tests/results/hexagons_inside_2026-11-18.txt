@@ -1,0 +1,5 @@
+{"lattice": "D4", "min_norm": 1.9999999999999982, "min_vectors": 24, "at_120deg_per_vector": [8], "hexagonal_planes": 16, "example_plane_gram": [[2.0, -1.0], [-1.0, 2.0]], "shape": "tau=rho (hexagon)"}
+{"lattice": "E6", "min_norm": 1.9999999999999976, "min_vectors": 72, "at_120deg_per_vector": [20], "hexagonal_planes": 120, "example_plane_gram": [[2.0, -1.0], [-1.0, 2.0]], "shape": "tau=rho (hexagon)"}
+{"lattice": "E7", "min_norm": 1.9999999999999942, "min_vectors": 126, "at_120deg_per_vector": [32], "hexagonal_planes": 336, "example_plane_gram": [[2.0, -1.0], [-1.0, 2.0]], "shape": "tau=rho (hexagon)"}
+{"lattice": "E8", "min_norm": 1.9999999999999873, "min_vectors": 240, "at_120deg_per_vector": [56], "hexagonal_planes": 1120, "example_plane_gram": [[2.0, -1.0], [-1.0, 2.0]], "shape": "tau=rho (hexagon)"}
+{"lattice": "Leech", "min_norm": 3.9999999999999676, "min_vectors": 196560, "at_120deg_per_vector": [4600], "hexagonal_planes": 75348000, "example_plane_gram": [[4.0, -2.0], [-2.0, 4.0]], "shape": "tau=rho (hexagon)"}
