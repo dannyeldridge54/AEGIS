@@ -27,30 +27,31 @@ const renderer = new THREE.WebGLRenderer({canvas, antialias: true, powerPreferen
 const scene = new THREE.Scene(); scene.background = new THREE.Color(C('--bg'));
 const persp = new THREE.PerspectiveCamera(45, 1, 0.1, 2000); persp.position.set(0, -150, 120);
 const ortho = new THREE.OrthographicCamera(-110, 110, 70, -70, -500, 500); ortho.position.set(0, 0, 200);
-let cam = persp; const ctl = new THREE.OrbitControls(persp, canvas); ctl.enableDamping = true; ctl.target.set(0, -2, 0);
+let cam = persp; const ctl = new THREE.OrbitControls(persp, canvas); ctl.enableDamping = true; ctl.target.set(0, -2, 0); ctl.addEventListener('start', () => ctl._userActive = true); ctl.addEventListener('end', () => setTimeout(() => ctl._userActive = false, 4000));
 const composer = new THREE.EffectComposer(renderer); const rpass = new THREE.RenderPass(scene, cam); composer.addPass(rpass);
 const bloom = new THREE.UnrealBloomPass(new THREE.Vector2(512, 512), 1.25, 0.55, 0.05); composer.addPass(bloom);
-function resize() { const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false); composer.setSize(w, h); persp.aspect = w/h; persp.updateProjectionMatrix();
+function resize() { const w = stage.clientWidth, h = stage.clientHeight - 170; renderer.setSize(w, h, false); composer.setSize(w, h); persp.aspect = w/h; persp.updateProjectionMatrix();
   const a = w/h; ortho.left = -75*a; ortho.right = 75*a; ortho.top = 75; ortho.bottom = -75; ortho.updateProjectionMatrix(); }
 addEventListener('resize', resize);
 const weave = new THREE.Group(), land = new THREE.Group(); scene.add(weave, land); land.visible = false;
 // ---------- wave field ----------
 let knobsReady = false; let marker = null; const scope = document.getElementById('scope'), sx = scope.getContext('2d'); const scopeBuf = new Float32Array(320); let sp = 0;
 const amp = new Float32Array(NN); const sigma2 = 14*14; let gain = 1, speed = 1, damp = 0.35, bloomK = 1.25;
-function field(x, y) { let s = 0; for (let i = 0; i < NN; i++) { const a = amp[i]; if (a > -1e-3 && a < 1e-3) continue; const p = P[ids[i]]; const dx = x - p.x, dy = y - p.y; s += a*Math.exp(-(dx*dx + dy*dy)/sigma2); } return s; }
+let tNow = 0; const ambient = (x, y) => 1.4*Math.sin(0.06*x - 0.9*tNow*speed) * Math.cos(0.08*y + 0.35*tNow*speed);
+function field(x, y) { let s = ambient(x, y); for (let i = 0; i < NN; i++) { const a = amp[i]; if (a > -1e-3 && a < 1e-3) continue; const p = P[ids[i]]; const dx = x - p.x, dy = y - p.y; s += a*Math.exp(-(dx*dx + dy*dy)/sigma2); } return s; }
 // ---------- fabric (warp left→right, weft top→bottom) ----------
 const fabric = []; (() => {
   const mk = (pts, colors) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(new Float32Array(pts.length*3), 3)); g.setAttribute('color', new THREE.BufferAttribute(new Float32Array(colors), 3));
     const l = new THREE.Line(g, new THREE.LineBasicMaterial({vertexColors: true, transparent: true, opacity: 0.32, blending: THREE.AdditiveBlending, depthWrite: false})); l.userData.base = pts; weave.add(l); fabric.push(l); };
-  for (let j = 0; j < 46; j++) { const y = -58 + j*2.5; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.61 + 0.32*j/45, 1, 0.58);
+  for (let j = 0; j < 46; j++) { const y = -58 + j*2.5; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.57 + 0.36*Math.pow(j/45, 1.3), 1, 0.58);
     for (let i = 0; i <= 160; i++) { const x = -105 + 210*i/160; pts.push([x, y + 0.9*Math.sin(i*0.9 + j)]); cs.push(c.r, c.g, c.b); } mk(pts, cs); }
-  for (let i = 0; i < 70; i++) { const x = -105 + 210*i/69; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.93 - 0.32*i/69, 1, 0.5);
+  for (let i = 0; i < 70; i++) { const x = -105 + 210*i/69; const pts = [], cs = []; const c = new THREE.Color().setHSL(0.57 + 0.36*Math.pow(i/69, 1.3), 1, 0.5);
     for (let j = 0; j <= 90; j++) { const y = -58 + 113*j/90; pts.push([x + 0.9*Math.sin(j*0.9 + i), y]); cs.push(c.r, c.g, c.b); } mk(pts, cs); }
 })();
 // ---------- threads (the web's links) ----------
 const threads = WEB.edges.map((e, k) => { const a = P[e.s], b = P[e.t]; const mid = a.clone().add(b).multiplyScalar(0.5); mid.z += 6 + (k % 5); mid.y += ((k*7) % 9) - 4;
   const curve = new THREE.QuadraticBezierCurve3(a.clone(), mid, b.clone()); const base = curve.getPoints(64);
-  const g = new THREE.BufferGeometry().setFromPoints(base); const xm = (a.x + b.x)/2; const c = e.sign < 0 ? new THREE.Color(C('--red')) : new THREE.Color().setHSL(0.61 + 0.32*Math.min(1, Math.max(0, (xm + 100)/200)), 1, 0.62);
+  const g = new THREE.BufferGeometry().setFromPoints(base); const xm = (a.x + b.x)/2; const c = e.sign < 0 ? new THREE.Color(C('--red')) : new THREE.Color().setHSL(0.57 + 0.36*Math.pow(Math.min(1, Math.max(0, (xm + 100)/200)), 1.3), 1, 0.62);
   const l = new THREE.Line(g, new THREE.LineBasicMaterial({color: c, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false})); weave.add(l);
   return {e, l, base, c}; });
 // particles running along threads
@@ -124,7 +125,7 @@ document.getElementById('bexact').onclick = async () => { const api = window.pyw
 // ---------- landscape ----------
 (() => { if (!LAND) return; const nx = LAND.phi.length, ny = LAND.C.length; const g = new THREE.PlaneGeometry(160, 100, nx - 1, ny - 1); const pos = g.attributes.position; const cols = [];
   let mn = Infinity, mx = -Infinity; LAND.V.forEach(r => r.forEach(v => { mn = Math.min(mn, v); mx = Math.max(mx, v); }));
-  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) { const k = j*nx + i; const v = LAND.V[j][i]; const h = (v - mn)/(mx - mn + 1e-12); pos.setZ(k, 55*h); const c = new THREE.Color().setHSL(0.61 + 0.32*h, 1, 0.42 + 0.2*h); cols.push(c.r, c.g, c.b); }
+  for (let j = 0; j < ny; j++) for (let i = 0; i < nx; i++) { const k = j*nx + i; const v = LAND.V[j][i]; const h = (v - mn)/(mx - mn + 1e-12); pos.setZ(k, 55*h); const c = new THREE.Color().setHSL(0.57 + 0.36*Math.pow(h, 1.3), 1, 0.42 + 0.2*h); cols.push(c.r, c.g, c.b); }
   g.setAttribute('color', new THREE.Float32BufferAttribute(cols, 3)); g.computeVertexNormals();
   land.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({vertexColors: true, transparent: true, opacity: 0.28, side: THREE.DoubleSide})));
   land.add(new THREE.LineSegments(new THREE.WireframeGeometry(g), new THREE.LineBasicMaterial({vertexColors: true, transparent: true, opacity: 0.55})));
@@ -150,7 +151,7 @@ document.getElementById('bmode').onclick = () => { const ms = MODES.modes.filter
   document.getElementById('bmode').textContent = `Mode ${modeOn.k} · ω ${modeOn.freq}`; };
 // ---------- frame loop ----------
 let last = performance.now(), frames = 0, fpsT = last;
-function frame(now) { requestAnimationFrame(frame); const t = now/1000; const dt = Math.min(0.05, (now - last)/1000); last = now;
+function frame(now) { requestAnimationFrame(frame); const t = now/1000; tNow = t; const dt = Math.min(0.05, (now - last)/1000); last = now;
   amp.fill(0);
   waves = waves.filter(w => t - w.t0 < 12/speed);
   for (const w of waves) { const age = (t - w.t0)*speed; for (let i = 0; i < NN; i++) { const r = w.r[i]; if (Math.abs(r) < 1e-3) continue; const ta = age - 0.45*w.d[i];
@@ -167,7 +168,45 @@ function frame(now) { requestAnimationFrame(frame); const t = now/1000; const dt
       g.scale.setScalar(s); g.userData.ring.rotation.z = t*(0.3 + 0.1*(i % 5)); g.userData.ring.material.color.set(a > 0.05 ? C('--teal') : a < -0.05 ? C('--red') : C(LANE[byId[ids[i]].lane].c)); });
   } else { land.rotation.z = t*0.05; }
   if (sel) { scopeBuf[sp] = amp[ix[sel]]/8; sp = (sp + 1) % scopeBuf.length; } drawScope();
-  if (cam === persp) ctl.update(); composer.render(dt);
+  if (cam === persp) { if (!ctl._userActive && view === 'weave') { const r = Math.hypot(persp.position.x, persp.position.y); const a = Math.atan2(persp.position.y, persp.position.x) + 0.0006*speed; persp.position.x = r*Math.cos(a); persp.position.y = r*Math.sin(a); } ctl.update(); } composer.render(dt);
   frames++; if (now - fpsT > 1000) { document.getElementById('fps').textContent = `${frames} fps`; frames = 0; fpsT = now; } }
 resize(); setView('weave'); readout(); landMarker(); requestAnimationFrame(frame);
 addEventListener('pywebviewready', () => { const e = document.getElementById('engine'); e.textContent = 'engine: live (Python)'; e.classList.add('live'); });
+
+// ---------- top strip: geometric shapes forming from the strings ----------
+(() => { const cv = document.getElementById('shapes'), cx = cv.getContext('2d'); let W2 = 0, H2 = 0;
+  const fit = () => { const r = devicePixelRatio || 1; W2 = cv.clientWidth; H2 = cv.clientHeight; cv.width = W2*r; cv.height = H2*r; cx.setTransform(r, 0, 0, r, 0, 0); }; addEventListener('resize', fit); fit();
+  const cpow = (re, im, e) => { const r = Math.hypot(re, im), a = Math.atan2(im, re); const rr = Math.pow(r, e); return [rr*Math.cos(a*e), rr*Math.sin(a*e)]; };
+  function calabiYau(n, al) { const L = []; for (let k1 = 0; k1 < n; k1++) for (let k2 = 0; k2 < n; k2++) for (let a = 0; a <= 8; a++) { const xi = -1 + 2*a/8; const line = [];
+      for (let b = 0; b <= 16; b++) { const th = (Math.PI/2)*b/16; const ch = [Math.cosh(xi)*Math.cos(th), Math.sinh(xi)*Math.sin(th)], sh = [Math.sinh(xi)*Math.cos(th), Math.cosh(xi)*Math.sin(th)];
+        let z1 = cpow(ch[0], ch[1], 2/n), z2 = cpow(sh[1], -sh[0], 2/n); const p1 = 2*Math.PI*k1/n, p2 = 2*Math.PI*k2/n;   // −i·sinh = (Im, −Re)
+        z1 = [z1[0]*Math.cos(p1) - z1[1]*Math.sin(p1), z1[0]*Math.sin(p1) + z1[1]*Math.cos(p1)]; z2 = [z2[0]*Math.cos(p2) - z2[1]*Math.sin(p2), z2[0]*Math.sin(p2) + z2[1]*Math.cos(p2)];
+        line.push([z1[0], z2[0], Math.cos(al)*z1[1] + Math.sin(al)*z2[1]]); } L.push(line); } return L; }
+  function torusKnot(p, q) { const line = []; for (let i = 0; i <= 600; i++) { const t = 2*Math.PI*i/600; const r = 0.7 + 0.3*Math.cos(q*t); line.push([r*Math.cos(p*t), r*Math.sin(p*t), 0.3*Math.sin(q*t)]); } return [line]; }
+  function cliffordTorus(m) { const L = []; for (let a = 0; a < 18; a++) { const line = []; const u = 2*Math.PI*a/18; for (let b = 0; b <= 48; b++) { const v = 2*Math.PI*b/48;
+      const x4 = [Math.cos(u), Math.sin(u), Math.cos(v + m*u), Math.sin(v + m*u)].map(c => c/Math.SQRT2); const w = 1.6 - x4[3]; line.push([x4[0]/w*1.6, x4[1]/w*1.6, x4[2]/w*1.6]); } L.push(line); } return L; }
+  function lissajous(a, b, c) { const line = []; for (let i = 0; i <= 700; i++) { const t = 2*Math.PI*i/700; line.push([Math.sin(a*t + 0.5), Math.sin(b*t), Math.sin(c*t + 1.1)].map(v => 0.85*v)); } return [line]; }
+  const hue = f => `hsl(${(0.57 + 0.36*Math.pow(f, 1.3))*360} 100% 62%)`;
+  let shapes = []; let cycle = -1;
+  function rebuild(k) { const m = modeOn ? modeOn.k : (k % 5) + 1; shapes = [
+      {name: `Calabi–Yau slice n=${3 + (k % 3)}`, L: calabiYau(3 + (k % 3), 0.6), f: 0.05},
+      {name: `torus knot (${2 + (m % 3)}, ${3 + (m % 4)})`, L: torusKnot(2 + (m % 3), 3 + (m % 4)), f: 0.30},
+      {name: `Clifford torus twist ${1 + (k % 3)}`, L: cliffordTorus(1 + (k % 3)), f: 0.62},
+      {name: `Lissajous ${1 + (m % 3)}:${2 + (k % 3)}:${3 + (m % 2)}`, L: lissajous(1 + (m % 3), 2 + (k % 3), 3 + (m % 2)), f: 0.92}];
+    shapes.forEach(sh => { let R = 1e-9; sh.L.forEach(l => l.forEach(p => R = Math.max(R, Math.hypot(...p)))); sh.L = sh.L.map(l => l.map(p => p.map(v => v/R))); }); }
+  function frameS(now) { requestAnimationFrame(frameS); const t = now/1000; const T = 9/(speed || 1); const k = Math.floor(t/T); const prog = (t % T)/T;
+    if (k !== cycle) { cycle = k; rebuild(k); }
+    let energy = 0; for (let i = 0; i < NN; i++) energy += Math.abs(amp[i]); energy = Math.min(1, energy/40);
+    cx.clearRect(0, 0, W2, H2); cx.globalCompositeOperation = 'lighter'; const n = shapes.length, cw = W2/n;
+    shapes.forEach((sh, si) => { const cxm = cw*(si + 0.5), cym = H2/2 + 6, sc = Math.min(cw, H2 - 34)*0.42*(1 + 0.06*energy); const ry = t*0.4 + si, rx = 0.5 + 0.2*Math.sin(t*0.3 + si);
+      const grow = Math.min(1, prog*1.25 + energy*0.3); const fade = prog > 0.88 ? 1 - (prog - 0.88)/0.12 : 1;
+      const total = sh.L.reduce((a, l) => a + l.length, 0); let budget = Math.floor(total*grow);
+      cx.lineWidth = 1.1; cx.shadowBlur = 10;
+      sh.L.forEach((line, li) => { if (budget <= 0) return; const nseg = Math.min(line.length, budget); budget -= nseg; const c = hue((sh.f + 0.25*li/sh.L.length) % 1);
+        cx.strokeStyle = c; cx.shadowColor = c; cx.globalAlpha = 0.75*fade; cx.beginPath();
+        for (let i = 0; i < nseg; i++) { let [x, y, z] = line[i]; const x1 = x*Math.cos(ry) + z*Math.sin(ry), z1 = -x*Math.sin(ry) + z*Math.cos(ry); const y1 = y*Math.cos(rx) - z1*Math.sin(rx);
+          const px = cxm + sc*x1, py = cym + sc*y1; i ? cx.lineTo(px, py) : cx.moveTo(px, py); } cx.stroke(); });
+      cx.globalAlpha = 0.85; cx.shadowBlur = 0; cx.fillStyle = hue(sh.f); cx.font = '600 10px Bahnschrift, Segoe UI, sans-serif'; cx.fillText(sh.name.toUpperCase(), cxm - cw*0.45, 16); });
+    cx.globalCompositeOperation = 'source-over'; cx.globalAlpha = 0.6; cx.fillStyle = '#a296d8'; cx.font = '500 10px Cascadia Mono, Consolas, monospace';
+    cx.fillText('shapes form each cycle; wave energy speeds the weaving; resonance mode sets the knot (visual, not physics)', 12, H2 - 8); cx.globalAlpha = 1; }
+  requestAnimationFrame(frameS); })();

@@ -9,7 +9,7 @@
 :root{
   --bg:#04020b; --panel:#0b0620; --panel2:#120a2e; --line:#2a1f5a; --fg:#f3eeff; --muted:#a296d8;
   /* Prismatic Light: blue · violet · magenta · pink, and their mixes */
-  --cyan:#3d8bff; --magenta:#ff2bd6; --lime:#6f6bff; --amber:#ff7ac8; --violet:#9b4dff; --yellow:#d77bff; --red:#ff3d8b; --teal:#5fb0ff;
+  --cyan:#2f8bff; --magenta:#d43cff; --lime:#4f7dff; --amber:#ff6ec7; --violet:#7a5cff; --yellow:#6fb8ff; --red:#ff3d8b; --teal:#4cc3ff;
   --f-display:"Bahnschrift","Segoe UI Semibold","Segoe UI",system-ui,sans-serif; --f-body:"Segoe UI",system-ui,sans-serif; --f-mono:"Cascadia Mono","Consolas",ui-monospace,monospace;
   color-scheme:dark;
 }
@@ -27,8 +27,9 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
 .pill.live{color:var(--teal);border-color:var(--teal)}
 .main{display:grid;grid-template-columns:minmax(0,1fr) 360px;min-height:0}
 .stage{position:relative;min-width:0;min-height:0}
-#gl{display:block;width:100%;height:100%}
-.hud{position:absolute;left:14px;top:12px;display:flex;flex-direction:column;gap:6px;pointer-events:none}
+#gl{display:block;width:100%;height:calc(100% - 170px)}
+#shapes{display:block;width:100%;height:170px;background:linear-gradient(180deg,#07041a,#04020b);border-bottom:1px solid var(--line)}
+.hud{position:absolute;left:14px;top:182px;display:flex;flex-direction:column;gap:6px;pointer-events:none}
 .hud .lane{font:600 11px var(--f-display);letter-spacing:.14em;text-transform:uppercase}
 .stagebar{position:absolute;left:14px;bottom:12px;display:flex;gap:8px;flex-wrap:wrap}
 .btn{font:600 12px var(--f-display);letter-spacing:.1em;text-transform:uppercase;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer}
@@ -71,7 +72,7 @@ html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font:13px/1.
   </div>
   <div class="main">
     <div class="stage" id="stage">
-      <canvas id="gl" aria-label="AEGIS weave"></canvas>
+      <canvas id="shapes" aria-label="Geometric shapes forming from the strings"></canvas><canvas id="gl" aria-label="AEGIS weave"></canvas>
       <div class="hud" id="hud"></div>
       <div class="stagebar">
         <button class="btn on" id="b3d">3D</button><button class="btn" id="b2d">2D</button>
