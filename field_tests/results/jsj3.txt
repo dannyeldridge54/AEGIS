@@ -1,0 +1,27 @@
+TI a=0.05 mu=6   N*=50: |dn_s| 4.1e-11 |dr/r| 2.1e-13 |da| 1.5e-10 True | vs exact core 3.3e-06 jit8 3.3e-06
+TI a=0.05 mu=6   N*=60: |dn_s| 1.3e-10 |dr/r| 4.7e-15 |da| 6.1e-10 True | vs exact core 1.5e-06 jit8 1.5e-06
+  TI a=0.05 mu=6: build 0.380 ms, point 0.104 ms (medians of 10)
+TI a=0.05 mu=12  N*=50: |dn_s| 4.2e-11 |dr/r| 9.1e-14 |da| 4.5e-10 True | vs exact core 6.5e-06 jit8 6.5e-06
+TI a=0.05 mu=12  N*=60: |dn_s| 4.7e-10 |dr/r| 6.8e-13 |da| 2.3e-09 True | vs exact core 3.6e-06 jit8 3.6e-06
+  TI a=0.05 mu=12: build 0.428 ms, point 0.095 ms (medians of 10)
+TI a=0.15 mu=6   N*=50: |dn_s| 2.0e-11 |dr/r| 1.8e-14 |da| 3.3e-10 True | vs exact core 3.1e-06 jit8 3.1e-06
+TI a=0.15 mu=6   N*=60: |dn_s| 1.5e-10 |dr/r| 5.8e-14 |da| 8.3e-10 True | vs exact core 1.5e-06 jit8 1.5e-06
+  TI a=0.15 mu=6: build 0.342 ms, point 0.088 ms (medians of 10)
+TI a=0.15 mu=12  N*=50: |dn_s| 9.2e-11 |dr/r| 6.9e-14 |da| 4.7e-10 True | vs exact core 6.1e-06 jit8 6.1e-06
+TI a=0.15 mu=12  N*=60: |dn_s| 4.1e-11 |dr/r| 8.4e-14 |da| 7.4e-11 True | vs exact core 3.3e-06 jit8 3.3e-06
+  TI a=0.15 mu=12: build 0.455 ms, point 0.101 ms (medians of 10)
+TI a=0.3 mu=6    N*=50: |dn_s| 2.5e-12 |dr/r| 7.2e-14 |da| 1.6e-10 True | vs exact core 2.7e-06 jit8 2.7e-06
+TI a=0.3 mu=6    N*=60: |dn_s| 3.7e-11 |dr/r| 2.1e-13 |da| 3.8e-10 True | vs exact core 1.3e-06 jit8 1.3e-06
+  TI a=0.3 mu=6: build 0.385 ms, point 0.096 ms (medians of 10)
+TI a=0.3 mu=12   N*=50: |dn_s| 6.7e-11 |dr/r| 1.1e-13 |da| 3.5e-10 True | vs exact core 5.7e-06 jit8 5.7e-06
+TI a=0.3 mu=12   N*=60: |dn_s| 5.7e-11 |dr/r| 1.2e-13 |da| 9.1e-12 True | vs exact core 3.1e-06 jit8 3.1e-06
+  TI a=0.3 mu=12: build 0.458 ms, point 0.096 ms (medians of 10)
+SFI p=3 mu=8     N*=50: |dn_s| 2.8e-10 |dr/r| 3.4e-13 |da| 1.2e-09 True | vs exact core 1.0e-06 jit8 1.0e-06
+SFI p=3 mu=8     N*=60: |dn_s| 1.7e-10 |dr/r| 7.1e-14 |da| 8.9e-10 True | vs exact core 5.5e-07 jit8 5.5e-07
+  SFI p=3 mu=8: build 0.288 ms, point 0.090 ms (medians of 10)
+SFI p=3 mu=20    N*=50: |dn_s| 1.3e-10 |dr/r| 2.0e-14 |da| 4.9e-10 True | vs exact core 1.5e-06 jit8 1.5e-06
+SFI p=3 mu=20    N*=60: |dn_s| 3.2e-10 |dr/r| 5.0e-13 |da| 1.5e-09 True | vs exact core 7.9e-07 jit8 7.9e-07
+  SFI p=3 mu=20: build 0.387 ms, point 0.089 ms (medians of 10)
+median vs exact: core 2.86e-06, jit8 2.86e-06
+per point: janus-jit8 0.095 ms vs ASPIC 0.404 ms -> FASTER | per model (build + 2 points): 0.582 ms vs ASPIC 0.808 ms -> FASTER
+JS1 True JS3 True JS4 True -> build8 is the janus-jit default
