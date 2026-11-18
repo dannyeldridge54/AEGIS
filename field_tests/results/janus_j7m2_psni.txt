@@ -1,0 +1,4 @@
+PSNI a=0.0001 f=5.0: J1b bisection failed: bisection did not reach the e-fold window — reported, stop for this point
+PSNI a=0.01 f=5.0: J1b bisection failed: bisection did not reach the e-fold window — reported, stop for this point
+PSNI a=0.001 f=10.0: J1b bisection failed: bisection did not reach the e-fold window — reported, stop for this point
+J7m2: Janus n_s better on 0/0 scored PSNI comparisons
