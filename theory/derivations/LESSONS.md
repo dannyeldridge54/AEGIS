@@ -343,3 +343,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1221: once the Python step overhead is gone, a lower-order compiled integrator at a tighter tolerance beats a higher-order interpreted one by ~40×, and its convergence scan also measures the old reference's own error.
 - D1222: an equivalence test needs a pre-declared physical-output gate on the reference; a case where the reference itself is unphysical tests nothing and can sink the lock.
 - D1223: a validation at one parameter value (sphere radius 1) can hide a scale-dependent error; validate a curved-space code at ≥ 2 curvature radii against the external reference.
+- D1224: an absolute ODE tolerance silently turns off error control when the solution's scale drifts (e^-N normalisations); normalise to the pivot so variables stay O(1), and test at least one long run against an external code.

@@ -12697,3 +12697,17 @@ Checked here (diagnostic, not a verdict): the coordinate-pole hypothesis is refu
 the same equations (mfms_nc), a shared formulation issue for R ≠ 1 is now the leading suspect (e.g. a metric-scale factor missing somewhere that R = 1 hides); PyTransport NC
 at R = 1.5 would settle it. Moved to item 25 with this lead. nc-jit stays NOT ADOPTED until item 25 is resolved; for R = 1/flat use it only under a lock that names it.
 MAP: none.
+
+## D1224 — JANUS — JMF13: scale-factor normalisation bug in all four Janus-MF codes, found and fixed [FIX ADOPTED; nc-jit adopted]
+Locks: field_tests/rules/PREREG_I25_pyt_radius.md (diagnostic) and PREREG_JMF13_ascale.md (fix). Results: field_tests/results/i25_pyt_radius.txt, janus_jmf13.txt.
+I25: PyTransport NC on the same DoubleQuad model gives physical n_s at sphere radius R = 1.5 (0.933687) and R = 2 (0.936712) where Janus-MF-NC gave −0.83 and 3.49 → our bug.
+Root cause (debug before the fix lock): modes were normalised with a = e^N. In long runs (horizon exit at N ≈ 114–121 for R ≥ 1.5) the mode amplitudes Q ~ u/a ~ 1e-50 sit far
+below the ODE absolute tolerance (1e-30), so error control is off and P_R comes out as scattered garbage (~1e53). Short runs (R = 1, flat; exit at N ≈ 25–30) were safe by luck.
+The same a = e^N was in mfms.py, mf_jit.py, mfms_nc.py, mfms_nc_jit.py (the single-field reference ms.spectra_fast already used a = e^(N − N_p)).
+Fix: a = e^(N − N_p), k in the same units (k_p = H(N_p)) — a comoving rescaling, physics unchanged.
+A1 (unchanged where it worked): flat Q3 spectra_mf 0.945476967, spectra_mf_fast 0.945476944, spectra_jit 0.945476945; NC R=1 python 0.925024148, nc-jit 0.925024083 —
+all within 1e-7 of their pre-fix values. A2 (fixed): R = 1.5 python & nc-jit 0.933727 vs PyTransport 0.933687 (|Δ| 4.0e-5); R = 2 0.936746 vs 0.936712 (3.4e-5) → PASS.
+Note: PyTransport's own n_s shifts by 4e-5 between its time grids (R=1: 0.925023 on 6000 steps/300 e-folds vs 0.924982 on 8000/400), the same size as these residuals.
+Consequences: JMF9's VALIDATED scope extends to R = 1.5 and 2; JMF12/12b case (c)/(e) failures are explained; nc-jit adopted as the curved-space PC default; every
+earlier Janus-MF verdict stands (all were short runs, and A1 shows no change). Item 25 → DONE.
+MAP: none (tool correctness).

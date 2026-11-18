@@ -1816,3 +1816,4 @@ Touches: none.
 ## D1221: JMF11 — compiled Janus-MF (numba DP5(4)) matches spectra_mf to ≤ 5.3e-8 in n_s at median ×36 speed (quick mode ×121) → adopted as PC default
 ## D1222: JMF12 — compiled Janus-MF-NC matches on DoubleQuadNC and flat (|Δn_s| ≤ 6.5e-8, ×36–39) but the R=2 sphere case is unphysical in both codes (n_s 3.49 vs 85.9) → NOT ADOPTED; JMF12b with a sanity gate next
 ## D1223: JMF12b — nc-jit matches at R=1 (×34, |Δ| 1.8e-7) but R≠1 spheres are unphysical in both codes → INCONCLUSIVE; suspect a shared R-scaling issue in mfms_nc (item 25), pole hypothesis refuted
+## D1224: JMF13 — Janus-MF codes normalised a = e^N, so long runs dropped mode amplitudes below the ODE atol (garbage at R ≥ 1.5); fixed with a = e^(N−N_p): unchanged ≤ 1e-7 where it worked, R = 1.5/2 now match PyTransport to 4e-5 → adopted

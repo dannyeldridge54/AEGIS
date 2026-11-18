@@ -25,4 +25,4 @@ Each item: lock first, run, record (D-note or CubeMind RESULTS.md). Status: OPEN
 21. Reranker test after M0 — OPEN · 22. Speculative decoding test — BLOCKED (download needs Danny's OK on the desk)
 23. Grading loop: gpt-oss plain / qwen3-coder+verify / qwen3:14b arms to 300 → Phase 3/4 comparisons — RUNNING
 24. M3 affect weight — BLOCKED until M1 passes
-25. Janus-MF-NC at sphere radius R ≠ 1: unphysical n_s in both python NC and nc-jit (R=1.5 −0.83, R=2 3.49); pole hypothesis refuted; next: PyTransport NC at R=1.5 to tell a shared formulation bug from a real instability — OPEN (D1223); JMF9's VALIDATED verdict covers R=1 only
+25. Janus-MF-NC at sphere radius R ≠ 1 — DONE (D1224: a = e^N normalisation bug in all four MF codes, fixed; R = 1.5, 2 match PyTransport to 4e-5)
