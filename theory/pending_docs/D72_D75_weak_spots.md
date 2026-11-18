@@ -13553,3 +13553,6 @@ can tell apart. d=16 is the first dimension in our chain where the champion is a
 language: self-dual champions never hand over — and at d=16 there are two of them, sharing the crown at every scale.
 Champion chain now: 2 hex · 3 FCC/BCC · 4 D4 · 5 D5/D5* · 6 E6/E6* · 7 E7/E7* · 8 E8 · 16 {E8⊕E8, D16⁺} tie (among those tested).
 Files: field_tests/d16_heterotic.py, field_tests/results/d16_heterotic_2026-11-18.txt.
+
+### D1290 — wino_window recheck after D1286: unchanged (graph ripple from n_sector_rho; E6/E7 lattice numerics; no wino input touched) (2026-11-18)
+MAP: none
