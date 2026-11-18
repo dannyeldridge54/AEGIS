@@ -83,3 +83,10 @@ body{ background:var(--bg); color:var(--ink); }
 #sarahOverlays h2{ font-size:14px; margin:0 0 6px; color:var(--a-pink); }
 #sarahOverlays label{ display:block; margin:3px 0; cursor:pointer; }
 #sarahOverlays .tag{ color:var(--ink2); font-size:11px; }
+
+#sarahOverlays summary{ list-style:none; cursor:pointer; }
+#sarahOverlays summary::-webkit-details-marker{ display:none; }
+#sarahOverlays summary h2{ display:inline; margin:0; }
+#sarahOverlays:not([open]){ padding:6px 12px; }
+#sarahOverlays[open] summary{ margin-bottom:6px; }
+@media (max-width:600px){ #sarahOverlays{ right:10px; left:auto; bottom:110px; max-width:calc(100vw - 20px); } #sarahOverlays[open]{ left:10px; } }
