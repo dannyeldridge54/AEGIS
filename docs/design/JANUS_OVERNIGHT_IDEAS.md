@@ -517,3 +517,22 @@ Label everything tool (standard science/engineering) or physics-math shared (lat
 - No claims that SERAPIS or our physics yields a drug or a cure.
 - Property/prediction outputs are computational estimates labelled as such, never clinical fact.
 This is the same kind of open cheminformatics academic labs use; it stops at understanding and screening, not manufacture or treatment.
+
+### [AF] Living Nexus — auto-feeder, pulses, toolkit agents, self-learning tool bus (Danny, 02:23–02:25 CT)
+Danny's vision: Janus runs itself — an automatic loader feeds it where to pulse, it reaches out for new connections and maps the cosmic web continuously; each toolkit's information is wired into the others so they dissect and understand it and feed it back (a self-learning loop within the toolkits); and small per-toolkit agents ("like Claude") handle that toolkit's basic jobs.
+
+Honest framing (labels): the "agents" are **local-model or rule dispatchers** backed by CubeMind (Ollama) + the registry, not autonomous minds and not me — I won't imply they're Claude. They route plain requests to the right tool, run it, post the result. Real and buildable; nothing mystical.
+
+**1. Auto-feeder + pulses (the cosmic web, alive).**
+- `tools/web/janus_feed.py`: append events to `docs/web/janus_feed.jsonl` — `pulse(s,t,strength,reason)`, `add_node(...)`, `add_edge(...)`. Every tool run, D-note, collector pass, ingest, referee emits a pulse; new D-notes/edges grow the web.
+- `apps/aegis_studio/pulses3.js`: traveling dots along the weave edges, spawned from `window.AEGIS.pulses` (seeded by make_data from recent activity) and, when running in the Janus app, polled live from the feed via the pywebview api. New fed nodes/edges appear → the map extends itself.
+- So "all the stuff we already do" drives the pulses automatically, all the time.
+
+**2. Self-learning tool bus.**
+- A shared result bus (MindMem is the store): every tool posts its output; other tools/agents consume relevant outputs as inputs; CubeMind learns the patterns (which tool helps which, typical args, failures) via the learn_loop and the QA/eval. Cross-feeding = the toolkits "dissect and understand" each other's output and feed it back. Verified-only promotion (HYPOTHESIS→checked) keeps it honest.
+
+**3. Toolkit agents.**
+- Each registry tool gets an **agent card**: {name, what it does, orders it handles, args schema, which other tools it reads from}. A dispatcher (CubeMind-backed) maps a plain order ("give me n_s at C=1.2e-6") to the right tool+args, runs it, posts to the bus, emits a pulse. Basic orders handled without a human; anything irreversible or system-level still asks.
+- These agents are the per-toolkit handlers Danny described; they live in CubeMind + registry, defensive-only, no self-publish, no system changes (same guardrails).
+
+Build order (folded into V + CM slots of the narrowed loop): (a) janus_feed.py + pulses3.js + make_data seeding [first]; (b) agent cards on every registry tool + a dispatcher; (c) the result bus + cross-feed in learn_loop; (d) live feed polling in the Janus app; (e) web grows from the feed.
