@@ -617,3 +617,4 @@ D1330  2026-11-18T17:21Z  Gaia DR4: date confirmed; archive offline 25 Nov–2 D
 D1331  2026-11-18T17:23Z  n_s check vs 2610.37383 (no new CMB data; band within 1σ)
 D1332  2026-11-18T17:24Z  NULL tick: no new TeV line search or D/H measurement
 D1333  2026-11-18T17:25Z  Hyperion ROADMAP OPEN list refreshed
+D1334  2026-11-18T17:26Z  NLL endpoint source located (1808.08956); number not yet extracted
