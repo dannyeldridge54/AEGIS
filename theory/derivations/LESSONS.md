@@ -370,3 +370,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1251: chaining the web's constraints (leptogenesis → T_R → N*, string benchmark → C) turns a band into one point; each link is post-hoc, so the point is a postulate, but it is sharp enough to be wrong.
 - D1252: null tests are model-specific; when the model changes (Twist → SERAPIS), re-derive the nulls or label the old ones as belonging to the old model.
 - D1254: before using a "reference" for a derivative quantity, check its own stability under the differencing step; the exact MS was exact for P(k) but not for its second derivative.
+- D1255: "exact" numerical references have their own error budget; a rtol scan that changes nothing while a physical-setup parameter (bd) changes the answer points to a systematic, not noise.

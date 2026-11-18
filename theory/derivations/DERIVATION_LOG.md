@@ -1843,3 +1843,4 @@ Touches: none.
 ## D1251: PW2 — SERAPIS-E point prediction (c = 1, M_H 1e12 → T_R 8.94e8 → N* 50.24; C 1.25e-6): n_s 0.97445, r 4.81e-4, α_s −9.97e-4; expectation PASS; inside frozen band; live Janus app
 ## D1252: NA16 — B1/B2 bridges fail 10/10 on SERAPIS-E (Twist-era nulls, r/(1−n_s)² 0.57–0.83 vs 3); relabelled; SERAPIS null = Janus relation; R_w0wa ΛCDM pulls −2.8σ/+2.6σ (1-D); C_nstar updated
 ## D1254: TK1 (partial) — Janus core vs exact MS |Δn_s| ≤ 1.5e-6, r 0.01 % (4 rows); α_s bar fails on 2 rows because the exact-MS α_s is step-dependent noise (D2: −8.0/−7.6/−2.2e-4 for 3 step sets); remaining rows + CAMB → upgraded MS (U1)
+## D1255: U1/U1b — compiled exact MS for SERAPIS-E: ×600 faster (0.9 s / 9 k); α_s noise traced to the BD-start ripple at k/aH = 200 (not the integrator); bd 4000 + 9-pt fit → α_s stable 2e-5, Janus core α_s confirmed to ≤ 4e-6; ADOPTED
