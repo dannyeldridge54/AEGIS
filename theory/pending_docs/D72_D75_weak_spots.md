@@ -14073,3 +14073,18 @@ MAP: none
 - Also check 2507.15937 (newer, same group?) before any lock.
 - The open item stays OPEN. Nothing computed.
 MAP: none
+
+## D1335 — Hyperion tick: a computable line+endpoint formula is sourced. Baumgart, Bottaro, Redigolo, Rodd, Slatyer, arXiv:2507.15937, Eq. 2.9 (leading-log, any SU(2) multiplet, wino n=1) (2026-11-18)
+- [LITERATURE, via an HTML-to-text summary, so not character-exact]
+  - dσ/dz|_LL = (F₀+F₁) σ₀ e^{−(4α_W/π)L_χ²} δ(1−z) − (2α_W/π) σ₀ e^{−(4α_W/π)L_χ²} { 2F₀ 𝓛₁^J e^{(4α_W/π)L_J²} + F₁ (2𝓛₁^J − 3𝓛₁^S) e^{(4α_W/π)(Θ_J L_J² − ¾Θ_S L_S²)} }
+  - L_χ = ln(m_W/2M), L_J = ln(m_W/(2M√(1−z))), L_S = ln(m_W/(2M(1−z))), 𝓛₁^{J,S} = Θ L/(1−z).
+  - Thresholds: Θ_J for 1−z > m_W²/4M², Θ_S for 1−z > m_W/2M.
+  - Group factors F₀ = (|𝓜⁰⁰|² + 2|𝓜⁺⁻|²)/192M², F₁ = (|𝓜⁰⁰|² − |𝓜⁺⁻|²)/96M².
+  - Wino amplitudes: 𝓜⁰⁰ = 16M s₀₁, 𝓜⁺⁻ = 4√2·2M s₀₀ + 8M s₀₁.
+  - Normalisation: Eq. 2.1 spectrum per σ_line = σ_γγ + ½σ_γZ; the δ term is doubled in the flux (two photons).
+- Sign check [arithmetic]: L_J < 0 for z near 1, so the −(2α/π)·2F₀𝓛₁^J term is positive, which is right for an endpoint.
+- Also stated: NLL scale uncertainty ≈5% (1808.08956); CTAO resolution 5–7%; thermal triplet "percent-level" (2.86 TeV).
+- Use (next Hyperion rung, A2p): lock a computation of the ratio (line + endpoint within 1−z < 10% H.E.S.S. resolution)/(line), using our Sommerfeld s₀₀, s₀₁ at 1.0/1.25/1.5 TeV. If the ratio is > 1, the IGS f_max in D1324 is conservative.
+  - Expectation not yet sourced. The lock must fix the comparison to the 2.9 TeV Fig. 1 of 1808.08956 (read off), or else run as an "estimate" with no pass bar.
+  - Before locking, the formula needs a character-exact check (PDF).
+MAP: none
