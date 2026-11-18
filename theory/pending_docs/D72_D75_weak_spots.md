@@ -13538,3 +13538,18 @@ the inflaton torus and its vacuum, i.e. the serapis_e node (potential monotone i
 Read all of them as mapped to serapis_e. The n_sector_rho history entries they created stay on file (no silent edits) but carry no
 claim about the neutrino sector; its status is unchanged by them. The web's LATTICE lane already links X_d2 → serapis_e/n_sector_rho;
 the n_sector_rho link is re-pointed to vac_rho in the same commit. Rule for future lattice notes: MAP node=serapis_e.
+
+## D1288 — d=16: the two heterotic string lattices E8⊕E8 and D16⁺ are different shapes with IDENTICAL energy at every scale; PREREG P1–P4 PASS (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: numerics (computed), locked first (PREREG_D1288; one construction deviation recorded in *_DEVIATIONS.md). Literature: Milnor (1964).
+Exact enumeration of every vector with |v|² ≤ 6 at unit covolume:
+- E8⊕E8: shells 1, 480, 61920, 1050240 (norms 0, 2, 4, 6). D16⁺: 1, 480, 61920, 1050240. Identical, as predicted (P1 PASS).
+- Gaussian energy θ−1 at α = 1 / 1.25 / 1.5 / 2 / 3: 1.1191483456 / 0.1957304309 / 0.0391395689 / 0.0016746774 / 3.126e-6 for BOTH;
+  difference ≤ 2.5e-14 (P2 PASS). Truncation (norm-8 shell) ≲ 2e-4 at α=1, shrinking fast with α — identical for both.
+- Both unimodular (self-dual) → neither flips (P3 PASS by Poisson). Both beat D16 (1.8148 at α=1) and Z¹⁶ (2.7670) at every α (P4 PASS).
+MEANING: the gauge lattices of the E8×E8 and Spin(32)/Z2 heterotic strings are Milnor's classic pair of isospectral 16-tori —
+different shapes that no lattice-sum energy (Gaussian, and since the theta series agree, any energy built from it, incl. Epstein)
+can tell apart. d=16 is the first dimension in our chain where the champion is a TIE between distinct shapes. In the flip-rule
+language: self-dual champions never hand over — and at d=16 there are two of them, sharing the crown at every scale.
+Champion chain now: 2 hex · 3 FCC/BCC · 4 D4 · 5 D5/D5* · 6 E6/E6* · 7 E7/E7* · 8 E8 · 16 {E8⊕E8, D16⁺} tie (among those tested).
+Files: field_tests/d16_heterotic.py, field_tests/results/d16_heterotic_2026-11-18.txt.

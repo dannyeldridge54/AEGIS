@@ -77,7 +77,7 @@
    "label": "SERAPIS-E potential (Epstein + BHK tilt)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D906, D1246, D1280",
+   "refs": "D1246, D1280, D1287",
    "info": ""
   },
   {
@@ -742,6 +742,14 @@
    "lane": "lattice",
    "status": "computed",
    "refs": "D1278, D1282",
+   "info": ""
+  },
+  {
+   "id": "X_d16",
+   "label": "d=16 heterotic tie: E8⊕E8 and D16⁺ — different shapes, identical shells 1,480,61920,1050240 and energy at every scale (Milnor isospectral)",
+   "lane": "lattice",
+   "status": "computed",
+   "refs": "D1288",
    "info": ""
   },
   {
@@ -2137,11 +2145,38 @@
   },
   {
    "s": "X_d8",
+   "t": "X_d16",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "E8 ⊕ E8",
+   "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_d16",
    "t": "X_d24",
    "kind": "lattice",
    "sign": 1,
    "ref": "dimension chain",
    "verdict": "",
+   "source": "curated"
+  },
+  {
+   "s": "X_rule",
+   "t": "X_d16",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1288",
+   "verdict": "no flip; two champions tie",
+   "source": "curated"
+  },
+  {
+   "s": "X_d16",
+   "t": "X_narain",
+   "kind": "lattice",
+   "sign": 1,
+   "ref": "D1288",
+   "verdict": "heterotic gauge lattices",
    "source": "curated"
   },
   {

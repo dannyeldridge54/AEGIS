@@ -116,6 +116,7 @@ for i, l, st, r in (
     ('X_d6', 'd=6 E6 / E6*: beat Z, D, D*, A, A* at every scale; swap at α=1', 'computed', 'D1282, D1286'),
     ('X_d7', 'd=7 E7 / E7*: beat Z, D, D*, A, A* at every scale; swap at α=1', 'computed', 'D1282, D1286'),
     ('X_d8', 'd=8 E8: unimodular, never flips; universally optimal (CKMRV 2022)', 'computed', 'D1278, D1282'),
+    ('X_d16', 'd=16 heterotic tie: E8⊕E8 and D16⁺ — different shapes, identical shells 1,480,61920,1050240 and energy at every scale (Milnor isospectral)', 'computed', 'D1288'),
     ('X_d24', 'd=24 Leech: self-dual, universally optimal; no flip predicted (not yet computed)', 'literature', 'D1278 prediction'),
     ('X_nest', 'Nesting chain A2 ⊂ D4 ⊂ E8 ⊂ Leech (sections of the next champion)', 'literature', 'D1276'),
     ('X_moduli', 'Torus shape moduli d(d+1)/2−1: circle 0, 2, 5, 9, 14 … 35 (d=8), 299 (d=24)', 'computed', 'D1279'),
@@ -126,7 +127,7 @@ for i, l, st, r in (
 for a, b, ref, v, sg in (
     ('X_d2', 'X_d3', 'dimension chain', '', 1), ('X_d3', 'X_d4', 'dimension chain', '', 1), ('X_d4', 'X_d5', 'dimension chain', '', 1),
     ('X_d5', 'X_d6', 'dimension chain', '', 1), ('X_d6', 'X_d7', 'dimension chain', '', 1), ('X_d7', 'X_d8', 'dimension chain', '', 1),
-    ('X_d8', 'X_d24', 'dimension chain', '', 1),
+    ('X_d8', 'X_d16', 'E8 ⊕ E8', '', 1), ('X_d16', 'X_d24', 'dimension chain', '', 1), ('X_rule', 'X_d16', 'D1288', 'no flip; two champions tie', 1), ('X_d16', 'X_narain', 'D1288', 'heterotic gauge lattices', 1),
     ('X_rule', 'X_d3', 'D1277', 'flips (not self-dual)', 1), ('X_rule', 'X_d5', 'D1278', 'flips', 1), ('X_rule', 'X_d6', 'D1282', 'flips (predicted first)', 1),
     ('X_rule', 'X_d7', 'D1282', 'flips (predicted first)', 1), ('X_rule', 'X_d2', 'D1277', 'no flip (self-dual)', 1), ('X_rule', 'X_d4', 'D1278', 'no flip', 1),
     ('X_rule', 'X_d8', 'D1282', 'no flip', 1), ('X_rule', 'X_d24', 'D1278', 'no flip predicted', 1),

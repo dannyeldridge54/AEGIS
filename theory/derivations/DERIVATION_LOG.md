@@ -1976,3 +1976,10 @@ Touches: none.
 ## D1287: CORRECTION — lattice notes D1276–D1286 belong to the serapis_e map node, not n_sector_rho (heavy-ν sector) (2026-11-18)
 1. [derived] n_sector_rho is the heavy-neutrino sector node; the lattice results concern the inflaton torus shape and vacuum.
 2. [derived] Re-map them to serapis_e; no numbers change; future lattice notes use node=serapis_e.
+
+## D1288: The heterotic lattices E8⊕E8 and D16⁺ have identical shells and identical energy at every scale (isospectral tori) (2026-11-18)
+1. [derived] Locked predictions P1–P4 (PREREG_D1288) before computing; one basis error fixed via DEVIATIONS (det 64 → 1).
+2. [derived] Exact enumeration |v|² ≤ 6: both have shells 1, 480, 61920, 1050240.
+3. [derived] Gaussian energies agree to ≤2.5e-14 at α = 1–3; both beat D16 and Z¹⁶.
+4. [literature] Equal theta series ⇒ isospectral flat tori (Milnor 1964); both are even unimodular, so self-dual and never flip.
+5. [derived] d=16 is a tie between two distinct champion shapes — lattice energy cannot choose between the E8×E8 and Spin(32)/Z2 heterotic lattices.

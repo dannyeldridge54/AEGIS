@@ -307,16 +307,17 @@
     "D906",
     "D1246",
     "D1280",
-    "D1287"
+    "D1287",
+    "D1288"
    ],
    "depends": [
     "plateau_origin",
     "bhk_tilt"
    ],
    "history": [
-    "D1246: computed",
     "D1280: computed",
-    "D1287: computed"
+    "D1287: computed",
+    "D1288: computed"
    ]
   },
   {
@@ -632,7 +633,7 @@
     "D1258: corrected",
     "D1262: corrected"
    ],
-   "flag": "recheck (D1287, serapis_e)"
+   "flag": "recheck (D1288, serapis_e)"
   },
   {
    "id": "lepto_rho",
@@ -781,7 +782,7 @@
     "D1231: frozen",
     "D1233: frozen"
    ],
-   "flag": "recheck (D1287, serapis_e)"
+   "flag": "recheck (D1288, serapis_e)"
   },
   {
    "id": "band_e_audited",
@@ -805,7 +806,7 @@
     "D1245: postulate"
    ],
    "note": "web loop postulate 1; scored only on future data",
-   "flag": "recheck (D1287, serapis_e)"
+   "flag": "recheck (D1288, serapis_e)"
   },
   {
    "id": "serapis_point",
@@ -833,7 +834,7 @@
     "D1273a: postulate"
    ],
    "note": "web loop postulate 2; scored only on future data",
-   "flag": "recheck (D1287, serapis_e)"
+   "flag": "recheck (D1288, serapis_e)"
   },
   {
    "id": "vac_discriminant",
@@ -858,7 +859,7 @@
     "D1263: killed"
    ],
    "note": "web loop postulate 3; kept on the web as killed",
-   "flag": "recheck (D1287, serapis_e)"
+   "flag": "recheck (D1288, serapis_e)"
   },
   {
    "id": "m32_window",
@@ -882,7 +883,7 @@
     "D1264: postulate"
    ],
    "note": "web loop postulate 4 (pattern covariant ↔ eps_tilt)",
-   "flag": "recheck (D1287, serapis_e)"
+   "flag": "recheck (D1288, serapis_e)"
   },
   {
    "id": "string_meter",
@@ -909,7 +910,7 @@
     "D1265b: postulate"
    ],
    "note": "web loop postulate 5",
-   "flag": "recheck (D1287, serapis_e)"
+   "flag": "recheck (D1288, serapis_e)"
   },
   {
    "id": "inverse_meter",
@@ -931,7 +932,7 @@
     "D1268: postulate"
    ],
    "note": "web loop postulate 6",
-   "flag": "recheck (D1287, serapis_e)"
+   "flag": "recheck (D1288, serapis_e)"
   },
   {
    "id": "instanton_MH",
@@ -954,7 +955,7 @@
     "D1270: killed"
    ],
    "note": "web loop postulate 7",
-   "flag": "recheck (D1287, serapis_e)"
+   "flag": "recheck (D1288, serapis_e)"
   },
   {
    "id": "caps",
@@ -1063,7 +1064,7 @@
     "D1260: computed",
     "D1261: computed"
    ],
-   "flag": "recheck (D1287, serapis_e)"
+   "flag": "recheck (D1288, serapis_e)"
   },
   {
    "id": "tests_lhc",
