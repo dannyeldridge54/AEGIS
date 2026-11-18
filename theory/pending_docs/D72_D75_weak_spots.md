@@ -13929,3 +13929,19 @@ MAP: node=halo_profile status=computed touches=[] ripple=no
 - **Not stated:** the LO-Sommerfeld +4.4% (parked, D1269). The draft only claims the Born agreement.
 - A full revtex build is still pending (PC). No Zenodo.
 MAP: none
+
+## D1322 — A2n: with the Singh–Desai cored and Einasto shapes normalised to a standard local density (0.40 or 0.30 GeV/cm³), the 1 TeV wino PASSES the H.E.S.S. IGS line limit in all 10 haloes; the two A2l marginal cases become passes (2026-11-18)
+- [CENTRE · computed] **Lock:** PREREG_A2n_rhosun_fixed. **Result:** field_tests/results/a2n_rhosun_fixed.txt. No deviations.
+  - The 0.40 value is a choice: a mid value of local determinations, ≈ the H.E.S.S. benchmark's 0.39.
+- **ρ☉ = 0.40:**
+  - Burkert J/J_bench = 0.12–0.46, f_max(LO) ≥ 0.210.
+  - Einasto J/J_bench = 0.007–0.07, f_max ≥ 0.53.
+  - All PASS vs f_pred(1 TeV) = 0.124–0.205. The A2l BAND-DEP cases B0/D3 and B0/D4 become PASS (f_max 0.216 and 0.210).
+- **ρ☉ = 0.30:** all PASS, with f_max ≥ 0.28.
+- **E1 PASS:** no verdict worsens relative to the fitted-ρ☉ runs (A2l/A2m), as expected from J ∝ ρ☉² at fixed shape.
+- **Reading:** the D1202 caveat (high fitted ρ☉) is resolved in the wino's favour.
+  - For every Gaia rotation-curve shape of Singh & Desai, at a standard local density, the 1 TeV post-hoc wino is NOT excluded by IGS.
+  - Exclusion at 1 TeV now needs a cuspy, concentrated inner halo (NFW c +1σ, or the H.E.S.S. Einasto benchmark itself).
+- **halo_profile** gets this note on the map; status unchanged.
+VERDICT: 20/20 PASS. The 1 TeV wino is robust to the cored/Einasto inner-halo uncertainty.
+MAP: node=halo_profile status=computed touches=[] ripple=no
