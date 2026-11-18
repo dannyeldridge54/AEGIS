@@ -1,0 +1,7 @@
+A1 flat Q3 spectra_mf: 0.945476967 vs pre-fix 0.94547697 -> True
+A1 flat Q3 spectra_mf_fast: 0.945476944 vs pre-fix 0.94547694 -> True
+A1 flat Q3 spectra_jit: 0.945476945 vs pre-fix 0.94547694 -> True
+A1 NC R=1: python 0.925024148 (pre 0.92502415), nc-jit 0.925024083 (pre 0.92502408) -> True
+A2 NC R=1.5: python 0.933727, nc-jit 0.933727, PyTransport 0.933687 | |d| 4.0e-05, 4.0e-05 -> True
+A2 NC R=2.0: python 0.936746, nc-jit 0.936746, PyTransport 0.936712 | |d| 3.4e-05, 3.4e-05 -> True
+A1 True A2 True -> FIX ADOPTED in all four codes; JMF9 scope extends to R = 1.5, 2; nc-jit adopted
