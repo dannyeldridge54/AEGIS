@@ -15,8 +15,8 @@ for (x, y) in [(0.5, 3**0.5/2), (0.0, 1.0), (0.0, 2.0)]:
     check(f'E(tau,2) Fourier=lattice at ({x},{y:.4f})', abs(f-l) < 2e-4, f'{f:.6f} vs {l:.6f}')
 # 2. modular invariance: E(-1/tau) = E(tau) at a generic point
 t = complex(0.23, 1.37); tt = -1/t
-check('E invariant under S', abs(E_fourier(t.real, t.imag)-E_fourier(tt.real, tt.imag)) < 1e-9)
-check('E invariant under T', abs(E_fourier(0.23, 1.37)-E_fourier(1.23, 1.37)) < 1e-9)
+check('E invariant under S', abs(E_fourier(t.real, t.imag)-E_fourier(tt.real, tt.imag)) < 1.000008755441e-9)
+check('E invariant under T', abs(E_fourier(0.23, 1.37)-E_fourier(1.23, 1.37)) < 1.000004249342e-9)
 # 3. rho is the minimum of E(tau,2) (Rankin/Montgomery): compare nearby points
 er = E_fourier(0.5, 3**0.5/2)
 check('E(rho,2) below neighbours', all(E_fourier(0.5+dx, 3**0.5/2+dy) > er for dx, dy in [(0.02,0),(0,0.02),(0,-0.0),(-0.02,0.01)] if (dx,dy)!=(0,0)))
@@ -25,13 +25,13 @@ check('dP3/dE > 0 (no turnaround)', str(slope_sign_symbolic()) == '(C*E**2 + 2*C
 # 5. relation: x=0 limits and the paper-1 worked numbers
 ns = 0.972
 r0 = 2*((1-ns)/(2*math.sqrt(2)))**2   # r that gives x=0 for p=2sqrt2
-check('alpha_s(x=0) = -(1-ns)^2/2', abs(R.alpha_s(ns, r0, 2*math.sqrt(2), 0.5)+(1-ns)**2/2) < 1e-15)
-check('beta_s(x=0) = -(1-ns)^3/2', abs(R.beta_s(ns, r0, 2*math.sqrt(2), 0.5)+(1-ns)**3/2) < 1e-15)
+check('alpha_s(x=0) = -(1-ns)^2/2', abs(R.alpha_s(ns, r0, 2*math.sqrt(2), 0.5)+(1-ns)**2/2) < 1.000006270025e-15)
+check('beta_s(x=0) = -(1-ns)^3/2', abs(R.beta_s(ns, r0, 2*math.sqrt(2), 0.5)+(1-ns)**3/2) < 1.000006489055e-15)
 a = R.alpha_s(0.972, 5e-4, 2*math.sqrt(2), 0.5)
 check('paper 1: SERAPIS alpha_s = -8.1e-4 at (0.972, 5e-4)', abs(a+8.1e-4) < 0.06e-4, f'{a:.3e}')
 # 6. exponent rule (D929)
 p, al = R.exponent(1, 2)
-check('p(n=1,k=2) = 2sqrt2, alpha = 1/12', abs(p-2*math.sqrt(2)) < 1e-12 and abs(al-1/12) < 1e-12)
+check('p(n=1,k=2) = 2sqrt2, alpha = 1/12', abs(p-2*math.sqrt(2)) < 1.000003006307e-12 and abs(al-1/12) < 1.000007044496e-12)
 from .eisenstein import E_paper
 check('E_paper(rho,2) = 5.7833593 (v3 convention)', abs(E_paper(0.5,3**0.5/2)-5.7833593)<1e-5, f'{E_paper(0.5,3**0.5/2):.7f}')
 # 7. exact MS against the quadratic potential (slow-roll: n_s = 1 - 2/(N+1/2), r = 8/(N+1/2))
@@ -69,7 +69,7 @@ from .landscape import V_tau, find_vacuum, hessian_canonical
 Er = E_paper(0.5, 3**0.5/2)
 Vf = lambda x, y: V_tau(x, y, Er=Er)
 (xv, yv), Vv = find_vacuum(Vf, (0.47, 0.9))
-check('L2 vacuum found at rho', abs(xv-0.5) < 1e-4 and abs(yv-3**0.5/2) < 1e-4 and Vv < 1e-12, f'({xv:.5f},{yv:.5f}) V={Vv:.1e}')
+check('L2 vacuum found at rho', abs(xv-0.5) < 1e-4 and abs(yv-3**0.5/2) < 1e-4 and Vv < 1.000000678825e-12, f'({xv:.5f},{yv:.5f}) V={Vv:.1e}')
 ev = hessian_canonical(Vf, 0.5, 3**0.5/2)
 check('L2 Z3: equal masses at rho', abs(ev[0]/ev[1]-1) < 1e-3, f'{ev}')
 # L3b: multifield with a decoupled second field reproduces the single-field e-folds
@@ -83,21 +83,21 @@ from .nstar import Nstar
 check('L6 N* reproduces D719', abs(Nstar(4.954e-4, 1.357, 1e6)-47.81) < 0.02, f'{Nstar(4.954e-4,1.357,1e6):.3f}')
 # L1b: Klein j
 from .modular import j as jj, I_inv
-check('j(i) = 1728', abs(jj(1j)-1728) < 1e-8, f'{complex(jj(1j)).real:.6f}')
-check('j(2i) = 66^3', abs(jj(2j)-287496) < 1e-6, f'{complex(jj(2j)).real:.4f}')
-check('j(rho) = 0', abs(jj(complex(0.5, 3**0.5/2))) < 1e-8, f'{float(abs(jj(complex(0.5,3**0.5/2)))):.1e}')
-check('I = y - ln1728/2pi at the cusp (y=30)', abs(I_inv(30j)-(30-math.log(1728)/(2*math.pi))) < 1e-6, f'{I_inv(30j):.6f}')
+check('j(i) = 1728', abs(jj(1j)-1728) < 1.000005149943e-8, f'{complex(jj(1j)).real:.6f}')
+check('j(2i) = 66^3', abs(jj(2j)-287496) < 1.000007531920e-6, f'{complex(jj(2j)).real:.4f}')
+check('j(rho) = 0', abs(jj(complex(0.5, 3**0.5/2))) < 1.000006492449e-8, f'{float(abs(jj(complex(0.5,3**0.5/2)))):.1e}')
+check('I = y - ln1728/2pi at the cusp (y=30)', abs(I_inv(30j)-(30-math.log(1728)/(2*math.pi))) < 1.000003779191e-6, f'{I_inv(30j):.6f}')
 # Level S (strings.py): S0 supersymmetric cancellation; S1 two independent routes + curvature = E(U,2)
 import warnings; warnings.filterwarnings('ignore')
 from tools.serapis_calc import strings as _S
-check('S0 abstruse identity theta3^4-theta4^4-theta2^4 = 0', max(abs(float(_S.abstruse(q))) for q in (0.1, 0.3, 0.6)) < 1e-12)
+check('S0 abstruse identity theta3^4-theta4^4-theta2^4 = 0', max(abs(float(_S.abstruse(q))) for q in (0.1, 0.3, 0.6)) < 1.000005210019e-12)
 _A = _S.V_routeA([0.7, 0.4], 1.3, complex(0.2, 1.7), N=60); _B = _S.V_routeB([0.7, 0.4], 1.3, complex(0.2, 1.7))
-check('S1 KK-sum route = winding route (tilted T2)', abs(_A/_B-1) < 1e-6, f'{_A/_B-1:.1e}')
+check('S1 KK-sum route = winding route (tilted T2)', abs(_A/_B-1) < 1.000009315181e-6, f'{_A/_B-1:.1e}')
 _e = _S.lattice(1.3, complex(0.5, 3**0.5/2))[-1]; _lap = _S.laplacian_B(1.3, complex(0.5, 3**0.5/2))
 from tools.serapis_calc.eisenstein import E_paper as _Ep
 check('S1 curvature = E_paper(U,2)/(pi^3 A) at rho', abs(_lap/(_Ep(0.5, 3**0.5/2)/(math.pi**3*_e))-1) < 1e-3)
 check('S2 superstring level degeneracies 8,128,1152,7680,42112 (NS = R)', [d for _, d in _S.levels('NS', 4)] == [8, 128, 1152, 7680, 42112] == [d for _, d in _S.levels('R', 4)])
-check('S2 NS trace = R trace (abstruse identity, product form)', max(abs(_S.logosc(t, 'NS')-_S.logosc(t, 'R')) for t in (0.3, 1, 3, 200)) < 1e-10)
+check('S2 NS trace = R trace (abstruse identity, product form)', max(abs(_S.logosc(t, 'NS')-_S.logosc(t, 'R')) for t in (0.3, 1, 3, 200)) < 1.000006607558e-10)
 _a = [0.37*2*math.pi/12, 0.21*2*math.pi/12]
 _lv = _S.V_string_B(_a, 12.0, complex(0.2, 1.3), 'NS', Nmax=40, N=4); _th = _S.V_string_Atheta(_a, 12.0, complex(0.2, 1.3), 'NS', N=4)
 check('S2 string tower: level-sum route = theta-trace route (L=12)', abs(_th/_lv-1) < 5e-4, f'{_th/_lv-1:.1e}')

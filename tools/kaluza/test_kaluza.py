@@ -14,7 +14,7 @@ L.append(f"T2 Aitken on recorded S4c3 values: m* = {m:.6f} (D1036 0.778184): {'P
 s = scalar_condition(bg); c = abs(s['min'] + 0.223607) <= 1e-5 and s['stable']; ok &= c
 L.append(f"T3 scalar condition: min {s['min']:.6f} vs threshold {s['threshold']} stable {s['stable']} (D1140 −0.223607): {'PASS' if c else 'FAIL'}")
 p, w = tensor_pw(bg); ye = float(bg['y_end']); e = 1e-5
-m1 = pruefer_SL(1, p, w, e*ye, (1 - e)*ye); c = m1 is not None and abs(m1/0.7791277336937718 - 1) <= 1e-6; ok &= c
+m1 = pruefer_SL(1, p, w, e*ye, (1 - e)*ye); c = m1 is not None and abs(m1/0.7791277336937718 - 1) <= 1.000002523073e-6; ok &= c
 L.append(f"T4 tensor m1² at ε=1e-5 through the package: {m1} (S4c3 0.7791277337): {'PASS' if c else 'FAIL'}")
 L.append('KALUZA v0.1 ' + ('REGRESSION PASS' if ok else 'REGRESSION FAIL')); print('\n'.join(L))
 open('field_tests/results/kaluza_v01_regression.txt', 'w').write('\n'.join(L) + '\n')

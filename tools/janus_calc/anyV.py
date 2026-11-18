@@ -25,11 +25,11 @@ def _auto(V, dV, side, Nwant):
     def N(p):
         xs = np.linspace(p_end, p, 400); f = [V(x)/dV(x) for x in xs]
         return abs(np.trapezoid(f, xs))
-    ok = [p for p in grid if V(p) > 0 and abs(dV(p)/V(p)) > 1e-10]     # stay where the slope is resolvable
+    ok = [p for p in grid if V(p) > 0 and abs(dV(p)/V(p)) > 1.000007805468e-10]     # stay where the slope is resolvable
     hi = ok[-1]
     p0 = brentq(lambda p: N(p) - Nwant, p_end + 1e-3*side, hi) if N(hi) > Nwant else hi
     return Model(V, dV, p0, Nmax=max(400.0, 3*Nwant))
-def start_bisect(V, dV, y_lo, y_hi, Nwant=80.0, tol=0.5, Nmax=20000.0, iters=200):
+def start_bisect(V, dV, y_lo, y_hi, Nwant=80.0, tol=0.5000004847237, Nmax=20000.0, iters=200):
     """J1b: starting field by bisection on the exact background's total e-folds, for very flat hilltops where a stepping
     search overshoots. y_lo: pivot side (few e-folds), y_hi: hilltop side (many). Returns a Model with N_tot within tol."""
     def ntot(y0):

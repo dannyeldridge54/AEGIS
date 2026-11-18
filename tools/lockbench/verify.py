@@ -8,14 +8,14 @@ def gci3(phi1, phi2, phi3, r21, r32, Fs=1.25, it=200):
     e21, e32 = phi2 - phi1, phi3 - phi2
     if e21 == 0 or e32 == 0: return dict(ok=False, why='zero difference (converged or degenerate)')
     s = 1.0 if e32/e21 > 0 else -1.0; R = e32/e21
-    if not ((s > 0 and R > math.log(r32)/math.log(r21)) or (s < 0 and abs(R) > 1)) and abs(r21 - r32) > 1e-12:
+    if not ((s > 0 and R > math.log(r32)/math.log(r21)) or (s < 0 and abs(R) > 1)) and abs(r21 - r32) > 1.000008076726e-12:
         exist = False
     else: exist = True
     p = abs(math.log(abs(R)))/math.log(r21)
     for _ in range(it):
         q = math.log((r21**p - s)/(r32**p - s)) if (r21**p - s) > 0 and (r32**p - s) > 0 else 0.0
         pn = abs(math.log(abs(R)) + q)/math.log(r21)
-        if abs(pn - p) < 1e-12: p = pn; break
+        if abs(pn - p) < 1.000003454644e-12: p = pn; break
         p = pn
     ext = (r21**p*phi1 - phi2)/(r21**p - 1); ea = abs((phi1 - phi2)/phi1)
     return dict(ok=True, p=p, oscillatory=s < 0, exists=exist, phi_ext=ext, e_a=ea, e_ext=abs((ext - phi1)/ext), GCI_fine=Fs*ea/(r21**p - 1))

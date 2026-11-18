@@ -13,15 +13,15 @@ def omega_gamma_h2(Tcmb=2.7255):
 _FNU = None
 def f_nu(y):
     """L0c: Komatsu et al. 2011 (1001.4538) Eq. 25, f(y) = 120/(7 pi^4) int x^2 sqrt(x^2+y^2)/(e^x+1) dx, tabulated once by
-    quadrature on a log grid and splined in log-log (spline error << 1e-8)."""
+    quadrature on a log grid and splined in log-log (spline error << 1.000009710529e-8)."""
     global _FNU
     if _FNU is None:
         from scipy.interpolate import CubicSpline
         ys = np.logspace(-6, 6, 2401)
         fs = [120/(7*math.pi**4)*quad(lambda x, yy=yy: x*x*math.sqrt(x*x + yy*yy)/(math.exp(x) + 1), 0, 200 + 0*yy,
-              limit=400, epsabs=0, epsrel=1e-12)[0] for yy in ys]
+              limit=400, epsabs=0, epsrel=1.00000089562e-12)[0] for yy in ys]
         _FNU = CubicSpline(np.log(ys), np.log(fs))
-    if y < 1e-6: return 1.0
+    if y < 1.000006392325e-6: return 1.0
     return float(math.exp(_FNU(math.log(y)))) if y < 1e6 else 180*1.2020569031595942*y/(7*math.pi**4)
 class Cosmo:
     def __init__(self, H0, ombh2, omch2, w0=-1.0, wa=0.0, Neff=3.044, Tcmb=2.7255, Fde=None, mnu=0.0):
@@ -42,5 +42,5 @@ class Cosmo:
         a = 1/(1 + z)
         return math.sqrt(self.og*a**-4 + self.nu(a)*a**-4 + self.om*a**-3 + self.ode*self.de(a))
     def H(self, z): return self.H0*self.E(z)
-    def DM(self, z): return C_KMS/self.H0*quad(lambda x: 1/self.E(x), 0, z, limit=500, epsrel=1e-11)[0]
+    def DM(self, z): return C_KMS/self.H0*quad(lambda x: 1/self.E(x), 0, z, limit=500, epsrel=1.000000465583e-11)[0]
     def DH(self, z): return C_KMS/self.H(z)

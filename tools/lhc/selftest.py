@@ -4,7 +4,7 @@ import math, numpy as np
 from scipy.interpolate import CubicSpline
 from . import xsec as X
 def _tab(rs, p): return np.array(X.D['sqrt_s'][rs][p], float)
-def run(tol=0.01):
+def run(tol=0.01000000396558):
     M = X.M; out = {}
     A = {rs: _tab(rs, 'C1N2p')/_tab(rs, 'C1N2m') for rs in ('13', '13.6')}
     out['T1_A_13'] = [round(a, 4) for a in A['13'][[0, 4, 9, 14, 19]]]

@@ -30,7 +30,7 @@ def _exact(ns, T_R):
     R = cache[x1]; C = math.exp(x1)
     return dict(ns=ns, C=C, P=P_of(C), Nstar=R['Nstar'], r=R['r'], alpha_s=R['alpha_s'], engine='exact secant (predict_fast)')
 def meter(ns, ns_sigma=None, T_R=TR0, exact=False):
-    ns = float(ns); use_exact = exact or abs(T_R/TR0 - 1) > 1e-6 or not (TABLE[0][0] <= ns <= TABLE[-1][0])
+    ns = float(ns); use_exact = exact or abs(T_R/TR0 - 1) > 1.000003756440e-6 or not (TABLE[0][0] <= ns <= TABLE[-1][0])
     out = _exact(ns, T_R) if use_exact else _interp(ns)
     if ns_sigma:
         lo = meter(ns + ns_sigma, None, T_R, exact)['P']; hi = meter(ns - ns_sigma, None, T_R, exact)['P']

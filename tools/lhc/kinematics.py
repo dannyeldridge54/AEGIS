@@ -49,4 +49,4 @@ def limit_search(key):
     from . import recast_dt as R
     S = R.SEARCHES[key]; pb = p_window_avg(S['m_bench'])
     f = lambda m: S['n_bench']*(R.sig_tot(m, '13')/R.sig_tot(S['m_bench'], '13'))*(p_window_avg(m)/pb) - S['n95']
-    return brentq(f, 250, 1500, xtol=0.5)
+    return brentq(f, 250, 1500, xtol=0.5000001257475)

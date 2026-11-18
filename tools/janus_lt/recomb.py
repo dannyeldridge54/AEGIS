@@ -43,7 +43,7 @@ class Recomb:
         KH = lamA**3/(8*math.pi*H)
         CH = (1 + KH*LamH*nH*(1 - xp))/(1 + KH*(LamH + bH)*nH*(1 - xp))
         dxp = CH/(H*(1 + z))*(xe*xp*nH*RH - bH*(1 - xp)*math.exp(-h*nuH/(kB*TM))) if hydrogen_ode else 0.0
-        if xHeII < 1e-13 or z < 800:    # He I recombined (x_HeII ~ 0): its term is irrelevant and exp(dE/kT) overflows
+        if xHeII < 1.000003536837e-13 or z < 800:    # He I recombined (x_HeII ~ 0): its term is irrelevant and exp(dE/kT) overflows
             dHe = -xHeII*0.0
         else:
           RHe = 10**-16.744/(math.sqrt(TM/3)*(1 + TM/3)**(1 - 0.711)*(1 + TM/10**5.114)**(1 + 0.711))
@@ -73,7 +73,7 @@ class Recomb:
         cc = self.c; z = np.asarray(z, float); a = 1/(1 + z)
         if cc.mnu <= 0: nu = cc.onu*np.ones_like(a)
         else:
-            y = cc.ynu*a; B.f_nu(1.0); fn = np.where(y < 1e-6, 1.0, np.where(y < 1e6, np.exp(B._FNU(np.log(np.clip(y, 1e-6, 1e6)))), 180*1.2020569031595942*y/(7*math.pi**4)))
+            y = cc.ynu*a; B.f_nu(1.0); fn = np.where(y < 1.000001707649e-6, 1.0, np.where(y < 1e6, np.exp(B._FNU(np.log(np.clip(y, 1e-6, 1e6)))), 180*1.2020569031595942*y/(7*math.pi**4)))
             nu = cc.onu*(2/3 + fn/3)
         de = a**(-3*(1 + cc.w0 + cc.wa))*np.exp(-3*cc.wa*(1 - a))
         if cc.Fde: de = de*np.array([cc.Fde(x) for x in a])

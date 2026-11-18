@@ -233,6 +233,45 @@ def scan2(suspect, db='~/.aegis/winnow_db.json', keypath=DEFAULT_KEY, registry='
     rep['summary'] = {'valid_stamps': len(rep['valid_stamps']), 'canaries_found': len(rep['canaries']), 'likely_copied_files': strong}
     print(json.dumps(rep, indent=1)); return rep
 
+GEN_RE = re.compile(r'\b(rtol|atol|xtol|ftol|fatol|xatol|gtol|tol|eps_rel|epsrel|epsabs)\s*=\s*((?:\d+\.\d*|\d*\.\d+|\d+)(?:[eE]-?\d+)?)(?![\d.eE])')
+
+def _mark(v, d):
+    """Value v nudged by a keyed relative amount in [1e-7, 1e-6): harmless for a tolerance, unique in its digits."""
+    x = float(v)
+    if x == 0: return None
+    return repr(float(f'{x*(1 + (1 + d % 9) * 1e-7 + (d % 10**6) * 1e-13):.13g}'))
+
+def spread_all(keypath=DEFAULT_KEY, registry='~/.aegis/canary_registry.json', roots=('tools/',), dry=False, repo_tag=''):
+    """Every keyword tolerance in our code (any value, not just 1e-N) becomes a keyed trap value. Idempotent per value
+    (already-marked values are recorded and left alone)."""
+    key = _key(keypath); reg_p = os.path.expanduser(registry)
+    reg = json.load(open(reg_p)) if os.path.exists(reg_p) else []; known = {c['digits'] for c in reg}; n = 0
+    for f in _files():
+        if not f.endswith('.py') or not f.startswith(roots) or f.startswith(EXCLUDE): continue
+        s = open(f, encoding='utf-8').read(); i = [0]
+        def rep(m):
+            if m.group(2) in known or len(m.group(2).replace('.', '').lstrip('0')) >= 10: return m.group(0)
+            i[0] += 1
+            d = int.from_bytes(hmac.new(key, f'ALL|{repo_tag}{f}|{i[0]}'.encode(), hashlib.sha256).digest()[:6], 'big')
+            v = _mark(m.group(2), d)
+            if v is None: return m.group(0)
+            reg.append({'name': f'{m.group(1)} #{i[0]}', 'file': repo_tag + f, 'digits': v, 'effect': 'none (tolerance)'}); known.add(v)
+            return f'{m.group(1)}={v}'
+        s2 = GEN_RE.sub(rep, s)
+        def rep_cmp(m):   # round-off guards in comparisons:  x < 1e-9  ->  x < 1.00000ddddddde-9
+            if int(m.group(3)) < 6: return m.group(0)
+            i[0] += 1
+            d = int.from_bytes(hmac.new(key, f'CMP|{repo_tag}{f}|{i[0]}'.encode(), hashlib.sha256).digest()[:4], 'big') % 10**7
+            v = f'1.00000{d:07d}e-{m.group(3)}'
+            reg.append({'name': f'guard #{i[0]}', 'file': repo_tag + f, 'digits': v, 'effect': 'none (round-off guard)'})
+            return f'{m.group(1)}{m.group(2)}{v}'
+        s2 = re.sub(r'([<>]=?\s*)(-?)1e-(\d+)\b', rep_cmp, s2)
+        if s2 != s:
+            n += i[0]
+            if not dry: open(f, 'w', encoding='utf-8').write(s2)
+    if not dry: json.dump(reg, open(reg_p, 'w'), indent=1)
+    print(('would place' if dry else 'placed'), n, 'more canaries; registry now', len(reg))
+
 def licensee_build(name, outdir, keypath=DEFAULT_KEY, registry='~/.aegis/licensee_registry.json', roots=('tools/lhc/', 'tools/lattice/', 'tools/janus_calc/')):
     """Traitor tracing: a copy for one licensee whose tolerance canaries carry digits unique to that licensee.
     If the copy leaks, the digits name the licensee it came from."""
@@ -247,9 +286,18 @@ def licensee_build(name, outdir, keypath=DEFAULT_KEY, registry='~/.aegis/license
             s = open(f, encoding='utf-8').read(); i = [0]
             def rep(m):
                 i[0] += 1
-                d = int.from_bytes(hmac.new(key, f'LIC|{name}|{f}|{i[0]}'.encode(), hashlib.sha256).digest()[:4], 'big') % 10**7
-                v = f'1.0000{d:07d}e-{m.group(2).split("e-")[-1]}'; marks.append(v); return f'{m.group(1)}={v}'
-            s = re.sub(r'\b(rtol|atol|xtol|ftol|fatol|xatol|tol)\s*=\s*(1(?:\.0000\d{7})?e-\d+)\b', rep, s)
+                d = int.from_bytes(hmac.new(key, f'LIC|{name}|{f}|{i[0]}'.encode(), hashlib.sha256).digest()[:6], 'big')
+                base = float(m.group(2)); base = float(f'{base:.6g}')          # strip the public canary first
+                v = _mark(base, d)
+                if v is None: return m.group(0)
+                marks.append(v); return f'{m.group(1)}={v}'
+            s = GEN_RE.sub(rep, s)
+            def rep_cmp(m):
+                if int(m.group(4)) < 6: return m.group(0)
+                i[0] += 1
+                d = int.from_bytes(hmac.new(key, f'LICC|{name}|{f}|{i[0]}'.encode(), hashlib.sha256).digest()[:4], 'big') % 10**7
+                v = f'1.00000{d:07d}e-{m.group(4)}'; marks.append(v); return f'{m.group(1)}{m.group(2)}{v}'
+            s = re.sub(r'([<>]=?\s*)(-?)(1(?:\.00000\d{7})?)e-(\d+)\b', rep_cmp, s)
             s = STAMP_RE.sub(lambda m: 'AEGIS-FP ' + base64.b32encode(hmac.new(key, f'LIC|{name}|{f}'.encode(), hashlib.sha256).digest())[:16].decode(), s)
             open(dst, 'w', encoding='utf-8').write(s)
         else: shutil.copy2(f, dst)
@@ -276,6 +324,7 @@ if __name__ == '__main__':
     elif a[0] == 'manifest': manifest()
     elif a[0] == 'winnow': winnow(opt('--db', '~/.aegis/winnow_db.json'))
     elif a[0] == 'spread': spread(opt('--key', DEFAULT_KEY), dry='--dry' in a)
+    elif a[0] == 'spread-all': spread_all(opt('--key', DEFAULT_KEY), dry='--dry' in a)
     elif a[0] == 'winnow-all': winnow_all()
     elif a[0] == 'scan2': scan2(a[1])
     elif a[0] == 'licensee': licensee_build(a[1], a[2])

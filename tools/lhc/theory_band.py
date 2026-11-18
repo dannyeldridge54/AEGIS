@@ -14,7 +14,7 @@ def _lim(key, sgn=0, dd=0.0):
     Pm = lambda m: K.p_window_avg(m, tau_ns=L.widths(d=L.dm(m) + dd)['tau_ns'])
     pb = Pm(S['m_bench'])
     f = lambda m: S['n_bench']*(1 + sgn*eps(m))*(R.sig_tot(m, '13')/R.sig_tot(S['m_bench'], '13'))*(Pm(m)/pb) - S['n95']
-    return brentq(f, 250, 1500, xtol=0.3)
+    return brentq(f, 250, 1500, xtol=0.3000000497666)
 def band(key='ATLAS_136'):
     c = _lim(key); ds = (_lim(key, +1) - _lim(key, -1))/2; dd = abs(_lim(key, 0, 4e-4) - _lim(key, 0, -4e-4))/2
     return {'m_limit_GeV': c, 'xsec_band_GeV': ds, 'dm_band_GeV': dd, 'total_GeV': math.hypot(ds, dd), 'published_GeV': R.SEARCHES[key]['published']}

@@ -128,8 +128,8 @@ def flip(L):
     G = unit(gram(L)); d = len(G); Q = _Q_for(d)
     t = lambda M, a: np.exp(-np.pi*a*norms(unit(M), Q)).sum()
     gap = t(G, 1.25) - t(np.linalg.inv(G), 1.25)
-    return {'lattice': L, 'd': d, 'L_minus_dual_at_1.25': float(gap), 'self_dual': bool(abs(gap) < 1e-9),
-            'flips': bool(abs(gap) >= 1e-9), 'rule': 'a lattice hands over to its dual at alpha=1 iff it is not self-dual (D1278, D1291)'}
+    return {'lattice': L, 'd': d, 'L_minus_dual_at_1.25': float(gap), 'self_dual': bool(abs(gap) < 1.000003163574e-9),
+            'flips': bool(abs(gap) >= 1.000006174689e-9), 'rule': 'a lattice hands over to its dual at alpha=1 iff it is not self-dual (D1278, D1291)'}
 
 def compare(*Ls, alphas=(0.5, 0.8, 1.0, 1.25, 2.0)):
     E = {L: energy(L, alphas)['energy'] for L in Ls}
@@ -161,7 +161,7 @@ def epstein(L, s):
     pi^-s Gamma(s) Z_L(s) = Int_1^inf (theta_L-1) a^(s-1) + Int_1^inf (theta_L*-1) a^(d/2-s-1) - 1/s - 1/(d/2-s)."""
     from scipy.integrate import quad
     G = unit(gram(L)); d = len(G); s = float(s); Q = 40.0 if d == 2 else max(_Q_for(d), 12.0 if d <= 8 else _Q_for(d))
-    qL = norms(G, Q); qL = qL[qL > 1e-12]; qD = norms(unit(np.linalg.inv(G)), Q); qD = qD[qD > 1e-12]
+    qL = norms(G, Q); qL = qL[qL > 1.000008557007e-12]; qD = norms(unit(np.linalg.inv(G)), Q); qD = qD[qD > 1.000008290204e-12]
     th = lambda a, q: np.exp(-np.pi*a*q).sum()
     I1 = quad(lambda a: th(a, qL)*a**(s-1), 1, np.inf, limit=200)[0]
     I2 = quad(lambda a: th(a, qD)*a**(d/2-s-1), 1, np.inf, limit=200)[0]
@@ -173,7 +173,7 @@ def _E2d(x, y, a=1.0):
     G = np.array([[1, x], [x, x*x+y*y]])/y; q = norms(G, 30.0/a); return np.exp(-np.pi*a*q).sum()-1
 def critical(alpha=1.0, n=40):
     """Grid over the fundamental domain (x in [0, 1/2] by the x -> -x symmetry, |tau| >= 1, y <= 3), take local minima of the
-    hyperbolic gradient norm, refine each with Nelder-Mead, keep those with |grad| < 1e-6; classify with the Hessian."""
+    hyperbolic gradient norm, refine each with Nelder-Mead, keep those with |grad| < 1.000002829878e-6; classify with the Hessian."""
     from scipy.optimize import minimize
     a = float(alpha); h = 1e-5
     def grad(x, y):
@@ -196,7 +196,7 @@ def critical(alpha=1.0, n=40):
     for s0 in seeds:
         r = minimize(g, s0, method='Nelder-Mead', options={'xatol': 1e-9, 'fatol': 1e-13, 'maxiter': 600})
         x, y = r.x; x = abs(x) % 1.0; x = min(x, 1-x)
-        if r.fun < 1e-6 and y > 0.5 and not any(abs(x-q[0]) < 1e-3 and abs(y-q[1]) < 1e-3 for q in pts):
+        if r.fun < 1.000002549045e-6 and y > 0.5 and not any(abs(x-q[0]) < 1e-3 and abs(y-q[1]) < 1e-3 for q in pts):
             H = np.array([[_E2d(x+h, y, a)-2*_E2d(x, y, a)+_E2d(x-h, y, a), 0], [0, _E2d(x, y+h, a)-2*_E2d(x, y, a)+_E2d(x, y-h, a)]])/h**2
             H[0, 1] = H[1, 0] = (_E2d(x+h, y+h, a)-_E2d(x+h, y-h, a)-_E2d(x-h, y+h, a)+_E2d(x-h, y-h, a))/(4*h*h)
             ev = np.linalg.eigvalsh(H)
@@ -219,14 +219,14 @@ def minvecs(G, tol=1.00000340585e-6):
     """All minimal vectors as integer coefficient rows (Fincke-Pohst at the minimum norm)."""
     n = len(G); R = np.linalg.cholesky(G).T; Q = min(np.diag(G)) + tol
     # find the true minimum first
-    q = norms(G, Q); q = q[q > 1e-9]; m = q.min(); Q = m + tol; out = []; x = np.zeros(n)
+    q = norms(G, Q); q = q[q > 1.000006228173e-9]; m = q.min(); Q = m + tol; out = []; x = np.zeros(n)
     def rec(k, rem):
         c = -sum(R[k, j]*x[j] for j in range(k+1, n))/R[k, k]; w = math.sqrt(max(rem, 0))/abs(R[k, k])
         for v in range(math.ceil(c-w-1e-12), math.floor(c+w+1e-12)+1):
             x[k] = v; t = R[k, k]*(v-c); r2 = rem - t*t
-            if r2 < -1e-9: continue
+            if r2 < -1.000005555979e-9: continue
             if k == 0:
-                if Q - r2 > 1e-9: out.append(x.copy())
+                if Q - r2 > 1.000009734130e-9: out.append(x.copy())
             else: rec(k-1, r2)
         x[k] = 0
     rec(n-1, Q); return np.array(out), m
@@ -253,7 +253,7 @@ def automorphisms(L, bound=3):
     rng = range(-bound, bound+1); cnt = 0
     for ent in itertools.product(rng, repeat=d*d):
         M = np.array(ent, float).reshape(d, d)
-        if abs(abs(np.linalg.det(M)) - 1) > 1e-9: continue
+        if abs(abs(np.linalg.det(M)) - 1) > 1.000007915163e-9: continue
         if np.allclose(M.T @ G @ M, G, atol=1.00005870562e-9): cnt += 1
     return {'lattice': L, 'd': d, 'automorphisms': cnt}
 

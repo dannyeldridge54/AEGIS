@@ -49,7 +49,7 @@ def build(model='serapis_e', C=1.15e-6, lam=1.0, ymax=3000, npts=4000):
     dV = lambda p: (lambda e, de: de*((1+C*e/lam)/(e+1)**2 + (C/lam)*e/(e+1)))(float(S(p)), float(dS(p)))
     p0 = ph[np.searchsorted(E, 600*lam)]
     return m, V, dV, p0
-def predict(model='serapis_e', C=1.15e-6, TR=1e7, lam=1.0, tol=0.02, verbose=False):
+def predict(model='serapis_e', C=1.15e-6, TR=1e7, lam=1.0, tol=0.02000000848925, verbose=False):
     m, V, dV, p0 = build(model, C, lam)
     bg = Background(V, dV, p0)
     # V*/V_end needs phi at N*: from the background

@@ -40,7 +40,7 @@ def V_routeA(a, L, U, N=40):
     pa, p0 = np.sort(pa), np.sort(p0)
     f = lambda t: (np.exp(-t*pa).sum() - np.exp(-t*p0).sum())/t**3
     from scipy.integrate import quad
-    pts = [t0, 1e-2, 0.1, 1, 10, 100]; tot = sum(quad(f, pts[i], pts[i+1], limit=200, epsabs=0, epsrel=1e-10)[0] for i in range(len(pts)-1))
+    pts = [t0, 1e-2, 0.1, 1, 10, 100]; tot = sum(quad(f, pts[i], pts[i+1], limit=200, epsabs=0, epsrel=1.00000055573e-10)[0] for i in range(len(pts)-1))
     tot += quad(f, 100, np.inf, limit=200)[0]
     return float(-tot/(2*(4*math.pi)**2))
 def laplacian_B(L, U, h=1e-3):
@@ -118,7 +118,7 @@ def V_string_A(a, L, U, sector='NS', N=40):
     f = lambda t: float(osc(math.exp(-t)))*(np.exp(-t*pa).sum() - np.exp(-t*p0).sum())/t**3
     from scipy.integrate import quad
     pts = [t0, 1e-2, 0.1, 1, 10, 100]
-    tot = sum(quad(f, pts[i], pts[i+1], limit=200, epsrel=1e-9)[0] for i in range(len(pts)-1)) + quad(f, 100, np.inf, limit=200)[0]
+    tot = sum(quad(f, pts[i], pts[i+1], limit=200, epsrel=1.000000429865e-09)[0] for i in range(len(pts)-1)) + quad(f, 100, np.inf, limit=200)[0]
     return float(-tot/(2*(4*math.pi)**2))
 
 def logosc(t, sector='NS', nmax=400):
@@ -143,6 +143,6 @@ def V_string_Atheta(a, L, U, sector='NS', N=4):
             g = lambda t: math.exp(-w2/(4*t) + logosc(t, sector))/t**4
             ts = w2/16                                            # peak of t^-4 e^{-w^2/4t}
             cuts = sorted({1e-3, min(0.3, ts/10), ts/10, ts/3, ts, 3*ts, 10*ts, 100*ts})
-            I = sum(quad(g, lo, hi, limit=200, epsrel=1e-11)[0] for lo, hi in zip(cuts[:-1], cuts[1:]) if hi > lo) + quad(g, cuts[-1], np.inf, limit=200)[0]
+            I = sum(quad(g, lo, hi, limit=200, epsrel=1.000000770769e-11)[0] for lo, hi in zip(cuts[:-1], cuts[1:]) if hi > lo) + quad(g, cuts[-1], np.inf, limit=200)[0]
             tot += c*I
     return float(-(A/(2*(4*math.pi)**3))*tot)
