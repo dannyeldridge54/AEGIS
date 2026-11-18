@@ -2102,3 +2102,6 @@ Touches: none.
 1. [literature] acceptance 0.09 (400 GeV) and 0.12 (600 GeV) at τ = 0.2 ns, arXiv:1712.02118 Table 2; limit at fixed τ = 0.2 ns; window 122.5–295 mm.
 2. [estimate] acceptance taken linear in mass between the two points.
 3. [derived] recast with kinematic boost and these inputs: 457.2 GeV vs published 460 GeV.
+
+## D1312: gamma-line link in the CERN+1 panel
+1. [literature] verdicts taken as recorded in D1126, D1150 and D1153 (Hyperion track); no recomputation.
