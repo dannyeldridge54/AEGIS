@@ -1,0 +1,6 @@
+# PREREG NA7 — node audit phase 7: darkrad_rho, caps, and the τ = i canonical factors (arithmetic/code audit)
+Locked before computing.
+A. darkrad_rho (D723 escape, D725): thermalisation needs y_D ≳ 3.4e-4·√(T_R/6.7e8 GeV) (D723's two quoted points, 3.4e-4 at 6.7e8 and 3.4e-3 at 6.7e10, are exactly this √T_R scaling — verify). With NA6's open rows (T_R, M_L, y_D = √(m_ν M_L)/v, m_ν = 0.05 eV, v = 174 GeV): PASS if every row has y_D ≥ threshold (light states thermalise and decay → no ΔN_eff). Also update D723's closure bound M2 > m_φ/2 with m_φ = 3.17e13.
+B. caps (D677: n_s ≤ 0.985, r ≤ 8.3e-4, computed at N* 46.1–49.5): from D674/D676's exact numbers check the cap decreases with N*. If so the corrected ρ N* (50.1–51.3) gives a LOWER cap and the frozen caps stay valid (conservative) → CONSISTENT.
+C. τ = i scripts: list the canonical factor each uses (cone_i_d726, pseudo_i_d727, lepto_i_d728, two_plus_one_i_d738) against the τ = i model's K = −ln(2 Im τ) (D672, n = 1 ⇒ √2 at y = 1). Mark mismatches; state whether the mismatched script's result feeds a node (reheat_i refs D727, D730). Also report D730's m (2.28–2.65e11) vs the m = 1.9e11 used in D727/D728/D738.
+Results: field_tests/results/na7_darkrad_caps_ibranch.txt. Post-hoc; no reruns to chase.
