@@ -178,4 +178,4 @@ Stages (each locked before computing; one D-note each):
 - F5 write-up: a standalone paper ("a flux vacuum with one flat torus modulus and its loop-lifted plateau"), posted on Zenodo when Danny says so.
 Side product (any outcome): a sibling catalogue (α = 1, 1/3, 1/6, 1/24 from D928/D932) with consistency-relation predictions (D669 with each p).
 Cost: about 6–10 ticks; one locked script per stage; no subagents.
-- [ ] (D1237) ρ-chain rerun with the n = 1 canonical factor and m_φ = 3.17e13: D722/D725 T_R, D775 ε pass fractions, D982 κ for M/T_R < 500 rows — one lock (NA6)
+- [x] (D1237 → done in D1239) ρ-chain rerun with the n = 1 canonical factor and m_φ = 3.17e13: D722/D725 T_R, D775 ε pass fractions, D982 κ for M/T_R < 500 rows — one lock (NA6)

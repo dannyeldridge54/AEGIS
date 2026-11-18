@@ -12874,3 +12874,20 @@ MAP: node=nstar_e status=corrected touches=[band_e, C_nstar] ripple=yes
   - The paper needs no edit (it quotes Beneke's numbers).
 VERDICT: B1 PASS, L1 FAIL (+4.4%). Most of the gap is closed by the sourced EOS. The residual is in the late-time Sommerfeld treatment and is OPEN.
 MAP: none
+
+## D1239 — CENTRE — NA6: ρ chain rerun with n = 1 and m_φ = 3.17e13 — T_R confirmed; leptogenesis: c = 1 and 3 pass more strongly, c = 0.3 at M_H = 1e12 STILL FAILS the locked 10 % rule (2.2 %) — corrects D1236's "would pass" reading
+Lock: field_tests/rules/PREREG_NA6_rho_chain_rerun.md. Scripts: field_tests/scripts/na6/ (copies of D725/D775 scripts, diffs: can y√2, m_φ 3.1746e13, T_R list, κ 0.9391). Results: field_tests/results/na6_rho_chain.txt.
+1 [computed]: direct T_R rerun matches NA3's rescaling to ≤ 0.15 % on all 6 comparable rows → PASS. New: c = 3, M_H = 1e13 now has open HL channels (M_H + M_L = 3.12e13 < m_φ) → T_R = 1.43e9 GeV (was effectively closed, 0.017 GeV).
+T_R window for the ρ branch: 6.6e8–2.0e10 GeV (N* 50.1–51.3, NA3).
+2 [computed] pass fractions (m1 = 1e-4 / 1e-3 eV; D775 → NA6):
+- c = 0.3, M_H = 1e12: pair 0 → 2.2 % / 2.2 %, single 0 %. Max Y_B ≈ 1.03e-10 clears Y_obs only at the grid's edge. Locked rule (≥ 10 %) → still FAIL.
+- c = 1, M_H = 1e12: pair 32.9 → 41.4 %, single 56.2 → 63.6 %. PASS.
+- c = 3, M_H = 1e12: single 70.2 → 75.2 %. PASS.
+- M_H = 1e13: c = 0.3 83–84 %, c = 1 91–93 %, c = 3 (newly open) single 88 %.
+VERDICT (locked rule): lepto_rho unchanged in kind — works for c ≳ 1, fails for c = 0.3 at M_H = 1e12; margins grow. D1236's "would PASS" was about max Y_B only, not the locked pass-fraction rule (correction, D1236a).
+κ unverified (M/T_R < 500): c = 0.3 pair rows only (321, 328) — they are failing/marginal rows, so the verdict does not depend on them; NA7 κ lock optional.
+MAP: node=lepto_rho status=computed touches=[C_lepto] ripple=no
+MAP: node=reheat_rho status=computed touches=[nstar_e] ripple=no
+
+## D1236a — correction to D1236
+D1236 said c = 0.3, M_H = 1e12 "would PASS" because max Y_B (1.03e-10) exceeds Y_obs. The locked D775 rule is a ≥ 10 % pass fraction over the Casas–Ibarra grid; with the corrected inputs that fraction is 2.2 % (D1239) → still FAIL.

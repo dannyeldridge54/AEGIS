@@ -416,18 +416,19 @@ nodes:
   - rho
   - E
   title: T_R at ρ ≈ 3e8–3e9 GeV
-  status: corrected
+  status: computed
   d:
   - D725
   - D906
   - D1235
   - D1237
+  - D1239
   depends:
   - sterile_rho
   history:
-  - 'D906: computed'
   - 'D1235: computed'
   - 'D1237: corrected'
+  - 'D1239: computed'
 - id: nstar_e
   layer: 4
   branch:
@@ -448,6 +449,7 @@ nodes:
   - 'D979: corrected'
   - 'D1234: computed'
   - 'D1237: corrected'
+  flag: recheck (D1239, reheat_rho)
 - id: lepto_rho
   layer: 4
   branch:
@@ -492,14 +494,14 @@ nodes:
   - D906
   - D986
   - D1236
+  - D1239
   depends:
   - reheat_rho
   - n_sector_rho
   history:
-  - 'D906: estimate'
   - 'D986: computed'
   - 'D1236: computed'
-  flag: recheck (D1237, reheat_rho)
+  - 'D1239: computed'
 - id: gravitino_wino
   layer: 4
   branch:

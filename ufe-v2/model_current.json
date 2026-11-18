@@ -18,8 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1061: Galactic DM profile (cuspy vs cored) → computed",
-  "D1229: Tests: SO+SPHEREx (~2030), LiteBIRD (~2035) → computed",
   "D1230: Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784) → corrected",
   "D1231: Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4) → frozen",
   "D1233: Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4) → frozen",
@@ -29,12 +27,14 @@
   "D1235: T_R at ρ ≈ 3e8–3e9 GeV → computed",
   "D1236: Leptogenesis at ρ (non-thermal, DI estimate) → computed",
   "D1237: T_R at ρ ≈ 3e8–3e9 GeV → corrected",
-  "D1237: N* for SERAPIS-E ≈ 49.7–50.5 → corrected"
+  "D1237: N* for SERAPIS-E ≈ 49.7–50.5 → corrected",
+  "D1239: Leptogenesis at ρ (non-thermal, DI estimate) → computed",
+  "D1239: T_R at ρ ≈ 3e8–3e9 GeV → computed"
  ],
  "open_rechecks": [
   "Inflaton coupling at ρ (cone splitting)",
   "Dark radiation (doublet-only killed)",
-  "Leptogenesis at ρ (non-thermal, DI estimate)",
+  "N* for SERAPIS-E ≈ 49.7–50.5",
   "Gravitino → wino negligible (Ω_nth ≤ 3e-4, Pradler–Steffen, D809)",
   "Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4)",
   "Wino 0.67–1.85 TeV thermal, 5–41% of DM (post-hoc, D784)",
