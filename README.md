@@ -34,6 +34,9 @@ python tools/release_smoketest.py            # 11 checks against published value
 - **CMB-fit pipeline** — CAMB/AxiCLASS fits used for the earlier Twist tests ([cmb-fit](cmb-fit)).
 - More in progress: Inflation Scorecard, Janus Calculator, SERAPIS prediction tracker.
 
+## Making a release
+`python -m tools.release.prepare` checks everything a release needs (version, all toolkit tests, the smoke test, snapshot outputs, GitHub CI, release notes, a clean tree) and prints READY or what is missing. `python -m tools.release.prepare 2026.12.01` also sets the next version and drafts its notes from the commit log. Publishing stays a manual GitHub step.
+
 ## Check the work
 `sh check_my_work.sh` (Mac/Linux) or `CHECK_MY_WORK.bat` (Windows) re-derives the numbers; `aion check` verifies lock order.
 
