@@ -13848,3 +13848,18 @@ MAP: none
 - **All 25 flags are cleared** with `ladder.py clear`. A ladder update follows.
 VERDICT: 25/25 rechecked. No node changes status. The flag backlog is zero.
 MAP: none
+
+### D1315 — C10: a 3-parameter refit (disc amplitude f_d plus NFW, with r_s bounded to 10–25 kpc) to Eilers+2019 still wants a compact halo. r_s pins to the 10 kpc bound (Q3 FAIL) and χ²/dof = 2.82 (Q1 FAIL); the slope is right (Q2 PASS). Galaxy refit PARKED; McMillan17 stays the default (2026-11-18)
+- [CENTRE · computed] **Lock:** PREREG_C10_refit3. **Result:** field_tests/results/c10_refit3.txt. No deviations.
+- **Statistical errors:** f_d = 0.848, ρ_s = 2.58e7 M☉/kpc³, r_s = 10.00 kpc (**on the bound**).
+  - χ²/dof = 2.82 (McMillan17: 126) → Q1 FAIL; Q3 FAIL.
+  - dv/dR(8.178) = −0.83 → Q2 PASS.
+  - v_c = 229.0 (Horta −1.7σ); κ = 39.0 (Horta +2.6σ; McMillan17 +5.4σ); ρ_DM☉ ≈ 0.36 GeV/cm³.
+- **2%-floor variant:** f_d = 0.918, r_s = 10.00 (bound), χ²/dof = 0.31, dv/dR = −1.13, v_c = 229.9, κ = 38.95.
+- **Reading:**
+  - Freeing the disc amplitude lets the disc shrink by 8–15%, but the declining Eilers curve still pulls the halo as compact as the prior allows (C9, unbounded, went to r_s ≈ 3 kpc).
+  - The data want a different baryon SHAPE (scale length or bulge/bar), not just a different amplitude. That needs a published joint model or more parameters with priors (e.g. the local surface density), which is beyond a cheap tick.
+  - Also, Eilers' v_c ≈ 229 sits 1.5–1.7σ below Horta's 235.3, so the data sets themselves differ.
+- **Decision:** galaxy-model refit PARKED. McMillan17 stays the Star Mapper default (passes Horta's v_c and Ω; slope defect recorded, D1203). Revisit with a published 2025–26 Milky Way mass model fitted to Gaia DR3 rotation-curve data, if one appears.
+VERDICT: Q1 FAIL, Q2 PASS, Q3 FAIL. Not adopted.
+MAP: none
