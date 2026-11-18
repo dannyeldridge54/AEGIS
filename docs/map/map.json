@@ -734,7 +734,7 @@
     "D1231: frozen",
     "D1233: frozen"
    ],
-   "flag": "recheck (D1237, nstar_e)"
+   "flag": "recheck (D1245, band_e_audited)"
   },
   {
    "id": "band_e_audited",
@@ -754,7 +754,8 @@
     "band_e"
    ],
    "history": [
-    "D1245: postulate (PW1)"
+    "D1245: postulate (PW1)",
+    "D1245: postulate"
    ],
    "note": "web loop postulate 1; scored only on future data"
   },
@@ -857,7 +858,7 @@
     "D906: computed",
     "D1229: computed"
    ],
-   "flag": "recheck (D1241, reheat_i)"
+   "flag": "recheck (D1245, band_e_audited)"
   },
   {
    "id": "tests_lhc",

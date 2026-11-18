@@ -581,7 +581,7 @@ nodes:
   - 'D962: computed'
   - 'D1231: frozen'
   - 'D1233: frozen'
-  flag: recheck (D1237, nstar_e)
+  flag: recheck (D1245, band_e_audited)
 - id: band_e_audited
   layer: 5
   branch:
@@ -597,6 +597,7 @@ nodes:
   - band_e
   history:
   - 'D1245: postulate (PW1)'
+  - 'D1245: postulate'
   note: web loop postulate 1; scored only on future data
 - id: caps
   layer: 5
@@ -676,7 +677,7 @@ nodes:
   - 'D752: computed'
   - 'D906: computed'
   - 'D1229: computed'
-  flag: recheck (D1241, reheat_i)
+  flag: recheck (D1245, band_e_audited)
 - id: tests_lhc
   layer: 5
   branch:
