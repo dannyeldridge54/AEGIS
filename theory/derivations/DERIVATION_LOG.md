@@ -1828,3 +1828,4 @@ Touches: none.
 ## D1234: NA2 — mnu Σ = 0.05878 eV from NuFIT 6.0 PASS; Janus relation off by 3–4 % (not D689's 13–16 %) FAIL-as-locked; nstar_e node still pre-D979: corrected 49.88–50.64 (FAIL-as-locked); D1233a correction
 ## D1235: NA3 — reheat_rho: m_φ = 3.17e13 (not 2.2e13); D725 couplings normalised for K = −3 ln while SERAPIS-E's inflaton has n = 1 → T_R ×2.1, N* 50.1–51.3; flag reheat_rho, nstar_e, lepto_rho
 ## D1236: NA4 — lepto_rho rescaled by NA3: Y_B ×1.44–1.98; c = 0.3 M_H = 1e12 → 1.03e-10 (passes, conditional on NA3 caveat); κ recheck needed where M/T_R < 500; wino window BLOCKED (EOS table host refused by proxy)
+## D1237: NA5 — the ρ decays are the inflaton's (flavour modulus = inflaton); D721/D722 scripts used n = 1 for V and n = 3 for couplings → NA3 correction stands; taint list D720–D982 queued for one rerun lock

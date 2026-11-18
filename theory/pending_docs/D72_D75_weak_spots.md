@@ -12841,3 +12841,13 @@ Y_B ∝ (T_R/m_φ)·ε (D731 form); ε (D775 CI grid) does not depend on T_R or 
 Reading: if NA3's √3 normalisation holds (inflaton = flavour modulus, weight 1), ρ-leptogenesis passes in every M_H = 1e12 case, removing D775's c ≳ 1 condition — but this rests on NA3's caveat (which modulus the 2⊕1 sector uses) and a κ recheck. Not adopted: status stays "computed (D986)" with a flag.
 Wino window (phase 5): BLOCKED — the Saikawa–Shirai g*(T) table (member.ipmu.jp/satoshi.shirai/EOS2018, standardmodel2018.dat) is refused by the egress proxy from both the cloud and the PC link; needs Danny to save the file or allow the domain.
 MAP: node=lepto_rho status=computed touches=[C_lepto] ripple=yes
+
+## D1237 — CENTRE — NA5 node audit, phase 5: NA3's caveat RESOLVED — the ρ-branch decays ARE SERAPIS-E's inflaton through the flavour modulus, and two scripts used two Kähler weights for the same field
+Lock: field_tests/rules/PREREG_NA5_canonical_factor_audit.md. Results: field_tests/results/na5_canonical_audit.txt. [code/text audit, deterministic]
+1. D721–D722 explicitly treat φ → N N as SERAPIS-E's inflaton decaying through the Γ2-doublet flavour modulus at ρ ("SERAPIS-E is NOT sterile at ρ"). So the inflaton is the flavour modulus and its canonical factor is the inflaton's own.
+2. phi_n2n2_d722.py and tr_takagi_d721.py map the SERAPIS-E potential with y = e^{√2 φ} (n = 1) AND convert couplings with y√(2/3) (n = 3) in the same file → INCONSISTENT. tr_2p1_d725.py inherits the n = 3 factor.
+Consequence: NA3's corrected chain stands (couplings ×√3, m_φ = 3.17e13): T_R 6.6e8–2.0e10 GeV, N* 50.1–51.3; NA4's yields ×1.44–1.98 become the working values pending the κ recheck (M/T_R < 500 rows).
+3. Taint list (m_φ = 2.2e13 and/or √(2/3)): D720, D721, D722, D725, D731, D745/D775, D753, D776, D791, D878, D982. Each needs a recheck with m_φ = 3.17e13 (and ×√3 couplings where the inflaton couples through τ). Frozen predictions unchanged (post-hoc).
+Status: reheat_rho → corrected (pending reruns); nstar_e → corrected window 50.1–51.3 (exact end + n = 1); lepto_rho → flag kept until the κ recheck. ACCURACY_QUEUE: add "ρ-chain rerun with n = 1, m_φ = 3.17e13" (one lock covering D722/D725/D775/D982).
+MAP: node=reheat_rho status=corrected touches=[nstar_e, lepto_rho, sterile_rho, darkrad_rho] ripple=yes
+MAP: node=nstar_e status=corrected touches=[band_e, C_nstar] ripple=yes
