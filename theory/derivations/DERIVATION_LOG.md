@@ -2177,3 +2177,8 @@ Touches: none.
 ## D1358: extension route closed
 1. [literature] 2305.09587: scalar perturbations have μ = μ̃ = 1 at both ends → unique square-integrable BCs; their spectrum M² ≃ (π/z_m)²[n(n+1) − 7/8] is an estimate.
 2. [derived] Our ξ₁ → 0 limit is that unique solution; the ≈3.4% common gap to BTR's two-figure "≈" values is not a boundary-condition choice.
+
+## D1359: Moonshine layer
+1. [derived] Exact j series: c₀ = 744 = 3·(240 + 8) = 3 dim E8; c₁ − 196560 (Leech kissing) = 324.
+2. [literature] McKay/Thompson: 196884 = 1 + 196883; 21493760 = 1 + 196883 + 21296876 (Monster representations).
+3. [derived] Heterotic 16 = rank E8⊕E8 = rank D16⁺ (isospectral to 2.7e-13); bosonic 24 = Leech rank (no roots); j(i) = 1728 from the series ties the layer to the τ = i vacuum.

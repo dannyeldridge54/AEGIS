@@ -14328,3 +14328,13 @@ MAP: node=S_kk10 status=corrected touches=[] ripple=no
 - Check against our notes: D1357 showed our ξ₁-cut Dirichlet masses rise toward a limit (≈0.938, 2.054) as ξ₁ → 0 — that limit IS the unique square-integrable solution, so the extension cannot move it. The remaining gap to BTR's "m₁ ≈ 0.97 π/L, m₂ ≈ 2.13 π/L" (≈ −3.3%, −3.6%, common scale, ratio agrees) must come from how BTR's approximate values were obtained or from a difference in the operator normalisation not yet found — not from boundary conditions or cut-offs.
 - Verdict: extension hypothesis REJECTED (literature). Open circuit stays OPEN, re-labelled "literature precision": BTR quote two-figure "≈" values and the companion paper's own spectrum is an estimate. No tolerance changed. Possible close-out: ask the authors, or locate an exact numerical spectrum in later work.
 MAP: node=S_kk10 status=corrected touches=[] ripple=no
+
+## D1359 — CENTRE / DEEP: new territory past the SUSY shell — the Moonshine layer (26D string, heterotic 16, Leech, Klein's j, the Monster): 7 exact links, all closed; j(i) = 1728 ties it down to the τ = i vacuum (2026-11-19)
+- Danny 17:37 CT: "extend past that into new territory". Built as the seventh circuit layer (A2 → D4 → E8 → Leech → 10D → SUSY → Moonshine). These are MATHEMATICAL identities linking objects already in the ladder, not physics predictions.
+- New exact tool: tools/serapis_calc/jseries.py (registry modular_j) — j = E4³/Δ as an integer power series: 744, 196884, 21493760, 864299970, 20245856256, 333202640600 (test in CI).
+- [derived] c₀ = 744 = 3 × dim E8 = 3 × (240 roots from the lattice tool + rank 8). [literature] McKay: c₁ = 196884 = 1 + 196883 (smallest nontrivial Monster representation); Thompson: c₂ = 21493760 = 1 + 196883 + 21296876. [derived] Conway: c₁ − 196560 (Leech kissing number, lattice tool) = 324 exactly.
+- [derived] Heterotic: 26 − 10 = 16 internal dimensions; E8⊕E8 and D16⁺ are both self-dual and isospectral (energy ratio 1 to 2.7e-13 at every scale) — the X_d16 node's tie seen from the string side. Bosonic: 26 − 2 = 24 transverse dimensions = Leech rank; Leech has no norm-2 roots (shells: norm 4 → 196560).
+- [derived] Down-link: Σ cₙ e^(−2πn) (n ≤ 12) = 1728.0 = j(i): the τ = i vacuum of the variant potential (D1351, V ∝ |j − 1728|) sits exactly at the value moonshine's j takes at the square lattice.
+- A8d re-validated on today's parallel mapper code (M1–M4 PASS, field_tests/results/janus_astro_a8d.txt).
+- Circuit 53 laws, 51 closed (open: BTR literature precision; wino window upper edge, flagged for its owner).
+MAP: node=vac_i status=computed touches=[] ripple=no
