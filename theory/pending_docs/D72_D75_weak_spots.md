@@ -14041,3 +14041,13 @@ MAP: none
   - The cloud tree uses no DataLink calls (grep: none). The PC tree is unchecked (not touched).
 - The DR4 data model is not public yet, so the rule "no code changes before release" stands. Node mapper_dr4 stays open.
 MAP: node=mapper_dr4 status=open touches=[] ripple=no
+
+## D1331 — A tick (inflation): no new CMB n_s data since D1274; 2610.37383 restates the combined numbers, and the frozen SERAPIS-E band sits within 1σ of both (2026-11-18)
+- [LITERATURE] Searched for new n_s results (Nov 2026; one extended search).
+  - Only new combination paper: Wang, Zhou, Chen, Li, arXiv:2610.37383 (single-field models vs ACT/SPT).
+  - It quotes Planck+ACT+BK+DESI n_s = 0.9743 ± 0.0034 and +SPT 0.9728 ± 0.0027 (68%), and BK r < 0.036.
+  - These are compilations of the published combinations (cf. 2506.20707, 2512.05108 in D1274), not a new data release.
+- [arithmetic] Frozen band n_s 0.97176–0.97493 (D1274): −0.75σ…+0.19σ vs 0.9743±0.0034; −0.38σ…+0.79σ vs 0.9728±0.0027. Consistent with D1274's CMB-SPA+DESI range (−0.78…+0.79σ). The CMB-SPA-only tension (1–2σ) is unchanged.
+- Not new: the paper's Starobinsky point (n_s 0.961–0.967 for N 50–60, "slightly below the 2σ lower limit") is the same pressure on R² that is already logged.
+- Verdict: NULL for new data. Nothing changes.
+MAP: none
