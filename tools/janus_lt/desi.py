@@ -2,7 +2,11 @@
 """L3: DESI DR2 BAO likelihood (Table IV of arXiv:2503.14738, data/desi/dr2_bao_table4.txt)."""
 import math, numpy as np
 from .background import C_KMS
-def load(path='data/desi/dr2_bao_table4.txt'):
+def load(path=None):
+    import os, sys
+    if path is None:
+        base = getattr(sys, '_MEIPASS', None) or os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        path = os.path.join(base, 'data', 'desi', 'dr2_bao_table4.txt')
     rows = []
     for l in open(path):
         if l.startswith('#') or not l.strip(): continue

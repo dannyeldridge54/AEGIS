@@ -14,6 +14,9 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   hyperion bbn <omega_b h^2> [dNeff]   primordial helium Y_p and D/H (PRIMAT 2021 tables; needs camb)
   hyperion orbit <ra> <dec> <dist_pc> <pmra> <pmdec> <rv> [McMillan17|MWPotential2014]
                                     3 Gyr Milky Way orbit of one star: r_peri, r_apo, z_max, eccentricity
+  late dist <z> [H0 ombh2 omch2 w0 wa mnu]   comoving / angular / Hubble distances and H(z) (default Planck 2018)
+  late desi [w0 wa H0 ombh2 omch2 rd]       chi-square of a w0-wa cosmology against DESI DR2 BAO (13 points)
+  late growth <z> [H0 ombh2 omch2 w0 wa]    linear growth D(z)/D(0) and growth rate f(z)
   scorecard --ns <n_s> [--r <r>] [--alpha-s <a>] [--label <name>]
                                     score an inflation model against every current CMB/LSS constraint (Inflation Scorecard)
   license                           show license terms
@@ -107,6 +110,39 @@ def scorecard(args):
     if not args: args = ['--help']
     scorecard_main(args)
 
+LATE_DEF = dict(H0=67.66, ombh2=0.02242, omch2=0.11933, w0=-1.0, wa=0.0, mnu=0.06)
+def _late_cosmo(vals, keys):
+    from tools.janus_lt.background import Cosmo
+    p = dict(LATE_DEF); p.update({k: float(v) for k, v in zip(keys, vals)})
+    if not 20 < p['H0'] < 120: raise ValueError('H0 should be in km/s/Mpc, 20 to 120')
+    if not (0 < p['ombh2'] < 0.1 and 0 < p['omch2'] < 0.5): raise ValueError('ombh2 and omch2 are physical densities (Planck: 0.0224 and 0.120)')
+    return Cosmo(p['H0'], p['ombh2'], p['omch2'], w0=p['w0'], wa=p['wa'], mnu=p['mnu'], Neff=3.046), p
+
+def late(args):
+    if not args or args[0] not in ('dist', 'desi', 'growth'): print(__doc__); return
+    c = args[0]
+    if c == 'dist':
+        if len(args) < 2: raise ValueError('dist needs a redshift, e.g. aegis late dist 1.0')
+        z = float(args[1]);
+        if not 0 <= z <= 1e4: raise ValueError('redshift must be between 0 and 10000')
+        C, p = _late_cosmo(args[2:], ['H0', 'ombh2', 'omch2', 'w0', 'wa', 'mnu'])
+        DM = C.DM(z); DH = C.DH(z) if z > 0 else C.DH(0)
+        _show({'z': z, 'params': p, 'D_M_comoving_Mpc': DM, 'D_A_angular_Mpc': DM/(1 + z), 'D_L_luminosity_Mpc': DM*(1 + z), 'D_H_Mpc': DH, 'H_z_kms_Mpc': C.H(z),
+               'note': 'flat FLRW, photons + 3.046 neutrino species (one massive), CPL dark energy w0 + wa(1-a); agrees with astropy Planck18 to 3e-5'})
+    elif c == 'desi':
+        from tools.janus_lt import desi
+        vals = args[1:]; rd = float(vals[5]) if len(vals) > 5 else 147.09
+        C, p = _late_cosmo(vals[:5], ['w0', 'wa', 'H0', 'ombh2', 'omch2'])
+        rows = desi.load(); x2 = desi.chi2(C, rd, rows); n = sum(1 if r[5] != r[5] else 2 for r in rows)
+        _show({'params': p, 'r_d_Mpc': rd, 'chi2': x2, 'n_points': n, 'data': 'DESI DR2 BAO, arXiv:2503.14738 Table IV',
+               'note': 'r_d fixed (default Planck 2018: 147.09 Mpc); no fitting is done here'})
+    else:
+        if len(args) < 2: raise ValueError('growth needs a redshift, e.g. aegis late growth 0.5')
+        from tools.janus_lt.growth import growth
+        z = float(args[1]); C, p = _late_cosmo(args[2:], ['H0', 'ombh2', 'omch2', 'w0', 'wa'])
+        D, f = growth(C, [z])[z]
+        _show({'z': z, 'params': p, 'D_over_D0': float(D), 'growth_rate_f': float(f), 'note': 'scale-independent linear growth (no neutrino free-streaming)'})
+
 def lattice(args):
     from tools.lattice import lattice_lab
     lattice_lab.main(args)
@@ -132,6 +168,8 @@ def menu(args):
              ('Janus: inflation observables for a potential', lambda: janus([input('  V(phi), e.g. 0.5*phi**2: '), input('  N* [55]: ') or '55'])),
              ('Hyperion: primordial helium and deuterium', lambda: hyperion(['bbn', input('  omega_b h^2 [0.02237]: ') or '0.02237', input('  extra N_eff [0]: ') or '0'])),
              ('Hyperion: Milky Way orbit of one star', lambda: hyperion(['orbit'] + [input(f'  {q}: ') for q in ('ra (deg)', 'dec (deg)', 'distance (pc)', 'pmra (mas/yr)', 'pmdec (mas/yr)', 'radial velocity (km/s)')])),
+             ('Late universe: distances to a redshift (Planck 2018)', lambda: late(['dist', input('  redshift z: ')])),
+             ('Late universe: score w0, wa against DESI DR2 BAO', lambda: late(['desi', input('  w0 [-1]: ') or '-1', input('  wa [0]: ') or '0'])),
              ('Inflation Scorecard: score n_s and r against current data', lambda: scorecard(['--ns', input('  n_s: '), '--r', input('  r [0]: ') or '0'])),
              ('Show license', lambda: license_([]))]
     while True:
@@ -146,7 +184,7 @@ def menu(args):
 
 def main(argv=None):
     _root(); argv = sys.argv[1:] if argv is None else argv
-    cmds = {'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
+    cmds = {'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'test': test, 'license': license_, 'menu': menu}
     if not argv: return menu([])
     if argv[0] in ('-h', '--help', 'help') or argv[0] not in cmds: print(__doc__); return
     try: cmds[argv[0]](argv[1:])

@@ -227,6 +227,56 @@ Output:
 ```
 r_peri / r_apo: closest and farthest distance from the Galactic centre over 3 Gyr; z_max: greatest height above the disc; eccentricity 0 = circular. The same code computes the Star Mapper orbit feed (validated by lock A8d).
 
+## Late universe: distances to redshift 1 (Planck 2018 cosmology)
+Optional extra arguments, in order: H0, ω_b, ω_c, w0, wa, Σm_ν. Checked against astropy's Planck18 to 3 parts in 100,000.
+```
+aegis late dist 1.0
+```
+Output:
+```
+{
+ "z": 1.0,
+ "params": {
+  "H0": 67.66,
+  "ombh2": 0.02242,
+  "omch2": 0.11933,
+  "w0": -1.0,
+  "wa": 0.0,
+  "mnu": 0.06
+ },
+ "D_M_comoving_Mpc": 3395.6712667990764,
+ "D_A_angular_Mpc": 1697.8356333995382,
+ "D_L_luminosity_Mpc": 6791.342533598153,
+ "D_H_Mpc": 2485.2619968153786,
+ "H_z_kms_Mpc": 120.62811018884723,
+ "note": "flat FLRW, photons + 3.046 neutrino species (one massive), CPL dark energy w0 + wa(1-a); agrees with astropy Planck18 to 3e-5"
+}
+```
+
+## Late universe: an evolving dark energy (w0 = −0.75, wa = −0.86) against DESI DR2 BAO
+```
+aegis late desi -0.75 -0.86
+```
+Output:
+```
+{
+ "params": {
+  "H0": 67.66,
+  "ombh2": 0.02242,
+  "omch2": 0.11933,
+  "w0": -0.75,
+  "wa": -0.86,
+  "mnu": 0.06
+ },
+ "r_d_Mpc": 147.09,
+ "chi2": 13.189449685391663,
+ "n_points": 13,
+ "data": "DESI DR2 BAO, arXiv:2503.14738 Table IV",
+ "note": "r_d fixed (default Planck 2018: 147.09 Mpc); no fitting is done here"
+}
+```
+For comparison, ΛCDM (`aegis late desi`) gives χ² = 26.5 on the same 13 numbers, so these values fit the DESI BAO points better, as DESI reported. r_d is held fixed; nothing is fitted. `aegis late growth 0.5` gives the linear growth factor and rate.
+
 ## Inflation Scorecard: SERAPIS-E's band against current data
 Needs `pyyaml`. Give n_s as one value or a min-max band; add `--r`, `--alpha-s`, `--neff`, `--sum-mnu` as wanted. `--out file.md` saves the table.
 ```
