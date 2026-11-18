@@ -13528,3 +13528,13 @@ So the flip rule (D1278) now holds against the whole field, not just pairwise: i
 to its own dual exactly at the self-dual scale. Dimension chain of champions: 2 hex (A2, self-dual) · 3 FCC/BCC (A3=D3 / dual) ·
 4 D4 (self-dual) · 5 D5/D5* · 6 E6/E6* · 7 E7/E7* · 8 E8 (self-dual). Caveat: only these families were compared.
 Files: field_tests/lattice_winners_d6_d7.py, field_tests/results/lattice_winners_d6_d7_2026-11-18.txt.
+
+## D1287 — CORRECTION to D1276–D1278, D1282, D1283, D1285, D1286: wrong MAP node — the lattice/shape results belong to the SERAPIS-E vacuum, not the heavy-ν sector (2026-11-18)
+MAP: node=serapis_e status=computed
+LABEL: correction (bookkeeping only; no number changes).
+Those notes carried "MAP: node=n_sector_rho", but n_sector_rho in theory/map/map.yaml is "Heavy-ν sector at ρ: 2⊕1, weight-2 mixing"
+— a neutrino-sector node. The lattice results (hexagon wins, flip rule, E6/E7, Narain shape match, trapping) are about the SHAPE of
+the inflaton torus and its vacuum, i.e. the serapis_e node (potential monotone in E(τ,2), vacuum at ρ; D1280 already mapped there).
+Read all of them as mapped to serapis_e. The n_sector_rho history entries they created stay on file (no silent edits) but carry no
+claim about the neutrino sector; its status is unchanged by them. The web's LATTICE lane already links X_d2 → serapis_e/n_sector_rho;
+the n_sector_rho link is re-pointed to vac_rho in the same commit. Rule for future lattice notes: MAP node=serapis_e.

@@ -252,14 +252,14 @@ nodes:
   - D906
   - D1246
   - D1280
+  - D1287
   depends:
   - plateau_origin
   - bhk_tilt
   history:
-  - 'D906: computed'
   - 'D1246: computed'
   - 'D1280: computed'
-  flag: recheck (D1275b, bhk_tilt)
+  - 'D1287: computed'
 - id: janus
   layer: 2
   branch:
@@ -502,7 +502,7 @@ nodes:
   - 'D1237: corrected'
   - 'D1258: corrected'
   - 'D1262: corrected'
-  flag: recheck (D1286, n_sector_rho)
+  flag: recheck (D1287, serapis_e)
 - id: lepto_rho
   layer: 4
   branch:
@@ -627,7 +627,7 @@ nodes:
   - 'D962: computed'
   - 'D1231: frozen'
   - 'D1233: frozen'
-  flag: recheck (D1286, n_sector_rho)
+  flag: recheck (D1287, serapis_e)
 - id: band_e_audited
   layer: 5
   branch:
@@ -645,7 +645,7 @@ nodes:
   - 'D1245: postulate (PW1)'
   - 'D1245: postulate'
   note: web loop postulate 1; scored only on future data
-  flag: recheck (D1286, n_sector_rho)
+  flag: recheck (D1287, serapis_e)
 - id: serapis_point
   layer: 5
   branch:
@@ -667,7 +667,7 @@ nodes:
   - 'D1273: postulate'
   - 'D1273a: postulate'
   note: web loop postulate 2; scored only on future data
-  flag: recheck (D1286, n_sector_rho)
+  flag: recheck (D1287, serapis_e)
 - id: vac_discriminant
   layer: 5
   branch:
@@ -686,7 +686,7 @@ nodes:
   - 'D1263: postulate PW3 killed by its locked test'
   - 'D1263: killed'
   note: web loop postulate 3; kept on the web as killed
-  flag: recheck (D1286, n_sector_rho)
+  flag: recheck (D1287, serapis_e)
 - id: m32_window
   layer: 5
   branch:
@@ -704,7 +704,7 @@ nodes:
   - 'D1264: postulate PW4 passed its locked test'
   - 'D1264: postulate'
   note: web loop postulate 4 (pattern covariant ↔ eps_tilt)
-  flag: recheck (D1286, n_sector_rho)
+  flag: recheck (D1287, serapis_e)
 - id: string_meter
   layer: 5
   branch:
@@ -725,7 +725,7 @@ nodes:
   - 'D1265a: postulate'
   - 'D1265b: postulate'
   note: web loop postulate 5
-  flag: recheck (D1286, n_sector_rho)
+  flag: recheck (D1287, serapis_e)
 - id: inverse_meter
   layer: 5
   branch:
@@ -741,7 +741,7 @@ nodes:
   - 'D1268: postulate PW6 passed'
   - 'D1268: postulate'
   note: web loop postulate 6
-  flag: recheck (D1286, n_sector_rho)
+  flag: recheck (D1287, serapis_e)
 - id: instanton_MH
   layer: 5
   branch:
@@ -759,7 +759,7 @@ nodes:
   - 'D1270: postulate PW7 killed (benchmark M_H incompatible with ρ leptogenesis)'
   - 'D1270: killed'
   note: web loop postulate 7
-  flag: recheck (D1286, n_sector_rho)
+  flag: recheck (D1287, serapis_e)
 - id: caps
   layer: 5
   branch:
@@ -846,7 +846,7 @@ nodes:
   - 'D1256: computed'
   - 'D1260: computed'
   - 'D1261: computed'
-  flag: recheck (D1286, n_sector_rho)
+  flag: recheck (D1287, serapis_e)
 - id: tests_lhc
   layer: 5
   branch:

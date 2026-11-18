@@ -134,8 +134,8 @@ for a, b, ref, v, sg in (
     ('X_moduli', 'X_d2', 'D1279', 'first dimension with a shape choice', 1),
     ('X_rule', 'X_narain', 'D1283', 'T-duality = Poisson', 1), ('X_narain', 'X_su3', 'arXiv:2206.14825', '', 1),
     ('X_su3', 'X_d2', 'D1283', 'same hexagonal shape', 1), ('X_trap', 'X_su3', 'D1285', 'selects shape+size', 1),
-    ('X_d2', 'n_sector_rho', 'D1280', 'SERAPIS-E vacuum = hexagonal (V monotone in E(τ,2))', 1),
-    ('X_d2', 'n_sector_i', 'D1280', 'square τ=i is a saddle', -1),
+    ('X_d2', 'vac_rho', 'D1280, D1287', 'SERAPIS-E vacuum = hexagonal (V monotone in E(τ,2))', 1),
+    ('X_d2', 'vac_i', 'D1280, D1287', 'square τ=i is a saddle', -1),
     ('X_su3', 'serapis_e', 'D1283', 'shape matches, size does not', -1)):
     edge(a, b, 'lattice', sg, ref, v)
 out = dict(nodes=list(N.values()), edges=E, lanes=['left', 'centre', 'right', 'theory', 'janus', 'strings', 'wiring', 'lattice'])

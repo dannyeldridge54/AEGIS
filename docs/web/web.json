@@ -2299,19 +2299,19 @@
   },
   {
    "s": "X_d2",
-   "t": "n_sector_rho",
+   "t": "vac_rho",
    "kind": "lattice",
    "sign": 1,
-   "ref": "D1280",
+   "ref": "D1280, D1287",
    "verdict": "SERAPIS-E vacuum = hexagonal (V monotone in E(τ,2))",
    "source": "curated"
   },
   {
    "s": "X_d2",
-   "t": "n_sector_i",
+   "t": "vac_i",
    "kind": "lattice",
    "sign": -1,
-   "ref": "D1280",
+   "ref": "D1280, D1287",
    "verdict": "square τ=i is a saddle",
    "source": "curated"
   },

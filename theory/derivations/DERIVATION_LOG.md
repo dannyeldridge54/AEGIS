@@ -1972,3 +1972,7 @@ Touches: none.
 3. [derived] By Poisson, Eₙ* has the lowest energy for all α<1; every L/L* pair ties at α=1 to ≤9e-14.
 4. [derived] Zⁿ is last at every α; the order E > E* > D > (A, D*) > A* > Z holds at every α>1 tested.
 5. [derived] Champion chain d=2…8: hex, FCC/BCC, D4, D5/D5*, E6/E6*, E7/E7*, E8 — self-dual champions never hand over; the others hand over to their own dual exactly at α=1.
+
+## D1287: CORRECTION — lattice notes D1276–D1286 belong to the serapis_e map node, not n_sector_rho (heavy-ν sector) (2026-11-18)
+1. [derived] n_sector_rho is the heavy-neutrino sector node; the lattice results concern the inflaton torus shape and vacuum.
+2. [derived] Re-map them to serapis_e; no numbers change; future lattice notes use node=serapis_e.
