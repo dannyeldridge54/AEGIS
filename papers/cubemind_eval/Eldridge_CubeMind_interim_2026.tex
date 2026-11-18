@@ -5,30 +5,32 @@
 \author{Danny Eldridge}
 \email{dannyeldridge54@gmail.com}
 \affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
-\date{18 November 2026}
+\date{18 November 2026 (v2: referee corrections)}
 \begin{abstract}
-CubeMind is a small research assistant that runs on a home PC. A local open-weight language model proposes falsifiable hypotheses about a string-cosmology model, the system stores them in an append-only memory, and it builds a web of linked results. A second AI (Claude) acts as the grader: it checks each proposal with real computation or literature and records a verdict. We report the first night (17--18 November 2026), honestly and without promotion. Of 10 proposals graded, none was promoted. Four were tautologies, three were falsified by exact calculation, two mixed categories, and one was ill-posed. Three engineering fixes changed the kind of proposals the system makes. Rules against tautology moved it from restating stored numbers to falsifiable claims about new inputs. Correcting how it ingests notes (a header-format mismatch and a stale copy missing 51 sections) moved it from fixating on one parameter to engaging the newest work. Making correction notes supersede what they retract stopped it from learning withdrawn claims as evidence. The most useful finding so far is a failure mode: confident category errors, such as asking for a ``SERAPIS-$E$ vacuum in $d$ dimensions'' when the model has one two-dimensional modulus. The system is not yet self-sufficient. The grader stays in the loop until proposals start to survive.
+CubeMind is a small research assistant that runs on a home PC. A local open-weight language model proposes hypotheses about a string-cosmology model, the system stores them in an append-only memory, and it links them into a web of results. A second AI (Claude) acts as the grader. It judges each proposal and checks every numerical claim against the project's exact calculation pipeline. ``Self-learning'' here means that the memory grows; the model's weights never change, and every fix described below was made by the developers, not by the system. We report the first night (17--18 November 2026). In the window analysed (grading passes 1--5), 10 proposals were graded and none was promoted. Four were tautologies, three were contradicted by exact calculation, two mixed categories, and one was ill-posed; one more was still open. Six more were graded later the same morning and all were rejected, so the total is 0 promoted out of 16. The kind of proposal changed after each of three engineering fixes. After rules against tautology, it stopped restating stored numbers. After the note ingest was repaired and correction notes were made to supersede what they retract, it stopped fixating on one parameter. With one to four proposals per phase and no control run, these are observations, not measured effects. The most informative failure is the confident category error, such as asking for a ``SERAPIS-$E$ vacuum in $d$ dimensions'' when the model has one two-dimensional modulus. The system is not self-sufficient, and the grader stays in the loop.
 \end{abstract}
-\keywords{AI-assisted research; automated hypothesis generation; local language models; evaluation; falsifiability; append-only memory; research workflow; string cosmology}
+\keywords{AI-assisted research; automated hypothesis generation; local language models; LLM-as-a-judge; evaluation; falsifiability; append-only memory; string cosmology}
 \maketitle
 
 \section{Set-up}
-\emph{Learner.} A loop on a Windows PC (WSL, two cores, local Ollama with a 30B coder model) runs a cycle every 2--6 minutes:
+\emph{Learner.} A loop on a Windows PC (WSL, local Ollama with a 30B coder model, configured as qwen3-coder:30b) runs a cycle about every 2--4 minutes:
 \begin{itemize}
 \item ingest new derivation notes;
 \item pull results from a shared tool registry (the ``result bus'');
 \item propose one hypothesis as JSON: gap, prediction, check, importance;
 \item attach it as a node to a web of results.
 \end{itemize}
-Memory is append-only. A record is never edited; it is superseded by a later record that names it. A watchdog restarts the loop, and the loop exits by itself when its code changes, so fixes deploy without anyone at the machine.
+Memory is append-only. A record is never edited; it is superseded by a later record that names it. A watchdog restarts the loop, and the loop exits by itself when its code changes, so fixes deploy without anyone at the machine. The model's weights are never updated. All of the ``learning'' reported here is memory accrual plus prompt and pipeline changes made by the developers.
 
-\emph{Grader.} A cloud session reads open proposals over a device bridge. It judges novelty, soundness and whether a search is needed, and gives one of four verdicts: PROMOTE, PARK, REJECT or SEARCH. Every verdict is checked by computation (an exact Mukhanov--Sasaki pipeline, lattice sums) or by literature. Rejections are written as superseding records with a reason, and verdicts are logged in a public index~\cite{AEGIS}.
+\emph{Grader.} A cloud session (Claude, Anthropic) reads open proposals over a device bridge. It judges novelty, soundness and whether a search is needed, and gives one of four verdicts: PROMOTE, PARK, REJECT or SEARCH. Every numerical claim is checked against the project's exact Mukhanov--Sasaki pipeline, whose agreement with the fast emulator was re-verified the same night ($|\Delta n_s|\le3.2\times10^{-5}$). Tautologies and category errors were judged by reading the proposal against the stored records and the model's definition. ``Falsified'' therefore means contradicted by the model's own exact calculation, not by observational data. Rejections are written as superseding records with a reason, and verdicts are logged in a public index~\cite{AEGIS}.
+
+\emph{Related work.} Proposer--evaluator loops with a language model are established. In FunSearch an LLM proposes programs and an automatic scorer evaluates them~\cite{FunSearch}. ``The AI Scientist'' automates the research cycle end to end~\cite{AIScientist}, and a large human study compared LLM-generated research ideas with experts' ideas~\cite{Si}. Using an LLM as a grader has known biases, including a preference for its own outputs~\cite{Zheng,Panickssery}. Tool-using language models~\cite{Toolformer,ReAct} and feeding failure reasons back into the prompt~\cite{Reflexion} are the closest precedents for the upgrades listed under Status. This report adds only a small, fully logged case study from a single machine.
 
 \section{What happened}
 Table~\ref{tab:g} summarises the grading.
 
 \begin{table}[b]
-\caption{Proposals graded on the first night.}
+\caption{Proposals graded in the analysed window (passes 1--5 of the grading log; report frozen 18 Nov, 11:14 UTC). The open item was falsified in pass 6 (Note added).}
 \label{tab:g}
 \begin{ruledtabular}\footnotesize
 \begin{tabular}{lcl}
@@ -38,34 +40,52 @@ Falsified & 3 & predicted $r$ 3.1--3.7e-4; exact 4.38--4.80e-4\\
 Category error & 2 & ``SERAPIS-$E$ vacuum in $d=7$''\\
 Ill-posed & 1 & moduli product ($\approx780$) read as ``3\%''\\
 Promoted & 0 & ---\\
-Open & 1 & $r$ at $T_R=5\times10^7$ GeV (pending)
+Open & 1 & $r$ at $T_R=5\times10^7$ GeV (pending at cutoff)
 \end{tabular}
 \end{ruledtabular}
 \end{table}
 
 \emph{Phase 1, tautology.} The first proposals restated numbers already in memory and offered to ``check'' them by rerunning the same deterministic function. They were grounded (no invented numbers) but empty. \emph{Fix:} four hard rules in the prompt. Do not restate stored values. A check must not be a rerun with the same inputs. The hypothesis must involve a new input, relation, sensitivity or cross-check. It must state what result would falsify it.
 
-\emph{Phase 2, falsifiable but wrong.} Proposals became genuine predictions, and the exact pipeline falsified them. One was off by 3.6 decades in reheating temperature; another predicted an $n_s$ outside its own range. This is the intended behaviour: the claims were cheap to test and they failed honestly.
+\emph{Phase 2, falsifiable but wrong.} The next proposals were genuine predictions, and the exact pipeline contradicted them. One was off by about 3.6 decades in reheating temperature. Another predicted $n_s$ in 0.9740--0.9750, but the exact value is 0.97219. This is the intended behaviour: the claims were cheap to test, and they failed in the open.
 
-\emph{Phase 3, fixation, then diversity.} Three proposals in a row circled one parameter value ($M_H=1.2\times10^{13}$). The cause was in memory, not in the model. Its copy of the derivation log was stale and missing 51 recent sections, and 32 older headers were invisible to the parser. Once the full log was installed and the parser fixed, proposals began engaging the newest work on lattices and the spectral index.
+\emph{Phase 3, fixation, then diversity.} Three proposals in a row circled one parameter value ($M_H=1.2\times10^{13}$ GeV). At the same time we found that the learner's copy of the derivation log was stale, missing 51 recent sections, and that 32 older headers were invisible to its parser. Once the full log was installed and the parser fixed, the next proposals engaged the newest notes on lattices and the spectral index. Missing input is the likely cause, but three proposals and no control cannot separate it from chance or from the prompt changes made at the same time.
 
-\emph{Phase 4, category errors.} The new proposals mixed concepts: lattice-in-$d$ results with a potential that has one modulus, and a moduli product read as a percentage. \emph{Fix:} two more prompt rules naming these traps.
+\emph{Phase 4, category errors.} The new proposals mixed concepts. One combined lattice-in-$d$ results with a potential that has one modulus; another read a moduli product as a percentage. \emph{Fix:} two more prompt rules naming these traps. In pass 6 they stopped the $d$-dimension error but not category mixing in general (Note added).
 
 \section{Lessons}
 \begin{enumerate}
-\item \textbf{Memory quality bounds proposal quality.} The worst behaviour (fixation) came from missing input, not from the model.
+\item \textbf{Memory quality can bound proposal quality.} The fixation coincided with missing input, and it stopped once the input was restored. This is suggestive, not shown.
 \item \textbf{Retractions must be first-class.} Without supersession, a corrected claim stays in memory as evidence. Correction notes now automatically supersede what they retract.
-\item \textbf{The deploy path is part of the experiment.} One file-transfer path silently delivered a stale cached copy whenever a staged file name was reused, so the learner ran old code. Unique, content-hashed names plus an md5 check on arrival fixed it.
-\item \textbf{A grader is still needed.} No proposal has survived. The next upgrade is to give the proposer the registry's tool list, so that every check it writes can actually be run.
+\item \textbf{The deploy path is part of the experiment.} One file-transfer path delivered a stale cached copy when a staged file name was reused. We observed this directly for one file, and we attribute the earlier runs of old code to the same mechanism. Unique, content-hashed names plus an md5 check on arrival fixed it.
+\item \textbf{A grader is still needed.} No proposal has survived. Giving the proposer the registry's tool list, so that every check it writes can actually be run, was the planned next step (deployed after the cutoff; see Note added).
 \end{enumerate}
 
+\section{Limitations}
+\begin{itemize}
+\item \emph{Sample size.} With 0 promoted out of 10, the survival rate could still be as high as 26\% (one-sided 95\% Clopper--Pearson bound); with 0 out of 16 the bound is 17\%. No rate is claimed.
+\item \emph{One grader, not blind.} The grader is a language model that also wrote the fixes, the derivation notes the proposals were judged against, and this report's data. There was no second grader, so no inter-rater agreement can be given. LLM graders have documented biases~\cite{Zheng,Panickssery}.
+\item \emph{Post-hoc taxonomy.} The categories in Table~\ref{tab:g} were assigned by the grader after reading the proposals. They were not fixed in advance.
+\item \emph{No baseline, changing system.} The prompt, memory and deploy path changed between passes. With no control (the same model without memory, or another model), the phases are confounded with time and with each other.
+\end{itemize}
+
 \section{Status}
-This is an interim report from one night. Self-sufficiency would mean a steady rate of proposals that survive independent checks and become recorded results. That has not happened yet. A later report will give rates over several days.
+This is an interim report from one night. Self-sufficiency would mean a steady rate of proposals that survive independent checks and become recorded results. That has not happened. A later report will give rates over several days. It should fix the category scheme in advance, use a second grader for a subsample, and compare against a baseline.
 
-\emph{Method note.} The grader was Claude (Anthropic). The workflow follows Ref.~\cite{P4}. The full grading log is docs/web/CHECK\_INDEX.md in the archive~\cite{AEGIS}.
+\emph{Note added (post-cutoff, same morning).} Passes 6--8 graded six more items, including the open one, and rejected all six. Four were contradicted by exact calculation (among them the open item: at $T_R=5\times10^7$ GeV the exact $r$ rises to $4.93\times10^{-4}$). One re-predicted an input, and one was a category error. The running total is 0 promoted out of 16. After the cutoff the proposer received a model fact sheet, a mandatory runnable check (\texttt{TOOL:} or \texttt{SEARCH:}), a self-check that runs its own tool line before storing a proposal, and the last six rejection reasons in its prompt (cf.~\cite{Reflexion}). These changes are logged~\cite{AEGIS} but are not evaluated here.
 
-\begin{thebibliography}{9}
+\emph{Method note.} The grader was Claude (Anthropic). The workflow follows Ref.~\cite{P4}. The full grading log is docs/web/CHECK\_INDEX.md in the archive~\cite{AEGIS}. The proposer code is in the CubeMind repository (mindmem/learn\_loop.py).
+
+\begin{thebibliography}{99}
 \bibitem{P4} D.~Eldridge, ``Lock Before You Compute,'' Zenodo (2026), doi:10.5281/zenodo.24291026.
 \bibitem{AEGIS} Archive: github.com/dannyeldridge54/aegis (docs/web/CHECK\_INDEX.md).
+\bibitem{FunSearch} B.~Romera-Paredes \emph{et al.}, ``Mathematical discoveries from program search with large language models,'' Nature \textbf{625}, 468 (2024), doi:10.1038/s41586-023-06924-6.
+\bibitem{AIScientist} C.~Lu, C.~Lu, R.~T.~Lange, J.~Foerster, J.~Clune and D.~Ha, ``The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery,'' arXiv:2408.06292 (2024).
+\bibitem{Si} C.~Si, D.~Yang and T.~Hashimoto, ``Can LLMs Generate Novel Research Ideas? A Large-Scale Human Study with 100+ NLP Researchers,'' arXiv:2409.04109 (2024).
+\bibitem{Zheng} L.~Zheng \emph{et al.}, ``Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena,'' NeurIPS 2023, arXiv:2306.05685.
+\bibitem{Panickssery} A.~Panickssery, S.~R.~Bowman and S.~Feng, ``LLM Evaluators Recognize and Favor Their Own Generations,'' NeurIPS 2024, arXiv:2404.13076.
+\bibitem{Toolformer} T.~Schick \emph{et al.}, ``Toolformer: Language Models Can Teach Themselves to Use Tools,'' NeurIPS 2023, arXiv:2302.04761.
+\bibitem{ReAct} S.~Yao \emph{et al.}, ``ReAct: Synergizing Reasoning and Acting in Language Models,'' ICLR 2023, arXiv:2210.03629.
+\bibitem{Reflexion} N.~Shinn \emph{et al.}, ``Reflexion: Language Agents with Verbal Reinforcement Learning,'' NeurIPS 2023, arXiv:2303.11366.
 \end{thebibliography}
 \end{document}
