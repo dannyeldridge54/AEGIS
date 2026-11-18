@@ -33,6 +33,7 @@ def run_tests():
         R.append((t, ok))
     return R
 if __name__ == '__main__':
+    if len(sys.argv) < 2 or sys.argv[1] not in ('pin', 'check'): print(__doc__); sys.exit(2)
     if sys.argv[1] == 'pin': json.dump(env(), open(LOCK, 'w'), indent=1); print(open(LOCK).read())
     else:
         bad, cur = check_env(); R = run_tests()
