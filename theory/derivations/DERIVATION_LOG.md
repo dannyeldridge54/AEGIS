@@ -1881,3 +1881,10 @@ Touches: none.
 2. Compared the PW6 inverse-meter value at n_s=0.974, Im S·Im ρ = 804: it lies inside the range, +4.8% from central — an independent consistency pass. [derived] (D1268)
 3. Propagated the construction width through D1274's slope: σ_theory(n_s)=0.01333×0.27=3.6e-3, i.e. 1.2× the CMB-SPA error and 1.3× the +DESI error. [derived]
 4. Concluded the branch currently operates as a meter (data→moduli, ±14%, D1265) not a predictor, and identified the heavy-ν/leptogenesis sector as an independent cross-scale constraint on the same product. [derived]
+
+## D1276 — d=2 shape selection via the Epstein zeta (2026-11-18)
+1. Built unit-covolume Gram forms for the square (τ=i) and hexagonal (τ=ρ) lattices and checked det(Gram)=1 for both, so the comparison is at fixed covolume. [derived]
+2. Summed the Epstein zeta over 400 shells at s=2,3,4: hexagonal is lower by 4.04%, 11.11%, 19.80% respectively. [derived]
+3. Noted the margin grows with s — shorter-range lattice sums select the shape more sharply. [derived]
+4. Identified these two forms as the modular domain's elliptic fixed points, which are exactly our n_sector_i and n_sector_rho; recorded as a selection argument only, since the sector is actually fixed by the flux/stack construction. [derived]
+5. Recorded the dimension chain A2/FCC/D4/E8/Leech and the nesting A2 ⊂ D4 ⊂ E8 ⊂ Λ24, with E8 and Leech universally optimal. [literature]

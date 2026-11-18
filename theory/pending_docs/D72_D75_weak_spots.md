@@ -13297,3 +13297,21 @@ leptogenesis-fixed T_R and N* (D692), anti-D3 safety v₄ ≳ 2e4 g_s (D833/D835
 M_s ≈ 6e15–3e16 GeV (D783); Im S = 1/(2√2π g_s) (D689). The ν-mass/leptogenesis side is an INDEPENDENT handle on the
 same product at a very different energy scale — propagating it onto Im S·Im ρ is the highest-value next move.
 Result file: field_tests/results/moduli_consistency_2026-11-18.txt.
+
+## D1276 — Shape selection in d=2: hexagonal (τ=ρ) beats square (τ=i) at equal covolume, and the margin grows with the exponent (2026-11-18)
+MAP: node=n_sector_rho status=computed
+LABEL: numerics (computed here) + literature (optimality theorems). No new physics claim.
+Cloud cycle, prompted by the question of whether shape selection scales with dimension. Computed the Epstein zeta
+Σ_{(m,n)≠0} Q(m,n)^{−s} at unit covolume (N=400 shells) for the two modular elliptic points:
+square Q=m²+n² (τ=i) vs hexagonal Q=(2/√3)(m²+mn+n²) (τ=ρ=e^{2iπ/3}); det(Gram)=1.000 both.
+  s=2: 6.02680 vs 5.78334 (hex lower by 4.04%) · s=3: 4.65891 vs 4.14126 (11.11%) · s=4: 4.28143 vs 3.43376 (19.80%).
+Reproduces the known d=2 theorem (hexagonal minimises Epstein at fixed covolume); the margin GROWS with s, i.e.
+shorter-range sums select the shape more sharply.
+RELEVANCE: the modular domain's two elliptic fixed points ARE these two lattices, and SERAPIS-E carries both as
+sectors (n_sector_i, n_sector_rho). On lattice-sum energy alone the ρ (hexagonal) sector is preferred in d=2.
+HONEST LIMIT: this is a selection *argument*, not a derivation — the actual sector is fixed by the flux/stack
+construction, not by the 2D lattice sum. Recorded so the ρ-sector's special status has a computed basis.
+DIMENSION CHAIN (literature): d=2 A2, d=3 FCC, d=4 D4, d=8 E8, d=24 Leech; A2 ⊂ D4 ⊂ E8 ⊂ Λ24 nest, E8 and Leech
+universally optimal (Viazovska 2016; Cohn–Kumar–Miller–Radchenko–Viazovska). The heterotic gauge lattice E8×E8 is the
+d=8 member — a possible cross-dimension link worth its own cycle.
+Result file: field_tests/results/epstein_d2_shapes_2026-11-18.txt.
