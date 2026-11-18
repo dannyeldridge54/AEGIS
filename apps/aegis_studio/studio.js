@@ -82,7 +82,7 @@ function sendWave(sgn) { if (!sel) return; feed({kind: 'wave', title: `${sgn > 0
 let sel = null; const ray = new THREE.Raycaster(); const mouse = new THREE.Vector2();
 canvas.addEventListener('click', ev => { const b = canvas.getBoundingClientRect(); mouse.set(((ev.clientX - b.left)/b.width)*2 - 1, -((ev.clientY - b.top)/b.height)*2 + 1);
   ray.setFromCamera(mouse, cam); const hit = ray.intersectObjects(knobs.map(k => k.userData.core))[0]; if (hit) select(hit.object.parent.userData.id); });
-function select(id) { sel = id; ['bplus', 'bminus'].forEach(b => document.getElementById(b).disabled = false); const n = byId[id];
+function select(id) { sel = id; ['bplus', 'bminus', 'btestnode', 'bsweep'].forEach(b => document.getElementById(b).disabled = false); const n = byId[id];
   const box = document.getElementById('info'); box.querySelector('.small') && (box.querySelector('.small').textContent = '');
   let t = box.querySelector('.t'); if (!t) { t = document.createElement('div'); t.className = 't'; box.insertBefore(t, box.querySelector('#links')); }
   t.textContent = `${n.label}  [${n.status}]`; const ul = document.getElementById('links'); ul.innerHTML = '';
@@ -230,3 +230,46 @@ window.feed = feed;
   document.getElementById('bpoint').onclick = () => run('serapis_point', {C: 1.15e-6*K.C.get(), T_R: 8.94e8}, 'SERAPIS point (T_R 8.94e8)');
   document.getElementById('bms').onclick = () => run('serapis_ms', {C: 1.15e-6*K.C.get(), Nstar: K.N.get()}, 'exact Mukhanov–Sasaki (~3 min)');
   document.getElementById('btools').onclick = () => run('list', {}, 'tool list'); })();
+
+// ---------- Derive the weave / test-run a node (app.py NODE_TESTS through the shared toolkit registry) ----------
+(() => {
+  const api = () => window.pywebview && window.pywebview.api, bt = document.getElementById('btestnode'), bd = document.getElementById('bderive');
+  const GOOD = new THREE.Color('#4cc3ff'), BAD = new THREE.Color('#ff3d8b');
+  window.weaveResult = (res) => {
+    if (!(res.node in ix)) return;
+    const k = knobs[ix[res.node]]; if (res.ok !== null && k && k.userData.ring) k.userData.ring.material.color.copy(res.ok ? GOOD : BAD);
+    select(res.node); sendWave(res.ok === false ? -1 : 1);
+  };
+  window.weaveDone = () => { bd.setAttribute('aria-checked', 'false'); bd.textContent = 'Derive weave: off'; bd.classList.remove('on'); };
+  bt.onclick = async () => {
+    if (!sel) return; if (!api()) { feed({kind: 'calc', title: 'Test node', text: 'the live engine runs only in the desktop app'}); return; }
+    bt.disabled = true; feed({kind: 'calc', title: `Testing ${sel}`, text: 'running its toolkit check…'});
+    try { const r = await api().test_node(sel); weaveResult(r);
+      feed({kind: 'calc', title: `${r.ok === null ? 'NO TEST' : r.ok ? 'PASS' : 'FAIL'} · ${r.node}`, text: `${r.tool || ''} ${r.text} (${r.seconds} s)`}); }
+    catch (e) { feed({kind: 'calc', title: 'Test node error', text: String(e)}); }
+    bt.disabled = false;
+  };
+  bd.onclick = async () => {
+    if (!api()) { feed({kind: 'calc', title: 'Derive weave', text: 'the live engine runs only in the desktop app'}); return; }
+    const on = bd.getAttribute('aria-checked') !== 'true';
+    bd.setAttribute('aria-checked', String(on)); bd.textContent = on ? 'Derive weave: ON' : 'Derive weave: off'; bd.classList.toggle('on', on);
+    const lanes = ['theory', 'centre', 'left', 'right', 'lhc', 'janus', 'strings', 'lattice', 'wiring'];
+    const order = WEB.nodes.slice().sort((a, b) => lanes.indexOf(a.lane) - lanes.indexOf(b.lane)).map(n => n.id);
+    try { await api().derive_weave(on, order); } catch (e) { feed({kind: 'calc', title: 'Derive weave error', text: String(e)}); weaveDone(); }
+  };
+})();
+
+(() => {
+  const api = () => window.pywebview && window.pywebview.api, bs = document.getElementById('bsweep'), bst = document.getElementById('bsweeptoo');
+  bs.onclick = async () => {
+    if (!sel) return; if (!api()) { feed({kind: 'calc', title: 'Sweep node', text: 'the live engine runs only in the desktop app'}); return; }
+    bs.disabled = true; feed({kind: 'calc', title: `Sweeping ${sel}`, text: 'running its tool over a grid…'});
+    try { const r = await api().sweep_node(sel);
+      feed({kind: 'calc', title: `${r.ok === null ? 'NO SWEEP' : r.ok ? 'SWEEP OK' : 'SWEEP CHECK'} · ${r.node}`, text: `${r.text || ''}${r.path ? ' → ' + r.path.split(/[\\/]/).pop() : ''}${r.seconds != null ? ' (' + r.seconds + ' s)' : ''}`});
+      if (r.ok !== null) sendWave(r.ok ? 1 : -1); }
+    catch (e) { feed({kind: 'calc', title: 'Sweep error', text: String(e)}); }
+    bs.disabled = false;
+  };
+  bst.onclick = async () => { const on = bst.getAttribute('aria-checked') !== 'true'; bst.setAttribute('aria-checked', String(on)); bst.textContent = on ? 'Sweep too: ON' : 'Sweep too: off'; bst.classList.toggle('on', on);
+    if (api()) try { await api().set_weave_sweep(on); } catch (e) {} };
+})();
