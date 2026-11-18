@@ -18,13 +18,13 @@ CC = np.array([0,1/5,3/10,4/5,8/9,1,1])
 def build(Vexpr, f):
     n = len(f); V, G, H = _codegen(Vexpr, f)
     @nb.njit(cache=False)
-    def rhs(N, y, k2, K, out, g, hs):
+    def rhs(N, y, k2, K, Nref, out, g, hs):
         p = y[:n]; fp = y[n:2*n]; eps = 0.0
         for i in range(n): eps += 0.5*fp[i]*fp[i]
         v = V(p); G(p, g); H2 = v/(3 - eps)
         for i in range(n): out[i] = fp[i]; out[n+i] = -(3 - eps)*(fp[i] + g[i]/v)
         if K == 0: return
-        H(p, hs); a2H2 = math.exp(2*N)*H2
+        H(p, hs); a2H2 = math.exp(2*(N - Nref))*H2
         for i in range(n):
             for j in range(n): hs[i, j] = hs[i, j]/H2 + (fp[i]*g[j] + g[i]*fp[j])/H2 + (3 - eps)*fp[i]*fp[j]
         o = 2*n; m = n*n
@@ -41,18 +41,18 @@ def build(Vexpr, f):
             t = o + K*4*m + kk*4                         # tensor: h_re, h_im, hn_re, hn_im
             out[t] = y[t+2]; out[t+1] = y[t+3]; out[t+2] = -(3 - eps)*y[t+2] - q2*y[t]; out[t+3] = -(3 - eps)*y[t+3] - q2*y[t+1]
     @nb.njit(cache=False)
-    def integ(N0, N1, y0, k2, K, rtol, atol, stop_eps):
+    def integ(N0, N1, y0, k2, K, rtol, atol, stop_eps, Nref=0.0):
         y = y0.copy(); d = y.size; ks = np.zeros((7, d)); g = np.zeros(n); hs = np.zeros((n, n)); tmp = np.zeros(d)
         N = N0; h = 1e-3; nst = 0
         while N < N1:
             if N + h > N1: h = N1 - N
-            rhs(N, y, k2, K, ks[0], g, hs)
+            rhs(N, y, k2, K, Nref, ks[0], g, hs)
             for st in range(1, 7):
                 for q in range(d):
                     s = 0.0
                     for r in range(st): s += A[st, r]*ks[r, q]
                     tmp[q] = y[q] + h*s
-                rhs(N + CC[st]*h, tmp, k2, K, ks[st], g, hs)
+                rhs(N + CC[st]*h, tmp, k2, K, Nref, ks[st], g, hs)
             err = 0.0
             for q in range(d):
                 y5 = y[q]; e = 0.0
@@ -68,13 +68,13 @@ def build(Vexpr, f):
                         for it in range(60):
                             mid = 0.5*(lo + hi); yy = y.copy()
                             # re-step with size mid (one DP5 step)
-                            rhs(N, yy, k2, K, ks[0], g, hs)
+                            rhs(N, yy, k2, K, Nref, ks[0], g, hs)
                             for st in range(1, 7):
                                 for q in range(d):
                                     s = 0.0
                                     for r in range(st): s += A[st, r]*ks[r, q]
                                     tmp[q] = yy[q] + mid*s
-                                rhs(N + CC[st]*mid, tmp, k2, K, ks[st], g, hs)
+                                rhs(N + CC[st]*mid, tmp, k2, K, Nref, ks[st], g, hs)
                             for q in range(d):
                                 s = yy[q]
                                 for r in range(7): s += mid*B5[r]*ks[r, q]
@@ -102,13 +102,13 @@ def spectra_jit(m, f0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, rtol=1e-10):
         return integ(0.0, N, y0, E, 0, 1e-12, 1e-14, False)[1]
     def H2at(yb):
         fp = yb[n:]; eps = 0.5*fp @ fp; return V(yb[:n])/(3 - eps), eps
-    yp = bgat(Np); kp = math.exp(Np)*math.sqrt(H2at(yp)[0])
+    yp = bgat(Np); kp = math.sqrt(H2at(yp)[0])
     lks = np.linspace(-dlnk, dlnk, npts); ks = kp*np.exp(lks); K = npts; kmin = ks.min()
     lo, hi = 0.0, Np
     for _ in range(60):
-        mid = 0.5*(lo + hi); yb = bgat(mid); gg = kmin/(math.exp(mid)*math.sqrt(H2at(yb)[0])) - bd
+        mid = 0.5*(lo + hi); yb = bgat(mid); gg = kmin/(math.exp(mid - Np)*math.sqrt(H2at(yb)[0])) - bd
         lo, hi = (mid, hi) if gg > 0 else (lo, mid)
-    N0 = lo; yb = bgat(N0); H2, eps = H2at(yb); a = math.exp(N0); H = math.sqrt(H2)
+    N0 = lo; yb = bgat(N0); H2, eps = H2at(yb); a = math.exp(N0 - Np); H = math.sqrt(H2)
     eta = -1.0/(a*H*(1 - eps)); u = (1 - 1j/(ks*eta))*np.exp(-1j*ks*eta)/np.sqrt(2*ks)
     du = (-1j*ks*(1 - 1j/(ks*eta)) + 1j/(ks*eta**2))*np.exp(-1j*ks*eta)/np.sqrt(2*ks); un = du/(a*H)
     mm = n*n; y = np.zeros(2*n + K*4*mm + K*4); y[:2*n] = yb; I = np.eye(n).ravel(); o = 2*n
@@ -116,8 +116,8 @@ def spectra_jit(m, f0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, rtol=1e-10):
         for part, fn in ((0, np.real), (1, np.imag)):
             b = o + (kk*2 + part)*2*mm; y[b:b+mm] = fn(u[kk])*I; y[b+mm:b+2*mm] = fn(un[kk])*I
         t = o + K*4*mm + kk*4; h0 = u[kk]/a; hn0 = un[kk]/a - u[kk]/a; y[t:t+4] = [h0.real, h0.imag, hn0.real, hn0.imag]
-    _, yf, nst = integ(N0, Ne, y, ks*ks, K, rtol, 1e-30, False)
-    fp = yf[n:2*n]; w = fp/np.linalg.norm(fp); a = math.exp(Ne); PRs = []; Phs = []
+    _, yf, nst = integ(N0, Ne, y, ks*ks, K, rtol, 1e-30, False, Np)
+    fp = yf[n:2*n]; w = fp/np.linalg.norm(fp); a = math.exp(Ne - Np); PRs = []; Phs = []
     for kk in range(K):
         Yr = yf[o + (kk*2)*2*mm: o + (kk*2)*2*mm + mm].reshape(n, n); Yi = yf[o + (kk*2 + 1)*2*mm: o + (kk*2 + 1)*2*mm + mm].reshape(n, n)
         Y = Yr + 1j*Yi; Pd = ks[kk]**3/(2*math.pi**2)*(Y @ Y.conj().T).real/a**2; PRs.append(float(w @ Pd @ w)/(fp @ fp))

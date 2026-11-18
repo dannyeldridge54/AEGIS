@@ -36,14 +36,14 @@ def _mass(fp, eps, H2, V, dV, ddV, G, Gi, Gam, R):
     fl = G @ fp; Vu = Gi @ dV
     M = Gi @ covH - np.einsum('ilmj,l,m->ij', R, fp, fp)*H2 + (3 - eps)*np.outer(fp, fl)*H2 + (np.outer(Vu, fl) + np.outer(fp, dV))
     return M/H2                                                          # M^I_J / H²
-def _mode(st, n, k, N0, Nend):
-    f, fp, eps, H2, V, dV, ddV, G, Gi, Gam, R = st(N0); a = math.exp(N0); H = math.sqrt(H2)
+def _mode(st, n, k, N0, Nend, Nref=0.0):
+    f, fp, eps, H2, V, dV, ddV, G, Gi, Gam, R = st(N0); a = math.exp(N0 - Nref); H = math.sqrt(H2)
     eta = -1.0/(a*H*(1 - eps)); u = (1 - 1j/(k*eta))*np.exp(-1j*k*eta)/math.sqrt(2*k)
     du = (-1j*k*(1 - 1j/(k*eta)) + 1j/(k*eta**2))*np.exp(-1j*k*eta)/math.sqrt(2*k); un = du/(a*H)
     e = np.real(sqrtm(Gi))                                               # vielbein: e^T G e = 1
     Q0 = e*(u/a); P0 = e*((un - u)/a)
     def rhs(N, y):
-        f, fp, eps, H2, V, dV, ddV, G, Gi, Gam, R = st(N); a = math.exp(N); q2 = k*k/(a*a*H2)
+        f, fp, eps, H2, V, dV, ddV, G, Gi, Gam, R = st(N); a = math.exp(N - Nref); q2 = k*k/(a*a*H2)
         Q = y[:2*n*n].view(complex).reshape(n, n); P = y[2*n*n:4*n*n].view(complex).reshape(n, n)
         Qn = P - np.einsum('ijk,ja,k->ia', Gam, Q, fp)
         Pn = -np.einsum('ijk,ja,k->ia', Gam, P, fp) - (3 - eps)*P - q2*Q - _mass(fp, eps, H2, V, dV, ddV, G, Gi, Gam, R) @ Q
@@ -56,13 +56,14 @@ def _mode(st, n, k, N0, Nend):
     return float(w @ PQ @ w)/sp2
 def spectra_nc(m, f0, fdot0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0):
     st, Ne = background(m, np.array(f0, float), np.array(fdot0, float)); Np = Ne - Nstar
-    kp = math.exp(Np)*math.sqrt(st(Np)[3]); lks = np.linspace(-dlnk, dlnk, npts); PRs = []
+    kp = math.sqrt(st(Np)[3]);   # JMF13: a = e^(N - Np)
+    lks = np.linspace(-dlnk, dlnk, npts); PRs = []
     for d in lks:
         k = kp*math.exp(d); lo, hi = 0.0, Np
         for _ in range(80):
-            mid = 0.5*(lo + hi); g = k/(math.exp(mid)*math.sqrt(st(mid)[3])) - bd
+            mid = 0.5*(lo + hi); g = k/(math.exp(mid - Np)*math.sqrt(st(mid)[3])) - bd
             lo, hi = (mid, hi) if g > 0 else (lo, mid)
-        PRs.append(_mode(st, m['n'], k, lo, Ne))
+        PRs.append(_mode(st, m['n'], k, lo, Ne, Np))
     c = np.polyfit(lks, np.log(PRs), 2); return dict(ns=1 + c[1], PR=PRs[npts//2], Ne=Ne)
 def curvature_sign_check(m, f, fp):
     """2D: entropic projection of −R^I_{LMJ}φ'^Lφ'^M must equal +(R_fs/2)·σ'²."""

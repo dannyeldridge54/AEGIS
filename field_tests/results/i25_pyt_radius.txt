@@ -1,0 +1,3 @@
+R=1.0: PyTransport N_tot 79.36 n_s 0.924982 (tol 1e-10: 0.924982)
+R=1.5: PyTransport N_tot 125.12 n_s 0.933687 (tol 1e-10: 0.933687)
+R=2.0: PyTransport N_tot 176.22 n_s 0.936712 (tol 1e-10: 0.936712)

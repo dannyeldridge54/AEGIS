@@ -21,7 +21,7 @@ def _codegen(Vexpr, Gexpr, f):
 def build(Vexpr, Gexpr, f):
     n = len(f); V, geo = _codegen(Vexpr, Gexpr, f)
     @nb.njit
-    def rhs(N, y, k2, K, out, w):
+    def rhs(N, y, k2, K, Nref, out, w):
         dV, ddV, Gm, Gim, Gam, R, M, fl, Vu = w
         p = y[:n]; fp = y[n:2*n]; geo(p, dV, ddV, Gm, Gim, Gam, R); v = V(p)
         eps = 0.0
@@ -49,7 +49,7 @@ def build(Vexpr, Gexpr, f):
                 for l in range(n):
                     for mm in range(n): rr += R[i, l, mm, j]*fp[l]*fp[mm]
                 M[i, j] = cov/H2 - rr + (3 - eps)*fp[i]*fl[j] + (Vu[i]*fl[j] + fp[i]*dV[j])/H2
-        a2H2 = math.exp(2*N)*H2; o = 2*n; m = n*n
+        a2H2 = math.exp(2*(N - Nref))*H2; o = 2*n; m = n*n
         for kk in range(K):
             q2 = k2[kk]/a2H2
             for part in range(2):
@@ -64,19 +64,19 @@ def build(Vexpr, Gexpr, f):
                         out[b + i*n + c] = y[b + m + i*n + c] - gq
                         out[b + m + i*n + c] = -gp - (3 - eps)*y[b + m + i*n + c] - q2*y[b + i*n + c] - mq
     @nb.njit
-    def integ(N0, N1, y0, k2, K, rtol, atol, stop_eps):
+    def integ(N0, N1, y0, k2, K, rtol, atol, stop_eps, Nref=0.0):
         y = y0.copy(); d = y.size; ks = np.zeros((7, d)); tmp = np.zeros(d)
         w = (np.zeros(n), np.zeros((n, n)), np.zeros((n, n)), np.zeros((n, n)), np.zeros((n, n, n)), np.zeros((n, n, n, n)), np.zeros((n, n)), np.zeros(n), np.zeros(n))
         N = N0; h = 1e-3; nst = 0
         while N < N1:
             if N + h > N1: h = N1 - N
-            rhs(N, y, k2, K, ks[0], w)
+            rhs(N, y, k2, K, Nref, ks[0], w)
             for st in range(1, 7):
                 for q in range(d):
                     s = 0.0
                     for r in range(st): s += A[st, r]*ks[r, q]
                     tmp[q] = y[q] + h*s
-                rhs(N + CC[st]*h, tmp, k2, K, ks[st], w)
+                rhs(N + CC[st]*h, tmp, k2, K, Nref, ks[st], w)
             err = 0.0
             for q in range(d):
                 y5 = y[q]; e = 0.0
@@ -91,18 +91,18 @@ def build(Vexpr, Gexpr, f):
                     if e1 >= 0.999:
                         lo = 0.0; hi = h; yt = tmp.copy()
                         for it in range(60):
-                            mid = 0.5*(lo + hi); rhs(N, y, k2, K, ks[0], w)
+                            mid = 0.5*(lo + hi); rhs(N, y, k2, K, Nref, ks[0], w)
                             for st in range(1, 7):
                                 for q in range(d):
                                     s = 0.0
                                     for r in range(st): s += A[st, r]*ks[r, q]
                                     tmp[q] = y[q] + mid*s
-                                rhs(N + CC[st]*mid, tmp, k2, K, ks[st], w)
+                                rhs(N + CC[st]*mid, tmp, k2, K, Nref, ks[st], w)
                             for q in range(d):
                                 s = y[q]
                                 for r in range(7): s += mid*B5[r]*ks[r, q]
                                 yt[q] = s
-                            rhs(N + mid, yt, k2, 0, tmp, w); Gm = w[2]; e1 = 0.0
+                            rhs(N + mid, yt, k2, 0, Nref, tmp, w); Gm = w[2]; e1 = 0.0
                             for i in range(n):
                                 for j in range(n): e1 += 0.5*yt[n+i]*Gm[i, j]*yt[n+j]
                             if e1 >= 1.0: hi = mid
@@ -122,12 +122,12 @@ def spectra_ncjit(m, f0, fdot0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, rtol=1e
     def bgat(N): return y0 if N <= 0 else integ(0.0, N, y0, E, 0, 1e-12, 1e-14, False)[1]
     def H2eps(yb):
         G, _ = G_at(yb[:n]); fp = yb[n:]; e = 0.5*fp @ G @ fp; return V(yb[:n])/(3 - e), e
-    kp = math.exp(Np)*math.sqrt(H2eps(bgat(Np))[0]); lks = np.linspace(-dlnk, dlnk, npts); ks = kp*np.exp(lks); K = npts
+    kp = math.sqrt(H2eps(bgat(Np))[0]); lks = np.linspace(-dlnk, dlnk, npts); ks = kp*np.exp(lks); K = npts
     lo, hi = 0.0, Np
     for _ in range(60):
-        mid = 0.5*(lo + hi); gg = ks.min()/(math.exp(mid)*math.sqrt(H2eps(bgat(mid))[0])) - bd
+        mid = 0.5*(lo + hi); gg = ks.min()/(math.exp(mid - Np)*math.sqrt(H2eps(bgat(mid))[0])) - bd
         lo, hi = (mid, hi) if gg > 0 else (lo, mid)
-    N0 = lo; yb = bgat(N0); H2, eps = H2eps(yb); a = math.exp(N0); Hh = math.sqrt(H2)
+    N0 = lo; yb = bgat(N0); H2, eps = H2eps(yb); a = math.exp(N0 - Np); Hh = math.sqrt(H2)
     eta = -1.0/(a*Hh*(1 - eps)); u = (1 - 1j/(ks*eta))*np.exp(-1j*ks*eta)/np.sqrt(2*ks)
     du = (-1j*ks*(1 - 1j/(ks*eta)) + 1j/(ks*eta**2))*np.exp(-1j*ks*eta)/np.sqrt(2*ks); un = du/(a*Hh)
     _, Gi0 = G_at(yb[:n]); e = np.real(sqrtm(Gi0)); mm = n*n; o = 2*n
@@ -136,7 +136,7 @@ def spectra_ncjit(m, f0, fdot0, Nstar=55.0, dlnk=0.4, npts=9, bd=1000.0, rtol=1e
         Q0 = e*(u[kk]/a); P0 = e*((un[kk] - u[kk])/a)
         for part, fn in ((0, np.real), (1, np.imag)):
             b = o + (kk*2 + part)*2*mm; y[b:b+mm] = fn(Q0).ravel(); y[b+mm:b+2*mm] = fn(P0).ravel()
-    _, yf, nst = integ(N0, Ne, y, ks*ks, K, rtol, 1e-30, False)
+    _, yf, nst = integ(N0, Ne, y, ks*ks, K, rtol, 1e-30, False, Np)
     G, _ = G_at(yf[:n]); fp = yf[n:2*n]; sp2 = fp @ G @ fp; w = G @ fp/math.sqrt(sp2); PRs = []
     for kk in range(K):
         Qr = yf[o + kk*4*mm: o + kk*4*mm + mm].reshape(n, n); Qi = yf[o + (kk*2 + 1)*2*mm: o + (kk*2 + 1)*2*mm + mm].reshape(n, n); Q = Qr + 1j*Qi
