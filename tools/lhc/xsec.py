@@ -32,7 +32,7 @@ def sigma_scaling(m, proc='C1N2p', sqrts=14.0):
     t13 = 4*M**2/13000.0**2
     Phi = CubicSpline(np.log(t13), np.log(13.0**2*np.array(D['sqrt_s']['13'][proc], float)))
     rs = float(sqrts); t = 4*float(m)**2/(rs*1000)**2
-    if not (t13.min() <= t <= t13.max()): raise ValueError('tau0 outside the 13 TeV table range')
+    if not (t13.min() <= t <= t13.max()): raise ValueError('this mass is outside what the 13 TeV table covers at that energy (roughly 100 GeV to 2 TeV at 13 TeV; the reach scales with the collision energy)')
     return float(math.exp(Phi(math.log(t)))/rs**2*(rs/13.0)**KAPPA)
 def sigma_best(m, proc='C1N2p', sqrts=14.0):
     """Best estimate above the tables: mean of the two independent routes (scaling, log-linear) with their spread as the error."""
