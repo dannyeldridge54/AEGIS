@@ -235,13 +235,14 @@ nodes:
   - D866
   - D873
   - D906
+  - D1246
   depends:
   - plateau_origin
   - bhk_tilt
   history:
-  - 'D866: corrected'
   - 'D873: computed'
   - 'D906: computed'
+  - 'D1246: computed'
 - id: janus
   layer: 2
   branch:
@@ -267,8 +268,10 @@ nodes:
   - D689
   - D692
   - D756
+  - D1246
   history:
   - 'D756: literature'
+  - 'D1246: literature'
 - id: stuck_d3
   layer: 3
   branch:
@@ -278,8 +281,11 @@ nodes:
   d:
   - D694
   - D695
+  - D1246
   depends:
   - bhk_tilt
+  history:
+  - 'D1246: literature'
 - id: covariant
   layer: 3
   branch:

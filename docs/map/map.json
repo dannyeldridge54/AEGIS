@@ -289,16 +289,17 @@
     "D865",
     "D866",
     "D873",
-    "D906"
+    "D906",
+    "D1246"
    ],
    "depends": [
     "plateau_origin",
     "bhk_tilt"
    ],
    "history": [
-    "D866: corrected",
     "D873: computed",
-    "D906: computed"
+    "D906: computed",
+    "D1246: computed"
    ]
   },
   {
@@ -332,10 +333,12 @@
    "d": [
     "D689",
     "D692",
-    "D756"
+    "D756",
+    "D1246"
    ],
    "history": [
-    "D756: literature"
+    "D756: literature",
+    "D1246: literature"
    ]
   },
   {
@@ -348,10 +351,14 @@
    "status": "literature",
    "d": [
     "D694",
-    "D695"
+    "D695",
+    "D1246"
    ],
    "depends": [
     "bhk_tilt"
+   ],
+   "history": [
+    "D1246: literature"
    ]
   },
   {

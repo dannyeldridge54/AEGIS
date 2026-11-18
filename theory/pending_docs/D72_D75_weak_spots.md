@@ -12946,3 +12946,18 @@ Pattern used: N* ↔ T_R ↔ m_φ chain (D1234–D1239): the audited reheating m
 (2) Inside the frozen D693 band: 4/9. Out: C = 1.0e-6 at all three N* (r 4.38–4.53e-4 below the 4.55e-4 floor); C = 1.3e-6 at N* 50.7, 51.3 (n_s 0.9755–0.9760 above 0.975).
 Reading: the audited chain predicts a box that is shifted (n_s up ~+1.5e-3, r down ~4 %) and only partly overlaps the frozen band. The frozen band stays as locked (scored on future data); the new node band_e_audited (status postulate) records what the audited theory now says, for scoring by SO/LiteBIRD. The middle tilt C ≈ 1.15e-6 remains inside both.
 MAP: node=band_e_audited status=postulate touches=[band_e, tests_cmb] ripple=yes
+
+## D1246 — CENTRE — NA11: SERAPIS-E core arithmetic — all 5 checks PASS (E(ρ,2), E(i,2) by direct lattice sum; isotropic minimum at ρ; 2ζ(4)y² plateau; BHK C for every tadpole row; tadpole sums)
+Lock: field_tests/rules/PREREG_NA11_serapis_e_core.md. Results: field_tests/results/na11_serapis_e_core.txt. [computed]
+1. Independent lattice sum (L = 200, 400, 1/L² tail extrapolation): E(ρ,2) = 5.78335924 vs E_paper 5.78335930 vs quoted 5.7833593; E(i,2) = 6.02681199 vs 6.02681204 vs 6.0268 → PASS.
+2. At ρ: ∇E = 0 (to FD error), E_xx = 7.711123, E_yy = 7.711133, E_xy = 0 → isotropic minimum, PASS (D689's statement).
+3. E(½+iy,2)/(2ζ(4)y²) = 1.0017 (y 10), 1.000065 (30), 1.000002 (100) → plateau 1 − 1/(2ζ(4)y²) form, PASS.
+4. C = 15 N_eff/(64π⁶ Im S Im ρ) reproduces C = 1.0–1.3e-6 at every D696 row's quoted Im S·Im ρ endpoints (≤ 0.05 %) → PASS. (For flux rows N_eff = N, the flux unit replacing the origin brane.)
+5. Tadpole 3N + N0 + N_flux = 16 for all rows → PASS.
+Nodes serapis_e, bhk_tilt, stuck_d3: arithmetic confirmed; their open items (stuck-brane D3 unit, κ_ΩR sign, plateau placed by hand — plateau_origin) are unchanged and are assumptions, not arithmetic.
+MAP: node=serapis_e status=computed touches=[] ripple=no
+MAP: node=bhk_tilt status=literature touches=[] ripple=no
+MAP: node=stuck_d3 status=literature touches=[] ripple=no
+
+## D1234a — correction to D1234 (part A)
+D1234 compared today's Janus relation error (3.3–4.0 %) with D689's "13–16 %" and called it FAIL-as-locked. D689's 13–16 % was computed for the PREDECESSOR model V = P_ρ(τ)[1 + C(E − E(ρ))] (D689), not for SERAPIS-E (P_E = Ê/(Ê+1), D691). The right SERAPIS-E statement is D693's frozen "Janus κ = 1 (p = 2√2) ≤ 6 %", which the 3.3–4.0 % satisfies. The lock's [12 %, 17 %] bar was built on the wrong reference; the FAIL stands as recorded, but it carries no information about SERAPIS-E; the node janus is CONSISTENT with D693.

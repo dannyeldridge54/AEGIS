@@ -362,3 +362,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1242: check which outputs actually depend on a corrected input before rerunning everything — the diluted gravitino yield is T_R-independent at leading order; only the undiluted τ = i case moved.
 - D1243: reproduce the original run in the same session before reading the rerun — an exact reproduction makes the one-line diff the only explanation for the change.
 - D1245: write the postulate's expected ranges before the run — mine missed (5/9), which shows the slope estimate was too narrow and keeps the postulate honest.
+- D1246: when a locked reference number comes from a note, check that note's MODEL is the one being audited — D689's offset was for the predecessor plateau.
