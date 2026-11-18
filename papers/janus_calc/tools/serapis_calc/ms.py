@@ -69,7 +69,7 @@ def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0
     i0 = list(d).index(0.0)
     return dict(ns=1+c[1], alpha_s=2*c[0], r=out[i0][2]/out[i0][1], PR=out[i0][1])
 
-def spectra_fast(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0):
+def spectra_fast(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0, return_lp=False):
     """Same observables as spectra(), all k-modes integrated together in one vectorised ODE
     (common start where the LOWEST k has k/aH = bd, so every mode starts at k/aH >= bd).
     Selftest compares it with spectra(); use only under locks written for it."""
@@ -111,4 +111,6 @@ def spectra_fast(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=
     d = np.array(dlnk); lp = np.log(PR); deg = min(4, len(d)-1)
     c = np.polyfit(d, lp, deg); c = c[-3:] if deg >= 2 else np.concatenate([[0.0], c])
     i0 = list(d).index(0.0)
-    return dict(ns=1+c[1], alpha_s=2*c[0], r=Pt[i0]/PR[i0], PR=PR[i0])
+    out = dict(ns=1+c[1], alpha_s=2*c[0], r=Pt[i0]/PR[i0], PR=PR[i0])
+    if return_lp: out['lnPR'] = lp; out['dlnk'] = d
+    return out

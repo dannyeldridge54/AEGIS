@@ -1,0 +1,71 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{Grading a Self-Learning Research Assistant: An Interim Report on CubeMind's First Night}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{18 November 2026}
+\begin{abstract}
+CubeMind is a small research assistant that runs on a home PC. A local open-weight language model proposes falsifiable hypotheses about a string-cosmology model, the system stores them in an append-only memory, and it builds a web of linked results. A second AI (Claude) acts as the grader: it checks each proposal with real computation or literature and records a verdict. We report the first night (17--18 November 2026), honestly and without promotion. Of 10 proposals graded, none was promoted. Four were tautologies, three were falsified by exact calculation, two mixed categories, and one was ill-posed. Three engineering fixes changed the kind of proposals the system makes. Rules against tautology moved it from restating stored numbers to falsifiable claims about new inputs. Correcting how it ingests notes (a header-format mismatch and a stale copy missing 51 sections) moved it from fixating on one parameter to engaging the newest work. Making correction notes supersede what they retract stopped it from learning withdrawn claims as evidence. The most useful finding so far is a failure mode: confident category errors, such as asking for a ``SERAPIS-$E$ vacuum in $d$ dimensions'' when the model has one two-dimensional modulus. The system is not yet self-sufficient. The grader stays in the loop until proposals start to survive.
+\end{abstract}
+\keywords{AI-assisted research; automated hypothesis generation; local language models; evaluation; falsifiability; append-only memory; research workflow; string cosmology}
+\maketitle
+
+\section{Set-up}
+\emph{Learner.} A loop on a Windows PC (WSL, two cores, local Ollama with a 30B coder model) runs a cycle every 2--6 minutes:
+\begin{itemize}
+\item ingest new derivation notes;
+\item pull results from a shared tool registry (the ``result bus'');
+\item propose one hypothesis as JSON: gap, prediction, check, importance;
+\item attach it as a node to a web of results.
+\end{itemize}
+Memory is append-only. A record is never edited; it is superseded by a later record that names it. A watchdog restarts the loop, and the loop exits by itself when its code changes, so fixes deploy without anyone at the machine.
+
+\emph{Grader.} A cloud session reads open proposals over a device bridge. It judges novelty, soundness and whether a search is needed, and gives one of four verdicts: PROMOTE, PARK, REJECT or SEARCH. Every verdict is checked by computation (an exact Mukhanov--Sasaki pipeline, lattice sums) or by literature. Rejections are written as superseding records with a reason, and verdicts are logged in a public index~\cite{AEGIS}.
+
+\section{What happened}
+Table~\ref{tab:g} summarises the grading.
+
+\begin{table}[b]
+\caption{Proposals graded on the first night.}
+\label{tab:g}
+\begin{ruledtabular}\footnotesize
+\begin{tabular}{lcl}
+Kind & $n$ & Example\\ \hline
+Tautology & 4 & ``$r$ at $C=1.15$e-6 is 4.696e-4'' (already stored)\\
+Falsified & 3 & predicted $r$ 3.1--3.7e-4; exact 4.38--4.80e-4\\
+Category error & 2 & ``SERAPIS-$E$ vacuum in $d=7$''\\
+Ill-posed & 1 & moduli product ($\approx780$) read as ``3\%''\\
+Promoted & 0 & ---\\
+Open & 1 & $r$ at $T_R=5\times10^7$ GeV (pending)
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\emph{Phase 1, tautology.} The first proposals restated numbers already in memory and offered to ``check'' them by rerunning the same deterministic function. They were grounded (no invented numbers) but empty. \emph{Fix:} four hard rules in the prompt. Do not restate stored values. A check must not be a rerun with the same inputs. The hypothesis must involve a new input, relation, sensitivity or cross-check. It must state what result would falsify it.
+
+\emph{Phase 2, falsifiable but wrong.} Proposals became genuine predictions, and the exact pipeline falsified them. One was off by 3.6 decades in reheating temperature; another predicted an $n_s$ outside its own range. This is the intended behaviour: the claims were cheap to test and they failed honestly.
+
+\emph{Phase 3, fixation, then diversity.} Three proposals in a row circled one parameter value ($M_H=1.2\times10^{13}$). The cause was in memory, not in the model. Its copy of the derivation log was stale and missing 51 recent sections, and 32 older headers were invisible to the parser. Once the full log was installed and the parser fixed, proposals began engaging the newest work on lattices and the spectral index.
+
+\emph{Phase 4, category errors.} The new proposals mixed concepts: lattice-in-$d$ results with a potential that has one modulus, and a moduli product read as a percentage. \emph{Fix:} two more prompt rules naming these traps.
+
+\section{Lessons}
+\begin{enumerate}
+\item \textbf{Memory quality bounds proposal quality.} The worst behaviour (fixation) came from missing input, not from the model.
+\item \textbf{Retractions must be first-class.} Without supersession, a corrected claim stays in memory as evidence. Correction notes now automatically supersede what they retract.
+\item \textbf{The deploy path is part of the experiment.} One file-transfer path silently delivered a stale cached copy whenever a staged file name was reused, so the learner ran old code. Unique, content-hashed names plus an md5 check on arrival fixed it.
+\item \textbf{A grader is still needed.} No proposal has survived. The next upgrade is to give the proposer the registry's tool list, so that every check it writes can actually be run.
+\end{enumerate}
+
+\section{Status}
+This is an interim report from one night. Self-sufficiency would mean a steady rate of proposals that survive independent checks and become recorded results. That has not happened yet. A later report will give rates over several days.
+
+\emph{Method note.} The grader was Claude (Anthropic). The workflow follows Ref.~\cite{P4}. The full grading log is docs/web/CHECK\_INDEX.md in the archive~\cite{AEGIS}.
+
+\begin{thebibliography}{9}
+\bibitem{P4} D.~Eldridge, ``Lock Before You Compute,'' Zenodo (2026), doi:10.5281/zenodo.24291026.
+\bibitem{AEGIS} Archive: github.com/dannyeldridge54/aegis (docs/web/CHECK\_INDEX.md).
+\end{thebibliography}
+\end{document}

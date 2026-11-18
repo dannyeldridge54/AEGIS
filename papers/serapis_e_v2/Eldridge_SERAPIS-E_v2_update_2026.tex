@@ -1,0 +1,69 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{SERAPIS-$E$ v2: The Current Model in One Place --- Audited Numbers, Where It Sits Against the CMB, a Meter by Construction, and Why the Vacuum Is Hexagonal}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{18 November 2026}
+\begin{abstract}
+This update to SERAPIS-$E$~\cite{P3} collects every change since the original record into one place. (1) The audit~\cite{P5} corrected the inflaton mass ($3.17\times10^{13}$~GeV) and the coupling normalisation. With the MSSM $g_*$ these give $N_*=50.07$--$51.22$. A leptogenesis-fixed reheating temperature $T_R=7.39\times10^8$~GeV then gives the point $n_s=0.97439$, $r=4.82\times10^{-4}$, $\alpha_s=-9.98\times10^{-4}$, $N_*=50.18$ at the string benchmark $C=1.249\times10^{-6}$. The fast emulator reproduces exact Mukhanov--Sasaki spectra to $|\Delta n_s|\le3.2\times10^{-5}$ across $C=(1.0$--$1.6)\times10^{-6}$. (2) Against published CMB analyses the frozen band $n_s=0.97176$--$0.97493$ sits $+0.85$ to $+2.2\sigma$ from CMB-SPA and within $\pm0.8\sigma$ of CMB-SPA+DESI. The benchmark sits at $+1.75$ to $+2.0\sigma$ from CMB-SPA. The value of $r$ is about $75\times$ below the current bound. So $n_s$, not $r$, is the sharp test. (3) The response is $dn_s/d\ln C=0.0133$ at the benchmark, so a future $\sigma(n_s)=0.0016$ measures $\mathrm{Im}\,S\,\mathrm{Im}\,\rho$ to $\pm12\%$. That combination is at present \emph{fitted} to $n_s$, so the model is a meter by construction until moduli stabilisation fixes it independently. (4) The potential is monotone in $E(\tau,2)$, so its only vacuum is the hexagonal $\tau=\rho$, and $\tau=i$ is a saddle unstable along the axion~\cite{P6}. The $\tau=i$ variant therefore needs extra physics. The predictions frozen on 15 November are unchanged and remain what will be scored.
+\end{abstract}
+\keywords{cosmic inflation; string cosmology; modular invariance; Eisenstein series; spectral index; reheating; leptogenesis; Mukhanov--Sasaki; CMB-SPA; DESI; moduli; pre-registration}
+\maketitle
+
+\section{The model}
+The inflaton is the shape $\tau$ of a two-torus in a $T^6/(\mathbb Z_2\times\mathbb Z_2)$ orientifold~\cite{P3}:
+\begin{equation}
+\frac{V}{V_0}=\frac{\hat E}{\hat E+1}(1+C\hat E),\qquad \hat E=E(\tau,2)-E(\rho,2),
+\end{equation}
+with $C=15N_{\rm eff}/(64\pi^6\,\mathrm{Im}\,S\,\mathrm{Im}\,\rho)$, $N_{\rm eff}=4$ from the stuck-D3 tadpole and $C$ the one-loop correction of Berg, Haack and K\"ors~\cite{BHK}. The canonical field along $x=\tfrac12$ is $\phi=\ln y/\sqrt2$.
+
+\section{Audited numbers}
+Table~\ref{tab:num} lists the current values. All are exact Mukhanov--Sasaki results computed under a pre-registered lock~\cite{P4,P5}. Two inputs changed in the audit: the inflaton mass, and the K\"ahler weight used to normalise its couplings. Neither changes the frozen band. The audited range $n_s=0.97166$--$0.97596$ extends partly outside it, and that is recorded as a post-hoc tension. The frozen band is still what gets scored.
+
+\begin{table}[b]
+\caption{Current SERAPIS-$E$ numbers (exact MS, $g_*=228.75$).}
+\label{tab:num}
+\begin{ruledtabular}\footnotesize
+\begin{tabular}{ll}
+Frozen band (15 Nov) & $n_s$ 0.970--0.975, $r$ (4.55--5.12)e-4\\
+Band, recomputed & $n_s$ 0.97176--0.97493 at $C$ 1.0--1.3e-6\\
+Inflaton mass at $\rho$ & $3.17\times10^{13}$ GeV\\
+$T_R$ at $\rho$ & $5.5\times10^8$--$1.65\times10^{10}$ GeV\\
+$N_*$ & 50.07--51.22\\
+Point ($C=1.249$e-6) & $n_s$ 0.97439, $r$ 4.82e-4\\
+ & $\alpha_s$ $-9.98$e-4, $N_*$ 50.18\\
+Emulator vs exact & $|\Delta n_s|\le3.2$e-5\\
+$dn_s/d\ln C$ (benchmark) & 0.0133 (0.0101--0.0141 over band)
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\section{Position against the data}
+Published CMB-SPA analyses give $n_s=0.9679$--$0.9693$ ($\pm0.0029$--$0.0033$), and CMB-SPA+DESI gives $0.9728$--$0.9737$ ($\pm0.0025$--$0.0029$)~\cite{SPT}. The frozen band sits $+0.85$ to $+1.17\sigma$ (low edge) and up to $+2.2\sigma$ (high edge) above CMB-SPA, and within $\pm0.8\sigma$ of CMB-SPA+DESI. The benchmark point, which is one placement inside the band and not the prediction, is $+1.75$ to $+2.0\sigma$ from CMB-SPA. The bound is $r<0.036$ (BK18), about $75\times$ above our $r$. The model therefore lives on the high-$n_s$ side, and the value of $n_s$ the data settle on is its sharpest near-term test. For scoring, the pipeline $\alpha_s$ should be used: the analytic consistency relation of Ref.~\cite{P1} is accurate here to about 3\% ($-9.64$ vs $-9.98\times10^{-4}$).
+
+\section{A meter, by construction}
+Because $C\propto1/(\mathrm{Im}\,S\,\mathrm{Im}\,\rho)$, the slope gives $\sigma_{\rm th}(n_s)=0.0133\times\delta$, where $\delta$ is the fractional uncertainty on the moduli product. A future $\sigma(n_s)=0.0016$ (Simons Observatory plus SPHEREx) therefore measures $\mathrm{Im}\,S\,\mathrm{Im}\,\rho$ to $\pm12\%$. This is sharper than the $\pm14\%$ in Ref.~\cite{P5}, which used the slope at the wrong point.
+
+An honest caveat came out of our audit. The construction does \emph{not} supply an independent value of $\mathrm{Im}\,S\,\mathrm{Im}\,\rho$. The quoted range 560--975 is the $n_s$ band mapped through the same formula. A ``consistency check'' between the two would be circular, and we retracted one such claim. The construction fixes discrete data ($N_{\rm eff}$, the sector, the formula for $C$), and the fitted moduli are natural (weak coupling, moderate volume). Until moduli stabilisation fixes $g_s$ and $\mathrm{Im}\,\rho$ on its own, SERAPIS-$E$ measures the compactification rather than predicting $n_s$. Fixing them to $\lesssim5\%$ would make $n_s$ a sharper test than the data. The heavy-neutrino sector does not supply this independent value: it involves a different, rigid cycle and three further unknowns.
+
+\section{Why the vacuum is hexagonal}
+$dV/d\hat E>0$, so $V$ inherits the critical points of $E(\tau,2)$. At $\tau=\rho$ the Hessian is $[+3.562,+3.562]\,V_0$, a minimum. At $\tau=i$ it is $[-1.279,+5.779]\,V_0$, a saddle whose unstable direction is the axion $x$. Lattice energy prefers the hexagon at every scale, and a torus started at any shape flows to it. The two-torus string lattice with the largest spectral gap (the SU(3) point) has the same hexagonal shape, but it sits at the string scale rather than at our large volume~\cite{P6}. A $\tau=i$ vacuum, the conditional variant of earlier versions, needs a pinned axion or a different modular building block.
+
+\section{What is scored}
+The 15 November frozen band ($n_s$ 0.970--0.975, $r$ (4.55--5.12)e-4, $\alpha_s$ $-$(9.4--10.6)e-4) and the safety caps $n_s\le0.985$, $r\le8.3\times10^{-4}$ are unchanged. Everything in this update after the audit is post hoc and is scored only on future data. Open items: the origin of the plateau (assumed), moduli stabilisation (needed for prediction), and the wino window (needs a $g_*(T)$ table).
+
+\emph{Method note.} The work was done with an AI assistant (Claude, Anthropic) under the workflow of Ref.~\cite{P4}. Notes D1233--D1283 and all scripts are in the archive~\cite{AEGIS}.
+
+\begin{thebibliography}{99}
+\bibitem{P3} D.~Eldridge, ``SERAPIS-$E$: Modular Plateau Inflation at the Hexagonal Torus with a One-Loop String Tilt,'' Zenodo (2026), doi:10.5281/zenodo.24290875.
+\bibitem{P5} D.~Eldridge, ``SERAPIS-$E$ Audited,'' Zenodo (2026), doi:10.5281/zenodo.24330316.
+\bibitem{P6} D.~Eldridge, ``Shape, Scale and Duality,'' Zenodo (2026), doi:10.5281/zenodo.24339574.
+\bibitem{P4} D.~Eldridge, ``Lock Before You Compute,'' Zenodo (2026), doi:10.5281/zenodo.24291026.
+\bibitem{P1} D.~Eldridge, ``A Parameter-Free Consistency Relation for Plateau Inflation with an Uplift Ramp,'' Zenodo (2026), doi:10.5281/zenodo.24290583.
+\bibitem{BHK} M.~Berg, M.~Haack and B.~K\"ors, JHEP \textbf{11}, 030 (2005), arXiv:hep-th/0508043.
+\bibitem{SPT} SPT-3G Collaboration, arXiv:2506.20707; see also arXiv:2512.10613, arXiv:2512.05108.
+\bibitem{AEGIS} Reproducibility archive: github.com/dannyeldridge54/aegis.
+\end{thebibliography}
+\end{document}

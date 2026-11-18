@@ -1,0 +1,41 @@
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{Lock Before You Compute, v2: Lessons From an Audit Night --- Circular Checks, Corrections as Records, Predictions Before Tests, and Grading a Machine Proposer}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{18 November 2026}
+\begin{abstract}
+The v1 workflow~\cite{P4} asks the researcher to lock each test (a file and its SHA-256, committed) before computing, to put fixes in a deviations file written before any rerun, and to report failures as failures. This addendum records what one intensive night of work (17--18 November 2026, about 15 results and 10 machine-generated proposals) added to it. Six rules came out of it. (1) Audit for circularity: a ``consistency check'' between a fitted input and the data it was fitted to proves nothing, and we retracted one. (2) Corrections are new records that supersede what they correct, never silent edits, and machine memories must honour this. (3) Evaluate a varying response where it is used: one slope was taken 13\% off-point. (4) Write the prediction down before running the test. E6/E7 was logged first and passed. (5) Print small numbers raw: a six-digit rounding sent us chasing a phantom bug. (6) A machine proposer needs a grader, and its failures are mostly failures of its memory and deployment, not of the model.
+\end{abstract}
+\keywords{pre-registration; reproducibility; AI-assisted research; audit; circular reasoning; errata; workflow; theoretical physics}
+\maketitle
+
+\section{What the night tested}
+The work was a fast research loop on a string-inflation model. A cloud session computed ahead, and a local self-learning system (CubeMind~\cite{CM}) proposed hypotheses. At the end of the night the person in charge asked the AI to ``check all of this'' itself. That audit is the source of most of the rules below.
+
+\section{New rules}
+\emph{R1, circularity audit.} A result had reported that the string construction ``contains'' the value of a moduli product that the CMB requires. On audit, the construction's range turned out to be the CMB band mapped through the same formula. The agreement was guaranteed, so it was not evidence. \textbf{Rule:} for every cross-check, trace each side back to its inputs. If they share an input fitted to the target, the check is void and must be withdrawn by a correction record.
+
+\emph{R2, corrections as records.} Four results were corrected that night (D1265a/b, D1273a, D1274a, D1275a/b). Each correction is its own note naming the original. In the machine's memory a correction now supersedes the original automatically, so a withdrawn claim cannot be learned as evidence.
+
+\emph{R3, evaluate where used.} A response $dn_s/d\ln C$ that varies by 40\% across a band had been taken at the wrong point, 13\% low. \textbf{Rule:} any locally linear coefficient must be evaluated at the point where it is applied, and the location must be stated.
+
+\emph{R4, predict before testing, even for cross-checks.} A rule (``an optimal lattice flips with scale iff it is not self-dual'') led to a prediction for E6 and E7. The prediction was written into the record before the computation and was then confirmed~\cite{SSD}. A cheap prediction logged in advance is worth more than an explanation offered afterwards.
+
+\emph{R5, print raw.} A \texttt{round(x,6)} turned $1.25\times10^{-6}$ into ``$1\times10^{-6}$'' and cost an hour. \textbf{Rule:} use scientific notation for any quantity below $10^{-3}$ in check output.
+
+\emph{R6, grade the machine.} A local model's proposals went through four phases: tautologies, falsifiable but wrong, fixation on one parameter, and category errors. Each phase was fixed by changing its prompt, its memory or its deploy path, not by changing the model~\cite{CM}. \textbf{Rule:} until machine proposals survive independent checks at a steady rate, a grader stays in the loop. Every deploy is verified by checksum on arrival.
+
+\section{What did not change}
+The v1 core stands: lock first, deviations before reruns, report failures, and score post-hoc models only on future data. The audit confirmed every computed result of the night by an independent method: closed forms, Poisson identities, brute force against formulas, and fresh exact runs. The corrections concerned interpretation and data inputs, not arithmetic.
+
+\emph{Method note.} Prepared with an AI assistant (Claude, Anthropic). The audit file is field\_tests/results/audit\_2026-11-18.txt in the archive github.com/dannyeldridge54/aegis.
+
+\begin{thebibliography}{9}
+\bibitem{P4} D.~Eldridge, ``Lock Before You Compute: A Pre-Registration Workflow for Theoretical Physics Done with an AI Assistant,'' Zenodo (2026), doi:10.5281/zenodo.24291026.
+\bibitem{SSD} D.~Eldridge, ``Shape, Scale and Duality,'' Zenodo (2026), doi:10.5281/zenodo.24339574.
+\bibitem{CM} D.~Eldridge, ``Grading a Self-Learning Research Assistant: An Interim Report on CubeMind's First Night,'' Zenodo (2026).
+\end{thebibliography}
+\end{document}
