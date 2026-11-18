@@ -572,14 +572,16 @@
     "D1122",
     "D1192",
     "D1208",
-    "D1320"
+    "D1320",
+    "D1325"
    ],
    "depends": [
     "vac_i"
    ],
    "history": [
     "D1320: computed (node added)",
-    "D1320: computed"
+    "D1320: computed",
+    "D1325: computed"
    ]
   },
   {

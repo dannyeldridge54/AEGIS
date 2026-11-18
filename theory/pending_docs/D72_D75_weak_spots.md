@@ -13981,3 +13981,10 @@ MAP: none
 - **Tests:** HL-LHC (≈ 0.98 projected) plus CTA cover this computed window. The 1–1.25 TeV slice is the part that needs CTA.
 VERDICT: upper edge computed; 1.85 stays excluded; the window is narrower at the top than the earlier ~1.5 label.
 MAP: node=wino_window status=computed touches=[] ripple=no
+
+## D1325 — Overclaim fixed in the SERAPIS v3.3 draft (unposted): "the Simons Observatory will test the U(1) case" was too strong (2026-11-18)
+- [CENTRE · arithmetic] The U(1) hidden sector gives ΔN_eff = 0.054. SO's forecast σ(N_eff) ≈ 0.045 (arXiv:2608.07453) gives only ≈ 1.2σ, so it is not a test. A 2σ detection needs σ ≲ 0.027, beyond SO as forecast; CMB-S4 (0.03) was not carried forward.
+- SU(2) (0.161) would show at ≈ 3.6σ with SO alone (it is already disfavoured at ≈ 3σ, D1208).
+- **Draft sentence now:** "the Simons Observatory (σ ≈ 0.045) would see the U(1) case only at ≃ 1.2σ (a 2σ test needs σ ≲ 0.027), but SU(2) at ≃ 3.6σ on its own."
+- **Consequence for SERAPIS:** the τ = i hidden sector is tested decisively only in its SU(2)/SU(2)+gaugino forms. U(1) and empty remain indistinguishable in the 2030s on N_eff alone.
+MAP: node=darkrad_i status=computed touches=[] ripple=no
