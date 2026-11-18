@@ -1,3 +1,4 @@
+# AEGIS-FP YM5IQDCVVJLT6RGZ · (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """CERN+1 unit tests. Run from the repo root:  python -m pytest tools/lhc/tests -q"""
 import math, pytest
 from tools.lhc import xsec, lifetime, recast_dt, stats, theory_band, future, kinematics, selftest

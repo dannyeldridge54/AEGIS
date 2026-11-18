@@ -13816,3 +13816,9 @@ MAP: none
 - ATLAS arXiv:1712.02118 Table 2: electroweak event acceptance rises 0.09 → 0.12 from 400 to 600 GeV (τ = 0.2 ns); the 460 GeV limit is quoted at fixed τ = 0.2 ns; decay window 122.5–295 mm. [literature]
 - Our recast had held acceptance constant and used our mass-dependent τ. Shifts from the 446.5 GeV baseline: acceptance(m) +8.0 GeV (P1 5–10: PASS); τ fixed at 0.2 ns +2.0, R_out 295 mm +0.0 (P2 <3: PASS); all three 457.2 GeV, −0.6% from 460 (P3 within 1.5%: PASS). [estimate]
 - So the D1309 P3b failure came from the constant-acceptance simplification, not the physics. The 136 fb⁻¹ recast is untouched (no equivalent table used).
+
+## D1312 — CERN+1: gamma-ray line cross-check linked read-only from the Hyperion track (no recomputation)
+MAP: none
+- The planned "reproduce H.E.S.S. first" step was already done on the Hyperion track: D1126 reproduces the H.E.S.S. IGS benchmark J-factor to −7.4%; D1153 gives the verdicts with the current thermal fractions (0.67 TeV allowed; 1.0 TeV allowed for Gaia-calibrated haloes, marginal for the benchmark halo; 1.85 TeV excluded); D1150 projects CTA at ~10× in cross section. [literature: our own notes]
+- CERN+1 panel() now carries these as a read-only 'gamma_line' block with its sources; nothing from that track was edited or rerun.
+- Combined picture: collider (HL-LHC 0.90–0.98 TeV reach) and line searches (window upper edge ~1.0–1.3 TeV) together close almost all of the post-hoc wino window.
