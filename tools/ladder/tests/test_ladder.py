@@ -50,3 +50,12 @@ def test_observing_entries_are_valid_targets():
     m = fresh(); m["observing"] = [{"id": "obs", "status": "open", "title": "O"}]
     applied, last, _ = L.update(m, "## D760\nMAP: node=obs status=computed\n", 759)
     assert applied and m["observing"][0]["status"] == "computed"
+
+def test_sync_board_out_of_sync_and_ledger(tmp_path, monkeypatch):
+    import importlib.util, pathlib, yaml
+    sp = importlib.util.spec_from_file_location("sync", pathlib.Path(__file__).resolve().parents[1] / "sync.py"); S = importlib.util.module_from_spec(sp); sp.loader.exec_module(S)
+    m = {"nodes": [{"id": "a", "status": "computed", "d": ["D900"]}, {"id": "b", "status": "computed", "d": ["D800"], "depends": ["a"]}]}
+    led = tmp_path / "sync.yaml"; led.write_text("{}"); monkeypatch.setattr(S, "LEDGER", led)
+    rows, _ = S.board(m); assert [r for r in rows if r["id"] == "b"][0]["out_of_sync"]
+    led.write_text(yaml.safe_dump({"b": {"a": {"at": "D900", "by": "D901", "verdict": "no effect"}}}))
+    rows, _ = S.board(m); assert not [r for r in rows if r["id"] == "b"][0]["out_of_sync"]

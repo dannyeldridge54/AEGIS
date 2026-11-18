@@ -1,0 +1,3 @@
+# Sync ledger (tools/ladder/sync.py). A node reviewed against an input's newer note is in sync up to 'at'.
+# Every entry cites the D-note that made the decision. Recomputations go through a lock as usual.
+{}
