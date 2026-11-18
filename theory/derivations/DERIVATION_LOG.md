@@ -2173,3 +2173,7 @@ Touches: none.
 1. [derived] m L/π is independent of α_E (y → y/√α_E, m² → α_E m², L → L/√α_E).
 2. [estimate] Singular-end cut ξ₁ → 0: m L/π → ≈0.9384, 2.0543 (+0.7% vs ξ₁ = 1e-4); gap to BTR ≈ −3.3%/−3.6%, ratio still 2.189.
 3. [derived] Far-end cut and far-end BC have no effect (< 1e-5); Neumann at the singular end −0.3%/−0.4%; no single choice gives +4% → open.
+
+## D1358: extension route closed
+1. [literature] 2305.09587: scalar perturbations have μ = μ̃ = 1 at both ends → unique square-integrable BCs; their spectrum M² ≃ (π/z_m)²[n(n+1) − 7/8] is an estimate.
+2. [derived] Our ξ₁ → 0 limit is that unique solution; the ≈3.4% common gap to BTR's two-figure "≈" values is not a boundary-condition choice.
