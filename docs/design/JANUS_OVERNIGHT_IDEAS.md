@@ -536,3 +536,26 @@ Honest framing (labels): the "agents" are **local-model or rule dispatchers** ba
 - These agents are the per-toolkit handlers Danny described; they live in CubeMind + registry, defensive-only, no self-publish, no system changes (same guardrails).
 
 Build order (folded into V + CM slots of the narrowed loop): (a) janus_feed.py + pulses3.js + make_data seeding [first]; (b) agent cards on every registry tool + a dispatcher; (c) the result bus + cross-feed in learn_loop; (d) live feed polling in the Janus app; (e) web grows from the feed.
+
+## [SA-AR] Point & See — the AR sky for Sarah's phone (2026-11-18)
+Danny's ask: Sarah points her phone camera at the sky, the real stars/planets/constellations are
+drawn where they actually are, pinch to zoom, and the map gets deeper + sharper as the AEGIS/Gaia
+survey is processed and pushed to her phone.
+
+Built (`apps/sarah_sky/ar.html` + `js/ar.js`, deployed to PC):
+- Live camera feed behind a transparent canvas. Device-orientation (alpha/beta/gamma + screen angle,
+  iOS webkitCompassHeading when present) -> world rotation (ENU frame). Back-camera look = device -Z.
+- Real positions: 378 Hipparcos bright stars (data/stars.json, true B-V colours) + 89 constellation
+  line-sets + Messier deep sky + live planets/Moon/Sun via Astronomy Engine `Equator`+`Horizon`.
+- Gnomonic projection through a FOV that the zoom slider / pinch drives (70deg..12deg).
+- "Set North" calibration: aim the reticle at a bright star Sarah can name, tap it, heading snaps
+  (honest fix for phone-compass drift; readout shows "~" until a true compass heading arrives).
+- Zodiac toggle draws the real ecliptic band + 12 sign ticks, labelled **tradition, not astronomy**.
+- Tap any star/planet/deep-sky for a plain-language card. No camera -> graceful black-sky fallback.
+- Verified headless (Playwright, 390x844): Orion renders exactly in the S sky at alt45/az180 —
+  Betelgeuse orange, Rigel blue-white, belt + lines + Canis Major; 0 JS errors; 378 stars, 150 polylines.
+- **Deep-catalog hook:** `window.AR.updateCatalog(stars)` swaps in a bigger [{name,ra,dec,mag,bv}] list
+  with no rebuild. This is where the Gaia/Janus output lands once we're chewing it.
+
+Still needs: real-phone test (camera + compass can't be tested headless) before sharing to Sarah;
+then Vedic/Chinese/Moon overlays, tarot (78 ORIGINAL cards), birth chart, journal — all tradition-labelled.

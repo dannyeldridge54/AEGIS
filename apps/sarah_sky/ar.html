@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Sarah's Sky — Point &amp; See</title>
+<meta name="description" content="Point your phone at the sky and see the stars, planets and constellations drawn right where they are. The map grows as the AEGIS Gaia survey is processed.">
+<meta name="theme-color" content="#05010f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --bg:#05010f; --bg2:#0b0620; --card:rgba(6,2,20,.72);
+    --text:#f3eeff; --dim:#b9a9e6;
+    --cy:#4cc3ff; --cy2:#6fb8ff; --vi:#a07bff; --mg:#ff4fd8; --pk:#ff6ec7;
+    --line:rgba(160,123,255,.35);
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--text)}
+  #cam{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;background:#000;transform:scale(1.001)}
+  #sky{position:fixed;inset:0;width:100%;height:100%;touch-action:none}
+  /* gate / start screen */
+  #gate{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:28px;gap:16px;z-index:40;
+    background:radial-gradient(130% 100% at 50% 0%,var(--bg2),var(--bg) 70%)}
+  #gate h1{font-size:26px;margin:0;font-weight:700;letter-spacing:.3px;
+    background:linear-gradient(90deg,var(--cy),var(--vi),var(--mg));-webkit-background-clip:text;background-clip:text;color:transparent}
+  #gate p{max-width:30em;color:var(--dim);line-height:1.5;margin:0;font-size:15px}
+  .btn{border:1px solid var(--line);background:var(--card);color:var(--text);
+    padding:14px 22px;border-radius:14px;font-size:16px;font-weight:600;cursor:pointer;
+    box-shadow:0 0 22px rgba(120,80,255,.25)}
+  .btn.go{background:linear-gradient(90deg,rgba(76,195,255,.25),rgba(255,79,216,.25));border-color:var(--cy2)}
+  .btn:active{transform:translateY(1px)}
+  .fine{font-size:12px;color:var(--dim);opacity:.8;max-width:28em}
+  /* HUD */
+  #hud{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    display:flex;flex-direction:column;gap:8px;pointer-events:none}
+  .row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;pointer-events:auto}
+  .chip{background:var(--card);border:1px solid var(--line);border-radius:999px;color:var(--text);
+    padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;backdrop-filter:blur(6px)}
+  .chip[aria-pressed="true"]{border-color:var(--mg);color:#fff;box-shadow:0 0 14px rgba(255,79,216,.4)}
+  .chip .d{color:var(--dim);font-weight:500}
+  #readout{position:fixed;top:0;left:0;right:0;z-index:30;padding:calc(8px + env(safe-area-inset-top)) 12px 8px;
+    display:flex;justify-content:space-between;align-items:flex-start;gap:8px;pointer-events:none;font-size:12px}
+  .badge{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 10px;backdrop-filter:blur(6px);pointer-events:auto}
+  .badge b{color:var(--cy2)}
+  #close{color:var(--text);text-decoration:none;font-size:20px;line-height:1;padding:2px 6px}
+  /* target reticle */
+  #retic{position:fixed;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;z-index:20;pointer-events:none;
+    border:1px solid rgba(255,255,255,.35);border-radius:50%}
+  #retic::before,#retic::after{content:"";position:absolute;background:rgba(255,255,255,.35)}
+  #retic::before{left:50%;top:-8px;width:1px;height:8px}#retic::after{left:-8px;top:50%;height:1px;width:8px}
+  /* info popover */
+  #info{position:fixed;left:12px;right:12px;bottom:118px;z-index:35;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:14px 16px;backdrop-filter:blur(10px);display:none;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+  #info h3{margin:0 0 4px;font-size:18px}
+  #info .sub{color:var(--cy2);font-size:13px;margin-bottom:8px}
+  #info p{margin:6px 0 0;color:var(--dim);font-size:13px;line-height:1.5}
+  #info .x{position:absolute;right:10px;top:8px;color:var(--dim);font-size:20px;cursor:pointer}
+  .err{position:fixed;inset:auto 12px 120px;z-index:36;background:rgba(40,0,20,.8);border:1px solid var(--mg);
+    border-radius:12px;padding:12px 14px;font-size:13px;color:#ffd9f1;display:none}
+  .slider{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);
+    border-radius:999px;padding:6px 12px;pointer-events:auto}
+  .slider input{width:130px}
+  .slider label{font-size:12px;color:var(--dim)}
+</style>
+</head>
+<body>
+<video id="cam" playsinline muted autoplay></video>
+<canvas id="sky"></canvas>
+<div id="retic" hidden></div>
+
+<div id="readout" hidden>
+  <div class="badge" id="look">alt <b>–</b> · az <b>–</b></div>
+  <a class="badge" id="close" href="index.html" aria-label="Back to the map">×</a>
+</div>
+
+<div id="info"><span class="x" id="infoX">×</span><h3 id="iName">–</h3><div class="sub" id="iSub"></div><p id="iBody"></p></div>
+<div class="err" id="err"></div>
+
+<div id="hud" hidden>
+  <div class="row">
+    <div class="slider"><label>zoom</label><input id="zoom" type="range" min="0" max="100" value="35"></div>
+  </div>
+  <div class="row">
+    <button class="chip" id="tStars" aria-pressed="true">Stars</button>
+    <button class="chip" id="tLines" aria-pressed="true">Constellations</button>
+    <button class="chip" id="tPlanets" aria-pressed="true">Planets</button>
+    <button class="chip" id="tDeep" aria-pressed="false">Deep sky</button>
+    <button class="chip" id="tZodiac" aria-pressed="false">Zodiac <span class="d">tradition</span></button>
+    <button class="chip" id="tFlip" aria-pressed="false">Flip cam</button>
+    <button class="chip" id="tCal">Set North</button>
+  </div>
+</div>
+
+<div id="gate">
+  <h1>Point &amp; See</h1>
+  <p>Hold your phone up to the night sky. The stars, planets and constellations are drawn right where they really are — move the phone and the sky moves with you.</p>
+  <button class="btn go" id="start">Start — use camera &amp; motion</button>
+  <p class="fine">Your phone asks for the camera and motion sensors. Nothing leaves your phone — no account, no tracking. Works best outside, away from bright lights. On iPhone, tap “Allow” for both.</p>
+  <p class="fine" id="gfine">The map shows the brightest 378 stars today. It will grow — and get sharper — as the AEGIS Gaia survey is processed and sent to your phone.</p>
+</div>
+
+<script src="vendor/astronomy.browser.min.js"></script>
+<script src="js/ar.js"></script>
+</body>
+</html>
