@@ -14868,3 +14868,10 @@ MAP: node=janus status=computed touches=[] ripple=no
 - aegis-check: re-ran +1.33 % and −2.78 % from the json, πζ(3) = 3.776 in python; checked: units (code units; ratios), arithmetic, like-with-like (exact MS α_s at A1's own (n_s, r)), limits (B = D = 0 reproduces a pure plateau), cross-sector: none.
 MAP: node=janus status=computed touches=[] ripple=no
 
+## D1416 — JANUS tick 14: NULL — the second-order slow-roll formulas could not be fetched complete, so nothing was computed; next tick goes to exact Mukhanov–Sasaki instead
+- [literature] ar5iv astro-ph/0202094 (Leach, Liddle, Martin, Schwarz 2002) gave the horizon-flow coefficients a_S1, a_S2, a_T1, a_T2 and C = γ_E + ln 2 − 2 ≈ −0.7296, but the fetched a_S1 is missing its ε₂ε₃ term and the explicit n_S, r, α_S formulas were beyond the readable part; Liddle–Parsons–Barrow 1994 and the arXiv PDFs were blocked from this sandbox.
+- No lock, no computation: a known-incomplete formula is not used (rule: formulas fetched, never from memory). D1415's FAIL (+1.33 %) stands.
+- Route chosen: exact MS on D1415's asymptotic offset model (repo engine), which removes the slow-roll-order question; lock before running.
+- aegis-check: nothing computed; quoted C value re-checked (γ_E + ln 2 − 2 = −0.7296) in python; checked: no numbers enter a verdict.
+MAP: node=janus status=computed touches=[] ripple=no
+

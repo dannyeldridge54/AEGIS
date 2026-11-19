@@ -2475,3 +2475,8 @@ Touches: none.
 3. [derived] Controls at the same (n_s, r): pure plateau (B = D = 0) −2.78 %; B only +1.86 %; leading-order relation −3.40 %. The offset flips the sign of the miss and removes the undershoot, but over-corrects; the 1/y term pulls back by 0.5 %.
 4. [estimate] The residual ~1.3 % is the same size as the gap between first-order slow roll and the exact third-order Janus core (D1228/D1234); a first-order model cannot reach sub-percent here, unlike τ = i where D640's closed form did. Next: the same model with second-order slow roll (Stewart–Lyth corrections) before any claim.
 
+## D1416: second-order slow roll — no result (source incomplete)
+1. [literature] Fetched (ar5iv astro-ph/0202094, Leach et al. 2002, §III–IV): scalar coefficient a_S1 = −2ε₁ − ε₂ + 2(2C+1)ε₁² + (2C−1)ε₁ε₂ …, a_S2, a_T1, a_T2, C = γ_E + ln 2 − 2 ≈ −0.7296, ε₂ = 2ε − 2η, ε₂ε₃ = 4ε² − 6εη + 2ξ². The quoted a_S1 lacks its ε₂ε₃ term and the explicit n_S − 1, r, α_S were not reached; LPB 1994 and the arXiv PDF were not reachable here.
+2. [estimate] Computing with a known-incomplete second-order formula would break "formulas fetched, never from memory"; no computation was run, no lock written. D1415's FAIL stands.
+3. [estimate] Better route (next tick): put D1415's asymptotic offset model through the repo's exact Mukhanov–Sasaki engine (no slow-roll order at all) and compare with A1 at the same (n_s, r).
+
