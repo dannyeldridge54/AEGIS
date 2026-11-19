@@ -2879,3 +2879,11 @@ Touches: none.
 2. [derived] Triality is not the D1406 placement mechanism.
 3. [derived] E(ρ,s) = (√3/2)^s·6ζ(s)L(s,χ₋₃) (1e-14); E8 = 240·2^{−s}ζ(s)ζ(s−3) (exact).
 4. [postulate P3] Unchanged.
+
+## D1485 — SR forecast + (α, C) band map of DILMIX (help for the P3 chat) — AGREE; 2 of 6 locked points forecast IN BAND; in-band strip α 0.25–0.5, C 1–2e-6
+1. [derived] Anchors (independent second-order SR, D1481 method; DEVIATIONS D1–D5 are process/performance only, D4 verified identical at A1): α = 1, C = 1.25e-6 vs DILATON32 A1 exact MS: Δn_s −3.9e-6, Δr/r −0.017 %; α = 0, C = 0 vs B0: Δn_s −3.6e-6, Δr/r −0.024 % ⇒ AGREE as locked.
+2. [estimate] The P3 chat's 6 locked DILMIX points (its runs remain the record): (0.25, 1.25e-6) n_s 0.97197, r 4.561e-4 IN BAND; (0.5, 1.25e-6) 0.96909, 5.506e-4 IN BAND; (0.75, 1.25e-6) 0.96785, 5.974e-4 near; (0.25, 2.5e-6) 0.97864, 5.556e-4 out (n_s high); (0.5, 2.5e-6) 0.97415, 6.338e-4 near; (0.75, 2.5e-6) 0.97243, 6.760e-4 near.
+3. [estimate] Map (9 α × 8 C; field_tests/results/D1485_dilmix_sr.json): in band at (α, C) = (0.25, 1.5e-6) 0.9733/4.74e-4, (0.375, 1e-6) 0.9691/4.97e-4, (0.375, 1.5e-6) 0.9713/5.29e-4, (0.375, 2e-6) 0.9735/5.63e-4, (0.5, 1.5e-6) 0.9701/5.66e-4 — with step 2 a strip α ≈ 0.25–0.5, C ≈ 1–2e-6. Best-centred: α ≈ 0.375, C ≈ 1.5e-6 (n_s 0.9713, r 5.29e-4, mid-band in both). α = 1 row reproduces D1481's form-A map (e.g. C 1.5e-6: 0.9680 / 6.39e-4).
+4. [estimate] α = 0 with C > 0: no end of inflation (7 points recorded as errors, D5) — the declared tilt approximation C·g with g = P/(1 − P) ~ x² grows without bound for the pure square form; consistent with the P3 chat not locking α = 0 with a tilt.
+5. [estimate] Reading for the P3 chat: DILMIX is the first P3 family forecast in band; the physics question its PREREG asks — which construction gives a one-power/square mixture α ≈ 0.25–0.5 with C ≈ 1–2e-6 — is now the live target.
+6. [derived] Bonus checks: the P3 chat's exact SMSCAN rows (2, 3/2), (3, 2/3), (3, 1) match our D1483 forecasts to Δn_s 3.5–3.8e-6, Δr/r −0.026…−0.027 % (CONFIRMED); read-only aegis-check of D1484 (m_A²/H² = 3pq(1 − P*) → 0.061 ✓) and D1487 (E(ρ,2) = (√3/2)²·6ζ(2)L(2,χ₋₃) = 5.7833 ✓ = 1 − B).

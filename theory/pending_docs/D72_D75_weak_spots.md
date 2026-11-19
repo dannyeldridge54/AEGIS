@@ -15369,3 +15369,10 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] So SERAPIS's vacuum value is arithmetic: E(ρ,2) = (9/2)ζ(2)L(2,χ₋₃) = (3π²/4)·L(2,χ₋₃) — the Dedekind zeta of Q(√−3), an Euler product over primes (p ≡ 1 mod 3 split, p ≡ 2 mod 3 inert, 3 ramified). Up the chain: A2 = Eisenstein integers (inside C), D4 ≅ Hurwitz quaternions (H), E8 = Cayley/octonion integers (O) — Cayley–Dickson doubling 2 → 4 → 8; each lattice zeta is a product of ζ's/L's. Leech (24) is the first with a cusp-form (Ramanujan τ) piece — not a pure prime product. [estimate: D4 formula not checked here]
 - [estimate] Physics use: none yet — this is structure, not a mechanism. It does make the SERAPIS constants exact closed forms (E_ρ, C·E_ρ combinations) and suggests a circuit law (A2/E8 Euler products) and a paper sentence.
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1485 — help for the P3 chat: DILMIX SR forecast + band map — AGREE; first P3 family forecast IN BAND (α 0.25–0.5, C 1–2e-6)
+- [derived] Anchors A1 / B0 reproduced to ≤ 3.9e-6 in n_s, ≤ 0.024 % in r (AGREE).
+- [estimate] Locked DILMIX points (0.25, 1.25e-6) n_s 0.9720 r 4.56e-4 and (0.5, 1.25e-6) 0.9691 r 5.51e-4 forecast IN BAND; map in-band strip α ≈ 0.25–0.5, C ≈ 1–2e-6, best-centred α ≈ 0.375, C ≈ 1.5e-6 (0.9713, 5.29e-4). The P3 chat's exact runs remain the record.
+- [estimate] α = 0 with tilt does not end inflation under the declared C·g approximation (7 map errors).
+- aegis-check: numbers from field_tests/results/D1485_dilmix_sr.json; α = 1 row cross-checked against D1481 (C 1.5e-6: 0.9680/6.39e-4 both); in-band flags re-read against the rule (n_s 0.969–0.975, r 4.55–5.7e-4) for all 5 map points ✓ ((0.375, 2e-6): 0.9735 ≤ 0.975, 5.63e-4 ≤ 5.7e-4 ✓); DEVIATIONS D1–D5 logged before the numbers they affect; checked: units, arithmetic, like-with-like (same model/T_R/rules as PREREG_DILMIX), cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
