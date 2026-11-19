@@ -948,3 +948,4 @@ D1660  2026-11-19T23:27Z  JANUS genesis G12b: round-2 referee (D1653-D1659) + so
 D1661  2026-11-19T23:32Z  JANUS genesis G13: sourced N_eff scope note on D1632 T4, D1648 Q2, D1649
 D1662  2026-11-19T23:33Z  JANUS genesis G12c: re-run round-2 source audit after D1661
 D1663  2026-11-19T23:35Z  JANUS genesis G14: sourced light-element scorecard - toolkit vs LBT Yp 2026, Cooke D/H, PRIMAT
+D1664  2026-11-19T23:38Z  JANUS genesis G6e: P-M dark photon strip with DarkCast limit tables (visible decays) + BBN floor + SN1987A
