@@ -1,4 +1,7 @@
 # Changelog
+## 1.7.0 — 18 Nov 2026
+- Night vision: the 🔴 button (or N, or More → Night vision) turns the whole app red so your eyes stay dark-adapted at the telescope — sky pictures, labels and Point & See included. A brightness slider sits bottom-left and fades when you are not touching it; the setting is remembered.
+
 ## 1.6.2 — 18 Nov 2026
 - Tarot: five more decks — Constellations, Spiral Galaxy, Neon Sign, Cyber Circuit, Neon Horizon (ten in all). Card art is now kept inside the card frame; Neon Horizon's sun shows one stripe per card number.
 
