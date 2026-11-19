@@ -699,3 +699,4 @@ D1412  2026-11-19T03:10Z  JANUS tick 10: tau=i relation error is the offset bias
 D1413  2026-11-19T03:15Z  JANUS tick 11: band_i running re-scored with D640 offset-corrected relation; clear flag
 D1414  2026-11-19T03:21Z  JANUS tick 12: rho analogue of D640 - size of the I^2 offset (1-E(rho,2)) vs the 3.4% gap
 D1415  2026-11-19T03:26Z  JANUS tick 13: rho analogue of D640 - slow roll on plateau 1-1/(A y^2+B+D/y) with tilt, inverted at A1
+D1416  2026-11-19T03:33Z  JANUS tick 14: second-order slow roll - source incomplete, no result; route to exact MS
