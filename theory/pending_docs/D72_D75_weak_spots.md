@@ -14773,3 +14773,17 @@ MAP: node=janus status=computed touches=[band_i, band_e, band_e_audited] ripple=
 - Lesson: check which κ a vacuum owns (D1263) before reusing a relation across nodes.
 MAP: node=band_i status=frozen touches=[janus] ripple=no
 
+
+## D1404 — CENTRE / P3 MIRROR (Danny 20:43 "mirror the dual the way serapis is… check what we've learned to limit bs"): work P3 from BOTH ends. Top-down spec read off SERAPIS-E; bottom-up ledger of every string route tried; the origin must sit where the two meet. Plus one new closed route: type II one-loop dilaton (universal hypermultiplet) corrections are TOPOLOGICAL (∝ χ), so they carry no E(U) (2026-11-18)
+- [literature] Antoniadis, Minasian, Theisen & Vanhove, "String loop corrections to the universal hypermultiplet" (hep-th/0307268): one-loop coefficient χ₁ = 4ζ(2)χ/(2π)³ (2.1); corrected dilaton metric shifted by constants, e.g. ρ² = e^{−2φ₄} − χ₁ (4.11); the corrected metric is not Kähler; one-loop corrections "topological and proportional to the Euler number"; higher-loop R⁴-type terms integrate to complex-structure-independent quantities (Sec. 7).
+- TOP-DOWN SPEC (from SERAPIS-E, D698/D699/D1364/D1397): (S1) an overall factor of the potential ∝ 1/(A₀ + B·F(U)), F modular-invariant, minimal at ρ, with an uplift tuned so V(ρ) = 0; (S2) F must grow like U₂² (E(U,2)-type) up to horizon exit y* = 14.58·√a, a = A₀/B + F(ρ) — a 1/U₂ approach gives the α = 1/3 attractor (n_s 0.960, r 1.6e-3, D1398), out of band; (S3) no competing U-dependence at y* (D1397: the 6πT₂ term of Y kills it); (S4) the tilt C_phys = 1.25e-6·a, linear in F — supplied naturally by additive α′/loop terms (D696, D1403); (S5) any U-symmetry must contain full SL(2,Z) (ρ an elliptic point; Γ₀(N) planes lose it, D1376, D1380–D1381).
+- BOTTOM-UP LEDGER (what each string route gives):
+  - additive E in K or W (BHK δK, BBHL ξ(U), D-terms): tilt or exp — fails S1 (D1368, D1370, D1403);
+  - condensate W ∝ η⁻⁶P(j): exp growth, no plateau (D799, D1368);
+  - anti-D3 / warped throat: additive or exponential plateau — fails S1/S2 (D797, D828–D839);
+  - KKPR one-loop K_S = −log(Im S + Y/16π²): passes S1, fails S3 (6πT₂ dominates; y* ≥ 37T₂, D1397) and then S2 (α = 1/3, D1398);
+  - type II one-loop dilaton (ATV): constant χ shift — fails S1 (no U) [this note];
+  - 8D D⁴R⁴ (GRV): A₀ + B·E₂(U) EXACT, passes S2/S3/S5 shape-wise (D1401) — but no known route puts it into an overall e^K factor (S1).
+- [derived] Where the two meet: the only object found with the right F (exact E₂(U), no competing U-term, SL(2,Z)) is the D⁴R⁴ coefficient; the only structure with the right placement (inside the dilaton's log) is a K_S correction. So the origin, if stringy, is "the D⁴R⁴-type coefficient inside the dilaton Kähler argument": K = −log(Im S + c·[A₀ + B·E₂(U)]) at the order where E₂(U) leads. ATV shows the type II one-loop version is U-blind; the heterotic two-loop (genus-two) version is the unexplored candidate.
+- Verdict: P3 search space reduced to one target (genus-two heterotic K_S with D⁴R⁴ structure). Everything else is ruled out by the ledger. P3 origin: postulate.
+MAP: node=plateau_origin status=postulate touches=[] ripple=no
