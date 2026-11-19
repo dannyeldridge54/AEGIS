@@ -56,3 +56,13 @@ lattice directions (26 = 10 + 16; Narain O(16 + d, d)). At each stage the map re
 - Verdict (warp map so far): fold 10D→9D adds c > 0 (warps k 2 → 3/2, r up); fold →7D lets c take either sign: small negative c flattens (r ≈ 3e-4), larger negative c flips the approach and kills inflation into the anchor. The rung survives for |c| ≲ 0.7 — near where the 7D logarithms cancel (ν₂ ≈ 1, U ≈ ρ, r ≈ 1): a thin "stitch-balanced" slice.
 - Weave/twist link: each fold weaves a new thread (c) into the τ-strand; the observed rung is the slice where the new threads balance out.
 - Next stage: D = 6 (SO(5,5)/(SO(5)×SO(5)), codon E^{SO(5,5)}_{[10000];3/2}).
+
+## Stage 4 — D = 6 (IIB on T⁴ / M on T⁵) — D1571
+- Coordinates: G/K = SO(5,5)/(SO(5)×SO(5)); dim 25. Inflaton candidates: the 6D string coupling direction (r₅ in GRV's parabolic P_{α₁}), the T⁴ Narain moduli SO(4,4)/(SO(4)×SO(4)) (dim 16).
+- R⁴ codon (GRV 1001.2535 §6): E⁽⁶⁾ = E^{SO(5,5)}_{[10000];3/2}, Laplace eigenvalue λ = 3(11 − D)(D − 8)/(D − 2) = −15/2. Constant term along the string coupling (C.15): 2ζ(3)r₅³ + 2r₅E^{SO(4,4)}_{[1000];1} — NO logarithm here (unlike 7D's B.72). Λ₆ ∝ (E⁽⁶⁾)^{−1/4}.
+- Structure along the coupling: tree term (2ζ(3)r₅³ = "ζ(3)/g²") + one-loop term (Narain lattice sum, r₅¹): the two mirror terms differ by r₅² = 1/g_s² — the SAME mirror gap 2 (in powers of 1/g_s) as 10D's y^{3/2} vs y^{−1/2}. So the gradient strand along the coupling has the same rung-1 shape 1 − D·g_s² + …, with D set by E^{SO(4,4)}_{1}/(2ζ(3)) instead of 4ζ(2)/(2ζ(3)); the T⁴ moduli enter only through that one-loop coefficient (a c-type thread, as at 9D/7D, but multiplicative rather than additive).
+- No new slice shape ⇒ no new engine-F run (the E + c and amplitude-rescaled k = 2 families are already computed: D1554, D1568, D1570; an amplitude change only shifts the plateau along the field and leaves (n_s, r) unchanged — D1552 matching rule).
+- Verdict: the rung PERSISTS along the 6D coupling direction (weak coupling, large r₅), provided the one-loop Narain coefficient E^{SO(4,4)}_{1} is positive (it is a regularised Epstein-type sum; its sign at the T⁴ point matters — open). The new 16 Narain coordinates are threads that set the amplitude, not new inflaton rungs.
+- Invariant found: at every lens so far the codon along the coupling = tree + one-loop with mirror gap g_s² — the "rung-1 gap" is level-independent; the folds only re-weight it (9D: +c; 7D: ±c with logs; 6D: rescaled one-loop coefficient).
+- Weave/twist link: the gap g_s² is the fixed stitch; the folds change the thread tension around it.
+- Next stage: D = 5 (E₆₍₆₎/USp(8), dim 42, codon E^{E₆}_{[100000];3/2}).

@@ -15944,3 +15944,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1570 — DIMENSION LADDER stage 3 (D = 7, SL(5)): τ-slice codon E_{3/2} + c with c built from logs (either sign); c = −0.658 flattens (untilted r 3.26e-4, n_s 0.9587), c = −6.58 overshoots (no inflation into ρ); the rung survives only for |c| ≲ 0.7. Map: theory/pending_docs/DIMENSION_LADDER.md
 - Lock field_tests/rules/PREREG_DIM3_7D.md; results field_tests/results/DIM_SLICE/; GRV arXiv:1001.2535 eqs. (6.5), (B.71), (B.72). Expectation partly held: large negative c kills inflation (yes); small negative c still inflates, flatter — stated.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1571 — DIMENSION LADDER stage 4 (D = 6, SO(5,5)): codon E^{SO(5,5)}_{[10000];3/2} (eigenvalue −15/2) has constant term 2ζ(3)r³ + 2r·E^{SO(4,4)}_{1} along the coupling — tree + one-loop with the same mirror gap g_s² as 10D; the k = 2 rung persists (amplitude set by the Narain one-loop sum, sign open); level-independent invariant identified. Map: theory/pending_docs/DIMENSION_LADDER.md
+- Source GRV arXiv:1001.2535 §6 and (C.15), eigenvalue formula (H.16). No computation (same slice family as D1554/D1568/D1570).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
