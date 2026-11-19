@@ -2717,3 +2717,11 @@ Touches: none.
 2. [derived] Out of sample (derived-model values): A1 +0.001 %, K4 +0.010 %; K3 (r 4.529e-4, just below band_e) +0.019 %. Rule (≤ 0.1 % in and out of sample): ADOPTED as a cross-check formula; D1421 stays the frozen-band reference.
 3. [derived] a = 1.0373 sits 0.2 % above D1421's k = 1.0352 (k was measured at A1, where n_s − 0.972 = +0.0024 gives a + b·0.0024 = 1.0350 — the same number); the n_s slope b explains D1454's 0.49 % edge.
 4. [estimate] The formula is a fit to the derived model, not a new derivation; its accuracy vs exact MS inherits the model's ≤ 0.14 % (D1444) and the references' pre-D1417 caveat.
+
+## D1458 — JANUS tick 54: status readiness of the five Janus nodes — no status change warranted (propose-only note)
+1. [derived] Read theory/map/map.yaml this tick: janus computed; band_i frozen; band_e frozen; band_e_audited postulate ("scored only on future data"); vac_discriminant killed.
+2. [estimate] janus — stays computed. The derived second-order models (D1442–D1448) strengthen it; the vocabulary has no higher tier for a theory relation, so no change; a title note "α_s derived per vacuum at second-order SR (D1448, D1444)" could be proposed to Danny.
+3. [estimate] band_e, band_i — stay frozen: frozen bands are scored on future data, and every re-derivation (D1453, D1454, D1457) confirmed them; nothing here can unfreeze or kill them before SO/SPHEREx n_s.
+4. [estimate] band_e_audited — stays postulate: its own note says "scored only on future data"; D1452 confirmed its running but no new data has arrived (last n_s check D1427). A change needs SO-era n_s (D1440/D1441), not more derivation.
+5. [estimate] vac_discriminant — stays killed: D1449 re-killed it with both derived models (≤ 0.05σ SO). Revival would need σ(α_s) ≈ 5e-5, not on any funded roadmap.
+6. [estimate] Inconsistency flagged (not edited): band_i's map note says the corrected history meets it for ε ≈ 1.40–1.46e-4 (D730), while D1429 found 1.39–1.44e-4 for the audited chain — different chains/eras; worth a one-line reconciliation by Danny or a later tick. band_i_audited stays a proposal awaiting Danny (D1429).

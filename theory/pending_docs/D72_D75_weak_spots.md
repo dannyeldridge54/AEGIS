@@ -15178,3 +15178,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] A fit to the derived model (inherits its ≤ 0.14 % vs exact); D1421 remains the frozen reference.
 - aegis-check: a, b, residuals from the result json; bracket at A1 recomputed in python (1.0350); out-of-sample points not used in the fit; checked: units, arithmetic, cross-sector: none.
 - MAP: node=band_e status=frozen touches=[] ripple=no
+
+## D1458 — JANUS tick 54: status readiness — no change warranted
+- [estimate] janus computed, band_e/band_i frozen, band_e_audited postulate, vac_discriminant killed — all stay; changes need SO-era data, not more derivation. Possible title note for janus (α_s derived per vacuum) — proposal only.
+- [estimate] Flag: band_i map note ε 1.40–1.46e-4 (D730) vs D1429's audited 1.39–1.44e-4 — reconcile later; not edited. band_i_audited awaits Danny.
+- aegis-check: statuses and notes read from map.yaml this tick; no numbers computed; no map edits made.
+- MAP: node=janus status=computed touches=[] ripple=no
