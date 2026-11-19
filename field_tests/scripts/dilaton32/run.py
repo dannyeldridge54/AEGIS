@@ -3,7 +3,7 @@ import json, math, sys, os, tempfile, time
 sys.path.insert(0, '.')
 from tools.serapis_calc import pipeline as P
 from tools.serapis_calc.shapes import E
-run = sys.argv[1]; C = {'A0': 0.0, 'A1': 1.25e-6, 'A2': 1e-5, 'B0': 0.0}[run]
+run = sys.argv[1]; C = {'A0': 0.0, 'A1': 1.25e-6, 'A2': 1e-5, 'B0': 0.0}.get(run) if not run.startswith('C') else float(run[1:])   # CSCAN runs: 'C2e-6' etc.
 P.E_paper = lambda x, y: E(complex(x, y), 1.5)
 if run.startswith('B'):
     orig = P._egrid
