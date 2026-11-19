@@ -16149,3 +16149,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [POSTULATE P-W, candidate; NUMEROLOGY RISK] "The weave index s = 3/2 sets both the inflation codon and the leptons' effective generation number." Three exact coincidences from one number, but no mechanism links the lepton participation ratio to the Eisenstein index; a rational near 2/3 is easy to match. Not entered as derived; it would become physics only if a calculation produced N_eff = s (e.g. masses as Z₃-orbit values of an object built from E(τ, s)).
 - Next: try to build √m_k from E(τ, s) and its derivatives on the Z₃ orbit of a point near ρ, and see whether N_eff = s comes out (lock first).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1604 — WEAVE INDEX TEST (locked PREREG_WEAVE_INDEX + DEVIATIONS D1 zero-guard, D2 JSON cast; no numbers seen before the final run): N_eff = 3/2 does NOT come out of E(τ, 3/2) on the Z₃ orbit at ρ — all five locked constructions FAIL ⇒ P-W stays a pattern only, with no mechanism
+- [computed] N_eff ranges: K1 (tree strand y^{3/2}) 2.65–2.99 near ρ, 2.61 at i, 1.44 at 2i, 1.03 at 5i; K2 (one-loop strand) 2.94–3.00, 2.91, 2.74, 2.37; K3 = K1 exactly (E is equal on the orbit); K4 (gradient strand) 1.51–2.90 depending on ε, φ, undefined at i (orbit of a critical point), 2.86, 3.00; K5 (Zhinü factor) 1.06–2.62, undefined, 2.62, 2.98.
+- [derived] N_eff varies continuously with the orbit's base point, so 3/2 is reachable only at a tuned point (e.g. K4 ≈ 1.509 at ρ + 0.3 e^{−iπ/2}). That would be a fit, not a derivation. None of the distinguished points (i, the cusp, the limit near ρ) gives 3/2.
+- Verdict: the "weave index" coincidence (Q = 1/s, δ = 1/(3s), 1/3 = (s − 1)/s) is NOT produced by the simplest E(τ, 3/2) constructions; P-W stays numerology-risk. P-F1 (equipartition) remains a separate principle.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
