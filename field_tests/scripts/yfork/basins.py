@@ -38,16 +38,25 @@ def flow(x0,y0):
     if abs(t-1j)<0.1: return 'i'
     if min(abs(t-complex(0.5,rho.imag)),abs(t-complex(-0.5,rho.imag)))<0.1: return 'rho'
     return 'other'
-A=[(float(x),flow(x,3.0)) for x in np.linspace(0,0.5,201)]
-rng=np.random.default_rng(7); B=[]
-while len(B)<2000:
-    x=rng.uniform(-0.5,0.5); w=rng.uniform(1/3.0,1.0)   # uniform in 1/y on [1/3,1] => hyperbolic-area-uniform (dA = dx dy/y^2)
-    y=1/w
-    if x*x+y*y<1: continue
-    B.append(flow(x,y))
-fi=B.count('i')/len(B); fr=B.count('rho')/len(B)
-out=dict(validation=val,A=A,f_i=fi,f_rho=fr,f_other=1-fi-fr,PF3_natural=bool(fi>=0.25))
-xi=[x for x,c in A if c=='i']; xr=[x for x,c in A if c=='rho']
-out['A_summary']=dict(x_to_i=[min(xi),max(xi)] if xi else None,x_to_rho=[min(xr),max(xr)] if xr else None,n_i=len(xi),n_rho=len(xr))
-print(json.dumps({k:v for k,v in out.items() if k!='A'},indent=1))
-os.makedirs('field_tests/results/YFORK',exist_ok=True); json.dump(out,open('field_tests/results/YFORK/basins.json','w'),indent=1)
+import multiprocessing as mpc
+def fA(x): return (float(x),flow(x,3.0))
+def fB(p): return flow(p[0],p[1])
+if __name__=='__main__':
+    rng=np.random.default_rng(7); pts=[]
+    while len(pts)<2000:
+        x=rng.uniform(-0.5,0.5); w=rng.uniform(1/3.0,1.0); y=1/w
+        if x*x+y*y<1: continue
+        pts.append((x,y))
+    os.makedirs('field_tests/results/YFORK',exist_ok=True)
+    jl=open('field_tests/results/YFORK/basins_partial.jsonl','w')
+    with mpc.Pool() as pool:
+        A=[]
+        for r in pool.imap(fA,np.linspace(0,0.5,201)): A.append(r); jl.write(json.dumps(['A',r])+'\n'); jl.flush()
+        B=[]
+        for r in pool.imap(fB,pts,chunksize=8): B.append(r); jl.write(json.dumps(['B',r])+'\n'); jl.flush()
+    fi=B.count('i')/len(B); fr=B.count('rho')/len(B)
+    out=dict(validation=val,A=A,f_i=fi,f_rho=fr,f_other=1-fi-fr,PF3_natural=bool(fi>=0.25))
+    xi=[x for x,c in A if c=='i']; xr=[x for x,c in A if c=='rho']
+    out['A_summary']=dict(x_to_i=[min(xi),max(xi)] if xi else None,x_to_rho=[min(xr),max(xr)] if xr else None,n_i=len(xi),n_rho=len(xr))
+    print(json.dumps({k:v for k,v in out.items() if k!='A'},indent=1))
+    json.dump(out,open('field_tests/results/YFORK/basins.json','w'),indent=1)

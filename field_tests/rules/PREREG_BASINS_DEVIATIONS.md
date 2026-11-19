@@ -1,0 +1,2 @@
+# PREREG_BASINS — DEVIATIONS (written before rerun, 2026-11-19 13:45 CT)
+D1: run 1 hit the 1700 s wall-clock limit after validation (2.1e-10). It wrote no outcome, so no result was seen. Fix (performance and robustness only): spread the 2201 flows across all CPU cores with multiprocessing; append each classified start point to a JSONL file as it finishes; raise the limit to 7000 s. Start sets, seed, flow equations, stop rules, classification radii and the f_i ≥ 0.25 criterion are unchanged. If the limit is hit again, report the partial counts as PARTIAL.
