@@ -1,0 +1,7 @@
+{
+ "G_series_u": "-27*u**3/32 + 9*u**2/8 + 3*u/16",
+ "G_trunc_eq39": "3*u/16",
+ "G_over_leading": "-9*u**2/2 + 6*u + 1",
+ "eK_ratio_in_x": "1/(x**2 + 2*x + 1)",
+ "dlnG_du_series": "-45*u + 6 + 1/u"
+}

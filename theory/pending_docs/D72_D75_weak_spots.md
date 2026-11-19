@@ -15441,3 +15441,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] E_xx > 0 at x = ½ (minimum), E_xy = 0; physical-frame row: numerical underflow, analytic n = 1 term +1.1e-6044 ⇒ massless.
 - aegis-check: numbers from field_tests/results/D1500_axion_mass.json; physical-frame sign/stability flag in the json is a finite-difference underflow artefact (checked analytically, positive) — stated, not hidden; kinetic normalisation from K = −3 ln(−i(τ − τ̄)) ⇒ K_ττ̄ = 3/(4y²) ✓; cross-sector: isocurvature/relic of the spectator axion flagged as open.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1501 — tilt T1: exact BBHL α′³ potential — e^K gives form B exactly; next α′³ order is a (1 + 6u) tilt, 160–4000 × too big; needed tilt lies between BHK (too small) and α′³ (too big)
+- [derived] G(u) = (3u/16)(1 + 6u − 4.5u² + …); (2 + u_ρ)²/(2 + u)² = 1/(1 + x)² (form B) exactly.
+- [estimate] C_phys ≈ 12 ⇒ C_model 2.4e-4 – 6e-3 vs needed 1–2e-6; bracket BHK (×10⁻⁴–10⁻⁶) < needed < α′³ next order (×10²–10⁴).
+- aegis-check: formula read from hep-th/0412239 Eq. (3.8) this tick; series by sympy (json); 12/2e3 = 6.0e-3, 12/5e4 = 2.4e-4, ratios to 1.5e-6 = 4000 / 160 ✓ (python); u ≈ 2x uses x = (u − u_ρ)/(2 + u_ρ) at small u_ρ — identification of this term with the P3 tilt is an estimate, stated; cross-sector: none.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
