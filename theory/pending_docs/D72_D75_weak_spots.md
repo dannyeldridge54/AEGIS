@@ -14850,3 +14850,12 @@ MAP: node=janus status=computed touches=[band_i] ripple=no
 - aegis-check: re-ran the top-edge pull −1.393σ and the LO→D640 shift (−10.4 % at the bottom corner) in python; checked: units, arithmetic, like-with-like (same ACT value as D1402), limits (c → 0 ⇒ D635), cross-sector: none.
 MAP: node=band_i status=frozen touches=[janus] ripple=no
 
+## D1414 — JANUS tick 12: the ρ vacuum has its own D640-type offset — in I², B = 1 − E(ρ,2) = −4.78 — big enough (≈ −1 % of I*²) to account for most of the 3.4 % Janus miss (estimate tier)
+- Lock: field_tests/rules/PREREG_D1414_rho_offset_size.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1414/rho_offset.py; result field_tests/results/D1414_rho_offset_size.json. Ladder flag janus (recheck after D1413) addressed.
+- [derived] From D691: plateau 1 − 1/(Ê+1), Ê + 1 = 2ζ(4)y² + B + O(1/y), B = 1 − E(ρ,2). E(ρ,2) = 5.7833 by direct lattice sum (six unit vectors alone give 4.5) → B = −4.783.
+- [computed] δ = B/I*² = −1.11 % (y* 14.1) … −1.02 % (y* 14.7). τ = i reference: c/I* = 5.03 % gave a 10.8 % miss (ratio 2.15).
+- [estimate] Same scaling → 2.1–2.3 % expected vs 3.4 % observed: "offset can explain it" under the locked factor-2 rule; same sign as observed. The rest (~1 %) is a candidate for Epstein's O(1/y) term — to test.
+- Meaning: both vacua's Janus misses come from the same mechanism — the plateau function's constant offset in its field variable (j at τ = i, E(ρ,2) at ρ) — not from κ. A ρ version of D640 should bring ρ to sub-percent like τ = i.
+- aegis-check: re-ran 2ζ(4)·y² at y = √3/2 (1.62, the leading term of E(ρ,2)), the six-unit-vector part 4.5, and −4.78/430·2.15 = 2.3 % in python; checked: units (all dimensionless), arithmetic, like-with-like (same α_s miss definition as D1263), limits (B → 0 ⇒ no offset), cross-sector: none.
+MAP: node=janus status=computed touches=[] ripple=no
+

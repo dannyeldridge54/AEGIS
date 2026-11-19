@@ -2463,3 +2463,9 @@ Touches: none.
 3. [estimate] The band needs ε = 1.15–1.71e-4 (from ε = 4x/I*³); NA12's exact points only cover 1.30–1.50e-4, so the band's edges are D640 extrapolations (D640 itself was validated on its own wider set).
 4. [derived] Knock-on: the forced-negative range of D1405 tightens at its τ = i end from −7.5e-4 to −8.4e-4; all signs and verdicts of D1405/D1408/D1409 unchanged. Flag band_i (recheck after D1412) cleared.
 
+## D1414: ρ-vacuum offset size (locked, estimate tier)
+1. [derived] SERAPIS-E's plateau (D691) is 1 − 1/(Ê+1) with Ê + 1 ≈ 2ζ(4)y² + B, B = 1 − E(ρ,2): a D640-type offset, but in I² = 2ζ(4)y² rather than in I.
+2. [derived] Lattice sum (|m|,|n| ≤ 400, tail 3.4e-5): E(ρ,2) = 5.7833, so B = −4.783; at the A1 horizon exit (y* 14.1–14.7, I*² 430–468) the fractional offset is δ = −1.0 … −1.1 %.
+3. [estimate] Scaling by τ = i's ratio (10.8 % α_s miss from c/I* = 5.0 %, ratio 2.15) gives a 2.1–2.3 % α_s shortfall vs the observed 3.4 % — within the locked factor 2: "offset can explain it". Sign agrees (B < 0 shrinks the effective I, so leading order underestimates |α_s|, as at τ = i).
+4. [estimate] Not yet a derivation: the ρ analogue of D640 (first order in B/I² and the O(1/y) Epstein term) is the next step; the remaining ~1 % may sit in that 1/y term.
+
