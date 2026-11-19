@@ -754,15 +754,16 @@ nodes:
   - D1427
   - D1428
   - D1433
+  - D1452
   depends:
   - nstar_e
   - reheat_rho
   - serapis_e
   - band_e
   history:
-  - 'D1427: postulate'
   - 'D1428: postulate'
   - 'D1433: postulate'
+  - 'D1452: postulate'
   note: web loop postulate 1; scored only on future data
 - id: serapis_point
   layer: 5
