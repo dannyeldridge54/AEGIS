@@ -15196,3 +15196,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Use D640 (−0.3 %) or the derived τ = i model for band_i; a fit should start from D1405's κ = ½ form.
 - aegis-check: a, b, residuals from the result json; out-of-sample points not in the fit; checked: units, arithmetic, cross-sector: none.
 - MAP: node=band_i status=frozen touches=[] ripple=no
+
+## D1461 — JANUS tick 57: band_i ε range reconciled
+- [derived] D730's 1.40–1.46e-4 = two-point interpolation (ε 1.3, 1.6e-4) on the pre-audit Chronos chain (reproduced: 1.396–1.461). NA12 audited chain, neighbouring rows: 1.378–1.440e-4 (D1429 rounded to 1.39–1.44).
+- [estimate] Both correct for their chains; proposed map-note wording "ε ≈ 1.38–1.44e-4 (NA12, D1461); pre-audit D730 1.40–1.46e-4" — for Danny, not edited.
+- aegis-check: interpolations recomputed in python from the D730 text rows and na12_band_i_audited.txt; no prediction, no lock needed (reading of on-file numbers).
+- MAP: node=band_i status=frozen touches=[] ripple=no

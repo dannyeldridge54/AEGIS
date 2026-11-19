@@ -2737,3 +2737,9 @@ Touches: none.
 2. [derived] Max in-sample residual 1.71 %; out of sample (D1448's derived NA12 values) −2.02 … −0.83 %. Rule ≤ 0.1 %: NOT ADOPTED — as anticipated in the lock.
 3. [derived] Reading: at κ = ½ the running is not proportional to r (D1405: −½(1 − n_s)²ρ[1 + ½(ρ − 1)]), so a linear-in-n_s correction to −2r cannot follow band_i's wider r range; the ρ vacuum (κ = 1, α_s = −2r at leading order, D1399) is the special case where the r-proportional form works.
 4. [estimate] For band_i the D640 closed form (−0.3 %, D1412) or the derived model itself remain the meters; a band_i fit should start from D1405's κ = ½ form instead (tick 58 candidate).
+
+## D1461 — JANUS tick 57: band_i ε range reconciled — D730 (1.40–1.46e-4) and D1429 (1.39–1.44e-4) are two interpolations of different-era chains; NA12 gives 1.378–1.440e-4
+1. [literature] D730 (corrected Chronos history, octic → matter → radiation, pre-audit N*) had only two ε points (1.3, 1.6e-4: n_s 0.9733–0.9737/0.9761–0.9765, r 4.63–4.67/5.10–5.14e-4) and interpolated "ε ≈ 1.40–1.46e-4" (estimate).
+2. [derived] Re-doing D730's two-point linear interpolation with its row midpoints: r = 4.8e-4 at ε 1.396e-4, n_s = 0.975 at ε 1.461e-4 — reproduces its 1.40–1.46.
+3. [derived] The audited chain NA12 (D1247 N*, exact MS, five ε points 1.30–1.50e-4) interpolated between neighbouring rows: r = 4.8e-4 at ε 1.378e-4 (between 1.35 and 1.40), n_s = 0.975 at ε 1.440e-4 (between 1.40 and 1.45) ⇒ 1.378–1.440e-4. D1429's "1.39–1.44" rounded the lower edge up.
+4. [estimate] Reconciliation: both ranges are right for their chains; the audited one (NA12) shifts the window down by ~0.02e-4 at both ends because of the audited N* (≈ +0.1 vs D730's era, D1240–D1241) and finer sampling. Proposed wording for band_i's map note (Danny's call, not edited): "audited chain meets the band for ε ≈ 1.38–1.44e-4 (NA12, D1461); pre-audit D730: 1.40–1.46e-4".

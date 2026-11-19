@@ -407,3 +407,5 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1444: before claiming sub-0.2 % agreement, check the reference values' own estimator/version — the D1262 exact rows predate D1417's α_s estimator fix (0.07–0.17 % shift).
 
 - D1446→D1448: an "asymptotic" potential (1 − I⁻²) that drops a "+1" (exact 1 − 1/(I² + 1)) costs 0.7 % in α_s at I* ≈ 23 — before a precision test, read the potential the reference pipeline actually integrated.
+
+- D1461: when quoting an interpolated parameter window, say which chain and how many sample points; D729/D730's 2-point window and NA12's 5-point window differ by 0.02e-4 at each end for that reason alone.
