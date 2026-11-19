@@ -44,3 +44,11 @@ V (Janus views) → R (theory research) → T (toolkit upgrades) → CH (chemist
 
 ## If Danny wants CubeMind in its own chat
 Start a new chat ON the PC, paste this file as the charter, and have it schedule its own 3-min loop running only the CubeMind tracks (L, SEC, C, and the proposer research). This chat then stays the AEGIS/Janus builder+verifier. To just talk to CubeMind from anywhere, use the CubeMind Web app over Tailscale (RA slot) — not a second Claude chat.
+
+## 2026-11-19 01:35Z — PC-side CubeMind fixes (other session, Danny asked "Fix") — PULL BEFORE PUSHING learn_loop.py
+The PC copies of `CubeMind_janus/mindmem/learn_loop.py` and `mindmem/store.py` are now NEWER than any copy this loop holds.
+Before pushing either file to the PC again, copy the PC versions back into your CubeMind code first, or these fixes are lost:
+1. `store.py` default weights → `w=(0.0, 0.0, 1.0, 0.0)` (QA1 adopted similarity-only, 0.75 vs 0.20; the old default was never actually changed).
+2. `learn_loop.py` proposer: `TOOL:`/`SEARCH:` found anywhere in the model's check line; TOOL args parsed leniently (`_parse_args`: JSON, then Python-literal). qwen3:8b was losing most proposals to "TOOL args not valid JSON" / "check not runnable".
+3. Durable `CubeMind_janus/proposals_ledger.jsonl` (kinds `asked`, `proposal_rejected`): written on every proposal / auto-reject and read for the do-not-repeat and lessons lists. The memory-file rebuild at ~01:00Z wiped all proposal + proposal_rejected records (0 left; only backup is 31 Oct). 49 asked questions were restored from learn_log; rejection reasons are unrecoverable.
+Originals kept as `mindmem/*.bak_pre_*`. Note: whatever rebuilds `cubemind_memory.jsonl` drops kind=proposal records — fix that, or keep the ledger as the source of truth.
