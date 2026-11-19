@@ -16,7 +16,9 @@ def run(beta,phii,VL):
     return sol,H2,V
 def shoot(beta,phii):
     g=lambda VL:run(beta,phii,VL)[1]-1.0
-    return brentq(g,0.5,10.0,xtol=1e-12)
+    hi=10.0
+    while g(hi)<0 and hi<1e4: hi*=2
+    return brentq(g,0.5,hi,xtol=1e-12)
 data={'Pantheon+':(-0.838,0.055,-0.62,0.22,0.19),'Union3':(-0.667,0.088,-1.09,0.31,0.27)}
 rho=-0.9
 def dchi2(w0,wa,d):
@@ -25,7 +27,7 @@ def dchi2(w0,wa,d):
 out={}
 for beta in (2*math.sqrt(2),2.0,math.sqrt(2)):
     rows=[]
-    for amp in np.geomspace(0.01,3,40):
+    for amp in np.geomspace(0.01,0.9,40):
         phii=-math.log(amp/A)/beta
         VL=shoot(beta,phii); sol,H2,V=run(beta,phii,VL)
         aa=np.linspace(1/3,1,60); w=[]
