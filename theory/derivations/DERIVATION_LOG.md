@@ -3182,3 +3182,12 @@ Touches: none.
 5. [derived] Locked numerical check (p3s Fourier series, 30 digits): D = 10, 6, 4 give 0.25, 0.125, 0.0625, relative error ≤ 1.3e-25, with C = 8e-7 and C = 0 identical ⇒ PASS.
 6. [estimate] Lattice-sum cross-check of the isotropy (N = 60, h = 1e-3): ∂_x²E/∂_y²E − 1 = 0.0076 and y²∂_y²E/E = 0.3736 vs 0.375. The lock note said "~1e-4 accuracy"; that was optimistic: the truncated |·|⁻³ sum carries a ~1/N ≈ 1–2 % tail. Consistent within that, but not a sharp test; the pass rests on step 5 (which implies step 3 through the eigen-equation).
 7. [derived] Referee: all six (D, C) rows re-read from the json (max rel 1.25e-25); m/H∞ = √(24/32) = 0.866 ✓.
+
+## D1644 — JANUS genesis G9+G2b: the reverse thread's future (PREREG_D1644_G9_THREAD_FUTURE; DEVIATIONS D1 grid edge) — R1 matter-like PASS, R2 acceleration ends PASS
+1. [derived] D1638 best-fit thread (amp 0.29268, exact v3 shape, V_Λ = 3.519 in H₀ = 1 units) re-shot; today w = −0.740 (instantaneous), Ω_thread = 0.690.
+2. [derived] Acceleration ends at a = 1.232 (ä = 0; Ω_thread 0.765); w first crosses 0 at a = 1.421; the field reaches ρ at a = 1.890 (Ω_thread 0.684).
+3. [derived] Run 1 (kept on record) FAILED numerically: the grid stopped at y = 0.45 and the field left it. DEVIATIONS D1 extended the grid to y = 0.03 before the rerun; rules unchanged.
+4. [derived] Rerun: ⟨w⟩ over the last 20 % of e-folds = −0.0175 (energy-weighted), a³ρ ratio (a = 50 vs 25) = 1.0013, grid edge never reached ⇒ R1 MATTER-LIKE PASS; R2 PASS. At a = 50: Ω_thread = 0.319, m/H = 492.
+5. [derived] Where it settles: the field crosses ρ once and oscillates about y = 0.500 (late range 0.490–0.511), i.e. τ = (1+i)/2, the SL(2,Z) image of τ = i. Checked: V = 5e-53 (zero) and y∂_yE = 5e-26 there; V''/V_Λ = 0.0857 (not the ρ value 1/4).
+6. [estimate] Lens vs physics: "at the minimum the thread acts like matter" (Danny, D1626) is CONFIRMED as physics for the homogeneous field (⟨w⟩ ≈ 0, ρ ∝ a⁻³). The Janus reading (inflation ends at ρ, dark energy ends at i's image — the two fixed points) is a lens; physically the end point depends on the 1D Re τ = ½ restriction (axion direction ignored).
+7. [derived] Referee: R1/R2 booleans, edge flag, settle point (mean y 0.5001) re-derived from the rerun; m/H_Λ = 0.866 = √(3/4) matches D1641 ✓.

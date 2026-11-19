@@ -16422,3 +16422,9 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 
 ## D1643 — scope note on D1642 (R-C2) after reading D1638 (other chat, exact SERAPIS curve)
 D1642 used the shortcut-curve window (D1628). With D1638's exact curve the window is Δln amp = 0.038, at amp ≈ 0.29 (y ≈ 5.0 at leading order). Estimate: P ≈ Δy/y²/(π/3) ≈ 0.36%, the same as before. Q1 (frozen since inflation) does not depend on the curve. D1642's verdict stands: C-start is false and the start is a ~1-in-300 initial condition. D1638's geometric reading also fits: "today is near the thread's arrival at ρ".
+
+## D1644 — JANUS genesis G9: the dark-energy thread's future — acceleration stops, the thread turns into matter, and it comes to rest at the OTHER fixed point (R1, R2 PASS)
+- Using the DESI-fitting thread on the exact SERAPIS curve: the universe stops accelerating at a ≈ 1.23 (about when it is 23 % larger than today), the thread reaches ρ at a ≈ 1.9, rolls just past it, and then oscillates and dilutes exactly like matter (⟨w⟩ = −0.018, ρ a³ constant to 0.1 %). Run 1 hit a grid bug, logged as DEVIATIONS D1 before the one rerun.
+- New: it does NOT stop at ρ. It settles at τ = (1+i)/2 — the image of τ = i, where the curve is also exactly zero. Inflation ends at ρ; the dark thread ends at i. (Physics within the Re τ = ½ slice; the two-direction motion is open → new node thread_endpoint.)
+- Untestable now (all in the future); the testable part remains today's (w₀, w_a) ≈ (−0.79, −0.36).
+- MAP: node=reverse_thread status=postulate touches=[thread_endpoint] ripple=no
