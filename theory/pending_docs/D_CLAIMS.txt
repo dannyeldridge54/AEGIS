@@ -686,3 +686,4 @@ D1399  2026-11-19T02:20Z  JANUS tick 1: band_e_audited box through the Janus rel
 D1400  2026-11-19T02:27Z  JANUS tick 2: janus relation at kappa=1 - beta_s = (1-n_s) alpha_s closed form, vs Planck 2018 running-of-running
 D1401  2026-11-19T02:30Z  P3: GRV 8D D4R4 perturbative coefficient - U enters exactly as [(2/pi^3)E2(T) + (2/3)y8]E2(U); no chamber limit; a set by tree/genus-2 ratio
 D1402  2026-11-19T02:32Z  JANUS tick 3: band_i re-check - n_s, r, alpha_s=-2r vs end-2025 CMB+DESI and ACT DR6
+D1403  2026-11-19T02:34Z  P3: BBHL-type route - a U-dependent xi(U) ~ A0+B E2(U) in K=-2log(V+xi/2) gives a LINEAR tilt, not the plateau
