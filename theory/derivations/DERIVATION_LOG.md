@@ -2804,3 +2804,11 @@ Touches: none.
 ## D1473 — JANUS tick 76: data-tensions section added to docs/JANUS_FORMULAS.md — CONSISTENT
 1. [derived] Added 15 rows (D1471: 9 = 3 combinations × α_s, β_s, n_s; D1472: 6 n_s combinations) with both points' pulls; card_check2.py parsed all 15 and matched the D1471/D1472 jsons at 2 decimals: no mismatch (rule met).
 2. [estimate] The reading line was corrected on writing: the first draft said "BAO/Lyα-inclusive fits agree (≤ 0.9σ)", but SPT-3G alone + DESI is +2.1σ and eBOSS n_s pulls reach 0.92σ — the line now names the agreeing combinations (CMB-SPA + DESI, ACT+P+SPT+eBOSS, ≤ 0.92σ) and the exception.
+
+## D1474: Janus summary addendum, D1465–D1473
+1. [literature] Literature rechecks D1465 (07:55 UTC) and D1470 (09:00 UTC): no n_s/α_s/r measurement newer than 2512.10613 / 2606.28502; 2611.15828 is simulation-only.
+2. [derived] β_s from both derived models (leading order): ρ −2.860e-5 (D1400's closed form 11.9 % shallower — not confirmed), τ = i −3.126e-5 (D1466); undetectable on every listed survey, 3σ needs σ(β_s) ≈ 1e-5 (D1467).
+3. [derived] Reference card docs/JANUS_FORMULAS.md (D1468) machine-checked CONSISTENT (D1469), with a data-tensions section of 15 rows also checked (D1473).
+4. [derived] Two locked data tests FAILED (loud): D1471 — vs 2511.01612 (n_s, α_s, β_s free) ACT+P α_s pull −2.06σ (ρ) / −2.04σ (τ = i); with eBOSS Lyα the running agrees (+0.57σ) but β_s is +2.17σ off. D1472 — vs SPT-3G D1 n_s: SPT+Planck +3.15σ (τ = i; ρ +3.08σ), CMB-SPA +1.97/+2.04σ, CMB-SPA + DESI +0.64/+0.72σ.
+5. [estimate] Meaning: the loudest tension on the Janus nodes is the CMB-only vs CMB + BAO split in n_s, now at +3.1σ for SPT+Planck — exactly the decisive test identified in D1437/D1440. BAO-inclusive full-CMB fits agree (≤ 0.92σ). No status change (D1458 logic: which data combination is right is the open data question; the frozen bands are scored on future data), but if SO-era CMB-only n_s stays near 0.964–0.968 with σ ≈ 0.002, SERAPIS would be in > 3σ tension on CMB alone.
+6. [estimate] Awaiting Danny: PC jobs J1–J4; band_i_audited; band_i note wording; janus title note.

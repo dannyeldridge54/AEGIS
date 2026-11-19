@@ -15272,3 +15272,10 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] 15 tension rows (D1471, D1472) on docs/JANUS_FORMULAS.md, machine-checked against the jsons (no mismatch). Reading line corrected (SPT-3G alone + DESI +2.1σ is BAO-inclusive but disagrees; agreeing fits ≤ 0.92σ).
 - aegis-check: card_check2.py actually ran (field_tests/results/D1473_card_tensions.json, 15 rows); reading-line numbers taken from the D1471/D1472 jsons.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1474 — JANUS tick 77: summary addendum D1465–D1473
+- [literature] No newer data (D1465, D1470). [derived] β_s derived and undetectable (D1466/D1467); card + tensions machine-checked (D1468/D1469/D1473).
+- [derived] Two locked FAILs: Lyα running (ACT+P α_s −2.06σ; eBOSS β_s +2.17σ; D1471) and SPT-3G n_s (SPT+Planck +3.1σ; CMB-SPA + DESI +0.7σ; D1472).
+- [estimate] Loudest tension = CMB-only vs BAO n_s split (+3.1σ); no status change — data question open; SO-era CMB n_s decides.
+- aegis-check: summary — pulls re-read from the D1471/D1472 jsons this tick (2.062, 2.174, 3.149, 0.640).
+- MAP: node=janus status=computed touches=[] ripple=no
