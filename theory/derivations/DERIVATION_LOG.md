@@ -2942,3 +2942,8 @@ Touches: none.
 
 ## D1499 — P3 exact DILMIX (0.25, 2.5e-6) vs our D1485 forecast — AGREE (out of band, n_s high, as forecast)
 1. [derived] Exact (P3, 91b7c44): n_s 0.978642, r 5.5565e-4, not in band; D1485 forecast 0.978638, 5.5562e-4, not in band ⇒ Δn_s −4.1e-6, Δr/r −0.006 %. Track record 13 points, |Δn_s| ≤ 5.3e-6.
+
+## D1498 — help set 7: testability — SO + LiteBIRD cannot separate the DILMIX strip from SERAPIS-E or form A (≤ 2.9σ at the extremes, 1.1–1.7σ at the centre)
+1. [estimate] Δ = √((Δn_s/0.002)² + (Δr/1e-3)²) over the 25 in-band strip points (D1494 + D1491 exact centre): vs SERAPIS-E ρ A1 0.18–2.57σ (centre 1.57σ); vs τ = i 0.08–2.68σ (centre 1.68σ); vs form A's closest-to-band point 0.18–2.93σ (centre 1.14σ).
+2. [estimate] Almost all of the separation is in n_s (LiteBIRD's δr = 1e-3 gives ≤ 0.12σ on r differences of ≤ 1.2e-4). The strip overlaps SERAPIS-E where n_s ≈ 0.974 (α 0.30, C 2e-6: 0.08–0.18σ) and reaches ~2.6σ at its low-n_s corner (α 0.45, C 1.2e-6).
+3. [estimate] Reading: a measured n_s near 0.974 (SERAPIS-E's value) would sit inside the DILMIX strip too; only an n_s ≲ 0.970 measurement at SO precision would favour the low-n_s part of the strip over SERAPIS-E at ~2σ. DILMIX and SERAPIS-E are observationally near-degenerate with funded surveys; running (D1492) does not help either.

@@ -15431,3 +15431,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1499 — P3 exact DILMIX (0.25, 2.5e-6) confirms D1485 (out of band, n_s 0.9786; Δn_s −4.1e-6)
 - aegis-check: read from field_tests/results/DILMIX/a0.25_C2.5e-06.json and D1485 json; difference re-run ✓.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1498 — help set 7: testability — DILMIX strip vs SERAPIS-E / form A ≤ 2.9σ (SO + LiteBIRD); near-degenerate, n_s is the only lever
+- [estimate] Over 25 strip points: vs SERAPIS-E 0.08–2.68σ (centre ~1.6σ), vs form A 0.18–2.93σ; r contributes ≤ 0.12σ.
+- aegis-check: numbers from field_tests/results/D1498_testability.json; centre vs ρ: Δn_s = (0.971262 − 0.974393)/0.002 = −1.566, Δr = (5.289 − 4.821)e-4/1e-3 = 0.047 → 1.566σ ✓ (by python in script); uncorrelated-Gaussian approximation stated; like-with-like: all points at k = 0.05; cross-sector: none.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
