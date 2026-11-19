@@ -49,4 +49,4 @@ Plan (lock before computing):
 4. P-M test: does a mirror sector at ΔN_eff ≤ 0.3, or 5 GeV dark baryons, move Li-7 by more than 10%? (Expected: no. The Weave would then NOT solve the lithium problem, which is to be recorded as such.)
 After R-Li the queue is: C2 (dark-thread start from the Y-fork) → B2 (δ = 2/9) → C3/C4 (sharing factor and asymmetry from the thread's decay at ρ).
 
-**R-Li done (D1640).** R-C2 done (D1642): C-start false. Next rung: **R-B2** (δ = 2/9).
+**R-Li done (D1640).** R-C2 done (D1642): C-start false. R-B2 done (D1645): 2/9 not excluded (+0.4σ PDG, −0.9σ Belle II); no mechanism known. Next rung: **R-C3/C4** (sharing factor and asymmetry from the thread decay at ρ).

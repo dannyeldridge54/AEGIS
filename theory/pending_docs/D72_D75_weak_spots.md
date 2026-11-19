@@ -16428,3 +16428,10 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - New: it does NOT stop at ρ. It settles at τ = (1+i)/2 — the image of τ = i, where the curve is also exactly zero. Inflation ends at ρ; the dark thread ends at i. (Physics within the Re τ = ½ slice; the two-direction motion is open → new node thread_endpoint.)
 - Untestable now (all in the future); the testable part remains today's (w₀, w_a) ≈ (−0.79, −0.36).
 - MAP: node=reverse_thread status=postulate touches=[thread_endpoint] ripple=no
+
+## D1645 (CENTRE, 19 Nov 2026) — RESULT, rung R-B2: δ = 2/9 is NOT excluded; a claimed 460σ exclusion leaves out the τ-mass error (PREREG_RB2_DELTA)
+- Literature: no derivation of δ = 2/9 found. Preprint 202609.1500 (preprints.org) treats it as empirical and claims φ* = 0.22222962(10), "≈ 460σ" from 2/9.
+- [computed] δ = 0.2222248 ± 0.0000063 (PDG 2024 m_τ = 1776.93 ± 0.09): +0.41σ from 2/9. δ = 0.2222136 ± 0.0000097 (Belle II 1777.09 ± 0.14): −0.88σ. NOT excluded.
+- Leaving out the m_τ error gives σ = 2.8 × 10⁻⁹ and a spurious 890σ or 3000σ, the same kind of error as the preprint's 460σ. The m_τ error dominates σ(δ) by a factor of about 2000.
+- The preprint's "transcendental for rational inputs" theorem does not bear on physics: measured masses are not exact rationals.
+- Status of B2 is unchanged: δ = 2/9 is EMPIRICAL, consistent at < 1σ, and no mechanism is known (ours or in the literature). The decisive test is σ(m_τ) → 0.05 MeV, which takes σ(δ) to ≈ 3.5 × 10⁻⁶.
