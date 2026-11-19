@@ -15503,3 +15503,12 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Physical target: mostly form B (which e^K gives exactly, D1501) + 5–12.5 % one-power piece + tilt ≈ 1.3–2e-6.
 - aegis-check: numbers from field_tests/results/D1510_sliver.json; in-band flags checked against the rule (n_s 0.969–0.975, r 4.55–5.7e-4) row by row; best point chosen by the locked rule (closest to n_s 0.972 with r in band); cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1513 — SMSCAN complete (8/8): 0 in band, 0 near — n_s 0.9599–0.9617 at C = 0 everywhere; r is set by s·m alone (pre-registered expectation and D1483 forecast CONFIRMED); band r needs s·m ≈ 1.66–1.86
+- Lock: field_tests/rules/PREREG_SMSCAN.md (+ DEVIATIONS D1 bisection rule up front). Results: field_tests/results/SMSCAN/ (8 JSONs; last two, (1.5, 1) and (1.5, 4/3), harvested from the PC 2026-11-19 08:11 CT).
+- [computed] Rows by s·m: s·m = 1: (3, 1/3) n_s 0.96168 r 1.446e-3; (2, 1/2) 0.96162 / 1.450e-3. s·m = 1.5: (1.5, 1) 0.96058 / 6.92e-4. s·m = 2: (1.5, 4/3) 0.96006 / 4.04e-4; (2, 1) 0.96043 / 3.94e-4; (3, 2/3) 0.96055 / 3.92e-4. s·m = 3: (2, 3/2) 0.95991 / 1.81e-4; (3, 1) 0.96012 / 1.79e-4. α_s −7.4…−8.0e-4, N* 50.1–50.6.
+- [computed] At fixed s·m, r varies ≤ 3 % across s (s·m = 2: 3.92–4.04e-4); log-slope d ln r / d ln(s·m) = −1.94 between 1.5 and 2. Interpolated band edges: r = 5.7e-4 at s·m ≈ 1.66, r = 4.55e-4 at s·m ≈ 1.86 (agrees with D1483's 1.7–1.9; D1490/D1495 tilted zone 1.8–2.05 sits at the upper end once C shifts N*).
+- Rule applied: "in band" none; "near" none (closest n_s gap 0.0073 > 0.003). As pre-registered, n_s needs the SERAPIS tilt C — the untilted area-integration family is out.
+- Verdict: SMSCAN as a C = 0 family — OUT. Shape result stands: approach exponent s·m is the only r-lever (one-parameter family), consistent with D1484 (two-term area model already killed as single-field). Tilted target zone: D1490/D1495.
+- Bookkeeping: D1514 reserved for the DILTR verdict (1/4 in: A0 at T_R 1e8 → n_s 0.96249, r 5.74e-4; Δ vs 8.94e8: Δn_s −5e-4, Δr/r +2.9 %); D1515 claimed in the same batch and released unused.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

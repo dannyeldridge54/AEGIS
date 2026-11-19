@@ -799,3 +799,4 @@ D1512  2026-11-19T14:06Z  Tilt T3f: exact-MS check of the physical-frame DILMIX 
 D1513  2026-11-19T14:12Z  untitled
 D1514  2026-11-19T14:12Z  untitled
 D1515  2026-11-19T14:12Z  untitled
+D1515  2026-11-19T14:12Z  RELEASED unused (claimed in batch with D1513)

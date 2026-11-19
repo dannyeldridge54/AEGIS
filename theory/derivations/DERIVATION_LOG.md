@@ -3012,3 +3012,8 @@ Touches: none.
 1. [derived] Fine grid (λ = 1/9930.9, α 0.05–0.2 × C 1.3–2.0e-6; field_tests/results/D1510_sliver.json): 20 in band. α 0.05: C 1.4–1.5e-6 (n_s 0.974–0.975, r 4.66–4.78e-4); α 0.075: C 1.3–1.9e-6 (0.9704–0.9747, 4.75–5.34e-4); α 0.1: C 1.3–2.0e-6 (0.9691–0.9731, 5.05–5.64e-4); α 0.125: C 1.5–1.7e-6 (0.9692–0.9702, 5.51–5.66e-4). α ≥ 0.15: r > 5.7e-4 wherever n_s ≥ 0.969 — out.
 2. [derived] Best-centred point: (α 0.1, C 1.8e-6): n_s 0.97197, r 5.462e-4, N* 50.57, y* 3116 (physical, a = 9931) ⇒ next: exact Mukhanov–Sasaki spot check in the physical frame (T3f).
 3. [estimate] Reading: in the actual compactification frame the in-band DILMIX region is a sliver at 5–12.5 % one-power admixture to the α′³-square plateau (form B) with tilt C ≈ 1.3–2.0e-6 per unit g — not the λ = 1 strip (α 0.25–0.5). D1501 showed e^K itself gives form B exactly, so "mostly form B plus a small one-power piece" is the natural structure to look for.
+
+## D1513 — SMSCAN complete: untilted area-integration family out of band (0/8, 0 near); r fixed by s·m alone, band r at s·m ≈ 1.66–1.86
+1. [derived] Eight locked rows (PREREG_SMSCAN): n_s 0.9599–0.9617 at C = 0; r = 1.45e-3, 6.9e-4, 3.9–4.0e-4, 1.8e-4 at s·m = 1, 1.5, 2, 3; spread at fixed s·m ≤ 3 %.
+2. [derived] Log-slope −1.94 between s·m = 1.5 and 2 ⇒ r band 4.55–5.7e-4 ↔ s·m ≈ 1.86–1.66, matching the D1483 forecast (1.7–1.9).
+3. [derived] Pre-registered rule: no point in band or near (n_s gap ≥ 0.0073); n_s requires the SERAPIS tilt, as stated at lock time.
