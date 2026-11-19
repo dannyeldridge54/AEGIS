@@ -14914,3 +14914,11 @@ MAP: node=janus status=computed touches=[] ripple=no
 - aegis-check: re-ran k = 1.03521 and −2k·r at both ends (−9.420e-4, −1.0600e-3) in python; checked: units, arithmetic, like-with-like (same p, κ as D693), limits, cross-sector: none.
 MAP: node=band_e status=frozen touches=[] ripple=no
 
+## D1422 — JANUS tick 19: D1420's half-size α_s is most likely a spectra_fast start-phase artefact — read from ms.py, not computed
+- Reading of apps/aegis_studio/engine/tools/serapis_calc/ms.py: identical 5-point quartic fit in both; the difference is the start — per-mode at k/aH = 200 (spectra) vs one common start at the lowest k's k/aH = 200 (spectra_fast, higher modes start at up to ≈ 244). A k-dependent start-error phase leaks into the ln k curvature, i.e. into α_s.
+- Neither path used ic = 'ds' (exact de Sitter start, D974); spectra_fast cannot.
+- Status: mechanism identified by reading; magnitude not computed (estimate tier). D1420's α_s stays unused.
+- Loop rule (charter updated): α_s only from per-mode spectra (prefer ic = 'ds'); spectra_fast for n_s, r only unless a lock checks its α_s on the same point.
+- aegis-check: no numbers enter a verdict; checked by re-reading lines 24–71 and 72–118 of ms.py.
+MAP: node=janus status=computed touches=[] ripple=no
+

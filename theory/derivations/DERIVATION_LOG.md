@@ -2506,3 +2506,10 @@ Touches: none.
 3. [derived] This reproduces D693's frozen window −(9.4–10.6)e-4 to its quoted precision (consistent); ACT DR6 pulls −1.37σ … −1.40σ (PASS).
 4. [derived] So the frozen α_s window and the Janus relation × A1's exact correction agree: the relation's 3.4 % offset at ρ is a constant rescaling across band_e to the precision D693 quoted.
 
+## D1422: spectra vs spectra_fast — reading (estimate)
+1. [derived] Both fit lnP_R with the same 5 offsets (Δln k = 0, ±0.05, ±0.1) and a degree-4 polynomial (exact interpolation); α_s = 2×(x² coefficient). The fit is not the difference.
+2. [derived] spectra starts EACH mode at exactly k/aH = bd = 200 (bisection per k), so the Bunch–Davies start error enters with the same phase for every k and cancels in the ln k derivatives.
+3. [derived] spectra_fast starts all modes together where the LOWEST k has k/aH = 200, so higher k start at k/aH up to 200·e^0.2 ≈ 244: the start-error phase varies with k across the five points. A second derivative (α_s) is the observable most exposed to that k-dependent ripple; n_s and r are much less (they enter at first order / at the pivot).
+4. [derived] Neither call passed the exact de Sitter start option (ic = 'ds', D974): spectra defaults to plain BD, spectra_fast has no ic option at all.
+5. [estimate] So D1420's α_s (−5.2e-4, half of expected) is most likely a spectra_fast start-phase artefact; the size of the effect is not established by reading. Rule for the loop: α_s only from per-mode spectra (ideally ic = 'ds'); spectra_fast only for n_s, r unless a lock shows its α_s agrees on the same point.
+
