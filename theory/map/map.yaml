@@ -683,14 +683,15 @@ nodes:
   - D1402a
   - D1411
   - D1413
+  - D1428
   depends:
   - nstar_i
   - janus
   note: corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)
   history:
-  - 'D1402a: frozen'
   - 'D1411: frozen'
   - 'D1413: frozen'
+  - 'D1428: frozen'
 - id: band_e
   layer: 5
   branch:
@@ -710,13 +711,14 @@ nodes:
   - D1404
   - D1411
   - D1421
+  - D1428
   depends:
   - nstar_e
   - janus
   history:
-  - 'D1404: frozen'
   - 'D1411: frozen'
   - 'D1421: frozen'
+  - 'D1428: frozen'
 - id: band_e_audited
   layer: 5
   branch:
@@ -732,15 +734,16 @@ nodes:
   - D1419
   - D1423
   - D1427
+  - D1428
   depends:
   - nstar_e
   - reheat_rho
   - serapis_e
   - band_e
   history:
-  - 'D1419: postulate'
   - 'D1423: postulate'
   - 'D1427: postulate'
+  - 'D1428: postulate'
   note: web loop postulate 1; scored only on future data
 - id: serapis_point
   layer: 5
