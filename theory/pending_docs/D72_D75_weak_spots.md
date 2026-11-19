@@ -16042,3 +16042,11 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - Observing effect: r measures the dimension of the theory when the CMB scales left the horizon. CMB-S4/LiteBIRD-class σ(r) ~ 5e-4 – 1e-3: r ≈ 1.1e-3 (6D) is at the edge of detection; 5.4e-4 (10D lens) below it; 1.6e-3+ (4D) detectable. A future r measurement discriminates P3-S vs P3-D.
 - Caveat: during a 6D phase the perturbations themselves are partly higher-dimensional; the 4D slow-roll formula is the leading estimate.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1589 — P3D6 locked run (engine F, proxy β₆ = 2): the dimension-at-horizon-exit prediction HOLDS — 6D gives r = 1.07e-3 at n_s = 0.9706 (D1588 estimate 1.1e-3, PASS ±30 %); untilted r 8.01e-4 vs formula 7.9e-4 (PASS ±10 %)
+- Lock: field_tests/rules/PREREG_P3D6.md (+ .sha256), committed before running. Results: field_tests/results/P3D6/F_C*.json.
+- [computed] (C: n_s, r, α_s, N*, y*): 0: 0.96019, 8.01e-4, −7.9e-4, 50.52, 37.8 | 2e-7: 0.96095, 8.18e-4 | 4e-7: 0.96172, 8.36e-4 | 8e-7: 0.96323, 8.73e-4 | 1.6e-6: 0.96636, 9.53e-4, −8.8e-4 | 3.2e-6: 0.97289, 1.139e-3, −9.7e-4, 50.58, 39.8.
+- [computed] Linear interpolation at n_s = 0.9706: C ≈ 2.64e-6, r ≈ 1.07e-3 (10D lens at the same n_s: r = 5.41e-4 ⇒ ratio 1.98 ≈ (10−2)/(6−2) = 2 ✓).
+- [derived] The 6D tilt needs C ×3.3 the 10D value ⇒ (D1566 scaling C ∝ χ/𝒱) 𝒱 ≈ 4e3–9e4 for χ = 20–200 — smaller volume, consistent with two lighter dimensions only if the volume is anisotropic (estimate).
+- Verdict: r ≈ 1.07e-3 is P3-D's prediction (6D horizon exit), vs 5.4e-4 for P3-S (10D lens) — a factor-2 observable split at fixed n_s, as D1588 said. Both remain candidates; nothing enters the ladder without Danny's yes.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
