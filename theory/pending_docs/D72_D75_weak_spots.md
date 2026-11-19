@@ -14699,3 +14699,14 @@ MAP: node=plateau_origin status=estimate touches=[] ripple=no
 - [derived] Why the D1364 w = 0 case passed but this fails: D1364 kept the canonical normalisation of SERAPIS-E's E(U,2) path and scaled Ê₁ by k = 29.6, so its plateau parameter differed; here the physical L ∝ 3U₂/8π fixes the approach and gives the α = 1/3 numbers. [estimate] A tilt C > 0 raises n_s but also r, so the SERAPIS band (r ≈ 5e-4) cannot be reached from r ≈ 1.6e-3 by tilting; versus data alone (r < 0.036) an α = 1/3 model is allowed but n_s 0.960 is ~2.8σ low vs CMB-SPA and ~4σ vs SPA+DESI.
 - Verdict (locked rule): full-Y plateau "not viable on this scan" for the SERAPIS band. Combined with D1397: the KKPR one-loop-K mechanism cannot give SERAPIS-E's r ≈ 5e-4 — in the E(U,2) regime the chamber fails, in the linear regime r ≈ 1.6e-3. The P3 ORIGIN via universal thresholds is KILLED for the SERAPIS point (it predicts a different, α = 1/3 model). P3 status reverts to "postulate" for the origin; D1364's expansion-order result stands as a statement about shape functions, not about this mechanism.
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1399 — JANUS tick 1: the audited SERAPIS-E box through the Janus relation, scored on ACT DR6 running
+- Lock: field_tests/rules/PREREG_D1399_janus_box_running.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1399/box_running.py; result field_tests/results/D1399_janus_box_running.json.
+- [derived] Closed form at κ = 1: α_s = −p²r/4 (n_s drops out); the pipeline's p = 2√2 gives α_s = −2r. So the Janus relation turns the running into a direct readout of r.
+- [computed] Box n_s 0.9717–0.9760, r 4.39–4.90e-4 → α_s −8.78e-4 … −9.80e-4, β_s −2.1e-5 … −2.8e-5.
+- [literature] ACT DR6 (arXiv:2503.14454 §4.1, 68% CL): P-ACT-LB 0.0062 ± 0.0052; P-ACT 0.0060 ± 0.0055 — both consistent with zero running.
+- [computed] Pulls −1.36 … −1.38σ (P-ACT-LB), −1.25 … −1.27σ (P-ACT). Verdict (locked rule): PASS.
+- Honest reading: the box sits 0.19σ from zero; data mildly prefer positive running, the relation forces negative (−2r). This is consistency, not a test. Discriminating power needs σ(α_s) ≲ 2e-4; record as the requirement for a future score.
+- Pre-lock estimate was wrong by ×2.3 ((1−n_s)²/2 ≈ 4e-4 vs the exact 2r ≈ 9e-4); harmless to the rule, noted in LESSONS.
+MAP: node=band_e_audited status=postulate touches=[janus] ripple=no
+

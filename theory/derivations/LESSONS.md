@@ -390,3 +390,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1272: when sanity-checking small values (C~1e-6), never round(,6) in the print — it masked a correct result as wrong. Use scientific format.
 
 - D1342: a CI check that fails every day stops being read. The MAP-line gap sat red all day and hid a second fault: `ladder update` had been rejecting `observing:` nodes since D1330, so nothing after D1330 reached the map. Keep the research-ledger job green, and let the ladder accept every id the map defines.
+- D1399: derive the closed form before locking a pre-estimate — at κ = 1 the Janus relation is exactly α_s = −2r; my lock guessed (1−n_s)²/2 and was ×2.3 low.

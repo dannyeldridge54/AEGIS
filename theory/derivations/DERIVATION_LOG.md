@@ -2366,3 +2366,11 @@ Touches: none.
 2. [derived] Vacuum at ρ but L(i) − L(ρ) ~ 1e-4 relative.
 3. [estimate] Tilt cannot lower r to ~5e-4.
 4. [postulate P3] Universal-threshold origin killed for the SERAPIS point; origin postulated again.
+
+## D1399: Janus box running (locked)
+1. [derived] At κ = 1 the Paper 1 relation collapses: with ρ = p√(r/2)/(1−n_s), x = (ρ−1)/(1+ρ) gives (1+x)/(1−x) = ρ, so α_s = −(1−n_s)²ρ²/2 = −p²r/4, independent of n_s; with p = 2√2, α_s = −2r exactly.
+2. [derived] Over the band_e_audited box (r 4.39–4.90e-4): α_s = −8.78e-4 to −9.80e-4; β_s = −2.1e-5 to −2.8e-5. The 41×41 grid reproduces −2r to machine precision.
+3. [literature] ACT DR6 (arXiv:2503.14454 §4.1, 68%): dn_s/dlnk = 0.0062 ± 0.0052 (P-ACT-LB), 0.0060 ± 0.0055 (P-ACT); consistent with zero.
+4. [derived] Pulls: −1.36σ to −1.38σ (P-ACT-LB), −1.25σ to −1.27σ (P-ACT). Locked rule (|pull| < 2 everywhere): PASS. Prediction is 0.19σ of the data error, so consistent, not yet tested.
+5. [estimate] Because α_s = −2r, a measured running is a second, independent route to r: σ(α_s) ≈ 2e-4 would test the box at ~5σ from zero; the lock's own pre-estimate (≈4e-4, from (1−n_s)²/2) was low by ×2.3.
+
