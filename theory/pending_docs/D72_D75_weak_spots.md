@@ -16356,3 +16356,12 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - T4 (P-M constraint): a mirror sector must be colder than ξ < 0.45 (ΔN_eff < 0.3) → VIABLE. Toy Y_p shift at that bound: +0.0085. The literature gives ≈ +0.004 (0.013 per unit ΔN_eff), so the toy is ~2× too sensitive (same t(T) issue).
 - Output: field_tests/results/GENESIS_MATTER/{out.json, genesis.png, ladder.wav}. The .wav is a sonification of the element ladder (art/analogy, no physical claim), wired through tools/sound as the first toolkit tie-in.
 - Verdict: the toolkit runs end to end. P-M survives its one real constraint (ξ < 0.45). The BBN module fails its own locked accuracy test and must be upgraded before any number from it is quoted.
+
+## D1633 (RIGHT, 19 Nov 2026) — RESULT: helium stabilised. BBN v2 (PREREG_GENESIS_BBN2; DEVIATIONS D1–D3, coding and numerical fixes written before each rerun, no abundances seen before the final run)
+- P1 Y_p = 0.2466 (window [0.235, 0.260]; observed 0.245 ± 0.003) → PASS. The toy v1 gave 0.202 (D1632, FAIL, kept on record).
+- P2 Systematic from the lumped D + D → ⁴He rate (×0.1 / ×10): Y_p = 0.2405 / 0.2528, spread 0.0123 > 0.01 → FAIL. The single lumped D-burning step is the module's weak point. Y_p depends on it at the ±0.006 level, so the central value is uncertain by about that much.
+- P3 dY_p/dΔN_eff = 0.0130 per unit (window [0.008, 0.018]; literature ≈ 0.013) → PASS, matching the standard value.
+- Not in the pass rules, recorded: D/H = 2.9 × 10⁻⁶ against the observed 2.53 × 10⁻⁵. Deuterium is ~9× too low, so D is burned too fast in the lumped step. The module is NOT fit for D/H until it has the real channels (d(d,n)³He, d(d,p)t, ³He(d,p)⁴He, t(d,n)⁴He).
+- What fixed helium: e± heating in T(a), full Born weak rates (λ_np(1 MeV) = 1.60 s⁻¹ against the BBF approximation of 1.74), and a real n–p–D network.
+- P-M consequence: with the mirror sector at its limit (ΔN_eff = 0.3), Y_p moves by +0.004, inside the observational error. P-M stays viable.
+- Verdict: helium is STABLE and correct to about ±0.006. The module passes 2 of 3 locked rules; the D-burning channels are the next upgrade.
