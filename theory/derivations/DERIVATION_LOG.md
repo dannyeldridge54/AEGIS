@@ -2374,3 +2374,12 @@ Touches: none.
 4. [derived] Pulls: −1.36σ to −1.38σ (P-ACT-LB), −1.25σ to −1.27σ (P-ACT). Locked rule (|pull| < 2 everywhere): PASS. Prediction is 0.19σ of the data error, so consistent, not yet tested.
 5. [estimate] Because α_s = −2r, a measured running is a second, independent route to r: σ(α_s) ≈ 2e-4 would test the box at ~5σ from zero; the lock's own pre-estimate (≈4e-4, from (1−n_s)²/2) was low by ×2.3.
 6. [derived] aegis-check: step 2's match is to −p²r/4 at machine precision and to −2r at 1.9e-5 relative (p = 2.8284 rounds 2√2); no number or verdict changes.
+
+## D1400: Janus β_s closed form (locked)
+1. [derived] At κ = 1 the β_s bracket (1−κx)(1+κ²x) + (1+x)(1−κ³x) becomes 2(1−x)(1+x), so β_s = −(1−n_s)³(1+x)²/(2(1−x)²) = (1−n_s)·α_s = −(p²r/4)(1−n_s).
+2. [derived] Checked against relation.py on a 41×41 grid over the audited box: max |code/closed − 1| = 8.9e-16 (rule A PASS).
+3. [literature] Planck 2018 X (arXiv:1807.06211; TT,TE,EE+lowE+lensing, 68%, k* = 0.05 Mpc⁻¹, both runnings free): dn_s/dlnk = 0.002 ± 0.010, d²n_s/dlnk² = 0.010 ± 0.013.
+4. [derived] Box: α_s −8.8…−9.8e-4 (pull −0.29σ), β_s −2.1…−2.8e-5 (pull −0.77σ); rule B PASS, marginal pulls only (correlation assumed zero).
+5. [derived] SERAPIS point (n_s 0.9745, r 4.8e-4): α_s = −2r = −9.60e-4, β_s = −2r(1−n_s) = −2.45e-5; β_s/α_s = 1−n_s = 0.0255 exactly.
+6. [estimate] At κ = 1 the relation has no freedom left in the runnings: both follow from (n_s, r, p). Only κ ≠ 1 would make α_s depend on n_s; a measured α_s ≈ −2r would therefore also test κ = 1.
+

@@ -14711,3 +14711,13 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - aegis-check (correction, same tick): the grid matches −p²r/4 to machine precision; it matches −2r to 1.9e-5 relative, because the pipeline's p = 2.8284 is 2√2 rounded (DERIVATION_LOG step 2 said "−2r to machine precision" — wording fixed here, no number or verdict changes). Checked: units (dimensionless), arithmetic re-run (α_s −9.7998e-4, pull −1.3808 at the r = 4.90e-4 corner), like-with-like (both at the CMB pivot, 68% CL, full ACT error), limits (r → 0 gives α_s → 0), cross-sector: none touched.
 MAP: node=band_e_audited status=postulate touches=[janus] ripple=no
 
+## D1400 — JANUS tick 2: at κ = 1 the Janus relation fixes the whole running tower — β_s = (1−n_s)·α_s = −(p²r/4)(1−n_s), exact
+- Lock: field_tests/rules/PREREG_D1400_janus_beta_closed.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1400/beta_closed.py; result field_tests/results/D1400_janus_beta_closed.json.
+- [derived] Closed form (follows D1399's α_s = −p²r/4): the κ = 1 bracket collapses to 2(1−x)(1+x), giving β_s = (1−n_s)α_s. Code agrees to 8.9e-16 (rule A PASS).
+- [computed] SERAPIS point: α_s = −9.60e-4, β_s = −2.45e-5. Box: β_s −2.1…−2.8e-5.
+- [literature] Planck 2018 X (arXiv:1807.06211, 68%, both runnings free): dn_s/dlnk 0.002 ± 0.010; d²n_s/dlnk² 0.010 ± 0.013.
+- [computed] Pulls: α_s −0.29σ, β_s −0.77σ; rule B PASS. Limitation: marginal pulls, the α–β correlation is not used (assumed zero).
+- Honest reading: β_s is 0.002σ of the Planck error — consistency only. The useful output is structural: at κ = 1 the runnings carry no new parameter, so a future α_s measurement tests r and κ at once.
+- aegis-check: re-ran −2r = −9.6e-4, −2r(1−n_s) = −2.448e-5, pulls −0.770σ / −0.296σ in python; checked: units (dimensionless), arithmetic, like-with-like (same pivot k* = 0.05, 68%, a fit with both runnings free), limits (r → 0 ⇒ α, β → 0; n_s → 1 ⇒ β → 0), cross-sector: none touched.
+MAP: node=janus status=computed touches=[band_e_audited] ripple=no
+
