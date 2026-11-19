@@ -16379,3 +16379,10 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 ## D1635 — toolkit p3s.py (fast P3-S forecaster) + P3S_NOTES.md; validated |Δn_s| ≤ 5.1e-6, |Δr/r| ≤ 0.013 % vs both exact anchors
 - aegis-check: E series vs shapes.E ✓; float grid vs mpmath V ✓ (1e-15); anchors read-only ✓; tilt inversion ✓; σ(r) in notes labelled "from memory".
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1637 — JANUS genesis G1: the reheating temperature the SERAPIS equation was using is its own (CONSISTENT)
+- Before: p3s/N_* matching took T_R = 8.94e8 GeV as an input. Now: the final equation's own inflaton has m = 5.0e12 GeV at ρ (V'' = V∞/4 exactly), and Planck-suppressed decay gives T_R = 7.7e8 – 3.9e9 GeV. The assumed value sits inside that band.
+- Effect on predictions if T_R moves across the band: Δn_s ≤ 4.7e-4 (≤ 0.23σ at Simons Observatory), r 5.33–5.42e-4. Matter genesis (P-M) inherits T_R ≈ 0.8–4 × 10⁹ GeV, which straddles the ~10⁹ GeV thermal-leptogenesis bound (feeds G5).
+- Postulation check: the pathway link "SERAPIS ψ → reheating" is SUPPORTED at estimate level; κ (decay strength) is the open input.
+- Follow-up G1b: why V''/V∞ = 1/4 exactly at ρ (expect (f')² = 1/8 = λ_sp², the species slope) — derive.
+- MAP: node=genesis_reheating status=estimate touches=[matter_genesis] ripple=no
