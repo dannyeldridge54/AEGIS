@@ -180,13 +180,16 @@
     "D1517",
     "D1516a",
     "D1512",
-    "D1518"
+    "D1518",
+    "D1519",
+    "D1521",
+    "D1520"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D1516a: postulate (late)",
-    "D1512: postulate (late)",
-    "D1518: postulate"
+    "D1519: postulate",
+    "D1521: postulate",
+    "D1520: postulate (late)"
    ]
   },
   {
