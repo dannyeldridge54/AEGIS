@@ -3214,3 +3214,11 @@ Touches: none.
 4. [estimate] Reading (by hand): labels honest; corrections made as new notes (D1626a, D1643, D1641 step 6, D1644 run 1 kept). Nits, not verdict-changing: (N1) the ΔN_eff < 0.3 bound (D1632, D1646) is a working number, not read from a paper — G6b; (N2) D1644's "today w = −0.74" is instantaneous, the card's w₀ = −0.79 is the CPL fit — different definitions, both correct; (N3) WEAVE_POSTULATES C5 cites "CMB-S4 σ ≈ 0.03" but CMB-S4 ended July 2025 (D1440) — other chat's file, reported not edited; (N4) visible g*s = 106.75 (SM only) — extra heavy states would make the dark side colder still (conservative).
 5. [estimate] Open assumptions, all on the card: κ; A-dem; sharing factor and asymmetry source (C3/C4); the 1-in-300 start; V_Λ by hand; 1D Re τ = ½ restriction for the thread's end point; D1636 pending.
 6. [estimate] Limitation: same agent wrote most Janus notes; the other chat's notes were read cold. Verdict: PASS — no error changes a stated verdict. Loop stops per charter.
+
+## D1653 — JANUS genesis G9b: the dark thread's end point with the axion free (PREREG_D1653_G9B_TAU_PLANE) — ROBUST
+1. [derived] SL(2,Z) invariance fixes the axion's kinetic normalisation to that of y: ½(ẋ² + ẏ²)/(b²y²), b = √2 (D = 10). The 2D potential V = V_Λ(4/9)y²|∇ ln E|²·[1 + C(E − E(ρ))] equals p3s.V on x = ½ (checked at y = 1.3, 5.0 to 1e-15 before the run).
+2. [estimate] The 2D gradient form is the natural extension of v3's principle, not separately derived.
+3. [derived] R0 code check PASS: δx = 0 reproduces D1644 (acceleration ends a = 1.2324; settles at y = 0.5001).
+4. [derived] With axion offsets δx = 1e-6, 1e-3, 1e-2 the thread still settles at τ ≈ ½ + i/2 (fundamental-domain distance to i 2.2–3.4e-4) — all i-class; max |x − ½| stays ≈ 1.05 δx (the offset never grows; the line x = ½ is stable). Late ⟨w⟩ −0.017 … −0.005 (matter-like).
+5. [derived] Verdict: ROBUST — D1644's end point (the image of τ = i, not ρ) is not an artefact of the 1D slice.
+6. [derived] Referee: R0 flags, end classes, distance-to-i and max_dx ratios re-read from the json ✓.

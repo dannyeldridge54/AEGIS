@@ -16478,3 +16478,8 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - Consequence for the published flavour paper (doi 10.5281/zenodo.24377945 / v2 24379357): its "+2.8σ" for TM2 is superseded. The exact-TM2 prediction is now excluded at > 3σ. A correction version is needed; it will NOT be published without Danny's "Publish".
 - Escape (already in the register as C-off, D1618): τ_ν slightly off i. Near i, mixing shifts linearly with the offset x ~ |(τ − i)/(τ + i)| (Feruglio 2211.00659). The needed shift, Δsin²θ₁₂ = −0.032, is the same size as the fitted 1.0685i (x ≈ 0.033), so the offset is now REQUIRED, not optional. The δ_CP predictions (236°/125°, 287°/74°) were TM2-exact and must be recomputed with the offset.
 - Status: B5 goes from "+2.8σ tension" to "exact form excluded; offset required". This is the first hard falsification of a Weave flavour prediction, and it is recorded plainly.
+
+## D1653 — JANUS genesis G9b: with the axion free, the dark thread still comes to rest at τ = i (ROBUST)
+- D1644 found the thread settles at the image of τ = i, but only along one line of the τ plane. Now both directions are free (axion normalised by SL(2,Z) symmetry): with offsets of 10⁻⁶, 10⁻³ and 10⁻² it still ends at the image of i every time, and the sideways offset never grows.
+- So the Janus reading stands on firmer ground: inflation ends at ρ, dark energy ends at i — the two fixed points of the modular plane, one at each end of cosmic history. (Assumption: the 2D gradient form of v3's principle.)
+- MAP: node=thread_endpoint status=computed touches=[reverse_thread] ripple=no
