@@ -15253,3 +15253,10 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Leads: read 2511.01612 (CMB + Lyα running) and 2506.20707 (SPT-3G D1 n_s) tables directly before any pull.
 - aegis-check: no numbers computed (NULL rule); quoted values marked second-hand.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1471 — JANUS tick 74: CMB + Lyα running (2511.01612) — FAIL as locked
+- [literature] Table IV (68 %, n_s/α_s/β_s free): ACT+P α_s 0.0120 ± 0.0063, β_s 0.0187 ± 0.0096; +SPT α_s 0.0080 ± 0.0057; +eBOSS α_s −0.0032 ± 0.0039, β_s −0.0076 ± 0.0035.
+- [derived] SERAPIS (both vacua) α_s pulls: ACT+P −2.06/−2.04σ (FAIL, rule 2σ), +SPT −1.58σ, +eBOSS +0.57σ; β_s pull with eBOSS +2.17σ; n_s with +SPT +2.2σ.
+- [estimate] Tension marker, not a kill: 3-parameter fits (α_s–β_s degeneracy), Lyα systematics not propagated. With CMB alone the data lean positive; with Lyα they lean to strongly negative β_s — SERAPIS sits between, ~2σ from each.
+- aegis-check: pulls from field_tests/results/D1471_lya_running.json; two re-run by hand in python ((−9.98e-4 − 0.01195)/0.00628 = −2.062; (−2.86e-5 + 0.00755)/0.00346 = +2.174); like-with-like caveat (3-parameter fit vs single-point model) stated; checked: units, arithmetic, cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no
