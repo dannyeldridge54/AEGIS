@@ -15136,3 +15136,10 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] J4 in docs/JANUS_PC_JOBS.md: rerun the 7 ρ (a1.py → ms.spectra) and 5 τ = i (running_d632.py) reference rows with D1417's estimator; proposed rule ρ ≤ 0.1 %, τ = i ≤ 0.05 % vs the derived models. Awaits Danny's OK.
 - aegis-check: spec only — paths read this tick (a1.py imports pipeline.predict_fast; pipeline calls ms.spectra; band_i_na12.py uses running_d632.py's 5-pt α_s); no numbers computed.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1451 — JANUS tick 47: summary addendum D1446–D1450
+- [derived] τ = i: asymptotic plateau FAIL +0.70–0.74 % (D1446) → exact plateau 1 − 1/(I² + 1) located (D1447) → PASS ≤ 0.031 % (D1448). Both vacua's α_s derived (ρ ≤ 0.14 %, τ = i ≤ 0.031 %).
+- [derived] Vacua Δα_s −1.05 … −1.62e-4, ≤ 0.049σ SO — stays killed (D1449).
+- [estimate] PC job J4 specified, not queued (D1450). Awaiting Danny: J1–J4, band_i_audited.
+- aegis-check: summary only — numbers read from D1446/D1448/D1449 result jsons this tick; checked: labels, like-with-like.
+- MAP: node=janus status=computed touches=[] ripple=no

@@ -2674,3 +2674,10 @@ Touches: none.
 1. [estimate] Both derived α_s models now agree with their exact references to the references' own precision (ρ ≤ 0.14 %, τ = i ≤ 0.031 %; D1444, D1448), and all 12 references predate D1417's estimator fix — so the next precision step is the references, not the models.
 2. [derived] Checked the reference paths: ρ rows came from field_tests/scripts/a1.py → pipeline.predict_fast → ms.spectra (per-mode, ic='bd', estimator of that time); τ = i rows from na12/band_i_na12.py on running_d632.py with its own 5-point finite-difference α_s.
 3. [estimate] J4 added to docs/JANUS_PC_JOBS.md: rerun all 12 rows with the 11-pt LSQ-cubic estimator (and ic='ds' for ρ), compare with the derived models; proposed rule ≤ 0.1 % (ρ), ≤ 0.05 % (τ = i). Spec only — needs Danny's OK to queue and its own PREREG first.
+
+## D1451: Janus summary addendum, D1446–D1450
+1. [derived] τ = i: the asymptotic plateau 1 − I⁻² at second-order SR missed NA12 by +0.70 … +0.74 % (D1446, FAIL); NA12's integrated potential is 1 − 1/(I² + 1) + (ε/2)I with I = y − c, I₁ = I/2 to 4e-15 (D1447); with it the five NA12 points match to −0.031 … +0.016 % with random sign, ε recovered ≤ 0.05 % (D1448, PASS).
+2. [derived] Both vacua's running is now derived from their potentials at second-order slow roll: ρ 7/7 ≤ 0.14 % (D1442–D1444), τ = i 5/5 ≤ 0.031 % (D1448). D640 (−0.3 %) and Janus × 1.0352 stay as closed-form cross-checks.
+3. [derived] Vacua: Δα_s(ρ − τ = i) = −1.05 … −1.62e-4 on a 3×3 grid (9/9 converged), ≤ 0.049σ for SO, ≤ 0.19σ for the hypothetical S4-based best; the models separate the vacua by ≥ 79× their accuracy, data cannot — vac_discriminant stays killed (D1449).
+4. [estimate] All 12 exact references predate D1417's estimator fix; PC job J4 (rerun them with the 11-pt LSQ cubic) is specified in docs/JANUS_PC_JOBS.md, not queued (D1450).
+5. [estimate] Awaiting Danny: queue PC jobs J1–J4; band_i_audited node (D1429).
