@@ -15587,3 +15587,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - Duplicate: my "D1516a — correction to D1516" (after D1521) repeats the earlier D1516a (after D1517); the earlier one is the record.
 - Process fix: before any `cat >` into field_tests/rules/, check the path does not exist (`test -e`), and pull first.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1522 — P3 DILTR A1 1e10 confirms D1489 (22-point record); P3 D1514 verdict = D1489 forecast
+- aegis-check: read from field_tests/results/DILTR/A1_TR1e+10.json and D1489 json; difference re-run in python ✓; P3 D-note read only.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

@@ -3058,3 +3058,7 @@ Touches: none.
 ## D1514 — DILTR: axio-dilaton form A is reheating-robust (|Δn_s| ≤ 6.2e-4, |Δr|/r ≤ 2.9 % over T_R 1e8–1e10)
 1. [derived] Four locked runs (A0, A1 × T_R 1e8, 1e10) against T_R 8.94e8: N* 49.6–51.1, Δn_s −0.00058…+0.00062, Δr −2.9…+2.7 %.
 2. [derived] PREREG_DILTR rule: robust; no point in band; A1 remains near. Reheating is not a route into the band for form A.
+
+## D1522 — P3 DILTR A1 at T_R 1e10 vs our D1489 — AGREE; P3's D1514 (DILTR complete) matches D1489's verdict exactly
+1. [derived] Exact 0.967790 / 6.0889e-4 vs D1489 0.967786 / 6.0879e-4 (Δn_s −3.9e-6, Δr/r −0.017 %). Track record 22 points, |Δn_s| ≤ 5.3e-6 — all four DILTR runs forecast.
+2. [derived] Read-only check of P3 D1514: "robust; |Δn_s| ≤ 6.2e-4, |Δr|/r ≤ 2.9 %; none in band; A1 near" — identical to D1489's locked forecast verdict (|Δn_s| ≤ 6.2e-4, |Δr/r| ≤ 2.9 %). No issues found.
