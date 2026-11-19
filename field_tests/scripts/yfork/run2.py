@@ -33,21 +33,30 @@ def rhs(t,s):
     ax=(2/y)*vx*vy-3*H*vx-2*y*y*dVx
     ay=-(vx*vx-vy*vy)/y-3*H*vy-2*y*y*dVy
     return [vx,vy/y,ax,ay]
+def reduce(t):
+    for _ in range(200):
+        t=complex(t.real-round(t.real),t.imag)
+        if abs(t)<1-1e-12: t=-1/t
+        else: break
+    return t
+def energy_event(t,s):
+    y=math.exp(s[1]); K=(s[2]**2+s[3]**2)/(4*y*y); return K+parts(((s[0]+0.3)%1)-0.3,y)[0]-1e-4
+energy_event.terminal=True; energy_event.direction=-1
 for dx in (0,1e-6,1e-4,1e-3,1e-2,3e-2):
     x0,y0=0.5+dx,20.0
     V,dVx,dVy,_=parts(x0,y0); H=math.sqrt(V/3); vy0=-2*y0*y0*dVy/(3*H)
     # e-fold counter via H integration
     sol=solve_ivp(lambda t,s:rhs(t,s[:4])+[math.sqrt(max(((s[2]**2+s[3]**2)/(4*math.exp(s[1])**2)+parts(((s[0]+0.3)%1)-0.3,math.exp(s[1]))[0])/3,0))],
-                  (0,2000),[x0,math.log(y0),0.0,vy0,0.0],method='Radau',rtol=1e-9,atol=1e-12,dense_output=True)
+                  (0,2000),[x0,math.log(y0),0.0,vy0,0.0],method='DOP853',rtol=1e-9,atol=1e-12,dense_output=True,events=energy_event)
     x,y=sol.y[0,-1],math.exp(sol.y[1,-1]); xm=x%1.0
-    d_rho=math.hypot(xm-0.5,y-rho[1]); d_i=min(math.hypot(xm,y-1),math.hypot(xm-1,y-1))
-    cls='rho' if d_rho<0.05 else ('i' if d_i<0.05 else 'other')
+    tr=reduce(complex(x,y)); r1=complex(0.5,rho[1]); r2=complex(-0.5,rho[1])
+    cls='i' if abs(tr-1j)<0.15 else ('rho' if min(abs(tr-r1),abs(tr-r2))<0.15 else 'other')
     # end of inflation: first time eps = 1, eps = 3K/(K+V)
     ts=np.linspace(0,sol.t[-1],20000); Nend=None
     for tt in ts:
         s=sol.sol(tt); yy=math.exp(s[1]); K=(s[2]**2+s[3]**2)/(4*yy**2); Vv=parts(((s[0]+0.3)%1)-0.3,yy)[0]
         if 3*K/(K+Vv)>=1: Nend=float(s[4]); yend=float(yy); xend=float(s[0]); break
-    out['runs'][str(dx)]=dict(final_x_mod1=float(xm),final_y=float(y),cls=cls,N_to_end=Nend,
+    out['runs'][str(dx)]=dict(final_x_mod1=float(xm),final_y=float(y),reduced=[float(tr.real),float(tr.imag)],cls=cls,N_to_end=Nend,
         end_of_inflation_xy=[xend,yend] if Nend else None,status=sol.status,t_final=float(sol.t[-1]))
     print(dx,out['runs'][str(dx)],flush=True)
 os.makedirs('field_tests/results/YFORK',exist_ok=True); json.dump(out,open('field_tests/results/YFORK/run2.json','w'),indent=1)
