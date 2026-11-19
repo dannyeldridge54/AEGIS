@@ -732,3 +732,4 @@ D1445  2026-11-19T06:03Z  JANUS tick 41: summary addendum D1436-D1444
 D1446  2026-11-19T06:09Z  JANUS tick 42: tau=i offset model at second-order SR vs NA12 exact
 D1447  2026-11-19T06:14Z  JANUS tick 43: exact tau=i potential behind NA12 vs D1446 asymptotic form
 D1448  2026-11-19T06:19Z  JANUS tick 44: exact tau=i plateau at second-order SR vs NA12
+D1449  2026-11-19T06:24Z  JANUS tick 45: vacua delta alpha_s with both derived second-order models
