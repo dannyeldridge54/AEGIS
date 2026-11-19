@@ -401,3 +401,5 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1439: in symbolic slow roll, substitute parameter ratios like C = t w² only AFTER differentiating — substituting first made C vary with w and gave wrong r and n_s (caught before the lock).
 
 - D1438→D1440: check a forecast against the mission's own stated requirement (incl. systematics) before calling something "decidable"; idealized stat-only forecasts can be 10× optimistic. Also check the experiment still exists (CMB-S4 ended July 2025).
+
+- D1442: when a paper gives n_S complete to O(ε²) but α_S only at leading order, α_S at O(ε³) follows exactly from α_S = dn_S/d ln k with d ln k = (1 − ε1)dN and dε_n/dN = ε_nε_{n+1} — no extra source needed. A first-order miss of ~2 % in α_s is expected (relative ε2 ≈ 2.7 %).

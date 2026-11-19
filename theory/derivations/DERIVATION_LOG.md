@@ -2617,3 +2617,10 @@ Touches: none.
 2. [derived] If CMB-only 0.9682 held: A1 3.10σ, NA12 3.21σ from SO alone (D1437 had 2.2–2.3σ with 2212.04115's 2.8e-3).
 3. [derived] 2212.04115's SO σ is 1.4× the collaboration's ⇒ D1437/D1440's SO-based numbers are conservative, not optimistic.
 4. [estimate] SO + SPHEREx (7.7–8.0σ, D1440) still rests on 2212.04115 alone; no collaboration SPHEREx n_s table reached (ar5iv of 1808.07445 / 2503.00636 not allowlisted). Net: n_s stays the first decider, and SO alone may reach ~3σ before SPHEREx combinations.
+
+## D1442 — JANUS tick 38: ρ offset model at second-order slow roll — PASS, −0.018 % vs exact A1
+1. [literature] arXiv:1609.04739 Eqs. 1, 9–12 (read in full): second-order n_S, r in Hubble-flow ε1–ε3, C = γ_E + ln2 − 2, and ε_n(εv_n) to second order.
+2. [derived] α_S to O(ε³) from the complete second-order n_S via α_S = dn_S/d ln k, d ln k = (1 − ε1)dN, dε_n/dN = ε_nε_{n+1}: α_S = −(1 + ε1)(2ε1ε2 + ε2ε3) − (3 + 2C)ε1ε2(ε2 + ε3) − 4ε1²ε2 − Cε2ε3(ε3 + ε4). Leading part = the paper's Eq. 11; at the solved point it equals 16εη − 24ε² − 2ξ² to all printed digits (consistency check).
+3. [derived] D1415 full model (A y² + B + D/y plateau, κ = 1 ramp), mpmath dps 40, (C_r, y*) solved at second order to A1's (n_s, r): C_r 1.2504e-6, y* 14.632, α_S = −9.9796e-4 vs exact −9.9814e-4 ⇒ −0.018 %. Rule (< 1 %): PASS. Implementation check: the same code at first order reproduces D1415's −1.0114e-3 to 7e-6.
+4. [derived] So the ρ vacuum's running is now understood from first principles to 0.02 %: SERAPIS-E's Epstein plateau with its offset B = 1 − E(ρ,2) and the 1/y term, plus slow roll at the consistent next order. D1415's 1.3 % and D1439's 2 % were slow-roll order, as diagnosed. The empirical factor k = 1.0352 (D1423) now has a derivation behind it.
+5. [estimate] Single point (A1); a band-wide check (box corners) is the natural next step before calling it a meter.

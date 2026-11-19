@@ -15079,3 +15079,11 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] Tension if 0.9682 held: 3.10σ (A1), 3.21σ (NA12) from SO alone; 2212.04115's SO σ is 1.4× larger ⇒ D1437/D1440 conservative. SO+SPHEREx still single-source.
 - aegis-check: re-ran (0.974393 − 0.9682)/0.002 = 3.0965, (0.97462 − 0.9682)/0.002 = 3.21, 2.8/2.0 = 1.4 in python; like-with-like: both 1σ, both CMB(+Planck); checked: units, arithmetic, cross-sector: none.
 - MAP: node=band_e status=frozen touches=[] ripple=no
+
+## D1442 — JANUS tick 38: ρ offset model at second-order SR — PASS (−0.018 %)
+- [literature] 1609.04739 Eqs. 1, 9–12 (complete second-order n_S, r, ε_n(εv_n)).
+- [derived] α_S to O(ε³) = d n_S/d ln k with d ln k = (1 − ε1)dN (derivation in PREREG_D1442); D1415's full model solved at second order to A1: α_S = −9.9796e-4 vs exact −9.9814e-4 (−0.018 %). PASS. First-order path reproduces D1415 to 7e-6.
+- [derived] The ρ running is derived, not fitted: Epstein offset + 1/y term + consistent SR order. k = 1.0352 (D1423) is explained.
+- [estimate] One point only; band corners next.
+- aegis-check: implementation check (first order = D1415 −1.0114e-3, 7e-6); leading flow α (−2ε1ε2 − ε2ε3) = 16εη − 24ε² − 2ξ² at the solved point to all digits; err = −9.9796e-4/−9.9814e-4 − 1 = −1.8e-4 in python; limits: higher-order terms are ~ε2 ≈ 2.7 % of leading as expected; checked: units (M_P = 1), arithmetic, like-with-like (same (n_s, r), same exact reference), cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no
