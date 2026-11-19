@@ -16104,3 +16104,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [literature] 2407.06618: flavour modulus = complex structure of matter curves; S-duality broken by Yukawas unless g_s-dependent wavefunctions. Sumino 0812.2090 / 0903.3640: Koide stability mechanism, no derivation of √2.
 - Doc: FLAVOUR_AT_RHO.md (Run 2 section).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1597 — WEAVE FULL EQUATION v1 (Danny 12:16 "derive the full equation"): inflation + endpoint + Koide + strong-CP condition assembled in one Lagrangian; status table: derived pieces vs principles (Zhinü, P-F1, P-F2), one empirical number (δ = 2/9), three open terms (θ₁₃, quark sector, Λ_obs)
+- [computed] Koide–Brannen check with A = √2, δ = 2/9 and m_τ as the only input: m_τ 1776.93 ⇒ m_μ 105.6561, m_e 0.510983; m_τ 1777.09 ⇒ 105.6657, 0.511029; observed 105.6584, 0.510999 — within the m_τ uncertainty.
+- Doc: theory/pending_docs/WEAVE_FULL_EQUATION.md. Not fully derived; stated plainly in the doc.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
