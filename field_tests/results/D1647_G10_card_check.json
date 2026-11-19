@@ -1,6 +1,6 @@
 {
  "D": "D1647",
- "n_rows": 33,
+ "n_rows": 35,
  "mismatches": [],
  "verdict": "CONSISTENT",
  "rows": [
@@ -98,6 +98,18 @@
    "q": "max reheating share to the dark side (2\u03c3)",
    "card": "0.0215",
    "json": 0.021479149338088598,
+   "ok": true
+  },
+  {
+   "q": "dark-photon window open from (MeV)",
+   "card": "300",
+   "json": 300,
+   "ok": true
+  },
+  {
+   "q": "BBN floor on \u03b5 at 1 GeV",
+   "card": "1.6e-11",
+   "json": 1.6449808545310028e-11,
    "ok": true
   },
   {

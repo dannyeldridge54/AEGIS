@@ -3266,3 +3266,11 @@ Touches: none.
 4. [derived] End points (δx = 0 and 1e-3 identical): Pantheon+ → image of ρ; Union3 and DESY5 → image of i. Same-u starts (amp = u_i on the exact curve): acceleration ends a = 2.04–2.54, all → ρ.
 5. [estimate] Reading: "acceleration ends in the future" is robust across all full-likelihood fits (a ≈ 1.4–2.5). Which fixed point the thread ends at depends on the starting height as well as the axion (D1655): for the datasets that actually prefer the thread (DESY5, Union3) it ends at i; for the weaker ones at ρ. The Janus "ends at i" reading is tied to DESY5-like data.
 6. [derived] Referee: matched w₀ offsets, a_end and classes re-read from the json; the interp fix verified (grid monotonic increasing) ✓.
+
+## D1659 — JANUS genesis G6d: the open strip for the P-M dark photon (PREREG_D1659_G6D_DP_STRIP) — OPEN for m ≈ 0.3–5 GeV, ε ≈ 1e-11 … 1e-7; CLOSED below ~100 MeV
+1. [literature] Approximate bands: colliders ε ≳ 1e-3 (0.01–10 GeV; 2511.03883); beam dumps 1e-7 ≲ ε ≲ 1e-3 below a few GeV (2005.01515, 2511.03883); SN1987A ε ≈ 1e-10 – 1e-6 for m ≲ 100 MeV (1612.07295, 1611.03864).
+2. [derived] With D1657's BBN floor (τ < 1 s): m = 2, 10 MeV — nothing left; 50, 100 MeV — only a sliver between the floor and the SN band (0.13, 0.28 decades: marginal) ⇒ CLOSED below ~100 MeV.
+3. [derived] m = 300 MeV: 3e-11 < ε < 1e-7 (3.5 decades); 1 GeV: 1.6e-11 … 1e-7 (3.8); 3 GeV: 9.5e-12 … 1e-7 (4.0); 5 GeV: 7.4e-12 … 1e-3 (8.1; beam-dump edge "a few GeV" approximate).
+4. [estimate] Band edges are approximate and mass-dependent (not digitised curves); the 100 MeV / 3 GeV cut-offs are where the quoted ranges stop, so the strip edges near 100 MeV and 3 GeV are uncertain by factors of a few.
+5. [estimate] Postulation check: P-M survives with a specific, testable dark photon: m ≈ 0.3–5 GeV, ε ≈ 1e-11 – 1e-7 — below current beam-dump reach, decays before BBN, gives ΔN_eff ≈ 0, and lets the 5 GeV dark baryon burn off its symmetric part.
+6. [derived] Referee: intervals recomputed from the band list and the D1657 floor in the json ✓.

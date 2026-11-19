@@ -16522,3 +16522,9 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - Started the thread where the other chat's full fit (D1636) puts it. Acceleration still ends in every case, now at a ≈ 1.4–1.9 (about 40–90 % bigger than today) instead of 1.23.
 - End point: for DESY5 and Union3 (the data that prefer the thread) it comes to rest at i; for Pantheon+ it ends at ρ. So "dark energy ends at i" goes with the DESY5-type result. A coding slip in run 1 (sorting) was logged as DEVIATIONS D1 before the one rerun.
 - MAP: node=thread_endpoint status=computed touches=[reverse_thread] ripple=no
+
+## D1659 — JANUS genesis G6d: the dark photon P-M needs has a home — heavier than ~300 MeV, very weakly mixed
+- Laid today's limits over the window from D1657: colliders rule out mixing above 10⁻³; beam dumps 10⁻⁷–10⁻³ (below a few GeV); supernova 1987A 10⁻¹⁰–10⁻⁶ (below ~100 MeV).
+- Below ~100 MeV there is no room left. Between ~0.3 and 5 GeV there is: mixing 10⁻¹¹ to 10⁻⁷, three to four decades wide.
+- So P-M now predicts a concrete partner: a dark photon of 0.3–5 GeV with tiny mixing — just under what beam dumps can see today, a target for the next ones. Band edges are approximate (not digitised curves).
+- MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no
