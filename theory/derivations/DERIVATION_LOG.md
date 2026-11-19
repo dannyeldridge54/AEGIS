@@ -2283,3 +2283,9 @@ Touches: none.
 2. [derived] Universal Δα⁻¹ = 1.5kT₂ = 24–30 at T₂ = 16–20; non-universal 1.11–1.43 per unit Δb′.
 3. [estimate] One-loop ≈ tree: marginal perturbative control of Y.
 4. [postulate P3] Model and control still open.
+
+## D1379: control vs symmetry
+1. [literature] hep-th/9606087: spontaneous N=4→N=2 breaking suppresses linear threshold growth (withdrawn arXiv version; published form unchecked).
+2. [derived] The shift turns the D1366 sum into a parity-shifted (Γ₀(2)-type) Epstein series.
+3. [estimate] Either SL(2,Z)+ρ with one-loop ≈ tree, or control with a different shape/vacuum.
+4. [postulate P3] Resolution open; next: locked minima of shifted Epstein sums.
