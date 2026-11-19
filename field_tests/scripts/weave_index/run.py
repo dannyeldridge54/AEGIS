@@ -17,13 +17,13 @@ for e in (0.05,0.1,0.2,0.3):
     for ph in (0,90,180,270): pts[f'rho+{e}@{ph}']=rho+e*cmath.exp(1j*math.radians(ph))
 pts.update({'i':1j,'2i':2j,'5i':5j})
 for name,t in pts.items():
-    o=orbit(t); out[name]={k:(lambda r:None if r is None else round(r,6))(Neff([f(x) for x in o])) for k,f in K.items()}
+    o=orbit(t); out[name]={k:(lambda r:None if r is None else round(float(r),6))(Neff([f(x) for x in o])) for k,f in K.items()}
 res={}
 for k in K:
     vals=[out[n][k] for n in pts if n.startswith('rho')]
     ok=lambda v:v is not None and abs(v-1.5)<=0.0015
     a=all(ok(v) for v in vals); b=ok(out['i'][k]); c=ok(out['5i'][k])
-    res[k]=dict(all_eps=a,at_i=b,cusp=c,PASS=a or b or c)
+    res[k]=dict(all_eps=bool(a),at_i=bool(b),cusp=bool(c),PASS=bool(a or b or c))
 out['verdict']=res
 print(json.dumps(out,indent=1)); os.makedirs('field_tests/results/WEAVE_INDEX',exist_ok=True)
 json.dump(out,open('field_tests/results/WEAVE_INDEX/out.json','w'),indent=1)

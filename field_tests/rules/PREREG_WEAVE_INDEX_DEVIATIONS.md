@@ -1,2 +1,3 @@
 # PREREG_WEAVE_INDEX — DEVIATIONS (written before the rerun, 2026-11-19 12:44 CT)
 D1: run 1 crashed with ZeroDivisionError in N_eff. A construction vanishes on all three orbit points: K4/K5 at τ₀ = i, whose orbit points are SL(2,Z) images of the critical point i, where ∂ln E = 0. Fix: when Σv² < 1e-24, report N_eff as "undefined (all v = 0)", which counts as not passing at that point. Nothing else changes. No numbers from run 1 were seen.
+D2 (2026-11-19 12:45 CT, before rerun 3): run 2 computed everything but crashed when printing, because numpy.bool_ verdicts are not JSON-serialisable (the repo's E returns numpy floats). Fix: cast the verdict flags and values with bool()/float() when writing the output. No numbers were seen, since the crash happened before any output.
