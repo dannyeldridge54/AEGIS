@@ -69,7 +69,7 @@ lattice directions (26 = 10 + 16; Narain O(16 + d, d)). At each stage the map re
 
 ## Stage 5 — D = 5 (IIB on T⁵ / M on T⁶) — D1572
 - Coordinates: G/K = E₆₍₆₎/USp(8); dim 78 − 36 = 42. Inflaton candidates: the string-perturbation direction y₅ = g_s²ℓ_s⁵/V₅; the T⁵ Narain block SO(5,5)/(SO(5)×SO(5)) (dim 25).
-- R⁴ codon: E⁽⁵⁾ = E^{E₆}_{[100000];3/2}; eigenvalue λ = 3(11 − D)(D − 8)/(D − 2) = −12. Λ₅ ∝ (E⁽⁵⁾)^{−1/3}.
+- R⁴ codon: E⁽⁵⁾ = E^{E₆}_{[100000];3/2}; eigenvalue λ = 3(11 − D)(D − 8)/(D − 2) = −18 (CORRECTED by D1572b; −12 was an arithmetic slip). Λ₅ ∝ (E⁽⁵⁾)^{−1/3}.
 - Constant term in the string-perturbation cusp (Green–Russo–Vanhove, arXiv:1004.0163, eq. 3.11 / Table): 2ζ(3)/y₅ + E^{SO(5,5)}_{[10000];3/2} (tree + one-loop; the full power-law content — the series is ½-BPS).
 - Weave observation: the one-loop thread of the 5D lens, E^{SO(5,5)}_{[10000];3/2}, is the SAME object as the 6D codon (stage 4). The lens below hands its whole codon up as the next lens's one-loop thread — a literal weave between neighbouring levels.
 - Rung check: tree/one-loop gap = 1/y₅ = one power of g_s² (the invariant of stage 4 holds); along y₅ the gradient strand again gives the rung-1 shape with amplitude set by E^{SO(5,5)}_{3/2}/(2ζ(3)) — the rung persists at weak coupling (sign of the one-loop sum: OPEN — see correction D1572a: regularised like 6D).

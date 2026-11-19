@@ -16175,3 +16175,6 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - "Flavour at the End of Inflation …": doi:10.5281/zenodo.24377945 (PDF md5 7bf2eb09e397a70303a7576e74942b22). Section V states that the slow-modulus basin computation (PREREG_BASINS, D1607) is pending and will appear in a revision.
 - Both are CC BY-NC-SA 4.0 under the AEGIS Community License, with status-of-claims paragraphs and the note that the model was formulated post-data.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1572b — CORRECTION to D1572: the D = 5 (E₆) Laplace eigenvalue is 3(11 − 5)(5 − 8)/(5 − 2) = −18, not −12 (arithmetic slip; recomputed with exact fractions: 10D 3/4, 9D 6/7, 8D 0, 7D −12/5, 6D −15/2, 5D −18, 4D −42, 3D −120). Nothing else in D1572 used the number. Found while drafting the dimension-ladder paper.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
