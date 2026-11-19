@@ -3133,3 +3133,8 @@ Touches: none.
 1. [literature] Guo–Schwarz first-order formulas: n_s − 1 = −2ε₁ − (2ε₁ε₂ − δ₁δ₂)/(2ε₁ − δ₁), r = 8|2ε₁ − δ₁|, δ₁ = −(4/3)ξ'QV.
 2. [derived] With V = P3-S plateau and ξ' > 0, the band is reached for ξ₀ 2.8–3.7e4; ξ₀ < 0 reverses the roll.
 3. [estimate] The 10D R⁴ coefficient reduced on a CY gives ξ₀ ~ 0.02–2, so the channel needs an enhancement of order 1e4.
+
+## D1565 — Einstein-term α'³ correction as the tilt: V_E ≈ V(1 + C·2ζ(3)y^{3/2}) with C = 2|χ|/((2π)³𝒱) for χ < 0
+1. [literature] AFMN (hep-th/9707013) Eq. 5.3: IIB 4D Einstein-term correction ∝ χ(2ζ(3)e^{−2φ₄}/V + 2π²/3 + …).
+2. [derived] Einstein-frame rescaling turns it into a multiplicative 1 − 2δ(τ) on the potential: the E_{3/2}-shaped (T3) tilt, blue for χ < 0, unsuppressed by H/M_s or ε.
+3. [estimate] The band (C ≈ 8e-7) needs 𝒱 ≈ 1e4|χ|; at face value M_KK < H for |χ| ≥ 100 — normalisation must be pinned.
