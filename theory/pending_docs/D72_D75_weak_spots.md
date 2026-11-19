@@ -16459,3 +16459,9 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
   - (a) Exact mirror, 0.94 GeV: needs the 25:1 visible-favoured decay (as both notes say), then ordinary–mirror scatterings to give the mirror n'/n = 5.36 (Bento–Berezhiani).
   - (b) Minimal sector, 5 GeV: cold for free (D1646), but needs ε_D/ε_V ≈ 20.
   Each version has one unexplained ratio. Neither is preferred yet; D1648's "(a) preferred" is withdrawn. The ΔN_eff ≈ 0.2 prediction (D1646) belongs to (b); (a) gives ΔN_eff ≈ 7.4ξ⁴ ≤ 0.3.
+
+## D1650 — JANUS genesis G12: the whole genesis chain passes referee — loop complete
+- Every lock in the chain (both chats, 15 of them) was committed before its result; every key number re-derives from its file; reheating is self-consistent (decay far slower than the expansion, T_R below the inflaton mass).
+- Four nits, none changes a verdict: ΔN_eff bound not yet read from a paper (G6b), two "w today" definitions, a stale CMB-S4 mention in the other chat's postulate register, SM-only g* (conservative).
+- Remaining open (on the card): κ, equal sharing per particle, C3/C4, the 1-in-300 start, V_Λ, the 2D end point (G9b), D1636.
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no

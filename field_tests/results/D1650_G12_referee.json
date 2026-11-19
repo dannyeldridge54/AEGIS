@@ -1,0 +1,152 @@
+{
+ "D": "D1650",
+ "order": {
+  "GENESIS_DE": {
+   "lock": 1795122383,
+   "result": 1795122552,
+   "ok": true
+  },
+  "GENESIS_DE2": {
+   "lock": 1795122654,
+   "result": 1795122702,
+   "ok": true
+  },
+  "GENESIS_DE3": {
+   "lock": 1795122771,
+   "result": 1795123248,
+   "ok": true
+  },
+  "GENESIS_MATTER": {
+   "lock": 1795123999,
+   "result": 1795124025,
+   "ok": true
+  },
+  "BBN2": {
+   "lock": 1795124215,
+   "result": 1795124329,
+   "ok": true
+  },
+  "BBN3": {
+   "lock": 1795124462,
+   "result": 1795124495,
+   "ok": true
+  },
+  "LI7": {
+   "lock": 1795126815,
+   "result": 1795126844,
+   "ok": true
+  },
+  "RC2": {
+   "lock": 1795127269,
+   "result": 1795127291,
+   "ok": true
+  },
+  "D1637": {
+   "lock": 1795126496,
+   "result": 1795126553,
+   "ok": true
+  },
+  "D1638": {
+   "lock": 1795126693,
+   "result": 1795126820,
+   "ok": true
+  },
+  "D1641": {
+   "lock": 1795127198,
+   "result": 1795127276,
+   "ok": true
+  },
+  "D1644": {
+   "lock": 1795127592,
+   "result": 1795127716,
+   "ok": true
+  },
+  "D1644dev": {
+   "lock": 1795127635,
+   "result": 1795127716,
+   "ok": true
+  },
+  "D1646": {
+   "lock": 1795128055,
+   "result": 1795128085,
+   "ok": true
+  },
+  "D1647": {
+   "lock": 1795128187,
+   "result": 1795128207,
+   "ok": true
+  },
+  "PREREG_GENESIS_DE_DEVIATIONS.md": {
+   "added": 1795122475
+  },
+  "PREREG_GENESIS_DE3_DEVIATIONS.md": {
+   "added": 1795123011
+  },
+  "PREREG_GENESIS_BBN2_DEVIATIONS.md": {
+   "added": 1795124246
+  }
+ },
+ "arithmetic": {
+  "a_mDM": {
+   "json": 5.0331980330800175,
+   "recompute": 5.03318730442557,
+   "ok": true
+  },
+  "b_reheat": {
+   "m": 4995830804528.751,
+   "TR_lo": 771677592.7589931,
+   "TR_hi": 3868617745.817757,
+   "ok": true
+  },
+  "c_rho": {
+   "ok": true
+  },
+  "d_dark": {
+   "xi": 0.46523976411011436,
+   "dneff": 0.2062890517311545,
+   "ok": true
+  },
+  "e_thread": {
+   "n_pass": 3,
+   "ok": true
+  },
+  "f_mH": {
+   "ok": true
+  }
+ },
+ "physics": {
+  "g_reheat": {
+   "k_1/8pi": {
+    "Gamma": 0.8367300645016665,
+    "H_inf": 5768688519640.998,
+    "Gamma_lt_H": true,
+    "TR_lt_m": true
+   },
+   "k_1": {
+    "Gamma": 21.029320189409194,
+    "H_inf": 5768688519640.998,
+    "Gamma_lt_H": true,
+    "TR_lt_m": true
+   }
+  },
+  "h_mirror": {
+   "value": 7.403204662458465,
+   "ok": true
+  },
+  "i_quantum": {
+   "beta=2.8284": {
+    "ratio": 0.00018535470563837517,
+    "ok": true
+   },
+   "beta=2.0000": {
+    "ratio": 0.00019660023932793294,
+    "ok": true
+   },
+   "beta=1.4142": {
+    "ratio": 0.00013901602922878137,
+    "ok": true
+   }
+  }
+ },
+ "mechanical": "PASS"
+}

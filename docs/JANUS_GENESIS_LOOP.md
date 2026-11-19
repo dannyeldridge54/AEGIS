@@ -19,3 +19,5 @@ Guards: no map status edits; no Zenodo/arXiv; no PC jobs or downloads beyond pip
 - The loop MAY ADD NEW MAP NODES (theory/map/map.yaml: id, layer, branch, title, status open/postulate, depends) when a lead opens a new physics question. Existing statuses change only through MAP lines in D-notes.
 - Nodes added: genesis_reheating, matter_genesis, light_elements, reverse_thread. Tick 1 = D1637 (G1 done). Next: G2.
 - DERIVATION_LOG step labels must be [derived]/[literature]/[estimate]/[postulate P#] (jl_check K2).
+
+## Stopped 2026-11-19 ~22:55Z — G12 PASS (D1650). Leads done: G1 D1637, G2 D1638, G1b D1641, G9+G2b D1644, G6 D1646, G10 D1647, G11+G12 D1650. Left open for a future run: G6b, G9b; G3/G4/G5/G7/G8 with the other chat. Restart with "Djl".

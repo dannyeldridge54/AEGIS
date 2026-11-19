@@ -64,8 +64,8 @@ Cycle per lead (one lead per tick): Research → Development → Postulation →
 - [taken by other chat: D1640 R-Li includes weak-rate corrections] G8 BBN weak-rate corrections: the stated −0.005 Y_p bias — lock, add Coulomb/radiative/finite-mass terms, re-score.
 - [done D1644] G9 Future oscillation of the thread: thread mass m ~ √V''(min) vs H₀; when (if ever) it becomes matter-like and what fraction — art/lens claim vs physics stated separately.
 - [done D1647] G10 Genesis budget table: Ω_DM/Ω_b, η, Y_p, D/H, ³He/H, w₀/w_a — every number from its json, one card (machine-checked as D1469/D1473).
-- G11 Console sync: chains/genesis stages updated with G1–G10 results.
-- G12 REFEREE (whole genesis chain, fresh read of every json): pass → loop stops and reports to Danny; fail → the failures become new G-leads.
+- [done D1650] G11 Console sync: chains/genesis stages updated with G1–G10 results.
+- [done D1650 PASS] G12 REFEREE (whole genesis chain, fresh read of every json): pass → loop stops and reports to Danny; fail → the failures become new G-leads.
 - [done D1641] G1b (from D1637) Derive why V''/V∞ = 1/4 exactly at ρ (expected (f')² = 1/8 = λ_sp², the species-scale slope) — analytic, no data.
 - [done D1644] G2b (from D1638) The thread at ρ: oscillation about V = 0 with V'' = V_Λ/4 (D1637's 1/4) ⇒ m_DE ~ H₀ — when it reaches ρ in the future, how fast it becomes matter-like (merge with G9). G3 must use the EXACT v3 shape (D1638).
 - G9b (from D1644) The thread's end point in the full τ plane (x and y): does it still settle at an image of i, or at ρ, once the axion direction is free? Needs the 2D kinetic metric (dτdτ̄/(2y²)·(D−2)/… — read the kinetic normalisation from SERAPIS_FINAL_EQUATION step 1 first).
