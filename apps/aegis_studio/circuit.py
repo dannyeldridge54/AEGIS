@@ -85,7 +85,8 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     # Leech growth
     fn = get('lattice_lab', {'cmd': 'flip', 'args': ['E8']}); W['E8_selfdual'] = 1.0 if fn.get('self_dual') is True else 0.0
     W['hex_A2_su3'] = get('lattice_lab', {'cmd': 'hexagons', 'args': ['A2']}).get('hexagonal_planes')
-    W['Leech_modular'] = 1.0 if get('lattice_lab', {'cmd': 'modular', 'args': ['Leech']}).get('match') is True else 0.0
+    _lm = get('lattice_lab', {'cmd': 'modular', 'args': ['Leech']})   # needs fpylll + cysignals (LLL); a tool error is NOT a failed law
+    W['Leech_modular'] = (1.0 if _lm.get('match') is True else 0.0) if 'match' in _lm else None
     # 10D layer ("9 dimensionals", 2026-11-18 23:20 UTC; tolerances below fixed before the first run)
     k1 = get('kaluza_scalar', {'D': 10, 'gamma': 1.5}); k2 = get('kaluza_scalar', {'D': 10, 'gamma': 1.5, 'method': 'fd'})
     W['kk10_kind_critical'] = 1.0 if k1.get('kind') == 'critical' else 0.0
@@ -220,7 +221,7 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     # Leech growth laws (tolerances fixed 23:12 UTC before the first run)
     law('law', 'Leech', ('X_narain', 'X_mod'), 'E8 is even self-dual (Narain-type: never flips)', W['E8_selfdual'] == 1.0 and W['E8_flips'] == 0.0, f"self-dual {W['E8_selfdual']:.0f}, flips {W['E8_flips']:.0f}")
     law('law', 'Leech', ('X_su3', 'X_epstein'), 'SU(3) root lattice A2 is exactly one hexagon (the SERAPIS tile)', W.get('hex_A2_su3') == 1, f"{W.get('hex_A2_su3')}")
-    law('law', 'Leech', ('X_d24', 'X_mod'), 'θ_Leech = E4³ − 720Δ', W['Leech_modular'] == 1.0, f"match {W['Leech_modular']:.0f}")
+    law('law', 'Leech', ('X_d24', 'X_mod'), 'θ_Leech = E4³ − 720Δ', W['Leech_modular'] == 1.0, f"match {W['Leech_modular']:.0f}" if W['Leech_modular'] is not None else "UNAVAILABLE: lattice tool errored (install fpylll + cysignals) - not a physics result")
     # 10D laws
     law('law', '10D', ('S_10d',), '10D vacuum is the critical branch at γ = γ_c = 3/2', W['kk10_kind_critical'] == 1.0, 'kaluza_scalar D = 10, γ = 3/2')
     tri('10D', ('S_kk10', 'S_10d', 'S_btr'), 'm²₁ (10D scalar KK)', ('m2_1_pr', 'm2_1_fd', 'm2_1_lock'), 1e-5, rel=True)
