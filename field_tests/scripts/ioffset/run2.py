@@ -30,10 +30,17 @@ for wn,sg in [('F',1),('G',1),('G',-1)]:
     for r in (1.001,1.01,1.1,1.5):
         k=r*kc; f=lambda p:V0(p[0],p[1])+sg*k*w(p[0],p[1]) if p[1]>0.2 else 1e9
         st=[0+1e-3*d[0],1+1e-3*d[1]]
-        o=minimize(f,st,method='Nelder-Mead',options=dict(xatol=1e-10,fatol=1e-15,maxiter=6000))
-        x,y=o.x; t=complex(x,y); u=abs((t-1j)/(t+1j))
+        try:
+            o=minimize(f,st,method='Nelder-Mead',options=dict(xatol=1e-10,fatol=1e-15,maxiter=6000))
+        except OverflowError:
+            rows.append(dict(r=r,runaway=True)); continue
+        x,y=o.x
+        if y>20: rows.append(dict(r=r,runaway=True,y=float(y))); continue
+ t=complex(x,y); u=abs((t-1j)/(t+1j))
         rows.append(dict(r=r,x=float(x),y=float(y),abs_u=float(u),on_CP=bool(abs(x)<1e-5 or abs(abs(t)-1)<1e-5 or abs(abs(x)-0.5)<1e-5),V_min_minus_V_rho=float(o.fun-(V0(rx,ry)+sg*k*w(rx,ry)))))
     res['rows']=rows
+    if any(q.get('runaway') for q in rows):
+        res['class']='RUNAWAY (no minimum near i; unbounded below towards the cusp)'; out[key]=res; continue
     us=[q['abs_u'] for q in rows]
     sup=us[0]<0.05 and all(us[i]<=us[i+1]+1e-9 for i in range(3)) and all(q['V_min_minus_V_rho']<0 for q in rows)
     res['class']='SUPERCRITICAL' if sup else 'FIRST-ORDER/OTHER'
