@@ -3303,3 +3303,12 @@ Touches: none.
 3. [derived] Toolkit − PRIMAT: Y_p −0.0026 (the missing radiative/finite-mass corrections, as D1651 said), D/H +6.1 %. PRIMAT itself vs observation: Y_p +0.99σ, D/H −2.3σ (the known D/H tension). ⇒ textbook-grade (|ΔY_p| ≤ 0.003, |ΔD/H| ≤ 10 %).
 4. [derived] D1633's unsourced "observed 0.245 ± 0.003" is consistent with LBT 0.2458 and the PRIMAT observation row 0.2449 ± 0.0040 ⇒ confirmed. D1651's unsourced "full codes ≈ 0.247" matches PRIMAT 0.24709 ⇒ confirmed. Both D1662 nits closed.
 5. [estimate] The toolkit's D/H sits on the opposite side of the observation from PRIMAT (+2.7σ vs −2.3σ); quoting toolkit D/H to better than ~6 % is not justified.
+
+## D1664 — JANUS genesis G6e: the P-M dark photon strip from DarkCast's published limit tables (PREREG_D1664_G6E_DARKCAST) — SHARPENED: the window is wider than D1659's estimate
+1. [literature] 34 visible-decay dark-photon limits (beam dumps E137, E141, E774, CHARM, NuCAL, NOMAD, PS191, KEK, Orsay, NA64-visible; colliders BaBar, LHCb, KLOE, BESIII, NA48/2, CMS, A1, APEX, HPS) from DarkCast tables (arXiv:1801.04847), GitHub mirror commit db9a0f6 (2022-08); 36 invisible / g−2 / Higgs-branching files skipped by their own metadata.
+2. [derived] Dim strip (below beam-dump reach): opens at m ≈ 0.10 GeV with 5.2e-11 < ε < 5.2e-8 (BBN floor to beam-dump lower edge); at 0.30 GeV 3.0e-11 – 8.8e-8.
+3. [derived] Bright strip (between beam dumps and prompt searches): 1e-5 ≲ ε ≲ 1e-3 from 25 MeV to ~0.37 GeV in the 2022 tables.
+4. [derived] The two strips merge at m ≈ 0.81 GeV (1.8e-11 < ε < 6.0e-4): beam dumps stop reaching there. At 1, 3, 5 GeV: ε from 1.7e-11 / 9.6e-12 / 7.3e-12 up to ~1e-3 (≈ 8 decades). No mass in 0.3–5 GeV is closed.
+5. [estimate] D1659 assumed beam dumps cover 1e-7–1e-3 up to 3 GeV; the published tables show they stop near 0.8 GeV. So D1659 was conservative; its "0.3–5 GeV, ε 1e-11–1e-7" is a sub-region of the true window.
+6. [estimate] Caveats: tables end in 2022 (newer NA64, Belle II, LHCb results can only shrink the bright strip, which is the region they target); SN1987A kept as the approximate band below 0.1 GeV; A' → χχ̄ closed since m_A' < m_DM.
+7. [derived] Referee: limit selection re-read from metadata; strip edges recomputed from the json rows ✓. Download: Danny's OK (17:37 CT); tables kept outside the repo (GPL-2), mirror commit recorded.

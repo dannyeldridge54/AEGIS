@@ -16551,3 +16551,9 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - Lithium: 4.4 vs 1.6 observed — the famous lithium problem, which full codes share.
 - The two unsourced numbers the referee flagged (D1633's "observed 0.245", D1651's "full codes ≈ 0.247") are both confirmed by the papers.
 - MAP: node=light_elements status=computed touches=[] ripple=no
+
+## D1664 — JANUS genesis G6e: with the real published limit curves, the dark photon's home is bigger
+- Laid 34 published dark-photon searches (DarkCast tables, mirror of 2022) over the window. Two allowed strips: a "dim" one (mixing 10⁻¹¹ to ~10⁻⁷, from 0.1 GeV up — too faint for any beam dump) and a "bright" one (10⁻⁵ to 10⁻³, 25–370 MeV, between beam dumps and colliders).
+- Above ~0.8 GeV the beam dumps stop and the two merge: anything from 10⁻¹¹ up to 10⁻³ is allowed up to 5 GeV. D1659's rough window (0.3–5 GeV, 10⁻¹¹–10⁻⁷) was conservative and sits inside this.
+- Caveat: the tables stop at 2022; newer searches mainly target the bright strip and can only shrink it.
+- MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no

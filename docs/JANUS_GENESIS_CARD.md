@@ -22,6 +22,7 @@ Every number is copied from the json named in its row and machine-checked by fie
 | max reheating share to the dark side (2σ) | 0.0215 | field_tests/results/D1654_G6b_channels.json | f_max_2sigma.S1_democratic |
 | dark-photon window open from (MeV) | 300 | field_tests/results/D1659_G6d_dp_strip.json | open_masses.0 |
 | BBN floor on ε at 1 GeV | 1.6e-11 | field_tests/results/D1659_G6d_dp_strip.json | rows.5.eps_floor |
+| strips merge above (GeV), DarkCast tables | 0.808 | field_tests/results/D1664_G6e_darkcast.json | rows.267.m_GeV |
 | ΔN_eff, full mirror copy | 7.40 | field_tests/results/D1646_G6_dark_radiation.json | A_full_mirror.dneff |
 | Y_p (BBN v3) | 0.2421 | field_tests/results/GENESIS_MATTER/bbn3.json | base.Yp |
 | D/H | 2.59e-5 | field_tests/results/GENESIS_MATTER/bbn3.json | base.D_H |

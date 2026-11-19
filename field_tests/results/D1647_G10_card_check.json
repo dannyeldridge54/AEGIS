@@ -1,6 +1,6 @@
 {
  "D": "D1647",
- "n_rows": 35,
+ "n_rows": 36,
  "mismatches": [],
  "verdict": "CONSISTENT",
  "rows": [
@@ -110,6 +110,12 @@
    "q": "BBN floor on \u03b5 at 1 GeV",
    "card": "1.6e-11",
    "json": 1.6449808545310028e-11,
+   "ok": true
+  },
+  {
+   "q": "strips merge above (GeV), DarkCast tables",
+   "card": "0.808",
+   "json": 0.8079882425823912,
    "ok": true
   },
   {

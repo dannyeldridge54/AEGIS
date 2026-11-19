@@ -77,3 +77,4 @@ Cycle per lead (one lead per tick): Research → Development → Postulation →
 - [done D1661] G13 (from D1660) Sourced scope note for D1632 T4, D1648 Q2, D1649: recompute with ΔN_eff ≤ 0.086 (2σ, 2603.13226) — full-mirror ξ_max, ξ⁴, the visible-favoured decay ratio, D1648's m_DM under symmetric decay, and D1649 version (b) with a massive dark photon (D1659). Then G12c: re-run g12b_referee.py source audit; PASS if only nits remain.
 - [done D1662 PASS] G12c round-2 referee re-run. Loop stopped 2026-11-19 ~23:42Z. Open for a later round: D1651/D1633 Y_p sources (nits), digitised dark-photon curves (sharpen D1659 edges), C3/C4 sharing factor (other chat).
 - [done D1663] G14 sourced light-element scorecard (closes D1662 nits D1633, D1651).
+- [done D1664 SHARPENED] G6e DarkCast tables (Danny's download OK 17:37). Follow-up G6f: add post-2022 visible limits (NA64 2023+, Belle II, LHCb 2023+) if a newer table set is reachable.
