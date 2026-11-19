@@ -1490,7 +1490,8 @@
    ],
    "history": [
     "D1650: postulate"
-   ]
+   ],
+   "flag": "recheck (D1654, dark_radiation)"
   },
   {
    "id": "light_elements",
@@ -1564,16 +1565,18 @@
     "rho"
    ],
    "title": "Dark radiation from SERAPIS reheating — how cold the dark side is (ΔN_eff)",
-   "status": "estimate",
+   "status": "corrected",
    "d": [
-    "D1646"
+    "D1646",
+    "D1654"
    ],
    "depends": [
     "genesis_reheating",
     "matter_genesis"
    ],
    "history": [
-    "D1646: estimate"
+    "D1646: estimate",
+    "D1654: corrected"
    ]
   }
  ]
