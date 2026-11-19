@@ -15392,3 +15392,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] In band: (s·m, C) = (2.0, 1e-6) 0.9694/4.91e-4; (2.0, 1.5e-6) 0.9742/5.50e-4; (1.9, 1.5e-6) 0.9716/5.70e-4 (edge). s·m ≤ 1.8: r too high once n_s is in band. s·m = 2 is D1484's killed two-term exponent → needs a heavy-area mechanism.
 - aegis-check: numbers from field_tests/results/D1490_smtilt.json; in-band flags re-read against the rule ((1.9, 1.5e-6) r 5.6984e-4 ≤ 5.7e-4 ✓ marginal); like-with-like: same SMSCAN potential and tilt convention as the pipeline's e/(e+1)(1 + C e); s-independence with tilt not established (side test failed, D1); cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1493 — P3 exact rows confirm our forecasts: DILMIX (0.25, 1.25e-6) IN BAND; LVSDIL over-flat
+- [derived] DILMIX (0.25, 1.25e-6) exact n_s 0.97198, r 4.561e-4 (in band) vs D1485 forecast Δn_s −3.7e-6, Δr/r −0.012 %; LVSDIL k 0.15/0.3 vs D1488 Δn_s ≤ 5.3e-6, Δr/r −0.04 %. All AGREE.
+- aegis-check: numbers read from field_tests/results/DILMIX/a0.25_C1.25e-06.json, LVSDIL/k0.15.json, k0.3.json and our D1485/D1488 jsons; differences re-run in python; forecasts were locked and pushed before the exact rows existed (fe070cc, 43b868e) ✓; cross-sector: none.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
