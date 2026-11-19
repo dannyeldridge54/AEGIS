@@ -14731,3 +14731,13 @@ MAP: node=janus status=computed touches=[band_e_audited] ripple=no
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
 
 ## D1401a — correction to D1401 (same day): the listed a values were A₀/B only; the formula a = A₀/B + E_ρ adds 5.783. Corrected: T₂ = 2, y₈ = 0.01 → a ≈ 190 (y* ≈ 201); T₂ = 5, y₈ = 0.1 → a ≈ 9.7 (y* ≈ 45); T₂ = 10, y₈ = 0.1 → a ≈ 7.6 (y* ≈ 40). Conclusion unchanged (a = O(10–200), natural; no chamber limit).
+
+## D1402 — JANUS tick 3: frozen τ = i band re-checked on end-2025 data — PASS on CMB + DESI; its top edge is >2σ high for CMB alone
+- Lock: field_tests/rules/PREREG_D1402_band_i_recheck.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1402/band_i.py; result field_tests/results/D1402_band_i_recheck.json.
+- [literature] arXiv:2512.10613: n_s 0.9682 ± 0.0032 (CMB), 0.9728 ± 0.0029 (CMB + DESI), r < 0.034 (95%); ACT DR6 running 0.0062 ± 0.0052.
+- [computed] n_s pulls: CMB + DESI −0.97 … +0.76σ (100% of band within 2σ); CMB alone +0.56 … +2.13σ (92%).
+- [computed] r_max 5.7e-4 = 1/60 of the bound; α_s = −2r = −9.6e-4 … −1.14e-3, pulls −1.38 … −1.41σ. Verdict: PASS (R1–R3).
+- Honest reading: the band's fate rides on the BAO choice. With DESI the band is central; with CMB alone it sits high and its upper 8% is beyond 2σ. Correlations between n_s and r not used (assumed). Flag for the band_e re-check next: same split expected.
+- aegis-check: re-ran pulls (+2.125σ CMB-only top edge, −0.966σ CMB+DESI bottom edge), α_s(r = 5.7e-4) = −1.14e-3, pull −1.412σ, bound ratio 60 in python; checked: units, arithmetic, like-with-like (same-paper n_s and r; running from ACT at the same pivot), limits, cross-sector: none.
+MAP: node=band_i status=frozen touches=[janus] ripple=no
+

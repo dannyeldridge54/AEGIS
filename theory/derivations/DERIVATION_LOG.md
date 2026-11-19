@@ -2388,3 +2388,10 @@ Touches: none.
 1. [literature] GRV 1001.2535 (4.10, 4.13–4.16): perturbative D⁴R⁴ = ζ(5)/y₈ + (2/π³)E₂(T)E₂(U) + (2/3)y₈(E₂(T) + E₂(U)).
 2. [derived] A₀ + B·E₂(U) with exact E₂(U): plateau Ê/(a + Ê), a = A₀/B + E_ρ; no chamber; a ≈ 2–180 for T₂ = 2–10, y₈ = 0.01–0.1.
 3. [postulate P3] Coefficient → potential mechanism not identified.
+
+## D1402: band_i re-check (locked)
+1. [literature] arXiv:2512.10613 (Planck+SPT+ACT+BICEP/Keck): n_s = 0.9682 ± 0.0032 (CMB), 0.9728 ± 0.0029 (CMB + DESI BAO), r < 0.034 (95%). ACT DR6 P-ACT-LB running 0.0062 ± 0.0052 (arXiv:2503.14454).
+2. [derived] n_s 0.970–0.975 vs CMB + DESI: pulls −0.97σ … +0.76σ, all of the band inside 2σ (R1 PASS).
+3. [derived] vs CMB alone: pulls +0.56σ … +2.13σ; 92% of the band inside 2σ — the upper edge n_s > 0.9746 is a >2σ tension with CMB-only data (reported, not a fail under the lock).
+4. [derived] r ≤ 5.7e-4 is 60× under r < 0.034 (R2 PASS); α_s = −2r = −9.6e-4 … −1.14e-3, pulls −1.38σ … −1.41σ (R3 PASS). Band verdict: PASS; band stays frozen.
+
