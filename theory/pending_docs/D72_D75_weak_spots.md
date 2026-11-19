@@ -15497,3 +15497,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1511 — P3 DILMIX α 0.75 and LVSDIL k 1.2 confirm forecasts (18-point record, |Δn_s| ≤ 5.3e-6); D1507/D1508 numbers check out
 - aegis-check: read from field_tests/results/DILMIX/a0.75_*.json, LVSDIL/k1.2.json, D1485/D1488 jsons; differences re-run in python ✓; P3 D-notes read, not edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1510 — T3e: physical-frame DILMIX sliver CONFIRMED — 20/56 in band at α 0.05–0.125, C 1.3–2.0e-6; best (0.1, 1.8e-6): n_s 0.97197, r 5.46e-4
+- [derived] In band only for small one-power admixture (α ≤ 0.125); α ≥ 0.15 r too high. Best point → exact MS check next (T3f).
+- [estimate] Physical target: mostly form B (which e^K gives exactly, D1501) + 5–12.5 % one-power piece + tilt ≈ 1.3–2e-6.
+- aegis-check: numbers from field_tests/results/D1510_sliver.json; in-band flags checked against the rule (n_s 0.969–0.975, r 4.55–5.7e-4) row by row; best point chosen by the locked rule (closest to n_s 0.972 with r in band); cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
