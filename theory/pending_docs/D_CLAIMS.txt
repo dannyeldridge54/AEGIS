@@ -719,3 +719,4 @@ D1432  2026-11-19T04:55Z  Recheck: 4 flags from my own touches (D1387/D1390/D139
 D1433  2026-11-19T04:56Z  JANUS tick 29: band_e_audited running vs ACT P-ACT and P-ACT-LB
 D1434  2026-11-19T05:01Z  JANUS tick 30: audited tau=i point (NA12 eps 1.40e-4) on three n_s combos and both ACT runnings
 D1435  2026-11-19T05:06Z  JANUS tick 31: summary addendum D1425-D1434
+D1436  2026-11-19T05:11Z  JANUS tick 32: closed-form nesting D1405(kappa=1/2) = D635 = D640(c->0)
