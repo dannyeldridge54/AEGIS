@@ -43,7 +43,7 @@ Agreement is within the m_τ uncertainty. The two numbers √2 and 2/9 are not d
 ### 4. Neutrinos — the second tie-off point (D1598, D1599)
 V₀ vanishes at BOTH SL(2,Z) fixed points, i and ρ. [der] With charged leptons tied off at ρ (residual Z₃) and the neutrino modulus at i (residual Z₂; P-F3), A4 makes the second PMNS column exactly trimaximal, (1/3, 1/3, 1/3): this is TM2. [der]
 - θ₁₃ is free, which removes the −38σ failure of exact-ρ tribimaximal mixing.
-- sin²θ₁₂ = 1/(3cos²θ₁₃) = 0.3408 vs NuFIT 0.307: +2.8σ (passes the 3σ rule, in tension). [der] Adjustment: near i, mixing angles move linearly with the offset x ~ |(τ − i)/(τ + i)| (Feruglio 2211.00659), so a small offset of τ_ν (the bifurcation above) is the natural place to relieve this tension. Not computed. [OPEN]
+- sin²θ₁₂ = 1/(3cos²θ₁₃) = 0.3408 vs NuFIT 0.307: +2.8σ (passes the 3σ rule, in tension). [der] Adjustment: near i, mixing angles move linearly with the offset x ~ |(τ − i)/(τ + i)| (Feruglio 2211.00659), so a small offset of τ_ν (the bifurcation above) is the natural place to relieve this tension. [OPEN] Locked test (D1621): the minimal A4 Weinberg operator FAILS at and near i (χ² > 2000; degenerate m₁ = m₂ at i). TM2 holds only for a generic S-invariant M_ν with non-degenerate masses, which needs extra operators with free coefficients.
 - sin²θ₂₃ ∈ [0.395, 0.605] (data 0.561 / 0.470: consistent). [der]
 - **Prediction:** δ_CP = 236° or 125° (if sin²θ₂₃ = 0.561), 287° or 74° (if 0.470). Scored on DUNE / Hyper-K. [der]
 
