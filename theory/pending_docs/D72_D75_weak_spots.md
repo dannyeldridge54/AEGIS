@@ -15113,3 +15113,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] The asymptotic τ = i potential misses a relative-O(1/I) term (the ρ model carried its offset and 1/y term and passed). D640 (−0.3 %) stays the τ = i meter. Next: locate the exact τ = i potential (D640 method B / NA12 source).
 - aegis-check: re-ran −8.5164e-4/−8.454e-4 − 1 = +0.74 %, −8.6952e-4/−8.635e-4 − 1 = +0.70 % in python; implementation check ε ≤ 0.3 %; like-with-like: same NA12 rows as D1412 (estimator caveat stated); checked: units, arithmetic, cross-sector: none.
 - MAP: node=band_i status=frozen touches=[] ripple=no
+
+## D1447 — JANUS tick 43: exact τ = i potential located
+- [derived] NA12 integrates V = I²/(I² + 1) + ε I₁ (running_d632.py), I = y − c and I₁ = I/2 to 4e-15 at y 20–30: D1446's map and tilt were right; its plateau 1 − I⁻² lacks the "+1" (exact 1 − 1/(I² + 1)), a relative −0.37 % slope change at I* ≈ 23.
+- [estimate] NA12's α_s = 5-pt finite difference (pre-D1417 estimator). Tick 44 locks the second-order test on the exact plateau.
+- aegis-check: I(y) − (y − c) and I₁/I − ½ evaluated in python at y = 20, 24.4, 30 (≤ 4e-15, 0); 2/(I² + 1) at I = 23.3 = 0.37 %; checked: units, arithmetic, cross-sector: none.
+- MAP: node=band_i status=frozen touches=[] ripple=no

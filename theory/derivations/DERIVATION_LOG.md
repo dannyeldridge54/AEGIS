@@ -2650,3 +2650,10 @@ Touches: none.
 2. [derived] Implementation check passed: recovered ε = 1.3004–1.5031e-4 vs NA12's 1.30–1.50e-4 (≤ 0.3 %), I* 23.2–23.5. First order at the same points: +6.0 … +6.2 %.
 3. [estimate] Reading: the second-order step works (6 % → 0.7 %), but the asymptotic τ = i potential is less complete than the ρ one (which carries the Epstein offset B and the πζ(3)/y term, D1442–D1444, 7/7 ≤ 0.14 %). The residual 0.7 % is the size of a missing relative-O(1/I*) ≈ 4 % term in V reaching α_s at the ~ε2 level; the NA12 references' pre-D1417 estimator (~0.1–0.2 %) cannot explain it. Not chased.
 4. [derived] D640's offset relation (−0.29 … −0.34 %, D1412) remains the τ = i meter. Next: find the exact τ = i potential used by NA12 / D640 "method B" (results/janus_offset_d640.txt) before any second-order τ = i claim.
+
+## D1447 — JANUS tick 43: the exact τ = i potential behind NA12 differs from D1446's form by the "+1" in the plateau
+1. [derived] NA12 (field_tests/scripts/na12/band_i_na12.py, locked D815) integrates theory/modular/running_d632.py: V = I²/(I² + 1) + ε·I₁(y), φ = ln y/√2, I(y) = ln(e^{2(ln|j−1728|−ln1728)} + 1)/(4π), I₁ = ln(e^{ln|j−1728|−ln1728} + 1)/(4π).
+2. [derived] Checked numerically at y = 20, 24.4, 30: I = y − c to 4e-15 and I₁ = I/2 exactly (exponential terms e^{−2πy} invisible), so the offset map and tilt in D1446 were right.
+3. [derived] The difference is the plateau: exact 1 − 1/(I² + 1) vs D1446's 1 − I⁻² (D635/D640's asymptotic form). Relative change in the plateau slope −2/(I² + 1) ≈ −0.37 % at I* ≈ 23.3, entering ε and η at relative O(1/I*²) — a candidate for D1446's +0.7 %, not yet tested.
+4. [estimate] NA12's α_s uses a 5-point finite difference of n_s in ln k (step 0.05) — the pre-D1417 estimator (the reference-precision caveat of D1444 applies, ~0.1–0.2 %).
+5. [estimate] Next (tick 44, locked): D1446's second-order method on V = 1 − 1/(I² + 1) + (ε/2)I with the same offset map; rule < 0.3 %.
