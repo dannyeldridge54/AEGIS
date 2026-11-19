@@ -2207,3 +2207,8 @@ Touches: none.
 2. [derived] κ = E(i,2)/π² (to 4e-10): Y's 1/T₂ term is (90/π³)E(U,2)/T₂ at U = i.
 3. [estimate] Same term for general U (unfolding argument; unchecked).
 4. [postulate P3] Plateau from E(U,2) via a b̂ = 0 condensing factor — model, sign and ratio form not computed.
+
+## D1366: general-U E(U,2)/T₂ term in Y
+1. [literature] DKL degenerate-orbit unfolding of Γ₂,₂ onto the strip.
+2. [derived] ∫(dτ₂/τ₂)(T₂/τ₂)(90/πτ₂)e^{−πT₂|j+pU|²/(U₂τ₂)} summed → (90/π³)E(U,2)/T₂ for all U; matches κ = E(i,2)/π² at U = i.
+3. [postulate P3] Plateau via a b̂ = 0 condensing factor — model, sign, ratio form not computed.

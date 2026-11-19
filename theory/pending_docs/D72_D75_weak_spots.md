@@ -14379,3 +14379,10 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - [derived] What this changes vs D1363: the s = 1 term log(T₂U₂|η|⁴) appears ONLY multiplied by b̂_α. The ½log|j(T)−j(U)| piece is U-independent at large T₂ up to O(e^{−2πT₂}). So for a gauge factor with b̂_α = 0 (no N=2-sector contribution from that plane) the leading U-dependence of the threshold is E(U,2)/T₂ — the s = 1 obstacle is absent. Route to a potential: f_α ⊃ k_α Y/16π² → gaugino condensate W ∝ e^{−3f/2b} → V depends on U through E(U,2) (form not yet computed).
 - Verdict: candidate escape, NOT a derivation. Open: (1) general-U check of the E(U,2)/T₂ term; (2) a model where the condensing factor has b̂ = 0 while k > 0; (3) sign and the ratio form 1 − E(ρ,2)/E(U,2) through the condensate potential. P3 stays a postulate.
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1366 — DEEP / LEFT: P3 — D1365's open item 1 closed analytically: the degenerate-orbit unfolding of Γ₂,₂ against ∫ρ̄dτ₁ = 90/(πτ₂) gives exactly (90/π³)·E(U,2)/T₂ for ALL U, and reproduces Petropoulos–Rizos' κ at U = i (2026-11-18)
+- [literature] Γ₂,₂ Lagrangian form: (T₂/τ₂)Σ_A exp(2πiT det A − πT₂|(1,U)A(τ,1)ᵀ|²/(τ₂U₂)); the degenerate (det A = 0) orbit unfolds the fundamental domain to the strip with Σ'_{(j,p)} exp(−πT₂|j+pU|²/(U₂τ₂)) (standard DKL unfolding).
+- [derived] With the measure d²τ/τ₂ and the τ₁-integral 90/(πτ₂) (P–R eq. 31 context): ∫₀^∞ (dτ₂/τ₂)(T₂/τ₂)(90/(πτ₂)) e^{−a/τ₂} = (90T₂/π)/a², a = πT₂|j+pU|²/U₂. Sum over (j,p) ≠ 0: (90/π³)·Σ'U₂²/|j+pU|⁴ / T₂ = (90/π³)E(U,2)/T₂.
+- [derived] Consistency: at U = i this is 90κ/(πT₂) with κ = E(i,2)/π² — exactly P–R eq. (31) and D1365's numerical identity. So the term is fixed for general U, not an estimate any more.
+- Verdict: D1365 item (1) closed. The universal threshold's leading U-dependence is E(U,2)/T₂ (s = 2, minimum at ρ), with the s = 1 log only under b̂^{N=2}. Still open: (2) a model with a condensing factor b̂ = 0, k > 0; (3) sign and the ratio form 1 − E(ρ,2)/E(U,2) through the condensate potential. P3 stays a postulate.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
