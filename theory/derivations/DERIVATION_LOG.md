@@ -2353,3 +2353,10 @@ Touches: none.
 2. [derived] Horizon exit L*/L_ρ ≈ 1.2–1.3 stays below the peak for p ≲ 0.85.
 3. [estimate] F-terms give p = 1, anomalous D-terms p ≈ 3; need inverse metric ∝ L (nilpotent, D1353).
 4. [postulate P3] Uplift sector with p < 1 not identified.
+
+## D1397: physical-λ frame (locked R0; design note)
+1. [derived] R0 G0 pass (n_s 0.974454, r 4.813e-4).
+2. [derived] D698 map: horizon exit y* = 14.58/√λ; D1377's T₂ ≳ 16–20 withdrawn (frame error).
+3. [derived] λ ≤ 0.154/T₂² ⇒ y* ≥ 37T₂ > T₂: the E(U,2)/T₂ regime fails at horizon exit.
+4. [estimate] Rescue: full Y, linear in U₂ for U₂ > T₂ (s = 1-type), in band per D1364 w = 0.
+5. [postulate P3] Full-Y potential through the pipeline not yet computed.
