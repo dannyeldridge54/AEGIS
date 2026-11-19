@@ -15438,6 +15438,6 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
 
 ## D1500 — help set 8: axion (Re τ) massless at horizon exit (m²/H² ~ 1e-37 / 1e-63), stable, no mixing — single-field holds; light-spectator flag
-- [derived] E_xx > 0 at x = ½ (minimum), E_xy = 0; physical-frame row: numerical underflow, analytic n = 1 term +2.0e-6043 ⇒ massless.
+- [derived] E_xx > 0 at x = ½ (minimum), E_xy = 0; physical-frame row: numerical underflow, analytic n = 1 term +1.1e-6044 ⇒ massless.
 - aegis-check: numbers from field_tests/results/D1500_axion_mass.json; physical-frame sign/stability flag in the json is a finite-difference underflow artefact (checked analytically, positive) — stated, not hidden; kinetic normalisation from K = −3 ln(−i(τ − τ̄)) ⇒ K_ττ̄ = 3/(4y²) ✓; cross-sector: isocurvature/relic of the spectator axion flagged as open.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
