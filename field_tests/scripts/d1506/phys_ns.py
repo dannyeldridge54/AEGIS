@@ -10,7 +10,7 @@ def point(al, C, lam):
     ymax = 400 * (1 / lam) ** (2 / 3)
     PH = np.linspace(float(mp.log(mp.sqrt(3) / 2) / mp.sqrt(2)) + 1e-3, math.log(ymax) / math.sqrt(2), 3000)
     x = lam * np.array([float(E32(mp.e ** (mp.sqrt(2) * mp.mpf(p))) - Er) for p in PH])
-    P = al * x / (1 + x) + (1 - al) * (1 - 1 / (1 + x) ** 2); Vv = P * (1 + (C / lam) * P / (1 - P))
+    P = al * x / (1 + x) + (1 - al) * (1 - 1 / (1 + x) ** 2); Vv = P * (1 + C * P / (1 - P))
     Sp = CubicSpline(PH, Vv); dS = Sp.derivative()
     Nsr = np.concatenate([[0], np.cumsum((Sp(PH[1:]) / np.maximum(dS(PH[1:]), 1e-300)) * np.diff(PH))])
     i0 = min(int(np.searchsorted(Nsr, 200.0)), len(PH) - 5)
@@ -21,7 +21,7 @@ def point(al, C, lam):
     la, Cm, alm = mp.mpf(lam), mp.mpf(C), mp.mpf(al)
     def V(p):
         xx = la * (E32(mp.e ** (mp.sqrt(2) * p)) - Er); PP = alm * xx / (1 + xx) + (1 - alm) * (1 - 1 / (1 + xx) ** 2)
-        return PP * (1 + (Cm / la) * PP / (1 - PP))
+        return PP * (1 + Cm * PP / (1 - PP))
     N = 50.0
     for _ in range(25):
         phis = sol.sol(Nend - N)[0]; ns, r, a = obs(V, mp.mpf(phis))
