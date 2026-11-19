@@ -944,3 +944,4 @@ D1656  2026-11-19T23:04Z  untitled
 D1657  2026-11-19T23:14Z  JANUS genesis G6c: massive dark photon rescue for P-M - mass/mixing window from BBN, 3-gamma lifetime, ADM annihilation
 D1658  2026-11-19T23:17Z  JANUS genesis G9d: thread's future from D1636 full-likelihood best starts (exact v3 shape, 2D)
 D1659  2026-11-19T23:26Z  JANUS genesis G6d: open strip for the P-M dark photon - BBN floor vs SN1987A, beam dumps, colliders
+D1660  2026-11-19T23:27Z  JANUS genesis G12b: round-2 referee (D1653-D1659) + source audit of every genesis bound
