@@ -16086,3 +16086,12 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [literature] Belle II m_τ = 1777.09 ± 0.08 ± 0.11 MeV (2305.19116). [computed] Koide Q = 0.6666735 ± 0.0000077 (+0.89σ from 2/3); with PDG m_τ = 1776.93 ± 0.09 MeV (recalled, to verify) Q = 0.6666645 ± 0.0000051 (−0.43σ); Q = 2/3 ⇒ m_τ = 1776.969 MeV. No derivation from the Weave (not claimed).
 - Doc: theory/pending_docs/OPEN_PROBLEMS_MAP.md.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1595 — FLAVOUR AT ρ, run 1 (Danny 12:12 "start … fully derived … all in one run"): locked minimal A4 constructions at ρ all FAIL Koide; DERIVED: Koide's form is the Z₃ Fourier spectrum of a circulant √M and Q = 2/3 ⇔ Z₃ equipartition (|b|² = a²/2); data give A = √2 and δ = 2/9 within 1σ; ρ explains the form, not the numbers
+- Lock: field_tests/rules/PREREG_FLAV_RHO.md (+ .sha256). Results: field_tests/results/FLAV_RHO/out.json. Validation Y(ω)/Y₁ = (1, ω, −ω²/2) to 5e-31 ✓.
+- [computed] Q at ρ: C1 0.360, C2 0.341, C3 0.3333, C4 0.3333 (FAIL all; Y(ρ) is a Z₃ eigenvector ⇒ circulants have one nonzero eigenvalue). At i: 0.402, 0.355, 0.500, 0.500.
+- [derived] circulant √M = a + bC + b̄C² ⇒ √m_k = a + 2|b|cos(φ + 2πk/3) (Brannen form); Q = 1/3 + (2/3)|b|²/a²; Q = 2/3 ⇔ ‖singlet‖² = ‖doublet‖² (3a² = 6|b|²).
+- [computed] Koide amplitude 1.414228 (Belle II) / 1.414209 (PDG, recalled) vs √2; phase δ 0.2222136 ± 9.5e-6 (−0.91σ) / 0.2222248 ± 6.3e-6 (+0.41σ) vs 2/9.
+- [POSTULATE P-F1, candidate only] Z₃ equipartition of √M as the flavour analogue of the Zhinü principle. Not derived.
+- Doc: theory/pending_docs/FLAVOUR_AT_RHO.md (section map F1–F7).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
