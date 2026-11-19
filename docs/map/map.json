@@ -200,13 +200,33 @@
     "D1533",
     "D1534",
     "D1535",
-    "D1536"
+    "D1536",
+    "D1537",
+    "D1538",
+    "D1539",
+    "D1540",
+    "D1541",
+    "D1542",
+    "D1543",
+    "D1544",
+    "D1544a",
+    "D1545",
+    "D1546",
+    "D1547",
+    "D1548",
+    "D1549",
+    "D1549a",
+    "D1550",
+    "D1551",
+    "D1552",
+    "D1553",
+    "D1554"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D1534: postulate",
-    "D1535: postulate",
-    "D1536: postulate"
+    "D1552: postulate",
+    "D1553: postulate",
+    "D1554: postulate"
    ]
   },
   {
@@ -445,7 +465,7 @@
     "E"
    ],
    "title": "Janus relation (α_s from n_s, r)",
-   "status": "computed",
+   "status": "postulate",
    "d": [
     "D669",
     "D673",
@@ -497,12 +517,13 @@
     "D1474",
     "D1477",
     "D1478",
-    "D1480"
+    "D1480",
+    "D1555"
    ],
    "history": [
-    "D1477: computed",
     "D1478: computed",
-    "D1480: computed"
+    "D1480: computed",
+    "D1555: postulate"
    ]
   },
   {
