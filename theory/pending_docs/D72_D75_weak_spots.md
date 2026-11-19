@@ -16122,3 +16122,10 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [computed] U = U_TBM·R₁₃(θ, φ), θ = 10.45°; sin²θ₁₂ = 0.3408 fixed; 720-point φ scan. Results: field_tests/results/FLAV_RHO/run4.json.
 - Scoring: these δ_CP values were written before any δ_CP comparison; they are scored on future data only.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1600 — STRONG CP and CKM at the tie-off points (locked PREREG_FLAV_RHO5 + DEVIATIONS D1, performance only): det Y(ρ) = 27/8 exactly real ⇒ with CP-symmetric (real) couplings θ̄ ∈ {0, π} — quantised, θ̄ = 0 by a discrete sign choice (PASS); BUT the CKM Jarlskog invariant is ≤ 4.7e-15 for every sample (observed 3.1e-5) ⇒ FAIL: quark moduli at CP-symmetric fixed points with real couplings give NO CP violation
+- [computed] det[[Y₁,Y₃,Y₂],[Y₂,Y₁,Y₃],[Y₃,Y₂,Y₁]] at ρ = 3.375 (= 27/8 analytically: Y₁³ + Y₂³ + Y₃³ − 3Y₁Y₂Y₃ with (1, ω², −ω/2)), phase 1e-15 deg. At i: |det| = 4e-16 ⇒ one massless fermion in this structure; its phase is numerical noise. That noise fills the reported arg-det set for samples involving i, so those samples are not meaningful for θ̄ (a massless quark would remove θ̄, but m_u = 0 is excluded by lattice QCD).
+- [computed] CP images: ρ ↦ ρ − 1 (T-equivalent), i ↦ i ⇒ both are CP-symmetric points.
+- [computed] max |J| over 2000 × 3 real-coupling samples = 4.7e-15 ⇒ no CKM phase.
+- [derived] The Weave's tie-off points give the strong-CP half for free (θ̄ quantised to 0 or π), and kill the CKM half. This is the Nelson–Barr dilemma in modular form: the observed CKM phase needs a CP-violating source that leaves arg det(M_u M_d) real — either a quark modulus displaced from the CP-symmetric points (then θ̄ is no longer automatic) or a separate CP-odd sector with Nelson–Barr structure. Open term: the CKM phase.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

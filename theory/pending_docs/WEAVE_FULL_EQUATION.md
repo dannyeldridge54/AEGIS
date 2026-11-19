@@ -45,9 +45,10 @@ V₀ vanishes at BOTH SL(2,Z) fixed points, i and ρ. [der] With charged leptons
 - sin²θ₂₃ ∈ [0.395, 0.605] (data 0.561 / 0.470: consistent). [der]
 - **Prediction:** δ_CP = 236° or 125° (if sin²θ₂₃ = 0.561), 287° or 74° (if 0.470). Scored on DUNE / Hyper-K. [der]
 
-### 5. Strong CP
-    θ = 2π Re τ = π at ρ;   θ̄ = π − arg det(Y_u Y_d)(ρ)
-θ̄ = 0 ⇔ arg det(Y_u Y_d)(ρ) = π (mod 2π). [der condition] θ̄ = π alone is excluded (m_π ratio 0.60). Needs an explicit quark sector. [OPEN]
+### 5. Strong CP and the CKM phase (D1600)
+    θ = 2π Re τ = π at ρ;   θ̄ = π − arg det(M_u M_d)
+At ρ the A4 Yukawa determinant is exactly real: det = 27/8. [der] ρ and i are CP-symmetric points. With CP-symmetric (real) couplings, θ̄ ∈ {0, π}; θ̄ = 0 is selected by a discrete sign choice, so the strong-CP angle is quantised, not tuned. [der]
+But the same setting gives a CKM Jarlskog invariant J ≤ 5e-15, against the observed 3.1e-5: no quark CP violation. [der, FAIL] The CKM phase needs a CP-odd source that keeps arg det real (Nelson–Barr type), or a quark modulus displaced from the CP points. [OPEN]
 
 ### 6. Vacuum energy
 The inflation sector gives exactly 0 at ρ. [der] The observed Λ_obs ≈ 10⁻¹²⁰ M_P⁴ is not explained. [OPEN]
@@ -63,11 +64,12 @@ The inflation sector gives exactly 0 at ρ. [der] The observed Λ_obs ≈ 10⁻�
 | same principle on the flavour modulus | principle P-F2 |
 | δ = 2/9 | empirical; holds as δ = Q/3 to ~1σ (D1598), so one principle (equipartition) would fix both Koide numbers |
 | neutrino modulus at i | principle P-F3 |
-| quark sector (θ̄ condition), Λ_obs | open terms |
+| CKM CP phase (Nelson–Barr-type source), Λ_obs | open terms |
+| θ̄ quantised to {0, π} at ρ | derived |
 | neutrino mixing | derived (TM2) given P-F3; sin²θ₁₂ in +2.8σ tension |
 
-The equation is complete as a statement: every term is written, every number that can be computed has been computed, and each data check is recorded as passed or failed. It is not yet fully derived. Four principles (Zhinü, P-F1, P-F2, P-F3) and one empirical relation (δ = Q/3) carry it, and two terms are open (the quark sector with its θ̄ condition, and Λ_obs). Next derivation targets, in order of leverage:
+The equation is complete as a statement: every term is written, every number that can be computed has been computed, and each data check is recorded as passed or failed. It is not yet fully derived. Four principles (Zhinü, P-F1, P-F2, P-F3) and one empirical relation (δ = Q/3) carry it, and two terms are open (the CKM CP phase and Λ_obs). Next derivation targets, in order of leverage:
 1. one rule that gives both Zhinü and equipartition (both are equalities of norms at a symmetric point);
 2. why δ = Q/3;
-3. an explicit quark sector at ρ and i, to test arg det(Y_u Y_d) = π;
+3. a CP-odd sector that produces the CKM phase while keeping arg det(M_u M_d) real;
 4. the dynamics that sends the neutrino modulus to i and the charged-lepton modulus to ρ.
