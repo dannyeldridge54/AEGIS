@@ -931,3 +931,4 @@ D1643  2026-11-19T22:28Z  untitled
 D1644  2026-11-19T22:32Z  JANUS genesis G9+G2b: the reverse thread's future at rho - end of acceleration, oscillation, matter-like late phase (exact v3 shape)
 D1645  2026-11-19T22:35Z  untitled
 D1646  2026-11-19T22:40Z  JANUS genesis G6: dark radiation from gravitational reheating - full mirror copy vs minimal ADM dark sector, Delta N_eff
+D1647  2026-11-19T22:43Z  JANUS genesis G10: genesis budget card + machine check against every source json
