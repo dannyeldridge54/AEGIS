@@ -39,8 +39,13 @@ def obs(V, phi):
     a = -(1 + e1) * (2 * e1 * e2 + e2 * e3) - (3 + 2 * Cc) * e1 * e2 * (e2 + e3) - 4 * e1 ** 2 * e2 - Cc * e2 * e3 * (e3 + e4)
     return float(ns), float(r), float(a)
 def point(k):
-    E = XG + float(Er); F = E ** (1 / 3) * np.exp(-k * E ** (2 / 3)); Fr = float(Er) ** (1 / 3) * np.exp(-k * float(Er) ** (2 / 3))
-    Vv = 1 - F / Fr; Sp = CubicSpline(PH, Vv); dS = Sp.derivative()
+    E = XG + float(Er); lr = (np.log(E) / 3 - k * E ** (2 / 3)) - (np.log(float(Er)) / 3 - k * float(Er) ** (2 / 3))   # log(F/F_rho), D1
+    L = CubicSpline(PH, lr); dL = L.derivative()
+    class _S:
+        def __call__(self, p): return 1 - np.exp(L(p))
+    class _D:
+        def __call__(self, p): return -np.exp(L(p)) * dL(p)
+    Sp, dS = _S(), _D()
     Nsr = np.concatenate([[0], np.cumsum((Sp(PH[1:]) / np.maximum(dS(PH[1:]), 1e-300)) * np.diff(PH))])
     i0 = min(int(np.searchsorted(Nsr, 200.0)), len(PH) - 5)
     def rhs(N, u):

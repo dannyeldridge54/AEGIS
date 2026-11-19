@@ -1,0 +1,2 @@
+# PREREG D1488 DEVIATIONS (written before any run; no numbers seen)
+D1: the background spline is built on log(F/F_ρ) instead of V itself (V = 1 − e^{log ratio}, V′ = −e^{log ratio}·(log ratio)′), because 1 − F/F_ρ loses all precision in double once F/F_ρ < 1e-16 (k = 1.2 reaches e^{-130} on the grid) — same reason as the P3 chat's own LVSDIL DEVIATIONS D1. The flow parameters at φ_* still come from the mpmath potential.
