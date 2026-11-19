@@ -2235,3 +2235,9 @@ Touches: none.
 1. [derived] K = −3 log T₂ + εE/T₂, W₀ const: V = e^K|W₀|² u²/(2u+3), u = εE/T₂ (sympy-checked).
 2. [derived] Near ρ V ∝ E(U,2)² (min at ρ, no plateau); matches LVS V_loop ∝ (C^{KK})².
 3. [postulate P3] A genuine −a/E(U,2) term still assumed.
+
+## D1371: plateau via threshold-shifted dilaton
+1. [literature] f = S − kY/16π², Y ⊃ (90/π³)E(U,2)/T₂; condensate fixes f.
+2. [estimate] Re S* = s₀ + εE(U,2), ε = 90k/(16π⁵T₂).
+3. [derived] V = b/A − b/(s₀ + εE) = (b/A)·x/(1+x), x = (ε/A)(E − E_ρ): the SERAPIS-E plateau (sympy-checked).
+4. [postulate P3] Modular-weight/GS bookkeeping (s = 1 multiplier) and λ value unchecked.
