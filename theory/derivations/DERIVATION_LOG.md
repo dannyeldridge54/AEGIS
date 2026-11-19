@@ -2913,3 +2913,6 @@ Touches: none.
 1. [derived] Seven in-band strip points (D1485 model, re-solved): α_s from −7.32e-4 (α 0.375, C 1e-6) to −8.08e-4 (0.375, 2e-6); β_s (D1466 LO formula, Hubble-flow ε₁–ε₄) −2.699e-5 … −2.769e-5. Best point (0.375, 1.5e-6): α_s −7.685e-4, β_s −2.723e-5.
 2. [derived] Check vs the P3 chat's exact MS at (0.25, 1.25e-6): α_s −7.4579e-4 (exact) vs −7.4580e-4 (ours) — agreement 1e-5 relative.
 3. [estimate] vs SERAPIS-E: ρ A1 α_s −9.98e-4, τ = i −8.54e-4 → the strip's running is 0.06–0.08 σ_SO (σ = 3.3e-3) from ρ and 0.01–0.04 σ_SO from τ = i; β_s within 5–14 % of both (−2.86e-5, −3.13e-5). Running cannot separate DILMIX from SERAPIS-E with any funded survey; n_s and r (set 7) are the only handles.
+
+## D1496 — P3 exact LVSDIL k = 0.6 vs our D1488 forecast — AGREE
+1. [derived] Exact (P3 PC, eadb3ab): n_s 0.953167, r 1.9213e-5; D1488 forecast (locked 43b868e): 0.953165, 1.9206e-5 ⇒ Δn_s −2.0e-6, Δr/r −0.04 %. Track record now 12 points, |Δn_s| ≤ 5.3e-6.

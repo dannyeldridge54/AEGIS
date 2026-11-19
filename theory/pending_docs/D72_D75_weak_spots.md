@@ -15403,3 +15403,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Gap to SERAPIS-E α_s ≤ 0.08σ (SO) — not a discriminator.
 - aegis-check: numbers from field_tests/results/D1492_strip_running.json; (−7.6853e-4 + 9.9796e-4)/3.3e-3 = 0.070 ✓; exact α_s from field_tests/results/DILMIX/a0.25_C1.25e-06.json; β_s uses the same LO formula and ε conventions as D1466 (Hubble-flow from the V-flow conversion of D1442) ✓; cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1496 — P3 exact LVSDIL k = 0.6 confirms D1488 (Δn_s −2.0e-6, Δr/r −0.04 %)
+- aegis-check: read from field_tests/results/LVSDIL/k0.6.json and D1488 json; difference re-run in python ✓.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
