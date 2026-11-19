@@ -970,7 +970,8 @@
    "d": [
     "D1263",
     "D1408",
-    "D1425"
+    "D1425",
+    "D1449"
    ],
    "depends": [
     "janus",
@@ -979,9 +980,9 @@
     "serapis_point"
    ],
    "history": [
-    "D1263: killed",
     "D1408: killed",
-    "D1425: killed"
+    "D1425: killed",
+    "D1449: killed"
    ],
    "note": "web loop postulate 3; kept on the web as killed"
   },
