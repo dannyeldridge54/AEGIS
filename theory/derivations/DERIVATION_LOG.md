@@ -2743,3 +2743,8 @@ Touches: none.
 2. [derived] Re-doing D730's two-point linear interpolation with its row midpoints: r = 4.8e-4 at ε 1.396e-4, n_s = 0.975 at ε 1.461e-4 — reproduces its 1.40–1.46.
 3. [derived] The audited chain NA12 (D1247 N*, exact MS, five ε points 1.30–1.50e-4) interpolated between neighbouring rows: r = 4.8e-4 at ε 1.378e-4 (between 1.35 and 1.40), n_s = 0.975 at ε 1.440e-4 (between 1.40 and 1.45) ⇒ 1.378–1.440e-4. D1429's "1.39–1.44" rounded the lower edge up.
 4. [estimate] Reconciliation: both ranges are right for their chains; the audited one (NA12) shifts the window down by ~0.02e-4 at both ends because of the audited N* (≈ +0.1 vs D730's era, D1240–D1241) and finer sampling. Proposed wording for band_i's map note (Danny's call, not edited): "audited chain meets the band for ε ≈ 1.38–1.44e-4 (NA12, D1461); pre-audit D730: 1.40–1.46e-4".
+
+## D1462 — JANUS tick 58: band_i formula α_s = LO_κ½·[1.1244 − 1.765(n_s − 0.9725)] — ADOPTED (≤ 0.010 %)
+1. [derived] On D1405's κ = ½ leading order (LO = −½(1 − n_s)²ρ[1 + ½(ρ − 1)], p = 2√2), the derived-to-LO ratio over band_i is nearly constant: 1.1199–1.1288 (vs α_s/(−2r) 0.853–0.951, D1460).
+2. [derived] Fit to the 9 D1453 points: a = 1.12440, b = −1.765; max in-sample 0.0071 %; out of sample (D1448's derived NA12 values) −0.0013 … +0.0103 %. Rule ≤ 0.1 %: ADOPTED as the band_i cross-check formula.
+3. [derived] So each vacuum has a two-coefficient formula on its own leading order: ρ α_s = −2r[1.0373 − 0.947(n_s − 0.972)] (κ = 1, D1457), τ = i α_s = LO_κ½[1.1244 − 1.765(n_s − 0.9725)] (κ = ½). a − 1 = 3.7 % (ρ) vs 12.4 % (τ = i) — the τ = i correction carries the offset c (D640) on top of the slow-roll-order part.

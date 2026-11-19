@@ -15202,3 +15202,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Both correct for their chains; proposed map-note wording "ε ≈ 1.38–1.44e-4 (NA12, D1461); pre-audit D730 1.40–1.46e-4" — for Danny, not edited.
 - aegis-check: interpolations recomputed in python from the D730 text rows and na12_band_i_audited.txt; no prediction, no lock needed (reading of on-file numbers).
 - MAP: node=band_i status=frozen touches=[] ripple=no
+
+## D1462 — JANUS tick 58: band_i formula on κ = ½ LO — ADOPTED
+- [derived] α_s = LO_κ½·[1.1244 − 1.765(n_s − 0.9725)]: in-sample ≤ 0.0071 %, out-of-sample (NA12) ≤ 0.0103 % (rule 0.1 %). Derived/LO ratio 1.120–1.129 across band_i.
+- [derived] Both vacua now have two-coefficient cross-check formulas on their own leading orders (ρ D1457, τ = i D1462); a − 1 = 3.7 % vs 12.4 % (τ = i includes D640's offset).
+- aegis-check: a, b, residuals from the result json; LO formula as in D1405 with κ = ½, p = 2√2 (D1436); out-of-sample points not in the fit; checked: units, arithmetic, cross-sector: none.
+- MAP: node=band_i status=frozen touches=[] ripple=no
