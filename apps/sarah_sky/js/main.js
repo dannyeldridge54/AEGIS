@@ -219,6 +219,10 @@ const PANELS = {
         moon = `<div class="darkwin" id="darkWin"><p><b>Dark sky tonight</b> · ${w.phase}, ${(w.lit * 100).toFixed(0)}% lit</p>
           <p>Sunset ${hm(w.sunset)} · Sunrise ${hm(w.sunrise)}</p><p>${dark}</p>
           <p class="muted">Faint galaxies and nebulae are best when it is fully dark and the Moon is down.</p></div>`;
+        const best = state.data.messier ? window.SkyDark.bestTargets(window.Astronomy, state.data.messier.objects, loc.lat, loc.lon, w, 30, 10) : [];
+        if (best.length) moon += `<h3>Best targets tonight</h3><table id="bestTargets"><tr><th>Object</th><th>Mag</th><th>Highest</th></tr>${best.map((o) =>
+          `<tr><td><a href="#" data-goto="${o.ra},${o.dec}">${esc(o.id)}${o.common ? " · " + esc(o.common) : ""}</a></td><td>${o.mag}</td><td>${o.alt.toFixed(0)}° at ${hm(o.at)}</td></tr>`).join("")}</table>
+          <p class="muted">Messier objects that climb above 30° while it is fully dark, brightest first. Tap one to go there.</p>`;
       }
     } catch {}
     return `<p>Where are the Sun, Moon and planets? ${loc ? "" : "Set your location to see what is above the horizon."}</p>

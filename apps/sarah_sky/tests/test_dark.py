@@ -19,6 +19,18 @@ def test_okc_night():
     assert late_morning["sunset"].startswith("2026-11-19")            # Sun up: tonight is the coming night
 
 @pytest.mark.skipif(not NODE, reason="needs node")
+def test_best_targets_okc():
+    js = (f'const A=require("{ROOT}/vendor/astronomy.browser.min.js"),D=require("{ROOT}/js/dark.js"),M=require("{ROOT}/data/messier.json");'
+          f'const w=D.darkWindow(A,new Date("2026-11-20T03:00:00Z"),35.47,-97.52);'
+          f'console.log(JSON.stringify(D.bestTargets(A,M.objects,35.47,-97.52,w,30,10)))')
+    r = json.loads(subprocess.check_output([NODE, "-e", js]))
+    ids = [o["id"] for o in r]
+    assert len(r) == 10 and all(o["alt"] >= 30 for o in r)
+    assert [o["mag"] for o in r] == sorted(o["mag"] for o in r)
+    assert "M45" in ids and "M42" in ids and "M31" in ids              # November evening classics
+    assert "M7" not in ids                                              # too far south from 35° N in November nights
+
+@pytest.mark.skipif(not NODE, reason="needs node")
 def test_no_darkness_reykjavik_june():
     r = _run("2026-06-21T12:00:00Z", 64.1, -21.9)
     assert r["dusk"] is None and r["darkMin"] == 0
@@ -36,6 +48,7 @@ def test_panel_shows_window(server):
         pg.wait_for_selector("#darkWin")
         txt = pg.inner_text("#darkWin")
         assert "Dark sky tonight" in txt and "Sunset" in txt and "Moon down" in txt
+        assert pg.locator("#bestTargets tr").count() == 11
         app_errors = [e for e in errors if "HiPS" not in e and "fetch" not in e.lower() and "CDS ID" not in e]
         assert not app_errors, app_errors
         b.close()

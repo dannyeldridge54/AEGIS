@@ -1,4 +1,7 @@
 # Changelog
+## 1.7.2 — 19 Nov 2026
+- Tonight: "Best targets tonight" — the ten brightest Messier objects that climb above 30° while it is fully dark, with how high they get and when. Tap one to fly the map there.
+
 ## 1.7.1 — 19 Nov 2026
 - Tonight: a "Dark sky tonight" box once your location is set — sunset, sunrise, when it is fully dark (Sun 18° down), how long, and how much of that time the Moon is down, plus the Moon's phase name. Places with no full darkness (summer near the poles) are told so.
 

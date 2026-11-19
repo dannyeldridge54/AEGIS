@@ -32,6 +32,23 @@
     }
     return out;
   }
-  root.SkyDark = { darkWindow: darkWindow, PHASES: PHASES };
+  /* Best targets: objects ({id, ra°, dec°, mag}) that climb at least minAlt° during the fully dark
+     window, brightest first, each with its highest altitude and when it happens. */
+  function bestTargets(A, objects, lat, lon, win, minAlt, n) {
+    if (!win || !win.dusk || !win.dawn) return [];
+    minAlt = minAlt == null ? 30 : minAlt; n = n || 10;
+    var obs = new A.Observer(lat, lon, 0), times = [];
+    for (var ms = win.dusk.getTime(); ms <= win.dawn.getTime(); ms += 20 * 60000) times.push(A.MakeTime(new Date(ms)));
+    var out = [];
+    objects.forEach(function (o) {
+      if (o.mag == null) return;
+      var best = -90, at = null;
+      times.forEach(function (t) { var h = A.Horizon(t, obs, o.ra / 15, o.dec, "normal").altitude; if (h > best) { best = h; at = t.date; } });
+      if (best >= minAlt) out.push({ id: o.id, common: o.common || "", type: o.type || "", mag: o.mag, ra: o.ra, dec: o.dec, alt: best, at: at });
+    });
+    out.sort(function (a, b) { return a.mag - b.mag; });
+    return out.slice(0, n);
+  }
+  root.SkyDark = { darkWindow: darkWindow, bestTargets: bestTargets, PHASES: PHASES };
   if (typeof module !== "undefined") module.exports = root.SkyDark;
 })(typeof window !== "undefined" ? window : globalThis);
