@@ -3028,3 +3028,8 @@ Touches: none.
 1. [derived] k_eff(y*) = d ln(1+e)/d ln y: 2.02 (SERAPIS-E), 1.53 (form A), 3.38 (form B), 1.64 / 1.57 (DILMIX α 0.25 / 0.5); control y² gives 1.999.
 2. [derived] Chart read at (k_eff, C) matches SERAPIS-E and form A (Δn_s ≤ 0.0025, Δr ≤ 17 %) but calls both DILMIX in-band points out of band (Δn_s −0.006 / −0.004).
 3. [derived] A pure plateau is invariant under e → A e (field shift); the tilt C·e is not, so the effective tilt is C·A. Correction D1516a filed.
+
+## D1512 — tilt T3f: exact MS in the PHYSICAL frame confirms the DILMIX sliver — (α 0.1, C 1.8e-6): n_s 0.97198, r 5.463e-4, IN BAND; AGREE with SR (Δn_s +4.9e-6)
+1. [derived] Shared pipeline (exact MS spectra, self-consistent N* = 50.571, T_R 8.94e8), our own DILMIX overrides, lam = 1/9930.9, C_pipe = 1.8e-6·lam (⇒ V = P(1 + 1.8e-6·g)), ymax 2e5, npts 8000: n_s 0.971975, r 5.4629e-4, α_s −9.496e-4 (1838 s).
+2. [derived] vs D1510 SR forecast 0.971970 / 5.4623e-4: Δn_s +4.9e-6, Δr/r +0.011 % ⇒ AGREE; IN BAND.
+3. [estimate] This is the first in-band point of the P3 dilaton route computed in the D1486 physical frame (λ = 1/a), i.e. robust to the M6 frame issue (D1506). Remaining open items for this route: the physical source of the tilt (C ≈ 1.3–2e-6 per unit g; T1/T2/T3 found none so far), the M5 regime flag (ξ̂/𝒱̂ ≫ 1 on the path, D1505), and an origin for a 5–12.5 % one-power admixture to the e^K-generated form B.

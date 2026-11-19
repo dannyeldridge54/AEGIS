@@ -15537,3 +15537,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 
 ## D1516a — correction to D1516 (dated 2026-11-19 08:50 CT): the [estimate] line "DILMIX in-band points (D1508/D1510) and D1495's s·m_eff 1.80–2.05 are this condition met by mixing 1.5 and 3" is WRONG. KEFF (D1517) measures k_eff(y*) = 1.64 (α 0.25) and 1.57 (α 0.5) at those in-band points; they reach the band through a larger effective tilt (prefactor of g), not through k ≈ 2. D1516's "band selects k ≈ 2" holds only within the pure-power family at fixed normalisation.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1512 — T3f: exact MS, physical frame — DILMIX (0.1, 1.8e-6) IN BAND: n_s 0.97198, r 5.463e-4 (AGREE with SR, Δn_s +4.9e-6)
+- [derived] First physical-frame in-band point of the P3 dilaton route (robust to M6). Open: tilt source, M5 regime, one-power admixture origin.
+- aegis-check: numbers from field_tests/results/D1512_sliver_ms.json; tilt convention checked against tools/serapis_calc/pipeline.py build() (V = e/(e+1)(1 + C·e/lam), e → g by the DILMIX grid map) ⇒ C_pipe = C·lam ✓; ymax/npts raised as locked; not a P3 locked grid point; cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
