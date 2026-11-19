@@ -15214,3 +15214,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Both vacua's LO miss is a plateau offset (c in the τ = i map, B in the ρ plateau); SR-order part small at τ = i, larger and opposite at ρ.
 - aegis-check: all factors from the result json (product check 0); formula evaluations at the centres recomputed in python (1.1207, 1.0350); like-with-like: same (n_s, r) per vacuum for every factor; checked: units, arithmetic, cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1464 — JANUS tick 60: open decisions for Danny
+- [estimate] Janus track consolidated (derived running both vacua; bands confirmed; formulas; testability: n_s first). Next real test: SO-era n_s.
+- [estimate] Awaiting Danny: (a) queue PC jobs J1–J4; (b) band_i_audited node (D1429/D1461); (c) band_i map-note ε wording (D1461); (d) optional janus title note (D1458).
+- aegis-check: no new numbers; every quoted value is from the cited D-notes.
+- MAP: node=janus status=computed touches=[] ripple=no
