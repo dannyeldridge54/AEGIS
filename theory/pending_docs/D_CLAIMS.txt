@@ -925,3 +925,4 @@ D1637  2026-11-19T22:14Z  JANUS genesis G1: reheating temperature from the final
 D1638  2026-11-19T22:17Z  JANUS genesis G2: is the reverse thread the same curve as the SERAPIS v3 plateau? exact-shape rerun vs the asymptotic 1-7.30e^-beta phi
 D1639  2026-11-19T22:18Z  untitled
 D1640  2026-11-19T22:20Z  untitled
+D1641  2026-11-19T22:26Z  JANUS genesis G1b: why V''/V_inf = 1/4 at rho - elliptic-point isotropy gives V''/V_inf = (D-2)/32
