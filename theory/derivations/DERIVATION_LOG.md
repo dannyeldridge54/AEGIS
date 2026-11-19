@@ -2596,4 +2596,4 @@ Touches: none.
 2. [derived] Band r 4.55–5.7e-4 (D1399/D1428); exact points A1 4.821e-4, NA12 4.834e-4.
 3. [estimate] σ(r) = UL/1.645 (one-sided) … UL/1.96 (two-sided). S = r/σ: SO 0.08–0.11σ, S4 0.22–0.34σ, LiteBIRD 7.6–9.1σ at r = 4.55e-4 and 9.6–11.4σ at 5.7e-4.
 4. [estimate] Verdict (locked rule): decided by r — LiteBIRD reaches ≥ 5σ even at the band floor; SO/S4 alone cannot see it. A LiteBIRD non-detection (r < 1e-4, 95 %) kills band_e and band_i.
-5. Caveat: σ at fiducial r = 0 ignores tensor cosmic variance and delensing residuals at r ≈ 5e-4 ⇒ S is optimistic; even halved it stays ≥ 3.8σ.
+5. [estimate] Caveat: σ at fiducial r = 0 ignores tensor cosmic variance and delensing residuals at r ≈ 5e-4 ⇒ S is optimistic; even halved it stays ≥ 3.8σ.
