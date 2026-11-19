@@ -684,3 +684,4 @@ D1397  2026-11-19T02:02Z  P3: physical lambda frame - E(U,2)/T2 chamber violated
 D1398  2026-11-19T02:15Z  P3: full-Y plateau = alpha=1/3 attractor: n_s 0.960, r 1.6e-3 at C=0 (out of band); C>0 runs crashed in Nstar
 D1399  2026-11-19T02:20Z  JANUS tick 1: band_e_audited box through the Janus relation vs ACT DR6 running
 D1400  2026-11-19T02:27Z  JANUS tick 2: janus relation at kappa=1 - beta_s = (1-n_s) alpha_s closed form, vs Planck 2018 running-of-running
+D1401  2026-11-19T02:30Z  P3: GRV 8D D4R4 perturbative coefficient - U enters exactly as [(2/pi^3)E2(T) + (2/3)y8]E2(U); no chamber limit; a set by tree/genus-2 ratio
