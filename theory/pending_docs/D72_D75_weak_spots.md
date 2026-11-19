@@ -14731,6 +14731,7 @@ MAP: node=janus status=computed touches=[band_e_audited] ripple=no
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
 
 ## D1401a — correction to D1401 (same day): the listed a values were A₀/B only; the formula a = A₀/B + E_ρ adds 5.783. Corrected: T₂ = 2, y₈ = 0.01 → a ≈ 190 (y* ≈ 201); T₂ = 5, y₈ = 0.1 → a ≈ 9.7 (y* ≈ 45); T₂ = 10, y₈ = 0.1 → a ≈ 7.6 (y* ≈ 40). Conclusion unchanged (a = O(10–200), natural; no chamber limit).
+MAP: node=plateau_origin status=postulate touches=[] ripple=no
 
 ## D1402 — JANUS tick 3: frozen τ = i band re-checked on end-2025 data — PASS on CMB + DESI; its top edge is >2σ high for CMB alone
 - Lock: field_tests/rules/PREREG_D1402_band_i_recheck.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1402/band_i.py; result field_tests/results/D1402_band_i_recheck.json.
@@ -14742,9 +14743,10 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 MAP: node=band_i status=frozen touches=[janus] ripple=no
 
 
-## D1402 — DEEP / LEFT: P3 — the standard way a higher-derivative coefficient reaches the 4D potential (the BBHL α′³ route, K = −2 log(𝒱 + ξ/2)) with ξ(U) ∝ A₀ + B·E₂(U) (D1401) gives a potential LINEAR in ξ at large volume, V ∝ ξW₀²/𝒱³(1 + O(ξ/𝒱)): that is the (1 + C·Ê) TILT, not the plateau. The plateau still needs the coefficient in a DENOMINATOR (2026-11-18)
+## D1403 — DEEP / LEFT: P3 — the standard way a higher-derivative coefficient reaches the 4D potential (the BBHL α′³ route, K = −2 log(𝒱 + ξ/2)) with ξ(U) ∝ A₀ + B·E₂(U) (D1401) gives a potential LINEAR in ξ at large volume, V ∝ ξW₀²/𝒱³(1 + O(ξ/𝒱)): that is the (1 + C·Ê) TILT, not the plateau. The plateau still needs the coefficient in a DENOMINATOR (2026-11-18)
 - [literature] Becker–Becker–Haack–Louis α′³ correction: K = −2 log(𝒱 + ξ/2), ξ ∝ −χζ(3)/(2(2π)³) × (R⁴ coefficient); with SL(2,Z) completion ξ ∝ E_{3/2}(τ) (Green–Gutperle). No-scale breaking with constant W₀ (one Kähler modulus): V_F = 3ξW₀²(ξ² + 7ξ𝒱 + 𝒱²)/((𝒱 − ξ)(2𝒱 + ξ)²) × e^{K}-normalisation (standard form).
 - [derived] Series in ξ (sympy): V_F ∝ 3W₀²ξ(𝒱 + 7ξ)/(4𝒱²) → linear in ξ at leading order. With ξ(U) = ξ₀ + ξ₁E₂(U): V ⊃ const + (const)·E₂(U) — a linear rise, minimum at ρ (E₂ minimal there), exactly the (1 + CÊ) tilt form. Consistent with D689/D696 (BHK loop tilt) and D1370 (additive δK → no plateau).
 - [derived] Pattern across D1368–D1402: an E(U)-dependence entering ADDITIVELY in K (or W) gives a tilt (linear) or exponential; the plateau 1/(a + Ê) appears only when E(U) sits inside the argument of a log that multiplies the whole potential (e^K = 1/L, D1371/D1375) — and the only known such L (KKPR Im S + Y/16π²) fails at the SERAPIS point (D1397–D1398).
 - Verdict: the D⁴R⁴ coefficient (D1401) naturally supplies the TILT; a plateau source must put A₀ + B·E₂(U) into an overall e^K-type factor (e.g. a dilaton-like modulus whose Kähler argument is the D⁴R⁴ coefficient). None identified. P3 origin: postulate.
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
+(Numbering note, 2026-11-18: the BBHL note above was first pushed under the heading "D1402", which the other session had claimed (JANUS tick 3); its claimed number is D1403 and the heading was corrected the same minute. D1402 = JANUS tick 3.)

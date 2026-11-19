@@ -2396,7 +2396,7 @@ Touches: none.
 4. [derived] r ≤ 5.7e-4 is 60× under r < 0.034 (R2 PASS); α_s = −2r = −9.6e-4 … −1.14e-3, pulls −1.38σ … −1.41σ (R3 PASS). Band verdict: PASS; band stays frozen.
 
 
-## D1402: BBHL route gives the tilt
+## D1403: BBHL route gives the tilt
 1. [literature] K = −2 log(𝒱 + ξ/2), V_F = 3ξW₀²(ξ² + 7ξ𝒱 + 𝒱²)/((𝒱 − ξ)(2𝒱 + ξ)²).
 2. [derived] Linear in ξ at large 𝒱; ξ(U) ∝ A₀ + BE₂(U) ⇒ (1 + CÊ) tilt, min at ρ.
 3. [postulate P3] Plateau needs A₀ + BE₂(U) in an overall e^K-type factor; not identified.
