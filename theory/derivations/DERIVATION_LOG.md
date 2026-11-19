@@ -2657,3 +2657,9 @@ Touches: none.
 3. [derived] The difference is the plateau: exact 1 − 1/(I² + 1) vs D1446's 1 − I⁻² (D635/D640's asymptotic form). Relative change in the plateau slope −2/(I² + 1) ≈ −0.37 % at I* ≈ 23.3, entering ε and η at relative O(1/I*²) — a candidate for D1446's +0.7 %, not yet tested.
 4. [estimate] NA12's α_s uses a 5-point finite difference of n_s in ln k (step 0.05) — the pre-D1417 estimator (the reference-precision caveat of D1444 applies, ~0.1–0.2 %).
 5. [estimate] Next (tick 44, locked): D1446's second-order method on V = 1 − 1/(I² + 1) + (ε/2)I with the same offset map; rule < 0.3 %.
+
+## D1448 — JANUS tick 44: τ = i running derived — exact plateau at second-order SR, PASS (≤ 0.031 %)
+1. [derived] NA12's exact potential V = 1 − 1/(I² + 1) + (ε/2)I, φ = ln(I + c)/√2 (D1447), second-order SR as in D1442/D1446, solved to the five NA12 exact (n_s, r): α_s errors +0.006, −0.031, −0.001, +0.016, −0.007 % (max 0.031 %; rule < 0.3 %): PASS.
+2. [derived] Implementation check: recovered ε 1.3006–1.5004e-4 vs NA12's 1.30–1.50e-4 (≤ 0.05 %). First order at the same points: +5.2 … +5.4 %.
+3. [derived] D1446's +0.70–0.74 % was entirely the missing "+1" in the plateau (1 − I⁻² vs 1 − 1/(I² + 1)); with it the residual is ±0.03 % with random sign — the size of the NA12 references' own 5-point estimator noise (pre-D1417).
+4. [derived] Both vacua's running is now derived from their potentials at second-order SR: ρ 7/7 ≤ 0.14 % (D1442–D1444), τ = i 5/5 ≤ 0.031 % — ten times tighter than D640's −0.3 % (D1412), which stays as the closed-form cross-check.

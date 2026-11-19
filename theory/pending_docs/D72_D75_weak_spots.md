@@ -15119,3 +15119,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] NA12's α_s = 5-pt finite difference (pre-D1417 estimator). Tick 44 locks the second-order test on the exact plateau.
 - aegis-check: I(y) − (y − c) and I₁/I − ½ evaluated in python at y = 20, 24.4, 30 (≤ 4e-15, 0); 2/(I² + 1) at I = 23.3 = 0.37 %; checked: units, arithmetic, cross-sector: none.
 - MAP: node=band_i status=frozen touches=[] ripple=no
+
+## D1448 — JANUS tick 44: τ = i running derived — PASS (≤ 0.031 %)
+- [derived] Exact plateau 1 − 1/(I² + 1) + (ε/2)I at second-order SR vs 5 NA12 exact points: +0.006 / −0.031 / −0.001 / +0.016 / −0.007 % (rule < 0.3 %). ε recovered ≤ 0.05 %.
+- [derived] D1446's +0.7 % was the missing "+1"; residual now random-sign ±0.03 % (reference estimator noise). Both vacua's α_s now derived (ρ ≤ 0.14 %, τ = i ≤ 0.031 %); D640 kept as closed-form cross-check.
+- aegis-check: errors recomputed from the result json (α/α_exact − 1) in python; implementation check ε ≤ 0.05 %; like-with-like: same NA12 rows as D1412/D1446, estimator caveat stated; limits: first-order path +5.2–5.4 % as expected for SR order; checked: units, arithmetic, cross-sector: none.
+- MAP: node=band_i status=frozen touches=[] ripple=no
