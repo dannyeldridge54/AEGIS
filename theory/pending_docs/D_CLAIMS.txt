@@ -667,3 +667,4 @@ D1380  2026-11-19T00:34Z  P3: shifted Epstein sums (Gamma0(2)-type) have no inte
 D1381  2026-11-19T00:37Z  P3: mixed sectors F_c = (1-c)E(U)+(c/2)E(U/2): interior minima exist but move off rho
 D1382  2026-11-19T00:40Z  P3: the (10,14) split is F_2 under E8 exchange - exists as smooth K3; no T4/Z2 orbifold found
 D1383  2026-11-19T00:54Z  P3: KKPR App A verified from the paper; D1375 corrected - Delta_GS is log ImT + log ImU (no eta), zero in N=2
+D1384  2026-11-19T00:56Z  P3: Z4 orbifold (SU(4)^2 lattice) keeps full SL(2,Z) on the U-plane - the symmetric host
