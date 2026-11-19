@@ -216,13 +216,14 @@ const PANELS = {
         const hrs = (m) => `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, "0")} min`;
         const dark = w.dusk && w.dawn ? `Fully dark ${hm(w.dusk)} – ${hm(w.dawn)} (${hrs(w.darkMin)}); with the Moon down: <b>${hrs(w.moonFreeMin)}</b>.`
           : "The Sun never gets 18° below the horizon tonight, so the sky never gets fully dark.";
-        moon = `<div class="darkwin" id="darkWin"><p><b>Dark sky tonight</b> · ${w.phase}, ${(w.lit * 100).toFixed(0)}% lit</p>
+        moon = `<div class="darkwin" id="darkWin"><button class="btn ghost" id="printPlan" style="float:right">🖨 Print night plan</button><p><b>Dark sky tonight</b> · ${w.phase}, ${(w.lit * 100).toFixed(0)}% lit</p>
           <p>Sunset ${hm(w.sunset)} · Sunrise ${hm(w.sunrise)}</p><p>${dark}</p>
           <p class="muted">Faint galaxies and nebulae are best when it is fully dark and the Moon is down.</p></div>`;
         const best = state.data.messier ? window.SkyDark.bestTargets(window.Astronomy, state.data.messier.objects, loc.lat, loc.lon, w, 30, 10) : [];
         if (best.length) moon += `<h3>Best targets tonight</h3><table id="bestTargets"><tr><th>Object</th><th>Mag</th><th>Highest</th></tr>${best.map((o) =>
           `<tr><td><a href="#" data-goto="${o.ra},${o.dec}">${esc(o.id)}${o.common ? " · " + esc(o.common) : ""}</a></td><td>${o.mag}</td><td>${o.alt.toFixed(0)}° at ${hm(o.at)}</td></tr>`).join("")}</table>
           <p class="muted">Messier objects that climb above 30° while it is fully dark, brightest first. Tap one to go there.</p>`;
+        moon = `<div id="nightPlan"><h2 class="printonly">Night plan · ${when.toLocaleDateString()} · ${loc.lat.toFixed(2)}°, ${loc.lon.toFixed(2)}°</h2>${moon}</div>`;
       }
     } catch {}
     return `<p>Where are the Sun, Moon and planets? ${loc ? "" : "Set your location to see what is above the horizon."}</p>
@@ -287,6 +288,7 @@ function wirePanel(name) {
     for (const p of B.querySelectorAll("[data-proj]")) p.onclick = () => { try { state.aladin.setProjection(p.dataset.proj); if (p.dataset.proj !== "TAN") state.aladin.setFoV(p.dataset.proj === "AIT" ? 220 : 120); } catch (e) { console.warn(e); } };
   }
   if (name === "tonight") {
+    const pp = $("#printPlan"); if (pp) pp.onclick = () => { document.body.classList.add("printplan"); try { window.print(); } finally { setTimeout(() => document.body.classList.remove("printplan"), 500); } };
     $("#geo").onclick = () => navigator.geolocation?.getCurrentPosition((p) => { state.location = { lat: +p.coords.latitude.toFixed(2), lon: +p.coords.longitude.toFixed(2) }; store.set("location", state.location); updatePlanetLayer(); rerender(); }, () => alertNote("Location was not shared. You can type it in instead."));
     $("#setLoc").onclick = () => { const lat = parseFloat($("#lat").value), lon = parseFloat($("#lon").value); if (Math.abs(lat) <= 90 && Math.abs(lon) <= 180) { state.location = { lat, lon }; store.set("location", state.location); updatePlanetLayer(); rerender(); } };
     $("#when").onchange = (e) => { const d = new Date(e.target.value); if (!isNaN(d)) { state.when = d; updatePlanetLayer(); rerender(); } };

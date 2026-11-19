@@ -215,3 +215,5 @@ body.sheet-open #arBtn{ opacity:0; pointer-events:none; }
 .deckpick{display:flex;align-items:center;gap:8px;margin:8px 0;color:#a296d8}
 .deckpick select{flex:1;background:#120a2e;color:#f3eeff;border:1px solid #2a1f5a;border-radius:8px;padding:6px}
 .darkwin{border:1px solid var(--line,#2a3350);border-radius:10px;padding:.4em .8em;margin:.6em 0}.darkwin p{margin:.25em 0}
+.printonly{display:none}
+@media print{body.printplan *{visibility:hidden}body.printplan .panel{display:block!important;position:static;box-shadow:none}body.printplan #nightPlan,body.printplan #nightPlan *{visibility:visible;color:#000!important;background:#fff!important}body.printplan #nightPlan{position:absolute;left:0;top:0;width:100%}body.printplan .printonly{display:block}body.printplan #printPlan{display:none}}

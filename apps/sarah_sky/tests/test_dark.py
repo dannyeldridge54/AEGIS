@@ -49,6 +49,12 @@ def test_panel_shows_window(server):
         txt = pg.inner_text("#darkWin")
         assert "Dark sky tonight" in txt and "Sunset" in txt and "Moon down" in txt
         assert pg.locator("#bestTargets tr").count() == 11
+        pg.evaluate("window.__printed = 0; window.print = () => { window.__printed++; window.__cls = document.body.className; }; 0")
+        pg.click("#printPlan")
+        assert pg.evaluate("window.__printed") == 1 and "printplan" in pg.evaluate("window.__cls")
+        pg.emulate_media(media="print"); pg.evaluate("document.body.classList.add('printplan')")
+        assert pg.is_visible("#nightPlan h2") and not pg.is_visible("#printPlan")
+        pg.emulate_media(media="screen")
         app_errors = [e for e in errors if "HiPS" not in e and "fetch" not in e.lower() and "CDS ID" not in e]
         assert not app_errors, app_errors
         b.close()

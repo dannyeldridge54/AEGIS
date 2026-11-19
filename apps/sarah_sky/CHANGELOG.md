@@ -1,4 +1,7 @@
 # Changelog
+## 1.7.3 — 19 Nov 2026
+- Tonight: "Print night plan" — prints just the dark-sky times and best targets on a white page (date and place in the heading), handy at the telescope or for a class handout.
+
 ## 1.7.2 — 19 Nov 2026
 - Tonight: "Best targets tonight" — the ten brightest Messier objects that climb above 30° while it is fully dark, with how high they get and when. Tap one to fly the map there.
 
