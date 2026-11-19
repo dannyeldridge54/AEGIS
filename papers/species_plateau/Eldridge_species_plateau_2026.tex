@@ -1,0 +1,104 @@
+% (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License) · DRAFT — not published
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\hypersetup{pdfauthor={Danny Lee Eldridge}}
+\begin{document}
+\title{Inflation from the Running of the Species Scale: an $SL(2,\mathbb Z)$ Plateau along the String Coupling, a Tilt from $\alpha'^3$, and the Dimension at Horizon Exit Written into $r$}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{19 November 2026 (draft)}
+\begin{abstract}
+We study a single-field inflationary potential built from the type IIB $R^4$ coefficient $E(\tau,3/2)$. The inflaton is the string coupling. The potential is the squared running rate of the quantum-gravity cutoff $\Lambda_{\rm QG}=M_P E^{-1/6}$, normalised to its asymptotic rate $1/\sqrt8$: $V_0=V_\infty|\nabla\ln\Lambda_{\rm QG}|^2/\lambda_{\rm sp}^2$. We call this the species-gradient principle. It has the form of the one-loop tower potential of Casas and Ib\'a\~nez. We show that its prefactor is not flat along the dilaton in four-dimensional $N=1$ supergravity, so here it is assumed rather than derived. Given the principle, the potential has three properties. (i) It equals $V_\infty(1/3+\tfrac43\nabla^2\ln\Lambda_{\rm QG})$ exactly. (ii) It approaches $V_\infty[1-\tfrac{16\zeta(2)}{3\zeta(3)}y^{-2}]$ with no free shape parameter. (iii) It vanishes exactly at the self-dual point $\tau=e^{i\pi/3}$, where inflation ends. A one-parameter tilt, of the form produced by the Becker--Becker--Haack--Louis $\alpha'^3$ correction, places it in the observed band. At $C=8\times10^{-7}$ an exact Mukhanov--Sasaki computation gives $n_s=0.97065$, $r=5.41\times10^{-4}$, $\alpha_s=-9.7\times10^{-4}$ and $N_*=50.37$. Without the tilt the leading slow-roll result is $n_s=1-2/N-3/((D-2)N^2)$ and $r=8/((D-2)N^2)$. Here $D$ is the dimension of the effective theory when the CMB scales leave the horizon. A locked run with $D=6$ gives $r=1.07\times10^{-3}$ at the same $n_s$, which is $1.98\times$ the $D=10$ value. A future measurement of $r$ therefore reads off $D$. Across thirteen dimensional reductions (six type II, six heterotic, and a four-dimensional balance point) the string-coupling direction is the only one that carries the plateau. We state the open steps and relate the construction to several open questions in physics.
+\end{abstract}
+\keywords{inflation; species scale; swampland; Eisenstein series; $SL(2,\mathbb Z)$; string coupling; $\alpha'^3$ corrections; tensor-to-scalar ratio; pre-registration}
+\maketitle
+
+\section{Setup}
+Take the IIB axio-dilaton $\tau=x+iy$, with $y=1/g_s$, on the line $x=\tfrac12$. The $D$-dimensional Einstein-frame action contains $R/2-\tfrac{2}{D-2}(\partial\phi_D)^2$. The canonical field is $\psi=2\phi_D/\sqrt{D-2}$, and $y=e^{\beta_D\psi/2}$ with $\beta_D=\sqrt{D-2}$. For $D=10$ this gives $y=e^{\sqrt2\psi}$, and for $D=4$ it reproduces $K=-\ln(S+\bar S)$. The non-holomorphic Eisenstein series
+\begin{equation}
+E(\tau,\tfrac32)=2\zeta(3)y^{3/2}+4\zeta(2)y^{-1/2}+O(e^{-2\pi y})
+\end{equation}
+is the exact $SL(2,\mathbb Z)$-invariant coefficient of $R^4$~\cite{GG}. It fixes the species scale $\Lambda_{\rm QG}=M_PE^{-1/6}$~\cite{vdH}, whose asymptotic slope is $\lambda_{\rm sp}=1/\sqrt8$.
+
+\section{The equation}
+\begin{equation}
+V=V_\infty\Big(\tfrac23\,y\partial_y\ln E\Big)^2\big[1+C(E-E_\rho)\big],\quad E_\rho=E(e^{i\pi/3},\tfrac32).
+\label{eq:V}
+\end{equation}
+The first factor is the species-gradient principle, since $(\tfrac23y\partial_y\ln E)^2=|\nabla\ln\Lambda_{\rm QG}|^2/\lambda_{\rm sp}^2$. The second factor is the tilt.
+
+\emph{Identity.} The Laplacian on the upper half-plane gives $\Delta E=\tfrac34E$, and $\partial_xE=0$ on $x=\tfrac12$. Together these give
+\begin{equation}
+V_0/V_\infty=\tfrac13+\tfrac43\nabla^2\ln\Lambda_{\rm QG}.
+\end{equation}
+This agrees numerically to six decimals at $y=1.2,3,10,40$.
+
+\emph{Plateau.} Expanding gives $y\partial_y\ln E=\tfrac32-4\frac{\zeta(2)}{\zeta(3)}y^{-2}+\dots$, so
+\begin{equation}
+V_0/V_\infty=1-7.2983\,y^{-2}=1-7.2983\,e^{-\beta_D\psi}.
+\end{equation}
+The shape has no free parameter.
+
+\emph{End point.} The point $\rho=e^{i\pi/3}$ is fixed by $SL(2,\mathbb Z)$, so $\nabla E(\rho)=0$ and $V(\rho)=0$ exactly. Numerically $V_0(\rho)=3\times10^{-19}$. The zero does not depend on how the tilt is normalised. The weak- and strong-coupling contributions cancel at this point, and the string coupling settles at $g_s=2/\sqrt3$ after inflation.
+
+\section{Status of the principle}
+Casas and Ib\'a\~nez~\cite{CI} obtain $\delta V\simeq 4g^2m_{3/2}^2M_P^2/(8\pi)^2\,g^{i\bar\jmath}\partial_i\ln\Lambda\,\partial_{\bar\jmath}\ln\Lambda$ from the tower's one-loop correction to the kinetic terms. This is the form of Eq.~\eqref{eq:V}. Along the dilaton, however, $m_{3/2}^2=e^K|W|^2$ scales as $y^{-1}$ for constant $W$ and as $y$ for flux $W$. The loop factor scales as $g^2=e^{2\phi_4}\propto y^{-1/2}$~\cite{Ib}. The prefactor is therefore a power $y^{-q}$ with $q\neq0$. A plateau requires $|q|\lesssim0.03$. Correlated volume--dilaton paths also fail, because in the large-volume scenario (LVS) the volume grows exponentially in $1/g_s$~\cite{CP}. Written in terms of the $D$-dimensional loop factor $g_s^{(D-2)/4}$, the flux prefactor is $\propto y^{(6-D)/4}$, which is flat only at $D=6$. A genuine six-dimensional one-loop potential is, however, Casimir-like~\cite{SLED}. We therefore take the species-gradient principle as the founding assumption of the model. It is the one statement that a string computation must derive.
+
+\section{Tilt and predictions}
+The BBHL K\"ahler potential $K=-2\ln(\mathcal V+\hat\xi/2)$ with $\hat\xi\propto\chi E(\tau,\tfrac32)$~\cite{BBHL} makes the plateau's prefactor depend on $\tau$ in the form $C\,E$, with $C=w\chi/(4(2\pi)^3\mathcal V)$. Here $w=1$ for an F-term and $2/3$ for a D7 D-term. The tilt is blue for $\chi>0$. Spectra were computed with a third-order slow-roll engine and a self-consistent $N_*$ ($T_R=8.94\times10^8$~GeV), and checked with exact Mukhanov--Sasaki runs. All runs were locked before computing.
+
+\begin{table}[b]
+\caption{Predictions at $n_s\simeq0.9706$.}
+\label{tab:pred}
+\begin{ruledtabular}\footnotesize
+\begin{tabular}{lll}
+ & $D=10$ & $D=6$\\
+$C$ & $8.0\times10^{-7}$ & $2.64\times10^{-6}$\\
+$n_s$ & 0.97065 (exact MS) & 0.9706\\
+$r$ & $5.41\times10^{-4}$ & $1.07\times10^{-3}$\\
+$\alpha_s$ & $-9.7\times10^{-4}$ & $-9.4\times10^{-4}$\\
+$N_*$ & 50.37 & 50.57\\
+$\mathcal V$ ($\chi=20$--200) & $1.4\times10^4$--$3\times10^5$ & $\approx4\times10^3$--$9\times10^4$\\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+Untilted, $\eta=-1/N$ and $\epsilon=1/(2(D-2)N^2)$, so $n_s=1-2/N-3/((D-2)N^2)$ and $r=8/((D-2)N^2)$. The plateau coefficient drops out of these. At $N=50.37$ this gives $r=3.94\times10^{-4}$ for $D=10$ and $7.9\times10^{-4}$ for $D=6$. The locked engine run gives $8.01\times10^{-4}$. Scaling the exact $D=10$ value by $8/(D-2)$ gives a ladder of $r$ values: $5.4,\,6.2,\,7.2,\,8.7,\,10.7,\,14,\,22\ (\times10^{-4})$ for $D=10\dots4$. Both values of $n_s$ lie between CMB-SPA ($0.9684\pm0.0030$) and CMB-SPA+DESI ($0.9728\pm0.0027$)~\cite{SPA}. The factor-2 difference in $r$ between $D=10$ and $D=6$ is within reach of CMB-S4- and LiteBIRD-class sensitivity.
+
+\emph{Integrity note.} This model was formulated after the CMB-SPA and DESI data. It is scored only on future data. The predictions of SERAPIS-$E$ frozen on 15 November~\cite{P3} are unchanged.
+
+\section{Dimensional reductions}
+In every reduction from $D=9$ to $D=4$ the $R^4$ coefficient along the string coupling is a tree term plus a one-loop lattice term, with a gap of $g_s^2$~\cite{GRV,KOP,OP}. This is the plateau's $k=2$ rung. The torus and Narain moduli instead give $s=1$ logarithmic threads (for example $\log|\eta(T)\eta(U)|$ at $D=8$~\cite{FS}), which do not support a plateau. The heterotic $O(16+d,d)$ lenses agree along the coupling. At $D=4$ the two sides balance on the coupling direction alone. That direction is the inflaton used here. In the extension, $E_8$ ($D=3$) carries the golden ratio in its root geometry but not in any coefficient. At $D=2$ the eigenvalue $3(11-D)(D-8)/(D-2)$ diverges, and $E_{10}$ ($D=1$) is the cosmological billiard~\cite{FK}.
+
+\section{Open steps}
+(1) The species-gradient principle (Sec.~III). (2) A compactification with $\chi>0$ and $\mathcal V\sim10^4$--$10^5$. (3) For $D=6$: an anisotropic large-volume geometry with two dimensions lighter than $H$, such as LVS on a K3 fibration~\cite{ADD}, and an end of inflation through the $6D\to4D$ transition. (4) Andriot's gradient bound fails by $\times42$ at horizon exit. This is the generic dS-slope tension of plateaus. His primary bound $\Lambda_s\ge\sqrt V/M_P$ holds by $\times7.7\times10^4$~\cite{And}.
+
+\section{Relation to open questions in physics}
+\emph{What is the inflaton, and why a plateau?} Here the inflaton is the string coupling and the plateau shape comes from the exact $R^4$ coefficient, given the principle. The plateau is open only in its origin (step 1).
+\emph{Initial-condition and end problems.} Inflation ends at a point fixed by symmetry with $V=0$, so no minimum has to be tuned.
+\emph{Cosmological constant.} The inflaton sector contributes exactly zero vacuum energy at $\rho$, for any tilt. The observed $\Lambda\sim10^{-120}M_P^4$ is not explained here.
+\emph{Where does the theory live at the inflationary scale?} The dimension of the effective theory at horizon exit is observable through $r$.
+\emph{Swampland.} The species bound $\Lambda_s\ge\sqrt V/M_P$ is satisfied. The dS-slope conjecture is in tension with this model, as with every plateau.
+\emph{Strong coupling.} The vacuum sits at $g_s=2/\sqrt3$, which is non-perturbative. The construction uses only the exact $E(\tau,3/2)$, but light-field physics at $\rho$ requires S-duality-covariant tools.
+\emph{Dark energy, dark matter, baryogenesis, the electroweak hierarchy and quantum measurement} are not addressed by this construction.
+
+\begin{thebibliography}{99}
+\bibitem{GG} M.~B.~Green and M.~Gutperle, Nucl.~Phys.~B498 (1997) 195, hep-th/9701093.
+\bibitem{vdH} D.~van~de~Heisteeg, C.~Vafa, M.~Wiesner, D.~H.~Wu, arXiv:2310.07213; species-scale normalisation, arXiv:2310.07708.
+\bibitem{CI} J.~A.~Casas and L.~E.~Ib\'a\~nez, arXiv:2507.05345; arXiv:2407.12081.
+\bibitem{Ib} L.~E.~Ib\'a\~nez, arXiv:2604.27835.
+\bibitem{CP} J.~P.~Conlon and F.~G.~Pedro, arXiv:0704.0737.
+\bibitem{SLED} C.~P.~Burgess et al., hep-th/0504004.
+\bibitem{BBHL} K.~Becker, M.~Becker, M.~Haack, J.~Louis, hep-th/0204254.
+\bibitem{SPA} CMB-SPA and DESI combined analyses, 2025.
+\bibitem{P3} D.~Eldridge, SERAPIS-$E$ (2026), Zenodo record; v2 update 18 Nov 2026.
+\bibitem{GRV} M.~B.~Green, J.~G.~Russo, P.~Vanhove, arXiv:1001.2535; arXiv:1004.0163.
+\bibitem{KOP} E.~Kiritsis, N.~Obers, B.~Pioline, hep-th/0001083; C.~Bachas et al., hep-th/9707126.
+\bibitem{OP} N.~Obers and B.~Pioline, hep-th/9903113; C.~Angelantonj, I.~Florakis, B.~Pioline, arXiv:1110.5318.
+\bibitem{FS} K.~Foerger and S.~Stieberger, hep-th/9901020.
+\bibitem{FK} P.~Fleig and A.~Kleinschmidt, arXiv:1204.3043.
+\bibitem{ADD} Moduli stabilisation for ADD and the dark dimension, arXiv:2606.19440; M.~Cicoli, C.~Burgess, F.~Quevedo, arXiv:1105.2107.
+\bibitem{And} D.~Andriot, arXiv:2305.07480.
+\end{thebibliography}
+\end{document}
