@@ -1549,13 +1549,15 @@
    "title": "Where the dark thread ends — overshoots ρ, settles at τ = (1+i)/2 (image of i)",
    "status": "computed",
    "d": [
-    "D1653"
+    "D1653",
+    "D1655"
    ],
    "depends": [
     "reverse_thread"
    ],
    "history": [
-    "D1653: computed"
+    "D1653: computed",
+    "D1655: computed"
    ]
   },
   {
