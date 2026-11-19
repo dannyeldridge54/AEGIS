@@ -15172,3 +15172,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Gap = 0.025σ for SO's σ(α_s) 3.3e-3 — theory-only separation; ρ window excludes the T_R spread (would widen). vac_discriminant stays killed (D1449).
 - aegis-check: numbers from the result json; gap −9.5654e-4 − (−8.7256e-4) = −8.4e-5 in python; like-with-like: each vacuum on its own exact chain; caveat that A1 is on a different T_R line stated; checked: units, arithmetic, cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1457 — JANUS tick 53: band_e formula with n_s term — ADOPTED (cross-check)
+- [derived] α_s = −2r[1.0373 − 0.947(n_s − 0.972)] fitted to D1454's 9 derived points: in-sample ≤ 0.021 %, out-of-sample A1 0.001 %, K4 0.010 % (rule 0.1 %). At A1 the bracket = 1.0350 ≈ D1421's k = 1.0352 — consistent; the n_s slope is what D1421 lacked.
+- [estimate] A fit to the derived model (inherits its ≤ 0.14 % vs exact); D1421 remains the frozen reference.
+- aegis-check: a, b, residuals from the result json; bracket at A1 recomputed in python (1.0350); out-of-sample points not used in the fit; checked: units, arithmetic, cross-sector: none.
+- MAP: node=band_e status=frozen touches=[] ripple=no

@@ -2711,3 +2711,9 @@ Touches: none.
 2. [derived] Derived second-order models at n_s = centre ± 0.002 (all converged): ρ (centre 0.974393, r on this chain 4.846e-4 — A1 itself sits on the T_R 7.39e8 line at 4.821e-4, 0.5 % lower α_s; stated): α_s −1.0496e-3 … −9.565e-4 (width 9.3 % of |α_s|); τ = i (centre 0.97462): −8.726e-4 … −8.342e-4 (width 4.5 %).
 3. [derived] The conditioned windows do not overlap (gap 8.4e-5): an SO n_s measurement would sharpen each vacuum's α_s prediction to a narrow, distinct window.
 4. [estimate] But both windows (and the gap) sit far below any funded α_s precision (SO σ 3.3e-3, i.e. the gap is 0.025σ) — the separation is a statement about the theory, not a test; the T_R spread on the ρ side (not included here) widens its window further. Consistent with D1449 (vac_discriminant stays killed).
+
+## D1457 — JANUS tick 53: band_e running formula α_s = −2r[1.0373 − 0.947(n_s − 0.972)] — ADOPTED (cross-check)
+1. [derived] Least-squares fit of α_s/(−2r) = a + b(n_s − 0.972) to the 9 derived-model points of D1454 (band_e, r 4.55–5.12e-4): a = 1.03730, b = −0.9475; max in-sample residual 0.021 %.
+2. [derived] Out of sample (derived-model values): A1 +0.001 %, K4 +0.010 %; K3 (r 4.529e-4, just below band_e) +0.019 %. Rule (≤ 0.1 % in and out of sample): ADOPTED as a cross-check formula; D1421 stays the frozen-band reference.
+3. [derived] a = 1.0373 sits 0.2 % above D1421's k = 1.0352 (k was measured at A1, where n_s − 0.972 = +0.0024 gives a + b·0.0024 = 1.0350 — the same number); the n_s slope b explains D1454's 0.49 % edge.
+4. [estimate] The formula is a fit to the derived model, not a new derivation; its accuracy vs exact MS inherits the model's ≤ 0.14 % (D1444) and the references' pre-D1417 caveat.
