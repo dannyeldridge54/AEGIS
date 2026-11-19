@@ -234,6 +234,18 @@
    "in_band": false,
    "near": false,
    "in_frozen": false
+  },
+  {
+   "alpha": 0.125,
+   "C": 3e-06,
+   "Nstar": 50.25330587530136,
+   "ns": 0.9907890099310452,
+   "r": 0.0005925831490439756,
+   "alpha_s": -0.001020849786109618,
+   "Ntot": 142.65401542565036,
+   "in_band": false,
+   "near": false,
+   "in_frozen": false
   }
  ],
  "part1_verdict": "AGREE"
