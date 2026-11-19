@@ -3090,3 +3090,9 @@ Touches: none.
 ## D1532 — exact MS confirms P3-S at C = 8e-7: n_s 0.97065, r 5.41e-4 (in band)
 1. [derived] Exact Mukhanov–Sasaki run on the locked species-scale plateau with tilt C(E − E_ρ), C = 8e-7: n_s 0.970648, r 5.408e-4, α_s −9.68e-4, N* 50.37.
 2. [derived] Fast engine agrees to Δn_s 5.2e-6 and Δr/r 1.0e-4; the in-band point holds at data level.
+
+## D1536 — scope note on our D1504 after P3's D1533; read-only check of P3 D1533–D1534 (no issues)
+1. [derived] D1504's identity K^{ττ̄}|D_τW|² = |W|² holds for REAL flux coefficients (W = f − τh). P3 D1533 uses complex A, B with A/B = ρ̄: then K^{ττ̄}|D_τW|² = |A − τ̄B|² ≠ |A − τB|², and V_flux ∝ |τ − ρ|²/Im τ vanishes at ρ. No contradiction with D1504.
+2. [derived] CORRECTION (scope): D1504 called the flux term "not a tilt" because the DILMIX tilt had to grow ∝ E(τ,3/2). For P3's species plateau (P3-S), a tilt growing ∝ y is enough (P3 D1529/D1533 band), so D1504's verdict applies only to the DILMIX/E-shaped route, not to P3-S.
+3. [derived] D1534 arithmetic re-run: X_F(55.64) = 53.92, P = 4.08e-16, 𝒱 = 3.50e7, M_KK = 2.28e13 GeV, m_3/2 = 9.15e10 GeV, H/m_3/2 = 63 — all match.
+4. [estimate] With 𝒱 ≈ 3.5e7 ≫ ξ̂ ~ y*^{3/2} ≈ 415, our M5 regime flag (ξ̂/𝒱̂ ≈ 250 on the DILMIX path) does not arise for P3-S-F; the open issue there is P3's own H/m_3/2 ≈ 63 flag.

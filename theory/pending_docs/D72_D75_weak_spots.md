@@ -15696,3 +15696,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] Distinguishing prediction vs Kallosh–Linde SL(2,Z) attractors: approach exponent 2 (not 1) ⇒ at fixed n_s our r is lower — untilted P3-S r = 4.0e-4 at N* 50.3 vs α-attractor 12α/N² = 4.7e-3·α (α = 1/3 ⇒ 1.6e-3) — and P3-S needs a tilt to reach n_s ≥ 0.969 (α-attractors give 0.960–0.967).
 - Verdict (m5, scoped): NOT FOUND in the literature checked; novelty claim allowed only in this narrow form ("first use of the IIB species scale E(τ,3/2)^{−1/6} as the plateau source; y^{−2} approach with fixed amplitude"), with Casas–Ibáñez and Kallosh–Linde cited as the frameworks. Recall D556: the earlier SERAPIS model had no novel element left — this note does not reverse that for SERAPIS-E; it scopes P3-S only. A specialist check (outreach) remains the real test.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1536 — scope note on D1504 (flux "not a tilt" holds only for real fluxes / E-shaped tilt); P3 D1533–D1534 checked read-only, arithmetic matches; M5 does not arise for P3-S-F
+- aegis-check: D1534 numbers re-run in python ✓; complex-flux D_τW algebra re-done by hand ✓; P3 notes not edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
