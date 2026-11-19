@@ -675,3 +675,4 @@ D1388  2026-11-19T01:08Z  Weave tick 3: band_e_audited + serapis_point scored vs
 D1389  2026-11-19T01:13Z  Weave tick 4: m32_window margin updated to the computed wino window
 D1390  2026-11-19T01:16Z  Weave tick 5: inverse meter applied to today's n_s
 D1391  2026-11-19T01:22Z  Circuit layer 9: CM (complex multiplication), 7/7 laws
+D1392  2026-11-19T01:25Z  Wino records synced: Q_panel + particle card to 1.25 TeV; SUSY open law closes
