@@ -3128,3 +3128,8 @@ Touches: none.
 1. [derived] (y∂_y ln E_s/s)² = 1 − D_s y^{1−2s}, D_s = 2(2s−1)b_s/(s a_s); the ratio form of E_{2s−1} matches it for λ = 1/(D_s·2ζ(4s−2)).
 2. [derived] Engine F, untilted: rungs s = 3/2, 5/2, 7/2 agree between strands to Δn_s ≤ 3.4e-5 and Δr ≤ 0.2 %; r = 4.0e-4, 1.0e-4, 4.6e-5.
 3. [derived] Only rung 1 (E_{3/2} ↔ E₂) reaches the observed r band.
+
+## D1561 — Gauss–Bonnet coupling ξ = ξ₀(E_{3/2} − E_ρ) tilts the P3-S plateau into the band at ξ₀ ≈ 3.3e4 (r 5.29e-4); naive string size ξ₀ ~ 0.02–2
+1. [literature] Guo–Schwarz first-order formulas: n_s − 1 = −2ε₁ − (2ε₁ε₂ − δ₁δ₂)/(2ε₁ − δ₁), r = 8|2ε₁ − δ₁|, δ₁ = −(4/3)ξ'QV.
+2. [derived] With V = P3-S plateau and ξ' > 0, the band is reached for ξ₀ 2.8–3.7e4; ξ₀ < 0 reverses the roll.
+3. [estimate] The 10D R⁴ coefficient reduced on a CY gives ξ₀ ~ 0.02–2, so the channel needs an enhancement of order 1e4.
