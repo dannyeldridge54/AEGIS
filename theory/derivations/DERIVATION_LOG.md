@@ -3096,3 +3096,7 @@ Touches: none.
 2. [derived] CORRECTION (scope): D1504 called the flux term "not a tilt" because the DILMIX tilt had to grow ∝ E(τ,3/2). For P3's species plateau (P3-S), a tilt growing ∝ y is enough (P3 D1529/D1533 band), so D1504's verdict applies only to the DILMIX/E-shaped route, not to P3-S.
 3. [derived] D1534 arithmetic re-run: X_F(55.64) = 53.92, P = 4.08e-16, 𝒱 = 3.50e7, M_KK = 2.28e13 GeV, m_3/2 = 9.15e10 GeV, H/m_3/2 = 63 — all match.
 4. [estimate] With 𝒱 ≈ 3.5e7 ≫ ξ̂ ~ y*^{3/2} ≈ 415, our M5 regime flag (ξ̂/𝒱̂ ≈ 250 on the DILMIX path) does not arise for P3-S-F; the open issue there is P3's own H/m_3/2 ≈ 63 flag.
+
+## D1542 — UCHART: engine F validated against exact MS (rule E pass); pure-power reduction fails on real routes (rule R)
+1. [derived] Three valid exact checks agree with engine F to ≤ 7.8e-7 in n_s and ≤ 0.011 % in r.
+2. [derived] Chart vs real routes: SERAPIS-E Δn_s −0.0027; form A Δn_s −0.0023…−0.0029, Δr +20…+23 %; the reduction fails as in D1517/D1521.
