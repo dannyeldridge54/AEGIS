@@ -8,7 +8,7 @@ from scipy.interpolate import CubicSpline
 from tools.serapis_calc import p3s
 Om, Or, A, b, C = 0.31, 9e-5, 16 * math.pi ** 2 / 6 / (3 * 1.2020569031595942), 2 * math.sqrt(2), 8e-7
 phr = math.log(float(p3s.YRHO)) / math.sqrt(2)
-ph = np.linspace(math.log(0.45) / math.sqrt(2), math.log(3000.0) / math.sqrt(2), 9000)
+ph = np.linspace(math.log(0.03) / math.sqrt(2), math.log(3000.0) / math.sqrt(2), 24000)  # DEVIATIONS D1
 fv = p3s.V_np(ph, C, 10); Sp = CubicSpline(ph, fv); dS = Sp.derivative()
 f = lambda p: float(Sp(p)); df = lambda p: float(dS(p))
 amp = json.load(open('field_tests/results/D1638_G2_thread_shape.json'))['best']['amp']
@@ -42,10 +42,11 @@ i25 = np.argmin(abs(a - 25)); i50 = len(a) - 1
 def avg_a3rho(i, half=400): s = slice(max(0, i - half), min(len(a), i + half)); return float(np.mean(a[s] ** 3 * rho_t[s]))
 ratio = avg_a3rho(i50 - 400) / avg_a3rho(i25)
 n_cross = int(np.sum(np.diff(np.sign(P - phr)) != 0))
-R1 = abs(wbar) <= 0.05 and abs(ratio - 1) <= 0.10; R2 = i_acc is not None
+edge_hit = bool(P.min() <= ph[0] + 1e-6)
+R1 = (not edge_hit) and abs(wbar) <= 0.05 and abs(ratio - 1) <= 0.10; R2 = i_acc is not None
 out = dict(D='D1644', amp=amp, VL=VL, today=dict(w=float(w[0]), Omega_thread=float(Om_t[0])),
            end_of_acceleration=pick(i_acc), reaches_rho=pick(i_rho), w_first_zero=pick(i_w0),
-           late_w_mean=wbar, a3rho_ratio_50_over_25=ratio, Omega_thread_a50=float(Om_t[-1]), rho_crossings=n_cross,
+           late_w_mean=wbar, a3rho_ratio_50_over_25=ratio, Omega_thread_a50=float(Om_t[-1]), rho_crossings=n_cross, edge_hit=edge_hit, minP=float(P.min()), grid_low=float(ph[0]),
            m_over_H_at_a50=float(math.sqrt(VL / 4) / math.sqrt(H2[-1])), m_over_HLambda=float(math.sqrt(VL / 4) / math.sqrt(VL / 3)),
            R1_matter_like='PASS' if R1 else 'FAIL', R2_acceleration_ends='PASS' if R2 else 'FAIL')
 json.dump(out, open('field_tests/results/D1644_G9_thread_future.json', 'w'), indent=1)

@@ -1,0 +1,29 @@
+{
+ "D": "D1644",
+ "amp": 0.29267761361705097,
+ "VL": 3.519233307760393,
+ "today": {
+  "w": -0.7398365607157912,
+  "Omega_thread": 0.689909999982244
+ },
+ "end_of_acceleration": {
+  "a": 1.2324447878622855,
+  "Omega_thread": 0.7653842196728948
+ },
+ "reaches_rho": {
+  "a": 1.8898286110643532,
+  "Omega_thread": 0.6835372765733849
+ },
+ "w_first_zero": {
+  "a": 1.4214690344936785,
+  "Omega_thread": 0.7832386523254847
+ },
+ "late_w_mean": NaN,
+ "a3rho_ratio_50_over_25": -137.83227214577647,
+ "Omega_thread_a50": 0.0,
+ "rho_crossings": 1,
+ "m_over_H_at_a50": 1.1980769779361541e-10,
+ "m_over_HLambda": 0.8660254037844386,
+ "R1_matter_like": "FAIL",
+ "R2_acceleration_ends": "PASS"
+}
