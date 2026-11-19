@@ -1,0 +1,6 @@
+# PREREG_RC34_ASYM — rung R-C3/C4: where the surplus comes from, and how it is shared (locked D1648, 2026-11-19 16:50 CT)
+Inputs (Weave): H∞ = 5.8 × 10¹² GeV; inflaton mass at ρ, m_φ = 0.866 H∞ (10D, D1641); T_rh = 9 × 10⁸ GeV (D1637); Y_B = n_B/s = 8.7 × 10⁻¹¹ (η = 6.13 × 10⁻¹⁰); sphaleron factor C = 28/79; v = 174 GeV; m_atm = 0.05 eV.
+Q1 (C4, non-thermal leptogenesis): the inflaton decays to heavy right-handed neutrinos N of mass M < m_φ/2, which decay with CP asymmetry ε. Y_B = (3/4)(T_rh/m_φ)·ε·C·BR (BR = 1). Required ε; the Davidson–Ibarra bound ε ≤ 3 M m_atm/(16π v²) gives M_min; also require M > T_rh (no washout). VIABLE if M_min < m_φ/2.
+Q2 (C3, sharing with a mirror-symmetric decay): with equal ε in both sectors and branching ratio BR'/BR = ξ⁴ (energy share), n'/n = ξ⁴. Then for ξ < 0.45 (C5), m_DM = 5.36 m_p/(n'/n). Reading: if m_DM(ξ = 0.45) > 50 GeV, P-M's "equal sharing, 5 GeV" CONFLICTS with a cold mirror under symmetric decay.
+Q3 (literature route): mirror baryons with m' = m_p need n'/n = 5.36. Bento–Berezhiani (hep-ph/0008105) obtain n'_B ≥ n_B from ordinary–mirror L-violating scatterings when x < 1. Recorded as the route that would keep P-M, with m_DM ≈ 0.94 GeV rather than 5 GeV.
+Script: field_tests/scripts/rc34/run.py
