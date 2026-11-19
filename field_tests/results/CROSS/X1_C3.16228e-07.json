@@ -1,0 +1,9 @@
+{
+ "combo": "X1",
+ "lens": "G32",
+ "C": 3.16228e-07,
+ "k_fit": 1.99626892037356,
+ "V0_rho": 1.3695501826753678e-25,
+ "valid": false,
+ "error": "math domain error"
+}
