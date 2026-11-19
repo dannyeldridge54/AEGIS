@@ -2867,3 +2867,9 @@ Touches: none.
 2. [estimate] Forecast for the 5 pending SMSCAN points (its locked runs remain the record): (3, ⅔) n_s 0.96054, r 3.91e-4; (3, 1) n_s 0.96012, r 1.78e-4; (2, 3/2) n_s 0.95991, r 1.81e-4; (1.5, 1) n_s 0.96058, r 6.92e-4; (1.5, 4/3) n_s 0.96006, r 4.04e-4. None in band, none "near" by SMSCAN's rules.
 3. [estimate] Pattern (confirms SMSCAN's stated expectation): n_s ≈ 0.960–0.962 at C = 0 for every (s, m); r depends on s·m only (s·m = 1 → 1.45e-3; 1.5 → 6.9e-4; 2 → 3.9–4.0e-4; 3 → 1.8e-4). Fitting r ∝ (s·m)^−1.96 between 1.5 and 2: the band's r (4.55–5.7e-4) needs s·m ≈ 1.66–1.86 at C = 0.
 4. [estimate] Consequence for D1482's (s, m) = (3, 1) (brane tension + Casimir, s·m = 3): r 1.8e-4 (2.5× below the band floor) and n_s 0.9601 — it needs a tilt to raise n_s by ~0.01, and from D1481 a tilt raises r (~20 % for Δn_s ≈ 0.009), so (3, 1) would still sit ~2× low in r. An s·m ≈ 1.6–1.8 mechanism plus a tilt is the target zone.
+
+## D1486: axio-dilaton physical frame
+1. [derived] ξ(τ) = −χ/(4(2π)³)E(τ,3/2); λ = c/(2𝒱 + cE_ρ); y* = 23.25·a^{2/3}, C_phys = 1.25e-6·a.
+2. [derived] a ≈ 5e2–2e5 ⇒ y* ≈ 1.5e3–8e4 (g_s* ≈ 1e-5–7e-4), Δφ ≈ 5–8; M_s, M_KK ≫ H = 6.2e12 GeV.
+3. [estimate] Vacuum at g_s ≈ 1.15 uncontrolled; super-Planckian excursion; C_phys source open.
+4. [postulate P3] Route alive with flags.
