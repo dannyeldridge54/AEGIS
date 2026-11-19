@@ -36,6 +36,7 @@ LAYOUT = {
     'Leech': {'X_epstein': (0, 0), 'X_hexin': (1, 0), 'X_mod': (0, 1), 'S_stab': (-1, 1), 'X_narain': (-1, 0), 'X_su3': (0, -1), 'X_d24': (1, -1)},
     '10D':   {'S_10d': (0, 0), 'S_kk10': (1, 0), 'S_btr': (0, 1), 'S_6d': (-1, 1)},
     'SUSY':  {'m32_window': (0, 0), 'gravitino_wino': (1, 0), 'covariant': (0, 1), 'tests_lhc': (-1, 1), 'H_relic': (-1, 0), 'matter_parity': (0, -1), 'H_line': (1, -1)},
+    'P3': {'P3_kappa': (0, 0), 'P3_Y': (1, 0), 'P3_E7': (0, 1), 'P3_K': (-1, 1), 'P3_plateau': (-1, 0), 'P3_chamber': (0, -1), 'P3_shift': (1, -1)},
     'Moonshine': {'X_mellin': (0, 0), 'X_d8': (1, 0), 'X_d16': (0, 1), 'X_bw16': (-1, 1), 'X_rings': (-1, 0), 'X_crit': (0, -1), 'vac_i': (1, -1)},
 }
 
@@ -125,6 +126,18 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
                 W[f'f_{z}'] = lt[f'{z:g}']['f'] if f'{z:g}' in lt else None
                 Omz = Om*(1 + z)**3/Ez(z)**2; W[f'f_linder_{z}'] = Omz**0.55
                 W[f'D_{z}'] = lt[f'{z:g}']['D'] if f'{z:g}' in lt else None
+    # P3 layer (2026-11-19 00:45 UTC = 18:45 CT; D1365–D1381; tolerances fixed BEFORE the first run; pure math, no tool calls)
+    import numpy as _np3
+    def _eps2(U, N=200):
+        m = _np3.arange(-N, N + 1); M, Nn = _np3.meshgrid(m, m, indexing='ij'); nz = ~((M == 0) & (Nn == 0))
+        return float(_np3.sum((U.imag**2/_np3.abs(M + Nn*U)**4)[nz]))
+    W['P3_Ei'], W['P3_Erho'] = _eps2(1j), _eps2(complex(0.5, math.sqrt(3)/2))
+    W['P3_kappa'] = 2/math.pi**2*math.pi**4/90 + sum(1/math.tanh(math.pi*j)/(math.pi*j**3) for j in range(1, 20000)) + sum(1/(math.sinh(math.pi*j)**2*j**2) for j in range(1, 60))
+    _u = 0.7; _Kp, _Kpp = -3 - _u, 3 + 2*_u   # T2 = 1 units: K' = −(3 + u)/T2, K'' = (3 + 2u)/T2² (D1370)
+    W['P3_noscale'] = (_Kp**2/4)/(_Kpp/4) - 3; W['P3_noscale_formula'] = _u**2/(2*_u + 3)
+    _s0, _ep, _b = 2.0, 0.01, 1.0; _A = _s0 + _ep*W['P3_Erho']; _E = 40.0; _x = _ep/_A*(_E - W['P3_Erho'])
+    W['P3_plateau_lhs'] = _b/_A - _b/(_s0 + _ep*_E); W['P3_plateau_rhs'] = _b/_A*_x/(1 + _x)
+    W['P3_U2star'] = math.sqrt(460/(2*math.pi**4/90)); W['P3_T2min'] = W['P3_U2star'] + math.log(1e3)/(2*math.pi)
     # DOWN pass: the top layers hand values back to the core — the E8-layer r forecast for SERAPIS must equal the core r
     W['ns_down'] = get('serapis_emulator', {'C': W['C_back']}).get('ns') if W.get('C_back') else None
 
@@ -225,6 +238,15 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
         law('law', 'Late', ('R_growth', 'R_biref'), 'growth factor D(z) falls with redshift', W['D_0.51'] > W['D_1.32'] > W['D_2.33'], f"D = {W['D_0.51']:.4f}, {W['D_1.32']:.4f}, {W['D_2.33']:.4f}")
     else:
         law('law', 'Late', ('J_lt',), 'late-universe engine answered on the z grid', False, 'janus_lt returned no grid')
+    # P3 laws (D1365–D1381)
+    law('law', 'P3', ('P3_kappa', 'P3_Y'), 'Petropoulos–Rizos κ = E(i,2)/π² (universal threshold carries E(U,2)/T₂)', abs(W['P3_kappa'] - W['P3_Ei']/math.pi**2) < 1e-4, f"κ = {W['P3_kappa']:.6f}, E(i,2)/π² = {W['P3_Ei']/math.pi**2:.6f}")
+    law('law', 'P3', ('P3_Y', 'P3_plateau'), 'vacuum: E(ρ,2) < E(i,2) — the universal term is lowest at the hexagon', W['P3_Erho'] < W['P3_Ei'], f"E(ρ,2) = {W['P3_Erho']:.4f} < E(i,2) = {W['P3_Ei']:.4f}")
+    law('law', 'P3', ('P3_E7',), 'b̂ = 0 E7: 3 × 56 at instanton number 10 → b̂ = 2(3·6 − 18) = 0', 2*(3*6 - 18) == 0 and 10//2 - 2 == 3, 'F₂ tuned locus (D1367, D1382)')
+    law('law', 'P3', ('P3_K', 'P3_plateau'), 'no-scale + BHK δK: V/(e^K|W₀|²) = u²/(2u+3) (no plateau, D1370)', abs(W['P3_noscale'] - W['P3_noscale_formula']) < 1e-12, f"u = 0.7: {W['P3_noscale']:.6f} vs {W['P3_noscale_formula']:.6f}")
+    law('law', 'P3', ('P3_K', 'P3_plateau'), 'K = −log(Im S + Y/16π²): b/A − b/(s₀+εE) = (b/A)·x/(1+x) — the SERAPIS plateau (D1371, D1375)', abs(W['P3_plateau_lhs'] - W['P3_plateau_rhs']) < 1e-12, f"{W['P3_plateau_lhs']:.10f} = {W['P3_plateau_rhs']:.10f}")
+    law('report', 'P3', ('P3_chamber',), 'chamber: needs T₂ > U₂* + ln(10³)/2π (D1377)', True, f"U₂* = {W['P3_U2star']:.2f} → T₂ ≳ {W['P3_T2min']:.1f}; one-loop ≈ tree there (D1378)")
+    law('report', 'P3', ('P3_shift',), 'shifted lattices: no interior minimum; mixed c = 1 gives the hexagon of U/2 (D1380–D1381)', True, 'control vs SL(2,Z) dilemma')
+    law('down', 'P3→A2', ('P3_Y', 'X_epstein'), 'the P3 E(ρ,2) equals the core hexagonal Epstein minimum', W.get('E_rho2') is not None and abs(W['P3_Erho'] - W['E_rho2']) < 2e-3, f"{W['P3_Erho']:.5f} vs core {W.get('E_rho2')}")
     # UP links: the SERAPIS hexagon carried up the nesting chain (counts locked in D1294)
     for lo, hi, L, n in (('A2', 'D4', 'D4', 16), ('D4', 'E8', 'E8', 1120), ('A2', 'Leech', 'A2', 1)):
         law('up', f'{lo}→{hi}', ('X_hexin',), f'hexagon carried {lo} → {hi}: {n} copies in {L}', W.get(f'hex_{L}') == n, f"{W.get(f'hex_{L}')} (D1294: {n})")
