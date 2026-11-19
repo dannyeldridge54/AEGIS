@@ -16314,3 +16314,6 @@ Results [computed] (min Δχ², pass ≤ 6.18):
 - Flag: the best Union3/DESY5 points (w₀ ≈ −0.72, w_a ≈ −0.51 for 2√2) sit at the LAST viable starting height before the field rolls into V < 0. These are edge-of-viability fits, so the starting height is tuned.
 - The non-monotonic β = 2 failure is most likely the coarse 40-point grid near that edge, not physics. It was NOT rerun (no rerun to chase a result) and is left as recorded.
 Verdict: the reverse thread fits DESI DR2 at 2σ for all supernova sets in its 10D form, but only near the edge of its viable range. Λ's size (V_Λ) is still put in by hand.
+
+## D1626a (correction, 19 Nov 2026) — to D1626
+D1626 stated "maximum |w_a| ≈ 0.25" and "predicts w₀ ≈ −0.92 to −0.95". Both were read from a printout that showed only every 4th grid point. The full grid (D1627) reaches w₀ ≈ −0.72, w_a ≈ −0.51 at the last viable starting height (β = 2√2). Corrected prediction: thawing, never below w = −1, with |w_a| up to ~0.5. Large |w_a| is reached only near the viability edge.

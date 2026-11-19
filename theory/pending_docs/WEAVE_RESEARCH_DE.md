@@ -77,7 +77,7 @@ Growing the dimension by 10²⁴–10²⁶ needs Δφ ≈ 70 M_P. That takes ≥
 Same shape, 1 − 7.30e^{−βφ}, at the dark-energy height, still being rolled down today.
 - Against DESI DR2 + Pantheon+ it passes at 2σ (Δχ² 6.0, versus 8.8 for Λ).
 - Against Union3 it fails (7.9, versus 14.4 for Λ).
-- Prediction: w₀ ≈ −0.92 to −0.95, w_a ≈ −0.1 to −0.25, and never below −1.
+- Prediction (corrected, D1626a): thawing, never below −1, |w_a| up to ~0.5 near the viability edge.
 - The height V_Λ is still put in by hand, so Λ's size stays OPEN.
 - The "matter phase" (oscillation at the minimum) lies in the future.
 
