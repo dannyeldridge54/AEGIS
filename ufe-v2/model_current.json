@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1478: Janus relation (α_s from n_s, r) → computed",
   "D1479: Origin of the plateau → postulate",
   "D1480: Janus relation (α_s from n_s, r) → computed",
   "D1481: Origin of the plateau → postulate",
@@ -29,7 +28,8 @@
   "D1487: Origin of the plateau → postulate",
   "D1485: Origin of the plateau → postulate (late, recorded only)",
   "D1488: Origin of the plateau → postulate",
-  "D1489: Origin of the plateau → postulate"
+  "D1489: Origin of the plateau → postulate",
+  "D1490: Origin of the plateau → postulate"
  ],
  "open_rechecks": [],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
