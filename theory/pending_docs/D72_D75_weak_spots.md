@@ -14556,3 +14556,12 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - Caveats: the soft-mass picture (D991) and the threshold picture (P3, a weight-2 E(U,2)) are different mechanisms on the same T². It is not shown that one vacuum supplies both. The other session owns P3; nothing there is edited.
 - Verdict: eps_tilt stays estimate. New link eps_tilt ↔ plateau_origin (consistency at O(1) c).
 MAP: node=eps_tilt status=estimate touches=[plateau_origin] ripple=no
+
+## D1387 — WEAVE tick 2: bhk_tilt has no derivation step available (D1275b: Im S·Im ρ is fitted until moduli are stabilised), so it is skipped. lepto_i rechecked at D1247's narrowed ε ≈ 1.40e-4: verdicts unchanged (2026-11-18)
+- **bhk_tilt (L3):** C = (15/64π⁶)N_eff/(Im S·Im ρ) is a meter by construction (D1275b). P3's heterotic frame (D1374/D1375) carries a different object, the weight-2 E(U,2) plateau term with εE* ≈ 0.3–0.5. That is not the 1e-6 tilt, and P3 belongs to the other session. No step this tick.
+- **lepto_i (L4):** D1241 scored leptogenesis at ε 1.3 and 1.6e-4. D1247 later narrowed τ = i to ε ≈ 1.40e-4, and lepto_i was never rechecked there.
+  - [arithmetic, linear interpolation, estimate] m(1.40e-4) ≈ 2.40e11 GeV.
+  - D738's nearest-fail row (c = 1, M₁/m = 0.2): Y ≈ 6.8e-11, still < 8.75e-11, so it stays FAIL.
+  - The single PASS row (c = 1, M₁/m = 0.33) passes at both ends, and its range only widens with m (D1241), so it stays PASS.
+  - Verdict: lepto_i unchanged (inflaton decay marginal, AD robust).
+MAP: node=lepto_i status=estimate touches=[eps_tilt] ripple=no
