@@ -2308,3 +2308,8 @@ Touches: none.
 2. [derived] F₂: E7 with 3×56, b̂ = 0.
 3. [estimate] Unbroken E7 × E7 on F₂ is a tuned locus; N=1 embedding open.
 4. [postulate P3] Concrete N=1 model still missing.
+
+## D1383: KKPR App. A verified
+1. [literature] hep-th/9608034 (A.6, A.13–A.15): K = −log(Im S + (Δ_GS + Y)/16π²), Δ_GS = Σδ(log Im T + log Im U), δ_GS = 0 in N=2; Im S = 1/g²; Y > 0.
+2. [derived] ε = 90/(16π⁵T₂) confirmed; correction: Δ_GS has no η (log U₂ only).
+3. [postulate P3] Model, control and uplift still open.

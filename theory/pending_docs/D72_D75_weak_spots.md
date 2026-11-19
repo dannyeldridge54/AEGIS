@@ -14511,3 +14511,11 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - [estimate] Consequence for the P3 model hunt: the b̂ = 0 E7 exists in smooth K3×T² (N=2), but the clean SL(2,Z) Z₂×Z₂-orbifold framework of P–R/KKPR uses (24,0)-type sectors with b̂ ≠ 0. A (10,14)-type N=2 sector inside an N=1 orbifold/CY (with SL(2,Z) U-plane and δ^U_GS = 0) is the remaining construction.
 - Verdict: the needed gauge sector exists (tuned F₂ locus); the N=1 embedding is still open. P3 stays a postulate.
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1383 — DEEP / LEFT: P3 — D1375's key input VERIFIED from the paper text (KKPR App. A), with one correction: Δ_GS = Σ_α δ^GS_α(log Im T_α + log Im U_α) contains NO η-function (D1375 called it "∝ δ^U_GS log(U₂|η|⁴)" — wrong), and δ^GS_α = 0 in N=2 ground states (2026-11-18)
+- [literature] Kiritsis, Kounnas, Petropoulos & Rizos, hep-th/9608034 (PDF): eq. (A.6) K = −log(Im S + V(T,T̄)) + K⁽⁰⁾; (A.13) V = (Δ_GS + Y)/(16π²); (A.14) Δ_GS = Σ_α δ^GS_α(log Im T_α + log Im U_α) over moduli not fixed by the orbifold; (A.15) δ^GS_α = 0 for N=2 models, V → Y/16π². Normalisation Im S = e^{−2Φ} = 1/g²_string; one loop S = A + i(e^{−2Φ} − V) (A.7). Sign: Δ_i = Δ̂_i − k_iY (1.3, 3.16), Y > 0 (Y(1,1) ≈ 24.4, App. B). (3.27) K⁽¹⁾ = −Y/16π² + κ + κ̄.
+- [derived] Confirms D1375: e^K ∝ 1/(Im S + Y/16π²) with the + sign and Im S = 1/g², so ε = 90/(16π⁵T₂) = 0.01838/T₂ stands (D1366 × 1/16π²).
+- [derived] Correction to D1375: the Green–Schwarz piece is δ^U_GS·log U₂ (no η). It still breaks the clean plateau if δ^U_GS ≠ 0 (a slowly growing log U₂ added to Im S + εE), but it is NOT the s = 1 Ê₁ function. In N=2 ground states it vanishes identically (A.15), so on a plane whose threshold comes from an N=2 sector with no GS action, V = Y/16π² exactly.
+- [estimate] D1372's condition b′_U = kδ^U_GS (from the condensate's η-weight) is separate and still needed for W; the K-side condition is just δ^U_GS = 0.
+- Verdict: the plateau mechanism's literature input is now verified from the source, normalisations fixed. P3 stays a postulate (strong candidate); open: model (b′_U, δ^U_GS for the condensing factor on an SL(2,Z) plane), control at T₂ ≳ 16, uplift.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
