@@ -9,7 +9,7 @@ from tools.serapis_calc.ms import Background
 from tools.janus_calc.core import Model, spectra3
 fam, f = sys.argv[1], float(sys.argv[2]); TR = 8.94e8; SQ2 = math.sqrt(2); YS = 55.64
 E3 = lambda y: E(complex(0.5, y), 1.5).real
-X = {'T1': lambda y: E3(y)**(1/3), 'T2': lambda y: E3(y)**(2/3), 'T3': E3, 'T5': lambda y: E(complex(0.5, y), 2.5).real, 'TB': lambda y: E3(y)/y}[fam]  # TB added by PREREG_SPTILT_T1X
+X = {'T1': lambda y: E3(y)**(1/3), 'T2': lambda y: E3(y)**(2/3), 'T3': E3, 'T5': lambda y: E(complex(0.5, y), 2.5).real, 'TB': lambda y: E3(y)/y, 'TF': lambda y: (y - math.sqrt(3)/2)**2/y}[fam]  # TF added by PREREG_SPTILT_TF  # TB added by PREREG_SPTILT_T1X
 yr = math.sqrt(3)/2; Xr = X(yr); C = f*8e-4/(X(YS) - Xr)
 def Dl(y, h=1e-3):
     L = lambda t: math.log(E3(y*math.exp(t)))
