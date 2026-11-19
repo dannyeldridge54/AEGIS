@@ -15381,3 +15381,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] k 0.15/0.3/0.6/1.2: n_s 0.9521/0.9524/0.9532/0.9540, r 2.57/2.38/1.92/1.35e-5; vacuum at ρ in all. Confirms the LVSDIL PREREG's expectation; its exact runs remain the record.
 - aegis-check: numbers from field_tests/results/D1488_lvsdil_sr.json; ratio to band floor 4.55e-4/2.57e-5 = 17.7, /1.35e-5 = 33.7 ✓; vacuum check k·E_ρ^{2/3} ≥ 0.15·4.29 = 0.64 > ½ ✓; DEVIATIONS D1 written before running; checked: units, arithmetic, like-with-like (same F, path, T_R as LVSDIL run.py), cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1489 — help for the P3 chat: DILTR forecast — robust; DILMIX best point in band for T_R 1e8–1e10
+- [estimate] Form A C = 0 and 1.25e-6: |Δn_s| ≤ 6.2e-4, |Δr/r| ≤ 2.9 % over T_R 1e8–1e10 → robust (DILTR rule); not in band (C 1.25e-6 near). DILMIX (0.375, 1.5e-6): n_s 0.9707–0.9719, r 5.17–5.40e-4, in band at every T_R. Its exact DILTR runs remain the record.
+- aegis-check: numbers from field_tests/results/D1489_diltr_sr.json; T_R = 8.94e8 rows reproduce D1481 A0/A1 and D1485 map (0.375, 1.5e-6) exactly (0.96301/5.582e-4, 0.96717/6.248e-4, 0.97126/5.288e-4 vs 0.9713/5.29e-4) ✓; ΔN* ≈ ±0.75 ≈ (1/4)·ln(10^{±1}·…) scale consistent with N* ∝ ln T_R/3-type dependence [estimate]; checked: units (GeV), arithmetic, like-with-like, cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
