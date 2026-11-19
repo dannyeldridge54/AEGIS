@@ -281,11 +281,12 @@ nodes:
   - D1624
   - D1625
   - D1635
+  - D1636
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D1624: postulate'
   - 'D1625: postulate'
   - 'D1635: postulate'
+  - 'D1636: postulate'
 - id: logderiv_plateau
   layer: 1
   branch:

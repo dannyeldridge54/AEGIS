@@ -16504,3 +16504,10 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - Today's dark-energy prediction is the same for every start (w₀ −0.79, w_a −0.36, acceleration ends at a = 1.23), so data can't tell which ending we are heading for.
 - So the Janus picture is softened honestly: inflation ends at ρ; dark energy usually ends at i, but can end at ρ. The basin boundary is intricate (not a simple cut).
 - MAP: node=thread_endpoint status=computed touches=[] ripple=no
+
+## D1636 — reverse thread vs ΛCDM / w₀w_a with full likelihoods: only DESY5 prefers it; never as good as w₀w_a; tuned window ~1–2 %
+- Full Planck + DESI DR2 BAO + SN (primary): Δχ² vs ΛCDM −1.3 (Pantheon+), −2.6 (Union3), −9.4 (DESY5); ΔAIC +0.7 / −0.6 / −7.4. w₀w_a beats it by 5.8 / 10.4 / 8.3 in AIC. Engine validated against DESI's own w₀w_a numbers (PASS).
+- Compressed-CMB arm agrees in direction, slightly kinder to RT (ΔAIC −0.9 / −3.2 / −8.8).
+- CORRECTION: D1627's "fits all three at w₀ ≈ −0.79" was a Gaussian-approximation result; it does not survive the full likelihood (best fits w₀ ≈ −0.86 … −0.97).
+- Good fit needs u_i inside a ~1–2 % window (tuned). Post-data model; V_Λ by hand; PPF fluid; asymptotic form (D1638: exact curve shifts w_a ~0.03, verdict-safe).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
