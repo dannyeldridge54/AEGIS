@@ -863,16 +863,17 @@
     "D1233",
     "D1232",
     "D1404",
-    "D1411"
+    "D1411",
+    "D1421"
    ],
    "depends": [
     "nstar_e",
     "janus"
    ],
    "history": [
-    "D1232: frozen (late)",
     "D1404: frozen",
-    "D1411: frozen"
+    "D1411: frozen",
+    "D1421: frozen"
    ]
   },
   {
