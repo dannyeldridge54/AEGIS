@@ -791,3 +791,4 @@ D1504  2026-11-19T13:35Z  Tilt T3: tau-dependent flux superpotential W0(tau) as 
 D1505  2026-11-19T13:42Z  Tilt T3b: normalisation check of the xi/V regime flag (D1504) at D1486 benchmarks
 D1506  2026-11-19T13:49Z  Tilt T3c: physical-frame n_s, r vs lambda=1 frame (DILMIX centre, A1)
 D1507  2026-11-19T13:58Z  untitled
+D1508  2026-11-19T13:58Z  untitled
