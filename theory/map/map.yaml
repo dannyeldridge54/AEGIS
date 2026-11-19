@@ -337,11 +337,11 @@ nodes:
   - D1405
   - D1409
   - D1412
+  - D1414
   history:
-  - 'D1405: computed'
   - 'D1409: computed'
   - 'D1412: computed'
-  flag: recheck (D1413, band_i)
+  - 'D1414: computed'
 - id: bhk_tilt
   layer: 3
   branch:
