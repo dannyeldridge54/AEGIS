@@ -15932,3 +15932,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1567 — scope note: our "α′³ next order too big" closure (D1501/T5) is DILMIX-only; in P3-S the BBHL α′³ term gives the tilt (P3 D1566 numbers re-run ✓)
 - aegis-check: 𝒱 range and ξ̂/𝒱 re-run in python ✓; P3 notes read only.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1568 — DIMENSION LADDER stage 1 (D = 9): the circle term 4ζ(2)ν₁ in E⁽⁹⁾ = ν₁^{−3/7}E_{3/2} + 4ζ(2)ν₁^{4/7} turns the τ-plateau from k = 2 toward k = 3/2 as the circle shrinks; untilted r 4.04e-4 (ν₁ = 0) → 4.61e-4 (0.1) → 6.41e-4 (1) → 7.17e-4 (10); the band rung survives only for ν₁ ≲ 0.1 (r_B ≳ 3ℓ₁₀). Map: theory/pending_docs/DIMENSION_LADDER.md
+- Lock field_tests/rules/PREREG_DIM1_9D.md; results field_tests/results/DIM1_9D/; source GRV arXiv:1001.2535 eq. (3.7). Expectation (k → 3/2, r ≈ 6–7e-4 for ν₁ ≥ 1) held.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
