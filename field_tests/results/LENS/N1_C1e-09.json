@@ -1,0 +1,8 @@
+{
+ "lens": "N1",
+ "C": 1e-09,
+ "k_fit": 0.8287041442003484,
+ "V0_rho": 3.594247499413235e-23,
+ "valid": false,
+ "error": "math domain error"
+}
