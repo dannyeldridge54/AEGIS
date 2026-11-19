@@ -16399,3 +16399,10 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - M2: 5 GeV dark baryons have ρ_DM/ρ_rad = 1.1 × 10⁻⁵ at BBN, so they have no effect.
 - Rates: SKM-1993/CF88, cross-checked against PArthENoPE at 0.96–1.05.
 - Verdict: the toolkit now covers H, D, ³He, ⁴He and ⁷Li at textbook level. The lithium problem remains open within the Weave. Recorded as postulate C7: "lithium is depleted in stars (astrophysical), not missing from BBN". This is the mainstream leading explanation, and it adds no new Weave physics.
+
+## D1638 — JANUS genesis G2: the dark-energy thread drawn with the real SERAPIS curve — fits the same, but the edge means something different
+- Locked verdict: DIFFERENT (narrowly). The shortcut curve used in D1626–D1628 is off from the exact v3 curve by ~4 % where it matters; w_a moves by 0.028 (limit 0.02).
+- What stays: the exact curve still fits all three DESI DR2 combinations (worst Δχ² 5.64 ≤ 6.18), at w₀ ≈ −0.79, w_a ≈ −0.36, with the same ~1-in-100 tuned start (window 0.038 vs 0.045).
+- What changes (scope note on D1626–D1628, their text untouched): the exact thread can never go negative. The "rolls into V < 0" edge becomes "the thread reaches the self-dual floor ρ and its energy runs out". The best fits sit just before that floor (amp 0.29 vs edge 0.37), so the "it is ending now" coincidence is real in the exact shape too, and it now has a geometric meaning: today is close to the thread's arrival at ρ.
+- Follow-ups: G2b — what the reverse thread does AT ρ (oscillation about V = 0 with V'' = V_Λ/4 by D1637's 1/4 — mass m_DE = √(V_Λ/4)/M_P ~ H₀; feeds G9). G3 now uses the exact shape.
+- MAP: node=reverse_thread status=postulate touches=[plateau_origin] ripple=no

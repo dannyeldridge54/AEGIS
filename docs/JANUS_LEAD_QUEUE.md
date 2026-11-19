@@ -55,7 +55,7 @@ Scope guard: D1636 (full-likelihood DE fit, other session) is NOT a Janus lead �
 Cycle per lead (one lead per tick): Research → Development → Postulation → Derivation → Postulation check → Referee → Review.
 
 - [done D1637] G1 Reheating from the final equation: inflaton mass at ρ (V'' of the D = 10 potential, canonical ψ) and T_R from Γ ~ m³/M_P² [estimate] vs the 7.389e8 / 9e8 GeV on file — is the number that feeds P-M actually derived from v3?
-- G2 Thread continuity: is the late thread's coefficient (7.30) and slope β = √(D−2) the SAME function as v3's plateau (V ≈ V∞[1 − 7.30 e^{−β_D ψ}]) — derive, or flag P-G as a separate field.
+- [done D1638] G2 Thread continuity: is the late thread's coefficient (7.30) and slope β = √(D−2) the SAME function as v3's plateau (V ≈ V∞[1 − 7.30 e^{−β_D ψ}]) — derive, or flag P-G as a separate field.
 - G3 Starting height: can the ~1 % tuned start (D1628) be set by inflation-era dynamics (frozen field + Hubble friction since reheating)? Postulate check, then compute the frozen value if a mechanism exists; else NULL loud.
 - G4 Z₃ at ρ and the sharing factor n_DM/n_B (D1631's next step): does the residual Z₃ fix it? Literature first; locked test only if a concrete rule exists.
 - G5 Asymmetry source at T_R: Davidson–Ibarra bound vs T_R from G1 [literature + estimate]; which non-thermal route survives.
@@ -67,3 +67,4 @@ Cycle per lead (one lead per tick): Research → Development → Postulation →
 - G11 Console sync: chains/genesis stages updated with G1–G10 results.
 - G12 REFEREE (whole genesis chain, fresh read of every json): pass → loop stops and reports to Danny; fail → the failures become new G-leads.
 - G1b (from D1637) Derive why V''/V∞ = 1/4 exactly at ρ (expected (f')² = 1/8 = λ_sp², the species-scale slope) — analytic, no data.
+- G2b (from D1638) The thread at ρ: oscillation about V = 0 with V'' = V_Λ/4 (D1637's 1/4) ⇒ m_DE ~ H₀ — when it reaches ρ in the future, how fast it becomes matter-like (merge with G9). G3 must use the EXACT v3 shape (D1638).

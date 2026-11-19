@@ -3163,3 +3163,12 @@ Touches: none.
 6. [derived] Feeding the band back into the N_* matching: ΔN_* = −0.05 … +0.49, Δn_s = −4.7e-5 … +4.7e-4 (≤ 0.23 σ_SO), r 5.33–5.42e-4.
 7. [estimate] Caveats: κ is not derived from v3; real-τ line only (axion direction not included); perturbative Eisenstein form near ρ.
 8. [derived] Referee (aegis-check): m, both T_R values and V∞ re-derived from the json to ratio 1.000; band containment re-checked True; units GeV throughout (reduced M_P) ✓.
+
+## D1638 — JANUS genesis G2: the reverse thread with the exact SERAPIS v3 shape (PREREG_D1638_G2_THREAD_SHAPE) — locked verdict DIFFERENT (narrowly); physics unchanged
+1. [postulate P-G'] The late thread is the same function as the v3 plateau (D = 10, β = 2√2, C = 8e-7), at the dark-energy height V_Λ.
+2. [derived] Shape: the exact v3 curve differs from the asymptote 1 − 7.30e^{−2√2φ} by up to 3.8 % for amp ≤ 0.2 and 24.7 % for amp ≤ 0.5. It is ≥ 0 everywhere and touches 1.25e-9 (numerically 0) at ρ: the exact thread never goes negative.
+3. [derived] 300 starting heights (amp 0.01–3): 189 viable; all 111 non-viable points (amp ≥ 0.368) fail because the field reaches the V = 0 floor at ρ before today (no shoot), not because V < 0.
+4. [derived] 3 points pass all three DESI DR2 combinations (D1627 calibration), amp 0.287–0.298 (window Δln amp 0.038; D1628: 3 points, 0.045). Best worst-case Δχ² 5.64 (Pantheon+ 4.98, Union3 5.64, DESY5 5.48) at w₀ −0.789, w_a −0.355; min w −0.991 (thawing, never below −1).
+5. [derived] vs D1628 (asymptotic, β = 2√2): Δw₀ −0.006, Δw_a +0.028, ΔΔχ²_max +0.43. Locked rule needs |Δw_a| ≤ 0.02 and shape deviation < 1 % ⇒ DIFFERENT.
+6. [estimate] Postulation check: P-G' SURVIVES — same fit quality class, same prediction (w₀ ≈ −0.79, w_a ≈ −0.36), same ~1 % tuning. What changes is the reading of the edge: the window sits just below the point where the thread runs out at ρ (amp 0.368), not where V turns negative.
+7. [derived] Referee: counts (300/189/3), best point, Δw_a 0.0281, ΔΔχ² 0.426, w ≥ −1 for every viable run and dmax bookkeeping re-derived from the json ✓.
