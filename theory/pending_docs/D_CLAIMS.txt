@@ -673,3 +673,4 @@ D1386  2026-11-19T01:05Z  Weave tick 1: eps_tilt size from P3 large volume via D
 D1387  2026-11-19T01:06Z  Weave tick 2: lepto_i under D1247 eps 1.40e-4 unchanged; bhk_tilt skipped
 D1388  2026-11-19T01:08Z  Weave tick 3: band_e_audited + serapis_point scored vs current n_s
 D1389  2026-11-19T01:13Z  Weave tick 4: m32_window margin updated to the computed wino window
+D1390  2026-11-19T01:16Z  Weave tick 5: inverse meter applied to today's n_s
