@@ -14565,3 +14565,20 @@ MAP: node=eps_tilt status=estimate touches=[plateau_origin] ripple=no
   - The single PASS row (c = 1, M₁/m = 0.33) passes at both ends, and its range only widens with m (D1241), so it stays PASS.
   - Verdict: lepto_i unchanged (inflaton decay marginal, AD robust).
 MAP: node=lepto_i status=estimate touches=[eps_tilt] ripple=no
+
+## D1388 — WEAVE tick 3: the L5 postulates band_e_audited and serapis_point, scored against the current n_s compilations (2026-11-18)
+- D1331 scored only the frozen band (0.97176–0.97493). The audited box (D1245: n_s 0.9717–0.9760) and the SERAPIS-E point (n_s 0.97439, D1273a) had not been scored against the 2026 numbers.
+- [arithmetic] Pulls (σ):
+  | Combination | band_e_audited (0.9717–0.9760) | serapis_point (0.97439) |
+  |---|---|---|
+  | Planck+ACT+BK+DESI, 0.9743 ± 0.0034 | −0.76…+0.50 | +0.03 |
+  | +SPT, 0.9728 ± 0.0027 | −0.41…+1.19 | +0.59 |
+  | CMB-SPA only, 0.9679 ± 0.0033 | +1.15…+2.45 | +1.97 |
+  - The first two combinations are quoted in 2610.37383; the CMB-SPA-only number is from 2506.20707.
+- Reading:
+  - The point sits on the Planck+ACT+DESI central value.
+  - The audited box's top edge (0.9760) is the only part past 2σ, and only against CMB-SPA alone (+2.45σ). Its top ~0.0010 is the most exposed slice.
+  - Nothing is excluded at the 2σ rule against the DESI-including combinations.
+  - r 4.39–4.90e-4 is far below BK's 0.036.
+- Verdict: both postulates SURVIVE the current data, scored. No status change. The next real test is SO/LiteBIRD (string_meter forecast).
+MAP: node=band_e_audited status=postulate touches=[serapis_point] ripple=no
