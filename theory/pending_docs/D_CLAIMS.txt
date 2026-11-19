@@ -712,3 +712,4 @@ D1425  2026-11-19T04:20Z  JANUS tick 22: vac_discriminant with both sub-percent 
 D1426  2026-11-19T04:26Z  JANUS tick 23: PC job spec for exact-MS checks (docs only)
 D1427  2026-11-19T04:31Z  JANUS tick 24: no CMB+BAO n_s newer than 2512.10613 (NULL)
 D1428  2026-11-19T04:36Z  JANUS tick 25: three bands vs three n_s combinations side by side
+D1429  2026-11-19T04:40Z  JANUS tick 26: band_i epsilon range - audited tau=i reaches only eps 1.39-1.44e-4 (D1247); band corners not model points
