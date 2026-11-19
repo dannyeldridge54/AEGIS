@@ -35,7 +35,7 @@ for ds in ('pantheonplus', 'union3', 'desy5'):
         try: w0s.append(run(float(amp), Om, 0.0, future=False)['w0'])
         except StopIteration: w0s.append(np.nan)
     w0s = np.array(w0s); ok = np.isfinite(w0s)
-    amp_m = float(np.interp(w0t, w0s[ok][::-1], grid[ok][::-1])) if (w0s[ok].min() <= w0t <= w0s[ok].max()) else None
+    amp_m = float(np.interp(w0t, w0s[ok], grid[ok]))  # DEVIATIONS D1 if (w0s[ok].min() <= w0t <= w0s[ok].max()) else None
     r = dict(Om=Om, u_i=ui, w0_D1636=w0t, w0_grid=[float(x) for x in w0s], amp_grid=[float(x) for x in grid], amp_matched=amp_m)
     r['same_u'] = {str(dx): run(ui, Om, dx) for dx in (0.0, 1e-3)}
     if amp_m: r['matched'] = {str(dx): run(amp_m, Om, dx) for dx in (0.0, 1e-3)}
