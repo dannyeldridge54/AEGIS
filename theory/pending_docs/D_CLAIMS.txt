@@ -758,3 +758,4 @@ D1471  2026-11-19T09:06Z  JANUS tick 74: CMB+Lya running (2511.01612) vs derived
 D1472  2026-11-19T09:13Z  JANUS tick 75: SPT-3G D1 n_s/running (2506.20707) vs derived points
 D1473  2026-11-19T09:18Z  JANUS tick 76: data-tensions section on the reference card
 D1474  2026-11-19T09:23Z  JANUS tick 77: summary addendum D1465-D1473
+D1475  2026-11-19T09:25Z  string-calc S5c: P-R universal Y integrated directly - 6piR^2 and 90kappa/(piR^2) confirmed (offset constant to 1e-4 between R=2,3); unexplained constant -0.716
