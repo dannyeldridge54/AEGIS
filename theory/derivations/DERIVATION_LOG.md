@@ -2241,3 +2241,9 @@ Touches: none.
 2. [estimate] Re S* = s₀ + εE(U,2), ε = 90k/(16π⁵T₂).
 3. [derived] V = b/A − b/(s₀ + εE) = (b/A)·x/(1+x), x = (ε/A)(E − E_ρ): the SERAPIS-E plateau (sympy-checked).
 4. [postulate P3] Modular-weight/GS bookkeeping (s = 1 multiplier) and λ value unchecked.
+
+## D1372: modular-weight condition for the plateau
+1. [literature] 2411.06516 eqs. (32–36): W = e^{−3f/b}, f ⊃ (b − δ_GS)log η²; V ∝ 1/((T+T̄)³|η|¹²) diverges at large T.
+2. [derived] U-multiplier [U₂|η(U)|⁴]^p destroys the plateau unless p = 0.
+3. [estimate] p = 0 ⇔ b′_U = kδ^U_GS (no log in the GS-corrected threshold).
+4. [postulate P3] δ^U_GS for the b̂ = 0 E7 plane unknown.
