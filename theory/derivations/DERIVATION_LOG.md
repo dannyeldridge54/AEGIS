@@ -2201,3 +2201,9 @@ Touches: none.
 1. [literature] Casas–Ibáñez 2407.12081: log|η|/G̃₂ species-scale potential, vacuum at i, origin not derived → our E(τ,2)/ρ route is distinct.
 2. [literature] Ciupke–Louis–Westphal 1505.03092: four-derivative terms give V₁ = −e^{2K}T|DW|⁴; a minimum needs a negative operator sign.
 3. [derived] Leading U-shape is Ê₁(U) = −log(U₂|η|⁴) (from R⁴); E₂(U) is next order (D⁴R⁴); both minimal at ρ; sign of the operator decides min vs max.
+
+## D1365: P3 escape via universal thresholds
+1. [literature] Petropoulos–Rizos hep-th/9601037 eqs. (2), (23), (31): Δ_α = −b̂_α log(T₂U₂|η|⁴) − k_α Y(T,U); Y = 6πT₂ + 90κ/(πT₂) + … at U = i.
+2. [derived] κ = E(i,2)/π² (to 4e-10): Y's 1/T₂ term is (90/π³)E(U,2)/T₂ at U = i.
+3. [estimate] Same term for general U (unfolding argument; unchecked).
+4. [postulate P3] Plateau from E(U,2) via a b̂ = 0 condensing factor — model, sign and ratio form not computed.
