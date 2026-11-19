@@ -59,3 +59,8 @@ R is a fifth "thread", the dark-dimension radius. It is tiny during inflation an
 - (a) A radion history: can R stay small through inflation (H ≈ 10¹² GeV) and grow to 7 μm without spoiling BBN or fifth-force bounds?
 - (b) w(z) from a slowly growing R, compared with DESI DR2 w₀w_a.
 - (c) A neutrino sector with bulk right-handed neutrinos: mass scale and mixing, checking whether TM2 survives.
+
+## 7. Test results (D1623, 19 Nov 2026 15:05 CT)
+- Casimir alone: V_E ∝ e^{−4.90φ}, too steep to accelerate (needs < 1.41). The radion must be stabilised, so Λ comes from the minimum and w = −1. No DESI-like evolution from this term alone.
+- Coexisting with Weave inflation: R string-small during inflation, then growth by ~10²⁴–10²⁶ (Δφ ≈ 68–75 M_P) to 7.4 μm, finished before BBN. Casimir pushes the right way, but a stopper is needed.
+- Discriminator: r ≈ 5 × 10⁻⁴ (Weave, with post-inflation decompactification) versus r ≈ 0 (dark-dimension-native 5D inflation at 10⁹ GeV, arXiv:2412.19213).
