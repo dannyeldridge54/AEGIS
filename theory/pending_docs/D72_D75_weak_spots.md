@@ -15073,3 +15073,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] n_s: SO + SPHEREx 7.7–8.0σ (if 0.9682 held) — earliest real decider (~2027+). α_s: ≤ 1.3σ detection.
 - aegis-check: re-ran 4.55e-4/1e-3 = 0.455, 5.7e-4/1e-3 = 0.57, SO+SPHEREx 7.74 (ρ) from D1437 json in python; like-with-like: δr requirement is total (stat+sys) vs D1438's stat-only forecast — that mismatch is exactly the correction; checked: units, arithmetic, cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1441 — JANUS tick 37: SO official σ(n_s) cross-check
+- [literature] 1907.08284 Table 1: SO + Planck σ(n_s) = 0.002 (1σ, systematics-inflated).
+- [derived] Tension if 0.9682 held: 3.10σ (A1), 3.21σ (NA12) from SO alone; 2212.04115's SO σ is 1.4× larger ⇒ D1437/D1440 conservative. SO+SPHEREx still single-source.
+- aegis-check: re-ran (0.974393 − 0.9682)/0.002 = 3.0965, (0.97462 − 0.9682)/0.002 = 3.21, 2.8/2.0 = 1.4 in python; like-with-like: both 1σ, both CMB(+Planck); checked: units, arithmetic, cross-sector: none.
+- MAP: node=band_e status=frozen touches=[] ripple=no

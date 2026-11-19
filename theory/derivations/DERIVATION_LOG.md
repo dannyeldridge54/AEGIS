@@ -2611,3 +2611,9 @@ Touches: none.
 3. [derived] n_s: earliest real 3σ combination is SO + SPHEREx (7.7–8.0σ if CMB-only 0.9682 held, D1437), data ~2027+; next LiteBIRD + CHIME + SPHEREx (≥ 2035).
 4. [derived] α_s: detection ≤ 1.3σ (D1409); exclusion only if positive running near ACT's +0.0062 persisted (SO 2.1–2.2σ).
 5. [estimate] Verdict (locked rule): n_s decides first, via SO + SPHEREx later this decade; r and α_s are not deciders on funded timelines.
+
+## D1441 — JANUS tick 37: SO's own σ(n_s) = 0.002 — D1437/D1440 SO numbers are conservative
+1. [literature] SO Astro2020 whitepaper (arXiv:1907.08284) Table 1, SO-Nominal 2022–27 + Planck, TT/TE/EE: σ(n_s) = 0.002 (baseline = goal; 25 % systematics inflation included); taken as 1σ.
+2. [derived] If CMB-only 0.9682 held: A1 3.10σ, NA12 3.21σ from SO alone (D1437 had 2.2–2.3σ with 2212.04115's 2.8e-3).
+3. [derived] 2212.04115's SO σ is 1.4× the collaboration's ⇒ D1437/D1440's SO-based numbers are conservative, not optimistic.
+4. [estimate] SO + SPHEREx (7.7–8.0σ, D1440) still rests on 2212.04115 alone; no collaboration SPHEREx n_s table reached (ar5iv of 1808.07445 / 2503.00636 not allowlisted). Net: n_s stays the first decider, and SO alone may reach ~3σ before SPHEREx combinations.
