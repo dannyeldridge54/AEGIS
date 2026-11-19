@@ -3076,3 +3076,9 @@ Touches: none.
 
 ## D1525 — the H⁶ ∝ V³ factor in the R⁴ tilt shifts n_s by ≤ 1e-5 (negligible)
 1. [derived] Engine F, three tilts in the D1523 band, T1 vs T2 = V₀(1 + C V₀³(E − E_ρ)): |Δn_s| ≤ 1e-5, |Δr|/r ≤ 0.07 %.
+
+## D1526 — species-scale plateau regime: g_s* ≈ 0.018, Δφ ≈ 2.9 M_P, cutoff drops ×0.46; tilt = C·Λ_sp^{−6} correction of size 8e-4
+1. [derived] y* = 55.6 gives g_s* = 0.018 and Δφ = 2.94 M_P from ρ; Λ_QG(y*)/Λ_QG(ρ) = (998.7/8.893)^{−1/6} = 0.455.
+2. [derived] H = 5.8e12 GeV, so EFT consistency needs fewer than 1.8e11 species in 4D (open: needs the volume).
+3. [derived] The tilt term C(E − E_ρ) equals C(Λ_QG^{−6} − Λ_QG(ρ)^{−6}); at y* it is 7.9e-4 of V.
+4. [estimate] Candidate: R⁴·E_{3/2} on the inflating background, C ~ (H/M_*)^6; obstacle: Weyl-built R⁴ vanishes on pure dS.
