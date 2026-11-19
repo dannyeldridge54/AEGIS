@@ -1,0 +1,5 @@
+# PREREG_RD1_COULOMB — rung R-D1: the Coulomb (Fermi-function) correction to the weak rates (locked D1651, 2026-11-19 16:55 CT)
+Change to BBN v4 (D1640): multiply the Born integrand by the non-relativistic Fermi function F(x) = 2πη/(1 − e^{−2πη}), η = αx/√(x² − 1), on the branches where an electron and a proton share the initial or final state (x > 0 in both n→p and p→n, i.e. n → p e ν̄, ν n → p e⁻, e⁻ p → n ν). Positron branches are uncorrected. The normalisation K is refitted so that the T → 0 n→p rate is still 1/τ_n (with F included). Radiative (zero-T and finite-T) and finite-nucleon-mass corrections are NOT added in this rung; per the literature (e.g. Lopez–Turner 1999; Pitrou et al. 2018) they are each a few × 10⁻⁴ to 10⁻³ in Y_p.
+Pass rules (from the loop plan): Y_p ∈ [0.244, 0.250]; D/H changed by less than 3% relative to v4. Also report ΔY_p from the Coulomb term alone.
+Expectation, written before running: the Coulomb term alone raises Y_p by only ~0.001–0.002, so Y_p ∈ [0.244, 0.250] may FAIL. If so, the remaining gap is recorded and the corrections still missing are named; nothing gets tuned.
+Script: field_tests/scripts/genesis_matter/rd1_run.py
