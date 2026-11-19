@@ -11,12 +11,15 @@ mode, C = sys.argv[1], float(sys.argv[2]); TR = 8.94e8; SQ2 = math.sqrt(2)
 Ef = lambda y: E(complex(0.5, y), 1.5).real
 yr = math.sqrt(3)/2; Er = Ef(yr)
 ph = np.linspace(math.log(yr)/SQ2 + 1e-4, math.log(3000)/SQ2, 4000); ys = np.exp(SQ2*ph)
-D = np.array([(math.log(Ef(y*(1 + 1e-6))) - math.log(Ef(y*(1 - 1e-6))))/(2e-6) for y in ys])
+def Dl(y, h=1e-3):  # DEVIATIONS D1: 5-point stencil in ln y
+    L = lambda t: math.log(Ef(y*math.exp(t)))
+    return (-L(2*h) + 8*L(h) - 8*L(-h) + L(-2*h))/(12*h)
+D = np.array([Dl(y) for y in ys])
 Ev = np.array([Ef(y) for y in ys])
 Vt = (2*D/3)**2*(1 + C*(Ev - Er))
 S = CubicSpline(ph, Vt); dS = S.derivative()
 V = lambda p: float(S(p)); dV = lambda p: float(dS(p))
-chk = dict(V_rho=(2/3*((math.log(Ef(yr*(1+1e-6))) - math.log(Ef(yr*(1-1e-6))))/2e-6))**2)
+chk = dict(V_rho=(2/3*Dl(yr))**2)
 m = (ys > 20) & (ys < 200); chk['k_fit'] = float(-np.polyfit(np.log(ys[m]), np.log(1 - (2*D[m]/3)**2), 1)[0])
 lo, hi = 10, len(ph) - 5; p0 = None
 for _ in range(14):
