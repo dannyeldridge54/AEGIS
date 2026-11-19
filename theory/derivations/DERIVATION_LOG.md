@@ -2271,3 +2271,9 @@ Touches: none.
 2. [derived] δ^U_GS = 0 is realisable; b′_U = 0 is not met by those condensing factors.
 3. [estimate] η(U/N) ⇒ Γ₀(N) U-plane: Eisenstein minimum need not be ρ; need an SL(2,Z) plane.
 4. [postulate P3] SL(2,Z) U-plane with b′_U = δ^U_GS = 0 not yet found.
+
+## D1377: chamber T₂ > U₂*
+1. [literature] P–R: Y's expansion valid for T₂ > U₂; log|j(T) − j(U)| diverges at T = U.
+2. [derived] U₂* = 14.58 (Ê* ≈ 460); corrections 1.3e-4 at T₂ = 16, 1.6e-15 at T₂ = 20; εE* = 0.53–0.28.
+3. [estimate] T₂ ≳ 16–20 heterotic large-volume tension unchecked.
+4. [postulate P3] Model with SL(2,Z) U-plane, b′_U = δ^U_GS = 0 still needed.

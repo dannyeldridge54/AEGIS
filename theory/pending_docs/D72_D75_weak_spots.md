@@ -14458,3 +14458,11 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - [estimate] New caveat: with η(U/N) the modular group of the U-plane is Γ₀(N) (N = 2, 4), not SL(2,Z). The universal Y on such a plane involves the Γ₀(N) lattice sum; its E(·,2)-type term is a Γ₀(N) Eisenstein combination whose minimum need not be at ρ (ρ is a fixed point of SL(2,Z), not generally of Γ₀(N)). Our E(U,2)/ρ structure needs an SL(2,Z)-symmetric U-plane (e.g. symmetric Z₂×Z₂ with no Wilson lines, P–R/KKPR setting).
 - Verdict: GS condition realisable; the remaining model requirement is an SL(2,Z) U-plane with b′_U = δ^U_GS = 0 for the condensing factor. P3 stays a postulate (strong candidate).
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1377 — DEEP / LEFT: P3 — validity chamber of the D1375 mechanism: Y = 6πT₂ + (90/π³)E(U,2)/T₂ + O(e^{−2π(T₂−U₂)}) holds only for T₂ > U₂ (the ½log|j(T) − j(U)| piece diverges at T = U, enhanced symmetry). Horizon exit sits at U₂* ≈ 14.6, so the torus volume must be T₂ ≳ 16–20 — then everything is consistent and ε·E* is O(0.3–0.5) (2026-11-18)
+- [literature] P–R (hep-th/9601037) §3: both the lattice integral and ½log|j(T) − j(U)| diverge logarithmically as T → U (extra massless states); Y finite along the line only in the combination. The large-volume expansion used in D1366 is the chamber T₂ > U₂.
+- [derived] D698: Ê* ≈ 2ζ(4)y*² ≈ 460 ⇒ U₂* = y* = 14.58. Corrections e^{−2π(T₂−U₂*)}: 1.3e-4 (T₂ = 16), 1.6e-15 (T₂ = 20). With ε = 90/(16π⁵T₂): ε = 1.15e-3, 9.2e-4, 6.1e-4 and εE* = 0.53, 0.42, 0.28 for T₂ = 16, 20, 30; the universal constant 6πT₂/16π² = 3T₂/8π = 1.9–3.6 adds to Im S in A (harmless).
+- [derived] So the plateau parameter x* = εE*/A is O(0.1–0.3) for A ~ 2–5 — on the plateau shoulder, consistent with D698's "any 1 − a/Ê" robustness (a = A/ε absorbed into C).
+- [estimate] T₂ ≳ 16–20 in string units is large-volume but still perturbative for heterotic (needs g_s small enough to keep M_GUT/M_s in range — the standard heterotic large-volume tension, not checked here).
+- Verdict: mechanism is self-consistent in the chamber T₂ > U₂* + ~1.5. New quantitative condition: T₂ ≳ 16–20. P3 stays a postulate (strong candidate).
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
