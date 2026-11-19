@@ -354,10 +354,11 @@ nodes:
   - D1442
   - D1443
   - D1444
+  - D1445
   history:
-  - 'D1442: computed'
   - 'D1443: computed'
   - 'D1444: computed'
+  - 'D1445: computed'
 - id: bhk_tilt
   layer: 3
   branch:
