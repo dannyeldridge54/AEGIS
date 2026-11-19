@@ -15512,3 +15512,12 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - Verdict: SMSCAN as a C = 0 family — OUT. Shape result stands: approach exponent s·m is the only r-lever (one-parameter family), consistent with D1484 (two-term area model already killed as single-field). Tilted target zone: D1490/D1495.
 - Bookkeeping: D1514 reserved for the DILTR verdict (1/4 in: A0 at T_R 1e8 → n_s 0.96249, r 5.74e-4; Δ vs 8.94e8: Δn_s −5e-4, Δr/r +2.9 %); D1515 claimed in the same batch and released unused.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1516 — UCHART (fast layer, 64 points): the SERAPIS band selects the approach exponent k ≈ 2 almost uniquely — in band only at k 1.9–2.0 (C ≈ 1.0–1.6e-6); k = 1.5 (single E(τ,3/2) power) and k = 3 (α′³ square) can never reach it at any tilt; exact checks queued
+- Lock: field_tests/rules/PREREG_UCHART.md (+ DEVIATIONS D1: 11 tilt-dominated points flagged INVALID, not rerun). Family: pipeline path with E → y^k, V = e/(e+1)(1 + C e), λ = 1, T_R 8.94e8; engine F = third-order flow + self-consistent N*. Results: field_tests/results/UCHART/F_*.json, band_map_F.json.
+- [computed] In band (grid): (1.9, 1.25e-6) 0.9696 / 5.46e-4; (2.0, 1.0e-6) 0.9693 / 4.92e-4; (2.0, 1.25e-6) 0.9717 / 5.21e-4; (2.0, 1.5e-6) 0.9741 / 5.51e-4. Interpolated in C: k 1.9 → C 1.17–1.48e-6; k 2.0 → C 0.96–1.58e-6.
+- [computed] Untilted row: n_s 0.9600–0.9610 for every k (set by N* ≈ 50); r = 9.7, 6.9, 5.1, 4.4, 4.0, 3.2, 2.6, 1.8 e-4 at k = 1.25 … 3.
+- [computed] k ≤ 1.75: where n_s ≥ 0.969 the r is ≥ 6.2e-4 (too high). k = 1.5 at C 3e-6 still only reaches n_s 0.9693 with r 8.5e-4. k ≥ 2.25: n_s overshoots before r reaches 4.55e-4 ((2.25, 1e-6) 0.9750 / 4.48e-4, just out). k = 3: n_s 0.984 already at C 5e-7 with r 3.2e-4.
+- [estimate] Band edges in k: ≈ 1.85–2.2 (between grid rows). So "two numbers" reads: approach exponent k ≈ 2 (i.e. 1 − V ∝ y^{−2}, the E(τ,2) power) and tilt C ≈ 1–1.6e-6. Every route must deliver k_eff(φ*) ≈ 2 at horizon exit; DILMIX in-band points (D1508/D1510) and D1495's s·m_eff 1.80–2.05 are this condition met by mixing 1.5 and 3.
+- Pending (rule E, rule R): exact MS at (2.0, 1.25e-6), (1.5, 0), (1.75, 1.5e-6), (2.5, 2e-6 — inside the INVALID region, kept as locked) and exact SERAPIS-E at C 1.25e-6 on the PC queue (UCX1–4, UCS1). Until both rules pass, this chart is a fast-engine map, not data-level.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

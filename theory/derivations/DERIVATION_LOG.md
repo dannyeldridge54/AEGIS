@@ -3017,3 +3017,9 @@ Touches: none.
 1. [derived] Eight locked rows (PREREG_SMSCAN): n_s 0.9599–0.9617 at C = 0; r = 1.45e-3, 6.9e-4, 3.9–4.0e-4, 1.8e-4 at s·m = 1, 1.5, 2, 3; spread at fixed s·m ≤ 3 %.
 2. [derived] Log-slope −1.94 between s·m = 1.5 and 2 ⇒ r band 4.55–5.7e-4 ↔ s·m ≈ 1.86–1.66, matching the D1483 forecast (1.7–1.9).
 3. [derived] Pre-registered rule: no point in band or near (n_s gap ≥ 0.0073); n_s requires the SERAPIS tilt, as stated at lock time.
+
+## D1516 — UCHART fast layer: band ⇔ approach exponent k ≈ 2 (1.9–2.0 on grid, ≈ 1.85–2.2 interpolated) with tilt C ≈ 1–1.6e-6
+1. [derived] Pure-power plateau family e = y^k − (√3/2)^k, V = e/(e+1)(1 + C e), 64 grid points (third-order flow, self-consistent N*); 11 tilt-dominated points invalid (DEVIATIONS D1).
+2. [derived] At C = 0, n_s ≈ 0.960–0.961 for all k; r falls from 9.7e-4 (k = 1.25) to 1.8e-4 (k = 3). Tilt raises both n_s and r.
+3. [derived] In band only at k = 1.9–2.0, C 0.96–1.58e-6; k = 1.5 and k = 3 miss at every tilt up to 3e-6.
+4. [estimate] Requirement for any P3 route: k_eff ≈ 2 at horizon exit plus a tilt ≈ 1.3e-6; exact-MS and reduction checks pending.
