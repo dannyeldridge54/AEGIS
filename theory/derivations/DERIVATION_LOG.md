@@ -3250,3 +3250,11 @@ Touches: none.
 8. [estimate] D1638 (other session): the exact v3 curve shifts w_a by ≈ 0.028 relative to the asymptotic 1 − A e^{−βφ} form used here; this is below every AIC gap in step 3 and cannot change a verdict, but the fits are of the asymptotic form.
 9. [estimate] Caveats: the model was formed after DESI DR2 (post-data); V_Λ set by hand (flatness); w(a) fed to CAMB's PPF fluid, not a full scalar-field perturbation solver; compressed arm uses the DESI Appendix-A prior, not full Planck/ACT. Post-data ⇒ none of this counts as evidence for the plateau.
 10. [derived] aegis-check: Δχ², ΔAIC and AIC gaps recomputed from the result jsons (one python pass) ✓; gate and validation re-read ✓; units (θ* in radians/100 convention matched to the prior) ✓; like-with-like: verdicts quoted per arm, primary = full Planck ✓.
+
+## D1657 — JANUS genesis G6c: a massive dark photon rescues P-M (PREREG_D1657_G6C_MASSIVE_DP) — window OPEN
+1. [literature] m' ≤ 2m_e ⇒ only the loop 3γ decay, generically long-lived, decays between BBN and CMB not allowed (1705.00619); ε ≲ 1e-10 ⇒ τ > 1 s and BBN interference (2109.04852); a massless ADM mediator is disfavoured by halo shapes (1711.08251); χχ̄ → A'A' with A' → SM before BBN is a studied ADM setup (2510.13770, 2602.20237).
+2. [derived] Window: 1.022 MeV < m_A' < 5.03 GeV (e⁺e⁻ channel open; symmetric dark-baryon part can annihilate into A'A').
+3. [estimate] Leading-order Γ(A' → e⁺e⁻) (formula not fetched): τ < 1 s needs ε > 3.7e-10 (2 MeV), 1.6e-10 (10 MeV), 5.2e-11 (100 MeV), 1.6e-11 (1 GeV); τ < 0.1 s needs ~3.2× more. Cross-check: ε ≈ 1e-10 ↔ τ ≈ 1 s agrees with 2109.04852's statement.
+4. [estimate] If A' decays before neutrino decoupling its energy returns to the SM bath ⇒ ΔN_eff ≈ 0, removing D1654's exclusion.
+5. [derived] Verdict OPEN: the required ε (≤ 5e-10 at m ≥ 10 MeV) is many orders below O(1e-3); collider/beam-dump limits on ε were NOT fetched (follow-up G6d).
+6. [derived] Referee: ε values recomputed from Γ and ħ; the τ = 1 s ↔ ε ~ 1e-10 match with the literature checked ✓.

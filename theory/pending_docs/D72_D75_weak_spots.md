@@ -16511,3 +16511,9 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - CORRECTION: D1627's "fits all three at w₀ ≈ −0.79" was a Gaussian-approximation result; it does not survive the full likelihood (best fits w₀ ≈ −0.86 … −0.97).
 - Good fit needs u_i inside a ~1–2 % window (tuned). Post-data model; V_Λ by hand; PPF fluid; asymptotic form (D1638: exact curve shifts w_a ~0.03, verdict-safe).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1657 — JANUS genesis G6c: a dark photon with a small mass saves matter genesis
+- If the dark photon weighs between ~1 MeV and 5 GeV and mixes with ordinary light at ε ≳ 10⁻¹⁰, it decays to electrons in under a second — before nucleosynthesis — and hands its energy back to our side. Then there is no dark radiation (ΔN_eff ≈ 0), and D1654's exclusion goes away.
+- The same massive dark photon is what the dark matter needs anyway to burn off its symmetric part (a massless one is disfavoured by galaxy-halo shapes).
+- Open: collider/beam-dump limits on ε (not yet fetched, G6d); the decay-time formula used is the standard textbook one (not fetched).
+- MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no

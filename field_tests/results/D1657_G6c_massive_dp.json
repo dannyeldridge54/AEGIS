@@ -1,0 +1,34 @@
+{
+ "D": "D1657",
+ "mass_window_MeV": [
+  1.0219979,
+  5030.0
+ ],
+ "rows": [
+  {
+   "m_MeV": 2.0,
+   "eps_min_tau_1s": 3.731260412685877e-10,
+   "eps_tau_0p1s": 1.1799281447307196e-09
+  },
+  {
+   "m_MeV": 10.0,
+   "eps_min_tau_1s": 1.645014621636077e-10,
+   "eps_tau_0p1s": 5.201992988650105e-10
+  },
+  {
+   "m_MeV": 100.0,
+   "eps_min_tau_1s": 5.2018862183279004e-11,
+   "eps_tau_0p1s": 1.6449808578956093e-10
+  },
+  {
+   "m_MeV": 1000.0,
+   "eps_min_tau_1s": 1.644980854531006e-11,
+   "eps_tau_0p1s": 5.201886207688091e-11
+  }
+ ],
+ "Q1": true,
+ "Q2": true,
+ "Q3_comfortable": true,
+ "verdict": "OPEN",
+ "dneff_after": "~0 (energy returned to the SM bath before neutrino decoupling) [estimate]"
+}
