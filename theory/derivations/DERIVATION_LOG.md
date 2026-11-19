@@ -2373,4 +2373,4 @@ Touches: none.
 3. [literature] ACT DR6 (arXiv:2503.14454 §4.1, 68%): dn_s/dlnk = 0.0062 ± 0.0052 (P-ACT-LB), 0.0060 ± 0.0055 (P-ACT); consistent with zero.
 4. [derived] Pulls: −1.36σ to −1.38σ (P-ACT-LB), −1.25σ to −1.27σ (P-ACT). Locked rule (|pull| < 2 everywhere): PASS. Prediction is 0.19σ of the data error, so consistent, not yet tested.
 5. [estimate] Because α_s = −2r, a measured running is a second, independent route to r: σ(α_s) ≈ 2e-4 would test the box at ~5σ from zero; the lock's own pre-estimate (≈4e-4, from (1−n_s)²/2) was low by ×2.3.
-
+6. [derived] aegis-check: step 2's match is to −p²r/4 at machine precision and to −2r at 1.9e-5 relative (p = 2.8284 rounds 2√2); no number or verdict changes.

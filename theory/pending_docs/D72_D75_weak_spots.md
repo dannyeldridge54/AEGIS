@@ -14708,5 +14708,6 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [computed] Pulls −1.36 … −1.38σ (P-ACT-LB), −1.25 … −1.27σ (P-ACT). Verdict (locked rule): PASS.
 - Honest reading: the box sits 0.19σ from zero; data mildly prefer positive running, the relation forces negative (−2r). This is consistency, not a test. Discriminating power needs σ(α_s) ≲ 2e-4; record as the requirement for a future score.
 - Pre-lock estimate was wrong by ×2.3 ((1−n_s)²/2 ≈ 4e-4 vs the exact 2r ≈ 9e-4); harmless to the rule, noted in LESSONS.
+- aegis-check (correction, same tick): the grid matches −p²r/4 to machine precision; it matches −2r to 1.9e-5 relative, because the pipeline's p = 2.8284 is 2√2 rounded (DERIVATION_LOG step 2 said "−2r to machine precision" — wording fixed here, no number or verdict changes). Checked: units (dimensionless), arithmetic re-run (α_s −9.7998e-4, pull −1.3808 at the r = 4.90e-4 corner), like-with-like (both at the CMB pivot, 68% CL, full ACT error), limits (r → 0 gives α_s → 0), cross-sector: none touched.
 MAP: node=band_e_audited status=postulate touches=[janus] ripple=no
 
