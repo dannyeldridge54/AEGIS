@@ -67,7 +67,7 @@ The inflation sector gives exactly 0 at ρ. [der] The observed Λ_obs ≈ 10⁻�
 | equipartition √2 (flavour) | principle P-F1 |
 | same principle on the flavour modulus | principle P-F2 |
 | δ = 2/9 | empirical; holds as δ = Q/3 to ~1σ (D1598), so one principle (equipartition) would fix both Koide numbers |
-| neutrino modulus at i | principle P-F3 |
+| neutrino modulus at i | NATURAL OUTCOME (D1607/D1610): a slow modulus on the same potential drains to i for 69% of the domain; P-F3 reduced to "the neutrino modulus is slow and obeys the same potential" |
 | candidate unifier P-W: s = 3/2 gives Q = 1/s, δ = 1/(3s), and the 1/3 of the Zhinü identity | pattern only (numerology risk), D1603; tested D1604: five locked E(τ,3/2) orbit constructions do NOT produce N_eff = 3/2 at any distinguished point |
 | CKM phase with θ̄ = 0: mechanism imported (anomaly-free weights, generic τ_q); its Weave origin open; Λ_obs open | open terms |
 | θ̄ quantised to {0, π} at ρ | derived |

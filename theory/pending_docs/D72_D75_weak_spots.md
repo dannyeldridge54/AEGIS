@@ -16185,3 +16185,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - Dimension Ladder v1 (new): doi:10.5281/zenodo.24378259 (md5 bccf73dd5b5d27982d50568e38c81fb0). 5D eigenvalue −18 (D1572b).
 - No numbers changed in v1.1. The basins rerun (D1607 DEVIATIONS D1) is running and goes into flavour v2. Note: commit af7962da was titled without a D-number (the claim was blocked by the running job's output file); this note D1609 is its record.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1610 — D1607 RESULT (locked PREREG_BASINS + DEVIATIONS D1): slow moduli drain to i for 69% of hyperbolic area ⇒ P-F3 "dynamically natural" (criterion f_i ≥ 0.25, set in advance: PASS)
+- [computed] Validation 2.1e-10. Set B (2000 area-uniform starts, seed 7): f_i = 0.6895, f_ρ = 0.3105, other = 0. Set A (y = 3 line): x ∈ [0, 0.355] → i (143/201), x ∈ [0.3575, 0.5] → ρ (58/201); boundary x ≈ 0.356. Results: field_tests/results/YFORK/basins.json and basins_partial.jsonl.
+- [derived] Picture: the ρ basin is a strip around the CP-symmetric line x = ½, the line the inflaton falls along (so the inflaton reaches ρ, D1606); a slow modulus starting at a generic position reaches i about 2 times in 3. The assignment "neutrino modulus at i" (P-F3) is now the natural outcome of the same potential, not an independent postulate. It still assumes the neutrino modulus is slow (overdamped) and obeys the same Zhinü potential (P-F2).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
