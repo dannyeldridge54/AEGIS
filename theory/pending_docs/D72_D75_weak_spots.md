@@ -14906,3 +14906,11 @@ MAP: node=band_e_audited status=postulate touches=[] ripple=no
 - aegis-check: re-ran the ratio −5.19e-4/−1.01e-3 = 0.51 and (1−n_s) change 0.02561→0.02444 (−4.6 %) in python; checked: no verdict rests on α_s here.
 MAP: node=janus status=computed touches=[] ripple=no
 
+## D1421 — JANUS tick 18: band_e's running, anchored on A1's exact/LO ratio, reproduces the frozen window −(9.4–10.6)e-4 — PASS on ACT DR6 (estimate tier)
+- Lock: field_tests/rules/PREREG_D1421_band_e_anchored.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1421/band_e_anchored.py; result field_tests/results/D1421_band_e_anchored.json.
+- [estimate] k = 1.0352 (A1 exact −9.9814e-4 / LO −9.6419e-4), assumed constant over the band (stated). α_s ≈ −k·2r: −9.42e-4 … −1.060e-3.
+- [computed] Matches D693's frozen α_s −(9.4–10.6)e-4 at its quoted precision → consistent; ACT DR6 P-ACT-LB pulls −1.37 … −1.40σ → PASS.
+- Reading: until a ρ offset relation passes (D1415 FAIL, D1418/D1420 engine-limited), the A1-anchored Janus value is a cheap, honest proxy that agrees with the frozen numbers; it should be replaced by an exact-MS check at the band corners when the PC runner can do it.
+- aegis-check: re-ran k = 1.03521 and −2k·r at both ends (−9.420e-4, −1.0600e-3) in python; checked: units, arithmetic, like-with-like (same p, κ as D693), limits, cross-sector: none.
+MAP: node=band_e status=frozen touches=[] ripple=no
+

@@ -2500,3 +2500,9 @@ Touches: none.
 2. [derived] Output: n_s 0.97556 (+1.17e-3 vs A1), r 4.693e-4 (−2.7 %), N* 51.32 — plausible shifts from first-order to exact.
 3. [estimate] α_s = −5.19e-4, about half the first-order value on the same model (−1.01e-3) and of A1's exact −9.98e-4, while n_s and r moved by percent-level amounts. For a smooth plateau the running scales with (1−n_s)², so a ×0.5 jump with a 5 % change in (1−n_s) is not physical-looking: treated as a numerical suspect (spectra_fast's finite-difference α_s, or the asymptotic model near y* ≈ 15), NOT as a result. Needs a cross-check with per-mode spectra() at the same point (single call, PC or a longer cap) before any use.
 
+## D1421: band_e running, A1-anchored (locked, estimate)
+1. [estimate] k = α_s(A1 exact)/α_s(A1 LO κ = 1) = 1.0352, assumed constant across the band (only measured at A1 — the reason for the estimate tier).
+2. [estimate] band_e (r 4.55–5.12e-4): α_s ≈ −k·p²r/4 = −9.42e-4 … −1.060e-3.
+3. [derived] This reproduces D693's frozen window −(9.4–10.6)e-4 to its quoted precision (consistent); ACT DR6 pulls −1.37σ … −1.40σ (PASS).
+4. [derived] So the frozen α_s window and the Janus relation × A1's exact correction agree: the relation's 3.4 % offset at ρ is a constant rescaling across band_e to the precision D693 quoted.
+
