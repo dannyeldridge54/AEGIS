@@ -654,3 +654,4 @@ D1367  2026-11-19T00:19Z  P3: b-hat=0 candidate - E7 with 3x56 in heterotic K3xT
 D1368  2026-11-19T00:20Z  P3: condensate sign puts the minimum at rho; leading shape is exp(cE), not the plateau ratio
 D1369  2026-11-19T00:21Z  P3: which structure gives the -a/E(U,2) term (D699 form); sign check of 3 candidates
 D1370  2026-11-19T00:22Z  P3: inverse-metric route - exact no-scale V with BHK dK gives u^2/(2u+3), no plateau
+D1371  2026-11-19T00:24Z  P3: dilaton shifted by threshold gives V = b/A * x/(1+x) - the SERAPIS plateau form
