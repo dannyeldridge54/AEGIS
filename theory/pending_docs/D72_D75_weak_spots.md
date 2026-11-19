@@ -15166,3 +15166,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Next: band_e formula with an n_s term; SO-axis α_s windows. Awaiting Danny: PC jobs J1–J4, band_i_audited.
 - aegis-check: summary only — numbers read from the D1452/D1453/D1454 result jsons this tick; checked: labels, like-with-like.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1456 — JANUS tick 52: α_s windows conditioned on SO n_s ± 0.002
+- [derived] ρ (tilt line, T_R 5.455e8): α_s −1.0496e-3 … −9.565e-4 (9.3 %); τ = i (NA12 line): −8.726e-4 … −8.342e-4 (4.5 %); windows separate (gap 8.4e-5).
+- [estimate] Gap = 0.025σ for SO's σ(α_s) 3.3e-3 — theory-only separation; ρ window excludes the T_R spread (would widen). vac_discriminant stays killed (D1449).
+- aegis-check: numbers from the result json; gap −9.5654e-4 − (−8.7256e-4) = −8.4e-5 in python; like-with-like: each vacuum on its own exact chain; caveat that A1 is on a different T_R line stated; checked: units, arithmetic, cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no

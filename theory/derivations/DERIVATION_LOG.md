@@ -2705,3 +2705,9 @@ Touches: none.
 3. [derived] band_e (ρ model, r 4.55–5.12e-4): α_s −1.0653e-3 … −9.412e-4; P-ACT −1.285 … −1.262σ, P-ACT-LB −1.397 … −1.373σ; edges −0.09 %/+0.49 % vs D1421 — CONFIRMED at the 0.5 % limit; the derived model's 0.55 % n_s dependence at fixed r is what the r-only formula lacks (D1454).
 4. [derived] Net: every band passes ACT at ~1.24–1.40σ (theory negative, data leaning positive); no band verdict changed. The fitted/closed-form meters are good to ≤ 0.5 % over the frozen bands.
 5. [estimate] Open: band_e formula with the n_s term (next); funded-survey α_s windows; PC jobs J1–J4 and band_i_audited await Danny.
+
+## D1456 — JANUS tick 52: α_s window per vacuum once SO measures n_s to ±0.002
+1. [derived] Chains (exact rows): ρ tilt line at T_R 5.455e8: dr/dn_s = 0.01163 (fit residual ≤ 0.04 %); τ = i NA12 ε line: dr/dn_s = 0.01613 (≤ 0.03 %).
+2. [derived] Derived second-order models at n_s = centre ± 0.002 (all converged): ρ (centre 0.974393, r on this chain 4.846e-4 — A1 itself sits on the T_R 7.39e8 line at 4.821e-4, 0.5 % lower α_s; stated): α_s −1.0496e-3 … −9.565e-4 (width 9.3 % of |α_s|); τ = i (centre 0.97462): −8.726e-4 … −8.342e-4 (width 4.5 %).
+3. [derived] The conditioned windows do not overlap (gap 8.4e-5): an SO n_s measurement would sharpen each vacuum's α_s prediction to a narrow, distinct window.
+4. [estimate] But both windows (and the gap) sit far below any funded α_s precision (SO σ 3.3e-3, i.e. the gap is 0.025σ) — the separation is a statement about the theory, not a test; the T_R spread on the ρ side (not included here) widens its window further. Consistent with D1449 (vac_discriminant stays killed).
