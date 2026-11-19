@@ -2873,3 +2873,9 @@ Touches: none.
 2. [derived] a ≈ 5e2–2e5 ⇒ y* ≈ 1.5e3–8e4 (g_s* ≈ 1e-5–7e-4), Δφ ≈ 5–8; M_s, M_KK ≫ H = 6.2e12 GeV.
 3. [estimate] Vacuum at g_s ≈ 1.15 uncontrolled; super-Planckian excursion; C_phys source open.
 4. [postulate P3] Route alive with flags.
+
+## D1487: triality check; prime structure of lattice zetas
+1. [literature] hep-th/9508094, hep-th/9608012: triality exact in N = 4; N = 2 maps keep loop order.
+2. [derived] Triality is not the D1406 placement mechanism.
+3. [derived] E(ρ,s) = (√3/2)^s·6ζ(s)L(s,χ₋₃) (1e-14); E8 = 240·2^{−s}ζ(s)ζ(s−3) (exact).
+4. [postulate P3] Unchanged.
