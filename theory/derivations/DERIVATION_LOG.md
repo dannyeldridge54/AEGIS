@@ -2342,3 +2342,8 @@ Touches: none.
 2. [derived] V = L·W_S² − 2WW_S + (c − 2W²)/L (sympy): uplift + plateau + linear tilt.
 3. [derived] C = 1.25e-6 ⇔ W_S/W ≈ −2.2e-3 (T₂ = 16).
 4. [postulate P3] S stabilisation compatible with that ratio unchecked.
+
+## D1395: racetrack toy (locked)
+1. [derived] 48 S-minima, all W_S/W·L ≈ 0.76–0.99 (SUSY point), A₀ < 0 in all; 0 qualifying.
+2. [derived] At D_SW = 0, V = (c − 3W²)/L: no L-independent uplift.
+3. [postulate P3] Uplift needs a sector not scaling as 1/L.
