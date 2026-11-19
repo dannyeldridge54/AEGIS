@@ -16341,3 +16341,10 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - MAJOR prior art found: quintessential α-attractors (Linder 1505.00815; Akrami–Kallosh–Linde–Vardanyan 1712.09693; Borys–Masias–Scalisi 2606.02701, "Quintessential α-attractors fit DESI", which already notes a double fine-tuning). Our β = 2√2, 2, √2 correspond to α = 1/12, 1/6, 1/3, inside their preferred ranges. The paper presents ours as an instance of that class. What is ours: A = 7.30 and the tilts from the inflation sector; the sourced-calibration scores; the ~1% tuning window.
 - Paper: papers/reverse_thread/Eldridge_reverse_thread_2026.pdf (2 pages, md5 42637c10872476672cf392d9b64d119c).
 - (D1630 addendum) PUBLISHED on Danny's "publish it" (15:22): "The Reverse Thread …", doi:10.5281/zenodo.24380387, PDF md5 42637c10872476672cf392d9b64d119c (verified on Zenodo), CC BY-NC-SA 4.0, open access.
+
+## D1631 (RIGHT, 19 Nov 2026) — matter genesis: one asymmetry for dark and visible matter (P-M = asymmetric dark matter), plus the element ladder through time
+- Doc: theory/pending_docs/WEAVE_MATTER_GENESIS.md.
+- [computed] Ω_DM/Ω_b = 5.36 (Planck), so m_DM = 5.03 GeV at equal number sharing; 1.7–15 GeV for sharing factors 3 to 1/3.
+- [lit] ADM: 0901.4117, 1305.4939, 1308.0338. Element ladder: standard BBN, stellar, s- and r-process nucleosynthesis; fission of A > 260 nuclei in r-process stars (Roederer et al. 2023; review 2304.01850).
+- Flags: the shared part is the origin only (DM makes no elements); T_rh = 9e8 GeV is just below the thermal-leptogenesis bound; ΔN_eff for a mirror sector.
+- Verdict: CANDIDATE (known class mapped onto the Weave). Next: lock a test of whether the Z₃ at ρ fixes the sharing factor.
