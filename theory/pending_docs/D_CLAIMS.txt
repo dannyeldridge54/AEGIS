@@ -929,3 +929,4 @@ D1641  2026-11-19T22:26Z  JANUS genesis G1b: why V''/V_inf = 1/4 at rho - ellipt
 D1642  2026-11-19T22:27Z  untitled
 D1643  2026-11-19T22:28Z  untitled
 D1644  2026-11-19T22:32Z  JANUS genesis G9+G2b: the reverse thread's future at rho - end of acceleration, oscillation, matter-like late phase (exact v3 shape)
+D1645  2026-11-19T22:35Z  untitled
