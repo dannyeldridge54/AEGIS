@@ -3054,3 +3054,7 @@ Touches: none.
 2. [derived] Logarithmic slopes along y = 1/g_s (sympy): warped/stabilised throat ∝ e^{−(8πK/3M)y} ⇒ d ln V/d ln y = −(8πK/3M)y < 0; throat modulus held fixed (Eq. 2.20) ⇒ V_up ∝ y, slope +1; D-term ∝ g_s^p ⇒ slope −p.
 3. [estimate] Needed: a positive term ∝ g ∝ y^{3/2} with coefficient ~1.3–2e-6 per unit g (D1510). Warped anti-D3 and D-term: wrong sign (they lower V as y grows, a red tilt). Fixed-Z anti-D3: right sign but slope 1 (not 3/2) and O(1) size — the uplift tuned to cancel V at ρ (y_ρ = 0.866) would grow by y*/y_ρ ≈ 3.6e3 at horizon exit (y* ≈ 3116), swamping the plateau instead of tilting it by ~1e-4. No standard uplift supplies the tilt naturally.
 4. [derived] P3 DILTR A1 at T_R 1e8: exact 0.966597 / 6.4007e-4 vs D1489 0.966593 / 6.3996e-4 (Δn_s −3.8e-6, Δr/r −0.018 %) ⇒ AGREE. Track record 21 points, |Δn_s| ≤ 5.3e-6.
+
+## D1514 — DILTR: axio-dilaton form A is reheating-robust (|Δn_s| ≤ 6.2e-4, |Δr|/r ≤ 2.9 % over T_R 1e8–1e10)
+1. [derived] Four locked runs (A0, A1 × T_R 1e8, 1e10) against T_R 8.94e8: N* 49.6–51.1, Δn_s −0.00058…+0.00062, Δr −2.9…+2.7 %.
+2. [derived] PREREG_DILTR rule: robust; no point in band; A1 remains near. Reheating is not a route into the band for form A.

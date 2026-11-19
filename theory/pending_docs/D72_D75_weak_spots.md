@@ -15571,3 +15571,11 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] No standard uplift gives a small positive tilt ∝ y^{3/2}; tilt source remains open after T1–T4 (BHK too small, α′³ next order too big, F⁴ wrong shape, flux not a tilt, uplift wrong sign/too big).
 - aegis-check: formulas read from 2010.15903 this tick; slopes by sympy; 3116/0.866 = 3598 (python) ✓; DILTR A1 1e8 difference re-run ✓; cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1514 — DILTR complete (4/4): the axio-dilaton near-band point is ROBUST to reheating — over T_R 1e8–1e10, |Δn_s| ≤ 6.2e-4 and |Δr|/r ≤ 2.9 % (N* 49.6–51.1); none in band, A1 stays "near"
+- Lock: field_tests/rules/PREREG_DILTR.md (number reserved in D1513). Results: field_tests/results/DILTR/{A0,A1}_TR{1e+08,1e+10}.json (PC runs; PC writes them under results/DILATON32/), bases DILATON32/A0.json, A1.json (T_R 8.94e8).
+- [computed] A0 (C = 0): T_R 1e8 → n_s 0.96249, r 5.736e-4 (Δ −0.00052, +2.73 %); 1e10 → 0.96357, 5.422e-4 (+0.00056, −2.89 %); base 0.96301 / 5.583e-4.
+- [computed] A1 (C 1.25e-6): 1e8 → 0.96660, 6.401e-4 (−0.00058, +2.43 %); 1e10 → 0.96779, 6.089e-4 (+0.00062, −2.56 %); base 0.96717 / 6.249e-4.
+- Rule applied ("robust" if |Δn_s| ≤ 0.002 and |Δr|/r ≤ 10 %): ROBUST. In band: none. "Near" (PREREG_SMSCAN): both A1 rows yes (n_s gap 0.0012–0.0024, r ≤ 7.4e-4); A0 rows no.
+- Reading: T_R moves N* by ±0.8 and shifts the point along the n_s–r direction only slightly; reheating cannot carry form A into the band (it would need Δn_s ≈ +0.002 with r falling 20 %). T_R is not a free lever for the dilaton route.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
