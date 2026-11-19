@@ -1485,14 +1485,16 @@
     "D1631",
     "D1632",
     "D1650",
-    "D1660"
+    "D1660",
+    "D1661"
    ],
    "depends": [
     "genesis_reheating"
    ],
    "history": [
     "D1650: postulate",
-    "D1660: postulate"
+    "D1660: postulate",
+    "D1661: postulate"
    ]
   },
   {
@@ -1587,7 +1589,7 @@
     "D1657: estimate",
     "D1659: estimate"
    ],
-   "flag": "recheck (D1660, matter_genesis)"
+   "flag": "recheck (D1661, matter_genesis)"
   }
  ]
 }
