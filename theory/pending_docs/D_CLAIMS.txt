@@ -924,3 +924,4 @@ D1636  2026-11-19T21:53Z  Full-likelihood fit: reverse-thread thawing DE vs LCDM
 D1637  2026-11-19T22:14Z  JANUS genesis G1: reheating temperature from the final SERAPIS equation (inflaton mass at rho, gravitational decay) vs the assumed T_R = 8.94e8 GeV
 D1638  2026-11-19T22:17Z  JANUS genesis G2: is the reverse thread the same curve as the SERAPIS v3 plateau? exact-shape rerun vs the asymptotic 1-7.30e^-beta phi
 D1639  2026-11-19T22:18Z  untitled
+D1640  2026-11-19T22:20Z  untitled
