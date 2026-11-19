@@ -14821,3 +14821,15 @@ MAP: node=janus status=computed touches=[band_i, band_e, band_e_audited] ripple=
 - [estimate] Likely cause: α_s is a second derivative of the spectrum taken by finite differences over the 9-point dlnk stencil on spectra with ~1e-6 noise (adaptive ODE tolerances, different machines/threads); n_s and r (first-order) are stable. Frozen-band gates use only n_s and r, so no locked verdict is affected; any α_s claims (e.g. the α_s rows of the SERAPIS card, the Janus relation checks) need the fixed estimator.
 - Action: open item "α_s estimator precision" — fit a quadratic in ln k over a wider window or tighten the MS solver tolerance; lock before changing. Not done here.
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1411 — JANUS tick 9: band rechecks after the janus ripple (D1405–D1409) — no band value changes; three flags cleared
+- Not a computation (no lock): the Janus results attach runnings and data scores to the bands; they never feed back into the bands' n_s or r (the potential and N* define those, D1233/D1245/D1262).
+- band_e: n_s 0.970–0.975, r 4.55–5.12e-4, frozen — unchanged; carries α_s = −2r (κ = 1), D1404 PASS on CMB + DESI.
+- band_i: n_s 0.970–0.975, r 4.8–5.7e-4, frozen — unchanged; carries α_s at κ = ½ (D1402a), PASS on CMB + DESI.
+- band_e_audited: n_s 0.9717–0.9760, r 4.39–4.90e-4, postulate — unchanged; D1399 + D1407 PASS on CMB + DESI, CMB-only 67 %.
+- Common caveat recorded on all three: they pass with DESI BAO and their top edges are >2σ high on CMB alone (D1402–D1407); D1409: the 2030s can exclude the family through positive running, not confirm it.
+- aegis-check: no numbers derived here; values copied from the map titles and re-read; checked: nothing to re-run.
+MAP: node=band_e status=frozen touches=[] ripple=no
+MAP: node=band_i status=frozen touches=[] ripple=no
+MAP: node=band_e_audited status=postulate touches=[] ripple=no
+

@@ -126,11 +126,12 @@ nodes:
   - D1401a
   - D1403
   - D1406
+  - D1410
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D1401a: postulate'
   - 'D1403: postulate'
   - 'D1406: postulate'
+  - 'D1410: postulate'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -671,15 +672,15 @@ nodes:
   - D1343
   - D1402
   - D1402a
+  - D1411
   depends:
   - nstar_i
   - janus
   note: corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)
   history:
-  - 'D1343: computed'
   - 'D1402: frozen'
   - 'D1402a: frozen'
-  flag: recheck (D1409, janus)
+  - 'D1411: frozen'
 - id: band_e
   layer: 5
   branch:
@@ -697,14 +698,14 @@ nodes:
   - D1233
   - D1232
   - D1404
+  - D1411
   depends:
   - nstar_e
   - janus
   history:
-  - 'D1233: frozen'
   - 'D1232: frozen (late)'
   - 'D1404: frozen'
-  flag: recheck (D1409, janus)
+  - 'D1411: frozen'
 - id: band_e_audited
   layer: 5
   branch:
@@ -716,17 +717,17 @@ nodes:
   - D1388
   - D1399
   - D1407
+  - D1411
   depends:
   - nstar_e
   - reheat_rho
   - serapis_e
   - band_e
   history:
-  - 'D1388: postulate'
   - 'D1399: postulate'
   - 'D1407: postulate'
+  - 'D1411: postulate'
   note: web loop postulate 1; scored only on future data
-  flag: recheck (D1409, janus)
 - id: serapis_point
   layer: 5
   branch:

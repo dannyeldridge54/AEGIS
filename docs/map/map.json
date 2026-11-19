@@ -140,13 +140,14 @@
     "D1401",
     "D1401a",
     "D1403",
-    "D1406"
+    "D1406",
+    "D1410"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D1401a: postulate",
     "D1403: postulate",
-    "D1406: postulate"
+    "D1406: postulate",
+    "D1410: postulate"
    ]
   },
   {
@@ -822,7 +823,8 @@
     "D1247",
     "D1343",
     "D1402",
-    "D1402a"
+    "D1402a",
+    "D1411"
    ],
    "depends": [
     "nstar_i",
@@ -830,11 +832,10 @@
    ],
    "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)",
    "history": [
-    "D1343: computed",
     "D1402: frozen",
-    "D1402a: frozen"
-   ],
-   "flag": "recheck (D1409, janus)"
+    "D1402a: frozen",
+    "D1411: frozen"
+   ]
   },
   {
    "id": "band_e",
@@ -854,18 +855,18 @@
     "D1231",
     "D1233",
     "D1232",
-    "D1404"
+    "D1404",
+    "D1411"
    ],
    "depends": [
     "nstar_e",
     "janus"
    ],
    "history": [
-    "D1233: frozen",
     "D1232: frozen (late)",
-    "D1404: frozen"
-   ],
-   "flag": "recheck (D1409, janus)"
+    "D1404: frozen",
+    "D1411: frozen"
+   ]
   },
   {
    "id": "band_e_audited",
@@ -879,7 +880,8 @@
     "D1245",
     "D1388",
     "D1399",
-    "D1407"
+    "D1407",
+    "D1411"
    ],
    "depends": [
     "nstar_e",
@@ -888,12 +890,11 @@
     "band_e"
    ],
    "history": [
-    "D1388: postulate",
     "D1399: postulate",
-    "D1407: postulate"
+    "D1407: postulate",
+    "D1411: postulate"
    ],
-   "note": "web loop postulate 1; scored only on future data",
-   "flag": "recheck (D1409, janus)"
+   "note": "web loop postulate 1; scored only on future data"
   },
   {
    "id": "serapis_point",

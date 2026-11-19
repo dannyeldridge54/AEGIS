@@ -2445,3 +2445,9 @@ Touches: none.
 2. [derived] α_s differs up to 2.4e-4 between identical runs (D1397 R0 too).
 3. [estimate] Finite-difference second derivative on ~1e-6 spectrum noise; gates unaffected.
 4. [postulate P3] Unchanged.
+
+## D1411: band rechecks after the janus ripple
+1. [derived] The bands (band_e, band_i, band_e_audited) are defined by (n_s, r) ranges from the potential (D1233/D1245/D1262); D1399–D1409 compute runnings FROM those ranges via the Janus relation and score them on data. No step feeds back into n_s or r.
+2. [derived] Values unchanged: band_e n_s 0.970–0.975, r 4.55–5.12e-4; band_i n_s 0.970–0.975, r 4.8–5.7e-4; band_e_audited n_s 0.9717–0.9760, r 4.39–4.90e-4. New attached facts only: α_s (κ per vacuum, D1405), end-2025 scores (D1402/D1402a, D1404, D1407), testability (D1409).
+3. [derived] Flags band_e, band_i, band_e_audited (recheck after D1409) cleared on this basis.
+
