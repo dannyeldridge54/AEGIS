@@ -839,3 +839,4 @@ D1551  2026-11-19T15:58Z  own-derivation c6 D7 flux tilt sign
 D1552  2026-11-19T16:04Z  DUAL lens switch 10D vs 8D
 D1553  2026-11-19T16:26Z  ANGLE trajectory tilt
 D1554  2026-11-19T16:28Z  LENS ladder complete
+D1555  2026-11-19T16:36Z  Janus L2: tensor tilt n_t at second order and consistency deviation n_t + r/8, both vacua
