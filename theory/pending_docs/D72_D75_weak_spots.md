@@ -15058,3 +15058,10 @@ MAP: node=janus status=computed touches=[] ripple=no
 - Caveat: r = 0 fiducial ignores tensor cosmic variance/delensing at r ≈ 5e-4 — optimistic; halving S still ≥ 3.8σ.
 - aegis-check: re-ran S(4.55e-4, LiteBIRD one-sided) = 7.64, S(5.7e-4, two-sided) = 11.40, S4 two-sided 0.26 in python; checked: units, arithmetic, like-with-like (same paper, same table), limits, cross-sector: none.
 - MAP: node=band_e status=frozen touches=[] ripple=no
+
+## D1439 — JANUS tick 35: ρ offset closed form
+- [derived] α_s = −2r·[1 + 4w(1 − t) − 6Bw/(1 + t)], t = (ρ − 1)/(ρ + 1), w = (1 − n_s)/(16(1 − t)), B = 1 − E(ρ,2) = −4.783 (first-order SR, relative order w, Bw).
+- [derived] A1: −1.01795e-3 — matches D1415's numerical model to 0.13 % (VALID) but +1.98 % vs exact (FAIL, as locked/expected). Offset piece +4.94 %, plateau piece +0.64 %.
+- [estimate] Meter unchanged (Janus × 1.0352, D1423); sub-percent needs second-order SR from a complete source.
+- aegis-check: re-ran −2r(1 + 0.0064 + 0.0494) = −1.01795e-3, ratios +0.13 % / +1.98 % in python; limits: B → 0 gives the pure-plateau numerical value to 2e-5, w → 0 gives D1399's −2r; sign of offset (B < 0 deepens running) agrees with D1414; checked: units, arithmetic, like-with-like (same (n_s, r) as D1415), cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no

@@ -2597,3 +2597,10 @@ Touches: none.
 3. [estimate] σ(r) = UL/1.645 (one-sided) … UL/1.96 (two-sided). S = r/σ: SO 0.08–0.11σ, S4 0.22–0.34σ, LiteBIRD 7.6–9.1σ at r = 4.55e-4 and 9.6–11.4σ at 5.7e-4.
 4. [estimate] Verdict (locked rule): decided by r — LiteBIRD reaches ≥ 5σ even at the band floor; SO/S4 alone cannot see it. A LiteBIRD non-detection (r < 1e-4, 95 %) kills band_e and band_i.
 5. [estimate] Caveat: σ at fiducial r = 0 ignores tensor cosmic variance and delensing residuals at r ≈ 5e-4 ⇒ S is optimistic; even halved it stays ≥ 3.8σ.
+
+## D1439 — JANUS tick 35: ρ closed form (D640 pattern) — valid for its model, FAIL vs exact A1
+1. [derived] With w = 1/(A y² + B) the offset model is exact in w: dw/dφ = −2√2 w(1 − Bw). First-order slow roll, C = t w², relative order w and Bw (sympy, field_tests/scripts/d1439/derive_symbolic.py): 1 − n_s = 16w(1 − t) + 8w²(5t² + 2t + 5) + 16Bw²(t − 3); r = 64w²(1 + t)²[1 + 2w(1 − t) − 2Bw].
+2. [derived] Closed form: α_s = −2r·[1 + 4w(1 − t) − 6Bw/(1 + t)], t = (ρ − 1)/(ρ + 1) (= Janus x at κ = 1), w = (1 − n_s)/(16(1 − t)). Leading order is D1399's −2r.
+3. [derived] At A1: ρ 1.7149, t 0.2633, w 2.1725e-3; plateau piece +0.64 %, offset piece +4.94 % ⇒ α_s = −1.01795e-3. Vs D1415's numerical B-only model −1.01666e-3: +0.13 % (test a VALID; pure-plateau piece alone agrees to 2e-5).
+4. [derived] Vs exact A1 −9.9814e-4: +1.98 % ⇒ test b FAIL (as expected in the lock). The closed form is the analytic D1415 model; the remaining ~2 % is slow-roll order (first order vs exact MS), not the offset algebra.
+5. [estimate] So the ρ meter stays Janus × k = 1.0352 (D1423). The closed form explains the sign and size of the offset (B < 0 deepens the running by −6Bw/(1 + t) ≈ 5 %); a sub-percent ρ closed form needs second-order slow roll with a complete fetched formula (D1416's gap).

@@ -397,3 +397,5 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1418: time a single engine call before locking a solve that needs many; per-mode MS took the whole tick in the sandbox.
 - D1420: a second-derivative observable (α_s) from a fast engine can be off by ×2 while n_s and r look fine — sanity-check α_s against (1−n_s)² scaling before believing it.
 - D1431: an abstract's "could detect" is not a significance — read the table before passing it on (D1430's reading was too optimistic by about a factor 2–3).
+
+- D1439: in symbolic slow roll, substitute parameter ratios like C = t w² only AFTER differentiating — substituting first made C vary with w and gave wrong r and n_s (caught before the lock).
