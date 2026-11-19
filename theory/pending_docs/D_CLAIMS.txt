@@ -808,3 +808,4 @@ D1520  2026-11-19T14:48Z  Tilt T4: uplift tau-dependence (anti-D3, D-term) as ti
 D1521  2026-11-19T14:48Z  KEFF route read-off
 D1522  2026-11-19T14:53Z  P3 DILTR A1 1e10 vs D1489; aegis-check of P3 D1514
 D1523  2026-11-19T15:00Z  SPECIES32 species-scale plateau
+D1524  2026-11-19T15:02Z  species tilt = R4 on dS
