@@ -937,3 +937,4 @@ D1649  2026-11-19T22:44Z  untitled
 D1650  2026-11-19T22:46Z  JANUS genesis G12: whole-chain referee of the genesis pathway D1626-D1647 (both chats)
 D1651  2026-11-19T22:50Z  untitled
 D1652  2026-11-19T22:56Z  untitled
+D1653  2026-11-19T22:57Z  JANUS genesis G9b: dark thread end point in the full tau plane (axion free) - image of i or rho?
