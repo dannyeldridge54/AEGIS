@@ -17,7 +17,7 @@ Rule: a postulate is a stated assumption that the theory now RUNS on. It is not 
 | B2 | δ = 2/9 | **C-δ:** δ = Q/3, one third of the Koide ratio per generation step (empirical) | same m_τ test; must be derived or dropped |
 | B3 | lepton moduli feel the Zhinü potential | **P-F2** | basin fractions (done: 69% → i) |
 | B4 | small offset of τ_ν from i (1.0685i) | **C-off:** a supercritical +κy^{1/2}\|η\|² term at Δ ≈ 0.2% (D1618) | sin²θ₁₂ shift; fit quality at 1.048–1.168i |
-| B5 | sin²θ₁₂ +2.8σ; minimal Weinberg operator fails | **C-ν:** a non-minimal S-invariant M_ν with non-degenerate masses (bulk/seesaw) | JUNO sin²θ₁₂ to ±0.5%: TM2's 0.3408 is in or out |
+| B5 | EXACT TM2 EXCLUDED by JUNO (+3.6σ; +4.6σ combined, D1652) | **C-ν:** a non-minimal S-invariant M_ν with non-degenerate masses (bulk/seesaw) | JUNO sin²θ₁₂ to ±0.5%: TM2's 0.3408 is in or out |
 | B6 | Koide running versus pole | **C-pole:** √M_ℓ is the low-energy matrix; running ~10⁻³ cancels | a framework that predicts the pole relation |
 | B7 | τ_q stabilisation; anomaly-free weights; CKM phase | **P-q:** the quark thread sits at a generic point with A = 0 (FST); a CP-odd moduli–matter coupling breaks SL(2,Z) softly | J = 3.1 × 10⁻⁵ reproduced with θ̄ = 0 |
 
@@ -49,4 +49,4 @@ Plan (lock before computing):
 4. P-M test: does a mirror sector at ΔN_eff ≤ 0.3, or 5 GeV dark baryons, move Li-7 by more than 10%? (Expected: no. The Weave would then NOT solve the lithium problem, which is to be recorded as such.)
 After R-Li the queue is: C2 (dark-thread start from the Y-fork) → B2 (δ = 2/9) → C3/C4 (sharing factor and asymmetry from the thread's decay at ρ).
 
-**R-Li done (D1640).** R-C2 done (D1642): C-start false. R-B2 done (D1645): 2/9 not excluded (+0.4σ PDG, −0.9σ Belle II); no mechanism known. R-C3/C4 done (D1648): C4 viable; C3 splits into mirror (0.94 GeV) or ADM (5 GeV). R-D1 done (D1651): Y_p 0.2445. Next rung: **R-B5** (non-minimal M_ν vs sin²θ₁₂).
+**R-Li done (D1640).** R-C2 done (D1642): C-start false. R-B2 done (D1645): 2/9 not excluded (+0.4σ PDG, −0.9σ Belle II); no mechanism known. R-C3/C4 done (D1648): C4 viable; C3 splits into mirror (0.94 GeV) or ADM (5 GeV). R-D1 done (D1651): Y_p 0.2445. R-B5 done (D1652): exact TM2 excluded by JUNO; the τ_ν offset (B4) is now required. Next rung: **R-A3** (one-loop signs).

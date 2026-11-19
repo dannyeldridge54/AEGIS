@@ -16472,3 +16472,9 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - My pre-run expectation (ΔY_p ~ 0.001–0.002, a possible FAIL) was too low. The measured shift is 0.0024. Recorded, not adjusted.
 - The remaining gap to full codes (≈ 0.247) is ≈ 0.0025, from the radiative, finite-mass and finite-temperature corrections and incomplete ν decoupling (N_eff = 3.044). These are not added.
 - The genesis toolkit is now at Y_p 0.2445, D/H 2.61 × 10⁻⁵, ³He/H 1.03 × 10⁻⁵, Li/H 4.38 × 10⁻¹⁰.
+
+## D1652 (CENTRE, 19 Nov 2026) — RESULT, rung R-B5: EXACT TM2 is EXCLUDED by JUNO's first data (PREREG_RB5_JUNO)
+- JUNO first data (arXiv:2511.14593): sin²θ₁₂ = 0.3092 ± 0.0087. Exact TM2 (charged leptons at ρ, neutrinos exactly at i): 0.3408 ± 0.0002. That is +3.6σ from JUNO alone and +4.6σ from JUNO + NuFIT 6.0 combined (0.3084 ± 0.0070). Against the locked 3σ rule: FAIL.
+- Consequence for the published flavour paper (doi 10.5281/zenodo.24377945 / v2 24379357): its "+2.8σ" for TM2 is superseded. The exact-TM2 prediction is now excluded at > 3σ. A correction version is needed; it will NOT be published without Danny's "Publish".
+- Escape (already in the register as C-off, D1618): τ_ν slightly off i. Near i, mixing shifts linearly with the offset x ~ |(τ − i)/(τ + i)| (Feruglio 2211.00659). The needed shift, Δsin²θ₁₂ = −0.032, is the same size as the fitted 1.0685i (x ≈ 0.033), so the offset is now REQUIRED, not optional. The δ_CP predictions (236°/125°, 287°/74°) were TM2-exact and must be recomputed with the offset.
+- Status: B5 goes from "+2.8σ tension" to "exact form excluded; offset required". This is the first hard falsification of a Weave flavour prediction, and it is recorded plainly.

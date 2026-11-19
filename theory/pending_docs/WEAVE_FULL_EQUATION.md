@@ -69,7 +69,7 @@ The inflation sector gives exactly 0 at ρ. [der] The observed Λ_obs ≈ 10⁻�
 | TCC (r < 1e-30) | violated | conjecture (1909.11106) | flag |
 | Koide Q (pole) | 2/3 (P-F1) | 0.6666735 ± 0.0000077 (Belle II m_τ) | consistent; running caveat |
 | Koide δ | 2/9 (EMP) | 0.2222136 ± 0.0000095 | consistent; σ(m_τ) → 0.05 MeV sharpens to 3.5e-6 |
-| sin²θ₁₂ | 0.3408 (TM2) | 0.307 (+0.012/−0.011) NuFIT 6.0 | +2.8σ tension |
+| sin²θ₁₂ | 0.3408 (exact TM2) | JUNO 0.3092 ± 0.0087 (2511.14593); NuFIT 0.307 | EXACT TM2 EXCLUDED: +3.6σ (JUNO), +4.6σ combined (D1652); τ_ν offset now required |
 | sin²θ₂₃ | 0.395–0.605 | 0.561 / 0.470 | consistent |
 | δ_CP | 236° or 125° (s²₂₃ = 0.561); 287° or 74° (0.470) | DUNE, Hyper-K | prediction |
 | θ̄ | 0 (quantised at ρ; FST weights) | |θ̄| < 1e-10 | consistent by construction |
