@@ -734,3 +734,4 @@ D1447  2026-11-19T06:14Z  JANUS tick 43: exact tau=i potential behind NA12 vs D1
 D1448  2026-11-19T06:19Z  JANUS tick 44: exact tau=i plateau at second-order SR vs NA12
 D1449  2026-11-19T06:24Z  JANUS tick 45: vacua delta alpha_s with both derived second-order models
 D1450  2026-11-19T06:31Z  JANUS tick 46: PC job J4 spec (rerun reference rows with fixed estimator)
+D1451  2026-11-19T06:35Z  JANUS tick 47: summary addendum D1446-D1450
