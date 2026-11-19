@@ -14466,3 +14466,11 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - [estimate] T₂ ≳ 16–20 in string units is large-volume but still perturbative for heterotic (needs g_s small enough to keep M_GUT/M_s in range — the standard heterotic large-volume tension, not checked here).
 - Verdict: mechanism is self-consistent in the chamber T₂ > U₂* + ~1.5. New quantitative condition: T₂ ≳ 16–20. P3 stays a postulate (strong candidate).
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1378 — DEEP / LEFT: P3 — D1377's open check, heterotic large volume at T₂ ≈ 16–20: the universal threshold shifts α⁻¹ by k·Y/(4π) ≈ 1.5kT₂ = 24–30 — as large as α_GUT⁻¹ ≈ 25 itself; non-universal splits are mild (≈1.1–1.4 in α⁻¹ per unit Δb′). One-loop ≈ tree: perturbative control is MARGINAL (2026-11-18)
+- [literature] Threshold convention 16π²/g_a² = k_a·16π²/g_s² + Δ_a, Δ_a = −b′_a log(T₂U₂|η(T)η(U)|⁴) − k_aY (P–R eq. 2); P–R: Y "decreases the unification scale". Large single-plane volume ⇒ linear growth of thresholds (the heterotic decompactification problem; Antoniadis-type).
+- [derived] In α⁻¹ = 4π/g² units: universal shift k·6πT₂/(4π) = 1.5kT₂ = 24.0 (T₂ = 16), 30.0 (T₂ = 20). Non-universal: log(T₂|η(iT₂)|⁴) = −13.98, −17.95 ⇒ Δα⁻¹ = 1.11, 1.43 per unit difference of b′ between gauge factors.
+- [derived] Sign: Δ = −kY lowers 16π²/g², so the tree value must be ≈ 2× larger (α_tree⁻¹ ≈ 50) to land at α_GUT⁻¹ ≈ 25 — one-loop of the same size as tree. The non-universal part needs |Δb′| ≲ 1 among SM factors on the large plane (gauge unification within ~1 in α⁻¹).
+- [estimate] Same-size one-loop vs tree means the 1/T₂ term we use (the E(U,2) piece, ~ε E* ≈ 0.4 vs A ~ 2–5) is fine numerically, but higher-loop/non-perturbative corrections to Y are not obviously small. This is the main physical cost of the route.
+- Verdict: mechanism survives but at the edge of control. Open list for P3: (a) SL(2,Z) U-plane with b′_U = δ^U_GS = 0 for the condensing factor (D1376); (b) |Δb′_SM| ≲ 1 on that plane; (c) control of Y at one-loop ≈ tree. P3 stays a postulate (candidate, marginal control).
+MAP: node=plateau_origin status=assumed touches=[] ripple=no

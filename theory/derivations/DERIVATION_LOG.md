@@ -2277,3 +2277,9 @@ Touches: none.
 2. [derived] U₂* = 14.58 (Ê* ≈ 460); corrections 1.3e-4 at T₂ = 16, 1.6e-15 at T₂ = 20; εE* = 0.53–0.28.
 3. [estimate] T₂ ≳ 16–20 heterotic large-volume tension unchecked.
 4. [postulate P3] Model with SL(2,Z) U-plane, b′_U = δ^U_GS = 0 still needed.
+
+## D1378: large-volume control
+1. [literature] P–R eq. 2 thresholds; Y lowers the unification scale; heterotic decompactification problem.
+2. [derived] Universal Δα⁻¹ = 1.5kT₂ = 24–30 at T₂ = 16–20; non-universal 1.11–1.43 per unit Δb′.
+3. [estimate] One-loop ≈ tree: marginal perturbative control of Y.
+4. [postulate P3] Model and control still open.
