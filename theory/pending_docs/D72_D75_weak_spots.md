@@ -15305,3 +15305,13 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Running still leans positive in CMB-led fits (cf. D1471); SERAPIS's negative α_s sits ~1.5σ below — a watch item, not a tension marker.
 - aegis-check: pulls from field_tests/results/D1478_lit_pulls.json; two re-run by hand in python ((−9.9796e-4 − 0.0062)/0.0049 = −1.469; (0.974393 − 0.9737)/0.0027 = +0.257); like-with-like: ΛCDM+α_s rows match the model class, extended rows reported for completeness; checked: units, arithmetic, like-with-like, cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1479 — DEEP / LEFT: axio-dilaton route, step 1 (LOCKED DILATON32): a plateau built on E(τ,3/2) — the S-duality-completed α′³ coefficient — gets r right and n_s close. With the SERAPIS tilt (C = 1.25e-6, form A) it lands NEAR the band (n_s 0.9672, r 6.25e-4); no run is IN band; the literal α′³ square (form B) gives r ≈ 1.2e-4 (2026-11-19)
+- Lock: field_tests/rules/PREREG_DILATON32.md (+ .sha256) before computing; DEVIATIONS D1 (start point by bisection for N_end ∈ [100, 200]; the deepest start gave > 400 e-folds; no result seen before the fix). Script field_tests/scripts/dilaton32/run.py; results field_tests/results/DILATON32/{A0,A1,A2,B0}.json. Pre-lock check: E(ρ,3/2) = 8.8927 < E(i,3/2) = 9.0336 (vacuum at ρ; Montgomery's theorem holds for every s).
+- [computed] A0 (x/(1+x), C = 0): n_s 0.96301, r 5.58e-4 (r IN band), α_s −7.1e-4, N* 50.30.
+- [computed] A1 (x/(1+x), C = 1.25e-6): n_s 0.96717, r 6.25e-4, α_s −7.8e-4, N* 50.31 — NEAR (n_s 0.0018 below 0.969; r 10% above 5.7e-4).
+- [computed] A2 (x/(1+x), C = 1e-5): n_s 1.0031, r 1.50e-3 — tilt far too strong.
+- [computed] B0 (1 − 1/(1+x)², the BBHL square e^K ∝ (𝒱 + ξ/2)⁻², C = 0): n_s 0.96219, r 1.16e-4 — r 4× below band (faster plateau approach).
+- [derived] The pre-stated expectation (r ≈ 8e-4–1e-3 at C = 0) was wrong: A0 gives 5.6e-4. So the y^{−3/2} approach of E(τ,3/2) already yields SERAPIS-size r; n_s needs a tilt between 1.25e-6 and 1e-5 (A1 → A2 moves n_s 0.967 → 1.003), so an intermediate C should reach the band — but r rises with C (6.25e-4 at A1), so the band's r edge 5.7e-4 is the binding side. [estimate: in-band point possible only if n_s ≥ 0.969 is reached before r exceeds 5.7e-4 — not guaranteed; needs a locked C scan]
+- Verdict (locked rule): "near" (A1). Not viable-in-band on this scan; candidate for a locked tilt scan (C ∈ 1.5e-6…4e-6). The literal α′³ form (B) underproduces r; form A (one power) needs the e^K → 1/(𝒱 + ξ) placement, which the BBHL square does not give directly (D1403 caveat stands). P3 status: postulate; axio-dilaton route ALIVE.
+MAP: node=plateau_origin status=postulate touches=[] ripple=no

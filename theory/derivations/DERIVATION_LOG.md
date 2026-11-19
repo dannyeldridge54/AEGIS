@@ -2832,3 +2832,8 @@ Touches: none.
 1. [literature] One extended search (lock PREREG_D1478, pushed 93a480c before searching). New since D1470–D1477: arXiv:2609.35964v1 (Sep 2026), a reanalysis of existing data (no new data release) — Table III, read from the PDF: P-ACT-LB ΛCDM+α_s n_s 0.9741 ± 0.0033, α_s 0.0062 ± 0.0053; CMB-PAS (Planck PR3 + ACT DR6 + SPT-3G D1, τ prior 0.051 ± 0.006) + DESI DR2: ΛCDM+α_s 0.9737 ± 0.0027 / 0.0062 ± 0.0049; w0waCDM+α_s 0.9702 ± 0.0029 / 0.0054 ± 0.0049; +N_eff 0.9790 ± 0.0062 / 0.0102 ± 0.0063; +N_eff+Σm_ν 0.9758 ± 0.0064 / 0.0080 ± 0.0064. Also listed: 2512.05108 (Dec 2025, n_s-vs-dataset review) not read this tick.
 2. [derived] Pulls (field_tests/scripts/d1478/pulls.py → field_tests/results/D1478_lit_pulls.json), ρ A1 / τ = i NA12: n_s within 0.09–1.52σ in all rows; α_s −1.28 … −1.78σ (largest: ΛCDM+α_s+N_eff, ρ −1.777σ). Max |pull| 1.777 < 2 ⇒ PASS as locked.
 3. [estimate] Same direction as D1471: the CMB-led running fits lean positive (α_s ≈ +0.006 to +0.010) while SERAPIS predicts −8.5…−10.0e-4; the gap is 1.3–1.8σ marginal (n_s–α_s correlation not used — marginal pulls only). Not decisive; the SO-era σ(α_s) is what settles it (D1440/D1441).
+
+## D1479: axio-dilaton E(τ,3/2) plateau (locked)
+1. [derived] A0: n_s 0.9630, r 5.58e-4; A1 (C = 1.25e-6): n_s 0.9672, r 6.25e-4 (near); A2: n_s 1.003; B0 (α′³ square): r 1.16e-4.
+2. [derived] E(τ,3/2) gives SERAPIS-size r; n_s needs a tilt; r rises with the tilt.
+3. [postulate P3] Route alive; in-band point and the one-power placement not shown.
