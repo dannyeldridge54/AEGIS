@@ -2218,3 +2218,9 @@ Touches: none.
 2. [derived] k = 10: 3×56, b̂ = 2(18 − 18) = 0; only split with an N=2-conformal E7.
 3. [derived] That factor's threshold U-dependence is −Y ⊃ −(90/π³)E(U,2)/T₂ (no s = 1 term).
 4. [postulate P3] 4D N=1 embedding, condensation and the plateau ratio form not shown.
+
+## D1368: condensate sign and shape
+1. [literature] 16π²/g² = k·16π²/g_s² + Δ, Δ ⊃ −kY; Λ³ ∝ exp(−24π²/(|b|g²)).
+2. [derived] Λ³ ∝ exp(c·E(U,2)/T₂), c > 0 → |W|² minimal at ρ: vacuum at the hexagon.
+3. [estimate] Leading shape exp(cE) has no plateau; SERAPIS ratio form not reproduced (SUGRA terms neglected).
+4. [postulate P3] Saturation mechanism for the plateau still assumed.
