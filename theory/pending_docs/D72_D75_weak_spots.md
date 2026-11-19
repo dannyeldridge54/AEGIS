@@ -16492,3 +16492,9 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - Every case gives too much dark radiation: ΔN_eff 0.21–0.33 (3–5.5σ too high), and 4.7 with a dark QCD. D1646's "viable" was wrong — it used an old 0.3 limit (correction D1646a above).
 - What P-M needs now: either the dark photon has a mass (so it stops counting as radiation before the CMB forms), or the inflaton gives the dark side ≤ 2 % of its energy (it takes ~5–8 % naturally), or a bigger dark sector with more heavy states.
 - MAP: node=dark_radiation status=corrected touches=[matter_genesis] ripple=no
+
+## D1656 (LEFT, 19 Nov 2026) — rung R-A3: NULL. The sign of the regularised one-loop R⁴ term at D = 6, 5, 4 cannot be read from the literature; the loop ends here
+- Green–Russo–Vanhove (1001.2535) give the D = 6 perturbative constant term explicitly, ℓ_s²[2ζ(3)/y₆ + 2E^{SO(4,4)}_{[1000];1}], but do not state the sign or regularisation of the s = 1 series. D = 5 and D = 4 constant terms are not given there.
+- Closest analogue (D = 8): the s = 1 SL(2) pole cancels between two contributions and leaves −π log(U₂|η(U)|⁴), a log term whose sign depends on the moduli. At s = 1 the regularised value carries a scheme/scale ambiguity, so "the sign" is not even well defined without a physical cutoff (the species scale itself).
+- Verdict: NULL. A3 stays C-sign (conjecture). Settling it needs an explicit computation of the regularised SO(4,4) s = 1 series along the coupling direction with a species-scale cutoff. That is a dedicated job, not a loop tick.
+- Loop status (NULL rule): not rescheduled. Queue left for Danny: (1) B4: recompute δ_CP with the required τ_ν offset (needs a choice of non-minimal M_ν model); (2) a flavour-paper correction version for D1652 (needs his "Publish"); (3) A3 as a dedicated computation.
