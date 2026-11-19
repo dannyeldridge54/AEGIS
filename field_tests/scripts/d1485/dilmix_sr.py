@@ -31,10 +31,13 @@ def Vfun(al, C):
         return P * (1 + C * P / (1 - P))
     return V
 def obs(V, phi):
-    ev2f = lambda p: 2 * ((mp.diff(V, p, 1) / V(p)) ** 2 - mp.diff(V, p, 2) / V(p))
-    Vp = mp.diff(V, phi) / V(phi); ev1 = Vp ** 2 / 2; ev2 = ev2f(phi)
-    ev3f = lambda p: -mp.diff(ev2f, p) * (mp.diff(V, p, 1) / V(p)) / ev2f(p)
-    ev3 = ev3f(phi); ev4 = -mp.diff(ev3f, phi) * Vp / ev3
+    # D4: flow parameters from one Taylor expansion of V (exact algebra, sympy-derived; replaces nested mp.diff)
+    c = mp.taylor(V, phi, 4); V0, V1, V2, V3, V4 = [c[k] * mp.factorial(k) for k in range(5)]
+    ev1 = (V1 / V0) ** 2 / 2; ev2 = 2 * ((V1 / V0) ** 2 - V2 / V0)
+    ev3 = V1 * (-V0**2 * V3 + 3 * V0 * V1 * V2 - 2 * V1**3) / (V0**2 * (V0 * V2 - V1**2))
+    ev4 = ((-V0**4*V1*V2*V4 + V0**4*V1*V3**2 - V0**4*V2**2*V3 + V0**3*V1**3*V4 + 6*V0**3*V1*V2**3 - V0**2*V1**4*V3
+            - 14*V0**2*V1**3*V2**2 + 13*V0*V1**5*V2 - 4*V1**7)
+           / (V0**2 * (V0**3*V2*V3 - V0**2*V1**2*V3 - 3*V0**2*V1*V2**2 + 5*V0*V1**3*V2 - 2*V1**5)))
     e1 = ev1 * (1 - ev2 / 3); e2 = ev2 * (1 - ev2 / 6 - ev3 / 3); e3 = ev3 * (1 - ev2 / 3 - ev4 / 3); e4 = ev4
     ns = 1 - 2 * e1 - e2 - (3 + 2 * Cc) * e1 * e2 - 2 * e1 ** 2 - Cc * e2 * e3; r = 16 * e1 * (1 + Cc * e2)
     a = -(1 + e1) * (2 * e1 * e2 + e2 * e3) - (3 + 2 * Cc) * e1 * e2 * (e2 + e3) - 4 * e1 ** 2 * e2 - Cc * e2 * e3 * (e3 + e4)
