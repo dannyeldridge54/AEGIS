@@ -664,3 +664,4 @@ D1377  2026-11-19T00:31Z  P3: chamber condition T2 > U2* (~14.6) for the Y expan
 D1378  2026-11-19T00:32Z  P3: heterotic large-volume check at T2=16-20 - universal one-loop shift ~ tree (alpha^-1 24-30)
 D1379  2026-11-19T00:33Z  P3: control vs symmetry dilemma - N=4->N=2 spontaneous breaking cures linear growth but shifts the lattice sum
 D1380  2026-11-19T00:34Z  P3: shifted Epstein sums (Gamma0(2)-type) have no interior minimum - option (ii) loses the vacuum
+D1381  2026-11-19T00:37Z  P3: mixed sectors F_c = (1-c)E(U)+(c/2)E(U/2): interior minima exist but move off rho
