@@ -1,0 +1,72 @@
+{
+ "r_official_dr1e-3": {
+  "S_lo": 0.455,
+  "S_hi": 0.57
+ },
+ "r_idealized_2212": {
+  "S_lo": 9.1,
+  "S_hi": 9.567857142857143
+ },
+ "ns": {
+  "SO": {
+   "when": "operating",
+   "sigma": 2.211785714285716,
+   "counted": true
+  },
+  "SO+DESI": {
+   "when": "~2026-27",
+   "sigma": 2.752444444444446,
+   "counted": true
+  },
+  "SO+SPHEREx": {
+   "when": "~2027+ (SPHEREx 2-yr survey from Mar 2025)",
+   "sigma": 7.741250000000004,
+   "counted": true
+  },
+  "S4": {
+   "when": "HYPOTHETICAL (S4 cancelled)",
+   "sigma": 2.0993220338983063,
+   "counted": false
+  },
+  "S4+DESI": {
+   "when": "HYPOTHETICAL (S4 cancelled)",
+   "sigma": 2.5804166666666686,
+   "counted": false
+  },
+  "S4+CHIME": {
+   "when": "HYPOTHETICAL (S4 cancelled)",
+   "sigma": 4.128666666666669,
+   "counted": false
+  },
+  "S4+SPHEREx": {
+   "when": "HYPOTHETICAL (S4 cancelled)",
+   "sigma": 7.285882352941182,
+   "counted": false
+  },
+  "S4+CHIME+DESI+SPHEREx": {
+   "when": "HYPOTHETICAL (S4 cancelled)",
+   "sigma": 8.257333333333339,
+   "counted": false
+  },
+  "LiteBIRD+S4(l>200)": {
+   "when": "HYPOTHETICAL (S4 cancelled)",
+   "sigma": 3.3475675675675696,
+   "counted": false
+  },
+  "LiteBIRD+CHIME+SPHEREx": {
+   "when": ">=2035",
+   "sigma": 10.321666666666674,
+   "counted": true
+  }
+ },
+ "alpha_s": {
+  "detection_max_sigma": 1.3,
+  "exclusion_SO_if_ACT_central": "2.1-2.2 sigma (D1409)"
+ },
+ "ns_first_3sigma_real": [
+  "SO+SPHEREx",
+  "LiteBIRD+CHIME+SPHEREx"
+ ],
+ "verdict": "n_s first (SO+SPHEREx, ~2027+)",
+ "D1438_corrected": true
+}

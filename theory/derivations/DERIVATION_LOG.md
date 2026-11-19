@@ -2604,3 +2604,10 @@ Touches: none.
 3. [derived] At A1: ρ 1.7149, t 0.2633, w 2.1725e-3; plateau piece +0.64 %, offset piece +4.94 % ⇒ α_s = −1.01795e-3. Vs D1415's numerical B-only model −1.01666e-3: +0.13 % (test a VALID; pure-plateau piece alone agrees to 2e-5).
 4. [derived] Vs exact A1 −9.9814e-4: +1.98 % ⇒ test b FAIL (as expected in the lock). The closed form is the analytic D1415 model; the remaining ~2 % is slow-roll order (first order vs exact MS), not the offset algebra.
 5. [estimate] So the ρ meter stays Janus × k = 1.0352 (D1423). The closed form explains the sign and size of the offset (B < 0 deepens the running by −6Bw/(1 + t) ≈ 5 %); a sub-percent ρ closed form needs second-order slow roll with a complete fetched formula (D1416's gap).
+
+## D1440 — JANUS tick 36: n_s decides first; CORRECTION to D1438 (r not LiteBIRD-decidable at its official δr)
+1. [literature] Fetched this tick: CMB-S4 support ended by DOE/NSF on 10 July 2025 (Scientific American) — every S4 forecast row is hypothetical; Simons Observatory operating; SPHEREx launched 11 Mar 2025, four all-sky maps in two years (arXiv:2511.02985); LiteBIRD launch JFY2032, 3-year mission, requirement δr = 0.001 total incl. systematics (arXiv:2406.02724).
+2. [derived] r at LiteBIRD's official δr = 1e-3 (taken as 1σ): band r 4.55–5.7e-4 ⇒ 0.46–0.57σ. D1438's 7.6–11.4σ used 2212.04115's idealized r < 0.98e-4 (fiducial r = 0, no systematics margin); against the mission's own requirement it is not a detection. CORRECTION: D1438's "LiteBIRD-decidable" holds only if LiteBIRD beats its requirement by ~10×; at the requirement, r cannot decide SERAPIS.
+3. [derived] n_s: earliest real 3σ combination is SO + SPHEREx (7.7–8.0σ if CMB-only 0.9682 held, D1437), data ~2027+; next LiteBIRD + CHIME + SPHEREx (≥ 2035).
+4. [derived] α_s: detection ≤ 1.3σ (D1409); exclusion only if positive running near ACT's +0.0062 persisted (SO 2.1–2.2σ).
+5. [estimate] Verdict (locked rule): n_s decides first, via SO + SPHEREx later this decade; r and α_s are not deciders on funded timelines.

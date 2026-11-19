@@ -399,3 +399,5 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1431: an abstract's "could detect" is not a significance — read the table before passing it on (D1430's reading was too optimistic by about a factor 2–3).
 
 - D1439: in symbolic slow roll, substitute parameter ratios like C = t w² only AFTER differentiating — substituting first made C vary with w and gave wrong r and n_s (caught before the lock).
+
+- D1438→D1440: check a forecast against the mission's own stated requirement (incl. systematics) before calling something "decidable"; idealized stat-only forecasts can be 10× optimistic. Also check the experiment still exists (CMB-S4 ended July 2025).

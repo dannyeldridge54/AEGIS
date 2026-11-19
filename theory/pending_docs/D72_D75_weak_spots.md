@@ -15056,6 +15056,7 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [literature] 2212.04115 Table 5 r< (95 %, fiducial r = 0): SO 9.9e-3, S4 3.4e-3, LiteBIRD 0.98e-4 (combos 0.97e-4).
 - [estimate] Detection of band r 4.55–5.7e-4: SO ≤ 0.11σ, S4 ≤ 0.34σ, LiteBIRD 7.6–11.4σ. Locked rule ⇒ "decided by r" (LiteBIRD). Non-detection at r < 1e-4 kills band_e/band_i.
 - Caveat: r = 0 fiducial ignores tensor cosmic variance/delensing at r ≈ 5e-4 — optimistic; halving S still ≥ 3.8σ.
+- CORRECTED by D1440: LiteBIRD's official requirement δr = 1e-3 (2406.02724) gives only 0.46–0.57σ; the 7.6–11.4σ needs LiteBIRD ~10× better than requirement.
 - aegis-check: re-ran S(4.55e-4, LiteBIRD one-sided) = 7.64, S(5.7e-4, two-sided) = 11.40, S4 two-sided 0.26 in python; checked: units, arithmetic, like-with-like (same paper, same table), limits, cross-sector: none.
 - MAP: node=band_e status=frozen touches=[] ripple=no
 
@@ -15064,4 +15065,11 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] A1: −1.01795e-3 — matches D1415's numerical model to 0.13 % (VALID) but +1.98 % vs exact (FAIL, as locked/expected). Offset piece +4.94 %, plateau piece +0.64 %.
 - [estimate] Meter unchanged (Janus × 1.0352, D1423); sub-percent needs second-order SR from a complete source.
 - aegis-check: re-ran −2r(1 + 0.0064 + 0.0494) = −1.01795e-3, ratios +0.13 % / +1.98 % in python; limits: B → 0 gives the pure-plateau numerical value to 2e-5, w → 0 gives D1399's −2r; sign of offset (B < 0 deepens running) agrees with D1414; checked: units, arithmetic, like-with-like (same (n_s, r) as D1415), cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no
+
+## D1440 — JANUS tick 36: first decider = n_s (SO + SPHEREx); D1438 corrected
+- [literature] CMB-S4 ended by DOE/NSF 10 Jul 2025 (S4 rows hypothetical); SPHEREx launched 11 Mar 2025 (2-yr, 4 sky maps); LiteBIRD JFY2032, 3 yr, δr = 1e-3 requirement (2406.02724).
+- [derived] r at δr = 1e-3: 0.46–0.57σ ⇒ CORRECTION of D1438 (7.6–11.4σ used an idealized 0.98e-4 forecast; holds only if LiteBIRD beats its requirement ~10×).
+- [derived] n_s: SO + SPHEREx 7.7–8.0σ (if 0.9682 held) — earliest real decider (~2027+). α_s: ≤ 1.3σ detection.
+- aegis-check: re-ran 4.55e-4/1e-3 = 0.455, 5.7e-4/1e-3 = 0.57, SO+SPHEREx 7.74 (ρ) from D1437 json in python; like-with-like: δr requirement is total (stat+sys) vs D1438's stat-only forecast — that mismatch is exactly the correction; checked: units, arithmetic, cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
