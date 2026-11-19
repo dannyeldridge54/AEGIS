@@ -1231,7 +1231,7 @@ observing:
   - D1632
   depends:
   - genesis_reheating
-  flag: recheck (D1637, genesis_reheating)
+  flag: recheck (D1646, dark_radiation)
 - id: light_elements
   layer: 3
   branch:
@@ -1278,8 +1278,11 @@ observing:
   branch:
   - rho
   title: Dark radiation from SERAPIS reheating — how cold the dark side is (ΔN_eff)
-  status: open
-  d: []
+  status: estimate
+  d:
+  - D1646
   depends:
   - genesis_reheating
   - matter_genesis
+  history:
+  - 'D1646: estimate'
