@@ -15462,3 +15462,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] BBHL (hep-th/0412239 Eq. 3.8) needs ξ̂ ≪ 𝒱̂ (pole at ξ̂ = 𝒱̂); the P3 plateau lives at ξ̂/𝒱̂ ~ 10² ⇒ uncontrolled unless its ξ normalisation is ≳10³ smaller than assumed; D1501's small-u estimate not applicable on the path. Candidate referee point (M5) for the P3 chat.
 - aegis-check: x* re-computed in python from E(τ,3/2) zero modes at y = 13.96 (118.26) with E_ρ = 8.8927 (D1486); 2x* = 236.5 ✓; K^{ττ̄}|D_τW|² by sympy ✓; DEVIATIONS D1 written before the replacement number; cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1505 — T3b: ξ̂/𝒱̂ ≈ 251 at all D1486 benchmarks — the regime flag stands (not a convention artefact); CORRECTION: λ = 1 ↔ physical frame map shifts x by ≈ +7.1 (x* 118.3 → 125.4)
+- [derived] ξ/𝒱 = 2x-type identity ⇒ set by (n_s, r), convention-independent. Candidate referee point M5 (α′³ term ≫ tree volume term on the inflationary path).
+- [derived] CORRECTION: D1497 item 4 / D1504 item 3 — the frame map is not exact (y^{−1/2} term and E_ρ don't rescale); physical-frame n_s, r may differ from the λ = 1 values; to compute (T3c).
+- aegis-check: numbers from field_tests/results/D1505_regime.json; a values match D1486 to ≤ 0.8 %; the y^{−1/2} term at y = 13.96 = 1.765 and x shift = 8.89 − 1.77 = 7.13 computed in python ✓; cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

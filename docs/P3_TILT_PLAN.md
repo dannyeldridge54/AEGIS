@@ -9,6 +9,8 @@ size lands in band (D1485 machinery). A candidate "works" only if (ii) and (iii)
 
 - T1 [done D1501] Exact form-A Kähler expansion: keep the next order of e^K·V_F in ξ/𝒱 (BBHL/BBCQ formula, fetched) instead of truncating at the plateau x/(1+x) — does it generate a (1 + κx)-type factor with κ = O(1) in units where C_phys = κ? Shape and κ.
 - T2 [done D1503: F⁴ wrong shape; D⁴R⁴ NULL] D⁴R⁴ (α′⁵, coefficient E(τ,5/2) — Green–Vanhove/Green–Russo–Vanhove, fetched): its 4D potential contribution along the dilaton, relative to the α′³ term; shape ∝ E(τ,5/2)/𝒱^{?} — does it act as a tilt, and how big?
-- T3 [done D1504: not a tilt; FLAG ξ̂/𝒱̂ ≈ 2.4e2 on the path] τ-dependent flux superpotential: W₀(τ) = ∫G₃∧Ω, G₃ = F₃ − τH₃ ⇒ |W₀|² is quadratic in τ — after the dilaton is no longer fixed by fluxes (it is the inflaton here), V_LVS ∝ |W₀(τ)|²/𝒱³ adds a y²-type factor. Shape vs the needed tilt; size set by the flux ratio.
+- T3 [done D1504: not a tilt; FLAG ξ̂/𝒱̂ ≫ 1 on the path]
+- T3b [done D1505: flag stands, ξ/𝒱 ≈ 251 at all benchmarks; CORRECTION frame map x +7.1]
+- T3c [next] physical-frame n_s, r of the DILMIX centre and A1 (λ = 1/a, a 2e3/9.9e3/5e4) vs the λ = 1 values — fast SR, lock first τ-dependent flux superpotential: W₀(τ) = ∫G₃∧Ω, G₃ = F₃ − τH₃ ⇒ |W₀|² is quadratic in τ — after the dilaton is no longer fixed by fluxes (it is the inflaton here), V_LVS ∝ |W₀(τ)|²/𝒱³ adds a y²-type factor. Shape vs the needed tilt; size set by the flux ratio.
 - T4 [next] Uplift τ-dependence: anti-D3 (∝ e^{4A}/𝒱^{4/3}, warp factor depends on g_s via KS throat) or D-term uplift ∝ g_s^{?}/𝒱² — shape along y and size.
 - T5 [next] Summary card: which candidate (if any) gives C_phys ≈ 2e-3–0.1 naturally; hand-off note for the P3 chat.
