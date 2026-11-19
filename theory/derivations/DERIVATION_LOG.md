@@ -2552,3 +2552,8 @@ Touches: none.
 3. [derived] So most of band_i (frozen n_s 0.970–0.975 × r 4.8–5.7e-4) is not reachable by the audited τ = i model; D1413's extrapolated-ε worry concerns corners the model never visits. band_i stays as frozen (scored on future data), but the audited τ = i prediction is a short segment near n_s ≈ 0.9746, r ≈ 4.83e-4, α_s ≈ −8.5e-4.
 4. [estimate] The ρ side already has this split (band_e frozen vs band_e_audited postulate, D1245); τ = i has none recorded on the map — a "band_i_audited" postulate node would make the two vacua symmetric (proposal for Danny, not done: it is a new map node).
 
+## D1430: running-of-running and post-2030 running detectability (literature)
+1. [literature] arXiv:1611.05883 (Muñoz, Kovetz, Raccanelli, Kamionkowski, Silk; "Towards a measurement of the spectral runnings"), abstract (read via ar5iv; §III tables not reached): CMB-S4 alone cannot detect the minimal inflationary β_s; only a very futuristic dark-ages 21-cm interferometer could. CMB-S4 + WFIRST-like / DESI-like surveys improve running sensitivity by ~20 % / ~30 %.
+2. [literature] Same abstract: CMB-S4 + an SKA-like billion-object spectroscopic survey could detect α_s = 10⁻³.
+3. [estimate] SERAPIS's running is −8.4e-4 … −1.06e-3 (D1413, D1421) — at that SKA-class threshold. So D1409's "not detectable by 2030" (CMB+SPHEREx-era forecasts, ≤ 1.3σ) refines to: plausibly detectable with an SKA-class galaxy survey after 2030 (quoted threshold, not computed here); β_s ≈ −2.5e-5 (D1400) stays out of reach short of dark-ages 21-cm.
+

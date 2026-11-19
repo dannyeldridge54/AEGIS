@@ -14986,3 +14986,10 @@ MAP: node=band_e_audited status=postulate touches=[] ripple=no
 - aegis-check: nothing computed; numbers re-read from D1247 / na12_band_i_audited.txt.
 MAP: node=band_i status=frozen touches=[] ripple=no
 
+## D1430 — JANUS tick 27: β_s is a dark-ages-21-cm-only target; but CMB-S4 + an SKA-like galaxy survey could detect α_s ≈ 1e-3 — SERAPIS's own running size (literature, abstract-level)
+- [literature] arXiv:1611.05883 abstract (via ar5iv; exact §III numbers not read): β_s at the minimal inflationary level needs a futuristic dark-ages interferometer; CMB-S4 + SKA-like billion-object spectroscopy could detect α_s = 10⁻³; WFIRST/DESI-like add ~20–30 %.
+- [estimate] Reading against tonight's results: SERAPIS predicts α_s −8.4e-4 … −1.06e-3 (D1413/D1421). D1409's 2030 verdict (not detectable, excludable) stands; this adds a post-2030 route to a positive detection at roughly SERAPIS's size (SKA-class), not computed here. β_s (−2.5e-5, D1400) stays untestable short of dark-ages 21-cm.
+- Follow-up: fetch §III's σ(α_s) for "S4 + SKA" (ar5iv offset ≥ 100000) and lock a detection-significance number for SERAPIS's range.
+- aegis-check: no numbers computed; quoted thresholds re-read from the fetched abstract.
+MAP: node=janus status=computed touches=[] ripple=no
+
