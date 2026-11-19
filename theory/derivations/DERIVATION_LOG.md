@@ -2360,3 +2360,9 @@ Touches: none.
 3. [derived] λ ≤ 0.154/T₂² ⇒ y* ≥ 37T₂ > T₂: the E(U,2)/T₂ regime fails at horizon exit.
 4. [estimate] Rescue: full Y, linear in U₂ for U₂ > T₂ (s = 1-type), in band per D1364 w = 0.
 5. [postulate P3] Full-Y potential through the pipeline not yet computed.
+
+## D1398: full-Y plateau (locked)
+1. [derived] C = 0: n_s 0.9602–0.9609, r 1.53–1.60e-3 (α = 1/3 attractor; analytic 0.9606, 1.56e-3); out of band. C > 0 runs crashed.
+2. [derived] Vacuum at ρ but L(i) − L(ρ) ~ 1e-4 relative.
+3. [estimate] Tilt cannot lower r to ~5e-4.
+4. [postulate P3] Universal-threshold origin killed for the SERAPIS point; origin postulated again.
