@@ -15208,3 +15208,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] Both vacua now have two-coefficient cross-check formulas on their own leading orders (ρ D1457, τ = i D1462); a − 1 = 3.7 % vs 12.4 % (τ = i includes D640's offset).
 - aegis-check: a, b, residuals from the result json; LO formula as in D1405 with κ = ½, p = 2√2 (D1436); out-of-sample points not in the fit; checked: units, arithmetic, cross-sector: none.
 - MAP: node=band_i status=frozen touches=[] ripple=no
+
+## D1463 — JANUS tick 59: correction over LO split
+- [derived] τ = i: LO → offset (D640) +11.71 % → SR order +0.31 % (total +12.06 %). ρ: LO → offset+plateau (D1439) +5.58 % → SR order −1.96 % (total +3.50 %). Products exact; fitted formulas (D1457, D1462) reproduce the totals (1.0350, 1.1207).
+- [estimate] Both vacua's LO miss is a plateau offset (c in the τ = i map, B in the ρ plateau); SR-order part small at τ = i, larger and opposite at ρ.
+- aegis-check: all factors from the result json (product check 0); formula evaluations at the centres recomputed in python (1.1207, 1.0350); like-with-like: same (n_s, r) per vacuum for every factor; checked: units, arithmetic, cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no
