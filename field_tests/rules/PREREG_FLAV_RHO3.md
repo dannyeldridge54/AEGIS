@@ -1,0 +1,6 @@
+# PREREG_FLAV_RHO3 — "two tie-off points": charged leptons at ρ, neutrinos at i (locked D1598, 2026-11-19 12:24 CT)
+Physics claim to test: V₀ ∝ |∇ln E(τ,3/2)|² vanishes at EVERY critical point of E, so both SL(2,Z) fixed points i and ρ are zero-energy vacua of the Weave potential (check numerically: V(i) and V(ρ), and V at i ± 1e-3). If the charged-lepton modulus ends at ρ (residual Z₃ = ⟨ST⟩) and the neutrino modulus at i (residual Z₂ = ⟨S⟩), A4 fixes one PMNS column: c = |V_ST† v₊|², with v₊ the S = +1 eigenvector and V_ST the ST eigenbasis (Feruglio 1706.08749 basis: S = (1/3)[[−1,2,2],[2,−1,2],[2,2,−1]], T = diag(1,ω,ω²); verify S² = 1, T³ = 1, (ST)³ = 1).
+Identification: c is matched to the PMNS column it fits (Majorana neutrino masses; the Z₂-even eigenvector is a mass eigenvector).
+Test: if c = (1/3,1/3,1/3) (TM2): sin²θ₁₂ = 1/(3cos²θ₁₃); if c = (2/3,1/6,1/6) (TM1): sin²θ₁₂ = 1 − 2/(3cos²θ₁₃). Use NuFIT 6.0 NO IC19: sin²θ₁₃ = 0.02195, sin²θ₁₂ = 0.307 (+0.012/−0.011). Pass: |pull| < 3. Other c ⇒ report and compare each |U_αj|² with NuFIT 3σ ranges (if not available, report FAIL-UNTESTED).
+Also (descriptive, no pass rule): δ_Koide vs Q/3 with current masses.
+One run: field_tests/scripts/flav_rho/run3.py.
