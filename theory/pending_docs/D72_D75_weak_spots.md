@@ -15184,3 +15184,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Flag: band_i map note ε 1.40–1.46e-4 (D730) vs D1429's audited 1.39–1.44e-4 — reconcile later; not edited. band_i_audited awaits Danny.
 - aegis-check: statuses and notes read from map.yaml this tick; no numbers computed; no map edits made.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1459 — JANUS tick 55: summary addendum D1456–D1458
+- [derived] SO-conditioned windows separate in theory only (0.025σ) (D1456); band_e n_s-term formula adopted as cross-check (D1457).
+- [estimate] No status change warranted (D1458); band_i ε note to reconcile. Awaiting Danny: J1–J4, band_i_audited.
+- aegis-check: summary only — numbers read from D1456/D1457 result jsons this tick.
+- MAP: node=janus status=computed touches=[] ripple=no

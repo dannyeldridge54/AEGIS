@@ -2725,3 +2725,9 @@ Touches: none.
 4. [estimate] band_e_audited — stays postulate: its own note says "scored only on future data"; D1452 confirmed its running but no new data has arrived (last n_s check D1427). A change needs SO-era n_s (D1440/D1441), not more derivation.
 5. [estimate] vac_discriminant — stays killed: D1449 re-killed it with both derived models (≤ 0.05σ SO). Revival would need σ(α_s) ≈ 5e-5, not on any funded roadmap.
 6. [estimate] Inconsistency flagged (not edited): band_i's map note says the corrected history meets it for ε ≈ 1.40–1.46e-4 (D730), while D1429 found 1.39–1.44e-4 for the audited chain — different chains/eras; worth a one-line reconciliation by Danny or a later tick. band_i_audited stays a proposal awaiting Danny (D1429).
+
+## D1459: Janus summary addendum, D1456–D1458
+1. [derived] SO-conditioned α_s windows (n_s ± 0.002 along each vacuum's exact chain, derived models): ρ −1.0496e-3 … −9.565e-4 (9.3 %), τ = i −8.726e-4 … −8.342e-4 (4.5 %); separate in theory, gap 8.4e-5 = 0.025σ for SO (D1456).
+2. [derived] band_e cross-check formula α_s = −2r[1.0373 − 0.947(n_s − 0.972)]: in-sample ≤ 0.021 %, out-of-sample A1 0.001 %, K4 0.010 %; its A1 value 1.0350 reproduces k = 1.0352 (D1457).
+3. [estimate] Status readiness: no Janus node status change warranted — further moves need SO-era n_s data; band_i ε-range note (D730 vs D1429) flagged for reconciliation (D1458).
+4. [estimate] Awaiting Danny: PC jobs J1–J4; band_i_audited.
