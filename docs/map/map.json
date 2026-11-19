@@ -1463,14 +1463,16 @@
    "status": "estimate",
    "d": [
     "D1637",
-    "D1641"
+    "D1641",
+    "D1665"
    ],
    "depends": [
     "plateau_origin"
    ],
    "history": [
     "D1637: estimate",
-    "D1641: estimate"
+    "D1641: estimate",
+    "D1665: estimate"
    ]
   },
   {
@@ -1497,7 +1499,7 @@
     "D1661: postulate",
     "D1662: postulate"
    ],
-   "flag": "recheck (D1664, dark_radiation)"
+   "flag": "recheck (D1665, genesis_reheating)"
   },
   {
    "id": "light_elements",
