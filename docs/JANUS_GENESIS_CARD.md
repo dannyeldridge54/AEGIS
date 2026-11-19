@@ -26,13 +26,17 @@ Every number is copied from the json named in its row and machine-checked by fie
 | ³He/H | 1.03e-5 | field_tests/results/GENESIS_MATTER/bbn3.json | base.He3_H |
 | Li/H | 4.35e-10 | field_tests/results/GENESIS_MATTER/li7.json | base.Li_H |
 | lithium problem factor (vs Spite plateau) | 2.72 | field_tests/results/GENESIS_MATTER/li7.json | problem_factor |
-| w₀ (exact-shape thread, best) | -0.789 | field_tests/results/D1638_G2_thread_shape.json | best.w0 |
+| w₀ (exact-shape thread, best; Gaussian approximation, D1638) | -0.789 | field_tests/results/D1638_G2_thread_shape.json | best.w0 |
 | w_a | -0.355 | field_tests/results/D1638_G2_thread_shape.json | best.wa |
-| worst DESI Δχ² (≤ 6.18 passes) | 5.64 | field_tests/results/D1638_G2_thread_shape.json | best.dmax |
+| w₀, FULL likelihood (D1636, DESY5, compressed-CMB arm) | -0.872 | field_tests/results/D1636/rt10_desy5.json | cpl_fit.w0 |
+| w_a, FULL likelihood (D1636, DESY5) | -0.212 | field_tests/results/D1636/rt10_desy5.json | cpl_fit.wa |
+| w₀, FULL likelihood (D1636, Pantheon+) | -0.934 | field_tests/results/D1636/rt10_pantheonplus.json | cpl_fit.w0 |
+| w₀, FULL likelihood (D1636, Union3) | -0.856 | field_tests/results/D1636/rt10_union3.json | cpl_fit.w0 |
+| worst DESI Δχ² (≤ 6.18 passes; Gaussian approximation — superseded by D1636) | 5.64 | field_tests/results/D1638_G2_thread_shape.json | best.dmax |
 | start-window probability (10D) | 0.0035 | field_tests/results/GENESIS_DE/rc2.json | beta=2.8284.P_window |
 | acceleration ends at a | 1.23 | field_tests/results/D1644_G9_thread_future.json | end_of_acceleration.a |
 | thread late ⟨w⟩ | -0.0175 | field_tests/results/D1644_G9_thread_future.json | late_w_mean |
 | thread matter-like rule | PASS | field_tests/results/D1644_G9_thread_future.json | R1_matter_like |
 
-Reading: one scalar field (the string coupling) drives inflation, ends at ρ with a bend fixed by symmetry ((D−2)/32), decays at T_R ~ 10⁹ GeV; one asymmetry gives both matter kinds (5 GeV dark baryon), a small dark sector with a massless dark photon is EXCLUDED by today's N_eff data (ΔN_eff ≈ 0.2 is 3.7σ high, D1654) unless the dark photon is massive or the dark side gets ≤ 2 % of the reheating energy; the light elements come out at textbook values (lithium problem inherited, not solved); the same curve at a far lower height is today's thawing dark energy (w₀ ≈ −0.79, w_a ≈ −0.36), which stops accelerating at a ≈ 1.23 and ends as matter at the image of τ = i.
+Reading: one scalar field (the string coupling) drives inflation, ends at ρ with a bend fixed by symmetry ((D−2)/32), decays at T_R ~ 10⁹ GeV; one asymmetry gives both matter kinds (5 GeV dark baryon), a small dark sector with a massless dark photon is EXCLUDED by today's N_eff data (ΔN_eff ≈ 0.2 is 3.7σ high, D1654) unless the dark photon is massive or the dark side gets ≤ 2 % of the reheating energy; the light elements come out at textbook values (lithium problem inherited, not solved); the same curve at a far lower height is today's thawing dark energy (w₀ ≈ −0.79, w_a ≈ −0.36), (Gaussian-approximation fit; the full likelihood (D1636, other chat) prefers a less-thawed thread, w₀ ≈ −0.86 … −0.93 with w_a ≈ −0.1 … −0.24, and only DESY5 clearly prefers it over Λ (primary arm ΔAIC −7.4; Pantheon+ +0.7, Union3 −0.6)), which stops accelerating at a ≈ 1.23 for the D1638 start and ends as matter at the image of τ = i.
 Open, stated: the decay strength κ; equal sharing per particle (A-dem); the dark/visible sharing factor and the asymmetry source (other chat, C3/C4); the ~1-in-300 start (D1642); V_Λ's size (by hand); D1636 full-likelihood fit pending.

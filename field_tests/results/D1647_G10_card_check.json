@@ -1,6 +1,6 @@
 {
  "D": "D1647",
- "n_rows": 29,
+ "n_rows": 33,
  "mismatches": [],
  "verdict": "CONSISTENT",
  "rows": [
@@ -137,7 +137,7 @@
    "ok": true
   },
   {
-   "q": "w\u2080 (exact-shape thread, best)",
+   "q": "w\u2080 (exact-shape thread, best; Gaussian approximation, D1638)",
    "card": "-0.789",
    "json": -0.7888185932030437,
    "ok": true
@@ -149,7 +149,31 @@
    "ok": true
   },
   {
-   "q": "worst DESI \u0394\u03c7\u00b2 (\u2264 6.18 passes)",
+   "q": "w\u2080, FULL likelihood (D1636, DESY5, compressed-CMB arm)",
+   "card": "-0.872",
+   "json": -0.8723198160905744,
+   "ok": true
+  },
+  {
+   "q": "w_a, FULL likelihood (D1636, DESY5)",
+   "card": "-0.212",
+   "json": -0.21227141220473483,
+   "ok": true
+  },
+  {
+   "q": "w\u2080, FULL likelihood (D1636, Pantheon+)",
+   "card": "-0.934",
+   "json": -0.9338296918583484,
+   "ok": true
+  },
+  {
+   "q": "w\u2080, FULL likelihood (D1636, Union3)",
+   "card": "-0.856",
+   "json": -0.856240989263329,
+   "ok": true
+  },
+  {
+   "q": "worst DESI \u0394\u03c7\u00b2 (\u2264 6.18 passes; Gaussian approximation \u2014 superseded by D1636)",
    "card": "5.64",
    "json": 5.635916030749746,
    "ok": true
