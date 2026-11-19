@@ -15220,3 +15220,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Awaiting Danny: (a) queue PC jobs J1–J4; (b) band_i_audited node (D1429/D1461); (c) band_i map-note ε wording (D1461); (d) optional janus title note (D1458).
 - aegis-check: no new numbers; every quoted value is from the cited D-notes.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1465 — JANUS tick 61: literature check — NULL
+- [literature] No n_s/α_s/r measurement newer than 2512.10613 / 2606.28502 found; 2611.15828 (Nov 2026) is simulation-only (SO SAT r < 0.0038 at r = 0, Table 3); SO commissioning/forecast papers only.
+- [estimate] Simulated SO r reach ~7× above SERAPIS's r — consistent with D1438/D1440.
+- aegis-check: numbers read from 2611.15828 Table 3 via fetch (simulation, stated); no pulls computed (NULL rule).
+- MAP: node=janus status=computed touches=[] ripple=no
