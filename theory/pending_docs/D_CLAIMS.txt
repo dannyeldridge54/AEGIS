@@ -693,3 +693,4 @@ D1406  2026-11-19T02:44Z  P3 mirror: inverse spec from SERAPIS vs string-side le
 D1407  2026-11-19T02:47Z  JANUS tick 6: band_e_audited box n_s vs end-2025 CMB and CMB+DESI
 D1408  2026-11-19T02:53Z  JANUS tick 7: vac_discriminant re-check with any-kappa form vs 2030 forecasts
 D1409  2026-11-19T02:58Z  JANUS tick 8: when is the forced-negative running testable - detection vs exclusion with 2030 forecasts
+D1410  2026-11-19T03:01Z  D1364 PC cross-check: n_s, r reproduce to 5e-6; alpha_s from the pipeline is numerically noisy (up to 30% between identical runs)
