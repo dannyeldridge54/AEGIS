@@ -14891,3 +14891,10 @@ MAP: node=serapis_point status=computed touches=[] ripple=no
 - aegis-check: nothing computed.
 MAP: node=janus status=computed touches=[] ripple=no
 
+## D1419 — JANUS tick 16: band_e_audited's N* 50.07–51.22 and D1234's corrected 49.88–50.64 are the same reheating chain at different inputs — no conflict
+- Lock: field_tests/rules/PREREG_D1419_nstar_windows.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1419/nstar_windows.py; result field_tests/results/D1419_nstar_windows.json. Arithmetic only.
+- [computed] D1234 slope 0.764 e-folds/decade (ln10/3 = 0.7675 expected); extrapolated with the MSSM −0.063 to T_R 5.46e8 / 1.65e10: N* 50.014 / 51.145 vs box 50.07 / 51.22 (Δ −0.056 / −0.075) → same chain (rule < 0.10).
+- Reading: the box differs from D1234's window only by T_R range (it reaches 1.65e10 GeV), g* (MSSM) and the C spread; nothing in its inputs needs fixing. The residual ~0.06–0.08 e-folds is the C dependence of V*/V_end (not modelled here; D1262 quotes the n_s response per e-fold depends on C).
+- aegis-check: re-ran log10(T_R/3e8) = 0.260 / 1.740 and the slope's −0.46 % vs ln10/3 in python; checked: units (e-folds, GeV), arithmetic, like-with-like (both N* exact-ε_H end, D979-corrected), limits, cross-sector: reheating chain only, read not changed.
+MAP: node=band_e_audited status=postulate touches=[] ripple=no
+

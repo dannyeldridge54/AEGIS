@@ -2490,3 +2490,8 @@ Touches: none.
 1. [estimate] Locked test (PREREG_D1418, DEVIATIONS D1 start point, D2 key name — both before any output) ran past the 150 s CPU cap inside the first Newton iterations and was stopped at 175 s with no value printed. Verdict as locked: no result. Not rerun.
 2. [estimate] Cause: ms.spectra (per-mode ODE) takes tens of seconds per call in this sandbox and the Newton solve needs ~3 calls per iteration. A follow-up needs either spectra_fast (its own lock, per ms.py) or the PC runner.
 
+## D1419: band_e_audited N* window vs D1234 (locked)
+1. [derived] D1234's corrected window (C 1.15e-6, SM g*) has slope 0.764 e-folds per decade of T_R, 0.5 % below ln10/3 = 0.7675 (N* ∝ ⅓ ln T_R, matter-like reheating).
+2. [derived] Carried to the box's T_R 5.46e8–1.65e10 with D1262's MSSM shift (−0.063): N* 50.014–51.145 vs the box's 50.07–51.22 — differences −0.056 and −0.075 e-folds, inside the locked 0.10 budget for the box's C spread (1.0–1.3e-6, not modelled). Verdict: same chain.
+3. [derived] So the two windows are not in conflict: the box's higher N* comes from its higher T_R range and the C spread, and its lower edge is MSSM-shifted D1234 physics. Box inputs consistent.
+
