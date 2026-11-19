@@ -2590,3 +2590,10 @@ Touches: none.
 3. [derived] Hypothetical tensions if 0.9682 held: SO 2.2–2.3σ, S4 2.1–2.2σ, LiteBIRD + S4 3.3–3.5σ, S4 + CHIME 4.1–4.3σ, SO/S4 + SPHEREx 7.3–8.0σ, LiteBIRD + CHIME + SPHEREx 10.3–10.7σ.
 4. [derived] So n_s — not the running (D1409, D1431: ≤ 1.3σ) — is SERAPIS's decisive 2030s observable: CMB + LSS combinations resolve the CMB-vs-BAO n_s question at 7–10σ either way, confirming or excluding the audited points.
 
+
+## D1438 — JANUS tick 34: the r floor is LiteBIRD-decidable (band_e)
+1. [literature] arXiv:2212.04115 Table 5, r forecasts are 95 % upper limits at fiducial r = 0: SO 9.9e-3, S4 3.4e-3, LiteBIRD (±S4 ℓ>200, CHIME, SPHEREx) 0.97–0.98e-4.
+2. [derived] Band r 4.55–5.7e-4 (D1399/D1428); exact points A1 4.821e-4, NA12 4.834e-4.
+3. [estimate] σ(r) = UL/1.645 (one-sided) … UL/1.96 (two-sided). S = r/σ: SO 0.08–0.11σ, S4 0.22–0.34σ, LiteBIRD 7.6–9.1σ at r = 4.55e-4 and 9.6–11.4σ at 5.7e-4.
+4. [estimate] Verdict (locked rule): decided by r — LiteBIRD reaches ≥ 5σ even at the band floor; SO/S4 alone cannot see it. A LiteBIRD non-detection (r < 1e-4, 95 %) kills band_e and band_i.
+5. Caveat: σ at fiducial r = 0 ignores tensor cosmic variance and delensing residuals at r ≈ 5e-4 ⇒ S is optimistic; even halved it stays ≥ 3.8σ.

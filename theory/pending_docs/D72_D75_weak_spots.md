@@ -15051,3 +15051,10 @@ MAP: node=janus status=computed touches=[] ripple=no
 - aegis-check: re-ran LiteBIRD + S4 (3.34σ for A1) and S4 + SPHEREx (7.55σ for τ = i) in python; checked: units, arithmetic, like-with-like (95 % halved — stated), limits, cross-sector: none.
 MAP: node=janus status=computed touches=[] ripple=no
 
+
+## D1438 — JANUS tick 34: r floor vs 2030s B-mode forecasts
+- [literature] 2212.04115 Table 5 r< (95 %, fiducial r = 0): SO 9.9e-3, S4 3.4e-3, LiteBIRD 0.98e-4 (combos 0.97e-4).
+- [estimate] Detection of band r 4.55–5.7e-4: SO ≤ 0.11σ, S4 ≤ 0.34σ, LiteBIRD 7.6–11.4σ. Locked rule ⇒ "decided by r" (LiteBIRD). Non-detection at r < 1e-4 kills band_e/band_i.
+- Caveat: r = 0 fiducial ignores tensor cosmic variance/delensing at r ≈ 5e-4 — optimistic; halving S still ≥ 3.8σ.
+- aegis-check: re-ran S(4.55e-4, LiteBIRD one-sided) = 7.64, S(5.7e-4, two-sided) = 11.40, S4 two-sided 0.26 in python; checked: units, arithmetic, like-with-like (same paper, same table), limits, cross-sector: none.
+- MAP: node=band_e status=frozen touches=[] ripple=no
