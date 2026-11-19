@@ -12,7 +12,7 @@ size lands in band (D1485 machinery). A candidate "works" only if (ii) and (iii)
 - T3 [done D1504: not a tilt; FLAG ξ̂/𝒱̂ ≫ 1 on the path]
 - T3b [done D1505: flag stands, ξ/𝒱 ≈ 251 at all benchmarks; CORRECTION frame map x +7.1]
 - T3c [done D1506: FRAME-DEPENDENT, physical n_s ≈ 0.965 for the DILMIX centre] physical-frame n_s, r of the DILMIX centre and A1 (λ = 1/a, a 2e3/9.9e3/5e4) vs the λ = 1 values — fast SR, lock first
-- T4 [next] Uplift τ-dependence: anti-D3 (∝ e^{4A}/𝒱^{4/3}, warp factor depends on g_s via KS throat) or D-term uplift ∝ g_s^{?}/𝒱² — shape along y and size.
+- T4 [done D1520: uplift not the tilt — warped anti-D3 / D-term red, fixed-Z ∝ y but ×3.6e3] Uplift τ-dependence: anti-D3 (∝ e^{4A}/𝒱^{4/3}, warp factor depends on g_s via KS throat) or D-term uplift ∝ g_s^{?}/𝒱² — shape along y and size.
 - T5 [next] Summary card: which candidate (if any) gives C_phys ≈ 2e-3–0.1 naturally; hand-off note for the P3 chat.
 - T3d [done D1509: 0/72 in band; sliver α≈0.125, C≈1.45–1.74e-6] in-band search in the PHYSICAL frame (λ = 1/a, pure-power-law limit): DILMIX (α, C) map with x = λ(E − E_ρ) at a = 9931 (results converge in a) — where is the band now, and what C does it need? (fast SR, lock first)
 - T3e [done D1510: SLIVER CONFIRMED 20/56, α 0.05–0.125, C 1.3–2.0e-6; best (0.1,1.8e-6)] fine grid around the sliver in the physical frame: α ∈ {0.05, 0.075, …, 0.2} × C ∈ {1.3, 1.4, …, 2.0}e-6 at λ = 1/9931; confirm/kill the sliver; then exact-MS spot check of the best point (pipeline with λ = 1/9931, own file)

@@ -3048,3 +3048,9 @@ Touches: none.
 1. [derived] Engine F (third-order flow, self-consistent N*) vs exact MS on DILATON32 A0/A1/B0 and DILMIX ×6: |Δn_s| ≤ 9.8e-7, |Δr|/r ≤ 1.0e-4.
 2. [derived] Local k_eff at y*: SERAPIS-E 2.02, form A 1.54, form B 3.38, DILMIX 1.55–1.64.
 3. [derived] Pure-power chart at (k_eff, C) misses every route beyond tolerance (Δn_s −0.002…−0.0075, Δr +8…+46 %); the D1516 chart is pure-power only (D1516a).
+
+## D1520 — tilt T4: the uplift's τ-dependence is not the tilt — warped anti-D3 decays as e^{−(8πK/3M)y} (wrong sign); with the throat modulus held fixed it grows ∝ y but by ~3.6e3× from ρ to horizon exit (too big); D-term ∝ y^{−p} (wrong sign); + P3 DILTR A1 1e8 AGREE
+1. [literature] 2010.15903 Eqs. (2.14), (2.17), (2.20), (3.9) (read this tick): e^{4A₀} ≃ e^{−8πK/(3g_sM)}, V_D̄3 ≃ e^{4A₀}M_p⁴/𝒱^{4/3}, V_up = M_p⁴c″|Z|^{4/3}/(πg_sM²𝒱^{4/3}); at the minimum ρ_Z ≡ q₀′e^{−8πK/(3g_sM)}.
+2. [derived] Logarithmic slopes along y = 1/g_s (sympy): warped/stabilised throat ∝ e^{−(8πK/3M)y} ⇒ d ln V/d ln y = −(8πK/3M)y < 0; throat modulus held fixed (Eq. 2.20) ⇒ V_up ∝ y, slope +1; D-term ∝ g_s^p ⇒ slope −p.
+3. [estimate] Needed: a positive term ∝ g ∝ y^{3/2} with coefficient ~1.3–2e-6 per unit g (D1510). Warped anti-D3 and D-term: wrong sign (they lower V as y grows, a red tilt). Fixed-Z anti-D3: right sign but slope 1 (not 3/2) and O(1) size — the uplift tuned to cancel V at ρ (y_ρ = 0.866) would grow by y*/y_ρ ≈ 3.6e3 at horizon exit (y* ≈ 3116), swamping the plateau instead of tilting it by ~1e-4. No standard uplift supplies the tilt naturally.
+4. [derived] P3 DILTR A1 at T_R 1e8: exact 0.966597 / 6.4007e-4 vs D1489 0.966593 / 6.3996e-4 (Δn_s −3.8e-6, Δr/r −0.018 %) ⇒ AGREE. Track record 21 points, |Δn_s| ≤ 5.3e-6.

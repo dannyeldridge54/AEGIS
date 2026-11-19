@@ -15566,3 +15566,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1516a — correction to D1516
 - D1516 said the DILMIX in-band points are "k_eff ≈ 2 met by mixing 1.5 and 3". D1521 measured their local k_eff at horizon exit: 1.55–1.64, not ≈ 2. The in-band DILMIX points are NOT explained by the local exponent; the D1516 (k, C) chart applies to pure powers only. The rest of D1516 (pure-power band at k 1.9–2.0, C 1.0–1.6e-6) stands.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1520 — T4: uplift τ-dependence is not the tilt (anti-D3 warped: e^{−cy}, red; fixed-Z: ∝ y but ×3.6e3 from ρ to exit; D-term: y^{−p}, red); P3 DILTR A1 1e8 confirms D1489
+- [estimate] No standard uplift gives a small positive tilt ∝ y^{3/2}; tilt source remains open after T1–T4 (BHK too small, α′³ next order too big, F⁴ wrong shape, flux not a tilt, uplift wrong sign/too big).
+- aegis-check: formulas read from 2010.15903 this tick; slopes by sympy; 3116/0.866 = 3598 (python) ✓; DILTR A1 1e8 difference re-run ✓; cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
