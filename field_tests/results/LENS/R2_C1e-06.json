@@ -1,0 +1,8 @@
+{
+ "lens": "R2",
+ "C": 1e-06,
+ "k_fit": 1.9961624266172755,
+ "V0_rho": 9.9999999999999e-15,
+ "valid": false,
+ "error": "inflation does not end within Nmax"
+}
