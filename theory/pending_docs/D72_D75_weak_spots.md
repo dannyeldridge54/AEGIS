@@ -15980,3 +15980,13 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [literature] GRV 1004.0163; KOP hep-th/0001083; BFKOV hep-th/9707126; Obers–Pioline hep-th/9903113; Foerger–Stieberger hep-th/9901020; Angelantonj–Florakis–Pioline 1110.5318.
 - [estimate] heterotic R2–R6 thread indices s = d/2 − 1 taken by analogy with the Γ_{d,d} result; not computed per case.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1580 — EXT E1 (3D E₈): codon E^{E₈}_{3/2}, eigenvalue −120 (computed); cusp 2ζ(3)/y₃ + E^{SO(7,7)}_{5/2} (edge s = d/2 − 1). Golden ratio: present in E₈ geometry (H₄ 600-cell pair scaled by φ), ABSENT from codon coefficients and rung ratios. Silver ratio: not found.
+- [literature] GRV 1004.0163. [derived] eigenvalue. [estimate] rung persists.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1581 — EXT E2 (2D E₉): Laplace eigenvalue rule diverges at D = 2; affine E₉ series (Fleig–Kleinschmidt 1204.3043) keep finite tree + one-loop constant terms. New loop/spectral thread.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1582 — EXT E3 (1D E₁₀): hyperbolic, BKL billiard; series formal (1204.3043). No inflaton direction; ladder ends. Overall result stands: the species/coupling direction is the unique rung across all lenses (D1579).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
