@@ -64,8 +64,10 @@ if __name__ == '__main__':
     a = point(2.0, 1.0, 0.0); R = json.load(open('field_tests/results/SMSCAN/s2_m1.json'))
     a.update(ms_ns=R['ns'], ms_r=R['r'], d_ns=a['ns'] - R['ns'], d_r_rel=a['r'] / R['r'] - 1); out['anchor'] = a
     out['anchor_verdict'] = 'AGREE' if abs(a['d_ns']) <= 5e-4 and abs(a['d_r_rel']) <= 0.02 else 'DISAGREE'; print('anchor', json.dumps(a), flush=True)
-    p2 = point(2.0, 1.0, 1.5e-6); p3 = point(3.0, 2 / 3, 1.5e-6)
-    out['side'] = dict(s2=p2, s3=p3, d_ns=p3['ns'] - p2['ns'], d_r_rel=p3['r'] / p2['r'] - 1); print('side', json.dumps(out['side']), flush=True)
+    p2 = point(2.0, 1.0, 1.5e-6)
+    try:
+        p3 = point(3.0, 2 / 3, 1.5e-6); out['side'] = dict(s2=p2, s3=p3, d_ns=p3['ns'] - p2['ns'], d_r_rel=p3['r'] / p2['r'] - 1)
+    except Exception as ex: out['side'] = dict(s2=p2, s3_error=str(ex)[:80]); print('side', json.dumps(out['side']), flush=True)
     for sm in (1.5, 1.7, 1.8, 1.9, 2.0, 2.2):
         for C in (0, 0.5e-6, 1e-6, 1.5e-6, 2e-6, 2.5e-6, 3e-6):
             try: p = point(2.0, sm / 2, C)
