@@ -22,7 +22,7 @@ def obs(C, ystar, B, D):
     from scipy.optimize import brentq
     Nst = brentq(lambda N: bg.state(N)[0] - ps, 0.0, Nend - 1e-6)
     s = spectra(bg, Nend - Nst)
-    return s['n_s'], s['r'], s['alpha_s'], Nend - Nst
+    return s['ns'], s['r'], s['alpha_s'], Nend - Nst
 def solve(B, D, C, y):
     hist = []
     for it in range(6):
