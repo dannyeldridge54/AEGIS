@@ -2265,3 +2265,9 @@ Touches: none.
 2. [derived] Y ⊃ (90/π³)E(U,2)/T₂ → e^K ∝ 1/(s + εE), ε = 90/(16π⁵T₂) = 0.01838/T₂; uplift tuned at ρ → (b/A)x/(1+x).
 3. [estimate] Needs δ^U_GS = 0 and b′_U = 0 on the inflaton plane (else s = 1 log re-enters).
 4. [postulate P3] Concrete orbifold plane with those properties not yet found.
+
+## D1376: δ^U_GS = 0 realised, Γ₀(N) caveat
+1. [literature] 1009.3931 eqs. (4.4), (4.13): δ³_GS = 0 on the U-plane; U enters via η(U/4), η(U/2) with nonzero exponents (b′ ≠ 0).
+2. [derived] δ^U_GS = 0 is realisable; b′_U = 0 is not met by those condensing factors.
+3. [estimate] η(U/N) ⇒ Γ₀(N) U-plane: Eisenstein minimum need not be ρ; need an SL(2,Z) plane.
+4. [postulate P3] SL(2,Z) U-plane with b′_U = δ^U_GS = 0 not yet found.
