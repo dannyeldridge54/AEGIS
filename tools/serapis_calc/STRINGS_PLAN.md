@@ -81,3 +81,16 @@ BTR state that A carries "an appropriate integration constant … and a redefini
 and give L only as a scaling (L ~ e^{−γφ0/2}, eq. 3.13), no prefactor. Since m L scales as e^{a} under A → A + a (D1216), their absolute m L/π depends on
 that unstated constant; the convention-free check is the ratio m₂/m₁ (ours 2.190 vs theirs 2.13/0.97 = 2.196, within their 2-sig-fig rounding ±0.6%).
 Status: absolute scale NOT RECOVERABLE from the paper (not a solver or definition error on our side); ratio AGREES. S4e verdict on record unchanged.
+
+## S5–S7 (started 18 Nov 20:50 CT, Danny "Start make toolkit"): the P3 genus-one/genus-two lattice-integral toolkit
+Goal (D1406 mirror): test whether a dilaton-Kähler-type object carries A₀ + B·E₂(U) (D⁴R⁴ structure) in an overall factor.
+- S5a DONE (tools/serapis_calc/modint.py + tests/test_modint.py): Lagrangian Γ₂,₂(T,U), integration over F, DKL threshold
+  ∫_F (d²τ/τ₂)(Γ₂,₂ − 1) reproduced vs the closed form −log(T₂U₂|η(T)η(U)|⁴) − log(8πe^{1−γ}/3√3): 3.1e-5 (T = 2i, U = i),
+  1.9e-5 (T = 0.3 + 1.7i, U = 0.5 + 1.2i).
+- S5b next: renormalised Rankin–Selberg ∫_F dμ Γ₂,₂ E(τ,s) → E(T,s)E(U,s) (genus-one D⁴R⁴, GRV 4.16) — the product structure.
+- S5c: P–R universal Y (eq. 23) numerically; reproduce eq. 31 (6πR² + 90κ/πR², κ = E(i,2)/π²) — closes D1365/D1366 by a
+  second route.
+- S6: genus-two: Siegel–Weil route (∫ over Sp(4,Z)\H₂ of Γ₂,₂^{(2)} ↔ Langlands–Eisenstein of SO(2,2)) to get the genus-two
+  E₂(T) + E₂(U) term of GRV 4.15 independently; then ask which heterotic genus-two object enters K_S.
+- S7: write-up / lock any physics claim.
+Not used (checked): CERN+1 (tools/lhc: collider kinematics) and Hyperion (janus_astro: Galactic orbits) — no overlap.
