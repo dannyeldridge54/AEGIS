@@ -16348,3 +16348,11 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - [lit] ADM: 0901.4117, 1305.4939, 1308.0338. Element ladder: standard BBN, stellar, s- and r-process nucleosynthesis; fission of A > 260 nuclei in r-process stars (Roederer et al. 2023; review 2304.01850).
 - Flags: the shared part is the origin only (DM makes no elements); T_rh = 9e8 GeV is just below the thermal-leptogenesis bound; ΔN_eff for a mirror sector.
 - Verdict: CANDIDATE (known class mapped onto the Weave). Next: lock a test of whether the Z₃ at ρ fixes the sharing factor.
+
+## D1632 (RIGHT, 19 Nov 2026) — RESULT: matter-genesis toolkit (tools/genesis), first simulation (PREREG_GENESIS_MATTER)
+- T1: η = 6.13 × 10⁻¹⁰; m_DM = 5.03 GeV at equal sharing (1.7–15 GeV for s = 3 to 1/3). Consistency only.
+- T2 [toy BBN]: Y_p = 0.202 against the window [0.235, 0.260] → FAIL (observed 0.245). Diagnosis, not acted on: the toy reaches the deuterium bottleneck too late (T_D = 0.066 MeV, t = 292 s, versus ≈ 0.078 MeV and ≈ 200 s in full codes). Extra neutron decay lowers X_n (0.101 vs ≈ 0.12). Likely causes: the e± entropy transfer is ignored in t(T), and the one-line Saha bottleneck criterion is crude. This is a fault of the toy, not of P-M, since P-M does not change η. Any fix goes in a new lock that uses the standard textbook bottleneck; no rerun of this one.
+- T3 [Saha toy]: recombination z = 1370 → PASS (the textbook Saha value; the full Peebles value is ≈ 1100).
+- T4 (P-M constraint): a mirror sector must be colder than ξ < 0.45 (ΔN_eff < 0.3) → VIABLE. Toy Y_p shift at that bound: +0.0085. The literature gives ≈ +0.004 (0.013 per unit ΔN_eff), so the toy is ~2× too sensitive (same t(T) issue).
+- Output: field_tests/results/GENESIS_MATTER/{out.json, genesis.png, ladder.wav}. The .wav is a sonification of the element ladder (art/analogy, no physical claim), wired through tools/sound as the first toolkit tie-in.
+- Verdict: the toolkit runs end to end. P-M survives its one real constraint (ξ < 0.45). The BBN module fails its own locked accuracy test and must be upgraded before any number from it is quoted.
