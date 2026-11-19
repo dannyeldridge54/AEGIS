@@ -16223,3 +16223,10 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] (b) A bifurcation at i along the imaginary axis gives minima at τ = i·e^{±u}, which are S-images of each other (one physical point) and stay CP-conserving. A 7% offset (|τ − i|/|τ + i| ≈ 0.033) needs the hidden term ~0.1% past threshold (Δ ~ x²). The Weave plus a near-threshold hidden term can therefore host the 1.0685i vacuum, but cannot predict 7%.
 - Target 2 status: no route to a single rule; CLOSED for this loop (NULL for the unification itself). Next tick: target 3 (δ = Q/3).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1616 — LOOP tick 4 (target 3, why δ = Q/3): two derived constraints and a chance estimate. "δ = Q/3" is not independent of "δ = 2/9" (with Q = 2/3 they are the same statement), and a phase of 2/9 RADIANS (no π) cannot come from the residual symmetry at ρ, whose phases are rational multiples of π. So δ must come from dynamics (a ratio of couplings or an integral), not from the fixed-point geometry. Chance level of the match: ~7 × 10⁻⁴
+- [derived] Residual Z₃ (and Z₂ at i) fix phases only to multiples of π/3 (π/2). 2/9 is not of the form pπ/q with small q, so the Weave's fixed points cannot set δ by symmetry. The route "δ from the geometry at ρ" is CLOSED.
+- [computed] Look-elsewhere estimate: 56 rationals p/q (q ≤ 9) and 19 multiples pπ/q lie in δ's allowed range (0, 2π/3]; the chance that a uniformly random δ falls within ±1e-5 (the current 1σ) of one of them is 5.4e-4 (rationals) and 7.2e-4 (both). That is suggestive (~3.2σ-equivalent), not conclusive. The same caveat as D1615 applies: δ is a pole-mass quantity, so a high-scale origin would have to survive running.
+- [derived] Test that would sharpen it: Belle II / BESIII τ-mass precision σ(m_τ) ≈ 0.05 MeV would cut σ(δ) to ~3.5e-6; δ − 2/9 would then be tested at the ~3e-6 level.
+- Target 3 status: no derivation; geometric route closed; stays EMPIRICAL. Next tick: target 4 (what holds the quark modulus at a generic point).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
