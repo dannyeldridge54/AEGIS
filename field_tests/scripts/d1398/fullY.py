@@ -11,6 +11,10 @@ Lr = L(0.5, math.sqrt(3)/2); Li = L(0.0, 1.0)
 out = dict(T2=T2, s=s, kappa=kap, L_rho=Lr, L_i=Li, vacuum_at_rho=bool(Lr < Li), rows=[])
 P.E_paper = lambda x, y: kap*L(x, y)
 os.environ['AEGIS_CACHE'] = tempfile.mkdtemp(); P._EGRID.clear()
+_b = P.build
+def _build(model='serapis_e', C=1.15e-6, lam=1.0, ymax=3000, npts=4000):   # DEVIATIONS D1: start at the deepest grid point
+    m, V, dV, p0 = _b(model, C, lam, ymax, npts); ph, _ = P._egrid(model, lam, ymax, npts); return m, V, dV, ph[-5]
+P.build = _build
 for C in (0.0, 1e-4, 1e-3):
     t = time.time(); r = P.predict('serapis_e', C=C, TR=8.94e8, lam=1/(kap*Lr))
     m, V, dV, p0 = P.build('serapis_e', C, 1/(kap*Lr)); bg = P.Background(V, dV, p0)
