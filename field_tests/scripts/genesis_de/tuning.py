@@ -22,4 +22,4 @@ for beta in (2*math.sqrt(2),2.0,math.sqrt(2)):
     out[f'beta={beta:.4f}']=dict(n_viable=nv,n_pass_all=npass,frac_viable_lnrange=frac,window_dln=width,viable_lnrange=nv*dl,
         best_minmax=dict(dchi2_max=b[0],amp=b[1],w0=b[2],wa=b[3]),
         reading='natural' if frac>=0.10 else ('mild tuning' if frac>=0.01 else 'tuned/fails'))
-print(json.dumps(out,indent=1)); json.dump(out,open('field_tests/results/GENESIS_DE/tuning.json','w'),indent=1)
+print(json.dumps(out,indent=1,default=float)); json.dump(out,open('field_tests/results/GENESIS_DE/tuning.json','w'),indent=1,default=float)
