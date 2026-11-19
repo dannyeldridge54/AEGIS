@@ -888,16 +888,17 @@
     "D1421",
     "D1428",
     "D1438",
-    "D1441"
+    "D1441",
+    "D1454"
    ],
    "depends": [
     "nstar_e",
     "janus"
    ],
    "history": [
-    "D1428: frozen",
     "D1438: frozen",
-    "D1441: frozen"
+    "D1441: frozen",
+    "D1454: frozen"
    ]
   },
   {
