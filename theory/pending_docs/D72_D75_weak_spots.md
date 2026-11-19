@@ -15421,5 +15421,5 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1497 — help sets 5+6: DILMIX strip in the physical frame — weak coupling (g_s* 5e-5–5e-4), C_phys 2e-3–0.1, tilt source short by 10⁴–10⁶ vs g_s² loop
 - [derived] D1486's frame map re-run and confirmed (y* 3.69e3/1.07e4/3.16e4; C_phys 0.0025/0.0124/0.0625).
 - [estimate] Strip y_model 11.7–16.0 → y_phys 1.9e3–2.2e4; C_phys 2e-3–0.1; frames reconcile (only λ rescales); open: physical source of C_phys.
-- aegis-check: numbers from field_tests/results/D1497_phys_frame.json; 23.25·(2000)^{2/3} = 3691 ✓, 1.25e-6·9.9e3 = 0.0124 ✓; y^{3/2}-dominance at y = 11.7: second E term / first ≈ 0.6 % ✓ (by hand); g_s² range from 1/y_phys² ✓; cross-sector: none. No P3 files edited.
+- aegis-check: numbers from field_tests/results/D1497_phys_frame.json; 23.25·(2000)^{2/3} = 3691 ✓, 1.25e-6·9.9e3 = 0.0124 ✓; y^{3/2}-dominance at y = 11.7: second E term / first = 2.0 % (computed in python; an earlier hand estimate of 0.6 % was wrong and is corrected here) ⇒ y_phys good to ~1–2 %; g_s² range from 1/y_phys² ✓; cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
