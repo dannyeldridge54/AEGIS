@@ -1,0 +1,7 @@
+# PREREG_D1665_G15_KAPPA — the reheating decay strength κ from the string coupling's gauge kinetic coupling (Janus genesis G15; locked 2026-11-19 ~23:48Z before any number)
+Literature [read this session]: modulus → gauge-boson width Γ_gg = N_g m³ |∂_X f|² / (128π K_XX̄ (Re f)²) (arXiv:1909.04705 eq. 8); equivalently Γ(X_R → gg) = Γ(X_I → gg) = N_G d_g² m³/(128π M_P²) with d_g = 2/√n for K = −n log(X + X̄), f = X (hep-ph/0602081 eqs. 2–8).
+Mapping [derived, before computing]: SERAPIS kinetic term ½(∂ψ)² with y = e^{√2ψ} (D = 10) equals the SUGRA K_ττ̄|∂τ|² with K = −n log(2y) iff n/(4y²) = 1/(4y²), i.e. n = 1 (the standard axio-dilaton Kähler potential; same normalisation as D1653's 2D kinetic term). With X = −iτ (X + X̄ = 2y), Re X = y.
+Assumption A-S [stated]: the visible gauge group's kinetic function is f = X (the string coupling), as for gauge fields on D3-branes; N_g = 12 (SM). Other channels (Higgs, gauginos, gravitinos) not included ⇒ κ is a lower bound on the total.
+Compute: d_g = 2/√n, κ_gg = N_g d_g²/(128π); cross-check κ from the 1909.04705 form (|∂f|² = 1, K_XX̄ = n/(X + X̄)², Re f = y; y cancels); T_R from D1637's formula with m from D1637's json; position inside D1637's band [1/(8π), 1].
+Reading (locked): INSIDE if 1/(8π) ≤ κ ≤ 1 (D1637's assumed band holds and T_R is fixed); OUTSIDE otherwise (state by how much and the new T_R).
+Script: field_tests/scripts/janus_g/g15_kappa.py → field_tests/results/D1665_G15_kappa.json
