@@ -947,7 +947,8 @@
    "status": "killed",
    "d": [
     "D1263",
-    "D1408"
+    "D1408",
+    "D1425"
    ],
    "depends": [
     "janus",
@@ -956,9 +957,9 @@
     "serapis_point"
    ],
    "history": [
-    "D1263: postulate PW3 killed by its locked test",
     "D1263: killed",
-    "D1408: killed"
+    "D1408: killed",
+    "D1425: killed"
    ],
    "note": "web loop postulate 3; kept on the web as killed"
   },
