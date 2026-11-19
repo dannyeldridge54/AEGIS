@@ -97,5 +97,9 @@ Goal (D1406 mirror): test whether a dilaton-Kähler-type object carries A₀ + B
   second route.
 - S6: genus-two: Siegel–Weil route (∫ over Sp(4,Z)\H₂ of Γ₂,₂^{(2)} ↔ Langlands–Eisenstein of SO(2,2)) to get the genus-two
   E₂(T) + E₂(U) term of GRV 4.15 independently; then ask which heterotic genus-two object enters K_S.
+- S6 sources (found 19 Nov): Pioline, "On the Rankin–Selberg method for higher genus string amplitudes" (arXiv:1602.00308) —
+  genus-h integrals of Γ_{d,d} via Siegel–Weil / Langlands–Eisenstein of SO(d,d); Pioline, "D⁶R⁴ amplitudes in various dimensions"
+  (arXiv:1502.03377) and 1401.4265 (genus-two D⁶R⁴, Kawazumi–Zhang). Plan: S6a reproduce GRV 4.15's genus-two term (2/3)y₈(E₂(T)+E₂(U))
+  from the Siegel–Weil formula (closed form check, no Sp(4) numerics); S6b only if needed, a numerical Sp(4,Z)\H₂ integral.
 - S7: write-up / lock any physics claim.
 Not used (checked): CERN+1 (tools/lhc: collider kinematics) and Hyperion (janus_astro: Galactic orbits) — no overlap.
