@@ -2302,3 +2302,9 @@ Touches: none.
 3. [derived] c = −0.5, 0.5: minima at (−1 + i√7)/4 and −1 + i (vacuum moves); c = −1 runaway; c = 1 min at U/2 = ρ − 1.
 4. [estimate] c = 1 = hexagon in the rescaled variable U/2.
 5. [postulate P3] Which c a real freely-acting model gives is unknown.
+
+## D1382: (10,14) = F₂
+1. [literature] (12 + m, 12 − m) ↔ F_m; (10,14) = m = 2 with E8s swapped; T⁴/Z₂ std embedding has ten 56s (1405.2928).
+2. [derived] F₂: E7 with 3×56, b̂ = 0.
+3. [estimate] Unbroken E7 × E7 on F₂ is a tuned locus; N=1 embedding open.
+4. [postulate P3] Concrete N=1 model still missing.

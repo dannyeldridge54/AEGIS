@@ -14503,3 +14503,11 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - [estimate] Interpretation of c = 1: a purely shifted-sector potential picks the torus whose index-2 SUPER-lattice (generators 1, U/2) is hexagonal; the SERAPIS plateau function would be E(U/2,2) and the vacuum "ρ" lives in the variable U/2. That is a relabelling, not a loss — but which c a real freely-acting model has is not known here.
 - Verdict (locked rule): vacuum moves for every c ≠ 0 tested; only c = 1 keeps a hexagonal vacuum in a rescaled variable. Option (ii) of D1379 survives only in that special pure-shifted form. P3 stays a postulate.
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1382 — DEEP / LEFT: P3 — existence of D1367's b̂ = 0 E7: the (10,14) instanton split is the F₂ case (12 + m, 12 − m), m = 2, with the two E8s exchanged — a standard smooth heterotic K3 (dual to F-theory on F₂). No T⁴/Z₂ orbifold realisation found: the Z₂ standard embedding is (24,0) with ten 56s (2026-11-18)
+- [literature] Heterotic K3 with (12 + m, 12 − m) instantons ↔ F-theory on the Hirzebruch surface F_m (Morrison–Vafa; restated in arXiv:1405.2928). (10,14) = (14,10) with the E8s swapped = m = 2.
+- [literature] arXiv:1405.2928 Table 1: T⁴/Z₂ standard embedding E7 × SU(2) × E8 with (56,2) + 8(56,1) untwisted+twisted = ten 56s, all 24 instantons in one E8 (3/2 per fixed point); one Wilson line gives SO(12) × SU(2)² × E8. No Z₂ orbifold with an E7 carrying three 56s.
+- [derived] On F₂ the E7 from the 10-instanton E8 has 10/2 − 2 = 3 hypers in the 56 (b̂ = 0, D1367); the other E7 has 5 (b̂ = +24). [estimate] For m = 2 the E8s are not non-Higgsable: unbroken E7 × E7 is a tuned locus, generic moduli Higgs it — so b̂ = 0 E7 needs a tuned vector-multiplet/hyper locus.
+- [estimate] Consequence for the P3 model hunt: the b̂ = 0 E7 exists in smooth K3×T² (N=2), but the clean SL(2,Z) Z₂×Z₂-orbifold framework of P–R/KKPR uses (24,0)-type sectors with b̂ ≠ 0. A (10,14)-type N=2 sector inside an N=1 orbifold/CY (with SL(2,Z) U-plane and δ^U_GS = 0) is the remaining construction.
+- Verdict: the needed gauge sector exists (tuned F₂ locus); the N=1 embedding is still open. P3 stays a postulate.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
