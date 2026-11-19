@@ -1,7 +1,7 @@
 # THE WEAVE — full equation (v1, 19 Nov 2026, D1527–D1597)
 
 Tags: [der] derived and checked · [lit] literature · [P] principle, assumed · [EMP] empirical, not yet derived · [OPEN] missing term.
-Nothing here is published. Ladder entry only with Danny's yes.
+Published preprints (19 Nov 2026): inflation part doi:10.5281/zenodo.24377930; flavour part doi:10.5281/zenodo.24377945. Ladder entry only with Danny's yes.
 
 ## The equation
 

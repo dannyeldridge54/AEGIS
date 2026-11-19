@@ -16169,3 +16169,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] The fork exists in the static potential, but in the dynamics the thread crosses the band at speed, before the transverse instability (growth ∝ √|∂²V/∂x²| ~ 0.2–0.3) can act on kicks up to 3e-2, which is far larger than the quantum spread of the axion (~1e-4 – 1e-3). ⇒ Endpoint ρ is confirmed for the inflaton; the i-exit would need δx ≫ 3e-2 (not reached in the locked list; threshold not found).
 - Consequences: θ = π at ρ stands; the strong-CP resolution remains the anomaly-free quark weights (D1601). The Y-fork remains as the place where a second field (one not carrying the inflaton's momentum, e.g. the lepton/neutrino moduli) can split between ρ and i — consistent with P-F3, which is now a candidate mechanism rather than a bare postulate.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1608 — PUBLISHED (Danny 13:20 "publish those … Zenodo is up"): two preprints on Zenodo
+- "Inflation from the Running of the Species Scale …": doi:10.5281/zenodo.24377930 (PDF md5 1d62b1c694e399d2f024be683c078fcd, verified on the PC and in Zenodo's listing).
+- "Flavour at the End of Inflation …": doi:10.5281/zenodo.24377945 (PDF md5 7bf2eb09e397a70303a7576e74942b22). Section V states that the slow-modulus basin computation (PREREG_BASINS, D1607) is pending and will appear in a revision.
+- Both are CC BY-NC-SA 4.0 under the AEGIS Community License, with status-of-claims paragraphs and the note that the model was formulated post-data.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
