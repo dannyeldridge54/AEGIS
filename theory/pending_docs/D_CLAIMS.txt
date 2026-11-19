@@ -701,3 +701,4 @@ D1414  2026-11-19T03:21Z  JANUS tick 12: rho analogue of D640 - size of the I^2 
 D1415  2026-11-19T03:26Z  JANUS tick 13: rho analogue of D640 - slow roll on plateau 1-1/(A y^2+B+D/y) with tilt, inverted at A1
 D1416  2026-11-19T03:33Z  JANUS tick 14: second-order slow roll - source incomplete, no result; route to exact MS
 D1417  2026-11-19T03:36Z  alpha_s estimator: 11-pt LSQ cubic stable to 1e-8 (old 5-pt differs 6e-5); SERAPIS alpha_s = -9.96e-4; made default
+D1418  2026-11-19T03:39Z  JANUS tick 15: exact MS on the rho offset model, solved to A1 (n_s, r)
