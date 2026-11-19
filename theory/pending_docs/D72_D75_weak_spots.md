@@ -16289,3 +16289,15 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [computed] KK-graviton overproduction measure (T·R)·T/M_P with R = 7.4 μm: 1.5e10 at T = 1e9 GeV (catastrophic), 1.5e-8 at T = 1 GeV (fine) ⇒ the dimension must be micron-size only after T ≲ GeV.
 - [derived] Verdict: the dark-dimension route to Λ and dark matter cannot be bolted onto the Weave's high-scale inflation without a new mechanism for ~30–90 e-folds of extra-dimension growth. The dark-dimension literature avoids this by inflating at ~10⁹ GeV with r ≈ 0, which contradicts our r ≈ 5e-4. ⇒ P-Λ (dark dimension) is DOWNGRADED to "conflicts with Weave inflation". A CMB-S4/LiteBIRD detection of r at ~5e-4 would rule out the dark dimension as the origin of Λ in a Weave universe; non-detection would leave room for it, but not for Weave inflation as is.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1626 (RIGHT, 19 Nov 2026) — "Genesis / reverse thread": the inflation plateau reused as late dark energy (PREREG_GENESIS_DE; DEVIATIONS D1, D2 written before reruns)
+Idea (Danny 15:05): dark energy and matter began as one thing at the Big Bang. The same plateau shape that drove inflation, at a far lower height, is rolled down only now, so dark energy "forms" late; at the minimum the thread oscillates and behaves like matter.
+Model: V = V_Λ(1 − 7.30 e^{−βφ}), field frozen at a = 1e-3, V_Λ shot to H₀ = 1, Ω_m = 0.31; β = 2√2, 2, √2; 40 starting heights.
+Results [computed]:
+- Best fit vs DESI DR2 + CMB + Pantheon+: β = 2√2, (w₀, w_a) ≈ (−0.94, −0.09), Δχ² = 6.04 (≤ 6.18) → CONSISTENT, marginally. β = 2 gives 6.09 (consistent); β = √2 gives 6.21 (tension).
+- Union3: the best is 7.90 → TENSION for every β.
+- In the same approximation ΛCDM scores 8.8 (Pantheon+) and 14.4 (Union3). The thread therefore improves on Λ by Δχ² ≈ 2.8 and ≈ 6.5, but it cannot reach the data's central w_a.
+- The maximum |w_a| is ≈ 0.25 at w₀ ≈ −0.85. Starting further down (amp ≳ 0.2–0.4, depending on β) gives no viable cosmology: the field rolls into V < 0 before today (13, 11 and 8 of the 40 points are NONVIABLE).
+- Matter-like oscillation happens only in the future (the field is still on the plateau today), so it is untestable now.
+Caveats: the w₀–w_a correlation ρ = −0.9 is ASSUMED (not taken from the paper). The thread is thawing, so it cannot cross w = −1, which DESI's central values do.
+Verdict: PARTIAL. The reverse thread is a viable, mildly-better-than-Λ dark energy. It naturally predicts w₀ ≈ −0.92 to −0.95 and |w_a| ≲ 0.25, and the tilt β is not identifiable at this precision. It does NOT fix Λ's size: V_Λ ~ 10⁻¹²² M_P⁴ is put in by hand, so the coincidence problem remains open. Test: DESI DR3/Euclid. If w_a stays below −0.5 with w₀ > −0.9, the thread is excluded.

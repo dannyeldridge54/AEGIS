@@ -10,7 +10,7 @@ Published preprints (19 Nov 2026): inflation part doi:10.5281/zenodo.24377930 (v
         − V(τ₁)                                                    (SERAPIS-Λ, inflation)
         − [ ē_L √M_ℓ(τ_ℓ)² e_R  +  ν: M_ν(τ_ν)  +  quarks Y_u, Y_d(τ_q) ]   (flavour)
         + (θ̄ / 32π²) G G̃                                         (strong CP)
-        + Λ_obs                                                     (dark energy, OPEN)
+        + V_Λ(1 − 7.30 e^{−βφ_Λ})  ← reverse thread (D1626): same plateau, late height; size V_Λ OPEN
 
 ### 1. Inflation — SERAPIS-Λ
     V(τ₁) = V∞ ( ⅔ y∂_y ln E(τ₁, 3/2) )² [ 1 + C (E − E_ρ) ],   E = 2ζ(3)y^{3/2} + 4ζ(2)y^{−1/2} + …,   y = e^{β_D ψ/2}, β_D = √(D−2)

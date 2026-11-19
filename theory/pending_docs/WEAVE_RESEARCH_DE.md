@@ -72,3 +72,11 @@ Flag: Weave reheating at 9 × 10⁸ GeV would overproduce KK gravitons if R were
 
 ## 9. Compatibility check (D1625): NO
 Growing the dimension by 10²⁴–10²⁶ needs Δφ ≈ 70 M_P. That takes ≥ 28–31 e-folds of radion kination after reheating, or 84–92 e-folds of 5D-uniform inflation, and the dimension must be micron-size only after T ≲ 1 GeV (otherwise dark gravitons are overproduced, (TR)T/M_P = 1.5 × 10¹⁰ at 10⁹ GeV). Neither fits between Weave reheating (9 × 10⁸ GeV) and the GeV epoch. Conclusion: the dark dimension and Weave high-scale inflation are incompatible without a new mechanism, and r decides between them. Dark energy goes back to OPEN for the Weave.
+
+## 10. The reverse thread (D1626): the inflation plateau reused as dark energy
+Same shape, 1 − 7.30e^{−βφ}, at the dark-energy height, still being rolled down today.
+- Against DESI DR2 + Pantheon+ it passes at 2σ (Δχ² 6.0, versus 8.8 for Λ).
+- Against Union3 it fails (7.9, versus 14.4 for Λ).
+- Prediction: w₀ ≈ −0.92 to −0.95, w_a ≈ −0.1 to −0.25, and never below −1.
+- The height V_Λ is still put in by hand, so Λ's size stays OPEN.
+- The "matter phase" (oscillation at the minimum) lies in the future.
