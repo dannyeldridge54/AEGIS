@@ -15940,3 +15940,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1569 — DIMENSION LADDER stage 2 (D = 8): the T² shape U enters the R⁴ codon as 2Ê₁(U) (s = 1, log η) — its species-gradient plateau is log-type (k ≈ 1): overshoots for small SL(3) background A (no inflation into ρ), r ≈ 1.4e-3 for A = 100 — off the k = 2 rung; at 8D the rung stays in the SL(3) block (τ). Map: theory/pending_docs/DIMENSION_LADDER.md
 - Lock field_tests/rules/PREREG_DIM2_8D.md; results field_tests/results/DIM2_8D/; source GRV arXiv:1001.2535 eq. (3.16). Expectation held (A = 0 no inflation; large A k ≈ 1, r ~1e-3).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1570 — DIMENSION LADDER stage 3 (D = 7, SL(5)): τ-slice codon E_{3/2} + c with c built from logs (either sign); c = −0.658 flattens (untilted r 3.26e-4, n_s 0.9587), c = −6.58 overshoots (no inflation into ρ); the rung survives only for |c| ≲ 0.7. Map: theory/pending_docs/DIMENSION_LADDER.md
+- Lock field_tests/rules/PREREG_DIM3_7D.md; results field_tests/results/DIM_SLICE/; GRV arXiv:1001.2535 eqs. (6.5), (B.71), (B.72). Expectation partly held: large negative c kills inflation (yes); small negative c still inflates, flatter — stated.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

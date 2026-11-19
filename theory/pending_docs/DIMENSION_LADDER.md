@@ -47,3 +47,12 @@ lattice directions (26 = 10 + 16; Narain O(16 + d, d)). At each stage the map re
 - **Stitch** — the smallest black hole the lens can describe; where the lens is sewn onto quantum gravity [the species scale Λ_sp: the minimal black-hole size is 1/Λ_sp (Dvali; van de Heisteeg–Vafa–Wiesner–Wu); our plateau is the gradient of ln Λ_sp]. (The "black holes stitch the dimensions" picture: as a fold opens a dimension, the stitch scale moves — that motion IS the plateau.)
 - **Anchor** — where everything comes to rest [the desert point ρ: Λ_sp maximal, V = 0 (Montgomery: hexagonal lattice)].
 - **Tilt thread** — the small extra pull that sets n_s [the α'³ (BBHL) dependence of the volume prefactor, ∝ E_{3/2}, D1566].
+
+## Stage 3 — D = 7 (IIB on T³ / M on T⁴) — D1570
+- Coordinates: G/K = SL(5,R)/SO(5); dim 14. Inflaton candidates: τ (inside the SL(3) ⊂ SL(5) block), r (decompactification radius), T² shape U, ν₂.
+- R⁴ codon (GRV 1001.2535 eq. 6.5): E⁽⁷⁾ = E^{SL(5)}_{[1000];3/2}, Laplace eigenvalue −12/5. Constant terms: (B.71) r^{6/5}E^{SL(4)}_{[001];3/2} + 4ζ(2)r^{16/5}; (B.72) r^{12/5}(Ê^{SL(3)}_{3/2} + 2Ê₁(U) + 8π log r), Ê^{SL(3)}_{3/2} = ν₂^{−1/2}E_{3/2}(Ω) + (4π/3) log ν₂ + …. Λ₇ ∝ (E⁽⁷⁾)^{−1/5}.
+- τ-slice: E_{3/2}(τ) + c with c = ν₂^{1/2}[(4π/3) log ν₂ + 2Ê₁(U) + 8π log r + …] — NEW at this fold: c contains logarithms and can be NEGATIVE.
+- Engine F (locked PREREG_DIM3_7D; 9D script reused, results in field_tests/results/DIM_SLICE/, rows labelled "9D" by the reused script): c = −0.658: V₀ (y = 1.5, 3, 10, 30, 100) = 0.084, 0.52, 0.946, 0.995, 0.9998 (from below, flatter); n_s 0.9587, r 3.26e-4. c = −6.58: V₀ = 0.68, 1.34, 1.11, 1.03, 1.005 — overshoot: no inflation into ρ (INVALID).
+- Verdict (warp map so far): fold 10D→9D adds c > 0 (warps k 2 → 3/2, r up); fold →7D lets c take either sign: small negative c flattens (r ≈ 3e-4), larger negative c flips the approach and kills inflation into the anchor. The rung survives for |c| ≲ 0.7 — near where the 7D logarithms cancel (ν₂ ≈ 1, U ≈ ρ, r ≈ 1): a thin "stitch-balanced" slice.
+- Weave/twist link: each fold weaves a new thread (c) into the τ-strand; the observed rung is the slice where the new threads balance out.
+- Next stage: D = 6 (SO(5,5)/(SO(5)×SO(5)), codon E^{SO(5,5)}_{[10000];3/2}).
