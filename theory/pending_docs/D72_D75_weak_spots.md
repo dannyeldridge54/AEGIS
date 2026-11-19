@@ -14592,3 +14592,14 @@ MAP: node=band_e_audited status=postulate touches=[serapis_point] ripple=no
 - Bound 6.75e8 GeV (12 e-folds before exit, D1264): margin ×1427 at 1.25 TeV and ×1189 at 1.5 TeV (was ×964).
 - Verdict: m32_window still PASSES, with more room. No status change (postulate, passed). The map title's "≤ 7e5" is now conservative.
 MAP: node=m32_window status=postulate touches=[wino_window] ripple=no
+
+## D1390 — WEAVE tick 5: inverse_meter applied to today's CMB. Current data already "read" the string product: Im S·Im ρ = 788 (589–1054) from Planck+ACT+BK+DESI, or 896 (711–1128) adding SPT, at N_eff = 4 and T_R = 7.39e8. This is a measurement by construction (D1275b), not a test (2026-11-18)
+- Inputs: the D1268 meter point (n_s 0.97439 → C 1.248e-6, Im S·Im ρ = 782) and the D1265 response ∂n_s/∂ln C = 1.171e-2.
+  - [arithmetic, linear response] Im S·Im ρ = 782·exp[−(n_s − 0.97439)/0.01171]; the 1σ band in ln C is σ_ns/0.01171.
+- Results:
+  - 0.9743 ± 0.0034 → 788, 1σ 589–1054 (±29% in ln);
+  - 0.9728 ± 0.0027 → 896, 711–1128 (±23%).
+  - Both fall inside D689's "natural" construction range 560–1220. As D1275b warns, that is automatic for any n_s in the band, so it is NOT evidence.
+- What it gives the Weave: today's data reading of the string product, to compare with any future independent moduli stabilisation (the only thing that would make bhk_tilt a predictor). SO's σ(n_s) 0.0016 would cut the ±23–29% to ±14% (D1265 forecast, string_meter).
+- Caveat: linear response over |Δn_s| ≤ 0.0016, well inside the emulator range (D1268: exact to ~1%). T_R and N_eff are held fixed. N_eff = 3 rescales the result by ¾.
+MAP: node=inverse_meter status=postulate touches=[string_meter, bhk_tilt] ripple=no
