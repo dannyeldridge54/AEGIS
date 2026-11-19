@@ -15333,3 +15333,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Physics caveats: needs N_B > N_F for c > 0 (negative Casimir), a stabilised positive area (p < 4 ✓), and the uplift tuned at ρ; codim-2 brane tensions in 6D also deficit-angle the T² (conical) — the flat-T² Casimir is then only approximate. 6D SLED-type supergravity (Aghababaie–Burgess–Parameswaran–Quevedo) is the natural home.
 - Verdict: one concrete, parameter-free candidate inside the area-integration family: (s, m) = (3, 1) from brane tension + 6D Casimir. P3: postulate; candidate test running.
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
+## D1481 — help for the P3 chat: independent SR cross-check of DILATON32 form A — AGREE; band map says form A misses the band in r
+- [derived] Independent second-order SR (own E(τ,3/2), own background, shared Nstar): A0 / A1 match the P3 chat's exact-MS rows to ≤ 4e-6 in n_s and ≤ 0.023 % in r (AGREE as locked); A2 (n_s > 1) α_s not comparable (SR invalid there).
+- [estimate] Band map: n_s reaches 0.969–0.975 at C ≈ 1.78–3.46e-6, but r there is 6.56–7.68e-4 (> 5.7e-4). Forecast for the locked DILATON32_TILT scan: not in band at any tested C (closest C ≈ 1.8e-6, r 15 % high). Its own runs remain the record.
+- aegis-check: numbers from field_tests/results/D1481_dilaton_sr.json; crossings re-interpolated in python (n_s 0.969 → C 1.783e-6, r 6.561e-4; 0.975 → C 3.455e-6, r 7.680e-4); A1 Δn_s 0.9671684 − 0.9671723 = −3.9e-6 ✓; units: same φ = ln y/√2 map and E normalisation as run.py (A0 match confirms); like-with-like: same model, T_R, g*, k; cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
