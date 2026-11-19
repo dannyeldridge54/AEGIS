@@ -752,3 +752,4 @@ D1465  2026-11-19T07:53Z  JANUS tick 61: new n_s/alpha_s/r literature check sinc
 D1466  2026-11-19T07:59Z  JANUS tick 62: beta_s from both derived models vs D1400
 D1467  2026-11-19T08:05Z  JANUS tick 63: beta_s detectability with derived values
 D1468  2026-11-19T08:13Z  JANUS tick 64: reference card docs/JANUS_FORMULAS.md
+D1469  2026-11-19T08:17Z  JANUS tick 65: reference card consistency test
