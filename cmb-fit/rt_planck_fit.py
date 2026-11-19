@@ -128,7 +128,7 @@ def chi2_at(info, point):
 def gate():
     info, ref = make("rtP")
     c = chi2_at(info, dict(ref, rt_ui=1e-6))
-    out = {"chi2_LCDM_stored": ref["chi2"], "chi2_rtP_ui_1e-6": c, "diff": c - ref["chi2"], "pass": abs(c - ref["chi2"]) <= 1.0}
+    out = {"chi2_LCDM_stored": float(ref["chi2"]), "chi2_rtP_ui_1e-6": float(c), "diff": float(c - ref["chi2"]), "pass": bool(abs(c - ref["chi2"]) <= 1.0)}
     json.dump(out, open(os.path.join(C.RESULTS, "rtP_gate.json"), "w"), indent=1); print(json.dumps(out), flush=True)
 
 
