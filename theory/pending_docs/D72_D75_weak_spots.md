@@ -15143,3 +15143,8 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] PC job J4 specified, not queued (D1450). Awaiting Danny: J1–J4, band_i_audited.
 - aegis-check: summary only — numbers read from D1446/D1448/D1449 result jsons this tick; checked: labels, like-with-like.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1452 — JANUS tick 48: band_e_audited running, derived model — D1433 confirmed
+- [derived] 9/9 grid points: α_s −1.0163e-3 … −9.070e-4; pulls P-ACT −1.276 … −1.256σ, P-ACT-LB −1.388 … −1.367σ; edge shift vs D1433 4.5e-4σ (rule 0.1σ) ⇒ CONFIRMED, PASS.
+- aegis-check: numbers from the result json; re-ran (−1.01625e-3 − 0.0060)/0.0055 = −1.2757 in python; like-with-like: same ACT combinations and 68 % σ as D1433; grid rectangle wider than the 6-corner box (stated); checked: units, arithmetic, cross-sector: none.
+- MAP: node=band_e_audited status=postulate touches=[] ripple=no

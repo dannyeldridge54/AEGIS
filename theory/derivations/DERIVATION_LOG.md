@@ -2681,3 +2681,9 @@ Touches: none.
 3. [derived] Vacua: Δα_s(ρ − τ = i) = −1.05 … −1.62e-4 on a 3×3 grid (9/9 converged), ≤ 0.049σ for SO, ≤ 0.19σ for the hypothetical S4-based best; the models separate the vacua by ≥ 79× their accuracy, data cannot — vac_discriminant stays killed (D1449).
 4. [estimate] All 12 exact references predate D1417's estimator fix; PC job J4 (rerun them with the 11-pt LSQ cubic) is specified in docs/JANUS_PC_JOBS.md, not queued (D1450).
 5. [estimate] Awaiting Danny: queue PC jobs J1–J4; band_i_audited node (D1429).
+
+## D1452 — JANUS tick 48: band_e_audited running from the derived ρ model — D1433 CONFIRMED
+1. [derived] ρ second-order model on a 3×3 grid over the audited box's bounding rectangle (n_s 0.97166–0.97596 × r 4.389–4.897e-4; 9/9 converged): α_s −1.0163e-3 … −9.070e-4.
+2. [literature] ACT DR6 (2503.14454 §4.1, 68 %): P-ACT 0.0060 ± 0.0055, P-ACT-LB 0.0062 ± 0.0052.
+3. [derived] Pulls: P-ACT −1.276σ … −1.256σ, P-ACT-LB −1.388σ … −1.367σ; largest edge shift vs D1433's A1-anchored ranges 4.5e-4σ (rule > 0.1σ to supersede): D1433 CONFIRMED by the derived model.
+4. [derived] So the audited box's running test does not depend on the empirical k = 1.0352: the derived model gives the same ~1.3σ lean (data positive, theory negative), PASS on both ACT combinations.
