@@ -2457,3 +2457,9 @@ Touches: none.
 3. [estimate] Post-lock check (not counted as evidence): x = εI*³/4 from the inversion recovers the true ε to −0.04 % … −0.18 %; I* = 23.5–23.8, x = 0.42–0.50.
 4. [derived] Consequence for the loop: at τ = i use D640 (sub-percent) rather than D1405's leading-order form when precision matters; the 3.4 % at ρ is a separate (E(τ,2)-tilt) leading-order error, not addressed here.
 
+## D1413: band_i running via D640 (locked)
+1. [derived] D640 inversion (D1412 functions) over band_i (n_s 0.970–0.975, r 4.8–5.7e-4, 21×21): α_s = −8.42e-4 … −1.044e-3 (leading order κ = ½, D1402a: −7.54e-4 … −9.28e-4; D640 is 10–12 % more negative, as D1412 predicts). Residuals < 1.1e-17, x = 0.33–0.54 > 0.
+2. [derived] vs ACT DR6 P-ACT-LB 0.0062 ± 0.0052: pulls −1.35σ … −1.39σ. Rule PASS (|pull| < 2).
+3. [estimate] The band needs ε = 1.15–1.71e-4 (from ε = 4x/I*³); NA12's exact points only cover 1.30–1.50e-4, so the band's edges are D640 extrapolations (D640 itself was validated on its own wider set).
+4. [derived] Knock-on: the forced-negative range of D1405 tightens at its τ = i end from −7.5e-4 to −8.4e-4; all signs and verdicts of D1405/D1408/D1409 unchanged. Flag band_i (recheck after D1412) cleared.
+

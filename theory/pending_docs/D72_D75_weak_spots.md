@@ -14841,3 +14841,12 @@ MAP: node=band_e_audited status=postulate touches=[] ripple=no
 - aegis-check: re-ran c = ln1728/2π = 1.18646 (D640's text quotes 1.1868 — a 4th-digit rounding slip in that note; its formula and this script use the exact value, so no number changes), one inversion by hand at n_s 0.97462 (x 0.460, I* 23.61, α_s −8.51e-4 with rounded inputs vs −8.543e-4 exact), ε = 4x/I*³ = 1.3985e-4 in python; checked: units (code units, ratios dimensionless), arithmetic, like-with-like (exact MS α_s at the same (n_s, r)), limits (c → 0 recovers D635), cross-sector: none.
 MAP: node=janus status=computed touches=[band_i] ripple=no
 
+## D1413 — JANUS tick 11: band_i's running re-scored with the D640 offset-corrected relation — α_s −8.4e-4 … −1.04e-3, pulls −1.35 … −1.39σ, PASS; flag cleared
+- Lock: field_tests/rules/PREREG_D1413_band_i_D640.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1413/band_i_d640.py (reuses D1412's functions unchanged); result field_tests/results/D1413_band_i_D640.json.
+- [computed] D640 over the band: α_s −8.42e-4 … −1.044e-3 (leading order was −7.54e-4 … −9.28e-4); ACT DR6 pulls −1.35 … −1.39σ → PASS.
+- [estimate] Band edges need ε 1.15–1.71e-4, beyond NA12's exact 1.30–1.50e-4 — the edges are D640 extrapolations (stated, not a fail).
+- Knock-on (no verdict changes): D1405's forced-negative window becomes about −8.4e-4 (τ = i, D640) to −1.14e-3 (ρ, LO; the ρ LO itself is 3.4 % low, so ρ's true end is ≈ −1.18e-3 at the band top — estimate). D1408's Δα_s between vacua shrinks accordingly (D1263's exact 1.44e-4 stands as the reference).
+- Flag band_i (recheck after D1412) cleared, citing this note.
+- aegis-check: re-ran the top-edge pull −1.393σ and the LO→D640 shift (−10.4 % at the bottom corner) in python; checked: units, arithmetic, like-with-like (same ACT value as D1402), limits (c → 0 ⇒ D635), cross-sector: none.
+MAP: node=band_i status=frozen touches=[janus] ripple=no
+
