@@ -749,3 +749,4 @@ D1462  2026-11-19T07:35Z  JANUS tick 58: band_i formula on kappa=1/2 leading-ord
 D1463  2026-11-19T07:41Z  JANUS tick 59: split each vacuum's correction over LO into offset and slow-roll-order parts
 D1464  2026-11-19T07:47Z  JANUS tick 60: open decisions for Danny
 D1465  2026-11-19T07:53Z  JANUS tick 61: new n_s/alpha_s/r literature check since 2512.10613
+D1466  2026-11-19T07:59Z  JANUS tick 62: beta_s from both derived models vs D1400
