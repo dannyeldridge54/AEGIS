@@ -3161,5 +3161,5 @@ Touches: none.
 4. [derived] Inflaton mass at the vacuum m = √(V''V∞)/M_P = 5.00e12 GeV; m/H_* = 0.87.
 5. [estimate] Γ = κm³/M_P², κ ∈ [1/(8π), 1] ⇒ T_R = 7.72e8 … 3.87e9 GeV (g* 106.75). The assumed 8.94e8 GeV sits INSIDE the band (κ ≈ 1/(8π) end; ratio to κ = 1: 0.23). Locked window (band ×10): 7.7e7 … 3.9e10 ⇒ CONSISTENT.
 6. [derived] Feeding the band back into the N_* matching: ΔN_* = −0.05 … +0.49, Δn_s = −4.7e-5 … +4.7e-4 (≤ 0.23 σ_SO), r 5.33–5.42e-4.
-Caveats: κ is not derived from v3; real-τ line only (axion direction not included); perturbative Eisenstein form near ρ.
-Referee (aegis-check): m, both T_R values and V∞ re-derived from the json to ratio 1.000; band containment re-checked True; units GeV throughout (reduced M_P) ✓.
+7. [estimate] Caveats: κ is not derived from v3; real-τ line only (axion direction not included); perturbative Eisenstein form near ρ.
+8. [derived] Referee (aegis-check): m, both T_R values and V∞ re-derived from the json to ratio 1.000; band containment re-checked True; units GeV throughout (reduced M_P) ✓.
