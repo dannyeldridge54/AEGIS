@@ -23,7 +23,7 @@ def _fd(y): return 1/(1+math.exp(max(min(y,700),-700)))
 def rates(T,Tnu):
     z=ME/T; zn=ME/Tnu
     def integ(sgn):   # sgn=+1: n->p ; -1: p->n
-        g=lambda x: x*math.sqrt(x*x-1)*(sgn*q-x)**2*_fd(-x*z)*_fd((x-sgn*q)*zn)
+        g=lambda x: abs(x)*math.sqrt(x*x-1)*(sgn*q-x)**2*_fd(-x*z)*_fd((x-sgn*q)*zn)
         a=quad(g,1,60/z+q+5,limit=200)[0]+quad(g,-(60/z+q+5),-1,limit=200)[0]
         return K*a
     return integ(1),integ(-1)

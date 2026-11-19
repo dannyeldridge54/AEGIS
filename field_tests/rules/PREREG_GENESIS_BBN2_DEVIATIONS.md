@@ -1,0 +1,2 @@
+# DEVIATIONS — PREREG_GENESIS_BBN2 (written before any rerun; no Y_p had been seen)
+D1: crash in the dense-output step. Diagnosis (rates printed only, no abundances): the phase-space integrand used x·√(x²−1) on the x ≤ −1 branch (the positron processes). That makes the branch NEGATIVE, so it cancels the electron branch. Result: λ_np(1 MeV) = 0.0086 s⁻¹ (the standard value is ≈ 1–2 s⁻¹) and λ_pn < 0. The standard form uses the energy magnitude |x|. Fix: x → |x| in the prefactor. This is a coding error against the locked method, not a change of method. Nothing else changed.
