@@ -942,3 +942,4 @@ D1654  2026-11-19T23:01Z  JANUS genesis G6b: channel-by-channel inflaton decay s
 D1655  2026-11-19T23:04Z  JANUS genesis G9c: basin map of the dark thread end point (axion offsets 0.05-0.5) - i vs rho
 D1656  2026-11-19T23:04Z  untitled
 D1657  2026-11-19T23:14Z  JANUS genesis G6c: massive dark photon rescue for P-M - mass/mixing window from BBN, 3-gamma lifetime, ADM annihilation
+D1658  2026-11-19T23:17Z  JANUS genesis G9d: thread's future from D1636 full-likelihood best starts (exact v3 shape, 2D)
