@@ -14765,7 +14765,7 @@ MAP: node=band_e status=frozen touches=[janus] ripple=no
 - [derived] Sign rule: α_s ≥ 0 only if ρ < 1 and κ ≥ 1/(1−ρ). Both frozen bands have ρ = 1.42–1.91, so negative running is forced for every physical κ (κ scan 0.01–10: none positive).
 - Meaning: a clean, falsifiable statement for the whole plateau + exponential-ramp family at SERAPIS's (n_s, r): the running must be negative, between about −7.5e-4 (τ = i, κ = ½) and −1.14e-3 (κ = 1). A future α_s > 0 at high significance kills the family; today's ACT DR6 lean (+0.0062 ± 0.0052) is only ~1.3σ.
 - [computed] D1402a: band_i at its own κ = ½ (D1263): α_s −7.5e-4 … −9.3e-4, pulls −1.34 … −1.37σ, PASS — D1402's κ = 1 numbers corrected, verdict unchanged.
-- aegis-check: re-ran ρ edges (1.42 at n_s 0.975, r 4.55e-4; SERAPIS point ρ = 1.72) and κ = 1 closed form = −2r at the SERAPIS point in python; checked: units, arithmetic, limits (κ → 0: α_s = −½(1−n_s)²ρ; ρ → 1: α_s = −½(1−n_s)² for any κ), like-with-like, cross-sector: none.
+- aegis-check: re-ran ρ edges (minimum 1.42 at n_s 0.970, r 4.55e-4 — first draft of this line said 0.975, corrected same tick; SERAPIS point ρ = 1.72) and κ = 1 closed form = −2r at the SERAPIS point in python; checked: units, arithmetic, limits (κ → 0: α_s = −½(1−n_s)²ρ; ρ → 1: α_s = −½(1−n_s)² for any κ), like-with-like, cross-sector: none.
 MAP: node=janus status=computed touches=[band_i, band_e, band_e_audited] ripple=no
 
 ## D1402a — correction to D1402: band_i uses the τ = i vacuum's own κ = ½, not κ = 1
