@@ -2998,3 +2998,8 @@ Touches: none.
 2. [derived] C = 2.5e-6, α = 0.25 / 0.5 / 0.75: n_s 0.97864 / 0.97416 / 0.97244; r 5.56 / 6.34 / 6.76e-4 (out / near / near).
 3. [derived] The rows agree with the D1485 forecasts to |Δn_s| ≤ 5.3e-6 (D1493, D1499, D1502).
 4. [estimate] Target recorded per the PREREG rule, with two open flags. (i) D1506: in the physical frame the in-band points move out (n_s ≈ 0.965, r ≈ 7.5e-4). (ii) The tilt on the mixture is approximated as C·g. Neither in-band point is a physical result yet.
+
+## D1509 — tilt T3d: DILMIX in the PHYSICAL frame (λ = 1/9931) — no grid point in band; the band survives only as a narrow sliver at small mix (α ≈ 0.125, C ≈ 1.45–1.74e-6 by interpolation)
+1. [derived] 72-point grid (α 0–1 × C 1–16e-6; field_tests/results/D1509_phys_inband.json): 0 points in band. α = 0 (pure square form): no end of inflation at any C (8 errors, as in D1485). For α ≥ 0.25 every point with n_s ≥ 0.969 has r ≥ 7.1e-4 (e.g. α 0.25, C 3e-6: 0.9716 / 7.71e-4) — r ~25–60 % above the band edge.
+2. [estimate] α = 0.125 brackets the band: C 1e-6 → 0.9668 / 5.16e-4, C 2e-6 → 0.9717 / 5.89e-4; linear interpolation gives n_s = 0.969 at C ≈ 1.45e-6 (r 5.49e-4) and r = 5.7e-4 at C ≈ 1.74e-6 (n_s 0.9704) ⇒ a sliver C ≈ 1.45–1.74e-6 at α ≈ 0.125 may be in band (to be confirmed on a fine grid; smaller α lowers r further but α → 0 loses the end of inflation).
+3. [estimate] Compared with the λ = 1 strip (α 0.25–0.50, C 1–2e-6, D1494): in the physical frame the needed C is similar (not larger, contrary to the stated expectation) but the mix must move to α ≈ 0.1–0.15, mostly the α′³-square form. Reading for the P3 chat: the physical in-band region (if any) is a thin sliver near the square form B, not the λ = 1 strip.

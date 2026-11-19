@@ -15487,3 +15487,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - Flags (both open): (i) D1506 — in the physical frame λ = 1/a the strip centre moves to n_s 0.965, r 7.5e-4, so these λ = 1 in-band points do NOT carry over to the D1486 compactification; (ii) the tilt is approximated as C·g on the mixture (referee m1). Not quotable as a physical result until both are resolved.
 - aegis-check: numbers read from field_tests/results/DILMIX/*.json; agree with D1485 forecasts (D1493/D1499/D1502, |Δn_s| ≤ 5.3e-6) ✓; cross-sector: none.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1509 — T3d: physical-frame DILMIX — 0/72 grid points in band; possible sliver at α ≈ 0.125, C ≈ 1.45–1.74e-6 (interpolated)
+- [derived] α ≥ 0.25: r ≥ 7.1e-4 wherever n_s ≥ 0.969; α = 0: no end of inflation.
+- [estimate] α = 0.125 brackets the band (C 1e-6: 0.9668/5.16e-4; 2e-6: 0.9717/5.89e-4) ⇒ sliver C 1.45–1.74e-6; fine grid needed (T3e).
+- aegis-check: numbers from field_tests/results/D1509_phys_inband.json; interpolation re-run in python (C 1.449e-6 at n_s 0.969, r 5.49e-4; C 1.738e-6 at r 5.7e-4, n_s 0.9704) ✓; stated expectation ("C larger") was wrong and is said so; cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
