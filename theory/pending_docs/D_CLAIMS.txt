@@ -755,3 +755,4 @@ D1468  2026-11-19T08:13Z  JANUS tick 64: reference card docs/JANUS_FORMULAS.md
 D1469  2026-11-19T08:17Z  JANUS tick 65: reference card consistency test
 D1470  2026-11-19T09:00Z  JANUS tick 73: literature recheck 09:00 UTC
 D1471  2026-11-19T09:06Z  JANUS tick 74: CMB+Lya running (2511.01612) vs derived points
+D1472  2026-11-19T09:13Z  JANUS tick 75: SPT-3G D1 n_s/running (2506.20707) vs derived points
