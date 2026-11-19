@@ -3068,3 +3068,8 @@ Touches: none.
 2. [derived] y∂_y ln E(τ,3/2) = 3/2 − 4ζ(2)/(ζ(3)y²) + …, so V/V∞ = 1 − (16ζ(2)/3ζ(3))y^{−2}: approach exponent 2 with a fixed amplitude; V(ρ) = 0.
 3. [derived] Engine F (PREREG_SPECIES32 + DEVIATIONS D1): C = 0 gives n_s 0.9601, r 4.0e-4; band for C 6.8–9.3e-7; C = 8e-7 gives n_s 0.97065, r 5.41e-4.
 4. [estimate] Shape now sourced; the potential-from-species step and the tilt remain open; exact-MS confirmation pending.
+
+## D1524 — candidate tilt for the species plateau: the R⁴ term on quasi-dS gives ΔV/V = c(H/Λ_sp)⁶ ∝ E(τ,3/2), the D1523 tilt form
+1. [literature] IIB Einstein-frame R⁴ coefficient ℓ₁₀⁶E(τ,3/2); Λ_sp = E^{−1/6}ℓ₁₀^{−1} (arXiv:2310.07708).
+2. [estimate] On quasi-dS, ΔV/V ≈ c·E(τ,3/2)(Hℓ₁₀)⁶ = c(H/Λ_sp)⁶ — same τ-dependence as the tilt C·E; c and sign not computed.
+3. [derived] Band tilt C(E* − E_ρ) = 6.7–9.3e-4 ⇒ H/Λ_sp ≈ 0.30 (c = 1) … 0.65 (c = 0.01); g_s* = 1/y* ≈ 0.018 with no frame map.
