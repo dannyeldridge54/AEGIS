@@ -1,0 +1,4 @@
+# PREREG_GENESIS_DE3 — how tuned is the reverse thread? (locked D1628, 2026-11-19 15:25 CT)
+Question: D1627 found the best fits at the edge of viability. Measure the tuning: on a fine grid of 300 log-spaced starting heights amp ∈ [0.01, 0.9] per β ∈ {2√2, 2, √2}, compute the fraction of the VIABLE ln(amp) range in which Δχ² ≤ 6.18 for ALL THREE DESI combinations at once (calibration from PREREG_GENESIS_DE2: ρ = −0.555, −0.538, −0.593). Also report the width Δln(amp) of that window, and the min over amp of max(Δχ² over the three sets).
+Reading set in advance: window fraction ≥ 10% → "natural"; 1–10% → "mild tuning"; < 1% or empty → "tuned/fails". The fine grid also settles whether the β = 2 failure in D1627 was a grid artifact; whichever way it falls, it is reported as is.
+Script: field_tests/scripts/genesis_de/tuning.py
