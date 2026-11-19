@@ -2319,3 +2319,9 @@ Touches: none.
 2. [derived] Only U must be SL(2,Z) for P3: Z₄ qualifies.
 3. [estimate] E(U,2)/T₂ term survives with a Z₄-specific normalisation (unchecked).
 4. [postulate P3] Condensing factor with b′_U = kδ^U_GS in Z₄ not yet identified.
+
+## D1385: Z₄ (0,2) spectrum
+1. [literature] hep-th/9202046 (3.6), (4.1), App. B: plane-1 b′ = 42 (E₆, SU(2)₁), −30 (E₇, SU(2)₂); rotated planes −6.
+2. [derived] δ¹_GS = −30 would free the hidden E₇; then K gets −0.190·log U₂, = 0.509 at U₂* vs εE* ≈ 0.42–0.53: O(1) distortion.
+3. [estimate] Clean P3 needs b′¹_condenser ≈ 0; not in this spectrum.
+4. [postulate P3] Model still open.
