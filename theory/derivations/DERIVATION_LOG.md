@@ -3105,3 +3105,7 @@ Touches: none.
 1. [derived] Log-gradient of E_s approaches as y^{1−2s}; ratio of E_{s'} as y^{−s'}; equal exponents for s' = 2s − 1, and equal amplitudes for λ₈ = 0.063298.
 2. [derived] Engine F: untilted 10D n_s 0.96006 / r 4.036e-4 vs 8D 0.96003 / 4.045e-4.
 3. [derived] With each lens's own tilt at n_s 0.9706: r 5.41e-4 (10D) vs 5.22e-4 (8D).
+
+## D1554 — lens ladder: only the k = 2 pair (10D R⁴ E_{3/2} gradient ↔ 8D E₂ ratio) carries the observed inflation
+1. [derived] G32 and R2 (approach y^{−2}) agree untilted (n_s 0.9601, r 4.04e-4) and reach the band with their own tilts (r 5.4e-4 / 5.2e-4 at n_s 0.9706).
+2. [derived] G52 (E_{5/2}, y^{−4}) is too flat (r 1.4e-4 at n_s 0.9706); N1 (s = 1, Ñ₀ = 0) approaches from above and does not inflate toward ρ.
