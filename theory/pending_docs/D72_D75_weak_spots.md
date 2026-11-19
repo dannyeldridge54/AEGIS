@@ -15666,3 +15666,10 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [computed] Lock PREREG_SPTILT_T1X (results/SPTILT/T1_f3–6, TB_f1–6): T1 (E^{1/3}): n_s 0.969 at f 3.28 with r 5.76e-4 — never in band (r 1.0 % high). TB (E/Im τ, the literal BBHL shape): n_s 0.969 at f 1.77 with r 5.77e-4 — never in band (1.2 % high). Expectation held (edge).
 - [derived] Combined with D1529: the band admits tilts rising like y (Λ^{−4}) or faster; the y^{1/2} class (Λ^{−2}, BBHL shape) sits ~1 % outside in r. So the BBHL term alone is not the P3-S tilt, unless W₀(τ) or 𝒱(τ) back-reaction adds ≥ y^{1/2} more. Next: (i) W₀(τ) along the inflaton from G₃ = F₃ − τH₃ (|W₀|² ~ |a − τ b|² ~ y² at large y — would turn y^{1/2} into y^{5/2}, T5-like, which IS in band) — the obvious follow-up; (ii) novelty search.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1532 — SPECIES32 exact Mukhanov–Sasaki CONFIRMS the P3-S in-band point: C = 8e-7 ⇒ n_s 0.970648, r 5.408e-4, α_s −9.68e-4, N* 50.37 — IN BAND (engine F agrees: Δn_s 5.2e-6, Δr/r 1.0e-4)
+- Lock: field_tests/rules/PREREG_SPECIES32.md ("any in-band point ⇒ exact-MS confirmation at the interval centre before it is quoted") + DEVIATIONS D1 (stencil). Result: field_tests/results/SPECIES32/X_C8e-07.json (cloud, 1527 s).
+- [computed] Exact MS (pipeline ms.spectra, D1417 α_s estimator, self-consistent N*, T_R 8.94e8): n_s 0.9706477, r 5.40807e-4, α_s −9.677e-4, N* 50.3654, y* 55.640. Checks: V(ρ) = 1.4e-25, fitted approach exponent 1.996.
+- [computed] Engine F at the same C (D1523): n_s 0.9706529, r 5.40861e-4 ⇒ F − X: Δn_s +5.2e-6, Δr/r +1.0e-4 (consistent with D1521's engine record).
+- Status: D1523's in-band claim is now data-level within the frozen band (n_s 0.969–0.975, r 4.55–5.7e-4). P3-S remains a CANDIDATE postulate: the species-potential step (Casas–Ibáñez proposal) and the tilt (C ≈ 8e-7 ∝ Λ_QG^{−6}) are not derived (D1526–D1531); novelty search pending.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

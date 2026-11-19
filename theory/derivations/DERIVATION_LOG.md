@@ -3086,3 +3086,7 @@ Touches: none.
 ## D1530 — referee m1 closed: native tilt C_n·x = (C/α)·x reproduces the C·g DILMIX rows to |Δn_s| ≤ 2.2e-7
 1. [derived] g = P/(1 − P) = x/α·[1 + O(1/(αx))] for the DILMIX mixture, so C·g ≈ (C/α)·x.
 2. [derived] Exact MS: α 0.25 and 0.5 native rows match the C·g rows (Δn_s −2.2e-7, −1.7e-7; Δr ≤ 0.01 %); both stay in band.
+
+## D1532 — exact MS confirms P3-S at C = 8e-7: n_s 0.97065, r 5.41e-4 (in band)
+1. [derived] Exact Mukhanov–Sasaki run on the locked species-scale plateau with tilt C(E − E_ρ), C = 8e-7: n_s 0.970648, r 5.408e-4, α_s −9.68e-4, N* 50.37.
+2. [derived] Fast engine agrees to Δn_s 5.2e-6 and Δr/r 1.0e-4; the in-band point holds at data level.
