@@ -2783,3 +2783,8 @@ Touches: none.
 1. [derived] Part A: both cross-check formulas at all 12 exact reference rows vs the derived-model jsons: max 0.029 % (rule ≤ 0.2 %), including the 6 rows outside a formula's fitted range (K1, K3, K6; four NA12 rows); vs the exact MS values max 0.128 % (report only; references pre-D1417).
 2. [derived] Part B: 12 card numbers re-read from their source jsons at the card's quoted precision (r 0.46–0.57σ, SO + SPHEREx 7.7–8.0σ, SO alone 3.1–3.2σ, Δα_s range and ≤ 0.05σ, three band pull ranges, D1457/D1462 accuracies, β_s values, β_s ≤ 0.007σ): no mismatch.
 3. [derived] Verdict: docs/JANUS_FORMULAS.md CONSISTENT with the result files (after D1468's one manual fix, α_s SO ≤ 0.33σ, which has no json source and was checked by hand).
+
+## D1470 — JANUS tick 73: hourly literature recheck — NULL (no measurement newer than 2512.10613 / 2606.28502)
+1. [literature] Extended search (09:00 UTC). arXiv:2610.37383 (Wang, Zhou, Chen, Li) and 2607.04504 (Ijaz, Pirzada, Rehman) only reuse published values (P-ACT-LB n_s 0.9743 ± 0.0034, α_s 0.0062 ± 0.0052; SPT-3G D1 CMB-SPA 0.9679 ± 0.0033, CMB-SPA + DESI DR2 0.9726 ± 0.0028 — quoted second-hand, confidence levels not stated there); 2611.15828 simulation-only (D1465).
+2. [derived] Rule (locked): nothing newer ⇒ NULL; pulls not recomputed.
+3. [estimate] Lead for a later tick: arXiv:2511.01612 ("Running of the spectral index: reconciling the CMB with the Lyman-α forest", Nov 2025) — a running measurement not yet on file; its own tables should be read before any use (the SPT-3G D1 n_s values above should likewise be taken from 2506.20707's tables, not second-hand).

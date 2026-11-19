@@ -15247,3 +15247,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] Formulas vs derived models at 12 exact rows ≤ 0.029 % (rule 0.2 %), vs exact ≤ 0.128 %; 12 card numbers vs jsons: no mismatch.
 - aegis-check: this note's numbers from field_tests/results/D1469_card_check.json; the check script actually ran (output in the json).
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1470 — JANUS tick 73: literature recheck — NULL
+- [literature] No newer n_s/α_s/r measurement; 2610.37383 and 2607.04504 reuse published values; 2611.15828 simulation-only.
+- [estimate] Leads: read 2511.01612 (CMB + Lyα running) and 2506.20707 (SPT-3G D1 n_s) tables directly before any pull.
+- aegis-check: no numbers computed (NULL rule); quoted values marked second-hand.
+- MAP: node=janus status=computed touches=[] ripple=no
