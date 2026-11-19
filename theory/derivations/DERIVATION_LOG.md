@@ -2856,3 +2856,8 @@ Touches: none.
 3. [estimate] Band map (21 C values 0, 1e-7…1e-5; linear interpolation): n_s = 0.969 at C ≈ 1.78e-6 (r ≈ 6.56e-4); n_s = 0.975 at C ≈ 3.46e-6 (r ≈ 7.68e-4). r rises monotonically with C, so wherever n_s ∈ [0.969, 0.975], r ∈ [6.56, 7.68]e-4 > 5.7e-4 (the band's upper r edge).
 4. [estimate] Forecast for the P3 chat's locked DILATON32_TILT scan (its runs are not replaced by this): C 1.5e-6 → n_s 0.9680, r 6.39e-4; 2e-6 → 0.9698, 6.70e-4; 2.5e-6 → 0.9715, 7.02e-4; 3e-6 → 0.9733, 7.35e-4; 4e-6 → 0.9770, 8.09e-4 — i.e. "not in band at any tested tilt", matching that PREREG's stated expectation; closest point ~C 1.8e-6 (n_s 0.969, r 6.6e-4, 15 % above the r edge). Exact-MS agreement at A0/A1 (≤ 4e-6 in n_s) suggests the forecast is good to ~1e-5 in n_s.
 5. [estimate] Cost: this SR route takes seconds per point vs ~31 min per exact-MS point (A1 1849 s) — usable as a pre-screen for the P3 chat's other locked families (LVSDIL, DILMIX, SMSCAN) if Danny wants.
+
+## D1484: area-integration heavy-field check
+1. [derived] V″ = −pq·V_min: minimum only for negative shape-blind source and positive Casimir.
+2. [derived] m_A²/H² = 3pq(1 − P*) ≈ 0.06 (p = 2, q = 4, s·m = 2): area lighter than H.
+3. [postulate P3] Two-term area mechanism killed; needs extra A-stabilisation.
