@@ -64,3 +64,8 @@ R is a fifth "thread", the dark-dimension radius. It is tiny during inflation an
 - Casimir alone: V_E ∝ e^{−4.90φ}, too steep to accelerate (needs < 1.41). The radion must be stabilised, so Λ comes from the minimum and w = −1. No DESI-like evolution from this term alone.
 - Coexisting with Weave inflation: R string-small during inflation, then growth by ~10²⁴–10²⁶ (Δφ ≈ 68–75 M_P) to 7.4 μm, finished before BBN. Casimir pushes the right way, but a stopper is needed.
 - Discriminator: r ≈ 5 × 10⁻⁴ (Weave, with post-inflation decompactification) versus r ≈ 0 (dark-dimension-native 5D inflation at 10⁹ GeV, arXiv:2412.19213).
+
+## 8. Black-hole passage through the dark dimension (D1624)
+A black hole is 5D when its horizon is smaller than R and 4D when larger; for one dark dimension the crossover is at ~10²⁰ g. In the dark-dimension scenario, 5D primordial black holes and the KK "dark graviton" gas are two faces of the same dark matter. Graviton energy cascades down the tower: ~1 MeV at equality, ~50 keV today (arXiv:2210.02475).
+Weave reading: at each lens the stitch (the smallest black hole) goes into the opening dimension and comes back out. The energy that falls into the tower is dark matter; the Casimir energy of the dimension is dark energy.
+Flag: Weave reheating at 9 × 10⁸ GeV would overproduce KK gravitons if R were already microns. It works only if R grows after reheating, so production along the growth is the next computation.
