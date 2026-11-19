@@ -128,11 +128,12 @@ nodes:
   - D1410
   - D1475
   - D1476
+  - D1479
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D1410: postulate'
   - 'D1475: postulate'
   - 'D1476: postulate'
+  - 'D1479: postulate'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -377,10 +378,11 @@ nodes:
   - D1474
   - D1477
   - D1478
+  - D1480
   history:
-  - 'D1474: computed'
   - 'D1477: computed'
   - 'D1478: computed'
+  - 'D1480: computed'
 - id: bhk_tilt
   layer: 3
   branch:
