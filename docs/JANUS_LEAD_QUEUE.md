@@ -7,7 +7,7 @@ Tools: field_tests/scripts/d1449/vac_grid.py solve(), d1442/second_order.py (ρ)
 Order = queue order. Mark `[done D####]` when finished; add follow-ups at the end.
 
 ## A. Spectrum observables at the two fixed points
-- L1 Pivot conversion: n_s, α_s at k = 0.002 Mpc⁻¹ from k = 0.05 (via α_s, β_s), both vacua; compare the pivot of 2609.35964 / BK.
+- [done D1480] L1 Pivot conversion: n_s, α_s at k = 0.002 Mpc⁻¹ from k = 0.05 (via α_s, β_s), both vacua; compare the pivot of 2609.35964 / BK.
 - L2 Tensor tilt n_t to second order and the consistency-relation deviation n_t + r/8, both vacua.
 - L3 N_* dependence: n_s, r, α_s across N_* = 50–60, both vacua; which N_* range D1478's data prefer.
 - L4 μ-distortion from the derived P(k) (standard window, k ≈ 50–10⁴ Mpc⁻¹), both vacua vs no-running; PIXIE/PRISM σ_μ as [literature].
@@ -42,3 +42,4 @@ Order = queue order. Mark `[done D####]` when finished; add follow-ups at the en
 ## E. Upkeep
 - L26 Card refresh: add A–D results to docs/JANUS_FORMULAS.md and machine-check against jsons (as D1469/D1473) — after every ~5 leads.
 - L27 Console sync: update chains/{rho,tau_i,bands,tests} stages with new results.
+- L28 (from D1480) r at k = 0.002: compare r_0.002 = 4.46–4.47e-4 with any bound quoted at 0.002 (check which pivot BK18 / LiteBIRD forecasts use) — read the pivot from the papers.

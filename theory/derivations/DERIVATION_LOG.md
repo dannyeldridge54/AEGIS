@@ -2837,3 +2837,10 @@ Touches: none.
 1. [derived] A0: n_s 0.9630, r 5.58e-4; A1 (C = 1.25e-6): n_s 0.9672, r 6.25e-4 (near); A2: n_s 1.003; B0 (α′³ square): r 1.16e-4.
 2. [derived] E(τ,3/2) gives SERAPIS-size r; n_s needs a tilt; r rises with the tilt.
 3. [postulate P3] Route alive; in-band point and the one-power placement not shown.
+
+## D1480 — JANUS tick 89: L1 pivot conversion k = 0.05 → 0.002 Mpc⁻¹ — CONSISTENT (both routes agree)
+1. [derived] Pivot points re-solved (vac_grid solve): ρ A1 C = 1.2504e-6, φ_* = 1.89731; τ = i NA12 ε = 1.4006e-4, φ_* = 2.26138 (same params as D1466).
+2. [derived] Route (a), exact model: slow-roll trajectory dφ/dN = V′/V followed back until ∫(1 − ε₁)dN = ln 25 = 3.2189 (Δφ = 0.0248 both) and the second-order obs() evaluated there. k = 0.002: ρ n_s 0.977492, r 4.4616e-4, α_s −9.208e-4; τ = i n_s 0.977238, r 4.4731e-4, α_s −7.675e-4.
+3. [derived] Route (b), Taylor with D1466 β_s: ρ n_s 0.977457, α_s −9.059e-4; τ = i n_s 0.977208, α_s −7.537e-4. Gap (a − b): n_s +3.4e-5 / +3.0e-5 (< 5e-5 ⇒ CONSISTENT as locked), α_s −1.5e-5 / −1.4e-5.
+4. [derived] Consequences: at the large-scale pivot both vacua predict n_s ≈ 0.9772–0.9775 (+3.1e-3 vs k = 0.05) and r 7.5 % lower (4.46–4.47e-4); the running is ~8–10 % shallower there.
+5. [estimate] Route (a) uses the leading slow-roll trajectory (dφ/dN = V′/V); its O(ε₂) error on Δφ is ~1 % ⇒ ~3e-5 on n_s, the same size as the (a − b) gap, so the gap is not a measured β_s-truncation effect. Any data pull quoted at k = 0.002 must use these numbers, not the k = 0.05 ones (shift ≈ 1σ of SO's σ(n_s) = 0.002).

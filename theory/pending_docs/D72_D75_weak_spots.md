@@ -15315,3 +15315,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] The pre-stated expectation (r ≈ 8e-4–1e-3 at C = 0) was wrong: A0 gives 5.6e-4. So the y^{−3/2} approach of E(τ,3/2) already yields SERAPIS-size r; n_s needs a tilt between 1.25e-6 and 1e-5 (A1 → A2 moves n_s 0.967 → 1.003), so an intermediate C should reach the band — but r rises with C (6.25e-4 at A1), so the band's r edge 5.7e-4 is the binding side. [estimate: in-band point possible only if n_s ≥ 0.969 is reached before r exceeds 5.7e-4 — not guaranteed; needs a locked C scan]
 - Verdict (locked rule): "near" (A1). Not viable-in-band on this scan; candidate for a locked tilt scan (C ∈ 1.5e-6…4e-6). The literal α′³ form (B) underproduces r; form A (one power) needs the e^K → 1/(𝒱 + ξ) placement, which the BBHL square does not give directly (D1403 caveat stands). P3 status: postulate; axio-dilaton route ALIVE.
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1480 — JANUS tick 89: L1 pivot conversion to k = 0.002 — CONSISTENT
+- [derived] k = 0.002 Mpc⁻¹: ρ A1 n_s 0.977492, r 4.462e-4, α_s −9.21e-4; τ = i NA12 n_s 0.977238, r 4.473e-4, α_s −7.68e-4 (exact-model route); Taylor route agrees to 3–3.5e-5 in n_s.
+- [estimate] Shift +3.1e-3 in n_s and −7.5 % in r between pivots — matters for any comparison quoted at 0.002 (≈ 1.5σ of SO σ(n_s)).
+- aegis-check: numbers from field_tests/results/D1480_pivot.json; Taylor ρ n_s re-run by hand in python (0.974393 + (−9.9796e-4)(−3.2189) + ½(−2.8598e-5)(3.2189²) = 0.977457 ✓); r ratio 4.4616/4.82095 − 1 = −7.45 % ✓; sign check: negative running ⇒ larger n_s at smaller k ✓; checked: units (k in Mpc⁻¹, both pivots), arithmetic, like-with-like (same params at both pivots), cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no
