@@ -2667,5 +2667,5 @@ Touches: none.
 ## D1449 — JANUS tick 45: vacua with both derived models — Δα_s = −(1.05–1.62)e-4, ≤ 0.05σ (SO); vac_discriminant stays killed
 1. [derived] Both second-order models (ρ D1442; τ = i D1448) solved on a 3×3 grid n_s 0.9725–0.9755 × r 4.6–4.9e-4 (9/9 converged): Δα_s = α_ρ − α_τ=i = −1.05e-4 … −1.62e-4 (ρ always more negative).
 2. [derived] Against SO's σ(α_s) = 3.3e-3 (funded): ≤ 0.049σ; against the hypothetical S4-based best 8.5e-4: ≤ 0.19σ. Rule (≥ 3σ for a funded survey): not met — vac_discriminant stays KILLED.
-3. [derived] The models themselves separate the vacua cleanly: |Δα_s| is 75–114× the models' accuracy (0.14 % of α_s) — the vacua differ in theory, just not by a measurable amount. A 3σ discrimination would need σ(α_s) ≈ 5e-5, ~17× below the best (hypothetical) 2030s combination.
+3. [derived] The models themselves separate the vacua cleanly: |Δα_s| is 79–114× the models' accuracy (0.14 % of α_s) — the vacua differ in theory, just not by a measurable amount. A 3σ discrimination would need σ(α_s) ≈ 5e-5, ~17× below the best (hypothetical) 2030s combination.
 4. [derived] Consistent with D1425's earlier bracket (0.84–1.73e-4, exact 1.44e-4), now from derived models instead of fitted meters.
