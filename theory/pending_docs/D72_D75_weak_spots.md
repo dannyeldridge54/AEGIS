@@ -16498,3 +16498,9 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - Closest analogue (D = 8): the s = 1 SL(2) pole cancels between two contributions and leaves −π log(U₂|η(U)|⁴), a log term whose sign depends on the moduli. At s = 1 the regularised value carries a scheme/scale ambiguity, so "the sign" is not even well defined without a physical cutoff (the species scale itself).
 - Verdict: NULL. A3 stays C-sign (conjecture). Settling it needs an explicit computation of the regularised SO(4,4) s = 1 series along the coupling direction with a species-scale cutoff. That is a dedicated job, not a loop tick.
 - Loop status (NULL rule): not rescheduled. Queue left for Danny: (1) B4: recompute δ_CP with the required τ_ν offset (needs a choice of non-minimal M_ν model); (2) a flavour-paper correction version for D1652 (needs his "Publish"); (3) A3 as a dedicated computation.
+
+## D1655 — JANUS genesis G9c: where dark energy ends depends on the axion — usually at i, sometimes at ρ
+- Six bigger axion offsets (0.05–0.5): five end at a copy of τ = i, one (0.05) ends at a copy of ρ. Together with D1653: 9 of 10 starts end at i.
+- Today's dark-energy prediction is the same for every start (w₀ −0.79, w_a −0.36, acceleration ends at a = 1.23), so data can't tell which ending we are heading for.
+- So the Janus picture is softened honestly: inflation ends at ρ; dark energy usually ends at i, but can end at ρ. The basin boundary is intricate (not a simple cut).
+- MAP: node=thread_endpoint status=computed touches=[] ripple=no

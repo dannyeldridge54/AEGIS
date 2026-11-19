@@ -3230,3 +3230,11 @@ Touches: none.
 4. [derived] To stay within 2σ of 2603.13226 (ΔN_eff ≤ 0.086) the dark side may receive at most f ≤ 0.021 of the reheating energy (≈ 2.4× less than democratic, ≈ 4× less than gauge-dominated) — or the dark photon must be massive (non-relativistic before recombination), or the dark sector must have more heavy states.
 5. [derived] D1646 case B re-scored: EXCLUDED (it was called VIABLE against an outdated 0.3 bound) ⇒ correction D1646a.
 6. [derived] Referee: ξ and ΔN_eff for S1 reproduce D1646 exactly (0.46524, 0.20629); pulls recomputed from the stated means/σ ✓.
+
+## D1655 — JANUS genesis G9c: basin map of the dark thread's end point (PREREG_D1655_G9C_BASIN) — both fixed points have basins; i is the more common
+1. [derived] Same model and start height as D1653; axion offsets δx = 0.05, 0.1, 0.2, 0.3, 0.4, 0.5.
+2. [derived] Today's observables do not depend on the axion start (instanton terms ~e^{−2π·5}): every run gives w₀ −0.789, w_a −0.355, worst DESI Δχ² 5.64, acceleration ends a = 1.232.
+3. [derived] End points: δx = 0.05 → (½, 0.2887) = (½, √3/6), an SL(2,Z) image of ρ (fundamental-domain distance to ρ 1e-4); δx = 0.1 → (½, ½), 0.2 → (0.4, 0.2), 0.3 → (1, 1), 0.4 → (0, 1), 0.5 → (1, 1): all images of i (distance ≤ 3e-4). Late ⟨w⟩ −0.011 … +0.014 (matter-like).
+4. [derived] With D1653 (δx = 0, 1e-6, 1e-3, 1e-2 → i): 9 of 10 starts end at an image of i, 1 at an image of ρ; the basin is not monotonic in δx (0.01 → i, 0.05 → ρ, 0.1 → i).
+5. [estimate] D1653's "ROBUST" holds for small offsets (≤ 1e-2), as tested; it does NOT mean i is the universal end point. The Janus reading becomes: dark energy usually ends at i, sometimes at ρ — decided by the axion's starting value, which today's data cannot see.
+6. [derived] Referee: end classes, fundamental-domain points and distances re-read from the json ✓.
