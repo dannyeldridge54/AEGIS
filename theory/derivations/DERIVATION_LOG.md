@@ -3143,3 +3143,8 @@ Touches: none.
 1. [literature] BBHL: K = −2 ln(𝒱 + ξ̂/2), ξ = −χζ(3)/(2(2π)³), ξ̂ = ξ(Im τ)^{3/2} → ξE(τ,3/2)/(2ζ(3)).
 2. [derived] A prefactor (𝒱 + ξ̂/2)^{−p} gives V ∝ 1 − (p/2)ξ̂/𝒱: the E_{3/2} tilt with C = w·χ/(4(2π)³𝒱) (w = 1 for p = 2, 2/3 for p = 4/3), blue for χ > 0.
 3. [estimate] For χ = 20–200 and the band C 6.8–9.4e-7: 𝒱 = 1.4e4–3.0e5, M_s = 3.9–18 H, M_KK = 1.7–13 H, ξ̂/𝒱 ≈ 1e-3 — consistent in every case.
+
+## D1567 — scope note on our tilt-plan closures (D1501 "next α′³ order too big", T5 card) after P3's D1566; read-only check of P3 D1565–D1566 (no issues)
+1. [derived] D1566 numbers re-run: C = wχ/(4(2π)³𝒱); χ = 20, band C 6.8–9.4e-7 ⇒ 𝒱 = 1.43e4 (w = 2/3, C = 9.4e-7) to 2.96e4 (w = 1, C = 6.8e-7) — matches the stated 1.4–3.0e4. ξ̂(y*) = χE/(4(2π)³) with E(55.64) ≈ 998 ⇒ ξ̂ = 20.1, ξ̂/𝒱 = 0.7–1.4e-3 — matches.
+2. [derived] CORRECTION (scope) of our T5 summary: "next α′³ order: too big" (D1501) was for the DILMIX route, where the α′³ term IS the plateau and ξ̂/𝒱̂ ≈ 250 (M5). In P3-S the plateau comes from the species scale and the BBHL α′³ term is only a small (ξ̂/𝒱 ~ 1e-3) correction to the prefactor; there it gives the E_{3/2} tilt at the right size. Our closure does not apply to P3-S. No contradiction — it is the M5 regime point again.
+3. [estimate] D1565a's sign fix (blue tilt needs χ > 0) is consistent with BBHL ξ = −χζ(3)/(2(2π)³) (hep-th/0412239, read earlier this session).

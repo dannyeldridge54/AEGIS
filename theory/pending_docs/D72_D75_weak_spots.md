@@ -15928,3 +15928,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Conditions and caveats: (1) χ(X) > 0 (h¹¹ > h²¹) — opposite to LVS's ξ > 0, fine for KKLT/KL-type stabilisation; (2) the plateau prefactor must carry the volume dependence (𝒱 + ξ̂/2) — natural for an F-term (but an e^K prefactor also carries the dilaton's 1/(2 Im τ), the D1541 bump problem) and for the D7 D-term (no dilaton e^K — the consistent choice, w = 2/3); (3) M_s, M_KK formulas are order-of-magnitude (2π's, frames), O(3) uncertainty in the scales; (4) the plateau SHAPE (species gradient of E_{3/2}) is still postulate P3-L — not derived. 
 - What this closes: the tilt is no longer a free postulate — it is the BBHL α'³ dilaton dependence, with size set by χ/𝒱 at values that are consistent with every scale constraint we have. The P3 chain now reads: plateau shape = R⁴ species gradient (postulated form, exact identity D1546, in band D1532); tilt = R⁴ (BBHL) correction to the volume prefactor (derived at estimate level, here); one input number χ/𝒱 ≈ (0.6–1.4)e-3·(4(2π)³)/w.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1567 — scope note: our "α′³ next order too big" closure (D1501/T5) is DILMIX-only; in P3-S the BBHL α′³ term gives the tilt (P3 D1566 numbers re-run ✓)
+- aegis-check: 𝒱 range and ξ̂/𝒱 re-run in python ✓; P3 notes read only.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
