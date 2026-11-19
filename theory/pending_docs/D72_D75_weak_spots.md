@@ -16080,3 +16080,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1593 — P3D6X exact Mukhanov–Sasaki (locked PREREG_P3D6X): the 6D point CONFIRMED — C = 2.64e-6 ⇒ n_s 0.970557, r 1.0689e-3, α_s −9.59e-4, N* 50.568, y* 39.39; vs engine-F interpolation (0.9706, 1.07e-3): Δn_s −4e-5, Δr/r −0.1 % ⇒ Rule E PASS
 - Result: field_tests/results/P3D6/X_C2.64e-06.json. Both candidates now have exact-MS points: D = 10 (r 5.41e-4) and D = 6 (r 1.069e-3); ratio 1.976.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1594 — OPEN PROBLEMS MAP (Danny 12:08): 16 famous open problems triaged against the Weave; TCC conflict flagged; Koide formula re-tested with current τ masses
+- [literature] TCC (Bedroya–Brandenberger–Loverde–Vafa 1909.11106; strengthened 2001.00043): minimal bound V^{1/4} < 1e10 GeV, r < 1e-30, independent of the pre-inflation history; 1e-47 with a radiation pre-phase. [derived] SERAPIS-Λ (r = 5.4e-4, 1.07e-3) violates it by ~26 orders — the same as every observable-r model. Flag (F6), not veto: a measured r would falsify the conjecture.
+- [literature] Belle II m_τ = 1777.09 ± 0.08 ± 0.11 MeV (2305.19116). [computed] Koide Q = 0.6666735 ± 0.0000077 (+0.89σ from 2/3); with PDG m_τ = 1776.93 ± 0.09 MeV (recalled, to verify) Q = 0.6666645 ± 0.0000051 (−0.43σ); Q = 2/3 ⇒ m_τ = 1776.969 MeV. No derivation from the Weave (not claimed).
+- Doc: theory/pending_docs/OPEN_PROBLEMS_MAP.md.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
