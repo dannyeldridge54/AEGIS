@@ -16386,3 +16386,8 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - Postulation check: the pathway link "SERAPIS ψ → reheating" is SUPPORTED at estimate level; κ (decay strength) is the open input.
 - Follow-up G1b: why V''/V∞ = 1/4 exactly at ρ (expect (f')² = 1/8 = λ_sp², the species slope) — derive.
 - MAP: node=genesis_reheating status=estimate touches=[matter_genesis] ripple=no
+
+## D1639 (CENTRE, 19 Nov 2026) — postulate register + next rung (Danny 16:17: "postulate all unknown or [not] working, make a list and make next rung in ladder")
+- theory/pending_docs/WEAVE_POSTULATES.md lists 22 items: A1–A5 inflation, B1–B7 flavour, C1–C6 dark sector, D1–D4 toolkit. Each has a postulate label (P / C / E) and the test that can kill it.
+- NEXT RUNG: R-Li. Add ⁷Be and ⁷Li plus the weak-rate corrections to BBN v3, lock first, and test whether P-M touches the lithium problem.
+- Queue after it: C2 → B2 → C3/C4.
