@@ -2400,3 +2400,9 @@ Touches: none.
 1. [literature] K = −2 log(𝒱 + ξ/2), V_F = 3ξW₀²(ξ² + 7ξ𝒱 + 𝒱²)/((𝒱 − ξ)(2𝒱 + ξ)²).
 2. [derived] Linear in ξ at large 𝒱; ξ(U) ∝ A₀ + BE₂(U) ⇒ (1 + CÊ) tilt, min at ρ.
 3. [postulate P3] Plateau needs A₀ + BE₂(U) in an overall e^K-type factor; not identified.
+
+## D1404: band_e re-check (locked)
+1. [literature] Same data as D1402: arXiv:2512.10613 n_s 0.9682 ± 0.0032 (CMB), 0.9728 ± 0.0029 (CMB + DESI), r < 0.034 (95%); ACT DR6 running 0.0062 ± 0.0052.
+2. [derived] n_s 0.970–0.975 (same as band_i): CMB + DESI pulls −0.97σ … +0.76σ, all of the band inside 2σ (R1 PASS); CMB alone +0.56σ … +2.13σ, 92% inside 2σ (top-edge tension, reported).
+3. [derived] r ≤ 5.12e-4 is 66× under r < 0.034 (R2 PASS); α_s = −2r = −9.1e-4 … −1.02e-3, pulls −1.37σ … −1.39σ (R3 PASS). Verdict PASS; band stays frozen.
+

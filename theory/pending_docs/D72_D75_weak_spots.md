@@ -14750,3 +14750,12 @@ MAP: node=band_i status=frozen touches=[janus] ripple=no
 - Verdict: the D⁴R⁴ coefficient (D1401) naturally supplies the TILT; a plateau source must put A₀ + B·E₂(U) into an overall e^K-type factor (e.g. a dilaton-like modulus whose Kähler argument is the D⁴R⁴ coefficient). None identified. P3 origin: postulate.
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
 (Numbering note, 2026-11-18: the BBHL note above was first pushed under the heading "D1402", which the other session had claimed (JANUS tick 3); its claimed number is D1403 and the heading was corrected the same minute. D1402 = JANUS tick 3.)
+
+## D1404 — JANUS tick 4: frozen SERAPIS-E band re-checked on end-2025 data — PASS on CMB + DESI; same CMB-only top-edge tension as band_i
+- Lock: field_tests/rules/PREREG_D1404_band_e_recheck.md (+ .sha256), pushed before computing (D1402's lock with band_e's r range). Script field_tests/scripts/d1404/band_e.py; result field_tests/results/D1404_band_e_recheck.json.
+- [computed] n_s pulls identical to D1402 (both bands span n_s 0.970–0.975): CMB + DESI −0.97 … +0.76σ (100% within 2σ); CMB alone +0.56 … +2.13σ (92%).
+- [computed] r_max 5.12e-4 = 1/66 of r < 0.034; α_s −9.1e-4 … −1.02e-3, pulls −1.37 … −1.39σ. Verdict: PASS (R1–R3).
+- Honest reading: band_e and band_i differ only in r, and current data cannot separate them (r is ~1/60 of the bound; α_s differs by 0.05σ). The live split is n_s with vs without BAO, not E vs i. Correlations not used (assumed).
+- aegis-check: re-ran α_s(r = 5.12e-4) = −1.024e-3, pull −1.389σ, bound ratio 66 in python; n_s pulls shared with D1402 (re-run there); checked: units, arithmetic, like-with-like, limits, cross-sector: none.
+MAP: node=band_e status=frozen touches=[janus] ripple=no
+
