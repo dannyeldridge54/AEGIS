@@ -2644,3 +2644,9 @@ Touches: none.
 4. [literature] Timelines: CMB-S4 ended July 2025 (S4 forecast rows hypothetical); SPHEREx launched 11 Mar 2025; LiteBIRD JFY2032, δr = 1e-3 requirement (D1440).
 5. [derived] r: at LiteBIRD's requirement the r floor (4.55–5.7e-4) is only 0.46–0.57σ — D1438's 7.6–11.4σ needed a ~10× idealized forecast (corrected in D1440). Running: detection ≤ 1.3σ, exclusion-only (D1409).
 6. [estimate] Open: τ = i at second order (does D640's 0.3 % close?); new-estimator rerun of the 7 ρ rows (PC); band_i_audited node and PC jobs await Danny.
+
+## D1446 — JANUS tick 42: τ = i asymptotic offset model at second-order SR — FAIL (+0.70 … +0.74 %)
+1. [derived] Model V = 1 − I⁻² + (ε/2)I, φ = ln(I + c)/√2 (c = ln1728/2π, offset kept exactly), second-order SR as in D1442, solved to the five NA12 exact (n_s, r): α_s too negative by +0.70 … +0.74 % (rule < 0.3 %): FAIL.
+2. [derived] Implementation check passed: recovered ε = 1.3004–1.5031e-4 vs NA12's 1.30–1.50e-4 (≤ 0.3 %), I* 23.2–23.5. First order at the same points: +6.0 … +6.2 %.
+3. [estimate] Reading: the second-order step works (6 % → 0.7 %), but the asymptotic τ = i potential is less complete than the ρ one (which carries the Epstein offset B and the πζ(3)/y term, D1442–D1444, 7/7 ≤ 0.14 %). The residual 0.7 % is the size of a missing relative-O(1/I*) ≈ 4 % term in V reaching α_s at the ~ε2 level; the NA12 references' pre-D1417 estimator (~0.1–0.2 %) cannot explain it. Not chased.
+4. [derived] D640's offset relation (−0.29 … −0.34 %, D1412) remains the τ = i meter. Next: find the exact τ = i potential used by NA12 / D640 "method B" (results/janus_offset_d640.txt) before any second-order τ = i claim.

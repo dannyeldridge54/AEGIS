@@ -15107,3 +15107,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Open: τ = i second order; new-estimator ρ rerun (PC); band_i_audited + PC jobs await Danny.
 - aegis-check: summary only — every number copied from the cited D-notes (re-read this tick), no new arithmetic; checked: labels, like-with-like (caveats carried).
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1446 — JANUS tick 42: τ = i offset model at second-order SR — FAIL
+- [derived] V = 1 − I⁻² + (ε/2)I with exact offset map, second-order SR vs 5 NA12 exact points: +0.70 … +0.74 % (rule < 0.3 %) — FAIL. ε recovered ≤ 0.3 %; first order +6.0 … +6.2 %.
+- [estimate] The asymptotic τ = i potential misses a relative-O(1/I) term (the ρ model carried its offset and 1/y term and passed). D640 (−0.3 %) stays the τ = i meter. Next: locate the exact τ = i potential (D640 method B / NA12 source).
+- aegis-check: re-ran −8.5164e-4/−8.454e-4 − 1 = +0.74 %, −8.6952e-4/−8.635e-4 − 1 = +0.70 % in python; implementation check ε ≤ 0.3 %; like-with-like: same NA12 rows as D1412 (estimator caveat stated); checked: units, arithmetic, cross-sector: none.
+- MAP: node=band_i status=frozen touches=[] ripple=no
