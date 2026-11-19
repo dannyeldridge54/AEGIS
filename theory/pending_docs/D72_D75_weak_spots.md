@@ -14944,3 +14944,11 @@ No computation; collects results with their D-numbers.
 **Fixes made tonight:** ladder unblocked (S_kk10 → observing, 54 MAP lines applied); D1402a κ correction; D640's printed c (1.1868 → 1.18646).
 MAP: node=janus status=computed touches=[] ripple=no
 
+## D1425 — JANUS tick 22: vac_discriminant re-done with both sub-percent meters — Δα_s 0.84–1.73e-4 (brackets the exact 1.44e-4), ≤ 0.20σ for 2030: still killed, firmer
+- Lock: field_tests/rules/PREREG_D1425_vac_disc_meters.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1425/vac_meters.py (reuses D1412 functions); result field_tests/results/D1425_vac_disc_meters.json.
+- [computed] Δα_s = α_s(τ = i, D640) − α_s(ρ, A1-anchored) over the overlap of the two bands: 0.84e-4 … 1.73e-4; exact D1263 at its two points: 1.44e-4 (inside).
+- [computed] Separation ≤ 0.20σ (best 2030 σ₁ = 8.5e-4). Verdict as locked: still killed. D1408's leading-order 0.33σ was optimistic; the meters shrink the gap.
+- Revival would need σ(α_s) ≲ 9e-5. The vacuum choice stays a job for other sectors (neutrino texture, leptogenesis, wino window — D1263/D751).
+- aegis-check: re-ran 1.7256e-4/8.5e-4 = 0.203σ in python; checked: units, arithmetic, like-with-like (both meters at the same (n_s, r)), limits, cross-sector: none. Caveat carried: band-edge τ = i points extrapolate ε (D1413).
+MAP: node=vac_discriminant status=killed touches=[] ripple=no
+

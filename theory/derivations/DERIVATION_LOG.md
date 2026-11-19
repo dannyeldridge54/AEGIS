@@ -2526,3 +2526,9 @@ Touches: none.
 4. [derived] Data: all three bands PASS on end-2025 CMB + DESI and ACT DR6 running (pulls ≈ −1.4σ); top edges are >2σ high on CMB alone (D1402–D1407, D1413).
 5. [derived] Testability: not detectable by 2030 (≤ 1.3σ), but excludable — S4 + SPHEREx would rule the family out at ≈ 6σ if ACT's positive central running held (D1409). vac_discriminant stays killed (Δα_s ≤ 0.33σ, D1408).
 
+## D1425: vac_discriminant with both sub-percent meters (locked)
+1. [derived] At equal (n_s, r) over n_s 0.970–0.975, r 4.8–5.12e-4: α_s(τ = i, D640) − α_s(ρ, 1.0352 × −2r) = 0.84e-4 … 1.73e-4 (inversion residuals < 1.1e-17).
+2. [derived] Brackets D1263's exact two-point value 1.44e-4 (consistent); the leading-order range of D1408 (1.25–2.83e-4) was too wide/high because LO misses the two vacua by different amounts (10.8 % vs 3.4 %).
+3. [derived] Best 2030 σ(α_s) 8.5e-4 (1σ): separation ≤ 0.20σ. Rule (≥ 2σ to revive): still killed — firmer than D1408 (0.33σ).
+4. [estimate] Reviving it would need σ(α_s) ≲ 9e-5 (1σ) for a 2σ split at the best point — beyond 21-cm-class forecasts on file.
+
