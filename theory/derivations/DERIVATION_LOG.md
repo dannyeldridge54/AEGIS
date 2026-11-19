@@ -3038,3 +3038,8 @@ Touches: none.
 1. [derived] DILTR A0 (C = 0): T_R 1e8 exact 0.962492 / 5.7356e-4 vs D1489 0.962489 / 5.7343e-4 (Δn_s −3.3e-6, Δr/r −0.023 %); T_R 1e10 0.963569 / 5.4217e-4 vs 0.963566 / 5.4205e-4 (Δn_s −3.0e-6, −0.022 %). Track record 20 points, |Δn_s| ≤ 5.3e-6.
 2. [derived] Cross-check of P3 D1516 (band ⇔ approach exponent k ≈ 1.9–2.0 with tilt ≈ 1–1.6e-6, pure-power family) against our independent D1490 (SMSCAN + tilt: in band at s·m ≈ 1.9–2.0, C 1–1.5e-6) and D1495 (DILMIX strip ↔ s·m_eff 1.80–2.05): the same window from three constructions — consistent.
 3. [estimate] P3 D1517 (two-number (k, C) chart fails on DILMIX mixtures by Δn_s −0.004…−0.006; effective tilt C·A under e → A e) is consistent with our D1506 finding that the λ = 1 vs physical frame (a rescaling of e plus non-rescaling pieces) moves DILMIX by Δn_s ≈ −0.006: both say the DILMIX λ = 1 in-band points are not robust. No numerical issues found in D1516/D1517 as written.
+
+## D1519 — KEFF2: (k_eff, C·e*) reduction fails on the mixtures too; screen routes by a direct fast-engine run
+1. [derived] With the tilt fraction added, SERAPIS-E and form A still read off within tolerance; form B misses r by 24 %; DILMIX α 0.25 / 0.5 still read as out of band (Δn_s −0.005 / −0.0035).
+2. [derived] The mixtures' approach exponent varies between ≈ 3 and 1.5 along the last 50 e-folds; N* integrates over it, so horizon-exit quantities alone cannot fix (n_s, r).
+3. [derived] Engine F (third-order flow, self-consistent N*) on a route's own potential costs ≈ 1.5 s and matched four locked exact rows to ≤ 1e-5 in n_s; adopted as the screen.

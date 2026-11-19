@@ -15546,3 +15546,10 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1518 — P3 DILTR A0 rows confirm D1489 (Δn_s ≈ −3e-6); P3 D1516/D1517 consistent with our D1490/D1495/D1506 (k ≈ 2 window; DILMIX λ = 1 points not robust)
 - aegis-check: read from field_tests/results/DILTR/A0_TR1e+08.json, A0_TR1e+10.json and D1489 json; differences re-run in python ✓; P3 D-notes read only.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1519 — KEFF2: the three-number reduction (k_eff, tilt fraction τ* = C·e*) ALSO FAILS (3 of 5) — no local reduction captures the mixtures; the practical screen is a direct engine-F run of each route's own potential (≈ 1.5 s, matches exact to ≤ 1e-5)
+- Lock: field_tests/rules/PREREG_KEFF2.md. Script field_tests/scripts/keff/run2.py; results field_tests/results/KEFF2/ (chart rows with y*, e*, τ*; model rows; verdict.json). 12 chart points invalid by the UCHART D1 filter (same tilt-dominated corner + (3.5, 5e-7)), excluded as locked.
+- [computed] Control U2 ✓ (Δn_s −1e-5, Δr +0.1 %). S passes (Δn_s −0.0015, Δr +9.5 %). A1 passes (−0.0023, +17.6 %). B0 now in domain (k = 3.5 row) but fails on r (−0.0022, +23.7 %). M25 fails (−0.0050, +51 %, wrong status). M50 fails (−0.0035, +31 %, wrong status).
+- [derived] Reading: adding the tilt fraction moves the DILMIX read-offs only part way (M25 Δn_s −0.0062 → −0.0050). The mixtures' effective exponent runs from ≈ 3 near the vacuum to 1.5 far out; N* (and so e*, ε*) integrates over that whole run, so no quantity measured at horizon exit alone fixes (n_s, r) across families. The pure-power chart (D1516) is a valid map of the pure-power family only.
+- Verdict: local reductions (k_eff) and (k_eff, τ*) — both FAILED as locked. Screening rule adopted instead: run engine F on the route's actual potential (1.5 s/point; F vs locked exact rows A1, B0, M25, M50: |Δn_s| ≤ 1e-5, D1517), exact MS only for candidates in or near the band.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
