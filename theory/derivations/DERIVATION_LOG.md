@@ -2818,3 +2818,8 @@ Touches: none.
 2. [derived] Φ = (1/8)conj(Ê₂E₄E₆/Δ) + 33, constant term 90/(πτ₂).
 3. [derived] Numeric Y: 6πR² and 90κ/(πR²) confirmed (offset equal to 1e-4 at R = 2, 3); constant −0.716 unexplained.
 4. [postulate P3] Unchanged.
+
+## D1476: genus-two lattice integral (S6a)
+1. [literature] 1602.00308 (3.49), (3.54), (3.55): genus-two Γ₂,₂ integral ∝ E*(2s,T) + E*(2s,U).
+2. [derived] D⁴R⁴ residue at s′ = 1 gives E₂(T) + E₂(U), matching GRV 4.15 in structure.
+3. [postulate P3] Genus-two U-dependence is additive; e^K placement still missing.
