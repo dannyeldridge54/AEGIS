@@ -16465,3 +16465,10 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - Four nits, none changes a verdict: ΔN_eff bound not yet read from a paper (G6b), two "w today" definitions, a stale CMB-S4 mention in the other chat's postulate register, SM-only g* (conservative).
 - Remaining open (on the card): κ, equal sharing per particle, C3/C4, the 1-in-300 start, V_Λ, the 2D end point (G9b), D1636.
 - MAP: node=matter_genesis status=postulate touches=[] ripple=no
+
+## D1651 (RIGHT, 19 Nov 2026) — RESULT, rung R-D1: Coulomb correction added; Y_p = 0.2445 → PASS (PREREG_RD1_COULOMB)
+- The Fermi function on the e⁻–p branches, renormalised to τ_n, gives ΔY_p = +0.0024: 0.2421 → 0.2445 (window [0.244, 0.250]) ✓. D/H +0.5% (< 3%) ✓; Li/H 4.38 × 10⁻¹⁰.
+- Mechanism: normalising to the measured τ_n with F > 1 at low energy lowers K, so the high-temperature rates drop 2% (λ_np(1 MeV) 1.604 → 1.569 s⁻¹). Freeze-out is earlier and more neutrons survive.
+- My pre-run expectation (ΔY_p ~ 0.001–0.002, a possible FAIL) was too low. The measured shift is 0.0024. Recorded, not adjusted.
+- The remaining gap to full codes (≈ 0.247) is ≈ 0.0025, from the radiative, finite-mass and finite-temperature corrections and incomplete ν decoupling (N_eff = 3.044). These are not added.
+- The genesis toolkit is now at Y_p 0.2445, D/H 2.61 × 10⁻⁵, ³He/H 1.03 × 10⁻⁵, Li/H 4.38 × 10⁻¹⁰.

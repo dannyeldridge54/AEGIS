@@ -35,7 +35,7 @@ Rule: a postulate is a stated assumption that the theory now RUNS on. It is not 
 ## D. Matter-genesis toolkit
 | # | gap | status |
 |---|---|---|
-| D1 | Y_p 0.005 low (weak-rate corrections) | **E** — add Coulomb, radiative and finite-mass corrections |
+| D1 | Y_p | Coulomb added (D1651): 0.2445; ≈ 0.0025 still to come from radiative, finite-mass and N_eff = 3.044 |
 | D2 | Li-7 | DONE (D1640): 4.35 × 10⁻¹⁰, problem reproduced (×2.7) |
 | D3 | stellar, s- and r-process ladder | **E** — later rungs |
 | D4 | links to sound / cymatics / gravitational waves | **E** — ladder sonification done; acoustic peaks and the GW background are next |
@@ -49,4 +49,4 @@ Plan (lock before computing):
 4. P-M test: does a mirror sector at ΔN_eff ≤ 0.3, or 5 GeV dark baryons, move Li-7 by more than 10%? (Expected: no. The Weave would then NOT solve the lithium problem, which is to be recorded as such.)
 After R-Li the queue is: C2 (dark-thread start from the Y-fork) → B2 (δ = 2/9) → C3/C4 (sharing factor and asymmetry from the thread's decay at ρ).
 
-**R-Li done (D1640).** R-C2 done (D1642): C-start false. R-B2 done (D1645): 2/9 not excluded (+0.4σ PDG, −0.9σ Belle II); no mechanism known. R-C3/C4 done (D1648): C4 viable; C3 splits into mirror (0.94 GeV) or ADM (5 GeV). Next rung: **R-D1** (weak-rate corrections to Y_p).
+**R-Li done (D1640).** R-C2 done (D1642): C-start false. R-B2 done (D1645): 2/9 not excluded (+0.4σ PDG, −0.9σ Belle II); no mechanism known. R-C3/C4 done (D1648): C4 viable; C3 splits into mirror (0.94 GeV) or ADM (5 GeV). R-D1 done (D1651): Y_p 0.2445. Next rung: **R-B5** (non-minimal M_ν vs sin²θ₁₂).
