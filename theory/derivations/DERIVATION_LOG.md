@@ -3100,3 +3100,8 @@ Touches: none.
 ## D1542 — UCHART: engine F validated against exact MS (rule E pass); pure-power reduction fails on real routes (rule R)
 1. [derived] Three valid exact checks agree with engine F to ≤ 7.8e-7 in n_s and ≤ 0.011 % in r.
 2. [derived] Chart vs real routes: SERAPIS-E Δn_s −0.0027; form A Δn_s −0.0023…−0.0029, Δr +20…+23 %; the reduction fails as in D1517/D1521.
+
+## D1552 — lens duality: 10D species-gradient (E_{3/2}) and 8D ratio (E₂) plateaus agree to Δn_s 3e-5 untilted when λ₈ = 3ζ(3)/(32ζ(2)ζ(4))
+1. [derived] Log-gradient of E_s approaches as y^{1−2s}; ratio of E_{s'} as y^{−s'}; equal exponents for s' = 2s − 1, and equal amplitudes for λ₈ = 0.063298.
+2. [derived] Engine F: untilted 10D n_s 0.96006 / r 4.036e-4 vs 8D 0.96003 / 4.045e-4.
+3. [derived] With each lens's own tilt at n_s 0.9706: r 5.41e-4 (10D) vs 5.22e-4 (8D).
