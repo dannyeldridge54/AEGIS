@@ -2636,3 +2636,11 @@ Touches: none.
 2. [derived] With D1442 (A1 −0.018 %) and D1443 (K1 −0.14 %, K2 −0.10 %): all seven exact points of the audited ρ box agree with the second-order offset model within 0.14 %, all on the same side (model slightly less negative).
 3. [estimate] Reference precision caveat (loud): the D1262 rows (a1_mssm_gstar.txt, 18 Nov 18:36 CT) predate D1417's α_s estimator fix (21:37 CT). D1417's new-estimator SERAPIS-point α_s −9.964e-4 differs from the table's A1 −9.9814e-4 by −0.17 % (−0.07 % vs the SM row). So agreement below ~0.2 % is at the references' own precision; the model-vs-exact gap is ≤ 0.14 % ± ~0.2 %.
 4. [estimate] Conclusion unchanged: the ρ α_s meter is derived (Epstein offset + second-order SR) across the whole audited box; a new-estimator rerun of the seven exact rows (PC job, cf. docs/JANUS_PC_JOBS.md) would tighten the comparison.
+
+## D1445: Janus summary addendum, D1436–D1444
+1. [derived] Closed forms: D640 (τ = i, offset c) → D635 (c = 0) → D1405 at κ = ½ nest exactly (D1436). ρ first-order closed form α_s = −2r[1 + 4w(1 − t) − 6Bw/(1 + t)] reproduces its model (0.13 %) but is +1.98 % off exact — slow-roll order (D1439).
+2. [derived] ρ running derived: the Epstein offset model (B = 1 − E(ρ,2), πζ(3)/y term) at second-order slow roll (1609.04739; α_S to O(ε³) via dn_S/d ln k) matches all 7 exact audited-box points within 0.14 % and recovers their tilt C to ≤ 0.045 % (D1442–D1444); the empirical k = 1.0352 (D1423) is now explained. References predate D1417's estimator fix (~0.07–0.17 %), so sub-0.2 % agreement is at reference precision (D1444).
+3. [derived] Tests: n_s is the decisive observable (D1437); SO's own σ(n_s) = 0.002 gives 3.1–3.2σ alone if CMB-only 0.9682 held (D1441); SO + SPHEREx (~2027+) 7.7–8.0σ is the earliest strong decider (D1440, 2212.04115-only).
+4. [literature] Timelines: CMB-S4 ended July 2025 (S4 forecast rows hypothetical); SPHEREx launched 11 Mar 2025; LiteBIRD JFY2032, δr = 1e-3 requirement (D1440).
+5. [derived] r: at LiteBIRD's requirement the r floor (4.55–5.7e-4) is only 0.46–0.57σ — D1438's 7.6–11.4σ needed a ~10× idealized forecast (corrected in D1440). Running: detection ≤ 1.3σ, exclusion-only (D1409).
+6. [estimate] Open: τ = i at second order (does D640's 0.3 % close?); new-estimator rerun of the 7 ρ rows (PC); band_i_audited node and PC jobs await Danny.

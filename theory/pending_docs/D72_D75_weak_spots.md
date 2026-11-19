@@ -15099,3 +15099,11 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Caveat: reference rows predate D1417's estimator fix (A1 −9.9814e-4 vs new −9.964e-4: 0.17 %) ⇒ sub-0.2 % agreement is at reference precision. New-estimator rerun of the 7 rows = candidate PC job.
 - aegis-check: re-ran K4 −9.7569e-4/−9.7704e-4 − 1 = −0.14 %, D1417 offsets −0.17 %/−0.07 % in python; like-with-like: flagged (old- vs new-estimator references); checked: units, arithmetic, cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1445 — JANUS tick 41: summary addendum D1436–D1444
+- [derived] Closed forms nest (D1436); ρ first-order closed form +1.98 % (D1439); ρ running derived at second-order SR, 7/7 exact points ≤ 0.14 % (D1442–D1444, reference-precision caveat).
+- [derived] n_s decides first: SO alone 3.1–3.2σ (D1441), SO + SPHEREx 7.7–8.0σ (D1440); r 0.46–0.57σ at LiteBIRD's δr (D1438 corrected by D1440); running exclusion-only (D1409).
+- [literature] CMB-S4 ended Jul 2025; SPHEREx launched Mar 2025; LiteBIRD JFY2032.
+- [estimate] Open: τ = i second order; new-estimator ρ rerun (PC); band_i_audited + PC jobs await Danny.
+- aegis-check: summary only — every number copied from the cited D-notes (re-read this tick), no new arithmetic; checked: labels, like-with-like (caveats carried).
+- MAP: node=janus status=computed touches=[] ripple=no
