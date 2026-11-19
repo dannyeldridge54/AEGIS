@@ -1211,10 +1211,13 @@ observing:
   branch:
   - rho
   title: Reheating from the final SERAPIS equation (genesis pathway)
-  status: open
-  d: []
+  status: estimate
+  d:
+  - D1637
   depends:
   - plateau_origin
+  history:
+  - 'D1637: estimate'
 - id: matter_genesis
   layer: 2
   branch:
@@ -1226,6 +1229,7 @@ observing:
   - D1632
   depends:
   - genesis_reheating
+  flag: recheck (D1637, genesis_reheating)
 - id: light_elements
   layer: 3
   branch:
