@@ -66,7 +66,8 @@ The inflation sector gives exactly 0 at ρ. [der] The observed Λ_obs ≈ 10⁻�
 | quark sector (θ̄ condition), Λ_obs | open terms |
 | neutrino mixing | derived (TM2) given P-F3; sin²θ₁₂ in +2.8σ tension |
 
-The equation is complete as a statement: every term is written, every number that can be computed has been computed, and the data checks are passed or failed on the record. It is not yet fully derived: three principles and one empirical number carry it, and three terms are open. The next derivation targets, in order of leverage:
-1. one rule that gives both Zhinü and equipartition (both are equalities of norms at the symmetric point);
-2. δ = 2/9 from the geometry at ρ;
-3. the θ₁₃ correction and the quark-phase condition.
+The equation is complete as a statement: every term is written, every number that can be computed has been computed, and each data check is recorded as passed or failed. It is not yet fully derived. Four principles (Zhinü, P-F1, P-F2, P-F3) and one empirical relation (δ = Q/3) carry it, and two terms are open (the quark sector with its θ̄ condition, and Λ_obs). Next derivation targets, in order of leverage:
+1. one rule that gives both Zhinü and equipartition (both are equalities of norms at a symmetric point);
+2. why δ = Q/3;
+3. an explicit quark sector at ρ and i, to test arg det(Y_u Y_d) = π;
+4. the dynamics that sends the neutrino modulus to i and the charged-lepton modulus to ρ.
