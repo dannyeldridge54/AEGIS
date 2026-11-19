@@ -696,3 +696,4 @@ D1409  2026-11-19T02:58Z  JANUS tick 8: when is the forced-negative running test
 D1410  2026-11-19T03:01Z  D1364 PC cross-check: n_s, r reproduce to 5e-6; alpha_s from the pipeline is numerically noisy (up to 30% between identical runs)
 D1411  2026-11-19T03:04Z  JANUS tick 9: band rechecks after D1409 - no band value changes; clear flags
 D1412  2026-11-19T03:10Z  JANUS tick 10: tau=i relation error is the offset bias - D640 offset-corrected relation on the NA12 exact points
+D1413  2026-11-19T03:15Z  JANUS tick 11: band_i running re-scored with D640 offset-corrected relation; clear flag
