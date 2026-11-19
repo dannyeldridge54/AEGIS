@@ -16109,3 +16109,11 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [computed] Koide–Brannen check with A = √2, δ = 2/9 and m_τ as the only input: m_τ 1776.93 ⇒ m_μ 105.6561, m_e 0.510983; m_τ 1777.09 ⇒ 105.6657, 0.511029; observed 105.6584, 0.510999 — within the m_τ uncertainty.
 - Doc: theory/pending_docs/WEAVE_FULL_EQUATION.md. Not fully derived; stated plainly in the doc.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1598 — TWO TIE-OFF POINTS (locked PREREG_FLAV_RHO3): V₀ vanishes at BOTH SL(2,Z) fixed points (i and ρ); charged leptons at ρ (Z₃ = ⟨ST⟩) + neutrinos at i (Z₂ = ⟨S⟩) ⇒ PMNS column (1/3,1/3,1/3) = TM2: θ₁₃ free (fixes the −38σ TBM failure), sin²θ₁₂ = 1/(3cos²θ₁₃) = 0.3408 vs 0.307 ⇒ +2.82σ (PASS by the < 3σ rule; tension); Koide δ = Q/3 holds (diff −1.1e-5 Belle II, +3.3e-6 PDG; ~1σ)
+- [computed] V₀(i) = 2.2e-22, V₀(ρ) = 1.6e-22; neighbourhoods positive (i: 2.1e-8 along x, 4.2e-7 along y; ρ: 8.3e-8 isotropic) ⇒ both are zero-energy minima of V₀; the tilt factor keeps V = 0 there.
+- [computed] A4 checks S² = T³ = (ST)³ = 1 to 1e-15; ST eigenvalues {1, ω, ω²}; overlap of the S = +1 eigenvector with the ST basis = (1/3, 1/3, 1/3) ⇒ trimaximal column; only ν₂ is allowed (ν₁/ν₃ would force |U_e3|² = 1/3) ⇒ TM2.
+- [computed] TM2 sin²θ₁₂ = 0.34081 (pull +2.82σ); TM1 would give 0.31837 (+0.95σ) but is not what this pair of fixed points produces.
+- [EMP] δ_Koide = Q/3 (= 2/9 when Q = 2/3): reduces the two Koide numbers to one (equipartition); not derived.
+- [POSTULATE P-F3, candidate] the neutrino modulus ties off at i, the charged-lepton modulus at ρ (the inflaton reaches ρ because the inflation line x = ½ passes through ρ, not i).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
