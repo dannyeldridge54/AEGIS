@@ -16483,3 +16483,12 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - D1644 found the thread settles at the image of τ = i, but only along one line of the τ plane. Now both directions are free (axion normalised by SL(2,Z) symmetry): with offsets of 10⁻⁶, 10⁻³ and 10⁻² it still ends at the image of i every time, and the sideways offset never grows.
 - So the Janus reading stands on firmer ground: inflation ends at ρ, dark energy ends at i — the two fixed points of the modular plane, one at each end of cosmic history. (Assumption: the 2D gradient form of v3's principle.)
 - MAP: node=thread_endpoint status=computed touches=[reverse_thread] ripple=no
+
+## D1646a (correction, 19 Nov 2026) — to D1646 (and to D1650's nit N1)
+D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABLE with ΔN_eff = 0.21, against a ΔN_eff < 0.3 bound carried over from D1632 without a source. Today's data are much tighter: N_eff = 2.86 ± 0.13 (ACT DR6, 2503.14454) and 2.990 ± 0.070 (2603.13226). Against them ΔN_eff = 0.21 is 3.0σ / 3.7σ too high ⇒ EXCLUDED (D1654). D1650's referee listed the unsourced bound only as a nit (N1); it was in fact verdict-changing. The G12 PASS is withdrawn for this link only; the other links stand.
+
+## D1654 — JANUS genesis G6b: today's data rule out a massless dark photon in the minimal dark sector — for every way the inflaton could decay
+- Read today's N_eff measurements: 2.86 ± 0.13 (ACT DR6) and 2.990 ± 0.070 (2026 combined, the tightest). Checked four ways the SERAPIS inflaton could share its energy (equal per particle; through gauge fields, as the string coupling naturally does; gauge + Higgs; with a dark QCD).
+- Every case gives too much dark radiation: ΔN_eff 0.21–0.33 (3–5.5σ too high), and 4.7 with a dark QCD. D1646's "viable" was wrong — it used an old 0.3 limit (correction D1646a above).
+- What P-M needs now: either the dark photon has a mass (so it stops counting as radiation before the CMB forms), or the inflaton gives the dark side ≤ 2 % of its energy (it takes ~5–8 % naturally), or a bigger dark sector with more heavy states.
+- MAP: node=dark_radiation status=corrected touches=[matter_genesis] ripple=no

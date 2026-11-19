@@ -3222,3 +3222,11 @@ Touches: none.
 4. [derived] With axion offsets δx = 1e-6, 1e-3, 1e-2 the thread still settles at τ ≈ ½ + i/2 (fundamental-domain distance to i 2.2–3.4e-4) — all i-class; max |x − ½| stays ≈ 1.05 δx (the offset never grows; the line x = ½ is stable). Late ⟨w⟩ −0.017 … −0.005 (matter-like).
 5. [derived] Verdict: ROBUST — D1644's end point (the image of τ = i, not ρ) is not an artefact of the 1D slice.
 6. [derived] Referee: R0 flags, end classes, distance-to-i and max_dx ratios re-read from the json ✓.
+
+## D1654 — JANUS genesis G6b: decay channels + today's N_eff data (PREREG_D1654_G6B_CHANNELS_NEFF) — minimal dark sector with a massless dark photon EXCLUDED in every channel scenario
+1. [literature] N_eff = 2.86 ± 0.13 (ACT DR6 P-ACT-LB, 2503.14454); N_eff = 2.990 ± 0.070 (2603.13226, LBT Y_p + CMB); SO forecast σ(N_eff) = 0.055 (1808.07445); SM 3.044.
+2. [estimate] Channel shares f = ρ_D/ρ_V at reheating: S1 democratic 0.0515 (ξ_R = 1); S2 gauge-dominated (dilaton couples through the gauge kinetic function; fermions helicity-suppressed) 1/12; S3 gauge + Higgs 1/16; S4 with a dark QCD 9/12.
+3. [derived] ΔN_eff: S1 0.206, S2 0.334, S3 0.250, S4 4.73. Pulls vs 2603.13226: 3.7σ, 5.5σ, 4.3σ, 68σ; vs ACT: 3.0σ, 4.0σ, 3.3σ, 38σ ⇒ all EXCLUDED (> 3σ on the tighter dataset).
+4. [derived] To stay within 2σ of 2603.13226 (ΔN_eff ≤ 0.086) the dark side may receive at most f ≤ 0.021 of the reheating energy (≈ 2.4× less than democratic, ≈ 4× less than gauge-dominated) — or the dark photon must be massive (non-relativistic before recombination), or the dark sector must have more heavy states.
+5. [derived] D1646 case B re-scored: EXCLUDED (it was called VIABLE against an outdated 0.3 bound) ⇒ correction D1646a.
+6. [derived] Referee: ξ and ΔN_eff for S1 reproduce D1646 exactly (0.46524, 0.20629); pulls recomputed from the stated means/σ ✓.
