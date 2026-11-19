@@ -15237,3 +15237,8 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] Derived β_s ρ −2.86e-5 / τ = i −3.13e-5: ≤ 0.0024σ (Planck 0.013), ≤ 0.0069σ (hypothetical S4 0.0045); 3σ needs σ(β_s) ≈ 1e-5. D1430/D1431 hold.
 - aegis-check: significances from the result json; 0.0045/9.53e-6 ≈ 472 recomputed; dark-ages σ not used (not on file); checked: units, arithmetic, like-with-like (68 % σ throughout), cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1468 — JANUS tick 64: reference card
+- [estimate] docs/JANUS_FORMULAS.md written (formulas, accuracies, testability table, open decisions); numbers copied from cited D-notes; consistency script next tick.
+- aegis-check: no new numbers; spot-checked card values against D1457/D1462/D1466/D1467 jsons while writing.
+- MAP: node=janus status=computed touches=[] ripple=no

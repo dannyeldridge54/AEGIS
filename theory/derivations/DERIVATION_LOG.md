@@ -2775,3 +2775,6 @@ Touches: none.
 1. [literature] σ(β_s), 68 %: Planck 2018 0.013 (measured, via D1400); CMB-S4 0.0045 (1611.05883 Table 1 via D1431; hypothetical — S4 ended July 2025, D1440). The dark-ages 21-cm table is not on file and its ar5iv page is not allowlisted this tick (no number from memory).
 2. [derived] Derived β_s (D1466): ρ −2.860e-5 → 0.0022σ (Planck), 0.0064σ (S4); τ = i −3.126e-5 → 0.0024σ, 0.0069σ. Rule (all < 1σ): undetectable on every listed survey.
 3. [derived] A 3σ detection would need σ(β_s) ≈ 9.5e-6 (ρ) / 1.04e-5 (τ = i) — ~470× better than the (hypothetical) S4 forecast. D1430/D1431's conclusion (β_s out of reach short of dark-ages 21 cm) holds with the 12 % deeper derived β_s.
+
+## D1468 — JANUS tick 64: one-page reference card docs/JANUS_FORMULAS.md
+1. [estimate] Wrote docs/JANUS_FORMULAS.md: potentials actually integrated (D1447, D1414–D1415), the second-order recipe and its accuracy (D1442–D1448), both cross-check formulas with validity ranges (D1457, D1462), the leading-order correction split (D1463), β_s (D1466), band pulls (D1452–D1454), the testability table (D1409, D1431, D1438, D1440, D1441, D1449, D1467) and Danny's open decisions (D1464). Every number copied from those notes/jsons; nothing new computed. Next tick tests the card's formulas against the jsons.
