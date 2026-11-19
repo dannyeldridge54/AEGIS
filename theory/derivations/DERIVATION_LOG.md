@@ -2416,7 +2416,7 @@ Touches: none.
 1. [derived] D1402 used α_s = −2r (κ = 1) for band_i; the τ = i vacuum's own member is κ = ½ (D1263, relation 10.8 % below exact). Recomputed in D1405: α_s −7.5e-4 … −9.3e-4, pulls −1.34σ … −1.37σ; verdict PASS unchanged.
 
 
-## D1404: P3 mirror (spec vs ledger)
+## D1406: P3 mirror (spec vs ledger)
 1. [literature] hep-th/0307268: type II one-loop dilaton corrections ∝ χ (topological), no complex-structure dependence.
 2. [derived] Spec S1–S5 from SERAPIS-E; ledger of all routes; only D⁴R⁴ coefficient matches F, only K_S placement matches S1.
 3. [postulate P3] Target: genus-two heterotic K_S ⊃ A₀ + B·E₂(U); not computed.
