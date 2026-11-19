@@ -2347,3 +2347,9 @@ Touches: none.
 1. [derived] 48 S-minima, all W_S/W·L ≈ 0.76–0.99 (SUSY point), A₀ < 0 in all; 0 qualifying.
 2. [derived] At D_SW = 0, V = (c − 3W²)/L: no L-independent uplift.
 3. [postulate P3] Uplift needs a sector not scaling as 1/L.
+
+## D1396: uplift scaling constraint
+1. [derived] V = bL_ρ^{p−1}L^{−p} − b/L; slope at ρ ∝ (1 − p); p = 0 is SERAPIS-E; L_peak = L_ρp^{−1/(1−p)}.
+2. [derived] Horizon exit L*/L_ρ ≈ 1.2–1.3 stays below the peak for p ≲ 0.85.
+3. [estimate] F-terms give p = 1, anomalous D-terms p ≈ 3; need inverse metric ∝ L (nilpotent, D1353).
+4. [postulate P3] Uplift sector with p < 1 not identified.
