@@ -798,3 +798,4 @@ D1511  2026-11-19T14:04Z  P3 exact DILMIX alpha 0.75 + LVSDIL k 1.2 vs forecasts
 D1512  2026-11-19T14:06Z  Tilt T3f: exact-MS check of the physical-frame DILMIX sliver point (0.1, 1.8e-6)
 D1513  2026-11-19T14:12Z  untitled
 D1514  2026-11-19T14:12Z  untitled
+D1515  2026-11-19T14:12Z  untitled
