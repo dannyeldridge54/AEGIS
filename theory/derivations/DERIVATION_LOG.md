@@ -2383,3 +2383,8 @@ Touches: none.
 5. [derived] SERAPIS point (n_s 0.9745, r 4.8e-4): α_s = −2r = −9.60e-4, β_s = −2r(1−n_s) = −2.45e-5; β_s/α_s = 1−n_s = 0.0255 exactly.
 6. [estimate] At κ = 1 the relation has no freedom left in the runnings: both follow from (n_s, r, p). Only κ ≠ 1 would make α_s depend on n_s; a measured α_s ≈ −2r would therefore also test κ = 1.
 
+
+## D1401: 8D D⁴R⁴ as plateau source
+1. [literature] GRV 1001.2535 (4.10, 4.13–4.16): perturbative D⁴R⁴ = ζ(5)/y₈ + (2/π³)E₂(T)E₂(U) + (2/3)y₈(E₂(T) + E₂(U)).
+2. [derived] A₀ + B·E₂(U) with exact E₂(U): plateau Ê/(a + Ê), a = A₀/B + E_ρ; no chamber; a ≈ 2–180 for T₂ = 2–10, y₈ = 0.01–0.1.
+3. [postulate P3] Coefficient → potential mechanism not identified.
