@@ -2330,3 +2330,9 @@ Touches: none.
 1. [literature] 2511.15815 eqs. (2.1), (2.2), (2.7), App. B: nilpotent metric K_SS̄ realises any V, incl. SL(2,Z)-invariant.
 2. [derived] SERAPIS-E has an exact N=1 supergravity embedding.
 3. [postulate P3] Embedding is a parametrisation; the origin remains postulated.
+
+## D1364: s = 1/s = 2 mix through the pipeline (locked)
+1. [derived] F_w = (1 − w)kÊ₁ + wE(U,2), k = 29.5772; G0 pass (n_s 0.97446, r 4.813e-4 at w = 1).
+2. [derived] All w ∈ {1, .75, .5, .25, 0} in band; w = 0: n_s 0.96984, r 5.26e-4.
+3. [derived] Locked rule: small w passes ⇒ P3 "derived (candidate)"; expansion-order blocker lifted.
+4. [postulate P3] Plateau mechanism/model (D1375, D1384–D1385), control and uplift still open.

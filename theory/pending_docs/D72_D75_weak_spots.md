@@ -14603,3 +14603,19 @@ MAP: node=m32_window status=postulate touches=[wino_window] ripple=no
 - What it gives the Weave: today's data reading of the string product, to compare with any future independent moduli stabilisation (the only thing that would make bhk_tilt a predictor). SO's σ(n_s) 0.0016 would cut the ±23–29% to ±14% (D1265 forecast, string_meter).
 - Caveat: linear response over |Δn_s| ≤ 0.0016, well inside the emulator range (D1268: exact to ~1%). T_R and N_eff are held fixed. N_eff = 3 rescales the result by ¾.
 MAP: node=inverse_meter status=postulate touches=[string_meter, bhk_tilt] ripple=no
+## D1364 — DEEP / LEFT: P3 hunt step 4 (LOCKED) — the s = 1 / s = 2 shape mix through the full SERAPIS-E pipeline: G0 PASSES and EVERY mix lands in the frozen band, including pure s = 1 (w = 0: n_s 0.96984, r 5.26e-4). By the locked rule P3 → "derived (candidate)": the plateau does NOT need the s = 2 term to dominate, so the "order of the expansion" blocker (D1363) is lifted (2026-11-18)
+- Lock: field_tests/rules/PREREG_D1364_p3_mix.md (+ .sha256, commit 2e7c22b0) before computing; DEVIATIONS D1 (json crash, no result seen), D2 (container restart, parallel per-w execution), D3 (PC-queue copy, env fix), D4 ("small w" = {0, 0.25}, fixed before results). Script field_tests/scripts/d1364/p3_mix.py (+ merge.py, verdict.py — reading only). Results field_tests/results/D1364_p3_mix.json (cloud run; the PC copy is an identical-code cross-check, still running).
+- [computed] k = [E(½+10i) − E(ρ)]/[Ê₁(½+10i) − Ê₁(ρ)] = 29.5772. Point C = 1.25e-6, T_R = 8.94e8 GeV, λ = 1, exact spectra (pipeline.predict):
+| w | n_s | r | α_s | N* | in band |
+|---|---|---|---|---|---|
+| 1.0 | 0.97446 | 4.813e-4 | −1.169e-3 | 50.24 | yes |
+| 0.75 | 0.97169 | 5.135e-4 | −9.29e-4 | 50.25 | yes |
+| 0.5 | 0.97052 | 5.402e-4 | −6.71e-4 | 50.25 | yes |
+| 0.25 | 0.97029 | 5.468e-4 | −7.46e-4 | 50.24 | yes |
+| 0.0 | 0.96984 | 5.256e-4 | −6.30e-4 | 50.23 | yes |
+- [computed] G0: w = 1 gives n_s 0.97446, r 4.813e-4 vs serapis_point 0.97446 ± 2e-4, 4.81e-4 ± 2% — PASS.
+- [computed] Band (n_s 0.969–0.975, r 4.55–5.7e-4): all five w pass. Small w (D4: {0, 0.25}) passes ⇒ locked verdict: P3 → "derived (candidate)".
+- [derived] The pre-stated expectation (pure s = 1 approaches the plateau as U₂⁻¹, giving different n_s) holds in direction: n_s falls from 0.97446 (s = 2) to 0.96984 (s = 1), r rises 9% — but stays inside the frozen band at the same C. The s = 1 point sits 0.0008 above the lower n_s edge: the band admits it, not with much room.
+- [estimate] Caveats on what "derived (candidate)" means here: (1) C and λ were held at the SERAPIS point, not refitted, so the band test is a fixed-point check; (2) the band is the frozen SERAPIS band, wider than the CMB error alone; (3) the plateau MECHANISM is still the D1375 route (K_S ⊃ Y ⊃ E(U,2)/T₂) or, for s = 1, the R⁴ Ê₁ term (D1363) — this test removes the requirement that s = 2 dominate, not the need for a plateau-generating structure (D1371/D1375, uplift, model D1384–D1385).
+- Verdict (locked rule): P3 → "derived (candidate)". The P3 open list shrinks to: an explicit model (SL(2,Z) U-plane, condenser/GS conditions, D1385), control at T₂ ≳ 16 (D1378), and the uplift. Circuit/paper wording: "plateau shape robust to the string expansion order (D1364)".
+MAP: node=plateau_origin status=estimate touches=[] ripple=no
