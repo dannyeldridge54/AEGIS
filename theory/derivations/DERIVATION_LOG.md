@@ -2934,3 +2934,8 @@ Touches: none.
 3. [estimate] Physical frame: y_phys 1.9e3–2.5e3 (a 2e3), 5.4e3–7.4e3 (9.9e3), 1.6e4–2.2e4 (5e4) ⇒ g_s* = 1/y_phys ≈ 4.6e-5 – 5.4e-4: weak coupling at horizon exit, as for form A. C_phys = C·a ≈ 2e-3 (a 2e3, C 1e-6) – 0.1 (a 5e4, C 2e-6).
 4. [estimate] Set 6 (frame reconciliation): the model-frame y* ≈ 12–16 and D1486's physical y* ≈ 1e3–1e5 are the same point under a^{2/3}; N*, n_s, r are frame-independent (only λ rescales), so no tension — the open issue is only the source of C_phys.
 5. [estimate] Tilt-source gap (D1486's flagged weakness, now quantified for DILMIX): a BHK-type loop ∝ g_s*² ≈ 2e-9 – 3e-7 vs needed C_phys 2e-3 – 0.1 ⇒ short by 10⁴–10⁶ (order of magnitude; the loop's O(1) prefactor not included). The DILMIX strip inherits form A's open tilt problem unchanged.
+
+## D1491 — help set 9: exact Mukhanov–Sasaki run of the DILMIX best strip point (α 0.375, C 1.5e-6) — IN BAND, AGREE with the SR forecast
+1. [derived] Shared pipeline (exact MS spectra, self-consistent N*, T_R 8.94e8; our own copy of the DILMIX overrides; not a P3 locked grid point): n_s 0.971262, r 5.2889e-4, α_s −7.686e-4, N* 50.251 (1849 s).
+2. [derived] vs D1485 SR forecast (0.971259, 5.2883e-4): Δn_s +3.5e-6, Δr/r +0.013 % ⇒ AGREE; in band (n_s 0.969–0.975, r 4.55–5.7e-4) ⇒ IN BAND. α_s matches D1492's −7.685e-4.
+3. [estimate] With the P3 chat's own exact (0.25, 1.25e-6) row (D1493), two exact DILMIX points are now in band; the strip (D1494) is confirmed at exact level at its centre.

@@ -15423,3 +15423,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Strip y_model 11.7–16.0 → y_phys 1.9e3–2.2e4; C_phys 2e-3–0.1; frames reconcile (only λ rescales); open: physical source of C_phys.
 - aegis-check: numbers from field_tests/results/D1497_phys_frame.json; 23.25·(2000)^{2/3} = 3691 ✓, 1.25e-6·9.9e3 = 0.0124 ✓; y^{3/2}-dominance at y = 11.7: second E term / first = 2.0 % (computed in python; an earlier hand estimate of 0.6 % was wrong and is corrected here) ⇒ y_phys good to ~1–2 %; g_s² range from 1/y_phys² ✓; cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1491 — help set 9: exact MS at the DILMIX strip centre (0.375, 1.5e-6): n_s 0.97126, r 5.289e-4 — IN BAND, AGREE with SR (Δn_s 3.5e-6)
+- aegis-check: numbers from field_tests/results/D1491_dilmix_ms.json; same pipeline/T_R/start rule as the P3 DILMIX run.py (copied, not run); point not in its locked grid ✓; comparison re-run in the script; cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
