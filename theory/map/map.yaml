@@ -1214,10 +1214,12 @@ observing:
   status: estimate
   d:
   - D1637
+  - D1641
   depends:
   - plateau_origin
   history:
   - 'D1637: estimate'
+  - 'D1641: estimate'
 - id: matter_genesis
   layer: 2
   branch:
@@ -1258,3 +1260,4 @@ observing:
   - plateau_origin
   history:
   - 'D1638: postulate'
+  flag: recheck (D1641, genesis_reheating)

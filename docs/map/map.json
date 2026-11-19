@@ -1461,13 +1461,15 @@
    "title": "Reheating from the final SERAPIS equation (genesis pathway)",
    "status": "estimate",
    "d": [
-    "D1637"
+    "D1637",
+    "D1641"
    ],
    "depends": [
     "plateau_origin"
    ],
    "history": [
-    "D1637: estimate"
+    "D1637: estimate",
+    "D1641: estimate"
    ]
   },
   {
@@ -1524,7 +1526,8 @@
    ],
    "history": [
     "D1638: postulate"
-   ]
+   ],
+   "flag": "recheck (D1641, genesis_reheating)"
   }
  ]
 }
