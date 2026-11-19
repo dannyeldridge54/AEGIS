@@ -75,3 +75,15 @@ lattice directions (26 = 10 + 16; Narain O(16 + d, d)). At each stage the map re
 - Rung check: tree/one-loop gap = 1/y₅ = one power of g_s² (the invariant of stage 4 holds); along y₅ the gradient strand again gives the rung-1 shape with amplitude set by E^{SO(5,5)}_{3/2}/(2ζ(3)) — the rung persists at weak coupling (sign of the one-loop sum: Epstein-type at s = 3/2 > d/2 − 1 convergent region ⇒ positive — persists cleanly here, unlike the regularised 6D s = 1 case).
 - No new slice shape ⇒ no engine-F run.
 - Next stage: D = 4 (E₇₍₇₎/SU(8), dim 70; codon E^{E₇}_{[1000000];3/2}; one-loop thread E^{SO(6,6)}_{[100000];2}).
+
+## 13-POINT STRUCTURE (Danny 11:11 "look for 13 points it'll mirror serapis") — the twin ladder of SERAPIS, dimension version
+SERAPIS's twin ladder = 6 left rungs + 6 right rungs + 1 centre balance (13). The dimension ladder has the same shape, because every
+dimension D = 10 − d has TWO dual lenses (heterotic/type II duality):
+- LEFT ladder (6 points) — maximal-SUSY lens, U-duality E_{d+1}: 9D SL(2)×R⁺, 8D SL(3)×SL(2), 7D SL(5), 6D SO(5,5), 5D E₆, 4D E₇.
+  (= stages 1–6; stage 0, 10D IIB, is the left anchor.)
+- RIGHT ladder (6 points) — heterotic lens, Narain O(16 + d, d)/(O(16 + d)×O(d)) with the 16 internal (lattice) directions — the
+  "9 through 16" of Danny's 10:54 request: 9D O(17,1), 8D O(18,2), 7D O(19,3), 6D O(20,4), 5D O(21,5), 4D O(22,6). Codon: the heterotic
+  R⁴/R² threshold integrals (Kiritsis–Obers–Pioline; Bachas–Fabre–Kiritsis–Obers–Vanhove) — one-loop modular integrals over Γ_{16+d,d}.
+- CENTRE (1 point) — 4D, where both ladders must hand across the SAME inflation (shared quantities: n_s, r, the k = 2 rung, the species
+  stitch). Balance rule (as SERAPIS's centre): a lens result is CONFIRMED only if the dual lens at the same D agrees.
+Points beyond the twin ladder (3D E₈, 2D E₉, 1D E₁₀) are kept as an extension after the centre (E₈: golden-ratio check).
