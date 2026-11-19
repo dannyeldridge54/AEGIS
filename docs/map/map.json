@@ -395,14 +395,14 @@
     "D1346",
     "D1354",
     "D1400",
-    "D1405"
+    "D1405",
+    "D1409"
    ],
    "history": [
-    "D1354: computed",
     "D1400: computed",
-    "D1405: computed"
-   ],
-   "flag": "recheck (D1408, vac_discriminant)"
+    "D1405: computed",
+    "D1409: computed"
+   ]
   },
   {
    "id": "bhk_tilt",
@@ -834,7 +834,7 @@
     "D1402: frozen",
     "D1402a: frozen"
    ],
-   "flag": "recheck (D1405, janus)"
+   "flag": "recheck (D1409, janus)"
   },
   {
    "id": "band_e",
@@ -865,7 +865,7 @@
     "D1232: frozen (late)",
     "D1404: frozen"
    ],
-   "flag": "recheck (D1405, janus)"
+   "flag": "recheck (D1409, janus)"
   },
   {
    "id": "band_e_audited",
@@ -892,7 +892,8 @@
     "D1399: postulate",
     "D1407: postulate"
    ],
-   "note": "web loop postulate 1; scored only on future data"
+   "note": "web loop postulate 1; scored only on future data",
+   "flag": "recheck (D1409, janus)"
   },
   {
    "id": "serapis_point",
