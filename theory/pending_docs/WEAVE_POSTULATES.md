@@ -26,8 +26,8 @@ Rule: a postulate is a stated assumption that the theory now RUNS on. It is not 
 |---|---|---|---|
 | C1 | Λ's size (V_Λ ~ 10⁻¹²² M_P⁴) | **P-Λ:** set by hand (open); the dark dimension is ruled out for us (D1625) | — |
 | C2 | the reverse thread's 1% starting window | ~~C-start (Y-fork sets it)~~ FALSE (D1642): the field is frozen from inflation to now; P = 0.3% under the area measure. Now an initial-condition coincidence | DESI DR3/Euclid: (w₀, w_a) ≈ (−0.79, −0.36), never w < −1 |
-| C3 | dark/visible ratio 5.36 | **P-M:** one asymmetry, equal NUMBER sharing ⇒ m_DM = 5.0 GeV | SuperCDMS SNOLAB / TESSERACT / CRESST in 1–10 GeV |
-| C4 | asymmetry at T_rh = 9 × 10⁸ GeV (below the thermal-leptogenesis bound) | **C-asym:** non-thermal asymmetry from the thread's decay | η = 6.1 × 10⁻¹⁰ reproduced |
+| C3 | dark/visible ratio 5.36 | **P-M (revised, D1648):** (a) exact mirror: DM = mirror baryons, m = 0.94 GeV, n'/n = 5.36 from ordinary–mirror scatterings (Bento–Berezhiani); (b) generic ADM at 5.0 GeV needs ε'/ε ≈ 24 (unexplained). Equal sharing plus a cold mirror under a symmetric decay gives 123 GeV instead | SuperCDMS SNOLAB / TESSERACT / CRESST in 1–10 GeV |
+| C4 | asymmetry at T_rh = 9 × 10⁸ GeV | **C-asym (viable, D1648):** the inflaton decays to N with M ∈ [1.9 × 10¹⁰, 2.5 × 10¹²] GeV, ε = 1.8 × 10⁻⁶ | η = 6.1 × 10⁻¹⁰ reproduced |
 | C5 | mirror sector must be cold (ξ < 0.45) | **C-cold:** the thread decays mostly into the visible side (asymmetric reheating) | ΔN_eff (CMB-S4 σ ≈ 0.03) |
 | C6 | dark matter makes no elements | accepted (not a postulate) | — |
 | C7 | lithium problem (BBN 4.35 × 10⁻¹⁰ vs 1.6 × 10⁻¹⁰ observed; D1640) | **C-Li:** stellar depletion (mainstream); the Weave's mirror sector and dark baryons do NOT fix it (−2.8%, ~10⁻⁵) | Li in very metal-poor stars and in the SMC gas |
@@ -49,4 +49,4 @@ Plan (lock before computing):
 4. P-M test: does a mirror sector at ΔN_eff ≤ 0.3, or 5 GeV dark baryons, move Li-7 by more than 10%? (Expected: no. The Weave would then NOT solve the lithium problem, which is to be recorded as such.)
 After R-Li the queue is: C2 (dark-thread start from the Y-fork) → B2 (δ = 2/9) → C3/C4 (sharing factor and asymmetry from the thread's decay at ρ).
 
-**R-Li done (D1640).** R-C2 done (D1642): C-start false. R-B2 done (D1645): 2/9 not excluded (+0.4σ PDG, −0.9σ Belle II); no mechanism known. Next rung: **R-C3/C4** (sharing factor and asymmetry from the thread decay at ρ).
+**R-Li done (D1640).** R-C2 done (D1642): C-start false. R-B2 done (D1645): 2/9 not excluded (+0.4σ PDG, −0.9σ Belle II); no mechanism known. R-C3/C4 done (D1648): C4 viable; C3 splits into mirror (0.94 GeV) or ADM (5 GeV). Next rung: **R-D1** (weak-rate corrections to Y_p).
