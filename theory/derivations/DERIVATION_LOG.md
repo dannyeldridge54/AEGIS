@@ -3173,3 +3173,12 @@ Touches: none.
 6. [estimate] Postulation check: P-G' SURVIVES — same fit quality class, same prediction (w₀ ≈ −0.79, w_a ≈ −0.36), same ~1 % tuning. What changes is the reading of the edge: the window sits just below the point where the thread runs out at ρ (amp 0.368), not where V turns negative.
 7. [derived] Referee: counts (300/189/3), best point, Δw_a 0.0281, ΔΔχ² 0.426, w ≥ −1 for every viable run and dmax bookkeeping re-derived from the json ✓.
 8. [derived] Ripple check on plateau_origin (flag raised by this note's touches): D1638 only READS the v3 plateau shape (p3s.V_np, unchanged); nothing about the plateau's origin moves ⇒ recheck cleared.
+
+## D1641 — JANUS genesis G1b: the curvature of the SERAPIS potential at ρ is V''/V∞ = (D − 2)/32 — derived, then checked (PREREG_D1641_G1B_RHO_CURVATURE) — PASS
+1. [derived] At ρ, f = (2/3)y∂_y ln E = 0, so V'' = 2V∞(df/dφ)² with d/dφ = b·y d/dy, b = √(D−2)/2 (tilt factor = 1 at ρ).
+2. [derived] ρ is an order-3 elliptic point of SL(2,Z): a modular-invariant function's Hessian there is invariant under a 120° rotation, hence isotropic (∂_x²E = ∂_y²E).
+3. [derived] With y²ΔE = (3/4)E (s = 3/2): y²∂_y²E = (3/8)E at ρ, so y d/dy(y∂_yE/E) = 3/8, y df/dy = 1/4, df/dφ = b/4.
+4. [derived] V''/V∞ = b²/8 = (D − 2)/32; m²/H∞² = 3(D − 2)/32. D = 10: 1/4 and m/H∞ = 0.866 (D1637 measured m/H_* = 0.867 with V_* = 0.9984 V∞ ✓).
+5. [derived] Locked numerical check (p3s Fourier series, 30 digits): D = 10, 6, 4 give 0.25, 0.125, 0.0625, relative error ≤ 1.3e-25, with C = 8e-7 and C = 0 identical ⇒ PASS.
+6. [estimate] Lattice-sum cross-check of the isotropy (N = 60, h = 1e-3): ∂_x²E/∂_y²E − 1 = 0.0076 and y²∂_y²E/E = 0.3736 vs 0.375. The lock note said "~1e-4 accuracy"; that was optimistic: the truncated |·|⁻³ sum carries a ~1/N ≈ 1–2 % tail. Consistent within that, but not a sharp test; the pass rests on step 5 (which implies step 3 through the eigen-equation).
+7. [derived] Referee: all six (D, C) rows re-read from the json (max rel 1.25e-25); m/H∞ = √(24/32) = 0.866 ✓.

@@ -16406,3 +16406,9 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - What changes (scope note on D1626–D1628, their text untouched): the exact thread can never go negative. The "rolls into V < 0" edge becomes "the thread reaches the self-dual floor ρ and its energy runs out". The best fits sit just before that floor (amp 0.29 vs edge 0.37), so the "it is ending now" coincidence is real in the exact shape too, and it now has a geometric meaning: today is close to the thread's arrival at ρ.
 - Follow-ups: G2b — what the reverse thread does AT ρ (oscillation about V = 0 with V'' = V_Λ/4 by D1637's 1/4 — mass m_DE = √(V_Λ/4)/M_P ~ H₀; feeds G9). G3 now uses the exact shape.
 - MAP: node=reverse_thread status=postulate touches=[plateau_origin] ripple=no
+
+## D1641 — JANUS genesis G1b: why the curve's bend at the end of inflation is exactly 1/4 — it's the symmetry of the meeting point (PASS)
+- Derived: at the self-dual point ρ the three-fold symmetry of the modular plane forces the curve to bend equally in every direction; with the Eisenstein eigen-equation that fixes V''/V∞ = (D − 2)/32 — 1/4 in 10D, 1/8 in 6D, 1/16 in 4D. Checked numerically to 25 digits; the tilt C drops out.
+- Consequences: the inflaton mass after inflation is m = √(3(D−2)/32)·H∞ — a pure number times the inflation rate, no free input (0.866 H∞ in 10D, 0.61 H∞ in 6D). This makes the reheating link of D1637 depend only on κ. The same 1/4 applies to the reverse thread when it reaches ρ: m_DE = 0.866·H_Λ (feeds G2b/G9).
+- Honest note: the brute-force lattice cross-check was only good to ~1 %, not the 1e-4 the lock note claimed; it agrees at that level.
+- MAP: node=genesis_reheating status=estimate touches=[reverse_thread] ripple=no
