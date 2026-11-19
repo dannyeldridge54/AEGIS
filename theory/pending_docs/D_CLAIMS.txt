@@ -702,3 +702,4 @@ D1415  2026-11-19T03:26Z  JANUS tick 13: rho analogue of D640 - slow roll on pla
 D1416  2026-11-19T03:33Z  JANUS tick 14: second-order slow roll - source incomplete, no result; route to exact MS
 D1417  2026-11-19T03:36Z  alpha_s estimator: 11-pt LSQ cubic stable to 1e-8 (old 5-pt differs 6e-5); SERAPIS alpha_s = -9.96e-4; made default
 D1418  2026-11-19T03:39Z  JANUS tick 15: exact MS on the rho offset model, solved to A1 (n_s, r)
+D1419  2026-11-19T03:49Z  JANUS tick 16: band_e_audited N* window vs D1234 corrected window - same chain, different T_R/g*/C
