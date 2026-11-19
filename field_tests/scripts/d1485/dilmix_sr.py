@@ -6,12 +6,18 @@ from scipy.integrate import solve_ivp
 from scipy.interpolate import CubicSpline
 mp.mp.dps = 25
 S = mp.mpf(3) / 2; Cc = mp.euler + mp.log(2) - 2
+SIG = {n: sum(mp.mpf(d) ** (1 - 2 * S) for d in range(1, n + 1) if n % d == 0) for n in range(1, 41)}
+_EC = {}
 def E32(y, x=mp.mpf(1) / 2):
+    key = mp.nstr(y, 22)
+    if key in _EC: return _EC[key]
+    _EC[key] = _E32(y, x); return _EC[key]
+def _E32(y, x):
     out = 2 * mp.zeta(2 * S) * y ** S + 2 * mp.sqrt(mp.pi) * mp.gamma(S - mp.mpf(1) / 2) * mp.zeta(2 * S - 1) / mp.gamma(S) * y ** (1 - S)
     pref = 8 * mp.pi ** S / mp.gamma(S) * mp.sqrt(y)
     for n in range(1, 41):
         if 2 * mp.pi * n * y > 80: break
-        sig = sum(mp.mpf(d) ** (1 - 2 * S) for d in range(1, n + 1) if n % d == 0)
+        sig = SIG[n]
         out += pref * mp.mpf(n) ** (S - mp.mpf(1) / 2) * sig * mp.cos(2 * mp.pi * n * x) * mp.besselk(S - mp.mpf(1) / 2, 2 * mp.pi * n * y)
     return out
 Er = E32(mp.sqrt(3) / 2)
