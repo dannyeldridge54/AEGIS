@@ -14952,3 +14952,11 @@ MAP: node=janus status=computed touches=[] ripple=no
 - aegis-check: re-ran 1.7256e-4/8.5e-4 = 0.203σ in python; checked: units, arithmetic, like-with-like (both meters at the same (n_s, r)), limits, cross-sector: none. Caveat carried: band-edge τ = i points extrapolate ε (D1413).
 MAP: node=vac_discriminant status=killed touches=[] ripple=no
 
+## D1426 — JANUS tick 23: ready queue spec for the PC runner — three exact-MS jobs (docs/JANUS_PC_JOBS.md), nothing run
+- J1: exact α_s at the four band_e / audited-box corners vs the A1-anchored ρ meter (PASS < 0.5 %).
+- J2: D1415's asymptotic offset model through per-mode MS (ic = 'ds'), Newton-solved to A1's (n_s, r) (PASS < 1 %, control B = D = 0).
+- J3: spectra (bd, ds) vs spectra_fast α_s at A1 — tests D1422's start-phase explanation (> 5 % gap ⇒ keep the rule).
+- Each job gets its own PREREG before running; queueing waits for Danny (PC jobs are the C track).
+- aegis-check: no numbers computed; job inputs copied from D1262, D1415, D1418 D1 and re-read.
+MAP: node=janus status=computed touches=[] ripple=no
+

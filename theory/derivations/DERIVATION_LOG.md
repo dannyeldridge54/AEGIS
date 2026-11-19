@@ -2532,3 +2532,6 @@ Touches: none.
 3. [derived] Best 2030 σ(α_s) 8.5e-4 (1σ): separation ≤ 0.20σ. Rule (≥ 2σ to revive): still killed — firmer than D1408 (0.33σ).
 4. [estimate] Reviving it would need σ(α_s) ≲ 9e-5 (1σ) for a 2σ split at the best point — beyond 21-cm-class forecasts on file.
 
+## D1426: Janus PC job spec (docs only)
+1. [estimate] docs/JANUS_PC_JOBS.md lists three exact-MS jobs the cloud sandbox cannot run in a tick (D1418, D1420): J1 the ρ meter at the four box corners (rule 0.5 %), J2 D1415's offset model solved to A1 with per-mode spectra (rule 1 %), J3 spectra vs spectra_fast α_s at A1 (settles D1422). Nothing run; each needs its own lock first.
+
