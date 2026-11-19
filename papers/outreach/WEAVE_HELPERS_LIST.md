@@ -73,3 +73,10 @@ La física es un borrador sin revisión por pares. Los nombres se usan solo como
 Con respeto,
 Danny Eldridge
 dannyeldridge54@gmail.com
+
+## SENT — 19 Nov 2026, 13:29–13:30 CT (Danny: "Send them")
+From dannyeldridge54@gmail.com via Gmail. All three appear in Sent Mail. Each email links the Zenodo DOIs 10.5281/zenodo.24377930 and 24377945, not the private Weave page.
+1. info@tetaurawhiri.govt.nz — Te Taura Whiri i te Reo Māori. Asks whether "Te Kore" is suitable, for a te reo translation of the line, pronunciation and credit. (Address from govt.nz.)
+2. eakc-hq@eachq.org — East African Kiswahili Commission. Asks for a correction of the Kiswahili draft line. (Address from kiswahili.eac.int.)
+3. postmottak@samas.no — Sámi University of Applied Sciences. Invites a Sámi name or craft and a translation. (Address from samas.no.)
+Not emailed (contact forms only; no public address found): ALMG, AIATSIS, ISAC, Árni Magnússon Institute.
