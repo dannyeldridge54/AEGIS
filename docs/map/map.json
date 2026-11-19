@@ -1496,7 +1496,8 @@
     "D1660: postulate",
     "D1661: postulate",
     "D1662: postulate"
-   ]
+   ],
+   "flag": "recheck (D1664, dark_radiation)"
   },
   {
    "id": "light_elements",
@@ -1581,18 +1582,18 @@
     "D1646",
     "D1654",
     "D1657",
-    "D1659"
+    "D1659",
+    "D1664"
    ],
    "depends": [
     "genesis_reheating",
     "matter_genesis"
    ],
    "history": [
-    "D1654: corrected",
     "D1657: estimate",
-    "D1659: estimate"
-   ],
-   "flag": "recheck (D1661, matter_genesis)"
+    "D1659: estimate",
+    "D1664: estimate"
+   ]
   }
  ]
 }
