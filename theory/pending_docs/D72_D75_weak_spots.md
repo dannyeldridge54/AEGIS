@@ -16230,3 +16230,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] Test that would sharpen it: Belle II / BESIII τ-mass precision σ(m_τ) ≈ 0.05 MeV would cut σ(δ) to ~3.5e-6; δ − 2/9 would then be tested at the ~3e-6 level.
 - Target 3 status: no derivation; geometric route closed; stays EMPIRICAL. Next tick: target 4 (what holds the quark modulus at a generic point).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1614a — CORRECTION to D1614 (and to D1615 (b)): the bifurcation at i is not automatically a SMALL split. D1612 (locked, computed) found that the simplest destabilising term −κ·y^{1/2}|η|² loses i along x at κ_c = 0.2875, and for every κ/κ_c = 1.01–4 the minimum JUMPS to ρ (|u| = 0.268). That is a first-order (subcritical) transition, not the small √Δ pitchfork split D1614 assumed. A small offset needs a supercritical bifurcation (positive quartic along the unstable direction, with ρ not lower), which is a property of the specific hidden term and was not checked in D1614. D1614's theorem (invariant terms cannot SHIFT i) stands; the claim "near-threshold tuning gives x ~ √Δ" is downgraded to "only for supercritical terms". D1615 (b) ("the 1.0685i vacuum fits the bifurcation picture") is weakened accordingly.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1617 — LOOP tick 5 (target 1, small offset from i): correction D1614a filed; the next locked candidates (opposite-sign y^{1/2}|η|², E(τ,2)-type, j-function combinations of arXiv:2101.08718) must each be checked for a SUPERCRITICAL split at i with ρ staying higher. Plan only this tick (no new computation), to avoid duplicating the D1612 line, which another loop started.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
