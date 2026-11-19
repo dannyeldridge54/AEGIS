@@ -1256,11 +1256,12 @@ observing:
   - D1629
   - D1630
   - D1638
+  - D1644
   depends:
   - plateau_origin
   history:
   - 'D1638: postulate'
-  flag: recheck (D1641, genesis_reheating)
+  - 'D1644: postulate'
 - id: thread_endpoint
   layer: 3
   branch:
@@ -1271,3 +1272,4 @@ observing:
   d: []
   depends:
   - reverse_thread
+  flag: recheck (D1644, reverse_thread)

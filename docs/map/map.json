@@ -1519,15 +1519,31 @@
     "D1628",
     "D1629",
     "D1630",
-    "D1638"
+    "D1638",
+    "D1644"
    ],
    "depends": [
     "plateau_origin"
    ],
    "history": [
-    "D1638: postulate"
+    "D1638: postulate",
+    "D1644: postulate"
+   ]
+  },
+  {
+   "id": "thread_endpoint",
+   "layer": 3,
+   "branch": [
+    "i",
+    "rho"
    ],
-   "flag": "recheck (D1641, genesis_reheating)"
+   "title": "Where the dark thread ends — overshoots ρ, settles at τ = (1+i)/2 (image of i)",
+   "status": "open",
+   "d": [],
+   "depends": [
+    "reverse_thread"
+   ],
+   "flag": "recheck (D1644, reverse_thread)"
   }
  ]
 }
