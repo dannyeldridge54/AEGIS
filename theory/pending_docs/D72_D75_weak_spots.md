@@ -14922,3 +14922,11 @@ MAP: node=band_e status=frozen touches=[] ripple=no
 - aegis-check: no numbers enter a verdict; checked by re-reading lines 24–71 and 72–118 of ms.py.
 MAP: node=janus status=computed touches=[] ripple=no
 
+## D1423 — JANUS tick 20: the A1-anchored Janus relation reproduces the audited box's exact α_s to 0.25 % — the ρ exact/LO ratio is constant across the box; PASS on ACT DR6
+- Lock: field_tests/rules/PREREG_D1423_box_anchored.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1423/box_anchored.py; result field_tests/results/D1423_box_anchored.json.
+- [computed] Anchored −9.087e-4 / −1.0139e-3 vs D1262 exact −9.11e-4 / −1.014e-3 → −0.25 % / −0.01 % (rule < 2 %): consistent. This is the direct test of D1421's constancy assumption, and it holds.
+- [computed] ACT DR6 P-ACT-LB pulls −1.37 … −1.39σ → PASS.
+- Result: both vacua now have a sub-percent α_s meter from (n_s, r) — τ = i by D640's closed form (0.3 %, D1412), ρ by the Janus relation calibrated once at A1 (≤ 0.25 %, here). The ρ closed form is still open (D1415).
+- aegis-check: re-ran −k·2r at both ends and the two deviations in python; checked: units, arithmetic, like-with-like (D1262 values are the same box, MSSM g*, exact pipeline), limits, cross-sector: none.
+MAP: node=band_e_audited status=postulate touches=[] ripple=no
+

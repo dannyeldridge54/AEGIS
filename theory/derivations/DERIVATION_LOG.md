@@ -2513,3 +2513,9 @@ Touches: none.
 4. [derived] Neither call passed the exact de Sitter start option (ic = 'ds', D974): spectra defaults to plain BD, spectra_fast has no ic option at all.
 5. [estimate] So D1420's α_s (−5.2e-4, half of expected) is most likely a spectra_fast start-phase artefact; the size of the effect is not established by reading. Rule for the loop: α_s only from per-mode spectra (ideally ic = 'ds'); spectra_fast only for n_s, r unless a lock shows its α_s agrees on the same point.
 
+## D1423: band_e_audited running, A1-anchored vs exact (locked)
+1. [derived] α_s ≈ −k·p²r/4 with k = 1.0352 (A1) over the box r 4.389–4.897e-4: −9.087e-4 … −1.0139e-3.
+2. [derived] D1262's exact pipeline values at the box ends: −9.11e-4 … −1.014e-3. Deviations −0.25 % and −0.01 % (rule 2 %): consistent. This tests D1421's assumption directly — the exact/LO ratio is constant across the ρ box to ≤ 0.25 %.
+3. [derived] ACT DR6 pulls −1.37σ … −1.39σ: PASS.
+4. [derived] So for the ρ vacuum the Janus relation × 1.0352 is a sub-percent α_s meter across both band_e and the audited box, the ρ counterpart of D640 at τ = i — an empirical calibration, not a closed form (D1415 FAIL stands for the closed form).
+
