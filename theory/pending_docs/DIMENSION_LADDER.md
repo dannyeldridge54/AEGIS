@@ -72,7 +72,7 @@ lattice directions (26 = 10 + 16; Narain O(16 + d, d)). At each stage the map re
 - R⁴ codon: E⁽⁵⁾ = E^{E₆}_{[100000];3/2}; eigenvalue λ = 3(11 − D)(D − 8)/(D − 2) = −12. Λ₅ ∝ (E⁽⁵⁾)^{−1/3}.
 - Constant term in the string-perturbation cusp (Green–Russo–Vanhove, arXiv:1004.0163, eq. 3.11 / Table): 2ζ(3)/y₅ + E^{SO(5,5)}_{[10000];3/2} (tree + one-loop; the full power-law content — the series is ½-BPS).
 - Weave observation: the one-loop thread of the 5D lens, E^{SO(5,5)}_{[10000];3/2}, is the SAME object as the 6D codon (stage 4). The lens below hands its whole codon up as the next lens's one-loop thread — a literal weave between neighbouring levels.
-- Rung check: tree/one-loop gap = 1/y₅ = one power of g_s² (the invariant of stage 4 holds); along y₅ the gradient strand again gives the rung-1 shape with amplitude set by E^{SO(5,5)}_{3/2}/(2ζ(3)) — the rung persists at weak coupling (sign of the one-loop sum: Epstein-type at s = 3/2 > d/2 − 1 convergent region ⇒ positive — persists cleanly here, unlike the regularised 6D s = 1 case).
+- Rung check: tree/one-loop gap = 1/y₅ = one power of g_s² (the invariant of stage 4 holds); along y₅ the gradient strand again gives the rung-1 shape with amplitude set by E^{SO(5,5)}_{3/2}/(2ζ(3)) — the rung persists at weak coupling (sign of the one-loop sum: OPEN — see correction D1572a: regularised like 6D).
 - No new slice shape ⇒ no engine-F run.
 - Next stage: D = 4 (E₇₍₇₎/SU(8), dim 70; codon E^{E₇}_{[1000000];3/2}; one-loop thread E^{SO(6,6)}_{[100000];2}).
 
@@ -120,7 +120,7 @@ Points beyond the twin ladder (3D E₈, 2D E₉, 1D E₁₀) are kept as an exte
 - Balance at 6D: PASS with the same open sign on both sides.
 
 ## R5/13 — 5D heterotic, O(21,5) (dim 105) — D1577
-- One-loop thread: Γ_{21,5} theta lift, s = d/2 − 1 = 3/2 (convergent region). Gap g_s² holds; rung persists along the coupling. Mirrors L5 (s = 3/2, convergent, positive).
+- One-loop thread: Γ_{21,5} theta lift, s = d/2 − 1 = 3/2 (regularised, sign open — D1577a). Gap g_s² holds; rung persists along the coupling. Mirrors L5.
 - Balance at 5D: PASS.
 
 ## R6/13 — 4D heterotic N = 4, SL(2)_S × O(22,6) (dim 2 + 132) — D1578
@@ -156,3 +156,10 @@ Points beyond the twin ladder (3D E₈, 2D E₉, 1D E₁₀) are kept as an exte
 - Rung/gap: no inflaton direction exists in 1D (time only); the ladder ends here. The last point maps to the BKL "billiard" — the universe's earliest chaotic oscillation — not to inflation.
 - LADDER END: 10D anchor → 6 left + 6 right + centre (4D) → 3D E₈ (φ in shape) → 2D E₉ (loop) → 1D E₁₀ (billiard). The only rung shared by every lens is the species/coupling direction (D1579).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## OBSERVER NODES (D1590) — r at n_s ≈ 0.9706 by dimension at horizon exit (10D, 6D computed; others scaled 8/(D−2))
+| D | 10 | 9 | 8 | 7 | 6 | 5 | 4 |
+|---|---|---|---|---|---|---|---|
+| r | 5.41e-4 | 6.18e-4 | 7.21e-4 | 8.66e-4 | 1.07e-3 | 1.44e-3 | 2.16e-3 |
+| parent (all circles T-dualised) | IIB | IIA | IIB | IIA | IIB | IIA | IIB |
+| prefactor push q_D | −1 | −¾ | −½ | −¼ | 0 | +¼ | +½ |
