@@ -15240,5 +15240,5 @@ MAP: node=janus status=computed touches=[] ripple=no
 
 ## D1468 — JANUS tick 64: reference card
 - [estimate] docs/JANUS_FORMULAS.md written (formulas, accuracies, testability table, open decisions); numbers copied from cited D-notes; consistency script next tick.
-- aegis-check: no new numbers; spot-checked card values against D1457/D1462/D1466/D1467 jsons while writing.
+- aegis-check: no new numbers; values copied from the D-note texts (not yet machine-checked — first draft of this line overstated that); the card is tested against the jsons next tick (D1469). One card value corrected while checking: α_s SO significance ≤ 0.33σ (draft said ≤ 0.3σ).
 - MAP: node=janus status=computed touches=[] ripple=no

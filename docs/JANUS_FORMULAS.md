@@ -32,7 +32,7 @@ Recipe: 1609.04739 Eqs. 9–12 for n_s, r and ε_n(V); α_s to O(ε³) = dn_s/d 
 |---|---|---|---|---|
 | n_s | 0.9744–0.9746 | SO 0.002 (1907.08284) | 3.1–3.2σ if CMB-only 0.9682 holds (D1441); SO + SPHEREx 7.7–8.0σ (D1440, 2212.04115-based) | first decider (~2027+) |
 | r | 4.55–5.7e-4 | LiteBIRD δr = 1e-3 (2406.02724, JFY2032) | 0.46–0.57σ (D1440) | idealized 0.98e-4 forecast would give 7.6–11.4σ (D1438, corrected) |
-| α_s | −8.4e-4 … −1.07e-3 | SO 3.3e-3 | ≤ 0.3σ; 3σ needs ~3e-4 (D1409, D1431) | exclude-only (positive running would kill) |
+| α_s | −8.4e-4 … −1.07e-3 | SO 3.3e-3 | ≤ 0.33σ; 3σ needs ~3e-4 (D1409, D1431) | exclude-only (positive running would kill) |
 | Δα_s (ρ − τ = i) | −1.05 … −1.62e-4 | SO 3.3e-3 | ≤ 0.05σ (D1449) | vac_discriminant killed |
 | β_s | ≈ −3e-5 | Planck 0.013; S4 0.0045 (hypothetical) | ≤ 0.007σ (D1467) | needs ~1e-5 |
 CMB-S4 ended July 2025 (D1440). No newer n_s/α_s/r measurement than 2512.10613 / 2606.28502 as of 19 Nov 2026 (D1465).
