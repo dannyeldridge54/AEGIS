@@ -15999,3 +15999,13 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Open checks before any lock: (i) does Λ along that valley stay E(τ,3/2)^{−1/6} (the KK tower of the growing volume may take over the species scale — D1528 window); (ii) what potential term makes u^r ∝ s^{1/3} a valley (needs a term coupling 𝒱 and s, e.g. BBHL ξ ∝ s^{3/2}/𝒱 — LVS-type, where 𝒱 tracks ξ^{2/3} ∝ s ⇒ u^r ∝ s, not s^{1/3}: mismatch ⇒ prefactor ∝ s^{−1}, a bump); (iii) whether the residual exponent is small enough (|q| ≲ 0.03, D1541).
 - Verdict: NOT solved. The new ingredient converts the no-go into a precise target (u^r ∝ s^{1/3}); the natural LVS tracking (u^r ∝ s) misses it. Next tick: search for moduli-stabilisation schemes where 𝒱 ∝ g_s^{−1/3} (or 𝒱^{2/3} ∝ s^{2/9}) along the dilaton; if none, close P3-V.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1583a — CORRECTION to D1583 (ii): LVS does NOT give u^r ∝ s. From Conlon–Pedro (0704.0737, App. A.1 eq. 57): ⟨τ_s⟩ = (4νλ/µ²)^{2/3} ∝ ξ^{2/3}·S₁ with S₁ = 1/g_s, and ⟨𝒱⟩ ≈ |W₀|√τ_s e^{aτ_s}/(12√2 a|A|) ⇒ 𝒱 grows EXPONENTIALLY in s, not as a power. The D1583 statement "u^r ∝ s" was an unchecked estimate; withdrawn.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1584 — DEEP (Djl 11:24): P3-V CLOSED — no standard stabilisation scheme gives the power law u^r ∝ s^{1/3} needed for a flat Casas–Ibáñez prefactor along the dilaton
+- [literature] LVS (0704.0737): 𝒱 ∝ exp(a·c·ξ^{2/3} s) ⇒ along an adiabatic volume–dilaton path g²m_3/2² ∝ s^{1/2}·𝒱^{−p} falls exponentially ⇒ bump (q ≫ 0.03).
+- [derived] KKLT: a·T ≈ ln(A/|W₀|), flux W₀ ∝ s on x = ½ ⇒ u ∝ ln s ⇒ prefactor ∝ s^{1/2}/(ln s)^{3r/2} — still rising like s^{1/2} up to logs ⇒ no slow roll.
+- [estimate] Perturbative (α'³ + loop-log) stabilisation also gives 𝒱 exponential in the ratio of α'³ to loop coefficients, both g_s-dependent ⇒ exponential, not power-law.
+- Verdict: P3-V closed (NULL for the correlated-path escape). The plateau origin stays the one postulated step (P3-L). Remaining escape class: a prefactor from a sector blind to the dilaton Kähler potential (non-SUSY / hidden-sector uplift with τ-independent tension) — not yet found in the literature; outreach question to Casas–Ibáñez stands (draft unsent).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
