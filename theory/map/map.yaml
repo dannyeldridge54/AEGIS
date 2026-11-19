@@ -1229,9 +1229,11 @@ observing:
   d:
   - D1631
   - D1632
+  - D1650
   depends:
   - genesis_reheating
-  flag: recheck (D1646, dark_radiation)
+  history:
+  - 'D1650: postulate'
 - id: light_elements
   layer: 3
   branch:
