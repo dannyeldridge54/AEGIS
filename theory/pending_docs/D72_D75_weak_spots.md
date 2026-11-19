@@ -14979,3 +14979,10 @@ MAP: node=band_e status=frozen touches=[] ripple=no
 MAP: node=band_i status=frozen touches=[] ripple=no
 MAP: node=band_e_audited status=postulate touches=[] ripple=no
 
+## D1429 — JANUS tick 26: band_i's ε question answered by D1247 — the audited τ = i model only reaches ε ≈ 1.39–1.44e-4 (a short segment near n_s 0.9746, r 4.83e-4); most of the frozen band is not a model point
+- Reading, no computation. D1413's ε 1.15–1.71e-4 came from inverting band corners with D640, which ignores N*; with the audited reheating N* (50.40–50.45, D1247) the model is a curve in ε and only ε ≈ 1.39–1.44e-4 lands inside band_i (r floor and n_s ceiling squeeze it).
+- Consequence: D1413's "edges extrapolate ε" caveat is about points the τ = i model never produces — not a physics problem. The audited τ = i prediction is near n_s 0.9746, r 4.83e-4, α_s −8.5e-4 (D1247 exact).
+- Proposal (not done — new map node, Danny's call): add band_i_audited (postulate), the τ = i counterpart of band_e_audited, so both vacua carry their audited segments on the map.
+- aegis-check: nothing computed; numbers re-read from D1247 / na12_band_i_audited.txt.
+MAP: node=band_i status=frozen touches=[] ripple=no
+

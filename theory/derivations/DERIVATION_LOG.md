@@ -2546,3 +2546,9 @@ Touches: none.
 4. [derived] r: every band's r_max (≤ 5.7e-4) is ≪ 0.034 and 0.038.
 5. [estimate] Reading: the bands' standing tracks the n_s combination — high with CMB alone, central with CMB + DESI, low (frozen bands) or central (audited box) with ACT's combination. The audited box's upward shift (D1245) is favoured by the ACT-led combination and disfavoured by CMB alone.
 
+## D1429: band_i ε range (reading)
+1. [derived] D640's inversion (D1413) maps any (n_s, r) to (I*, ε) with no reference to N*, so band_i's corners map to ε 1.15–1.71e-4; but the physical τ = i model has N* fixed by reheating (D1247: N* 50.40–50.45 audited), which makes (n_s, r) a one-parameter curve in ε.
+2. [literature] On that curve (D1247, exact MS): ε 1.30, 1.35e-4 fall below the r floor (4.8e-4); 1.45, 1.50e-4 exceed n_s 0.975; only ε ≈ 1.39–1.44e-4 (interpolated) lands in band_i.
+3. [derived] So most of band_i (frozen n_s 0.970–0.975 × r 4.8–5.7e-4) is not reachable by the audited τ = i model; D1413's extrapolated-ε worry concerns corners the model never visits. band_i stays as frozen (scored on future data), but the audited τ = i prediction is a short segment near n_s ≈ 0.9746, r ≈ 4.83e-4, α_s ≈ −8.5e-4.
+4. [estimate] The ρ side already has this split (band_e frozen vs band_e_audited postulate, D1245); τ = i has none recorded on the map — a "band_i_audited" postulate node would make the two vacua symmetric (proposal for Danny, not done: it is a new map node).
+
