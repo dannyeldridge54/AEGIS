@@ -2962,3 +2962,9 @@ Touches: none.
 ## D1502 — P3 exact DILMIX α = 0.5 rows vs our D1485 forecasts — AGREE; (0.5, 1.25e-6) IN BAND confirmed (second exact in-band point from the P3 grid)
 1. [derived] (0.5, 1.25e-6): exact n_s 0.969093, r 5.5066e-4, IN BAND vs forecast 0.969089, 5.5057e-4 (Δn_s −3.8e-6, Δr/r −0.015 %). (0.5, 2.5e-6): exact 0.974157, 6.3384e-4, out (r high), near vs forecast 0.974152, 6.3378e-4 (Δn_s −4.4e-6, Δr/r −0.009 %). Track record 15 points, |Δn_s| ≤ 5.3e-6.
 2. [estimate] Exact in-band DILMIX points now: (0.25, 1.25e-6) and (0.5, 1.25e-6) from the P3 grid, plus our (0.375, 1.5e-6) (D1491) — all three as forecast.
+
+## D1503 — tilt T2: higher-derivative corrections — the R⁴→F⁴ term has the WRONG SHAPE for the tilt (falls as 1/Im τ relative to α′³); D⁴R⁴/E(τ,5/2): NULL (no 4D formula found in the fetched source)
+1. [literature] 1901.09626 Eqs. (7)–(9) (read this tick): bracket 3ξ̂ + γZ𝒱^{1/3} + γ̂₂|W₀|²Γ𝒱^{−2/3}, γ̂₂ = 11/(576·4π)·g_s^{−1/2}; ξ̂ = ξ/g_s^{3/2}.
+2. [derived] At fixed 𝒱 along the dilaton (y = Im τ = 1/g_s): γ̂₂/ξ̂ ∝ g_s^{−1/2}/g_s^{−3/2} = g_s = 1/y (sympy). The needed tilt must grow ∝ E(τ,3/2) ∝ y^{3/2} relative to the plateau; the F⁴ term instead decays ∝ y^{−1} — at horizon exit (y ~ 10³–10⁴, D1497) it is suppressed by a further 10³–10⁴ on top of 𝒱^{−2/3}. Wrong shape: not the tilt.
+3. [literature] NULL: the fetched source does not discuss D⁴R⁴ / E(τ,5/2); no 4D potential formula for that term was read, so no claim is made about it (stays open as a lead, not tested).
+4. [estimate] The γZ𝒱^{1/3} term's g_s dependence is not given in the source (Z from the loop-corrected Kähler potential) — not tested here; it is the BHK-type loop class closed in D1040/D1497.

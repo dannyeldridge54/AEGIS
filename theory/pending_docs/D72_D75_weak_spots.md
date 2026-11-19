@@ -15451,3 +15451,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1502 — P3 exact DILMIX α 0.5 rows confirm D1485: (0.5, 1.25e-6) IN BAND (0.96909, 5.507e-4); (0.5, 2.5e-6) out/near
 - aegis-check: read from field_tests/results/DILMIX/a0.5_C1.25e-06.json, a0.5_C2.5e-06.json and D1485 json; differences re-run in python ✓.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1503 — tilt T2: F⁴ (R⁴-derived) correction has the wrong shape (∝ 1/Im τ relative to α′³); D⁴R⁴/E(τ,5/2) NULL (no formula found)
+- [derived] γ̂₂/ξ̂ ∝ g_s = 1/y; tilt needs ∝ y^{3/2} growth. Not the tilt source.
+- aegis-check: formula read from 1901.09626 Eqs. 7–9 this tick; scaling by sympy; no number quoted beyond the source's; NULL stated loudly; cross-sector: none.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
