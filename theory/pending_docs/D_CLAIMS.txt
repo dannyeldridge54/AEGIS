@@ -934,3 +934,4 @@ D1646  2026-11-19T22:40Z  JANUS genesis G6: dark radiation from gravitational re
 D1647  2026-11-19T22:43Z  JANUS genesis G10: genesis budget card + machine check against every source json
 D1648  2026-11-19T22:43Z  untitled
 D1649  2026-11-19T22:44Z  untitled
+D1650  2026-11-19T22:46Z  JANUS genesis G12: whole-chain referee of the genesis pathway D1626-D1647 (both chats)
