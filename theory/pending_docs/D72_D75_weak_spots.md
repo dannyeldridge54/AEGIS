@@ -14582,3 +14582,13 @@ MAP: node=lepto_i status=estimate touches=[eps_tilt] ripple=no
   - r 4.39–4.90e-4 is far below BK's 0.036.
 - Verdict: both postulates SURVIVE the current data, scored. No status change. The next real test is SO/LiteBIRD (string_meter forecast).
 MAP: node=band_e_audited status=postulate touches=[serapis_point] ripple=no
+
+## D1389 — WEAVE tick 4: m32_window (L5 postulate) is re-scored on the computed wino window (D1324/D1338). The AMSB gravitino need drops to 2.5–4.7e5 GeV (≤ 5.7e5 for Einasto cores), so the margin under SERAPIS-E's covariant bound grows from ×960 to ×1190–1430 (2026-11-18)
+- D1264's ×960 used D809's need of 2.5–7e5 GeV, matching the old window 0.67–1.85 TeV.
+- [arithmetic] D809's ratio m₃/₂/M_wino is 373 at 0.67 TeV and 378 at 1.85 TeV, i.e. linear. On the computed window:
+  - 0.67 TeV → 2.5e5 GeV;
+  - 1.25 TeV → 4.7e5 GeV;
+  - 1.5 TeV (Einasto-only edge) → 5.7e5 GeV.
+- Bound 6.75e8 GeV (12 e-folds before exit, D1264): margin ×1427 at 1.25 TeV and ×1189 at 1.5 TeV (was ×964).
+- Verdict: m32_window still PASSES, with more room. No status change (postulate, passed). The map title's "≤ 7e5" is now conservative.
+MAP: node=m32_window status=postulate touches=[wino_window] ripple=no
