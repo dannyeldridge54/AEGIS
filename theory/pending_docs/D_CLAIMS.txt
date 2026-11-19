@@ -787,3 +787,4 @@ D1500  2026-11-19T13:06Z  Help set 8: axion (Re tau) mass at horizon exit for DI
 D1501  2026-11-19T13:23Z  Tilt T1: exact BBHL alpha'^3 potential expanded in xi/V - effective A/B mixture and tilt
 D1502  2026-11-19T13:28Z  P3 exact DILMIX alpha 0.5 rows vs D1485 forecasts
 D1503  2026-11-19T13:29Z  Tilt T2: higher-derivative (R^4 -> F^4, D^4R^4) corrections as a tilt source - shape test
+D1504  2026-11-19T13:35Z  Tilt T3: tau-dependent flux superpotential W0(tau) as tilt source
