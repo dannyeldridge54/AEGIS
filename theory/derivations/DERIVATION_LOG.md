@@ -3062,3 +3062,9 @@ Touches: none.
 ## D1522 — P3 DILTR A1 at T_R 1e10 vs our D1489 — AGREE; P3's D1514 (DILTR complete) matches D1489's verdict exactly
 1. [derived] Exact 0.967790 / 6.0889e-4 vs D1489 0.967786 / 6.0879e-4 (Δn_s −3.9e-6, Δr/r −0.017 %). Track record 22 points, |Δn_s| ≤ 5.3e-6 — all four DILTR runs forecast.
 2. [derived] Read-only check of P3 D1514: "robust; |Δn_s| ≤ 6.2e-4, |Δr|/r ≤ 2.9 %; none in band; A1 near" — identical to D1489's locked forecast verdict (|Δn_s| ≤ 6.2e-4, |Δr/r| ≤ 2.9 %). No issues found.
+
+## D1523 — IIB species-scale plateau from E(τ,3/2): approach exponent 2, vacuum at ρ, in band at tilt C ≈ 6.8–9.3e-7 (engine F)
+1. [literature] Λ_QG = E_{3/2}^{−1/6} (arXiv:2310.07708 eq. 3.15), maximal at ρ; V ∝ G^{ττ̄}|∂ ln Λ|² proposed in arXiv:2407.12081.
+2. [derived] y∂_y ln E(τ,3/2) = 3/2 − 4ζ(2)/(ζ(3)y²) + …, so V/V∞ = 1 − (16ζ(2)/3ζ(3))y^{−2}: approach exponent 2 with a fixed amplitude; V(ρ) = 0.
+3. [derived] Engine F (PREREG_SPECIES32 + DEVIATIONS D1): C = 0 gives n_s 0.9601, r 4.0e-4; band for C 6.8–9.3e-7; C = 8e-7 gives n_s 0.97065, r 5.41e-4.
+4. [estimate] Shape now sourced; the potential-from-species step and the tilt remain open; exact-MS confirmation pending.
