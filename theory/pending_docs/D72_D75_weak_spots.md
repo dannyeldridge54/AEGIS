@@ -15936,3 +15936,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1568 — DIMENSION LADDER stage 1 (D = 9): the circle term 4ζ(2)ν₁ in E⁽⁹⁾ = ν₁^{−3/7}E_{3/2} + 4ζ(2)ν₁^{4/7} turns the τ-plateau from k = 2 toward k = 3/2 as the circle shrinks; untilted r 4.04e-4 (ν₁ = 0) → 4.61e-4 (0.1) → 6.41e-4 (1) → 7.17e-4 (10); the band rung survives only for ν₁ ≲ 0.1 (r_B ≳ 3ℓ₁₀). Map: theory/pending_docs/DIMENSION_LADDER.md
 - Lock field_tests/rules/PREREG_DIM1_9D.md; results field_tests/results/DIM1_9D/; source GRV arXiv:1001.2535 eq. (3.7). Expectation (k → 3/2, r ≈ 6–7e-4 for ν₁ ≥ 1) held.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1569 — DIMENSION LADDER stage 2 (D = 8): the T² shape U enters the R⁴ codon as 2Ê₁(U) (s = 1, log η) — its species-gradient plateau is log-type (k ≈ 1): overshoots for small SL(3) background A (no inflation into ρ), r ≈ 1.4e-3 for A = 100 — off the k = 2 rung; at 8D the rung stays in the SL(3) block (τ). Map: theory/pending_docs/DIMENSION_LADDER.md
+- Lock field_tests/rules/PREREG_DIM2_8D.md; results field_tests/results/DIM2_8D/; source GRV arXiv:1001.2535 eq. (3.16). Expectation held (A = 0 no inflation; large A k ≈ 1, r ~1e-3).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
