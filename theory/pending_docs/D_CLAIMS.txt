@@ -659,3 +659,4 @@ D1372  2026-11-19T00:25Z  P3: GS/modular-weight condition for D1371 - s=1 multip
 D1373  2026-11-19T00:26Z  P3: lambda unobservable (D698); D1371 route lacks the C slope; condensate slope needs huge T2
 D1374  2026-11-19T00:28Z  D1373a correction: C slope already has a BHK origin (D689/D696); e^dK multiplies the nonzero plateau
 D1375  2026-11-19T00:29Z  P3: KKPR confirm K = -log(Im S + (D_GS+Y)/16pi^2) - right-sign 1/(s+eps E) built in
+D1376  2026-11-19T00:30Z  P3: delta_GS = 0 on the U-plane realised in Z6-II MSSM orbifolds; but U-group is Gamma0(N), eta(U/4)
