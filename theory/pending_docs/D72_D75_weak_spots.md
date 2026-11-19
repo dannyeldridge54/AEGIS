@@ -15345,3 +15345,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] Consequence: the area is a second light field during inflation; the "integrate out A" step is invalid in the two-term model, and the true dynamics is two-field (isocurvature, different n_s, r). The mechanism survives only if a third, A-dependent term (e.g. the uplift's own A-scaling, or a non-perturbative/flux stabiliser) gives m_A ≫ H while preserving the E^{−m} form — then m changes with that term (D1396-type analysis).
 - Verdict: area-integration as a two-term single-field model: KILLED (light area, sign requirements). Survives only with extra A-stabilisation — open. SMSCAN results remain valid as shape tests of the family 1 − (E_ρ/E)^m, not as tests of this mechanism. Lead route returns to the axio-dilaton (D1479), whose volume must also be checked the same way (LVSDIL's 𝒱 is heavy in LVS by construction — check pending).
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1483 — help for the P3 chat: independent SR check of SMSCAN — AGREE; forecast: no (s, m) in band at C = 0; band r needs s·m ≈ 1.7–1.9
+- [derived] 3 finished SMSCAN points reproduced to ≤ 3.4e-6 in n_s and ≤ 0.026 % in r (AGREE).
+- [estimate] 5 pending points forecast: n_s 0.9599–0.9606, r 1.78e-4 … 6.92e-4 — none in band or near; D1482's (3, 1): n_s 0.9601, r 1.78e-4. r follows s·m alone (∝ (s·m)^−1.96 near 1.5–2); band r ⇔ s·m ≈ 1.66–1.86, before any tilt.
+- aegis-check: numbers from field_tests/results/D1483_smscan_sr.json; exponent re-run in python (ln(6.9188/3.9372)/ln(2/1.5) = 1.960) and s·m edges (2·(3.95/5.7)^(1/1.96) = 1.657; 2·(3.95/4.55)^(1/1.96) = 1.860); like-with-like: same model, C = 0, T_R, start rule irrelevant to N* (attractor); cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

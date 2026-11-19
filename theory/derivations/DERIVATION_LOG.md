@@ -2861,3 +2861,9 @@ Touches: none.
 1. [derived] V″ = −pq·V_min: minimum only for negative shape-blind source and positive Casimir.
 2. [derived] m_A²/H² = 3pq(1 − P*) ≈ 0.06 (p = 2, q = 4, s·m = 2): area lighter than H.
 3. [postulate P3] Two-term area mechanism killed; needs extra A-stabilisation.
+
+## D1483 — Independent SR cross-check + forecast of the SMSCAN (s, m) grid (help for the P3 chat) — AGREE; no grid point in band at C = 0; r is set by s·m, band r needs s·m ≈ 1.7–1.9
+1. [derived] Same independent method as D1481 on V = 1 − (E_ρ/E(U,s))^m (C = 0, T_R 8.94e8). vs the P3 chat's exact-MS rows: (2, ½) Δn_s −3.3e-6, Δr/r −0.024 %; (2, 1) −3.4e-6, −0.026 %; (3, ⅓) −3.4e-6, −0.024 % ⇒ AGREE as locked.
+2. [estimate] Forecast for the 5 pending SMSCAN points (its locked runs remain the record): (3, ⅔) n_s 0.96054, r 3.91e-4; (3, 1) n_s 0.96012, r 1.78e-4; (2, 3/2) n_s 0.95991, r 1.81e-4; (1.5, 1) n_s 0.96058, r 6.92e-4; (1.5, 4/3) n_s 0.96006, r 4.04e-4. None in band, none "near" by SMSCAN's rules.
+3. [estimate] Pattern (confirms SMSCAN's stated expectation): n_s ≈ 0.960–0.962 at C = 0 for every (s, m); r depends on s·m only (s·m = 1 → 1.45e-3; 1.5 → 6.9e-4; 2 → 3.9–4.0e-4; 3 → 1.8e-4). Fitting r ∝ (s·m)^−1.96 between 1.5 and 2: the band's r (4.55–5.7e-4) needs s·m ≈ 1.66–1.86 at C = 0.
+4. [estimate] Consequence for D1482's (s, m) = (3, 1) (brane tension + Casimir, s·m = 3): r 1.8e-4 (2.5× below the band floor) and n_s 0.9601 — it needs a tilt to raise n_s by ~0.01, and from D1481 a tilt raises r (~20 % for Δn_s ≈ 0.009), so (3, 1) would still sit ~2× low in r. An s·m ≈ 1.6–1.8 mechanism plus a tilt is the target zone.
