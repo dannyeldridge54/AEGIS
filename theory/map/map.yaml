@@ -286,7 +286,6 @@ nodes:
   - 'D1624: postulate'
   - 'D1625: postulate'
   - 'D1635: postulate'
-  flag: recheck (D1638, reverse_thread)
 - id: logderiv_plateau
   layer: 1
   branch:

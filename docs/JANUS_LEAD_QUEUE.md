@@ -60,8 +60,8 @@ Cycle per lead (one lead per tick): Research → Development → Postulation →
 - G4 Z₃ at ρ and the sharing factor n_DM/n_B (D1631's next step): does the residual Z₃ fix it? Literature first; locked test only if a concrete rule exists.
 - G5 Asymmetry source at T_R: Davidson–Ibarra bound vs T_R from G1 [literature + estimate]; which non-thermal route survives.
 - G6 Mirror-sector temperature ξ from reheating branching (inflaton → mirror vs visible) and the ξ < 0.45 bound (D1632 T4).
-- G7 BBN v3 + Li-7 (known gap): add ⁷Be/⁷Li channels under a new lock; report the lithium value honestly (the standard model's own Li problem expected).
-- G8 BBN weak-rate corrections: the stated −0.005 Y_p bias — lock, add Coulomb/radiative/finite-mass terms, re-score.
+- [taken by other chat: D1639 rung R-Li, D1640 lock] G7 BBN v3 + Li-7 (known gap): add ⁷Be/⁷Li channels under a new lock; report the lithium value honestly (the standard model's own Li problem expected).
+- [taken by other chat: D1640 R-Li includes weak-rate corrections] G8 BBN weak-rate corrections: the stated −0.005 Y_p bias — lock, add Coulomb/radiative/finite-mass terms, re-score.
 - G9 Future oscillation of the thread: thread mass m ~ √V''(min) vs H₀; when (if ever) it becomes matter-like and what fraction — art/lens claim vs physics stated separately.
 - G10 Genesis budget table: Ω_DM/Ω_b, η, Y_p, D/H, ³He/H, w₀/w_a — every number from its json, one card (machine-checked as D1469/D1473).
 - G11 Console sync: chains/genesis stages updated with G1–G10 results.
