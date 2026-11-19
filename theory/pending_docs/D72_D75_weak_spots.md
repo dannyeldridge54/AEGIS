@@ -15025,3 +15025,12 @@ MAP: node=band_e_audited status=postulate touches=[] ripple=no
 - aegis-check: re-ran CMB-only n_s pulls (+2.006σ, +1.935σ) in python; checked: units, arithmetic, like-with-like (exact MS points vs 68 % data), limits, cross-sector: none.
 MAP: node=band_i status=frozen touches=[] ripple=no
 
+## D1435 — JANUS tick 31: SUMMARY ADDENDUM (D1425–D1434) to D1424
+- **Vacua:** both sub-percent meters → Δα_s 0.84–1.73e-4 (exact 1.44e-4 inside), ≤ 0.20σ for 2030: still killed (D1425); audited τ = i vs ρ points ≤ 0.1σ apart on all data (D1434).
+- **Data:** nothing newer than 2512.10613 (D1427). With BAO (either combination) all bands are fully inside 2σ; CMB alone pushes them to their top-edge tension; ACT's P-ACT-LB2-BK18 centres the audited box (D1428). The running lean toward positive is CMB-spectral, not BAO (D1433). The watch-number is CMB-only n_s: both audited points at +2σ (D1434).
+- **τ = i:** audited model reaches only ε ≈ 1.39–1.44e-4 inside band_i (D1429); proposal band_i_audited (Danny's call).
+- **Future:** β_s only with dark-ages 21 cm; running ≤ 1.1σ even with SKA-like — exclude-not-confirm (D1430, D1431).
+- **Waiting on Danny:** queue docs/JANUS_PC_JOBS.md (D1426); add band_i_audited (D1429).
+- **Corrections tonight in this block:** D1430's "S4 + SKA could detect it" reading tempered by D1431's tables.
+MAP: node=janus status=computed touches=[] ripple=no
+

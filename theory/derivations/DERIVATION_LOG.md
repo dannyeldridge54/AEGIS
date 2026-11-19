@@ -2571,3 +2571,10 @@ Touches: none.
 2. [derived] ρ (A1): n_s +1.94σ / +0.55σ / −0.27σ; α_s −1.27σ / −1.38σ. PASS.
 3. [derived] The two audited vacuum points are indistinguishable on today's data (Δ pulls ≤ 0.1σ), consistent with D1425's killed discriminator. Both sit at the CMB-only 2σ edge (τ = i just past it at +2.01σ, reported not ruled) and are central for ACT's combination.
 
+## D1435: Janus summary addendum, D1425–D1434
+1. [derived] Vacua: with both sub-percent meters Δα_s = 0.84–1.73e-4 (brackets exact 1.44e-4), ≤ 0.20σ for 2030 — vac_discriminant still killed (D1425); the audited τ = i and ρ points differ by ≤ 0.1σ on every current test (D1434).
+2. [derived] Data: no n_s newer than arXiv:2512.10613 (D1427). Three 2025 combinations: all bands fully inside 2σ with either BAO combination, partly on CMB alone; ACT's P-ACT-LB2-BK18 centres the audited box (D1428). Running pulls barely move with BAO (≈ 0.1σ) — the running lean is CMB-spectral (D1433). Both audited points sit at the CMB-only 2σ edge (D1434).
+3. [derived] τ = i band: the audited model reaches only ε ≈ 1.39–1.44e-4 inside band_i; proposal band_i_audited awaits Danny (D1429).
+4. [literature] Detectability: β_s needs dark-ages 21 cm; with 1611.05883's tables SERAPIS's running reaches ≤ 1.1σ (Planck + SKA-like) — exclude-not-confirm stands (D1430, D1431).
+5. [estimate] PC job spec for the exact-MS checks (docs/JANUS_PC_JOBS.md, D1426) awaits Danny's OK to queue.
+
