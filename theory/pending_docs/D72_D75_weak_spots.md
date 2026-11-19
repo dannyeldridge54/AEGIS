@@ -15226,3 +15226,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Simulated SO r reach ~7× above SERAPIS's r — consistent with D1438/D1440.
 - aegis-check: numbers read from 2611.15828 Table 3 via fetch (simulation, stated); no pulls computed (NULL rule).
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1466 — JANUS tick 62: β_s from derived models — D1400 not confirmed at ρ (+11.9 %)
+- [derived] Leading-order β_s (Hubble-flow): ρ A1 −2.860e-5 vs D1400 (1 − n_s)α_s −2.555e-5 ⇒ ratio 1.119 (rule 10 %) — NOT CONFIRMED; τ = i −3.126e-5 (1.44 × (1 − n_s)α_s; κ = ½, form not applicable).
+- [estimate] Offsets deepen β_s more than α_s; Planck β_s pull unchanged at −0.77σ (|β_s| ≪ σ 0.013). No verdict change. D1400's closed form should be quoted as leading-order (~12 % low in |β_s| at ρ).
+- aegis-check: β values and ε_n from the result json; pulls recomputed in python ((β − 0.010)/0.013 = −0.7714 / −0.7712 / −0.7716); leading-order truncation stated; checked: units, arithmetic, like-with-like (same point, same α_s in the D1400 form), cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no
