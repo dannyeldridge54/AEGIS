@@ -2196,3 +2196,8 @@ Touches: none.
 1. [literature] GRV eq. (4.10) verified; E_s normalisation = ours; U₂ = r₂/r₁ is the T² shape (complex structure).
 2. [derived] Weak coupling: E^{SL(3)}_{−1/2} < 0 (constant term eq. 4.14) → the E₂(U) term enters with a positive coefficient, lowest at the hexagon ρ, saddle at i.
 3. [postulate P3] Curvature-term → potential map, plateau shape and magnitude not yet computed.
+
+## D1363: P3 step 2
+1. [literature] Casas–Ibáñez 2407.12081: log|η|/G̃₂ species-scale potential, vacuum at i, origin not derived → our E(τ,2)/ρ route is distinct.
+2. [literature] Ciupke–Louis–Westphal 1505.03092: four-derivative terms give V₁ = −e^{2K}T|DW|⁴; a minimum needs a negative operator sign.
+3. [derived] Leading U-shape is Ê₁(U) = −log(U₂|η|⁴) (from R⁴); E₂(U) is next order (D⁴R⁴); both minimal at ρ; sign of the operator decides min vs max.
