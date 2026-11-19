@@ -141,7 +141,7 @@ Points beyond the twin ladder (3D E₈, 2D E₉, 1D E₁₀) are kept as an exte
 ## EXTENSION (after the centre)
 
 ## E1 — 3D, E₈₍₈₎/SO(16) (dim 128) — D1580
-- R⁴ codon: E^{E₈}_{[10000000];3/2}; eigenvalue 3(11 − D)(D − 8)/(D − 2) = −120 (computed). String cusp (GRV 1004.0163): 2ζ(3)/y₃ + E^{SO(7,7)}_{[1000000];5/2} — s = 5/2 > d/2 − 1 = 5/2 is again the EDGE value (as at 6D and 4D: the edge recurs at every even-d-shift step D = 6, 4, 3? — no: at d = 7, s = 5/2 = d/2 − 1 exactly, so 3D is an edge case too).
+- R⁴ codon: E^{E₈}_{[10000000];3/2}; eigenvalue 3(11 − D)(D − 8)/(D − 2) = −120 (computed). String cusp (GRV 1004.0163): 2ζ(3)/y₃ + E^{SO(7,7)}_{[1000000];5/2} — s = 5/2 = d/2 − 1 at d = 7, the edge value again (as at 6D and 4D).
 - Gap g_s² holds; rung along the 3D coupling persists (structural).
 - GOLDEN-RATIO CHECK (Danny's question): φ = 1.618… DOES appear in E₈'s geometry — the 240 E₈ roots project onto two copies of the H₄ 600-cell whose sizes differ by exactly φ (E₈ ≅ icosians over Z[φ]). φ does NOT appear in any codon coefficient (all are rational × ζ-values: 2ζ(3), ζ(5), …) nor in any rung ratio (the gap stays g_s², k = 2). Verdict: golden ratio = a property of the E₈ lens's shape (its folding pattern), not of the inflation numbers. Honest negative for "φ sets n_s or r"; positive for "φ lives in the 3D fold".
 - Silver ratio (1 + √2): not found at any point (the B/C-type √2 structures appear only as SO(d,d) normalisations, not as 1 + √2).
