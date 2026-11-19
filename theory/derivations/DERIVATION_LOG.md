@@ -3123,3 +3123,8 @@ Touches: none.
 
 ## D1558 — lens cross-test: at fixed n_s the tilt object, not the shape lens, sets r (5.22e-4 with an E₂ tilt, 5.43e-4 with an E_{3/2} tilt)
 1. [derived] Swapping shape and tilt between the 10D and 8D lenses reproduces the same-lens r values to 0.5 %.
+
+## D1559 — helix pairing: gradient of E_s and ratio of E_{2s−1} give the same inflation on every rung (λ = 1/(D_s·2ζ(4s−2)))
+1. [derived] (y∂_y ln E_s/s)² = 1 − D_s y^{1−2s}, D_s = 2(2s−1)b_s/(s a_s); the ratio form of E_{2s−1} matches it for λ = 1/(D_s·2ζ(4s−2)).
+2. [derived] Engine F, untilted: rungs s = 3/2, 5/2, 7/2 agree between strands to Δn_s ≤ 3.4e-5 and Δr ≤ 0.2 %; r = 4.0e-4, 1.0e-4, 4.6e-5.
+3. [derived] Only rung 1 (E_{3/2} ↔ E₂) reaches the observed r band.
