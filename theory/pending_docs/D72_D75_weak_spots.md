@@ -16060,3 +16060,11 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] Combined with the prefactor exponent q_D = (6 − D)/4 (sign flip at 6D, D1587): the "polarity" pattern is (chirality alternates every level) × (prefactor push flips once, at 6D). The nodes where the push is zero AND the parent is chiral IIB: 6D only. 
 - [POSTULATE, candidate only — not a prediction yet] If a chirality-carrying node is where the plateau forms, a parity-odd tensor signal (chiral gravitational waves → CMB TB/EB) could mark the node; no mechanism computed; flagged as a lead, not a claim.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1591 — CLEAN PASS (Danny 11:34 "review everything … adjust our formation … see if it works"): SERAPIS_FULL_EQUATION.md v2 — one equation with a dimension label D (P3-S = 10D, P3-D = 6D); all identities re-checked numerically; verdict: consistent and in band, not yet a derivation
+- [computed] Identity V₀ = 1/3 + (4/3)∇² ln Λ equal to 6 decimals at y = 1.2, 3, 10, 40; ∂ₓ ln E = 0 on x = ½; 16ζ(2)/(3ζ(3)) = 7.2983; V₀(ρ) = 3e-19; species slope 0.355352 at y = 1000 vs 1/√8; kinetic 2/(D−2) matches 10D (¼) and 4D Kähler K = −ln(S + S̄) (1).
+- [derived] Unified form: V(ψ) with y = e^{β_D ψ/2}, β_D = √(D−2); r = 8/((D−2)N²) untilted; P3-D interpolated α_s −9.4e-4, N* 50.57.
+- [estimate] P3-D consistency: smaller volume (4e3–9e4) raises M_s to ≈ 4–18e13 GeV (M_s/H ≈ 7–31); two dimensions with M_KK < H need lengths ≳ 7–31 ℓ_s — anisotropic but not excluded.
+- Note: the doc commit ab68e579 was labelled "D1591" before the claim ran (claim blocked by unstaged changes); D1591 claimed right after — this note is its content.
+- Open (unchanged order): 6D supergravity tower loop (step 3b); anisotropic compactification; true 6D codon with open one-loop sign; Andriot flag; chirality lead.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
