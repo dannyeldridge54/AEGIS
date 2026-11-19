@@ -283,6 +283,8 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     law('report', 'P3', ('P3_plateau', 'serapis_point'), 'D1364 (locked): s=1/s=2 shape mix — G0 pass, all w in band incl. pure s=1', True, 'w = 0: n_s 0.96984, r 5.26e-4; w = 1: n_s 0.97446, r 4.81e-4')
     law('report', 'P3', ('P3_K', 'P3_chamber'), 'D1397: E(U,2)/T₂ chamber fails at horizon exit (y* ≥ 37T₂) — KKPR plateau killed in that regime', True, 'D1377 frame error withdrawn')
     law('report', 'P3', ('P3_K', 'P3_plateau'), 'D1398 (locked): full-Y plateau = α = 1/3 attractor, out of the SERAPIS band', True, 'C = 0: n_s 0.960, r 1.6e-3; P3 origin back to postulate')
+    law('report', 'P3', ('P3_kappa', 'P3_plateau'), 'Montgomery (1988): the hexagon minimises E(·,s) for every s > 0 — vacuum at ρ for any lattice-sum potential', W['P3_Erho'] < W['P3_Ei'], 'geometry theorem, mechanism-independent')
+    law('report', 'P3', ('P3_K', 'P3_plateau'), 'D1479 (locked): axio-dilaton E(τ,3/2) plateau — near band with the SERAPIS tilt', True, 'A1: n_s 0.9672, r 6.25e-4; A0 (C = 0): r 5.6e-4 in band; α′³ square: r 1.2e-4; tilt scan queued')
     law('report', 'P3', ('P3_E7', 'P3_Y'), 'D1401/D1403: D⁴R⁴ coefficient A₀ + B·E₂(U) exact (no chamber); BBHL route gives the tilt C, not the plateau', True, 'plateau needs A₀ + B·E₂(U) inside an overall e^K factor')
     law('down', 'P3→A2', ('P3_Y', 'X_epstein'), 'the P3 E(ρ,2) equals the core hexagonal Epstein minimum', W.get('E_rho2') is not None and abs(W['P3_Erho'] - W['E_rho2']) < 2e-3, f"{W['P3_Erho']:.5f} vs core {W.get('E_rho2')}")
     # CM laws (fixed before first run): exact identities; [literature] Heegner list (Baker–Heegner–Stark), Chudnovsky constant 13591409
