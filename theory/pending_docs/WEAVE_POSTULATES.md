@@ -26,7 +26,7 @@ Rule: a postulate is a stated assumption that the theory now RUNS on. It is not 
 |---|---|---|---|
 | C1 | Λ's size (V_Λ ~ 10⁻¹²² M_P⁴) | **P-Λ:** set by hand (open); the dark dimension is ruled out for us (D1625) | — |
 | C2 | the reverse thread's 1% starting window | ~~C-start (Y-fork sets it)~~ FALSE (D1642): the field is frozen from inflation to now; P = 0.3% under the area measure. Now an initial-condition coincidence | DESI DR3/Euclid: (w₀, w_a) ≈ (−0.79, −0.36), never w < −1 |
-| C3 | dark/visible ratio 5.36 | **P-M (revised, D1648):** (a) exact mirror: DM = mirror baryons, m = 0.94 GeV, n'/n = 5.36 from ordinary–mirror scatterings (Bento–Berezhiani); (b) generic ADM at 5.0 GeV needs ε'/ε ≈ 24 (unexplained). Equal sharing plus a cold mirror under a symmetric decay gives 123 GeV instead | SuperCDMS SNOLAB / TESSERACT / CRESST in 1–10 GeV |
+| C3 | dark/visible ratio 5.36 | **P-M (revised, D1648):** (a) exact mirror: DM = mirror baryons, m = 0.94 GeV, n'/n = 5.36 from ordinary–mirror scatterings (Bento–Berezhiani); (b) minimal dark sector at 5.0 GeV, cold for free (ΔN_eff ≈ 0.2, D1646), needs ε_D/ε_V ≈ 20 (unexplained). Neither preferred (D1649). Equal sharing plus a cold mirror under a symmetric decay gives 123 GeV instead | SuperCDMS SNOLAB / TESSERACT / CRESST in 1–10 GeV |
 | C4 | asymmetry at T_rh = 9 × 10⁸ GeV | **C-asym (viable, D1648):** the inflaton decays to N with M ∈ [1.9 × 10¹⁰, 2.5 × 10¹²] GeV, ε = 1.8 × 10⁻⁶ | η = 6.1 × 10⁻¹⁰ reproduced |
 | C5 | mirror sector must be cold (ξ < 0.45) | **C-cold:** the thread decays mostly into the visible side (asymmetric reheating) | ΔN_eff (CMB-S4 σ ≈ 0.03) |
 | C6 | dark matter makes no elements | accepted (not a postulate) | — |

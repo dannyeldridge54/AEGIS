@@ -16451,3 +16451,11 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - Q2 (C3) [computed]: if the decay treats the visible and mirror sectors alike (equal ε) but must leave the mirror cold (ξ < 0.45 ⇒ energy share ξ⁴ = 0.041), then n_DM/n_B = 0.041 and m_DM = 123 GeV, not 5 GeV. CONFLICT. "Equal sharing, 5 GeV" and "cold mirror" cannot both hold with a symmetric decay.
 - Q3 [lit]: the known escape (Bento–Berezhiani, hep-ph/0008105): ordinary–mirror L-violating scatterings make the colder mirror sector carry MORE asymmetry (n'_B ≳ n_B). An exact mirror then gives m_DM = m_p = 0.94 GeV and needs n'/n = 5.36.
 - Verdict: P-M splits into two versions. (a) Exact mirror: DM = mirror baryons at 0.94 GeV, with the asymmetry from mixing scatterings. (b) Generic ADM at 5 GeV: needs ε'/ε ≈ 24 in the cold sector, unexplained. The register is updated; (a) is preferred, since it adds no free ratio.
+
+## D1649 — reconciling D1648 (this chat) with D1646 (JANUS chat)
+- They agree on the numbers: a FULL mirror heated like our side is out. Both find the decay must favour our side by ≈ 25:1 (D1646: Γ_D/Γ_V ≤ 4%; D1648: ξ⁴ = 0.041).
+- D1646's minimal dark sector (5 GeV baryon + dark photon) is cold automatically (ξ = 0.47, ΔN_eff ≈ 0.21) without suppressing the decay. But the NUMBER of dark baryons still scales with the dark branching ratio times its CP asymmetry. Per-particle democratic decay gives BR_D/BR_V ~ g_D/g_V ~ 0.05, so equal number sharing needs ε_D/ε_V ~ 20. That is the same unexplained ratio as D1648's version (b).
+- Updated reading of P-M:
+  - (a) Exact mirror, 0.94 GeV: needs the 25:1 visible-favoured decay (as both notes say), then ordinary–mirror scatterings to give the mirror n'/n = 5.36 (Bento–Berezhiani).
+  - (b) Minimal sector, 5 GeV: cold for free (D1646), but needs ε_D/ε_V ≈ 20.
+  Each version has one unexplained ratio. Neither is preferred yet; D1648's "(a) preferred" is withdrawn. The ΔN_eff ≈ 0.2 prediction (D1646) belongs to (b); (a) gives ΔN_eff ≈ 7.4ξ⁴ ≤ 0.3.
