@@ -73,7 +73,9 @@ if __name__ == '__main__':
             p = point(al, C); out['part2'].append(p); print('locked', json.dumps(p), flush=True)
     for al in np.linspace(0, 1, 9):
         for C in (0, 0.5e-6, 1e-6, 1.5e-6, 2e-6, 2.5e-6, 3e-6, 4e-6):
-            p = point(float(al), C); out['part3'].append(p); print('map', json.dumps(p), flush=True)
+            try: p = point(float(al), C)
+            except Exception as ex: p = dict(alpha=float(al), C=C, error=str(ex)[:80], in_band=False)
+            out['part3'].append(p); print('map', json.dumps(p), flush=True)
             json.dump(out, open('field_tests/results/D1485_dilmix_sr.json', 'w'), indent=1)
     out['in_band_points'] = [(p['alpha'], p['C']) for p in out['part3'] if p['in_band']]
     json.dump(out, open('field_tests/results/D1485_dilmix_sr.json', 'w'), indent=1); print(out['part1_verdict'], out['in_band_points'])
