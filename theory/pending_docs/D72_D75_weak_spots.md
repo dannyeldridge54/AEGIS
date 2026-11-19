@@ -15148,3 +15148,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] 9/9 grid points: α_s −1.0163e-3 … −9.070e-4; pulls P-ACT −1.276 … −1.256σ, P-ACT-LB −1.388 … −1.367σ; edge shift vs D1433 4.5e-4σ (rule 0.1σ) ⇒ CONFIRMED, PASS.
 - aegis-check: numbers from the result json; re-ran (−1.01625e-3 − 0.0060)/0.0055 = −1.2757 in python; like-with-like: same ACT combinations and 68 % σ as D1433; grid rectangle wider than the 6-corner box (stated); checked: units, arithmetic, cross-sector: none.
 - MAP: node=band_e_audited status=postulate touches=[] ripple=no
+
+## D1453 — JANUS tick 49: band_i running, derived τ = i model — D1413 confirmed
+- [derived] 9/9: α_s −1.04762e-3 … −8.4426e-4 (ε 1.144–1.714e-4, audited only 1.39–1.44e-4); edges +0.32 %/+0.31 % vs D1413 (rule 0.5 %) — CONFIRMED; the shift is D640's −0.3 % bias.
+- [derived] Pulls P-ACT −1.281 … −1.244σ, P-ACT-LB −1.394 … −1.355σ: PASS.
+- aegis-check: numbers from the result json; edge moves recomputed there (min/max ratio − 1); like-with-like: same band and ACT values as D1413; checked: units, arithmetic, cross-sector: none.
+- MAP: node=band_i status=frozen touches=[] ripple=no

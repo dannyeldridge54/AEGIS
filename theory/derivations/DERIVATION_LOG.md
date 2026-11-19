@@ -2687,3 +2687,8 @@ Touches: none.
 2. [literature] ACT DR6 (2503.14454 §4.1, 68 %): P-ACT 0.0060 ± 0.0055, P-ACT-LB 0.0062 ± 0.0052.
 3. [derived] Pulls: P-ACT −1.276σ … −1.256σ, P-ACT-LB −1.388σ … −1.367σ; largest edge shift vs D1433's A1-anchored ranges 4.5e-4σ (rule > 0.1σ to supersede): D1433 CONFIRMED by the derived model.
 4. [derived] So the audited box's running test does not depend on the empirical k = 1.0352: the derived model gives the same ~1.3σ lean (data positive, theory negative), PASS on both ACT combinations.
+
+## D1453 — JANUS tick 49: band_i running from the derived τ = i model — D1413 CONFIRMED (edges +0.31 %, +0.32 %)
+1. [derived] τ = i exact-plateau second-order model (D1448) on a 3×3 grid over band_i (n_s 0.970–0.975 × r 4.8–5.7e-4; 9/9 converged): α_s −1.04762e-3 … −8.4426e-4; solved ε 1.144–1.714e-4 (the audited chain covers only 1.39–1.44e-4, D1429 — the rest is model-allowed, not audited).
+2. [derived] Vs D1413 (D640, −1.04429e-3 … −8.4165e-4): edges move +0.32 % and +0.31 % (more negative), rule > 0.5 % to supersede: D1413 CONFIRMED. The shift equals D640's known −0.3 % bias (D1412) — a consistency check of both.
+3. [derived] Pulls: P-ACT −1.281 … −1.244σ; P-ACT-LB −1.394 … −1.355σ (D1413 had −1.393 … −1.354σ). PASS on both.
