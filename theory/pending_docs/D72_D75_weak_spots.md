@@ -15321,3 +15321,15 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Shift +3.1e-3 in n_s and −7.5 % in r between pivots — matters for any comparison quoted at 0.002 (≈ 1.5σ of SO σ(n_s)).
 - aegis-check: numbers from field_tests/results/D1480_pivot.json; Taylor ρ n_s re-run by hand in python (0.974393 + (−9.9796e-4)(−3.2189) + ½(−2.8598e-5)(3.2189²) = 0.977457 ✓); r ratio 4.4616/4.82095 − 1 = −7.45 % ✓; sign check: negative running ⇒ larger n_s at smaller k ✓; checked: units (k in Mpc⁻¹, both pivots), arithmetic, like-with-like (same params at both pivots), cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1482 — DEEP / LEFT: the area-integration mechanism (SMSCAN) made concrete by 6D power counting — which (p, q, s) real sources give. Natural combinations give s·m ∈ {1, 3, 9}; the SERAPIS-like s·m = 2 is NOT natural with a single shape-blind source; codimension-2 brane tension + bulk Casimir gives m = 1, s·m = 3 exactly (SMSCAN grid point (3, 1)) (2026-11-19)
+- [derived] 6D → 4D on T² of area A (M₆ = 1): M_P² ∝ A; a 6D energy density ρ₆ gives V_E ∝ ρ₆·A/A² = ρ₆/A; a brane-localised tension T (codimension 2, a point on T²) gives V_J = T, V_E ∝ T/A².
+  - 6D cosmological constant (ρ₆ = Λ₆): V ∝ 1/A → p = 1.
+  - codimension-2 brane tension: V ∝ T/A² → p = 2.
+  - n units of gauge flux on T² (F ~ n/A, ρ₆ ~ n²/A²): V ∝ n²/A³ → p = 3.
+  - bulk one-loop Casimir of massless fields: ρ₆ ∝ −(N_B − N_F)·E(U,3)/A³ (lattice sum Σ′|m + nU|^{−6} with the U₂³ weight) → V ∝ E(U,3)/A⁴ → q = 4, s = 3.
+- [derived] Minimising V = a/A^p − c·E(U,3)/A⁴ over A (needs a, c > 0 and p < 4): A* ∝ E^{1/(4−p)}, V_min ∝ −E^{−p/(4−p)} ⇒ m = p/(4−p): CC m = 1/3 (s·m = 1); tension m = 1 (s·m = 3); flux m = 3 (s·m = 9). [estimate: single-source counting; two shape-blind sources mix exponents but do not give a clean power]
+- [derived] SMSCAN result so far (D-note pending): s·m = 1 gives n_s 0.9616, r 1.45e-3 at both (3, 1/3) and (2, 1/2) — r depends on s·m only. So the CC + Casimir case is the α = 1/3 attractor (out of band), and the physically natural candidate for SERAPIS-size r is tension + Casimir (s·m = 3, faster approach ⇒ r below SERAPIS before tilt). SMSCAN point (3, 1) (PC job SM1, running) tests it directly.
+- [estimate] Physics caveats: needs N_B > N_F for c > 0 (negative Casimir), a stabilised positive area (p < 4 ✓), and the uplift tuned at ρ; codim-2 brane tensions in 6D also deficit-angle the T² (conical) — the flat-T² Casimir is then only approximate. 6D SLED-type supergravity (Aghababaie–Burgess–Parameswaran–Quevedo) is the natural home.
+- Verdict: one concrete, parameter-free candidate inside the area-integration family: (s, m) = (3, 1) from brane tension + 6D Casimir. P3: postulate; candidate test running.
+MAP: node=plateau_origin status=postulate touches=[] ripple=no

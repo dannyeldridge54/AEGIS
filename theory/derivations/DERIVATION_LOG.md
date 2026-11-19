@@ -2844,3 +2844,9 @@ Touches: none.
 3. [derived] Route (b), Taylor with D1466 β_s: ρ n_s 0.977457, α_s −9.059e-4; τ = i n_s 0.977208, α_s −7.537e-4. Gap (a − b): n_s +3.4e-5 / +3.0e-5 (< 5e-5 ⇒ CONSISTENT as locked), α_s −1.5e-5 / −1.4e-5.
 4. [derived] Consequences: at the large-scale pivot both vacua predict n_s ≈ 0.9772–0.9775 (+3.1e-3 vs k = 0.05) and r 7.5 % lower (4.46–4.47e-4); the running is ~8–10 % shallower there.
 5. [estimate] Route (a) uses the leading slow-roll trajectory (dφ/dN = V′/V); its O(ε₂) error on Δφ is ~1 % ⇒ ~3e-5 on n_s, the same size as the (a − b) gap, so the gap is not a measured β_s-truncation effect. Any data pull quoted at k = 0.002 must use these numbers, not the k = 0.05 ones (shift ≈ 1σ of SO's σ(n_s) = 0.002).
+
+## D1482: 6D power counting for area integration
+1. [derived] V_E ∝ ρ₆/A; CC p = 1, codim-2 tension p = 2, flux p = 3, Casimir q = 4 with E(U,3).
+2. [derived] m = p/(4 − p): CC 1/3, tension 1, flux 3 ⇒ s·m = 1, 3, 9.
+3. [derived] s·m = 1 ⇒ α = 1/3 numbers (SMSCAN); tension + Casimir = SMSCAN point (3,1).
+4. [postulate P3] Candidate pending SM1; brane-deficit and sign caveats.
