@@ -672,3 +672,4 @@ D1385  2026-11-19T00:58Z  P3: Z4 (0,2) model b'^1 = 42 (E6,SU2) / -30 (E7,SU2); 
 D1386  2026-11-19T01:05Z  Weave tick 1: eps_tilt size from P3 large volume via D991
 D1387  2026-11-19T01:06Z  Weave tick 2: lepto_i under D1247 eps 1.40e-4 unchanged; bhk_tilt skipped
 D1388  2026-11-19T01:08Z  Weave tick 3: band_e_audited + serapis_point scored vs current n_s
+D1389  2026-11-19T01:13Z  Weave tick 4: m32_window margin updated to the computed wino window
