@@ -15,7 +15,8 @@ for k,t in pts.items():
 # CP-symmetric: -conj(t) equivalent to t under SL(2,Z): rho -> -1/2 + i sqrt3/2 = rho - 1 ; i -> i
 out['CP_image_rho']=str(complex(-(complex(w+1).conjugate()))); out['CP_image_i']=str(complex(-(1j).conjugate()))
 rng=np.random.default_rng(1)
-def M(t,c): return np.diag(c)@Ymat(t)
+YM={k:Ymat(t) for k,t in pts.items()}
+def M(t,c): return np.diag(c)@YM[{v:k for k,v in pts.items()}[t]]
 Js=[];args=set()
 for _ in range(2000):
     cu=rng.normal(size=3); cd=rng.normal(size=3)

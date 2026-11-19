@@ -1,0 +1,2 @@
+# PREREG_FLAV_RHO5 — DEVIATIONS (written before the rerun, 2026-11-19 12:33 CT)
+D1: run 1 was killed by hand after >2 min with no output. Cause: Ymat(τ) recomputed the mpmath modular forms on every one of 12000 loop iterations (performance only). Fix: compute Ymat(ρ) and Ymat(i) once and reuse them. The numerics, the samples (seed 1), the pass rules and the outputs are unchanged. No result from run 1 was seen.
