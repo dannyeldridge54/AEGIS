@@ -14619,3 +14619,19 @@ MAP: node=inverse_meter status=postulate touches=[string_meter, bhk_tilt] ripple
 - [estimate] Caveats on what "derived (candidate)" means here: (1) C and λ were held at the SERAPIS point, not refitted, so the band test is a fixed-point check; (2) the band is the frozen SERAPIS band, wider than the CMB error alone; (3) the plateau MECHANISM is still the D1375 route (K_S ⊃ Y ⊃ E(U,2)/T₂) or, for s = 1, the R⁴ Ê₁ term (D1363) — this test removes the requirement that s = 2 dominate, not the need for a plateau-generating structure (D1371/D1375, uplift, model D1384–D1385).
 - Verdict (locked rule): P3 → "derived (candidate)". The P3 open list shrinks to: an explicit model (SL(2,Z) U-plane, condenser/GS conditions, D1385), control at T₂ ≳ 16 (D1378), and the uplift. Circuit/paper wording: "plateau shape robust to the string expansion order (D1364)".
 MAP: node=plateau_origin status=estimate touches=[] ripple=no
+
+## D1391 — CENTRE / DEEP: new circuit layer past Moonshine, "CM" (complex multiplication; Danny 19:20 CT "Move to new layer"). 7 laws fixed before the first run, 7/7 closed. The two SERAPIS vacua are exactly the two elliptic CM points of SL(2,Z) (2026-11-19)
+- Lock: PREREG_CM_layer.md + .sha256, pushed before the run. Result: field_tests/results/cm_layer_first_run.txt.
+  - This was a standalone run of the circuit.py CM block (60-digit mpmath). The full circuit needs aegis_tools (the CubeMind registry), which is on the PC, not here.
+- These are MATHEMATICAL identities linking objects already on the ladder, not physics predictions. Laws, with tolerances fixed before the run:
+  1. **down CM→A2:** |j(ρ)| = 2.5e-180. SERAPIS-E's hexagonal vacuum ρ is the zero of Klein's j (CM, D = −3).
+  2. **up Moonshine→CM:** j(i) = 1728 = 12³, equal to Moonshine's series value (the τ = i vacuum, D = −4).
+  3. **Elliptic points:** S fixes i, ST fixes ρ; S² = −I, (ST)³ = ±I. The two vacua are the only points of the fundamental domain with extra symmetry.
+  4. **Heegner** [literature: Baker–Heegner–Stark]: at all 9 class-number-one points, j is an integer cube (0, 12³, −15³, 20³, −32³, −96³, −960³, −5280³, −640320³). Max rel. error 1.2e-60.
+  5. **up Moonshine→CM:** e^{π√163} = 640320³ + 744 − 7.4993e-13. The near-integer's +744 is Moonshine's c₀.
+  6. **Control:** D = −15 (class number 2) gives fractional part 0.167, not an integer, as it should.
+  7. **Chudnovsky first term** [literature constant 13591409]: π to 5.9e-14.
+- Code fix after the first run: an ImportError guard on mpmath (if the PC env lacks it, the CM laws report open instead of crashing the circuit). No law or tolerance changed.
+- Circuit: layers A2 → D4 → E8 → Late → Leech → 10D → SUSY → P3 → Moonshine → CM.
+- Reported, not a law: why the vacua sit at CM points (an SL(2,Z)-invariant potential has its stationary points forced at i and ρ, D1351) is the physics link. CM is the arithmetic shadow of that symmetry.
+MAP: none

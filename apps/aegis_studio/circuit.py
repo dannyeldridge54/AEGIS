@@ -143,24 +143,29 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     W['P3_plateau_lhs'] = _b/_A - _b/(_s0 + _ep*_E); W['P3_plateau_rhs'] = _b/_A*_x/(1 + _x)
     W['P3_U2star'] = math.sqrt(460/(2*math.pi**4/90)); W['P3_T2min'] = W['P3_U2star'] + math.log(1e3)/(2*math.pi)
     # CM layer (2026-11-19 01:30 UTC; laws and tolerances fixed BEFORE the first run; pure math via mpmath, no tool calls)
-    import mpmath as _mp
-    _mp.mp.dps = 60
-    _j = lambda tau: 1728*_mp.kleinj(tau)
-    W['CM_j_rho'] = float(abs(_j(_mp.mpc(0.5, _mp.sqrt(3)/2)))); W['CM_j_i'] = float(_mp.re(_j(_mp.mpc(0, 1))))
-    _heeg = {3: 0, 4: 12, 7: -15, 8: 20, 11: -32, 19: -96, 43: -960, 67: -5280, 163: -640320}
-    _tau = lambda D: _mp.mpc(0, _mp.sqrt(D)/2) if D % 4 == 0 else _mp.mpc(0.5, _mp.sqrt(D)/2)
-    W['CM_heeg'] = {D: _j(_tau(D)) for D in _heeg}
-    W['CM_heeg_ok'] = all(abs(_mp.im(v)) < 1e-30*max(1, abs(v)) and abs(_mp.re(v) - _heeg[D]**3) < 1e-30*max(1, abs(v)) for D, v in W['CM_heeg'].items())
-    W['CM_heeg_maxrel'] = float(max(abs(v - _heeg[D]**3)/max(1, abs(_heeg[D])**3) for D, v in W['CM_heeg'].items()))
-    W['CM_heeg'] = None   # keep wires JSON-serialisable
-    W['CM_163_delta'] = float(_mp.mpf(640320)**3 + 744 - _mp.e**(_mp.pi*_mp.sqrt(163)))
-    _v15 = _j(_tau(15)); W['CM_15_frac'] = float(abs(_mp.re(_v15) - _mp.nint(_mp.re(_v15))))
-    W['CM_chud_err'] = float(abs(_mp.mpf(640320)**_mp.mpf(1.5)/(12*13591409) - _mp.pi))
-    _S = _mp.matrix([[0, -1], [1, 0]]); _T = _mp.matrix([[1, 1], [0, 1]]); _ST = _S*_T
-    _mob = lambda M, z: (M[0, 0]*z + M[0, 1])/(M[1, 0]*z + M[1, 1])
-    W['CM_fix_i'] = float(abs(_mob(_S, _mp.mpc(0, 1)) - _mp.mpc(0, 1))); _rho = _mp.mpc(0.5, _mp.sqrt(3)/2)
-    W['CM_fix_rho'] = float(min(abs(_mob(_ST, _rho) - _rho), abs(_mob(_T*_S, _rho) - _rho)))
-    W['CM_orders'] = 1.0 if (_S*_S == -_mp.eye(2)) and (_ST**3 == -_mp.eye(2) or _ST**3 == _mp.eye(2)) else 0.0
+    try:
+        import mpmath as _mp
+    except ImportError:   # guard: without mpmath the CM laws report open instead of crashing the circuit
+        _mp = None
+        W.update(CM_j_rho=float('inf'), CM_j_i=float('nan'), CM_heeg_ok=False, CM_heeg_maxrel=float('inf'), CM_163_delta=float('nan'), CM_15_frac=0.0, CM_chud_err=float('inf'), CM_fix_i=float('inf'), CM_fix_rho=float('inf'), CM_orders=0.0)
+    if _mp is not None:
+     _mp.mp.dps = 60
+     _j = lambda tau: 1728*_mp.kleinj(tau)
+     W['CM_j_rho'] = float(abs(_j(_mp.mpc(0.5, _mp.sqrt(3)/2)))); W['CM_j_i'] = float(_mp.re(_j(_mp.mpc(0, 1))))
+     _heeg = {3: 0, 4: 12, 7: -15, 8: 20, 11: -32, 19: -96, 43: -960, 67: -5280, 163: -640320}
+     _tau = lambda D: _mp.mpc(0, _mp.sqrt(D)/2) if D % 4 == 0 else _mp.mpc(0.5, _mp.sqrt(D)/2)
+     W['CM_heeg'] = {D: _j(_tau(D)) for D in _heeg}
+     W['CM_heeg_ok'] = all(abs(_mp.im(v)) < 1e-30*max(1, abs(v)) and abs(_mp.re(v) - _heeg[D]**3) < 1e-30*max(1, abs(v)) for D, v in W['CM_heeg'].items())
+     W['CM_heeg_maxrel'] = float(max(abs(v - _heeg[D]**3)/max(1, abs(_heeg[D])**3) for D, v in W['CM_heeg'].items()))
+     W['CM_heeg'] = None   # keep wires JSON-serialisable
+     W['CM_163_delta'] = float(_mp.mpf(640320)**3 + 744 - _mp.e**(_mp.pi*_mp.sqrt(163)))
+     _v15 = _j(_tau(15)); W['CM_15_frac'] = float(abs(_mp.re(_v15) - _mp.nint(_mp.re(_v15))))
+     W['CM_chud_err'] = float(abs(_mp.mpf(640320)**_mp.mpf(1.5)/(12*13591409) - _mp.pi))
+     _S = _mp.matrix([[0, -1], [1, 0]]); _T = _mp.matrix([[1, 1], [0, 1]]); _ST = _S*_T
+     _mob = lambda M, z: (M[0, 0]*z + M[0, 1])/(M[1, 0]*z + M[1, 1])
+     W['CM_fix_i'] = float(abs(_mob(_S, _mp.mpc(0, 1)) - _mp.mpc(0, 1))); _rho = _mp.mpc(0.5, _mp.sqrt(3)/2)
+     W['CM_fix_rho'] = float(min(abs(_mob(_ST, _rho) - _rho), abs(_mob(_T*_S, _rho) - _rho)))
+     W['CM_orders'] = 1.0 if (_S*_S == -_mp.eye(2)) and (_ST**3 == -_mp.eye(2) or _ST**3 == _mp.eye(2)) else 0.0
     # DOWN pass: the top layers hand values back to the core — the E8-layer r forecast for SERAPIS must equal the core r
     W['ns_down'] = get('serapis_emulator', {'C': W['C_back']}).get('ns') if W.get('C_back') else None
 
