@@ -3043,3 +3043,8 @@ Touches: none.
 1. [derived] With the tilt fraction added, SERAPIS-E and form A still read off within tolerance; form B misses r by 24 %; DILMIX α 0.25 / 0.5 still read as out of band (Δn_s −0.005 / −0.0035).
 2. [derived] The mixtures' approach exponent varies between ≈ 3 and 1.5 along the last 50 e-folds; N* integrates over it, so horizon-exit quantities alone cannot fix (n_s, r).
 3. [derived] Engine F (third-order flow, self-consistent N*) on a route's own potential costs ≈ 1.5 s and matched four locked exact rows to ≤ 1e-5 in n_s; adopted as the screen.
+
+##  — KEFF: fast engine matches exact MS to ≤ 1e-6 in n_s on 9 routes; local-exponent reduction fails (Δn_s to −0.0075)
+1. [derived] Engine F (third-order flow, self-consistent N*) vs exact MS on DILATON32 A0/A1/B0 and DILMIX ×6: |Δn_s| ≤ 9.8e-7, |Δr|/r ≤ 1.0e-4.
+2. [derived] Local k_eff at y*: SERAPIS-E 2.02, form A 1.54, form B 3.38, DILMIX 1.55–1.64.
+3. [derived] Pure-power chart at (k_eff, C) misses every route beyond tolerance (Δn_s −0.002…−0.0075, Δr +8…+46 %); the D1516 chart is pure-power only (D1516a).

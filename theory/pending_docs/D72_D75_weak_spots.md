@@ -15553,3 +15553,15 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] Reading: adding the tilt fraction moves the DILMIX read-offs only part way (M25 Δn_s −0.0062 → −0.0050). The mixtures' effective exponent runs from ≈ 3 near the vacuum to 1.5 far out; N* (and so e*, ε*) integrates over that whole run, so no quantity measured at horizon exit alone fixes (n_s, r) across families. The pure-power chart (D1516) is a valid map of the pure-power family only.
 - Verdict: local reductions (k_eff) and (k_eff, τ*) — both FAILED as locked. Screening rule adopted instead: run engine F on the route's actual potential (1.5 s/point; F vs locked exact rows A1, B0, M25, M50: |Δn_s| ≤ 1e-5, D1517), exact MS only for candidates in or near the band.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+##  — KEFF: the fast engine is effectively exact (9 routes, |Δn_s| ≤ 1e-6, |Δr|/r ≤ 1.0e-4 vs exact MS) — but the two-number (k, C) reduction FAILS: local k_eff at horizon exit does not predict a route (Δn_s up to −0.0075, Δr up to +46 %)
+- Lock: field_tests/rules/PREREG_KEFF.md. Script field_tests/scripts/keff/run.py; results field_tests/results/KEFF/keff.json.
+- [computed] Engine: third-order flow + self-consistent N* (engine F) vs the exact Mukhanov–Sasaki rows already on file (DILATON32 A0, A1, B0; DILMIX all 6): Δn_s 3.4e-7–9.8e-7, Δr/r 4e-5–1.0e-4. Engine F costs ~1.5 s per point vs 12–40 min exact.
+- [computed] Local exponent k_eff = d ln(e+1)/d ln y at y*: SERAPIS-E 2.02 (y* 15); form A 1.54 (y* 23); form B 3.38 (y* 7); DILMIX α 0.25/0.5/0.75: 1.64/1.57/1.55 (y* 12/16/20).
+- [computed] Chart read-off at (k_eff, C) vs the route itself: SERAPIS-E Δn_s −0.0022, Δr +7.7 %; form A −0.0023/−0.0025, +18.6/+16.6 %; DILMIX −0.0031…−0.0075, +18…+46 %; form B off-grid. Rule (|Δn_s| ≤ 0.002, |Δr| ≤ 15 %): fails for every route. Verdict: REDUCTION BROKEN at the local-slope level.
+- [estimate] Why: k_eff drifts along the path (E_ρ subtraction, y^{1−s} and mixture terms), and the tilt C·e depends on the normalisation A of e near y* (effective tilt C·A, not C). A matched exponent from the C = 0 r value works better for r (form A: k_r ≈ 1.68 instead of 1.54; form B: k_r > 3), consistent with D1495's s·m_eff, which was defined that way.
+- Consequence: the D1516 chart stays valid for pure powers only. Screening a route = run it directly with engine F (1.5 s), not read it off the chart. Correction to D1516 in D1516a.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1516a — correction to D1516
+- D1516 said the DILMIX in-band points are "k_eff ≈ 2 met by mixing 1.5 and 3".  measured their local k_eff at horizon exit: 1.55–1.64, not ≈ 2. The in-band DILMIX points are NOT explained by the local exponent; the D1516 (k, C) chart applies to pure powers only. The rest of D1516 (pure-power band at k 1.9–2.0, C 1.0–1.6e-6) stands.
