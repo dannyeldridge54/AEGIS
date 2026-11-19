@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1447: Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4) → frozen",
   "D1448: Frozen τ=i band (n_s 0.970–0.975, r 4.8–5.7e-4) → frozen",
   "D1449: KILLED POSTULATE: Janus κ separates the ρ and τ=i vacua (τ=i own-κ 10.8 % off, crossed 13.2 %); vacua differ only by Δα_s 1.4e-4 (≤0.09σ) → killed",
   "D1450: Janus relation (α_s from n_s, r) → computed",
@@ -29,7 +28,8 @@
   "D1455: Janus relation (α_s from n_s, r) → computed",
   "D1456: Janus relation (α_s from n_s, r) → computed",
   "D1457: Frozen SERAPIS-E band (n_s 0.970–0.975, r 4.55–5.12e-4) → frozen",
-  "D1458: Janus relation (α_s from n_s, r) → computed"
+  "D1458: Janus relation (α_s from n_s, r) → computed",
+  "D1459: Janus relation (α_s from n_s, r) → computed"
  ],
  "open_rechecks": [],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
