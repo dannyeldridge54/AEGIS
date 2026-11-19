@@ -12,7 +12,10 @@ Layers: A2 = SERAPIS core (τ-plane: n_s, r, C, N*, α_s) · D4 = sectors (rehea
         Leech = string/lattice completion · 10D = the ten-dimensional vacuum and its KK tower (the "9 dimensionals") ·
         SUSY = the supersymmetry shell beyond (anomaly-mediated gauginos, gravitino window, wino window ↔ LHC) ·
         Moonshine = new territory past SUSY (Danny 2026-11-19): the 26D string, heterotic 16, Leech, Klein's j and the Monster —
-        MATHEMATICAL links (exact identities), not physics predictions. Supersymmetry (wino, gravitino, goldstino, sfermions) is the next shell beyond.
+        MATHEMATICAL links (exact identities), not physics predictions.
+        CM = complex multiplication past Moonshine (Danny 2026-11-19 "move to new layer"): the two SERAPIS vacua τ = i and ρ are the
+        CM points of discriminants −4 and −3 (the only elliptic points of SL(2,Z)); Heegner class-number-one j values are integer cubes;
+        e^{π√163} ≈ 640320³ + 744 ties back to Moonshine's c₀. Exact identities, not physics predictions. Supersymmetry (wino, gravitino, goldstino, sfermions) is the next shell beyond.
 
 Tolerances are written here before a law's first run and change only through a dated note — never loosened to pass.
 Correction 2026-11-18 22:41 UTC: bridge B1 r ≈ 3(1−n_s)² (Starobinsky class) was misapplied as a law on the first run;
@@ -37,6 +40,7 @@ LAYOUT = {
     '10D':   {'S_10d': (0, 0), 'S_kk10': (1, 0), 'S_btr': (0, 1), 'S_6d': (-1, 1)},
     'SUSY':  {'m32_window': (0, 0), 'gravitino_wino': (1, 0), 'covariant': (0, 1), 'tests_lhc': (-1, 1), 'H_relic': (-1, 0), 'matter_parity': (0, -1), 'H_line': (1, -1)},
     'P3': {'P3_kappa': (0, 0), 'P3_Y': (1, 0), 'P3_E7': (0, 1), 'P3_K': (-1, 1), 'P3_plateau': (-1, 0), 'P3_chamber': (0, -1), 'P3_shift': (1, -1)},
+    'CM': {'CM_j': (0, 0), 'CM_rho': (1, 0), 'CM_i': (0, 1), 'CM_heegner': (-1, 1), 'CM_163': (-1, 0), 'CM_control': (0, -1), 'CM_chud': (1, -1)},
     'Moonshine': {'X_mellin': (0, 0), 'X_d8': (1, 0), 'X_d16': (0, 1), 'X_bw16': (-1, 1), 'X_rings': (-1, 0), 'X_crit': (0, -1), 'vac_i': (1, -1)},
 }
 
@@ -138,6 +142,25 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     _s0, _ep, _b = 2.0, 0.01, 1.0; _A = _s0 + _ep*W['P3_Erho']; _E = 40.0; _x = _ep/_A*(_E - W['P3_Erho'])
     W['P3_plateau_lhs'] = _b/_A - _b/(_s0 + _ep*_E); W['P3_plateau_rhs'] = _b/_A*_x/(1 + _x)
     W['P3_U2star'] = math.sqrt(460/(2*math.pi**4/90)); W['P3_T2min'] = W['P3_U2star'] + math.log(1e3)/(2*math.pi)
+    # CM layer (2026-11-19 01:30 UTC; laws and tolerances fixed BEFORE the first run; pure math via mpmath, no tool calls)
+    import mpmath as _mp
+    _mp.mp.dps = 60
+    _j = lambda tau: 1728*_mp.kleinj(tau)
+    W['CM_j_rho'] = float(abs(_j(_mp.mpc(0.5, _mp.sqrt(3)/2)))); W['CM_j_i'] = float(_mp.re(_j(_mp.mpc(0, 1))))
+    _heeg = {3: 0, 4: 12, 7: -15, 8: 20, 11: -32, 19: -96, 43: -960, 67: -5280, 163: -640320}
+    _tau = lambda D: _mp.mpc(0, _mp.sqrt(D)/2) if D % 4 == 0 else _mp.mpc(0.5, _mp.sqrt(D)/2)
+    W['CM_heeg'] = {D: _j(_tau(D)) for D in _heeg}
+    W['CM_heeg_ok'] = all(abs(_mp.im(v)) < 1e-30*max(1, abs(v)) and abs(_mp.re(v) - _heeg[D]**3) < 1e-30*max(1, abs(v)) for D, v in W['CM_heeg'].items())
+    W['CM_heeg_maxrel'] = float(max(abs(v - _heeg[D]**3)/max(1, abs(_heeg[D])**3) for D, v in W['CM_heeg'].items()))
+    W['CM_heeg'] = None   # keep wires JSON-serialisable
+    W['CM_163_delta'] = float(_mp.mpf(640320)**3 + 744 - _mp.e**(_mp.pi*_mp.sqrt(163)))
+    _v15 = _j(_tau(15)); W['CM_15_frac'] = float(abs(_mp.re(_v15) - _mp.nint(_mp.re(_v15))))
+    W['CM_chud_err'] = float(abs(_mp.mpf(640320)**_mp.mpf(1.5)/(12*13591409) - _mp.pi))
+    _S = _mp.matrix([[0, -1], [1, 0]]); _T = _mp.matrix([[1, 1], [0, 1]]); _ST = _S*_T
+    _mob = lambda M, z: (M[0, 0]*z + M[0, 1])/(M[1, 0]*z + M[1, 1])
+    W['CM_fix_i'] = float(abs(_mob(_S, _mp.mpc(0, 1)) - _mp.mpc(0, 1))); _rho = _mp.mpc(0.5, _mp.sqrt(3)/2)
+    W['CM_fix_rho'] = float(min(abs(_mob(_ST, _rho) - _rho), abs(_mob(_T*_S, _rho) - _rho)))
+    W['CM_orders'] = 1.0 if (_S*_S == -_mp.eye(2)) and (_ST**3 == -_mp.eye(2) or _ST**3 == _mp.eye(2)) else 0.0
     # DOWN pass: the top layers hand values back to the core — the E8-layer r forecast for SERAPIS must equal the core r
     W['ns_down'] = get('serapis_emulator', {'C': W['C_back']}).get('ns') if W.get('C_back') else None
 
@@ -247,6 +270,14 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     law('report', 'P3', ('P3_chamber',), 'chamber: needs T₂ > U₂* + ln(10³)/2π (D1377)', True, f"U₂* = {W['P3_U2star']:.2f} → T₂ ≳ {W['P3_T2min']:.1f}; one-loop ≈ tree there (D1378)")
     law('report', 'P3', ('P3_shift',), 'shifted lattices: no interior minimum; mixed c = 1 gives the hexagon of U/2 (D1380–D1381)', True, 'control vs SL(2,Z) dilemma')
     law('down', 'P3→A2', ('P3_Y', 'X_epstein'), 'the P3 E(ρ,2) equals the core hexagonal Epstein minimum', W.get('E_rho2') is not None and abs(W['P3_Erho'] - W['E_rho2']) < 2e-3, f"{W['P3_Erho']:.5f} vs core {W.get('E_rho2')}")
+    # CM laws (fixed before first run): exact identities; [literature] Heegner list (Baker–Heegner–Stark), Chudnovsky constant 13591409
+    law('down', 'CM→A2', ('CM_rho', 'CM_j'), 'j(ρ) = 0: the SERAPIS-E hexagonal vacuum ρ is the zero of Klein\'s j (CM point, D = −3)', W['CM_j_rho'] < 1e-40, f"|j(ρ)| = {W['CM_j_rho']:.1e}")
+    law('up', 'Moonshine→CM', ('X_rings', 'CM_i'), 'j(i) = 1728 = 12³ exactly, and equals Moonshine\'s series value', abs(W['CM_j_i'] - 1728) < 1e-40*1728 + 1e-40 and W.get('j_at_i') is not None and abs(W['j_at_i'] - 1728) < 1e-3, f"j(i) = {W['CM_j_i']!r}; series {W.get('j_at_i')}")
+    law('law', 'CM', ('CM_i', 'CM_rho'), 'the two vacua are the elliptic points: S fixes i, ST fixes ρ; S² = −I, (ST)³ = ±I', W['CM_fix_i'] < 1e-40 and W['CM_fix_rho'] < 1e-40 and W['CM_orders'] == 1.0, f"|S·i − i| = {W['CM_fix_i']:.0e}, |ST·ρ − ρ| = {W['CM_fix_rho']:.0e}")
+    law('law', 'CM', ('CM_heegner', 'CM_j'), 'Heegner: j at the 9 class-number-one points is an integer cube (0, 12³, −15³, 20³, −32³, −96³, −960³, −5280³, −640320³)', W['CM_heeg_ok'], f"max rel |j − k³| = {W['CM_heeg_maxrel']:.1e} (tol 1e-30)")
+    law('up', 'Moonshine→CM', ('X_mellin', 'CM_163'), 'e^{π√163} = 640320³ + 744 − δ with 0 < δ < 1e-12 (744 = Moonshine c₀)', W.get('j_c0') == 744 and 0 < W['CM_163_delta'] < 1e-12, f"δ = {W['CM_163_delta']:.6e}; c₀ = {W.get('j_c0')}")
+    law('law', 'CM', ('CM_control', 'CM_heegner'), 'control: D = −15 (class number 2) is NOT an integer', W['CM_15_frac'] > 1e-3, f"frac part of j((1+√−15)/2) = {W['CM_15_frac']:.4f}")
+    law('law', 'CM', ('CM_chud', 'CM_163'), 'Chudnovsky first term: π ≈ 640320^{3/2}/(12·13591409) to < 1e-13', W['CM_chud_err'] < 1e-13, f"|error| = {W['CM_chud_err']:.2e}")
     # UP links: the SERAPIS hexagon carried up the nesting chain (counts locked in D1294)
     for lo, hi, L, n in (('A2', 'D4', 'D4', 16), ('D4', 'E8', 'E8', 1120), ('A2', 'Leech', 'A2', 1)):
         law('up', f'{lo}→{hi}', ('X_hexin',), f'hexagon carried {lo} → {hi}: {n} copies in {L}', W.get(f'hex_{L}') == n, f"{W.get(f'hex_{L}')} (D1294: {n})")
