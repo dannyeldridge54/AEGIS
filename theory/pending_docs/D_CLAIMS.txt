@@ -949,3 +949,4 @@ D1661  2026-11-19T23:32Z  JANUS genesis G13: sourced N_eff scope note on D1632 T
 D1662  2026-11-19T23:33Z  JANUS genesis G12c: re-run round-2 source audit after D1661
 D1663  2026-11-19T23:35Z  JANUS genesis G14: sourced light-element scorecard - toolkit vs LBT Yp 2026, Cooke D/H, PRIMAT
 D1664  2026-11-19T23:38Z  JANUS genesis G6e: P-M dark photon strip with DarkCast limit tables (visible decays) + BBN floor + SN1987A
+D1665  2026-11-19T23:45Z  JANUS genesis G15: decay strength kappa from the dilaton gauge kinetic coupling (n = 1 Kahler, f = S)
