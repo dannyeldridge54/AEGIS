@@ -43,3 +43,26 @@ Order = queue order. Mark `[done D####]` when finished; add follow-ups at the en
 - L26 Card refresh: add A–D results to docs/JANUS_FORMULAS.md and machine-check against jsons (as D1469/D1473) — after every ~5 leads.
 - L27 Console sync: update chains/{rho,tau_i,bands,tests} stages with new results.
 - L28 (from D1480) r at k = 0.002: compare r_0.002 = 4.46–4.47e-4 with any bound quoted at 0.002 (check which pivot BK18 / LiteBIRD forecasts use) — read the pivot from the papers.
+
+## F. Genesis pathways (added 19 Nov 2026 16:20 CT — Danny: "use the newest Serapis calculation … with both the dark energy and scalar field or matter genesis … update Janus with the right pathways")
+Source chain (all on file, nothing new assumed here):
+SERAPIS FINAL EQUATION v3 (scalar field ψ = string coupling; D = 10 default; theory/pending_docs/SERAPIS_FINAL_EQUATION.md)
+→ reheating (T_R ≈ 9e8 GeV Weave; 7.389e8 GeV exact-pipeline point)
+→ matter genesis P-M (one asymmetry, ADM, m_DM = 5.03 GeV at equal sharing; D1631–D1632)
+→ light elements (BBN v3, all 5 locked rules PASS; D1633–D1634) → recombination (Saha toy, D1632)
+→ reverse thread / late dark energy P-G (V = V_Λ(1 − 7.30 e^{−βφ}); D1626–D1630, published 10.5281/zenodo.24380387).
+Scope guard: D1636 (full-likelihood DE fit, other session) is NOT a Janus lead — read its result when it lands, never redo it.
+Cycle per lead (one lead per tick): Research → Development → Postulation → Derivation → Postulation check → Referee → Review.
+
+- G1 Reheating from the final equation: inflaton mass at ρ (V'' of the D = 10 potential, canonical ψ) and T_R from Γ ~ m³/M_P² [estimate] vs the 7.389e8 / 9e8 GeV on file — is the number that feeds P-M actually derived from v3?
+- G2 Thread continuity: is the late thread's coefficient (7.30) and slope β = √(D−2) the SAME function as v3's plateau (V ≈ V∞[1 − 7.30 e^{−β_D ψ}]) — derive, or flag P-G as a separate field.
+- G3 Starting height: can the ~1 % tuned start (D1628) be set by inflation-era dynamics (frozen field + Hubble friction since reheating)? Postulate check, then compute the frozen value if a mechanism exists; else NULL loud.
+- G4 Z₃ at ρ and the sharing factor n_DM/n_B (D1631's next step): does the residual Z₃ fix it? Literature first; locked test only if a concrete rule exists.
+- G5 Asymmetry source at T_R: Davidson–Ibarra bound vs T_R from G1 [literature + estimate]; which non-thermal route survives.
+- G6 Mirror-sector temperature ξ from reheating branching (inflaton → mirror vs visible) and the ξ < 0.45 bound (D1632 T4).
+- G7 BBN v3 + Li-7 (known gap): add ⁷Be/⁷Li channels under a new lock; report the lithium value honestly (the standard model's own Li problem expected).
+- G8 BBN weak-rate corrections: the stated −0.005 Y_p bias — lock, add Coulomb/radiative/finite-mass terms, re-score.
+- G9 Future oscillation of the thread: thread mass m ~ √V''(min) vs H₀; when (if ever) it becomes matter-like and what fraction — art/lens claim vs physics stated separately.
+- G10 Genesis budget table: Ω_DM/Ω_b, η, Y_p, D/H, ³He/H, w₀/w_a — every number from its json, one card (machine-checked as D1469/D1473).
+- G11 Console sync: chains/genesis stages updated with G1–G10 results.
+- G12 REFEREE (whole genesis chain, fresh read of every json): pass → loop stops and reports to Danny; fail → the failures become new G-leads.
