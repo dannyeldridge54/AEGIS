@@ -661,3 +661,4 @@ D1374  2026-11-19T00:28Z  D1373a correction: C slope already has a BHK origin (D
 D1375  2026-11-19T00:29Z  P3: KKPR confirm K = -log(Im S + (D_GS+Y)/16pi^2) - right-sign 1/(s+eps E) built in
 D1376  2026-11-19T00:30Z  P3: delta_GS = 0 on the U-plane realised in Z6-II MSSM orbifolds; but U-group is Gamma0(N), eta(U/4)
 D1377  2026-11-19T00:31Z  P3: chamber condition T2 > U2* (~14.6) for the Y expansion; T2 >~ 16-20
+D1378  2026-11-19T00:32Z  P3: heterotic large-volume check at T2=16-20 - universal one-loop shift ~ tree (alpha^-1 24-30)
