@@ -302,7 +302,8 @@
     "D1624: postulate",
     "D1625: postulate",
     "D1635: postulate"
-   ]
+   ],
+   "flag": "recheck (D1638, reverse_thread)"
   },
   {
    "id": "logderiv_plateau",
@@ -1516,10 +1517,14 @@
     "D1627",
     "D1628",
     "D1629",
-    "D1630"
+    "D1630",
+    "D1638"
    ],
    "depends": [
     "plateau_origin"
+   ],
+   "history": [
+    "D1638: postulate"
    ]
   }
  ]
