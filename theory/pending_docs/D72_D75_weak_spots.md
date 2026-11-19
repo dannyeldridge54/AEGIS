@@ -15407,3 +15407,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1496 — P3 exact LVSDIL k = 0.6 confirms D1488 (Δn_s −2.0e-6, Δr/r −0.04 %)
 - aegis-check: read from field_tests/results/LVSDIL/k0.6.json and D1488 json; difference re-run in python ✓.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1495 — help set 4: DILMIX strip ↔ s·m_eff ≈ 1.80–2.05 (agrees with D1490's 1.9–2.0); integer 6D power counting misses it except D1484's killed (2, 4) at s = 2
+- [estimate] r-matching at C = 0: α 0.25/0.375/0.5 → s·m_eff 2.05/1.89/1.80. At s = 3/2 needs q/p ≈ 1.73–1.83 (no D1482 integer source); at s = 2 needs q/p ≈ 2 = (2, 4), killed in D1484 unless the area is stabilised heavily.
+- aegis-check: numbers from field_tests/results/D1495_alpha_sm.json (built only from D1483/D1485/D1490 jsons + DILATON32 B0); q/p = 1 + 1/m re-derived from m = p/(q − p) ✓; s = 2 window m = s·m/2 = 0.90–1.03 → q/p = 2.11–1.97 ✓; caveat on n_s mismatch stated; cross-sector: none.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

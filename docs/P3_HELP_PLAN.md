@@ -6,7 +6,7 @@ Status marks: [done D####] / [running D####] / [next].
 1. [done D1490] SMSCAN plateau + tilt target zone: s·m 1.5–2.2 × C 0–3e-6 — which (s·m, C) land in band (a target for any area/flux mechanism).
 2. [done D1492] DILMIX strip predictions: α_s and β_s across the in-band strip (D1485), compared with the Janus SERAPIS-E values (α_s −9.98e-4, β_s −2.86e-5) — is DILMIX observationally distinct?
 3. [next] Strip edges, fine grid: α 0.2–0.6 × C 0.8–2.2e-6 — exact in-band boundary to steer the P3 chat's next PC runs.
-4. [next] Effective approach exponent: map DILMIX(α) onto an SMSCAN-equivalent s·m (r at C = 0) — which (p, q) power counting (D1482 language) would produce the strip.
+4. [done D1495] Effective approach exponent: map DILMIX(α) onto an SMSCAN-equivalent s·m (r at C = 0) — which (p, q) power counting (D1482 language) would produce the strip.
 5. [next] Tilt origin check: translate the needed C ≈ 1–2e-6 (model frame) into D1486's physical frame (C_phys 6e-4–0.25, y* 1e3–1e5) — consistent or not (aegis-check-style, numbers re-run).
 6. [next] Frame reconciliation: model-frame y* ≈ 23 vs D1486 physical y* 1e3–1e5 — the rescaling a and what it does to N*, Δφ.
 7. [next] Testability: strip (n_s, r, α_s) vs SO σ(n_s) 0.002 and LiteBIRD δr 1e-3 (D1440/D1441 inputs) — can data separate DILMIX from SERAPIS-E and from form A?

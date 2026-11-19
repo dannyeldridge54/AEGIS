@@ -2916,3 +2916,9 @@ Touches: none.
 
 ## D1496 — P3 exact LVSDIL k = 0.6 vs our D1488 forecast — AGREE
 1. [derived] Exact (P3 PC, eadb3ab): n_s 0.953167, r 1.9213e-5; D1488 forecast (locked 43b868e): 0.953165, 1.9206e-5 ⇒ Δn_s −2.0e-6, Δr/r −0.04 %. Track record now 12 points, |Δn_s| ≤ 5.3e-6.
+
+## D1495 — help set 4: DILMIX mix as an SMSCAN-equivalent exponent — in-band strip α 0.25–0.5 ↔ s·m_eff ≈ 1.80–2.05 (matches D1490's target 1.9–2.0)
+1. [estimate] Matching r at C = 0 (ln r vs ln s·m interpolation over 9 SMSCAN points, D1483/D1490): α 0.125 → s·m_eff 2.41; 0.25 → 2.05; 0.375 → 1.89; 0.5 → 1.80; 0.75 → 1.71; 1.0 (form A) → 1.67. α = 0 (B0, r 1.16e-4) lies below the SMSCAN range sampled (s·m > 3).
+2. [estimate] Consistency: the DILMIX in-band strip (α 0.25–0.5) maps to s·m_eff 1.80–2.05, the same window D1490 found for SMSCAN+tilt (in band at s·m 1.9–2.0) — two independent families point to one target: an effective approach exponent ≈ 1.8–2.0 plus a tilt C ≈ 1–2e-6.
+3. [estimate] Power counting (D1482 language, m = p/(q − p)) at s = 3/2: s·m_eff 1.80–2.05 ⇒ m ≈ 1.20–1.36 ⇒ q/p ≈ 1.73–1.83. D1482's 6D integer sources (CC p = 1, brane tension p = 2, flux p = 3, Casimir q = 4) give q/p ∈ {4, 2, 4/3} — none in the window; at s = 2 the window is m 0.90–1.03 ⇒ q/p ≈ 1.97–2.11, i.e. (p, q) = (2, 4) — D1484's killed two-term case. A mechanism with a heavy area and q/p ≈ 2 at s = 2 (or a genuine mixture at s = 3/2) is the target.
+4. [estimate] Caveat: at C = 0 the two families differ in n_s (DILMIX 0.963–0.966 vs SMSCAN ≈ 0.960), so the r-matching is an approximate identification, not an equivalence.
