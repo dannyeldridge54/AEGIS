@@ -15960,3 +15960,23 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] R1: tree/one-loop gap g_s² (same invariant as the left); the circle/Wilson-line thread is s = 1-type (linear growth in R), so off the rung — mirrors 8D's U direction.
 - Verdict: balance PASSES at 9D along the dilaton; the 4D one-loop coefficient sits at the Epstein boundary s = d/2 − 1 = 2 (regularised; sign open, as at 6D). No new slice shape, no engine-F run.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1574 — R2/13 (8D heterotic O(18,2)): one-loop ∫Γ_{18,2} gives log|η(T)η(U)| + polylogs (hep-th/9901020); gap g_s² along coupling; s = 1 log in torus moduli = L2 pattern. Balance PASS.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1575 — R3/13 (7D heterotic O(19,3)): one-loop = O(19,3) theta lift at edge s = 1/2 (hep-th/9903113, 1110.5318) ⇒ regularised log, mirrors L3's 7D log. Gap g_s² holds. Balance PASS [estimate].
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1576 — R4/13 (6D heterotic O(20,4) ↔ IIA/K3): edge s = 1, regularised; gap g_s² holds; one-loop sign open on both sides (as L4). Balance PASS with shared open sign.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1577 — R5/13 (5D heterotic O(21,5)): s = 3/2 convergent; gap g_s² holds; rung persists. Balance PASS (mirrors L5).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1578 — R6/13 (4D heterotic N = 4, SL(2)_S × O(22,6)): R⁴ tree ζ(3)S₂ + Γ_{22,6} lift at edge s = 2; R² exact in S ∝ −log(S₂|η(S)|⁴) (Harvey–Moore) — an s = 1 strand along S, while R⁴ keeps gap g_s².
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1579 — CENTRE/13 (4D balance L6 vs R6): the string-coupling (species) direction is the ONLY direction carrying the k = 2 rung in every lens on both ladders ⇒ CONFIRMED at estimate level; it coincides with the P3-S inflaton direction. Sent back: the edge-s = 2 one-loop sign (open on both sides). P3-S/P3-L remain postulates.
+- [literature] GRV 1004.0163; KOP hep-th/0001083; BFKOV hep-th/9707126; Obers–Pioline hep-th/9903113; Foerger–Stieberger hep-th/9901020; Angelantonj–Florakis–Pioline 1110.5318.
+- [estimate] heterotic R2–R6 thread indices s = d/2 − 1 taken by analogy with the Γ_{d,d} result; not computed per case.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

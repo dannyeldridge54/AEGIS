@@ -103,3 +103,37 @@ Points beyond the twin ladder (3D E₈, 2D E₉, 1D E₁₀) are kept as an exte
 - Difference from the left lens: the one-loop thread is NOT a pure Eisenstein series at generic Wilson lines (the 1/η̄²⁴ insertion makes it a theta lift of a weakly holomorphic form; at large R it grows ∝ R plus constant plus e^{−R} — an s = 1-type thread, like 8D's U-direction). So along R the right lens gives a log/linear (s = 1) shape, OFF the rung; along the dilaton it gives the rung (gap g_s²).
 - Verdict: R1 agrees with L1 along the coupling direction (rung k = 2, gap g_s²) and differs along the circle (s = 1 thread) — exactly the 8D pattern. Balance at 9D: PASS along the dilaton.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## R2/13 — 8D heterotic, O(18,2)/(O(18)×O(2)) (dim 36) — D1574
+- Codon [literature]: tree ζ(3)/g² + one-loop ∫_F Γ_{18,2} × elliptic-genus factor; Foerger–Stieberger hep-th/9901020 evaluate it in closed form at 8D — log|η(T)η(U)|-type terms plus polylogarithms (Borcherds-type products) in (T, U, Wilson lines).
+- Mirror gap along the 8D dilaton: g_s² (holds). Along T, U: log / s = 1 thread — OFF the rung, the SAME as L2 (8D U-direction s = 1 log plateau, D1569).
+- Balance at 8D: PASS (both lenses: rung along the coupling, s = 1 log in the torus moduli).
+
+## R3/13 — 7D heterotic, O(19,3)/(O(19)×O(3)) (dim 57) — D1575
+- Codon [literature, schematic]: Obers–Pioline hep-th/9903113 — the Γ_{d,d} one-loop integral is the SO(d,d) vector Eisenstein series at s = d/2 − 1; Angelantonj–Florakis–Pioline 1110.5318 extend this to Γ_{d+16,d} × weakly holomorphic forms (Niebur–Poincaré theta lift). At d = 3 the index s = 1/2 is the edge value ⇒ regularised, with a log.
+- Mirror gap along the coupling: g_s² (holds). The log/edge term mirrors L3's ±c with logs (7D anomaly, D1570).
+- Balance at 7D: PASS structurally [estimate].
+
+## R4/13 — 6D heterotic, O(20,4) (dim 80) — D1576
+- Heterotic on T⁴ ↔ IIA on K3: the heterotic tree/one-loop pair maps to IIA one-loop/tree (string–string duality flips g_s → 1/g_s in 6D). One-loop thread: Γ_{20,4} theta lift, s = d/2 − 1 = 1 (edge; regularised like L4's SO(5,5) s = 1 / SO(4,4) case).
+- Gap g_s² along the 6D coupling (holds); the sign of the regularised one-loop coefficient is open — the SAME open sign as L4 (D1571).
+- Balance at 6D: PASS with the same open sign on both sides.
+
+## R5/13 — 5D heterotic, O(21,5) (dim 105) — D1577
+- One-loop thread: Γ_{21,5} theta lift, s = d/2 − 1 = 3/2 (convergent region). Gap g_s² holds; rung persists along the coupling. Mirrors L5 (s = 3/2, convergent, positive).
+- Balance at 5D: PASS.
+
+## R6/13 — 4D heterotic N = 4, SL(2)_S × O(22,6) (dim 2 + 132) — D1578
+- R⁴: tree ζ(3)S₂ + one-loop Γ_{22,6} theta lift at s = d/2 − 1 = 2 (edge, regularised) — same edge as L6's SO(6,6) s = 2.
+- Extra 4D feature [literature]: the heterotic N = 4 R² coupling is exact in S, ∝ −log(S₂|η(S)|⁴) (Harvey–Moore) — along the 4D dilaton the R² strand is an s = 1 log thread (tree S₂ + log S₂), while the R⁴ strand keeps the tree/one-loop gap g_s².
+- Gap g_s² along S for R⁴: holds.
+
+## CENTRE/13 — 4D balance (L6 vs R6) — D1579
+- Shared quantities handed across: rung k = 2 (gradient strand along the coupling), mirror gap g_s², one-loop amplitude at the edge s = 2 (regularised on BOTH sides), species stitch Λ₄ ∝ E^{−1/2}.
+- Balance rule: CONFIRMED only where both lenses agree.
+  - Along the 4D string coupling (y₄ on the left, S₂ on the right): BOTH give the k = 2 rung with gap g_s² ⇒ CONFIRMED [estimate-level, structural].
+  - Along the torus/Narain moduli: BOTH give s = 1 log-type or edge-regularised threads ⇒ consistent, but OFF the rung (not inflaton candidates).
+  - The one-loop amplitude sign at the edge s = 2: open on BOTH sides ⇒ the one item sent back (to L6/R6).
+- Result: across all 13 points the ONLY direction that carries the rung in every lens, on both ladders, is the string-coupling (species) direction — the same direction P3-S already uses (y, species plateau). The dimension twin ladder therefore singles out the P3-S inflaton direction rather than adding a new one.
+- Status: P3-L/P3-S stay postulates (no ladder entry without Danny's yes). Next: extension 3D E₈ (golden-ratio check via H₄ ⊂ E₈), 2D E₉, 1D E₁₀.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
