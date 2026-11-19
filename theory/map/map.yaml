@@ -1217,12 +1217,13 @@ observing:
   - D1637
   - D1641
   - D1665
+  - D1666
   depends:
   - plateau_origin
   history:
-  - 'D1637: estimate'
   - 'D1641: estimate'
   - 'D1665: estimate'
+  - 'D1666: estimate'
 - id: matter_genesis
   layer: 2
   branch:
