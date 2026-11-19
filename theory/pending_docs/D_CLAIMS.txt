@@ -778,3 +778,4 @@ D1491  2026-11-19T12:27Z  Exact-MS spot check of the DILMIX best strip point (al
 D1492  2026-11-19T12:28Z  Help set 2: running alpha_s across the DILMIX in-band strip vs SERAPIS-E
 D1493  2026-11-19T12:29Z  P3 exact rows vs our forecasts: DILMIX (0.25,1.25e-6) and LVSDIL k 0.15/0.3
 D1494  2026-11-19T12:39Z  Help set 3: DILMIX strip edges fine grid
+D1495  2026-11-19T12:43Z  Help set 4: DILMIX mix alpha as SMSCAN-equivalent s*m
