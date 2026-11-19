@@ -15542,3 +15542,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] First physical-frame in-band point of the P3 dilaton route (robust to M6). Open: tilt source, M5 regime, one-power admixture origin.
 - aegis-check: numbers from field_tests/results/D1512_sliver_ms.json; tilt convention checked against tools/serapis_calc/pipeline.py build() (V = e/(e+1)(1 + C·e/lam), e → g by the DILMIX grid map) ⇒ C_pipe = C·lam ✓; ymax/npts raised as locked; not a P3 locked grid point; cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1518 — P3 DILTR A0 rows confirm D1489 (Δn_s ≈ −3e-6); P3 D1516/D1517 consistent with our D1490/D1495/D1506 (k ≈ 2 window; DILMIX λ = 1 points not robust)
+- aegis-check: read from field_tests/results/DILTR/A0_TR1e+08.json, A0_TR1e+10.json and D1489 json; differences re-run in python ✓; P3 D-notes read only.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
