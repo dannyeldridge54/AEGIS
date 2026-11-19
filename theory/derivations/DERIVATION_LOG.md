@@ -2469,3 +2469,9 @@ Touches: none.
 3. [estimate] Scaling by τ = i's ratio (10.8 % α_s miss from c/I* = 5.0 %, ratio 2.15) gives a 2.1–2.3 % α_s shortfall vs the observed 3.4 % — within the locked factor 2: "offset can explain it". Sign agrees (B < 0 shrinks the effective I, so leading order underestimates |α_s|, as at τ = i).
 4. [estimate] Not yet a derivation: the ρ analogue of D640 (first order in B/I² and the O(1/y) Epstein term) is the next step; the remaining ~1 % may sit in that 1/y term.
 
+## D1415: ρ offset relation (locked) — FAIL as locked
+1. [derived] Epstein large-y expansion E(τ,2) = 2ζ(4)y² + πζ(3)/y + O(e^{−2πy}): checked by lattice sum at τ = −½ + iy (residual −1.9e-4, −5.5e-5, −7.2e-5 at y = 2, 3, 4 — dominated by the |m|,|n| ≤ 300 truncation); D = πζ(3) = 3.776.
+2. [derived] First-order slow roll on V/V0 = (1 − 1/(Ê+1))(1 + CÊ), Ê + 1 = 2ζ(4)y² + B + πζ(3)/y, B = −4.783, solved for (C, y*) at A1's (n_s, r) (residuals < 1e-10): α_s = −1.0114e-3 vs exact −9.9814e-4 → +1.33 %. Rule (< 1 %): FAIL.
+3. [derived] Controls at the same (n_s, r): pure plateau (B = D = 0) −2.78 %; B only +1.86 %; leading-order relation −3.40 %. The offset flips the sign of the miss and removes the undershoot, but over-corrects; the 1/y term pulls back by 0.5 %.
+4. [estimate] The residual ~1.3 % is the same size as the gap between first-order slow roll and the exact third-order Janus core (D1228/D1234); a first-order model cannot reach sub-percent here, unlike τ = i where D640's closed form did. Next: the same model with second-order slow roll (Stewart–Lyth corrections) before any claim.
+

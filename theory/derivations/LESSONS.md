@@ -393,3 +393,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1399: derive the closed form before locking a pre-estimate — at κ = 1 the Janus relation is exactly α_s = −2r; my lock guessed (1−n_s)²/2 and was ×2.3 low.
 - D1402a: the Janus relation's κ belongs to the vacuum (ρ: κ = 1, τ = i: κ = ½, D1234/D1263) — read the node's own κ before reusing α_s = −2r across bands.
 - D1412: when a recorded test says "the corrected method would fix it — not tested here", test it next; D1263's 10.8 % sat unexplained-in-practice for 150 notes while D640's fix was already on the shelf.
+- D1415: an estimate that "explains most of a gap" (D1414) can still overshoot when built in properly — lock the full model before believing the estimate, and keep the method's own order (first-order slow roll) in the error budget.

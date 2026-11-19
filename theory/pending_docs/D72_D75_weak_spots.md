@@ -14859,3 +14859,12 @@ MAP: node=band_i status=frozen touches=[janus] ripple=no
 - aegis-check: re-ran 2ζ(4)·y² at y = √3/2 (1.62, the leading term of E(ρ,2)), the six-unit-vector part 4.5, and −4.78/430·2.15 = 2.3 % in python; checked: units (all dimensionless), arithmetic, like-with-like (same α_s miss definition as D1263), limits (B → 0 ⇒ no offset), cross-sector: none.
 MAP: node=janus status=computed touches=[] ripple=no
 
+## D1415 — JANUS tick 13: FAIL as locked — the ρ offset model gets A1's running to +1.3 % (rule < 1 %); the offset flips the miss from −2.8 % to +1.3 %, the rest looks like slow-roll order
+- Lock: field_tests/rules/PREREG_D1415_rho_offset_relation.md (+ .sha256), pushed before computing. DEVIATIONS D1–D2 (json bool crash; report solve residuals — written before the rerun, no result seen). Script field_tests/scripts/d1415/rho_relation.py; result field_tests/results/D1415_rho_offset_relation.json.
+- [derived] Epstein's 1/y coefficient πζ(3) confirmed numerically (lattice residual ≤ 1.9e-4 for y = 2–4, truncation-limited).
+- [computed] At A1's (n_s, r): full model α_s −1.0114e-3 (+1.33 %, C 1.255e-6, y* 14.82); B only +1.86 %; pure plateau −2.78 %; LO relation −3.40 %. All solves converged (residuals ≤ 4e-11).
+- Verdict: FAIL (locked bar 1 %). Reading: D1414's estimate was right that the I² offset is the main mechanism (it removes the undershoot), but this first-order model overshoots; the remaining 1.3 % is consistent with first-order slow roll's own error against the exact third-order core, so no ρ closed form is claimed. τ = i (D640/D1412, 0.3 %) stays the only offset-corrected relation that passes.
+- Next step recorded: rerun the same model with second-order slow-roll formulas (new lock); do not tune B or D.
+- aegis-check: re-ran +1.33 % and −2.78 % from the json, πζ(3) = 3.776 in python; checked: units (code units; ratios), arithmetic, like-with-like (exact MS α_s at A1's own (n_s, r)), limits (B = D = 0 reproduces a pure plateau), cross-sector: none.
+MAP: node=janus status=computed touches=[] ripple=no
+
