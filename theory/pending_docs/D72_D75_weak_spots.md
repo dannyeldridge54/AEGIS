@@ -15093,3 +15093,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] The ρ α_s meter is now derived (Epstein offset + second-order SR) across the audited box; k = 1.0352 retired as a fit, kept as a cross-check.
 - aegis-check: re-ran −9.0971e-4/−9.1099e-4 − 1 = −0.14 %, −1.01341e-3/−1.0144e-3 − 1 = −0.098 %, C ratio 1.00042 in python; like-with-like: same MSSM exact rows the D1423 test used; checked: units, arithmetic, limits (residual size ~ε³ as expected), cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1444 — JANUS tick 40: four remaining corners — PASS
+- [derived] K3 −0.05 %, K4 −0.14 %, K5 −0.13 %, K6 −0.09 % (rule < 0.5 %); C recovered ≤ 0.045 %. All 7 exact points within 0.14 %, one-sided.
+- [estimate] Caveat: reference rows predate D1417's estimator fix (A1 −9.9814e-4 vs new −9.964e-4: 0.17 %) ⇒ sub-0.2 % agreement is at reference precision. New-estimator rerun of the 7 rows = candidate PC job.
+- aegis-check: re-ran K4 −9.7569e-4/−9.7704e-4 − 1 = −0.14 %, D1417 offsets −0.17 %/−0.07 % in python; like-with-like: flagged (old- vs new-estimator references); checked: units, arithmetic, cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no

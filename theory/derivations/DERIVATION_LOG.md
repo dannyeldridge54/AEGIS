@@ -2630,3 +2630,9 @@ Touches: none.
 2. [derived] Implementation check: the solve recovers the corners' own tilt C to 0.04 % (1.00042e-6, 1.30041e-6) — the model reproduces the exact pipeline's potential parameter, not just its observables.
 3. [derived] Rule max |err| < 0.5 %: PASS (max 0.14 %). With D1442 (A1, −0.018 %) the second-order offset model is a derived ρ meter across the audited box, replacing the empirical k = 1.0352 (D1423) with physics.
 4. [estimate] The residual −0.1 … −0.14 % at the corners (vs −0.02 % at A1) is the expected O(ε³) remainder; four remaining corners not yet run.
+
+## D1444 — JANUS tick 40: four remaining box corners — PASS; all 7 exact points within 0.14 % (at the references' precision)
+1. [derived] D1443's method at K3–K6 (D1262 exact MSSM rows): K3 −0.05 %, K4 −0.14 %, K5 −0.13 %, K6 −0.09 %; solved C_r matches each corner's C to ≤ 0.045 %. Rule max < 0.5 %: PASS.
+2. [derived] With D1442 (A1 −0.018 %) and D1443 (K1 −0.14 %, K2 −0.10 %): all seven exact points of the audited ρ box agree with the second-order offset model within 0.14 %, all on the same side (model slightly less negative).
+3. [estimate] Reference precision caveat (loud): the D1262 rows (a1_mssm_gstar.txt, 18 Nov 18:36 CT) predate D1417's α_s estimator fix (21:37 CT). D1417's new-estimator SERAPIS-point α_s −9.964e-4 differs from the table's A1 −9.9814e-4 by −0.17 % (−0.07 % vs the SM row). So agreement below ~0.2 % is at the references' own precision; the model-vs-exact gap is ≤ 0.14 % ± ~0.2 %.
+4. [estimate] Conclusion unchanged: the ρ α_s meter is derived (Epstein offset + second-order SR) across the whole audited box; a new-estimator rerun of the seven exact rows (PC job, cf. docs/JANUS_PC_JOBS.md) would tighten the comparison.

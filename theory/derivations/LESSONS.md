@@ -403,3 +403,5 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1438→D1440: check a forecast against the mission's own stated requirement (incl. systematics) before calling something "decidable"; idealized stat-only forecasts can be 10× optimistic. Also check the experiment still exists (CMB-S4 ended July 2025).
 
 - D1442: when a paper gives n_S complete to O(ε²) but α_S only at leading order, α_S at O(ε³) follows exactly from α_S = dn_S/d ln k with d ln k = (1 − ε1)dN and dε_n/dN = ε_nε_{n+1} — no extra source needed. A first-order miss of ~2 % in α_s is expected (relative ε2 ≈ 2.7 %).
+
+- D1444: before claiming sub-0.2 % agreement, check the reference values' own estimator/version — the D1262 exact rows predate D1417's α_s estimator fix (0.07–0.17 % shift).
