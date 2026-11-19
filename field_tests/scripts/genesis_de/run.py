@@ -17,7 +17,11 @@ def run(beta,phii,VL):
 def shoot(beta,phii):
     g=lambda VL:run(beta,phii,VL)[1]-1.0
     hi=10.0
-    while g(hi)<0 and hi<1e4: hi*=2
+    grid=[0.5*2**k for k in range(15)]
+    vals=[g(v) for v in grid]
+    for lo_,hi_,a_,b_ in zip(grid,grid[1:],vals,vals[1:]):
+        if a_<0<b_: return brentq(g,lo_,hi_,xtol=1e-12)
+    return None
     return brentq(g,0.5,hi,xtol=1e-12)
 data={'Pantheon+':(-0.838,0.055,-0.62,0.22,0.19),'Union3':(-0.667,0.088,-1.09,0.31,0.27)}
 rho=-0.9
@@ -29,7 +33,9 @@ for beta in (2*math.sqrt(2),2.0,math.sqrt(2)):
     rows=[]
     for amp in np.geomspace(0.01,0.9,40):
         phii=-math.log(amp/A)/beta
-        VL=shoot(beta,phii); sol,H2,V=run(beta,phii,VL)
+        VL=shoot(beta,phii)
+        if VL is None: rows.append(dict(amp=float(amp),nonviable=True)); continue
+        sol,H2,V=run(beta,phii,VL)
         aa=np.linspace(1/3,1,60); w=[]
         for a in aa:
             p,q=sol.sol(math.log(a)); rm=3*Om*a**-3; rr=3*Or*a**-4; H2a=(rm+rr+V(p))/(3-q*q/2)
@@ -38,8 +44,8 @@ for beta in (2*math.sqrt(2),2.0,math.sqrt(2)):
         row=dict(amp=float(amp),phii=float(phii),VL=float(VL),w0=float(w0),wa=float(wa),w_today=float(w[-1]))
         for k,d in data.items(): row['dchi2_'+k]=float(dchi2(w0,wa,d))
         rows.append(row)
-    best={k:min(rows,key=lambda r:r['dchi2_'+k]) for k in data}
+    best={k:min([r for r in rows if 'w0' in r],key=lambda r:r['dchi2_'+k]) for k in data}
     out[f'beta={beta:.4f}']=dict(best={k:{kk:v[kk] for kk in ('amp','w0','wa','dchi2_'+k)} for k,v in best.items()},
-        consistent={k:bool(best[k]['dchi2_'+k]<=6.18) for k in data},rows=rows[::4])
+        consistent={k:bool(best[k]['dchi2_'+k]<=6.18) for k in data},rows=rows[::4],n_nonviable=sum(1 for r in rows if r.get('nonviable')))
 print(json.dumps({k:{'best':v['best'],'consistent':v['consistent']} for k,v in out.items()},indent=1))
 os.makedirs('field_tests/results/GENESIS_DE',exist_ok=True); json.dump(out,open('field_tests/results/GENESIS_DE/out.json','w'),indent=1)
