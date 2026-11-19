@@ -2259,3 +2259,9 @@ Touches: none.
 2. [derived] e^{δK} multiplies a nonzero plateau height → linear (1 + C·E); D1370's cancellation needed V ≡ 0.
 3. [estimate] Heterotic lead: K_S ⊃ −log(S + S̄ + const·Y) would give e^K ∝ 1/(s + c′E/T₂).
 4. [postulate P3] One framework carrying plateau + tilt not yet built.
+
+## D1375: one-loop K_S contains Y
+1. [literature] KKPR hep-th/9608034 App. A: K = −log(Im S + (Δ^GS + Y)/16π²) + K⁽⁰⁾.
+2. [derived] Y ⊃ (90/π³)E(U,2)/T₂ → e^K ∝ 1/(s + εE), ε = 90/(16π⁵T₂) = 0.01838/T₂; uplift tuned at ρ → (b/A)x/(1+x).
+3. [estimate] Needs δ^U_GS = 0 and b′_U = 0 on the inflaton plane (else s = 1 log re-enters).
+4. [postulate P3] Concrete orbifold plane with those properties not yet found.
