@@ -2433,3 +2433,9 @@ Touches: none.
 3. [literature] 2030-era forecasts (D670; arXiv:2212.04115): best σ(α_s) = 0.0017 at 95% → 8.5e-4 at 1σ.
 4. [derived] Separation ≤ 0.33σ; the relation's own error reaches 1.0e-4 (3.4 % / 10.8 %, D1234/D1263), comparable to the low end of Δα_s. Rule: still killed. Reviving it needs σ(α_s) ≲ 1.4e-4 at 1σ (2σ separation at the best point) plus an exact (not leading-order) relation.
 
+## D1409: Janus running — testability (locked)
+1. [literature] 2030-era σ(α_s) forecasts (arXiv:2212.04115 via D670, 95% → 1σ by halving): SO 3.3e-3, S4+SPHEREx 1.2e-3, S4+CHIME+DESI+SPHEREx 9e-4, LiteBIRD+S4+CHIME+SPHEREx 8.5e-4. A 2025–26 search (arXiv:2506.15407) gave no newer numbers.
+2. [derived] Detection: the forced-negative running (−7.5e-4 … −1.14e-3, D1405) reaches at most 0.9–1.3σ against zero; a 3σ detection needs σ(α_s) = 2.5e-4 … 3.8e-4 (1σ). Not detectable by 2030.
+3. [derived] Exclusion: if ACT DR6's central +0.0062 held, S4+SPHEREx would exclude the family at 5.8–6.1σ, the best combination at 8.2–8.6σ (SO alone 2.1–2.2σ). Decisive by exclusion.
+4. [estimate] So the Janus family's near-term test is one-sided: the 2030s can kill it (positive running) but cannot confirm it (negative running too small).
+

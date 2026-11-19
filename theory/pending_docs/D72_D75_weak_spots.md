@@ -14806,3 +14806,12 @@ MAP: node=band_e_audited status=postulate touches=[] ripple=no
 - aegis-check: re-ran ρ = 1.718 and Δα_s = 2.0e-4 at the SERAPIS point, 0.33σ ratio and the 1.4e-4 requirement in python; checked: units, arithmetic, like-with-like (forecast σ at 95% halved to 1σ — stated), limits (ρ → 1 ⇒ Δα_s → 0), cross-sector: none.
 MAP: node=vac_discriminant status=killed touches=[janus] ripple=no
 
+## D1409 — JANUS tick 8: the forced-negative running can be KILLED by 2030s data but not confirmed — S4+SPHEREx would exclude the family at ~6σ if ACT's positive central value holds
+- Lock: field_tests/rules/PREREG_D1409_janus_testability.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1409/testability.py; result field_tests/results/D1409_janus_testability.json. Ladder flag addressed: janus recheck after D1408.
+- [literature] Forecasts on file (arXiv:2212.04115, D670), halved from 95% to 1σ (stated); newer search (arXiv:2506.15407) has no σ(α_s) numbers.
+- [computed] Detection of α_s = −7.5e-4 … −1.14e-3 vs zero: SO 0.2–0.3σ, S4+SPHEREx 0.6–1.0σ, best 0.9–1.3σ. 3σ needs σ₁ = 2.5–3.8e-4.
+- [computed] Exclusion if the true running were ACT's +0.0062: SO 2.1–2.2σ, S4+SPHEREx 5.8–6.1σ, S4+CHIME+DESI+SPHEREx 7.7–8.2σ, LiteBIRD combo 8.2–8.6σ.
+- Meaning: a falsifiable prediction with a clean failure mode. If 2030s data find α_s > 0 near today's ACT value, SERAPIS's plateau + ramp family is out; if they find α_s ≈ 0 ± 1e-3, the family survives untested.
+- aegis-check: re-ran exclusion (0.0062 + 7.5e-4)/1.2e-3 = 5.79σ, best detection 1.14e-3/8.5e-4 = 1.34σ, 3σ need 2.5e-4 in python; checked: units, arithmetic, like-with-like (forecasts are 95% CL, halved — Gaussian assumption stated), limits, cross-sector: none.
+MAP: node=janus status=computed touches=[band_i, band_e, band_e_audited] ripple=no
+
