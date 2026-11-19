@@ -15008,3 +15008,11 @@ MAP: node=janus status=computed touches=[] ripple=no
 - **tests_lhc** (via D1392 wino_window): D1392 synced the Q_panel/particle-card records to 1.25 TeV. tests_lhc's title ("Run 3 / HL-LHC disappearing tracks") carries no window number, and its HL-LHC ≈ 0.98 TeV reach (D1302) and the 52% share (D1350) are unchanged.
 - Ladder cleared for eps_tilt, bhk_tilt, string_meter, tests_lhc.
 MAP: none
+
+## D1433 — JANUS tick 29: the audited box's running passes both ACT combinations — P-ACT −1.26 … −1.28σ, P-ACT-LB −1.37 … −1.39σ; the mild tension is in the CMB spectra, not BAO
+- Lock: field_tests/rules/PREREG_D1433_box_running_act2.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1433/box_running_act2.py; result field_tests/results/D1433_box_running_act2.json.
+- [computed] pulls as above; PASS (|pull| < 2 for both).
+- Reading: n_s depends strongly on BAO (D1428) but the running does not (0.1σ shift) — the two observables carry different information; the running lean toward positive values comes from ACT's spectra themselves.
+- aegis-check: re-ran (−9.087e-4 − 0.0060)/0.0055 = −1.256σ in python; checked: units, arithmetic, like-with-like (same paper, both 68 %), limits, cross-sector: none.
+MAP: node=band_e_audited status=postulate touches=[] ripple=no
+

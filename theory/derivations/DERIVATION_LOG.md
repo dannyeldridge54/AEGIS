@@ -2562,3 +2562,7 @@ Touches: none.
 2. [derived] SERAPIS α_s −8.4e-4 … −1.06e-3: S4 0.32–0.42σ; Planck + DESI 0.37–0.46σ; Planck + SKA 0.90–1.14σ (closest). No combination with a number reaches 3σ; 3σ needs σ(α_s) = 2.8–3.5e-4.
 3. [estimate] Correction to D1430's reading: the abstract's "S4 + SKA-like could detect α_s = 1e-3" cannot mean ≫ 2σ given Planck + SKA ≈ 1σ here; a positive detection of SERAPIS's running stays beyond the surveys these tables cover (dark-ages 21 cm is the remaining route). D1409's exclude-not-confirm stands for the 2030s and likely beyond.
 
+## D1433: audited box running vs both ACT combinations (locked)
+1. [derived] A1-anchored box running −9.087e-4 … −1.0139e-3 (D1423) vs ACT DR6 (2503.14454 §4.1, 68 %): P-ACT (0.0060 ± 0.0055) pulls −1.26σ … −1.28σ; P-ACT-LB (0.0062 ± 0.0052) −1.37σ … −1.39σ. PASS for both.
+2. [derived] Adding lensing + BAO moves the pull by only ~0.1σ: the running tension (~1.3σ, data leaning positive) is a CMB-spectrum feature, not a BAO effect.
+
