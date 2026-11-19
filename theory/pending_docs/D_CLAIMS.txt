@@ -941,3 +941,4 @@ D1653  2026-11-19T22:57Z  JANUS genesis G9b: dark thread end point in the full t
 D1654  2026-11-19T23:01Z  JANUS genesis G6b: channel-by-channel inflaton decay shares + current N_eff data (ACT DR6, LBT 2026) for the minimal dark sector
 D1655  2026-11-19T23:04Z  JANUS genesis G9c: basin map of the dark thread end point (axion offsets 0.05-0.5) - i vs rho
 D1656  2026-11-19T23:04Z  untitled
+D1657  2026-11-19T23:14Z  JANUS genesis G6c: massive dark photon rescue for P-M - mass/mixing window from BBN, 3-gamma lifetime, ADM annihilation
