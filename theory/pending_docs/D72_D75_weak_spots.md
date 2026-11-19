@@ -15190,3 +15190,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] No status change warranted (D1458); band_i ε note to reconcile. Awaiting Danny: J1–J4, band_i_audited.
 - aegis-check: summary only — numbers read from D1456/D1457 result jsons this tick.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1460 — JANUS tick 56: band_i −2r-type formula — NOT ADOPTED
+- [derived] α_s = −2r(0.9003 − 13.70(n_s − 0.9725)): in-sample 1.71 %, out-of-sample up to 2.02 % (rule 0.1 %) — FAIL, as anticipated: κ = ½ running is not ∝ r (ratio α_s/(−2r) 0.853–0.951 over band_i).
+- [estimate] Use D640 (−0.3 %) or the derived τ = i model for band_i; a fit should start from D1405's κ = ½ form.
+- aegis-check: a, b, residuals from the result json; out-of-sample points not in the fit; checked: units, arithmetic, cross-sector: none.
+- MAP: node=band_i status=frozen touches=[] ripple=no

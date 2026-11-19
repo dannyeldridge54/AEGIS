@@ -2731,3 +2731,9 @@ Touches: none.
 2. [derived] band_e cross-check formula α_s = −2r[1.0373 − 0.947(n_s − 0.972)]: in-sample ≤ 0.021 %, out-of-sample A1 0.001 %, K4 0.010 %; its A1 value 1.0350 reproduces k = 1.0352 (D1457).
 3. [estimate] Status readiness: no Janus node status change warranted — further moves need SO-era n_s data; band_i ε-range note (D730 vs D1429) flagged for reconciliation (D1458).
 4. [estimate] Awaiting Danny: PC jobs J1–J4; band_i_audited.
+
+## D1460 — JANUS tick 56: band_i formula of D1457's form — NOT ADOPTED (in-sample 1.7 %, out-of-sample 2.0 %)
+1. [derived] Fit α_s/(−2r) = a + b(n_s − 0.9725) to the 9 derived τ = i points of D1453: a = 0.9003, b = −13.70; the ratio α_s/(−2r) spans 0.853–0.951 over band_i (vs ρ's ~1.03–1.04 in band_e).
+2. [derived] Max in-sample residual 1.71 %; out of sample (D1448's derived NA12 values) −2.02 … −0.83 %. Rule ≤ 0.1 %: NOT ADOPTED — as anticipated in the lock.
+3. [derived] Reading: at κ = ½ the running is not proportional to r (D1405: −½(1 − n_s)²ρ[1 + ½(ρ − 1)]), so a linear-in-n_s correction to −2r cannot follow band_i's wider r range; the ρ vacuum (κ = 1, α_s = −2r at leading order, D1399) is the special case where the r-proportional form works.
+4. [estimate] For band_i the D640 closed form (−0.3 %, D1412) or the derived model itself remain the meters; a band_i fit should start from D1405's κ = ½ form instead (tick 58 candidate).
