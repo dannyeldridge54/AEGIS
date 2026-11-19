@@ -1,0 +1,177 @@
+<title>The Weave</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: a single reading column crossed by woven bands (warp = vertical rules, weft = section bands) */
+:root{
+  --bg:#f7f6f9; --surface:#ffffff; --fg:#1d1b2b; --muted:#5b5872;
+  --indigo:#2f3f8f; --madder:#b23a3a; --saffron:#d99a1e; --line:#dcd9e6;
+  --chip:#eceaf4;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", "Noto Sans", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#13121c; --surface:#1c1b28; --fg:#ecebf4; --muted:#a9a6c0;
+  --indigo:#8d9cf0; --madder:#e47a72; --saffron:#f0bd55; --line:#33314a; --chip:#2a2840; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#13121c; --surface:#1c1b28; --fg:#ecebf4; --muted:#a9a6c0;
+  --indigo:#8d9cf0; --madder:#e47a72; --saffron:#f0bd55; --line:#33314a; --chip:#2a2840; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);margin:0}
+.wrap{max-width:900px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.band{height:14px;background:
+  repeating-linear-gradient(90deg,var(--indigo) 0 10px,transparent 10px 14px,var(--madder) 14px 24px,transparent 24px 28px,var(--saffron) 28px 38px,transparent 38px 42px),
+  var(--line)}
+header{padding-block:40px 24px;display:grid;gap:14px}
+.status{justify-self:start;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--madder);border:1px solid var(--madder);padding:3px 10px;border-radius:999px}
+h1{font-family:var(--display);font-size:clamp(40px,8vw,72px);line-height:1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.lede{font-size:clamp(18px,2.4vw,21px);color:var(--fg);max-width:62ch;margin:0}
+h2{font-family:var(--display);font-size:26px;margin:0;text-wrap:balance}
+section{display:grid;gap:14px;padding-block:28px;border-top:1px solid var(--line)}
+p{margin:0;max-width:66ch}
+.muted{color:var(--muted)}
+.eq{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--indigo);padding:14px 16px;overflow-x:auto;font:15px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.name{font-weight:600}
+.pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;background:var(--chip);color:var(--muted);white-space:nowrap}
+.pill.need{color:var(--madder)}
+.langs{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.lang{background:var(--surface);border:1px solid var(--line);padding:10px 12px;display:grid;gap:2px;min-width:0}
+.lang b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lang.open{border-style:dashed}
+.lang.open span{color:var(--madder);font-weight:500}
+.help{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--saffron);padding:18px;display:grid;gap:12px}
+.mail{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.mail code{font-size:17px;user-select:all;background:var(--chip);padding:6px 10px;border-radius:6px;word-break:break-all}
+button{font:600 14px var(--body);background:var(--indigo);color:var(--bg);border:0;border-radius:6px;padding:8px 14px;cursor:pointer}
+button:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}
+ol,ul{margin:0;padding-left:1.25em;display:grid;gap:6px;max-width:66ch}
+footer{padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:grid;gap:6px}
+</style>
+
+<div class="band" aria-hidden="true"></div>
+<div class="wrap">
+<header>
+  <span class="status">Draft · looking for helpers</span>
+  <h1>The Weave</h1>
+  <p class="lede">One thread, woven through every dimension, by every people. A physics idea about how the universe began, named with words from cultures around the world. We need your help to name it well.</p>
+</header>
+
+<section>
+  <h2>What it is</h2>
+  <p>The Weave is a proposal about cosmic inflation, the burst of expansion at the very start of the universe. It treats the strength of string interactions as a single thread that runs through every dimension of string theory. The energy that drove inflation comes from how fast the smallest possible black holes change size along that thread. The idea predicts two numbers that telescopes measure: the tilt of the early fluctuations (n<sub>s</sub> ≈ 0.971) and the strength of primordial gravitational waves (r ≈ 0.0005, or 0.001 if the universe passed through a six-dimensional phase).</p>
+  <div class="eq" role="img" aria-label="The SERAPIS-Lambda equation">SERAPIS-Λ:   V = V∞ · ( ⅔ · y ∂ᵧ ln E(τ, 3/2) )² · [ 1 + C · ( E(τ, 3/2) − E(ρ, 3/2) ) ]
+             E = 2ζ(3) y^(3/2) + 4ζ(2) y^(−1/2) + …,   ρ = e^(iπ/3)</div>
+  <p class="muted">This is a draft by an independent researcher. It has not been peer reviewed. One step is assumed rather than derived, and the draft paper says so.</p>
+</section>
+
+<section>
+  <h2>The parts and their names</h2>
+  <p>Each working part carries a name from a different tradition, chosen for what that figure means. Every name below is waiting for review by people from that tradition. If a name is wrong or inappropriate, we will change it.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Part of the theory</th><th>Name</th><th>Tradition</th><th>Why</th><th>Review</th></tr></thead>
+    <tbody>
+      <tr><td>The whole equation</td><td class="name">SERAPIS-Λ</td><td>Greco-Egyptian</td><td>The model line's existing name</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>The founding rule</td><td class="name">Zhinü, the Weaver Girl</td><td>China</td><td>She weaves the clouds and stars</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>The plateau (steady energy)</td><td class="name">Amaterasu</td><td>Japan</td><td>The sun whose steady light fills the world</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>The tilt</td><td class="name">Ushas</td><td>India (Vedic)</td><td>Dawn, who brings the light up</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>Where inflation ends</td><td class="name">Janus</td><td>Rome</td><td>Two faces at a doorway</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>Paired equations</td><td class="name">Hunahpu and Xbalanque</td><td>Maya</td><td>The Hero Twins, who rise as sun and moon</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>The code at each level</td><td class="name">Nabu</td><td>Mesopotamia</td><td>The scribe god, keeper of writing</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>The twin ladders</td><td class="name">Mawu–Lisa</td><td>Fon (Benin)</td><td>The twin creators of moon and sun</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>The four-dimensional balance</td><td class="name">Ma'at</td><td>Egypt</td><td>Balance, the feather on the scale</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>The six-dimensional crossroads</td><td class="name">Èṣù (Eshu-Elegba)</td><td>Yoruba</td><td>Guardian of the crossroads</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>What telescopes read</td><td class="name">Mithra</td><td>Persia</td><td>The watcher with a thousand eyes</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>The thread's history</td><td class="name">The Norns</td><td>Norse</td><td>They spin, measure and cut the threads of fate</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>Three dimensions (E₈)</td><td class="name">Inti</td><td>Inca</td><td>The golden sun</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>Two dimensions (E₉)</td><td class="name">Quetzalcoatl</td><td>Aztec</td><td>The feathered serpent, coiled through sky and earth</td><td><span class="pill need">needed</span></td></tr>
+      <tr><td>One dimension (E₁₀)</td><td class="name">Te Kore</td><td>Māori</td><td>The void before creation</td><td><span class="pill need">needed</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>The weave words</h2>
+  <p>The structure of the theory is described in textile words, each tied to a weaving tradition whose technique matches what that part does.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Word</th><th>Tradition</th><th>What it means here</th></tr></thead>
+    <tbody>
+      <tr><td class="name">Thread</td><td>China: silk and the Silk Road</td><td>The single thread that links every dimension</td></tr>
+      <tr><td class="name">Twist</td><td>India: the charkha spinning wheel</td><td>The thread's direction turning as it passes down the dimensions</td></tr>
+      <tr><td class="name">Loom</td><td>Ghana: kente strip weaving</td><td>Each dimension a strip, sewn into one universe</td></tr>
+      <tr><td class="name">Warp and weft</td><td>Persia: the knotted carpet</td><td>Two crossing families of string theories</td></tr>
+      <tr><td class="name">Knot</td><td>Andes: khipu, knotted cords that record numbers</td><td>The levels whose numbers we read in the sky</td></tr>
+      <tr><td class="name">Stitch</td><td>Japan: sashiko</td><td>The smallest black holes, holding the weave together</td></tr>
+      <tr><td class="name">Pattern</td><td>Indonesia and Central Asia: ikat</td><td>Set in the thread before the cloth is finished, as the early-universe numbers were</td></tr>
+      <tr><td class="name">Helix</td><td>Celtic knotwork</td><td>Paired equations, mirrored without end</td></tr>
+      <tr><td class="name">Selvedge</td><td>Polynesia: tapa cloth</td><td>The finished edge, where inflation ends</td></tr>
+      <tr><td class="name">Rung</td><td>Maya and Andes: the backstrap loom</td><td>The same step repeated at every level</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>The one line, in many languages</h2>
+  <p>“One thread, woven through every dimension, by every people.” These are drafts. Native speakers, please correct them, and add your language.</p>
+  <div class="langs">
+    <div class="lang"><b>Spanish</b><span lang="es">Un solo hilo, tejido a través de todas las dimensiones, por todos los pueblos.</span></div>
+    <div class="lang"><b>French</b><span lang="fr">Un seul fil, tissé à travers toutes les dimensions, par tous les peuples.</span></div>
+    <div class="lang"><b>Portuguese</b><span lang="pt">Um só fio, tecido através de todas as dimensões, por todos os povos.</span></div>
+    <div class="lang"><b>Mandarin</b><span lang="zh">一根丝线，穿过所有维度，由所有民族共同编织。</span></div>
+    <div class="lang"><b>Japanese</b><span lang="ja">一本の糸を、すべての次元に、すべての人々の手で織りなす。</span></div>
+    <div class="lang"><b>Hindi</b><span lang="hi">एक ही धागा, हर आयाम में बुना हुआ, सभी लोगों के हाथों से।</span></div>
+    <div class="lang"><b>Arabic</b><span lang="ar" dir="rtl">خيطٌ واحد، منسوجٌ عبر كل الأبعاد، بأيدي كل الشعوب.</span></div>
+    <div class="lang"><b>Swahili</b><span lang="sw">Uzi mmoja, uliofumwa kupitia vipimo vyote, na watu wote.</span></div>
+    <div class="lang open"><b>Yoruba</b><span>Help wanted</span></div>
+    <div class="lang open"><b>Te reo Māori</b><span>Help wanted</span></div>
+    <div class="lang open"><b>Quechua</b><span>Help wanted</span></div>
+    <div class="lang open"><b>Nahuatl</b><span>Help wanted</span></div>
+    <div class="lang open"><b>K'iche' (Maya)</b><span>Help wanted</span></div>
+    <div class="lang open"><b>Persian</b><span>Help wanted</span></div>
+    <div class="lang open"><b>Fon</b><span>Help wanted</span></div>
+    <div class="lang open"><b>Twi</b><span>Help wanted</span></div>
+    <div class="lang open"><b>Old Norse / Icelandic</b><span>Help wanted</span></div>
+    <div class="lang open"><b>Your language</b><span>Help wanted</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="help">
+    <h2>Help us weave it</h2>
+    <p>We welcome anyone who speaks these languages or belongs to these traditions. Please write to us with any of these:</p>
+    <ul>
+      <li>a translation of the one line into your language, with how to say it;</li>
+      <li>whether a name from your tradition is suitable, and a better one if it is not;</li>
+      <li>a name from a tradition that is not here yet, for a part of the theory;</li>
+      <li>how you would like to be credited.</li>
+    </ul>
+    <div class="mail"><code id="addr">dannyeldridge54@gmail.com</code><button type="button" id="copy">Copy address</button><span id="copied" class="muted" aria-live="polite"></span></div>
+    <p class="muted">Not yet represented, and warmly invited: First Nations of North America, Aboriginal and Torres Strait Islander peoples, Arctic peoples, the Sámi, the Caribbean, the Horn of Africa, the Caucasus, Southeast Asia, and every other people. New names will be chosen together with people from those communities, not for them.</p>
+  </div>
+</section>
+
+<section>
+  <h2>How the names are used</h2>
+  <ol>
+    <li>Each name honours its tradition and labels a real part with a real meaning. None is used as a joke, product or logo.</li>
+    <li>Names from living traditions are reviewed by people from those traditions before final use, and changed if they ask.</li>
+    <li>Every name will carry its culture, an origin note and a pronunciation guide, written with the people who gave them.</li>
+    <li>The physics stays neutral. The equations and numbers are the same for everyone, and anyone can check them.</li>
+  </ol>
+</section>
+
+<footer>
+  <span>Draft, 19 November 2026 · Danny Eldridge, independent researcher, Oklahoma City · not peer reviewed · names pending review</span>
+</footer>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var a=document.getElementById('addr').textContent, s=document.getElementById('copied');
+  try{navigator.clipboard.writeText(a).then(function(){s.textContent='Copied';},function(){sel();});}catch(e){sel();}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('addr'));var w=getSelection();w.removeAllRanges();w.addRange(r);s.textContent='Selected. Press Ctrl+C or Cmd+C to copy.';}
+});
+</script>
