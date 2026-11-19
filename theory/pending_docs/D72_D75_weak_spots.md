@@ -15125,3 +15125,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] D1446's +0.7 % was the missing "+1"; residual now random-sign ±0.03 % (reference estimator noise). Both vacua's α_s now derived (ρ ≤ 0.14 %, τ = i ≤ 0.031 %); D640 kept as closed-form cross-check.
 - aegis-check: errors recomputed from the result json (α/α_exact − 1) in python; implementation check ε ≤ 0.05 %; like-with-like: same NA12 rows as D1412/D1446, estimator caveat stated; limits: first-order path +5.2–5.4 % as expected for SR order; checked: units, arithmetic, cross-sector: none.
 - MAP: node=band_i status=frozen touches=[] ripple=no
+
+## D1449 — JANUS tick 45: vac_discriminant with both derived models — stays killed
+- [derived] 3×3 grid (9/9 converged): Δα_s(ρ − τ = i) = −1.05 … −1.62e-4 ⇒ ≤ 0.049σ (SO 3.3e-3), ≤ 0.19σ (hypothetical best 8.5e-4). Rule ≥ 3σ: not met.
+- [derived] Models resolve the vacua from each other (|Δα_s| ≥ 75× model accuracy); data cannot — 3σ needs σ(α_s) ≈ 5e-5.
+- aegis-check: re-ran 1.6165e-4/3.3e-3 = 0.049, /8.5e-4 = 0.19, 3σ need = 1.6e-4/3 ≈ 5.4e-5 in python; like-with-like: same (n_s, r) for both models at every grid point; σ(α_s) 1σ from D1409 (halved 95 %), S4 rows hypothetical (D1440); checked: units, arithmetic, cross-sector: none.
+- MAP: node=vac_discriminant status=killed touches=[] ripple=no
