@@ -220,13 +220,26 @@
     "D1551",
     "D1552",
     "D1553",
-    "D1554"
+    "D1554",
+    "D1556",
+    "D1557",
+    "D1558",
+    "D1559",
+    "D1560",
+    "D1561",
+    "D1562",
+    "D1563",
+    "D1564",
+    "D1565",
+    "D1565a",
+    "D1566",
+    "D1567"
    ],
    "note": "Casimir/tension, species and Epstein-Kähler routes all closed",
    "history": [
-    "D1552: postulate",
-    "D1553: postulate",
-    "D1554: postulate"
+    "D1565a: postulate",
+    "D1566: postulate",
+    "D1567: postulate"
    ]
   },
   {
