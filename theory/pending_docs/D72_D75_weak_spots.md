@@ -15397,3 +15397,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] DILMIX (0.25, 1.25e-6) exact n_s 0.97198, r 4.561e-4 (in band) vs D1485 forecast Δn_s −3.7e-6, Δr/r −0.012 %; LVSDIL k 0.15/0.3 vs D1488 Δn_s ≤ 5.3e-6, Δr/r −0.04 %. All AGREE.
 - aegis-check: numbers read from field_tests/results/DILMIX/a0.25_C1.25e-06.json, LVSDIL/k0.15.json, k0.3.json and our D1485/D1488 jsons; differences re-run in python; forecasts were locked and pushed before the exact rows existed (fe070cc, 43b868e) ✓; cross-sector: none.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1492 — help set 2: DILMIX strip running — α_s −7.3…−8.1e-4, β_s ≈ −2.7e-5; same as SERAPIS-E to ≤ 0.08σ_SO
+- [derived] 7 strip points: α_s −7.32e-4 … −8.08e-4, β_s −2.70e-5 … −2.77e-5; exact-MS α_s at (0.25, 1.25e-6) reproduced to 1e-5 relative.
+- [estimate] Gap to SERAPIS-E α_s ≤ 0.08σ (SO) — not a discriminator.
+- aegis-check: numbers from field_tests/results/D1492_strip_running.json; (−7.6853e-4 + 9.9796e-4)/3.3e-3 = 0.070 ✓; exact α_s from field_tests/results/DILMIX/a0.25_C1.25e-06.json; β_s uses the same LO formula and ε conventions as D1466 (Hubble-flow from the V-flow conversion of D1442) ✓; cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

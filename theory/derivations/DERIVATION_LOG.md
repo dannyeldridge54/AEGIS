@@ -2908,3 +2908,8 @@ Touches: none.
 1. [derived] DILMIX α 0.25, C 1.25e-6 (P3 PC exact MS, 83130fc): n_s 0.971975, r 4.5614e-4, in band. Our D1485 forecast (locked fe070cc before its run): 0.971971, 4.5608e-4 ⇒ Δn_s −3.7e-6, Δr/r −0.012 % — AGREE; the first P3-route point in band is now confirmed at exact level.
 2. [derived] LVSDIL k 0.15: exact n_s 0.952097, r 2.5708e-5, y* 41.064 vs D1488 0.952091, 2.5698e-5, 41.064 (Δn_s −5.3e-6, Δr/r −0.04 %); k 0.3: 0.952419 / 2.3771e-5 vs 0.952414 / 2.3762e-5 (Δn_s −4.8e-6, Δr/r −0.04 %) — AGREE; LVS integration over-flattens as forecast.
 3. [estimate] Track record of the fast SR forecasts against the P3 chat's exact runs (D1481–D1493): 11 points, |Δn_s| ≤ 5.3e-6 and |Δr/r| ≤ 0.04 % in every case — the forecasts can be trusted to ~1e-5 in n_s for these plateau families.
+
+## D1492 — help set 2: running across the DILMIX in-band strip vs SERAPIS-E — α_s −7.3…−8.1e-4, β_s −2.70…−2.77e-5; indistinguishable from SERAPIS-E by running (≤ 0.08σ_SO)
+1. [derived] Seven in-band strip points (D1485 model, re-solved): α_s from −7.32e-4 (α 0.375, C 1e-6) to −8.08e-4 (0.375, 2e-6); β_s (D1466 LO formula, Hubble-flow ε₁–ε₄) −2.699e-5 … −2.769e-5. Best point (0.375, 1.5e-6): α_s −7.685e-4, β_s −2.723e-5.
+2. [derived] Check vs the P3 chat's exact MS at (0.25, 1.25e-6): α_s −7.4579e-4 (exact) vs −7.4580e-4 (ours) — agreement 1e-5 relative.
+3. [estimate] vs SERAPIS-E: ρ A1 α_s −9.98e-4, τ = i −8.54e-4 → the strip's running is 0.06–0.08 σ_SO (σ = 3.3e-3) from ρ and 0.01–0.04 σ_SO from τ = i; β_s within 5–14 % of both (−2.86e-5, −3.13e-5). Running cannot separate DILMIX from SERAPIS-E with any funded survey; n_s and r (set 7) are the only handles.
