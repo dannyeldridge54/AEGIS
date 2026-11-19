@@ -708,3 +708,4 @@ D1421  2026-11-19T04:01Z  JANUS tick 18: band_e A1-anchored running estimate vs 
 D1422  2026-11-19T04:06Z  JANUS tick 19: why D1420's spectra_fast alpha_s is suspect - common-start BD phase (code reading)
 D1423  2026-11-19T04:10Z  JANUS tick 20: band_e_audited A1-anchored running vs D1262 computed alpha_s, ACT
 D1424  2026-11-19T04:16Z  JANUS tick 21: summary of D1399-D1423 (Janus relation night)
+D1425  2026-11-19T04:20Z  JANUS tick 22: vac_discriminant with both sub-percent meters vs 2030 forecasts
