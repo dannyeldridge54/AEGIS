@@ -2313,3 +2313,9 @@ Touches: none.
 1. [literature] hep-th/9608034 (A.6, A.13–A.15): K = −log(Im S + (Δ_GS + Y)/16π²), Δ_GS = Σδ(log Im T + log Im U), δ_GS = 0 in N=2; Im S = 1/g²; Y > 0.
 2. [derived] ε = 90/(16π⁵T₂) confirmed; correction: Δ_GS has no η (log U₂ only).
 3. [postulate P3] Model, control and uplift still open.
+
+## D1384: Z₄ host with SL(2,Z) U-plane
+1. [literature] hep-th/9303017: Z₄ (SU(4)²) threshold symmetry Γ⁰(2)_T × Γ_U; Z₆, Z₈ U-planes are congruence subgroups.
+2. [derived] Only U must be SL(2,Z) for P3: Z₄ qualifies.
+3. [estimate] E(U,2)/T₂ term survives with a Z₄-specific normalisation (unchecked).
+4. [postulate P3] Condensing factor with b′_U = kδ^U_GS in Z₄ not yet identified.
