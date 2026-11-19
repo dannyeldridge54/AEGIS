@@ -35,3 +35,15 @@ lattice directions (26 = 10 + 16; Narain O(16 + d, d)). At each stage the map re
 - Engine F (locked PREREG_DIM2_8D), untilted: A = 0: no inflation into ρ (approach from above; INVALID); A = 10: hilltop on the bump (n_s 0.78 — INVALID as a plateau model); A = 30: n_s 0.9526, r 5.7e-4 (field near the shallow overshoot — marginal); A = 100: n_s 0.9597, r 1.36e-3 (k ≈ 1, α-attractor-like).
 - Verdict: the 8D shape modulus U gives the s = 1 lens — a log-type plateau (k ≈ 1) that either overshoots (small A) or gives r ≈ 1.4e-3 (large A): OFF the k = 2 rung. At 8D the inflation rung must stay in the SL(3) block (which contains the 10D τ direction); the new T² shape coordinate is not an inflaton. (The 8D E₂(U) of the D⁴R⁴ coefficient is the ratio-strand partner of rung 1 — D1552 — but it sits in D⁴R⁴, not R⁴.)
 - Next stage: D = 7 (SL(5)/SO(5), codon E^{SL(5)}_{[1000];3/2}).
+
+## Working vocabulary (Danny 11:03 — plain-language names; physics meaning in brackets)
+- **Lens** — one dimensional level's view of the theory [the compactification level D = 10 − n and its duality group].
+- **Codon** — the number-code a lens hands down [that level's R⁴ (and D⁴R⁴, D⁶R⁴ …) coefficient: E(τ,3/2), E⁽⁹⁾, E⁽⁸⁾ …].
+- **Strand** — one way of reading a codon [gradient strand: |∇ ln Λ|²; ratio strand: e/(e+1)].
+- **Rung** — a matched pair across the two strands [s ↔ 2s − 1; rung 1 = E_{3/2} ↔ E₂ is the inflation rung].
+- **Mirror** — the built-in reflection inside each codon [Eisenstein functional equation s ↔ 1 − s; the plateau = ratio of the mirror pair y^{1−s}/y^{s}].
+- **Fold** — the step where the theory changes lens [decompactification/compactification: a new coordinate opens and the codon changes form].
+- **Warp** — how a fold bends the plateau [shift of the approach exponent k, e.g. 9D circle bends k = 2 → 3/2].
+- **Stitch** — the smallest black hole the lens can describe; where the lens is sewn onto quantum gravity [the species scale Λ_sp: the minimal black-hole size is 1/Λ_sp (Dvali; van de Heisteeg–Vafa–Wiesner–Wu); our plateau is the gradient of ln Λ_sp]. (The "black holes stitch the dimensions" picture: as a fold opens a dimension, the stitch scale moves — that motion IS the plateau.)
+- **Anchor** — where everything comes to rest [the desert point ρ: Λ_sp maximal, V = 0 (Montgomery: hexagonal lattice)].
+- **Tilt thread** — the small extra pull that sets n_s [the α'³ (BBHL) dependence of the volume prefactor, ∝ E_{3/2}, D1566].
