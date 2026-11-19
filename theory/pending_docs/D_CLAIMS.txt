@@ -652,3 +652,4 @@ D1365  2026-11-19T00:16Z  P3 escape: universal threshold Y(T,U) carries E(U,2)/T
 D1366  2026-11-19T00:17Z  P3: general-U unfolding gives (90/pi^3)E(U,2)/T2 in Y
 D1367  2026-11-19T00:19Z  P3: b-hat=0 candidate - E7 with 3x56 in heterotic K3xT2 (10,14) instantons
 D1368  2026-11-19T00:20Z  P3: condensate sign puts the minimum at rho; leading shape is exp(cE), not the plateau ratio
+D1369  2026-11-19T00:21Z  P3: which structure gives the -a/E(U,2) term (D699 form); sign check of 3 candidates
