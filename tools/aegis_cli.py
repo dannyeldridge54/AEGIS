@@ -11,6 +11,7 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   cern future                       HL-LHC / HE-LHC / FCC-hh wino reach
   lattice <command> [args]          Lattice Lab (e.g. lattice hexagons E8, lattice energy E6 1.25)
   string kk|stable [D=..] [gamma=..] [fd]  10D/6D string vacua: scalar KK masses (10D critical, D1214), stability (D1140)
+  string modint [T=2i] [U=i]                 DKL threshold over F: numeric vs closed form (string-calc S5a)
   janus "<V(phi)>" [N*]             inflation observables n_s, r, alpha_s for any potential, e.g. janus "0.5*phi**2" 60
   hyperion bbn <omega_b h^2> [dNeff]   primordial helium Y_p and D/H (PRIMAT 2021 tables; needs camb)
   hyperion orbit <ra> <dec> <dist_pc> <pmra> <pmdec> <rv> [McMillan17|MWPotential2014]
@@ -264,6 +265,11 @@ def string(args):
         r = scalar_condition(vacuum(int(kv.get('D', 6)), sp.nsimplify(kv.get('gamma', '2'))))
         print(f"{int(kv.get('D', 6))}D vacuum, γ = {kv.get('gamma', '2')}: scalar condition min {r['min']:.6f} vs threshold {r['threshold']} → {'STABLE' if r['stable'] else 'UNSTABLE'}")
         return
+    if sub == 'modint':
+        from tools.serapis_calc.modint import dkl, dkl_closed
+        T = complex(kv.get('T', '2j').replace('i', 'j')); U = complex(kv.get('U', '1j').replace('i', 'j'))
+        n, c = dkl(T, U, n1q=24, n2q=80), dkl_closed(T, U)
+        print(f"DKL threshold at T = {T}, U = {U}: numeric {n:.8f}, closed form {c:.8f}, |diff| {abs(n - c):.1e}"); return
     if sub != 'kk': print(string.__doc__); return
     from tools.kaluza.scalar import kk_scalar
     r = kk_scalar(int(kv.get('D', 10)), float(kv.get('gamma', 1.5)), method='fd' if 'fd' in args else 'pruefer')

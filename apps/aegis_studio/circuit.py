@@ -141,6 +141,7 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     W['P3_noscale'] = (_Kp**2/4)/(_Kpp/4) - 3; W['P3_noscale_formula'] = _u**2/(2*_u + 3)
     _s0, _ep, _b = 2.0, 0.01, 1.0; _A = _s0 + _ep*W['P3_Erho']; _E = 40.0; _x = _ep/_A*(_E - W['P3_Erho'])
     W['P3_plateau_lhs'] = _b/_A - _b/(_s0 + _ep*_E); W['P3_plateau_rhs'] = _b/_A*_x/(1 + _x)
+    mi = get('modular_integral', {'T': [0, 2], 'U': [0, 1]}); W['P3_dkl_num'], W['P3_dkl_closed'] = mi.get('dkl_numeric'), mi.get('dkl_closed')
     W['P3_U2star'] = math.sqrt(460/(2*math.pi**4/90)); W['P3_T2min'] = W['P3_U2star'] + math.log(1e3)/(2*math.pi)
     # CM layer (2026-11-19 01:30 UTC; laws and tolerances fixed BEFORE the first run; pure math via mpmath, no tool calls)
     try:
@@ -275,6 +276,7 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     law('law', 'P3', ('P3_E7',), 'b̂ = 0 E7: 3 × 56 at instanton number 10 → b̂ = 2(3·6 − 18) = 0', 2*(3*6 - 18) == 0 and 10//2 - 2 == 3, 'F₂ tuned locus (D1367, D1382)')
     law('law', 'P3', ('P3_K', 'P3_plateau'), 'no-scale + BHK δK: V/(e^K|W₀|²) = u²/(2u+3) (no plateau, D1370)', abs(W['P3_noscale'] - W['P3_noscale_formula']) < 1e-12, f"u = 0.7: {W['P3_noscale']:.6f} vs {W['P3_noscale_formula']:.6f}")
     law('law', 'P3', ('P3_K', 'P3_plateau'), 'algebra: b/A − b/(s₀+εE) = (b/A)·x/(1+x) (D1371, D1375; mechanism killed at the SERAPIS point, D1397–D1398)', abs(W['P3_plateau_lhs'] - W['P3_plateau_rhs']) < 1e-12, f"{W['P3_plateau_lhs']:.10f} = {W['P3_plateau_rhs']:.10f}")
+    law('law', 'P3', ('P3_Y', 'P3_kappa'), 'string-calc S5a: DKL threshold ∫_F (d²τ/τ₂)(Γ₂,₂ − 1) numeric = closed form (2e-4)', W.get('P3_dkl_num') is not None and abs(W['P3_dkl_num'] - W['P3_dkl_closed']) < 2e-4, f"{W.get('P3_dkl_num')} vs {W.get('P3_dkl_closed')} at T = 2i, U = i")
     law('report', 'P3', ('P3_chamber',), 'chamber: needs T₂ > U₂* + ln(10³)/2π (D1377)', True, f"U₂* = {W['P3_U2star']:.2f} → T₂ ≳ {W['P3_T2min']:.1f}; one-loop ≈ tree there (D1378)")
     law('report', 'P3', ('P3_shift',), 'shifted lattices: no interior minimum; mixed c = 1 gives the hexagon of U/2 (D1380–D1381)', True, 'control vs SL(2,Z) dilemma')
     # D1364/D1397/D1398 locked results (constants from the result files; reports, not live recomputations — each run takes ~15–40 min)

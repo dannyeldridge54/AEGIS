@@ -27,7 +27,7 @@ jobs:
             --hidden-import tools.lhc.xsec --hidden-import tools.lhc.lifetime --hidden-import tools.lhc.recast_dt --hidden-import tools.lhc.stats \
             --hidden-import tools.lhc.theory_band --hidden-import tools.lhc.kinematics --hidden-import tools.lhc.future --hidden-import tools.lhc.higgsino \
             --hidden-import tools.lattice.lattice_lab --hidden-import tools.kaluza.scalar --hidden-import tools.kaluza.stability --hidden-import tools.janus_calc.core --hidden-import tools.janus_calc.anyV \
-            --hidden-import tools.chem.wavelength --hidden-import tools.power.circuits --hidden-import tools.sound.engine --hidden-import tools.serapis_calc.emulator --hidden-import tools.serapis_calc.meter --hidden-import tools.serapis_calc.modular --hidden-import tools.serapis_calc.eisenstein --hidden-import tools.serapis_calc.selftest --hidden-import tools.janus_lt.background --hidden-import tools.janus_lt.desi --hidden-import tools.janus_lt.growth --hidden-import tools.janus_astro.galaxy --hidden-import tools.janus_astro.fast --hidden-import tools.janus_astro.mapper_feed --hidden-import tools.janus_astro.mapper_orbits --hidden-import tools.janus_astro.const --hidden-import tools.janus_astro.jfactor --collect-all galpy --collect-all camb --hidden-import tools.janus_astro.bbn --paths tools/aion --hidden-import aion.cli --hidden-import aion.core \
+            --hidden-import tools.chem.wavelength --hidden-import tools.power.circuits --hidden-import tools.sound.engine --hidden-import tools.serapis_calc.emulator --hidden-import tools.serapis_calc.meter --hidden-import tools.serapis_calc.modular --hidden-import tools.serapis_calc.eisenstein --hidden-import tools.serapis_calc.selftest --hidden-import tools.serapis_calc.modint --hidden-import tools.serapis_calc.shapes --hidden-import tools.janus_lt.background --hidden-import tools.janus_lt.desi --hidden-import tools.janus_lt.growth --hidden-import tools.janus_astro.galaxy --hidden-import tools.janus_astro.fast --hidden-import tools.janus_astro.mapper_feed --hidden-import tools.janus_astro.mapper_orbits --hidden-import tools.janus_astro.const --hidden-import tools.janus_astro.jfactor --collect-all galpy --collect-all camb --hidden-import tools.janus_astro.bbn --paths tools/aion --hidden-import aion.cli --hidden-import aion.core \
             --paths tools/scorecard --hidden-import inflation_scorecard.cli --hidden-import inflation_scorecard.core --hidden-import inflation_scorecard.janus --add-data "tools/scorecard/inflation_scorecard/data${SEP}inflation_scorecard/data" \
             tools/aegis_cli.py
       - name: Self-test the executable
@@ -45,6 +45,7 @@ jobs:
           ./dist/aegis-${RUNNER_OS}* aion --help
           ./dist/aegis-${RUNNER_OS}* tracker --out trk && ls trk
           ./dist/aegis-${RUNNER_OS}* string kk
+          ./dist/aegis-${RUNNER_OS}* string modint
           ./dist/aegis-${RUNNER_OS}* string stable
       - uses: actions/upload-artifact@v4
         with:

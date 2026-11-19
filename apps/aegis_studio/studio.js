@@ -240,7 +240,23 @@ window.feed = feed;
     const k = knobs[ix[res.node]]; if (res.ok !== null && k && k.userData.ring) k.userData.ring.material.color.copy(res.ok ? GOOD : BAD);
     select(res.node); sendWave(res.ok === false ? -1 : 1);
   };
-  window.weaveDone = () => { bd.setAttribute('aria-checked', 'false'); bd.textContent = 'Derive weave: off'; bd.classList.remove('on'); };
+  // Endless weave (Danny 2026-11-18 "click button for endless weave derivation, space it for full passes"): each full pass runs
+  // to completion (weaveDone), then a 60 s gap, then the next pass. Off stops after the current pass; nothing is cut mid-pass.
+  const be = document.getElementById('bendless'), GAP_S = 60; let endless = false, passN = 0, gapTimer = null;
+  const order = () => { const lanes = ['theory', 'centre', 'left', 'right', 'lhc', 'janus', 'strings', 'lattice', 'wiring'];
+    return WEB.nodes.slice().sort((a, b) => lanes.indexOf(a.lane) - lanes.indexOf(b.lane)).map(n => n.id); };
+  const startPass = async () => { if (!endless || !api()) return; passN++;
+    bd.setAttribute('aria-checked', 'true'); bd.textContent = 'Derive weave: ON'; bd.classList.add('on');
+    be.textContent = `Endless weave: pass ${passN}`; feed({kind: 'calc', title: `Endless weave · pass ${passN}`, text: 'full pass started'});
+    try { await api().derive_weave(true, order()); } catch (e) { feed({kind: 'calc', title: 'Endless weave error', text: String(e)}); window.weaveDone(); } };
+  window.weaveDone = () => { bd.setAttribute('aria-checked', 'false'); bd.textContent = 'Derive weave: off'; bd.classList.remove('on');
+    if (!endless) return; let left = GAP_S; be.textContent = `Endless weave: next in ${left} s`;
+    clearInterval(gapTimer); gapTimer = setInterval(() => { left--; if (!endless) { clearInterval(gapTimer); return; }
+      if (left <= 0) { clearInterval(gapTimer); startPass(); } else be.textContent = `Endless weave: pass ${passN} done · next in ${left} s`; }, 1000); };
+  be.onclick = () => { if (!api()) { feed({kind: 'calc', title: 'Endless weave', text: 'the live engine runs only in the desktop app'}); return; }
+    endless = !endless; be.setAttribute('aria-checked', String(endless)); be.classList.toggle('on', endless);
+    if (endless) { passN = 0; if (bd.getAttribute('aria-checked') === 'true') be.textContent = 'Endless weave: after this pass'; else startPass(); }
+    else { clearInterval(gapTimer); be.textContent = 'Endless weave: off (finishing current pass)'; setTimeout(() => { if (!endless) be.textContent = 'Endless weave: off'; }, 4000); } };
   bt.onclick = async () => {
     if (!sel) return; if (!api()) { feed({kind: 'calc', title: 'Test node', text: 'the live engine runs only in the desktop app'}); return; }
     bt.disabled = true; feed({kind: 'calc', title: `Testing ${sel}`, text: 'running its toolkit check…'});

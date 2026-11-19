@@ -296,6 +296,7 @@ NODE_TESTS.update({
     # new tool kaluza_scalar (Danny 17:17 "add new tool"): 10D string vacuum + scalar KK tower
     'S_10d': ('kaluza_scalar', {'D': 10, 'gamma': 1.5}, _is('kind', 'critical', '10D vacuum branch')),
     'S_kk10': ('kaluza_scalar', {'D': 10, 'gamma': 1.5}, lambda r: (abs((r.get('m2') or [0])[0]/2.9795596 - 1) < 1e-5, f"10D scalar KK m²₁ = {(r.get('m2') or [None])[0]} (D1214: 2.9795596)")),
+    'P3_Y': ('modular_integral', {'T': [0, 2], 'U': [0, 1]}, lambda r: ((r.get('diff') or 1) < 2e-4, f"DKL threshold numeric {r.get('dkl_numeric')} vs closed {r.get('dkl_closed')} (string-calc S5a)")),
     'S_btr': ('kaluza_scalar', {'D': 10, 'gamma': 1.5}, lambda r: (abs((r.get('mL_over_pi') or [0])[0]/0.97 - 1) < 0.03, f"m L/π = {(r.get('mL_over_pi') or [None])[0]} vs BTR 0.97 (open −4% gap, D1141)")),
 })
 
