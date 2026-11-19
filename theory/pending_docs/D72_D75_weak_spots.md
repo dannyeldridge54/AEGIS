@@ -16203,3 +16203,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] Any invariant term is stationary at i (S symmetry); a generic, CP-violating minimum near i needs the competing term to destabilise i while ρ is NOT lower, i.e. a term with structure beyond y^{1/2}|η|² (the next locked candidates: the opposite sign, E(τ,2), and the j-function combinations used in the modulus-stabilisation literature, e.g. arXiv:2101.08718).
 - Status: the small-offset question stays open; one candidate closed.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1613 — LOOP tick 1 (Danny 14:37 "start a loop and solve the equation"; target: the small departure from i): the Standard-Model matter loop cannot supply it — the offset x ~ V_CW/V_f needs the flavour modulus's own potential at V_f^{1/4} ~ 90–150 GeV, i.e. a modulus of mass ~3–10 × 10⁻⁶ eV with Yukawa-strength couplings to matter (range ~20–60 m), which fifth-force tests exclude [estimate]
+- [estimate] V_CW ~ m_t⁴/(16π²) = 5.7e6 GeV⁴ ((49 GeV)⁴). Required V_f = V_CW/x: x = 0.01, 0.03, 0.1 ⇒ V_f^{1/4} = 154, 117, 87 GeV ⇒ m_mod ~ √V_f/M_P = 9.8, 5.6, 3.1 × 10⁻⁶ eV (O(1) Planck-unit curvature assumed).
+- [derived] A modulus whose vacuum value sets the Yukawas couples to matter with dm/dτ ~ m (gravitational strength or stronger) ⇒ excluded at these ranges by torsion-balance tests unless its couplings are suppressed far below the Yukawa structure. ⇒ The departure must come from a HIDDEN sector at a high scale: x is then the ratio of two hidden-sector potentials, which is not predicted without a model.
+- Status: the route through SM loops is closed; small-departure origin stays open (needs a hidden-sector term not ∝ V₀).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
