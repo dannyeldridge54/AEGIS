@@ -11,6 +11,7 @@ size lands in band (D1485 machinery). A candidate "works" only if (ii) and (iii)
 - T2 [done D1503: F⁴ wrong shape; D⁴R⁴ NULL] D⁴R⁴ (α′⁵, coefficient E(τ,5/2) — Green–Vanhove/Green–Russo–Vanhove, fetched): its 4D potential contribution along the dilaton, relative to the α′³ term; shape ∝ E(τ,5/2)/𝒱^{?} — does it act as a tilt, and how big?
 - T3 [done D1504: not a tilt; FLAG ξ̂/𝒱̂ ≫ 1 on the path]
 - T3b [done D1505: flag stands, ξ/𝒱 ≈ 251 at all benchmarks; CORRECTION frame map x +7.1]
-- T3c [next] physical-frame n_s, r of the DILMIX centre and A1 (λ = 1/a, a 2e3/9.9e3/5e4) vs the λ = 1 values — fast SR, lock first
+- T3c [done D1506: FRAME-DEPENDENT, physical n_s ≈ 0.965 for the DILMIX centre] physical-frame n_s, r of the DILMIX centre and A1 (λ = 1/a, a 2e3/9.9e3/5e4) vs the λ = 1 values — fast SR, lock first
 - T4 [next] Uplift τ-dependence: anti-D3 (∝ e^{4A}/𝒱^{4/3}, warp factor depends on g_s via KS throat) or D-term uplift ∝ g_s^{?}/𝒱² — shape along y and size.
 - T5 [next] Summary card: which candidate (if any) gives C_phys ≈ 2e-3–0.1 naturally; hand-off note for the P3 chat.
+- T3d [next] in-band search in the PHYSICAL frame (λ = 1/a, pure-power-law limit): DILMIX (α, C) map with x = λ(E − E_ρ) at a = 9931 (results converge in a) — where is the band now, and what C does it need? (fast SR, lock first)

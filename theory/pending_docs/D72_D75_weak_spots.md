@@ -15468,3 +15468,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] CORRECTION: D1497 item 4 / D1504 item 3 — the frame map is not exact (y^{−1/2} term and E_ρ don't rescale); physical-frame n_s, r may differ from the λ = 1 values; to compute (T3c).
 - aegis-check: numbers from field_tests/results/D1505_regime.json; a values match D1486 to ≤ 0.8 %; the y^{−1/2} term at y = 13.96 = 1.761 and x shift = 8.893 − 1.761 = 7.13 computed in python ✓; cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1506 — T3c: physical frame ≠ λ = 1 frame — DILMIX centre 0.9650 / 7.46e-4, A1 0.9628 / 8.06e-4 (Δn_s −6.2e-3 / −4.4e-3); λ = 1 in-band points do not carry over (candidate M6)
+- [derived] 6/6 physical-frame points "frame-dependent"; converged in a; sanity check (pure y^{3/2}, E_ρ → 0 at λ = 1) reproduces them to 2e-4 ⇒ caused by E_ρ and the y^{−1/2} term, suppressed by λ physically.
+- CORRECTION: D1497 item 4 withdrawn (n_s, r are NOT frame-independent); D1486's frame map approximate.
+- aegis-check: numbers from field_tests/results/D1506_phys_frame_ns.json and the sanity run (scratchpad d1506_sanity.py); references reproduce D1491/D1481 ✓; Δ's computed in the script; DEVIATIONS D1 written before the restart; cross-sector: affects every P3 λ = 1 result and our forecasts' physical interpretation (not their agreement with the λ = 1 runs). No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
