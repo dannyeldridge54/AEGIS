@@ -836,7 +836,8 @@
     "D1411",
     "D1413",
     "D1428",
-    "D1429"
+    "D1429",
+    "D1434"
    ],
    "depends": [
     "nstar_i",
@@ -844,9 +845,9 @@
    ],
    "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)",
    "history": [
-    "D1413: frozen",
     "D1428: frozen",
-    "D1429: frozen"
+    "D1429: frozen",
+    "D1434: frozen"
    ]
   },
   {
