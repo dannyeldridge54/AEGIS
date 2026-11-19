@@ -676,3 +676,4 @@ D1389  2026-11-19T01:13Z  Weave tick 4: m32_window margin updated to the compute
 D1390  2026-11-19T01:16Z  Weave tick 5: inverse meter applied to today's n_s
 D1391  2026-11-19T01:22Z  Circuit layer 9: CM (complex multiplication), 7/7 laws
 D1392  2026-11-19T01:25Z  Wino records synced: Q_panel + particle card to 1.25 TeV; SUSY open law closes
+D1393  2026-11-19T01:27Z  CM layer: zero orders at the vacua (9/9)
