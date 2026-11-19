@@ -783,3 +783,4 @@ D1496  2026-11-19T12:43Z  P3 exact LVSDIL k=0.6 vs D1488 forecast
 D1497  2026-11-19T12:50Z  Help set 5: DILMIX strip tilt and y* in D1486's physical frame
 D1498  2026-11-19T12:59Z  Help set 7: testability of DILMIX strip vs SERAPIS-E and form A (SO, LiteBIRD)
 D1499  2026-11-19T13:00Z  P3 exact DILMIX (0.25,2.5e-6) vs D1485 forecast
+D1500  2026-11-19T13:06Z  Help set 8: axion (Re tau) mass at horizon exit for DILMIX centre and form A
