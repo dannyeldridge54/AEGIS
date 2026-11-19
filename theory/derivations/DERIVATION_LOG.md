@@ -2186,3 +2186,8 @@ Touches: none.
 ## D1360: Hyperion full run
 1. [derived] 24,522,893 stars integrated in MWPotential2014 (3 Gyr) on the PC; every tile sane (0 bad), median ecc 0.164, z_max 0.58 kpc, r_peri 6.73, r_apo 8.86 kpc.
 2. [derived] A8d M1–M4 PASS on the parallel code; McMillan17 full run still open (CPU-bound, ~10 days).
+
+## D1361: P3 candidate source
+1. [literature] Green–Russo–Vanhove 2010 eq. (4.10): the 8D D⁴R⁴ coefficient contains −4 E^{SL(3)}_{−1/2}·E₂(U), U the T² complex structure.
+2. [derived] Eigenvalue check: (Δ − 10/3)E = 0 with s(s−1) = 2 for E₂(U) and 4/3 for E^{SL(3)}_{−1/2} → 10/3; E₂(U) is forced, not inserted.
+3. [postulate P3] Turning this curvature term into the SERAPIS plateau (mechanism, sign at ρ, magnitude vs V0, 8D → 4D) is not yet computed; P3 stays open.
