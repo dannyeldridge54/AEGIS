@@ -15456,3 +15456,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] γ̂₂/ξ̂ ∝ g_s = 1/y; tilt needs ∝ y^{3/2} growth. Not the tilt source.
 - aegis-check: formula read from 1901.09626 Eqs. 7–9 this tick; scaling by sympy; no number quoted beyond the source's; NULL stated loudly; cross-sector: none.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1504 — tilt T3: flux W(τ) is not a tilt; FLAG — on the P3 path ξ(τ*)/𝒱 ≈ 2.4e2, the α′³ expansion is outside its controlled regime
+- [derived] K^{ττ̄}|D_τW|² = |W|² for W = f − τh (no ξ shape); x* = 118.3 at the strip centre ⇒ ξ(τ*)/𝒱 ≈ 237.
+- [estimate] BBHL (hep-th/0412239 Eq. 3.8) needs ξ̂ ≪ 𝒱̂ (pole at ξ̂ = 𝒱̂); the P3 plateau lives at ξ̂/𝒱̂ ~ 10² ⇒ uncontrolled unless its ξ normalisation is ≳10³ smaller than assumed; D1501's small-u estimate not applicable on the path. Candidate referee point (M5) for the P3 chat.
+- aegis-check: x* re-computed in python from E(τ,3/2) zero modes at y = 13.96 (118.26) with E_ρ = 8.8927 (D1486); 2x* = 236.5 ✓; K^{ττ̄}|D_τW|² by sympy ✓; DEVIATIONS D1 written before the replacement number; cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
