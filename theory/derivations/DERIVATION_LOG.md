@@ -3200,3 +3200,9 @@ Touches: none.
 5. [derived] Case C (full copy with asymmetric reheating): needs Γ_D/Γ_V ≤ 0.0405 (ξ_max = 0.4487).
 6. [estimate] Postulation check: C-cold (WEAVE_POSTULATES C5, "the thread decays mostly into the visible side") is NOT NEEDED if the dark sector is minimal; it IS needed (≤ 4 % branching) for a full mirror world. P-M with a minimal sector predicts ΔN_eff ≈ 0.2 — a concrete, near-future CMB target (survey σ to be read in a later lock, not from memory).
 7. [derived] Referee: ξ = 0.46524 and ΔN_eff = 0.2063, ξ_max = 0.4487, branching 0.0405 re-derived by hand from the formulas ✓.
+
+## D1647 — JANUS genesis G10: genesis budget card (docs/JANUS_GENESIS_CARD.md), machine-checked (PREREG_D1647_G10_CARD) — CONSISTENT
+1. [derived] 27 numbers across the chain (SERAPIS v3 point, ρ curvature, inflaton mass, T_R band, η, m_DM, ξ, ΔN_eff, Y_p, D/H, ³He/H, Li/H, w₀, w_a, Δχ², start-window P, end of acceleration, late ⟨w⟩) typed on the card with file + key BEFORE the check.
+2. [derived] g10_card_check.py re-read every key: 27/27 OK within typed rounding ⇒ CONSISTENT.
+3. [derived] Referee test of the checker: three deliberately wrong values (Y_p 0.2521, w_a −0.375, R1 "FAIL") were all flagged MISMATCH; card restored, recheck CONSISTENT.
+4. [estimate] Sources are four authors' worth of notes (Janus D1637–D1646, other chat D1631–D1634, D1640, D1642); the card checks transcription only, not the physics behind each json (that is G12's job).

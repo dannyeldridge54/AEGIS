@@ -16441,3 +16441,8 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - But P-M only needs a dark baryon (5 GeV) and a dark photon. Our sector has many more particles that later annihilate and heat our photons, so the small dark side ends up colder automatically: ξ = 0.47, ΔN_eff = 0.21 (under the 0.3 bound), helium shift +0.003.
 - Prediction: ΔN_eff ≈ 0.2 — measurable by the next generation of CMB experiments. Assumption flagged: "equal sharing per particle" for gravitational decays (A-dem) is not derived. New node dark_radiation.
 - MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no
+
+## D1647 — JANUS genesis G10: one card for the whole genesis chain — 27 numbers, all checked against their files (CONSISTENT)
+- docs/JANUS_GENESIS_CARD.md lists every genesis number from the scalar field to the end of the dark-energy thread, each with its source file and key. A script re-read all 27 from the files: all match. The script was tested by planting three wrong numbers; it caught all three.
+- The card's last section lists what is still open (κ, equal sharing per particle, the sharing factor and asymmetry source, the 1-in-300 start, V_Λ's size, D1636).
+- MAP: node=light_elements status=computed touches=[] ripple=no

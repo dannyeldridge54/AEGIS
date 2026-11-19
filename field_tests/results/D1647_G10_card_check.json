@@ -1,0 +1,170 @@
+{
+ "D": "D1647",
+ "n_rows": 27,
+ "mismatches": [],
+ "verdict": "CONSISTENT",
+ "rows": [
+  {
+   "q": "n_s (SERAPIS v3, D = 10)",
+   "card": "0.97064",
+   "json": 0.9706426447941265,
+   "ok": true
+  },
+  {
+   "q": "r",
+   "card": "5.407e-4",
+   "json": 0.0005407386287997588,
+   "ok": true
+  },
+  {
+   "q": "N_*",
+   "card": "50.37",
+   "json": 50.36540445647857,
+   "ok": true
+  },
+  {
+   "q": "V\u221e^{1/4} (GeV)",
+   "card": "4.93e15",
+   "json": 4932514168054159.0,
+   "ok": true
+  },
+  {
+   "q": "V''(\u03c1)/V\u221e (D = 10)",
+   "card": "0.25",
+   "json": 0.25,
+   "ok": true
+  },
+  {
+   "q": "V''(\u03c1)/V\u221e (D = 6)",
+   "card": "0.125",
+   "json": 0.125,
+   "ok": true
+  },
+  {
+   "q": "inflaton mass m (GeV)",
+   "card": "5.00e12",
+   "json": 4995830804528.751,
+   "ok": true
+  },
+  {
+   "q": "T_R, \u03ba = 1/(8\u03c0) (GeV)",
+   "card": "7.72e8",
+   "json": 771677592.7589931,
+   "ok": true
+  },
+  {
+   "q": "T_R, \u03ba = 1 (GeV)",
+   "card": "3.87e9",
+   "json": 3868617745.817757,
+   "ok": true
+  },
+  {
+   "q": "reheating verdict",
+   "card": "CONSISTENT",
+   "json": "CONSISTENT",
+   "ok": true
+  },
+  {
+   "q": "\u03b7 (baryon-to-photon)",
+   "card": "6.13e-10",
+   "json": 6.127143e-10,
+   "ok": true
+  },
+  {
+   "q": "m_DM at equal sharing (GeV)",
+   "card": "5.03",
+   "json": 5.0331980330800175,
+   "ok": true
+  },
+  {
+   "q": "\u03be, minimal dark sector",
+   "card": "0.465",
+   "json": 0.46523976411011436,
+   "ok": true
+  },
+  {
+   "q": "\u0394N_eff, minimal dark sector",
+   "card": "0.206",
+   "json": 0.2062890517311545,
+   "ok": true
+  },
+  {
+   "q": "\u0394N_eff, full mirror copy",
+   "card": "7.40",
+   "json": 7.403204662458465,
+   "ok": true
+  },
+  {
+   "q": "Y_p (BBN v3)",
+   "card": "0.2421",
+   "json": 0.24209722399788416,
+   "ok": true
+  },
+  {
+   "q": "D/H",
+   "card": "2.59e-5",
+   "json": 2.5944351058653265e-05,
+   "ok": true
+  },
+  {
+   "q": "\u00b3He/H",
+   "card": "1.03e-5",
+   "json": 1.0318868299501124e-05,
+   "ok": true
+  },
+  {
+   "q": "Li/H",
+   "card": "4.35e-10",
+   "json": 4.35029051853227e-10,
+   "ok": true
+  },
+  {
+   "q": "lithium problem factor (vs Spite plateau)",
+   "card": "2.72",
+   "json": 2.718931574082669,
+   "ok": true
+  },
+  {
+   "q": "w\u2080 (exact-shape thread, best)",
+   "card": "-0.789",
+   "json": -0.7888185932030437,
+   "ok": true
+  },
+  {
+   "q": "w_a",
+   "card": "-0.355",
+   "json": -0.3551358842768886,
+   "ok": true
+  },
+  {
+   "q": "worst DESI \u0394\u03c7\u00b2 (\u2264 6.18 passes)",
+   "card": "5.64",
+   "json": 5.635916030749746,
+   "ok": true
+  },
+  {
+   "q": "start-window probability (10D)",
+   "card": "0.0035",
+   "json": 0.003513764422391282,
+   "ok": true
+  },
+  {
+   "q": "acceleration ends at a",
+   "card": "1.23",
+   "json": 1.2324447878622855,
+   "ok": true
+  },
+  {
+   "q": "thread late \u27e8w\u27e9",
+   "card": "-0.0175",
+   "json": -0.01750810607484335,
+   "ok": true
+  },
+  {
+   "q": "thread matter-like rule",
+   "card": "PASS",
+   "json": "PASS",
+   "ok": true
+  }
+ ]
+}

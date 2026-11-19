@@ -63,7 +63,7 @@ Cycle per lead (one lead per tick): Research → Development → Postulation →
 - [taken by other chat: D1639 rung R-Li, D1640 lock] G7 BBN v3 + Li-7 (known gap): add ⁷Be/⁷Li channels under a new lock; report the lithium value honestly (the standard model's own Li problem expected).
 - [taken by other chat: D1640 R-Li includes weak-rate corrections] G8 BBN weak-rate corrections: the stated −0.005 Y_p bias — lock, add Coulomb/radiative/finite-mass terms, re-score.
 - [done D1644] G9 Future oscillation of the thread: thread mass m ~ √V''(min) vs H₀; when (if ever) it becomes matter-like and what fraction — art/lens claim vs physics stated separately.
-- G10 Genesis budget table: Ω_DM/Ω_b, η, Y_p, D/H, ³He/H, w₀/w_a — every number from its json, one card (machine-checked as D1469/D1473).
+- [done D1647] G10 Genesis budget table: Ω_DM/Ω_b, η, Y_p, D/H, ³He/H, w₀/w_a — every number from its json, one card (machine-checked as D1469/D1473).
 - G11 Console sync: chains/genesis stages updated with G1–G10 results.
 - G12 REFEREE (whole genesis chain, fresh read of every json): pass → loop stops and reports to Danny; fail → the failures become new G-leads.
 - [done D1641] G1b (from D1637) Derive why V''/V∞ = 1/4 exactly at ρ (expected (f')² = 1/8 = λ_sp², the species-scale slope) — analytic, no data.
