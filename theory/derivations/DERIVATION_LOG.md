@@ -2253,3 +2253,9 @@ Touches: none.
 2. [derived] D1371 route has C = 0; a second condensate gives slope 2c′/T₂, c′ = 4.354k′/|b′|; needs T₂|b′|/k′ ≈ 7e4–7e6.
 3. [estimate] Unnaturally large T₂: C slope not explained.
 4. [postulate P3] Origin of C still assumed.
+
+## D1374 (D1373a): C slope origin
+1. [literature] D689/D696: C = (15/64π⁶)N_eff/(Im S·Im ρ) from the BHK tilt (IIB stuck D3s).
+2. [derived] e^{δK} multiplies a nonzero plateau height → linear (1 + C·E); D1370's cancellation needed V ≡ 0.
+3. [estimate] Heterotic lead: K_S ⊃ −log(S + S̄ + const·Y) would give e^K ∝ 1/(s + c′E/T₂).
+4. [postulate P3] One framework carrying plateau + tilt not yet built.
