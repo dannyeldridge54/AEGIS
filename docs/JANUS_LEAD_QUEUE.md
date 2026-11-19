@@ -79,3 +79,4 @@ Cycle per lead (one lead per tick): Research → Development → Postulation →
 - [done D1663] G14 sourced light-element scorecard (closes D1662 nits D1633, D1651).
 - [done D1664 SHARPENED] G6e DarkCast tables (Danny's download OK 17:37). Follow-up G6f: add post-2022 visible limits (NA64 2023+, Belle II, LHCb 2023+) if a newer table set is reachable.
 - [done D1665 INSIDE] G15 κ = 0.119 from f = S (n = 1); T_R = 1.34e9 GeV.
+- [done D1666 PASS] G12d round-3 referee. Loop stopped ~23:55Z.

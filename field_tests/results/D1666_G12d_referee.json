@@ -1,0 +1,20 @@
+{
+ "D": "D1666",
+ "order": {
+  "D1663": true,
+  "D1664": true,
+  "D1665": true
+ },
+ "arith": {
+  "D1663": true,
+  "D1664": true,
+  "D1665": true
+ },
+ "card": "38 CONSISTENT []",
+ "sourced": {
+  "D1663": true,
+  "D1664": true,
+  "D1665": true
+ },
+ "verdict": "PASS"
+}

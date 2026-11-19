@@ -28,3 +28,4 @@ Guards: no map status edits; no Zenodo/arXiv; no PC jobs or downloads beyond pip
 - 23:25Z: D1657 G6c OPEN (massive dark photon rescues P-M). D1636 (other chat) RESULT read: full likelihood weakens the reverse thread (only DESY5 clearly prefers it; best w₀ −0.86…−0.93); card rows added (33/33 CONSISTENT). NEXT: G9d (future from D1636's best starts), G6d (lab limits on ε), then G12b round-2 referee (every bound sourced).
 - 23:45Z: D1658 G9d done (acceleration ends a 1.41–1.92; end i for DESY5/Union3, ρ for Pantheon+). NEXT: G6d (lab limits on ε, sourced), then G12b round-2 referee.
 - Round 2 STOPPED ~23:42Z — G12c PASS (D1662). Restart with "Djl".
+- Round 3 STOPPED ~23:55Z — G12d PASS (D1666). Restart with "Djl".

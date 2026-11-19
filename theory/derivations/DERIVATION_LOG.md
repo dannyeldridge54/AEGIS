@@ -3319,3 +3319,8 @@ Touches: none.
 3. [estimate] Assumption A-S: the SM gauge kinetic function is f = X (string coupling; D3-brane-like); N_g = 12; other channels omitted ⇒ κ is a lower bound.
 4. [derived] d_g = 2, κ = 12·4/(128π) = 0.1194 (both formulas agree exactly); Γ = 2.51 GeV ≪ H_end = 5.8e12 GeV (perturbative reheating consistent); T_R = 1.34e9 GeV (g* 106.75), inside D1637's 7.7e8–3.9e9 band ⇒ INSIDE.
 5. [estimate] With κ fixed by the gauge coupling, the reheating temperature is no longer a free input: T_R ≈ 1.3e9 GeV feeds the asymmetry question (C4, other chat) and the P-M chain. If the SM sits on branes whose f is a Kähler modulus instead of S (D7-like), κ here does not apply (A-S).
+
+## D1666 — JANUS genesis G12d: round-3 referee (PREREG_D1666_G12D_REFEREE) — PASS; loop stops
+1. [derived] Locks before results for D1663, D1664, D1665 ✓; re-derivation: D1663 pulls, D1664 strip merge at 0.808 GeV and every mass 0.3–5 GeV ≥ 1 decade open, D1665 κ and T_R ✓; card 38/38 CONSISTENT ✓.
+2. [derived] Source check: each round-3 log entry cites a paper for its data (arXiv / hep-ph numbers present) ✓.
+3. [estimate] Limitation: same agent as the notes. Open assumptions carried: A-S (f = S) for κ; DarkCast tables end 2022.

@@ -16562,3 +16562,7 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - The SERAPIS inflaton is the string coupling, and the string coupling sets the strength of every gauge force, so the inflaton decays into gauge bosons at a computable rate. Using the published formula (hep-ph/0602081; arXiv:1909.04705) with SERAPIS's own field normalisation (n = 1): κ = 12·4/(128π) = 0.119.
 - That sits inside the range D1637 assumed (0.04–1), and fixes the reheating temperature at T_R ≈ 1.34 × 10⁹ GeV. Assumption: our gauge fields feel the string coupling directly (as on D3-branes).
 - MAP: node=genesis_reheating status=estimate touches=[matter_genesis] ripple=no
+
+## D1666 — JANUS genesis G12d: round 3 passes referee — loop stops
+- Locks before results, every number re-derives, card 38/38, every round-3 note cites its papers.
+- MAP: node=genesis_reheating status=estimate touches=[] ripple=no
