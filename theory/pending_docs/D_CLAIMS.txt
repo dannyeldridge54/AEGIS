@@ -678,3 +678,4 @@ D1391  2026-11-19T01:22Z  Circuit layer 9: CM (complex multiplication), 7/7 laws
 D1392  2026-11-19T01:25Z  Wino records synced: Q_panel + particle card to 1.25 TeV; SUSY open law closes
 D1393  2026-11-19T01:27Z  CM layer: zero orders at the vacua (9/9)
 D1394  2026-11-19T01:41Z  P3: F-terms with K=-log(Im S+Y/16pi^2) give V = A0 - B/L + D*L: uplift, plateau and linear tilt in one structure
+D1395  2026-11-19T01:42Z  P3: racetrack toy - all S minima have W_S/W = +0.08..+0.82 (~1/L); D1394 tilt/uplift condition not realised
