@@ -1,5 +1,5 @@
 // Janus Gallery (Danny 2026-11-18: "make them all", "with blue magenta and full rgb").
-// Thirteen displays of the same weave/circuit data, each with two palettes: Janus (blue → magenta) and Spectrum (full RGB).
+// Fifteen displays of the same weave/circuit data, each with two palettes: Janus (blue → magenta) and Spectrum (full RGB).
 // All 2D canvas (no second WebGL context); only the visible display animates.
 (function () {
   if (typeof WEB === 'undefined') return;
@@ -9,7 +9,7 @@
   document.querySelector('.tabs')?.insertBefore(tab, document.getElementById('t-classic'));
   const VIEWS = [['bundle', 'Edge bundling'], ['chord', 'Chord'], ['hive', 'Hive'], ['force', '3D force'], ['arc', 'Arc flow'],
     ['hyper', 'Hyperbolic'], ['modular', 'Poincaré / SL(2,ℤ)'], ['e8', 'E8 Petrie'], ['circuit3d', 'Circuit 3D'],
-    ['spectro', 'Resonance'], ['history', 'History'], ['cymatics', 'Cymatics'], ['sky', 'Sky map']];
+    ['spectro', 'Resonance'], ['history', 'History'], ['cymatics', 'Cymatics'], ['sky', 'Sky map'], ['hourglass', 'Janus hourglass'], ['pkfall', 'P(k) waterfall']];
   const box = document.createElement('div'); box.id = 'gallerybox'; box.hidden = true;
   box.style.cssText = 'position:absolute;inset:0;z-index:6;background:var(--bg);display:flex;flex-direction:column';
   box.innerHTML = `<div id="gtabs" style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line)"></div>
@@ -235,7 +235,55 @@
       cap.textContent = `Sky map — ${sky.stars.length.toLocaleString()} Hyperion orbits (sampled from ${sky.tiles} tiles, ${sky.model}), Galactic Mollweide, colour = orbital eccentricity (0 → 0.6+).`; }
     else cap.textContent = window.pywebview ? 'Sky map — loading the Mapper’s Hyperion orbits…' : 'Sky map — open in the Janus app to load the Mapper’s Hyperion orbits (Galactic Mollweide, colour = eccentricity).';
   }
-  const DRAW = { bundle, chord, hive, force, arc: arcflow, hyper, modular, e8, circuit3d, spectro, history, cymatics, sky: sky_ };
+
+  // ---- 14. Janus hourglass (Danny 2026-11-19). Wall width = the exact P3-S potential V(φ) (art mapping of a real curve):
+  // top bulb = inflation rolling down the plateau to ρ (the neck); bottom bulb = the same plateau as late dark energy.
+  function hourglass(t) {
+    const HG = window.HOURGLASS; if (!HG) { cap.textContent = 'Hourglass data missing (hourglass_data.js)'; return; }
+    const V = HG.curve.V, n = V.length, X = W/2, Y = H/2, h = H*0.38, wmax = Math.min(W*0.2, h*0.75), w0 = 3;
+    const wid = z => { const f = Math.min(n - 1, z*(n - 1)), i = Math.floor(f), u = f - i; return w0 + wmax*(V[i]*(1 - u) + (V[Math.min(n - 1, i + 1)])*u); };
+    const cyc = 22, ph = (t % cyc)/(cyc - 2), L = Math.max(0, 1 - ph);   // sand left in the top bulb
+    // glass outline
+    cx.lineWidth = 1.5;
+    [-1, 1].forEach(sg => [-1, 1].forEach(sd => { cx.strokeStyle = pal(sg < 0 ? 0.15 : 0.85, 0.8); glow(pal(sg < 0 ? 0.15 : 0.85), 10); cx.beginPath();
+      for (let k = 0; k <= 120; k++) { const z = k/120, x = X + sd*wid(z), y = Y + sg*z*h; k ? cx.lineTo(x, y) : cx.moveTo(x, y); } cx.stroke(); }));
+    cx.shadowBlur = 0;
+    // sand: top bulb holds z in [0, 0.92 L]; bottom pile fills from z = 1 upward
+    const rows = 90;
+    for (let k = 0; k < rows; k++) { const z = k/rows;
+      if (z < 0.92*L) { cx.fillStyle = pal(0.1 + 0.3*z, 0.75, 55); const w = wid(z); cx.fillRect(X - w + 2, Y - z*h - h/rows, 2*w - 4, h/rows + 0.6); }
+      if (1 - z < 0.92*(1 - L)) { cx.fillStyle = pal(0.6 + 0.4*(1 - z), 0.75, 55); const w = wid(z); cx.fillRect(X - w + 2, Y + z*h, 2*w - 4, h/rows + 0.6); } }
+    // falling stream through the neck
+    if (L > 0) for (let i = 0; i < 40; i++) { const u = ((t*1.7 + i/40) % 1), y = Y - 4 + u*(h*(1 - 0.92*(1 - L)) + 4); cx.fillStyle = pal(0.2 + 0.6*u, 0.9, 70); cx.fillRect(X - 1 + Math.sin(i*7.3)*1.2, y, 2, 2); }
+    // neck label + panels
+    glow(pal(0.5), 12); cx.fillStyle = '#fff'; cx.beginPath(); cx.arc(X, Y, 3, 0, 7); cx.fill(); cx.shadowBlur = 0;
+    text('ρ = e^(iπ/3)', X + 14, Y + 4, pal(0.5), 13);
+    text('INFLATION', X - wmax - 4, Y - h - 10, pal(0.1), 14); text('DARK THREAD (late plateau)', X - wmax - 4, Y + h + 20, pal(0.9), 14);
+    text(`e-folds to go: ${(HG.Nstar*L).toFixed(1)}`, 16, 28, pal(0.15), 15);
+    const panel = (lines, x, y, u) => lines.forEach(([s, d], i) => { text(s, x, y + i*34, pal(u), 12); text(d, x, y + i*34 + 14, '#8b84b8', 10); });
+    const pr = X + wmax + 24, pl = 16; panel(HG.top, pl, Y - h + 40, 0.15); panel(HG.bottom, W - pr > 300 ? pr : pl, Y + 30, 0.9);
+    cap.textContent = 'Janus hourglass — the glass wall is the exact P3-S potential (SPECIES32 X point), mirrored: top = inflation draining to ρ; bottom = the same plateau as late dark energy. Shape is an art mapping of a real curve; numbers from the cited D-notes.';
+  }
+  // ---- 15. P(k) waterfall: exact Mukhanov-Sasaki spectrum, one slice per start condition (bd = how deep inside the horizon the mode starts)
+  function pkfall(t) {
+    const P = window.PK_WATERFALL; if (!P) { cap.textContent = 'P(k) waterfall data missing — run field_tests/scripts/viz/pk_waterfall.py (writes pk_waterfall.js)'; return; }
+    const d = P.dlnk, S = P.slices, ref = S[S.length - 1].lnPR, m = d.length;
+    // smooth reference: quadratic fit to the exact-de Sitter slice; every slice is drawn as its residual in parts per thousand
+    const fit = (() => { let A = [[0,0,0],[0,0,0],[0,0,0]], b = [0,0,0]; d.forEach((x, i) => { const v = [1, x, x*x]; for (let r = 0; r < 3; r++) { b[r] += v[r]*ref[i]; for (let c = 0; c < 3; c++) A[r][c] += v[r]*v[c]; } });
+      for (let i = 0; i < 3; i++) for (let j = i + 1; j < 3; j++) { const f = A[j][i]/A[i][i]; for (let k = i; k < 3; k++) A[j][k] -= f*A[i][k]; b[j] -= f*b[i]; }
+      const c = [0,0,0]; for (let i = 2; i >= 0; i--) { c[i] = (b[i] - A[i].slice(i + 1).reduce((s, a, k) => s + a*c[i + 1 + k], 0))/A[i][i]; } return x => c[0] + c[1]*x + c[2]*x*x; })();
+    const res = S.map(s => s.lnPR.map((v, i) => 1e3*(v - fit(d[i]))));
+    const amp = Math.max(1e-6, ...res.flat().map(Math.abs)), x0 = 90, x1 = W - 60, dy = (H - 120)/S.length, sk = 26, scan = (t*0.25) % 1;
+    S.forEach((s, j) => { const base = 50 + (S.length - j - 0.45)*dy, off = j*sk, u = j/(S.length - 1);
+      cx.beginPath(); d.forEach((x, i) => { const px = x0 + off + (x1 - x0 - sk*S.length)*(x - d[0])/(d[m - 1] - d[0]), py = base - 0.45*dy*res[j][i]/amp; i ? cx.lineTo(px, py) : cx.moveTo(px, py); });
+      cx.lineTo(x0 + off + (x1 - x0 - sk*S.length), base + 0.5*dy); cx.lineTo(x0 + off, base + 0.5*dy); cx.closePath();
+      cx.fillStyle = pal(u, 0.18); cx.fill(); cx.strokeStyle = pal(u, 0.95); glow(pal(u), 8); cx.lineWidth = 1.6; cx.stroke(); cx.shadowBlur = 0;
+      const sx = x0 + off + (x1 - x0 - sk*S.length)*scan; cx.fillStyle = pal(u, 0.5); cx.fillRect(sx, base - 0.5*dy, 1, dy);
+      text(`${s.ic === 'ds' ? 'exact dS start' : 'plain BD start'} · k/aH = ${s.bd} · n_s ${s.ns.toFixed(5)}`, 10, base - 0.3*dy, pal(u), 11); });
+    text(`ln(k/k*) from ${d[0]} to ${d[m - 1]}  ·  residual vs smooth fit, full height = ±${amp.toFixed(1)}‰ (same scale for every slice)`, 16, 26, '#8b84b8', 11);
+    cap.textContent = `P(k) waterfall — exact MS power spectrum for ${P.point}. Each slice is ln P minus a smooth fit (parts per thousand): plain Bunch–Davies starts leave interference fringes that shrink as the start goes deeper; the exact de Sitter start removes them.`;
+  }
+  const DRAW = { bundle, chord, hive, force, arc: arcflow, hyper, modular, e8, circuit3d, spectro, history, cymatics, sky: sky_, hourglass, pkfall };
   function reset() { F = null; sand = null; spec.length = 0; t0 = performance.now(); }
   function loop(now) { requestAnimationFrame(loop); if (box.hidden) return; if (cv.clientWidth !== Math.round(W) || cv.clientHeight !== Math.round(H)) size();
     clear(); cx.save(); try { DRAW[cur]((now - t0)/1000); } catch (e) { cap.textContent = 'display error: ' + e; } cx.restore(); cx.shadowBlur = 0; }
