@@ -2247,3 +2247,9 @@ Touches: none.
 2. [derived] U-multiplier [U₂|η(U)|⁴]^p destroys the plateau unless p = 0.
 3. [estimate] p = 0 ⇔ b′_U = kδ^U_GS (no log in the GS-corrected threshold).
 4. [postulate P3] δ^U_GS for the b̂ = 0 E7 plane unknown.
+
+## D1373: λ free, C slope missing
+1. [literature] D698: a = 1/λ absorbed into C → C·a; λ unconstrained.
+2. [derived] D1371 route has C = 0; a second condensate gives slope 2c′/T₂, c′ = 4.354k′/|b′|; needs T₂|b′|/k′ ≈ 7e4–7e6.
+3. [estimate] Unnaturally large T₂: C slope not explained.
+4. [postulate P3] Origin of C still assumed.

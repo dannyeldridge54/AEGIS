@@ -14429,3 +14429,11 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - [estimate] p = 0 ⇔ b′_U = kδ^U_GS, the DKL/GS combination multiplying log(U₂|η|⁴) in the threshold. So the clean condition is "no s = 1 term in the GS-corrected threshold", not b′ = 0 alone. The D1367 E7 (b′ = 0) qualifies only if δ^U_GS = 0 on that plane (Green–Schwarz not acting on U there) — unchecked; normalisation of p unchecked.
 - Verdict: caveat (a) reduced to one model condition, b′_U = kδ^U_GS. P3 stays a postulate. Next: λ = ε/A estimate (D1371 caveat d).
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1373 — DEEP / LEFT: P3 — D1371 caveat (d): λ = ε/A is NOT constrained (D698: a = 1/λ only shifts φ and is absorbed into C → C·a); the real gap is the (1 + C·Ê) slope, absent from the D1371 route. A second, un-fixed condensate supplies a linear slope 2c′/T₂ but matching C needs T₂·|b′|/k′ ~ 1e5–7e6 — a tension (2026-11-18)
+- [literature] D698 (ours): any plateau 1 − a/Ê + O(Ê⁻²) gives the same CMB observables; a rescales y by √a and is absorbed into C → C·a (fitted). So λ = ε/A ≤ 1/E_ρ = 0.173 is allowed — no constraint from λ.
+- [derived] The D1371 potential (b/A)·x/(1+x) has C = 0. The pipeline needs C ≈ 1.25e-6 (at a = 1). Candidate slope: a second condensate whose f′ is not fixed by the racetrack gives |W′|² ∝ exp(2c′E/T₂) ≈ 1 + (2c′/T₂)E, c′ = (3k′/2|b′|)(90/π³) = 4.354 k′/|b′|.
+- [derived] Required T₂·|b′|/k′ = 2c′/(C·a): 6.97e6 (a = 1), 1.21e6 (a = E_ρ = 5.78), 6.97e4 (a = 100). The BHK loop route (D1370) gives a quadratic E² rise, not linear — wrong shape for C.
+- [estimate] T₂ ~ 1e5–1e7 in string units is far outside the perturbative-heterotic regime (T₂ ~ few) unless k′/|b′| is tiny or a is very large; the C slope is therefore NOT naturally explained by this route.
+- Verdict: plateau FORM from D1371 (conditional on b′_U = kδ^U_GS, D1372); the C slope remains unexplained — new open item. P3 stays a postulate.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
