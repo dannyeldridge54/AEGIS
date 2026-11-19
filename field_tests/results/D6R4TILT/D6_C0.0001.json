@@ -1,0 +1,9 @@
+{
+ "combo": "D6",
+ "lens": "G32",
+ "C": 0.0001,
+ "k_fit": 1.99626892037356,
+ "V0_rho": 1.3695501826753678e-25,
+ "valid": false,
+ "error": "math range error"
+}
