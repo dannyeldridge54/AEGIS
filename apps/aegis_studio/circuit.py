@@ -286,7 +286,7 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     law('up', 'Moonshine→CM', ('X_mellin', 'CM_163'), 'e^{π√163} = 640320³ + 744 − δ with 0 < δ < 1e-12 (744 = Moonshine c₀)', W.get('j_c0') == 744 and 0 < W['CM_163_delta'] < 1e-12, f"δ = {W['CM_163_delta']:.6e}; c₀ = {W.get('j_c0')}")
     law('law', 'CM', ('CM_control', 'CM_heegner'), 'control: D = −15 (class number 2) is NOT an integer', W['CM_15_frac'] > 1e-3, f"frac part of j((1+√−15)/2) = {W['CM_15_frac']:.4f}")
     law('law', 'CM', ('CM_chud', 'CM_163'), 'Chudnovsky first term: π ≈ 640320^{3/2}/(12·13591409) to < 1e-13', W['CM_chud_err'] < 1e-13, f"|error| = {W['CM_chud_err']:.2e}")
-    law('down', 'CM→A2', ('CM_i', 'vac_i'), 'j − 1728 has a DOUBLE zero at i (|k − 2| < 0.01): the variant potential V ∝ |j − 1728| is quadratic there — a massive vacuum (D1351)', abs(W['CM_ord_i'] - 2) < 0.01, f"order k = {W['CM_ord_i']:.6f}")
+    law('down', 'CM→A2', ('CM_i', 'vac_i'), 'j − 1728 has a DOUBLE zero at i (|k − 2| < 0.01): |j − 1728| ∝ |τ − i|², so the variant\'s V = I²/(I²+1) is flat to 4th order and its mass at i is ε-scale (D1351)', abs(W['CM_ord_i'] - 2) < 0.01, f"order k = {W['CM_ord_i']:.6f}")
     law('down', 'CM→A2', ('CM_rho', 'serapis_e'), 'j has a TRIPLE zero at ρ (|k − 3| < 0.01): j^(1/3) (γ₂) is the single-valued local coordinate at the hexagonal vacuum', abs(W['CM_ord_rho'] - 3) < 0.01, f"order k = {W['CM_ord_rho']:.6f}")
     # UP links: the SERAPIS hexagon carried up the nesting chain (counts locked in D1294)
     for lo, hi, L, n in (('A2', 'D4', 'D4', 16), ('D4', 'E8', 'E8', 1120), ('A2', 'Leech', 'A2', 1)):

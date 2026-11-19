@@ -14646,3 +14646,13 @@ MAP: none
 - The web was rebuilt (build_web.py). theory/map/sync.yaml (another session's file) still carries D1355's flag text and is left as is; this note supersedes it.
 - Not run here: the full circuit (needs aegis_tools on the PC).
 MAP: node=wino_window status=computed touches=[tests_lhc] ripple=no
+
+## D1393 — CM layer grows to 9 laws, 9/9 closed: the zero orders at the two vacua are exactly 2 (j − 1728 at i) and 3 (j at ρ) (2026-11-19)
+- PREREG_CM_layer addendum (laws 8–9), pushed before the run. Estimator k = log₂(|f(τ₀+h)|/|f(τ₀+h/2)|), h = 1e-8, 60-digit mpmath. Result appended to cm_layer_first_run.txt.
+- [derived] k(i) = 2.000000 and k(ρ) = 3.000000 (tolerance 0.01). These are the classic stabiliser orders 2 and 3 seen in j.
+- Physics link (down to A2):
+  - Near i, |j − 1728| ∝ |τ − i|². The variant's V = I²/(I²+1) therefore vanishes to 4th order, and its mass at i is ε-scale, exactly as D1351 found (curvatures +3.2e-4 ≈ ε-scale).
+  - At ρ, j^{1/3} is the good local coordinate.
+- Text correction before commit: my first wording of law 8 said "V is quadratic there". That is wrong (I is quadratic, V quartic). The law text was fixed; the tolerance and the result are unchanged.
+- The full circuit (with aegis_tools) is still a PC run.
+MAP: none
