@@ -13,6 +13,8 @@ Every number is copied from the json named in its row and machine-checked by fie
 | inflaton mass m (GeV) | 5.00e12 | field_tests/results/D1637_G1_reheat.json | m_GeV |
 | T_R, κ = 1/(8π) (GeV) | 7.72e8 | field_tests/results/D1637_G1_reheat.json | TR_band.kappa_1_over_8pi |
 | T_R, κ = 1 (GeV) | 3.87e9 | field_tests/results/D1637_G1_reheat.json | TR_band.kappa_1 |
+| decay strength κ (f = S, n = 1) | 0.119 | field_tests/results/D1665_G15_kappa.json | kappa_gg |
+| T_R from κ (GeV) | 1.34e9 | field_tests/results/D1665_G15_kappa.json | T_R_GeV |
 | reheating verdict | CONSISTENT | field_tests/results/D1637_G1_reheat.json | verdict |
 | η (baryon-to-photon) | 6.13e-10 | field_tests/results/GENESIS_MATTER/out.json | eta |
 | m_DM at equal sharing (GeV) | 5.03 | field_tests/results/GENESIS_MATTER/out.json | T1.1 |

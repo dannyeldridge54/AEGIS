@@ -16557,3 +16557,8 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - Above ~0.8 GeV the beam dumps stop and the two merge: anything from 10⁻¹¹ up to 10⁻³ is allowed up to 5 GeV. D1659's rough window (0.3–5 GeV, 10⁻¹¹–10⁻⁷) was conservative and sits inside this.
 - Caveat: the tables stop at 2022; newer searches mainly target the bright strip and can only shrink it.
 - MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no
+
+## D1665 — JANUS genesis G15: the last free number in reheating is now fixed — κ = 0.12, T_R ≈ 1.3 × 10⁹ GeV
+- The SERAPIS inflaton is the string coupling, and the string coupling sets the strength of every gauge force, so the inflaton decays into gauge bosons at a computable rate. Using the published formula (hep-ph/0602081; arXiv:1909.04705) with SERAPIS's own field normalisation (n = 1): κ = 12·4/(128π) = 0.119.
+- That sits inside the range D1637 assumed (0.04–1), and fixes the reheating temperature at T_R ≈ 1.34 × 10⁹ GeV. Assumption: our gauge fields feel the string coupling directly (as on D3-branes).
+- MAP: node=genesis_reheating status=estimate touches=[matter_genesis] ripple=no

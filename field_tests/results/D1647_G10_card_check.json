@@ -1,6 +1,6 @@
 {
  "D": "D1647",
- "n_rows": 36,
+ "n_rows": 38,
  "mismatches": [],
  "verdict": "CONSISTENT",
  "rows": [
@@ -56,6 +56,18 @@
    "q": "T_R, \u03ba = 1 (GeV)",
    "card": "3.87e9",
    "json": 3868617745.817757,
+   "ok": true
+  },
+  {
+   "q": "decay strength \u03ba (f = S, n = 1)",
+   "card": "0.119",
+   "json": 0.1193662073189215,
+   "ok": true
+  },
+  {
+   "q": "T_R from \u03ba (GeV)",
+   "card": "1.34e9",
+   "json": 1336584797.721021,
    "ok": true
   },
   {

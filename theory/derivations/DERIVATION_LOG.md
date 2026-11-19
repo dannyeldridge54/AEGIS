@@ -3312,3 +3312,10 @@ Touches: none.
 5. [estimate] D1659 assumed beam dumps cover 1e-7–1e-3 up to 3 GeV; the published tables show they stop near 0.8 GeV. So D1659 was conservative; its "0.3–5 GeV, ε 1e-11–1e-7" is a sub-region of the true window.
 6. [estimate] Caveats: tables end in 2022 (newer NA64, Belle II, LHCb results can only shrink the bright strip, which is the region they target); SN1987A kept as the approximate band below 0.1 GeV; A' → χχ̄ closed since m_A' < m_DM.
 7. [derived] Referee: limit selection re-read from metadata; strip edges recomputed from the json rows ✓. Download: Danny's OK (17:37 CT); tables kept outside the repo (GPL-2), mirror commit recorded.
+
+## D1665 — JANUS genesis G15: the decay strength κ from the string coupling's gauge coupling (PREREG_D1665_G15_KAPPA) — κ = 0.119, INSIDE D1637's band; T_R = 1.34e9 GeV
+1. [derived] SERAPIS' canonical ψ (y = e^{√2ψ}, D = 10) matches K = −n log(−i(τ − τ̄)) with n = 1 — the standard axio-dilaton Kähler potential (same as D1653's 2D metric).
+2. [literature] Γ(X → gg) = N_G d_g² m³/(128π M_P²), d_g = 2/√n for f = X (hep-ph/0602081 eqs. 2–8); same as N_g m³|∂f|²/(128π K_XX̄ (Re f)²) (arXiv:1909.04705 eq. 8).
+3. [estimate] Assumption A-S: the SM gauge kinetic function is f = X (string coupling; D3-brane-like); N_g = 12; other channels omitted ⇒ κ is a lower bound.
+4. [derived] d_g = 2, κ = 12·4/(128π) = 0.1194 (both formulas agree exactly); Γ = 2.51 GeV ≪ H_end = 5.8e12 GeV (perturbative reheating consistent); T_R = 1.34e9 GeV (g* 106.75), inside D1637's 7.7e8–3.9e9 band ⇒ INSIDE.
+5. [estimate] With κ fixed by the gauge coupling, the reheating temperature is no longer a free input: T_R ≈ 1.3e9 GeV feeds the asymmetry question (C4, other chat) and the P-M chain. If the SM sits on branes whose f is a Kähler modulus instead of S (D7-like), κ here does not apply (A-S).
