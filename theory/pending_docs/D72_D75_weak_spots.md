@@ -15034,3 +15034,11 @@ MAP: node=band_i status=frozen touches=[] ripple=no
 - **Corrections tonight in this block:** D1430's "S4 + SKA could detect it" reading tempered by D1431's tables.
 MAP: node=janus status=computed touches=[] ripple=no
 
+## D1436 — JANUS tick 32: the three closed forms nest exactly — D640 (c → 0) = D635 = D1405 at κ = ½ — so the τ = i offset c is the single ingredient the leading-order Janus form lacks
+- Lock: field_tests/rules/PREREG_D1436_closed_nesting.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1436/nesting.py; result field_tests/results/D1436_closed_nesting.json.
+- [derived] By hand: (i) D640 at c = 0 is D635; (ii) D635's (n_s, r) give ρ = (1+x)/(1−x/2), and D1405 at κ = ½ reproduces D635's α_s = −(128/y⁴)(1+x)(1+x/4) identically.
+- [computed] Max relative differences 6.7e-16 (D1405 vs D635) and 5.8e-13 (D640, c = 1e-12, vs D635): PASS.
+- Meaning: one consistent chain from the general Janus relation down to the τ = i potential; the only τ = i correction is the j-offset c = ln1728/2π in the field map. This closes the τ = i side analytically; the ρ side's analogue (offset B in I²) is the open piece (D1414/D1415).
+- aegis-check: hand algebra re-checked step by step against the script's formulas; p = √8 exact (not 2.8284) used deliberately to reach 1e-16; checked: units, limits (x → 0 ⇒ attractor α_s = −128/y⁴), cross-sector: none.
+MAP: node=janus status=computed touches=[] ripple=no
+

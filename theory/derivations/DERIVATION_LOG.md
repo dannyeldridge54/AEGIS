@@ -2578,3 +2578,9 @@ Touches: none.
 4. [literature] Detectability: β_s needs dark-ages 21 cm; with 1611.05883's tables SERAPIS's running reaches ≤ 1.1σ (Planck + SKA-like) — exclude-not-confirm stands (D1430, D1431).
 5. [estimate] PC job spec for the exact-MS checks (docs/JANUS_PC_JOBS.md, D1426) awaits Danny's OK to queue.
 
+## D1436: closed forms nest exactly (locked)
+1. [derived] D640 with c = 0: 1−n_s = 16u²(1−x/2), r = 64u⁴(1+x)², α_s = −128u⁴(1+x)(1+x/4) — D635 term by term (u = 1/y).
+2. [derived] D635's potential 1 − y⁻² + (ε/2)y with φ = ln y/√2 has p = 2√2, q = √2, κ = ½. With its (n_s, r): ρ = (1+x)/(1−x/2) and (1+ρ)/2 = (1+x/4)/(1−x/2), so D1405's −½(1−n_s)²ρ[1+κ(ρ−1)] = −(128/y⁴)(1+x)(1+x/4) = D635's α_s exactly.
+3. [derived] Numerical check over y 10–30, x 0–1: D1405(κ=½) vs D635 max rel. 6.7e-16; D640(c = 1e-12) vs D635 max rel. 5.8e-13 (the c term). PASS.
+4. [derived] So the hierarchy is exact: D640 (τ = i, offset c) → D635 (c = 0) → D1405 at κ = ½ (any-κ leading order). The τ = i offset c is the only thing the leading-order Janus form misses there — which is exactly what D1412 found numerically (10.8 % → 0.3 %).
+
