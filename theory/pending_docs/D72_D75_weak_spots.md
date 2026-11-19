@@ -15042,3 +15042,12 @@ MAP: node=janus status=computed touches=[] ripple=no
 - aegis-check: hand algebra re-checked step by step against the script's formulas; p = √8 exact (not 2.8284) used deliberately to reach 1e-16; checked: units, limits (x → 0 ⇒ attractor α_s = −128/y⁴), cross-sector: none.
 MAP: node=janus status=computed touches=[] ripple=no
 
+## D1437 — JANUS tick 33: n_s is SERAPIS's decisive 2030s test — CMB + LSS surveys would separate the audited points from today's CMB-only value at 7–10σ (LiteBIRD + S4 alone 3.3–3.5σ)
+- Lock: field_tests/rules/PREREG_D1437_ns_sensitivity.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1437/ns_sens.py; result field_tests/results/D1437_ns_sensitivity.json.
+- [literature] 2212.04115 Table 5, 95 % → 1σ by halving; SO + CHIME's "−2.8" excluded as a print artefact.
+- [computed] Needed σ₁ ≈ 2.1e-3. Tensions if n_s stayed 0.9682: SO 2.2σ, S4 2.1σ, LiteBIRD + S4 3.3–3.5σ, S4 + CHIME 4.1–4.3σ, S4 + SPHEREx 7.3–7.6σ, SO + SPHEREx 7.7–8.0σ, S4 + CHIME + DESI + SPHEREx 8.3–8.6σ, LiteBIRD + CHIME + SPHEREx 10.3–10.7σ.
+- Reading (the key output of the night's testability work): the running can only exclude SERAPIS (D1409/D1431), but n_s can decide it both ways — if the 2030s settle near 0.968, SERAPIS's audited points are out at high significance; if near 0.974, they are confirmed at the same level. This is the test to watch.
+- Caveats: the forecast σ for combinations includes LSS; the hypothetical uses today's CMB-only centre; no n_s–r correlation used.
+- aegis-check: re-ran LiteBIRD + S4 (3.34σ for A1) and S4 + SPHEREx (7.55σ for τ = i) in python; checked: units, arithmetic, like-with-like (95 % halved — stated), limits, cross-sector: none.
+MAP: node=janus status=computed touches=[] ripple=no
+

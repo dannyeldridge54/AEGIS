@@ -2584,3 +2584,9 @@ Touches: none.
 3. [derived] Numerical check over y 10–30, x 0–1: D1405(κ=½) vs D635 max rel. 6.7e-16; D640(c = 1e-12) vs D635 max rel. 5.8e-13 (the c term). PASS.
 4. [derived] So the hierarchy is exact: D640 (τ = i, offset c) → D635 (c = 0) → D1405 at κ = ½ (any-κ leading order). The τ = i offset c is the only thing the leading-order Janus form misses there — which is exactly what D1412 found numerically (10.8 % → 0.3 %).
 
+## D1437: n_s sensitivity — the decisive 2030s test (locked)
+1. [literature] arXiv:2212.04115 Table 5 ("forecast 95 % confidence intervals", 10³σ): SO 5.6, S4 5.9, LiteBIRD + S4(ℓ>200) 3.7, S4 + CHIME 3.0, SO/S4 + SPHEREx 1.6/1.7, LiteBIRD + CHIME + SPHEREx 1.2 (SO + CHIME's printed "−2.8" excluded). Halved to 1σ (stated).
+2. [derived] A 3σ separation of SERAPIS's audited points (n_s 0.97439–0.97462) from the CMB-only central 0.9682 needs σ₁(n_s) ≈ 2.1e-3.
+3. [derived] Hypothetical tensions if 0.9682 held: SO 2.2–2.3σ, S4 2.1–2.2σ, LiteBIRD + S4 3.3–3.5σ, S4 + CHIME 4.1–4.3σ, SO/S4 + SPHEREx 7.3–8.0σ, LiteBIRD + CHIME + SPHEREx 10.3–10.7σ.
+4. [derived] So n_s — not the running (D1409, D1431: ≤ 1.3σ) — is SERAPIS's decisive 2030s observable: CMB + LSS combinations resolve the CMB-vs-BAO n_s question at 7–10σ either way, confirming or excluding the audited points.
+
