@@ -30,12 +30,13 @@ Rule: a postulate is a stated assumption that the theory now RUNS on. It is not 
 | C4 | asymmetry at T_rh = 9 × 10⁸ GeV (below the thermal-leptogenesis bound) | **C-asym:** non-thermal asymmetry from the thread's decay | η = 6.1 × 10⁻¹⁰ reproduced |
 | C5 | mirror sector must be cold (ξ < 0.45) | **C-cold:** the thread decays mostly into the visible side (asymmetric reheating) | ΔN_eff (CMB-S4 σ ≈ 0.03) |
 | C6 | dark matter makes no elements | accepted (not a postulate) | — |
+| C7 | lithium problem (BBN 4.35 × 10⁻¹⁰ vs 1.6 × 10⁻¹⁰ observed; D1640) | **C-Li:** stellar depletion (mainstream); the Weave's mirror sector and dark baryons do NOT fix it (−2.8%, ~10⁻⁵) | Li in very metal-poor stars and in the SMC gas |
 
 ## D. Matter-genesis toolkit
 | # | gap | status |
 |---|---|---|
 | D1 | Y_p 0.005 low (weak-rate corrections) | **E** — add Coulomb, radiative and finite-mass corrections |
-| D2 | Li-7 missing | **E + open problem** — the cosmological LITHIUM PROBLEM (prediction ≈ 3× observed) |
+| D2 | Li-7 | DONE (D1640): 4.35 × 10⁻¹⁰, problem reproduced (×2.7) |
 | D3 | stellar, s- and r-process ladder | **E** — later rungs |
 | D4 | links to sound / cymatics / gravitational waves | **E** — ladder sonification done; acoustic peaks and the GW background are next |
 
@@ -47,3 +48,5 @@ Plan (lock before computing):
 3. Pass rules set in advance: Li-7/H ∈ [3, 7] × 10⁻¹⁰ (standard prediction ≈ 5 × 10⁻¹⁰; observed Spite plateau 1.6 × 10⁻¹⁰ is the PROBLEM, not the target). Y_p moves up toward 0.247. D/H stays in [1.5, 4] × 10⁻⁵.
 4. P-M test: does a mirror sector at ΔN_eff ≤ 0.3, or 5 GeV dark baryons, move Li-7 by more than 10%? (Expected: no. The Weave would then NOT solve the lithium problem, which is to be recorded as such.)
 After R-Li the queue is: C2 (dark-thread start from the Y-fork) → B2 (δ = 2/9) → C3/C4 (sharing factor and asymmetry from the thread's decay at ρ).
+
+**R-Li done (D1640).** Next rung: **R-C2**, whether the dark thread's starting height comes from where the Y-fork leaves slow moduli.

@@ -16391,3 +16391,11 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - theory/pending_docs/WEAVE_POSTULATES.md lists 22 items: A1–A5 inflation, B1–B7 flavour, C1–C6 dark sector, D1–D4 toolkit. Each has a postulate label (P / C / E) and the test that can kill it.
 - NEXT RUNG: R-Li. Add ⁷Be and ⁷Li plus the weak-rate corrections to BBN v3, lock first, and test whether P-M touches the lithium problem.
 - Queue after it: C2 → B2 → C3/C4.
+
+## D1640 (RIGHT, 19 Nov 2026) — RESULT, rung R-Li: lithium added (PREREG_GENESIS_LI7). All locked rules PASS; the Weave does NOT solve the lithium problem
+- Li/H = 4.35 × 10⁻¹⁰ (L1 ✓, window [3, 7] × 10⁻¹⁰; full codes give ≈ 4.7–5.6 × 10⁻¹⁰). 94% is made as ⁷Be (L3 ✓). Y_p and D/H are unchanged from v3 to 10⁻⁶ (L2 ✓).
+- Against the observed Spite plateau, 1.6 × 10⁻¹⁰: overproduced ×2.7. This is the standard cosmological lithium problem, reproduced.
+- M1: a mirror sector at ΔN_eff = 0.3 changes Li by −2.8%, versus the ×3 needed. NOT a solution.
+- M2: 5 GeV dark baryons have ρ_DM/ρ_rad = 1.1 × 10⁻⁵ at BBN, so they have no effect.
+- Rates: SKM-1993/CF88, cross-checked against PArthENoPE at 0.96–1.05.
+- Verdict: the toolkit now covers H, D, ³He, ⁴He and ⁷Li at textbook level. The lithium problem remains open within the Weave. Recorded as postulate C7: "lithium is depleted in stars (astrophysical), not missing from BBN". This is the mainstream leading explanation, and it adds no new Weave physics.
