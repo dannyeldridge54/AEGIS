@@ -3082,3 +3082,7 @@ Touches: none.
 2. [derived] H = 5.8e12 GeV, so EFT consistency needs fewer than 1.8e11 species in 4D (open: needs the volume).
 3. [derived] The tilt term C(E − E_ρ) equals C(Λ_QG^{−6} − Λ_QG(ρ)^{−6}); at y* it is 7.9e-4 of V.
 4. [estimate] Candidate: R⁴·E_{3/2} on the inflating background, C ~ (H/M_*)^6; obstacle: Weyl-built R⁴ vanishes on pure dS.
+
+## D1530 — referee m1 closed: native tilt C_n·x = (C/α)·x reproduces the C·g DILMIX rows to |Δn_s| ≤ 2.2e-7
+1. [derived] g = P/(1 − P) = x/α·[1 + O(1/(αx))] for the DILMIX mixture, so C·g ≈ (C/α)·x.
+2. [derived] Exact MS: α 0.25 and 0.5 native rows match the C·g rows (Δn_s −2.2e-7, −1.7e-7; Δr ≤ 0.01 %); both stay in band.

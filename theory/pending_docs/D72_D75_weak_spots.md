@@ -15652,3 +15652,10 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - Errors/invalid: T5 f = 1.25, 1.5, 2 overflowed (math range error at large y — tilt-dominated, n_s already 0.986 at f = 1); recorded INVALID, not rerun (they are beyond the band side).
 - [derived] Reading: at fixed n_s, r falls as the tilt rises faster (T2 → T3 → T5: 5.40 → 5.18 → 4.90 e-4 at n_s 0.969). So r discriminates the tilt power: the r band 4.55–5.7e-4 admits T2–T5; a future r measurement at the 1e-5 level would pick the power. Postulate targets for the tilt search, in species language: an (H/Λ_sp)^{4} or (H/Λ_sp)^{6} correction, or the D⁴R⁴ term — all three are terms the IIB derivative expansion contains; their τ-dependence matches, their size and on-dS value are open (D1526 Weyl obstacle applies to R⁴ and D⁴R⁴ alike).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1530 — DILMIX_NATIVE complete (2/2): referee m1 CLOSED — the native tilt C_n·x with C_n = C/α reproduces the C·g approximation to |Δn_s| ≤ 2.2e-7 and |Δr|/r ≤ 0.01 %; both λ = 1 in-band points stay in band
+- Lock: field_tests/rules/PREREG_DILMIX_NATIVE.md (analytic map g = x/α·[1 + O(1/(αx))] derived before computing). Results: field_tests/results/DILMIX_NATIVE/ (exact MS, cloud).
+- [computed] α 0.25, C_n 5e-6: n_s 0.971975, r 4.5618e-4 vs C·g (C 1.25e-6) 0.971975 / 4.5614e-4: Δn_s −2.2e-7, Δr +0.009 %. α 0.5, C_n 2.5e-6: 0.969092 / 5.5066e-4 vs 0.969093 / 5.5066e-4: Δn_s −1.7e-7, Δr +0.0002 %. Both in band.
+- Rule (AGREE if |Δn_s| ≤ 0.002 and |Δr|/r ≤ 10 %): AGREE. m1 closed with the map C_n = C/α. Stated expectation ("n_s slightly lower natively") holds in sign at the 1e-7 level only.
+- Why so close: at horizon exit x* ≫ 1/α, so g·α/x = 1 to ≲ 1e-3 and the slope term differs at the same order; the C·g form was a faithful rewrite, not an approximation that mattered.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
