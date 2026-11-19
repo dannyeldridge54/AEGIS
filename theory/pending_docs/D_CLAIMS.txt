@@ -736,3 +736,4 @@ D1449  2026-11-19T06:24Z  JANUS tick 45: vacua delta alpha_s with both derived s
 D1450  2026-11-19T06:31Z  JANUS tick 46: PC job J4 spec (rerun reference rows with fixed estimator)
 D1451  2026-11-19T06:35Z  JANUS tick 47: summary addendum D1446-D1450
 D1452  2026-11-19T06:41Z  JANUS tick 48: band_e_audited running from derived rho model vs ACT
+D1453  2026-11-19T06:47Z  JANUS tick 49: band_i running from derived tau=i model vs D1413
