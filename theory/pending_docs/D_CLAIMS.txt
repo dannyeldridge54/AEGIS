@@ -771,3 +771,4 @@ D1484  2026-11-19T10:39Z  Area-integration heavy-field check: minimum needs flip
 D1485  2026-11-19T10:44Z  SR forecast + band map of DILMIX (A/B mixture on E(tau,3/2)) (help for P3 chat)
 D1486  2026-11-19T10:47Z  Referee M1+M4: axio-dilaton physical frame - a ~ 5e2-2e5, y* ~ 1.5e3-8e4 (g_s* ~ 1e-5-7e-4), dphi ~ 5-8 M_P, C_phys 6e-4-0.25; vacuum at g_s 1.15
 D1487  2026-11-19T10:50Z  Triality route checked (exact only N=4, no potential; N=2 maps keep heterotic (T,U) one-loop as type I one-loop/tree limits) + prime structure: E(rho,s) = (sqrt3/2)^s 6 zeta(s) L(s,chi_-3), E8 = 240 2^-s zeta(s)zeta(s-3)
+D1488  2026-11-19T11:36Z  SR forecast of LVSDIL k-scan (help for P3 chat)
