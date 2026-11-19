@@ -10,6 +10,7 @@ Outputs: ufe-v2/data/validation/  (streams/*.csv via job dirs, release_watch.jso
     python -m aegis.validation_collect            # streams once, then the daily watch forever
     python -m aegis.validation_collect --once     # one pass of each, then exit
 """
+from aegis import gaia_release as GR
 import json
 import math
 import sys
@@ -38,13 +39,13 @@ def _band(lon, lat, lon_p, lat_p, half):
 
 
 def sgr_query(l0, l1):
-    return (f"SELECT {COLS} FROM gaiadr3.gaia_source WHERE l >= {l0} AND l < {l1} AND ABS(b) > 8 "
+    return (f"SELECT {COLS} FROM {GR.table()} WHERE l >= {l0} AND l < {l1} AND ABS(b) > 8 "
             f"AND {_band('l', 'b', SGR_LP, SGR_BP, SGR_HALF)} "
             f"AND parallax < 0.15 AND phot_g_mean_mag BETWEEN 13 AND 17.5 AND ruwe < 1.4")
 
 
 def gd1_query(ra0, ra1):
-    return (f"SELECT {COLS} FROM gaiadr3.gaia_source WHERE ra >= {ra0} AND ra < {ra1} "
+    return (f"SELECT {COLS} FROM {GR.table()} WHERE ra >= {ra0} AND ra < {ra1} "
             f"AND {_band('ra', 'dec', GD1_RAP, GD1_DECP, GD1_HALF)} "
             f"AND parallax < 0.5 AND phot_g_mean_mag BETWEEN 15 AND 20.5 AND ruwe < 1.4 "
             f"AND pmra BETWEEN -15 AND 0 AND pmdec BETWEEN -15 AND 2")

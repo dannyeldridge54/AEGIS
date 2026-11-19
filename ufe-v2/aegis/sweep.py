@@ -29,18 +29,19 @@ SHELLS_PC = (0, 500, 1000, 2000, 4000, 1e9)   # onion layers: distance shells fo
 MIN_SKY_FRAC = 0.25                          # fit a shell direction once this much of the sky is swept
 SPOT_CHECK_S = 600                           # every 10 min: re-count a random finished tile at ESA and compare
 
-COLS = f"{GAIA_SELECT}, d.r_med_geo, d.r_lo_geo, d.r_hi_geo"
+from aegis import gaia_release as GR
+COLS = f"{GAIA_SELECT}, {GR.dist_select()}"
 
 
 def adql_range(lo, hi, after, top):
-    return (f"SELECT TOP {top} {COLS} FROM gaiadr3.gaia_source AS g "
-            "LEFT OUTER JOIN external.gaiaedr3_distance AS d ON g.source_id = d.source_id "
+    return (f"SELECT TOP {top} {COLS} FROM {GR.table()} AS g "
+            f"{GR.dist_join()}"
             f"WHERE g.source_id BETWEEN {max(lo, after + 1)} AND {hi} AND g.parallax_over_error > 5 "
             "ORDER BY g.source_id")
 
 
 def adql_count(lo, hi):
-    return (f"SELECT COUNT(*) AS n FROM gaiadr3.gaia_source AS g "
+    return (f"SELECT COUNT(*) AS n FROM {GR.table()} AS g "
             f"WHERE g.source_id BETWEEN {lo} AND {hi} AND g.parallax_over_error > 5")
 
 

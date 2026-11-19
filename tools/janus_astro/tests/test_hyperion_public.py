@@ -4,6 +4,7 @@ import math, pytest
 from tools.janus_astro import mapper_feed as F, galaxy as G, gw
 
 def test_vc_mwpotential2014():                        # Bovy 2015: v_c(R0 = 8 kpc) = 220 km/s by construction
+    pytest.importorskip('galpy')
     assert abs(220.0*G.MW().vcirc(1.0) - 220.0) < 0.5
 
 def test_lsr_circular_in_mcmillan17():                # McMillan 2017: v_c(R0 = 8.21) = 233.1 km/s, so the LSR orbit is circular

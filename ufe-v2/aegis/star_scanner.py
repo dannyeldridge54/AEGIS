@@ -54,24 +54,23 @@ COLUMNS = ["source_id", "ra", "dec", "parallax", "parallax_error", "pmra", "pmra
 GAIA_QUERY_FIELDS = tuple(dict.fromkeys(
     [column for column in COLUMNS if not column.startswith("r_")] + list(ASTROMETRY_FIELDS)
 ))
-GAIA_SELECT = ", ".join(f"g.{column}" for column in GAIA_QUERY_FIELDS)
+from aegis import gaia_release as GR
+GAIA_SELECT = GR.select(GAIA_QUERY_FIELDS)   # NULL for columns the release lacks (DR4 prep)
 
 def adql(ra0, dec0, join=True, radius=None):
     g = GAIA_SELECT
     where = (f"WHERE 1=CONTAINS(POINT('ICRS', g.ra, g.dec), CIRCLE('ICRS', {ra0:.6f}, {dec0:.6f}, {radius or RADIUS_DEG})) "
              "AND g.parallax_over_error > 5")
     if join:
-        return (f"SELECT TOP {MAX_ROWS} {g}, d.r_med_geo, d.r_lo_geo, d.r_hi_geo "
-                "FROM gaiadr3.gaia_source AS g LEFT OUTER JOIN external.gaiaedr3_distance AS d "
-                f"ON g.source_id = d.source_id {where}")
-    return f"SELECT TOP {MAX_ROWS} {g} FROM gaiadr3.gaia_source AS g {where}"
+        return (f"SELECT TOP {MAX_ROWS} {g}, {GR.dist_select()} "
+                f"FROM {GR.table()} AS g {GR.dist_join()}{where}")
+    return f"SELECT TOP {MAX_ROWS} {g} FROM {GR.table()} AS g {where}"
 
 def adql_by_id(ids):
     """Re-query specific stars (by Gaia source_id) with both distance sources."""
     idlist = ",".join(str(int(i)) for i in ids)
-    return (f"SELECT {GAIA_SELECT}, d.r_med_geo, d.r_lo_geo, d.r_hi_geo "
-            "FROM gaiadr3.gaia_source AS g LEFT OUTER JOIN external.gaiaedr3_distance AS d "
-            f"ON g.source_id = d.source_id WHERE g.source_id IN ({idlist})")
+    return (f"SELECT {GAIA_SELECT}, {GR.dist_select()} "
+            f"FROM {GR.table()} AS g {GR.dist_join()}WHERE g.source_id IN ({idlist})")
 
 def tap_query(query, timeout=90):
     body = urllib.parse.urlencode({"REQUEST": "doQuery", "LANG": "ADQL", "FORMAT": "csv",
@@ -126,7 +125,9 @@ def assess(row):
     if vtan is not None and vtan > 400:
         flags.append(("high_velocity", f"tangential speed {vtan:.0f} km/s; confirm with a radial velocity and orbit"))
     if ruwe is not None and ruwe > 1.4:
-        flags.append(("astrometric_excess", f"RUWE {ruwe:.2f}; possible unresolved binary, check Gaia DR3 NSS tables"))
+        flags.append(("astrometric_excess", f"RUWE {ruwe:.2f}; possible unresolved binary, check {GR.label()} NSS tables"))
+    if not has_bj and GR.parallax_only():
+        flags.append(("distance_parallax_only", f"1/parallax distance; no {GR.label()} distance catalogue joined yet"))
     if has_bj and (rhi - rlo) > 0 and abs(d_plx - rmed) > 3 * (rhi - rlo):
         flags.append(("distance_mismatch", f"1/parallax {d_plx:.0f} pc vs Bailer-Jones {rmed:.0f} pc "
                                            f"[{rlo:.0f}-{rhi:.0f}]; check zero-point and crowding"))
