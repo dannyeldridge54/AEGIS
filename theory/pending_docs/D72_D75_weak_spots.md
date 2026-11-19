@@ -15298,3 +15298,10 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [literature] Full text of 2506.20707 now read (D1472 + this tick): no running constraint; SPT-3G enters only via n_s (D1472).
 - aegis-check: no numbers computed (NULL rule).
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1478 — JANUS tick 85: hourly literature recheck — PASS as locked
+- [literature] arXiv:2609.35964v1 Table III (reanalysis; CMB-PAS = Planck PR3 + ACT DR6 + SPT-3G D1, + DESI DR2): ΛCDM+α_s n_s 0.9737 ± 0.0027, α_s 0.0062 ± 0.0049; P-ACT-LB 0.9741 ± 0.0033 / 0.0062 ± 0.0053; extended-model rows in DERIVATION_LOG.
+- [derived] Pulls ρ A1 / τ = i: n_s ≤ 1.52σ, α_s −1.28 … −1.78σ; max 1.777 < 2 → PASS (marginal pulls, correlation not used).
+- [estimate] Running still leans positive in CMB-led fits (cf. D1471); SERAPIS's negative α_s sits ~1.5σ below — a watch item, not a tension marker.
+- aegis-check: pulls from field_tests/results/D1478_lit_pulls.json; two re-run by hand in python ((−9.9796e-4 − 0.0062)/0.0049 = −1.469; (0.974393 − 0.9737)/0.0027 = +0.257); like-with-like: ΛCDM+α_s rows match the model class, extended rows reported for completeness; checked: units, arithmetic, like-with-like, cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no

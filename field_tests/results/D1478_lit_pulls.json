@@ -1,0 +1,67 @@
+{
+ "source": "arXiv:2609.35964v1 Table III",
+ "rows": [
+  {
+   "data": "P-ACT-LB",
+   "model": "LCDM+alpha_s",
+   "rho_A1": {
+    "pull_ns": 0.089,
+    "pull_as": -1.358
+   },
+   "tau_i_NA12": {
+    "pull_ns": 0.158,
+    "pull_as": -1.331
+   }
+  },
+  {
+   "data": "CMB-PAS+DESI DR2",
+   "model": "LCDM+alpha_s",
+   "rho_A1": {
+    "pull_ns": 0.257,
+    "pull_as": -1.469
+   },
+   "tau_i_NA12": {
+    "pull_ns": 0.341,
+    "pull_as": -1.44
+   }
+  },
+  {
+   "data": "CMB-PAS+DESI DR2",
+   "model": "w0waCDM+alpha_s",
+   "rho_A1": {
+    "pull_ns": 1.446,
+    "pull_as": -1.306
+   },
+   "tau_i_NA12": {
+    "pull_ns": 1.524,
+    "pull_as": -1.276
+   }
+  },
+  {
+   "data": "CMB-PAS+DESI DR2",
+   "model": "LCDM+alpha_s+Neff",
+   "rho_A1": {
+    "pull_ns": -0.743,
+    "pull_as": -1.777
+   },
+   "tau_i_NA12": {
+    "pull_ns": -0.706,
+    "pull_as": -1.755
+   }
+  },
+  {
+   "data": "CMB-PAS+DESI DR2",
+   "model": "LCDM+alpha_s+Neff+mnu",
+   "rho_A1": {
+    "pull_ns": -0.22,
+    "pull_as": -1.406
+   },
+   "tau_i_NA12": {
+    "pull_ns": -0.184,
+    "pull_as": -1.383
+   }
+  }
+ ],
+ "max_abs_pull": 1.777,
+ "verdict": "PASS"
+}
