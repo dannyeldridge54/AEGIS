@@ -130,11 +130,14 @@ nodes:
   - D1476
   - D1479
   - D1481
+  - D1482
+  - D1484
+  - D1483
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D1476: postulate'
-  - 'D1479: postulate'
-  - 'D1481: postulate'
+  - 'D1482: postulate'
+  - 'D1484: postulate'
+  - 'D1483: postulate (late)'
 - id: logderiv_plateau
   layer: 1
   branch:
