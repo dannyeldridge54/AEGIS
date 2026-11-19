@@ -14930,3 +14930,17 @@ MAP: node=janus status=computed touches=[] ripple=no
 - aegis-check: re-ran −k·2r at both ends and the two deviations in python; checked: units, arithmetic, like-with-like (D1262 values are the same box, MSSM g*, exact pipeline), limits, cross-sector: none.
 MAP: node=band_e_audited status=postulate touches=[] ripple=no
 
+## D1424 — JANUS tick 21: SUMMARY of the Janus-relation night (D1399–D1423), for Danny and the paper
+No computation; collects results with their D-numbers.
+**Closed forms (exact, checked against code to ≤ 1e-15):**
+- any κ: α_s = −½(1−n_s)²ρ[1+κ(ρ−1)], ρ = p√(r/2)/(1−n_s) — D1405
+- κ = 1 (ρ vacuum, p = 2√2): α_s = −p²r/4 = −2r, n_s drops out — D1399; β_s = (1−n_s)α_s — D1400
+- between vacua at equal (n_s, r): Δα_s = ¼(1−n_s)²ρ(ρ−1) — D1408
+**Prediction (falsifiable):** SERAPIS's bands have ρ = 1.42–1.91 ⇒ negative running for every κ > 0: α_s ≈ −8.4e-4 (τ = i) to −1.06e-3 (ρ) — D1405, D1413, D1421.
+**Meters:** τ = i D640 offset-corrected, 0.3 % (D1412; also recovers ε to 0.2 %, post-lock); ρ Janus × 1.0352 (A1), ≤ 0.25 % over the audited box (D1423). Cause of both leading-order misses: the plateau's constant offset in its field variable (j at τ = i, E(ρ,2) at ρ — D1412, D1414).
+**Data today:** band_e, band_i, band_e_audited PASS on CMB + DESI and ACT DR6 running (pulls ≈ −1.4σ); >2σ high at the top edges on CMB alone (D1402, D1402a, D1404, D1407, D1413). Inputs consistent (N* windows, D1419).
+**2030s:** cannot confirm (≤ 1.3σ detection) but can exclude: ≈ 6σ (S4 + SPHEREx) if ACT's +0.0062 holds — D1409. Vacua not separable (D1408).
+**Open:** ρ closed-form offset relation (D1415 +1.33 % FAIL; second-order SR source incomplete D1416); exact-MS on the PC runner (sandbox too slow, D1418; spectra_fast α_s unreliable, D1420/D1422).
+**Fixes made tonight:** ladder unblocked (S_kk10 → observing, 54 MAP lines applied); D1402a κ correction; D640's printed c (1.1868 → 1.18646).
+MAP: node=janus status=computed touches=[] ripple=no
+

@@ -2519,3 +2519,10 @@ Touches: none.
 3. [derived] ACT DR6 pulls −1.37σ … −1.39σ: PASS.
 4. [derived] So for the ρ vacuum the Janus relation × 1.0352 is a sub-percent α_s meter across both band_e and the audited box, the ρ counterpart of D640 at τ = i — an empirical calibration, not a closed form (D1415 FAIL stands for the closed form).
 
+## D1424: Janus summary, D1399–D1423
+1. [derived] Closed forms of the Paper 1 relation (D669): α_s = −½(1−n_s)²ρ[1+κ(ρ−1)], ρ = p√(r/2)/(1−n_s) (D1405); at κ = 1, α_s = −p²r/4 = −2r for p = 2√2 (D1399) and β_s = (1−n_s)α_s (D1400).
+2. [derived] Sign rule: α_s ≥ 0 needs ρ < 1 and κ ≥ 1/(1−ρ); SERAPIS's bands have ρ = 1.42–1.91, so the running is negative for every κ > 0 (D1405).
+3. [derived] Two sub-percent α_s meters from (n_s, r): τ = i — D640's offset-corrected relation, 0.3 % (D1412); ρ — Janus relation × 1.0352 calibrated at A1, ≤ 0.25 % across the audited box (D1421, D1423). Both vacua's leading-order misses come from the plateau's constant offset (D1412, D1414); the ρ closed form is still open (D1415 FAIL, D1416 NULL, D1418/D1420 engine-limited).
+4. [derived] Data: all three bands PASS on end-2025 CMB + DESI and ACT DR6 running (pulls ≈ −1.4σ); top edges are >2σ high on CMB alone (D1402–D1407, D1413).
+5. [derived] Testability: not detectable by 2030 (≤ 1.3σ), but excludable — S4 + SPHEREx would rule the family out at ≈ 6σ if ACT's positive central running held (D1409). vac_discriminant stays killed (Δα_s ≤ 0.33σ, D1408).
+
