@@ -1,0 +1,5 @@
+# PREREG_FLAV_RHO2 — flavour at ρ run 2 (locked D1596, 2026-11-19 12:20 CT)
+(1) Endpoint offset: derive whether V(τ) = V₀(τ)[1 + C(E − E_ρ)] pins τ exactly at ρ (ε = 0) — analytic + numeric check of V and ∇V at ρ and at ρ + 1e-3.
+(2) Neutrinos: residual Z₃ at ρ (charged leptons) + A4 ⇒ tribimaximal (TBM) mixing: sin²θ₁₂ = 1/3, sin²θ₂₃ = 1/2, sin²θ₁₃ = 0. Compare with NuFIT 6.0 NO (2410.05380): 0.307 (+0.012/−0.011), 0.02195 (+0.00054/−0.00058), 0.561 (+0.012/−0.015) [IC19]; 0.470 [IC24]. Report pulls in σ. Pass rule: |pull| < 3 for all three ⇒ PASS, else FAIL.
+(3) Strong CP: if θ = 2π Re τ (gauge kinetic function f = τ, D3-type sector), ρ gives θ = π. Leading-order χPT: m_π²(θ) = m_π²(0)·√(1 − 4z sin²(θ/2)/(1 + z)²), z = m_u/m_d ∈ {0.45, 0.47, 0.49}. Report m_π(π)/m_π(0). Pass rule for θ = π: ratio > 0.95 (else θ = π contradicts lattice QCD at θ = 0 matching the observed pion) ⇒ PASS/FAIL. Report the condition for θ̄ = 0: arg det(Y_u Y_d)(ρ) = π mod 2π.
+One run: field_tests/scripts/flav_rho/run2.py.
