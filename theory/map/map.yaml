@@ -33,10 +33,12 @@ nodes:
   - D1048
   - D1250
   - D991a
+  - D1386
   history:
-  - 'D1048: estimate'
   - 'D1250: estimate'
   - 'D991a: estimate (late)'
+  - 'D1386: estimate'
+  flag: recheck (D1387, lepto_i)
 - id: plateau_origin
   layer: 1
   branch:
@@ -44,7 +46,7 @@ nodes:
   - rho
   - E
   title: Origin of the plateau
-  status: assumed
+  status: postulate
   d:
   - D703
   - D712
@@ -89,11 +91,46 @@ nodes:
   - D992
   - D798a
   - D1352
+  - D1361
+  - D1362
+  - D1363
+  - D1365
+  - D1366
+  - D1367
+  - D1368
+  - D1369
+  - D1370
+  - D1371
+  - D1372
+  - D1373
+  - D1374
+  - D1375
+  - D1376
+  - D1377
+  - D1378
+  - D1379
+  - D1380
+  - D1381
+  - D1382
+  - D1383
+  - D1384
+  - D1385
+  - D1353
+  - D1364
+  - D1394
+  - D1395
+  - D1396
+  - D1397
+  - D1398
+  - D1401
+  - D1401a
+  - D1403
+  - D1406
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D992: assumed'
-  - 'D798a: corrected (late)'
-  - 'D1352: assumed'
+  - 'D1401a: postulate'
+  - 'D1403: postulate'
+  - 'D1406: postulate'
 - id: logderiv_plateau
   layer: 1
   branch:
@@ -213,12 +250,13 @@ nodes:
   - D1344
   - D1349
   - D1351
+  - D1359
   depends:
   - eps_tilt
   history:
-  - 'D1344: assumed'
   - 'D1349: assumed'
   - 'D1351: computed'
+  - 'D1359: computed'
 - id: vac_rho
   layer: 2
   branch:
@@ -294,10 +332,13 @@ nodes:
   - D1255
   - D1346
   - D1354
+  - D1400
+  - D1405
   history:
-  - 'D1255: computed'
-  - 'D1346: computed'
   - 'D1354: computed'
+  - 'D1400: computed'
+  - 'D1405: computed'
+  flag: recheck (D1408, vac_discriminant)
 - id: bhk_tilt
   layer: 3
   branch:
@@ -319,6 +360,7 @@ nodes:
   - 'D1275a: postulate'
   - 'D1274a: postulate (late)'
   - 'D1275b: postulate'
+  flag: recheck (D1390, inverse_meter)
 - id: stuck_d3
   layer: 3
   branch:
@@ -432,14 +474,15 @@ nodes:
   - D904a
   - D909
   - D1241
+  - D1387
   depends:
   - reheat_i
   - n_sector_i
   - eta_n
   history:
-  - 'D904a: estimate'
   - 'D909: estimate'
   - 'D1241: estimate'
+  - 'D1387: estimate'
 - id: sterile_rho
   layer: 4
   branch:
@@ -626,14 +669,17 @@ nodes:
   - D962
   - D1247
   - D1343
+  - D1402
+  - D1402a
   depends:
   - nstar_i
   - janus
   note: corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)
   history:
-  - 'D962: computed'
-  - 'D1247: frozen'
   - 'D1343: computed'
+  - 'D1402: frozen'
+  - 'D1402a: frozen'
+  flag: recheck (D1405, janus)
 - id: band_e
   layer: 5
   branch:
@@ -650,13 +696,15 @@ nodes:
   - D1231
   - D1233
   - D1232
+  - D1404
   depends:
   - nstar_e
   - janus
   history:
-  - 'D1231: frozen'
   - 'D1233: frozen'
   - 'D1232: frozen (late)'
+  - 'D1404: frozen'
+  flag: recheck (D1405, janus)
 - id: band_e_audited
   layer: 5
   branch:
@@ -665,14 +713,18 @@ nodes:
   status: postulate
   d:
   - D1245
+  - D1388
+  - D1399
+  - D1407
   depends:
   - nstar_e
   - reheat_rho
   - serapis_e
   - band_e
   history:
-  - 'D1245: postulate (PW1)'
-  - 'D1245: postulate'
+  - 'D1388: postulate'
+  - 'D1399: postulate'
+  - 'D1407: postulate'
   note: web loop postulate 1; scored only on future data
 - id: serapis_point
   layer: 5
@@ -695,6 +747,7 @@ nodes:
   - 'D1273: postulate'
   - 'D1273a: postulate'
   note: web loop postulate 2; scored only on future data
+  flag: recheck (D1388, band_e_audited)
 - id: vac_discriminant
   layer: 5
   branch:
@@ -704,6 +757,7 @@ nodes:
   status: killed
   d:
   - D1263
+  - D1408
   depends:
   - janus
   - vac_i
@@ -712,6 +766,7 @@ nodes:
   history:
   - 'D1263: postulate PW3 killed by its locked test'
   - 'D1263: killed'
+  - 'D1408: killed'
   note: web loop postulate 3; kept on the web as killed
 - id: m32_window
   layer: 5
@@ -721,6 +776,7 @@ nodes:
   status: postulate
   d:
   - D1264
+  - D1389
   depends:
   - covariant
   - serapis_e
@@ -729,6 +785,7 @@ nodes:
   history:
   - 'D1264: postulate PW4 passed its locked test'
   - 'D1264: postulate'
+  - 'D1389: postulate'
   note: web loop postulate 4 (pattern covariant ↔ eps_tilt)
 - id: string_meter
   layer: 5
@@ -750,6 +807,7 @@ nodes:
   - 'D1265a: postulate'
   - 'D1265b: postulate'
   note: web loop postulate 5
+  flag: recheck (D1390, inverse_meter)
 - id: inverse_meter
   layer: 5
   branch:
@@ -758,12 +816,14 @@ nodes:
   status: postulate
   d:
   - D1268
+  - D1390
   depends:
   - string_meter
   - serapis_point
   history:
   - 'D1268: postulate PW6 passed'
   - 'D1268: postulate'
+  - 'D1390: postulate'
   note: web loop postulate 6
 - id: instanton_MH
   layer: 5
@@ -841,13 +901,14 @@ nodes:
   - D1324
   - D1337
   - D1338
+  - D1392
   depends:
   - gravitino_wino
   - halo_profile
   history:
-  - 'D1338: computed'
   - 'D1337: computed (late)'
   - 'D1338: computed'
+  - 'D1392: computed'
 - id: tests_cmb
   layer: 5
   branch:
@@ -894,10 +955,15 @@ nodes:
   - 'D906: literature'
   - 'D1249: literature'
   - 'D1350: computed'
+  flag: recheck (D1392, wino_window)
 observing:
 - id: mapper_dr3
   title: Gaia DR3 sweep complete (192,208,838 stars; 200/200 ESA checks)
   status: computed
+  d:
+  - D1360
+  history:
+  - 'D1360: computed'
 - id: mapper_dr4
   title: Gaia DR4 sweep (release 2 Dec 2026)
   status: open
@@ -906,6 +972,17 @@ observing:
   - D1330
   history:
   - 'D1330: open'
+- id: S_kk10
+  title: '10D scalar KK masses vs BTR 2209.10553: spectrum shape agrees, common absolute scale −3.4 to −4 % open (D1141, D1214, D1216, D1356–D1358)'
+  status: corrected
+  d:
+  - D1356
+  - D1357
+  - D1358
+  history:
+  - 'D1356: corrected'
+  - 'D1357: corrected'
+  - 'D1358: corrected'
 - id: mapper_feeds
   title: Live feeds (DONKI moved; GCN via per-circular JSON; NIST beacon intermittent)
   status: computed
