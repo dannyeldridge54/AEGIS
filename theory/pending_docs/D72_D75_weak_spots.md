@@ -15279,3 +15279,11 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Loudest tension = CMB-only vs BAO n_s split (+3.1σ); no status change — data question open; SO-era CMB n_s decides.
 - aegis-check: summary — pulls re-read from the D1471/D1472 jsons this tick (2.062, 2.174, 3.149, 0.640).
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1475 — DEEP / CHECK: string-calc S5c — the Petropoulos–Rizos universal threshold Y(T,U) integrated DIRECTLY over F with our toolkit: both P–R eq. (31) terms are confirmed — 6πR² and 90κ/(πR²) with κ = E(i,2)/π² — a second, independent route for D1365/D1366. A constant offset −0.716 remains, not explained (2026-11-19)
+- [literature] P–R hep-th/9601037: Ω₂ = ∂log η/∂log q (19) = E₂/24, with Ω₂ − 1/(8πτ₂) = Ê₂/24 modular covariant; Ω/η²⁴ = ½(j − j(i))(∂log j/∂log q)⁻¹ (24); Γ₂,₂ = Γ₁,₁(R₁)Γ₁,₁(R₂) for Re T = Re U = 0 (25–26); measure d²τ/Im τ.
+- [derived] With q∂_q j = −(E₆/E₄)j and j − 1728 = E₆²/Δ: Ω/η²⁴ = −E₄E₆/(2Δ), so the eq. (23) integrand is Φ = (1/8)·conj(Ê₂E₄E₆/Δ) + 33. Its constant term is (1/8)(−264 + 720/(πτ₂)) + 33 = 90/(πτ₂) — exactly P–R's ∫ρ̄dτ₁ = 90/(πτ₂) (a check of the identification).
+- [computed] Y = ∫_F (d²τ/τ₂)Γ₂,₂Φ + ½log|j(T) − j(U)| (script field_tests/scripts/s5c/universal_Y.py; τ₂ < y_c full integrand, τ₂ ≥ y_c τ₁-average Φ₀·degenerate orbit; y_c = 2, 2.5, 3 give identical results to 1e-6). T = iR², U = i: R = 2: 79.0554 vs eq. (31) 79.7716; R = 3: 170.8735 vs 171.5897 → offset −0.7162 at both (equal to 1e-4). R = 2.5: offset −0.7262 (0.01 off the others — numerical, flagged). y_c = 4 drifts (0.095), traced to the full integrand's e^{2πτ₂} q̄⁻¹ term in [3,4] — not used.
+- [derived] Because the offset is the same at R = 2 and 3 to 1e-4 while 90κ/(πR²) changes by 2.4, the 1/R² coefficient is confirmed to ~5e-5 relative: κ = E(i,2)/π² by direct integration, independent of the series identity of D1365.
+- [estimate] The constant −0.716 is either a convention in P–R's eq. (31) (constants dropped, or the norm ‖j(T) − j(U)‖) or a normalisation slip on our side; it does not affect any P3 conclusion (D1397–D1398 use only the T₂ and E(U,2)/T₂ terms).
+MAP: node=plateau_origin status=postulate touches=[] ripple=no

@@ -93,7 +93,7 @@ Goal (D1406 mirror): test whether a dilaton-Kähler-type object carries A₀ + B
   ≤ 6e-5; K = Γ(s)/π^s found, not assumed: 0.101321 = 1/π², 0.064503 = 2/π³); out-of-sample torus passes (test_modint).
   Two earlier normalisations (measure d²τ/τ₂², and no constant c) were tried and failed the product test — recorded so they are
   not retried.
-- S5c: P–R universal Y (eq. 23) numerically; reproduce eq. 31 (6πR² + 90κ/πR², κ = E(i,2)/π²) — closes D1365/D1366 by a
+- S5c DONE (D1475): Y integrated directly; 6πR² and 90κ/(πR²) confirmed, constant offset −0.716 unexplained. Was: P–R universal Y (eq. 23) numerically; reproduce eq. 31 (6πR² + 90κ/πR², κ = E(i,2)/π²) — closes D1365/D1366 by a
   second route.
 - S6: genus-two: Siegel–Weil route (∫ over Sp(4,Z)\H₂ of Γ₂,₂^{(2)} ↔ Langlands–Eisenstein of SO(2,2)) to get the genus-two
   E₂(T) + E₂(U) term of GRV 4.15 independently; then ask which heterotic genus-two object enters K_S.

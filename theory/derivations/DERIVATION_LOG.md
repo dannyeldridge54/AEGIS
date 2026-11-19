@@ -2812,3 +2812,9 @@ Touches: none.
 4. [derived] Two locked data tests FAILED (loud): D1471 — vs 2511.01612 (n_s, α_s, β_s free) ACT+P α_s pull −2.06σ (ρ) / −2.04σ (τ = i); with eBOSS Lyα the running agrees (+0.57σ) but β_s is +2.17σ off. D1472 — vs SPT-3G D1 n_s: SPT+Planck +3.15σ (τ = i; ρ +3.08σ), CMB-SPA +1.97/+2.04σ, CMB-SPA + DESI +0.64/+0.72σ.
 5. [estimate] Meaning: the loudest tension on the Janus nodes is the CMB-only vs CMB + BAO split in n_s, now at +3.1σ for SPT+Planck — exactly the decisive test identified in D1437/D1440. BAO-inclusive full-CMB fits agree (≤ 0.92σ). No status change (D1458 logic: which data combination is right is the open data question; the frozen bands are scored on future data), but if SO-era CMB-only n_s stays near 0.964–0.968 with σ ≈ 0.002, SERAPIS would be in > 3σ tension on CMB alone.
 6. [estimate] Awaiting Danny: PC jobs J1–J4; band_i_audited; band_i note wording; janus title note.
+
+## D1475: universal Y by direct integration (S5c)
+1. [literature] P–R (19), (24)–(26): Ω₂ = E₂/24, Ω/η²⁴ via j, Γ₂,₂ factorised.
+2. [derived] Φ = (1/8)conj(Ê₂E₄E₆/Δ) + 33, constant term 90/(πτ₂).
+3. [derived] Numeric Y: 6πR² and 90κ/(πR²) confirmed (offset equal to 1e-4 at R = 2, 3); constant −0.716 unexplained.
+4. [postulate P3] Unchanged.
