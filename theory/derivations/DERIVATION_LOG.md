@@ -3258,3 +3258,11 @@ Touches: none.
 4. [estimate] If A' decays before neutrino decoupling its energy returns to the SM bath ⇒ ΔN_eff ≈ 0, removing D1654's exclusion.
 5. [derived] Verdict OPEN: the required ε (≤ 5e-10 at m ≥ 10 MeV) is many orders below O(1e-3); collider/beam-dump limits on ε were NOT fetched (follow-up G6d).
 6. [derived] Referee: ε values recomputed from Γ and ħ; the τ = 1 s ↔ ε ~ 1e-10 match with the literature checked ✓.
+
+## D1658 — JANUS genesis G9d: the thread's future from the full-likelihood best fits (PREREG_D1658_G9D_FUTURE_D1636; DEVIATIONS D1 interp order) — acceleration still ends, later; end point splits i / ρ
+1. [derived] Inputs read from the other chat's D1636 (Ω_m, u_i, CPL w₀ per SN set); exact-curve starts matched to D1636's w₀ to ≤ 0.002: amp 0.192 (Pantheon+), 0.262 (Union3), 0.250 (DESY5).
+2. [derived] Run 1 failed on a coding error (reversed np.interp grid); DEVIATIONS D1 written before the single rerun; run 1 kept on record.
+3. [derived] Matched runs: acceleration ends at a = 1.92 (Pantheon+), 1.41 (Union3), 1.47 (DESY5) — later than D1644's 1.23 (the full likelihood prefers a less-thawed thread).
+4. [derived] End points (δx = 0 and 1e-3 identical): Pantheon+ → image of ρ; Union3 and DESY5 → image of i. Same-u starts (amp = u_i on the exact curve): acceleration ends a = 2.04–2.54, all → ρ.
+5. [estimate] Reading: "acceleration ends in the future" is robust across all full-likelihood fits (a ≈ 1.4–2.5). Which fixed point the thread ends at depends on the starting height as well as the axion (D1655): for the datasets that actually prefer the thread (DESY5, Union3) it ends at i; for the weaker ones at ρ. The Janus "ends at i" reading is tied to DESY5-like data.
+6. [derived] Referee: matched w₀ offsets, a_end and classes re-read from the json; the interp fix verified (grid monotonic increasing) ✓.

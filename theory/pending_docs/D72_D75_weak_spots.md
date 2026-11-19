@@ -16517,3 +16517,8 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - The same massive dark photon is what the dark matter needs anyway to burn off its symmetric part (a massless one is disfavoured by galaxy-halo shapes).
 - Open: collider/beam-dump limits on ε (not yet fetched, G6d); the decay-time formula used is the standard textbook one (not fetched).
 - MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no
+
+## D1658 — JANUS genesis G9d: with the full-likelihood fits, the universe still stops accelerating — just later — and where the thread ends depends on the dataset
+- Started the thread where the other chat's full fit (D1636) puts it. Acceleration still ends in every case, now at a ≈ 1.4–1.9 (about 40–90 % bigger than today) instead of 1.23.
+- End point: for DESY5 and Union3 (the data that prefer the thread) it comes to rest at i; for Pantheon+ it ends at ρ. So "dark energy ends at i" goes with the DESY5-type result. A coding slip in run 1 (sorting) was logged as DEVIATIONS D1 before the one rerun.
+- MAP: node=thread_endpoint status=computed touches=[reverse_thread] ripple=no
