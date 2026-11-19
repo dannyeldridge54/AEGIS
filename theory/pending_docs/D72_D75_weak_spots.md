@@ -15260,3 +15260,10 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Tension marker, not a kill: 3-parameter fits (α_s–β_s degeneracy), Lyα systematics not propagated. With CMB alone the data lean positive; with Lyα they lean to strongly negative β_s — SERAPIS sits between, ~2σ from each.
 - aegis-check: pulls from field_tests/results/D1471_lya_running.json; two re-run by hand in python ((−9.98e-4 − 0.01195)/0.00628 = −2.062; (−2.86e-5 + 0.00755)/0.00346 = +2.174); like-with-like caveat (3-parameter fit vs single-point model) stated; checked: units, arithmetic, cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1472 — JANUS tick 75: SPT-3G D1 n_s — FAIL as locked (SPT+Planck +3.1σ)
+- [literature] 2506.20707 Tables I/VI (68 %): CMB-SPA 0.9679 ± 0.0033, SPT+Planck 0.9636 ± 0.0035, CMB-SPA + DESI 0.9726 ± 0.0028 (+ SPT-only rows); no running reached.
+- [derived] SERAPIS n_s pulls: SPT+Planck +3.08/+3.15σ, CMB-SPA +1.97/+2.04σ, CMB-SPA + DESI +0.64/+0.72σ. Rule 2σ: FAIL.
+- [estimate] Same CMB-only vs CMB+BAO split as D1437 (decisive test); strongest CMB-only tension on file; BAO-inclusive agrees. Loud marker, not a kill.
+- aegis-check: pulls from field_tests/results/D1472_spt3g.json; two re-run by hand ((0.97462 − 0.9636)/0.0035 = 3.149; (0.974393 − 0.9679)/0.0033 = 1.968); like-with-like: ΛCDM n_s (no running) vs SERAPIS n_s; checked: units, arithmetic, cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no
