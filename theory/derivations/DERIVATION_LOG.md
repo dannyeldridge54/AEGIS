@@ -2336,3 +2336,9 @@ Touches: none.
 2. [derived] All w ∈ {1, .75, .5, .25, 0} in band; w = 0: n_s 0.96984, r 5.26e-4.
 3. [derived] Locked rule: small w passes ⇒ P3 "derived (candidate)"; expansion-order blocker lifted.
 4. [postulate P3] Plateau mechanism/model (D1375, D1384–D1385), control and uplift still open.
+
+## D1394: F-term structure with K = −log(Im S + Y/16π²)
+1. [literature] KKPR (A.6, A.13): K = −log L, L = Im S + Y/16π²; Y ⊃ (90/π³)E(U,2)/T₂.
+2. [derived] V = L·W_S² − 2WW_S + (c − 2W²)/L (sympy): uplift + plateau + linear tilt.
+3. [derived] C = 1.25e-6 ⇔ W_S/W ≈ −2.2e-3 (T₂ = 16).
+4. [postulate P3] S stabilisation compatible with that ratio unchecked.

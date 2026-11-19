@@ -14656,3 +14656,13 @@ MAP: node=wino_window status=computed touches=[tests_lhc] ripple=no
 - Text correction before commit: my first wording of law 8 said "V is quadratic there". That is wrong (I is quadratic, V quartic). The law text was fixed; the tolerance and the result are unchanged.
 - The full circuit (with aegis_tools) is still a PC run.
 MAP: none
+
+## D1394 — DEEP / LEFT: P3 — the uplift question (open item 3) answered structurally: with the KKPR one-loop K = −log L, L = Im S + Y/16π² ⊃ s + εE(U,2), the plain F-term potential at fixed S is V = A₀ − B/L + D·L with A₀ = −2WW_S, B = 2|W|² − c, D = |W_S|². The L-independent piece IS the uplift, −B/L is the plateau, and D·L = D(s + εE) is a LINEAR-in-E tilt — the (1 + C·Ê) factor. One structure gives all three pieces of SERAPIS-E (2026-11-18)
+- [derived] e^K ⊃ 1/L, K^{SS̄} = L² (K = −log L, L linear in Im S), D_SW = W_S − W/L: V = (1/L)[L²(W_S − W/L)² + c − 3|W|²] = L·W_S² − 2W·W_S + (c − 2W²)/L (sympy, real W, W_S; c = other positive F-terms). With U entering only through L = s + εE(U,2) (W independent of U: the D1372 condition b′_U = kδ^U_GS):
+  - uplift A₀ = −2WW_S > 0 needs W_S opposite in sign to W (S away from its SUSY point);
+  - plateau −B/L, B = 2W² − c > 0; tuning V(ρ) = 0 fixes A₀ = B/L_ρ − D·L_ρ; the V₀[x/(1+x)] algebra of D1371 follows;
+  - tilt D·εE: relative to the plateau height, C_eff ≈ D·ε/A₀ = −(W_S/2W)·ε.
+- [derived] Matching C = 1.25e-6 needs W_S/W ≈ −2C/ε = −2.2e-3 (T₂ = 16), −2.7e-3 (T₂ = 20): a small, one-number condition — S sits near a point where W_S ≪ W but nonzero.
+- [estimate] Not imposed: (1) S must also be stationary, ∂V/∂S = 0, with W(S) e.g. a racetrack — whether W_S/W ~ −2e-3 is compatible with ∂_SV = 0 and a heavy S is unchecked; (2) the T₂ and other-moduli factors in e^K are held fixed; (3) the sign requirement WW_S < 0. This replaces "an uplift tuned at ρ" (D1371) by one F-term condition — no separate uplift sector needed, if (1) works.
+- Verdict: the three ingredients of SERAPIS-E (zero at ρ via tuning, plateau 1 − E(ρ)/E, linear tilt C·Ê) all appear in the F-term potential of the KKPR one-loop K. Open: S stabilisation consistent with W_S/W ≈ −2e-3 (next: lock a small racetrack check). P3 status unchanged ("derived (candidate)", D1364).
+MAP: node=plateau_origin status=estimate touches=[] ripple=no
