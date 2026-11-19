@@ -4,9 +4,9 @@ sys.path.insert(0, '.')
 from tools.serapis_calc import pipeline as P
 from tools.serapis_calc.shapes import E
 k = float(sys.argv[1]); Er = E(complex(0.5, math.sqrt(3)/2), 1.5)
-F = lambda e: e**(1/3)*math.exp(-k*e**(2/3)); Fr = F(Er)
+logF = lambda e: math.log(e)/3 - k*e**(2/3); lFr = logF(Er)   # DEVIATIONS D1: log space
 vac_ok = bool(k*Er**(2/3) > 0.5)
-P.E_paper = lambda x, y: Fr/F(E(complex(x, y), 1.5))      # e = E_paper − E_paper(ρ) = F(E_ρ)/F(E) − 1
+P.E_paper = lambda x, y: math.expm1(min(lFr - logF(E(complex(x, y), 1.5)), 700.0)) + 1.0   # e = F(E_ρ)/F(E) − 1, capped (D1)
 _b = P.build
 def _build(model='serapis_e', C=1.15e-6, lam=1.0, ymax=3000, npts=4000):
     mm, V, dV, p0 = _b(model, C, lam, ymax, npts); ph, _ = P._egrid(model, lam, ymax, npts); lo, hi = 10, len(ph) - 5
