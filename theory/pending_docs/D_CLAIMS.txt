@@ -715,3 +715,4 @@ D1428  2026-11-19T04:36Z  JANUS tick 25: three bands vs three n_s combinations s
 D1429  2026-11-19T04:40Z  JANUS tick 26: band_i epsilon range - audited tau=i reaches only eps 1.39-1.44e-4 (D1247); band corners not model points
 D1430  2026-11-19T04:46Z  JANUS tick 27: beta_s needs a dark-ages interferometer; S4+SKA-like could detect alpha_s=1e-3 (literature, 1611.05883)
 D1431  2026-11-19T04:52Z  JANUS tick 28: SERAPIS running detection significance with 1611.05883 Table 1/2 forecasts
+D1432  2026-11-19T04:55Z  Recheck: 4 flags from my own touches (D1387/D1390/D1392) cleared
