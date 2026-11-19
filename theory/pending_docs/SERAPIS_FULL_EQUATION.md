@@ -81,3 +81,9 @@ Data: both n_s sit between CMB-SPA (0.9684 ± 0.0030) and CMB-SPA+DESI (0.9728 �
 
 ## 6. Corrections made today
 D1583a (LVS volume exponential, not power-law), D1572a / D1577a (5D one-loop also regularised; sign open), L6 eigenvalue −42 (working figure −21/2 never filed).
+
+## 7. Open items worked (D1592, 11:40 CT)
+1. 6D tower loop — in 6D SUSY the one-loop is Casimir-type (M⁶, M⁴, M² terms cancel per supermultiplet; hep-th/0504004) ⇒ the 4D Casas–Ibáñez prefactor does not carry over; step 3b is downgraded to an observation. P3-D stands only as "6D phase at horizon exit ⇒ r ×2"; its mechanism is OPEN.
+2. Anisotropic compactification — exists (LVS on K3-fibred CY, two large P¹-base dimensions; 2606.19440, 1105.2107); P3-D's volume overlaps it only at the low end (≈ 4–5e3) [est].
+3. 6D one-loop sign — positive at large volume [est]; then the perturbative 6D slice never ends inflation (1 → 1/9): the end must come from non-perturbative terms or the 6D → 4D transition.
+4. Andriot flag — the gradient bound inherits the dS-slope conjecture and is asserted only asymptotically; the primary bound Λ_s ≥ √V/M_P holds by ×7.7e4 at horizon exit.
