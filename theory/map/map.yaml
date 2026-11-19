@@ -1267,17 +1267,20 @@ observing:
   history:
   - 'D1638: postulate'
   - 'D1644: postulate'
+  flag: recheck (D1653, thread_endpoint)
 - id: thread_endpoint
   layer: 3
   branch:
   - i
   - rho
   title: Where the dark thread ends — overshoots ρ, settles at τ = (1+i)/2 (image of i)
-  status: open
-  d: []
+  status: computed
+  d:
+  - D1653
   depends:
   - reverse_thread
-  flag: recheck (D1644, reverse_thread)
+  history:
+  - 'D1653: computed'
 - id: dark_radiation
   layer: 3
   branch:
