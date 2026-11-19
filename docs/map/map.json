@@ -49,8 +49,7 @@
     "D1250: estimate",
     "D991a: estimate (late)",
     "D1386: estimate"
-   ],
-   "flag": "recheck (D1387, lepto_i)"
+   ]
   },
   {
    "id": "plateau_origin",
@@ -440,8 +439,7 @@
     "D1275a: postulate",
     "D1274a: postulate (late)",
     "D1275b: postulate"
-   ],
-   "flag": "recheck (D1390, inverse_meter)"
+   ]
   },
   {
    "id": "stuck_d3",
@@ -1020,8 +1018,7 @@
     "D1265a: postulate",
     "D1265b: postulate"
    ],
-   "note": "web loop postulate 5",
-   "flag": "recheck (D1390, inverse_meter)"
+   "note": "web loop postulate 5"
   },
   {
    "id": "inverse_meter",
@@ -1207,8 +1204,7 @@
     "D906: literature",
     "D1249: literature",
     "D1350: computed"
-   ],
-   "flag": "recheck (D1392, wino_window)"
+   ]
   }
  ],
  "observing": [

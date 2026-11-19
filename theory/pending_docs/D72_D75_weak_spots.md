@@ -15001,3 +15001,10 @@ MAP: node=janus status=computed touches=[] ripple=no
 - aegis-check: re-ran 1.06e-3/9.3e-4 = 1.14σ and the 3σ requirement in python; checked: like-with-like (68 % forecasts, β_s free where stated), units, arithmetic, cross-sector: none.
 MAP: node=janus status=computed touches=[] ripple=no
 
+
+## D1432 — WEAVE recheck: the 4 flags raised by my own touches lists (D1387, D1390, D1392) are cleared. None of them changes a value (2026-11-19)
+- **eps_tilt** (via D1387 lepto_i): D1387 only re-scored lepto_i at ε ≈ 1.40e-4. ε itself is unchanged (D1247/D1386). Nothing to update.
+- **bhk_tilt** and **string_meter** (via D1390 inverse_meter): D1390 read today's n_s into Im S·Im ρ ≈ 788 / 896 (±23–29%). That is a measurement by construction. C stays a meter (D1275b), and the SO ±14% forecast in string_meter's title is unchanged.
+- **tests_lhc** (via D1392 wino_window): D1392 synced the Q_panel/particle-card records to 1.25 TeV. tests_lhc's title ("Run 3 / HL-LHC disappearing tracks") carries no window number, and its HL-LHC ≈ 0.98 TeV reach (D1302) and the 52% share (D1350) are unchanged.
+- Ladder cleared for eps_tilt, bhk_tilt, string_meter, tests_lhc.
+MAP: none

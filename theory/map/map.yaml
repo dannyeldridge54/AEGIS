@@ -38,7 +38,6 @@ nodes:
   - 'D1250: estimate'
   - 'D991a: estimate (late)'
   - 'D1386: estimate'
-  flag: recheck (D1387, lepto_i)
 - id: plateau_origin
   layer: 1
   branch:
@@ -372,7 +371,6 @@ nodes:
   - 'D1275a: postulate'
   - 'D1274a: postulate (late)'
   - 'D1275b: postulate'
-  flag: recheck (D1390, inverse_meter)
 - id: stuck_d3
   layer: 3
   branch:
@@ -830,7 +828,6 @@ nodes:
   - 'D1265a: postulate'
   - 'D1265b: postulate'
   note: web loop postulate 5
-  flag: recheck (D1390, inverse_meter)
 - id: inverse_meter
   layer: 5
   branch:
@@ -978,7 +975,6 @@ nodes:
   - 'D906: literature'
   - 'D1249: literature'
   - 'D1350: computed'
-  flag: recheck (D1392, wino_window)
 observing:
 - id: mapper_dr3
   title: Gaia DR3 sweep complete (192,208,838 stars; 200/200 ESA checks)
