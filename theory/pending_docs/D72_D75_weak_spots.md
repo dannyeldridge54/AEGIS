@@ -15948,3 +15948,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1571 — DIMENSION LADDER stage 4 (D = 6, SO(5,5)): codon E^{SO(5,5)}_{[10000];3/2} (eigenvalue −15/2) has constant term 2ζ(3)r³ + 2r·E^{SO(4,4)}_{1} along the coupling — tree + one-loop with the same mirror gap g_s² as 10D; the k = 2 rung persists (amplitude set by the Narain one-loop sum, sign open); level-independent invariant identified. Map: theory/pending_docs/DIMENSION_LADDER.md
 - Source GRV arXiv:1001.2535 §6 and (C.15), eigenvalue formula (H.16). No computation (same slice family as D1554/D1568/D1570).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1572 — DIMENSION LADDER stage 5 (D = 5, E₆): codon E^{E₆}_{[100000];3/2} (eigenvalue −12); string-cusp constant term 2ζ(3)/y₅ + E^{SO(5,5)}_{[10000];3/2} (GRV 1004.0163) — the one-loop thread IS the 6D codon (weave between neighbouring lenses); tree/one-loop gap g_s² ⇒ rung persists (positive convergent one-loop sum). Map: theory/pending_docs/DIMENSION_LADDER.md
+- [literature] arXiv:1004.0163: E⁽ᴰ⁾ ≃ 2ζ(3)/y_D + E^{SO(d,d)}_{[10…0];d/2−1} in the perturbative cusp for D = 5, 4, 3 (one-loop series SO(5,5) s 3/2; SO(6,6) s 2; SO(7,7) s 5/2); ½-BPS ⇒ finitely many power terms.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
