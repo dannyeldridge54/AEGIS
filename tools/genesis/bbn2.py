@@ -51,11 +51,11 @@ def run(eta=6.127e-10, dneff=0.0, dd_scale=1.0):
     nb=eta*ngam_end*np.exp(3*(lna[-1]-lna))         # cm^-3
     Ti=lambda tt: np.interp(tt,t,T); Tni=lambda tt: np.interp(tt,t,Tnu); nbi=lambda tt: np.interp(tt,t,nb)
     sv_dd=dd_scale*1e8/NA
-    rate_cache={}
+    idx=np.unique(np.linspace(0,len(t)-1,160).astype(int))
+    tab=np.array([rates(T[i],Tnu[i]) for i in idx]); tg=t[idx]
+    llnp=np.log(np.maximum(tab[:,0],1e-300)); llpn=np.log(np.maximum(tab[:,1],1e-300))
     def lam(tt):
-        key=round(math.log(Ti(tt)),3)
-        if key not in rate_cache: 
-        return rate_cache[key]
+        return math.exp(np.interp(tt,tg,llnp)), math.exp(np.interp(tt,tg,llpn))
     def f(tt,y):
         Yn,Yp,Yd,Yh=y; Tm=Ti(tt); n_b=nbi(tt); lnp,lpn=lam(tt)
         lgam=SV_NP*(4/3)*(MN*Tm/(4*math.pi))**1.5/HBARC**3*math.exp(-BD/Tm)   # 1/s
