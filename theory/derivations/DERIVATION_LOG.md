@@ -2295,3 +2295,10 @@ Touches: none.
 2. [derived] Σ′(−1)^m, Σ′(−1)^n, Σ′(−1)^{m+n}, half-shifted sum: no interior minimum; run to cusps.
 3. [estimate] Mixed sector combinations untested.
 4. [postulate P3] Option (ii) loses the vacuum for simple shifts; option (i) remains with marginal control.
+
+## D1381: mixed sectors (locked)
+1. [derived] Σ_even = E(U/2)/4 ⇒ F_c = (1 − c)E(U,2) + (c/2)E(U/2,2).
+2. [derived] Identity check vs N = 300 sums: 3–7e-6 (fails locked 1e-6; truncation; flagged).
+3. [derived] c = −0.5, 0.5: minima at (−1 + i√7)/4 and −1 + i (vacuum moves); c = −1 runaway; c = 1 min at U/2 = ρ − 1.
+4. [estimate] c = 1 = hexagon in the rescaled variable U/2.
+5. [postulate P3] Which c a real freely-acting model gives is unknown.

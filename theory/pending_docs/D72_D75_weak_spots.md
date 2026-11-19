@@ -14490,3 +14490,16 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - [computed] Sh (half-shifted momenta): positive, minimum on the edge y = 0.15 (3.962), decreasing toward the real axis (1.321 at y = 0.05); at ρ 28.92. No interior minimum.
 - Verdict (locked rule): none of the shifted sums keeps the hexagon; all have no interior minimum in the box. So for these simple shifts option (ii) of D1379 removes the vacuum rather than relocating it. Caveat [estimate]: a real freely-acting model's threshold is a COMBINATION of unshifted and shifted sectors (e.g. S0 + c·Sa); a combination could retain an interior minimum — not tested. The dilemma tilts back to option (i) (SL(2,Z), ρ, marginal control, D1378). P3 stays a postulate.
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1381 — DEEP / LEFT: P3 — locked test of D1380's caveat: mixing unshifted and shifted sectors, F_c = S0 + c·Sa = (1 − c)E(U,2) + (c/2)E(U/2,2), DOES restore interior minima for c = −0.5, 0.5, 1 — but none at an SL(2,Z) image of ρ (locked rule: "vacuum moves"); c = −1 runs away (2026-11-18)
+- Lock: field_tests/rules/PREREG_D1381_mixed_sectors.md (+ .sha256) before computing; script field_tests/scripts/d1381/mixed.py; results field_tests/results/D1381_mixed_sectors.json.
+- [derived] Σ_{m even} = E(U/2,2)/4 (rescale m = 2m′), hence F_c = (1 − c)E(U,2) + (c/2)E(U/2,2).
+- [computed] Identity check vs direct sums (N = 300): relative differences 4.3e-6, 3.2e-6, 6.9e-6 — FAILS the locked 1e-6 tolerance. The direct sums are low in every case, as expected from truncation (tail ~ N⁻²); the tolerance was set too tight for N = 300 (my locking error). Flagged; nothing rerun; results below rest on the Chowla–Selberg evaluation, not on the direct sums.
+- [computed] Gate c = 0: min at −½ + 0.2886751i (= γ(ρ), y = √3/6), 5.7833593 — PASS.
+- [computed] c = −1: runaway to the cusp at 0 (refined y → 0.088, value 0.63) — no interior minimum.
+- [computed] c = −0.5: interior min at U = −0.25 + 0.661438i = (−1 + i√7)/4 (|U|² = ½), value 5.80295 — not a γ(ρ): vacuum moves.
+- [computed] c = 0.5: min at U = −1 + i (period-2 copy of 1 + i; i-type point), value 4.52011 — vacuum moves.
+- [computed] c = 1: min at U = −1 + i√3 (U/2 = ρ − 1), value 2.89168 = E(ρ,2)/2 — vacuum moves in U, but it is the hexagon of the rescaled lattice: F₁ = E(U/2,2)/2 depends only on U/2.
+- [estimate] Interpretation of c = 1: a purely shifted-sector potential picks the torus whose index-2 SUPER-lattice (generators 1, U/2) is hexagonal; the SERAPIS plateau function would be E(U/2,2) and the vacuum "ρ" lives in the variable U/2. That is a relabelling, not a loss — but which c a real freely-acting model has is not known here.
+- Verdict (locked rule): vacuum moves for every c ≠ 0 tested; only c = 1 keeps a hexagonal vacuum in a rescaled variable. Option (ii) of D1379 survives only in that special pure-shifted form. P3 stays a postulate.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
