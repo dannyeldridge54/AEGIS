@@ -2770,3 +2770,8 @@ Touches: none.
 2. [derived] ρ at A1 (ε1..ε4 = 3.07e-5, 0.02629, 0.03869, −0.01068): β_s = −2.860e-5 vs D1400's (1 − n_s)α_s = −2.555e-5 (with the derived α_s) ⇒ ratio 1.119. Rule < 10 %: NOT CONFIRMED (the excess exceeds the ~3 % leading-order uncertainty).
 3. [derived] τ = i at the NA12 centre (ε1..ε4 = 3.08e-5, 0.02596, 0.03372, +0.00187): β_s = −3.126e-5, 1.44 × (1 − n_s)α_s — D1400's κ = 1 form does not apply at κ = ½ (characterisation only).
 4. [estimate] Reading: the modular offsets that deepen α_s (D1463) deepen β_s more (they enter ε3, ε4); D1400's closed form is leading-order Janus, so it carries the same kind of miss, larger for the higher derivative. Consequence for the data: Planck 2018 β_s 0.010 ± 0.013 (D1400) — pulls ρ −0.77σ (D1400 value) → −0.77σ (derived; change < 0.01σ because |β_s| ≪ σ), τ = i −0.77σ. No verdict changes; β_s stays undetectable (D1430/D1431).
+
+## D1467 — JANUS tick 63: β_s detectability with the derived values — undetectable (≤ 0.007σ); 3σ needs σ(β_s) ≈ 1e-5
+1. [literature] σ(β_s), 68 %: Planck 2018 0.013 (measured, via D1400); CMB-S4 0.0045 (1611.05883 Table 1 via D1431; hypothetical — S4 ended July 2025, D1440). The dark-ages 21-cm table is not on file and its ar5iv page is not allowlisted this tick (no number from memory).
+2. [derived] Derived β_s (D1466): ρ −2.860e-5 → 0.0022σ (Planck), 0.0064σ (S4); τ = i −3.126e-5 → 0.0024σ, 0.0069σ. Rule (all < 1σ): undetectable on every listed survey.
+3. [derived] A 3σ detection would need σ(β_s) ≈ 9.5e-6 (ρ) / 1.04e-5 (τ = i) — ~470× better than the (hypothetical) S4 forecast. D1430/D1431's conclusion (β_s out of reach short of dark-ages 21 cm) holds with the 12 % deeper derived β_s.

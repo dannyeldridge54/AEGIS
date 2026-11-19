@@ -15232,3 +15232,8 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Offsets deepen β_s more than α_s; Planck β_s pull unchanged at −0.77σ (|β_s| ≪ σ 0.013). No verdict change. D1400's closed form should be quoted as leading-order (~12 % low in |β_s| at ρ).
 - aegis-check: β values and ε_n from the result json; pulls recomputed in python ((β − 0.010)/0.013 = −0.7714 / −0.7712 / −0.7716); leading-order truncation stated; checked: units, arithmetic, like-with-like (same point, same α_s in the D1400 form), cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1467 — JANUS tick 63: β_s detectability — undetectable
+- [derived] Derived β_s ρ −2.86e-5 / τ = i −3.13e-5: ≤ 0.0024σ (Planck 0.013), ≤ 0.0069σ (hypothetical S4 0.0045); 3σ needs σ(β_s) ≈ 1e-5. D1430/D1431 hold.
+- aegis-check: significances from the result json; 0.0045/9.53e-6 ≈ 472 recomputed; dark-ages σ not used (not on file); checked: units, arithmetic, like-with-like (68 % σ throughout), cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no
