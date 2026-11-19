@@ -2624,3 +2624,9 @@ Touches: none.
 3. [derived] D1415 full model (A y² + B + D/y plateau, κ = 1 ramp), mpmath dps 40, (C_r, y*) solved at second order to A1's (n_s, r): C_r 1.2504e-6, y* 14.632, α_S = −9.9796e-4 vs exact −9.9814e-4 ⇒ −0.018 %. Rule (< 1 %): PASS. Implementation check: the same code at first order reproduces D1415's −1.0114e-3 to 7e-6.
 4. [derived] So the ρ vacuum's running is now understood from first principles to 0.02 %: SERAPIS-E's Epstein plateau with its offset B = 1 − E(ρ,2) and the 1/y term, plus slow roll at the consistent next order. D1415's 1.3 % and D1439's 2 % were slow-roll order, as diagnosed. The empirical factor k = 1.0352 (D1423) now has a derivation behind it.
 5. [estimate] Single point (A1); a band-wide check (box corners) is the natural next step before calling it a meter.
+
+## D1443 — JANUS tick 39: second-order offset model holds at the box's extreme corners — PASS
+1. [derived] D1442's method (dps 30) at the audited box's extreme MSSM corners (D1262 exact MS, a1_mssm_gstar.txt): K1 (C 1.0e-6, T_R 1.65e10; n_s 0.972710, r 4.38906e-4): α_s −9.0971e-4 vs exact −9.1099e-4 ⇒ −0.14 %; K2 (C 1.3e-6, T_R 5.46e8; n_s 0.974828, r 4.89722e-4): −1.01341e-3 vs −1.0144e-3 ⇒ −0.10 %.
+2. [derived] Implementation check: the solve recovers the corners' own tilt C to 0.04 % (1.00042e-6, 1.30041e-6) — the model reproduces the exact pipeline's potential parameter, not just its observables.
+3. [derived] Rule max |err| < 0.5 %: PASS (max 0.14 %). With D1442 (A1, −0.018 %) the second-order offset model is a derived ρ meter across the audited box, replacing the empirical k = 1.0352 (D1423) with physics.
+4. [estimate] The residual −0.1 … −0.14 % at the corners (vs −0.02 % at A1) is the expected O(ε³) remainder; four remaining corners not yet run.

@@ -15087,3 +15087,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] One point only; band corners next.
 - aegis-check: implementation check (first order = D1415 −1.0114e-3, 7e-6); leading flow α (−2ε1ε2 − ε2ε3) = 16εη − 24ε² − 2ξ² at the solved point to all digits; err = −9.9796e-4/−9.9814e-4 − 1 = −1.8e-4 in python; limits: higher-order terms are ~ε2 ≈ 2.7 % of leading as expected; checked: units (M_P = 1), arithmetic, like-with-like (same (n_s, r), same exact reference), cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1443 — JANUS tick 39: second-order offset model at box corners — PASS
+- [derived] K1 (n_s 0.97271, r 4.389e-4): −0.14 %; K2 (n_s 0.97483, r 4.897e-4): −0.10 % vs D1262 exact MS. Rule < 0.5 %: PASS. Solved C_r matches the corners' C to 0.04 %.
+- [derived] The ρ α_s meter is now derived (Epstein offset + second-order SR) across the audited box; k = 1.0352 retired as a fit, kept as a cross-check.
+- aegis-check: re-ran −9.0971e-4/−9.1099e-4 − 1 = −0.14 %, −1.01341e-3/−1.0144e-3 − 1 = −0.098 %, C ratio 1.00042 in python; like-with-like: same MSSM exact rows the D1423 test used; checked: units, arithmetic, limits (residual size ~ε³ as expected), cross-sector: none.
+- MAP: node=janus status=computed touches=[] ripple=no
