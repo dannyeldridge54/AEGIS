@@ -855,3 +855,4 @@ D1567  2026-11-19T16:53Z  Scope note on our T2/D1501 closure after P3 D1566; rea
 D1568  2026-11-19T16:58Z  DIM ladder stage 1 9D
 D1569  2026-11-19T17:02Z  DIM ladder stage 2 8D
 D1570  2026-11-19T17:06Z  DIM ladder stage 3 7D
+D1571  2026-11-19T17:09Z  DIM ladder stage 4 6D
