@@ -14386,3 +14386,11 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - [derived] Consistency: at U = i this is 90κ/(πT₂) with κ = E(i,2)/π² — exactly P–R eq. (31) and D1365's numerical identity. So the term is fixed for general U, not an estimate any more.
 - Verdict: D1365 item (1) closed. The universal threshold's leading U-dependence is E(U,2)/T₂ (s = 2, minimum at ρ), with the s = 1 log only under b̂^{N=2}. Still open: (2) a model with a condensing factor b̂ = 0, k > 0; (3) sign and the ratio form 1 − E(ρ,2)/E(U,2) through the condensate potential. P3 stays a postulate.
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1367 — DEEP / LEFT: P3 — D1365 item (2), a concrete b̂ = 0 gauge factor: heterotic on K3×T² with instanton split (10,14) gives an E7 with exactly 3 hypers in the 56, whose N=2 beta coefficient vanishes; its threshold then carries only the universal −k·Y(T,U) ⊃ (90/π³)E(U,2)/T₂ (2026-11-18)
+- [literature] Heterotic E8×E8 on K3 with instanton numbers (k, 24−k): E8 → E7 with (k/2 − 2) hypermultiplets in the 56 (standard Kachru–Vafa / Seiberg–Witten counting); in 4D on K3×T² the N=2 beta coefficient is b̂ = 2(Σ_hyp T(R) − T(adj)), and the DKL threshold is −b̂ log(T₂U₂|η(T)η(U)|⁴) − k·Y.
+- [derived] With T(adj E7) = 18 and T(56) = 6: k = 10 → 3 hypers → b̂ = 2(18 − 18) = 0. The other side (k = 14) has 5 hypers, b̂ = +24 (IR free). Other splits: k = 12 → 4 hypers, b̂ = +12; k = 24 → hidden E8 with no hypers, b̂ = −60. So (10,14) is the unique split with an N=2-conformal E7.
+- [derived] For that E7 the s = 1 log term is absent and the U-dependence of its threshold is the universal −Y(T,U) ⊃ −(90/π³)E(U,2)/T₂ (D1366), i.e. the s = 2 series — exactly the plateau function, minimum at ρ.
+- [estimate] Open for a 4D N=1 vacuum: (a) the same factor must appear in an N=1 orbifold/CY whose plane-I N=2 sector is this K3×T² (not shown); (b) condensation needs b < 0 from the N=1-sector content (the N=2 part contributes 0 by construction); (c) sign and the ratio form 1 − E(ρ,2)/E(U,2) through W ∝ e^{−3f/(2b)} not computed.
+- Verdict: D1365 item (2) has a concrete candidate. P3 stays a postulate.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no

@@ -2212,3 +2212,9 @@ Touches: none.
 1. [literature] DKL degenerate-orbit unfolding of Γ₂,₂ onto the strip.
 2. [derived] ∫(dτ₂/τ₂)(T₂/τ₂)(90/πτ₂)e^{−πT₂|j+pU|²/(U₂τ₂)} summed → (90/π³)E(U,2)/T₂ for all U; matches κ = E(i,2)/π² at U = i.
 3. [postulate P3] Plateau via a b̂ = 0 condensing factor — model, sign, ratio form not computed.
+
+## D1367: b̂ = 0 candidate
+1. [literature] K3 instantons (k, 24−k): E7 with (k/2 − 2)×56; N=2 b̂ = 2(ΣT(R_hyp) − T(adj)).
+2. [derived] k = 10: 3×56, b̂ = 2(18 − 18) = 0; only split with an N=2-conformal E7.
+3. [derived] That factor's threshold U-dependence is −Y ⊃ −(90/π³)E(U,2)/T₂ (no s = 1 term).
+4. [postulate P3] 4D N=1 embedding, condensation and the plateau ratio form not shown.
