@@ -16117,3 +16117,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [EMP] δ_Koide = Q/3 (= 2/9 when Q = 2/3): reduces the two Koide numbers to one (equipartition); not derived.
 - [POSTULATE P-F3, candidate] the neutrino modulus ties off at i, the charged-lepton modulus at ρ (the inflaton reaches ρ because the inflation line x = ½ passes through ρ, not i).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1599 — TM2 PREDICTION BAND (locked PREREG_FLAV_RHO4): with θ₁₃ fixed by data, the two-tie-off-point lepton sector allows sin²θ₂₃ ∈ [0.395, 0.605] (CONSISTENT with 0.561 and 0.470) and predicts δ_CP = 235.6° or 124.9° at sin²θ₂₃ = 0.561, 286.6° or 73.9° at 0.470 — predictions for DUNE / Hyper-K, not fits
+- [computed] U = U_TBM·R₁₃(θ, φ), θ = 10.45°; sin²θ₁₂ = 0.3408 fixed; 720-point φ scan. Results: field_tests/results/FLAV_RHO/run4.json.
+- Scoring: these δ_CP values were written before any δ_CP comparison; they are scored on future data only.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

@@ -38,8 +38,12 @@ Check (m_τ as the only input; A = √2, δ = 2/9):
 | observed | 105.6584 | 0.510999 |
 Agreement is within the m_τ uncertainty. The two numbers √2 and 2/9 are not derived yet.
 
-### 4. Neutrinos
-Exact-ρ A4 gives tribimaximal mixing: sin²θ₁₃ = 0, which is excluded at −38σ by NuFIT 6.0 (D1596). A correction term is required. [OPEN]
+### 4. Neutrinos — the second tie-off point (D1598, D1599)
+V₀ vanishes at BOTH SL(2,Z) fixed points, i and ρ. [der] With charged leptons tied off at ρ (residual Z₃) and the neutrino modulus at i (residual Z₂; P-F3), A4 makes the second PMNS column exactly trimaximal, (1/3, 1/3, 1/3): this is TM2. [der]
+- θ₁₃ is free, which removes the −38σ failure of exact-ρ tribimaximal mixing.
+- sin²θ₁₂ = 1/(3cos²θ₁₃) = 0.3408 vs NuFIT 0.307: +2.8σ (passes the 3σ rule, in tension). [der]
+- sin²θ₂₃ ∈ [0.395, 0.605] (data 0.561 / 0.470: consistent). [der]
+- **Prediction:** δ_CP = 236° or 125° (if sin²θ₂₃ = 0.561), 287° or 74° (if 0.470). Scored on DUNE / Hyper-K. [der]
 
 ### 5. Strong CP
     θ = 2π Re τ = π at ρ;   θ̄ = π − arg det(Y_u Y_d)(ρ)
@@ -57,8 +61,10 @@ The inflation sector gives exactly 0 at ρ. [der] The observed Λ_obs ≈ 10⁻�
 | Zhinü rule (inflation) | principle P |
 | equipartition √2 (flavour) | principle P-F1 |
 | same principle on the flavour modulus | principle P-F2 |
-| δ = 2/9 | empirical |
-| θ₁₃ correction, quark sector, Λ_obs | open terms |
+| δ = 2/9 | empirical; holds as δ = Q/3 to ~1σ (D1598), so one principle (equipartition) would fix both Koide numbers |
+| neutrino modulus at i | principle P-F3 |
+| quark sector (θ̄ condition), Λ_obs | open terms |
+| neutrino mixing | derived (TM2) given P-F3; sin²θ₁₂ in +2.8σ tension |
 
 The equation is complete as a statement: every term is written, every number that can be computed has been computed, and the data checks are passed or failed on the record. It is not yet fully derived: three principles and one empirical number carry it, and three terms are open. The next derivation targets, in order of leverage:
 1. one rule that gives both Zhinü and equipartition (both are equalities of norms at the symmetric point);
