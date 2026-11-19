@@ -2495,3 +2495,8 @@ Touches: none.
 2. [derived] Carried to the box's T_R 5.46e8–1.65e10 with D1262's MSSM shift (−0.063): N* 50.014–51.145 vs the box's 50.07–51.22 — differences −0.056 and −0.075 e-folds, inside the locked 0.10 budget for the box's C spread (1.0–1.3e-6, not modelled). Verdict: same chain.
 3. [derived] So the two windows are not in conflict: the box's higher N* comes from its higher T_R range and the C spread, and its lower edge is MSSM-shifted D1234 physics. Box inputs consistent.
 
+## D1420: one timed spectra_fast call on the ρ offset model (locked)
+1. [derived] One exact-MS evaluation (ms.spectra_fast) at D1415's first-order point (C 1.255e-6, y* 14.818): 42.4 s → "slow" (a Newton solve does not fit a 3-minute tick in this sandbox).
+2. [derived] Output: n_s 0.97556 (+1.17e-3 vs A1), r 4.693e-4 (−2.7 %), N* 51.32 — plausible shifts from first-order to exact.
+3. [estimate] α_s = −5.19e-4, about half the first-order value on the same model (−1.01e-3) and of A1's exact −9.98e-4, while n_s and r moved by percent-level amounts. For a smooth plateau the running scales with (1−n_s)², so a ×0.5 jump with a 5 % change in (1−n_s) is not physical-looking: treated as a numerical suspect (spectra_fast's finite-difference α_s, or the asymptotic model near y* ≈ 15), NOT as a result. Needs a cross-check with per-mode spectra() at the same point (single call, PC or a longer cap) before any use.
+

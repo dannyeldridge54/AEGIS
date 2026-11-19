@@ -395,3 +395,4 @@ Each line: date, D-number, the lesson, and how it changes the next steps. Keep i
 - D1412: when a recorded test says "the corrected method would fix it — not tested here", test it next; D1263's 10.8 % sat unexplained-in-practice for 150 notes while D640's fix was already on the shelf.
 - D1415: an estimate that "explains most of a gap" (D1414) can still overshoot when built in properly — lock the full model before believing the estimate, and keep the method's own order (first-order slow roll) in the error budget.
 - D1418: time a single engine call before locking a solve that needs many; per-mode MS took the whole tick in the sandbox.
+- D1420: a second-derivative observable (α_s) from a fast engine can be off by ×2 while n_s and r look fine — sanity-check α_s against (1−n_s)² scaling before believing it.

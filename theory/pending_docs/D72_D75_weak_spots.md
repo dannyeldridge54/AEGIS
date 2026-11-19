@@ -14898,3 +14898,11 @@ MAP: node=janus status=computed touches=[] ripple=no
 - aegis-check: re-ran log10(T_R/3e8) = 0.260 / 1.740 and the slope's −0.46 % vs ln10/3 in python; checked: units (e-folds, GeV), arithmetic, like-with-like (both N* exact-ε_H end, D979-corrected), limits, cross-sector: reheating chain only, read not changed.
 MAP: node=band_e_audited status=postulate touches=[] ripple=no
 
+## D1420 — JANUS tick 17: one fast exact-MS call takes 42 s (too slow for a tick solve); its α_s (−5.2e-4) is half the expected value and is flagged as a numerical suspect, not a result
+- Lock: field_tests/rules/PREREG_D1420_ms_fast_timing.md (+ .sha256), pushed before computing (this is the lock ms.py asks for before using spectra_fast). Script field_tests/scripts/d1420/ms_fast_once.py; result field_tests/results/D1420_ms_fast_timing.json.
+- [computed] 42.4 s per call → "slow". n_s 0.97556, r 4.693e-4, N* 51.32 (shifts vs first order: +1.2e-3, −2.7 %).
+- [computed, suspect] α_s −5.19e-4 vs first-order −1.01e-3 on the same model: a factor ~2 at fixed shape is implausible; not used, not interpreted. Most likely numerical (finite differences over dlnk ±0.1 in spectra_fast, or a start too close to the pivot for the derivative). Cross-check needed with the per-mode spectra() — one call — before trusting either.
+- Consequence for the loop: the exact ρ route needs the PC runner (or a longer cap) — recorded; the loop moves to cheap tasks (tick 18: A1-anchored band_e estimate).
+- aegis-check: re-ran the ratio −5.19e-4/−1.01e-3 = 0.51 and (1−n_s) change 0.02561→0.02444 (−4.6 %) in python; checked: no verdict rests on α_s here.
+MAP: node=janus status=computed touches=[] ripple=no
+
