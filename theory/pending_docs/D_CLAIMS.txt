@@ -647,3 +647,4 @@ D1360  2026-11-18T23:44Z  Hyperion full PC run complete (MWPotential2014)
 D1361  2026-11-19T00:02Z  P3 lead: E2(U) in the 8D D4R4 coefficient
 D1362  2026-11-19T00:04Z  P3 step 1: GRV eq 4.10 verified, U = shape, sign
 D1363  2026-11-19T00:06Z  P3 step 2: mechanism + novelty
+D1364  2026-11-19T00:16Z  P3 step 4: s=1/s=2 mix through pipeline (locked PREREG_D1364)
