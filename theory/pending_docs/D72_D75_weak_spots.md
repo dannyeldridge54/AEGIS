@@ -16335,3 +16335,8 @@ Source: "Quintessence and phantoms in light of DESI 2025" (arXiv:2506.21542v2). 
 Ours (D1627/D1628, Gaussian approximation calibrated to DESI Table VI): improvement over ΛCDM of 13.6 (Union3) and 15.1 (DESY5); best-point worst-case 5.2 below the CPL optimum. This is the same size as the literature's thawing-class gain, and below CPL as expected for a model that cannot cross w = −1.
 Verdict: our approximate scoring agrees with the published size of the thawing-quintessence gain (≈ 13–15 versus CPL's 17–21). This is a consistency check, not a new result. Fine-tuning of the start is not discussed there, so D1628's tuning flag stands untested against the literature.
 Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
+
+## D1630 (CENTRE, 19 Nov 2026) — REFEREE PASS on the reverse thread, then paper (Danny 15:22 "referee it, and then publish it")
+- Referee: papers/reverse_thread/REFEREE_2026-11-19.md. Independent LSODA integration in a reproduces the best point exactly (w₀ −0.78302, w_a −0.38319).
+- MAJOR prior art found: quintessential α-attractors (Linder 1505.00815; Akrami–Kallosh–Linde–Vardanyan 1712.09693; Borys–Masias–Scalisi 2606.02701, "Quintessential α-attractors fit DESI", which already notes a double fine-tuning). Our β = 2√2, 2, √2 correspond to α = 1/12, 1/6, 1/3, inside their preferred ranges. The paper presents ours as an instance of that class. What is ours: A = 7.30 and the tilts from the inflation sector; the sourced-calibration scores; the ~1% tuning window.
+- Paper: papers/reverse_thread/Eldridge_reverse_thread_2026.pdf (2 pages, md5 42637c10872476672cf392d9b64d119c).
