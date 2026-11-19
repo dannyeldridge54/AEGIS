@@ -16540,3 +16540,7 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - Full mirror world: must be colder than ξ = 0.33 (not 0.45), so the inflaton must favour our side 86:1 (not 25:1). D1648's "equal sharing" dark matter would weigh 433 GeV (not 123) — its conflict with 5 GeV is stronger.
 - Minimal dark sector (D1649 version b): only works with the massive dark photon (0.3–5 GeV, D1659); with a massless one it is excluded (D1654).
 - MAP: node=matter_genesis status=postulate touches=[dark_radiation] ripple=no
+
+## D1662 — JANUS genesis G12c: round 2 passes referee — every limit a verdict rests on now has a paper behind it
+- Re-ran the full check after D1661: all locks before results, every number re-derives, card 35/35, and the four notes that leaned on the unsourced ΔN_eff < 0.3 are all covered by sourced scope notes (arXiv:2603.13226). Seven minor flags remain (listed in the log); none changes a verdict. Round-2 loop stops.
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no

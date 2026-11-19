@@ -3290,3 +3290,9 @@ Touches: none.
 4. [derived] D1649 version (a) (exact mirror): needs an 86:1 visible-favoured decay (was 25:1). Version (b) (minimal sector): with a massless dark photon ΔN_eff = 0.206 > 0.086 ⇒ excluded (D1654); with the massive dark photon of D1657/D1659 (0.3–5 GeV, ε 1e-11–1e-7) ΔN_eff ≈ 0 ⇒ allowed. D1649's "(b) is cold for free, ΔN_eff ≈ 0.2" is replaced by "(b) needs the massive dark photon".
 5. [derived] D1632 T4 ("mirror needs ξ < 0.45 → VIABLE"): the sourced limit is ξ < 0.33.
 6. [estimate] The other chat's notes are not edited; this note is their sourced scope update.
+
+## D1662 — JANUS genesis G12c: round-2 referee re-run after D1661 (PREREG_D1662_G12C_REFEREE) — PASS; loop stops
+1. [derived] Mechanics unchanged and passing: lock order ✓, arithmetic ✓, card 35/35 CONSISTENT ✓.
+2. [derived] Every D1660 verdict-dependent flag now has a sourced scope note citing arXiv:2603.13226: D1646 → D1646a + D1654; D1632, D1648, D1649 → D1661. No new flags.
+3. [estimate] Remaining flags are nits (no verdict rests on the unsourced number): D1633 Y_p observed 0.245 ± 0.003 (wide window); D1637 Davidson–Ibarra context; D1642/D1644 DESI via D1627; D1650 meta; D1651 full-code Y_p ≈ 0.247 used to set its window (other chat — suggest a source); D1657 refs in its log entry.
+4. [estimate] Limitation stated: the referee is the same agent as most Janus notes.

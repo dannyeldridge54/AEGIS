@@ -1,0 +1,28 @@
+{
+ "D": "D1662",
+ "order_ok": true,
+ "arith_ok": true,
+ "card": "35 CONSISTENT []",
+ "flags": [
+  "D1632",
+  "D1633",
+  "D1637",
+  "D1642",
+  "D1644",
+  "D1646",
+  "D1648",
+  "D1649",
+  "D1650",
+  "D1651",
+  "D1657"
+ ],
+ "new_flags": [],
+ "covered": {
+  "D1646": true,
+  "D1632": true,
+  "D1648": true,
+  "D1649": true
+ },
+ "mechanics_ok": true,
+ "all_covered": true
+}
