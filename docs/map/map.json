@@ -894,7 +894,8 @@
     "D1407",
     "D1411",
     "D1419",
-    "D1423"
+    "D1423",
+    "D1427"
    ],
    "depends": [
     "nstar_e",
@@ -903,9 +904,9 @@
     "band_e"
    ],
    "history": [
-    "D1411: postulate",
     "D1419: postulate",
-    "D1423: postulate"
+    "D1423: postulate",
+    "D1427: postulate"
    ],
    "note": "web loop postulate 1; scored only on future data"
   },
