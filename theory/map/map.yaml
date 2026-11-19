@@ -340,10 +340,11 @@ nodes:
   - D1414
   - D1415
   - D1416
+  - D1418
   history:
-  - 'D1414: computed'
   - 'D1415: computed'
   - 'D1416: computed'
+  - 'D1418: computed'
 - id: bhk_tilt
   layer: 3
   branch:
@@ -738,23 +739,23 @@ nodes:
   branch:
   - E
   title: 'POSTULATE: SERAPIS-E point (lepto c=1, M_H 1e12, T_R 7.4e8, C 1.25e-6, MSSM g*): n_s 0.97439, r 4.82e-4, α_s −1.0e-3, N* 50.18 (D1262)'
-  status: postulate
+  status: computed
   d:
   - D1251
   - D1272
   - D1273
   - D1273a
+  - D1417
   depends:
   - lepto_rho
   - reheat_rho
   - bhk_tilt
   - band_e_audited
   history:
-  - 'D1272: postulate'
   - 'D1273: postulate'
   - 'D1273a: postulate'
+  - 'D1417: computed'
   note: web loop postulate 2; scored only on future data
-  flag: recheck (D1388, band_e_audited)
 - id: vac_discriminant
   layer: 5
   branch:
