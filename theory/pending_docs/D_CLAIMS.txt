@@ -710,3 +710,4 @@ D1423  2026-11-19T04:10Z  JANUS tick 20: band_e_audited A1-anchored running vs D
 D1424  2026-11-19T04:16Z  JANUS tick 21: summary of D1399-D1423 (Janus relation night)
 D1425  2026-11-19T04:20Z  JANUS tick 22: vac_discriminant with both sub-percent meters vs 2030 forecasts
 D1426  2026-11-19T04:26Z  JANUS tick 23: PC job spec for exact-MS checks (docs only)
+D1427  2026-11-19T04:31Z  JANUS tick 24: no CMB+BAO n_s newer than 2512.10613 (NULL)
