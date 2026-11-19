@@ -1,0 +1,6 @@
+# PREREG_D1661_G13_NEFF_SCOPE — sourced N_eff scope note on D1632 T4, D1648 Q2, D1649 (Janus genesis G13; locked 2026-11-19 ~23:36Z before any number)
+Sourced bound [literature]: N_eff = 2.990 ± 0.070 (arXiv:2603.13226) ⇒ ΔN_eff ≤ 2.990 + 2·0.070 − 3.044 = 0.086 (2σ). Cross-check ACT DR6 N_eff = 2.86 ± 0.13 (2503.14454) ⇒ ΔN_eff ≤ 2.86 + 0.26 − 3.044 = 0.076 (2σ).
+Formulas exactly as the notes being scoped (no new physics): full mirror ΔN_eff = 7.40 ξ⁴ (D1632, tools/genesis mirror_dneff); required visible-favoured decay share Γ_D/Γ_V ≤ ξ⁴ (D1646 case C); D1648 Q2 symmetric decay: n_DM/n_B = ξ⁴ ⇒ m_DM = 5.36 m_p / ξ⁴ with m_p = 0.93827 GeV (5.36 = 0.1200/0.02237, D1631); D1649 version (a) ratio = 1/ξ⁴.
+Compute for both 2σ bounds: ξ_max, ξ_max⁴, the visible:dark decay preference 1/ξ_max⁴, D1648's m_DM. D1649 version (b): with the massless dark photon ΔN_eff = 0.206 (D1654 S1) vs bound; with the massive dark photon (D1657, D1659) ΔN_eff ≈ 0.
+Reading (locked, no pass/fail): report old (0.3-based) vs new numbers side by side; state which verdicts in those notes keep their direction and which change.
+Script: field_tests/scripts/janus_g/g13_neff_scope.py → field_tests/results/D1661_G13_neff_scope.json
