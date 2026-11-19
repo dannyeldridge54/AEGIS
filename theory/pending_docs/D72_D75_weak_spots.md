@@ -16095,3 +16095,12 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [POSTULATE P-F1, candidate only] Z₃ equipartition of √M as the flavour analogue of the Zhinü principle. Not derived.
 - Doc: theory/pending_docs/FLAVOUR_AT_RHO.md (section map F1–F7).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1596 — FLAVOUR AT ρ, run 2 (Danny 12:14 "one run"): inflation pins τ exactly at ρ (ε = 0); exact-ρ A4 neutrino mixing (TBM) FAILS (θ₁₃ −38σ); θ = π at ρ FAILS (m_π ratio 0.60) unless arg det(Y_u Y_d)(ρ) = π; flavour modulus ≠ dilaton in known string models ⇒ P-F2 (shared principle, separate moduli)
+- Lock: field_tests/rules/PREREG_FLAV_RHO2.md. Results: field_tests/results/FLAV_RHO/run2.json.
+- [computed] V(ρ) = 2e-22; V(ρ ± 1e-3, ρ ± 1e-3 i) = 8.30–8.37e-8 ⇒ strict quadratic minimum ⇒ ε = 0.
+- [literature] NuFIT 6.0 (2410.05380) NO IC19: sin²θ₁₂ 0.307, sin²θ₁₃ 0.02195, sin²θ₂₃ 0.561 (IC24 0.470). [computed] TBM pulls +2.2, −37.8, −4.1 (IC24 +1.8) ⇒ FAIL.
+- [computed] LO χPT m_π(π)/m_π(0) = 0.616 / 0.600 / 0.585 (z = 0.45/0.47/0.49) ⇒ θ̄ = π excluded ⇒ FAIL; rescue condition arg det(Y_u Y_d)(ρ) = π.
+- [literature] 2407.06618: flavour modulus = complex structure of matter curves; S-duality broken by Yukawas unless g_s-dependent wavefunctions. Sumino 0812.2090 / 0903.3640: Koide stability mechanism, no derivation of √2.
+- Doc: FLAVOUR_AT_RHO.md (Run 2 section).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

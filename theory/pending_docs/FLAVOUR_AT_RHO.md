@@ -61,3 +61,36 @@ In modular-flavour models τ is usually a complex-structure modulus; in the Weav
 3. Neutrinos and mixing angles at ρ (A4 with τ ≈ ρ is known to give near-tribimaximal patterns: check against current θ₁₂, θ₂₃, θ₁₃).
 4. Strong CP: θ(τ) at ρ (Re τ = ½ ⇒ θ = 0 or π): which one, and whether it is acceptable.
 5. F6 literature: S-duality-covariant Yukawas.
+
+---
+
+## Run 2 (D1596, locked PREREG_FLAV_RHO2) — F7 items 1, 3, 4, 5, plus 2 by search
+
+### F7.1 Endpoint offset: ε = 0 [derived + computed]
+V(ρ) = 2e-22 (numerical zero), and V(ρ ± 1e-3) ≈ 8.3e-8 in all four directions: ρ is a strict, nearly isotropic quadratic minimum. Because V₀ ∝ |∇ln E|² has a double zero at the fixed point, the tilt factor cannot move the minimum. Once the oscillations decay, inflation leaves τ **exactly** at ρ. So the Weave predicts ε = 0, and any flavour structure must work at exact ρ, where F2 showed the minimal A4 constructions fail. Masses need a second source of symmetry breaking; it cannot be a leftover offset from inflation.
+
+### F7.3 Neutrinos: tribimaximal at ρ — FAIL (locked)
+Residual Z₃ of the charged leptons at ρ with A4 gives tribimaximal mixing. Pulls against NuFIT 6.0 (normal ordering):
+| angle | TBM | NuFIT 6.0 | pull |
+|---|---|---|---|
+| sin²θ₁₂ | 1/3 | 0.307 (+0.012/−0.011) | +2.2σ |
+| sin²θ₁₃ | 0 | 0.02195 (+0.00054/−0.00058) | **−38σ** |
+| sin²θ₂₃ | 1/2 | 0.561 (IC19) / 0.470 (IC24) | −4.1σ / +1.8σ |
+Exact-ρ A4 neutrino mixing is excluded by θ₁₃. A correction sector is required, the same conclusion as in the modular-flavour literature.
+
+### F7.4 Strong CP: θ = π at ρ — FAIL as it stands (locked)
+If the QCD θ-angle is 2π Re τ (gauge kinetic function f = τ), then ρ (Re τ = ½) gives θ = π, which is CP-conserving. But leading-order chiral perturbation theory gives m_π(π)/m_π(0) = 0.616, 0.600, 0.585 for m_u/m_d = 0.45, 0.47, 0.49. Lattice QCD at θ = 0 already reproduces the observed pion, so θ̄ = π is excluded.
+Rescue condition [derived]: θ̄ = θ − arg det(Y_u Y_d) = 0 requires **arg det(Y_u Y_d)(ρ) = π (mod 2π)**. This is a sharp, checkable condition on the quark Yukawas at ρ. If it holds, the strong CP problem is solved by the inflation endpoint. It must be tested on an explicit quark sector.
+
+### F7.5 Same-τ question: obstructed in known constructions [literature]
+In explicit string realisations of modular flavour (e.g. fluxed F-theory GUTs, arXiv:2407.06618), the flavour modulus is a complex-structure modulus of the matter curves, not the axio-dilaton. That paper also notes that "S-duality symmetry is broken by the Yukawa lagrangian" unless the wavefunctions carry the right g_s dependence.
+⇒ Revised unification route [POSTULATE P-F2, candidate]: the flavour modulus is a separate SL(2,Z) field, and the **same Zhinü principle** acts on it, so it also ends at its own ρ. "Unified" then means one principle and one endpoint shared by all SL(2,Z) moduli, not one field.
+
+### F7.2 Equipartition dynamics [literature]
+Sumino's family-gauge-symmetry mechanism (arXiv:0812.2090, 0903.3640) protects Koide's relation against radiative corrections. It does not by itself derive A = √2. No derivation of equipartition was found.
+
+### Overall verdict after runs 1–2
+- **Derived:** the Koide form as the Z₃ spectrum; the condition Q = 2/3 ⇔ equipartition; ε = 0 at the inflation endpoint; the strong-CP rescue condition arg det(Y_u Y_d)(ρ) = π.
+- **Failed (locked):** minimal A4 masses at exact ρ; tribimaximal mixing (θ₁₃, −38σ); θ = π without a quark-phase compensation.
+- **Open:** a source for equipartition and δ = 2/9; a correction sector for θ₁₃; an explicit quark sector to test arg det = π; P-F2, the shared principle across moduli.
+Flavour is NOT fully derived. The parts that are derived are listed above, and the minimal "everything at exact ρ" version is ruled out by data in two places.
