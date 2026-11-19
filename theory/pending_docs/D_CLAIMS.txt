@@ -681,3 +681,4 @@ D1394  2026-11-19T01:41Z  P3: F-terms with K=-log(Im S+Y/16pi^2) give V = A0 - B
 D1395  2026-11-19T01:42Z  P3: racetrack toy - all S minima have W_S/W = +0.08..+0.82 (~1/L); D1394 tilt/uplift condition not realised
 D1396  2026-11-19T01:44Z  P3: uplift scaling constraint - V_up ~ L^-p needs p < 1; p=0 is SERAPIS; peak at L_rho p^(-1/(1-p))
 D1397  2026-11-19T02:02Z  P3: physical lambda frame - E(U,2)/T2 chamber violated at horizon exit (y* >= 37 T2); D1377 frame error; rescue: full Y, linear in U2 for U2 > T2 (s=1-like, in band per D1364)
+D1398  2026-11-19T02:15Z  P3: full-Y plateau = alpha=1/3 attractor: n_s 0.960, r 1.6e-3 at C=0 (out of band); C>0 runs crashed in Nstar
