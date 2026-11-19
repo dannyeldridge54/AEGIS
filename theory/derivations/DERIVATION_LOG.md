@@ -2451,3 +2451,9 @@ Touches: none.
 2. [derived] Values unchanged: band_e n_s 0.970–0.975, r 4.55–5.12e-4; band_i n_s 0.970–0.975, r 4.8–5.7e-4; band_e_audited n_s 0.9717–0.9760, r 4.39–4.90e-4. New attached facts only: α_s (κ per vacuum, D1405), end-2025 scores (D1402/D1402a, D1404, D1407), testability (D1409).
 3. [derived] Flags band_e, band_i, band_e_audited (recheck after D1409) cleared on this basis.
 
+## D1412: τ = i relation miss is the offset bias (locked)
+1. [derived] D640's offset-corrected relation (c = ln1728/2π = 1.1868), inverted from the exact (n_s, r) of the five NA12 τ = i points (ε 1.30–1.50e-4), predicts α_s within −0.29 % … −0.34 % of the exact MS values (residuals < 4e-18). Rule PASS.
+2. [derived] The leading-order κ = ½ relation misses the same points by −10.6 % … −10.9 %: the 10.8 % of D1263 is entirely the leading-order offset bias, not a wrong κ.
+3. [estimate] Post-lock check (not counted as evidence): x = εI*³/4 from the inversion recovers the true ε to −0.04 % … −0.18 %; I* = 23.5–23.8, x = 0.42–0.50.
+4. [derived] Consequence for the loop: at τ = i use D640 (sub-percent) rather than D1405's leading-order form when precision matters; the 3.4 % at ρ is a separate (E(τ,2)-tilt) leading-order error, not addressed here.
+

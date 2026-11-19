@@ -14833,3 +14833,11 @@ MAP: node=band_e status=frozen touches=[] ripple=no
 MAP: node=band_i status=frozen touches=[] ripple=no
 MAP: node=band_e_audited status=postulate touches=[] ripple=no
 
+## D1412 — JANUS tick 10: the τ = i Janus miss (10.8 %, D1263) is entirely the leading-order offset bias — D640's offset-corrected relation brings it to 0.3 % on all five exact points
+- Lock: field_tests/rules/PREREG_D1412_tau_i_offset.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1412/tau_i_offset.py; result field_tests/results/D1412_tau_i_offset.json. Inputs: NA12 exact MS points (field_tests/results/na12_band_i_audited.txt).
+- [computed] D640 (1 − n_s = 8u²[(2 − x) + cu(5 − x)], r = 64u⁴(1 + x)²(1 + 2cu), α_s = −32u⁴(1 + x)[(4 + x) + cu(23 + 2x)], c = ln1728/2π) inverted per point: α_s error −0.29 … −0.34 % (PASS, rule < 1 %). Leading-order κ = ½ at the same points: −10.6 … −10.9 %.
+- [computed, post-lock, not evidence] The inversion recovers the true tilt ε to ≤ 0.18 % (1.40e-4 → 1.3985e-4): D640 is a working ε-meter at τ = i, as D640 itself found for its own points.
+- Answers tick 10's question for τ = i: the 3× larger miss than at ρ is not κ — it is the j-offset c in the field map (I = y − c), which the plain plateau + ramp form ignores. ρ's 3.4 % comes from its own leading-order truncation (open; a ρ analogue of D640 would be the next step).
+- aegis-check: re-ran c = 1.18682, one inversion by hand at n_s 0.97462 (x 0.460, I* 23.61, α_s −8.517e-4 vs −8.543e-4), ε = 4x/I*³ = 1.3985e-4 in python; checked: units (code units, ratios dimensionless), arithmetic, like-with-like (exact MS α_s at the same (n_s, r)), limits (c → 0 recovers D635), cross-sector: none.
+MAP: node=janus status=computed touches=[band_i] ripple=no
+
