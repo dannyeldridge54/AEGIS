@@ -39,3 +39,27 @@ CMB-S4 ended July 2025 (D1440). No newer n_s/α_s/r measurement than 2512.10613 
 
 ## Open decisions (Danny; D1464)
 (a) queue PC jobs J1–J4 (`docs/JANUS_PC_JOBS.md`); (b) add band_i_audited node (D1429/D1461); (c) band_i map-note ε wording (D1461); (d) optional janus title note (D1458).
+
+## Data tensions (locked tests that FAILED; tension markers, not kills — D1471, D1472)
+
+Pulls ρ A1 / τ = i NA12 (derived points), 68 % σ. Card rows checked against the result jsons (D1473).
+
+| source | combination | quantity | pull ρ | pull τ = i |
+|---|---|---|---|---|
+| 2511.01612 Tab. IV (n_s, α_s, β_s free) | ACT+P | α_s | -2.06σ | -2.04σ |
+| 2511.01612 Tab. IV (n_s, α_s, β_s free) | ACT+P | β_s | -1.94σ | -1.94σ |
+| 2511.01612 Tab. IV (n_s, α_s, β_s free) | ACT+P | n_s | +1.91σ | +1.96σ |
+| 2511.01612 Tab. IV (n_s, α_s, β_s free) | +SPT | α_s | -1.58σ | -1.56σ |
+| 2511.01612 Tab. IV (n_s, α_s, β_s free) | +SPT | β_s | -1.69σ | -1.69σ |
+| 2511.01612 Tab. IV (n_s, α_s, β_s free) | +SPT | n_s | +2.21σ | +2.26σ |
+| 2511.01612 Tab. IV (n_s, α_s, β_s free) | +eBOSS | α_s | +0.57σ | +0.61σ |
+| 2511.01612 Tab. IV (n_s, α_s, β_s free) | +eBOSS | β_s | +2.17σ | +2.17σ |
+| 2511.01612 Tab. IV (n_s, α_s, β_s free) | +eBOSS | n_s | +0.87σ | +0.92σ |
+| 2506.20707 Tab. I/VI (ΛCDM) | SPT-3G D1 | n_s | +2.13σ | +2.15σ |
+| 2506.20707 Tab. I/VI (ΛCDM) | SPT+ACT | n_s | +1.26σ | +1.30σ |
+| 2506.20707 Tab. I/VI (ΛCDM) | SPT+Planck | n_s | +3.08σ | +3.15σ |
+| 2506.20707 Tab. I/VI (ΛCDM) | CMB-SPA | n_s | +1.97σ | +2.04σ |
+| 2506.20707 Tab. I/VI (ΛCDM) | SPT-3G D1+DESI | n_s | +2.12σ | +2.14σ |
+| 2506.20707 Tab. I/VI (ΛCDM) | CMB-SPA+DESI | n_s | +0.64σ | +0.72σ |
+
+Reading: CMB-only fits sit 2–3σ below SERAPIS's n_s and lean to positive running; the full-CMB + BAO/Lyα fits (CMB-SPA + DESI, ACT+P+SPT+eBOSS) agree in n_s (≤ 0.92σ), but SPT-3G alone + DESI does not (+2.1σ), and eBOSS prefers β_s ≈ −7.6e-3 (SERAPIS ≈ −3e-5, +2.17σ). The CMB-vs-BAO n_s question is the decisive one (D1437, D1440).

@@ -2800,3 +2800,7 @@ Touches: none.
 2. [derived] n_s pulls (ρ A1 / τ = i NA12): SPT-3G D1 +2.13 / +2.15σ; SPT+ACT +1.26 / +1.30σ; SPT+Planck +3.08 / +3.15σ; CMB-SPA +1.97 / +2.04σ; SPT-3G D1 + DESI +2.12 / +2.14σ; CMB-SPA + DESI +0.64 / +0.72σ.
 3. [derived] Locked rule (|pull| < 2 on every combination): FAIL — worst SPT+Planck at +3.1σ.
 4. [estimate] Reading: this is the CMB-vs-BAO n_s split D1437/D1440 identified as SERAPIS's decisive test, now with SPT-3G's own numbers: CMB-only combinations sit 2–3σ below SERAPIS's n_s ≈ 0.9744–0.9746, the CMB + DESI combination agrees within 0.7σ (as 2512.10613's CMB+DESI 0.9728 did, D1434). SPT+Planck (+3.1σ) is the strongest CMB-only tension on file. Not a kill under the project's practice (which combination is right is the open data question; BAO-inclusive fits agree), but it is the loudest data tension the Janus nodes carry and belongs on the reference card.
+
+## D1473 — JANUS tick 76: data-tensions section added to docs/JANUS_FORMULAS.md — CONSISTENT
+1. [derived] Added 15 rows (D1471: 9 = 3 combinations × α_s, β_s, n_s; D1472: 6 n_s combinations) with both points' pulls; card_check2.py parsed all 15 and matched the D1471/D1472 jsons at 2 decimals: no mismatch (rule met).
+2. [estimate] The reading line was corrected on writing: the first draft said "BAO/Lyα-inclusive fits agree (≤ 0.9σ)", but SPT-3G alone + DESI is +2.1σ and eBOSS n_s pulls reach 0.92σ — the line now names the agreeing combinations (CMB-SPA + DESI, ACT+P+SPT+eBOSS, ≤ 0.92σ) and the exception.

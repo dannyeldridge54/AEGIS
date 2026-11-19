@@ -15267,3 +15267,8 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] Same CMB-only vs CMB+BAO split as D1437 (decisive test); strongest CMB-only tension on file; BAO-inclusive agrees. Loud marker, not a kill.
 - aegis-check: pulls from field_tests/results/D1472_spt3g.json; two re-run by hand ((0.97462 − 0.9636)/0.0035 = 3.149; (0.974393 − 0.9679)/0.0033 = 1.968); like-with-like: ΛCDM n_s (no running) vs SERAPIS n_s; checked: units, arithmetic, cross-sector: none.
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1473 — JANUS tick 76: card data-tensions section — CONSISTENT
+- [derived] 15 tension rows (D1471, D1472) on docs/JANUS_FORMULAS.md, machine-checked against the jsons (no mismatch). Reading line corrected (SPT-3G alone + DESI +2.1σ is BAO-inclusive but disagrees; agreeing fits ≤ 0.92σ).
+- aegis-check: card_check2.py actually ran (field_tests/results/D1473_card_tensions.json, 15 rows); reading-line numbers taken from the D1471/D1472 jsons.
+- MAP: node=janus status=computed touches=[] ripple=no
