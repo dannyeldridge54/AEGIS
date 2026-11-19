@@ -694,3 +694,4 @@ D1407  2026-11-19T02:47Z  JANUS tick 6: band_e_audited box n_s vs end-2025 CMB a
 D1408  2026-11-19T02:53Z  JANUS tick 7: vac_discriminant re-check with any-kappa form vs 2030 forecasts
 D1409  2026-11-19T02:58Z  JANUS tick 8: when is the forced-negative running testable - detection vs exclusion with 2030 forecasts
 D1410  2026-11-19T03:01Z  D1364 PC cross-check: n_s, r reproduce to 5e-6; alpha_s from the pipeline is numerically noisy (up to 30% between identical runs)
+D1411  2026-11-19T03:04Z  JANUS tick 9: band rechecks after D1409 - no band value changes; clear flags
