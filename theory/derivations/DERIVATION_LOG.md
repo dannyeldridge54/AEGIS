@@ -2987,3 +2987,14 @@ Touches: none.
 3. [derived] Sanity check (aegis-check): λ = 1 with E replaced by its pure y^{3/2} zero mode and E_ρ → 0 gives DILMIX centre n_s 0.96526, r 7.398e-4, x* 89.6 — within 2e-4 of the physical-frame rows ⇒ the difference is the non-rescaling pieces (E_ρ = 8.89 and the y^{−1/2} term), not a code error. In the physical frame those pieces are suppressed by λ, so the physical plateau is the pure power-law limit.
 4. [estimate] Reading: the P3 runs and all our forecasts (D1481–D1499) are correct for the λ = 1 model but that model is not the D1486 compactification (λ = 1/a ≈ 2e-5–5e-4); in the physical frame the DILMIX centre and both P3 in-band points move out of band (n_s ≈ 0.965, r ≈ 7.5e-4). A new in-band search must be done in the physical (pure-power-law) limit; the needed tilt C will be larger. Candidate referee point M6 for the P3 chat (with M5, D1505).
 5. [derived] CORRECTION: D1497 item 4 ("frames reconcile, only λ rescales; n_s, r frame-independent") is withdrawn — wrong by Δn_s ≈ −6e-3. D1486's y* = 23.25·a^{2/3} map is approximate (physical y* = 3203 at a = 1993 for A1 vs 3691 mapped).
+
+## D1507 — LVSDIL complete (4/4): all out of band, over-flattened as pre-registered — LVS-volume integration is not the one-power plateau's origin
+1. [derived] k = 0.15 / 0.3 / 0.6 / 1.2 (PREREG_LVSDIL, with DEVIATIONS D1): n_s 0.95210 / 0.95242 / 0.95317 / 0.95404; r 2.6 / 2.4 / 1.9 / 1.3e-5; N* 49.9–49.6. No point in band or near.
+2. [derived] The locked expectation (r ≪ 1e-4, n_s below band from the super-exponential exp(−kE^{2/3}) approach) holds at every k.
+3. [estimate] Route closed: integrating out the LVS volume with an SL(2,Z)-completed ξ̂ over-flattens; the one-power form A must come from another construction.
+
+## D1508 — DILMIX complete (6/6): two in-band points in the λ = 1 frame; target (α, C) ≈ (0.25–0.5, 1.25e-6), not yet physical
+1. [derived] C = 1.25e-6, α = 0.25 / 0.5 / 0.75: n_s 0.97198 / 0.96909 / 0.96786; r 4.56 / 5.51 / 5.98e-4 (in / in / near).
+2. [derived] C = 2.5e-6, α = 0.25 / 0.5 / 0.75: n_s 0.97864 / 0.97416 / 0.97244; r 5.56 / 6.34 / 6.76e-4 (out / near / near).
+3. [derived] The rows agree with the D1485 forecasts to |Δn_s| ≤ 5.3e-6 (D1493, D1499, D1502).
+4. [estimate] Target recorded per the PREREG rule, with two open flags. (i) D1506: in the physical frame the in-band points move out (n_s ≈ 0.965, r ≈ 7.5e-4). (ii) The tilt on the mixture is approximated as C·g. Neither in-band point is a physical result yet.

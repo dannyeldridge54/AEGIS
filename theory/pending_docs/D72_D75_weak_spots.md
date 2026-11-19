@@ -15474,3 +15474,16 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - CORRECTION: D1497 item 4 withdrawn (n_s, r are NOT frame-independent); D1486's frame map approximate.
 - aegis-check: numbers from field_tests/results/D1506_phys_frame_ns.json and the sanity run (scratchpad d1506_sanity.py); references reproduce D1491/D1481 ✓; Δ's computed in the script; DEVIATIONS D1 written before the restart; cross-sector: affects every P3 λ = 1 result and our forecasts' physical interpretation (not their agreement with the λ = 1 runs). No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1507 — LVSDIL complete (4/4): all out of band, over-flattened as pre-registered (n_s 0.952–0.954, r 1.3–2.6e-5) — LVS-volume integration is not the origin of the one-power plateau
+- [derived] k 0.15 / 0.3 / 0.6 / 1.2: n_s 0.95210 / 0.95242 / 0.95317 / 0.95404, r 2.6 / 2.4 / 1.9 / 1.3e-5, N* 49.9–49.6. PREREG_LVSDIL rule: 0/4 in band, 0/4 near. The locked expectation (r ≪ 1e-4, over-flat) holds at every k; n_s sits 0.015–0.020 below the band.
+- Verdict: route CLOSED. The super-exponential approach exp(−kE^{2/3}) is too flat; form A's single power must come from elsewhere.
+- aegis-check: numbers read from field_tests/results/LVSDIL/k*.json; the k1.2 row is the PC run (LVSB4, log-space DEVIATIONS D1 applied); the vacuum condition k > 0.117 holds for all four k ✓; cross-sector: none.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1508 — DILMIX complete (6/6): 2 in band in the λ = 1 frame — (0.25, 1.25e-6) and (0.5, 1.25e-6); 4 near; target recorded with two open flags (physical frame, D1506; tilt approximation, referee m1)
+- [derived] α 0.25 / 0.5 / 0.75 at C 1.25e-6: n_s 0.97198 / 0.96909 / 0.96786, r 4.56 / 5.51 / 5.98e-4 → IN / IN / near. At C 2.5e-6: 0.97864 / 0.97416 / 0.97244, r 5.56 / 6.34 / 6.76e-4 → out / near / near. r rises and n_s falls with α; C raises both.
+- PREREG_DILMIX rule applied: target (α, C) ≈ (0.25–0.5, 1.25e-6) in the λ = 1 model, matching the helper strip D1494 (robust centre 0.30–0.35, 1.4–1.6e-6).
+- Flags (both open): (i) D1506 — in the physical frame λ = 1/a the strip centre moves to n_s 0.965, r 7.5e-4, so these λ = 1 in-band points do NOT carry over to the D1486 compactification; (ii) the tilt is approximated as C·g on the mixture (referee m1). Not quotable as a physical result until both are resolved.
+- aegis-check: numbers read from field_tests/results/DILMIX/*.json; agree with D1485 forecasts (D1493/D1499/D1502, |Δn_s| ≤ 5.3e-6) ✓; cross-sector: none.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
