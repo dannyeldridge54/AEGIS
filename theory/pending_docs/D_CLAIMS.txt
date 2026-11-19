@@ -793,3 +793,4 @@ D1506  2026-11-19T13:49Z  Tilt T3c: physical-frame n_s, r vs lambda=1 frame (DIL
 D1507  2026-11-19T13:58Z  untitled
 D1508  2026-11-19T13:58Z  untitled
 D1509  2026-11-19T13:58Z  Tilt T3d: DILMIX in-band search in the physical frame (lambda=1/9931)
+D1510  2026-11-19T14:04Z  Tilt T3e: fine grid of the physical-frame DILMIX sliver
