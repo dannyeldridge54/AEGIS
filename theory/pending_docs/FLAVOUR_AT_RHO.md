@@ -29,7 +29,7 @@ Q from the four fixed constructions:
 | C4: √M = circ(Y₁,Y₃,Y₂) | 0.3333 | 0.500 |
 None is within 1e-3 of 2/3. At ρ, Y is an eigenvector of the residual Z₃, so the circulants collapse to a single nonzero mass (Q = 1/3). This matches the known result that exact fixed points give degenerate or vanishing masses, and hierarchies need a small departure from the fixed point (Novichkov–Penedo–Petcov; Feruglio 2211.00659).
 
-## F3. The Koide theorem [derived; algebra exact]
+## F3. The Koide theorem [derived; algebra exact — NOT new: Foot's 45° reading; Parseval form in preprints.org 202606.2124 (D1602). New here: ρ supplies the Z₃ dynamically]
 Let √M be any matrix covariant under a Z₃ acting by cyclic permutation (a circulant): √M = a·1 + b·C + b̄·C². Its eigenvalues are the Z₃ Fourier modes:
 
     √m_k = a + 2|b| cos(φ + 2πk/3),   k = 0, 1, 2

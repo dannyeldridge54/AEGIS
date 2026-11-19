@@ -59,7 +59,7 @@ The inflation sector gives exactly 0 at ρ. [der] The observed Λ_obs ≈ 10⁻�
 | piece | status |
 |---|---|
 | inflation shape, identity, plateau, endpoint, ε = 0, r-by-dimension, predictions | derived and checked |
-| Koide form (Z₃ circulant), Q ⇔ equipartition, θ̄ condition | derived |
+| Koide form (Z₃ circulant), Q ⇔ equipartition, θ̄ condition | derived (the Q ⇔ 45°/equipartition algebra is known: Foot; preprint 202606.2124 — ours is the dynamical Z₃ from ρ) |
 | Zhinü rule (inflation) | principle P |
 | equipartition √2 (flavour) | principle P-F1 |
 | same principle on the flavour modulus | principle P-F2 |
