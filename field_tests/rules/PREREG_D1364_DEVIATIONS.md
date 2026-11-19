@@ -17,3 +17,8 @@ Danny: "Run it through the pc loop". The same locked bundle (tools/serapis_calc,
 was queued on the PC runner (job D1364MIX). First attempt failed at import (the run script called system python3 without
 numpy/scipy; no computation happened). Resubmitted as D1364MIX2 with the runner's aegis env python (PYBIN). The cloud parallel run
 continues as an identical-code cross-check. Model, w list, C, T_R, λ, gate, band and rule unchanged.
+
+## D4 (2026-11-18 18:54 CT, BEFORE any result is seen): reading of "small w"
+The lock says P3 → "derived (candidate)" only if "small w passes (a)" (w_phys ~ (α'/R²)² ≪ 1) but gives no number. Fixed now,
+before results: "small" = w ∈ {0, 0.25} (the two grid points with the s = 1 term dominant). The rule is applied mechanically by
+field_tests/scripts/d1364/verdict.py (reading only).
