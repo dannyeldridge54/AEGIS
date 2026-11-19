@@ -16329,3 +16329,9 @@ Fine grid: 300 starting heights per β; passing means Δχ² ≤ 6.18 for ALL th
 - All three tilts converge on the same point, w₀ ≈ −0.79, w_a ≈ −0.36. That point sits just before the field rolls off the plateau.
 - The window is ~1% of the viable range: the starting height must be set to about ±2% in amp.
 Verdict: the reverse thread fits DESI DR2 everywhere, but only with a ~1-in-100 tuned starting height, just short of rolling into V < 0 (the "it's ending now" coincidence). Together with the hand-set V_Λ, this is a SECOND coincidence. Not natural; the prediction stands (w ≥ −1, w₀ ≈ −0.79, w_a ≈ −0.36 if DESI's central values hold).
+
+## D1629 (RIGHT, 19 Nov 2026) — literature cross-check of the reverse-thread scores (no computation)
+Source: "Quintessence and phantoms in light of DESI 2025" (arXiv:2506.21542v2). DESI DR2 fits relative to ΛCDM: CPL Δχ² ≈ −17.2; tCPL(−1), which the authors say "roughly resembles thawing quintessence", ≈ −13.5. The dataset row was garbled in the extract; it reads as a single SN sample. Exponential and hilltop thawing models fit worse than CPL (no numbers given).
+Ours (D1627/D1628, Gaussian approximation calibrated to DESI Table VI): improvement over ΛCDM of 13.6 (Union3) and 15.1 (DESY5); best-point worst-case 5.2 below the CPL optimum. This is the same size as the literature's thawing-class gain, and below CPL as expected for a model that cannot cross w = −1.
+Verdict: our approximate scoring agrees with the published size of the thawing-quintessence gain (≈ 13–15 versus CPL's 17–21). This is a consistency check, not a new result. Fine-tuning of the start is not discussed there, so D1628's tuning flag stands untested against the literature.
+Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
