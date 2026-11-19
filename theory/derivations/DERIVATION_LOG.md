@@ -2230,3 +2230,8 @@ Touches: none.
 2. [derived] D-term ∝ +1/E (max at ρ, wrong sign); condensate ∝ exp(cE) (no plateau).
 3. [estimate] F-term −3e^K|W|² with K ⊃ −log E(U,2) gives the right sign; BHK δK is additive (∝ +E), not 1/E.
 4. [postulate P3] Source of the −a/E term still assumed.
+
+## D1370: no-scale with BHK δK, exact
+1. [derived] K = −3 log T₂ + εE/T₂, W₀ const: V = e^K|W₀|² u²/(2u+3), u = εE/T₂ (sympy-checked).
+2. [derived] Near ρ V ∝ E(U,2)² (min at ρ, no plateau); matches LVS V_loop ∝ (C^{KK})².
+3. [postulate P3] A genuine −a/E(U,2) term still assumed.
