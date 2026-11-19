@@ -51,5 +51,5 @@ try:
                valid=bool(0.9 < a['ns'] < 1.05 and 0 < a['r'] < 0.1 and 45 < N < 60))
 except Exception as ex:
     row.update(valid=False, error=str(ex)[:120])
-print(json.dumps(row), flush=True); os.makedirs('field_tests/results/DIM1_9D', exist_ok=True)
-json.dump(row, open(f'field_tests/results/DIM1_9D/c{cc:g}.json', 'w'), indent=1)
+print(json.dumps(row), flush=True); os.makedirs('field_tests/results/DIM_SLICE', exist_ok=True)
+json.dump(row, open(f'field_tests/results/DIM_SLICE/c{cc:g}.json', 'w'), indent=1)
