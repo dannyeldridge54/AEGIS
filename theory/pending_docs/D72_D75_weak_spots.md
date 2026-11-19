@@ -14540,3 +14540,19 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - [estimate] What it does NOT do: K_SS̄ is chosen to fit V, so it carries all the information — it is a parametrisation, not an origin. The P3 question (why E(U,2), why ρ, why a plateau) stays exactly where D1361–D1385 left it; the string route (universal threshold Y ⊃ E(U,2)/T₂ in K_S, D1375/D1383) is still the only candidate ORIGIN.
 - Verdict: supergravity embedding of SERAPIS-E: established (literature). P3 origin: still a postulate. Paper wording can say "SERAPIS-E is a consistent N=1 supergravity model (Kallosh–Linde streamlined construction); its string origin is a candidate (universal one-loop thresholds)".
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1386 — WEAVE tick 1 (derivation loop; Danny: "loop every 2 min, derive across the Weave"): eps_tilt (layer 1, most upstream non-P3 node). P3's heterotic large volume (T₂ ≈ 16–30, D1377) put into D991's Hubble-induced soft-mass size formula gives a tilt ε ~ (1–4)e-4 at c = 1. Both fitted values (ρ 6e-5, τ = i 1.40e-4) need c ≈ 0.4–1.15, i.e. O(1). This is consistent, not a prediction (2026-11-18)
+- Inputs:
+  - [D991 formula, re-checked: 4.56e-6 at N = 128, c = 1, M_KK = 1e16 ✓] ε ≈ N c² M_KK²/(48π² M_P²), with M_P = 2.435e18 and N = 128 boson–fermion pairs.
+  - [literature, standard; Kaplunovsky] M_string ≈ 5.27e17·g GeV.
+  - [estimate] M_KK ≈ M_string/√T₂ for one T² of area T₂ (string units). O(2) convention factors are not fixed, so ε is uncertain by roughly ×4.
+  - [D1377/D1378] T₂ ≳ 16–20; α_GUT⁻¹ 25 (physical) or ≈ 50 (tree, D1378).
+- [arithmetic, in code] M_KK = 4.8–9.3e16 GeV ⇒ ε(c = 1) = 1.1–4.0e-4 over α⁻¹ 25–50 and T₂ 16–30.
+  - Needed c: 0.39–0.75 for ε = 6e-5 (ρ); 0.59–1.15 for ε = 1.40e-4 (τ = i).
+- Reading:
+  - D991 needed M_KK ≈ 3.6e16 at c = 1 by hand. The P3 volume now fixes M_KK on its own at ≈ 5–9e16. The fitted ε then sits at c ≈ ½–1, which is the natural Hubble-induced range (Dine–Randall–Thomas).
+  - So the two independent open nodes (eps_tilt size, plateau_origin volume) are compatible. This is a new cross-link on the Weave.
+  - Not a derivation of ε: c and N are not computed, and the ×4 convention band is wider than the gap between branches.
+- Caveats: the soft-mass picture (D991) and the threshold picture (P3, a weight-2 E(U,2)) are different mechanisms on the same T². It is not shown that one vacuum supplies both. The other session owns P3; nothing there is edited.
+- Verdict: eps_tilt stays estimate. New link eps_tilt ↔ plateau_origin (consistency at O(1) c).
+MAP: node=eps_tilt status=estimate touches=[plateau_origin] ripple=no
