@@ -3296,3 +3296,10 @@ Touches: none.
 2. [derived] Every D1660 verdict-dependent flag now has a sourced scope note citing arXiv:2603.13226: D1646 → D1646a + D1654; D1632, D1648, D1649 → D1661. No new flags.
 3. [estimate] Remaining flags are nits (no verdict rests on the unsourced number): D1633 Y_p observed 0.245 ± 0.003 (wide window); D1637 Davidson–Ibarra context; D1642/D1644 DESI via D1627; D1650 meta; D1651 full-code Y_p ≈ 0.247 used to set its window (other chat — suggest a source); D1657 refs in its log entry.
 4. [estimate] Limitation stated: the referee is the same agent as most Janus notes.
+
+## D1663 — JANUS genesis G14: sourced light-element scorecard (PREREG_D1663_G14_LIGHT_ELEMENTS) — toolkit textbook-grade; flagged numbers confirmed
+1. [literature] Y_p = 0.2458 ± 0.0013 (LBT, arXiv:2601.22239); 10⁵ D/H = 2.527 ± 0.030 (arXiv:1710.11129); PRIMAT Y_p 0.24709, 10⁵ D/H 2.459 (arXiv:1909.12046, which also lists 10¹⁰ Li/H 1.58 ± 0.31 observed).
+2. [derived] Toolkit (D1651, with Coulomb): Y_p 0.24451 (−0.99σ vs LBT), 10⁵ D/H 2.608 (+2.7σ vs Cooke), 10¹⁰ Li/H 4.38 (+9.0σ: the lithium problem, as in every standard code).
+3. [derived] Toolkit − PRIMAT: Y_p −0.0026 (the missing radiative/finite-mass corrections, as D1651 said), D/H +6.1 %. PRIMAT itself vs observation: Y_p +0.99σ, D/H −2.3σ (the known D/H tension). ⇒ textbook-grade (|ΔY_p| ≤ 0.003, |ΔD/H| ≤ 10 %).
+4. [derived] D1633's unsourced "observed 0.245 ± 0.003" is consistent with LBT 0.2458 and the PRIMAT observation row 0.2449 ± 0.0040 ⇒ confirmed. D1651's unsourced "full codes ≈ 0.247" matches PRIMAT 0.24709 ⇒ confirmed. Both D1662 nits closed.
+5. [estimate] The toolkit's D/H sits on the opposite side of the observation from PRIMAT (+2.7σ vs −2.3σ); quoting toolkit D/H to better than ~6 % is not justified.

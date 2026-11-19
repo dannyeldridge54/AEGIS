@@ -16544,3 +16544,10 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 ## D1662 — JANUS genesis G12c: round 2 passes referee — every limit a verdict rests on now has a paper behind it
 - Re-ran the full check after D1661: all locks before results, every number re-derives, card 35/35, and the four notes that leaned on the unsourced ΔN_eff < 0.3 are all covered by sourced scope notes (arXiv:2603.13226). Seven minor flags remain (listed in the log); none changes a verdict. Round-2 loop stops.
 - MAP: node=matter_genesis status=postulate touches=[] ripple=no
+
+## D1663 — JANUS genesis G14: the light elements, scored against the newest published measurements
+- Helium: toolkit 0.2445 vs the newest measurement 0.2458 ± 0.0013 (LBT 2026, arXiv:2601.22239) — 1σ low, and 0.0026 below a full-precision code (PRIMAT), exactly the corrections still missing.
+- Deuterium: 2.61 vs 2.527 ± 0.030 (Cooke 2018) — 6 % above PRIMAT; good to a few percent, not better.
+- Lithium: 4.4 vs 1.6 observed — the famous lithium problem, which full codes share.
+- The two unsourced numbers the referee flagged (D1633's "observed 0.245", D1651's "full codes ≈ 0.247") are both confirmed by the papers.
+- MAP: node=light_elements status=computed touches=[] ripple=no
