@@ -16534,3 +16534,9 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - The new source audit caught what round 1 missed: D1632, D1648 and D1649 (other chat) still use ΔN_eff < 0.3 (ξ < 0.45) with no paper behind it. Today's data allow only ΔN_eff ≤ 0.086 (2σ, arXiv:2603.13226), so their numbers (the 25:1 decay preference, ξ⁴ = 0.041, m_DM = 123 GeV) need redoing, and D1649's "minimal sector is cold for free (ΔN_eff ≈ 0.2)" is excluded unless the dark photon is massive (D1657/D1659).
 - Next: G13, a sourced scope note with the corrected numbers (their notes stay as written).
 - MAP: node=matter_genesis status=postulate touches=[dark_radiation] ripple=no
+
+## D1661 — JANUS genesis G13: sourced scope note on D1632, D1648, D1649 — same conclusions, tighter numbers
+- Source: N_eff = 2.990 ± 0.070 (arXiv:2603.13226) ⇒ ΔN_eff ≤ 0.086 at 2σ; ACT DR6 (arXiv:2503.14454) gives ≤ 0.076. The notes used an unsourced 0.3.
+- Full mirror world: must be colder than ξ = 0.33 (not 0.45), so the inflaton must favour our side 86:1 (not 25:1). D1648's "equal sharing" dark matter would weigh 433 GeV (not 123) — its conflict with 5 GeV is stronger.
+- Minimal dark sector (D1649 version b): only works with the massive dark photon (0.3–5 GeV, D1659); with a massless one it is excluded (D1654).
+- MAP: node=matter_genesis status=postulate touches=[dark_radiation] ripple=no
