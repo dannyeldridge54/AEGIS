@@ -14729,3 +14729,5 @@ MAP: node=janus status=computed touches=[band_e_audited] ripple=no
 - [estimate] Still missing (the D1363 obstacle in a new form): a mechanism that turns the D⁴R⁴ COEFFICIENT into a potential ∝ 1/(A₀ + BE₂(U)) (e.g. via the four-derivative/F⁴ supergravity terms of Ciupke–Louis–Westphal, D1363, or a Kähler-type resummation). And the lower-order R⁴ term carries 2Ê₁(U) (s = 1) — by D1364 the plateau shape tolerates s = 1 admixture at fixed C.
 - Verdict: a cleaner source than the threshold Y — exact E₂(U), no chamber, natural a. P3 origin remains a postulate pending the coefficient → potential mechanism.
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1401a — correction to D1401 (same day): the listed a values were A₀/B only; the formula a = A₀/B + E_ρ adds 5.783. Corrected: T₂ = 2, y₈ = 0.01 → a ≈ 190 (y* ≈ 201); T₂ = 5, y₈ = 0.1 → a ≈ 9.7 (y* ≈ 45); T₂ = 10, y₈ = 0.1 → a ≈ 7.6 (y* ≈ 40). Conclusion unchanged (a = O(10–200), natural; no chamber limit).
