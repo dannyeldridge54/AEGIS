@@ -692,3 +692,4 @@ D1405  2026-11-19T02:42Z  JANUS tick 5: general closed form alpha_s(kappa), sign
 D1406  2026-11-19T02:44Z  P3 mirror: inverse spec from SERAPIS vs string-side ledger; ATV - one-loop dilaton corrections are topological (chi), no E(U)
 D1407  2026-11-19T02:47Z  JANUS tick 6: band_e_audited box n_s vs end-2025 CMB and CMB+DESI
 D1408  2026-11-19T02:53Z  JANUS tick 7: vac_discriminant re-check with any-kappa form vs 2030 forecasts
+D1409  2026-11-19T02:58Z  JANUS tick 8: when is the forced-negative running testable - detection vs exclusion with 2030 forecasts
