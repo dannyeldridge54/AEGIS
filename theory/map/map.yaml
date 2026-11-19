@@ -172,11 +172,25 @@ nodes:
   - D1514
   - D1521a
   - D1522
+  - D1523
+  - D1524
+  - D1525
+  - D1526
+  - D1527
+  - D1528
+  - D1529
+  - D1530
+  - D1531
+  - D1532
+  - D1533
+  - D1534
+  - D1535
+  - D1536
   note: Casimir/tension, species and Epstein-Kähler routes all closed
   history:
-  - 'D1514: postulate (late)'
-  - 'D1521a: postulate'
-  - 'D1522: postulate'
+  - 'D1534: postulate'
+  - 'D1535: postulate'
+  - 'D1536: postulate'
 - id: logderiv_plateau
   layer: 1
   branch:
