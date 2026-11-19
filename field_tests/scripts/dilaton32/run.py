@@ -12,7 +12,14 @@ if run.startswith('B'):
     P._egrid = _eg
 _b = P.build
 def _build(model='serapis_e', C=1.15e-6, lam=1.0, ymax=3000, npts=4000):
-    m, V, dV, p0 = _b(model, C, lam, ymax, npts); ph, _ = P._egrid(model, lam, ymax, npts); return m, V, dV, ph[-5]
+    m, V, dV, p0 = _b(model, C, lam, ymax, npts); ph, _ = P._egrid(model, lam, ymax, npts)
+    lo, hi = 10, len(ph) - 5          # DEVIATIONS D1: bisect the start index so that N_end is in [100, 200] (target 140)
+    for _ in range(14):
+        mid = (lo + hi)//2; ne = P.Background(V, dV, ph[mid]).Nend
+        if ne is None or ne > 140: hi = mid
+        else: lo = mid
+        if ne is not None and 100 <= ne <= 200: return m, V, dV, ph[mid]
+    return m, V, dV, ph[lo]
 P.build = _build
 os.environ['AEGIS_CACHE'] = tempfile.mkdtemp(); P._EGRID.clear(); t = time.time()
 r = P.predict('serapis_e', C=C, TR=8.94e8, lam=1.0)
