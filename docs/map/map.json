@@ -404,7 +404,8 @@
     "D1405: computed",
     "D1409: computed",
     "D1412: computed"
-   ]
+   ],
+   "flag": "recheck (D1413, band_i)"
   },
   {
    "id": "bhk_tilt",
@@ -825,7 +826,8 @@
     "D1343",
     "D1402",
     "D1402a",
-    "D1411"
+    "D1411",
+    "D1413"
    ],
    "depends": [
     "nstar_i",
@@ -833,11 +835,10 @@
    ],
    "note": "corrected history meets it only for ε ≈ 1.40–1.46e-4 (D730)",
    "history": [
-    "D1402: frozen",
     "D1402a: frozen",
-    "D1411: frozen"
-   ],
-   "flag": "recheck (D1412, janus)"
+    "D1411: frozen",
+    "D1413: frozen"
+   ]
   },
   {
    "id": "band_e",
