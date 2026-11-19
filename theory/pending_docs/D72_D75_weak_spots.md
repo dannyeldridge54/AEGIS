@@ -16236,3 +16236,11 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 
 ## D1617 — LOOP tick 5 (target 1, small offset from i): correction D1614a filed; the next locked candidates (opposite-sign y^{1/2}|η|², E(τ,2)-type, j-function combinations of arXiv:2101.08718) must each be checked for a SUPERCRITICAL split at i with ρ staying higher. Plan only this tick (no new computation), to avoid duplicating the D1612 line, which another loop started.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1618 — IOFFSET2 (locked; DEVIATIONS D1 runaway handling + indentation fix; no result seen before the final run): the OPPOSITE-sign term +κ·y^{1/2}|η|² gives a genuine SUPERCRITICAL split at i, along the CP-conserving imaginary axis: τ_min = 1.048i (|u| = 0.024) at 0.1% past threshold and 1.168i (|u| = 0.078) at 1%, scaling |u| ≈ 0.77√Δ. The fitted τ = 1.0685i (|u| = 0.033, arXiv:2609.09262) corresponds to Δ ≈ 0.2%. E(τ,2) terms do not work: +κE(τ,2) jumps to ρ (first-order), and −κE(τ,2) runs away to the cusp
+- [computed] Hessians at i: V₀ diag(0.0429, 0.8357); F diag(+0.1491, −0.6491); G = E(τ,2)/E(i,2) diag(−0.5686, +2.5686). Thresholds: F+ κ_c = 1.2874 (unstable along y); G+ κ_c = 0.0754 (along x); G− κ_c = 0.3253 (along y).
+- [computed] F+ rows (κ/κ_c: |u|, τ): 1.001: 0.0236, 1.048i; 1.01: 0.0776, 1.168i; 1.1 and 1.5: the minimum leaves the neighbourhood (y ≈ 11.7–13, |u| ≈ 0.85). The small-offset window is narrow (Δ ≲ 1%). V(min) < V(ρ) throughout. Classified SUPERCRITICAL by the locked rule.
+- [computed] G+: the minimum is at ρ for every κ/κ_c (|u| = 0.268): FIRST-ORDER. G−: unbounded below towards the cusp: RUNAWAY.
+- [derived] The offset is along the imaginary axis, so CP is conserved (CP violation must still come from elsewhere, e.g. the quark sector). This is exactly the vacuum type of arXiv:2609.09262 (τ = 1.0685i). The Weave potential plus +κ·y^{1/2}|η|² can host it with a 0.2% tuning of κ above threshold. That is a mild tuning, not a prediction, and the window closes by Δ ≈ 10%.
+- Status of loop target 1: a working mechanism exists for small offsets along the imaginary axis (F+, supercritical). It is not predictive (κ is tuned) and not CP-violating. D1614 is partly rescued: a supercritical split does occur for the right term (cf. D1614a).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

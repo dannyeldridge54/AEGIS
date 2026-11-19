@@ -22,7 +22,7 @@ Published preprints (19 Nov 2026): inflation part doi:10.5281/zenodo.24377930 (v
 ### 2. Endpoint — every thread tied off at ρ
 - τ₁ → ρ = e^{iπ/3} exactly: V(ρ) = 0 and a strict quadratic minimum, so ε = 0. [der: V(ρ) = 2e-22; V(ρ ± 10⁻³) ≈ 8.3e-8 isotropic]
 - Lepton moduli feel the same potential (P-F2). Slow moduli drain to i for 69% of the domain and to ρ for 31% (D1610), so τ_ν → i is the natural outcome; τ_ℓ → ρ needs a start near the line x = ½. [der given P-F2]
-- Smooth modular-invariant terms cannot move these minima, since every invariant function is stationary at i and ρ (D1614). A small offset, such as the fitted τ = 1.0685i of arXiv:2609.09262, needs a hidden term just past a SUPERCRITICAL bifurcation threshold (Δ ~ 10⁻³); the simplest candidate, −κy^{1/2}|η|², is subcritical and jumps to ρ instead (D1612, D1614a); the SM top loop cannot supply it, because that would need a ~10⁻⁵ eV modulus excluded by fifth-force tests (D1613). [der/est]
+- Smooth modular-invariant terms cannot move these minima, since every invariant function is stationary at i and ρ (D1614). A small offset, such as the fitted τ = 1.0685i of arXiv:2609.09262, needs a hidden term just past a SUPERCRITICAL bifurcation threshold (Δ ~ 10⁻³); the simplest candidate, −κy^{1/2}|η|², is subcritical and jumps to ρ instead (D1612, D1614a); the opposite sign, +κy^{1/2}|η|², IS supercritical: τ = 1.048i at 0.1% and 1.168i at 1% past threshold, |u| ≈ 0.77√Δ, so the fitted 1.0685i needs Δ ≈ 0.2% (D1618; CP-conserving, tuned, not predicted); the SM top loop cannot supply it, because that would need a ~10⁻⁵ eV modulus excluded by fifth-force tests (D1613). [der/est]
 - At ρ a residual Z₃ survives. [lit]
 
 ### 3. Charged leptons — Koide from the Z₃ at ρ
