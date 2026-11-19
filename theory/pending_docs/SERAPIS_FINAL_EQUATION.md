@@ -58,7 +58,7 @@ Status: same form as the Casas–Ibáñez one-loop tower potential (2507.05345; 
 | r | 5.41 × 10⁻⁴ | 1.07 × 10⁻³ |
 | α_s | −9.7 × 10⁻⁴ | −9.4 × 10⁻⁴ |
 | N* | 50.37 | 50.57 |
-| status | exact Mukhanov–Sasaki (D1532) | engine F (D1589); exact MS: see §6 |
+| status | exact Mukhanov–Sasaki (D1532) | exact Mukhanov–Sasaki (D1593): n_s 0.97056, r 1.069e-3, α_s −9.6e-4 |
 | volume 𝒱 (χ = 20–200) | 1.4e4 – 3e5 | ≈ 4e3 – 9e4 |
 
 Node ladder (r at n_s ≈ 0.9706, scaled 8/(D−2)): 10D 5.4e-4 · 9D 6.2e-4 · 8D 7.2e-4 · 7D 8.7e-4 · 6D 1.07e-3 · 5D 1.4e-3 · 4D 2.2e-3.
@@ -77,4 +77,4 @@ Identity (6 decimals, 4 points); 7.2983; V₀(ρ) = 3e-19; 1/√8 slope; kinetic
 2. The tilt needs a compactification with χ > 0 and 𝒱 ~ 10⁴–10⁵ (estimate level).
 3. The gradient form of Andriot's bound is violated ×42 — the same tension every plateau has with the dS-slope conjecture (flag, not veto).
 4. Heterotic lenses R3–R6 are by analogy; one-loop signs at 6D/5D/4D are regularised (D1572a, D1577a).
-5. D = 6 exact-MS confirmation: PREREG_P3D6X (D1593) — result appended below when the run finishes.
+5. D = 6 exact-MS confirmation: DONE (D1593) — n_s 0.97056, r 1.069e-3; engine F agreed to 4e-5 in n_s and 0.1 % in r.
