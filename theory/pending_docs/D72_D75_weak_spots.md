@@ -16412,3 +16412,10 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - Consequences: the inflaton mass after inflation is m = √(3(D−2)/32)·H∞ — a pure number times the inflation rate, no free input (0.866 H∞ in 10D, 0.61 H∞ in 6D). This makes the reheating link of D1637 depend only on κ. The same 1/4 applies to the reverse thread when it reaches ρ: m_DE = 0.866·H_Λ (feeds G2b/G9).
 - Honest note: the brute-force lattice cross-check was only good to ~1 %, not the 1e-4 the lock note claimed; it agrees at that level.
 - MAP: node=genesis_reheating status=estimate touches=[reverse_thread] ripple=no
+
+## D1642 (RIGHT, 19 Nov 2026) — RESULT, rung R-C2: the Weave does NOT set the dark thread's start. C-start FALSE; the start is a ~1-in-300 initial condition (PREREG_RC2_START; DEVIATIONS D1 dead line)
+- Mapping [der]: amp = 7.30/y², with y = Im τ_Λ. The window sits at y ≈ 6.1 (10D), 5.2 (6D), 4.5 (4D), and is only Δy ≈ 0.07–0.14 wide.
+- Q1: m_eff²/H² = 10⁻¹⁰⁹ at the end of inflation and 10⁻³³ at BBN. The field is frozen from inflation until now; today the ratio is 2–5, so it is thawing just now. Post-inflation dynamics such as the Y-fork (which acts at the inflaton's scale) and the basin flow cannot have moved it.
+- Q2: under the Weave's natural SL(2,Z)-invariant area measure, P(window) = 0.35% (10D), 0.28% (6D), 0.32% (4D) → "tuned".
+- Q3: quantum spread during inflation, 3 × 10⁻⁶ M_P, is ≪ the window width 0.015–0.021 M_P, so inflation cannot select the start either.
+- Verdict: the dark thread's DESI fit needs a ~1-in-300 starting position that nothing in the Weave picks. C2 is downgraded to an initial-condition coincidence, alongside the hand-set V_Λ.

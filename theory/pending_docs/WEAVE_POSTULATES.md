@@ -25,7 +25,7 @@ Rule: a postulate is a stated assumption that the theory now RUNS on. It is not 
 | # | gap | postulate | test |
 |---|---|---|---|
 | C1 | Λ's size (V_Λ ~ 10⁻¹²² M_P⁴) | **P-Λ:** set by hand (open); the dark dimension is ruled out for us (D1625) | — |
-| C2 | the reverse thread's 1% starting window | **C-start:** the dark thread's starting height is set by where the Y-fork leaves slow moduli | DESI DR3/Euclid: (w₀, w_a) ≈ (−0.79, −0.36), never w < −1 |
+| C2 | the reverse thread's 1% starting window | ~~C-start (Y-fork sets it)~~ FALSE (D1642): the field is frozen from inflation to now; P = 0.3% under the area measure. Now an initial-condition coincidence | DESI DR3/Euclid: (w₀, w_a) ≈ (−0.79, −0.36), never w < −1 |
 | C3 | dark/visible ratio 5.36 | **P-M:** one asymmetry, equal NUMBER sharing ⇒ m_DM = 5.0 GeV | SuperCDMS SNOLAB / TESSERACT / CRESST in 1–10 GeV |
 | C4 | asymmetry at T_rh = 9 × 10⁸ GeV (below the thermal-leptogenesis bound) | **C-asym:** non-thermal asymmetry from the thread's decay | η = 6.1 × 10⁻¹⁰ reproduced |
 | C5 | mirror sector must be cold (ξ < 0.45) | **C-cold:** the thread decays mostly into the visible side (asymmetric reheating) | ΔN_eff (CMB-S4 σ ≈ 0.03) |
@@ -49,4 +49,4 @@ Plan (lock before computing):
 4. P-M test: does a mirror sector at ΔN_eff ≤ 0.3, or 5 GeV dark baryons, move Li-7 by more than 10%? (Expected: no. The Weave would then NOT solve the lithium problem, which is to be recorded as such.)
 After R-Li the queue is: C2 (dark-thread start from the Y-fork) → B2 (δ = 2/9) → C3/C4 (sharing factor and asymmetry from the thread's decay at ρ).
 
-**R-Li done (D1640).** Next rung: **R-C2**, whether the dark thread's starting height comes from where the Y-fork leaves slow moduli.
+**R-Li done (D1640).** R-C2 done (D1642): C-start false. Next rung: **R-B2** (δ = 2/9).
