@@ -1,0 +1,6 @@
+# PREREG_NU_OFFSET — does a small offset of the neutrino modulus from i relieve the TM2 θ₁₂ tension? (locked D1621, 2026-11-19 14:57 CT)
+Model (explicit, minimal; Feruglio 1706.08749 "model I" neutrino operator): M_ν ∝ [[2Y₁, −Y₃, −Y₂], [−Y₃, 2Y₂, −Y₁], [−Y₂, −Y₁, 2Y₃]], with the weight-2 A4 triplet Y(τ_ν) (validated code: field_tests/scripts/flav_rho/run.py). The charged-lepton basis is the ST eigenbasis (residual Z₃ at ρ); all 6 assignments of (e, μ, τ) to the ST eigenvectors are tried. τ_ν = i·e^{v}, with v ∈ [−0.15, 0.15] (61 points; imaginary axis, as D1618 gives), including v = 0.
+For each (ordering, v): PMNS = U_ℓ† U_ν (neutrino eigenvectors ordered by |m|, normal ordering m₁ < m₂ < m₃ and also inverted), giving sin²θ₁₂, sin²θ₁₃, sin²θ₂₃ and r = Δm²₂₁/|Δm²₃₁|.
+Data (NuFIT 6.0 NO IC19, 2410.05380): sin²θ₁₂ 0.307 (+0.012/−0.011), sin²θ₁₃ 0.02195 (+0.00054/−0.00058), sin²θ₂₃ 0.561 (+0.012/−0.015); r = 7.49e-5/2.513e-3 = 0.0298, taken with a 3% 1σ.
+Pass rule: PASS if some (ordering, v) with |u| = |tanh(v/2)| ≤ 0.1 has all four quantities within 3σ; otherwise FAIL. Also report the v = 0 values (exact i) and the best χ² point. No other models are added after seeing results.
+Script: field_tests/scripts/flav_rho/nu_offset.py
