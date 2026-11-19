@@ -728,3 +728,4 @@ D1441  2026-11-19T05:41Z  JANUS tick 37: SO official sigma(n_s) cross-check of D
 D1442  2026-11-19T05:47Z  JANUS tick 38: rho offset model at second order SR (alpha_S to O(eps^3))
 D1443  2026-11-19T05:53Z  JANUS tick 39: D1442 second-order model at audited box corners
 D1444  2026-11-19T05:58Z  JANUS tick 40: second-order offset model at remaining four box corners
+D1445  2026-11-19T06:03Z  JANUS tick 41: summary addendum D1436-D1444
