@@ -9,3 +9,7 @@ Laws and tolerances (fixed now):
 6. control: D = 15 (class number 2): fractional part of Re j > 1e-3.
 7. Chudnovsky first term (literature constant 13591409): |640320^{3/2}/(12·13591409) − π| < 1e-13.
 Code: apps/aegis_studio/circuit.py (CM layout, wires, laws).
+
+## Addendum (2026-11-19 01:40 UTC, before these laws' first run)
+8. down CM→A2: order of the zero of j − 1728 at i, k = log2(|f(i+h)|/|f(i+h/2)|) with h = 1e-8: |k − 2| < 0.01.
+9. down CM→A2: order of the zero of j at ρ (same estimator): |k − 3| < 0.01.

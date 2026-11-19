@@ -147,7 +147,7 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
         import mpmath as _mp
     except ImportError:   # guard: without mpmath the CM laws report open instead of crashing the circuit
         _mp = None
-        W.update(CM_j_rho=float('inf'), CM_j_i=float('nan'), CM_heeg_ok=False, CM_heeg_maxrel=float('inf'), CM_163_delta=float('nan'), CM_15_frac=0.0, CM_chud_err=float('inf'), CM_fix_i=float('inf'), CM_fix_rho=float('inf'), CM_orders=0.0)
+        W.update(CM_ord_i=float('nan'), CM_ord_rho=float('nan'), CM_j_rho=float('inf'), CM_j_i=float('nan'), CM_heeg_ok=False, CM_heeg_maxrel=float('inf'), CM_163_delta=float('nan'), CM_15_frac=0.0, CM_chud_err=float('inf'), CM_fix_i=float('inf'), CM_fix_rho=float('inf'), CM_orders=0.0)
     if _mp is not None:
      _mp.mp.dps = 60
      _j = lambda tau: 1728*_mp.kleinj(tau)
@@ -166,6 +166,9 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
      W['CM_fix_i'] = float(abs(_mob(_S, _mp.mpc(0, 1)) - _mp.mpc(0, 1))); _rho = _mp.mpc(0.5, _mp.sqrt(3)/2)
      W['CM_fix_rho'] = float(min(abs(_mob(_ST, _rho) - _rho), abs(_mob(_T*_S, _rho) - _rho)))
      W['CM_orders'] = 1.0 if (_S*_S == -_mp.eye(2)) and (_ST**3 == -_mp.eye(2) or _ST**3 == _mp.eye(2)) else 0.0
+     # zero orders (2026-11-19 01:40 UTC; tolerance fixed before first run): k = log2(|f(τ0+h)|/|f(τ0+h/2)|), h = 1e-8
+     _ord = lambda f, z0, h: float(_mp.log(abs(f(z0 + h))/abs(f(z0 + h/2)), 2))
+     W['CM_ord_i'] = _ord(lambda z: _j(z) - 1728, _mp.mpc(0, 1), _mp.mpf('1e-8')); W['CM_ord_rho'] = _ord(_j, _rho, _mp.mpf('1e-8'))
     # DOWN pass: the top layers hand values back to the core — the E8-layer r forecast for SERAPIS must equal the core r
     W['ns_down'] = get('serapis_emulator', {'C': W['C_back']}).get('ns') if W.get('C_back') else None
 
@@ -283,6 +286,8 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     law('up', 'Moonshine→CM', ('X_mellin', 'CM_163'), 'e^{π√163} = 640320³ + 744 − δ with 0 < δ < 1e-12 (744 = Moonshine c₀)', W.get('j_c0') == 744 and 0 < W['CM_163_delta'] < 1e-12, f"δ = {W['CM_163_delta']:.6e}; c₀ = {W.get('j_c0')}")
     law('law', 'CM', ('CM_control', 'CM_heegner'), 'control: D = −15 (class number 2) is NOT an integer', W['CM_15_frac'] > 1e-3, f"frac part of j((1+√−15)/2) = {W['CM_15_frac']:.4f}")
     law('law', 'CM', ('CM_chud', 'CM_163'), 'Chudnovsky first term: π ≈ 640320^{3/2}/(12·13591409) to < 1e-13', W['CM_chud_err'] < 1e-13, f"|error| = {W['CM_chud_err']:.2e}")
+    law('down', 'CM→A2', ('CM_i', 'vac_i'), 'j − 1728 has a DOUBLE zero at i (|k − 2| < 0.01): the variant potential V ∝ |j − 1728| is quadratic there — a massive vacuum (D1351)', abs(W['CM_ord_i'] - 2) < 0.01, f"order k = {W['CM_ord_i']:.6f}")
+    law('down', 'CM→A2', ('CM_rho', 'serapis_e'), 'j has a TRIPLE zero at ρ (|k − 3| < 0.01): j^(1/3) (γ₂) is the single-valued local coordinate at the hexagonal vacuum', abs(W['CM_ord_rho'] - 3) < 0.01, f"order k = {W['CM_ord_rho']:.6f}")
     # UP links: the SERAPIS hexagon carried up the nesting chain (counts locked in D1294)
     for lo, hi, L, n in (('A2', 'D4', 'D4', 16), ('D4', 'E8', 'E8', 1120), ('A2', 'Leech', 'A2', 1)):
         law('up', f'{lo}→{hi}', ('X_hexin',), f'hexagon carried {lo} → {hi}: {n} copies in {L}', W.get(f'hex_{L}') == n, f"{W.get(f'hex_{L}')} (D1294: {n})")
