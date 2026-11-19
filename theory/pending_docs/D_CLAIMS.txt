@@ -823,3 +823,4 @@ D1535  2026-11-19T15:32Z  DpL c7 novelty P3-S
 D1536  2026-11-19T15:33Z  Scope note on D1504 after P3 D1533; read-only check of P3 D1533-D1534
 D1537  2026-11-19T15:34Z  DpL c8 KL problem P3-S-F
 D1538  2026-11-19T15:35Z  DpL c9 KL flux tilt shape
+D1539  2026-11-19T15:38Z  DpL c10 P3-S prediction table
