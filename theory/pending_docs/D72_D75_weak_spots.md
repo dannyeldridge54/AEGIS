@@ -14788,3 +14788,12 @@ MAP: node=band_i status=frozen touches=[janus] ripple=no
 - Verdict: P3 search space reduced to one target (genus-two heterotic K_S with D⁴R⁴ structure). Everything else is ruled out by the ledger. P3 origin: postulate.
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
 (Numbering note 2026-11-18: the P3 mirror note was pushed with the heading D1404 by mistake; its claimed number is D1406 — corrected.)
+
+## D1407 — JANUS tick 6: the audited SERAPIS-E box on end-2025 n_s — PASS with DESI BAO, but a third of it is >2σ high on CMB alone
+- Lock: field_tests/rules/PREREG_D1407_audited_box_ns.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1407/box_ns.py; result field_tests/results/D1407_audited_box_ns.json.
+- [literature] arXiv:2512.10613 (Planck+SPT+ACT+BICEP/Keck): n_s 0.9682 ± 0.0032; with DESI BAO 0.9728 ± 0.0029; r < 0.034 (95%).
+- [computed] CMB + DESI: pulls −0.38 … +1.10σ, 100% of the box within 2σ → PASS (with r_max 4.9e-4, 1/69 of the bound). CMB alone: +1.09 … +2.44σ, 67% within 2σ → PARTIAL.
+- With D1399 (running, PASS) the audited box now passes every current test on CMB + DESI. Honest reading: it stays a postulate scored on future data; what decides it next is whether the CMB-only and CMB + BAO n_s converge, and where.
+- aegis-check: re-ran pulls (+2.4375σ top edge CMB-only, −0.379σ bottom CMB + DESI; 2σ CMB-only edge n_s = 0.9746 → 33% of the box above) in python; checked: units, arithmetic, like-with-like (same paper, same datasets), limits, cross-sector: none.
+MAP: node=band_e_audited status=postulate touches=[] ripple=no
+

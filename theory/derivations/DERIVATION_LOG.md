@@ -2420,3 +2420,10 @@ Touches: none.
 1. [literature] hep-th/0307268: type II one-loop dilaton corrections ∝ χ (topological), no complex-structure dependence.
 2. [derived] Spec S1–S5 from SERAPIS-E; ledger of all routes; only D⁴R⁴ coefficient matches F, only K_S placement matches S1.
 3. [postulate P3] Target: genus-two heterotic K_S ⊃ A₀ + B·E₂(U); not computed.
+
+## D1407: audited box n_s on end-2025 data (locked)
+1. [literature] arXiv:2512.10613: n_s 0.9682 ± 0.0032 (CMB), 0.9728 ± 0.0029 (CMB + DESI), r < 0.034 (95%).
+2. [derived] Box n_s 0.9717–0.9760 vs CMB + DESI: pulls −0.38σ … +1.10σ, whole box inside 2σ (R1 PASS); r_max 4.90e-4 ≪ 0.034 (R3 PASS). Verdict PASS.
+3. [derived] vs CMB alone: pulls +1.09σ … +2.44σ; 67% of the box inside 2σ (R2 PARTIAL) — everything above n_s = 0.9746 is >2σ high without BAO.
+4. [estimate] The audited box sits higher in n_s than the frozen bands (top 0.9760 vs 0.975), so it leans harder on DESI BAO; its standing and band_e/band_i's now share one hinge: the CMB-vs-BAO n_s difference.
+
