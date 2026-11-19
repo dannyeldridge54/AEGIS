@@ -15611,3 +15611,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Reading: a single consistency number — H/Λ_sp ≈ 0.3–0.65 — ties the tilt to EFT control. H < Λ_sp holds, but not by a large margin, so the next-order (D⁴R⁴ ~ E(τ,5/2)·(H/Λ)⁸-type) terms are only ~(H/Λ)² ≈ 0.1–0.4 smaller: a control flag of the same kind as M5, now quantified.
 - Open (locks needed): (1) c and its sign from R⁴ on dS₄ × X₆ (a positive, n_s-raising sign is required); (2) 4D species scale with the compactification volume (Λ_sp,4 vs Λ_sp,10); (3) does H⁶ ∝ V³ (not constant) change n_s by more than 1e-4 — a quick engine-F test of V(1 + c′V³E) vs V(1 + C E).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1525 — SPECIES32_H6: the R⁴ tilt's H⁶ ∝ V³ factor is negligible — |Δn_s| ≤ 1e-5, |Δr|/r ≤ 0.07 % (D1524 open item 3 closed)
+- Lock: field_tests/rules/PREREG_SPECIES32_H6.md. Results: field_tests/results/SPECIES32/H6_{T1,T2}_F_*.json (engine F).
+- [computed] T1 V₀(1 + C(E − E_ρ)) vs T2 V₀(1 + C V₀³(E − E_ρ)): C 6.8e-7: n_s 0.96900 → 0.96901, r 5.171 → 5.174e-4; 8e-7: 0.97065 → 0.97066, 5.409 → 5.411e-4; 9.3e-7: 0.97247 → 0.97248, 5.680 → 5.684e-4.
+- Rule (|Δn_s| ≤ 2e-4, |Δr| ≤ 2 %): NEGLIGIBLE. The stated expectation got the sign wrong (predicted Δn_s ≈ −5e-5; measured +1e-5): V₀³ rises along the path, adding slope that outweighs the 0.7 % smaller amplitude. The D1523 band (C ≈ 6.8–9.3e-7) stands under the R⁴-motivated tilt form.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

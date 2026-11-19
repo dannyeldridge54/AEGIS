@@ -3073,3 +3073,6 @@ Touches: none.
 1. [literature] IIB Einstein-frame R⁴ coefficient ℓ₁₀⁶E(τ,3/2); Λ_sp = E^{−1/6}ℓ₁₀^{−1} (arXiv:2310.07708).
 2. [estimate] On quasi-dS, ΔV/V ≈ c·E(τ,3/2)(Hℓ₁₀)⁶ = c(H/Λ_sp)⁶ — same τ-dependence as the tilt C·E; c and sign not computed.
 3. [derived] Band tilt C(E* − E_ρ) = 6.7–9.3e-4 ⇒ H/Λ_sp ≈ 0.30 (c = 1) … 0.65 (c = 0.01); g_s* = 1/y* ≈ 0.018 with no frame map.
+
+## D1525 — the H⁶ ∝ V³ factor in the R⁴ tilt shifts n_s by ≤ 1e-5 (negligible)
+1. [derived] Engine F, three tilts in the D1523 band, T1 vs T2 = V₀(1 + C V₀³(E − E_ρ)): |Δn_s| ≤ 1e-5, |Δr|/r ≤ 0.07 %.
