@@ -16317,3 +16317,15 @@ Verdict: the reverse thread fits DESI DR2 at 2σ for all supernova sets in its 1
 
 ## D1626a (correction, 19 Nov 2026) — to D1626
 D1626 stated "maximum |w_a| ≈ 0.25" and "predicts w₀ ≈ −0.92 to −0.95". Both were read from a printout that showed only every 4th grid point. The full grid (D1627) reaches w₀ ≈ −0.72, w_a ≈ −0.51 at the last viable starting height (β = 2√2). Corrected prediction: thawing, never below w = −1, with |w_a| up to ~0.5. Large |w_a| is reached only near the viability edge.
+
+## D1628 (RIGHT, 19 Nov 2026) — how tuned is the reverse thread? (PREREG_GENESIS_DE3; DEVIATIONS D1: JSON-only crash)
+Fine grid: 300 starting heights per β; passing means Δχ² ≤ 6.18 for ALL three DESI combinations at once (D1627 calibration).
+| β | viable points | pass all three | fraction of viable ln-range | window Δln(amp) | best worst-case Δχ² (w₀, w_a) | reading |
+|---|---|---|---|---|---|---|
+| 2√2 (10D) | 202 | 3 | 1.5% | 0.045 | 5.21 (−0.78, −0.38) | mild tuning |
+| 2 (6D) | 223 | 2 | 0.9% | 0.030 | 5.59 (−0.79, −0.36) | tuned |
+| √2 (4D) | 244 | 2 | 0.8% | 0.030 | 5.69 (−0.79, −0.35) | tuned |
+- The D1627 β = 2 failure WAS a grid artifact: on the fine grid β = 2 passes all three in a narrow window.
+- All three tilts converge on the same point, w₀ ≈ −0.79, w_a ≈ −0.36. That point sits just before the field rolls off the plateau.
+- The window is ~1% of the viable range: the starting height must be set to about ±2% in amp.
+Verdict: the reverse thread fits DESI DR2 everywhere, but only with a ~1-in-100 tuned starting height, just short of rolling into V < 0 (the "it's ending now" coincidence). Together with the hand-set V_Λ, this is a SECOND coincidence. Not natural; the prediction stands (w ≥ −1, w₀ ≈ −0.79, w_a ≈ −0.36 if DESI's central values hold).

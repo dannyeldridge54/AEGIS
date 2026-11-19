@@ -1,0 +1,44 @@
+{
+ "beta=2.8284": {
+  "n_viable": 202,
+  "n_pass_all": 3.0,
+  "frac_viable_lnrange": 0.01485148514851485,
+  "window_dln": 0.045148592010002014,
+  "viable_lnrange": 3.0400051953401355,
+  "best_minmax": {
+   "dchi2_max": 5.210219194495299,
+   "amp": 0.19390001410343619,
+   "w0": -0.7830162101303397,
+   "wa": -0.38319005489192937
+  },
+  "reading": "mild tuning"
+ },
+ "beta=2.0000": {
+  "n_viable": 223,
+  "n_pass_all": 2.0,
+  "frac_viable_lnrange": 0.008968609865470852,
+  "window_dln": 0.030099061340001343,
+  "viable_lnrange": 3.3560453394101497,
+  "best_minmax": {
+   "dchi2_max": 5.592027225809305,
+   "amp": 0.2700027947104473,
+   "w0": -0.7908459841590629,
+   "wa": -0.3586743151178028
+  },
+  "reading": "tuned/fails"
+ },
+ "beta=1.4142": {
+  "n_viable": 244,
+  "n_pass_all": 2.0,
+  "frac_viable_lnrange": 0.00819672131147541,
+  "window_dln": 0.030099061340001343,
+  "viable_lnrange": 3.672085483480164,
+  "best_minmax": {
+   "dchi2_max": 5.693565029260181,
+   "amp": 0.3593775087706438,
+   "w0": -0.7902289434300076,
+   "wa": -0.35158039932996665
+  },
+  "reading": "tuned/fails"
+ }
+}

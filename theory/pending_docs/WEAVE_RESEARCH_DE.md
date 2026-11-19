@@ -84,3 +84,5 @@ Same shape, 1 − 7.30e^{−βφ}, at the dark-energy height, still being rolled
 **Update (D1627): re-scored with DESI's own Δχ² values (Table VI), replacing the assumed correlation.**
 - The 10D thread passes all three DESI combinations: Δχ² 3.4 (Pantheon+), 3.8 (Union3), 5.9 (DESY5), against 10.7, 17.4 and 21.0 for Λ.
 - Flag: the best fits sit at the last viable starting height, i.e. they are tuned.
+
+**Tuning (D1628):** all three tilts pass all three DESI combinations, but only in a ~1% window of starting heights, right before the field rolls off: a second coincidence besides V_Λ. Common best point: w₀ ≈ −0.79, w_a ≈ −0.36.
