@@ -2566,3 +2566,8 @@ Touches: none.
 1. [derived] A1-anchored box running −9.087e-4 … −1.0139e-3 (D1423) vs ACT DR6 (2503.14454 §4.1, 68 %): P-ACT (0.0060 ± 0.0055) pulls −1.26σ … −1.28σ; P-ACT-LB (0.0062 ± 0.0052) −1.37σ … −1.39σ. PASS for both.
 2. [derived] Adding lensing + BAO moves the pull by only ~0.1σ: the running tension (~1.3σ, data leaning positive) is a CMB-spectrum feature, not a BAO effect.
 
+## D1434: audited τ = i point and ρ A1 on all data (locked)
+1. [derived] τ = i (NA12, ε 1.40e-4): n_s pulls CMB +2.01σ, CMB + DESI +0.63σ, P-ACT-LB2-BK18 −0.19σ; α_s P-ACT −1.25σ, P-ACT-LB −1.36σ; r ≪ limits. PASS (ruled pulls all < 2).
+2. [derived] ρ (A1): n_s +1.94σ / +0.55σ / −0.27σ; α_s −1.27σ / −1.38σ. PASS.
+3. [derived] The two audited vacuum points are indistinguishable on today's data (Δ pulls ≤ 0.1σ), consistent with D1425's killed discriminator. Both sit at the CMB-only 2σ edge (τ = i just past it at +2.01σ, reported not ruled) and are central for ACT's combination.
+

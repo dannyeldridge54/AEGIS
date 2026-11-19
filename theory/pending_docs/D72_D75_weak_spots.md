@@ -15016,3 +15016,12 @@ MAP: none
 - aegis-check: re-ran (−9.087e-4 − 0.0060)/0.0055 = −1.256σ in python; checked: units, arithmetic, like-with-like (same paper, both 68 %), limits, cross-sector: none.
 MAP: node=band_e_audited status=postulate touches=[] ripple=no
 
+## D1434 — JANUS tick 30: the audited τ = i point and the ρ point A1 both PASS every BAO-including test; on CMB alone they sit at the 2σ edge (τ = i +2.01σ, A1 +1.94σ)
+- Lock: field_tests/rules/PREREG_D1434_tau_i_point.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1434/tau_i_point.py; result field_tests/results/D1434_tau_i_point.json.
+- [computed] | point | n_s CMB | CMB + DESI | P-ACT-LB2-BK18 | α_s P-ACT | P-ACT-LB |
+  τ = i (ε 1.40e-4): +2.01 | +0.63 | −0.19 | −1.25 | −1.36 → PASS
+  ρ A1: +1.94 | +0.55 | −0.27 | −1.27 | −1.38 → PASS
+- Reading: the two vacua's audited predictions are within 0.1σ of each other on every test (D1425 again). The one number to watch is CMB-only n_s: both sit at +2σ there — if a future CMB-only analysis held n_s ≈ 0.968 with smaller errors, both audited points would be in real tension; with BAO they are comfortable.
+- aegis-check: re-ran CMB-only n_s pulls (+2.006σ, +1.935σ) in python; checked: units, arithmetic, like-with-like (exact MS points vs 68 % data), limits, cross-sector: none.
+MAP: node=band_i status=frozen touches=[] ripple=no
+
