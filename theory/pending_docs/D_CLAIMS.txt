@@ -814,3 +814,4 @@ D1526  2026-11-19T15:05Z  SPECIES32 regime + tilt reading
 D1527  2026-11-19T15:06Z  DpL c1 species plateau swampland flags
 D1528  2026-11-19T15:08Z  DpL c2 control window + Andriot generic
 D1529  2026-11-19T15:16Z  DpL c3 SPTILT
+D1530  2026-11-19T15:17Z  DILMIX_NATIVE m1 verdict
