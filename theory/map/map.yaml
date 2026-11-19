@@ -1206,3 +1206,48 @@ observing:
 - id: mapper_feeds
   title: Live feeds (DONKI moved; GCN via per-circular JSON; NIST beacon intermittent)
   status: computed
+- id: genesis_reheating
+  layer: 2
+  branch:
+  - rho
+  title: Reheating from the final SERAPIS equation (genesis pathway)
+  status: open
+  d: []
+  depends:
+  - plateau_origin
+- id: matter_genesis
+  layer: 2
+  branch:
+  - rho
+  title: Matter genesis P-M — one asymmetry for dark and visible matter
+  status: postulate
+  d:
+  - D1631
+  - D1632
+  depends:
+  - genesis_reheating
+- id: light_elements
+  layer: 3
+  branch:
+  - rho
+  title: Light elements through time (BBN v3 toolkit)
+  status: computed
+  d:
+  - D1633
+  - D1634
+  depends:
+  - matter_genesis
+- id: reverse_thread
+  layer: 2
+  branch:
+  - rho
+  title: Reverse thread — the plateau as late dark energy
+  status: postulate
+  d:
+  - D1626
+  - D1627
+  - D1628
+  - D1629
+  - D1630
+  depends:
+  - plateau_origin
