@@ -721,3 +721,4 @@ D1434  2026-11-19T05:01Z  JANUS tick 30: audited tau=i point (NA12 eps 1.40e-4) 
 D1435  2026-11-19T05:06Z  JANUS tick 31: summary addendum D1425-D1434
 D1436  2026-11-19T05:11Z  JANUS tick 32: closed-form nesting D1405(kappa=1/2) = D635 = D640(c->0)
 D1437  2026-11-19T05:17Z  JANUS tick 33: CMB-only n_s sensitivity - sigma(n_s) needed for 3 sigma vs 2212.04115 Table 5
+D1438  2026-11-19T05:23Z  JANUS tick 34: r floor vs 2030s r forecasts (2212.04115 Table 5)
