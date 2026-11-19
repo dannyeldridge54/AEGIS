@@ -3138,3 +3138,8 @@ Touches: none.
 1. [literature] AFMN (hep-th/9707013) Eq. 5.3: IIB 4D Einstein-term correction ∝ χ(2ζ(3)e^{−2φ₄}/V + 2π²/3 + …).
 2. [derived] Einstein-frame rescaling turns it into a multiplicative 1 − 2δ(τ) on the potential: the E_{3/2}-shaped (T3) tilt, blue for χ < 0, unsuppressed by H/M_s or ε.
 3. [estimate] The band (C ≈ 8e-7) needs 𝒱 ≈ 1e4|χ|; at face value M_KK < H for |χ| ≥ 100 — normalisation must be pinned.
+
+## D1566 — tilt from the BBHL α'³ correction: C = w·χ/(4(2π)³𝒱); the band needs 𝒱 ≈ (0.6–1.5)e3·|χ| with all scales consistent
+1. [literature] BBHL: K = −2 ln(𝒱 + ξ̂/2), ξ = −χζ(3)/(2(2π)³), ξ̂ = ξ(Im τ)^{3/2} → ξE(τ,3/2)/(2ζ(3)).
+2. [derived] A prefactor (𝒱 + ξ̂/2)^{−p} gives V ∝ 1 − (p/2)ξ̂/𝒱: the E_{3/2} tilt with C = w·χ/(4(2π)³𝒱) (w = 1 for p = 2, 2/3 for p = 4/3), blue for χ > 0.
+3. [estimate] For χ = 20–200 and the band C 6.8–9.4e-7: 𝒱 = 1.4e4–3.0e5, M_s = 3.9–18 H, M_KK = 1.7–13 H, ξ̂/𝒱 ≈ 1e-3 — consistent in every case.
