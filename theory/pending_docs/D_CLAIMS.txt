@@ -717,3 +717,4 @@ D1430  2026-11-19T04:46Z  JANUS tick 27: beta_s needs a dark-ages interferometer
 D1431  2026-11-19T04:52Z  JANUS tick 28: SERAPIS running detection significance with 1611.05883 Table 1/2 forecasts
 D1432  2026-11-19T04:55Z  Recheck: 4 flags from my own touches (D1387/D1390/D1392) cleared
 D1433  2026-11-19T04:56Z  JANUS tick 29: band_e_audited running vs ACT P-ACT and P-ACT-LB
+D1434  2026-11-19T05:01Z  JANUS tick 30: audited tau=i point (NA12 eps 1.40e-4) on three n_s combos and both ACT runnings
