@@ -2539,3 +2539,10 @@ Touches: none.
 1. [literature] Search (Nov 2026) found no CMB(+BAO) n_s combination newer than arXiv:2512.10613. The June 2026 analysis arXiv:2606.28502 still uses 2025 releases (ACT DR6 2503.14452/14454, DESI DR2 2503.14738, SPT-3G D1 2506.20707); its headline joint value is P-ACT-LB2-BK18 n_s = 0.9752 ± 0.0030 (68 %), r < 0.038 (95 %), from 2503.14454.
 2. [estimate] No re-score this tick. P-ACT-LB2-BK18 is a second 2025 combination (ACT-led, higher n_s than 2512.10613's CMB + DESI 0.9728) — a candidate for a locked side-by-side score of all three bands next.
 
+## D1428: three bands × three n_s combinations (locked)
+1. [derived] CMB only (0.9682 ± 0.0032): band_e / band_i +0.56 … +2.13σ (92 % inside 2σ); band_e_audited +1.09 … +2.44σ (67 %).
+2. [derived] CMB + DESI (0.9728 ± 0.0029): band_e / band_i −0.97 … +0.76σ, band_e_audited −0.38 … +1.10σ — all 100 % inside 2σ.
+3. [derived] P-ACT-LB2-BK18 (0.9752 ± 0.0030): band_e / band_i −1.73 … −0.07σ (entirely below centre), band_e_audited −1.17 … +0.27σ — all 100 %; here the audited box is the best-centred of the three.
+4. [derived] r: every band's r_max (≤ 5.7e-4) is ≪ 0.034 and 0.038.
+5. [estimate] Reading: the bands' standing tracks the n_s combination — high with CMB alone, central with CMB + DESI, low (frozen bands) or central (audited box) with ACT's combination. The audited box's upward shift (D1245) is favoured by the ACT-led combination and disfavoured by CMB alone.
+

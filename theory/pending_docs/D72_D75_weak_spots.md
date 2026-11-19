@@ -14967,3 +14967,15 @@ MAP: node=janus status=computed touches=[] ripple=no
 - aegis-check: nothing computed; the 0.0024 difference (0.9752 − 0.9728) checked by hand.
 MAP: node=band_e_audited status=postulate touches=[] ripple=no
 
+## D1428 — JANUS tick 25: all three bands are fully inside 2σ with either BAO combination; under ACT's P-ACT-LB2-BK18 the audited box is the best-centred band and the frozen bands sit low
+- Lock: field_tests/rules/PREREG_D1428_bands_x_data.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1428/bands_x_data.py; result field_tests/results/D1428_bands_x_data.json.
+- [computed] | band | CMB only | CMB + DESI | P-ACT-LB2-BK18 |
+  band_e / band_i: PARTIAL 92 % [+0.56, +2.13]σ | FULL [−0.97, +0.76]σ | FULL [−1.73, −0.07]σ
+  band_e_audited: PARTIAL 67 % [+1.09, +2.44]σ | FULL [−0.38, +1.10]σ | FULL [−1.17, +0.27]σ
+- [computed] r_max ≤ 5.7e-4 for every band, ≪ 0.034 / 0.038.
+- Reading: no combination excludes any band; which band looks "central" depends on the combination. The audited box (higher n_s) is favoured by the ACT-led P-ACT-LB2-BK18 and the frozen bands by CMB + DESI. A future CMB + BAO combination near 0.975 would prefer the audited box; one near 0.968 (CMB-only-like) would push both toward their top edges' tension.
+- aegis-check: re-ran ACT-combination pulls at the audited box ends (−1.17σ, +0.27σ) in python; checked: units, arithmetic, like-with-like (68 % values; correlations not used — stated before, D1402), limits, cross-sector: none.
+MAP: node=band_e status=frozen touches=[] ripple=no
+MAP: node=band_i status=frozen touches=[] ripple=no
+MAP: node=band_e_audited status=postulate touches=[] ripple=no
+
