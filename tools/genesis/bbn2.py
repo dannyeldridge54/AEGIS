@@ -62,7 +62,16 @@ def run(eta=6.127e-10, dneff=0.0, dd_scale=1.0):
         cap=n_b*SV_NP*Yn*Yp; dis=lgam*Yd; dd=n_b*sv_dd*Yd*Yd
         return [-lnp*Yn+lpn*Yp-cap+dis, lnp*Yn-lpn*Yp-cap+dis, cap-dis-dd, 0.5*dd]
     Xn0=1/(1+math.exp(Q/T[0]))
-    sol=solve_ivp(f,(t[0],t[-1]),[Xn0,1-Xn0,0,0],method='BDF',rtol=1e-6,atol=1e-14,dense_output=True)
+    tsw=float(np.interp(-0.2,-T,t))
+    def fa(tt,y):
+        lnp,lpn=lam(tt); Yn=y[0]; return [-lnp*Yn+lpn*(1-Yn)]
+    sa=solve_ivp(fa,(t[0],tsw),[Xn0],method='BDF',rtol=1e-8,atol=1e-14,dense_output=True)
+    Yn0=sa.y[0,-1]; Tm=Ti(tsw)
+    lg=SV_NP*(4/3)*(MN*Tm/(4*math.pi))**1.5/HBARC**3*math.exp(-BD/Tm)
+    Yd0=nbi(tsw)*SV_NP*Yn0*(1-Yn0)/lg
+    sol=solve_ivp(f,(tsw,t[-1]),[Yn0,1-Yn0-Yd0,Yd0,0],method='BDF',rtol=1e-6,atol=1e-16,dense_output=True)
     Yn,Yp,Yd,Yh=sol.y[:,-1]
-    tt=np.geomspace(t[0],t[-1],300); Y=sol.sol(tt)
+    tt=np.geomspace(tsw,t[-1],300); Y=sol.sol(tt)
+    ta=np.geomspace(t[0],tsw,100); Ya=sa.sol(ta)[0]
+    tt=np.concatenate([ta,tt]); Y=np.concatenate([np.vstack([Ya,1-Ya,0*Ya,0*Ya]),Y],axis=1)
     return dict(Yp_He=4*Yh, D_H=Yd/Yp, Xn_free=Yn, t=tt, T=Ti(tt), Yn=Y[0], Yd=Y[2], YHe=4*Y[3], ok=sol.success)
