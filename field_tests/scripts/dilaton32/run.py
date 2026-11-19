@@ -22,8 +22,9 @@ def _build(model='serapis_e', C=1.15e-6, lam=1.0, ymax=3000, npts=4000):
     return m, V, dV, ph[lo]
 P.build = _build
 os.environ['AEGIS_CACHE'] = tempfile.mkdtemp(); P._EGRID.clear(); t = time.time()
-r = P.predict('serapis_e', C=C, TR=8.94e8, lam=1.0)
-row = dict(run=run, C=C, ns=float(r['ns']), r=float(r['r']), alpha_s=float(r['alpha_s']), Nstar=float(r['Nstar']),
+TR = float(sys.argv[2]) if len(sys.argv) > 2 else 8.94e8   # PREREG_DILTR: optional T_R
+r = P.predict('serapis_e', C=C, TR=TR, lam=1.0)
+row = dict(run=run, C=C, TR=TR, ns=float(r['ns']), r=float(r['r']), alpha_s=float(r['alpha_s']), Nstar=float(r['Nstar']),
            in_band=bool(0.969 <= r['ns'] <= 0.975 and 4.55e-4 <= r['r'] <= 5.7e-4), seconds=round(time.time() - t, 1))
 print(json.dumps(row), flush=True); os.makedirs('field_tests/results/DILATON32', exist_ok=True)
-json.dump(row, open(f'field_tests/results/DILATON32/{run}.json', 'w'), indent=1)
+json.dump(row, open(f'field_tests/results/DILATON32/{run}' + (f'_TR{TR:g}' if len(sys.argv) > 2 else '') + '.json', 'w'), indent=1)
