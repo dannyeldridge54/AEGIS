@@ -15417,3 +15417,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] 24/72 fine-grid points in band; α ≤ 0.20 too low in r, α ≥ 0.55 too high in r. Centre line C(n_s 0.972) 1.26–1.98e-6 for α 0.25–0.50. Suggested exact checks: (0.30, 1.4e-6), (0.35, 1.6e-6).
 - aegis-check: numbers from field_tests/results/D1494_strip_edges.json; grid reproduces D1485 where they overlap (α 0.25, 0.5 at C 1e-6/1.2e-6 vs D1485 C 1e-6/1.25e-6 neighbours consistent: (0.5, 1.0e-6) 0.9681/5.36e-4 vs D1485 0.9681/5.36e-4 ✓); in-band flags re-read ((0.35, 2.2e-6) r 5.70e-4 at edge); cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1497 — help sets 5+6: DILMIX strip in the physical frame — weak coupling (g_s* 5e-5–5e-4), C_phys 2e-3–0.1, tilt source short by 10⁴–10⁶ vs g_s² loop
+- [derived] D1486's frame map re-run and confirmed (y* 3.69e3/1.07e4/3.16e4; C_phys 0.0025/0.0124/0.0625).
+- [estimate] Strip y_model 11.7–16.0 → y_phys 1.9e3–2.2e4; C_phys 2e-3–0.1; frames reconcile (only λ rescales); open: physical source of C_phys.
+- aegis-check: numbers from field_tests/results/D1497_phys_frame.json; 23.25·(2000)^{2/3} = 3691 ✓, 1.25e-6·9.9e3 = 0.0124 ✓; y^{3/2}-dominance at y = 11.7: second E term / first ≈ 0.6 % ✓ (by hand); g_s² range from 1/y_phys² ✓; cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
