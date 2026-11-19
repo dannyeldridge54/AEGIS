@@ -2692,3 +2692,9 @@ Touches: none.
 1. [derived] τ = i exact-plateau second-order model (D1448) on a 3×3 grid over band_i (n_s 0.970–0.975 × r 4.8–5.7e-4; 9/9 converged): α_s −1.04762e-3 … −8.4426e-4; solved ε 1.144–1.714e-4 (the audited chain covers only 1.39–1.44e-4, D1429 — the rest is model-allowed, not audited).
 2. [derived] Vs D1413 (D640, −1.04429e-3 … −8.4165e-4): edges move +0.32 % and +0.31 % (more negative), rule > 0.5 % to supersede: D1413 CONFIRMED. The shift equals D640's known −0.3 % bias (D1412) — a consistency check of both.
 3. [derived] Pulls: P-ACT −1.281 … −1.244σ; P-ACT-LB −1.394 … −1.355σ (D1413 had −1.393 … −1.354σ). PASS on both.
+
+## D1454 — JANUS tick 50: band_e running from the derived ρ model — D1421 CONFIRMED (marginally: edge +0.49 % vs 0.5 % rule)
+1. [derived] ρ second-order model on 3×3 n_s 0.969–0.975 × r 4.55–5.12e-4 (D1421's r span; 9/9 converged): α_s −9.4119e-4 … −1.06525e-3.
+2. [derived] Vs D1421 (A1-anchored, r-only): edges −0.09 % and +0.49 % (rule > 0.5 % to supersede): CONFIRMED, but the upper edge sits at the rule's limit. Cause: the derived model has an n_s dependence at fixed r of 0.54–0.56 % across the band (D1421's −k·p²r/4 has none); the most negative point is (n_s 0.969, r 5.12e-4).
+3. [derived] Inside D693's frozen window −(9.4–10.6)e-4 ± 0.2e-4: yes. ACT pulls P-ACT −1.285 … −1.262σ, P-ACT-LB −1.397 … −1.373σ: PASS.
+4. [estimate] All three bands are now re-derived and confirmed (band_e_audited D1452, band_i D1453, band_e D1454); the anchored/closed-form meters remain good to ≤ 0.5 % over the frozen bands, the derived models to ≤ 0.14 % at exact points.

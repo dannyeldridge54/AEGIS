@@ -15154,3 +15154,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] Pulls P-ACT −1.281 … −1.244σ, P-ACT-LB −1.394 … −1.355σ: PASS.
 - aegis-check: numbers from the result json; edge moves recomputed there (min/max ratio − 1); like-with-like: same band and ACT values as D1413; checked: units, arithmetic, cross-sector: none.
 - MAP: node=band_i status=frozen touches=[] ripple=no
+
+## D1454 — JANUS tick 50: band_e running, derived ρ model — D1421 confirmed (marginal)
+- [derived] 9/9: α_s −9.4119e-4 … −1.06525e-3; edges −0.09 % / +0.49 % vs D1421 (rule 0.5 %) — CONFIRMED at the limit; the n_s dependence at fixed r (0.54–0.56 %) is what D1421's r-only form misses.
+- [derived] Inside D693 window ± 0.2e-4; ACT pulls P-ACT −1.285 … −1.262σ, P-ACT-LB −1.397 … −1.373σ: PASS.
+- aegis-check: numbers from the result json; edge moves and n_s spread computed in the script (ratio − 1; (max − min)/|mean|); like-with-like: same r span as D1421; checked: units, arithmetic, cross-sector: none.
+- MAP: node=band_e status=frozen touches=[] ripple=no
