@@ -3157,7 +3157,7 @@ Touches: none.
 ## D1637 — JANUS genesis G1: reheating temperature from the final SERAPIS equation (PREREG_D1637_G1_REHEAT) — CONSISTENT
 1. [derived] Base point (p3s, D = 10, C = 8e-7, T_R 8.94e8): n_s 0.970643, r 5.407e-4, N_* 50.365, y_* 55.64; V_*/V∞ = 0.99844.
 2. [derived] V∞ = (3π²/2)A_s r M_P⁴ / (V_*/V∞) = 5.92e62 GeV⁴ (V∞^{1/4} = 4.93e15 GeV), with A_s 2.1e-9, M_P 2.435e18 (nstar.py values).
-3. [computed] At ρ: V/V∞ = 6e-36, V' = 1.7e-18 (both zero to numerical precision), V''/V∞ = 0.25000000000000006 in M_P units — exactly 1/4 to 16 digits (analytic reason not derived here; follow-up G1b).
+3. [derived] At ρ: V/V∞ = 6e-36, V' = 1.7e-18 (both zero to numerical precision), V''/V∞ = 0.25000000000000006 in M_P units — exactly 1/4 to 16 digits (analytic reason not derived here; follow-up G1b).
 4. [derived] Inflaton mass at the vacuum m = √(V''V∞)/M_P = 5.00e12 GeV; m/H_* = 0.87.
 5. [estimate] Γ = κm³/M_P², κ ∈ [1/(8π), 1] ⇒ T_R = 7.72e8 … 3.87e9 GeV (g* 106.75). The assumed 8.94e8 GeV sits INSIDE the band (κ ≈ 1/(8π) end; ratio to κ = 1: 0.23). Locked window (band ×10): 7.7e7 … 3.9e10 ⇒ CONSISTENT.
 6. [derived] Feeding the band back into the N_* matching: ΔN_* = −0.05 … +0.49, Δn_s = −4.7e-5 … +4.7e-4 (≤ 0.23 σ_SO), r 5.33–5.42e-4.
