@@ -54,7 +54,7 @@ def run(eta=6.127e-10, dneff=0.0, dd_scale=1.0):
     rate_cache={}
     def lam(tt):
         key=round(math.log(Ti(tt)),3)
-        if key not in rate_cache: rate_cache[key]=rates(Ti(tt),Tni(tt))
+        if key not in rate_cache: 
         return rate_cache[key]
     def f(tt,y):
         Yn,Yp,Yd,Yh=y; Tm=Ti(tt); n_b=nbi(tt); lnp,lpn=lam(tt)
