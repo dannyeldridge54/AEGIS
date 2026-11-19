@@ -1,0 +1,5 @@
+{"note": "PREREG_SPBUMP: engine-F script crashed in Nstar (math domain) for every q because the rho side of the maximum supplies < 50 e-folds; the locked report item 'whether 100-200 e-folds exist' was measured directly by Background(V,dV,start at the top).Nend",
+ "rows": [{"q": 1, "y_max": 3.60, "max_efolds_from_top": 2.51},
+          {"q": 0.5, "y_max": 5.24, "max_efolds_from_top": 4.12},
+          {"q": 0.25, "y_max": 7.53, "max_efolds_from_top": 7.83},
+          {"q": 0.1, "y_max": 12.01, "max_efolds_from_top": 15.98}]}
