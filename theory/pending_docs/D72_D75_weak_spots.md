@@ -16435,3 +16435,9 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - Leaving out the m_τ error gives σ = 2.8 × 10⁻⁹ and a spurious 890σ or 3000σ, the same kind of error as the preprint's 460σ. The m_τ error dominates σ(δ) by a factor of about 2000.
 - The preprint's "transcendental for rational inputs" theorem does not bear on physics: measured masses are not exact rationals.
 - Status of B2 is unchanged: δ = 2/9 is EMPIRICAL, consistent at < 1σ, and no mechanism is known (ours or in the literature). The decisive test is σ(m_τ) → 0.05 MeV, which takes σ(δ) to ≈ 3.5 × 10⁻⁶.
+
+## D1646 — JANUS genesis G6: the dark side is cold enough — if it's small. A full mirror world is ruled out; a minimal dark sector predicts ΔN_eff ≈ 0.2
+- If the SERAPIS inflaton heats both sides equally (gravity doesn't pick sides), a full mirror copy of our world would add ΔN_eff = 7.4 — ruled out by a wide margin. It would need the decay to favour our side by 25 to 1 (Γ_D/Γ_V ≤ 4 %).
+- But P-M only needs a dark baryon (5 GeV) and a dark photon. Our sector has many more particles that later annihilate and heat our photons, so the small dark side ends up colder automatically: ξ = 0.47, ΔN_eff = 0.21 (under the 0.3 bound), helium shift +0.003.
+- Prediction: ΔN_eff ≈ 0.2 — measurable by the next generation of CMB experiments. Assumption flagged: "equal sharing per particle" for gravitational decays (A-dem) is not derived. New node dark_radiation.
+- MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no

@@ -1273,3 +1273,13 @@ observing:
   depends:
   - reverse_thread
   flag: recheck (D1644, reverse_thread)
+- id: dark_radiation
+  layer: 3
+  branch:
+  - rho
+  title: Dark radiation from SERAPIS reheating — how cold the dark side is (ΔN_eff)
+  status: open
+  d: []
+  depends:
+  - genesis_reheating
+  - matter_genesis

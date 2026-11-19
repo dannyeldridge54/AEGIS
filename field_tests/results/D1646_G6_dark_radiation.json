@@ -1,0 +1,20 @@
+{
+ "D": "D1646",
+ "A_full_mirror": {
+  "xi": 1.0,
+  "dneff": 7.403204662458465,
+  "viable": false,
+  "dYp": 0.09624166061196003
+ },
+ "B_minimal_ADM": {
+  "xi": 0.46523976411011436,
+  "dneff": 0.2062890517311545,
+  "viable": true,
+  "dYp": 0.002681757672505008
+ },
+ "C_asym_branching": {
+  "xi_max": 0.44866828820660365,
+  "branching_max": 0.04052299155273868
+ },
+ "verdict_C5": "a cold dark side needs no special branching once the dark sector is minimal"
+}

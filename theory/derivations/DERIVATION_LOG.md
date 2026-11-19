@@ -3191,3 +3191,12 @@ Touches: none.
 5. [derived] Where it settles: the field crosses ρ once and oscillates about y = 0.500 (late range 0.490–0.511), i.e. τ = (1+i)/2, the SL(2,Z) image of τ = i. Checked: V = 5e-53 (zero) and y∂_yE = 5e-26 there; V''/V_Λ = 0.0857 (not the ρ value 1/4).
 6. [estimate] Lens vs physics: "at the minimum the thread acts like matter" (Danny, D1626) is CONFIRMED as physics for the homogeneous field (⟨w⟩ ≈ 0, ρ ∝ a⁻³). The Janus reading (inflation ends at ρ, dark energy ends at i's image — the two fixed points) is a lens; physically the end point depends on the 1D Re τ = ½ restriction (axion direction ignored).
 7. [derived] Referee: R1/R2 booleans, edge flag, settle point (mean y 0.5001) re-derived from the rerun; m/H_Λ = 0.866 = √(3/4) matches D1641 ✓.
+
+## D1646 — JANUS genesis G6: dark radiation after SERAPIS reheating (PREREG_D1646_G6_DARK_RADIATION) — full mirror copy NOT viable, minimal ADM sector VIABLE
+1. [estimate] Assumption A-dem: gravitational-strength inflaton decay (D1637) shares energy equally per light degree of freedom ⇒ both sectors start at the same temperature (ξ = 1 at T_R). Real gravitational decays are channel-dependent; stated, not derived.
+2. [derived] Separate entropy conservation: ξ_today = [g_sD(T_R)/g_sD(0)]^{1/3}/[106.75/3.909]^{1/3}.
+3. [derived] Case A (full mirror copy, same thresholds as ours): ξ = 1 ⇒ ΔN_eff = 7.40 (ΔY_p +0.096) ⇒ NOT VIABLE (bound 0.3).
+4. [derived] Case B (minimal P-M sector: Dirac 5 GeV dark baryon + massless dark photon; g_sD 5.5 → 2): ξ = 0.4652 ⇒ ΔN_eff = 0.206 (ΔY_p +0.0027) ⇒ VIABLE. The dark side is cold not because the decay avoids it, but because our sector has ~27× more entropy to dump (106.75 → 3.909) than a minimal dark one (5.5 → 2).
+5. [derived] Case C (full copy with asymmetric reheating): needs Γ_D/Γ_V ≤ 0.0405 (ξ_max = 0.4487).
+6. [estimate] Postulation check: C-cold (WEAVE_POSTULATES C5, "the thread decays mostly into the visible side") is NOT NEEDED if the dark sector is minimal; it IS needed (≤ 4 % branching) for a full mirror world. P-M with a minimal sector predicts ΔN_eff ≈ 0.2 — a concrete, near-future CMB target (survey σ to be read in a later lock, not from memory).
+7. [derived] Referee: ξ = 0.46524 and ΔN_eff = 0.2063, ξ_max = 0.4487, branching 0.0405 re-derived by hand from the formulas ✓.

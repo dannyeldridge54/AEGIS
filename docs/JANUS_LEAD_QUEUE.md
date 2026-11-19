@@ -59,7 +59,7 @@ Cycle per lead (one lead per tick): Research → Development → Postulation →
 - [deferred: other chat queued C2 "C-start" (WEAVE_POSTULATES.md, D1639) — Janus reads it, does not redo] G3 Starting height: can the ~1 % tuned start (D1628) be set by inflation-era dynamics (frozen field + Hubble friction since reheating)? Postulate check, then compute the frozen value if a mechanism exists; else NULL loud.
 - [deferred: other chat queued C3] G4 Z₃ at ρ and the sharing factor n_DM/n_B (D1631's next step): does the residual Z₃ fix it? Literature first; locked test only if a concrete rule exists.
 - [deferred: other chat queued C4] G5 Asymmetry source at T_R: Davidson–Ibarra bound vs T_R from G1 [literature + estimate]; which non-thermal route survives.
-- G6 Mirror-sector temperature ξ from reheating branching (inflaton → mirror vs visible) and the ξ < 0.45 bound (D1632 T4).
+- [done D1646] G6 Mirror-sector temperature ξ from reheating branching (inflaton → mirror vs visible) and the ξ < 0.45 bound (D1632 T4).
 - [taken by other chat: D1639 rung R-Li, D1640 lock] G7 BBN v3 + Li-7 (known gap): add ⁷Be/⁷Li channels under a new lock; report the lithium value honestly (the standard model's own Li problem expected).
 - [taken by other chat: D1640 R-Li includes weak-rate corrections] G8 BBN weak-rate corrections: the stated −0.005 Y_p bias — lock, add Coulomb/radiative/finite-mass terms, re-score.
 - [done D1644] G9 Future oscillation of the thread: thread mass m ~ √V''(min) vs H₀; when (if ever) it becomes matter-like and what fraction — art/lens claim vs physics stated separately.
@@ -69,3 +69,4 @@ Cycle per lead (one lead per tick): Research → Development → Postulation →
 - [done D1641] G1b (from D1637) Derive why V''/V∞ = 1/4 exactly at ρ (expected (f')² = 1/8 = λ_sp², the species-scale slope) — analytic, no data.
 - [done D1644] G2b (from D1638) The thread at ρ: oscillation about V = 0 with V'' = V_Λ/4 (D1637's 1/4) ⇒ m_DE ~ H₀ — when it reaches ρ in the future, how fast it becomes matter-like (merge with G9). G3 must use the EXACT v3 shape (D1638).
 - G9b (from D1644) The thread's end point in the full τ plane (x and y): does it still settle at an image of i, or at ρ, once the axion direction is free? Needs the 2D kinetic metric (dτdτ̄/(2y²)·(D−2)/… — read the kinetic normalisation from SERAPIS_FINAL_EQUATION step 1 first).
+- G6b (from D1646) Replace A-dem: channel-by-channel gravitational decay of the inflaton at ρ (scalars vs helicity-suppressed fermions vs conformal gauge bosons) — does the dark side still start at ξ ≈ 1? Then read the current N_eff bound and the next-CMB σ(N_eff) from papers (lock).
