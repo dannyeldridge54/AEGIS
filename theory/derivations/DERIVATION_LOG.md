@@ -3115,3 +3115,8 @@ Touches: none.
 2. [derived] Δ ≡ n_t + r/8 = (r/8)(n_s − 1 + r/8) ≈ −(r/8)ε2. From D1480 k = 0.05 exact values: ρ (SERAPIS-E A1) n_t = −6.1801e-5, Δ = −1.5395e-6; τ = i (NA12) n_t = −6.1949e-5, Δ = −1.5298e-6. ε-solve cross-check agrees to 3.1e-8 (PASS, ≤ 1e-7).
 3. [derived] ρ − τ=i: δn_t = 1.5e-7, δΔ = −9.7e-9 — the tensor sector does not discriminate the vacua.
 4. [estimate] σ(n_t) at r ≈ 5e-4 is far above 1e-5 for any planned B-mode survey, so both n_t and its 2.5 % deviation are unobservable. CORRECTION of my PREREG expectation: I wrote "0.3 % deviation"; the absolute Δ ≈ −1.5e-6 was right, the ratio is 2.5 % (Δ/n_t ≈ ε2 = 0.0255 at leading order; exact 0.0249). Verdict: CONSISTENCY HOLDS TO 2.5 %.
+
+## D1556 — D⁶R⁴/R⁴ ratio tilt on the R⁴ species plateau: in band at C ≈ 4.6e-6 (r 5.41e-4), implying H/M_s ≈ 0.13κ^{−1/6}
+1. [derived] The D⁶R⁴/R⁴ coefficient ratio grows as (ζ(3)/3)y^{3/2}, a y^{3/2}-class tilt with no free shape.
+2. [derived] Engine F: band C 3.9–5.6e-6; at n_s 0.9706, r 5.41e-4 and α_s −9.6e-4.
+3. [estimate] C = κ(H/M_s)⁶ gives M_s ≈ 3–7e13 GeV for κ 0.1–10, inside the perturbative-control window; κ is the open link.

@@ -15848,3 +15848,11 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1555 — Janus L2: n_t ≈ −6.2e-5 both vacua; n_t + r/8 ≈ −1.5e-6 (2.5 %); vacua indistinguishable in the tensor sector
 - aegis-check: units dimensionless ✓; ε cross-check 3e-8 ✓; my PREREG expectation's 0.3 % was wrong (2.5 % correct) — stated; arithmetic python-run ✓.
 - MAP: node=janus status=postulate touches=[] ripple=no
+
+## D1556 — D6R4TILT: shape from R⁴ (species gradient of E_{3/2}) and tilt from the NEXT string-derivative order (D⁶R⁴/R⁴ coefficient ratio) puts P3-S in band at C 3.9–5.6e-6; at n_s 0.9706: r 5.41e-4, α_s −9.6e-4. If C = κ(H/M_s)⁶ with κ = O(1): H/M_s ≈ 0.13, M_s ≈ 4.5e13 GeV (3.0e13–6.6e13 for κ 0.1–10) — inside the control window (5.8e12 < M_s ≪ 2.2e15 GeV)
+- Lock: field_tests/rules/PREREG_D6R4TILT.md. Script field_tests/scripts/d6r4/run.py; results field_tests/results/D6R4TILT/ (engine F; 10 valid rows, 3 tilt-dominated INVALID at C ≥ 3.2e-5).
+- [literature] D⁶R⁴ coefficient (arXiv:1404.2192): (Δ − 12)f = −(2ζ(3)E_{3/2})², zero mode (2ζ(3)²/3)y³ + (4ζ(2)ζ(3)/3)y + 4ζ(4)/y (+ c₃/y³, not quoted; omitted with the e^{−2πy} modes — stated in the lock).
+- [computed] X = f₀/E_{3/2} → (ζ(3)/3)y^{3/2}. Rows: C 1e-7 → 0.96028 / 4.06e-4; 1e-6 → 0.96219 / 4.29e-4; 3.16e-6 → 0.96690 / 4.89e-4; 5.62e-6 → 0.97258 / 5.70e-4; 1e-5 → 0.98345 / 7.57e-4. Band (interpolated in ln C): 3.91e-6 … 5.63e-6; at n_s 0.9706: C 4.60e-6, r 5.414e-4, α_s −9.57e-4 — matches the expectation (6 × 8e-7 = 4.8e-6; r ≈ 5.4e-4).
+- [estimate] Implied scale: H/M_s = (C/κ)^{1/6} = 0.189 / 0.129 / 0.088 for κ = 0.1 / 1 / 10 ⇒ M_s = 3.0e13 / 4.5e13 / 6.6e13 GeV — inside the D1528 window; consistent with D1526's earlier R⁴-on-background reading (H/M_* ≈ C^{1/6} ≈ 0.10 for the E_{3/2} tilt).
+- Status: the tilt now has a concrete string-expansion candidate whose shape is FIXED (no free function): plateau = R⁴ species gradient, tilt = D⁶R⁴/R⁴ ratio; one number (κ(H/M_s)⁶) carries it. Open link: κ — the on-background value of the D⁶R⁴/R⁴ invariants; on exact FRW the Weyl-built pieces vanish (D1526), so κ must come from slow-roll (∝ ε, which would make it ~1e-4 smaller ⇒ H/M_s ≈ 0.6, M_s ≈ 1e13 GeV, still in window) or from internal curvature. Computing κ from the 4-graviton amplitude is the derivation step.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
