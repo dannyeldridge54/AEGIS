@@ -2191,3 +2191,8 @@ Touches: none.
 1. [literature] Green–Russo–Vanhove 2010 eq. (4.10): the 8D D⁴R⁴ coefficient contains −4 E^{SL(3)}_{−1/2}·E₂(U), U the T² complex structure.
 2. [derived] Eigenvalue check: (Δ − 10/3)E = 0 with s(s−1) = 2 for E₂(U) and 4/3 for E^{SL(3)}_{−1/2} → 10/3; E₂(U) is forced, not inserted.
 3. [postulate P3] Turning this curvature term into the SERAPIS plateau (mechanism, sign at ρ, magnitude vs V0, 8D → 4D) is not yet computed; P3 stays open.
+
+## D1362: P3 step 1
+1. [literature] GRV eq. (4.10) verified; E_s normalisation = ours; U₂ = r₂/r₁ is the T² shape (complex structure).
+2. [derived] Weak coupling: E^{SL(3)}_{−1/2} < 0 (constant term eq. 4.14) → the E₂(U) term enters with a positive coefficient, lowest at the hexagon ρ, saddle at i.
+3. [postulate P3] Curvature-term → potential map, plateau shape and magnitude not yet computed.
