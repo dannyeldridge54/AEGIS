@@ -16419,3 +16419,6 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - Q2: under the Weave's natural SL(2,Z)-invariant area measure, P(window) = 0.35% (10D), 0.28% (6D), 0.32% (4D) → "tuned".
 - Q3: quantum spread during inflation, 3 × 10⁻⁶ M_P, is ≪ the window width 0.015–0.021 M_P, so inflation cannot select the start either.
 - Verdict: the dark thread's DESI fit needs a ~1-in-300 starting position that nothing in the Weave picks. C2 is downgraded to an initial-condition coincidence, alongside the hand-set V_Λ.
+
+## D1643 — scope note on D1642 (R-C2) after reading D1638 (other chat, exact SERAPIS curve)
+D1642 used the shortcut-curve window (D1628). With D1638's exact curve the window is Δln amp = 0.038, at amp ≈ 0.29 (y ≈ 5.0 at leading order). Estimate: P ≈ Δy/y²/(π/3) ≈ 0.36%, the same as before. Q1 (frozen since inflation) does not depend on the curve. D1642's verdict stands: C-start is false and the start is a ~1-in-300 initial condition. D1638's geometric reading also fits: "today is near the thread's arrival at ρ".
