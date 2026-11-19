@@ -730,3 +730,4 @@ D1443  2026-11-19T05:53Z  JANUS tick 39: D1442 second-order model at audited box
 D1444  2026-11-19T05:58Z  JANUS tick 40: second-order offset model at remaining four box corners
 D1445  2026-11-19T06:03Z  JANUS tick 41: summary addendum D1436-D1444
 D1446  2026-11-19T06:09Z  JANUS tick 42: tau=i offset model at second-order SR vs NA12 exact
+D1447  2026-11-19T06:14Z  JANUS tick 43: exact tau=i potential behind NA12 vs D1446 asymptotic form
