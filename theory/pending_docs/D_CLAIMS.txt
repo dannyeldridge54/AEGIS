@@ -766,3 +766,4 @@ D1479  2026-11-19T10:22Z  Axio-dilaton step 1 (locked DILATON32): E(tau,3/2) pla
 D1480  2026-11-19T10:30Z  JANUS tick 89: L1 pivot conversion to k=0.002
 D1481  2026-11-19T10:34Z  Independent SR cross-check of DILATON32 form A + fast band map (help for P3 chat)
 D1482  2026-11-19T10:35Z  Area-integration mechanism: 6D power counting - CC p=1, codim-2 brane tension p=2, flux p=3, Casimir q=4 s=3; tension+Casimir gives m=1, s*m=3 (SMSCAN point (3,1))
+D1483  2026-11-19T10:37Z  Independent SR cross-check + forecast of SMSCAN (s,m) grid (help for P3 chat)
