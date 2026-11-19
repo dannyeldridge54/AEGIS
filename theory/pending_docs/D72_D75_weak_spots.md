@@ -16141,3 +16141,11 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived, ours] What remains ours: the residual Z₃ at the inflation endpoint ρ supplies the C₃ structure dynamically (inflation ⇒ τ = ρ exactly ⇒ circulant √M); the empirical δ = Q/3 (D1598).
 - Candidate single rules for Zhinü + equipartition, checked and NOT derived: (a) "midpoint" — Q = 2/3 is the midpoint of its allowed range [1/3, 1], but Zhinü's V₀/V∞ at horizon exit (0.995) is not a midpoint ⇒ no common rule; (b) "norm equality at a Z₃ point" — at ρ the inflaton gradient vanishes, so the inflation side has no doublet component to equate ⇒ fails. Both recorded as NULL.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1603 — DJL (one rule for Zhinü + equipartition): no derivation found; one exact PATTERN recorded as a candidate unifier — the Eisenstein index s = 3/2 of the inflation codon E(τ, s) reproduces all three Koide-side numbers: Q = 1/s = 2/3, δ = Q/3 = 1/(3s) = 2/9, and the "1/3" of the Zhinü identity V₀/V∞ = 1/3 + (4/3)∇² ln Λ equals (s − 1)/s = 1 − Q
+- [derived] Zhinü identity constant: (4/9)·s(s − 1)·… ⇒ 1/3 = (s − 1)/s at s = 3/2 (from ΔE = s(s − 1)E with s(s − 1) = 3/4 and the (2/3)² = 1/s² normalisation).
+- [derived] Koide side: Q = Σm/(Σ√m)² = 1/N_eff, where N_eff = (Σ√m)²/Σm is the inverse participation ratio of √m ("effective number of generations"). Koide ⇔ N_eff = 3/2 = s. With δ = Q/3 (D1598, holds to ~1σ): δ = 1/(3s) = 2/9.
+- [check] Other codons fail: s = 2 (the SERAPIS-E codon E(τ, 2)) would give Q = 1/2, δ = 1/6 — excluded by the lepton masses. Only the Helios-form codon s = 3/2 fits — consistent with the D = 10 default of SERAPIS-Λ.
+- [POSTULATE P-W, candidate; NUMEROLOGY RISK] "The weave index s = 3/2 sets both the inflation codon and the leptons' effective generation number." Three exact coincidences from one number, but no mechanism links the lepton participation ratio to the Eisenstein index; a rational near 2/3 is easy to match. Not entered as derived; it would become physics only if a calculation produced N_eff = s (e.g. masses as Z₃-orbit values of an object built from E(τ, s)).
+- Next: try to build √m_k from E(τ, s) and its derivatives on the Z₃ orbit of a point near ρ, and see whether N_eff = s comes out (lock first).
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
