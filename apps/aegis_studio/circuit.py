@@ -106,10 +106,10 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     q = math.exp(-2*math.pi); W['j_at_i'] = sum(v*q**k for k, v in cf.items()) if cf else None
     # Late-universe layer (2026-11-19 01:05 UTC; tolerances fixed BEFORE the first run). Planck-like ΛCDM inputs.
     cos = dict(h=0.6736, ombh2=0.02237, omch2=0.12, w0=-1, wa=0)
-    zs = [round(0.05*k, 2) for k in range(1, 48)]   # 0.05 … 2.35
-    lt = get('janus_lt', dict(cos, z=zs)); zq = [0.51, 1.32, 2.33]
+    zq = [0.51, 1.32, 2.33]; zs = sorted(set([round(0.05*k, 2) for k in range(1, 48)] + zq))   # 0.05 … 2.35 plus the test redshifts
+    lt = get('janus_lt', dict(cos, z=zs))
     if lt:
-        Hs = [lt[str(z)]['H_kms_Mpc'] if str(z) in lt else lt.get(f'{z:g}', {}).get('H_kms_Mpc') for z in zs]
+        Hs = [(lt.get(str(z)) or lt.get(f'{z:g}') or {}).get('H_kms_Mpc') for z in zs]
         ok_grid = None not in Hs
         if ok_grid:
             import numpy as _np
