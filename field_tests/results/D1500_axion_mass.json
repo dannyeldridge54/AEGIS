@@ -1,0 +1,32 @@
+{
+ "D": "D1500",
+ "rows": [
+  {
+   "model": "DILMIX_centre_model",
+   "y": 13.96,
+   "E_xx": "8.03634e-36",
+   "E_xx_sign": "+",
+   "E_xy": "0.0",
+   "m2_over_H2": "9.76795e-38",
+   "stable": true
+  },
+  {
+   "model": "formA_A1_model",
+   "y": 23.25,
+   "E_xx": "3.5827e-61",
+   "E_xx_sign": "+",
+   "E_xy": "0.0",
+   "m2_over_H2": "6.1056e-63",
+   "stable": true
+  },
+  {
+   "model": "DILMIX_centre_phys_a2e3",
+   "y": 2216.011868547606,
+   "E_xx": "0.0",
+   "E_xx_sign": "-",
+   "E_xy": "0.0",
+   "m2_over_H2": "0.0",
+   "stable": false
+  }
+ ]
+}

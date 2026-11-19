@@ -10,5 +10,5 @@ Status marks: [done D####] / [running D####] / [next].
 5. [done D1497] Tilt origin check: translate the needed C ≈ 1–2e-6 (model frame) into D1486's physical frame (C_phys 6e-4–0.25, y* 1e3–1e5) — consistent or not (aegis-check-style, numbers re-run).
 6. [done D1497, folded into set 5] Frame reconciliation: model-frame y* ≈ 23 vs D1486 physical y* 1e3–1e5 — the rescaling a and what it does to N*, Δφ.
 7. [done D1498] Testability: strip (n_s, r, α_s) vs SO σ(n_s) 0.002 and LiteBIRD δr 1e-3 (D1440/D1441 inputs) — can data separate DILMIX from SERAPIS-E and from form A?
-8. [next] Single-field check: mass of the Re τ (axion) direction at y* for E(τ,3/2) potentials (m²/H² from the Bessel terms) — the analogue of D1484's area check.
+8. [done D1500] Single-field check: mass of the Re τ (axion) direction at y* for E(τ,3/2) potentials (m²/H² from the Bessel terms) — the analogue of D1484's area check.
 9. [done D1491] Exact Mukhanov–Sasaki spot check of the best strip point (α 0.375, C 1.5e-6 — NOT in its locked grid) with the shared pipeline in our own file, background job (~30 min) — confirms the SR forecast at exact level.

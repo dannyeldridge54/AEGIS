@@ -15436,3 +15436,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Over 25 strip points: vs SERAPIS-E 0.08–2.68σ (centre ~1.6σ), vs form A 0.18–2.93σ; r contributes ≤ 0.12σ.
 - aegis-check: numbers from field_tests/results/D1498_testability.json; centre vs ρ: Δn_s = (0.971262 − 0.974393)/0.002 = −1.566, Δr = (5.289 − 4.821)e-4/1e-3 = 0.047 → 1.566σ ✓ (by python in script); uncorrelated-Gaussian approximation stated; like-with-like: all points at k = 0.05; cross-sector: none.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1500 — help set 8: axion (Re τ) massless at horizon exit (m²/H² ~ 1e-37 / 1e-63), stable, no mixing — single-field holds; light-spectator flag
+- [derived] E_xx > 0 at x = ½ (minimum), E_xy = 0; physical-frame row: numerical underflow, analytic n = 1 term +2.0e-6043 ⇒ massless.
+- aegis-check: numbers from field_tests/results/D1500_axion_mass.json; physical-frame sign/stability flag in the json is a finite-difference underflow artefact (checked analytically, positive) — stated, not hidden; kinetic normalisation from K = −3 ln(−i(τ − τ̄)) ⇒ K_ττ̄ = 3/(4y²) ✓; cross-sector: isocurvature/relic of the spectator axion flagged as open.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
