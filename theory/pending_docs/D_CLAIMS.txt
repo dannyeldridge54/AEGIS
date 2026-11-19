@@ -657,3 +657,4 @@ D1370  2026-11-19T00:22Z  P3: inverse-metric route - exact no-scale V with BHK d
 D1371  2026-11-19T00:24Z  P3: dilaton shifted by threshold gives V = b/A * x/(1+x) - the SERAPIS plateau form
 D1372  2026-11-19T00:25Z  P3: GS/modular-weight condition for D1371 - s=1 multiplier cancels iff b'_U = k delta_GS^U
 D1373  2026-11-19T00:26Z  P3: lambda unobservable (D698); D1371 route lacks the C slope; condensate slope needs huge T2
+D1374  2026-11-19T00:28Z  D1373a correction: C slope already has a BHK origin (D689/D696); e^dK multiplies the nonzero plateau
