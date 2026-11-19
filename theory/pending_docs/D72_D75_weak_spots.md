@@ -16033,3 +16033,12 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - Picture: going down through the dimensions in time, the inflaton axis turns, and at 6D it meets a flip (string–string duality) exactly where the prefactor's push changes sign. P3-D (D1586) puts horizon exit at that hinge.
 - Status: pattern + literature, no new numbers beyond D1586's exponents. Next: lock (1) the axis rotation angles θ_D, (2) the 6D-species plateau coefficient and (n_s, r).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1588 — DEEP (Djl 11:30; Danny "that would be the observing effect"): the dimension at horizon exit is OBSERVABLE through r — r = 8/((D−2)N²), n_s ≈ 1 − 2/N − 3/((D−2)N²)
+- [derived] D-dimensional Einstein-frame coupling kinetic term: S ⊃ ∫√g[R/2 − (2/(D−2))(∂φ_D)²] (check D = 10: −¼(∂φ)², our φ = ln y/√2 ✓). Canonical ψ = 2φ_D/√(D−2). The rung term (tree/one-loop gap) ∝ e^{2φ_D} = e^{−β_D ψ} with β_D = √(D−2): 10D 2√2 ✓ (matches D1527's e^{−2√2φ}), 8D √6, 6D 2, 4D √2.
+- [derived] For V = V∞(1 − A e^{−βψ}): N-relation A e^{−βψ*} = 1/(β²N) ⇒ η = −1/N, ε = 1/(2β²N²) ⇒ n_s = 1 − 2/N − 3/(β²N²), r = 8/(β²N²). The plateau coefficient A (7.30 in 10D; 4c/(3ζ(3)) in 6D with c = E^{SO(4,4)}_1) DROPS OUT — only the dimension enters r.
+- [computed] Untilted at N = 50.37: D = 10: n_s 0.96015, r 3.94e-4; D = 8: 0.96010, 5.26e-4; D = 6: 0.96000, 7.88e-4; D = 4: 0.95970, 1.58e-3. n_s shifts ≤ 5e-4; r changes ×4 between 10D and 4D.
+- [estimate] With the in-band tilt (which lifted r from 3.94e-4 to 5.41e-4 in 10D, ×1.37), P3-D (6D horizon exit) would give r ≈ 1.1e-3 at n_s ≈ 0.971 — a factor 2 above P3-S's 10D-lens value. NOT an engine-F result; needs a locked run.
+- Observing effect: r measures the dimension of the theory when the CMB scales left the horizon. CMB-S4/LiteBIRD-class σ(r) ~ 5e-4 – 1e-3: r ≈ 1.1e-3 (6D) is at the edge of detection; 5.4e-4 (10D lens) below it; 1.6e-3+ (4D) detectable. A future r measurement discriminates P3-S vs P3-D.
+- Caveat: during a 6D phase the perturbations themselves are partly higher-dimensional; the 4D slow-roll formula is the leading estimate.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
