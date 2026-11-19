@@ -21,3 +21,7 @@ Guards: no map status edits; no Zenodo/arXiv; no PC jobs or downloads beyond pip
 - DERIVATION_LOG step labels must be [derived]/[literature]/[estimate]/[postulate P#] (jl_check K2).
 
 ## Stopped 2026-11-19 ~22:55Z — G12 PASS (D1650). Leads done: G1 D1637, G2 D1638, G1b D1641, G9+G2b D1644, G6 D1646, G10 D1647, G11+G12 D1650. Left open for a future run: G6b, G9b; G3/G4/G5/G7/G8 with the other chat. Restart with "Djl".
+
+## Round 2 (Danny "Djl" 16:57 and 17:00 CT)
+- D1653 G9b ROBUST (thread ends at the image of i with the axion free). D1654 G6b: minimal dark sector with a massless dark photon EXCLUDED by today's N_eff (D1646a corrects D1646 and D1650's nit N1).
+- Next: G9c (basin map), G6c (massive dark photon rescue, sourced bounds), then round-2 referee G12b (fresh: lock order, re-derive, and EVERY bound/number used must cite a fetched source — the gap D1650 missed).
