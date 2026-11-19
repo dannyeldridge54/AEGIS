@@ -14815,3 +14815,9 @@ MAP: node=vac_discriminant status=killed touches=[janus] ripple=no
 - aegis-check: re-ran exclusion (0.0062 + 7.5e-4)/1.2e-3 = 5.79σ, best detection 1.14e-3/8.5e-4 = 1.34σ, 3σ need 2.5e-4 in python; checked: units, arithmetic, like-with-like (forecasts are 95% CL, halved — Gaussian assumption stated), limits, cross-sector: none.
 MAP: node=janus status=computed touches=[band_i, band_e, band_e_audited] ripple=no
 
+
+## D1410 — CENTRE / CHECK: D1364 reproduced on the PC queue (job D1364MIX3, identical locked code, DEVIATIONS D3): n_s agrees to ≤ 5.2e-6 and r to ≤ 1.9e-7 relative for all five w — the D1364 verdict stands. But α_s from the pipeline is NUMERICALLY NOISY: identical runs differ by up to 2.4e-4 (≈ 30% at w = 0.25) — α_s from pipeline.predict must not be quoted to better than ~±2e-4 until fixed (2026-11-18)
+- [computed] PC vs cloud (w: Δn_s, Δr/r, α_s cloud → PC): 0: −5.2e-6, 5.8e-8, −6.30e-4 → −6.11e-4; 0.25: 2.5e-7, 1.9e-7, −7.46e-4 → −5.03e-4; 0.5: 3.5e-6, −1.3e-7, −6.71e-4 → −7.52e-4; 0.75: 1.3e-6, 2.0e-8, −9.29e-4 → −9.96e-4; 1.0: −1.7e-6, −3.5e-8, −1.169e-3 → −1.132e-3. Same model in D1397 R0: α_s −9.36e-4 (vs −1.169e-3 here) — the same symptom.
+- [estimate] Likely cause: α_s is a second derivative of the spectrum taken by finite differences over the 9-point dlnk stencil on spectra with ~1e-6 noise (adaptive ODE tolerances, different machines/threads); n_s and r (first-order) are stable. Frozen-band gates use only n_s and r, so no locked verdict is affected; any α_s claims (e.g. the α_s rows of the SERAPIS card, the Janus relation checks) need the fixed estimator.
+- Action: open item "α_s estimator precision" — fit a quadratic in ln k over a wider window or tighten the MS solver tolerance; lock before changing. Not done here.
+MAP: node=plateau_origin status=postulate touches=[] ripple=no

@@ -2439,3 +2439,9 @@ Touches: none.
 3. [derived] Exclusion: if ACT DR6's central +0.0062 held, S4+SPHEREx would exclude the family at 5.8–6.1σ, the best combination at 8.2–8.6σ (SO alone 2.1–2.2σ). Decisive by exclusion.
 4. [estimate] So the Janus family's near-term test is one-sided: the 2030s can kill it (positive running) but cannot confirm it (negative running too small).
 
+
+## D1410: D1364 cross-check; α_s noise
+1. [derived] PC rerun: n_s ≤ 5e-6, r ≤ 2e-7 relative — D1364 confirmed.
+2. [derived] α_s differs up to 2.4e-4 between identical runs (D1397 R0 too).
+3. [estimate] Finite-difference second derivative on ~1e-6 spectrum noise; gates unaffected.
+4. [postulate P3] Unchanged.
