@@ -697,3 +697,4 @@ D1410  2026-11-19T03:01Z  D1364 PC cross-check: n_s, r reproduce to 5e-6; alpha_
 D1411  2026-11-19T03:04Z  JANUS tick 9: band rechecks after D1409 - no band value changes; clear flags
 D1412  2026-11-19T03:10Z  JANUS tick 10: tau=i relation error is the offset bias - D640 offset-corrected relation on the NA12 exact points
 D1413  2026-11-19T03:15Z  JANUS tick 11: band_i running re-scored with D640 offset-corrected relation; clear flag
+D1414  2026-11-19T03:21Z  JANUS tick 12: rho analogue of D640 - size of the I^2 offset (1-E(rho,2)) vs the 3.4% gap
