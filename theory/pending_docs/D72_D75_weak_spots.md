@@ -15242,3 +15242,8 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [estimate] docs/JANUS_FORMULAS.md written (formulas, accuracies, testability table, open decisions); numbers copied from cited D-notes; consistency script next tick.
 - aegis-check: no new numbers; values copied from the D-note texts (not yet machine-checked — first draft of this line overstated that); the card is tested against the jsons next tick (D1469). One card value corrected while checking: α_s SO significance ≤ 0.33σ (draft said ≤ 0.3σ).
 - MAP: node=janus status=computed touches=[] ripple=no
+
+## D1469 — JANUS tick 65: reference card machine check — CONSISTENT
+- [derived] Formulas vs derived models at 12 exact rows ≤ 0.029 % (rule 0.2 %), vs exact ≤ 0.128 %; 12 card numbers vs jsons: no mismatch.
+- aegis-check: this note's numbers from field_tests/results/D1469_card_check.json; the check script actually ran (output in the json).
+- MAP: node=janus status=computed touches=[] ripple=no

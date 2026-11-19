@@ -1,6 +1,6 @@
 # Janus formulas — one-page reference (state at D1467, 19 Nov 2026)
 
-Written by the Janus derivation loop (D1468). Every number below is copied from the cited D-note or its result json.
+Written by the Janus derivation loop (D1468). Every number below is copied from the cited D-note or its result json; machine-checked against the jsons in D1469 (CONSISTENT).
 
 ## Potentials (what the exact MS pipelines integrate)
 - **τ = i** (NA12, `theory/modular/running_d632.py`; D1447): V = I²/(I² + 1) + ε·I₁, with I = y − c, I₁ = I/2 (to 4e-15 at y 20–30), c = ln1728/2π = 1.18646, φ = ln y/√2.

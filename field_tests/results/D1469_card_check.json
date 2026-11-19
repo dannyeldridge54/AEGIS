@@ -1,0 +1,94 @@
+{
+ "D": "D1469",
+ "partA": [
+  {
+   "row": "A1",
+   "vac": "rho",
+   "in_range": true,
+   "vs_derived": 9.487019423382037e-06,
+   "vs_exact": -0.0001676856825409967
+  },
+  {
+   "row": "K1",
+   "vac": "rho",
+   "in_range": false,
+   "vs_derived": 0.0002851090453956928,
+   "vs_exact": -0.001121923442179873
+  },
+  {
+   "row": "K2",
+   "vac": "rho",
+   "in_range": true,
+   "vs_derived": -5.234352692728983e-05,
+   "vs_exact": -0.0010277956289874712
+  },
+  {
+   "row": "K3",
+   "vac": "rho",
+   "in_range": false,
+   "vs_derived": 0.00019269087744189228,
+   "vs_exact": -0.0002844333900208218
+  },
+  {
+   "row": "K4",
+   "vac": "rho",
+   "in_range": true,
+   "vs_derived": 9.822722232155634e-05,
+   "vs_exact": -0.0012829765861525066
+  },
+  {
+   "row": "K5",
+   "vac": "rho",
+   "in_range": true,
+   "vs_derived": 0.00017322530826668903,
+   "vs_exact": -0.001101107263979051
+  },
+  {
+   "row": "K6",
+   "vac": "rho",
+   "in_range": false,
+   "vs_derived": 2.9100195144682317e-06,
+   "vs_exact": -0.0008817937684194588
+  },
+  {
+   "row": "NA12 eps 1.30e-04",
+   "vac": "tau_i",
+   "in_range": false,
+   "vs_derived": -1.2860195714003986e-05,
+   "vs_exact": 4.515067977828302e-05
+  },
+  {
+   "row": "NA12 eps 1.35e-04",
+   "vac": "tau_i",
+   "in_range": false,
+   "vs_derived": 1.1169754555506728e-05,
+   "vs_exact": -0.0002974408326017475
+  },
+  {
+   "row": "NA12 eps 1.40e-04",
+   "vac": "tau_i",
+   "in_range": true,
+   "vs_derived": 3.842689784971931e-05,
+   "vs_exact": 3.313181511122032e-05
+  },
+  {
+   "row": "NA12 eps 1.45e-04",
+   "vac": "tau_i",
+   "in_range": false,
+   "vs_derived": 6.892671116687232e-05,
+   "vs_exact": 0.00022590521589926915
+  },
+  {
+   "row": "NA12 eps 1.50e-04",
+   "vac": "tau_i",
+   "in_range": false,
+   "vs_derived": 0.00010270696775438459,
+   "vs_exact": 3.2080625823383e-05
+  }
+ ],
+ "partA_pass": true,
+ "partA_max_vs_derived": 0.0002851090453956928,
+ "partA_max_vs_exact": 0.0012829765861525066,
+ "partB_mismatches": [],
+ "verdict": "CARD CONSISTENT"
+}

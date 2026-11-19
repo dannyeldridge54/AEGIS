@@ -2778,3 +2778,8 @@ Touches: none.
 
 ## D1468 — JANUS tick 64: one-page reference card docs/JANUS_FORMULAS.md
 1. [estimate] Wrote docs/JANUS_FORMULAS.md: potentials actually integrated (D1447, D1414–D1415), the second-order recipe and its accuracy (D1442–D1448), both cross-check formulas with validity ranges (D1457, D1462), the leading-order correction split (D1463), β_s (D1466), band pulls (D1452–D1454), the testability table (D1409, D1431, D1438, D1440, D1441, D1449, D1467) and Danny's open decisions (D1464). Every number copied from those notes/jsons; nothing new computed. Next tick tests the card's formulas against the jsons.
+
+## D1469 — JANUS tick 65: reference card machine-checked — CONSISTENT
+1. [derived] Part A: both cross-check formulas at all 12 exact reference rows vs the derived-model jsons: max 0.029 % (rule ≤ 0.2 %), including the 6 rows outside a formula's fitted range (K1, K3, K6; four NA12 rows); vs the exact MS values max 0.128 % (report only; references pre-D1417).
+2. [derived] Part B: 12 card numbers re-read from their source jsons at the card's quoted precision (r 0.46–0.57σ, SO + SPHEREx 7.7–8.0σ, SO alone 3.1–3.2σ, Δα_s range and ≤ 0.05σ, three band pull ranges, D1457/D1462 accuracies, β_s values, β_s ≤ 0.007σ): no mismatch.
+3. [derived] Verdict: docs/JANUS_FORMULAS.md CONSISTENT with the result files (after D1468's one manual fix, α_s SO ≤ 0.33σ, which has no json source and was checked by hand).
