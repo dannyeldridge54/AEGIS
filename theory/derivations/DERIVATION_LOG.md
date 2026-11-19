@@ -2325,3 +2325,8 @@ Touches: none.
 2. [derived] δ¹_GS = −30 would free the hidden E₇; then K gets −0.190·log U₂, = 0.509 at U₂* vs εE* ≈ 0.42–0.53: O(1) distortion.
 3. [estimate] Clean P3 needs b′¹_condenser ≈ 0; not in this spectrum.
 4. [postulate P3] Model still open.
+
+## D1353: streamlined supergravity (written 2026-11-18)
+1. [literature] 2511.15815 eqs. (2.1), (2.2), (2.7), App. B: nilpotent metric K_SS̄ realises any V, incl. SL(2,Z)-invariant.
+2. [derived] SERAPIS-E has an exact N=1 supergravity embedding.
+3. [postulate P3] Embedding is a parametrisation; the origin remains postulated.
