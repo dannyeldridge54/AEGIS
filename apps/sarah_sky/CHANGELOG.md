@@ -1,4 +1,7 @@
 # Changelog
+## 1.7.1 — 19 Nov 2026
+- Tonight: a "Dark sky tonight" box once your location is set — sunset, sunrise, when it is fully dark (Sun 18° down), how long, and how much of that time the Moon is down, plus the Moon's phase name. Places with no full darkness (summer near the poles) are told so.
+
 ## 1.7.0 — 18 Nov 2026
 - Night vision: the 🔴 button (or N, or More → Night vision) turns the whole app red so your eyes stay dark-adapted at the telescope — sky pictures, labels and Point & See included. A brightness slider sits bottom-left and fades when you are not touching it; the setting is remembered.
 

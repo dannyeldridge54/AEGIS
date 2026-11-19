@@ -210,6 +210,17 @@ const PANELS = {
     const rows = bodyPositions(when).map((p) => `<tr><td><a href="#" data-goto="${p.ra},${p.dec}">${p.name}</a></td><td>${loc ? (p.alt > 0 ? `<span class="up">up ${p.alt.toFixed(0)}°</span>` : `<span class="down">down</span>`) : "–"}</td>
       <td>${loc && p.rise ? p.rise.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "–"}</td><td>${loc && p.set ? p.set.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "–"}</td></tr>`).join("");
     let moon = ""; try { const AE = window.Astronomy, t = AE.MakeTime(when); const f = AE.Illumination("Moon", t).phase_fraction; moon = `<p>Moon: ${(f * 100).toFixed(0)}% lit.</p>`; } catch {}
+    try {
+      if (loc && window.SkyDark) {
+        const w = window.SkyDark.darkWindow(window.Astronomy, when, loc.lat, loc.lon), hm = (d) => d ? d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "–";
+        const hrs = (m) => `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, "0")} min`;
+        const dark = w.dusk && w.dawn ? `Fully dark ${hm(w.dusk)} – ${hm(w.dawn)} (${hrs(w.darkMin)}); with the Moon down: <b>${hrs(w.moonFreeMin)}</b>.`
+          : "The Sun never gets 18° below the horizon tonight, so the sky never gets fully dark.";
+        moon = `<div class="darkwin" id="darkWin"><p><b>Dark sky tonight</b> · ${w.phase}, ${(w.lit * 100).toFixed(0)}% lit</p>
+          <p>Sunset ${hm(w.sunset)} · Sunrise ${hm(w.sunrise)}</p><p>${dark}</p>
+          <p class="muted">Faint galaxies and nebulae are best when it is fully dark and the Moon is down.</p></div>`;
+      }
+    } catch {}
     return `<p>Where are the Sun, Moon and planets? ${loc ? "" : "Set your location to see what is above the horizon."}</p>
       <p><button class="btn" id="geo">Use my location</button></p>
       <p><label>Latitude <input type="number" id="lat" step="0.01" min="-90" max="90" value="${loc?.lat ?? ""}" style="width:7em"></label>
