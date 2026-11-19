@@ -2535,3 +2535,7 @@ Touches: none.
 ## D1426: Janus PC job spec (docs only)
 1. [estimate] docs/JANUS_PC_JOBS.md lists three exact-MS jobs the cloud sandbox cannot run in a tick (D1418, D1420): J1 the ρ meter at the four box corners (rule 0.5 %), J2 D1415's offset model solved to A1 with per-mode spectra (rule 1 %), J3 spectra vs spectra_fast α_s at A1 (settles D1422). Nothing run; each needs its own lock first.
 
+## D1427: newer n_s data? — none (NULL)
+1. [literature] Search (Nov 2026) found no CMB(+BAO) n_s combination newer than arXiv:2512.10613. The June 2026 analysis arXiv:2606.28502 still uses 2025 releases (ACT DR6 2503.14452/14454, DESI DR2 2503.14738, SPT-3G D1 2506.20707); its headline joint value is P-ACT-LB2-BK18 n_s = 0.9752 ± 0.0030 (68 %), r < 0.038 (95 %), from 2503.14454.
+2. [estimate] No re-score this tick. P-ACT-LB2-BK18 is a second 2025 combination (ACT-led, higher n_s than 2512.10613's CMB + DESI 0.9728) — a candidate for a locked side-by-side score of all three bands next.
+

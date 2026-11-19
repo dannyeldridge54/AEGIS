@@ -14960,3 +14960,10 @@ MAP: node=vac_discriminant status=killed touches=[] ripple=no
 - aegis-check: no numbers computed; job inputs copied from D1262, D1415, D1418 D1 and re-read.
 MAP: node=janus status=computed touches=[] ripple=no
 
+## D1427 — JANUS tick 24: NULL — no CMB(+BAO) n_s newer than arXiv:2512.10613; P-ACT-LB2-BK18 (0.9752 ± 0.0030, 2025) noted for a side-by-side score
+- [literature] arXiv:2606.28502 (Jun 2026) cites only 2025 data releases; its joint value P-ACT-LB2-BK18 n_s 0.9752 ± 0.0030, r < 0.038 comes from ACT DR6's extended-models paper (2503.14454). No DESI DR3, no 2026 SPT/ACT release in the results.
+- No computation, no lock. band_e_audited stays as scored in D1407.
+- Next: a locked score of band_e, band_i and band_e_audited against P-ACT-LB2-BK18 alongside 2512.10613 (the two 2025 combinations differ by 0.0024 in n_s, ~0.8σ).
+- aegis-check: nothing computed; the 0.0024 difference (0.9752 − 0.9728) checked by hand.
+MAP: node=band_e_audited status=postulate touches=[] ripple=no
+
