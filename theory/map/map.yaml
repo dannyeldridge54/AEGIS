@@ -717,13 +717,14 @@ nodes:
   - D1411
   - D1421
   - D1428
+  - D1438
   depends:
   - nstar_e
   - janus
   history:
-  - 'D1411: frozen'
   - 'D1421: frozen'
   - 'D1428: frozen'
+  - 'D1438: frozen'
 - id: band_e_audited
   layer: 5
   branch:
