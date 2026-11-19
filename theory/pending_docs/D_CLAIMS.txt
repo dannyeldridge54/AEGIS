@@ -739,3 +739,4 @@ D1452  2026-11-19T06:41Z  JANUS tick 48: band_e_audited running from derived rho
 D1453  2026-11-19T06:47Z  JANUS tick 49: band_i running from derived tau=i model vs D1413
 D1454  2026-11-19T06:53Z  JANUS tick 50: band_e running from derived rho model vs D1421
 D1455  2026-11-19T06:59Z  JANUS tick 51: summary addendum D1452-D1454
+D1456  2026-11-19T07:03Z  JANUS tick 52: alpha_s window per vacuum conditioned on SO n_s
