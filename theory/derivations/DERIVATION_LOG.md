@@ -2224,3 +2224,9 @@ Touches: none.
 2. [derived] Λ³ ∝ exp(c·E(U,2)/T₂), c > 0 → |W|² minimal at ρ: vacuum at the hexagon.
 3. [estimate] Leading shape exp(cE) has no plateau; SERAPIS ratio form not reproduced (SUGRA terms neglected).
 4. [postulate P3] Saturation mechanism for the plateau still assumed.
+
+## D1369: sources for −a/E(U,2)
+1. [literature] D699: plateau = V_up(1 − E(ρ,2)/E(U,2)); cf. loop blow-up inflation 2403.04831.
+2. [derived] D-term ∝ +1/E (max at ρ, wrong sign); condensate ∝ exp(cE) (no plateau).
+3. [estimate] F-term −3e^K|W|² with K ⊃ −log E(U,2) gives the right sign; BHK δK is additive (∝ +E), not 1/E.
+4. [postulate P3] Source of the −a/E term still assumed.
