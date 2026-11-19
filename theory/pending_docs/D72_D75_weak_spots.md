@@ -14993,3 +14993,11 @@ MAP: node=band_i status=frozen touches=[] ripple=no
 - aegis-check: no numbers computed; quoted thresholds re-read from the fetched abstract.
 MAP: node=janus status=computed touches=[] ripple=no
 
+## D1431 — JANUS tick 28: with the paper's own tables, SERAPIS's running reaches at most ~1σ (Planck + SKA-like); D1430's "S4 + SKA could detect it" reading is tempered — still exclude-not-confirm
+- Lock: field_tests/rules/PREREG_D1431_ska_detect.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1431/ska_detect.py; result field_tests/results/D1431_ska_detect.json.
+- [literature] 1611.05883 Table 1 (CMB-S4) σ(α_s) 0.0025–0.0026; Table 2 (β_s free) Planck 0.0053, +WFIRST 0.0026, +DESI 0.0023, +SKA-like 9.3e-4. S4 + SKA and dark-ages numbers not read.
+- [computed] Detection of α_s −8.4e-4 … −1.06e-3: S4 0.32–0.42σ, Planck + SKA 0.90–1.14σ (best with a number); 3σ needs σ = 2.8–3.5e-4.
+- Correction to D1430 (its reading, not its quotes): "detect α_s = 1e-3" for S4 + SKA must be modest (≲ 2σ) given these tables; D1430's "plausibly detectable after 2030" is downgraded to "marginal at best with SKA-class surveys". D1409's verdict (exclude, not confirm) stands.
+- aegis-check: re-ran 1.06e-3/9.3e-4 = 1.14σ and the 3σ requirement in python; checked: like-with-like (68 % forecasts, β_s free where stated), units, arithmetic, cross-sector: none.
+MAP: node=janus status=computed touches=[] ripple=no
+

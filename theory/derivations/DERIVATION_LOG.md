@@ -2557,3 +2557,8 @@ Touches: none.
 2. [literature] Same abstract: CMB-S4 + an SKA-like billion-object spectroscopic survey could detect α_s = 10⁻³.
 3. [estimate] SERAPIS's running is −8.4e-4 … −1.06e-3 (D1413, D1421) — at that SKA-class threshold. So D1409's "not detectable by 2030" (CMB+SPHEREx-era forecasts, ≤ 1.3σ) refines to: plausibly detectable with an SKA-class galaxy survey after 2030 (quoted threshold, not computed here); β_s ≈ −2.5e-5 (D1400) stays out of reach short of dark-ages 21-cm.
 
+## D1431: SERAPIS running detectability, 1611.05883 tables (locked)
+1. [literature] arXiv:1611.05883 (via ar5iv), 68 %: Table 1 CMB-S4 σ(α_s) 0.0025 (β_s = 0) / 0.0026 (β_s free, σ(β_s) 0.0045); Table 2 (β_s free) Planck 0.0053, + WFIRST-like 0.0026, + DESI-like 0.0023, + SKA-like 9.3e-4. CMB-S4 + SKA-like and the dark-ages Table 3 were not reached.
+2. [derived] SERAPIS α_s −8.4e-4 … −1.06e-3: S4 0.32–0.42σ; Planck + DESI 0.37–0.46σ; Planck + SKA 0.90–1.14σ (closest). No combination with a number reaches 3σ; 3σ needs σ(α_s) = 2.8–3.5e-4.
+3. [estimate] Correction to D1430's reading: the abstract's "S4 + SKA-like could detect α_s = 1e-3" cannot mean ≫ 2σ given Planck + SKA ≈ 1σ here; a positive detection of SERAPIS's running stays beyond the surveys these tables cover (dark-ages 21 cm is the remaining route). D1409's exclude-not-confirm stands for the 2030s and likely beyond.
+
