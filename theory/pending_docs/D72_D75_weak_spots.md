@@ -15952,3 +15952,11 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1572 — DIMENSION LADDER stage 5 (D = 5, E₆): codon E^{E₆}_{[100000];3/2} (eigenvalue −12); string-cusp constant term 2ζ(3)/y₅ + E^{SO(5,5)}_{[10000];3/2} (GRV 1004.0163) — the one-loop thread IS the 6D codon (weave between neighbouring lenses); tree/one-loop gap g_s² ⇒ rung persists (positive convergent one-loop sum). Map: theory/pending_docs/DIMENSION_LADDER.md
 - [literature] arXiv:1004.0163: E⁽ᴰ⁾ ≃ 2ζ(3)/y_D + E^{SO(d,d)}_{[10…0];d/2−1} in the perturbative cusp for D = 5, 4, 3 (one-loop series SO(5,5) s 3/2; SO(6,6) s 2; SO(7,7) s 5/2); ½-BPS ⇒ finitely many power terms.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1573 — DIMENSION LADDER L6/13 (4D E₇) + R1/13 (9D heterotic O(17,1)): mirror gap g_s² holds at the left top and the right bottom; rung k = 2 persists along the coupling in both lenses
+- [derived] E₇ codon eigenvalue λ = 3(11−D)(D−8)/(D−2) = −42 at D = 4 (computed).
+- [literature] arXiv:1004.0163 (GRV): 4D string-cusp constant term 2ζ(3)/y₄ + E^{SO(6,6)}_{[100000];2}.
+- [literature] hep-th/0001083 (KOP), hep-th/9707126 (BFKOV): heterotic one-loop threshold = modular integral over Γ_{d+16,d} × elliptic-genus factor; believed one-loop exact.
+- [estimate] R1: tree/one-loop gap g_s² (same invariant as the left); the circle/Wilson-line thread is s = 1-type (linear growth in R), so off the rung — mirrors 8D's U direction.
+- Verdict: balance PASSES at 9D along the dilaton; the 4D one-loop coefficient sits at the Epstein boundary s = d/2 − 1 = 2 (regularised; sign open, as at 6D). No new slice shape, no engine-F run.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

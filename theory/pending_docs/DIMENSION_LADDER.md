@@ -87,3 +87,19 @@ dimension D = 10 − d has TWO dual lenses (heterotic/type II duality):
 - CENTRE (1 point) — 4D, where both ladders must hand across the SAME inflation (shared quantities: n_s, r, the k = 2 rung, the species
   stitch). Balance rule (as SERAPIS's centre): a lens result is CONFIRMED only if the dual lens at the same D agrees.
 Points beyond the twin ladder (3D E₈, 2D E₉, 1D E₁₀) are kept as an extension after the centre (E₈: golden-ratio check).
+
+## L6/13 — D = 4 (IIB on T⁶ / M on T⁷), E₇₍₇₎/SU(8) — D1573 (left ladder top)
+- Coordinates: dim 133 − 63 = 70. Inflaton candidates: string-perturbation direction y₄ = g_s²ℓ_s⁶/V₆ (the 4D dilaton); T⁶ Narain block SO(6,6)/(SO(6)×SO(6)) (dim 36).
+- R⁴ codon: E⁽⁴⁾ = E^{E₇}_{[1000000];3/2}; eigenvalue λ = 3(11 − D)(D − 8)/(D − 2) = −42 (computed; the earlier working figure −21/2 was wrong and never filed). Λ₄ ∝ (E⁽⁴⁾)^{−1/2}.
+- String-cusp constant term (GRV arXiv:1004.0163): 2ζ(3)/y₄ + E^{SO(6,6)}_{[100000];2}. Tree/one-loop gap = 1/y₄ = g_s² — the invariant holds at the top of the left ladder.
+- Weave: the one-loop thread is the SO(6,6) vector series at s = 2 — the 4D analogue of stage 5 handing E^{SO(5,5)}_{3/2} up. (s = 2 > d/2 − 1 = 2 is the boundary value: the Epstein sum sits exactly at the edge of its convergence region, so it needs the same regularisation as 6D's s = 1 — sign of the coefficient open, as at 6D.)
+- Rung: along y₄ the gradient strand again gives 1 − D₄·y₄ + …, the rung-1 shape (k = 2). No new slice shape ⇒ no engine-F run.
+- Hand-across to CENTRE: left lens delivers {rung k = 2, mirror gap g_s², one-loop amplitude E^{SO(6,6)}_{2}/(2ζ(3)), species stitch Λ₄ ∝ E^{−1/2}}.
+
+## R1/13 — 9D heterotic, O(17,1)/O(17) (dim 17) — D1573 (right ladder bottom)
+- Coordinates: radius R + 16 Wilson lines on S¹ (the "9 through 16" internal directions), plus the 9D dilaton.
+- Codon [literature, schematic]: tree ζ(3)/g² R⁴ (t₈t₈R⁴, as in type II) + one-loop modular integral ∫_F d²τ/τ₂² Γ_{17,1}(R, Y) × (elliptic-genus factor ∝ Ē₄-polynomials/η̄²⁴) for the t₈ tr R⁴ / (tr R²)² structures (Kiritsis–Obers–Pioline hep-th/0001083; Bachas–Fabre–Kiritsis–Obers–Vanhove hep-th/9707126). The heterotic one-loop F⁴/R⁴-type terms are believed one-loop exact (KOP).
+- Mirror gap: tree 1/g² vs one-loop g⁰ ⇒ gap g_s² — SAME invariant as the left ladder. The twin structure holds at the bottom rung.
+- Difference from the left lens: the one-loop thread is NOT a pure Eisenstein series at generic Wilson lines (the 1/η̄²⁴ insertion makes it a theta lift of a weakly holomorphic form; at large R it grows ∝ R plus constant plus e^{−R} — an s = 1-type thread, like 8D's U-direction). So along R the right lens gives a log/linear (s = 1) shape, OFF the rung; along the dilaton it gives the rung (gap g_s²).
+- Verdict: R1 agrees with L1 along the coupling direction (rung k = 2, gap g_s²) and differs along the circle (s = 1 thread) — exactly the 8D pattern. Balance at 9D: PASS along the dilaton.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
