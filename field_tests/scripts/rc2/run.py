@@ -11,7 +11,6 @@ for k,v in tun.items():
     P=(1/ylo-1/yhi)/(math.pi/3)
     # Q1: V = VL(1-amp_now)... VL ~ 3.2 (H0=1 units, D1628 range 2-3.3); V'' = -VL*A*beta^2*e^{-beta psi} = -VL*beta^2*amp
     VL=3.0; Vpp=VL*beta**2*amp
-    ratios={'today':Vpp/1.0,'BBN':Vpp/(1.0*(1e9)**2*... if False else 0)}
     # H at BBN (T~0.1 MeV): H ~ 1e-25 GeV -> /H0 = 7e16; end of inflation H=2.4e-6 M_P -> /H0 = 2.4e-6/H0_MP
     H_bbn=1e-25/1.44e-42; H_inf=2.4e-6/H0_MP
     q1={'today':Vpp, 'BBN':Vpp/H_bbn**2, 'end_inflation':Vpp/H_inf**2}
