@@ -1,0 +1,11 @@
+{
+ "delta_alpha_range": [
+  0.00012535192378647906,
+  0.000283495741638997
+ ],
+ "best_forecast_1sigma": 0.00085,
+ "max_sigma_separation": 0.3335244019282318,
+ "max_relation_error": 0.00010023541825693537,
+ "closed_form_check": 1.3322676295501878e-15,
+ "verdict": "still killed"
+}

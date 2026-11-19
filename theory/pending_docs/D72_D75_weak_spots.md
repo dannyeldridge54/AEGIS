@@ -14797,3 +14797,12 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - aegis-check: re-ran pulls (+2.4375σ top edge CMB-only, −0.379σ bottom CMB + DESI; 2σ CMB-only edge n_s = 0.9746 → 33% of the box above) in python; checked: units, arithmetic, like-with-like (same paper, same datasets), limits, cross-sector: none.
 MAP: node=band_e_audited status=postulate touches=[] ripple=no
 
+## D1408 — JANUS tick 7: vac_discriminant stays killed — the any-κ form gives Δα_s = ¼(1−n_s)²ρ(ρ−1) = 1.3–2.8e-4, ≤ 0.33σ for the best 2030 forecast
+- Lock: field_tests/rules/PREREG_D1408_vac_disc_recheck.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1408/vac_disc.py; result field_tests/results/D1408_vac_disc_recheck.json.
+- [derived] At equal (n_s, r) the τ = i vacuum (κ = ½) runs less negatively than ρ (κ = 1) by Δα_s = ¼(1−n_s)²ρ(ρ−1); 1.25e-4 … 2.83e-4 over both bands, 2.0e-4 at the SERAPIS point (D1263's exact-flow 1.44e-4 sits inside this range).
+- [literature] Best 2030-era σ(α_s): 0.0017 (95%), 8.5e-4 at 1σ (D670, arXiv:2212.04115).
+- [computed] Max separation 0.33σ; relation error up to 1.0e-4. Verdict (locked rule): still killed — no new data, and the closed form does not rescue it.
+- What would revive it: σ(α_s) ≲ 1.4e-4 (1σ) — a 21-cm / dark-ages-class measurement (D670) — with the exact Janus-core α_s instead of the leading-order relation.
+- aegis-check: re-ran ρ = 1.718 and Δα_s = 2.0e-4 at the SERAPIS point, 0.33σ ratio and the 1.4e-4 requirement in python; checked: units, arithmetic, like-with-like (forecast σ at 95% halved to 1σ — stated), limits (ρ → 1 ⇒ Δα_s → 0), cross-sector: none.
+MAP: node=vac_discriminant status=killed touches=[janus] ripple=no
+

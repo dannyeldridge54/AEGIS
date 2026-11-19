@@ -2427,3 +2427,9 @@ Touches: none.
 3. [derived] vs CMB alone: pulls +1.09σ … +2.44σ; 67% of the box inside 2σ (R2 PARTIAL) — everything above n_s = 0.9746 is >2σ high without BAO.
 4. [estimate] The audited box sits higher in n_s than the frozen bands (top 0.9760 vs 0.975), so it leans harder on DESI BAO; its standing and band_e/band_i's now share one hinge: the CMB-vs-BAO n_s difference.
 
+## D1408: vac_discriminant re-check (locked)
+1. [derived] From D1405 at equal (n_s, r): Δα_s = α_s(κ=½) − α_s(κ=1) = ¼(1−n_s)²ρ(ρ−1) > 0 (τ = i runs less negative); closed form checked to 1.3e-15.
+2. [derived] Over n_s 0.970–0.976, r 4.4–5.7e-4: Δα_s = 1.25e-4 … 2.83e-4 (SERAPIS point 2.0e-4).
+3. [literature] 2030-era forecasts (D670; arXiv:2212.04115): best σ(α_s) = 0.0017 at 95% → 8.5e-4 at 1σ.
+4. [derived] Separation ≤ 0.33σ; the relation's own error reaches 1.0e-4 (3.4 % / 10.8 %, D1234/D1263), comparable to the low end of Δα_s. Rule: still killed. Reviving it needs σ(α_s) ≲ 1.4e-4 at 1σ (2σ separation at the best point) plus an exact (not leading-order) relation.
+
