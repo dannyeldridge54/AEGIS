@@ -15427,3 +15427,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 ## D1491 — help set 9: exact MS at the DILMIX strip centre (0.375, 1.5e-6): n_s 0.97126, r 5.289e-4 — IN BAND, AGREE with SR (Δn_s 3.5e-6)
 - aegis-check: numbers from field_tests/results/D1491_dilmix_ms.json; same pipeline/T_R/start rule as the P3 DILMIX run.py (copied, not run); point not in its locked grid ✓; comparison re-run in the script; cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1499 — P3 exact DILMIX (0.25, 2.5e-6) confirms D1485 (out of band, n_s 0.9786; Δn_s −4.1e-6)
+- aegis-check: read from field_tests/results/DILMIX/a0.25_C2.5e-06.json and D1485 json; difference re-run ✓.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

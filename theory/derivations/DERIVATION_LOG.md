@@ -2939,3 +2939,6 @@ Touches: none.
 1. [derived] Shared pipeline (exact MS spectra, self-consistent N*, T_R 8.94e8; our own copy of the DILMIX overrides; not a P3 locked grid point): n_s 0.971262, r 5.2889e-4, α_s −7.686e-4, N* 50.251 (1849 s).
 2. [derived] vs D1485 SR forecast (0.971259, 5.2883e-4): Δn_s +3.5e-6, Δr/r +0.013 % ⇒ AGREE; in band (n_s 0.969–0.975, r 4.55–5.7e-4) ⇒ IN BAND. α_s matches D1492's −7.685e-4.
 3. [estimate] With the P3 chat's own exact (0.25, 1.25e-6) row (D1493), two exact DILMIX points are now in band; the strip (D1494) is confirmed at exact level at its centre.
+
+## D1499 — P3 exact DILMIX (0.25, 2.5e-6) vs our D1485 forecast — AGREE (out of band, n_s high, as forecast)
+1. [derived] Exact (P3, 91b7c44): n_s 0.978642, r 5.5565e-4, not in band; D1485 forecast 0.978638, 5.5562e-4, not in band ⇒ Δn_s −4.1e-6, Δr/r −0.006 %. Track record 13 points, |Δn_s| ≤ 5.3e-6.
