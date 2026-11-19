@@ -1,2 +1,3 @@
 # PREREG_IOFFSET2 — DEVIATIONS (before rerun, 2026-11-19 14:50 CT)
 D1: run 1 crashed with an OverflowError in E(τ,2) at very large y. Nelder–Mead ran off towards the cusp in at least one case, so that objective decreases without bound there (for −κ·E(τ,2) this is expected: E(τ,2) ~ y² grows while V₀ → 1). No outcome was printed. Fix: each case runs inside try/except; an overflow, or a minimiser end point with y > 20, is recorded as class "RUNAWAY (no minimum near i; potential unbounded below towards the cusp)". Everything else is unchanged: cases, κ grid, classification rules.
+D1 addendum (14:53 CT): the D1 edit left a one-line indentation error, so the script did not start and no result was produced. Indentation fixed; no other change.

@@ -36,7 +36,7 @@ for wn,sg in [('F',1),('G',1),('G',-1)]:
             rows.append(dict(r=r,runaway=True)); continue
         x,y=o.x
         if y>20: rows.append(dict(r=r,runaway=True,y=float(y))); continue
- t=complex(x,y); u=abs((t-1j)/(t+1j))
+        t=complex(x,y); u=abs((t-1j)/(t+1j))
         rows.append(dict(r=r,x=float(x),y=float(y),abs_u=float(u),on_CP=bool(abs(x)<1e-5 or abs(abs(t)-1)<1e-5 or abs(abs(x)-0.5)<1e-5),V_min_minus_V_rho=float(o.fun-(V0(rx,ry)+sg*k*w(rx,ry)))))
     res['rows']=rows
     if any(q.get('runaway') for q in rows):
