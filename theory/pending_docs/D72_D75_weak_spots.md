@@ -15447,3 +15447,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] C_phys ≈ 12 ⇒ C_model 2.4e-4 – 6e-3 vs needed 1–2e-6; bracket BHK (×10⁻⁴–10⁻⁶) < needed < α′³ next order (×10²–10⁴).
 - aegis-check: formula read from hep-th/0412239 Eq. (3.8) this tick; series by sympy (json); 12/2e3 = 6.0e-3, 12/5e4 = 2.4e-4, ratios to 1.5e-6 = 4000 / 160 ✓ (python); u ≈ 2x uses x = (u − u_ρ)/(2 + u_ρ) at small u_ρ — identification of this term with the P3 tilt is an estimate, stated; cross-sector: none.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1502 — P3 exact DILMIX α 0.5 rows confirm D1485: (0.5, 1.25e-6) IN BAND (0.96909, 5.507e-4); (0.5, 2.5e-6) out/near
+- aegis-check: read from field_tests/results/DILMIX/a0.5_C1.25e-06.json, a0.5_C2.5e-06.json and D1485 json; differences re-run in python ✓.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
