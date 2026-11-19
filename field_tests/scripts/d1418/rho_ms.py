@@ -16,7 +16,7 @@ def make(C, B, D):
     return V, dV
 def obs(C, ystar, B, D):
     V, dV = make(C, B, D); ps = math.log(ystar)/math.sqrt(2)
-    bg = Background(V, dV, ps + 1.0)
+    bg = Background(V, dV, ps + 0.3)
     Nend = bg.Nend if hasattr(bg, 'Nend') else bg.N_end
     import numpy as np
     from scipy.optimize import brentq
