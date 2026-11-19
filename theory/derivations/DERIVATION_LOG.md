@@ -2406,3 +2406,12 @@ Touches: none.
 2. [derived] n_s 0.970–0.975 (same as band_i): CMB + DESI pulls −0.97σ … +0.76σ, all of the band inside 2σ (R1 PASS); CMB alone +0.56σ … +2.13σ, 92% inside 2σ (top-edge tension, reported).
 3. [derived] r ≤ 5.12e-4 is 66× under r < 0.034 (R2 PASS); α_s = −2r = −9.1e-4 … −1.02e-3, pulls −1.37σ … −1.39σ (R3 PASS). Verdict PASS; band stays frozen.
 
+## D1405: Janus relation for any κ (locked)
+1. [derived] With x = (ρ−1)/(1+κρ): 1+x = ρ(1+κ)/(1+κρ), 1+κ²x = (1+κ)(1−κ+κρ)/(1+κρ), 1−κx = (1+κ)/(1+κρ), so α_s = −½(1−n_s)²ρ[1+κ(ρ−1)] (κ = 1: −p²r/4, D1399). Code agrees to 6.7e-16 for κ ∈ {¼, ½, 1, 2} (R1 PASS).
+2. [derived] For κ > 0 the sign of α_s is −sign(1+κ(ρ−1)); positive running needs ρ < 1 and κ ≥ 1/(1−ρ). Over band_e and band_i, ρ = 1.42–1.91 > 1, so α_s < 0 for every κ > 0; a κ scan 0.01–10 finds no α_s ≥ 0 (R2 PASS).
+3. [derived] Consequence: at SERAPIS's (n_s, r) the whole plateau + ramp family predicts negative running; a positive α_s measured at high significance would exclude it. Today's ACT DR6 central value (+0.0062 ± 0.0052) leans the other way at only ~1.2–1.4σ.
+4. [derived] D1402a correction: band_i must use the τ = i vacuum's own κ = ½ (D1263), not κ = 1. With κ = ½: α_s −7.5e-4 … −9.3e-4, pulls −1.34σ … −1.37σ (R3 PASS); D1402's verdict stands, its α_s numbers (−9.6e-4 … −1.14e-3) were the κ = 1 member.
+
+## D1402a: correction to D1402 (band_i κ)
+1. [derived] D1402 used α_s = −2r (κ = 1) for band_i; the τ = i vacuum's own member is κ = ½ (D1263, relation 10.8 % below exact). Recomputed in D1405: α_s −7.5e-4 … −9.3e-4, pulls −1.34σ … −1.37σ; verdict PASS unchanged.
+

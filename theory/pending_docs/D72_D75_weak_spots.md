@@ -14759,3 +14759,17 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - aegis-check: re-ran α_s(r = 5.12e-4) = −1.024e-3, pull −1.389σ, bound ratio 66 in python; n_s pulls shared with D1402 (re-run there); checked: units, arithmetic, like-with-like, limits, cross-sector: none.
 MAP: node=band_e status=frozen touches=[janus] ripple=no
 
+## D1405 — JANUS tick 5: the Janus relation for any κ is α_s = −½(1−n_s)²ρ[1+κ(ρ−1)] — and at SERAPIS's (n_s, r) no κ > 0 gives positive running
+- Lock: field_tests/rules/PREREG_D1405_janus_kappa_closed.md (+ .sha256), pushed before computing. Script field_tests/scripts/d1405/kappa_closed.py; result field_tests/results/D1405_janus_kappa_closed.json.
+- [derived] Closed form for any κ (D669's x = (ρ−1)/(1+κρ) simplifies exactly); matches relation.py to 6.7e-16 for κ = ¼, ½, 1, 2. κ = 1 gives D1399's −p²r/4; κ = ½ gives −¼(1−n_s)²ρ(1+ρ).
+- [derived] Sign rule: α_s ≥ 0 only if ρ < 1 and κ ≥ 1/(1−ρ). Both frozen bands have ρ = 1.42–1.91, so negative running is forced for every physical κ (κ scan 0.01–10: none positive).
+- Meaning: a clean, falsifiable statement for the whole plateau + exponential-ramp family at SERAPIS's (n_s, r): the running must be negative, between about −7.5e-4 (τ = i, κ = ½) and −1.14e-3 (κ = 1). A future α_s > 0 at high significance kills the family; today's ACT DR6 lean (+0.0062 ± 0.0052) is only ~1.3σ.
+- [computed] D1402a: band_i at its own κ = ½ (D1263): α_s −7.5e-4 … −9.3e-4, pulls −1.34 … −1.37σ, PASS — D1402's κ = 1 numbers corrected, verdict unchanged.
+- aegis-check: re-ran ρ edges (1.42 at n_s 0.975, r 4.55e-4; SERAPIS point ρ = 1.72) and κ = 1 closed form = −2r at the SERAPIS point in python; checked: units, arithmetic, limits (κ → 0: α_s = −½(1−n_s)²ρ; ρ → 1: α_s = −½(1−n_s)² for any κ), like-with-like, cross-sector: none.
+MAP: node=janus status=computed touches=[band_i, band_e, band_e_audited] ripple=no
+
+## D1402a — correction to D1402: band_i uses the τ = i vacuum's own κ = ½, not κ = 1
+- [derived] D1402 scored band_i with α_s = −2r (the κ = 1 member, right for SERAPIS-E at ρ but not for τ = i, D1263). Recomputed in D1405 with κ = ½: α_s −7.5e-4 … −9.3e-4 (was −9.6e-4 … −1.14e-3), pulls −1.34 … −1.37σ (was −1.38 … −1.41σ). Verdict PASS unchanged; n_s and r parts of D1402 untouched.
+- Lesson: check which κ a vacuum owns (D1263) before reusing a relation across nodes.
+MAP: node=band_i status=frozen touches=[janus] ripple=no
+
