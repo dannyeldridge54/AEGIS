@@ -23,6 +23,20 @@ artefact). Cloud cost ≈ 40 s per spectra_fast call, more per-mode; the PC is f
 - Report α_s from each; D1422's prediction: spectra_fast differs, the two per-mode results agree to < 1 %.
 - Rule: "spectra_fast α_s unreliable" if it differs from per-mode ic='ds' by > 5 %; otherwise retire the D1422 rule.
 
+## J4 — rerun the 12 reference rows with the D1417 α_s estimator (tightens D1444 / D1448; added by D1450)
+- Why: the derived second-order models now match the exact references to ≤ 0.14 % (ρ, 7 rows) and ≤ 0.031 % (τ = i, 5 rows),
+  but every reference predates D1417's estimator fix (A1 −9.9814e-4 vs new −9.964e-4, 0.17 %) — the comparison is now
+  limited by the references, not the models.
+- ρ rows (7): `field_tests/scripts/a1.py` path (pipeline.predict_fast → ms.spectra, per-mode, ic='bd') at the MSSM rows of
+  `field_tests/results/a1_mssm_gstar.txt` (A1 + C ∈ {1.0, 1.15, 1.3}e-6 × T_R ∈ {5.455e8, 1.653e10}). Rerun with the current
+  ms.spectra default (11-pt LSQ cubic, D1417) **and** ic='ds'; keep N* self-consistent as in a1.py.
+- τ = i rows (5): `field_tests/scripts/na12/band_i_na12.py` (running_d632.py MS code; its own 5-pt finite-difference α_s).
+  Rerun with the 11-pt LSQ-cubic estimator applied to the same PR(k) samples (dlnk −0.25…+0.25, step 0.05), ε 1.30–1.50e-4.
+- Compare: D1442/D1443/D1444 ρ model and D1448 τ = i model predictions (scripts already in field_tests/scripts) at the new (n_s, r).
+- Rule (lock in PREREG first): PASS if max |model/exact − 1| ≤ 0.1 % (ρ) and ≤ 0.05 % (τ = i); report shifts of the references.
+- Cost estimate: 12 backgrounds + ~11 per-mode evaluations each; ~15–30 min on the PC (cloud: ~40 s/evaluation ⇒ too slow).
+- Output: `field_tests/results/D###_J4_references.json` (old vs new n_s, r, α_s per row) → the loop writes the D-note.
+
 ## How to queue (for the C / PC-jobs track, when Danny says so)
 Each job: copy the PREREG template, fill numbers, commit + push, then drop a `.job` in `AEGIS_PCJOBS\queue` the usual way
 (`<name>|<timeout>|cmd …`). Results go to `field_tests/results/D###_*.json`; the loop writes the D-note.

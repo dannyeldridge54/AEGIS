@@ -15131,3 +15131,8 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] Models resolve the vacua from each other (|Δα_s| ≥ 79× model accuracy; first draft said 75×, corrected from the json); data cannot — 3σ needs σ(α_s) ≈ 5e-5.
 - aegis-check: re-ran 1.6165e-4/3.3e-3 = 0.049, /8.5e-4 = 0.19, 3σ need = 1.6e-4/3 ≈ 5.4e-5 in python; like-with-like: same (n_s, r) for both models at every grid point; σ(α_s) 1σ from D1409 (halved 95 %), S4 rows hypothetical (D1440); checked: units, arithmetic, cross-sector: none.
 - MAP: node=vac_discriminant status=killed touches=[] ripple=no
+
+## D1450 — JANUS tick 46: PC job J4 spec (not queued)
+- [estimate] J4 in docs/JANUS_PC_JOBS.md: rerun the 7 ρ (a1.py → ms.spectra) and 5 τ = i (running_d632.py) reference rows with D1417's estimator; proposed rule ρ ≤ 0.1 %, τ = i ≤ 0.05 % vs the derived models. Awaits Danny's OK.
+- aegis-check: spec only — paths read this tick (a1.py imports pipeline.predict_fast; pipeline calls ms.spectra; band_i_na12.py uses running_d632.py's 5-pt α_s); no numbers computed.
+- MAP: node=janus status=computed touches=[] ripple=no

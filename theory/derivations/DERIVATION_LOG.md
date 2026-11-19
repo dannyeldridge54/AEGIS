@@ -2669,3 +2669,8 @@ Touches: none.
 2. [derived] Against SO's σ(α_s) = 3.3e-3 (funded): ≤ 0.049σ; against the hypothetical S4-based best 8.5e-4: ≤ 0.19σ. Rule (≥ 3σ for a funded survey): not met — vac_discriminant stays KILLED.
 3. [derived] The models themselves separate the vacua cleanly: |Δα_s| is 79–114× the models' accuracy (0.14 % of α_s) — the vacua differ in theory, just not by a measurable amount. A 3σ discrimination would need σ(α_s) ≈ 5e-5, ~17× below the best (hypothetical) 2030s combination.
 4. [derived] Consistent with D1425's earlier bracket (0.84–1.73e-4, exact 1.44e-4), now from derived models instead of fitted meters.
+
+## D1450 — JANUS tick 46: PC job J4 specified (not queued)
+1. [estimate] Both derived α_s models now agree with their exact references to the references' own precision (ρ ≤ 0.14 %, τ = i ≤ 0.031 %; D1444, D1448), and all 12 references predate D1417's estimator fix — so the next precision step is the references, not the models.
+2. [derived] Checked the reference paths: ρ rows came from field_tests/scripts/a1.py → pipeline.predict_fast → ms.spectra (per-mode, ic='bd', estimator of that time); τ = i rows from na12/band_i_na12.py on running_d632.py with its own 5-point finite-difference α_s.
+3. [estimate] J4 added to docs/JANUS_PC_JOBS.md: rerun all 12 rows with the 11-pt LSQ-cubic estimator (and ic='ds' for ρ), compare with the derived models; proposed rule ≤ 0.1 % (ρ), ≤ 0.05 % (τ = i). Spec only — needs Danny's OK to queue and its own PREREG first.
