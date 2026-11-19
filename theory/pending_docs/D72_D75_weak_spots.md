@@ -16178,3 +16178,10 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 
 ## D1572b — CORRECTION to D1572: the D = 5 (E₆) Laplace eigenvalue is 3(11 − 5)(5 − 8)/(5 − 2) = −18, not −12 (arithmetic slip; recomputed with exact fractions: 10D 3/4, 9D 6/7, 8D 0, 7D −12/5, 6D −15/2, 5D −18, 4D −42, 3D −120). Nothing else in D1572 used the number. Found while drafting the dimension-ladder paper.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1609 — REFEREE PASS + NEW VERSIONS (Danny 13:35 "prove it, fix it, improve it"): fixes from REFEREE_2026-11-19b published
+- Inflation paper v1.1: doi:10.5281/zenodo.24378141 (PDF md5 0eecd129dd7b0ac1af423ab9f03f3074). Adds the SPA citation (Camphuis et al., arXiv:2506.20707) and the 2310.07708 authors; the "only plateau direction" claim is now marked as argued.
+- Flavour paper v1.1: doi:10.5281/zenodo.24378142 (md5 5590e3ae8a8fc60a7836d92761b4da0c). "Exactly two zeros" is now backed by a numerical scan (101 × 214 grid; the minima of |∇E| sit only at ρ and i); credit added to NPP JHEP 04 (2021) 206 and Feruglio 2211.00659.
+- Dimension Ladder v1 (new): doi:10.5281/zenodo.24378259 (md5 bccf73dd5b5d27982d50568e38c81fb0). 5D eigenvalue −18 (D1572b).
+- No numbers changed in v1.1. The basins rerun (D1607 DEVIATIONS D1) is running and goes into flavour v2. Note: commit af7962da was titled without a D-number (the claim was blocked by the running job's output file); this note D1609 is its record.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
