@@ -8,6 +8,7 @@ def E32(y, x=mp.mpf(1) / 2, nmax=30):
     out = 2 * mp.zeta(2 * s) * y ** s + 2 * mp.sqrt(mp.pi) * mp.gamma(s - mp.mpf(1) / 2) * mp.zeta(2 * s - 1) / mp.gamma(s) * y ** (1 - s)
     pref = 8 * mp.pi ** s / mp.gamma(s) * mp.sqrt(y)
     for n in range(1, nmax + 1):
+        if 2 * mp.pi * n * y > 80: break
         sig = sum(mp.mpf(d) ** (1 - 2 * s) for d in range(1, n + 1) if n % d == 0)
         out += pref * mp.mpf(n) ** (s - mp.mpf(1) / 2) * sig * mp.cos(2 * mp.pi * n * x) * mp.besselk(s - mp.mpf(1) / 2, 2 * mp.pi * n * y)
     return out
@@ -34,8 +35,11 @@ def background(C, phi0):
     import numpy as np
     from scipy.integrate import solve_ivp
     from scipy.interpolate import CubicSpline
-    ys = np.exp(np.sqrt(2) * np.linspace(float(phi0) - 2.2, float(phi0) + 0.6, 1500))
-    ph = np.log(ys) / np.sqrt(2); Vv = np.array([float(V(mp.mpf(p), C)) for p in ph])
+    global _EG
+    if '_EG' not in globals():
+        ph0 = np.linspace(float(phi0) - 2.2, float(phi0) + 0.6, 1500)
+        _EG = (ph0, np.array([float(E32(mp.e ** (mp.sqrt(2) * mp.mpf(p))) - Er) for p in ph0]))
+    ph, eg = _EG; Cf = float(C); Vv = eg / (eg + 1) * (1 + Cf * eg)
     S = CubicSpline(ph, Vv); dS = S.derivative()
     def rhs(N, u):
         p, v = u; eps = v * v / 2
