@@ -14875,3 +14875,11 @@ MAP: node=janus status=computed touches=[] ripple=no
 - aegis-check: nothing computed; quoted C value re-checked (γ_E + ln 2 − 2 = −0.7296) in python; checked: no numbers enter a verdict.
 MAP: node=janus status=computed touches=[] ripple=no
 
+
+## D1417 — CENTRE / CHECK (locked): the D1410 α_s noise is FIXED. The old estimator (5 points, ±0.1, degree-4 interpolation) moves α_s by 6.2e-5 between two equivalent Bunch–Davies starts; the new one (11 points, ±0.5, least-squares cubic) agrees to 1.4e-8 and leaves n_s unchanged to 2.2e-6. SERAPIS-point α_s = −9.964e-4 (not −1.05…−1.17e-3). New estimator made the default (2026-11-18)
+- Lock: field_tests/rules/PREREG_ALPHAS_estimator.md (+ .sha256), committed before computing; script field_tests/scripts/alphas/estimator.py; results field_tests/results/ALPHAS_estimator.json.
+- [computed] serapis_point (C = 1.25e-6, T_R = 8.94e8, N* = 50.2446): bd = 200: old n_s 0.9744567, α_s −1.1136e-3; new n_s 0.9744561, α_s −9.9646e-4. bd = 300: old 0.9744544, −1.0512e-3; new 0.9744566, −9.9645e-4.
+- [computed] P1 new |Δα_s| = 1.4e-8 ≤ 3e-5 PASS; P2 max |n_s new − old| = 2.2e-6 ≤ 2e-5 PASS; P3 old |Δα_s| = 6.2e-5 (diagnosis confirmed). Verdict: PASS.
+- [derived] Code: tools/serapis_calc/ms.py spectra default dlnk = 11 points ±0.5 with LSQ cubic (short custom windows keep the old D958/D961 rule). spectra_fast is unchanged (not covered by this lock). Runtime per spectra call ×~2.2.
+- [derived] Consequence: earlier pipeline α_s values for the SERAPIS point (−1.169e-3 D1364 w = 1, −9.36e-4 D1397 R0, −1.132e-3 PC) were estimator noise around −9.96e-4. Any α_s quoted from pipeline.predict before this note carries ±~2e-4 (D1410); re-derive before use. n_s and r gates are unaffected.
+MAP: node=serapis_point status=computed touches=[] ripple=no

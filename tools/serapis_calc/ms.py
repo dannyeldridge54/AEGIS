@@ -22,7 +22,8 @@ class Background:
     def state(self, N):
         p, pn = self.sol.sol(N); eps = 0.5*pn*pn
         H = np.sqrt(self.V(p)/(3-eps)); return p, pn, eps, H
-def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0, ic='bd', return_lp=False):
+ALPHAS_DLNK = tuple(round(0.1*i, 1) for i in range(-5, 6))   # D1417 (locked PREREG_ALPHAS_estimator): 11 points, ±0.5, LSQ cubic
+def spectra(bg, Nstar, dlnk=ALPHAS_DLNK, Npivot=None, bd=200.0, ic='bd', return_lp=False):
     """Return dict with P_R, P_t at ln k offsets, and n_s, r, alpha_s at the pivot that exits at Nend - Nstar."""
     Np = bg.Nend - Nstar if Npivot is None else Npivot
     _, _, _, Hp = bg.state(Np); kp = Hp   # a(N) = e^{N-Np}: normalised at the pivot (D955 D1)
@@ -64,7 +65,7 @@ def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0
         PR = k**3*(y[0]**2+y[1]**2)/(2*np.pi**2); Pt = 8*k**3*(y[4]**2+y[5]**2)/(2*np.pi**2)
         out.append((dl, PR, Pt))
     d = np.array([o[0] for o in out]); lp = np.log([o[1] for o in out])
-    deg = min(4, len(d)-1)                      # D958/D961 DEVIATIONS D1: never underdetermined
+    deg = 3 if len(d) >= 9 else min(4, len(d)-1)   # D1417: wide window → LSQ cubic; short windows keep D958/D961 DEVIATIONS D1
     c = np.polyfit(d, lp, deg)
     c = c[-3:] if deg >= 2 else np.concatenate([[0.0], c])
     i0 = list(d).index(0.0)

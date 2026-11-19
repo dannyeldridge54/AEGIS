@@ -2480,3 +2480,8 @@ Touches: none.
 2. [estimate] Computing with a known-incomplete second-order formula would break "formulas fetched, never from memory"; no computation was run, no lock written. D1415's FAIL stands.
 3. [estimate] Better route (next tick): put D1415's asymptotic offset model through the repo's exact Mukhanov–Sasaki engine (no slow-roll order at all) and compare with A1 at the same (n_s, r).
 
+
+## D1417: α_s estimator (locked)
+1. [derived] Old 5-pt estimator: α_s shifts 6.2e-5 between equivalent starts; new 11-pt LSQ cubic: 1.4e-8; n_s unchanged (2.2e-6).
+2. [derived] SERAPIS-point α_s = −9.964e-4; new estimator is the default in ms.spectra.
+3. [postulate P3] Unaffected.
