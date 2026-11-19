@@ -15579,3 +15579,11 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - Rule applied ("robust" if |Δn_s| ≤ 0.002 and |Δr|/r ≤ 10 %): ROBUST. In band: none. "Near" (PREREG_SMSCAN): both A1 rows yes (n_s gap 0.0012–0.0024, r ≤ 7.4e-4); A0 rows no.
 - Reading: T_R moves N* by ±0.8 and shifts the point along the n_s–r direction only slightly; reheating cannot carry form A into the band (it would need Δn_s ≈ +0.002 with r falling 20 %). T_R is not a free lever for the dilaton route.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1521a — correction (2026-11-19 08:58 CT): lock collision on PREREG_KEFF — restored; D1521 is an independent duplicate of D1517
+- What happened: another session locked field_tests/rules/PREREG_KEFF.md (commit d51fdece, 08:34 CT) and filed D1517 + a D1516a (832f22ec, 08:36). I then wrote my own lock to the SAME path (21b8401e, 08:47) without having read theirs, overwriting their locked file and .sha256, and my D1521 commit (2da86220) overwrote their field_tests/scripts/keff/run.py. Their result JSONs (KEFF/A1, B0, M25, M50, S, U2) were not touched; mine is KEFF/keff.json.
+- Fix (this commit): their lock, .sha256 and script restored byte-for-byte from d51fdece/832f22ec (sha256 check OK). My lock and script moved unchanged to field_tests/rules/PREREG_KEFF_B.md (+ .sha256) and field_tests/scripts/keff_b/run.py (it still writes field_tests/results/KEFF/keff.json; no collision). D1521's "Lock:" line should read PREREG_KEFF_B.md.
+- Integrity: my lock was written after their results were pushed (08:47 vs 08:36), so D1521 is not a blind pre-registration in the repo-time sense. It was computed without reading D1517 and reaches the same verdict on the shared routes with identical numbers (SERAPIS-E k_eff 2.019, Δn_s −0.0022, Δr +7.7 %; form A C = 1.25e-6: k_eff 1.535, Δn_s −0.0025, Δr +16.6 %). D1521 adds: the engine-F vs exact-MS check on 9 routes (|Δn_s| ≤ 1e-6) and the DILMIX α 0.75 rows.
+- Duplicate: my "D1516a — correction to D1516" (after D1521) repeats the earlier D1516a (after D1517); the earlier one is the record.
+- Process fix: before any `cat >` into field_tests/rules/, check the path does not exist (`test -e`), and pull first.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
