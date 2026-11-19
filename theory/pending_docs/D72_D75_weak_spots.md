@@ -16365,3 +16365,13 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - What fixed helium: e± heating in T(a), full Born weak rates (λ_np(1 MeV) = 1.60 s⁻¹ against the BBF approximation of 1.74), and a real n–p–D network.
 - P-M consequence: with the mirror sector at its limit (ΔN_eff = 0.3), Y_p moves by +0.004, inside the observational error. P-M stays viable.
 - Verdict: helium is STABLE and correct to about ±0.006. The module passes 2 of 3 locked rules; the D-burning channels are the next upgrade.
+
+## D1634 (RIGHT, 19 Nov 2026) — RESULT: deuterium fixed. BBN v3, 6-species network (PREREG_GENESIS_BBN3), ALL FIVE locked rules PASS on the first run
+- Y_p = 0.2421 (P1 ✓). Full codes give ≈ 0.247. Our ~0.005 low bias is the expected one from the missing Coulomb, radiative and finite-mass weak corrections, stated in advance in the v2 lock.
+- D/H = 2.59 × 10⁻⁵ (P2 ✓; observed 2.53 ± 0.03 × 10⁻⁵, i.e. 2.5% high). v2 gave 2.9 × 10⁻⁶.
+- ³He/H = 1.03 × 10⁻⁵ (P3 ✓; standard ≈ 1.0 × 10⁻⁵).
+- Rates ×0.8 / ×1.2: Y_p spread 0.0011 (P4 ✓); D/H 3.48 / 2.01 × 10⁻⁵ (D/H is rate-sensitive, as expected).
+- d ln(D/H)/d ln η = −1.63 (P5 ✓; standard ≈ −1.6).
+- P-M mirror sector at its bound (ΔN_eff = 0.3): ΔY_p = +0.0039, D/H → 2.70 × 10⁻⁵ (+4%). Both are inside current errors, so P-M stays viable. dY_p/dΔN_eff = 0.0130.
+- Rates: Smith–Kawano–Malaney 1993, cross-checked against PArthENoPE (astro-ph/0408076) at 0.94–1.08 before locking.
+- Verdict: the genesis toolkit now reproduces the light elements (He-4, D, He-3) at textbook accuracy. Remaining known gap: weak-rate corrections (Y_p −0.005); Li-7 is not included.
