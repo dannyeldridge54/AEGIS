@@ -14741,3 +14741,10 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - aegis-check: re-ran pulls (+2.125σ CMB-only top edge, −0.966σ CMB+DESI bottom edge), α_s(r = 5.7e-4) = −1.14e-3, pull −1.412σ, bound ratio 60 in python; checked: units, arithmetic, like-with-like (same-paper n_s and r; running from ACT at the same pivot), limits, cross-sector: none.
 MAP: node=band_i status=frozen touches=[janus] ripple=no
 
+
+## D1402 — DEEP / LEFT: P3 — the standard way a higher-derivative coefficient reaches the 4D potential (the BBHL α′³ route, K = −2 log(𝒱 + ξ/2)) with ξ(U) ∝ A₀ + B·E₂(U) (D1401) gives a potential LINEAR in ξ at large volume, V ∝ ξW₀²/𝒱³(1 + O(ξ/𝒱)): that is the (1 + C·Ê) TILT, not the plateau. The plateau still needs the coefficient in a DENOMINATOR (2026-11-18)
+- [literature] Becker–Becker–Haack–Louis α′³ correction: K = −2 log(𝒱 + ξ/2), ξ ∝ −χζ(3)/(2(2π)³) × (R⁴ coefficient); with SL(2,Z) completion ξ ∝ E_{3/2}(τ) (Green–Gutperle). No-scale breaking with constant W₀ (one Kähler modulus): V_F = 3ξW₀²(ξ² + 7ξ𝒱 + 𝒱²)/((𝒱 − ξ)(2𝒱 + ξ)²) × e^{K}-normalisation (standard form).
+- [derived] Series in ξ (sympy): V_F ∝ 3W₀²ξ(𝒱 + 7ξ)/(4𝒱²) → linear in ξ at leading order. With ξ(U) = ξ₀ + ξ₁E₂(U): V ⊃ const + (const)·E₂(U) — a linear rise, minimum at ρ (E₂ minimal there), exactly the (1 + CÊ) tilt form. Consistent with D689/D696 (BHK loop tilt) and D1370 (additive δK → no plateau).
+- [derived] Pattern across D1368–D1402: an E(U)-dependence entering ADDITIVELY in K (or W) gives a tilt (linear) or exponential; the plateau 1/(a + Ê) appears only when E(U) sits inside the argument of a log that multiplies the whole potential (e^K = 1/L, D1371/D1375) — and the only known such L (KKPR Im S + Y/16π²) fails at the SERAPIS point (D1397–D1398).
+- Verdict: the D⁴R⁴ coefficient (D1401) naturally supplies the TILT; a plateau source must put A₀ + B·E₂(U) into an overall e^K-type factor (e.g. a dilaton-like modulus whose Kähler argument is the D⁴R⁴ coefficient). None identified. P3 origin: postulate.
+MAP: node=plateau_origin status=postulate touches=[] ripple=no
