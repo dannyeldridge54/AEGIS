@@ -15160,3 +15160,9 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] Inside D693 window ± 0.2e-4; ACT pulls P-ACT −1.285 … −1.262σ, P-ACT-LB −1.397 … −1.373σ: PASS.
 - aegis-check: numbers from the result json; edge moves and n_s spread computed in the script (ratio − 1; (max − min)/|mean|); like-with-like: same r span as D1421; checked: units, arithmetic, cross-sector: none.
 - MAP: node=band_e status=frozen touches=[] ripple=no
+
+## D1455 — JANUS tick 51: summary addendum D1452–D1454
+- [derived] All three bands re-derived with the second-order models: band_e_audited (D1452), band_i (D1453), band_e (D1454, at the 0.5 % limit) — CONFIRMED; ACT pulls −1.24 … −1.40σ everywhere, PASS; no verdict changed.
+- [estimate] Next: band_e formula with an n_s term; SO-axis α_s windows. Awaiting Danny: PC jobs J1–J4, band_i_audited.
+- aegis-check: summary only — numbers read from the D1452/D1453/D1454 result jsons this tick; checked: labels, like-with-like.
+- MAP: node=janus status=computed touches=[] ripple=no

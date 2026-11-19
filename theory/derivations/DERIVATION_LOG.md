@@ -2698,3 +2698,10 @@ Touches: none.
 2. [derived] Vs D1421 (A1-anchored, r-only): edges −0.09 % and +0.49 % (rule > 0.5 % to supersede): CONFIRMED, but the upper edge sits at the rule's limit. Cause: the derived model has an n_s dependence at fixed r of 0.54–0.56 % across the band (D1421's −k·p²r/4 has none); the most negative point is (n_s 0.969, r 5.12e-4).
 3. [derived] Inside D693's frozen window −(9.4–10.6)e-4 ± 0.2e-4: yes. ACT pulls P-ACT −1.285 … −1.262σ, P-ACT-LB −1.397 … −1.373σ: PASS.
 4. [estimate] All three bands are now re-derived and confirmed (band_e_audited D1452, band_i D1453, band_e D1454); the anchored/closed-form meters remain good to ≤ 0.5 % over the frozen bands, the derived models to ≤ 0.14 % at exact points.
+
+## D1455: Janus summary addendum, D1452–D1454 (all three bands re-derived)
+1. [derived] band_e_audited (ρ model, 3×3 over the box rectangle): α_s −1.0163e-3 … −9.070e-4; ACT pulls P-ACT −1.276 … −1.256σ, P-ACT-LB −1.388 … −1.367σ; edge shift vs D1433 4.5e-4σ — CONFIRMED (D1452).
+2. [derived] band_i (τ = i model): α_s −1.0476e-3 … −8.443e-4 (ε 1.14–1.71e-4, audited only 1.39–1.44e-4); P-ACT −1.281 … −1.244σ, P-ACT-LB −1.394 … −1.355σ; edges +0.32 %/+0.31 % vs D1413 = D640's bias — CONFIRMED (D1453).
+3. [derived] band_e (ρ model, r 4.55–5.12e-4): α_s −1.0653e-3 … −9.412e-4; P-ACT −1.285 … −1.262σ, P-ACT-LB −1.397 … −1.373σ; edges −0.09 %/+0.49 % vs D1421 — CONFIRMED at the 0.5 % limit; the derived model's 0.55 % n_s dependence at fixed r is what the r-only formula lacks (D1454).
+4. [derived] Net: every band passes ACT at ~1.24–1.40σ (theory negative, data leaning positive); no band verdict changed. The fitted/closed-form meters are good to ≤ 0.5 % over the frozen bands.
+5. [estimate] Open: band_e formula with the n_s term (next); funded-survey α_s windows; PC jobs J1–J4 and band_i_audited await Danny.
