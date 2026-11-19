@@ -3120,3 +3120,6 @@ Touches: none.
 1. [derived] The D⁶R⁴/R⁴ coefficient ratio grows as (ζ(3)/3)y^{3/2}, a y^{3/2}-class tilt with no free shape.
 2. [derived] Engine F: band C 3.9–5.6e-6; at n_s 0.9706, r 5.41e-4 and α_s −9.6e-4.
 3. [estimate] C = κ(H/M_s)⁶ gives M_s ≈ 3–7e13 GeV for κ 0.1–10, inside the perturbative-control window; κ is the open link.
+
+## D1558 — lens cross-test: at fixed n_s the tilt object, not the shape lens, sets r (5.22e-4 with an E₂ tilt, 5.43e-4 with an E_{3/2} tilt)
+1. [derived] Swapping shape and tilt between the 10D and 8D lenses reproduces the same-lens r values to 0.5 %.
