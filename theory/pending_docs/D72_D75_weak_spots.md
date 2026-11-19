@@ -15386,3 +15386,9 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Form A C = 0 and 1.25e-6: |Δn_s| ≤ 6.2e-4, |Δr/r| ≤ 2.9 % over T_R 1e8–1e10 → robust (DILTR rule); not in band (C 1.25e-6 near). DILMIX (0.375, 1.5e-6): n_s 0.9707–0.9719, r 5.17–5.40e-4, in band at every T_R. Its exact DILTR runs remain the record.
 - aegis-check: numbers from field_tests/results/D1489_diltr_sr.json; T_R = 8.94e8 rows reproduce D1481 A0/A1 and D1485 map (0.375, 1.5e-6) exactly (0.96301/5.582e-4, 0.96717/6.248e-4, 0.97126/5.288e-4 vs 0.9713/5.29e-4) ✓; ΔN* per decade of T_R: −0.726 (1e8 vs 8.94e8, 0.95 decades) / +0.801 (1e10, 1.05 decades) ≈ 0.76 per decade, close to (1/3)·ln 10 = 0.768 (w = 0 reheating) [estimate]; checked: units (GeV), arithmetic, like-with-like, cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1490 — help plan set 1: SMSCAN + tilt target zone — in band only at s·m ≈ 1.9–2.0, C ≈ 1–1.5e-6
+- [derived] Anchor (2, 1), C = 0 reproduces the P3 chat's exact row (Δn_s −3.4e-6) — AGREE.
+- [estimate] In band: (s·m, C) = (2.0, 1e-6) 0.9694/4.91e-4; (2.0, 1.5e-6) 0.9742/5.50e-4; (1.9, 1.5e-6) 0.9716/5.70e-4 (edge). s·m ≤ 1.8: r too high once n_s is in band. s·m = 2 is D1484's killed two-term exponent → needs a heavy-area mechanism.
+- aegis-check: numbers from field_tests/results/D1490_smtilt.json; in-band flags re-read against the rule ((1.9, 1.5e-6) r 5.6984e-4 ≤ 5.7e-4 ✓ marginal); like-with-like: same SMSCAN potential and tilt convention as the pipeline's e/(e+1)(1 + C e); s-independence with tilt not established (side test failed, D1); cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
