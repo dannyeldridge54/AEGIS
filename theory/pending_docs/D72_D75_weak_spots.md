@@ -15412,3 +15412,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] r-matching at C = 0: α 0.25/0.375/0.5 → s·m_eff 2.05/1.89/1.80. At s = 3/2 needs q/p ≈ 1.73–1.83 (no D1482 integer source); at s = 2 needs q/p ≈ 2 = (2, 4), killed in D1484 unless the area is stabilised heavily.
 - aegis-check: numbers from field_tests/results/D1495_alpha_sm.json (built only from D1483/D1485/D1490 jsons + DILATON32 B0); q/p = 1 + 1/m re-derived from m = p/(q − p) ✓; s = 2 window m = s·m/2 = 0.90–1.03 → q/p = 2.11–1.97 ✓; caveat on n_s mismatch stated; cross-sector: none.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1494 — help set 3: DILMIX strip fine edges — in band for α 0.25–0.50, widest at α 0.30–0.35 (C 1.0–2.2e-6); robust centre (0.30–0.35, 1.4–1.6e-6)
+- [estimate] 24/72 fine-grid points in band; α ≤ 0.20 too low in r, α ≥ 0.55 too high in r. Centre line C(n_s 0.972) 1.26–1.98e-6 for α 0.25–0.50. Suggested exact checks: (0.30, 1.4e-6), (0.35, 1.6e-6).
+- aegis-check: numbers from field_tests/results/D1494_strip_edges.json; grid reproduces D1485 where they overlap (α 0.25, 0.5 at C 1e-6/1.2e-6 vs D1485 C 1e-6/1.25e-6 neighbours consistent: (0.5, 1.0e-6) 0.9681/5.36e-4 vs D1485 0.9681/5.36e-4 ✓); in-band flags re-read ((0.35, 2.2e-6) r 5.70e-4 at edge); cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
