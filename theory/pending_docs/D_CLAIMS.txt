@@ -695,3 +695,4 @@ D1408  2026-11-19T02:53Z  JANUS tick 7: vac_discriminant re-check with any-kappa
 D1409  2026-11-19T02:58Z  JANUS tick 8: when is the forced-negative running testable - detection vs exclusion with 2030 forecasts
 D1410  2026-11-19T03:01Z  D1364 PC cross-check: n_s, r reproduce to 5e-6; alpha_s from the pipeline is numerically noisy (up to 30% between identical runs)
 D1411  2026-11-19T03:04Z  JANUS tick 9: band rechecks after D1409 - no band value changes; clear flags
+D1412  2026-11-19T03:10Z  JANUS tick 10: tau=i relation error is the offset bias - D640 offset-corrected relation on the NA12 exact points
