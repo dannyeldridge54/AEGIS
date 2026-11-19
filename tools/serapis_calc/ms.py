@@ -22,7 +22,7 @@ class Background:
     def state(self, N):
         p, pn = self.sol.sol(N); eps = 0.5*pn*pn
         H = np.sqrt(self.V(p)/(3-eps)); return p, pn, eps, H
-def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0, ic='bd'):
+def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0, ic='bd', return_lp=False):
     """Return dict with P_R, P_t at ln k offsets, and n_s, r, alpha_s at the pivot that exits at Nend - Nstar."""
     Np = bg.Nend - Nstar if Npivot is None else Npivot
     _, _, _, Hp = bg.state(Np); kp = Hp   # a(N) = e^{N-Np}: normalised at the pivot (D955 D1)
@@ -68,7 +68,9 @@ def spectra(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0
     c = np.polyfit(d, lp, deg)
     c = c[-3:] if deg >= 2 else np.concatenate([[0.0], c])
     i0 = list(d).index(0.0)
-    return dict(ns=1+c[1], alpha_s=2*c[0], r=out[i0][2]/out[i0][1], PR=out[i0][1])
+    res = dict(ns=1+c[1], alpha_s=2*c[0], r=out[i0][2]/out[i0][1], PR=out[i0][1])
+    if return_lp: res['lnPR'] = lp; res['dlnk'] = d   # PREREG_ALPHAS_estimator: raw points for the wider-window estimator
+    return res
 
 def spectra_fast(bg, Nstar, dlnk=(-0.1, -0.05, 0.0, 0.05, 0.1), Npivot=None, bd=200.0, return_lp=False):
     """Same observables as spectra(), all k-modes integrated together in one vectorised ODE
