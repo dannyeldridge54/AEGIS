@@ -723,3 +723,4 @@ D1436  2026-11-19T05:11Z  JANUS tick 32: closed-form nesting D1405(kappa=1/2) = 
 D1437  2026-11-19T05:17Z  JANUS tick 33: CMB-only n_s sensitivity - sigma(n_s) needed for 3 sigma vs 2212.04115 Table 5
 D1438  2026-11-19T05:23Z  JANUS tick 34: r floor vs 2030s r forecasts (2212.04115 Table 5)
 D1439  2026-11-19T05:30Z  JANUS tick 35: rho offset closed form (D640 pattern)
+D1440  2026-11-19T05:35Z  JANUS tick 36: which observable decides first (timeline, n_s/r/alpha_s)
