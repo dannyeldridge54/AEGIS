@@ -15521,3 +15521,19 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] Band edges in k: ≈ 1.85–2.2 (between grid rows). So "two numbers" reads: approach exponent k ≈ 2 (i.e. 1 − V ∝ y^{−2}, the E(τ,2) power) and tilt C ≈ 1–1.6e-6. Every route must deliver k_eff(φ*) ≈ 2 at horizon exit; DILMIX in-band points (D1508/D1510) and D1495's s·m_eff 1.80–2.05 are this condition met by mixing 1.5 and 3.
 - Pending (rule E, rule R): exact MS at (2.0, 1.25e-6), (1.5, 0), (1.75, 1.5e-6), (2.5, 2e-6 — inside the INVALID region, kept as locked) and exact SERAPIS-E at C 1.25e-6 on the PC queue (UCX1–4, UCS1). Until both rules pass, this chart is a fast-engine map, not data-level.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1517 — KEFF: the one-exponent reduction FAILS as locked (3 of 5 real routes miss) — the DILMIX in-band points have k_eff ≈ 1.6, not ≈ 2; the plateau's normalisation (how big e is at horizon exit) matters through the tilt
+- Lock: field_tests/rules/PREREG_KEFF.md. Script field_tests/scripts/keff/run.py; results field_tests/results/KEFF/*.json. k_eff = d ln(1+e)/d ln y at y* (engine F).
+- [computed] Control U2 (pure y²): k_eff 1.999, chart reproduces its own row (Δn_s −2e-5, Δr +0.1 %) ✓.
+- [computed] S (SERAPIS-E): k_eff 2.019, y* 14.64; chart 0.97227 / 5.18e-4 vs own 0.97446 / 4.81e-4 (Δn_s −0.0022, Δr +7.7 %) — passes.
+- [computed] A1 (form A): k_eff 1.535; chart 0.96463 / 7.29e-4 vs 0.96717 / 6.25e-4 (Δn_s −0.0025, Δr +16.6 %) — passes (marginal).
+- [computed] B0 (form B): k_eff 3.38 — outside the chart (k ≤ 3) — no prediction ⇒ fails the rule.
+- [computed] M25 (DILMIX 0.25): k_eff 1.640; chart 0.96581 / 6.66e-4 (OUT) vs 0.97198 / 4.56e-4 (IN) — Δn_s −0.0062, Δr +46 % — FAILS, wrong status.
+- [computed] M50 (DILMIX 0.5): k_eff 1.569; chart 0.96501 / 7.09e-4 (OUT) vs 0.96909 / 5.51e-4 (IN) — FAILS, wrong status.
+- [computed] Side result (engine): engine F reproduces the locked exact rows A1, B0, M25, M50 to |Δn_s| ≤ 1e-5 and |Δr|/r ≤ 0.02 % (not the PREREG_UCHART rule-E points; those are still queued).
+- [derived] Why: the tilt enters as C·e, so a plateau variable with a large prefactor (DILMIX g ≈ x/α, ×2–4) carries a larger effective tilt at the same C. A pure plateau is blind to the prefactor (it is a field shift), the tilted one is not. The reduction needs a third number — the tilt fraction at horizon exit, C·e(y*) — or equivalently (k_eff, C_eff = C·e*/e*_pure).
+- Verdict: two-number reduction (k, C) — FAILED as locked (3/5). D1516's chart stands as a map of the pure-power family only; it is not yet a screen for other routes. Next: lock KEFF2 = (k_eff, C·e*) reduction and test it on the same five models.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1516a — correction to D1516 (dated 2026-11-19 08:50 CT): the [estimate] line "DILMIX in-band points (D1508/D1510) and D1495's s·m_eff 1.80–2.05 are this condition met by mixing 1.5 and 3" is WRONG. KEFF (D1517) measures k_eff(y*) = 1.64 (α 0.25) and 1.57 (α 0.5) at those in-band points; they reach the band through a larger effective tilt (prefactor of g), not through k ≈ 2. D1516's "band selects k ≈ 2" holds only within the pure-power family at fixed normalisation.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

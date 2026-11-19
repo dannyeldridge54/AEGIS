@@ -3023,3 +3023,8 @@ Touches: none.
 2. [derived] At C = 0, n_s ≈ 0.960–0.961 for all k; r falls from 9.7e-4 (k = 1.25) to 1.8e-4 (k = 3). Tilt raises both n_s and r.
 3. [derived] In band only at k = 1.9–2.0, C 0.96–1.58e-6; k = 1.5 and k = 3 miss at every tilt up to 3e-6.
 4. [estimate] Requirement for any P3 route: k_eff ≈ 2 at horizon exit plus a tilt ≈ 1.3e-6; exact-MS and reduction checks pending.
+
+## D1517 — KEFF: the (k, C) reduction fails on mixtures; a third number (tilt fraction C·e at horizon exit) is needed
+1. [derived] k_eff(y*) = d ln(1+e)/d ln y: 2.02 (SERAPIS-E), 1.53 (form A), 3.38 (form B), 1.64 / 1.57 (DILMIX α 0.25 / 0.5); control y² gives 1.999.
+2. [derived] Chart read at (k_eff, C) matches SERAPIS-E and form A (Δn_s ≤ 0.0025, Δr ≤ 17 %) but calls both DILMIX in-band points out of band (Δn_s −0.006 / −0.004).
+3. [derived] A pure plateau is invariant under e → A e (field shift); the tilt C·e is not, so the effective tilt is C·A. Correction D1516a filed.
