@@ -927,3 +927,4 @@ D1639  2026-11-19T22:18Z  untitled
 D1640  2026-11-19T22:20Z  untitled
 D1641  2026-11-19T22:26Z  JANUS genesis G1b: why V''/V_inf = 1/4 at rho - elliptic-point isotropy gives V''/V_inf = (D-2)/32
 D1642  2026-11-19T22:27Z  untitled
+D1643  2026-11-19T22:28Z  untitled
