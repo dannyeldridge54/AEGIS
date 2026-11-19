@@ -120,6 +120,48 @@
    "in_band": false,
    "near": false,
    "in_frozen": false
+  },
+  {
+   "alpha": 0.0,
+   "C": 5e-07,
+   "error": "index 0 is out of bounds for axis 0 with size 0",
+   "in_band": false
+  },
+  {
+   "alpha": 0.0,
+   "C": 1e-06,
+   "error": "index 0 is out of bounds for axis 0 with size 0",
+   "in_band": false
+  },
+  {
+   "alpha": 0.0,
+   "C": 1.5e-06,
+   "error": "index 0 is out of bounds for axis 0 with size 0",
+   "in_band": false
+  },
+  {
+   "alpha": 0.0,
+   "C": 2e-06,
+   "error": "index 0 is out of bounds for axis 0 with size 0",
+   "in_band": false
+  },
+  {
+   "alpha": 0.0,
+   "C": 2.5e-06,
+   "error": "index 0 is out of bounds for axis 0 with size 0",
+   "in_band": false
+  },
+  {
+   "alpha": 0.0,
+   "C": 3e-06,
+   "error": "index 0 is out of bounds for axis 0 with size 0",
+   "in_band": false
+  },
+  {
+   "alpha": 0.0,
+   "C": 4e-06,
+   "error": "index 0 is out of bounds for axis 0 with size 0",
+   "in_band": false
   }
  ],
  "part1_verdict": "AGREE"
