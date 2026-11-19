@@ -397,12 +397,13 @@
     "D1354",
     "D1400",
     "D1405",
-    "D1409"
+    "D1409",
+    "D1412"
    ],
    "history": [
-    "D1400: computed",
     "D1405: computed",
-    "D1409: computed"
+    "D1409: computed",
+    "D1412: computed"
    ]
   },
   {
@@ -835,7 +836,8 @@
     "D1402: frozen",
     "D1402a: frozen",
     "D1411: frozen"
-   ]
+   ],
+   "flag": "recheck (D1412, janus)"
   },
   {
    "id": "band_e",
