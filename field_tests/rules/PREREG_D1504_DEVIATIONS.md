@@ -1,0 +1,2 @@
+# PREREG D1504 DEVIATIONS
+D1 (step 3 not computable as locked): step (1) gave K^{ττ̄}|D_τW|² = |W|² identically (no f, h dependence in the ratio to the α′³ term), so "the h/f needed" has no solution — the solve was removed. Step 3 is replaced by: evaluate the ratio 4𝒱̂/(3ξ̂) and ξ̂/𝒱̂ on the P3 path at horizon exit (x = g* from D1485/D1497 data), which decides whether the α′³ expansion is controlled there. Written before computing that number.

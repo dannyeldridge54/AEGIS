@@ -1,0 +1,9 @@
+{
+ "Kinv_tautaubar": "4*y**2",
+ "Kinv_DW2": "f**2 - 2*f*h*x + h**2*x**2 + h**2*y**2",
+ "absW2": "f**2 - 2*f*h*x + h**2*x**2 + h**2*y**2",
+ "ratio_flux_over_alpha3": "4*Vhat/(3*xihat*y**(3/2))",
+ "ratio_at_x_half": "4*Vhat/(3*xihat*y**(3/2))",
+ "ratio_large_y": "0",
+ "note": "h/f solve dropped: ratio is independent of f,h (K^{tt}|D W|^2 = |W|^2 identically); see DEVIATIONS D1"
+}
