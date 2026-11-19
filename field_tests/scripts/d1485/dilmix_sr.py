@@ -9,7 +9,7 @@ S = mp.mpf(3) / 2; Cc = mp.euler + mp.log(2) - 2
 SIG = {n: sum(mp.mpf(d) ** (1 - 2 * S) for d in range(1, n + 1) if n % d == 0) for n in range(1, 41)}
 _EC = {}
 def E32(y, x=mp.mpf(1) / 2):
-    key = mp.nstr(y, 22)
+    key = mp.mpf(y)._mpf_
     if key in _EC: return _EC[key]
     _EC[key] = _E32(y, x); return _EC[key]
 def _E32(y, x):
