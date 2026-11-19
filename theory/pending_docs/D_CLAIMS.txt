@@ -920,3 +920,4 @@ D1632  2026-11-19T21:33Z  untitled
 D1633  2026-11-19T21:36Z  untitled
 D1634  2026-11-19T21:41Z  untitled
 D1635  2026-11-19T21:45Z  Toolkit: tools/serapis_calc/p3s.py fast P3-S forecaster (validated vs SPECIES32 X and P3D6 X) + P3S_NOTES day summary
+D1636  2026-11-19T21:53Z  Full-likelihood fit: reverse-thread thawing DE vs LCDM and w0wa on DESI DR2 BAO + SN (Pantheon+/Union3/DESY5) + compressed CMB
