@@ -939,3 +939,4 @@ D1651  2026-11-19T22:50Z  untitled
 D1652  2026-11-19T22:56Z  untitled
 D1653  2026-11-19T22:57Z  JANUS genesis G9b: dark thread end point in the full tau plane (axion free) - image of i or rho?
 D1654  2026-11-19T23:01Z  JANUS genesis G6b: channel-by-channel inflaton decay shares + current N_eff data (ACT DR6, LBT 2026) for the minimal dark sector
+D1655  2026-11-19T23:04Z  JANUS genesis G9c: basin map of the dark thread end point (axion offsets 0.05-0.5) - i vs rho
