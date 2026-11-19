@@ -80,3 +80,7 @@ Same shape, 1 − 7.30e^{−βφ}, at the dark-energy height, still being rolled
 - Prediction: w₀ ≈ −0.92 to −0.95, w_a ≈ −0.1 to −0.25, and never below −1.
 - The height V_Λ is still put in by hand, so Λ's size stays OPEN.
 - The "matter phase" (oscillation at the minimum) lies in the future.
+
+**Update (D1627): re-scored with DESI's own Δχ² values (Table VI), replacing the assumed correlation.**
+- The 10D thread passes all three DESI combinations: Δχ² 3.4 (Pantheon+), 3.8 (Union3), 5.9 (DESY5), against 10.7, 17.4 and 21.0 for Λ.
+- Flag: the best fits sit at the last viable starting height, i.e. they are tuned.

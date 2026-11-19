@@ -16301,3 +16301,16 @@ Results [computed]:
 - Matter-like oscillation happens only in the future (the field is still on the plateau today), so it is untestable now.
 Caveats: the w₀–w_a correlation ρ = −0.9 is ASSUMED (not taken from the paper). The thread is thawing, so it cannot cross w = −1, which DESI's central values do.
 Verdict: PARTIAL. The reverse thread is a viable, mildly-better-than-Λ dark energy. It naturally predicts w₀ ≈ −0.92 to −0.95 and |w_a| ≲ 0.25, and the tilt β is not identifiable at this precision. It does NOT fix Λ's size: V_Λ ~ 10⁻¹²² M_P⁴ is put in by hand, so the coincidence problem remains open. Test: DESI DR3/Euclid. If w_a stays below −0.5 with w₀ > −0.9, the thread is excluded.
+
+## D1627 (RIGHT, 19 Nov 2026) — reverse thread re-scored with the sourced DESI calibration (PREREG_GENESIS_DE2) — REPLACES the D1626 scores
+Source: DESI DR2 (arXiv:2503.14738) Table VI gives w₀w_aCDM vs ΛCDM Δχ²_MAP = 10.7 / 17.4 / 21.0 (Pantheon+ / Union3 / DESY5; 2.8σ / 3.8σ / 4.2σ). Table V gives DESY5: w₀ = −0.752 ± 0.057, w_a = −0.86 (+0.23/−0.20). Calibrating the Gaussian approximation to these values gives ρ = −0.55, −0.54, −0.59. D1626's assumed −0.9 was therefore too tight a correlation.
+Results [computed] (min Δχ², pass ≤ 6.18):
+| β | Pantheon+ | Union3 | DESY5 |
+|---|---|---|---|
+| 2√2 (10D) | 3.42 ✓ | 3.80 ✓ | 5.90 ✓ |
+| 2 (6D) | 3.52 ✓ | 8.03 ✗ | 7.21 ✗ |
+| √2 (4D) | 4.06 ✓ | 5.90 ✓ | 5.59 ✓ |
+- The 10D thread is CONSISTENT with all three combinations. ΛCDM scores 10.7, 17.4 and 21.0 on the same measure.
+- Flag: the best Union3/DESY5 points (w₀ ≈ −0.72, w_a ≈ −0.51 for 2√2) sit at the LAST viable starting height before the field rolls into V < 0. These are edge-of-viability fits, so the starting height is tuned.
+- The non-monotonic β = 2 failure is most likely the coarse 40-point grid near that edge, not physics. It was NOT rerun (no rerun to chase a result) and is left as recorded.
+Verdict: the reverse thread fits DESI DR2 at 2σ for all supernova sets in its 10D form, but only near the edge of its viable range. Λ's size (V_Λ) is still put in by hand.
