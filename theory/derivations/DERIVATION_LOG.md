@@ -3274,3 +3274,11 @@ Touches: none.
 4. [estimate] Band edges are approximate and mass-dependent (not digitised curves); the 100 MeV / 3 GeV cut-offs are where the quoted ranges stop, so the strip edges near 100 MeV and 3 GeV are uncertain by factors of a few.
 5. [estimate] Postulation check: P-M survives with a specific, testable dark photon: m ≈ 0.3–5 GeV, ε ≈ 1e-11 – 1e-7 — below current beam-dump reach, decays before BBN, gives ΔN_eff ≈ 0, and lets the 5 GeV dark baryon burn off its symmetric part.
 6. [derived] Referee: intervals recomputed from the band list and the D1657 floor in the json ✓.
+
+## D1660 — JANUS genesis G12b: round-2 referee + source audit (PREREG_D1660_G12B_REFEREE) — FAIL (source audit); mechanics PASS
+1. [derived] Lock order: D1653, D1654, D1655, D1657, D1658 (+ DEVIATIONS before rerun), D1659, D1644 DEVIATIONS — all locks committed before their results ✓.
+2. [derived] Arithmetic: D1654 pulls, D1657 ε floors, D1659 intervals, D1658 matched w₀ (≤ 0.002), D1655 classes, D1653 R0 — all re-derived ✓; card 35/35 CONSISTENT ✓.
+3. [derived] Source audit flagged 11 genesis notes stating data without a reference in the same note: D1632, D1633, D1637, D1642, D1644, D1646, D1648, D1649, D1650, D1651, D1657.
+4. [estimate] Read by hand — NITS (no verdict rests on the unsourced number, or the source sits in the matching DERIVATION_LOG entry): D1633 (Y_p obs 0.245 ± 0.003, window 0.235–0.260 is wide), D1637 (Davidson–Ibarra ~1e9 GeV, context only), D1642/D1644 (DESI via D1627's sourced calibration), D1650 (meta), D1651 (full-code Y_p ≈ 0.247 used to set its window — other chat; flag), D1657 (references are in the log entry).
+5. [estimate] VERDICT-DEPENDENT on the unsourced ΔN_eff < 0.3 (ξ < 0.45): D1646 — already corrected (D1646a/D1654); D1632 T4 ("mirror must have ξ < 0.45 → VIABLE"); D1648 Q2 (ξ⁴ = 0.041 ⇒ m_DM = 123 GeV); D1649 (25:1 decay preference; version (b) "cold for free, ΔN_eff ≈ 0.21"). With today's data (ΔN_eff ≤ 0.086 at 2σ, 2603.13226) these numbers change and D1649's (b) prediction is excluded for a massless dark photon (D1654) — rescued only by the massive dark photon (D1657, D1659).
+6. [derived] Verdict by the locked rule: FAIL (verdict-dependent unsourced bounds remain in D1632, D1648, D1649). New lead G13: a sourced scope note recomputing those numbers with the real N_eff bound (other chat's notes are not edited).

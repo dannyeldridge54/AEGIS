@@ -16528,3 +16528,9 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - Below ~100 MeV there is no room left. Between ~0.3 and 5 GeV there is: mixing 10⁻¹¹ to 10⁻⁷, three to four decades wide.
 - So P-M now predicts a concrete partner: a dark photon of 0.3–5 GeV with tiny mixing — just under what beam dumps can see today, a target for the next ones. Band edges are approximate (not digitised curves).
 - MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no
+
+## D1660 — JANUS genesis G12b: round-2 referee — the math all checks out, but three notes still lean on the old unsourced dark-radiation limit (FAIL → G13)
+- Every lock came before its result; every round-2 number re-derives from its file; the card (35 rows) matches.
+- The new source audit caught what round 1 missed: D1632, D1648 and D1649 (other chat) still use ΔN_eff < 0.3 (ξ < 0.45) with no paper behind it. Today's data allow only ΔN_eff ≤ 0.086 (2σ, arXiv:2603.13226), so their numbers (the 25:1 decay preference, ξ⁴ = 0.041, m_DM = 123 GeV) need redoing, and D1649's "minimal sector is cold for free (ΔN_eff ≈ 0.2)" is excluded unless the dark photon is massive (D1657/D1659).
+- Next: G13, a sourced scope note with the corrected numbers (their notes stay as written).
+- MAP: node=matter_genesis status=postulate touches=[dark_radiation] ripple=no

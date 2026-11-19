@@ -1,0 +1,142 @@
+{
+ "D": "D1660",
+ "order": {
+  "D1653": {
+   "lock": 1795129102,
+   "result": 1795129173,
+   "ok": true
+  },
+  "D1654": {
+   "lock": 1795129283,
+   "result": 1795129316,
+   "ok": true
+  },
+  "D1655": {
+   "lock": 1795129450,
+   "result": 1795129554,
+   "ok": true
+  },
+  "D1657": {
+   "lock": 1795130083,
+   "result": 1795130106,
+   "ok": true
+  },
+  "D1658": {
+   "lock": 1795130239,
+   "result": 1795130721,
+   "ok": true
+  },
+  "D1658dev": {
+   "lock": 1795130473,
+   "result": 1795130721,
+   "ok": true
+  },
+  "D1659": {
+   "lock": 1795130791,
+   "result": 1795130818,
+   "ok": true
+  },
+  "D1644dev": {
+   "lock": 1795127635,
+   "result": 1795127716,
+   "ok": true
+  }
+ },
+ "order_ok": true,
+ "arith": {
+  "D1654_pulls": true,
+  "D1657_eps": true,
+  "D1659_intervals": true,
+  "D1658_match": true,
+  "D1655_classes": true,
+  "D1653_R0": true
+ },
+ "arith_ok": true,
+ "card": "35 CONSISTENT []",
+ "source_flags": [
+  {
+   "note": "D1632",
+   "head": "## D1632 (RIGHT, 19 Nov 2026) \u2014 RESULT: matter-genesis toolkit (tools/genesis), first simulation (PREREG_GENESIS_MATTER)",
+   "hits": [
+    "N_eff",
+    "bound",
+    "observed"
+   ]
+  },
+  {
+   "note": "D1633",
+   "head": "## D1633 (RIGHT, 19 Nov 2026) \u2014 RESULT: helium stabilised. BBN v2 (PREREG_GENESIS_BBN2; DEVIATIONS D1\u2013D3, coding and numerical fixes written",
+   "hits": [
+    "N_eff",
+    "observed"
+   ]
+  },
+  {
+   "note": "D1637",
+   "head": "## D1637 \u2014 JANUS genesis G1: the reheating temperature the SERAPIS equation was using is its own (CONSISTENT)",
+   "hits": [
+    "Planck",
+    "bound"
+   ]
+  },
+  {
+   "note": "D1642",
+   "head": "## D1642 (RIGHT, 19 Nov 2026) \u2014 RESULT, rung R-C2: the Weave does NOT set the dark thread's start. C-start FALSE; the start is a ~1-in-300 i",
+   "hits": [
+    "DESI"
+   ]
+  },
+  {
+   "note": "D1644",
+   "head": "## D1644 \u2014 JANUS genesis G9: the dark-energy thread's future \u2014 acceleration stops, the thread turns into matter, and it comes to rest at the",
+   "hits": [
+    "DESI"
+   ]
+  },
+  {
+   "note": "D1646",
+   "head": "## D1646 \u2014 JANUS genesis G6: the dark side is cold enough \u2014 if it's small. A full mirror world is ruled out; a minimal dark sector predicts ",
+   "hits": [
+    "N_eff",
+    "bound"
+   ]
+  },
+  {
+   "note": "D1648",
+   "head": "## D1648 (RIGHT, 19 Nov 2026) \u2014 RESULT, rung R-C3/C4: the surplus can come from the thread's decay; but equal sharing clashes with a cold mi",
+   "hits": [
+    "bound"
+   ]
+  },
+  {
+   "note": "D1649",
+   "head": "## D1649 \u2014 reconciling D1648 (this chat) with D1646 (JANUS chat)",
+   "hits": [
+    "N_eff"
+   ]
+  },
+  {
+   "note": "D1650",
+   "head": "## D1650 \u2014 JANUS genesis G12: the whole genesis chain passes referee \u2014 loop complete",
+   "hits": [
+    "N_eff",
+    "bound"
+   ]
+  },
+  {
+   "note": "D1651",
+   "head": "## D1651 (RIGHT, 19 Nov 2026) \u2014 RESULT, rung R-D1: Coulomb correction added; Y_p = 0.2445 \u2192 PASS (PREREG_RD1_COULOMB)",
+   "hits": [
+    "N_eff"
+   ]
+  },
+  {
+   "note": "D1657",
+   "head": "## D1657 \u2014 JANUS genesis G6c: a dark photon with a small mass saves matter genesis",
+   "hits": [
+    "N_eff",
+    "\u03b5 \u2273"
+   ]
+  }
+ ]
+}
