@@ -3148,3 +3148,8 @@ Touches: none.
 1. [derived] D1566 numbers re-run: C = wχ/(4(2π)³𝒱); χ = 20, band C 6.8–9.4e-7 ⇒ 𝒱 = 1.43e4 (w = 2/3, C = 9.4e-7) to 2.96e4 (w = 1, C = 6.8e-7) — matches the stated 1.4–3.0e4. ξ̂(y*) = χE/(4(2π)³) with E(55.64) ≈ 998 ⇒ ξ̂ = 20.1, ξ̂/𝒱 = 0.7–1.4e-3 — matches.
 2. [derived] CORRECTION (scope) of our T5 summary: "next α′³ order: too big" (D1501) was for the DILMIX route, where the α′³ term IS the plateau and ξ̂/𝒱̂ ≈ 250 (M5). In P3-S the plateau comes from the species scale and the BBHL α′³ term is only a small (ξ̂/𝒱 ~ 1e-3) correction to the prefactor; there it gives the E_{3/2} tilt at the right size. Our closure does not apply to P3-S. No contradiction — it is the M5 regime point again.
 3. [estimate] D1565a's sign fix (blue tilt needs χ > 0) is consistent with BBHL ξ = −χζ(3)/(2(2π)³) (hep-th/0412239, read earlier this session).
+
+## D1635 — toolkit: tools/serapis_calc/p3s.py — fast P3-S forecaster (0.2 s/point) validated against both locked exact MS runs; P3S_NOTES.md day summary
+1. [derived] E(½+iy,3/2) and y∂_yE in closed form from the Fourier series (K₁, K₀); matches shapes.E to 1e-15 and the numerical log-derivative to 1e-11 at y = 0.9, 1.3, 3, 20.
+2. [derived] point(C, D): vectorised float grid + one ODE + second-order Hubble-flow at φ_* (D1485 algebra) + N_* matching (nstar.py, T_R 8.94e8). vs SPECIES32 X (D = 10, C 8e-7): Δn_s −5.1e-6, Δr/r −0.013 %, Δα_s +7e-8, ΔN_* −1e-5. vs P3D6 X (D = 6, C 2.64e-6): Δn_s −5.1e-6, Δr/r −0.013 %, Δα_s +5.3e-7. C = 0 reproduces D1523 (0.9601, 4.0e-4). tilt_for_ns inverts to C = 8.005e-7 / 2.642e-6.
+3. [estimate] Use for screening and forecasts only; locked results keep the exact MS engine. No new physics claim; the anchors are the other chat's locked runs (read-only).

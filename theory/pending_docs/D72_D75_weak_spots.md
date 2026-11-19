@@ -16375,3 +16375,7 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - P-M mirror sector at its bound (ΔN_eff = 0.3): ΔY_p = +0.0039, D/H → 2.70 × 10⁻⁵ (+4%). Both are inside current errors, so P-M stays viable. dY_p/dΔN_eff = 0.0130.
 - Rates: Smith–Kawano–Malaney 1993, cross-checked against PArthENoPE (astro-ph/0408076) at 0.94–1.08 before locking.
 - Verdict: the genesis toolkit now reproduces the light elements (He-4, D, He-3) at textbook accuracy. Remaining known gap: weak-rate corrections (Y_p −0.005); Li-7 is not included.
+
+## D1635 — toolkit p3s.py (fast P3-S forecaster) + P3S_NOTES.md; validated |Δn_s| ≤ 5.1e-6, |Δr/r| ≤ 0.013 % vs both exact anchors
+- aegis-check: E series vs shapes.E ✓; float grid vs mpmath V ✓ (1e-15); anchors read-only ✓; tilt inversion ✓; σ(r) in notes labelled "from memory".
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no

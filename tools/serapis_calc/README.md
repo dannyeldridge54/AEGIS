@@ -6,3 +6,5 @@ Works here and on Ubuntu (needs python3, numpy, scipy, sympy, mpmath: `pip insta
 Each function is cross-checked against an independent result (lattice sum, modular invariance, symbolic limits, published numbers).
 
 Speed: `ms.spectra_fast` integrates all k-modes in one vectorised ODE with exact de Sitter initial modes; about 3.5x faster; validated for n_s and r only (selftest L4e). For alpha_s use `ms.spectra` (and check Bunch-Davies convergence, L4c). Locked runs state which one they use.
+
+P3-S (species-plateau inflation, 19 Nov 2026): `python3 -m tools.serapis_calc.p3s` validates against the locked exact runs; `p3s.point(C, D)` forecasts n_s, r, α_s, n_t, N_* in ~0.2 s. Day summary and anchors: P3S_NOTES.md.
