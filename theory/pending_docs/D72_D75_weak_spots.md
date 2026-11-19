@@ -14883,3 +14883,11 @@ MAP: node=janus status=computed touches=[] ripple=no
 - [derived] Code: tools/serapis_calc/ms.py spectra default dlnk = 11 points ±0.5 with LSQ cubic (short custom windows keep the old D958/D961 rule). spectra_fast is unchanged (not covered by this lock). Runtime per spectra call ×~2.2.
 - [derived] Consequence: earlier pipeline α_s values for the SERAPIS point (−1.169e-3 D1364 w = 1, −9.36e-4 D1397 R0, −1.132e-3 PC) were estimator noise around −9.96e-4. Any α_s quoted from pipeline.predict before this note carries ±~2e-4 (D1410); re-derive before use. n_s and r gates are unaffected.
 MAP: node=serapis_point status=computed touches=[] ripple=no
+
+## D1418 — JANUS tick 15: NO RESULT — the exact-MS solve of the ρ offset model hit the locked 150 s CPU cap before any output
+- Lock: field_tests/rules/PREREG_D1418_rho_offset_ms.md (+ .sha256); DEVIATIONS D1 (start φ* + 0.3: φ* + 1.0 needed ~850 e-folds > Nmax 400) and D2 (spectra key 'ns') — both written before any value was seen. Script field_tests/scripts/d1418/rho_ms.py.
+- Run stopped at 175 s with nothing printed; verdict as locked: no result. Not rerun (no chasing).
+- Lesson for the loop: per-mode MS (spectra) is too slow for a Newton solve inside a 3-minute tick in the cloud sandbox; use ms.spectra_fast under its own lock (ms.py says so) with a single-point evaluation first, or queue the solve on the PC runner. D1415 (FAIL, +1.33 % first-order) remains the latest ρ result.
+- aegis-check: nothing computed.
+MAP: node=janus status=computed touches=[] ripple=no
+

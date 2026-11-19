@@ -2485,3 +2485,8 @@ Touches: none.
 1. [derived] Old 5-pt estimator: α_s shifts 6.2e-5 between equivalent starts; new 11-pt LSQ cubic: 1.4e-8; n_s unchanged (2.2e-6).
 2. [derived] SERAPIS-point α_s = −9.964e-4; new estimator is the default in ms.spectra.
 3. [postulate P3] Unaffected.
+
+## D1418: ρ offset model through exact MS — no result (time cap)
+1. [estimate] Locked test (PREREG_D1418, DEVIATIONS D1 start point, D2 key name — both before any output) ran past the 150 s CPU cap inside the first Newton iterations and was stopped at 175 s with no value printed. Verdict as locked: no result. Not rerun.
+2. [estimate] Cause: ms.spectra (per-mode ODE) takes tens of seconds per call in this sandbox and the Newton solve needs ~3 calls per iteration. A follow-up needs either spectra_fast (its own lock, per ms.py) or the PC runner.
+
