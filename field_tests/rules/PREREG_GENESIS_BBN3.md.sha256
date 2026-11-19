@@ -1,0 +1,3 @@
+cf2423ca9c25d7fbf5322d0537585a2b454eba146b6de01dc91bbae0692dd34b  field_tests/rules/PREREG_GENESIS_BBN3.md
+33951e43b7fec4054ef35afecf8a3702c68052e6600c8dc7d2b87631cf409819  tools/genesis/bbn3.py
+df4a2d52fbb322d25ba7aa8218d230c7fadc820c996fe86190eb28447df24e69  field_tests/scripts/genesis_matter/bbn3_run.py
