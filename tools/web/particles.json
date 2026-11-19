@@ -45,7 +45,7 @@
   "name": "Wino",
   "state": "predicted",
   "node": "wino_window",
-  "info": "0.67–1.85 TeV, 5–41 % of dark matter (post-hoc window); HL-LHC disappearing tracks test it."
+  "info": "0.67–1.25 TeV thermal (to ~1.5 TeV for Einasto cores), 5–30 % of dark matter (post-hoc window; H.E.S.S. IGS line test D1324/D1338); HL-LHC disappearing tracks test it to ≈0.98 TeV."
  },
  {
   "id": "gravitino",

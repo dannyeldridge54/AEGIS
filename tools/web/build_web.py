@@ -180,7 +180,7 @@ for i, l, st, r in (
     ('Q_dt', 'Disappearing-track recast: wino excluded < 666.6 GeV (ATLAS 660); HL-LHC ≈ 975 GeV', 'computed', 'D1301'),
     ('Q_atlas', 'ATLAS disappearing-track search, 136 fb⁻¹', 'literature', 'arXiv:2201.02472'),
     ('Q_dt36', 'Second validation: ATLAS 36.1 fb⁻¹ reproduced, 447.8 vs 460 GeV, same method, no retuning', 'computed', 'D1303'),
-    ('Q_panel', 'Model vs collider: SERAPIS wino window 0.67–1.85 TeV starts at the LHC limit; HL-LHC tests 26%', 'computed', 'D1304'),
+    ('Q_panel', 'Model vs collider: SERAPIS wino window 0.67–1.25 TeV (thermal; ~1.5 Einasto) starts at the LHC limit; HL-LHC tests ~53%', 'computed', 'D1392'),
     ('Q_sym', 'Symmetry self-tests: ratios scale with τ₀ to 0.1%; u/d charge asymmetry turns over above 1.5 TeV (PDF-limited)', 'computed', 'D1305'),
     ('Q_future', 'Future colliders: HL-LHC 0.97, HE-LHC 1.4–1.7, FCC-hh 2.9–3.7 TeV wino reach; FCC-hh covers the whole SERAPIS window', 'computed', 'D1306'),
     ('Q_band', 'Theory band on the recasts: 661.5 ± 10 GeV (136 fb⁻¹, published 660 inside); 446.4 ± 5.5 GeV (36 fb⁻¹, 460 outside)', 'computed', 'D1309'),

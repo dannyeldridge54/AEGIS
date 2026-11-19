@@ -14635,3 +14635,14 @@ MAP: node=plateau_origin status=estimate touches=[] ripple=no
 - Circuit: layers A2 → D4 → E8 → Late → Leech → 10D → SUSY → P3 → Moonshine → CM.
 - Reported, not a law: why the vacua sit at CM points (an SL(2,Z)-invariant potential has its stationary points forced at i and ρ, D1351) is the physics link. CM is the arithmetic shadow of that symmetry.
 MAP: none
+
+## D1392 — Wino-window records synced (closes the D1355 flag, my track): the Q_panel and the wino particle card now say 0.67–1.25 TeV thermal (~1.5 Einasto), f 5–30%, HL-LHC tests ~53%. The circuit's SUSY consistency law closes (2026-11-19)
+- [DOC/CODE]
+  - tools/web/particles.json wino card: was "0.67–1.85 TeV, 5–41%" (D1304). Now the computed window (D1324/D1338).
+  - tools/web/build_web.py Q_panel title: was "0.67–1.85 … HL-LHC tests 26%". Now "0.67–1.25 … ~53%".
+    - [arithmetic] (975.1 − 666.6)/(1250 − 666.6) = 52.9%, matching D1350's 52%.
+  - apps/aegis_studio/circuit.py: win_hi_panel = 1250 (dated comment). The two historical laws that check the arithmetic at 1.85 TeV (AMSB m₃/₂ need vs the 7e5 record; the 26% HL-LHC share) now read a separate win_hi_old = 1850, so they are unchanged.
+  - The law "upper edge consistent across records" loses its "[expected OPEN]" tag. Its tolerance (5%) is unchanged, and it now closes at 0%.
+- The web was rebuilt (build_web.py). theory/map/sync.yaml (another session's file) still carries D1355's flag text and is left as is; this note supersedes it.
+- Not run here: the full circuit (needs aegis_tools on the PC).
+MAP: node=wino_window status=computed touches=[tests_lhc] ripple=no

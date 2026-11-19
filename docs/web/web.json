@@ -85,7 +85,7 @@
    "label": "Janus relation (α_s from n_s, r)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D1234, D1255, D1346",
+   "refs": "D1255, D1346, D1354",
    "info": ""
   },
   {
@@ -205,7 +205,7 @@
    "label": "Gravitino → wino negligible (Ω_nth ≤ 5e-4, Pradler–Steffen, D809, D1242)",
    "lane": "theory",
    "status": "computed",
-   "refs": "D809, D906, D1242",
+   "refs": "D906, D1242, D1355",
    "info": ""
   },
   {
@@ -994,10 +994,10 @@
   },
   {
    "id": "Q_panel",
-   "label": "Model vs collider: SERAPIS wino window 0.67–1.85 TeV starts at the LHC limit; HL-LHC tests 26%",
+   "label": "Model vs collider: SERAPIS wino window 0.67–1.25 TeV (thermal; ~1.5 Einasto) starts at the LHC limit; HL-LHC tests ~53%",
    "lane": "lhc",
    "status": "computed",
-   "refs": "D1304",
+   "refs": "D1392",
    "info": ""
   },
   {

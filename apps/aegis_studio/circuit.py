@@ -96,8 +96,8 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     # [literature] one-loop anomaly mediation M_i = b_i g_i²/(16π²) m3/2, b = (33/5, 1, −3); g_i² at ~1 TeV: 0.212 (GUT-normalised), 0.420, 1.118
     G2 = dict(g1=0.212, g2=0.420, g3=1.118); k16 = 16*math.pi**2
     W['amsb_M2_over_m32'] = G2['g2']/k16; W['amsb_M1_over_M2'] = 6.6*G2['g1']/G2['g2']; W['amsb_M3_over_M2'] = 3*G2['g3']/G2['g2']
-    W['win_lo_GeV'], W['win_hi_map_GeV'], W['win_hi_panel_GeV'] = 670.0, 1250.0, 1850.0   # map wino_window (D1324+), Q_panel/particles (D1304)
-    W['m32_need_GeV'] = W['win_hi_panel_GeV']/W['amsb_M2_over_m32']; W['m32_need_record_GeV'] = 7.0e5; W['m32_bound_GeV'] = 6.7e8   # D809/D1264
+    W['win_lo_GeV'], W['win_hi_map_GeV'], W['win_hi_panel_GeV'] = 670.0, 1250.0, 1250.0   # map wino_window (D1324+); Q_panel/particle card updated to 1.25 TeV 2026-11-19 (D1392; was 1.85, D1304)
+    W['win_hi_old_GeV'] = 1850.0; W['m32_need_GeV'] = W['win_hi_old_GeV']/W['amsb_M2_over_m32']; W['m32_need_record_GeV'] = 7.0e5; W['m32_bound_GeV'] = 6.7e8   # D809/D1264
     lfs = [get('lhc_lifetime', {'m': m}) for m in (670, 1250, 1850)]
     W['dm_670'], W['dm_1250'], W['dm_1850'] = [x.get('dm_MeV') for x in lfs]; W['ct_670'], W['ct_1250'], W['ct_1850'] = [x.get('ctau_cm') for x in lfs]
     # Moonshine layer (2026-11-19 00:45 UTC; all laws exact identities or tolerances fixed BEFORE the first run)
@@ -236,7 +236,7 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     law('law', 'SUSY', ('m32_window', 'covariant'), 'covariant bound m3/2 < 6.7e8 GeV stays ≥ 100× above the AMSB need', W['m32_bound_GeV']/W['m32_need_GeV'] >= 100, f"ratio {W['m32_bound_GeV']/W['m32_need_GeV']:.0f} (record ×960)")
     law('up', 'E8→SUSY', ('wino_window', 'Q_dt'), 'wino window lower edge = LHC disappearing-track floor (10 GeV)', W.get('m_floor') is not None and abs(W['win_lo_GeV'] - W['m_floor']) < 10, f"670 vs {W.get('m_floor', float('nan')):.1f} GeV")
     d = abs(W['win_hi_map_GeV']/W['win_hi_panel_GeV'] - 1)
-    law('law', 'SUSY', ('tests_lhc', 'm32_window'), 'wino window upper edge consistent across records (5%) [expected OPEN]', d < 0.05, f"map wino_window 1.25 TeV (thermal, ~1.5 cored) vs Q_panel/particle card 1.85 TeV (D1304) — off {d:.0%}")
+    law('law', 'SUSY', ('tests_lhc', 'm32_window'), 'wino window upper edge consistent across records (5%)', d < 0.05, f"map wino_window {W['win_hi_map_GeV']/1e3:g} TeV vs Q_panel/particle card {W['win_hi_panel_GeV']/1e3:g} TeV (records synced D1392) — off {d:.0%}")
     ok_dm = all(v is not None and 150 < v < 175 for v in (W['dm_670'], W['dm_1250'], W['dm_1850'])) and W['ct_670'] > W['ct_1250'] > W['ct_1850']
     law('law', 'SUSY', ('H_line', 'tests_lhc'), 'wino Δm in the two-loop band across the window; cτ falls with mass', ok_dm,
         f"Δm = {W['dm_670']:.2f}, {W['dm_1250']:.2f}, {W['dm_1850']:.2f} MeV; cτ = {W['ct_670']:.3g}, {W['ct_1250']:.3g}, {W['ct_1850']:.3g} cm (0.67/1.25/1.85 TeV)")
@@ -246,7 +246,7 @@ def run(call, ns_model=NS_MODEL, log_path=None, records=None):
     law('law', 'SUSY', ('gravitino_wino', 'covariant'), 'bino record agrees with AMSB M1/M2 (bino heavier than wino)', bool(card) and 'M₂/2' not in card and 'M2/2' not in card and '3.3' in card,
         f"AMSB M1/M2 = {W['amsb_M1_over_M2']:.2f} (wino is the LSP); particle card: '{card[:90]}'" if card else 'no particle card passed to the circuit')
     law('law', 'SUSY', ('gravitino_wino',), 'gravitino → wino non-thermal share within the recorded bound Ω ≤ 5e-4', 3e-4 <= 5e-4, 'D809: ≤ 3e-4 in every history; map bound 5e-4 (record law, no calculation here)')
-    cov = [(W['hl_panel'] - W['m_floor'])/(hi - W['m_floor']) for hi in (W['win_hi_map_GeV'], W['win_hi_panel_GeV'])]
+    cov = [(W['hl_panel'] - W['m_floor'])/(hi - W['m_floor']) for hi in (W['win_hi_map_GeV'], W['win_hi_old_GeV'])]
     law('law', 'SUSY', ('tests_lhc', 'Q_panel'), 'HL-LHC covers the recorded share of the window (D1350 52%/D1304 26%, ±2 pts)', abs(cov[0]*100 - 52) <= 2 and abs(cov[1]*100 - 26) <= 2, f"computed {cov[0]:.1%} (to 1.25 TeV), {cov[1]:.1%} (to 1.85 TeV)")
     law('report', 'SUSY', ('covariant', 'serapis_e'), 'report: SUSY-breaking scale ↔ plateau height (F ~ √V0) — no tool yet; not a law', True, 'needs a locked tool tying V0 (from C) to F-term SUSY breaking')
     # Moonshine laws (exact identities; [literature] Monster irrep dims 196883, 21296876; dim E8 = 248)
