@@ -15376,3 +15376,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] α = 0 with tilt does not end inflation under the declared C·g approximation (7 map errors).
 - aegis-check: numbers from field_tests/results/D1485_dilmix_sr.json; α = 1 row cross-checked against D1481 (C 1.5e-6: 0.9680/6.39e-4 both); in-band flags re-read against the rule (n_s 0.969–0.975, r 4.55–5.7e-4) for all 5 map points ✓ ((0.375, 2e-6): 0.9735 ≤ 0.975, 5.63e-4 ≤ 5.7e-4 ✓); DEVIATIONS D1–D5 logged before the numbers they affect; checked: units, arithmetic, like-with-like (same model/T_R/rules as PREREG_DILMIX), cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1488 — help for the P3 chat: LVSDIL SR forecast — over-flat (r 1.3–2.6e-5, n_s 0.952–0.954), no k in band
+- [estimate] k 0.15/0.3/0.6/1.2: n_s 0.9521/0.9524/0.9532/0.9540, r 2.57/2.38/1.92/1.35e-5; vacuum at ρ in all. Confirms the LVSDIL PREREG's expectation; its exact runs remain the record.
+- aegis-check: numbers from field_tests/results/D1488_lvsdil_sr.json; ratio to band floor 4.55e-4/2.57e-5 = 17.7, /1.35e-5 = 33.7 ✓; vacuum check k·E_ρ^{2/3} ≥ 0.15·4.29 = 0.64 > ½ ✓; DEVIATIONS D1 written before running; checked: units, arithmetic, like-with-like (same F, path, T_R as LVSDIL run.py), cross-sector: none. No P3 files edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
