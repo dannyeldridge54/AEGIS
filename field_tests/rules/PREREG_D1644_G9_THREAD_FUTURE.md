@@ -1,0 +1,8 @@
+# PREREG_D1644_G9_THREAD_FUTURE — the reverse thread's future at ρ (Janus genesis G9 + G2b; locked 2026-11-19 ~22:36Z before any number)
+Model: D1638's exact-shape thread (V = V_Λ f_v3(φ), D = 10, C = 8e-7), best worst-case start amp = 0.29267761361705097 (read from D1638 json), V_Λ re-shot to H₀ = 1; Ω_m 0.31, Ω_r 9e-5. Potential grid extended below ρ along Re τ = ½ down to y = 0.45 (same p3s.V_np, valid for any y > 0) so the field can overshoot ρ.
+Integrate from a = 1e-3 to a = 50 (N = ln a; rtol 1e-9).
+Expectations stated now (derived): (i) at ρ, V'' = V_Λ/4 (D1641) ⇒ m_DE = √(V_Λ/4) ≈ 0.87 H_Λ — of order H₀; (ii) once H drops below m the thread oscillates about V = 0 and redshifts like matter (⟨w⟩ → 0 for a quadratic minimum); (iii) acceleration ends in the future.
+Outputs: a_end_acc (first a > 1 with q = −ä/(aH²)... i.e. ä = 0 crossing), a_rho (first time φ reaches φ_ρ), a_w0 (first w = 0 crossing after today), Ω_thread at those points, ⟨w⟩ over the last 20 % of e-folds (energy-weighted), Ω_thread(a = 50), ρ_thread a³ ratio between a = 25 and 50 (matter-like ⇒ ≈ 1).
+Pass rules (locked): R1 MATTER-LIKE FUTURE if |⟨w⟩_late| ≤ 0.05 AND the a³ρ ratio is within 10 % of 1. R2 ACCELERATION ENDS if an ä = 0 crossing exists at 1 < a ≤ 50. Report each PASS/FAIL separately. Lens (Danny's "at the minimum the thread acts like matter") is reported as lens, the physics verdict from R1 only.
+Caveat stated now: classical homogeneous field only; perturbations/clustering not computed; the overshoot region uses the Re τ = ½ line only (no axion direction).
+Script: field_tests/scripts/janus_g/g9_thread_future.py → field_tests/results/D1644_G9_thread_future.json
