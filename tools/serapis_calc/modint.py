@@ -5,9 +5,18 @@ import math
 import numpy as np
 
 
+def _gamma22_dual(tau, T, U, N=40):
+    """Large-τ₂ form: degenerate orbit Poisson-resummed, Σ_k exp(−πτ₂|k₁ + Uk₂|²/(T₂U₂)); non-degenerate orbits are
+    O(e^{−πT₂τ₂/U₂}) and dropped. Equals the full sum to ≤ 3e-11 at τ₂ ≥ 3 (checked 2026-11-18)."""
+    r = np.arange(-N, N + 1); k1, k2 = np.meshgrid(r, r, indexing='ij')
+    return float(np.sum(np.exp(-math.pi*tau.imag*np.abs(k1 + U*k2)**2/(T.imag*U.imag))))
+
+
 def gamma22(tau, T, U, N=5):
     """Lagrangian Γ_{2,2}(T,U) = (T₂/τ₂) Σ_A exp(−2πi T det A − πT₂/(τ₂U₂)|n₁τ + m₁ + U(n₂τ + m₂)|²), A = [[n₁,m₁],[n₂,m₂]].
     Modular invariant in τ; → 1 as τ₂ → ∞. Truncated at |entries| ≤ N (fine on F, τ₂ ≥ √3/2)."""
+    if tau.imag >= 3.0:
+        return _gamma22_dual(tau, T, U)
     r = np.arange(-N, N + 1)
     n1, m1, n2, m2 = [a.ravel().astype(float) for a in np.meshgrid(r, r, r, r, indexing='ij')]
     detA = n1*m2 - m1*n2; z = n1*tau + m1 + U*(n2*tau + m2)
@@ -33,3 +42,20 @@ def dkl_closed(T, U):
     from .shapes import log_eta
     return (-math.log(T.imag*U.imag) - 4*(log_eta(T).real + log_eta(U).real)
             - math.log(8*math.pi*math.exp(1 - 0.5772156649015329)/(3*math.sqrt(3))))
+
+
+# S5b (2026-11-18): Rankin–Selberg product. Found numerically (3 tori, s = 2 and 3, fit residual ≤ 6e-5):
+#   ∫_F (d²τ/τ₂)(Γ₂,₂ − 1)·E(τ,s) = Γ(s)π^{−s}·E(T,s)E(U,s) − c(s),   c(2) = 2.95904, c(3) = 0.73797,
+# with E(τ,s) = Σ′ τ₂^s/|m + nτ|^{2s} (our normalisation, shapes.E). c(s) is (T,U)-independent (the regularised integral
+# of the τ₂·E growth); the factorised piece is the genus-one D⁴R⁴-type product of GRV 1001.2535 eq. 4.16.
+RS_C = {2.0: 2.95904, 3.0: 0.73797}
+
+
+def rs_numeric(T, U, s=2.0, L=40.0, n1q=32, n2q=300):
+    from .shapes import E
+    return integrate_F(lambda t: (gamma22(t, T, U) - 1)*E(t, s)/t.imag, L=L, n1q=n1q, n2q=n2q)
+
+
+def rs_closed(T, U, s=2.0):
+    from .shapes import E
+    return math.gamma(s)*math.pi**(-s)*E(T, s)*E(U, s) - RS_C[float(s)]

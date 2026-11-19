@@ -87,7 +87,12 @@ Goal (D1406 mirror): test whether a dilaton-Kähler-type object carries A₀ + B
 - S5a DONE (tools/serapis_calc/modint.py + tests/test_modint.py): Lagrangian Γ₂,₂(T,U), integration over F, DKL threshold
   ∫_F (d²τ/τ₂)(Γ₂,₂ − 1) reproduced vs the closed form −log(T₂U₂|η(T)η(U)|⁴) − log(8πe^{1−γ}/3√3): 3.1e-5 (T = 2i, U = i),
   1.9e-5 (T = 0.3 + 1.7i, U = 0.5 + 1.2i).
-- S5b next: renormalised Rankin–Selberg ∫_F dμ Γ₂,₂ E(τ,s) → E(T,s)E(U,s) (genus-one D⁴R⁴, GRV 4.16) — the product structure.
+- S5a+ (same night): large-τ₂ dual form of Γ₂,₂ (degenerate orbit Poisson-resummed, ≤3e-11 vs the full sum at τ₂ ≥ 3); DKL now
+  reproduced to 1e-9 with the tail to τ₂ = 40.
+- S5b DONE: ∫_F (d²τ/τ₂)(Γ₂,₂ − 1)E(τ,s) = Γ(s)π^{−s}E(T,s)E(U,s) − c(s), c(2) = 2.95904, c(3) = 0.73797 (three tori, residual
+  ≤ 6e-5; K = Γ(s)/π^s found, not assumed: 0.101321 = 1/π², 0.064503 = 2/π³); out-of-sample torus passes (test_modint).
+  Two earlier normalisations (measure d²τ/τ₂², and no constant c) were tried and failed the product test — recorded so they are
+  not retried.
 - S5c: P–R universal Y (eq. 23) numerically; reproduce eq. 31 (6πR² + 90κ/πR², κ = E(i,2)/π²) — closes D1365/D1366 by a
   second route.
 - S6: genus-two: Siegel–Weil route (∫ over Sp(4,Z)\H₂ of Γ₂,₂^{(2)} ↔ Langlands–Eisenstein of SO(2,2)) to get the genus-two
