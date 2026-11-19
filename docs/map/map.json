@@ -1538,7 +1538,7 @@
     "D1638: postulate",
     "D1644: postulate"
    ],
-   "flag": "recheck (D1653, thread_endpoint)"
+   "flag": "recheck (D1658, thread_endpoint)"
   },
   {
    "id": "thread_endpoint",
@@ -1551,14 +1551,16 @@
    "status": "computed",
    "d": [
     "D1653",
-    "D1655"
+    "D1655",
+    "D1658"
    ],
    "depends": [
     "reverse_thread"
    ],
    "history": [
     "D1653: computed",
-    "D1655: computed"
+    "D1655: computed",
+    "D1658: computed"
    ]
   },
   {
