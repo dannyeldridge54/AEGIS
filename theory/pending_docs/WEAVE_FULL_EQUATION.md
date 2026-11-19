@@ -1,7 +1,7 @@
 # THE WEAVE — full equation (v2, 19 Nov 2026 14:45 CT, D1527–D1616; adjusted after a review of all sources)
 
 Tags: [der] derived and checked · [lit] literature · [P] principle, assumed · [EMP] empirical, not yet derived · [OPEN] missing term.
-Published preprints (19 Nov 2026): inflation part doi:10.5281/zenodo.24377930 (v1.1: 24378141); flavour part doi:10.5281/zenodo.24377945 (v1.1: 24378142; v2: 24379357); Dimension Ladder doi:10.5281/zenodo.24378259. Ladder entry only with Danny's yes.
+Published preprints (19 Nov 2026): inflation part doi:10.5281/zenodo.24377930 (v1.1: 24378141); flavour part doi:10.5281/zenodo.24377945 (v1.1: 24378142; v2: 24379357); Dimension Ladder doi:10.5281/zenodo.24378259; Reverse Thread (dark energy) doi:10.5281/zenodo.24380387. Ladder entry only with Danny's yes.
 
 ## The equation
 
