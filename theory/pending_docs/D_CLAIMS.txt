@@ -743,3 +743,4 @@ D1456  2026-11-19T07:03Z  JANUS tick 52: alpha_s window per vacuum conditioned o
 D1457  2026-11-19T07:09Z  JANUS tick 53: band_e formula with n_s term fitted to derived grid
 D1458  2026-11-19T07:14Z  JANUS tick 54: Janus node status-readiness (propose only)
 D1459  2026-11-19T07:19Z  JANUS tick 55: summary addendum D1456-D1458
+D1460  2026-11-19T07:25Z  JANUS tick 56: band_i n_s-term formula (tau=i model)
