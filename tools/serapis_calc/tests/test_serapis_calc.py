@@ -27,3 +27,10 @@ def test_j_series_exact_coefficients():   # Klein j = q^-1 + 744 + 196884 q + 21
     from tools.serapis_calc.jseries import coeffs
     c = coeffs(5)
     assert [c[k] for k in range(-1, 6)] == [1, 744, 196884, 21493760, 864299970, 20245856256, 333202640600]
+
+def test_shape_functions_stationary_structure():   # P3 hunt (D1364): both E(U,2) and E1hat(U) — minimum at rho, saddle at i
+    from tools.serapis_calc.shapes import E, E1hat, grad_hess, RHO, I
+    assert abs(E(RHO) - 5.7833593) < 1e-6 and abs(E(I) - 6.0268120) < 1e-6
+    for f in (E, E1hat):
+        _, h = grad_hess(f, RHO); assert h[0]*h[2] - h[1]**2 > 0 and h[0] > 0
+        _, h = grad_hess(f, I); assert h[0]*h[2] - h[1]**2 < 0
