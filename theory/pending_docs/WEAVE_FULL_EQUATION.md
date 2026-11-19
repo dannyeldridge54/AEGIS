@@ -51,6 +51,9 @@ At ρ the A4 Yukawa determinant is exactly real: det = 27/8. [der] ρ and i are 
 But the same setting gives a CKM Jarlskog invariant J ≤ 5e-15, against the observed 3.1e-5: quark moduli at the tie-off points give no CP violation. [der, FAIL]
 Resolution (D1601, imported from Feruglio–Strumia–Titov 2305.08908): take the quark sector on a third field τ_q with anomaly-free weights, A = Σ(2k_Q + k_u + k_d) = 0. Then det M_q is a real constant for any τ_q, so θ̄ = 0, and the CKM phase comes from a generic ⟨τ_q⟩ (off the CP-symmetric lines; their fit τ_q = 1/8 + i). [lit] The quark field is therefore NOT tied off at ρ or i; P-F2 holds for the lepton fields only. What fixes τ_q, and why A = 0, are open within the Weave. [OPEN]
 
+### 5b. The Y-fork — "Genesis split" (D1605)
+Along the inflaton line x = ½ the Zhinü potential is a valley near ρ (y < 0.954) but a ridge for 0.96 ≲ y ≲ 1.5–1.9: the thread splits at the end of inflation into two exits — stay on x = ½ → ρ, or fall to x = 0 → i. [der] The fork is in the last e-fold, so the CMB predictions are unchanged. If the thread exits to i: θ = 2π Re τ = 0 directly, and the endpoint symmetry is Z₂. Which exit is taken is a two-field dynamics question. [OPEN, next run]
+
 ### 6. Vacuum energy
 The inflation sector gives exactly 0 at ρ. [der] The observed Λ_obs ≈ 10⁻¹²⁰ M_P⁴ is not explained. [OPEN]
 
