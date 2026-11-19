@@ -2289,3 +2289,9 @@ Touches: none.
 2. [derived] The shift turns the D1366 sum into a parity-shifted (Γ₀(2)-type) Epstein series.
 3. [estimate] Either SL(2,Z)+ρ with one-loop ≈ tree, or control with a different shape/vacuum.
 4. [postulate P3] Resolution open; next: locked minima of shifted Epstein sums.
+
+## D1380: shifted Epstein sums (locked)
+1. [computed] Control E(U,2): min at an SL(2,Z) image of ρ, 5.78330 (gate pass on value; location wording note N1).
+2. [computed] Σ′(−1)^m, Σ′(−1)^n, Σ′(−1)^{m+n}, half-shifted sum: no interior minimum; run to cusps.
+3. [estimate] Mixed sector combinations untested.
+4. [postulate P3] Option (ii) loses the vacuum for simple shifts; option (i) remains with marginal control.

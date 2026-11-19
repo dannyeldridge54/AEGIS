@@ -14481,3 +14481,12 @@ MAP: node=plateau_origin status=assumed touches=[] ripple=no
 - [estimate] So either (i) standard N=2 plane: SL(2,Z) E(U,2), vacuum at ρ, but one-loop ≈ tree at T₂ ≈ 16–20 (D1378); or (ii) spontaneously broken plane: control restored, but the shape function changes and the vacuum location must be recomputed.
 - Verdict: P3 remains a candidate with an explicit dilemma. A locked computation of where the parity-shifted Epstein sums have their minima (Γ₀(2) case) would decide whether option (ii) keeps a hexagonal-type vacuum. P3 stays a postulate.
 MAP: node=plateau_origin status=assumed touches=[] ripple=no
+
+## D1380 — DEEP / LEFT: P3 — locked test of D1379 option (ii): parity-shifted / half-shifted Epstein sums (the lattice sums of spontaneously broken N=4 → N=2 planes) have NO interior minimum — they run away to a cusp. Option (ii) does not move the hexagonal vacuum, it loses it (2026-11-18)
+- Lock: field_tests/rules/PREREG_D1380_shifted_epstein.md (+ .sha256), committed before computing; script field_tests/scripts/d1380/shifted.py; results field_tests/results/D1380_shifted_epstein.json. Reading note N1 in PREREG_D1380_DEVIATIONS.md (post-result, nothing rerun).
+- [computed] Gate G0 (S0 = E(U,2)): box minimum at U = −½ + i√3/6 (an exact SL(2,Z) image of ρ), value 5.783297 (ρ itself 5.783328; gate 5.7834 ± 2e-3) — PASS on value; location PASS only under the γ(ρ) reading (the G0 wording "ρ or x → −x image" was too narrow; flagged, N1).
+- [computed] Sa = Σ′(−1)^m: runs to the cusp i∞ (n = 0 terms give 2y²·Σ(−1)^m/m⁴ = −(7/4)ζ(4)y² → −∞); refinement diverged; value at ρ −1.4458. No interior minimum.
+- [computed] Sb = Σ′(−1)^n and Sc = Σ′(−1)^{m+n}: box minimum on the edge y = 0.15 (cusp at 0), −84.18, falling further (−757.6 at y = 0.05); at ρ −1.4458. No interior minimum.
+- [computed] Sh (half-shifted momenta): positive, minimum on the edge y = 0.15 (3.962), decreasing toward the real axis (1.321 at y = 0.05); at ρ 28.92. No interior minimum.
+- Verdict (locked rule): none of the shifted sums keeps the hexagon; all have no interior minimum in the box. So for these simple shifts option (ii) of D1379 removes the vacuum rather than relocating it. Caveat [estimate]: a real freely-acting model's threshold is a COMBINATION of unshifted and shifted sectors (e.g. S0 + c·Sa); a combination could retain an interior minimum — not tested. The dilemma tilts back to option (i) (SL(2,Z), ρ, marginal control, D1378). P3 stays a postulate.
+MAP: node=plateau_origin status=assumed touches=[] ripple=no
