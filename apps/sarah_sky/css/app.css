@@ -217,3 +217,4 @@ body.sheet-open #arBtn{ opacity:0; pointer-events:none; }
 .darkwin{border:1px solid var(--line,#2a3350);border-radius:10px;padding:.4em .8em;margin:.6em 0}.darkwin p{margin:.25em 0}
 .printonly{display:none}
 @media print{body.printplan *{visibility:hidden}body.printplan .panel{display:block!important;position:static;box-shadow:none}body.printplan #nightPlan,body.printplan #nightPlan *{visibility:visible;color:#000!important;background:#fff!important}body.printplan #nightPlan{position:absolute;left:0;top:0;width:100%}body.printplan .printonly{display:block}body.printplan #printPlan{display:none}}
+[data-best][aria-pressed="true"]{background:var(--accent,#2f8bff);color:#fff}

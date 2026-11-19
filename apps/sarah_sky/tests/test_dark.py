@@ -49,6 +49,12 @@ def test_panel_shows_window(server):
         txt = pg.inner_text("#darkWin")
         assert "Dark sky tonight" in txt and "Sunset" in txt and "Moon down" in txt
         assert pg.locator("#bestTargets tr").count() == 11
+        pg.click("[data-best=galaxies]"); pg.wait_for_selector("[data-best=galaxies][aria-pressed=true]")
+        types = pg.locator("#bestTargets tr td:nth-child(2)").all_inner_texts()
+        assert types and all("galaxy" in t.lower() for t in types), types
+        pg.reload(); pg.click("button[data-tab=tonight]"); pg.wait_for_selector("#darkWin")
+        assert pg.get_attribute("[data-best=galaxies]", "aria-pressed") == "true"   # remembered
+        pg.click("[data-best=all]")
         pg.evaluate("window.__printed = 0; window.print = () => { window.__printed++; window.__cls = document.body.className; }; 0")
         pg.click("#printPlan")
         assert pg.evaluate("window.__printed") == 1 and "printplan" in pg.evaluate("window.__cls")

@@ -1,4 +1,7 @@
 # Changelog
+## 1.7.4 — 19 Nov 2026
+- Best targets tonight: filter by All, Galaxies, Clusters or Nebulae (remembered), and each row now says what kind of object it is.
+
 ## 1.7.3 — 19 Nov 2026
 - Tonight: "Print night plan" — prints just the dark-sky times and best targets on a white page (date and place in the heading), handy at the telescope or for a class handout.
 

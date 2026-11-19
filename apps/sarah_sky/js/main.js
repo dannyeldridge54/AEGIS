@@ -219,9 +219,12 @@ const PANELS = {
         moon = `<div class="darkwin" id="darkWin"><button class="btn ghost" id="printPlan" style="float:right">🖨 Print night plan</button><p><b>Dark sky tonight</b> · ${w.phase}, ${(w.lit * 100).toFixed(0)}% lit</p>
           <p>Sunset ${hm(w.sunset)} · Sunrise ${hm(w.sunrise)}</p><p>${dark}</p>
           <p class="muted">Faint galaxies and nebulae are best when it is fully dark and the Moon is down.</p></div>`;
-        const best = state.data.messier ? window.SkyDark.bestTargets(window.Astronomy, state.data.messier.objects, loc.lat, loc.lon, w, 30, 10) : [];
-        if (best.length) moon += `<h3>Best targets tonight</h3><table id="bestTargets"><tr><th>Object</th><th>Mag</th><th>Highest</th></tr>${best.map((o) =>
-          `<tr><td><a href="#" data-goto="${o.ra},${o.dec}">${esc(o.id)}${o.common ? " · " + esc(o.common) : ""}</a></td><td>${o.mag}</td><td>${o.alt.toFixed(0)}° at ${hm(o.at)}</td></tr>`).join("")}</table>
+        const kind = (t) => /galaxy/i.test(t) ? "galaxies" : /cluster/i.test(t) ? "clusters" : /nebula|remnant|sfr/i.test(t) ? "nebulae" : "other";
+        const f = store.get("bestFilter", "all"), pool = state.data.messier ? state.data.messier.objects.filter((o) => f === "all" || kind(o.type) === f) : [];
+        const best = pool.length ? window.SkyDark.bestTargets(window.Astronomy, pool, loc.lat, loc.lon, w, 30, 10) : [];
+        const chip = (k, label) => `<button class="btn ghost" data-best="${k}" aria-pressed="${f === k}">${label}</button>`;
+        if (w.dusk && w.dawn) moon += `<h3>Best targets tonight</h3><p role="group" aria-label="Show">${chip("all", "All")}${chip("galaxies", "Galaxies")}${chip("clusters", "Clusters")}${chip("nebulae", "Nebulae")}</p>` + (best.length ? `<table id="bestTargets"><tr><th>Object</th><th>Type</th><th>Mag</th><th>Highest</th></tr>${best.map((o) =>
+          `<tr><td><a href="#" data-goto="${o.ra},${o.dec}">${esc(o.id)}${o.common ? " · " + esc(o.common) : ""}</a></td><td>${esc(o.type === "sfr" ? "Star-forming nebula" : o.type)}</td><td>${o.mag}</td><td>${o.alt.toFixed(0)}° at ${hm(o.at)}</td></tr>`).join("")}</table>` : `<p id="bestNone">None of these climb above 30° while it is dark tonight.</p>`) + `
           <p class="muted">Messier objects that climb above 30° while it is fully dark, brightest first. Tap one to go there.</p>`;
         moon = `<div id="nightPlan"><h2 class="printonly">Night plan · ${when.toLocaleDateString()} · ${loc.lat.toFixed(2)}°, ${loc.lon.toFixed(2)}°</h2>${moon}</div>`;
       }
@@ -288,6 +291,7 @@ function wirePanel(name) {
     for (const p of B.querySelectorAll("[data-proj]")) p.onclick = () => { try { state.aladin.setProjection(p.dataset.proj); if (p.dataset.proj !== "TAN") state.aladin.setFoV(p.dataset.proj === "AIT" ? 220 : 120); } catch (e) { console.warn(e); } };
   }
   if (name === "tonight") {
+    for (const b of B.querySelectorAll("[data-best]")) b.onclick = () => { store.set("bestFilter", b.dataset.best); rerender(); };
     const pp = $("#printPlan"); if (pp) pp.onclick = () => { document.body.classList.add("printplan"); try { window.print(); } finally { setTimeout(() => document.body.classList.remove("printplan"), 500); } };
     $("#geo").onclick = () => navigator.geolocation?.getCurrentPosition((p) => { state.location = { lat: +p.coords.latitude.toFixed(2), lon: +p.coords.longitude.toFixed(2) }; store.set("location", state.location); updatePlanetLayer(); rerender(); }, () => alertNote("Location was not shared. You can type it in instead."));
     $("#setLoc").onclick = () => { const lat = parseFloat($("#lat").value), lon = parseFloat($("#lon").value); if (Math.abs(lat) <= 90 && Math.abs(lon) <= 180) { state.location = { lat, lon }; store.set("location", state.location); updatePlanetLayer(); rerender(); } };
