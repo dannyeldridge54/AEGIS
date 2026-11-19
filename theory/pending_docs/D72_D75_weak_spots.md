@@ -15493,3 +15493,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [estimate] α = 0.125 brackets the band (C 1e-6: 0.9668/5.16e-4; 2e-6: 0.9717/5.89e-4) ⇒ sliver C 1.45–1.74e-6; fine grid needed (T3e).
 - aegis-check: numbers from field_tests/results/D1509_phys_inband.json; interpolation re-run in python (C 1.449e-6 at n_s 0.969, r 5.49e-4; C 1.738e-6 at r 5.7e-4, n_s 0.9704) ✓; stated expectation ("C larger") was wrong and is said so; cross-sector: none. No P3 files edited.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1511 — P3 DILMIX α 0.75 and LVSDIL k 1.2 confirm forecasts (18-point record, |Δn_s| ≤ 5.3e-6); D1507/D1508 numbers check out
+- aegis-check: read from field_tests/results/DILMIX/a0.75_*.json, LVSDIL/k1.2.json, D1485/D1488 jsons; differences re-run in python ✓; P3 D-notes read, not edited.
+- MAP: node=plateau_origin status=postulate touches=[] ripple=no
