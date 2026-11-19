@@ -781,3 +781,4 @@ D1494  2026-11-19T12:39Z  Help set 3: DILMIX strip edges fine grid
 D1495  2026-11-19T12:43Z  Help set 4: DILMIX mix alpha as SMSCAN-equivalent s*m
 D1496  2026-11-19T12:43Z  P3 exact LVSDIL k=0.6 vs D1488 forecast
 D1497  2026-11-19T12:50Z  Help set 5: DILMIX strip tilt and y* in D1486's physical frame
+D1498  2026-11-19T12:59Z  Help set 7: testability of DILMIX strip vs SERAPIS-E and form A (SO, LiteBIRD)
