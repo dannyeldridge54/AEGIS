@@ -2823,3 +2823,7 @@ Touches: none.
 1. [literature] 1602.00308 (3.49), (3.54), (3.55): genus-two Γ₂,₂ integral ∝ E*(2s,T) + E*(2s,U).
 2. [derived] D⁴R⁴ residue at s′ = 1 gives E₂(T) + E₂(U), matching GRV 4.15 in structure.
 3. [postulate P3] Genus-two U-dependence is additive; e^K placement still missing.
+
+## D1477 — JANUS tick 78: SPT-3G D1 running — NULL (2506.20707 reports no running constraint)
+1. [literature] Read the remaining parts of arXiv:2506.20707 (characters 100k–200k: lensing amplitude, N_eff/Y_P, free τ_reio; 300k–375k: Tables X–XI, ΛCDM only). With D1472's 0–100k and 200k–300k, the full text has now been read: no dn_s/dlnk (α_s) constraint anywhere.
+2. [derived] Rule (locked): no running row ⇒ NULL; no pulls computed. SPT-3G's bearing on the Janus nodes is through n_s only (D1472).

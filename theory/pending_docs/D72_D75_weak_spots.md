@@ -15293,3 +15293,8 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
 - [derived] d = 2: s′ = 1 ⇒ the bracket is E₁*(2,T) + E₁*(2,U) (index 2s′ = 2), and the prefactor ζ*(2s′−1) = ζ*(1) supplies the pole whose residue is taken — so the genus-two D⁴R⁴ coefficient is ∝ E₂(T) + E₂(U), matching GRV 1001.2535 eq. 4.15's (2/3)y₈(E₂(T) + E₂(U)) in structure. [overall constant not checked against GRV's 2/3]
 - [derived] Consequence for the D1406 target: at genus two the U-dependence is E₂(U) with a U-INDEPENDENT companion E₂(T) — of the form A₀ + B·E₂(U) with A₀ ∋ E₂(T). So in any quantity built from the genus-two D⁴R⁴ coefficient, a ≈ A₀/B + E_ρ with A₀/B ≈ E₂(T) + (tree)/(genus-two) — large when T₂ is large. The "a + Ê" structure of D1401 persists at genus two; still no mechanism places it in an overall e^K factor.
 MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1477 — JANUS tick 78: SPT-3G D1 running — NULL
+- [literature] Full text of 2506.20707 now read (D1472 + this tick): no running constraint; SPT-3G enters only via n_s (D1472).
+- aegis-check: no numbers computed (NULL rule).
+- MAP: node=janus status=computed touches=[] ripple=no
