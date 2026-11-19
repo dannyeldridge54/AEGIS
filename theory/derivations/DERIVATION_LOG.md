@@ -3109,3 +3109,9 @@ Touches: none.
 ## D1554 — lens ladder: only the k = 2 pair (10D R⁴ E_{3/2} gradient ↔ 8D E₂ ratio) carries the observed inflation
 1. [derived] G32 and R2 (approach y^{−2}) agree untilted (n_s 0.9601, r 4.04e-4) and reach the band with their own tilts (r 5.4e-4 / 5.2e-4 at n_s 0.9706).
 2. [derived] G52 (E_{5/2}, y^{−4}) is too flat (r 1.4e-4 at n_s 0.9706); N1 (s = 1, Ñ₀ = 0) approaches from above and does not inflate toward ρ.
+
+## D1555 — Janus L2: tensor tilt at second order — n_t = −6.18e-5 (ρ) / −6.19e-5 (τ = i); consistency deviation n_t + r/8 = −1.54e-6 / −1.53e-6 (2.5 % of n_t); vacua differ by 1.5e-7 — unobservable
+1. [literature] Second-order Hubble-flow n_t = −2ε1 − 2ε1² − 2(C+1)ε1ε2, r = 16ε1(1 + Cε2), C = γ_E + ln2 − 2 = −0.72964; observable form n_t = −(r/8)(2 − r/8 − n_s).
+2. [derived] Δ ≡ n_t + r/8 = (r/8)(n_s − 1 + r/8) ≈ −(r/8)ε2. From D1480 k = 0.05 exact values: ρ (SERAPIS-E A1) n_t = −6.1801e-5, Δ = −1.5395e-6; τ = i (NA12) n_t = −6.1949e-5, Δ = −1.5298e-6. ε-solve cross-check agrees to 3.1e-8 (PASS, ≤ 1e-7).
+3. [derived] ρ − τ=i: δn_t = 1.5e-7, δΔ = −9.7e-9 — the tensor sector does not discriminate the vacua.
+4. [estimate] σ(n_t) at r ≈ 5e-4 is far above 1e-5 for any planned B-mode survey, so both n_t and its 2.5 % deviation are unobservable. CORRECTION of my PREREG expectation: I wrote "0.3 % deviation"; the absolute Δ ≈ −1.5e-6 was right, the ratio is 2.5 % (Δ/n_t ≈ ε2/2 ≈ 0.0128… × 2 from r/8 = 2ε1). Verdict: CONSISTENCY HOLDS TO 2.5 %.

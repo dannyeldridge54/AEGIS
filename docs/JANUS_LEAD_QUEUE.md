@@ -8,7 +8,7 @@ Order = queue order. Mark `[done D####]` when finished; add follow-ups at the en
 
 ## A. Spectrum observables at the two fixed points
 - [done D1480] L1 Pivot conversion: n_s, α_s at k = 0.002 Mpc⁻¹ from k = 0.05 (via α_s, β_s), both vacua; compare the pivot of 2609.35964 / BK.
-- L2 Tensor tilt n_t to second order and the consistency-relation deviation n_t + r/8, both vacua.
+- [done D1555] L2 Tensor tilt n_t to second order and the consistency-relation deviation n_t + r/8, both vacua.
 - L3 N_* dependence: n_s, r, α_s across N_* = 50–60, both vacua; which N_* range D1478's data prefer.
 - L4 μ-distortion from the derived P(k) (standard window, k ≈ 50–10⁴ Mpc⁻¹), both vacua vs no-running; PIXIE/PRISM σ_μ as [literature].
 - L5 Joint n_s–α_s pull vs 2609.35964 if a correlation is readable; else NULL loud.

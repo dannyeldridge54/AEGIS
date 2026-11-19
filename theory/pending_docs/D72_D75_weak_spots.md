@@ -15844,3 +15844,7 @@ MAP: node=plateau_origin status=postulate touches=[] ripple=no
   - Invalid rows (tilt-dominated, high C): G32 7, G52 8, R2 10, N1 18.
 - [derived] Lens rule from the table: the band selects approach k = 2 (as D1516 found for pure powers); among the automorphic lenses this is met by E(τ,3/2) through its log-gradient (10D, R⁴) and by E(τ,2) through the ratio (8D, T²) — the s' = 2s − 1 duality (D1552) — while higher (E_{5/2}, k = 4) and lower (s = 1) lenses miss. So in Danny's picture the "inflation lens" is the R⁴ ↔ E₂ pair; the other lenses do not carry the observed inflation.
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
+
+## D1555 — Janus L2: n_t ≈ −6.2e-5 both vacua; n_t + r/8 ≈ −1.5e-6 (2.5 %); vacua indistinguishable in the tensor sector
+- aegis-check: units dimensionless ✓; ε cross-check 3e-8 ✓; my PREREG expectation's 0.3 % was wrong (2.5 % correct) — stated; arithmetic python-run ✓.
+- MAP: node=janus status=postulate touches=[] ripple=no
