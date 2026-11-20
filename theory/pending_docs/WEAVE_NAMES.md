@@ -105,3 +105,17 @@ Danny named the first three undiscovered particles of the Weave (paper "Not Yet 
 | **the Cassandra** (symbol A′) | dark photon, 0.3–5 GeV, mixing ε ~ 10⁻¹¹–10⁻⁷ | the light that only the dark side sees; it clears away the Sarah's antiparticles so the Sarah can remain |
 | **the Arthur** (symbol φ, the late thread) | the ultralight dark-energy field coupled to dark matter, b ≈ −0.07 | the quiet field that rises and gently changes the dark matter it touches; its coupling is what makes "negative space" (D1716) |
 Scientific names (Danny 21:03): **sarion** (the Sarah, X), **cassion** (the Cassandra, A′), **arthon** (a quantum of the Arthur field; the field keeps the name Arthur field, coupling b_A). A web search found no prior use of these names in physics (19 Nov 2026).
+
+## World names for the other predicted particles (Danny 21:04: "more god names from around world fitting weave sun time", "keep my families")
+The family names stay on 1–3 (sarion, cassion, arthon). The rest draw on traditions not yet in the Weave, following the charter. They are PROPOSED, pending review by people from each tradition (charter rule 1), because several are living faiths.
+| # | particle | name | tradition | why it fits |
+|---|---|---|---|---|
+| 4 | heavy neutrinos N₁–₃ (10¹⁰–10¹² GeV) | **the Waaqa neutrinos** | Oromo, Horn of Africa (Waaqa, sky god of order) | the heavy hidden ones that set the light neutrinos' balance (seesaw) and write matter's first excess |
+| 5 | inflaton, the early thread | **Malina** | Inuit, Arctic (Malina, the sun who runs across the sky) | the thread's first run starts time and fills the sky |
+| 6 | mirror atoms (version a only) | **Mayari** | Tagalog, Philippines (Mayari, moon goddess, sister of the sun Apolaki) | the mirror world: the moon's reflected light of ours |
+| 7 | stitches, the smallest black holes | **Māui knots** | Polynesia (Māui, who snared the sun with ropes) | the knots that hold the weave tight and slow the sun |
+| 8 | flavour moduli (lepton and quark) | **Haenim and Dalnim** | Korea (sister and brother who became sun and moon) | a pair whose resting places set the patterns of the two families of matter |
+| 9 | dark Higgs (if it exists) | **Raven** | Haida and Tlingit, Pacific Northwest (Raven, who released the hidden light) | gives the hidden light (the cassion) its mass |
+| 10 | family gauge bosons (conditional) | **Triglav** | Slavic (the three-headed god) | three heads for three families, held in balance (Koide) |
+| 11 | portal state (asymmetry into the dark) | **Saulė's crossing** | Baltic, Lithuania and Latvia (Saulė, the sun, crosses the night sea) | the bridge that carries matter's excess across to the dark side |
+New coverage: Horn of Africa, the Arctic, the Philippines, Korea, the Pacific Northwest, the Slavic and Baltic peoples (Polynesia was already present).
