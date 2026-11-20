@@ -172,6 +172,20 @@ def weave_negspace(a):
     return dict(z_switch=z, rhoDEeff_over_today=prof, label='E (closed form, 2% vs full background); coupling not detected (fail, D1725)')
 
 
+def weave_basic(a):
+    """Closed-form Weave/standard relations used across sectors (for CubeMind's own derivations to be checked against):
+    q = 'Omega_nu_h2' {sum_mnu_eV} | 'T_nu' {T_gamma_K} | 'dNstar' {dilution} | 'ns_plateau' {Nstar} | 'r_plateau' {Nstar, D} | 'n_nu_relic' {}"""
+    q = a.get('q')
+    if q == 'Omega_nu_h2': v = float(a['sum_mnu_eV']) / 93.14; lab = 'S'
+    elif q == 'T_nu': v = (4 / 11) ** (1 / 3) * float(a.get('T_gamma_K', 2.7255)); lab = 'S'
+    elif q == 'dNstar': v = -math.log(max(1.0, float(a['dilution']))) / 3; lab = 'S'
+    elif q == 'ns_plateau': v = 1 - 2 / float(a['Nstar']); lab = 'S (leading order; the Weave tilt C is fitted on top)'
+    elif q == 'r_plateau': v = 8 / ((int(a.get('D', 10)) - 2) * float(a['Nstar']) ** 2); lab = 'P (leading-order plateau r = 8/((D-2) N^2))'
+    elif q == 'n_nu_relic': v = 3 * 2 * (3 / 4) * (4 / 11) * 410.7 / 2; lab = 'S (per cm^3, all flavours)'
+    else: return {'error': 'q must be one of Omega_nu_h2, T_nu, dNstar, ns_plateau, r_plateau, n_nu_relic'}
+    return dict(q=q, value=v, label=lab)
+
+
 def weave_paths(a):
     """Connection map: {\"from\":..,\"to\":..} -> shortest chain of shared quantities; {} -> all cross-sector connections."""
     import weave_paths as P
@@ -180,7 +194,7 @@ def weave_paths(a):
 
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
          'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
-         'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths}
+         'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_rung({'m': 8})['eps_formula'] - 0.003117) < 2e-5

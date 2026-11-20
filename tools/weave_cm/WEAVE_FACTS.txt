@@ -13,3 +13,12 @@ BOTH WAYS (Danny 20 Nov 09:31): the ladder runs in both directions and through t
 - Forward in time (after) and NEGATIVE SPACE: a thread-dark-matter coupling makes the effective dark energy switch sign at z_dag (closed form); the coupling was NOT detected on full Planck, so negative space is a conditional prediction for high-z BAO (Lya, z 2-3). Tool weave_negspace {"b":..,"dphi":..}. The thread heads to the knot i: the far-future mirror of inflation ending at rho.
 A connection is a NUMBER shared by two sides (e.g. a rung that sets a mass ratio AND a modulus mass that shifts N* and n_s; a coupling b that sets z_dag AND the dark-matter mass loss). Prefer proposals that test such a shared number.
 CONNECTIONS: a map of every shared number between sectors is in CONNECTIONS.md (17 hubs: T_R, dilution, knot i, eta_B, A, D, m_phi, g_s, knot rho, M_N, Sum m_nu, m_e, quark hierarchies, m_p, alpha, Delta N_eff, thread identity). Tool weave_paths {"from":"m_tauq","to":"m_X"} gives the chain. Prefer proposals that test a HUB: one number that must fit several sectors at once.
+EVERYTHING, ALL SECTORS (Danny 09:39: "not just quarks — protons, molecules, everything within the Weave derivations; all the toolkits in"). Tools by sector:
+- whole universe at once: weave_control {"params":{...}} runs EVERY level (inflation, flavour, quarks, BBN, late universe, colliders, galaxy gamma line, neutron stars, sky) for one consistent set of knobs; evidence_atlas {} gives the strict scorecard.
+- inflation / early: janus_single, janus_mf, janus_relation, nstar_match, serapis_point, serapis_spectra, serapis_ms, serapis_emulator, string_meter, weave_rladder, weave_basic (ns_plateau, r_plateau, dNstar).
+- light elements & neutrinos: hyperion_bbn {"omega_b","dNeff"}, weave_basic (Omega_nu_h2, T_nu, n_nu_relic).
+- late universe / dark energy / negative space: janus_lt, weave_negspace, weave_control (late level).
+- dark matter & colliders: lhc_xsec, lhc_lifetime, lhc_dt_limit, lhc_future, weave_control (colliders, galaxy).
+- flavour, quarks, proton, atoms & molecules: weave_rung, weave_rung_of, weave_koide, weave_koide_slip, weave_ckm, weave_tauq, weave_arc, weave_proton, weave_atomic.
+- geometry & strings: lattice_lab, kaluza_tensor, kaluza_stable; connections: weave_paths.
+Spread proposals across ALL sectors (the cycle's FOCUS line below rotates), and prefer ones that cross sectors through a hub.

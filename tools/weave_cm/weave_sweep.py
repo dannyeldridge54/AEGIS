@@ -84,6 +84,37 @@ def batch_props(out):
     return len(rows)
 
 
+KNOBS = dict(Nstar=(45, 60), omega_b=(0.0218, 0.0229), dark_sector=['none', 'brane_split', 'minimal_equal_sharing', 'mirror_at_bound'],
+             b_A=(-0.12, 0.02), dphi=(0.3, 1.0), wino_mass_GeV=(500, 3000), run=['run2', 'run3', 'hl'], halo=['Einasto', 'NFW', 'Burkert'],
+             rho_sun=(0.3, 0.5), eos=['SLy', 'APR', 'H4'], sugra_m=(1, 16), tauq_mass_GeV=(1e8, 5e12), tauq_phi0=(0.1, 1.0),
+             inflation_model=['serapis_10d', 'serapis_6d'])
+
+
+def batch_engine(out, rng, seconds, cur):
+    """Whole-Weave scan: random knob values across EVERY level of the Weave Control engine (inflation, flavour, quarks, BBN,
+    late universe, colliders, galaxy, stars, sky); each row = one consistent universe with every level's status and outputs."""
+    import sys as _s
+    if cur not in _s.path: _s.path.insert(0, cur)
+    from tools.weave_control import engine as E
+    kn = {k['key'] for lv in E.knobs().values() for k in lv}; t0 = time.time(); n = 0; allp = 0
+    while time.time() - t0 < seconds:
+        p = {}
+        for k, v in KNOBS.items():
+            if k not in kn and k not in E.DEFAULTS: continue
+            if isinstance(v, list): p[k] = rng.choice(v)
+            elif k in ('tauq_mass_GeV',): p[k] = 10 ** rng.uniform(math.log10(v[0]), math.log10(v[1]))
+            elif k == 'sugra_m': p[k] = rng.randint(*v)
+            else: p[k] = rng.uniform(*v)
+        try: r = E.run(p)
+        except Exception as e:
+            out.write(json.dumps(dict(scan='engine', params=p, error=str(e)[:200])) + '\n'); continue
+        lv = {l['id']: dict(status=l['status'], outputs={k: v for k, v in l['outputs'].items() if isinstance(v, (int, float, str, bool))}) for l in r['levels']}
+        ok = all(v['status'] in ('pass', 'open') for k, v in lv.items() if k != 'quarks')
+        allp += ok
+        out.write(json.dumps(dict(scan='engine', params=p, levels=lv, all_pass_except_quarks=ok, label='mixed: per-level labels in the engine')) + '\n'); n += 1
+    return n, allp
+
+
 def run(data_dir, seconds=60, seed=None):
     d = pathlib.Path(data_dir); d.mkdir(parents=True, exist_ok=True)
     ok, free, used = _guard(d)
@@ -95,13 +126,22 @@ def run(data_dir, seconds=60, seed=None):
         with open(d / 'ckm_scan.jsonl', 'a', encoding='utf-8') as f: f.write(json.dumps(pr) + '\n')
         best[f"{pr['model']}:{pr['rung_u']}"] = pr if pr['score'] < top['score'] else top
     with open(d / 'propagation.jsonl', 'a', encoding='utf-8') as f: npr = batch_props(f)
+    ne = na = 0
+    cur = os.environ.get('WEAVE_CURRENT') or str(pathlib.Path(__file__).resolve().parents[3] / 'aegis_current')
+    if pathlib.Path(cur).is_dir():
+        try:
+            with open(d / 'engine_scan.jsonl', 'a', encoding='utf-8') as f: ne, na = batch_engine(f, rng, max(20, seconds // 3), cur)
+        except Exception as e:
+            ne = 'error: ' + str(e)[:120]
     sp = d / 'summary.json'; S = json.loads(sp.read_text()) if sp.exists() else {'rows': 0, 'best': {}}
     S['rows'] += n
     for k, r in best.items():
         if k not in S['best'] or r['score'] < S['best'][k]['score']: S['best'][k] = r
     S['top'] = sorted(S['best'].values(), key=lambda r: r['score'])[:5]
     sp.write_text(json.dumps(S, indent=1))
-    return {'weave_sweep': n, 'prop_rows': npr, 'best_score': round(S['top'][0]['score'], 2) if S['top'] else None,
+    S['engine_rows'] = S.get('engine_rows', 0) + (ne if isinstance(ne, int) else 0); S['engine_all_pass'] = S.get('engine_all_pass', 0) + na
+    sp.write_text(json.dumps(S, indent=1))
+    return {'weave_sweep': n, 'prop_rows': npr, 'engine_rows': ne, 'engine_all_pass': na, 'best_score': round(S['top'][0]['score'], 2) if S['top'] else None,
             'best_at': f"{S['top'][0]['model']} up rung {S['top'][0]['rung_u']}" if S['top'] else None, 'free_GB': round(free, 1)}
 
 
