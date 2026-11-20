@@ -8,7 +8,7 @@ Standing: never publish (Zenodo) or send email without Danny's word; git pull --
 
 ## Queue (head first)
 Q1. [DONE D1668: 3/6 images TM1, 3/6 dead, 0 TM2; why level 4 still open] S₄ rescue: why level 4 (S₄) and not level 3 (A₄)? Derive which image of i (i or τ_SU = −½ + i/2) a slow neutrino modulus reaches, using the basin flow on the level-4 cover (D1610 method).
-Q2. TM1 δ_CP in the Weave: the sum-rule values (74°/286°, 98°/262°) versus the NuFIT 6.0 / T2K+NOvA δ_CP posteriors. Score them.
+Q2. [DONE D1669: lower branch 262–286° survives; upper excluded] TM1 δ_CP in the Weave: the sum-rule values (74°/286°, 98°/262°) versus the NuFIT 6.0 / T2K+NOvA δ_CP posteriors. Score them.
 Q3. Flavour-paper v3 correction DRAFT (TM2 excluded → TM1/S₄). Draft only; publishing needs Danny.
 Q4. P-M: which version, mirror (0.94 GeV) or minimal (5 GeV)? Look for a Weave reason for either unexplained ratio.
 Q5. A3 one-loop sign: the regularised SO(4,4) s = 1 series along the coupling, with a species-scale cutoff.

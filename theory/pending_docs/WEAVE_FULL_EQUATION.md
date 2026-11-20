@@ -71,7 +71,7 @@ The inflation sector gives exactly 0 at ρ. [der] The observed Λ_obs ≈ 10⁻�
 | Koide δ | 2/9 (EMP) | 0.2222136 ± 0.0000095 | consistent; σ(m_τ) → 0.05 MeV sharpens to 3.5e-6 |
 | sin²θ₁₂ | 0.3408 (exact TM2) | JUNO 0.3092 ± 0.0087 (2511.14593); NuFIT 0.307 | EXACT TM2 EXCLUDED: +3.6σ (JUNO), +4.6σ combined (D1652); τ_ν offset now required |
 | sin²θ₂₃ | 0.395–0.605 | 0.561 / 0.470 | consistent |
-| δ_CP | 236° or 125° (s²₂₃ = 0.561); 287° or 74° (0.470) | DUNE, Hyper-K | prediction |
+| δ_CP | TM1/S₄ (D1667–D1669): 286° (s²₂₃ = 0.561) or 262° (0.470); the upper branch (74°/98°) and the old TM2 values are excluded or superseded | NuFIT 6.0 3σ; DUNE, Hyper-K | prediction |
 | θ̄ | 0 (quantised at ρ; FST weights) | |θ̄| < 1e-10 | consistent by construction |
 | CKM J | from generic τ_q (FST) | 3.1e-5 | imported |
 | Λ_obs | not explained | 10⁻¹²⁰ M_P⁴ | open |

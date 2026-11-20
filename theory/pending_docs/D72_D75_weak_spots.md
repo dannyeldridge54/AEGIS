@@ -16582,3 +16582,10 @@ DERIVE (Q1) [computed, group theory]: S₄ ≅ Γ₄ triplet (24 elements verifi
 - 0 of 6 give TM2. Under S₄ the excluded TM2 never appears.
 Reading: with S₄ (level 4), the Weave's "neutrinos at an image of i" gives TM1 or a dead pattern, 50/50 per image. Combined with D1610 (69% of slow moduli reach an image of i), about 35% of starting points end in the viable TM1 configuration, assuming equal basin weight per image (not yet computed).
 Still open: WHY level 4 rather than level 3. No Weave reason yet, so it stays a postulate (P-S4).
+
+## D1669 (CENTRE, 19 Nov 2026) — BIG LOOP (manual Djl): review of D1667, plus Q2 RESULT — TM1 δ_CP survives on ONE branch (PREREG_TM1_DCP)
+REVIEW (D1667): the TM1 relation used, (1 − 3s₁₃²)/(3(1 − s₁₃²)), equals 2511.16348's 1 − 2/(3(1 − s₁₃²)) (both give 0.3184) ✓. Sum-rule sign conventions are checked by the TM2 regression (D1667) ✓.
+DERIVE (Q2) [computed] against NuFIT 6.0, NO (arXiv:2410.05380), each branch paired with its own θ₂₃:
+- IC19 (s₂₃² = 0.561; δ = 177 +19/−20, 3σ [96, 422]): 74.3° OUTSIDE 3σ; 285.7° inside (pull ≈ 1.8).
+- IC24 (s₂₃² = 0.470; δ = 212 +26/−41, 3σ [124, 364]): 97.6° OUTSIDE 3σ; 262.4° inside (pull ≈ 1.4).
+Verdict: TM1 SURVIVES, and the data already pick its branch. The Weave's δ_CP prediction sharpens to the lower-half-plane branch: δ_CP ≈ 262°–286° (≈ −98° to −74°), sin δ < 0, which is the "maximal CP violation" side T2K favours. Scored on DUNE / Hyper-K. The upper branch (74°–98°) is excluded at > 3σ.

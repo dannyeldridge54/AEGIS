@@ -1,0 +1,32 @@
+{
+ "IC19": {
+  "branches": [
+   {
+    "pred": 74.3,
+    "inside_3sigma": false,
+    "approx_pull": 3.11
+   },
+   {
+    "pred": 285.7,
+    "inside_3sigma": true,
+    "approx_pull": 1.79
+   }
+  ],
+  "survives": true
+ },
+ "IC24": {
+  "branches": [
+   {
+    "pred": 97.6,
+    "inside_3sigma": false,
+    "approx_pull": 4.49
+   },
+   {
+    "pred": 262.4,
+    "inside_3sigma": true,
+    "approx_pull": 1.39
+   }
+  ],
+  "survives": true
+ }
+}
