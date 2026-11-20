@@ -420,3 +420,14 @@ Each row is one published constraint with its arXiv number; the σ column is the
 - **Janus**: `ns` spectral index, `r` tensor-to-scalar ratio, `alpha_s` running, `beta_s` running of the running.
 
 Support: built by one person with the help of AI. To donate, email dannyeldridge54@gmail.com.
+## Settings: run presets and standard exports (added 19 Nov 2026)
+CERN+1 now has run presets and the export formats LHC groups use (tools/lhc/settings.py; tests tools/lhc/tests/test_settings.py).
+```
+aegis cern runs                               # run2, run3, run2+3, hl-lhc, hl-lhc-ult, he-lhc, fcc-hh
+aegis cern point run3 wino 700                # cross section, expected pairs, lifetime
+aegis cern reach hl-lhc                       # expected disappearing-track wino reach (974 GeV)
+aegis cern export hepdata run3 wino 500,700   # HEPData-style YAML table
+aegis cern export slha 700                    # SLHA MASS / DECAY blocks (pure wino)
+aegis cern export pyhf 5 3 3 0.5              # one-bin pyhf / HistFactory workspace (signal, background, observed, bkg uncertainty)
+```
+Scope: electroweakinos (wino, higgsino) only; not an event generator or detector simulation. Higgsino tables cover 100–1500 GeV at every energy; wino covers the 13 TeV table's range scaled with sqrt(s). Run-3 luminosity (300 fb⁻¹) is approximate.

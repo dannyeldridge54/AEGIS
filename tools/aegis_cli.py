@@ -9,6 +9,10 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   cern limit [ATLAS_136|ATLAS_36]   disappearing-track recast limit with theory band
   cern higgsino <mass_GeV> [TeV]    higgsino pair cross sections (fb), 100-1500 GeV
   cern future                       HL-LHC / HE-LHC / FCC-hh wino reach
+  cern runs                         run presets: run2, run3, run2+3, hl-lhc, hl-lhc-ult, he-lhc, fcc-hh
+  cern point <run> <model> <mass>   cross section, expected pairs, lifetime for a run (model: wino|higgsino)
+  cern reach <run>                  expected disappearing-track wino reach for a run
+  cern export hepdata <run> <model> <m1,m2,..> | slha <mass> | pyhf <s> <b> <n_obs> [sigma_b]
   lattice <command> [args]          Lattice Lab (e.g. lattice hexagons E8, lattice energy E6 1.25)
   string kk|stable [D=..] [gamma=..] [fd]  10D/6D string vacua: scalar KK masses (10D critical, D1214), stability (D1140)
   string modint [T=2i] [U=i]                 DKL threshold over F: numeric vs closed form (string-calc S5a)
@@ -70,6 +74,22 @@ def cern(args):
         out.update(total_fb=sum(out.values()), mass_GeV=m, sqrt_s_TeV=float(rs), note='Resummino aNNLO+NNLL tables (2304.11915 Tab. 4); other energies by Drell-Yan scaling'); _show(out)
     elif c == 'future':
         _show(future.table())
+    elif c == 'runs':
+        from tools.lhc import settings as S
+        _show({k: dict(sqrt_s_TeV=v[0], lumi_fb=v[1], note=v[2]) for k, v in S.RUNS.items()})
+    elif c == 'point':        # cern point <run> <wino|higgsino> <mass>
+        from tools.lhc import settings as S
+        _show(S.point(args[1], args[2], float(args[3])))
+    elif c == 'reach':        # cern reach <run>
+        from tools.lhc import settings as S
+        _show(S.reach(args[1] if len(args) > 1 else 'hl-lhc'))
+    elif c == 'export':       # cern export hepdata <run> <model> <m1,m2,...> | slha <mass> | pyhf <s> <b> <n_obs> [sigma_b]
+        from tools.lhc import settings as S
+        k = args[1]
+        if k == 'hepdata': print(S.scan(args[2], args[3], [float(x) for x in args[4].split(',')], 'hepdata'))
+        elif k == 'slha': print(S.slha(float(args[2])))
+        elif k == 'pyhf': print(json.dumps(S.pyhf_workspace(float(args[2]), float(args[3]), float(args[4]), float(args[5]) if len(args) > 5 else 0.0), indent=1))
+        else: print('export kinds: hepdata, slha, pyhf')
     else: print(__doc__)
 
 def janus(args):

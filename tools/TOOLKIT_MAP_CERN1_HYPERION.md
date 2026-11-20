@@ -11,6 +11,7 @@ Rules: lock before recomputing; data-file downloads need Danny's OK; each row's 
 | lifetime.py | wino Δm and cτ | Ibe–Matsumoto–Sato 1212.5989 two-loop fit | 3-loop Δm (if published) | check | current |
 | recast_dt.py | disappearing-track recast + HL-LHC projection | ATLAS 2201.02472 (136 fb⁻¹, Run 2) | **ATLAS/CMS Run-3 disappearing-track results (2025–26)**; CMS Run-2 full combination | **HIGH** | Run-2: 2201.02472 anchored; NEW 2603.08315 (670 obs / 770 exp GeV) found D1722, re-anchor NULL (no benchmark yield quoted; needs HEPData, D1723) |
 | future.py | reach at any √s, lumi | DY scaling; FCC-hh study | 2026 European Strategy Briefing Book numbers (arXiv:2511.03883) | medium | pre-ESPP |
+| settings.py (NEW 19 Nov) | run presets (Run 2, Run 3, Run 2+3, HL-LHC, HL ultimate, HE-LHC, FCC-hh); exports pyhf JSON, HEPData YAML, SLHA | all modules above | — | none | 6 tests PASS |
 | stats.py | CLs (pyhf + independent) | — | — | none | validated |
 | kinematics.py | boost distribution from the xsec table | 2304.11915 | — | none | validated |
 | selftest.py / panel.py | symmetry tests; SERAPIS window vs reach | theory map | wino window now 0.67–1.25 TeV (D1324) | low | check panel label |
