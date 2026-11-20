@@ -12,6 +12,7 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   janus models                      model library
   janus score <model|V(phi)> [N*]   n_s, r, alpha_s and pulls vs Planck 2018, CMB-SPA, CMB-SPA+DESI, BK18
   janus table [N*]                  every library model scored
+  mapper plan [okc|lat,lon] [aperture_mm] [ISO-UTC] [csv|votable|astroplan]   what your telescope can see tonight, ranked
   hyperion pulls [omega_b] [dNeff]  Y_p and D/H with pulls vs LBT 2026, Aver 2021, Cooke 2018
   hyperion ns [SLy|AP4]             neutron-star maximum mass
   hyperion jfactor [profile] [rho]  J-factor for the H.E.S.S. inner-Galaxy region
@@ -399,12 +400,26 @@ def menu(args):
         except (ValueError, IndexError): print('Not a choice.')
         except Exception as e: print('Error:', e)
 
+def mapper(args):
+    """mapper plan [site|lat,lon] [aperture_mm] [ISO-UTC] [csv|votable|astroplan]"""
+    from tools.mapper import planner as P
+    if not args or args[0] != 'plan': _help_for('mapper'); return
+    site = args[1] if len(args) > 1 else 'okc'
+    if ',' in site: la, lo = (float(x) for x in site.split(',')); site = (la, lo, 0.0)
+    p = P.plan(site, args[3] if len(args) > 3 else None, aperture_mm=float(args[2]) if len(args) > 2 else 80.0)
+    fmt = args[4] if len(args) > 4 else None
+    if fmt == 'csv': print(P.to_csv(p)); return
+    if fmt == 'votable': print(P.to_votable(p)); return
+    if fmt == 'astroplan': print(P.to_astroplan_csv(p)); return
+    head = {k: v for k, v in p.items() if k != 'targets'}; _show(head)
+    _show([{k: r[k] for k in ('name', 'kind', 'mag', 'alt_now', 'az_now', 'pct_of_best', 'best_alt', 'time_best', 'visible_now')} for r in p['targets'][:25]])
+
 def main(argv=None):
     for st in (sys.stdout, sys.stderr):   # Windows consoles default to cp1252, which cannot print α, σ, ⁻¹
         try: st.reconfigure(encoding='utf-8', errors='replace')
         except Exception: pass
     _root(); argv = sys.argv[1:] if argv is None else argv
-    cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'string': string, 'test': test, 'license': license_, 'menu': menu}
+    cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'mapper': mapper, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'string': string, 'test': test, 'license': license_, 'menu': menu}
     if '--format' in argv:
         i = argv.index('--format')
         if i + 1 >= len(argv) or argv[i + 1] not in ('json', 'csv', 'table'):

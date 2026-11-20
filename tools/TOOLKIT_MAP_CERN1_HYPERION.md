@@ -79,12 +79,12 @@ Mapper queue: M1 complaints search (amateur + professional observers: Stellarium
 Sources: SF Bay amateur list thread "Astro software seems like garbage"; KStars observation-workflow discussion (kstars-devel 2020-10); SkySafari / Stellarium feature-request boards.
 | complaint | Mapper feature | id |
 |---|---|---|
-| no tool makes "a list of targets my telescope can do tonight from my location" (e.g. doubles a 60 mm can split) | target finder: filter by aperture (Dawes limit / limiting magnitude), site, date, altitude window | M1a |
+| no tool makes "a list of targets my telescope can do tonight from my location" (e.g. doubles a 60 mm can split) | target finder: filter by aperture (Dawes limit / limiting magnitude), site, date, altitude window | M1a DONE (tools/mapper/planner.py; `aegis mapper plan`) |
 | no single printable chart with designations, magnitudes, separations | printable PDF finder chart for a target list (labels on, one page) | M1b |
 | only one Telrad/FOV circle, can't rotate FOV or place several | multiple FOV overlays (eyepiece/camera), rotatable, placeable anywhere | M1c |
-| fixed meridian-transit scheduling breaks when plans shift; Dobsonian zenith hole | session plan sorted by "% of max altitude now", live re-sort, zenith-hole demotion | M1d |
+| fixed meridian-transit scheduling breaks when plans shift; Dobsonian zenith hole | session plan sorted by "% of max altitude now", live re-sort, zenith-hole demotion | M1d DONE (in planner) |
 | wish list grows unmanageable; can't mark observed; no projects | wish list + per-project lists, "observed" checkbox that demotes, filters (constellation, catalog, magnitude, culminating tonight) | M1e |
-| tools don't talk to each other (coordinates to imaging/control software) | export CSV / VOTable / astroplan target table / N.I.N.A. & Stellarium-compatible lists | M1f (= M2) |
+| tools don't talk to each other (coordinates to imaging/control software) | export CSV / VOTable / astroplan target table / N.I.N.A. & Stellarium-compatible lists | M1f/M2 DONE (CSV, VOTable with units, name/ra/dec table) |
 | download reference images before going to a dark site | offline pack: DSS/HiPS cutouts for the session list | M1g |
 These join M2 (observability planner + target-list export) in the rotation; M1a + M1d + M1f are built first (one tick each).
 
