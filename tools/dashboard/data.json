@@ -1,8 +1,8 @@
 {
  "provenance": {
   "toolkit": "AEGIS dashboard",
-  "version": "007304c9",
-  "created_utc": "2026-11-20T10:34:39Z",
+  "version": "0b352f63+dirty",
+  "created_utc": "2026-11-20T12:05:42Z",
   "settings": {
    "Nstar": 55
   },
@@ -214,10 +214,11 @@
    "code": "primat",
    "Yp": 0.2471871417270726,
    "DH": 2.4482576081094778e-05,
+   "theory_sigma": "PRIMAT",
    "pulls": {
-    "Yp:LBT2026": 1.0670320977481578,
-    "Yp:Aver2021": 0.5550416844331193,
-    "DH:Cooke2018": -2.6247463963507416
+    "Yp:LBT2026": 1.0580240268822907,
+    "Yp:Aver2021": 0.5543491805022764,
+    "DH:Cooke2018": -1.660536494849437
    }
   },
   "neutron_stars": [

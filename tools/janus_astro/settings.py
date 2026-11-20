@@ -28,13 +28,26 @@ def pull(pred, meas):
     v, s, _ = meas
     return None if s in (None, 0) else (pred - v)/s
 
-def bbn(omega_b=0.02237, dNeff=0.0, code='primat'):
-    """Helium and deuterium from Hyperion's BBN wrapper, scored against every stored measurement."""
+# Theory σ conventions (PREREG_W5_BBN_THEORY): PRIMAT sets the status in Weave Control; Yeh+Olive+Fields is the wider one.
+BBN_THEORY = {'PRIMAT': dict(Yp=('abs', 0.00017), DH=('rel', 0.015), src='Y_p arXiv:1801.08023; D/H Paris/PRIMAT 2.439 ± 0.037 (via arXiv:2011.13874)'),
+              'Yeh+Olive+Fields': dict(Yp=('abs', 0.00018), DH=('rel', 0.110/2.506), src='arXiv:2011.13874 (σ includes the ω_b error)')}
+
+def bbn(omega_b=0.02237, dNeff=0.0, code='primat', theory=None):
+    """Helium and deuterium from Hyperion's BBN wrapper, scored against every stored measurement.
+    theory=None (default, backwards compatible): observational σ only. theory='PRIMAT' or 'Yeh+Olive+Fields': the sourced
+    nuclear-rate theory σ is added in quadrature (PREREG_W5_BBN_THEORY)."""
     from . import bbn as B
     yp, dh = B.Yp(omega_b, dNeff, code), B.DH(omega_b, dNeff, code)
-    return dict(omega_b=omega_b, dNeff=dNeff, code=code, Yp=yp, DH=dh,
-                pulls={**{f'Yp:{k}': pull(yp, m) for k, m in DATA['Yp'].items()},
-                       **{f'DH:{k}': pull(dh, m) for k, m in DATA['DH'].items()}})
+    model = dict(Yp=yp, DH=dh)
+    def pl(q, m):
+        v, s, _ = m
+        if s in (None, 0): return None
+        if theory:
+            kind, t = BBN_THEORY[theory][q]; s = math.hypot(s, t if kind == 'abs' else t*model[q])
+        return (model[q] - v)/s
+    return dict(omega_b=omega_b, dNeff=dNeff, code=code, Yp=yp, DH=dh, theory_sigma=theory or 'observational only',
+                pulls={**{f'Yp:{k}': pl('Yp', m) for k, m in DATA['Yp'].items()},
+                       **{f'DH:{k}': pl('DH', m) for k, m in DATA['DH'].items()}})
 
 def neutron_star(eos='SLy'):
     from . import ns

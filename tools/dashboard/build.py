@@ -12,7 +12,7 @@ def main():
     janus = [dict(model=m, **{k: J.predict(m, 55)[k] for k in ('ns', 'r', 'Nstar')}, scores=J.score(J.predict(m, 55)))
              for m in ('serapis_10d', 'serapis_6d', 'weave_10d', 'starobinsky', 'alpha_1_3', 'phi2')]
     consts = {q: {k: dict(value=v[0], sigma=v[1], kind=v[2], source=v[3]) for k, v in d.items()} for q, d in J.CONSTRAINTS.items()}
-    b = H.bbn(); ns = [H.neutron_star(e) for e in H.EOS]
+    b = H.bbn(theory='PRIMAT'); ns = [H.neutron_star(e) for e in H.EOS]
     reach = [C.reach(r) for r in ('run2', 'run3', 'hl-lhc', 'hl-lhc-ult')]
     d1713 = {'Pantheon+': {'lcdm': 2432.76, 'thread': 2430.14, 'coupled': 2432.28},
              'DES-Y5': {'lcdm': 2676.47, 'thread': 2668.33, 'coupled': 2667.44},

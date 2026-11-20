@@ -142,7 +142,15 @@ function bars(items, lo, hi, label) {   // items: [name, value, cls]
   return frame(s, h + 10);
 }
 const pc = v => typeof v === 'string' ? (v === 'pass' ? 'pass' : 'fail') : (Math.abs(v) < 2 ? 'pass' : Math.abs(v) < 3 ? 'tension' : 'fail');
-function chartBBN(L) { return bars(Object.entries(L.pulls).map(([k, v]) => [k, v, pc(v)]), -4, 4, 'pull (σ, observational errors only)'); }
+function chartBBN(L) {   // PRIMAT bars (they set the status); obs-only and Yeh+ as tick marks on the same rows
+  const P = Object.entries(L.pulls).filter(([k]) => k.includes('(PRIMAT'));
+  let svg = bars(P.map(([k, v]) => [k.replace(' (PRIMAT theory σ)', ''), v, pc(v)]), -4, 4, 'pull (σ): bar = obs ⊕ PRIMAT theory (status) · | obs only · ¦ Yeh+');
+  const x = v => 150 + (Math.max(-4, Math.min(4, v)) + 4) / 8 * 250;
+  const ticks = P.map(([k], i) => { const base = k.replace(' (PRIMAT theory σ)', ''), o = L.pulls[base + ' (obs only)'], y = L.pulls[base + ' (Yeh+ theory σ)'];
+    return (o != null ? `<line x1="${x(o)}" x2="${x(o)}" y1="${22*i+5}" y2="${22*i+25}" stroke="var(--fg)" stroke-width="2"><title>obs only ${num(o,2)}</title></line>` : '') +
+           (y != null ? `<line x1="${x(y)}" x2="${x(y)}" y1="${22*i+5}" y2="${22*i+25}" stroke="var(--muted)" stroke-dasharray="2 2" stroke-width="2"><title>Yeh+ ${num(y,2)}</title></line>` : ''); }).join('');
+  return svg.replace('</svg>', ticks + '</svg>');
+}
 function chartLate(L) {
   const D = L.outputs.D1725; const it = [];
   for (const [k, r] of Object.entries(D)) { it.push([`${k} Δχ² thread`, r.d_thread, 'cyan']); it.push([`${k} ΔAIC thread`, r.dAIC_thread, 'violet']); }

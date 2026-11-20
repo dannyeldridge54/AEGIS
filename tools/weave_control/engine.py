@@ -132,8 +132,8 @@ def flavour(p):
 
 # ---------------- D. BBN (Hyperion), fed by the dark sector ----------------
 # PREREG_W5_BBN_THEORY: theory σ on Hyperion's own Y_p and D/H. PRIMAT sets the status; Yeh+ and obs-only are shown.
-BBN_THEORY = {'PRIMAT': dict(Yp=('abs', 0.00017), DH=('rel', 0.015), src='Y_p: arXiv:1801.08023; D/H: Paris/PRIMAT 2.439 ± 0.037 (via arXiv:2011.13874)'),
-              'Yeh+Olive+Fields': dict(Yp=('abs', 0.00018), DH=('rel', 0.110/2.506), src='arXiv:2011.13874 (σ includes the ω_b error)')}
+# PREREG_W5_BBN_THEORY: theory σ on Hyperion's own Y_p and D/H. PRIMAT sets the status; Yeh+ and obs-only are shown.
+from tools.janus_astro.settings import BBN_THEORY   # one source of truth (Hyperion)
 def bbn(p):
     from tools.janus_astro import settings as H
     dN, why = DARK_SECTORS[p['dark_sector']]
