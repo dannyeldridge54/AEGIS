@@ -8,10 +8,10 @@ Status words: lit · formula (paper fit, m ≤ 7) · extrap · computed · deriv
 | place | occupant | source | status |
 |---|---|---|---|
 | knot ρ (rung ∞) | inflaton endpoint; Koide-circulant charged leptons? | D1606, D1595 | derived / TENSION |
-| rung 8 | up quarks (u, c, t) | D1733, D1734 | computed (chance 52%) |
+| rung 8 | up quarks (u, c, t) | D1733, D1734, D1736 | computed (chance 52%); rung position now computed, not extrapolated |
 | rung 1 | down quarks (d, s, b) | D1733 | computed |
 | rung 1 | charged leptons (e, μ, τ) | D1734 T1 | computed / TENSION with knot |
-| arc (m,n) | — | 2201.02020 | open (Q11) |
+| arc (m,n) | — (position set by the ratio m:n alone) | D1736 | computed |
 | knot i | neutrino modulus (P-F3), dark thread / Arthur field at rest | D1610, D1653 | derived |
 | rungs 11 → ∞ (ρ side) | empty in the SM; room for hidden families | D1734 T4 | structure only |
 
