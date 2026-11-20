@@ -13,19 +13,19 @@
   const box = document.createElement('div'); box.id = 'gallerybox'; box.hidden = true;
   box.style.cssText = 'position:absolute;inset:0;z-index:6;background:var(--bg);display:flex;flex-direction:column';
   box.innerHTML = `<div id="gtabs" style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line)"></div>
-    <div style="position:relative;flex:1;min-height:0"><canvas id="gcv" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+    <div style="position:relative;flex:1;min-height:0"><canvas id="gcv" style="position:absolute;inset:0 0 44px 0;width:100%;height:calc(100% - 44px)"></canvas>
     <div id="gcap" class="small" style="position:absolute;left:12px;bottom:10px;right:12px;color:var(--muted);pointer-events:none"></div></div>`;
   stage.appendChild(box);
   const gt = box.querySelector('#gtabs'), cv = box.querySelector('#gcv'), cx = cv.getContext('2d'), cap = box.querySelector('#gcap');
-  const palBtn = document.createElement('button'); palBtn.className = 'btn on'; palBtn.textContent = 'Palette: blue→magenta';
+  const palBtn = document.createElement('button'); palBtn.className = 'btn on'; palBtn.style.marginLeft = 'auto'; palBtn.textContent = 'Palette: blue→magenta';
   const soundBtn = document.createElement('button'); soundBtn.className = 'btn'; soundBtn.textContent = 'Sound: off'; soundBtn.hidden = true;
   let cur = 'bundle', spectrum = false, t0 = performance.now();
   try { cur = localStorage.getItem('janus.gallery') || 'bundle'; spectrum = localStorage.getItem('janus.gpal') === 'rgb'; } catch (e) {}
   VIEWS.forEach(([k, name]) => { const b = document.createElement('button'); b.className = 'btn'; b.textContent = name; b.dataset.k = k;
     b.onclick = () => { cur = k; mark(); try { localStorage.setItem('janus.gallery', k); } catch (e) {} reset(); }; gt.appendChild(b); });
   gt.appendChild(palBtn); gt.appendChild(soundBtn);
-  palBtn.onclick = () => { spectrum = !spectrum; palBtn.textContent = spectrum ? 'Palette: full RGB' : 'Palette: blue→magenta'; try { localStorage.setItem('janus.gpal', spectrum ? 'rgb' : 'jm'); } catch (e) {} };
-  palBtn.textContent = spectrum ? 'Palette: full RGB' : 'Palette: blue→magenta';
+  palBtn.onclick = () => { spectrum = !spectrum; palBtn.textContent = spectrum ? 'Palette: RGB' : 'Palette: blue→magenta'; try { localStorage.setItem('janus.gpal', spectrum ? 'rgb' : 'jm'); } catch (e) {} };
+  palBtn.textContent = spectrum ? 'Palette: RGB' : 'Palette: blue→magenta';
   function mark() { gt.querySelectorAll('[data-k]').forEach(b => b.classList.toggle('on', b.dataset.k === cur)); soundBtn.hidden = cur !== 'spectro'; }
   // palette: u in [0,1] → colour.  Janus: blue (215°) → magenta (295°).  Spectrum: red (0°) → violet (300°).
   const pal = (u, a = 1, l = 60) => { u = Math.min(1, Math.max(0, u)); const h = spectrum ? u*300 : 215 + u*80; return `hsla(${h},100%,${l}%,${a})`; };
@@ -66,7 +66,7 @@
       cx.fillStyle = g; cx.beginPath(); cx.arc(X, Y, R, a0, a1); cx.quadraticCurveTo(X, Y, X + R*Math.cos(b0), Y + R*Math.sin(b0)); cx.arc(X, Y, R, b0, b1); cx.quadraticCurveTo(X, Y, X + R*Math.cos(a0), Y + R*Math.sin(a0)); cx.fill(); }
     cx.globalCompositeOperation = 'source-over';
     arc.forEach(([s, e], i) => { const c = pal(i/8); glow(c, 10); cx.strokeStyle = c; cx.lineWidth = 10; cx.beginPath(); cx.arc(X, Y, R + 8, s, e); cx.stroke();
-      const m = (s + e)/2; text(LANES[i], X + (R + 26)*Math.cos(m) - 18, Y + (R + 26)*Math.sin(m) + 4, c, 12); });
+      const m = (s + e)/2; cx.textAlign = Math.cos(m) > 0 ? 'left' : 'right'; text(LANES[i], X + (R + 22)*Math.cos(m), Y + (R + 22)*Math.sin(m) + 4, c, 12); cx.textAlign = 'left'; });
     cap.textContent = 'Chord — the nine lanes around the circle; each ribbon’s width is the number of wires between two lanes.';
   }
   // ---- 3. hive (one axis per lane, radius = rank by degree) ----
@@ -103,10 +103,10 @@
   }
   // ---- 5. arc flow (lanes along a line; supporting wires above, opposing wires below) ----
   function arcflow(t) {
-    const xs = {}; order.forEach((i, k) => xs[i] = 30 + (W - 60)*k/(N.length - 1)); const Y = H*0.55; cx.globalCompositeOperation = 'lighter'; cx.lineWidth = 1.2;
+    const xs = {}; order.forEach((i, k) => xs[i] = 30 + (W - 60)*k/(N.length - 1)); const Y = H*0.5; cx.globalCompositeOperation = 'lighter'; cx.lineWidth = 1.2;
     E.forEach((e, k) => { const a = xs[id2i[e.s]], b = xs[id2i[e.t]], m = (a + b)/2, r = Math.abs(b - a)/2, up = e.sign >= 0;
       const ph = (t*0.4 + k*0.031) % 1; const g = cx.createLinearGradient(Math.min(a, b), 0, Math.max(a, b), 0); g.addColorStop(0, pal(Math.min(a, b)/W, 0.55)); g.addColorStop(1, pal(Math.max(a, b)/W, 0.55));
-      cx.strokeStyle = g; cx.beginPath(); cx.ellipse(m, Y, r, Math.min(r, H*0.4), 0, up ? Math.PI : 0, up ? 2*Math.PI : Math.PI); cx.stroke();
+      cx.strokeStyle = g; cx.beginPath(); cx.ellipse(m, Y, r, Math.min(r, H*0.34), 0, up ? Math.PI : 0, up ? 2*Math.PI : Math.PI); cx.stroke();
       const ang = up ? Math.PI + ph*Math.PI : ph*Math.PI, px = m + r*Math.cos(ang)*(a < b ? -1 : 1), py = Y + Math.min(r, H*0.4)*Math.sin(ang); cx.fillStyle = '#fff'; cx.fillRect(px - 1, py - 1, 2, 2); });
     cx.globalCompositeOperation = 'source-over';
     order.forEach(i => { const c = pal(xs[i]/W); glow(c, 6); cx.fillStyle = c; cx.fillRect(xs[i] - 1.5, Y - 4, 3, 8); });
@@ -121,9 +121,9 @@
     const map = ([x, y]) => { const dx = x - f[0], dy = y - f[1], d = Math.hypot(dx, dy), k = Math.tanh(1.8*d)/(d + 1e-9); return [X + R*dx*k, Y + R*dy*k, 1 - Math.tanh(1.8*d)]; };
     const Q = raw.map(map); cx.strokeStyle = pal(0.5, 0.35); cx.lineWidth = 1.5; cx.beginPath(); cx.arc(X, Y, R, 0, 7); cx.stroke();
     cx.globalCompositeOperation = 'lighter'; cx.lineWidth = 1;
-    E.forEach(e => { const p = Q[id2i[e.s]], q = Q[id2i[e.t]]; cx.strokeStyle = pal((p[0] + q[0])/(2*W), 0.2 + 0.5*Math.min(p[2], q[2])); cx.beginPath(); cx.moveTo(p[0], p[1]); cx.lineTo(q[0], q[1]); cx.stroke(); });
+    E.forEach(e => { const p = Q[id2i[e.s]], q = Q[id2i[e.t]]; cx.strokeStyle = pal((laneOf(N[id2i[e.s]]) + laneOf(N[id2i[e.t]]))/16, 0.2 + 0.5*Math.min(p[2], q[2])); cx.beginPath(); cx.moveTo(p[0], p[1]); cx.lineTo(q[0], q[1]); cx.stroke(); });
     cx.globalCompositeOperation = 'source-over';
-    Q.forEach((p, i) => { const c = pal(p[0]/W); glow(c, 8); cx.fillStyle = c; cx.beginPath(); cx.arc(p[0], p[1], 1 + 5*p[2], 0, 7); cx.fill(); if (p[2] > 0.75) text(N[i].id, p[0] + 6, p[1] - 4, c, 11); });
+    Q.forEach((p, i) => { const c = pal(laneOf(N[i])/8); glow(c, 8); cx.fillStyle = c; cx.beginPath(); cx.arc(p[0], p[1], 1 + 5*p[2], 0, 7); cx.fill(); if (p[2] > 0.75) text(N[i].id, p[0] + 6, p[1] - 4, c, 11); });
     cap.textContent = 'Hyperbolic view — the whole weave inside a disk; move the mouse to focus: what you look at grows, the rest shrinks toward the rim.';
   }
   // ---- 7. Poincaré disk tiled by SL(2,ℤ): the space τ lives in; vacua i and ρ marked ----
@@ -167,15 +167,16 @@
     const layout = L || { A2: { string_meter: [0, 0], serapis_e: [1, 0], serapis_point: [0, 1], X_ms: [-1, 1], L_nstar: [-1, 0], L_bridge: [0, -1], inverse_meter: [1, -1] }, D4: { nstar_e: [0, 0], L_reheat: [1, 0], band_e: [0, 1], caps: [-1, 1] }, E8: { wino_window: [0, 0], Q_dt: [1, 0], Q_panel: [0, 1], Q_future: [-1, 1], Q_life: [-1, 0], tests_cmb: [0, -1], G_A2: [1, -1] }, Leech: { X_epstein: [0, 0], X_hexin: [1, 0], X_mod: [0, 1], S_stab: [-1, 1] } };
     const a = t*0.3, ca = Math.cos(a), sa = Math.sin(a), s = Math.min(W, H)/9, pos = {};
     const pj = (x, y, z) => { const X1 = x*ca - y*sa, Y1 = x*sa + y*ca, k = 9/(9 + Y1*0.6); return [W/2 + X1*s*k, H*0.55 - z*s*k + Y1*s*0.35*k, k]; };
-    ORDER.forEach((Lr, li) => { const z = li*1.6 - 2.4; const hex = []; for (let k = 0; k <= 6; k++) { const th = k*Math.PI/3; hex.push(pj(2.1*Math.cos(th), 2.1*Math.sin(th), z)); }
-      cx.fillStyle = pal(li/3, 0.07); cx.strokeStyle = pal(li/3, 0.6); cx.lineWidth = 1.2; cx.beginPath(); hex.forEach((p, k) => k ? cx.lineTo(p[0], p[1]) : cx.moveTo(p[0], p[1])); cx.fill(); cx.stroke();
-      text(Lr + ' layer', hex[0][0] + 10, hex[0][1], pal(li/3), 12);
+    ORDER.forEach((Lr, li) => { const z = (li - (ORDER.length - 1)/2)*0.9; const hex = []; for (let k = 0; k <= 6; k++) { const th = k*Math.PI/3; hex.push(pj(2.1*Math.cos(th), 2.1*Math.sin(th), z)); }
+      cx.fillStyle = pal(li/(ORDER.length - 1), 0.07); cx.strokeStyle = pal(li/(ORDER.length - 1), 0.6); cx.lineWidth = 1.2; cx.beginPath(); hex.forEach((p, k) => k ? cx.lineTo(p[0], p[1]) : cx.moveTo(p[0], p[1])); cx.fill(); cx.stroke();
+      cx.textAlign = 'right'; text(Lr + ' layer', hex[3][0] - 10, hex[3][1] + 4, pal(li/(ORDER.length - 1)), 12); cx.textAlign = 'left';
       Object.entries(layout[Lr] || {}).forEach(([n, [q, r]]) => { pos[n] = pj(Math.sqrt(3)*(q + r/2)*0.8, 1.5*r*0.8, z); }); });
     const okc = ok => ok ? pal(0.15) : '#ff3d8b'; cx.globalCompositeOperation = 'lighter';
     (res?.laws || []).forEach(l => { const p = l.nodes.map(n => pos[n]).filter(Boolean); if (p.length < 2) return; cx.strokeStyle = okc(l.ok); cx.lineWidth = l.kind === 'up' || l.kind === 'down' ? 2 : 1;
       cx.beginPath(); p.forEach((q, k) => k ? cx.lineTo(q[0], q[1]) : cx.moveTo(q[0], q[1])); if (l.kind === 'triangle') cx.closePath(); cx.stroke(); });
     cx.globalCompositeOperation = 'source-over';
     Object.entries(pos).forEach(([n, p]) => { const c = pal((p[0])/W); glow(c, 10); cx.fillStyle = c; cx.beginPath(); cx.arc(p[0], p[1], 4*p[2], 0, 7); cx.fill(); });
+    if (!res) { cx.textAlign = 'center'; text('Run the circuit (Circuit tab) to draw its laws here', W/2, H - 14, pal(0.5), 14); cx.textAlign = 'left'; }
     cap.textContent = res ? `SERAPIS circuit in 3D — health ${(res.health*100).toFixed(0)}% (${res.closed}/${res.n_laws} laws). A2 core at the bottom; wires run up the nesting chain.` : 'SERAPIS circuit in 3D — run the circuit (Circuit tab or Derive weave) to light its wires.';
   }
   // ---- 10. resonance spectrogram (+ optional sound) ----
@@ -188,9 +189,9 @@
     const ms = MODES.modes.filter(m => m.freq > 0), mi = Object.fromEntries(MODES.ids.map((k, i) => [k, i]));
     const A = (typeof amp !== 'undefined') ? amp : null;
     const col = ms.map((m, k) => { let s = 0; if (A) for (let i = 0; i < N.length; i++) s += (m.vec[mi[N[i].id]] ?? 0)*A[i]; return Math.abs(s) + 0.25*(1 + Math.sin(t*(1 + m.freq) + k)); });
-    spec.push(col); if (spec.length > 120) spec.shift();
-    const cw = (W - 80)/120, rh = (H - 60)/ms.length;
-    spec.forEach((c, x) => c.forEach((v, k) => { cx.fillStyle = pal(k/(ms.length - 1), Math.min(1, v*0.8), 30 + 35*Math.min(1, v)); cx.fillRect(60 + x*cw, 20 + (ms.length - 1 - k)*rh, cw + 0.5, rh - 1); }));
+    if (t - (spectro.last || 0) > 0.1 || spec.length === 0) { spec.push(col); spectro.last = t; } if (spec.length > 120) spec.shift();
+    const cw = (W - 130)/120, rh = (H - 60)/ms.length;
+    spec.forEach((c, x) => c.forEach((v, k) => { cx.fillStyle = pal(k/(ms.length - 1), Math.min(1, v*0.8), 30 + 35*Math.min(1, v)); cx.fillRect(110 + x*cw, 20 + (ms.length - 1 - k)*rh, cw + 0.5, rh - 1); }));
     ms.forEach((m, k) => text(`mode ${m.k} · ω ${(+m.freq).toFixed(2)}`, 6, 20 + (ms.length - 1 - k)*rh + rh/2, pal(k/(ms.length - 1)), 10));
     if (audio) osc.forEach((g, k) => g.gain.setTargetAtTime(Math.min(0.04, 0.02*(col[k] || 0)), audio.currentTime, 0.1));
     cap.textContent = 'Resonance — the weave’s normal modes as a live waterfall (time → right). Send waves on the Weave tab to excite them; Sound plays each mode as a tone.';
@@ -213,27 +214,27 @@
   let sand = null;
   function cymatics(t) {
     if (!sand || (sand.k !== Math.floor(t/6))) { sand = Array.from({ length: 9000 }, () => [Math.random()*2 - 1, Math.random()*2 - 1]); sand.k = Math.floor(t/6); }
-    if (!sand) sand = Array.from({ length: 9000 }, () => [Math.random()*2 - 1, Math.random()*2 - 1]);
     const k = Math.floor(t/6) % 8, pairs = [[1, 2], [2, 3], [1, 4], [3, 4], [2, 5], [3, 5], [4, 5], [3, 7]], [n, m] = pairs[k];
     const f = (x, y) => Math.cos(n*Math.PI*x/2)*Math.cos(m*Math.PI*y/2) - Math.cos(m*Math.PI*x/2)*Math.cos(n*Math.PI*y/2);
     const S = Math.min(W, H)*0.44, X = W/2, Y = H/2;
     for (let it = 0; it < 4; it++) sand.forEach(p => { const a = Math.abs(f(p[0], p[1])); p[0] += (Math.random() - 0.5)*0.2*a; p[1] += (Math.random() - 0.5)*0.2*a; p[0] = Math.max(-1, Math.min(1, p[0])); p[1] = Math.max(-1, Math.min(1, p[1])); });
     cx.strokeStyle = pal(0.5, 0.4); cx.strokeRect(X - S, Y - S, 2*S, 2*S);
     sand.forEach(p => { const u = (p[0] + 1)/2; cx.fillStyle = pal(u, 0.85); cx.fillRect(X + p[0]*S, Y + p[1]*S, 1.6, 1.6); });
-    text(`plate mode (${n}, ${m}) — weave resonance mode ${MODES.modes[k % MODES.modes.length]?.k ?? k}`, 16, 28, pal(0.5), 14);
+    text(`Chladni plate mode (${n}, ${m}) — decorative`, 16, 28, pal(0.5), 14);
     cap.textContent = 'Cymatics — sand on a vibrating plate settles on the still lines (Chladni figures). The pattern steps through eight modes, one every 6 s.';
   }
   // ---- 13. sky map (Hyperion orbits from the Mapper, Mollweide; loads from the app) ----
   let sky = null, skyAsked = false;
   function sky_(t) {
-    const X = W/2, Y = H/2, A = 0.95*Math.min(W/(4*Math.SQRT2), H/(2*Math.SQRT2)), moll = (l, b) => { let th = b; for (let i = 0; i < 8; i++) th -= (2*th + Math.sin(2*th) - Math.PI*Math.sin(b))/(2 + 2*Math.cos(2*th) + 1e-9); const L = ((l + 180) % 360 + 360) % 360 - 180; return [X - A*(2*Math.SQRT2/Math.PI)*(L*Math.PI/180)*Math.cos(th), Y - A*Math.SQRT2*Math.sin(th)]; };
+    const X = W/2, Y = H/2, A = 0.95*Math.min(W/(4*Math.SQRT2), H/(2*Math.SQRT2)), moll = (l, b) => { let th = b; for (let i = 0; i < 8; i++) th -= (2*th + Math.sin(2*th) - Math.PI*Math.sin(b))/(2 + 2*Math.cos(2*th) + 1e-9); const L = Math.abs(l) <= 180 ? l : (((l + 180) % 360 + 360) % 360 - 180); return [X - A*(2*Math.SQRT2/Math.PI)*(L*Math.PI/180)*Math.cos(th), Y - A*Math.SQRT2*Math.sin(th)]; };
     cx.strokeStyle = pal(0.5, 0.25); cx.lineWidth = 1;
     for (let b = -60; b <= 60; b += 30) { cx.beginPath(); for (let l = -180; l <= 180; l += 5) { const p = moll(l, b*Math.PI/180); l === -180 ? cx.moveTo(...p) : cx.lineTo(...p); } cx.stroke(); }
     for (let l = -180; l <= 180; l += 60) { cx.beginPath(); for (let b = -90; b <= 90; b += 5) { const p = moll(l, b*Math.PI/180); b === -90 ? cx.moveTo(...p) : cx.lineTo(...p); } cx.stroke(); }
     if (!sky && !skyAsked && window.pywebview?.api?.sky_sample) { skyAsked = true; window.pywebview.api.sky_sample(30000).then(r => { sky = r; }).catch(() => {}); }
     if (sky && sky.stars) { cx.globalCompositeOperation = 'lighter'; sky.stars.forEach(([l, b, e]) => { const p = moll(l, b*Math.PI/180); cx.fillStyle = pal(Math.min(1, e/0.6), 0.6); cx.fillRect(p[0], p[1], 1.4, 1.4); }); cx.globalCompositeOperation = 'source-over';
       cap.textContent = `Sky map — ${sky.stars.length.toLocaleString()} Hyperion orbits (sampled from ${sky.tiles} tiles, ${sky.model}), Galactic Mollweide, colour = orbital eccentricity (0 → 0.6+).`; }
-    else cap.textContent = window.pywebview ? 'Sky map — loading the Mapper’s Hyperion orbits…' : 'Sky map — open in the Janus app to load the Mapper’s Hyperion orbits (Galactic Mollweide, colour = eccentricity).';
+    else { cx.textAlign = 'center'; text(window.pywebview ? 'loading the Mapper’s Hyperion orbits…' : 'Open in the Janus app to load the Mapper’s orbits', W/2, H/2, pal(0.5), 15); cx.textAlign = 'left'; }
+    if (!(sky && sky.stars)) cap.textContent = window.pywebview ? 'Sky map — loading the Mapper’s Hyperion orbits…' : 'Sky map — open in the Janus app to load the Mapper’s Hyperion orbits (Galactic Mollweide, colour = eccentricity).';
   }
 
   // ---- 14. Janus hourglass (Danny 2026-11-19). Wall width = the exact P3-S potential V(φ) (art mapping of a real curve):
@@ -259,8 +260,12 @@
     cx.shadowBlur = 0; cx.strokeStyle = pal(0.5, 0.5); cx.lineWidth = 2;
     [-1, 1].forEach(sg => { cx.beginPath(); cx.moveTo(-wid(1) - 8, sg*h); cx.lineTo(wid(1) + 8, sg*h); cx.stroke(); });   // end caps
     // sand: rests against whichever end is lower in screen space
-    const rows = 110, fill = (sg, amt, c0) => { if (amt <= 0) return; const lowIsNeck = (sg < 0) === aTop;
-      for (let k = 0; k < rows; k++) { const z = (k + 0.5)/rows, inPile = lowIsNeck ? z < 0.94*amt : z > 1 - 0.94*amt; if (!inPile) continue;
+    const rows = 110, cum = [0]; for (let k = 0; k < rows; k++) cum.push(cum[k] + wid((k + 0.5)/rows));   // bulb area along z
+    const zAt = f => { const tgt = f*cum[rows]; let k = 0; while (k < rows && cum[k + 1] < tgt) k++; return k/rows; };
+    const rest = flipping ? phase === 0 : aTop;                                // sand keeps its place until the flip completes
+    const fill = (sg, amt, c0) => { if (amt <= 0) return; const lowIsNeck = (sg < 0) === rest, f = 0.94*amt;
+      const zc = lowIsNeck ? zAt(f) : zAt(1 - f);
+      for (let k = 0; k < rows; k++) { const z = (k + 0.5)/rows, inPile = lowIsNeck ? z < zc : z > zc; if (!inPile) continue;
         const w = wid(z) - 2.5; if (w <= 0) continue; cx.fillStyle = pal(c0 + 0.25*z*(sg < 0 ? 1 : -1), 0.8, 50 + 6*Math.sin(z*7 + t*0.4)); cx.fillRect(-w, sg*z*h - (sg < 0 ? h/rows : 0), 2*w, h/rows + 0.6); } };
     fill(-1, a, cA); fill(1, 1 - a, cB);
     cx.restore();
@@ -269,20 +274,20 @@
     if (draining) { const pile = phase === 0 ? 1 - a : a; for (let i = 0; i < 46; i++) { const u = ((t*1.6 + i/46) % 1), y = Y - 3 + u*(h*(1 - 0.94*pile) + 3);
       cx.fillStyle = pal(phase === 0 ? 0.25 + 0.5*u : 0.75 - 0.5*u, 0.95, 72); cx.fillRect(X - 1 + Math.sin(i*7.3 + t)*1.3, y, 2, 2); } }
     // neck: ρ while inflation drains, i while the dark thread drains
-    const neck = phase === 0 ? ['ρ = e^(iπ/3)', 'inflation ends here', cA] : ['τ = i  (image (1+i)/2)', 'the dark thread ends here (9 of 10 runs)', cB];
+    const neck = phase === 0 ? ['ρ = e^(iπ/3)', 'inflation ends here', cA] : ['τ = (1+i)/2 — SL(2,ℤ) image of i', 'where the dark thread settles (9 of 10 runs; passes ρ first)', cB];
     glow(pal(neck[2]), 14); cx.fillStyle = '#fff'; cx.beginPath(); cx.arc(X, Y, flipping ? 2 : 3.5, 0, 7); cx.fill(); cx.shadowBlur = 0;
     if (!flipping) { text(neck[0], X + 16, Y + 2, pal(neck[2]), 14); text(neck[1], X + 16, Y + 17, '#8b84b8', 11); }
     // bulb names follow the bulbs
     const topName = aTop ? ['INFLATION', cA] : ['DARK THREAD — the plateau today', cB], botName = aTop ? ['DARK THREAD — the plateau today', cB] : ['INFLATION', cA];
-    if (!flipping) { text(topName[0], X - cx.measureText(topName[0]).width/2 - 10, Y - h - 14, pal(topName[1]), 14); text(botName[0], X - 110, Y + h + 24, pal(botName[1]), 14); }
+    if (!flipping) { cx.textAlign = 'center'; text(topName[0], X, Y - h - 14, pal(topName[1]), 14); text(botName[0], X, Y + h + 26, pal(botName[1]), 14); cx.textAlign = 'left'; }
     // header + panels (active side bright, other dim)
-    const hdr = flipping ? 'flipping — Janus turns its other face' : phase === 0 ? `inflation draining · e-folds to go ${(HG.Nstar*a).toFixed(1)}` : `dark thread draining · scale factor a ≈ ${(1 + 0.232*a).toFixed(3)} (acceleration ends ≈ 1.23)`;
+    const hdr = flipping ? 'flipping — Janus turns its other face' : phase === 0 ? 'inflation · the field rolls down the plateau to ρ' : 'dark thread · a = 1 today → 1.23 acceleration ends → 1.89 passes ρ → settles at (1+i)/2';
     text(hdr, 16, 26, pal(phase === 0 ? cA : cB), 15);
-    const panel = (title, lines, x, y, c, on) => { text(title, x, y, pal(c, on ? 1 : 0.45), 12); lines.forEach(([s, d], i) => { text(s, x, y + 22 + i*32, pal(c, on ? 1 : 0.4), 12); text(d, x, y + 36 + i*32, on ? '#8b84b8' : '#4d4870', 10); }); };
+    const panel = (title, lines, x, y, c, on) => { text(title, x, y, pal(c, on ? 1 : 0.6), 12); lines.forEach(([s, d], i) => { text(s, x, y + 22 + i*34, pal(c, on ? 1 : 0.6), 12); text(d, x, y + 37 + i*34, on ? '#9a93c8' : '#6f68a0', 11); }); };
     const pw = 300, left = Math.max(16, X - wmax - pw - 40), right = X + wmax + 40;
     panel('EARLY FACE', HG.top, left, Y - h + 20, cA, phase === 0 && !flipping);
-    panel('LATE FACE', HG.bottom, right + pw < W ? right : left, right + pw < W ? Y - 40 : Y + 40, cB, phase === 1 && !flipping);
-    cap.textContent = 'Janus hourglass — the glass wall is the exact P3-S potential (SPECIES32 point), mirrored. Inflation drains to ρ; the glass flips and the same plateau, read as dark energy, drains to i. Shape = art mapping of a real curve; numbers from the cited D-notes.';
+    panel('LATE FACE', HG.bottom, right + pw < W ? right : left, Y + 50, cB, phase === 1 && !flipping);
+    cap.textContent = 'Janus hourglass — the glass wall is the exact P3-S potential (SPECIES32 point), mirrored. Inflation drains to ρ; the glass flips and the same plateau, read as dark energy, drains back and settles at (1+i)/2, the image of i. Shape = art mapping of a real curve; numbers from the cited D-notes.';
   }
   // ---- 15. P(k) waterfall: exact Mukhanov-Sasaki spectrum, one slice per start condition (bd = how deep inside the horizon the mode starts)
   function pkfall(t) {
@@ -293,22 +298,22 @@
       for (let i = 0; i < 3; i++) for (let j = i + 1; j < 3; j++) { const f = A[j][i]/A[i][i]; for (let k = i; k < 3; k++) A[j][k] -= f*A[i][k]; b[j] -= f*b[i]; }
       const c = [0,0,0]; for (let i = 2; i >= 0; i--) { c[i] = (b[i] - A[i].slice(i + 1).reduce((s, a, k) => s + a*c[i + 1 + k], 0))/A[i][i]; } return x => c[0] + c[1]*x + c[2]*x*x; })();
     const res = S.map(s => s.lnPR.map((v, i) => 1e3*(v - fit(d[i]))));
-    const amp = Math.max(1e-6, ...res.flat().map(Math.abs)), x0 = 90, x1 = W - 60, dy = (H - 120)/S.length, sk = 26, scan = (t*0.25) % 1;
+    const amp = Math.max(1e-6, ...res.flat().map(Math.abs)), x0 = 250, x1 = W - 60, dy = (H - 120)/S.length, sk = 26, scan = (t*0.25) % 1;
     S.forEach((s, j) => { const base = 50 + (S.length - j - 0.45)*dy, off = j*sk, u = j/(S.length - 1);
       cx.beginPath(); d.forEach((x, i) => { const px = x0 + off + (x1 - x0 - sk*S.length)*(x - d[0])/(d[m - 1] - d[0]), py = base - 0.45*dy*res[j][i]/amp; i ? cx.lineTo(px, py) : cx.moveTo(px, py); });
-      cx.lineTo(x0 + off + (x1 - x0 - sk*S.length), base + 0.5*dy); cx.lineTo(x0 + off, base + 0.5*dy); cx.closePath();
+      cx.lineTo(x0 + off + (x1 - x0 - sk*S.length), base); cx.lineTo(x0 + off, base); cx.closePath();
       cx.fillStyle = pal(u, 0.18); cx.fill(); cx.strokeStyle = pal(u, 0.95); glow(pal(u), 8); cx.lineWidth = 1.6; cx.stroke(); cx.shadowBlur = 0;
-      const sx = x0 + off + (x1 - x0 - sk*S.length)*scan; cx.fillStyle = pal(u, 0.5); cx.fillRect(sx, base - 0.5*dy, 1, dy);
-      text(`${s.ic === 'ds' ? 'exact dS start' : 'plain BD start'} · k/aH = ${s.bd} · n_s ${s.ns.toFixed(5)}`, 10, base - 0.3*dy, pal(u), 11); });
-    text(`ln(k/k*) from ${d[0]} to ${d[m - 1]}  ·  residual vs smooth fit, full height = ±${amp.toFixed(1)}‰ (same scale for every slice)`, 16, 26, '#8b84b8', 11);
-    cap.textContent = `P(k) waterfall — exact MS power spectrum for ${P.point}. Each slice is ln P minus a smooth fit (parts per thousand): plain Bunch–Davies starts leave interference fringes that shrink as the start goes deeper; the exact de Sitter start removes them.`;
+      const sx = x0 + off + (x1 - x0 - sk*S.length)*scan; cx.fillStyle = pal(u, 0.5); cx.fillRect(sx, base - 0.45*dy, 1, 0.9*dy);
+      text(`${s.ic === 'ds' ? 'exact dS start' : 'plain BD start'} · k/aH = ${s.bd}`, 12, base - 6, pal(u), 12); text(`n_s (quad. fit) ${s.ns.toFixed(5)}`, 12, base + 10, '#8b84b8', 11); });
+    text(`ln(k/k*) from ${d[0]} to ${d[m - 1]}  ·  residual vs a quadratic fit to the exact-dS slice, full height = ±${amp.toFixed(1)}‰ (same scale for every slice)`, 16, 26, '#8b84b8', 11);
+    cap.textContent = `P(k) waterfall — exact MS power spectrum for ${P.point}. Each slice is ln P minus a quadratic fit to the exact-de Sitter slice (parts per thousand): plain Bunch–Davies starts leave interference fringes that shrink as the start goes deeper; the exact de Sitter start removes them.`;
   }
   const DRAW = { bundle, chord, hive, force, arc: arcflow, hyper, modular, e8, circuit3d, spectro, history, cymatics, sky: sky_, hourglass, pkfall };
   function reset() { F = null; sand = null; spec.length = 0; t0 = performance.now(); }
   function loop(now) { requestAnimationFrame(loop); if (box.hidden) return; if (cv.clientWidth !== Math.round(W) || cv.clientHeight !== Math.round(H)) size();
-    clear(); cx.save(); try { DRAW[cur]((now - t0)/1000); } catch (e) { cap.textContent = 'display error: ' + e; } cx.restore(); cx.shadowBlur = 0; }
+    clear(); cx.save(); try { DRAW[cur]((now - t0)/1000); cx.restore(); cx.save(); cx.textAlign = 'right'; text((VIEWS.find(v => v[0] === cur) || ['', ''])[1], W - 16, 26, pal(0.5, 0.9), 15); } catch (e) { cap.textContent = 'display error: ' + e; } cx.restore(); cx.shadowBlur = 0; }
   requestAnimationFrame(loop);
-  function show(on) { box.hidden = !on; tab.setAttribute('aria-selected', String(on)); if (on) { document.querySelectorAll('.tabs .tab').forEach(t => { if (t !== tab) t.setAttribute('aria-selected', 'false'); }); size(); mark(); } else if (audio) soundBtn.onclick(); }
+  function show(on) { box.hidden = !on; document.querySelector('.main')?.classList.toggle('gal', on); tab.setAttribute('aria-selected', String(on)); if (on) { document.querySelectorAll('.tabs .tab').forEach(t => { if (t !== tab) t.setAttribute('aria-selected', 'false'); }); size(); mark(); } else if (audio) soundBtn.onclick(); }
   tab.addEventListener('click', () => show(true));
   document.querySelectorAll('.tabs .tab').forEach(t => { if (t !== tab) t.addEventListener('click', () => show(false)); });
   if (!DRAW[cur]) cur = 'bundle';
