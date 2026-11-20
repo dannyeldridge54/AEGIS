@@ -127,7 +127,7 @@ def late(p):
                      'd_coupled_at_most = min(coupled, thread): the coupled model contains the thread, so its true value is at most this (nested guard)',
                      'thread trails w0wa (−9.1 / −19.7 / −15.0, CAMB)',
                      'ΔAIC = Δχ² + 2k charges the extra parameters (thread k = 1, coupled k = 2); negative still favours the model (referee R3)',
-                     'L3: S₈ of each locked fit vs KiDS-Legacy and CMB lensing, reported separately (not combined)',
+                     'L3: S₈ of each locked fit vs KiDS-Legacy and CMB lensing, reported separately (not combined); the lensing combination shares DESI DR2 BAO and Planck data with the fits, so KiDS-Legacy is the cleaner comparison',
                      f'S₈ sub-status: {s8_status} (largest |pull| {max(abs(v) for v in s8.values()):.1f}σ)',
                      'L2: DESI Lyα BAO is shown as context only: it is already inside the DESI DR2 likelihood of the fits, so it is not an independent test'],
              links=['G_eff → S₈ (W2)', 'z† → H(z) at z 2–5 vs DESI Lyα (W2)'],
@@ -154,7 +154,11 @@ def _sv_line(M):
     s0 = N.wino_s_nlo(M, v=1e-3, nlo=False, off_factor=math.sqrt(2))
     # LO line cross section (chi chi -> gamma gamma + gamma Z/2), the D1322 smoke-test formula with 1/M^2 kept general
     return 2*s0[1]**2*math.pi*N.ALPHA**2/M**2*0.389379e-27*2.99792458e10*(1 + N.ALPHA2*N.CW2/N.ALPHA)
-HESS_1TEV = 2.3e-28   # cm^3/s, the H.E.S.S. IGS line limit at 1 TeV used by D1322 (with the 0.794 factor and J/J_bench)
+HESS_1TEV = 2.3e-28   # cm^3/s at 1 TeV (kept for the 0.286 self-check)
+# H.E.S.S. Inner Galaxy Survey 2026 line limits, γγ + ½γZ (arXiv:2608.07234, quoted in D1125); DEVIATIONS D1
+HESS_LINE = {440.0: 9.8e-29, 1000.0: 2.3e-28, 2900.0: 6.5e-28}
+HESS_SRC = 'H.E.S.S. Inner Galaxy Survey 2026, arXiv:2608.07234 (Einasto α 0.17, r_s 20 kpc, ρ☉ 0.39)'
+R_NLL = (0.658, 0.794)   # NLL resummation band (D1124); the verdict uses 0.794 (conservative), 0.658 shown as the other edge
 HALO_SHAPES = {'Einasto': ('einasto', (20.0, 0.17)), 'NFW': ('nfw', (20.0,)), 'Burkert': ('burkert', (3.37,))}  # Burkert r0 as in D1322 check
 @functools.lru_cache(maxsize=64)
 def _j_ann(halo, rho_sun):
@@ -165,27 +169,35 @@ def _j_ann(halo, rho_sun):
     with warnings.catch_warnings():
         warnings.simplefilter('ignore')
         return Jm.J_route_B(rho, 8.178, psi_max_deg=3.0, b_mask_deg=0.0) - Jm.J_route_B(rho, 8.178, psi_max_deg=0.5, b_mask_deg=0.0)
-def f_max(M, halo, rho_sun):
-    """PREREG_W2_LINKS L1: the D1322 recipe, f_max = sqrt(2.3e-28 / (sigma_v_line * 0.794 * J/J_bench))."""
+def f_max(M, halo, rho_sun, limit=HESS_1TEV, R=0.794):
+    """PREREG_W2_LINKS L1: the D1322 recipe, f_max = sqrt(limit / (sigma_v_line * R * J/J_bench))."""
     jr = _j_ann(halo, rho_sun)/_j_ann('Einasto', 0.39)
-    return math.sqrt(HESS_1TEV/(_sv_line(round(M, 1))*0.794*jr)), jr
+    return math.sqrt(limit/(_sv_line(round(M, 1))*R*jr)), jr
 def galaxy(p):
     from tools.janus_astro.serapis_inputs import wino_fraction
     M = float(p['wino_mass_GeV']); j = {'J_GeV2_cm5': _jfactor(p['halo'], float(p['rho_sun']))}
     sv = _sv_line(round(M, 1)); f = wino_fraction(M/1000.0)
-    pulls = {}; st = None; fm = jr = None
+    pulls = {}; st = None; fm = fm_other = jr = lim_m = None
     check = abs(f_max(1000.0, 'Burkert', 0.40)[0] - 0.286)/0.286 <= 0.01        # L1 self-check against D1322
-    if abs(M - 1000.0) <= 50 and check:   # the fraction is a bracket (D1152): test both ends, never pick the kinder one
-        fm, jr = f_max(M, p['halo'], float(p['rho_sun']))
+    lim_m = next((m0 for m0 in HESS_LINE if abs(M - m0) <= 0.05*m0), None)        # DEVIATIONS D1: three quoted masses, ±5%
+    if lim_m and check:   # the fraction is a bracket (D1152): test both ends, never pick the kinder one
+        fm, jr = f_max(M, p['halo'], float(p['rho_sun']), HESS_LINE[lim_m], R_NLL[1])
+        fm_other = f_max(M, p['halo'], float(p['rho_sun']), HESS_LINE[lim_m], R_NLL[0])[0]
         pulls['f_pred high ≤ f_max'] = 'pass' if f[1] <= fm else 'FAIL'; pulls['f_pred low ≤ f_max'] = 'pass' if f[0] <= fm else 'FAIL'
         st = 'pass' if f[1] <= fm else ('tension' if f[0] <= fm else 'fail')
+    if f[0] > 1.0:   # heavier than the thermal mass: a thermal wino would over-close the universe
+        pulls['relic: fraction ≤ 1'] = 'FAIL'; st = 'fail'
     return L('galaxy', 'Galaxy & dark matter (gamma line)', 'C', 'Hyperion', dict(m=M, halo=p['halo'], rho_sun=p['rho_sun']),
              dict(J_IGS_ROI_GeV2_cm5=j['J_GeV2_cm5'], J_annulus_0p5_3deg_GeV2_cm5=_j_ann(p['halo'], float(p['rho_sun'])),
-                  sigma_v_line_cm3_s=sv, thermal_fraction=f, f_max=fm, J_over_bench=jr, recipe_selfcheck_0p286=check),
-             [dict(name='H.E.S.S. inner Galaxy line limit', source='used at 1 TeV in D1322 (2.3e-28 cm³/s, Einasto); full mass curve not yet stored')],
+                  sigma_v_line_cm3_s=sv, thermal_fraction=f, f_max=fm, f_max_at_R_0p658=fm_other, limit_mass_GeV=lim_m,
+                  limit_cm3_s=HESS_LINE.get(lim_m), J_over_bench=jr, recipe_selfcheck_0p286=check),
+             [dict(name=f'H.E.S.S. line limit at {int(m0)} GeV', limit=v, kind='upper95', source=HESS_SRC) for m0, v in HESS_LINE.items()],
              pulls, ['two J values: J_IGS_ROI (H.E.S.S. IGS region, ψ ≤ 1°, |b| ≥ 0.3°) is for display; f_max uses the 0.5°–3° annulus (the D1322 recipe)',
                      'L1 (PREREG_W2_LINKS): f_max = √(2.3e-28 / (σv × 0.794 × J/J_bench)), bench Einasto ρ☉ 0.39, annulus 0.5°–3°; self-check Burkert → 0.286',
-                     'LO Sommerfeld (no NLO, no endpoint); limit curve vs mass is map item 2 (open)',
+                     'tested only at the three quoted limit masses (440 GeV, 1 TeV, 2.9 TeV, ±5%); between them: not tested (no interpolation)',
+                     'verdict uses the conservative NLL edge R = 0.794; f_max at R = 0.658 is shown as the band\'s other edge (D1124)',
+                     'LO Sommerfeld; NLO would raise f_max by about 10% (D1125)',
+                     'the wino fraction bracket (D1152) is a SERAPIS-E thermal-history assumption, not data',
                      'the only stored limit is at 1 TeV (Einasto); away from 1 TeV no pass/fail is given (V1 finding 6)'],
              links=['J-factor region → Sky level (W2)'], status=st or 'open')
 

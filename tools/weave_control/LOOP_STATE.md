@@ -25,7 +25,15 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W2 links · next stage: V2 review (F done 05:00 CT; the referee list is below. W-R1–W-R4 must be fixed or labelled at V2.)
+Item W3 control panel · next stage: R research (W2 signed off at V2, 05:03 CT).
+W2/V2 outcome (DEVIATIONS D1 written and pushed first): gamma line at the three H.E.S.S. IGS 2026 masses, verdict at R = 0.794, R = 0.658 edge shown:
+| M | halo | f_max (0.794 / 0.658) | f_pred | verdict |
+| 440 GeV | Einasto | 0.119 / 0.131 | 0.024–0.040 | pass |
+| 440 GeV | Burkert | 0.245 / 0.269 | 0.024–0.040 | pass |
+| 1 TeV | Einasto | 0.139 / 0.153 | 0.124–0.205 | tension |
+| 1 TeV | Burkert | 0.286 / 0.314 | 0.124–0.205 | pass |
+| 2.9 TeV | any | — | 1.04–1.73 | fail: heavier than the thermal mass, the wino over-closes (relic, not the line) |
+W-R1 (primary citation), W-R2 (NLL band), W-R3 (three masses), W-R4–R6 labels: done. 11 tests pass.
 Referee report W2 (indirect-detection + weak-lensing referee):
 W-R1 (major) The 2.3e-28 limit is cited as 'used in D1322'. Its primary source is the H.E.S.S. Inner Galaxy Survey 2026 line limit (arXiv:2608.07234, γγ + ½γZ native; Einasto α 0.17, r_s 20, ρ☉ 0.39 at 8.178 kpc; D1125). Cite the paper.
 W-R2 (major) 0.794 is the UPPER end of the NLL resummation band R ∈ [0.658, 0.794] (D1124), i.e. the conservative choice (larger signal, smaller f_max). Show f_max for both ends as a band, and say which end sets the verdict.
@@ -74,6 +82,7 @@ W2 research notes (04:53 CT):
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:03 CT W2/V2 signed off (DEVIATIONS D1; three masses; over-closure flag)
 - 05:00 CT W2/F referee: 6 points (3 major: cite arXiv:2608.07234, NLL band, three limit masses); engine reproduces D1125's 0.143
 - 04:58 CT W2/E2 engineer: both J values labelled, warnings silenced in the engine only (reason recorded), S₈ sub-status on the card, PC file names cited
 - 04:56 CT W2/V1 review: J cross-checked (≤ 0.65%), S8 verified, 4 small findings

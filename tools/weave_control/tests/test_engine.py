@@ -44,3 +44,9 @@ def test_w2_links():
 def test_w2_e2():
     g = LV['galaxy']['outputs']; assert 'J_annulus_0p5_3deg_GeV2_cm5' in g and 'J_IGS_ROI_GeV2_cm5' in g
     assert any(s.startswith('S₈ sub-status: pass') for s in LV['late']['labels'])
+
+def test_w2_v2_three_masses():
+    for m in (440.0, 1000.0, 2900.0):
+        g = [l for l in E.run({'wino_mass_GeV': m})['levels'] if l['id'] == 'galaxy'][0]
+        assert g['outputs']['limit_mass_GeV'] == m and g['outputs']['f_max_at_R_0p658'] > g['outputs']['f_max'] and g['status'] in ('pass', 'tension', 'fail')
+    assert [l for l in E.run({'wino_mass_GeV': 1500.0})['levels'] if l['id'] == 'galaxy'][0]['status'] == 'open'
