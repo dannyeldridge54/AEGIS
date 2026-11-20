@@ -17,8 +17,19 @@ android {
         resValue 'string', 'app_name', p('appName', 'AEGIS')
         resValue 'string', 'start_path', p('startPath', 'index.html')
         resValue 'string', 'needs_location', p('needsLocation', 'false')
+        manifestPlaceholders = [locationPermission: p('needsLocation', 'false') == 'true' ? 'android.permission.ACCESS_COARSE_LOCATION' : 'com.eldridge.aegisapp.permission.UNUSED']
+    }
+    // P-R1: one FIXED sideload signing key for every build, so a newer APK installs over an older one.
+    // This is a DEBUG-grade key committed on purpose (password 'android'): fine for sideloading, NOT for the Play Store.
+    // A real release key must live in GitHub secrets, never in the repo.
+    signingConfigs {
+        sideload {
+            storeFile rootProject.file('aegis-sideload-debug.keystore')
+            storePassword 'android'; keyAlias 'aegisdebug'; keyPassword 'android'
+        }
     }
     buildTypes {
+        debug { signingConfig signingConfigs.sideload }
         release { minifyEnabled false }
     }
     compileOptions {
