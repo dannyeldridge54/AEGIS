@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
   push:
     branches: [ unify-bg ]
-    paths: [ 'apps/android_shell/**', 'apps/skymap/**', 'tools/dashboard/**', 'tools/weave_control/**', '.github/workflows/apps_apk.yml' ]
+    paths: [ 'apps/android_shell/**', 'apps/skymap/**', 'tools/dashboard/**', 'tools/weave_control/**', '!tools/weave_control/LOOP_STATE.md', '!tools/weave_control/tests/**', '.github/workflows/apps_apk.yml' ]
 permissions:
   contents: write
-concurrency: { group: apps-apk, cancel-in-progress: true }
+concurrency: { group: apps-apk, cancel-in-progress: false }
 jobs:
   build:
     runs-on: ubuntu-latest
