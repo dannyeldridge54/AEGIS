@@ -253,3 +253,5 @@ Strengths a referee would note: one parameter set drives every level; sources an
 
 - M addendum (Danny 06:37 CT 20 Nov): MULTIPLE Janus-style visualisations, RGB + blue-magenta palette, each waveform shown, molecules rendered fully 3D from our engine/physics.
 - Q QUARK TRACK (Danny 06:47 "do the quarks"): Q1 endpoint-as-quark-modulus FAIL (D1727). Q2 next: Koide (δ=2/9) extended to quarks, locked first. LHCb B→μμ logged D1726.
+- Q plan (Danny 06:49 "where would it fit"): slot = third modulus τ_q (D1601). Q2 Koide→quarks (lock first). Q3 FST τ_q (arXiv:2305.08908, τ≈1/8+i, anomaly-free weights ⇒ θ̄=0) vs latest CKM (|V_cb|, γ, J) — count params vs observables. Q4 τ_q cosmology: heavy modulus decay → dilution D → ΔN*=−⅓lnD → n_s shift; F2 limits (T_dec≥5 MeV). Q5 what pins τ_q off CP lines inside Weave potential (else stays external).
+
