@@ -16744,3 +16744,9 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - With z† free up to 10 (BAO + SN + CMB): best z† = 2.64, just past the highest DESI redshift (2.33). Δχ² = −4.93 versus ΛCDM, versus −4.84 for the thread (−0.09). Rule "beats the thread by more than 2": FALSE.
 - Reading: "negative space" gains only through the CMB distance (a negative Λ above z ≈ 2.6 shortens D_M(z*)). The thread gains through low-z thawing. The data cannot tell the two apart; both trail CPL (−10.84).
 - Danny's "negative space" idea is therefore NOT excluded: it ties ours on real data. A Weave version would need a field whose energy is negative above z ≈ 2.6, which the SL(2,Z) V₀ ≥ 0 forbids for the Zhinü potential itself. It is recorded as an open alternative (C8) in the register.
+
+## D1696 RESULT (19 Nov 2026) — exact perturbative SERAPIS curve on real data: same verdict as leading order (PREREG_REALDATA_EXACT)
+- BAO + SN: exact Δχ² = −6.90 (amp 0.242), versus leading-order −7.01.
+- BAO + SN + CMB: exact Δχ² = −4.65 (amp 0.209), versus −4.84.
+- |difference| ≤ 0.19 in both → "leading order is adequate" ✓, consistent with JANUS D1638 (~4% shape difference). The best start shifts to larger amp (0.24 / 0.21), i.e. closer to the floor at ρ, matching D1638's "the thread is arriving at ρ today".
+- Standing real-data status of the Weave thread (exact curve): −6.9 (BAO + SN), −4.65 (+ CMB), still "supported" (≤ −4), and still behind CPL with the CMB (−10.84).
