@@ -16822,3 +16822,10 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
 - Thread: its gain is the BAO + SN thaw (−7). θ* alone leaves it intact, and the density priors cost it ~2 (they pull Ω_m h² against the thread's best Ω_m; locked label "θ*-driven" = densities hurt, θ* neutral).
 - ΛsCDM: gains NOTHING from either half alone and −4.93 only with the full correlated 3D prior. Its gain comes from the θ*–ω_bc correlation, i.e. from fitting the distance to the CMB at FIXED densities with a negative Λ above z ≈ 2.6. Locked label: "mixed".
 - Mirror reading: the tie is a coincidence of two different mechanisms. The thread is a late-time (z < 1) effect seen by SN + BAO; the sign-switch is a high-z (z > 2.6) effect seen only through the full CMB distance. DR3 + CMB-S4 test them separately: low-z SN shape for the thread, z > 2.3 distances for the switch.
+
+## D1708 RESULT (19 Nov 2026) — the thread–dark-matter coupling CLOSES the weak-spot gap on real data (PREREG_COUPLED_THREAD), with one flag
+- BAO + SN + CMB: Δχ² = −10.40 versus ΛCDM. Thread −4.84 (uncoupled); CPL −10.84. Rule ≤ −9 → CLOSES THE GAP, now 0.44 behind CPL with the same number of extra parameters (2).
+- Best fit: b_c = −0.062 (small, |b_c| < 0.1, the usual CMB-scale bound, not checked here), Ω_m 0.312, h 0.673, ω_b 0.02232.
+- Apparent dark energy seen by an uncoupled observer: w_eff = −0.83 (z = 0), −0.98 (0.5), −1.03 (1), −1.10 (2). The fit reproduces the phantom-crossing APPEARANCE the data want, while the field itself never goes below −1. This is the mechanism of arXiv:2503.10806, here with the Weave's own plateau.
+- FLAG: amp = 0.89999, i.e. at its upper bound (0.9). The fit wants the field to start low on the plateau, close to where the leading-order shape is least reliable (the exact curve has its floor at ρ, D1638/D1696). The true optimum may lie beyond the bound. Required next: an exact-curve refit with amp free beyond 0.9 (the exact curve never goes negative), before this counts as a fix.
+- Mirror (opposite sign of b_c): the profile scan (PREREG_COUPLED_SCAN, running) will show χ² for b_c > 0.
