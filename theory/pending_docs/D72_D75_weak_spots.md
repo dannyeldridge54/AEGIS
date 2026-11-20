@@ -16964,3 +16964,20 @@ Integrity flag: the coupled model CONTAINS ΛCDM (amp → 0) and the uncoupled t
 Uncoupled thread in CLASS: running (CLS_thread_* jobs). The locked verdict needs both.
 Reading so far (provisional): on full Planck the preferred coupling is about half the compressed-likelihood value (|b| ≈ 0.02–0.04 vs 0.074), and the gains are small (≈ 2–3), well short of the compressed −10.8 and of w0wa (−9 to −20, CAMB). If this holds after convergence, the weak-spot fix does NOT carry over to full Planck at the locked bar. With |b| = 0.020–0.041 the negative-space switch (D1717 closed form) moves to z† ≈ 3.7–5.0 (vs 2.93 at b = 0.074) [computed].
 Next (DEVIATIONS D1 to be written before any rerun): a convergence check that starts the coupled minimiser from the CLASS ΛCDM best point with small amp and b = 0 (nested start), best_of 4, same priors; only to fix the nested-model violation, not to chase a result.
+
+## D1725 — RIGHT: D1713 full-Planck CLASS verdict — coupling NOT detected; locked verdict fix_fails (20 Nov 2026)
+Patched CLASS v3.3.0, full Planck 2018 + DESI DR2 BAO + SN, bobyqa best_of 4. Δχ² vs CLASS ΛCDM (same build; gate PASS −0.76/−0.90/−1.14 vs CAMB):
+| SN set | ΛCDM χ² | thread (b=0) | coupled (orig) | coupled (nested start, DEV D1) | coupled best | coupled − thread | b_A at best |
+|---|---|---|---|---|---|---|---|
+| Pantheon+ | 2432.76 | **−2.62** (amp 0.19) | +0.90 | −0.48 | −0.48 | +2.14 | +0.004 (amp 0.04) |
+| DES-Y5 | 2676.47 | **−8.14** (amp 0.23) | −2.01 | −9.03 | **−9.03** | −0.89 | +0.020 (amp 0.10) |
+| Union3 | 1055.14 | **−3.38** (amp 0.23) | −2.71 | +0.04 | −2.71 | +0.68 | −0.041 (amp 0.39) |
+Coupled minimum = lower of the original and nested runs (both reported, per DEVIATIONS D1). score_d1713.py as locked used only the original coupled runs → also fix_fails.
+**Locked verdict: fix_fails.** fix_confirmed needs Δ ≤ −6 on 2 of 3 sets (only DES-Y5: −9.03); fix_partial needs coupled − thread ≤ −2 on 2 sets (none: +2.14, −0.89, +0.68).
+Reading:
+1. The UNCOUPLED exact thread holds up in CLASS: −2.62 / −8.14 / −3.38, matching CAMB D1712 (−2.38 / −8.98 / −1.93) to within ~1.5. That is an independent-code confirmation of the D1712 result. It remains well short of w0wa (CAMB: −9.11 / −19.72 / −15.02).
+2. The dark-matter coupling adds nothing measurable on full Planck. The best-fit b_A changes sign between SN sets (+0.004, +0.020, −0.041), and all values are consistent with 0. The compressed-likelihood b = 0.074 (D1710) is not supported once the full CMB spectra are used.
+3. Integrity: the coupled model contains the thread at b = 0, so its true minimum is ≤ the thread's. On Pantheon+ and Union3 the minimiser still finished above the thread (+2.14, +0.68) even from nested starts, so it did not fully converge in the 2-parameter extension. This cannot change the verdict: the true coupled − thread ≤ 0, but reaching ≤ −2 would need a minimum the sampler did not find on either start. Per the lock, no reruns to chase it.
+4. Negative space (D1716/D1717) is derived only for b_A < 0. With b_A ≈ 0 the deficit ≈ 0 and z† → ∞; only Union3 (b = −0.041) gives z† ≈ 3.7. So negative space remains a valid DERIVATION but is NOT supported by the data at present.
+Status: C8 reverts from "FIXED (candidate)" to OPEN. The surviving result is the uncoupled thread at Δχ² −2.6 to −8.1 (CLASS) with no added coupling. The D1710 compressed-likelihood fix did not survive full Planck. Next tests remain DESI DR3 + CMB-S4.
+Files: PC AEGIS_PCJOBS/d1713/results/cls_*.json (13 runs); lock field_tests/rules/PREREG_PLANCK_CLASS.md + DEVIATIONS D1.
