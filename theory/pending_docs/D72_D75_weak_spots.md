@@ -16795,3 +16795,9 @@ M3 (mirror of P-F1: let the singlet/doublet norm ratio r = 2|b|²/a² differ fro
 - The data force |r − 1| ≲ 5–9 × 10⁻⁵ (3σ, by m_τ choice). The mirror "unequal split" is pushed to within 10⁻⁴ of the forward claim, so equipartition is exact to the precision of m_τ.
 - In Shulga's picture (D1699) the Berry-phase orientation δ does not depend on r, so M3 leaves δ = 2/9 untouched.
 Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); M3 forward wins (mirror squeezed to < 10⁻⁴).
+
+## D1703 (RIGHT, 19 Nov 2026) — MIRROR PULSE M5: dark-first genesis (argument, no computation)
+- Mirror of P-portal (D1675): make the asymmetry on the DARK side first and hand it to the visible side through the same portal X²LH/M.
+- Outcome if the portal reaches equilibrium (T_D window as before): chemical equilibrium only conserves the total charge B − L − L_X, so the final split is the SAME, n_X/n_B = 11/28 → m_X = 12.8 GeV (D1676). The mirror cannot be told apart by the dark-matter mass.
+- Where it fails: under P-brane (D1671) the inflaton barely heats the dark (D7) side, so there is no hot dark plasma and no heavy dark decayer to create the asymmetry there. Dark-first would need a separate dark reheating source, which in turn raises ΔN_eff toward its bound (D1661).
+- Reading: equal outcome, but the mirror needs an extra ingredient that fights the cold-dark-side requirement. The forward (visible-first) order is preferred. Tally: M1 forward, M2 symmetry, M3 forward, M5 forward (by economy).
