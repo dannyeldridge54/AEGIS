@@ -57,7 +57,8 @@ def path(a, b):
     q2e = graph(); adj = collections.defaultdict(set)
     for q, es in q2e.items():
         for e in es: adj[q].add(e); adj[e].add(q)
-    start = [n for n in adj if a.lower() in n.lower()]; goal = {n for n in adj if b.lower() in n.lower()}
+    pick = lambda x: [n for n in adj if n.lower() == x.lower()] or [n for n in adj if x.lower() in n.lower()]
+    start = pick(a); goal = set(pick(b))
     if not start or not goal: return None
     prev = {s: None for s in start}; dq = collections.deque(start)
     while dq:
