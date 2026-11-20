@@ -250,3 +250,6 @@ Strengths a referee would note: one parameter set drives every level; sources an
 - 04:45 CT W1/V1 review: 8 findings (above)
 - 04:48 CT W1/E2 fixes: dark-sector table from D1646/D1648/C5 (mirror_full_equal 7.4 → BBN fail, as it should); bridges numbers-only; late status derived (tension: beats ΛCDM, trails w0wa); stars rule stated; Brannen forms listed; galaxy tests BOTH ends of the fraction bracket at 1 TeV (low 2.2e-28 passes, high 6.0e-28 fails vs 2.3e-28 → tension; E2 first tried the low end only, caught before commit); lru_cache; error field
 - 04:43 CT W1/E1 engine.py + tests (6 pass)
+
+- M addendum (Danny 06:37 CT 20 Nov): MULTIPLE Janus-style visualisations, RGB + blue-magenta palette, each waveform shown, molecules rendered fully 3D from our engine/physics.
+- Q QUARK TRACK (Danny 06:47 "do the quarks"): Q1 endpoint-as-quark-modulus FAIL (D1727). Q2 next: Koide (δ=2/9) extended to quarks, locked first. LHCb B→μμ logged D1726.

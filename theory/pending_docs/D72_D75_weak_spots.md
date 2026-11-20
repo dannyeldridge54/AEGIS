@@ -17065,3 +17065,10 @@ Files: PC AEGIS_PCJOBS/d1713/results/cls_*.json (13 runs); lock field_tests/rule
 - [CENTRE · reasoning] What the Weave adds at this scale: the 2.9 TeV wino (pure SU(2) triplet, no flavour couplings: no tree or one-loop b→sμμ contribution), the ultralight thread (no quark couplings by F1), TM1 lives in the lepton sector only. So the model's prediction for every number above is the SM one. No Weave parameter could have moved them.
 - **Verdict:** consistent_not_evidence (post-hoc, non-discriminating). Same class as S8. It does close a door: any future Weave extension that adds light scalars with quark couplings (C_S, C_P) is now bounded by R_μμ and B_s at the ~1σ level. MAP: none (no map node for quark flavour).
 - Sources: arXiv:2611.00230; phys.org 2026-11 news.
+
+## D1727 — CENTRE (locked: PREREG_Q1_QUARK_ENDPOINT; computed) — Quarks, step 1: the inflaton's endpoint ρ = ω CANNOT also be the quark modulus. Its leftover offset is ~1600× too small to make the quark mass hierarchy. FAIL (2026-11-20)
+- [literature] A4 quark models near τ = ω (arXiv:2212.13336) need τ = ω + ε with |ε| ≈ 0.03 (fits 0.028–0.038): m_b:m_s:m_d ≈ 1:|ε|:|ε|². Even then |V_cb| comes out ~2× too big unless the couplings are complex; 8 real parameters + complex τ for ~8 observables, so no real predictive power.
+- [computed] Leftover canonical offset Δφ ≤ 1e-5 M_P (F2/D360a, kindest end) → |ε|_max = 1.2e-5 (h = 1), 7.1e-6 (h = 3). Needed ≥ 0.02. Shortfall ×1630.
+- **Verdict:** FAIL (as locked). Together with D1619 (no CP violation from small splits at i or ρ), the quark sector needs its OWN modulus τ_q, held by something outside the Weave's single principle. Quarks stay an open term (D1597 status unchanged: open). Not evidence either way.
+- Next (quark track): lock a test of whether the Weave's Koide relation (δ = 2/9) extends to quarks; its known failure for quarks would be a second structural result.
+- Result: field_tests/results/q1_quark_endpoint.txt. MAP: none.
