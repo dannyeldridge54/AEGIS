@@ -1,8 +1,8 @@
 {
  "provenance": {
   "toolkit": "Evidence Atlas",
-  "version": "28d241e4+dirty",
-  "created_utc": "2026-11-20T12:17:26Z",
+  "version": "119bdfcf+dirty",
+  "created_utc": "2026-11-20T12:21:41Z",
   "settings": {},
   "sources": [],
   "validated_by": [
@@ -25,9 +25,32 @@
    "tension": 2
   },
   "headline_P": {
-   "pass": 10,
+   "pass": 9,
+   "fail": 3,
+   "tension": 2
+  },
+  "evidence": {
+   "pass": 4,
    "fail": 2,
    "tension": 2
+  },
+  "evidence_by_kind": {
+   "bound": {
+    "pass": 2,
+    "tension": 1
+   },
+   "match": {
+    "fail": 2,
+    "pass": 1
+   },
+   "comparison": {
+    "pass": 1,
+    "tension": 1
+   }
+  },
+  "consistent_not_evidence": {
+   "pass": 5,
+   "fail": 1
   }
  },
  "rows": [
@@ -43,7 +66,12 @@
    "pull": 1.3685002962069268,
    "headline": false,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": false,
+   "why": "n_s is fitted by the Ushas tilt",
+   "evidence": false
   },
   {
    "id": "infl-ns-ACT-DR6",
@@ -57,7 +85,12 @@
    "pull": 0.5256754862427347,
    "headline": false,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": false,
+   "why": "n_s is fitted by the Ushas tilt",
+   "evidence": false
   },
   {
    "id": "infl-ns-P-ACT",
@@ -71,7 +104,12 @@
    "pull": -0.06639440945550346,
    "headline": false,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": false,
+   "why": "n_s is fitted by the Ushas tilt",
+   "evidence": false
   },
   {
    "id": "infl-ns-P-ACT-LB",
@@ -85,7 +123,12 @@
    "pull": -1.074205516450289,
    "headline": false,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": false,
+   "why": "n_s is fitted by the Ushas tilt",
+   "evidence": false
   },
   {
    "id": "infl-ns-P-ACT-LB2",
@@ -99,7 +142,12 @@
    "pull": -1.517432918643628,
    "headline": false,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": false,
+   "why": "n_s is fitted by the Ushas tilt",
+   "evidence": false
   },
   {
    "id": "infl-ns-SPT-3G-D1",
@@ -113,7 +161,12 @@
    "pull": 1.7861546585517378,
    "headline": false,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": false,
+   "why": "n_s is fitted by the Ushas tilt",
+   "evidence": false
   },
   {
    "id": "infl-ns-CMB-SPA",
@@ -127,7 +180,12 @@
    "pull": 0.7492337480230112,
    "headline": false,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": false,
+   "why": "n_s is fitted by the Ushas tilt",
+   "evidence": false
   },
   {
    "id": "infl-ns-CMB-SPA+DESI",
@@ -141,7 +199,12 @@
    "pull": -0.7971476873818244,
    "headline": false,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": false,
+   "why": "n_s is fitted by the Ushas tilt",
+   "evidence": false
   },
   {
    "id": "infl-r-BK18",
@@ -155,7 +218,12 @@
    "pull": "pass",
    "headline": false,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "r follows from the locked species-plateau curve; the bound data predate the model",
+   "evidence": false
   },
   {
    "id": "infl-r-P-ACT+BK18",
@@ -169,7 +237,12 @@
    "pull": "pass",
    "headline": false,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "r follows from the locked species-plateau curve; the bound data predate the model",
+   "evidence": false
   },
   {
    "id": "infl-r-PR4+BK18",
@@ -183,7 +256,12 @@
    "pull": "pass",
    "headline": true,
    "dnote": "J3b; register A2/A5",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "r follows from the locked species-plateau curve; the bound data predate the model",
+   "evidence": true
   },
   {
    "id": "infl-alpha_s",
@@ -197,7 +275,12 @@
    "status": "open",
    "headline": false,
    "pull": null,
-   "dnote": ""
+   "dnote": "",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "no measurement yet",
+   "evidence": false
   },
   {
    "id": "infl-r-ladder",
@@ -211,7 +294,12 @@
    "status": "open",
    "headline": false,
    "pull": null,
-   "dnote": ""
+   "dnote": "",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "r follows from the locked species-plateau curve; the bound data predate the model",
+   "evidence": false
   },
   {
    "id": "flav-Koide-Q-2-3",
@@ -225,7 +313,12 @@
    "pull": -0.43362942433995827,
    "headline": true,
    "dnote": "D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": true,
+   "why": "Koide 1982 relation, inherited",
+   "evidence": false
   },
   {
    "id": "flav-TM1-sin²θ₁₂-vs-JUNO-first-data",
@@ -239,7 +332,12 @@
    "pull": 1.0542057158459677,
    "headline": false,
    "dnote": "D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": true,
+   "why": "TM1 adopted after JUNO excluded TM2 (D1667); TM1 is a known pattern",
+   "evidence": false
   },
   {
    "id": "flav-TM1-sin²θ₁₂-vs-NuFIT-6-0-JUNO",
@@ -253,7 +351,12 @@
    "pull": 1.424512818265698,
    "headline": false,
    "dnote": "D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": true,
+   "why": "TM1 adopted after JUNO excluded TM2 (D1667); TM1 is a known pattern",
+   "evidence": false
   },
   {
    "id": "flav-TM1-sin²θ₁₂-vs-post-JUNO-global",
@@ -267,7 +370,12 @@
    "pull": 1.3522725654602599,
    "headline": true,
    "dnote": "D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR",
-   "status": "pass"
+   "status": "pass",
+   "timing": "post-hoc",
+   "kind": "match",
+   "inherited": true,
+   "why": "TM1 adopted after JUNO excluded TM2 (D1667); TM1 is a known pattern",
+   "evidence": false
   },
   {
    "id": "flav-Σm_ν-NO-m₁-0-below-the-DESI-CMB-bound",
@@ -281,7 +389,12 @@
    "pull": "pass",
    "headline": false,
    "dnote": "D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "default",
+   "evidence": false
   },
   {
    "id": "flav-TM1-δ_CP-lower-branch-s₂₃²-0-561-inside-",
@@ -295,7 +408,12 @@
    "pull": "pass",
    "headline": true,
    "dnote": "D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": true,
+   "why": "TM1 sum rule is inherited; branch chosen by data",
+   "evidence": false
   },
   {
    "id": "flav-TM1-δ_CP-lower-branch-s₂₃²-0-561-inside-",
@@ -309,7 +427,12 @@
    "pull": "pass",
    "headline": false,
    "dnote": "D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": true,
+   "why": "TM1 sum rule is inherited; branch chosen by data",
+   "evidence": false
   },
   {
    "id": "flav-TM2",
@@ -321,9 +444,14 @@
    "data": "0.3092 ± 0.0087 (JUNO)",
    "source": "JUNO arXiv:2511.14593; D1652",
    "pull": 3.633816682306909,
-   "headline": false,
-   "dnote": "D1652 (superseded by TM1)",
-   "status": "fail"
+   "headline": true,
+   "dnote": "D1652: the only future-data test so far; FAILED; superseded by TM1",
+   "status": "fail",
+   "timing": "future-data",
+   "kind": "match",
+   "inherited": false,
+   "why": "exact TM2 was on record before JUNO first data (Nov 2025 data vs earlier assignment)",
+   "evidence": true
   },
   {
    "id": "bbn-Yp-LBT2026-PRIMAT-theory-σ-",
@@ -337,7 +465,12 @@
    "pull": 1.0580240268822907,
    "headline": true,
    "dnote": "pull includes PRIMAT theory σ (PREREG_W5_BBN_THEORY); D1651",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": true,
+   "why": "standard BBN at ΔN_eff ≈ 0: the Weave leaves it unchanged",
+   "evidence": false
   },
   {
    "id": "bbn-Yp-Aver2021-PRIMAT-theory-σ-",
@@ -349,9 +482,14 @@
    "data": "0.2453 ± 0.0034",
    "source": "Aver et al. 2021, JCAP 03 027",
    "pull": 0.5543491805022764,
-   "headline": true,
+   "headline": false,
    "dnote": "pull includes PRIMAT theory σ (PREREG_W5_BBN_THEORY); D1651",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": true,
+   "why": "standard BBN at ΔN_eff ≈ 0: the Weave leaves it unchanged",
+   "evidence": false
   },
   {
    "id": "bbn-DH-Cooke2018-PRIMAT-theory-σ-",
@@ -365,7 +503,12 @@
    "pull": -1.660536494849437,
    "headline": true,
    "dnote": "pull includes PRIMAT theory σ (PREREG_W5_BBN_THEORY); D1651",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": true,
+   "why": "standard BBN at ΔN_eff ≈ 0",
+   "evidence": false
   },
   {
    "id": "bbn-li7",
@@ -379,7 +522,12 @@
    "pull": 3.525641025641025,
    "headline": true,
    "dnote": "D1640: NOT solved (shared with standard BBN)",
-   "status": "fail"
+   "status": "fail",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": true,
+   "why": "standard BBN failure, inherited",
+   "evidence": false
   },
   {
    "id": "elem-helium-3",
@@ -393,7 +541,12 @@
    "status": "open",
    "headline": false,
    "pull": null,
-   "dnote": ""
+   "dnote": "",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "open",
+   "evidence": false
   },
   {
    "id": "elem-carbon",
@@ -407,7 +560,12 @@
    "status": "open",
    "headline": false,
    "pull": null,
-   "dnote": ""
+   "dnote": "",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "open",
+   "evidence": false
   },
   {
    "id": "late-thread-Pantheon+",
@@ -421,7 +579,12 @@
    "pull": "pass",
    "headline": false,
    "dnote": "ΔAIC -0.6; trails w0wa",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "comparison",
+   "inherited": false,
+   "why": "PREREG_PLANCK_CLASS locked before the fits; data public",
+   "evidence": false
   },
   {
    "id": "late-thread-DES-Y5",
@@ -435,7 +598,12 @@
    "pull": "pass",
    "headline": false,
    "dnote": "ΔAIC -6.1; trails w0wa",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "comparison",
+   "inherited": false,
+   "why": "PREREG_PLANCK_CLASS locked before the fits; data public",
+   "evidence": false
   },
   {
    "id": "late-thread-Union3",
@@ -449,7 +617,12 @@
    "pull": "pass",
    "headline": false,
    "dnote": "ΔAIC -1.4; trails w0wa",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "comparison",
+   "inherited": false,
+   "why": "PREREG_PLANCK_CLASS locked before the fits; data public",
+   "evidence": false
   },
   {
    "id": "late-thread-all",
@@ -463,7 +636,12 @@
    "pull": "pass",
    "headline": true,
    "dnote": "rule 5: one headline row for the three overlapping fits",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "comparison",
+   "inherited": false,
+   "why": "PREREG_PLANCK_CLASS locked before the fits; data public",
+   "evidence": true
   },
   {
    "id": "late-coupling",
@@ -477,7 +655,12 @@
    "pull": "FAIL",
    "headline": true,
    "dnote": "D1725 fix_fails",
-   "status": "fail"
+   "status": "fail",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_PLANCK_CLASS",
+   "evidence": true
   },
   {
    "id": "late-w0wa",
@@ -491,7 +674,12 @@
    "status": "tension",
    "pull": null,
    "headline": true,
-   "dnote": "thread behind w0wa"
+   "dnote": "thread behind w0wa",
+   "timing": "locked",
+   "kind": "comparison",
+   "inherited": false,
+   "why": "D1712",
+   "evidence": true
   },
   {
    "id": "late-S8-thread-Pantheon-vs-KiDS-Legacy",
@@ -505,7 +693,12 @@
    "pull": -0.35624999999999546,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-thread-Pantheon-vs-CMB-lensing",
@@ -519,7 +712,12 @@
    "pull": -1.5583333333333282,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-coupled-Pantheon-vs-KiDS-Legacy",
@@ -533,7 +731,12 @@
    "pull": -0.16249999999999598,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-coupled-Pantheon-vs-CMB-lensing",
@@ -547,7 +750,12 @@
    "pull": -1.2999999999999956,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-thread-DES-Y5-vs-KiDS-Legacy",
@@ -561,7 +769,12 @@
    "pull": -0.43749999999999345,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-thread-DES-Y5-vs-CMB-lensing",
@@ -575,7 +788,12 @@
    "pull": -1.666666666666659,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-coupled-DES-Y5-vs-KiDS-Legacy",
@@ -589,7 +807,12 @@
    "pull": -0.4187499999999955,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-coupled-DES-Y5-vs-CMB-lensing",
@@ -603,7 +826,12 @@
    "pull": -1.6416666666666617,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-thread-Union3-vs-KiDS-Legacy",
@@ -617,7 +845,12 @@
    "pull": -0.13749999999999873,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-thread-Union3-vs-CMB-lensing",
@@ -631,7 +864,12 @@
    "pull": -1.266666666666666,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-coupled-Union3-vs-KiDS-Legacy",
@@ -645,7 +883,12 @@
    "pull": 0.6333333333333375,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-coupled-Union3-vs-CMB-lensing",
@@ -659,7 +902,12 @@
    "pull": 0.0250000000000065,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L3",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": false
   },
   {
    "id": "late-S8-thread",
@@ -673,7 +921,12 @@
    "pull": -0.43749999999999345,
    "headline": true,
    "dnote": "rule 5: one headline row",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "match",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L3",
+   "evidence": true
   },
   {
    "id": "lhc-wino",
@@ -687,7 +940,12 @@
    "pull": "pass",
    "headline": false,
    "dnote": "mass is a chosen benchmark, not a prediction",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "benchmark mass",
+   "evidence": false
   },
   {
    "id": "gline-440-Einasto",
@@ -704,7 +962,12 @@
    "status": "pass",
    "pull": null,
    "headline": false,
-   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1"
+   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L1",
+   "evidence": false
   },
   {
    "id": "gline-440-Burkert",
@@ -721,7 +984,12 @@
    "status": "pass",
    "pull": null,
    "headline": false,
-   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1"
+   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L1",
+   "evidence": false
   },
   {
    "id": "gline-1000-Einasto",
@@ -738,7 +1006,12 @@
    "status": "tension",
    "pull": null,
    "headline": true,
-   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1"
+   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L1",
+   "evidence": true
   },
   {
    "id": "gline-1000-Burkert",
@@ -755,7 +1028,12 @@
    "status": "pass",
    "pull": null,
    "headline": false,
-   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1"
+   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L1",
+   "evidence": false
   },
   {
    "id": "gline-2900-Einasto",
@@ -772,7 +1050,12 @@
    "status": "fail",
    "pull": null,
    "headline": false,
-   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1"
+   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L1",
+   "evidence": false
   },
   {
    "id": "gline-2900-Burkert",
@@ -789,7 +1072,12 @@
    "status": "fail",
    "pull": null,
    "headline": false,
-   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1"
+   "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "PREREG_W2_LINKS L1",
+   "evidence": false
   },
   {
    "id": "dm-12.8",
@@ -803,7 +1091,12 @@
    "status": "pass",
    "pull": null,
    "headline": true,
-   "dnote": "LZ curve at 13 GeV not yet sourced (D1678)"
+   "dnote": "LZ curve at 13 GeV not yet sourced (D1678)",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": false,
+   "why": "PREREG_Q9/Q11: survives limits",
+   "evidence": true
   },
   {
    "id": "ns-mmax",
@@ -817,7 +1110,12 @@
    "pull": "pass",
    "headline": false,
    "dnote": "standard nuclear physics",
-   "status": "pass"
+   "status": "pass",
+   "timing": "locked",
+   "kind": "bound",
+   "inherited": true,
+   "why": "standard nuclear physics",
+   "evidence": false
   },
   {
    "id": "nu-relic-neutrino-number-density-",
@@ -831,7 +1129,12 @@
    "status": "open",
    "headline": false,
    "dnote": "queue K1",
-   "pull": null
+   "pull": null,
+   "timing": "locked",
+   "kind": "match",
+   "inherited": true,
+   "why": "standard cosmology",
+   "evidence": false
   },
   {
    "id": "nu-relic-neutrino-temperature-K-",
@@ -845,7 +1148,12 @@
    "status": "open",
    "headline": false,
    "dnote": "queue K1",
-   "pull": null
+   "pull": null,
+   "timing": "locked",
+   "kind": "match",
+   "inherited": true,
+   "why": "standard cosmology",
+   "evidence": false
   },
   {
    "id": "nu-Ω_ν-h²",
@@ -859,7 +1167,12 @@
    "status": "open",
    "headline": false,
    "dnote": "queue K1",
-   "pull": null
+   "pull": null,
+   "timing": "locked",
+   "kind": "match",
+   "inherited": true,
+   "why": "standard cosmology",
+   "evidence": false
   }
  ]
 }

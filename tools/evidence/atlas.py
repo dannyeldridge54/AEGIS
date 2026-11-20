@@ -46,7 +46,7 @@ def rows():
             weave=w, label=lab, data=dat, source=src, pull=v, headline=head and lab == 'P', dnote='D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR')
     add(id='flav-TM2', category='particle', toolkit='Flavour', quantity='exact TM2 sin²θ₁₂ (an earlier Weave assignment)', weave=f['outputs']['TM2_sin2_theta12_excluded'],
         label='P', data='0.3092 ± 0.0087 (JUNO)', source='JUNO arXiv:2511.14593; D1652', pull=(f['outputs']['TM2_sin2_theta12_excluded'] - 0.3092)/0.0087,
-        headline=False, dnote='D1652 (superseded by TM1)')
+        headline=True, dnote='D1652: the only future-data test so far; FAILED; superseded by TM1')
 
     # ---- light elements (Hyperion) ----
     b = lv['bbn']
@@ -113,21 +113,60 @@ def rows():
             data='not directly measured (PTOLEMY-type capture needed)', source='standard cosmology; masses from register node mnu', status='open', headline=False, dnote='queue K1')
     return R
 
+# DEVIATIONS D1: timing / kind / inherited, with a one-line reason each (prefix match on row id)
+CLASSIFY = [  # (id prefix, timing, kind, inherited, reason)
+    ('infl-ns', 'post-hoc', 'match', False, 'n_s is fitted by the Ushas tilt'),
+    ('infl-r', 'locked', 'bound', False, 'r follows from the locked species-plateau curve; the bound data predate the model'),
+    ('infl-alpha', 'locked', 'match', False, 'no measurement yet'),
+    ('flav-Koide', 'locked', 'match', True, 'Koide 1982 relation, inherited'),
+    ('flav-TM1-sin', 'post-hoc', 'match', True, 'TM1 adopted after JUNO excluded TM2 (D1667); TM1 is a known pattern'),
+    ('flav-TM1-', 'locked', 'match', True, 'TM1 sum rule is inherited; branch chosen by data'),
+    ('flav-m', 'locked', 'bound', False, 'mass sum assumes m1 = 0'),
+    ('flav-TM2', 'future-data', 'match', False, 'exact TM2 was on record before JUNO first data (Nov 2025 data vs earlier assignment)'),
+    ('bbn-Yp', 'locked', 'match', True, 'standard BBN at ΔN_eff ≈ 0: the Weave leaves it unchanged'),
+    ('bbn-DH', 'locked', 'match', True, 'standard BBN at ΔN_eff ≈ 0'),
+    ('bbn-li7', 'locked', 'match', True, 'standard BBN failure, inherited'),
+    ('elem-', 'locked', 'match', False, 'open'),
+    ('late-thread', 'locked', 'comparison', False, 'PREREG_PLANCK_CLASS locked before the fits; data public'),
+    ('late-coupling', 'locked', 'match', False, 'PREREG_PLANCK_CLASS'),
+    ('late-w0wa', 'locked', 'comparison', False, 'D1712'),
+    ('late-S8', 'locked', 'match', False, 'PREREG_W2_LINKS L3'),
+    ('late-', 'locked', 'match', False, 'PREREG_W2_LINKS L3'),
+    ('lhc-', 'locked', 'bound', False, 'benchmark mass'),
+    ('gline-', 'locked', 'bound', False, 'PREREG_W2_LINKS L1'),
+    ('dm-', 'locked', 'bound', False, 'PREREG_Q9/Q11: survives limits'),
+    ('ns-', 'locked', 'bound', True, 'standard nuclear physics'),
+    ('nu-', 'locked', 'match', True, 'standard cosmology'),
+]
+def classify(R):
+    for r in R:
+        for pre, t, k, inh, why in CLASSIFY:
+            if r['id'].startswith(pre):
+                r.update(timing=t, kind=k, inherited=inh, why=why); break
+        else: r.update(timing='locked', kind='match', inherited=False, why='default')
+        if r['id'] == 'bbn-Yp-Aver2021-PRIMAT-theory-' or r['id'].startswith('bbn-Yp-Aver'): r['headline'] = False   # one helium headline (LBT 2026)
+        r['evidence'] = bool(r.get('headline') and r['label'] == 'P' and r['timing'] != 'post-hoc' and not r['inherited'])
+    return R
+
 def summary(R):
-    out = {'rows': len(R), 'by_label': {}, 'by_status': {}, 'headline_P': {}}
+    out = {'rows': len(R), 'by_label': {}, 'by_status': {}, 'headline_P': {}, 'evidence': {}, 'evidence_by_kind': {}, 'consistent_not_evidence': {}}
     for r in R:
         out['by_label'][r['label']] = out['by_label'].get(r['label'], 0) + 1
         out['by_status'][r['status']] = out['by_status'].get(r['status'], 0) + 1
         if r['label'] == 'P' and r.get('headline'):
             out['headline_P'][r['status']] = out['headline_P'].get(r['status'], 0) + 1
+            bucket = out['evidence'] if r.get('evidence') else out['consistent_not_evidence']
+            bucket[r['status']] = bucket.get(r['status'], 0) + 1
+            if r.get('evidence'):
+                kk = out['evidence_by_kind'].setdefault(r['kind'], {}); kk[r['status']] = kk.get(r['status'], 0) + 1
     return out
 
 def build(out_dir):
     from tools.prov_block import provenance
-    os.makedirs(out_dir, exist_ok=True); R = rows(); S = summary(R)
+    os.makedirs(out_dir, exist_ok=True); R = classify(rows()); S = summary(R)
     doc = dict(provenance=provenance('Evidence Atlas', {}, [], ['PREREG_EVIDENCE_ATLAS']), summary=S, rows=R)
     json.dump(doc, open(os.path.join(out_dir, 'atlas.json'), 'w', encoding='utf-8'), indent=1, default=lambda o: float(o) if hasattr(o, '__float__') else str(o), ensure_ascii=False)
-    cols = ['id', 'category', 'toolkit', 'quantity', 'weave', 'label', 'data', 'source', 'pull', 'status', 'headline', 'dnote']
+    cols = ['id', 'category', 'toolkit', 'quantity', 'weave', 'label', 'timing', 'kind', 'inherited', 'evidence', 'data', 'source', 'pull', 'status', 'headline', 'why', 'dnote']
     def w(path, rs):
         with open(path, 'w', newline='', encoding='utf-8') as fh:
             c = csv.DictWriter(fh, fieldnames=cols, extrasaction='ignore'); c.writeheader(); c.writerows(rs)

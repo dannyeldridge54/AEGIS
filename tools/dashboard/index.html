@@ -70,8 +70,8 @@ try{const t=localStorage.getItem('aegis-theme');if(t)document.documentElement.da
 $('#theme').onclick=theme;
 // ---- Evidence Atlas ----
 fetch('atlas.json').then(r => r.json()).then(A => {
-  const R = A.rows, S = A.summary, H = S.headline_P || {};
-  $('#ev-kpi').innerHTML = `<div class="kpi"><b class="p">${H.pass || 0}</b><span>headline predictions PASS</span></div><div class="kpi"><b class="w">${H.tension || 0}</b><span>in TENSION</span></div><div class="kpi"><b class="f">${H.fail || 0}</b><span>FAIL (kept, not hidden)</span></div><div class="kpi"><b>${S.rows}</b><span>rows: ${Object.entries(S.by_label).map(([k, v]) => k + ' ' + v).join(' · ')}</span></div>`;
+  const R = A.rows, S = A.summary, H = S.evidence || S.headline_P || {}, C = S.consistent_not_evidence || {};
+  $('#ev-kpi').innerHTML = `<div class="kpi"><b class="p">${H.pass || 0}</b><span>evidence PASS (pre-registered P, not inherited, not post-hoc)</span></div><div class="kpi"><b class="w">${H.tension || 0}</b><span>in TENSION</span></div><div class="kpi"><b class="f">${H.fail || 0}</b><span>FAIL (kept, not hidden)</span></div><div class="kpi"><b>${(C.pass || 0)}</b><span>consistent but NOT evidence (post-hoc or inherited)</span></div><div class="kpi"><b>${S.rows}</b><span>rows: ${Object.entries(S.by_label).map(([k, v]) => k + ' ' + v).join(' · ')}</span></div>`;
   const opt = (id, name, vals) => $(id).innerHTML = `<option value="">${name}: all</option>` + vals.map(v => `<option>${esc(v)}</option>`).join('');
   opt('#ev-tk', 'Toolkit', [...new Set(R.map(r => r.toolkit))].sort()); opt('#ev-lab', 'Label', ['P', 'F', 'A', 'S', 'G']); opt('#ev-st', 'Status', ['pass', 'tension', 'fail', 'open']);
   const LAB = {P: 'prediction', F: 'fitted', A: 'assumed', S: 'standard physics', G: 'open gap'}, cls = {pass: 'p', tension: 'w', fail: 'f', open: ''};
@@ -80,11 +80,11 @@ fetch('atlas.json').then(r => r.json()).then(A => {
     const q = $('#ev-q').value.toLowerCase(), tk = $('#ev-tk').value, lb = $('#ev-lab').value, st = $('#ev-st').value, hd = $('#ev-head').checked;
     const rs = R.filter(r => (!tk || r.toolkit === tk) && (!lb || r.label === lb) && (!st || r.status === st) && (!hd || r.headline) &&
       (!q || [r.quantity, r.source, r.dnote, r.category, r.data].join(' ').toLowerCase().includes(q)));
-    $('#t-ev').innerHTML = '<tr><th>Quantity</th><th>Toolkit</th><th>Label</th><th>Weave</th><th>Data</th><th>Pull</th><th>Status</th><th>Source · D-note</th></tr>' +
-      rs.map(r => `<tr><td>${r.headline ? '★ ' : ''}${esc(r.quantity)}<br><span class="sub">${esc(r.category)}</span></td><td>${esc(r.toolkit)}</td><td><span class="lab" title="${LAB[r.label]}">${r.label}</span></td>
+    $('#t-ev').innerHTML = '<tr><th>Quantity</th><th>Toolkit</th><th>Label</th><th>Timing</th><th>Weave</th><th>Data</th><th>Pull</th><th>Status</th><th>Source · D-note</th></tr>' +
+      rs.map(r => `<tr><td>${r.headline ? '★ ' : ''}${esc(r.quantity)}<br><span class="sub">${esc(r.category)}</span></td><td>${esc(r.toolkit)}</td><td><span class="lab" title="${LAB[r.label]}">${r.label}</span>${r.evidence ? ' <b class="p" title="counts as evidence">E</b>' : ''}</td><td class="sub" title="${esc(r.why || '')}">${esc(r.timing || '')}${r.inherited ? ' · inherited' : ''}<br>${esc(r.kind || '')}</td>
         <td class="n">${esc(show(r.weave))}</td><td>${esc(r.data)}</td><td class="n">${typeof r.pull === 'number' ? (r.pull > 0 ? '+' : '') + r.pull.toFixed(2) + 'σ' : esc(r.pull ?? '')}</td>
         <td class="${cls[r.status]}">${r.status}</td><td class="sub">${esc(r.source)}${r.dnote ? ' · ' + esc(r.dnote) : ''}</td></tr>`).join('') +
-      `<tr><td colspan="8" class="sub">${rs.length} of ${R.length} rows · ★ = headline row · built ${esc(A.provenance.created_utc)} at code ${esc(A.provenance.version)}</td></tr>`;
+      `<tr><td colspan="9" class="sub">${rs.length} of ${R.length} rows · ★ = headline row · built ${esc(A.provenance.created_utc)} at code ${esc(A.provenance.version)}</td></tr>`;
   }
   ['#ev-q', '#ev-tk', '#ev-lab', '#ev-st', '#ev-head'].forEach(s => $(s).addEventListener('input', draw)); draw();
 }).catch(() => { $('#ev-kpi').innerHTML = '<p class="sub">atlas.json missing: run python3 -m tools.dashboard.build</p>'; });
