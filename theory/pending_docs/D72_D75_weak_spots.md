@@ -16921,3 +16921,7 @@ PC: BUILDCLASS3_D1713 PASSED on the PC (python 3.11 env; same 3.3e-7 background 
 - Register C8 (WEAVE_POSTULATES.md, commit 595dbdb5, whose message lost its D-number): negative space moved from "forbidden, needs a second sector" to DERIVED from the coupled fix (D1716/D1717); the full-Planck CLASS test (D1713) is listed as decisive.
 - CORRECTION: C8's line gave the dark-matter clustering boost as G_eff = G(1 + β²). The correct factor for this coupling is G(1 + 2β²) (D1714, Pettorino–Baccigalupi; reproduced by CLASS in D1713). At β = 0.074: +1.1%, not +0.55%. No computed result had used the wrong factor.
 - Names (Danny 21:00): coupled thread = the Arthur field; X = the Sarah; A′ = the Cassandra (WEAVE_NAMES.md).
+
+## D1719 (CENTRE, 19 Nov 2026) — PUBLISHED on Danny's "publish" (21:07): "Not Yet Seen: The Undiscovered Particles and Dark Bound States Predicted by the Weave …"
+doi:10.5281/zenodo.24385539, PDF md5 1e5f4d384c9a33345f01c31ebf2ecd64 (verified on Zenodo = local), CC BY-NC-SA 4.0, preprint, 3 pages. Eleven predicted states with names: sarion, cassion, arthon (family: Sarah, Cassandra, Arthur); waaqinos, malinon, mayarons, Māui knots, haenon/dalnon, ravon, triglavons, saulon (world traditions, stated in the paper as open to review by each tradition). Status of all: no direct evidence; none excluded; only class-level 2–4σ interaction hints. Derived negative: no dark chemistry in the minimal sector (σ/m ≲ 1e-6 cm²/g).
+Next (Danny 21:08): letters to the eight traditions asking for review of the names (drafts until Danny says Send).
