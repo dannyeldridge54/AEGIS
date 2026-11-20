@@ -10,6 +10,7 @@ D1. [DONE D1694: thread −4.84 (supported), CPL −10.84, ΛsCDM −4.80 at edg
 D2. [DONE D1696: exact −6.90 / −4.65 vs leading −7.01 / −4.84] Real-data refit with the EXACT SERAPIS curve (D1638) instead of the leading-order 1 − 7.30e^{−βφ}: does Δχ² stay ≈ −7?
 D3. [PARTIAL: corrected D1697a, flux gives even levels, 3 generations → level 8, not S₄] P-S4: any reason for level 4? Test whether E(τ,3/2)'s Fourier/Hecke structure singles out Γ(4) (or Γ(2)/Γ(3)). A literature check first.
 D4. [DONE: Sumino U(3) family gauge; compatible with Z₃ ⊂ U(3)] B6 Koide pole vs running: is there a known mechanism (e.g. Sumino's family gauge symmetry) that keeps Q = 2/3 for pole masses? Can it sit at ρ?
-D5. B2 δ = 2/9: one more literature pass (2026) for a derivation.
+D5. [DONE: Shulga Berry phase 2λ_B/9, λ_B = 1 not derived] B2 δ = 2/9: one more literature pass (2026) for a derivation.
 D6. [DONE D1695: z†=2.64, Δχ² −4.93, ties the thread] ΛsCDM with z† up to 10 (with the CMB), to resolve the edge hit of D1694.
 D7. Test the TM pattern at the two vacua under Δ(48)⋊Z₈ (level 8; M = 4 T²/Z₂ triplet; matrices in 2005.12642 eq. 70).
+D8. Can λ_B = 1 be computed for the axion circle Re τ at ρ (Berry phase of the Z₃ shift for modular-form wavefunctions of weight k)? Literature + small calculation.

@@ -14,7 +14,7 @@ Rule: a postulate is a stated assumption that the theory now RUNS on. It is not 
 | # | gap | postulate | test |
 |---|---|---|---|
 | B1 | Q = 2/3 (√2 amplitude) | **P-F1:** Z₃ equipartition, singlet and doublet carry equal norm | m_τ to 0.05 MeV (Belle II) sharpens Q to 3.5 × 10⁻⁶ |
-| B2 | δ = 2/9 | **C-δ:** δ = Q/3, one third of the Koide ratio per generation step (empirical) | same m_τ test; must be derived or dropped |
+| B2 | δ = 2/9 | **C-δ (D1699):** δ = Berry phase 2λ_B/9 of one Z₃ family shift on a compact circle; 2/9 needs λ_B = 1 (Shulga 2605.10245; his Q = 2/3 condition = our P-F1). Candidate circle: the axion Re τ. Not derived | same m_τ test; must be derived or dropped |
 | B3 | lepton moduli feel the Zhinü potential | **P-F2** | basin fractions (done: 69% → i) |
 | B4 | small offset of τ_ν from i (1.0685i) | **C-off:** a supercritical +κy^{1/2}\|η\|² term at Δ ≈ 0.2% (D1618) | sin²θ₁₂ shift; fit quality at 1.048–1.168i |
 | B5 | EXACT TM2 EXCLUDED by JUNO (+3.6σ; +4.6σ combined, D1652). RESCUE (D1667): TM1 survives (+1.1σ) with modular S₄ at the SAME two vacua (ρ; τ_SU ≅ i). **P-S4 (assumed; D1697 corrected by D1697a):** magnetised flux gives even levels only (no A₄), but its three-generation case is level 8 (Δ(48) ⋊ Z₈, M = 4 orbifold), so S₄ is NOT derived. Under S₄: 3/6 images of i give TM1, 3/6 give a dead pattern, none give TM2 (D1668). TM1 δ_CP: lower branch 262°–286° survives NuFIT 6.0 and lies inside the T2K+NOvA joint 1σ (peak 275°, D1690); the upper branch is excluded (D1669). Natural: P(TM1) = 0.345 of slow-modulus starts (D1674) | **C-ν:** a non-minimal S-invariant M_ν with non-degenerate masses (bulk/seesaw) | JUNO sin²θ₁₂ to ±0.5%: TM2's 0.3408 is in or out |
