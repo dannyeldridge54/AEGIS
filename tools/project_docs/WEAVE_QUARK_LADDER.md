@@ -29,3 +29,14 @@ Supplements WEAVE_FULL_EQUATION §5. Correction to §5: "their fit τ_q = 1/8 + 
 ## Open
 The down sector wants a larger slip than rung 1 (m_s/m_b low in both models); the residual misses in V_cb and V_ub; what selects the classes m; why the weights are anomaly-free.
 Data sheet: repo theory/quarks/LADDER_DATASHEET.md + .csv. Weave Control has a Quarks level.
+
+## The ladder equation (D1741) — frozen predictions (PREREG_LADDER_PREDICTIONS, 20 Nov 2026)
+    ε_m = 0.0251·e^{i50°}/(m + 1/16)
+    rung-m family:  m₂/m₃ ≃ κ₂ε_m,  m₁/m₃ ≃ κ₁ε_m²  (κ O(1))
+    two families:   g_a/g_b = (m_b + 1/16)/(m_a + 1/16)   (equal-coefficient limit)
+| # | prediction | today | how it is scored |
+|---|---|---|---|
+| L1 | up quarks on rung 8: g_u/g_d = 0.1318 (rung 9 would be 0.1172) | 0.1276 ± 0.0060 (0.7σ) | future quark masses with σ ≤ 0.0049 |
+| L2 | no Koide for quarks; leptons never follow slip scaling | holds (D1728, D1737) | any new precision masses |
+| L3 | any new modular fermion family sits on an integer rung: m₂/m₃ ∈ [ε_m/3, 3ε_m]; free rungs 2–7, ≥ 11 | — | a dark-sector family, if found |
+| L4 | θ̄ = 0 exactly | |θ̄| < 1e-10 | neutron EDM |
