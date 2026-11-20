@@ -51,7 +51,7 @@ def weave_koide_slip(a):
 
 def weave_tauq(a):
     """Heavy quark modulus window (Q4, D1730): gravitational decay, dilution D, n_s shift."""
-    M, p0 = float(a['mass_GeV']), float(a.get('phi0', 1.0)); MP, TR, Ns = 2.435e18, 1.34e9, 55.0
+    M, p0 = float(a['mass_GeV']), float(a.get('phi0', 1.0)); MP, TR, Ns = 2.435e18, 1.34e9, float(a.get('Nstar', 50.37))   # Q4 DEVIATIONS D1: N* of serapis_10d
     G = M ** 3 / (4 * math.pi * MP ** 2); g = 10.75 if (90 / (math.pi ** 2 * 10.75)) ** .25 * math.sqrt(G * MP) < 1 else 80
     Td = (90 / (math.pi ** 2 * g)) ** .25 * math.sqrt(G * MP); D = max(1.0, TR * p0 ** 2 / 6 / Td); dns = abs(2 * (-math.log(D) / 3) / Ns ** 2)
     return dict(T_dec_GeV=Td, dilution=D, delta_ns=dns, allowed=(Td >= 5e-3 and D <= 1e3 and dns <= 0.003), H_inf_GeV=5.2e12,

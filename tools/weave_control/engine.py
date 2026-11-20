@@ -292,7 +292,9 @@ def _tdec(m, MP=2.435e18):
 def quarks(p):
     m = int(p['sugra_m']); u = 0.0145/(m+0.0625)*cmath.exp(-2j*math.pi/9); eps = 1j*math.sqrt(3)*u     # 2201.02020 → 2212.13336 convention
     dist = {k: abs(eps-v)/abs(v) for k, v in EPS_FITS.items()}
-    M, phi0, TR, Ns = float(p['tauq_mass_GeV']), float(p['tauq_phi0']), 1.34e9, 55.0
+    from tools.janus_calc import settings as _J
+    M, phi0, TR = float(p['tauq_mass_GeV']), float(p['tauq_phi0']), 1.34e9
+    Ns = float(_J.predict(p['inflation_model'], p['Nstar'])['Nstar'])   # Q4 DEVIATIONS D1: N* of the inflation model in use (was 55)
     Td = _tdec(M); D = max(1.0, TR*phi0**2/6/Td); dns = abs(2*(-math.log(D)/3)/Ns**2)
     r, up, dn, sm, se, src = LHCB_RMM; pull = (r-sm)/math.hypot(up if sm > r else dn, se)
     pulls = {'ε in quark-fit band (Q6)': 'pass' if EPS_BAND[0] <= abs(eps) <= EPS_BAND[1] else 'FAIL',
