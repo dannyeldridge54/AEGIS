@@ -116,25 +116,26 @@ def batch_engine(out, rng, seconds, cur):
     return n, allp
 
 
-def run(data_dir, seconds=60, seed=None):
+def run(data_dir, seconds=60, seed=None, shard=''):
+    """shard='' -> the shared files (learn loop inline); shard='_wN' -> worker N's own files (weave_pool, no write races)."""
     d = pathlib.Path(data_dir); d.mkdir(parents=True, exist_ok=True)
     ok, free, used = _guard(d)
     if not ok: return {'weave_sweep': 'paused by disk guard', 'free_GB': round(free, 1), 'used_GB': round(used, 3)}
     rng = random.Random(seed if seed is not None else time.time_ns())
-    with open(d / 'ckm_scan.jsonl', 'a', encoding='utf-8') as f: n, best = batch_ckm(f, rng, seconds)
+    with open(d / f'ckm_scan{shard}.jsonl', 'a', encoding='utf-8') as f: n, best = batch_ckm(f, rng, seconds)
     if best:
         top = min(best.values(), key=lambda r: r['score']); pr = polish(top, seconds=max(5, seconds // 4))
-        with open(d / 'ckm_scan.jsonl', 'a', encoding='utf-8') as f: f.write(json.dumps(pr) + '\n')
+        with open(d / f'ckm_scan{shard}.jsonl', 'a', encoding='utf-8') as f: f.write(json.dumps(pr) + '\n')
         best[f"{pr['model']}:{pr['rung_u']}"] = pr if pr['score'] < top['score'] else top
-    with open(d / 'propagation.jsonl', 'a', encoding='utf-8') as f: npr = batch_props(f)
+    with open(d / f'propagation{shard}.jsonl', 'a', encoding='utf-8') as f: npr = batch_props(f)
     ne = na = 0
     cur = os.environ.get('WEAVE_CURRENT') or str(pathlib.Path(__file__).resolve().parents[3] / 'aegis_current')
     if pathlib.Path(cur).is_dir():
         try:
-            with open(d / 'engine_scan.jsonl', 'a', encoding='utf-8') as f: ne, na = batch_engine(f, rng, max(20, seconds // 3), cur)
+            with open(d / f'engine_scan{shard}.jsonl', 'a', encoding='utf-8') as f: ne, na = batch_engine(f, rng, max(20, seconds // 3), cur)
         except Exception as e:
             ne = 'error: ' + str(e)[:120]
-    sp = d / 'summary.json'; S = json.loads(sp.read_text()) if sp.exists() else {'rows': 0, 'best': {}}
+    sp = d / f'summary{shard}.json'; S = json.loads(sp.read_text()) if sp.exists() else {'rows': 0, 'best': {}}
     S['rows'] += n
     for k, r in best.items():
         if k not in S['best'] or r['score'] < S['best'][k]['score']: S['best'][k] = r
@@ -144,6 +145,23 @@ def run(data_dir, seconds=60, seed=None):
     sp.write_text(json.dumps(S, indent=1))
     return {'weave_sweep': n, 'prop_rows': npr, 'engine_rows': ne, 'engine_all_pass': na, 'best_score': round(S['top'][0]['score'], 2) if S['top'] else None,
             'best_at': f"{S['top'][0]['model']} up rung {S['top'][0]['rung_u']}" if S['top'] else None, 'free_GB': round(free, 1)}
+
+
+def merge(data_dir):
+    """Combine every summary*.json (inline + pool workers) into summary.json; same return shape as run()."""
+    d = pathlib.Path(data_dir); ok, free, used = _guard(d); M = {'rows': 0, 'best': {}, 'engine_rows': 0, 'engine_all_pass': 0}
+    for sp in d.glob('summary*.json'):
+        if sp.name == 'summary_merged.json': continue
+        try: S = json.loads(sp.read_text())
+        except Exception: continue
+        M['rows'] += S.get('rows', 0); M['engine_rows'] += S.get('engine_rows', 0); M['engine_all_pass'] += S.get('engine_all_pass', 0)
+        for k, r in S.get('best', {}).items():
+            if k not in M['best'] or r['score'] < M['best'][k]['score']: M['best'][k] = r
+    M['top'] = sorted(M['best'].values(), key=lambda r: r['score'])[:5]
+    (d / 'summary_merged.json').write_text(json.dumps(M, indent=1))
+    return {'weave_sweep': 'pool', 'rows_total': M['rows'], 'engine_rows_total': M['engine_rows'], 'free_GB': round(free, 1), 'used_GB': round(used, 2),
+            'best_score': round(M['top'][0]['score'], 2) if M['top'] else None,
+            'best_at': f"{M['top'][0]['model']} up rung {M['top'][0]['rung_u']}" if M['top'] else None}
 
 
 if __name__ == '__main__':
