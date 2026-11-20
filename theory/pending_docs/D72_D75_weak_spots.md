@@ -16301,6 +16301,7 @@ Results [computed]:
 - Matter-like oscillation happens only in the future (the field is still on the plateau today), so it is untestable now.
 Caveats: the w₀–w_a correlation ρ = −0.9 is ASSUMED (not taken from the paper). The thread is thawing, so it cannot cross w = −1, which DESI's central values do.
 Verdict: PARTIAL. The reverse thread is a viable, mildly-better-than-Λ dark energy. It naturally predicts w₀ ≈ −0.92 to −0.95 and |w_a| ≲ 0.25, and the tilt β is not identifiable at this precision. It does NOT fix Λ's size: V_Λ ~ 10⁻¹²² M_P⁴ is put in by hand, so the coincidence problem remains open. Test: DESI DR3/Euclid. If w_a stays below −0.5 with w₀ > −0.9, the thread is excluded.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1627 (RIGHT, 19 Nov 2026) — reverse thread re-scored with the sourced DESI calibration (PREREG_GENESIS_DE2) — REPLACES the D1626 scores
 Source: DESI DR2 (arXiv:2503.14738) Table VI gives w₀w_aCDM vs ΛCDM Δχ²_MAP = 10.7 / 17.4 / 21.0 (Pantheon+ / Union3 / DESY5; 2.8σ / 3.8σ / 4.2σ). Table V gives DESY5: w₀ = −0.752 ± 0.057, w_a = −0.86 (+0.23/−0.20). Calibrating the Gaussian approximation to these values gives ρ = −0.55, −0.54, −0.59. D1626's assumed −0.9 was therefore too tight a correlation.
@@ -16314,9 +16315,11 @@ Results [computed] (min Δχ², pass ≤ 6.18):
 - Flag: the best Union3/DESY5 points (w₀ ≈ −0.72, w_a ≈ −0.51 for 2√2) sit at the LAST viable starting height before the field rolls into V < 0. These are edge-of-viability fits, so the starting height is tuned.
 - The non-monotonic β = 2 failure is most likely the coarse 40-point grid near that edge, not physics. It was NOT rerun (no rerun to chase a result) and is left as recorded.
 Verdict: the reverse thread fits DESI DR2 at 2σ for all supernova sets in its 10D form, but only near the edge of its viable range. Λ's size (V_Λ) is still put in by hand.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1626a (correction, 19 Nov 2026) — to D1626
 D1626 stated "maximum |w_a| ≈ 0.25" and "predicts w₀ ≈ −0.92 to −0.95". Both were read from a printout that showed only every 4th grid point. The full grid (D1627) reaches w₀ ≈ −0.72, w_a ≈ −0.51 at the last viable starting height (β = 2√2). Corrected prediction: thawing, never below w = −1, with |w_a| up to ~0.5. Large |w_a| is reached only near the viability edge.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1628 (RIGHT, 19 Nov 2026) — how tuned is the reverse thread? (PREREG_GENESIS_DE3; DEVIATIONS D1: JSON-only crash)
 Fine grid: 300 starting heights per β; passing means Δχ² ≤ 6.18 for ALL three DESI combinations at once (D1627 calibration).
@@ -16329,18 +16332,21 @@ Fine grid: 300 starting heights per β; passing means Δχ² ≤ 6.18 for ALL th
 - All three tilts converge on the same point, w₀ ≈ −0.79, w_a ≈ −0.36. That point sits just before the field rolls off the plateau.
 - The window is ~1% of the viable range: the starting height must be set to about ±2% in amp.
 Verdict: the reverse thread fits DESI DR2 everywhere, but only with a ~1-in-100 tuned starting height, just short of rolling into V < 0 (the "it's ending now" coincidence). Together with the hand-set V_Λ, this is a SECOND coincidence. Not natural; the prediction stands (w ≥ −1, w₀ ≈ −0.79, w_a ≈ −0.36 if DESI's central values hold).
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1629 (RIGHT, 19 Nov 2026) — literature cross-check of the reverse-thread scores (no computation)
 Source: "Quintessence and phantoms in light of DESI 2025" (arXiv:2506.21542v2). DESI DR2 fits relative to ΛCDM: CPL Δχ² ≈ −17.2; tCPL(−1), which the authors say "roughly resembles thawing quintessence", ≈ −13.5. The dataset row was garbled in the extract; it reads as a single SN sample. Exponential and hilltop thawing models fit worse than CPL (no numbers given).
 Ours (D1627/D1628, Gaussian approximation calibrated to DESI Table VI): improvement over ΛCDM of 13.6 (Union3) and 15.1 (DESY5); best-point worst-case 5.2 below the CPL optimum. This is the same size as the literature's thawing-class gain, and below CPL as expected for a model that cannot cross w = −1.
 Verdict: our approximate scoring agrees with the published size of the thawing-quintessence gain (≈ 13–15 versus CPL's 17–21). This is a consistency check, not a new result. Fine-tuning of the start is not discussed there, so D1628's tuning flag stands untested against the literature.
 Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1630 (CENTRE, 19 Nov 2026) — REFEREE PASS on the reverse thread, then paper (Danny 15:22 "referee it, and then publish it")
 - Referee: papers/reverse_thread/REFEREE_2026-11-19.md. Independent LSODA integration in a reproduces the best point exactly (w₀ −0.78302, w_a −0.38319).
 - MAJOR prior art found: quintessential α-attractors (Linder 1505.00815; Akrami–Kallosh–Linde–Vardanyan 1712.09693; Borys–Masias–Scalisi 2606.02701, "Quintessential α-attractors fit DESI", which already notes a double fine-tuning). Our β = 2√2, 2, √2 correspond to α = 1/12, 1/6, 1/3, inside their preferred ranges. The paper presents ours as an instance of that class. What is ours: A = 7.30 and the tilts from the inflation sector; the sourced-calibration scores; the ~1% tuning window.
 - Paper: papers/reverse_thread/Eldridge_reverse_thread_2026.pdf (2 pages, md5 42637c10872476672cf392d9b64d119c).
 - (D1630 addendum) PUBLISHED on Danny's "publish it" (15:22): "The Reverse Thread …", doi:10.5281/zenodo.24380387, PDF md5 42637c10872476672cf392d9b64d119c (verified on Zenodo), CC BY-NC-SA 4.0, open access.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1631 (RIGHT, 19 Nov 2026) — matter genesis: one asymmetry for dark and visible matter (P-M = asymmetric dark matter), plus the element ladder through time
 - Doc: theory/pending_docs/WEAVE_MATTER_GENESIS.md.
@@ -16348,6 +16354,7 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - [lit] ADM: 0901.4117, 1305.4939, 1308.0338. Element ladder: standard BBN, stellar, s- and r-process nucleosynthesis; fission of A > 260 nuclei in r-process stars (Roederer et al. 2023; review 2304.01850).
 - Flags: the shared part is the origin only (DM makes no elements); T_rh = 9e8 GeV is just below the thermal-leptogenesis bound; ΔN_eff for a mirror sector.
 - Verdict: CANDIDATE (known class mapped onto the Weave). Next: lock a test of whether the Z₃ at ρ fixes the sharing factor.
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1632 (RIGHT, 19 Nov 2026) — RESULT: matter-genesis toolkit (tools/genesis), first simulation (PREREG_GENESIS_MATTER)
 - T1: η = 6.13 × 10⁻¹⁰; m_DM = 5.03 GeV at equal sharing (1.7–15 GeV for s = 3 to 1/3). Consistency only.
@@ -16356,6 +16363,7 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - T4 (P-M constraint): a mirror sector must be colder than ξ < 0.45 (ΔN_eff < 0.3) → VIABLE. Toy Y_p shift at that bound: +0.0085. The literature gives ≈ +0.004 (0.013 per unit ΔN_eff), so the toy is ~2× too sensitive (same t(T) issue).
 - Output: field_tests/results/GENESIS_MATTER/{out.json, genesis.png, ladder.wav}. The .wav is a sonification of the element ladder (art/analogy, no physical claim), wired through tools/sound as the first toolkit tie-in.
 - Verdict: the toolkit runs end to end. P-M survives its one real constraint (ξ < 0.45). The BBN module fails its own locked accuracy test and must be upgraded before any number from it is quoted.
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1633 (RIGHT, 19 Nov 2026) — RESULT: helium stabilised. BBN v2 (PREREG_GENESIS_BBN2; DEVIATIONS D1–D3, coding and numerical fixes written before each rerun, no abundances seen before the final run)
 - P1 Y_p = 0.2466 (window [0.235, 0.260]; observed 0.245 ± 0.003) → PASS. The toy v1 gave 0.202 (D1632, FAIL, kept on record).
@@ -16365,6 +16373,7 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - What fixed helium: e± heating in T(a), full Born weak rates (λ_np(1 MeV) = 1.60 s⁻¹ against the BBF approximation of 1.74), and a real n–p–D network.
 - P-M consequence: with the mirror sector at its limit (ΔN_eff = 0.3), Y_p moves by +0.004, inside the observational error. P-M stays viable.
 - Verdict: helium is STABLE and correct to about ±0.006. The module passes 2 of 3 locked rules; the D-burning channels are the next upgrade.
+- MAP: node=light_elements status=computed touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1634 (RIGHT, 19 Nov 2026) — RESULT: deuterium fixed. BBN v3, 6-species network (PREREG_GENESIS_BBN3), ALL FIVE locked rules PASS on the first run
 - Y_p = 0.2421 (P1 ✓). Full codes give ≈ 0.247. Our ~0.005 low bias is the expected one from the missing Coulomb, radiative and finite-mass weak corrections, stated in advance in the v2 lock.
@@ -16375,6 +16384,7 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - P-M mirror sector at its bound (ΔN_eff = 0.3): ΔY_p = +0.0039, D/H → 2.70 × 10⁻⁵ (+4%). Both are inside current errors, so P-M stays viable. dY_p/dΔN_eff = 0.0130.
 - Rates: Smith–Kawano–Malaney 1993, cross-checked against PArthENoPE (astro-ph/0408076) at 0.94–1.08 before locking.
 - Verdict: the genesis toolkit now reproduces the light elements (He-4, D, He-3) at textbook accuracy. Remaining known gap: weak-rate corrections (Y_p −0.005); Li-7 is not included.
+- MAP: node=light_elements status=computed touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1635 — toolkit p3s.py (fast P3-S forecaster) + P3S_NOTES.md; validated |Δn_s| ≤ 5.1e-6, |Δr/r| ≤ 0.013 % vs both exact anchors
 - aegis-check: E series vs shapes.E ✓; float grid vs mpmath V ✓ (1e-15); anchors read-only ✓; tilt inversion ✓; σ(r) in notes labelled "from memory".
@@ -16391,6 +16401,7 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - theory/pending_docs/WEAVE_POSTULATES.md lists 22 items: A1–A5 inflation, B1–B7 flavour, C1–C6 dark sector, D1–D4 toolkit. Each has a postulate label (P / C / E) and the test that can kill it.
 - NEXT RUNG: R-Li. Add ⁷Be and ⁷Li plus the weak-rate corrections to BBN v3, lock first, and test whether P-M touches the lithium problem.
 - Queue after it: C2 → B2 → C3/C4.
+- MAP: none (register / literature scan / NULL tick; no node changes; added 20 Nov 2026)
 
 ## D1640 (RIGHT, 19 Nov 2026) — RESULT, rung R-Li: lithium added (PREREG_GENESIS_LI7). All locked rules PASS; the Weave does NOT solve the lithium problem
 - Li/H = 4.35 × 10⁻¹⁰ (L1 ✓, window [3, 7] × 10⁻¹⁰; full codes give ≈ 4.7–5.6 × 10⁻¹⁰). 94% is made as ⁷Be (L3 ✓). Y_p and D/H are unchanged from v3 to 10⁻⁶ (L2 ✓).
@@ -16399,6 +16410,7 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - M2: 5 GeV dark baryons have ρ_DM/ρ_rad = 1.1 × 10⁻⁵ at BBN, so they have no effect.
 - Rates: SKM-1993/CF88, cross-checked against PArthENoPE at 0.96–1.05.
 - Verdict: the toolkit now covers H, D, ³He, ⁴He and ⁷Li at textbook level. The lithium problem remains open within the Weave. Recorded as postulate C7: "lithium is depleted in stars (astrophysical), not missing from BBN". This is the mainstream leading explanation, and it adds no new Weave physics.
+- MAP: node=light_elements status=computed touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1638 — JANUS genesis G2: the dark-energy thread drawn with the real SERAPIS curve — fits the same, but the edge means something different
 - Locked verdict: DIFFERENT (narrowly). The shortcut curve used in D1626–D1628 is off from the exact v3 curve by ~4 % where it matters; w_a moves by 0.028 (limit 0.02).
@@ -16419,9 +16431,11 @@ Sources: arXiv:2506.21542; arXiv:2506.13047; arXiv:2509.13318; arXiv:2512.20832.
 - Q2: under the Weave's natural SL(2,Z)-invariant area measure, P(window) = 0.35% (10D), 0.28% (6D), 0.32% (4D) → "tuned".
 - Q3: quantum spread during inflation, 3 × 10⁻⁶ M_P, is ≪ the window width 0.015–0.021 M_P, so inflation cannot select the start either.
 - Verdict: the dark thread's DESI fit needs a ~1-in-300 starting position that nothing in the Weave picks. C2 is downgraded to an initial-condition coincidence, alongside the hand-set V_Λ.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1643 — scope note on D1642 (R-C2) after reading D1638 (other chat, exact SERAPIS curve)
 D1642 used the shortcut-curve window (D1628). With D1638's exact curve the window is Δln amp = 0.038, at amp ≈ 0.29 (y ≈ 5.0 at leading order). Estimate: P ≈ Δy/y²/(π/3) ≈ 0.36%, the same as before. Q1 (frozen since inflation) does not depend on the curve. D1642's verdict stands: C-start is false and the start is a ~1-in-300 initial condition. D1638's geometric reading also fits: "today is near the thread's arrival at ρ".
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1644 — JANUS genesis G9: the dark-energy thread's future — acceleration stops, the thread turns into matter, and it comes to rest at the OTHER fixed point (R1, R2 PASS)
 - Using the DESI-fitting thread on the exact SERAPIS curve: the universe stops accelerating at a ≈ 1.23 (about when it is 23 % larger than today), the thread reaches ρ at a ≈ 1.9, rolls just past it, and then oscillates and dilutes exactly like matter (⟨w⟩ = −0.018, ρ a³ constant to 0.1 %). Run 1 hit a grid bug, logged as DEVIATIONS D1 before the one rerun.
@@ -16435,6 +16449,7 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - Leaving out the m_τ error gives σ = 2.8 × 10⁻⁹ and a spurious 890σ or 3000σ, the same kind of error as the preprint's 460σ. The m_τ error dominates σ(δ) by a factor of about 2000.
 - The preprint's "transcendental for rational inputs" theorem does not bear on physics: measured masses are not exact rationals.
 - Status of B2 is unchanged: δ = 2/9 is EMPIRICAL, consistent at < 1σ, and no mechanism is known (ours or in the literature). The decisive test is σ(m_τ) → 0.05 MeV, which takes σ(δ) to ≈ 3.5 × 10⁻⁶.
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1646 — JANUS genesis G6: the dark side is cold enough — if it's small. A full mirror world is ruled out; a minimal dark sector predicts ΔN_eff ≈ 0.2
 - If the SERAPIS inflaton heats both sides equally (gravity doesn't pick sides), a full mirror copy of our world would add ΔN_eff = 7.4 — ruled out by a wide margin. It would need the decay to favour our side by 25 to 1 (Γ_D/Γ_V ≤ 4 %).
@@ -16451,6 +16466,7 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - Q2 (C3) [computed]: if the decay treats the visible and mirror sectors alike (equal ε) but must leave the mirror cold (ξ < 0.45 ⇒ energy share ξ⁴ = 0.041), then n_DM/n_B = 0.041 and m_DM = 123 GeV, not 5 GeV. CONFLICT. "Equal sharing, 5 GeV" and "cold mirror" cannot both hold with a symmetric decay.
 - Q3 [lit]: the known escape (Bento–Berezhiani, hep-ph/0008105): ordinary–mirror L-violating scatterings make the colder mirror sector carry MORE asymmetry (n'_B ≳ n_B). An exact mirror then gives m_DM = m_p = 0.94 GeV and needs n'/n = 5.36.
 - Verdict: P-M splits into two versions. (a) Exact mirror: DM = mirror baryons at 0.94 GeV, with the asymmetry from mixing scatterings. (b) Generic ADM at 5 GeV: needs ε'/ε ≈ 24 in the cold sector, unexplained. The register is updated; (a) is preferred, since it adds no free ratio.
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1649 — reconciling D1648 (this chat) with D1646 (JANUS chat)
 - They agree on the numbers: a FULL mirror heated like our side is out. Both find the decay must favour our side by ≈ 25:1 (D1646: Γ_D/Γ_V ≤ 4%; D1648: ξ⁴ = 0.041).
@@ -16459,6 +16475,7 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
   - (a) Exact mirror, 0.94 GeV: needs the 25:1 visible-favoured decay (as both notes say), then ordinary–mirror scatterings to give the mirror n'/n = 5.36 (Bento–Berezhiani).
   - (b) Minimal sector, 5 GeV: cold for free (D1646), but needs ε_D/ε_V ≈ 20.
   Each version has one unexplained ratio. Neither is preferred yet; D1648's "(a) preferred" is withdrawn. The ΔN_eff ≈ 0.2 prediction (D1646) belongs to (b); (a) gives ΔN_eff ≈ 7.4ξ⁴ ≤ 0.3.
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1650 — JANUS genesis G12: the whole genesis chain passes referee — loop complete
 - Every lock in the chain (both chats, 15 of them) was committed before its result; every key number re-derives from its file; reheating is self-consistent (decay far slower than the expansion, T_R below the inflaton mass).
@@ -16472,12 +16489,14 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 - My pre-run expectation (ΔY_p ~ 0.001–0.002, a possible FAIL) was too low. The measured shift is 0.0024. Recorded, not adjusted.
 - The remaining gap to full codes (≈ 0.247) is ≈ 0.0025, from the radiative, finite-mass and finite-temperature corrections and incomplete ν decoupling (N_eff = 3.044). These are not added.
 - The genesis toolkit is now at Y_p 0.2445, D/H 2.61 × 10⁻⁵, ³He/H 1.03 × 10⁻⁵, Li/H 4.38 × 10⁻¹⁰.
+- MAP: node=light_elements status=computed touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1652 (CENTRE, 19 Nov 2026) — RESULT, rung R-B5: EXACT TM2 is EXCLUDED by JUNO's first data (PREREG_RB5_JUNO)
 - JUNO first data (arXiv:2511.14593): sin²θ₁₂ = 0.3092 ± 0.0087. Exact TM2 (charged leptons at ρ, neutrinos exactly at i): 0.3408 ± 0.0002. That is +3.6σ from JUNO alone and +4.6σ from JUNO + NuFIT 6.0 combined (0.3084 ± 0.0070). Against the locked 3σ rule: FAIL.
 - Consequence for the published flavour paper (doi 10.5281/zenodo.24377945 / v2 24379357): its "+2.8σ" for TM2 is superseded. The exact-TM2 prediction is now excluded at > 3σ. A correction version is needed; it will NOT be published without Danny's "Publish".
 - Escape (already in the register as C-off, D1618): τ_ν slightly off i. Near i, mixing shifts linearly with the offset x ~ |(τ − i)/(τ + i)| (Feruglio 2211.00659). The needed shift, Δsin²θ₁₂ = −0.032, is the same size as the fitted 1.0685i (x ≈ 0.033), so the offset is now REQUIRED, not optional. The δ_CP predictions (236°/125°, 287°/74°) were TM2-exact and must be recomputed with the offset.
 - Status: B5 goes from "+2.8σ tension" to "exact form excluded; offset required". This is the first hard falsification of a Weave flavour prediction, and it is recorded plainly.
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1653 — JANUS genesis G9b: with the axion free, the dark thread still comes to rest at τ = i (ROBUST)
 - D1644 found the thread settles at the image of τ = i, but only along one line of the τ plane. Now both directions are free (axion normalised by SL(2,Z) symmetry): with offsets of 10⁻⁶, 10⁻³ and 10⁻² it still ends at the image of i every time, and the sideways offset never grows.
@@ -16486,6 +16505,7 @@ D1642 used the shortcut-curve window (D1628). With D1638's exact curve the windo
 
 ## D1646a (correction, 19 Nov 2026) — to D1646 (and to D1650's nit N1)
 D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABLE with ΔN_eff = 0.21, against a ΔN_eff < 0.3 bound carried over from D1632 without a source. Today's data are much tighter: N_eff = 2.86 ± 0.13 (ACT DR6, 2503.14454) and 2.990 ± 0.070 (2603.13226). Against them ΔN_eff = 0.21 is 3.0σ / 3.7σ too high ⇒ EXCLUDED (D1654). D1650's referee listed the unsourced bound only as a nit (N1); it was in fact verdict-changing. The G12 PASS is withdrawn for this link only; the other links stand.
+- MAP: node=dark_radiation status=estimate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1654 — JANUS genesis G6b: today's data rule out a massless dark photon in the minimal dark sector — for every way the inflaton could decay
 - Read today's N_eff measurements: 2.86 ± 0.13 (ACT DR6) and 2.990 ± 0.070 (2026 combined, the tightest). Checked four ways the SERAPIS inflaton could share its energy (equal per particle; through gauge fields, as the string coupling naturally does; gauge + Higgs; with a dark QCD).
@@ -16498,6 +16518,7 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - Closest analogue (D = 8): the s = 1 SL(2) pole cancels between two contributions and leaves −π log(U₂|η(U)|⁴), a log term whose sign depends on the moduli. At s = 1 the regularised value carries a scheme/scale ambiguity, so "the sign" is not even well defined without a physical cutoff (the species scale itself).
 - Verdict: NULL. A3 stays C-sign (conjecture). Settling it needs an explicit computation of the regularised SO(4,4) s = 1 series along the coupling direction with a species-scale cutoff. That is a dedicated job, not a loop tick.
 - Loop status (NULL rule): not rescheduled. Queue left for Danny: (1) B4: recompute δ_CP with the required τ_ν offset (needs a choice of non-minimal M_ν model); (2) a flavour-paper correction version for D1652 (needs his "Publish"); (3) A3 as a dedicated computation.
+- MAP: none (one-loop sign (register A3); the theory map has no node for it yet; added 20 Nov 2026)
 
 ## D1655 — JANUS genesis G9c: where dark energy ends depends on the axion — usually at i, sometimes at ρ
 - Six bigger axion offsets (0.05–0.5): five end at a copy of τ = i, one (0.05) ends at a copy of ρ. Together with D1653: 9 of 10 starts end at i.
@@ -16574,6 +16595,7 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - [lit] Modular TM1 (arXiv:2511.16348, written after JUNO; also 1910.03460, 1908.02770): Γ₄ ≅ S₄, with charged leptons at τ = ω (Z₃^T) and neutrinos at τ_SU = −½ + i/2 (Z₂^{SU}).
 - [derived, key point] τ_SU = −½ + i/2 is SL(2,Z)-equivalent to i (S then T⁻¹ maps it to i), and ω is equivalent to ρ. So modular-S₄ TM1 uses EXACTLY the Weave's two zero-energy vacua; only the finite group changes (A₄ → S₄). The level-4 structure tells which image of i is meant. The Zhinü potential is SL(2,Z)-invariant, so all images are equally deep.
 - Verdict: the flavour sector is RESCUED in a new form. "Charged leptons at ρ, neutrinos at (an image of) i" stands; the finite group must be S₄ (TM1), not A₄ (TM2). Open: why S₄ (level 4) rather than A₄ (level 3), and which image of i the neutrino modulus lands on (a basin question, as in D1610).
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1668 (CENTRE, 19 Nov 2026) — BIG LOOP tick 1: review scope note on D1648, plus RESULT for Q1 (PREREG_S4_IMAGES)
 REVIEW (D1648 vs JANUS D1665/D1661): D1648 used T_rh = 9 × 10⁸ GeV. D1665 fixes T_R = 1.34 × 10⁹ GeV. Rescaled: ε needed = 1.23 × 10⁻⁶ and M_N ≥ 1.25 × 10¹⁰ GeV, so the window [1.25 × 10¹⁰, 2.5 × 10¹²] still holds. D1665 also has the inflaton decaying mainly to gauge bosons, so the branching ratio into N is < 1. The Davidson–Ibarra ceiling at M = 2.5 × 10¹² (ε ≤ 2.5 × 10⁻⁴) leaves room down to BR_N ≈ 5 × 10⁻³. C4 still viable. D1661 already tightened Q2 to 433 GeV; no further change.
@@ -16583,6 +16605,7 @@ DERIVE (Q1) [computed, group theory]: S₄ ≅ Γ₄ triplet (24 elements verifi
 - 0 of 6 give TM2. Under S₄ the excluded TM2 never appears.
 Reading: with S₄ (level 4), the Weave's "neutrinos at an image of i" gives TM1 or a dead pattern, 50/50 per image. Combined with D1610 (69% of slow moduli reach an image of i), about 35% of starting points end in the viable TM1 configuration, assuming equal basin weight per image (not yet computed).
 Still open: WHY level 4 rather than level 3. No Weave reason yet, so it stays a postulate (P-S4).
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1669 (CENTRE, 19 Nov 2026) — BIG LOOP (manual Djl): review of D1667, plus Q2 RESULT — TM1 δ_CP survives on ONE branch (PREREG_TM1_DCP)
 REVIEW (D1667): the TM1 relation used, (1 − 3s₁₃²)/(3(1 − s₁₃²)), equals 2511.16348's 1 − 2/(3(1 − s₁₃²)) (both give 0.3184) ✓. Sum-rule sign conventions are checked by the TM2 regression (D1667) ✓.
@@ -16590,11 +16613,13 @@ DERIVE (Q2) [computed] against NuFIT 6.0, NO (arXiv:2410.05380), each branch pai
 - IC19 (s₂₃² = 0.561; δ = 177 +19/−20, 3σ [96, 422]): 74.3° OUTSIDE 3σ; 285.7° inside (pull ≈ 1.8).
 - IC24 (s₂₃² = 0.470; δ = 212 +26/−41, 3σ [124, 364]): 97.6° OUTSIDE 3σ; 262.4° inside (pull ≈ 1.4).
 Verdict: TM1 SURVIVES, and the data already pick its branch. The Weave's δ_CP prediction sharpens to the lower-half-plane branch: δ_CP ≈ 262°–286° (≈ −98° to −74°), sin δ < 0, which is the "maximal CP violation" side T2K favours. Scored on DUNE / Hyper-K. The upper branch (74°–98°) is excluded at > 3σ.
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1670 (CENTRE, 19 Nov 2026) — BIG LOOP Q3: flavour paper v3 correction DRAFT (not published)
 - papers/weave_flavour/Eldridge_weave_flavour_2026_v3.tex/.pdf (2 pages, md5 48262247edfd11524efead171b33149b).
 - Changes from v2: (iii) and Sec. III rewritten. Exact TM2 is withdrawn (JUNO +3.6σ). TM1 under modular S₄ at the same two vacua (τ_SU ≅ i), sin²θ₁₂ = 0.3184 (+1.1σ). Image count 3 TM1 / 3 dead / 0 TM2. δ_CP = 286° (0.561) or 262° (0.470), with the other branch excluded by NuFIT 6.0. P-S4 is added to "what is assumed". A correction note lists the withdrawn v2 numbers. New refs: JUNO 2511.14593, 2511.16348, 1811.04933, 1910.03460.
 - Status: DRAFT. Publishing on Zenodo (as a new version of 24377945) only on Danny's "Publish".
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1671 (RIGHT, 19 Nov 2026) — BIG LOOP tick (scheduled; Q2 and Q3 were already done by manual ticks D1669 and D1670): Q4, a Weave reason for the cold dark side
 REVIEW (register C5 vs JANUS D1661/D1665): both dark-matter versions need the inflaton to heat our side far more than the dark side (mirror: ≥ 86:1). D1665 rests on "our gauge fields feel the string coupling directly (as on D3-branes)". Checked ✓; no number to correct.
@@ -16603,35 +16628,41 @@ Consequences:
 - (a) An exact mirror needs the dark sector on the SAME kind of brane as ours, so it would be heated equally and is disfavoured. This geometric reason works against it.
 - (b) A minimal dark sector on unfluxed D7 is cold for free, consistent with D1646/D1659 (massive dark photon 0.3–5 GeV). But its asymmetry cannot come from the inflaton's decay into it, so it must come from transfer (e.g. a neutron portal / L-violating mixing).
 Postulate P-brane (C): visible sector on D3 (f = S), dark sector on unfluxed D7 (f = T). Verdict: version (b) is now FAVOURED for its temperature; its number asymmetry needs a portal (open). Test: ΔN_eff small but non-zero; dark photon 0.3–5 GeV; DM near 5 GeV only if the portal transfers number roughly equally.
+- MAP: node=dark_radiation status=estimate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1672 (LEFT, 19 Nov 2026) — BIG LOOP (manual Djl) Q5 partial: the D = 8 one-loop R⁴ thread is POSITIVE across the whole moduli space (PREREG_A3_D8SIGN)
 - [computed] L(U) = −π log(U₂|η(U)|⁴) (GRV 1001.2535, the D = 8 pole-subtracted one-loop term). Minimum over the fundamental domain: 3.247, at ρ = e^{iπ/3}. L(i) = 3.313 (by hand: |η(i)|⁴ = 0.348 ✓). L grows like π²U₂/3 at large U₂ (14.1 at U₂ = 6).
 - Deviation from the lock (recorded, not hidden): the planned local refinement was not run. The grid minimum sits exactly at the corner ρ, a grid point, and is consistent with ρ being the minimum of U₂|η|⁴'s inverse.
 - Reading: the D = 8 one-loop thread is positive everywhere, with margin 3.25. The D = 8 plateau is a plateau (not a hilltop) unless the unknown scheme constant c < −3.25. A natural cutoff choice (the species scale) would need a large negative constant to flip it.
 - D ≤ 6 (SO(4,4), SO(5,5), SO(6,6) series) is still open. A3 moves from "unknown" to "positive at D = 8; D ≤ 6 still open (C-sign)".
+- MAP: none (one-loop sign (register A3); the theory map has no node for it yet; added 20 Nov 2026)
 
 ## D1673 (RIGHT, 19 Nov 2026) — BIG LOOP (manual Djl) Q6: Λ literature scan. NULL for a mechanism
 - Searched for species-scale or modular routes to a small Λ (2025–26). Found: universal scalings linking vacuum energy to higher-derivative Wilson coefficients from worldsheet modular invariance (arXiv:2603.11157), species-scale bounds (2409.10003, 2310.07708) and tower/EFT-robustness constraints (2304.03902). These give BOUNDS and SCALINGS (V shallow relative to the cutoff), not a mechanism that produces 10⁻¹²⁰.
 - Verdict: no Weave-usable suppression mechanism. C1 (Λ's size) stays OPEN, put in by hand. Not a register change.
 - Queue refilled (BIG_LOOP.md): Q7, basin weights per image of i on the level-4 cover (makes D1668's "35%" a computed number); Q8, a portal for the dark asymmetry in version (b) (neutron-portal estimate).
+- MAP: none (register / literature scan / NULL tick; no node changes; added 20 Nov 2026)
 
 ## D1674 (CENTRE, 19 Nov 2026) — BIG LOOP (manual Djl) Q7 RESULT: 34.5% of slow neutrino moduli end in the viable TM1 configuration (PREREG_Q7_IMAGEWEIGHTS)
 - [derived + computed] The Zhinü flow is SL(2,Z)-equivariant. A uniform start on the level-4 cover is a uniform F-start (D1610) composed with a uniform coset h ∈ S₄. Over the 24 elements, each of the 6 conjugates hSh⁻¹ appears exactly 4 times (centraliser of order 4). So P(TM1 | ends at an image of i) = 1/2 EXACTLY.
 - Total: P(TM1) = 0.6895 × ½ = 0.345. The other outcomes are 0.345 for an image of i with the dead (½, ½, 0) column and 0.31 for an image of ρ.
 - The same holds if the charged-lepton modulus also sits at a random image of ω: only the relative coset matters, and it is uniform too.
 - Verdict: D1668's "≈ 35%" is now a computed number, not an assumption. The Weave + S₄ gives the observed lepton mixing (TM1) for about 1 in 3 starting points. That is "natural" by the pre-set ≥ 25% standard used in PREREG_BASINS.
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1675 (RIGHT, 19 Nov 2026) — BIG LOOP tick (scheduled; Q5–Q7 were done by manual ticks D1672–D1674): Q8 RESULT. The dark portal and the heavy neutrinos can share ONE scale (PREREG_Q8_PORTAL)
 REVIEW: D1674's "each conjugate appears 4 times" is consistent with |S₄|/|C(S)| = 24/4 = 6 conjugates ✓.
 DERIVE [estimate + lit]: the KLZ portal X²LH_u/M (0901.4117) shares the lepton asymmetry with X and gives m_X ≈ 5–11 GeV. It decouples at T_D = 1.66 √g* M²/M_P. Requiring 130 GeV < T_D < T_R = 1.34 × 10⁹ GeV gives M ∈ [9.6 × 10⁹, 3.1 × 10¹³] GeV. That CONTAINS the whole heavy-neutrino window M_N ∈ [1.25 × 10¹⁰, 2.5 × 10¹²] (D1668).
 POSTULATE P-portal: one heavy threshold M ≈ M_N (≈ 10¹⁰–10¹² GeV) both makes the lepton asymmetry (N decays) and hands it to the dark sector (the X²LH/M portal, e.g. from integrating out N itself). Geometrically, X lives on unfluxed D7 and LH on D3 (P-brane), with the portal from D3–D7 strings (not derived). Version (b) is now complete as a chain: inflaton → (D3 only) → N → L asymmetry → portal → X (5–11 GeV), with a cold dark side and ΔN_eff small but non-zero.
 Open: the KLZ mass range is quoted, not recomputed in our toolkit.
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1676 (RIGHT, 19 Nov 2026) — BIG LOOP (manual Djl) Q9 RESULT: the dark particle's mass from chemical equilibrium is 12.8 GeV (PREREG_Q9_KLZ) → PASS
 - Validation: without X, the same code reproduces the standard SM sphaleron factor B/(B − L) = 28/79 = 0.3544 exactly ✓.
 - [computed] With the portal X²LH in equilibrium above the EW scale: n_X/n_B = 11/28 = 0.393 (identical for a Dirac fermion and a complex scalar), so m_X = 5.364 × m_p × 28/11 = 12.8 GeV. Locked window [3, 15] → PASS.
 - Versus the quoted KLZ 5–11 GeV (D1675): ours is slightly higher. KLZ is supersymmetric (two Higgs doublets, superpartners), which changes the chemical-potential bookkeeping; our non-SUSY SM version gives 12.8 GeV. The prediction depends on the particle content, stated plainly.
 - Weave prediction for version (b): dark-matter mass ≈ 13 GeV (non-SUSY spectrum), with the dark photon at 0.3–5 GeV (JANUS D1659/D1664). Direct-detection target: 10–15 GeV, already within reach of xenon experiments (LZ/XENONnT) if X has a non-negligible portal coupling to nucleons. That bound is to be checked next.
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1677 (RIGHT, 19 Nov 2026) — BIG LOOP (manual Djl) Q11 RESULT: the 12.8 GeV dark particle survives xenon limits, but direct detection now cuts the dark-photon window from above (PREREG_Q11_DD)
 - α_D ≥ 4.7 × 10⁻⁴ (to remove the symmetric part).
@@ -16639,16 +16670,19 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Against D1664's windows: the dim strip (10⁻¹¹ up to ~10⁻⁷) survives for every m_A′ under the optimistic bracket → VIABLE. The bright strip (10⁻⁵–10⁻³, 25–370 MeV) is EXCLUDED: needed ε ≲ 10⁻⁸ there. Above 0.8 GeV, most of the merged band above ~10⁻⁶ is excluded.
 - New combined prediction (version b): X ≈ 13 GeV; dark photon 0.3–5 GeV with ε between 10⁻¹¹ and ≈ 3 × 10⁻⁹ to 8 × 10⁻⁷ (rising with m_A′²). Next-generation xenon (XLZD) and beam dumps (SHiP) probe the upper part.
 - Caveat: a sourced LZ value at 13 GeV (digitised curve) is needed to replace the bracket.
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1678 (RIGHT, 19 Nov 2026) — BIG LOOP (manual Djl) Q12: NULL. No sourced LZ number at 13 GeV yet
 - LZ WS2024 (2410.17036) gives numbers only at 40 GeV (2.2 × 10⁻⁴⁸ cm²). The 13 GeV value is in Fig. 5 only. The supplemental link is a placeholder, and the HEPData record found is the ultraheavy-DM search (10.17182/hepdata.151392), not WS2024.
 - There is a NEWER LZ result: 417 live days (Mar 2023–Apr 2025), announced Dec 2025 (LBNL news). It is world-leading above 5 GeV and reports ⁸B CEvNS evidence at 4.5σ. No numbers in the release, and no arXiv id found.
 - D1677's bracket (10⁻⁴⁷–10⁻⁴⁵ cm² at 13 GeV) stays, flagged UNSOURCED. The newer result can only tighten ε_max, moving the dark photon further into the dim strip. Getting the curve needs Danny, or a digitised figure.
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1679 (LEFT, 19 Nov 2026) — BIG LOOP tick (scheduled): Q10 NULL. The loop ends
 - REVIEW: D1676–D1678 checked. The 28/79 validation reproduces; D1677's bracket is flagged unsourced (D1678).
 - Q10 (A3 at D = 6): the regularised SO(4,4) vector Eisenstein series at s = 1 is a constrained (m·n = 0) sum over the 8-dimensional Narain lattice that needs analytic continuation. It is not a short locked computation, so NULL for this tick. It stays C-sign; D = 8 is positive (D1672).
 - NULL rule: this tick has no correction, no new result and no register change, so the BIG LOOP stops. Remaining items that need Danny: flavour paper v3 → Publish (D1670); LZ limit curve at 13 GeV (D1678); A3 at D = 6 as a dedicated job.
+- MAP: none (register / literature scan / NULL tick; no node changes; added 20 Nov 2026)
 
 ## D1680 (LEFT, 19 Nov 2026) — RESULT (Danny "Derive it"): the D = 6 one-loop R⁴ thread is POSITIVE for any torus larger than ≈ 1.3 string lengths; near the self-dual point its sign is scheme-dependent (PREREG_A3_D6; DEVIATIONS D1–D3)
 - Validation: the code reproduces the d = 2 DKL threshold to 6 × 10⁻⁵. The first comparison failed by 0.045, which was traced (before any d = 4 number) to the reference being in the convergent-subtraction scheme. The analytic scheme term is 0.04523 (D3).
@@ -16656,6 +16690,7 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Scheme: the convergent subtraction ∫(Γ − τ₂²) is I + 0.957. In that scheme the self-dual point gives +0.30 (positive everywhere on the slice). The sign near R ≈ 1 is therefore scheme-dependent, as at D = 8: the constant is tied to the infrared log of the massless loop. The R-dependence is physical.
 - Locked reading: min I < 0 in the stated scheme, so "sign flips near the self-dual point (hilltop risk there)", crossing at R ≈ 1.28.
 - Weave meaning: the D = 6 plateau is safe whenever the T⁴ is not near string size (R ≳ 1.3 ℓ_s, or ≲ 1/1.3), in every scheme. That is the regime where a 6D phase at horizon exit makes sense anyway (M_KK < H, C-6D). A3 is upgraded: D = 8 positive everywhere; D = 6 positive for non-stringy tori, scheme-dependent at the self-dual point; D = 5, 4 open (a sum over 10- and 12-dimensional lattices, same method).
+- MAP: none (one-loop sign (register A3); the theory map has no node for it yet; added 20 Nov 2026)
 
 ## D1681 (LEFT, 19 Nov 2026) — RESULT: one-loop R⁴ thread at D = 5 and D = 4 (PREREG_A3_D54). D = 4 is POSITIVE on the whole slice; D = 5 dips only at the self-dual point
 - [computed, validated code of D1680] Zagier scheme, rectangular equal-radius tori:
@@ -16664,11 +16699,13 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Trend at the self-dual point (Zagier): D = 6: −0.66 → D = 5: −0.19 → D = 4: +0.15. The higher the torus dimension, the more the volume term wins.
 - A3 summary: the one-loop thread is POSITIVE (plateau, not hilltop) at D = 8 (everywhere), D = 4 (whole slice), and D = 6, 5 for any torus not within ≈ 30% / 6% of string size. Near-string-size tori at D = 6, 5 are scheme-dependent. Caveat: only the rectangular B = 0 slice was checked, not the full SO(d,d) moduli space.
 - Register: A3 upgraded from C-sign (conjecture) to "derived on the rectangular slice; scheme-dependent only at stringy radii for D = 6, 5".
+- MAP: none (one-loop sign (register A3); the theory map has no node for it yet; added 20 Nov 2026)
 
 ## D1682 (LEFT, 19 Nov 2026) — RESULT: the D = 6 one-loop sign is controlled by the TOTAL torus VOLUME, not by every radius (PREREG_A3_D6_ANISO) → volume-controlled ✓
 - [computed, Zagier scheme, B = 0] I for radii (V = ΠR): (1,1,1,1.3) V = 1.3: −0.52; (1,1,1,2) V = 2: +0.66; (1,1,1,3) V = 3: +4.13; (1,1,2,2) V = 4: +2.57; (1.5,1.5,1.5,1.5) V = 5.1: +1.33; (1,2,2,2) V = 8: +5.41; (1,1,3,3) V = 9: +13.1.
 - Even with THREE radii at the self-dual point, one radius of 2 is enough to make the thread positive. Negativity needs the whole T⁴ near string size (V ≲ ~1.6 ℓ_s⁴ along the tested line).
 - Weave meaning: the D = 6 plateau needs only a torus volume a little above string scale. Any geometrically meaningful 6D phase satisfies that. A3 is now effectively closed for D = 6 (B = 0); B ≠ 0 is untested.
+- MAP: none (one-loop sign (register A3); the theory map has no node for it yet; added 20 Nov 2026)
 
 ## D1683 (LEFT, 19 Nov 2026) — RESULT: a B-field slightly DEEPENS the dip but does not change the D = 6 picture (PREREG_A3_D6_B; DEVIATIONS D1 grid, D2 a Narain-normalisation bug caught by the validation)
 - Validation after D2: d = 2 DKL at T = ½ + i matches to 6 × 10⁻⁵ ✓; b = 0 reproduces D1680 exactly (−0.66185) ✓.
@@ -16676,6 +16713,7 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Locked reading: "B only helps" = FALSE. B lowers I by at most 0.045 at R = 1 and 0.0015 at R = 1.25. This is tiny next to the volume growth (+1.33 at R = 1.5, +9.7 at R = 2). The volume-controlled conclusion of D1682 stands; the threshold moves up only marginally.
 - A3 for D = 6 is CLOSED for practical purposes: positive for any T⁴ meaningfully larger than string size, with or without a B-field; scheme-dependent only for tori at string size.
 - The validation earned its keep: it caught a real normalisation bug that a loose b = 0 check had let through.
+- MAP: none (one-loop sign (register A3); the theory map has no node for it yet; added 20 Nov 2026)
 
 ## D1684 — JANUS genesis G16: still no published LZ number at 13 GeV — NULL
 - Checked the LZ paper (arXiv:2410.17036) directly: between 9 and 20 GeV the limit exists only as a plotted curve; the paper's one data link holds detector-response files, not limits. The newer 417-day LZ result (Dec 2025) has no numbers in its announcements either.
@@ -16709,17 +16747,20 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
    - D1642/D1643: the start is frozen since inflation, P ≈ 0.3% under the area measure. That sharpens the paper's "two coincidences".
    - D1653/D1655/D1658 (JANUS): where the thread ends (i or ρ) depends on the axion and the dataset. That bears on the paper's "matter phase in the future" remark.
    - Verdict: no number in the published paper is wrong for its stated model. A v2 would add the exact-curve scope note, the 1-in-300 start, and the endpoint remark. Recorded as optional; only on Danny's "Publish".
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1690 (CENTRE, 19 Nov 2026) — Djl RESULT: TM1's δ_CP sits INSIDE the T2K+NOvA joint 1σ band; the joint peak (275°) lies between our two values (PREREG_TM1_T2KNOVA)
 - Data (Nature 2025, s41586-025-09599-3): NO 3σ δ ∈ [−1.38π, 0.30π]; ordering-marginalised 1σ [−0.81π, −0.26π] = [214°, 313°], peak −0.47π = 275.4°; sin²θ₂₃ = 0.56 (+0.03/−0.05).
 - TM1 lower branch: 285.7° (s₂₃² = 0.561) and 262.4° (0.470) are both inside the NO 3σ AND the marginalised 1σ. The upper branch (74.3°, 97.6°) is outside both, matching NuFIT (D1669).
 - T2K+NOvA's sin²θ₂₃ = 0.56 picks the 0.561 case, so the Weave + S₄ prediction becomes δ_CP ≈ 286°, about 10° from the joint peak.
 - Process note: the lock file was written before computing, but committed in the same step as the computation (an interval check only, no fitting). Recorded, not hidden.
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1691 (CENTRE, 19 Nov 2026) — SPACE HUNT pass 1 (Danny 19:06 "Space hunt")
 - New doc theory/pending_docs/SPACE_HUNT.md: target table plus pass-1 scoring.
 - Hits: (1) sign-switching dark energy (negative early, positive since z ≈ 1.5; Akarsu et al. PRD 2025): TENSION with the exact reverse thread (never negative). It is a NEW IDEA test, though the Zhinü V₀ ≥ 0 forbids a negative phase for that potential itself. (2) DES final, ~3σ for weakening dark energy: MATCH in direction. (3) IceCube UHE neutrinos, Euclid first look, and the new interstellar sulfur ring: NEUTRAL.
 - Needs Danny: OK to download the DESI DR2 public chains for a real-posterior re-score.
+- MAP: none (register / literature scan / NULL tick; no node changes; added 20 Nov 2026)
 
 ## D1692 RESULT (19 Nov 2026) — REAL DATA (DESI DR2 BAO + DES-SN5YR Dovekie, no CMB): the Weave reverse thread matches CPL with ONE parameter; "negative space" (sign-switching Λ) does nothing
 - Sanity ✓: ΛCDM Ω_m = 0.306 (window 0.28–0.34). χ²_ΛCDM = 1645.33.
@@ -16727,12 +16768,14 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Weave thread (1 extra, β = 2√2, leading order): Δχ² = −7.01 at Ω_m = 0.305, amp = 0.174. That is within 0.20 of CPL (rule ≤ 2.3 ✓): the thread captures ~97% of CPL's improvement with half the parameters.
 - Sign-switching ΛsCDM (1 extra): Δχ² ≈ 0. Its best z† = 2.37 is pushed past the highest data redshift (2.33), i.e. no switch is wanted. "Negative space preferred" = FALSE.
 - This is the first real-likelihood test (it replaces the Gaussian approximation of D1627–D1628): the reverse thread is supported at Δχ² = −7 on BAO + SN alone. Caveats: no CMB; the Dovekie SN set is not the one DESI used; leading-order curve (D1638: the exact curve differs ~4%); post-data model.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1693 RESULT (19 Nov 2026) — "reverse everything" on real data: NO reversal beats the Weave thread (PREREG_REALDATA_REVERSE)
 - R1 FLIPPED PLATEAU (V = V_Λ(1 + 7.30e^{−βφ}), freezing): Δχ² = −6.17 versus ΛCDM, i.e. +0.84 WORSE than the thread. It also fits, slightly worse.
 - R2 REVERSED ROLL (uphill kick, 1 extra parameter): the fit drives the kick to k_i ≈ 0.06 and lands on the thread's own χ² (Δ = −7×10⁻⁶). The data want no reversal of direction.
 - R3 TIME MIRROR (post-hoc): Δχ² = +0.04 versus ΛCDM. Reversing the order of the history removes the whole improvement: the late-time thaw is what the data like.
 - Verdict: none beats ours (rule: < −2 vs the thread). The forward thread (frozen, then thawing now) is the best of the family. Its mirror images score at or below it, and the time-reversed one is no better than Λ.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1694 RESULT (19 Nov 2026) — with the CMB added (DESI DR2 compressed prior), the Weave thread is still SUPPORTED but CPL pulls ahead (PREREG_REALDATA_CMB; DERIVE_LOOP D1)
 - Checks: θ* calibration factor 1.0021 (limit ±0.005 ✓). ΛCDM sanity ✓: Ω_m = 0.302, h = 0.682, ω_b = 0.02238; χ² = 1650.38.
@@ -16740,17 +16783,20 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Weave thread (1 extra): Δχ² = −4.84 at amp = 0.159 (Ω_m 0.311, h 0.671). The rule was ≤ −4 → SUPPORTED, but now 6.0 behind CPL (it was 0.2 behind without the CMB). Per parameter, CPL is better by ≈ 4 (AIC-like). Reading: the CMB distance to z* favours w < −1 at higher z, which a thawing thread can never give (w ≥ −1). That was the Weave's stated weak spot, and the real data now show it.
 - ΛsCDM (1 extra): Δχ² = −4.80, with z† at the edge of its range (2.49), so the true optimum may lie beyond. With the CMB, "negative space" at z ≳ 2.5 does as well as the thread. NOT a resolved preference; flagged.
 - Honest status: the thread fits BAO + SN as well as CPL. With the CMB it keeps a 2σ-level gain over Λ, but the data prefer a phantom-crossing shape the Weave forbids. Next (DERIVE_LOOP): the exact-curve refit (D2) and an extended z† range.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1695 RESULT (19 Nov 2026) — the sign-switch edge hit is resolved: z† = 2.64, Δχ² = −4.93, a TIE with the Weave thread (PREREG_REALDATA_LS10)
 - With z† free up to 10 (BAO + SN + CMB): best z† = 2.64, just past the highest DESI redshift (2.33). Δχ² = −4.93 versus ΛCDM, versus −4.84 for the thread (−0.09). Rule "beats the thread by more than 2": FALSE.
 - Reading: "negative space" gains only through the CMB distance (a negative Λ above z ≈ 2.6 shortens D_M(z*)). The thread gains through low-z thawing. The data cannot tell the two apart; both trail CPL (−10.84).
 - Danny's "negative space" idea is therefore NOT excluded: it ties ours on real data. A Weave version would need a field whose energy is negative above z ≈ 2.6, which the SL(2,Z) V₀ ≥ 0 forbids for the Zhinü potential itself. It is recorded as an open alternative (C8) in the register.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1696 RESULT (19 Nov 2026) — exact perturbative SERAPIS curve on real data: same verdict as leading order (PREREG_REALDATA_EXACT)
 - BAO + SN: exact Δχ² = −6.90 (amp 0.242), versus leading-order −7.01.
 - BAO + SN + CMB: exact Δχ² = −4.65 (amp 0.209), versus −4.84.
 - |difference| ≤ 0.19 in both → "leading order is adequate" ✓, consistent with JANUS D1638 (~4% shape difference). The best start shifts to larger amp (0.24 / 0.21), i.e. closer to the floor at ρ, matching D1638's "the thread is arriving at ρ today".
 - Standing real-data status of the Weave thread (exact curve): −6.9 (BAO + SN), −4.65 (+ CMB), still "supported" (≤ −4), and still behind CPL with the CMB (−10.84).
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1697 (CENTRE, 19 Nov 2026) — Djl, DERIVE_LOOP D3: a candidate reason for level 4 (S₄) over level 3 (A₄)
 - [lit] On magnetised tori, zero modes with flux M transform under Γ̃(2|M|), so the finite flavour group has level 2|M| (arXiv:2005.12642; also 2003.04174, 1907.09141). The level is therefore always EVEN.
@@ -16758,34 +16804,40 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Reading: if the Weave's lepton sector lives on magnetised branes (consistent with the D3/D7 picture of P-brane, D1671), then "S₄, not A₄" follows from "minimal flux with three generations". The JUNO-forced switch (D1652, D1667) then agrees with string geometry rather than being a free choice.
 - Caveats: (i) the magnetised-torus modulus is a complex structure U, while the Weave's flavour moduli are assumed to feel E(τ,3/2) (P-F2). The two must be identified (e.g. by a duality), which is NOT shown. (ii) The order-96 cover, not S₄ itself, acts on the zero modes. The TM1 fixed-point counting (D1668) used the S₄ quotient, and must be rechecked on the cover.
 - Register: P-S4 → C-S4 ("|M| = 2 flux; level 4 is the minimal even level with triplets"), with caveats (i) and (ii).
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1697a — CORRECTION to D1697 (19 Nov 2026, DERIVE_LOOP review beat)
 D1697 said "the smallest even level with triplets is 4 (|M| = 2)". That is WRONG for three generations. On T² with flux M there are |M| zero modes, and the construction needs even M (2005.12642), so |M| = 2 gives TWO modes, not three. The three-generation case in that paper is M = 4 on the T²/Z₂ twisted orbifold: a Z₂-even TRIPLET plus an odd singlet, at level 2|M| = 8, with finite group G₀⁴ ≅ Δ(48) ⋊ Z₈ of order 384, not S₄.
 What survives: magnetised-torus levels are even, so level 3 (A₄) cannot arise this way. What fails: the claim that this mechanism singles out S₄. It points to a level-8 group instead. Whether TM1 (or TM2) at the two vacua appears under Δ(48) ⋊ Z₈ is untested.
 Register: back to **P-S4** (assumed), with the note "magnetised flux gives even levels (no A₄); the three-generation case is level 8 (Δ(48) ⋊ Z₈), so S₄ is not derived". DERIVE_LOOP: D7 replaced by "test the TM pattern at the two vacua under Δ(48) ⋊ Z₈ (level 8, M = 4 orbifold triplet)".
 DISCOVER (this tick): arXiv 2611.01505 ("DESI DR3" per a third-party GitHub alert) could not be fetched or found by search. It stays UNVERIFIED and is not used.
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1698 (CENTRE, 19 Nov 2026) — Djl, DERIVE_LOOP D4: a known mechanism for "Koide for POLE masses" (register B6)
 - [lit] Sumino (arXiv:0812.2090, 0812.2103, 0903.3640): a U(3) × O(3) family gauge symmetry (from SU(9) × U(1)). Loops of the U(3) family gauge bosons shift the pole masses in the same form as the QED radiative correction but with the opposite sign, so the QED violation of Koide's relation cancels. Q = 2/3 then holds for POLE masses, as observed (with running masses at M_Z it would be 0.6678, D1615). EFT below a cutoff; the excerpt read gives no gauge-boson mass scale (not quoted).
 - Weave fit: the Weave's Z₃ at ρ (cyclic family symmetry) is a discrete subgroup of U(3), so a Sumino-type family gauge sector is COMPATIBLE with the circulant √M form. It is not derived from the Weave; the gauge sector would be an addition.
 - Register B6: C-pole → "C-pole (Sumino-type U(3) family gauge cancellation; compatible with the Z₃ at ρ; not derived)". Test: family gauge bosons in lepton-flavour violation (μ → e conversion etc.), scale not yet extracted.
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1699 (CENTRE, 19 Nov 2026) — DERIVE_LOOP D5: the closest thing to a derivation of δ = 2/9 is a Berry phase on a Z₃ family circle (Shulga, arXiv:2605.10245), with one unfixed coefficient
 - [lit] Shulga: an internal circle φ ~ φ + 2π with an antiperiodic lowest doublet, sampled at φ_a = 2πa/3 (Z₃ clock and shift). The Berry phase of one 2π/3 family shift is γ = 2λ_B/9, so the Koide orientation is δ = 2λ_B/9, which equals 2/9 only if λ_B = 1. λ_B is an undetermined matching coefficient: a benchmark, not a derivation (the author says so). Q = 2/3 comes from a separate "rank-one" condition = equal singlet and doublet norms, which is EXACTLY our P-F1 (equipartition).
 - Other 2026 items: preprints.org 202605.1389 (defers to Shulga; its own is a "correspondence", a fit) and Zenodo 20550058 (θ = (N_c² − 1)/(4N_c²) = 2/9 asserted, no steps shown). Neither counts.
 - Weave reading (candidate, not derived): the Weave already has the Z₃ at ρ and P-F1. A natural "family circle" is the axion direction Re τ (period 1), on which the Z₃ at ρ acts. If λ_B = 1 follows from that circle's normalisation, δ = 2/9 and Q = 2/3 would come from ONE structure. Register B2: C-δ → "C-δ (Berry phase 2λ_B/9 on a Z₃ family circle, λ_B = 1 assumed; Shulga 2605.10245)".
 - DISCOVER (this tick): no new SPACE_HUNT hits checked beyond the δ literature (NULL for discoveries).
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1700 RESULT (19 Nov 2026) — the magnetised level-8 triplet (M = 4, T²/Z₂) at the Weave's two vacua gives TM1 on 3 of 12 images of i (PREREG_D7_DELTA48)
 - Checks ✓: the restricted S, T are unitary. The projective group is finite, of order 96 (the paper's 384 includes phases).
 - 12 conjugates of S: 3 → TM1 (2/3, 1/6, 1/6); 3 → (½, ½, 0), dead; 6 → (0.622, 0.333, 0.045) [unsorted (0.045, 0.622, 0.333) or (0.622, 0.045, 0.333)]. Against approximate NuFIT 3σ magnitude ranges (recalled, not refetched: |U_e1|² ≳ 0.64, |U_e3|² ≈ 0.020–0.024, |U_τ2|² ≫ 0.05), this column fits no PMNS column, so it is EXCLUDED pending a sourced check. No TM2 anywhere.
 - Reading: the magnetised three-generation origin (level 8) is CONSISTENT with the JUNO-allowed TM1 at the Weave's vacua, but less often than S₄: 3/12 = 25% of i-images (S₄: 50%, D1674). With equal weights per image (equivariance), P(TM1) ≈ 0.69 × 0.25 ≈ 0.17 at level 8. This is below the 25% "natural" bar used in PREREG_BASINS, so it is mildly tuned.
 - D1697a stands: S₄ itself is not derived. But D7's question ("does TM1 survive under the magnetised group?") is YES.
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1701 (CENTRE, 19 Nov 2026) — MIRROR PULSE M1: swap the vacua (charged leptons at i, neutrinos at ρ). The mirror FAILS structurally, so the forward assignment wins (argument, no computation)
 - Neutrinos at ρ: the residual is Z₃ = ⟨ST⟩ with eigenvalues (1, ω, ω²). A Majorana mass matrix invariant under it (ρᵀMρ = M) can only pair ω with ω², so two neutrinos form a degenerate (pseudo-Dirac) pair. That contradicts Δm²₂₁ ≠ 0 unless the breaking is large, which removes the prediction.
 - Charged leptons at an image of i: a Z₂ residual leaves a degenerate 2-dim eigenspace, so U_e is not fixed and the mixing is not predicted.
 - Reading: the mirror of "charged leptons at ρ, neutrinos at i" gives no viable predictive pattern. The forward assignment is not arbitrary; it is the only one of the pair that works. This is the first mirror-pulse check, and the forward claim beats its mirror.
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1702 (CENTRE, 19 Nov 2026) — MIRROR PULSE M2 and M3 (Djl)
 M2 (thread with β → −β): the reflection φ → −φ maps V_Λ(1 − Ae^{−βφ}) exactly onto V_Λ(1 − Ae^{+βφ}). The mirror is a SYMMETRY of the model: same w(a), same χ². Nothing new can come from it. The physically distinct mirrors (flipped step, uphill roll, time reversal) were tested in D1693, and none beat the forward thread.
@@ -16795,33 +16847,39 @@ M3 (mirror of P-F1: let the singlet/doublet norm ratio r = 2|b|²/a² differ fro
 - The data force |r − 1| ≲ 5–9 × 10⁻⁵ (3σ, by m_τ choice). The mirror "unequal split" is pushed to within 10⁻⁴ of the forward claim, so equipartition is exact to the precision of m_τ.
 - In Shulga's picture (D1699) the Berry-phase orientation δ does not depend on r, so M3 leaves δ = 2/9 untouched.
 Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); M3 forward wins (mirror squeezed to < 10⁻⁴).
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1703 (RIGHT, 19 Nov 2026) — MIRROR PULSE M5: dark-first genesis (argument, no computation)
 - Mirror of P-portal (D1675): make the asymmetry on the DARK side first and hand it to the visible side through the same portal X²LH/M.
 - Outcome if the portal reaches equilibrium (T_D window as before): chemical equilibrium only conserves the total charge B − L − L_X, so the final split is the SAME, n_X/n_B = 11/28 → m_X = 12.8 GeV (D1676). The mirror cannot be told apart by the dark-matter mass.
 - Where it fails: under P-brane (D1671) the inflaton barely heats the dark (D7) side, so there is no hot dark plasma and no heavy dark decayer to create the asymmetry there. Dark-first would need a separate dark reheating source, which in turn raises ΔN_eff toward its bound (D1661).
 - Reading: equal outcome, but the mirror needs an extra ingredient that fights the cold-dark-side requirement. The forward (visible-first) order is preferred. Tally: M1 forward, M2 symmetry, M3 forward, M5 forward (by economy).
+- MAP: node=matter_genesis status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1704 (CENTRE, 19 Nov 2026) — D8: λ_B on the axion circle. NULL for now
 - In Shulga (2605.10245), λ_B is a matching coefficient of a Green-function-dressed Gaussian response of fast compact modes on his internal circle (antiperiodic lowest doublet). Computing it needs his full mode content and dressing. The Zhinü potential alone does not supply those modes. Mapping his circle onto the axion Re τ would also require the Z₃ to act as a SHIFT on that circle, whereas at ρ the Z₃ is ST (an elliptic rotation, not a translation of Re τ). The identification fails as stated.
 - Verdict: NULL. C-δ stays "Berry phase 2λ_B/9, λ_B = 1 assumed". A real attempt needs a circle on which the Z₃ at ρ acts by translation, e.g. the angle around ρ in the hyperbolic disk (ST rotates by 2π/3 there). Queued as D9: Berry phase of a weight-k modular wavefunction transported once around ρ by 2π/3.
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1705 (CENTRE, 19 Nov 2026) — D9: Berry phase around ρ. NULL, and it confirms D1616
 - The automorphy factor of ST at its fixed point ω (≅ ρ) is cω + d = ω + 1 = e^{iπ/3}, so a weight-k form picks up phase πk/3 per Z₃ step. That is a rational multiple of π, never 2/9 rad (δ = 2/9 has no π, as D1616 noted).
 - A genuine Berry (holonomy) phase for a weight-k section on the hyperbolic plane is ∝ k × (enclosed hyperbolic area). A loop at hyperbolic radius r spanning 2π/3 encloses (2π/3)(cosh r − 1). That is continuous in r, so 2/9 can be hit only by choosing r, i.e. it is not predicted. Natural closed loops (the triangles of the tessellation) have areas that are rational multiples of π, giving π-multiples again.
 - Verdict: NULL. Within modular geometry at ρ, δ = 2/9 cannot arise from symmetry phases or natural holonomies. It needs a scale-dependent dynamical coefficient (like Shulga's λ_B) or stays empirical. B2 unchanged (C-δ, λ_B = 1 assumed).
+- MAP: none (flavour/papers note; the theory map has no flavour node yet; added 20 Nov 2026)
 
 ## D1707 RESULT (19 Nov 2026) — DR3 forecast: BAO alone will NOT split the Weave thread from CPL bin by bin (PREREG_DR3_FORECAST)
 - Using the BAO + SN + CMB best fits: the largest thread − CPL difference in any DESI bin is 0.74σ_DR2 (D_V at z = 0.295). Next: D_H at z = 2.33 (−0.60σ), z = 1.32 (−0.57σ), D_M at z = 0.51 and 0.71 (~0.5σ). No bin passes the 1.5σ bar. With DR3 errors ≈ σ/√2, the best single bins reach only ~1σ.
 - Thread vs ΛsCDM: at most 0.55σ (D_V, z = 0.295); D_H at z = 2.33 is 0.36σ.
 - Reading: the thread-vs-CPL decision will come from the COMBINATION (SN shape at z < 0.5 plus the CMB distance), not from any single BAO point. The low-z D_V and the Lyα D_H at z = 2.33 are the most telling BAO points; the thread sits HIGHER than CPL at low z and LOWER at z = 2.33.
 - Concrete prediction for DR3 (thread, ×r_d⁻¹): D_V(0.295) = 7.97, D_H(2.33) = 8.64, D_M(0.51) = 13.35.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1706 RESULT (19 Nov 2026) — MIRROR M4: the thread and the sign-switch tie for DIFFERENT reasons (PREREG_M4_CMBSPLIT)
 - θ* only: thread −7.02, ΛsCDM −0.002. Densities (ω_b, ω_bc) only: thread −5.20, ΛsCDM 0.00. Full 3D prior (D1694/D1695): thread −4.84, ΛsCDM −4.93.
 - Thread: its gain is the BAO + SN thaw (−7). θ* alone leaves it intact, and the density priors cost it ~2 (they pull Ω_m h² against the thread's best Ω_m; locked label "θ*-driven" = densities hurt, θ* neutral).
 - ΛsCDM: gains NOTHING from either half alone and −4.93 only with the full correlated 3D prior. Its gain comes from the θ*–ω_bc correlation, i.e. from fitting the distance to the CMB at FIXED densities with a negative Λ above z ≈ 2.6. Locked label: "mixed".
 - Mirror reading: the tie is a coincidence of two different mechanisms. The thread is a late-time (z < 1) effect seen by SN + BAO; the sign-switch is a high-z (z > 2.6) effect seen only through the full CMB distance. DR3 + CMB-S4 test them separately: low-z SN shape for the thread, z > 2.3 distances for the switch.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1708 RESULT (19 Nov 2026) — the thread–dark-matter coupling CLOSES the weak-spot gap on real data (PREREG_COUPLED_THREAD), with one flag
 - BAO + SN + CMB: Δχ² = −10.40 versus ΛCDM. Thread −4.84 (uncoupled); CPL −10.84. Rule ≤ −9 → CLOSES THE GAP, now 0.44 behind CPL with the same number of extra parameters (2).
@@ -16829,6 +16887,7 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
 - Apparent dark energy seen by an uncoupled observer: w_eff = −0.83 (z = 0), −0.98 (0.5), −1.03 (1), −1.10 (2). The fit reproduces the phantom-crossing APPEARANCE the data want, while the field itself never goes below −1. This is the mechanism of arXiv:2503.10806, here with the Weave's own plateau.
 - FLAG: amp = 0.89999, i.e. at its upper bound (0.9). The fit wants the field to start low on the plateau, close to where the leading-order shape is least reliable (the exact curve has its floor at ρ, D1638/D1696). The true optimum may lie beyond the bound. Required next: an exact-curve refit with amp free beyond 0.9 (the exact curve never goes negative), before this counts as a fix.
 - Mirror (opposite sign of b_c): the profile scan (PREREG_COUPLED_SCAN, running) will show χ² for b_c > 0.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1709 RESULT (19 Nov 2026) — coupling profile scan: positive coupling is NOT viable; the negative-coupling gain sits in a narrow corner (PREREG_COUPLED_SCAN)
 - Δχ² versus ΛCDM (Ω_m, h, ω_b, amp profiled; amp ≤ 0.9; starts amp 0.16 / 0.30):
@@ -16838,11 +16897,13 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
   - b_c > 0 (0.1–1): no viable cosmology at all; the shooting for H₀ fails, flagged 1e9.
 - MIRROR (opposite sign): b_c > 0 fails outright, so the forward sign (b_c < 0) wins.
 - Caution about D1708: from these starting points the profile at b_c = −0.1 does NOT find the deep minimum. D1708's −10.40 sits at amp ≈ 0.9 (the bound) with b_c ≈ −0.06, a narrow corner that the profile starts never reached. The fix is therefore fragile: it needs a specific start near the floor plus a small negative coupling. The exact-curve run (D1710, amp free to 5) will tell whether the minimum is real or an artefact of the leading-order shape near amp → 1.
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1711 (RIGHT, 19 Nov 2026) — is the coupling size allowed? Yes, in the range Planck already tolerates (literature check for D1708)
 - Pettorino et al. (arXiv:1305.7457, Planck 2013 + extras): Q = −βρ_cφ′, φ in reduced Planck units, i.e. ρ_c ∝ a⁻³e^{−βφ}; our ρ_c ∝ a⁻³e^{b_cφ} (same units), so β = −b_c = 0.062.
 - Their fits: Planck WP + BAO, β = 0.036 ± 0.016; Planck WP + HST, β = 0.066 ± 0.018; Planck WP + HighL + BAO, 0.035 ± 0.016. Our 0.062 sits 1.6σ above the BAO combination and on top of the HST combination. NOT excluded by those analyses. Note: they are full-CMB analyses (G_eff = G(1 + β²) for DM perturbations), not compressed, and older Planck releases. A Planck-2018/ACT bound was not checked.
 - Combined with D1709: the fix's coupling is of an allowed size; the open issue is the narrow corner in the start parameter (D1710 running).
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1710 RESULT (19 Nov 2026) — WEAK SPOT FIXED (candidate): the coupled thread on the EXACT curve matches CPL on real data (PREREG_COUPLED_EXACT) → fix_stands ✓
 - BAO + SN + CMB: Δχ² = −10.76 versus ΛCDM; CPL −10.84 (gap 0.08); uncoupled thread −4.84 (−4.65 exact).
@@ -16851,6 +16912,7 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
 - D1708's "corner" was an artefact of the leading-order shape's bound. With the exact curve the minimum is interior and slightly deeper.
 - Coupling size: β = 0.074 is 0.4σ from Planck WP + HST (0.066 ± 0.018) but 2.4σ above Planck WP + BAO (0.036 ± 0.016) in the 2013-era fits (D1711). A modern full-CMB bound, and the effect of G_eff = G(1 + β²) on dark-matter clustering (σ₈/S₈), are NOT checked. Those are the remaining tests.
 - Weave reading: the dark sector is ONE thread coupled to the dark baryon X, consistent with X's mass depending on the modulus (P-brane: X on the D7 whose gauge coupling depends on Kähler moduli).
+- MAP: node=reverse_thread status=postulate touches=[] ripple=no (added 20 Nov 2026: links the note to its node at the node's CURRENT status; no status change)
 
 ## D1712 (RIGHT, 19 Nov 2026) — full-Planck test of the weak-spot fix submitted to Danny's PC (PREREG_PLANCK_COUPLED); prior full-Planck facts found
 - ALREADY ON THE PC (JANUS D1636, full Planck 2018 + DESI DR2 + SN via CAMB/Cobaya; gate passed to 10⁻⁸). Uncoupled leading-order thread versus ΛCDM: Pantheon+ −1.33, DES-Y5 −9.38, Union3 −2.64. w0wa: −9.11 / −19.72 / −15.02. With FULL Planck the uncoupled thread trails w0wa by 8–12, i.e. the weak spot is LARGER than with the compressed CMB (D1694: 6).
