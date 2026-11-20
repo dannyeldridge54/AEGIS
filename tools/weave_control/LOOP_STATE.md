@@ -16,7 +16,7 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 ## MASTER QUEUE (Danny 05:35 CT: "3 min loop for all we discussed") — one stage per tick, rotate through these in order
 Each item goes R → P → E1 → V1 → E2 → F → V2. Every tick ALSO does a 20-second health check: GitHub Actions status (tools, APK, exe) — a red run is fixed first.
 A. Packaging (W9/W10): finish V2 — exe self-tests on 3 OSs (run 44728408158), APK rebuild with the fixed key; then a release signing key (needs Danny: 4 GitHub secrets) — ask, don't block.
-B. W4 Flavour level: TM1 δ_CP vs NuFIT 6.0 and T2K+NOvA, sin²θ₁₂ vs JUNO + global (0.3085 ± 0.0073, arXiv:2511.21650; JUNO alone 0.3092 ± 0.0087, arXiv:2511.14593), Koide/Brannen (already in the engine). Research done 05:35 CT.
+B. W4 Flavour level [R done 05:35, P done 05:38 CT: PREREG_W4_FLAVOUR locked; next E1, interleaved with A's exe check]: TM1 δ_CP vs NuFIT 6.0 and T2K+NOvA, sin²θ₁₂ vs JUNO + global (0.3085 ± 0.0073, arXiv:2511.21650; JUNO alone 0.3092 ± 0.0087, arXiv:2511.14593), Koide/Brannen (already in the engine). Research done 05:35 CT.
 C. W5 Hyperion: nuclear-rate Monte Carlo → error bars on Y_p, D/H (closes referee R2/R8).
 D. W6 Janus: N* band from reheating; joint n_s–r (referee R4); bridges B1/B2 against a new lock.
 E. W7 Mapper: science overlays (DESI/Euclid footprints, GC gamma-line ring), tonight ranked by Weave-test value; Sky Map sexagesimal input + view export + shortcuts in About; FOV overlays.
@@ -155,6 +155,7 @@ U-R8 (minor) Printing: the light theme exists, but there is no print stylesheet 
 Strengths a referee would note: one parameter set drives every level; sources and P/F/G labels on every panel; nested-guard, ΔAIC, and halo dependence shown rather than hidden; the Studio hook.
 
 ## Done log
+- 05:38 CT W4/P postulate: PREREG_W4_FLAVOUR locked (TM1 sin²θ₁₂ formula, δ_CP must reproduce D1667/D1669 to ±0.5°, status from post-JUNO global); packaging V2 waits on the exe run (APK rebuild with fixed key: SUCCESS; tools CI: SUCCESS on 1d9e870a)
 - 05:35 CT CI: tools GREEN on f5edc931 (first time since 19 Nov 09:27); 9aa71df8 failed on a flaky golden drift (item I). W4 research: global sin²θ₁₂ after JUNO = 0.3085 ± 0.0073 (arXiv:2511.21650).
 - 04:50 CT W1/F referee: 9 points (3 major)
 - 05:36 CT W9/V2 part 1: signing key, least privilege, README (exe proof pending)
