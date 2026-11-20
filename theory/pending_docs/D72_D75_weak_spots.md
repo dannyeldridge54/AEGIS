@@ -16714,3 +16714,8 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - TM1 lower branch: 285.7° (s₂₃² = 0.561) and 262.4° (0.470) are both inside the NO 3σ AND the marginalised 1σ. The upper branch (74.3°, 97.6°) is outside both, matching NuFIT (D1669).
 - T2K+NOvA's sin²θ₂₃ = 0.56 picks the 0.561 case, so the Weave + S₄ prediction becomes δ_CP ≈ 286°, about 10° from the joint peak.
 - Process note: the lock file was written before computing, but committed in the same step as the computation (an interval check only, no fitting). Recorded, not hidden.
+
+## D1691 (CENTRE, 19 Nov 2026) — SPACE HUNT pass 1 (Danny 19:06 "Space hunt")
+- New doc theory/pending_docs/SPACE_HUNT.md: target table plus pass-1 scoring.
+- Hits: (1) sign-switching dark energy (negative early, positive since z ≈ 1.5; Akarsu et al. PRD 2025): TENSION with the exact reverse thread (never negative). It is a NEW IDEA test, though the Zhinü V₀ ≥ 0 forbids a negative phase for that potential itself. (2) DES final, ~3σ for weakening dark energy: MATCH in direction. (3) IceCube UHE neutrinos, Euclid first look, and the new interstellar sulfur ring: NEUTRAL.
+- Needs Danny: OK to download the DESI DR2 public chains for a real-posterior re-score.
