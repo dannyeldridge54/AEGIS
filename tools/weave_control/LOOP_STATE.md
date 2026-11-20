@@ -25,7 +25,19 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W3 control panel · next stage: V1 review (E1 done 05:09 CT).
+Item W3 control panel · next stage: E2 engineer (V1 done 05:11 CT, findings U1–U10 below).
+V1 findings (W3), from the desktop and phone screenshots and the page source:
+U1 A6 broken: the page hard-codes ATLAS 670 GeV and the H.E.S.S. masses 440/1000/2900. Read them from the engine response (colliders data limit; galaxy data names/limits).
+U2 STALE label in the engine galaxy level: 'the only stored limit is at 1 TeV (Einasto); away from 1 TeV no pass/fail' contradicts DEVIATIONS D1. Remove.
+U3 Galaxy chart: the y-scale (0–0.6) squashes the f_pred band and the f_max line, and the right-hand labels collide. Scale to max(f_pred_high, f_max_0.658) × 1.3; labels on the left of the line.
+U4 Late chart: S₈ labels are clipped on the left (text longer than 146 px). Use shorter labels ('thread P+ · KiDS') and widen the label column.
+U5 Collider chart: the 'ATLAS 670' label overlaps the mass marker when the mass is near 670–1000. Put the label below the axis band.
+U6 Units doubled in readouts ('pairs · pairs', 'sigma fb · fb', 'M max Msun · M☉'): drop the unit suffix when the key already ends in it, and give readouts human names.
+U7 'delta equivalent forms' shown as a range (0.222 – 1.872) reads like an interval; show it as a list.
+U8 Phone: the chart text is ~8.6 px after scaling (too small); on narrow screens use a taller viewBox with larger text. The sticky header takes ~195 px on a phone: make it non-sticky below 600 px.
+U9 A1b: Studio Api.weave_run is not added yet (apps/aegis_studio/app.py) — add it plus a 'Control' entry that opens the panel.
+U10 The model lamp has only colour plus a tooltip: add the status word next to the lamp for colour-blind users.
+Checked OK: contrast (muted #b3a8e6 on #0b0620 ≈ 8.9:1; light muted #564d7a on #fff ≈ 7.6:1), no console errors, no h-scroll, every control named, knob → readout update 0.6–0.8 s.
 E1: tools/weave_control/server.py (127.0.0.1:8790; /api/run, /api/finder), ui/index.html (Studio tokens, scorecard A–E, 8 panels with knobs/readouts/charts/tests/sources), engine.knobs(), finder accepts 'ra,dec'. Playwright: desktop 1440 dark + phone 390 light, 8 panels, 0 console errors, 0 unnamed controls, no h-scroll, knob change 1000 → 1500 GeV updates σ 2.38 → 0.163 fb in 0.6–0.8 s (A8 ≤ 1.5 s OK).
 Seen in the screenshot, for V1: galaxy chart y-scale squashes the band and f_max line (labels overlap at the right); S₈ bar labels clipped on the left; collider 'ATLAS 670' label overlaps the mass marker; units doubled ('pairs · pairs', 'sigma fb · fb'); a STALE galaxy label still says 'the only stored limit is at 1 TeV' (contradicts DEVIATIONS D1); Studio Api.weave_run not yet added (A1b).
 Postulate W3 (acceptance rules, fixed before building; engineering, so no physics PREREG):
@@ -95,6 +107,7 @@ W2 research notes (04:53 CT):
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:11 CT W3/V1 review: 10 findings (U1–U10)
 - 05:09 CT W3/E1 engineer: server + control panel built and browser-tested
 - 05:05 CT W3/P postulate: acceptance rules A1–A8
 - 05:04 CT W3/R research: Studio (Janus) architecture and style read; design consequence recorded
