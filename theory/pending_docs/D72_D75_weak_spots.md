@@ -16668,3 +16668,10 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - [computed, Zagier scheme, B = 0] I for radii (V = ΠR): (1,1,1,1.3) V = 1.3: −0.52; (1,1,1,2) V = 2: +0.66; (1,1,1,3) V = 3: +4.13; (1,1,2,2) V = 4: +2.57; (1.5,1.5,1.5,1.5) V = 5.1: +1.33; (1,2,2,2) V = 8: +5.41; (1,1,3,3) V = 9: +13.1.
 - Even with THREE radii at the self-dual point, one radius of 2 is enough to make the thread positive. Negativity needs the whole T⁴ near string size (V ≲ ~1.6 ℓ_s⁴ along the tested line).
 - Weave meaning: the D = 6 plateau needs only a torus volume a little above string scale. Any geometrically meaningful 6D phase satisfies that. A3 is now effectively closed for D = 6 (B = 0); B ≠ 0 is untested.
+
+## D1683 (LEFT, 19 Nov 2026) — RESULT: a B-field slightly DEEPENS the dip but does not change the D = 6 picture (PREREG_A3_D6_B; DEVIATIONS D1 grid, D2 a Narain-normalisation bug caught by the validation)
+- Validation after D2: d = 2 DKL at T = ½ + i matches to 6 × 10⁻⁵ ✓; b = 0 reproduces D1680 exactly (−0.66185) ✓.
+- [computed] I on T² × T² (U = i, T = b + iR²): R = 1: −0.662 (b = 0), −0.685 (0.25), −0.707 (0.5). R = 1.25: −0.1991, −0.1998, −0.2006.
+- Locked reading: "B only helps" = FALSE. B lowers I by at most 0.045 at R = 1 and 0.0015 at R = 1.25. This is tiny next to the volume growth (+1.33 at R = 1.5, +9.7 at R = 2). The volume-controlled conclusion of D1682 stands; the threshold moves up only marginally.
+- A3 for D = 6 is CLOSED for practical purposes: positive for any T⁴ meaningfully larger than string size, with or without a B-field; scheme-dependent only for tori at string size.
+- The validation earned its keep: it caught a real normalisation bug that a loose b = 0 check had let through.
