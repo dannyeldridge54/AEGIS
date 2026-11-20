@@ -11,3 +11,9 @@ def test_labels_and_rules():
 def test_d1_stricter():
     assert not any(r['evidence'] and (r['timing'] == 'post-hoc' or r['inherited']) for r in R)
     assert sum(1 for r in R if r.get('headline') and r['id'].startswith('bbn-Yp')) == 1
+
+def test_d3_open_rows_never_count():
+    from tools.evidence import atlas as A
+    R = A.classify(A.rows())
+    assert not any(r['evidence'] and r['status'] == 'open' for r in R)
+    assert {'q-eps', 'q-tauq', 'q-Rmumu'} <= {r['id'] for r in R}
