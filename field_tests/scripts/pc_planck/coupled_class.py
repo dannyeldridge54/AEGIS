@@ -29,6 +29,10 @@ def theory():
 def make(name):
     import cmbfit as C
     core,sn=name,None
+    nested=name.endswith('_nested')
+    if nested: name_core=name[:-7]
+    else: name_core=name
+    core=name_core
     for suf in ('_desy5','_union3'):
         if core.endswith(suf): core,sn=core[:-len(suf)],suf
     likes=dict(C.LIKES_BASE); likes[{None:'sn.pantheonplus','_desy5':'sn.desy5','_union3':'sn.union3'}[sn]]=None
@@ -47,6 +51,12 @@ def make(name):
         pr['rt_ui']={'prior':{'min':1e-6,'max':3.0},'ref':{'dist':'uniform','min':0.1,'max':0.25},'proposal':0.02}
     if core=='coupled':
         pr['rt_bc']={'prior':{'min':-0.3,'max':0.1},'ref':{'dist':'uniform','min':-0.12,'max':-0.02},'proposal':0.01}
+    if nested:   # PREREG_PLANCK_CLASS DEVIATIONS D1: start at the CLASS LCDM best point (nested start)
+        L=json.load(open(os.path.join(HERE,'results','cls_lcdm'+(sn or '')+'.json')))['minimum']
+        for k in ('logA','n_s','H0','omega_b','omega_cdm','tau_reio'):
+            if k in L: pr[k]['ref']={'dist':'norm','loc':L[k],'scale':abs(L[k])*1e-4+1e-6}
+        if 'rt_ui' in pr: pr['rt_ui']['ref']={'dist':'uniform','min':1e-3,'max':0.05}
+        if 'rt_bc' in pr: pr['rt_bc']['ref']={'dist':'uniform','min':-0.01,'max':0.0}
     th={'external':theory(),'path':CLASS_PATH,'extra_args':ex,'stop_at_error':False,'ignore_obsolete':True}  # patched v3.3.0
     info={'theory':{'aegisclassy':th},'likelihood':likes,'params':pr,'packages_path':C.PACKAGES,
           'sampler':{'minimize':{'method':'bobyqa','best_of':4}},
