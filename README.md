@@ -1,5 +1,5 @@
 # AEGIS Android apps (sideload)
-Built from commit 28d241e on 2026-11-20. Install by opening the .apk on the phone (allow "install unknown apps").
+Built from commit 2423603 on 2026-11-20. Install by opening the .apk on the phone (allow "install unknown apps").
 | file | what it is | needs internet? |
 |---|---|---|
 | AEGIS_SkyMap.apk | Sky Map: constellations, Messier, planets, AEGIS stars; uses location for your sky | telescope images only |
