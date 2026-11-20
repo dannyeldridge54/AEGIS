@@ -25,7 +25,8 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W1 · next stage: V2 review (F done 04:50 CT; referee list below — R1–R3 must be fixed or explicitly labelled before V2 signs off; R4–R9 go to later items).
+Item W2 links · next stage: R research (W1 signed off at V2, 04:51 CT).
+W2 scope: dark sector → ΔN_eff → BBN (done in W1, keep); N*/T_rh → BBN; wino mass → gamma line (done at 1 TeV only, needs the H.E.S.S. limit curve vs mass + check of PSR J0740 value, R6); J-factor region → Sky level; b_A → G_eff → S₈ and z† → H(z) at z 2–5 vs DESI Lyα BAO. Research first: H.E.S.S./CTAO line-limit curve (mass vs σv), DESI DR2 Lyα BAO D_H/r_d at z = 2.33, newest J0740 mass, S₈ values.
 Postulate W1: every level returns {category, inputs, outputs, data[{name,value,sigma|limit,source}], pulls, status ∈ pass/tension/fail/open}; nothing typed in by hand except measured data with a source; fits labelled F; a test per level.
 Notes: wino gamma-line σv — checked: the D1322 '/1e6' is M² in GeV² at 1 TeV, so π α²/M² is the general tree form; the M dependence of the Sommerfeld factor comes from wino_s_nlo itself. At 1 TeV the engine reproduces 1.42e-26 (same formula as the smoke test).
 E1 results (defaults): inflation pass (n_s 0.9706, r 5.4e-4); flavour pass (Koide Q 0.6666645 ± 5.1e-6, −0.4σ; Brannen δ 0.2222248 vs 2/9 = 0.2222222); BBN tension (D/H −2.6σ vs Cooke 2018); late tension (thread −2.6/−8.1/−3.4, coupling ~0); colliders pass at 1 TeV (ATLAS 670); galaxy open (f²σv 2.2–6.0e-28 at 1 TeV vs the 2.3e-28 used in D1322: borderline, needs the limit curve); stars pass (SLy 2.05 vs J0740 2.08 ± 0.07); sky open.
@@ -55,6 +56,7 @@ Comparison: Cobaya/MontePython do joint likelihoods (R4); PRyMordial carries rat
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 04:51 CT W1/V2 signed off: R1 inflation status from predictions only for serapis_* (r), n_s context; R2 BBN pulls labelled observational-only (theory σ in W5); R3 ΔAIC added (thread −0.6/−6.1/−1.4). R4–R9 carried to W2/W5/W6/W7/W8. 29 tests pass (engine 8 + shared/janus/mapper).
 - 04:45 CT W1/V1 review: 8 findings (above)
 - 04:48 CT W1/E2 fixes: dark-sector table from D1646/D1648/C5 (mirror_full_equal 7.4 → BBN fail, as it should); bridges numbers-only; late status derived (tension: beats ΛCDM, trails w0wa); stars rule stated; Brannen forms listed; galaxy tests BOTH ends of the fraction bracket at 1 TeV (low 2.2e-28 passes, high 6.0e-28 fails vs 2.3e-28 → tension; E2 first tried the low end only, caught before commit); lru_cache; error field
 - 04:43 CT W1/E1 engine.py + tests (6 pass)

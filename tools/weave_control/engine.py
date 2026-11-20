@@ -47,11 +47,15 @@ def inflation(p):
             for q, d in J.CONSTRAINTS.items() for k, v in d.items()]
     B1 = pr['r'] - 3*(1 - pr['ns'])**2; B2 = pr['alpha_s'] + 0.5*(1 - pr['ns'])**2
     # status uses the newest combined sets only (overlapping sets are shown, not double counted)
-    key = {k: sc[k] for k in ('ns:P-ACT-LB2', 'ns:CMB-SPA+DESI', 'r:PR4+BK18')}
+    fitted_ns = p['inflation_model'] in J.WEAVE_FULL
+    # referee R1: a fitted quantity cannot grade the model. For serapis_* only the predictions (r; α_s when a running
+    # constraint is stored) set the status; for the other models n_s at the chosen N* is a prediction and counts.
+    key = {k: sc[k] for k in (('r:PR4+BK18', 'r:BK18') if fitted_ns else ('ns:P-ACT-LB2', 'ns:CMB-SPA+DESI', 'r:PR4+BK18'))}
     labels = ['n_s is FITTED for serapis_* (Ushas tilt chosen); r and α_s are the predictions'] if p['inflation_model'].startswith('serapis') else []
     return L('inflation', 'Inflation', 'A', 'Janus', dict(model=p['inflation_model'], Nstar=pr['Nstar']),
              dict(ns=pr['ns'], r=pr['r'], alpha_s=pr['alpha_s'], bridge_B1=B1, bridge_B2=B2), data, sc,
-             labels + ['status from P-ACT-LB2, CMB-SPA+DESI, PR4+BK18 (newest combined sets)',
+             labels + [('status from the PREDICTIONS only: r vs PR4+BK18 and BK18 (n_s is fitted, shown as context; referee R1)' if fitted_ns
+                        else 'status from P-ACT-LB2, CMB-SPA+DESI, PR4+BK18 (newest combined sets)'),
                        'bridges B1, B2 shown as numbers only: their old targets were set for an earlier model (V1 finding 2)'],
              links=['N* → reheating → BBN (W2)'], status=_status(key))
 
@@ -82,7 +86,8 @@ def bbn(p):
     b = H.bbn(p['omega_b'], dN)
     data = [dict(name=f'{q}:{k}', value=v[0], sigma=v[1], kind='gauss', source=v[2]) for q in ('Yp', 'DH') for k, v in H.DATA[q].items()]
     return L('bbn', 'Big Bang nucleosynthesis', 'D', 'Hyperion', dict(omega_b=p['omega_b'], dNeff=dN, dNeff_from=why, code=b['code']),
-             dict(Yp=b['Yp'], DH=b['DH']), data, b['pulls'], ['lithium problem reproduced, not solved (D1640)'],
+             dict(Yp=b['Yp'], DH=b['DH']), data, b['pulls'], ['lithium problem reproduced, not solved (D1640)',
+             'pulls use the OBSERVATIONAL σ only: the nuclear-rate theory error (a few % on D/H) is not yet included, so the D/H tension is overstated (referee R2; fix in W5 rate Monte Carlo)'],
              links=[f"ΔN_eff = {dN} from dark sector '{p['dark_sector']}'"])
 
 # ---------------- C. late universe (CLASS results + D1717 closed form) ----------------
@@ -91,7 +96,10 @@ def late(p):
     zdag = (p['Omega_phi']/(p['Omega_c']*x))**(1/3) - 1 if b < 0 and x > 0 else None
     Geff = 1 + 2*b*b
     rows = {k: dict(d_thread=v['thread'] - v['lcdm'], d_coupled_reported=v['coupled'] - v['lcdm'],
-                    d_coupled_at_most=min(v['coupled'], v['thread']) - v['lcdm']) for k, v in D1725.items()}
+                    d_coupled_at_most=min(v['coupled'], v['thread']) - v['lcdm'],
+                    dAIC_thread=v['thread'] - v['lcdm'] + 2*1,                                # +1 parameter (amplitude)
+                    dAIC_coupled_at_most=min(v['coupled'], v['thread']) - v['lcdm'] + 2*2)    # +2 (amplitude, b_A)
+            for k, v in D1725.items()}
     pulls = {f'thread beats ΛCDM ({k})': 'pass' if r['d_thread'] < 0 else 'FAIL' for k, r in rows.items()}
     W0WA = {'Pantheon+': -9.11, 'DES-Y5': -19.72, 'Union3': -15.02}     # CAMB, D1712 context
     behind = all(rows[k]['d_thread'] > W0WA[k] for k in rows)
@@ -100,7 +108,8 @@ def late(p):
              pulls, ['b_A is consistent with 0 on full Planck (D1725, fix_fails)', 'negative space needs b_A < 0 (D1716/D1717)',
                      'Δχ² are the locked fit results; they do not change with the b_A slider',
                      'd_coupled_at_most = min(coupled, thread): the coupled model contains the thread, so its true value is at most this (nested guard)',
-                     'thread trails w0wa (−9.1 / −19.7 / −15.0, CAMB)'],
+                     'thread trails w0wa (−9.1 / −19.7 / −15.0, CAMB)',
+                     'ΔAIC = Δχ² + 2k charges the extra parameters (thread k = 1, coupled k = 2); negative still favours the model (referee R3)'],
              links=['G_eff → S₈ (W2)', 'z† → H(z) at z 2–5 vs DESI Lyα (W2)'],
              status=('tension' if behind else _status(pulls)) if _status(pulls) == 'pass' else _status(pulls))
 

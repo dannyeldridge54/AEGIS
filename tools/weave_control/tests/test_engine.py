@@ -28,3 +28,10 @@ def test_v1_fixes():
     assert len(LV['flavour']['outputs']['delta_equivalent_forms']) >= 2
     assert LV['galaxy']['status'] == 'tension'                     # low fraction passes, high fraction fails (2.2e-28 vs 6.0e-28 vs 2.3e-28)
     assert set(E.DARK_SECTORS) == {'none', 'brane_split', 'minimal_equal_sharing', 'mirror_at_bound', 'mirror_full_equal'}
+
+def test_referee_r1_r3():
+    assert any('PREDICTIONS only' in s for s in LV['inflation']['labels'])
+    st = [l for l in E.run({'inflation_model': 'starobinsky', 'Nstar': 55})['levels'] if l['id'] == 'inflation'][0]['status']
+    assert st == 'fail'                                              # Starobinsky N*=55: n_s −3.4σ from P-ACT-LB2 (a prediction there)
+    d = LV['late']['outputs']['D1725']['DES-Y5']; assert abs(d['dAIC_thread'] - (d['d_thread'] + 2)) < 1e-9
+    assert any('OBSERVATIONAL' in s for s in LV['bbn']['labels'])
