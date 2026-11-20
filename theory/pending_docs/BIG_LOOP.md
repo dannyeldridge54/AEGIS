@@ -16,6 +16,8 @@ Q6. [DONE: NULL, no mechanism in the literature] Λ (C1): any Weave-internal sup
 Q7. [DONE D1674: P(TM1) = 0.345 exactly (½ × 0.69)] Basin weights per image of i on the level-4 (Γ(4)) cover: which images do slow neutrino moduli reach (D1610 flow), and what fraction lands on TM1 images? Lock first.
 Q8. [DONE D1675: KLZ portal window contains M_N window; P-portal] Version (b) dark asymmetry: a portal estimate (e.g. neutron portal ūd̄d̄χ/Λ²) that transfers baryon number to 5 GeV χ, with the Λ_portal needed and current bounds.
 Q9. [DONE D1676: m_X = 12.8 GeV non-SUSY; 28/79 validated] Recompute the KLZ chemical-equilibrium mass ratio (m_X range) in tools/genesis rather than quoting it.
-Q10. A3 at D = 6: evaluate the regularised SO(4,4) s = 1 Epstein-type series numerically along a torus slice.
+Q10. [NULL: not a short computation] A3 at D = 6: evaluate the regularised SO(4,4) s = 1 Epstein-type series numerically along a torus slice.
 Q11. [DONE D1677: dim strip survives; bright strip excluded; ε ≲ 3e-9–8e-7 by m_A′] Is a 12.8 GeV asymmetric X with a 0.3–5 GeV dark photon allowed by LZ/XENONnT direct detection (kinetic-mixing ε from D1659/D1664)?
 Q12. [NULL D-note: not obtainable from text; newer LZ 417-day result exists] Source the LZ SI limit at 13 GeV (data release / HEPData) to replace D1677's bracket.
+
+**LOOP ENDED (NULL at Q10).**

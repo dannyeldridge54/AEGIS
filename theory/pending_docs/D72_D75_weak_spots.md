@@ -16643,3 +16643,8 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - LZ WS2024 (2410.17036) gives numbers only at 40 GeV (2.2 × 10⁻⁴⁸ cm²). The 13 GeV value is in Fig. 5 only. The supplemental link is a placeholder, and the HEPData record found is the ultraheavy-DM search (10.17182/hepdata.151392), not WS2024.
 - There is a NEWER LZ result: 417 live days (Mar 2023–Apr 2025), announced Dec 2025 (LBNL news). It is world-leading above 5 GeV and reports ⁸B CEvNS evidence at 4.5σ. No numbers in the release, and no arXiv id found.
 - D1677's bracket (10⁻⁴⁷–10⁻⁴⁵ cm² at 13 GeV) stays, flagged UNSOURCED. The newer result can only tighten ε_max, moving the dark photon further into the dim strip. Getting the curve needs Danny, or a digitised figure.
+
+## D1679 (LEFT, 19 Nov 2026) — BIG LOOP tick (scheduled): Q10 NULL. The loop ends
+- REVIEW: D1676–D1678 checked. The 28/79 validation reproduces; D1677's bracket is flagged unsourced (D1678).
+- Q10 (A3 at D = 6): the regularised SO(4,4) vector Eisenstein series at s = 1 is a constrained (m·n = 0) sum over the 8-dimensional Narain lattice that needs analytic continuation. It is not a short locked computation, so NULL for this tick. It stays C-sign; D = 8 is positive (D1672).
+- NULL rule: this tick has no correction, no new result and no register change, so the BIG LOOP stops. Remaining items that need Danny: flavour paper v3 → Publish (D1670); LZ limit curve at 13 GeV (D1678); A3 at D = 6 as a dedicated job.
