@@ -16829,3 +16829,12 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
 - Apparent dark energy seen by an uncoupled observer: w_eff = −0.83 (z = 0), −0.98 (0.5), −1.03 (1), −1.10 (2). The fit reproduces the phantom-crossing APPEARANCE the data want, while the field itself never goes below −1. This is the mechanism of arXiv:2503.10806, here with the Weave's own plateau.
 - FLAG: amp = 0.89999, i.e. at its upper bound (0.9). The fit wants the field to start low on the plateau, close to where the leading-order shape is least reliable (the exact curve has its floor at ρ, D1638/D1696). The true optimum may lie beyond the bound. Required next: an exact-curve refit with amp free beyond 0.9 (the exact curve never goes negative), before this counts as a fix.
 - Mirror (opposite sign of b_c): the profile scan (PREREG_COUPLED_SCAN, running) will show χ² for b_c > 0.
+
+## D1709 RESULT (19 Nov 2026) — coupling profile scan: positive coupling is NOT viable; the negative-coupling gain sits in a narrow corner (PREREG_COUPLED_SCAN)
+- Δχ² versus ΛCDM (Ω_m, h, ω_b, amp profiled; amp ≤ 0.9; starts amp 0.16 / 0.30):
+  - b_c = 0: −4.84 (reproduces D1694 ✓).
+  - b_c = −0.1: +17.4 (amp driven to its lower bound).
+  - b_c = −0.25: +859; b_c = −0.5 and −1: ≫ 10⁵.
+  - b_c > 0 (0.1–1): no viable cosmology at all; the shooting for H₀ fails, flagged 1e9.
+- MIRROR (opposite sign): b_c > 0 fails outright, so the forward sign (b_c < 0) wins.
+- Caution about D1708: from these starting points the profile at b_c = −0.1 does NOT find the deep minimum. D1708's −10.40 sits at amp ≈ 0.9 (the bound) with b_c ≈ −0.06, a narrow corner that the profile starts never reached. The fix is therefore fragile: it needs a specific start near the floor plus a small negative coupling. The exact-curve run (D1710, amp free to 5) will tell whether the minimum is real or an artefact of the leading-order shape near amp → 1.
