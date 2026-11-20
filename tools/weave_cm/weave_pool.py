@@ -13,6 +13,8 @@ def worker(i):
     sys.path.insert(0, str(HERE)); import weave_sweep as WS
     os.environ.setdefault('WEAVE_CURRENT', str(ROOT / 'aegis_tools' / 'aegis_current'))
     while True:
+        pp = mp.parent_process()
+        if pp is not None and not pp.is_alive(): return   # no orphans if the pool parent is stopped
         try:
             r = WS.run(str(DATA), seconds=int(os.environ.get('WEAVE_POOL_S', '90')), shard=f'_w{i}')
             if r.get('weave_sweep') == 'paused by disk guard': time.sleep(600)
