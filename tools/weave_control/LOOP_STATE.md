@@ -13,6 +13,19 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 | F  referee    | hostile read: would an expert in that field accept it? missing standard features, wrong conventions, overclaims; compare with the leading tool | referee list (fixes go to the next E) |
 | V2 review     | confirm referee points handled or recorded as open, run all tests, commit + push, report 2–4 lines to Danny | DONE row |
 
+## MASTER QUEUE (Danny 05:35 CT: "3 min loop for all we discussed") — one stage per tick, rotate through these in order
+Each item goes R → P → E1 → V1 → E2 → F → V2. Every tick ALSO does a 20-second health check: GitHub Actions status (tools, APK, exe) — a red run is fixed first.
+A. Packaging (W9/W10): finish V2 — exe self-tests on 3 OSs (run 44728408158), APK rebuild with the fixed key; then a release signing key (needs Danny: 4 GitHub secrets) — ask, don't block.
+B. W4 Flavour level: TM1 δ_CP vs NuFIT 6.0 and T2K+NOvA, sin²θ₁₂ vs JUNO + global (0.3085 ± 0.0073, arXiv:2511.21650; JUNO alone 0.3092 ± 0.0087, arXiv:2511.14593), Koide/Brannen (already in the engine). Research done 05:35 CT.
+C. W5 Hyperion: nuclear-rate Monte Carlo → error bars on Y_p, D/H (closes referee R2/R8).
+D. W6 Janus: N* band from reheating; joint n_s–r (referee R4); bridges B1/B2 against a new lock.
+E. W7 Mapper: science overlays (DESI/Euclid footprints, GC gamma-line ring), tonight ranked by Weave-test value; Sky Map sexagesimal input + view export + shortcuts in About; FOV overlays.
+F. W8 CERN+1: simplified likelihood (R5); triglavon/cassion reach at FCC-hh / beam dumps.
+G. Toolkit integration: CLI `aegis weave ...` for every level; dashboard reads the engine; CLI --prov wiring; prove-the-model scorecard page.
+H. Map data items 2–8: gamma-line limit curve (H.E.S.S. IGS 2026 full curve if published), NICER, GWTC-4, ESPP, D/H + τ_n, Gaia DR4, CODATA 2022.
+I. CI health: golden check is FLAKY — `aegis janus 0.5*phi**2 60` β_s drifts 4e-6 relative between runs (passed on f5edc931, failed on 9aa71df8): find the source of the non-determinism (do NOT loosen the tolerance without a DEVIATIONS-style note).
+J. D1713 follow-ups: nothing to rerun (locked); C8 reopened; next real test DESI DR3 + CMB-S4 — watch for data releases.
+
 ## Item queue (build order from the plan)
 1. W1 engine: one parameter set → levels (Inflation A, Flavour B, BBN D, Late universe C, Colliders C, Galaxy & dark matter C, Stars D, Sky E), each with inputs, outputs, data + sources, pulls, status
 2. W2 links: dark sector ΔN_eff → BBN; wino mass → gamma line (verify the σv mass scaling against D1322 first); J-factor region → Mapper; b_A → z† and G_eff
@@ -142,6 +155,7 @@ U-R8 (minor) Printing: the light theme exists, but there is no print stylesheet 
 Strengths a referee would note: one parameter set drives every level; sources and P/F/G labels on every panel; nested-guard, ΔAIC, and halo dependence shown rather than hidden; the Studio hook.
 
 ## Done log
+- 05:35 CT CI: tools GREEN on f5edc931 (first time since 19 Nov 09:27); 9aa71df8 failed on a flaky golden drift (item I). W4 research: global sin²θ₁₂ after JUNO = 0.3085 ± 0.0073 (arXiv:2511.21650).
 - 04:50 CT W1/F referee: 9 points (3 major)
 - 05:36 CT W9/V2 part 1: signing key, least privilege, README (exe proof pending)
 - 05:35 CT W9/F referee: 6 points (signing key, least privilege, exe proof)
