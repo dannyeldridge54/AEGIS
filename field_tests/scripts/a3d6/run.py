@@ -25,4 +25,5 @@ if o['validation']['pass_']:
     for R in (1,1.25,1.5,2,3):
         I[str(R)]=RN(lambda x,y,R=R:G11(R,x,y)**4,2)
     o['I']=I; o['min']=min(I.values()); o['positive']=o['min']>0
-print(json.dumps(o,indent=1)); json.dump(o,open('field_tests/results/a3_d6.json','w'),indent=1)
+conv=lambda v: bool(v) if type(v).__name__ in ('bool','bool_') else float(v)
+print(json.dumps(o,indent=1,default=conv)); json.dump(o,open('field_tests/results/a3_d6.json','w'),indent=1,default=conv)
