@@ -17251,3 +17251,10 @@ Verdict: no numerical disagreement at any joint; two labelling/range faults fixe
 ## D1751a — correction to D1751 (Q4 DEVIATIONS D1 applied)
 - [correction] D1751 said moving N* from 55 to 50.37 "really tightens the low-mass edge". Wrong: the edge is set by D ≤ 1e3 (F2), which binds long before |Δn_s| ≤ 0.003 (at D = 1e3, Δn_s = 0.0018 at N* 50.37, 0.0015 at 55). 
 - [computed] After the deviation (N* taken from the inflation model in use; tests 16/16, kit self-test OK) the τ_q window is UNCHANGED: φ0 = 0.1: 7.7e8–5.2e12 GeV; φ0 = 1: 1.66e10–5.2e12 GeV, identical at N* 55 and 50.37 (4000-point grid; Q4's 7.85e8 / 1.69e10 differ only by its coarser grid). The joint is now consistent; Q4's verdict stands as recorded.
+
+## D1752 — CENTRE / joint audit pass 2 (Danny 11:51 "deep fixes"): stale numbers at three joints
+- [FIXED, text] BBN level said reheating "T_rh ≈ 9 × 10⁸ GeV" (D1637); the Weave value since D1665 is T_R = 1.34 × 10⁹ GeV, which the quark and τ_q joints use. BBN numbers unaffected (ΔN_eff is the only BBN link).
+- [FIXED, text] Engine dark-sector option 'minimal_equal_sharing' still described the dark baryon as 5 GeV and gave no warning; it is the massless-dark-photon case RULED OUT by N_eff data (D1646a, D1654), and the Weave dark baryon is 12.8 GeV (D1676). Description now says so (ΔN_eff value unchanged; the option stays selectable for comparison).
+- [FIXED] Dark-photon window was 0.3–5 GeV in WEAVE_FACTS and the connection map; since D1685/D1688 it is 0.3–12.8 GeV with a sourced LZ ceiling on the mixing. Both updated so CubeMind postulates on the current window.
+- [checked, no change] Late-universe engine defaults Ω_φ 0.70 / Ω_c 0.25 vs D1710's 0.702 / 0.249: the engine's status comes from the D1725 χ² table, the defaults only move the displayed z† by ~1 %; left (a test pins the D1725 point).
+Tests 16/16.

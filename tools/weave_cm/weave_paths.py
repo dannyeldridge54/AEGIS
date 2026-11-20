@@ -25,7 +25,7 @@ EQ = {  # id: (sector, status, short form, inputs, outputs)
  'E7 gamma line': ('dark', 'C', 'f_max = sqrt(limit/(sigma v R J/J_b))', ['m_wino', 'wino abundance'], ['line flux']),
  'E8 colliders': ('dark', 'C', 'sigma(pp->chargino pairs), disappearing tracks', ['m_wino'], ['LHC reach']),
  'E9 asymmetric DM': ('dark', 'D', 'm_X from the same asymmetry: Omega_DM/Omega_b ~ 5.4', ['eta_B', 'dilution'], ['m_X=12.8 GeV']),
- 'E10 dark photon': ('dark', 'D', 'A\' clears X antiparticles; window 0.3-5 GeV', ['m_X=12.8 GeV'], ['dark photon window']),
+ 'E10 dark photon': ('dark', 'D', 'A\' clears X antiparticles; window 0.3-12.8 GeV (D1685, D1688)', ['m_X=12.8 GeV'], ['dark photon window']),
  'E11 BBN': ('late', 'C', 'Y_p, D/H from omega_b, Delta N_eff', ['eta_B', 'Delta N_eff'], ['Y_p', 'D/H', 'Li7']),
  'E22 reverse thread': ('late', 'C', 'V = V_L(1 - A e^(-beta phi)), beta from D', ['A', 'D', 'V_L'], ['w0', 'wa', 'dphi']),
  'E23 coupling & negative space': ('late', 'C', '(1+z_dag)^3 = Om_phi/[Om_c(e^{|b|dphi}-1)]', ['b', 'dphi'], ['z_dag', 'DM mass loss', 'S8']),

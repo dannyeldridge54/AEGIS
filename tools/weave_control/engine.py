@@ -21,7 +21,7 @@ DEFAULTS = dict(
 # Each value from the D-notes (V1 finding 1): the label says which note and whether it is an estimate or a bound.
 DARK_SECTORS = {'none': (0.0, 'no dark radiation'),
                 'brane_split': (0.0, 'P-brane (C5, D1671): visible on D3, dark on unfluxed D7; the inflaton heats our side only, ΔN_eff ≈ 0 (must be ≤ 0.086, C5)'),
-                'minimal_equal_sharing': (0.21, 'minimal dark sector (5 GeV baryon + dark photon) with equal sharing per particle: ΔN_eff = 0.21 (D1646, estimate)'),
+                'minimal_equal_sharing': (0.21, 'minimal dark sector (dark baryon + MASSLESS dark photon) with equal sharing per particle: ΔN_eff = 0.21 (D1646, estimate) — RULED OUT by today\'s N_eff data (D1646a, D1654); the Weave dark baryon is 12.8 GeV (D1676) with a massive dark photon (0.3–12.8 GeV, D1685/D1688)'),
                 'mirror_at_bound': (0.3, 'mirror sector at its viability bound ΔN_eff = 0.3 (D1648)'),
                 'mirror_full_equal': (7.4, 'full mirror world with equal sharing: ΔN_eff = 7.4 (D1646) — RULED OUT')}
 LEPTONS_MeV = dict(e=(0.51099895000, 1.5e-10), mu=(105.6583755, 2.3e-6), tau=(1776.93, 0.09))   # PDG 2024
@@ -157,7 +157,7 @@ def bbn(p):
               'shown beside it, never setting the status: Yeh+Olive+Fields theory σ (D/H 4.4%, includes the ω_b error) and observational-only pulls',
               'the two theory conventions differ by ~3% in D/H, mostly from the d(p,γ)³He rate (theory vs LUNA data)'],
              links=[f"ΔN_eff = {dN} from dark sector '{p['dark_sector']}'",
-                    'L4: reheating (T_rh ≈ 9 × 10⁸ GeV, N*) has no direct BBN effect; ΔN_eff is the only BBN link'],
+                    'L4: reheating (T_R ≈ 1.34 × 10⁹ GeV, D1665; was 9 × 10⁸ in D1637) and N* have no direct BBN effect; ΔN_eff is the only BBN link'],
              status=_status(status_pulls))
 
 # ---------------- C. late universe (CLASS results + D1717 closed form) ----------------
