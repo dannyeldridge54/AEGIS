@@ -6,7 +6,7 @@ run(params) -> {'params', 'levels': [level, ...], 'scorecard'}. Each level:
    status: pass | tension | fail | open, labels: notes on what is predicted (P), fitted (F) or an open gap (G), links}
 Rules: every number is computed by a validated toolkit function, or is a measurement carrying its source.
 Status: pass if every |pull| < 2 and every limit passes; tension if a |pull| is 2–3; fail if any |pull| ≥ 3 or a limit fails."""
-import functools, math
+import functools, math, warnings
 
 DEFAULTS = dict(
     inflation_model='serapis_10d', Nstar=55.0,                      # Janus (N* ignored for the full SERAPIS models)
@@ -26,7 +26,9 @@ DARK_SECTORS = {'none': (0.0, 'no dark radiation'),
 LEPTONS_MeV = dict(e=(0.51099895000, 1.5e-10), mu=(105.6583755, 2.3e-6), tau=(1776.93, 0.09))   # PDG 2024
 J0740 = (2.08, 0.07, 'PSR J0740+6620 mass (Fonseca et al. 2021, ApJL 915 L12)')
 ATLAS_DT = (670.0, 'ATLAS disappearing track, observed 95% wino limit (arXiv:2603.08315; D1722)')
-# L3 (PREREG_W2_LINKS): S8 = sigma8 sqrt(Omega_m/0.3) from the locked D1725 best fits (PC results/cls_*.json, read 20 Nov 04:55 CT)
+# L3 (PREREG_W2_LINKS): S8 = sigma8 sqrt(Omega_m/0.3) from the locked D1725 best fits, read 20 Nov 04:55 CT from the PC
+# AEGIS_PCJOBS/d1713/results/: cls_lcdm{,_desy5,_union3}.json, cls_thread{...}.json, coupled = cls_coupled_nested.json (P+),
+# cls_coupled_desy5_nested.json (DES-Y5), cls_coupled_union3.json (Union3) — the lower-chi2 run per set. Verified to 4 d.p. (W2/V1).
 S8_FITS = {'Pantheon+': dict(lcdm=0.8127, thread=0.8093, coupled=0.8124), 'DES-Y5': dict(lcdm=0.8148, thread=0.8080, coupled=0.8083),
            'Union3': dict(lcdm=0.8137, thread=0.8128, coupled=0.8283)}   # coupled = the run with the lower chi2 (orig or nested)
 S8_DATA = {'KiDS-Legacy': (0.815, 0.016, 0.021, 'arXiv:2503.19441'), 'CMB lensing (ACT DR6+Planck PR4+SPT-3G+DESI DR2)': (0.828, 0.012, 0.012, 'Qu et al. 2026, via arXiv:2602.12238')}
@@ -126,6 +128,7 @@ def late(p):
                      'thread trails w0wa (−9.1 / −19.7 / −15.0, CAMB)',
                      'ΔAIC = Δχ² + 2k charges the extra parameters (thread k = 1, coupled k = 2); negative still favours the model (referee R3)',
                      'L3: S₈ of each locked fit vs KiDS-Legacy and CMB lensing, reported separately (not combined)',
+                     f'S₈ sub-status: {s8_status} (largest |pull| {max(abs(v) for v in s8.values()):.1f}σ)',
                      'L2: DESI Lyα BAO is shown as context only: it is already inside the DESI DR2 likelihood of the fits, so it is not an independent test'],
              links=['G_eff → S₈ (W2)', 'z† → H(z) at z 2–5 vs DESI Lyα (W2)'],
              status=('tension' if behind else _status(pulls)) if _status(pulls) == 'pass' else _status(pulls))
@@ -157,7 +160,11 @@ HALO_SHAPES = {'Einasto': ('einasto', (20.0, 0.17)), 'NFW': ('nfw', (20.0,)), 'B
 def _j_ann(halo, rho_sun):
     from tools.janus_astro import jfactor as Jm
     fn, args = HALO_SHAPES[halo]; rho = Jm.normalise(getattr(Jm, fn)(*args), rho_sun, 8.178)
-    return Jm.J_route_B(rho, 8.178, psi_max_deg=3.0, b_mask_deg=0.0) - Jm.J_route_B(rho, 8.178, psi_max_deg=0.5, b_mask_deg=0.0)
+    # quad's IntegrationWarnings here are harmless: route A vs route B agree to ≤ 0.65% and a finer grid changes
+    # nothing (W2/V1, LOOP_STATE 04:56 CT); they come from the very strict epsrel = 1e-10. Silenced here only.
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        return Jm.J_route_B(rho, 8.178, psi_max_deg=3.0, b_mask_deg=0.0) - Jm.J_route_B(rho, 8.178, psi_max_deg=0.5, b_mask_deg=0.0)
 def f_max(M, halo, rho_sun):
     """PREREG_W2_LINKS L1: the D1322 recipe, f_max = sqrt(2.3e-28 / (sigma_v_line * 0.794 * J/J_bench))."""
     jr = _j_ann(halo, rho_sun)/_j_ann('Einasto', 0.39)
@@ -173,9 +180,11 @@ def galaxy(p):
         pulls['f_pred high ≤ f_max'] = 'pass' if f[1] <= fm else 'FAIL'; pulls['f_pred low ≤ f_max'] = 'pass' if f[0] <= fm else 'FAIL'
         st = 'pass' if f[1] <= fm else ('tension' if f[0] <= fm else 'fail')
     return L('galaxy', 'Galaxy & dark matter (gamma line)', 'C', 'Hyperion', dict(m=M, halo=p['halo'], rho_sun=p['rho_sun']),
-             dict(J_GeV2_cm5=j['J_GeV2_cm5'], sigma_v_line_cm3_s=sv, thermal_fraction=f, f_max=fm, J_over_bench=jr, recipe_selfcheck_0p286=check),
+             dict(J_IGS_ROI_GeV2_cm5=j['J_GeV2_cm5'], J_annulus_0p5_3deg_GeV2_cm5=_j_ann(p['halo'], float(p['rho_sun'])),
+                  sigma_v_line_cm3_s=sv, thermal_fraction=f, f_max=fm, J_over_bench=jr, recipe_selfcheck_0p286=check),
              [dict(name='H.E.S.S. inner Galaxy line limit', source='used at 1 TeV in D1322 (2.3e-28 cm³/s, Einasto); full mass curve not yet stored')],
-             pulls, ['L1 (PREREG_W2_LINKS): f_max = √(2.3e-28 / (σv × 0.794 × J/J_bench)), bench Einasto ρ☉ 0.39, annulus 0.5°–3°; self-check Burkert → 0.286',
+             pulls, ['two J values: J_IGS_ROI (H.E.S.S. IGS region, ψ ≤ 1°, |b| ≥ 0.3°) is for display; f_max uses the 0.5°–3° annulus (the D1322 recipe)',
+                     'L1 (PREREG_W2_LINKS): f_max = √(2.3e-28 / (σv × 0.794 × J/J_bench)), bench Einasto ρ☉ 0.39, annulus 0.5°–3°; self-check Burkert → 0.286',
                      'LO Sommerfeld (no NLO, no endpoint); limit curve vs mass is map item 2 (open)',
                      'the only stored limit is at 1 TeV (Einasto); away from 1 TeV no pass/fail is given (V1 finding 6)'],
              links=['J-factor region → Sky level (W2)'], status=st or 'open')

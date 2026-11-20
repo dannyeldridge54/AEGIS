@@ -40,3 +40,7 @@ def test_w2_links():
     assert abs(E.f_max(1000.0, 'Burkert', 0.40)[0] - 0.286) < 0.003            # D1322 smoke-test value
     late = LV['late']['outputs']; assert 'S8 coupled Union3 vs KiDS-Legacy' in late['S8_pulls'] and late['Lya_context']['z'] == 2.33
     assert any('Galactic centre' in t['name'] for t in LV['sky']['outputs']['science_targets'])
+
+def test_w2_e2():
+    g = LV['galaxy']['outputs']; assert 'J_annulus_0p5_3deg_GeV2_cm5' in g and 'J_IGS_ROI_GeV2_cm5' in g
+    assert any(s.startswith('S₈ sub-status: pass') for s in LV['late']['labels'])
