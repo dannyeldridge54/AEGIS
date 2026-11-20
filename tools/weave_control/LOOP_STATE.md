@@ -25,7 +25,9 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W3 control panel · next stage: V2 review (F done 05:16 CT; referee U-R1–U-R8 below; U-R1–U-R4 must be done at V2). E2 recap (05:14 CT: U1–U10 fixed; Playwright desktop + phone 0 errors, 0 unnamed, no h-scroll, update 0.57–0.65 s; 11 tests pass). Small leftover seen: collider chart 'excluded (ATLAS) < 670' text touches the 'reach 740' label when the two are close.
+Item W4 flavour level · next stage: R research (W3 signed off at V2, 05:19 CT).
+W3/V2: U-R1 Download JSON + Copy link (params in the URL hash, restored on load: tested 440 GeV/Burkert round trip, download has 8 levels + provenance); U-R2 3 significant figures by default, more only for Koide Q, Brannen δ, n_s, Y_p; U-R3 'LOCKED fit results' tag on the Late bars; U-R4 inflation legend with ★ on the sets that decide the status; U-R5 collider labels moved; U-R6 'graded on r only' in the scorecard tooltip; U-R8 print stylesheet. U-R7 (no error bars yet) carried to W5/W6. Playwright desktop + phone: 0 errors, 0 unnamed, no h-scroll. 11 tests pass.
+Earlier E2 recap (05:14 CT: U1–U10 fixed; Playwright desktop + phone 0 errors, 0 unnamed, no h-scroll, update 0.57–0.65 s; 11 tests pass). Small leftover seen: collider chart 'excluded (ATLAS) < 670' text touches the 'reach 740' label when the two are close.
 V1 findings (W3), from the desktop and phone screenshots and the page source:
 U1 A6 broken: the page hard-codes ATLAS 670 GeV and the H.E.S.S. masses 440/1000/2900. Read them from the engine response (colliders data limit; galaxy data names/limits).
 U2 STALE label in the engine galaxy level: 'the only stored limit is at 1 TeV (Einasto); away from 1 TeV no pass/fail' contradicts DEVIATIONS D1. Remove.
@@ -118,6 +120,7 @@ Strengths a referee would note: one parameter set drives every level; sources an
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:19 CT W3/V2 signed off (export/share, precision, locked tags, legend, print)
 - 05:16 CT W3/F referee: 8 points (4 major: export/share, precision, live vs locked, inflation legend)
 - 05:14 CT W3/E2 engineer: limits read from the engine (no hard-coded 670 or H.E.S.S. masses), stale label removed, galaxy chart rescaled, S₈ labels shortened, human names + units once, δ forms as a list, phone header static + larger chart text, status words beside lamps, Studio Api.weave_run + open_control + 'Control' tab
 - 05:11 CT W3/V1 review: 10 findings (U1–U10)
