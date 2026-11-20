@@ -1,0 +1,183 @@
+diff --git a/source/background.c b/source/background.c
+index f24fc81..9d2a72a 100644
+--- a/source/background.c
++++ b/source/background.c
+@@ -437,6 +437,9 @@ int background_functions(
+   /* cdm */
+   if (pba->has_cdm == _TRUE_) {
+     pvecback[pba->index_bg_rho_cdm] = pba->Omega0_cdm * pow(pba->H0,2) / pow(a,3);
++    /* AEGIS D1713: conformal coupling to the Weave thread, rho_cdm ~ a^-3 exp(b_c (phi - phi_ini)); Omega0_cdm is the EARLY normalisation */
++    if ((pba->has_scf == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.))
++      pvecback[pba->index_bg_rho_cdm] *= exp(pba->scf_parameters[2]*(pvecback_B[pba->index_bi_phi_scf] - pba->phi_ini_scf));
+     rho_tot += pvecback[pba->index_bg_rho_cdm];
+     p_tot += 0.;
+     rho_m += pvecback[pba->index_bg_rho_cdm];
+@@ -484,8 +487,8 @@ int background_functions(
+     p_tot += pvecback[pba->index_bg_p_scf];
+     dp_dloga += 0.0; /** <-- This depends on a_prime_over_a, so we cannot add it now! */
+     //divide relativistic & nonrelativistic (not very meaningful for oscillatory models)
+-    rho_r += 3.*pvecback[pba->index_bg_p_scf]; //field pressure contributes radiation
+-    rho_m += pvecback[pba->index_bg_rho_scf] - 3.* pvecback[pba->index_bg_p_scf]; //the rest contributes matter
++    /* AEGIS D1713: the Weave thread is dark energy, not matter or radiation. Counting rho-3p (=4V) as matter made
++       Omega_m(z) ~ 3 and corrupted halofit; so the thread is left out of rho_m and rho_r here (and Omega_m is the true matter fraction). */
+     //printf(" a= %e, Omega_scf = %f, \n ",a, pvecback[pba->index_bg_rho_scf]/rho_tot );
+   }
+ 
+@@ -2658,7 +2661,13 @@ int background_derivs(
+     /** - Scalar field equation: \f$ \phi'' + 2 a H \phi' + a^2 dV = 0 \f$  (note H is wrt cosmological time)
+         written as \f$ d\phi/dlna = phi' / (aH) \f$ and \f$ d\phi'/dlna = -2*phi' - (a/H) dV \f$ */
+     dy[pba->index_bi_phi_scf] = y[pba->index_bi_phi_prime_scf]/a/H;
+-    dy[pba->index_bi_phi_prime_scf] = - 2*y[pba->index_bi_phi_prime_scf] - a*dV_scf(pba,y[pba->index_bi_phi_scf])/H ;
++    {
++      double force = dV_scf(pba,y[pba->index_bi_phi_scf]);
++      /* AEGIS D1713: coupling force b_c rho_c (physical rho = 3 rho_class) */
++      if ((pba->has_cdm == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.))
++        force += 3.*pba->scf_parameters[2]*pvecback[pba->index_bg_rho_cdm];
++      dy[pba->index_bi_phi_prime_scf] = - 2*y[pba->index_bi_phi_prime_scf] - a*force/H ;
++    }
+   }
+ 
+   return _SUCCESS_;
+@@ -2982,20 +2991,29 @@ double ddV_p_scf(
+ /** Fianlly we can obtain the overall potential \f$ V = V_p*V_e \f$
+  */
+ 
+-double V_scf(
+-             struct background *pba,
+-             double phi) {
+-  return  V_e_scf(pba,phi)*V_p_scf(pba,phi);
++/* AEGIS D1713: Weave exact perturbative species plateau, V = VL * [(2/3)(3/2 - 2 c u/(1+c u))]^2, u = exp(-beta phi);
++   scf_parameters = [beta, c, b_c, VL/H0^2] (tune index 3) */
++static double aegis_f(struct background *pba, double phi){
++  double beta=pba->scf_parameters[0], c=pba->scf_parameters[1], u=exp(-beta*phi);
++  return (2./3.)*(1.5-2.*c*u/(1.+c*u));
+ }
+-
+-double dV_scf(
+-              struct background *pba,
+-              double phi) {
+-  return dV_e_scf(pba,phi)*V_p_scf(pba,phi) + V_e_scf(pba,phi)*dV_p_scf(pba,phi);
++static double aegis_df(struct background *pba, double phi){
++  double beta=pba->scf_parameters[0], c=pba->scf_parameters[1], u=exp(-beta*phi);
++  return (2./3.)*(-2.*c/pow(1.+c*u,2))*(-beta*u);
+ }
+-
+-double ddV_scf(
+-               struct background *pba,
+-               double phi) {
+-  return ddV_e_scf(pba,phi)*V_p_scf(pba,phi) + 2*dV_e_scf(pba,phi)*dV_p_scf(pba,phi) + V_e_scf(pba,phi)*ddV_p_scf(pba,phi);
++static double aegis_ddf(struct background *pba, double phi){
++  double beta=pba->scf_parameters[0], c=pba->scf_parameters[1], u=exp(-beta*phi);
++  /* d/dphi of (2/3)*2c*beta*u/(1+cu)^2 */
++  double num=(2./3.)*2.*c*beta;
++  return num*(-beta*u*pow(1.+c*u,-2) + u*(-2.)*pow(1.+c*u,-3)*c*(-beta*u));
++}
++double V_scf(struct background *pba, double phi) {
++  double f=aegis_f(pba,phi); return pba->scf_parameters[3]*pba->H0*pba->H0*f*f;
++}
++double dV_scf(struct background *pba, double phi) {
++  return pba->scf_parameters[3]*pba->H0*pba->H0*2.*aegis_f(pba,phi)*aegis_df(pba,phi);
++}
++double ddV_scf(struct background *pba, double phi) {
++  double f=aegis_f(pba,phi), df=aegis_df(pba,phi);
++  return pba->scf_parameters[3]*pba->H0*pba->H0*2.*(df*df+f*aegis_ddf(pba,phi));
+ }
+diff --git a/source/input.c b/source/input.c
+index 933e586..52659a6 100644
+--- a/source/input.c
++++ b/source/input.c
+@@ -1473,6 +1473,9 @@ int input_try_unknown_parameters(double * unknown_parameter,
+     case Omega_scf:
+       /** In case scalar field is used to fill, pba->Omega0_scf is not equal to pfzw->target_value[i].*/
+       output[i] = ba.background_table[(ba.bt_size-1)*ba.bg_size+ba.index_bg_rho_scf]/(ba.H0*ba.H0)-ba.Omega0_scf;
++      /* AEGIS D1713: with coupling the cdm density today differs from Omega0_cdm; include the excess so the universe is flat today */
++      if ((ba.has_cdm == _TRUE_) && (ba.scf_parameters_size >= 4) && (ba.scf_parameters[2] != 0.))
++        output[i] += ba.background_table[(ba.bt_size-1)*ba.bg_size+ba.index_bg_rho_cdm]/(ba.H0*ba.H0)-ba.Omega0_cdm;
+       break;
+     case Omega_ini_dcdm:
+     case omega_ini_dcdm:
+diff --git a/source/perturbations.c b/source/perturbations.c
+index c78fe43..17773ec 100644
+--- a/source/perturbations.c
++++ b/source/perturbations.c
+@@ -3918,7 +3918,7 @@ int perturbations_vector_init(
+     /* cdm */
+ 
+     class_define_index(ppv->index_pt_delta_cdm,pba->has_cdm,index_pt,1); /* cdm density */
+-    class_define_index(ppv->index_pt_theta_cdm,pba->has_cdm && (ppt->gauge == newtonian),index_pt,1); /* cdm velocity */
++    class_define_index(ppv->index_pt_theta_cdm,pba->has_cdm && ((ppt->gauge == newtonian) || ((pba->has_scf == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.))),index_pt,1); /* AEGIS D1713: coupled cdm carries a velocity */ /* cdm velocity */
+ 
+     /* idm */
+     class_define_index(ppv->index_pt_delta_idm,pba->has_idm,index_pt,1); /* idm density */
+@@ -4369,7 +4369,7 @@ int perturbations_vector_init(
+         ppv->y[ppv->index_pt_delta_cdm] =
+           ppw->pv->y[ppw->pv->index_pt_delta_cdm];
+ 
+-        if (ppt->gauge == newtonian) {
++        if ((ppt->gauge == newtonian) || ((pba->has_scf == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.))) {
+           ppv->y[ppv->index_pt_theta_cdm] =
+             ppw->pv->y[ppw->pv->index_pt_theta_cdm];
+         }
+@@ -6947,7 +6947,7 @@ int perturbations_total_stress_energy(
+     /* cdm contribution */
+     if (pba->has_cdm == _TRUE_) {
+       ppw->delta_rho += ppw->pvecback[pba->index_bg_rho_cdm]*y[ppw->pv->index_pt_delta_cdm]; // contribution to total perturbed stress-energy
+-      if (ppt->gauge == newtonian)
++      if ((ppt->gauge == newtonian) || ((pba->has_scf == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.)))
+         ppw->rho_plus_p_theta = ppw->rho_plus_p_theta + ppw->pvecback[pba->index_bg_rho_cdm]*y[ppw->pv->index_pt_theta_cdm]; // contribution to total perturbed stress-energy
+ 
+       ppw->rho_plus_p_tot += ppw->pvecback[pba->index_bg_rho_cdm];
+@@ -6957,7 +6957,7 @@ int perturbations_total_stress_energy(
+         rho_m += ppw->pvecback[pba->index_bg_rho_cdm];
+       }
+       if ((ppt->has_source_delta_m == _TRUE_) || (ppt->has_source_theta_m == _TRUE_)) {
+-        if (ppt->gauge == newtonian)
++        if ((ppt->gauge == newtonian) || ((pba->has_scf == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.)))
+           rho_plus_p_theta_m += ppw->pvecback[pba->index_bg_rho_cdm]*y[ppw->pv->index_pt_theta_cdm]; // contribution to [(rho+p)theta]_matter
+         rho_plus_p_m += ppw->pvecback[pba->index_bg_rho_cdm];
+       }
+@@ -8293,7 +8293,7 @@ int perturbations_print_variables(double tau,
+     if (pba->has_cdm == _TRUE_) {
+ 
+       delta_cdm = y[ppw->pv->index_pt_delta_cdm];
+-      if (ppt->gauge == synchronous) {
++      if ((ppt->gauge == synchronous) && !((pba->has_scf == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.))) {
+         theta_cdm = 0.;
+       }
+       else {
+@@ -9228,9 +9228,24 @@ int perturbations_derivs(double tau,
+         dy[pv->index_pt_theta_cdm] = - a_prime_over_a*y[pv->index_pt_theta_cdm] + metric_euler; /* cdm velocity */
+       }
+ 
++      /* AEGIS D1713: synchronous gauge with cdm coupled to the scalar, rho_c ~ exp(b phi):
++         delta_c' = -theta_c - h'/2 + b dphi',  theta_c' = -(aH + b phi')theta_c + b k^2 dphi */
++      if ((ppt->gauge == synchronous) && ((pba->has_scf == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.))) {
++        double bcp = pba->scf_parameters[2];
++        dy[pv->index_pt_delta_cdm] = -(y[pv->index_pt_theta_cdm]+metric_continuity) + bcp*y[pv->index_pt_phi_prime_scf];
++        dy[pv->index_pt_theta_cdm] = -(a_prime_over_a + bcp*pvecback[pba->index_bg_phi_prime_scf])*y[pv->index_pt_theta_cdm]
++          + bcp*k2*y[pv->index_pt_phi_scf];
++      }
++      else if ((ppt->gauge == newtonian) && ((pba->has_scf == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.))) {
++        double bcp = pba->scf_parameters[2];
++        dy[pv->index_pt_delta_cdm] += bcp*y[pv->index_pt_phi_prime_scf];
++        dy[pv->index_pt_theta_cdm] += - bcp*pvecback[pba->index_bg_phi_prime_scf]*y[pv->index_pt_theta_cdm]
++          + bcp*k2*y[pv->index_pt_phi_scf];
++      }
++
+       /** - ----> synchronous gauge: cdm density only (velocity set to zero by definition of the gauge) */
+ 
+-      if (ppt->gauge == synchronous) {
++      if ((ppt->gauge == synchronous) && !((pba->has_scf == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.))) {
+         dy[pv->index_pt_delta_cdm] = -metric_continuity; /* cdm density */
+       }
+     }
+@@ -9403,6 +9418,9 @@ int perturbations_derivs(double tau,
+       dy[pv->index_pt_phi_prime_scf] =  - 2.*a_prime_over_a*y[pv->index_pt_phi_prime_scf]
+         - metric_continuity*pvecback[pba->index_bg_phi_prime_scf] //  metric_continuity = h'/2
+         - (k2 + a2*pvecback[pba->index_bg_ddV_scf])*y[pv->index_pt_phi_scf]; //checked
++      /* AEGIS D1713: perturbed coupling force, b * rho_c(phys) * delta_c, rho_phys = 3 rho_class */
++      if ((pba->has_cdm == _TRUE_) && ((pba->has_scf == _TRUE_) && (pba->scf_parameters_size >= 4) && (pba->scf_parameters[2] != 0.)))
++        dy[pv->index_pt_phi_prime_scf] -= a2*pba->scf_parameters[2]*3.*pvecback[pba->index_bg_rho_cdm]*y[pv->index_pt_delta_cdm];
+ 
+     }
+ 
