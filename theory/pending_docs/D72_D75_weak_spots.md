@@ -16810,3 +16810,9 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
 - The automorphy factor of ST at its fixed point ω (≅ ρ) is cω + d = ω + 1 = e^{iπ/3}, so a weight-k form picks up phase πk/3 per Z₃ step. That is a rational multiple of π, never 2/9 rad (δ = 2/9 has no π, as D1616 noted).
 - A genuine Berry (holonomy) phase for a weight-k section on the hyperbolic plane is ∝ k × (enclosed hyperbolic area). A loop at hyperbolic radius r spanning 2π/3 encloses (2π/3)(cosh r − 1). That is continuous in r, so 2/9 can be hit only by choosing r, i.e. it is not predicted. Natural closed loops (the triangles of the tessellation) have areas that are rational multiples of π, giving π-multiples again.
 - Verdict: NULL. Within modular geometry at ρ, δ = 2/9 cannot arise from symmetry phases or natural holonomies. It needs a scale-dependent dynamical coefficient (like Shulga's λ_B) or stays empirical. B2 unchanged (C-δ, λ_B = 1 assumed).
+
+## D1707 RESULT (19 Nov 2026) — DR3 forecast: BAO alone will NOT split the Weave thread from CPL bin by bin (PREREG_DR3_FORECAST)
+- Using the BAO + SN + CMB best fits: the largest thread − CPL difference in any DESI bin is 0.74σ_DR2 (D_V at z = 0.295). Next: D_H at z = 2.33 (−0.60σ), z = 1.32 (−0.57σ), D_M at z = 0.51 and 0.71 (~0.5σ). No bin passes the 1.5σ bar. With DR3 errors ≈ σ/√2, the best single bins reach only ~1σ.
+- Thread vs ΛsCDM: at most 0.55σ (D_V, z = 0.295); D_H at z = 2.33 is 0.36σ.
+- Reading: the thread-vs-CPL decision will come from the COMBINATION (SN shape at z < 0.5 plus the CMB distance), not from any single BAO point. The low-z D_V and the Lyα D_H at z = 2.33 are the most telling BAO points; the thread sits HIGHER than CPL at low z and LOWER at z = 2.33.
+- Concrete prediction for DR3 (thread, ×r_d⁻¹): D_V(0.295) = 7.97, D_H(2.33) = 8.64, D_M(0.51) = 13.35.
