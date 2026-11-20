@@ -9,6 +9,7 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   cern limit [ATLAS_136|ATLAS_36]   disappearing-track recast limit with theory band
   cern higgsino <mass_GeV> [TeV]    higgsino pair cross sections (fb), 100-1500 GeV
   cern future                       HL-LHC / HE-LHC / FCC-hh wino reach
+  cern slha <file> [run]            read an SLHA spectrum: wino/higgsino character, dm, xsec, lifetime
   cern runs                         run presets: run2, run3, run2+3, hl-lhc, hl-lhc-ult, he-lhc, fcc-hh
   cern point <run> <model> <mass>   cross section, expected pairs, lifetime for a run (model: wino|higgsino)
   cern reach <run>                  expected disappearing-track wino reach for a run
@@ -83,6 +84,9 @@ def cern(args):
     elif c == 'reach':        # cern reach <run>
         from tools.lhc import settings as S
         _show(S.reach(args[1] if len(args) > 1 else 'hl-lhc'))
+    elif c == 'slha':         # cern slha <file.slha> [run]
+        from tools.lhc import slha_in as SI
+        _show(SI.summary(open(args[1]).read(), args[2] if len(args) > 2 else 'run3'))
     elif c == 'export':       # cern export hepdata <run> <model> <m1,m2,...> | slha <mass> | pyhf <s> <b> <n_obs> [sigma_b]
         from tools.lhc import settings as S
         k = args[1]

@@ -46,7 +46,7 @@ Rules: lock before recomputing; data-file downloads need Danny's OK; each row's 
 |---|---|---|
 | full likelihoods in JSON (pyhf) | export one-bin pyhf workspace | DONE (settings.py) |
 | read published likelihoods / HEPData tables directly | import pyhf workspaces + patchsets and HEPData YAML/JSON tables | DONE R1 (importers.py: load_workspace, apply_patch with digest check, cls, upper_limit, load_hepdata_table; 4 tests) |
-| SLHA files for models | SLHA export | DONE; SLHA IMPORT (read a spectrum file, compute xsec/lifetime/limit) queued R2 |
+| SLHA files for models | SLHA export | DONE; SLHA IMPORT DONE R2 (slha_in.py: MASS/NMIX/DECAY → character, Δm, xsec for a run, lifetime vs file; 2 tests) |
 | efficiency maps per topology, ≥ 3 mass/lifetime points; LLP specifics | lifetime-dependent acceptance grid (τ, m) from the validated window model, exportable as HEPData | queued R3 |
 | reference cross sections versioned and citable | Resummino tables with arXiv refs + theory band; version stamp in every output | partial (add version stamp R4) |
 | statistics fully documented | CLs with stated test statistic, two independent routes (pyhf + exact Poisson) | DONE (stats.py); doc page R4 |
