@@ -1005,3 +1005,4 @@ D1717  2026-11-20T02:58Z  closed-form z-dagger for Weave negative space
 D1718  2026-11-20T03:03Z  register C8 update + G_eff correction
 D1719  2026-11-20T03:14Z  PUBLISHED Not Yet Seen
 D1720  2026-11-20T03:17Z  WEAVE recheck: D1687 gravitino-to-wino yield verified; wino_window now conditional on T_R
+D1721  2026-11-20T03:18Z  ravon not required; triglavon mass scale; LZ 13 GeV NULL
