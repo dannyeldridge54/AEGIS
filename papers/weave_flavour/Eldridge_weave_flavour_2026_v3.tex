@@ -13,7 +13,7 @@ In a companion paper~\cite{P1}, inflation is driven by the running of the specie
 (ii) The residual $\mathbb Z_3$ at $\rho$ forces a circulant $\sqrt{M_\ell}$. Its eigenvalues are exactly the Koide--Brannen form $\sqrt{m_k}=a+2|b|\cos(\delta+2\pi k/3)$, and $Q=2/3$ is equivalent to equal norm in the singlet and doublet components. The data give amplitude $\sqrt2$ and $\delta=2/9=Q/3$ to within $1\sigma$. Minimal $A_4$ weight-2 constructions placed exactly at $\rho$ do not produce these numbers.
 (iii) Correction (v3): with charged leptons at $\rho$ and neutrinos at $i$, $A_4$ gives TM2, $\sin^2\theta_{12}=0.3408$. JUNO's first data, $0.3092\pm0.0087$~\cite{JUNO}, exclude this at $3.6\sigma$ ($4.6\sigma$ combined with NuFIT). Under modular $S_4$ the \emph{same two vacua} give TM1~\cite{TM1}: the neutrino point $-\tfrac12+\tfrac i2$ is $SL(2,\mathbb Z)$-equivalent to $i$. TM1 predicts $\sin^2\theta_{12}=0.3184$ ($+1.1\sigma$), and the sum-rule branch allowed by NuFIT~6.0 gives $\delta_{CP}=286^\circ$ ($\sin^2\theta_{23}=0.561$) or $262^\circ$ ($0.470$). Of the six images of $i$, three give TM1, three give a pattern with a zero entry (excluded), and none gives TM2.
 (iv) At $\rho$ the $A_4$ quark determinant is the real number $27/8$. With CP-symmetric couplings $\bar\theta\in\{0,\pi\}$, but the CKM phase vanishes ($|J|<5\times10^{-15}$). The observed phase therefore needs a quark modulus at a generic point with anomaly-free weights, as in Feruglio, Strumia and Titov~\cite{FST}.
-All computations were pre-registered. We state plainly which steps are principles and which are derived.
+All computations were pre-registered, except the choice of TM1, which was made after JUNO (see the correction note). We state plainly which steps are principles and which are derived.
 \end{abstract}
 \keywords{flavour; modular symmetry; $A_4$; Koide formula; trimaximal mixing; strong CP; inflation; $SL(2,\mathbb Z)$ fixed points; pre-registration}
 \maketitle
@@ -42,7 +42,7 @@ A slow modulus does not carry the inflaton's momentum and is overdamped by Hubbl
 \section{What is assumed}
 We assume the following. The species-gradient potential itself~\cite{P1}. That the flavour group is modular $S_4$ (level 4), not $A_4$ (this is not derived). Equipartition, $|b|^2=a^2/2$, together with $\delta=Q/3$. That the lepton moduli obey the same potential (the neutrino modulus then reaches $i$ for 69\% of starting points, Sec.~V). The anomaly-free quark weights and the quark modulus at a generic point. None of these is derived here. The vacuum energy beyond zero and the origin of $\Lambda_{\rm obs}$ are not addressed.
 
-\emph{Correction note (v3).} Version 2 predicted exact TM2 and the $\delta_{CP}$ values $236^\circ/125^\circ$ and $287^\circ/74^\circ$. JUNO excludes TM2, and those values are withdrawn. The TM1 replacement, its fixed-point counting and its $\delta_{CP}$ scoring were each pre-registered (repository D1652, D1667--D1669). \emph{Integrity note.} All computations were pre-registered (locks D1595--D1607, results D1610). Fixes to code were logged before any rerun, and one invalid run is kept on record. The $\delta_{CP}$ values are predictions, to be scored against DUNE and Hyper-Kamiokande.
+\emph{Correction note (v3).} Version 2 predicted exact TM2 and the $\delta_{CP}$ values $236^\circ/125^\circ$ and $287^\circ/74^\circ$. JUNO excludes TM2, and those values are withdrawn. The TM1 replacement was adopted \emph{after} JUNO excluded TM2, so it is post hoc and is not counted as evidence; only its fixed-point counting and its $\delta_{CP}$ scoring were locked before computing (repository D1652, D1667--D1669). The T2K+NOvA joint result~\cite{T2KNOVA} puts $\delta_{CP}$ in $[214^\circ,313^\circ]$ at $1\sigma$, consistent with the $286^\circ$ branch (D1690). The quark sector is hosted on a separate modulus, not predicted (doi:10.5281/zenodo.24399408). \emph{Integrity note.} All computations were pre-registered (locks D1595--D1607, results D1610). Fixes to code were logged before any rerun, and one invalid run is kept on record. The TM1 $\delta_{CP}$ values are statements to be scored against DUNE and Hyper-Kamiokande; because TM1 was chosen after JUNO they will count only as consistency, not as evidence.
 
 \begin{thebibliography}{99}
 \bibitem{P1} D.~Eldridge, ``Inflation from the running of the species scale'' (draft, 2026).
@@ -55,5 +55,6 @@ We assume the following. The species-gradient potential itself~\cite{P1}. That t
 \bibitem{JUNO} JUNO Collaboration, first measurement of reactor neutrino oscillations, arXiv:2511.14593.
 \bibitem{TM1} Modular TM$_1$ mixing in light of precision measurement in JUNO, arXiv:2511.16348.
 \bibitem{NPP4} P.~P.~Novichkov, J.~T.~Penedo, S.~T.~Petcov, A.~V.~Titov, arXiv:1811.04933; G.-J.~Ding et al., arXiv:1910.03460.
+\bibitem{T2KNOVA} T2K and NOvA Collaborations, joint oscillation analysis, Nature (2025).
 \end{thebibliography}
 \end{document}

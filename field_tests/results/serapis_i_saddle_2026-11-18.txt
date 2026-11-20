@@ -15,3 +15,7 @@ Verdict: in SERAPIS-E tau = i is a dS saddle (V = 0.10 V0) unstable only along t
 that is a monotone function of E(tau,2) can have its vacuum only at rho. A tau = i vacuum therefore needs an extra ingredient:
 x pinned (heavy axion / CP locus) or a different modular building block in which i is a minimum (e.g. SERAPIS-1's j-based form).
 Label: derived from the frozen model's own code (verification of an existing model; no new prediction, no lock needed).
+
+CORRECTION (20 Nov 2026, appended, original lines above kept unchanged): the Hessian eigenvalues printed above are superseded by D1280a.
+Correct values: at rho [+7.711, +7.711]; at i [-2.216, +10.012]. The verdict (i is a saddle unstable along the axion x; vacuum only at rho) is unchanged.
+Found by the referee sweep (papers/addenda/24290875_REFEREE.md, D1747); printed as an erratum in the SERAPIS-E v2.1 status update (doi:10.5281/zenodo.24399529).
