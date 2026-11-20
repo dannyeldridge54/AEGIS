@@ -16816,3 +16816,9 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
 - Thread vs ΛsCDM: at most 0.55σ (D_V, z = 0.295); D_H at z = 2.33 is 0.36σ.
 - Reading: the thread-vs-CPL decision will come from the COMBINATION (SN shape at z < 0.5 plus the CMB distance), not from any single BAO point. The low-z D_V and the Lyα D_H at z = 2.33 are the most telling BAO points; the thread sits HIGHER than CPL at low z and LOWER at z = 2.33.
 - Concrete prediction for DR3 (thread, ×r_d⁻¹): D_V(0.295) = 7.97, D_H(2.33) = 8.64, D_M(0.51) = 13.35.
+
+## D1706 RESULT (19 Nov 2026) — MIRROR M4: the thread and the sign-switch tie for DIFFERENT reasons (PREREG_M4_CMBSPLIT)
+- θ* only: thread −7.02, ΛsCDM −0.002. Densities (ω_b, ω_bc) only: thread −5.20, ΛsCDM 0.00. Full 3D prior (D1694/D1695): thread −4.84, ΛsCDM −4.93.
+- Thread: its gain is the BAO + SN thaw (−7). θ* alone leaves it intact, and the density priors cost it ~2 (they pull Ω_m h² against the thread's best Ω_m; locked label "θ*-driven" = densities hurt, θ* neutral).
+- ΛsCDM: gains NOTHING from either half alone and −4.93 only with the full correlated 3D prior. Its gain comes from the θ*–ω_bc correlation, i.e. from fitting the distance to the CMB at FIXED densities with a negative Λ above z ≈ 2.6. Locked label: "mixed".
+- Mirror reading: the tie is a coincidence of two different mechanisms. The thread is a late-time (z < 1) effect seen by SN + BAO; the sign-switch is a high-z (z > 2.6) effect seen only through the full CMB distance. DR3 + CMB-S4 test them separately: low-z SN shape for the thread, z > 2.3 distances for the switch.

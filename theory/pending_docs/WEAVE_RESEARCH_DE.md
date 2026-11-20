@@ -98,5 +98,5 @@ Data: DESI DR2 BAO (full covariance) + DES-SN5YR "Dovekie" (1820 SNe, STAT+SYS) 
 | sign-switch ΛsCDM | 1 | ≈ 0 | −4.93 (z† = 2.64) |
 | flipped / uphill / time-mirror threads | 1–2 | −6.17 / −7.01 / +0.04 | — |
 - The thread captures 97% of CPL's gain without the CMB. With the CMB it is still "supported" (≤ −4) but CPL leads, because the CMB favours w < −1 at high z, which the thread forbids.
-- CMB split (mirror M4, partial): with θ* alone, the thread stays at −7.02 and ΛsCDM gains nothing. The (ω_b, ω_bc) part is what costs the thread and helps ΛsCDM (to be confirmed by the second half of the run).
+- CMB split (mirror M4, D1706): θ* alone gives thread −7.02 / ΛsCDM 0; densities alone give thread −5.20 / ΛsCDM 0. The thread's gain is the low-z thaw, and the density priors cost it ~2. ΛsCDM gains only from the full correlated 3D prior (high-z distance). They tie by coincidence of two different mechanisms.
 - DR3 forecast: no single BAO bin separates thread from CPL by more than 0.74σ_DR2. The decision will come from SN + CMB combined.
