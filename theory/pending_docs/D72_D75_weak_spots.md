@@ -16631,3 +16631,10 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - [computed] With the portal X²LH in equilibrium above the EW scale: n_X/n_B = 11/28 = 0.393 (identical for a Dirac fermion and a complex scalar), so m_X = 5.364 × m_p × 28/11 = 12.8 GeV. Locked window [3, 15] → PASS.
 - Versus the quoted KLZ 5–11 GeV (D1675): ours is slightly higher. KLZ is supersymmetric (two Higgs doublets, superpartners), which changes the chemical-potential bookkeeping; our non-SUSY SM version gives 12.8 GeV. The prediction depends on the particle content, stated plainly.
 - Weave prediction for version (b): dark-matter mass ≈ 13 GeV (non-SUSY spectrum), with the dark photon at 0.3–5 GeV (JANUS D1659/D1664). Direct-detection target: 10–15 GeV, already within reach of xenon experiments (LZ/XENONnT) if X has a non-negligible portal coupling to nucleons. That bound is to be checked next.
+
+## D1677 (RIGHT, 19 Nov 2026) — BIG LOOP (manual Djl) Q11 RESULT: the 12.8 GeV dark particle survives xenon limits, but direct detection now cuts the dark-photon window from above (PREREG_Q11_DD)
+- α_D ≥ 4.7 × 10⁻⁴ (to remove the symmetric part).
+- ε_max (xenon at 13 GeV, bracket 10⁻⁴⁷ / 10⁻⁴⁵ cm², UNSOURCED, not digitised): m_A′ = 0.3 GeV: 3 × 10⁻⁹ / 3 × 10⁻⁸; 1 GeV: 3.4 × 10⁻⁸ / 3.4 × 10⁻⁷; 5 GeV: 8.4 × 10⁻⁷ / 8.4 × 10⁻⁶.
+- Against D1664's windows: the dim strip (10⁻¹¹ up to ~10⁻⁷) survives for every m_A′ under the optimistic bracket → VIABLE. The bright strip (10⁻⁵–10⁻³, 25–370 MeV) is EXCLUDED: needed ε ≲ 10⁻⁸ there. Above 0.8 GeV, most of the merged band above ~10⁻⁶ is excluded.
+- New combined prediction (version b): X ≈ 13 GeV; dark photon 0.3–5 GeV with ε between 10⁻¹¹ and ≈ 3 × 10⁻⁹ to 8 × 10⁻⁷ (rising with m_A′²). Next-generation xenon (XLZD) and beam dumps (SHiP) probe the upper part.
+- Caveat: a sourced LZ value at 13 GeV (digitised curve) is needed to replace the bracket.
