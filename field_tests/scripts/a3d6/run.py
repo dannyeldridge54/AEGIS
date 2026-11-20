@@ -11,7 +11,7 @@ def RN(f,alpha,L=60.0,nx=81,ny=400):
         # dense near bottom, log-spaced
         ys=np.concatenate([np.linspace(y0,4,ny),np.geomspace(4,L,ny)[1:]])
         vals=np.array([f(x,y)/y**2 for y in ys])
-        tot+=wx[i]*dx*np.trapz(vals,ys)
+        tot+=wx[i]*dx*np.trapezoid(vals,ys)
     sub=math.log(L) if alpha==1 else L
     return tot-sub
 # validation d=2 at T=U=i: rectangular torus R1=R2=1 -> T=U=i
