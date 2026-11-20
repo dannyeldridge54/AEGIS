@@ -240,29 +240,49 @@
   // top bulb = inflation rolling down the plateau to ρ (the neck); bottom bulb = the same plateau as late dark energy.
   function hourglass(t) {
     const HG = window.HOURGLASS; if (!HG) { cap.textContent = 'Hourglass data missing (hourglass_data.js)'; return; }
-    const V = HG.curve.V, n = V.length, X = W/2, Y = H/2, h = H*0.38, wmax = Math.min(W*0.2, h*0.75), w0 = 3;
+    const V = HG.curve.V, n = V.length, X = W/2, Y = H/2 + 6, h = Math.min(H*0.36, 330), wmax = Math.min(W*0.17, h*0.75), w0 = 3;
     const wid = z => { const f = Math.min(n - 1, z*(n - 1)), i = Math.floor(f), u = f - i; return w0 + wmax*(V[i]*(1 - u) + (V[Math.min(n - 1, i + 1)])*u); };
-    const cyc = 22, ph = (t % cyc)/(cyc - 2), L = Math.max(0, 1 - ph);   // sand left in the top bulb
-    // glass outline
-    cx.lineWidth = 1.5;
-    [-1, 1].forEach(sg => [-1, 1].forEach(sd => { cx.strokeStyle = pal(sg < 0 ? 0.15 : 0.85, 0.8); glow(pal(sg < 0 ? 0.15 : 0.85), 10); cx.beginPath();
-      for (let k = 0; k <= 120; k++) { const z = k/120, x = X + sd*wid(z), y = Y + sg*z*h; k ? cx.lineTo(x, y) : cx.moveTo(x, y); } cx.stroke(); }));
-    cx.shadowBlur = 0;
-    // sand: top bulb holds z in [0, 0.92 L]; bottom pile fills from z = 1 upward
-    const rows = 90;
-    for (let k = 0; k < rows; k++) { const z = k/rows;
-      if (z < 0.92*L) { cx.fillStyle = pal(0.1 + 0.3*z, 0.75, 55); const w = wid(z); cx.fillRect(X - w + 2, Y - z*h - h/rows, 2*w - 4, h/rows + 0.6); }
-      if (1 - z < 0.92*(1 - L)) { cx.fillStyle = pal(0.6 + 0.4*(1 - z), 0.75, 55); const w = wid(z); cx.fillRect(X - w + 2, Y + z*h, 2*w - 4, h/rows + 0.6); } }
-    // falling stream through the neck
-    if (L > 0) for (let i = 0; i < 40; i++) { const u = ((t*1.7 + i/40) % 1), y = Y - 4 + u*(h*(1 - 0.92*(1 - L)) + 4); cx.fillStyle = pal(0.2 + 0.6*u, 0.9, 70); cx.fillRect(X - 1 + Math.sin(i*7.3)*1.2, y, 2, 2); }
-    // neck label + panels
-    glow(pal(0.5), 12); cx.fillStyle = '#fff'; cx.beginPath(); cx.arc(X, Y, 3, 0, 7); cx.fill(); cx.shadowBlur = 0;
-    text('ρ = e^(iπ/3)', X + 14, Y + 4, pal(0.5), 13);
-    text('INFLATION', X - wmax - 4, Y - h - 10, pal(0.1), 14); text('DARK THREAD (late plateau)', X - wmax - 4, Y + h + 20, pal(0.9), 14);
-    text(`e-folds to go: ${(HG.Nstar*L).toFixed(1)}`, 16, 28, pal(0.15), 15);
-    const panel = (lines, x, y, u) => lines.forEach(([s, d], i) => { text(s, x, y + i*34, pal(u), 12); text(d, x, y + i*34 + 14, '#8b84b8', 10); });
-    const pr = X + wmax + 24, pl = 16; panel(HG.top, pl, Y - h + 40, 0.15); panel(HG.bottom, W - pr > 300 ? pr : pl, Y + 30, 0.9);
-    cap.textContent = 'Janus hourglass — the glass wall is the exact P3-S potential (SPECIES32 X point), mirrored: top = inflation draining to ρ; bottom = the same plateau as late dark energy. Shape is an art mapping of a real curve; numbers from the cited D-notes.';
+    // cycle: drain A (inflation) 16 s → flip 2.5 s → drain B (dark thread) back 16 s → flip back 2.5 s
+    const D = 16, F = 2.5, T = 2*(D + F), tt = t % T, ease = x => x < 0.5 ? 2*x*x : 1 - 2*(1 - x)*(1 - x);
+    let rot, a, phase, flipping = false;                                   // a = sand fraction in bulb A
+    if (tt < D) { phase = 0; rot = 0; a = 1 - tt/D; }
+    else if (tt < D + F) { phase = 0; flipping = true; rot = Math.PI*ease((tt - D)/F); a = 0; }
+    else if (tt < 2*D + F) { phase = 1; rot = Math.PI; a = (tt - D - F)/D; }
+    else { phase = 1; flipping = true; rot = Math.PI + Math.PI*ease((tt - 2*D - F)/F); a = 1; }
+    const aTop = Math.cos(rot) > 0;                                        // is bulb A (inflation) above the neck?
+    const cA = 0.15, cB = 0.85;
+    cx.save(); cx.translate(X, Y); cx.rotate(rot);
+    // glass (frame: bulb A at negative y, bulb B at positive y)
+    cx.lineWidth = 1.6;
+    [[-1, cA], [1, cB]].forEach(([sg, c]) => [-1, 1].forEach(sd => { cx.strokeStyle = pal(c, 0.85); glow(pal(c), 10); cx.beginPath();
+      for (let k = 0; k <= 140; k++) { const z = k/140, x = sd*wid(z), y = sg*z*h; k ? cx.lineTo(x, y) : cx.moveTo(x, y); } cx.stroke(); }));
+    cx.shadowBlur = 0; cx.strokeStyle = pal(0.5, 0.5); cx.lineWidth = 2;
+    [-1, 1].forEach(sg => { cx.beginPath(); cx.moveTo(-wid(1) - 8, sg*h); cx.lineTo(wid(1) + 8, sg*h); cx.stroke(); });   // end caps
+    // sand: rests against whichever end is lower in screen space
+    const rows = 110, fill = (sg, amt, c0) => { if (amt <= 0) return; const lowIsNeck = (sg < 0) === aTop;
+      for (let k = 0; k < rows; k++) { const z = (k + 0.5)/rows, inPile = lowIsNeck ? z < 0.94*amt : z > 1 - 0.94*amt; if (!inPile) continue;
+        const w = wid(z) - 2.5; if (w <= 0) continue; cx.fillStyle = pal(c0 + 0.25*z*(sg < 0 ? 1 : -1), 0.8, 50 + 6*Math.sin(z*7 + t*0.4)); cx.fillRect(-w, sg*z*h - (sg < 0 ? h/rows : 0), 2*w, h/rows + 0.6); } };
+    fill(-1, a, cA); fill(1, 1 - a, cB);
+    cx.restore();
+    // falling stream (screen space, always downward through the neck)
+    const draining = !flipping && (phase === 0 ? a > 0 : a < 1);
+    if (draining) { const pile = phase === 0 ? 1 - a : a; for (let i = 0; i < 46; i++) { const u = ((t*1.6 + i/46) % 1), y = Y - 3 + u*(h*(1 - 0.94*pile) + 3);
+      cx.fillStyle = pal(phase === 0 ? 0.25 + 0.5*u : 0.75 - 0.5*u, 0.95, 72); cx.fillRect(X - 1 + Math.sin(i*7.3 + t)*1.3, y, 2, 2); } }
+    // neck: ρ while inflation drains, i while the dark thread drains
+    const neck = phase === 0 ? ['ρ = e^(iπ/3)', 'inflation ends here', cA] : ['τ = i  (image (1+i)/2)', 'the dark thread ends here (9 of 10 runs)', cB];
+    glow(pal(neck[2]), 14); cx.fillStyle = '#fff'; cx.beginPath(); cx.arc(X, Y, flipping ? 2 : 3.5, 0, 7); cx.fill(); cx.shadowBlur = 0;
+    if (!flipping) { text(neck[0], X + 16, Y + 2, pal(neck[2]), 14); text(neck[1], X + 16, Y + 17, '#8b84b8', 11); }
+    // bulb names follow the bulbs
+    const topName = aTop ? ['INFLATION', cA] : ['DARK THREAD — the plateau today', cB], botName = aTop ? ['DARK THREAD — the plateau today', cB] : ['INFLATION', cA];
+    if (!flipping) { text(topName[0], X - cx.measureText(topName[0]).width/2 - 10, Y - h - 14, pal(topName[1]), 14); text(botName[0], X - 110, Y + h + 24, pal(botName[1]), 14); }
+    // header + panels (active side bright, other dim)
+    const hdr = flipping ? 'flipping — Janus turns its other face' : phase === 0 ? `inflation draining · e-folds to go ${(HG.Nstar*a).toFixed(1)}` : `dark thread draining · scale factor a ≈ ${(1 + 0.232*a).toFixed(3)} (acceleration ends ≈ 1.23)`;
+    text(hdr, 16, 26, pal(phase === 0 ? cA : cB), 15);
+    const panel = (title, lines, x, y, c, on) => { text(title, x, y, pal(c, on ? 1 : 0.45), 12); lines.forEach(([s, d], i) => { text(s, x, y + 22 + i*32, pal(c, on ? 1 : 0.4), 12); text(d, x, y + 36 + i*32, on ? '#8b84b8' : '#4d4870', 10); }); };
+    const pw = 300, left = Math.max(16, X - wmax - pw - 40), right = X + wmax + 40;
+    panel('EARLY FACE', HG.top, left, Y - h + 20, cA, phase === 0 && !flipping);
+    panel('LATE FACE', HG.bottom, right + pw < W ? right : left, right + pw < W ? Y - 40 : Y + 40, cB, phase === 1 && !flipping);
+    cap.textContent = 'Janus hourglass — the glass wall is the exact P3-S potential (SPECIES32 point), mirrored. Inflation drains to ρ; the glass flips and the same plateau, read as dark energy, drains to i. Shape = art mapping of a real curve; numbers from the cited D-notes.';
   }
   // ---- 15. P(k) waterfall: exact Mukhanov-Sasaki spectrum, one slice per start condition (bd = how deep inside the horizon the mode starts)
   function pkfall(t) {
