@@ -1,7 +1,7 @@
 id,category,toolkit,quantity,weave,label,data,source,pull,status,headline,dnote
-bbn-Yp-LBT2026-PRIMAT-theory-σ-,nucleus & element,Hyperion,helium-4 (Y_p): Yp:LBT2026 (PRIMAT theory σ),0.2471871417270726,P,see source,LBT 2026 (as used in D1191),1.0580240268822907,pass,True,D1651; PREREG_W5_BBN_THEORY
-bbn-Yp-Aver2021-PRIMAT-theory-σ-,nucleus & element,Hyperion,helium-4 (Y_p): Yp:Aver2021 (PRIMAT theory σ),0.2471871417270726,P,see source,"Aver et al. 2021, JCAP 03 027",0.5543491805022764,pass,True,D1651; PREREG_W5_BBN_THEORY
-bbn-DH-Cooke2018-PRIMAT-theory-σ-,nucleus & element,Hyperion,deuterium (D/H): DH:Cooke2018 (PRIMAT theory σ),2.4482576081094778e-05,P,see source,"Cooke, Pettini & Steidel 2018, ApJ 855 102",-1.660536494849437,pass,True,D1651; PREREG_W5_BBN_THEORY
+bbn-Yp-LBT2026-PRIMAT-theory-σ-,nucleus & element,Hyperion,helium-4 (Y_p) vs LBT2026,0.2471871417270726,P,0.2458 ± 0.0013,LBT 2026 (as used in D1191),1.0580240268822907,pass,True,pull includes PRIMAT theory σ (PREREG_W5_BBN_THEORY); D1651
+bbn-Yp-Aver2021-PRIMAT-theory-σ-,nucleus & element,Hyperion,helium-4 (Y_p) vs Aver2021,0.2471871417270726,P,0.2453 ± 0.0034,"Aver et al. 2021, JCAP 03 027",0.5543491805022764,pass,True,pull includes PRIMAT theory σ (PREREG_W5_BBN_THEORY); D1651
+bbn-DH-Cooke2018-PRIMAT-theory-σ-,nucleus & element,Hyperion,deuterium (D/H) vs Cooke2018,2.4482576081094778e-05,P,2.527e-05 ± 3e-07,"Cooke, Pettini & Steidel 2018, ApJ 855 102",-1.660536494849437,pass,True,pull includes PRIMAT theory σ (PREREG_W5_BBN_THEORY); D1651
 bbn-li7,nucleus & element,Hyperion,lithium-7 (⁷Li/H) — the lithium problem,4.35e-10,P,(1.6 ± 0.3) × 10⁻¹⁰ (Spite plateau),D1100 (arXiv:2508.09821); Weave value D1640; theory σ 0.72e-10 (D1100),3.525641025641025,fail,True,D1640: NOT solved (shared with standard BBN)
 elem-helium-3,nucleus & element,Hyperion,helium-3,,G,no primordial measurement used yet,register D3,,open,False,
 elem-carbon,nucleus & element,Hyperion,carbon and heavier (stellar),,G,not yet modelled,register D3,,open,False,

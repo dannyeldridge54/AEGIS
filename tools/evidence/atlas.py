@@ -31,28 +31,33 @@ def rows():
     add(id='infl-r-ladder', category='cosmological parameter', toolkit='Janus', quantity='r(6D) / r(10D) = 2', weave=round(J.predict('serapis_6d')['r']/pr['r'], 3),
         label='P', data='no detection of r yet (LiteBIRD, CMB-S4)', source='register A2/A3', status='open', headline=False)
 
-    # ---- flavour ----
-    f = lv['flavour']
+    # ---- flavour: each row with its own measurement and one source ----
+    f = lv['flavour']; o = f['outputs']
+    from tools.weave_control.engine import S12_DATA, LEPTONS_MeV, SUM_MNU, SUM_MNU_BOUND, T2KNOVA_1SIG, NUFIT_DCP_3SIG
+    FL = {'Koide Q = 2/3': (o['Koide_Q'], f"2/3 (m_τ {LEPTONS_MeV['tau'][0]} ± {LEPTONS_MeV['tau'][1]} MeV)", 'PDG 2024 lepton masses', 'P', True)}
+    for k, (v, sg, src) in S12_DATA.items():
+        FL[f'TM1 sin²θ₁₂ vs {k}'] = (o['TM1_sin2_theta12'], f'{v} ± {sg}', src, 'P', k == 'post-JUNO global')
+    FL['TM1 δ_CP (lower branch, s₂₃² 0.561) inside T2K+NOvA 1σ'] = (o['TM1_dCP_s23_0561'][1], f'{T2KNOVA_1SIG[0]:.0f}°–{T2KNOVA_1SIG[1]:.0f}° (1σ)', 'T2K+NOvA, Nature 2025 (s41586-025-09599-3)', 'P', True)
+    FL['TM1 δ_CP (lower branch, s₂₃² 0.561) inside NuFIT 3σ'] = (o['TM1_dCP_s23_0561'][1], f'{NUFIT_DCP_3SIG[0.561][0]:.0f}°–{NUFIT_DCP_3SIG[0.561][1]:.0f}° (3σ)', 'NuFIT 6.0, arXiv:2410.05380', 'P', False)
+    FL['Σm_ν (NO, m₁ = 0) below the DESI+CMB bound'] = (SUM_MNU, f'< {SUM_MNU_BOUND} eV (95%)', 'DESI DR2 + CMB bound as used in D1234', 'A', False)
     for k, v in f['pulls'].items():
-        head = k in ('Koide Q = 2/3', 'TM1 sin²θ₁₂ vs post-JUNO global', 'TM1 δ_CP (lower branch, s₂₃² 0.561) inside T2K+NOvA 1σ', 'Σm_ν (NO, m₁ = 0) below the DESI+CMB bound')
-        lab = 'A' if 'Σm_ν' in k else 'P'
-        add(id='flav-' + re.sub(r'\W+', '-', k)[:40], category='particle', toolkit='Flavour', quantity=k,
-            weave=f['outputs'].get('TM1_sin2_theta12') if 'sin²θ₁₂' in k else f['outputs'].get('Koide_Q') if 'Koide' in k else None,
-            label=lab, data='see source', source='; '.join(d['source'] for d in f['data'] if d.get('source'))[:200], pull=v,
-            headline=head and lab == 'P', dnote='D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR')
+        w, dat, src, lab, head = FL[k]
+        add(id='flav-' + re.sub(r'\W+', '-', k)[:40], category='particle' if 'Koide' in k else 'neutrino', toolkit='Flavour', quantity=k,
+            weave=w, label=lab, data=dat, source=src, pull=v, headline=head and lab == 'P', dnote='D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR')
     add(id='flav-TM2', category='particle', toolkit='Flavour', quantity='exact TM2 sin²θ₁₂ (an earlier Weave assignment)', weave=f['outputs']['TM2_sin2_theta12_excluded'],
         label='P', data='0.3092 ± 0.0087 (JUNO)', source='JUNO arXiv:2511.14593; D1652', pull=(f['outputs']['TM2_sin2_theta12_excluded'] - 0.3092)/0.0087,
         headline=False, dnote='D1652 (superseded by TM1)')
 
     # ---- light elements (Hyperion) ----
     b = lv['bbn']
+    from tools.janus_astro import settings as H
     for k, v in b['pulls'].items():
         if '(PRIMAT' not in k: continue
-        el = 'helium-4 (Y_p)' if k.startswith('Yp') else 'deuterium (D/H)'
-        add(id='bbn-' + re.sub(r'\W+', '-', k)[:40], category='nucleus & element', toolkit='Hyperion', quantity=f'{el}: {k}',
-            weave=b['outputs']['Yp' if k.startswith('Yp') else 'DH'], label='P', data='see source',
-            source='; '.join(d.get('source', '') for d in b['data'] if k.split(' (')[0].split(':')[1] in d.get('name', '')),
-            pull=v, headline=True, dnote='D1651; PREREG_W5_BBN_THEORY')
+        q, ds = k.split(' (')[0].split(':'); val, sg, src = H.DATA[q][ds]
+        el = 'helium-4 (Y_p)' if q == 'Yp' else 'deuterium (D/H)'
+        add(id='bbn-' + re.sub(r'\W+', '-', k)[:40], category='nucleus & element', toolkit='Hyperion', quantity=f'{el} vs {ds}',
+            weave=b['outputs'][q], label='P', data=f'{val} ± {sg}', source=src, pull=v, headline=True,
+            dnote='pull includes PRIMAT theory σ (PREREG_W5_BBN_THEORY); D1651')
     li_w, li_d, li_s, li_th = 4.35e-10, 1.6e-10, 0.3e-10, 0.72e-10
     add(id='bbn-li7', category='nucleus & element', toolkit='Hyperion', quantity='lithium-7 (⁷Li/H) — the lithium problem',
         weave=li_w, label='P', data='(1.6 ± 0.3) × 10⁻¹⁰ (Spite plateau)', source='D1100 (arXiv:2508.09821); Weave value D1640; theory σ 0.72e-10 (D1100)',
