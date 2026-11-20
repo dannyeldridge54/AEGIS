@@ -16870,3 +16870,13 @@ Not validated: super-horizon gauge behaviour of the new coupled terms (Newtonian
 Submitted: BUILDCLASS_D1713 on the PC (apply patch, compile, repeat the background check on the PC build), which then queues 9 minimisations: ΛCDM / thread / coupled × Pantheon+ / DES-Y5 / Union3. Gate: CLASS ΛCDM within 2.0 of the stored CAMB ΛCDM χ² before any model number is read.
 Also: the D1712 uncoupled reruns had failed again (the D4 fix never reached the PC copy; DEVIATIONS D5); fixed and requeued (CXUNC4_*).
 Status: RUNNING.
+
+## D1714 (CENTRE/REVIEW, 19 Nov 2026) — referee of D1713's coupled equations against the literature: PASS
+Checked against Pettorino & Baccigalupi, arXiv:0802.1086 (coupled quintessence, Newtonian gauge, coupling C with ρ_c ∝ e^{−Cφ}, so C = −b in our notation).
+- Background: their φ'' + 2ℋφ' + a²U' = a²Cρ_c → ours, force U' + bρ_c (with ρ_phys = 3ρ_CLASS). Match.
+- δ_c: their −Cδφ' on the right → ours +bδφ'. Match.
+- Friction: their (ℋ − Cφ')v → ours (ℋ + bφ')θ. Match.
+- δφ source: their 3ℋ²Ω_cCδ_c = a²ρ_cCδ_c → ours −a²bρ_cδ_c. Match.
+- Velocity force: our +bk²δφ gives G_eff = G(1 + 2b²), the paper's stated G* = G(1 + 2C²) (scalar exchange between like particles attracts, whatever the sign of b). The velocity line as extracted from the paper's PDF reads −k(Φ + Cδφ), which with their own δφ would give 1 − 2C², contradicting their G*; so that line is taken as an extraction/typo issue, and our sign stands (it is also what CLASS reproduced in D1713's growth test).
+- The extra synchronous-gauge pieces (θ_c ≠ 0 kept, h'/2 terms) follow from the same equations with Φ' → h'/6-type metric terms; not separately checked in the literature (no synchronous-gauge source fetched).
+Verdict: D1713's patch is consistent with the standard coupled-quintessence equations. No correction.
