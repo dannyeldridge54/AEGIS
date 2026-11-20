@@ -16732,3 +16732,10 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - R2 REVERSED ROLL (uphill kick, 1 extra parameter): the fit drives the kick to k_i ≈ 0.06 and lands on the thread's own χ² (Δ = −7×10⁻⁶). The data want no reversal of direction.
 - R3 TIME MIRROR (post-hoc): Δχ² = +0.04 versus ΛCDM. Reversing the order of the history removes the whole improvement: the late-time thaw is what the data like.
 - Verdict: none beats ours (rule: < −2 vs the thread). The forward thread (frozen, then thawing now) is the best of the family. Its mirror images score at or below it, and the time-reversed one is no better than Λ.
+
+## D1694 RESULT (19 Nov 2026) — with the CMB added (DESI DR2 compressed prior), the Weave thread is still SUPPORTED but CPL pulls ahead (PREREG_REALDATA_CMB; DERIVE_LOOP D1)
+- Checks: θ* calibration factor 1.0021 (limit ±0.005 ✓). ΛCDM sanity ✓: Ω_m = 0.302, h = 0.682, ω_b = 0.02238; χ² = 1650.38.
+- CPL (2 extra): Δχ² = −10.84 at w₀ = −0.820, w_a = −0.641 (Ω_m 0.313, h 0.673).
+- Weave thread (1 extra): Δχ² = −4.84 at amp = 0.159 (Ω_m 0.311, h 0.671). The rule was ≤ −4 → SUPPORTED, but now 6.0 behind CPL (it was 0.2 behind without the CMB). Per parameter, CPL is better by ≈ 4 (AIC-like). Reading: the CMB distance to z* favours w < −1 at higher z, which a thawing thread can never give (w ≥ −1). That was the Weave's stated weak spot, and the real data now show it.
+- ΛsCDM (1 extra): Δχ² = −4.80, with z† at the edge of its range (2.49), so the true optimum may lie beyond. With the CMB, "negative space" at z ≳ 2.5 does as well as the thread. NOT a resolved preference; flagged.
+- Honest status: the thread fits BAO + SN as well as CPL. With the CMB it keeps a 2σ-level gain over Λ, but the data prefer a phantom-crossing shape the Weave forbids. Next (DERIVE_LOOP): the exact-curve refit (D2) and an extended z† range.
