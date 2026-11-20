@@ -54,7 +54,7 @@ AEGIS Community License: free for individuals, scientists, students, schools, no
 Any business or for-profit use needs the AEGIS Commercial License. CERN+1 is not affiliated with or endorsed by CERN.
 """
 import sys, os, json
-VERSION = '2026.11.18'
+VERSION = '2026.11.20'
 
 def _root():
     base = getattr(sys, '_MEIPASS', None) or os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -439,7 +439,11 @@ def main(argv=None):
         FORMAT[0] = argv[i + 1]; argv = argv[:i] + argv[i + 2:]
     if not argv: return menu([])
     if len(argv) >= 2 and argv[1] in ('help', '-h', '--help') and argv[0] in cmds: _help_for(argv[0]); return
-    if argv[0] in ('--version', 'version'): print('aegis', VERSION); return
+    if argv[0] in ('--version', 'version'):   # R4: release + exact code (git hash) + Python, so a result can be reproduced
+        import platform
+        try: from tools.prov_block import version as _gv; code = _gv()
+        except Exception: code = 'unknown'
+        print(f'aegis {VERSION} (code {code}; Python {platform.python_version()})'); return
     if argv[0] in ('-h', '--help', 'help'): print(__doc__); return
     if argv[0] not in cmds: print(f'Unknown command {argv[0]!r}. Run "aegis help" for the list.'); sys.exit(2)
     try: cmds[argv[0]](argv[1:])

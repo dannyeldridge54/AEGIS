@@ -140,3 +140,6 @@ tools/nested_guard.py: `check(chi2, nest)` flags any bigger model whose minimum 
 ### M3 new sky surveys in Sky Map (20 Nov 2026)
 Added Euclid Quick Release 1 colour and VIS (HiPS `CDS/P/Euclid/Q1/color`, `CDS/P/Euclid/Q1/VIS`; IDs checked against the CDS properties files and the IVOA registry). Euclid Q1 covers only about 63 deg², so picking it shows "Go to Euclid Deep Field Fornax / North" buttons that fly there at a 1.5° view (tested with Playwright: lands at RA 53.13, Dec −28.10). The image tiles cannot load in the cloud sandbox (CDS blocked), the same as every survey; they load on a normal connection.
 Blocked, recorded: SPHEREx QR2 (band D1 HiPS published) and the Rubin First Look colour HiPS exist (IVOA HiPS status, Nov 2025), but no exact HiPS ID could be verified from here (MocServer is not reachable). Add them once the IDs are confirmed in Aladin Desktop or the MocServer. Never guess an ID.
+
+### R4 version stamp + stats doc (20 Nov 2026)
+`aegis version` now prints the release, the exact code (git hash, +dirty if edited) and the Python version, e.g. `aegis 2026.11.20 (code 52a9a9ab; Python 3.13)`. `python3 -m tools.toolkit_stats` writes tools/TOOLKIT_STATS.md: modules, lines and test files per toolkit, plus the tests passed or failed when it is run. First run: CERN+1 35/35, Hyperion 10/10, Janus 9/9, Mapper 5/5, shared 7/7, with 0 failures.
