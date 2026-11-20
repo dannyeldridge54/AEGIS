@@ -1,4 +1,10 @@
 # Changelog
+## 1.7.0 — 19 Nov 2026
+- New in Signs (each labelled tradition, from the real Moon/Sun): Arabic lunar mansions (28 equal tropical manazil, Agrippa's table) and Chinese lunar lodges (28 xiu, bounded by their determinative stars in right ascension), planetary hour now (Chaldean order, unequal hours from your sunrise and sunset).
+- Real sky events, computed on the phone: planets retrograde now, the next turning points of Mercury–Saturn, and the next lunar and solar eclipses.
+- Oracles: I Ching by the three-coin method (King Wen numbers, moving lines and the relating hexagram) and Elder Futhark runes (one or three). Keywords written fresh.
+- Journal that stays on the phone, stamped with the Moon phase, with export to a text file.
+- Signs list grouped (Moon & sky traditions · Calendars & timing · Oracles · Personal); buttons inside readings are readable; on phones the sky starts at 100° instead of the whole sky and the observatory controls (frame, coordinates, grid, settings) are hidden — Layers stays under More.
 ## 1.6.2 — 18 Nov 2026
 - Tarot: five more decks — Constellations, Spiral Galaxy, Neon Sign, Cyber Circuit, Neon Horizon (ten in all). Card art is now kept inside the card frame; Neon Horizon's sun shows one stripe per card number.
 

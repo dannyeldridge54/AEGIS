@@ -214,3 +214,12 @@ body.sheet-open #arBtn{ opacity:0; pointer-events:none; }
 
 .deckpick{display:flex;align-items:center;gap:8px;margin:8px 0;color:#a296d8}
 .deckpick select{flex:1;background:#120a2e;color:#f3eeff;border:1px solid #2a1f5a;border-radius:8px;padding:6px}
+
+/* 1.7.0: grouped overlay list, readable buttons inside readings, scroll on phones */
+#sarahOverlays .grp{ margin:10px 0 2px; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--a-pink); opacity:.85; border-top:1px solid rgba(255,255,255,.08); padding-top:6px; }
+#sarahOverlays .out{ margin:2px 0 8px 22px; }
+#sarahOverlays .out button{ font:inherit; font-size:13px; color:#fff; background:linear-gradient(90deg,#4c6bff,#a05cff); border:0; border-radius:8px; padding:6px 12px; margin:6px 6px 0 0; cursor:pointer; }
+#sarahOverlays .out button:disabled{ opacity:.4; cursor:default; }
+#sarahOverlays .out textarea{ font:inherit; color:inherit; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.18); border-radius:8px; padding:6px; }
+#sarahOverlays .small{ font-size:12px; opacity:.8; }
+#sarahOverlays label{ padding:3px 0; }

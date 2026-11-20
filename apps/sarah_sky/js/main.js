@@ -22,11 +22,12 @@ async function loadJSON(path) { try { const r = await fetch(path); if (!r.ok) th
 // ---------- sky ----------
 async function initSky() {
   try { await A.init; } catch (e) { $("#fallback").hidden = false; return false; }
+  const phone = matchMedia("(max-width: 600px)").matches;   // phones: hide the observatory controls (Layers lives under More), start less zoomed-out
   state.aladin = A.aladin("#sky", {
-    survey: state.survey, fov: 220, target: "266.4168 -29.0078", projection: "AIT", cooFrame: "ICRSd",
-    showReticle: false, showZoomControl: true, showFullscreenControl: true, showLayersControl: true, showGotoControl: false,
-    showCooGridControl: true, showSimbadPointerControl: true, showFrame: true, showCooLocation: true, showShareControl: false,
-    showContextMenu: true, showSettingsControl: true,
+    survey: state.survey, fov: phone ? 100 : 220, target: "266.4168 -29.0078", projection: "AIT", cooFrame: "ICRSd",
+    showReticle: false, showZoomControl: true, showFullscreenControl: !phone, showLayersControl: !phone, showGotoControl: false,
+    showCooGridControl: !phone, showSimbadPointerControl: !phone, showFrame: !phone, showCooLocation: !phone, showShareControl: false,
+    showContextMenu: true, showSettingsControl: !phone,
   });
   state.aladin.on("objectClicked", (obj) => { if (obj && obj.data) showInfo(obj.data); });
   let last = 0; state.aladin.on("zoomChanged", () => { const now = Date.now(); if (now - last > 150) { last = now; applyVisibility(); } });
