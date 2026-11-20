@@ -409,13 +409,13 @@ def menu(args):
 
 def control(args):
     """Weave Control: one parameter set drives every level. `aegis control [port]` opens it in your browser;
-    `aegis control --selftest` runs the engine once and checks all 8 levels (used by the exe build)."""
+    `aegis control --selftest` runs the engine once and checks every level (used by the exe build)."""
     if args and args[0] == '--selftest':
         from tools.weave_control import engine as E
         r = E.run(); bad = [l['id'] for l in r['levels'] if l.get('error')]
         print('weave control selftest:', len(r['levels']), 'levels;', 'errors: ' + ', '.join(bad) if bad else 'no errors')
         for l in r['levels']: print(f"  {l['category']} {l['name']}: {l['status']}" + (f"  ERROR {l['error']}" if l.get('error') else ''))
-        if bad or len(r['levels']) != 8: sys.exit(1)
+        if bad or len(r['levels']) != len(E.LEVELS): sys.exit(1)
         return
     import threading, webbrowser
     from http.server import ThreadingHTTPServer

@@ -105,6 +105,17 @@ def rows():
     add(id='dm-12.8', category='particle', toolkit='Hyperion', quantity='dark particle (sarion) mass 12.8 GeV from chemical equilibrium', weave=12.8, label='P',
         data='xenon limit used is an unsourced bracket; LZ at 13 GeV not yet sourced', source='D1676, D1677, D1678', status='open', pull=None, headline=True,
         dnote='DEVIATIONS D2: open until the LZ curve is sourced; survival depends on a free portal coupling')
+    # ---- quarks (D3): the quark level's comparisons ----
+    q = lv['quarks']
+    add(id='q-eps', category='flavour', toolkit='Weave Control', quantity='zero-parameter ε of the SUGRA (m,0) minimum vs quark-fit band',
+        weave=round(q['outputs']['eps_abs'], 4), label='P', data='|ε| 0.028–0.038 (2212.13336 fits)', source='PREREG_Q6, D1732',
+        status='fail', headline=True, dnote='Q6 FAIL; split-ladder CKM fits also FAIL (D1738, D1739)')
+    add(id='q-tauq', category='flavour', toolkit='Weave Control', quantity='heavy quark modulus τ_q vs dilution/BBN/n_s limits',
+        weave='m ≳ 2e10 GeV', label='A', data='D ≤ 1e3, T_dec ≥ 5 MeV, |Δn_s| ≤ 0.003', source='PREREG_Q4, D1730',
+        status='pass' if q['pulls'].get('τ_q moduli window (Q4)') == 'pass' else 'fail', headline=False, dnote='hosted mechanism, not a prediction')
+    add(id='q-Rmumu', category='flavour', toolkit='Weave Control', quantity='B→μμ ratio R_μμ (Weave = SM)', weave='SM 0.0280', label='S',
+        data='0.035 +0.014/−0.012 (LHCb Run 1–3)', source='arXiv:2611.00230, D1726', pull=q['pulls'].get('LHCb R_μμ vs Weave(=SM)'), headline=False,
+        dnote='consistent, not evidence: the Weave adds nothing at this order')
 
     # ---- stars, neutrinos ----
     st = lv['stars']
@@ -137,6 +148,9 @@ CLASSIFY = [  # (id prefix, timing, kind, inherited, reason)
     ('lhc-', 'locked', 'bound', False, 'benchmark mass'),
     ('gline-', 'post-hoc', 'bound', False, 'wino masses are benchmarks; the thermal SERAPIS-E wino is post-hoc (D784; DEVIATIONS D2)'),
     ('dm-', 'locked', 'bound', False, 'PREREG_Q9/Q11: survives limits'),
+    ('q-eps', 'locked', 'match', False, 'PREREG_Q6 locked before computing; quark masses known (not future data)'),
+    ('q-tauq', 'locked', 'bound', False, 'hosted mechanism (A)'),
+    ('q-Rmumu', 'locked', 'match', True, 'SM value; the Weave adds nothing'),
     ('ns-', 'locked', 'bound', True, 'standard nuclear physics'),
     ('nu-', 'locked', 'match', True, 'standard cosmology'),
 ]
@@ -147,7 +161,7 @@ def classify(R):
                 r.update(timing=t, kind=k, inherited=inh, why=why); break
         else: r.update(timing='locked', kind='match', inherited=False, why='default')
         if r['id'] == 'bbn-Yp-Aver2021-PRIMAT-theory-' or r['id'].startswith('bbn-Yp-Aver'): r['headline'] = False   # one helium headline (LBT 2026)
-        r['evidence'] = bool(r.get('headline') and r['label'] == 'P' and r['timing'] != 'post-hoc' and not r['inherited'])
+        r['evidence'] = bool(r.get('headline') and r['label'] == 'P' and r['timing'] != 'post-hoc' and not r['inherited'] and r['status'] != 'open')   # D3: open never counts
     return R
 
 def summary(R):
