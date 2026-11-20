@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGIS Toolkits</title>
+<!-- (c) Danny Lee Eldridge · AEGIS Community License. U3 dashboard: reads data.json written by `python3 -m tools.dashboard.build`. -->
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--ink:#14171c;--muted:#5b6472;--line:#e3e6eb;--pass:#1a7f4b;--warn:#a15c00;--fail:#b3261e;--accent:#2457c5;--chip:#eef1f6}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1216;--card:#171b21;--ink:#e8ebf0;--muted:#97a0ad;--line:#262c35;--pass:#4cc38a;--warn:#e0a040;--fail:#ff7a6e;--accent:#7aa2ff;--chip:#20262f}}
+:root[data-theme=dark]{--bg:#0f1216;--card:#171b21;--ink:#e8ebf0;--muted:#97a0ad;--line:#262c35;--pass:#4cc38a;--warn:#e0a040;--fail:#ff7a6e;--accent:#7aa2ff;--chip:#20262f}
+*{box-sizing:border-box}html{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:20px 16px 8px;max-width:1180px;margin:auto;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between}
+h1{font-size:22px;margin:0;letter-spacing:-.01em}h2{font-size:16px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:13px}
+main{max-width:1180px;margin:auto;padding:8px 16px 40px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
+.wide{grid-column:1/-1}
+.tw{overflow-x:auto;margin-top:8px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:13.5px}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-weight:600;font-size:12px}
+.p{color:var(--pass)}.w{color:var(--warn)}.f{color:var(--fail);font-weight:600}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--muted)}
+.note{color:var(--muted);font-size:12.5px;margin:8px 0 0}
+.kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}.kpi{flex:1 1 120px;background:var(--chip);border-radius:10px;padding:10px}
+.kpi b{display:block;font-size:20px}.kpi span{font-size:12px;color:var(--muted)}
+button{font:inherit;background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer}
+footer{max-width:1180px;margin:auto;padding:0 16px 30px;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>AEGIS Toolkits</h1><div class="sub">CERN+1 · Hyperion · Janus · Mapper: one model, every number with its source</div></div>
+  <div><span class="chip" id="ver">loading…</span> <button id="theme" aria-label="Switch light or dark">Theme</button></div>
+</header>
+<main>
+  <section class="card wide" aria-labelledby="h-planck"><h2 id="h-planck">Late universe: full Planck + DESI + supernovae (D1725)</h2>
+    <div class="sub">Δχ² against ΛCDM, same CLASS build. Negative is better. The guard checks that no bigger model fits worse than a model it contains.</div>
+    <div class="tw"><table id="t-planck"></table></div>
+    <p class="note">Verdict as locked: the dark-matter coupling is not detected (fix_fails). The uncoupled thread holds in a second code; w0wa does better (−9 / −20 / −15).</p></section>
+  <section class="card wide" aria-labelledby="h-janus"><h2 id="h-janus">Early universe: inflation models vs the newest CMB (Janus)</h2>
+    <div class="sub">Pull in σ for each data set (the sets overlap, so pulls are never added). r: pass or fail against each upper limit.</div>
+    <div class="tw"><table id="t-janus"></table></div>
+    <p class="note">serapis_10d / 6d: the full Weave prediction. Its n_s is a fit (the tilt was chosen); r and α_s are the predictions LiteBIRD and CMB-S4 test.</p></section>
+  <section class="card" aria-labelledby="h-hyp"><h2 id="h-hyp">Nuclei and stars (Hyperion)</h2>
+    <div class="kpis" id="k-hyp"></div><div class="tw"><table id="t-bbn"></table></div></section>
+  <section class="card" aria-labelledby="h-cern"><h2 id="h-cern">Colliders (CERN+1)</h2>
+    <div class="sub">Expected disappearing-track reach for a pure wino, from the validated Run-2 recast.</div>
+    <div class="tw"><table id="t-cern"></table></div></section>
+</main>
+<footer id="foot"></footer>
+<script>
+const $=s=>document.querySelector(s), f=(x,d=2)=>x==null?'—':Number(x).toFixed(d), esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const cls=v=>typeof v==='string'?(v==='pass'?'p':'f'):(Math.abs(v)<2?'p':Math.abs(v)<3?'w':'f');
+const cell=v=>`<td class="${cls(v)}">${typeof v==='string'?v:(v>0?'+':'')+f(v,1)}</td>`;
+function theme(){const r=document.documentElement,cur=r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');r.dataset.theme=cur==='dark'?'light':'dark';try{localStorage.setItem('aegis-theme',r.dataset.theme)}catch(e){}}
+try{const t=localStorage.getItem('aegis-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+$('#theme').onclick=theme;
+fetch('data.json').then(r=>r.json()).then(D=>{
+  const P=D.provenance; $('#ver').textContent=`code ${P.version} · built ${P.created_utc}`;
+  $('#t-planck').innerHTML='<tr><th>SN set</th><th>thread (b=0)</th><th>coupled</th><th>guard</th></tr>'+D.planck.map(r=>`<tr><td>${esc(r.set)}</td><td class="${r.d_thread<-6?'p':'w'}">${f(r.d_thread)}</td><td>${f(r.d_coupled)}</td><td class="${r.guard.startsWith('NESTED OK')?'p':'f'}">${r.guard.startsWith('NESTED OK')?'OK':'minimiser failed'}</td></tr>`).join('');
+  const keys=Object.keys(D.janus[0].scores);
+  $('#t-janus').innerHTML='<tr><th>model</th><th>n_s</th><th>r</th>'+keys.map(k=>`<th title="${esc(k)}">${esc(k.split(':')[1])}</th>`).join('')+'</tr>'+
+    D.janus.map(m=>`<tr><td>${esc(m.model)}</td><td>${f(m.ns,4)}</td><td>${Number(m.r).toExponential(1)}</td>${keys.map(k=>cell(m.scores[k])).join('')}</tr>`).join('');
+  const b=D.hyperion.bbn;
+  $('#k-hyp').innerHTML=`<div class="kpi"><b>${f(b.Yp,4)}</b><span>helium Y_p (ω_b ${b.omega_b})</span></div><div class="kpi"><b>${f(b.DH*1e5,3)}</b><span>D/H × 10⁵</span></div>`+
+    D.hyperion.neutron_stars.map(n=>`<div class="kpi"><b>${f(n.M_max_Msun,2)} M☉</b><span>max neutron star (${esc(n.eos)})</span></div>`).join('');
+  $('#t-bbn').innerHTML='<tr><th>measurement</th><th>pull (σ)</th></tr>'+Object.entries(b.pulls).map(([k,v])=>`<tr><td>${esc(k)}</td>${cell(v)}</tr>`).join('');
+  $('#t-cern').innerHTML='<tr><th>run</th><th>√s (TeV)</th><th>L (fb⁻¹)</th><th>wino reach (GeV)</th></tr>'+D.cern.reach.map(r=>`<tr><td>${esc(r.run)}</td><td>${r.sqrt_s_TeV}</td><td>${r.lumi_fb}</td><td>${f(r.wino_reach_GeV,0)}</td></tr>`).join('');
+  $('#foot').textContent=`Sources: ${P.sources.length} stored measurements (Hyperion) + ${Object.values(D.constraints).reduce((a,o)=>a+Object.keys(o).length,0)} CMB constraint sets (Janus), each with its reference in data.json. Validated by: ${P.validated_by.join(', ')}.`;
+}).catch(e=>{$('#ver').textContent='data.json missing: run python3 -m tools.dashboard.build';});
+</script>
+</body>
+</html>
