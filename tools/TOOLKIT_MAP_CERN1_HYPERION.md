@@ -61,7 +61,8 @@ Rules: lock before recomputing; data-file downloads need Danny's OK; each row's 
 | mfms / mfms_nc / mf_jit / twofield | multi-field MS, curved field space, δN f_NL | MultiModeCode, Kaiser+ | — | none | validated |
 | janus_lt background / recomb / growth / transfer | expansion, recombination, growth, EH98 transfer | first principles; RECFAST | — | low | validated |
 | janus_lt desi | DESI DR2 BAO likelihood | 2503.14738 Table IV | DESI DR3 (when public) | medium (future) | DR2 |
-| settings (to build) | presets: CMB datasets (Planck, ACT DR6, SPT-3G, CMB-SPA), BAO (DESI DR2), SN (Pantheon+, DESY5, Union3); model library; exports | — | — | queued J1 | — |
+| settings.py (DONE J1, 20 Nov) | model library (φ², φ^{2/3}, Starobinsky, α = 1/3, Weave leading plateau) + n_s/r constraints (Planck 2018, CMB-SPA, CMB-SPA+DESI, BK18) with pulls; exports; 3 tests | — | ACT DR6 / SPT-3G 2026 updates (J3) | — | DONE |
+| (old row) settings | presets: CMB datasets (Planck, ACT DR6, SPT-3G, CMB-SPA), BAO (DESI DR2), SN (Pantheon+, DESY5, Union3); model library; exports | — | — | queued J1 | — |
 Janus queue (interleaved with CERN+1/Hyperion): J1 settings + exports; J2 complaints search (CAMB/CLASS/Cobaya/inflation-calculator users) → build list; J3 newest n_s/r data (ACT DR6, SPT-3G, BK) into the presets with pulls.
 
 ## Mapper (AEGIS Star Mapper + Sky Map: apps/skymap, ufe-v2/cosmos_map, Hyperion mapper_*) — added Danny 22:11 "mapper as well, that's for telescopes"
