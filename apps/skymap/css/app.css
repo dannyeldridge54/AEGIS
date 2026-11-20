@@ -71,3 +71,6 @@ td,th{text-align:left;padding:.28rem .3rem;border-bottom:1px solid var(--line);v
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media print{.bar,.status,.panel{display:none}}
+
+/* U2: keep Aladin tooltips inside the viewport on phones (no sideways page scroll) */
+html{overflow-x:clip}#sky{overflow:hidden;contain:paint}

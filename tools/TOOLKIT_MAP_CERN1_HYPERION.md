@@ -116,3 +116,8 @@ Sources: Cobaya "Troubleshooting in cosmological runs" (official docs); OLÉ onl
 | unclear what each component received/produced | `--debug` trace in Janus scoring (inputs, outputs, timings per step) | J2d |
 | CAMB vs CLASS disagree for exotic models | built-in cross-code check where both are available (our D1713 gate is the template) | J2e |
 | model comparison/evidence is expensive | quick evidence proxy (Laplace/BIC from the best fit) labelled as an estimate, with the exact route left to Cobaya/PolyChord | J2f |
+
+### U2 Sky Map UI review (19 Nov 2026, vs Aladin Lite / Stellarium Web; Playwright 1366 px + 390 px)
+Found: 8 Aladin icon buttons with no accessible name; 11 icon images with no alt; only Esc as a shortcut; phone page scrolled sideways (Aladin tooltips past the edge).
+Fixed: every sky control now has a short name (aria-label + title, e.g. "Zoom in", "Coordinate grid", "Identify object (Simbad pointer)"); decorative icons get alt=""; shortcuts `/ + - L T O E A ?`; `html{overflow-x:clip}` + `#sky{contain:paint}` (no sideways scroll). Re-check: 0 unlabeled, 0 missing alt, no h-scroll, `/` focuses search, `T` opens Tonight.
+Open (later ticks): sexagesimal coordinate input ("05h35m17s -05°23'28\"") in search; export of the current view (PNG + list of visible objects); shortcut list in the About panel.

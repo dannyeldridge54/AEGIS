@@ -28,9 +28,28 @@ async function initSky() {
     showCooGridControl: true, showSimbadPointerControl: true, showFrame: true, showCooLocation: true, showShareControl: false,
     showContextMenu: true, showSettingsControl: true,
   });
+  labelControls(); new MutationObserver(() => labelControls()).observe($("#sky"), { childList: true, subtree: true });
   state.aladin.on("objectClicked", (obj) => { if (obj && obj.data) showInfo(obj.data); });
   let last = 0; state.aladin.on("zoomChanged", () => { const now = Date.now(); if (now - last > 150) { last = now; applyVisibility(); } });
   return true;
+}
+
+// Aladin Lite's icon buttons carry no accessible name; give each one from its tooltip or its class (U2 accessibility)
+const ALADIN_NAMES = { "aladin-zoom-in": "Zoom in", "aladin-zoom-out": "Zoom out", "aladin-location-copy": "Copy coordinates", "aladin-fullScreen-btn": "Full screen" };
+function labelControls() {
+  for (const b of document.querySelectorAll("#sky button, #sky [role=button]")) {
+    for (const im of b.querySelectorAll("img:not([alt])")) im.alt = "";
+    if (b.getAttribute("aria-label") || b.title || b.innerText.trim()) continue;
+    const tip = b.parentElement && b.parentElement.querySelector(".aladin-tooltip");
+    const byClass = Object.keys(ALADIN_NAMES).find((c) => b.classList.contains(c));
+    const raw = (tip && tip.textContent.trim()) || "";
+    const SHORT = [[/overlay/i, "Layers and overlays"], [/settings/i, "View settings"], [/simbad/i, "Identify object (Simbad pointer)"],
+                   [/grid/i, "Coordinate grid"], [/clipboard/i, "Copy coordinates"], [/zoom out/i, "Zoom out"], [/zoom in/i, "Zoom in"], [/full/i, "Full screen"]];
+    const hit = SHORT.find(([re]) => re.test(raw));
+    const name = (byClass && ALADIN_NAMES[byClass]) || (hit && hit[1]) || raw || "Sky view control";
+    b.setAttribute("aria-label", name); b.title = name;
+  }
+  for (const im of document.querySelectorAll("#sky img:not([alt])")) im.alt = "";
 }
 
 function setSurvey(id) {
@@ -331,7 +350,16 @@ async function main() {
   for (const b of document.querySelectorAll(".tabs button")) b.onclick = () => openPanel(b.dataset.tab);
   $("#closePanel").onclick = () => openPanel(state.panel);
   $("#closeInfo").onclick = () => ($("#info").hidden = true);
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { $("#info").hidden = true; if (state.panel) openPanel(state.panel); } });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { $("#info").hidden = true; if (state.panel) openPanel(state.panel); return; }
+    // keyboard shortcuts (U2, 19 Nov 2026), ignored while typing in a field
+    const t = e.target; if (e.ctrlKey || e.metaKey || e.altKey || (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)))) return;
+    const al = state.aladin, tabs = { l: "layers", t: "tonight", o: "tour", e: "learn", a: "aegis", "?": "about" };
+    if (e.key === "/") { e.preventDefault(); $("#search").focus(); }
+    else if ((e.key === "+" || e.key === "=") && al) al.increaseZoom();
+    else if (e.key === "-" && al) al.decreaseZoom();
+    else if (tabs[e.key]) openPanel(tabs[e.key]);
+  });
   const [cons, stars, messier, flags, coverage, disc, reviewsAll] = await Promise.all(["constellations", "stars", "messier", "aegis_flags", "aegis_coverage", "aegis_discoveries", "aegis_reviews"].map((f) => loadJSON(`data/${f}.json`)));
   Object.assign(state.data, { cons, stars, messier, flags, coverage, disc, reviewsAll });
   buildSearch();

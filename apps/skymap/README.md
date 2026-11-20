@@ -47,3 +47,6 @@ Tests: `pytest apps/skymap/tests` (the browser test needs Playwright). Release z
 AGPL-3.0-or-later — free for schools, students and everyone ([LICENSE](LICENSE)); commercial licence for organisations that
 don't want the AGPL's obligations ([COMMERCIAL.md](COMMERCIAL.md)). Third-party parts: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 © 2026 Danny Lee Eldridge. Built with AI assistance (Claude, Anthropic).
+
+## Keyboard shortcuts
+`/` search · `+`/`-` zoom · `L` layers · `T` tonight · `O` tour · `E` learn · `A` AEGIS stars · `?` about · `Esc` close panels.
