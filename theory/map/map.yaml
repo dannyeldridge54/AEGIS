@@ -1010,6 +1010,7 @@ nodes:
   - 'D1264: postulate'
   - 'D1389: postulate'
   note: web loop postulate 4 (pattern covariant ↔ eps_tilt)
+  flag: recheck (D1687, genesis_reheating)
 - id: string_meter
   layer: 5
   branch:
@@ -1131,6 +1132,7 @@ nodes:
   - 'D1337: computed (late)'
   - 'D1338: computed'
   - 'D1392: computed'
+  flag: recheck (D1687, genesis_reheating)
 - id: tests_cmb
   layer: 5
   branch:
@@ -1218,12 +1220,13 @@ observing:
   - D1641
   - D1665
   - D1666
+  - D1687
   depends:
   - plateau_origin
   history:
-  - 'D1641: estimate'
   - 'D1665: estimate'
   - 'D1666: estimate'
+  - 'D1687: estimate'
 - id: matter_genesis
   layer: 2
   branch:
