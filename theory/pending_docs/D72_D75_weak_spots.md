@@ -16655,3 +16655,11 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Scheme: the convergent subtraction ∫(Γ − τ₂²) is I + 0.957. In that scheme the self-dual point gives +0.30 (positive everywhere on the slice). The sign near R ≈ 1 is therefore scheme-dependent, as at D = 8: the constant is tied to the infrared log of the massless loop. The R-dependence is physical.
 - Locked reading: min I < 0 in the stated scheme, so "sign flips near the self-dual point (hilltop risk there)", crossing at R ≈ 1.28.
 - Weave meaning: the D = 6 plateau is safe whenever the T⁴ is not near string size (R ≳ 1.3 ℓ_s, or ≲ 1/1.3), in every scheme. That is the regime where a 6D phase at horizon exit makes sense anyway (M_KK < H, C-6D). A3 is upgraded: D = 8 positive everywhere; D = 6 positive for non-stringy tori, scheme-dependent at the self-dual point; D = 5, 4 open (a sum over 10- and 12-dimensional lattices, same method).
+
+## D1681 (LEFT, 19 Nov 2026) — RESULT: one-loop R⁴ thread at D = 5 and D = 4 (PREREG_A3_D54). D = 4 is POSITIVE on the whole slice; D = 5 dips only at the self-dual point
+- [computed, validated code of D1680] Zagier scheme, rectangular equal-radius tori:
+  - D = 5 (Γ_{5,5}): R = 1: −0.19; 1.25: +0.57; 1.5: +3.41; 2: +22.7; 3: +218. Zero crossing at R ≈ 1.06. In the convergent scheme (+0.62): positive everywhere.
+  - D = 4 (Γ_{6,6}): R = 1: +0.15; 1.25: +1.38; 1.5: +6.48; 2: +49.8; 3: +676. POSITIVE everywhere on the slice, in both schemes (convergent: +0.61 at R = 1).
+- Trend at the self-dual point (Zagier): D = 6: −0.66 → D = 5: −0.19 → D = 4: +0.15. The higher the torus dimension, the more the volume term wins.
+- A3 summary: the one-loop thread is POSITIVE (plateau, not hilltop) at D = 8 (everywhere), D = 4 (whole slice), and D = 6, 5 for any torus not within ≈ 30% / 6% of string size. Near-string-size tori at D = 6, 5 are scheme-dependent. Caveat: only the rectangular B = 0 slice was checked, not the full SO(d,d) moduli space.
+- Register: A3 upgraded from C-sign (conjecture) to "derived on the rectangular slice; scheme-dependent only at stringy radii for D = 6, 5".
