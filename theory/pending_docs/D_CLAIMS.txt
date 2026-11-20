@@ -1002,3 +1002,4 @@ D1714  2026-11-20T02:47Z  review: D1713 coupled equations vs Pettorino-Baccigalu
 D1715  2026-11-20T02:47Z  super-horizon check of coupled CLASS model
 D1716  2026-11-20T02:53Z  negative space derived from the coupled thread
 D1717  2026-11-20T02:58Z  closed-form z-dagger for Weave negative space
+D1718  2026-11-20T03:03Z  register C8 update + G_eff correction
