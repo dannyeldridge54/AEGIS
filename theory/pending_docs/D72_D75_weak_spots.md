@@ -16750,3 +16750,10 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - BAO + SN + CMB: exact Δχ² = −4.65 (amp 0.209), versus −4.84.
 - |difference| ≤ 0.19 in both → "leading order is adequate" ✓, consistent with JANUS D1638 (~4% shape difference). The best start shifts to larger amp (0.24 / 0.21), i.e. closer to the floor at ρ, matching D1638's "the thread is arriving at ρ today".
 - Standing real-data status of the Weave thread (exact curve): −6.9 (BAO + SN), −4.65 (+ CMB), still "supported" (≤ −4), and still behind CPL with the CMB (−10.84).
+
+## D1697 (CENTRE, 19 Nov 2026) — Djl, DERIVE_LOOP D3: a candidate reason for level 4 (S₄) over level 3 (A₄)
+- [lit] On magnetised tori, zero modes with flux M transform under Γ̃(2|M|), so the finite flavour group has level 2|M| (arXiv:2005.12642; also 2003.04174, 1907.09141). The level is therefore always EVEN.
+- [derived from that] Level 3 (A₄) cannot arise this way. Level 2 (Γ₂ ≅ S₃) has no irreducible triplet, so it cannot host three generations as a triplet. The smallest even level with triplets is 4 (|M| = 2), i.e. S₄-type, with the double cover T′ ⋊ Z₄ of order 96 for the actual zero modes.
+- Reading: if the Weave's lepton sector lives on magnetised branes (consistent with the D3/D7 picture of P-brane, D1671), then "S₄, not A₄" follows from "minimal flux with three generations". The JUNO-forced switch (D1652, D1667) then agrees with string geometry rather than being a free choice.
+- Caveats: (i) the magnetised-torus modulus is a complex structure U, while the Weave's flavour moduli are assumed to feel E(τ,3/2) (P-F2). The two must be identified (e.g. by a duality), which is NOT shown. (ii) The order-96 cover, not S₄ itself, acts on the zero modes. The TM1 fixed-point counting (D1668) used the S₄ quotient, and must be rechecked on the cover.
+- Register: P-S4 → C-S4 ("|M| = 2 flux; level 4 is the minimal even level with triplets"), with caveats (i) and (ii).
