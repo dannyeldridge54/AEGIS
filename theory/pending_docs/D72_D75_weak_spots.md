@@ -16701,7 +16701,7 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Sourced dark-photon ceiling: mixing below 3.5 × 10⁻⁹ (0.3 GeV), 3.9 × 10⁻⁸ (1 GeV), 9.7 × 10⁻⁷ (5 GeV). Above the decay-before-BBN floor that leaves 2–5 decades open. Version (b) stays alive; LZ's newer data and XLZD will push into it.
 - MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no
 
-##  (CENTRE, 19 Nov 2026) — Djl: review of the two papers against today's later results; drafts updated, nothing published
+## D1689 (CENTRE, 19 Nov 2026) — Djl: review of the two papers against today's later results; drafts updated, nothing published
 1) Flavour v3 draft (D1670): Sec. III now adds D1674 (equal weight per image of i from equivariance; P(TM1) = 0.345). Rebuilt; still 2 pages; still a DRAFT awaiting "Publish".
 2) Reverse-thread paper (PUBLISHED, doi 10.5281/zenodo.24380387), checked against the JANUS notes:
    - D1638 (exact SERAPIS curve): the fit is unchanged (worst Δχ² 5.64, w₀ ≈ −0.79, w_a ≈ −0.36) and the window is slightly narrower (0.038 vs 0.045 in ln amp). The paper's statement "just before the field would roll into V < 0" holds for its stated leading-order model, but with the exact curve that edge is "the thread reaches the floor ρ". Wording change only.
