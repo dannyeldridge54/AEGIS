@@ -16510,6 +16510,7 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - Compressed-CMB arm agrees in direction, slightly kinder to RT (ΔAIC −0.9 / −3.2 / −8.8).
 - CORRECTION: D1627's "fits all three at w₀ ≈ −0.79" was a Gaussian-approximation result; it does not survive the full likelihood (best fits w₀ ≈ −0.86 … −0.97).
 - Good fit needs u_i inside a ~1–2 % window (tuned). Post-data model; V_Λ by hand; PPF fluid; asymptotic form (D1638: exact curve shifts w_a ~0.03, verdict-safe).
+- Addendum: the 6D and 4D versions (β = 2, √2) do slightly worse than 10D on every SN set (DESY5 Δχ² −10.5 / −9.3 vs −10.8); 4D hits the prior edge u_i = 0.3 on Union3/DESY5 (limitation, not rerun).
 - MAP: node=plateau_origin status=postulate touches=[] ripple=no
 
 ## D1657 — JANUS genesis G6c: a dark photon with a small mass saves matter genesis
