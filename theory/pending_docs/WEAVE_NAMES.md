@@ -104,4 +104,4 @@ Danny named the first three undiscovered particles of the Weave (paper "Not Yet 
 | **the Sarah** (symbol X) | asymmetric dark-matter particle, 12.8 GeV | the main body of dark matter; made from the same one asymmetry as ordinary matter, 5.4× its mass budget |
 | **the Cassandra** (symbol A′) | dark photon, 0.3–5 GeV, mixing ε ~ 10⁻¹¹–10⁻⁷ | the light that only the dark side sees; it clears away the Sarah's antiparticles so the Sarah can remain |
 | **the Arthur** (symbol φ, the late thread) | the ultralight dark-energy field coupled to dark matter, b ≈ −0.07 | the quiet field that rises and gently changes the dark matter it touches; its coupling is what makes "negative space" (D1716) |
-Plural and adjective forms: Sarahs (X particles), a Cassandra photon, the Arthur field / Arthur coupling b_A.
+Scientific names (Danny 21:03): **sarion** (the Sarah, X), **cassion** (the Cassandra, A′), **arthon** (a quantum of the Arthur field; the field keeps the name Arthur field, coupling b_A). A web search found no prior use of these names in physics (19 Nov 2026).
