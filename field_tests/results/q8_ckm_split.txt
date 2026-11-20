@@ -1,0 +1,13 @@
+VALIDATION PASS sv2/sv1=1.2e-16
+CONTROL one modulus (both rung 1): chi2=54.39 FAIL fails=['ms_mb', 'md_mb', 'mu_mt', 'Vus', 'Vcb', 'Vub']
+   ms_mb=0.0117(0.59) md_mb=0.00156(1.56) mc_mt=0.00497(1.34) mu_mt=9.25e-05(12.17) Vus=0.184(0.82) Vcb=0.0641(1.53) Vub=0.00236(0.64) J=2.63e-05(0.85)
+   down r1,r2,|g|,argg = [ 1.482  0.333  1.027 -2.887]  up = [0.333 0.333 3.    2.031]
+SPLIT down rung1, up rung8: chi2=38.58 FAIL fails=['ms_mb', 'Vus', 'Vub', 'J']
+   ms_mb=0.00764(0.38) md_mb=0.00126(1.26) mc_mt=0.00379(1.02) mu_mt=9.32e-06(1.23) Vus=0.195(0.87) Vcb=0.043(1.03) Vub=0.00112(0.30) J=8.89e-06(0.29)
+   down r1,r2,|g|,argg = [3.    0.333 0.96  2.938]  up = [0.333 3.    1.323 0.355]
+SPLIT down rung1, up rung9: chi2=39.31 FAIL fails=['ms_mb', 'Vus', 'Vub', 'J']
+   ms_mb=0.00764(0.38) md_mb=0.00126(1.26) mc_mt=0.00394(1.06) mu_mt=8.1e-06(1.07) Vus=0.195(0.87) Vcb=0.0421(1.01) Vub=0.0011(0.30) J=8.57e-06(0.28)
+   down r1,r2,|g|,argg = [ 3.     0.333  0.959 -2.939]  up = [ 0.333  3.     1.095 -0.32 ]
+SPLIT down rung1, up rung10: chi2=40.21 FAIL fails=['ms_mb', 'Vus', 'Vub', 'J']
+   ms_mb=0.00764(0.38) md_mb=0.00126(1.26) mc_mt=0.00405(1.09) mu_mt=7.12e-06(0.94) Vus=0.195(0.87) Vcb=0.0413(0.99) Vub=0.00109(0.30) J=8.3e-06(0.27)
+   down r1,r2,|g|,argg = [3.    0.333 0.958 2.939]  up = [0.333 3.    0.893 0.319]

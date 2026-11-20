@@ -18,7 +18,7 @@ Status words: lit · formula (paper fit, m ≤ 7) · extrap · computed · deriv
 ## How the sectors interact, rung to rung
 | pair | interaction | number | status |
 |---|---|---|---|
-| up (8) ↔ down (1) | CKM mixing = mismatch of the two rungs' matrices | |V_us|, |V_cb|, |V_ub|, J | OPEN — Q8 |
+| up (8) ↔ down (1) | CKM mixing = mismatch of the two rungs' matrices | best O(1): |V_us| 0.195 (0.87×), |V_cb| 0.043 (1.03×), |V_ub| 0.0011 (0.30×), J 8.9e-6 (0.29×); m_s/m_b 0.38× | computed FAIL (D1738); better than one modulus (χ² 54→39) |
 | up (8) ↔ down (1) | strong CP: θ̄ = 0 for any rungs if weights anomaly-free | θ̄ = 0 | lit (FST) |
 | down (1) ↔ charged leptons (knot) | NOT the same rung; hierarchies by different mechanisms (slip vs Z₃ numbers) | ΔQ(rung 1) = 8.5e-3 | computed (D1737) |
 | quarks (ρ side) ↔ neutrinos (i) | different knots ⇒ small CKM vs large PMNS | θ_C 13° vs θ₁₂ 34° | consistent (qualitative) |
