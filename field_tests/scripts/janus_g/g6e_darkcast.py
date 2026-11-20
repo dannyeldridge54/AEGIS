@@ -2,6 +2,8 @@
 import json, math, os, re, sys
 import numpy as np
 LIM = sys.argv[1]
+MTOP = float(sys.argv[2]) if len(sys.argv) > 2 else 5.03   # D1685: top mass argument (default = D1664)
+OUT = 'field_tests/results/D1664_G6e_darkcast.json' if MTOP == 5.03 else 'field_tests/results/D1685_G17_window_12p8.json'
 VIS = re.compile(r'decay\s*=\s*(\[[^\]]*\]|"[^"]*")')
 def meta(base):
     for cand in (base, re.sub(r'_(br\w+|prompt|displaced|combined|mumu|cs|rb|2l|2u)$', '', base)):
@@ -18,7 +20,7 @@ for f in sorted(os.listdir(LIM)):
     if not ok: skipped.append(b); continue
     rows = [list(map(float, l.split())) for l in open(os.path.join(LIM, f)) if l.strip() and not l.startswith('#')]
     a = np.array(rows); tables.append((b, a)); used.append(b)
-masses = np.geomspace(0.02, 5.03, 400); eps = np.geomspace(1e-13, 1e-2, 2000)
+masses = np.geomspace(0.02, MTOP, 400); eps = np.geomspace(1e-13, 1e-2, 2000)
 d57 = json.load(open('field_tests/results/D1657_G6c_massive_dp.json'))['rows']
 lm = np.log10([r['m_MeV'] / 1000 for r in d57]); le = np.log10([r['eps_min_tau_1s'] for r in d57])
 def floor(m):
@@ -51,10 +53,11 @@ open_m = [r['m_GeV'] for r in rows if r['widest_decades'] >= 1]
 edge = min(open_m) if open_m else None
 def at(mg):
     r = min(rows, key=lambda r: abs(r['m_GeV'] - mg)); return dict(m=r['m_GeV'], intervals=r['intervals'], widest=r['widest_decades'])
-in15 = [r for r in rows if 1.0 <= r['m_GeV'] <= 5.03]
+in15 = [r for r in rows if 1.0 <= r['m_GeV'] <= MTOP]
 reading = ('CLOSED' if not open_m else ('CONFIRMED' if (edge and 0.1 <= edge <= 0.9 and all(r['widest_decades'] >= 1 for r in in15)) else 'SHARPENED'))
-closed_0p3_5 = [r['m_GeV'] for r in rows if 0.3 <= r['m_GeV'] <= 5.03 and r['widest_decades'] < 1]
+closed_0p3_5 = [r['m_GeV'] for r in rows if 0.3 <= r['m_GeV'] <= MTOP and r['widest_decades'] < 1]
 out = dict(D='D1664', mirror_commit='db9a0f66ec99946930dc263a042ec531c9576068', used=used, skipped=skipped, lower_edge_GeV=edge,
            at_0p3=at(0.3), at_1=at(1.0), at_3=at(3.0), at_5=at(5.0), closed_masses_0p3_to_5=closed_0p3_5, reading=reading, rows=rows)
-json.dump(out, open('field_tests/results/D1664_G6e_darkcast.json', 'w'), indent=1)
+out['m_top'] = MTOP
+json.dump(out, open(OUT, 'w'), indent=1)
 print(json.dumps({k: v for k, v in out.items() if k not in ('rows', 'skipped')}, indent=1, default=str)[:3000])
