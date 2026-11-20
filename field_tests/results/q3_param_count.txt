@@ -1,0 +1,6 @@
+Q3 tally (arXiv:2406.01689)
+6.1 Gamma(2): 20+2=22 vs 10 -> FIT-ONLY
+6.2 S3+heavy: 13+2=15 vs 8 (ratios) -> FIT-ONLY (chi2=0.47)
+7.1 Gamma(3): 20+2=22 vs 10 -> FIT-ONLY
+7.2 T'+heavy: cannot fit -> EXCLUDED
+VERDICT FAIL (no predictive model)
