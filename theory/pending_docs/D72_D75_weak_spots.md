@@ -16680,3 +16680,9 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Checked the LZ paper (arXiv:2410.17036) directly: between 9 and 20 GeV the limit exists only as a plotted curve; the paper's one data link holds detector-response files, not limits. The newer 417-day LZ result (Dec 2025) has no numbers in its announcements either.
 - So D1677's cut on the dark photon (from a 10⁻⁴⁷–10⁻⁴⁵ cm² bracket) remains unsourced. To close it: digitise the Fig. 5 curve, or download LZ's data release — needs Danny's OK.
 - MAP: node=dark_radiation status=estimate touches=[] ripple=no
+
+## D1685 — JANUS genesis G17: with the dark particle at 12.8 GeV, the dark photon can be up to 12.8 GeV too — and that whole range is open
+- The other chat's D1676 put the dark particle at 12.8 GeV, so the dark photon (which must be lighter) can now go up to 12.8 GeV. Using the same published limit tables: from 5 to 12.8 GeV, mixing anywhere from ~5 × 10⁻¹² up to the collider limit (~10⁻³) is allowed.
+- Near 10 GeV the limit tables have a hole (BaBar stops at 10.2 GeV) — flagged as an artefact. The xenon direct-detection cut (D1677) would lower the top edge, but its number is still unsourced (D1684).
+- A check I locked was badly designed (it compared two different mass grids); I logged that as a deviation and replaced it with an exact re-run, which matched D1664 row for row.
+- MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no

@@ -3329,3 +3329,10 @@ Touches: none.
 1. [literature] LZ WS2022+WS2024 (arXiv:2410.17036 v3): the SI limit at 9–20 GeV appears only as a curve (Fig. 5, Fig. S2); the only quoted SI number is 2.2e-48 cm² at 40 GeV; the supplemental link is a placeholder; the only data link (HEPData record 155182) is described in the paper as NEST response files, not limits (record itself not reachable from this session).
 2. [literature] The newer LZ 417-live-day analysis (Mar 2023–Apr 2025, announced 8 Dec 2025 — LBNL, SLAC, Brown news) is world-leading above 5 GeV and probes 3–9 GeV; no numbers in the releases.
 3. [estimate] Same conclusion as the other chat's D1678: D1677's bracket (1e-47–1e-45 cm² at 13 GeV) stays UNSOURCED. Getting the number needs either a digitised Fig. 5 or the LZ data release — a download that needs Danny's OK.
+
+## D1685 — JANUS genesis G17: the dark-photon window up to m_X = 12.8 GeV (PREREG_D1685_G17_WINDOW_12P8; DEVIATIONS D1) — open across 5–12.8 GeV
+1. [derived] Input from the other chat's D1676: m_X = 12.8 GeV ⇒ the window condition m_A' < m_X now reaches 12.8 GeV. D1664's method unchanged (DarkCast mirror db9a0f6, 34 visible limits, BBN floor, SN band).
+2. [derived] Open ε at 5 GeV: 7.4e-12 – 8.7e-4; 8 GeV: 5.8e-12 – 4.9e-4; 12.8 GeV: 4.6e-12 – 1.2e-3. No mass in 0.3–12.8 GeV has less than 1 decade open.
+3. [estimate] Near 10 GeV the table set has a coverage gap (BaBar ends at 10.2 GeV, Υ region): the upper edge jumps to 1e-2 there — an artefact of missing limits, not a real opening.
+4. [derived] Validation: locked R0 (nearest-mass comparison with D1664) FAILED (max 10.7 %, median 0.18 %) because the grids sample different masses on jagged collider limits; DEVIATIONS D1 added R0′ — rerunning at the default top mass reproduces D1664's json row for row (identical) ✓.
+5. [estimate] Not applied: the other chat's direct-detection cut (D1677, bracket still unsourced — D1684) would pull the upper edge down to ~1e-6–1e-5 at these masses; the dim strip (≲ 1e-7) is untouched by it.
