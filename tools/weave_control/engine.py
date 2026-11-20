@@ -29,6 +29,7 @@ NUFIT_S13 = (0.02195, 'NuFIT 6.0 NO IC19, arXiv:2410.05380 (as in D1667)')
 S12_DATA = {'JUNO first data': (0.3092, 0.0087, 'JUNO, arXiv:2511.14593'),
             'NuFIT 6.0 + JUNO': (0.3084, 0.0070, 'combination used in D1652'),
             'post-JUNO global': (0.3085, 0.0073, 'arXiv:2511.21650')}
+SUM_MNU, SUM_MNU_BOUND = 0.0587, 0.0642          # eV; register node mnu (frozen; D1234 recomputed 0.05878) and the bound used in D1234
 T2KNOVA_1SIG = (214.0, 313.0)                    # degrees; ordering-marginalised 1σ, Nature 2025 (D1690)
 NUFIT_DCP_3SIG = {0.561: (96.0, 422.0), 0.470: (124.0, 364.0)}   # degrees; NuFIT 6.0 NO IC19 / IC24 (D1669)
 J0740 = (2.08, 0.07, 'PSR J0740+6620 mass (Fonseca et al. 2021, ApJL 915 L12)')
@@ -102,16 +103,29 @@ def flavour(p):
     t2k = inside(lo, *T2KNOVA_1SIG); nufit = inside(lo, *NUFIT_DCP_3SIG[0.561])
     data += [dict(name='δ_CP T2K+NOvA ordering-marginalised 1σ', value=T2KNOVA_1SIG, kind='range', source='Nature 2025 (s41586-025-09599-3), via D1690'),
              dict(name='δ_CP NuFIT 6.0 NO 3σ (IC19, s₂₃² 0.561)', value=NUFIT_DCP_3SIG[0.561], kind='range', source='arXiv:2410.05380, via D1669')]
+    # DEVIATIONS D1: lower-branch band over the T2K+NOvA 1σ range of sin²θ₂₃ [0.51, 0.59]
+    def _low(s23):
+        t = math.asin(math.sqrt(s23)); c = -(1/math.tan(2*t))*(1 - 5*s13)/(2*math.sqrt(2)*math.sqrt(s13)*math.sqrt(1 - 3*s13))
+        return 360 - math.degrees(math.acos(max(-1.0, min(1.0, c))))
+    band = sorted((_low(0.51), _low(0.59)))
+    data.append(dict(name='Σm_ν 95% upper bound (DESI DR2 + CMB, as used in D1234)', limit=SUM_MNU_BOUND, kind='upper95', source='D1234 check (DESI DR2 + CMB bound 0.0642 eV)'))
+    pulls['Σm_ν (NO, m₁ = 0) below the DESI+CMB bound'] = 'pass' if SUM_MNU < SUM_MNU_BOUND else 'FAIL'
     pulls['TM1 δ_CP (lower branch, s₂₃² 0.561) inside T2K+NOvA 1σ'] = 'pass' if t2k else 'FAIL'
     pulls['TM1 δ_CP (lower branch, s₂₃² 0.561) inside NuFIT 3σ'] = 'pass' if nufit else 'FAIL'
-    key = {k: v for k, v in pulls.items() if k in ('Koide Q = 2/3', 'TM1 sin²θ₁₂ vs post-JUNO global', 'TM1 δ_CP (lower branch, s₂₃² 0.561) inside T2K+NOvA 1σ', 'TM1 δ_CP (lower branch, s₂₃² 0.561) inside NuFIT 3σ')}
+    key = {k: v for k, v in pulls.items() if k in ('Σm_ν (NO, m₁ = 0) below the DESI+CMB bound', 'Koide Q = 2/3', 'TM1 sin²θ₁₂ vs post-JUNO global', 'TM1 δ_CP (lower branch, s₂₃² 0.561) inside T2K+NOvA 1σ', 'TM1 δ_CP (lower branch, s₂₃² 0.561) inside NuFIT 3σ')}
     if not ref_ok: key['δ_CP reproduces D1667'] = 'FAIL'
     return L('flavour', 'Flavour (leptons & neutrinos)', 'B', 'Flavour panel', dict(masses='PDG 2024 pole masses', sin2_theta13=s13),
              dict(Koide_Q=Q, Koide_Q_sigma=abs(dQ), Brannen_delta=best, delta_minus_2_9=best - 2/9, delta_equivalent_forms=sorted(forms),
                   TM1_sin2_theta12=tm1, TM2_sin2_theta12_excluded=tm2, TM1_dCP_s23_0561=list(dcp[0.561]), TM1_dCP_s23_0470=list(dcp[0.470]),
-                  dCP_reproduces_D1667=ref_ok), data, pulls,
+                  dCP_reproduces_D1667=ref_ok, TM1_dCP_band_s23_051_059=band, sum_mnu_eV=SUM_MNU), data, pulls,
              ['Q = 2/3 is a prediction (P-F1)', 'δ = 2/9 has no mechanism yet (C-δ)',
               'neutrinos: TM1 with modular S₄ at the Weave vacua ρ and (an image of) i is ASSUMED (P-S4, register B5); exact TM2 is excluded by JUNO (D1652)',
+              'δ_CP branch is CHOSEN BY THE DATA: TM1 fixes cos δ only and predicts the mirror pair (referee N-R1)',
+              'δ_CP band shown over sin²θ₂₃ ∈ [0.51, 0.59] (T2K+NOvA 1σ): the value moves strongly with θ₂₃ (DEVIATIONS D1)',
+              'normal mass ordering assumed; inverted ordering not evaluated (N-R4)',
+              'θ₁₃ used as a point value: its error moves TM1 sin²θ₁₂ by ≈ 0.0004, small next to the data error 0.0073 (N-R5)',
+              'Σm_ν = 0.0587 eV assumes m₁ = 0 (register node mnu), an assumption of the mass sector, not derived from modular S₄ (N-R3)',
+              'sharpest near-term test: JUNO 6-year sin²θ₁₂ (≈ ±0.0015) would put TM1 (0.3184) about 6σ from today\'s centre (0.3085) if the centre holds',
               'status (PREREG_W4_FLAVOUR): TM1 sin²θ₁₂ vs the post-JUNO global value, and the lower δ_CP branch for s₂₃² = 0.561 (the T2K+NOvA-preferred θ₂₃); the upper branch (74°/98°) is outside the data',
               'δ is defined only up to relabelling the leptons and δ → 2π/3 − δ; the form nearest 2/9 is shown and all forms are listed (V1 finding 5)'],
              links=['DUNE / Hyper-K δ_CP; JUNO sin²θ₁₂ to ±0.5%: TM1 0.3184 vs TM2 0.3408'], status=_status(key))

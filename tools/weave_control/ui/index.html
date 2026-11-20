@@ -67,17 +67,17 @@ footer{max-width:1440px;margin:auto;padding:0 16px 30px;color:var(--muted);font-
 const CAT = {A:'Inflation & loom', B:'Flavour', C:'Dark sector & late universe', D:'Matter genesis & stars', E:'Observing'};
 const $ = s => document.querySelector(s), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // referee U-R2: 3 significant figures by default; more only where the quantity carries a small error (PREC)
-const PREC = {Koide_Q: 7, Brannen_delta: 7, ns: 4, Yp: 4, f_max: 3, f_max_at_R_0p658: 3, TM1_sin2_theta12: 4, TM2_sin2_theta12_excluded: 4, TM1_dCP_s23_0561: 4, TM1_dCP_s23_0470: 4};
+const PREC = {Koide_Q: 7, Brannen_delta: 7, ns: 4, Yp: 4, f_max: 3, f_max_at_R_0p658: 3, TM1_sin2_theta12: 4, TM2_sin2_theta12_excluded: 4, TM1_dCP_s23_0561: 4, TM1_dCP_s23_0470: 4, TM1_dCP_band_s23_051_059: 4};
 const num = (x, d=3, key) => x == null ? '—' : (typeof x !== 'number' ? esc(x) : Number.isInteger(x) && Math.abs(x) < 1e5 ? String(x) :
   (Math.abs(x) >= 1e5 || (Math.abs(x) < 1e-3 && x !== 0)) ? x.toExponential(2) : String(+x.toPrecision(PREC[key] || d)));
 const NAMES = {TM1_sin2_theta12:'TM1 sin²θ₁₂', TM2_sin2_theta12_excluded:'exact TM2 sin²θ₁₂ (excluded)', TM1_dCP_s23_0561:'TM1 δ_CP branches, s₂₃² 0.561 (°)',
-  TM1_dCP_s23_0470:'TM1 δ_CP branches, s₂₃² 0.470 (°)', dCP_reproduces_D1667:'reproduces locked D1667/D1669', ns:'n_s', r:'r', alpha_s:'running α_s', bridge_B1:'bridge B1 (number only)', bridge_B2:'bridge B2 (number only)', Koide_Q:'Koide Q', Koide_Q_sigma:'σ(Q) from m_τ',
+  TM1_dCP_s23_0470:'TM1 δ_CP branches, s₂₃² 0.470 (°)', TM1_dCP_band_s23_051_059:'TM1 δ_CP band, s₂₃² 0.51–0.59 (°)', sum_mnu_eV:'Σm_ν (NO, m₁ = 0)', dCP_reproduces_D1667:'reproduces locked D1667/D1669', ns:'n_s', r:'r', alpha_s:'running α_s', bridge_B1:'bridge B1 (number only)', bridge_B2:'bridge B2 (number only)', Koide_Q:'Koide Q', Koide_Q_sigma:'σ(Q) from m_τ',
   Brannen_delta:'Brannen δ (rad)', delta_minus_2_9:'δ − 2/9', delta_equivalent_forms:'equivalent δ forms', Yp:'helium Y_p', DH:'D/H', z_dagger:'z† (negative space)', G_eff_over_G:'G_eff / G',
   S8_status:'S₈ status', sigma_fb:'σ(pp → pair)', pairs:'produced pairs', ctau_cm:'cτ (chargino)', expected_reach_GeV:'expected reach', J_IGS_ROI_GeV2_cm5:'J, H.E.S.S. IGS region',
   J_annulus_0p5_3deg_GeV2_cm5:'J, 0.5°–3° annulus', sigma_v_line_cm3_s:'line σv (LO)', thermal_fraction:'predicted wino fraction', f_max:'max fraction (R 0.794)',
   f_max_at_R_0p658:'max fraction (R 0.658)', limit_mass_GeV:'limit mass', limit_cm3_s:'H.E.S.S. limit', J_over_bench:'J / J_bench', recipe_selfcheck_0p286:'self-check 0.286',
   M_max_Msun:'max neutron-star mass', name:'target', ra:'RA', dec:'Dec'};
-const UNITS = {sigma_fb:'fb', ctau_cm:'cm', expected_reach_GeV:'GeV', M_max_Msun:'M☉', J_IGS_ROI_GeV2_cm5:'GeV²/cm⁵', J_annulus_0p5_3deg_GeV2_cm5:'GeV²/cm⁵', sigma_v_line_cm3_s:'cm³/s', limit_cm3_s:'cm³/s', limit_mass_GeV:'GeV', ra:'°', dec:'°'};
+const UNITS = {sigma_fb:'fb', ctau_cm:'cm', expected_reach_GeV:'GeV', M_max_Msun:'M☉', sum_mnu_eV:'eV', J_IGS_ROI_GeV2_cm5:'GeV²/cm⁵', J_annulus_0p5_3deg_GeV2_cm5:'GeV²/cm⁵', sigma_v_line_cm3_s:'cm³/s', limit_cm3_s:'cm³/s', limit_mass_GeV:'GeV', ra:'°', dec:'°'};
 let STATE = {params:{}, data:null, timer:null, seq:0};
 try { const t = localStorage.getItem('wc-theme'); if (t) document.documentElement.dataset.theme = t; } catch(e) {}
 $('#theme').onclick = () => { const r = document.documentElement; r.dataset.theme = r.dataset.theme === 'light' ? 'dark' : 'light'; try { localStorage.setItem('wc-theme', r.dataset.theme); } catch(e) {} };
@@ -197,6 +197,7 @@ function chartFlavour(L) {
     return `<path d="M${x0},${y0} A${r},${r} 0 ${big} 0 ${x1},${y1}" fill="none" stroke="${col}" stroke-width="${w}" opacity=".85"/>`; };
   let d = `<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="var(--line)"/>`;
   rng.forEach((r, i) => { d += arc(r.value[0], r.value[1], R + 8 + 9 * i, i ? 'var(--violet)' : 'var(--sky)', 6) + `<text x="10" y="${16 + 14*i}" fill="${i ? 'var(--violet)' : 'var(--sky)'}">${esc(r.name.split(' (')[0])}: ${r.value[0]}°–${r.value[1]}°</text>`; });
+  if (o.TM1_dCP_band_s23_051_059) d += arc(o.TM1_dCP_band_s23_051_059[0], o.TM1_dCP_band_s23_051_059[1], R - 4, 'var(--pink)', 5) + `<text x="10" y="44" fill="var(--pink)">TM1 band, s₂₃² 0.51–0.59: ${num(o.TM1_dCP_band_s23_051_059[0],4)}°–${num(o.TM1_dCP_band_s23_051_059[1],4)}°</text>`;
   [[o.TM1_dCP_s23_0561, 'var(--pink)', '0.561'], [o.TM1_dCP_s23_0470, 'var(--tension)', '0.470']].forEach(([bs, col, lab]) => bs.forEach(b => { const [px, py] = pt(b, R); d += `<circle cx="${px}" cy="${py}" r="5" fill="${col}"><title>TM1 δ_CP ${num(b,4)}° (s₂₃² ${lab})</title></circle>`; }));
   d += [0, 90, 180, 270].map(a => { const [px, py] = pt(a, R - 14); return `<text x="${px}" y="${py + 4}" text-anchor="middle">${a}°</text>`; }).join('');
   d += `<text x="10" y="186" >dots: TM1 δ_CP (pink s₂₃² 0.561, amber 0.470)</text>`;

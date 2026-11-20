@@ -56,3 +56,8 @@ def test_w4_flavour_prereg():
     assert o['dCP_reproduces_D1667'] and abs(o['TM1_sin2_theta12'] - 0.3184) < 1e-4 and abs(o['TM2_sin2_theta12_excluded'] - 0.3408) < 1e-4
     assert abs(o['TM1_dCP_s23_0561'][1] - 285.7) < 0.5 and abs(o['TM1_dCP_s23_0470'][1] - 262.4) < 0.5
     assert 'TM1 sin²θ₁₂ vs post-JUNO global' in LV['flavour']['pulls']
+
+def test_w4_v2():
+    o = LV['flavour']['outputs']; lo, hi = o['TM1_dCP_band_s23_051_059']
+    assert lo < 285.7 < hi and o['sum_mnu_eV'] == 0.0587 and LV['flavour']['status'] == 'pass'
+    assert any('CHOSEN BY THE DATA' in x for x in LV['flavour']['labels'])
