@@ -414,7 +414,7 @@ def control(args):
         from tools.weave_control import engine as E
         r = E.run(); bad = [l['id'] for l in r['levels'] if l.get('error')]
         print('weave control selftest:', len(r['levels']), 'levels;', 'errors: ' + ', '.join(bad) if bad else 'no errors')
-        for l in r['levels']: print(f"  {l['category']} {l['name']}: {l['status']}")
+        for l in r['levels']: print(f"  {l['category']} {l['name']}: {l['status']}" + (f"  ERROR {l['error']}" if l.get('error') else ''))
         if bad or len(r['levels']) != 8: sys.exit(1)
         return
     import threading, webbrowser

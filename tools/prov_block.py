@@ -10,6 +10,8 @@ import datetime, json, os, subprocess
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def version():
+    bv = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_build_version.txt')   # written by the exe build (no git inside an exe)
+    if os.path.exists(bv): return open(bv, encoding='utf-8').read().strip()
     try:
         h = subprocess.run(['git', '-C', ROOT, 'rev-parse', '--short', 'HEAD'], capture_output=True, text=True, timeout=5).stdout.strip()
         d = subprocess.run(['git', '-C', ROOT, 'status', '--porcelain', '--untracked-files=no'], capture_output=True, text=True, timeout=5).stdout.strip()

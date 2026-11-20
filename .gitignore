@@ -63,3 +63,4 @@ apps/sarah_sky/android/build/
 apps/sarah_sky/android/app/build/
 apps/sarah_sky/android/app/src/main/assets/sarah_sky/
 apps/sarah_sky/out/
+tools/_build_version.txt

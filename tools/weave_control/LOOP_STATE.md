@@ -155,6 +155,7 @@ U-R8 (minor) Printing: the light theme exists, but there is no print stylesheet 
 Strengths a referee would note: one parameter set drives every level; sources and P/F/G labels on every panel; nested-guard, ΔAIC, and halo dependence shown rather than hidden; the Studio hook.
 
 ## Done log
+- 05:42 CT A/packaging E2 (exe): build-executables run 44728408158 — Linux and macOS PASS all self-tests incl. `control --selftest`; Windows FAILED only on the Sky level: Windows opens text files as cp1252, and apps/skymap/data/stars.json is UTF-8 (Greek letters) → UnicodeDecodeError (reproduced: cp1252 read of stars.json fails). Fixed: encoding='utf-8' in planner, finder, snapshot; selftest now prints each level's error; the exe now stamps its code version (tools/_build_version.txt, written at build, git is absent inside an exe — Windows showed 'code unknown'). Re-dispatched the exe build.
 - 05:38 CT W4/P postulate: PREREG_W4_FLAVOUR locked (TM1 sin²θ₁₂ formula, δ_CP must reproduce D1667/D1669 to ±0.5°, status from post-JUNO global); packaging V2 waits on the exe run (APK rebuild with fixed key: SUCCESS; tools CI: SUCCESS on 1d9e870a)
 - 05:35 CT CI: tools GREEN on f5edc931 (first time since 19 Nov 09:27); 9aa71df8 failed on a flaky golden drift (item I). W4 research: global sin²θ₁₂ after JUNO = 0.3085 ± 0.0073 (arXiv:2511.21650).
 - 04:50 CT W1/F referee: 9 points (3 major)

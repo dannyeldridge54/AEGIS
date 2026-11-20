@@ -12,10 +12,10 @@ SITES = {'okc': (35.4676, -97.5164, 366.0, 'Oklahoma City, OK'), 'greenwich': (5
 def catalogue(which=('messier', 'stars')):
     out = []
     if 'messier' in which:
-        for o in json.load(open(os.path.join(SKY, 'messier.json')))['objects']:
+        for o in json.load(open(os.path.join(SKY, 'messier.json'), encoding='utf-8'))['objects']:
             out.append(dict(name=o['id'] + (f" ({o['common']})" if o.get('common') else ''), kind=o['type'], mag=o.get('mag'), ra=o['ra'], dec=o['dec']))
     if 'stars' in which:
-        for s in json.load(open(os.path.join(SKY, 'stars.json')))['stars']:
+        for s in json.load(open(os.path.join(SKY, 'stars.json'), encoding='utf-8'))['stars']:
             out.append(dict(name=s.get('name') or s.get('desig'), kind='star', mag=s.get('mag'), ra=s['ra'], dec=s['dec']))
     return out
 

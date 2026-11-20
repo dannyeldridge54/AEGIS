@@ -41,7 +41,7 @@ def build(out_dir):
         for i, t in enumerate(GRID['sky']['target']):
             finder.chart(t, field_deg=6, fov_arcmin=(60,), out=os.path.join(out_dir, f'finder_{i}.png'), invert=False)
     snap['seconds'] = round(time.time() - t0, 1)
-    json.dump(snap, open(os.path.join(out_dir, 'snapshot.json'), 'w'), default=lambda o: float(o) if hasattr(o, '__float__') else str(o))
+    json.dump(snap, open(os.path.join(out_dir, 'snapshot.json'), 'w', encoding='utf-8'), default=lambda o: float(o) if hasattr(o, '__float__') else str(o))
     n = sum(len(v) for v in snap['levels'].values()); print(f'snapshot: {n} level states in {snap["seconds"]} s → {out_dir}')
     return snap
 

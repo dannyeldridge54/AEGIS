@@ -22,6 +22,7 @@ jobs:
         shell: bash
         run: |
           SEP=":"; [ "$RUNNER_OS" = "Windows" ] && SEP=";"
+          echo "${GITHUB_SHA::8} (exe build $(date -u +%Y-%m-%d))" > tools/_build_version.txt
           pyinstaller --onefile --name aegis-${RUNNER_OS} --paths . \
             --add-data "tools/lhc/data${SEP}tools/lhc/data" --add-data "tools/release_smoketest.py${SEP}tools" --add-data "LICENSE${SEP}." --add-data "data/desi${SEP}data/desi" --add-data "tools/tracker/track.py${SEP}tools/tracker" --add-data "tools/tracker/predictions.yaml${SEP}tools/tracker" --add-data "tools/aion/aion/templates${SEP}aion/templates" \
             --hidden-import tools.lhc.xsec --hidden-import tools.lhc.lifetime --hidden-import tools.lhc.recast_dt --hidden-import tools.lhc.stats \
@@ -29,7 +30,7 @@ jobs:
             --hidden-import tools.lattice.lattice_lab --hidden-import tools.kaluza.scalar --hidden-import tools.kaluza.stability --hidden-import tools.janus_calc.core --hidden-import tools.janus_calc.anyV \
             --hidden-import tools.chem.wavelength --hidden-import tools.power.circuits --hidden-import tools.sound.engine --hidden-import tools.serapis_calc.emulator --hidden-import tools.serapis_calc.meter --hidden-import tools.serapis_calc.modular --hidden-import tools.serapis_calc.eisenstein --hidden-import tools.serapis_calc.selftest --hidden-import tools.serapis_calc.modint --hidden-import tools.serapis_calc.shapes --hidden-import tools.janus_lt.background --hidden-import tools.janus_lt.desi --hidden-import tools.janus_lt.growth --hidden-import tools.janus_astro.galaxy --hidden-import tools.janus_astro.fast --hidden-import tools.janus_astro.mapper_feed --hidden-import tools.janus_astro.mapper_orbits --hidden-import tools.janus_astro.const --hidden-import tools.janus_astro.jfactor --collect-all galpy --collect-all camb --hidden-import tools.janus_astro.bbn --paths tools/aion --hidden-import aion.cli --hidden-import aion.core \
             --paths tools/scorecard --hidden-import inflation_scorecard.cli --hidden-import inflation_scorecard.core --hidden-import inflation_scorecard.janus --add-data "tools/scorecard/inflation_scorecard/data${SEP}inflation_scorecard/data" \
-            --add-data "tools/weave_control/ui${SEP}tools/weave_control/ui" --add-data "tools/mapper/data${SEP}tools/mapper/data" --add-data "apps/skymap/data${SEP}apps/skymap/data" \
+            --add-data "tools/_build_version.txt${SEP}tools" --add-data "tools/weave_control/ui${SEP}tools/weave_control/ui" --add-data "tools/mapper/data${SEP}tools/mapper/data" --add-data "apps/skymap/data${SEP}apps/skymap/data" \
             --hidden-import tools.weave_control.engine --hidden-import tools.weave_control.server --hidden-import tools.mapper.finder --hidden-import tools.mapper.planner \
             --hidden-import tools.janus_calc.settings --hidden-import tools.janus_astro.settings --hidden-import tools.janus_astro.sommerfeld_nlo --hidden-import tools.janus_astro.serapis_inputs \
             --hidden-import tools.janus_astro.ns --hidden-import tools.lhc.settings --hidden-import tools.prov_block --hidden-import tools.serapis_calc.p3s --hidden-import matplotlib.backends.backend_agg \

@@ -13,7 +13,7 @@ from . import planner
 DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'hip_mag8.csv')
 
 def stars():
-    rows = [r for r in csv.reader(l for l in open(DATA) if not l.startswith('#'))][1:]
+    rows = [r for r in csv.reader(l for l in open(DATA, encoding='utf-8') if not l.startswith('#'))][1:]
     a = np.array([[float(r[1]), float(r[2]), float(r[3])] for r in rows]); return a[:, 0], a[:, 1], a[:, 2]
 
 def resolve(target):
