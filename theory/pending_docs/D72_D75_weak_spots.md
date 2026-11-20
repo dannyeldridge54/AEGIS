@@ -16880,3 +16880,11 @@ Checked against Pettorino & Baccigalupi, arXiv:0802.1086 (coupled quintessence, 
 - Velocity force: our +bk²δφ gives G_eff = G(1 + 2b²), the paper's stated G* = G(1 + 2C²) (scalar exchange between like particles attracts, whatever the sign of b). The velocity line as extracted from the paper's PDF reads −k(Φ + Cδφ), which with their own δφ would give 1 − 2C², contradicting their G*; so that line is taken as an extraction/typo issue, and our sign stands (it is also what CLASS reproduced in D1713's growth test).
 - The extra synchronous-gauge pieces (θ_c ≠ 0 kept, h'/2 terms) follow from the same equations with Φ' → h'/6-type metric terms; not separately checked in the literature (no synchronous-gauge source fetched).
 Verdict: D1713's patch is consistent with the standard coupled-quintessence equations. No correction.
+
+## D1715 (CENTRE/REVIEW, 19 Nov 2026) — super-horizon check of the coupled CLASS model (Q17): PASS (computed)
+The open caveat of D1713 was the large-scale gauge behaviour of the new coupled terms. Test: the Newtonian potential φ(a)/φ_ini at k = 10⁻⁴ and 10⁻³ Mpc⁻¹ through matter–radiation equality, coupled (D1710 point, b = −0.074) vs uncoupled thread.
+- k = 10⁻⁴: uncoupled 1.000, 0.975, 0.931, 0.914 at a = 10⁻⁴, 10⁻³, 10⁻², 0.1; coupled 1.000, 0.976, 0.932, 0.916.
+- k = 10⁻³: uncoupled 0.966, 0.914, 0.890; coupled 0.966, 0.915, 0.886.
+- ψ/φ at a = 0.01: 0.975 vs 0.975 (neutrino anisotropic stress, unchanged).
+The coupled run follows the standard adiabatic evolution (the ≈ 9/10 drop through equality), differing by ≤ 0.4% (expected from the coupling's slightly different background). No spurious growth or gauge mode.
+Verdict: the D1713 caveat is closed at this level. The patch is validated in background (3e-7), sub-horizon growth (1e-5) and super-horizon evolution.

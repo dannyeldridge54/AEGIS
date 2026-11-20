@@ -28,5 +28,5 @@ Q13. [DONE D1714: PASS] REVIEW D1713's coupled equations against the literature 
 Q14. Collect the 9 CLASS full-Planck fits (PREREG_PLANCK_CLASS): ΛCDM gate first, then score per lock.
 Q15. Collect the D1712 uncoupled CAMB reruns (CXUNC4_*), record next to D1636's thread rows.
 Q16. DERIVE (after Q14): lock a DR3/Euclid forecast of the coupled thread at its CLASS best fit — fσ8(z) and the effective w(z) — so it is scored only on future data.
-Q17. REVIEW: super-horizon check of the coupled CLASS model — does the adiabatic curvature ζ stay constant outside the horizon (k = 1e-4/Mpc) with b ≠ 0? Small CLASS run, cloud.
+Q17. [DONE D1715: PASS] REVIEW: super-horizon check of the coupled CLASS model — does the adiabatic curvature ζ stay constant outside the horizon (k = 1e-4/Mpc) with b ≠ 0? Small CLASS run, cloud.
 Q18. POSTULATE: update C8 in WEAVE_POSTULATES.md with whatever Q14 gives.
