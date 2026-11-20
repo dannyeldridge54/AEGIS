@@ -16719,3 +16719,10 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - New doc theory/pending_docs/SPACE_HUNT.md: target table plus pass-1 scoring.
 - Hits: (1) sign-switching dark energy (negative early, positive since z ≈ 1.5; Akarsu et al. PRD 2025): TENSION with the exact reverse thread (never negative). It is a NEW IDEA test, though the Zhinü V₀ ≥ 0 forbids a negative phase for that potential itself. (2) DES final, ~3σ for weakening dark energy: MATCH in direction. (3) IceCube UHE neutrinos, Euclid first look, and the new interstellar sulfur ring: NEUTRAL.
 - Needs Danny: OK to download the DESI DR2 public chains for a real-posterior re-score.
+
+## D1692 RESULT (19 Nov 2026) — REAL DATA (DESI DR2 BAO + DES-SN5YR Dovekie, no CMB): the Weave reverse thread matches CPL with ONE parameter; "negative space" (sign-switching Λ) does nothing
+- Sanity ✓: ΛCDM Ω_m = 0.306 (window 0.28–0.34). χ²_ΛCDM = 1645.33.
+- CPL (2 extra parameters): Δχ² = −7.21 at (Ω_m, w₀, w_a) = (0.314, −0.843, −0.533).
+- Weave thread (1 extra, β = 2√2, leading order): Δχ² = −7.01 at Ω_m = 0.305, amp = 0.174. That is within 0.20 of CPL (rule ≤ 2.3 ✓): the thread captures ~97% of CPL's improvement with half the parameters.
+- Sign-switching ΛsCDM (1 extra): Δχ² ≈ 0. Its best z† = 2.37 is pushed past the highest data redshift (2.33), i.e. no switch is wanted. "Negative space preferred" = FALSE.
+- This is the first real-likelihood test (it replaces the Gaussian approximation of D1627–D1628): the reverse thread is supported at Δχ² = −7 on BAO + SN alone. Caveats: no CMB; the Dovekie SN set is not the one DESI used; leading-order curve (D1638: the exact curve differs ~4%); post-data model.
