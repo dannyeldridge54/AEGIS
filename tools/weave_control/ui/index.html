@@ -87,11 +87,27 @@ $('#dl').onclick = () => { if (!STATE.data) return; const b = new Blob([JSON.str
 $('#link').onclick = async () => { const url = location.origin + location.pathname + '#' + encodeURIComponent(JSON.stringify(STATE.params));
   history.replaceState(null, '', url); try { await navigator.clipboard.writeText(url); $('#link').textContent = 'Link copied'; } catch(e) { $('#link').textContent = 'Link in address bar'; } setTimeout(() => $('#link').textContent = 'Copy link', 1800); };
 
-// transport: inside Studio use pywebview, otherwise the local server
+// transport: inside Studio use pywebview; otherwise the local server; if neither exists (phone APK, a plain file)
+// use the OFFLINE SNAPSHOT (snapshot.json): precomputed engine results on a stated grid, no interpolation (W10, rule X4).
+let SNAP = null;
+async function loadSnapshot() { const r = await fetch('snapshot.json'); if (!r.ok) throw new Error('no engine and no offline snapshot'); SNAP = await r.json(); }
+function compose(params) {
+  const p = Object.assign({}, SNAP.defaults, params), levels = [];
+  for (const [lid, g] of Object.entries(SNAP.grid)) {
+    const keys = Object.keys(g), want = keys.map(k => p[k]);
+    const hit = Object.entries(SNAP.levels[lid]).find(([k]) => { const v = JSON.parse(k); return v.every((x, i) => x == want[i]); });
+    levels.push(hit ? hit[1] : {id: lid, name: lid, category: '?', tool: '—', inputs: {}, outputs: {}, data: [], pulls: {}, status: 'open', labels: ['this setting is not in the offline snapshot'], links: [], error: 'not in the offline snapshot: choose a listed value'});
+  }
+  return {params: p, levels, knobs: SNAP.knobs, provenance: SNAP.provenance, offline: true};
+}
 async function call(params) {
   if (window.pywebview && window.pywebview.api && window.pywebview.api.weave_run) return JSON.parse(await window.pywebview.api.weave_run(JSON.stringify(params)));
-  const r = await fetch('/api/run', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(params)});
-  const j = await r.json(); if (!r.ok) throw new Error(j.error || r.status); return j;
+  if (!SNAP) {
+    try { const r = await fetch('/api/run', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(params)});
+          const j = await r.json(); if (!r.ok) throw new Error(j.error || r.status); return j; }
+    catch (e) { await loadSnapshot(); }
+  }
+  return compose(params);
 }
 async function run() {
   const my = ++STATE.seq; document.querySelectorAll('.panel').forEach(p => p.classList.add('busy'));
@@ -161,13 +177,15 @@ function chartStars(L) {
 function chartSky(L) {
   const o = L.outputs, t = encodeURIComponent(STATE.data.params.target);
   const gc = (o.science_targets || [])[0];
-  return (window.pywebview ? '' : `<img class="finder" alt="Finder chart for ${esc(o.name)}" src="/api/finder?target=${t}&field=6&v=${STATE.seq}">`) +
+  const src = SNAP ? (() => { const i = SNAP.grid.sky.target.indexOf(STATE.data.params.target); return i >= 0 ? `finder_${i}.png` : ''; })() : `/api/finder?target=${t}&field=6&v=${STATE.seq}`;
+  return (window.pywebview || !src ? '' : `<img class="finder" alt="Finder chart for ${esc(o.name)}" src="${src}">`) +
     (gc ? `<p class="notes">Science target from the Galaxy level: ${esc(gc.name)} at RA ${gc.ra}°, Dec ${gc.dec}°. <button data-target="${gc.ra},${gc.dec}" class="goto">Chart it</button></p>` : '');
 }
 const CHARTS = {inflation: chartInflation, bbn: chartBBN, late: chartLate, colliders: chartColliders, galaxy: chartGalaxy, stars: chartStars, sky: chartSky};
 
 // ---------- render ----------
-function knobHTML(k, v) {
+function knobHTML(k, v, level) {
+  if (SNAP && SNAP.grid[level] && SNAP.grid[level][k.key]) k = Object.assign({}, k, {type: 'select', options: SNAP.grid[level][k.key]});   // offline: only grid values
   const id = `k-${k.key}-${Math.random().toString(36).slice(2,7)}`, lab = `${esc(k.label)}${k.unit ? ' (' + esc(k.unit) + ')' : ''}`;
   if (k.type === 'select') return `<label for="${id}">${lab}<select id="${id}" data-k="${k.key}">${k.options.map(o => `<option ${o == v ? 'selected' : ''}>${esc(o)}</option>`).join('')}</select></label>`;
   if (k.type === 'text') return `<label for="${id}">${lab}<input id="${id}" data-k="${k.key}" value="${esc(v)}" autocomplete="off"></label>`;
@@ -178,12 +196,12 @@ function reads(o) {
          Object.entries(o).filter(([k, v]) => Array.isArray(v) && v.every(x => typeof x === 'number')).map(([k, v]) => `<div class="rd"><b>${v.map(x => num(x, 3)).join(k === 'thermal_fraction' ? ' – ' : ', ')}</b><span>${esc(NAMES[k] || k.replace(/_/g, ' '))}${k === 'thermal_fraction' ? ' (range)' : ''}</span></div>`).join('');
 }
 function render(d) {
-  const P = d.provenance || {}; $('#meta').textContent = `code ${P.version || '?'} · ${P.created_utc || ''}`;
+  const P = d.provenance || {}; $('#meta').textContent = (d.offline ? 'OFFLINE SNAPSHOT · ' : '') + `code ${P.version || '?'} · ${d.offline ? 'built ' : ''}${P.created_utc || ''}`;
   const worst = s => ['fail','tension','pass','open'].find(x => s.includes(x)) || 'open';
   $('#score').innerHTML = Object.keys(CAT).map(c => { const ls = d.levels.filter(l => l.category === c); const st = worst(ls.map(l => l.status));
     return `<button class="cat" data-jump="${ls[0] ? ls[0].id : ''}" title="${esc(ls.map(l => l.name + ': ' + l.status + (l.labels.some(x => x.includes('PREDICTIONS only')) ? ' (graded on r only; n_s is fitted)' : '')).join(' · '))}"><span class="lamp s-${st}" aria-hidden="true"></span>${c} · ${CAT[c]} <span class="sw s-${st}">${st}</span></button>`; }).join('');
   $('#main').innerHTML = d.levels.map(L => {
-    const kn = (d.knobs[L.id] || []).map(k => knobHTML(k, d.params[k.key])).join('');
+    const kn = (d.knobs[L.id] || []).map(k => knobHTML(k, d.params[k.key], L.id)).join('');
     const pulls = Object.entries(L.pulls || {}); const chart = CHARTS[L.id] ? CHARTS[L.id](L) : '';
     return `<section class="panel" id="p-${L.id}" aria-labelledby="h-${L.id}">
       <div class="ph"><h2 id="h-${L.id}">${esc(L.name)}</h2><span class="tag">${L.category} · ${esc(L.tool)}</span><span class="sw s-${L.status}"><span class="lamp s-${L.status}" aria-hidden="true"></span> ${L.status}</span></div>
@@ -195,7 +213,7 @@ function render(d) {
       <ul class="notes">${L.labels.map(x => `<li>${esc(x)}</li>`).join('')}${L.links.map(x => `<li>↔ ${esc(x)}</li>`).join('')}</ul>
       ${L.data.length ? `<details><summary>Data and sources (${L.data.length})</summary><ul class="notes">${L.data.map(x => `<li>${esc(x.name)}${x.value != null ? ': ' + num(x.value) : ''}${x.sigma != null ? ' ± ' + (Array.isArray(x.sigma) ? x.sigma.join('/') : x.sigma) : ''}${x.limit != null ? ' (limit ' + num(x.limit) + ')' : ''} — ${esc(x.source)}</li>`).join('')}</ul></details>` : ''}
     </section>`; }).join('');
-  document.querySelectorAll('[data-k]').forEach(el => el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', () => setParam(el.dataset.k, el.type === 'number' ? parseFloat(el.value) : el.value)));
+  document.querySelectorAll('[data-k]').forEach(el => el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', () => setParam(el.dataset.k, el.type === 'number' || (el.tagName === 'SELECT' && el.value !== '' && !isNaN(el.value) && !el.value.includes(',')) ? parseFloat(el.value) : el.value)));
   document.querySelectorAll('[data-jump]').forEach(b => b.onclick = () => { const t = document.getElementById('p-' + b.dataset.jump); if (t) t.scrollIntoView({behavior: 'smooth', block: 'start'}); });
   document.querySelectorAll('.goto').forEach(b => b.onclick = () => { STATE.params.target = b.dataset.target; run(); });
 }

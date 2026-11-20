@@ -1,0 +1,62 @@
+# W10: Android APKs for the AEGIS web apps, one WebView shell (apps/android_shell) per app.
+# Weave Control ships an OFFLINE SNAPSHOT (precomputed engine results on a stated grid; no interpolation), because a phone
+# cannot run the Python engine. Published to the apk-dist branch beside SarahsSky.apk (which is kept).
+name: AEGIS apps APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [ unify-bg ]
+    paths: [ 'apps/android_shell/**', 'apps/skymap/**', 'tools/dashboard/**', 'tools/weave_control/**', '.github/workflows/apps_apk.yml' ]
+permissions:
+  contents: write
+concurrency: { group: apps-apk, cancel-in-progress: true }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { app: skymap,        id: com.eldridge.aegis.skymap,       name: "AEGIS Sky Map",        start: "skymap/index.html",        loc: "true",  apk: AEGIS_SkyMap.apk }
+          - { app: dashboard,     id: com.eldridge.aegis.dashboard,    name: "AEGIS Dashboard",      start: "dashboard/index.html",     loc: "false", apk: AEGIS_Dashboard.apk }
+          - { app: weave_control, id: com.eldridge.aegis.weavecontrol, name: "Weave Control",        start: "weave_control/index.html", loc: "false", apk: Weave_Control.apk }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '17' }
+      - uses: gradle/actions/setup-gradle@v4
+        with: { gradle-version: '8.9' }
+      - name: Stage web files
+        run: |
+          A=apps/android_shell/app/src/main/assets; mkdir -p $A
+          case "${{ matrix.app }}" in
+            skymap)    mkdir -p $A/skymap && cp -r apps/skymap/index.html apps/skymap/css apps/skymap/js apps/skymap/data apps/skymap/icons apps/skymap/vendor apps/skymap/manifest.webmanifest $A/skymap/ ;;
+            dashboard) pip install -q numpy scipy mpmath numba pyhf astropy camb matplotlib && python -m tools.dashboard.build && mkdir -p $A/dashboard && cp tools/dashboard/index.html tools/dashboard/data.json $A/dashboard/ ;;
+            weave_control) pip install -q numpy scipy mpmath numba pyhf astropy camb matplotlib && mkdir -p $A/weave_control && python -m tools.weave_control.snapshot $A/weave_control && cp tools/weave_control/ui/index.html $A/weave_control/ ;;
+          esac
+          du -sh $A/*; ls $A/*
+      - name: Build APK
+        working-directory: apps/android_shell
+        run: |
+          VN="$(date -u +%Y.%m.%d)-${GITHUB_SHA::7}"
+          gradle assembleDebug --no-daemon --stacktrace -PappId=${{ matrix.id }} -PappName="${{ matrix.name }}" -PstartPath=${{ matrix.start }} \
+                 -PneedsLocation=${{ matrix.loc }} -PversionName="$VN" -PversionCode=${{ github.run_number }}
+          mkdir -p ../../out && cp app/build/outputs/apk/debug/app-debug.apk ../../out/${{ matrix.apk }} && ls -la ../../out
+      - uses: actions/upload-artifact@v4
+        with: { name: "${{ matrix.apk }}", path: "out/${{ matrix.apk }}", if-no-files-found: error }
+  publish:
+    needs: build
+    if: github.ref == 'refs/heads/unify-bg'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: apks, merge-multiple: true }
+      - name: Add to the apk-dist branch (keeps SarahsSky.apk)
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          git clone --depth 1 --branch apk-dist "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" dist || { mkdir dist && cd dist && git init -b apk-dist && git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" && cd ..; }
+          mkdir -p dist/dist && cp apks/*.apk dist/dist/ && cd dist
+          git config user.name "aegis-apk-bot"; git config user.email "noreply@anthropic.com"
+          git add -f dist/*.apk && git commit -m "AEGIS app APKs ${GITHUB_SHA::7}" && git push origin apk-dist

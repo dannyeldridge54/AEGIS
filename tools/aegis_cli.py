@@ -407,6 +407,25 @@ def menu(args):
         except (ValueError, IndexError): print('Not a choice.')
         except Exception as e: print('Error:', e)
 
+def control(args):
+    """Weave Control: one parameter set drives every level. `aegis control [port]` opens it in your browser;
+    `aegis control --selftest` runs the engine once and checks all 8 levels (used by the exe build)."""
+    if args and args[0] == '--selftest':
+        from tools.weave_control import engine as E
+        r = E.run(); bad = [l['id'] for l in r['levels'] if l.get('error')]
+        print('weave control selftest:', len(r['levels']), 'levels;', 'errors: ' + ', '.join(bad) if bad else 'no errors')
+        for l in r['levels']: print(f"  {l['category']} {l['name']}: {l['status']}")
+        if bad or len(r['levels']) != 8: sys.exit(1)
+        return
+    import threading, webbrowser
+    from http.server import ThreadingHTTPServer
+    from tools.weave_control.server import H
+    port = int(args[0]) if args else 8790
+    srv = ThreadingHTTPServer(('127.0.0.1', port), H); url = f'http://127.0.0.1:{port}/'
+    print(f'Weave Control on {url}  (Ctrl+C to stop)'); threading.Timer(0.8, lambda: webbrowser.open(url)).start()
+    try: srv.serve_forever()
+    except KeyboardInterrupt: print('stopped')
+
 def doctor(args):
     from tools import doctor as D
     d = D.check(); _show(d['packages']); print(f"\nPython {d['python']}.  Missing: {', '.join(d['missing']) or 'none'}\nFix: {d['fix']}")
@@ -431,7 +450,7 @@ def main(argv=None):
         try: st.reconfigure(encoding='utf-8', errors='replace')
         except Exception: pass
     _root(); argv = sys.argv[1:] if argv is None else argv
-    cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'mapper': mapper, 'doctor': doctor, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'string': string, 'test': test, 'license': license_, 'menu': menu}
+    cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'mapper': mapper, 'doctor': doctor, 'control': control, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'string': string, 'test': test, 'license': license_, 'menu': menu}
     if '--format' in argv:
         i = argv.index('--format')
         if i + 1 >= len(argv) or argv[i + 1] not in ('json', 'csv', 'table'):

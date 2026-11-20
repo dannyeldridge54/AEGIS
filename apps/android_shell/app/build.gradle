@@ -1,0 +1,32 @@
+// One Android WebView shell for every AEGIS web app (W10). The CI matrix passes:
+//   -PappId=com.eldridge.aegis.skymap -PappName="AEGIS Sky Map" -PstartPath=skymap/index.html -PversionName=2026.11.20-abc123 -PversionCode=1
+// The web files are copied into app/src/main/assets/<folder>/ before the build.
+plugins { id 'com.android.application' }
+
+def p = { String k, String d -> project.hasProperty(k) ? project.property(k).toString() : d }
+
+android {
+    namespace 'com.eldridge.aegisapp'
+    compileSdk 34
+    defaultConfig {
+        applicationId p('appId', 'com.eldridge.aegis.app')
+        minSdk 24
+        targetSdk 34
+        versionCode p('versionCode', '1').toInteger()
+        versionName p('versionName', 'dev')
+        resValue 'string', 'app_name', p('appName', 'AEGIS')
+        resValue 'string', 'start_path', p('startPath', 'index.html')
+        resValue 'string', 'needs_location', p('needsLocation', 'false')
+    }
+    buildTypes {
+        release { minifyEnabled false }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.webkit:webkit:1.11.0'
+}

@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.Aegis" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">#ff04020b</item>
+        <item name="android:windowBackground">#ff04020b</item>
+    </style>
+</resources>
