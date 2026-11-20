@@ -1,0 +1,286 @@
+{
+ "provenance": {
+  "toolkit": "AEGIS dashboard",
+  "version": "007304c9",
+  "created_utc": "2026-11-20T10:34:39Z",
+  "settings": {
+   "Nstar": 55
+  },
+  "sources": [
+   "Yp:LBT2026 = LBT 2026 (as used in D1191)",
+   "Yp:Aver2021 = Aver et al. 2021, JCAP 03 027",
+   "DH:Cooke2018 = Cooke, Pettini & Steidel 2018, ApJ 855 102",
+   "omega_b:Planck2018 = Planck 2018 TT,TE,EE+lowE+lensing",
+   "vc_sun:Horta2026 = Horta et al. 2026 (as used in D1193; sigma not stored here)"
+  ],
+  "validated_by": [
+   "D1725",
+   "J3b",
+   "D1191"
+  ]
+ },
+ "janus": [
+  {
+   "model": "serapis_10d",
+   "ns": 0.9706477012440691,
+   "r": 0.0005408069332645085,
+   "Nstar": 50.365416750265254,
+   "scores": {
+    "ns:Planck2018": 1.3685002962069268,
+    "ns:ACT-DR6": 0.5256754862427347,
+    "ns:P-ACT": -0.06639440945550346,
+    "ns:P-ACT-LB": -1.074205516450289,
+    "ns:P-ACT-LB2": -1.517432918643628,
+    "ns:SPT-3G-D1": 1.7861546585517378,
+    "ns:CMB-SPA": 0.7492337480230112,
+    "ns:CMB-SPA+DESI": -0.7971476873818244,
+    "r:BK18": "pass",
+    "r:P-ACT+BK18": "pass",
+    "r:PR4+BK18": "pass"
+   }
+  },
+  {
+   "model": "serapis_6d",
+   "ns": 0.9705569396951678,
+   "r": 0.0010688681342163166,
+   "Nstar": 50.56765169508966,
+   "scores": {
+    "ns:Planck2018": 1.3468904036113774,
+    "ns:ACT-DR6": 0.5138882720997077,
+    "ns:P-ACT": -0.09027902758742662,
+    "ns:P-ACT-LB": -1.1009000896565562,
+    "ns:P-ACT-LB2": -1.5476867682773972,
+    "ns:SPT-3G-D1": 1.777903608651619,
+    "ns:CMB-SPA": 0.7189798983892418,
+    "ns:CMB-SPA+DESI": -0.8307630758637903,
+    "r:BK18": "pass",
+    "r:P-ACT+BK18": "pass",
+    "r:PR4+BK18": "pass"
+   }
+  },
+  {
+   "model": "weave_10d",
+   "ns": 0.9639393625515507,
+   "r": 0.0003269069738751614,
+   "Nstar": 55.0,
+   "scores": {
+    "ns:Planck2018": -0.2287232020117428,
+    "ns:ACT-DR6": -0.3455373309674486,
+    "ns:P-ACT": -1.8317466969603486,
+    "ns:P-ACT-LB": -3.0472463083674692,
+    "ns:P-ACT-LB2": -3.753545816149765,
+    "ns:SPT-3G-D1": 1.1763056865046095,
+    "ns:CMB-SPA": -1.4868791494831262,
+    "ns:CMB-SPA+DESI": -3.2817175734997543,
+    "r:BK18": "pass",
+    "r:P-ACT+BK18": "pass",
+    "r:PR4+BK18": "pass"
+   }
+  },
+  {
+   "model": "starobinsky",
+   "ns": 0.9648988815715064,
+   "r": 0.0035497251860093495,
+   "Nstar": 55.0,
+   "scores": {
+    "ns:Planck2018": -0.00026629249847526503,
+    "ns:ACT-DR6": -0.22092447123293907,
+    "ns:P-ACT": -1.5792416917088425,
+    "ns:P-ACT-LB": -2.7650348319099036,
+    "ns:P-ACT-LB2": -3.433706142831191,
+    "ns:SPT-3G-D1": 1.2635346883187661,
+    "ns:CMB-SPA": -1.1670394761645515,
+    "ns:CMB-SPA+DESI": -2.9263401587013385,
+    "r:BK18": "pass",
+    "r:P-ACT+BK18": "pass",
+    "r:PR4+BK18": "pass"
+   }
+  },
+  {
+   "model": "alpha_1_3",
+   "ns": 0.9642231193317485,
+   "r": 0.0012723707163133779,
+   "Nstar": 55.0,
+   "scores": {
+    "ns:Planck2018": -0.16116206386939166,
+    "ns:ACT-DR6": -0.30868580107162075,
+    "ns:P-ACT": -1.757073860066171,
+    "ns:P-ACT-LB": -2.9637884318386827,
+    "ns:P-ACT-LB2": -3.6589602227504736,
+    "ns:SPT-3G-D1": 1.202101757431689,
+    "ns:CMB-SPA": -1.3922935560838345,
+    "ns:CMB-SPA+DESI": -3.176622469722764,
+    "r:BK18": "pass",
+    "r:P-ACT+BK18": "pass",
+    "r:PR4+BK18": "pass"
+   }
+  },
+  {
+   "model": "phi2",
+   "ns": 0.9633848540730457,
+   "r": 0.1440543027779408,
+   "Nstar": 55.0,
+   "scores": {
+    "ns:Planck2018": -0.3607490302271979,
+    "ns:ACT-DR6": -0.41755141908496957,
+    "ns:P-ACT": -1.9776699807774307,
+    "ns:P-ACT-LB": -3.210337037339502,
+    "ns:P-ACT-LB2": -3.938381975651402,
+    "ns:SPT-3G-D1": 1.1258958248223447,
+    "ns:CMB-SPA": -1.6717153089847632,
+    "ns:CMB-SPA+DESI": -3.487091084057129,
+    "r:BK18": "FAIL",
+    "r:P-ACT+BK18": "FAIL",
+    "r:PR4+BK18": "FAIL"
+   }
+  }
+ ],
+ "constraints": {
+  "ns": {
+   "Planck2018": {
+    "value": 0.9649,
+    "sigma": 0.0042,
+    "kind": "gauss",
+    "source": "Planck 2018 TT,TE,EE+lowE+lensing (A&A 641 A10)"
+   },
+   "ACT-DR6": {
+    "value": 0.9666,
+    "sigma": 0.0077,
+    "kind": "gauss",
+    "source": "ACT DR6 alone (Louis et al. 2025, arXiv:2503.14452)"
+   },
+   "P-ACT": {
+    "value": 0.9709,
+    "sigma": 0.0038,
+    "kind": "gauss",
+    "source": "Planck + ACT DR6 (Louis et al. 2025)"
+   },
+   "P-ACT-LB": {
+    "value": 0.9743,
+    "sigma": 0.0034,
+    "kind": "gauss",
+    "source": "Planck + ACT DR6 + lensing + DESI DR1 BAO (Louis et al. 2025)"
+   },
+   "P-ACT-LB2": {
+    "value": 0.9752,
+    "sigma": 0.003,
+    "kind": "gauss",
+    "source": "Planck + ACT DR6 + lensing + DESI DR2 BAO (as quoted in arXiv:2510.18656)"
+   },
+   "SPT-3G-D1": {
+    "value": 0.951,
+    "sigma": 0.011,
+    "kind": "gauss",
+    "source": "SPT-3G D1 alone (Camphuis et al. 2025, arXiv:2506.20707)"
+   },
+   "CMB-SPA": {
+    "value": 0.9684,
+    "sigma": 0.003,
+    "kind": "gauss",
+    "source": "SPT-3G D1 + Planck + ACT (CMB-SPA; Camphuis et al. 2025)"
+   },
+   "CMB-SPA+DESI": {
+    "value": 0.9728,
+    "sigma": 0.0027,
+    "kind": "gauss",
+    "source": "CMB-SPA + DESI DR2 BAO (Camphuis et al. 2025)"
+   }
+  },
+  "r": {
+   "BK18": {
+    "value": 0.036,
+    "sigma": null,
+    "kind": "upper95",
+    "source": "BICEP/Keck 2018 + Planck (95% CL; PRL 127 151301)"
+   },
+   "P-ACT+BK18": {
+    "value": 0.038,
+    "sigma": null,
+    "kind": "upper95",
+    "source": "Planck + ACT DR6 + BK18 (95% CL; ACT DR6 extended-models paper, 2025)"
+   },
+   "PR4+BK18": {
+    "value": 0.032,
+    "sigma": null,
+    "kind": "upper95",
+    "source": "Planck PR4 + BK18, free tau (Tristram et al. 2022, PRD 105 083524)"
+   }
+  }
+ },
+ "hyperion": {
+  "bbn": {
+   "omega_b": 0.02237,
+   "dNeff": 0.0,
+   "code": "primat",
+   "Yp": 0.2471871417270726,
+   "DH": 2.4482576081094778e-05,
+   "pulls": {
+    "Yp:LBT2026": 1.0670320977481578,
+    "Yp:Aver2021": 0.5550416844331193,
+    "DH:Cooke2018": -2.6247463963507416
+   }
+  },
+  "neutron_stars": [
+   {
+    "eos": "SLy",
+    "M_max_Msun": 2.0484133384875958
+   },
+   {
+    "eos": "AP4",
+    "M_max_Msun": 2.1880031346185236
+   }
+  ]
+ },
+ "cern": {
+  "reach": [
+   {
+    "run": "run2",
+    "sqrt_s_TeV": 13.0,
+    "lumi_fb": 140.0,
+    "r_bkg": 1.0,
+    "wino_reach_GeV": 662.411145348077
+   },
+   {
+    "run": "run3",
+    "sqrt_s_TeV": 13.6,
+    "lumi_fb": 300.0,
+    "r_bkg": 1.0,
+    "wino_reach_GeV": 740.1838038831515
+   },
+   {
+    "run": "hl-lhc",
+    "sqrt_s_TeV": 14.0,
+    "lumi_fb": 3000.0,
+    "r_bkg": 1.0,
+    "wino_reach_GeV": 974.4431085489978
+   },
+   {
+    "run": "hl-lhc-ult",
+    "sqrt_s_TeV": 14.0,
+    "lumi_fb": 4000.0,
+    "r_bkg": 1.0,
+    "wino_reach_GeV": 1001.2748457032068
+   }
+  ]
+ },
+ "planck": [
+  {
+   "set": "Pantheon+",
+   "d_thread": -2.6200000000003456,
+   "d_coupled": -0.4800000000000182,
+   "guard": "NESTED VIOLATION\n  coupled chi2 is 2.14 ABOVE thread, which it contains: minimiser failed"
+  },
+  {
+   "set": "DES-Y5",
+   "d_thread": -8.139999999999873,
+   "d_coupled": -9.029999999999745,
+   "guard": "NESTED OK"
+  },
+  {
+   "set": "Union3",
+   "d_thread": -3.380000000000109,
+   "d_coupled": -2.7000000000000455,
+   "guard": "NESTED VIOLATION\n  coupled chi2 is 0.68 ABOVE thread, which it contains: minimiser failed"
+  }
+ ]
+}
