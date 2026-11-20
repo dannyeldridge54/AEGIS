@@ -25,9 +25,11 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W2 links · next stage: V1 review (E1 done 04:57 CT).
+Item W2 links · next stage: E2 engineer (V1 done 04:56 CT, findings below).
 E1 results under PREREG_W2_LINKS: L1 self-check Burkert ρ☉ 0.40 → f_max 0.286 (PASS, matches D1322). 1 TeV wino f_pred 0.124–0.205: Einasto(20, 0.17) ρ☉ 0.40 f_max 0.139 → TENSION; NFW(20) 0.198 → TENSION; Burkert(3.37) 0.286 → PASS. So the gamma-line verdict depends on the halo core, as D1322 found; W1's shortcut verdict is replaced. L3 S₈ (locked fits): all |pull| < 2; thread 0.808–0.813 vs KiDS −0.1 to −0.4σ and vs CMB lensing −1.3 to −1.7σ; coupled Union3 0.828 (+0.6σ / +0.0σ). L2 Lyα shown as context. L4 label. L5 GC annulus passed to the Sky level.
-For V1: (a) IntegrationWarnings from jfactor.quad for NFW/Einasto (roundoff/slow convergence) — check the J ratio against route A or a finer grid before trusting NFW's 0.198; (b) S8_FITS values were read from the PC JSON by hand-copy into the engine: verify against the files (4 d.p.) and cite the file names; (c) the asymmetric KiDS σ choice follows the lock.
+V1 checked (a)–(c): (a) annulus J by route A vs route B: Einasto −1.6e-4, NFW −6.5e-3, Burkert 1e-7; a finer route-B grid changes nothing (≤ 4e-5). f_max ∝ J^-½, so NFW's 0.198 is good to 0.3%: the warnings are harmless (quad tolerance 1e-10 is just very strict). (b) S8_FITS match the PC files to 4 d.p. for all 9 entries (lcdm 0.8127/0.8148/0.8137; thread 0.8093/0.8080/0.8128; coupled 0.8124 [nested], 0.8083 [nested], 0.8283 [orig]). (c) KiDS asymmetric σ as locked.
+V1 findings for E2: F1 the galaxy output shows the IGS-ROI J (settings.jfactor) beside an f_max computed from the 0.5°–3° annulus: label both, or show the annulus J too; F2 silence the harmless IntegrationWarnings in the engine only (not in jfactor.py) and record why; F3 the S₈ result sits in its own field, but the level card should show it: add an 'S₈' sub-status line; F4 cite the PC file names for S8_FITS in the code comment.
+Old note: (a) IntegrationWarnings from jfactor.quad for NFW/Einasto (roundoff/slow convergence) — check the J ratio against route A or a finer grid before trusting NFW's 0.198; (b) S8_FITS values were read from the PC JSON by hand-copy into the engine: verify against the files (4 d.p.) and cite the file names; (c) the asymmetric KiDS σ choice follows the lock.
 W2 scope: dark sector → ΔN_eff → BBN (done in W1, keep); N*/T_rh → BBN; wino mass → gamma line (done at 1 TeV only, needs the H.E.S.S. limit curve vs mass + check of PSR J0740 value, R6); J-factor region → Sky level; b_A → G_eff → S₈ and z† → H(z) at z 2–5 vs DESI Lyα BAO. Research first: H.E.S.S./CTAO line-limit curve (mass vs σv), DESI DR2 Lyα BAO D_H/r_d at z = 2.33, newest J0740 mass, S₈ values.
 Postulate W1: every level returns {category, inputs, outputs, data[{name,value,sigma|limit,source}], pulls, status ∈ pass/tension/fail/open}; nothing typed in by hand except measured data with a source; fits labelled F; a test per level.
 Notes: wino gamma-line σv — checked: the D1322 '/1e6' is M² in GeV² at 1 TeV, so π α²/M² is the general tree form; the M dependence of the Sommerfeld factor comes from wino_s_nlo itself. At 1 TeV the engine reproduces 1.42e-26 (same formula as the smoke test).
@@ -64,6 +66,7 @@ W2 research notes (04:53 CT):
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 04:56 CT W2/V1 review: J cross-checked (≤ 0.65%), S8 verified, 4 small findings
 - 04:57 CT W2/E1 engineer: L1–L5 built; 9 tests pass
 - 04:54 CT W2/P postulate: PREREG_W2_LINKS locked (L1 exact D1322 recipe with 0.286 self-check; L2 Lyα display-only, not independent; L3 S₈ pulls vs KiDS-Legacy and CMB lensing; L4 label; L5 GC sky target)
 - 04:53 CT W2/R research: Lyα BAO, S₈ (3 values), J0740 unchanged, H.E.S.S. recipe finding
