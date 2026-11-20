@@ -123,8 +123,58 @@ def weave_atomic(a):
                 note='vibrational frequencies scale as mu^-1/2, rotational as mu^-1, bond lengths as a0 ~ 1/(m_e alpha)', label='S')
 
 
+# ---- both directions: the i-side / arc of the twin ladder, back in time (dimension ladder), forward (negative space) ----
+def _V_sugra(x, y, m, n):
+    N = np.arange(1, 41)
+    def sig(k): return np.array([sum(d ** k for d in range(1, q + 1) if q % d == 0) for q in N], float)
+    global _SIG
+    try: S1, S3, S5 = _SIG
+    except NameError: _SIG = (sig(1), sig(3), sig(5)); S1, S3, S5 = _SIG
+    t = complex(x, y); q = np.exp(2j * np.pi * t); qn = q ** N
+    E2 = 1 - 24 * np.sum(S1 * qn); E4 = 1 + 240 * np.sum(S3 * qn); E6 = 1 - 504 * np.sum(S5 * qn)
+    eta = np.exp(2j * np.pi * t / 24) * np.prod(1 - qn); j = 1728 * E4 ** 3 / (E4 ** 3 - E6 ** 2); jp = -2j * np.pi * j * E6 / E4
+    H2 = abs(j - 1728) ** m * (abs(j) ** (2 * n / 3) if n else 1)
+    dl = (m / 2) * jp / (j - 1728) + ((n / 3) * jp / j if n else 0) - (1j * np.pi / 2) * E2 + 3j / (2 * y)
+    return (2 * y) ** -3 * H2 / abs(eta) ** 12 * ((4 * y * y / 3) * abs(dl) ** 2 - 3)
+
+
+def weave_arc(a):
+    """Minimum of the SUGRA class (m,n) (W ~ (j-1728)^(m/2) j^(n/3) / eta^6, K = -3 ln(2 Im tau)), computed directly (Q11 method, D1736).
+    n=0: CP-violating rung near rho; m=0: at i; both > 0: on the CP-conserving arc |tau| = 1, position set mainly by m:n."""
+    from scipy.optimize import minimize
+    m, n = int(a.get('m', 1)), int(a.get('n', 0)); best = None
+    for x0 in np.linspace(-0.49, -0.02, 8):
+        for y0 in (0.88, 0.95, 1.05, 1.3):
+            if x0 * x0 + y0 * y0 < 1: continue
+            f = lambda v: 1e9 if (v[1] <= .3 or v[0] * v[0] + v[1] * v[1] < 1 - 1e-12 or not -0.5 <= v[0] <= 0) else _V_sugra(v[0], v[1], m, n)
+            r = minimize(f, [x0, y0], method='Nelder-Mead', options=dict(xatol=1e-9, fatol=1e-14, maxiter=3000))
+            if best is None or r.fun < best.fun: best = r
+    t = complex(*best.x); rho = complex(-0.5, math.sqrt(3) / 2)
+    on_arc = abs(abs(t) - 1) < 1e-3
+    return dict(m=m, n=n, tau_re=t.real, tau_im=t.imag, abs_tau=abs(t), dist_rho=abs(t - rho), dist_i=abs(t - 1j), on_arc=on_arc,
+                cp='conserving' if (on_arc or abs(t.real) < 1e-4 or abs(t.real + 0.5) < 1e-4) else 'violating', V_min=float(best.fun),
+                label='P (computed minimum of a fitted SUGRA class; AdS)')
+
+
+def weave_rladder(a):
+    """Back in time: the dimension at horizon exit read from r (r_D = r_10 * 8/(D-2), r_10 = 5.41e-4; exact MS gives r_6 = 1.069e-3)."""
+    D = int(a.get('D', 10)); r10 = 5.41e-4
+    return dict(D=D, r=r10 * 8 / (D - 2), r_exact={10: 5.41e-4, 6: 1.069e-3}.get(D), detectable_by='LiteBIRD/CMB-S4-class sigma_r ~ 5e-4 to 1e-3',
+                label='P (r ladder; n_s is fitted, r is the prediction)')
+
+
+def weave_negspace(a):
+    """Forward/negative space: switch redshift of the effective dark energy when the thread couples to dark matter (D1716-D1717):
+    (1+z_dag)^3 = Om_phi / [Om_c (e^{|b| dphi} - 1)]. NOTE: the coupling was NOT detected on full Planck (D1725)."""
+    b, dphi = abs(float(a.get('b', 0.074))), float(a.get('dphi', 0.639)); Op, Oc = float(a.get('Om_phi', 0.702)), float(a.get('Om_c', 0.249))
+    x = Op / (Oc * (math.exp(b * dphi) - 1)); z = x ** (1 / 3) - 1
+    prof = {str(zz): round((Op - Oc * (1 + zz) ** 3 * (math.exp(b * dphi) - 1)) / (Op - Oc * (math.exp(b * dphi) - 1)), 4) for zz in (0, 1, 2, 3, 4, 6)}
+    return dict(z_switch=z, rhoDEeff_over_today=prof, label='E (closed form, 2% vs full background); coupling not detected (fail, D1725)')
+
+
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
-         'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic}
+         'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
+         'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_rung({'m': 8})['eps_formula'] - 0.003117) < 2e-5
@@ -137,4 +187,8 @@ if __name__ == '__main__':   # self-test: reproduces the published numbers
     c = weave_ckm({'model': 'w864', 'rung_d': 1, 'rung_u': 8, 'down': {'r1': 1.806, 'r2': 0.701, 'g_abs': 0.773, 'g_arg': 2.885, 'f_abs': 2.234, 'f_arg': 3.142},
                    'up': {'r1': 2.633, 'r2': 0.333, 'g_abs': 0.333, 'g_arg': -3.142, 'f_abs': 1.745, 'f_arg': -3.142}})
     assert abs(c['ms_mb'] - 0.0107) < 5e-4 and abs(c['Vus'] - 0.218) < 3e-3, c
+    ar = weave_arc({'m': 1, 'n': 1}); assert ar['on_arc'] and abs(ar['tau_re'] + 0.2378) < 2e-3, ar
+    r1 = weave_arc({'m': 1, 'n': 0}); assert abs(r1['dist_rho'] - 0.02395) < 3e-4, r1
+    assert abs(weave_negspace({})['z_switch'] - 2.88) < 0.05
+    assert abs(weave_rladder({'D': 6})['r'] - 1.082e-3) < 2e-6
     print('weave_tools selftest OK', json.dumps({k: round(v, 5) for k, v in c.items() if isinstance(v, float)}))
