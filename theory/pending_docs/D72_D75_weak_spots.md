@@ -16608,3 +16608,8 @@ Postulate P-brane (C): visible sector on D3 (f = S), dark sector on unfluxed D7 
 - Deviation from the lock (recorded, not hidden): the planned local refinement was not run. The grid minimum sits exactly at the corner ρ, a grid point, and is consistent with ρ being the minimum of U₂|η|⁴'s inverse.
 - Reading: the D = 8 one-loop thread is positive everywhere, with margin 3.25. The D = 8 plateau is a plateau (not a hilltop) unless the unknown scheme constant c < −3.25. A natural cutoff choice (the species scale) would need a large negative constant to flip it.
 - D ≤ 6 (SO(4,4), SO(5,5), SO(6,6) series) is still open. A3 moves from "unknown" to "positive at D = 8; D ≤ 6 still open (C-sign)".
+
+## D1673 (RIGHT, 19 Nov 2026) — BIG LOOP (manual Djl) Q6: Λ literature scan. NULL for a mechanism
+- Searched for species-scale or modular routes to a small Λ (2025–26). Found: universal scalings linking vacuum energy to higher-derivative Wilson coefficients from worldsheet modular invariance (arXiv:2603.11157), species-scale bounds (2409.10003, 2310.07708) and tower/EFT-robustness constraints (2304.03902). These give BOUNDS and SCALINGS (V shallow relative to the cutoff), not a mechanism that produces 10⁻¹²⁰.
+- Verdict: no Weave-usable suppression mechanism. C1 (Λ's size) stays OPEN, put in by hand. Not a register change.
+- Queue refilled (BIG_LOOP.md): Q7, basin weights per image of i on the level-4 cover (makes D1668's "35%" a computed number); Q8, a portal for the dark asymmetry in version (b) (neutron-portal estimate).

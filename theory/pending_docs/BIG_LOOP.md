@@ -12,4 +12,6 @@ Q2. [DONE D1669: lower branch 262–286° survives; upper excluded] TM1 δ_CP in
 Q3. [DONE D-note: v3 draft built, awaits Danny Publish] Flavour-paper v3 correction DRAFT (TM2 excluded → TM1/S₄). Draft only; publishing needs Danny.
 Q4. [DONE: P-brane, D3 visible / unfluxed D7 dark → (b) favoured; portal for asymmetry open] P-M: which version, mirror (0.94 GeV) or minimal (5 GeV)? Look for a Weave reason for either unexplained ratio.
 Q5. [PARTIAL D1672: D=8 positive everywhere (min 3.25); D≤6 open — next tick: go to Q6] A3 one-loop sign: the regularised SO(4,4) s = 1 series along the coupling, with a species-scale cutoff.
-Q6. [IN PROGRESS manual Djl 00:21 UTC] Λ (C1): any Weave-internal suppression mechanism (literature scan only).
+Q6. [DONE: NULL, no mechanism in the literature] Λ (C1): any Weave-internal suppression mechanism (literature scan only).
+Q7. Basin weights per image of i on the level-4 (Γ(4)) cover: which images do slow neutrino moduli reach (D1610 flow), and what fraction lands on TM1 images? Lock first.
+Q8. Version (b) dark asymmetry: a portal estimate (e.g. neutron portal ūd̄d̄χ/Λ²) that transfers baryon number to 5 GeV χ, with the Λ_portal needed and current bounds.
