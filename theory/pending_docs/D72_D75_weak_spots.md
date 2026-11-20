@@ -17185,3 +17185,9 @@ Files: PC AEGIS_PCJOBS/d1713/results/cls_*.json (13 runs); lock field_tests/rule
 - Frozen for future data: L1 (rung-8 ratio), L2 (no Koide for quarks / no slip scaling for leptons), L3 (hidden families must land on integer rungs: bands per rung), L4 (θ̄ = 0 exactly).
 - Status: L1–L4 are predictions in form only until scored on new data; L1 relies on equal O(1) coefficients (assumption, labelled).
 - Code: theory/quarks/ladder_equation.py. Result: field_tests/results/ladder_equation_predictions.txt. MAP: none.
+
+## D1742 — TEST (locked: PREREG_L1_ROBUST; computed) — Ladder equation L1 on an independent, more precise input set (SM Yukawas at M_Z, PDG 2024, arXiv:2510.01312): m_u* = 8.04 ± 0.11; g_u/g_d = 0.1312 ± 0.0018 vs frozen rung-8 value 0.1318 (−0.3σ); rung 9 (0.1172) at +8σ. ROBUST (2026-11-20)
+- [computed] g_d = 0.0240, g_u = 0.00315 (input B) vs 0.0251/0.0032 (input A, D1741). Rung 8 holds with both.
+- [CAVEAT, important] The ±0.0018 is input (mass-measurement) error ONLY. The equation's own uncertainty from O(1) coefficients (κ_u ≠ κ_d) is far larger, a factor of order 1 on g, which would smear m_u* over several rungs. So "8σ from rung 9" is true only in the equal-coefficient limit (assumption F); physically it is NOT an 8σ result. What the check does show: the integer-rung reading survives a change of input set and scheme with the up rung landing 0.04 from an integer.
+- [timing] Input B (Oct 2025) predates the prediction: this is a consistency check on existing data, not the future scoring of L1 (which stays frozen).
+- Result: field_tests/results/l1_robust.txt. MAP: none.
