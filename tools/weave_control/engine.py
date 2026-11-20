@@ -193,12 +193,11 @@ def galaxy(p):
                   limit_cm3_s=HESS_LINE.get(lim_m), J_over_bench=jr, recipe_selfcheck_0p286=check),
              [dict(name=f'H.E.S.S. line limit at {int(m0)} GeV', limit=v, kind='upper95', source=HESS_SRC) for m0, v in HESS_LINE.items()],
              pulls, ['two J values: J_IGS_ROI (H.E.S.S. IGS region, ψ ≤ 1°, |b| ≥ 0.3°) is for display; f_max uses the 0.5°–3° annulus (the D1322 recipe)',
-                     'L1 (PREREG_W2_LINKS): f_max = √(2.3e-28 / (σv × 0.794 × J/J_bench)), bench Einasto ρ☉ 0.39, annulus 0.5°–3°; self-check Burkert → 0.286',
+                     'L1 (PREREG_W2_LINKS + DEVIATIONS D1): f_max = √(limit(M) / (σv × R × J/J_bench)), bench Einasto ρ☉ 0.39, annulus 0.5°–3°; self-check Burkert → 0.286',
                      'tested only at the three quoted limit masses (440 GeV, 1 TeV, 2.9 TeV, ±5%); between them: not tested (no interpolation)',
                      'verdict uses the conservative NLL edge R = 0.794; f_max at R = 0.658 is shown as the band\'s other edge (D1124)',
                      'LO Sommerfeld; NLO would raise f_max by about 10% (D1125)',
-                     'the wino fraction bracket (D1152) is a SERAPIS-E thermal-history assumption, not data',
-                     'the only stored limit is at 1 TeV (Einasto); away from 1 TeV no pass/fail is given (V1 finding 6)'],
+                     'the wino fraction bracket (D1152) is a SERAPIS-E thermal-history assumption, not data'],
              links=['J-factor region → Sky level (W2)'], status=st or 'open')
 
 # ---------------- D. stars (Hyperion) ----------------

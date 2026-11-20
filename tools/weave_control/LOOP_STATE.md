@@ -25,7 +25,7 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W3 control panel · next stage: E2 engineer (V1 done 05:11 CT, findings U1–U10 below).
+Item W3 control panel · next stage: F referee (E2 done 05:14 CT: U1–U10 fixed; Playwright desktop + phone 0 errors, 0 unnamed, no h-scroll, update 0.57–0.65 s; 11 tests pass). Small leftover seen: collider chart 'excluded (ATLAS) < 670' text touches the 'reach 740' label when the two are close.
 V1 findings (W3), from the desktop and phone screenshots and the page source:
 U1 A6 broken: the page hard-codes ATLAS 670 GeV and the H.E.S.S. masses 440/1000/2900. Read them from the engine response (colliders data limit; galaxy data names/limits).
 U2 STALE label in the engine galaxy level: 'the only stored limit is at 1 TeV (Einasto); away from 1 TeV no pass/fail' contradicts DEVIATIONS D1. Remove.
@@ -107,6 +107,7 @@ W2 research notes (04:53 CT):
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:14 CT W3/E2 engineer: limits read from the engine (no hard-coded 670 or H.E.S.S. masses), stale label removed, galaxy chart rescaled, S₈ labels shortened, human names + units once, δ forms as a list, phone header static + larger chart text, status words beside lamps, Studio Api.weave_run + open_control + 'Control' tab
 - 05:11 CT W3/V1 review: 10 findings (U1–U10)
 - 05:09 CT W3/E1 engineer: server + control panel built and browser-tested
 - 05:05 CT W3/P postulate: acceptance rules A1–A8

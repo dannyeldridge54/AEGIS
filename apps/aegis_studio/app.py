@@ -34,6 +34,21 @@ class Api:
     def sky_sample(self, n=30000): return sky_sample(int(n))
     def sweep_node(self, node): return sweep_node(node)
     def set_weave_sweep(self, on): WEAVE.sweep = bool(on); return dict(sweep=WEAVE.sweep)
+    def weave_run(self, params_json):
+        """Weave Control (W3): one parameter set → every level. Returns the engine JSON as a string (the page parses it)."""
+        import json
+        try:
+            from tools.weave_control.server import run_payload
+            from tools.weave_control import engine as WC
+            p = {k: v for k, v in json.loads(params_json or '{}').items() if k in WC.DEFAULTS}
+            return run_payload(p)
+        except Exception as e:
+            return json.dumps(dict(levels=[], knobs={}, params={}, error=f'Weave Control engine not available in this build: {e!r}'))
+    def open_control(self):
+        """Open the Weave Control panel in its own window, wired to this Api (window.pywebview.api.weave_run)."""
+        ui = os.path.join(BASE, 'engine', 'tools', 'weave_control', 'ui', 'index.html')
+        if not os.path.exists(ui): ui = os.path.join(os.path.dirname(BASE), '..', 'tools', 'weave_control', 'ui', 'index.html')
+        webview.create_window('Janus · Weave Control', url=ui, js_api=self, width=1500, height=950, background_color='#04020B'); return True
     def open_classic(self):
         webview.create_window('Janus · classic views', url=os.path.join(BASE, 'classic.html'), width=1500, height=950, background_color='#05020D'); return True
 def selftest():

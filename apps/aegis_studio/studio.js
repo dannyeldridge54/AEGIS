@@ -141,8 +141,9 @@ function drawScope() { sx.fillStyle = '#05010f'; sx.fillRect(0, 0, scope.width, 
   for (let i = 0; i < scopeBuf.length; i++) { const v = scopeBuf[(sp + i) % scopeBuf.length]; const x = i/(scopeBuf.length - 1)*scope.width, y = 100 - 90*Math.tanh(2*v); i ? sx.lineTo(x, y) : sx.moveTo(x, y); }
   sx.stroke(); sx.shadowBlur = 0; }
 // ---------- view switching ----------
-const tabs = {weave: 't-weave', land: 't-land', classic: 't-classic'}; let view = 'weave';
-function setView(v) { if (v === 'classic') { const api = window.pywebview?.api; if (api) api.open_classic(); else open('classic.html', '_blank'); return; }
+const tabs = {weave: 't-weave', land: 't-land', classic: 't-classic', control: 't-control'}; let view = 'weave';
+function setView(v) { if (v === 'control') { const api = window.pywebview?.api; if (api && api.open_control) api.open_control(); else open('http://127.0.0.1:8790/', '_blank'); return; }
+  if (v === 'classic') { const api = window.pywebview?.api; if (api) api.open_classic(); else open('classic.html', '_blank'); return; }
   view = v; Object.entries(tabs).forEach(([k, id]) => document.getElementById(id).setAttribute('aria-selected', String(k === v))); weave.visible = v === 'weave'; land.visible = v === 'land';
   document.getElementById('hud').hidden = v !== 'weave'; bloom.strength = v === 'land' ? Math.min(bloomK, 0.55) : bloomK; if (v === 'land') { setCam(true); persp.position.set(-40, -200, 150); ctl.target.set(0, 0, 20); } else { persp.position.set(0, -150, 120); ctl.target.set(0, -2, 0); } }
 Object.entries(tabs).forEach(([k, id]) => document.getElementById(id).onclick = () => setView(k));

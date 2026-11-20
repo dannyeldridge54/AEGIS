@@ -44,6 +44,8 @@ svg text{fill:var(--muted);font:11px var(--f-body)}
 details summary{cursor:pointer;color:var(--muted);font-size:12px;margin-top:6px}
 .pulls{width:100%;border-collapse:collapse;font:12px var(--f-mono)}.pulls td{padding:2px 4px;border-bottom:1px solid var(--line)}.pulls td:last-child{text-align:right}
 img.finder{width:100%;border-radius:10px;margin-top:6px;background:#fff}
+@media (max-width:600px){header{position:static}svg text{font-size:15px}.ph h2{font-size:14px}}
+.sw{font:600 11px var(--f-mono);text-transform:uppercase;letter-spacing:.06em}
 footer{max-width:1440px;margin:auto;padding:0 16px 30px;color:var(--muted);font-size:12px}
 </style>
 </head>
@@ -62,7 +64,13 @@ footer{max-width:1440px;margin:auto;padding:0 16px 30px;color:var(--muted);font-
 const CAT = {A:'Inflation & loom', B:'Flavour', C:'Dark sector & late universe', D:'Matter genesis & stars', E:'Observing'};
 const $ = s => document.querySelector(s), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num = (x, d=4) => x == null ? '—' : (typeof x !== 'number' ? esc(x) : (Math.abs(x) >= 1e4 || (Math.abs(x) < 1e-3 && x !== 0)) ? x.toExponential(2) : (+x.toFixed(d)).toString());
-const UNITS = {sigma_fb:'fb', pairs:'pairs', ctau_cm:'cm', expected_reach_GeV:'GeV', M_max_Msun:'M☉', J_IGS_ROI_GeV2_cm5:'GeV²/cm⁵', J_annulus_0p5_3deg_GeV2_cm5:'GeV²/cm⁵', sigma_v_line_cm3_s:'cm³/s', limit_cm3_s:'cm³/s', limit_mass_GeV:'GeV', ra:'°', dec:'°'};
+const NAMES = {ns:'n_s', r:'r', alpha_s:'running α_s', bridge_B1:'bridge B1 (number only)', bridge_B2:'bridge B2 (number only)', Koide_Q:'Koide Q', Koide_Q_sigma:'σ(Q) from m_τ',
+  Brannen_delta:'Brannen δ (rad)', delta_minus_2_9:'δ − 2/9', delta_equivalent_forms:'equivalent δ forms', Yp:'helium Y_p', DH:'D/H', z_dagger:'z† (negative space)', G_eff_over_G:'G_eff / G',
+  S8_status:'S₈ status', sigma_fb:'σ(pp → pair)', pairs:'produced pairs', ctau_cm:'cτ (chargino)', expected_reach_GeV:'expected reach', J_IGS_ROI_GeV2_cm5:'J, H.E.S.S. IGS region',
+  J_annulus_0p5_3deg_GeV2_cm5:'J, 0.5°–3° annulus', sigma_v_line_cm3_s:'line σv (LO)', thermal_fraction:'predicted wino fraction', f_max:'max fraction (R 0.794)',
+  f_max_at_R_0p658:'max fraction (R 0.658)', limit_mass_GeV:'limit mass', limit_cm3_s:'H.E.S.S. limit', J_over_bench:'J / J_bench', recipe_selfcheck_0p286:'self-check 0.286',
+  M_max_Msun:'max neutron-star mass', name:'target', ra:'RA', dec:'Dec'};
+const UNITS = {sigma_fb:'fb', ctau_cm:'cm', expected_reach_GeV:'GeV', M_max_Msun:'M☉', J_IGS_ROI_GeV2_cm5:'GeV²/cm⁵', J_annulus_0p5_3deg_GeV2_cm5:'GeV²/cm⁵', sigma_v_line_cm3_s:'cm³/s', limit_cm3_s:'cm³/s', limit_mass_GeV:'GeV', ra:'°', dec:'°'};
 let STATE = {params:{}, data:null, timer:null, seq:0};
 try { const t = localStorage.getItem('wc-theme'); if (t) document.documentElement.dataset.theme = t; } catch(e) {}
 $('#theme').onclick = () => { const r = document.documentElement; r.dataset.theme = r.dataset.theme === 'light' ? 'dark' : 'light'; try { localStorage.setItem('wc-theme', r.dataset.theme); } catch(e) {} };
@@ -107,23 +115,27 @@ function chartBBN(L) { return bars(Object.entries(L.pulls).map(([k, v]) => [k, v
 function chartLate(L) {
   const D = L.outputs.D1725; const it = [];
   for (const [k, r] of Object.entries(D)) { it.push([`${k} Δχ² thread`, r.d_thread, 'cyan']); it.push([`${k} ΔAIC thread`, r.dAIC_thread, 'violet']); }
-  return bars(it, -12, 4, 'vs ΛCDM (negative favours the thread)') + bars(Object.entries(L.outputs.S8_pulls).filter(([k]) => !k.includes(' lcdm ')).map(([k, v]) => [k.replace('S8 ', '').replace(' vs ', ' · '), v, pc(v)]), -4, 4, 'S₈ pull (σ)');
+  const short = k => k.replace('S8 ', '').replace('Pantheon+', 'P+').replace('Union3', 'U3').replace(' vs KiDS-Legacy', ' · KiDS').replace(' vs CMB lensing', ' · lens');
+  return bars(it.map(([n, v, c]) => [n.replace('Pantheon+', 'P+').replace('Union3', 'U3'), v, c]), -12, 4, 'vs ΛCDM (negative favours the thread)') +
+         bars(Object.entries(L.outputs.S8_pulls).filter(([k]) => !k.includes(' lcdm ')).map(([k, v]) => [short(k), v, pc(v)]), -4, 4, 'S₈ pull (σ)');
 }
+function engineLimit(id, kind) { const lv = STATE.data.levels.find(l => l.id === id); return lv ? lv.data.filter(d => d.kind === kind) : []; }
 function chartMass(L, extra) {
-  const m = STATE.data.params.wino_mass_GeV, x = v => 20 + v / 3000 * 380;
-  let s = `<rect x="20" y="40" width="${x(670) - 20}" height="40" fill="var(--fail)" opacity=".18"><title>ATLAS excludes below 670 GeV</title></rect><line x1="${x(670)}" x2="${x(670)}" y1="30" y2="90" stroke="var(--fail)"/><text x="${x(670)+4}" y="36">ATLAS 670</text>`;
+  const m = STATE.data.params.wino_mass_GeV, x = v => 20 + v / 3000 * 380, at = engineLimit('colliders', 'lower95')[0];
+  let s = at ? `<rect x="20" y="40" width="${x(at.limit) - 20}" height="40" fill="var(--fail)" opacity=".18"><title>${esc(at.source)}</title></rect><line x1="${x(at.limit)}" x2="${x(at.limit)}" y1="40" y2="90" stroke="var(--fail)"/><text x="24" y="76">excluded (ATLAS) &lt; ${num(at.limit,0)}</text>` : '';
   if (extra) s += extra(x);
   s += `<polygon points="${x(m)-6},28 ${x(m)+6},28 ${x(m)},40" fill="var(--pink)"/><line x1="${x(m)}" x2="${x(m)}" y1="40" y2="90" stroke="var(--pink)"/>`;
   return frame(s + axisX(20, 400, 92, [[x(0),0],[x(1000),1000],[x(2000),2000],[x(3000),3000]], v => v, 'wino mass (GeV)'), 130);
 }
 function chartColliders(L) { return chartMass(L, x => `<line x1="${x(L.outputs.expected_reach_GeV)}" x2="${x(L.outputs.expected_reach_GeV)}" y1="45" y2="88" stroke="var(--sky)" stroke-dasharray="3 3"/><text x="${x(L.outputs.expected_reach_GeV)+4}" y="86">reach ${num(L.outputs.expected_reach_GeV,0)}</text>`); }
 function chartGalaxy(L) {
-  const o = L.outputs; if (o.f_max == null) return chartMass(L, x => [440,1000,2900].map(m0 => `<circle cx="${x(m0)}" cy="65" r="4" fill="var(--sky)"><title>H.E.S.S. limit point ${m0} GeV</title></circle>`).join('')) ;
-  const y = v => 130 - Math.min(v, 0.6) / 0.6 * 110;
+  const o = L.outputs, pts = L.data.filter(d => d.kind === 'upper95').map(d => [parseFloat(d.name.match(/(\d+) GeV/)[1]), d.limit]);
+  if (o.f_max == null) return chartMass(L, x => pts.map(([m0, lim]) => `<circle cx="${x(m0)}" cy="58" r="4" fill="var(--sky)"><title>H.E.S.S. limit ${lim} cm³/s at ${m0} GeV</title></circle>`).join('') + `<text x="200" y="52" text-anchor="middle">H.E.S.S. limit masses (tested only there)</text>`);
+  const top = Math.max(o.thermal_fraction[1], o.f_max_at_R_0p658 || o.f_max) * 1.3, y = v => 130 - Math.min(v, top) / top * 110;
   let s = `<rect x="60" y="${y(o.thermal_fraction[1])}" width="300" height="${y(o.thermal_fraction[0]) - y(o.thermal_fraction[1])}" fill="var(--pink)" opacity=".35"><title>predicted fraction ${num(o.thermal_fraction[0],3)}–${num(o.thermal_fraction[1],3)}</title></rect>`;
-  s += `<line x1="60" x2="360" y1="${y(o.f_max)}" y2="${y(o.f_max)}" stroke="var(--fail)" stroke-width="2"/><text x="364" y="${y(o.f_max)+4}">f_max ${num(o.f_max,3)}</text>`;
-  if (o.f_max_at_R_0p658) s += `<line x1="60" x2="360" y1="${y(o.f_max_at_R_0p658)}" y2="${y(o.f_max_at_R_0p658)}" stroke="var(--fail)" stroke-dasharray="4 3"/><text x="364" y="${y(o.f_max_at_R_0p658)+4}">R 0.658</text>`;
-  s += [0, 0.2, 0.4, 0.6].map(v => `<text x="54" y="${y(v)+4}" text-anchor="end">${v}</text>`).join('') + `<text x="210" y="148" text-anchor="middle">wino fraction of dark matter at ${num(o.limit_mass_GeV,0)} GeV (band: predicted; line: H.E.S.S. max)</text>`;
+  s += `<line x1="60" x2="300" y1="${y(o.f_max)}" y2="${y(o.f_max)}" stroke="var(--fail)" stroke-width="2"/><text x="304" y="${y(o.f_max)+12}">max ${num(o.f_max,3)}</text>`;
+  if (o.f_max_at_R_0p658) s += `<line x1="60" x2="300" y1="${y(o.f_max_at_R_0p658)}" y2="${y(o.f_max_at_R_0p658)}" stroke="var(--fail)" stroke-dasharray="4 3"/><text x="304" y="${y(o.f_max_at_R_0p658)-3}">R 0.658: ${num(o.f_max_at_R_0p658,3)}</text>`;
+  s += [0, top/2, top].map(v => `<text x="54" y="${y(v)+4}" text-anchor="end">${num(v,2)}</text>`).join('') + `<text x="210" y="148" text-anchor="middle">wino fraction at ${num(o.limit_mass_GeV,0)} GeV: pink band predicted, red line H.E.S.S. maximum</text>`;
   return frame(s, 155);
 }
 function chartStars(L) {
@@ -148,19 +160,19 @@ function knobHTML(k, v) {
   return `<label for="${id}">${lab}<input id="${id}" type="number" data-k="${k.key}" value="${v}" min="${k.min}" max="${k.max}" step="${k.step}"></label>`;
 }
 function reads(o) {
-  return Object.entries(o).filter(([k, v]) => v == null || typeof v !== 'object').map(([k, v]) => `<div class="rd"><b>${num(v)}</b><span>${esc(k.replace(/_/g, ' '))}${UNITS[k] ? ' · ' + UNITS[k] : ''}</span></div>`).join('') +
-         Object.entries(o).filter(([k, v]) => Array.isArray(v) && v.every(x => typeof x === 'number')).map(([k, v]) => `<div class="rd"><b>${v.map(x => num(x, 3)).join(' – ')}</b><span>${esc(k.replace(/_/g, ' '))}</span></div>`).join('');
+  return Object.entries(o).filter(([k, v]) => v == null || typeof v !== 'object').map(([k, v]) => `<div class="rd"><b>${num(v)}${UNITS[k] ? ' <small>' + UNITS[k] + '</small>' : ''}</b><span>${esc(NAMES[k] || k.replace(/_/g, ' '))}</span></div>`).join('') +
+         Object.entries(o).filter(([k, v]) => Array.isArray(v) && v.every(x => typeof x === 'number')).map(([k, v]) => `<div class="rd"><b>${v.map(x => num(x, 3)).join(k === 'thermal_fraction' ? ' – ' : ', ')}</b><span>${esc(NAMES[k] || k.replace(/_/g, ' '))}${k === 'thermal_fraction' ? ' (range)' : ''}</span></div>`).join('');
 }
 function render(d) {
   const P = d.provenance || {}; $('#meta').textContent = `code ${P.version || '?'} · ${P.created_utc || ''}`;
   const worst = s => ['fail','tension','pass','open'].find(x => s.includes(x)) || 'open';
   $('#score').innerHTML = Object.keys(CAT).map(c => { const ls = d.levels.filter(l => l.category === c); const st = worst(ls.map(l => l.status));
-    return `<button class="cat" data-jump="${ls[0] ? ls[0].id : ''}" title="${esc(ls.map(l => l.name + ': ' + l.status).join(' · '))}"><span class="lamp s-${st}"></span>${c} · ${CAT[c]}</button>`; }).join('');
+    return `<button class="cat" data-jump="${ls[0] ? ls[0].id : ''}" title="${esc(ls.map(l => l.name + ': ' + l.status).join(' · '))}"><span class="lamp s-${st}" aria-hidden="true"></span>${c} · ${CAT[c]} <span class="sw s-${st}">${st}</span></button>`; }).join('');
   $('#main').innerHTML = d.levels.map(L => {
     const kn = (d.knobs[L.id] || []).map(k => knobHTML(k, d.params[k.key])).join('');
     const pulls = Object.entries(L.pulls || {}); const chart = CHARTS[L.id] ? CHARTS[L.id](L) : '';
     return `<section class="panel" id="p-${L.id}" aria-labelledby="h-${L.id}">
-      <div class="ph"><h2 id="h-${L.id}">${esc(L.name)}</h2><span class="tag">${L.category} · ${esc(L.tool)}</span><span class="lamp s-${L.status}" title="${L.status}" aria-label="status ${L.status}"></span></div>
+      <div class="ph"><h2 id="h-${L.id}">${esc(L.name)}</h2><span class="tag">${L.category} · ${esc(L.tool)}</span><span class="sw s-${L.status}"><span class="lamp s-${L.status}" aria-hidden="true"></span> ${L.status}</span></div>
       ${L.error ? `<p class="err">${esc(L.error)}</p>` : ''}
       ${kn ? `<div class="knobs">${kn}</div>` : ''}
       <div class="reads">${reads(L.outputs)}</div>
