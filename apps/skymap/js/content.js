@@ -8,6 +8,10 @@ export const SURVEYS = [
   { id: "CDS/P/PLANCK/R2/HFI/color", label: "Planck high-frequency microwaves (cold dust; CMB behind it)", band: "microwaves" },
   { id: "P/Fermi/color", label: "Fermi gamma rays (the most energetic light)", band: "gamma rays" },
   { id: "P/VTSS/Ha", label: "Hydrogen-alpha glow (gas lit by hot stars)", band: "H-alpha" },
+  // M3 (20 Nov 2026): Euclid Quick Release 1 (ESA, 2025), HiPS by CDS. IDs checked against the CDS properties files.
+  // Covers only ~63 square degrees in a few deep fields: try Euclid Deep Field Fornax (RA 53.1, Dec −28.1) or North (RA 269.7, Dec +66.0).
+  { id: "CDS/P/Euclid/Q1/color", label: "Euclid Q1 colour (NISP H, Y + VIS): newest space telescope, deep fields only", band: "visible + near infrared", fields: [[53.13, -28.1, "Euclid Deep Field Fornax"], [269.73, 66.02, "Euclid Deep Field North"]] },
+  { id: "CDS/P/Euclid/Q1/VIS", label: "Euclid Q1 VIS (sharpest wide visible image; deep fields only)", band: "visible", fields: [[53.13, -28.1, "Euclid Deep Field Fornax"]] },
 ];
 
 // ra, dec in degrees (J2000); fov in degrees.

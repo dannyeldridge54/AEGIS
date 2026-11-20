@@ -215,7 +215,7 @@ const PANELS = {
   layers() {
     const v = state.visible, row = (k, label, color) => `<label class="row"><input type="checkbox" data-layer="${k}" ${v[k] ? "checked" : ""}>${color ? `<span class="sw" style="background:${color}"></span>` : ""}${label}</label>`;
     return `<h3>Sky picture</h3><select id="surveySel" aria-label="Sky picture">${SURVEYS.map((s) => `<option value="${esc(s.id)}" ${s.id === state.survey ? "selected" : ""}>${esc(s.label)}</option>`).join("")}</select>
-      <p class="muted" id="surveyBand">${esc(SURVEYS.find((s) => s.id === state.survey)?.band || "")}</p>
+      <p class="muted" id="surveyBand">${esc(SURVEYS.find((s) => s.id === state.survey)?.band || "")}</p><div id="surveyFields"></div>
       <h3>Drawn on top</h3>${row("constellations", "Constellation lines", "#5d7bd6")}${row("conNames", "Constellation names", "#8fa6ff")}${row("stars", "Bright star names", "#ffe9a8")}
       ${row("messier", "Messier galaxies, nebulae and clusters", "#4cc3ff")}${row("planets", "Sun, Moon and planets (now)", "#ff6ec7")}
       ${row("aegis", "AEGIS flagged stars", "#ff3d8b")}${row("coverage", "AEGIS survey coverage", "#2f8bff")}
@@ -285,7 +285,11 @@ function wirePanel(name) {
   const B = $("#panelBody");
   for (const a of B.querySelectorAll("[data-goto]")) a.onclick = (e) => { e.preventDefault(); const [ra, dec] = a.dataset.goto.split(",").map(Number); goto(ra, dec, 20); };
   if (name === "layers") {
-    $("#surveySel").onchange = (e) => { setSurvey(e.target.value); $("#surveyBand").textContent = SURVEYS.find((s) => s.id === e.target.value)?.band || ""; };
+    const fieldsFor = (id) => { const sv = SURVEYS.find((s) => s.id === id); const box = $("#surveyFields"); if (!box) return;
+      box.innerHTML = (sv?.fields || []).map((f, i) => `<button type="button" class="toggle" data-f="${i}">Go to ${esc(f[2])}</button>`).join(" ");
+      for (const b of box.querySelectorAll("button")) b.onclick = () => { const f = sv.fields[+b.dataset.f]; if (state.aladin) { state.aladin.gotoRaDec(f[0], f[1]); state.aladin.setFoV(1.5); } }; };
+    fieldsFor(state.survey);
+    $("#surveySel").onchange = (e) => { setSurvey(e.target.value); $("#surveyBand").textContent = SURVEYS.find((s) => s.id === e.target.value)?.band || ""; fieldsFor(e.target.value); };
     for (const cb of B.querySelectorAll("[data-layer]")) cb.onchange = () => { state.visible[cb.dataset.layer] = cb.checked; applyVisibility(); };
     for (const cb of B.querySelectorAll("[data-disc]")) cb.onchange = () => { state.visible["disc_" + cb.dataset.disc] = cb.checked; applyVisibility(); };
     for (const p of B.querySelectorAll("[data-proj]")) p.onclick = () => { try { state.aladin.setProjection(p.dataset.proj); if (p.dataset.proj !== "TAN") state.aladin.setFoV(p.dataset.proj === "AIT" ? 220 : 120); } catch (e) { console.warn(e); } };

@@ -136,3 +136,7 @@ Honest label: the Ushas tilt C was chosen to hit n_s = 0.97065 (p3s.tilt_for_ns)
 
 ### J2b nested-model guard (20 Nov 2026)
 tools/nested_guard.py: `check(chi2, nest)` flags any bigger model whose minimum χ² is above a model it contains (a failed minimiser), and `best_lower_bound()` gives the honest ceiling ("χ² ≤ X") through chains of nesting. It was tested on the real D1713 numbers: it catches the Pantheon+ coupled run (+2.14 above the thread) and the original +0.90 above ΛCDM. Use it before scoring any new fit; locked scorers (score_d1713.py) stay untouched, and the guard is run alongside them.
+
+### M3 new sky surveys in Sky Map (20 Nov 2026)
+Added Euclid Quick Release 1 colour and VIS (HiPS `CDS/P/Euclid/Q1/color`, `CDS/P/Euclid/Q1/VIS`; IDs checked against the CDS properties files and the IVOA registry). Euclid Q1 covers only about 63 deg², so picking it shows "Go to Euclid Deep Field Fornax / North" buttons that fly there at a 1.5° view (tested with Playwright: lands at RA 53.13, Dec −28.10). The image tiles cannot load in the cloud sandbox (CDS blocked), the same as every survey; they load on a normal connection.
+Blocked, recorded: SPHEREx QR2 (band D1 HiPS published) and the Rubin First Look colour HiPS exist (IVOA HiPS status, Nov 2025), but no exact HiPS ID could be verified from here (MocServer is not reachable). Add them once the IDs are confirmed in Aladin Desktop or the MocServer. Never guess an ID.
