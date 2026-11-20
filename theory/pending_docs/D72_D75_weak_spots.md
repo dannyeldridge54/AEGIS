@@ -17072,3 +17072,10 @@ Files: PC AEGIS_PCJOBS/d1713/results/cls_*.json (13 runs); lock field_tests/rule
 - **Verdict:** FAIL (as locked). Together with D1619 (no CP violation from small splits at i or ρ), the quark sector needs its OWN modulus τ_q, held by something outside the Weave's single principle. Quarks stay an open term (D1597 status unchanged: open). Not evidence either way.
 - Next (quark track): lock a test of whether the Weave's Koide relation (δ = 2/9) extends to quarks; its known failure for quarks would be a second structural result.
 - Result: field_tests/results/q1_quark_endpoint.txt. MAP: none.
+
+## D1728 — CENTRE (locked: PREREG_Q2_KOIDE_QUARKS; computed) — Quarks, step 2: the lepton Koide pattern does NOT extend to quarks. Q(u,c,t) = 0.887, Q(d,s,b) = 0.742 (both far from 2/3); δ = 0.052 and 0.104 (far from 2/9). K1 FAIL, K2 FAIL (2026-11-20)
+- [computed] Masses at M_Z (PDG 2024 run to M_Z, via arXiv:2512.13630 Tab. II). Convention check on leptons reproduces Q = 0.6666645, A = 1.414209, δ = 0.222225 (vs 2/9 = 0.222222).
+- [computed] up: Q = 0.8870 ± 0.0010 (+215σ from 2/3), A = 1.823, δ = 0.0521 ± 0.0006. down: Q = 0.7422 ± 0.0025 (+30σ), A = 1.566, δ = 0.1035 ± 0.0020.
+- [reading] Expected (known in the literature for decades); now confirmed under our convention. It fits the picture from D1601/D1727: leptons are tied to the fixed point ρ (residual Z₃ ⇒ circulant ⇒ Koide form), quarks are not, because τ_q must sit at a generic point. The Koide structure is a FIXED-POINT signature, so its absence for quarks is what the third-thread picture expects (consistency, not a prediction: noted after the fact).
+- Code: theory/quarks/q2_koide.py. Result: field_tests/results/q2_koide_quarks.txt. MAP: none.
+- Next: Q3, the FST τ_q model (arXiv:2305.08908) vs the latest CKM data, with a parameter count. Tooling: field_tests/scripts/flav_rho/run5.py (Yukawa + Jarlskog sampler from D1600) and theory/modular/eisenstein_d569.py are reusable; no RGE runner or CKM fitter in the toolkits yet.
