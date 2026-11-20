@@ -16700,3 +16700,11 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Found a digitised copy of LZ's 2024 limit curve (C. O'Hare's DirectDetectionPlots, citing arXiv:2410.17036); official data routes are blocked from here. At the dark particle's 12.8 GeV mass the limit is 1.3 × 10⁻⁴⁷ cm² — so the other chat's optimistic guess (10⁻⁴⁷) was fair.
 - Sourced dark-photon ceiling: mixing below 3.5 × 10⁻⁹ (0.3 GeV), 3.9 × 10⁻⁸ (1 GeV), 9.7 × 10⁻⁷ (5 GeV). Above the decay-before-BBN floor that leaves 2–5 decades open. Version (b) stays alive; LZ's newer data and XLZD will push into it.
 - MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no
+
+##  (CENTRE, 19 Nov 2026) — Djl: review of the two papers against today's later results; drafts updated, nothing published
+1) Flavour v3 draft (D1670): Sec. III now adds D1674 (equal weight per image of i from equivariance; P(TM1) = 0.345). Rebuilt; still 2 pages; still a DRAFT awaiting "Publish".
+2) Reverse-thread paper (PUBLISHED, doi 10.5281/zenodo.24380387), checked against the JANUS notes:
+   - D1638 (exact SERAPIS curve): the fit is unchanged (worst Δχ² 5.64, w₀ ≈ −0.79, w_a ≈ −0.36) and the window is slightly narrower (0.038 vs 0.045 in ln amp). The paper's statement "just before the field would roll into V < 0" holds for its stated leading-order model, but with the exact curve that edge is "the thread reaches the floor ρ". Wording change only.
+   - D1642/D1643: the start is frozen since inflation, P ≈ 0.3% under the area measure. That sharpens the paper's "two coincidences".
+   - D1653/D1655/D1658 (JANUS): where the thread ends (i or ρ) depends on the axion and the dataset. That bears on the paper's "matter phase in the future" remark.
+   - Verdict: no number in the published paper is wrong for its stated model. A v2 would add the exact-curve scope note, the 1-in-300 start, and the endpoint remark. Recorded as optional; only on Danny's "Publish".
