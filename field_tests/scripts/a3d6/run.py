@@ -18,12 +18,14 @@ def RN(f,alpha,L=60.0,nx=81,ny=400):
 val=RN(lambda x,y:G11(1,x,y)**2,1)
 eta=complex(mp.eta(1j)) if hasattr(mp,'eta') else None
 q=mp.exp(-2*mp.pi); etai=float(q**(1/24)*mp.qp(q))
-dkl=-math.log(etai**8)-math.log(8*math.pi*math.exp(1-0.5772156649)/(3*math.sqrt(3)))
+dkl=-math.log(etai**8)-math.log(8*math.pi*math.exp(1-0.5772156649)/(3*math.sqrt(3)))+(-0.5*2*(0.5*math.log(0.75)-1+math.log(3)))
 o=dict(validation=dict(numeric=val,DKL=dkl,diff=val-dkl,pass_=abs(val-dkl)<2e-3))
 if o['validation']['pass_']:
     I={}
     for R in (1,1.25,1.5,2,3):
         I[str(R)]=RN(lambda x,y,R=R:G11(R,x,y)**4,2)
     o['I']=I; o['min']=min(I.values()); o['positive']=o['min']>0
+    # scheme shift to convergent subtraction int(Gamma - tau2^2): RN int tau2^2 dmu = int dx (L - sqrt(1-x^2)) - L
+    o['shift_to_convergent_scheme']=-sum(math.sqrt(1-x*x) for x in np.linspace(-0.5,0.5,20001))/20001
 conv=lambda v: bool(v) if type(v).__name__ in ('bool','bool_') else float(v)
 print(json.dumps(o,indent=1,default=conv)); json.dump(o,open('field_tests/results/a3_d6.json','w'),indent=1,default=conv)
