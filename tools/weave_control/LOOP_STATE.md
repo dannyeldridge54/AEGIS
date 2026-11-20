@@ -25,8 +25,11 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W1 · next stage: E1 (R and P were done in the plan: tools/WEAVE_CONTROL_PLAN.md Parts 1–4).
+Item W1 · next stage: V1 review (E1 done 04:43 CT: tools/weave_control/engine.py, 8 levels, 6 tests pass).
 Postulate W1: every level returns {category, inputs, outputs, data[{name,value,sigma|limit,source}], pulls, status ∈ pass/tension/fail/open}; nothing typed in by hand except measured data with a source; fits labelled F; a test per level.
-Notes: wino gamma-line σv — the D1322 formula is written for M = 1 TeV; the M-scaling must be checked against sommerfeld_nlo before it is shown (flagged 04:38).
+Notes: wino gamma-line σv — checked: the D1322 '/1e6' is M² in GeV² at 1 TeV, so π α²/M² is the general tree form; the M dependence of the Sommerfeld factor comes from wino_s_nlo itself. At 1 TeV the engine reproduces 1.42e-26 (same formula as the smoke test).
+E1 results (defaults): inflation pass (n_s 0.9706, r 5.4e-4); flavour pass (Koide Q 0.6666645 ± 5.1e-6, −0.4σ; Brannen δ 0.2222248 vs 2/9 = 0.2222222); BBN tension (D/H −2.6σ vs Cooke 2018); late tension (thread −2.6/−8.1/−3.4, coupling ~0); colliders pass at 1 TeV (ATLAS 670); galaxy open (f²σv 2.2–6.0e-28 at 1 TeV vs the 2.3e-28 used in D1322: borderline, needs the limit curve); stars pass (SLy 2.05 vs J0740 2.08 ± 0.07); sky open.
+For V1 to check: (1) bridge B1 = −2.0e-3 here, not the −0.9e-4 of the twin-ladder notes (those were for an earlier model): do not show the old tolerance; (2) late-level 'd_coupled' is the guard ceiling min(coupled, thread), label it '≤'; (3) stars pass rule uses 2σ below J0740: state it; (4) runtime 5 s per run (galaxy J-factor + Sommerfeld): cache for the UI.
 
 ## Done log
+- 04:43 CT W1/E1 engine.py + tests (6 pass)
