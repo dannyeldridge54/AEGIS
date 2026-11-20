@@ -11,3 +11,9 @@ def test_all_models_and_export():
     rows = S.table(55)
     assert len(rows) == len(S.MODELS) and all(0.9 < r['ns'] < 1.0 for r in rows)
     assert S.export(rows, 'csv').startswith('model')
+
+def test_j3_constraint_sets():
+    assert {'ACT-DR6', 'P-ACT-LB', 'P-ACT-LB2', 'SPT-3G-D1', 'CMB-SPA+DESI'} <= set(S.CONSTRAINTS['ns'])
+    assert S.CONSTRAINTS['r']['PR4+BK18'][0] == 0.032
+    sc = S.score(S.predict('starobinsky', 55))
+    assert len(sc) == len(S.CONSTRAINTS['ns']) + len(S.CONSTRAINTS['r']) and sc['r:PR4+BK18'] == 'pass'
