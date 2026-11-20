@@ -11,5 +11,5 @@ Q1. [DONE D1668: 3/6 images TM1, 3/6 dead, 0 TM2; why level 4 still open] S₄ r
 Q2. [DONE D1669: lower branch 262–286° survives; upper excluded] TM1 δ_CP in the Weave: the sum-rule values (74°/286°, 98°/262°) versus the NuFIT 6.0 / T2K+NOvA δ_CP posteriors. Score them.
 Q3. [DONE D-note: v3 draft built, awaits Danny Publish] Flavour-paper v3 correction DRAFT (TM2 excluded → TM1/S₄). Draft only; publishing needs Danny.
 Q4. [DONE: P-brane, D3 visible / unfluxed D7 dark → (b) favoured; portal for asymmetry open] P-M: which version, mirror (0.94 GeV) or minimal (5 GeV)? Look for a Weave reason for either unexplained ratio.
-Q5. [IN PROGRESS manual Djl 00:19 UTC — D8 analogue] A3 one-loop sign: the regularised SO(4,4) s = 1 series along the coupling, with a species-scale cutoff.
+Q5. [PARTIAL D1672: D=8 positive everywhere (min 3.25); D≤6 open — next tick: go to Q6] A3 one-loop sign: the regularised SO(4,4) s = 1 series along the coupling, with a species-scale cutoff.
 Q6. Λ (C1): any Weave-internal suppression mechanism (literature scan only).

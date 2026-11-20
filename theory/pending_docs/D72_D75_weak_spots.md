@@ -16602,3 +16602,9 @@ Consequences:
 - (a) An exact mirror needs the dark sector on the SAME kind of brane as ours, so it would be heated equally and is disfavoured. This geometric reason works against it.
 - (b) A minimal dark sector on unfluxed D7 is cold for free, consistent with D1646/D1659 (massive dark photon 0.3–5 GeV). But its asymmetry cannot come from the inflaton's decay into it, so it must come from transfer (e.g. a neutron portal / L-violating mixing).
 Postulate P-brane (C): visible sector on D3 (f = S), dark sector on unfluxed D7 (f = T). Verdict: version (b) is now FAVOURED for its temperature; its number asymmetry needs a portal (open). Test: ΔN_eff small but non-zero; dark photon 0.3–5 GeV; DM near 5 GeV only if the portal transfers number roughly equally.
+
+## D1672 (LEFT, 19 Nov 2026) — BIG LOOP (manual Djl) Q5 partial: the D = 8 one-loop R⁴ thread is POSITIVE across the whole moduli space (PREREG_A3_D8SIGN)
+- [computed] L(U) = −π log(U₂|η(U)|⁴) (GRV 1001.2535, the D = 8 pole-subtracted one-loop term). Minimum over the fundamental domain: 3.247, at ρ = e^{iπ/3}. L(i) = 3.313 (by hand: |η(i)|⁴ = 0.348 ✓). L grows like π²U₂/3 at large U₂ (14.1 at U₂ = 6).
+- Deviation from the lock (recorded, not hidden): the planned local refinement was not run. The grid minimum sits exactly at the corner ρ, a grid point, and is consistent with ρ being the minimum of U₂|η|⁴'s inverse.
+- Reading: the D = 8 one-loop thread is positive everywhere, with margin 3.25. The D = 8 plateau is a plateau (not a hilltop) unless the unknown scheme constant c < −3.25. A natural cutoff choice (the species scale) would need a large negative constant to flip it.
+- D ≤ 6 (SO(4,4), SO(5,5), SO(6,6) series) is still open. A3 moves from "unknown" to "positive at D = 8; D ≤ 6 still open (C-sign)".
