@@ -25,9 +25,10 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W9/W10 packaging (Danny 05:19 CT: "Make .exe and apks them all, same loops"; 05:22 "Do it best u can") · next stage: V1 review (E1 done 05:31 CT). W4 flavour after this.
+Item W9/W10 packaging (Danny 05:19 CT: "Make .exe and apks them all, same loops"; 05:22 "Do it best u can") · next stage: E2 engineer (V1 done 05:28 CT). W4 flavour after this.
 E1: `aegis control [port]` + `aegis control --selftest` (8 levels, no errors); build-executables.yml bundles Weave Control UI, Mapper star data, Sky Map data + hidden imports, and self-tests `version` and `control --selftest` on Windows/macOS/Linux; apps/android_shell (one generic WebView shell: appId/name/start path/location set at build time; vector icon, no personal art); .github/workflows/apps_apk.yml (matrix: Sky Map, Dashboard, Weave Control offline → apk-dist branch, artifacts); tools/weave_control/snapshot.py (129 level states on stated grids, 26 s, 208 kB + 6 finder PNGs); the UI falls back to the snapshot when there is no engine, shows 'OFFLINE SNAPSHOT · code … · built …', and offers only grid values. Offline Playwright at 390 px: header correct, 440 GeV galaxy = pass, M42 finder loads, no errors, no h-scroll.
-For V1: (1) sarah_apk.yml publishes apk-dist as an ORPHAN force-push with only SarahsSky.apk — it would delete the new APKs on its next run; (2) the exe workflow only runs on release or manual dispatch (needs Danny or a manual run); (3) check the Sky Map file list copied into its APK against apps/skymap (sw.js, dist/); (4) offline knob values for number knobs come back as strings in some paths.
+V1 results: (1) FIXED in V1 (infrastructure, urgent): sarah_apk.yml now clones apk-dist and adds/replaces SarahsSky.apk instead of an orphan force-push, so the new APKs survive. (2) exe build needs a release or a manual run: recorded for Danny. (3) Sky Map APK copies index/css/js/data/icons/vendor/manifest; sw.js is not copied, so the service worker simply does not register in the app (the page catches it) — acceptable. (4) offline select values parse as numbers except 'ra,dec' targets — correct. CI: first APK run — Sky Map APK BUILT (success); Dashboard and Weave Control still building at 05:28. tools CI: toolkits job PASSES since the camb fix (74 passed); the test job still fails only on ladder MAP lines for D1626–D1711 (other sessions' notes; mine D1712–D1725 added).
+Original V1 notes: (1) sarah_apk.yml publishes apk-dist as an ORPHAN force-push with only SarahsSky.apk — it would delete the new APKs on its next run; (2) the exe workflow only runs on release or manual dispatch (needs Danny or a manual run); (3) check the Sky Map file list copied into its APK against apps/skymap (sw.js, dist/); (4) offline knob values for number knobs come back as strings in some paths.
 Postulate W9/W10 (acceptance rules, before building):
 X1 One command: `aegis control [port]` starts the Weave Control server on 127.0.0.1 and opens the default browser; Ctrl+C stops it. Works from source and inside the PyInstaller exe (sys._MEIPASS path for ui/ and Mapper data).
 X2 The exe build (build-executables.yml) bundles: tools/weave_control (engine, server, ui), tools/mapper (finder, data/hip_mag8.csv + licence), tools/dashboard, apps/skymap data used by the planner, and the hidden imports the engine needs. CI self-test adds: `aegis control --selftest` (runs the engine once, checks 8 levels, no errors, exits 0) and `aegis version`.
@@ -134,6 +135,7 @@ Strengths a referee would note: one parameter set drives every level; sources an
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:28 CT W9/V1 review: Sarah APK publish made non-destructive; Sky Map APK built in CI
 - 05:31 CT W9/E1 engineer: aegis control, exe bundle, Android shell, APK matrix, offline snapshot
 - 05:24 CT W9/P postulate: acceptance rules X1–X6
 - 05:22 CT W9/R research: build paths (GitHub Actions), offline-APK design, CI failures found; camb added to CI
