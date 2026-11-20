@@ -16916,3 +16916,8 @@ At the D1710 point (Ω_φ,0 0.702, Ω_c,0 0.249, Δφ 0.639, b −0.074) this gi
 Scaling: z† ≈ 4.2, 3.4, 2.8, 2.5 for |b| = 0.03, 0.05, 0.074, 0.10 (Δφ held fixed). Our real-data ΛsCDM fits (z† 2.37–2.64) would correspond to |b| ≈ 0.09–0.11; a full-Planck b will turn this into a sharp number.
 REVIEW of D1716: (i) the normalisation epoch matters: normalising before the early kick (z ≫ 1000, where φ is still 0.49) would make the deficit larger and push z† lower; z* is the CMB's own and the natural choice, so it stands; (ii) the depth grows as (1+z)³, so Lyα BAO at z ≈ 2.3–3 sits right at the switch: the next MAKE step.
 PC: BUILDCLASS3_D1713 PASSED on the PC (python 3.11 env; same 3.3e-7 background check); all 9 full-Planck CLASS fits queued, 3 running (coupled ×3).
+
+## D1718 (CENTRE/POPULATE, 19 Nov 2026) — negative-space loop tick 2: register updated; one correction
+- Register C8 (WEAVE_POSTULATES.md, commit 595dbdb5, whose message lost its D-number): negative space moved from "forbidden, needs a second sector" to DERIVED from the coupled fix (D1716/D1717); the full-Planck CLASS test (D1713) is listed as decisive.
+- CORRECTION: C8's line gave the dark-matter clustering boost as G_eff = G(1 + β²). The correct factor for this coupling is G(1 + 2β²) (D1714, Pettorino–Baccigalupi; reproduced by CLASS in D1713). At β = 0.074: +1.1%, not +0.55%. No computed result had used the wrong factor.
+- Names (Danny 21:00): coupled thread = the Arthur field; X = the Sarah; A′ = the Cassandra (WEAVE_NAMES.md).
