@@ -6,7 +6,7 @@ run(params) -> {'params', 'levels': [level, ...], 'scorecard'}. Each level:
    status: pass | tension | fail | open, labels: notes on what is predicted (P), fitted (F) or an open gap (G), links}
 Rules: every number is computed by a validated toolkit function, or is a measurement carrying its source.
 Status: pass if every |pull| < 2 and every limit passes; tension if a |pull| is 2–3; fail if any |pull| ≥ 3 or a limit fails."""
-import functools, math, warnings
+import cmath, functools, math, warnings
 
 DEFAULTS = dict(
     inflation_model='serapis_10d', Nstar=55.0,                      # Janus (N* ignored for the full SERAPIS models)
@@ -15,7 +15,8 @@ DEFAULTS = dict(
     wino_mass_GeV=1000.0, run='run3',                               # CERN+1
     halo='Einasto', rho_sun=0.4,                                    # Hyperion galaxy
     eos='SLy',                                                      # Hyperion stars
-    target='M31', aperture_mm=80.0, site='okc')                     # Mapper
+    target='M31', aperture_mm=80.0, site='okc',                     # Mapper
+    sugra_m=1, tauq_mass_GeV=1e11, tauq_phi0=1.0)                   # quark thread τ_q (Q4–Q6, D1730–D1732)
 # ΔN_eff carried by each dark-sector branch (register C3/C5): mirror world at its BBN bound; minimal dark sector cold.
 # Each value from the D-notes (V1 finding 1): the label says which note and whether it is an estimate or a bound.
 DARK_SECTORS = {'none': (0.0, 'no dark radiation'),
@@ -281,7 +282,38 @@ def sky(p):
              'L5: the Galaxy level\'s gamma-line region is passed here as a science target'],
              links=['Galactic-centre line region from the Galaxy level (W2)'], status='open')
 
-LEVELS = (inflation, flavour, bbn, late, colliders, galaxy, stars, sky)
+# ---------------- B2. quarks: third thread τ_q (Q1–Q6, D1727–D1732) ----------------
+EPS_FITS = {'A masses only': 0.03188+0.02151j, 'B +CKM (real g)': 0.01779+0.02926j, 'C +CKM (complex g_d)': 0.00318+0.02792j}  # arXiv:2212.13336
+EPS_BAND = (0.028, 0.038)
+LHCB_RMM = (0.035, 0.014, 0.012, 0.0280, 0.0016, 'LHCb Run1-3 R_mumu, arXiv:2611.00230 (D1726)')
+def _tdec(m, MP=2.435e18):
+    G = m**3/(4*math.pi*MP**2); g = 10.75 if (90/(math.pi**2*10.75))**.25*math.sqrt(G*MP) < 1 else 80
+    return (90/(math.pi**2*g))**.25*math.sqrt(G*MP)
+def quarks(p):
+    m = int(p['sugra_m']); u = 0.0145/(m+0.0625)*cmath.exp(-2j*math.pi/9); eps = 1j*math.sqrt(3)*u     # 2201.02020 → 2212.13336 convention
+    dist = {k: abs(eps-v)/abs(v) for k, v in EPS_FITS.items()}
+    M, phi0, TR, Ns = float(p['tauq_mass_GeV']), float(p['tauq_phi0']), 1.34e9, 55.0
+    Td = _tdec(M); D = max(1.0, TR*phi0**2/6/Td); dns = abs(2*(-math.log(D)/3)/Ns**2)
+    r, up, dn, sm, se, src = LHCB_RMM; pull = (r-sm)/math.hypot(up if sm > r else dn, se)
+    pulls = {'ε in quark-fit band (Q6)': 'pass' if EPS_BAND[0] <= abs(eps) <= EPS_BAND[1] else 'FAIL',
+             'τ_q moduli window (Q4)': 'pass' if (Td >= 5e-3 and D <= 1e3 and dns <= 0.003) else 'FAIL',
+             'LHCb R_μμ vs Weave(=SM)': round(pull, 2)}
+    return L('quarks', 'Quarks (third thread τ_q)', 'B', 'theory/quarks',
+             dict(sugra_m=m, tauq_mass_GeV=M, tauq_phi0=phi0),
+             dict(eps_re=eps.real, eps_im=eps.imag, eps_abs=abs(eps), eps_arg_deg=math.degrees(cmath.phase(eps)),
+                  nearest_fit=min(dist, key=dist.get), nearest_rel_dist=min(dist.values()),
+                  T_dec_GeV=Td, dilution_D=D, dns=dns, theta_bar=0.0),
+             [dict(name=k, re=v.real, im=v.imag, source='arXiv:2212.13336') for k, v in EPS_FITS.items()] +
+             [dict(name='ε band', limit=list(EPS_BAND), source='arXiv:2212.13336'), dict(name='R_μμ', value=r, sm=sm, source=src)],
+             pulls,
+             ['HOSTED, NOT PREDICTED: quark sector is an imported mechanism (D1732)',
+              'θ̄ = 0 from anomaly-free weights (FST, arXiv:2406.01689) — structure, A',
+              'ε from SUGRA (m,0) minimum, arXiv:2201.02020 — zero-parameter test FAILS for every m (Q6)',
+              'τ_q must be heavy ≳ 2e10 GeV (Q4, c=1, factor ~2)',
+              'B→μμ: Weave adds nothing; SM default (consistent, not evidence)'],
+             links=['τ_q decay → dilution D → ΔN* = −⅓ ln D (Inflation level)', 'τ_q ≠ thread (thread rests at i)'])
+
+LEVELS = (inflation, flavour, quarks, bbn, late, colliders, galaxy, stars, sky)
 
 def run(params=None):
     p = dict(DEFAULTS); p.update(params or {})
@@ -306,6 +338,9 @@ def knobs():
         'inflation': [dict(key='inflation_model', label='Model', type='select', options=list(J.MODELS)),
                       dict(key='Nstar', label='N* (ignored for serapis_*)', type='number', min=40, max=70, step=1, unit='e-folds')],
         'flavour':   [],
+        'quarks':    [dict(key='sugra_m', label='SUGRA class m (W ∝ (j−1728)^{m/2})', type='number', min=1, max=7, step=1, unit=''),
+                      dict(key='tauq_mass_GeV', label='τ_q mass', type='number', min=1e4, max=5e12, step=1e9, unit='GeV'),
+                      dict(key='tauq_phi0', label='τ_q displacement φ₀', type='number', min=0.1, max=1.0, step=0.1, unit='M_P')],
         'bbn':       [dict(key='omega_b', label='ω_b', type='number', min=0.020, max=0.025, step=0.0001, unit=''),
                       dict(key='dark_sector', label='Dark sector (sets ΔN_eff)', type='select', options=list(DARK_SECTORS))],
         'late':      [dict(key='b_A', label='Arthur coupling b_A', type='number', min=-0.3, max=0.1, step=0.001, unit=''),

@@ -1,0 +1,2 @@
+# Q7 DEVIATIONS (written 2026-11-20 before any further action)
+D1 (procedure): the lock PREREG_Q7_SPLIT_THREAD.md + .sha256 was COMMITTED locally (108ade6e) before the script ran, but the push failed (git pull --rebase blocked by an unrelated uncommitted engine edit). The script then ran once. So the lock was committed but not yet public at run time. The rule text is unchanged (sha256 verifies). Pushed immediately afterwards. No rerun.

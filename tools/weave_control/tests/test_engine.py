@@ -2,7 +2,7 @@ from tools.weave_control import engine as E
 R = E.run()
 LV = {l['id']: l for l in R['levels']}
 def test_all_levels_present_and_no_errors():
-    assert set(LV) == {'inflation', 'flavour', 'bbn', 'late', 'colliders', 'galaxy', 'stars', 'sky'}
+    assert set(LV) == {'inflation', 'flavour', 'quarks', 'bbn', 'late', 'colliders', 'galaxy', 'stars', 'sky'}
     assert not any(any('ERROR' in s for s in l['labels']) for l in R['levels'])
     assert all(l['status'] in ('pass', 'tension', 'fail', 'open') and l['category'] in 'ABCDE' for l in R['levels'])
 def test_flavour_koide_and_brannen():
@@ -67,3 +67,8 @@ def test_w5_bbn_theory():
     assert abs(pl['DH:Cooke2018 (obs only)'] - (-2.62)) < 0.05
     assert abs(pl['DH:Cooke2018 (PRIMAT theory σ)']) < abs(pl['DH:Cooke2018 (obs only)'])
     assert abs(pl['DH:Cooke2018 (Yeh+ theory σ)']) < abs(pl['DH:Cooke2018 (PRIMAT theory σ)'])
+def test_quarks_level_q4_q6():
+    q = LV['quarks']; o = q['outputs']
+    assert abs(o['eps_abs'] - 0.0236) < 2e-4 and abs(o['eps_arg_deg'] - 50.0) < 0.1      # D1732
+    assert q['pulls']['ε in quark-fit band (Q6)'] == 'FAIL' and q['pulls']['τ_q moduli window (Q4)'] == 'pass'
+    assert [l for l in E.run({'tauq_mass_GeV': 1e9})['levels'] if l['id'] == 'quarks'][0]['pulls']['τ_q moduli window (Q4)'] == 'FAIL'
