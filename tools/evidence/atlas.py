@@ -46,7 +46,7 @@ def rows():
             weave=w, label=lab, data=dat, source=src, pull=v, headline=head and lab == 'P', dnote='D1652, D1667, D1669, D1690; PREREG_W4_FLAVOUR')
     add(id='flav-TM2', category='particle', toolkit='Flavour', quantity='exact TM2 sin²θ₁₂ (an earlier Weave assignment)', weave=f['outputs']['TM2_sin2_theta12_excluded'],
         label='P', data='0.3092 ± 0.0087 (JUNO)', source='JUNO arXiv:2511.14593; D1652', pull=(f['outputs']['TM2_sin2_theta12_excluded'] - 0.3092)/0.0087,
-        headline=True, dnote='D1652: the only future-data test so far; FAILED; superseded by TM1')
+        headline=True, dnote='D1652: failed; superseded by TM1')
 
     # ---- light elements (Hyperion) ----
     b = lv['bbn']
@@ -122,7 +122,7 @@ CLASSIFY = [  # (id prefix, timing, kind, inherited, reason)
     ('flav-TM1-sin', 'post-hoc', 'match', True, 'TM1 adopted after JUNO excluded TM2 (D1667); TM1 is a known pattern'),
     ('flav-TM1-', 'locked', 'match', True, 'TM1 sum rule is inherited; branch chosen by data'),
     ('flav-m', 'locked', 'bound', False, 'mass sum assumes m1 = 0'),
-    ('flav-TM2', 'future-data', 'match', False, 'exact TM2 was on record before JUNO first data (Nov 2025 data vs earlier assignment)'),
+    ('flav-TM2', 'locked', 'match', True, 'exact TM2 (D1598/D1599, Nov 2026) was locked before checking JUNO, but the JUNO data (Nov 2025) were already public; TM2 is a known pattern (inherited). Corrected 20 Nov 06:40 CT: an earlier label called this future-data'),
     ('bbn-Yp', 'locked', 'match', True, 'standard BBN at ΔN_eff ≈ 0: the Weave leaves it unchanged'),
     ('bbn-DH', 'locked', 'match', True, 'standard BBN at ΔN_eff ≈ 0'),
     ('bbn-li7', 'locked', 'match', True, 'standard BBN failure, inherited'),

@@ -1,8 +1,8 @@
 {
  "provenance": {
   "toolkit": "Evidence Atlas",
-  "version": "119bdfcf+dirty",
-  "created_utc": "2026-11-20T12:21:41Z",
+  "version": "185a1e77+dirty",
+  "created_utc": "2026-11-20T12:24:30Z",
   "settings": {},
   "sources": [],
   "validated_by": [
@@ -31,7 +31,7 @@
   },
   "evidence": {
    "pass": 4,
-   "fail": 2,
+   "fail": 1,
    "tension": 2
   },
   "evidence_by_kind": {
@@ -39,18 +39,18 @@
     "pass": 2,
     "tension": 1
    },
-   "match": {
-    "fail": 2,
-    "pass": 1
-   },
    "comparison": {
     "pass": 1,
     "tension": 1
+   },
+   "match": {
+    "fail": 1,
+    "pass": 1
    }
   },
   "consistent_not_evidence": {
    "pass": 5,
-   "fail": 1
+   "fail": 2
   }
  },
  "rows": [
@@ -445,13 +445,13 @@
    "source": "JUNO arXiv:2511.14593; D1652",
    "pull": 3.633816682306909,
    "headline": true,
-   "dnote": "D1652: the only future-data test so far; FAILED; superseded by TM1",
+   "dnote": "D1652: failed; superseded by TM1",
    "status": "fail",
-   "timing": "future-data",
+   "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "exact TM2 was on record before JUNO first data (Nov 2025 data vs earlier assignment)",
-   "evidence": true
+   "inherited": true,
+   "why": "exact TM2 (D1598/D1599, Nov 2026) was locked before checking JUNO, but the JUNO data (Nov 2025) were already public; TM2 is a known pattern (inherited). Corrected 20 Nov 06:40 CT: an earlier label called this future-data",
+   "evidence": false
   },
   {
    "id": "bbn-Yp-LBT2026-PRIMAT-theory-σ-",
