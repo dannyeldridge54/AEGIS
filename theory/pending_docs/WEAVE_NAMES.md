@@ -96,3 +96,12 @@ These translations are drafts: each needs a native speaker's check before public
 ### 5. Coverage (now)
 Africa: Egypt, Ghana, Benin (Fon), Yoruba · Asia: China, Japan, India, Indonesia, Central Asia, Mesopotamia, Persia · Europe: Rome, the Greco-Egyptian world, Norse, Celtic · Americas: Maya, Inca and the Andes, Aztec · Oceania: Māori, Polynesia.
 Not yet represented (next threads): the First Nations of North America, Aboriginal and Torres Strait Islander peoples of Australia, the Arctic peoples, Southeast Asia beyond Indonesia, the Caribbean, the Pacific Northwest, the Sámi, the Caucasus, the Horn of Africa, and others. These should be added **with** people from those communities, not chosen for them.
+
+## Family names for the predicted particles (Danny 21:00, 19 Nov 2026)
+Danny named the first three undiscovered particles of the Weave (paper "Not Yet Seen") after his family. These are personal names and sit alongside the world-culture names above, not in place of them.
+| name | particle | what it is |
+|---|---|---|
+| **the Sarah** (symbol X) | asymmetric dark-matter particle, 12.8 GeV | the main body of dark matter; made from the same one asymmetry as ordinary matter, 5.4× its mass budget |
+| **the Cassandra** (symbol A′) | dark photon, 0.3–5 GeV, mixing ε ~ 10⁻¹¹–10⁻⁷ | the light that only the dark side sees; it clears away the Sarah's antiparticles so the Sarah can remain |
+| **the Arthur** (symbol φ, the late thread) | the ultralight dark-energy field coupled to dark matter, b ≈ −0.07 | the quiet field that rises and gently changes the dark matter it touches; its coupling is what makes "negative space" (D1716) |
+Plural and adjective forms: Sarahs (X particles), a Cassandra photon, the Arthur field / Arthur coupling b_A.
