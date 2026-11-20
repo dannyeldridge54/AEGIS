@@ -67,10 +67,11 @@ footer{max-width:1440px;margin:auto;padding:0 16px 30px;color:var(--muted);font-
 const CAT = {A:'Inflation & loom', B:'Flavour', C:'Dark sector & late universe', D:'Matter genesis & stars', E:'Observing'};
 const $ = s => document.querySelector(s), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // referee U-R2: 3 significant figures by default; more only where the quantity carries a small error (PREC)
-const PREC = {Koide_Q: 7, Brannen_delta: 7, ns: 4, Yp: 4, f_max: 3, f_max_at_R_0p658: 3};
+const PREC = {Koide_Q: 7, Brannen_delta: 7, ns: 4, Yp: 4, f_max: 3, f_max_at_R_0p658: 3, TM1_sin2_theta12: 4, TM2_sin2_theta12_excluded: 4, TM1_dCP_s23_0561: 4, TM1_dCP_s23_0470: 4};
 const num = (x, d=3, key) => x == null ? '—' : (typeof x !== 'number' ? esc(x) : Number.isInteger(x) && Math.abs(x) < 1e5 ? String(x) :
   (Math.abs(x) >= 1e5 || (Math.abs(x) < 1e-3 && x !== 0)) ? x.toExponential(2) : String(+x.toPrecision(PREC[key] || d)));
-const NAMES = {ns:'n_s', r:'r', alpha_s:'running α_s', bridge_B1:'bridge B1 (number only)', bridge_B2:'bridge B2 (number only)', Koide_Q:'Koide Q', Koide_Q_sigma:'σ(Q) from m_τ',
+const NAMES = {TM1_sin2_theta12:'TM1 sin²θ₁₂', TM2_sin2_theta12_excluded:'exact TM2 sin²θ₁₂ (excluded)', TM1_dCP_s23_0561:'TM1 δ_CP branches, s₂₃² 0.561 (°)',
+  TM1_dCP_s23_0470:'TM1 δ_CP branches, s₂₃² 0.470 (°)', dCP_reproduces_D1667:'reproduces locked D1667/D1669', ns:'n_s', r:'r', alpha_s:'running α_s', bridge_B1:'bridge B1 (number only)', bridge_B2:'bridge B2 (number only)', Koide_Q:'Koide Q', Koide_Q_sigma:'σ(Q) from m_τ',
   Brannen_delta:'Brannen δ (rad)', delta_minus_2_9:'δ − 2/9', delta_equivalent_forms:'equivalent δ forms', Yp:'helium Y_p', DH:'D/H', z_dagger:'z† (negative space)', G_eff_over_G:'G_eff / G',
   S8_status:'S₈ status', sigma_fb:'σ(pp → pair)', pairs:'produced pairs', ctau_cm:'cτ (chargino)', expected_reach_GeV:'expected reach', J_IGS_ROI_GeV2_cm5:'J, H.E.S.S. IGS region',
   J_annulus_0p5_3deg_GeV2_cm5:'J, 0.5°–3° annulus', sigma_v_line_cm3_s:'line σv (LO)', thermal_fraction:'predicted wino fraction', f_max:'max fraction (R 0.794)',
@@ -181,7 +182,27 @@ function chartSky(L) {
   return (window.pywebview || !src ? '' : `<img class="finder" alt="Finder chart for ${esc(o.name)}" src="${src}">`) +
     (gc ? `<p class="notes">Science target from the Galaxy level: ${esc(gc.name)} at RA ${gc.ra}°, Dec ${gc.dec}°. <button data-target="${gc.ra},${gc.dec}" class="goto">Chart it</button></p>` : '');
 }
-const CHARTS = {inflation: chartInflation, bbn: chartBBN, late: chartLate, colliders: chartColliders, galaxy: chartGalaxy, stars: chartStars, sky: chartSky};
+function chartFlavour(L) {
+  const o = L.outputs, ds = L.data.filter(d => d.name.startsWith('sin²θ₁₂'));
+  const lo = 0.28, hi = 0.35, x = v => 150 + (v - lo) / (hi - lo) * 250;
+  let s = ds.map((d, i) => `<text x="146" y="${22*i+19}" text-anchor="end">${esc(d.name.replace('sin²θ₁₂ ', ''))}</text><line x1="${x(d.value - d.sigma)}" x2="${x(d.value + d.sigma)}" y1="${22*i+15}" y2="${22*i+15}" stroke="var(--sky)" stroke-width="4"/><circle cx="${x(d.value)}" cy="${22*i+15}" r="3.5" fill="var(--fg)"><title>${esc(d.name)} ${d.value} ± ${d.sigma}</title></circle>`).join('');
+  const h = 22 * ds.length + 6;
+  s += `<line x1="${x(o.TM1_sin2_theta12)}" x2="${x(o.TM1_sin2_theta12)}" y1="2" y2="${h}" stroke="var(--pass)" stroke-width="2"/><text x="${x(o.TM1_sin2_theta12)}" y="${h+12}" text-anchor="middle" fill="var(--pass)">TM1</text>`;
+  s += `<line x1="${x(o.TM2_sin2_theta12_excluded)}" x2="${x(o.TM2_sin2_theta12_excluded)}" y1="2" y2="${h}" stroke="var(--fail)" stroke-dasharray="4 3"/><text x="${x(o.TM2_sin2_theta12_excluded)}" y="${h+12}" text-anchor="middle" fill="var(--fail)">TM2 ✗</text>`;
+  s += axisX(150, 400, h + 18, [[x(0.28),0.28],[x(0.30),0.30],[x(0.32),0.32],[x(0.34),0.34]], v => v, 'sin²θ₁₂ (bars: data ±1σ)');
+  // δ_CP dial: 0° at the right, counter-clockwise; arcs for the T2K+NOvA 1σ and NuFIT 3σ ranges, dots for the TM1 branches
+  const rng = L.data.filter(d => d.kind === 'range'), cx = 210, cy = 95, R = 62;
+  const pt = (deg, r) => [cx + r * Math.cos(deg * Math.PI / 180), cy - r * Math.sin(deg * Math.PI / 180)];
+  const arc = (a0, a1, r, col, w) => { const [x0, y0] = pt(a0, r), [x1, y1] = pt(a1, r), big = ((a1 - a0) % 360 + 360) % 360 > 180 ? 1 : 0;
+    return `<path d="M${x0},${y0} A${r},${r} 0 ${big} 0 ${x1},${y1}" fill="none" stroke="${col}" stroke-width="${w}" opacity=".85"/>`; };
+  let d = `<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="var(--line)"/>`;
+  rng.forEach((r, i) => { d += arc(r.value[0], r.value[1], R + 8 + 9 * i, i ? 'var(--violet)' : 'var(--sky)', 6) + `<text x="10" y="${16 + 14*i}" fill="${i ? 'var(--violet)' : 'var(--sky)'}">${esc(r.name.split(' (')[0])}: ${r.value[0]}°–${r.value[1]}°</text>`; });
+  [[o.TM1_dCP_s23_0561, 'var(--pink)', '0.561'], [o.TM1_dCP_s23_0470, 'var(--tension)', '0.470']].forEach(([bs, col, lab]) => bs.forEach(b => { const [px, py] = pt(b, R); d += `<circle cx="${px}" cy="${py}" r="5" fill="${col}"><title>TM1 δ_CP ${num(b,4)}° (s₂₃² ${lab})</title></circle>`; }));
+  d += [0, 90, 180, 270].map(a => { const [px, py] = pt(a, R - 14); return `<text x="${px}" y="${py + 4}" text-anchor="middle">${a}°</text>`; }).join('');
+  d += `<text x="10" y="186" >dots: TM1 δ_CP (pink s₂₃² 0.561, amber 0.470)</text>`;
+  return frame(s, h + 36) + frame(d, 192);
+}
+const CHARTS = {flavour: chartFlavour, inflation: chartInflation, bbn: chartBBN, late: chartLate, colliders: chartColliders, galaxy: chartGalaxy, stars: chartStars, sky: chartSky};
 
 // ---------- render ----------
 function knobHTML(k, v, level) {
@@ -193,7 +214,7 @@ function knobHTML(k, v, level) {
 }
 function reads(o) {
   return Object.entries(o).filter(([k, v]) => v == null || typeof v !== 'object').map(([k, v]) => `<div class="rd"><b>${num(v, 3, k)}${UNITS[k] ? ' <small>' + UNITS[k] + '</small>' : ''}</b><span>${esc(NAMES[k] || k.replace(/_/g, ' '))}</span></div>`).join('') +
-         Object.entries(o).filter(([k, v]) => Array.isArray(v) && v.every(x => typeof x === 'number')).map(([k, v]) => `<div class="rd"><b>${v.map(x => num(x, 3)).join(k === 'thermal_fraction' ? ' – ' : ', ')}</b><span>${esc(NAMES[k] || k.replace(/_/g, ' '))}${k === 'thermal_fraction' ? ' (range)' : ''}</span></div>`).join('');
+         Object.entries(o).filter(([k, v]) => Array.isArray(v) && v.every(x => typeof x === 'number')).map(([k, v]) => `<div class="rd"><b>${v.map(x => num(x, 3, k)).join(k === 'thermal_fraction' ? ' – ' : ', ')}</b><span>${esc(NAMES[k] || k.replace(/_/g, ' '))}${k === 'thermal_fraction' ? ' (range)' : ''}</span></div>`).join('');
 }
 function render(d) {
   const P = d.provenance || {}; $('#meta').textContent = (d.offline ? 'OFFLINE SNAPSHOT · ' : '') + `code ${P.version || '?'} · ${d.offline ? 'built ' : ''}${P.created_utc || ''}`;
@@ -211,7 +232,7 @@ function render(d) {
       ${chart}
       ${pulls.length ? `<details><summary>Tests (${pulls.length})</summary><table class="pulls">${pulls.map(([k, v]) => `<tr><td>${esc(k)}</td><td class="s-${pc(v)}">${typeof v === 'number' ? (v > 0 ? '+' : '') + v.toFixed(2) + 'σ' : esc(v)}</td></tr>`).join('')}</table></details>` : ''}
       <ul class="notes">${L.labels.map(x => `<li>${esc(x)}</li>`).join('')}${L.links.map(x => `<li>↔ ${esc(x)}</li>`).join('')}</ul>
-      ${L.data.length ? `<details><summary>Data and sources (${L.data.length})</summary><ul class="notes">${L.data.map(x => `<li>${esc(x.name)}${x.value != null ? ': ' + num(x.value) : ''}${x.sigma != null ? ' ± ' + (Array.isArray(x.sigma) ? x.sigma.join('/') : x.sigma) : ''}${x.limit != null ? ' (limit ' + num(x.limit) + ')' : ''} — ${esc(x.source)}</li>`).join('')}</ul></details>` : ''}
+      ${L.data.length ? `<details><summary>Data and sources (${L.data.length})</summary><ul class="notes">${L.data.map(x => `<li>${esc(x.name)}${x.value != null ? ': ' + (Array.isArray(x.value) ? x.value.join('–') + '°' : esc(String(x.value))) : ''}${x.sigma != null ? ' ± ' + (Array.isArray(x.sigma) ? x.sigma.join('/') : x.sigma) : ''}${x.limit != null ? ' (limit ' + esc(String(x.limit)) + ')' : ''} — ${esc(x.source)}</li>`).join('')}</ul></details>` : ''}
     </section>`; }).join('');
   document.querySelectorAll('[data-k]').forEach(el => el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', () => setParam(el.dataset.k, el.type === 'number' || (el.tagName === 'SELECT' && el.value !== '' && !isNaN(el.value) && !el.value.includes(',')) ? parseFloat(el.value) : el.value)));
   document.querySelectorAll('[data-jump]').forEach(b => b.onclick = () => { const t = document.getElementById('p-' + b.dataset.jump); if (t) t.scrollIntoView({behavior: 'smooth', block: 'start'}); });
