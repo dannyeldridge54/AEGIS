@@ -1,0 +1,2 @@
+id,category,toolkit,quantity,weave,label,data,source,pull,status,headline,dnote
+lhc-wino,collider limit,CERN+1,wino at 1000 GeV vs ATLAS disappearing tracks,1000.0,A,> 670 GeV excluded below,"ATLAS disappearing track, observed 95% wino limit (arXiv:2603.08315; D1722)",pass,pass,False,"mass is a chosen benchmark, not a prediction"
