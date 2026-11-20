@@ -16908,3 +16908,11 @@ Gate passed (−0.006). Runs: Union3 under the original prior; Pantheon+ and DES
 | DES-Y5 | −8.98 (amp 0.239, H0 66.78, Ωm 0.315) | −9.38 | −19.72 |
 | Union3 | −1.93 (amp 0.179, H0 67.50, Ωm 0.309) | −2.64 | −15.02 |
 Reading: the exact curve changes the full-Planck score by ≤ 1 per SN set (as at compressed level, D1696). The uncoupled thread still trails w0wa by 6–13 on full Planck: the weak spot (C8) is real on full data. Its fix (coupling) is now being tested in patched CLASS (D1713), which also refits ΛCDM in the same code.
+
+## D1717 (CENTRE/DERIVE+REVIEW, 19 Nov 2026) — negative-space loop tick 1: closed form for the switch redshift; PC build passed
+DERIVE: with dark matter normalised at z*, ρ_DE,eff = ρ_φ − ρ_c(z)(e^{|b|Δφ} − 1), Δφ = φ − φ*. Late on, Δφ is almost frozen (0.639 at z = 3, 0.631 today), so the switch is at
+  (1 + z†)³ ≈ Ω_φ,0 / [Ω_c,0 (e^{|b|Δφ} − 1)].
+At the D1710 point (Ω_φ,0 0.702, Ω_c,0 0.249, Δφ 0.639, b −0.074) this gives z† = 2.88 vs 2.93 from the full background (2% in 1 + z) ✓.
+Scaling: z† ≈ 4.2, 3.4, 2.8, 2.5 for |b| = 0.03, 0.05, 0.074, 0.10 (Δφ held fixed). Our real-data ΛsCDM fits (z† 2.37–2.64) would correspond to |b| ≈ 0.09–0.11; a full-Planck b will turn this into a sharp number.
+REVIEW of D1716: (i) the normalisation epoch matters: normalising before the early kick (z ≫ 1000, where φ is still 0.49) would make the deficit larger and push z† lower; z* is the CMB's own and the natural choice, so it stands; (ii) the depth grows as (1+z)³, so Lyα BAO at z ≈ 2.3–3 sits right at the switch: the next MAKE step.
+PC: BUILDCLASS3_D1713 PASSED on the PC (python 3.11 env; same 3.3e-7 background check); all 9 full-Planck CLASS fits queued, 3 running (coupled ×3).
