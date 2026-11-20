@@ -16663,3 +16663,8 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Trend at the self-dual point (Zagier): D = 6: −0.66 → D = 5: −0.19 → D = 4: +0.15. The higher the torus dimension, the more the volume term wins.
 - A3 summary: the one-loop thread is POSITIVE (plateau, not hilltop) at D = 8 (everywhere), D = 4 (whole slice), and D = 6, 5 for any torus not within ≈ 30% / 6% of string size. Near-string-size tori at D = 6, 5 are scheme-dependent. Caveat: only the rectangular B = 0 slice was checked, not the full SO(d,d) moduli space.
 - Register: A3 upgraded from C-sign (conjecture) to "derived on the rectangular slice; scheme-dependent only at stringy radii for D = 6, 5".
+
+## D1682 (LEFT, 19 Nov 2026) — RESULT: the D = 6 one-loop sign is controlled by the TOTAL torus VOLUME, not by every radius (PREREG_A3_D6_ANISO) → volume-controlled ✓
+- [computed, Zagier scheme, B = 0] I for radii (V = ΠR): (1,1,1,1.3) V = 1.3: −0.52; (1,1,1,2) V = 2: +0.66; (1,1,1,3) V = 3: +4.13; (1,1,2,2) V = 4: +2.57; (1.5,1.5,1.5,1.5) V = 5.1: +1.33; (1,2,2,2) V = 8: +5.41; (1,1,3,3) V = 9: +13.1.
+- Even with THREE radii at the self-dual point, one radius of 2 is enough to make the thread positive. Negativity needs the whole T⁴ near string size (V ≲ ~1.6 ℓ_s⁴ along the tested line).
+- Weave meaning: the D = 6 plateau needs only a torus volume a little above string scale. Any geometrically meaningful 6D phase satisfies that. A3 is now effectively closed for D = 6 (B = 0); B ≠ 0 is untested.

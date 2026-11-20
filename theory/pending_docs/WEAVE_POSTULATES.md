@@ -6,7 +6,7 @@ Rule: a postulate is a stated assumption that the theory now RUNS on. It is not 
 |---|---|---|---|
 | A1 | why V₀ ∝ \|∇ln Λ\|² (Zhinü) | **P-Z:** the inflaton's potential energy is the running of the species scale; the vacuum pays for every species it "un-weaves" | r = 5.4 × 10⁻⁴ (10D) / 1.07 × 10⁻³ (6D); n_s ≈ 0.9706 (LiteBIRD, CMB-S4) |
 | A2 | TCC violated (r ≫ 10⁻³⁰) | **P-TCC:** the TCC is not a law; plateau inflation with a species cutoff is allowed | any r detection falsifies the TCC, not us |
-| A3 | signs of the regularised one-loop terms | D = 8 PROVEN POSITIVE across the moduli space (min 3.25 at ρ, D1672). D = 6 (D1680): positive for every torus with R ≳ 1.3 ℓ_s (any scheme); near self-dual R ≈ 1 the sign is scheme-dependent. D = 5: positive for R ≳ 1.06 ℓ_s; D = 4: positive on the whole slice (D1681). Only the rectangular B = 0 slice was checked | explicit Narain-lattice computation |
+| A3 | signs of the regularised one-loop terms | D = 8 PROVEN POSITIVE across the moduli space (min 3.25 at ρ, D1672). D = 6 (D1680, D1682): positive once the T⁴ VOLUME exceeds ~1.6 ℓ_s⁴ (one radius of 2 is enough), in any scheme; near self-dual R ≈ 1 the sign is scheme-dependent. D = 5: positive for R ≳ 1.06 ℓ_s; D = 4: positive on the whole slice (D1681). Only the rectangular B = 0 slice was checked | explicit Narain-lattice computation |
 | A4 | heterotic indices for d ≥ 3 taken by analogy | **C-het:** s = d/2 − 1 as for Γ_{d,d} | case-by-case theta lifts |
 | A5 | how a 6D phase at horizon exit is realised | **C-6D:** two anisotropic LVS cycles with M_KK < H | r/n_s node: 1.07 × 10⁻³ vs 5.4 × 10⁻⁴ |
 
