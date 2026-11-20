@@ -98,3 +98,10 @@ Source: European astronomer survey (arXiv:2012.07686; ~1,000 respondents): repro
 | visual analytics | quick-look plots for every preset (rotation curve, M–R curve, GW horizon, BBN pulls) saved as PNG/SVG | H1d |
 | installation pain | one-line install profile (pip extras: core / gw / galaxy / full) + `hyperion doctor` that checks optional deps (lalsuite, galpy, colossus, CAMB) and says what each unlocks | H1e |
 | archive + compute | TAP queries to the Gaia archive from inside Hyperion (downloads OK'd) | H1f |
+
+## UI (Danny 22:14: "make sure UIs are pro grade")
+| id | item | status |
+|---|---|---|
+| U1 | one CLI for all toolkits: `--format json|csv|table` on every command, `aegis <toolkit> help`, exit code 2 + plain message for unknown commands/bad input, `--version`; new commands janus models/score/table, hyperion pulls/ns/jfactor, cern runs/point/reach/export/slha | DONE (20 Nov) |
+| U2 | Sky Map web UI vs Aladin Lite / Stellarium Web | queued |
+| U3 | web dashboard for the toolkits, Playwright-checked desktop + phone | queued |

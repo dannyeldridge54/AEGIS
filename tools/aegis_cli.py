@@ -9,6 +9,12 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   cern limit [ATLAS_136|ATLAS_36]   disappearing-track recast limit with theory band
   cern higgsino <mass_GeV> [TeV]    higgsino pair cross sections (fb), 100-1500 GeV
   cern future                       HL-LHC / HE-LHC / FCC-hh wino reach
+  janus models                      model library
+  janus score <model|V(phi)> [N*]   n_s, r, alpha_s and pulls vs Planck 2018, CMB-SPA, CMB-SPA+DESI, BK18
+  janus table [N*]                  every library model scored
+  hyperion pulls [omega_b] [dNeff]  Y_p and D/H with pulls vs LBT 2026, Aver 2021, Cooke 2018
+  hyperion ns [SLy|AP4]             neutron-star maximum mass
+  hyperion jfactor [profile] [rho]  J-factor for the H.E.S.S. inner-Galaxy region
   cern slha <file> [run]            read an SLHA spectrum: wino/higgsino character, dm, xsec, lifetime
   cern runs                         run presets: run2, run3, run2+3, hl-lhc, hl-lhc-ult, he-lhc, fcc-hh
   cern point <run> <model> <mass>   cross section, expected pairs, lifetime for a run (model: wino|higgsino)
@@ -52,7 +58,38 @@ def _root():
     if base not in sys.path: sys.path.insert(0, base)
     return base
 
-def _show(x): print(json.dumps(x, indent=1, default=lambda o: float(o) if hasattr(o, '__float__') else str(o)))
+FORMAT = ['json']   # set by --format json|csv|table
+def _flat(d, pre=''):
+    out = {}
+    for k, v in (d.items() if isinstance(d, dict) else enumerate(d)):
+        key = f'{pre}{k}'
+        if isinstance(v, (dict, list)) and v and not isinstance(v, str): out.update(_flat(v, key + '.'))
+        else: out[key] = v
+    return out
+def _num(v):
+    try: return f'{float(v):.6g}' if not isinstance(v, (bool, str)) else str(v)
+    except (TypeError, ValueError): return str(v)
+def _show(x):
+    f = FORMAT[0]
+    if f == 'json': print(json.dumps(x, indent=1, default=lambda o: float(o) if hasattr(o, '__float__') else str(o))); return
+    rows = x if isinstance(x, list) and x and isinstance(x[0], dict) else [x]
+    rows = [_flat(r) if isinstance(r, dict) else {'value': r} for r in rows]
+    cols = list(dict.fromkeys(k for r in rows for k in r))
+    if f == 'csv':
+        import csv as _csv; w = _csv.writer(sys.stdout); w.writerow(cols)
+        for r in rows: w.writerow([_num(r.get(c, '')) for c in cols])
+        return
+    if len(rows) == 1:   # table: key / value
+        wk = max(len(c) for c in cols)
+        for c in cols: print(f'{c:<{wk}}  {_num(rows[0][c])}')
+        return
+    width = {c: max(len(c), *(len(_num(r.get(c, ''))) for r in rows)) for c in cols}
+    print('  '.join(f'{c:<{width[c]}}' for c in cols)); print('  '.join('-'*width[c] for c in cols))
+    for r in rows: print('  '.join(f'{_num(r.get(c, "")):<{width[c]}}' for c in cols))
+def _help_for(tk):
+    lines = [l for l in (__doc__ or '').splitlines() if l.strip().startswith(tk + ' ')]
+    print(f'aegis {tk} commands:'); print('\n'.join(lines) if lines else '  (see aegis help)')
+    print('Options for every command: --format json|csv|table   (default json)')
 
 def cern(args):
     from tools.lhc import xsec, lifetime, theory_band, future
@@ -99,6 +136,17 @@ def cern(args):
 def janus(args):
     from tools.janus_calc import anyV, core
     if not args: print(__doc__); return
+    if args[0] == 'models':
+        from tools.janus_calc import settings as JS
+        _show([dict(name=k, V=v[0], note=v[1]) for k, v in JS.MODELS.items()]); return
+    if args[0] == 'score':      # janus score <model|V(phi)> [N*]
+        from tools.janus_calc import settings as JS
+        N = float(args[2]) if len(args) > 2 else 55.0
+        p = JS.predict(args[1], N) if args[1] in JS.MODELS else JS.predict(formula=args[1], Nstar=N)
+        p['pulls'] = JS.score(p); _show(p); return
+    if args[0] == 'table':
+        from tools.janus_calc import settings as JS
+        _show([{**{k: r[k] for k in ('model', 'Nstar', 'ns', 'r')}, **r['scores']} for r in JS.table(float(args[1]) if len(args) > 1 else 55.0)]); return
     N = float(args[1]) if len(args) > 1 else 55.0
     if not 1 <= N <= 200: raise ValueError('N* (e-folds) should be between 1 and 200; 50-60 is usual')
     try: model = anyV.from_formula(args[0])
@@ -113,6 +161,15 @@ def janus(args):
 
 def hyperion(args):
     if not args: print(__doc__); return
+    if args[0] == 'pulls':      # hyperion pulls [omega_b] [dNeff] [code]
+        from tools.janus_astro import settings as HS
+        _show(HS.bbn(float(args[1]) if len(args) > 1 else 0.02237, float(args[2]) if len(args) > 2 else 0.0, args[3] if len(args) > 3 else 'primat')); return
+    if args[0] == 'ns':         # hyperion ns [SLy|AP4]
+        from tools.janus_astro import settings as HS
+        _show(HS.neutron_star(args[1] if len(args) > 1 else 'SLy')); return
+    if args[0] == 'jfactor':    # hyperion jfactor [NFW|Einasto|Burkert] [rho_sun]
+        from tools.janus_astro import settings as HS
+        _show(HS.jfactor(args[1] if len(args) > 1 else 'Einasto', rho_sun=float(args[2]) if len(args) > 2 else 0.4)); return
     if args[0] == 'bbn':
         try: from tools.janus_astro import bbn
         except ImportError: print('hyperion bbn needs the camb package:  pip install camb'); return
@@ -348,9 +405,16 @@ def main(argv=None):
         except Exception: pass
     _root(); argv = sys.argv[1:] if argv is None else argv
     cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'string': string, 'test': test, 'license': license_, 'menu': menu}
+    if '--format' in argv:
+        i = argv.index('--format')
+        if i + 1 >= len(argv) or argv[i + 1] not in ('json', 'csv', 'table'):
+            print('--format takes one of: json, csv, table'); sys.exit(2)
+        FORMAT[0] = argv[i + 1]; argv = argv[:i] + argv[i + 2:]
     if not argv: return menu([])
+    if len(argv) >= 2 and argv[1] in ('help', '-h', '--help') and argv[0] in cmds: _help_for(argv[0]); return
     if argv[0] in ('--version', 'version'): print('aegis', VERSION); return
-    if argv[0] in ('-h', '--help', 'help') or argv[0] not in cmds: print(__doc__); return
+    if argv[0] in ('-h', '--help', 'help'): print(__doc__); return
+    if argv[0] not in cmds: print(f'Unknown command {argv[0]!r}. Run "aegis help" for the list.'); sys.exit(2)
     try: cmds[argv[0]](argv[1:])
     except SystemExit: raise
     except IndexError:
