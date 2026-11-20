@@ -80,9 +80,16 @@ def slha(m, model='wino'):
             f"DECAY   1000024   {width:.6E}   # ~chi_1+ total width (c tau = {w['ctau_cm']:.4g} cm)\n"
             f"     1.00000000E+00   2   1000022   211   # ~chi_1+ -> ~chi_10 pi+ (dominant, ~95%; e and mu channels ~4% omitted)\n")
 
-def scan(run='run3', model='wino', masses=(300, 500, 700, 900, 1100), fmt='json'):
+def scan(run='run3', model='wino', masses=(300, 500, 700, 900, 1100), fmt='json', prov=False):
+    """prov=True embeds the H1a provenance block (version, time, settings, run source)."""
     rows = [point(run, model, float(m)) for m in masses]
+    P = None
+    if prov:
+        from tools.prov_block import provenance
+        P = provenance('CERN+1', dict(run=run, model=model, masses=list(masses)), [RUNS[run][2]],
+                       ['validated CERN+1 modules: xsec, higgsino, lifetime, recast_dt, future (see tools/lhc/README)'])
     if fmt == 'hepdata':
         return hepdata_yaml('chargino mass', 'GeV', [r['mass_GeV'] for r in rows], 'sigma(pp -> pair)', 'fb',
-                            [r['sigma_fb'] for r in rows], {'SQRT(S)': f"{RUNS[run][0]} TeV", 'model': model, 'source': 'CERN+1'})
-    return json.dumps(rows, indent=1, default=float)
+                            [r['sigma_fb'] for r in rows], {'SQRT(S)': f"{RUNS[run][0]} TeV", 'model': model, 'source': 'CERN+1',
+                                                            **({'version': P['version'], 'created_utc': P['created_utc']} if P else {})})
+    return json.dumps(rows if P is None else {'provenance': P, 'rows': rows}, indent=1, default=float)

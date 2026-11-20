@@ -49,13 +49,24 @@ def jfactor(profile='Einasto', survey='HESS_IGS', rho_sun=0.4, r_sun=8.21):
     return dict(profile=profile, survey=survey, rho_sun=rho_sun, r_sun=r_sun,
                 J_GeV2_cm5=J.J_route_A(rho, r_sun, S['psi_max_deg'], S['b_mask_deg']))
 
-def export(rows, fmt='json'):
-    """rows: list of flat dicts. fmt: json | csv | ecsv (CSV with an ECSV-style commented header listing the columns)."""
-    if fmt == 'json': return json.dumps(rows, indent=1, default=float)
+def sources():
+    """Every stored measurement's source string (for the provenance block)."""
+    return [f'{q}:{k} = {m[2]}' for q, d in DATA.items() for k, m in d.items()]
+
+def export(rows, fmt='json', prov=None):
+    """rows: list of flat dicts. fmt: json | csv | ecsv (CSV with an ECSV-style commented header listing the columns).
+    prov: optional provenance dict (tools/provenance.py) embedded in the output (H1a)."""
+    if fmt == 'json':
+        return json.dumps(rows if prov is None else {'provenance': prov, 'rows': rows}, indent=1, default=float)
     cols = list(dict.fromkeys(k for r in rows for k in r))
     buf = io.StringIO()
     if fmt == 'ecsv':
-        buf.write('# %ECSV 1.0\n# ---\n# datatype:\n' + ''.join(f'# - {{name: {c}, datatype: string}}\n' for c in cols) + '# source: Hyperion (AEGIS)\n')
+        from tools.prov_block import ecsv_meta
+        buf.write('# %ECSV 1.0\n# ---\n# delimiter: \',\'\n# datatype:\n' + ''.join(f'# - {{name: {c}, datatype: string}}\n' for c in cols)
+                  + (ecsv_meta(prov) if prov else '# meta: {source: Hyperion (AEGIS)}\n'))
+    elif prov:
+        from tools.prov_block import comment_lines
+        buf.write(comment_lines(prov))
     w = csv.DictWriter(buf, fieldnames=cols, extrasaction='ignore'); w.writeheader()
     for r in rows: w.writerow({k: (json.dumps(v) if isinstance(v, (dict, list)) else v) for k, v in r.items()})
     return buf.getvalue()

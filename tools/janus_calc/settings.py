@@ -34,6 +34,6 @@ def table(Nstar=55.0, models=None):
     for m in (models or MODELS):
         p = predict(m, Nstar); p['scores'] = score(p); rows.append(p)
     return rows
-def export(rows, fmt='json'):
-    from tools.janus_astro.settings import export as _ex      # same JSON/CSV/ECSV writer as Hyperion
-    return _ex(rows, fmt)
+def export(rows, fmt='json', prov=None):
+    from tools.janus_astro.settings import export as _ex      # same JSON/CSV/ECSV writer as Hyperion (+ provenance, H1a)
+    return _ex(rows, fmt, prov)
