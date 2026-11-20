@@ -1,0 +1,72 @@
+{
+  "kind": "aegis_lessons_v1",
+  "note": "Big Bang to now, as the Weave tells it. Every statement carries a tag: established (textbook physics with data behind it), weave (our hypothesis, testable), open (unsolved or failed). Reusable by the Sky Map lesson system.",
+  "tags": {"established": "Established physics", "weave": "Weave hypothesis", "open": "Open or failed"},
+  "steps": [
+    {"id": "inflation", "t": "~10⁻³⁶ s", "title": "Inflation", "phase": 0.02,
+     "lines": [
+       ["established", "A brief burst of accelerated expansion explains why the sky is so uniform and flat; its fingerprints are the nearly scale-invariant ripples in the CMB (n_s ≈ 0.965–0.973)."],
+       ["weave", "The inflaton is the string coupling itself, τ₁, rolling on the SERAPIS-Λ plateau V ∝ (1 − 7.30 e^{−βψ}). It predicts n_s ≈ 0.9706 (fitted tilt) and r ≈ 5.4×10⁻⁴."],
+       ["open", "Primordial gravitational waves (r) are not yet detected; LiteBIRD and CMB-S4 will test r ~ 5×10⁻⁴."]],
+     "eq": "V(τ₁) = V∞ (⅔ y∂_y ln E(τ₁, 3/2))² [1 + C(E − E_ρ)]", "tool": "Janus"},
+    {"id": "endpoint", "t": "end of inflation", "title": "The thread ties off", "phase": 0.08,
+     "lines": [
+       ["weave", "Inflation ends at the symmetric point ρ = e^{iπ/3}, where the potential is exactly zero. A residual Z₃ symmetry survives there."],
+       ["weave", "The 'Y-fork': slower fields can split off to the other knot, τ = i (neutrinos, later the dark thread)."]],
+     "eq": "τ₁ → ρ,  V(ρ) = 0", "tool": "Weave Control"},
+    {"id": "reheat", "t": "~10⁻³⁰ s", "title": "Reheating", "phase": 0.14,
+     "lines": [
+       ["established", "The inflaton's energy turns into a hot plasma of particles."],
+       ["weave", "Reheating temperature T_R ≈ 1.3×10⁹ GeV, with about 0.7% of the energy going to heat."]],
+     "eq": "T_R ≈ 1.34×10⁹ GeV", "tool": "Hyperion"},
+    {"id": "ladder", "t": "very early", "title": "The flavour ladder freezes", "phase": 0.2,
+     "lines": [
+       ["weave", "Heavy flavour fields settle on the rungs of the slip ladder: down quarks on rung 1, up quarks around rung 8 (5–14), charged leptons at the knot."],
+       ["open", "The quark sector is hosted, not predicted: the best model still misses m_s/m_b, V_cb and V_ub by 27–46%."]],
+     "eq": "ε_m = 0.0251 e^{i50°}/(m + 1/16)", "tool": "Quarks"},
+    {"id": "lepto", "t": "~10⁻²⁶ s", "title": "Matter beats antimatter", "phase": 0.27,
+     "lines": [
+       ["established", "Today there is about one extra baryon per billion photons; the Standard Model alone cannot make that excess."],
+       ["weave", "Heavy neutrinos (10¹⁰–10¹² GeV) decay unevenly and leave a lepton excess, which becomes a baryon excess (leptogenesis); the same asymmetry also makes the dark matter."]],
+     "eq": "η_B ≈ 6×10⁻¹⁰", "tool": "Hyperion"},
+    {"id": "ew", "t": "~10⁻¹¹ s", "title": "Electroweak transition", "phase": 0.34,
+     "lines": [["established", "The Higgs field switches on; W, Z and the fermions get their masses."]],
+     "eq": "v = 246 GeV", "tool": "CERN+1"},
+    {"id": "qcd", "t": "~10⁻⁵ s", "title": "Quarks bind into protons", "phase": 0.41,
+     "lines": [["established", "At about 150 MeV the quark–gluon plasma condenses into protons, neutrons and pions."]],
+     "eq": "T_QCD ≈ 150 MeV", "tool": "CERN+1"},
+    {"id": "nu", "t": "~1 s", "title": "Neutrinos decouple", "phase": 0.48,
+     "lines": [
+       ["established", "Neutrinos stop interacting and stream freely; today they form a background of 336 per cm³ at 1.95 K."],
+       ["weave", "Masses 0, 8.65 and 50.1 meV (Σ = 0.059 eV), suppressing small-scale structure by about 3.5%."]],
+     "eq": "T_ν = (4/11)^{1/3} T_γ", "tool": "Hyperion"},
+    {"id": "bbn", "t": "~3 min", "title": "The first nuclei", "phase": 0.55,
+     "lines": [
+       ["established", "Big Bang nucleosynthesis makes helium (Y_p ≈ 0.247) and deuterium (D/H ≈ 2.5×10⁻⁵), matching observations."],
+       ["open", "Lithium-7 is about 3× over-predicted (the lithium problem); the Weave reproduces it but does not solve it."]],
+     "eq": "Y_p ≈ 0.247", "tool": "Hyperion"},
+    {"id": "cmb", "t": "380,000 yr", "title": "The CMB is released", "phase": 0.65,
+     "lines": [["established", "Atoms form, light streams free: the cosmic microwave background, a 2.7 K glow carrying the inflation ripples."]],
+     "eq": "z ≈ 1090", "tool": "Janus"},
+    {"id": "dm", "t": "throughout", "title": "Dark matter", "phase": 0.74,
+     "lines": [
+       ["established", "About 5× more matter than ordinary matter is dark; it shapes galaxies and the CMB peaks."],
+       ["weave", "Asymmetric dark matter (the sarion, 12.8 GeV) made from the same asymmetry as ordinary matter, cleaned up by a dark photon (the cassion)."],
+       ["open", "No direct detection yet; LZ/XENONnT bounds apply."]],
+     "eq": "Ω_DM / Ω_b ≈ 5.4", "tool": "Hyperion"},
+    {"id": "structure", "t": "billions of yr", "title": "Galaxies and stars", "phase": 0.83,
+     "lines": [
+       ["established", "Gravity grows the ripples into galaxies, stars and planets."],
+       ["open", "The clumpiness S₈ was once in tension; with KiDS-Legacy (0.815) it is consistent, and does not separate models."]],
+     "eq": "S₈ = σ₈ √(Ω_m/0.3)", "tool": "Mapper"},
+    {"id": "de", "t": "now (13.8 Gyr)", "title": "Dark energy", "phase": 0.92,
+     "lines": [
+       ["established", "The expansion is accelerating; about 70% of today's energy is dark energy."],
+       ["weave", "The 'reverse thread': the same plateau shape at a tiny late height, a field (the Arthur field) now thawing toward τ = i; it fits DESI+DES-Y5 better than a constant, but meaningfully only on DES-Y5."],
+       ["open", "Why the dark-energy scale is 10⁻¹²⁰ in Planck units is not explained."]],
+     "eq": "V_Λ(1 − 7.30 e^{−βφ_Λ})", "tool": "Weave Control"},
+    {"id": "future", "t": "far future", "title": "The second knot", "phase": 1.0,
+     "lines": [["weave", "The dark thread comes to rest at the knot τ = i, mirroring how inflation ended at ρ: one thread, tied off at both ends."]],
+     "eq": "τ_thread → i", "tool": "Weave Control"}
+  ]
+}
