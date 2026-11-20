@@ -33,7 +33,7 @@ def test_referee_r1_r3():
     st = [l for l in E.run({'inflation_model': 'starobinsky', 'Nstar': 55})['levels'] if l['id'] == 'inflation'][0]['status']
     assert st == 'fail'                                              # Starobinsky N*=55: n_s −3.4σ from P-ACT-LB2 (a prediction there)
     d = LV['late']['outputs']['D1725']['DES-Y5']; assert abs(d['dAIC_thread'] - (d['d_thread'] + 2)) < 1e-9
-    assert any('OBSERVATIONAL' in s for s in LV['bbn']['labels'])
+    assert any('PRIMAT theory σ' in s for s in LV['bbn']['labels'])
 
 def test_w2_links():
     g = LV['galaxy']['outputs']; assert g['recipe_selfcheck_0p286'] and g['f_max'] is not None
@@ -61,3 +61,9 @@ def test_w4_v2():
     o = LV['flavour']['outputs']; lo, hi = o['TM1_dCP_band_s23_051_059']
     assert lo < 285.7 < hi and o['sum_mnu_eV'] == 0.0587 and LV['flavour']['status'] == 'pass'
     assert any('CHOSEN BY THE DATA' in x for x in LV['flavour']['labels'])
+
+def test_w5_bbn_theory():
+    pl = LV['bbn']['pulls']
+    assert abs(pl['DH:Cooke2018 (obs only)'] - (-2.62)) < 0.05
+    assert abs(pl['DH:Cooke2018 (PRIMAT theory σ)']) < abs(pl['DH:Cooke2018 (obs only)'])
+    assert abs(pl['DH:Cooke2018 (Yeh+ theory σ)']) < abs(pl['DH:Cooke2018 (PRIMAT theory σ)'])

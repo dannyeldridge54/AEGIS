@@ -131,16 +131,33 @@ def flavour(p):
              links=['DUNE / Hyper-K δ_CP; JUNO sin²θ₁₂ to ±0.5%: TM1 0.3184 vs TM2 0.3408'], status=_status(key))
 
 # ---------------- D. BBN (Hyperion), fed by the dark sector ----------------
+# PREREG_W5_BBN_THEORY: theory σ on Hyperion's own Y_p and D/H. PRIMAT sets the status; Yeh+ and obs-only are shown.
+BBN_THEORY = {'PRIMAT': dict(Yp=('abs', 0.00017), DH=('rel', 0.015), src='Y_p: arXiv:1801.08023; D/H: Paris/PRIMAT 2.439 ± 0.037 (via arXiv:2011.13874)'),
+              'Yeh+Olive+Fields': dict(Yp=('abs', 0.00018), DH=('rel', 0.110/2.506), src='arXiv:2011.13874 (σ includes the ω_b error)')}
 def bbn(p):
     from tools.janus_astro import settings as H
     dN, why = DARK_SECTORS[p['dark_sector']]
     b = H.bbn(p['omega_b'], dN)
     data = [dict(name=f'{q}:{k}', value=v[0], sigma=v[1], kind='gauss', source=v[2]) for q in ('Yp', 'DH') for k, v in H.DATA[q].items()]
+    model = {'Yp': b['Yp'], 'DH': b['DH']}
+    th = lambda conv, q: (lambda kind, v: v if kind == 'abs' else v*model[q])(*BBN_THEORY[conv][q])
+    status_pulls, shown = {}, {}
+    for q in ('Yp', 'DH'):
+        for k, (v, so, _) in H.DATA[q].items():
+            shown[f'{q}:{k} (obs only)'] = (model[q] - v)/so
+            shown[f'{q}:{k} (Yeh+ theory σ)'] = (model[q] - v)/math.hypot(so, th('Yeh+Olive+Fields', q))
+            status_pulls[f'{q}:{k} (PRIMAT theory σ)'] = (model[q] - v)/math.hypot(so, th('PRIMAT', q))
     return L('bbn', 'Big Bang nucleosynthesis', 'D', 'Hyperion', dict(omega_b=p['omega_b'], dNeff=dN, dNeff_from=why, code=b['code']),
-             dict(Yp=b['Yp'], DH=b['DH']), data, b['pulls'], ['lithium problem reproduced, not solved (D1640)',
-             'pulls use the OBSERVATIONAL σ only: the nuclear-rate theory error (a few % on D/H) is not yet included, so the D/H tension is overstated (referee R2; fix in W5 rate Monte Carlo)'],
+             dict(Yp=b['Yp'], DH=b['DH'], Yp_theory_sigma_PRIMAT=th('PRIMAT', 'Yp'), DH_theory_sigma_PRIMAT=th('PRIMAT', 'DH')),
+             data + [dict(name=f'theory σ ({k})', source=v['src']) for k, v in BBN_THEORY.items()],
+             {**status_pulls, **shown},
+             ['lithium problem reproduced, not solved (D1640)',
+              'PREREG_W5_BBN_THEORY: pulls combine the observational σ with the PRIMAT theory σ (Y_p ±0.00017, D/H 1.5%); this sets the status',
+              'shown beside it, never setting the status: Yeh+Olive+Fields theory σ (D/H 4.4%, includes the ω_b error) and observational-only pulls',
+              'the two theory conventions differ by ~3% in D/H, mostly from the d(p,γ)³He rate (theory vs LUNA data)'],
              links=[f"ΔN_eff = {dN} from dark sector '{p['dark_sector']}'",
-                    'L4: reheating (T_rh ≈ 9 × 10⁸ GeV, N*) has no direct BBN effect; ΔN_eff is the only BBN link'])
+                    'L4: reheating (T_rh ≈ 9 × 10⁸ GeV, N*) has no direct BBN effect; ΔN_eff is the only BBN link'],
+             status=_status(status_pulls))
 
 # ---------------- C. late universe (CLASS results + D1717 closed form) ----------------
 def late(p):
