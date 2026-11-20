@@ -1000,3 +1000,4 @@ D1712  2026-11-20T02:04Z  untitled
 D1713  2026-11-20T02:38Z  coupled CLASS full-Planck test (patched CLASS v3.3.0)
 D1714  2026-11-20T02:47Z  review: D1713 coupled equations vs Pettorino-Baccigalupi
 D1715  2026-11-20T02:47Z  super-horizon check of coupled CLASS model
+D1716  2026-11-20T02:53Z  negative space derived from the coupled thread
