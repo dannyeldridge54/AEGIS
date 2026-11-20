@@ -22,3 +22,8 @@ Danny 19:06: "Space hunt". Each pass: scan the newest public results, score each
 1. With Danny's OK: download DESI DR2 public w₀w_a chains and re-score the reverse thread on the real posterior (replacing the Gaussian approximation).
 2. Lock the "negative early phase" test above.
 3. Re-scan monthly: DESI, Euclid, LiteBIRD/SPT/ACT, DUNE/T2K/NOvA, LZ.
+
+## Pass 2 (19 Nov 2026 19:17 CT, derivation loop tick 1)
+- Searched for DESI DR3, Euclid w₀w_a, LiteBIRD/Simons Observatory r. No official DESI DR3 cosmology release was found. Several GitHub issues on a third-party repo ("Unitary-Manifold", automated "FALSIFIER ALERT") cite DR3 arXiv numbers (2610.35953, 2610.40205, 2611.01505). These are UNVERIFIED and not used; they are to be checked against arXiv/DESI directly in a later pass.
+- Review found (not a new measurement): "Dark Energy After DESI DR2: observational status, reconstructions, and physical models" (arXiv:2602.05368). Useful for the thawing-model comparison, NEUTRAL.
+- Our own real-data result (D1692, D1693) is logged as the main finding of this hunt so far: thread Δχ² = −7.0 on BAO + SN, and no reversal beats it.
