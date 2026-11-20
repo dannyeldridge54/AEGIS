@@ -16856,6 +16856,7 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
 - ALREADY ON THE PC (JANUS D1636, full Planck 2018 + DESI DR2 + SN via CAMB/Cobaya; gate passed to 10⁻⁸). Uncoupled leading-order thread versus ΛCDM: Pantheon+ −1.33, DES-Y5 −9.38, Union3 −2.64. w0wa: −9.11 / −19.72 / −15.02. With FULL Planck the uncoupled thread trails w0wa by 8–12, i.e. the weak spot is LARGER than with the compressed CMB (D1694: 6).
 - Submitted (queue AEGIS_PCJOBS/d1712): a gate job (leading order, b_c = 0 must reproduce the stored DES-Y5 χ² within 1.0), then six fits: coupled and uncoupled exact-curve thread × {Pantheon+, DES-Y5, Union3}. They wait for the gate. Coupling enters at background level as a PPF fluid; dark-matter perturbation effects are NOT modelled (stated in the lock).
 - Reading (locked): the fix survives full Planck if coupled Δχ² is within 3 of w0wa for ≥ 2 of 3 SN sets.
+- MAP: node=reverse_thread status=computed touches=[] ripple=no
 
 ## D1713 (RIGHT, 19 Nov 2026) — the coupled thread now lives inside a real Boltzmann code (patched CLASS v3.3.0); validated; 9 full-Planck fits queued (PREREG_PLANCK_CLASS)
 Why: D1712's route (CAMB + a w-table) cannot carry the coupled model (DEVIATIONS D1: the effective dark energy goes negative). So the coupling was written into CLASS itself.
@@ -16870,6 +16871,7 @@ Not validated: super-horizon gauge behaviour of the new coupled terms (Newtonian
 Submitted: BUILDCLASS_D1713 on the PC (apply patch, compile, repeat the background check on the PC build), which then queues 9 minimisations: ΛCDM / thread / coupled × Pantheon+ / DES-Y5 / Union3. Gate: CLASS ΛCDM within 2.0 of the stored CAMB ΛCDM χ² before any model number is read.
 Also: the D1712 uncoupled reruns had failed again (the D4 fix never reached the PC copy; DEVIATIONS D5); fixed and requeued (CXUNC4_*).
 Status: RUNNING.
+- MAP: none (engineering, literature or bookkeeping note; no theory-map node changes)
 
 ## D1714 (CENTRE/REVIEW, 19 Nov 2026) — referee of D1713's coupled equations against the literature: PASS
 Checked against Pettorino & Baccigalupi, arXiv:0802.1086 (coupled quintessence, Newtonian gauge, coupling C with ρ_c ∝ e^{−Cφ}, so C = −b in our notation).
@@ -16880,6 +16882,7 @@ Checked against Pettorino & Baccigalupi, arXiv:0802.1086 (coupled quintessence, 
 - Velocity force: our +bk²δφ gives G_eff = G(1 + 2b²), the paper's stated G* = G(1 + 2C²) (scalar exchange between like particles attracts, whatever the sign of b). The velocity line as extracted from the paper's PDF reads −k(Φ + Cδφ), which with their own δφ would give 1 − 2C², contradicting their G*; so that line is taken as an extraction/typo issue, and our sign stands (it is also what CLASS reproduced in D1713's growth test).
 - The extra synchronous-gauge pieces (θ_c ≠ 0 kept, h'/2 terms) follow from the same equations with Φ' → h'/6-type metric terms; not separately checked in the literature (no synchronous-gauge source fetched).
 Verdict: D1713's patch is consistent with the standard coupled-quintessence equations. No correction.
+- MAP: none (engineering, literature or bookkeeping note; no theory-map node changes)
 
 ## D1715 (CENTRE/REVIEW, 19 Nov 2026) — super-horizon check of the coupled CLASS model (Q17): PASS (computed)
 The open caveat of D1713 was the large-scale gauge behaviour of the new coupled terms. Test: the Newtonian potential φ(a)/φ_ini at k = 10⁻⁴ and 10⁻³ Mpc⁻¹ through matter–radiation equality, coupled (D1710 point, b = −0.074) vs uncoupled thread.
@@ -16888,6 +16891,7 @@ The open caveat of D1713 was the large-scale gauge behaviour of the new coupled 
 - ψ/φ at a = 0.01: 0.975 vs 0.975 (neutrino anisotropic stress, unchanged).
 The coupled run follows the standard adiabatic evolution (the ≈ 9/10 drop through equality), differing by ≤ 0.4% (expected from the coupling's slightly different background). No spurious growth or gauge mode.
 Verdict: the D1713 caveat is closed at this level. The patch is validated in background (3e-7), sub-horizon growth (1e-5) and super-horizon evolution.
+- MAP: none (engineering, literature or bookkeeping note; no theory-map node changes)
 
 ## D1716 RESULT (CENTRE, 19 Nov 2026) — "negative space" DERIVED from the Weave: the coupled thread makes a sign-switching effective Λ by itself (PREREG_NEGSPACE_DERIVE)
 Mechanism: with b < 0 the thread rises and dark matter slowly loses mass (4.6% since recombination at the D1710 point). An analysis that fixes the dark-matter density from the CMB books that missing mass as NEGATIVE dark energy, ρ_DE,eff = ρ_φ + [ρ_c − ρ_c*(a*/a)³]. The bracket grows as a⁻³ into the past, so the effective Λ is negative early and positive late. This is Danny's "negative space" (D1692/D1695, ΛsCDM), now coming out of the Weave instead of being put in; the V ≥ 0 objection of D1692 does not apply because the field's own energy never goes negative.
@@ -16899,6 +16903,7 @@ Numbers (CLASS background, D1713-validated, amp 1.83, b = −0.074, no refit; sc
 Reading: the two ideas Danny had (negative space, and the dark-matter coupling that fixed the weak spot) are the same physics seen in two bookkeepings. Both shorten D_M(z*) the same way, which is why ΛsCDM and the coupled thread both gained through the CMB distance (D1706).
 Caveats: depends on normalising ρ_c at z* (the CMB's own normalisation, so the natural choice); D1710's point, not yet the full-Planck best fit (D1713 running); the deepening shape is a prediction that separates it from ΛsCDM at z ≳ 3 (Lyα BAO, high-z DESI).
 Status: DERIVED (z†), shape differs from ΛsCDM. Register: C8 alternative "negative space" is now a CONSEQUENCE of C8's coupled fix, not a separate postulate.
+- MAP: node=reverse_thread status=computed touches=[] ripple=no
 
 ## D1712 RESULT (RIGHT, 19 Nov 2026) — full Planck + DESI DR2 + SN, the UNCOUPLED thread on the EXACT curve (PREREG_PLANCK_COUPLED; coupled runs STOPPED per DEVIATIONS D1)
 Gate passed (−0.006). Runs: Union3 under the original prior; Pantheon+ and DES-Y5 after DEVIATIONS D2/D4/D5 (prior fix; restart fixes, no physics change).
@@ -16908,6 +16913,7 @@ Gate passed (−0.006). Runs: Union3 under the original prior; Pantheon+ and DES
 | DES-Y5 | −8.98 (amp 0.239, H0 66.78, Ωm 0.315) | −9.38 | −19.72 |
 | Union3 | −1.93 (amp 0.179, H0 67.50, Ωm 0.309) | −2.64 | −15.02 |
 Reading: the exact curve changes the full-Planck score by ≤ 1 per SN set (as at compressed level, D1696). The uncoupled thread still trails w0wa by 6–13 on full Planck: the weak spot (C8) is real on full data. Its fix (coupling) is now being tested in patched CLASS (D1713), which also refits ΛCDM in the same code.
+- MAP: node=reverse_thread status=computed touches=[] ripple=no
 
 ## D1717 (CENTRE/DERIVE+REVIEW, 19 Nov 2026) — negative-space loop tick 1: closed form for the switch redshift; PC build passed
 DERIVE: with dark matter normalised at z*, ρ_DE,eff = ρ_φ − ρ_c(z)(e^{|b|Δφ} − 1), Δφ = φ − φ*. Late on, Δφ is almost frozen (0.639 at z = 3, 0.631 today), so the switch is at
@@ -16916,15 +16922,18 @@ At the D1710 point (Ω_φ,0 0.702, Ω_c,0 0.249, Δφ 0.639, b −0.074) this gi
 Scaling: z† ≈ 4.2, 3.4, 2.8, 2.5 for |b| = 0.03, 0.05, 0.074, 0.10 (Δφ held fixed). Our real-data ΛsCDM fits (z† 2.37–2.64) would correspond to |b| ≈ 0.09–0.11; a full-Planck b will turn this into a sharp number.
 REVIEW of D1716: (i) the normalisation epoch matters: normalising before the early kick (z ≫ 1000, where φ is still 0.49) would make the deficit larger and push z† lower; z* is the CMB's own and the natural choice, so it stands; (ii) the depth grows as (1+z)³, so Lyα BAO at z ≈ 2.3–3 sits right at the switch: the next MAKE step.
 PC: BUILDCLASS3_D1713 PASSED on the PC (python 3.11 env; same 3.3e-7 background check); all 9 full-Planck CLASS fits queued, 3 running (coupled ×3).
+- MAP: node=reverse_thread status=computed touches=[] ripple=no
 
 ## D1718 (CENTRE/POPULATE, 19 Nov 2026) — negative-space loop tick 2: register updated; one correction
 - Register C8 (WEAVE_POSTULATES.md, commit 595dbdb5, whose message lost its D-number): negative space moved from "forbidden, needs a second sector" to DERIVED from the coupled fix (D1716/D1717); the full-Planck CLASS test (D1713) is listed as decisive.
 - CORRECTION: C8's line gave the dark-matter clustering boost as G_eff = G(1 + β²). The correct factor for this coupling is G(1 + 2β²) (D1714, Pettorino–Baccigalupi; reproduced by CLASS in D1713). At β = 0.074: +1.1%, not +0.55%. No computed result had used the wrong factor.
 - Names (Danny 21:00): coupled thread = the Arthur field; X = the Sarah; A′ = the Cassandra (WEAVE_NAMES.md).
+- MAP: none (engineering, literature or bookkeeping note; no theory-map node changes)
 
 ## D1719 (CENTRE, 19 Nov 2026) — PUBLISHED on Danny's "publish" (21:07): "Not Yet Seen: The Undiscovered Particles and Dark Bound States Predicted by the Weave …"
 doi:10.5281/zenodo.24385539, PDF md5 1e5f4d384c9a33345f01c31ebf2ecd64 (verified on Zenodo = local), CC BY-NC-SA 4.0, preprint, 3 pages. Eleven predicted states with names: sarion, cassion, arthon (family: Sarah, Cassandra, Arthur); waaqinos, malinon, mayarons, Māui knots, haenon/dalnon, ravon, triglavons, saulon (world traditions, stated in the paper as open to review by each tradition). Status of all: no direct evidence; none excluded; only class-level 2–4σ interaction hints. Derived negative: no dark chemistry in the minimal sector (σ/m ≲ 1e-6 cm²/g).
 Next (Danny 21:08): letters to the eight traditions asking for review of the names (drafts until Danny says Send).
+- MAP: none (engineering, literature or bookkeeping note; no theory-map node changes)
 
 ## D1720 — WEAVE recheck of the 2 flags D1687 raised on my track (wino_window, m32_window): D1687's gravitino→wino yield checks out independently, so the post-hoc wino window becomes CONDITIONAL on T_R ≲ 1.07e9 GeV or later entropy dilution (2026-11-20)
 - [arithmetic; rate from a Bolz–Brandenburg–Buchmüller / Kawasaki–Kohri–Moroi-type fit, recalled (not re-fetched)]
@@ -16944,6 +16953,7 @@ MAP: none
 2. TRIGLAVONS (family gauge bosons, conditional on C-pole) [lit]. In the Sumino-type models (Koide–Yamashita, arXiv:1209.1694) the heavier family bosons must be ≳ 10² TeV (K⁰ and D⁰ mixing: M₂₂ > 99 and > 251 TeV). The lightest can be ~1 TeV from τ decays (M₃₃ = 0.87 +1.07/−0.22 TeV) in one model, but the mass ratios that pass the mixing bounds push it to ~70 TeV. Weave reading: if C-pole holds, triglavons are tens to hundreds of TeV, essentially beyond the LHC; a ~1 TeV τ-philic triglavon is the only collider-visible corner. Not derived from the Weave.
 3. LZ curve at 13 GeV — NULL again. LZ 2024 (arXiv:2410.17036) quotes only the minimum, 2.1 × 10⁻⁴⁸ cm² at 36 GeV; the 13 GeV value lives only in its Fig. 5 and the HEPData record found is the multiple-scatter (ultraheavy) table, not this one. D1677's bracket stays (flagged). The sarion survives either end of the bracket because its nucleon coupling is ε²-suppressed.
 Not done tonight (stated plainly): Y_p's missing ≈ 0.0025 (radiative, finite-mass, N_eff = 3.044 corrections need a locked toolkit upgrade, not a quoted number); A3 off the B = 0 slice; S₄; δ = 2/9; Λ's size. The full-Planck verdict and everything that hangs on b_A (z†, DR3 forecast, Lyα shape test) wait for the PC fits (check scheduled 04:15 UTC).
+- MAP: none (engineering, literature or bookkeeping note; no theory-map node changes)
 
 ## D1722 (RIGHT/CERN+1, 19 Nov 2026) — toolkit update loop item 1: new ATLAS disappearing-track result (arXiv:2603.08315)
 [lit] ATLAS, 137 fb⁻¹ at 13 TeV (Run 2, re-analysed): pure-wino charginos with the SM loop mass splitting excluded up to **670 GeV observed (770 expected)**; at τ ≈ 1 ns up to 880 GeV (1020 expected). Higgsinos: 225 GeV at τ < 0.03 ns, 720 GeV at τ ≈ 1 ns.
@@ -16951,11 +16961,13 @@ CERN+1's recast (recast_dt.py) is anchored on ATLAS 2201.02472 (136 fb⁻¹) and
 Effect on the SERAPIS wino window (0.67 to 1–1.25 TeV, D1324): lower edge unchanged at 0.67 TeV (now 0.670 from the newer paper). Run-3 disappearing-track wino results: none found yet (search; ATLAS Run-3 LLP briefing covers displaced vertices, not disappearing tracks).
 Next (map queue 1b): add 2603.08315 as a second anchor in recast_dt.py, lock first, and check that the recast reproduces 670/770 within the locked tolerance; then the HL-LHC projection is re-derived from the more sensitive analysis.
 Map row recast_dt: "Run-2 only" → "Run-2 (2201.02472 + 2603.08315 pending re-anchor)".
+- MAP: none (engineering, literature or bookkeeping note; no theory-map node changes)
 
 ## D1723 (RIGHT/CERN+1, 19 Nov 2026) — PREREG_CERN1_ATLAS137 RESULT: NULL (stop rule), no re-anchor
 The paper quotes model-independent limits (Table 6): SR4High σ95 = 0.044 fb (S95 obs 6.0, exp 3.7), SR4Mid 0.090 fb, SR3High1π 0.037 fb, SR3High0π 0.043 fb; small excesses (SR4High 3 observed on 0.68 ± 0.14, local 1.9σ).
 But it does NOT quote a pure-wino benchmark signal yield in any signal region (Fig. 8 shows a 700 GeV, 0.2 ns wino only as a curve) nor the tracklet layer radii. The lock says: no n_bench → STOP, NULL. So CERN+1 stays anchored on 2201.02472 (reproduces 660 → 666.6 GeV), with 2603.08315's 670/770 GeV recorded as the current published wino floor. A re-anchor would need the HEPData record (download → Danny's OK) or digitising Fig. 8.
 Note for the window: the SR4High 1.9σ local excess is why the observed limit (670) sits 100 GeV below the expected (770).
+- MAP: none (engineering, literature or bookkeeping note; no theory-map node changes)
 
 ## D1724 (RIGHT, 20 Nov 2026 04:16 UTC) — PREREG_PLANCK_CLASS partial results: ΛCDM gate PASS; coupled scored; thread runs still going
 Gate (CLASS ΛCDM vs stored CAMB ΛCDM): −0.76 (Pantheon+), −0.90 (DES-Y5), −1.14 (Union3); all within 2.0 → PASS. So model numbers may be read.
@@ -16964,6 +16976,7 @@ Integrity flag: the coupled model CONTAINS ΛCDM (amp → 0) and the uncoupled t
 Uncoupled thread in CLASS: running (CLS_thread_* jobs). The locked verdict needs both.
 Reading so far (provisional): on full Planck the preferred coupling is about half the compressed-likelihood value (|b| ≈ 0.02–0.04 vs 0.074), and the gains are small (≈ 2–3), well short of the compressed −10.8 and of w0wa (−9 to −20, CAMB). If this holds after convergence, the weak-spot fix does NOT carry over to full Planck at the locked bar. With |b| = 0.020–0.041 the negative-space switch (D1717 closed form) moves to z† ≈ 3.7–5.0 (vs 2.93 at b = 0.074) [computed].
 Next (DEVIATIONS D1 to be written before any rerun): a convergence check that starts the coupled minimiser from the CLASS ΛCDM best point with small amp and b = 0 (nested start), best_of 4, same priors; only to fix the nested-model violation, not to chase a result.
+- MAP: node=reverse_thread status=computed touches=[] ripple=no
 
 ## D1725 — RIGHT: D1713 full-Planck CLASS verdict — coupling NOT detected; locked verdict fix_fails (20 Nov 2026)
 Patched CLASS v3.3.0, full Planck 2018 + DESI DR2 BAO + SN, bobyqa best_of 4. Δχ² vs CLASS ΛCDM (same build; gate PASS −0.76/−0.90/−1.14 vs CAMB):
@@ -16981,3 +16994,5 @@ Reading:
 4. Negative space (D1716/D1717) is derived only for b_A < 0. With b_A ≈ 0 the deficit ≈ 0 and z† → ∞; only Union3 (b = −0.041) gives z† ≈ 3.7. So negative space remains a valid DERIVATION but is NOT supported by the data at present.
 Status: C8 reverts from "FIXED (candidate)" to OPEN. The surviving result is the uncoupled thread at Δχ² −2.6 to −8.1 (CLASS) with no added coupling. The D1710 compressed-likelihood fix did not survive full Planck. Next tests remain DESI DR3 + CMB-S4.
 Files: PC AEGIS_PCJOBS/d1713/results/cls_*.json (13 runs); lock field_tests/rules/PREREG_PLANCK_CLASS.md + DEVIATIONS D1.
+- MAP: node=reverse_thread status=computed touches=[] ripple=no
+
