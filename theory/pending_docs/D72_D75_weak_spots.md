@@ -17175,3 +17175,13 @@ Files: PC AEGIS_PCJOBS/d1713/results/cls_*.json (13 runs); lock field_tests/rule
 
 ## D1740 — REVIEW (independent method; not a new test) — The Q11 minima confirmed by a different method (mpmath forms via nsum and q-Pochhammer η; stationary point by findroot on ∂V): (1,0) agrees to 4e-7, (8,0) to 1.6e-6, (1,1) to 5.2e-6 (on the arc, |τ| = 1.000000). Logic of D1737–D1739 re-read: no change. Quark-track summary written to the project doc WEAVE_QUARK_LADDER.md (supplements WEAVE_FULL_EQUATION §5, with the τ_q = 1/8 + i correction). Quark loop PAUSED (no new locked test clearly motivated without fitting after the fact) (2026-11-20)
 - Result: field_tests/results/q_review_minima.txt; code theory/quarks/review_minima_mp.py.
+
+## D1741 — CENTRE (equation + frozen predictions; PREREG_LADDER_PREDICTIONS) — THE WEAVE LADDER EQUATION (Danny 08:08 "make an equation to predict based off our structure")
+    ε_m = c e^{iφ} / (m + 1/16),  c = √3·0.0145 = 0.0251,  φ = 50°          [computed to ~1%, D1736/D1740; 1/16 = the paper's fitted 0.0625]
+    family on rung m:  m₂/m₃ ≃ κ₂ ε_m,   m₁/m₃ ≃ κ₁ ε_m²   (κ = O(1))        [lit scaling, 2212.13336]
+    two families on rungs m_a, m_b (equal-coefficient limit):  g_a/g_b = (m_b + 1/16)/(m_a + 1/16)
+    leptons: rung ≳ 400 or the knot (Koide);  neutrinos/dark thread: knot i;  arc (m,n): CP-conserving, τ set by m:n
+- [computed] From today's masses: up rung m_u* = 8.27 ± 0.40 (71% in rung 8, 27% rung 9). Prediction L1: g_u/g_d = 0.1318 (rung 8) vs measured 0.1276 ± 0.0060; telling 8 from 9 at 3σ needs σ ≤ 0.0049 (lattice c/t and u/t masses improving should get there).
+- Frozen for future data: L1 (rung-8 ratio), L2 (no Koide for quarks / no slip scaling for leptons), L3 (hidden families must land on integer rungs: bands per rung), L4 (θ̄ = 0 exactly).
+- Status: L1–L4 are predictions in form only until scored on new data; L1 relies on equal O(1) coefficients (assumption, labelled).
+- Code: theory/quarks/ladder_equation.py. Result: field_tests/results/ladder_equation_predictions.txt. MAP: none.
