@@ -5,10 +5,10 @@ def G22(T,U,x,y):
     T1,T2=T.real,T.imag; U1,U2=U.real,U.imag
     # Hamiltonian form: |p_R|^2 term; standard: tau2 * sum q^{pL^2/2} qbar^{pR^2/2}
     # pL^2-pR^2 = 2(m1 n1 + m2 n2); pR^2 = |-m1 U + m2 + T n1 + T U n2|^2/(T2 U2)  (one convention)
-    pR2=np.abs(-M1*U+M2+T*N1+T*U*N2)**2/(T2*U2)
+    pR2=np.abs(-M1*U+M2+T*N1+T*U*N2)**2/(2*T2*U2)
     pLpR=2*(M1*N1+M2*N2)
     pL2=pR2+pLpR
-    return y*np.real(np.sum(np.exp(-np.pi*y*(pL2+pR2)/2*1.0)*np.exp(1j*np.pi*x*pLpR)))
+    return y*np.real(np.sum(np.exp(-np.pi*y*(pL2+pR2))*np.exp(1j*np.pi*x*pLpR)))
 def RN(f,alpha,L=60.0,nx=81,ny=400):
     xs=np.linspace(-0.5,0.5,nx); tot=0.0; wx=np.full(nx,1.0); wx[0]=wx[-1]=0.5; dx=1.0/(nx-1)
     for i,x in enumerate(xs):
