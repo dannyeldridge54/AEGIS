@@ -971,3 +971,4 @@ D1683  2026-11-20T00:45Z  untitled
 D1684  2026-11-20T00:53Z  JANUS genesis G16: sourced LZ SI limit at ~13 GeV for the D1677 dark-photon cut - literature search
 D1685  2026-11-20T00:53Z  JANUS genesis G17: dark-photon window extended to m_A' < m_X = 12.8 GeV (D1676) with DarkCast tables
 D1686  2026-11-20T00:54Z  JANUS genesis G12e: round-4 referee (D1684, D1685)
+D1687  2026-11-20T00:56Z  JANUS genesis G18: thermal gravitinos at T_R = 1.34e9 GeV decaying to winos vs the wino_window DM share
