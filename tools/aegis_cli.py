@@ -17,6 +17,7 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   hyperion pulls [omega_b] [dNeff]  Y_p and D/H with pulls vs LBT 2026, Aver 2021, Cooke 2018
   hyperion ns [SLy|AP4]             neutron-star maximum mass
   hyperion jfactor [profile] [rho]  J-factor for the H.E.S.S. inner-Galaxy region
+  cern grid [hepdata]               acceptance x efficiency over chargino mass and lifetime (recast model)
   cern slha <file> [run]            read an SLHA spectrum: wino/higgsino character, dm, xsec, lifetime
   cern runs                         run presets: run2, run3, run2+3, hl-lhc, hl-lhc-ult, he-lhc, fcc-hh
   cern point <run> <model> <mass>   cross section, expected pairs, lifetime for a run (model: wino|higgsino)
@@ -123,6 +124,11 @@ def cern(args):
     elif c == 'reach':        # cern reach <run>
         from tools.lhc import settings as S
         _show(S.reach(args[1] if len(args) > 1 else 'hl-lhc'))
+    elif c == 'grid':         # cern grid [hepdata]
+        from tools.lhc import grids as GR
+        g = GR.grid()
+        if len(args) > 1 and args[1] == 'hepdata': print(GR.hepdata_2d(g))
+        else: _show([dict(mass_GeV=m, **{f'tau={t}ns': v for t, v in zip(g['taus_ns'], row)}) for m, row in zip(g['masses_GeV'], g['acc_eff'])])
     elif c == 'slha':         # cern slha <file.slha> [run]
         from tools.lhc import slha_in as SI
         _show(SI.summary(open(args[1]).read(), args[2] if len(args) > 2 else 'run3'))
