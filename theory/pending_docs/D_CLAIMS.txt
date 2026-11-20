@@ -969,3 +969,4 @@ D1681  2026-11-20T00:38Z  untitled
 D1682  2026-11-20T00:40Z  untitled
 D1683  2026-11-20T00:45Z  untitled
 D1684  2026-11-20T00:53Z  JANUS genesis G16: sourced LZ SI limit at ~13 GeV for the D1677 dark-photon cut - literature search
+D1685  2026-11-20T00:53Z  JANUS genesis G17: dark-photon window extended to m_A' < m_X = 12.8 GeV (D1676) with DarkCast tables
