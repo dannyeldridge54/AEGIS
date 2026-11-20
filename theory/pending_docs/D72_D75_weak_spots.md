@@ -16851,3 +16851,8 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
 - D1708's "corner" was an artefact of the leading-order shape's bound. With the exact curve the minimum is interior and slightly deeper.
 - Coupling size: β = 0.074 is 0.4σ from Planck WP + HST (0.066 ± 0.018) but 2.4σ above Planck WP + BAO (0.036 ± 0.016) in the 2013-era fits (D1711). A modern full-CMB bound, and the effect of G_eff = G(1 + β²) on dark-matter clustering (σ₈/S₈), are NOT checked. Those are the remaining tests.
 - Weave reading: the dark sector is ONE thread coupled to the dark baryon X, consistent with X's mass depending on the modulus (P-brane: X on the D7 whose gauge coupling depends on Kähler moduli).
+
+## D1712 (RIGHT, 19 Nov 2026) — full-Planck test of the weak-spot fix submitted to Danny's PC (PREREG_PLANCK_COUPLED); prior full-Planck facts found
+- ALREADY ON THE PC (JANUS D1636, full Planck 2018 + DESI DR2 + SN via CAMB/Cobaya; gate passed to 10⁻⁸). Uncoupled leading-order thread versus ΛCDM: Pantheon+ −1.33, DES-Y5 −9.38, Union3 −2.64. w0wa: −9.11 / −19.72 / −15.02. With FULL Planck the uncoupled thread trails w0wa by 8–12, i.e. the weak spot is LARGER than with the compressed CMB (D1694: 6).
+- Submitted (queue AEGIS_PCJOBS/d1712): a gate job (leading order, b_c = 0 must reproduce the stored DES-Y5 χ² within 1.0), then six fits: coupled and uncoupled exact-curve thread × {Pantheon+, DES-Y5, Union3}. They wait for the gate. Coupling enters at background level as a PPF fluid; dark-matter perturbation effects are NOT modelled (stated in the lock).
+- Reading (locked): the fix survives full Planck if coupled Δχ² is within 3 of w0wa for ≥ 2 of 3 SN sets.
