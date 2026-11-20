@@ -24,3 +24,4 @@ M3. [DONE: |r−1| < 5–9e-5] Mirror of D1698/D1699: assume Q ≠ 2/3 (the sing
 M4. [DONE D1706: different mechanisms — thread low-z thaw, ΛsCDM only via full θ*–ω correlation] Mirror of D1694/D1695: CMB-only distance with the thread vs ΛsCDM — which part of the CMB prior drives each (θ* vs ω_bc)?
 M5. [DONE: same m_X, but needs a dark reheating source; forward preferred] Mirror of the P-portal (D1675): hand the asymmetry from DARK to visible instead (dark-first genesis): same window?
 D9. [NULL: phases are π-multiples or need a chosen radius] Berry phase of a weight-k modular wavefunction (y^{k/2}|f| phase) carried by 2π/3 around ρ in the hyperbolic disk; does 2/9 appear for some natural k?
+D10. [IN PROGRESS] Weave answer to the phantom weak spot (C8): couple the thread to dark matter (one coupling b_c); does the effective w < −1 recover CPL's gain on BAO + SN + CMB?
