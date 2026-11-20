@@ -1,0 +1,13 @@
+{
+ "dirac_fermion": {
+  "nX_over_B": 0.39285714285714296,
+  "m_X_GeV": 12.810995293090906,
+  "signs_same": true
+ },
+ "complex_scalar": {
+  "nX_over_B": 0.39285714285714296,
+  "m_X_GeV": 12.810995293090906,
+  "signs_same": true
+ },
+ "pass": true
+}
