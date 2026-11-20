@@ -26,6 +26,7 @@ Rules: lock before recomputing; data-file downloads need Danny's OK; each row's 
 | mapper_feed / mapper_orbits / mapper_dust | Star Mapper: Gaia DR3 → orbits; dust | Gaia DR3; SFD/Bayestar (dust maps not downloaded) | Gaia DR4; dust maps need Danny's OK | HIGH (Dec) | DR3 |
 | ns.py / compact.py | NS M–R, Love numbers (SLy, AP4) | Read+ 0812.2163 | **NICER 2025–26 radii (J0437, J0740, J0614 updates)**; GW230529-type events | medium | 2024-era checks |
 | gw.py / gw_imr.py / gwb.py | inspiral phase, horizons, GW background | LAL; 7PN tides (Mandal 2412.01706) | **GWTC-4 (O4) catalogue**; O5 sensitivity curves | medium | validated physics; curves older |
+| settings.py (NEW 19 Nov) | presets: BBN codes + datasets (LBT2026, Aver2021 Y_p; Cooke2018 D/H; Planck ω_b), NS EoS, MW models, halo profiles, H.E.S.S. IGS ROI, GW detector PSD names; pulls vs data; JSON/CSV/ECSV export | modules above | — | none | 4 tests PASS |
 | hmf.py | halo mass function with Σm_ν | CAMB, Tinker08 | — | none | validated |
 | stars.py / binaries.py / const.py | basic stellar physics | CODATA 2018 | CODATA 2022 constants | low | — |
 | serapis_inputs.py | single source of SERAPIS inputs | D-notes | latest D-notes (D1716–D1721) | low | check |
@@ -39,3 +40,15 @@ Rules: lock before recomputing; data-file downloads need Danny's OK; each row's 
 6. Hyperion: new D/H and neutron lifetime 2025–26 → bbn.
 7. Gaia DR4 (Dec 2026) → galaxy + Star Mapper (scheduled for the release; data download needs Danny's OK).
 8. CODATA 2022 → const.py.
+
+## What working scientists ask of such tools (LHC Reinterpretation Forum, arXiv:2003.07868) → CERN+1 build list
+| complaint / request | CERN+1 feature | status |
+|---|---|---|
+| full likelihoods in JSON (pyhf) | export one-bin pyhf workspace | DONE (settings.py) |
+| read published likelihoods / HEPData tables directly | import pyhf workspaces + patchsets and HEPData YAML/JSON tables | queued R1 |
+| SLHA files for models | SLHA export | DONE; SLHA IMPORT (read a spectrum file, compute xsec/lifetime/limit) queued R2 |
+| efficiency maps per topology, ≥ 3 mass/lifetime points; LLP specifics | lifetime-dependent acceptance grid (τ, m) from the validated window model, exportable as HEPData | queued R3 |
+| reference cross sections versioned and citable | Resummino tables with arXiv refs + theory band; version stamp in every output | partial (add version stamp R4) |
+| statistics fully documented | CLs with stated test statistic, two independent routes (pyhf + exact Poisson) | DONE (stats.py); doc page R4 |
+| covariance / simplified likelihoods (CMS) | multi-bin simplified likelihood with covariance | queued R5 |
+| systematic validation against the experiments | validation report: every recast vs published limit (ATLAS 36, 136, 137) | partial (selftest); report R6 |
