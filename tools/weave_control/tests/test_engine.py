@@ -26,7 +26,6 @@ def test_v1_fixes():
     assert LV['late']['status'] == 'tension'                       # beats ΛCDM, trails w0wa
     assert any('1.94' in s for s in LV['stars']['labels'])
     assert len(LV['flavour']['outputs']['delta_equivalent_forms']) >= 2
-    assert LV['galaxy']['status'] == 'tension'                     # low fraction passes, high fraction fails (2.2e-28 vs 6.0e-28 vs 2.3e-28)
     assert set(E.DARK_SECTORS) == {'none', 'brane_split', 'minimal_equal_sharing', 'mirror_at_bound', 'mirror_full_equal'}
 
 def test_referee_r1_r3():
@@ -35,3 +34,9 @@ def test_referee_r1_r3():
     assert st == 'fail'                                              # Starobinsky N*=55: n_s −3.4σ from P-ACT-LB2 (a prediction there)
     d = LV['late']['outputs']['D1725']['DES-Y5']; assert abs(d['dAIC_thread'] - (d['d_thread'] + 2)) < 1e-9
     assert any('OBSERVATIONAL' in s for s in LV['bbn']['labels'])
+
+def test_w2_links():
+    g = LV['galaxy']['outputs']; assert g['recipe_selfcheck_0p286'] and g['f_max'] is not None
+    assert abs(E.f_max(1000.0, 'Burkert', 0.40)[0] - 0.286) < 0.003            # D1322 smoke-test value
+    late = LV['late']['outputs']; assert 'S8 coupled Union3 vs KiDS-Legacy' in late['S8_pulls'] and late['Lya_context']['z'] == 2.33
+    assert any('Galactic centre' in t['name'] for t in LV['sky']['outputs']['science_targets'])

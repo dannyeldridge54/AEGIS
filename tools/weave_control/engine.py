@@ -26,6 +26,11 @@ DARK_SECTORS = {'none': (0.0, 'no dark radiation'),
 LEPTONS_MeV = dict(e=(0.51099895000, 1.5e-10), mu=(105.6583755, 2.3e-6), tau=(1776.93, 0.09))   # PDG 2024
 J0740 = (2.08, 0.07, 'PSR J0740+6620 mass (Fonseca et al. 2021, ApJL 915 L12)')
 ATLAS_DT = (670.0, 'ATLAS disappearing track, observed 95% wino limit (arXiv:2603.08315; D1722)')
+# L3 (PREREG_W2_LINKS): S8 = sigma8 sqrt(Omega_m/0.3) from the locked D1725 best fits (PC results/cls_*.json, read 20 Nov 04:55 CT)
+S8_FITS = {'Pantheon+': dict(lcdm=0.8127, thread=0.8093, coupled=0.8124), 'DES-Y5': dict(lcdm=0.8148, thread=0.8080, coupled=0.8083),
+           'Union3': dict(lcdm=0.8137, thread=0.8128, coupled=0.8283)}   # coupled = the run with the lower chi2 (orig or nested)
+S8_DATA = {'KiDS-Legacy': (0.815, 0.016, 0.021, 'arXiv:2503.19441'), 'CMB lensing (ACT DR6+Planck PR4+SPT-3G+DESI DR2)': (0.828, 0.012, 0.012, 'Qu et al. 2026, via arXiv:2602.12238')}
+LYA = dict(z=2.33, DH_rd=(8.632, 0.101), DM_rd=(38.99, 0.53), rho=-0.431, source='DESI DR2 Lyα BAO, arXiv:2503.14739')
 D1725 = {'Pantheon+': dict(lcdm=2432.76, thread=2430.14, coupled=2432.28), 'DES-Y5': dict(lcdm=2676.47, thread=2668.33, coupled=2667.44),
          'Union3': dict(lcdm=1055.14, thread=1051.76, coupled=1052.44)}
 
@@ -88,7 +93,8 @@ def bbn(p):
     return L('bbn', 'Big Bang nucleosynthesis', 'D', 'Hyperion', dict(omega_b=p['omega_b'], dNeff=dN, dNeff_from=why, code=b['code']),
              dict(Yp=b['Yp'], DH=b['DH']), data, b['pulls'], ['lithium problem reproduced, not solved (D1640)',
              'pulls use the OBSERVATIONAL σ only: the nuclear-rate theory error (a few % on D/H) is not yet included, so the D/H tension is overstated (referee R2; fix in W5 rate Monte Carlo)'],
-             links=[f"ΔN_eff = {dN} from dark sector '{p['dark_sector']}'"])
+             links=[f"ΔN_eff = {dN} from dark sector '{p['dark_sector']}'",
+                    'L4: reheating (T_rh ≈ 9 × 10⁸ GeV, N*) has no direct BBN effect; ΔN_eff is the only BBN link'])
 
 # ---------------- C. late universe (CLASS results + D1717 closed form) ----------------
 def late(p):
@@ -102,14 +108,25 @@ def late(p):
             for k, v in D1725.items()}
     pulls = {f'thread beats ΛCDM ({k})': 'pass' if r['d_thread'] < 0 else 'FAIL' for k, r in rows.items()}
     W0WA = {'Pantheon+': -9.11, 'DES-Y5': -19.72, 'Union3': -15.02}     # CAMB, D1712 context
+    s8 = {}
+    for sn, mods in S8_FITS.items():
+        for mod, v in mods.items():
+            for dn, (dv, sm, sp, _) in S8_DATA.items():
+                pull = (v - dv)/(sp if v > dv else sm); s8[f'S8 {mod} {sn} vs {dn.split(" (")[0]}'] = pull
+    s8_status = _status({k: v for k, v in s8.items() if ' lcdm ' not in k})
     behind = all(rows[k]['d_thread'] > W0WA[k] for k in rows)
     return L('late', 'Late universe (dark energy)', 'C', 'CLASS (patched) + closed form', dict(b_A=b, dphi=p['dphi']),
-             dict(z_dagger=zdag, G_eff_over_G=Geff, D1725=rows), [dict(name='full Planck + DESI DR2 + SN', source='D1725 (locked CLASS runs)')],
+             dict(z_dagger=zdag, G_eff_over_G=Geff, D1725=rows, S8_fits=S8_FITS, S8_pulls=s8, S8_status=s8_status, Lya_context=LYA),
+             [dict(name='full Planck + DESI DR2 + SN', source='D1725 (locked CLASS runs)')]
+             + [dict(name=f'S8 {k}', value=v[0], sigma=(v[1], v[2]), kind='gauss_asym', source=v[3]) for k, v in S8_DATA.items()]
+             + [dict(name='DESI DR2 Lyα BAO z 2.33 (context only, already in the fits)', value=LYA['DH_rd'][0], sigma=LYA['DH_rd'][1], kind='context', source=LYA['source'])],
              pulls, ['b_A is consistent with 0 on full Planck (D1725, fix_fails)', 'negative space needs b_A < 0 (D1716/D1717)',
                      'Δχ² are the locked fit results; they do not change with the b_A slider',
                      'd_coupled_at_most = min(coupled, thread): the coupled model contains the thread, so its true value is at most this (nested guard)',
                      'thread trails w0wa (−9.1 / −19.7 / −15.0, CAMB)',
-                     'ΔAIC = Δχ² + 2k charges the extra parameters (thread k = 1, coupled k = 2); negative still favours the model (referee R3)'],
+                     'ΔAIC = Δχ² + 2k charges the extra parameters (thread k = 1, coupled k = 2); negative still favours the model (referee R3)',
+                     'L3: S₈ of each locked fit vs KiDS-Legacy and CMB lensing, reported separately (not combined)',
+                     'L2: DESI Lyα BAO is shown as context only: it is already inside the DESI DR2 likelihood of the fits, so it is not an independent test'],
              links=['G_eff → S₈ (W2)', 'z† → H(z) at z 2–5 vs DESI Lyα (W2)'],
              status=('tension' if behind else _status(pulls)) if _status(pulls) == 'pass' else _status(pulls))
 
@@ -134,21 +151,32 @@ def _sv_line(M):
     s0 = N.wino_s_nlo(M, v=1e-3, nlo=False, off_factor=math.sqrt(2))
     # LO line cross section (chi chi -> gamma gamma + gamma Z/2), the D1322 smoke-test formula with 1/M^2 kept general
     return 2*s0[1]**2*math.pi*N.ALPHA**2/M**2*0.389379e-27*2.99792458e10*(1 + N.ALPHA2*N.CW2/N.ALPHA)
-HESS_1TEV = 2.3e-28   # cm^3/s, the single stored limit point (D1322: Einasto, at 1 TeV)
+HESS_1TEV = 2.3e-28   # cm^3/s, the H.E.S.S. IGS line limit at 1 TeV used by D1322 (with the 0.794 factor and J/J_bench)
+HALO_SHAPES = {'Einasto': ('einasto', (20.0, 0.17)), 'NFW': ('nfw', (20.0,)), 'Burkert': ('burkert', (3.37,))}  # Burkert r0 as in D1322 check
+@functools.lru_cache(maxsize=64)
+def _j_ann(halo, rho_sun):
+    from tools.janus_astro import jfactor as Jm
+    fn, args = HALO_SHAPES[halo]; rho = Jm.normalise(getattr(Jm, fn)(*args), rho_sun, 8.178)
+    return Jm.J_route_B(rho, 8.178, psi_max_deg=3.0, b_mask_deg=0.0) - Jm.J_route_B(rho, 8.178, psi_max_deg=0.5, b_mask_deg=0.0)
+def f_max(M, halo, rho_sun):
+    """PREREG_W2_LINKS L1: the D1322 recipe, f_max = sqrt(2.3e-28 / (sigma_v_line * 0.794 * J/J_bench))."""
+    jr = _j_ann(halo, rho_sun)/_j_ann('Einasto', 0.39)
+    return math.sqrt(HESS_1TEV/(_sv_line(round(M, 1))*0.794*jr)), jr
 def galaxy(p):
     from tools.janus_astro.serapis_inputs import wino_fraction
     M = float(p['wino_mass_GeV']); j = {'J_GeV2_cm5': _jfactor(p['halo'], float(p['rho_sun']))}
     sv = _sv_line(round(M, 1)); f = wino_fraction(M/1000.0)
-    pulls = {}
-    st = None
-    if abs(M - 1000.0) <= 50:   # the thermal fraction is a bracket (D1152): test both ends, never pick the kinder one
-        lo, hi = f[0]**2*sv <= HESS_1TEV, f[1]**2*sv <= HESS_1TEV
-        pulls['H.E.S.S. 1 TeV, low fraction'] = 'pass' if lo else 'FAIL'; pulls['H.E.S.S. 1 TeV, high fraction'] = 'pass' if hi else 'FAIL'
-        st = 'pass' if (lo and hi) else ('fail' if not lo else 'tension')
+    pulls = {}; st = None; fm = jr = None
+    check = abs(f_max(1000.0, 'Burkert', 0.40)[0] - 0.286)/0.286 <= 0.01        # L1 self-check against D1322
+    if abs(M - 1000.0) <= 50 and check:   # the fraction is a bracket (D1152): test both ends, never pick the kinder one
+        fm, jr = f_max(M, p['halo'], float(p['rho_sun']))
+        pulls['f_pred high ≤ f_max'] = 'pass' if f[1] <= fm else 'FAIL'; pulls['f_pred low ≤ f_max'] = 'pass' if f[0] <= fm else 'FAIL'
+        st = 'pass' if f[1] <= fm else ('tension' if f[0] <= fm else 'fail')
     return L('galaxy', 'Galaxy & dark matter (gamma line)', 'C', 'Hyperion', dict(m=M, halo=p['halo'], rho_sun=p['rho_sun']),
-             dict(J_GeV2_cm5=j['J_GeV2_cm5'], sigma_v_line_cm3_s=sv, thermal_fraction=f, effective_sv=(f[0]**2*sv, f[1]**2*sv)),
+             dict(J_GeV2_cm5=j['J_GeV2_cm5'], sigma_v_line_cm3_s=sv, thermal_fraction=f, f_max=fm, J_over_bench=jr, recipe_selfcheck_0p286=check),
              [dict(name='H.E.S.S. inner Galaxy line limit', source='used at 1 TeV in D1322 (2.3e-28 cm³/s, Einasto); full mass curve not yet stored')],
-             pulls, ['LO Sommerfeld (no NLO, no endpoint); limit curve vs mass is map item 2 (open)',
+             pulls, ['L1 (PREREG_W2_LINKS): f_max = √(2.3e-28 / (σv × 0.794 × J/J_bench)), bench Einasto ρ☉ 0.39, annulus 0.5°–3°; self-check Burkert → 0.286',
+                     'LO Sommerfeld (no NLO, no endpoint); limit curve vs mass is map item 2 (open)',
                      'the only stored limit is at 1 TeV (Einasto); away from 1 TeV no pass/fail is given (V1 finding 6)'],
              links=['J-factor region → Sky level (W2)'], status=st or 'open')
 
@@ -166,8 +194,10 @@ def stars(p):
 def sky(p):
     from tools.mapper import finder
     ra, dec, name = finder.resolve(p['target'])
+    gc = dict(name='Galactic centre line region (annulus 0.5°–3°)', ra=266.4168, dec=-29.0078, inner_deg=0.5, outer_deg=3.0, from_level='galaxy')
     return L('sky', 'Sky (observing)', 'E', 'Mapper', dict(target=p['target'], aperture_mm=p['aperture_mm'], site=p['site']),
-             dict(name=name, ra=ra, dec=dec), [], {}, ['finder chart and tonight plan served by the control panel (W3)'],
+             dict(name=name, ra=ra, dec=dec, science_targets=[gc]), [], {}, ['finder chart and tonight plan served by the control panel (W3)',
+             'L5: the Galaxy level\'s gamma-line region is passed here as a science target'],
              links=['Galactic-centre line region from the Galaxy level (W2)'], status='open')
 
 LEVELS = (inflation, flavour, bbn, late, colliders, galaxy, stars, sky)
