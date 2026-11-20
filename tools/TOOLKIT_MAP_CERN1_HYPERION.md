@@ -9,7 +9,7 @@ Rules: lock before recomputing; data-file downloads need Danny's OK; each row's 
 | higgsino.py | higgsino cross sections | 2304.11915 Table 4 | same as above | check | current |
 | theory_band.py | scale+PDF band | 2304.11915 Table 6 | PDF4LHC21 band updates | low | current |
 | lifetime.py | wino Δm and cτ | Ibe–Matsumoto–Sato 1212.5989 two-loop fit | 3-loop Δm (if published) | check | current |
-| recast_dt.py | disappearing-track recast + HL-LHC projection | ATLAS 2201.02472 (136 fb⁻¹, Run 2) | **ATLAS/CMS Run-3 disappearing-track results (2025–26)**; CMS Run-2 full combination | **HIGH** | Run-2: 2201.02472 anchored; NEW 2603.08315 (670 obs / 770 exp GeV) found D1722, re-anchor pending |
+| recast_dt.py | disappearing-track recast + HL-LHC projection | ATLAS 2201.02472 (136 fb⁻¹, Run 2) | **ATLAS/CMS Run-3 disappearing-track results (2025–26)**; CMS Run-2 full combination | **HIGH** | Run-2: 2201.02472 anchored; NEW 2603.08315 (670 obs / 770 exp GeV) found D1722, re-anchor NULL (no benchmark yield quoted; needs HEPData, D1723) |
 | future.py | reach at any √s, lumi | DY scaling; FCC-hh study | 2026 European Strategy Briefing Book numbers (arXiv:2511.03883) | medium | pre-ESPP |
 | stats.py | CLs (pyhf + independent) | — | — | none | validated |
 | kinematics.py | boost distribution from the xsec table | 2304.11915 | — | none | validated |
@@ -30,7 +30,7 @@ Rules: lock before recomputing; data-file downloads need Danny's OK; each row's 
 | serapis_inputs.py | single source of SERAPIS inputs | D-notes | latest D-notes (D1716–D1721) | low | check |
 
 ## Queue (top first)
-1. [found D1722] CERN+1: ATLAS 2603.08315 (670/770 GeV); no Run-3 DT result yet. 1b: lock + re-anchor recast_dt.py on it.
+1. [found D1722] CERN+1: ATLAS 2603.08315 (670/770 GeV); no Run-3 DT result yet. 1b: NULL (D1723).
 2. Hyperion: 2026 gamma-ray line limits (H.E.S.S./MAGIC/LST/CTA) → jfactor/wino window.
 3. Hyperion: NICER 2025–26 radii → ns.py checks.
 4. Hyperion: GWTC-4 / O4 → gw horizon curves and the NS tidal check.

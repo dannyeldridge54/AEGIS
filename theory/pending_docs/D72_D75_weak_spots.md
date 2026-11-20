@@ -16951,3 +16951,8 @@ CERN+1's recast (recast_dt.py) is anchored on ATLAS 2201.02472 (136 fb⁻¹) and
 Effect on the SERAPIS wino window (0.67 to 1–1.25 TeV, D1324): lower edge unchanged at 0.67 TeV (now 0.670 from the newer paper). Run-3 disappearing-track wino results: none found yet (search; ATLAS Run-3 LLP briefing covers displaced vertices, not disappearing tracks).
 Next (map queue 1b): add 2603.08315 as a second anchor in recast_dt.py, lock first, and check that the recast reproduces 670/770 within the locked tolerance; then the HL-LHC projection is re-derived from the more sensitive analysis.
 Map row recast_dt: "Run-2 only" → "Run-2 (2201.02472 + 2603.08315 pending re-anchor)".
+
+## D1723 (RIGHT/CERN+1, 19 Nov 2026) — PREREG_CERN1_ATLAS137 RESULT: NULL (stop rule), no re-anchor
+The paper quotes model-independent limits (Table 6): SR4High σ95 = 0.044 fb (S95 obs 6.0, exp 3.7), SR4Mid 0.090 fb, SR3High1π 0.037 fb, SR3High0π 0.043 fb; small excesses (SR4High 3 observed on 0.68 ± 0.14, local 1.9σ).
+But it does NOT quote a pure-wino benchmark signal yield in any signal region (Fig. 8 shows a 700 GeV, 0.2 ns wino only as a curve) nor the tracklet layer radii. The lock says: no n_bench → STOP, NULL. So CERN+1 stays anchored on 2201.02472 (reproduces 660 → 666.6 GeV), with 2603.08315's 670/770 GeV recorded as the current published wino floor. A re-anchor would need the HEPData record (download → Danny's OK) or digitising Fig. 8.
+Note for the window: the SR4High 1.9σ local excess is why the observed limit (670) sits 100 GeV below the expected (770).
