@@ -338,7 +338,7 @@ def knobs():
         'inflation': [dict(key='inflation_model', label='Model', type='select', options=list(J.MODELS)),
                       dict(key='Nstar', label='N* (ignored for serapis_*)', type='number', min=40, max=70, step=1, unit='e-folds')],
         'flavour':   [],
-        'quarks':    [dict(key='sugra_m', label='SUGRA class m (W ∝ (j−1728)^{m/2})', type='number', min=1, max=7, step=1, unit=''),
+        'quarks':    [dict(key='sugra_m', label='SUGRA class m (W ∝ (j−1728)^{m/2})', type='number', min=1, max=32, step=1, unit=''),
                       dict(key='tauq_mass_GeV', label='τ_q mass', type='number', min=1e4, max=5e12, step=1e9, unit='GeV'),
                       dict(key='tauq_phi0', label='τ_q displacement φ₀', type='number', min=0.1, max=1.0, step=0.1, unit='M_P')],
         'bbn':       [dict(key='omega_b', label='ω_b', type='number', min=0.020, max=0.025, step=0.0001, unit=''),

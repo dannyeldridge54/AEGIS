@@ -180,7 +180,7 @@ def weave_basic(a):
     elif q == 'T_nu': v = (4 / 11) ** (1 / 3) * float(a.get('T_gamma_K', 2.7255)); lab = 'S'
     elif q == 'dNstar': v = -math.log(max(1.0, float(a['dilution']))) / 3; lab = 'S'
     elif q == 'ns_plateau': v = 1 - 2 / float(a['Nstar']); lab = 'S (leading order; the Weave tilt C is fitted on top)'
-    elif q == 'r_plateau': v = 8 / ((int(a.get('D', 10)) - 2) * float(a['Nstar']) ** 2); lab = 'P (leading-order plateau r = 8/((D-2) N^2))'
+    elif q == 'r_plateau': v = 8 / ((int(a.get('D', 10)) - 2) * float(a['Nstar']) ** 2); lab = 'S (UNTILTED leading order r = 8/((D-2) N^2); the Weave prediction is the TILTED exact value r_10 = 5.41e-4 (x1.37), use weave_rladder; joint audit 20 Nov)'
     elif q == 'n_nu_relic': v = 3 * 2 * (3 / 4) * (4 / 11) * 410.7 / 2; lab = 'S (per cm^3, all flavours)'
     else: return {'error': 'q must be one of Omega_nu_h2, T_nu, dNstar, ns_plateau, r_plateau, n_nu_relic'}
     return dict(q=q, value=v, label=lab)
