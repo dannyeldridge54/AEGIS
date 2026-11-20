@@ -7,10 +7,10 @@ Status words: lit · formula (paper fit, m ≤ 7) · extrap · computed · deriv
 ## Who sits where (current)
 | place | occupant | source | status |
 |---|---|---|---|
-| knot ρ (rung ∞) | inflaton endpoint; Koide-circulant charged leptons? | D1606, D1595 | derived / TENSION |
+| knot ρ (rung ∞, or ≳ 400) | inflaton endpoint; charged leptons (Koide needs |ε| ≲ 6e-5) | D1606, D1595, D1737 | derived / computed |
 | rung 8 | up quarks (u, c, t) | D1733, D1734, D1736 | computed (chance 52%); rung position now computed, not extrapolated |
 | rung 1 | down quarks (d, s, b) | D1733 | computed |
-| rung 1 | charged leptons (e, μ, τ) | D1734 T1 | computed / TENSION with knot |
+| rung 1 | ~~charged leptons~~ WITHDRAWN (a rung-1 slip breaks Koide by 8.5e-3) | D1737 | computed |
 | arc (m,n) | — (position set by the ratio m:n alone) | D1736 | computed |
 | knot i | neutrino modulus (P-F3), dark thread / Arthur field at rest | D1610, D1653 | derived |
 | rungs 11 → ∞ (ρ side) | empty in the SM; room for hidden families | D1734 T4 | structure only |
@@ -20,7 +20,7 @@ Status words: lit · formula (paper fit, m ≤ 7) · extrap · computed · deriv
 |---|---|---|---|
 | up (8) ↔ down (1) | CKM mixing = mismatch of the two rungs' matrices | |V_us|, |V_cb|, |V_ub|, J | OPEN — Q8 |
 | up (8) ↔ down (1) | strong CP: θ̄ = 0 for any rungs if weights anomaly-free | θ̄ = 0 | lit (FST) |
-| down (1) ↔ charged leptons (1) | same rung ⇒ similar hierarchy (b–τ, s–μ) | g = 0.025 vs 0.032 | computed |
+| down (1) ↔ charged leptons (knot) | NOT the same rung; hierarchies by different mechanisms (slip vs Z₃ numbers) | ΔQ(rung 1) = 8.5e-3 | computed (D1737) |
 | quarks (ρ side) ↔ neutrinos (i) | different knots ⇒ small CKM vs large PMNS | θ_C 13° vs θ₁₂ 34° | consistent (qualitative) |
 | τ_q ↔ inflation | τ_q decay dilutes, ΔN* = −⅓ ln D | m(τ_q) ≳ 2e10 GeV | computed (Q4, D1730) |
 | quarks ↔ dark thread | no coupling allowed today (clocks, F1) | ζ < 3.6e-6 | bound |

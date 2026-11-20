@@ -1,0 +1,5 @@
+Q0=0.6666645  eps=0.02395: median|dQ|=8.482e-03  f(|dQ|<=2.3e-5)=0.0015 -> INCOMPATIBLE
+  eps=1e-03: median|dQ|=3.67e-04
+  eps=3e-04: median|dQ|=1.10e-04
+  eps=1e-04: median|dQ|=3.67e-05
+  eps=3e-05: median|dQ|=1.10e-05

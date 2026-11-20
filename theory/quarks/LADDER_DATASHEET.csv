@@ -1,5 +1,5 @@
 side,cls,rung,eps_abs,eps_arg_deg,cp,m2_over_m3_scale,m1_over_m3_scale,occupant,status
-left (ρ),"(1,0)",1,0.02364,50.0,violating,0.02364,5.59e-04,"down quarks; charged leptons (T1, D1734; TENSION with Koide-at-ρ)","computed (Q11, ±0.4%)"
+left (ρ),"(1,0)",1,0.02364,50.0,violating,0.02364,5.59e-04,"down quarks (charged leptons WITHDRAWN, D1737)","computed (Q11, ±0.4%)"
 left (ρ),"(2,0)",2,0.01218,50.0,violating,0.01218,1.48e-04,empty,"computed (Q11, ±0.4%)"
 left (ρ),"(3,0)",3,0.00820,50.0,violating,0.00820,6.73e-05,empty,"computed (Q11, ±0.4%)"
 left (ρ),"(4,0)",4,0.00618,50.0,violating,0.00618,3.82e-05,empty,"computed (Q11, ±0.4%)"
@@ -34,7 +34,7 @@ left (ρ),"(32,0)",32,0.00078,50.0,violating,0.00078,6.14e-07,empty,"computed (Q
 left (ρ),"(48,0)",48,0.00052,50.0,violating,0.00052,2.73e-07,empty,extrap (formula)
 left (ρ),"(64,0)",64,0.00039,50.0,violating,0.00039,1.54e-07,empty,extrap (formula)
 left (ρ),"(128,0)",128,0.00020,50.0,violating,0.00020,3.85e-08,empty,extrap (formula)
-left (ρ),"(∞,0)",∞,0,,conserving (knot),0,0,Koide circulant leptons? (D1595); inflaton endpoint (D1606),lit/derived
+left (ρ),"(∞,0)",∞,0,,conserving (knot),0,0,"charged leptons (Koide needs |ε|≲6e-5, rung ≳400 or knot; D1737); inflaton endpoint (D1606)",lit/derived
 centre (arc),"(1,1)",m/n=1/1,tau=-0.2378+0.9713i,,conserving (arc),open,open,none assigned,computed (Q11); position set by m/n only
 centre (arc),"(2,1)",m/n=2/1,tau=-0.2857+0.9583i,,conserving (arc),open,open,none assigned,computed (Q11); position set by m/n only
 centre (arc),"(3,1)",m/n=3/1,tau=-0.3115+0.9502i,,conserving (arc),open,open,none assigned,computed (Q11); position set by m/n only
