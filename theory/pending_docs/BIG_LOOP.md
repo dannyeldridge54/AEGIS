@@ -17,4 +17,4 @@ Q7. [DONE D1674: P(TM1) = 0.345 exactly (½ × 0.69)] Basin weights per image of
 Q8. [DONE D1675: KLZ portal window contains M_N window; P-portal] Version (b) dark asymmetry: a portal estimate (e.g. neutron portal ūd̄d̄χ/Λ²) that transfers baryon number to 5 GeV χ, with the Λ_portal needed and current bounds.
 Q9. [DONE D1676: m_X = 12.8 GeV non-SUSY; 28/79 validated] Recompute the KLZ chemical-equilibrium mass ratio (m_X range) in tools/genesis rather than quoting it.
 Q10. A3 at D = 6: evaluate the regularised SO(4,4) s = 1 Epstein-type series numerically along a torus slice.
-Q11. Is a 12.8 GeV asymmetric X with a 0.3–5 GeV dark photon allowed by LZ/XENONnT direct detection (kinetic-mixing ε from D1659/D1664)?
+Q11. [IN PROGRESS manual Djl] Is a 12.8 GeV asymmetric X with a 0.3–5 GeV dark photon allowed by LZ/XENONnT direct detection (kinetic-mixing ε from D1659/D1664)?
