@@ -63,3 +63,13 @@ Rules: lock before recomputing; data-file downloads need Danny's OK; each row's 
 | janus_lt desi | DESI DR2 BAO likelihood | 2503.14738 Table IV | DESI DR3 (when public) | medium (future) | DR2 |
 | settings (to build) | presets: CMB datasets (Planck, ACT DR6, SPT-3G, CMB-SPA), BAO (DESI DR2), SN (Pantheon+, DESY5, Union3); model library; exports | — | — | queued J1 | — |
 Janus queue (interleaved with CERN+1/Hyperion): J1 settings + exports; J2 complaints search (CAMB/CLASS/Cobaya/inflation-calculator users) → build list; J3 newest n_s/r data (ACT DR6, SPT-3G, BK) into the presets with pulls.
+
+## Mapper (AEGIS Star Mapper + Sky Map: apps/skymap, ufe-v2/cosmos_map, Hyperion mapper_*) — added Danny 22:11 "mapper as well, that's for telescopes"
+| part | what it does | data | newest data to check | gap | status |
+|---|---|---|---|---|---|
+| Star Mapper (cosmos_map) | re-verifies Gaia stars (192,208,838 re-checked) and flags unusual ones | Gaia DR3 | **Gaia DR4 (2 Dec 2026)** | HIGH (Dec) | DR3 |
+| mapper_feed / mapper_orbits | Gaia → Galactocentric phase space, orbits (McMillan17) | Gaia DR3 + Bailer-Jones distances | DR4 astrometry, RVs | HIGH (Dec) | validated |
+| mapper_dust | E(B−V) per star | SFD / Bayestar (not downloaded) | Bayestar19 / newer 3D dust maps (downloads now OK'd) | medium | prep only |
+| Sky Map (apps/skymap) | browser sky atlas: surveys (Planck, Fermi, Gaia), objects, tonight's sky, lessons | HiPS surveys | new HiPS (Euclid Q1/DR1, SPHEREx all-sky, Rubin DP1) | medium | live |
+| telescope tools (to build) | observability planner (alt/airmass for a site), target lists in standard formats (CSV/VOTable), cross-match with SIMBAD/Gaia IDs | — | — | queued M1 | — |
+Mapper queue: M1 complaints search (amateur + professional observers: Stellarium, Aladin, astropy/astroplan, Gaia archive users) → build list; M2 observability/target-list export (astroplan-compatible, VOTable); M3 newest surveys into Sky Map (Euclid, SPHEREx, Rubin) as HiPS layers; M4 3D dust map download + validate mapper_dust; M5 Gaia DR4 ingest plan (release 2 Dec).
