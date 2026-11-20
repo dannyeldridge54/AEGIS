@@ -65,7 +65,7 @@ def make(name):
     info['output']=os.path.join(HERE,'results','chains','cmp_'+name)
     shape='lo' if core=='gate' else 'exact'
     ex=info['theory']['rtcamb']['extra_args']; info['theory']={'ctcamb':{'external':theory(shape),'extra_args':ex,'stop_at_error':False}}
-    pr=info['params']; pr['rt_ui']={'prior':{'min':1e-6,'max':5.0},'ref':{'dist':'uniform','min':0.1,'max':2.0},'proposal':0.05}
+    pr=info['params']; pr['rt_ui']={'prior':{'min':1e-6,'max':0.9},'ref':{'dist':'uniform','min':0.1,'max':0.25},'proposal':0.02}
     if core=='cx_coupled': pr['rt_bc']={'prior':{'min':-0.3,'max':0.1},'ref':{'dist':'uniform','min':-0.12,'max':-0.02},'proposal':0.01}
     else: pr['rt_bc']=0.0
     return info,ref,sn
