@@ -1,0 +1,9 @@
+# PREREG_PLANCK_COUPLED — FULL Planck test of the weak-spot fix on Danny's PC (locked D1712, 2026-11-20 02:10 UTC; Danny 20:01 "full derivation on PC tonight, CLASS/Planck everything")
+Engine: the PC's existing, validated stack (JANUS D1636): CAMB 2.0.5 + Cobaya 3.6.2, Planck 2018 (low-ℓ TT, low-ℓ EE, plik-lite TTTEEE, lensing) + DESI DR2 BAO + {Pantheon+, DES-Y5, Union3}. Dark energy goes in as a PPF w(a) table (the same fluid method as the stored rtP/w0waP fits). CAMB is used, not CLASS: it is the engine already installed and validated there (gate D1636 passed to 1e-8).
+Model (exact perturbative curve g(y), PREREG_REALDATA_EXACT; coupling as in PREREG_COUPLED_THREAD): CAMB's ω_c is the EARLY (CMB-era) dark-matter density. With coupling, ρ_c(a) = ρ_c,early a⁻³ e^{b_c(φ − φ_i)}. CAMB sees an effective dark energy ρ_DE,eff = ρ_φ + ρ_c,early a⁻³(e^{b_c(φ − φ_i)} − 1) and w_eff from its evolution. V_Λ is shot to flatness today. Invalid if ρ_DE,eff ≤ 0 anywhere.
+Parameters: the standard six (logA, n_s, ω_b, ω_c, τ, H0), plus rt_ui ∈ [1e-6, 5] and b_c ∈ [−0.3, 0.1].
+APPROXIMATION (stated): the coupling's effect on dark-matter PERTURBATIONS (G_eff = G(1 + β²), modified growth) is NOT modelled; the extra energy is treated as a PPF fluid. This is a background-level test with full CMB. A full test needs a coupled-DE Boltzmann code.
+Gate (must pass, else STOP): with the leading-order shape and b_c = 0, χ² at the stored cmp_rtP_desy5 best point must reproduce the stored χ² within 1.0.
+Runs (bobyqa, best of 4): cpl_exact_coupled for each SN set, plus cpl_exact_uncoupled (b_c fixed 0) as the reference.
+Reading: per SN set, report Δχ² versus stored ΛCDM, uncoupled thread and w0wa. The fix "survives full Planck" if coupled Δχ² is within 3 of w0wa for at least two of the three SN sets.
+Scripts: field_tests/scripts/pc_planck/coupled_planck.py (copied to the PC as AEGIS_PCJOBS/d1712/).
