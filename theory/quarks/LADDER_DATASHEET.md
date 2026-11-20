@@ -34,3 +34,5 @@ Status words: lit · formula (paper fit, m ≤ 7) · extrap · computed · deriv
 
 ## Queue (each locked first)
 Q8 CKM from rungs (1, 8). Q10 Koide vs rung-1 slip. Q11 compute the SUGRA minima directly for m up to 32 and mixed (m,n) (removes the "extrap" label).
+
+## Names for rungs 10–25 (Danny 08:24): archetype gods from around the world, proposed pending review — see tools/project_docs/WEAVE_RUNG_NAMES.md (project doc claude/WEAVE_RUNG_NAMES.md). Names mark empty places, not particles.
