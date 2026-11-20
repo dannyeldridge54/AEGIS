@@ -1,0 +1,4 @@
+mu=1e9 GeV: down e_a=0.0207 e_b=0.0321 on rung1=True; g_d=0.0258 g_u=0.00296; m_u*=9.20±0.57
+mu=1e12 GeV: down e_a=0.0211 e_b=0.0325 on rung1=True; g_d=0.0262 g_u=0.00291; m_u*=9.48±0.59
+mu=1e16 GeV: down e_a=0.0216 e_b=0.0327 on rung1=True; g_d=0.0266 g_u=0.00286; m_u*=9.80±0.61
+VERDICT STABLE
