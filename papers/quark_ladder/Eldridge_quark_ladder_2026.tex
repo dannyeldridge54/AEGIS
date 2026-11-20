@@ -8,92 +8,95 @@
 \affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
 \date{20 November 2026}
 \begin{abstract}
-In the ``Weave'' model the inflaton is a modular field that ends inflation at the fixed point $\rho=e^{i\pi/3}$, and the lepton moduli sit at the fixed points $\rho$ and $i$~\cite{P1,P2}. We ask where the quarks fit. Thirteen pre-registered tests (rules committed with a checksum before computing) give a mixed but sharp picture.
-(i) Neither the inflaton's endpoint nor the late-time dark-energy field can be the quark modulus: the first is $\sim\!1600\times$ too close to $\rho$, the second would make quark masses drift today.
+In the ``Weave'' model the inflaton is a modular field that ends inflation at the fixed point $\rho=e^{i\pi/3}$, and the lepton moduli sit at the fixed points $\rho$ and $i$~\cite{P1,P2}. We ask where the quarks fit, in fourteen pre-registered steps (rules committed with a checksum before computing; two procedural deviations recorded).
+(i) The inflaton's endpoint cannot be the quark modulus: it is $\gtrsim1600\times$ too close to $\rho$. The late dark-energy field is excluded by argument: quark masses would drift today.
 (ii) The lepton Koide relation does not extend to quarks ($Q_u=0.887$, $Q_d=0.742$).
-(iii) A third, heavy modulus $\tau_q$ ($m\gtrsim2\times10^{10}$\,GeV) is compatible with the early universe, and anomaly-free modular weights give $\bar\theta=0$ without an axion~\cite{FST}.
-(iv) The supergravity potentials $W\propto(j-1728)^{m/2}/\eta^6$ have CP-violating minima just off $\rho$; we compute them directly up to $m=32$ and find $|\epsilon_m|=|\tau-\rho|\simeq0.0251/(m+\tfrac1{16})$ at a fixed phase $\simeq50^\circ$ (agreeing with the analytic form of Ref.~\cite{NPP} to $\le1.3\%$, independently confirmed to $<10^{-5}$). Mixed classes $(m,n)$ sit on the CP-conserving arc $|\tau|=1$ at a position set by $m{:}n$ alone.
-(v) Splitting the quark thread, down quarks on rung $m=1$ and up quarks on a higher rung, removes the large coupling the single-modulus fits need. In the weight-8/6/4 model of Ref.~\cite{PT} it lowers $\chi^2$ from 20.4 to 5.8 with all couplings $\mathcal O(1)$, but still misses $m_s/m_b$ ($0.54\times$), $|V_{cb}|$ ($1.27\times$) and $|V_{ub}|$ ($0.73\times$): a FAIL by the locked tolerances.
-(vi) With $\mathcal O(1)$ coefficient spread, the up-quark rung is only bounded to $5$--$14$ (68\%).
-The quark sector is therefore hosted and consistent, not predicted. We freeze four predictions for future data.
+(iii) A third, heavy modulus $\tau_q$ ($m\gtrsim2\times10^{10}$\,GeV) is compatible with the early universe, and anomaly-free modular weights give $\bar\theta=0$ at tree level without an axion~\cite{FST,FPST}.
+(iv) The supergravity potentials $W\propto(j-1728)^{m/2}/\eta^6$ have CP-violating (AdS) minima just off $\rho$. Computed directly up to $m=32$, $|\epsilon_m|=|\tau-\rho|\simeq0.0251/(m+\tfrac1{16})$ at a phase $\simeq50^\circ$ (resolved for $m\le14$), agreeing to $\le1.3\%$ with the fitted form of Ref.~\cite{NPP}; an independent solver agrees to $<10^{-5}$. Mixed classes $(m,n)$ sit on the CP-conserving arc $|\tau|=1$, placed mainly by $m{:}n$.
+(v) Splitting the quark thread (down quarks on rung $m=1$, up quarks on a higher rung) removes the large coupling single-modulus fits need. In the weight-8/6/4 model of Ref.~\cite{PT} our score drops from 20.4 to 5.8, but $m_s/m_b$ ($0.54\times$) and $|V_{cb}|$ ($1.27\times$) still fail the locked tolerances (and $|V_{ub}|$, $0.73\times$, under the implemented reading): FAIL.
+(vi) With $\mathcal O(1)$ coefficient spread the up-quark rung is only bounded to $5$--$14$ (68\%).
+The quark sector is hosted and close, but not reproduced and not predicted. We freeze four statements for future data, of which only one (weak) and one phase statement are new.
 \end{abstract}
 \keywords{modular flavour symmetry; quark masses; CKM; strong CP; supergravity; modulus stabilisation; pre-registration}
 \maketitle
 
-\section{Setting}
-The Weave model~\cite{P1} drives inflation by the string coupling $\tau_1$ on a species-scale plateau and ends it at $\rho$, where a residual $Z_3$ survives. The charged-lepton matrix is then a $Z_3$ circulant, $\sqrt{M_\ell}=a+bC+\bar bC^2$, which gives the Koide form; the neutrino modulus sits at $i$~\cite{P2}. Fixed points conserve CP, and quark moduli placed there give a Jarlskog invariant $J\le5\times10^{-15}$, far below $3\times10^{-5}$~\cite{P2}. The quark sector therefore needs its own modulus $\tau_q$ away from the CP-symmetric lines. We test, step by step, where $\tau_q$ can sit and what it predicts. All steps were locked in advance (\texttt{field\_tests/rules/PREREG\_Q*}); deviations were written down before any rerun; results are in Table~\ref{tab:steps}.
+\section{Setting and words}
+The Weave model~\cite{P1} drives inflation by the string coupling, a modular field $\tau_1$ (the ``thread''), on a species-scale plateau, and ends it at the fixed point $\rho$ (a ``knot''), where a residual $Z_3$ survives. The charged-lepton matrix is then a $Z_3$ circulant, $\sqrt{M_\ell}=a+bC+\bar bC^2$, which gives the Koide form; the neutrino modulus sits at the other knot, $i$~\cite{P2}. Fixed points conserve CP, and quark moduli placed there give a Jarlskog invariant $J\le5\times10^{-15}$, far below $3\times10^{-5}$~\cite{P2}. The quark sector therefore needs its own modulus $\tau_q$ away from the CP-symmetric lines. A ``rung'' below is one supergravity minimum $\tau_m$ near $\rho$. Every step was locked in advance (\texttt{field\_tests/rules/PREREG\_*}); two procedural deviations are recorded in \texttt{*\_DEVIATIONS.md} (Q7: the lock was committed but not yet public when the script ran; Q12: a crash before any observable); one tolerance-reading discrepancy is discussed in Sec.~IV. Results are in Table~\ref{tab:steps}.
 
 \section{Which field carries the quarks}
-\textit{Q1, inflaton endpoint.} Near $\rho$, level-3 $A_4$ quark models need $\tau=\rho+\epsilon$ with $|\epsilon|\approx0.03$~\cite{PT}. The inflaton's leftover canonical offset after reheating is $\le10^{-5}M_P$, i.e.\ $|\epsilon|\le1.2\times10^{-5}$ (Kähler weight $h=1$): $\sim1600\times$ too small. \textit{The dark thread} (the late dark-energy field) rests at $i$, a CP-conserving point, and is still rolling; tying quark masses to it would make them drift by order one over gigayears, excluded by atomic clocks and equivalence-principle tests (our bound $\zeta<3.6\times10^{-6}$). Both are rejected.
-\textit{Q2, Koide.} With masses run to $M_Z$~\cite{MZ}, $Q=\sum m/(\sum\sqrt m)^2$ is $0.8870\pm0.0010$ (up) and $0.7422\pm0.0025$ (down), far from $2/3$; the Brannen phases ($0.052$, $0.104$) are far from the lepton value $2/9$. The same code reproduces the leptons ($Q=0.6666645$, $\delta=0.222225$).
-\textit{Q3, predictivity.} The anomaly-free modular quark models of Ref.~\cite{FST} fit the data with 15--22 real parameters for 8--10 observables; one variant cannot fit at all. What survives is structural: $\bar\theta=0$ for any $\tau_q$, with CP broken only by $\langle\tau_q\rangle$.
-\textit{Q4, cosmology.} A displaced modulus decaying gravitationally dilutes the universe by $D=\tfrac16T_R(\phi_0/M_P)^2/T_{\rm dec}$ and shifts $N_*$ by $-\tfrac13\ln D$. With $T_R=1.34\times10^9$\,GeV and $H_{\rm inf}=5.2\times10^{12}$\,GeV, requiring $D\le10^3$, $T_{\rm dec}\ge5$\,MeV and $|\Delta n_s|\le0.003$ gives $m_{\tau_q}=1.7\times10^{10}$--$5\times10^{12}$\,GeV for $\phi_0=M_P$ ($8\times10^8$\,GeV upward for $\phi_0=0.1M_P$), uncertain by a factor $\sim2$.
+\textit{Q1, inflaton endpoint.} Near $\rho$, level-3 $A_4$ quark models need $\tau=\rho+\epsilon$ with $|\epsilon|\approx0.03$~\cite{PT}. The inflaton's leftover canonical offset after reheating is $\le10^{-5}M_P$, i.e.\ $|\epsilon|\le1.2\times10^{-5}$ (Kähler weight $h=1$): $\gtrsim1600\times$ too small (against $0.02$; $2500\times$ against $0.03$). \textit{The dark thread} (the late dark-energy field) is rolling toward $i$, a CP-conserving point; tying quark masses to it would make them drift by order one over gigayears, excluded by atomic-clock and equivalence-principle bounds ($\zeta<3.6\times10^{-6}$ on its matter coupling~\cite{P3}). The inflaton endpoint is rejected by a locked test, the dark thread by argument (not locked).
+\textit{Q2, Koide.} With quark masses run to $M_Z$~\cite{MZ}, $Q=\sum m/(\sum\sqrt m)^2$ is $0.8870\pm0.0010$ (up) and $0.7422\pm0.0025$ (down), far from $2/3$; the Brannen phases ($0.052$, $0.104$) are far from the lepton value $2/9$. The same code reproduces the leptons from their pole masses ($Q=0.6666645$, $\delta=0.222225$).
+\textit{Q3, predictivity} (descriptive). The anomaly-free modular quark models of Ref.~\cite{FPST} fit the data with 15--22 real parameters for 8--10 observables; one variant cannot fit at all. What survives is structural: $\bar\theta=0$ for any $\tau_q$, with CP broken only by $\langle\tau_q\rangle$.
+\textit{Q4, cosmology.} A displaced modulus decaying gravitationally dilutes the universe by $D=\tfrac16T_R(\phi_0/M_P)^2/T_{\rm dec}$ and shifts $N_*$ by $-\tfrac13\ln D$. With $T_R=1.34\times10^9$\,GeV, requiring $D\le10^3$, $T_{\rm dec}\ge5$\,MeV and $|\Delta n_s|\le0.003$ gives $m_{\tau_q}\ge1.7\times10^{10}$\,GeV for $\phi_0=M_P$ ($\ge8\times10^8$\,GeV for $\phi_0=0.1M_P$). Above $H_{\rm inf}\approx5.2\times10^{12}$\,GeV, $\tau_q$ is not displaced and is unconstrained here, but needs stabilisation from outside the Weave. Edges move by $\sim\!\times2$ with the $\mathcal O(1)$ width coefficient; $\tau_q\to$ gravitino decays were not checked.
 
 \section{The supergravity minima}
 With $K=-3\ln(2\,{\rm Im}\,\tau)$ and $W=H(\tau)/\eta^6$, $H=(j-1728)^{m/2}j^{n/3}$~\cite{NPP},
 \begin{equation}
 V=\frac{|H|^2}{(2y)^3|\eta|^{12}}\Big[\tfrac{4y^2}{3}\Big|\tfrac{H'}{H}-\tfrac{i\pi}{2}E_2+\tfrac{3i}{2y}\Big|^2-3\Big].
 \end{equation}
-We minimise $V$ in the fundamental domain (q-series to $q^{60}$, multi-start). The code reproduces the three minima of Ref.~\cite{NPP} ($m=1,2,3$) to $|\Delta\tau|\le5\times10^{-4}$. For $n=0$ and $m=1\ldots32$ the minima obey
+We minimise $V$ in the fundamental domain (q-series to $q^{60}$, multi-start). The code reproduces the three minima listed in Ref.~\cite{NPP} ($m=1,2,3$) to $|\Delta\tau|\le5\times10^{-4}$. All $(m,0)$ minima have $V<0$ (AdS); an uplift sector, not included, may shift them. For $n=0$ and $m=1\ldots32$,
 \begin{equation}
 \epsilon_m\equiv\tau_m-\rho\simeq\frac{0.0251\,e^{i\,50^\circ}}{m+1/16},
 \label{eq:ladder}
 \end{equation}
-with the computed $|\epsilon_m|$ within $0.3$--$1.3\%$ of Eq.~(\ref{eq:ladder}) ($0.02395$ at $m=1$, $0.00313$ at $8$, $0.00079$ at $32$). The phase is stable at $49.5$--$50.9^\circ$ up to $m=14$; beyond, $|\epsilon|\sim10^{-3}$ and the optimiser cannot resolve the angle. An independent stationary-point solver (mpmath, root finding on $\nabla V$) agrees to $4\times10^{-7}$ ($m=1$), $1.6\times10^{-6}$ ($m=8$). Mixed classes land exactly on the arc $|\tau|=1$ (CP-conserving): $(1,1)$, $(2,2)$, $(3,3)$ all at $\tau\simeq-0.2378+0.9713i$, moving toward $\rho$ as $m$ grows and toward $i$ as $n$ grows. The minima thus form a ``twin ladder'': CP-violating rungs climbing to $\rho$, minima at $i$, joined by a CP-conserving arc. Eq.~(\ref{eq:ladder}) with no free parameter ($m=1$: $|\epsilon|=0.024$) lands below the band $0.028$--$0.038$ that single-modulus fits need~\cite{PT} (Q6, FAIL).
+where $0.0251=\sqrt3\times0.0145$ and the $1/16$ ($=0.0625$) are the fitted numbers of Ref.~\cite{NPP}, not derived. The computed $|\epsilon_m|$ lie within $0.3$--$1.3\%$ of Eq.~(\ref{eq:ladder}) ($0.02395$ at $m=1$, $0.00313$ at $8$, $0.00079$ at $32$). The phase is $49.5$--$50.9^\circ$ up to $m=14$; beyond that $|\epsilon|\sim10^{-3}$ and the optimiser cannot resolve the angle. An independent solver (mpmath, root finding on $\nabla V$) agrees to $4\times10^{-7}$ ($m=1$) and $1.6\times10^{-6}$ ($m=8$). Mixed classes land on the arc $|\tau|=1$ (CP-conserving): $(1,1)$, $(2,2)$, $(3,3)$ at ${\rm Re}\,\tau=-0.2378,-0.2389,-0.2392$, so the position is set mainly by $m{:}n$, moving toward $\rho$ as $m$ grows and toward $i$ as $n$ grows. The minima thus form a ``twin ladder'': CP-violating rungs climbing to $\rho$, minima at $i$, joined by a CP-conserving arc. With no free parameter the outermost rung ($|\epsilon_1|=0.0236$ by the formula, the value locked for Q6) lies below the band $0.0281$--$0.0385$ spanned by the single-modulus fits of Ref.~\cite{PT} (Q6, FAIL).
 
 \section{A split quark thread}
-Near $\rho$, with $\mathcal O(1)$ couplings, a family on rung $m$ has $m_2/m_3\simeq\kappa_2\epsilon_m$, $m_1/m_3\simeq\kappa_1\epsilon_m^2$~\cite{PT}. The down sector ($m_s/m_b=0.0199$, $\sqrt{m_d/m_b}=0.0317$) matches rung 1; the up sector ($0.0037$, $0.0028$) matches rungs 3--16 (Q7). Charged leptons would also match rung 1 by masses alone, but a rung-1 slip breaks the Koide relation: with random $\mathcal O(1)$ non-circulant terms of size $|\epsilon|$, $|\Delta Q|\approx0.37|\epsilon|$, i.e.\ $8.5\times10^{-3}$, versus a 3$\sigma$ tolerance $2.3\times10^{-5}$ (only $0.15\%$ of draws survive). Leptons therefore sit at the knot ($|\epsilon|\lesssim6\times10^{-5}$), and get their hierarchy from the circulant numbers, not from a slip (Q10).
+Near $\rho$, with $\mathcal O(1)$ couplings, a family on rung $m$ has $m_2/m_3\simeq\kappa_2\epsilon_m$, $m_1/m_3\simeq\kappa_1\epsilon_m^2$~\cite{PT}. The down sector ($m_s/m_b=0.0199$, $\sqrt{m_d/m_b}=0.0317$) matches rungs 1--2 (closest 1); the up sector ($0.0037$, $0.0028$) matches every scanned rung from 3 to 16 (closest 8--9; 16 was the scan limit) (Q7). Charged leptons would also match rung 1 by their masses alone, but a rung-1 slip breaks the Koide relation: with random $\mathcal O(1)$ non-circulant terms the median $|\Delta Q|=8.5\times10^{-3}$ at $|\epsilon|=0.024$ ($\propto0.37|\epsilon|$ at small $\epsilon$), versus a 3$\sigma$ tolerance $2.3\times10^{-5}$; only $0.15\%$ of draws survive (Q10). Leptons therefore sit at the knot ($|\epsilon|\lesssim6\times10^{-5}$, or a rung $\gtrsim400$, beyond the computed $m\le32$) and get their hierarchy from the circulant numbers, not from a slip. This is linear response with random coefficients; a symmetry protecting $Q$ would loosen it.
 
-\textit{CKM.} We built the mass matrices of Ref.~\cite{PT} (validated: rank one at $\tau=\rho$ with the paper's rows to $10^{-16}$), put $\tau_d$ on rung 1 and $\tau_u$ on rungs 8--10 (and 13, added after the fact because the two-moduli fit of Ref.~\cite{PT} has $|\epsilon_u|=0.0019$), and searched $\mathcal O(1)$ couplings ($[1/3,3]$, any phase). Tolerances were set in advance: mass ratios $\times/\div1.5$, $|V_{us}|$ $\pm10\%$, $|V_{cb}|$ $\pm20\%$, $|V_{ub}|$ $\pm30\%$, $J$ $\pm50\%$.
+\textit{CKM.} We built the mass matrices of Ref.~\cite{PT} in their RL convention ($V=U_{uL}^\dagger U_{dL}$, $U_{qL}$ diagonalising $M_q^\dagger M_q$; weight-2 forms from Ref.~\cite{F17}), validated them (rank one at $\tau=\rho$ with the paper's rows, to $10^{-16}$), put $\tau_d$ on rung 1 and $\tau_u$ on rungs 8--10 (and 13, added after the fact because the two-moduli fit of Ref.~\cite{PT} has $|\epsilon_u|=0.0019$), and searched couplings in $[1/3,3]$ with any phase. Tolerances were set in advance: mass ratios $\times/\div1.5$; $|V_{us}|$, $|V_{cb}|$, $|V_{ub}|$, $J$ as implemented $\times/\div1.1$, $1.2$, $1.3$, $1.5$. The lock text writes the last four as $\pm10/20/30/50\%$; under that reading $|V_{ub}|$ at $0.73\times$ would pass. The verdict is FAIL either way. We score with $\chi^2\equiv\sum_k[\ln(o_k/T_k)/\ln{\rm tol}_k]^2$ ($\approx1$ per observable at the tolerance edge; not a statistical $\chi^2$). Q8 has 8 and Q12 has 12 real couplings for 8 observables, and several best-fit couplings sit on the edge of the box, so ``all couplings $\mathcal O(1)$'' is imposed, not found. Targets are at $M_Z$; running from the $\tau_q$ scale was not included and moves ratios by $\sim5$--$10\%$.
 \begin{itemize}
-\item Original model (Q8): one modulus $\chi^2=54$; split $\chi^2=39$ (rung 8). Up masses and $|V_{cb}|$ become right; $m_s/m_b$, $|V_{ub}|$ and $J$ are $\sim3\times$ low. FAIL.
-\item Weight-8/6/4 model (Q12; chosen after Q8, as suggested in Ref.~\cite{PT}): one modulus $\chi^2=20.4$; split $\chi^2=5.8$--$6.0$ (rungs 8--10), $7.1$ (13). Passing: $m_d/m_b$, $m_c/m_t$, $m_u/m_t$, $|V_{us}|$ ($0.97\times$), $J$ ($0.91\times$). Failing: $m_s/m_b$ ($0.54\times$), $|V_{cb}|$ ($1.27\times$), $|V_{ub}|$ ($0.73\times$). FAIL, but the closest result, and without the coupling $f_u\approx30$ the single-modulus fit requires.
+\item Original model (Q8): one modulus 54; split 39 (rung 8). Up masses and $|V_{cb}|$ become right; $m_s/m_b$, $|V_{ub}|$ and $J$ are $\sim3\times$ low and $|V_{us}|$ is $13\%$ low. FAIL.
+\item Weight-8/6/4 model (Q12; chosen after Q8, as suggested in Ref.~\cite{PT}): one modulus 20.4; split 5.8--6.0 (rungs 8--10), 7.1 (13). Passing: $m_d/m_b$, $m_c/m_t$, $m_u/m_t$, $|V_{us}|$ ($0.97\times$), $J$ ($0.91\times$). Failing: $m_s/m_b$ ($0.54\times$), $|V_{cb}|$ ($1.27\times$), and $|V_{ub}|$ ($0.73\times$) under the implemented reading. FAIL, but the closest result, and without the coupling $f_u\approx30$ that the single-modulus fit requires.
 \end{itemize}
 In both models the down sector wants a larger slip than rung 1, the outermost rung of the $(m,0)$ family. We did not widen the coupling box or allow non-integer $m$.
 
-\textit{How sharp is the up rung?} In the equal-coefficient limit the measured ratio $g_u/g_d$ ($g=\sqrt{(m_2/m_3)\sqrt{m_1/m_3}}$) gives $m_u^*=8.04\pm0.11$ from precise $M_Z$ Yukawas~\cite{RUN}, rising to $9.2$, $9.5$, $9.8$ at $10^{9}$, $10^{12}$, $10^{16}$\,GeV; the down quarks stay on rung 1 at every scale. Including the $\mathcal O(1)$ spread ($\kappa$ log-uniform in $[1/3,3]$), the posterior is broad: rung 8 most probable ($8\%$), 68\% set 5--14, 95\% set 3--22. The robust statement is that up and down quarks sit on different rungs, the up rung roughly ten steps in.
+\textit{How sharp is the up rung?} In the equal-coefficient limit the ratio $g_u/g_d$ ($g=\sqrt{(m_2/m_3)\sqrt{m_1/m_3}}$) gives $m_u^*=8.04\pm0.11$ (input error only) from precise $M_Z$ Yukawas~\cite{RUN}, rising to $9.2$, $9.5$, $9.8$ at $10^{9}$, $10^{12}$, $10^{16}$\,GeV; the down quarks stay on rung 1 at every scale. Since $\tau_q$ lives at $\gtrsim10^{10}$\,GeV, the equal-coefficient limit there favours rung 9--10, not 8. Including the $\mathcal O(1)$ spread ($\kappa$ log-uniform in $[1/3,3]$, flat prior on rungs 1--32), the posterior has a flat peak at rungs 7--9 ($8\%$ each); the 68\% set is 5--14 and the 95\% set 3--22 (the latter depends on the prior cutoff). The robust statement is that up and down quarks sit on different rungs, the up rung roughly ten steps in.
 
 \begin{table}[t]
-\caption{\label{tab:steps}Locked steps (D1727--D1744 in the project log).}
+\caption{\label{tab:steps}Locked steps, in log order (D1727--D1744).}
 \begin{ruledtabular}\begin{tabular}{lll}
 step & question & result\\ \hline
-Q1 & inflaton endpoint as $\tau_q$ & FAIL ($\times1600$)\\
+Q1 & inflaton endpoint as $\tau_q$ & FAIL ($\gtrsim\times1600$)\\
 Q2 & Koide for quarks & FAIL\\
-Q3 & modular quark models predictive & fit only\\
+Q3 & modular quark models predictive & fit only (descriptive)\\
 Q4 & heavy $\tau_q$ vs cosmology & PASS ($\gtrsim2\times10^{10}$ GeV)\\
 Q6 & zero-parameter $\epsilon$ vs fits & FAIL ($0.024$)\\
 Q7 & split thread hosts both sectors & PASS (structure)\\
-Q9 & two-anchor ladder map & map\\
-Q10 & leptons on rung 1 & NO (Koide)\\
+Q9 & two-anchor ladder map & map (descriptive)\\
 Q11 & computed minima, $m\le32$ & formula holds ($\le1.3\%$)\\
-Q8 & CKM, original model, split & FAIL ($\chi^2$ 54$\to$39)\\
-Q12 & CKM, weight-8/6/4, split & FAIL ($\chi^2$ 20$\to$5.8)\\
-B1 & ladder at $10^{9}$--$10^{16}$ GeV & stable\\
+Q10 & leptons on rung 1 & NO (Koide)\\
+Q8 & CKM, original model, split & FAIL (54$\to$39)\\
+Q12 & CKM, weight-8/6/4, split & FAIL (20$\to$5.8)\\
+L1r & up rung on precise $M_Z$ inputs & 8.04 (input error only)\\
 B2 & up rung with $\kappa$ spread & broad (5--14)\\
+B1 & ladder at $10^{9}$--$10^{16}$ GeV & stable (up rung 9--10)\\
 \end{tabular}\end{ruledtabular}
 \end{table}
 
-\section{Predictions frozen for future data}
-\textbf{L1} (equal-coefficient limit, weak): $g_u/g_d=(1+\tfrac1{16})/(m_u+\tfrac1{16})$ with $m_u=8$, i.e.\ $0.1318$; known to be scale-dependent and only meaningful with a model fixing $\kappa$.
-\textbf{L2}: no quark family obeys Koide; no lepton family follows the slip scaling.
-\textbf{L3}: any new modular fermion family on the $\rho$ ladder has $m_2/m_3\in[\epsilon_m/3,3\epsilon_m]$ for integer $m$; rungs 1 and $\sim\!8$ are occupied.
-\textbf{L4}: $\bar\theta=0$ exactly; a $\theta$-induced neutron EDM would falsify the construction.
+\section{Statements frozen for future data}
+\textbf{L1} (equal-coefficient limit; rung 8 chosen from current $M_Z$ masses, so a postdiction now): $g_u/g_d=(1+\tfrac1{16})/(m_u+\tfrac1{16})=0.1318$ at $M_Z$; scorable only with $\sigma\le0.0049$ and a model fixing $\kappa$; at the $\tau_q$ scale the same limit prefers rung 9--10.
+\textbf{L2} (consistency, partly known): no quark family obeys Koide (already true, Q2); no charged-lepton family follows the slip scaling.
+\textbf{L3}: any new modular fermion family on the $\rho$ ladder has $m_2/m_3\in[\epsilon_m/3,3\epsilon_m]$ for an integer $m$. Because adjacent bands overlap, L3 is falsified in magnitude only by $m_2/m_3>3\epsilon_1\approx0.07$; its content is the common phase ${\rm arg}\,\epsilon\approx50^\circ$.
+\textbf{L4} (inherited from Ref.~\cite{FST}): $\bar\theta=0$ at tree level; a neutron EDM implying $|\bar\theta|\gtrsim10^{-11}$ would falsify the construction.
 As a consistency check, LHCb's $B^0\to\mu^+\mu^-$ evidence~\cite{LHCb} agrees with the Standard Model ($R_{\mu\mu}$ $+0.6\sigma$); the Weave adds nothing at this order, so this is consistency, not evidence.
 
 \section{Limits}
-The rung formula is computed, but its normalisation and the ``$1/16$'' are the numbers of a specific supergravity class; the coupling constants are free $\mathcal O(1)$ numbers; the up-rung assignment is broad; the quark masses were known before every test except the frozen predictions. Nothing here selects the integers $m$, or explains why the weights are anomaly-free. The result is a map: where quarks can live in the Weave, and how close a zero-extra-parameter version comes.
+The rung formula is computed, but its normalisation and the ``$1/16$'' are fitted numbers of one supergravity class (Ref.~\cite{NPP}), not derived; the minima are AdS; the coupling constants are free $\mathcal O(1)$ numbers; the up-rung assignment is broad; the quark masses were known before every test except the frozen statements. Nothing here selects the integers $m$, or explains why the weights are anomaly-free. The result is a map: where quarks can live in the Weave, and how close a version with no extra parameters comes.
 
-\textit{Data and code.} \url{https://github.com/dannyeldridge54/AEGIS} (branch \texttt{unify-bg}): \texttt{theory/quarks/}, \texttt{field\_tests/rules/PREREG\_Q*}, \texttt{field\_tests/results/q*}, ladder data sheet \texttt{theory/quarks/LADDER\_DATASHEET.csv}.
+\textit{Data and code.} \url{https://github.com/dannyeldridge54/AEGIS} (branch \texttt{unify-bg}): scripts in \texttt{theory/quarks/} (the L1r and B1 checks are inline in the logs \texttt{field\_tests/results/l1\_robust.txt}, \texttt{b1\_scale.txt}), locks in \texttt{field\_tests/rules/}, results in \texttt{field\_tests/results/q*}, ladder data sheet \texttt{theory/quarks/LADDER\_DATASHEET.csv}.
 
 \begin{thebibliography}{99}
 \bibitem{P1} D.~Eldridge, ``Inflation from the running of the species scale: an $SL(2,\mathbb Z)$ plateau along the string coupling'', Zenodo, doi:10.5281/zenodo.24377930 (2026).
 \bibitem{P2} D.~Eldridge, ``Flavour at the end of inflation: Koide's form, trimaximal mixing and a quantised $\bar\theta$'', Zenodo, doi:10.5281/zenodo.24379357 (2026).
-\bibitem{FST} F.~Feruglio, A.~Strumia, A.~Titov, JHEP 07 (2023) 027, arXiv:2305.08908; ``Solving the strong CP problem without axions'', arXiv:2406.01689.
-\bibitem{NPP} P.~P.~Novichkov, J.~T.~Penedo, S.~T.~Petcov, JHEP 03 (2022) 149, arXiv:2201.02020.
-\bibitem{PT} S.~T.~Petcov, M.~Tanimoto, arXiv:2212.13336.
-\bibitem{MZ} Quark masses at $M_Z$ (PDG 2024 run), as tabulated in arXiv:2512.13630.
-\bibitem{RUN} Running quark and lepton parameters, arXiv:2510.01312.
-\bibitem{LHCb} LHCb Collaboration, arXiv:2611.00230.
-\bibitem{F17} F.~Feruglio, arXiv:1706.08749.
+\bibitem{P3} D.~Eldridge, ``Rolling moduli move $\alpha$: a one-loop obstruction'', Zenodo, doi:10.5281/zenodo.24232382 (2026), and later versions.
+\bibitem{FST} F.~Feruglio, A.~Strumia, A.~Titov, JHEP 07 (2023) 027, arXiv:2305.08908.
+\bibitem{FPST} F.~Feruglio, M.~Parriciatu, A.~Strumia, A.~Titov, ``Solving the strong CP problem without axions'', JHEP 08 (2024) 214, arXiv:2406.01689.
+\bibitem{NPP} P.~P.~Novichkov, J.~T.~Penedo, S.~T.~Petcov, ``Modular flavour symmetries and modulus stabilisation'', JHEP 03 (2022) 149, arXiv:2201.02020.
+\bibitem{PT} S.~T.~Petcov, M.~Tanimoto, ``$A_4$ modular flavour model of quark mass hierarchies close to the fixed point $\tau=\omega$'', Eur.\ Phys.\ J.\ C (2023), doi:10.1140/epjc/s10052-023-11727-0, arXiv:2212.13336.
+\bibitem{F17} F.~Feruglio, ``Are neutrino masses modular forms?'', arXiv:1706.08749.
+\bibitem{MZ} Quark masses at $M_Z$ (PDG 2024 run to $M_Z$), as tabulated in ``One-flavon flavor: a single hierarchical parameter $B$ organizes quarks and leptons at $M_Z$'', arXiv:2512.13630.
+\bibitem{RUN} ``Updated running quark and lepton parameters at various scales'', arXiv:2510.01312.
+\bibitem{LHCb} LHCb Collaboration, ``Evidence for the decay $B^0\to\mu^+\mu^-$ and improved measurements of the decay $B^0_s\to\mu^+\mu^-$'', arXiv:2611.00230.
 \end{thebibliography}
 \end{document}

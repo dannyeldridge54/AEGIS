@@ -2,66 +2,71 @@
 \documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
 \usepackage{amsmath,amssymb,hyperref,booktabs}
 \begin{document}
-\title{Weave Control and the Evidence Atlas: One Model Driving Four Toolkits, with a Strict Count of What Counts as Evidence}
+\title{Weave Control and the Evidence Atlas: One Model Driving Several Toolkits, with a Strict Count of What Counts as Evidence}
 \author{Danny Eldridge}
 \email{dannyeldridge54@gmail.com}
 \affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
 \date{20 November 2026}
 \begin{abstract}
-We describe two open tools built around the Weave/SERAPIS model~\cite{P1,P2,P3}. \emph{Weave Control} runs one parameter set through nine levels (inflation, lepton flavour, quarks, light elements, late universe, colliders, galaxy gamma line, neutron stars, sky) using four existing toolkits, and reports each level's numbers, the data they are compared with, and a status (pass, tension, fail, open), with the links that carry one level's output into another. The \emph{Evidence Atlas} lists every compared quantity (58 rows) with a label (prediction P, fitted F, assumed A, standard physics S, open G), a timing (locked before data, or post hoc), a kind (match, bound, comparison) and whether it is inherited from another row. Only headline P rows that are not post hoc and not inherited count as evidence. Under this rule the model's score is 1 pass, 2 tension, 1 fail and 1 open; nine further headline predictions are consistent but do not count (6 pass, 1 tension, 2 fail). No test has yet used data released after its prediction. We give the rules, the levels, how the tools are tested and packaged, and their limits. This is a methods note; it adds no new physics claim.
+We describe two open tools built around the Weave/SERAPIS model~\cite{P1,P2,P3,P4}. \emph{Weave Control} runs one parameter set through nine levels (inflation, lepton flavour, quarks, light elements, late universe, colliders, galaxy gamma line, neutron stars, sky), using four live toolkits (Janus, Hyperion, CERN+1, Mapper), stored Boltzmann-code fit results and calculations inside the engine. It reports each level's numbers, the data they are compared with, and a status (pass, tension, fail, open). The \emph{Evidence Atlas} lists the compared quantities of all nine levels (61 rows) with a label (prediction P, fitted F, assumed A, standard physics S, open G), a timing (future-data, locked, post hoc), a kind (match, bound, comparison) and whether the row is inherited from older physics. Only headline P rows that are not post hoc, not inherited and not open count as evidence. Under this rule the model's score is 1 pass, 2 tension and 2 fail. Three of the five counted rows come from the same dark-energy fits, so they are not independent. Ten further headline predictions are reported but not counted: 6 pass, 1 tension, 2 fail, 1 open. No row is future-data: no test has yet used data released after its prediction. This is a methods note and adds no new physics claim.
 \end{abstract}
 \keywords{reproducibility; pre-registration; scientific software; cosmology; inflation; dark energy; flavour; evidence accounting}
 \maketitle
 
 \section{Why}
-A model that touches inflation, flavour, dark matter, dark energy and colliders produces many numbers. It is easy to count every agreement as support. We built one tool to run the whole chain from one set of inputs, and a second to state, row by row, which agreements could have failed and were fixed before the data. Both are in the public repository~\cite{REPO}.
+A model that touches inflation, flavour, dark matter, dark energy and colliders produces many numbers. It is easy to count every agreement as support. We built one tool to run the whole chain from one set of inputs, and a second to state, row by row, which agreements could have failed and were fixed before computing. Both are in the public repository~\cite{REPO}.
 
 \section{Weave Control}
-\textit{Engine.} \texttt{tools/weave\_control/engine.py} defines a default parameter set and nine level functions. Each returns its inputs, outputs, the comparison data with sources, ``pulls'' (signed distances in $\sigma$ or pass/fail against a limit), labels, and links to other levels. A level's status is \emph{fail} if any pull is a FAIL or $|{\rm pull}|\ge3$, \emph{tension} for $|{\rm pull}|\ge2$, otherwise \emph{pass}, or \emph{open} if nothing is compared.
+\textit{Engine.} \texttt{tools/weave\_control/engine.py} defines a default parameter set and nine level functions. Each returns its inputs, outputs, the comparison data with sources, ``pulls'' (signed distances in $\sigma$, or pass/fail against a limit), labels, and links to other levels. A level's status is \emph{fail} if a graded pull is FAIL or $|{\rm pull}|\ge3$, \emph{tension} for $|{\rm pull}|\ge2$, otherwise \emph{pass}, and \emph{open} if nothing is compared. Some levels grade only designated pulls (the newest combined data sets, or predictions only). The late-universe, galaxy and sky levels, and the atlas comparison rows, use explicit rules stated in their labels: for example, the late level is set to tension when the thread is behind $w_0w_a$, and sky is always open. A level that raises an error is shown as open with the error attached.
 \begin{table}[b]
-\caption{\label{tab:levels}Levels and the toolkit behind each.}
+\caption{\label{tab:levels}Levels and what each uses.}
 \begin{ruledtabular}\begin{tabular}{lll}
-level & toolkit & compared with\\ \hline
+level & source & compared with\\ \hline
 A inflation & Janus & $n_s$ sets (8), $r$ limits (3)\\
-B flavour & engine & JUNO $\sin^2\theta_{12}$, $\delta_{CP}$, $\Sigma m_\nu$\\
-B quarks & theory/quarks & quark-fit band, $\tau_q$ window, LHCb $R_{\mu\mu}$\\
+B flavour & engine & Koide (PDG), JUNO $\sin^2\theta_{12}$, $\delta_{CP}$, $\Sigma m_\nu$\\
+B quarks & engine (theory/quarks) & quark-fit band, $\tau_q$ window, LHCb $R_{\mu\mu}$\\
 D light elements & Hyperion & $Y_p$, D/H with PRIMAT errors\\
-C late universe & CLASS (patched) & locked Planck+DESI+SN fits\\
+C late universe & stored CLASS fits + closed form & Planck+DESI+SN fits (locked)\\
 C colliders & CERN+1 & ATLAS disappearing track\\
 C galaxy & Hyperion & H.E.S.S.\ line limits\\
 D stars & Hyperion & PSR J0740+6620 mass\\
 E sky & Mapper & finder charts (no test)\\
 \end{tabular}\end{ruledtabular}
 \end{table}
-\textit{Links.} Outputs feed other levels: the dark-sector choice sets $\Delta N_{\rm eff}$ for the light elements; one wino mass drives both the collider and the gamma-line levels; the galaxy level hands science targets to the sky level; the quark modulus mass sets a dilution that shifts $N_*$ at the inflation level.
-\textit{Interfaces.} A local HTTP server and a browser UI (one panel per level, SVG charts, parameters in the URL, JSON download), a command-line entry (\texttt{aegis control}), and an offline snapshot (a grid of precomputed level states, no interpolation) that the Android build uses because a phone cannot run the engine.
-\textit{Guarding against self-deception.} Locked fit results (for example the full-Planck dark-energy fits) are shown as fixed bars marked LOCKED that do not move with the knobs; measurements are quoted unrounded with sources; the gamma-line level uses the more conservative end of each theory range.
+\textit{Links.} Two links are computed: the dark-sector choice sets $\Delta N_{\rm eff}$ for the light elements, and one wino mass drives both the collider and the gamma-line levels. Two are displayed only: the quark-modulus dilution $\Delta N_*$ is reported but not fed back into the inflation level, and the gamma-line region is passed to the sky level as a fixed target.
+\textit{Interfaces.} A local HTTP server and a browser UI (one panel per level, SVG charts, parameters in the URL, JSON download); a command-line entry (\texttt{aegis control}); and an offline snapshot (a grid of precomputed level states, no interpolation), which the Android build uses because a phone cannot run the engine.
+\textit{Guarding against self-deception.} Locked fit results (for example the full-Planck dark-energy fits) are shown as fixed bars marked LOCKED that do not move with the knobs. Measurements are quoted unrounded with sources. The gamma-line level uses the more conservative end of each theory range.
 
 \section{The Evidence Atlas}
-\texttt{tools/evidence/atlas.py} collects every compared quantity from the engine and the dashboards and adds four fields fixed by a pre-registered table (\texttt{PREREG\_EVIDENCE\_ATLAS} with two recorded deviations): label, timing, kind and inherited. A row is \emph{evidence} only if it is a headline P row, its timing is not post hoc, and it is not inherited from another row. Everything else is reported but does not count.
+\texttt{tools/evidence/atlas.py} collects the compared quantities from the engine and adds four fields fixed by a pre-registered table (\texttt{PREREG\_EVIDENCE\_ATLAS}, with three recorded deviations, each stricter than the last). Several rows (lithium-7, $w_0w_a$, the coupling, dark matter) are hand-entered quotes of locked results, as the lock allows. Timing is \emph{future-data} (locked before the data were released), \emph{locked} (fixed before computing, with the data already public), or \emph{post hoc} (chosen after seeing the data). One row per independent test is marked headline by a rule written in the code (the newest combined data set; one helium row). A row is \emph{evidence} only if it is a headline P row that is not post hoc, not inherited and not open. Everything else is reported but not counted.
 \begin{table}[t]
-\caption{\label{tab:ev}The five rows that count (20 Nov 2026).}
+\caption{\label{tab:ev}The five rows that count (20 Nov 2026; all have timing ``locked'').}
 \begin{ruledtabular}\begin{tabular}{lll}
 row & kind & status\\ \hline
 $r$ vs PR4+BK18 ($r<0.032$) & bound & pass\\
 reverse thread vs $\Lambda$CDM (3 SN sets) & comparison & tension\\
-thread--dark-matter coupling & match & fail\\
 thread vs $w_0w_a$ & comparison & tension\\
-12.8\,GeV dark matter vs xenon & bound & open\\
+thread--dark-matter coupling & match & fail\\
+zero-parameter quark slip $\epsilon$ vs fits & match & fail\\
 \end{tabular}\end{ruledtabular}
 \end{table}
-Totals: 58 rows (42 P, 8 F, 3 A, 3 S, 2 G); 42 pass, 3 tension, 5 fail, 8 open overall; strict evidence 1 pass, 2 tension, 1 fail, 1 open (Table~\ref{tab:ev}); consistent-not-evidence 6 pass, 1 tension, 2 fail. The fitted spectral tilt $n_s$ is labelled F and never counts; the TM1 neutrino assignment, adopted after JUNO excluded TM2, is post hoc; the dark-matter row stays open until the direct-detection limit at 13\,GeV is properly sourced. The atlas is exported as CSV/JSON with the git hash; the v3.4 export is archived with Ref.~\cite{P3}.
+\textit{Totals.} 61 rows (43 P, 8 F, 4 A, 4 S, 2 G); overall 44 pass, 3 tension, 6 fail, 8 open; strict evidence 1 pass, 2 tension, 2 fail (Table~\ref{tab:ev}).
+\textit{Not independent.} The thread vs $\Lambda$CDM, thread vs $w_0w_a$ and coupling rows come from the same fits to the same data.
+\textit{Reported but not counted} (post hoc, inherited or open): 6 pass, 1 tension, 2 fail, 1 open. These include TM2 and lithium-7 as failures, and the 12.8\,GeV dark-matter row, which stays open until the direct-detection limit at 13\,GeV is sourced.
+\textit{Other rows.} The fitted tilt $n_s$ is labelled F and never counts. The TM1 neutrino assignment, adopted after JUNO excluded TM2, is post hoc. The $r$ pass is a weak test ($5.4\times10^{-4}$ against a bound of $0.032$). The coupling fail rests on fits of which two of three did not converge, with no error bars on the coupling.
+\textit{Exports.} The atlas is exported as CSV/JSON with the git hash. The v3.4 export, archived with Ref.~\cite{P3}, predates the quark rows and deviation D3.
 
 \section{Testing and packaging}
-Engine tests (15) check every level runs without error, the Koide and Brannen numbers, the light-element response to the dark sector, the ATLAS limit behaviour, the quark level (rung-1 $|\epsilon|=0.0236$, the $\tau_q$ window flips at $10^9$\,GeV), and the gamma-line recipe; atlas tests check the classification rules. A command-line self-test runs every level. Windows, macOS and Linux executables are built by continuous integration and must pass that self-test; Android APKs (sky map, dashboard, Weave Control) are built the same way and published to a download branch.
+Engine tests (15) check that every level runs without error, the Koide and Brannen numbers, the light-element response to the dark sector, the ATLAS limit, the quark level (rung-1 $|\epsilon|=0.0236$; the $\tau_q$ window passes at the default $10^{11}$\,GeV and fails at $10^9$\,GeV) and the gamma-line recipe. Atlas tests check the classification rules. These tests run locally. Continuous integration builds Windows, macOS and Linux executables and runs only a command-line self-test, which checks that every level runs without error, not its values. Android APKs are built by CI without a self-test and published to a download branch.
 
 \section{Limits}
-The status rule is simple and uses marginal pulls (no correlations). Several comparisons use summary likelihoods rather than full data. Labels and timings are judgements, fixed in advance and changed only through recorded deviations; a different but reasonable table could move a row between ``evidence'' and ``consistent''. The tools organise and check the model; they do not make it more likely to be true.
+The status rule is simple and uses marginal pulls (no correlations). Several comparisons use summary likelihoods rather than full data. Labels and timings are judgements, fixed in advance and changed only through recorded deviations; a different but reasonable table could move a row between counted and not counted. The tools organise and check the model; they do not make it more likely to be true.
 
 \begin{thebibliography}{9}
 \bibitem{P1} D.~Eldridge, ``Inflation from the running of the species scale'', Zenodo, doi:10.5281/zenodo.24377930 (2026).
 \bibitem{P2} D.~Eldridge, ``The reverse thread'', Zenodo, doi:10.5281/zenodo.24380387 (2026).
-\bibitem{P3} D.~Eldridge, SERAPIS v3.4 status update, Zenodo (2026), new version of doi:10.5281/zenodo.24289118.
+\bibitem{P3} D.~Eldridge, SERAPIS v3.4 status update, Zenodo (2026), new version in the record series of doi:10.5281/zenodo.24289118.
+\bibitem{P4} D.~Eldridge, ``The quark thread'', Zenodo (2026), this deposit series.
 \bibitem{REPO} AEGIS repository, \url{https://github.com/dannyeldridge54/AEGIS} (branch \texttt{unify-bg}): \texttt{tools/weave\_control}, \texttt{tools/evidence}, \texttt{field\_tests/rules}.
 \end{thebibliography}
 \end{document}
