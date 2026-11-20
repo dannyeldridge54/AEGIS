@@ -25,7 +25,15 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W2 links · next stage: F referee (E2 done 04:58 CT: F1–F4 fixed, 10 tests pass, no warnings).
+Item W2 links · next stage: V2 review (F done 05:00 CT; the referee list is below. W-R1–W-R4 must be fixed or labelled at V2.)
+Referee report W2 (indirect-detection + weak-lensing referee):
+W-R1 (major) The 2.3e-28 limit is cited as 'used in D1322'. Its primary source is the H.E.S.S. Inner Galaxy Survey 2026 line limit (arXiv:2608.07234, γγ + ½γZ native; Einasto α 0.17, r_s 20, ρ☉ 0.39 at 8.178 kpc; D1125). Cite the paper.
+W-R2 (major) 0.794 is the UPPER end of the NLL resummation band R ∈ [0.658, 0.794] (D1124), i.e. the conservative choice (larger signal, smaller f_max). Show f_max for both ends as a band, and say which end sets the verdict.
+W-R3 (major) The paper quotes THREE limit points: 9.8e-29 at ~440 GeV, 2.3e-28 at 1 TeV, 6.5e-28 at 2.9 TeV (D1125). The link tests only 1 TeV. Test at all three masses (±5%); between them say 'not tested' (no interpolation unless labelled as the D1277/D1399 assumption).
+W-R4 (minor) LO Sommerfeld only; D1125 gives NLO f_max about 10% higher. Label LO, or add NLO.
+W-R5 (minor) S₈ vs CMB lensing is not fully independent of the fits: the lensing combination includes DESI DR2 BAO and Planck data, which are also in the fits. Label it; KiDS-Legacy is the cleaner comparison.
+W-R6 (minor) The wino fraction bracket (D1152) is an assumption of SERAPIS-E (thermal history), not data: label it.
+Consistency check (passes): at the H.E.S.S. benchmark (ρ☉ 0.39) our engine gives f_max = 0.139 × (0.40/0.39) ≈ 0.143, the same as D1125's LO lower value 0.143. So the engine reproduces the locked D1125 verdict: a thermal 1 TeV wino at f ≈ 0.12–0.21 is in tension with, or excluded by, the benchmark halo.
 E1 results under PREREG_W2_LINKS: L1 self-check Burkert ρ☉ 0.40 → f_max 0.286 (PASS, matches D1322). 1 TeV wino f_pred 0.124–0.205: Einasto(20, 0.17) ρ☉ 0.40 f_max 0.139 → TENSION; NFW(20) 0.198 → TENSION; Burkert(3.37) 0.286 → PASS. So the gamma-line verdict depends on the halo core, as D1322 found; W1's shortcut verdict is replaced. L3 S₈ (locked fits): all |pull| < 2; thread 0.808–0.813 vs KiDS −0.1 to −0.4σ and vs CMB lensing −1.3 to −1.7σ; coupled Union3 0.828 (+0.6σ / +0.0σ). L2 Lyα shown as context. L4 label. L5 GC annulus passed to the Sky level.
 V1 checked (a)–(c): (a) annulus J by route A vs route B: Einasto −1.6e-4, NFW −6.5e-3, Burkert 1e-7; a finer route-B grid changes nothing (≤ 4e-5). f_max ∝ J^-½, so NFW's 0.198 is good to 0.3%: the warnings are harmless (quad tolerance 1e-10 is just very strict). (b) S8_FITS match the PC files to 4 d.p. for all 9 entries (lcdm 0.8127/0.8148/0.8137; thread 0.8093/0.8080/0.8128; coupled 0.8124 [nested], 0.8083 [nested], 0.8283 [orig]). (c) KiDS asymmetric σ as locked.
 V1 findings for E2: F1 the galaxy output shows the IGS-ROI J (settings.jfactor) beside an f_max computed from the 0.5°–3° annulus: label both, or show the annulus J too; F2 silence the harmless IntegrationWarnings in the engine only (not in jfactor.py) and record why; F3 the S₈ result sits in its own field, but the level card should show it: add an 'S₈' sub-status line; F4 cite the PC file names for S8_FITS in the code comment.
@@ -66,6 +74,7 @@ W2 research notes (04:53 CT):
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:00 CT W2/F referee: 6 points (3 major: cite arXiv:2608.07234, NLL band, three limit masses); engine reproduces D1125's 0.143
 - 04:58 CT W2/E2 engineer: both J values labelled, warnings silenced in the engine only (reason recorded), S₈ sub-status on the card, PC file names cited
 - 04:56 CT W2/V1 review: J cross-checked (≤ 0.65%), S8 verified, 4 small findings
 - 04:57 CT W2/E1 engineer: L1–L5 built; 9 tests pass
