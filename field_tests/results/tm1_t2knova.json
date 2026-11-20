@@ -1,0 +1,19 @@
+{
+ "285.7": {
+  "NO_3sigma": true,
+  "marg_1sigma": true
+ },
+ "262.4": {
+  "NO_3sigma": true,
+  "marg_1sigma": true
+ },
+ "74.3": {
+  "NO_3sigma": false,
+  "marg_1sigma": false
+ },
+ "97.6": {
+  "NO_3sigma": false,
+  "marg_1sigma": false
+ },
+ "peak_deg": 275.4
+}

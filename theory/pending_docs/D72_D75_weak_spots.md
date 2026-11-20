@@ -16708,3 +16708,9 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
    - D1642/D1643: the start is frozen since inflation, P ≈ 0.3% under the area measure. That sharpens the paper's "two coincidences".
    - D1653/D1655/D1658 (JANUS): where the thread ends (i or ρ) depends on the axion and the dataset. That bears on the paper's "matter phase in the future" remark.
    - Verdict: no number in the published paper is wrong for its stated model. A v2 would add the exact-curve scope note, the 1-in-300 start, and the endpoint remark. Recorded as optional; only on Danny's "Publish".
+
+## D1690 (CENTRE, 19 Nov 2026) — Djl RESULT: TM1's δ_CP sits INSIDE the T2K+NOvA joint 1σ band; the joint peak (275°) lies between our two values (PREREG_TM1_T2KNOVA)
+- Data (Nature 2025, s41586-025-09599-3): NO 3σ δ ∈ [−1.38π, 0.30π]; ordering-marginalised 1σ [−0.81π, −0.26π] = [214°, 313°], peak −0.47π = 275.4°; sin²θ₂₃ = 0.56 (+0.03/−0.05).
+- TM1 lower branch: 285.7° (s₂₃² = 0.561) and 262.4° (0.470) are both inside the NO 3σ AND the marginalised 1σ. The upper branch (74.3°, 97.6°) is outside both, matching NuFIT (D1669).
+- T2K+NOvA's sin²θ₂₃ = 0.56 picks the 0.561 case, so the Weave + S₄ prediction becomes δ_CP ≈ 286°, about 10° from the joint peak.
+- Process note: the lock file was written before computing, but committed in the same step as the computation (an interval check only, no fitting). Recorded, not hidden.
