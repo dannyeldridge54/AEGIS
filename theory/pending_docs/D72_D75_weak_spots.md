@@ -16573,3 +16573,12 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 - [lit] Modular TM1 (arXiv:2511.16348, written after JUNO; also 1910.03460, 1908.02770): Γ₄ ≅ S₄, with charged leptons at τ = ω (Z₃^T) and neutrinos at τ_SU = −½ + i/2 (Z₂^{SU}).
 - [derived, key point] τ_SU = −½ + i/2 is SL(2,Z)-equivalent to i (S then T⁻¹ maps it to i), and ω is equivalent to ρ. So modular-S₄ TM1 uses EXACTLY the Weave's two zero-energy vacua; only the finite group changes (A₄ → S₄). The level-4 structure tells which image of i is meant. The Zhinü potential is SL(2,Z)-invariant, so all images are equally deep.
 - Verdict: the flavour sector is RESCUED in a new form. "Charged leptons at ρ, neutrinos at (an image of) i" stands; the finite group must be S₄ (TM1), not A₄ (TM2). Open: why S₄ (level 4) rather than A₄ (level 3), and which image of i the neutrino modulus lands on (a basin question, as in D1610).
+
+## D1668 (CENTRE, 19 Nov 2026) — BIG LOOP tick 1: review scope note on D1648, plus RESULT for Q1 (PREREG_S4_IMAGES)
+REVIEW (D1648 vs JANUS D1665/D1661): D1648 used T_rh = 9 × 10⁸ GeV. D1665 fixes T_R = 1.34 × 10⁹ GeV. Rescaled: ε needed = 1.23 × 10⁻⁶ and M_N ≥ 1.25 × 10¹⁰ GeV, so the window [1.25 × 10¹⁰, 2.5 × 10¹²] still holds. D1665 also has the inflaton decaying mainly to gauge bosons, so the branching ratio into N is < 1. The Davidson–Ibarra ceiling at M = 2.5 × 10¹² (ε ≤ 2.5 × 10⁻⁴) leaves room down to BR_N ≈ 5 × 10⁻³. C4 still viable. D1661 already tightened Q2 to 433 GeV; no further change.
+DERIVE (Q1) [computed, group theory]: S₄ ≅ Γ₄ triplet (24 elements verified). Charged leptons at the ρ-image fixed by ST; neutrinos at one of the 6 images of i (conjugates of S).
+- 3 of 6 images give TM1, i.e. the fixed column is (2/3, 1/6, 1/6). This is allowed by JUNO (D1667).
+- 3 of 6 give a column (½, ½, 0) with a ZERO entry, which is excluded (every PMNS element is measured non-zero).
+- 0 of 6 give TM2. Under S₄ the excluded TM2 never appears.
+Reading: with S₄ (level 4), the Weave's "neutrinos at an image of i" gives TM1 or a dead pattern, 50/50 per image. Combined with D1610 (69% of slow moduli reach an image of i), about 35% of starting points end in the viable TM1 configuration, assuming equal basin weight per image (not yet computed).
+Still open: WHY level 4 rather than level 3. No Weave reason yet, so it stays a postulate (P-S4).
