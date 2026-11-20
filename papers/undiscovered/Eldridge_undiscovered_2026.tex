@@ -1,0 +1,89 @@
+% (c) Danny Lee Eldridge · AEGIS Community License · CC BY-NC-SA 4.0
+\documentclass[aps,prd,twocolumn,superscriptaddress,nofootinbib,showkeys]{revtex4-2}
+\usepackage{amsmath,amssymb,hyperref}
+\begin{document}
+\title{Not Yet Seen: The Undiscovered Particles and Dark Bound States Predicted by the Weave, and What the Searches Say in November 2026}
+\author{Danny Eldridge}
+\email{dannyeldridge54@gmail.com}
+\affiliation{Independent researcher, Oklahoma City, Oklahoma, USA}
+\date{19 November 2026}
+\begin{abstract}
+The Weave framework~\cite{P1,FL,RT} ties inflation, dark energy, flavour and the origin of matter to one species-scale structure. Taken together, it predicts six kinds of new particle that have never been observed: a 12.8~GeV asymmetric dark-matter particle $X$; a dark photon $A'$ at 0.3--5~GeV with kinetic mixing $10^{-11}\lesssim\epsilon\lesssim10^{-7}$; an ultralight dark-energy field (the ``thread'') coupled to dark matter only, with $|b|\approx0.07$; heavy Majorana neutrinos at $10^{10}$--$10^{12}$~GeV; the inflaton quanta of a plateau with tensor ratio $r=5.4\times10^{-4}$; and, in its disfavoured mirror version, mirror atoms and molecules. For each one we list the predicted value and the newest search that bears on it, and we state plainly whether there is evidence. There is no direct evidence for any of them. The searches have not excluded them either: every prediction lies in still-open parameter space, mostly just below present sensitivity. The only indirect hints are 2--4$\sigma$ preferences in the literature for a dark-matter--dark-energy interaction with DESI DR2, and these are model-dependent in both size and direction. We also derive one negative prediction: the minimal dark sector forms no dark atoms or molecules unless $\alpha_D\gtrsim2m_{A'}/m_X$, and its self-interaction is far too weak to matter in halos ($\sigma/m\lesssim10^{-6}$~cm$^2$/g). All numbers come from pre-registered computations (D-notes cited) or the cited searches.
+\end{abstract}
+\keywords{dark matter; asymmetric dark matter; dark photon; coupled quintessence; leptogenesis; primordial gravitational waves; mirror matter; predictions}
+\maketitle
+
+\section{Why a register of the unseen}
+A framework earns trust by naming what it cannot yet show. Here we collect everything the Weave says should exist but has not been detected, and we put next to each item the best current search. The status words are fixed in advance: \emph{evidence} means a reported signal at $\ge3\sigma$ that points to that particle; \emph{hint} means a $2$--$4\sigma$ model-dependent preference; \emph{open} means not seen and not excluded; \emph{excluded} means ruled out.
+
+\section{The six predictions}
+\paragraph*{1. Asymmetric dark matter $X$, 12.8 GeV (open).}
+A single asymmetry written at reheating is shared between baryons and $X$ through a portal $X^2LH/M$ with $M\approx M_N$ (P-portal, D1675). Chemical equilibrium of the non-supersymmetric Standard Model plus $X$ gives $n_X/n_B=11/28$. Our code reproduces the SM sphaleron factor $28/79$ exactly as a check (D1676). With $\Omega_{\rm DM}/\Omega_b=5.36$ this gives
+\begin{equation}
+m_X=5.36\,m_p\times\tfrac{28}{11}=12.8~\mathrm{GeV}.
+\end{equation}
+Status: LZ's 417-live-day run (2023--2025) found no WIMP signal and searched down to 3~GeV, with world-leading limits above 5~GeV~\cite{LZ25}. The same run saw boron-8 solar neutrinos at $4.5\sigma$, so the ``neutrino fog'' now starts to matter near our mass. $X$ survives because its nucleon coupling runs only through the dark photon, which is suppressed by $\epsilon^2$ (D1677). Being asymmetric, $X$ gives no annihilation signal today. The test is XLZD, or a dark photon found in the band below.
+
+\paragraph*{2. Dark photon $A'$, 0.3--5 GeV, $\epsilon\sim10^{-11}$--$10^{-7}$ (open).}
+$A'$ is needed to remove the symmetric $X\bar X$ population ($\alpha_D\ge4.7\times10^{-4}$). Requiring the symmetric part to annihilate, together with 34 published limits (D1664) and xenon recoil limits (D1677), leaves a ``dim strip''. Its upper edge is
+\begin{equation}
+\epsilon_{\max}\approx3\times10^{-9}\ (0.3~\mathrm{GeV}),\quad8\times10^{-7}\ (5~\mathrm{GeV}),
+\end{equation}
+rising like $m_{A'}^2$. The edge is an unsourced bracket until a digitised LZ curve is used. Status: FASER's Run-3 search (177~fb$^{-1}$) excluded 10--150~MeV at couplings $10^{-5}$--$10^{-4}$~\cite{FASER}, which lies outside our band. No search reaches the dim strip yet. The proposed beam dumps reviewed for the 2026 European Strategy are the next probes of its upper part~\cite{ESPP}.
+
+\paragraph*{3. The dark-energy thread, coupled to dark matter only (hint, model-dependent).}
+The thread is the inflationary species plateau reused at the dark-energy scale~\cite{RT}. On compressed CMB + DESI DR2 + DES-SN5YR, a coupling $\rho_c\propto a^{-3}e^{b\phi}$ with $b=-0.074$ fixes its phantom-direction weak spot ($\Delta\chi^2=-10.76$ against CPL's $-10.84$; D1710). Dark matter then loses about 4.6\% of its mass since recombination. Booked with dark matter fixed at the CMB, this missing mass looks like an effective $\Lambda$ that is negative above $z^\dagger=2.93$ and positive later (D1716), a derived form of sign-switching dark energy. The thread's quanta are ultralight ($m\sim H_0$). They mediate a fifth force between dark-matter particles, $G_{\rm eff}=G(1+2b^2)$ (a 1.1\% increase), but not to baryons (visible sector on D3, dark on D7; P-brane, D1671).
+Status: several DESI DR2 analyses prefer a non-zero dark-sector interaction at $2$--$4\sigma$, but disagree on its form and direction. One coupled-quintessence fit finds $m\simeq0.05$, but under a prior that excludes zero~\cite{CQ}. A phantom-regime fit finds energy flowing from dark energy to dark matter at $\sim3$--$4\sigma$, which is the opposite direction to ours~\cite{IDS}. A non-parametric reconstruction finds flow from dark matter to dark energy at early times ($\sim2\sigma$), reversing late~\cite{REV}. These are hints for the class, not evidence for our $b$. Our own full-Planck test in a patched Boltzmann code is running (D1713). The uncoupled thread on full Planck scores only $-2.4$/$-9.0$/$-1.9$ for Pantheon+/DESY5/Union3, against $-9.1$/$-19.7$/$-15.0$ for $w_0w_a$ (D1712).
+
+\paragraph*{4. Heavy Majorana neutrinos, $10^{10}$--$10^{12}$ GeV (open, indirect only).}
+They set light-neutrino masses by the seesaw mechanism, make the lepton asymmetry, and supply the portal scale of item 1 (D1668, D1675). They are far beyond any collider. Their footprints are neutrinoless double-beta decay (Majorana nature) and the flavour pattern TM1 with $\delta_{\rm CP}\approx286^\circ$ ($262^\circ$--$286^\circ$ allowed, D1669, D1690), to be scored by JUNO, DUNE and Hyper-K.
+
+\paragraph*{5. Inflaton quanta and primordial gravitational waves, $r=5.4\times10^{-4}$ (open).}
+The species plateau gives $n_s\approx0.971$ and $r=5.4\times10^{-4}$ in ten dimensions ($1.07\times10^{-3}$ in six)~\cite{P1}. This is about 65 times below the current upper limit ($r<0.036$) and inside the LiteBIRD/CMB-S4 target range.
+
+\paragraph*{6. Mirror atoms and molecules (disfavoured, not excluded).}
+If the dark side were a full mirror copy (version a), dark baryons would sit at 0.94~GeV, with mirror hydrogen, mirror H$_2$ and dissipative dark disks~\cite{ADMrev}. The Weave's brane placement heats the visible side almost exclusively and favours the minimal sector (b) (D1671). Version (a) also needs $\Delta N_{\rm eff}$ well below 0.086 (D1661).
+
+\section{A derived negative: no dark chemistry in the minimal sector}
+In version (b), $X$ carries the dark charge and its antiparticles are gone, so the only interaction between $X$ particles is a repulsive Yukawa force of range $1/m_{A'}$. Even if a partner of opposite charge existed, a bound state needs a Bohr momentum $\alpha_D\mu$ above $m_{A'}$, i.e.
+\begin{equation}
+\alpha_D\gtrsim 2m_{A'}/m_X\approx0.05~(m_{A'}=0.3~\mathrm{GeV})\ \text{to}\ 0.8~(5~\mathrm{GeV}).
+\end{equation}
+At the minimal $\alpha_D=4.7\times10^{-4}$ the Bohr momentum is 3~MeV, a hundred times too small. The Born self-interaction is
+\begin{equation}
+\sigma/m=\frac{4\pi\alpha_D^2m_X}{m_{A'}^4}\approx10^{-6},\ 8\times10^{-9},\ 10^{-11}~\mathrm{cm^2/g}
+\end{equation}
+for $m_{A'}=0.3$, 1, 5~GeV [computed]. That is $10^5$ times or more below the 0.1--1~cm$^2$/g that would change halos. So the minimal Weave predicts collisionless dark matter with no dark atoms, molecules or disks. A detection of dissipative dark matter (thin dark disks, dark-atom signatures) would point to version (a) or falsify the minimal Weave.
+
+\section{Summary table}
+\begin{table}[h]\caption{Predicted, not yet seen (November 2026).}
+\begin{ruledtabular}\begin{tabular}{lll}
+item & Weave value & status / next test\\
+$X$ & 12.8 GeV, asymmetric & open / XLZD\\
+$A'$ & 0.3--5 GeV, $\epsilon\lesssim10^{-7}$ & open / beam dumps\\
+thread & $b\approx-0.07$, $m\sim H_0$ & hint (class) / full Planck, DR3\\
+$N$ & $10^{10}$--$10^{12}$ GeV & open / $0\nu\beta\beta$, $\delta_{\rm CP}$\\
+inflaton & $r=5.4\times10^{-4}$ & open / LiteBIRD, S4\\
+mirror atoms & only in version (a) & disfavoured\\
+dark chemistry & none in (b) & derived negative\\
+\end{tabular}\end{ruledtabular}\end{table}
+
+\section{What would count}
+\emph{Evidence for the Weave:} a dark photon in the dim strip; an $\sim$13~GeV recoil signal with a dark-photon-shaped (light-mediator) recoil spectrum; $r$ near $5\times10^{-4}$; $\delta_{\rm CP}$ near $275^\circ$--$286^\circ$ with TM1 mixing; a full-likelihood preference for $b<0$ (dark matter decaying into dark energy).
+\emph{Against it:} $X$ excluded down to $\epsilon^2$-suppressed rates at 13~GeV together with the whole dim strip; $r>2\times10^{-3}$ or $r<10^{-4}$ at high significance; $w<-1$ required without dark-matter coupling; dissipative dark matter detected while $\Delta N_{\rm eff}$ stays near zero.
+
+\emph{Integrity note.} No new search was run for this paper. Weave numbers come from locked computations (D-notes cited, branch \texttt{unify-bg}). Search statuses are quoted from the cited sources. The hint category in item 3 is ours: the cited papers use different models and do not test our coupling.
+
+\begin{thebibliography}{99}
+\bibitem{P1} D.~Eldridge, ``Inflation from the running of the species scale'', doi:10.5281/zenodo.24378141.
+\bibitem{FL} D.~Eldridge, flavour companion, doi:10.5281/zenodo.24379357.
+\bibitem{RT} D.~Eldridge, ``The Reverse Thread'' and unified dark sector, doi:10.5281/zenodo.24380387.
+\bibitem{LZ25} LZ Collaboration, 417 live-day results, Berkeley Lab news release, 8 Dec 2025.
+\bibitem{FASER} FASER Collaboration, ``New dark photon results'', physics briefing, 19 Mar 2026.
+\bibitem{ESPP} Physics Briefing Book for the 2026 European Strategy update, arXiv:2511.03883.
+\bibitem{CQ} ``Exploring coupled quintessence in light of CMB and DESI DR2 measurements'', arXiv:2509.09624.
+\bibitem{IDS} ``Interacting dark sectors in light of DESI DR2'', arXiv:2503.21652.
+\bibitem{REV} ``Cosmic sign-reversal: non-parametric reconstruction of interacting dark energy with DESI DR2'', arXiv:2506.18477.
+\bibitem{ADMrev} K.~Petraki, R.~Volkas, ``Review of asymmetric dark matter'', arXiv:1305.4939; K.~Zurek, arXiv:1308.0338.
+\end{thebibliography}
+\end{document}
