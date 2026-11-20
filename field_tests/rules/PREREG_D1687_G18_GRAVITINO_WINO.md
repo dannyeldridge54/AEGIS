@@ -1,0 +1,7 @@
+# PREREG_D1687_G18_GRAVITINO_WINO — do thermal gravitinos at the SERAPIS reheating temperature over-make winos? (Janus genesis G18; locked 2026-11-20 ~01:00Z before any number)
+Inputs: T_R = 1.3366e9 GeV (D1665 json); gravitino 2.5–4.7e5 GeV (map m32_window / D1389, AMSB) ⇒ decays before BBN (no BBN bound for ≳ 30 TeV: hep-ph/0605297), one wino per gravitino (hep-ph/0605297; 1211.1770); wino 0.67–1.25 TeV, 5–30 % of DM (map wino_window; D1324/D1338); Ω_DM h² = 0.1200 (as D1631).
+Formulas [literature]: Y_3/2 = 1.9e-12 (T_R/1e10)[1 + 0.045 ln(T_R/1e10)][1 − 0.028 ln(T_R/1e10)] (arXiv:2605.28804 eq. 19, citing Bolz–Brandenburg–Buchmüller / Pradler–Steffen); alternative 2.3e-12 (T_R/1e10) (arXiv:1211.1770 eq. 29) as a spread; Ω h² = 2.75e8 (m/GeV) Y (arXiv:1004.4525 eq. 17); thermal wino Ω h² = 0.014 (m/TeV)² (arXiv:1203.0285 eq. 4).
+Compute at m_wino = 0.67 and 1.25 TeV: Ω_wino h² (gravitino) and total (+ thermal), as a fraction of Ω_DM h².
+Reading (locked): CONSISTENT if the total wino fraction ≤ 30 % at the light end (0.67 TeV) for both yield formulas; TENSION if it lies in 30–100 %; EXCLUDED if > 100 % (overclosure). Also report the T_R at which gravitino winos alone reach 30 % (for 0.67 TeV).
+Not included (stated): inflaton → gravitino decays (needs the inflaton's F-term; open); entropy release after reheating.
+Script: field_tests/scripts/janus_g/g18_gravitino_wino.py → field_tests/results/D1687_G18_gravitino_wino.json
