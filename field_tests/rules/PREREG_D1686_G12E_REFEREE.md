@@ -1,0 +1,2 @@
+# PREREG_D1686_G12E_REFEREE — round-4 referee (locked before checking)
+Checks: D1685 lock and its DEVIATIONS both committed before the D1685 result json; D1664 json unchanged on the branch after R0′ (git diff against its D1664 commit is empty); D1685 open intervals re-read at 5 / 8 / 12.8 GeV and every mass 0.3–12.8 GeV ≥ 1 decade; D1684 and D1685 log entries cite papers (arXiv numbers); card CONSISTENT. PASS if all hold.
