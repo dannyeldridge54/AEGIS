@@ -21,6 +21,6 @@ Mirror queue (paired with done items):
 M1. [DONE: mirror fails, Majorana Z₃ forces a degenerate pair] Mirror of D1700: put CHARGED leptons at the image of i and NEUTRINOS at ρ (swap the vacua). Which patterns appear?
 M2. [DONE: φ→−φ is a symmetry, no new info] Mirror of D1696: the thread on real data with β → −β (the field rolls the other way off the same curve).
 M3. [DONE: |r−1| < 5–9e-5] Mirror of D1698/D1699: assume Q ≠ 2/3 (the singlet/doublet norm ratio r ≠ 1). What r does the data allow, and is the Berry-phase δ then still 2/9?
-M4. Mirror of D1694/D1695: CMB-only distance with the thread vs ΛsCDM — which part of the CMB prior drives each (θ* vs ω_bc)?
+M4. [IN PROGRESS manual Djl] Mirror of D1694/D1695: CMB-only distance with the thread vs ΛsCDM — which part of the CMB prior drives each (θ* vs ω_bc)?
 M5. [DONE: same m_X, but needs a dark reheating source; forward preferred] Mirror of the P-portal (D1675): hand the asymmetry from DARK to visible instead (dark-first genesis): same window?
 D9. [NULL: phases are π-multiples or need a chosen radius] Berry phase of a weight-k modular wavefunction (y^{k/2}|f| phase) carried by 2π/3 around ρ in the hyperbolic disk; does 2/9 appear for some natural k?
