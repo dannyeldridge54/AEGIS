@@ -3324,3 +3324,8 @@ Touches: none.
 1. [derived] Locks before results for D1663, D1664, D1665 ✓; re-derivation: D1663 pulls, D1664 strip merge at 0.808 GeV and every mass 0.3–5 GeV ≥ 1 decade open, D1665 κ and T_R ✓; card 38/38 CONSISTENT ✓.
 2. [derived] Source check: each round-3 log entry cites a paper for its data (arXiv / hep-ph numbers present) ✓.
 3. [estimate] Limitation: same agent as the notes. Open assumptions carried: A-S (f = S) for κ; DarkCast tables end 2022.
+
+## D1684 — JANUS genesis G16: a sourced LZ number at ~13 GeV for D1677's dark-photon cut — NULL (literature only, no computation)
+1. [literature] LZ WS2022+WS2024 (arXiv:2410.17036 v3): the SI limit at 9–20 GeV appears only as a curve (Fig. 5, Fig. S2); the only quoted SI number is 2.2e-48 cm² at 40 GeV; the supplemental link is a placeholder; the only data link (HEPData record 155182) is described in the paper as NEST response files, not limits (record itself not reachable from this session).
+2. [literature] The newer LZ 417-live-day analysis (Mar 2023–Apr 2025, announced 8 Dec 2025 — LBNL, SLAC, Brown news) is world-leading above 5 GeV and probes 3–9 GeV; no numbers in the releases.
+3. [estimate] Same conclusion as the other chat's D1678: D1677's bracket (1e-47–1e-45 cm² at 13 GeV) stays UNSOURCED. Getting the number needs either a digitised Fig. 5 or the LZ data release — a download that needs Danny's OK.

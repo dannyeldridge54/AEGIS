@@ -16675,3 +16675,8 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Locked reading: "B only helps" = FALSE. B lowers I by at most 0.045 at R = 1 and 0.0015 at R = 1.25. This is tiny next to the volume growth (+1.33 at R = 1.5, +9.7 at R = 2). The volume-controlled conclusion of D1682 stands; the threshold moves up only marginally.
 - A3 for D = 6 is CLOSED for practical purposes: positive for any T⁴ meaningfully larger than string size, with or without a B-field; scheme-dependent only for tori at string size.
 - The validation earned its keep: it caught a real normalisation bug that a loose b = 0 check had let through.
+
+## D1684 — JANUS genesis G16: still no published LZ number at 13 GeV — NULL
+- Checked the LZ paper (arXiv:2410.17036) directly: between 9 and 20 GeV the limit exists only as a plotted curve; the paper's one data link holds detector-response files, not limits. The newer 417-day LZ result (Dec 2025) has no numbers in its announcements either.
+- So D1677's cut on the dark photon (from a 10⁻⁴⁷–10⁻⁴⁵ cm² bracket) remains unsourced. To close it: digitise the Fig. 5 curve, or download LZ's data release — needs Danny's OK.
+- MAP: node=dark_radiation status=estimate touches=[] ripple=no
