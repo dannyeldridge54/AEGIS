@@ -3343,3 +3343,10 @@ Touches: none.
 ## D1686 — JANUS genesis G12e: round-4 referee (PREREG_D1686_G12E_REFEREE) — first run FAIL (D1685 uncited), fixed by D1685a, PASS
 1. [derived] D1685 lock ≤ DEVIATIONS ≤ result ✓; D1664's json unchanged since its first commit ✓; D1685 window ≥ 1 decade open at every mass 0.3–12.8 GeV ✓; card 38/38 ✓.
 2. [derived] First run: D1685's entry had no paper reference ⇒ FAIL; D1685a adds arXiv:1801.04847 (DarkCast) and the D1676 source; re-check PASS.
+
+## D1687 — JANUS genesis G18: thermal gravitinos at T_R = 1.34e9 GeV over-make winos (PREREG_D1687_G18_GRAVITINO_WINO) — TENSION
+1. [literature] Y_3/2 = 1.9e-12 (T_R/1e10)[1 + 0.045 ln][1 − 0.028 ln] (arXiv:2605.28804 eq. 19); alt. 2.3e-12 (T_R/1e10) (arXiv:1211.1770); one wino per gravitino and no BBN bound for heavy gravitinos (hep-ph/0605297); Ω h² = 2.75e8 (m/GeV) Y (arXiv:1004.4525); thermal wino 0.014 (m/TeV)² (arXiv:1203.0285).
+2. [derived] At T_R = 1.34e9 GeV (D1665): Y_3/2 = 2.4e-13 (3.1e-13 alt). Wino 0.67 TeV: Ω h² = 0.045–0.057 from gravitinos + 0.006 thermal = 43–52 % of Ω_DM h² (0.120). Wino 1.25 TeV: 88–106 %.
+3. [derived] The wino_window node allows 5–30 % ⇒ TENSION (not overclosure at the light end). Gravitino winos alone reach 30 % at T_R = 1.08e9 GeV (0.67 TeV) — 20 % below D1665's T_R.
+4. [estimate] In version (b) the 12.8 GeV dark particle is meant to be (nearly) all the DM, so any large wino share adds on top. Ways out, none chosen here: a lower T_R (κ lower than the f = S estimate, e.g. if the SM is not on D3-branes), entropy release after reheating, a lighter-than-allowed wino (LHC floor 0.67 TeV), R-parity violation, or no low-scale SUSY. Inflaton → gravitino decays (not included) can only add.
+5. [estimate] This links the other session's wino_window / m32_window track to the genesis chain; reported, their nodes not edited.

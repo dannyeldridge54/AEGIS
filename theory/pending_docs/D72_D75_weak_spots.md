@@ -16690,3 +16690,8 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 ## D1686 — JANUS genesis G12e: round 4 passes referee (after one citation fix) — loop stops
 - The referee caught that D1685 didn't name its data source; added (D1685a: DarkCast, arXiv:1801.04847). Everything else checked out.
 - MAP: node=dark_radiation status=estimate touches=[] ripple=no
+
+## D1687 — JANUS genesis G18: the hot early universe makes too many winos — a new tension between reheating and the wino window
+- At the reheating temperature SERAPIS now predicts (1.34 × 10⁹ GeV), the plasma makes heavy gravitinos, and each one later decays into one wino. With published production rates, that alone gives 37–47 % of all dark matter in winos for the lightest allowed wino (0.67 TeV), and 43–52 % counting thermal winos — above the 5–30 % the wino window allows; ~90–106 % for a 1.25 TeV wino.
+- To stay at 30 %, reheating would need to be ≤ 1.08 × 10⁹ GeV (20 % lower). Possible ways out: a weaker inflaton decay (if our forces don't sit on the string coupling's branes), extra entropy after reheating, or different SUSY assumptions. Flagged for the wino/gravitino track; nothing there edited.
+- MAP: node=genesis_reheating status=estimate touches=[m32_window, wino_window] ripple=no
