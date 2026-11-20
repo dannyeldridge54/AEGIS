@@ -25,7 +25,7 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W3 control panel · next stage: F referee (E2 done 05:14 CT: U1–U10 fixed; Playwright desktop + phone 0 errors, 0 unnamed, no h-scroll, update 0.57–0.65 s; 11 tests pass). Small leftover seen: collider chart 'excluded (ATLAS) < 670' text touches the 'reach 740' label when the two are close.
+Item W3 control panel · next stage: V2 review (F done 05:16 CT; referee U-R1–U-R8 below; U-R1–U-R4 must be done at V2). E2 recap (05:14 CT: U1–U10 fixed; Playwright desktop + phone 0 errors, 0 unnamed, no h-scroll, update 0.57–0.65 s; 11 tests pass). Small leftover seen: collider chart 'excluded (ATLAS) < 670' text touches the 'reach 740' label when the two are close.
 V1 findings (W3), from the desktop and phone screenshots and the page source:
 U1 A6 broken: the page hard-codes ATLAS 670 GeV and the H.E.S.S. masses 440/1000/2900. Read them from the engine response (colliders data limit; galaxy data names/limits).
 U2 STALE label in the engine galaxy level: 'the only stored limit is at 1 TeV (Einasto); away from 1 TeV no pass/fail' contradicts DEVIATIONS D1. Remove.
@@ -105,8 +105,20 @@ W2 research notes (04:53 CT):
 - PSR J0740+6620: still 2.08 +0.072/−0.069 M☉ (Fonseca et al. 2021). NICER 2024 radius papers (arXiv:2406.14467) use it with σ = 0.09 including a systematic. Keep 2.08 ± 0.07 and note the 0.09 option (referee R6 closed: no newer mass).
 - H.E.S.S. line limit — FINDING (affects the W1 galaxy verdict): the D-notes have TWO different limits. D1110/D1277 use H.E.S.S. 2018 (arXiv:1805.05741) γγ ≈ 4e-28 cm³/s at 1 TeV (Einasto, 7 ROIs; only the 1 TeV value is quoted). D1322 (A2n) uses the IGS line limit 2.3e-28 with the factor 0.794 and the ratio J/J_bench. W1's engine compared f²σv with 2.3e-28 directly, WITHOUT the 0.794 factor and without J/J_bench, so its 'tension' verdict is not the locked D1322 test. Benchmark Einasto (ρ☉ 0.39) by the D1322 recipe gives f_max ≈ √(2.3e-28/(1.42e-26 × 0.794 × 1.05)) ≈ 0.14 against f_pred 0.124–0.205: still mixed, but must be computed by the exact recipe. The full limit curve vs mass is not in the repo (the paper is plot-only above 1 TeV): blocked, recorded.
 
+Referee report W3 (a working scientist using it for a talk or a referee reply; compared with CAMB's web interface, the Cobaya GUI, and Aladin/Stellarium panels):
+U-R1 (major) No export or share: a scientist must be able to save exactly what they see. Add 'Download JSON' (engine response + provenance) and 'Copy link' (parameters in the URL hash, restored on load).
+U-R2 (major) False precision: readouts show 4 decimals regardless of the error (e.g. 'expected reach 740.1838 GeV', 'pairs 713.79'). Round to 3 significant figures unless the value carries a σ.
+U-R3 (major) Live vs locked is not visible: on the Late panel the b_A knob moves only z† and G_eff, while the Δχ² and S₈ bars are locked fit results. Mark charts and readouts that do not depend on the knobs with a 'locked result' tag.
+U-R4 (major) The inflation chart has no legend: 8 overlapping n_s bands and 3 r lines are only identified on hover. Add a small legend (or label the newest combined sets) and say which sets set the status.
+U-R5 (minor) The collider chart labels collide when the reach is near the limit (seen at 740 vs 670).
+U-R6 (minor) The scorecard's 'A · pass' hides that the inflation status is r-only for serapis_*: add 'r-only' to the tooltip or the lamp word.
+U-R7 (minor) No uncertainty shown with point outputs (Y_p, D/H, M_max). The engine has none to give yet (W5/W6 will add them); say 'no error yet' instead of implying exactness.
+U-R8 (minor) Printing: the light theme exists, but there is no print stylesheet (knobs and buttons waste space on paper).
+Strengths a referee would note: one parameter set drives every level; sources and P/F/G labels on every panel; nested-guard, ΔAIC, and halo dependence shown rather than hidden; the Studio hook.
+
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:16 CT W3/F referee: 8 points (4 major: export/share, precision, live vs locked, inflation legend)
 - 05:14 CT W3/E2 engineer: limits read from the engine (no hard-coded 670 or H.E.S.S. masses), stale label removed, galaxy chart rescaled, S₈ labels shortened, human names + units once, δ forms as a list, phone header static + larger chart text, status words beside lamps, Studio Api.weave_run + open_control + 'Control' tab
 - 05:11 CT W3/V1 review: 10 findings (U1–U10)
 - 05:09 CT W3/E1 engineer: server + control panel built and browser-tested
