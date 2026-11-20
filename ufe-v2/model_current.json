@@ -18,7 +18,6 @@
  "tracker": "docs/tracker/STATUS.md (python tools/tracker/track.py)",
  "star_mapper_role": "The Star Mapper does not test SERAPIS (an early-universe model makes no prediction for individual Milky Way stars). It is the project's open-data survey: it verifies Gaia DR3 against ESA and feeds the AEGIS Sky Map with flagged stars and discovery categories (rules locked in PREREG_D716).",
  "changed_since_freeze": [
-  "D1659: Dark radiation from SERAPIS reheating — how cold the dark side is (ΔN_eff) → estimate",
   "D1660: Matter genesis P-M — one asymmetry for dark and visible matter → postulate",
   "D1661: Matter genesis P-M — one asymmetry for dark and visible matter → postulate",
   "D1662: Matter genesis P-M — one asymmetry for dark and visible matter → postulate",
@@ -29,7 +28,8 @@
   "D1684: Dark radiation from SERAPIS reheating — how cold the dark side is (ΔN_eff) → estimate",
   "D1685: Dark radiation from SERAPIS reheating — how cold the dark side is (ΔN_eff) → estimate",
   "D1686: Dark radiation from SERAPIS reheating — how cold the dark side is (ΔN_eff) → estimate",
-  "D1687: Reheating from the final SERAPIS equation (genesis pathway) → estimate"
+  "D1687: Reheating from the final SERAPIS equation (genesis pathway) → estimate",
+  "D1688: Dark radiation from SERAPIS reheating — how cold the dark side is (ΔN_eff) → estimate"
  ],
  "open_rechecks": [
   "POSTULATE (passed): SERAPIS-E covariant bound m3/2 < 6.7e8 GeV at its own y (14.6–16.6) ≫ AMSB wino need ≤ 7e5 GeV (×960)",

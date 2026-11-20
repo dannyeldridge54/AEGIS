@@ -1246,7 +1246,7 @@ observing:
   - 'D1660: postulate'
   - 'D1661: postulate'
   - 'D1662: postulate'
-  flag: recheck (D1685, dark_radiation)
+  flag: recheck (D1688, dark_radiation)
 - id: light_elements
   layer: 3
   branch:
@@ -1315,10 +1315,11 @@ observing:
   - D1684
   - D1685
   - D1686
+  - D1688
   depends:
   - genesis_reheating
   - matter_genesis
   history:
-  - 'D1684: estimate'
   - 'D1685: estimate'
   - 'D1686: estimate'
+  - 'D1688: estimate'
