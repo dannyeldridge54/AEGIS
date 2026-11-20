@@ -25,7 +25,9 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W3 control panel · next stage: R research (W2 signed off at V2, 05:03 CT).
+Item W3 control panel · next stage: P postulate (R done 05:04 CT).
+W3 research notes: "full display capabilities like Janus" = AEGIS Studio (apps/aegis_studio): a pywebview desktop app (Janus.exe) with a neon/prismatic console (tokens --bg #04020b, --cyan #2f8bff, --violet #7a5cff, --magenta #d43cff, --amber #ff6ec7; Bahnschrift/Segoe/Cascadia fonts), a WebGL stage with tabs (Weave, Landscape, Onion, Vortex, Black hole, Strings, Memory stars, Classic), and a right-hand rack: Knobs, readout, Data (n_s, r) plot, Scope, Wiring, Live calculations. Python is exposed through class Api (window.pywebview.api.recompute(N*, C), tool(), test_node() …).
+Design consequence: the Weave Control panel should (1) be a new Studio tab 'Control' using the same tokens and rack layout, (2) call a new Api.weave_run(params) → tools.weave_control.engine.run, and (3) also run standalone in a browser via a tiny local server (/api/run) with the same page, so it can be tested with Playwright and used without the exe. Per level: knobs (its inputs), readouts (outputs with units), a data chart (n_s–r plane with the CMB sets; BBN pull bars; Δχ²/ΔAIC bars + S₈ pulls; σ×L vs mass with the ATLAS line; f_max vs f_pred band at the three H.E.S.S. masses; M_max vs J0740; finder chart for the sky target and the GC annulus), a status lamp, and source/label footnotes. A scorecard strip across categories A–E on top.
 W2/V2 outcome (DEVIATIONS D1 written and pushed first): gamma line at the three H.E.S.S. IGS 2026 masses, verdict at R = 0.794, R = 0.658 edge shown:
 | M | halo | f_max (0.794 / 0.658) | f_pred | verdict |
 | 440 GeV | Einasto | 0.119 / 0.131 | 0.024–0.040 | pass |
@@ -82,6 +84,7 @@ W2 research notes (04:53 CT):
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:04 CT W3/R research: Studio (Janus) architecture and style read; design consequence recorded
 - 05:03 CT W2/V2 signed off (DEVIATIONS D1; three masses; over-closure flag)
 - 05:00 CT W2/F referee: 6 points (3 major: cite arXiv:2608.07234, NLL band, three limit masses); engine reproduces D1125's 0.143
 - 04:58 CT W2/E2 engineer: both J values labelled, warnings silenced in the engine only (reason recorded), S₈ sub-status on the card, PC file names cited
