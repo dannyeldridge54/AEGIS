@@ -6,3 +6,10 @@ New columns on every row:
 - inherited: true when the relation predates the Weave or is standard physics the Weave leaves unchanged (Koide 1982; the TM1 mixing pattern and its sum rule; standard BBN at ΔN_eff ≈ 0, including the lithium failure). Inherited rows test the Weave's embedding, not a new prediction.
 Headline evidence (replaces rule 4's headline): P rows that are NOT post-hoc and NOT inherited, one per independent test; reported separately by timing and by kind. Post-hoc and inherited passes are shown as 'consistent, not evidence'. Two helium rows become one headline row (LBT 2026, the newer and more precise). Register items not yet in the atlas are added as open rows.
 Assignments are written in the code with a one-line reason each; the expected effect is a smaller headline count.
+
+## D2 (20 Nov 2026, 06:33 CT; from the independent referee of the SERAPIS v3.4 note). Stricter again.
+- Thread vs ΛCDM headline: counts as a pass only where ΔAIC < −2 (meaningful); with −0.6 / −6.1 / −1.4 that is 1 of 3 sets → status 'tension' (meaningful on DES-Y5 only).
+- S₈ of the thread fits: ΛCDM gives the same S₈ with smaller pulls, so the row does not discriminate → not evidence (shown as consistent).
+- 12.8 GeV dark baryon: the xenon limit used (D1677) is an unsourced, non-digitised bracket and survival depends on a free portal coupling → status 'open', not evidence, until the LZ curve at 13 GeV is sourced (D1678).
+- Wino gamma line: the wino masses are benchmarks and the thermal wino of SERAPIS-E is post-hoc (D784) → post-hoc, not evidence; 2.9 TeV rows fail both the line limit and the relic density (f > 1) and stay listed as fails.
+- Arthur-field coupling: stays a strict FAIL, with the caveat that two of three coupled fits did not converge and no b_A error bars exist.
