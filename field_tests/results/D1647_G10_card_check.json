@@ -1,6 +1,6 @@
 {
  "D": "D1647",
- "n_rows": 38,
+ "n_rows": 39,
  "mismatches": [],
  "verdict": "CONSISTENT",
  "rows": [
@@ -128,6 +128,12 @@
    "q": "strips merge above (GeV), DarkCast tables",
    "card": "0.808",
    "json": 0.8079882425823912,
+   "ok": true
+  },
+  {
+   "q": "dark-photon \u03b5 ceiling at 1 GeV from LZ (D1688)",
+   "card": "3.91e-8",
+   "json": 3.914151934590289e-08,
    "ok": true
   },
   {

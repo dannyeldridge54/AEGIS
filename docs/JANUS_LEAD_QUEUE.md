@@ -84,3 +84,4 @@ Cycle per lead (one lead per tick): Research → Development → Postulation →
 - [done D1685] G17 window to 12.8 GeV (open throughout; ~10 GeV table gap flagged).
 - [done D1686 PASS] G12e round-4 referee. Loop stopped ~01:05Z.
 - [done D1687 TENSION] G18 gravitino→wino at T_R 1.34e9: winos 43–52 % of DM (cap 30 %). Follow-ups: G18b inflaton→gravitino (F-term), G18c κ if SM on D7 (f = T).
+- [done D1688] G16b LZ σ(12.8 GeV) = 1.33e-47 cm² (digitised); D1677 bracket fair; dim strip open 2–5 decades.

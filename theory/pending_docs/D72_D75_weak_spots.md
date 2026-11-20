@@ -16695,3 +16695,8 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - At the reheating temperature SERAPIS now predicts (1.34 × 10⁹ GeV), the plasma makes heavy gravitinos, and each one later decays into one wino. With published production rates, that alone gives 37–47 % of all dark matter in winos for the lightest allowed wino (0.67 TeV), and 43–52 % counting thermal winos — above the 5–30 % the wino window allows; ~90–106 % for a 1.25 TeV wino.
 - To stay at 30 %, reheating would need to be ≤ 1.08 × 10⁹ GeV (20 % lower). Possible ways out: a weaker inflaton decay (if our forces don't sit on the string coupling's branes), extra entropy after reheating, or different SUSY assumptions. Flagged for the wino/gravitino track; nothing there edited.
 - MAP: node=genesis_reheating status=estimate touches=[m32_window, wino_window] ripple=no
+
+## D1688 — JANUS genesis G16b: the xenon limit at 12.8 GeV is now sourced — and the dark photon still has room
+- Found a digitised copy of LZ's 2024 limit curve (C. O'Hare's DirectDetectionPlots, citing arXiv:2410.17036); official data routes are blocked from here. At the dark particle's 12.8 GeV mass the limit is 1.3 × 10⁻⁴⁷ cm² — so the other chat's optimistic guess (10⁻⁴⁷) was fair.
+- Sourced dark-photon ceiling: mixing below 3.5 × 10⁻⁹ (0.3 GeV), 3.9 × 10⁻⁸ (1 GeV), 9.7 × 10⁻⁷ (5 GeV). Above the decay-before-BBN floor that leaves 2–5 decades open. Version (b) stays alive; LZ's newer data and XLZD will push into it.
+- MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no

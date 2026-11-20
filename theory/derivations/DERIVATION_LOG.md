@@ -3350,3 +3350,10 @@ Touches: none.
 3. [derived] The wino_window node allows 5–30 % ⇒ TENSION (not overclosure at the light end). Gravitino winos alone reach 30 % at T_R = 1.08e9 GeV (0.67 TeV) — 20 % below D1665's T_R.
 4. [estimate] In version (b) the 12.8 GeV dark particle is meant to be (nearly) all the DM, so any large wino share adds on top. Ways out, none chosen here: a lower T_R (κ lower than the f = S estimate, e.g. if the SM is not on D3-branes), entropy release after reheating, a lighter-than-allowed wino (LHC floor 0.67 TeV), R-parity violation, or no low-scale SUSY. Inflaton → gravitino decays (not included) can only add.
 5. [estimate] This links the other session's wino_window / m32_window track to the genesis chain; reported, their nodes not edited.
+
+## D1688 — JANUS genesis G16b: LZ's limit at the dark particle's mass, sourced from a digitised curve (PREREG_D1688_G16B_LZ_DIGITISED; DEVIATIONS D1, D2 coding, no values seen) — D1677's bracket was fair
+1. [literature] LZ WS2022+WS2024 SI limit (arXiv:2410.17036, Fig. 5) as digitised in C. O'Hare's DirectDetectionPlots (LZ_2024.txt, header cites the paper; sha256 ed9d4cdd…; 103 points). Official routes (HEPData, Zenodo, arXiv e-print) are blocked from this workspace; download approved by Danny 18:58 CT.
+2. [derived] σ_SI = 5.1e-47 (10 GeV), 1.33e-47 (12.8 GeV), 7.4e-48 cm² (15 GeV).
+3. [derived] D1677's optimistic bracket (1e-47 cm²) was FAIR (true value 1.33×); its ε_max scale by √1.33 = 1.15: ε_max = 3.5e-9 (m_A' 0.3 GeV), 3.9e-8 (1 GeV), 9.7e-7 (5 GeV).
+4. [derived] Dim strip against the BBN floor (D1657): 0.3 GeV 3.0e-11 – 3.5e-9 (2.1 decades), 1 GeV 1.6e-11 – 3.9e-8 (3.4), 5 GeV 7.4e-12 – 9.7e-7 (5.1) ⇒ open at all three.
+5. [estimate] Caveats: third-party digitisation (few-% level); the newer 417-day LZ result (Dec 2025) can only lower ε_max; ε ∝ √σ scaling taken from D1677's own bracket pair.
