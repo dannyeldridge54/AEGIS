@@ -16613,3 +16613,9 @@ Postulate P-brane (C): visible sector on D3 (f = S), dark sector on unfluxed D7 
 - Searched for species-scale or modular routes to a small Λ (2025–26). Found: universal scalings linking vacuum energy to higher-derivative Wilson coefficients from worldsheet modular invariance (arXiv:2603.11157), species-scale bounds (2409.10003, 2310.07708) and tower/EFT-robustness constraints (2304.03902). These give BOUNDS and SCALINGS (V shallow relative to the cutoff), not a mechanism that produces 10⁻¹²⁰.
 - Verdict: no Weave-usable suppression mechanism. C1 (Λ's size) stays OPEN, put in by hand. Not a register change.
 - Queue refilled (BIG_LOOP.md): Q7, basin weights per image of i on the level-4 cover (makes D1668's "35%" a computed number); Q8, a portal for the dark asymmetry in version (b) (neutron-portal estimate).
+
+## D1674 (CENTRE, 19 Nov 2026) — BIG LOOP (manual Djl) Q7 RESULT: 34.5% of slow neutrino moduli end in the viable TM1 configuration (PREREG_Q7_IMAGEWEIGHTS)
+- [derived + computed] The Zhinü flow is SL(2,Z)-equivariant. A uniform start on the level-4 cover is a uniform F-start (D1610) composed with a uniform coset h ∈ S₄. Over the 24 elements, each of the 6 conjugates hSh⁻¹ appears exactly 4 times (centraliser of order 4). So P(TM1 | ends at an image of i) = 1/2 EXACTLY.
+- Total: P(TM1) = 0.6895 × ½ = 0.345. The other outcomes are 0.345 for an image of i with the dead (½, ½, 0) column and 0.31 for an image of ρ.
+- The same holds if the charged-lepton modulus also sits at a random image of ω: only the relative coset matters, and it is uniform too.
+- Verdict: D1668's "≈ 35%" is now a computed number, not an assumption. The Weave + S₄ gives the observed lepton mixing (TM1) for about 1 in 3 starting points. That is "natural" by the pre-set ≥ 25% standard used in PREREG_BASINS.
