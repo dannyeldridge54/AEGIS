@@ -14,4 +14,6 @@ Q4. [DONE: P-brane, D3 visible / unfluxed D7 dark → (b) favoured; portal for a
 Q5. [PARTIAL D1672: D=8 positive everywhere (min 3.25); D≤6 open — next tick: go to Q6] A3 one-loop sign: the regularised SO(4,4) s = 1 series along the coupling, with a species-scale cutoff.
 Q6. [DONE: NULL, no mechanism in the literature] Λ (C1): any Weave-internal suppression mechanism (literature scan only).
 Q7. [DONE D1674: P(TM1) = 0.345 exactly (½ × 0.69)] Basin weights per image of i on the level-4 (Γ(4)) cover: which images do slow neutrino moduli reach (D1610 flow), and what fraction lands on TM1 images? Lock first.
-Q8. Version (b) dark asymmetry: a portal estimate (e.g. neutron portal ūd̄d̄χ/Λ²) that transfers baryon number to 5 GeV χ, with the Λ_portal needed and current bounds.
+Q8. [DONE D1675: KLZ portal window contains M_N window; P-portal] Version (b) dark asymmetry: a portal estimate (e.g. neutron portal ūd̄d̄χ/Λ²) that transfers baryon number to 5 GeV χ, with the Λ_portal needed and current bounds.
+Q9. Recompute the KLZ chemical-equilibrium mass ratio (m_X range) in tools/genesis rather than quoting it.
+Q10. A3 at D = 6: evaluate the regularised SO(4,4) s = 1 Epstein-type series numerically along a torus slice.

@@ -16619,3 +16619,9 @@ Postulate P-brane (C): visible sector on D3 (f = S), dark sector on unfluxed D7 
 - Total: P(TM1) = 0.6895 × ½ = 0.345. The other outcomes are 0.345 for an image of i with the dead (½, ½, 0) column and 0.31 for an image of ρ.
 - The same holds if the charged-lepton modulus also sits at a random image of ω: only the relative coset matters, and it is uniform too.
 - Verdict: D1668's "≈ 35%" is now a computed number, not an assumption. The Weave + S₄ gives the observed lepton mixing (TM1) for about 1 in 3 starting points. That is "natural" by the pre-set ≥ 25% standard used in PREREG_BASINS.
+
+## D1675 (RIGHT, 19 Nov 2026) — BIG LOOP tick (scheduled; Q5–Q7 were done by manual ticks D1672–D1674): Q8 RESULT. The dark portal and the heavy neutrinos can share ONE scale (PREREG_Q8_PORTAL)
+REVIEW: D1674's "each conjugate appears 4 times" is consistent with |S₄|/|C(S)| = 24/4 = 6 conjugates ✓.
+DERIVE [estimate + lit]: the KLZ portal X²LH_u/M (0901.4117) shares the lepton asymmetry with X and gives m_X ≈ 5–11 GeV. It decouples at T_D = 1.66 √g* M²/M_P. Requiring 130 GeV < T_D < T_R = 1.34 × 10⁹ GeV gives M ∈ [9.6 × 10⁹, 3.1 × 10¹³] GeV. That CONTAINS the whole heavy-neutrino window M_N ∈ [1.25 × 10¹⁰, 2.5 × 10¹²] (D1668).
+POSTULATE P-portal: one heavy threshold M ≈ M_N (≈ 10¹⁰–10¹² GeV) both makes the lepton asymmetry (N decays) and hands it to the dark sector (the X²LH/M portal, e.g. from integrating out N itself). Geometrically, X lives on unfluxed D7 and LH on D3 (P-brane), with the portal from D3–D7 strings (not derived). Version (b) is now complete as a chain: inflaton → (D3 only) → N → L asymmetry → portal → X (5–11 GeV), with a cold dark side and ΔN_eff small but non-zero.
+Open: the KLZ mass range is quoted, not recomputed in our toolkit.
