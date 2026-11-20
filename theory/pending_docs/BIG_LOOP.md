@@ -12,4 +12,4 @@ Q2. [DONE D1669: lower branch 262–286° survives; upper excluded] TM1 δ_CP in
 Q3. [DONE D-note: v3 draft built, awaits Danny Publish] Flavour-paper v3 correction DRAFT (TM2 excluded → TM1/S₄). Draft only; publishing needs Danny.
 Q4. [DONE: P-brane, D3 visible / unfluxed D7 dark → (b) favoured; portal for asymmetry open] P-M: which version, mirror (0.94 GeV) or minimal (5 GeV)? Look for a Weave reason for either unexplained ratio.
 Q5. [PARTIAL D1672: D=8 positive everywhere (min 3.25); D≤6 open — next tick: go to Q6] A3 one-loop sign: the regularised SO(4,4) s = 1 series along the coupling, with a species-scale cutoff.
-Q6. Λ (C1): any Weave-internal suppression mechanism (literature scan only).
+Q6. [IN PROGRESS manual Djl 00:21 UTC] Λ (C1): any Weave-internal suppression mechanism (literature scan only).
