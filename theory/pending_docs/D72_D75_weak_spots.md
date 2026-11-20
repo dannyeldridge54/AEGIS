@@ -16638,3 +16638,8 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Against D1664's windows: the dim strip (10⁻¹¹ up to ~10⁻⁷) survives for every m_A′ under the optimistic bracket → VIABLE. The bright strip (10⁻⁵–10⁻³, 25–370 MeV) is EXCLUDED: needed ε ≲ 10⁻⁸ there. Above 0.8 GeV, most of the merged band above ~10⁻⁶ is excluded.
 - New combined prediction (version b): X ≈ 13 GeV; dark photon 0.3–5 GeV with ε between 10⁻¹¹ and ≈ 3 × 10⁻⁹ to 8 × 10⁻⁷ (rising with m_A′²). Next-generation xenon (XLZD) and beam dumps (SHiP) probe the upper part.
 - Caveat: a sourced LZ value at 13 GeV (digitised curve) is needed to replace the bracket.
+
+## D1678 (RIGHT, 19 Nov 2026) — BIG LOOP (manual Djl) Q12: NULL. No sourced LZ number at 13 GeV yet
+- LZ WS2024 (2410.17036) gives numbers only at 40 GeV (2.2 × 10⁻⁴⁸ cm²). The 13 GeV value is in Fig. 5 only. The supplemental link is a placeholder, and the HEPData record found is the ultraheavy-DM search (10.17182/hepdata.151392), not WS2024.
+- There is a NEWER LZ result: 417 live days (Mar 2023–Apr 2025), announced Dec 2025 (LBNL news). It is world-leading above 5 GeV and reports ⁸B CEvNS evidence at 4.5σ. No numbers in the release, and no arXiv id found.
+- D1677's bracket (10⁻⁴⁷–10⁻⁴⁵ cm² at 13 GeV) stays, flagged UNSOURCED. The newer result can only tighten ε_max, moving the dark photon further into the dim strip. Getting the curve needs Danny, or a digitised figure.
