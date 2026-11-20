@@ -86,3 +86,17 @@ Same shape, 1 − 7.30e^{−βφ}, at the dark-energy height, still being rolled
 - Flag: the best fits sit at the last viable starting height, i.e. they are tuned.
 
 **Tuning (D1628):** all three tilts pass all three DESI combinations, but only in a ~1% window of starting heights, right before the field rolls off: a second coincidence besides V_Λ. Common best point: w₀ ≈ −0.79, w_a ≈ −0.36.
+
+## 11. Real data (19 Nov 2026 evening; D1692–D1707)
+Data: DESI DR2 BAO (full covariance) + DES-SN5YR "Dovekie" (1820 SNe, STAT+SYS) + DESI's compressed CMB prior (θ*, ω_b, ω_bc). Our own likelihood code; all fits locked first.
+| model | extra params | BAO + SN | + CMB |
+|---|---|---|---|
+| ΛCDM | 0 | 0 (Ω_m 0.306) | 0 (Ω_m 0.302, h 0.682) |
+| CPL | 2 | −7.21 | −10.84 |
+| Weave thread (leading) | 1 | −7.01 | −4.84 |
+| Weave thread (exact curve) | 1 | −6.90 | −4.65 |
+| sign-switch ΛsCDM | 1 | ≈ 0 | −4.93 (z† = 2.64) |
+| flipped / uphill / time-mirror threads | 1–2 | −6.17 / −7.01 / +0.04 | — |
+- The thread captures 97% of CPL's gain without the CMB. With the CMB it is still "supported" (≤ −4) but CPL leads, because the CMB favours w < −1 at high z, which the thread forbids.
+- CMB split (mirror M4, partial): with θ* alone, the thread stays at −7.02 and ΛsCDM gains nothing. The (ω_b, ω_bc) part is what costs the thread and helps ΛsCDM (to be confirmed by the second half of the run).
+- DR3 forecast: no single BAO bin separates thread from CPL by more than 0.74σ_DR2. The decision will come from SN + CMB combined.
