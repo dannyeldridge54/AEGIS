@@ -16726,3 +16726,9 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Weave thread (1 extra, β = 2√2, leading order): Δχ² = −7.01 at Ω_m = 0.305, amp = 0.174. That is within 0.20 of CPL (rule ≤ 2.3 ✓): the thread captures ~97% of CPL's improvement with half the parameters.
 - Sign-switching ΛsCDM (1 extra): Δχ² ≈ 0. Its best z† = 2.37 is pushed past the highest data redshift (2.33), i.e. no switch is wanted. "Negative space preferred" = FALSE.
 - This is the first real-likelihood test (it replaces the Gaussian approximation of D1627–D1628): the reverse thread is supported at Δχ² = −7 on BAO + SN alone. Caveats: no CMB; the Dovekie SN set is not the one DESI used; leading-order curve (D1638: the exact curve differs ~4%); post-data model.
+
+## D1693 RESULT (19 Nov 2026) — "reverse everything" on real data: NO reversal beats the Weave thread (PREREG_REALDATA_REVERSE)
+- R1 FLIPPED PLATEAU (V = V_Λ(1 + 7.30e^{−βφ}), freezing): Δχ² = −6.17 versus ΛCDM, i.e. +0.84 WORSE than the thread. It also fits, slightly worse.
+- R2 REVERSED ROLL (uphill kick, 1 extra parameter): the fit drives the kick to k_i ≈ 0.06 and lands on the thread's own χ² (Δ = −7×10⁻⁶). The data want no reversal of direction.
+- R3 TIME MIRROR (post-hoc): Δχ² = +0.04 versus ΛCDM. Reversing the order of the history removes the whole improvement: the late-time thaw is what the data like.
+- Verdict: none beats ours (rule: < −2 vs the thread). The forward thread (frozen, then thawing now) is the best of the family. Its mirror images score at or below it, and the time-reversed one is no better than Λ.
