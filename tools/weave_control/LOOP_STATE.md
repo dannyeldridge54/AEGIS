@@ -25,7 +25,14 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W9 packaging (Danny 05:19 CT: "Make .exe and apks them all, same loops") · next stage: P postulate (R done 05:22 CT). W4 flavour moves after W9/W10.
+Item W9 packaging (Danny 05:19 CT: "Make .exe and apks them all, same loops") · next stage: E1 engineer (P done 05:24 CT). W4 flavour moves after W9/W10.
+Postulate W9/W10 (acceptance rules, before building):
+X1 One command: `aegis control [port]` starts the Weave Control server on 127.0.0.1 and opens the default browser; Ctrl+C stops it. Works from source and inside the PyInstaller exe (sys._MEIPASS path for ui/ and Mapper data).
+X2 The exe build (build-executables.yml) bundles: tools/weave_control (engine, server, ui), tools/mapper (finder, data/hip_mag8.csv + licence), tools/dashboard, apps/skymap data used by the planner, and the hidden imports the engine needs. CI self-test adds: `aegis control --selftest` (runs the engine once, checks 8 levels, no errors, exits 0) and `aegis version`.
+X3 APK workflow apps_apk.yml: matrix over {skymap, dashboard, weave_control_offline}; each from a copy of the sarah_sky android template with its own applicationId (com.eldridge.aegis.skymap / .dashboard / .weavecontrol), app name, and versionName = release + git short hash; built on unify-bg pushes that touch those apps and on manual runs; artifacts uploaded; published to the apk-dist branch beside SarahsSky.apk without deleting it.
+X4 Weave Control offline: tools/weave_control/snapshot.py precomputes the engine over a stated knob grid (inflation model × dark sector × wino mass at the 3 H.E.S.S. masses + 700/1500 × halo × run; other knobs at defaults) into ui/snapshot.json; the page uses it when no server/pywebview is present, shows 'OFFLINE SNAPSHOT (code <hash>, built <date>)' in the header, and disables knob values outside the grid instead of guessing. No interpolation.
+X5 Every APK is checked before release: the web part with Playwright at phone width (no errors, no h-scroll); the APK build must succeed in CI; size stated.
+X6 Nothing personal goes into the public builds (Sarah's app stays separate; no family data in these three).
 W9 research notes:
 - The cloud and the PC VM cannot reach dl.google.com, Maven Central or services.gradle.org (proxy 403 / no route), so APKs and Windows .exe files cannot be built locally. npm and PyPI are reachable.
 - The repo already builds both in GitHub Actions: build-executables.yml (PyInstaller on windows/macos/ubuntu, on release or manual run, self-tests the exe, uploads artifacts) and sarah_apk.yml (Android WebView wrapper, Gradle 8.9 + JDK 17 on ubuntu, publishes the APK to the apk-dist branch). Sarah's Sky's android/ project (WebView + androidx.webkit, assets) is the template for the other apps.
@@ -125,6 +132,7 @@ Strengths a referee would note: one parameter set drives every level; sources an
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:24 CT W9/P postulate: acceptance rules X1–X6
 - 05:22 CT W9/R research: build paths (GitHub Actions), offline-APK design, CI failures found; camb added to CI
 - 05:19 CT W3/V2 signed off (export/share, precision, locked tags, legend, print)
 - 05:16 CT W3/F referee: 8 points (4 major: export/share, precision, live vs locked, inflation legend)
