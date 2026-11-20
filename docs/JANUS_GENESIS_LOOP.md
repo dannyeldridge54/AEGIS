@@ -29,3 +29,4 @@ Guards: no map status edits; no Zenodo/arXiv; no PC jobs or downloads beyond pip
 - 23:45Z: D1658 G9d done (acceleration ends a 1.41–1.92; end i for DESY5/Union3, ρ for Pantheon+). NEXT: G6d (lab limits on ε, sourced), then G12b round-2 referee.
 - Round 2 STOPPED ~23:42Z — G12c PASS (D1662). Restart with "Djl".
 - Round 3 STOPPED ~23:55Z — G12d PASS (D1666). Restart with "Djl".
+- Round 4 STOPPED ~01:05Z — G12e PASS (D1686). Restart with "Djl".

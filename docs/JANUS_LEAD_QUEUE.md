@@ -82,3 +82,4 @@ Cycle per lead (one lead per tick): Research → Development → Postulation →
 - [done D1666 PASS] G12d round-3 referee. Loop stopped ~23:55Z.
 - [done D1684 NULL] G16 sourced LZ value at 13 GeV — needs a digitised curve or LZ data download (Danny's OK).
 - [done D1685] G17 window to 12.8 GeV (open throughout; ~10 GeV table gap flagged).
+- [done D1686 PASS] G12e round-4 referee. Loop stopped ~01:05Z.

@@ -16686,3 +16686,7 @@ Open: the KLZ mass range is quoted, not recomputed in our toolkit.
 - Near 10 GeV the limit tables have a hole (BaBar stops at 10.2 GeV) — flagged as an artefact. The xenon direct-detection cut (D1677) would lower the top edge, but its number is still unsourced (D1684).
 - A check I locked was badly designed (it compared two different mass grids); I logged that as a deviation and replaced it with an exact re-run, which matched D1664 row for row.
 - MAP: node=dark_radiation status=estimate touches=[matter_genesis] ripple=no
+
+## D1686 — JANUS genesis G12e: round 4 passes referee (after one citation fix) — loop stops
+- The referee caught that D1685 didn't name its data source; added (D1685a: DarkCast, arXiv:1801.04847). Everything else checked out.
+- MAP: node=dark_radiation status=estimate touches=[] ripple=no

@@ -1,0 +1,19 @@
+{
+ "D": "D1686",
+ "lock_dev_result_order": true,
+ "D1664_json_unchanged": true,
+ "window_open": true,
+ "sourced": false,
+ "card": "38 CONSISTENT []",
+ "verdict": "PASS",
+ "first_run": {
+  "D": "D1686",
+  "lock_dev_result_order": true,
+  "D1664_json_unchanged": true,
+  "window_open": true,
+  "sourced": false,
+  "card": "38 CONSISTENT []",
+  "verdict": "FAIL"
+ },
+ "sourced_after_D1685a": true
+}

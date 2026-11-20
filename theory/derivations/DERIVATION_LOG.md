@@ -3336,3 +3336,10 @@ Touches: none.
 3. [estimate] Near 10 GeV the table set has a coverage gap (BaBar ends at 10.2 GeV, Υ region): the upper edge jumps to 1e-2 there — an artefact of missing limits, not a real opening.
 4. [derived] Validation: locked R0 (nearest-mass comparison with D1664) FAILED (max 10.7 %, median 0.18 %) because the grids sample different masses on jagged collider limits; DEVIATIONS D1 added R0′ — rerunning at the default top mass reproduces D1664's json row for row (identical) ✓.
 5. [estimate] Not applied: the other chat's direct-detection cut (D1677, bracket still unsourced — D1684) would pull the upper edge down to ~1e-6–1e-5 at these masses; the dim strip (≲ 1e-7) is untouched by it.
+
+## D1685a — source note for D1685 (referee D1686)
+1. [literature] D1685's limits are the DarkCast tables of Ilten, Soreq, Williams, Xue (arXiv:1801.04847), GitHub mirror commit db9a0f6; the dark-particle mass 12.8 GeV is the other chat's D1676 (chemical equilibrium; KLZ portal arXiv:0901.4117).
+
+## D1686 — JANUS genesis G12e: round-4 referee (PREREG_D1686_G12E_REFEREE) — first run FAIL (D1685 uncited), fixed by D1685a, PASS
+1. [derived] D1685 lock ≤ DEVIATIONS ≤ result ✓; D1664's json unchanged since its first commit ✓; D1685 window ≥ 1 decade open at every mass 0.3–12.8 GeV ✓; card 38/38 ✓.
+2. [derived] First run: D1685's entry had no paper reference ⇒ FAIL; D1685a adds arXiv:1801.04847 (DarkCast) and the D1676 source; re-check PASS.
