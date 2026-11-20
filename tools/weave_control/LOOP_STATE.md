@@ -17,7 +17,7 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Each item goes R → P → E1 → V1 → E2 → F → V2. Every tick ALSO does a 20-second health check: GitHub Actions status (tools, APK, exe) — a red run is fixed first.
 A. Packaging (W9/W10) — SIGNED OFF 05:53 CT: exe rebuild run 44729658104 PASSED all self-tests on Windows, macOS and Linux (incl. `control --selftest`, all 8 levels); APKs built with the fixed sideload key. Was: finish V2 — exe self-tests on 3 OSs (run 44728408158), APK rebuild with the fixed key; then a release signing key (needs Danny: 4 GitHub secrets) — ask, don't block.
 B. W4 Flavour level — SIGNED OFF 05:59 CT (V2). Next in queue: C Hyperion MC at R.: TM1 δ_CP vs NuFIT 6.0 and T2K+NOvA, sin²θ₁₂ vs JUNO + global (0.3085 ± 0.0073, arXiv:2511.21650; JUNO alone 0.3092 ± 0.0087, arXiv:2511.14593), Koide/Brannen (already in the engine). Research done 05:35 CT.
-C. W5 Hyperion: nuclear-rate Monte Carlo → error bars on Y_p, D/H (closes referee R2/R8).
+C. W5 Hyperion: nuclear-rate Monte Carlo → error bars on Y_p, D/H (closes referee R2/R8). [R done 06:01 CT; next P]
 D. W6 Janus: N* band from reheating; joint n_s–r (referee R4); bridges B1/B2 against a new lock.
 E. W7 Mapper: science overlays (DESI/Euclid footprints, GC gamma-line ring), tonight ranked by Weave-test value; Sky Map sexagesimal input + view export + shortcuts in About; FOV overlays.
 F. W8 CERN+1: simplified likelihood (R5); triglavon/cassion reach at FCC-hh / beam dumps.
@@ -155,6 +155,11 @@ U-R8 (minor) Printing: the light theme exists, but there is no print stylesheet 
 Strengths a referee would note: one parameter set drives every level; sources and P/F/G labels on every panel; nested-guard, ΔAIC, and halo dependence shown rather than hidden; the Studio hook.
 
 ## Done log
+- 06:01 CT C/W5 research: Hyperion's bbn.py reads the PRIMAT table through camb (no rate uncertainties inside), so a full rate Monte Carlo needs our own network (bbn_net.py) — heavy. Published theory errors exist and are the standard way to fold them in:
+  · Paris group (PRIMAT, Pitrou et al.) D/H_BBN+CMB = (2.439 ± 0.037) × 10⁻⁵ (1.5%), as quoted in Yeh, Olive & Fields, arXiv:2011.13874;
+  · Yeh, Olive & Fields 2021 (arXiv:2011.13874, new LUNA d(p,γ)³He, MC over rates, 10 000 runs): D/H = (2.506 ± 0.110) × 10⁻⁵, Y_p = 0.24693 ± 0.00018 at ω_b = 0.02237 ± 0.00014 (their σ includes the ω_b error).
+  The two groups differ by ~3% in D/H (the d(p,γ)³He rate: theory vs LUNA data) — that spread IS the theory error that matters.
+  Illustration only (to be locked at P): Hyperion D/H 2.448 vs Cooke 2018 2.527 ± 0.030 is −2.6σ obs-only; with the PRIMAT σ (1.5%) combined ≈ −1.7σ; with the Yeh+ σ ≈ −0.7σ. So the BBN 'tension' depends on whose rate error is used — exactly referee R2's point.
 - 05:59 CT W4/V2 signed off (DEVIATIONS D1 pushed first, 09f1bc13): δ_CP lower branch over sin²θ₂₃ ∈ [0.51, 0.59] = 272.5°–293.7°, wholly inside the T2K+NOvA 1σ [214°, 313°]; Σm_ν 0.0587 eV (NO, m₁ = 0, assumed) < 0.0642 eV bound → pass; labels: branch data-chosen, normal ordering assumed, θ₁₃ point value, m₁ = 0 assumption, JUNO 6-yr as the decisive test. Flavour status PASS. 13 engine tests pass.
 - 05:55 CT W4/F referee (a neutrino-oscillation referee's read):
   N-R1 (major) The branch choice is DATA-chosen, not predicted: the TM1 sum rule fixes cos δ only, so it gives a mirror pair (74.3°/285.7°); the data pick the lower branch. Label 'δ_CP ≈ 286° (branch chosen by data; TM1 predicts the pair)'.
