@@ -16786,3 +16786,12 @@ DISCOVER (this tick): arXiv 2611.01505 ("DESI DR3" per a third-party GitHub aler
 - Neutrinos at ρ: the residual is Z₃ = ⟨ST⟩ with eigenvalues (1, ω, ω²). A Majorana mass matrix invariant under it (ρᵀMρ = M) can only pair ω with ω², so two neutrinos form a degenerate (pseudo-Dirac) pair. That contradicts Δm²₂₁ ≠ 0 unless the breaking is large, which removes the prediction.
 - Charged leptons at an image of i: a Z₂ residual leaves a degenerate 2-dim eigenspace, so U_e is not fixed and the mixing is not predicted.
 - Reading: the mirror of "charged leptons at ρ, neutrinos at i" gives no viable predictive pattern. The forward assignment is not arbitrary; it is the only one of the pair that works. This is the first mirror-pulse check, and the forward claim beats its mirror.
+
+## D1702 (CENTRE, 19 Nov 2026) — MIRROR PULSE M2 and M3 (Djl)
+M2 (thread with β → −β): the reflection φ → −φ maps V_Λ(1 − Ae^{−βφ}) exactly onto V_Λ(1 − Ae^{+βφ}). The mirror is a SYMMETRY of the model: same w(a), same χ². Nothing new can come from it. The physically distinct mirrors (flipped step, uphill roll, time reversal) were tested in D1693, and none beat the forward thread.
+M3 (mirror of P-F1: let the singlet/doublet norm ratio r = 2|b|²/a² differ from 1) [computed]: Q = 1/3 + r/3, so r = 3Q − 1.
+- PDG m_τ: Q = 0.6666645 ± 0.0000051 → r = 0.999993 ± 0.000015.
+- Belle II: Q = 0.6666735 ± 0.0000079 → r = 1.000020 ± 0.000024.
+- The data force |r − 1| ≲ 5–9 × 10⁻⁵ (3σ, by m_τ choice). The mirror "unequal split" is pushed to within 10⁻⁴ of the forward claim, so equipartition is exact to the precision of m_τ.
+- In Shulga's picture (D1699) the Berry-phase orientation δ does not depend on r, so M3 leaves δ = 2/9 untouched.
+Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); M3 forward wins (mirror squeezed to < 10⁻⁴).

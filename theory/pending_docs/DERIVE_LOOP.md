@@ -19,5 +19,7 @@ D8. Can λ_B = 1 be computed for the axion circle Re τ at ρ (Berry phase of th
 Reading taken: every tick now has a forward beat AND a mirror beat. Forward derives or tests a claim. Mirror tests the claim's reflection (reversed sign, reversed assumption, or the opposite outcome) on the same data or method, so that each result is checked against its own image (as done in D1693). A forward claim is kept only if it beats its mirror; a tie is recorded as a tie.
 Mirror queue (paired with done items):
 M1. [DONE: mirror fails, Majorana Z₃ forces a degenerate pair] Mirror of D1700: put CHARGED leptons at the image of i and NEUTRINOS at ρ (swap the vacua). Which patterns appear?
-M2. Mirror of D1696: the thread on real data with β → −β (the field rolls the other way off the same curve).
-M3. Mirror of D1698/D1699: assume Q ≠ 2/3 (the singlet/doublet norm ratio r ≠ 1). What r does the data allow, and is the Berry-phase δ then still 2/9?
+M2. [DONE: φ→−φ is a symmetry, no new info] Mirror of D1696: the thread on real data with β → −β (the field rolls the other way off the same curve).
+M3. [DONE: |r−1| < 5–9e-5] Mirror of D1698/D1699: assume Q ≠ 2/3 (the singlet/doublet norm ratio r ≠ 1). What r does the data allow, and is the Berry-phase δ then still 2/9?
+M4. Mirror of D1694/D1695: CMB-only distance with the thread vs ΛsCDM — which part of the CMB prior drives each (θ* vs ω_bc)?
+M5. Mirror of the P-portal (D1675): hand the asymmetry from DARK to visible instead (dark-first genesis): same window?
