@@ -74,3 +74,16 @@ Janus queue (interleaved with CERN+1/Hyperion): J1 settings + exports; J2 compla
 | Sky Map (apps/skymap) | browser sky atlas: surveys (Planck, Fermi, Gaia), objects, tonight's sky, lessons | HiPS surveys | new HiPS (Euclid Q1/DR1, SPHEREx all-sky, Rubin DP1) | medium | live |
 | telescope tools (to build) | observability planner (alt/airmass for a site), target lists in standard formats (CSV/VOTable), cross-match with SIMBAD/Gaia IDs | — | — | queued M1 | — |
 Mapper queue: M1 complaints search (amateur + professional observers: Stellarium, Aladin, astropy/astroplan, Gaia archive users) → build list; M2 observability/target-list export (astroplan-compatible, VOTable); M3 newest surveys into Sky Map (Euclid, SPHEREx, Rubin) as HiPS layers; M4 3D dust map download + validate mapper_dust; M5 Gaia DR4 ingest plan (release 2 Dec).
+
+## M1 (20 Nov 04:25 UTC): what observers say is missing in sky tools → Mapper build list
+Sources: SF Bay amateur list thread "Astro software seems like garbage"; KStars observation-workflow discussion (kstars-devel 2020-10); SkySafari / Stellarium feature-request boards.
+| complaint | Mapper feature | id |
+|---|---|---|
+| no tool makes "a list of targets my telescope can do tonight from my location" (e.g. doubles a 60 mm can split) | target finder: filter by aperture (Dawes limit / limiting magnitude), site, date, altitude window | M1a |
+| no single printable chart with designations, magnitudes, separations | printable PDF finder chart for a target list (labels on, one page) | M1b |
+| only one Telrad/FOV circle, can't rotate FOV or place several | multiple FOV overlays (eyepiece/camera), rotatable, placeable anywhere | M1c |
+| fixed meridian-transit scheduling breaks when plans shift; Dobsonian zenith hole | session plan sorted by "% of max altitude now", live re-sort, zenith-hole demotion | M1d |
+| wish list grows unmanageable; can't mark observed; no projects | wish list + per-project lists, "observed" checkbox that demotes, filters (constellation, catalog, magnitude, culminating tonight) | M1e |
+| tools don't talk to each other (coordinates to imaging/control software) | export CSV / VOTable / astroplan target table / N.I.N.A. & Stellarium-compatible lists | M1f (= M2) |
+| download reference images before going to a dark site | offline pack: DSS/HiPS cutouts for the session list | M1g |
+These join M2 (observability planner + target-list export) in the rotation; M1a + M1d + M1f are built first (one tick each).
