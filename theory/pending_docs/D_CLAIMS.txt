@@ -975,3 +975,4 @@ D1687  2026-11-20T00:56Z  JANUS genesis G18: thermal gravitinos at T_R = 1.34e9 
 D1688  2026-11-20T00:59Z  JANUS genesis G16b: LZ 2024 SI limit at 12.8 GeV from a digitised curve; D1677 dark-photon cut sourced
 D1689  2026-11-20T01:03Z  untitled
 D1690  2026-11-20T01:04Z  untitled
+D1691  2026-11-20T01:07Z  untitled
