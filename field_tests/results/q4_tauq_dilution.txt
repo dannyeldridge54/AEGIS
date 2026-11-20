@@ -1,0 +1,13 @@
+H_inf = 5.235e+12 GeV
+phi0=0.1: T_dec(1e4 GeV)=1.73e-04 GeV; D range 1.00e+00-1.29e+10; window: 7.85e+08-5.23e+12 GeV
+   m=1.0e+05: Tdec=5.49e-03 D=4.07e+08 dns=0.0044
+   m=1.0e+07: Tdec=3.32e+00 D=6.72e+05 dns=0.0030
+   m=1.0e+09: Tdec=3.32e+03 D=6.72e+02 dns=0.0014
+   m=1.0e+11: Tdec=3.32e+06 D=1.00e+00 dns=0.0000
+   m=5.2e+12: Tdec=1.26e+09 D=1.00e+00 dns=0.0000
+phi0=1.0: T_dec(1e4 GeV)=1.73e-04 GeV; D range 1.00e+00-1.29e+12; window: 1.69e+10-5.23e+12 GeV
+   m=1.0e+05: Tdec=5.49e-03 D=4.07e+10 dns=0.0054
+   m=1.0e+07: Tdec=3.32e+00 D=6.72e+07 dns=0.0040
+   m=1.0e+09: Tdec=3.32e+03 D=6.72e+04 dns=0.0024
+   m=1.0e+11: Tdec=3.32e+06 D=6.72e+01 dns=0.0009
+   m=5.2e+12: Tdec=1.26e+09 D=1.00e+00 dns=0.0000

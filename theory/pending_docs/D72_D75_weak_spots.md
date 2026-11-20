@@ -17087,3 +17087,11 @@ Files: PC AEGIS_PCJOBS/d1713/results/cls_*.json (13 runs); lock field_tests/rule
 - [engineer] New toolkit piece theory/quarks/ckm.py: mass matrices → quark masses, |V|, PDG angles, J, δ; self-test recovers the input (s12, s23, s13, δ = 1.144, J = 3.10e-5) exactly.
 - **Status:** quark sector = imported mechanism (strong CP solved, CP from τ_q), not a Weave prediction. The only route to a prediction is Q5 (the Weave fixing τ_q or the couplings). Next: Q4 (τ_q decay → dilution → n_s).
 - Result: field_tests/results/q3_param_count.txt. MAP: none.
+
+## D1730 — LEFT (locked: PREREG_Q4_TAUQ_DILUTION; computed) — Quarks, step 4: the quark modulus τ_q CAN live with the Weave's early universe if it is heavy, m(τ_q) ≳ 2e10 GeV (≳ 8e8 GeV if displaced only 0.1 M_P). Lighter, it dilutes too much (moduli problem) and shifts n_s by more than a CMB σ. PASS (light route, with a window) + heavy route safe (2026-11-20)
+- [computed] H_inf = 5.2e12 GeV (r = 4.46e-4). Gravitational decay (c = 1), T_R = 1.34e9 GeV (D1665).
+- [computed] φ0 = 1 M_P: allowed window m = 1.7e10 – 5.2e12 GeV (D ≤ 1e3, T_dec ≥ 5 MeV, |Δn_s| ≤ 0.003). At m = 1e11: D = 67, Δn_s = 0.0009. At 1e9: D = 6.7e4 (fails F2), Δn_s = 0.0024. At 1e5: D = 4e10, Δn_s = 0.0054 (fails).
+- [computed] φ0 = 0.1 M_P: window 7.9e8 – 5.2e12 GeV.
+- [reading] So τ_q must be a heavy, early-frozen field, ~1e10–1e13 GeV, about the inflaton's own scale (5e12). Cross-link to the ladder: a τ_q near the low edge leaves a small, computable n_s shift (ΔN* = −⅓ ln D) and dilutes the wino/leptogenesis budget by D (DM mass ∝ D, D394). Near the high edge it leaves no trace.
+- Caveats (not in the locked rule): decay width with c = 1 (order-one uncertainty ⇒ window edges move by ~×2); possible τ_q → gravitino decays (moduli-induced gravitino problem) not checked; assumes oscillation starts before reheating ends (true for m ≫ H(T_R) ≈ 10 GeV).
+- Result: field_tests/results/q4_tauq_dilution.txt; code theory/quarks/q4_dilution.py. MAP: none. Next: Q5 — can the Weave's own potential hold a heavy τ_q at an interior, CP-violating point?
