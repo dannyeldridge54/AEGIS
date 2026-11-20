@@ -16888,3 +16888,14 @@ The open caveat of D1713 was the large-scale gauge behaviour of the new coupled 
 - ψ/φ at a = 0.01: 0.975 vs 0.975 (neutrino anisotropic stress, unchanged).
 The coupled run follows the standard adiabatic evolution (the ≈ 9/10 drop through equality), differing by ≤ 0.4% (expected from the coupling's slightly different background). No spurious growth or gauge mode.
 Verdict: the D1713 caveat is closed at this level. The patch is validated in background (3e-7), sub-horizon growth (1e-5) and super-horizon evolution.
+
+## D1716 RESULT (CENTRE, 19 Nov 2026) — "negative space" DERIVED from the Weave: the coupled thread makes a sign-switching effective Λ by itself (PREREG_NEGSPACE_DERIVE)
+Mechanism: with b < 0 the thread rises and dark matter slowly loses mass (4.6% since recombination at the D1710 point). An analysis that fixes the dark-matter density from the CMB books that missing mass as NEGATIVE dark energy, ρ_DE,eff = ρ_φ + [ρ_c − ρ_c*(a*/a)³]. The bracket grows as a⁻³ into the past, so the effective Λ is negative early and positive late. This is Danny's "negative space" (D1692/D1695, ΛsCDM), now coming out of the Weave instead of being put in; the V ≥ 0 objection of D1692 does not apply because the field's own energy never goes negative.
+Numbers (CLASS background, D1713-validated, amp 1.83, b = −0.074, no refit; script field_tests/scripts/negspace/negspace.py, result field_tests/results/negspace_D1716.json):
+- ρ_DE,eff/ρ_DE,eff(0) = 1.00, 0.97, 0.89, 0.75, 0.55, 0.28 at z = 0, 0.5, 1, 1.5, 2, 2.5; then −0.05 (z = 3), −0.98 (z = 4), −4.1 (z = 6), −16.6 (z = 10).
+- One sign change, z† = 2.93. Our real-data ΛsCDM fits put z† at 2.37–2.64; locked window 1.5–3.2 → DERIVED ✓.
+- Control (uncoupled thread): no sign change (stays 1.06–1.09) ✓.
+- Shape: NOT ΛsCDM's flat −Λ. Here the negative part deepens like a⁻³ (r3 = −0.05 vs ΛsCDM's −1) → SHAPE MATCH ✗. The Weave's negative space is a "dark-matter deficit" that looks like negative Λ growing into the past, not a constant AdS vacuum.
+Reading: the two ideas Danny had (negative space, and the dark-matter coupling that fixed the weak spot) are the same physics seen in two bookkeepings. Both shorten D_M(z*) the same way, which is why ΛsCDM and the coupled thread both gained through the CMB distance (D1706).
+Caveats: depends on normalising ρ_c at z* (the CMB's own normalisation, so the natural choice); D1710's point, not yet the full-Planck best fit (D1713 running); the deepening shape is a prediction that separates it from ΛsCDM at z ≳ 3 (Lyα BAO, high-z DESI).
+Status: DERIVED (z†), shape differs from ΛsCDM. Register: C8 alternative "negative space" is now a CONSEQUENCE of C8's coupled fix, not a separate postulate.
