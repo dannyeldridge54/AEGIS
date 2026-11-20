@@ -1,4 +1,4 @@
-# CERN+1 and Hyperion — full map: modules, data, how current, what to update (started 19 Nov 2026, 22:05 CT)
+# CERN+1, Hyperion and Janus — full map: modules, data, how current, what to update (started 19 Nov 2026, 22:05 CT)
 Danny 22:01: "CERN plus one and Hyperion only — get them up to date and fully mapped out with new data." Loop: one gap per 15 min, top of the queue first.
 Rules: lock before recomputing; data-file downloads need Danny's OK; each row's "status" changes only with a D-note.
 
@@ -52,3 +52,14 @@ Rules: lock before recomputing; data-file downloads need Danny's OK; each row's 
 | statistics fully documented | CLs with stated test statistic, two independent routes (pyhf + exact Poisson) | DONE (stats.py); doc page R4 |
 | covariance / simplified likelihoods (CMS) | multi-bin simplified likelihood with covariance | queued R5 |
 | systematic validation against the experiments | validation report: every recast vs published limit (ATLAS 36, 136, 137) | partial (selftest); report R6 |
+
+## Janus (tools/janus_calc = inflation calculator; tools/janus_lt = late-universe) — added Danny 22:10 "get them Janus too"
+| module | what it does | data / references | newest data to check | gap | status |
+|---|---|---|---|---|---|
+| janus_calc core / core_jit | exact single-field Mukhanov–Sasaki n_s, r, α_s | validated vs slow-roll + published models | ACT DR6 / SPT-3G 2025–26 n_s, BICEP/Keck r | HIGH (data) | validated physics |
+| anyV / models / observe | any potential; SERAPIS branches; reheating → N* → observables with error bars | — | — | none | validated |
+| mfms / mfms_nc / mf_jit / twofield | multi-field MS, curved field space, δN f_NL | MultiModeCode, Kaiser+ | — | none | validated |
+| janus_lt background / recomb / growth / transfer | expansion, recombination, growth, EH98 transfer | first principles; RECFAST | — | low | validated |
+| janus_lt desi | DESI DR2 BAO likelihood | 2503.14738 Table IV | DESI DR3 (when public) | medium (future) | DR2 |
+| settings (to build) | presets: CMB datasets (Planck, ACT DR6, SPT-3G, CMB-SPA), BAO (DESI DR2), SN (Pantheon+, DESY5, Union3); model library; exports | — | — | queued J1 | — |
+Janus queue (interleaved with CERN+1/Hyperion): J1 settings + exports; J2 complaints search (CAMB/CLASS/Cobaya/inflation-calculator users) → build list; J3 newest n_s/r data (ACT DR6, SPT-3G, BK) into the presets with pulls.
