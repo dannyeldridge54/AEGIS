@@ -143,3 +143,6 @@ Blocked, recorded: SPHEREx QR2 (band D1 HiPS published) and the Rubin First Look
 
 ### R4 version stamp + stats doc (20 Nov 2026)
 `aegis version` now prints the release, the exact code (git hash, +dirty if edited) and the Python version, e.g. `aegis 2026.11.20 (code 52a9a9ab; Python 3.13)`. `python3 -m tools.toolkit_stats` writes tools/TOOLKIT_STATS.md: modules, lines and test files per toolkit, plus the tests passed or failed when it is run. First run: CERN+1 35/35, Hyperion 10/10, Janus 9/9, Mapper 5/5, shared 7/7, with 0 failures.
+
+### H1b typed columns, units and VOTable (20 Nov 2026)
+ECSV exports now declare each column's real type (float64 / int64 / bool / string) and its unit (GeV, fb, kpc, solMass, GeV²/cm⁵, …, from the UNITS table in tools/janus_astro/settings.py). Before this, every column read back as text. New `fmt='votable'` writes an IVOA VOTable through astropy, with types and units, so TOPCAT and Aladin open it directly. Shared by Hyperion, Janus and CERN+1 exports. Tests: astropy reads the units back (GeV) and the numeric types.

@@ -22,3 +22,16 @@ def test_ecsv_reads_in_astropy():
 def test_cern1_scan_prov():
     d = json.loads(C.scan('run3', 'wino', (500,), prov=True)); assert d['provenance']['settings']['run'] == 'run3'
     assert 'name: version' in C.scan('run3', 'wino', (500,), fmt='hepdata', prov=True)
+
+def test_h1b_ecsv_units_and_types():
+    try: from astropy.table import Table
+    except ImportError: return
+    t = Table.read(H.export([{'model': 'x', 'mass_GeV': 700.0, 'sigma_fb': 12.5, 'n': 3}], 'ecsv'), format='ascii.ecsv')
+    assert str(t['mass_GeV'].unit) == 'GeV' and t['sigma_fb'].dtype.kind == 'f' and t['n'].dtype.kind == 'i' and t['model'][0] == 'x'
+
+def test_h1b_votable():
+    try: from astropy.io.votable import parse_single_table
+    except ImportError: return
+    x = H.export([{'mass_GeV': 700.0, 'sigma_fb': 12.5}], 'votable', provenance('CERN+1', {}, [], []))
+    t = parse_single_table(io.BytesIO(x.encode())).to_table()
+    assert str(t['mass_GeV'].unit) == 'GeV' and abs(t['sigma_fb'][0] - 12.5) < 1e-12

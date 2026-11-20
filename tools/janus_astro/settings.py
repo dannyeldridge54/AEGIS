@@ -49,6 +49,19 @@ def jfactor(profile='Einasto', survey='HESS_IGS', rho_sun=0.4, r_sun=8.21):
     return dict(profile=profile, survey=survey, rho_sun=rho_sun, r_sun=r_sun,
                 J_GeV2_cm5=J.J_route_A(rho, r_sun, S['psi_max_deg'], S['b_mask_deg']))
 
+# H1b (20 Nov 2026): real column types and units in ECSV, so astropy gives numbers with units, not strings.
+UNITS = {'omega_b': '', 'Yp': '', 'DH': '', 'M_max_Msun': 'solMass', 'rho_sun': 'GeV / cm3', 'r_sun': 'kpc',
+         'J_GeV2_cm5': 'GeV2 / cm5', 'mass_GeV': 'GeV', 'sigma_fb': 'fb', 'lumi_fb': '1 / fb', 'sqrt_s_TeV': 'TeV',
+         'ctau_cm': 'cm', 'tau_ns': 'ns', 'dm_MeV': 'MeV', 'wino_reach_GeV': 'GeV', 'Nstar': '', 'ns': '', 'r': '', 'alpha_s': ''}
+def _ecsv_col(c, rows):
+    vals = [r[c] for r in rows if c in r and r[c] is not None]
+    if vals and all(isinstance(v, bool) for v in vals): dt = 'bool'
+    elif vals and all(isinstance(v, int) and not isinstance(v, bool) for v in vals): dt = 'int64'
+    elif vals and all(isinstance(v, (int, float)) and not isinstance(v, bool) for v in vals): dt = 'float64'
+    else: dt = 'string'
+    u = UNITS.get(c, '')
+    return f'# - {{name: {c}, datatype: {dt}' + (f', unit: {u}' if u and dt in ('float64', 'int64') else '') + '}\n'
+
 def sources():
     """Every stored measurement's source string (for the provenance block)."""
     return [f'{q}:{k} = {m[2]}' for q, d in DATA.items() for k, m in d.items()]
@@ -58,11 +71,17 @@ def export(rows, fmt='json', prov=None):
     prov: optional provenance dict (tools/provenance.py) embedded in the output (H1a)."""
     if fmt == 'json':
         return json.dumps(rows if prov is None else {'provenance': prov, 'rows': rows}, indent=1, default=float)
+    if fmt == 'votable':   # H1b: IVOA VOTable via astropy (typed, with units); provenance goes in the table meta
+        from astropy.table import Table
+        from astropy.io.votable import from_table
+        t = Table.read(export(rows, 'ecsv', prov), format='ascii.ecsv')
+        if prov: t.meta['description'] = 'AEGIS ' + str(prov.get('toolkit')) + ' code ' + str(prov.get('version'))
+        b = io.BytesIO(); from_table(t).to_xml(b); return b.getvalue().decode()
     cols = list(dict.fromkeys(k for r in rows for k in r))
     buf = io.StringIO()
     if fmt == 'ecsv':
         from tools.prov_block import ecsv_meta
-        buf.write('# %ECSV 1.0\n# ---\n# delimiter: \',\'\n# datatype:\n' + ''.join(f'# - {{name: {c}, datatype: string}}\n' for c in cols)
+        buf.write('# %ECSV 1.0\n# ---\n# delimiter: \',\'\n# datatype:\n' + ''.join(_ecsv_col(c, rows) for c in cols)
                   + (ecsv_meta(prov) if prov else '# meta: {source: Hyperion (AEGIS)}\n'))
     elif prov:
         from tools.prov_block import comment_lines
