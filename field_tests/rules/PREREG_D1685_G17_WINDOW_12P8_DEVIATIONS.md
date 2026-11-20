@@ -1,0 +1,3 @@
+# DEVIATIONS for PREREG_D1685_G17_WINDOW_12P8 (written before the extra check runs)
+D1 (validation design). R0 as locked compared the 12.8-GeV grid with D1664's 5.03-GeV grid at "nearest masses" (≤ 0.5 % apart). It FAILED (max relative difference in widest-open-decades 10.7 %; result kept on record). Diagnosis before any rerun: the two grids sample different masses, and the collider (prompt) limits are jagged in mass, so a 0.5 % mass shift can move an interval edge — the comparison tests grid sampling, not the code.
+Added check R0' (the intent of R0): rerun the modified script with its default top mass (5.03) and require the output to be IDENTICAL to the committed D1664 json (every row). The 12.8-GeV results are not rerun and not changed.
