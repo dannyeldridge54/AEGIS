@@ -25,7 +25,16 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W3 control panel · next stage: P postulate (R done 05:04 CT).
+Item W3 control panel · next stage: E1 engineer (P done 05:05 CT; acceptance rules below).
+Postulate W3 (acceptance rules, fixed before building; engineering, so no physics PREREG):
+A1 One page tools/weave_control/ui/index.html; runs (a) in a browser via tools/weave_control/server.py (GET /, POST /api/run → engine.run JSON, GET /api/finder?target=… → PNG), and (b) inside Studio via window.pywebview.api.weave_run when present. Same page, one code path that picks the transport.
+A2 Studio look: the Studio tokens and fonts, neon/prismatic; plus a light theme toggle for printing. Contrast ≥ 4.5:1 for text in both themes.
+A3 Scorecard strip: categories A–E, each a lamp (pass/tension/fail/open) with the worst status of its levels; clicking jumps to the level.
+A4 One panel per level (8): knobs = that level's inputs (select or number with units and ranges); readouts with units; status lamp; its chart; labels (P/F/G and notes) and data sources in a footnote. Changing any knob re-runs the engine (debounced 400 ms) and shows a 'computing' state; errors appear in the panel, never as a blank.
+A5 Charts (SVG, no external libraries): Inflation n_s–r plane with each CMB n_s set as a 1σ band and r limits as lines, model point; BBN pull bars ±3σ; Late Δχ² and ΔAIC bars for 3 SN sets + S₈ pull dots; Colliders σ(fb) readout + ATLAS 670 GeV line on a mass axis; Galaxy f_max vs f_pred bracket at the 3 H.E.S.S. masses; Stars M_max bar vs J0740 band; Sky finder chart image + GC annulus note.
+A6 Every number shown comes from the engine response; nothing hard-coded in the page except axis ranges.
+A7 Playwright: desktop 1440 and phone 390, both themes; no console errors; no horizontal scroll; every control has an accessible name; one knob change updates a readout.
+A8 Engine response time with cache ≤ 1.5 s for a single knob change.
 W3 research notes: "full display capabilities like Janus" = AEGIS Studio (apps/aegis_studio): a pywebview desktop app (Janus.exe) with a neon/prismatic console (tokens --bg #04020b, --cyan #2f8bff, --violet #7a5cff, --magenta #d43cff, --amber #ff6ec7; Bahnschrift/Segoe/Cascadia fonts), a WebGL stage with tabs (Weave, Landscape, Onion, Vortex, Black hole, Strings, Memory stars, Classic), and a right-hand rack: Knobs, readout, Data (n_s, r) plot, Scope, Wiring, Live calculations. Python is exposed through class Api (window.pywebview.api.recompute(N*, C), tool(), test_node() …).
 Design consequence: the Weave Control panel should (1) be a new Studio tab 'Control' using the same tokens and rack layout, (2) call a new Api.weave_run(params) → tools.weave_control.engine.run, and (3) also run standalone in a browser via a tiny local server (/api/run) with the same page, so it can be tested with Playwright and used without the exe. Per level: knobs (its inputs), readouts (outputs with units), a data chart (n_s–r plane with the CMB sets; BBN pull bars; Δχ²/ΔAIC bars + S₈ pulls; σ×L vs mass with the ATLAS line; f_max vs f_pred band at the three H.E.S.S. masses; M_max vs J0740; finder chart for the sky target and the GC annulus), a status lamp, and source/label footnotes. A scorecard strip across categories A–E on top.
 W2/V2 outcome (DEVIATIONS D1 written and pushed first): gamma line at the three H.E.S.S. IGS 2026 masses, verdict at R = 0.794, R = 0.658 edge shown:
@@ -84,6 +93,7 @@ W2 research notes (04:53 CT):
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:05 CT W3/P postulate: acceptance rules A1–A8
 - 05:04 CT W3/R research: Studio (Janus) architecture and style read; design consequence recorded
 - 05:03 CT W2/V2 signed off (DEVIATIONS D1; three masses; over-closure flag)
 - 05:00 CT W2/F referee: 6 points (3 major: cite arXiv:2608.07234, NLL band, three limit masses); engine reproduces D1125's 0.143
