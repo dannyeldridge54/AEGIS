@@ -19,6 +19,7 @@ Status words: lit · formula (paper fit, m ≤ 7) · extrap · computed · deriv
 | pair | interaction | number | status |
 |---|---|---|---|
 | up (8) ↔ down (1) | CKM mixing = mismatch of the two rungs' matrices | best O(1): |V_us| 0.195 (0.87×), |V_cb| 0.043 (1.03×), |V_ub| 0.0011 (0.30×), J 8.9e-6 (0.29×); m_s/m_b 0.38× | computed FAIL (D1738); better than one modulus (χ² 54→39) |
+| up (8–10) ↔ down (1), weight-8/6/4 model | CKM + masses | χ² 5.8; pass m_d/m_b, m_c/m_t, m_u/m_t, V_us, J; miss m_s/m_b 0.54×, V_cb 1.27×, V_ub 0.73× | computed FAIL, closest so far (D1739) |
 | up (8) ↔ down (1) | strong CP: θ̄ = 0 for any rungs if weights anomaly-free | θ̄ = 0 | lit (FST) |
 | down (1) ↔ charged leptons (knot) | NOT the same rung; hierarchies by different mechanisms (slip vs Z₃ numbers) | ΔQ(rung 1) = 8.5e-3 | computed (D1737) |
 | quarks (ρ side) ↔ neutrinos (i) | different knots ⇒ small CKM vs large PMNS | θ_C 13° vs θ₁₂ 34° | consistent (qualitative) |
