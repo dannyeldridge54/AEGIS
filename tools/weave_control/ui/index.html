@@ -190,6 +190,19 @@ function chartSky(L) {
   return (window.pywebview || !src ? '' : `<img class="finder" alt="Finder chart for ${esc(o.name)}" src="${src}">`) +
     (gc ? `<p class="notes">Science target from the Galaxy level: ${esc(gc.name)} at RA ${gc.ra}°, Dec ${gc.dec}°. <button data-target="${gc.ra},${gc.dec}" class="goto">Chart it</button></p>` : '');
 }
+function chartQuarks(L) {
+  const o = L.outputs, c = Math.sqrt(3) * 0.0145, e = m => c / (m + 1/16);
+  const lo = Math.log10(5e-4), hi = Math.log10(0.06), x = v => 40 + (Math.log10(v) - lo) / (hi - lo) * 340;
+  let s = `<rect x="${x(e(14))}" y="22" width="${x(e(5)) - x(e(14))}" height="44" fill="var(--violet)" opacity=".22"><title>up quarks, 68% rung band 5–14 (D1743)</title></rect>`;
+  s += `<rect x="${x(0.028)}" y="22" width="${x(0.038) - x(0.028)}" height="44" fill="var(--sky)" opacity=".22"><title>single-modulus quark fits need |ε| 0.028–0.038 (2212.13336)</title></rect>`;
+  for (let m = 1; m <= 32; m++) s += `<line x1="${x(e(m))}" x2="${x(e(m))}" y1="30" y2="58" stroke="var(--line)" stroke-width="${m === 1 || m === 8 ? 2 : 1}"><title>rung ${m}: |ε| = ${e(m).toFixed(5)}</title></line>`;
+  s += `<circle cx="${x(e(1))}" cy="44" r="6" fill="var(--magenta)"><title>down quarks, rung 1 (D1733)</title></circle><text x="${x(e(1))}" y="18" text-anchor="middle">down · 1</text>`;
+  s += `<circle cx="${x(e(8))}" cy="44" r="6" fill="var(--cyan)"><title>up quarks, most probable rung 8 (68%: 5–14)</title></circle><text x="${x(e(8))}" y="18" text-anchor="middle">up · 8 (5–14)</text>`;
+  s += `<circle cx="${x(o.eps_abs)}" cy="44" r="9" fill="none" stroke="var(--fg)" stroke-width="2"><title>selected class m = ${L.inputs.sugra_m}: |ε| = ${num(o.eps_abs,3)}</title></circle>`;
+  s += `<text x="40" y="114">← toward knot ρ (leptons, rung ≳ 400)</text><text x="380" y="114" text-anchor="end">bigger slip →</text>`;
+  s += `<text x="40" y="132" fill="var(--open)">knot i: neutrinos · dark thread · arc (m,n): CP-conserving</text>`;
+  return frame(s + axisX(40, 380, 66, [[x(0.001),0.001],[x(0.003),0.003],[x(0.01),0.01],[x(0.03),0.03]], v => v, '|ε| = |τ − ρ| (log)'), 142);
+}
 function chartFlavour(L) {
   const o = L.outputs, ds = L.data.filter(d => d.name.startsWith('sin²θ₁₂'));
   const lo = 0.28, hi = 0.35, x = v => 150 + (v - lo) / (hi - lo) * 250;
@@ -211,7 +224,7 @@ function chartFlavour(L) {
   d += `<text x="10" y="186" >dots: TM1 δ_CP (pink s₂₃² 0.561, amber 0.470)</text>`;
   return frame(s, h + 36) + frame(d, 192);
 }
-const CHARTS = {flavour: chartFlavour, inflation: chartInflation, bbn: chartBBN, late: chartLate, colliders: chartColliders, galaxy: chartGalaxy, stars: chartStars, sky: chartSky};
+const CHARTS = {flavour: chartFlavour, quarks: chartQuarks, inflation: chartInflation, bbn: chartBBN, late: chartLate, colliders: chartColliders, galaxy: chartGalaxy, stars: chartStars, sky: chartSky};
 
 // ---------- render ----------
 function knobHTML(k, v, level) {

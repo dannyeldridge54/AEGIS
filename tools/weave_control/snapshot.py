@@ -9,6 +9,7 @@ from tools.weave_control import engine as E
 GRID = {   # level id: {knob: [values]}; every other knob stays at its default
     'inflation': dict(inflation_model=None, Nstar=[50.0, 55.0, 60.0]),
     'flavour':   {},
+    'quarks':    dict(sugra_m=[1, 2, 4, 8, 13], tauq_mass_GeV=[1e9, 1e11, 1e12], tauq_phi0=[1.0]),
     'bbn':       dict(omega_b=[0.0220, 0.02237, 0.0226], dark_sector=None),
     'late':      dict(b_A=[-0.1, -0.06, -0.041, -0.02, 0.0, 0.02], dphi=[0.64]),
     'colliders': dict(wino_mass_GeV=[440.0, 700.0, 1000.0, 1500.0, 2000.0, 2900.0], run=None),
