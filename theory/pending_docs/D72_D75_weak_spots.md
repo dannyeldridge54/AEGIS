@@ -16843,3 +16843,11 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
 - Pettorino et al. (arXiv:1305.7457, Planck 2013 + extras): Q = −βρ_cφ′, φ in reduced Planck units, i.e. ρ_c ∝ a⁻³e^{−βφ}; our ρ_c ∝ a⁻³e^{b_cφ} (same units), so β = −b_c = 0.062.
 - Their fits: Planck WP + BAO, β = 0.036 ± 0.016; Planck WP + HST, β = 0.066 ± 0.018; Planck WP + HighL + BAO, 0.035 ± 0.016. Our 0.062 sits 1.6σ above the BAO combination and on top of the HST combination. NOT excluded by those analyses. Note: they are full-CMB analyses (G_eff = G(1 + β²) for DM perturbations), not compressed, and older Planck releases. A Planck-2018/ACT bound was not checked.
 - Combined with D1709: the fix's coupling is of an allowed size; the open issue is the narrow corner in the start parameter (D1710 running).
+
+## D1710 RESULT (19 Nov 2026) — WEAK SPOT FIXED (candidate): the coupled thread on the EXACT curve matches CPL on real data (PREREG_COUPLED_EXACT) → fix_stands ✓
+- BAO + SN + CMB: Δχ² = −10.76 versus ΛCDM; CPL −10.84 (gap 0.08); uncoupled thread −4.84 (−4.65 exact).
+- Best fit: amp = 1.83 (OFF its bound; with the exact curve this is a start low on the plateau, still above the floor at ρ, which sits at amp ≈ 8 in leading-order units); b_c = −0.074 (β = 0.074 in Pettorino's convention); Ω_m 0.313, h 0.674, ω_b 0.02228.
+- Uncoupled-observer w_eff: −0.83 (z = 0), −0.98 (0.5), −1.03 (1), −1.12 (2). The phantom-crossing appearance is reproduced; the field itself never crosses −1.
+- D1708's "corner" was an artefact of the leading-order shape's bound. With the exact curve the minimum is interior and slightly deeper.
+- Coupling size: β = 0.074 is 0.4σ from Planck WP + HST (0.066 ± 0.018) but 2.4σ above Planck WP + BAO (0.036 ± 0.016) in the 2013-era fits (D1711). A modern full-CMB bound, and the effect of G_eff = G(1 + β²) on dark-matter clustering (σ₈/S₈), are NOT checked. Those are the remaining tests.
+- Weave reading: the dark sector is ONE thread coupled to the dark baryon X, consistent with X's mass depending on the modulus (P-brane: X on the D7 whose gauge coupling depends on Kähler moduli).
