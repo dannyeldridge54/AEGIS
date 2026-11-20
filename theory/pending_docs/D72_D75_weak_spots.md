@@ -16899,3 +16899,12 @@ Numbers (CLASS background, D1713-validated, amp 1.83, b = −0.074, no refit; sc
 Reading: the two ideas Danny had (negative space, and the dark-matter coupling that fixed the weak spot) are the same physics seen in two bookkeepings. Both shorten D_M(z*) the same way, which is why ΛsCDM and the coupled thread both gained through the CMB distance (D1706).
 Caveats: depends on normalising ρ_c at z* (the CMB's own normalisation, so the natural choice); D1710's point, not yet the full-Planck best fit (D1713 running); the deepening shape is a prediction that separates it from ΛsCDM at z ≳ 3 (Lyα BAO, high-z DESI).
 Status: DERIVED (z†), shape differs from ΛsCDM. Register: C8 alternative "negative space" is now a CONSEQUENCE of C8's coupled fix, not a separate postulate.
+
+## D1712 RESULT (RIGHT, 19 Nov 2026) — full Planck + DESI DR2 + SN, the UNCOUPLED thread on the EXACT curve (PREREG_PLANCK_COUPLED; coupled runs STOPPED per DEVIATIONS D1)
+Gate passed (−0.006). Runs: Union3 under the original prior; Pantheon+ and DES-Y5 after DEVIATIONS D2/D4/D5 (prior fix; restart fixes, no physics change).
+Δχ² vs stored ΛCDM (2433.52 / 2677.37 / 1056.28), same CAMB stack:
+| SN | exact thread | (leading-order thread, D1636) | w0wa |
+| Pantheon+ | −2.38 (amp 0.170, H0 67.59, Ωm 0.308) | −1.33 | −9.11 |
+| DES-Y5 | −8.98 (amp 0.239, H0 66.78, Ωm 0.315) | −9.38 | −19.72 |
+| Union3 | −1.93 (amp 0.179, H0 67.50, Ωm 0.309) | −2.64 | −15.02 |
+Reading: the exact curve changes the full-Planck score by ≤ 1 per SN set (as at compressed level, D1696). The uncoupled thread still trails w0wa by 6–13 on full Planck: the weak spot (C8) is real on full data. Its fix (coupling) is now being tested in patched CLASS (D1713), which also refits ΛCDM in the same code.
