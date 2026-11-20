@@ -17,3 +17,9 @@ def test_j3_constraint_sets():
     assert S.CONSTRAINTS['r']['PR4+BK18'][0] == 0.032
     sc = S.score(S.predict('starobinsky', 55))
     assert len(sc) == len(S.CONSTRAINTS['ns']) + len(S.CONSTRAINTS['r']) and sc['r:PR4+BK18'] == 'pass'
+
+def test_j3b_weave_full():
+    p = S.predict('serapis_10d', 60)
+    assert abs(p['ns'] - 0.97065) < 1e-4 and abs(p['r'] - 5.41e-4) < 1e-5 and 50 < p['Nstar'] < 51
+    assert abs(S.predict('serapis_6d')['r'] - 1.069e-3) < 1e-5
+    assert all(v == 'pass' for k, v in S.score(p).items() if k.startswith('r:'))

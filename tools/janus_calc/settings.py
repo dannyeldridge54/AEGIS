@@ -27,7 +27,18 @@ CONSTRAINTS = {   # quantity: {dataset: (value, sigma or upper limit, kind, sour
            'P-ACT+BK18':   (0.038, None, 'upper95', 'Planck + ACT DR6 + BK18 (95% CL; ACT DR6 extended-models paper, 2025)'),
            'PR4+BK18':     (0.032, None, 'upper95', 'Planck PR4 + BK18, free tau (Tristram et al. 2022, PRD 105 083524)')},
 }
+# J3b (20 Nov 2026): the FULL SERAPIS-Lambda predictions (species plateau + Ushas tilt), taken read-only from the locked
+# exact Mukhanov-Sasaki references in tools/serapis_calc/p3s.py. N* is NOT free for these: it is fixed self-consistently
+# by the reheating history (~50.4-50.6), so predict() ignores the Nstar argument for them and says so.
+WEAVE_FULL = {'serapis_10d': ('SPECIES32 X, D=10', 8e-7, 10), 'serapis_6d': ('P3D6 X, D=6', 2.64e-6, 6)}
+MODELS.update({'serapis_10d': ('species plateau + Ushas tilt C = 8e-7, D = 10', 'Weave FULL prediction, 10D phase (locked exact MS, p3s.py)'),
+               'serapis_6d':  ('species plateau + Ushas tilt C = 2.64e-6, D = 6', 'Weave FULL prediction, 6D phase (locked exact MS, p3s.py)')})
 def predict(model='starobinsky', Nstar=55.0, formula=None):
+    if model in WEAVE_FULL and not formula:
+        from tools.serapis_calc.p3s import REFERENCE
+        ref = REFERENCE[WEAVE_FULL[model]]
+        return dict(model=model, V=MODELS[model][0], Nstar=float(ref['Nstar']), ns=float(ref['ns']), r=float(ref['r']),
+                    alpha_s=float(ref['alpha_s']), note='N* fixed by reheating (Nstar argument ignored); locked exact-MS reference. The tilt C was CHOSEN to give n_s = 0.97065 (p3s.tilt_for_ns), so n_s is a fit, not a prediction; r and alpha_s at that n_s are the predictions')
     expr = formula or MODELS[model][0]
     s = core.spectra3(anyV.from_formula(expr), float(Nstar))
     return dict(model=model if not formula else 'custom', V=expr, Nstar=float(Nstar),

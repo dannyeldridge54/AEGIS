@@ -129,3 +129,7 @@ Bug found and fixed on the way: the ECSV header lacked `delimiter: ','`, so astr
 ### J3 newest n_s / r data in Janus (20 Nov 2026)
 CONSTRAINTS now has 8 n_s sets (Planck 2018, ACT DR6, P-ACT, P-ACT-LB 0.9743 ± 0.0034, P-ACT-LB2 0.9752 ± 0.0030, SPT-3G D1 0.951 ± 0.011, CMB-SPA, CMB-SPA+DESI) and 3 r limits (BK18 < 0.036, P-ACT+BK18 < 0.038, PR4+BK18 < 0.032). Each carries its source; values cross-checked against arXiv:2510.18656 Table I. The sets overlap, so `score()` reports one pull per set and never adds them.
 What it shows at N* = 55: Starobinsky is −2.8σ from P-ACT-LB and −3.4σ from P-ACT-LB2; the Weave leading-order plateau (n_s 0.9639) is −3.1σ and −3.8σ. The full SERAPIS-Λ prediction (n_s ≈ 0.9706 with the Ushas tilt) is not scored here yet: it should become a MODELS entry so the comparison is like for like (queued as J3b).
+
+### J3b the full Weave prediction in Janus (20 Nov 2026)
+MODELS gains `serapis_10d` and `serapis_6d`, read-only from the locked exact-MS references in tools/serapis_calc/p3s.py (N* ≈ 50.4–50.6, fixed by reheating, so the N* argument is ignored for them). Scores: n_s 0.9706 is +1.4σ from Planck 2018, −0.1σ from P-ACT, −1.1σ from P-ACT-LB, −1.5σ from P-ACT-LB2 and −0.8σ from CMB-SPA+DESI. r = 5.4e-4 (10D) / 1.07e-3 (6D) passes all three r limits.
+Honest label: the Ushas tilt C was chosen to hit n_s = 0.97065 (p3s.tilt_for_ns), so n_s is a FIT, not a prediction. The predictions are r and α_s (≈ −9.7e-4) at that n_s, and the 10D/6D r ratio of 2. Those are what LiteBIRD and CMB-S4 test.
