@@ -105,3 +105,14 @@ Source: European astronomer survey (arXiv:2012.07686; ~1,000 respondents): repro
 | U1 | one CLI for all toolkits: `--format json|csv|table` on every command, `aegis <toolkit> help`, exit code 2 + plain message for unknown commands/bad input, `--version`; new commands janus models/score/table, hyperion pulls/ns/jfactor, cern runs/point/reach/export/slha | DONE (20 Nov) |
 | U2 | Sky Map web UI vs Aladin Lite / Stellarium Web | queued |
 | U3 | web dashboard for the toolkits, Playwright-checked desktop + phone | queued |
+
+## J2 (20 Nov 04:55 UTC): what cosmologists hit with CAMB / CLASS / Cobaya → Janus build list
+Sources: Cobaya "Troubleshooting in cosmological runs" (official docs); OLÉ online-learning emulator, arXiv:2503.13183 (Boltzmann calls dominate runtime; 30–350× speedups reported, posterior shifts < 0.05σ); BOBE evidence emulator, arXiv:2601.11150. Our own D1713 night also hit two of these (silent failures returning −∞; minimiser stuck above a nested model).
+| pain point | Janus feature | id |
+|---|---|---|
+| silent theory failures → sampler stuck / null likelihood | `janus check <model>`: evaluates once with every component's errors shown, flags −∞/NaN returns and which component produced them | J2a |
+| minimiser ends above a nested model (e.g. above ΛCDM) — invisible unless you look | automatic nested-model guard: after any fit, compare with the nested baselines and warn if χ² is higher | J2b |
+| Boltzmann calls dominate runtime | fast-route first: Janus exact MS for inflation (no Boltzmann needed for n_s, r) + optional cached/emulated late-time distances (janus_lt already analytic); report time per call | J2c |
+| unclear what each component received/produced | `--debug` trace in Janus scoring (inputs, outputs, timings per step) | J2d |
+| CAMB vs CLASS disagree for exotic models | built-in cross-code check where both are available (our D1713 gate is the template) | J2e |
+| model comparison/evidence is expensive | quick evidence proxy (Laplace/BIC from the best fit) labelled as an estimate, with the exact route left to Cobaya/PolyChord | J2f |
