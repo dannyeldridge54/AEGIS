@@ -25,7 +25,9 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W3 control panel · next stage: E1 engineer (P done 05:05 CT; acceptance rules below).
+Item W3 control panel · next stage: V1 review (E1 done 05:09 CT).
+E1: tools/weave_control/server.py (127.0.0.1:8790; /api/run, /api/finder), ui/index.html (Studio tokens, scorecard A–E, 8 panels with knobs/readouts/charts/tests/sources), engine.knobs(), finder accepts 'ra,dec'. Playwright: desktop 1440 dark + phone 390 light, 8 panels, 0 console errors, 0 unnamed controls, no h-scroll, knob change 1000 → 1500 GeV updates σ 2.38 → 0.163 fb in 0.6–0.8 s (A8 ≤ 1.5 s OK).
+Seen in the screenshot, for V1: galaxy chart y-scale squashes the band and f_max line (labels overlap at the right); S₈ bar labels clipped on the left; collider 'ATLAS 670' label overlaps the mass marker; units doubled ('pairs · pairs', 'sigma fb · fb'); a STALE galaxy label still says 'the only stored limit is at 1 TeV' (contradicts DEVIATIONS D1); Studio Api.weave_run not yet added (A1b).
 Postulate W3 (acceptance rules, fixed before building; engineering, so no physics PREREG):
 A1 One page tools/weave_control/ui/index.html; runs (a) in a browser via tools/weave_control/server.py (GET /, POST /api/run → engine.run JSON, GET /api/finder?target=… → PNG), and (b) inside Studio via window.pywebview.api.weave_run when present. Same page, one code path that picks the transport.
 A2 Studio look: the Studio tokens and fonts, neon/prismatic; plus a light theme toggle for printing. Contrast ≥ 4.5:1 for text in both themes.
@@ -93,6 +95,7 @@ W2 research notes (04:53 CT):
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:09 CT W3/E1 engineer: server + control panel built and browser-tested
 - 05:05 CT W3/P postulate: acceptance rules A1–A8
 - 05:04 CT W3/R research: Studio (Janus) architecture and style read; design consequence recorded
 - 05:03 CT W2/V2 signed off (DEVIATIONS D1; three masses; over-closure flag)

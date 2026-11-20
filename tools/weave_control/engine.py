@@ -236,3 +236,26 @@ def run(params=None):
 
 if __name__ == '__main__':
     import json; r = run(); print(json.dumps({l['id']: [l['status'], l['outputs']] for l in r['levels']}, indent=1, default=str))
+
+# ---------------- knobs (W3): what the control panel may change, per level ----------------
+def knobs():
+    from tools.janus_calc import settings as J
+    from tools.lhc import settings as C
+    from tools.janus_astro import settings as H
+    return {
+        'inflation': [dict(key='inflation_model', label='Model', type='select', options=list(J.MODELS)),
+                      dict(key='Nstar', label='N* (ignored for serapis_*)', type='number', min=40, max=70, step=1, unit='e-folds')],
+        'flavour':   [],
+        'bbn':       [dict(key='omega_b', label='ω_b', type='number', min=0.020, max=0.025, step=0.0001, unit=''),
+                      dict(key='dark_sector', label='Dark sector (sets ΔN_eff)', type='select', options=list(DARK_SECTORS))],
+        'late':      [dict(key='b_A', label='Arthur coupling b_A', type='number', min=-0.3, max=0.1, step=0.001, unit=''),
+                      dict(key='dphi', label='Δφ since z*', type='number', min=0.1, max=2.0, step=0.01, unit='M_P')],
+        'colliders': [dict(key='wino_mass_GeV', label='Wino mass', type='number', min=100, max=3000, step=10, unit='GeV'),
+                      dict(key='run', label='Collider run', type='select', options=list(C.RUNS))],
+        'galaxy':    [dict(key='wino_mass_GeV', label='Wino mass', type='number', min=100, max=3000, step=10, unit='GeV'),
+                      dict(key='halo', label='Halo profile', type='select', options=list(HALO_SHAPES)),
+                      dict(key='rho_sun', label='Local DM density ρ☉', type='number', min=0.2, max=0.6, step=0.01, unit='GeV/cm³')],
+        'stars':     [dict(key='eos', label='Equation of state', type='select', options=list(H.EOS))],
+        'sky':       [dict(key='target', label='Target', type='text'),
+                      dict(key='aperture_mm', label='Aperture', type='number', min=50, max=1000, step=10, unit='mm')],
+    }

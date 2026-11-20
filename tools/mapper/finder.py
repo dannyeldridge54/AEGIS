@@ -18,6 +18,9 @@ def stars():
 
 def resolve(target):
     if isinstance(target, (tuple, list)): return float(target[0]), float(target[1]), f'RA {target[0]:.3f}°, Dec {target[1]:+.3f}°'
+    import re
+    m = re.fullmatch(r'\s*([-+]?\d+(?:\.\d+)?)\s*[, ]\s*([-+]?\d+(?:\.\d+)?)\s*', str(target))
+    if m: return resolve((float(m.group(1)), float(m.group(2))))      # "ra,dec" in degrees
     t = target.strip().lower()
     cat = planner.catalogue()
     for o in cat:                                   # exact id or name first (so 'M3' never matches 'M31')

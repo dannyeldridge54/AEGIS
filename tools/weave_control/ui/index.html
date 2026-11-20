@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weave Control</title>
+<!-- (c) Danny Lee Eldridge · AEGIS Community License. W3: one parameter set drives every level; every number comes from the engine. -->
+<style>
+:root{--bg:#04020b;--panel:#0b0620;--panel2:#120a2e;--line:#2a1f5a;--fg:#f3eeff;--muted:#b3a8e6;
+  --cyan:#2f8bff;--violet:#7a5cff;--magenta:#d43cff;--pink:#ff6ec7;--sky:#6fb8ff;
+  --pass:#3ee0a1;--tension:#ffc04d;--fail:#ff5c8a;--open:#8f86c4;
+  --f-display:"Bahnschrift","Segoe UI Semibold","Segoe UI",system-ui,sans-serif;--f-body:"Segoe UI",system-ui,sans-serif;--f-mono:"Cascadia Mono",Consolas,ui-monospace,monospace;color-scheme:dark}
+:root[data-theme=light]{--bg:#f6f4fb;--panel:#ffffff;--panel2:#f0ecfa;--line:#d9d2ef;--fg:#16122b;--muted:#564d7a;
+  --cyan:#1d5fd1;--violet:#5a3fd6;--magenta:#9b1fc0;--pink:#c0306f;--sky:#2a6fb5;--pass:#0f7a50;--tension:#8a5a00;--fail:#b3183f;--open:#6a6290;color-scheme:light}
+*{box-sizing:border-box}html{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 var(--f-body)}
+header{position:sticky;top:0;z-index:5;background:linear-gradient(90deg,var(--panel),var(--panel2) 60%,var(--panel));border-bottom:1px solid var(--line);padding:10px 16px}
+.top{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;max-width:1440px;margin:auto}
+.brand{font:700 19px var(--f-display);letter-spacing:.14em;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.meta{color:var(--muted);font:12px var(--f-mono)}
+.score{display:flex;flex-wrap:wrap;gap:6px;max-width:1440px;margin:8px auto 0}
+.cat{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--panel2);color:var(--fg);border-radius:999px;padding:3px 10px 3px 6px;font:600 12px var(--f-display);letter-spacing:.06em;cursor:pointer}
+.lamp{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none;box-shadow:0 0 8px currentColor}
+.s-pass{color:var(--pass)}.s-tension{color:var(--tension)}.s-fail{color:var(--fail)}.s-open{color:var(--open)}
+.lamp.s-pass{background:var(--pass)}.lamp.s-tension{background:var(--tension)}.lamp.s-fail{background:var(--fail)}.lamp.s-open{background:var(--open)}
+button,select,input{font:inherit;color:var(--fg);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
+button{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible,.cat:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+main{max-width:1440px;margin:auto;padding:14px 16px 40px;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;min-width:0;position:relative}
+.ph{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.ph h2{font:700 15px var(--f-display);letter-spacing:.08em;margin:0}
+.tag{font:11px var(--f-mono);color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.knobs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:10px 0}
+.knobs label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted)}
+.knobs input,.knobs select{width:100%}
+.reads{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px;margin:8px 0}
+.rd{background:var(--panel2);border-radius:10px;padding:6px 9px;min-width:0}
+.rd b{display:block;font:600 16px var(--f-mono);overflow-wrap:anywhere}.rd span{font-size:11px;color:var(--muted)}
+svg{width:100%;height:auto;display:block;margin-top:6px}
+svg text{fill:var(--muted);font:11px var(--f-body)}
+.notes{margin:8px 0 0;padding-left:16px;color:var(--muted);font-size:12px}
+.notes li{margin:2px 0}
+.err{color:var(--fail);font:12px var(--f-mono)}
+.busy::after{content:"computing…";position:absolute;top:14px;right:56px;font:11px var(--f-mono);color:var(--sky)}
+details summary{cursor:pointer;color:var(--muted);font-size:12px;margin-top:6px}
+.pulls{width:100%;border-collapse:collapse;font:12px var(--f-mono)}.pulls td{padding:2px 4px;border-bottom:1px solid var(--line)}.pulls td:last-child{text-align:right}
+img.finder{width:100%;border-radius:10px;margin-top:6px;background:#fff}
+footer{max-width:1440px;margin:auto;padding:0 16px 30px;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="brand">WEAVE CONTROL</div>
+    <div class="meta" id="meta">connecting…</div>
+    <div><button id="reset" title="Reset every knob to its default">Reset</button> <button id="theme" aria-label="Switch dark or light theme">Theme</button></div>
+  </div>
+  <nav class="score" id="score" aria-label="Scorecard by category"></nav>
+</header>
+<main id="main"></main>
+<footer id="foot">Every number on this page comes from the Weave Control engine (tools/weave_control/engine.py). Lamps: green pass, amber tension (2–3σ), red fail (≥ 3σ or a limit broken), grey open (no test yet).</footer>
+<script>
+const CAT = {A:'Inflation & loom', B:'Flavour', C:'Dark sector & late universe', D:'Matter genesis & stars', E:'Observing'};
+const $ = s => document.querySelector(s), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num = (x, d=4) => x == null ? '—' : (typeof x !== 'number' ? esc(x) : (Math.abs(x) >= 1e4 || (Math.abs(x) < 1e-3 && x !== 0)) ? x.toExponential(2) : (+x.toFixed(d)).toString());
+const UNITS = {sigma_fb:'fb', pairs:'pairs', ctau_cm:'cm', expected_reach_GeV:'GeV', M_max_Msun:'M☉', J_IGS_ROI_GeV2_cm5:'GeV²/cm⁵', J_annulus_0p5_3deg_GeV2_cm5:'GeV²/cm⁵', sigma_v_line_cm3_s:'cm³/s', limit_cm3_s:'cm³/s', limit_mass_GeV:'GeV', ra:'°', dec:'°'};
+let STATE = {params:{}, data:null, timer:null, seq:0};
+try { const t = localStorage.getItem('wc-theme'); if (t) document.documentElement.dataset.theme = t; } catch(e) {}
+$('#theme').onclick = () => { const r = document.documentElement; r.dataset.theme = r.dataset.theme === 'light' ? 'dark' : 'light'; try { localStorage.setItem('wc-theme', r.dataset.theme); } catch(e) {} };
+$('#reset').onclick = () => { STATE.params = {}; run(); };
+
+// transport: inside Studio use pywebview, otherwise the local server
+async function call(params) {
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.weave_run) return JSON.parse(await window.pywebview.api.weave_run(JSON.stringify(params)));
+  const r = await fetch('/api/run', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(params)});
+  const j = await r.json(); if (!r.ok) throw new Error(j.error || r.status); return j;
+}
+async function run() {
+  const my = ++STATE.seq; document.querySelectorAll('.panel').forEach(p => p.classList.add('busy'));
+  try { const d = await call(STATE.params); if (my !== STATE.seq) return; STATE.data = d; render(d); }
+  catch (e) { $('#meta').innerHTML = `<span class="err">engine error: ${esc(e.message)}</span>`; }
+  finally { if (my === STATE.seq) document.querySelectorAll('.panel').forEach(p => p.classList.remove('busy')); }
+}
+function setParam(k, v) { STATE.params[k] = v; clearTimeout(STATE.timer); STATE.timer = setTimeout(run, 400); }
+
+// ---------- charts (SVG, drawn from engine numbers only) ----------
+const W = 420, Hh = 170;
+function frame(inner, h = Hh) { return `<svg viewBox="0 0 ${W} ${h}" role="img">${inner}</svg>`; }
+function axisX(x0, x1, y, ticks, fmt, lab) { return `<line x1="${x0}" x2="${x1}" y1="${y}" y2="${y}" stroke="var(--line)"/>` + ticks.map(t => `<text x="${t[0]}" y="${y+14}" text-anchor="middle">${fmt(t[1])}</text>`).join('') + (lab ? `<text x="${(x0+x1)/2}" y="${y+28}" text-anchor="middle">${lab}</text>` : ''); }
+function chartInflation(L) {
+  const o = L.outputs, gs = L.data.filter(d => d.kind === 'gauss'), rl = L.data.filter(d => d.kind === 'upper95');
+  const nx = v => 40 + (v - 0.94) / (0.995 - 0.94) * 360, ry = v => 140 - Math.log10(Math.max(v, 1e-4) / 1e-4) / 3 * 120;   // r 1e-4..1e-1 log
+  let s = gs.map((d, i) => `<rect x="${nx(d.value - d.sigma)}" y="18" width="${nx(d.value + d.sigma) - nx(d.value - d.sigma)}" height="122" fill="var(--violet)" opacity="${0.05 + 0.03*i}"><title>${esc(d.name)} n_s ${d.value} ± ${d.sigma}</title></rect>`).join('');
+  s += rl.map(d => `<line x1="40" x2="400" y1="${ry(d.limit)}" y2="${ry(d.limit)}" stroke="var(--fail)" stroke-dasharray="4 3"><title>${esc(d.name)} r < ${d.limit}</title></line>`).join('');
+  s += `<circle cx="${nx(o.ns)}" cy="${ry(o.r)}" r="6" fill="var(--pink)" stroke="var(--fg)"><title>model n_s ${num(o.ns)} r ${num(o.r)}</title></circle>`;
+  s += axisX(40, 400, 140, [[nx(0.95),0.95],[nx(0.96),0.96],[nx(0.97),0.97],[nx(0.98),0.98],[nx(0.99),0.99]], v => v, 'n_s (bands: each CMB set ±1σ; dashed: r limits)');
+  s += [1e-4,1e-3,1e-2,1e-1].map(v => `<text x="34" y="${ry(v)+4}" text-anchor="end">${v.toExponential(0)}</text>`).join('') + `<text x="8" y="12">r</text>`;
+  return frame(s, 175);
+}
+function bars(items, lo, hi, label) {   // items: [name, value, cls]
+  const h = 22 * items.length + 30, x = v => 150 + (Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo) * 250;
+  let s = items.map(([n, v, c], i) => `<text x="146" y="${22*i+19}" text-anchor="end">${esc(n)}</text><rect x="${Math.min(x(0), x(v))}" y="${22*i+8}" width="${Math.abs(x(v)-x(0))}" height="14" rx="3" fill="var(--${c})"><title>${esc(n)}: ${num(v,2)}</title></rect><text x="${x(v) + (v >= 0 ? 4 : -4)}" y="${22*i+19}" text-anchor="${v >= 0 ? 'start' : 'end'}">${num(v,2)}</text>`).join('');
+  const y = 22 * items.length + 6; s += `<line x1="${x(0)}" x2="${x(0)}" y1="4" y2="${y}" stroke="var(--muted)"/>` + axisX(150, 400, y, [[x(lo),lo],[x(0),0],[x(hi),hi]], v => v, label);
+  return frame(s, h + 10);
+}
+const pc = v => typeof v === 'string' ? (v === 'pass' ? 'pass' : 'fail') : (Math.abs(v) < 2 ? 'pass' : Math.abs(v) < 3 ? 'tension' : 'fail');
+function chartBBN(L) { return bars(Object.entries(L.pulls).map(([k, v]) => [k, v, pc(v)]), -4, 4, 'pull (σ, observational errors only)'); }
+function chartLate(L) {
+  const D = L.outputs.D1725; const it = [];
+  for (const [k, r] of Object.entries(D)) { it.push([`${k} Δχ² thread`, r.d_thread, 'cyan']); it.push([`${k} ΔAIC thread`, r.dAIC_thread, 'violet']); }
+  return bars(it, -12, 4, 'vs ΛCDM (negative favours the thread)') + bars(Object.entries(L.outputs.S8_pulls).filter(([k]) => !k.includes(' lcdm ')).map(([k, v]) => [k.replace('S8 ', '').replace(' vs ', ' · '), v, pc(v)]), -4, 4, 'S₈ pull (σ)');
+}
+function chartMass(L, extra) {
+  const m = STATE.data.params.wino_mass_GeV, x = v => 20 + v / 3000 * 380;
+  let s = `<rect x="20" y="40" width="${x(670) - 20}" height="40" fill="var(--fail)" opacity=".18"><title>ATLAS excludes below 670 GeV</title></rect><line x1="${x(670)}" x2="${x(670)}" y1="30" y2="90" stroke="var(--fail)"/><text x="${x(670)+4}" y="36">ATLAS 670</text>`;
+  if (extra) s += extra(x);
+  s += `<polygon points="${x(m)-6},28 ${x(m)+6},28 ${x(m)},40" fill="var(--pink)"/><line x1="${x(m)}" x2="${x(m)}" y1="40" y2="90" stroke="var(--pink)"/>`;
+  return frame(s + axisX(20, 400, 92, [[x(0),0],[x(1000),1000],[x(2000),2000],[x(3000),3000]], v => v, 'wino mass (GeV)'), 130);
+}
+function chartColliders(L) { return chartMass(L, x => `<line x1="${x(L.outputs.expected_reach_GeV)}" x2="${x(L.outputs.expected_reach_GeV)}" y1="45" y2="88" stroke="var(--sky)" stroke-dasharray="3 3"/><text x="${x(L.outputs.expected_reach_GeV)+4}" y="86">reach ${num(L.outputs.expected_reach_GeV,0)}</text>`); }
+function chartGalaxy(L) {
+  const o = L.outputs; if (o.f_max == null) return chartMass(L, x => [440,1000,2900].map(m0 => `<circle cx="${x(m0)}" cy="65" r="4" fill="var(--sky)"><title>H.E.S.S. limit point ${m0} GeV</title></circle>`).join('')) ;
+  const y = v => 130 - Math.min(v, 0.6) / 0.6 * 110;
+  let s = `<rect x="60" y="${y(o.thermal_fraction[1])}" width="300" height="${y(o.thermal_fraction[0]) - y(o.thermal_fraction[1])}" fill="var(--pink)" opacity=".35"><title>predicted fraction ${num(o.thermal_fraction[0],3)}–${num(o.thermal_fraction[1],3)}</title></rect>`;
+  s += `<line x1="60" x2="360" y1="${y(o.f_max)}" y2="${y(o.f_max)}" stroke="var(--fail)" stroke-width="2"/><text x="364" y="${y(o.f_max)+4}">f_max ${num(o.f_max,3)}</text>`;
+  if (o.f_max_at_R_0p658) s += `<line x1="60" x2="360" y1="${y(o.f_max_at_R_0p658)}" y2="${y(o.f_max_at_R_0p658)}" stroke="var(--fail)" stroke-dasharray="4 3"/><text x="364" y="${y(o.f_max_at_R_0p658)+4}">R 0.658</text>`;
+  s += [0, 0.2, 0.4, 0.6].map(v => `<text x="54" y="${y(v)+4}" text-anchor="end">${v}</text>`).join('') + `<text x="210" y="148" text-anchor="middle">wino fraction of dark matter at ${num(o.limit_mass_GeV,0)} GeV (band: predicted; line: H.E.S.S. max)</text>`;
+  return frame(s, 155);
+}
+function chartStars(L) {
+  const m = L.outputs.M_max_Msun, d = L.data[0], x = v => 30 + (v - 1.6) / 1.0 * 360;
+  let s = `<rect x="${x(d.value - d.sigma)}" y="20" width="${x(d.value + d.sigma) - x(d.value - d.sigma)}" height="50" fill="var(--sky)" opacity=".3"><title>${esc(d.source)}</title></rect><line x1="${x(d.value)}" x2="${x(d.value)}" y1="20" y2="70" stroke="var(--sky)"/><text x="${x(d.value)+4}" y="16">J0740 ${d.value} ± ${d.sigma}</text>`;
+  s += `<rect x="30" y="34" width="${x(m) - 30}" height="22" rx="4" fill="var(--violet)"><title>M_max ${num(m,3)}</title></rect><text x="${x(m)+4}" y="50">M_max ${num(m,3)}</text>`;
+  return frame(s + axisX(30, 390, 76, [[x(1.6),1.6],[x(2.0),2.0],[x(2.4),2.4]], v => v, 'mass (M☉)'), 110);
+}
+function chartSky(L) {
+  const o = L.outputs, t = encodeURIComponent(STATE.data.params.target);
+  const gc = (o.science_targets || [])[0];
+  return (window.pywebview ? '' : `<img class="finder" alt="Finder chart for ${esc(o.name)}" src="/api/finder?target=${t}&field=6&v=${STATE.seq}">`) +
+    (gc ? `<p class="notes">Science target from the Galaxy level: ${esc(gc.name)} at RA ${gc.ra}°, Dec ${gc.dec}°. <button data-target="${gc.ra},${gc.dec}" class="goto">Chart it</button></p>` : '');
+}
+const CHARTS = {inflation: chartInflation, bbn: chartBBN, late: chartLate, colliders: chartColliders, galaxy: chartGalaxy, stars: chartStars, sky: chartSky};
+
+// ---------- render ----------
+function knobHTML(k, v) {
+  const id = `k-${k.key}-${Math.random().toString(36).slice(2,7)}`, lab = `${esc(k.label)}${k.unit ? ' (' + esc(k.unit) + ')' : ''}`;
+  if (k.type === 'select') return `<label for="${id}">${lab}<select id="${id}" data-k="${k.key}">${k.options.map(o => `<option ${o == v ? 'selected' : ''}>${esc(o)}</option>`).join('')}</select></label>`;
+  if (k.type === 'text') return `<label for="${id}">${lab}<input id="${id}" data-k="${k.key}" value="${esc(v)}" autocomplete="off"></label>`;
+  return `<label for="${id}">${lab}<input id="${id}" type="number" data-k="${k.key}" value="${v}" min="${k.min}" max="${k.max}" step="${k.step}"></label>`;
+}
+function reads(o) {
+  return Object.entries(o).filter(([k, v]) => v == null || typeof v !== 'object').map(([k, v]) => `<div class="rd"><b>${num(v)}</b><span>${esc(k.replace(/_/g, ' '))}${UNITS[k] ? ' · ' + UNITS[k] : ''}</span></div>`).join('') +
+         Object.entries(o).filter(([k, v]) => Array.isArray(v) && v.every(x => typeof x === 'number')).map(([k, v]) => `<div class="rd"><b>${v.map(x => num(x, 3)).join(' – ')}</b><span>${esc(k.replace(/_/g, ' '))}</span></div>`).join('');
+}
+function render(d) {
+  const P = d.provenance || {}; $('#meta').textContent = `code ${P.version || '?'} · ${P.created_utc || ''}`;
+  const worst = s => ['fail','tension','pass','open'].find(x => s.includes(x)) || 'open';
+  $('#score').innerHTML = Object.keys(CAT).map(c => { const ls = d.levels.filter(l => l.category === c); const st = worst(ls.map(l => l.status));
+    return `<button class="cat" data-jump="${ls[0] ? ls[0].id : ''}" title="${esc(ls.map(l => l.name + ': ' + l.status).join(' · '))}"><span class="lamp s-${st}"></span>${c} · ${CAT[c]}</button>`; }).join('');
+  $('#main').innerHTML = d.levels.map(L => {
+    const kn = (d.knobs[L.id] || []).map(k => knobHTML(k, d.params[k.key])).join('');
+    const pulls = Object.entries(L.pulls || {}); const chart = CHARTS[L.id] ? CHARTS[L.id](L) : '';
+    return `<section class="panel" id="p-${L.id}" aria-labelledby="h-${L.id}">
+      <div class="ph"><h2 id="h-${L.id}">${esc(L.name)}</h2><span class="tag">${L.category} · ${esc(L.tool)}</span><span class="lamp s-${L.status}" title="${L.status}" aria-label="status ${L.status}"></span></div>
+      ${L.error ? `<p class="err">${esc(L.error)}</p>` : ''}
+      ${kn ? `<div class="knobs">${kn}</div>` : ''}
+      <div class="reads">${reads(L.outputs)}</div>
+      ${chart}
+      ${pulls.length ? `<details><summary>Tests (${pulls.length})</summary><table class="pulls">${pulls.map(([k, v]) => `<tr><td>${esc(k)}</td><td class="s-${pc(v)}">${typeof v === 'number' ? (v > 0 ? '+' : '') + v.toFixed(2) + 'σ' : esc(v)}</td></tr>`).join('')}</table></details>` : ''}
+      <ul class="notes">${L.labels.map(x => `<li>${esc(x)}</li>`).join('')}${L.links.map(x => `<li>↔ ${esc(x)}</li>`).join('')}</ul>
+      ${L.data.length ? `<details><summary>Data and sources (${L.data.length})</summary><ul class="notes">${L.data.map(x => `<li>${esc(x.name)}${x.value != null ? ': ' + num(x.value) : ''}${x.sigma != null ? ' ± ' + (Array.isArray(x.sigma) ? x.sigma.join('/') : x.sigma) : ''}${x.limit != null ? ' (limit ' + num(x.limit) + ')' : ''} — ${esc(x.source)}</li>`).join('')}</ul></details>` : ''}
+    </section>`; }).join('');
+  document.querySelectorAll('[data-k]').forEach(el => el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', () => setParam(el.dataset.k, el.type === 'number' ? parseFloat(el.value) : el.value)));
+  document.querySelectorAll('[data-jump]').forEach(b => b.onclick = () => { const t = document.getElementById('p-' + b.dataset.jump); if (t) t.scrollIntoView({behavior: 'smooth', block: 'start'}); });
+  document.querySelectorAll('.goto').forEach(b => b.onclick = () => { STATE.params.target = b.dataset.target; run(); });
+}
+run();
+</script>
+</body>
+</html>
