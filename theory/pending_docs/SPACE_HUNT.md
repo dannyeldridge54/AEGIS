@@ -27,3 +27,8 @@ Danny 19:06: "Space hunt". Each pass: scan the newest public results, score each
 - Searched for DESI DR3, Euclid w₀w_a, LiteBIRD/Simons Observatory r. No official DESI DR3 cosmology release was found. Several GitHub issues on a third-party repo ("Unitary-Manifold", automated "FALSIFIER ALERT") cite DR3 arXiv numbers (2610.35953, 2610.40205, 2611.01505). These are UNVERIFIED and not used; they are to be checked against arXiv/DESI directly in a later pass.
 - Review found (not a new measurement): "Dark Energy After DESI DR2: observational status, reconstructions, and physical models" (arXiv:2602.05368). Useful for the thawing-model comparison, NEUTRAL.
 - Our own real-data result (D1692, D1693) is logged as the main finding of this hunt so far: thread Δχ² = −7.0 on BAO + SN, and no reversal beats it.
+
+## Pass 3 (19 Nov 2026 19:40 CT, derive-loop tick)
+- JUNO first results are now published in Nature (cover, 10 Jun 2026). Same measurement as arXiv:2511.14593, used in D1652/D1667; the Nature numbers were not re-read. → MATCH for TM1 (+1.1σ), TENSION/excluded for TM2 (already recorded).
+- MicroBooNE (Nature, Dec 2025): no eV-scale sterile neutrino behind the MiniBooNE/LSND anomalies. → NEUTRAL/consistent (the Weave has no eV sterile; its right-handed neutrinos sit at 10¹⁰–10¹² GeV, D1648).
+- FASER dark-sector briefings: no new dark-photon numbers read. → NEUTRAL (our dark photon is 0.3–5 GeV with ε ≲ 10⁻⁷, mostly below FASER's reach).
