@@ -7,10 +7,12 @@
   var readingsOpen = function () { var r = $('readings'); return r && !r.hidden; };
   var signsOpen = function () { var d = $('sarahOverlays'); return d && d.open; };
   var moreOpen = function () { var m = $('moreSheet'); return m && !m.hidden; };
+  var innerOpen = function () { return window.SarahInner && SarahInner.isOpen(); };
 
   function closeAll() {
     if (panelOpen()) $('closePanel').click();
     if (readingsOpen()) $('readings').hidden = true;
+    if (innerOpen()) SarahInner.close();
     if (signsOpen()) $('sarahOverlays').open = false;
     if (moreOpen()) $('moreSheet').hidden = true;
     var info = $('info'); if (info) info.hidden = true;
@@ -31,6 +33,7 @@
     [['layers', '🗺️', 'Layers', 'Sky pictures and what is drawn on top'], ['tour', '🧭', 'Guided tour', 'Ten stops around the sky'],
      ['learn', '📖', 'Learn', 'Short lessons'], ['aegis', '⭐', 'AEGIS stars', 'Unusual stars from the AEGIS survey'],
      ['ar', '📷', 'Point & See', 'Hold the phone up to the sky'], ['tarot', '🃏', 'Tarot spreads', 'One card to the Celtic Cross'],
+     ['inner', '🧭', 'Inner work', 'Archetypes, chakras, I Ching, runes, numbers, breath'],
      ['big', '🔠', 'Bigger text', 'Switch larger text on or off'], ['about', 'ℹ️', 'About', 'Credits and privacy']].map(function (i) {
       return '<button data-more="' + i[0] + '"><span class="mi">' + i[1] + '</span><span><b>' + i[2] + '</b><small>' + i[3] + '</small></span></button>'; }).join('') + '</div>';
   document.body.appendChild(more);
@@ -52,6 +55,7 @@
     var w = b.dataset.more; more.hidden = true;
     if (w === 'ar') { location.href = 'ar.html'; return; }
     if (w === 'tarot') { window.SarahReadings && SarahReadings.open('tarot'); mark('readings'); return; }
+    if (w === 'inner') { pushNav(); window.SarahInner && SarahInner.open('today'); mark('readings'); return; }
     if (w === 'big') { var bt = $('bigText'); if (bt) bt.click(); mark('sky'); return; }
     tab(w);
   });
@@ -62,7 +66,7 @@
 
   // Android back / browser back: close the open layer first; only leave the app from the bare sky
   window.addEventListener('popstate', function () {
-    if (panelOpen() || readingsOpen() || signsOpen() || moreOpen()) { closeAll(); mark('sky'); }
+    if (panelOpen() || readingsOpen() || innerOpen() || signsOpen() || moreOpen()) { closeAll(); mark('sky'); }
   });
   // panels opened from elsewhere (top tabs on wide screens) also get a back entry
   var p = $('panel');

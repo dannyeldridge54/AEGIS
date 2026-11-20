@@ -1,4 +1,15 @@
 # Changelog
+## 1.7.0 — 20 Nov 2026
+- New **Inner work** section (🧭 in the overlay panel and in More): a full self-help, esoteric and archetype toolkit, all original text and all on the device.
+  - **Today** — a daily reflection drawn from the real Moon phase and Moon sign: theme, affirmation, intention, a practice and a journal prompt (the same for everyone each day).
+  - **Archetypes** — your Sun · Moon · Rising archetypes (from a Sun-sign pick or a saved birth chart), plus the twelve inner (Jungian) archetypes.
+  - **Chakras** — the seven centres with element, colour, seed sound, balanced/blocked signs and a short practice.
+  - **I Ching** — cast a hexagram with the three-coin method (secure random); correct King Wen number and name, drawn lines, changing lines and the resulting hexagram.
+  - **Runes** — Elder Futhark draws (one rune, or past/present/future), upright and reversed meanings.
+  - **Numbers** — Pythagorean numerology: Life Path, Personal Year, Expression, Soul Urge and Personality, with master numbers 11/22/33.
+  - **Breathe** — a visual breathing guide (box, 4-7-8, moon, coherence) that respects reduced-motion.
+- The Android back button and the phone navigation now treat Inner work like the other full-screen sheets.
+
 ## 1.6.2 — 18 Nov 2026
 - Tarot: five more decks — Constellations, Spiral Galaxy, Neon Sign, Cyber Circuit, Neon Horizon (ten in all). Card art is now kept inside the card frame; Neon Horizon's sun shows one stripe per card number.
 

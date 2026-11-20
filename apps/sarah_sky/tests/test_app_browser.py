@@ -31,3 +31,33 @@ def test_app_loads_layers_and_panels(server):
         app_errors = [e for e in errors if "HiPS" not in e and "fetch" not in e.lower() and "CDS ID" not in e]
         assert not app_errors, app_errors
         b.close()
+
+
+def test_inner_work(server):
+    with pw.sync_playwright() as p:
+        b = p.chromium.launch(args=["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"])
+        pg = b.new_page(viewport={"width": 1280, "height": 800}); errors = []
+        pg.on("pageerror", lambda e: errors.append(str(e)))
+        pg.goto(server); pg.wait_for_function("window.SarahInner && window.Astronomy", timeout=20000)
+        pg.evaluate("window.SarahInner.open('today')")
+        pg.wait_for_selector("#inner:not([hidden])")
+        # Today tab computes from the real Moon
+        assert "Moon" in pg.inner_text("#iwBody")
+        # every tab renders non-empty content
+        for tab in ("today", "arch", "chakra", "iching", "rune", "num", "breath"):
+            pg.click(f'#inner [data-iw="{tab}"]'); pg.wait_for_timeout(120)
+            assert pg.inner_text("#iwBody").strip(), f"empty tab {tab}"
+        # I Ching casts a real hexagram 1..64
+        pg.click('#inner [data-iw="iching"]'); pg.click("#iwCast"); pg.wait_for_timeout(150)
+        import re
+        assert re.search(r"Hexagram \d+", pg.inner_text("#iwHexOut")), pg.inner_text("#iwHexOut")
+        # Runes draw
+        pg.click('#inner [data-iw="rune"]'); pg.click('#inner [data-rune="3"]'); pg.wait_for_timeout(150)
+        assert "Present" in pg.inner_text("#iwRuneOut")
+        # Numerology from a date
+        pg.click('#inner [data-iw="num"]'); pg.fill("#iwName", "Sarah Example"); pg.fill("#iwDate", "1996-05-14")
+        pg.click("#iwNum"); pg.wait_for_timeout(150)
+        assert "Life Path" in pg.inner_text("#iwNumOut")
+        app_errors = [e for e in errors if "HiPS" not in e and "fetch" not in e.lower() and "CDS ID" not in e]
+        assert not app_errors, app_errors
+        b.close()

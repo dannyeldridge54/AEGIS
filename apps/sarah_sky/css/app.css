@@ -214,3 +214,43 @@ body.sheet-open #arBtn{ opacity:0; pointer-events:none; }
 
 .deckpick{display:flex;align-items:center;gap:8px;margin:8px 0;color:#a296d8}
 .deckpick select{flex:1;background:#120a2e;color:#f3eeff;border:1px solid #2a1f5a;border-radius:8px;padding:6px}
+
+/* ===== Inner work sheet (shares the Readings look) ===== */
+#inner{ position:fixed; inset:0; z-index:900; background:rgba(4,2,11,.86); backdrop-filter:blur(6px); display:flex; align-items:flex-start; justify-content:center; overflow:auto; padding:12px; }
+#inner[hidden]{ display:none; }
+#inner .rbox{ width:min(720px,100%); background:linear-gradient(180deg,#0b0620,#120a2e); border:1px solid #7a5cff; border-radius:16px; color:#f3eeff; box-shadow:0 0 40px rgba(122,92,255,.35); }
+#inner .rhead{ display:flex; align-items:center; gap:10px; padding:12px 14px; border-bottom:1px solid #2a1f5a; position:sticky; top:0; background:#0b0620; border-radius:16px 16px 0 0; z-index:2; }
+#inner .rhead b{ color:#ff6ec7; white-space:nowrap; }
+#inner .rtabs{ display:flex; gap:6px; flex:1; flex-wrap:wrap; }
+#inner .rtabs button{ background:transparent; color:#f3eeff; border:1px solid #2a1f5a; border-radius:999px; padding:6px 10px; font:inherit; font-size:13px; }
+#inner .rtabs button.on{ background:#4cc3ff; color:#04020b; border-color:#4cc3ff; }
+#inner #iwClose{ background:none; border:0; color:#f3eeff; font-size:24px; }
+#inner .rbody{ padding:12px 14px 20px; }
+#inner h3{ margin:14px 0 4px; color:#ff6ec7; } #inner h4{ margin:14px 0 4px; color:#6fb8ff; }
+#inner p{ margin:6px 0; line-height:1.5; font-size:14px; }
+#inner .big3{ font-size:18px; text-align:center; margin:4px 0; }
+#inner .q{ text-align:center; font-style:italic; color:#ffd9f1; }
+#inner .trad{ color:#a296d8; font-size:11px; opacity:.9; font-style:normal; }
+#inner .row{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; margin:8px 0; }
+#inner .row input, #inner .row select, #inner select{ background:#04020b; color:#f3eeff; border:1px solid #2a1f5a; border-radius:8px; padding:8px; font:15px "Segoe UI",system-ui,sans-serif; flex:1; min-width:0; }
+#inner label{ display:block; font-size:13px; color:#a296d8; margin:8px 0 2px; }
+#inner label input{ display:block; width:100%; margin-top:3px; background:#04020b; color:#f3eeff; border:1px solid #2a1f5a; border-radius:8px; padding:8px; font:15px "Segoe UI",system-ui,sans-serif; }
+#inner button{ background:transparent; color:#f3eeff; border:1px solid #7a5cff; border-radius:10px; padding:8px 12px; font:600 13px "Segoe UI",system-ui,sans-serif; cursor:pointer; }
+#inner button.go{ background:linear-gradient(90deg,#4cc3ff,#ff6ec7); color:#04020b; border:0; font-weight:700; }
+#inner .ct{ width:100%; border-collapse:collapse; font-size:13px; } #inner .ct td{ border-bottom:1px solid #2a1f5a; padding:5px 6px; text-align:left; vertical-align:top; }
+#inner .iwcard{ border:1px solid #3a2a6e; border-radius:12px; padding:10px 12px; margin:10px 0; background:linear-gradient(160deg,#120a2e,#180b34); }
+#inner .iwct{ font-weight:700; color:#f3eeff; margin-bottom:2px; }
+#inner .iwcl{ display:inline-block; background:#4cc3ff; color:#04020b; border-radius:6px; padding:0 6px; font-size:11px; font-weight:700; }
+#inner .iwrune{ font-size:40px; text-align:center; color:#cdb8ff; line-height:1; margin:2px 0 6px; text-shadow:0 0 14px rgba(122,92,255,.5); }
+#inner .iwhexrow{ display:flex; align-items:center; gap:14px; margin:8px 0; }
+#inner .iwhex{ flex:0 0 auto; }
+#inner #iwBreathStage{ display:flex; flex-direction:column; align-items:center; margin:16px 0 6px; min-height:220px; justify-content:center; }
+#inner #iwBreathCircle{ width:120px; height:120px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center;
+  background:radial-gradient(circle at 50% 40%, rgba(76,195,255,.45), rgba(255,110,199,.2)); border:2px solid #7a5cff; box-shadow:0 0 30px rgba(122,92,255,.4);
+  transform:scale(.6); transition:transform linear; color:#f3eeff; font-weight:600; }
+#inner #iwBreathCircle.bin{ transform:scale(1.1); } #inner #iwBreathCircle.bout{ transform:scale(.6); } #inner #iwBreathCircle.bhold{ }
+#inner #iwBreathCount{ font-size:28px; color:#ffd9f1; margin-top:14px; min-height:34px; }
+@media (max-width:720px){
+  #inner{ bottom:calc(62px + env(safe-area-inset-bottom)); padding:0; align-items:stretch; }
+  #inner .rbox{ border-radius:0; min-height:100%; border-left:0; border-right:0; }
+}
