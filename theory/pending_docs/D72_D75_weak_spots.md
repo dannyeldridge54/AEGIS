@@ -16775,3 +16775,9 @@ DISCOVER (this tick): arXiv 2611.01505 ("DESI DR3" per a third-party GitHub aler
 - Other 2026 items: preprints.org 202605.1389 (defers to Shulga; its own is a "correspondence", a fit) and Zenodo 20550058 (θ = (N_c² − 1)/(4N_c²) = 2/9 asserted, no steps shown). Neither counts.
 - Weave reading (candidate, not derived): the Weave already has the Z₃ at ρ and P-F1. A natural "family circle" is the axion direction Re τ (period 1), on which the Z₃ at ρ acts. If λ_B = 1 follows from that circle's normalisation, δ = 2/9 and Q = 2/3 would come from ONE structure. Register B2: C-δ → "C-δ (Berry phase 2λ_B/9 on a Z₃ family circle, λ_B = 1 assumed; Shulga 2605.10245)".
 - DISCOVER (this tick): no new SPACE_HUNT hits checked beyond the δ literature (NULL for discoveries).
+
+## D1700 RESULT (19 Nov 2026) — the magnetised level-8 triplet (M = 4, T²/Z₂) at the Weave's two vacua gives TM1 on 3 of 12 images of i (PREREG_D7_DELTA48)
+- Checks ✓: the restricted S, T are unitary. The projective group is finite, of order 96 (the paper's 384 includes phases).
+- 12 conjugates of S: 3 → TM1 (2/3, 1/6, 1/6); 3 → (½, ½, 0), dead; 6 → (0.622, 0.333, 0.045) [unsorted (0.045, 0.622, 0.333) or (0.622, 0.045, 0.333)]. Against approximate NuFIT 3σ magnitude ranges (recalled, not refetched: |U_e1|² ≳ 0.64, |U_e3|² ≈ 0.020–0.024, |U_τ2|² ≫ 0.05), this column fits no PMNS column, so it is EXCLUDED pending a sourced check. No TM2 anywhere.
+- Reading: the magnetised three-generation origin (level 8) is CONSISTENT with the JUNO-allowed TM1 at the Weave's vacua, but less often than S₄: 3/12 = 25% of i-images (S₄: 50%, D1674). With equal weights per image (equivariance), P(TM1) ≈ 0.69 × 0.25 ≈ 0.17 at level 8. This is below the 25% "natural" bar used in PREREG_BASINS, so it is mildly tuned.
+- D1697a stands: S₄ itself is not derived. But D7's question ("does TM1 survive under the magnetised group?") is YES.
