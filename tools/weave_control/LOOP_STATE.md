@@ -25,7 +25,7 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W2 links · next stage: R research (W1 signed off at V2, 04:51 CT).
+Item W2 links · next stage: P postulate (R done 04:53 CT, notes below).
 W2 scope: dark sector → ΔN_eff → BBN (done in W1, keep); N*/T_rh → BBN; wino mass → gamma line (done at 1 TeV only, needs the H.E.S.S. limit curve vs mass + check of PSR J0740 value, R6); J-factor region → Sky level; b_A → G_eff → S₈ and z† → H(z) at z 2–5 vs DESI Lyα BAO. Research first: H.E.S.S./CTAO line-limit curve (mass vs σv), DESI DR2 Lyα BAO D_H/r_d at z = 2.33, newest J0740 mass, S₈ values.
 Postulate W1: every level returns {category, inputs, outputs, data[{name,value,sigma|limit,source}], pulls, status ∈ pass/tension/fail/open}; nothing typed in by hand except measured data with a source; fits labelled F; a test per level.
 Notes: wino gamma-line σv — checked: the D1322 '/1e6' is M² in GeV² at 1 TeV, so π α²/M² is the general tree form; the M dependence of the Sommerfeld factor comes from wino_s_nlo itself. At 1 TeV the engine reproduces 1.42e-26 (same formula as the smoke test).
@@ -54,8 +54,15 @@ R8 (general) No uncertainties are propagated through the links (e.g. ΔN_eff →
 R9 (sky) No science link yet; the level is a placeholder. → W2/W7.
 Comparison: Cobaya/MontePython do joint likelihoods (R4); PRyMordial carries rate uncertainties (R2, R8); SModelS states validity ranges for each limit (R7); micrOMEGAs/DarkSUSY include the Sommerfeld and endpoint pieces (R5). Our real edge is that one parameter set drives all of these at once, with sources and labels.
 
+W2 research notes (04:53 CT):
+- DESI DR2 Lyα BAO (arXiv:2503.14739): z_eff = 2.33, D_H/r_d = 8.632 ± 0.101, D_M/r_d = 38.99 ± 0.53 (stat+sys), ρ = −0.431. This is the H(z) point that tests negative space (z† ≈ 3.7 needs b_A < 0).
+- S₈: KiDS-Legacy 0.815 +0.016/−0.021 (arXiv:2503.19441); Planck 2018 0.832 ± 0.013; CMB lensing (ACT DR6 + Planck PR4 + SPT-3G + DESI DR2) 0.828 ± 0.012 (Qu et al. 2026, via arXiv:2602.12238). DES Y6 is 2.4–2.7σ from the CMB, but no central value was read; not used.
+- PSR J0740+6620: still 2.08 +0.072/−0.069 M☉ (Fonseca et al. 2021). NICER 2024 radius papers (arXiv:2406.14467) use it with σ = 0.09 including a systematic. Keep 2.08 ± 0.07 and note the 0.09 option (referee R6 closed: no newer mass).
+- H.E.S.S. line limit — FINDING (affects the W1 galaxy verdict): the D-notes have TWO different limits. D1110/D1277 use H.E.S.S. 2018 (arXiv:1805.05741) γγ ≈ 4e-28 cm³/s at 1 TeV (Einasto, 7 ROIs; only the 1 TeV value is quoted). D1322 (A2n) uses the IGS line limit 2.3e-28 with the factor 0.794 and the ratio J/J_bench. W1's engine compared f²σv with 2.3e-28 directly, WITHOUT the 0.794 factor and without J/J_bench, so its 'tension' verdict is not the locked D1322 test. Benchmark Einasto (ρ☉ 0.39) by the D1322 recipe gives f_max ≈ √(2.3e-28/(1.42e-26 × 0.794 × 1.05)) ≈ 0.14 against f_pred 0.124–0.205: still mixed, but must be computed by the exact recipe. The full limit curve vs mass is not in the repo (the paper is plot-only above 1 TeV): blocked, recorded.
+
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 04:53 CT W2/R research: Lyα BAO, S₈ (3 values), J0740 unchanged, H.E.S.S. recipe finding
 - 04:51 CT W1/V2 signed off: R1 inflation status from predictions only for serapis_* (r), n_s context; R2 BBN pulls labelled observational-only (theory σ in W5); R3 ΔAIC added (thread −0.6/−6.1/−1.4). R4–R9 carried to W2/W5/W6/W7/W8. 29 tests pass (engine 8 + shared/janus/mapper).
 - 04:45 CT W1/V1 review: 8 findings (above)
 - 04:48 CT W1/E2 fixes: dark-sector table from D1646/D1648/C5 (mirror_full_equal 7.4 → BBN fail, as it should); bridges numbers-only; late status derived (tension: beats ΛCDM, trails w0wa); stars rule stated; Brannen forms listed; galaxy tests BOTH ends of the fraction bracket at 1 TeV (low 2.2e-28 passes, high 6.0e-28 fails vs 2.3e-28 → tension; E2 first tried the low end only, caught before commit); lru_cache; error field
