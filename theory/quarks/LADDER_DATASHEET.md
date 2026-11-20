@@ -8,7 +8,7 @@ Status words: lit · formula (paper fit, m ≤ 7) · extrap · computed · deriv
 | place | occupant | source | status |
 |---|---|---|---|
 | knot ρ (rung ∞, or ≳ 400) | inflaton endpoint; charged leptons (Koide needs |ε| ≲ 6e-5) | D1606, D1595, D1737 | derived / computed |
-| rung 8 | up quarks (u, c, t) | D1733, D1734, D1736 | computed (chance 52%); rung position now computed, not extrapolated |
+| rung 8 (68%: 5–14) | up quarks (u, c, t) | D1733, D1734, D1736 | computed (chance 52%); rung position now computed, not extrapolated |
 | rung 1 | down quarks (d, s, b) | D1733 | computed |
 | rung 1 | ~~charged leptons~~ WITHDRAWN (a rung-1 slip breaks Koide by 8.5e-3) | D1737 | computed |
 | arc (m,n) | — (position set by the ratio m:n alone) | D1736 | computed |
