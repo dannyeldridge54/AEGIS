@@ -24,6 +24,13 @@ DARK_SECTORS = {'none': (0.0, 'no dark radiation'),
                 'mirror_at_bound': (0.3, 'mirror sector at its viability bound ΔN_eff = 0.3 (D1648)'),
                 'mirror_full_equal': (7.4, 'full mirror world with equal sharing: ΔN_eff = 7.4 (D1646) — RULED OUT')}
 LEPTONS_MeV = dict(e=(0.51099895000, 1.5e-10), mu=(105.6583755, 2.3e-6), tau=(1776.93, 0.09))   # PDG 2024
+# PREREG_W4_FLAVOUR inputs (sourced)
+NUFIT_S13 = (0.02195, 'NuFIT 6.0 NO IC19, arXiv:2410.05380 (as in D1667)')
+S12_DATA = {'JUNO first data': (0.3092, 0.0087, 'JUNO, arXiv:2511.14593'),
+            'NuFIT 6.0 + JUNO': (0.3084, 0.0070, 'combination used in D1652'),
+            'post-JUNO global': (0.3085, 0.0073, 'arXiv:2511.21650')}
+T2KNOVA_1SIG = (214.0, 313.0)                    # degrees; ordering-marginalised 1σ, Nature 2025 (D1690)
+NUFIT_DCP_3SIG = {0.561: (96.0, 422.0), 0.470: (124.0, 364.0)}   # degrees; NuFIT 6.0 NO IC19 / IC24 (D1669)
 J0740 = (2.08, 0.07, 'PSR J0740+6620 mass (Fonseca et al. 2021, ApJL 915 L12)')
 ATLAS_DT = (670.0, 'ATLAS disappearing track, observed 95% wino limit (arXiv:2603.08315; D1722)')
 # L3 (PREREG_W2_LINKS): S8 = sigma8 sqrt(Omega_m/0.3) from the locked D1725 best fits, read 20 Nov 04:55 CT from the PC
@@ -80,11 +87,34 @@ def flavour(p):
     best = min(forms, key=lambda c: abs(c - 2/9))
     pulls = {'Koide Q = 2/3': (Q - 2/3)/abs(dQ)}
     data = [dict(name=f'm_{k}', value=v[0], sigma=v[1], kind='gauss', source='PDG 2024') for k, v in LEPTONS_MeV.items()]
-    return L('flavour', 'Flavour (leptons)', 'B', 'Flavour panel (new)', dict(masses='PDG 2024 pole masses'),
-             dict(Koide_Q=Q, Koide_Q_sigma=abs(dQ), Brannen_delta=best, delta_minus_2_9=best - 2/9, delta_equivalent_forms=sorted(forms)), data, pulls,
+    # ---- neutrinos (PREREG_W4_FLAVOUR): TM1 on the Weave's two vacua under modular S4 (assumed, P-S4) ----
+    s13 = NUFIT_S13[0]; tm1 = (1 - 3*s13)/(3*(1 - s13)); tm2 = 1/(3*(1 - s13))     # same formulas as field_tests/scripts/tm1/run.py
+    for k, (v, sg, src) in S12_DATA.items():
+        data.append(dict(name=f'sin²θ₁₂ {k}', value=v, sigma=sg, kind='gauss', source=src)); pulls[f'TM1 sin²θ₁₂ vs {k}'] = (tm1 - v)/sg
+    dcp = {}
+    for s23 in (0.561, 0.470):
+        t = math.asin(math.sqrt(s23)); cot2 = 1/math.tan(2*t)
+        c1 = -cot2*(1 - 5*s13)/(2*math.sqrt(2)*math.sqrt(s13)*math.sqrt(1 - 3*s13))
+        a1 = math.degrees(math.acos(c1)); dcp[s23] = (a1, 360 - a1)
+    ref_ok = all(abs(x - y) <= 0.5 for x, y in ((dcp[0.561][0], 74.3), (dcp[0.561][1], 285.7), (dcp[0.470][0], 97.6), (dcp[0.470][1], 262.4)))
+    lo = dcp[0.561][1]
+    inside = lambda d, lo_, hi_: lo_ <= d <= hi_ or lo_ <= d + 360 <= hi_
+    t2k = inside(lo, *T2KNOVA_1SIG); nufit = inside(lo, *NUFIT_DCP_3SIG[0.561])
+    data += [dict(name='δ_CP T2K+NOvA ordering-marginalised 1σ', value=T2KNOVA_1SIG, kind='range', source='Nature 2025 (s41586-025-09599-3), via D1690'),
+             dict(name='δ_CP NuFIT 6.0 NO 3σ (IC19, s₂₃² 0.561)', value=NUFIT_DCP_3SIG[0.561], kind='range', source='arXiv:2410.05380, via D1669')]
+    pulls['TM1 δ_CP (lower branch, s₂₃² 0.561) inside T2K+NOvA 1σ'] = 'pass' if t2k else 'FAIL'
+    pulls['TM1 δ_CP (lower branch, s₂₃² 0.561) inside NuFIT 3σ'] = 'pass' if nufit else 'FAIL'
+    key = {k: v for k, v in pulls.items() if k in ('Koide Q = 2/3', 'TM1 sin²θ₁₂ vs post-JUNO global', 'TM1 δ_CP (lower branch, s₂₃² 0.561) inside T2K+NOvA 1σ', 'TM1 δ_CP (lower branch, s₂₃² 0.561) inside NuFIT 3σ')}
+    if not ref_ok: key['δ_CP reproduces D1667'] = 'FAIL'
+    return L('flavour', 'Flavour (leptons & neutrinos)', 'B', 'Flavour panel', dict(masses='PDG 2024 pole masses', sin2_theta13=s13),
+             dict(Koide_Q=Q, Koide_Q_sigma=abs(dQ), Brannen_delta=best, delta_minus_2_9=best - 2/9, delta_equivalent_forms=sorted(forms),
+                  TM1_sin2_theta12=tm1, TM2_sin2_theta12_excluded=tm2, TM1_dCP_s23_0561=list(dcp[0.561]), TM1_dCP_s23_0470=list(dcp[0.470]),
+                  dCP_reproduces_D1667=ref_ok), data, pulls,
              ['Q = 2/3 is a prediction (P-F1)', 'δ = 2/9 has no mechanism yet (C-δ)',
+              'neutrinos: TM1 with modular S₄ at the Weave vacua ρ and (an image of) i is ASSUMED (P-S4, register B5); exact TM2 is excluded by JUNO (D1652)',
+              'status (PREREG_W4_FLAVOUR): TM1 sin²θ₁₂ vs the post-JUNO global value, and the lower δ_CP branch for s₂₃² = 0.561 (the T2K+NOvA-preferred θ₂₃); the upper branch (74°/98°) is outside the data',
               'δ is defined only up to relabelling the leptons and δ → 2π/3 − δ; the form nearest 2/9 is shown and all forms are listed (V1 finding 5)'],
-             links=['TM1 δ_CP band 262°–286° (W4)'])
+             links=['DUNE / Hyper-K δ_CP; JUNO sin²θ₁₂ to ±0.5%: TM1 0.3184 vs TM2 0.3408'], status=_status(key))
 
 # ---------------- D. BBN (Hyperion), fed by the dark sector ----------------
 def bbn(p):

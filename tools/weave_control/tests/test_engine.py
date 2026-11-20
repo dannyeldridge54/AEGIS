@@ -50,3 +50,9 @@ def test_w2_v2_three_masses():
         g = [l for l in E.run({'wino_mass_GeV': m})['levels'] if l['id'] == 'galaxy'][0]
         assert g['outputs']['limit_mass_GeV'] == m and g['outputs']['f_max_at_R_0p658'] > g['outputs']['f_max'] and g['status'] in ('pass', 'tension', 'fail')
     assert [l for l in E.run({'wino_mass_GeV': 1500.0})['levels'] if l['id'] == 'galaxy'][0]['status'] == 'open'
+
+def test_w4_flavour_prereg():
+    o = LV['flavour']['outputs']
+    assert o['dCP_reproduces_D1667'] and abs(o['TM1_sin2_theta12'] - 0.3184) < 1e-4 and abs(o['TM2_sin2_theta12_excluded'] - 0.3408) < 1e-4
+    assert abs(o['TM1_dCP_s23_0561'][1] - 285.7) < 0.5 and abs(o['TM1_dCP_s23_0470'][1] - 262.4) < 0.5
+    assert 'TM1 sin²θ₁₂ vs post-JUNO global' in LV['flavour']['pulls']
