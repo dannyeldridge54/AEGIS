@@ -87,3 +87,14 @@ Sources: SF Bay amateur list thread "Astro software seems like garbage"; KStars 
 | tools don't talk to each other (coordinates to imaging/control software) | export CSV / VOTable / astroplan target table / N.I.N.A. & Stellarium-compatible lists | M1f (= M2) |
 | download reference images before going to a dark site | offline pack: DSS/HiPS cutouts for the session list | M1g |
 These join M2 (observability planner + target-list export) in the rotation; M1a + M1d + M1f are built first (one tick each).
+
+## H1 (20 Nov 04:28 UTC): what astronomers say they need from analysis tools → Hyperion build list
+Source: European astronomer survey (arXiv:2012.07686; ~1,000 respondents): reproducibility/transparency is the top concern (58.9%); findability + interoperability of data 59.3% (73.3% want IVOA standards enforced); cross-matching a barrier for 44.9%; visual analytics the top missing capability (71.7%); 82% want archives and computing integrated; 70% expect cloud processing on open-source tools. Plus installation pain for LALSuite/galpy-type stacks (versioned environments, arXiv:1407.3063).
+| need | Hyperion feature | id |
+|---|---|---|
+| reproducibility | every result carries a provenance block: code version/commit, inputs, referee code + version, tolerance, D-note | H1a |
+| interoperability / IVOA | ECSV + VOTable output with units (astropy-compatible); accept astropy Quantity/SkyCoord inputs | H1b |
+| cross-matching | Gaia DR3/DR4 ↔ SIMBAD/2MASS cross-match helper (TAP/ADQL query builder) in mapper_feed | H1c |
+| visual analytics | quick-look plots for every preset (rotation curve, M–R curve, GW horizon, BBN pulls) saved as PNG/SVG | H1d |
+| installation pain | one-line install profile (pip extras: core / gw / galaxy / full) + `hyperion doctor` that checks optional deps (lalsuite, galpy, colossus, CAMB) and says what each unlocks | H1e |
+| archive + compute | TAP queries to the Gaia archive from inside Hyperion (downloads OK'd) | H1f |
