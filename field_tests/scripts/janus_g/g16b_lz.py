@@ -12,6 +12,6 @@ floor = {'0.3': 10 ** np.interp(math.log10(300), np.log10(list(d57)), np.log10(l
          '5': 10 ** (math.log10(d57[1000.0]) + (math.log10(d57[1000.0]) - math.log10(d57[100.0])) * math.log10(5))}
 eps = {k: v * f for k, v in d1677.items()}
 judge = 'optimistic' if s128 < 0.5e-47 else ('fair' if s128 <= 2e-47 else 'conservative')
-out = dict(D='D1688', curve_points=len(m), mass_range=[float(m.min()), float(m.max())], sigma_SI=S, scale=f, eps_max=eps, BBN_floor=floor,
-           strip_open={k: eps[k] > 10 * floor[k] for k in eps}, D1677_bracket_1em47_was=judge)
+out = dict(D='D1688', curve_points=len(m), mass_range=[float(m.min()), float(m.max())], sigma_SI=S, scale=f, eps_max=eps, BBN_floor={k: float(v) for k, v in floor.items()},
+           strip_open={k: bool(eps[k] > 10 * floor[k]) for k in eps}, D1677_bracket_1em47_was=judge)
 json.dump(out, open('field_tests/results/D1688_G16b_lz.json', 'w'), indent=1); print(json.dumps(out, indent=1))
