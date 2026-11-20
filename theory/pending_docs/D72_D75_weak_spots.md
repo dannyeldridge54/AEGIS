@@ -16838,3 +16838,8 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
   - b_c > 0 (0.1–1): no viable cosmology at all; the shooting for H₀ fails, flagged 1e9.
 - MIRROR (opposite sign): b_c > 0 fails outright, so the forward sign (b_c < 0) wins.
 - Caution about D1708: from these starting points the profile at b_c = −0.1 does NOT find the deep minimum. D1708's −10.40 sits at amp ≈ 0.9 (the bound) with b_c ≈ −0.06, a narrow corner that the profile starts never reached. The fix is therefore fragile: it needs a specific start near the floor plus a small negative coupling. The exact-curve run (D1710, amp free to 5) will tell whether the minimum is real or an artefact of the leading-order shape near amp → 1.
+
+## D1711 (RIGHT, 19 Nov 2026) — is the coupling size allowed? Yes, in the range Planck already tolerates (literature check for D1708)
+- Pettorino et al. (arXiv:1305.7457, Planck 2013 + extras): Q = −βρ_cφ′, φ in reduced Planck units, i.e. ρ_c ∝ a⁻³e^{−βφ}; our ρ_c ∝ a⁻³e^{b_cφ} (same units), so β = −b_c = 0.062.
+- Their fits: Planck WP + BAO, β = 0.036 ± 0.016; Planck WP + HST, β = 0.066 ± 0.018; Planck WP + HighL + BAO, 0.035 ± 0.016. Our 0.062 sits 1.6σ above the BAO combination and on top of the HST combination. NOT excluded by those analyses. Note: they are full-CMB analyses (G_eff = G(1 + β²) for DM perturbations), not compressed, and older Planck releases. A Planck-2018/ACT bound was not checked.
+- Combined with D1709: the fix's coupling is of an allowed size; the open issue is the narrow corner in the start parameter (D1710 running).
