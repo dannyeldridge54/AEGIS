@@ -146,3 +146,7 @@ Blocked, recorded: SPHEREx QR2 (band D1 HiPS published) and the Rubin First Look
 
 ### H1b typed columns, units and VOTable (20 Nov 2026)
 ECSV exports now declare each column's real type (float64 / int64 / bool / string) and its unit (GeV, fb, kpc, solMass, GeV²/cm⁵, …, from the UNITS table in tools/janus_astro/settings.py). Before this, every column read back as text. New `fmt='votable'` writes an IVOA VOTable through astropy, with types and units, so TOPCAT and Aladin open it directly. Shared by Hyperion, Janus and CERN+1 exports. Tests: astropy reads the units back (GeV) and the numeric types.
+
+### M1b printable finder chart (20 Nov 2026)
+tools/mapper/finder.py `chart(target, field_deg, fov_arcmin, mag_max | aperture_mm, out)` writes PDF, SVG or PNG. Stars: Hipparcos to V = 8 (41,411 stars, tools/mapper/data/hip_mag8.csv, from the npm package d3-celestial, BSD licence kept alongside). Gnomonic projection, north up and east left, eyepiece circles, Messier objects marked, scale bar, N/E arrows, magnitude key, coordinates in the title, and a provenance footer. Name lookup is exact first, so "M3" never becomes M31. Tests: 4, including sky orientation (+RA = east) and Sirius as the brightest star.
+Limit to state plainly: the catalogue stops at V = 8, so for apertures whose limit is fainter, the chart shows stars to 8 only. Deeper stars (Tycho-2 to ~11.5, Gaia) need a download not reachable from the cloud or PC sandbox (raw GitHub blocked); queued as M1b+.
