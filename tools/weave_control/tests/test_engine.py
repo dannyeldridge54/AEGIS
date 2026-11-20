@@ -72,3 +72,15 @@ def test_quarks_level_q4_q6():
     assert abs(o['eps_abs'] - 0.0236) < 2e-4 and abs(o['eps_arg_deg'] - 50.0) < 0.1      # D1732
     assert q['pulls']['ε in quark-fit band (Q6)'] == 'FAIL' and q['pulls']['τ_q moduli window (Q4)'] == 'pass'
     assert [l for l in E.run({'tauq_mass_GeV': 1e9})['levels'] if l['id'] == 'quarks'][0]['pulls']['τ_q moduli window (Q4)'] == 'FAIL'
+
+
+def test_j1_tauq_nstar_joint():
+    """PREREG_J1_TAUQ_NSTAR pass criteria 1-2."""
+    import math, sys
+    from tools.weave_control import engine as E
+    sys.path.insert(0, 'tools/weave_cm'); import weave_tools as W
+    r = E.run(); inf = [l for l in r['levels'] if l['id'] == 'inflation'][0]; j = inf['joint_tauq']
+    assert abs(j['dNstar'] - W.weave_basic({'q': 'dNstar', 'dilution': j['dilution_D']})['value']) < 1e-12
+    assert abs(j['r_joint'] / j['r_inf'] - (j['Nstar_inf'] / j['Nstar_eff']) ** 2) < 1e-12
+    r1 = E.run({'tauq_mass_GeV': 5e12}); j1 = [l for l in r1['levels'] if l['id'] == 'inflation'][0]['joint_tauq']
+    assert j1['dilution_D'] == 1.0 and j1['r_joint'] == j1['r_inf']

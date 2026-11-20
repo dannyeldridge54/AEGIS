@@ -315,6 +315,25 @@ def quarks(p):
 
 LEVELS = (inflation, flavour, quarks, bbn, late, colliders, galaxy, stars, sky)
 
+def _joint_tauq_nstar(levels):
+    """PREREG_J1_TAUQ_NSTAR: the tau_q dilution D (quark level) shifts N* of the inflation level by dN* = -ln(D)/3.
+    Added as a separate JOINT block; the inflation level's own outputs and status are untouched (label E: tilt held fixed)."""
+    from tools.janus_calc import settings as J
+    inf = next((l for l in levels if l['id'] == 'inflation' and 'error' not in l), None)
+    qk = next((l for l in levels if l['id'] == 'quarks' and 'error' not in l), None)
+    if not inf or not qk: return
+    D = float(qk['outputs']['dilution_D']); N = float(inf['inputs']['Nstar']); r = float(inf['outputs']['r'])
+    dN = -math.log(max(1.0, D)) / 3; Ne = N + dN; rj = r * (N / Ne) ** 2
+    bounds = {k: v[0] for k, v in J.CONSTRAINTS['r'].items() if v[2] == 'upper95'}
+    ok_r = all(rj < b for b in bounds.values()); ok_w = qk['pulls'].get('τ_q moduli window (Q4)') == 'pass'
+    inf['joint_tauq'] = dict(dilution_D=D, dNstar=dN, Nstar_inf=N, Nstar_eff=Ne, r_inf=r, r_joint=rj, r_ratio=rj / r,
+                             ns_shift_if_not_refit=2 * dN / N ** 2, r_bounds=bounds,
+                             joint_status='pass' if (ok_r and ok_w) else 'FAIL',
+                             label='E (plateau r ∝ N^-2 with the tilt factor held fixed; n_s is fitted for serapis_*, so its shift is what the fit must absorb)',
+                             prereg='PREREG_J1_TAUQ_NSTAR')
+    inf['links'] = list(inf['links']) + ['τ_q dilution → N* (joint J1, quark level)']
+
+
 def run(params=None):
     p = dict(DEFAULTS); p.update(params or {})
     levels = []
@@ -322,6 +341,7 @@ def run(params=None):
         try: levels.append(fn(p))
         except Exception as e:
             lv = L(fn.__name__, fn.__name__, '?', '?', {}, {}, [], {}, [f'ERROR: {e}'], status='open'); lv['error'] = repr(e); levels.append(lv)
+    _joint_tauq_nstar(levels)
     card = {}
     for lv in levels: card.setdefault(lv['category'], []).append((lv['id'], lv['status']))
     return dict(params=p, levels=levels, scorecard=card)
