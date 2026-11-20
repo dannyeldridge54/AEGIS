@@ -1,0 +1,6 @@
+# PREREG_D7_DELTA48 — mixing pattern at the two vacua for the magnetised M = 4 T²/Z₂ triplet (level 8) (locked D1700, 2026-11-20 01:35 UTC)
+Representation (standard magnetised-torus formulas, cf. 2005.12642): on T² with flux M, ρ(T)_{jk} = e^{iπj²/M}δ_{jk} and ρ(S)_{jk} = (e^{iπ/4}/√M) e^{2πijk/M}, j, k = 0, …, M − 1. The Z₂-even triplet for M = 4 is {ψ₀, (ψ₁ + ψ₃)/√2, ψ₂}; S and T are restricted to it. Overall phases are dropped (projective), as they do not affect mixing.
+Checks (else STOP): the restricted matrices are unitary, and the projective group they generate is FINITE (closure < 5000 elements). Report its order (the paper's G₀⁴ has order 384 including phases).
+Patterns: charged leptons at the ρ-type point, residual ⟨ST⟩, U_e = eigenvectors of ρ(ST). Neutrinos at an image of i, residual = each distinct conjugate of S (projective). For each conjugate with a non-degenerate eigenvalue, take its eigenvector v and the column |U_e†v|² (sorted): TM1 (2/3, 1/6, 1/6), TM2 (1/3, 1/3, 1/3), or other (listed).
+Reading: report the fractions. If TM1 > 0, the level-8 magnetised origin is consistent with the JUNO-allowed pattern at the Weave's vacua.
+Script: field_tests/scripts/s4img/delta48.py
