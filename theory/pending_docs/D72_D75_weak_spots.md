@@ -16856,3 +16856,17 @@ Mirror-pulse tally: M1 forward wins (structural); M2 symmetry (no information); 
 - ALREADY ON THE PC (JANUS D1636, full Planck 2018 + DESI DR2 + SN via CAMB/Cobaya; gate passed to 10⁻⁸). Uncoupled leading-order thread versus ΛCDM: Pantheon+ −1.33, DES-Y5 −9.38, Union3 −2.64. w0wa: −9.11 / −19.72 / −15.02. With FULL Planck the uncoupled thread trails w0wa by 8–12, i.e. the weak spot is LARGER than with the compressed CMB (D1694: 6).
 - Submitted (queue AEGIS_PCJOBS/d1712): a gate job (leading order, b_c = 0 must reproduce the stored DES-Y5 χ² within 1.0), then six fits: coupled and uncoupled exact-curve thread × {Pantheon+, DES-Y5, Union3}. They wait for the gate. Coupling enters at background level as a PPF fluid; dark-matter perturbation effects are NOT modelled (stated in the lock).
 - Reading (locked): the fix survives full Planck if coupled Δχ² is within 3 of w0wa for ≥ 2 of 3 SN sets.
+
+## D1713 (RIGHT, 19 Nov 2026) — the coupled thread now lives inside a real Boltzmann code (patched CLASS v3.3.0); validated; 9 full-Planck fits queued (PREREG_PLANCK_CLASS)
+Why: D1712's route (CAMB + a w-table) cannot carry the coupled model (DEVIATIONS D1: the effective dark energy goes negative). So the coupling was written into CLASS itself.
+Patch (field_tests/scripts/pc_planck/aegis_class_d1713.patch, ~60 lines): exact Weave potential; ρ_c ∝ a⁻³e^{b(φ−φ_i)}; force bρ_c on φ; flatness closure with the coupled ρ_c today; CDM gets a velocity in synchronous gauge (δ_c' = −θ_c − h'/2 + bδφ', θ_c' = −(ℋ+bφ')θ_c + bk²δφ); −a²bρ_cδ_c in the δφ equation; the thread is kept out of CLASS's Ω_m(z), which otherwise reads ≈ 2.9 and breaks halofit (HMcode refuses scalar fields, so halofit is used for all models, ΛCDM included).
+Bug found and fixed on the way: CLASS reads φ_ini, φ'_ini from the LAST two scf_parameters; layout is now [β, c, b, V_L(tuned), φ_ini, 0].
+Validation (computed):
+- Background, uncoupled amp 0.2: E(0.5, 1, 2) = 1.33637, 1.80143, 3.03305 — CLASS and an independent Python integration agree to 3e-7; V_L agrees to 1e-9.
+- Background, coupled (D1710 point, amp 1.83, b = −0.074): CLASS 1.31031, 1.75823, 2.95851. The first comparison disagreed by 2% — cause: the Python reference switches the coupling on at a = 10⁻³, CLASS from the start. With Python started at a = 10⁻⁹ the two agree to 3e-7. So D1710's model and the CLASS model differ slightly (the coupling's early kick, Δφ ≈ +0.15 by z = 1000); the CLASS one is the self-consistent version, and amp, b are refit.
+- Growth, sub-horizon: CLASS δ_c, δ_b from z = 3 → 0 vs an ODE with G_eff = 1 + 2b² and friction bφ̇: agreement 1e-5 (uncoupled and coupled); the same ODE with b set to 0 misses by 2–4%, so the test is sensitive to the coupling.
+- Cobaya wrapper smoke test: ΛCDM, thread, coupled all compute Cl, BAO, SN in 4–7 s per point.
+Not validated: super-horizon gauge behaviour of the new coupled terms (Newtonian-gauge cross-check not possible; CLASS's scf Newtonian equations look incomplete).
+Submitted: BUILDCLASS_D1713 on the PC (apply patch, compile, repeat the background check on the PC build), which then queues 9 minimisations: ΛCDM / thread / coupled × Pantheon+ / DES-Y5 / Union3. Gate: CLASS ΛCDM within 2.0 of the stored CAMB ΛCDM χ² before any model number is read.
+Also: the D1712 uncoupled reruns had failed again (the D4 fix never reached the PC copy; DEVIATIONS D5); fixed and requeued (CXUNC4_*).
+Status: RUNNING.
