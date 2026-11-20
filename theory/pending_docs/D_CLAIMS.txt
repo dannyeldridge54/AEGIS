@@ -997,3 +997,4 @@ D1709  2026-11-20T01:50Z  untitled
 D1710  2026-11-20T01:55Z  untitled
 D1711  2026-11-20T01:59Z  untitled
 D1712  2026-11-20T02:04Z  untitled
+D1713  2026-11-20T02:38Z  coupled CLASS full-Planck test (patched CLASS v3.3.0)
