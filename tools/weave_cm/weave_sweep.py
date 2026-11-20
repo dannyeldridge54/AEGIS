@@ -111,7 +111,8 @@ def batch_engine(out, rng, seconds, cur):
         lv = {l['id']: dict(status=l['status'], outputs={k: v for k, v in l['outputs'].items() if isinstance(v, (int, float, str, bool))}) for l in r['levels']}
         ok = all(v['status'] in ('pass', 'open') for k, v in lv.items() if k != 'quarks')
         allp += ok
-        out.write(json.dumps(dict(scan='engine', params=p, levels=lv, all_pass_except_quarks=ok, label='mixed: per-level labels in the engine')) + '\n'); n += 1
+        jt = next((l.get('joint_tauq') for l in r['levels'] if l.get('joint_tauq')), None)   # PREREG_J1 joint (tau_q -> N* -> r)
+        out.write(json.dumps(dict(scan='engine', params=p, levels=lv, joint_tauq=jt, all_pass_except_quarks=ok, label='mixed: per-level labels in the engine')) + '\n'); n += 1
     return n, allp
 
 
