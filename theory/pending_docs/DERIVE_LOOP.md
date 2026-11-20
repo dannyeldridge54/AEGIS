@@ -11,4 +11,4 @@ D2. Real-data refit with the EXACT SERAPIS curve (D1638) instead of the leading-
 D3. P-S4: any reason for level 4? Test whether E(τ,3/2)'s Fourier/Hecke structure singles out Γ(4) (or Γ(2)/Γ(3)). A literature check first.
 D4. B6 Koide pole vs running: is there a known mechanism (e.g. Sumino's family gauge symmetry) that keeps Q = 2/3 for pole masses? Can it sit at ρ?
 D5. B2 δ = 2/9: one more literature pass (2026) for a derivation.
-D6. [IN PROGRESS manual tick] ΛsCDM with z† up to 10 (with the CMB), to resolve the edge hit of D1694.
+D6. [DONE D1695: z†=2.64, Δχ² −4.93, ties the thread] ΛsCDM with z† up to 10 (with the CMB), to resolve the edge hit of D1694.
