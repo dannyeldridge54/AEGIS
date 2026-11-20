@@ -25,7 +25,7 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W2 links · next stage: P postulate (R done 04:53 CT, notes below).
+Item W2 links · next stage: E1 engineer (P done 04:54 CT: locked field_tests/rules/PREREG_W2_LINKS.md + .sha256; links L1–L5).
 W2 scope: dark sector → ΔN_eff → BBN (done in W1, keep); N*/T_rh → BBN; wino mass → gamma line (done at 1 TeV only, needs the H.E.S.S. limit curve vs mass + check of PSR J0740 value, R6); J-factor region → Sky level; b_A → G_eff → S₈ and z† → H(z) at z 2–5 vs DESI Lyα BAO. Research first: H.E.S.S./CTAO line-limit curve (mass vs σv), DESI DR2 Lyα BAO D_H/r_d at z = 2.33, newest J0740 mass, S₈ values.
 Postulate W1: every level returns {category, inputs, outputs, data[{name,value,sigma|limit,source}], pulls, status ∈ pass/tension/fail/open}; nothing typed in by hand except measured data with a source; fits labelled F; a test per level.
 Notes: wino gamma-line σv — checked: the D1322 '/1e6' is M² in GeV² at 1 TeV, so π α²/M² is the general tree form; the M dependence of the Sommerfeld factor comes from wino_s_nlo itself. At 1 TeV the engine reproduces 1.42e-26 (same formula as the smoke test).
@@ -62,6 +62,7 @@ W2 research notes (04:53 CT):
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 04:54 CT W2/P postulate: PREREG_W2_LINKS locked (L1 exact D1322 recipe with 0.286 self-check; L2 Lyα display-only, not independent; L3 S₈ pulls vs KiDS-Legacy and CMB lensing; L4 label; L5 GC sky target)
 - 04:53 CT W2/R research: Lyα BAO, S₈ (3 values), J0740 unchanged, H.E.S.S. recipe finding
 - 04:51 CT W1/V2 signed off: R1 inflation status from predictions only for serapis_* (r), n_s context; R2 BBN pulls labelled observational-only (theory σ in W5); R3 ΔAIC added (thread −0.6/−6.1/−1.4). R4–R9 carried to W2/W5/W6/W7/W8. 29 tests pass (engine 8 + shared/janus/mapper).
 - 04:45 CT W1/V1 review: 8 findings (above)
