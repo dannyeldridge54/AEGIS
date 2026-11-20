@@ -1194,8 +1194,7 @@
     "D1264: postulate",
     "D1389: postulate"
    ],
-   "note": "web loop postulate 4 (pattern covariant ↔ eps_tilt)",
-   "flag": "recheck (D1687, genesis_reheating)"
+   "note": "web loop postulate 4 (pattern covariant ↔ eps_tilt)"
   },
   {
    "id": "string_meter",
@@ -1320,7 +1319,7 @@
     "rho",
     "E"
    ],
-   "title": "Wino 0.67–1.25 TeV thermal (to ~1.5 for Einasto cores), 5–30% of DM (post-hoc; IGS line D1153/A2o; LHC floor 0.67, HL-LHC ~0.98)",
+   "title": "Wino 0.67–1.25 TeV thermal (to ~1.5 for Einasto cores), 5–30% of DM (post-hoc; IGS line D1153/A2o; LHC floor 0.67, HL-LHC ~0.98); CONDITIONAL on T_R ≲ 1.1e9 (gravitino winos, D1687)",
    "status": "computed",
    "d": [
     "D735",
@@ -1349,8 +1348,7 @@
     "D1337: computed (late)",
     "D1338: computed",
     "D1392: computed"
-   ],
-   "flag": "recheck (D1687, genesis_reheating)"
+   ]
   },
   {
    "id": "tests_cmb",

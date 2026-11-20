@@ -31,9 +31,6 @@
   "D1687: Reheating from the final SERAPIS equation (genesis pathway) → estimate",
   "D1688: Dark radiation from SERAPIS reheating — how cold the dark side is (ΔN_eff) → estimate"
  ],
- "open_rechecks": [
-  "POSTULATE (passed): SERAPIS-E covariant bound m3/2 < 6.7e8 GeV at its own y (14.6–16.6) ≫ AMSB wino need ≤ 7e5 GeV (×960)",
-  "Wino 0.67–1.25 TeV thermal (to ~1.5 for Einasto cores), 5–30% of DM (post-hoc; IGS line D1153/A2o; LHC floor 0.67, HL-LHC ~0.98)"
- ],
+ "open_rechecks": [],
  "theory_map": "theory/map/map.yaml (Whiteboard: AEGIS Theory Map)"
 }

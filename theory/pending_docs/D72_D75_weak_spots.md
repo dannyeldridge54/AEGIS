@@ -16925,3 +16925,16 @@ PC: BUILDCLASS3_D1713 PASSED on the PC (python 3.11 env; same 3.3e-7 background 
 ## D1719 (CENTRE, 19 Nov 2026) — PUBLISHED on Danny's "publish" (21:07): "Not Yet Seen: The Undiscovered Particles and Dark Bound States Predicted by the Weave …"
 doi:10.5281/zenodo.24385539, PDF md5 1e5f4d384c9a33345f01c31ebf2ecd64 (verified on Zenodo = local), CC BY-NC-SA 4.0, preprint, 3 pages. Eleven predicted states with names: sarion, cassion, arthon (family: Sarah, Cassandra, Arthur); waaqinos, malinon, mayarons, Māui knots, haenon/dalnon, ravon, triglavons, saulon (world traditions, stated in the paper as open to review by each tradition). Status of all: no direct evidence; none excluded; only class-level 2–4σ interaction hints. Derived negative: no dark chemistry in the minimal sector (σ/m ≲ 1e-6 cm²/g).
 Next (Danny 21:08): letters to the eight traditions asking for review of the names (drafts until Danny says Send).
+
+## D1720 — WEAVE recheck of the 2 flags D1687 raised on my track (wino_window, m32_window): D1687's gravitino→wino yield checks out independently, so the post-hoc wino window becomes CONDITIONAL on T_R ≲ 1.07e9 GeV or later entropy dilution (2026-11-20)
+- [arithmetic; rate from a Bolz–Brandenburg–Buchmüller / Kawasaki–Kohri–Moroi-type fit, recalled (not re-fetched)]
+  - Y₃/₂ ≈ 1.9e-12 (T_R/1e10)(1 + 0.045 ln)(1 − 0.028 ln), with the gluino term negligible for AMSB (m_g̃ ≪ m₃/₂). Each gravitino → one wino. Ωh² = m_χ Y/3.64e-9 GeV.
+  - At T_R = 1.34e9: non-thermal f = 37.5% at 0.67 TeV and 70% at 1.25 TeV. D1687 got 37–47% at 0.67 TeV and ~90–106% total at 1.25 TeV including thermal winos, consistent.
+  - The cap for f_nonthermal ≤ 30% at 0.67 TeV is T_R ≤ 1.07e9 (D1687: 1.08e9) ✓.
+- **wino_window:** the IGS line test (D1324/D1338) used the thermal f only (5–30%). With the non-thermal yield added at SERAPIS's own T_R, the total f exceeds the window's top at every mass, so the window as stated needs one of D1687's outs: lower T_R, entropy, or a different SUSY spectrum.
+  - Status stays computed. The window is labelled conditional ("thermal-only; non-thermal gravitino winos require T_R ≲ 1.1e9, D1687/D1720").
+  - Not rerun: f_max at 0.67 TeV, the one mass where a higher f might still pass the line test. It belongs to a locked rung (A2r) if wanted.
+- **m32_window:** unchanged. The bound (6.7e8) and the AMSB need (2.5–4.7e5) are untouched.
+  - The decays are early: τ₃/₂ ~ 0.1–1 s for m₃/₂ ~ 2.5–5e5 GeV (order of magnitude), i.e. before BBN. That is why the yield turns into winos rather than spoiling BBN.
+- Flags cleared on both nodes.
+MAP: none
