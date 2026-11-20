@@ -85,8 +85,8 @@ def batch_props(out):
 
 
 KNOBS = dict(Nstar=(45, 60), omega_b=(0.0218, 0.0229), dark_sector=['none', 'brane_split', 'minimal_equal_sharing', 'mirror_at_bound'],
-             b_A=(-0.12, 0.02), dphi=(0.3, 1.0), wino_mass_GeV=(500, 3000), run=['run2', 'run3', 'hl'], halo=['Einasto', 'NFW', 'Burkert'],
-             rho_sun=(0.3, 0.5), eos=['SLy', 'APR', 'H4'], sugra_m=(1, 16), tauq_mass_GeV=(1e8, 5e12), tauq_phi0=(0.1, 1.0),
+             b_A=(-0.12, 0.02), dphi=(0.3, 1.0), wino_mass_GeV=(500, 3000), run=['run2', 'run3', 'run2+3', 'hl-lhc', 'hl-lhc-ult', 'he-lhc', 'fcc-hh'], halo=['Einasto', 'NFW', 'Burkert'],
+             rho_sun=(0.3, 0.5), eos=['SLy', 'AP4'], sugra_m=(1, 16), tauq_mass_GeV=(1e8, 5e12), tauq_phi0=(0.1, 1.0),
              inflation_model=['serapis_10d', 'serapis_6d'])
 
 
