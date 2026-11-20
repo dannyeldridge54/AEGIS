@@ -17058,3 +17058,10 @@ Status: C8 reverts from "FIXED (candidate)" to OPEN. The surviving result is the
 Files: PC AEGIS_PCJOBS/d1713/results/cls_*.json (13 runs); lock field_tests/rules/PREREG_PLANCK_CLASS.md + DEVIATIONS D1.
 - MAP: node=reverse_thread status=computed touches=[] ripple=no
 
+
+## D1726 — RIGHT (literature + arithmetic, not locked; post-hoc comparison) — LHCb "zeptoverse" result: B0→μμ evidence (3.2σ) and Bs→μμ update, arXiv:2611.00230. The Weave makes NO quark-flavour prediction here; its default is the SM value, which the data agree with. Consistent, not evidence (2026-11-20)
+- [RIGHT · literature] LHCb Run 1–3 (27 fb⁻¹): B(B0→μμ) = (1.14 +0.42/−0.39 stat +0.06/−0.05 syst)e-10, 3.2σ; B(Bs→μμ) = (3.25 +0.26/−0.25 +0.13/−0.12)e-9; R_μμ = 0.035 +0.014/−0.012; τ_μμ = 1.60 ± 0.16 ps. SM quoted: 1.03 ± 0.05e-10, 3.66 ± 0.14e-9, R = 0.0280 ± 0.0016.
+- [RIGHT · computed, quadrature errors, asymmetric side chosen toward SM] pulls vs SM: B0 +0.28σ, Bs −1.27σ, R_μμ +0.58σ.
+- [CENTRE · reasoning] What the Weave adds at this scale: the 2.9 TeV wino (pure SU(2) triplet, no flavour couplings: no tree or one-loop b→sμμ contribution), the ultralight thread (no quark couplings by F1), TM1 lives in the lepton sector only. So the model's prediction for every number above is the SM one. No Weave parameter could have moved them.
+- **Verdict:** consistent_not_evidence (post-hoc, non-discriminating). Same class as S8. It does close a door: any future Weave extension that adds light scalars with quark couplings (C_S, C_P) is now bounded by R_μμ and B_s at the ~1σ level. MAP: none (no map node for quark flavour).
+- Sources: arXiv:2611.00230; phys.org 2026-11 news.
