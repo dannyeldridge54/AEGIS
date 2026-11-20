@@ -11,12 +11,20 @@ def test_flavour_koide_and_brannen():
 def test_inflation_full_serapis_and_link_values():
     o = LV['inflation']['outputs']; assert abs(o['ns'] - 0.97065) < 1e-4 and abs(o['r'] - 5.41e-4) < 1e-5
 def test_dark_sector_feeds_bbn():
-    a = E.run({'dark_sector': 'none'}); b = E.run({'dark_sector': 'minimal_dNeff_0.2'})
+    a = E.run({'dark_sector': 'none'}); b = E.run({'dark_sector': 'minimal_equal_sharing'})
     ya = [l for l in a['levels'] if l['id'] == 'bbn'][0]['outputs']['Yp']; yb = [l for l in b['levels'] if l['id'] == 'bbn'][0]['outputs']['Yp']
-    assert yb > ya + 0.002            # ΔN_eff = 0.2 raises helium by ~0.0027
+    assert yb > ya + 0.002            # ΔN_eff = 0.21 raises helium by ~0.003 (D1646)
+    m = E.run({'dark_sector': 'mirror_full_equal'}); assert [l for l in m['levels'] if l['id'] == 'bbn'][0]['status'] == 'fail'
 def test_late_closed_form_and_guard_ceiling():
     o = [l for l in E.run({'b_A': -0.041})['levels'] if l['id'] == 'late'][0]['outputs']
     assert 3.6 < o['z_dagger'] < 3.8 and abs(o['G_eff_over_G'] - (1 + 2*0.041**2)) < 1e-12   # D1725 Union3: 3.71
-    assert LV['late']['outputs']['D1725']['Pantheon+']['d_coupled'] <= LV['late']['outputs']['D1725']['Pantheon+']['d_thread']
+    assert LV['late']['outputs']['D1725']['Pantheon+']['d_coupled_at_most'] <= LV['late']['outputs']['D1725']['Pantheon+']['d_thread']
 def test_collider_limit_flag():
     assert [l for l in E.run({'wino_mass_GeV': 600})['levels'] if l['id'] == 'colliders'][0]['status'] == 'fail'
+
+def test_v1_fixes():
+    assert LV['late']['status'] == 'tension'                       # beats ΛCDM, trails w0wa
+    assert any('1.94' in s for s in LV['stars']['labels'])
+    assert len(LV['flavour']['outputs']['delta_equivalent_forms']) >= 2
+    assert LV['galaxy']['status'] == 'tension'                     # low fraction passes, high fraction fails (2.2e-28 vs 6.0e-28 vs 2.3e-28)
+    assert set(E.DARK_SECTORS) == {'none', 'brane_split', 'minimal_equal_sharing', 'mirror_at_bound', 'mirror_full_equal'}

@@ -6,20 +6,23 @@ run(params) -> {'params', 'levels': [level, ...], 'scorecard'}. Each level:
    status: pass | tension | fail | open, labels: notes on what is predicted (P), fitted (F) or an open gap (G), links}
 Rules: every number is computed by a validated toolkit function, or is a measurement carrying its source.
 Status: pass if every |pull| < 2 and every limit passes; tension if a |pull| is 2–3; fail if any |pull| ≥ 3 or a limit fails."""
-import math
+import functools, math
 
 DEFAULTS = dict(
     inflation_model='serapis_10d', Nstar=55.0,                      # Janus (N* ignored for the full SERAPIS models)
-    omega_b=0.02237, dark_sector='minimal_5GeV',                    # Hyperion BBN; dark sector sets ΔN_eff (link)
+    omega_b=0.02237, dark_sector='brane_split',                    # Hyperion BBN; dark sector sets ΔN_eff (link)
     b_A=0.0, Omega_phi=0.70, Omega_c=0.25, dphi=0.64,               # late universe (D1717 closed form)
     wino_mass_GeV=1000.0, run='run3',                               # CERN+1
     halo='Einasto', rho_sun=0.4,                                    # Hyperion galaxy
     eos='SLy',                                                      # Hyperion stars
     target='M31', aperture_mm=80.0, site='okc')                     # Mapper
 # ΔN_eff carried by each dark-sector branch (register C3/C5): mirror world at its BBN bound; minimal dark sector cold.
-DARK_SECTORS = {'none': (0.0, 'no dark radiation'), 'minimal_5GeV': (0.0, 'P-brane: dark sector on unfluxed D7, cold (C5)'),
-                'minimal_dNeff_0.2': (0.2, 'minimal dark sector, warm branch ΔN_eff ≈ 0.2 (D1646)'),
-                'mirror_0.94GeV': (0.086, 'mirror baryons, at the cold bound ΔN_eff ≤ 0.086 (D1661)')}
+# Each value from the D-notes (V1 finding 1): the label says which note and whether it is an estimate or a bound.
+DARK_SECTORS = {'none': (0.0, 'no dark radiation'),
+                'brane_split': (0.0, 'P-brane (C5, D1671): visible on D3, dark on unfluxed D7; the inflaton heats our side only, ΔN_eff ≈ 0 (must be ≤ 0.086, C5)'),
+                'minimal_equal_sharing': (0.21, 'minimal dark sector (5 GeV baryon + dark photon) with equal sharing per particle: ΔN_eff = 0.21 (D1646, estimate)'),
+                'mirror_at_bound': (0.3, 'mirror sector at its viability bound ΔN_eff = 0.3 (D1648)'),
+                'mirror_full_equal': (7.4, 'full mirror world with equal sharing: ΔN_eff = 7.4 (D1646) — RULED OUT')}
 LEPTONS_MeV = dict(e=(0.51099895000, 1.5e-10), mu=(105.6583755, 2.3e-6), tau=(1776.93, 0.09))   # PDG 2024
 J0740 = (2.08, 0.07, 'PSR J0740+6620 mass (Fonseca et al. 2021, ApJL 915 L12)')
 ATLAS_DT = (670.0, 'ATLAS disappearing track, observed 95% wino limit (arXiv:2603.08315; D1722)')
@@ -48,7 +51,8 @@ def inflation(p):
     labels = ['n_s is FITTED for serapis_* (Ushas tilt chosen); r and α_s are the predictions'] if p['inflation_model'].startswith('serapis') else []
     return L('inflation', 'Inflation', 'A', 'Janus', dict(model=p['inflation_model'], Nstar=pr['Nstar']),
              dict(ns=pr['ns'], r=pr['r'], alpha_s=pr['alpha_s'], bridge_B1=B1, bridge_B2=B2), data, sc,
-             labels + ['status from P-ACT-LB2, CMB-SPA+DESI, PR4+BK18 (newest combined sets)'],
+             labels + ['status from P-ACT-LB2, CMB-SPA+DESI, PR4+BK18 (newest combined sets)',
+                       'bridges B1, B2 shown as numbers only: their old targets were set for an earlier model (V1 finding 2)'],
              links=['N* → reheating → BBN (W2)'], status=_status(key))
 
 # ---------------- B. flavour ----------------
@@ -58,16 +62,17 @@ def flavour(p):
     dQ = (lambda h: (sum(m.values()) + h)/(s['e'] + s['mu'] + math.sqrt(m['tau'] + h))**2 - Q)(1e-3)/1e-3*LEPTONS_MeV['tau'][1]
     # Brannen phase: sqrt(m_k) = mu (1 + sqrt2 cos(delta + 2 pi k/3)); delta = arg(sum_k sqrt(m_k) e^{-2 pi i k/3}) for (tau, e, mu)? test all orders
     import cmath, itertools
-    best = None
+    forms = set()
     for order in itertools.permutations(('e', 'mu', 'tau')):
         z = sum(s[n]*cmath.exp(-2j*math.pi*k/3) for k, n in enumerate(order)); d = cmath.phase(z) % (2*math.pi/3)
-        for cand in (d, 2*math.pi/3 - d):
-            if best is None or abs(cand - 2/9) < abs(best - 2/9): best = cand
+        forms.update((round(d, 9), round(2*math.pi/3 - d, 9)))
+    best = min(forms, key=lambda c: abs(c - 2/9))
     pulls = {'Koide Q = 2/3': (Q - 2/3)/abs(dQ)}
     data = [dict(name=f'm_{k}', value=v[0], sigma=v[1], kind='gauss', source='PDG 2024') for k, v in LEPTONS_MeV.items()]
     return L('flavour', 'Flavour (leptons)', 'B', 'Flavour panel (new)', dict(masses='PDG 2024 pole masses'),
-             dict(Koide_Q=Q, Koide_Q_sigma=abs(dQ), Brannen_delta=best, delta_minus_2_9=best - 2/9), data, pulls,
-             ['Q = 2/3 is a prediction (P-F1)', 'δ = 2/9 has no mechanism yet (C-δ); δ shown in its fundamental domain'],
+             dict(Koide_Q=Q, Koide_Q_sigma=abs(dQ), Brannen_delta=best, delta_minus_2_9=best - 2/9, delta_equivalent_forms=sorted(forms)), data, pulls,
+             ['Q = 2/3 is a prediction (P-F1)', 'δ = 2/9 has no mechanism yet (C-δ)',
+              'δ is defined only up to relabelling the leptons and δ → 2π/3 − δ; the form nearest 2/9 is shown and all forms are listed (V1 finding 5)'],
              links=['TM1 δ_CP band 262°–286° (W4)'])
 
 # ---------------- D. BBN (Hyperion), fed by the dark sector ----------------
@@ -85,14 +90,19 @@ def late(p):
     b = p['b_A']; x = math.exp(abs(b)*p['dphi']) - 1
     zdag = (p['Omega_phi']/(p['Omega_c']*x))**(1/3) - 1 if b < 0 and x > 0 else None
     Geff = 1 + 2*b*b
-    rows = {k: dict(d_thread=v['thread'] - v['lcdm'], d_coupled=min(v['coupled'], v['thread']) - v['lcdm']) for k, v in D1725.items()}
-    pulls = {f'Δχ² thread {k}': 'pass' if r['d_thread'] < 0 else 'FAIL' for k, r in rows.items()}
+    rows = {k: dict(d_thread=v['thread'] - v['lcdm'], d_coupled_reported=v['coupled'] - v['lcdm'],
+                    d_coupled_at_most=min(v['coupled'], v['thread']) - v['lcdm']) for k, v in D1725.items()}
+    pulls = {f'thread beats ΛCDM ({k})': 'pass' if r['d_thread'] < 0 else 'FAIL' for k, r in rows.items()}
+    W0WA = {'Pantheon+': -9.11, 'DES-Y5': -19.72, 'Union3': -15.02}     # CAMB, D1712 context
+    behind = all(rows[k]['d_thread'] > W0WA[k] for k in rows)
     return L('late', 'Late universe (dark energy)', 'C', 'CLASS (patched) + closed form', dict(b_A=b, dphi=p['dphi']),
              dict(z_dagger=zdag, G_eff_over_G=Geff, D1725=rows), [dict(name='full Planck + DESI DR2 + SN', source='D1725 (locked CLASS runs)')],
              pulls, ['b_A is consistent with 0 on full Planck (D1725, fix_fails)', 'negative space needs b_A < 0 (D1716/D1717)',
-                     'Δχ² are the locked fit results; they do not change with the b_A slider'],
+                     'Δχ² are the locked fit results; they do not change with the b_A slider',
+                     'd_coupled_at_most = min(coupled, thread): the coupled model contains the thread, so its true value is at most this (nested guard)',
+                     'thread trails w0wa (−9.1 / −19.7 / −15.0, CAMB)'],
              links=['G_eff → S₈ (W2)', 'z† → H(z) at z 2–5 vs DESI Lyα (W2)'],
-             status='tension')   # thread better than ΛCDM but behind w0wa; coupling not detected
+             status=('tension' if behind else _status(pulls)) if _status(pulls) == 'pass' else _status(pulls))
 
 # ---------------- C. colliders (CERN+1) ----------------
 def colliders(p):
@@ -105,18 +115,33 @@ def colliders(p):
              ['a wino below 670 GeV is excluded by ATLAS'], links=['same wino → gamma line (Galaxy level)'])
 
 # ---------------- C. galaxy & dark matter (Hyperion) ----------------
-def galaxy(p):
-    from tools.janus_astro import settings as H, sommerfeld_nlo as N
-    from tools.janus_astro.serapis_inputs import wino_fraction
-    M = p['wino_mass_GeV']; j = H.jfactor(p['halo'], rho_sun=p['rho_sun'])
+@functools.lru_cache(maxsize=64)
+def _jfactor(halo, rho_sun):
+    from tools.janus_astro import settings as H
+    return H.jfactor(halo, rho_sun=rho_sun)['J_GeV2_cm5']
+@functools.lru_cache(maxsize=256)
+def _sv_line(M):
+    from tools.janus_astro import sommerfeld_nlo as N
     s0 = N.wino_s_nlo(M, v=1e-3, nlo=False, off_factor=math.sqrt(2))
     # LO line cross section (chi chi -> gamma gamma + gamma Z/2), the D1322 smoke-test formula with 1/M^2 kept general
-    sv = 2*s0[1]**2*math.pi*N.ALPHA**2/M**2*0.389379e-27*2.99792458e10*(1 + N.ALPHA2*N.CW2/N.ALPHA)
-    f = wino_fraction(M/1000.0)
+    return 2*s0[1]**2*math.pi*N.ALPHA**2/M**2*0.389379e-27*2.99792458e10*(1 + N.ALPHA2*N.CW2/N.ALPHA)
+HESS_1TEV = 2.3e-28   # cm^3/s, the single stored limit point (D1322: Einasto, at 1 TeV)
+def galaxy(p):
+    from tools.janus_astro.serapis_inputs import wino_fraction
+    M = float(p['wino_mass_GeV']); j = {'J_GeV2_cm5': _jfactor(p['halo'], float(p['rho_sun']))}
+    sv = _sv_line(round(M, 1)); f = wino_fraction(M/1000.0)
+    pulls = {}
+    st = None
+    if abs(M - 1000.0) <= 50:   # the thermal fraction is a bracket (D1152): test both ends, never pick the kinder one
+        lo, hi = f[0]**2*sv <= HESS_1TEV, f[1]**2*sv <= HESS_1TEV
+        pulls['H.E.S.S. 1 TeV, low fraction'] = 'pass' if lo else 'FAIL'; pulls['H.E.S.S. 1 TeV, high fraction'] = 'pass' if hi else 'FAIL'
+        st = 'pass' if (lo and hi) else ('fail' if not lo else 'tension')
     return L('galaxy', 'Galaxy & dark matter (gamma line)', 'C', 'Hyperion', dict(m=M, halo=p['halo'], rho_sun=p['rho_sun']),
              dict(J_GeV2_cm5=j['J_GeV2_cm5'], sigma_v_line_cm3_s=sv, thermal_fraction=f, effective_sv=(f[0]**2*sv, f[1]**2*sv)),
              [dict(name='H.E.S.S. inner Galaxy line limit', source='used at 1 TeV in D1322 (2.3e-28 cm³/s, Einasto); full mass curve not yet stored')],
-             {}, ['LO Sommerfeld (no NLO, no endpoint); limit curve vs mass is map item 2 (open)'], links=['J-factor region → Sky level (W2)'])
+             pulls, ['LO Sommerfeld (no NLO, no endpoint); limit curve vs mass is map item 2 (open)',
+                     'the only stored limit is at 1 TeV (Einasto); away from 1 TeV no pass/fail is given (V1 finding 6)'],
+             links=['J-factor region → Sky level (W2)'], status=st or 'open')
 
 # ---------------- D. stars (Hyperion) ----------------
 def stars(p):
@@ -125,7 +150,8 @@ def stars(p):
     return L('stars', 'Neutron stars', 'D', 'Hyperion', dict(eos=p['eos']), dict(M_max_Msun=ns['M_max_Msun']),
              [dict(name='heaviest pulsar', value=J0740[0], sigma=J0740[1], kind='lower', source=J0740[2])],
              {'M_max ≥ PSR J0740': 'pass' if ns['M_max_Msun'] >= J0740[0] - 2*J0740[1] else 'FAIL'},
-             ['equation of state is standard nuclear physics, not a Weave prediction'])
+             ['equation of state is standard nuclear physics, not a Weave prediction',
+              'pass rule: M_max ≥ 2.08 − 2 × 0.07 = 1.94 M☉ (PSR J0740+6620)'])
 
 # ---------------- E. sky (Mapper) ----------------
 def sky(p):
@@ -142,7 +168,8 @@ def run(params=None):
     levels = []
     for fn in LEVELS:
         try: levels.append(fn(p))
-        except Exception as e: levels.append(L(fn.__name__, fn.__name__, '?', '?', {}, {}, [], {}, [f'ERROR: {e}'], status='open'))
+        except Exception as e:
+            lv = L(fn.__name__, fn.__name__, '?', '?', {}, {}, [], {}, [f'ERROR: {e}'], status='open'); lv['error'] = repr(e); levels.append(lv)
     card = {}
     for lv in levels: card.setdefault(lv['category'], []).append((lv['id'], lv['status']))
     return dict(params=p, levels=levels, scorecard=card)
