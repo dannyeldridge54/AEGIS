@@ -9,6 +9,12 @@ CMDS = ['cern xsec 700 14', 'cern life 1000', 'cern limit ATLAS_136', 'cern higg
         'late dist 1.0', 'late desi -0.75 -0.86', 'late growth 0.5', 'serapis predict 1.15e-6', 'serapis meter 0.9728 0.0027',
         'serapis j 0.2 1.3', 'wavelength line H 2 3', 'wavelength 21cm', 'wavelength convert 500 nm', 'power solar', 'power rc 1000 1000 1e-6']
 RTOL = 1e-6
+# Per-quantity tolerance, only where the quantity's OWN numerical accuracy is coarser than RTOL (documented, 20 Nov 2026):
+# beta_s (running of the running) uses a third derivative of splined ln(eps) (janus_calc/core.flow4). Changing the stencil
+# step h from 0.25 to 0.2 or 0.3 moves it by ~1.4e-5 relative at phi^2, N* = 60, so its numerical accuracy is ~1e-5.
+# CI runs differed by 4e-6 (flaky golden, LOOP_STATE item I): within that accuracy. Tolerance 1e-4 for beta_s only;
+# every other number keeps RTOL = 1e-6.
+RTOL_KEY = {'beta_s': 1e-4}
 def run(cmd):
     r = subprocess.run([sys.executable, '-m', 'tools.aegis_cli'] + cmd.split(), cwd=ROOT, capture_output=True, text=True, timeout=600)
     t = r.stdout; i = t.find('{')
@@ -26,7 +32,8 @@ def compare(old, new):
     for k in a:
         if k not in b: bad.append(f'{k} missing'); continue
         x, y = a[k], b[k]
-        if not (math.isclose(x, y, rel_tol=RTOL, abs_tol=1e-12) or (math.isnan(x) and math.isnan(y))): bad.append(f'{k}: {x} -> {y}')
+        rt = next((t for key, t in RTOL_KEY.items() if k.endswith('.' + key)), RTOL)
+        if not (math.isclose(x, y, rel_tol=rt, abs_tol=1e-12) or (math.isnan(x) and math.isnan(y))): bad.append(f'{k}: {x} -> {y}')
     return bad
 def main(argv):
     if argv[:1] == ['record']:

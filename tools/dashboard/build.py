@@ -21,5 +21,7 @@ def main():
     planck = [dict(set=k, d_thread=v['thread'] - v['lcdm'], d_coupled=v['coupled'] - v['lcdm'], guard=G.report(v, nest)) for k, v in d1713.items()]
     out = dict(provenance=provenance('AEGIS dashboard', {'Nstar': 55}, H.sources(), ['D1725', 'J3b', 'D1191']),
                janus=janus, constraints=consts, hyperion=dict(bbn=b, neutron_stars=ns), cern=dict(reach=reach), planck=planck)
-    json.dump(out, open(os.path.join(HERE, 'data.json'), 'w'), indent=1, default=float); print('wrote data.json')
+    json.dump(out, open(os.path.join(HERE, 'data.json'), 'w', encoding='utf-8'), indent=1, default=float); print('wrote data.json')
+    from tools.evidence import atlas          # Evidence Atlas (PREREG_EVIDENCE_ATLAS) for the Evidence section
+    atlas.build(HERE); print('wrote atlas.json')
 if __name__ == '__main__': main()

@@ -26,6 +26,9 @@ th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-weight:
 .kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}.kpi{flex:1 1 120px;background:var(--chip);border-radius:10px;padding:10px}
 .kpi b{display:block;font-size:20px}.kpi span{font-size:12px;color:var(--muted)}
 button{font:inherit;background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer}
+.ev-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}.ev-tools input[type=search]{flex:1 1 220px}
+.ev-tools input,.ev-tools select{font:inherit;color:var(--ink);background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:4px 8px}.chk{font-size:13px;color:var(--muted)}
+#t-ev td{white-space:normal;text-align:left;vertical-align:top}#t-ev td.n{text-align:right;white-space:nowrap}.lab{font:600 12px ui-monospace,monospace;padding:1px 6px;border-radius:6px;background:var(--chip)}
 footer{max-width:1180px;margin:auto;padding:0 16px 30px;color:var(--muted);font-size:12px}
 </style>
 </head>
@@ -35,6 +38,14 @@ footer{max-width:1180px;margin:auto;padding:0 16px 30px;color:var(--muted);font-
   <div><span class="chip" id="ver">loading…</span> <button id="theme" aria-label="Switch light or dark">Theme</button></div>
 </header>
 <main>
+  <section class="card wide" aria-labelledby="h-ev"><h2 id="h-ev">Evidence Atlas: every tested quantity</h2>
+    <div class="sub">Rules locked before building (PREREG_EVIDENCE_ATLAS). Only <b>P</b> rows (predictions that could fail) count as evidence; F fitted, A assumed, S standard physics and G open rows are listed but never counted. The headline counts one row per independent test.</div>
+    <div class="kpis" id="ev-kpi"></div>
+    <div class="ev-tools"><input id="ev-q" type="search" placeholder="Search quantity, source, D-note…" aria-label="Search the atlas">
+      <select id="ev-tk" aria-label="Toolkit"></select><select id="ev-lab" aria-label="Label"></select><select id="ev-st" aria-label="Status"></select>
+      <label class="chk"><input id="ev-head" type="checkbox"> headline only</label>
+      <a href="atlas.csv" download>CSV</a> · <a href="atlas.json" download>JSON</a></div>
+    <div class="tw"><table id="t-ev"></table></div></section>
   <section class="card wide" aria-labelledby="h-planck"><h2 id="h-planck">Late universe: full Planck + DESI + supernovae (D1725)</h2>
     <div class="sub">Δχ² against ΛCDM, same CLASS build. Negative is better. The guard checks that no bigger model fits worse than a model it contains.</div>
     <div class="tw"><table id="t-planck"></table></div>
@@ -57,6 +68,26 @@ const cell=v=>`<td class="${cls(v)}">${typeof v==='string'?v:(v>0?'+':'')+f(v,1)
 function theme(){const r=document.documentElement,cur=r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');r.dataset.theme=cur==='dark'?'light':'dark';try{localStorage.setItem('aegis-theme',r.dataset.theme)}catch(e){}}
 try{const t=localStorage.getItem('aegis-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
 $('#theme').onclick=theme;
+// ---- Evidence Atlas ----
+fetch('atlas.json').then(r => r.json()).then(A => {
+  const R = A.rows, S = A.summary, H = S.headline_P || {};
+  $('#ev-kpi').innerHTML = `<div class="kpi"><b class="p">${H.pass || 0}</b><span>headline predictions PASS</span></div><div class="kpi"><b class="w">${H.tension || 0}</b><span>in TENSION</span></div><div class="kpi"><b class="f">${H.fail || 0}</b><span>FAIL (kept, not hidden)</span></div><div class="kpi"><b>${S.rows}</b><span>rows: ${Object.entries(S.by_label).map(([k, v]) => k + ' ' + v).join(' · ')}</span></div>`;
+  const opt = (id, name, vals) => $(id).innerHTML = `<option value="">${name}: all</option>` + vals.map(v => `<option>${esc(v)}</option>`).join('');
+  opt('#ev-tk', 'Toolkit', [...new Set(R.map(r => r.toolkit))].sort()); opt('#ev-lab', 'Label', ['P', 'F', 'A', 'S', 'G']); opt('#ev-st', 'Status', ['pass', 'tension', 'fail', 'open']);
+  const LAB = {P: 'prediction', F: 'fitted', A: 'assumed', S: 'standard physics', G: 'open gap'}, cls = {pass: 'p', tension: 'w', fail: 'f', open: ''};
+  const show = v => v == null ? '—' : Array.isArray(v) ? v.map(x => typeof x === 'number' ? (+x.toPrecision(4)) : x).join(' – ') : typeof v === 'number' ? (+v.toPrecision(4)).toString() : String(v);
+  function draw() {
+    const q = $('#ev-q').value.toLowerCase(), tk = $('#ev-tk').value, lb = $('#ev-lab').value, st = $('#ev-st').value, hd = $('#ev-head').checked;
+    const rs = R.filter(r => (!tk || r.toolkit === tk) && (!lb || r.label === lb) && (!st || r.status === st) && (!hd || r.headline) &&
+      (!q || [r.quantity, r.source, r.dnote, r.category, r.data].join(' ').toLowerCase().includes(q)));
+    $('#t-ev').innerHTML = '<tr><th>Quantity</th><th>Toolkit</th><th>Label</th><th>Weave</th><th>Data</th><th>Pull</th><th>Status</th><th>Source · D-note</th></tr>' +
+      rs.map(r => `<tr><td>${r.headline ? '★ ' : ''}${esc(r.quantity)}<br><span class="sub">${esc(r.category)}</span></td><td>${esc(r.toolkit)}</td><td><span class="lab" title="${LAB[r.label]}">${r.label}</span></td>
+        <td class="n">${esc(show(r.weave))}</td><td>${esc(r.data)}</td><td class="n">${typeof r.pull === 'number' ? (r.pull > 0 ? '+' : '') + r.pull.toFixed(2) + 'σ' : esc(r.pull ?? '')}</td>
+        <td class="${cls[r.status]}">${r.status}</td><td class="sub">${esc(r.source)}${r.dnote ? ' · ' + esc(r.dnote) : ''}</td></tr>`).join('') +
+      `<tr><td colspan="8" class="sub">${rs.length} of ${R.length} rows · ★ = headline row · built ${esc(A.provenance.created_utc)} at code ${esc(A.provenance.version)}</td></tr>`;
+  }
+  ['#ev-q', '#ev-tk', '#ev-lab', '#ev-st', '#ev-head'].forEach(s => $(s).addEventListener('input', draw)); draw();
+}).catch(() => { $('#ev-kpi').innerHTML = '<p class="sub">atlas.json missing: run python3 -m tools.dashboard.build</p>'; });
 fetch('data.json').then(r=>r.json()).then(D=>{
   const P=D.provenance; $('#ver').textContent=`code ${P.version} · built ${P.created_utc}`;
   $('#t-planck').innerHTML='<tr><th>SN set</th><th>thread (b=0)</th><th>coupled</th><th>guard</th></tr>'+D.planck.map(r=>`<tr><td>${esc(r.set)}</td><td class="${r.d_thread<-6?'p':'w'}">${f(r.d_thread)}</td><td>${f(r.d_coupled)}</td><td class="${r.guard.startsWith('NESTED OK')?'p':'f'}">${r.guard.startsWith('NESTED OK')?'OK':'minimiser failed'}</td></tr>`).join('');
