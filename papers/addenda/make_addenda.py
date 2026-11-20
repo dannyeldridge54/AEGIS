@@ -22,7 +22,9 @@ for f in sorted(glob.glob('*_REFEREE.md')):
     m0 = re.search(r'"([^"]+)"', h1) or re.search(r'— (.+?)(?: \((?:v[\d.]+|software|\d+ Nov)[^)]*\))*$', h1) or re.search(r'record \d+, (.+?) \(20 Nov', h1)
     title = re.sub(r"^record \d+, ", "", m0.group(1).strip())
     m = re.search(r'## Addendum text[^\n]*\n(.+?)(?=\n## |\Z)', s, re.S)
-    body = fix(m.group(1).strip()); rel = re.search(r'## Related works[^\n]*\n(.+?)(?=\n## |\Z)', s, re.S)
+    raw = '\n'.join(re.sub(r'^>\s?', '', ln) for ln in m.group(1).strip().splitlines())
+    raw = re.sub(r'\n\s*[*_(]*\(?≈?\s*\d+\s*words\)?[*_)]*\s*$', '', raw.strip())
+    body = fix(raw.strip()); rel = re.search(r'## Related works[^\n]*\n(.+?)(?=\n## |\Z)', s, re.S)
     paras = ''.join(f'<p>{md(p.strip())}</p>' for p in body.split('\n\n') if p.strip())
     h = f'''<!doctype html><meta charset="utf-8"><style>@page{{size:A4;margin:22mm 20mm}}body{{font:11pt/1.45 "DejaVu Serif",Georgia,serif;color:#111}}
 h1{{font-size:15pt;margin:0 0 4px}}.m{{font:9.5pt "DejaVu Sans",sans-serif;color:#444;margin-bottom:14px}}p{{margin:0 0 9px;text-align:justify}}code{{font-size:9.5pt}}
