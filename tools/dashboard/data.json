@@ -1,8 +1,8 @@
 {
  "provenance": {
   "toolkit": "AEGIS dashboard",
-  "version": "ffa502b7+dirty",
-  "created_utc": "2026-11-20T12:28:30Z",
+  "version": "b67185c4",
+  "created_utc": "2026-11-20T12:30:24Z",
   "settings": {
    "Nstar": 55
   },
