@@ -5,12 +5,13 @@ Run from CubeMind_janus:  python aegis_tools/aegis_bundle/tools/weave_cm/weave_p
 import os, sys, time, pathlib, multiprocessing as mp
 for k in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS'): os.environ[k] = '1'
 HERE = pathlib.Path(__file__).resolve().parent
-DATA = pathlib.Path(os.environ.get('WEAVE_DATA') or (HERE.parents[2] / 'weave_data'))
+ROOT = HERE.parents[3]   # .../CubeMind_janus  (weave_cm -> tools -> aegis_bundle -> aegis_tools -> CubeMind_janus)
+DATA = pathlib.Path(os.environ.get('WEAVE_DATA') or (ROOT / 'weave_data'))
 
 
 def worker(i):
     sys.path.insert(0, str(HERE)); import weave_sweep as WS
-    os.environ.setdefault('WEAVE_CURRENT', str(HERE.parents[2] / 'aegis_tools' / 'aegis_current'))
+    os.environ.setdefault('WEAVE_CURRENT', str(ROOT / 'aegis_tools' / 'aegis_current'))
     while True:
         try:
             r = WS.run(str(DATA), seconds=int(os.environ.get('WEAVE_POOL_S', '90')), shard=f'_w{i}')
