@@ -1,6 +1,6 @@
 # (c) Danny Lee Eldridge · AEGIS Community License (business use needs the Commercial License)
 """Mapper observing planner (M1a + M2 + M1d): "what can MY telescope see tonight from MY site", sorted the way observers asked
-for (percent of the object's best altitude reached now, so plans re-sort as the night moves; zenith-hole demotion for
+for (percent of the object's culmination altitude 90 - |lat - dec| reached now, as KStars users proposed, so plans re-sort as the night moves; zenith-hole demotion for
 alt-az Dobsonians), with exports other tools read (CSV, VOTable, an astroplan-style target table).
 Positions: astropy (AltAz with the site and time). Catalogues: the Sky Map's Messier + bright-star files.
 Limiting magnitude: visual rule of thumb m_lim ≈ 2.1 + 5 log10(D_mm) (labelled as an estimate)."""
@@ -46,7 +46,8 @@ def plan(site='okc', when=None, aperture_mm=80.0, min_alt=20.0, zenith_hole=None
         rows.append(dict(name=c['name'], kind=c['kind'], mag=c['mag'], ra=c['ra'], dec=c['dec'],
                          alt_now=round(now, 2), az_now=round(float(az[0, j]), 2), airmass_now=round(am, 3) if am else None,
                          best_alt=round(best, 2), time_best=times[ib].isot[:16] + 'Z',
-                         pct_of_best=round(100*now/best, 1) if best > 0 and now > 0 else 0.0,
+                         culmination_alt=round(90 - abs(lat - c['dec']), 2),
+                         pct_of_best=round(100*now/(90 - abs(lat - c['dec'])), 1) if now > 0 and abs(lat - c['dec']) < 90 else 0.0,
                          visible_now=now >= min_alt and not in_hole, observable=best >= min_alt, zenith_hole=in_hole))
     rows = [r for r in rows if r['observable']]
     rows.sort(key=lambda r: (not r['visible_now'], -r['pct_of_best'], r['mag'] if r['mag'] is not None else 99))
