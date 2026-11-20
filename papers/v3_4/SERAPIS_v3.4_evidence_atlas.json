@@ -1,8 +1,8 @@
 {
  "provenance": {
   "toolkit": "Evidence Atlas",
-  "version": "185a1e77+dirty",
-  "created_utc": "2026-11-20T12:24:30Z",
+  "version": "ffa502b7+dirty",
+  "created_utc": "2026-11-20T12:28:43Z",
   "settings": {},
   "sources": [],
   "validated_by": [
@@ -19,38 +19,39 @@
    "S": 3
   },
   "by_status": {
-   "pass": 44,
-   "open": 7,
+   "pass": 42,
+   "open": 8,
    "fail": 5,
-   "tension": 2
+   "tension": 3
   },
   "headline_P": {
-   "pass": 9,
+   "pass": 7,
    "fail": 3,
-   "tension": 2
+   "tension": 3,
+   "open": 1
   },
   "evidence": {
-   "pass": 4,
+   "pass": 1,
+   "tension": 2,
    "fail": 1,
-   "tension": 2
+   "open": 1
   },
   "evidence_by_kind": {
    "bound": {
-    "pass": 2,
-    "tension": 1
+    "pass": 1,
+    "open": 1
    },
    "comparison": {
-    "pass": 1,
-    "tension": 1
+    "tension": 2
    },
    "match": {
-    "fail": 1,
-    "pass": 1
+    "fail": 1
    }
   },
   "consistent_not_evidence": {
-   "pass": 5,
-   "fail": 2
+   "pass": 6,
+   "fail": 2,
+   "tension": 1
   }
  },
  "rows": [
@@ -628,15 +629,15 @@
    "id": "late-thread-all",
    "category": "cosmological parameter",
    "toolkit": "CLASS/Weave Control",
-   "quantity": "reverse thread beats ΛCDM after the parameter penalty (ΔAIC < 0 on all 3 SN sets)",
+   "quantity": "reverse thread meaningfully beats ΛCDM after the parameter penalty (ΔAIC < −2)",
    "weave": "-0.6 / -6.1 / -1.4",
    "label": "P",
    "data": "Planck 2018 + DESI DR2 + Pantheon+ / DES-Y5 / Union3",
    "source": "D1725",
-   "pull": "pass",
+   "status": "tension",
+   "pull": "1 of 3 sets with ΔAIC < −2",
    "headline": true,
-   "dnote": "rule 5: one headline row for the three overlapping fits",
-   "status": "pass",
+   "dnote": "DEVIATIONS D2: meaningful only where ΔAIC < −2 (DES-Y5); rule 5: one headline row",
    "timing": "locked",
    "kind": "comparison",
    "inherited": false,
@@ -650,7 +651,7 @@
    "quantity": "Arthur-field coupling b_A detected?",
    "weave": "b_A = +0.004 / +0.020 / −0.041",
    "label": "P",
-   "data": "consistent with 0",
+   "data": "no detection; no b_A error bars; 2 of 3 coupled fits did not converge",
    "source": "D1725",
    "pull": "FAIL",
    "headline": true,
@@ -696,8 +697,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -715,8 +716,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -734,8 +735,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -753,8 +754,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -772,8 +773,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -791,8 +792,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -810,8 +811,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -829,8 +830,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -848,8 +849,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -867,8 +868,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -886,8 +887,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -905,8 +906,8 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -924,9 +925,9 @@
    "status": "pass",
    "timing": "locked",
    "kind": "match",
-   "inherited": false,
-   "why": "PREREG_W2_LINKS L3",
-   "evidence": true
+   "inherited": true,
+   "why": "ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)",
+   "evidence": false
   },
   {
    "id": "lhc-wino",
@@ -963,10 +964,10 @@
    "pull": null,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
-   "timing": "locked",
+   "timing": "post-hoc",
    "kind": "bound",
    "inherited": false,
-   "why": "PREREG_W2_LINKS L1",
+   "why": "wino masses are benchmarks; the thermal SERAPIS-E wino is post-hoc (D784; DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -985,10 +986,10 @@
    "pull": null,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
-   "timing": "locked",
+   "timing": "post-hoc",
    "kind": "bound",
    "inherited": false,
-   "why": "PREREG_W2_LINKS L1",
+   "why": "wino masses are benchmarks; the thermal SERAPIS-E wino is post-hoc (D784; DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -1007,11 +1008,11 @@
    "pull": null,
    "headline": true,
    "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
-   "timing": "locked",
+   "timing": "post-hoc",
    "kind": "bound",
    "inherited": false,
-   "why": "PREREG_W2_LINKS L1",
-   "evidence": true
+   "why": "wino masses are benchmarks; the thermal SERAPIS-E wino is post-hoc (D784; DEVIATIONS D2)",
+   "evidence": false
   },
   {
    "id": "gline-1000-Burkert",
@@ -1029,10 +1030,10 @@
    "pull": null,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
-   "timing": "locked",
+   "timing": "post-hoc",
    "kind": "bound",
    "inherited": false,
-   "why": "PREREG_W2_LINKS L1",
+   "why": "wino masses are benchmarks; the thermal SERAPIS-E wino is post-hoc (D784; DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -1051,10 +1052,10 @@
    "pull": null,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
-   "timing": "locked",
+   "timing": "post-hoc",
    "kind": "bound",
    "inherited": false,
-   "why": "PREREG_W2_LINKS L1",
+   "why": "wino masses are benchmarks; the thermal SERAPIS-E wino is post-hoc (D784; DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -1073,10 +1074,10 @@
    "pull": null,
    "headline": false,
    "dnote": "PREREG_W2_LINKS L1 + DEVIATIONS D1",
-   "timing": "locked",
+   "timing": "post-hoc",
    "kind": "bound",
    "inherited": false,
-   "why": "PREREG_W2_LINKS L1",
+   "why": "wino masses are benchmarks; the thermal SERAPIS-E wino is post-hoc (D784; DEVIATIONS D2)",
    "evidence": false
   },
   {
@@ -1086,12 +1087,12 @@
    "quantity": "dark particle (sarion) mass 12.8 GeV from chemical equilibrium",
    "weave": 12.8,
    "label": "P",
-   "data": "xenon limits survive; dark photon cut to ε ≲ 3e-9–8e-7",
-   "source": "D1676, D1677",
-   "status": "pass",
+   "data": "xenon limit used is an unsourced bracket; LZ at 13 GeV not yet sourced",
+   "source": "D1676, D1677, D1678",
+   "status": "open",
    "pull": null,
    "headline": true,
-   "dnote": "LZ curve at 13 GeV not yet sourced (D1678)",
+   "dnote": "DEVIATIONS D2: open until the LZ curve is sourced; survival depends on a free portal coupling",
    "timing": "locked",
    "kind": "bound",
    "inherited": false,

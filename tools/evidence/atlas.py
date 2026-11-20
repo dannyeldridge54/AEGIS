@@ -73,11 +73,12 @@ def rows():
             weave=round(r['d_thread'], 2), label='P', data='Planck 2018 + DESI DR2 + SN', source='D1725 (locked CLASS runs)',
             pull='pass' if r['d_thread'] < 0 else 'FAIL', headline=False, dnote=f'ΔAIC {r["dAIC_thread"]:.1f}; trails w0wa')
     aic = [r['dAIC_thread'] for r in late['D1725'].values()]
-    add(id='late-thread-all', category='cosmological parameter', toolkit='CLASS/Weave Control', quantity='reverse thread beats ΛCDM after the parameter penalty (ΔAIC < 0 on all 3 SN sets)',
+    add(id='late-thread-all', category='cosmological parameter', toolkit='CLASS/Weave Control', quantity='reverse thread meaningfully beats ΛCDM after the parameter penalty (ΔAIC < −2)',
         weave=' / '.join(f'{a:.1f}' for a in aic), label='P', data='Planck 2018 + DESI DR2 + Pantheon+ / DES-Y5 / Union3', source='D1725',
-        pull='pass' if all(a < 0 for a in aic) else 'FAIL', headline=True, dnote='rule 5: one headline row for the three overlapping fits')
+        status='pass' if all(a < -2 for a in aic) else ('tension' if any(a < -2 for a in aic) else 'fail'), pull=f'{sum(a < -2 for a in aic)} of 3 sets with ΔAIC < −2',
+        headline=True, dnote='DEVIATIONS D2: meaningful only where ΔAIC < −2 (DES-Y5); rule 5: one headline row')
     add(id='late-coupling', category='cosmological parameter', toolkit='CLASS/Weave Control', quantity='Arthur-field coupling b_A detected?',
-        weave='b_A = +0.004 / +0.020 / −0.041', label='P', data='consistent with 0', source='D1725', pull='FAIL', headline=True, dnote='D1725 fix_fails')
+        weave='b_A = +0.004 / +0.020 / −0.041', label='P', data='no detection; no b_A error bars; 2 of 3 coupled fits did not converge', source='D1725', pull='FAIL', headline=True, dnote='D1725 fix_fails')
     add(id='late-w0wa', category='cosmological parameter', toolkit='CLASS/Weave Control', quantity='thread vs flexible w0wa',
         weave='−2.6 / −8.1 / −3.4', label='P', data='w0wa −9.1 / −19.7 / −15.0', source='D1712 (CAMB)', status='tension', pull=None, headline=True, dnote='thread behind w0wa')
     for k, v in late['S8_pulls'].items():
@@ -102,7 +103,8 @@ def rows():
                 weave=gl['outputs'].get('thermal_fraction'), label='P', data=f"H.E.S.S. limit, f_max {gl['outputs'].get('f_max') and round(gl['outputs']['f_max'], 3)}",
                 source=E.HESS_SRC, status=gl['status'], pull=None, headline=(m == 1000.0 and h == 'Einasto'), dnote='PREREG_W2_LINKS L1 + DEVIATIONS D1')
     add(id='dm-12.8', category='particle', toolkit='Hyperion', quantity='dark particle (sarion) mass 12.8 GeV from chemical equilibrium', weave=12.8, label='P',
-        data='xenon limits survive; dark photon cut to ε ≲ 3e-9–8e-7', source='D1676, D1677', status='pass', pull=None, headline=True, dnote='LZ curve at 13 GeV not yet sourced (D1678)')
+        data='xenon limit used is an unsourced bracket; LZ at 13 GeV not yet sourced', source='D1676, D1677, D1678', status='open', pull=None, headline=True,
+        dnote='DEVIATIONS D2: open until the LZ curve is sourced; survival depends on a free portal coupling')
 
     # ---- stars, neutrinos ----
     st = lv['stars']
@@ -130,10 +132,10 @@ CLASSIFY = [  # (id prefix, timing, kind, inherited, reason)
     ('late-thread', 'locked', 'comparison', False, 'PREREG_PLANCK_CLASS locked before the fits; data public'),
     ('late-coupling', 'locked', 'match', False, 'PREREG_PLANCK_CLASS'),
     ('late-w0wa', 'locked', 'comparison', False, 'D1712'),
-    ('late-S8', 'locked', 'match', False, 'PREREG_W2_LINKS L3'),
+    ('late-S8', 'locked', 'match', True, 'ΛCDM gives the same S8 with smaller pulls: does not discriminate (DEVIATIONS D2)'),
     ('late-', 'locked', 'match', False, 'PREREG_W2_LINKS L3'),
     ('lhc-', 'locked', 'bound', False, 'benchmark mass'),
-    ('gline-', 'locked', 'bound', False, 'PREREG_W2_LINKS L1'),
+    ('gline-', 'post-hoc', 'bound', False, 'wino masses are benchmarks; the thermal SERAPIS-E wino is post-hoc (D784; DEVIATIONS D2)'),
     ('dm-', 'locked', 'bound', False, 'PREREG_Q9/Q11: survives limits'),
     ('ns-', 'locked', 'bound', True, 'standard nuclear physics'),
     ('nu-', 'locked', 'match', True, 'standard cosmology'),
