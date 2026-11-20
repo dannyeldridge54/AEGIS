@@ -24,6 +24,12 @@ F. W8 CERN+1: simplified likelihood (R5); triglavon/cassion reach at FCC-hh / be
 G. Toolkit integration: CLI `aegis weave ...` for every level; dashboard reads the engine; CLI --prov wiring; prove-the-model scorecard page.
 H. Map data items 2–8: gamma-line limit curve (H.E.S.S. IGS 2026 full curve if published), NICER, GWTC-4, ESPP, D/H + τ_n, Gaia DR4, CODATA 2022.
 I. CI health: golden check is FLAKY — `aegis janus 0.5*phi**2 60` β_s drifts 4e-6 relative between runs (passed on f5edc931, failed on 9aa71df8): find the source of the non-determinism (do NOT loosen the tolerance without a DEVIATIONS-style note).
+K. NEUTRINO SKY (Danny 06:08 CT: "Can we map the full neutrino density and everything now?") — new level 'Relic neutrinos' (category C):
+   K1 background numbers from the register masses (NO, m₁ = 0, NuFIT 6.0 splittings; first pass computed 06:10 CT): n = 112 per flavour (ν + ν̄), 336 cm⁻³ total; T_ν = 1.945 K; masses 0, 8.65 meV, 50.1 meV (Σ 0.0588 eV); Ω_ν h² = 6.31 × 10⁻⁴, f_ν = 0.0044 → small-scale P(k) suppressed ≈ 3.5%; mean speeds today 18 300 km/s (m₂) and 3 160 km/s (m₃); non-relativistic at z ≈ 15 and 94; k_nr ≈ 9.4 × 10⁻⁴ and 2.3 × 10⁻³ h/Mpc.
+   K2 P(k) and σ₈ with these masses through CAMB/CLASS (Hyperion), vs massless.
+   K3 local overdensity in the Milky Way: N-one-body back-tracking of relic neutrinos through Hyperion's galaxy potentials (MWPotential2014, McMillan17), compared with the literature (Ringwald & Wong 2004; Mertsch et al. 2020; Zimmer et al. 2023); give the density at the Sun and a sky map of the local neutrino flux direction.
+   K4 detection outlook: PTOLEMY-style capture rate on tritium from n_local; KATRIN/Project 8 mass limits as data.
+   Lock (PREREG) before computing K2–K4.
 J. D1713 follow-ups: nothing to rerun (locked); C8 reopened; next real test DESI DR3 + CMB-S4 — watch for data releases.
 
 ## Item queue (build order from the plan)
