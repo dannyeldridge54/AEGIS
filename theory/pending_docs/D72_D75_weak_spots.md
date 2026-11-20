@@ -16566,3 +16566,10 @@ D1646 called the minimal dark sector (dark fermion + massless dark photon) VIABL
 ## D1666 — JANUS genesis G12d: round 3 passes referee — loop stops
 - Locks before results, every number re-derives, card 38/38, every round-3 note cites its papers.
 - MAP: node=genesis_reheating status=estimate touches=[] ripple=no
+
+## D1667 (CENTRE, 19 Nov 2026) — RESULT: TM1 survives JUNO, and it lives on the Weave's own two vacua under modular S₄ (PREREG_TM1_JUNO)
+- [computed] TM1: sin²θ₁₂ = 0.3184 → +1.05σ (JUNO), +1.42σ (combined) → SURVIVES. TM2: +3.6σ / +4.6σ (D1652). The TM2 regression check reproduces D1599 (124.8°/235.2° vs 124.9°/235.6°) ✓.
+- TM1 δ_CP sum-rule predictions: 74.3° or 285.7° (s₂₃² = 0.561); 97.6° or 262.4° (0.470).
+- [lit] Modular TM1 (arXiv:2511.16348, written after JUNO; also 1910.03460, 1908.02770): Γ₄ ≅ S₄, with charged leptons at τ = ω (Z₃^T) and neutrinos at τ_SU = −½ + i/2 (Z₂^{SU}).
+- [derived, key point] τ_SU = −½ + i/2 is SL(2,Z)-equivalent to i (S then T⁻¹ maps it to i), and ω is equivalent to ρ. So modular-S₄ TM1 uses EXACTLY the Weave's two zero-energy vacua; only the finite group changes (A₄ → S₄). The level-4 structure tells which image of i is meant. The Zhinü potential is SL(2,Z)-invariant, so all images are equally deep.
+- Verdict: the flavour sector is RESCUED in a new form. "Charged leptons at ρ, neutrinos at (an image of) i" stands; the finite group must be S₄ (TM1), not A₄ (TM2). Open: why S₄ (level 4) rather than A₄ (level 3), and which image of i the neutrino modulus lands on (a basin question, as in D1610).
