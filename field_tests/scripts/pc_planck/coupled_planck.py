@@ -62,7 +62,7 @@ def make(name):
     for suf in ('_desy5','_union3'):
         if core.endswith(suf): core,sn=core[:-len(suf)],suf
     info,ref=R.make('rtP'+(sn or ''))
-    info['output']=os.path.join(HERE,'results','chains','cmp_'+name)
+    info['output']=os.path.join(HERE,'results','chains','cmp_'+name+'_r2'); info['force']=True
     shape='lo' if core=='gate' else 'exact'
     ex=info['theory']['rtcamb']['extra_args']; info['theory']={'ctcamb':{'external':theory(shape),'extra_args':ex,'stop_at_error':False}}
     pr=info['params']; pr['rt_ui']={'prior':{'min':1e-6,'max':0.9},'ref':{'dist':'uniform','min':0.1,'max':0.25},'proposal':0.02}
