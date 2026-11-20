@@ -25,7 +25,12 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W4 flavour level · next stage: R research (W3 signed off at V2, 05:19 CT).
+Item W9 packaging (Danny 05:19 CT: "Make .exe and apks them all, same loops") · next stage: P postulate (R done 05:22 CT). W4 flavour moves after W9/W10.
+W9 research notes:
+- The cloud and the PC VM cannot reach dl.google.com, Maven Central or services.gradle.org (proxy 403 / no route), so APKs and Windows .exe files cannot be built locally. npm and PyPI are reachable.
+- The repo already builds both in GitHub Actions: build-executables.yml (PyInstaller on windows/macos/ubuntu, on release or manual run, self-tests the exe, uploads artifacts) and sarah_apk.yml (Android WebView wrapper, Gradle 8.9 + JDK 17 on ubuntu, publishes the APK to the apk-dist branch). Sarah's Sky's android/ project (WebView + androidx.webkit, assets) is the template for the other apps.
+- Plan: (a) .exe: add `aegis control` (starts the Weave Control server and opens the browser) and the Weave Control / Mapper / dashboard files to the PyInstaller build; Janus.exe (Studio) already has the Control tab. (b) APKs: one workflow with a matrix over apps — Sky Map (pure JS, works offline), Toolkit Dashboard (static + data.json), Weave Control OFFLINE (the Python engine cannot run on a phone, so the APK ships a precomputed snapshot over the knob grid, labelled as such, the way Janus ships data.js).
+- FOUND: the 'tools' CI workflow has FAILED on every push since 19 Nov 09:27 UTC. Two causes: (1) toolkits job — test_hyperion_settings imports bbn.py which needs camb, not installed in that job (my H1/J tests added it) → fixed now by adding camb to the pip line; (2) test job — `ladder.py check` fails on ~75 D-notes (D1626–D1725, many sessions) that lack a MAP line. (2) is a repo rule; adding MAP lines to my own D-notes (D1712–D1725) is queued; the rest belongs to the sessions that wrote them.
 W3/V2: U-R1 Download JSON + Copy link (params in the URL hash, restored on load: tested 440 GeV/Burkert round trip, download has 8 levels + provenance); U-R2 3 significant figures by default, more only for Koide Q, Brannen δ, n_s, Y_p; U-R3 'LOCKED fit results' tag on the Late bars; U-R4 inflation legend with ★ on the sets that decide the status; U-R5 collider labels moved; U-R6 'graded on r only' in the scorecard tooltip; U-R8 print stylesheet. U-R7 (no error bars yet) carried to W5/W6. Playwright desktop + phone: 0 errors, 0 unnamed, no h-scroll. 11 tests pass.
 Earlier E2 recap (05:14 CT: U1–U10 fixed; Playwright desktop + phone 0 errors, 0 unnamed, no h-scroll, update 0.57–0.65 s; 11 tests pass). Small leftover seen: collider chart 'excluded (ATLAS) < 670' text touches the 'reach 740' label when the two are close.
 V1 findings (W3), from the desktop and phone screenshots and the page source:
@@ -120,6 +125,7 @@ Strengths a referee would note: one parameter set drives every level; sources an
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:22 CT W9/R research: build paths (GitHub Actions), offline-APK design, CI failures found; camb added to CI
 - 05:19 CT W3/V2 signed off (export/share, precision, locked tags, legend, print)
 - 05:16 CT W3/F referee: 8 points (4 major: export/share, precision, live vs locked, inflation legend)
 - 05:14 CT W3/E2 engineer: limits read from the engine (no hard-coded 670 or H.E.S.S. masses), stale label removed, galaxy chart rescaled, S₈ labels shortened, human names + units once, δ forms as a list, phone header static + larger chart text, status words beside lamps, Studio Api.weave_run + open_control + 'Control' tab

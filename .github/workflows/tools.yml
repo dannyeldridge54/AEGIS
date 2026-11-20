@@ -33,7 +33,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install numpy scipy sympy mpmath numba pyhf galpy astropy pytest
+      - run: pip install numpy scipy sympy mpmath numba pyhf galpy astropy camb pytest
       - run: python -m pytest -q tools/kaluza/tests tools/lhc/tests tools/lattice/tests tools/janus_astro/tests tools/janus_lt/tests tools/serapis_calc/tests tools/chem/tests tools/golden/tests
       - run: python -m tools.golden.golden check
       - run: python tools/release_smoketest.py
