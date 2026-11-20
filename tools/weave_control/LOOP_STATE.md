@@ -25,7 +25,7 @@ Plan: tools/WEAVE_CONTROL_PLAN.md (51 Weave items, per-tool "better than the spe
 Then the older toolkit queue (M1c, sexagesimal input, J2a, M4, R6, M5, H1d, M1e, M1g, CLI --prov, map data items 2–8).
 
 ## Current position
-Item W9/W10 packaging (Danny 05:19 CT: "Make .exe and apks them all, same loops"; 05:22 "Do it best u can") · next stage: V2 review (F done 05:35 CT; referee P-R1–P-R6 below; P-R1–P-R3 at V2). W4 flavour after this.
+Item W9/W10 packaging (Danny 05:19 CT: "Make .exe and apks them all, same loops"; 05:22 "Do it best u can") · next stage: V2 (finish) — P-R1, P-R2, P-R6 done 05:36 CT (52a7680a): fixed sideload key apps/android_shell/aegis-sideload-debug.keystore (debug-grade, labelled), location only when needsLocation=true, README written to apk-dist. STILL OPEN before sign-off: P-R3 exe run 44728408158 (3 OSs in progress at 05:36), the new APK run, and the tools run (first after the MAP-line fix). W4 flavour after this.
 Referee report W9/W10 (someone installing the apps on a phone / PC):
 P-R1 (major) The APKs are DEBUG builds signed with a fresh debug key on every CI run, so installing a newer APK over an older one fails ('package conflicts / signature mismatch'): the user must uninstall first. Fix: a stable signing key. Best: a release keystore kept as GitHub secrets (needs Danny to add 4 secrets; never commit a release key). Interim: a fixed DEBUG keystore committed under apps/android_shell (standard 'android' password, sideload only, clearly labelled not for Play Store).
 P-R2 (major) Least privilege: every app declares ACCESS_COARSE_LOCATION, though only Sky Map uses it. Declare location only for Sky Map (manifest placeholder).
@@ -143,6 +143,7 @@ Strengths a referee would note: one parameter set drives every level; sources an
 
 ## Done log
 - 04:50 CT W1/F referee: 9 points (3 major)
+- 05:36 CT W9/V2 part 1: signing key, least privilege, README (exe proof pending)
 - 05:35 CT W9/F referee: 6 points (signing key, least privilege, exe proof)
 - 05:33 CT W9/E2 engineer: all 3 APKs built and published; exe build dispatched; ladder MAP lines reviewed and added
 - 05:28 CT W9/V1 review: Sarah APK publish made non-destructive; Sky Map APK built in CI
