@@ -1,0 +1,6 @@
+# PREREG_W4_FLAVOUR — deviations (written before the code change)
+## D1 (20 Nov 2026, 05:57 CT; from referee N-R1–N-R5)
+- δ_CP band (N-R2): besides the two locked points, the panel shows the TM1 lower-branch δ_CP over the T2K+NOvA 1σ range of sin²θ₂₃ = 0.56 +0.03/−0.05, i.e. [0.51, 0.59] (Nature 2025, via D1690), using the SAME sum rule. The STATUS rule is unchanged (lower branch at 0.561 inside the T2K+NOvA 1σ and the NuFIT 3σ ranges); the band is shown as context.
+- Labels (N-R1, N-R4, N-R5): 'the branch is chosen by the data; TM1 predicts the mirror pair'; 'normal ordering assumed; inverted ordering not evaluated'; 'θ₁₃ point value: σ(sin²θ₁₃) ≈ 0.0006 moves TM1 sin²θ₁₂ by ≈ 0.0004, small next to the data error'.
+- Neutrino mass sum (N-R3): show the register value Σm_ν = 0.0587 eV (map node mnu, frozen; normal ordering with m₁ = 0, oscillation splittings from NuFIT 6.0; recomputed 0.05878 eV in D1234's check) against the 95% upper bound 0.0642 eV used in that check (DESI DR2 + CMB, as recorded in the D-notes). Pass if Σ < bound. Labelled: m₁ = 0 is an ASSUMPTION of the mass sector, not derived from the modular-S₄ model.
+No change to any computed number already locked; no tuning.
