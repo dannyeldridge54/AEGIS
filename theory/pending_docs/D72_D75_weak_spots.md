@@ -16589,3 +16589,8 @@ DERIVE (Q2) [computed] against NuFIT 6.0, NO (arXiv:2410.05380), each branch pai
 - IC19 (s₂₃² = 0.561; δ = 177 +19/−20, 3σ [96, 422]): 74.3° OUTSIDE 3σ; 285.7° inside (pull ≈ 1.8).
 - IC24 (s₂₃² = 0.470; δ = 212 +26/−41, 3σ [124, 364]): 97.6° OUTSIDE 3σ; 262.4° inside (pull ≈ 1.4).
 Verdict: TM1 SURVIVES, and the data already pick its branch. The Weave's δ_CP prediction sharpens to the lower-half-plane branch: δ_CP ≈ 262°–286° (≈ −98° to −74°), sin δ < 0, which is the "maximal CP violation" side T2K favours. Scored on DUNE / Hyper-K. The upper branch (74°–98°) is excluded at > 3σ.
+
+## D1670 (CENTRE, 19 Nov 2026) — BIG LOOP Q3: flavour paper v3 correction DRAFT (not published)
+- papers/weave_flavour/Eldridge_weave_flavour_2026_v3.tex/.pdf (2 pages, md5 48262247edfd11524efead171b33149b).
+- Changes from v2: (iii) and Sec. III rewritten. Exact TM2 is withdrawn (JUNO +3.6σ). TM1 under modular S₄ at the same two vacua (τ_SU ≅ i), sin²θ₁₂ = 0.3184 (+1.1σ). Image count 3 TM1 / 3 dead / 0 TM2. δ_CP = 286° (0.561) or 262° (0.470), with the other branch excluded by NuFIT 6.0. P-S4 is added to "what is assumed". A correction note lists the withdrawn v2 numbers. New refs: JUNO 2511.14593, 2511.16348, 1811.04933, 1910.03460.
+- Status: DRAFT. Publishing on Zenodo (as a new version of 24377945) only on Danny's "Publish".
