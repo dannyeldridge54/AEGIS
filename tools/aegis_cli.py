@@ -12,6 +12,7 @@ Usage (from the repo root:  python -m tools.aegis_cli <command> ...,  or the exe
   janus models                      model library
   janus score <model|V(phi)> [N*]   n_s, r, alpha_s and pulls vs Planck 2018, CMB-SPA, CMB-SPA+DESI, BK18
   janus table [N*]                  every library model scored
+  doctor [profiles]                 which optional packages are installed and what each unlocks; pip line to fix
   mapper plan [okc|lat,lon] [aperture_mm] [ISO-UTC] [csv|votable|astroplan]   what your telescope can see tonight, ranked
   hyperion pulls [omega_b] [dNeff]  Y_p and D/H with pulls vs LBT 2026, Aver 2021, Cooke 2018
   hyperion ns [SLy|AP4]             neutron-star maximum mass
@@ -400,6 +401,11 @@ def menu(args):
         except (ValueError, IndexError): print('Not a choice.')
         except Exception as e: print('Error:', e)
 
+def doctor(args):
+    from tools import doctor as D
+    d = D.check(); _show(d['packages']); print(f"\nPython {d['python']}.  Missing: {', '.join(d['missing']) or 'none'}\nFix: {d['fix']}")
+    if args and args[0] == 'profiles': _show(d['profiles'])
+
 def mapper(args):
     """mapper plan [site|lat,lon] [aperture_mm] [ISO-UTC] [csv|votable|astroplan]"""
     from tools.mapper import planner as P
@@ -419,7 +425,7 @@ def main(argv=None):
         try: st.reconfigure(encoding='utf-8', errors='replace')
         except Exception: pass
     _root(); argv = sys.argv[1:] if argv is None else argv
-    cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'mapper': mapper, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'string': string, 'test': test, 'license': license_, 'menu': menu}
+    cmds = {'aion': aion, 'tracker': tracker, 'wavelength': wavelength, 'power': power, 'sound': sound, 'serapis': serapis, 'cern': cern, 'janus': janus, 'hyperion': hyperion, 'mapper': mapper, 'doctor': doctor, 'scorecard': scorecard, 'late': late, 'lattice': lattice, 'string': string, 'test': test, 'license': license_, 'menu': menu}
     if '--format' in argv:
         i = argv.index('--format')
         if i + 1 >= len(argv) or argv[i + 1] not in ('json', 'csv', 'table'):

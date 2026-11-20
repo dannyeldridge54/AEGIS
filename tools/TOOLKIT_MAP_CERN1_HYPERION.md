@@ -96,7 +96,7 @@ Source: European astronomer survey (arXiv:2012.07686; ~1,000 respondents): repro
 | interoperability / IVOA | ECSV + VOTable output with units (astropy-compatible); accept astropy Quantity/SkyCoord inputs | H1b |
 | cross-matching | Gaia DR3/DR4 ↔ SIMBAD/2MASS cross-match helper (TAP/ADQL query builder) in mapper_feed | H1c |
 | visual analytics | quick-look plots for every preset (rotation curve, M–R curve, GW horizon, BBN pulls) saved as PNG/SVG | H1d |
-| installation pain | one-line install profile (pip extras: core / gw / galaxy / full) + `hyperion doctor` that checks optional deps (lalsuite, galpy, colossus, CAMB) and says what each unlocks | H1e |
+| installation pain | one-line install profile (pip extras: core / gw / galaxy / full) + `hyperion doctor` that checks optional deps (lalsuite, galpy, colossus, CAMB) and says what each unlocks | H1e DONE (`aegis doctor`, 13 packages, pip profiles core/cern/astro/gw/full) |
 | archive + compute | TAP queries to the Gaia archive from inside Hyperion (downloads OK'd) | H1f |
 
 ## UI (Danny 22:14: "make sure UIs are pro grade")
