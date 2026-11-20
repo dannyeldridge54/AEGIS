@@ -75,6 +75,9 @@ The inflation sector gives exactly 0 at ρ. [der] The observed Λ_obs ≈ 10⁻�
 | θ̄ | 0 (quantised at ρ; FST weights) | |θ̄| < 1e-10 | consistent by construction |
 | CKM J | from generic τ_q (FST) | 3.1e-5 | imported |
 | Λ_obs | not explained | 10⁻¹²⁰ M_P⁴ | open |
+| dark energy w(z) (reverse thread) | thaws now; w ≥ −1; best (w₀, w_a) ≈ (−0.79, −0.36) | REAL DATA (D1692–D1696): DESI DR2 BAO + DES-SN5YR Dovekie: Δχ² = −7.0 vs Λ (CPL −7.2); + CMB: −4.8 (CPL −10.8) | supported; high-z phantom preference is the weak spot (C8); coupled-thread fix under test (D1708) |
+| dark matter | asymmetric X = 12.8 GeV; dark photon 0.3–5 GeV, ε ≲ 3e-9–8e-7 (D1676, D1677) | LZ/XENONnT (limit bracketed, not sourced) | allowed; XLZD/SHiP to test |
+| δ_CP | 286° (TM1/S₄, s₂₃² = 0.56) | T2K+NOvA joint 1σ [214°, 313°], peak 275° (D1690) | consistent; DUNE/Hyper-K |
 
 Sources reviewed: Camphuis et al. 2506.20707; 2512.10613; 2510.18656; NuFIT 6.0 2410.05380; Belle II 2305.19116; arXiv:2609.09262; Feruglio 2211.00659; Novichkov–Penedo–Petcov 2101.08718 and 2102.07488; Feruglio–Strumia–Titov 2305.08908; Casas–Ibáñez 2507.05345; Ibáñez 2604.27835; Castellano–Herráez–Ibáñez 2310.07708; van de Heisteeg et al. 2310.07213; Andriot 2305.07480; TCC 1909.11106/2001.00043; Green–Russo–Vanhove 1001.2535, 1004.0163; Obers–Pioline hep-th/9903113; Fleig–Kleinschmidt 1204.3043; Conlon–Pedro 0704.0737; SLED hep-th/0504004; 2606.19440.
 
