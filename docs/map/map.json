@@ -1588,16 +1588,17 @@
     "D1659",
     "D1664",
     "D1684",
-    "D1685"
+    "D1685",
+    "D1686"
    ],
    "depends": [
     "genesis_reheating",
     "matter_genesis"
    ],
    "history": [
-    "D1664: estimate",
     "D1684: estimate",
-    "D1685: estimate"
+    "D1685: estimate",
+    "D1686: estimate"
    ]
   }
  ]
