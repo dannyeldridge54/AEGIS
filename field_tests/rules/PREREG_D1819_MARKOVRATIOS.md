@@ -1,0 +1,4 @@
+# PREREG D1819 — do the Weave's derived ratios sit on the golden/silver/Markov ladder? (locked 21 Nov 2026 before computing; repo at 02ad8a07)
+Targets (Markov m = 1, 2, 5, 13): multipliers μ_m = (3m + √(9m² − 4))/2 (2.618, 5.828, 14.93, 38.97), their square roots (1.618, 2.414, 3.864, 6.243), loop lengths ℓ_m = 2 ln μ_m (1.925, 3.525, 5.407, 7.330) — 12 targets.
+Candidates (derived, fixed now): λ_eff = 3.358 (20.15/6), σ_d/σ_vis = 2, r(6D)/r(10D) = 1.978, 1/x = 3.584, A = 7.298, |Δb| = 2.879, M_g̃/M₂ = 8.18 (5565/680), α⁻¹(M₁₂) = 28.0, m₃/₂/M₂ = 384 (2.61e5/680), N_d/N = 2 — 10 candidates (120 pairs).
+Hit: |cand/target − 1| ≤ 1 %. Chance: a log-uniform random number in [1, 400] hits any of the 12 targets with probability p₁ (computed); expected chance hits = 10·p₁. Verdict: SIGNAL only if observed hits exceed the expected number with Poisson p < 0.01; otherwise NO SIGNAL (hits listed but not used).
