@@ -17,3 +17,8 @@ Engineering only (tools, tool use, grading). Physics D-notes stay in D72_D75_wea
 - **Referee.** A fresh-context referee link audits each consensus.
 - **Mirror of the Loom.** This mirrors THE_LOOM.md §3 (triangulated data points) and §7.
 - **Plan.** Lock the bearing schema and consensus rule before building. The test harness replays the Loom's D1906 (Cassini) and D1908 (displacement) fixes. Not started; to be scheduled as a CubeMind engineering item.
+- **Safeguards (referee D1909):**
+  - Each bearing carries an exact quote, a locator, and a mechanical (non-model) string-match check of both the quote and the number against the fetched source.
+  - Links that share a model or search engine count as correlated.
+  - The harness gets blind and known-wrong cases.
+  - Prompt-injection hygiene applies to fetched pages.

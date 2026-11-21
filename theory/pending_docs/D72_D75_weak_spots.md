@@ -18520,3 +18520,48 @@ The referee read D1816–D1904 and the trials ledger, and checked against Gmeine
 
 ## D1909a — METHOD: triangulated data points ("fixes") made mandatory in the Loom; CubeMind design note (Danny 14:32) (21 Nov 2026)
 THE_LOOM.md §3 now requires that every data need be met with a **fix**: three independent bearings, a median with a spread error box, consensus or open, and the outlier's direction and reason. Only consensus fixes may enter a lock as data. §7 and CUBEMIND_ENGINEERING_NOTES E2 record the plan to build CubeMind's retrieval the same way: one independent sub-agent per link, consensus triangulation, and a referee link. Retro-check: D1908's fix is "readings 1e-5 / 0.075 / 0.030 → fix 0.030, open (the IIB reading points 10³ low: frozen flux vacua vs dynamical shifts)". So D1908's input should have been a range, not a single number. Its FAIL stands, because every reading in that range is below 0.09.
+
+## D1909 — REFEREE (independent, Loom tick 4): D1906, D1908, the fix rule, CubeMind E2 (21 Nov 2026)
+- **D1906 — MINOR.** The coupling β = −√2/4 is correct. Cassini applies (m ~ H₀), and there is no chameleon screening: the potential and the matter coupling both fall with 𝒱.
+  - The PPN number used the wrong convention (see D1906a).
+  - "S1–S3 exhaustive" is too strong.
+  - Couplings are not universal, so equivalence-principle tests (MICROSCOPE) also apply.
+- **D1908 — MAJOR.** The three readings were not extracted by one rule: T2 used its maximum, T3 its centre. The sources measure different things: T1 is a vacuum-clustering statistic, and in IIB a flux-held τ makes T2/T3-type shifts suppressed by m₃/₂/m_τ. The bar was set after the numbers were seen, 0.3 % from the outcome. The verdict should be INDETERMINATE (see D1908a).
+- **Fix rule — MAJOR.** It has loopholes:
+  - free choice of sources;
+  - free choice of which value to extract from each;
+  - correlated sources;
+  - a median of three is just the middle source;
+  - widening error boxes makes "consensus" easy;
+  - the spread ignores one reading;
+  - incommensurate frameworks get averaged.
+  
+  The referee's five fixes are adopted in THE_LOOM §3.
+- **CubeMind E2 — MINOR** (design only).
+  - Risks: correlated links (same model, same search engine), memory passed off as a source, consensus laundering a wrong value, prompt injection, and tuning the harness to known answers.
+  - **Must-have safeguard:** every bearing carries an exact quote and a locator, and a separate non-model step fetches the source and string-matches both the quote and the number. The harness gets blind cases and a known-wrong case.
+  - Adopted in E2.
+Recompute: field_tests/results/d1909_referee_recompute.txt.
+
+## D1906a — correction to D1906 (21 Nov 2026)
+- In the Damour–Esposito-Farèse convention α = √2 β = 0.50, which gives **γ − 1 = −0.40**: about **×6,000** over the Cassini 2σ bound, not ×3,300. The FAIL gets stronger.
+- General result: if the slope and the coupling both come only through 𝒱, then β/λ = 1/(2q) = 0.375 along every direction. Cassini then forces λ ≲ 0.01.
+- The remaining loopholes are an uplift that depends on τ₃ rather than 𝒱 (for example a D-term, or a throat localised on τ₃), or a slope source that is not a Kähler modulus.
+- m_e (through the Higgs vev, ∝ m₃/₂ ∝ 𝒱^{−1}) and m_p (∝ M_s) couple differently, so MICROSCOPE-type equivalence-principle bounds also apply.
+- The LLR Ġ/G value (~1e-13 /yr) is from memory: TRUST.
+
+## D1908a — correction to D1908 (21 Nov 2026)
+**Exact displacement.** δτ = i√3 u/(1 − u), so |δτ| = 0.086–0.095 depending on the phase of u.
+
+**Same rule for every source:**
+
+| extraction rule | readings | median | ratio | verdict |
+|---|---|---|---|---|
+| log-centre | 1e-5 / 0.027 / 0.069 | 0.027 | 3.3 | FAIL |
+| maximum | 1e-5 / 0.075 / 0.2 | 0.075 | 1.2 | PASS |
+| minimum | — | 0.010 | 9 | FAIL |
+
+**Verdict: INDETERMINATE**, because the result depends on the extraction rule. Stated separately, the **IIB-matched reading alone (T1) is a FAIL by 10⁴**. The rung steps stay TRUST.
+
+## D1909b — correction to D1909a (21 Nov 2026)
+D1909a said "every reading in that range is below 0.09". That is wrong: T3 reaches about 0.2. The FAIL in D1909a is superseded by D1908a (INDETERMINATE).

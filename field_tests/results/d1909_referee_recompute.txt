@@ -1,0 +1,5 @@
+exact |dtau| range 0.086-0.095
+log-centre readings ['1e-05', '0.027', '0.069'] median 0.0274 ratio(0.090) 3.29
+max        readings ['1e-05', '0.075', '0.2'] median 0.0750 ratio(0.090) 1.20
+min        readings ['1e-05', '0.01', '0.024'] median 0.0100 ratio(0.090) 9.00
+gamma-1 (DEF, alpha=sqrt2 beta) = -0.401  (x5982 over 6.7e-5)

@@ -61,6 +61,12 @@ A claim with one or two threads is **loose** and is reported as such. A claim th
 3. **The pointing.** Where the three agree (overlapping error boxes means a *consensus fix*). Where one disagrees, record which way it points away and why (framework mismatch, regime, older data). Three readings that do not converge give an *open fix*: the number is labelled TRUST and the disagreement is a finding.
 4. **The fix line in the D-note:** `FIX <quantity>: readings r1/r2/r3 (sources) → fix = <median> ± <spread>; consensus | open; outlier points <direction> because <reason>`.
 5. **Only a consensus fix may enter a lock** as data. An open fix enters only as a range to scan.
+6. **Hardened after referee D1909:**
+   - (a) **Pre-register the search.** Fix the query, database and inclusion criteria in the PREREG, and admit ALL qualifying hits, not three hand-picked ones (minimum three).
+   - (b) **One estimand, one extraction rule.** Every reading is extracted by the same symmetric rule (the log-centre of its reported range), and the full envelope is reported too.
+   - (c) **Framework-matched readings set the fix.** Mismatched readings may only bound it.
+   - (d) **Consensus** means |Δlog₁₀| ≤ 0.3 dex between readings, using each source's own error boxes. The spread uses all readings.
+   - (e) **Verdict sensitivity.** If any allowed alternative extraction flips the verdict, or the value lies within its own uncertainty of a threshold, the verdict is INDETERMINATE. Thresholds are set before any reading is seen.
 
 Each tick is one pass of the shuttle. Every step is mandatory, and its output is one line in the D-note.
 
@@ -135,4 +141,5 @@ CubeMind's data retrieval will be designed as a Loom:
 - **Every link is its own independent sub-agent.** Each one does a single simplified job: fetch one source, run one code path, read one bound. Each has its own fresh context and does not see the others' answers.
 - **They work it together to triangulate.** Each link returns a bearing (value, uncertainty, framework, provenance). A consensus step plots the fix (median, spread, agreement) and flags outliers with the direction they point.
 - **Consensus decides.** Only consensus fixes feed CubeMind's derivations, and open fixes are surfaced as TRUST or as findings. A referee link (fresh context) audits the consensus step.
+- **Must-have safeguard (referee D1909):** every bearing carries an exact quote and a locator (arXiv ID, equation, table or page). A non-model step fetches the source and string-matches both the quote and the number; a bearing that fails is dropped. The harness includes blind cases and a known-wrong case, such as the D1907 error. Links built on the same model or search are treated as correlated, not independent.
 - Engineering items, to be locked when started: the link interface (bearing schema), the consensus rule (median + overlapping error boxes, 2-of-3 minimum), cost caps per link, and a test harness that replays today's D1908 and D1906 fixes to check that CubeMind reproduces them.
