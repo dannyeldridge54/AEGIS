@@ -17447,3 +17447,20 @@ Locked readings:
 - **Last hierarchy factor (I11): null** (D1764 item 3 stands: v/m_SUSY tuned ~4e6).
 - **Primordial magnetic fields (ledger 3.15, was M) — [derived] the Weave HAS the mechanism, and it is too weak.** The visible gauge kinetic function is f_vis = T_vis + 9S (U11), and S is the inflaton: during inflation Re S = y runs from y* ≈ 55.6 (horizon exit, g_s* = 0.018; D1525-series) down to √3/2 at ρ — a Ratra-type f(φ)F² coupling built in. It DECREASES (coupling weak during inflation, so no strong-coupling problem). Over the last N* = 50.4 e-folds f ∝ a^{−α} with α = ln(55.6/…)/N* ≈ 0.08 (taking 9 Re S dominant at horizon exit). Scale-invariant magnetic fields need α = 2 (electric-field backreaction aside); with α ≈ 0.08 the magnetic spectrum is ~(k/aH)^{4−2α} blue ⇒ today's fields on Mpc scales are suppressed by ~(k/a_end H)^{3.8} ~ e^{−3.8·50} ≈ 1e-83 relative to a scale-invariant case ⇒ **no primordial magnetic field from the Weave**. Row 3.15: M → P ("void fields, if real, are astrophysical"). [E, order of magnitude]
 - **Status of the unified field (answer to Danny 09:00):** every observed sector now has a place in one action (WEAVE_UNIFIED_EQUATION v3): gravity, the three forces (strength fixed by data, D1767), all fermions, the Higgs (split SUSY, tan β 1–4), neutrinos, the strong-CP angle, dark matter + dark force (α_D derived, D1769), dark energy, inflation, reheating, genesis, nuclei/atoms/chemistry (standard propagation). Remaining INPUTS (values not derived): V∞, tilt C, m₃/₂, the lepton scale and δ = 2/9, neutrino masses, 12 quark couplings (rung 8 consistent with near-equal couplings, D1770), Λ (V_L), m_A′ and ε, the flux g = 3, and v/m_SUSY. So: the field CONTAINS every observable; it does NOT yet DERIVE every observable's value.
+
+## D1767a — CORRECTION to D1767(B)
+D1767(B) used an LVS stabilisation formula. Our own tilt derivation (D1566) requires χ(X) > 0 (blue tilt), which is the opposite sign to LVS (ξ > 0 ⇔ χ < 0) — D1566 already said "fine for KKLT/KL-type stabilisation". So the LVS route (and its "between N = 4 and 5") is WITHDRAWN; the KKLT form is used in D1772. D1767(A) (the data side, α⁻¹ ≈ 28.9) and (C) stand.
+
+## D1772 — SIMPLIFICATION 1 (Danny 09:07 "fully derive each and simplify the equation"): the tilt, the gauge coupling and the wino mass are one formula (PREREG_S1_SIMPLIFY, locked first)
+**Derivation (every step from an earlier note):**
+1. Tilt (D1566): C = wχ/(4(2π)³𝒱), w = 2/3 (D7 D-term prefactor) ⇒ 𝒱 = wχ/(4(2π)³C).
+2. KKLT on the visible cycle with an SU(N) condensate (a = 2π/N, A = 1): (2π/N)·Re T_vis = ln(1/|W₀|).
+3. Gauge coupling (D1758, D1767): Re T_vis = α⁻¹ − 9/g_s.
+4. Gravitino (D1764): m₃/₂ = √(g_s/2) |W₀| M_P/𝒱; wino M₂ = m₃/₂/375 (anomaly mediation, D809).
+**⇒ the master relation**
+    M₂ = [√(g_s/2) M_P /375] · [4(2π)³ C/(wχ)] · exp[−(2π/N)(α⁻¹ − 9/g_s)],   g_s = 2/√3 (the knot ρ)
+Two inputs come from data (C ↔ n_s, α⁻¹ ↔ gauge running); two are integers of the compactification (N, χ); out comes the dark-matter/collider wino.
+**[computed]** Grid N = 5–10, χ = 20–200: exactly one pair lands in the 0.67–0.71 TeV window: **N = 7, χ = 50** (M₂ = 0.696 TeV; 𝒱 = 4.2e4, |W₀| = 5.9e-9, m₃/₂ = 2.6e5 GeV). For N = 7 the relation reads M₂ ≈ 34.8 TeV/χ at α⁻¹ = 28.9 ⇒ χ = 49–52; over α⁻¹ = 28.6–29.1 ⇒ χ ≈ 41–68. (N = 8 would need χ ≈ 500+; N ≤ 6 gives winos ≪ the LEP/LHC bounds.)
+**Honest reading:** a CONSISTENCY selection, not a prediction: the wino window was an input to the reading. What it buys: the four previously separate inputs (tilt C, volume 𝒱, gravitino mass m₃/₂, W₀) collapse to two integers (N = 7, χ ≈ 50 i.e. h¹¹ − h²¹ ≈ 25) plus the leading-log prefactor A (A ≠ 1 shifts χ ∝ A). The volume 4.2e4 sits inside the D1566 band (1.4e4–3e5) ✓.
+**Predictions that now follow (E):** M_s and M_KK from 𝒱 = 4.2e4 (D1566 table: χ = 50 ⇒ M_KK ≈ 4–7 H_inf ✓ control); a hidden SU(7) condensing on the visible cycle; Re T_vis = 21.1 ⇒ W₀ = 5.9e-9 (inside D1764's range 2e-9–1e-7 ✓, now pinned).
+Input count: I2 (C) and I4 (m₃/₂) are no longer independent — replaced by (N, χ) = (7, ≈50). Inputs left: 9 + two compactification integers.

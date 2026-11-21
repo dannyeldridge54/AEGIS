@@ -1,4 +1,4 @@
-# THE WEAVE — the unified field equation (v3, 21 Nov 2026, after unify loops 1–2: D1753–D1766)
+# THE WEAVE — the unified field equation (v3.1 — simplification 1 added; v3, 21 Nov 2026, after unify loops 1–2: D1753–D1766)
 Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on magnetised D7 (the gauge-coupling repair), the dark side on unfluxed D7, the superpartner spectrum, the flux superpotential, the photon-axion, and the reheating chain re-derived. Tags: **[der]** derived and checked · **[lit]** literature · **[P]** principle · **[C]** conjecture with a mechanism · **[E]** estimate · **[F]** fitted · **[A]** hosted/imported · **[OPEN]**.
 
 ## 1. The fields (one string compactification, type IIB on an orientifold with D3/D7-branes)
@@ -55,13 +55,17 @@ Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on 
     anomaly-free quark weights ──► θ̄ = 0 exactly                                                                    [lit]
     slip ladder ──► down quarks rung 1, up quarks rung ~8 (mass ratios) vs 2–5 (mixing, B6 running)                  [A]
 
+## 3b. Simplification 1 — the master relation (D1772, v3.1)
+    M₂(wino) = [√(g_s/2) M_P/375] · [4(2π)³ C/(wχ)] · exp[−(2π/N)(α⁻¹ − 9/g_s)],  g_s = 2/√3
+Tilt (n_s), gauge running (α⁻¹ ≈ 28.9) and the wino/gravitino mass are ONE relation through two integers of the compactification: a hidden SU(N) condensate on the visible cycle and the Euler number χ. Consistent point: **N = 7, χ ≈ 50** (𝒱 = 4.2e4, |W₀| = 5.9e-9, m₃/₂ = 2.6e5 GeV, M₂ ≈ 0.70 TeV). (Consistency selection; KKLT-type, leading log; LVS excluded by the χ > 0 tilt, D1767a.)
+
 ## 4. What is still put in by hand (the honest input list)
 | # | input | where it enters | could be derived from |
 |---|---|---|---|
 | I1 | V∞ (sets A_s) | inflation height | species count / volume [OPEN] |
-| I2 | tilt C (sets n_s) | inflation | α′³ with χ, 𝒱 (estimate exists) |
+| I2 | tilt C (sets n_s) | inflation | now tied to χ and 𝒱 by the master relation (D1772): with N = 7, χ ≈ 50 it is no longer independent of m₃/₂ |
 | I3 | α⁻¹ at the string scale ⇔ Re T_vis | forces | FIXED BY DATA (D1767): α⁻¹ = 28.9 at 7e15 GeV (split-SUSY running) ⇒ Re T_vis = 21.1, T_R = 3.6e8 GeV, M_N ≥ 4.5e10 GeV, wino 0.67–0.71 TeV; theory (LVS SU(N) condensate) gives 26.0–26.7 (N = 4) / 30.6–31.4 (N = 5): not selected |
-| I4 | m₃/₂ (or the wino mass) | SUSY, dark matter | W₀ and 𝒱 [OPEN: flux choice] |
+| I4 | m₃/₂ (or the wino mass) | SUSY, dark matter | DERIVED from (C, α⁻¹, N, χ) by the master relation (D1772); (N, χ) = (7, ≈50) |
 | I5 | Koide scale (one lepton mass) and δ = 2/9 | leptons | δ: no derivation exists in the literature; not the thawing axion (would drift m_e/m_μ); Berry phase C-δ only (D1768) |
 | I6 | neutrino masses (Σm_ν, m₁ = 0) | neutrinos | seesaw M_N and Yukawas [OPEN] |
 | I7 | quark O(1) couplings (12) and τ_q's class | quarks | [A] |
