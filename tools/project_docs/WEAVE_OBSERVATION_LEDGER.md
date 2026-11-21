@@ -58,7 +58,7 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | # | Observed | Weave | Notes |
 |---|---|---|---|
 | 4.1 | Ω_c h² = 0.120; Ω_DM/Ω_b ≈ 5.4 | P (12.8 GeV asymmetric, same asymmetry) | |
-| 4.2 | Cold, collisionless (Bullet cluster), self-interaction bound σ/m < ~1 cm²/g | G (computable SIDM class; test C3) | 12.8 GeV + 0.3–12.8 GeV A′ ⇒ σ/m is computable |
+| 4.2 | Cold, collisionless (Bullet cluster), self-interaction bound σ/m < ~1 cm²/g | G (computable SIDM class; test C3) | 12.8 GeV + 0.3–12.8 GeV A′ ⇒ σ/m is computable; **21 Nov 10:20 → P:** α_D = 0.022 ⇒ σ/m ≤ 2e-3 cm²/g for every m_A′ (D1795) |
 | 4.3 | Small-scale structure (cores, too-big-to-fail, satellites) | G (follows from C3) | |
 | 4.4 | Direct detection limits (LZ) | P (survives, D1688) | |
 | 4.5 | Galactic-centre GeV excess; 3.5 keV line; AMS-02 positrons | P (asymmetric DM does not annihilate; no keV sterile ν ⇒ all astrophysical) | asymmetric DM doesn't annihilate ⇒ predicts NO GCE from DM |
@@ -67,11 +67,11 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 ## 5. The late universe
 | # | Observed | Weave | Notes |
 |---|---|---|---|
-| 5.1 | Dark energy Ω_Λ ≈ 0.69; ρ_Λ ~ 1e-120 M_P⁴ | A (level) / P (dynamics) | the SIZE is the cosmological-constant problem: **M** |
+| 5.1 | Dark energy Ω_Λ ≈ 0.69; ρ_Λ ~ 1e-120 M_P⁴ | A (level) / P (dynamics) | the SIZE is the cosmological-constant problem: **M**; 21 Nov: D1788 briefly 'computed' the size, WITHDRAWN D1795 (the dark-cycle axion oscillates, m ≈ 64 H₀) ⇒ still **M** |
 | 5.2 | DESI w0–wa (thawing) | G (thread fits DES-Y5; behind w0wa) | |
 | 5.3 | Hubble tension (73 vs 67) | G (not resolved) | |
 | 5.4 | S8 tension | G | |
-| 5.5 | Cosmic birefringence β = 0.277° ± 0.057° (4.8σ, ACT+Planck 2608.06480) | G (bridge D403 ⇒ c_γ/f ≈ 12; decides thread identity; test D5) | |
+| 5.5 | Cosmic birefringence β = 0.277° ± 0.057° (4.8σ, ACT+Planck 2608.06480) | G (bridge D403 ⇒ c_γ/f ≈ 12; decides thread identity; test D5) | 21 Nov: photon-axion on its own cycle ≈ 36–39 (D1793), m 1e-33–9e-32 eV, c_γ ≈ 4.2/Δθ — hosted, not tied to the forces |
 | 5.6 | JWST early massive galaxies | S (ΛCDM-like at z > 5; eased by systematics, 2511.13708) | |
 | 5.7 | 21-cm (EDGES contested) | G | |
 | 5.8 | Coincidence "why now" | G | thread thawing |
@@ -110,3 +110,5 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 **After derivation mode (D1767–D1771):** M rows left = only the VALUES that are inputs: hierarchy last factor (2.8/8.3), Λ size (5.1/8.4), m_p/m_e as a pure derivation (7.3). Every observed phenomenon now has a place in WEAVE_UNIFIED_EQUATION v3.
 **After round 2 (D1754):** M 15 → 8 (left: gauge group 1.1 is A; hierarchy 2.8/8.3, Λ size 5.1/8.4, 6.6 UHE astrophysical, 5.9 dipole, 3.15 magnetic fields, 4.5 GCE, 7.3). Research null for Weave-native routes ⇒ engineering.
 The unification target: one modulus space whose fixed points (ρ, i, the slip-ladder minima and the arc) set couplings, masses and the vacuum together.
+
+**Correction 21 Nov 10:20 (D1793–D1795):** 4.2 G → P (SIDM collisionless across the window); 5.1/8.4 stay M (the D1788 Λ leftover is withdrawn); 5.5 stays G (hosted by an independent photon-axion cycle).

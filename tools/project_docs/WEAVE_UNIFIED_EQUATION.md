@@ -51,7 +51,7 @@ Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on 
     m₃/₂ ──► split spectrum: winos 0.67–1.0 TeV, scalars 0.25–0.7 PeV, gluino ≳ 4.8 TeV ──► m_h = 125 needs tan β ≈ 1–4  [E]
     Z₃ at ρ ──► Koide Q = 2/3 (P-F1)                                                                                [der given P]
     knots ρ & i under S₄ ──► TM1: sin²θ₁₂ = 0.3184, δ_CP 262–286°  ──► m_ββ = 1.59–3.80 meV (NO, m₁ = 0)               [der/P]
-    one asymmetry ──► m_X = 12.8 GeV (n_X/n_B = 11/28) ──► dark photon 0.3–12.8 GeV; σ/m ≤ 1e-4 cm²/g (α_D ≲ 5e-3)      [der/E]
+    one asymmetry ──► m_X = 12.8 GeV (n_X/n_B = 11/28) ──► dark photon 0.3–12.8 GeV; σ/m ≤ 1e-4 cm²/g (α_D ≲ 5e-3)      [der/E]   (21 Nov 10:20: at α_D = 0.022, σ/m ≤ 2e-3 for every m_A′ ≥ 0.3 GeV, D1795)
     anomaly-free quark weights ──► θ̄ = 0 exactly                                                                    [lit]
     slip ladder ──► up quarks rung 8, DOWN quarks at HALF a rung (|ε_d| ≈ 0.048, m ≈ ½): all 8 quark observables fit with near-equal couplings (score 0.37, D1777)  [A→C]
 
@@ -74,14 +74,17 @@ The solution is carried across a band of width λ in Re T_vis by one rank N, the
 | I6 | neutrino masses (Σm_ν, m₁ = 0) | neutrinos | INPUT: seesaw with M ≈ 1e11 GeV and y ~ 1e-2 (natural, not derived; y_ν = y_ℓ rejected, D1773) |
 | I7 | quark O(1) couplings (12) and τ_q's class | quarks | classes FIXED: up m = 8, down m = ½ (D1778); 12 near-equal couplings needed (not removable, D1779); best known constructions use 7 (D1781); magnetised Yukawas trade them for a Higgs direction and are disfavoured at ρ (D1784–D1786) |
 | I8 | V_L (the size of Λ) and the thread's start | dark energy | LEFTOVER computed (D1788): V_Λ ≈ (2π)² e^{−4π Re T_dark}/(2 Re S 𝒱²) = ρ_Λ at Re T_dark = 20.57 — the same twin-cycle size as the forces, α_D and birefringence; the big cancellation (uplift vs −3e^K|W₀|²) is still assumed, not solved |
+| I8 (corr. 21 Nov 10:20) | — | — | **WITHDRAWN (D1793–D1795):** with W₀ ≠ 0 the leading instanton term is the cross term (dark cycle ≈ 38.6, not 20.57), and an axion with f = 0.022 M_P at that height has m ≈ 64 H₀, so it oscillates and cannot be Λ. **Λ is an input constant again.** |
 | I9 | m_A′, ε (dark force) | dark matter | α_D DERIVED = 0.035 at 12.8 GeV from a twin dark cycle (D1769, C); m_A′ and ε still free |
+| I9 (corr. 21 Nov 10:20) | — | — | the dark cycle is an independent size (≈ 36–39, D1793), so α_D = 0.022 is tied to that INPUT size, not derived from the forces; SIDM collisionless for all m_A′ 0.3–12.8 GeV (D1795) |
 | I10 | the family flux | generations | DERIVED by principle: |M| = 9 on T²/Z₃ (exists only at τ = ρ), families per Z₃ sector = |Z₃| = 3 (verified by the index formula, D1776a) ⇒ c = 9 |
 | I11 | v = 246 GeV given m₃/₂ (tuning ~4e6) | Higgs | INPUT (split-SUSY tuning; no Weave mechanism found, D1764) |
+**Correction 21 Nov 10:20 (D1793–D1795):** I8-leftover and I9-α_D move back from "tied" to INPUT (the twin-cycle tie broke); the lepton mass ratios are fit by the Higgs direction (D1792).
 **Count after loops 1–2 (21 Nov 10:00):** DERIVED or tied: I2 (tilt ↔ χ), I3 (by data + band ladder), I4 (master relation), I8-leftover (twin cycle), I9-α_D, I10 (family flux). STILL INPUT: I1 inflation height · I5 lepton scale + δ = 2/9 · I6 neutrino scale/Yukawas · I7 12 O(1) quark couplings · I8 the big uplift cancellation · I9 m_A′, ε · I11 v/m_SUSY · plus the discrete choices N = 7, χ ≈ 50 (selected by data).
 Compare: the Standard Model + ΛCDM have ~25–30 free numbers. The Weave fixes or ties: n_s/r/α_s relation, Q = 2/3, TM1 angles and δ_CP branch, θ̄ = 0, m_X, ΔN_eff ≈ 0, the reheating chain, the r-invariance, and W₀ from two others; it still hosts the quark couplings and the neutrino and dark-force scales.
 
 ## 5. What would unify it completely (the remaining derivations)
-0. (done, D1767) the data fix α⁻¹ ≈ 29 and with it the whole reheating chain; the visible-cycle size 21.1 equals the birefringence cycle size 20–22 (U15, C-twin-cycles).
+0. (done, D1767) the data fix α⁻¹ ≈ 29 and with it the whole reheating chain; the visible-cycle size 21.1 equals the birefringence cycle size 20–22 (U15, C-twin-cycles). — corrected 21 Nov 10:20: the KKLT cross term puts the birefringence cycle at ≈ 36–39, so U15 is broken (D1793).
 1. Stabilise T_vis (and T_dark, T_ℓ) inside the same species/flux structure ⇒ α⁻¹ predicted (I3), and with it T_R, the wino window and the genesis window become predictions.
 2. δ = 2/9 from a Berry phase on Re τ_ℓ (C-δ) ⇒ all three lepton masses from one scale (I5).
 3. What selects τ_q's class and the up-quark rung (B6 decides the data side) ⇒ quark couplings reduced (I7).
