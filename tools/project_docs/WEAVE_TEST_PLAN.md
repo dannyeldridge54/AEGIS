@@ -31,7 +31,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | B8 θ̄ = 0 ⇒ neutron EDM | d_n from CKM only (~1e-32 e·cm) | n2EDM (PSI), ~1e-27 | weave_edm (21 Nov 10:30) | T → **R** (PREREG_B8B9_EDM: d_n ≲ 1e-31) |
 | B9 electron EDM | unobservable: 5e-34 – 4e-33 e·cm (D1763; the ~1e-40 was the old chain) | ACME III, JILA | weave_edm (21 Nov 10:30) | T → **R** (PREREG_B8B9_EDM) |
 | B10 proton decay | TWO BRANCHES (D1797): GUT stack ⇒ τ(e⁺π⁰) ≈ 2.5–3.2e34 yr (Hyper-K discovery or kill); SM-direct ⇒ none | Hyper-K, DUNE | code estimate | L → **R** (21 Nov 10:26: PREREG_B10_PROTON) |
-| B11 gauge couplings | D3 at ρ fails ×28 ⇒ visible on D7 (D1753 R1) | α_s, sin²θ_W, α | to build: RG + Kähler-volume tool | T |
+| B11 gauge couplings | D3 at ρ fails ×28 ⇒ visible on D7 (D1753 R1) | α_s, sin²θ_W, α | weave_rg (21 Nov 10:31) | T → **R** (PREREG_B11_RG: M₁₂ = 7.4e15, α⁻¹ = 28.8 ✓; one-loop α_s 0.107 vs 0.118, two-loop pending) |
 
 ## C. Dark sector
 | Test | Weave number | Data | Tool | Status |

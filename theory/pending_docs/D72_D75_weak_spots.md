@@ -17657,3 +17657,11 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
 - [literature] Their wall fit: T* = 110–275 MeV, α* = 0.08–0.19, Bayes factor vs SMBHB 14.8 (dw-sm), not decisive.
 - [derived, sharpens D1753 R3] The Weave's moduli end at ρ and i. ρ and its SL(2,Z) images are the SAME physical vacuum (modular symmetry is a gauge redundancy in string theory), so no wall can separate them. A wall needs physically distinct minima (e.g. ρ vs i for one modulus), which a single inflated patch does not produce.
 - Verdict: the Weave predicts NO wall component; the nHz background is SMBHBs. Locked as PREREG_A9_WALLS. CubeMind registry entry for weave_walls is pending until the PC is next touched (calc pipeline step 1).
+
+## D1799 (LL, LEFT/B11 — 21 Nov 2026): one-loop running in the Weave's split spectrum confirms the unification point; the strong coupling misses by the usual one-loop amount
+- [tool, locked PREREG_B11_RG] weave_rg (self-test passes). Spectrum: wino 0.70 TeV, gluino 7 TeV, higgsinos and scalars 0.47 PeV, MSSM above. Results:
+  - **Check (1) PASS:** α₁ = α₂ at **M₁₂ = 7.4e15 GeV** with **α⁻¹ = 28.77**, against D1767's 6.6–7e15 and 28.9. The scalar mass range 0.25–0.7 PeV moves this to 7.3–7.7e15 and 28.5–29.0.
+  - **(2) Triangle:** α₃⁻¹(M₁₂) − α⁻¹ = **−0.90** (−0.79 to −0.97), so α₃ is slightly too strong at the meeting point.
+  - **(3) Exact one-loop unification** would need α_s(M_Z) = **0.107** (0.106–0.108) vs 0.1180 ± 0.0009.
+- [reading, honest] A one-loop miss of Δα_s ≈ −0.011 is the standard size that two-loop running plus thresholds corrects in split SUSY. The 2-loop gauge terms raise the predicted α_s by roughly +0.01. String-scale threshold corrections (the twisted/KK pieces of f_vis) give Δ₃ ~ O(1) in α⁻¹, the same size as −0.9. So the triangle is consistent but not predicted. B11 is a consistency check, not a strict test (as locked).
+- Next for B11 (T, not done): two-loop running in the same tool; then the α_s "prediction" becomes a real number with an error bar of ~±0.003 from thresholds.

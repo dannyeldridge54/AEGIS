@@ -288,10 +288,38 @@ def weave_edm(a):
                 bounds=dict(d_e=4.1e-30, d_n=1.8e-26), label='E (scalings), theta-bar = 0 by anomaly-free weights')
 
 
+def weave_rg(a):
+    """One-loop gauge running in the split spectrum (PREREG_B11). {"m_wino"=700,"m_gluino"=7000,"m_scalar"=4.7e5,"alpha_s"=0.118}. Returns M12, alpha^-1(M12), triangle Delta3, alpha_s for exact unification."""
+    MZ = 91.1876; aem, s2, a3 = 127.95, 0.23122, float(a.get('alpha_s', 0.118))
+    x0 = [0.6 * (1 - s2) * aem, s2 * aem, 1 / a3]
+    th = sorted([(float(a.get('m_wino', 700)), (0, 4 / 3, 0)), (float(a.get('m_gluino', 7000)), (0, 0, 2)), (float(a.get('m_scalar', 4.7e5)), None)])
+    b = [41 / 10, -19 / 6, -7]
+    seg = []; mu = MZ
+    for m, d in th:
+        seg.append((mu, m, tuple(b))); mu = m
+        b = [33 / 5, 1, -3] if d is None else [bi + di for bi, di in zip(b, d)]
+    seg.append((mu, 1e19, tuple(b)))
+    def run(x, mu1):
+        x = list(x)
+        for lo, hi, bb in seg:
+            if mu1 <= lo: break
+            t = math.log(min(hi, mu1) / lo); x = [xi - bi / (2 * math.pi) * t for xi, bi in zip(x, bb)]
+        return x
+    lo, hi = 1e10, 1e19
+    for _ in range(200):
+        mid = math.sqrt(lo * hi); x = run(x0, mid)
+        if x[0] > x[1]: lo = mid
+        else: hi = mid
+    M12 = mid; x = run(x0, M12)
+    # alpha_s for exact unification: alpha3^-1 at M12 must equal x[0]; run back the difference with the alpha3 betas
+    d3 = x[2] - x[0]; a3inv_needed = x0[2] - d3
+    return dict(M12_GeV=M12, alpha_inv_M12=x[0], Delta3=d3, alpha_s_unif=1 / a3inv_needed, label='S (one-loop; two-loop/thresholds shift alpha_s by O(0.01))')
+
+
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
          'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
          'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb, 'weave_magd7': weave_magd7, 'weave_sidm': weave_sidm, 'weave_wino': weave_wino, 'weave_genesis': weave_genesis,
-         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls, 'weave_edm': weave_edm}
+         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls, 'weave_edm': weave_edm, 'weave_rg': weave_rg}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_mbb({})['mbb_max_meV'] - 3.7952) < 1e-3
@@ -314,4 +342,5 @@ if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_rladder({'D': 6})['r'] - 1.082e-3) < 2e-6
     w = weave_walls({'T_MeV': 10, 'alpha': 0.1}); assert abs(w['f_peak_nHz'] - 1.14) < 0.02 and abs(weave_walls({'f_nHz': [1]})['spectrum']['1'] / weave_walls({'f_nHz': [1]})['h2Omega_peak'] - (lambda x: 4 / (x ** -3 + 3 * x))(1 / weave_walls({})['f_peak_nHz'])) < 1e-9
     e = weave_edm({'m_scalar_GeV': 2.5e5}); assert abs(e['d_e_ecm'] - 4e-33) < 1e-34 and abs(weave_edm({'m_scalar_GeV': 7e5})['d_e_ecm'] - 5.1e-34) < 1e-35
+    g = weave_rg({}); assert 7.2e15 < g['M12_GeV'] < 7.7e15 and abs(g['alpha_inv_M12'] - 28.77) < 0.05 and abs(g['Delta3'] + 0.90) < 0.02
     print('weave_tools selftest OK', json.dumps({k: round(v, 5) for k, v in c.items() if isinstance(v, float)}))
