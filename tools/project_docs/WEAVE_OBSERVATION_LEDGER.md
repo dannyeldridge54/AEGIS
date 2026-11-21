@@ -45,7 +45,7 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | 3.6 | Isocurvature bounds | P (filter) | |
 | 3.7 | Spatial flatness |Ω_k| < 2e-3 | S | from inflation |
 | 3.8 | Large-scale CMB anomalies (low ℓ = 2–30 power, hemispherical asymmetry, cold spot, parity) | G (not significant in data; D1753 R4) | pre-inflation (E10 billiard) could cut large-scale power |
-| 3.9 | Reheating, T_R | D (1.34e9 GeV, estimate) | |
+| 3.9 | Reheating, T_R | D (2.6–4.3e8 GeV on magnetised D7, D1758; was 1.34e9 for D3) | |
 | 3.10 | Baryon asymmetry η_B = 6.1e-10 | A/D | leptogenesis window |
 | 3.11 | BBN: Y_p, D/H | S (pass) | |
 | 3.12 | Lithium-7 (×3 too low observed) | G (postulate C7: stellar depletion) | |

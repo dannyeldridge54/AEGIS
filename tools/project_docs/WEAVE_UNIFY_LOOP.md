@@ -25,3 +25,4 @@ At every rung the loop writes a postulate (label **P** principle / **C** conject
 | U8 | L6 | **C-throat:** the electroweak hierarchy is a warped throat with K/M ≈ 20 at g_s = 1.155 | no consistent throat in the Weave compactification | estimate (D1757) |
 | U9 | R1 | **P-no-walls:** no modular domain walls in our patch ⇒ the nHz background is astrophysical | a wall-shaped PTA spectrum | prediction (D1753) |
 | U10 | R2 | **P-no-EDM:** |d_e| ~ 1e-40 e·cm | any electron EDM detection | prediction (D1753) |
+| U11 | L1/L4 | **C-magD7:** visible sector on magnetised D7 (f ∝ T + g²S, g = 3 generations), dark on unfluxed D7 (f = T) ⇒ Re T ≈ 16.5–32, T_R = 2.6–4.3e8 GeV (x = 0.19–0.32), the generation flux is the inflaton's only handle on our forces | genesis window (M_N ≥ 3.9–6.4e10 GeV needed), wino window redo, ΔN_eff with a fluxed/unfluxed split | derived (D1758), locks next |
