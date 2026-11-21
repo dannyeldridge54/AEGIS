@@ -17901,3 +17901,11 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - The hit is a coincidence: A = (8/3)·2ζ(2)/ζ(3) exactly (D1806), with no Markov content.
   - Golden (φ, φ²) and silver (1+√2, (1+√2)²) themselves match nothing: the cycle-size ratio 2, the r-ladder ratio 1.98, λ_eff 3.36, 1/x 3.58, the gluino/wino ratio 8.2 and the gravitino/wino ratio 384 are all off.
 - Reading, consistent with D1817–D1818: the golden/silver loops are the inside geometry (they cross at i and avoid ρ), but the Weave's ladders are cusp-type (parabolic). No derived number is a loop multiplier. The loops remain a structural map, and a ratio would only count if a mechanism predicts it in advance.
+
+## D1820 (LEFT, forces — 21 Nov 2026): neither minimal brane configuration closes the gap; split stacks plus SU(2)-doublet N = 2 hypers come close — a Higgs-pair N = 2 sector halves it
+- [computed, locked PREREG_D1820_NEQ2] With knot thresholds δ_a = 0.0822 b_a^{N=2} and the 1–2 meeting point re-found after the thresholds, the closing condition is **(b₂ − b₃) + 0.714 (b₂ − b₁) = 2.88**.
+  - (A) SU(5)-type single stack (universal b): residual −0.237. **FAILS** (the thresholds cancel).
+  - (B) Split U(3) × U(2) stacks, N = 2 vectors only, b = (0, −4, −6): residual −0.307. **FAILS** (the 1–2 split makes it worse).
+  - Minimal integer additions to (B): +2 on SU(2) only gives (0, −2, −6), residual −0.026 (closes). Also (2, −1, −6), residual −0.002, and others.
+- [estimate, after the lock — reported, not a lock verdict] The physical reading of "+2 on SU(2)" is two SU(2)-doublet N = 2 hypermultiplets. That is the natural place for the Higgs pair H_u, H_d in brane models. But doublets also carry hypercharge (each adds 0.6 to b₁): with b = (1.2, −2, −6) the residual is **−0.096**, about 40 % of the original gap.
+- Status: the knot-valued thresholds can host the last α_s gap only with a specific N = 2 matter content. The Higgs pair in an N = 2 sector closes about 60 % of it. An exact closure needs a full magnetised-D7 model with its N = 2 spectrum, which is beyond a tick. Model-building target recorded: "split stacks + Higgs-pair N = 2 sector + ~1 unit more on SU(2) or on U(1)_Y".
