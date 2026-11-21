@@ -22,7 +22,7 @@ Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **
 | Test | Weave number | Data | Tool | Status |
 |---|---|---|---|---|
 | B1 Koide Q | 2/3 (needs |ε| ≲ 6e-5 at ρ) | m_τ (Belle II, BESIII) | weave_koide / slip | L |
-| B2 TM1 sin²θ₁₂ | 0.3184 | JUNO 6-yr (±0.0015) | Flavour panel | L (strongest near-term test, ~6σ if centre holds) |
+| B2 TM1 sin²θ₁₂ | 0.3184 | JUNO 6-yr (±0.0015) | Flavour panel | R (already locked: PREREG_TM1_JUNO; marked 21 Nov 10:24) — strongest near-term test, ~6σ if centre holds |
 | B3 δ_CP branch | lower branch at s²₂₃ 0.561 | DUNE, Hyper-K | Flavour panel | L → **R** (21 Nov 10:24: PREREG_B3_DCP_FUTURE, δ ∈ 255–295° on the TM1 curve) |
 | B4 Σm_ν | 0.0587 eV (NO, m₁ = 0) | DESI DR3 + CMB; KATRIN/Project 8 | engine flavour | L → **R** (21 Nov 10:23: PREREG_B4_SUMMNU — scored in w0waCDM; FAIL if 95 % limit < 0.055 eV, Σ > 0.10 eV at 3σ, or IO at 3σ; m_β = 8.8 meV) |
 | B5 0νββ m_ββ | 1.59–3.80 meV (D1755; fail if a signal > 7.6 meV) | LEGEND-1000, nEXO ⇒ predict NULL | weave_mbb | R (locked PREREG_B5) |
