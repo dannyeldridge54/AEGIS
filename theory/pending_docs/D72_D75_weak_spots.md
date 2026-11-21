@@ -17884,3 +17884,13 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 - **Reading:** "the edge is infinite and keeps scaling our derivations" means each new rung is the next term of a parabolic orbit from the cusp, and every ladder ends on an elliptic knot. The scaling is arithmetic (fractal Farey refinement), not geometric.
 - **Prediction / kill test (P):** no observable of the Weave should need a hyperbolic (fixed-ratio geometric) ladder. Any new derived ladder must be arithmetic/harmonic in an integer label and end at ρ or i. Weak check on present data: a hyperbolic ladder would give EQUAL successive generation ratios. Observed: up quarks m_c/m_u ≈ 590 vs m_t/m_c ≈ 136; leptons 207 vs 16.8. Unequal, consistent (weak; no lock needed for this). Strong test: lock the form of the next ladder BEFORE deriving it. The first candidate is the neutrino scale (D1820): the seesaw rung M_N must sit on a parabolic (arithmetic in N or m) orbit.
 - Label: P (principle), Danny's postulate, with a precise modular meaning. Added to WEAVE_UNIFY_LOOP.md as U22.
+
+## D1818 (CENTRE — 21 Nov 2026): the inside/outside map built and tested — golden, silver and all Markov loops cross at i and avoid ρ; the Weave's other points are OFF the loops
+- Map: tools/project_docs/WEAVE_INSIDE_OUTSIDE_MAP.md (U22′ refines U22: outside = the cusp only; inside = the knots + the closed geodesics on the Markov ladder, golden m = 1 and silver m = 2 first).
+- [computed, locked PREREG_D1818_MARKOV] Lifts with |c| ≤ 60, hyperbolic distance, chance calibration with 4000 random points:
+  - **i lies on every tested Markov geodesic** (m = 1, 2, 5, 13, …, 233; d = 0, an identity, not evidence).
+  - **ρ** has d = 0.26 (golden), 0.20 (silver), 0.19 (m = 5), 0.16 (m = 13), and only ~1e-3 for m ≥ 89 (dense loops, p = 0.18): OFF.
+  - τ_ν (1.0685 i): best m = 34, d = 0.002, p = 0.44, OFF (golden 0.059, silver 0.047).
+  - τ_d: OFF (p = 0.69). τ_u: OFF (p = 0.21).
+- Reading: the golden/silver structure is real geometry of the Weave's stage. i is the crossing hub of all simple loops, and ρ is the still point they bend around. This matches the roles the Weave assigns, but no derived number is placed by a loop yet. That is consistent with D1817: the derived ladders are parabolic.
+- Next tests (each locked with chance calibration): whether any ratio the Weave derives (λ_eff = 3.36, σ_d/σ_vis = 2, the r ladder, the band step) equals a Markov multiplier.
