@@ -1,0 +1,6 @@
+# PREREG L7 — the string-scale gauge coupling: what the data need vs what visible-cycle stabilisation gives (derivation mode; D1767)
+Locked BEFORE computing.
+(A) DATA SIDE — one-loop running with the Weave's split spectrum (D1763): inputs at M_Z: α₁⁻¹ = 59.01 (GUT normalised), α₂⁻¹ = 29.59, α₃⁻¹ = 8.47. Coefficients: SM b = (41/10, −19/6, −7) from M_Z to 1 TeV; gauginos at 1 TeV add Δb = (0, 4/3, 2) (wino, gluino; bino 0); from M_S = 5e5 GeV (higgsinos + scalars) full MSSM b = (33/5, 1, −3). Output: the scale M_12 where α₁ = α₂, α⁻¹ there, and the α₃ mismatch Δ₃ = α₃⁻¹ − α₁₂⁻¹ at M_12. Also report for M_S = 2.5e5 and 7e5.
+(B) THEORY SIDE (C-LVS-N, written automatically): if the visible cycle is fixed by an SU(N) condensate (or N-fold instanton) on it in an LVS-like vacuum, a Re T_vis ≈ ln(𝒱/|W₀|) with a = 2π/N, and 𝒱/|W₀| = √(g_s/2) M_P/m₃/₂ (D1764) ⇒ α⁻¹(M_s) = 9/g_s + (N/2π) ln(√(g_s/2) M_P/m₃/₂). (Leading log only; O(1) prefactors move α⁻¹ by ~N/2π·ln(prefactor).)
+READING (decided now): the condensate rank N is "selected by data" if exactly one integer N gives α⁻¹ within ±1.5 of the data-side α₁₂⁻¹ for all three M_S values. Report the N and the residual. If two or more N fit, or none, record that. This is a consistency selection, not a prediction (N is chosen by data).
+Code theory/tests/l7_alpha.py. One run.
