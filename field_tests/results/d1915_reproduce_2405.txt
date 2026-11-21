@@ -1,0 +1,5 @@
+check Y1(2i) ~ 1: 1.0
+start (-0.55, 0.88) -> tau1 = -0.5291+0.8667i  V = 2.8291  |tau1 - paper| = 0.0003  |tau1 - omega| = 0.0291
+start (-0.45, 0.95) -> tau1 = -0.5291+0.8667i  V = 2.8291  |tau1 - paper| = 0.0003  |tau1 - omega| = 0.0291
+start (-0.65, 0.8) -> tau1 = -0.5291+0.8667i  V = 2.8291  |tau1 - paper| = 0.0003  |tau1 - omega| = 0.0291
+VERDICT: PASS

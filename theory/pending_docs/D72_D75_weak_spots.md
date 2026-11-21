@@ -18677,3 +18677,16 @@ The Mirror-Loom agent pushed locks PREREG_D1950/D1951 before doing any research,
 **Status changes:**
 - Rung-step displacement: LOOSE (D1913) → **LOOSE with CENTRE TENSION.** A new postulate is needed for the dark torus's stabilisation (flavour cap 1/2).
 - Volume thread: FAIL (woven), with a second kill from BBN.
+
+## D1915 — LEFT/flavour (Loom tick 7): independent reproduction of the IIB dS vacuum off ω (arXiv:2405.18813, Model III) — PASS (21 Nov 2026)
+- **Lock:** PREREG_D1915, pushed with theory/tests/d1915_reproduce_2405.py before running.
+- **What the code does:** it is my own code, not the paper's. It builds the A₄ level-3 forms via η′/η = (iπ/12)E₂ (check: Y₁(2i) = 1.000). The potential follows the paper's flat direction: V ∝ (2 Im τ₁)⁴|Y⁽⁴⁾|² + α²(2 Im τ₂)⁶|Y⁽⁶⁾|², with τ₂ = −3/(2τ₁) and α = 0.1. The modular weights 4 and 6 were my assumption, since the paper does not state them; the match supports the assumption.
+- **Result** (field_tests/results/d1915_reproduce_2405.txt): all 3 starting points converge to **τ₁ = −0.5291 + 0.8667i** with **V·𝒱²/Λ⁴ = 2.829 > 0** (de Sitter). The paper gives −0.529 + 0.867i and 2.82. The difference is 0.0003, so **PASS**. The displacement is |τ₁ − ω| = 0.0291 (0.0286 after the paper's T⁻¹S map).
+- **TRIANGULATE:** the claim "an explicit IIB de Sitter vacuum with SUSY broken by matter conditions sits |ε| ≈ 0.029 off ω" now has all three threads: source (the paper) + compute (D1913) + an independent code path (this note). It is promoted to **WOVEN**. Promotion requires an independent referee, which is due at tick 8.
+- **What is NOT woven:**
+  - that the Weave's own Z₆-II ρ torus realises this mechanism;
+  - the factor 1.6 to the Weave's need (0.0457);
+  - the centre tension from the mirror (D1914): the dark torus near i must not move.
+  
+  The rung steps therefore stay **LOOSE with CENTRE TENSION**.
+- **Next for the flavour sector** (cap 1/2): an analogous potential on the Weave's turnover torus, with a separately stabilised dark torus. Both are new postulates; the referee comes first.
