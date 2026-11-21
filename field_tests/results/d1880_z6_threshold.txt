@@ -1,0 +1,9 @@
+|eta(i)| = 0.76823  shift/b: rho 0.0823  i 0.0839
+variant A: w_rho 1.001 w_i 1.021  pass 19/324 = 5.9%  min hypers 2
+   rho(V,hd,ht)=(0, 0, 0) i=(0, 2, 0)  R=-0.021
+   rho(V,hd,ht)=(0, 1, 0) i=(0, 1, 0)  R=-0.023
+   rho(V,hd,ht)=(0, 2, 0) i=(0, 0, 0)  R=-0.025
+   rho(V,hd,ht)=(0, 2, 0) i=(1, 1, 0)  R=+0.011
+   rho(V,hd,ht)=(1, 2, 0) i=(0, 1, 0)  R=+0.012
+variant B: w_rho 0.334 w_i 0.511  pass 0/324 = 0.0%  min hypers None
+VERDICT: PARTIAL
