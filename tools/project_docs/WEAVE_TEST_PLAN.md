@@ -1,82 +1,82 @@
-# The Weave — full test plan (21 Nov 2026)
-Danny 08:13: "list all the tests we're going to need … when a tick is null, work on the tests and get them prepared."
-Rule for every test: a PREREG lock (prediction, data, pass/fail threshold) is committed BEFORE the data or the computation; scored ONLY on data released after the lock counts as strict evidence.
-Toolkits we already have: **Janus** (inflation, N*, late-time thread), **Hyperion** (BBN, galaxy γ-line, neutron stars), **CERN+1** (lhc_xsec / lifetime / dt_limit / future), **Flavour panel**, **Weave Control** engine (all levels at once), **evidence atlas** (strict count), **CubeMind** (self-derivation + data pool), **Mapper** (sky).
-Status: **R** ready (tool + lock exist) · **L** tool ready, lock to write · **T** tool to build · **W** waiting for data.
+# The Weave: test plan v2, one test per UFE term (21 Nov 2026, 16:50 CT)
+Danny 16:45: "a test plan for each stage or each part … when we publish this, I want all the data … to be irrefutable."
 
-## A. Early universe
-| Test | Weave number | Data / experiment | Tool | Status |
-|---|---|---|---|---|
-| A1 tensor ratio r | 5.41e-4 (10D); 5.7–5.9e-4 with τ_q (J1); 1.07e-3 if 6D | BICEP/Keck now; SO, LiteBIRD (σ_r ≈ 5e-4–1e-3) | Janus, weave_rladder | R (W for LiteBIRD) |
-| A2 running α_s | −9.7e-4 | CMB-S4 / SPHEREx (σ ~ 1e-3) | Janus | L → **R** (21 Nov 10:22: PREREG_A2_RUNNING locked, band −1.05e-3 to −0.95e-3) |
-| A3 n_s | FITTED — not a test | — | — | — |
-| A4 f_NL | ≈ 0 (single field) | Planck, SPHEREx | Janus | L → **R** (21 Nov 10:26: PREREG_A4_FNL, f_NL^local ≈ 0.012) |
-| A5 isocurvature | ≈ 0 | Planck PR4 | Janus | R |
-| A6 ΔN_eff | ≈ 0 (brane split) | ACT/SPT now; SO, CMB-S4 (σ ≈ 0.03) | Hyperion BBN + engine | L → **R** (21 Nov 10:23: PREREG_A6_NEFF — ΔN_eff = 0 if ε ≥ 1.5–9.5e-11, else ≤ 0; never positive; FAIL if > 0 at 3σ) |
-| A7 Y_p, D/H | standard at ω_b | PRIMAT + Planck | hyperion_bbn | R |
-| A8 Li-7 | postulate C7 (stellar depletion) | stellar Li surveys | — | T |
-| A9 no modular domain walls | no nHz wall signal (D1753 R3) | NANOGrav 20-yr, IPTA DR3 spectral shape (SMBH vs walls) | weave_walls (21 Nov 10:29) | T → **R** (PREREG_A9_WALLS: SL(2,Z) images ⇒ no walls; FAIL if DW vs SMBHB Bayes ≥ 100 or a causal f³ turnover at 3σ) |
-| A10 large-scale CMB cut | none needed (D1753 R4) | Planck PR4 low-ℓ | Janus | L → **R** (21 Nov 10:26: PREREG_A10_LOWELL) |
+This plan maps every term of **UFE v4** (WEAVE_UNIFIED_EQUATION.md) to the test that could kill it. It replaces v1 (08:13), whose stale rows are listed in §4.
 
-## B. Flavour, quarks, leptons
-| Test | Weave number | Data | Tool | Status |
-|---|---|---|---|---|
-| B1 Koide Q | 2/3 (needs |ε| ≲ 6e-5 at ρ) | m_τ (Belle II, BESIII) | weave_koide / slip | L → **R** (21 Nov 10:26: PREREG_B1_KOIDE_MTAU, m_τ = 1776.969 MeV) |
-| B2 TM1 sin²θ₁₂ | 0.3184 | JUNO 6-yr (±0.0015) | Flavour panel | R (already locked: PREREG_TM1_JUNO; marked 21 Nov 10:24) — strongest near-term test, ~6σ if centre holds |
-| B3 δ_CP branch | lower branch at s²₂₃ 0.561 | DUNE, Hyper-K | Flavour panel | L → **R** (21 Nov 10:24: PREREG_B3_DCP_FUTURE, δ ∈ 255–295° on the TM1 curve) |
-| B4 Σm_ν | 0.0587 eV (NO, m₁ = 0) | DESI DR3 + CMB; KATRIN/Project 8 | engine flavour | L → **R** (21 Nov 10:23: PREREG_B4_SUMMNU — scored in w0waCDM; FAIL if 95 % limit < 0.055 eV, Σ > 0.10 eV at 3σ, or IO at 3σ; m_β = 8.8 meV) |
-| B5 0νββ m_ββ | 1.59–3.80 meV (D1755; fail if a signal > 7.6 meV) | LEGEND-1000, nEXO ⇒ predict NULL | weave_mbb | R (locked PREREG_B5) |
-| B6 CKM fit | hosted (best 1.82, rung 4) | PDG/CKMfitter | weave_ckm, pool | **closed 21 Nov 10:40** — a 12-parameter fit to 8 observables is not evidence; the locked B6/B7 runs (D1777: score 0.37, all 8 fitted at the down half-class) settle the hosted status; no further lock |
-| B7 R_μμ / b→sμμ | = SM | LHCb Run 3 | engine quarks | R |
-| B8 θ̄ = 0 ⇒ neutron EDM | d_n from CKM only (~1e-32 e·cm) | n2EDM (PSI), ~1e-27 | weave_edm (21 Nov 10:30) | T → **R** (PREREG_B8B9_EDM: d_n ≲ 1e-31) |
-| B9 electron EDM | unobservable: 5e-34 – 4e-33 e·cm (D1763; the ~1e-40 was the old chain) | ACME III, JILA | weave_edm (21 Nov 10:30) | T → **R** (PREREG_B8B9_EDM) |
-| B10 proton decay | TWO BRANCHES (D1797): GUT stack ⇒ τ(e⁺π⁰) ≈ 2.5–3.2e34 yr (Hyper-K discovery or kill); SM-direct ⇒ none | Hyper-K, DUNE | code estimate | L → **R** (21 Nov 10:26: PREREG_B10_PROTON; DEVIATIONS D1 10:55: branch G τ ≈ 1.6e35 yr at two loops) |
-| B11 gauge couplings | D3 at ρ fails ×28 ⇒ visible on D7 (D1753 R1) | α_s, sin²θ_W, α | weave_rg (21 Nov 10:31) | T → **R** (PREREG_B11_RG: M₁₂ = 7.4e15, α⁻¹ = 28.8 ✓; one-loop α_s 0.107 vs 0.118; **two-loop (weave_rg2, PREREG_B11b, 21 Nov 10:33): α_s = 0.1158 vs 0.1180 — CONSISTENT; M₁₂ = 1.07e16, α⁻¹ = 27.9 ⇒ the reheating/master-relation chain must be re-locked, D1800**) |
+## 0. The standard: what "irrefutable" can mean
+No physical theory can be made irrefutable; a theory that could not be refuted would not be science. What can be made unassailable is **the record**: every number reproducible, every test fixed before its data, every failure shown. Each published claim must clear six gates.
 
-## C. Dark sector
-| Test | Weave number | Data | Tool | Status |
-|---|---|---|---|---|
-| C1 12.8 GeV asymmetric DM, direct detection | σ_SI below LZ, inside XLZD reach for ε near the ceiling | LZ, XENONnT, XLZD | Hyperion galaxy / engine | L → **R** (21 Nov 10:26: PREREG_C1_DIRECT, mass 12.8 GeV) |
-| C2 dark photon | 0.3–12.8 GeV, ε 1e-11 – LZ ceiling | SHiP, NA64, Belle II | window in lock text (21 Nov 10:30) | T → **R** (PREREG_C2_DARKPHOTON: visible decays only, 0.3–12.8 GeV) |
-| C3 DM self-interaction σ/m | computable from α_D ≥ 4.7e-4, m_A′ | cluster/dwarf bounds (σ/m < ~1 cm²/g) | to build (arXiv:1403.1077 formulas) | T → **R** (weave_sidm; 21 Nov 10:22: at α_D = 0.022, σ/m ≤ 2e-3 cm²/g for every m_A′, D1795) |
-| C4 no galactic-centre DM annihilation | asymmetric ⇒ none | Fermi GCE | — | L → **R** (21 Nov 10:24: PREREG_C4_NO_ANNIHILATION) |
-| C5 wino 0.67–1.0 TeV | disappearing tracks; γ-line | ATLAS/CMS Run 3, HL-LHC; CTA | lhc_*, galaxy γ-line | R |
-| C6 no dark neutron decay | none (D1753 R6) | UCNτ, BL3 beam | — | L → **R** (21 Nov 10:24: PREREG_C6_NO_DARK_NEUTRON) |
-
-## D. Late universe and gravity
-| Test | Weave number | Data | Tool | Status |
-|---|---|---|---|---|
-| D1 thawing thread w0, wa | w0 ≈ −0.79 | DESI DR2/DR3, Euclid | Janus late, engine | R |
-| D2 negative space z† | conditional (coupling not detected) | Lyα BAO z 2–3 (DESI) | weave_negspace | L → **R** (21 Nov 10:40: PREREG_D2_NEGSPACE, branch U no switch / branch C z† = 2.88) |
-| D3 α drift | ζ ≲ 3.6e-6 needed ⇒ thread sequestered or axion-like | atomic clocks, quasar spectra (ESPRESSO) | Janus clocks | R |
-| D4 equivalence principle | no violation | MICROSCOPE-2 | — | L → **R** (21 Nov 10:24: PREREG_D4_EQUIV, |η| < 1e-18) |
-| D5 cosmic birefringence (21 Nov 10:22: carrier is now the photon-axion on its OWN cycle ≈ 36–39, m 1e-33–9e-32 eV, c_γ ≈ 4.2/Δθ — D1793–D1795; the thread is sequestered) | bridge β² = 2.5e-3 (c_γ/f)²(1+w0) deg² ⇒ c_γ/f ≈ 12 at β = 0.277°; ratio β_reio/β_rec = 0.997–0.999 (locked D404) | ACT+Planck now; LiteBIRD (both bumps) | bridges D403/D404 | R (thread must be axion-like with c_γ/f ≈ 12; LiteBIRD ratio test) |
-| D6 GW speed = c, no extra polarisations | standard | LIGO-Virgo-KAGRA | — | L → **R** (21 Nov 10:26: PREREG_D6_GW) |
-| D7 Hubble / S8 tensions | not resolved by the thread | SH0ES, JWST, DES/KiDS | Janus | L (honest null) |
-
-## E. Matter, nuclei, atoms, chemistry
-| Test | Weave number | Data | Tool | Status |
-|---|---|---|---|---|
-| E1 m_p response to quark slips | σ_πN, σ_s propagation | lattice QCD | weave_proton | R |
-| E2 atomic/molecular constants | follow from α, m_e, m_p | CODATA | weave_atomic | R |
-| E3 nuclear window (deuteron binding, Hoyle state) | inside at the data point (inputs); exact-unification α_s would move m_q/Λ by 13 % (outside); a true prediction needs δα_s ≲ 4e-4 | nuclear lattice EFT | weave_nuclear (21 Nov 10:38) | T → **R** (PREREG_E3_NUCLEAR, D1802; calibration) |
-
-## F. Whole-model tests
-| Test | Data | Tool | Status |
-|---|---|---|---|
-| F1 every level at once (one consistent knob set) | all above | Weave Control engine + CubeMind pool | R (running, 17k+ universes) |
-| F2 strict evidence count | only post-lock data | evidence atlas | R |
-| F3 joints (every shared number agrees) | — | joint audit (D1750–D1752) | R |
-
-**Next to prepare on null ticks (in order):** D5 birefringence bridge tool + lock · B5 m_ββ tool + lock (predict NULL for LEGEND/nEXO) · B2 JUNO lock refresh · C3 σ/m tool · B11 gauge-coupling (D7 volume) derivation · A9 wall-spectrum template · B6 locked re-check of the 1.82 CKM point.
-
-## Y. Flavour model-building tests (added 21 Nov 10:22)
-| Test | Result | Status |
+| gate | requirement | how we meet it |
 |---|---|---|
-| Y1–Y3 theta/orbifold/hosting | D1783–D1785 | done |
-| Y4 odd flux M=9 Z₃ at ρ, Haar Higgs | FAIL (not natural; r₂₃ ≥ 0.20) | done (D1790) |
-| Y4b same, optimised Higgs | HOSTED (exact fit, all 9 pairs) | done (D1792) |
-| Y5 T²/Z₂ at ω, 4-4-8 | HOSTED (tuned fit; control passes) | done (D1791) |
-| Y6 (future) | a symmetry that fixes the Higgs direction ⇒ 0-parameter lepton test | T (no mechanism in the literature, D1796) |
+| G1 Pre-registered | prediction, data, threshold and null fixed before the data or computation | PREREG + sha256, pushed first (in place since D1873) |
+| G2 Reproducible | one command regenerates every number from the repo; no typed-in values | scoreboard script + results files; a values-file engine (queue item) |
+| G3 Triangulated | three independent vectors, converged to 7 nulls (Rule 6h) | TRIANGULATE: line in every D-note |
+| G4 Refereed | an independent, fresh-context referee on every scoreboard change | done every ≤ 4 ticks (D1897, D1909, D1920, D1923, D1927, tick 16) |
+| G5 Falsifiable | a stated observation that would kill the term, by a named experiment and date | the KILL column below |
+| G6 Honest count | only post-lock data counts as evidence; fits, bounds and naturalness bars are shown as such | evidence classes below; FAILs are reported, not hidden |
 
-**21 Nov 10:22 corrections:** Λ is an INPUT (D1795: the dark-cycle axion oscillates, m ≈ 64 H₀), so no Λ-size test exists; the twin-cycle tie (forces = birefringence = α_D) is broken (D1793) and is not a test any more.
+**Evidence classes:**
+- **P**: a prediction scored on future data (the only strict evidence).
+- **D**: a pull against existing data (counts, but was not blind).
+- **B**: a bound passed.
+- **N**: naturalness.
+- **I**: internal consistency.
+- **T**: TRUST, an input with no test.
+
+## 1. Test plan by UFE term (centre outwards)
+| ring | UFE term | Weave value | class | test (data, experiment) | KILL condition | lock | status |
+|---|---|---|---|---|---|---|---|
+| 0 | quark spurion, \|u\| ∈ [0.02588, 0.02740] | f7 22–23 %, fJ 61–66 % | N (PHEN) | Lattice and PDG quark masses and CKM; the window must stay natural when the inputs update | No natural assignment in the window after the next PDG/FLAG update | PREREG_D1932 | ● converged |
+| 0 | quark spurion's home | open | T | U₃ near i or a twisted modulus must give \|u\| ≈ 0.0266 | No geometric source of that size | to write | OPEN |
+| 0 | θ̄ = 0 (anomaly-free weights) | d_n ~ 1e-32 e·cm | P | n2EDM (PSI) | d_n > 1e-26 e·cm | PREREG_B8B9_EDM | R |
+| 1 | charged leptons at ρ (3 rungs) | natural 5.3 % | N | — | — | D1877 | modest |
+| 1 | Koide Q = 2/3 | m_τ = 1776.969 MeV | P | Belle II, BESIII m_τ | m_τ off by > 3σ | PREREG_B1_KOIDE_MTAU | R |
+| 1 | Koide δ = 2/9, c_e | input | T | none until derived | — | — | TRUST |
+| 1 | neutrinos at i, TM1 | sin²θ₁₂ = 0.3184 | **P** | **JUNO 6-yr (±0.0015)** | JUNO centre > 3σ from 0.3184 | PREREG_TM1_JUNO | **R: the strongest near-term test** |
+| 1 | δ_CP branch | 255–295° | P | DUNE, Hyper-K | outside at 3σ | PREREG_B3 | R |
+| 1 | Σm_ν (NO, m₁ = 0) | 0.0587 eV | P | DESI DR3 + CMB | 95 % limit < 0.055 eV, or IO at 3σ | PREREG_B4 | R |
+| 1 | 0νββ | m_ββ 1.59–3.80 meV | P | LEGEND-1000, nEXO (predicts NULL) | a signal > 7.6 meV | PREREG_B5 | R |
+| 1 | neutrino ratio | 1.3 % natural | N | — | — | D1821 | ↑ thin (0.12 dex) |
+| 2 | m₃/₂ (KKLT, N = 6, χ = 48) | 2.58e5 GeV | I | through the spectrum | — | D1871 | TENSION |
+| 2 | **wino** (AMSB) | **0.687 TeV** | **P** | ATLAS/CMS disappearing tracks (Run 3, HL-LHC); CTA γ-line | excluded below 0.70 TeV, or no signal up to 1.0 TeV at HL-LHC | to refresh (C5) | **↑ 2 % margin: the nearest collider kill** |
+| 2 | gluino | 4.93 TeV | B → P | HL-LHC / FCC-hh | found below 3 TeV | to write | ● |
+| 2 | **α_s(M_Z)** | **0.1142** | **D** | PDG world average 0.1180 ± 0.0009 | already **FAILS at −4.2σ** | PREREG_D1929 | **↑! open: needs Δ₃** |
+| 2 | Δ₃ threshold | −0.094 (bar −0.05) | I | brane-native D7 computation | no D7 spectrum reaches −0.05 | to write | ↑! |
+| 2 | proton decay (G-branch) | 1.6e35 yr | P | Hyper-K, DUNE | e⁺π⁰ seen below 1e35 yr on the G-branch | PREREG_B10 | R |
+| 3 | inflation plateau E(S, 3/2) | n_s 0.9706 | D | CMB-SPA + DESI 0.9728 ± 0.0027 | > 3σ off with future CMB-S4 | weave_derivation_v4 | ● soft ↑ |
+| 3 | r | 5.4e-4 | **P** | **LiteBIRD, CMB-S4 (σ_r ≈ 5e-4)** | r excluded below 2.5e-4, or r > 1.5e-3 | PREREG A1 | R |
+| 3 | running α_s(k) | −9.7e-4 | P | CMB-S4, SPHEREx | outside −1.05e-3 to −0.95e-3 at 3σ | PREREG_A2_RUNNING | R |
+| 3 | f_NL, isocurvature | ≈ 0 | P | SPHEREx, Planck | f_NL^local > 1 at 3σ | PREREG_A4 | R |
+| 3 | **T_R** | **3.7e8 GeV** | I | through N* (n_s) and leptogenesis | no consistent baryogenesis path | to write (ring 3) | **↑! strongest pointing** |
+| 3 | dark matter, asymmetric | m_X = 12.8 GeV | **P** | LZ, XENONnT, XLZD | excluded at 12.8 GeV down to the ε floor, or annihilation seen | PREREG_C1, C4 | R |
+| 3 | dark photon | 0.3–12.8 GeV | P | SHiP, NA64, Belle II | — (a window, not a kill) | PREREG_C2 | R |
+| 3 | ΔN_eff | 0 (never positive) | P | SO, CMB-S4 (σ 0.03) | ΔN_eff > 0 at 3σ | PREREG_A6 | R |
+| 4 | dark-energy thread | non-Kähler, λ ≈ 0.95 | — | DESI DR3, Euclid w₀–w_a | (after derivation) | five must-tests locked | OPEN |
+| 4 | α drift ζ | 3.8e-10 | P | atomic clocks, ESPRESSO | ζ > 1e-8 detected | D1887 | ● |
+| 4 | equivalence principle | no violation | P | MICROSCOPE-2 | \|η\| > 1e-17 | PREREG_D4 | R |
+| 4 | no domain walls | — | P | NANOGrav, IPTA | DW vs SMBHB Bayes factor ≥ 100 | PREREG_A9 | R |
+| 4 | GW speed, polarisations | standard | P | LIGO-Virgo-KAGRA | deviation | PREREG_D6 | R |
+
+## 2. The five tests that decide it (ranked by power and date)
+1. **JUNO sin²θ₁₂ = 0.3184** (data in hand around 2027–2030, about 6σ separation if the centre holds). This is the cleanest prediction the Weave makes.
+2. **The wino at 0.687 TeV**, with a 2 % margin over the current disappearing-track limit. HL-LHC either finds it or kills the spectrum.
+3. **α_s**: already failing at −4.2σ. Publishing honestly means either a derived Δ₃ that closes it, or showing the failure.
+4. **r = 5.4e-4** at LiteBIRD / CMB-S4.
+5. **12.8 GeV asymmetric dark matter** at XLZD.
+
+## 3. Before publication (the irrefutability checklist)
+- [ ] One-command reproduction: the scoreboard plus every locked script, run from a clean clone, matching the stored results (D1898 did this once; repeat it on the final version).
+- [ ] Values file: no number typed into the paper; every paper number pulled from results files (queue item 9).
+- [ ] Every UFE term with a TRIANGULATE: line converged to 7 nulls.
+- [ ] Final independent referee pass on the whole paper (fresh context, a heterogeneous model).
+- [ ] The evidence count shown by class (P/D/B/N/I/T), with the FAILs in the abstract.
+- [ ] The look-elsewhere / trials ledger reported for every headline coincidence.
+- [ ] Every prediction in §1 locked with a date before its data release.
+
+## 4. Stale rows from v1 (superseded)
+- **D1** thawing thread w₀ ≈ −0.79: the Kähler thread is excluded (D1906). It is OPEN now (ring 4).
+- **D5** birefringence: the carrier cycle is unsettled after D1793. It is held until ring 4.
+- **B11** "α_s 0.1158, consistent": superseded. The gauge term (D1881b) and the gluino at its own scale give **0.1142, FAIL** (D1929).
+- **C5** wino 0.67–1.0 TeV: now 0.687 TeV from the derived chain. The lock needs a refresh.
+- **B6** CKM: closed in v1. The quark term is now the single spurion (D1932), which is naturalness, not a fit.
+- **B10** proton: the G-branch is 1.6e35 yr (two-loop), not 2.5–3.2e34.
