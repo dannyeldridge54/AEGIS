@@ -4,7 +4,7 @@ import json, math, sys
 import numpy as np
 from scipy.optimize import minimize_scalar
 OBS = dict(mmu_mtau=105.658/1776.86, me_mtau=0.51100/1776.86, u_d=0.0457, u_u=0.00311, nu_step=math.exp(-9*math.pi/8))
-L3 = math.log(3)
+L3 = math.log(2)   # D1890: tightened from ln 3
 def sectors(c, u):
     a = c['electron_corner_amp']; r = c['lepton_rungs']
     m = np.array([a * u**r[0], u**r[1], u**r[2]])                       # e, mu, tau (tau = 1)

@@ -1,0 +1,3 @@
+# PREREG D1890 — median loop tick 2: tighten the mass/step tolerance ×3 → ×2 (locked 21 Nov 2026 before running; repo at 4bd1e79c)
+All 7 sectors were ≤ 1 at D1889 (u* = 0.055), so by the loop rule this tick narrows the target: in theory/median/engine.py the log-tolerance L3 = ln 3 becomes ln 2 for the mass ratios and the shared-step sectors (m_μ/m_τ, m_e/m_τ, neutrino step, down-quark step). Koide (1 %), Δ₃ (0.05) and the thread bound unchanged. centre.json unchanged; the arrow u* is refitted.
+Verdict: PASS if every sector |strain| ≤ 1 at the refitted u*; PARTIAL if all ≤ 1.5; FAIL otherwise (then the next tick targets the sector(s) over 1 with a geometric change; the tolerance stays at ×2 — never loosened).
