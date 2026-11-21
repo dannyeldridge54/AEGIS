@@ -1,0 +1,4 @@
+# PREREG D1884 — D1829's quark matrix model with mixed weights (Δk = 1 for Q₃, u₁, d₁) (locked 21 Nov 2026 before computing; repo at 97ceb1e8)
+D1876: the ½ charges need Q₃ (q = 3/2), u₁, d₁ (q = ½) to carry modular weight shifted by Δk = 1. The charges (and so the u-powers) are unchanged; the new physical effect is the canonical (Kähler) normalisation (2 Im τ)^{−k/2} of those fields, evaluated at the D1829 point (near ρ, 2 Im ρ = √3): a factor f = (√3)^{∓1/2} = 0.760 or 1.316 on row Q₃ and on columns u₁, d₁ of both Yukawa matrices.
+Procedure: D1829's script logic unchanged (same u_u, u_d, charges, coefficient prior |c| ∈ [½, 2] log-uniform with random phases, N = 20000, seed 21, factor-3 windows on 7 observables; J window factor 3 around 3.08e-5), with the f rescaling inserted. Both signs of Δk.
+Verdict: PASS if for both signs f7 ≥ 5 % (D1829's bar) and fJ ≥ 20 %; PARTIAL if one sign; FAIL if neither. Report f7, fJ next to D1829's 18 % / 31 %.
