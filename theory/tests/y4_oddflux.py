@@ -18,7 +18,7 @@ print('H classes', {int(k): int((cH == k).sum()) for k in range(3)})
 # coefficients in eigenbases: mode_i = sum_a VL[i,a] * eig_a  => psi(eig_a) = sum_i Vinv[a,i] psi_i
 VLi = np.linalg.inv(VL); VHi = np.linalg.inv(VH)
 # product of eigenmodes a,b = sum_ij VLi[a,i]VLi[b,j] psi_i psi_j = sum_k (...) psi_H_k ; psi_H_k = sum_c VH[k,c] eigH_c
-ce = np.einsum('ai,bj,ijk,kc->abc', VLi, VLi, c, VH)
+ce = np.einsum('ia,jb,ijk,ck->abc', VL, VL, c, VHi)
 t1, t2 = 4.84e-3, 5.95e-2
 out = {'gate': bool(gate), 'res_prod': float(res_prod), 'pairs': []}
 hrng = np.random.default_rng(7)
@@ -28,6 +28,7 @@ for a in range(3):
     sub = ce[np.ix_(ia, ib, range(18))]
     norms = [np.linalg.norm(sub[:, :, np.where(cH == k)[0]]) for k in range(3)]
     k = int(np.argmax(norms)); ih = np.where(cH == k)[0]
+    leak = sorted(norms)[1] / max(norms); out.setdefault('leak', []).append(float(leak))
     T = sub[:, :, ih]
     h = hrng.normal(size=(20000, len(ih))) + 1j * hrng.normal(size=(20000, len(ih)))
     h /= np.linalg.norm(h, axis=1, keepdims=True)
@@ -40,6 +41,7 @@ for a in range(3):
                best=[float(r12[best]), float(r23[best])], median=[float(np.median(r12)), float(np.median(r23))])
     out['pairs'].append(row); print(row)
 fr = max(p['frac'] for p in out['pairs'])
+gate = gate and max(out['leak']) < 1e-8
 out['verdict'] = 'NULL-gate' if not gate else ('PASS' if fr >= 0.01 else 'WEAK' if fr > 0 else 'FAIL')
 print('verdict', out['verdict'], 'max frac', fr)
 json.dump(out, open('field_tests/results/y4_oddflux.json', 'w'), indent=1)
