@@ -15,7 +15,7 @@ At every rung the loop writes a postulate (label **P** principle / **C** conject
 ## Loop-1 postulates (adopted as candidates, 21 Nov)
 | # | ladder | postulate | kills it | status |
 |---|---|---|---|---|
-| U1 | L1/L2 | **P-twist:** visible gauge fields stay on the orbifold D3 (C5 kept); their strength is set by f_a = S + s_a M, with s_a Re M ≈ 1.07 (needed for α_GUT ≈ 1/24 since Re S(ρ) = 0.866) | gauge running: non-universal s_a ⇒ couplings do NOT meet exactly at the string scale; a perfect MSSM-style meeting with a universal f would kill it | to lock (B11) |
+| U1 | L1/L2 | ~~P-twist (s_a Re M ≈ 1.07)~~ WITHDRAWN (D1757a: wrong by 4π; the twisted part would have to be 27–45× the dilaton's) → **U1′ C-geom:** visible gauge fields on a cycle whose volume gives α⁻¹ ≈ 24–40; C5's cold-dark-side mechanism must be re-derived on that picture | a consistent brane picture where the dilaton-inflaton still heats only our side | open (L4 next: reheating on the new picture) |
 | U2 | L3 | **P-rung:** one up-quark rung satisfies both the mixing data and the mass ratios | PREREG_B6_RUNG: if no rung is jointly viable, the placement is in tension | running (B6) |
 | U3 | R1 | **C-axion-thread:** the dark thread is axion-like (shift-symmetric: no α drift), coupled to F F̃ with c_γ/f ≈ 12 M_P⁻¹ (from β = 0.277°) | LiteBIRD β_reio/β_rec ≠ 0.997–0.999 (D404); any α drift | locked (D404 ratio) |
 | U4 | R2 | **P-cold-DM:** the 12.8 GeV dark matter is collisionless (σ/m ≤ 1e-4 cm²/g) | velocity-dependent SIDM signatures | PASS (D1756) |
