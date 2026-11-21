@@ -18848,3 +18848,6 @@ Rescue attempts:
 
 ## D1919a — correction to D1919
 "PASS" becomes **"CONDITIONAL"**. S at i is at the edge of perturbative control (g_s = 1). It needs an inflation path along Re S = 0 instead of Re S = ½. n_s, r, D762 and the Λ_sp tie must all be redone.
+
+## D1924 — scoreboard v4 run under lock PREREG_D1924 (21 Nov 2026)
+Result: **12 PASS (3 PHENOMENOLOGICAL, no geometric home), 2 FAIL (α_s, Δ₃) of 14 tested lines**. No numbers changed from v3; the three quark-lock passes are now counted apart. Files: field_tests/results/weave_derivation_v4.txt/.json. v3 is superseded for headline counts.
