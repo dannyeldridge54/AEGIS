@@ -48,9 +48,12 @@
   "status": "NO modular-tau home near rho in Z6-II (D1922/D1923). Candidates: U3 (near i), discrete data, Froggatt-Nielsen spurions (twisted moduli, bulk-brane positions, recombination flavons). One-spurion viability OPEN (D1925a/D1927: knife-edge NONE at 0.02587; natural one-spurion fits at 0.0259-0.027 per unlocked referee sweep); \"two sizes needed\" UNPROVEN (D1923a). S excluded."
  },
  "S_vacuum": {
-  "status": "S at i: inflation PASS (D1926: n_s 0.9704, r 5.46e-4, strict minimum); g_s = 1 CONDITIONAL (D1919a); Lambda_sp tie at rho lost."
+  "status": "S at i: inflation PASS (D1926), but alpha_s FAIL with its heavier spectrum (D1929: 0.1112, -7.5 sigma; Delta3 doubles) => disfavoured by forces; S at rho baseline (g_s = 2/sqrt3, CONDITIONAL). g_s = 1 CONDITIONAL (D1919a)."
  },
  "U32_single_flavon": {
   "status": "PHENOMENOLOGICAL postulate (D1928 PASS): one FN flavon, natural window |u| = 0.063-0.148 (factor 2.34, P = 0.29); assignment varies across window; no geometric home yet."
+ },
+ "alpha_s_baseline": {
+  "status": "scoreboard uses 0.1147 (gluino 5565 GeV, D1816); referee-corrected gluino 4.93 TeV gives 0.1142 (-4.2 sigma) per D1929 run 1 - carry into next scoreboard"
  }
 }

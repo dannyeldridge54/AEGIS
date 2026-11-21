@@ -18930,3 +18930,15 @@ Result: **12 PASS (3 PHENOMENOLOGICAL, no geometric home), 2 FAIL (α_s, Δ₃) 
   - The flavour postulate count is now 3/2, over the cap, so **the next flavour step needs a referee first**.
 - **KEEP:** field_tests/results/d1928_flavon_sweep.json/.txt.
 - Next for flavour, after the referee: can U₃ near i supply |u| ≈ 0.1? That means |τ − i| ≈ 2|u| ≈ 0.2, a large displacement that would be shared with the neutrinos and the dark mirror (Mirror-Loom mode).
+
+## D1929 — Loom v3 tick 14 (Danny "Ll"): α_s with the S-at-i spectrum — FAIL; S at i makes the strong-coupling gap WORSE (locked PREREG_D1929; DEVIATIONS before the one rerun)
+- **TARGET:** queue item 1, the cross-sector cost of S at i (D1919/D1926). Trials +1 (trials_alpha_s.md).
+- **GATHER:** weave_rg2 two-loop running, unchanged. Heavy spectrum: wino 2.0 TeV, gluino 14.5 TeV, scalars 1.38e6 GeV.
+- **GUARD:** run 1 was VOID because its baseline was mis-specified (the gluino was 4.93 TeV instead of D1816's 5565 GeV). The fix was written in DEVIATIONS first. Rerun baseline: 0.11471, which reproduces D1816.
+- **TEST: FAIL.** With the heavy spectrum, α_s(M_Z) = **0.1112, −7.5 σ** (it was 0.1147, −3.7 σ). Δ₃ = −0.50, twice as large. M₁₂ = 7.7e15 GeV.
+  - Report only, with the scalars held at 4.7e5 GeV: α_s = 0.1139.
+- **JUDGE:**
+  - S at i buys perturbative control (g_s = 1) and keeps the inflation numbers (D1926), but it doubles the threshold that α_s needs. The two directions conflict, so **S at i is disfavoured by the forces sector**.
+  - S at ρ (g_s = 2/√3) stays the baseline, still CONDITIONAL on control.
+  - **Side finding (stale number):** with the referee-corrected gluino of 4.93 TeV (D1897), the baseline gives α_s = 0.1142 (−4.2 σ), not 0.1147. That number comes from run 1, whose spectrum is the 4.93 TeV one. The scoreboard's α_s line still uses the older 5.57 TeV gluino. This changes no pass/fail result, but the next scoreboard and the referee should carry it.
+- **KEEP:** field_tests/results/d1929_heavy_spectrum_as.json/.txt; run 1 is kept as *_run1_VOID.*.

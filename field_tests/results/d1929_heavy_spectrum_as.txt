@@ -1,0 +1,27 @@
+{
+ "base": {
+  "M12_GeV": 1.0729587128117186e+16,
+  "alpha_inv_M12": 27.933546613675603,
+  "Delta3": -0.23675859249753373,
+  "alpha_s_unif": 0.1147095485807464,
+  "label": "S (two-loop gauge; Yukawa 2-loop neglected, +-0.004)"
+ },
+ "heavy": {
+  "M12_GeV": 7667319610147766.0,
+  "alpha_inv_M12": 28.74042819325384,
+  "Delta3": -0.503124455698007,
+  "alpha_s_unif": 0.11121504786000286,
+  "label": "S (two-loop gauge; Yukawa 2-loop neglected, +-0.004)"
+ },
+ "heavy_ms_fixed": {
+  "M12_GeV": 8214786885364625.0,
+  "alpha_inv_M12": 28.222954846857945,
+  "Delta3": -0.2977152497219109,
+  "alpha_s_unif": 0.11388155529742412,
+  "label": "S (two-loop gauge; Yukawa 2-loop neglected, +-0.004)"
+ },
+ "alpha_s_heavy": 0.11121504786000286,
+ "pull": -7.538835711107929,
+ "shift": -0.003494500720743546,
+ "verdict": "FAIL"
+}
