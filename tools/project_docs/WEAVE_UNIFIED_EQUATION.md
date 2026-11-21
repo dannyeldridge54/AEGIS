@@ -62,11 +62,11 @@ Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on 
 | I2 | tilt C (sets n_s) | inflation | α′³ with χ, 𝒱 (estimate exists) |
 | I3 | α⁻¹ at the string scale ⇔ Re T_vis | forces | FIXED BY DATA (D1767): α⁻¹ = 28.9 at 7e15 GeV (split-SUSY running) ⇒ Re T_vis = 21.1, T_R = 3.6e8 GeV, M_N ≥ 4.5e10 GeV, wino 0.67–0.71 TeV; theory (LVS SU(N) condensate) gives 26.0–26.7 (N = 4) / 30.6–31.4 (N = 5): not selected |
 | I4 | m₃/₂ (or the wino mass) | SUSY, dark matter | W₀ and 𝒱 [OPEN: flux choice] |
-| I5 | Koide scale (one lepton mass) and δ = 2/9 | leptons | δ: Berry-phase conjecture [OPEN] |
+| I5 | Koide scale (one lepton mass) and δ = 2/9 | leptons | δ: no derivation exists in the literature; not the thawing axion (would drift m_e/m_μ); Berry phase C-δ only (D1768) |
 | I6 | neutrino masses (Σm_ν, m₁ = 0) | neutrinos | seesaw M_N and Yukawas [OPEN] |
 | I7 | quark O(1) couplings (12) and τ_q's class | quarks | [A] |
 | I8 | V_L (the size of Λ) and the thread's start | dark energy | [OPEN — the cosmological-constant problem] |
-| I9 | α_D, m_A′, ε (dark force) | dark matter | dark-D7 volume and kinetic mixing [OPEN] |
+| I9 | m_A′, ε (dark force) | dark matter | α_D DERIVED = 0.035 at 12.8 GeV from a twin dark cycle (D1769, C); m_A′ and ε still free |
 | I10 | g = 3 (M = 4) flux | generations | [A] |
 | I11 | v = 246 GeV given m₃/₂ (tuning ~4e6) | Higgs | [OPEN — the last factor of the hierarchy] |
 Compare: the Standard Model + ΛCDM have ~25–30 free numbers. The Weave fixes or ties: n_s/r/α_s relation, Q = 2/3, TM1 angles and δ_CP branch, θ̄ = 0, m_X, ΔN_eff ≈ 0, the reheating chain, the r-invariance, and W₀ from two others; it still hosts the quark couplings and the neutrino and dark-force scales.
