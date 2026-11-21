@@ -1,0 +1,2 @@
+# PREREG D1924 — scoreboard v4 after D1922/D1923 (locked 21 Nov 2026 before running; repo at 0a718ca3)
+theory/weave_derivation_v4.py (committed with this lock) = v3 with the three quark-lock lines (D1829 f7, fJ; D1884 two-stack) relabelled PHENOMENOLOGICAL (no modular-τ home in Z₆-II; FN spurions need two sizes) and counted separately; |u_d| labelled TRUST with no geometric home. No number changes; same PASS rules.

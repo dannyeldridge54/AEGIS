@@ -18816,3 +18816,35 @@ The registry theory/loom_registry.json is seeded with the symbols behind today's
 - **Mirror note:** U₃ is the ONLY free complex-structure modulus, and it is also the pyramid/neutrino torus and the dark-mirror quantity (D1914). So whatever moves U₃ moves the neutrinos and the dark protection. That is a centre-balance constraint for option (b).
 - **JUDGE:** a structural claim with three threads (twist rule, Hodge number, discrete Wilson lines) ⇒ **woven as a constraint**. Its scoreboard consequence (the relabel) waits for the referee.
 - **KEEP:** registry entries U_rho_torus and U_i_torus already state this. To propagate (after the referee): the paper §2 quarks paragraph and WEAVE_FULL_DERIVATION §3.
+
+## D1923 — REFEREE (heterogeneous, adversarial: tried to rescue the model first) on D1919 + D1922 — blocker PARTLY RIGHT (21 Nov 2026)
+Rescue attempts:
+1. **Untwisted U₁, U₂:** closed on every Z₆-II lattice, non-factorisable ones included. Untwisted h²¹ = 1, and no orientifold choice changes that.
+2. **Bulk (regular-representation) branes:** they CAN move continuously, with continuous Wilson lines in the T-dual (Ibáñez–Mas–Nilles–Quevedo 1988). Their Yukawas are holomorphic in the positions (Cremades–Ibáñez–Marchesano, hep-th/0404229). The cost: the (3,3,3) zero-mode count at M = 9 (U17′) is lost.
+3. **Twisted-sector complex-structure moduli** (lattices with h²¹ > 1): possible Z₃-charged spurions, if the orientifold keeps them. They do not give a τ − ρ expansion.
+4. **Recombination flavons** (charged open-string fields): continuous **Froggatt–Nielsen** flavons. With them the half-integer charges are harmless (a charge-2 flavon), and the no-go results of D1874–D1876 do not apply. D1828 is more natural as a Froggatt–Nielsen model than as a modular one.
+5. **Kähler moduli:** only via e^{−2π Re T} ≈ e^{−130}, negligible.
+6. **S:** the C₀ shift symmetry forbids any perturbative S-dependence of D7 superpotentials, and D7/O7 break SL(2,Z)_S. Closed.
+7. **Changing the fold** to T⁶/(Z₂×Z₂) (three free U's): a real escape, but it costs U17′ and the D1871 fold.
+8. **NEW MAJOR:** D1828 uses two slips (u_u ≠ u_d) with shared q_Q. One τ cannot supply both in any geometry. **Two independent breaking parameters are needed.**
+
+**Verdict:**
+- The modular-τ reading has no geometric home. The PHENOMENOLOGICAL relabel is correct.
+- "No continuous modulus at all" is wrong. Froggatt–Nielsen spurions survive, but they need two free sizes.
+
+**D1919:**
+- The g_s arithmetic passes, but g_s = 1 is the edge of control, so the status is CONDITIONAL.
+- S ending at i needs an inflation path along Re S = 0, not SERAPIS-E's Re S = ½ ending at ρ. That changes n_s, r and D762's CP statement, and loses the Λ_sp tie at ρ (2310.07708).
+
+## D1922a — correction to D1922
+- **GATHER 3** becomes: "Discrete for branes stuck at fixed points. Bulk (regular-representation) branes and continuous Wilson lines are allowed, but they lose the (3,3,3) zero-mode count of U17′."
+- **Result** becomes: "the D1828 lock has **no modular-τ home**. Possible homes are **Froggatt–Nielsen spurions** (twisted moduli, bulk-brane positions, recombination flavons), and they need **two independent sizes** (u_u ≠ u_d)."
+- **Option (a)** becomes: "g_s = 1.10–1.22 (1.11 at arg 49.5°). **Excluded:**
+  - no perturbative S-dependence of D7 Yukawas;
+  - the inflaton ends at ρ exactly;
+  - one S cannot give two slips;
+  - it conflicts with D1919."
+- Coincidence noted, carrying no mechanism weight: e^{−2π Im S} = 4.3e-3 at ρ, close to |ε_u| = 3.1e-3.
+
+## D1919a — correction to D1919
+"PASS" becomes **"CONDITIONAL"**. S at i is at the edge of perturbative control (g_s = 1). It needs an inflation path along Re S = 0 instead of Re S = ½. n_s, r, D762 and the Λ_sp tie must all be redone.

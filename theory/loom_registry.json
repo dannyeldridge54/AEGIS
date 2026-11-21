@@ -45,6 +45,6 @@
  },
  "flavour_tau": {
   "def": "the modulus whose distance from a knot sets the residual-charge hierarchy",
-  "status": "NO geometric home near rho in Z6-II (D1922); candidates S, U3 (near i), discrete data"
+  "status": "NO modular-tau home near rho in Z6-II (D1922/D1923). Candidates: U3 (near i), discrete data, Froggatt-Nielsen spurions (twisted moduli, bulk-brane positions, recombination flavons) needing TWO independent sizes (u_u != u_d); S excluded (no perturbative S-dependence of D7 Yukawas)."
  }
 }
