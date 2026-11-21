@@ -196,6 +196,18 @@ def weave_mbb(a):
     return out
 
 
+def weave_magd7(a):
+    """Loop-2 brane repair (U11, D1758/D1759/D1762; candidate, E): visible forces on magnetised D7, f ~ T + g^2 S (g = 3).
+    {"alpha_inv": 24.3..40} -> Re T, x, T_R, leptogenesis window, wino fraction at 0.66/1.0/1.85 TeV vs the Einasto line limit."""
+    ainv = float(a.get('alpha_inv', 24.3)); ReS = math.sqrt(3) / 2; flux = 9 * ReS; x = flux / ainv; TR = x * 1.34e9
+    eps = 1.8e-6 * 9e8 / TR; mmin = eps / (3 * 0.0501e-9 / (16 * math.pi * 174 ** 2))
+    f = [th + (t - th) * TR / 3.2e8 for t, th in zip((0.14, 0.26, 0.67), (0.05, 0.12, 0.41))]
+    return dict(alpha_inv=ainv, ReT=ainv - flux, x=x, T_R_GeV=TR, eps_needed=eps, M_N_window_GeV=[max(mmin, 10 * TR), 2.5e12],
+                wino_fraction={'0.66': f[0], '1.0': f[1], '1.85': f[2]}, wino_limit={'0.66': 0.16, '1.0': 0.24, '1.85': 0.44},
+                dNstar=math.log(x) / 3, r=5.41e-4 * (50.37 / (50.37 + math.log(x) / 3)) ** 2,
+                label='E (candidate repair U11; normalisation and gauge-channel dominance assumed, D1761)')
+
+
 def weave_paths(a):
     """Connection map: {\"from\":..,\"to\":..} -> shortest chain of shared quantities; {} -> all cross-sector connections."""
     import weave_paths as P
@@ -204,10 +216,11 @@ def weave_paths(a):
 
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
          'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
-         'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb}
+         'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb, 'weave_magd7': weave_magd7}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_mbb({})['mbb_max_meV'] - 3.7952) < 1e-3
+    assert abs(weave_magd7({'alpha_inv': 40})['T_R_GeV'] - 2.611e8) < 1e6
     assert abs(weave_rung({'m': 8})['eps_formula'] - 0.003117) < 2e-5
     k = weave_koide({'masses': [0.51099895, 105.6583755, 1776.93]}); assert abs(k['Q'] - 0.6666645) < 2e-7 and abs(k['delta'] - 0.222225) < 2e-6
     q = weave_koide({'masses': [1.29e-3, 0.629, 169.0]}); assert abs(q['Q'] - 0.8870) < 5e-4
