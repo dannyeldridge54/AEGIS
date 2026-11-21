@@ -1,0 +1,9 @@
+D1913 pre-registered IIB displacement search (one query as locked). Included hits:
+R1 arXiv:2206.04313 (IIB flux landscape): clustering statistic |dtau| ~ 1e-5 (frozen flux vacua, not a dynamical shift)
+R2 arXiv:2405.18813 v2 (IIB T^6/Z2 orientifold, GVW; Appendix B Model III): SUSY broken by incompatible matter conditions, dS vacuum, <tau_1> = -0.487 + 0.841i after T^-1 S, |tau - omega| = 0.0286
+R3 arXiv:2305.19155 (IIB chiral flux vacua, metaplectic): no numerical deviation (clustering 40-62% at omega; Kahler effects 'slightly' break Z3) -> excluded (no number)
+Not fetched (non-IIB or no number expected): 2310.10369, 0806.0001, 2011.09154, JHEP09(2022)072.
+Consensus between R1 and R2: |dlog10| = 3.46 dex > 0.3 -> OPEN fix.
+Need |eps| = 0.0457 (leptons 0.044). Single IIB reading R2 = 0.0286 lies in 0.015-0.135 (x3) and is x1.60 from 0.0457 (just outside x1.5).
+Min/max extraction: single values, no flip.
+VERDICT: PARTIAL

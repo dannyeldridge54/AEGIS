@@ -102,7 +102,7 @@ tan β is between 1 and 4. v/m_SUSY ≈ 2.7e-7 is **INPUT** (tuned).
 ## 11. Final list of INPUTS (plus: g_s = 2/√3 > 1 is outside perturbative control, D1897)
 1. V∞ (the one outside knob).
 2. δ = 2/9 and the electron coefficient (Koide).
-3. The per-torus rung steps (u_d, u_ℓ, u_u). They need |ε| ≈ 0.045, which is ×4,600 vs the IIB clustering statistic and inside the T2/T3 (non-IIB) range (D1894b).
+3. The per-torus rung steps (u_d, u_ℓ, u_u). They need |ε| ≈ 0.045, which is ×4,600 vs the IIB clustering statistic and inside the T2/T3 (non-IIB) range (D1894b). An explicit IIB de Sitter model with SUSY broken by matter conditions (arXiv:2405.18813, Model III) sits at |τ − ω| = 0.029, ×1.6 from the need ⇒ LOOSE, no longer a 10⁴ problem (D1913).
 4. v/m_SUSY.
 5. The flux choices: (4, 4, 8) on the pyramid, and the turnover fluxes.
 6. The dark-thread potential parameters.

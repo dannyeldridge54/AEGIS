@@ -18633,3 +18633,18 @@ Corrections applied:
   - WEAVE_MEDIAN_MAP §3 rows: the median becomes 0.0256.
   - weave_derivation.py and weave_derivation_v2.py headed SUPERSEDED.
   - v3 outputs committed in D1911.
+
+## D1913 — LEFT/flavour (Loom tick 6): pre-registered search for an IIB mechanism at |ε| ≈ 0.045 — PARTIAL; one explicit IIB model lands at 0.029 (21 Nov 2026)
+- **MEDIAN:** flavour rung steps (TRUST). Sector cap: 1/2 (U31).
+- **RESEARCH:** pre-registered, one fixed query (lock PREREG_D1913, pushed before searching).
+  - **R1** arXiv:2206.04313 (IIB flux landscape): about 1e-5. This is a clustering statistic, not a dynamical shift.
+  - **R2** arXiv:2405.18813 v2 (IIB T⁶/Z₂ orientifold, GVW, Appendix B Model III): incompatible matter conditions break SUSY spontaneously and give a de Sitter vacuum at ⟨τ₁⟩ ≈ −0.487 + 0.841i. That is **|τ − ω| = 0.0286**, driven by the matter potential.
+  - **R3** arXiv:2305.19155: no number given (40–62 % of vacua sit at ω), so it was excluded.
+- **FIX:** R1 and R2 differ by 3.5 dex, so the fix is **OPEN**, with no consensus. The need is |ε| = 0.0457. R2 is ×1.6 from it, inside the ×3 window ⇒ **PARTIAL**. Single values, so no extraction flip.
+- **REVIEW / conflict scan:**
+  - R2's mechanism is the *same kind* as the Weave's: IIB, flux, de Sitter from SUSY breaking.
+  - Its torus is T⁶/Z₂, not Z₆-II, and its τ is a complex structure modulus near ω. Both are close matches; the orbifold differs (flagged).
+- **Reading:** with this fix, the displacement the flavour steps need is no longer a 10⁴ problem in IIB. An explicit IIB de Sitter vacuum with SUSY broken by matter conditions sits 0.029 off ω, within a factor 1.6 of what the Weave needs. The rung steps move from TRUST to **LOOSE**: one IIB source thread plus compute, with the independent check still missing.
+- **Next for this sector:** reproduce R2's minimum in code, an independent path, on the Weave's Z₆-II/ρ set-up. That would make the claim woven.
+- **TRIANGULATE:** threads are R2 (source) + this note (compute = ratio). The independent check is pending.
+- **PROPAGATE:** WEAVE_FULL_DERIVATION §11.3 updated.
