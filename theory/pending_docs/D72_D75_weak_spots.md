@@ -18400,3 +18400,15 @@ Consequences for D1880/D1881b:
 - Under the referee's heterotic counting it is R = −0.094.
 **Status:** Δ₃ moves from OPEN to **CONDITIONAL on U29**. The next tick tests U29 against chirality: tilted stacks need nonzero intersection numbers on all three tori. Does that still allow parallel Higgs branes on tori 2 and 3? (Lock first.)
 Sources: arXiv:0910.0843; arXiv:hep-th/0302221 (Lüst–Stieberger; ar5iv text unavailable, not read).
+
+## D1901 / D1901b — LEFT: U29 (tilted visible stacks + a parallel Higgs pair) against three chiral generations — D1901 FAIL, D1901b PASS (toy) (21 Nov 2026)
+Both were locked before running. Toy model: factorisable intersecting branes T-dual to the IIB picture, wrappings |n|, |m| ≤ 3; orbifold projections, lattice shapes and tadpoles not imposed.
+- **D1901** (leptons from b–c′): **0 configurations ⇒ FAIL.** The reason is structural. With c ∥ b on tori 2 and 3 and b tilted there, I_bc′ = 4 n₂m₂n₃m₃ f(b₁, c₁′) is always a multiple of 4, so it can never equal 3.
+- **D1901b** (leptons from a fourth stack d, locked separately after the D1901 run): **25,088 U(2) wrappings** admit all four:
+  - a quark stack a with I_ab = 3, tilted;
+  - a one-pair parallel Higgs partner c;
+  - a lepton stack d with |I_bd| = 3;
+  
+  ⇒ **PASS**. Example: b = ((−3,−2), (−3,−2), (−3,−2)) and a = ((−3,−1), (−2,−1), (−2,−1)), with c parallel to b on tori 2 and 3 (c₁ = (−2,−1)).
+Honest weight: this is only a necessary condition, and a very loose one, since so many configurations pass. **U29 survives as a four-stack brane picture (leptons on their own stack), and Δ₃ stays conditional** until the orbifold projections, the Z₃/Z₂ lattice shapes and the RR tadpoles are imposed. That is the next forward tick for this line.
+Median and equilibrium reading: the Higgs pair is the shared bridge between the two knots' tori, and the leptons need their own stack.
