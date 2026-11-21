@@ -18155,3 +18155,14 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
   - The wino and gravitino are unchanged by construction (M₂ ∝ A/χ fixed).
   - This turns χ from a free integer into a property of the fold the knots force. The remaining freedom is the O(1) prefactor A.
 - Also notable: Z₆-II is the orbifold behind the best-known heterotic MSSM constructions (the "Mini-landscape", 0812.3503, 0901.3059). The Weave's knot assignment lands on the same fold.
+
+## D1872 (LEFT, quarks — 21 Nov 2026): mapping the quark charges — the half-integer exponents force a √u expansion, which is exactly what the Weave's down-quark DOUBLE COVER (branched at i) provides
+- [derived] Near ω, modular-form Yukawa entries are analytic in u = (τ−ω)/(τ−ω̄), so they carry integer powers only. The D1828 lock has half-integer entry exponents (q_Q + q_j ∈ {2, 3/2, 1, 1/2, 0, …}), i.e. u^{1/2}-type terms, which are NOT analytic in u. The D1828 scan settles the alternative: its single fit uses half-units, so **integer-only charges give no fit**.
+- **Resolution, already in the Weave:** the down-quark half class (m = ½) exists only on a DOUBLE COVER branched at i (D1778). On a double cover the natural local coordinate is √u. So the quark sector's effective expansion parameter is √u, and the charges in units of √u are integers:
+  - q_Q = (3, 2, 0);
+  - q_u = q_d = (1, 0, 0);
+  - √u_d = 0.161, √u_u = 0.042.
+
+  The same lock read on the cover is an ordinary integer residual-charge assignment.
+- **Joint consequence:** the doublet charges are shared by up and down, so the WHOLE quark sector lives on the double cover, not just the down quarks. That ties the quark torus to the i-knot's Z₂ (the branch point), linking U26's turnover (ρ) and pyramid (i) inside one sector. Label C (consistent mechanism). It is not shown that the metaplectic weight −½ modes realise exactly these integers. The explicit check is to build the double-cover modes and read their stabiliser phases with z3_modes.py; queued, not done.
+- Map status: our side (forward weave) is now mapped through D1872. The remaining open items are the explicit double-cover check, the lepton hierarchy under picture A, δ = 2/9 (input), the string threshold Δ₃ (model needed), V∞ (the one knob), v/m_SUSY (tuned) and the thread (reverse side).
