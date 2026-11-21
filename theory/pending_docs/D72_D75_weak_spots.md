@@ -19027,3 +19027,13 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
   - The endpoint is set by the initial x.
   - The docstring is fixed (16π).
 - **D1929a:** the like-for-like α_s shift for S at i is **−0.0030** (against 0.1142), not −0.0035.
+
+## D1936 — Loom tick 17: the test battery (Danny 16:47) and the three-field split (Danny 16:48)
+- **Superseded plan:** tick 17's original plan (ring 3, "T_R strongest pointing") was withdrawn by D1931a, because T_R is boxed by gravitinos.
+- **Three-field split:** UFE v4 §7 splits the equation into S (dilaton: time and cosmology), T (volumes: forces and scales) and U (matter and flavour), coupled only through named interfaces.
+  - S, T and U are each balanced on their own. **Every open failure sits on the S–T interface**: α_s/Δ₃, the m₃/₂ tension, and the T_R box.
+  - The residual sizes the missing coupling term. Example: Δ₃ needs +0.044, which fixes the threshold-state content. That is a prediction of new states.
+- **Danny's "thrust/propulsion from the imbalance":** recorded, and answered honestly. Energy-momentum conservation is built into any diffeomorphism-invariant Lagrangian, so a fit residual signals a missing term, not a physical force. The real time-dependent observable is the α drift ζ (clocks, test F5).
+- **The battery:** tools/project_docs/WEAVE_TEST_BATTERY.md (also in the project). It lists about 75 tests in 7 groups (cosmology, particle physics, flavour, neutrinos, dark matter, gravity, quantum), each tagged by field or interface and by status RUN/FUT/NEED/DONE.
+  - First targets are the classic "you missed this" checks: wino γ-lines (H.E.S.S./Fermi), BBN with late gravitino decays, the moduli problem, Higgs mass and stability, muon g−2, SUSY flavour, cosmic strings.
+- **TRIANGULATE:** none (a catalogue, no data mined). **COMPASS:** unchanged.
