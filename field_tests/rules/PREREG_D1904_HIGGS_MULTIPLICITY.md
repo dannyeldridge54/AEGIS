@@ -1,0 +1,6 @@
+# PREREG D1904 — equilibrium loop (new shape: median → research → review → postulate → execute): how many N=2 Higgs pairs does the knot threshold allow? (locked 21 Nov 2026 before computing; repo at e3537f43)
+Median search: the largest strain is α_s (−3.7 σ), reachable only through U29 (D1900–D1901b).
+Research: in the published Z₆′ (= Z₆-II) intersecting-D6 standard models (Gmeiner–Honecker, arXiv:0910.0843; spectra arXiv:0801.3385) the Higgs pairs are non-chiral N = 2 pairs, 9ω copies of H_u + H_d, and the thresholds are large (Δ_SU(3) roughly −70 to +48 at v = 5), because the parallel-torus modulus there is v ≈ 1–30, far from a knot.
+Postulate U29′: the Weave has the same N = 2 Higgs origin but with its parallel-torus moduli at the knots (ρ, i), where the per-unit threshold is small (0.0823, 0.0839).
+Execute: under U29 (no N = 2 vectors), with n_H Higgs pairs per plane on BOTH planes, R(n_H) = −0.2368 (1 − 2.02 · n_H · 1.2856 / 2.88) (the D1880 form), n_H = 1..9, and α_s(n_H).
+Verdict: PASS if n_H = 1 is the only value with |R| ≤ 0.05 (the knot picture tolerates exactly one pair, so a Z₆′ model with 9 pairs is excluded at the knot); report which n_H pass. Report-only: R for n_H = 9.
