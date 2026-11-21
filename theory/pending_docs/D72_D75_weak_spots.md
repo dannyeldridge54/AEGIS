@@ -19179,3 +19179,10 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
   - The next derivations should hold m₃/₂ and the gravitino abundance fixed. They should derive the quantities that were spent (A₃/A₂ and Br(φ → NN)) rather than turn the gravitino knobs.
   - This is a pattern in hand judgments plus the compass. It is not a measurement.
 - **COMPASS:** unchanged. **Standing rule (Danny 17:17):** after every result, run review.py (all fingerprints together plus the knock-on ledger), add any adjustment's knock-ons to the ledger, and triangulate the pointing again.
+
+## D1943a — correction to D1943 (from the script's own output, the same minute)
+- The counts are **8 / 3 / 4**: 8 moved strain, 3 spent predictivity, 4 were errors. D1943 gave 6 / 4 / 5.
+- "**Every** case of moved strain passed through the gravitino" is wrong.
+  - **4 of 8** pass through it: S at i twice, lowering m₃/₂ once, and T_R overclosure once.
+  - 2 pass through a light modulus (the Kähler thread), 1 through flavour, and 1 through GUT structure.
+- The gravitino is the **largest single hub**, carrying all the forces, spectrum and dark-matter knock-ons. It is not the only one. The reading for the next derivations (derive A₃/A₂ and Br(φ → NN) rather than turn the gravitino knobs) stands.

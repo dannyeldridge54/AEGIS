@@ -43,5 +43,5 @@ for e in L:
         cat[k].append('%s ⇒ %s (%s)' % (e['adjustment'], x, e['d']))
 lines += ['', '## The pattern in the knock-ons (three kinds)', '']
 for k, v in cat.items(): lines.append('- **%s** (%d): %s' % (k, len(v), '; '.join(v)))
-lines += ['', '**Where they all point:** every case of strain moving to another sector passed through the **gravitino**, either its mass m₃/₂ (wino, α_s via the spectrum) or its abundance ∝ T_R (dark-matter overclosure). The only exception is the Kähler thread (gravity/BBN), which passes through a light modulus. The gravitino is the hub of the knock-ons. A fix that leaves m₃/₂ and the gravitino abundance alone (split stacks, Br(φ → NN)) moves no strain; it only spends predictivity.']
+lines += ['', '**Where they all point (corrected D1943a):** of the 8 cases of moved strain, **4 pass through the gravitino**: its mass m₃/₂ (S at i twice; lowering m₃/₂ once) and its abundance ∝ T_R (overclosure once). Of the other 4, 2 pass through a light modulus (the Kähler thread), 1 through flavour (the u_d edge) and 1 through GUT structure (split stacks and the proton). The gravitino is the largest single hub, carrying all the forces, spectrum and dark-matter knock-ons, but it is not the only one.']
 open('tools/project_docs/WEAVE_REVIEW.md', 'w').write('\n'.join(lines) + '\n'); print('\n'.join(lines))
