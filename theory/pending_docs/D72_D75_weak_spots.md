@@ -17665,3 +17665,23 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
   - **(3) Exact one-loop unification** would need α_s(M_Z) = **0.107** (0.106–0.108) vs 0.1180 ± 0.0009.
 - [reading, honest] A one-loop miss of Δα_s ≈ −0.011 is the standard size that two-loop running plus thresholds corrects in split SUSY. The 2-loop gauge terms raise the predicted α_s by roughly +0.01. String-scale threshold corrections (the twisted/KK pieces of f_vis) give Δ₃ ~ O(1) in α⁻¹, the same size as −0.9. So the triangle is consistent but not predicted. B11 is a consistency check, not a strict test (as locked).
 - Next for B11 (T, not done): two-loop running in the same tool; then the α_s "prediction" becomes a real number with an error bar of ~±0.003 from thresholds.
+
+## D1800 (LL, LEFT/B11b — 21 Nov 2026): at two loops the split-SUSY Weave unifies to 0.2 % in α⁻¹ — α_s(M_Z) = 0.1158 vs 0.1180 (CONSISTENT); the unification point moves to 1.07e16 GeV, α⁻¹ = 27.9
+- [tool, locked PREREG_B11b_TWOLOOP] weave_rg2: SM/MSSM two-loop gauge matrices plus wino (Δb₂₂ = 64/3) and gluino (Δb₃₃ = 48) thresholds; the check reproduces the Giudice–Romanino split-SUSY b_ij. Yukawa two-loop terms are neglected (±0.004).
+- Results:
+  - M₁₂ = **1.07e16 GeV**, α⁻¹(M₁₂) = **27.94**.
+  - Triangle Δ₃ = **−0.15**, down from −0.90 at one loop.
+  - Exact unification needs **α_s(M_Z) = 0.1158**, against 0.1180 ± 0.0009, a difference of 0.0022.
+  - Verdict by the lock: **CONSISTENT** (≤ 0.007). Including the neglected Yukawa terms (−0.002 to −0.004) the difference becomes 0.004–0.006, still inside.
+- **Knock-on (a joint to re-lock, NOT applied silently):** D1767 used one-loop α⁻¹ = 28.9 at 6.6–7e15 GeV. At two loops the chain moves:
+
+  | quantity | one loop (D1767) | two loops |
+  |---|---|---|
+  | Re T_vis | 21.1 | 20.1 |
+  | x | 0.270 | 0.279 |
+  | T_R (GeV) | 3.6e8 | 3.7e8 |
+  | band-ladder λ (N = 7) | 3.0 | 2.88 |
+  | W₀ | 5.9e-9 | 1.4e-8 |
+
+  The master relation's (N, χ) consistency point must be recomputed at α⁻¹ = 27.9. N = 7 may move to χ ≠ 50, and the wino window must be rechecked. Engine adoption needs a lock plus DEVIATIONS for each tool, the same as the pending U11 T_R change.
+- The strong-coupling check is now the cleanest quantitative success of the forces sector: one knot (g_s = 2/√3) plus the PeV split spectrum puts the three couplings on one point to 0.2 % in α⁻¹. Label S (split SUSY gauge unification is known to work; Arkani-Hamed–Dimopoulos, Giudice–Romanino). The Weave-specific part is the spectrum (wino 0.7 TeV from the master relation, scalars 0.47 PeV), not unification itself.

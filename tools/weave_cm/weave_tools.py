@@ -316,10 +316,46 @@ def weave_rg(a):
     return dict(M12_GeV=M12, alpha_inv_M12=x[0], Delta3=d3, alpha_s_unif=1 / a3inv_needed, label='S (one-loop; two-loop/thresholds shift alpha_s by O(0.01))')
 
 
+def weave_rg2(a):
+    """Two-loop gauge running, split spectrum (PREREG_B11b; Yukawa 2-loop neglected). {"alpha_s"=0.118,"m_wino","m_gluino","m_scalar"}."""
+    import numpy as np
+    from scipy.integrate import solve_ivp
+    MZ = 91.1876; aem, s2 = 127.95, 0.23122
+    mw, mg, ms = float(a.get('m_wino', 700)), float(a.get('m_gluino', 7000)), float(a.get('m_scalar', 4.7e5))
+    SM1, MS1 = np.array([41 / 10, -19 / 6, -7]), np.array([33 / 5, 1, -3])
+    SM2 = np.array([[199 / 50, 27 / 10, 44 / 5], [9 / 10, 35 / 6, 12], [11 / 10, 9 / 2, -26]])
+    MS2 = np.array([[199 / 25, 27 / 5, 88 / 5], [9 / 5, 25, 24], [11 / 5, 9, 14]])
+    def betas(mu):
+        if mu >= ms: return MS1, MS2
+        b1, b2 = SM1.copy(), SM2.copy()
+        if mu >= mw: b1 = b1 + [0, 4 / 3, 0]; b2 = b2.copy(); b2[1, 1] += 64 / 3
+        if mu >= mg: b1 = b1 + [0, 0, 2]; b2 = b2.copy(); b2[2, 2] += 48
+        return b1, b2
+    def rhs(t, x):
+        b1, b2 = betas(math.exp(t)); al = 1 / x
+        return -b1 / (2 * math.pi) - b2 @ al / (8 * math.pi ** 2)
+    def run(a3, mu1):
+        x0 = [0.6 * (1 - s2) * aem, s2 * aem, 1 / a3]; pts = [math.log(MZ)] + [math.log(m) for m in sorted((mw, mg, ms)) if m < mu1] + [math.log(mu1)]
+        x = np.array(x0)
+        for t0, t1 in zip(pts, pts[1:]):
+            x = solve_ivp(rhs, (t0 + 1e-12, t1), x, rtol=1e-10, atol=1e-12).y[:, -1]
+        return x
+    def m12(a3):
+        lo, hi = 1e12, 1e18
+        for _ in range(60):
+            mid = math.sqrt(lo * hi); x = run(a3, mid)
+            lo, hi = (mid, hi) if x[0] > x[1] else (lo, mid)
+        return mid, run(a3, mid)
+    a3m = float(a.get('alpha_s', 0.118)); M, x = m12(a3m)
+    from scipy.optimize import brentq
+    au = brentq(lambda a3: (lambda r: r[1][2] - r[1][0])(m12(a3)), 0.09, 0.14, xtol=1e-6)
+    return dict(M12_GeV=M, alpha_inv_M12=float(x[0]), Delta3=float(x[2] - x[0]), alpha_s_unif=au, label='S (two-loop gauge; Yukawa 2-loop neglected, +-0.004)')
+
+
 TOOLS = {'weave_rung': weave_rung, 'weave_rung_of': weave_rung_of, 'weave_koide': weave_koide, 'weave_koide_slip': weave_koide_slip,
          'weave_tauq': weave_tauq, 'weave_ckm': weave_ckm, 'weave_proton': weave_proton, 'weave_atomic': weave_atomic,
          'weave_arc': weave_arc, 'weave_rladder': weave_rladder, 'weave_negspace': weave_negspace, 'weave_paths': weave_paths, 'weave_basic': weave_basic, 'weave_mbb': weave_mbb, 'weave_magd7': weave_magd7, 'weave_sidm': weave_sidm, 'weave_wino': weave_wino, 'weave_genesis': weave_genesis,
-         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls, 'weave_edm': weave_edm, 'weave_rg': weave_rg}
+         'weave_axion_relic': weave_axion_relic, 'weave_W0': weave_W0, 'weave_rinv': weave_rinv, 'weave_walls': weave_walls, 'weave_edm': weave_edm, 'weave_rg': weave_rg, 'weave_rg2': weave_rg2}
 
 if __name__ == '__main__':   # self-test: reproduces the published numbers
     assert abs(weave_mbb({})['mbb_max_meV'] - 3.7952) < 1e-3
