@@ -18450,3 +18450,25 @@ Lock: PREREG_D1904_HIGGS_MULTIPLICITY (pushed first).
 **Only n_H = 1 passes ⇒ PASS.**
 **Prediction (new, falsifiable within the Weave):** at the knots there is exactly one N = 2 Higgs pair per plane. A Z₆′ construction with 9 Higgs pairs (like the published ones) cannot sit at the knots. Δ₃ stays CONDITIONAL on U29 (projections and tadpoles still to impose).
 Sources: hep-th/0404055; arXiv:0801.3385; arXiv:0910.0843.
+
+## D1896a — correction to D1896 (bookkeeping, 21 Nov 2026)
+D1897 cited this note but it was never written. Content: D1896's "16 PASS, 0 FAIL" is superseded by D1898 (13 PASS, 3 FAIL; 2 of the fails are data, 1 is internal). The change came from reclassification under the independent referee, not from new data. α_s in D1896 was post-selected, and the arrow was one test counted as two.
+
+## D1905 — CENTRE (method): THE LOOM — the research loop examined as a theory, refereed, rebuilt (Danny 14:15–14:17) (21 Nov 2026)
+tools/project_docs/THE_LOOM.md (v2) uses the 37 notes D1873–D1904 as data.
+- **What worked:** lock-before-compute (19/19 confirmed), dated corrections, the one-pass scoreboard, and research at decision points (it flipped 3 outcomes).
+- **What failed:** every MAJOR error was caught by a fresh-context referee or by literature, never by the thread that made it. The errors:
+  - a missing b′ term;
+  - the D1885 artefact;
+  - no look-elsewhere correction;
+  - weak tests counted as evidence;
+  - a cross-framework formula;
+  - a postulate conflict;
+  - loose toys;
+  - hard-coded rows;
+  - stale ticks.
+- **The Loom, the standing tick order from now on:** MEDIAN (trials ledger opened, ≤ 2 net postulates per sector) → RESEARCH (framework tagged) → REVIEW (conflict scan) → POSTULATE → EXECUTE (lock, power check, fixed null, p₀ after trials) → TRIANGULATE + REFEREE → PROPAGATE → RECORD.
+- **Triangulation:** woven = compute + source checked against the claim + an independent check. Otherwise the claim is loose or TRUST. RESTORED and POST-SELECTED flags apply.
+- **Independent referee:** on every scoreboard change, promotion or restore, and at least every 4th tick.
+A fresh-context methods referee reviewed the design. All six of its improvements were adopted.
+**Flag applied now:** D1904's R = −0.023 is RESTORED (D1881b had withdrawn it; D1900 brought it back by a framework argument). It needs an independent referee before it can be woven.
