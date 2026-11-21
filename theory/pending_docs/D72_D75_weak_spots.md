@@ -19186,3 +19186,8 @@ Danny interrupted the D1930 pulse run partway through, and it produced no result
   - **4 of 8** pass through it: S at i twice, lowering m₃/₂ once, and T_R overclosure once.
   - 2 pass through a light modulus (the Kähler thread), 1 through flavour, and 1 through GUT structure.
 - The gravitino is the **largest single hub**, carrying all the forces, spectrum and dark-matter knock-ons. It is not the only one. The reading for the next derivations (derive A₃/A₂ and Br(φ → NN) rather than turn the gravitino knobs) stands.
+
+## D1945 — Loom tick 21: Conlon–Palti quote check (D1942 item 7)
+- **Verified verbatim** against the arXiv abstract of 0901.4350: "We also study D3/D7 models and discuss discrepancies with the effective field theory analysis."
+- **Not yet verified verbatim:** the internal phrase "unable to match onto the KL field theory formula" and the Eq. 194/231 details. These came through a fetch summariser (D1938). They are labelled *paraphrase, unverified* until the PDF §5.2.1 is read directly.
+- The gist is confirmed: D3/D7 thresholds are not matched to Kaplunovsky–Louis. D1938's use is downgraded to "the abstract confirms the discrepancy".
