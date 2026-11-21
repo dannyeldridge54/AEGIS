@@ -1,0 +1,4 @@
+# PREREG B7 — U16 (C-down-shift): does a larger down-sector slip fix m_s/m_b, V_cb, V_ub at rung-8 up quarks? Locked BEFORE computing.
+Setup: identical to PREREG_B6_RUNG (w864, targets, tolerances, score, 400 starts seed-fixed, best 5, Nelder–Mead maxiter 4000), except the DOWN modulus is placed at τ_d = ρ + ε_d·e^{i50°} with |ε_d| ∈ {0.024 (rung 1, control), 0.036, 0.048, 0.060} (stored as _TAU[0] in the script), up quarks on rung 8 (computed minimum), coupling box BOX-2 only ([1/2, 2]).
+Readings (decided now): U16 PASSES if some |ε_d| ∈ {0.036, 0.048, 0.060} gives 0 fails in BOX-2. It FAILS if all three still miss m_s/m_b. The control (0.024) must reproduce B6's rung-8 BOX-2 result within ±10 % in score (sanity check; if not, the run is invalid and a DEVIATIONS note is written before any rerun).
+Seeds: 100·8 + 10·k + 1 for the k-th |ε_d|. Runs on the PC (4 processes). Code theory/quarks/b7_downshift.py. One run.
