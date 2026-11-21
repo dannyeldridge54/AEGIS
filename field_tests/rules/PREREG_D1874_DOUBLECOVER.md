@@ -1,0 +1,4 @@
+# PREREG D1874 — do the D1828 quark residual charges exist as modes on the metaplectic (double) cover at τ = i? (locked 21 Nov 2026 before computing; repo at 9336bc97)
+Set-up: magnetised zero modes, weight k = ½ (metaplectic cover of Γ), flux M = 2..12, rep ρ(S)_{jk} = e^{iπ/4} M^{-1/2} e^{2πi jk/M} (both phase signs tried). Near i, u = (τ−i)/(τ+i) → −u under S, and f(Sτ) = (−τ)^{1/2} ρ(S) f ⇒ a mode of S-eigenvalue λ has residual power n with e^{iπn} = e^{−iπ/4} λ (mod 2). Z₂ (orbifold) parity sectors: even j ↔ M−j symmetric, odd antisymmetric.
+Targets (D1828): q_Q = {3/2, 1, 0}, q_u = q_d = {1/2, 0, 0} (mod 2; an overall constant shift allowed, i.e. a spectator torus).
+PASS if for some M ≤ 12 one Z₂ parity sector contains 3 modes whose n multiset (up to a common shift) matches q_Q, and one (same or other M) matches q_u; PARTIAL if only one matches; FAIL if neither.
