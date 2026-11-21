@@ -1,0 +1,5 @@
+# PREREG D1816 — can the knot ρ supply the last unification threshold? (locked 21 Nov 2026 before computing; repo at ab3b4116)
+Target: two-loop running with the Weave spectrum (gluino 5.6 TeV, D1808) leaves α₃⁻¹ − α₁₂⁻¹ = Δ₃ at M₁₂ with α_s = 0.1180; compute Δ₃ with weave_rg2 at m_gluino = 5565 GeV. String thresholds must supply δ₃ − δ₁₂ = Δ₃ (with δ₁ = δ₂).
+Threshold form (literature, DKL / Bachas–Fabre N = 2 sectors; label [lit form], normalisation 16π²/g_a²): 16π²/g_a² ⊃ −b_a^{N=2} ln(Im U |η(U)|⁴) [− b_a^{N=2} ln(Im T |η(T)|⁴) if the Kähler modulus also enters]. So δ_a = −(b_a^{N=2}/4π)·L with L = ln(Im U|η(U)|⁴) (+ the T term).
+Case U: U = ρ (the visible/lepton torus at the knot). Case U+T: add T with Im T = σ_vis = 20.15.
+Report L, the shift per unit b^{N=2}, and the b₃^{N=2} − b₁₂^{N=2} needed. Verdict per case: NATURAL if the needed difference is within 0.25 of an integer or half-integer with |Δb| ≤ 6; UNNATURAL if |Δb| < 0.25 needed (thresholds far too strong) or > 6; else NEUTRAL. Numerology guard: with one free rational Δb any target is hit approximately; NATURAL counts as consistency only.
