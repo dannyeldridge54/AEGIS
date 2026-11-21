@@ -1,0 +1,6 @@
+|u_d|=0.0457 (|dtau|=0.079)  f7=11.7%  fJ=62.1%  lepton band 0.0066-0.0435: out
+|u_d|=0.0160 (|dtau|=0.028)  f7=6.0%  fJ=12.0%  lepton band 0.0066-0.0435: in
+|u_d|=0.0300 (|dtau|=0.052)  f7=19.5%  fJ=39.6%  lepton band 0.0066-0.0435: in
+|u_d|=0.0400 (|dtau|=0.069)  f7=15.6%  fJ=55.0%  lepton band 0.0066-0.0435: in
+passing scanned values: [0.03, 0.04]
+VERDICT: PARTIAL

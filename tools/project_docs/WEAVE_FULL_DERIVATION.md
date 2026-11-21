@@ -77,7 +77,7 @@ Refereeing: self-refereed D1878, D1883, D1892; **independently refereed D1897** 
 
 tan β is between 1 and 4. v/m_SUSY ≈ 2.7e-7 is **INPUT** (tuned).
 
-## 8. The single arrow (U28): the predictive statement
+## 8. The single arrow (U28): WITHDRAWN (D1894b, variable error: 0.0457 was |ε|, true u_d = 0.0259; m_μ/m_τ ÷ u_d = 2.30 fails). Kept below for the record
 - **End run (D1894):** one step, u* = 0.052, threads every data sector to ±20 % and fails at ±10 %.
 - **Data content:** one fitted u* against m_μ/m_τ (data) and u_d (a FIT from the D1828 scan). That is one effective test, at about a 10 % chance level before trials (D1894a). Δ₃ and the thread do not depend on u*.
 - **Precision limit (D1895):** the per-torus steps cannot be derived from generic modulus displacement. The step needs |δτ| ≈ 0.09, while the IIB flux landscape prefers |δτ| ≈ 1e-5 (arXiv:2206.04313). **This tension is OPEN and ranked first.**

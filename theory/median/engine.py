@@ -1,3 +1,4 @@
+# SUPERSEDED (D1894b): the arrow used |eps|=0.0457 as the step; true u_d = 0.0259. Kept for the record.
 """Median engine: evaluates every sector at ONE shared centre (theory/median/centre.json) and reports each sector's strain
 (pull in units of its tolerance). The 'arrow' = the free shared parameters fitted to minimise total strain. No per-sector knobs."""
 import json, math, sys

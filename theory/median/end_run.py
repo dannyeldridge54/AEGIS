@@ -1,3 +1,4 @@
+# SUPERSEDED (D1894b): the arrow used |eps|=0.0457 as the step; true u_d = 0.0259. Kept for the record.
 import math, json, numpy as np
 from scipy.optimize import minimize_scalar, brentq
 c = json.load(open('theory/median/centre.json'))

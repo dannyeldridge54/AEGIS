@@ -18565,3 +18565,41 @@ Recompute: field_tests/results/d1909_referee_recompute.txt.
 
 ## D1909b — correction to D1909a (21 Nov 2026)
 D1909a said "every reading in that range is below 0.09". That is wrong: T3 reaches about 0.2. The FAIL in D1909a is superseded by D1908a (INDETERMINATE).
+
+## D1910 — LEFT/flavour (Loom tick 5): U31 (down torus at a mechanism-sized displacement) — PARTIAL; and a VARIABLE ERROR found in D1888–D1909 (21 Nov 2026)
+- **MEDIAN:** flavour rung steps; cap 0 → 1 (U31).
+- **FIX:** |δτ| near ρ from realistic mechanisms. Readings T2 0.027 and T3 0.069 (log-centres) do not agree (Δ = 0.41 dex), so the fix is **OPEN** and was used as a scanned range. T1 (IIB clustering, 1e-5) only bounds.
+- **CANDIDATES:**
+  - C1: O(1) coefficients absorb the rest (viable).
+  - C2: intrinsic θ-steps (missed, D1824).
+  - C3: an IIB F-term shift (suppressed).
+  - C1 was median-ranked first and became U31.
+- **EXECUTE:** lock PREREG_D1910, pushed first. D1829 logic, scanning |u_d| (results in field_tests/results/d1910_u31_downstep.txt):
+
+| \|u_d\| | \|ε\| | f7 | fJ |
+|---|---|---|---|
+| 0.016 | 0.028 | 6.0 % | 12.0 % |
+| 0.030 | 0.052 | 19.5 % | 39.6 % |
+| 0.040 | 0.069 | 15.6 % | 55.0 % |
+
+  So the result is **PARTIAL** (2 of 3 pass both bars). The leptons' D1877 band covers all three values.
+- **VARIABLE ERROR (found by this tick's baseline row):**
+  - D1828/D1829's "0.0457" is the modulus displacement |ε| = |τ − ρ| (D1826, class m = ½), **not** the step u = (τ−ρ)/(τ−ρ̄). The true step is **|u_d| = 0.0259**, and |u_u| = 0.0018 (from |ε_u| = 0.00311).
+  - The table at line 17970 already showed 0.0259. From D1888 on, the median map, the arrow (D1889–D1894), D1895, D1908 and D1908a all used 0.0457 as if it were u.
+
+## D1894b — correction to D1888–D1894 and D1895/D1908 (variable error, 21 Nov 2026)
+1. **The arrow is WITHDRAWN.** Its "down-quark step 0.0457" was |ε|, not u. With the true u_d = 0.0259, m_μ/m_τ / u_d = 0.0595 / 0.0259 = 2.30, which fails even at ×2. It was also comparing a rung-ladder ratio (μ/τ = u¹) with a residual-charge step.
+   - The real cross-sector relation is D1832's: under the same residual-charge lock the leptons pick u_ℓ = 0.0253 against u_d = 0.0259, a 2 % match.
+   - That relation is itself a fit, and it conflicts with Koide at ρ (picture A). So the median map's "one shared step" claim is void.
+2. **Displacement corrected.** The needed displacement is |ε| = 0.0457 (down) and ≈ 0.044 (leptons, D1832), not 0.090.
+   - Compared with the dynamical-mechanism fix (log-centres 0.027 / 0.069), it sits **inside the range**.
+   - The tension is only with the IIB flux-clustering statistic (1e-5, ×4,600).
+   - D1895's "10⁴ tension" becomes "×4,600 against the IIB clustering statistic; consistent in scale with matter-F-term and loop shifts (heterotic/bottom-up)".
+   - D1908/D1908a's verdicts (FAIL, then INDETERMINATE) are superseded. The scale is consistent with T2/T3 and inconsistent with T1. The open fix stays OPEN, and the rung steps stay TRUST pending an IIB mechanism.
+3. **Up quarks.** |ε_u| = 0.00311, about 10× smaller and below T2's range. The "u_u ≈ u*^1.95, two rungs" remark (D1894) is void.
+4. **PROPAGATE:** the scoreboard is re-run under a new lock (D1911) without the arrow row. Fixed in the same commit:
+   - WEAVE_MEDIAN_MAP §3/§6;
+   - WEAVE_FULL_DERIVATION §8;
+   - the paper §4 and abstract;
+   - end_run.py and engine.py (marked superseded);
+   - centre.json.

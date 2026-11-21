@@ -74,3 +74,6 @@ This takes every tested direction from D1806 to D1887 and records which knot, to
   - the wino is marginal against the LHC disappearing-track limit;
   - leptogenesis must be non-thermal, since T_R ≪ M_N;
   - g_s > 1 is outside perturbative control.
+
+## 8. Variable error (D1894b): the arrow is withdrawn
+The "down-quark step 0.0457" used throughout sections 3–6 was the modulus displacement |ε|, not the step u. The true step is u_d = 0.0259. With that, the one shared step fails (m_μ/m_τ ÷ u_d = 2.30), so sections 3, 4 and 6 are superseded. The real cross-sector relation is D1832's u_ℓ = 0.0253 ≈ u_d = 0.0259, a fit within one lock that conflicts with Koide at ρ. The needed displacement is |ε| ≈ 0.045, which is consistent in scale with matter-F-term and loop shifts and ×4,600 away from the IIB flux-clustering statistic.

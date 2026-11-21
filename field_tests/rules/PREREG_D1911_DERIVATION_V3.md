@@ -1,0 +1,2 @@
+# PREREG D1911 — the scoreboard, v3 after D1894b (locked 21 Nov 2026 before running; repo at 532f572e)
+theory/weave_derivation_v3.py (committed with this lock) = v2 minus the withdrawn arrow row (variable error, D1894b) and minus the pyramid-vs-u* test (no shared step remains). The arrow is replaced by D1832's u_ℓ/u_d relation as a CONS line with no test. Same PASS rules; every FAIL reported; nothing refitted.
