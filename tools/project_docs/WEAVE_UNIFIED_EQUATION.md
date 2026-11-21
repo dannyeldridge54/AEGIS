@@ -1,4 +1,4 @@
-# THE WEAVE — the unified field equation (v3.1 — simplification 1 added; v3, 21 Nov 2026, after unify loops 1–2: D1753–D1766)
+# THE WEAVE — the unified field equation (v3.2 — band ladder added; v3.1 simplification 1; v3, 21 Nov 2026, after unify loops 1–2: D1753–D1766)
 Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on magnetised D7 (the gauge-coupling repair), the dark side on unfluxed D7, the superpartner spectrum, the flux superpotential, the photon-axion, and the reheating chain re-derived. Tags: **[der]** derived and checked · **[lit]** literature · **[P]** principle · **[C]** conjecture with a mechanism · **[E]** estimate · **[F]** fitted · **[A]** hosted/imported · **[OPEN]**.
 
 ## 1. The fields (one string compactification, type IIB on an orientifold with D3/D7-branes)
@@ -59,6 +59,10 @@ Builds on WEAVE_FULL_EQUATION.md (v2, 19 Nov). New in v3: the visible forces on 
     M₂(wino) = [√(g_s/2) M_P/375] · [4(2π)³ C/(wχ)] · exp[−(2π/N)(α⁻¹ − 9/g_s)],  g_s = 2/√3
 Tilt (n_s), gauge running (α⁻¹ ≈ 28.9) and the wino/gravitino mass are ONE relation through two integers of the compactification: a hidden SU(N) condensate on the visible cycle and the Euler number χ. Consistent point: **N = 7, χ ≈ 50** (𝒱 = 4.2e4, |W₀| = 5.9e-9, m₃/₂ = 2.6e5 GeV, M₂ ≈ 0.70 TeV). (Consistency selection; KKLT-type, leading log; LVS excluded by the χ > 0 tilt, D1767a.)
 
+## 3c. The band ladder of the coupling (D1775, Danny's band postulate, v3.2)
+    α⁻¹(M_s) = c/g_s + λ·N,   λ = ln(1/|W₀|)/(2π) ≈ 3.0,   c = 6n′ (visible flux on the ρ-orbifold, three generations at |M| = 6), N = hidden condensate rank
+The solution is carried across a band of width λ in Re T_vis by one rank N, then pushed to the next. Consistent points on the measured α⁻¹ = 28.6–29.1: (c, N) = (6, 8) → 29.2 (χ ≈ 58) and (9, 7) → 28.9 (χ ≈ 50); c = 12 closes the wino window. Same carry-then-push structure as the r ladder and the slip ladder.
+
 ## 4. What is still put in by hand (the honest input list)
 | # | input | where it enters | could be derived from |
 |---|---|---|---|
@@ -71,7 +75,7 @@ Tilt (n_s), gauge running (α⁻¹ ≈ 28.9) and the wino/gravitino mass are ONE
 | I7 | quark O(1) couplings (12) and τ_q's class | quarks | [A] |
 | I8 | V_L (the size of Λ) and the thread's start | dark energy | [OPEN — the cosmological-constant problem] |
 | I9 | m_A′, ε (dark force) | dark matter | α_D DERIVED = 0.035 at 12.8 GeV from a twin dark cycle (D1769, C); m_A′ and ε still free |
-| I10 | g = 3 (M = 4) flux | generations | [A] |
+| I10 | the family flux | generations | three = Z₃-invariant modes at the minimal triplet flux |M| = 6 on T²/Z₃, which exists only at τ = ρ (D1774, P); the visible S-coefficient c = 6n′ (6 or 9 both consistent, D1775) |
 | I11 | v = 246 GeV given m₃/₂ (tuning ~4e6) | Higgs | [OPEN — the last factor of the hierarchy] |
 Compare: the Standard Model + ΛCDM have ~25–30 free numbers. The Weave fixes or ties: n_s/r/α_s relation, Q = 2/3, TM1 angles and δ_CP branch, θ̄ = 0, m_X, ΔN_eff ≈ 0, the reheating chain, the r-invariance, and W₀ from two others; it still hosts the quark couplings and the neutrino and dark-force scales.
 
