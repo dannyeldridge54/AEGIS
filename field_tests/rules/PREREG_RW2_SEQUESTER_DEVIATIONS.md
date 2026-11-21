@@ -11,3 +11,9 @@
   The self-test tolerance against the leading-order √(12 τ^{3/2}/𝒱) is set to 3 % (the exact subleading term
   9τ/𝒱² is 1.4 % of K_dd here); the check is now that numeric = analytic to 1e-9.
 - Nothing else changes: inputs, channels, thresholds and the verdict rule are as locked.
+
+## D2 (21 Nov 2026, still before any RW2 result) — correction to D1's formula text
+- D1 wrote K_ii = 3/(2√τ_i 𝒱) + 9τ_i/𝒱² and K_vd = 9√(τ_v τ_d)/𝒱². The correct second derivatives of
+  K = −2 ln 𝒱 are K_ii = 3/(2√τ_i 𝒱) + 9τ_i/(2𝒱²) and K_vd = 9√(τ_v τ_d)/(2𝒱²) (factor ½ on the 𝒱⁻² terms).
+  Found while coding the D1 fix; the code uses the correct forms and the self-test now checks them against
+  40-digit mpmath derivatives (relative 1e-9). D1 is kept as written.

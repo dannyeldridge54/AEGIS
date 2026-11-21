@@ -21,12 +21,14 @@ def tau_b_from_vol(V, tv, td):
     return (V + tv**1.5 + td**1.5) ** (2 / 3)
 
 
-def dK_dphi_move_one(V, tv, td, h=1e-4):
-    """δK/δφ when only τ_d moves (τ_b, τ_v held): K_d / √(K_dd/2), by central differences."""
-    tb = tau_b_from_vol(V, tv, td)
-    f = lambda t: swiss_K(tb, tv, t)
-    Kd = (f(td + h) - f(td - h)) / (2 * h)
-    Kdd = (f(td + h) - 2 * f(td) + f(td - h)) / h**2
+def swiss_derivs(V, ti):
+    """Analytic (DEVIATIONS D1, D2): K = −2 ln 𝒱 ⇒ K_i = 3√τ_i/𝒱, K_ii = 3/(2√τ_i 𝒱) + 9τ_i/(2𝒱²) (small cycle i)."""
+    return 3 * math.sqrt(ti) / V, 3 / (2 * math.sqrt(ti) * V) + 9 * ti / (2 * V**2)
+
+
+def dK_dphi_move_one(V, tv, td, h=None):
+    """δK/δφ when only τ_d moves (τ_b, τ_v held): K_d / √(K_dd/2). 𝒱 is the value at the point."""
+    Kd, Kdd = swiss_derivs(V, td)
     return Kd / math.sqrt(Kdd / 2), Kd, Kdd
 
 
@@ -35,13 +37,11 @@ def dK_dphi_single(k):
     return math.sqrt(2 * k)
 
 
-def G_matrix(V, tv, td, h=1e-4):
-    """Field-space metric G_ij = K_ij/4 in (τ_v, τ_d) at fixed τ_b (for the kinetic-mixing estimate)."""
-    tb = tau_b_from_vol(V, tv, td)
-    f = lambda a, b: swiss_K(tb, a, b)
-    Kvv = (f(tv + h, td) - 2 * f(tv, td) + f(tv - h, td)) / h**2
-    Kdd = (f(tv, td + h) - 2 * f(tv, td) + f(tv, td - h)) / h**2
-    Kvd = (f(tv + h, td + h) - f(tv + h, td - h) - f(tv - h, td + h) + f(tv - h, td - h)) / (4 * h * h)
+def G_matrix(V, tv, td, h=None):
+    """Field-space metric G_ij = K_ij/4 in (τ_v, τ_d) at fixed τ_b; K_vd = 9√(τ_v τ_d)/(2𝒱²)."""
+    Kvv = swiss_derivs(V, tv)[1]
+    Kdd = swiss_derivs(V, td)[1]
+    Kvd = 9 * math.sqrt(tv * td) / (2 * V**2)
     return Kvv / 4, Kdd / 4, Kvd / 4
 
 
@@ -103,7 +103,18 @@ if __name__ == "__main__":
     assert abs(dK_dphi_single(3) - math.sqrt(6)) < 1e-12
     r, Kd, Kdd = dK_dphi_move_one(1e5, 20.15, 38.6)
     approx = math.sqrt(12 * 38.6**1.5 / 1e5)
-    assert abs(r / approx - 1) < 0.02, (r, approx)
+    assert abs(r / approx - 1) < 0.03, (r, approx)
+    import mpmath as mp  # high-precision check of the analytic derivatives (DEVIATIONS D1/D2)
+    mp.mp.dps = 40
+    tb = mp.mpf(tau_b_from_vol(1e5, 20.15, 38.6))
+    Kf = lambda a, b: -2 * mp.log(tb**1.5 - a**1.5 - b**1.5)
+    Vp = tb**1.5 - mp.mpf(20.15)**1.5 - mp.mpf(38.6)**1.5
+    Kd_n = mp.diff(lambda t: Kf(mp.mpf(20.15), t), mp.mpf(38.6))
+    Kdd_n = mp.diff(lambda t: Kf(mp.mpf(20.15), t), mp.mpf(38.6), 2)
+    Kvd_n = mp.diff(lambda a, b: Kf(a, b), (mp.mpf(20.15), mp.mpf(38.6)), (1, 1))
+    Kd_a, Kdd_a = swiss_derivs(float(Vp), 38.6)
+    assert abs(Kd_n / Kd_a - 1) < 1e-9 and abs(Kdd_n / Kdd_a - 1) < 1e-9, (Kd_n, Kd_a, Kdd_n, Kdd_a)
+    assert abs(Kvd_n / (4 * G_matrix(float(Vp), 20.15, 38.6)[2]) - 1) < 1e-9
     # D400: d ln α/d ln x = 6.97e-3 for K = −3 ln ⇒ per unit K: /3
     assert abs(dlnalpha_dK_KLZ() * 3 - 6.97e-3) < 2e-5, dlnalpha_dK_KLZ() * 3
     # single-modulus saxion mass closed form m²/H0² = 2Ω[(aσ)² − 3aσ + 1]
