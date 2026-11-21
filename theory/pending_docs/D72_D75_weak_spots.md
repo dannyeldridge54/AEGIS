@@ -17801,3 +17801,12 @@ Every key number reproduces, every lock precedes its result, and no threshold wa
 ## D1809 (LL, test prep — 21 Nov 2026): C7 superpartner-spectrum lock; EDM tool annotated
 - Locked PREREG_C7_SPECTRUM (code hash recorded). Wino 0.66–0.69 TeV (disappearing tracks, a possible HL-LHC strict P); gluino 5.6 TeV ± 20 % (FCC-hh); bino ≈ 2.3 TeV; scalars, higgsinos and heavy Higgs 0.25–0.7 PeV. FAIL conditions: any squark/slepton/heavy Higgs below 0.2 PeV, a gluino outside 4.5–6.7 TeV, or a non-wino LSP.
 - weave_edm: the referee's Barr–Zee caveat (two-loop chargino/neutralino–W term not included; suppressed by the 0.25–0.7 PeV higgsinos) is added to the label. Self-test passes.
+
+## D1810 (LL, CENTRE — 21 Nov 2026): a dark SU(N_d) condensate CAN hold the dark cycle at ≈ 38.6 with the same W₀ — N_d = 10–12; but the same KKLT formula puts the VISIBLE cycle at 23.2, not 20.15, unless its prefactor is A ≈ 0.08
+- [computed, locked PREREG_D1810_DARKSTAB + DEVIATIONS D1 (bracket only)] Postulate C: a hidden SU(N_d) on the dark D7 cycle, W ⊃ A_d e^{−2πT_d/N_d}, with the SUSY condition |W₀| = A_d e^{−x}(1 + 2x/3) at W₀ = 1.4e-8. This gives x = 20.8 (A_d = 1) to 24.3 (A_d = 30), so σ_d = N_d x/2π.
+  - The photon-axion window σ_β = 36.9–40.6 is reached by **N_d = 10** (σ 33.1–38.7), **11** (36.4–42.6) and **12** (39.7–46.5).
+  - Verdict: **STABILISABLE** (not unique). Referee item 5 is answered by a postulate with an integer, not a new continuous parameter.
+  - α_D⁻¹(M_s) = σ_d ≈ 36–41 for N_d = 11 (central), consistent with α_D(12.8 GeV) ≈ 0.022 from D1793. α_D stays conditional (C) but is now tied to an integer rank.
+- [found, report-only] **Joint with the visible cycle:** the same exact KKLT condition with N = 7 and A = 1 gives σ_vis = 7·20.8/2π = **23.2**, i.e. α⁻¹ = 9/g_s + 23.2 = 31.0, not 27.9–28.0. The band ladder (D1775: λ = ln(1/W₀)/2π) dropped the log term ln(1 + 2x/3) ≈ 2.7. Matching the two-loop α⁻¹ = 28.0 needs A_vis ≈ **0.077**.
+  - A one-loop prefactor of 0.08 is not unnatural (instanton/condensate determinants vary by O(10)), but it is a hidden O(1) choice the band ladder had absorbed. Recorded as a joint correction to D1775/D1801: the band ladder holds with λ_eff = (ln(A/W₀) − ln(1 + 2x/3))/2π, and the closure at N = 7 requires A_vis ≈ 0.08.
+  - Alternatively N = 6 with A ≈ 1: σ = 6·20.8/2π = 19.9 ≈ 20.15. That would REVIVE N = 6. D1801 rejected N = 6 through the volume control 𝒱 ≥ 1e4 at χ = 6, so that conclusion must be rechecked with the log term included. Queued as D1811 (lock first).
