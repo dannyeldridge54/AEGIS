@@ -1,0 +1,11 @@
+n_H=1  R=-0.0231  alpha_s=0.1177 pull -0.36 PASS
+n_H=2  R=+0.1905  alpha_s=0.1207 pull +2.95 
+n_H=3  R=+0.4042  alpha_s=0.1236 pull +6.26 
+n_H=4  R=+0.6178  alpha_s=0.1266 pull +9.57 
+n_H=5  R=+0.8315  alpha_s=0.1296 pull +12.88 
+n_H=6  R=+1.0452  alpha_s=0.1326 pull +16.19 
+n_H=7  R=+1.2588  alpha_s=0.1355 pull +19.50 
+n_H=8  R=+1.4725  alpha_s=0.1385 pull +22.80 
+n_H=9  R=+1.6861  alpha_s=0.1415 pull +26.11 
+passing n_H: [1]
+VERDICT: PASS

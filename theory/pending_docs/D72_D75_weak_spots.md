@@ -18432,3 +18432,21 @@ Status: thread slope OPEN → **CONDITIONAL** (warped uplift on one torus factor
   1. A runaway torus factor with no non-perturbative term contradicts KKLT's "every Kähler modulus stabilised" unless that factor has no instanton or condensate on it.
   2. D1904's fifth-force check now applies to that factor.
 - **Status:** D1902 stays CONDITIONAL, now on U30 as well. D1900 and D1901b need no change.
+
+## D1904 — LEFT (first tick in the new shape: median → research → review → postulate → execute): the knot threshold allows exactly ONE N=2 Higgs pair — PASS, and a sharp prediction (21 Nov 2026)
+Lock: PREREG_D1904_HIGGS_MULTIPLICITY (pushed first).
+**Median.** The largest strain is α_s (−3.7 σ); its only route back is U29.
+**Research.**
+- Real Z₆′ (= Z₆-II) intersecting-D6 standard models exist (Honecker–Ott hep-th/0404055 for Z₆; Gmeiner–Honecker arXiv:0801.3385 for Z₆′). Their Higgs are non-chiral N = 2 pairs (9ω copies).
+- Their thresholds are large: Δ_SU(3) ≈ −70 to +48 at v = 5 (arXiv:0910.0843). That is because the parallel-torus modulus sits at v ≈ 1–30, not at a knot. Tree-level sin²θ_W = 0.65–0.72 there, and unification is not reached.
+**Review.** This supports U29's N = 2 Higgs origin and the U-at-the-knot reading (D1900).
+**Execute.** n_H pairs per plane, under U29 (results in field_tests/results/d1904_higgs_multiplicity.txt):
+| n_H | R | α_s | pull |
+|---|---|---|---|
+| 1 | −0.023 | 0.1177 | −0.36 σ |
+| 2 | +0.19 | — | +3.0 σ |
+| 9 | +1.69 | — | +26 σ |
+
+**Only n_H = 1 passes ⇒ PASS.**
+**Prediction (new, falsifiable within the Weave):** at the knots there is exactly one N = 2 Higgs pair per plane. A Z₆′ construction with 9 Higgs pairs (like the published ones) cannot sit at the knots. Δ₃ stays CONDITIONAL on U29 (projections and tadpoles still to impose).
+Sources: hep-th/0404055; arXiv:0801.3385; arXiv:0910.0843.
