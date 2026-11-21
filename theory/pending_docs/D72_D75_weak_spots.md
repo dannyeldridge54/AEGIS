@@ -17423,3 +17423,21 @@ D1760 took c_γ/f = 6.5 M_P⁻¹ from the THREAD's displacement (Δφ = 0.639 M_
 - [computed] Self-interaction with this α_D: m_A′ = 1 GeV: 4.4e-5 cm²/g; 3 GeV: 5.4e-7; 12.8 GeV: 1.6e-9 (velocity-independent, Born valid) ⇒ **PASS** (≪ 0.1). m_A′ = 0.3 GeV is outside the Born regime (parameter 1.5): NOT computed — this corner needs the classical/resonant treatment before any statement (open). So "collisionless" holds for m_A′ ≳ 1 GeV; the referee caveat (D1761 item 3) is now sharpened: the dark coupling is no longer free, only m_A′ and the kinetic mixing ε are.
 - Negative space: with α_D = 0.035 the dark photon decays mostly through kinetic mixing (no lighter dark states) — the visible signal stays ε-controlled; a dark-matter self-interaction ≥ 0.1 cm²/g in clusters would require m_A′ ≲ 0.5 GeV (non-Born) and is the corner to check.
 - Equation: inputs I9 reduces from (α_D, m_A′, ε) to (m_A′, ε).
+
+## D1770 — derivation mode, step 3 (input I7): the up-quark rung — PREREG_B6_RUNG result (PC run, 18/18, after DEVIATIONS D1–D2)
+| rung | BOX-3 score (fails) | BOX-2 score (fails) | eq.-coef. g_u/g_d pull |
+|---|---|---|---|
+| 2 | 3.08 (m_s/m_b) | 28.2 (5) | +64.6σ |
+| 3 | 3.13 (m_s/m_b) | 16.9 (4) | +36.6σ |
+| 4 | 4.04 (m_s/m_b, m_u/m_t) | 11.4 (4) | +22.3σ |
+| 5 | 4.46 (m_s/m_b, V_cb) | 10.5 (3) | +13.7σ |
+| 6 | 4.35 (m_s/m_b, V_cb) | 8.86 (3) | +7.9σ |
+| 7 | 6.34 (3) | 7.97 (3) | +3.8σ |
+| 8 | 5.28 (m_s/m_b, V_cb) | **7.81 (3)** | **+0.7σ** |
+| 9 | 8.24 (3) | 8.45 (3) | −1.7σ |
+| 10 | 6.47 (3) | 9.55 (3) | −3.7σ |
+Locked readings:
+- "CKM prefers low rungs" — NOT CONFIRMED as worded: in this search NO rung reaches 0 fails in BOX-3 (the best scores, rungs 2–3, still miss m_s/m_b). (CubeMind's 21.8 M-point pool had found 0-fail points at rungs 2/4/5, score 1.82; B6's 400-start + Nelder–Mead search is shallower — recorded, not re-run.) The SCORE ordering in BOX-3 does favour low rungs (2, 3 best; 8 fifth).
+- "Preference survives narrower couplings" — NO: in BOX-2 (couplings within ×2 of equal) the order REVERSES: rung 8 is the best (7.81), then 7, 9, 6; low rungs collapse (2: 28.2).
+- Joint viability (0 fails in BOX-2 and |pull| ≤ 3): **none** ⇒ by the locked rule the quark placement is "in tension". But the reversal is the real content: the low-rung preference exists only when the O(1) couplings are allowed to be ×3 away from equal; with near-equal couplings the mixing data and the mass-ratio rule (L1) pick the SAME rung, 8 (pull +0.7σ). The residual misses at rung 8 are m_s/m_b (0.51× too small), V_cb (1.31×) and V_ub (0.69×) — the same three misses as the published quark paper (D1745–D1748).
+- [derived reading] So the slip ladder is self-consistent at rung 8 with near-equal couplings; what is missing is a correction that raises m_s/m_b by ~2× and moves V_cb, V_ub by ~30 % — one structural shift in the DOWN sector (rung 1 needs a larger slip: the "ρ-side below rung 1" question already open in WEAVE_QUARK_LADDER). Postulate U16 (C-down-shift): the down-quark modulus sits at |ε| ≈ 2× rung 1's (≈ 0.048, between rung 0 and 1), e.g. a non-SUGRA class or a second-order correction. Kills it: a locked fit with down at |ε| = 0.048 and up at rung 8, couplings within ×2, still failing m_s/m_b.
