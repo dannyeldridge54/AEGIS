@@ -17642,3 +17642,8 @@ One thought: every field sits AT one of the two elliptic points of PSL(2,Z) (i, 
   - No mass fits.
 - 2403.17280 (flavour structures ↔ 4D modular models) and 1806.10369 (μ-terms, Z₂ only) were already covered; 2112.01680 tunes the Higgs angles by hand.
 - [verdict] **NULL.** Nothing in the literature fixes the Higgs direction on T²/Z₃. The lepton mass ratios stay fitted (I7-ℓ′ open). Possible engineering route, not attempted: an extra discrete symmetry under which only one of the 6 class-modes is neutral. That would turn Y4b into a 0-parameter test; it needs a model of the symmetry first.
+
+## D1797 (LL, LEFT — 21 Nov 2026): proton decay is NOT automatically safe — if the visible stack unifies with X bosons, p → e⁺π⁰ sits at ~3e34 yr, right at Super-K's bound
+- [estimate, code] With the data-fixed unification point (M₁₂ = 6.6–7.0e15 GeV, α⁻¹ = 28.9, D1767), the standard dim-6 estimate τ(p → e⁺π⁰) ≈ 1e35 yr (M_X/1e16)⁴(0.04/α_GUT)² gives **2.5–3.2e34 yr** (uncertainty ×3). Super-K's bound is 2.4e34 yr; Hyper-K reaches ~1e35.
+- **Consequence:** the old ledger label "proton safe" (2.13) is only true if the visible D7 stack gives the SM group directly (no X/Y bosons). If it is a GUT stack, the Weave predicts a Hyper-K discovery, or is killed by Hyper-K. Split SUSY makes dim-5 negligible either way. Locked as two branches (PREREG_B10_PROTON); ledger 2.13 → "P (two branches)".
+- Locks written this tick (forecast, post-lock data only): B1 Koide m_τ = 1776.969 MeV; B10 proton (branches G/S); A4 f_NL^local ≈ 0.012 (Maldacena); A10 no low-ℓ cut; C1 direct detection mass 12.8 GeV; D6 c_T = c, no extra polarisations. Every 'L' test in the plan except D2/B6/D7 is now locked.

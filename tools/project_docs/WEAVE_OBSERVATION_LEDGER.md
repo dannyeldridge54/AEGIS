@@ -31,7 +31,7 @@ Goal of the big loop: move every M and A toward P. A row moves only through a lo
 | 2.10 | PMNS mixing (TM1) | P post hoc (after JUNO) | δ_CP branch chosen by data |
 | 2.11 | Dirac vs Majorana (0νββ) | G | seesaw ⇒ Majorana; m_ββ not given as a number |
 | 2.12 | Proton mass from QCD (938 MeV), proton spin, m_n − m_p | S | m_p shifts propagate (weave_proton); m_n − m_p not covered |
-| 2.13 | Proton stability (τ_p > 2.4e34 yr) | P (filter) | "proton safe" |
+| 2.13 | Proton stability (τ_p > 2.4e34 yr) | P (filter) → **P (two branches), 21 Nov 10:26 (D1797)** | "proton safe" only if no X bosons; a GUT stack gives τ(e⁺π⁰) ≈ 2.5–3.2e34 yr ⇒ Hyper-K decides |
 | 2.14 | Electron EDM (|d_e| < 4.1e-30 e·cm) | E: ~5e-34 – 4e-33 e·cm from PeV scalars (D1763; corrects D1753 R2) | leptonic CP phases exist (D1761) |
 
 ## 3. The early universe
