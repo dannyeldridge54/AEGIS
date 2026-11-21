@@ -1,0 +1,4 @@
+s1 per unit b_bf = 1.161e-03 ; b_bf,max = 3.70
+s2 (no bifundamentals) = 9.704e-07 ; zeta_alpha = 3.78e-10 (bound 1.66e-6)
+zeta_alpha with b_bf = 1: 4.53e-07
+VERDICT: PASS
