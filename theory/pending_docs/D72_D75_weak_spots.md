@@ -18301,3 +18301,9 @@ END RESULT, stated plainly:
 - Report: the up-quark step is u_u ≈ u*^{1.95} — **two rungs of the same step** (numerology guard: p ≈ 2 is one number near an integer; no weight until the shifted-stack charges predict it).
 - Precision limit: the single-step picture is good to ~20 %, not ~10 %. Going further needs each torus's own rung law (Danny 11:19), not one shared number.
 Status: median loop closed with this end run; D1806–D1894 still await an independent referee before any write-up.
+
+## D1895 — CENTRE (derivation + literature): can each torus's rung step be derived from its modulus displacement? — NO in the generic flux landscape; tension recorded (21 Nov 2026)
+[derived] The turnover step is |u| with u = (τ − ρ)/(τ − ρ̄) ≈ δτ/(i√3), so |δτ| = √3|u|. The end-run arrow u* = 0.052 (D1894) needs **|δτ| ≈ 0.090** on the lepton and down-quark tori (and 0.0054 on the up-quark torus).
+[literature] Ishiguro–Kobayashi–Otsuka (arXiv:2206.04313): in the type IIB flux landscape the complex-structure modulus sits at a fixed point up to non-perturbative/uplift shifts, and the landscape "prefers |δτ| ≃ 10⁻⁵". No flux-quanta scaling law is given.
+Verdict: the Weave's rung steps need a displacement **~10⁴ larger than the landscape's typical value**. A per-torus rung law therefore cannot be derived from generic displacement; it needs either (a) a specific stabilisation with large SUSY-breaking/uplift shift (to be modelled), or (b) steps that are intrinsic to the knot (θ-function exponents, like the pyramid's e^{−πn²/8}, D1822) rather than displacements — but the turnover's intrinsic θ-steps miss the leptons (D1824). **Open tension, ranked first among inputs.** The per-torus step values stay inputs (one per torus); with one input per torus the ±10 % end test carries no content, so D1894's ±20 % single-step result is the predictive statement.
+Source: arXiv:2206.04313.
