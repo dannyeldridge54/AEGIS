@@ -62,3 +62,21 @@ V = V_L(1 − A e^{−βφ}), A = 7.30, published doi:10.5281/zenodo.24380387). 
 - Also noted (main session): the dark modulus at σ ≈ 38.6 is NOT stabilised by KKLT/LVS as used (label C).
   This agrees with D1851's consistency check (a τ_d that moves 𝒱 gets a slope ~9e92 × the thread's).
   D1851 and RW3 use σ_d = 38.6; with 38.49 the RW2 ζ changes by (38.49/38.6)^{3/4} − 1 = −0.2 %, verdict unchanged.
+
+## D1853 (RW6, locked PREREG_RW6_Z2) — the Z₂ at τ = i kills the LINEAR α leak but the quadratic one is still 80× too big (FAIL)
+(D1852 is reserved for RW3, still running when this was written.)
+- [derived] Near i put u = (τ − i)/(τ + i). S: τ → −1/τ acts as u → −u, so any S-invariant real function of τ
+  (the physical one-loop threshold, built from Im τ |η(τ)|⁴) is even in u and its gradient vanishes at i:
+  ln α(φ) = ln α_i + (c/2)(φ − φ_i)² + …. This is the mirror of the forward knot SETTING g_s: here the knot
+  removes the first-order coupling. The mechanism is real, and it works only AT the knot.
+- [computed] Natural c = the D1851 one-loop size per M_P, 3.9e-4 – 7.5e-4.
+  - T1 (decides): even with the field exactly at i today (the plan's form, a lower bound since
+    (d + Δφ)² − d² ≥ Δφ²), the drift since z* is |Δ ln α| ≥ c·(0.64)²/2 = **8.0e-5**, against ~1e-6:
+    **80×** too big (O(1) band 2.4e-5 – 4.6e-4).
+  - T2 [estimate]: the knot is still ahead (D1644: reached at a = 1.89). d ≈ √(3(1+w₀)Ω_DE)·ln 1.89 = 0.47 M_P
+    ⇒ ζ today = 1.8e-4, **110×** the MICROSCOPE bound. Passing would need d < 4.2e-3 M_P.
+  - T3 (report): α̇/α today ≈ 9e-15 /yr, ~9e3× the 1e-18 /yr clock level.
+  - Verdict by the lock: **FAIL**.
+- Reading: the Z₂ protection helps by a factor ~ Δφ/M_P ~ 0.5. Closing the D1851 gap (×237) needs ~10⁻² –
+  10⁻³ more. A Z₂-even leak would fit only if c itself were ≲ 5e-6 per M_P², i.e. the thread's Kähler leak
+  were already sequestered, so the knot does not rescue it alone. Row 5 of the mirror table stays ✗.
