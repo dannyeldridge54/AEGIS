@@ -1,0 +1,9 @@
+{"_note": "Median centre (D1888). Shared parameters only; no free per-sector coefficients. Each tick may change ONE entry, locked first.",
+ "u_star": 0.027,
+ "lepton_rungs": [2, 1, 0],
+ "electron_corner_amp": 0.177,
+ "neutrino_step_n": 3,
+ "higgs_pair_weight": 0,
+ "delta3_residual": -0.023,
+ "thread_zeta_alpha": 3.8e-10,
+ "free": ["u_star"]}

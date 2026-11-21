@@ -1,0 +1,5 @@
+# PREREG D1889 — first arrow through the median (locked 21 Nov 2026 before running; repo at 94216698)
+Danny 13:14: "set new parameters where everything has been pointing … start a new loop right in the centre of the median … the tests will look half-strained on each side."
+Postulate U28 (C, the arrow): one shared rung step u* serves every ladder, with only GEOMETRIC coefficients (lepton rungs (2,1,0), electron corner amplitude 0.177 from D1885; no free per-sector coefficients). Engine theory/median/engine.py with theory/median/centre.json (committed with this lock) fits u* to minimise total strain Σ(pull/tolerance)² over 7 sectors (m_μ/m_τ, m_e/m_τ, Koide Q at 1 %, neutrino step, down-quark step, Δ₃, thread α drift). Up-quark step is report-only (expected to sit on the shifted stack).
+Expectation stated beforehand (Danny's): every sector mildly strained, none dominating.
+Verdict: PASS if every sector's |strain| ≤ 1 at the fitted u*; PARTIAL if all ≤ 2; FAIL if any > 2. The largest-strain sector becomes the next tick's target.
