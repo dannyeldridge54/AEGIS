@@ -1,0 +1,2 @@
+PRIMARY q=(1,1/2,0) Vus 0.161 (data 0.225, x0.71) | Vcb 0.161 (data 0.041, x3.92) | Vub 0.0259 (data 0.00382, x6.77) FAIL
+SECONDARY q=(2,1,0) Vus 0.0259 (data 0.225, x0.11) | Vcb 0.0259 (data 0.041, x0.63) | Vub 0.000669 (data 0.00382, x0.18) FAIL
