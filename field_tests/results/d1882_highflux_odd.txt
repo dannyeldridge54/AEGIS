@@ -1,0 +1,10 @@
+M= 4  odd dim 1  r=0.100  s_min = 2.112e-01
+M= 4  odd dim 1  r=0.171  s_min = 5.272e-01
+M= 6  odd dim 2  r=0.100  s_min = 2.488e-01
+M= 6  odd dim 2  r=0.171  s_min = 5.847e-01
+M= 8  odd dim 3  r=0.100  s_min = 2.334e-01
+M= 8  odd dim 3  r=0.171  s_min = 5.328e-01
+M=12  odd dim 5  r=0.100  s_min = 1.198e-02
+M=12  odd dim 5  r=0.171  s_min = 1.701e-01
+best s_min at r=0.171: 1.701e-01 (M=12)
+VERDICT: FAIL
