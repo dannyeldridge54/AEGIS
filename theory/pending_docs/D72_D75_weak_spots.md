@@ -18422,3 +18422,13 @@ Result (field_tests/results/d1902_thread_slope.txt):
 - Central lens: the thread is ONE torus factor of the dark fold (n = 1) feeling the uplift from a warped throat. The reverse weave's slope then comes from the same anti-D3 that lifts the vacuum.
 **Serious caveat (next test):** if the rolling modulus changes the overall volume 𝒱, then M_s/M_P and every particle mass in Planck units drift with it. That brings fifth-force and Ġ/G bounds. The thread is safe only if τ_D changes the dark factor without changing the visible masses' dependence on 𝒱 (sequestering). With 𝒱 ∝ √(τ₁τ₂τ₃) a rolling τ₃ changes 𝒱, so a mechanism is needed. Ranked first for the reverse weave.
 Status: thread slope OPEN → **CONDITIONAL** (warped uplift on one torus factor, plus a fifth-force check still to pass).
+
+## D1903 — REFEREE (self): D1900–D1902 — algebra PASS; one CONFLICT found (D1902 vs D1812) (21 Nov 2026)
+- **Lock order** and .sha256 are OK for D1901, D1901b and D1902. D1900 is literature-only.
+- **D1901, multiple-of-4 claim (sympy):** on a torus where c ∥ b, f(b, c′) = −2mn. Over tori 2 and 3 this gives 4 n₂m₂n₃m₃ ✔.
+- **D1902 slope:** K_TT̄ = n/(4τ²) gives φ = √(n/2) ln τ ✔. Then λ = q√(n/2), and n = 1, q = 4/3 gives 0.9428 ✔. The warped anti-D3 term scales as 𝒱^{−4/3} (single-modulus D/(T+T̄)²) ✔.
+- **CONFLICT:** D1812 stabilises the dark cycle with the dark SU(12) gaugino condensate at σ_d = 40.3. A modulus held by a condensate is heavy (m ~ a σ_d m₃/₂) and cannot roll today. So **D1902's thread cannot be the same dark 4-cycle that hosts SU(12).** The two can coexist only if the dark fold has at least two torus factors: one hosting SU(12) (stabilised) and one unstabilised factor that feels only the warped uplift (the thread). That is consistent with n = 1 (one torus factor), but it is an extra assumption, **U30 (C): the dark fold has one condensate factor and one runaway factor.**
+- **Caveats:**
+  1. A runaway torus factor with no non-perturbative term contradicts KKLT's "every Kähler modulus stabilised" unless that factor has no instanton or condensate on it.
+  2. D1904's fifth-force check now applies to that factor.
+- **Status:** D1902 stays CONDITIONAL, now on U30 as well. D1900 and D1901b need no change.
