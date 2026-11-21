@@ -1,0 +1,11 @@
+fixed points: [0. +0.j     0. +0.5774j 0.5+0.2887j] 3
+M=3 a=0.167 class 0 dim 1: r range 0.0000-0.0000 
+M=3 a=0.167 class 1 dim 1: r range 0.0000-0.0000 
+M=3 a=0.167 class 2 dim 1: r range 0.0000-0.0000 
+M=6 a=0.000 class 0 dim 3: r range 0.0122-0.9999 
+M=6 a=0.000 class 1 dim 2: r range 0.0000-1.0000 
+M=6 a=0.000 class 2 dim 1: r range 0.1766-0.9083 HIT
+M=9 a=0.167 class 0 dim 3: r range 0.0000-0.0000 
+M=9 a=0.167 class 1 dim 3: r range 0.0000-0.0000 
+M=9 a=0.167 class 2 dim 3: r range 0.0000-0.0000 
+VERDICT: PASS [(6, np.float64(2.0))]
